@@ -947,7 +947,29 @@ class WebAgent:
         # public pages. No login, private profile, session cookie or anti-bot bypass.
         social_results: list[dict[str, Any]] = []
         if plan.get("social_focus"):
-            platforms = plan.get("platforms") or ["reddit", "bluesky", "instagram"]
+            requested_platforms = plan.get("platforms") or []
+            if requested_platforms:
+                platforms = list(dict.fromkeys(requested_platforms))
+            else:
+                # Broad social research: always try no-key public sources, and add
+                # official platform connectors only when they are configured.
+                platforms = ["reddit", "bluesky"]
+                optional_connectors = {
+                    "facebook": bool(
+                        os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                        and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+                    ),
+                    "instagram": bool(
+                        os.getenv("INSTAGRAM_USER_ID", "").strip()
+                        and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+                    ),
+                    "x": bool(os.getenv("X_BEARER_TOKEN", "").strip()),
+                    "youtube": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
+                }
+                platforms.extend(
+                    name for name, ready in optional_connectors.items()
+                    if ready and name not in platforms
+                )
             social_results, social_warnings = self._search_social(queries[0], platforms)
             warnings.extend(social_warnings)
             social_groups: dict[str, list[dict[str, Any]]] = {}
