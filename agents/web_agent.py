@@ -542,6 +542,125 @@ class WebAgent:
                 source["snippet"] = page_text[:1800]
         return sources, None
 
+    def _collect_research(
+        self, plan: dict[str, Any]
+    ) -> tuple[list[dict[str, Any]], list[str], dict[str, Any]]:
+        """Run independent query searches concurrently, fuse evidence, then fetch top pages."""
+        queries = [
+            str(query)[:500]
+            for query in plan.get("queries", [])[:MAX_PLAN_QUERIES]
+            if isinstance(query, str) and query.strip()
+        ]
+        if not queries:
+            queries = ["Omarai web research"]
+        warnings: list[str] = []
+        batches: list[dict[str, Any]] = []
+        query_counts: list[dict[str, Any]] = []
+        search_started_queries = 0
+
+        with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:
+            futures = {pool.submit(self._search_web, query): query for query in queries}
+            for future in as_completed(futures):
+                query = futures[future]
+                search_started_queries += 1
+                try:
+                    results = future.result()
+                except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                    warnings.append(f"تعذر بحث الاستعلام «{query[:70]}»: {exc}")
+                    query_counts.append({"query": query, "results": 0})
+                    continue
+                query_counts.append({"query": query, "results": len(results)})
+                grouped: dict[str, list[dict[str, Any]]] = {}
+                for source in results:
+                    provider = str(source.get("provider") or "web_search")
+                    grouped.setdefault(provider, []).append(source)
+                for provider, items in grouped.items():
+                    items.sort(key=lambda item: int(item.get("provider_rank", 999)))
+                    batches.append({"query": query, "provider": provider, "results": items})
+
+        # Current-events questions receive a separate news index in addition to general web.
+        if plan.get("freshness") == "current":
+            try:
+                news_results = self._search_news(queries[0])
+                if news_results:
+                    batches.append({
+                        "query": queries[0],
+                        "provider": "google_news_rss",
+                        "results": news_results,
+                    })
+                    query_counts.append({
+                        "query": queries[0] + " [news feed]",
+                        "results": len(news_results),
+                    })
+                else:
+                    warnings.append("لم يرجع موجز الأخبار نتائج حديثة قابلة للاستخدام.")
+            except (RuntimeError, AgentDependencyError) as exc:
+                warnings.append(f"تعذر بحث الأخبار: {exc}")
+
+        # A social-focused task uses public social endpoints in parallel with indexed
+        # public pages. No login, private profile, session cookie or anti-bot bypass.
+        social_results: list[dict[str, Any]] = []
+        if plan.get("social_focus"):
+            platforms = plan.get("platforms") or ["reddit", "bluesky"]
+            social_results, social_warnings = self._search_social(queries[0], platforms)
+            warnings.extend(social_warnings)
+            social_groups: dict[str, list[dict[str, Any]]] = {}
+            for source in social_results:
+                social_groups.setdefault(str(source.get("provider") or "social"), []).append(source)
+            for provider, items in social_groups.items():
+                items.sort(key=lambda item: int(item.get("provider_rank", 999)))
+                batches.append({"query": queries[0], "provider": provider, "results": items})
+
+        sources = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)
+
+        # Fetch page text only for the best few public URLs; do it concurrently with strict bounds.
+        fetch_targets = sources[:MAX_FETCHED_PAGES]
+        fetched_count = 0
+        if fetch_targets:
+            with ThreadPoolExecutor(max_workers=min(4, len(fetch_targets))) as pool:
+                futures = {
+                    pool.submit(self._fetch_page, source["url"]): source
+                    for source in fetch_targets
+                }
+                for future in as_completed(futures):
+                    source = futures[future]
+                    try:
+                        title, page_text = future.result()
+                    except (RuntimeError, AgentDependencyError, ValueError):
+                        continue
+                    if title:
+                        source["title"] = title
+                    if page_text:
+                        source["page_text"] = page_text
+                        source["snippet"] = page_text[:1800]
+                        source["page_fetched"] = True
+                        fetched_count += 1
+
+        # Reorder on consensus first, and keep clear machine-readable provenance.
+        sources.sort(key=lambda source: source.get("rank_score", 0), reverse=True)
+        providers = sorted({
+            provider
+            for source in sources
+            for provider in source.get("providers", [])
+        })
+        platform_counts: dict[str, int] = {}
+        for source in sources:
+            label = source.get("platform", "web")
+            platform_counts[label] = platform_counts.get(label, 0) + 1
+        report = {
+            "queries_planned": len(queries),
+            "queries_attempted": search_started_queries,
+            "query_results": query_counts,
+            "unique_sources": len(sources),
+            "pages_fetched": fetched_count,
+            "providers_used": providers,
+            "platform_counts": platform_counts,
+            "social_direct_results": len(social_results),
+            "depth": plan.get("depth", "standard"),
+            "planning_method": plan.get("planning_method", "deterministic_fallback"),
+        }
+        return sources, list(dict.fromkeys(warnings)), report
+
     @staticmethod
     def _sanitize_history(history: Any) -> list[dict[str, str]]:
         if not isinstance(history, list):
