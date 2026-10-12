@@ -155,7 +155,7 @@ class WebAgent:
         return value
 
     def _search_web(self, query: str) -> list[dict[str, Any]]:
-        """Search via public HTML/RSS endpoints; avoid native Android-incompatible transports."""
+        """Search DuckDuckGo HTML and Bing RSS independently so one cannot hide the other."""
         try:
             import xml.etree.ElementTree as ET
 
@@ -173,49 +173,173 @@ class WebAgent:
             ),
             "Accept-Language": "ar,en;q=0.9",
         }
-        rows: list[dict[str, str]] = []
+        rows: list[dict[str, Any]] = []
         failures: list[str] = []
 
-        # DuckDuckGo's lightweight HTML search endpoint.
+        # Provider one: DuckDuckGo's lightweight HTML interface.
         try:
             response = httpx.get(
                 "https://html.duckduckgo.com/html/",
                 params={"q": query},
                 headers=headers,
-                timeout=10.0,
+                timeout=9.0,
                 follow_redirects=False,
             )
             if response.status_code == 200:
                 soup = BeautifulSoup(response.text, "html.parser")
+                provider_rank = 0
                 for card in soup.select("div.result"):
                     link = card.select_one("a.result__a")
                     if not link:
                         continue
                     href = self._unwrap_search_url(str(link.get("href", "")))
+                    safe_url = _public_http_url(href)
+                    if not safe_url:
+                        continue
                     snippet_node = card.select_one(".result__snippet")
+                    provider_rank += 1
                     rows.append({
                         "title": _clean_text(link.get_text(" ", strip=True), 300),
-                        "url": href,
+                        "url": safe_url,
                         "snippet": _clean_text(
                             snippet_node.get_text(" ", strip=True) if snippet_node else "",
                             1200,
                         ),
+                        "provider": "duckduckgo_html",
+                        "provider_rank": provider_rank,
+                        "search_query": query,
+                        "published_at": "",
                     })
-                    if len(rows) >= MAX_SEARCH_RESULTS:
+                    if provider_rank >= MAX_PROVIDER_RESULTS:
                         break
             else:
                 failures.append(f"DuckDuckGo HTTP {response.status_code}")
         except (httpx.HTTPError, OSError, ValueError) as exc:
             failures.append(f"DuckDuckGo: {type(exc).__name__}")
 
-        # Bing's RSS response is a second public provider if DDG is blocked or empty.
-        if len(rows) < MAX_SEARCH_RESULTS:
+        # Provider two is always consulted; previously it was skipped if DDG filled
+        # the list, which silently made the "two-engine" search a single-engine search.
+        try:
+            response = httpx.get(
+                "https://www.bing.com/search",
+                params={"format": "rss", "q": query},
+                headers=headers,
+                timeout=9.0,
+                follow_redirects=False,
+            )
+            if response.status_code == 200:
+                root = ET.fromstring(response.content)
+                provider_rank = 0
+                for item in root.iter():
+                    if item.tag.rsplit("}", 1)[-1] != "item":
+                        continue
+                    fields = {
+                        child.tag.rsplit("}", 1)[-1]: (child.text or "")
+                        for child in item
+                    }
+                    safe_url = _public_http_url(fields.get("link", ""))
+                    if not safe_url:
+                        continue
+                    provider_rank += 1
+                    rows.append({
+                        "title": _clean_text(fields.get("title", ""), 300),
+                        "url": safe_url,
+                        "snippet": _clean_text(fields.get("description", ""), 1200),
+                        "provider": "bing_rss",
+                        "provider_rank": provider_rank,
+                        "search_query": query,
+                        "published_at": _clean_text(fields.get("pubDate", ""), 80),
+                    })
+                    if provider_rank >= MAX_PROVIDER_RESULTS:
+                        break
+            else:
+                failures.append(f"Bing HTTP {response.status_code}")
+        except (httpx.HTTPError, OSError, ValueError, ET.ParseError) as exc:
+            failures.append(f"Bing: {type(exc).__name__}")
+
+        if not rows and failures:
+            raise RuntimeError(
+                "تعذر الوصول إلى محركات البحث العامة (DuckDuckGo/Bing) الآن."
+            )
+        return rows
+
+    def _search_news(self, query: str) -> list[dict[str, Any]]:
+        """Collect recent public news through the Google News RSS feed."""
+        try:
+            import xml.etree.ElementTree as ET
+
+            import httpx
+        except ImportError as exc:
+            raise AgentDependencyError(
+                "حزمة httpx غير مثبتة. نفّذ: python -m pip install -e ."
+            ) from exc
+        try:
+            response = httpx.get(
+                "https://news.google.com/rss/search",
+                params={"q": query, "hl": "ar", "gl": "EG", "ceid": "EG:ar"},
+                headers={"User-Agent": "OmaraiResearchBot/1.0", "Accept-Language": "ar,en;q=0.9"},
+                timeout=9.0,
+                follow_redirects=False,
+            )
+            if response.status_code != 200:
+                return []
+            root = ET.fromstring(response.content)
+        except (httpx.HTTPError, OSError, ValueError, ET.ParseError):
+            return []
+        results: list[dict[str, Any]] = []
+        for item in root.iter():
+            if item.tag.rsplit("}", 1)[-1] != "item":
+                continue
+            fields = {
+                child.tag.rsplit("}", 1)[-1]: (child.text or "")
+                for child in item
+            }
+            url = _public_http_url(fields.get("link", ""))
+            if not url:
+                continue
+            results.append({
+                "title": _clean_text(fields.get("title", ""), 300),
+                "url": url,
+                "snippet": _clean_text(fields.get("description", ""), 1200),
+                "page_text": "",
+                "page_fetched": False,
+                "provider": "google_news_rss",
+                "provider_rank": len(results) + 1,
+                "search_query": query,
+                "published_at": _clean_text(fields.get("pubDate", ""), 100),
+            })
+            if len(results) >= MAX_PROVIDER_RESULTS:
+                break
+        return results
+
+    def _search_social(
+        self, query: str, platforms: list[str]
+    ) -> tuple[list[dict[str, Any]], list[str]]:
+        """Search public social content through exposed public endpoints only."""
+        try:
+            import xml.etree.ElementTree as ET
+
+            import httpx
+            from bs4 import BeautifulSoup
+        except ImportError as exc:
+            raise AgentDependencyError(
+                "حزم البحث الاجتماعي غير مثبتة. نفّذ: python -m pip install -e ."
+            ) from exc
+
+        results: list[dict[str, Any]] = []
+        warnings: list[str] = []
+        headers = {
+            "User-Agent": "OmaraiResearchBot/1.0 (public-content search; no login)",
+            "Accept-Language": "ar,en;q=0.9",
+        }
+
+        if "reddit" in platforms:
             try:
                 response = httpx.get(
-                    "https://www.bing.com/search",
-                    params={"format": "rss", "q": query},
+                    "https://www.reddit.com/search.rss",
+                    params={"q": query, "sort": "relevance", "t": "all", "limit": "8"},
                     headers=headers,
-                    timeout=10.0,
+                    timeout=9.0,
                     follow_redirects=False,
                 )
                 if response.status_code == 200:
@@ -227,39 +351,117 @@ class WebAgent:
                             child.tag.rsplit("}", 1)[-1]: (child.text or "")
                             for child in item
                         }
-                        rows.append({
+                        url = _public_http_url(fields.get("link", ""))
+                        if not url or "reddit.com/" not in url:
+                            continue
+                        description = BeautifulSoup(
+                            fields.get("description", ""), "html.parser"
+                        ).get_text(" ", strip=True)
+                        results.append({
                             "title": _clean_text(fields.get("title", ""), 300),
-                            "url": fields.get("link", ""),
-                            "snippet": _clean_text(fields.get("description", ""), 1200),
+                            "url": url,
+                            "snippet": _clean_text(description, 1200),
+                            "page_text": "",
+                            "page_fetched": False,
+                            "provider": "reddit_public_rss",
+                            "provider_rank": len([
+                                row for row in results
+                                if row.get("provider") == "reddit_public_rss"
+                            ]) + 1,
+                            "search_query": query,
+                            "published_at": _clean_text(fields.get("pubDate", ""), 100),
                         })
-                        if len(rows) >= MAX_SEARCH_RESULTS:
+                        if sum(row.get("provider") == "reddit_public_rss" for row in results) >= 8:
                             break
                 else:
-                    failures.append(f"Bing HTTP {response.status_code}")
-            except (httpx.HTTPError, OSError, ValueError, ET.ParseError) as exc:
-                failures.append(f"Bing: {type(exc).__name__}")
+                    warnings.append(f"Reddit public RSS unavailable (HTTP {response.status_code})")
+            except (httpx.HTTPError, OSError, ValueError, ET.ParseError):
+                warnings.append("Reddit public RSS unavailable for this request")
 
-        normalized: list[dict[str, Any]] = []
-        seen: set[str] = set()
-        for row in rows:
-            url = _public_http_url(row.get("url"))
-            if not url or url in seen:
-                continue
-            seen.add(url)
-            normalized.append({
-                "title": _clean_text(row.get("title") or "نتيجة ويب", 300),
-                "url": url,
-                "snippet": _clean_text(row.get("snippet") or "", 1200),
-                "page_text": "",
-                "page_fetched": False,
-            })
-            if len(normalized) >= MAX_SEARCH_RESULTS:
-                break
-        if not normalized and failures:
-            raise RuntimeError(
-                "تعذر الوصول إلى محركات البحث العامة (DuckDuckGo/Bing) الآن."
-            )
-        return normalized
+        if "bluesky" in platforms:
+            try:
+                response = httpx.get(
+                    "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+                    params={"q": query, "limit": 10},
+                    headers=headers,
+                    timeout=9.0,
+                    follow_redirects=False,
+                )
+                if response.status_code == 200:
+                    data = response.json()
+                    for item in data.get("posts", []):
+                        post = item.get("post", {})
+                        record = post.get("record", {})
+                        author = post.get("author", {})
+                        uri = post.get("uri", "")
+                        rkey = uri.rsplit("/", 1)[-1]
+                        handle = author.get("handle", "")
+                        if not handle or not rkey:
+                            continue
+                        url = f"https://bsky.app/profile/{handle}/post/{rkey}"
+                        results.append({
+                            "title": _clean_text(author.get("displayName") or handle, 300),
+                            "url": url,
+                            "snippet": _clean_text(record.get("text") or "", 1200),
+                            "page_text": "",
+                            "page_fetched": False,
+                            "provider": "bluesky_public_search",
+                            "provider_rank": len([
+                                row for row in results
+                                if row.get("provider") == "bluesky_public_search"
+                            ]) + 1,
+                            "search_query": query,
+                            "published_at": _clean_text(post.get("indexedAt") or "", 100),
+                        })
+                else:
+                    warnings.append(f"Bluesky public search unavailable (HTTP {response.status_code})")
+            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                warnings.append("Bluesky public search unavailable for this request")
+
+        if "youtube" in platforms and os.getenv("YOUTUBE_API_KEY", "").strip():
+            try:
+                response = httpx.get(
+                    "https://www.googleapis.com/youtube/v3/search",
+                    params={
+                        "part": "snippet",
+                        "q": query,
+                        "type": "video",
+                        "maxResults": 8,
+                        "key": os.getenv("YOUTUBE_API_KEY", "").strip(),
+                    },
+                    headers=headers,
+                    timeout=9.0,
+                    follow_redirects=False,
+                )
+                if response.status_code == 200:
+                    data = response.json()
+                    for item in data.get("items", []):
+                        video_id = item.get("id", {}).get("videoId")
+                        snippet = item.get("snippet", {})
+                        if not video_id:
+                            continue
+                        results.append({
+                            "title": _clean_text(snippet.get("title") or "", 300),
+                            "url": f"https://www.youtube.com/watch?v={video_id}",
+                            "snippet": _clean_text(snippet.get("description") or "", 1200),
+                            "page_text": "",
+                            "page_fetched": False,
+                            "provider": "youtube_data_api",
+                            "provider_rank": len([
+                                row for row in results
+                                if row.get("provider") == "youtube_data_api"
+                            ]) + 1,
+                            "search_query": query,
+                            "published_at": _clean_text(snippet.get("publishedAt") or "", 100),
+                        })
+                else:
+                    warnings.append(f"YouTube Data API unavailable (HTTP {response.status_code})")
+            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                warnings.append("YouTube Data API unavailable for this request")
+        elif "youtube" in platforms:
+            warnings.append("YouTube direct API is not configured; indexed public YouTube pages are still searched.")
+
+        return results, warnings
 
     def _fetch_page(self, url: str) -> tuple[str, str]:
         """Fetch a public HTML page with strict size/time bounds; no redirects."""
