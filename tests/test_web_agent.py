@@ -282,3 +282,27 @@ def test_invalid_citations_are_removed_and_valid_ones_preserved():
     assert "[المصدر 1]" in answer
     assert "[المصدر 11]" not in answer
     assert len(warnings) == 1
+
+
+def test_user_supplied_url_is_prioritized_and_page_content_is_extracted(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(agent, "_search_web", lambda query: [])
+    monkeypatch.setattr(
+        agent,
+        "_fetch_page",
+        lambda url: ("User page title", "Full public page text supplied for analysis"),
+    )
+    sources, warnings, report = agent._collect_research({
+        "queries": ["لخص هذه الصفحة"],
+        "direct_urls": ["https://example.com/article"],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "deep",
+        "planning_method": "test",
+    })
+    assert warnings == []
+    assert len(sources) == 1
+    assert sources[0]["url"] == "https://example.com/article"
+    assert sources[0]["title"] == "User page title"
+    assert sources[0]["page_fetched"] is True
+    assert "user_supplied_url" in report["providers_used"]
