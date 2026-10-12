@@ -495,3 +495,94 @@ def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypat
     assert len([call for call in calls if call[0] == "POST"]) == 1
     assert any("oauth.reddit.com/search" in call[1] for call in calls if call[0] == "GET")
     assert "test-reddit-access-token" not in str(results)
+
+
+
+def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):
+    for name in (
+        "OMARAI_LLM_MODEL",
+        "OMARAI_PLANNER_MODEL",
+        "OMARAI_ANSWER_MODEL",
+        "OMARAI_REVIEW_MODEL",
+        "OMARAI_LLM_FALLBACK_MODEL",
+    ):
+        monkeypatch.delenv(name, raising=False)
+
+    agent = WebAgent()
+    assert agent.planner_model == "nvidia/nemotron-3-ultra-550b-a55b:free"
+    assert agent.answer_model == "google/gemma-4-31b-it:free"
+    assert agent.review_model == agent.answer_model
+    assert agent.fallback_model == "openrouter/free"
+
+
+def test_global_model_override_is_preserved_for_existing_users(monkeypatch):
+    monkeypatch.setenv("OMARAI_LLM_MODEL", "example/custom-model")
+    monkeypatch.delenv("OMARAI_PLANNER_MODEL", raising=False)
+    monkeypatch.delenv("OMARAI_ANSWER_MODEL", raising=False)
+    monkeypatch.delenv("OMARAI_REVIEW_MODEL", raising=False)
+
+    agent = WebAgent()
+    assert agent.planner_model == "example/custom-model"
+    assert agent.answer_model == "example/custom-model"
+    assert agent.review_model == "example/custom-model"
+
+
+def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
+    import io
+    import json
+    import urllib.error
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "openrouter/free"
+    called = []
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return json.dumps({
+                "choices": [{"message": {"content": "إجابة من النموذج الاحتياطي"}}]
+            }).encode("utf-8")
+
+    def fake_urlopen(request, timeout):
+        payload = json.loads(request.data.decode("utf-8"))
+        called.append(payload["model"])
+        if payload["model"] == "broken/primary":
+            raise urllib.error.HTTPError(
+                request.full_url,
+                503,
+                "service unavailable",
+                headers=None,
+                fp=io.BytesIO(b"private provider diagnostics"),
+            )
+        return FakeResponse()
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "اختبار"}],
+        model="broken/primary",
+    )
+
+    assert result == "إجابة من النموذج الاحتياطي"
+    assert called == ["broken/primary", "openrouter/free"]
+    assert agent.model_usage == [{
+        "requested_model": "broken/primary",
+        "used_model": "openrouter/free",
+        "fallback_used": "true",
+    }]
+
+
+def test_health_status_reports_models_without_credentials(monkeypatch):
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+    monkeypatch.delenv("OMARAI_LLM_API_KEY", raising=False)
+    status = WebAgent.status()
+    assert status["planner_model"] == "nvidia/nemotron-3-ultra-550b-a55b:free"
+    assert status["answer_model"] == "google/gemma-4-31b-it:free"
+    assert status["fallback_model"] == "openrouter/free"
+    assert status["language_model_configured"] is False
+    assert "api_key" not in status
