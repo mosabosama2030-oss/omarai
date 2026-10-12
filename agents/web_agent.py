@@ -193,7 +193,7 @@ class WebAgent:
                 "https://html.duckduckgo.com/html/",
                 params={"q": query},
                 headers=headers,
-                timeout=9.0,
+                timeout=7.0,
                 follow_redirects=False,
             )
             if response.status_code == 200:
@@ -547,7 +547,7 @@ class WebAgent:
         }
         try:
             with httpx.Client(
-                timeout=8.0, follow_redirects=False, headers=headers, verify=True
+                timeout=7.0, follow_redirects=False, headers=headers, verify=True
             ) as client, client.stream("GET", safe_url) as response:
                 if response.status_code < 200 or response.status_code >= 300:
                     return "", ""
@@ -868,7 +868,7 @@ class WebAgent:
         ]
         try:
             raw = self._request_completion(
-                messages, max_tokens=650, temperature=0.0, timeout=min(self.timeout, 18)
+                messages, max_tokens=650, temperature=0.0, timeout=min(self.timeout, 12)
             )
             start = raw.find("{")
             end = raw.rfind("}")
@@ -888,7 +888,7 @@ class WebAgent:
 
         # Add real platform-targeted searches alongside broad queries when social evidence matters.
         if plan["social_focus"]:
-            targets = plan["platforms"] or ["reddit", "youtube", "facebook"]
+            targets = plan["platforms"] or ["facebook", "instagram", "reddit"]
             base_query = fallback["queries"][0]
             query_list = list(plan["queries"])
             for platform in targets[:2]:
@@ -997,6 +997,7 @@ class WebAgent:
             messages,
             max_tokens=2200 if plan.get("depth") == "deep" else 1500,
             temperature=0.15,
+            timeout=min(self.timeout, 28),
         )
         return answer[:24_000]
 
@@ -1043,7 +1044,7 @@ class WebAgent:
             },
         ]
         return self._request_completion(
-            messages, max_tokens=1700, temperature=0.0, timeout=min(self.timeout, 16)
+            messages, max_tokens=1700, temperature=0.0, timeout=min(self.timeout, 12)
         )
 
     @staticmethod
