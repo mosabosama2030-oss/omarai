@@ -38,7 +38,7 @@ button,input,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1180px
       <div class="feature"><div class="icon">↗</div><div><b>مصادر قابلة للمراجعة</b><span>يعرض الروابط والمقتطفات، ولا يعتبر ظهور النتيجة وحده دليلًا قاطعًا.</span></div></div>
       <div class="feature"><div class="icon">◷</div><div><b>متابعة المحادثة</b><span>يحافظ على سياق الأسئلة الأخيرة داخل هذه الصفحة فقط.</span></div></div>
     </div>
-    <div class="sideblock"><h3>حالة الإعداد</h3><p id="setupStatus">جارٍ فحص محرك البحث والنموذج اللغوي...</p></div>
+    <div class="sideblock"><h3>حالة الإعداد</h3><p id="setupStatus">جارٍ فحص محرك البحث والنموذج اللغوي...</p><label style="display:flex;gap:8px;align-items:center;margin:10px 0;font-size:12px;color:#b9c9dc"><input id="diagSocial" type="checkbox"> اختبر المصادر الاجتماعية أيضًا (قد يستغرق وقتًا أطول)</label><button id="runDiagnostics" type="button" class="primary" style="width:100%">اختبار حي للبحث والنموذج</button><p id="diagnosticsResult" aria-live="polite" style="white-space:pre-line;font-size:12px;line-height:1.8;margin-top:10px"></p></div>
     <div class="sideblock"><h3>حدود واضحة</h3><p>لا يتجاوز تسجيل الدخول أو الحواجز المدفوعة، ولا يجمع بيانات خاصة أو يرسل رسائل تلقائية. جودة الإجابة تعتمد على خدمة النموذج وتوفّر نتائج البحث.</p></div>
   </aside>
 </main>
@@ -51,6 +51,30 @@ let busy=false;
 function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function answerMarkup(text){return escapeHtml(text).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\n/g,"<br>");}
 function setStatus(text,kind){$("status").innerHTML='<span class="dot '+(kind||"")+'"></span><span>'+escapeHtml(text)+'</span>';}
+async function runDiagnostics(){
+ const button=$("runDiagnostics"), output=$("diagnosticsResult");
+ if(button.disabled)return;
+ button.disabled=true;button.textContent="جارٍ الاختبار الحقيقي...";output.textContent="يتم إرسال طلب بحث فعلي. قد يستغرق ذلك بضع ثوانٍ.";
+ try{
+  const response=await fetch("/api/diagnostics",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({test_model:true,test_social:$("diagSocial").checked})});
+  const data=await response.json();
+  if(!response.ok)throw new Error(data.error||"فشل طلب التشخيص");
+  const labels={passed:"نجح",degraded:"جزئي/بلا نتائج كافية",failed:"فشل",skipped:"لم يُختبر",not_configured:"غير مضبوط"};
+  const checks=data.checks||{};
+  const lines=["الحالة العامة: "+(labels[data.overall_status]||data.overall_status)];
+  for(const [name,title] of [["web_search","بحث الويب"],["language_model","النموذج اللغوي"],["social_search","المصادر الاجتماعية"]]){
+   const item=checks[name];if(!item)continue;
+   lines.push(title+": "+(labels[item.status]||item.status)+(item.result_count!==undefined?" — النتائج: "+item.result_count:""));
+   if(item.provider_counts&&Object.keys(item.provider_counts).length)lines.push("  المصادر: "+Object.entries(item.provider_counts).map(([k,v])=>k+" ("+v+")").join("، "));
+   if(item.note)lines.push("  "+item.note);
+   if(item.warnings&&item.warnings.length)lines.push("  ملاحظات: "+item.warnings.join("؛ "));
+  }
+  if(data.model_usage&&data.model_usage.length)lines.push("النماذج الفعلية: "+data.model_usage.map(x=>x.requested_model===x.used_model?x.used_model:(x.requested_model+" ← احتياطي "+x.used_model)).join("، "));
+  if(data.elapsed_ms!==undefined)lines.push("المدة: "+(data.elapsed_ms/1000).toFixed(1)+" ثانية");
+  output.textContent=lines.join("\n");
+ }catch(error){output.textContent="تعذر إكمال فحص الاتصال: "+(error&&error.message?error.message:"خطأ غير معروف");}
+ finally{button.disabled=false;button.textContent="إعادة الاختبار الحي";}
+}
 async function checkHealth(){try{const r=await fetch("/api/health");const d=await r.json();const a=d.agent||{};const integrations=[];if(a.reddit_oauth_configured)integrations.push("Reddit OAuth");if(a.facebook_pages_api_configured)integrations.push("Facebook Pages");if(a.instagram_graph_api_configured)integrations.push("Instagram Graph");if(a.x_api_configured)integrations.push("X API");if(a.youtube_api_configured)integrations.push("YouTube API");const socialText=integrations.length?"الإعدادات المباشرة الموجودة: "+integrations.join("، ")+". (لم تُختبر أذونات كل منصة حتى أول طلب بحث.)":"لم تُضبط مفاتيح APIs الاجتماعية الاختيارية؛ سيستخدم البحث الصفحات العامة المفهرسة والمصادر العامة المتاحة.";const modelText="النماذج الحالية — التخطيط: "+(a.planner_model||"غير محدد")+"؛ الإجابة: "+(a.answer_model||"غير محدد")+"؛ المراجعة: "+(a.review_model||"غير محدد")+"؛ الاحتياطي: "+(a.fallback_model||"غير محدد")+". اختيرت نماذج ثابتة للأدوار لتقليل تفاوت النتائج. تنبيه خصوصية: السؤال ومقتطفات الصفحات المختارة تُرسل إلى مزود النموذج الخارجي. لا تدخل كلمات مرور أو مفاتيح أو بيانات عملاء شخصية أو معلومات سرية؛ بعض نقاط النهاية المجانية قد تسجل الطلبات للتحسين."if(a.web_search_ready&&a.language_model_configured){setStatus("البحث والنموذج جاهزان","ok");$("setupStatus").textContent="محركات البحث الأساسية وحزم استخراج الصفحات جاهزة. النموذج التوليدي مضبوط. "+modelText+" "+socialText;}else if(a.web_search_ready){setStatus("البحث جاهز · فعّل النموذج","warn");$("setupStatus").textContent="البحث جاهز. النموذج التوليدي غير مفعّل. اضبط OPENROUTER_API_KEY في Termux ثم أعد تشغيل Omarai. "+modelText+" "+socialText;}else{setStatus("تحقق من التثبيت","warn");$("setupStatus").textContent="بعض حزم البحث غير موجودة. نفّذ python -m pip install -e . ثم أعد تشغيل الخادم."}}catch(e){setStatus("تعذر فحص الاتصال","warn");$("setupStatus").textContent="تعذر الاتصال بخادم Omarai المحلي.";}}
 function sourceMarkup(s,index){
  const providerTags=(s.providers||[]).map(escapeHtml).join(" · ");
@@ -85,7 +109,7 @@ $("send").addEventListener("click",()=>ask());
 $("question").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();ask();}});
 $("clear").addEventListener("click",()=>{history.length=0;$("messages").innerHTML='<div class="welcome" id="welcome"><div class="spark">✳</div><h3>محادثة جديدة</h3><p>ابدأ بسؤال واضح، ثم تابع بأسئلة مرتبطة به. سأجمع مصادر متاحة وأوضح حدود ما أمكن التحقق منه.</p></div>';$("question").focus();});
 document.querySelectorAll(".suggestions button").forEach(b=>b.addEventListener("click",()=>ask(b.textContent)));
-checkHealth();
+$("runDiagnostics").addEventListener("click",runDiagnostics);checkHealth();
 </script>
 </body>
 </html>
