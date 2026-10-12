@@ -329,5 +329,7 @@ def fuse_ranked_results(
         entry["rank_score"] += min(len(entry["queries"]), 4) * 0.00015
         if entry["source_class"] in {"government", "academic"}:
             entry["rank_score"] += 0.0001
+        if "user_supplied_url" in entry["providers"]:
+            entry["rank_score"] += 0.05
     ranked = sorted(accumulated.values(), key=lambda item: item["rank_score"], reverse=True)
     return ranked[:max(1, min(int(limit), MAX_FUSED_RESULTS))]
