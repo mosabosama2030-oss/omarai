@@ -135,7 +135,7 @@ def test_api_rejects_invalid_filters_and_request_shapes(local_api):
         }
     )
     assert status == 400
-    assert "http://" in error["error"]
+    assert "absolute" in error["error"]
 
 
 def test_api_blocks_non_json_and_cross_origin_posts(local_api):
