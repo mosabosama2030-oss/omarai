@@ -116,7 +116,24 @@ class WebAgent:
         self.base_url = os.getenv(
             "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
         ).strip().rstrip("/")
-        self.model = os.getenv("OMARAI_LLM_MODEL", "openrouter/free").strip()
+        # Pin explicit role models for more consistent behaviour than a random free router.
+        # OMARAI_LLM_MODEL remains a global override for users who want one model everywhere.
+        global_model = os.getenv("OMARAI_LLM_MODEL", "").strip()
+        self.answer_model = os.getenv(
+            "OMARAI_ANSWER_MODEL", global_model or "google/gemma-4-31b-it:free"
+        ).strip()
+        self.planner_model = os.getenv(
+            "OMARAI_PLANNER_MODEL",
+            global_model or "nvidia/nemotron-3-ultra-550b-a55b:free",
+        ).strip()
+        self.review_model = os.getenv(
+            "OMARAI_REVIEW_MODEL", self.answer_model
+        ).strip()
+        self.fallback_model = os.getenv(
+            "OMARAI_LLM_FALLBACK_MODEL", "openrouter/free"
+        ).strip()
+        self.model = self.answer_model  # Backwards-compatible alias.
+        self.model_usage: list[dict[str, str]] = []
         self.timeout = max(
             5, min(int(os.getenv("OMARAI_LLM_TIMEOUT", str(LLM_TIMEOUT_SECONDS))), 60)
         )
@@ -138,7 +155,23 @@ class WebAgent:
             "language_model_provider": os.getenv(
                 "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
             ).strip().rstrip("/"),
-            "default_model": os.getenv("OMARAI_LLM_MODEL", "openrouter/free").strip(),
+            "default_model": os.getenv(
+                "OMARAI_LLM_MODEL",
+                os.getenv("OMARAI_ANSWER_MODEL", "google/gemma-4-31b-it:free"),
+            ).strip(),
+            "planner_model": os.getenv(
+                "OMARAI_PLANNER_MODEL",
+                os.getenv("OMARAI_LLM_MODEL", "nvidia/nemotron-3-ultra-550b-a55b:free"),
+            ).strip(),
+            "answer_model": os.getenv(
+                "OMARAI_ANSWER_MODEL",
+                os.getenv("OMARAI_LLM_MODEL", "google/gemma-4-31b-it:free"),
+            ).strip(),
+            "review_model": os.getenv(
+                "OMARAI_REVIEW_MODEL",
+                os.getenv("OMARAI_ANSWER_MODEL", os.getenv("OMARAI_LLM_MODEL", "google/gemma-4-31b-it:free")),
+            ).strip(),
+            "fallback_model": os.getenv("OMARAI_LLM_FALLBACK_MODEL", "openrouter/free").strip(),
             "search_providers": ["DuckDuckGo HTML", "Bing RSS", "Google News RSS for fresh queries"],
             "public_social_sources": [
                 "Reddit public RSS and optional authorized Reddit OAuth search",
