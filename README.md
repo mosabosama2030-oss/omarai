@@ -6,7 +6,7 @@ Omarai is a standalone, local-first assistant for organizing customer-interest s
 - Arabic-aware, explainable, rule-based intent analysis.
 - Local SQLite storage with source URL, platform, timestamp, evidence and manual status.
 - Duplicate prevention for the same normalized text and source.
-- Local HTTP API and mobile-friendly Arabic RTL dashboard.
+- Local HTTP API, mobile-friendly Arabic RTL dashboard, and rule-based Q&A over saved records.
 - CSV import/export and CLI.
 - Tests and GitHub Actions.
 
@@ -19,6 +19,8 @@ pkg install python
 python -m cli.omarai serve
 ```
 Open `http://127.0.0.1:8765` on the same phone. It binds to loopback by default; do not expose it to the public internet without authentication.
+
+Ask the local assistant about saved records, scoring rules, or the next signal to review. Answers use the local SQLite database and explicit rules; no message is sent.
 
 Analyze text:
 ```bash
