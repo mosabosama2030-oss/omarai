@@ -598,3 +598,50 @@ def test_health_status_exposes_external_model_privacy_notice_without_secrets(mon
     assert "personal/confidential customer data" in notice
     assert "api_key" not in status
     assert "OPENROUTER_API_KEY" not in str(status)
+
+
+
+def test_diagnostics_runs_real_search_and_can_skip_paid_or_rate_limited_model_calls(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(agent, "_search_web", lambda query: [
+        {"provider": "duckduckgo_html", "url": "https://example.com/a"},
+        {"provider": "bing_rss", "url": "https://example.com/b"},
+    ])
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("model should be skipped")),
+    )
+    report = agent.diagnostics(test_model=False, test_social=False)
+    assert report["checks"]["web_search"]["status"] == "passed"
+    assert report["checks"]["web_search"]["provider_counts"] == {
+        "duckduckgo_html": 1, "bing_rss": 1
+    }
+    assert report["checks"]["language_model"]["status"] == "skipped"
+    assert report["checks"]["social_search"]["status"] == "skipped"
+    assert report["elapsed_ms"] >= 0
+    assert "api_key" not in str(report)
+
+
+def test_diagnostics_calls_a_model_only_when_explicitly_requested(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(agent, "_search_web", lambda query: [
+        {"provider": "duckduckgo_html", "url": "https://example.com/a"}
+    ])
+    calls = []
+
+    def completion(*args, **kwargs):
+        calls.append(kwargs.get("model"))
+        agent.model_usage.append({
+            "requested_model": kwargs.get("model", ""),
+            "used_model": kwargs.get("model", ""),
+            "fallback_used": "false",
+        })
+        return "OK"
+
+    monkeypatch.setattr(agent, "_request_completion", completion)
+    report = agent.diagnostics(test_model=True, test_social=False)
+    assert report["checks"]["language_model"]["status"] == "passed"
+    assert calls == [agent.answer_model]
+    assert len(report["model_usage"]) == 1
