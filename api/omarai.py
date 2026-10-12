@@ -1,7 +1,12 @@
 """Loopback-only HTTP API for Omarai's web-research agent and lead workspace."""
 from __future__ import annotations
 
+import hmac
 import json
+import os
+import threading
+import time
+from collections import defaultdict, deque
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -16,6 +21,32 @@ LEADS_DASHBOARD = ROOT / "dashboard.html"
 
 class Handler(BaseHTTPRequestHandler):
     store = LeadStore()
+    _rate_lock = threading.Lock()
+    _request_times: dict[str, deque[float]] = defaultdict(deque)
+    RATE_LIMIT_REQUESTS = 20
+    RATE_LIMIT_WINDOW_SECONDS = 60
+
+    def _authorized(self):
+        expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
+        if not expected:
+            return os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1"
+        supplied = self.headers.get("Authorization", "")
+        if not supplied.startswith("Bearer "):
+            return False
+        return hmac.compare_digest(supplied[7:].strip(), expected)
+
+    def _rate_limit_ok(self):
+        forwarded = self.headers.get("X-Forwarded-For", "")
+        client_ip = forwarded.split(",", 1)[0].strip() if forwarded else self.client_address[0]
+        now = time.monotonic()
+        with self._rate_lock:
+            events = self._request_times[client_ip]
+            while events and now - events[0] >= self.RATE_LIMIT_WINDOW_SECONDS:
+                events.popleft()
+            if len(events) >= self.RATE_LIMIT_REQUESTS:
+                return False
+            events.append(now)
+            return True
 
     def respond(self, status, payload, content_type="application/json; charset=utf-8"):
         body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()
@@ -80,6 +111,12 @@ class Handler(BaseHTTPRequestHandler):
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
             path = urlparse(self.path).path
+
+            # Public deployments require the owner's private token and a request limit.
+            if path.startswith("/api/") and not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+            if path.startswith("/api/") and not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
 
             if path == "/api/diagnostics":
                 test_model = data.get("test_model", True)
@@ -188,9 +225,16 @@ def answer_question(question, store):
 
 
 def serve(host="127.0.0.1", port=8765):
+    public_deployment = os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1"
+    access_token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
     if host not in ("127.0.0.1", "localhost", "::1"):
-        raise ValueError("Omarai must bind to loopback unless authentication is added")
+        if not public_deployment or len(access_token) < 32:
+            raise ValueError(
+                "Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and "
+                "a private OMARAI_ACCESS_TOKEN of at least 32 characters."
+            )
     server = ThreadingHTTPServer((host, port), Handler)
+    server.daemon_threads = True
     print(f"Omarai running at http://{host}:{port} — Ctrl+C to stop")
     print("Web research agent: /   |   Lead workspace: /leads")
     try:
