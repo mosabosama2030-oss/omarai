@@ -4,18 +4,18 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 
 ## What this version does
 
-- Plans 2–5 search queries from a natural-language question with the configured language model, and uses a deterministic multi-query fallback when the model is unavailable.
+- Plans up to five search queries from a natural-language question with the configured language model, and uses a deterministic multi-query fallback when the model is unavailable.
 - Runs DuckDuckGo HTML and Bing RSS independently for every planned query; uses Google News RSS for queries judged time-sensitive.
 - Fuses duplicate results across queries and engines using reciprocal-rank fusion, preserving provider, query, domain, platform, publication-date and page-extraction provenance.
 - Extracts text from up to five accessible public pages per question with request-size and timeout bounds.
 - Searches public Reddit RSS and the Bluesky public search endpoint when social discussion is relevant. Searches indexed public pages on Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube through the general web engines.
-- Can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured.
+- Can use the official X recent-post endpoint when `X_BEARER_TOKEN` is configured and the account/API tier permits the request; can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured.
 - Generates an evidence-grounded answer in the user's language, showing source links, search query plan, provider coverage, direct page reads, platform mix and warnings.
 - Carries up to eight recent chat messages from the current browser session into follow-up questions.
 - Keeps the existing local SQLite lead workspace at `/leads`.
 - Binds to loopback by default; it is not a public production deployment.
 
-This is a tool-using research agent built around an existing language model, not a foundation model trained from scratch. Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: X and Meta/Instagram generally require authorized API access and permissions; YouTube direct API search requires a Google API key. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people.
+This is a tool-using research agent built around an existing language model, not a foundation model trained from scratch. Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: X API access requires an authorized bearer token and suitable API access; Meta/Instagram generally require authorized API access and permissions; YouTube direct API search requires a Google API key. Review each platform's terms, quotas and permitted use before using the agent commercially. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people.
 
 ## Run on Android / Termux
 
@@ -47,7 +47,7 @@ export OMARAI_LLM_BASE_URL="https://openrouter.ai/api/v1"
 export OMARAI_LLM_MODEL="openrouter/free"
 ```
 
-Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. For direct YouTube Data API search (optional), configure `YOUTUBE_API_KEY` in the Termux session before starting the server. Do not store keys in source files, HTML, commits or chat messages.
+Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. For optional direct X search, configure `X_BEARER_TOKEN`. For direct YouTube Data API search, configure `YOUTUBE_API_KEY` in the Termux session before starting the server. Do not store keys in source files, HTML, commits or chat messages.
 
 If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded.
 
@@ -69,7 +69,7 @@ Example request:
 }
 ```
 
-The response includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The report records planned and attempted queries, unique result count, pages read, providers, and platform breakdown. URL syntax is validated and resolved private/local addresses are rejected before page fetches; the fetcher does not follow redirects. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose.
+The response includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax is validated and resolved private/local addresses are rejected before page fetches; the fetcher does not follow redirects. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose.
 
 ## Existing lead workspace
 
