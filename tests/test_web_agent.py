@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from agents.web_agent import WebAgent, _history_search_query, _public_http_url
+from agents.web_agent import WebAgent, _public_http_url
 
 
 def sample_source():
@@ -68,7 +68,7 @@ def test_agent_rejects_empty_or_oversized_question():
 
 def test_history_search_query_expands_short_follow_up():
     history = [{"role": "user", "content": "قارن أسعار السيارات الكهربائية في مصر"}]
-    query = _history_search_query("والسعر؟", history)
+    query = WebAgent._history_search_query("والسعر؟", history)
     assert "السيارات الكهربائية" in query
     assert "والسعر؟" in query
 
