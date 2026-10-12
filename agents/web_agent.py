@@ -1040,8 +1040,31 @@ class WebAgent:
                     "المتاحة بدلًا من اختلاق إجابة."
                 )
             answer = _fallback_answer(sources, reason)
+
+        review_status = "not_run"
+        review_warning: str | None = None
+        if used_llm and plan.get("depth") == "deep" and sources:
+            try:
+                answer = self._review_answer(question, answer, sources)
+                review_status = "model_second_pass_completed"
+            except (RuntimeError, AgentDependencyError) as exc:
+                review_status = "model_second_pass_unavailable"
+                review_warning = (
+                    "تعذرت مراجعة الاتساق الإضافية؛ احتُفظ بالإجابة الأولى. "
+                    "هذه المراجعة إن اكتملت ليست تحققًا مستقلاً من الحقيقة."
+                )
+        answer, citation_warnings = self._remove_invalid_citations(
+            answer, min(10, len(sources))
+        )
+        report["second_pass_review"] = review_status
+        report["valid_citation_range"] = [1, min(10, len(sources))]
+        report["citation_count"] = len(re.findall(r"\\[المصدر\\s+\\d+\\]", answer))
+        report["citation_check"] = "invalid_references_removed" if citation_warnings else "no_invalid_reference_detected"
         warnings = list(dict.fromkeys(
-            search_warnings + ([llm_warning] if llm_warning else [])
+            search_warnings
+            + ([llm_warning] if llm_warning else [])
+            + ([review_warning] if review_warning else [])
+            + citation_warnings
         ))
         public_sources = []
         for source in sources:
