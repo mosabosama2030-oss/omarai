@@ -4,7 +4,7 @@ import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 from pathlib import Path
-from agents.omarai import LeadStore, analyze
+from agents.omarai import LeadStore, analyze, normalize
 
 DASHBOARD = Path(__file__).resolve().parents[1] / "web" / "dashboard.html"
 
@@ -20,7 +20,13 @@ class Handler(BaseHTTPRequestHandler):
             return self.respond(200,DASHBOARD.read_text(encoding="utf-8"),"text/html; charset=utf-8")
         if parsed.path=="/api/health": return self.respond(200,{"ok":True,"app":"Omarai","mode":"local"})
         if parsed.path=="/api/leads":
-            q=parse_qs(parsed.query); return self.respond(200,{"leads":self.store.list(q.get("status",[None])[0],int(q.get("limit",["100"])[0]))})
+            q=parse_qs(parsed.query)
+            try:
+                limit=max(1,min(int(q.get("limit",["100"])[0]),500))
+                leads=self.store.list(q.get("status",[None])[0],limit)
+            except (ValueError,TypeError):
+                return self.respond(400,{"error":"invalid status or limit"})
+            return self.respond(200,{"leads":leads,"count":len(leads)})
         return self.respond(404,{"error":"not found"})
     def do_POST(self):
         try:
