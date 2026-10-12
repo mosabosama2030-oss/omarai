@@ -1,9 +1,11 @@
 """Loopback-only HTTP API for Omarai; no external network calls."""
 from __future__ import annotations
+
 import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse, parse_qs
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
+
 from agents.omarai import LeadStore, analyze, normalize
 
 DASHBOARD = Path(__file__).resolve().parents[1] / "web" / "dashboard.html"
@@ -62,7 +64,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(200,{"lead":lead}) if lead else self.respond(404,{"error":"lead not found"})
             return self.respond(404,{"error":"not found"})
         except (ValueError,TypeError,json.JSONDecodeError) as exc: return self.respond(400,{"error":str(exc)})
-        except Exception: return self.respond(500,{"error":"internal server error"})
+        except Exception:  # noqa: BLE001 — hide unexpected details from the local API client
+            return self.respond(500,{"error":"internal server error"})
     def do_OPTIONS(self):
         return self.respond(405,{"error":"cross-origin requests are not supported"})
 
