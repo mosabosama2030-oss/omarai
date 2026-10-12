@@ -1125,7 +1125,7 @@ class WebAgent:
             try:
                 answer = self._review_answer(question, answer, sources)
                 review_status = "model_second_pass_completed"
-            except (RuntimeError, AgentDependencyError) as exc:
+            except (RuntimeError, AgentDependencyError):
                 review_status = "model_second_pass_unavailable"
                 review_warning = (
                     "تعذرت مراجعة الاتساق الإضافية؛ احتُفظ بالإجابة الأولى. "
