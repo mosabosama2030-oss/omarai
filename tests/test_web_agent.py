@@ -82,3 +82,46 @@ def test_public_url_filter_rejects_local_and_credential_urls():
 
 def test_public_url_filter_accepts_basic_https_url():
     assert _public_http_url("https://example.com/path#section") == "https://example.com/path"
+
+
+def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
+    import httpx
+
+    html = """
+    <html><body>
+      <div class="result">
+        <a class="result__a" href="https://example.com/first">صفحة أولى</a>
+        <a class="result__snippet">مقتطف أول</a>
+      </div>
+    </body></html>
+    """
+    rss = """
+    <rss><channel><item>
+      <title>صفحة ثانية</title>
+      <link>https://example.net/second</link>
+      <description>مقتطف ثاني</description>
+    </item></channel></rss>
+    """
+
+    class FakeResponse:
+        status_code = 200
+
+        def __init__(self, text):
+            self.text = text
+            self.content = text.encode("utf-8")
+
+    calls = []
+
+    def fake_get(url, **kwargs):
+        calls.append(url)
+        return FakeResponse(html if "duckduckgo.com" in url else rss)
+
+    monkeypatch.setattr(httpx, "get", fake_get)
+    results = WebAgent()._search_web("سؤال بحث تجريبي")
+
+    assert len(results) == 2
+    assert results[0]["title"] == "صفحة أولى"
+    assert results[0]["url"] == "https://example.com/first"
+    assert results[1]["title"] == "صفحة ثانية"
+    assert results[1]["url"] == "https://example.net/second"
+    assert len(calls) == 2
