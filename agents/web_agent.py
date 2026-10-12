@@ -113,7 +113,6 @@ class WebAgent:
     def status() -> dict[str, Any]:
         try:
             import bs4  # noqa: F401
-            import ddgs  # noqa: F401
             import httpx  # noqa: F401
             search_ready = True
         except ImportError:
@@ -130,39 +129,124 @@ class WebAgent:
             "default_model": os.getenv("OMARAI_LLM_MODEL", "openrouter/free").strip(),
         }
 
-    def _search_web(self, query: str) -> list[dict[str, Any]]:
+    @staticmethod
+    def _unwrap_search_url(value: str) -> str:
+        if value.startswith("//"):
+            value = "https:" + value
         try:
-            from ddgs import DDGS
+            parsed = urllib.parse.urlparse(value)
+            host = (parsed.hostname or "").lower()
+            if host.endswith("duckduckgo.com") and parsed.path.startswith("/l/"):
+                target = urllib.parse.parse_qs(parsed.query).get("uddg", [""])[0]
+                return urllib.parse.unquote(target) if target else ""
+        except (ValueError, TypeError):
+            return ""
+        return value
+
+    def _search_web(self, query: str) -> list[dict[str, Any]]:
+        """Search via public HTML/RSS endpoints; avoid native Android-incompatible transports."""
+        try:
+            import httpx
+            from bs4 import BeautifulSoup
+            import xml.etree.ElementTree as ET
         except ImportError as exc:
             raise AgentDependencyError(
-                "حزمة البحث غير مثبتة. نفّذ: python -m pip install -e ."
+                "حزم البحث غير مثبتة. نفّذ: python -m pip install -e ."
             ) from exc
+
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36"
+            ),
+            "Accept-Language": "ar,en;q=0.9",
+        }
+        rows: list[dict[str, str]] = []
+        failures: list[str] = []
+
+        # DuckDuckGo's lightweight HTML search endpoint.
         try:
-            results = DDGS(timeout=10).text(query, max_results=MAX_SEARCH_RESULTS)
-        except Exception as exc:  # network/search providers fail independently
-            raise RuntimeError("تعذر الوصول إلى محرك البحث الآن.") from exc
+            response = httpx.get(
+                "https://html.duckduckgo.com/html/",
+                params={"q": query},
+                headers=headers,
+                timeout=10.0,
+                follow_redirects=False,
+            )
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                for card in soup.select("div.result"):
+                    link = card.select_one("a.result__a")
+                    if not link:
+                        continue
+                    href = self._unwrap_search_url(str(link.get("href", "")))
+                    snippet_node = card.select_one(".result__snippet")
+                    rows.append({
+                        "title": _clean_text(link.get_text(" ", strip=True), 300),
+                        "url": href,
+                        "snippet": _clean_text(
+                            snippet_node.get_text(" ", strip=True) if snippet_node else "",
+                            1200,
+                        ),
+                    })
+                    if len(rows) >= MAX_SEARCH_RESULTS:
+                        break
+            else:
+                failures.append(f"DuckDuckGo HTTP {response.status_code}")
+        except (httpx.HTTPError, OSError, ValueError) as exc:
+            failures.append(f"DuckDuckGo: {type(exc).__name__}")
+
+        # Bing's RSS response is a second public provider if DDG is blocked or empty.
+        if len(rows) < MAX_SEARCH_RESULTS:
+            try:
+                response = httpx.get(
+                    "https://www.bing.com/search",
+                    params={"format": "rss", "q": query},
+                    headers=headers,
+                    timeout=10.0,
+                    follow_redirects=False,
+                )
+                if response.status_code == 200:
+                    root = ET.fromstring(response.content)
+                    for item in root.iter():
+                        if item.tag.rsplit("}", 1)[-1] != "item":
+                            continue
+                        fields = {
+                            child.tag.rsplit("}", 1)[-1]: (child.text or "")
+                            for child in item
+                        }
+                        rows.append({
+                            "title": _clean_text(fields.get("title", ""), 300),
+                            "url": fields.get("link", ""),
+                            "snippet": _clean_text(fields.get("description", ""), 1200),
+                        })
+                        if len(rows) >= MAX_SEARCH_RESULTS:
+                            break
+                else:
+                    failures.append(f"Bing HTTP {response.status_code}")
+            except (httpx.HTTPError, OSError, ValueError, ET.ParseError) as exc:
+                failures.append(f"Bing: {type(exc).__name__}")
+
         normalized: list[dict[str, Any]] = []
         seen: set[str] = set()
-        for row in results or []:
-            if not isinstance(row, dict):
-                continue
-            url = _public_http_url(row.get("href") or row.get("url"))
+        for row in rows:
+            url = _public_http_url(row.get("url"))
             if not url or url in seen:
                 continue
             seen.add(url)
-            normalized.append(
-                {
-                    "title": _clean_text(row.get("title") or "نتيجة ويب", 300),
-                    "url": url,
-                    "snippet": _clean_text(
-                        row.get("body") or row.get("snippet") or "", 1200
-                    ),
-                    "page_text": "",
-                    "page_fetched": False,
-                }
-            )
+            normalized.append({
+                "title": _clean_text(row.get("title") or "نتيجة ويب", 300),
+                "url": url,
+                "snippet": _clean_text(row.get("snippet") or "", 1200),
+                "page_text": "",
+                "page_fetched": False,
+            })
             if len(normalized) >= MAX_SEARCH_RESULTS:
                 break
+        if not normalized and failures:
+            raise RuntimeError(
+                "تعذر الوصول إلى محركات البحث العامة (DuckDuckGo/Bing) الآن."
+            )
         return normalized
 
     def _fetch_page(self, url: str) -> tuple[str, str]:
