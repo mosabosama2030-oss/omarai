@@ -74,7 +74,7 @@ class LeadStore:
         db = sqlite3.connect(self.path, timeout=10)
         db.row_factory = sqlite3.Row
         return db
-    def add(self, text: str, source_url: str, platform: str="manual", observed_at: str | None=None, note: str=""):
+    def add(self, text: str, source_url: str, platform: str="manual", observed_at: str | None=None, note: str="", product_terms=(), location_terms=()):
         if not isinstance(text, str) or not text.strip():
             raise ValueError("text is required")
         if len(text) > MAX_TEXT:
@@ -84,7 +84,7 @@ class LeadStore:
         fingerprint = hashlib.sha256((url.rstrip("/") + "\n" + normalized).encode()).hexdigest()
         lead_id = fingerprint[:24]
         timestamp = observed_at or now_utc()
-        assessment = analyze(text)
+        assessment = analyze(text, product_terms=product_terms, location_terms=location_terms)
         now = now_utc()
         with self.connect() as db:
             cursor = db.execute("""INSERT OR IGNORE INTO leads
