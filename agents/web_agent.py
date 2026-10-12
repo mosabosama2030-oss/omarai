@@ -141,11 +141,21 @@ class WebAgent:
             "default_model": os.getenv("OMARAI_LLM_MODEL", "openrouter/free").strip(),
             "search_providers": ["DuckDuckGo HTML", "Bing RSS", "Google News RSS for fresh queries"],
             "public_social_sources": [
-                "Reddit public RSS",
+                "Reddit public RSS and optional authorized Reddit OAuth search",
                 "Bluesky public search",
                 "indexed public pages from Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube",
+                "official Instagram public hashtag media when an authorized Graph API token is configured",
+                "configured Facebook Pages when a valid authorized page token is configured",
                 "official X recent-post API when X_BEARER_TOKEN is configured",
             ],
+            "reddit_oauth_configured": bool(
+                os.getenv("REDDIT_CLIENT_ID", "").strip()
+                and os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+            ),
+            "facebook_pages_api_configured": bool(
+                os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+            ),
             "x_api_configured": bool(os.getenv("X_BEARER_TOKEN", "").strip()),
             "instagram_graph_api_configured": bool(
                 os.getenv("INSTAGRAM_USER_ID", "").strip()
@@ -517,6 +527,90 @@ class WebAgent:
             except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
                 warnings.append("Bluesky public search unavailable for this request")
 
+        if "facebook" in platforms:
+            fb_token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+            page_ids = [
+                value.strip()
+                for value in os.getenv("FACEBOOK_PAGE_IDS", "").split(",")
+                if value.strip()
+            ][:5]
+            graph_version = os.getenv("META_GRAPH_VERSION", "v25.0").strip()
+            if fb_token and page_ids:
+                # Scope direct reading to page IDs supplied by the operator and the
+                # permissions granted to this token. This is not global Facebook search.
+                query_terms = {
+                    word.casefold()
+                    for word in re.findall(r"[\w\u0600-\u06FF]+", query, flags=re.UNICODE)
+                    if len(word) >= 3
+                }
+                for page_id in page_ids:
+                    try:
+                        response = httpx.get(
+                            f"https://graph.facebook.com/{graph_version}/{page_id}/posts",
+                            params={
+                                "fields": (
+                                    "message,permalink_url,created_time,"
+                                    "comments.limit(10){message,created_time,like_count}"
+                                ),
+                                "limit": 10,
+                            },
+                            headers={
+                                **headers,
+                                "Authorization": "Bearer " + fb_token,
+                            },
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if response.status_code != 200:
+                            warnings.append(
+                                "Facebook Pages API unavailable for one configured page "
+                                f"(HTTP {response.status_code}); verify page ownership, token and permissions."
+                            )
+                            continue
+                        posts = response.json().get("data", [])
+                        rank = 0
+                        for post in posts:
+                            message = _clean_text(post.get("message") or "", 1400)
+                            comments = post.get("comments", {}).get("data", [])
+                            comment_text = [
+                                _clean_text(item.get("message") or "", 500)
+                                for item in comments
+                                if isinstance(item, dict) and item.get("message")
+                            ]
+                            searchable = (message + " " + " ".join(comment_text)).casefold()
+                            matched = sum(term in searchable for term in query_terms)
+                            if query_terms and matched == 0:
+                                continue
+                            permalink = _public_http_url(post.get("permalink_url", ""))
+                            if not permalink:
+                                continue
+                            rank += 1
+                            excerpt = message
+                            if comment_text:
+                                excerpt = (
+                                    excerpt + "\n\nتعليقات عامة على المنشور:\n"
+                                    if excerpt else "تعليقات عامة على المنشور:\n"
+                                ) + "\n— ".join(comment_text)
+                            results.append({
+                                "title": _clean_text(message or "Facebook public Page post", 300),
+                                "url": permalink,
+                                "snippet": _clean_text(excerpt, 1800),
+                                "page_text": "",
+                                "page_fetched": False,
+                                "provider": "facebook_pages_api",
+                                "provider_rank": rank,
+                                "search_query": query,
+                                "published_at": _clean_text(post.get("created_time") or "", 100),
+                            })
+                            if rank >= 10:
+                                break
+                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                        warnings.append("Facebook Pages API failed for one configured page.")
+            else:
+                warnings.append(
+                    "Facebook direct API is not configured for specific pages; indexed public Facebook pages are still searched."
+                )
+
         if "instagram" in platforms:
             ig_user_id = os.getenv("INSTAGRAM_USER_ID", "").strip()
             ig_token = os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
@@ -541,7 +635,7 @@ class WebAgent:
                         hashtags = ["_".join(useful[:3])]
                 # Meta limits unique hashtag searches over a rolling week; keep this
                 # connector conservative and use no more than two tags per user request.
-                for hashtag in list(dict.fromkeys(hashtags))[:2]:
+                for hashtag in list(dict.fromkeys(hashtags))[:1]:
                     try:
                         search_response = httpx.get(
                             f"https://graph.facebook.com/{graph_version}/ig_hashtag_search",
@@ -853,7 +947,7 @@ class WebAgent:
         # public pages. No login, private profile, session cookie or anti-bot bypass.
         social_results: list[dict[str, Any]] = []
         if plan.get("social_focus"):
-            platforms = plan.get("platforms") or ["reddit", "bluesky"]
+            platforms = plan.get("platforms") or ["reddit", "bluesky", "instagram"]
             social_results, social_warnings = self._search_social(queries[0], platforms)
             warnings.extend(social_warnings)
             social_groups: dict[str, list[dict[str, Any]]] = {}
