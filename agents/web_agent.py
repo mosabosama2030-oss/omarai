@@ -7,6 +7,7 @@ API credentials are read only from environment variables and are never returned.
 from __future__ import annotations
 
 import ipaddress
+import datetime as dt
 import json
 import os
 import re
@@ -1095,6 +1096,64 @@ class WebAgent:
                     items.sort(key=lambda item: int(item.get("provider_rank", 999)))
                     batches.append({"query": query, "provider": provider, "results": items})
 
+        # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches
+        # when initial coverage is thin. This uses observed source/domain/provider coverage,
+        # not the language model's subjective claim that it has enough evidence.
+        preliminary = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)
+        preliminary_domains = {str(item.get("domain") or "") for item in preliminary if item.get("domain")}
+        preliminary_providers = {
+            provider for item in preliminary for provider in item.get("providers", [])
+        }
+        needs_expansion = (
+            plan.get("depth") == "deep"
+            and (len(preliminary) < 8 or len(preliminary_domains) < 5 or len(preliminary_providers) < 2)
+        )
+        expansion_queries: list[str] = []
+        if needs_expansion and len(queries) < MAX_PLAN_QUERIES and queries:
+            base_query = queries[0]
+            candidates = [
+                f"{base_query} official sources data reports",
+                f"{base_query} limitations risks criticism alternatives",
+                f"{base_query} recent developments case studies analysis",
+            ]
+            existing = {item.casefold() for item in queries}
+            expansion_queries = [
+                item[:500] for item in candidates
+                if item.casefold() not in existing
+            ][:max(0, MAX_PLAN_QUERIES - len(queries))]
+            if expansion_queries:
+                with ThreadPoolExecutor(
+                    max_workers=min(MAX_RESEARCH_WORKERS, len(expansion_queries))
+                ) as pool:
+                    futures = {
+                        pool.submit(self._search_web, query): query
+                        for query in expansion_queries
+                    }
+                    for future in as_completed(futures):
+                        query = futures[future]
+                        search_started_queries += 1
+                        try:
+                            results = future.result()
+                        except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                            warnings.append(
+                                f"تعذر بحث زاوية إضافية «{query[:70]}»: {exc}"
+                            )
+                            query_counts.append({"query": query, "results": 0})
+                            continue
+                        query_counts.append({"query": query, "results": len(results)})
+                        grouped: dict[str, list[dict[str, Any]]] = {}
+                        for source in results:
+                            grouped.setdefault(
+                                str(source.get("provider") or "web_search"), []
+                            ).append(source)
+                        for provider, items in grouped.items():
+                            items.sort(key=lambda item: int(item.get("provider_rank", 999)))
+                            batches.append({
+                                "query": query, "provider": provider, "results": items
+                            })
+                queries.extend(expansion_queries)
+                plan["queries"] = list(queries)
+
         # Current-events questions receive a separate news index in addition to general web.
         if plan.get("freshness") == "current":
             try:
@@ -1217,8 +1276,14 @@ class WebAgent:
             "unique_sources": len(sources),
             "pages_fetched": fetched_count,
             "providers_used": providers,
+            "provider_counts": {
+                provider: sum(provider in source.get("providers", []) for source in sources)
+                for provider in providers
+            },
             "platform_counts": platform_counts,
             "social_direct_results": len(social_results),
+            "expansion_queries": expansion_queries,
+            "evidence_signals": evidence_signal_report(sources, plan.get("freshness", "any")),
             "depth": plan.get("depth", "standard"),
             "planning_method": plan.get("planning_method", "deterministic_fallback"),
         }
@@ -1417,7 +1482,7 @@ class WebAgent:
         plan = research_plan or {}
         report = search_report or {}
         source_blocks: list[str] = []
-        for index, source in enumerate(sources[:10], 1):
+        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):
             evidence = (
                 source.get("page_text")
                 or source.get("snippet")
@@ -1455,6 +1520,7 @@ class WebAgent:
                     "pages_fetched": report.get("pages_fetched", 0),
                     "providers_used": report.get("providers_used", []),
                     "platform_counts": report.get("platform_counts", {}),
+                    "evidence_signals": report.get("evidence_signals", {}),
                 },
                 "warnings": search_warning or "",
             },
@@ -1510,7 +1576,7 @@ class WebAgent:
     ) -> str:
         """Run a bounded evidence audit on deep-research answers; not an independent verifier."""
         source_blocks: list[str] = []
-        for index, source in enumerate(sources[:10], 1):
+        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):
             evidence = _clean_text(
                 source.get("page_text") or source.get("snippet") or "", 1400
             )
@@ -1714,14 +1780,55 @@ class WebAgent:
         )
         return report
 
-    def answer(self, question: str, history: Any = None) -> dict[str, Any]:
+    def answer(
+        self, question: str, history: Any = None, mode: str = "auto"
+    ) -> dict[str, Any]:
         if not isinstance(question, str) or not question.strip():
             raise ValueError("اكتب سؤالًا غير فارغ.")
         question = question.strip()
         if len(question) > MAX_QUESTION_CHARS:
             raise ValueError(f"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.")
         clean_history = self._sanitize_history(history)
+        clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
+        if clean_mode not in {"auto", "deep", "latest", "social"}:
+            raise ValueError("نمط البحث غير مدعوم. اختر auto أو deep أو latest أو social.")
         plan = self._plan_search(question, clean_history)
+        plan["mode"] = clean_mode
+        base_query = (plan.get("queries") or [question])[0]
+        # Explicit user-selected modes are control inputs. They do not bypass source
+        # validation and never permit private-source access.
+        if clean_mode == "deep":
+            plan["depth"] = "deep"
+            candidates = [
+                f"{base_query} official sources data reports",
+                f"{base_query} risks limitations alternatives",
+                f"{base_query} case studies recent analysis",
+            ]
+            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:5] + candidates))[
+                :MAX_PLAN_QUERIES
+            ]
+        elif clean_mode == "latest":
+            plan["freshness"] = "current"
+            candidates = [
+                f"{base_query} latest news updates {dt.datetime.now().year}",
+                f"{base_query} recent official announcement",
+            ]
+            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:6] + candidates))[
+                :MAX_PLAN_QUERIES
+            ]
+        elif clean_mode == "social":
+            plan["social_focus"] = True
+            if not plan.get("platforms"):
+                plan["platforms"] = ["reddit", "bluesky", "youtube"]
+            from agents.research import SOCIAL_DOMAINS
+            candidates = [
+                f"site:{SOCIAL_DOMAINS[name]} {base_query}"
+                for name in plan["platforms"][:3]
+                if name in SOCIAL_DOMAINS
+            ]
+            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:5] + candidates))[
+                :MAX_PLAN_QUERIES
+            ]
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
         report: dict[str, Any] = {}
@@ -1739,6 +1846,7 @@ class WebAgent:
                 "social_direct_results": 0,
                 "depth": plan.get("depth", "standard"),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
+                "evidence_signals": evidence_signal_report([], plan.get("freshness", "any")),
             }
         search_warning = "؛ ".join(search_warnings) if search_warnings else None
         if not sources and not search_warning:
@@ -1775,7 +1883,7 @@ class WebAgent:
         review_warning: str | None = None
         if used_llm and plan.get("depth") == "deep" and sources:
             try:
-                answer = self._review_answer(question, answer, sources)
+                answer = self._review_answer(question, answer, sources[:MAX_LLM_CITED_SOURCES])
                 review_status = "model_second_pass_completed"
             except (RuntimeError, AgentDependencyError):
                 review_status = "model_second_pass_unavailable"
@@ -1784,10 +1892,10 @@ class WebAgent:
                     "هذه المراجعة إن اكتملت ليست تحققًا مستقلاً من الحقيقة."
                 )
         answer, citation_warnings = self._remove_invalid_citations(
-            answer, min(10, len(sources))
+            answer, min(MAX_LLM_CITED_SOURCES, len(sources))
         )
         report["second_pass_review"] = review_status
-        report["valid_citation_range"] = [1, min(10, len(sources))]
+        report["valid_citation_range"] = [1, min(MAX_LLM_CITED_SOURCES, len(sources))]
         report["citation_count"] = len(re.findall(r"\[المصدر\s+\d+\]", answer))
         report["citation_check"] = "invalid_references_removed" if citation_warnings else "no_invalid_reference_detected"
         warnings = list(dict.fromkeys(
@@ -1822,6 +1930,7 @@ class WebAgent:
                 "freshness": plan.get("freshness", "any"),
                 "social_focus": bool(plan.get("social_focus")),
                 "platforms": plan.get("platforms", []),
+                "mode": clean_mode,
                 "direct_urls_provided": len(plan.get("direct_urls", [])),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
             },
