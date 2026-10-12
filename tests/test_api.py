@@ -239,3 +239,47 @@ def test_diagnostics_endpoint_requires_boolean_options(local_api):
     )
     assert status == 400
     assert "booleans" in error["error"]
+
+
+
+def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "x" * 48)
+
+    status, error = request_json(
+        local_api, "/api/analyze", method="POST", payload={"text": "test"}
+    )
+    assert status == 401
+    assert "رمز الوصول" in error["error"]
+
+    status, error = request_json(local_api, "/api/leads")
+    assert status == 401
+
+    headers = {"Authorization": "Bearer " + "x" * 48}
+    status, result = request_json(
+        local_api, "/api/analyze", method="POST", payload={"text": "بدور على شقة"}, headers=headers
+    )
+    assert status == 200
+    assert "score" in result
+
+    status, result = request_json(local_api, "/api/leads", headers=headers)
+    assert status == 200
+    assert result["count"] == 0
+
+
+def test_hosted_api_rate_limits_authenticated_requests(local_api, monkeypatch):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "y" * 48)
+    monkeypatch.setattr(Handler, "RATE_LIMIT_REQUESTS", 1)
+    headers = {"Authorization": "Bearer " + "y" * 48}
+
+    status, _ = request_json(
+        local_api, "/api/analyze", method="POST", payload={"text": "first"}, headers=headers
+    )
+    assert status == 200
+
+    status, error = request_json(
+        local_api, "/api/analyze", method="POST", payload={"text": "second"}, headers=headers
+    )
+    assert status == 429
+    assert "حد الطلبات" in error["error"]
