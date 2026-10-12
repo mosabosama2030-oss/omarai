@@ -56,6 +56,19 @@ _DEEP_TERMS = (
 )
 
 
+def extract_urls(text: str) -> list[str]:
+    """Extract explicit HTTP(S) URLs without trying to interpret their content as instructions."""
+    candidates = re.findall(r"https?://[^\s<>()]+", text or "", flags=re.IGNORECASE)
+    cleaned: list[str] = []
+    for value in candidates:
+        url = value.rstrip(".,;!?،؛:)\"'»")
+        if url and url not in cleaned:
+            cleaned.append(url[:2048])
+        if len(cleaned) >= 5:
+            break
+    return cleaned
+
+
 def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
     if not isinstance(value, str):
         return ""
@@ -121,7 +134,11 @@ def fallback_plan(
     question: str, history: list[dict[str, str]] | None = None
 ) -> dict[str, Any]:
     """Build a small but varied plan when no model planner is configured or parsing fails."""
-    base = _followup_query(question, history)
+    contextual_question = _followup_query(question, history)
+    direct_urls = extract_urls(question)
+    base = _compact(re.sub(r"https?://[^\\s<>()]+", " ", contextual_question), 500)
+    if not base:
+        base = "اقرأ محتوى الصفحة" if re.search(r"[\\u0600-\\u06FF]", question) else "read the linked page"
     social_focus = detect_social_focus(question, history)
     fresh = detect_freshness(question)
     deep = detect_depth(question)
@@ -159,6 +176,7 @@ def fallback_plan(
 
     return {
         "queries": unique or [base],
+        "direct_urls": direct_urls,
         "social_focus": social_focus,
         "freshness": "current" if fresh else "any",
         "depth": deep,
@@ -198,6 +216,7 @@ def validate_plan(
     safe_platforms = [p for p in platforms if isinstance(p, str) and p in SOCIAL_DOMAINS]
     return {
         "queries": queries,
+        "direct_urls": fallback["direct_urls"],
         "social_focus": bool(candidate.get("social_focus", base["social_focus"])),
         "freshness": "current" if candidate.get("freshness") == "current" else base["freshness"],
         "depth": "deep" if candidate.get("depth") == "deep" else base["depth"],
