@@ -1,6 +1,7 @@
 """Command-line interface for Omarai."""
 import argparse
 import json
+
 from agents.omarai import LeadStore, analyze
 from api.omarai import serve
 
