@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "omarai-agent"
 version = "0.2.0"
@@ -20,3 +24,7 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[tool.setuptools.packages.find]
+include = ["agents*", "api*", "cli*"]
+exclude = ["tests*", "web*"]
