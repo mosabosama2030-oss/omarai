@@ -146,9 +146,10 @@ class WebAgent:
     def _search_web(self, query: str) -> list[dict[str, Any]]:
         """Search via public HTML/RSS endpoints; avoid native Android-incompatible transports."""
         try:
+            import xml.etree.ElementTree as ET
+
             import httpx
             from bs4 import BeautifulSoup
-            import xml.etree.ElementTree as ET
         except ImportError as exc:
             raise AgentDependencyError(
                 "حزم البحث غير مثبتة. نفّذ: python -m pip install -e ."
