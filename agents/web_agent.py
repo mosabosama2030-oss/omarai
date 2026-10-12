@@ -349,7 +349,90 @@ class WebAgent:
             "Accept-Language": "ar,en;q=0.9",
         }
 
-        if "reddit" in platforms:
+        reddit_client_id = os.getenv("REDDIT_CLIENT_ID", "").strip()
+        reddit_client_secret = os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+        reddit_user_agent = os.getenv(
+            "REDDIT_USER_AGENT",
+            "web:omarai-research-agent:v0.3 (public-content research)",
+        ).strip()
+        if "reddit" in platforms and reddit_client_id and reddit_client_secret:
+            try:
+                token_response = httpx.post(
+                    "https://www.reddit.com/api/v1/access_token",
+                    data={"grant_type": "client_credentials"},
+                    auth=(reddit_client_id, reddit_client_secret),
+                    headers={"User-Agent": reddit_user_agent},
+                    timeout=9.0,
+                    follow_redirects=False,
+                )
+                if token_response.status_code == 200:
+                    access_token = token_response.json().get("access_token", "")
+                    if access_token:
+                        search_response = httpx.get(
+                            "https://oauth.reddit.com/search",
+                            params={
+                                "q": query,
+                                "sort": "relevance",
+                                "t": "all",
+                                "limit": 10,
+                                "type": "link",
+                            },
+                            headers={
+                                **headers,
+                                "User-Agent": reddit_user_agent,
+                                "Authorization": "Bearer " + access_token,
+                            },
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if search_response.status_code == 200:
+                            children = search_response.json().get("data", {}).get("children", [])
+                            rank = 0
+                            for child in children:
+                                post = child.get("data", {}) if isinstance(child, dict) else {}
+                                permalink = str(post.get("permalink") or "")
+                                url = _public_http_url(
+                                    permalink if permalink.startswith("http")
+                                    else "https://www.reddit.com" + permalink
+                                )
+                                if not url:
+                                    continue
+                                rank += 1
+                                snippet = _clean_text(post.get("selftext") or "", 1000)
+                                metrics = []
+                                if post.get("score") is not None:
+                                    metrics.append("score=" + str(post["score"]))
+                                if post.get("num_comments") is not None:
+                                    metrics.append("comments=" + str(post["num_comments"]))
+                                if metrics:
+                                    snippet = (snippet + " | " if snippet else "") + ", ".join(metrics)
+                                results.append({
+                                    "title": _clean_text(post.get("title") or "Reddit post", 300),
+                                    "url": url,
+                                    "snippet": snippet,
+                                    "page_text": "",
+                                    "page_fetched": False,
+                                    "provider": "reddit_oauth_api",
+                                    "provider_rank": rank,
+                                    "search_query": query,
+                                    "published_at": _clean_text(str(post.get("created_utc") or ""), 100),
+                                })
+                        else:
+                            warnings.append(
+                                f"Reddit OAuth search unavailable (HTTP {search_response.status_code})."
+                            )
+                    else:
+                        warnings.append("Reddit OAuth did not return an access token.")
+                else:
+                    warnings.append(
+                        f"Reddit OAuth authentication unavailable (HTTP {token_response.status_code})."
+                    )
+            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                warnings.append("Reddit OAuth search failed for this request.")
+
+        if "reddit" in platforms and not any(
+            row.get("provider") == "reddit_oauth_api" for row in results
+        ):
             try:
                 response = httpx.get(
                     "https://www.reddit.com/search.rss",
