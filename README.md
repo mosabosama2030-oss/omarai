@@ -4,17 +4,17 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 
 ## What this version does
 
-- Plans up to five search queries from a natural-language question with a dedicated reasoning/planning model, and uses a deterministic multi-query fallback when the model is unavailable.
+- Plans up to eight search queries from a natural-language question with a dedicated reasoning/planning model, and uses a deterministic multi-query fallback when the model is unavailable.
 - Uses separate model roles by default: NVIDIA Nemotron 3 Ultra (free) for query planning and Google Gemma 4 31B Instruct (free) for answer synthesis and the second-pass consistency review; retries with OpenRouter's free-model router if a chosen model fails.
-- Runs DuckDuckGo HTML and Bing RSS independently for every planned query; uses Google News RSS for queries judged time-sensitive.
+- Runs DuckDuckGo HTML and Bing RSS independently for every planned query; can add official Brave Search API and Tavily Search API result indexes when their environment keys are configured; uses Google News RSS for queries judged time-sensitive.
 - Fuses duplicate results across queries and engines using reciprocal-rank fusion, preserving provider, query, domain, platform, publication-date and page-extraction provenance.
-- Extracts text from up to five accessible public pages per question with request-size and timeout bounds.
+- Extracts text from up to eight accessible public pages per question with request-size and timeout bounds, following at most three individually validated public redirects.
 - Searches public Reddit RSS and the Bluesky public search endpoint when social discussion is relevant; can use Reddit's OAuth API when `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` are provided.
 - Searches indexed public pages on Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube through the general web engines.
 - Can use the official Meta Graph API to read posts and a small sample of public comments from explicitly configured Facebook Pages when the token has suitable permissions.
 - Can use Instagram Graph API hashtag search to read public hashtag media when `INSTAGRAM_USER_ID` and `INSTAGRAM_ACCESS_TOKEN` have the required permissions. It is not a global Instagram search and has platform quotas.
 - Can use the official X recent-post endpoint when `X_BEARER_TOKEN` is configured and the account/API tier permits the request; can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured.
-- Generates an evidence-grounded answer in the user's language, showing source links, search query plan, provider coverage, direct page reads, platform mix and warnings.
+- Generates an evidence-grounded answer in the user's language, showing source links, query plan, provider coverage, direct page reads, platform mix, source/domain diversity, date coverage, and evidence-coverage warnings. Coverage indicators describe breadth and inspectability; they are not probabilities that the answer is true.
 - Carries up to eight recent chat messages from the current browser session into follow-up questions.
 - Keeps the existing local SQLite lead workspace at `/leads`.
 - Binds to loopback by default; it is not a public production deployment.
@@ -43,6 +43,14 @@ Keep this Termux session running and open **http://127.0.0.1:8765** in the phone
 The key is held in the current shell environment and is not written into the repository. Enter it again in a new Termux session. Never commit API keys or paste them into public issues or chat.
 
 ### Optional configuration
+
+For additional live web-search indexes, configure either official search API. These keys are optional: the built-in public engines are still attempted, and each API may have its own account, quota, rate limit or cost. Do not assume an API is free or that a configured key is valid until you run the live diagnostics.
+
+```bash
+read -r -s -p "Brave Search API key: " BRAVE_SEARCH_API_KEY; printf '\\n'; export BRAVE_SEARCH_API_KEY
+read -r -s -p "Tavily API key: " TAVILY_API_KEY; printf '\\n'; export TAVILY_API_KEY
+```
+
 
 For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:
 
@@ -76,7 +84,7 @@ Example request:
 }
 ```
 
-The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The web UI includes a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax is validated and resolved private/local addresses are rejected before page fetches; the fetcher does not follow redirects. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose.
+The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The Arabic web UI offers automatic, deep, latest-information, and public-social research modes, plus a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The request can pass `mode` as `auto`, `deep`, `latest`, or `social`. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax and resolved private/local addresses are checked before page fetches; public redirects are followed only through a small bounded loop with each destination revalidated. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose.
 
 ## Existing lead workspace
 

@@ -12,7 +12,7 @@ def test_social_question_gets_platform_targeted_queries():
     assert plan["social_focus"] is True
     assert "reddit" in plan["platforms"]
     assert any("site:reddit.com" in query for query in plan["queries"])
-    assert len(plan["queries"]) <= 5
+    assert len(plan["queries"]) <= 8
 
 
 def test_follow_up_query_keeps_prior_topic():
@@ -24,14 +24,14 @@ def test_follow_up_query_keeps_prior_topic():
 
 def test_plan_validation_caps_queries_and_rejects_non_string_values():
     candidate = {
-        "queries": ["بحث أ", "بحث ب", None, "بحث ج", "بحث د", "بحث هـ", "بحث سادس"],
+        "queries": ["بحث أ", "بحث ب", None, "بحث ج", "بحث د", "بحث هـ", "بحث سادس", "بحث سابع", "بحث ثامن", "بحث تاسع"],
         "social_focus": True,
         "freshness": "current",
         "depth": "deep",
         "platforms": ["reddit", "unknown"],
     }
     plan = validate_plan(candidate, "بحث عن منشورات")
-    assert len(plan["queries"]) <= 5
+    assert len(plan["queries"]) <= 8
     assert "unknown" not in plan["platforms"]
     assert plan["social_focus"] is True
     assert plan["freshness"] == "current"
