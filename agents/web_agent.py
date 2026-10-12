@@ -147,6 +147,11 @@ class WebAgent:
                 "official X recent-post API when X_BEARER_TOKEN is configured",
             ],
             "x_api_configured": bool(os.getenv("X_BEARER_TOKEN", "").strip()),
+            "instagram_graph_api_configured": bool(
+                os.getenv("INSTAGRAM_USER_ID", "").strip()
+                and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+            ),
+            "meta_graph_version": os.getenv("META_GRAPH_VERSION", "v25.0").strip(),
             "youtube_api_configured": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
             "youtube_direct_api": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
         }
@@ -428,6 +433,108 @@ class WebAgent:
                     warnings.append(f"Bluesky public search unavailable (HTTP {response.status_code})")
             except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
                 warnings.append("Bluesky public search unavailable for this request")
+
+        if "instagram" in platforms:
+            ig_user_id = os.getenv("INSTAGRAM_USER_ID", "").strip()
+            ig_token = os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+            graph_version = os.getenv("META_GRAPH_VERSION", "v25.0").strip()
+            if ig_user_id and ig_token:
+                # The official Hashtag Search API returns public hashtag media only.
+                # It does not search every Instagram post or bypass private accounts.
+                hashtags = re.findall(r"#([\\w\\u0600-\\u06FF]+)", query, flags=re.UNICODE)
+                if not hashtags:
+                    words = re.findall(r"[\\w\\u0600-\\u06FF]+", query, flags=re.UNICODE)
+                    stopwords = {
+                        "ابحث", "بحث", "عن", "في", "على", "من", "مع", "تجارب",
+                        "الناس", "العملاء", "منشورات", "تعليقات", "مواقع", "التواصل",
+                        "الاجتماعي", "public", "search", "social", "media", "posts",
+                        "find", "about", "with", "the", "and", "for",
+                    }
+                    useful = [
+                        word for word in words
+                        if len(word) >= 3 and word.casefold() not in stopwords
+                    ]
+                    if useful:
+                        hashtags = ["_".join(useful[:3])]
+                # Meta limits unique hashtag searches over a rolling week; keep this
+                # connector conservative and use no more than two tags per user request.
+                for hashtag in list(dict.fromkeys(hashtags))[:2]:
+                    try:
+                        search_response = httpx.get(
+                            f"https://graph.facebook.com/{graph_version}/ig_hashtag_search",
+                            params={
+                                "user_id": ig_user_id,
+                                "q": hashtag,
+                                "fields": "id,name",
+                                "access_token": ig_token,
+                            },
+                            headers=headers,
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if search_response.status_code != 200:
+                            warnings.append(
+                                "Instagram Graph API hashtag search unavailable "
+                                f"(HTTP {search_response.status_code}); check permissions and access."
+                            )
+                            continue
+                        tag_data = search_response.json().get("data", [])
+                        if not tag_data:
+                            continue
+                        hashtag_id = tag_data[0].get("id")
+                        if not hashtag_id:
+                            continue
+                        media_response = httpx.get(
+                            f"https://graph.facebook.com/{graph_version}/{hashtag_id}/recent_media",
+                            params={
+                                "user_id": ig_user_id,
+                                "fields": "id,caption,media_type,permalink,timestamp,like_count,comments_count",
+                                "limit": 20,
+                                "access_token": ig_token,
+                            },
+                            headers=headers,
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if media_response.status_code != 200:
+                            warnings.append(
+                                "Instagram public hashtag media unavailable "
+                                f"(HTTP {media_response.status_code})."
+                            )
+                            continue
+                        items = media_response.json().get("data", [])
+                        for item in items:
+                            url = _public_http_url(item.get("permalink", ""))
+                            if not url:
+                                continue
+                            metrics = []
+                            if item.get("like_count") is not None:
+                                metrics.append("likes=" + str(item["like_count"]))
+                            if item.get("comments_count") is not None:
+                                metrics.append("comments=" + str(item["comments_count"]))
+                            caption = _clean_text(item.get("caption") or "", 1200)
+                            if metrics:
+                                caption = (caption + " | " if caption else "") + ", ".join(metrics)
+                            results.append({
+                                "title": "Instagram public hashtag: #" + hashtag,
+                                "url": url,
+                                "snippet": caption,
+                                "page_text": "",
+                                "page_fetched": False,
+                                "provider": "instagram_graph_api",
+                                "provider_rank": len([
+                                    row for row in results
+                                    if row.get("provider") == "instagram_graph_api"
+                                ]) + 1,
+                                "search_query": query,
+                                "published_at": _clean_text(item.get("timestamp") or "", 100),
+                            })
+                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                        warnings.append("Instagram Graph API search failed for a requested hashtag.")
+            else:
+                warnings.append(
+                    "Instagram direct API is not configured; indexed public Instagram pages are still searched."
+                )
 
         if "x" in platforms and os.getenv("X_BEARER_TOKEN", "").strip():
             try:
