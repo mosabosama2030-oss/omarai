@@ -194,6 +194,7 @@ class WebAgent:
                 "DuckDuckGo HTML",
                 "Bing RSS",
                 "Google News RSS for fresh queries",
+                "OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1",
                 "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
                 "Tavily Search API when TAVILY_API_KEY is configured",
             ],
@@ -1433,7 +1434,7 @@ class WebAgent:
                             "url": url,
                             "snippet": excerpt,
                             "page_text": excerpt,
-                            "page_fetched": bool(excerpt),
+                            "page_fetched": False,
                             "provider": "openrouter_web_search",
                             "providers": ["openrouter_web_search"],
                             "queries": [],
@@ -2009,6 +2010,8 @@ class WebAgent:
             + citation_warnings
         ))
         report["model_calls"] = list(self.model_usage)
+        report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
+        report["openrouter_web_search_results"] = len(self.server_search_sources)
         public_sources = []
         for source in sources:
             public_sources.append({
