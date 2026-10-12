@@ -167,3 +167,107 @@ def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
     assert results[1]["title"] == "صفحة ثانية"
     assert results[1]["url"] == "https://example.net/second"
     assert len(calls) == 2
+
+
+
+def test_model_planner_preserves_social_intent_and_adds_targeted_query(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (
+            '{"queries":["مراجعات السيارات الكهربائية"],"social_focus":true,'
+            '"freshness":"any","depth":"deep","platforms":["reddit"]}'
+        ),
+    )
+    plan = agent._plan_search(
+        "ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية",
+        [],
+    )
+    assert plan["planning_method"] == "language_model"
+    assert plan["social_focus"] is True
+    assert "reddit" in plan["platforms"]
+    assert any("site:reddit.com" in query for query in plan["queries"])
+
+
+def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):
+    import httpx
+
+    reddit_xml = """<rss><channel><item>
+      <title>تجربة سيارة كهربائية</title>
+      <link>https://www.reddit.com/r/cars/comments/abc123/test/</link>
+      <description>استهلاك البطارية في الحر</description>
+      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>
+    </item></channel></rss>"""
+
+    class FakeResponse:
+        status_code = 200
+
+        def __init__(self, text="", data=None):
+            self.text = text
+            self.content = text.encode("utf-8")
+            self._data = data or {}
+
+        def json(self):
+            return self._data
+
+    def fake_get(url, **kwargs):
+        if "reddit.com" in url:
+            return FakeResponse(reddit_xml)
+        if "bsky.app" in url or "public.api.bsky.app" in url:
+            return FakeResponse(data={
+                "posts": [{
+                    "post": {
+                        "uri": "at://did:plc:example/app.bsky.feed.post/rkey123",
+                        "indexedAt": "2026-10-12T10:00:00Z",
+                        "record": {"text": "استخدمت السيارة شهرًا"},
+                        "author": {"handle": "driver.bsky.social", "displayName": "Driver"},
+                    }
+                }]
+            })
+        raise AssertionError(f"Unexpected URL: {url}")
+
+    monkeypatch.setattr(httpx, "get", fake_get)
+    results, warnings = WebAgent()._search_social(
+        "سيارة كهربائية", ["reddit", "bluesky"]
+    )
+    assert warnings == []
+    assert any(item["provider"] == "reddit_public_rss" for item in results)
+    bsky = next(item for item in results if item["provider"] == "bluesky_public_search")
+    assert bsky["url"] == "https://bsky.app/profile/driver.bsky.social/post/rkey123"
+    assert bsky["snippet"] == "استخدمت السيارة شهرًا"
+
+
+def test_research_collection_fuses_multiple_queries_and_reports_provenance(monkeypatch):
+    agent = WebAgent()
+
+    def search(query):
+        if query == "query one":
+            return [
+                {"title": "Shared", "url": "https://example.com/shared", "snippet": "Some evidence", "provider": "ddg", "provider_rank": 1},
+                {"title": "Unique A", "url": "https://example.com/a", "snippet": "Evidence A", "provider": "ddg", "provider_rank": 2},
+            ]
+        return [
+            {"title": "Shared item", "url": "https://example.com/shared", "snippet": "More evidence about this result", "provider": "bing", "provider_rank": 1},
+            {"title": "Unique B", "url": "https://example.com/b", "snippet": "Evidence B", "provider": "bing", "provider_rank": 2},
+        ]
+
+    monkeypatch.setattr(agent, "_search_web", search)
+    monkeypatch.setattr(agent, "_fetch_page", lambda url: ("Read title", "Extracted public page text"))
+    sources, warnings, report = agent._collect_research({
+        "queries": ["query one", "query two"],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "deep",
+        "planning_method": "test",
+    })
+    shared = next(item for item in sources if "shared" in item["url"])
+    assert warnings == []
+    assert len(sources) == 3
+    assert set(shared["providers"]) == {"ddg", "bing"}
+    assert len(shared["queries"]) == 2
+    assert report["queries_planned"] == 2
+    assert report["pages_fetched"] == 3
+    assert "ddg" in report["providers_used"]
+    assert "bing" in report["providers_used"]
