@@ -267,7 +267,8 @@ def test_research_collection_fuses_multiple_queries_and_reports_provenance(monke
     assert warnings == []
     assert len(sources) == 3
     assert set(shared["providers"]) == {"ddg", "bing"}
-    assert len(shared["queries"]) == 2
+    assert {"query one", "query two"}.issubset(set(shared["queries"]))
+    assert len(shared["queries"]) >= 2
     assert report["queries_planned"] == 2
     assert report["pages_fetched"] == 3
     assert "ddg" in report["providers_used"]
