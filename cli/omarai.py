@@ -5,6 +5,7 @@ import json
 from agents.omarai import LeadStore, analyze
 from api.omarai import serve
 
+
 def main():
     parser=argparse.ArgumentParser(prog="omarai",description="Arabic lead-intent helper")
     sub=parser.add_subparsers(dest="command",required=True)
