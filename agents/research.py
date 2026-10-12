@@ -6,7 +6,6 @@ but all queries, result counts and source records are validated before use.
 from __future__ import annotations
 
 import re
-from collections import defaultdict
 from typing import Any
 from urllib.parse import urlparse
 
@@ -210,9 +209,7 @@ def validate_plan(
 def _canonical_result_url(url: str) -> str:
     try:
         parsed = urlparse(url)
-        host = (parsed.hostname or "").lower()
-        if host.startswith("www."):
-            host = host[4:]
+        host = (parsed.hostname or "").lower().removeprefix("www.")
         # Drop fragments and common tracking query parameters before deduplication.
         parts = []
         for part in parsed.query.split("&"):
@@ -229,8 +226,7 @@ def _canonical_result_url(url: str) -> str:
 
 
 def classify_source(url: str) -> dict[str, str]:
-    host = (urlparse(url).hostname or "").lower()
-    host = host[4:] if host.startswith("www.") else host
+    host = (urlparse(url).hostname or "").lower().removeprefix("www.")
     platform = "web"
     mapping = {
         "reddit.com": "reddit", "old.reddit.com": "reddit",
@@ -245,11 +241,17 @@ def classify_source(url: str) -> dict[str, str]:
             platform = label
             break
     trust = "general"
-    if host.endswith(".gov") or host.endswith(".gov.eg") or host.endswith(".gov.uk"):
+    if host.endswith((".gov", ".gov.eg", ".gov.uk")):
         trust = "government"
-    elif host.endswith(".edu") or host.endswith(".ac.uk") or host.endswith(".edu.eg"):
+    elif host.endswith((".edu", ".ac.uk", ".edu.eg")):
         trust = "academic"
-    elif any(name in host for name in ("reuters.com", "apnews.com", "bbc.com", "bbc.co.uk", "ft.com", "nytimes.com", "theguardian.com")):
+    elif host == "news.google.com" or any(
+        name in host
+        for name in (
+            "reuters.com", "apnews.com", "bbc.com", "bbc.co.uk",
+            "ft.com", "nytimes.com", "theguardian.com",
+        )
+    ):
         trust = "news"
     elif platform != "web":
         trust = "social"
