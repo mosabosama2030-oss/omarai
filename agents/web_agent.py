@@ -13,13 +13,24 @@ import socket
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
+
+from agents.research import (
+    MAX_PLAN_QUERIES,
+    detect_freshness,
+    fallback_plan,
+    fuse_ranked_results,
+    validate_plan,
+)
 
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
 MAX_HISTORY_CHARS = 4000
-MAX_SEARCH_RESULTS = 5
-MAX_FETCHED_PAGES = 3
+MAX_SEARCH_RESULTS = 12
+MAX_PROVIDER_RESULTS = 5
+MAX_FETCHED_PAGES = 5
+MAX_RESEARCH_WORKERS = 5
 MAX_PAGE_BYTES = 1_000_000
 MAX_PAGE_TEXT_CHARS = 12_000
 LLM_TIMEOUT_SECONDS = 35
