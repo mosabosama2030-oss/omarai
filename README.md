@@ -54,6 +54,8 @@ Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separat
 
 If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded.
 
+For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md).
+
 ## API
 
 - `GET /` — web-research chat
