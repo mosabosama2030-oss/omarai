@@ -72,3 +72,13 @@ def test_source_classification_distinguishes_social_and_government():
 
     assert classify_source("https://www.reddit.com/r/example/comments/1")["platform"] == "reddit"
     assert classify_source("https://example.gov.eg/page")["source_class"] == "government"
+
+
+def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():
+    from agents.research import extract_urls
+
+    question = "حلل هذه الصفحة بالتفصيل https://example.com/a?utm_source=chat#section."
+    plan = fallback_plan(question)
+    assert extract_urls(question) == ["https://example.com/a?utm_source=chat#section"]
+    assert plan["direct_urls"] == ["https://example.com/a?utm_source=chat#section"]
+    assert "https://" not in plan["queries"][0]
