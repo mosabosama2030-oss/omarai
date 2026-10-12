@@ -1,8 +1,10 @@
 """Command-line interface for Omarai."""
 import argparse
 import json
+
 from agents.omarai import LeadStore, analyze
 from api.omarai import serve
+
 
 def main():
     parser=argparse.ArgumentParser(prog="omarai",description="Arabic lead-intent helper")

@@ -1,5 +1,7 @@
 import pytest
+
 from agents.omarai import LeadStore, analyze, normalize
+
 
 def test_arabic_normalization():
     assert normalize("إيجارٌ ـ شقة") == normalize("ايجار شقة")
