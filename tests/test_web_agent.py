@@ -557,7 +557,7 @@ def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
                 request.full_url,
                 503,
                 "service unavailable",
-                headers=None,
+                hdrs=None,
                 fp=io.BytesIO(b"private provider diagnostics"),
             )
         return FakeResponse()
