@@ -1123,51 +1123,70 @@ class WebAgent:
         max_tokens: int = 1400,
         temperature: float = 0.2,
         timeout: int | None = None,
+        model: str | None = None,
     ) -> str:
-        """Call an OpenAI-compatible chat API without exposing its secret."""
+        """Call an OpenAI-compatible API with one configured-model fallback."""
         if not self.api_key:
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
-        payload = json.dumps(
-            {
-                "model": self.model,
-                "messages": messages,
-                "temperature": temperature,
-                "max_tokens": max(100, min(int(max_tokens), 3000)),
-            },
-            ensure_ascii=False,
-        ).encode("utf-8")
-        request = urllib.request.Request(
-            self.base_url + "/chat/completions",
-            data=payload,
-            headers={
-                "Authorization": "Bearer " + self.api_key,
-                "Content-Type": "application/json",
-                "HTTP-Referer": "https://github.com/mosabosama2030-oss/omarai",
-                "X-Title": "Omarai Web Agent",
-            },
-            method="POST",
-        )
-        try:
-            with urllib.request.urlopen(request, timeout=timeout or self.timeout) as response:
-                data = json.loads(response.read(2_000_000).decode("utf-8"))
-        except urllib.error.HTTPError as exc:
-            # Do not echo response bodies: they can contain provider diagnostics or metadata.
-            raise RuntimeError(
-                f"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code})."
-            ) from exc
-        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as exc:
-            raise RuntimeError("تعذر الاتصال بخدمة نموذج اللغة. راجع الشبكة والإعدادات.") from exc
-        try:
-            answer = data["choices"][0]["message"]["content"]
-        except (KeyError, IndexError, TypeError) as exc:
-            raise RuntimeError("خدمة نموذج اللغة أعادت استجابة غير متوقعة.") from exc
-        if isinstance(answer, list):
-            answer = "".join(
-                item.get("text", "") for item in answer if isinstance(item, dict)
+
+        requested_model = (model or self.answer_model).strip()
+        model_candidates = [requested_model]
+        if self.fallback_model and self.fallback_model not in model_candidates:
+            model_candidates.append(self.fallback_model)
+
+        last_error: RuntimeError | None = None
+        for candidate_model in model_candidates:
+            payload = json.dumps(
+                {
+                    "model": candidate_model,
+                    "messages": messages,
+                    "temperature": temperature,
+                    "max_tokens": max(100, min(int(max_tokens), 3000)),
+                },
+                ensure_ascii=False,
+            ).encode("utf-8")
+            request = urllib.request.Request(
+                self.base_url + "/chat/completions",
+                data=payload,
+                headers={
+                    "Authorization": "Bearer " + self.api_key,
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "https://github.com/mosabosama2030-oss/omarai",
+                    "X-Title": "Omarai Web Agent",
+                },
+                method="POST",
             )
-        if not isinstance(answer, str) or not answer.strip():
-            raise RuntimeError("نموذج اللغة أعاد إجابة فارغة.")
-        return answer.strip()
+            try:
+                with urllib.request.urlopen(request, timeout=timeout or self.timeout) as response:
+                    data = json.loads(response.read(2_000_000).decode("utf-8"))
+                answer = data["choices"][0]["message"]["content"]
+                if isinstance(answer, list):
+                    answer = "".join(
+                        item.get("text", "") for item in answer if isinstance(item, dict)
+                    )
+                if not isinstance(answer, str) or not answer.strip():
+                    raise ValueError("empty model response")
+                self.model_usage.append({
+                    "requested_model": requested_model,
+                    "used_model": candidate_model,
+                    "fallback_used": "true" if candidate_model != requested_model else "false",
+                })
+                return answer.strip()
+            except urllib.error.HTTPError as exc:
+                # Never echo provider response bodies: they may contain private diagnostics.
+                last_error = RuntimeError(
+                    f"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code}) على النموذج المحدد."
+                )
+            except (urllib.error.URLError, TimeoutError, OSError) as exc:
+                last_error = RuntimeError(
+                    "تعذر الاتصال بخدمة نموذج اللغة؛ جرت محاولة استخدام النموذج الاحتياطي."
+                )
+            except (KeyError, IndexError, TypeError, ValueError) as exc:
+                last_error = RuntimeError(
+                    "خدمة نموذج اللغة أعادت استجابة غير صالحة؛ جرت محاولة استخدام النموذج الاحتياطي."
+                )
+
+        raise last_error or RuntimeError("تعذر توليد إجابة من النموذج اللغوي.")
 
     def _plan_search(
         self, question: str, history: list[dict[str, str]]
