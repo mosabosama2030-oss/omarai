@@ -648,3 +648,63 @@ def test_diagnostics_calls_a_model_only_when_explicitly_requested(monkeypatch):
     assert report["checks"]["language_model"]["status"] == "passed"
     assert calls == [agent.answer_model]
     assert len(report["model_usage"]) == 1
+
+
+
+def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeypatch):
+    import json
+
+    monkeypatch.setenv("OMARAI_OPENROUTER_WEB_SEARCH", "1")
+    monkeypatch.setenv("OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1")
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    seen = {}
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return json.dumps({
+                "choices": [{
+                    "message": {
+                        "content": "تحليل مستند إلى بحث حي.",
+                        "annotations": [{
+                            "type": "url_citation",
+                            "url_citation": {
+                                "url": "https://example.org/current-report",
+                                "title": "Current public report",
+                                "content": "An excerpt returned by the live search service.",
+                            },
+                        }],
+                    }
+                }]
+            }).encode("utf-8")
+
+    def fake_urlopen(request, timeout):
+        seen["payload"] = json.loads(request.data.decode("utf-8"))
+        return FakeResponse()
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "ابحث عن أحدث تقرير"}],
+        model="example/model",
+        enable_web_search=True,
+    )
+
+    assert result == "تحليل مستند إلى بحث حي."
+    assert seen["payload"]["tools"][0]["type"] == "openrouter:web_search"
+    assert seen["payload"]["tools"][0]["parameters"]["max_uses"] == 3
+    assert seen["payload"]["max_tool_calls"] == 5
+    assert agent.server_search_sources[0]["url"] == "https://example.org/current-report"
+    assert agent.server_search_sources[0]["provider"] == "openrouter_web_search"
+    assert "test-key" not in str(agent.server_search_sources)
+
+
+def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):
+    monkeypatch.delenv("OMARAI_OPENROUTER_WEB_SEARCH", raising=False)
+    agent = WebAgent()
+    assert agent.openrouter_web_search_enabled is False
