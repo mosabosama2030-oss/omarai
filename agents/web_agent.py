@@ -112,8 +112,8 @@ class WebAgent:
     @staticmethod
     def status() -> dict[str, Any]:
         try:
-            import ddgs  # noqa: F401
             import bs4  # noqa: F401
+            import ddgs  # noqa: F401
             import httpx  # noqa: F401
             search_ready = True
         except ImportError:
@@ -188,31 +188,30 @@ class WebAgent:
         try:
             with httpx.Client(
                 timeout=8.0, follow_redirects=False, headers=headers, verify=True
-            ) as client:
-                with client.stream("GET", safe_url) as response:
-                    if response.status_code < 200 or response.status_code >= 300:
-                        return "", ""
-                    media_type = response.headers.get("content-type", "").split(";")[0].lower()
-                    if media_type not in {
-                        "text/html", "application/xhtml+xml", "text/plain"
-                    }:
-                        return "", ""
-                    content_length = response.headers.get("content-length")
-                    if content_length and int(content_length) > MAX_PAGE_BYTES:
-                        return "", ""
-                    chunks: list[bytes] = []
-                    count = 0
-                    for chunk in response.iter_bytes():
-                        count += len(chunk)
-                        if count > MAX_PAGE_BYTES:
-                            remaining = max(0, MAX_PAGE_BYTES - (count - len(chunk)))
-                            if remaining:
-                                chunks.append(chunk[:remaining])
-                            break
-                        chunks.append(chunk)
-                    raw = b"".join(chunks)
-                    encoding = response.encoding or "utf-8"
-                    html = raw.decode(encoding, errors="replace")
+            ) as client, client.stream("GET", safe_url) as response:
+                if response.status_code < 200 or response.status_code >= 300:
+                    return "", ""
+                media_type = response.headers.get("content-type", "").split(";")[0].lower()
+                if media_type not in {
+                    "text/html", "application/xhtml+xml", "text/plain"
+                }:
+                    return "", ""
+                content_length = response.headers.get("content-length")
+                if content_length and int(content_length) > MAX_PAGE_BYTES:
+                    return "", ""
+                chunks: list[bytes] = []
+                count = 0
+                for chunk in response.iter_bytes():
+                    count += len(chunk)
+                    if count > MAX_PAGE_BYTES:
+                        remaining = max(0, MAX_PAGE_BYTES - (count - len(chunk)))
+                        if remaining:
+                            chunks.append(chunk[:remaining])
+                        break
+                    chunks.append(chunk)
+                raw = b"".join(chunks)
+                encoding = response.encoding or "utf-8"
+                html = raw.decode(encoding, errors="replace")
         except (OSError, ValueError, httpx.HTTPError):
             return "", ""
 
