@@ -30,20 +30,78 @@ class Handler(BaseHTTPRequestHandler):
         return self.respond(404,{"error":"not found"})
     def do_POST(self):
         try:
+            content_type=self.headers.get("Content-Type","").split(";",1)[0].strip().lower()
+            if content_type!="application/json":
+                return self.respond(415,{"error":"Content-Type must be application/json"})
+            origin=self.headers.get("Origin")
+            port=self.server.server_port
+            allowed_origins={"http://127.0.0.1:"+str(port),"http://localhost:"+str(port),"http://[::1]:"+str(port)}
+            if origin and origin not in allowed_origins:
+                return self.respond(403,{"error":"cross-origin requests are not allowed"})
             size=int(self.headers.get("Content-Length","0"))
+            if size<=0: return self.respond(400,{"error":"request body is required"})
             if size>200_000: return self.respond(413,{"error":"request too large"})
-            data=json.loads(self.rfile.read(size) or b"{}")
+            data=json.loads(self.rfile.read(size))
+            if not isinstance(data,dict):
+                return self.respond(400,{"error":"request body must be a JSON object"})
+            if self.path=="/api/ask":
+                question=data.get("question","")
+                if not isinstance(question,str) or not question.strip():
+                    return self.respond(400,{"error":"question must be a non-empty string"})
+                if len(question)>1000:
+                    return self.respond(400,{"error":"question must be at most 1000 characters"})
+                return self.respond(200,answer_question(question,self.store))
             if self.path=="/api/analyze": return self.respond(200,analyze(data.get("text",""),data.get("product_terms",[]),data.get("location_terms",[])))
             if self.path=="/api/leads":
                 lead,created=self.store.add(data.get("text",""),data.get("source_url",""),data.get("platform","manual"),data.get("observed_at"),data.get("note",""),data.get("product_terms",[]),data.get("location_terms",[]))
                 return self.respond(201 if created else 200,{"lead":lead,"created":created})
-            if self.path.startswith("/api/leads/") and self.path.endswith("/status"):
-                lead_id=self.path.split("/")[3]; lead=self.store.update_status(lead_id,data.get("status","new"))
+            route=urlparse(self.path).path.split("/")
+            if len(route)==5 and route[1:3]==["api","leads"] and route[4]=="status":
+                lead_id=route[3]
+                lead=self.store.update_status(lead_id,data.get("status","new"))
                 return self.respond(200,{"lead":lead}) if lead else self.respond(404,{"error":"lead not found"})
             return self.respond(404,{"error":"not found"})
         except (ValueError,TypeError,json.JSONDecodeError) as exc: return self.respond(400,{"error":str(exc)})
         except Exception: return self.respond(500,{"error":"internal server error"})
+    def do_OPTIONS(self):
+        return self.respond(405,{"error":"cross-origin requests are not supported"})
+
     def log_message(self,*args): pass
+
+def answer_question(question, store):
+    """Answer common operational questions from local records using explicit rules."""
+    normalized=normalize(question)
+    leads=store.list(limit=500)
+    active=[lead for lead in leads if lead["status"] not in {"rejected","converted"}]
+    if any(term in normalized for term in ("افضل عميل","احسن عميل","مين اتابع","اتابع مين","اهم عميل")):
+        if not active:
+            return {"answer":"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.","kind":"no_data","lead_id":None}
+        lead=max(active,key=lambda item:(item["assessment"]["score"],item["updated_at"]))
+        assessment=lead["assessment"]
+        answer="الأولوية المقترحة للمراجعة هي الإشارة "+lead["id"][:8]+" بدرجة قواعد "+str(assessment["score"])+"/100. السبب: "+assessment["summary"]+" المصدر: "+lead["source_url"]+". هذه أولوية مراجعة وليست تأكيدًا أن صاحبه سيشتري."
+        return {"answer":answer,"kind":"lead_recommendation","lead_id":lead["id"]}
+    if any(term in normalized for term in ("كام عميل","كم عميل","عدد العملاء","عدد الاشارات","الاحصائيات","احصائيات")):
+        keys=("new","qualified","contacted","converted","needs_review","rejected")
+        by_status={key:sum(lead["status"]==key for lead in leads) for key in keys}
+        high=sum(lead["assessment"]["label"]=="high_intent" for lead in leads)
+        answer="في السجل المحلي "+str(len(leads))+" إشارة، منها "+str(high)+" بإشارة قوية نسبيًا وفق القواعد. الحالات: جديد "+str(by_status["new"])+"، مؤهل "+str(by_status["qualified"])+"، تم التواصل "+str(by_status["contacted"])+"، تم البيع "+str(by_status["converted"])+"، تحتاج مراجعة "+str(by_status["needs_review"])+"، مرفوض "+str(by_status["rejected"])+"."
+        return {"answer":answer,"kind":"local_statistics","lead_id":None}
+    if any(term in normalized for term in ("ليه الدرجه","سبب الدرجه","طريقة التقييم","بتقيم ازاي","معيار التقييم")):
+        latest=max(leads,key=lambda item:item["updated_at"],default=None)
+        if latest:
+            signals="، ".join(signal["phrase"] for signal in latest["assessment"]["matched_signals"]) or "لم تُطابق عبارات معروفة"
+            answer="الإشارة الأحدث درجتها "+str(latest["assessment"]["score"])+"/100 لأن القواعد طابقت: "+signals+". الدرجة ليست احتمالًا إحصائيًا ولا تثبت نية الكاتب."
+        else:
+            answer="أحسب الدرجة بقواعد واضحة: تعبير الشراء، خطوة تجارية تالية، السعر أو الميزانية، وسياق المنتج والمكان. كل فئة تحتسب مرة واحدة فقط."
+        return {"answer":answer,"kind":"scoring_explanation","lead_id":latest["id"] if latest else None}
+    if any(term in normalized for term in ("اكتب رساله","اكتب رسالة","رساله تواصل","رسالة تواصل","ابعتله","اتواصل ازاي")):
+        if not active:
+            answer="لا توجد إشارة محفوظة أخصص مسودة لها بعد. أدخل نصًا ومصدرًا أولًا."
+        else:
+            lead=max(active,key=lambda item:(item["assessment"]["score"],item["updated_at"]))
+            answer="مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة "+lead["id"][:8]+". لم يتم إرسال أي رسالة."
+        return {"answer":answer,"kind":"message_draft","lead_id":active[0]["id"] if active else None}
+    return {"answer":"أنا مساعد محلي يعمل بقواعد صريحة وسجل SQLite؛ لست نموذجًا لغويًا سحابيًا. اسأل مثلًا: «كام عميل عندي؟»، «مين أفضل إشارة أراجعها؟»، أو «ليه الدرجة دي؟». لا أتصفح المنصات تلقائيًا ولا أرسل رسائل.","kind":"help","lead_id":None}
 
 def serve(host="127.0.0.1",port=8765):
     if host not in ("127.0.0.1","localhost","::1"): raise ValueError("Omarai must bind to loopback unless authentication is added")
