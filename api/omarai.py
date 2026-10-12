@@ -73,7 +73,7 @@ def answer_question(question, store):
     normalized=normalize(question)
     leads=store.list(limit=500)
     active=[lead for lead in leads if lead["status"] not in {"rejected","converted"}]
-    if any(term in normalized for term in ("افضل عميل","احسن عميل","مين اتابع","اتابع مين","اهم عميل")):
+    if any(term in normalized for term in ("افضل عميل","احسن عميل","افضل اشارة","احسن اشارة","اشارة اراجعها","مين افضل","مين اتابع","اتابع مين","اهم عميل")):
         if not active:
             return {"answer":"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.","kind":"no_data","lead_id":None}
         lead=max(active,key=lambda item:(item["assessment"]["score"],item["updated_at"]))
