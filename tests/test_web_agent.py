@@ -345,3 +345,153 @@ def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
     assert results[0]["provider"] == "x_official_api"
     assert results[0]["url"] == "https://x.com/driver/status/1840000000000000000"
     assert calls[0][1]["headers"]["Authorization"] == "Bearer test-token"
+
+
+
+def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):
+    import httpx
+
+    monkeypatch.setenv("INSTAGRAM_USER_ID", "ig-user-123")
+    monkeypatch.setenv("INSTAGRAM_ACCESS_TOKEN", "test-ig-token")
+    monkeypatch.setenv("META_GRAPH_VERSION", "v25.0")
+
+    class FakeResponse:
+        status_code = 200
+
+        def __init__(self, payload):
+            self.payload = payload
+
+        def json(self):
+            return self.payload
+
+    calls = []
+
+    def fake_get(url, **kwargs):
+        calls.append((url, kwargs))
+        if url.endswith("/ig_hashtag_search"):
+            return FakeResponse({"data": [{"id": "tag-7", "name": "cars"}]})
+        if url.endswith("/tag-7/recent_media"):
+            return FakeResponse({"data": [{
+                "permalink": "https://www.instagram.com/p/ABC123/",
+                "caption": "Owner shared an electric car review",
+                "media_type": "IMAGE",
+                "timestamp": "2026-10-12T10:00:00+0000",
+                "like_count": 17,
+                "comments_count": 4,
+            }]})
+        raise AssertionError(f"Unexpected URL {url}")
+
+    monkeypatch.setattr(httpx, "get", fake_get)
+    results, warnings = WebAgent()._search_social(
+        "Instagram #cars", ["instagram"]
+    )
+    assert warnings == []
+    assert len(results) == 1
+    assert results[0]["provider"] == "instagram_graph_api"
+    assert results[0]["url"] == "https://www.instagram.com/p/ABC123/"
+    assert "likes=17" in results[0]["snippet"]
+    assert calls[0][1]["params"]["q"] == "cars"
+    assert calls[0][1]["params"]["access_token"] == "test-ig-token"
+    assert "test-ig-token" not in str(results)
+
+
+def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):
+    monkeypatch.delenv("INSTAGRAM_USER_ID", raising=False)
+    monkeypatch.delenv("INSTAGRAM_ACCESS_TOKEN", raising=False)
+    results, warnings = WebAgent()._search_social(
+        "تجارب عامة على Instagram", ["instagram"]
+    )
+    assert results == []
+    assert any("indexed public Instagram" in warning for warning in warnings)
+
+
+def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):
+    import httpx
+
+    monkeypatch.setenv("FACEBOOK_PAGE_ACCESS_TOKEN", "test-page-token")
+    monkeypatch.setenv("FACEBOOK_PAGE_IDS", "page-1,page-2")
+
+    class FakeResponse:
+        status_code = 200
+
+        def json(self):
+            return {"data": [{
+                "message": "Electric car owners looking for charging advice",
+                "permalink_url": "https://www.facebook.com/example/posts/123",
+                "created_time": "2026-10-12T12:00:00+0000",
+                "comments": {"data": [
+                    {"message": "What is the current price?", "like_count": 3}
+                ]},
+            }]}
+
+    calls = []
+
+    def fake_get(url, **kwargs):
+        calls.append((url, kwargs))
+        return FakeResponse()
+
+    monkeypatch.setattr(httpx, "get", fake_get)
+    results, warnings = WebAgent()._search_social(
+        "electric car", ["facebook"]
+    )
+    assert len(results) == 2  # one matching post for each explicitly configured page
+    assert warnings == []
+    assert all(item["provider"] == "facebook_pages_api" for item in results)
+    assert all("Electric car owners" in item["snippet"] for item in results)
+    assert len(calls) == 2
+    assert all("Bearer test-page-token" == call[1]["headers"]["Authorization"] for call in calls)
+
+
+def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypatch):
+    import httpx
+
+    monkeypatch.setenv("REDDIT_CLIENT_ID", "client-test")
+    monkeypatch.setenv("REDDIT_CLIENT_SECRET", "secret-test")
+    monkeypatch.setenv("REDDIT_USER_AGENT", "test:omarai:0.1")
+
+    class FakeResponse:
+        status_code = 200
+
+        def __init__(self, payload):
+            self.payload = payload
+
+        def json(self):
+            return self.payload
+
+        @property
+        def content(self):
+            import json
+            return json.dumps(self.payload).encode()
+
+    calls = []
+
+    def fake_post(url, **kwargs):
+        calls.append(("POST", url, kwargs))
+        return FakeResponse({"access_token": "test-reddit-access-token"})
+
+    def fake_get(url, **kwargs):
+        calls.append(("GET", url, kwargs))
+        return FakeResponse({"data": {"children": [{
+            "data": {
+                "title": "Electric vehicle owner discussion",
+                "permalink": "/r/cars/comments/example/post/",
+                "selftext": "Owners discuss battery range.",
+                "created_utc": 1791800000,
+                "score": 25,
+                "num_comments": 8,
+            }
+        }]}})
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+    monkeypatch.setattr(httpx, "get", fake_get)
+    results, warnings = WebAgent()._search_social(
+        "electric vehicles", ["reddit"]
+    )
+    assert len(results) == 1
+    assert warnings == []
+    assert results[0]["provider"] == "reddit_oauth_api"
+    assert results[0]["url"] == "https://www.reddit.com/r/cars/comments/example/post/"
+    assert "score=25" in results[0]["snippet"]
+    assert len([call for call in calls if call[0] == "POST"]) == 1
+    assert any("oauth.reddit.com/search" in call[1] for call in calls if call[0] == "GET")
+    assert "test-reddit-access-token" not in str(results)

@@ -141,12 +141,27 @@ class WebAgent:
             "default_model": os.getenv("OMARAI_LLM_MODEL", "openrouter/free").strip(),
             "search_providers": ["DuckDuckGo HTML", "Bing RSS", "Google News RSS for fresh queries"],
             "public_social_sources": [
-                "Reddit public RSS",
+                "Reddit public RSS and optional authorized Reddit OAuth search",
                 "Bluesky public search",
                 "indexed public pages from Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube",
+                "official Instagram public hashtag media when an authorized Graph API token is configured",
+                "configured Facebook Pages when a valid authorized page token is configured",
                 "official X recent-post API when X_BEARER_TOKEN is configured",
             ],
+            "reddit_oauth_configured": bool(
+                os.getenv("REDDIT_CLIENT_ID", "").strip()
+                and os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+            ),
+            "facebook_pages_api_configured": bool(
+                os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+            ),
             "x_api_configured": bool(os.getenv("X_BEARER_TOKEN", "").strip()),
+            "instagram_graph_api_configured": bool(
+                os.getenv("INSTAGRAM_USER_ID", "").strip()
+                and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+            ),
+            "meta_graph_version": os.getenv("META_GRAPH_VERSION", "v25.0").strip(),
             "youtube_api_configured": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
             "youtube_direct_api": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
         }
@@ -344,7 +359,90 @@ class WebAgent:
             "Accept-Language": "ar,en;q=0.9",
         }
 
-        if "reddit" in platforms:
+        reddit_client_id = os.getenv("REDDIT_CLIENT_ID", "").strip()
+        reddit_client_secret = os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+        reddit_user_agent = os.getenv(
+            "REDDIT_USER_AGENT",
+            "web:omarai-research-agent:v0.3 (public-content research)",
+        ).strip()
+        if "reddit" in platforms and reddit_client_id and reddit_client_secret:
+            try:
+                token_response = httpx.post(
+                    "https://www.reddit.com/api/v1/access_token",
+                    data={"grant_type": "client_credentials"},
+                    auth=(reddit_client_id, reddit_client_secret),
+                    headers={"User-Agent": reddit_user_agent},
+                    timeout=9.0,
+                    follow_redirects=False,
+                )
+                if token_response.status_code == 200:
+                    access_token = token_response.json().get("access_token", "")
+                    if access_token:
+                        search_response = httpx.get(
+                            "https://oauth.reddit.com/search",
+                            params={
+                                "q": query,
+                                "sort": "relevance",
+                                "t": "all",
+                                "limit": 10,
+                                "type": "link",
+                            },
+                            headers={
+                                **headers,
+                                "User-Agent": reddit_user_agent,
+                                "Authorization": "Bearer " + access_token,
+                            },
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if search_response.status_code == 200:
+                            children = search_response.json().get("data", {}).get("children", [])
+                            rank = 0
+                            for child in children:
+                                post = child.get("data", {}) if isinstance(child, dict) else {}
+                                permalink = str(post.get("permalink") or "")
+                                url = _public_http_url(
+                                    permalink if permalink.startswith("http")
+                                    else "https://www.reddit.com" + permalink
+                                )
+                                if not url:
+                                    continue
+                                rank += 1
+                                snippet = _clean_text(post.get("selftext") or "", 1000)
+                                metrics = []
+                                if post.get("score") is not None:
+                                    metrics.append("score=" + str(post["score"]))
+                                if post.get("num_comments") is not None:
+                                    metrics.append("comments=" + str(post["num_comments"]))
+                                if metrics:
+                                    snippet = (snippet + " | " if snippet else "") + ", ".join(metrics)
+                                results.append({
+                                    "title": _clean_text(post.get("title") or "Reddit post", 300),
+                                    "url": url,
+                                    "snippet": snippet,
+                                    "page_text": "",
+                                    "page_fetched": False,
+                                    "provider": "reddit_oauth_api",
+                                    "provider_rank": rank,
+                                    "search_query": query,
+                                    "published_at": _clean_text(str(post.get("created_utc") or ""), 100),
+                                })
+                        else:
+                            warnings.append(
+                                f"Reddit OAuth search unavailable (HTTP {search_response.status_code})."
+                            )
+                    else:
+                        warnings.append("Reddit OAuth did not return an access token.")
+                else:
+                    warnings.append(
+                        f"Reddit OAuth authentication unavailable (HTTP {token_response.status_code})."
+                    )
+            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                warnings.append("Reddit OAuth search failed for this request.")
+
+        if "reddit" in platforms and not any(
+            row.get("provider") == "reddit_oauth_api" for row in results
+        ):
             try:
                 response = httpx.get(
                     "https://www.reddit.com/search.rss",
@@ -428,6 +526,192 @@ class WebAgent:
                     warnings.append(f"Bluesky public search unavailable (HTTP {response.status_code})")
             except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
                 warnings.append("Bluesky public search unavailable for this request")
+
+        if "facebook" in platforms:
+            fb_token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+            page_ids = [
+                value.strip()
+                for value in os.getenv("FACEBOOK_PAGE_IDS", "").split(",")
+                if value.strip()
+            ][:5]
+            graph_version = os.getenv("META_GRAPH_VERSION", "v25.0").strip()
+            if fb_token and page_ids:
+                # Scope direct reading to page IDs supplied by the operator and the
+                # permissions granted to this token. This is not global Facebook search.
+                query_terms = {
+                    word.casefold()
+                    for word in re.findall(r"[\w\u0600-\u06FF]+", query, flags=re.UNICODE)
+                    if len(word) >= 3
+                }
+                for page_id in page_ids:
+                    try:
+                        response = httpx.get(
+                            f"https://graph.facebook.com/{graph_version}/{page_id}/posts",
+                            params={
+                                "fields": (
+                                    "message,permalink_url,created_time,"
+                                    "comments.limit(10){message,created_time,like_count}"
+                                ),
+                                "limit": 10,
+                            },
+                            headers={
+                                **headers,
+                                "Authorization": "Bearer " + fb_token,
+                            },
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if response.status_code != 200:
+                            warnings.append(
+                                "Facebook Pages API unavailable for one configured page "
+                                f"(HTTP {response.status_code}); verify page ownership, token and permissions."
+                            )
+                            continue
+                        posts = response.json().get("data", [])
+                        rank = 0
+                        for post in posts:
+                            message = _clean_text(post.get("message") or "", 1400)
+                            comments = post.get("comments", {}).get("data", [])
+                            comment_text = [
+                                _clean_text(item.get("message") or "", 500)
+                                for item in comments
+                                if isinstance(item, dict) and item.get("message")
+                            ]
+                            searchable = (message + " " + " ".join(comment_text)).casefold()
+                            matched = sum(term in searchable for term in query_terms)
+                            if query_terms and matched == 0:
+                                continue
+                            permalink = _public_http_url(post.get("permalink_url", ""))
+                            if not permalink:
+                                continue
+                            rank += 1
+                            excerpt = message
+                            if comment_text:
+                                excerpt = (
+                                    excerpt + "\n\nتعليقات عامة على المنشور:\n"
+                                    if excerpt else "تعليقات عامة على المنشور:\n"
+                                ) + "\n— ".join(comment_text)
+                            results.append({
+                                "title": _clean_text(message or "Facebook public Page post", 300),
+                                "url": permalink,
+                                "snippet": _clean_text(excerpt, 1800),
+                                "page_text": "",
+                                "page_fetched": False,
+                                "provider": "facebook_pages_api",
+                                "provider_rank": rank,
+                                "search_query": query,
+                                "published_at": _clean_text(post.get("created_time") or "", 100),
+                            })
+                            if rank >= 10:
+                                break
+                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                        warnings.append("Facebook Pages API failed for one configured page.")
+            else:
+                warnings.append(
+                    "Facebook direct API is not configured for specific pages; indexed public Facebook pages are still searched."
+                )
+
+        if "instagram" in platforms:
+            ig_user_id = os.getenv("INSTAGRAM_USER_ID", "").strip()
+            ig_token = os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+            graph_version = os.getenv("META_GRAPH_VERSION", "v25.0").strip()
+            if ig_user_id and ig_token:
+                # The official Hashtag Search API returns public hashtag media only.
+                # It does not search every Instagram post or bypass private accounts.
+                hashtags = re.findall(r"#([\w\u0600-\u06FF]+)", query, flags=re.UNICODE)
+                if not hashtags:
+                    words = re.findall(r"[\w\u0600-\u06FF]+", query, flags=re.UNICODE)
+                    stopwords = {
+                        "ابحث", "بحث", "عن", "في", "على", "من", "مع", "تجارب",
+                        "الناس", "العملاء", "منشورات", "تعليقات", "مواقع", "التواصل",
+                        "الاجتماعي", "public", "search", "social", "media", "posts",
+                        "find", "about", "with", "the", "and", "for",
+                    }
+                    useful = [
+                        word for word in words
+                        if len(word) >= 3 and word.casefold() not in stopwords
+                    ]
+                    if useful:
+                        hashtags = ["_".join(useful[:3])]
+                # Meta limits unique hashtag searches over a rolling week; keep this
+                # connector conservative and use no more than two tags per user request.
+                for hashtag in list(dict.fromkeys(hashtags))[:1]:
+                    try:
+                        search_response = httpx.get(
+                            f"https://graph.facebook.com/{graph_version}/ig_hashtag_search",
+                            params={
+                                "user_id": ig_user_id,
+                                "q": hashtag,
+                                "fields": "id,name",
+                                "access_token": ig_token,
+                            },
+                            headers=headers,
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if search_response.status_code != 200:
+                            warnings.append(
+                                "Instagram Graph API hashtag search unavailable "
+                                f"(HTTP {search_response.status_code}); check permissions and access."
+                            )
+                            continue
+                        tag_data = search_response.json().get("data", [])
+                        if not tag_data:
+                            continue
+                        hashtag_id = tag_data[0].get("id")
+                        if not hashtag_id:
+                            continue
+                        media_response = httpx.get(
+                            f"https://graph.facebook.com/{graph_version}/{hashtag_id}/recent_media",
+                            params={
+                                "user_id": ig_user_id,
+                                "fields": "id,caption,media_type,permalink,timestamp,like_count,comments_count",
+                                "limit": 20,
+                                "access_token": ig_token,
+                            },
+                            headers=headers,
+                            timeout=9.0,
+                            follow_redirects=False,
+                        )
+                        if media_response.status_code != 200:
+                            warnings.append(
+                                "Instagram public hashtag media unavailable "
+                                f"(HTTP {media_response.status_code})."
+                            )
+                            continue
+                        items = media_response.json().get("data", [])
+                        for item in items:
+                            url = _public_http_url(item.get("permalink", ""))
+                            if not url:
+                                continue
+                            metrics = []
+                            if item.get("like_count") is not None:
+                                metrics.append("likes=" + str(item["like_count"]))
+                            if item.get("comments_count") is not None:
+                                metrics.append("comments=" + str(item["comments_count"]))
+                            caption = _clean_text(item.get("caption") or "", 1200)
+                            if metrics:
+                                caption = (caption + " | " if caption else "") + ", ".join(metrics)
+                            results.append({
+                                "title": "Instagram public hashtag: #" + hashtag,
+                                "url": url,
+                                "snippet": caption,
+                                "page_text": "",
+                                "page_fetched": False,
+                                "provider": "instagram_graph_api",
+                                "provider_rank": len([
+                                    row for row in results
+                                    if row.get("provider") == "instagram_graph_api"
+                                ]) + 1,
+                                "search_query": query,
+                                "published_at": _clean_text(item.get("timestamp") or "", 100),
+                            })
+                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                        warnings.append("Instagram Graph API search failed for a requested hashtag.")
+            else:
+                warnings.append(
+                    "Instagram direct API is not configured; indexed public Instagram pages are still searched."
+                )
 
         if "x" in platforms and os.getenv("X_BEARER_TOKEN", "").strip():
             try:
@@ -663,7 +947,29 @@ class WebAgent:
         # public pages. No login, private profile, session cookie or anti-bot bypass.
         social_results: list[dict[str, Any]] = []
         if plan.get("social_focus"):
-            platforms = plan.get("platforms") or ["reddit", "bluesky"]
+            requested_platforms = plan.get("platforms") or []
+            if requested_platforms:
+                platforms = list(dict.fromkeys(requested_platforms))
+            else:
+                # Broad social research: always try no-key public sources, and add
+                # official platform connectors only when they are configured.
+                platforms = ["reddit", "bluesky"]
+                optional_connectors = {
+                    "facebook": bool(
+                        os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                        and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+                    ),
+                    "instagram": bool(
+                        os.getenv("INSTAGRAM_USER_ID", "").strip()
+                        and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+                    ),
+                    "x": bool(os.getenv("X_BEARER_TOKEN", "").strip()),
+                    "youtube": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
+                }
+                platforms.extend(
+                    name for name, ready in optional_connectors.items()
+                    if ready and name not in platforms
+                )
             social_results, social_warnings = self._search_social(queries[0], platforms)
             warnings.extend(social_warnings)
             social_groups: dict[str, list[dict[str, Any]]] = {}
