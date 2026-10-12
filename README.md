@@ -4,15 +4,18 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 
 ## What this version does
 
-- Searches public web results through DuckDuckGo HTML, with Bing RSS as a fallback. This avoids the native transport used by `ddgs`, which has reported Android/Termux runtime failures.
-- Attempts to extract text from up to three accessible public pages per question (bounded size and time).
-- Uses an OpenAI-compatible generative language API to interpret open-ended questions and synthesize answers in the user's language.
-- Returns the search URLs and snippets separately so the user can inspect them.
+- Plans 2–5 search queries from a natural-language question with the configured language model, and uses a deterministic multi-query fallback when the model is unavailable.
+- Runs DuckDuckGo HTML and Bing RSS independently for every planned query; uses Google News RSS for queries judged time-sensitive.
+- Fuses duplicate results across queries and engines using reciprocal-rank fusion, preserving provider, query, domain, platform, publication-date and page-extraction provenance.
+- Extracts text from up to five accessible public pages per question with request-size and timeout bounds.
+- Searches public Reddit RSS and the Bluesky public search endpoint when social discussion is relevant. Searches indexed public pages on Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube through the general web engines.
+- Can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured.
+- Generates an evidence-grounded answer in the user's language, showing source links, search query plan, provider coverage, direct page reads, platform mix and warnings.
 - Carries up to eight recent chat messages from the current browser session into follow-up questions.
 - Keeps the existing local SQLite lead workspace at `/leads`.
 - Binds to loopback by default; it is not a public production deployment.
 
-This is a practical agent built around an existing language model, not a foundation model trained from scratch. The quality and breadth of answers depend on the selected model, available search results, network access and provider limits. A search result is not automatically proof. The agent does not bypass logins, paywalls, robots/access controls, and does not automatically scrape private social accounts or send messages.
+This is a tool-using research agent built around an existing language model, not a foundation model trained from scratch. Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: X and Meta/Instagram generally require authorized API access and permissions; YouTube direct API search requires a Google API key. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people.
 
 ## Run on Android / Termux
 
@@ -22,7 +25,7 @@ From the repository directory:
 python -m pip install -e .
 ```
 
-The default language-model route is OpenRouter's free-model router. Create an API key in your OpenRouter account, then enter it without putting the secret into a command-history entry:
+The default language-model route is OpenRouter's free-model router. Create an API key in your OpenRouter account, then enter it without putting the secret into a command-history entry. The model key enables both search planning and generative synthesis; general web search can still run without it, but results will not be turned into a full language-model analysis:
 
 ```bash
 read -r -s -p "OpenRouter API key: " OPENROUTER_API_KEY
@@ -44,7 +47,7 @@ export OMARAI_LLM_BASE_URL="https://openrouter.ai/api/v1"
 export OMARAI_LLM_MODEL="openrouter/free"
 ```
 
-Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model.
+Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. For direct YouTube Data API search (optional), configure `YOUTUBE_API_KEY` in the Termux session before starting the server. Do not store keys in source files, HTML, commits or chat messages.
 
 If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded.
 
@@ -66,7 +69,7 @@ Example request:
 }
 ```
 
-The response includes `answer`, `sources`, `used_web_search`, `used_language_model`, and any warnings. Source extraction is bounded, and URLs are checked to reject obvious private/local destinations before fetching.
+The response includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The report records planned and attempted queries, unique result count, pages read, providers, and platform breakdown. URL syntax is validated and resolved private/local addresses are rejected before page fetches; the fetcher does not follow redirects. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose.
 
 ## Existing lead workspace
 
