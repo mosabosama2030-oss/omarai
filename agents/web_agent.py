@@ -146,6 +146,22 @@ class WebAgent:
             search_ready = True
         except ImportError:
             search_ready = False
+
+        global_model = os.getenv("OMARAI_LLM_MODEL", "").strip()
+        answer_model = (
+            os.getenv("OMARAI_ANSWER_MODEL", "").strip()
+            or global_model
+            or "google/gemma-4-31b-it:free"
+        )
+        planner_model = (
+            os.getenv("OMARAI_PLANNER_MODEL", "").strip()
+            or global_model
+            or "nvidia/nemotron-3-ultra-550b-a55b:free"
+        )
+        review_model = os.getenv("OMARAI_REVIEW_MODEL", "").strip() or answer_model
+        fallback_model = (
+            os.getenv("OMARAI_LLM_FALLBACK_MODEL", "").strip() or "openrouter/free"
+        )
         return {
             "web_search_ready": search_ready,
             "language_model_configured": bool(
@@ -155,24 +171,17 @@ class WebAgent:
             "language_model_provider": os.getenv(
                 "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
             ).strip().rstrip("/"),
-            "default_model": os.getenv(
-                "OMARAI_LLM_MODEL",
-                os.getenv("OMARAI_ANSWER_MODEL", "google/gemma-4-31b-it:free"),
-            ).strip(),
-            "planner_model": os.getenv(
-                "OMARAI_PLANNER_MODEL",
-                os.getenv("OMARAI_LLM_MODEL", "nvidia/nemotron-3-ultra-550b-a55b:free"),
-            ).strip(),
-            "answer_model": os.getenv(
-                "OMARAI_ANSWER_MODEL",
-                os.getenv("OMARAI_LLM_MODEL", "google/gemma-4-31b-it:free"),
-            ).strip(),
-            "review_model": os.getenv(
-                "OMARAI_REVIEW_MODEL",
-                os.getenv("OMARAI_ANSWER_MODEL", os.getenv("OMARAI_LLM_MODEL", "google/gemma-4-31b-it:free")),
-            ).strip(),
-            "fallback_model": os.getenv("OMARAI_LLM_FALLBACK_MODEL", "openrouter/free").strip(),
-            "search_providers": ["DuckDuckGo HTML", "Bing RSS", "Google News RSS for fresh queries"],
+            "default_model": answer_model,
+            "planner_model": planner_model,
+            "answer_model": answer_model,
+            "review_model": review_model,
+            "fallback_model": fallback_model,
+            "model_selection_mode": "role_specific_with_fallback",
+            "search_providers": [
+                "DuckDuckGo HTML",
+                "Bing RSS",
+                "Google News RSS for fresh queries",
+            ],
             "public_social_sources": [
                 "Reddit public RSS and optional authorized Reddit OAuth search",
                 "Bluesky public search",
