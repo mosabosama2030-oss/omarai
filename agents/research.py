@@ -285,6 +285,7 @@ def fuse_ranked_results(
                     "queries": [],
                     "rank_score": 0.0,
                     "best_raw_rank": position,
+                    "published_at": _compact(source.get("published_at") or "", 100),
                 }
                 entry.update(classify_source(str(source["url"])))
                 accumulated[url] = entry
@@ -296,6 +297,8 @@ def fuse_ranked_results(
                 entry["queries"].append(query)
             if len(str(source.get("snippet") or "")) > len(entry["snippet"]):
                 entry["snippet"] = _compact(source.get("snippet"), 1800)
+            if source.get("published_at") and not entry.get("published_at"):
+                entry["published_at"] = _compact(source["published_at"], 100)
             if source.get("page_text") and not entry["page_text"]:
                 entry["page_text"] = _compact(source["page_text"], 12_000)
                 entry["page_fetched"] = True
