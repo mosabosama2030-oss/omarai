@@ -21,6 +21,8 @@ def test_failed_page_fetch_does_not_claim_page_fetched(monkeypatch):
 
     monkeypatch.setattr(agent, "_search_web", search)
     monkeypatch.setattr(agent, "_fetch_page", lambda url: ("", ""))
+    monkeypatch.setattr(agent, "_search_news", lambda query: [])
+    monkeypatch.setattr(agent, "_search_social", lambda query, platforms: ([], []))
     sources, warnings, report = agent._collect_research({
         "queries": ["test unreachable page"],
         "social_focus": False,
