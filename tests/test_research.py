@@ -1,0 +1,74 @@
+from __future__ import annotations
+
+from agents.research import (
+    fallback_plan,
+    fuse_ranked_results,
+    validate_plan,
+)
+
+
+def test_social_question_gets_platform_targeted_queries():
+    plan = fallback_plan("ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية")
+    assert plan["social_focus"] is True
+    assert "reddit" in plan["platforms"]
+    assert any("site:reddit.com" in query for query in plan["queries"])
+    assert len(plan["queries"]) <= 5
+
+
+def test_follow_up_query_keeps_prior_topic():
+    history = [{"role": "user", "content": "قارن سوق السيارات الكهربائية في مصر"}]
+    plan = fallback_plan("وطب الأسعار الحالية؟", history)
+    assert "السيارات الكهربائية" in plan["queries"][0]
+    assert plan["freshness"] == "current"
+
+
+def test_plan_validation_caps_queries_and_rejects_non_string_values():
+    candidate = {
+        "queries": ["بحث أ", "بحث ب", None, "بحث ج", "بحث د", "بحث هـ", "بحث سادس"],
+        "social_focus": True,
+        "freshness": "current",
+        "depth": "deep",
+        "platforms": ["reddit", "unknown"],
+    }
+    plan = validate_plan(candidate, "بحث عن منشورات")
+    assert len(plan["queries"]) <= 5
+    assert "unknown" not in plan["platforms"]
+    assert plan["social_focus"] is True
+    assert plan["freshness"] == "current"
+
+
+def test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates():
+    batches = [
+        {
+            "query": "cars Egypt",
+            "provider": "ddg",
+            "results": [
+                {"title": "A", "url": "https://www.example.com/a?utm_source=x", "snippet": "A"},
+                {"title": "B", "url": "https://example.com/b", "snippet": "B"},
+            ],
+        },
+        {
+            "query": "electric vehicles Egypt",
+            "provider": "bing",
+            "results": [
+                {"title": "A better title", "url": "https://example.com/a", "snippet": "Longer evidence snippet"},
+                {"title": "C", "url": "https://example.com/c", "snippet": "C"},
+            ],
+        },
+    ]
+    ranked = fuse_ranked_results(batches)
+    urls = [source["url"] for source in ranked]
+    assert len(urls) == 3
+    source_a = next(source for source in ranked if "example.com/a" in source["url"])
+    assert len(source_a["providers"]) == 2
+    assert len(source_a["queries"]) == 2
+    assert source_a["rank_score"] > next(
+        source["rank_score"] for source in ranked if "example.com/c" in source["url"]
+    )
+
+
+def test_source_classification_distinguishes_social_and_government():
+    from agents.research import classify_source
+
+    assert classify_source("https://www.reddit.com/r/example/comments/1")["platform"] == "reddit"
+    assert classify_source("https://example.gov.eg/page")["source_class"] == "government"
