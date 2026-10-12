@@ -1443,6 +1443,153 @@ class WebAgent:
         clean_answer = re.sub(r"\[المصدر\s+(\d+)\]", replace, answer)
         return clean_answer, warnings
 
+    def diagnostics(
+        self,
+        test_model: bool = True,
+        test_social: bool = False,
+    ) -> dict[str, Any]:
+        """Run explicit live checks without exposing credentials or retaining returned content."""
+        import time
+        from datetime import UTC, datetime
+
+        started = time.monotonic()
+        report: dict[str, Any] = {
+            "timestamp_utc": datetime.now(UTC).isoformat(timespec="seconds"),
+            "checks": {},
+            "configuration": self.status(),
+            "model_usage": [],
+            "warnings": [],
+        }
+
+        # Real network check: invoke both configured public web search adapters.
+        try:
+            sources = self._search_web("Omarai web search connectivity test")
+            providers: dict[str, int] = {}
+            for source in sources:
+                provider = str(source.get("provider") or "unknown")
+                providers[provider] = providers.get(provider, 0) + 1
+            report["checks"]["web_search"] = {
+                "status": "passed" if sources else "degraded",
+                "result_count": len(sources),
+                "provider_counts": providers,
+                "note": (
+                    "At least one real search result was returned."
+                    if sources
+                    else "The request completed but no parseable results were returned."
+                ),
+            }
+        except (RuntimeError, AgentDependencyError, ValueError, OSError) as exc:
+            report["checks"]["web_search"] = {
+                "status": "failed",
+                "result_count": 0,
+                "provider_counts": {},
+                "note": _clean_text(str(exc), 400),
+            }
+
+        # Do not send a provider request unless a model check was explicitly requested.
+        if not test_model:
+            report["checks"]["language_model"] = {
+                "status": "skipped",
+                "note": "Model request was not requested.",
+            }
+        elif not self.api_key:
+            report["checks"]["language_model"] = {
+                "status": "not_configured",
+                "note": "No language-model key is configured in this server session.",
+            }
+        else:
+            try:
+                probe = self._request_completion(
+                    [
+                        {
+                            "role": "system",
+                            "content": "Reply with the exact text OK and nothing else.",
+                        },
+                        {
+                            "role": "user",
+                            "content": "Omarai connectivity self-test.",
+                        },
+                    ],
+                    max_tokens=12,
+                    temperature=0.0,
+                    timeout=min(self.timeout, 12),
+                    model=self.answer_model,
+                )
+                report["checks"]["language_model"] = {
+                    "status": "passed" if probe.strip() else "failed",
+                    "note": "A real model completion was received; no prompt content was retained.",
+                    "response_received": bool(probe.strip()),
+                }
+            except (RuntimeError, AgentDependencyError) as exc:
+                report["checks"]["language_model"] = {
+                    "status": "failed",
+                    "note": _clean_text(str(exc), 400),
+                }
+
+        if not test_social:
+            report["checks"]["social_search"] = {
+                "status": "skipped",
+                "note": "Social-source probes were not requested.",
+            }
+        else:
+            configured_platforms = ["reddit", "bluesky"]
+            optional_connectors = {
+                "facebook": bool(
+                    os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                    and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+                ),
+                "instagram": bool(
+                    os.getenv("INSTAGRAM_USER_ID", "").strip()
+                    and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+                ),
+                "x": bool(os.getenv("X_BEARER_TOKEN", "").strip()),
+                "youtube": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
+            }
+            configured_platforms.extend(
+                platform
+                for platform, is_configured in optional_connectors.items()
+                if is_configured
+            )
+            try:
+                social_results, social_warnings = self._search_social(
+                    "Omarai public connectivity test", configured_platforms
+                )
+                providers: dict[str, int] = {}
+                for source in social_results:
+                    provider = str(source.get("provider") or "unknown")
+                    providers[provider] = providers.get(provider, 0) + 1
+                report["checks"]["social_search"] = {
+                    "status": "passed" if social_results else "degraded",
+                    "platforms_tested": configured_platforms,
+                    "result_count": len(social_results),
+                    "provider_counts": providers,
+                    "warnings": [_clean_text(item, 300) for item in social_warnings[:8]],
+                    "note": (
+                        "Public-source request(s) returned results."
+                        if social_results
+                        else "No parseable public social results were returned. This does not establish that the platform is offline."
+                    ),
+                }
+            except (RuntimeError, AgentDependencyError, ValueError, OSError) as exc:
+                report["checks"]["social_search"] = {
+                    "status": "failed",
+                    "platforms_tested": configured_platforms,
+                    "result_count": 0,
+                    "note": _clean_text(str(exc), 400),
+                }
+
+        report["model_usage"] = list(self.model_usage)
+        report["elapsed_ms"] = round((time.monotonic() - started) * 1000)
+        statuses = [check.get("status") for check in report["checks"].values()]
+        report["overall_status"] = (
+            "passed"
+            if all(status in {"passed", "skipped"} for status in statuses)
+            else "degraded"
+            if any(status in {"passed", "degraded"} for status in statuses)
+            else "failed"
+        )
+        return report
+
     def answer(self, question: str, history: Any = None) -> dict[str, Any]:
         if not isinstance(question, str) or not question.strip():
             raise ValueError("اكتب سؤالًا غير فارغ.")

@@ -195,3 +195,47 @@ def test_web_agent_endpoint_uses_agent_result(local_api, monkeypatch):
     assert status == 200
     assert response["kind"] == "web_research"
     assert response["sources"][0]["url"] == "https://example.com"
+
+
+
+def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    def fake_diagnostics(self, test_model=True, test_social=False):
+        return {
+            "overall_status": "passed",
+            "checks": {
+                "web_search": {"status": "passed", "result_count": 4},
+                "language_model": {"status": "passed", "response_received": True},
+                "social_search": {"status": "skipped"},
+            },
+            "model_usage": [{
+                "requested_model": "google/gemma-4-31b-it:free",
+                "used_model": "google/gemma-4-31b-it:free",
+                "fallback_used": "false",
+            }],
+        }
+
+    monkeypatch.setattr(WebAgent, "diagnostics", fake_diagnostics)
+    status, report = request_json(
+        local_api,
+        "/api/diagnostics",
+        method="POST",
+        payload={"test_model": True, "test_social": False},
+    )
+    assert status == 200
+    assert report["overall_status"] == "passed"
+    assert report["checks"]["web_search"]["result_count"] == 4
+    assert "api_key" not in report
+    assert "secret" not in str(report)
+
+
+def test_diagnostics_endpoint_requires_boolean_options(local_api):
+    status, error = request_json(
+        local_api,
+        "/api/diagnostics",
+        method="POST",
+        payload={"test_model": "yes", "test_social": False},
+    )
+    assert status == 400
+    assert "booleans" in error["error"]

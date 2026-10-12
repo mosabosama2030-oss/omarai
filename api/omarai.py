@@ -81,6 +81,22 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(400, {"error": "request body must be a JSON object"})
             path = urlparse(self.path).path
 
+            if path == "/api/diagnostics":
+                test_model = data.get("test_model", True)
+                test_social = data.get("test_social", False)
+                if not isinstance(test_model, bool) or not isinstance(test_social, bool):
+                    return self.respond(
+                        400,
+                        {"error": "test_model and test_social must be booleans"},
+                    )
+                return self.respond(
+                    200,
+                    WebAgent().diagnostics(
+                        test_model=test_model,
+                        test_social=test_social,
+                    ),
+                )
+
             if path == "/api/agent":
                 question = data.get("question", "")
                 if not isinstance(question, str) or not question.strip():
