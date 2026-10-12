@@ -101,7 +101,7 @@ class Handler(BaseHTTPRequestHandler):
                 question = data.get("question", "")
                 if not isinstance(question, str) or not question.strip():
                     return self.respond(400, {"error": "question must be a non-empty string"})
-                return self.respond(200, WebAgent().answer(question, data.get("history", [])))
+                return self.respond(200, WebAgent().answer(question, data.get("history", []), data.get("mode", "auto")) )
 
             if path == "/api/ask":
                 question = data.get("question", "")
