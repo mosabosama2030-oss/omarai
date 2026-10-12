@@ -138,6 +138,14 @@ class WebAgent:
                 "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
             ).strip().rstrip("/"),
             "default_model": os.getenv("OMARAI_LLM_MODEL", "openrouter/free").strip(),
+            "search_providers": ["DuckDuckGo HTML", "Bing RSS", "Google News RSS for fresh queries"],
+            "public_social_sources": [
+                "Reddit public RSS",
+                "Bluesky public search",
+                "indexed public pages from Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube",
+            ],
+            "youtube_api_configured": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
+            "youtube_direct_api": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
         }
 
     @staticmethod
