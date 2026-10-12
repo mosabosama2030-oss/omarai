@@ -144,7 +144,9 @@ class WebAgent:
                 "Reddit public RSS",
                 "Bluesky public search",
                 "indexed public pages from Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube",
+                "official X recent-post API when X_BEARER_TOKEN is configured",
             ],
+            "x_api_configured": bool(os.getenv("X_BEARER_TOKEN", "").strip()),
             "youtube_api_configured": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
             "youtube_direct_api": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
         }
@@ -426,6 +428,57 @@ class WebAgent:
                     warnings.append(f"Bluesky public search unavailable (HTTP {response.status_code})")
             except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
                 warnings.append("Bluesky public search unavailable for this request")
+
+        if "x" in platforms and os.getenv("X_BEARER_TOKEN", "").strip():
+            try:
+                response = httpx.get(
+                    "https://api.x.com/2/tweets/search/recent",
+                    params={
+                        "query": query + " -is:retweet",
+                        "max_results": 10,
+                        "tweet.fields": "created_at,lang,public_metrics,author_id",
+                        "expansions": "author_id",
+                        "user.fields": "name,username",
+                    },
+                    headers={
+                        **headers,
+                        "Authorization": "Bearer " + os.getenv("X_BEARER_TOKEN", "").strip(),
+                    },
+                    timeout=9.0,
+                    follow_redirects=False,
+                )
+                if response.status_code == 200:
+                    data = response.json()
+                    authors = {
+                        user.get("id"): user
+                        for user in data.get("includes", {}).get("users", [])
+                    }
+                    for item in data.get("data", []):
+                        author = authors.get(item.get("author_id"), {})
+                        username = author.get("username", "")
+                        post_id = item.get("id", "")
+                        if not username or not post_id:
+                            continue
+                        results.append({
+                            "title": _clean_text(author.get("name") or username, 300),
+                            "url": f"https://x.com/{username}/status/{post_id}",
+                            "snippet": _clean_text(item.get("text") or "", 1200),
+                            "page_text": "",
+                            "page_fetched": False,
+                            "provider": "x_official_api",
+                            "provider_rank": len([
+                                row for row in results
+                                if row.get("provider") == "x_official_api"
+                            ]) + 1,
+                            "search_query": query,
+                            "published_at": _clean_text(item.get("created_at") or "", 100),
+                        })
+                else:
+                    warnings.append(f"X API unavailable (HTTP {response.status_code})")
+            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):
+                warnings.append("X API unavailable for this request")
+        elif "x" in platforms:
+            warnings.append("X direct API is not configured; indexed public X pages are still searched.")
 
         if "youtube" in platforms and os.getenv("YOUTUBE_API_KEY", "").strip():
             try:
