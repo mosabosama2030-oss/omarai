@@ -177,6 +177,11 @@ class WebAgent:
             "review_model": review_model,
             "fallback_model": fallback_model,
             "model_selection_mode": "role_specific_with_fallback",
+            "external_model_privacy_notice": (
+                "Prompts and selected page excerpts are sent to the configured external model provider. "
+                "Do not submit secrets or personal/confidential customer data. The default free NVIDIA "
+                "Nemotron endpoint states that sessions may be logged for security and product improvement."
+            ),
             "search_providers": [
                 "DuckDuckGo HTML",
                 "Bing RSS",
