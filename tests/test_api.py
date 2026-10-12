@@ -271,6 +271,8 @@ def test_hosted_api_rate_limits_authenticated_requests(local_api, monkeypatch):
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "y" * 48)
     monkeypatch.setattr(Handler, "RATE_LIMIT_REQUESTS", 1)
+    with Handler._rate_lock:
+        Handler._request_times.clear()
     headers = {"Authorization": "Bearer " + "y" * 48}
 
     status, _ = request_json(
