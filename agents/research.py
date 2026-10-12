@@ -6,12 +6,14 @@ but all queries, result counts and source records are validated before use.
 from __future__ import annotations
 
 import re
+from datetime import UTC, datetime, timedelta
+from email.utils import parsedate_to_datetime
 from typing import Any
 from urllib.parse import urlparse
 
-MAX_PLAN_QUERIES = 5
+MAX_PLAN_QUERIES = 8
 MAX_QUERY_CHARS = 240
-MAX_FUSED_RESULTS = 12
+MAX_FUSED_RESULTS = 18
 
 SOCIAL_DOMAINS = {
     "reddit": "reddit.com",
@@ -333,3 +335,134 @@ def fuse_ranked_results(
             entry["rank_score"] += 0.5
     ranked = sorted(accumulated.values(), key=lambda item: item["rank_score"], reverse=True)
     return ranked[:max(1, min(int(limit), MAX_FUSED_RESULTS))]
+
+
+
+def _parse_publication_date(value: Any, now: datetime | None = None) -> datetime | None:
+    """Parse common search/RSS publication dates without guessing missing dates."""
+    if not isinstance(value, str) or not value.strip():
+        return None
+    raw = value.strip()
+    current = now or datetime.now(UTC)
+    try:
+        parsed = parsedate_to_datetime(raw)
+        if parsed:
+            return parsed.replace(tzinfo=parsed.tzinfo or UTC).astimezone(UTC)
+    except (TypeError, ValueError, OverflowError):
+        pass
+    iso_value = raw.replace("Z", "+00:00")
+    try:
+        parsed = datetime.fromisoformat(iso_value)
+        return parsed.replace(tzinfo=parsed.tzinfo or UTC).astimezone(UTC)
+    except (TypeError, ValueError, OverflowError):
+        pass
+    for date_format in ("%b %d, %Y", "%B %d, %Y", "%Y/%m/%d", "%d %b %Y"):
+        try:
+            return datetime.strptime(raw, date_format).replace(tzinfo=UTC)
+        except ValueError:
+            continue
+    match = re.search(r"(\d+)\s+(hour|day|week|month|year)s?\s+ago", raw, re.I)
+    if match:
+        amount = int(match.group(1))
+        unit = match.group(2).lower()
+        durations = {
+            "hour": timedelta(hours=amount),
+            "day": timedelta(days=amount),
+            "week": timedelta(days=7 * amount),
+            "month": timedelta(days=30 * amount),
+            "year": timedelta(days=365 * amount),
+        }
+        return current - durations[unit]
+    if raw.lower() in {"today", "just now", "now"}:
+        return current
+    if raw.lower() == "yesterday":
+        return current - timedelta(days=1)
+    return None
+
+
+def evidence_signal_report(
+    sources: list[dict[str, Any]],
+    freshness: str = "any",
+    now: datetime | None = None,
+) -> dict[str, Any]:
+    """Summarize research coverage; signals describe evidence coverage, not factual truth."""
+    current = now or datetime.now(UTC)
+    valid_sources = [source for source in sources if isinstance(source, dict) and source.get("url")]
+    domains = {
+        str(source.get("domain") or "").lower().removeprefix("www.")
+        for source in valid_sources
+        if source.get("domain")
+    }
+    providers: set[str] = set()
+    for source in valid_sources:
+        candidate_providers = source.get("providers", [])
+        if isinstance(candidate_providers, list):
+            providers.update(str(item) for item in candidate_providers if item)
+        elif source.get("provider"):
+            providers.add(str(source["provider"]))
+    classes = [str(source.get("source_class") or "general") for source in valid_sources]
+    primary_count = sum(item in {"government", "academic", "official"} for item in classes)
+    news_count = sum(item == "news" for item in classes)
+    social_count = sum(item == "social" for item in classes)
+    pages_read = sum(bool(source.get("page_fetched")) for source in valid_sources)
+    dates = [
+        parsed
+        for source in valid_sources
+        if (parsed := _parse_publication_date(source.get("published_at"), current)) is not None
+    ]
+    recent_days = 7 if freshness == "current" else 30
+    recent_count = sum((current - parsed).total_seconds() >= 0 and
+                       (current - parsed) <= timedelta(days=recent_days) for parsed in dates)
+    future_dates = sum(parsed > current + timedelta(days=1) for parsed in dates)
+    unique_sources = len(valid_sources)
+    # Evidence coverage uses several independent dimensions and is deliberately not a
+    # probability that any factual claim is true.
+    coverage_points = 0
+    coverage_points += min(unique_sources, 10) * 3
+    coverage_points += min(len(domains), 8) * 4
+    coverage_points += min(len(providers), 4) * 5
+    coverage_points += min(pages_read, 8) * 3
+    coverage_points += min(primary_count, 4) * 4
+    coverage_points += min(len(dates), 8) * 2
+    coverage_score = min(100, coverage_points)
+    if unique_sources >= 8 and len(domains) >= 5 and len(providers) >= 2 and pages_read >= 3:
+        coverage_level = "متعدد المصادر"
+    elif unique_sources >= 4 and len(domains) >= 3 and len(providers) >= 1:
+        coverage_level = "متوسط"
+    else:
+        coverage_level = "محدود"
+
+    warnings: list[str] = []
+    if unique_sources == 0:
+        warnings.append("لا توجد مصادر قابلة للاستشهاد؛ لا تستنتج حقائق من عدم وجود نتائج.")
+    if len(domains) < 3:
+        warnings.append("تنوع النطاقات محدود؛ لا تعتبر تكرار النتيجة تأكيدًا مستقلًا.")
+    if pages_read < 2 and unique_sources:
+        warnings.append("تمت قراءة أقل من صفحتين مباشرة؛ بعض الأدلة مقتطفات من محركات البحث فقط.")
+    if freshness == "current":
+        if not dates:
+            warnings.append("لا تتوفر تواريخ نشر قابلة للتحليل؛ حداثة النتائج غير مؤكدة.")
+        elif recent_count == 0:
+            warnings.append(f"لم يُعثر على مصدر مؤرخ خلال آخر {recent_days} يومًا ضمن التواريخ القابلة للتحليل.")
+    if future_dates:
+        warnings.append("توجد تواريخ مستقبلية غير متوقعة؛ يجب مراجعتها يدويًا.")
+    if social_count and primary_count == 0:
+        warnings.append("المصادر اجتماعية فقط دون مصدر رسمي/أكاديمي؛ تعامل معها كآراء أو إشارات لا كحقائق مثبتة.")
+    return {
+        "unique_sources": unique_sources,
+        "unique_domains": len(domains),
+        "providers_count": len(providers),
+        "providers": sorted(providers),
+        "pages_read": pages_read,
+        "primary_sources": primary_count,
+        "news_sources": news_count,
+        "social_sources": social_count,
+        "dated_sources": len(dates),
+        "recent_sources": recent_count,
+        "undated_sources": max(0, unique_sources - len(dates)),
+        "date_coverage_percent": round(100 * len(dates) / unique_sources) if unique_sources else 0,
+        "coverage_score": coverage_score,
+        "coverage_level": coverage_level,
+        "score_meaning": "مؤشر تغطية وتنوع الأدلة، وليس احتمال صحة الإجابة.",
+        "warnings": warnings,
+    }
