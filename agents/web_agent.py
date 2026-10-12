@@ -137,6 +137,11 @@ class WebAgent:
         ).strip()
         self.model = self.answer_model  # Backwards-compatible alias.
         self.model_usage: list[dict[str, str]] = []
+        self.server_search_sources: list[dict[str, Any]] = []
+        self.openrouter_web_search_enabled = (
+            os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
+            and "openrouter.ai" in self.base_url.lower()
+        )
         self.timeout = max(
             5, min(int(os.getenv("OMARAI_LLM_TIMEOUT", str(LLM_TIMEOUT_SECONDS))), 60)
         )
@@ -189,11 +194,18 @@ class WebAgent:
                 "DuckDuckGo HTML",
                 "Bing RSS",
                 "Google News RSS for fresh queries",
+                "OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1",
                 "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
                 "Tavily Search API when TAVILY_API_KEY is configured",
             ],
             "brave_search_api_configured": bool(os.getenv("BRAVE_SEARCH_API_KEY", "").strip()),
             "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
+            "openrouter_web_search_enabled": (
+                os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
+                and "openrouter.ai" in os.getenv(
+                    "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
+                ).lower()
+            ),
             "public_social_sources": [
                 "Reddit public RSS and optional authorized Reddit OAuth search",
                 "Bluesky public search",
@@ -1355,8 +1367,9 @@ class WebAgent:
         temperature: float = 0.2,
         timeout: int | None = None,
         model: str | None = None,
+        enable_web_search: bool = False,
     ) -> str:
-        """Call an OpenAI-compatible API with one configured-model fallback."""
+        """Call an OpenAI-compatible API with bounded fallback and optional live server search."""
         if not self.api_key:
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
 
@@ -1367,15 +1380,27 @@ class WebAgent:
 
         last_error: RuntimeError | None = None
         for candidate_model in model_candidates:
-            payload = json.dumps(
-                {
-                    "model": candidate_model,
-                    "messages": messages,
-                    "temperature": temperature,
-                    "max_tokens": max(100, min(int(max_tokens), 3000)),
-                },
-                ensure_ascii=False,
-            ).encode("utf-8")
+            request_payload: dict[str, Any] = {
+                "model": candidate_model,
+                "messages": messages,
+                "temperature": temperature,
+                "max_tokens": max(100, min(int(max_tokens), 3000)),
+            }
+            if enable_web_search and self.openrouter_web_search_enabled:
+                # OpenRouter executes these searches server-side and returns URL citations.
+                # This is opt-in because provider search incurs usage charges.
+                request_payload["tools"] = [{
+                    "type": "openrouter:web_search",
+                    "parameters": {
+                        "engine": "auto",
+                        "max_results": 5,
+                        "max_total_results": 12,
+                        "max_uses": 3,
+                        "search_context_size": "medium",
+                    },
+                }]
+                request_payload["max_tool_calls"] = 5
+            payload = json.dumps(request_payload, ensure_ascii=False).encode("utf-8")
             request = urllib.request.Request(
                 self.base_url + "/chat/completions",
                 data=payload,
@@ -1390,7 +1415,35 @@ class WebAgent:
             try:
                 with urllib.request.urlopen(request, timeout=timeout or self.timeout) as response:
                     data = json.loads(response.read(2_000_000).decode("utf-8"))
-                answer = data["choices"][0]["message"]["content"]
+                message = data["choices"][0]["message"]
+                answer = message["content"]
+                if enable_web_search and self.openrouter_web_search_enabled:
+                    for annotation in message.get("annotations", []):
+                        if not isinstance(annotation, dict) or annotation.get("type") != "url_citation":
+                            continue
+                        citation = annotation.get("url_citation", annotation)
+                        if not isinstance(citation, dict):
+                            continue
+                        url = _public_http_url(citation.get("url", ""))
+                        if not url or any(item.get("url") == url for item in self.server_search_sources):
+                            continue
+                        parsed_url = urllib.parse.urlparse(url)
+                        excerpt = _clean_text(citation.get("content", ""), 1800)
+                        self.server_search_sources.append({
+                            "title": _clean_text(citation.get("title", ""), 300) or parsed_url.netloc,
+                            "url": url,
+                            "snippet": excerpt,
+                            "page_text": excerpt,
+                            "page_fetched": False,
+                            "provider": "openrouter_web_search",
+                            "providers": ["openrouter_web_search"],
+                            "queries": [],
+                            "domain": parsed_url.netloc.lower(),
+                            "source_class": "general",
+                            "platform": "web",
+                            "published_at": "",
+                            "rank_score": 0.0,
+                        })
                 if isinstance(answer, list):
                     answer = "".join(
                         item.get("text", "") for item in answer if isinstance(item, dict)
@@ -1593,6 +1646,7 @@ class WebAgent:
             temperature=0.15,
             timeout=min(self.timeout, 28),
             model=self.answer_model,
+            enable_web_search=self.openrouter_web_search_enabled,
         )
         return answer[:24_000]
 
@@ -1817,6 +1871,7 @@ class WebAgent:
         if len(question) > MAX_QUESTION_CHARS:
             raise ValueError(f"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.")
         clean_history = self._sanitize_history(history)
+        self.server_search_sources = []
         clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
         if clean_mode not in {"auto", "deep", "latest", "social"}:
             raise ValueError("نمط البحث غير مدعوم. اختر auto أو deep أو latest أو social.")
@@ -1894,6 +1949,23 @@ class WebAgent:
                 search_report=report,
             )
             used_llm = True
+            if self.server_search_sources:
+                existing_urls = {item.get("url") for item in sources}
+                for item in self.server_search_sources:
+                    if item["url"] not in existing_urls:
+                        sources.append(item)
+                        existing_urls.add(item["url"])
+                report["unique_sources"] = len(sources)
+                provider_counts = dict(report.get("provider_counts", {}))
+                provider_counts["openrouter_web_search"] = len(self.server_search_sources)
+                report["provider_counts"] = provider_counts
+                providers_used = list(report.get("providers_used", []))
+                if "openrouter_web_search" not in providers_used:
+                    providers_used.append("openrouter_web_search")
+                report["providers_used"] = providers_used
+                report["evidence_signals"] = evidence_signal_report(
+                    sources, plan.get("freshness", "any")
+                )
         except (RuntimeError, AgentDependencyError) as exc:
             llm_warning = str(exc)
             if not self.api_key:
@@ -1920,6 +1992,10 @@ class WebAgent:
                     "تعذرت مراجعة الاتساق الإضافية؛ احتُفظ بالإجابة الأولى. "
                     "هذه المراجعة إن اكتملت ليست تحققًا مستقلاً من الحقيقة."
                 )
+        if self.server_search_sources:
+            answer += "\n\nروابط إضافية من البحث المباشر عبر الويب:"
+            for source in self.server_search_sources[:8]:
+                answer += "\n- " + source["title"] + " — " + source["url"]
         answer, citation_warnings = self._remove_invalid_citations(
             answer, min(MAX_LLM_CITED_SOURCES, len(sources))
         )
@@ -1934,6 +2010,8 @@ class WebAgent:
             + citation_warnings
         ))
         report["model_calls"] = list(self.model_usage)
+        report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
+        report["openrouter_web_search_results"] = len(self.server_search_sources)
         public_sources = []
         for source in sources:
             public_sources.append({
