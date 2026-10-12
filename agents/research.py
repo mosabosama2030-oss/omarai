@@ -27,7 +27,7 @@ SOCIAL_DOMAINS = {
 }
 
 _SOCIAL_TERMS = (
-    "social media", "social network", "social posts", "public posts",
+    "social media", "social network", "social posts", "social pages", "public social", "public posts",
     "facebook", "instagram", "reddit", "youtube", "twitter", "x.com",
     "tiktok", "linkedin", "threads", "bluesky",
     "سوشيال", "التواصل الاجتماعي", "مواقع التواصل", "صفحات التواصل",
@@ -42,7 +42,7 @@ _SOCIAL_TERMS = (
 _FRESH_TERMS = (
     "latest", "current", "today", "this week", "recent", "breaking", "news",
     "now", "2026", "latest price", "market price", "updated",
-    "آخر", "احدث", "أحدث", "حاليا", "حالياً", "اليوم", "هذا الاسبوع",
+    "آخر", "اخر", "احدث", "أحدث", "حاليا", "حالياً", "الآن", "دلوقتي", "النهارده", "مؤخرًا", "مؤخرا", "اليوم", "هذا الاسبوع",
     "هذا الأسبوع", "آخر الأخبار", "اخر الاخبار", "مستجدات", "حديث",
     "سعر اليوم", "الاسعار الحالية", "الأسعار الحالية", "جديد",
 )
@@ -153,7 +153,7 @@ def fallback_plan(
         queries.append(_compact(base + " مقارنة مراجعات مميزات عيوب", 500))
 
     if social_focus:
-        selected = platforms or ["reddit", "youtube"]
+        selected = platforms or ["facebook", "instagram", "reddit"]
         for platform in selected[:3]:
             domain = SOCIAL_DOMAINS[platform]
             site_query = _compact(f"site:{domain} {base}", 500)
@@ -330,6 +330,6 @@ def fuse_ranked_results(
         if entry["source_class"] in {"government", "academic"}:
             entry["rank_score"] += 0.0001
         if "user_supplied_url" in entry["providers"]:
-            entry["rank_score"] += 0.05
+            entry["rank_score"] += 0.5
     ranked = sorted(accumulated.values(), key=lambda item: item["rank_score"], reverse=True)
     return ranked[:max(1, min(int(limit), MAX_FUSED_RESULTS))]
