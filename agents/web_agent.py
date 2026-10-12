@@ -1992,9 +1992,9 @@ class WebAgent:
                     "هذه المراجعة إن اكتملت ليست تحققًا مستقلاً من الحقيقة."
                 )
         if self.server_search_sources:
-            answer += "\\n\\nروابط إضافية من البحث المباشر عبر الويب:"
+            answer += "\n\nروابط إضافية من البحث المباشر عبر الويب:"
             for source in self.server_search_sources[:8]:
-                answer += "\\n- " + source["title"] + " — " + source["url"]
+                answer += "\n- " + source["title"] + " — " + source["url"]
         answer, citation_warnings = self._remove_invalid_citations(
             answer, min(MAX_LLM_CITED_SOURCES, len(sources))
         )
