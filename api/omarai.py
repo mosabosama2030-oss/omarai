@@ -9,6 +9,7 @@ import time
 from collections import defaultdict, deque
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from typing import ClassVar
 from urllib.parse import parse_qs, urlparse
 
 from agents.omarai import LeadStore, analyze, normalize
@@ -22,7 +23,7 @@ LEADS_DASHBOARD = ROOT / "dashboard.html"
 class Handler(BaseHTTPRequestHandler):
     store = LeadStore()
     _rate_lock = threading.Lock()
-    _request_times: dict[str, deque[float]] = defaultdict(deque)
+    _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
     RATE_LIMIT_REQUESTS = 20
     RATE_LIMIT_WINDOW_SECONDS = 60
 
@@ -236,9 +237,10 @@ def answer_question(question, store):
 def serve(host="127.0.0.1", port=8765):
     public_deployment = os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1"
     access_token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
-    if host not in ("127.0.0.1", "localhost", "::1"):
-        if not public_deployment or len(access_token) < 32:
-            raise ValueError(
+    if host not in ("127.0.0.1", "localhost", "::1") and (
+        not public_deployment or len(access_token) < 32
+    ):
+        raise ValueError(
                 "Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and "
                 "a private OMARAI_ACCESS_TOKEN of at least 32 characters."
             )
