@@ -1804,7 +1804,8 @@ class WebAgent:
                 f"{base_query} risks limitations alternatives",
                 f"{base_query} case studies recent analysis",
             ]
-            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:5] + candidates))[
+            # Keep query budget for evidence-gap searches if first-round coverage is weak.
+            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:3] + candidates))[
                 :MAX_PLAN_QUERIES
             ]
         elif clean_mode == "latest":
