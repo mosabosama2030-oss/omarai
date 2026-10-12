@@ -1,11 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "omarai-agent"
-version = "0.1.0"
-description = "Standalone local-first Arabic lead-intent agent"
+version = "0.2.0"
+description = "Arabic-first web research and generative Q&A agent with lead workspace"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-dependencies = []
+dependencies = [
+  "ddgs>=9.0,<10",
+  "beautifulsoup4>=4.12,<5",
+  "httpx>=0.27,<1",
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.5"]
@@ -16,3 +24,7 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[tool.setuptools.packages.find]
+include = ["agents*", "api*", "cli*"]
+exclude = ["tests*", "web*"]
