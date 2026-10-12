@@ -62,6 +62,7 @@ For the platform boundaries, optional credentials and safe Termux setup for soci
 - `GET /` — web-research chat
 - `GET /leads` — existing lead workspace
 - `GET /api/health` — setup and dependency status (never returns the API key)
+- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors
 - `POST /api/agent` — open-ended question plus optional recent `history`
 - `POST /api/analyze` — existing rule-based lead-text assessment
 - `GET/POST /api/leads` — existing local lead records
@@ -75,7 +76,7 @@ Example request:
 }
 ```
 
-The response includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax is validated and resolved private/local addresses are rejected before page fetches; the fetcher does not follow redirects. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose.
+The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The web UI includes a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax is validated and resolved private/local addresses are rejected before page fetches; the fetcher does not follow redirects. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose.
 
 ## Existing lead workspace
 
