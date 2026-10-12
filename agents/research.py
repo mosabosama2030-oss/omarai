@@ -361,7 +361,7 @@ def _parse_publication_date(value: Any, now: datetime | None = None) -> datetime
             return datetime.strptime(raw, date_format).replace(tzinfo=UTC)
         except ValueError:
             continue
-    match = re.search(r"(\d+)\s+(hour|day|week|month|year)s?\s+ago", raw, re.I)
+    match = re.search(r"(\d+)\s+(hour|day|week|month|year)s?\s+ago", raw, re.IGNORECASE)
     if match:
         amount = int(match.group(1))
         unit = match.group(2).lower()
