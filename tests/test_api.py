@@ -47,7 +47,7 @@ def test_api_health_analyze_save_duplicate_list_and_status(local_api):
     status, health = request_json(local_api, "/api/health")
     assert status == 200
     assert health["app"] == "Omarai"
-    assert health["mode"] == "local"
+    assert health["mode"] == "web-research"
 
     text = "بدور على شقة في التجمع الخامس وممكن معاينة"
     status, assessment = request_json(
@@ -167,3 +167,31 @@ def test_ask_is_honest_when_database_is_empty(local_api):
     assert status == 200
     assert answer["kind"] == "no_data"
     assert "لا توجد إشارة" in answer["answer"]
+
+
+
+def test_web_agent_endpoint_uses_agent_result(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    def fake_answer(self, question, history=None):
+        return {
+            "answer": "إجابة اختبار [المصدر 1]",
+            "question": question,
+            "search_query": question,
+            "sources": [{"title": "مصدر", "url": "https://example.com", "snippet": "نص", "page_fetched": False}],
+            "used_language_model": True,
+            "used_web_search": True,
+            "warnings": [],
+            "kind": "web_research",
+        }
+
+    monkeypatch.setattr(WebAgent, "answer", fake_answer)
+    status, response = request_json(
+        local_api,
+        "/api/agent",
+        method="POST",
+        payload={"question": "ابحث عن موضوع", "history": []},
+    )
+    assert status == 200
+    assert response["kind"] == "web_research"
+    assert response["sources"][0]["url"] == "https://example.com"
