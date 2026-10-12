@@ -1226,7 +1226,11 @@ class WebAgent:
         ]
         try:
             raw = self._request_completion(
-                messages, max_tokens=650, temperature=0.0, timeout=min(self.timeout, 12)
+                messages,
+                max_tokens=650,
+                temperature=0.0,
+                timeout=min(self.timeout, 12),
+                model=self.planner_model,
             )
             start = raw.find("{")
             end = raw.rfind("}")
@@ -1356,6 +1360,7 @@ class WebAgent:
             max_tokens=2200 if plan.get("depth") == "deep" else 1500,
             temperature=0.15,
             timeout=min(self.timeout, 28),
+            model=self.answer_model,
         )
         return answer[:24_000]
 
@@ -1402,7 +1407,11 @@ class WebAgent:
             },
         ]
         return self._request_completion(
-            messages, max_tokens=1700, temperature=0.0, timeout=min(self.timeout, 12)
+            messages,
+            max_tokens=1700,
+            temperature=0.0,
+            timeout=min(self.timeout, 12),
+            model=self.review_model,
         )
 
     @staticmethod
@@ -1502,6 +1511,7 @@ class WebAgent:
             + ([review_warning] if review_warning else [])
             + citation_warnings
         ))
+        report["model_calls"] = list(self.model_usage)
         public_sources = []
         for source in sources:
             public_sources.append({
