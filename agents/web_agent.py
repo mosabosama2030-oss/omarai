@@ -982,12 +982,9 @@ class WebAgent:
         return results, warnings
 
     def _fetch_page(self, url: str) -> tuple[str, str]:
-        """Fetch a public HTML page with strict size/time bounds; no redirects."""
-        safe_url = _public_http_url(url)
-        if not safe_url:
-            return "", ""
-        parsed = urllib.parse.urlparse(safe_url)
-        if not _host_resolves_publicly(parsed.hostname or ""):
+        """Fetch a public page with bounded, individually validated redirects and size limits."""
+        current_url = _public_http_url(url)
+        if not current_url:
             return "", ""
         try:
             import httpx
@@ -998,36 +995,64 @@ class WebAgent:
             ) from exc
 
         headers = {
-            "User-Agent": "OmaraiResearchBot/1.0 (public page research; no login)",
+            "User-Agent": "OmaraiResearchBot/1.1 (public page research; no login)",
             "Accept": "text/html,application/xhtml+xml,text/plain;q=0.8",
         }
+        media_type = ""
+        html = ""
         try:
             with httpx.Client(
-                timeout=7.0, follow_redirects=False, headers=headers, verify=True
-            ) as client, client.stream("GET", safe_url) as response:
-                if response.status_code < 200 or response.status_code >= 300:
-                    return "", ""
-                media_type = response.headers.get("content-type", "").split(";")[0].lower()
-                if media_type not in {
-                    "text/html", "application/xhtml+xml", "text/plain"
-                }:
-                    return "", ""
-                content_length = response.headers.get("content-length")
-                if content_length and int(content_length) > MAX_PAGE_BYTES:
-                    return "", ""
-                chunks: list[bytes] = []
-                count = 0
-                for chunk in response.iter_bytes():
-                    count += len(chunk)
-                    if count > MAX_PAGE_BYTES:
-                        remaining = max(0, MAX_PAGE_BYTES - (count - len(chunk)))
-                        if remaining:
-                            chunks.append(chunk[:remaining])
+                timeout=8.0, follow_redirects=False, headers=headers, verify=True
+            ) as client:
+                for redirect_number in range(4):
+                    parsed = urllib.parse.urlparse(current_url)
+                    # Revalidate every redirect target before making a network request.
+                    if not _host_resolves_publicly(parsed.hostname or ""):
+                        return "", ""
+                    with client.stream("GET", current_url) as response:
+                        if response.status_code in {301, 302, 303, 307, 308}:
+                            location = response.headers.get("location", "")
+                            if not location or redirect_number >= 3:
+                                return "", ""
+                            target = _public_http_url(
+                                urllib.parse.urljoin(current_url, location)
+                            )
+                            if not target:
+                                return "", ""
+                            current_url = target
+                            continue
+                        if response.status_code < 200 or response.status_code >= 300:
+                            return "", ""
+                        media_type = response.headers.get(
+                            "content-type", ""
+                        ).split(";")[0].lower()
+                        if media_type not in {
+                            "text/html", "application/xhtml+xml", "text/plain"
+                        }:
+                            return "", ""
+                        content_length = response.headers.get("content-length")
+                        if content_length:
+                            try:
+                                if int(content_length) > MAX_PAGE_BYTES:
+                                    return "", ""
+                            except ValueError:
+                                pass
+                        chunks: list[bytes] = []
+                        count = 0
+                        for chunk in response.iter_bytes():
+                            count += len(chunk)
+                            if count > MAX_PAGE_BYTES:
+                                remaining = max(0, MAX_PAGE_BYTES - (count - len(chunk)))
+                                if remaining:
+                                    chunks.append(chunk[:remaining])
+                                break
+                            chunks.append(chunk)
+                        raw = b"".join(chunks)
+                        encoding = response.encoding or "utf-8"
+                        html = raw.decode(encoding, errors="replace")
                         break
-                    chunks.append(chunk)
-                raw = b"".join(chunks)
-                encoding = response.encoding or "utf-8"
-                html = raw.decode(encoding, errors="replace")
+                else:
+                    return "", ""
         except (OSError, ValueError, httpx.HTTPError):
             return "", ""
 
@@ -1035,7 +1060,10 @@ class WebAgent:
             return "", _clean_text(html, MAX_PAGE_TEXT_CHARS)
         soup = BeautifulSoup(html, "html.parser")
         title = _clean_text(soup.title.get_text(" ", strip=True), 300) if soup.title else ""
-        for element in soup(["script", "style", "nav", "footer", "header", "noscript", "svg", "form"]):
+        for element in soup([
+            "script", "style", "nav", "footer", "header", "noscript",
+            "svg", "form", "iframe", "template"
+        ]):
             element.decompose()
         main = soup.find("main") or soup.find("article") or soup.body or soup
         text = _clean_text(main.get_text(" ", strip=True), MAX_PAGE_TEXT_CHARS)
