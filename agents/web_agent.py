@@ -365,7 +365,7 @@ class WebAgent:
             import httpx
         except ImportError as exc:
             raise AgentDependencyError("حزمة httpx غير مثبتة.") from exc
-        is_arabic = bool(re.search(r"[\\u0600-\\u06FF]", query))
+        is_arabic = bool(re.search(r"[\u0600-\u06FF]", query))
         response = httpx.get(
             "https://api.search.brave.com/res/v1/web/search",
             params={
