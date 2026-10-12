@@ -1058,7 +1058,7 @@ class WebAgent:
         )
         report["second_pass_review"] = review_status
         report["valid_citation_range"] = [1, min(10, len(sources))]
-        report["citation_count"] = len(re.findall(r"\\[المصدر\\s+\\d+\\]", answer))
+        report["citation_count"] = len(re.findall(r"\[المصدر\s+\d+\]", answer))
         report["citation_check"] = "invalid_references_removed" if citation_warnings else "no_invalid_reference_detected"
         warnings = list(dict.fromkeys(
             search_warnings
