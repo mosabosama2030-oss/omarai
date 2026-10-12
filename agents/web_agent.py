@@ -441,9 +441,9 @@ class WebAgent:
             if ig_user_id and ig_token:
                 # The official Hashtag Search API returns public hashtag media only.
                 # It does not search every Instagram post or bypass private accounts.
-                hashtags = re.findall(r"#([\\w\\u0600-\\u06FF]+)", query, flags=re.UNICODE)
+                hashtags = re.findall(r"#([\w\u0600-\u06FF]+)", query, flags=re.UNICODE)
                 if not hashtags:
-                    words = re.findall(r"[\\w\\u0600-\\u06FF]+", query, flags=re.UNICODE)
+                    words = re.findall(r"[\w\u0600-\u06FF]+", query, flags=re.UNICODE)
                     stopwords = {
                         "ابحث", "بحث", "عن", "في", "على", "من", "مع", "تجارب",
                         "الناس", "العملاء", "منشورات", "تعليقات", "مواقع", "التواصل",
