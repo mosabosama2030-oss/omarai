@@ -20,17 +20,40 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     agent.api_key = "test-key"
     seen = {}
 
-    def collect(query):
-        seen["query"] = query
-        return [sample_source()], None
+    def plan(question, history):
+        return {
+            "queries": [question],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": [],
+            "planning_method": "test",
+        }
 
-    def generate(question, history, sources, search_warning):
+    def collect(research_plan):
+        seen["plan"] = research_plan
+        return [sample_source()], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": research_plan["queries"][0], "results": 1}],
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test"],
+            "platform_counts": {"web": 1},
+            "social_direct_results": 0,
+            "depth": "deep",
+            "planning_method": "test",
+        }
+
+    def generate(question, history, sources, search_warning, research_plan=None, search_report=None):
         seen["question"] = question
         seen["history"] = history
         seen["sources"] = sources
+        seen["report"] = search_report
         return "الإجابة: التقنية مناسبة للأسباب التالية [المصدر 1]."
 
-    monkeypatch.setattr(agent, "_collect_sources", collect)
+    monkeypatch.setattr(agent, "_plan_search", plan)
+    monkeypatch.setattr(agent, "_collect_research", collect)
     monkeypatch.setattr(agent, "_generate", generate)
     result = agent.answer(
         "قارن هذه التقنية",
@@ -48,7 +71,26 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
 def test_agent_returns_search_snippets_if_model_not_configured(monkeypatch):
     agent = WebAgent()
     agent.api_key = ""
-    monkeypatch.setattr(agent, "_collect_sources", lambda query: ([sample_source()], None))
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            [sample_source()],
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [],
+                "unique_sources": 1,
+                "pages_fetched": 1,
+                "providers_used": ["test"],
+                "platform_counts": {"web": 1},
+                "social_direct_results": 0,
+                "depth": "standard",
+                "planning_method": "test",
+            },
+        ),
+    )
 
     result = agent.answer("ما الذي يقوله المصدر؟")
 
