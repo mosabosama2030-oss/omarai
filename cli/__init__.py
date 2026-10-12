@@ -1,0 +1,1 @@
+"""Omarai command-line package."""
