@@ -54,6 +54,7 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
 
     monkeypatch.setattr(agent, "_plan_search", plan)
     monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
     monkeypatch.setattr(agent, "_generate", generate)
     result = agent.answer(
         "قارن هذه التقنية",
@@ -271,3 +272,13 @@ def test_research_collection_fuses_multiple_queries_and_reports_provenance(monke
     assert report["pages_fetched"] == 3
     assert "ddg" in report["providers_used"]
     assert "bing" in report["providers_used"]
+
+
+
+def test_invalid_citations_are_removed_and_valid_ones_preserved():
+    answer, warnings = WebAgent._remove_invalid_citations(
+        "النتيجة [المصدر 1] وادعاء آخر [المصدر 11].", 1
+    )
+    assert "[المصدر 1]" in answer
+    assert "[المصدر 11]" not in answer
+    assert len(warnings) == 1
