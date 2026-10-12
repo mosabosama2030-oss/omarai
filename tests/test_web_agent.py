@@ -586,3 +586,15 @@ def test_health_status_reports_models_without_credentials(monkeypatch):
     assert status["fallback_model"] == "openrouter/free"
     assert status["language_model_configured"] is False
     assert "api_key" not in status
+
+
+
+def test_health_status_exposes_external_model_privacy_notice_without_secrets(monkeypatch):
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+    monkeypatch.delenv("OMARAI_LLM_API_KEY", raising=False)
+    status = WebAgent.status()
+    notice = status["external_model_privacy_notice"]
+    assert "external model provider" in notice
+    assert "personal/confidential customer data" in notice
+    assert "api_key" not in status
+    assert "OPENROUTER_API_KEY" not in str(status)
