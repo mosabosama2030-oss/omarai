@@ -620,6 +620,30 @@ class WebAgent:
                 items.sort(key=lambda item: int(item.get("provider_rank", 999)))
                 batches.append({"query": queries[0], "provider": provider, "results": items})
 
+        # Explicit URLs are first-class inputs: fetch the page the user actually asked about
+        # instead of relying on a search engine to rediscover it. URL and DNS checks still apply.
+        direct_urls: list[str] = []
+        for value in plan.get("direct_urls", [])[:5]:
+            safe_url = _public_http_url(value)
+            if safe_url and safe_url not in direct_urls:
+                direct_urls.append(safe_url)
+        for direct_url in direct_urls:
+            batches.append({
+                "query": queries[0],
+                "provider": "user_supplied_url",
+                "results": [{
+                    "title": "رابط قدمه المستخدم للتحليل",
+                    "url": direct_url,
+                    "snippet": "",
+                    "page_text": "",
+                    "page_fetched": False,
+                    "provider": "user_supplied_url",
+                    "provider_rank": 1,
+                    "search_query": queries[0],
+                    "published_at": "",
+                }],
+            })
+
         sources = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)
 
         # Fetch page text only for the best few public URLs; do it concurrently with strict bounds.
@@ -1091,6 +1115,7 @@ class WebAgent:
                 "freshness": plan.get("freshness", "any"),
                 "social_focus": bool(plan.get("social_focus")),
                 "platforms": plan.get("platforms", []),
+                "direct_urls_provided": len(plan.get("direct_urls", [])),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
             },
             "search_report": report,
