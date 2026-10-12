@@ -20,6 +20,7 @@ from typing import Any
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
+    evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
     validate_plan,
@@ -28,10 +29,11 @@ from agents.research import (
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
 MAX_HISTORY_CHARS = 4000
-MAX_SEARCH_RESULTS = 12
-MAX_PROVIDER_RESULTS = 5
-MAX_FETCHED_PAGES = 5
-MAX_RESEARCH_WORKERS = 5
+MAX_SEARCH_RESULTS = 18
+MAX_PROVIDER_RESULTS = 6
+MAX_FETCHED_PAGES = 8
+MAX_LLM_CITED_SOURCES = 12
+MAX_RESEARCH_WORKERS = 8
 MAX_PAGE_BYTES = 1_000_000
 MAX_PAGE_TEXT_CHARS = 12_000
 LLM_TIMEOUT_SECONDS = 35
@@ -186,7 +188,11 @@ class WebAgent:
                 "DuckDuckGo HTML",
                 "Bing RSS",
                 "Google News RSS for fresh queries",
+                "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
+                "Tavily Search API when TAVILY_API_KEY is configured",
             ],
+            "brave_search_api_configured": bool(os.getenv("BRAVE_SEARCH_API_KEY", "").strip()),
+            "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
             "public_social_sources": [
                 "Reddit public RSS and optional authorized Reddit OAuth search",
                 "Bluesky public search",
@@ -330,10 +336,128 @@ class WebAgent:
         except (httpx.HTTPError, OSError, ValueError, ET.ParseError) as exc:
             failures.append(f"Bing: {type(exc).__name__}")
 
+        # Official search APIs are optional, but when configured they add another
+        # result index instead of replacing the public search engines.
+        for provider_name, search_method in (
+            ("Brave Search API", self._search_brave),
+            ("Tavily Search API", self._search_tavily),
+        ):
+            try:
+                rows.extend(search_method(query))
+            except Exception as exc:  # noqa: BLE001 — keep tokens and raw provider bodies private
+                status = getattr(getattr(exc, "response", None), "status_code", None)
+                detail = f" HTTP {status}" if status else ""
+                failures.append(f"{provider_name}{detail}: request unavailable")
+
         if not rows and failures:
             raise RuntimeError(
-                "تعذر الوصول إلى محركات البحث العامة (DuckDuckGo/Bing) الآن."
+                "تعذر الوصول إلى محركات البحث العامة وواجهات البحث المضبوطة الآن."
             )
+        return rows
+
+    def _search_brave(self, query: str) -> list[dict[str, Any]]:
+        """Use Brave's official web-search API when the operator provides an API key."""
+        api_key = os.getenv("BRAVE_SEARCH_API_KEY", "").strip()
+        if not api_key:
+            return []
+        try:
+            import httpx
+        except ImportError as exc:
+            raise AgentDependencyError("حزمة httpx غير مثبتة.") from exc
+        is_arabic = bool(re.search(r"[\\u0600-\\u06FF]", query))
+        response = httpx.get(
+            "https://api.search.brave.com/res/v1/web/search",
+            params={
+                "q": query[:600],
+                "count": MAX_PROVIDER_RESULTS,
+                "country": "EG" if is_arabic else "US",
+                "search_lang": "ar" if is_arabic else "en",
+                "extra_snippets": "true",
+            },
+            headers={
+                "Accept": "application/json",
+                "X-Subscription-Token": api_key,
+                "User-Agent": "OmaraiResearchAgent/1.0",
+            },
+            timeout=12.0,
+            follow_redirects=False,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        web_results = payload.get("web", {}).get("results", [])
+        rows: list[dict[str, Any]] = []
+        for item in web_results if isinstance(web_results, list) else []:
+            if not isinstance(item, dict):
+                continue
+            url = _public_http_url(item.get("url", ""))
+            if not url:
+                continue
+            snippets = item.get("extra_snippets", [])
+            extra = " ".join(x for x in snippets if isinstance(x, str)) if isinstance(snippets, list) else ""
+            rows.append({
+                "title": _clean_text(item.get("title", ""), 300),
+                "url": url,
+                "snippet": _clean_text(item.get("description", "") + " " + extra, 1600),
+                "provider": "brave_search_api",
+                "provider_rank": len(rows) + 1,
+                "search_query": query,
+                "published_at": _clean_text(item.get("page_age", "") or item.get("published_at", ""), 100),
+            })
+            if len(rows) >= MAX_PROVIDER_RESULTS:
+                break
+        return rows
+
+    def _search_tavily(self, query: str) -> list[dict[str, Any]]:
+        """Use Tavily's official search API for structured, extractable live web results."""
+        api_key = os.getenv("TAVILY_API_KEY", "").strip()
+        if not api_key:
+            return []
+        try:
+            import httpx
+        except ImportError as exc:
+            raise AgentDependencyError("حزمة httpx غير مثبتة.") from exc
+        from agents.research import detect_depth, detect_freshness
+
+        response = httpx.post(
+            "https://api.tavily.com/search",
+            json={
+                "api_key": api_key,
+                "query": query[:500],
+                "search_depth": "advanced" if detect_depth(query) == "deep" else "basic",
+                "topic": "news" if detect_freshness(query) else "general",
+                "max_results": MAX_PROVIDER_RESULTS,
+                "include_answer": False,
+                "include_raw_content": False,
+            },
+            headers={
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "User-Agent": "OmaraiResearchAgent/1.0",
+            },
+            timeout=14.0,
+            follow_redirects=False,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        search_results = payload.get("results", [])
+        rows: list[dict[str, Any]] = []
+        for item in search_results if isinstance(search_results, list) else []:
+            if not isinstance(item, dict):
+                continue
+            url = _public_http_url(item.get("url", ""))
+            if not url:
+                continue
+            rows.append({
+                "title": _clean_text(item.get("title", ""), 300),
+                "url": url,
+                "snippet": _clean_text(item.get("content", ""), 1600),
+                "provider": "tavily_search_api",
+                "provider_rank": len(rows) + 1,
+                "search_query": query,
+                "published_at": _clean_text(item.get("published_date", ""), 100),
+            })
+            if len(rows) >= MAX_PROVIDER_RESULTS:
+                break
         return rows
 
     def _search_news(self, query: str) -> list[dict[str, Any]]:
