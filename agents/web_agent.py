@@ -921,43 +921,90 @@ class WebAgent:
         if len(question) > MAX_QUESTION_CHARS:
             raise ValueError(f"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.")
         clean_history = self._sanitize_history(history)
-        query = self._history_search_query(question, clean_history)
-        sources, search_warning = self._collect_sources(query)
+        plan = self._plan_search(question, clean_history)
+        sources: list[dict[str, Any]] = []
+        search_warnings: list[str] = []
+        report: dict[str, Any] = {}
+        try:
+            sources, search_warnings, report = self._collect_research(plan)
+        except (RuntimeError, AgentDependencyError, ValueError) as exc:
+            search_warnings.append(str(exc))
+            report = {
+                "queries_planned": len(plan.get("queries", [])),
+                "queries_attempted": 0,
+                "unique_sources": 0,
+                "pages_fetched": 0,
+                "providers_used": [],
+                "platform_counts": {},
+                "social_direct_results": 0,
+                "depth": plan.get("depth", "standard"),
+                "planning_method": plan.get("planning_method", "deterministic_fallback"),
+            }
+        search_warning = "؛ ".join(search_warnings) if search_warnings else None
+        if not sources and not search_warning:
+            search_warning = "لم تُرجع محركات البحث نتائج قابلة للاستخدام في هذه الجولة."
+
         answer = ""
         used_llm = False
         llm_warning: str | None = None
         try:
-            answer = self._generate(question, clean_history, sources, search_warning)
+            answer = self._generate(
+                question,
+                clean_history,
+                sources,
+                search_warning,
+                research_plan=plan,
+                search_report=report,
+            )
             used_llm = True
         except (RuntimeError, AgentDependencyError) as exc:
             llm_warning = str(exc)
             if not self.api_key:
                 reason = (
-                    "تم جمع نتائج ويب، لكن التحليل التوليدي غير مفعّل بعد. "
-                    "اضبط OPENROUTER_API_KEY في Termux لتفعيل فهم الأسئلة المفتوحة وصياغة الإجابات."
+                    "تم البحث، لكن الفهم التوليدي غير مفعّل بعد. اضبط OPENROUTER_API_KEY "
+                    "في Termux لتفعيل تخطيط البحث والإجابة باللغة الطبيعية."
                 )
             else:
                 reason = (
-                    "تم البحث، لكن تعذّر توليد إجابة لغوية مكتملة. "
-                    "إليك مقتطفات المصادر المتاحة، ثم أعد المحاولة."
+                    "اكتمل البحث، لكن تعذر توليد إجابة تحليلية. أعرض لك مقتطفات المصادر "
+                    "المتاحة بدلًا من اختلاق إجابة."
                 )
             answer = _fallback_answer(sources, reason)
-        warnings = [item for item in (search_warning, llm_warning) if item]
+        warnings = list(dict.fromkeys(
+            search_warnings + ([llm_warning] if llm_warning else [])
+        ))
+        public_sources = []
+        for source in sources:
+            public_sources.append({
+                "title": source.get("title") or "نتيجة ويب",
+                "url": source["url"],
+                "snippet": source.get("snippet", ""),
+                "page_fetched": bool(source.get("page_fetched")),
+                "providers": source.get("providers", []),
+                "queries": source.get("queries", []),
+                "platform": source.get("platform", "web"),
+                "domain": source.get("domain", ""),
+                "source_class": source.get("source_class", "general"),
+                "published_at": source.get("published_at", ""),
+                "rank_score": round(float(source.get("rank_score", 0)), 6),
+            })
         return {
             "answer": answer,
             "question": question,
-            "search_query": query,
-            "sources": [
-                {
-                    "title": source["title"] or "نتيجة ويب",
-                    "url": source["url"],
-                    "snippet": source["snippet"],
-                    "page_fetched": source["page_fetched"],
-                }
-                for source in sources
-            ],
+            "search_query": plan.get("queries", [question])[0],
+            "search_queries": plan.get("queries", []),
+            "research_plan": {
+                "depth": plan.get("depth", "standard"),
+                "freshness": plan.get("freshness", "any"),
+                "social_focus": bool(plan.get("social_focus")),
+                "platforms": plan.get("platforms", []),
+                "planning_method": plan.get("planning_method", "deterministic_fallback"),
+            },
+            "search_report": report,
+            "sources": public_sources,
             "used_language_model": used_llm,
             "used_web_search": bool(sources),
+            "used_social_search": bool(report.get("social_direct_results", 0)),
             "warnings": warnings,
             "kind": "web_research" if used_llm else "web_fallback",
         }
