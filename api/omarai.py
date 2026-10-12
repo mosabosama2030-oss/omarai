@@ -29,7 +29,7 @@ class Handler(BaseHTTPRequestHandler):
             data=json.loads(self.rfile.read(size) or b"{}")
             if self.path=="/api/analyze": return self.respond(200,analyze(data.get("text",""),data.get("product_terms",[]),data.get("location_terms",[])))
             if self.path=="/api/leads":
-                lead,created=self.store.add(data.get("text",""),data.get("source_url",""),data.get("platform","manual"),data.get("observed_at"),data.get("note",""))
+                lead,created=self.store.add(data.get("text",""),data.get("source_url",""),data.get("platform","manual"),data.get("observed_at"),data.get("note",""),data.get("product_terms",[]),data.get("location_terms",[]))
                 return self.respond(201 if created else 200,{"lead":lead,"created":created})
             if self.path.startswith("/api/leads/") and self.path.endswith("/status"):
                 lead_id=self.path.split("/")[3]; lead=self.store.update_status(lead_id,data.get("status","new"))
