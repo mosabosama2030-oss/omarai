@@ -48,7 +48,7 @@ def analyze(text: str, product_terms=(), location_terms=()) -> dict:
         if found:
             matches.append({"phrase": found, "category": category, "points": 10})
     score = min(100, sum(x["points"] for x in matches))
-    label = "high_intent" if score >= 65 and any(x["category"] == "high" for x in matches) else "medium_intent" if score >= 40 else "early_research" if score >= 20 else "unclear"
+    label = "high_intent" if score >= 55 and any(x["category"] == "high" for x in matches) else "medium_intent" if score >= 40 else "early_research" if score >= 20 else "unclear"
     return {"score": score, "label": label, "summary": {"high_intent":"إشارة قوية نسبيًا وفق قواعد بسيطة وتحتاج مراجعة بشرية.","medium_intent":"مؤشرات اهتمام تستحق التأهيل والتحقق.","early_research":"اهتمام مبكر؛ ليس عميلًا مؤهلًا بعد.","unclear":"لا توجد مؤشرات كافية."}[label], "matched_signals": matches, "warnings": ["الدرجة ليست احتمالًا إحصائيًا للشراء.", "لا تثبت هوية الكاتب أو قدرته على الدفع أو نيته.", "استخدم مصادر عامة ومسموحًا بمعالجتها فقط."]}
 
 def validate_url(url: str) -> str:
