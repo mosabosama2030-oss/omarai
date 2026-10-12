@@ -931,7 +931,7 @@ class WebAgent:
     ) -> str:
         """Run a bounded evidence audit on deep-research answers; not an independent verifier."""
         source_blocks: list[str] = []
-        for index, source in enumerate(sources[:8], 1):
+        for index, source in enumerate(sources[:10], 1):
             evidence = _clean_text(
                 source.get("page_text") or source.get("snippet") or "", 1400
             )
