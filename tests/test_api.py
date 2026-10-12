@@ -285,3 +285,18 @@ def test_hosted_api_rate_limits_authenticated_requests(local_api, monkeypatch):
     )
     assert status == 429
     assert "حد الطلبات" in error["error"]
+
+
+
+def test_public_binding_requires_explicit_deployment_flag_and_strong_token(monkeypatch):
+    from api.omarai import serve
+
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    with pytest.raises(ValueError, match="Public binding requires"):
+        serve("0.0.0.0", 0)
+
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "short")
+    with pytest.raises(ValueError, match="at least 32 characters"):
+        serve("0.0.0.0", 0)
