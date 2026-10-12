@@ -136,9 +136,9 @@ def fallback_plan(
     """Build a small but varied plan when no model planner is configured or parsing fails."""
     contextual_question = _followup_query(question, history)
     direct_urls = extract_urls(question)
-    base = _compact(re.sub(r"https?://[^\\s<>()]+", " ", contextual_question), 500)
+    base = _compact(re.sub(r"https?://[^\s<>()]+", " ", contextual_question), 500)
     if not base:
-        base = "اقرأ محتوى الصفحة" if re.search(r"[\\u0600-\\u06FF]", question) else "read the linked page"
+        base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
     social_focus = detect_social_focus(question, history)
     fresh = detect_freshness(question)
     deep = detect_depth(question)
