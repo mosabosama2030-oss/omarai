@@ -4,7 +4,7 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 
 ## What this version does
 
-- Searches the public web using the `ddgs` metasearch library.
+- Searches public web results through DuckDuckGo HTML, with Bing RSS as a fallback. This avoids the native transport used by `ddgs`, which has reported Android/Termux runtime failures.
 - Attempts to extract text from up to three accessible public pages per question (bounded size and time).
 - Uses an OpenAI-compatible generative language API to interpret open-ended questions and synthesize answers in the user's language.
 - Returns the search URLs and snippets separately so the user can inspect them.
