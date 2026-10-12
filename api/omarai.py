@@ -79,6 +79,10 @@ class Handler(BaseHTTPRequestHandler):
                 },
             )
         if parsed.path == "/api/leads":
+            if not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+            if not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
             q = parse_qs(parsed.query)
             try:
                 limit = max(1, min(int(q.get("limit", ["100"])[0]), 500))
@@ -100,6 +104,11 @@ class Handler(BaseHTTPRequestHandler):
                 "http://localhost:" + str(port),
                 "http://[::1]:" + str(port),
             }
+            if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+                scheme = self.headers.get("X-Forwarded-Proto", "https").split(",", 1)[0].strip()
+                host = self.headers.get("Host", "")
+                if host:
+                    allowed_origins.add(scheme + "://" + host)
             if origin and origin not in allowed_origins:
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
             size = int(self.headers.get("Content-Length", "0"))
