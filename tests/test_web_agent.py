@@ -306,3 +306,42 @@ def test_user_supplied_url_is_prioritized_and_page_content_is_extracted(monkeypa
     assert sources[0]["title"] == "User page title"
     assert sources[0]["page_fetched"] is True
     assert "user_supplied_url" in report["providers_used"]
+
+
+
+def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
+    import httpx
+
+    monkeypatch.setenv("X_BEARER_TOKEN", "test-token")
+
+    class FakeResponse:
+        status_code = 200
+
+        def json(self):
+            return {
+                "data": [{
+                    "id": "1840000000000000000",
+                    "text": "تجربة علنية لاستهلاك سيارة كهربائية",
+                    "created_at": "2026-10-12T10:00:00Z",
+                    "author_id": "u1",
+                }],
+                "includes": {
+                    "users": [{"id": "u1", "username": "driver", "name": "Driver"}]
+                },
+            }
+
+    calls = []
+
+    def fake_get(url, **kwargs):
+        calls.append((url, kwargs))
+        return FakeResponse()
+
+    monkeypatch.setattr(httpx, "get", fake_get)
+    results, warnings = WebAgent()._search_social(
+        "سيارة كهربائية", ["x"]
+    )
+    assert warnings == []
+    assert len(results) == 1
+    assert results[0]["provider"] == "x_official_api"
+    assert results[0]["url"] == "https://x.com/driver/status/1840000000000000000"
+    assert calls[0][1]["headers"]["Authorization"] == "Bearer test-token"
