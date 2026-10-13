@@ -1,0 +1,44 @@
+name: Omarai hosted acceptance smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "HTTPS origin only, e.g. https://your-app.example.com"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: omarai-hosted-smoke
+  cancel-in-progress: false
+
+jobs:
+  hosted-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      OMARAI_BASE_URL: ${{ inputs.base_url }}
+      OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}
+    steps:
+      - name: Verify the access-token secret is available
+        shell: bash
+        run: |
+          if [[ -z "${OMARAI_ACCESS_TOKEN}" || ${#OMARAI_ACCESS_TOKEN} -lt 32 ]]; then
+            echo "::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short."
+            exit 1
+          fi
+          echo "Access-token secret is present; value not printed."
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run live hosted acceptance test
+        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --timeout 180
