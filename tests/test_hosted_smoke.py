@@ -36,7 +36,7 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(401, {"error": "unauthorized"})
             return
         length = int(self.headers.get("Content-Length", "0"))
-        request = json.loads(self.rfile.read(length) or b"{}")
+        self.rfile.read(length)
         if self.path == "/api/diagnostics":
             self.respond(200, {
                 "overall_status": "passed",
