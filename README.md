@@ -29,6 +29,12 @@ Before public binding, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `O
 
 See the step-by-step Arabic instructions in `docs/DEPLOY_RAILWAY_AR.md`. Before treating a deployment as accepted, follow the [hosted go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) and run the manually triggered [hosted acceptance smoke workflow](.github/workflows/hosted-smoke.yml) after configuring the GitHub Actions secret `OMARAI_ACCESS_TOKEN`. That workflow makes real model/search requests and may incur usage charges. SQLite on ephemeral hosting is not durable storage for customer records; do not treat the lead workspace as persistent until a managed database and backups are configured.
 
+## Free hosted deployment (Render)
+
+A starter Render Blueprint is included in `render.yaml`, with Arabic setup notes in [docs/DEPLOY_RENDER_AR.md](docs/DEPLOY_RENDER_AR.md). The free service sleeps after inactivity and has an ephemeral filesystem; do not rely on the hosted SQLite lead database for durable storage. This is intended for a personal demo and acceptance testing, not production availability.
+
+Before accepting the deployment, use the [Arabic go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) when that file is present on the selected branch. Never commit provider keys or the app access token.
+
 ## Run on Android / Termux
 
 From the repository directory:

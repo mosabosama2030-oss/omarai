@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: omarai
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: OMARAI_PUBLIC_DEPLOYMENT
+        value: "1"
+      - key: OMARAI_ACCESS_TOKEN
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
