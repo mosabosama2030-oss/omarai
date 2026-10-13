@@ -104,7 +104,8 @@ class LeadStore:
         return [self.to_dict(r) for r in rows]
     def update_status(self, lead_id: str, status: str):
         allowed={"new","qualified","contacted","converted","rejected","needs_review"}
-        if status not in allowed: raise ValueError("unsupported status")
+        if status not in allowed:
+            raise ValueError("unsupported status")
         with self.connect() as db:
             db.execute("UPDATE leads SET status=?,updated_at=? WHERE id=?",(status,now_utc(),lead_id))
             row=db.execute("SELECT * FROM leads WHERE id=?",(lead_id,)).fetchone()
@@ -120,13 +121,15 @@ class LeadStore:
                 try:
                     _,created=self.add(row["text"],row["source_url"],row["platform"],row.get("observed_at") or None,row.get("note") or "")
                     results["created" if created else "duplicates"] += 1
-                except (ValueError, TypeError) as exc: results["errors"].append({"line":line,"error":str(exc)})
+                except (ValueError, TypeError) as exc:
+                    results["errors"].append({"line":line,"error":str(exc)})
         return results
     def export_csv(self, filename: str):
         rows=self.list(limit=500)
         with open(filename,"w",newline="",encoding="utf-8-sig") as stream:
             fields=["id","text","source_url","platform","observed_at","assessment","status","note","created_at"]
-            writer=csv.DictWriter(stream,fieldnames=fields); writer.writeheader()
+            writer=csv.DictWriter(stream,fieldnames=fields)
+            writer.writeheader()
             for row in rows:
                 writer.writerow({k:json.dumps(row[k],ensure_ascii=False) if k=="assessment" else row.get(k,"") for k in fields})
         return len(rows)

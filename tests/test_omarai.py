@@ -17,12 +17,15 @@ def test_non_buyer_override():
     assert result["score"]==0
 
 def test_empty_text_rejected():
-    with pytest.raises(ValueError): analyze(" ")
+    with pytest.raises(ValueError):
+        analyze(" ")
 
 def test_url_required_and_validated(tmp_path):
     store=LeadStore(tmp_path/"db.sqlite3")
-    with pytest.raises(ValueError): store.add("بدور على شقة","","manual")
-    with pytest.raises(ValueError): store.add("بدور على شقة","file:///tmp/private","manual")
+    with pytest.raises(ValueError):
+        store.add("بدور على شقة","","manual")
+    with pytest.raises(ValueError):
+        store.add("بدور على شقة","file:///tmp/private","manual")
 
 def test_duplicate_is_idempotent(tmp_path):
     store=LeadStore(tmp_path/"db.sqlite3")
@@ -37,9 +40,12 @@ def test_status_updates_are_explicit(tmp_path):
     lead,_=store.add("بدور على شقة","https://example.com/p","manual")
     updated=store.update_status(lead["id"],"qualified")
     assert updated["status"]=="qualified"
-    with pytest.raises(ValueError): store.update_status(lead["id"],"magic")
+    with pytest.raises(ValueError):
+        store.update_status(lead["id"],"magic")
 
 def test_csv_requires_columns(tmp_path):
-    bad=tmp_path/"bad.csv"; bad.write_text("foo,bar\na,b\n",encoding="utf-8")
+    bad=tmp_path/"bad.csv"
+    bad.write_text("foo,bar\na,b\n",encoding="utf-8")
     store=LeadStore(tmp_path/"db.sqlite3")
-    with pytest.raises(ValueError): store.import_csv(bad)
+    with pytest.raises(ValueError):
+        store.import_csv(bad)
