@@ -1472,7 +1472,7 @@ class WebAgent:
                         continue
                     if title:
                         source["title"] = title
-                    if page_text and len(page_text.strip()) >= 80:
+                    if page_text and page_text.strip():
                         source["page_text"] = page_text
                         source["snippet"] = page_text[:1800]
                         source["page_fetched"] = True
@@ -1480,7 +1480,7 @@ class WebAgent:
                     else:
                         host = urllib.parse.urlparse(source.get("url", "")).hostname or "المصدر"
                         warnings.append(
-                            f"لم يمكن استخراج نص كافٍ من {host}؛ قد تكون الصفحة ديناميكية أو محجوبة."
+                            f"لم يمكن استخراج نص من {host}؛ قد تكون الصفحة ديناميكية أو محجوبة."
                         )
 
         # Reorder on consensus first, and keep clear machine-readable provenance.
