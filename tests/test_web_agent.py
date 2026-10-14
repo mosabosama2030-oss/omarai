@@ -724,7 +724,7 @@ def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():
     assert "إ" not in normalized
     assert "أ" not in normalized
     assert "ا" in normalized
-    assert "السعار" not in normalized
+    assert normalized == "ان اسعار استراليا"
 
 
 def test_relevance_filter_rejects_translation_and_sports_noise():
