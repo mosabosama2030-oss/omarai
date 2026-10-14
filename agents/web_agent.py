@@ -51,7 +51,7 @@ _ARABIC_DIACRITICS_RE = re.compile(r"[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u0
 _SEARCH_STOPWORDS = frozenset({
     "ما", "ماذا", "من", "في", "على", "عن", "الى", "إلى", "و", "او", "أو",
     "هل", "هو", "هي", "هذا", "هذه", "ذلك", "تلك", "التي", "الذي", "مع",
-    "بين", "كيف", "لماذا", "كم", "كان", "كانت", "يكون", "تكون", "لي", "عن",
+    "بين", "كيف", "لماذا", "كم", "كان", "كانت", "يكون", "تكون", "لي",
     "the", "a", "an", "and", "or", "in", "on", "of", "to", "for", "with",
     "is", "are", "was", "were", "what", "which", "who", "how", "why", "when",
     "where", "compare", "comparison", "please", "show", "find", "latest",
@@ -427,8 +427,8 @@ class WebAgent:
         return rows
 
     def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:
-        import xml.etree.ElementTree as ET
         import httpx
+        import xml.etree.ElementTree as ET
 
         response = httpx.get(
             "https://www.bing.com/search",
@@ -502,7 +502,7 @@ class WebAgent:
                     asyncio.to_thread(method, search_query), timeout=10.0
                 )
                 if not isinstance(raw, list):
-                    raise RuntimeError("connector returned a non-list result")
+                    raise TypeError("connector returned a non-list result")
                 accepted: list[dict[str, Any]] = []
                 rejected = 0
                 for item in raw:
@@ -535,11 +535,11 @@ class WebAgent:
                     name, search_query, status, len(accepted), rejected, error
                 )
                 return accepted
-            except asyncio.TimeoutError:
+            except TimeoutError:
                 self._record_provider_diagnostic(
                     name, search_query, "timeout", error="provider exceeded 10-second wrapper timeout"
                 )
-            except Exception as exc:  # isolated by design; do not expose response bodies/secrets
+            except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
                 detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
                 self._record_provider_diagnostic(name, search_query, "failed", error=detail)
             return []
