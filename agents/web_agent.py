@@ -586,7 +586,7 @@ class WebAgent:
                 "X-Subscription-Token": api_key,
                 "User-Agent": "OmaraiResearchAgent/1.0",
             },
-            timeout=12.0,
+            timeout=8.5,
             follow_redirects=False,
         )
         response.raise_for_status()
@@ -641,7 +641,7 @@ class WebAgent:
                 "Content-Type": "application/json",
                 "User-Agent": "OmaraiResearchAgent/1.0",
             },
-            timeout=14.0,
+            timeout=8.5,
             follow_redirects=False,
         )
         response.raise_for_status()
@@ -1432,7 +1432,7 @@ class WebAgent:
         direct_urls: list[str] = []
         for value in plan.get("direct_urls", [])[:5]:
             safe_url = _public_http_url(value)
-            if safe_url and safe_url not in direct_urls:
+            if safe_url and not _blocked_source_url(safe_url) and safe_url not in direct_urls:
                 direct_urls.append(safe_url)
         for direct_url in direct_urls:
             batches.append({
@@ -2232,7 +2232,13 @@ class WebAgent:
             if self.server_search_sources:
                 existing_urls = {item.get("url") for item in sources}
                 for item in self.server_search_sources:
-                    if item["url"] not in existing_urls:
+                    if (
+                        item["url"] not in existing_urls
+                        and not _blocked_source_url(item["url"])
+                        and _relevance_ratio(
+                            question, " ".join((item.get("title", ""), item.get("snippet", "")))
+                        ) >= 0.20
+                    ):
                         sources.append(item)
                         existing_urls.add(item["url"])
                 report["unique_sources"] = len(sources)
@@ -2280,6 +2286,8 @@ class WebAgent:
         answer, citation_warnings = self._remove_invalid_citations(
             answer, min(MAX_LLM_CITED_SOURCES, len(sources))
         )
+        report["unique_sources"] = len(sources)
+        report["pages_fetched"] = sum(bool(source.get("page_fetched")) for source in sources)
         report["second_pass_review"] = review_status
         report["claim_audit"] = review_status
         report["provider_diagnostics"] = list(self._provider_diagnostics)
