@@ -3,7 +3,10 @@ from __future__ import annotations
 import pytest
 
 from agents.web_agent import (
-    WebAgent, _normalize_search_query, _public_http_url, _relevance_ratio,
+    WebAgent,
+    _normalize_search_query,
+    _public_http_url,
+    _relevance_ratio,
 )
 
 
