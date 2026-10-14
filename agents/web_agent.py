@@ -427,8 +427,9 @@ class WebAgent:
         return rows
 
     def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:
-        import httpx
         import xml.etree.ElementTree as ET
+
+        import httpx
 
         response = httpx.get(
             "https://www.bing.com/search",
@@ -670,6 +671,7 @@ class WebAgent:
     def _search_news(self, query: str) -> list[dict[str, Any]]:
         """Read the public Google News RSS search feed for freshness-sensitive queries."""
         import xml.etree.ElementTree as ET
+
         import httpx
 
         response = httpx.get(
