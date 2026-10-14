@@ -544,7 +544,6 @@ class WebAgent:
                 self._record_provider_diagnostic(name, search_query, "failed", error=detail)
             return []
 
-        results = asyncio.run(asyncio.gather(*[])) if False else None
         async def run_all() -> list[list[dict[str, Any]]]:
             return await asyncio.gather(*(run_one(name, method) for name, method in adapters))
         try:
@@ -2162,7 +2161,12 @@ class WebAgent:
                 filtered_sources.append(source)
         sources = filtered_sources
         search_warning = "؛ ".join(search_warnings) if search_warnings else None
-        if len(sources) < 2:
+        independent_domains = {
+            str(source.get("domain") or urllib.parse.urlparse(source.get("url", "")).hostname or "").lower().removeprefix("www.")
+            for source in sources
+        }
+        independent_domains.discard("")
+        if len(sources) < 2 or len(independent_domains) < 2:
             reason = (
                 "لم أجد معلومات موثوقة كافية مرتبطة بسؤالك من مصدرين مستقلين على الأقل. "
                 "لن أخمّن أو أقدّم نتيجة غير مدعومة؛ جرّب صياغة أدق أو أعد المحاولة لاحقًا."
@@ -2182,6 +2186,7 @@ class WebAgent:
             } for source in sources]
             report.update({
                 "unique_sources": len(sources),
+                "independent_sources": len(independent_domains),
                 "pages_fetched": sum(bool(source.get("page_fetched")) for source in sources),
                 "provider_diagnostics": list(self._provider_diagnostics),
                 "insufficient_evidence": True,
@@ -2281,20 +2286,28 @@ class WebAgent:
         distinct_providers = {
             provider for source in sources for provider in source.get("providers", [])
         }
+        distinct_domains = {
+            str(source.get("domain") or urllib.parse.urlparse(source.get("url", "")).hostname or "").lower().removeprefix("www.")
+            for source in sources
+        }
+        distinct_domains.discard("")
         fetched_pages = sum(bool(source.get("page_fetched")) for source in sources)
         if (
-            len(sources) >= 4 and len(distinct_providers) >= 2 and fetched_pages >= 1
+            len(sources) >= 4 and len(distinct_domains) >= 3
+            and len(distinct_providers) >= 2 and fetched_pages >= 1
             and review_status == "model_claim_audit_completed"
         ):
             research_quality = "excellent"
         elif (
-            len(sources) >= 2 and (len(distinct_providers) >= 2 or fetched_pages >= 1)
+            len(sources) >= 2 and len(distinct_domains) >= 2
+            and (len(distinct_providers) >= 2 or fetched_pages >= 1)
             and review_status == "model_claim_audit_completed"
         ):
             research_quality = "good"
         else:
             research_quality = "partial"
         report["research_quality"] = research_quality
+        report["independent_sources"] = len(distinct_domains)
         report["insufficient_evidence"] = False
         report["valid_citation_range"] = [1, min(MAX_LLM_CITED_SOURCES, len(sources))]
         report["citation_count"] = len(re.findall(r"\[المصدر\s+\d+\]", answer))
