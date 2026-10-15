@@ -27,6 +27,35 @@ class Handler(BaseHTTPRequestHandler):
     RATE_LIMIT_REQUESTS = 20
     RATE_LIMIT_WINDOW_SECONDS = 60
 
+    def _request_path(self) -> str:
+        """Normalize path for local server and Vercel rewrites.
+
+        On Vercel, rewrites may deliver the request to /api while the original
+        path is still present in headers or the path itself. Prefer the most
+        specific known route.
+        """
+        parsed = urlparse(self.path)
+        path = parsed.path or "/"
+        # Vercel sometimes exposes the original path.
+        original = (
+            self.headers.get("x-vercel-original-path")
+            or self.headers.get("x-forwarded-uri")
+            or self.headers.get("x-matched-path")
+            or ""
+        ).strip()
+        if original:
+            original_path = urlparse(original).path or original
+            if original_path.startswith("/"):
+                return original_path
+        # When rewritten to /api, map bare /api to health for convenience only
+        # when no more specific path is available.
+        if path in {"/api", "/api/"} and not original:
+            # Keep /api as a valid health alias only if the request is GET
+            # and the client asked for the function root; callers still use
+            # /api/health explicitly in documentation.
+            return path
+        return path
+
     def _authorized(self):
         expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
         if not expected:
@@ -37,8 +66,15 @@ class Handler(BaseHTTPRequestHandler):
         return hmac.compare_digest(supplied[7:].strip(), expected)
 
     def _rate_limit_ok(self):
+        # Prefer the rightmost public-looking address when a proxy chain is
+        # present; fall back to the direct client address. Residual spoofing
+        # risk remains if the platform does not overwrite X-Forwarded-For.
         forwarded = self.headers.get("X-Forwarded-For", "")
-        client_ip = forwarded.split(",", 1)[0].strip() if forwarded else self.client_address[0]
+        if forwarded:
+            parts = [p.strip() for p in forwarded.split(",") if p.strip()]
+            client_ip = parts[-1] if parts else self.client_address[0]
+        else:
+            client_ip = self.client_address[0]
         now = time.monotonic()
         with self._rate_lock:
             events = self._request_times[client_ip]
@@ -60,16 +96,21 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
+        path = self._request_path()
         parsed = urlparse(self.path)
-        if parsed.path in {"/", "/agent"}:
+        if path in {"/", "/agent"}:
             if not AGENT_DASHBOARD.exists():
                 return self.respond(404, {"error": "agent dashboard missing"})
-            return self.respond(200, AGENT_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
-        if parsed.path == "/leads":
+            return self.respond(
+                200, AGENT_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8"
+            )
+        if path == "/leads":
             if not LEADS_DASHBOARD.exists():
                 return self.respond(404, {"error": "leads dashboard missing"})
-            return self.respond(200, LEADS_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
-        if parsed.path == "/api/health":
+            return self.respond(
+                200, LEADS_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8"
+            )
+        if path in {"/api/health", "/api", "/api/"}:
             return self.respond(
                 200,
                 {
@@ -77,9 +118,10 @@ class Handler(BaseHTTPRequestHandler):
                     "app": "Omarai",
                     "mode": "web-research",
                     "agent": WebAgent.status(),
+                    "platform": "vercel" if os.getenv("VERCEL") else "server",
                 },
             )
-        if parsed.path == "/api/leads":
+        if path == "/api/leads":
             if not self._authorized():
                 return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
             if not self._rate_limit_ok():
@@ -99,17 +141,23 @@ class Handler(BaseHTTPRequestHandler):
             if content_type != "application/json":
                 return self.respond(415, {"error": "Content-Type must be application/json"})
             origin = self.headers.get("Origin")
-            port = self.server.server_port
+            try:
+                port = getattr(self.server, "server_port", None) or 8765
+            except Exception:  # noqa: BLE001 — serverless may not expose a real server
+                port = 8765
             allowed_origins = {
                 "http://127.0.0.1:" + str(port),
                 "http://localhost:" + str(port),
                 "http://[::1]:" + str(port),
             }
-            if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1" or os.getenv("VERCEL"):
                 scheme = self.headers.get("X-Forwarded-Proto", "https").split(",", 1)[0].strip()
                 host = self.headers.get("Host", "")
                 if host:
                     allowed_origins.add(scheme + "://" + host)
+                    # Also allow the vercel.app preview/production host without port.
+                    if host.endswith(".vercel.app"):
+                        allowed_origins.add("https://" + host)
             if origin and origin not in allowed_origins:
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
             size = int(self.headers.get("Content-Length", "0"))
@@ -120,7 +168,7 @@ class Handler(BaseHTTPRequestHandler):
             data = json.loads(self.rfile.read(size))
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
-            path = urlparse(self.path).path
+            path = self._request_path()
 
             # Public deployments require the owner's private token and a request limit.
             if path.startswith("/api/") and not self._authorized():
