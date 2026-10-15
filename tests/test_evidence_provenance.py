@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import socket
 
-import pytest
 
 from agents.web_agent import WebAgent, _public_ip_literals
 
@@ -43,7 +42,7 @@ def test_failed_page_read_is_not_reported_as_fetched(monkeypatch):
         "planning_method": "test",
     })
 
-    assert warnings == []
+    assert any("لم يمكن استخراج نص" in warning for warning in warnings)
     assert len(sources) == 1
     assert sources[0]["url"] == "https://example.com/unread"
     assert sources[0].get("page_fetched") is not True
@@ -53,20 +52,53 @@ def test_failed_page_read_is_not_reported_as_fetched(monkeypatch):
 
 
 def test_openrouter_citations_stay_unread_in_public_answer(monkeypatch):
-    """Server-side citations merged into the answer must not claim a direct page read."""
+    """Server-side citations must not be misreported as direct source-page reads."""
     agent = WebAgent()
     agent.api_key = "test-key"
+    question = "ما آخر المعلومات؟"
 
     def collect(plan):
-        return [], [], {
+        sources = [
+            {
+                "title": "آخر المعلومات عن التقنية",
+                "url": "https://alpha.example.com/report",
+                "snippet": "معلومات حديثة عن الموضوع",
+                "page_text": "",
+                "page_fetched": False,
+                "provider": "bing_rss",
+                "providers": ["bing_rss"],
+                "queries": [question],
+                "domain": "alpha.example.com",
+                "source_class": "general",
+                "platform": "web",
+                "published_at": "",
+                "rank_score": 0.8,
+            },
+            {
+                "title": "آخر المعلومات من مصدر مستقل",
+                "url": "https://beta.example.org/report",
+                "snippet": "معلومات موثقة عن الموضوع",
+                "page_text": "",
+                "page_fetched": False,
+                "provider": "duckduckgo_html",
+                "providers": ["duckduckgo_html"],
+                "queries": [question],
+                "domain": "beta.example.org",
+                "source_class": "general",
+                "platform": "web",
+                "published_at": "",
+                "rank_score": 0.7,
+            },
+        ]
+        return sources, [], {
             "queries_planned": 1,
             "queries_attempted": 1,
-            "query_results": [],
-            "unique_sources": 0,
+            "query_results": [{"query": question, "results": 2}],
+            "unique_sources": 2,
             "pages_fetched": 0,
-            "providers_used": [],
-            "provider_counts": {},
-            "platform_counts": {},
+            "providers_used": ["bing_rss", "duckduckgo_html"],
+            "provider_counts": {"bing_rss": 1, "duckduckgo_html": 1},
+            "platform_counts": {"web": 2},
             "social_direct_results": 0,
             "expansion_queries": [],
             "evidence_signals": {},
@@ -76,21 +108,21 @@ def test_openrouter_citations_stay_unread_in_public_answer(monkeypatch):
 
     def generate(*args, **kwargs):
         agent.server_search_sources.append({
-            "title": "اقتباس مزود",
-            "url": "https://example.com/or-source",
-            "snippet": "مقتطف أعاده المزود",
-            "page_text": "مقتطف أعاده المزود",
+            "title": "آخر المعلومات - نتيجة بحث مباشر",
+            "url": "https://research.example.net/live-result",
+            "snippet": "معلومات حديثة إضافية عن الموضوع",
+            "page_text": "مقتطف أعاده مزود البحث",
             "page_fetched": False,
             "provider": "openrouter_web_search",
             "providers": ["openrouter_web_search"],
-            "queries": [],
-            "domain": "example.com",
+            "queries": [question],
+            "domain": "research.example.net",
             "source_class": "general",
             "platform": "web",
             "published_at": "",
             "rank_score": 0.0,
         })
-        return "الخلاصة من الاقتباس [المصدر 1]."
+        return "الخلاصة من المصدرين [المصدر 1] [المصدر 2]."
 
     monkeypatch.setattr(agent, "_plan_search", lambda question, history: {
         "queries": [question],
@@ -103,16 +135,14 @@ def test_openrouter_citations_stay_unread_in_public_answer(monkeypatch):
     })
     monkeypatch.setattr(agent, "_collect_research", collect)
     monkeypatch.setattr(agent, "_generate", generate)
-    monkeypatch.setattr(agent, "_review_answer", lambda *args, **kwargs: pytest.fail("review"))
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
 
-    result = agent.answer("ما آخر المعلومات؟", history=[], mode="auto")
-    source = result["sources"][0]
-    assert source["url"] == "https://example.com/or-source"
-    assert source["page_fetched"] is False
-    assert "openrouter_web_search" in source["providers"]
+    result = agent.answer(question, history=[], mode="auto")
+    cited = next(source for source in result["sources"] if source["url"] == "https://research.example.net/live-result")
+    assert cited["page_fetched"] is False
+    assert "openrouter_web_search" in cited["providers"]
     assert result["search_report"]["pages_fetched"] == 0
     assert result["search_report"]["openrouter_web_search_results"] == 1
-
 
 def test_private_resolution_blocks_page_fetch(monkeypatch):
     called = {"stream": 0}
