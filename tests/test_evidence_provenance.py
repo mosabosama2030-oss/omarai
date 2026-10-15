@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import socket
 
-
 from agents.web_agent import WebAgent, _public_ip_literals
 
 
