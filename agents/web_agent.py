@@ -77,22 +77,49 @@ def _public_http_url(value: Any) -> str | None:
         return None
 
 
-def _host_resolves_publicly(host: str) -> bool:
-    """Reject local/private destinations before fetching a third-party page."""
+def _public_ip_literals(host: str) -> list[str] | None:
+    """Resolve host and return its public addresses.
+
+    Returns None when resolution fails or any answer is not a global address.
+    Callers must open the TCP connection to one of these literals. A second DNS
+    lookup is not equivalent: the name can be rebound to a private address
+    between the check and the connection (DNS rebinding / TOCTOU).
+    """
+    if not host:
+        return None
     try:
         answers = socket.getaddrinfo(host, None, type=socket.SOCK_STREAM)
     except (OSError, socket.gaierror):
-        return False
+        return None
     if not answers:
-        return False
+        return None
+    literals: list[str] = []
     for answer in answers:
         try:
             address = ipaddress.ip_address(answer[4][0])
         except ValueError:
-            return False
+            return None
         if not address.is_global:
-            return False
-    return True
+            return None
+        literal = str(address)
+        if literal not in literals:
+            literals.append(literal)
+    return literals or None
+
+
+def _host_resolves_publicly(host: str) -> bool:
+    """Reject local/private destinations before fetching a third-party page."""
+    return _public_ip_literals(host) is not None
+
+
+def _pinned_connect_url(logical_url: str, ip: str) -> str | None:
+    """Rewrite a validated public URL so the connection target is a checked IP."""
+    parsed = urllib.parse.urlparse(logical_url)
+    if parsed.port not in (None, 80, 443):
+        return None
+    literal = f"[{ip}]" if ":" in ip else ip
+    netloc = literal if parsed.port is None else f"{literal}:{parsed.port}"
+    return urllib.parse.urlunparse(parsed._replace(netloc=netloc))
 
 
 def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:
@@ -1018,10 +1045,23 @@ class WebAgent:
             ) as client:
                 for redirect_number in range(4):
                     parsed = urllib.parse.urlparse(current_url)
-                    # Revalidate every redirect target before making a network request.
-                    if not _host_resolves_publicly(parsed.hostname or ""):
+                    host = parsed.hostname or ""
+                    # Resolve and pin one public IP. httpx must not perform a
+                    # second lookup of the original hostname.
+                    public_ips = _public_ip_literals(host)
+                    if not public_ips:
                         return "", ""
-                    with client.stream("GET", current_url) as response:
+                    connect_url = _pinned_connect_url(current_url, public_ips[0])
+                    if not connect_url:
+                        return "", ""
+                    request_headers = {"Host": host}
+                    extensions = {"sni_hostname": host} if parsed.scheme == "https" else {}
+                    with client.stream(
+                        "GET",
+                        connect_url,
+                        headers=request_headers,
+                        extensions=extensions,
+                    ) as response:
                         if response.status_code in {301, 302, 303, 307, 308}:
                             location = response.headers.get("location", "")
                             if not location or redirect_number >= 3:
