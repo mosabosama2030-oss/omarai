@@ -35,6 +35,19 @@ A starter Render Blueprint is included in `render.yaml`, with Arabic setup notes
 
 Before accepting the deployment, use the [Arabic go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) when that file is present on the selected branch. Never commit provider keys or the app access token.
 
+## Free hosted deployment (Vercel Hobby)
+
+A Vercel-compatible entry (`api/index.py`) and `vercel.json` are included for a **personal demo** on the Hobby free tier. The same research logic, Arabic UI, auth, and rate limits are reused; the long-running `ThreadingHTTPServer` path remains for local/Docker/Render/Railway.
+
+- Max function duration is configured to 300 seconds (Hobby Fluid compute limit).
+- SQLite lead storage is **not durable** across cold starts; treat `/leads` as a demo only.
+- Set `OMARAI_PUBLIC_DEPLOYMENT=1`, `OMARAI_ACCESS_TOKEN` (≥32 chars), and `OPENROUTER_API_KEY` only in the Vercel project Environment Variables (never in source).
+- Free model IDs remain configurable defaults and may change or hit quotas without notice.
+
+Arabic step-by-step instructions: [docs/DEPLOY_VERCEL_AR.md](docs/DEPLOY_VERCEL_AR.md).
+
+Do not select a paid Vercel plan or paid OpenRouter add-ons for this path.
+
 ## Run on Android / Termux
 
 From the repository directory:
