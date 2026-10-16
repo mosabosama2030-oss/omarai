@@ -66,6 +66,6 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     with destination.open(newline="", encoding="utf-8-sig") as stream:
         row = next(csv.DictReader(stream))
 
-    assert row["text"].startswith("'=")
-    assert row["note"].startswith("'  +")
+    assert row["text"].startswith("\t=")
+    assert row["note"].startswith("\t  +")
     assert row["source_url"] == "https://example.com/post/1"
