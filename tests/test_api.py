@@ -242,6 +242,42 @@ def test_diagnostics_endpoint_requires_boolean_options(local_api):
 
 
 
+def test_rate_limit_ignores_spoofed_forwarded_for_by_default(monkeypatch):
+    from types import SimpleNamespace
+    from api.omarai import Handler
+
+    monkeypatch.delenv("OMARAI_TRUST_PROXY_HEADERS", raising=False)
+    handler = SimpleNamespace(
+        headers={"X-Forwarded-For": "198.51.100.77, 203.0.113.10"},
+        client_address=("192.0.2.44", 12345),
+    )
+    assert Handler._rate_limit_client_key(handler) == "192.0.2.44"
+
+
+def test_rate_limit_uses_rightmost_valid_proxy_ip_only_when_enabled(monkeypatch):
+    from types import SimpleNamespace
+    from api.omarai import Handler
+
+    monkeypatch.setenv("OMARAI_TRUST_PROXY_HEADERS", "1")
+    handler = SimpleNamespace(
+        headers={"X-Forwarded-For": "198.51.100.77, 203.0.113.10"},
+        client_address=("192.0.2.44", 12345),
+    )
+    assert Handler._rate_limit_client_key(handler) == "203.0.113.10"
+
+
+def test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip(monkeypatch):
+    from types import SimpleNamespace
+    from api.omarai import Handler
+
+    monkeypatch.setenv("OMARAI_TRUST_PROXY_HEADERS", "1")
+    handler = SimpleNamespace(
+        headers={"X-Forwarded-For": "198.51.100.77, not-an-ip"},
+        client_address=("192.0.2.44", 12345),
+    )
+    assert Handler._rate_limit_client_key(handler) == "192.0.2.44"
+
+
 def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "x" * 48)
