@@ -2208,7 +2208,24 @@ class WebAgent:
             for source in sources
         }
         independent_domains.discard("")
-        if len(sources) < 2 or len(independent_domains) < 2:
+        # A user-requested page summary is a different task from open-ended research:
+        # one successfully extracted, explicitly supplied page can support a summary,
+        # but must never be presented as independently corroborated research.
+        has_read_user_supplied_page = any(
+            "user_supplied_url" in source.get("providers", [])
+            and bool(source.get("page_fetched"))
+            and bool(str(source.get("page_text") or "").strip())
+            for source in sources
+        )
+        single_source_page_summary = (
+            has_read_user_supplied_page
+            and len(sources) == 1
+            and len(independent_domains) == 1
+        )
+        if (
+            (len(sources) < 2 or len(independent_domains) < 2)
+            and not single_source_page_summary
+        ):
             reason = (
                 "لم أجد معلومات موثوقة كافية مرتبطة بسؤالك من مصدرين مستقلين على الأقل. "
                 "لن أخمّن أو أقدّم نتيجة غير مدعومة؛ جرّب صياغة أدق أو أعد المحاولة لاحقًا."
