@@ -338,13 +338,18 @@ def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):
     clock = {"now": 100.0}
     monkeypatch.setattr("api.omarai.time.monotonic", lambda: clock["now"])
 
-    first = SimpleNamespace(headers={}, client_address=("192.0.2.1", 1234))
-    second = SimpleNamespace(headers={}, client_address=("192.0.2.2", 1234))
-    assert Handler._rate_limit_ok(first) is True
+    class FakeHandler(Handler):
+        def __init__(self, ip):
+            self.headers = {}
+            self.client_address = (ip, 1234)
+
+    first = FakeHandler("192.0.2.1")
+    second = FakeHandler("192.0.2.2")
+    assert first._rate_limit_ok() is True
     assert "192.0.2.1" in Handler._request_times
 
     clock["now"] = 161.0
-    assert Handler._rate_limit_ok(second) is True
+    assert second._rate_limit_ok() is True
     assert "192.0.2.1" not in Handler._request_times
     assert "192.0.2.2" in Handler._request_times
 
