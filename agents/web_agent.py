@@ -2222,6 +2222,11 @@ class WebAgent:
             and len(sources) == 1
             and len(independent_domains) == 1
         )
+        if single_source_page_summary:
+            search_warnings.append(
+                "هذا ملخص للرابط الذي قدمته فقط؛ لم يتم تأكيد محتواه من مصدر مستقل آخر."
+            )
+            search_warning = "؛ ".join(search_warnings)
         if (
             (len(sources) < 2 or len(independent_domains) < 2)
             and not single_source_page_summary
