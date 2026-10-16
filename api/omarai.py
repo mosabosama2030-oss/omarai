@@ -25,8 +25,10 @@ class Handler(BaseHTTPRequestHandler):
     store = LeadStore()
     _rate_lock = threading.Lock()
     _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
+    _rate_last_cleanup: ClassVar[float] = 0.0
     RATE_LIMIT_REQUESTS = 20
     RATE_LIMIT_WINDOW_SECONDS = 60
+    RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60
 
     def _authorized(self):
         expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
@@ -56,11 +58,24 @@ class Handler(BaseHTTPRequestHandler):
     def _rate_limit_ok(self):
         client_ip = self._rate_limit_client_key()
         now = time.monotonic()
+        cls = type(self)
         with self._rate_lock:
-            events = self._request_times[client_ip]
-            while events and now - events[0] >= self.RATE_LIMIT_WINDOW_SECONDS:
+            # Periodically remove IP buckets whose entire sliding window has expired.
+            # Without this sweep, a public endpoint could retain one empty deque per
+            # distinct client IP forever, even though the rate-limit window is 60 sec.
+            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:
+                cutoff = now - cls.RATE_LIMIT_WINDOW_SECONDS
+                for key, timestamps in list(cls._request_times.items()):
+                    while timestamps and timestamps[0] <= cutoff:
+                        timestamps.popleft()
+                    if not timestamps:
+                        cls._request_times.pop(key, None)
+                cls._rate_last_cleanup = now
+
+            events = cls._request_times[client_ip]
+            while events and now - events[0] >= cls.RATE_LIMIT_WINDOW_SECONDS:
                 events.popleft()
-            if len(events) >= self.RATE_LIMIT_REQUESTS:
+            if len(events) >= cls.RATE_LIMIT_REQUESTS:
                 return False
             events.append(now)
             return True

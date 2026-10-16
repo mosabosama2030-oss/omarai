@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import threading
+from collections import defaultdict, deque
 from http.server import ThreadingHTTPServer
 from types import SimpleNamespace
 from urllib.error import HTTPError
@@ -328,3 +329,22 @@ def test_public_binding_requires_explicit_deployment_flag_and_strong_token(monke
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "short")
     with pytest.raises(ValueError, match="at least 32 characters"):
         serve("0.0.0.0", 0)
+
+def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):
+    """Client IPs do not accumulate forever after their 60-second window expires."""
+    monkeypatch.delenv("OMARAI_TRUST_PROXY_HEADERS", raising=False)
+    monkeypatch.setattr(Handler, "_request_times", defaultdict(deque))
+    monkeypatch.setattr(Handler, "_rate_last_cleanup", 0.0)
+    clock = {"now": 100.0}
+    monkeypatch.setattr("api.omarai.time.monotonic", lambda: clock["now"])
+
+    first = SimpleNamespace(headers={}, client_address=("192.0.2.1", 1234))
+    second = SimpleNamespace(headers={}, client_address=("192.0.2.2", 1234))
+    assert Handler._rate_limit_ok(first) is True
+    assert "192.0.2.1" in Handler._request_times
+
+    clock["now"] = 161.0
+    assert Handler._rate_limit_ok(second) is True
+    assert "192.0.2.1" not in Handler._request_times
+    assert "192.0.2.2" in Handler._request_times
+
