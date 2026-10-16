@@ -774,6 +774,51 @@ def test_search_provider_failure_isolated_and_logged(monkeypatch):
     )
 
 
+def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):
+    agent = WebAgent()
+    source = sample_source(0)
+    source["providers"] = ["user_supplied_url"]
+    source["page_fetched"] = True
+    source["page_text"] = "النص الكامل المستخرج من الصفحة التي قدمها المستخدم."
+    plan = {
+        "queries": ["لخص الصفحة"],
+        "direct_urls": ["https://example.com/research"],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda research_plan: (
+            [source], [], {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [],
+                "unique_sources": 1,
+                "pages_fetched": 1,
+                "providers_used": ["user_supplied_url"],
+                "platform_counts": {"web": 1},
+                "social_direct_results": 0,
+                "depth": "standard",
+                "planning_method": "test",
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "ملخص محتوى الصفحة [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("لخص الصفحة")
+
+    assert result["kind"] != "insufficient_evidence"
+    assert result["answer"] == "ملخص محتوى الصفحة [المصدر 1]."
+    assert result["search_report"]["independent_sources"] == 1
+    assert result["research_quality"] == "partial"
+
+
 def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):
     agent = WebAgent()
     monkeypatch.setattr(
