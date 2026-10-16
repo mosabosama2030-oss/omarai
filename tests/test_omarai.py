@@ -64,7 +64,7 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
         "\u00a0\ufeff=1+1",
         "https://example.com/post/2",
         platform="manual",
-        note="ordinary note",
+        note="\u00a0\ufeff=SUM(1,1)",
     )
     destination = tmp_path / "export.csv"
     assert store.export_csv(destination) == 2
@@ -79,5 +79,6 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     row2 = next(row for row in rows if row["source_url"] == "https://example.com/post/2")
     assert row1["text"].startswith("\t=")
     assert row1["note"].startswith("\t  +")
-    assert row2["text"].startswith("\t\u00a0\ufeff=")
+    assert row2["text"].startswith("\t\ufeff=")
+    assert row2["note"].startswith("\t\u00a0\ufeff=")
 
