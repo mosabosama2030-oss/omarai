@@ -143,6 +143,14 @@ class Handler(BaseHTTPRequestHandler):
                     allowed_origins.add(scheme + "://" + host)
             if origin and origin not in allowed_origins:
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
+
+            # Authenticate and rate-limit before reading attacker-controlled request bodies.
+            path = urlparse(self.path).path
+            if path.startswith("/api/") and not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+            if path.startswith("/api/") and not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+
             size = int(self.headers.get("Content-Length", "0"))
             if size <= 0:
                 return self.respond(400, {"error": "request body is required"})
@@ -151,14 +159,6 @@ class Handler(BaseHTTPRequestHandler):
             data = json.loads(self.rfile.read(size))
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
-            path = urlparse(self.path).path
-
-            # Public deployments require the owner's private token and a request limit.
-            if path.startswith("/api/") and not self._authorized():
-                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
-            if path.startswith("/api/") and not self._rate_limit_ok():
-                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
-
             if path == "/api/diagnostics":
                 test_model = data.get("test_model", True)
                 test_social = data.get("test_social", False)
