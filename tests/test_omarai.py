@@ -1,3 +1,5 @@
+import csv
+
 import pytest
 
 from agents.omarai import LeadStore, analyze, normalize
@@ -49,3 +51,34 @@ def test_csv_requires_columns(tmp_path):
     store=LeadStore(tmp_path/"db.sqlite3")
     with pytest.raises(ValueError):
         store.import_csv(bad)
+
+def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
+    store = LeadStore(tmp_path / "db.sqlite3")
+    store.add(
+        '=HYPERLINK("https://evil.example","click")',
+        "https://example.com/post/1",
+        platform="manual",
+        note="  +SUM(1,1)",
+    )
+    store.add(
+        "\u00a0\ufeff=1+1",
+        "https://example.com/post/2",
+        platform="manual",
+        note="\u00a0\ufeff=SUM(1,1)",
+    )
+    destination = tmp_path / "export.csv"
+    assert store.export_csv(destination) == 2
+    raw_csv = destination.read_text(encoding="utf-8-sig")
+    assert '"\t=HYPERLINK(' in raw_csv
+    assert '"\t  +SUM' in raw_csv
+
+    with destination.open(newline="", encoding="utf-8-sig") as stream:
+        rows = list(csv.DictReader(stream))
+
+    row1 = next(row for row in rows if row["source_url"] == "https://example.com/post/1")
+    row2 = next(row for row in rows if row["source_url"] == "https://example.com/post/2")
+    assert row1["text"].startswith("\t=")
+    assert row1["note"].startswith("\t  +")
+    assert row2["text"].startswith("\t\ufeff=")
+    assert row2["note"].startswith("\t\u00a0\ufeff=")
+
