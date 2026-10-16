@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hmac
+import ipaddress
 import json
 import os
 import threading
@@ -24,8 +25,10 @@ class Handler(BaseHTTPRequestHandler):
     store = LeadStore()
     _rate_lock = threading.Lock()
     _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
+    _rate_last_cleanup: ClassVar[float] = 0.0
     RATE_LIMIT_REQUESTS = 20
     RATE_LIMIT_WINDOW_SECONDS = 60
+    RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60
 
     def _authorized(self):
         expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
@@ -36,15 +39,43 @@ class Handler(BaseHTTPRequestHandler):
             return False
         return hmac.compare_digest(supplied[7:].strip(), expected)
 
-    def _rate_limit_ok(self):
+    def _rate_limit_client_key(self):
+        """Choose a rate-limit identity without trusting spoofable proxy headers by default.
+
+        Set OMARAI_TRUST_PROXY_HEADERS=1 only when the deployment's trusted reverse
+        proxy appends the actual client IP as the rightmost X-Forwarded-For value.
+        """
+        direct_ip = self.client_address[0]
+        if os.getenv("OMARAI_TRUST_PROXY_HEADERS", "").strip() != "1":
+            return direct_ip
         forwarded = self.headers.get("X-Forwarded-For", "")
-        client_ip = forwarded.split(",", 1)[0].strip() if forwarded else self.client_address[0]
+        candidate = forwarded.rsplit(",", 1)[-1].strip() if forwarded else ""
+        try:
+            return str(ipaddress.ip_address(candidate))
+        except ValueError:
+            return direct_ip
+
+    def _rate_limit_ok(self):
+        client_ip = self._rate_limit_client_key()
         now = time.monotonic()
+        cls = type(self)
         with self._rate_lock:
-            events = self._request_times[client_ip]
-            while events and now - events[0] >= self.RATE_LIMIT_WINDOW_SECONDS:
+            # Periodically remove IP buckets whose entire sliding window has expired.
+            # Without this sweep, a public endpoint could retain one empty deque per
+            # distinct client IP forever, even though the rate-limit window is 60 sec.
+            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:
+                cutoff = now - cls.RATE_LIMIT_WINDOW_SECONDS
+                for key, timestamps in list(cls._request_times.items()):
+                    while timestamps and timestamps[0] <= cutoff:
+                        timestamps.popleft()
+                    if not timestamps:
+                        cls._request_times.pop(key, None)
+                cls._rate_last_cleanup = now
+
+            events = cls._request_times[client_ip]
+            while events and now - events[0] >= cls.RATE_LIMIT_WINDOW_SECONDS:
                 events.popleft()
-            if len(events) >= self.RATE_LIMIT_REQUESTS:
+            if len(events) >= cls.RATE_LIMIT_REQUESTS:
                 return False
             events.append(now)
             return True
@@ -80,10 +111,10 @@ class Handler(BaseHTTPRequestHandler):
                 },
             )
         if parsed.path == "/api/leads":
-            if not self._authorized():
-                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
             if not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
             q = parse_qs(parsed.query)
             try:
                 limit = max(1, min(int(q.get("limit", ["100"])[0]), 500))
@@ -95,6 +126,14 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
+            # Count API attempts before origin/content-type/body validation so invalid
+            # credentials and malformed requests cannot bypass per-client throttling.
+            path = urlparse(self.path).path
+            if path.startswith("/api/") and not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if path.startswith("/api/") and not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+
             content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
             if content_type != "application/json":
                 return self.respond(415, {"error": "Content-Type must be application/json"})
@@ -112,6 +151,7 @@ class Handler(BaseHTTPRequestHandler):
                     allowed_origins.add(scheme + "://" + host)
             if origin and origin not in allowed_origins:
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
+
             size = int(self.headers.get("Content-Length", "0"))
             if size <= 0:
                 return self.respond(400, {"error": "request body is required"})
@@ -120,14 +160,6 @@ class Handler(BaseHTTPRequestHandler):
             data = json.loads(self.rfile.read(size))
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
-            path = urlparse(self.path).path
-
-            # Public deployments require the owner's private token and a request limit.
-            if path.startswith("/api/") and not self._authorized():
-                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
-            if path.startswith("/api/") and not self._rate_limit_ok():
-                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
-
             if path == "/api/diagnostics":
                 test_model = data.get("test_model", True)
                 test_social = data.get("test_social", False)

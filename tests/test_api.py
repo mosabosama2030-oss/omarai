@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import json
 import threading
+from collections import defaultdict, deque
 from http.server import ThreadingHTTPServer
+from types import SimpleNamespace
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
@@ -242,6 +244,61 @@ def test_diagnostics_endpoint_requires_boolean_options(local_api):
 
 
 
+def test_rate_limit_ignores_spoofed_forwarded_for_by_default(monkeypatch):
+    monkeypatch.delenv("OMARAI_TRUST_PROXY_HEADERS", raising=False)
+    handler = SimpleNamespace(
+        headers={"X-Forwarded-For": "198.51.100.77, 203.0.113.10"},
+        client_address=("192.0.2.44", 12345),
+    )
+    assert Handler._rate_limit_client_key(handler) == "192.0.2.44"
+
+
+def test_rate_limit_uses_rightmost_valid_proxy_ip_only_when_enabled(monkeypatch):
+    monkeypatch.setenv("OMARAI_TRUST_PROXY_HEADERS", "1")
+    handler = SimpleNamespace(
+        headers={"X-Forwarded-For": "198.51.100.77, 203.0.113.10"},
+        client_address=("192.0.2.44", 12345),
+    )
+    assert Handler._rate_limit_client_key(handler) == "203.0.113.10"
+
+
+def test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip(monkeypatch):
+    monkeypatch.setenv("OMARAI_TRUST_PROXY_HEADERS", "1")
+    handler = SimpleNamespace(
+        headers={"X-Forwarded-For": "198.51.100.77, not-an-ip"},
+        client_address=("192.0.2.44", 12345),
+    )
+    assert Handler._rate_limit_client_key(handler) == "192.0.2.44"
+
+
+def test_public_api_authentication_and_rate_limit_precede_json_parsing(local_api, monkeypatch):
+    """Reject untrusted API calls before parsing bodies and throttle repeated failures."""
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "z" * 48)
+    monkeypatch.setattr(Handler, "RATE_LIMIT_REQUESTS", 1)
+    with Handler._rate_lock:
+        Handler._request_times.clear()
+    request = Request(
+        local_api + "/api/agent",
+        data=b"invalid-json-body",
+        method="POST",
+        headers={"Content-Type": "application/json"},
+    )
+    try:
+        with urlopen(request, timeout=3) as response:
+            first_status = response.status
+    except HTTPError as error:
+        first_status = error.code
+    assert first_status == 401
+
+    try:
+        with urlopen(request, timeout=3) as response:
+            second_status = response.status
+    except HTTPError as error:
+        second_status = error.code
+    assert second_status == 429
+
+
 def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "x" * 48)
@@ -300,3 +357,27 @@ def test_public_binding_requires_explicit_deployment_flag_and_strong_token(monke
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "short")
     with pytest.raises(ValueError, match="at least 32 characters"):
         serve("0.0.0.0", 0)
+
+def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):
+    """Client IPs do not accumulate forever after their 60-second window expires."""
+    monkeypatch.delenv("OMARAI_TRUST_PROXY_HEADERS", raising=False)
+    monkeypatch.setattr(Handler, "_request_times", defaultdict(deque))
+    monkeypatch.setattr(Handler, "_rate_last_cleanup", 0.0)
+    clock = {"now": 100.0}
+    monkeypatch.setattr("api.omarai.time.monotonic", lambda: clock["now"])
+
+    class FakeHandler(Handler):
+        def __init__(self, ip):
+            self.headers = {}
+            self.client_address = (ip, 1234)
+
+    first = FakeHandler("192.0.2.1")
+    second = FakeHandler("192.0.2.2")
+    assert first._rate_limit_ok() is True
+    assert "192.0.2.1" in Handler._request_times
+
+    clock["now"] = 161.0
+    assert second._rate_limit_ok() is True
+    assert "192.0.2.1" not in Handler._request_times
+    assert "192.0.2.2" in Handler._request_times
+
