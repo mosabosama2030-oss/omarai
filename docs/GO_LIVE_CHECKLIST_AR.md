@@ -4,7 +4,7 @@
 
 ## إعداد الاستضافة
 
-1. اتبع [دليل النشر العربي](DEPLOY_RAILWAY_AR.md) وأنشئ الخدمة يدويًا في حساب الاستضافة.
+1. اختر دليل النشر الخاص بالمنصة التي قررت استخدامها: [SnapDeploy المجاني](DEPLOY_SNAPDEPLOY_AR.md) أو [Railway](DEPLOY_RAILWAY_AR.md)، ثم أنشئ الخدمة يدويًا في حساب الاستضافة. إذا كانت المنصة تطلب صلاحيات GitHub واسعة، راجعها قبل الموافقة.
 2. استخدم المستودع `mosabosama2030-oss/omarai` والفرع `main` وإعداد Docker المرفق.
 3. اضبط الأسرار من لوحة الاستضافة فقط: `OMARAI_PUBLIC_DEPLOYMENT=1`، ورمز `OMARAI_ACCESS_TOKEN` عشوائي بطول 32 حرفًا على الأقل، ومفتاح مزود النموذج `OPENROUTER_API_KEY` أو `OMARAI_LLM_API_KEY`.
 4. اترك `OMARAI_OPENROUTER_WEB_SEARCH` غير مضبوط ما لم تراجع التكلفة وتوافق عليها.
