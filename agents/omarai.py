@@ -141,7 +141,7 @@ class LeadStore:
         rows=self.list(limit=500)
         with open(filename,"w",newline="",encoding="utf-8-sig") as stream:
             fields=["id","text","source_url","platform","observed_at","assessment","status","note","created_at"]
-            writer=csv.DictWriter(stream,fieldnames=fields)
+            writer=csv.DictWriter(stream, fieldnames=fields, quoting=csv.QUOTE_ALL)
             writer.writeheader()
             for row in rows:
                 values = {
