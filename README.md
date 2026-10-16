@@ -35,6 +35,12 @@ A starter Render Blueprint is included in `render.yaml`, with Arabic setup notes
 
 Before accepting the deployment, use the [Arabic go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) when that file is present on the selected branch. Never commit provider keys or the app access token.
 
+## Free hosted deployment (SnapDeploy alternative)
+
+If Render is unavailable, the repository also has an Arabic step-by-step guide for testing Omarai on [SnapDeploy's free container tier](docs/DEPLOY_SNAPDEPLOY_AR.md). The current provider documentation lists no credit card, but limits the free tier to 100 running container-hours per month, 512 MB RAM / 0.25 vCPU, and sleep after about 15 minutes of inactivity. It has no persistent filesystem, so SQLite lead records are not durable. Model-provider limits/costs remain separate.
+
+**GitHub permission warning:** SnapDeploy's documented GitHub OAuth connection requests the `repo` scope, which includes all repositories on the account, including private repositories. Review that permission carefully and do not authorize it unless the scope is acceptable. See the [official free-tier limits](https://snapdeploy.dev/docs/free-tier) and [GitHub integration permissions](https://snapdeploy.dev/docs/github). This guide does not mean a SnapDeploy account has been created or a deployment has been performed.
+
 ## Run on Android / Termux
 
 From the repository directory:
