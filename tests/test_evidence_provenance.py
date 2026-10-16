@@ -197,6 +197,8 @@ def test_page_fetch_connects_to_the_validated_public_ip(monkeypatch):
         def __init__(self, *args, **kwargs):
             assert kwargs.get("verify") is True
             assert kwargs.get("follow_redirects") is False
+            # Do not allow HTTP_PROXY/HTTPS_PROXY to bypass the pinned IP.
+            assert kwargs.get("trust_env") is False
 
         def __enter__(self):
             return self
@@ -219,3 +221,55 @@ def test_page_fetch_connects_to_the_validated_public_ip(monkeypatch):
     assert seen["url"].startswith("https://1.1.1.1/")
     assert seen["headers"]["Host"] == "example.com"
     assert seen["extensions"]["sni_hostname"] == "example.com"
+
+def test_mixed_public_and_private_dns_answers_block_page_fetch(monkeypatch):
+    """A hostname is rejected when even one DNS answer is non-global."""
+    def fake_getaddrinfo(host, port, *args, **kwargs):
+        return _addrinfo("1.1.1.1") + _addrinfo("127.0.0.1")
+
+    monkeypatch.setattr(socket, "getaddrinfo", fake_getaddrinfo)
+    assert _public_ip_literals("example.com") is None
+
+
+def test_private_redirect_target_is_rejected_before_a_second_connection(monkeypatch):
+    """Every redirect is validated independently, even after a pinned public request."""
+    resolutions = []
+    connections = []
+
+    def fake_getaddrinfo(host, port, *args, **kwargs):
+        resolutions.append(host)
+        assert host == "example.com"
+        return _addrinfo("1.1.1.1")
+
+    class FakeResponse:
+        status_code = 302
+        headers = {"location": "http://127.0.0.1/latest/meta-data/"}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+    class FakeClient:
+        def __init__(self, *args, **kwargs):
+            assert kwargs.get("trust_env") is False
+            assert kwargs.get("follow_redirects") is False
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        def stream(self, method, url, **kwargs):
+            connections.append(url)
+            return FakeResponse()
+
+    monkeypatch.setattr(socket, "getaddrinfo", fake_getaddrinfo)
+    monkeypatch.setattr("httpx.Client", FakeClient)
+    assert WebAgent()._fetch_page("https://example.com/article") == ("", "")
+    assert len(connections) == 1
+    assert connections[0].startswith("https://1.1.1.1/")
+    assert resolutions == ["example.com"]
+

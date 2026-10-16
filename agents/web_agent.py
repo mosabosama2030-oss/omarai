@@ -1238,7 +1238,11 @@ class WebAgent:
         html = ""
         try:
             with httpx.Client(
-                timeout=8.0, follow_redirects=False, headers=headers, verify=True
+                timeout=8.0,
+                follow_redirects=False,
+                headers=headers,
+                verify=True,
+                trust_env=False,
             ) as client:
                 for redirect_number in range(4):
                     parsed = urllib.parse.urlparse(current_url)
