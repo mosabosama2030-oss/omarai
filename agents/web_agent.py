@@ -27,6 +27,7 @@ from agents.research import (
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
+    registrable_domain,
     validate_plan,
 )
 
@@ -1381,7 +1382,11 @@ class WebAgent:
         # when initial coverage is thin. This uses observed source/domain/provider coverage,
         # not the language model's subjective claim that it has enough evidence.
         preliminary = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)
-        preliminary_domains = {str(item.get("domain") or "") for item in preliminary if item.get("domain")}
+        preliminary_domains = {
+            registrable_domain(item.get("domain") or urllib.parse.urlparse(item.get("url", "")).hostname)
+            for item in preliminary
+        }
+        preliminary_domains.discard("")
         preliminary_providers = {
             provider for item in preliminary for provider in item.get("providers", [])
         }
@@ -2208,7 +2213,11 @@ class WebAgent:
         sources = filtered_sources
         search_warning = "؛ ".join(search_warnings) if search_warnings else None
         independent_domains = {
-            str(source.get("domain") or urllib.parse.urlparse(source.get("url", "")).hostname or "").lower().removeprefix("www.")
+            registrable_domain(
+                source.get("domain")
+                or urllib.parse.urlparse(source.get("url", "")).hostname
+                or ""
+            )
             for source in sources
         }
         independent_domains.discard("")
