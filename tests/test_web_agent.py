@@ -820,6 +820,49 @@ def test_single_user_supplied_page_can_be_summarized_without_claiming_corroborat
     assert any("لم يتم تأكيد محتواه" in warning for warning in result["warnings"])
 
 
+def test_sibling_subdomains_do_not_satisfy_independent_evidence_gate(monkeypatch):
+    agent = WebAgent()
+    first = sample_source(0)
+    first["url"] = "https://news.example.com/research"
+    first["domain"] = "news.example.com"
+    second = sample_source(1)
+    second["url"] = "https://offers.example.com/research"
+    second["domain"] = "offers.example.com"
+
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            [first, second],
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [{"query": "قارن هذه التقنية", "results": 2}],
+                "unique_sources": 2,
+                "pages_fetched": 2,
+                "providers_used": ["test_provider"],
+                "platform_counts": {"web": 2},
+                "social_direct_results": 0,
+                "depth": "standard",
+                "planning_method": "test",
+            },
+        ),
+    )
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: pytest.fail(
+            "LLM must not answer when both sources belong to one registrable domain"
+        ),
+    )
+
+    result = agent.answer("قارن هذه التقنية")
+
+    assert result["kind"] == "insufficient_evidence"
+    assert result["search_report"]["independent_sources"] == 1
+    assert result["search_report"]["unique_sources"] == 2
+
+
 def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):
     agent = WebAgent()
     monkeypatch.setattr(
