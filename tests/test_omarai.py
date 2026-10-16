@@ -60,15 +60,25 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
         platform="manual",
         note="  +SUM(1,1)",
     )
+    store.add(
+        "\\u00a0\\ufeff=1+1",
+        "https://example.com/post/2",
+        platform="manual",
+        note="ordinary note",
+    )
     destination = tmp_path / "export.csv"
-    assert store.export_csv(destination) == 1
+    assert store.export_csv(destination) == 2
     raw_csv = destination.read_text(encoding="utf-8-sig")
     assert '"\t=HYPERLINK(' in raw_csv
     assert '"\t  +SUM' in raw_csv
 
     with destination.open(newline="", encoding="utf-8-sig") as stream:
-        row = next(csv.DictReader(stream))
+        rows = list(csv.DictReader(stream))
 
-    assert row["text"].startswith("\t=")
-    assert row["note"].startswith("\t  +")
-    assert row["source_url"] == "https://example.com/post/1"
+    row1 = next(row for row in rows if row["source_url"] == "https://example.com/post/1")
+    row2 = next(row for row in rows if row["source_url"] == "https://example.com/post/2")
+    assert row1["text"].startswith("\t=")
+    assert row1["note"].startswith("\t  +")
+    assert row2["text"].startswith("\t\\u00a0\\ufeff=") is False  # values are Unicode at runtime
+    assert row2["text"].startswith("\t\u00a0\ufeff=")
+
