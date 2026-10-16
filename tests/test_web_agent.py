@@ -918,7 +918,7 @@ def test_generate_keeps_web_evidence_in_separate_untrusted_user_message(monkeypa
     )
 
     messages = captured["messages"]
-    system_content = "\\n".join(
+    system_content = "\n".join(
         message["content"] for message in messages if message["role"] == "system"
     )
     user_messages = [message for message in messages if message["role"] == "user"]
