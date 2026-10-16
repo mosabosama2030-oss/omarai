@@ -16,6 +16,35 @@ class SmokeError(RuntimeError):
     """A live acceptance check failed."""
 
 
+class _SameOriginRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Never forward a bearer token to a different origin during an HTTP redirect."""
+
+    @staticmethod
+    def _origin(url: str) -> tuple[str, str, int | None]:
+        parsed = urllib.parse.urlsplit(url)
+        try:
+            port = parsed.port
+        except ValueError:
+            return "", "", None
+        if port is None:
+            port = 443 if parsed.scheme.lower() == "https" else 80 if parsed.scheme.lower() == "http" else None
+        return parsed.scheme.lower(), (parsed.hostname or "").lower(), port
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        target_url = urllib.parse.urljoin(req.full_url, newurl)
+        target = urllib.parse.urlsplit(target_url)
+        if (
+            self._origin(req.full_url) != self._origin(target_url)
+            or target.scheme.lower() not in {"http", "https"}
+            or target.username
+            or target.password
+        ):
+            raise urllib.error.HTTPError(
+                req.full_url, code, "Cross-origin redirect blocked", headers, fp
+            )
+        return super().redirect_request(req, fp, code, msg, headers, target_url)
+
+
 def normalize_origin(value: str, allow_http: bool = False) -> str:
     parsed = urllib.parse.urlsplit((value or "").strip())
     if parsed.scheme not in {"https", "http"} or not parsed.hostname:
@@ -51,7 +80,8 @@ def request_json(url: str, *, token: str = "", payload: dict[str, Any] | None = 
         headers["Authorization"] = "Bearer " + token
     request = urllib.request.Request(url, data=data, headers=headers)
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        opener = urllib.request.build_opener(_SameOriginRedirectHandler())
+        with opener.open(request, timeout=timeout) as response:
             status, body = response.status, response.read(1_000_000)
     except urllib.error.HTTPError as exc:
         status = exc.code
