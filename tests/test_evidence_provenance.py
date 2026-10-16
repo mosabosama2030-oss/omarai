@@ -243,7 +243,9 @@ def test_private_redirect_target_is_rejected_before_a_second_connection(monkeypa
 
     class FakeResponse:
         status_code = 302
-        headers = {"location": "http://127.0.0.1/latest/meta-data/"}
+
+        def __init__(self):
+            self.headers = {"location": "http://127.0.0.1/latest/meta-data/"}
 
         def __enter__(self):
             return self
