@@ -61,7 +61,7 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
         note="  +SUM(1,1)",
     )
     store.add(
-        "\\u00a0\\ufeff=1+1",
+        "\u00a0\ufeff=1+1",
         "https://example.com/post/2",
         platform="manual",
         note="ordinary note",
