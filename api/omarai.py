@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hmac
+import ipaddress
 import json
 import os
 import threading
@@ -36,9 +37,24 @@ class Handler(BaseHTTPRequestHandler):
             return False
         return hmac.compare_digest(supplied[7:].strip(), expected)
 
-    def _rate_limit_ok(self):
+    def _rate_limit_client_key(self):
+        """Choose a rate-limit identity without trusting spoofable proxy headers by default.
+
+        Set OMARAI_TRUST_PROXY_HEADERS=1 only when the deployment's trusted reverse
+        proxy appends the actual client IP as the rightmost X-Forwarded-For value.
+        """
+        direct_ip = self.client_address[0]
+        if os.getenv("OMARAI_TRUST_PROXY_HEADERS", "").strip() != "1":
+            return direct_ip
         forwarded = self.headers.get("X-Forwarded-For", "")
-        client_ip = forwarded.split(",", 1)[0].strip() if forwarded else self.client_address[0]
+        candidate = forwarded.rsplit(",", 1)[-1].strip() if forwarded else ""
+        try:
+            return str(ipaddress.ip_address(candidate))
+        except ValueError:
+            return direct_ip
+
+    def _rate_limit_ok(self):
+        client_ip = self._rate_limit_client_key()
         now = time.monotonic()
         with self._rate_lock:
             events = self._request_times[client_ip]
