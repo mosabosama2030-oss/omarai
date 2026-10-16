@@ -79,6 +79,5 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     row2 = next(row for row in rows if row["source_url"] == "https://example.com/post/2")
     assert row1["text"].startswith("\t=")
     assert row1["note"].startswith("\t  +")
-    assert row2["text"].startswith("\t\\u00a0\\ufeff=") is False  # values are Unicode at runtime
     assert row2["text"].startswith("\t\u00a0\ufeff=")
 
