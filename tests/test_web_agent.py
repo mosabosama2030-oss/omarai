@@ -817,6 +817,7 @@ def test_single_user_supplied_page_can_be_summarized_without_claiming_corroborat
     assert result["answer"] == "ملخص محتوى الصفحة [المصدر 1]."
     assert result["search_report"]["independent_sources"] == 1
     assert result["research_quality"] == "partial"
+    assert any("لم يتم تأكيد محتواه" in warning for warning in result["warnings"])
 
 
 def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):
