@@ -2,11 +2,6 @@ name: Omarai hosted acceptance smoke
 
 on:
   workflow_dispatch:
-    inputs:
-      base_url:
-        description: "HTTPS origin only, e.g. https://your-app.example.com"
-        required: true
-        type: string
 
 permissions:
   contents: read
@@ -20,17 +15,25 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     env:
-      OMARAI_BASE_URL: ${{ inputs.base_url }}
+      OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}
       OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}
     steps:
-      - name: Verify the access-token secret is available
+      - name: Verify hosted target and access-token secrets are available
         shell: bash
         run: |
           if [[ -z "${OMARAI_ACCESS_TOKEN}" || ${#OMARAI_ACCESS_TOKEN} -lt 32 ]]; then
             echo "::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short."
             exit 1
           fi
-          echo "Access-token secret is present; value not printed."
+          if [[ -z "${OMARAI_BASE_URL}" ]]; then
+            echo "::error::GitHub Actions secret OMARAI_BASE_URL is missing."
+            exit 1
+          fi
+          if [[ "${OMARAI_BASE_URL}" != https://* || "${OMARAI_BASE_URL}" == *\?* || "${OMARAI_BASE_URL}" == *\#* ]]; then
+            echo "::error::OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment."
+            exit 1
+          fi
+          echo "Hosted target and access-token secrets are present; values not printed."
 
       - name: Check out repository
         uses: actions/checkout@v4
