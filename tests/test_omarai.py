@@ -62,6 +62,9 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     )
     destination = tmp_path / "export.csv"
     assert store.export_csv(destination) == 1
+    raw_csv = destination.read_text(encoding="utf-8-sig")
+    assert '"\t=HYPERLINK(' in raw_csv
+    assert '"\t  +SUM' in raw_csv
 
     with destination.open(newline="", encoding="utf-8-sig") as stream:
         row = next(csv.DictReader(stream))
