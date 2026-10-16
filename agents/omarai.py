@@ -29,6 +29,16 @@ def normalize(text: str) -> str:
 def now_utc() -> str:
     return datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z")
 
+def _csv_safe_cell(value: object) -> str:
+    """Prefix spreadsheet formula-like values so exported data is not executed."""
+    text = "" if value is None else str(value)
+    if not text:
+        return text
+    first_non_space = text.lstrip(" \t\r\n")[:1]
+    if text[0] in "\t\r\n" or first_non_space in {"=", "+", "-", "@"}:
+        return "'" + text
+    return text
+
 def analyze(text: str, product_terms=(), location_terms=()) -> dict:
     if not isinstance(text, str) or not text.strip():
         raise ValueError("text must not be empty")
@@ -131,5 +141,11 @@ class LeadStore:
             writer=csv.DictWriter(stream,fieldnames=fields)
             writer.writeheader()
             for row in rows:
-                writer.writerow({k:json.dumps(row[k],ensure_ascii=False) if k=="assessment" else row.get(k,"") for k in fields})
+                values = {
+                    key: json.dumps(row[key], ensure_ascii=False)
+                    if key == "assessment"
+                    else row.get(key, "")
+                    for key in fields
+                }
+                writer.writerow({key: _csv_safe_cell(value) for key, value in values.items()})
         return len(rows)
