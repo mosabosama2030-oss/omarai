@@ -30,13 +30,16 @@ def now_utc() -> str:
     return datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 def _csv_safe_cell(value: object) -> str:
-    """Prefix spreadsheet formula-like values so exported data is not executed."""
+    """Prefix risky spreadsheet cells with a tab for stronger Excel CSV protection."""
     text = "" if value is None else str(value)
     if not text:
         return text
     first_non_space = text.lstrip(" \t\r\n")[:1]
-    if text[0] in "\t\r\n" or first_non_space in {"=", "+", "-", "@"}:
-        return "'" + text
+    formula_prefixes = {"=", "+", "-", "@", "＝", "＋", "－", "＠"}
+    if text[0] in "\t\r\n" or first_non_space in formula_prefixes:
+        # OWASP notes that a tab inside the quoted CSV field is more resilient
+        # in Excel than an apostrophe, although no CSV mitigation is universal.
+        return "\t" + text
     return text
 
 def analyze(text: str, product_terms=(), location_terms=()) -> dict:
