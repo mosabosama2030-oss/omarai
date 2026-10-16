@@ -103,6 +103,56 @@ def test_smoke_checks_health_auth_live_diagnostics_and_agent(hosted_server):
     assert result["checks"]["agent_request"]["source_count"] == 1
 
 
+def test_smoke_never_forwards_bearer_to_cross_origin_redirect():
+    received_authorizations = []
+
+    class RedirectHandler(BaseHTTPRequestHandler):
+        def log_message(self, format: str, *args: object) -> None:
+            return
+
+        def do_GET(self) -> None:
+            self.send_response(302)
+            self.send_header("Location", self.server.redirect_destination)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+
+    class DestinationHandler(BaseHTTPRequestHandler):
+        def log_message(self, format: str, *args: object) -> None:
+            return
+
+        def do_GET(self) -> None:
+            received_authorizations.append(self.headers.get("Authorization"))
+            self.send_response(200)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+
+    destination = ThreadingHTTPServer(("127.0.0.1", 0), DestinationHandler)
+    source = ThreadingHTTPServer(("127.0.0.1", 0), RedirectHandler)
+    destination_thread = threading.Thread(target=destination.serve_forever, daemon=True)
+    source_thread = threading.Thread(target=source.serve_forever, daemon=True)
+    source.redirect_destination = (
+        f"http://127.0.0.1:{destination.server_port}/capture"
+    )
+    destination_thread.start()
+    source_thread.start()
+    try:
+        status, payload = hosted_smoke_test.request_json(
+            f"http://127.0.0.1:{source.server_port}/redirect",
+            token=TOKEN,
+            timeout=3,
+        )
+        assert status == 302
+        assert payload is None
+        assert received_authorizations == []
+    finally:
+        source.shutdown()
+        destination.shutdown()
+        source.server_close()
+        destination.server_close()
+        source_thread.join(timeout=2)
+        destination_thread.join(timeout=2)
+
+
 def test_smoke_refuses_missing_or_short_access_token(hosted_server):
     with pytest.raises(SmokeError, match="OMARAI_ACCESS_TOKEN"):
         run_smoke(hosted_server, "", allow_http=True, timeout=5)
