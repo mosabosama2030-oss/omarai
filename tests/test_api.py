@@ -271,10 +271,13 @@ def test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip(monkeypatch
     assert Handler._rate_limit_client_key(handler) == "192.0.2.44"
 
 
-def test_public_api_authentication_runs_before_json_parsing(local_api, monkeypatch):
-    """Reject unauthenticated API calls before attempting to parse an invalid JSON body."""
+def test_public_api_authentication_and_rate_limit_precede_json_parsing(local_api, monkeypatch):
+    """Reject untrusted API calls before parsing bodies and throttle repeated failures."""
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "z" * 48)
+    monkeypatch.setattr(Handler, "RATE_LIMIT_REQUESTS", 1)
+    with Handler._rate_lock:
+        Handler._request_times.clear()
     request = Request(
         local_api + "/api/agent",
         data=b"invalid-json-body",
@@ -283,10 +286,17 @@ def test_public_api_authentication_runs_before_json_parsing(local_api, monkeypat
     )
     try:
         with urlopen(request, timeout=3) as response:
-            status = response.status
+            first_status = response.status
     except HTTPError as error:
-        status = error.code
-    assert status == 401
+        first_status = error.code
+    assert first_status == 401
+
+    try:
+        with urlopen(request, timeout=3) as response:
+            second_status = response.status
+    except HTTPError as error:
+        second_status = error.code
+    assert second_status == 429
 
 
 def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):
