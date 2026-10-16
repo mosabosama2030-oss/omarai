@@ -5,15 +5,53 @@ but all queries, result counts and source records are validated before use.
 """
 from __future__ import annotations
 
+import ipaddress
 import re
 from datetime import UTC, datetime, timedelta
 from email.utils import parsedate_to_datetime
 from typing import Any
 from urllib.parse import urlparse
 
+import tldextract
+
 MAX_PLAN_QUERIES = 8
 MAX_QUERY_CHARS = 240
 MAX_FUSED_RESULTS = 18
+
+
+# Use the Public Suffix List snapshot bundled with tldextract; never fetch it at
+# runtime. Including private suffixes keeps tenant-hosted sites (e.g. github.io)
+# separate, while subdomains belonging to one registrable site share one identity.
+_DOMAIN_EXTRACTOR = tldextract.TLDExtract(
+    suffix_list_urls=(),
+    include_psl_private_domains=True,
+)
+
+
+def registrable_domain(value: Any) -> str:
+    """Return a normalized registrable domain (or normalized IP/unknown hostname).
+
+    This is a conservative source-diversity key, not proof that two publishers
+    are editorially independent. It prevents sibling subdomains from being
+    counted as separate domains in the evidence coverage threshold.
+    """
+    candidate = str(value or "").strip()
+    if not candidate:
+        return ""
+    parsed = urlparse(candidate if "://" in candidate else "//" + candidate)
+    host = (parsed.hostname or "").rstrip(".").lower()
+    if not host:
+        return ""
+    try:
+        return str(ipaddress.ip_address(host))
+    except ValueError:
+        pass
+    try:
+        host = host.encode("idna").decode("ascii").lower()
+    except UnicodeError:
+        return host
+    extracted = _DOMAIN_EXTRACTOR(host)
+    return (extracted.top_domain_under_public_suffix or host).lower()
 
 SOCIAL_DOMAINS = {
     "reddit": "reddit.com",
@@ -389,10 +427,13 @@ def evidence_signal_report(
     current = now or datetime.now(UTC)
     valid_sources = [source for source in sources if isinstance(source, dict) and source.get("url")]
     domains = {
-        str(source.get("domain") or "").lower().removeprefix("www.")
+        registrable_domain(
+            source.get("domain") or urlparse(str(source.get("url") or "")).hostname or ""
+        )
         for source in valid_sources
-        if source.get("domain")
+        if source.get("domain") or source.get("url")
     }
+    domains.discard("")
     providers: set[str] = set()
     for source in valid_sources:
         candidate_providers = source.get("providers", [])
