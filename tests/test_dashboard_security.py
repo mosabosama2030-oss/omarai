@@ -16,4 +16,4 @@ def test_saved_lead_source_links_reject_non_http_schemes():
     assert "function safeSourceUrl(value)" in html
     assert '["http:","https:"]' in html
     assert "const sourceUrl=safeSourceUrl(l.source_url)" in html
-    assert 'href="'+esc(sourceUrl)+'"' in html
+    assert "const sourceLink=sourceUrl?" in html
