@@ -2,16 +2,27 @@ from __future__ import annotations
 
 import pytest
 
-from agents.web_agent import WebAgent, _public_http_url
+from agents.web_agent import (
+    WebAgent,
+    _normalize_search_query,
+    _public_http_url,
+    _relevance_ratio,
+)
 
 
-def sample_source():
+def sample_source(index=0):
+    domain = "example.com" if index == 0 else "example.net"
     return {
-        "title": "مقالة اختبار",
-        "url": "https://example.com/research",
-        "snippet": "مقتطف مفيد من المصدر.",
-        "page_text": "نص مستخرج من الصفحة.",
+        "title": "مقالة عن التقنية",
+        "url": f"https://{domain}/research",
+        "snippet": "يشرح هذا المصدر التقنية وسبب المقارنة.",
+        "page_text": "نص مستخرج من الصفحة يشرح التقنية وأسباب المقارنة.",
         "page_fetched": True,
+        "providers": ["test_provider"],
+        "queries": ["قارن هذه التقنية"],
+        "domain": domain,
+        "source_class": "general",
+        "platform": "web",
     }
 
 
@@ -32,12 +43,12 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
 
     def collect(research_plan):
         seen["plan"] = research_plan
-        return [sample_source()], [], {
+        return [sample_source(0), sample_source(1)], [], {
             "queries_planned": 1,
             "queries_attempted": 1,
             "query_results": [{"query": research_plan["queries"][0], "results": 1}],
-            "unique_sources": 1,
-            "pages_fetched": 1,
+            "unique_sources": 2,
+            "pages_fetched": 2,
             "providers_used": ["test"],
             "platform_counts": {"web": 1},
             "social_direct_results": 0,
@@ -76,14 +87,14 @@ def test_agent_returns_search_snippets_if_model_not_configured(monkeypatch):
         agent,
         "_collect_research",
         lambda plan: (
-            [sample_source()],
+            [sample_source(0), sample_source(1)],
             [],
             {
                 "queries_planned": 1,
                 "queries_attempted": 1,
                 "query_results": [],
-                "unique_sources": 1,
-                "pages_fetched": 1,
+                "unique_sources": 2,
+                "pages_fetched": 2,
                 "providers_used": ["test"],
                 "platform_counts": {"web": 1},
                 "social_direct_results": 0,
@@ -134,7 +145,7 @@ def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
     <html><body>
       <div class="result">
         <a class="result__a" href="https://example.com/first">صفحة أولى</a>
-        <a class="result__snippet">مقتطف أول</a>
+        <a class="result__snippet">سؤال بحث تجريبي مقتطف أول</a>
       </div>
     </body></html>
     """
@@ -142,7 +153,7 @@ def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
     <rss><channel><item>
       <title>صفحة ثانية</title>
       <link>https://example.net/second</link>
-      <description>مقتطف ثاني</description>
+      <description>سؤال بحث تجريبي مقتطف ثاني</description>
     </item></channel></rss>
     """
 
@@ -708,3 +719,178 @@ def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(mon
     monkeypatch.delenv("OMARAI_OPENROUTER_WEB_SEARCH", raising=False)
     agent = WebAgent()
     assert agent.openrouter_web_search_enabled is False
+
+
+
+def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():
+    normalized = _normalize_search_query("إِنَّ أَسْعَارَ أُسْتُرَالِيَا")
+    assert "إ" not in normalized
+    assert "أ" not in normalized
+    assert "ا" in normalized
+    assert normalized == "ان اسعار استراليا"
+
+
+def test_relevance_filter_rejects_translation_and_sports_noise():
+    query = "قارن Railway و Render لاستضافة Python"
+    assert _relevance_ratio(query, "Google Translate: error in translation") < 0.20
+    assert _relevance_ratio(
+        "أول شركة ناشئة في صعيد مصر عام 2019",
+        "نتائج مباراة كرة القدم وأهداف الدوري المصري اليوم",
+    ) < 0.20
+    assert _relevance_ratio(
+        query, "Railway vs Render for Python app hosting comparison"
+    ) >= 0.20
+
+
+def test_search_provider_failure_isolated_and_logged(monkeypatch):
+    agent = WebAgent()
+
+    def broken(_query):
+        raise RuntimeError("upstream HTTP 503")
+
+    def working(_query):
+        return [{
+            "title": "Railway and Render Python hosting",
+            "url": "https://example.net/hosting",
+            "snippet": "Comparison of Railway and Render for Python hosting",
+            "provider": "bing_rss",
+            "provider_rank": 1,
+        }]
+
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", broken)
+    monkeypatch.setattr(agent, "_search_bing_rss", working)
+    results = agent._search_web("قارن Railway و Render لاستضافة Python")
+    assert len(results) == 1
+    diagnostics = agent._provider_diagnostics
+    assert any(
+        row["provider"] == "duckduckgo_html"
+        and row["status"] == "failed"
+        and "HTTP 503" in row.get("error", "")
+        for row in diagnostics
+    )
+    assert any(
+        row["provider"] == "bing_rss" and row["status"] == "ok"
+        for row in diagnostics
+    )
+
+
+def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):
+    agent = WebAgent()
+    source = sample_source(0)
+    source["providers"] = ["user_supplied_url"]
+    source["page_fetched"] = True
+    source["page_text"] = "النص الكامل المستخرج من الصفحة التي قدمها المستخدم."
+    plan = {
+        "queries": ["لخص الصفحة"],
+        "direct_urls": ["https://example.com/research"],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda research_plan: (
+            [source], [], {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [],
+                "unique_sources": 1,
+                "pages_fetched": 1,
+                "providers_used": ["user_supplied_url"],
+                "platform_counts": {"web": 1},
+                "social_direct_results": 0,
+                "depth": "standard",
+                "planning_method": "test",
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "ملخص محتوى الصفحة [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("لخص الصفحة")
+
+    assert result["kind"] != "insufficient_evidence"
+    assert result["answer"] == "ملخص محتوى الصفحة [المصدر 1]."
+    assert result["search_report"]["independent_sources"] == 1
+    assert result["research_quality"] == "partial"
+    assert any("لم يتم تأكيد محتواه" in warning for warning in result["warnings"])
+
+
+def test_sibling_subdomains_do_not_satisfy_independent_evidence_gate(monkeypatch):
+    agent = WebAgent()
+    first = sample_source(0)
+    first["url"] = "https://news.example.com/research"
+    first["domain"] = "news.example.com"
+    second = sample_source(1)
+    second["url"] = "https://offers.example.com/research"
+    second["domain"] = "offers.example.com"
+
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            [first, second],
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [{"query": "قارن هذه التقنية", "results": 2}],
+                "unique_sources": 2,
+                "pages_fetched": 2,
+                "providers_used": ["test_provider"],
+                "platform_counts": {"web": 2},
+                "social_direct_results": 0,
+                "depth": "standard",
+                "planning_method": "test",
+            },
+        ),
+    )
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: pytest.fail(
+            "LLM must not answer when both sources belong to one registrable domain"
+        ),
+    )
+
+    result = agent.answer("قارن هذه التقنية")
+
+    assert result["kind"] == "insufficient_evidence"
+    assert result["search_report"]["independent_sources"] == 1
+    assert result["search_report"]["unique_sources"] == 2
+
+
+def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            [sample_source(0)],
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [{"query": "قارن هذه التقنية", "results": 1}],
+                "unique_sources": 1,
+                "pages_fetched": 1,
+                "providers_used": ["test_provider"],
+                "platform_counts": {"web": 1},
+                "social_direct_results": 0,
+                "depth": "standard",
+                "planning_method": "test",
+            },
+        ),
+    )
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: pytest.fail("LLM must not answer without two independent domains"),
+    )
+    result = agent.answer("قارن هذه التقنية")
+    assert result["kind"] == "insufficient_evidence"
+    assert result["research_quality"] == "failed"
+    assert "لم أجد معلومات موثوقة كافية" in result["answer"]
+    assert result["search_report"]["independent_sources"] == 1
