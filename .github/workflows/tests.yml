@@ -29,3 +29,66 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build production container
         run: docker build --tag omarai:ci .
+      - name: Start container and smoke-test protected API
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run --detach --rm --name omarai-ci \
+            --publish 127.0.0.1:18765:8000 \
+            --env OMARAI_PUBLIC_DEPLOYMENT=1 \
+            --env OMARAI_ACCESS_TOKEN=ci-only-test-token-not-for-production-123456 \
+            omarai:ci
+          cleanup() { docker stop omarai-ci >/dev/null 2>&1 || true; }
+          trap cleanup EXIT
+
+          healthy=false
+          for _ in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:18765/api/health \
+              --output /tmp/omarai-health.json; then
+              healthy=true
+              break
+            fi
+            sleep 1
+          done
+          if [[ "$healthy" != "true" ]]; then
+            docker logs omarai-ci
+            exit 1
+          fi
+          python -c 'import json; assert json.load(open("/tmp/omarai-health.json", encoding="utf-8"))["ok"] is True'
+
+          status="$(curl --silent --output /tmp/omarai-unauth.json --write-out "%{http_code}" \
+            --header "Content-Type: application/json" \
+            --data '{"question":"smoke"}' http://127.0.0.1:18765/api/agent)"
+          if [[ "$status" != "401" ]]; then
+            cat /tmp/omarai-unauth.json
+            echo "Unauthenticated /api/agent should return HTTP 401, got $status."
+            exit 1
+          fi
+
+          status="$(curl --silent --output /tmp/omarai-leads.json --write-out "%{http_code}" \
+            http://127.0.0.1:18765/api/leads)"
+          if [[ "$status" != "401" ]]; then
+            cat /tmp/omarai-leads.json
+            echo "Unauthenticated /api/leads should return HTTP 401, got $status."
+            exit 1
+          fi
+
+          status="$(curl --silent --output /tmp/omarai-leads-auth.json --write-out "%{http_code}" \
+            --header "Authorization: Bearer ci-only-test-token-not-for-production-123456" \
+            http://127.0.0.1:18765/api/leads)"
+          if [[ "$status" != "200" ]]; then
+            cat /tmp/omarai-leads-auth.json
+            echo "Authenticated /api/leads should return HTTP 200, got $status."
+            exit 1
+          fi
+
+          status="$(curl --silent --output /tmp/omarai-analysis.json --write-out "%{http_code}" \
+            --header "Authorization: Bearer ci-only-test-token-not-for-production-123456" \
+            --header "Content-Type: application/json" \
+            --data '{"text":"بدور على شقة","product_terms":["شقة"]}' \
+            http://127.0.0.1:18765/api/analyze)"
+          if [[ "$status" != "200" ]]; then
+            cat /tmp/omarai-analysis.json
+            echo "Authenticated /api/analyze should return HTTP 200, got $status."
+            exit 1
+          fi
