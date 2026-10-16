@@ -111,10 +111,10 @@ class Handler(BaseHTTPRequestHandler):
                 },
             )
         if parsed.path == "/api/leads":
-            if not self._authorized():
-                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
             if not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
             q = parse_qs(parsed.query)
             try:
                 limit = max(1, min(int(q.get("limit", ["100"])[0]), 500))
@@ -126,6 +126,14 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
+            # Count API attempts before origin/content-type/body validation so invalid
+            # credentials and malformed requests cannot bypass per-client throttling.
+            path = urlparse(self.path).path
+            if path.startswith("/api/") and not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if path.startswith("/api/") and not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+
             content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
             if content_type != "application/json":
                 return self.respond(415, {"error": "Content-Type must be application/json"})
@@ -143,13 +151,6 @@ class Handler(BaseHTTPRequestHandler):
                     allowed_origins.add(scheme + "://" + host)
             if origin and origin not in allowed_origins:
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
-
-            # Authenticate and rate-limit before reading attacker-controlled request bodies.
-            path = urlparse(self.path).path
-            if path.startswith("/api/") and not self._authorized():
-                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
-            if path.startswith("/api/") and not self._rate_limit_ok():
-                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
 
             size = int(self.headers.get("Content-Length", "0"))
             if size <= 0:
