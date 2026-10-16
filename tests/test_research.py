@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from agents.research import (
+    evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
+    registrable_domain,
     validate_plan,
 )
 
@@ -82,3 +84,28 @@ def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():
     assert extract_urls(question) == ["https://example.com/a?utm_source=chat#section"]
     assert plan["direct_urls"] == ["https://example.com/a?utm_source=chat#section"]
     assert "https://" not in plan["queries"][0]
+
+def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():
+    assert registrable_domain("news.example.com") == "example.com"
+    assert registrable_domain("offers.example.com") == "example.com"
+    assert registrable_domain("news.example.co.uk") == "example.co.uk"
+    assert registrable_domain("other.co.uk") == "other.co.uk"
+    assert registrable_domain("alice.github.io") == "alice.github.io"
+    assert registrable_domain("https://www.example.com/path") == "example.com"
+
+
+def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():
+    report = evidence_signal_report([
+        {
+            "url": "https://news.example.com/story",
+            "domain": "news.example.com",
+            "providers": ["search_a"],
+        },
+        {
+            "url": "https://offers.example.com/second-story",
+            "domain": "offers.example.com",
+            "providers": ["search_b"],
+        },
+    ])
+    assert report["unique_domains"] == 1
+    assert report["coverage_level"] == "محدود"
