@@ -9,3 +9,8 @@ venv/
 *.sqlite3-shm
 *.sqlite3-wal
 .DS_Store
+
+# Local backups
+*.bak
+*.bak2
+patch_*.py
