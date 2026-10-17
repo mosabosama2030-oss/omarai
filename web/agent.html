@@ -181,7 +181,7 @@ function addMessage(role,text,result,options={}){
   notice.textContent="لم يؤكد النظام نجاح البحث الحي في هذه الجولة؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.";
   box.appendChild(notice);
  }
- if(result&&result.used_language_model!==true){
+ if(result&&result.used_language_model!==true&&result.kind!=="general_answer"&&result.kind!=="capability_answer"){
   const notice=document.createElement("div");notice.className="warning";
   notice.textContent="لم تُستخدم استجابة مؤكدة من النموذج اللغوي؛ قد تكون الإجابة مقتطفات أو ردًا احتياطيًا وليست تحليلًا توليديًا كاملًا.";
   box.appendChild(notice);
