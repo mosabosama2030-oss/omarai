@@ -53,9 +53,11 @@ class Handler(BaseHTTPRequestHandler):
         }
         if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
             scheme = self.headers.get("X-Forwarded-Proto", "https").split(",", 1)[0].strip().lower()
-            host = self.headers.get("Host", "").split(",", 1)[0].strip()
-            if host:
-                origins.add(f"{scheme}://{host}".rstrip("/"))
+            for header in ("Host", "X-Forwarded-Host"):
+                host = self.headers.get(header, "").split(",", 1)[0].strip()
+                if host:
+                    origins.add(f"https://{host}".rstrip("/"))
+                    origins.add(f"{scheme}://{host}".rstrip("/"))
         else:
             port = self.server.server_port
             origins.update(
