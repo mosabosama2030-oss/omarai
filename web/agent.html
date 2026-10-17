@@ -135,6 +135,8 @@ function renderSource(s,index){
  if(s.platform&&s.platform!=="web")tags.push('<span class="tag social">'+escapeHtml(s.platform)+'</span>');
  if(s.published_at)tags.push('<span class="tag">تاريخ ظاهر: '+escapeHtml(s.published_at)+'</span>');
  const providers=Array.isArray(s.providers)?s.providers.map(escapeHtml):[];
+ if(s.publisher_name)tags.push('<span class="tag">الناشر: '+escapeHtml(s.publisher_name)+'</span>');
+ if(s.publisher_url&&safeSourceUrl(s.publisher_url))tags.push('<a class="tag" href="'+escapeHtml(s.publisher_url)+'" target="_blank" rel="noopener noreferrer">صفحة الناشر ↗</a>');
  if(providers.length)tags.push('<span class="tag">'+providers.join(" · ")+'</span>');
  const heading=url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">['+(index+1)+'] '+title+' ↗</a>':'<strong>['+(index+1)+'] '+title+'</strong><p class="warning">لم يُعرض الرابط لأنه غير صالح.</p>';
  return '<article class="source">'+heading+'<p>'+escapeHtml(s.snippet||"لا يتوفر مقتطف نصي من هذه النتيجة.")+'</p><div class="source-meta">'+tags.join("")+'</div></article>';
@@ -174,12 +176,12 @@ function addMessage(role,text,result,options={}){
   context.textContent="ردًا على السؤال: "+linkedQuestion;box.appendChild(context);
  }
  const bubble=document.createElement("div");bubble.className="bubble";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);
- if(result&&result.used_web_search!==true){
+ if(result&&result.used_web_search!==true&&result.kind!=="general_answer"&&result.kind!=="capability_answer"){
   const notice=document.createElement("div");notice.className="warning";
   notice.textContent="لم يؤكد النظام نجاح البحث الحي في هذه الجولة؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.";
   box.appendChild(notice);
  }
- if(result&&result.used_language_model!==true){
+ if(result&&result.used_language_model!==true&&result.kind!=="general_answer"&&result.kind!=="capability_answer"){
   const notice=document.createElement("div");notice.className="warning";
   notice.textContent="لم تُستخدم استجابة مؤكدة من النموذج اللغوي؛ قد تكون الإجابة مقتطفات أو ردًا احتياطيًا وليست تحليلًا توليديًا كاملًا.";
   box.appendChild(notice);
@@ -196,7 +198,7 @@ function addMessage(role,text,result,options={}){
  if(usableSources.length){
   const sources=document.createElement("div");sources.className="sources";
   sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join("");box.appendChild(sources);
- }else if(role==="assistant"&&result){
+ }else if(role==="assistant"&&result&&result.kind!=="general_answer"&&result.kind!=="capability_answer"){
   const no=document.createElement("p");no.className="no-sources";
   no.textContent="لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.";
   box.appendChild(no);
@@ -224,7 +226,11 @@ async function ask(value){
   addMessage("assistant",data.answer||"لم يرجع الخادم نص إجابة.",data);
   history.push({role:"user",content:q},{role:"assistant",content:String(data.answer||"")});
   const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];
-  if(data.used_web_search===true&&data.used_language_model===true&&sources.length>0){
+  if(data.kind==="general_answer"){
+   setStatus("اكتملت إجابة المعرفة العامة دون بحث ويب","ok");
+  }else if(data.kind==="capability_answer"){
+   setStatus("إجابة عن قدرات Omarai وحدوده · لم يُجر بحث حي","ok");
+  }else if(data.used_web_search===true&&data.used_language_model===true&&sources.length>0){
    setStatus("اكتمل البحث والتحليل · "+sources.length+" مصدرًا صالحًا","ok");
   }else if(data.used_web_search===true&&sources.length>0){
    setStatus("البحث أعاد مصادر، لكن التحليل غير مكتمل","warn");
