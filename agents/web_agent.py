@@ -406,6 +406,179 @@ class WebAgent:
         )
         return _relevance_ratio(query, evidence) >= 0.20
 
+    @staticmethod
+    def _is_self_question(question: str) -> bool:
+        """Recognize questions about Omarai itself so they do not need web search."""
+        value = _normalize_search_query(question).casefold()
+        capability_phrases = (
+            "كيف تستطيع مساعدتي", "ازاي تقدر تساعدني", "ازاي ممكن تساعدني",
+            "ماذا تستطيع ان تفعل", "ما الذي تستطيع فعله", "ايه اللي تقدر تعمله",
+            "what can you do", "how can you help me",
+        )
+        search_phrases = (
+            "كيف تبحث انت", "ازاي بتبحث", "كيف يعمل البحث عندك",
+            "ما المواقع التي تستخدمها", "ما محركات البحث التي تستخدمها",
+            "ما المواقع التي قدرت", "كيف تبحث على الانترنت",
+            "how do you search", "which search engines", "what sites do you use",
+        )
+        return any(phrase in value for phrase in capability_phrases + search_phrases) or (
+            "omarai" in value
+            and any(token in value for token in ("بحث", "موقع", "تستطيع", "تقدر", "تعمل"))
+        )
+
+    @staticmethod
+    def _is_navigation_request(question: str) -> bool:
+        """A link-finding task can be useful with one clearly labelled candidate result."""
+        value = _normalize_search_query(question).casefold()
+        terms = (
+            "موقع", "رابط", "لينك", "الموقع الرسمي", "الصفحة الرسمية",
+            "official website", "website", "homepage", "link to",
+        )
+        return any(term in value for term in terms)
+
+    @staticmethod
+    def _is_lead_search(question: str) -> bool:
+        """Identify lead-discovery tasks where partial public signals are still useful."""
+        value = _normalize_search_query(question).casefold()
+        terms = (
+            "عميل", "عملاء", "عملاء محتملين", "يريد شراء", "عايز يشتري",
+            "عاوز يشتري", "يدور على شقة", "بدور على شقة", "مشتري",
+            "buyer", "potential customer", "lead", "prospect", "looking to buy",
+            "apartment for sale",
+        )
+        return any(term in value for term in terms)
+
+    @staticmethod
+    def _requires_web_research(question: str, mode: str) -> bool:
+        """Use the web only when the user requests it or the answer depends on live data."""
+        if mode != "auto":
+            return True
+        value = _normalize_search_query(question).casefold()
+        dynamic_terms = (
+            "ابحث", "بحث عن", "دور على", "دورلي", "هات رابط", "هاتلي",
+            "جيبلي", "اعثر على", "موقع", "رابط", "لينك", "اخبار", "اخر",
+            "احدث", "اليوم", "دلوقتي", "حاليا", "سعر", "اسعار", "للبيع",
+            "للايجار", "ايجار", "معاينه", "عميل محتمل", "عملاء محتملين",
+            "وظائف", "وظيفه", "حجز", "موعد", "الطقس", "سهم", "سعر الصرف",
+            "search", "find", "look up", "latest", "today", "current",
+            "news", "price", "for sale", "for rent", "real estate", "job opening",
+            "appointment", "reservation", "weather", "stock price", "exchange rate",
+        )
+        return any(term in value for term in dynamic_terms) or bool(
+            re.search(r"https?://", question, flags=re.IGNORECASE)
+        )
+
+    def _local_answer_result(self, question: str, answer: str, kind: str) -> dict[str, Any]:
+        """Build a consistently shaped answer for non-research conversational requests."""
+        return {
+            "answer": answer,
+            "question": question,
+            "search_query": question,
+            "search_queries": [],
+            "research_plan": {
+                "mode": "auto",
+                "planning_method": "local_capability_router",
+                "web_search_skipped": True,
+            },
+            "sources": [],
+            "used_language_model": False,
+            "used_web_search": False,
+            "used_social_search": False,
+            "warnings": [],
+            "kind": kind,
+            "research_quality": "not_applicable",
+        }
+
+    def _self_description_answer(self, question: str) -> dict[str, Any]:
+        """Answer stable questions about Omarai without pretending a live search ran."""
+        value = _normalize_search_query(question).casefold()
+        if any(term in value for term in (
+            "كيف تستطيع مساعدتي", "ازاي تقدر تساعدني", "ازاي ممكن تساعدني",
+            "ماذا تستطيع ان تفعل", "ما الذي تستطيع فعله", "ايه اللي تقدر تعمله",
+            "what can you do", "how can you help me",
+        )):
+            answer = (
+                "أقدر أساعدك في فهم الأسئلة وصياغة خطط عملية، والبحث في الويب عند طلب "
+                "معلومات حديثة أو روابط أو فرص بيع وشراء، ثم تلخيص النتائج مع روابطها "
+                "وبيان ما أمكن التحقق منه وما بقي غير مؤكد. أقدر أيضًا تحليل إشارات العملاء "
+                "المحتملين من الصفحات العامة المتاحة، لكنها تظل إشارات تحتاج مراجعة وليست "
+                "عملاء مؤكّدين. لا أضمن الوصول إلى كل موقع أو المنشورات والمجموعات المغلقة."
+            )
+        else:
+            status = self.status()
+            providers = ["DuckDuckGo HTML", "Bing RSS"]
+            providers.append("Google News RSS للطلبات التي تبدو حديثة أو إخبارية")
+            if status.get("brave_search_api_configured"):
+                providers.append("Brave Search API (مفتاحه مضبوط)")
+            if status.get("tavily_search_api_configured"):
+                providers.append("Tavily Search API (مفتاحه مضبوط)")
+            if status.get("openrouter_web_search_enabled"):
+                providers.append("بحث OpenRouter المباشر (مفعّل بالإعداد)")
+            answer = (
+                "حسب الكود الحالي، يحاول Omarai البحث عبر: "
+                + "، ".join(providers)
+                + ". يحاول بعد ذلك فحص بعض الصفحات العامة ودمج النتائج وإزالة التكرار؛ "
+                "وقد تُرفض الصفحات المحمية أو البطيئة أو غير المرتبطة بالسؤال. هذه قائمة "
+                "بالموصلات التي يحاول استخدامها وليست إثباتًا بأنها نجحت في كل طلب. "
+                "لا يوجد وصول مضمون إلى كل الإنترنت أو إلى مجموعات ومنشورات خاصة. "
+                "لم أنفذ بحثًا حيًا عن موقع بعينه في هذه الإجابة؛ استخدم «اختبار الاتصال» "
+                "للتأكد من حالة الموصلات الآن."
+            )
+        return self._local_answer_result(question, answer, "capability_answer")
+
+    def _answer_without_search(
+        self, question: str, history: list[dict[str, str]]
+    ) -> dict[str, Any] | None:
+        """Answer stable informational questions with the configured LLM, without fake citations."""
+        if not self.api_key:
+            return None
+        messages: list[dict[str, str]] = [
+            {
+                "role": "system",
+                "content": (
+                    "أنت Omarai، مساعد عربي عملي. أجب مباشرة وباللغة التي استخدمها الشخص، "
+                    "وافهم المقصود حتى لو كان باللهجة المصرية أو به أخطاء كتابية. هذا المسار "
+                    "للشرح والمعرفة العامة والأسئلة الحوارية غير المعتمدة على معلومات لحظية. "
+                    "لا تستخدم أدوات الويب ولا تقل إنك بحثت أو تحققت من مصدر. لا تختلق أرقامًا "
+                    "أو اقتباسات أو روابط. إذا كان جزء من السؤال يتطلب بيانات حديثة أو تحققًا "
+                    "خارجيًا، صرّح بذلك بدل الجزم. وضّح عدم اليقين بإيجاز، وأعط إجابة مفيدة "
+                    "من غير إطالة أو سلسلة تفكير داخلية."
+                ),
+            }
+        ]
+        messages.extend(history[-MAX_HISTORY_ITEMS:])
+        messages.append({"role": "user", "content": question})
+        try:
+            answer = self._request_completion(
+                messages,
+                max_tokens=1500,
+                temperature=0.2,
+                timeout=min(self.timeout, 28),
+                model=self.answer_model,
+                enable_web_search=False,
+            )
+        except (RuntimeError, AgentDependencyError):
+            return None
+        return {
+            "answer": answer[:24_000],
+            "question": question,
+            "search_query": question,
+            "search_queries": [],
+            "research_plan": {
+                "mode": "auto",
+                "planning_method": "general_qa_without_web",
+                "web_search_skipped": True,
+            },
+            "sources": [],
+            "used_language_model": True,
+            "used_web_search": False,
+            "used_social_search": False,
+            "warnings": [],
+            "kind": "general_answer",
+            "research_quality": "not_applicable",
+            "model_calls": list(self.model_usage),
+        }
+
     def _search_duckduckgo_html(self, query: str) -> list[dict[str, Any]]:
         import httpx
         from bs4 import BeautifulSoup
@@ -732,6 +905,20 @@ class WebAgent:
             evidence = " ".join((fields.get("title", ""), fields.get("description", "")))
             if _relevance_ratio(query, evidence) < 0.20:
                 continue
+            source_node = next(
+                (child for child in item if child.tag.rsplit("}", 1)[-1] == "source"),
+                None,
+            )
+            publisher_url = _public_http_url(
+                source_node.attrib.get("url", "") if source_node is not None else ""
+            )
+            publisher_name = _clean_text(
+                source_node.text if source_node is not None else "", 200
+            )
+            publisher_domain = (
+                (urllib.parse.urlparse(publisher_url).hostname or "").lower()
+                if publisher_url else ""
+            )
             results.append({
                 "title": _clean_text(fields.get("title", ""), 300),
                 "url": url,
@@ -742,6 +929,9 @@ class WebAgent:
                 "provider_rank": len(results) + 1,
                 "search_query": query,
                 "published_at": _clean_text(fields.get("pubDate", ""), 100),
+                "publisher_name": publisher_name,
+                "publisher_url": publisher_url or "",
+                "publisher_domain": publisher_domain,
             })
             if len(results) >= MAX_PROVIDER_RESULTS:
                 break
@@ -2162,11 +2352,19 @@ class WebAgent:
             raise ValueError(f"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.")
         clean_history = self._sanitize_history(history)
         self.server_search_sources = []
+        self.model_usage = []
         with self._provider_diagnostics_lock:
             self._provider_diagnostics = []
         clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
         if clean_mode not in {"auto", "deep", "latest", "social"}:
             raise ValueError("نمط البحث غير مدعوم. اختر auto أو deep أو latest أو social.")
+        if clean_mode == "auto":
+            if self._is_self_question(question):
+                return self._self_description_answer(question)
+            if not self._requires_web_research(question, clean_mode):
+                general_answer = self._answer_without_search(question, clean_history)
+                if general_answer is not None:
+                    return general_answer
         plan = self._plan_search(question, clean_history)
         plan["mode"] = clean_mode
         base_query = (plan.get("queries") or [question])[0]
@@ -2263,10 +2461,33 @@ class WebAgent:
                 "هذا ملخص للرابط الذي قدمته فقط؛ لم يتم تأكيد محتواه من مصدر مستقل آخر."
             )
             search_warning = "؛ ".join(search_warnings)
-        if (
-            (len(sources) < 2 or len(independent_domains) < 2)
-            and not single_source_page_summary
-        ):
+        # Link-finding and lead-discovery are actionable discovery tasks, not broad
+        # fact-checking. Keep useful candidates visible while explicitly labelling them
+        # as uncorroborated instead of refusing a lone result as if it were no result.
+        navigation_request = self._is_navigation_request(question)
+        lead_request = self._is_lead_search(question)
+        single_source_navigation = navigation_request and bool(sources)
+        single_source_social = bool(plan.get("social_focus")) and bool(sources)
+        single_source_lead = lead_request and bool(sources)
+        task_specific_partial_evidence = (
+            single_source_page_summary
+            or single_source_navigation
+            or single_source_social
+            or single_source_lead
+        )
+        needs_corroboration = len(sources) < 2 or len(independent_domains) < 2
+        if needs_corroboration and single_source_navigation and not single_source_page_summary:
+            search_warnings.append(
+                "هذه نتيجة مرشحة لطلب العثور على موقع/رابط؛ لم تُثبت رسميتها أو صحتها "
+                "من مصدر مستقل، لذا راجع الرابط قبل الاعتماد عليه."
+            )
+        if needs_corroboration and (single_source_social or single_source_lead) and not single_source_page_summary:
+            search_warnings.append(
+                "هذه إشارات بحث أولية وليست تحققًا مستقلًا من هوية العميل أو نيته؛ "
+                "راجع المنشور وتاريخه وسياقه قبل التواصل أو اتخاذ قرار."
+            )
+        search_warning = "؛ ".join(dict.fromkeys(search_warnings)) if search_warnings else None
+        if needs_corroboration and not task_specific_partial_evidence:
             reason = (
                 "لم أجد معلومات موثوقة كافية مرتبطة بسؤالك من مصدرين مستقلين على الأقل. "
                 "لن أخمّن أو أقدّم نتيجة غير مدعومة؛ جرّب صياغة أدق أو أعد المحاولة لاحقًا."
@@ -2282,6 +2503,8 @@ class WebAgent:
                 "domain": source.get("domain", ""),
                 "source_class": source.get("source_class", "general"),
                 "published_at": source.get("published_at", ""),
+                "publisher_name": source.get("publisher_name", ""),
+                "publisher_url": source.get("publisher_url", ""),
                 "rank_score": round(float(source.get("rank_score", 0)), 6),
             } for source in sources]
             report.update({
@@ -2442,6 +2665,8 @@ class WebAgent:
                 "domain": source.get("domain", ""),
                 "source_class": source.get("source_class", "general"),
                 "published_at": source.get("published_at", ""),
+                "publisher_name": source.get("publisher_name", ""),
+                "publisher_url": source.get("publisher_url", ""),
                 "rank_score": round(float(source.get("rank_score", 0)), 6),
             })
         return {
