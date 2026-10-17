@@ -39,6 +39,37 @@ class Handler(BaseHTTPRequestHandler):
             return False
         return hmac.compare_digest(supplied[7:].strip(), expected)
 
+    def _allowed_origins(self):
+        """Return configured browser origins plus this service’s own origin.
+
+        OMARAI_ALLOWED_ORIGINS is a comma-separated list of trusted origins
+        (scheme + host + optional port; no path and no wildcard).
+        """
+        configured = os.getenv("OMARAI_ALLOWED_ORIGINS", "")
+        origins = {
+            item.strip().rstrip("/")
+            for item in configured.split(",")
+            if item.strip()
+        }
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            scheme = self.headers.get("X-Forwarded-Proto", "https").split(",", 1)[0].strip().lower()
+            host = self.headers.get("Host", "").split(",", 1)[0].strip()
+            if host:
+                origins.add(f"{scheme}://{host}".rstrip("/"))
+        else:
+            port = self.server.server_port
+            origins.update(
+                {
+                    f"http://127.0.0.1:{port}",
+                    f"http://localhost:{port}",
+                    f"http://[::1]:{port}",
+                }
+            )
+        return origins
+
+    def _origin_allowed(self, origin):
+        return bool(origin) and origin.rstrip("/") in self._allowed_origins()
+
     def _rate_limit_client_key(self):
         """Choose a rate-limit identity without trusting spoofable proxy headers by default.
 
@@ -87,6 +118,10 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body)))
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Cache-Control", "no-store")
+        origin = self.headers.get("Origin")
+        if origin and self._origin_allowed(origin):
+            self.send_header("Access-Control-Allow-Origin", origin)
+            self.send_header("Vary", "Origin")
         self.end_headers()
         self.wfile.write(body)
 
@@ -138,18 +173,7 @@ class Handler(BaseHTTPRequestHandler):
             if content_type != "application/json":
                 return self.respond(415, {"error": "Content-Type must be application/json"})
             origin = self.headers.get("Origin")
-            port = self.server.server_port
-            allowed_origins = {
-                "http://127.0.0.1:" + str(port),
-                "http://localhost:" + str(port),
-                "http://[::1]:" + str(port),
-            }
-            if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
-                scheme = self.headers.get("X-Forwarded-Proto", "https").split(",", 1)[0].strip()
-                host = self.headers.get("Host", "")
-                if host:
-                    allowed_origins.add(scheme + "://" + host)
-            if origin and origin not in allowed_origins:
+            if origin and not self._origin_allowed(origin):
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
 
             size = int(self.headers.get("Content-Length", "0"))
@@ -224,7 +248,17 @@ class Handler(BaseHTTPRequestHandler):
             return self.respond(500, {"error": "internal server error"})
 
     def do_OPTIONS(self):
-        return self.respond(405, {"error": "cross-origin requests are not supported"})
+        origin = self.headers.get("Origin")
+        if not origin or not self._origin_allowed(origin):
+            return self.respond(403, {"error": "cross-origin requests are not allowed"})
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", origin)
+        self.send_header("Vary", "Origin")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Authorization, Content-Type")
+        self.send_header("Access-Control-Max-Age", "600")
+        self.send_header("Content-Length", "0")
+        self.end_headers()
 
     def log_message(self, *args):
         pass
