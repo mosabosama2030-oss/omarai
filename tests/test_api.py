@@ -140,7 +140,8 @@ def test_api_rejects_invalid_filters_and_request_shapes(local_api):
     assert "absolute" in error["error"]
 
 
-def test_api_blocks_non_json_and_cross_origin_posts(local_api):
+def test_api_blocks_non_json_and_cross_origin_posts(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_ALLOWED_ORIGINS", raising=False)
     status, error = request_json(
         local_api,
         "/api/ask",
@@ -160,6 +161,54 @@ def test_api_blocks_non_json_and_cross_origin_posts(local_api):
     )
     assert status == 403
     assert "cross-origin" in error["error"]
+
+
+def test_configured_frontend_origin_supports_preflight_and_post(local_api, monkeypatch):
+    origin = "https://frontend.example"
+    monkeypatch.setenv("OMARAI_ALLOWED_ORIGINS", origin)
+
+    preflight = Request(
+        local_api + "/api/agent",
+        method="OPTIONS",
+        headers={
+            "Origin": origin,
+            "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "authorization,content-type",
+        },
+    )
+    with urlopen(preflight, timeout=3) as response:
+        assert response.status == 204
+        assert response.headers.get("Access-Control-Allow-Origin") == origin
+        assert response.headers.get("Access-Control-Allow-Methods") == "GET, POST, OPTIONS"
+        assert response.headers.get("Access-Control-Allow-Headers") == "Authorization, Content-Type"
+
+    body = json.dumps({"question": "مين أفضل إشارة أراجعها؟"}, ensure_ascii=False).encode("utf-8")
+    post = Request(
+        local_api + "/api/ask",
+        data=body,
+        method="POST",
+        headers={"Content-Type": "application/json", "Origin": origin},
+    )
+    with urlopen(post, timeout=3) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+        assert response.status == 200
+        assert response.headers.get("Access-Control-Allow-Origin") == origin
+        assert payload["kind"] == "no_data"
+
+
+def test_preflight_rejects_unconfigured_origin(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_ALLOWED_ORIGINS", raising=False)
+    preflight = Request(
+        local_api + "/api/agent",
+        method="OPTIONS",
+        headers={
+            "Origin": "https://attacker.example",
+            "Access-Control-Request-Method": "POST",
+        },
+    )
+    with pytest.raises(HTTPError) as error:
+        urlopen(preflight, timeout=3)
+    assert error.value.code == 403
 
 
 def test_ask_is_honest_when_database_is_empty(local_api):
