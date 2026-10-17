@@ -1078,3 +1078,57 @@ def test_google_news_preserves_publisher_identity(monkeypatch):
     assert results[0]["publisher_name"] == "بوابة مصر الرقمية"
     assert results[0]["publisher_url"] == "https://digital.gov.eg/"
     assert results[0]["publisher_domain"] == "digital.gov.eg"
+
+
+def test_relevance_matching_handles_arabic_names_with_english_results():
+    assert _relevance_ratio("ابحث عن ميكروسوفت", "Microsoft official company website") >= 0.20
+    assert _relevance_ratio("موقع مصر الرقمية", "Egypt Digital portal for government services") >= 0.20
+
+
+def test_routine_lookup_ignores_planner_overclassification(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    observed = {}
+    sources = []
+    for domain in ("example.com", "example.net"):
+        sources.append({
+            "title": "موقع مصر الرقمية الرسمي والخدمات الحكومية",
+            "url": f"https://{domain}/digital-egypt",
+            "snippet": "معلومات عن موقع مصر الرقمية والخدمات الحكومية.",
+            "page_text": "معلومات عن موقع مصر الرقمية والخدمات الحكومية.",
+            "page_fetched": True,
+            "providers": ["test_provider"],
+            "queries": [],
+            "domain": domain,
+            "source_class": "general",
+            "platform": "web",
+        })
+
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda question, history: {
+            "queries": [f"query {i}" for i in range(8)],
+            "direct_urls": [], "social_focus": False, "freshness": "any",
+            "depth": "deep", "platforms": [], "planning_method": "test",
+        },
+    )
+
+    def collect(plan):
+        observed["plan"] = plan
+        return sources, [], {
+            "queries_planned": len(plan["queries"]), "queries_attempted": len(plan["queries"]),
+            "unique_sources": 2, "pages_fetched": 2,
+            "providers_used": ["test_provider"], "platform_counts": {"web": 2},
+            "social_direct_results": 0, "depth": plan["depth"], "planning_method": "test",
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "النتيجة [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("ابحث عن موقع مصر الرقمية")
+
+    assert result["kind"] == "web_research"
+    assert observed["plan"]["depth"] == "standard"
+    assert len(observed["plan"]["queries"]) <= 3
+    assert observed["plan"]["queries"][0] == "موقع مصر الرقمية"
