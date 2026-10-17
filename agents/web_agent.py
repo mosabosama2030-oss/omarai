@@ -68,6 +68,14 @@ _SEARCH_SYNONYMS = {
     "شركة": {"company"}, "شركه": {"company"}, "ناشئة": {"startup"},
     "صعيد": {"upper"}, "مقارنة": {"compare", "comparison"},
     "تقنية": {"technology"}, "تقنيات": {"technology"},
+    "ميكروسوفت": {"microsoft"}, "مايكروسوفت": {"microsoft"},
+    "microsoft": {"ميكروسوفت", "مايكروسوفت"},
+    "جمهورية": {"republic"}, "republic": {"جمهورية"},
+    "الرقمية": {"digital"}, "رقمية": {"digital"},
+    "موقع": {"website", "portal"}, "مواقع": {"websites", "portals"},
+    "شقة": {"apartment", "flat"}, "شقق": {"apartments", "flats"},
+    "عميل": {"customer", "buyer"}, "عملاء": {"customers", "buyers"},
+    "شراء": {"buy", "purchase"}, "مشتري": {"buyer"},
 }
 _CALENDAR_MONTHS = (
     "يناير", "فبراير", "مارس", "ابريل", "أبريل", "مايو", "يونيو",
@@ -2367,6 +2375,35 @@ class WebAgent:
                     return general_answer
         plan = self._plan_search(question, clean_history)
         plan["mode"] = clean_mode
+        if clean_mode == "auto":
+            normalized_question = _normalize_search_query(question).casefold()
+            deep_terms = (
+                "بحث عميق", "بحث معمق", "بحث شامل", "بالتفصيل", "قارن", "مقارنة",
+                "تحقق", "استقصاء", "deep research", "comprehensive", "in-depth", "compare",
+            )
+            explicit_deep = any(term in normalized_question for term in deep_terms)
+            if not explicit_deep:
+                # The planner may overclassify short lookups as deep research. Preserve
+                # the user's actual intent first and cap routine searches to three queries.
+                fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
+                model_queries = plan.get("queries") or []
+                if self._is_navigation_request(question):
+                    subject = re.sub(
+                        r"^(?:ابحث|بحث|دور|اعثر)\s+(?:عن|على)?\s*",
+                        "",
+                        str(fallback_queries[0]),
+                    ).strip() or question
+                    plan_queries = [
+                        subject,
+                        subject + " الموقع الرسمي",
+                        subject + " official website",
+                    ]
+                else:
+                    plan_queries = [fallback_queries[0]] + model_queries
+                plan["queries"] = list(dict.fromkeys(
+                    query.strip() for query in plan_queries if isinstance(query, str) and query.strip()
+                ))[:3]
+                plan["depth"] = "standard"
         base_query = (plan.get("queries") or [question])[0]
         # Explicit user-selected modes are control inputs. They do not bypass source
         # validation and never permit private-source access.
