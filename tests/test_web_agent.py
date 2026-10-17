@@ -1132,3 +1132,54 @@ def test_routine_lookup_ignores_planner_overclassification(monkeypatch):
     assert observed["plan"]["depth"] == "standard"
     assert len(observed["plan"]["queries"]) <= 3
     assert observed["plan"]["queries"][0] == "موقع مصر الرقمية"
+
+
+def test_listing_discovery_detects_arabic_property_requests():
+    assert WebAgent._is_listing_discovery("ابحث عن شقة في التجمع الخامس، ممكن معاينة")
+    assert WebAgent._is_listing_discovery("عايز شقق للايجار في القاهرة")
+    assert not WebAgent._is_listing_discovery("اشرح الفرق بين الشقة والفيلا")
+
+
+def test_single_property_listing_is_returned_with_safety_caveat(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    source = {
+        "title": "شقة للبيع في التجمع الخامس",
+        "url": "https://example.com/listing/123",
+        "snippet": "شقة في التجمع الخامس، معاينة بالتنسيق مع المعلن.",
+        "page_text": "شقة في التجمع الخامس، معاينة بالتنسيق مع المعلن.",
+        "page_fetched": True,
+        "providers": ["test_provider"],
+        "queries": ["شقة في التجمع الخامس"],
+        "domain": "example.com",
+        "source_class": "general",
+        "platform": "web",
+    }
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda question, history: {
+            "queries": [question], "direct_urls": [], "social_focus": False,
+            "freshness": "any", "depth": "standard", "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        agent, "_collect_research",
+        lambda plan: ([source], [], {
+            "queries_planned": 1, "queries_attempted": 1, "unique_sources": 1,
+            "pages_fetched": 1, "providers_used": ["test_provider"],
+            "platform_counts": {"web": 1}, "social_direct_results": 0,
+            "depth": "standard", "planning_method": "test",
+        }),
+    )
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: "وجدت إعلانًا مرشحًا لشقة؛ تحقق من التفاصيل [المصدر 1].",
+    )
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("ابحث عن شقة في التجمع الخامس، ممكن معاينة")
+
+    assert result["kind"] == "web_research"
+    assert len(result["sources"]) == 1
+    assert "إعلانات/قوائم مرشحة فقط" in " ".join(result["warnings"])
