@@ -34,4 +34,5 @@ target-version = "py311"
 # E501: long Arabic/English diagnostic strings
 # I001: historical import order; do not block CI on style alone
 # F841: unused assignment kept for clarity in some tests
-ignore = ["BLE001", "E501", "I001", "F841"]
+# RUF100: residual noqa:BLE001 comments after BLE001 is ignored globally
+ignore = ["BLE001", "E501", "I001", "F841", "RUF100"]
