@@ -210,6 +210,7 @@ def test_preflight_rejects_unconfigured_origin(local_api, monkeypatch):
         urlopen(preflight, timeout=3)
     assert error.value.code == 403
 
+
 def test_ask_is_honest_when_database_is_empty(local_api):
     status, answer = request_json(
         local_api, "/api/ask", method="POST", payload={"question": "مين أفضل إشارة أراجعها؟"}
