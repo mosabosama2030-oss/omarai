@@ -20,13 +20,15 @@ dev = ["pytest>=8.0", "ruff>=0.5"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
-[tool.ruff]
-line-length = 100
-target-version = "py311"
-
 [tool.setuptools.packages.find]
 include = ["agents*", "api*", "cli*"]
 exclude = ["tests*", "web*"]
 
+["I001", "E501", "BLE001", "S110", "TRY400", "TRY401", "TRY003", "PLC0415"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
 [tool.ruff.lint]
-ignore = ["I001", "E501", "BLE001", "S110", "TRY400", "TRY401", "TRY003", "PLC0415"]
+select = []
