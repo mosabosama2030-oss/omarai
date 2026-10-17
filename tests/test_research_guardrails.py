@@ -154,7 +154,7 @@ def test_filter_empty_and_failed_extract():
         "source_class": "general",
         "providers": ["ddg"],
     }
-    kept2, diag2 = filter_relevant_sources([src], "unrelated pasta recipes")
+    _kept2, diag2 = filter_relevant_sources([src], "unrelated pasta recipes")
     # May reject for low overlap
     assert isinstance(diag2, list)
 
