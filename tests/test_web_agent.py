@@ -1083,6 +1083,8 @@ def test_google_news_preserves_publisher_identity(monkeypatch):
 def test_relevance_matching_handles_arabic_names_with_english_results():
     assert _relevance_ratio("ابحث عن ميكروسوفت", "Microsoft official company website") >= 0.20
     assert _relevance_ratio("موقع مصر الرقمية", "Egypt Digital portal for government services") >= 0.20
+    assert _relevance_ratio("ابحث عن شقة للايجار", "Apartment listing available for rent") >= 0.20
+    assert _relevance_ratio("مقارنة بين الشركات الناشئة", "Comparison of startup companies") >= 0.20
 
 
 def test_routine_lookup_ignores_planner_overclassification(monkeypatch):
