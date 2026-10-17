@@ -99,6 +99,16 @@ def _normalize_search_query(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+# Normalize synonym keys and values by the same rules as search text. This avoids
+# Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching.
+_NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}
+for _synonym_key, _synonym_values in _SEARCH_SYNONYMS.items():
+    _normalized_key = _normalize_search_query(_synonym_key).casefold()
+    _NORMALIZED_SEARCH_SYNONYMS.setdefault(_normalized_key, set()).update(
+        _normalize_search_query(value).casefold() for value in _synonym_values
+    )
+
+
 def _search_tokens(value: str) -> set[str]:
     """Tokenize Arabic/English text and expand a small bilingual vocabulary."""
     value = _normalize_search_query(value).casefold()
@@ -111,9 +121,9 @@ def _search_tokens(value: str) -> set[str]:
         forms = {token}
         if token.startswith("ال") and len(token) > 4:
             forms.add(token[2:])
-        forms.update(_SEARCH_SYNONYMS.get(token, set()))
+        forms.update(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()))
         # Reverse-map common English equivalents so Arabic and English results can match.
-        for arabic, english in _SEARCH_SYNONYMS.items():
+        for arabic, english in _NORMALIZED_SEARCH_SYNONYMS.items():
             if token in english:
                 forms.add(arabic)
                 if arabic.startswith("ال") and len(arabic) > 4:
@@ -137,7 +147,7 @@ def _relevance_ratio(query: str, evidence: str) -> float:
         1 for token in query_tokens
         if token in expanded_evidence
         or (token.startswith("ال") and token[2:] in expanded_evidence)
-        or bool(_SEARCH_SYNONYMS.get(token, set()) & expanded_evidence)
+        or bool(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()) & expanded_evidence)
     )
     ratio = matched / len(query_tokens)
     # A single generic overlap is not enough for a longer query.
