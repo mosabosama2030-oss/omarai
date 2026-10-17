@@ -362,6 +362,8 @@ def fuse_ranked_results(
                 continue
             entry = accumulated.get(url)
             if entry is None:
+                publisher_url = _compact(source.get("publisher_url") or "", 2048)
+                source_identity_url = publisher_url or str(source["url"])
                 entry = {
                     "title": _compact(source.get("title") or "نتيجة ويب", 300),
                     "url": str(source["url"]),
@@ -373,9 +375,17 @@ def fuse_ranked_results(
                     "rank_score": 0.0,
                     "best_raw_rank": position,
                     "published_at": _compact(source.get("published_at") or "", 100),
+                    "publisher_name": _compact(source.get("publisher_name") or "", 200),
+                    "publisher_url": publisher_url,
+                    "publisher_domain": _compact(source.get("publisher_domain") or "", 300),
                 }
-                entry.update(classify_source(str(source["url"])))
+                entry.update(classify_source(source_identity_url))
                 accumulated[url] = entry
+            elif source.get("publisher_url") and not entry.get("publisher_url"):
+                entry["publisher_url"] = _compact(source.get("publisher_url"), 2048)
+                entry["publisher_name"] = _compact(source.get("publisher_name") or "", 200)
+                entry["publisher_domain"] = _compact(source.get("publisher_domain") or "", 300)
+                entry.update(classify_source(entry["publisher_url"]))
             entry["rank_score"] += 1.0 / (60 + position)
             entry["best_raw_rank"] = min(entry["best_raw_rank"], position)
             if provider and provider not in entry["providers"]:
