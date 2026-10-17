@@ -457,7 +457,28 @@ class WebAgent:
             "buyer", "potential customer", "lead", "prospect", "looking to buy",
             "apartment for sale",
         )
-        return any(term in value for term in terms)
+        normalized_terms = (_normalize_search_query(term).casefold() for term in terms)
+        return any(term in value for term in normalized_terms)
+
+    @staticmethod
+    def _is_listing_discovery(question: str) -> bool:
+        """Recognize property/job/product discovery where candidates are useful with caveats."""
+        value = _normalize_search_query(question).casefold()
+        entities = (
+            "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل", "وحده سكنيه",
+            "وحدات سكنيه", "apartment", "apartments", "flat", "property listing",
+            "real estate", "house", "villa", "job opening", "وظيفه", "وظائف",
+        )
+        actions = (
+            "ابحث", "دور", "هات", "عايز", "عاوز", "محتاج", "بدور", "للبيع",
+            "للايجار", "ايجار", "معاينه", "اعلان", "اعلانات", "find", "search",
+            "looking for", "for sale", "for rent",
+        )
+        normalized_entities = (_normalize_search_query(term).casefold() for term in entities)
+        normalized_actions = (_normalize_search_query(term).casefold() for term in actions)
+        return any(term in value for term in normalized_entities) and any(
+            term in value for term in normalized_actions
+        )
 
     @staticmethod
     def _requires_web_research(question: str, mode: str) -> bool:
@@ -2506,14 +2527,17 @@ class WebAgent:
         # as uncorroborated instead of refusing a lone result as if it were no result.
         navigation_request = self._is_navigation_request(question)
         lead_request = self._is_lead_search(question)
+        listing_request = self._is_listing_discovery(question)
         single_source_navigation = navigation_request and bool(sources)
         single_source_social = bool(plan.get("social_focus")) and bool(sources)
         single_source_lead = lead_request and bool(sources)
+        single_source_listing = listing_request and bool(sources)
         task_specific_partial_evidence = (
             single_source_page_summary
             or single_source_navigation
             or single_source_social
             or single_source_lead
+            or single_source_listing
         )
         needs_corroboration = len(sources) < 2 or len(independent_domains) < 2
         if needs_corroboration and single_source_navigation and not single_source_page_summary:
@@ -2525,6 +2549,11 @@ class WebAgent:
             search_warnings.append(
                 "هذه إشارات بحث أولية وليست تحققًا مستقلًا من هوية العميل أو نيته؛ "
                 "راجع المنشور وتاريخه وسياقه قبل التواصل أو اتخاذ قرار."
+            )
+        if needs_corroboration and single_source_listing and not single_source_page_summary:
+            search_warnings.append(
+                "هذه إعلانات/قوائم مرشحة فقط. قد تكون منتهية أو غير دقيقة؛ تحقق من السعر "
+                "والتوافر ومصدر الإعلان واطلب تأكيدًا حديثًا قبل دفع مال أو مشاركة بيانات."
             )
         search_warning = "؛ ".join(dict.fromkeys(search_warnings)) if search_warnings else None
         if needs_corroboration and not task_specific_partial_evidence:
