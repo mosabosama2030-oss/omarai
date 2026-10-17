@@ -24,11 +24,14 @@ testpaths = ["tests"]
 include = ["agents*", "api*", "cli*"]
 exclude = ["tests*", "web*"]
 
-["I001", "E501", "BLE001", "S110", "TRY400", "TRY401", "TRY003", "PLC0415"]
-
 [tool.ruff]
 line-length = 100
 target-version = "py311"
 
 [tool.ruff.lint]
-select = []
+# Keep default rules; ignore only patterns intentional in this codebase.
+# BLE001: broad except at API boundary to avoid leaking internals
+# E501: long Arabic/English diagnostic strings
+# I001: historical import order; do not block CI on style alone
+# F841: unused assignment kept for clarity in some tests
+ignore = ["BLE001", "E501", "I001", "F841"]
