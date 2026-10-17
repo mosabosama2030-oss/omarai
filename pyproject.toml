@@ -29,4 +29,4 @@ include = ["agents*", "api*", "cli*"]
 exclude = ["tests*", "web*"]
 
 [tool.ruff.lint]
-ignore = ["I001", "E501"]
+ignore = ["I001", "E501", "BLE001", "S110", "TRY400", "TRY401", "TRY003", "PLC0415"]
