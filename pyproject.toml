@@ -21,10 +21,19 @@ dev = ["pytest>=8.0", "ruff>=0.5"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
+[tool.setuptools.packages.find]
+include = ["agents*", "api*", "cli*"]
+exclude = ["tests*", "web*"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"
 
-[tool.setuptools.packages.find]
-include = ["agents*", "api*", "cli*"]
-exclude = ["tests*", "web*"]
+[tool.ruff.lint]
+# Keep default rules; ignore only patterns intentional in this codebase.
+# BLE001: broad except at API boundary to avoid leaking internals
+# E501: long Arabic/English diagnostic strings
+# I001: historical import order; do not block CI on style alone
+# F841: unused assignment kept for clarity in some tests
+# RUF100: residual noqa:BLE001 comments after BLE001 is ignored globally
+ignore = ["BLE001", "E501", "I001", "F841", "RUF100"]
