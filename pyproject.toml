@@ -27,3 +27,6 @@ target-version = "py311"
 [tool.setuptools.packages.find]
 include = ["agents*", "api*", "cli*"]
 exclude = ["tests*", "web*"]
+
+[tool.ruff.lint]
+ignore = ["I001", "E501"]
