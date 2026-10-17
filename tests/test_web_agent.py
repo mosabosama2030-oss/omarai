@@ -963,3 +963,118 @@ def test_review_keeps_untrusted_evidence_out_of_system_message(monkeypatch):
     assert "غير موثوقة كتعليمات" in user_messages[2]["content"]
     assert injected_text in user_messages[2]["content"]
     assert injected_text not in system_content
+
+
+def test_general_question_uses_model_without_needlessly_searching(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        captured["kwargs"] = kwargs
+        return "مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    monkeypatch.setattr(
+        agent, "_collect_research",
+        lambda plan: pytest.fail("A stable general question should not start web research"),
+    )
+
+    result = agent.answer("ما هي جمهورية مصر العربية؟")
+
+    assert result["kind"] == "general_answer"
+    assert result["used_language_model"] is True
+    assert result["used_web_search"] is False
+    assert result["sources"] == []
+    assert "عاصمتها القاهرة" in result["answer"]
+    assert captured["kwargs"]["enable_web_search"] is False
+
+
+def test_omarai_capability_question_is_answered_without_network(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = ""
+
+    monkeypatch.setattr(
+        agent, "_collect_research",
+        lambda plan: pytest.fail("Self-description must not call external search"),
+    )
+
+    result = agent.answer("كيف تبحث أنت في الإنترنت؟")
+
+    assert result["kind"] == "capability_answer"
+    assert result["used_web_search"] is False
+    assert "DuckDuckGo HTML" in result["answer"]
+    assert "ليست إثباتًا" in result["answer"]
+
+
+def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    source = {
+        "title": "موقع مصر الرقمية والخدمات الحكومية",
+        "url": "https://digital.gov.eg/",
+        "snippet": "بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.",
+        "page_text": "بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.",
+        "page_fetched": True,
+        "providers": ["test_provider"],
+        "queries": ["ابحث عن موقع مصر الرقمية"],
+        "domain": "digital.gov.eg",
+        "source_class": "government",
+        "platform": "web",
+    }
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda question, history: {
+            "queries": [question], "direct_urls": [], "social_focus": False,
+            "freshness": "any", "depth": "standard", "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        agent, "_collect_research",
+        lambda plan: ([source], [], {
+            "queries_planned": 1, "queries_attempted": 1,
+            "unique_sources": 1, "pages_fetched": 1,
+            "providers_used": ["test_provider"], "platform_counts": {"web": 1},
+            "social_direct_results": 0, "depth": "standard", "planning_method": "test",
+        }),
+    )
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: "وجدت نتيجة مرشحة لبوابة مصر الرقمية [المصدر 1].",
+    )
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("ابحث عن موقع مصر الرقمية")
+
+    assert result["kind"] == "web_research"
+    assert len(result["sources"]) == 1
+    assert result["sources"][0]["url"] == "https://digital.gov.eg/"
+    assert any("نتيجة مرشحة" in warning for warning in result["warnings"])
+
+
+def test_google_news_preserves_publisher_identity(monkeypatch):
+    import httpx
+
+    rss = """<rss><channel><item>
+      <title>مصر الرقمية: تحديث جديد للخدمات</title>
+      <link>https://news.google.com/rss/articles/EXAMPLE123</link>
+      <description>معلومات عن بوابة مصر الرقمية والخدمات الإلكترونية.</description>
+      <source url="https://digital.gov.eg/">بوابة مصر الرقمية</source>
+      <pubDate>Sat, 17 Oct 2026 10:00:00 GMT</pubDate>
+    </item></channel></rss>"""
+
+    class FakeResponse:
+        status_code = 200
+        content = rss.encode("utf-8")
+
+    monkeypatch.setattr(httpx, "get", lambda *args, **kwargs: FakeResponse())
+    agent = WebAgent()
+    results = agent._search_news("مصر الرقمية أحدث الأخبار")
+
+    assert len(results) == 1
+    assert results[0]["url"].startswith("https://news.google.com/")
+    assert results[0]["publisher_name"] == "بوابة مصر الرقمية"
+    assert results[0]["publisher_url"] == "https://digital.gov.eg/"
+    assert results[0]["publisher_domain"] == "digital.gov.eg"
