@@ -72,9 +72,10 @@ def _is_smalltalk(question: str) -> bool:
         return True
     # Keep these patterns narrow: an opening greeting followed by a real question
     # is not itself a greeting-only request.
-    if normalized.startswith("السلام عليكم ") and normalized[14:].strip() in _SMALLTALK:
-        return True
-    return False
+    return bool(
+        normalized.startswith("السلام عليكم ")
+        and normalized[14:].strip() in _SMALLTALK
+    )
 
 
 def _has_context(history: Any) -> bool:
@@ -103,11 +104,10 @@ def _needs_clarification(question: str) -> bool:
     if normalized in _AMBIGUOUS_ARABIC or normalized in _AMBIGUOUS_ENGLISH:
         return True
     # Common inflected forms missed by exact phrase matching.
-    if re.fullmatch(r"(?:كام|كم|بكام)\s+(?:سعر|ثمن)\s*(?:ها|ه|هم)", normalized):
-        return True
-    if re.fullmatch(r"(?:قارن|قارنلي)\s+(?:بينهم|بينهما|دول|دي|دولتين)", normalized):
-        return True
-    return False
+    return bool(
+        re.fullmatch(r"(?:كام|كم|بكام)\s+(?:سعر|ثمن)\s*(?:ها|ه|هم)", normalized)
+        or re.fullmatch(r"(?:قارن|قارنلي)\s+(?:بينهم|بينهما|دول|دي|دولتين)", normalized)
+    )
 
 
 def _is_deep(question: str) -> bool:
