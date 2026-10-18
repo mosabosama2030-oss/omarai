@@ -13,6 +13,7 @@ MAX_CONTEXT_TURNS = 8
 
 ROUTES = frozenset({
     "LOCAL", "MODEL_ONLY", "CLARIFY", "WEB_SIMPLE", "WEB_DEEP",
+    "LEAD_GENERATION",
 })
 
 _ARABIC_DIACRITICS = re.compile(r"[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED]")
@@ -120,6 +121,33 @@ def _has_live_signal(question: str) -> bool:
     )
 
 
+def _is_lead_generation_request(question: str) -> bool:
+    """Recognize an explicit request to discover prospective buyers/customers.
+
+    A product or property listing request alone is not lead generation. This
+    route requires a prospect/customer target plus an action to find one.
+    """
+    normalized = _normalize(question)
+    arabic_actions = ("ابحث عن", "دور على", "دورلي على", "اعثر على", "هاتلي", "هات")
+    arabic_targets = ("عميل", "عملاء", "مشتري", "مشتر", "مشترين", "عملاء محتملين")
+    english_patterns = (
+        r"\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b(?:buyers?|customers?|prospects?|leads?)\b|\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b",
+    )
+    if any(action in normalized for action in arabic_actions) and any(
+        target in normalized for target in arabic_targets
+    ):
+        return True
+    if any(re.search(pattern, normalized) for pattern in english_patterns):
+        return True
+    return bool(
+        re.search(
+            r"\b(?:buyers?|customers?|prospects?|leads?)\b.{0,45}\b"
+            r"(?:looking to buy|want to buy|wants to buy|seeking to purchase)\b",
+            normalized,
+        )
+    )
+
+
 def _needs_clarification(question: str) -> bool:
     normalized = _normalize(question)
     if (
@@ -197,6 +225,14 @@ def route_intent(
             "reason": "missing_referent_and_no_conversation_context",
             "context_available": False,
             "needs_clarification": True,
+        }
+
+    if _is_lead_generation_request(question):
+        return {
+            "route": "LEAD_GENERATION",
+            "reason": "explicit_prospect_or_buyer_discovery_request",
+            "context_available": context_available,
+            "needs_clarification": False,
         }
 
     if _is_deep(question):

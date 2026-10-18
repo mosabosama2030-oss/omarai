@@ -26,6 +26,29 @@ def test_deterministic_intent_routes(question: str, expected: str) -> None:
     assert decision["reason"]
 
 
+@pytest.mark.parametrize(
+    ("question", "expected"),
+    [
+        ("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر", "LEAD_GENERATION"),
+        ("ابحث عن شقق للبيع في العاصمة الإدارية", "WEB_SIMPLE"),
+        ("Find buyers looking to buy apartments in New Capital", "LEAD_GENERATION"),
+        ("لخص الصفحة https://example.com/article", "WEB_SIMPLE"),
+        ("Summarize this page https://example.com/article", "WEB_SIMPLE"),
+        ("لخص النص التالي: هذا نص تجريبي", "MODEL_ONLY"),
+    ],
+)
+def test_lead_generation_and_summarization_routes(question: str, expected: str) -> None:
+    decision = route_intent(question)
+    assert decision["route"] == expected
+    assert decision["reason"]
+
+
+def test_generic_explanation_of_lead_generation_is_not_a_lead_search() -> None:
+    assert route_intent("What is lead generation?")["route"] == "MODEL_ONLY"
+    assert route_intent("Create a prospect list for apartment buyers")["route"] == "LEAD_GENERATION"
+
+
+
 def test_capability_question_is_local() -> None:
     decision = route_intent(
         "كيف تستطيع مساعدتي؟",
