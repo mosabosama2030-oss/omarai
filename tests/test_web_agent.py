@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from agents.web_agent import (
@@ -73,6 +75,22 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     )
 
     assert result["used_web_search"] is True
+    assert result["search_attempted"] is True
+    assert result["search_report"]["search_attempted"] is True
+    assert result["search_report"]["search_outcome"] == "attempted_with_usable_sources"
+    assert result["search_report"]["research_quality_semantics"] == (
+        "process_coverage_not_factual_probability"
+    )
+    assert result["search_report"]["claim_audit_semantics"] == (
+        "model_assisted_not_independent_fact_check"
+    )
+    assert result["search_report"]["distinct_registrable_domains"] == 2
+    assert result["search_report"]["editorial_independence_status"] == "not_assessed"
+    assert result["search_report"]["independent_sources_field_semantics"] == (
+        "legacy_compatibility_alias_for_distinct_registrable_domain_count"
+    )
+    assert any("تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري" in warning
+               for warning in result["warnings"])
     assert result["used_language_model"] is True
     assert result["sources"][0]["url"] == "https://example.com/research"
     assert "[المصدر 1]" in result["answer"]
@@ -630,6 +648,151 @@ def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
     }]
 
 
+
+
+def test_generator_rejects_silent_character_limit_truncation(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(agent, "_request_completion", lambda *args, **kwargs: "ن" * 24_001)
+
+    with pytest.raises(RuntimeError, match="تجاوزت حد طول النص"):
+        agent._generate(
+            question="لخص هذا المصدر",
+            history=[],
+            sources=[sample_source(0), sample_source(1)],
+            search_warning=None,
+            research_plan={"depth": "standard", "queries": ["لخص هذا المصدر"]},
+            search_report={},
+        )
+
+
+def test_completion_discards_truncated_primary_and_uses_complete_fallback(monkeypatch):
+    import json
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "openrouter/free"
+    called = []
+
+    class FakeResponse:
+        def __init__(self, content, finish_reason):
+            self.body = json.dumps({
+                "choices": [{
+                    "message": {"content": content},
+                    "finish_reason": finish_reason,
+                }]
+            }).encode("utf-8")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return self.body
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        called.append(model)
+        if model == "broken/primary":
+            return FakeResponse("جزء مبتور لا يجوز عرضه", "length")
+        return FakeResponse("إجابة مكتملة", "stop")
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "اختبار"}],
+        model="broken/primary",
+    )
+
+    assert result == "إجابة مكتملة"
+    assert called == ["broken/primary", "openrouter/free"]
+    assert "جزء مبتور لا يجوز عرضه" not in result
+    assert agent.model_usage == [{
+        "requested_model": "broken/primary",
+        "used_model": "openrouter/free",
+        "fallback_used": "true",
+    }]
+
+
+def test_completion_rejects_response_when_all_models_are_truncated(monkeypatch):
+    import json
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "fallback/model"
+    called = []
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return json.dumps({
+                "choices": [{
+                    "message": {"content": "نص مبتور"},
+                    "finish_reason": "length",
+                }]
+            }).encode("utf-8")
+
+    def fake_urlopen(request, timeout):
+        called.append(json.loads(request.data.decode("utf-8"))["model"])
+        return FakeResponse()
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    with pytest.raises(RuntimeError, match="مبتورة"):
+        agent._request_completion(
+            [{"role": "user", "content": "اختبار"}],
+            model="broken/primary",
+        )
+
+    assert called == ["broken/primary", "fallback/model"]
+    assert agent.model_usage == []
+
+
+def test_completion_falls_back_for_malformed_choice(monkeypatch):
+    import json
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "fallback/model"
+    called = []
+
+    class FakeResponse:
+        def __init__(self, body):
+            self.body = body
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return self.body
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        called.append(model)
+        choices = (
+            ["malformed choice"]
+            if model == "broken/primary"
+            else [{"message": {"content": "fallback answer"}, "finish_reason": "stop"}]
+        )
+        return FakeResponse(json.dumps({"choices": choices}).encode("utf-8"))
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "test"}],
+        model="broken/primary",
+    )
+
+    assert result == "fallback answer"
+    assert called == ["broken/primary", "fallback/model"]
+
+
 def test_health_status_reports_models_without_credentials(monkeypatch):
     monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
     monkeypatch.delenv("OMARAI_LLM_API_KEY", raising=False)
@@ -705,6 +868,40 @@ def test_diagnostics_calls_a_model_only_when_explicitly_requested(monkeypatch):
     assert calls == [agent.answer_model]
     assert len(report["model_usage"]) == 1
 
+
+
+
+def test_diagnostics_reports_degraded_when_search_has_no_results_and_model_is_unconfigured(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = ""
+    monkeypatch.setattr(agent, "_search_web", lambda query: [])
+
+    report = agent.diagnostics(test_model=True, test_social=False)
+
+    assert report["checks"]["web_search"]["status"] == "degraded"
+    assert report["checks"]["language_model"]["status"] == "not_configured"
+    assert report["checks"]["social_search"]["status"] == "skipped"
+    assert report["overall_status"] == "degraded"
+
+
+def test_diagnostics_does_not_report_full_success_when_model_probe_fails(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(agent, "_search_web", lambda query: [
+        {"provider": "duckduckgo_html", "url": "https://example.com/a"}
+    ])
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError("provider unavailable")),
+    )
+
+    report = agent.diagnostics(test_model=True, test_social=False)
+
+    assert report["checks"]["web_search"]["status"] == "passed"
+    assert report["checks"]["language_model"]["status"] == "failed"
+    assert report["overall_status"] == "degraded"
+    assert "test-key" not in str(report)
 
 
 def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeypatch):
@@ -821,6 +1018,7 @@ def test_search_provider_failure_isolated_and_logged(monkeypatch):
 
 def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):
     agent = WebAgent()
+    agent.api_key = "test-key"
     source = sample_source(0)
     source["providers"] = ["user_supplied_url"]
     source["page_fetched"] = True
@@ -856,13 +1054,66 @@ def test_single_user_supplied_page_can_be_summarized_without_claiming_corroborat
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "ملخص محتوى الصفحة [المصدر 1].")
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
 
-    result = agent.answer("لخص الصفحة")
+    result = agent.answer("لخص الصفحة https://example.com/research")
 
     assert result["kind"] != "insufficient_evidence"
     assert result["answer"] == "ملخص محتوى الصفحة [المصدر 1]."
     assert result["search_report"]["independent_sources"] == 1
     assert result["research_quality"] == "partial"
     assert any("لم يتم تأكيد محتواه" in warning for warning in result["warnings"])
+
+
+
+def test_answer_hides_unwrapped_internal_review_report(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    sources = [sample_source(0), sample_source(1)]
+    plan = {
+        "queries": ["قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    def collect(research_plan):
+        return sources, [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": len(sources)},
+            "social_direct_results": 0,
+            "depth": "deep",
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(
+        agent, "_generate", lambda *args, **kwargs: "إجابة مبدئية [المصدر 1]."
+    )
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (
+            "Audit Report: ملاحظة داخلية سرية\\n"
+            "Final answer: إجابة نهائية مزعومة"
+        ),
+    )
+
+    result = agent.answer("قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية")
+
+    assert result["search_report"]["second_pass_review"] == "model_claim_audit_unavailable"
+    assert "Audit Report" not in result["answer"]
+    assert "ملاحظة داخلية سرية" not in result["answer"]
+    assert "إجابة نهائية مزعومة" not in result["answer"]
 
 
 def test_sibling_subdomains_do_not_satisfy_independent_evidence_gate(monkeypatch):
@@ -1060,7 +1311,7 @@ def test_review_keeps_untrusted_evidence_out_of_system_message(monkeypatch):
 
     def fake_completion(messages, **kwargs):
         captured["messages"] = messages
-        return "تم تدقيق الإجابة."
+        return "<<<OMARAI_FINAL_ANSWER>>>تم تدقيق الإجابة.<<<END_OMARAI_FINAL_ANSWER>>>"
 
     monkeypatch.setattr(agent, "_request_completion", fake_completion)
     result = agent._review_answer(
@@ -1469,7 +1720,7 @@ def test_reviewer_checks_coverage_targets_without_claiming_independent_verificat
 
     def fake_completion(messages, **kwargs):
         captured["messages"] = messages
-        return "تمت مراجعة المسودة."
+        return "<<<OMARAI_FINAL_ANSWER>>>تمت مراجعة المسودة.<<<END_OMARAI_FINAL_ANSWER>>>"
 
     monkeypatch.setattr(agent, "_request_completion", fake_completion)
     result = agent._review_answer(
@@ -1483,3 +1734,181 @@ def test_reviewer_checks_coverage_targets_without_claiming_independent_verificat
     assert "اكتمال الإجابة مقابل" in system_content
     assert "الاعتمادية" in user_content
     assert "قائمة محاور مستخرجة آليًا" in user_content
+
+
+def test_search_attempt_is_reported_when_no_sources_survive(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = ""
+    plan = {
+        "queries": ["ما آخر تطورات الطاقة المتجددة اليوم؟"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "today",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    calls = []
+
+    def collect(research_plan):
+        calls.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": 1,
+            "query_results": [{"query": research_plan["queries"][0], "results": 0}],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "provider_counts": {},
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: pytest.fail("The model must not answer without usable evidence"),
+    )
+
+    result = agent.answer("ما آخر تطورات الطاقة المتجددة اليوم؟")
+
+    assert result["kind"] == "insufficient_evidence"
+    assert result["search_attempted"] is True
+    assert result["used_web_search"] is False
+    assert result["sources"] == []
+    assert result["search_report"]["search_attempted"] is True
+    assert result["search_report"]["search_outcome"] == "attempted_no_usable_sources"
+    assert result["search_report"]["usable_sources_after_filtering"] == 0
+    assert calls, "Expected at least one attempted retrieval round"
+
+
+def test_success_report_counts_registrable_domains_not_sibling_subdomains(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    first = sample_source(0)
+    first["url"] = "https://news.example.com/research"
+    first["domain"] = "news.example.com"
+    second = sample_source(0)
+    second["url"] = "https://offers.example.com/research"
+    second["domain"] = "offers.example.com"
+    third = sample_source(1)
+    sources = [first, second, third]
+    plan = {
+        "queries": ["قارن هذه التقنية"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda research_plan: (
+            sources,
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [{"query": "قارن هذه التقنية", "results": 3}],
+                "unique_sources": 3,
+                "pages_fetched": 3,
+                "providers_used": ["test_provider"],
+                "provider_counts": {"test_provider": 3},
+                "platform_counts": {"web": 3},
+                "social_direct_results": 0,
+                "depth": "deep",
+                "planning_method": "test",
+                "evidence_signals": {},
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "الإجابة [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("قارن هذه التقنية")
+
+    assert result["kind"] in {"web_research", "web_fallback"}
+    assert result["search_report"]["unique_sources"] == 3
+    assert result["search_report"]["distinct_registrable_domains"] == 2
+    assert result["search_report"]["independent_sources"] == 2
+    assert result["search_report"]["editorial_independence_status"] == "not_assessed"
+
+
+def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypatch):
+    import json
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "fallback/model"
+    called = []
+
+    class FakeResponse:
+        def __init__(self, content, finish_reason):
+            self.body = json.dumps({
+                "choices": [{
+                    "message": {"content": content},
+                    "finish_reason": finish_reason,
+                }]
+            }).encode("utf-8")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return self.body
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        called.append(model)
+        if model == "filtered/primary":
+            return FakeResponse("جزء جواب مفلتر لا ينبغي اعتباره مكتملا", "content_filter")
+        return FakeResponse("إجابة الاحتياط المكتملة", "stop")
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "اختبار"}],
+        model="filtered/primary",
+    )
+
+    assert result == "إجابة الاحتياط المكتملة"
+    assert called == ["filtered/primary", "fallback/model"]
+    assert "جزء جواب مفلتر" not in result
+
+
+def test_reviewer_rejects_duplicate_final_answer_delimiters(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    source = sample_source(0)
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (
+            "<<<OMARAI_FINAL_ANSWER>>>تقرير مراجعة داخلي "
+            "<<<OMARAI_FINAL_ANSWER>>>نص مزعوم"
+            "<<<END_OMARAI_FINAL_ANSWER>>><<<END_OMARAI_FINAL_ANSWER>>>"
+        ),
+    )
+
+    with pytest.raises(RuntimeError, match="فصل الإجابة النهائية"):
+        agent._review_answer("ما مضمون الصفحة؟", "مسودة", [source])
+
+
+def test_frontend_review_status_matches_api_contract():
+    html = (Path(__file__).resolve().parents[1] / "web" / "agent.html").read_text(encoding="utf-8")
+    assert 'r.second_pass_review==="model_claim_audit_completed"' in html
+    assert 'r.second_pass_review==="model_claim_audit_unavailable"' in html
+    assert 'r.second_pass_review==="model_second_pass_completed"' not in html
+    assert 'r.second_pass_review==="model_second_pass_unavailable"' not in html
