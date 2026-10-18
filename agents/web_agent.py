@@ -2031,6 +2031,8 @@ class WebAgent:
                 with urllib.request.urlopen(request, timeout=timeout or self.timeout) as response:
                     data = json.loads(response.read(2_000_000).decode("utf-8"))
                 choice = data["choices"][0]
+                if not isinstance(choice, dict):
+                    raise ValueError("invalid completion choice")
                 if choice.get("finish_reason") in {"length", "max_tokens"}:
                     last_error = RuntimeError(
                         "أعاد نموذج اللغة إجابة مبتورة بسبب الوصول إلى حد الرموز؛ "
