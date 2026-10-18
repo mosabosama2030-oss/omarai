@@ -70,3 +70,22 @@ def test_ambiguous_followup_does_not_reuse_stale_topic_after_acknowledgment() ->
 def test_explicit_mode_overrides_conversational_shortcuts() -> None:
     assert route_intent("ازيك؟", mode="deep")["route"] == "WEB_DEEP"
     assert route_intent("ما سعر الهاتف؟", mode="latest")["route"] == "WEB_SIMPLE"
+
+
+def test_summarization_routes_to_web_simple():
+    """Summarization requests must route to WEB_SIMPLE, not CLARIFY or MODEL_ONLY."""
+    from agents.intent_router import route_intent
+
+    cases = [
+        "لخص الصفحة",
+        "لخص لي هذا الرابط",
+        "تلخيص المقال",
+        "summarize the page",
+        "summarize this article",
+    ]
+    for q in cases:
+        decision = route_intent(q, [])
+        route = decision["route"] if isinstance(decision, dict) else decision[0]
+        assert route == "WEB_SIMPLE", f"Failed: {q!r} -> {decision}"
+        if isinstance(decision, dict):
+            assert decision.get("reason") == "summarization_request"
