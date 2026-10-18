@@ -153,3 +153,8 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
     assert result["research_plan"]["depth"] == "deep"
     assert len(seen["plan"]["queries"]) > 1
     assert result["used_web_search"] is True
+    coverage = result["answer_coverage"]
+    assert coverage["method"] == "explicit_criteria_heuristic"
+    assert coverage["targets"] == ["السعر", "البطارية", "الكاميرا"]
+    assert coverage["status"] == "model_review_requested_not_machine_verified"
+    assert coverage["automatically_graded"] is False
