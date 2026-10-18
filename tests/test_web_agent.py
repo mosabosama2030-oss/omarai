@@ -734,6 +734,47 @@ def test_completion_rejects_response_when_all_models_are_truncated(monkeypatch):
     assert agent.model_usage == []
 
 
+def test_completion_falls_back_for_malformed_choice(monkeypatch):
+    import json
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "fallback/model"
+    called = []
+
+    class FakeResponse:
+        def __init__(self, body):
+            self.body = body
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return self.body
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        called.append(model)
+        choices = (
+            ["malformed choice"]
+            if model == "broken/primary"
+            else [{"message": {"content": "fallback answer"}, "finish_reason": "stop"}]
+        )
+        return FakeResponse(json.dumps({"choices": choices}).encode("utf-8"))
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "test"}],
+        model="broken/primary",
+    )
+
+    assert result == "fallback answer"
+    assert called == ["broken/primary", "fallback/model"]
+
+
 def test_health_status_reports_models_without_credentials(monkeypatch):
     monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
     monkeypatch.delenv("OMARAI_LLM_API_KEY", raising=False)
