@@ -620,6 +620,7 @@ class WebAgent:
             "sources": [],
             "used_language_model": False,
             "used_web_search": False,
+            "search_attempted": False,
             "used_social_search": False,
             "warnings": [],
             "kind": kind,
@@ -758,6 +759,7 @@ class WebAgent:
             "sources": [],
             "used_language_model": True,
             "used_web_search": False,
+            "search_attempted": False,
             "used_social_search": False,
             "warnings": [],
             "kind": "general_answer",
@@ -3001,6 +3003,32 @@ class WebAgent:
                 else:
                     evidence_repair["reason"] = "repair_query_was_not_distinct"
         report["evidence_repair"] = evidence_repair
+        try:
+            queries_attempted = max(0, int(report.get("queries_attempted", 0) or 0))
+        except (TypeError, ValueError):
+            queries_attempted = 0
+        search_attempted = queries_attempted > 0
+        report["search_attempted"] = search_attempted
+        report["search_outcome"] = (
+            "attempted_with_usable_sources" if search_attempted and sources
+            else "attempted_no_usable_sources" if search_attempted
+            else "not_attempted"
+        )
+        report["usable_sources_after_filtering"] = len(sources)
+        report["research_quality_semantics"] = "process_coverage_not_factual_probability"
+        report["distinct_registrable_domains"] = len(independent_domains)
+        report["independent_sources"] = len(independent_domains)  # Legacy alias; not editorial independence.
+        report["independent_sources_field_semantics"] = (
+            "legacy_compatibility_alias_for_distinct_registrable_domain_count"
+        )
+        report["source_diversity_semantics"] = (
+            "distinct_registrable_domains_not_editorial_independence"
+        )
+        report["editorial_independence_status"] = "not_assessed"
+        if len(independent_domains) >= 2:
+            search_warnings.append(
+                "تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري؛ قد تنقل المواقع عن المصدر الأصلي نفسه."
+            )
         search_warning = "؛ ".join(dict.fromkeys(search_warnings)) if search_warnings else None
         if needs_corroboration and single_source_navigation and not single_source_page_summary:
             search_warnings.append(
@@ -3020,8 +3048,9 @@ class WebAgent:
         search_warning = "؛ ".join(dict.fromkeys(search_warnings)) if search_warnings else None
         if needs_corroboration and not task_specific_partial_evidence:
             reason = (
-                "لم أجد معلومات موثوقة كافية مرتبطة بسؤالك من مصدرين مستقلين على الأقل. "
-                "لن أخمّن أو أقدّم نتيجة غير مدعومة؛ جرّب صياغة أدق أو أعد المحاولة لاحقًا."
+                "لم أجد أدلة كافية مرتبطة بسؤالك من نطاقين مسجلين مختلفين على الأقل. "
+                "اختلاف النطاقات لا يثبت الاستقلال التحريري. لن أخمّن أو أقدّم نتيجة غير مدعومة؛ "
+                "جرّب صياغة أدق أو أعد المحاولة لاحقًا."
             )
             public_sources = [{
                 "title": source.get("title") or "نتيجة ويب",
@@ -3083,6 +3112,7 @@ class WebAgent:
                 "sources": public_sources,
                 "used_language_model": False,
                 "used_web_search": bool(sources),
+                "search_attempted": search_attempted,
                 "used_social_search": bool(report.get("social_direct_results", 0)),
                 "warnings": list(dict.fromkeys(search_warnings + [reason])),
                 "kind": "insufficient_evidence",
@@ -3191,7 +3221,11 @@ class WebAgent:
             provider for source in sources for provider in source.get("providers", [])
         }
         distinct_domains = {
-            str(source.get("domain") or urllib.parse.urlparse(source.get("url", "")).hostname or "").lower().removeprefix("www.")
+            registrable_domain(
+                source.get("domain")
+                or urllib.parse.urlparse(source.get("url", "")).hostname
+                or ""
+            )
             for source in sources
         }
         distinct_domains.discard("")
@@ -3210,8 +3244,30 @@ class WebAgent:
             research_quality = "good"
         else:
             research_quality = "partial"
+        search_attempted = search_attempted or bool(self.server_search_sources)
+        report["search_attempted"] = search_attempted
+        report["search_outcome"] = (
+            "attempted_with_usable_sources" if search_attempted and sources
+            else "attempted_no_usable_sources" if search_attempted
+            else "not_attempted"
+        )
+        report["usable_sources_after_filtering"] = len(sources)
         report["research_quality"] = research_quality
-        report["independent_sources"] = len(distinct_domains)
+        report["research_quality_semantics"] = "process_coverage_not_factual_probability"
+        report["distinct_registrable_domains"] = len(distinct_domains)
+        report["independent_sources"] = len(distinct_domains)  # Legacy alias; not editorial independence.
+        report["independent_sources_field_semantics"] = (
+            "legacy_compatibility_alias_for_distinct_registrable_domain_count"
+        )
+        report["source_diversity_semantics"] = (
+            "distinct_registrable_domains_not_editorial_independence"
+        )
+        report["editorial_independence_status"] = "not_assessed"
+        report["claim_audit_semantics"] = (
+            "model_assisted_not_independent_fact_check"
+            if review_status == "model_claim_audit_completed"
+            else "not_verified"
+        )
         report["insufficient_evidence"] = False
         report["valid_citation_range"] = [1, max_citable_sources] if max_citable_sources else []
         report["citation_count"] = citation_validation["valid_citation_count"]
@@ -3266,6 +3322,7 @@ class WebAgent:
             "answer_coverage": answer_coverage,
             "used_language_model": used_llm,
             "used_web_search": bool(sources),
+            "search_attempted": search_attempted,
             "used_social_search": bool(report.get("social_direct_results", 0)),
             "warnings": warnings,
             "kind": "web_research" if used_llm else "web_fallback",

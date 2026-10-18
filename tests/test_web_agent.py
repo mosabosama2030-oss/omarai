@@ -73,6 +73,22 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     )
 
     assert result["used_web_search"] is True
+    assert result["search_attempted"] is True
+    assert result["search_report"]["search_attempted"] is True
+    assert result["search_report"]["search_outcome"] == "attempted_with_usable_sources"
+    assert result["search_report"]["research_quality_semantics"] == (
+        "process_coverage_not_factual_probability"
+    )
+    assert result["search_report"]["claim_audit_semantics"] == (
+        "model_assisted_not_independent_fact_check"
+    )
+    assert result["search_report"]["distinct_registrable_domains"] == 2
+    assert result["search_report"]["editorial_independence_status"] == "not_assessed"
+    assert result["search_report"]["independent_sources_field_semantics"] == (
+        "legacy_compatibility_alias_for_distinct_registrable_domain_count"
+    )
+    assert any("تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري" in warning
+               for warning in result["warnings"])
     assert result["used_language_model"] is True
     assert result["sources"][0]["url"] == "https://example.com/research"
     assert "[المصدر 1]" in result["answer"]
@@ -1716,3 +1732,111 @@ def test_reviewer_checks_coverage_targets_without_claiming_independent_verificat
     assert "اكتمال الإجابة مقابل" in system_content
     assert "الاعتمادية" in user_content
     assert "قائمة محاور مستخرجة آليًا" in user_content
+
+
+def test_search_attempt_is_reported_when_no_sources_survive(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = ""
+    plan = {
+        "queries": ["ما آخر تطورات الطاقة المتجددة اليوم؟"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "today",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    calls = []
+
+    def collect(research_plan):
+        calls.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": 1,
+            "query_results": [{"query": research_plan["queries"][0], "results": 0}],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "provider_counts": {},
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: pytest.fail("The model must not answer without usable evidence"),
+    )
+
+    result = agent.answer("ما آخر تطورات الطاقة المتجددة اليوم؟")
+
+    assert result["kind"] == "insufficient_evidence"
+    assert result["search_attempted"] is True
+    assert result["used_web_search"] is False
+    assert result["sources"] == []
+    assert result["search_report"]["search_attempted"] is True
+    assert result["search_report"]["search_outcome"] == "attempted_no_usable_sources"
+    assert result["search_report"]["usable_sources_after_filtering"] == 0
+    assert calls, "Expected at least one attempted retrieval round"
+
+
+def test_success_report_counts_registrable_domains_not_sibling_subdomains(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    first = sample_source(0)
+    first["url"] = "https://news.example.com/research"
+    first["domain"] = "news.example.com"
+    second = sample_source(0)
+    second["url"] = "https://offers.example.com/research"
+    second["domain"] = "offers.example.com"
+    third = sample_source(1)
+    sources = [first, second, third]
+    plan = {
+        "queries": ["قارن هذه التقنية"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda research_plan: (
+            sources,
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [{"query": "قارن هذه التقنية", "results": 3}],
+                "unique_sources": 3,
+                "pages_fetched": 3,
+                "providers_used": ["test_provider"],
+                "provider_counts": {"test_provider": 3},
+                "platform_counts": {"web": 3},
+                "social_direct_results": 0,
+                "depth": "deep",
+                "planning_method": "test",
+                "evidence_signals": {},
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "الإجابة [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("قارن هذه التقنية")
+
+    assert result["kind"] in {"web_research", "web_fallback"}
+    assert result["search_report"]["unique_sources"] == 3
+    assert result["search_report"]["distinct_registrable_domains"] == 2
+    assert result["search_report"]["independent_sources"] == 2
+    assert result["search_report"]["editorial_independence_status"] == "not_assessed"

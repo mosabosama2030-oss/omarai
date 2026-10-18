@@ -160,7 +160,11 @@ function renderReport(result){
  const queryList=Array.isArray(result.search_queries)?result.search_queries:[];
  const details=queryList.length?'<details class="details"><summary>زوايا البحث المستخدمة ('+queryList.length+')</summary><ol>'+queryList.map(q=>'<li>'+escapeHtml(q)+'</li>').join("")+'</ol></details>':"";
  const coverageText='مؤشر تغطية البحث: '+score+'/100 · '+scoreLabel+' — لا يمثل احتمال صحة الإجابة.';
- const reportNotes='<p class="report-note">'+escapeHtml(coverageText)+'</p>'+(notes.length?'<p class="report-note">'+escapeHtml(notes.join(" "))+'</p>':"");
+ const attemptText=result&&result.search_attempted===true?'تمت محاولة البحث في الويب. عدد المصادر القابلة للاستخدام بعد التصفية: '+(r.usable_sources_after_filtering??sources.length)+'.':result&&result.search_attempted===false?'لم تُنفّذ محاولة بحث ويب في هذه الجولة.':'حالة محاولة البحث غير موضحة في الاستجابة.';
+ const qualityText='تصنيف جودة البحث يصف تغطية العملية والأدلة المتاحة، ولا يمثل احتمال صحة الوقائع.';
+ const reviewText=r.claim_audit_semantics==='model_assisted_not_independent_fact_check'?'مراجعة الادعاءات تمت بمساعدة نموذج لغوي؛ وهي ليست تحققًا مستقلًا من صحة الحقائق.':'لم يثبت إجراء تحقق مستقل من صحة الحقائق.';
+ const diversityText='اختلاف النطاقات المسجلة لا يثبت الاستقلال التحريري؛ فقد تنقل المواقع عن مصدر أصلي واحد.';
+ const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class="report-note">'+escapeHtml(n)+'</p>').join("");
  const review=r.second_pass_review==="model_second_pass_completed"?"مراجعة اتساق ثانية تمت (ليست تحققًا مستقلًا)":r.second_pass_review==="model_second_pass_unavailable"?"تعذرت مراجعة الاتساق الثانية":"";
  return '<div class="report-head"><b>ملخص الأدلة وتغطية البحث</b><span class="coverage">'+escapeHtml(scoreLabel)+'</span></div><div class="metrics">'+metricHtml+'</div>'+reportNotes+(providerHtml?'<div class="providers">'+providerHtml+'</div>':"")+(review?'<p class="report-note">'+escapeHtml(review)+'</p>':"")+details;
 }
@@ -178,7 +182,7 @@ function addMessage(role,text,result,options={}){
  const bubble=document.createElement("div");bubble.className="bubble";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);
  if(result&&result.used_web_search!==true&&result.kind!=="general_answer"&&result.kind!=="capability_answer"){
   const notice=document.createElement("div");notice.className="warning";
-  notice.textContent="لم يؤكد النظام نجاح البحث الحي في هذه الجولة؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.";
+  notice.textContent=result.search_attempted===true?"نُفذت محاولة بحث، لكن لم يؤكد النظام توفر مصادر قابلة للاستخدام؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.":result.search_attempted===false?"لم تُنفذ محاولة بحث ويب في هذه الجولة؛ لا تعتبر الإجابة نتيجة بحث حي.":"لم يؤكد النظام نجاح البحث الحي في هذه الجولة؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.";
   box.appendChild(notice);
  }
  if(result&&result.used_language_model!==true&&result.kind!=="general_answer"&&result.kind!=="capability_answer"){
