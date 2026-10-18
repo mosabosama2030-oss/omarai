@@ -2002,6 +2002,8 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert '["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome)' in html
     assert "لم يمكن تحديد عدد المصادر القابلة للاستخدام" in html
     assert "غير محدد" in html
+    assert 'const score=researchErrorOutcome?null:Number(e.coverage_score||0)' in html
+    assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
 
 def test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed(monkeypatch):
