@@ -902,28 +902,85 @@ def test_sibling_subdomains_do_not_satisfy_independent_evidence_gate(monkeypatch
     assert result["search_report"]["unique_sources"] == 2
 
 
+def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    plan = {
+        "queries": ["شركة ألفا التقنية معلومات"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    calls = []
+
+    def collect(research_plan):
+        calls.append(dict(research_plan))
+        sources = [sample_source(0)] if len(calls) == 1 else [sample_source(1)]
+        return sources, [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": research_plan["queries"][0], "results": len(sources)}],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": len(sources)},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: "توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].",
+    )
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("ما أحدث معلومات شركة ألفا التقنية اليوم؟")
+
+    assert len(calls) == 2
+    assert len(calls[1]["queries"]) == 1
+    assert calls[1]["depth"] == "standard"
+    assert calls[1]["social_focus"] is False
+    assert calls[1]["direct_urls"] == []
+    repair = result["search_report"]["evidence_repair"]
+    assert repair["attempted"] is True
+    assert repair["attempted_query_count"] == 1
+    assert repair["new_sources_added"] == 1
+    assert repair["recovered"] is True
+    assert repair["reason"] == "evidence_gate_recovered"
+    assert repair["query"] in result["search_queries"]
+    assert result["kind"] in {"web_research", "web_fallback"}
+    assert result["search_report"]["independent_sources"] == 2
+
+
 def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):
     agent = WebAgent()
-    monkeypatch.setattr(
-        agent,
-        "_collect_research",
-        lambda plan: (
-            [sample_source(0)],
-            [],
-            {
-                "queries_planned": 1,
-                "queries_attempted": 1,
-                "query_results": [{"query": "قارن هذه التقنية", "results": 1}],
-                "unique_sources": 1,
-                "pages_fetched": 1,
-                "providers_used": ["test_provider"],
-                "platform_counts": {"web": 1},
-                "social_direct_results": 0,
-                "depth": "standard",
-                "planning_method": "test",
-            },
-        ),
-    )
+    calls = []
+
+    def collect_only_one_source(research_plan):
+        calls.append(dict(research_plan))
+        return [sample_source(0)], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": "قارن هذه التقنية", "results": 1}],
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": 1},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect_only_one_source)
     monkeypatch.setattr(
         agent, "_generate",
         lambda *args, **kwargs: pytest.fail("LLM must not answer without two independent domains"),
@@ -933,6 +990,13 @@ def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monk
     assert result["research_quality"] == "failed"
     assert "لم أجد معلومات موثوقة كافية" in result["answer"]
     assert result["search_report"]["independent_sources"] == 1
+
+    assert len(calls) == 2
+    repair = result["search_report"]["evidence_repair"]
+    assert repair["attempted"] is True
+    assert repair["new_sources_added"] == 0
+    assert repair["recovered"] is False
+    assert repair["reason"] == "single_bounded_retry_still_insufficient"
 
 
 def test_generate_keeps_web_evidence_in_separate_untrusted_user_message(monkeypatch):
