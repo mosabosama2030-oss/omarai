@@ -21,7 +21,7 @@ _SMALLTALK = frozenset({
     "hi", "hello", "hey", "hello there", "hi there",
     "thanks", "thank you", "thanks that helps", "thank you that helps",
     "got it", "okay thanks", "ok thanks", "how are you", "how are you doing",
-  "hello how are you", "hi how are you",
+    "hello how are you", "hi how are you",
     "ازيك", "ازيك عامل ايه", "ازيك عامل ايه النهارده", "عامل ايه", "عامله ايه", "اهلا", "مرحبا",
     "السلام عليكم", "السلام عليكم ورحمه الله وبركاته",
     "صباح الخير", "مساء الخير", "شكرا", "شكرا لك", "متشكر", "متشكره",
