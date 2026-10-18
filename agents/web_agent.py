@@ -3196,11 +3196,18 @@ class WebAgent:
                 ),
                 "automatically_graded": False,
             }
+            research_failed = search_outcome in _RESEARCH_ERROR_OUTCOMES
             report.update({
-                "unique_sources": len(sources),
-                "independent_sources": len(independent_domains),
-                "pages_fetched": sum(bool(source.get("page_fetched")) for source in sources),
-                "provider_diagnostics": list(self._provider_diagnostics),
+                # When collection failed, an empty local list is not evidence that
+                # the remote search returned zero sources; preserve unknown counts.
+                "unique_sources": None if research_failed else len(sources),
+                "independent_sources": None if research_failed else len(independent_domains),
+                "distinct_registrable_domains": None if research_failed else len(independent_domains),
+                "pages_fetched": (
+                    None if research_failed
+                    else sum(bool(source.get("page_fetched")) for source in sources)
+                ),
+                "provider_diagnostics": current_research_diagnostics,
                 "insufficient_evidence": True,
                 "research_quality": "failed",
                 "citation_check": citation_validation["status"],
