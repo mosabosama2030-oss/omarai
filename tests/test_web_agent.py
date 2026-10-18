@@ -1912,3 +1912,131 @@ def test_frontend_review_status_matches_api_contract():
     assert 'r.second_pass_review==="model_claim_audit_unavailable"' in html
     assert 'r.second_pass_review==="model_second_pass_completed"' not in html
     assert 'r.second_pass_review==="model_second_pass_unavailable"' not in html
+
+
+
+def test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts(monkeypatch):
+    agent = WebAgent()
+    plan = {
+        "queries": ["ابحث عن أحدث أخبار الطاقة المتجددة اليوم"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "current",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    def failed_after_provider_result(research_plan):
+        # A completed provider result-processing state confirms that a search
+        # connector returned; the collector then fails during downstream processing.
+        agent._record_provider_diagnostic(
+            "duckduckgo_html",
+            research_plan["queries"][0],
+            "ok",
+            result_count=1,
+        )
+        raise RuntimeError("simulated post-search pipeline failure")
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", failed_after_provider_result)
+
+    result = agent.answer("ابحث عن أحدث أخبار الطاقة المتجددة اليوم")
+
+    report = result["search_report"]
+    assert result["search_attempted"] is True
+    assert report["search_attempted"] is True
+    assert report["search_outcome"] == "attempted_research_error"
+    assert report["queries_attempted"] is None
+    assert report["queries_attempted_known"] is False
+    assert report["usable_sources_after_filtering"] is None
+    assert report["unique_sources"] is None
+    assert report["pages_fetched"] is None
+
+
+def test_research_error_without_provider_diagnostics_is_reported_as_unknown(monkeypatch):
+    agent = WebAgent()
+    plan = {
+        "queries": ["ابحث عن أحدث أخبار الطاقة المتجددة اليوم"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "current",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    def fail_before_attempt(research_plan):
+        raise RuntimeError("simulated scheduler failure")
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", fail_before_attempt)
+
+    result = agent.answer("ابحث عن أحدث أخبار الطاقة المتجددة اليوم")
+
+    report = result["search_report"]
+    assert result["search_attempted"] is None
+    assert report["search_attempted"] is None
+    assert report["search_outcome"] == "unknown_after_research_error"
+    assert report["queries_attempted"] is None
+    assert report["queries_attempted_known"] is False
+    assert report["usable_sources_after_filtering"] is None
+
+
+def test_general_answer_does_not_silently_slice_overlong_model_output(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: "ن" * 24_001,
+    )
+
+    result = agent._answer_without_search("اشرح مفهومًا عامًا", [])
+
+    assert result is None
+
+
+def test_frontend_discloses_unknown_counts_after_research_error():
+    html = (Path(__file__).resolve().parents[1] / "web" / "agent.html").read_text(encoding="utf-8")
+    assert '["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome)' in html
+    assert "لم يمكن تحديد عدد المصادر القابلة للاستخدام" in html
+    assert "غير محدد" in html
+    assert 'const score=researchErrorOutcome?null:Number(e.coverage_score||0)' in html
+    assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
+
+
+def test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed(monkeypatch):
+    agent = WebAgent()
+    plan = {
+        "queries": ["ابحث عن أحدث أخبار الطاقة المتجددة اليوم"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "current",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    def fail_after_generic_provider_error(research_plan):
+        # A generic failed diagnostic does not prove whether the network request
+        # was actually sent; it must not be upgraded to a confirmed attempt.
+        agent._record_provider_diagnostic(
+            "duckduckgo_html",
+            research_plan["queries"][0],
+            "failed",
+            error="simulated failure before request send",
+        )
+        raise RuntimeError("simulated research pipeline failure")
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", fail_after_generic_provider_error)
+
+    result = agent.answer("ابحث عن أحدث أخبار الطاقة المتجددة اليوم")
+
+    report = result["search_report"]
+    assert result["search_attempted"] is None
+    assert report["search_attempted"] is None
+    assert report["search_outcome"] == "unknown_after_research_error"
+    assert report["usable_sources_after_filtering"] is None
+    assert report["unique_sources"] is None
