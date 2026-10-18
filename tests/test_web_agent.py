@@ -298,6 +298,45 @@ def test_invalid_citations_are_removed_and_valid_ones_preserved():
     assert len(warnings) == 1
 
 
+def test_citation_metadata_limits_claim_to_index_range_validation():
+    metadata = WebAgent._citation_validation_metadata(
+        "النتيجة المدعومة مبدئيًا [المصدر 1].",
+        1,
+        [],
+        "model_claim_audit_completed",
+    )
+    assert metadata == {
+        "method": "numeric_source_index_range_only",
+        "status": "index_range_check_passed",
+        "valid_citation_count": 1,
+        "invalid_references_removed": 0,
+        "max_citable_source_index": 1,
+        "claim_support": "model_review_not_independent_fact_check",
+    }
+
+
+def test_citation_metadata_reports_invalid_reference_repair():
+    cleaned, warnings = WebAgent._remove_invalid_citations(
+        "صحيح [المصدر 1] وخاطئ [المصدر 9].", 1
+    )
+    metadata = WebAgent._citation_validation_metadata(
+        cleaned, 1, warnings, "not_run"
+    )
+    assert metadata["status"] == "invalid_index_references_removed"
+    assert metadata["valid_citation_count"] == 1
+    assert metadata["invalid_references_removed"] == 1
+    assert metadata["claim_support"] == "not_verified"
+
+
+def test_citation_metadata_reports_absent_markers_and_empty_source_range():
+    metadata = WebAgent._citation_validation_metadata(
+        "لا توجد إحالات للمصادر.", 0, [], "not_run"
+    )
+    assert metadata["status"] == "no_citation_markers_present"
+    assert metadata["valid_citation_count"] == 0
+    assert metadata["max_citable_source_index"] == 0
+
+
 def test_user_supplied_url_is_prioritized_and_page_content_is_extracted(monkeypatch):
     agent = WebAgent()
     monkeypatch.setattr(agent, "_search_web", lambda query: [])
