@@ -44,6 +44,10 @@ MAX_PAGE_BYTES = 1_000_000
 MAX_PAGE_TEXT_CHARS = 12_000
 LLM_TIMEOUT_SECONDS = 35
 
+# Provider diagnostic statuses that show a search connector was invoked.
+_SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({"ok", "no_results", "filtered_all", "timeout", "failed"})
+_RESEARCH_ERROR_OUTCOMES = frozenset({"attempted_research_error", "unknown_after_research_error"})
+
 
 _ARABIC_SEARCH_TRANSLATION = str.maketrans({
     "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي",
@@ -746,8 +750,11 @@ class WebAgent:
             )
         except (RuntimeError, AgentDependencyError):
             return None
+        # Never turn an overlong completion into a seemingly complete answer by slicing it.
+        if len(answer) > 24_000:
+            return None
         return {
-            "answer": answer[:24_000],
+            "answer": answer,
             "question": question,
             "search_query": question,
             "search_queries": [],
@@ -2775,18 +2782,39 @@ class WebAgent:
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
         report: dict[str, Any] = {}
+        # Scope diagnostic evidence to this research attempt; a reused WebAgent must not
+        # accidentally inherit provider attempts from an earlier question.
+        with self._provider_diagnostics_lock:
+            research_diagnostic_start = len(self._provider_diagnostics)
         try:
             sources, search_warnings, report = self._collect_research(plan)
         except (RuntimeError, AgentDependencyError, ValueError) as exc:
             search_warnings.append(str(exc))
+            with self._provider_diagnostics_lock:
+                failure_diagnostics = list(self._provider_diagnostics[research_diagnostic_start:])
+            provider_attempt_observed = any(
+                item.get("status") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
+                for item in failure_diagnostics
+            )
             report = {
                 "queries_planned": len(plan.get("queries", [])),
-                "queries_attempted": 0,
+                # The exact query count is unknowable when the pipeline fails before it
+                # returns its report. A provider diagnostic may still prove an attempt.
+                "queries_attempted": None,
+                "queries_attempted_known": False,
+                "search_attempted": True if provider_attempt_observed else None,
+                "search_outcome": (
+                    "attempted_research_error"
+                    if provider_attempt_observed
+                    else "unknown_after_research_error"
+                ),
+                "usable_sources_after_filtering": None,
                 "unique_sources": 0,
                 "pages_fetched": 0,
                 "providers_used": [],
                 "platform_counts": {},
                 "social_direct_results": 0,
+                "provider_diagnostics": failure_diagnostics,
                 "depth": plan.get("depth", "standard"),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
                 "evidence_signals": evidence_signal_report([], plan.get("freshness", "any")),
@@ -2900,7 +2928,14 @@ class WebAgent:
                     except (RuntimeError, AgentDependencyError, ValueError) as exc:
                         repair_sources = []
                         repair_warnings = []
-                        repair_report = {"queries_planned": 1, "queries_attempted": 0}
+                        repair_report = {
+                            "queries_planned": 1,
+                            "queries_attempted": None,
+                            "queries_attempted_known": False,
+                            "search_attempted": None,
+                            "search_outcome": "unknown_after_research_error",
+                            "usable_sources_after_filtering": None,
+                        }
                         search_warnings.append(
                             "تعذر تنفيذ محاولة البحث الإضافية المحدودة ("
                             + type(exc).__name__ + ")."
@@ -2980,9 +3015,20 @@ class WebAgent:
                     report["queries_planned"] = int(report.get("queries_planned", 0) or 0) + int(
                         repair_report.get("queries_planned", 1) or 0
                     )
-                    report["queries_attempted"] = int(report.get("queries_attempted", 0) or 0) + int(
-                        repair_report.get("queries_attempted", 0) or 0
-                    )
+                    initial_attempt_count = report.get("queries_attempted", 0)
+                    repair_attempt_count = repair_report.get("queries_attempted", 0)
+                    if initial_attempt_count is None or repair_attempt_count is None:
+                        report["queries_attempted"] = None
+                        report["queries_attempted_known"] = False
+                    else:
+                        try:
+                            report["queries_attempted"] = max(0, int(initial_attempt_count or 0)) + max(
+                                0, int(repair_attempt_count or 0)
+                            )
+                            report["queries_attempted_known"] = True
+                        except (TypeError, ValueError):
+                            report["queries_attempted"] = None
+                            report["queries_attempted_known"] = False
                     report["query_results"] = list(report.get("query_results", [])) + list(
                         repair_report.get("query_results", [])
                     )
@@ -3018,18 +3064,57 @@ class WebAgent:
                 else:
                     evidence_repair["reason"] = "repair_query_was_not_distinct"
         report["evidence_repair"] = evidence_repair
-        try:
-            queries_attempted = max(0, int(report.get("queries_attempted", 0) or 0))
-        except (TypeError, ValueError):
-            queries_attempted = 0
-        search_attempted = queries_attempted > 0
-        report["search_attempted"] = search_attempted
-        report["search_outcome"] = (
-            "attempted_with_usable_sources" if search_attempted and sources
-            else "attempted_no_usable_sources" if search_attempted
-            else "not_attempted"
+        with self._provider_diagnostics_lock:
+            current_research_diagnostics = list(
+                self._provider_diagnostics[research_diagnostic_start:]
+            )
+        report["provider_diagnostics"] = current_research_diagnostics
+        provider_attempt_observed = any(
+            item.get("status") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
+            for item in current_research_diagnostics
         )
-        report["usable_sources_after_filtering"] = len(sources)
+        raw_attempt_count = report.get("queries_attempted", 0)
+        try:
+            queries_attempted = (
+                None if raw_attempt_count is None
+                else max(0, int(raw_attempt_count or 0))
+            )
+        except (TypeError, ValueError):
+            queries_attempted = None
+        if queries_attempted is not None:
+            search_attempted = (
+                queries_attempted > 0
+                or provider_attempt_observed
+                or report.get("search_attempted") is True
+            )
+        elif provider_attempt_observed or report.get("search_attempted") is True:
+            search_attempted = True
+        elif isinstance(report.get("search_attempted"), bool):
+            search_attempted = report["search_attempted"]
+        else:
+            search_attempted = None
+        report["queries_attempted"] = queries_attempted
+        report["queries_attempted_known"] = queries_attempted is not None
+        report["search_attempted"] = search_attempted
+        previous_search_outcome = report.get("search_outcome")
+        if previous_search_outcome in _RESEARCH_ERROR_OUTCOMES:
+            if provider_attempt_observed or search_attempted is True:
+                search_outcome = "attempted_research_error"
+            elif search_attempted is False:
+                search_outcome = "not_attempted"
+            else:
+                search_outcome = "unknown_after_research_error"
+        else:
+            search_outcome = (
+                "attempted_with_usable_sources" if search_attempted is True and sources
+                else "attempted_no_usable_sources" if search_attempted is True
+                else "not_attempted" if search_attempted is False
+                else "unknown_after_research_error"
+            )
+        report["search_outcome"] = search_outcome
+        report["usable_sources_after_filtering"] = (
+            None if search_outcome in _RESEARCH_ERROR_OUTCOMES else len(sources)
+        )
         report["research_quality_semantics"] = "process_coverage_not_factual_probability"
         report["distinct_registrable_domains"] = len(independent_domains)
         report["independent_sources"] = len(independent_domains)  # Legacy alias; not editorial independence.
