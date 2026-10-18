@@ -88,7 +88,7 @@ def _has_context(history: Any) -> bool:
     """
     if not isinstance(history, list):
         return False
-    for item in reversed(history[-MAX_HISTORY_ITEMS:]):
+    for item in reversed(history[-MAX_CONTEXT_TURNS:]):
         if not isinstance(item, dict) or item.get("role") != "user":
             continue
         content = item.get("content")
@@ -97,7 +97,7 @@ def _has_context(history: Any) -> bool:
         normalized = _normalize(content)
         if not normalized or _is_smalltalk(normalized):
             return False
-        meaningful = re.findall(r"[a-z0-9]+|[\\u0600-\\u06FF]+", normalized)
+        meaningful = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", normalized)
         return len(meaningful) >= 2 and len(normalized) >= 8
     return False
 
