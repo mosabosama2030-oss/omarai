@@ -384,6 +384,15 @@ class WebAgent:
             "meta_graph_version": os.getenv("META_GRAPH_VERSION", "v25.0").strip(),
             "youtube_api_configured": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
             "youtube_direct_api": bool(os.getenv("YOUTUBE_API_KEY", "").strip()),
+            "verification_scope": {
+                "kind": "configuration_snapshot",
+                "live_network_checks_performed": False,
+                "web_search_ready_means": "dependencies_importable_not_provider_connectivity",
+                "language_model_configured_means": "credential_present_not_successful_completion",
+                "search_providers_means": "supported_or_conditionally_configured_not_live_verified",
+                "direct_social_api_flags_mean": "credentials_present_not_permissions_or_connectivity_verified",
+                "live_diagnostics_endpoint": "POST /api/diagnostics",
+            },
         }
 
     @staticmethod
