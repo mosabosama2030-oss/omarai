@@ -429,6 +429,34 @@ class WebAgent:
         return _relevance_ratio(query, evidence) >= 0.20
 
     @staticmethod
+    def _normalized_source_url_key(value: Any) -> str:
+        """Normalize a public HTTP(S) URL for duplicate detection across search rounds."""
+        if not isinstance(value, str) or not value.strip():
+            return ""
+        try:
+            parsed = urllib.parse.urlsplit(value.strip())
+            scheme = parsed.scheme.lower()
+            if scheme not in {"http", "https"} or not parsed.hostname:
+                return ""
+            host = parsed.hostname.lower().rstrip(".")
+            port = parsed.port
+            if (scheme == "https" and port == 443) or (scheme == "http" and port == 80):
+                port = None
+            host_for_url = f"[{host}]" if ":" in host else host
+            netloc = host_for_url + (f":{port}" if port is not None else "")
+            path = parsed.path.rstrip("/") or "/"
+            tracking_keys = {"fbclid", "gclid", "ref", "source"}
+            query_items = [
+                (key, item)
+                for key, item in urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+                if not key.lower().startswith("utm_") and key.lower() not in tracking_keys
+            ]
+            query = urllib.parse.urlencode(query_items, doseq=True)
+            return urllib.parse.urlunsplit((scheme, netloc, path, query, ""))
+        except (TypeError, ValueError):
+            return ""
+
+    @staticmethod
     def _is_self_question(question: str) -> bool:
         """Recognize questions about Omarai itself so they do not need web search."""
         value = _normalize_search_query(question).casefold()
@@ -2686,6 +2714,177 @@ class WebAgent:
             or single_source_listing
         )
         needs_corroboration = len(sources) < 2 or len(independent_domains) < 2
+        evidence_repair: dict[str, Any] = {
+            "attempted": False,
+            "max_extra_queries": 1,
+            "reason": "initial_evidence_gate_satisfied" if not needs_corroboration else "not_attempted",
+        }
+        if needs_corroboration:
+            if task_specific_partial_evidence:
+                evidence_repair["reason"] = "task_specific_partial_evidence"
+            elif plan.get("social_focus"):
+                evidence_repair["reason"] = "social_search_not_retried"
+            elif report.get("expansion_queries"):
+                evidence_repair["reason"] = "deep_research_already_expanded"
+            else:
+                original_queries = [
+                    str(item).strip()
+                    for item in plan.get("queries", [])
+                    if isinstance(item, str) and item.strip()
+                ]
+                base_query = original_queries[0] if original_queries else question
+                suffix = (
+                    "latest official primary source"
+                    if plan.get("freshness") == "current"
+                    else "official primary source data"
+                )
+                repair_query = f"{base_query} {suffix}"[:500].strip()
+                known_queries = {
+                    _normalize_search_query(item).casefold()
+                    for item in original_queries
+                }
+                if _normalize_search_query(repair_query).casefold() in known_queries:
+                    repair_query = f"{base_query} independent corroborating evidence"[:500].strip()
+                if _normalize_search_query(repair_query).casefold() not in known_queries:
+                    initial_source_count = len(sources)
+                    initial_domain_count = len(independent_domains)
+                    evidence_repair["attempted"] = True
+                    evidence_repair["reason"] = "thin_or_unrelated_initial_evidence"
+                    evidence_repair["query"] = repair_query
+                    repair_plan = dict(plan)
+                    repair_plan.update({
+                        "queries": [repair_query],
+                        "depth": "standard",
+                        "social_focus": False,
+                        "platforms": [],
+                        "direct_urls": [],
+                    })
+                    try:
+                        repair_sources, repair_warnings, repair_report = self._collect_research(
+                            repair_plan
+                        )
+                    except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                        repair_sources = []
+                        repair_warnings = []
+                        repair_report = {"queries_planned": 1, "queries_attempted": 0}
+                        search_warnings.append(
+                            "تعذر تنفيذ محاولة البحث الإضافية المحدودة ("
+                            + type(exc).__name__ + ")."
+                        )
+                    search_warnings.extend(repair_warnings)
+                    evidence_repair["attempted_query_count"] = 1
+                    evidence_repair["initial_source_count"] = initial_source_count
+                    evidence_repair["initial_independent_domain_count"] = initial_domain_count
+                    evidence_repair["new_sources_added"] = 0
+                    source_indexes: dict[str, int] = {}
+                    for source_index, source in enumerate(sources):
+                        source_key = self._normalized_source_url_key(source.get("url"))
+                        if source_key:
+                            source_indexes.setdefault(source_key, source_index)
+                    relevant_queries = list(dict.fromkeys([question] + original_queries))
+                    for source in repair_sources:
+                        if not isinstance(source, dict):
+                            continue
+                        if not any(
+                            self._source_matches_query(candidate, source)
+                            for candidate in relevant_queries if candidate
+                        ):
+                            continue
+                        source_key = self._normalized_source_url_key(source.get("url"))
+                        if not source_key:
+                            continue
+                        existing_index = source_indexes.get(source_key)
+                        if existing_index is None:
+                            source_indexes[source_key] = len(sources)
+                            sources.append(source)
+                            evidence_repair["new_sources_added"] += 1
+                            continue
+                        existing_source = sources[existing_index]
+                        providers = list(dict.fromkeys(
+                            list(existing_source.get("providers", []))
+                            + list(source.get("providers", []))
+                        ))
+                        source_queries = list(dict.fromkeys(
+                            list(existing_source.get("queries", []))
+                            + list(source.get("queries", []))
+                        ))
+                        if source.get("page_fetched") and not existing_source.get("page_fetched"):
+                            merged_source = dict(existing_source)
+                            merged_source.update(source)
+                            merged_source["providers"] = providers
+                            merged_source["queries"] = source_queries
+                            sources[existing_index] = merged_source
+                        else:
+                            existing_source["providers"] = providers
+                            existing_source["queries"] = source_queries
+                    sources.sort(
+                        key=lambda item: float(item.get("rank_score", 0) or 0),
+                        reverse=True,
+                    )
+                    plan["queries"] = list(dict.fromkeys(original_queries + [repair_query]))
+                    independent_domains = {
+                        registrable_domain(
+                            source.get("domain")
+                            or urllib.parse.urlparse(source.get("url", "")).hostname
+                            or ""
+                        )
+                        for source in sources
+                    }
+                    independent_domains.discard("")
+                    needs_corroboration = (
+                        len(sources) < 2 or len(independent_domains) < 2
+                    )
+                    evidence_repair.update({
+                        "final_source_count": len(sources),
+                        "final_independent_domain_count": len(independent_domains),
+                        "recovered": not needs_corroboration,
+                    })
+                    evidence_repair["reason"] = (
+                        "single_bounded_retry_still_insufficient"
+                        if needs_corroboration else "evidence_gate_recovered"
+                    )
+                    report["queries_planned"] = int(report.get("queries_planned", 0) or 0) + int(
+                        repair_report.get("queries_planned", 1) or 0
+                    )
+                    report["queries_attempted"] = int(report.get("queries_attempted", 0) or 0) + int(
+                        repair_report.get("queries_attempted", 0) or 0
+                    )
+                    report["query_results"] = list(report.get("query_results", [])) + list(
+                        repair_report.get("query_results", [])
+                    )
+                    merged_providers = {
+                        provider
+                        for source in sources
+                        for provider in source.get("providers", [])
+                    }
+                    report["providers_used"] = sorted(merged_providers)
+                    report["provider_counts"] = {
+                        provider: sum(
+                            provider in source.get("providers", []) for source in sources
+                        )
+                        for provider in merged_providers
+                    }
+                    report["platform_counts"] = {
+                        str(source.get("platform", "web")): sum(
+                            str(other.get("platform", "web"))
+                            == str(source.get("platform", "web"))
+                            for other in sources
+                        )
+                        for source in sources
+                    }
+                    report["unique_sources"] = len(sources)
+                    report["pages_fetched"] = sum(
+                        bool(source.get("page_fetched")) for source in sources
+                    )
+                    report["independent_sources"] = len(independent_domains)
+                    report["provider_diagnostics"] = list(self._provider_diagnostics)
+                    report["evidence_signals"] = evidence_signal_report(
+                        sources, plan.get("freshness", "any")
+                    )
+                else:
+                    evidence_repair["reason"] = "repair_query_was_not_distinct"
+        report["evidence_repair"] = evidence_repair
+        search_warning = "؛ ".join(dict.fromkeys(search_warnings)) if search_warnings else None
         if needs_corroboration and single_source_navigation and not single_source_page_summary:
             search_warnings.append(
                 "هذه نتيجة مرشحة لطلب العثور على موقع/رابط؛ لم تُثبت رسميتها أو صحتها "
