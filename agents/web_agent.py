@@ -535,7 +535,7 @@ class WebAgent:
     @staticmethod
     def _local_conversation_reply(question: str) -> str:
         """Return a short greeting/acknowledgment without a model or web request."""
-        value = _normalize_search_query(question).casefold().strip(" \\t\\r\\n؟?!.,،؛;")
+        value = _normalize_search_query(question).casefold().strip(" \t\r\n؟?!.,،؛;")
         if "السلام عليكم" in value:
             return "وعليكم السلام ورحمة الله وبركاته. أنا معاك؛ أقدر أساعدك في إيه؟"
         if any(term in value for term in ("شكرا", "متشكر", "متشكره", "العفو")):
