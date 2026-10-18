@@ -638,6 +638,12 @@ def test_health_status_reports_models_without_credentials(monkeypatch):
     assert status["answer_model"] == "google/gemma-4-31b-it:free"
     assert status["fallback_model"] == "openrouter/free"
     assert status["language_model_configured"] is False
+    assert status["verification_scope"]["kind"] == "configuration_snapshot"
+    assert status["verification_scope"]["live_network_checks_performed"] is False
+    assert status["verification_scope"]["language_model_configured_means"] == (
+        "credential_present_not_successful_completion"
+    )
+    assert status["verification_scope"]["live_diagnostics_endpoint"] == "POST /api/diagnostics"
     assert "api_key" not in status
 
 
@@ -902,37 +908,111 @@ def test_sibling_subdomains_do_not_satisfy_independent_evidence_gate(monkeypatch
     assert result["search_report"]["unique_sources"] == 2
 
 
+def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    plan = {
+        "queries": ["شركة ألفا التقنية معلومات"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    calls = []
+
+    def collect(research_plan):
+        calls.append(dict(research_plan))
+        sources = [sample_source(0)] if len(calls) == 1 else [sample_source(1)]
+        return sources, [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": research_plan["queries"][0], "results": len(sources)}],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": len(sources)},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: "توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].",
+    )
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("ما أحدث معلومات شركة ألفا التقنية اليوم؟")
+
+    assert len(calls) == 2
+    assert len(calls[1]["queries"]) == 1
+    assert calls[1]["depth"] == "standard"
+    assert calls[1]["social_focus"] is False
+    assert calls[1]["direct_urls"] == []
+    repair = result["search_report"]["evidence_repair"]
+    assert repair["attempted"] is True
+    assert repair["attempted_query_count"] == 1
+    assert repair["new_sources_added"] == 1
+    assert repair["recovered"] is True
+    assert repair["reason"] == "evidence_gate_recovered"
+    assert repair["query"] in result["search_queries"]
+    assert result["kind"] in {"web_research", "web_fallback"}
+    assert result["search_report"]["independent_sources"] == 2
+
+
 def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):
     agent = WebAgent()
-    monkeypatch.setattr(
-        agent,
-        "_collect_research",
-        lambda plan: (
-            [sample_source(0)],
-            [],
-            {
-                "queries_planned": 1,
-                "queries_attempted": 1,
-                "query_results": [{"query": "قارن هذه التقنية", "results": 1}],
-                "unique_sources": 1,
-                "pages_fetched": 1,
-                "providers_used": ["test_provider"],
-                "platform_counts": {"web": 1},
-                "social_direct_results": 0,
-                "depth": "standard",
-                "planning_method": "test",
-            },
-        ),
-    )
+    plan = {
+        "queries": ["معلومات عن هذه التقنية"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    calls = []
+
+    def collect_only_one_source(research_plan):
+        calls.append(dict(research_plan))
+        return [sample_source(0)], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": "قارن هذه التقنية", "results": 1}],
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": 1},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect_only_one_source)
     monkeypatch.setattr(
         agent, "_generate",
         lambda *args, **kwargs: pytest.fail("LLM must not answer without two independent domains"),
     )
-    result = agent.answer("قارن هذه التقنية")
+    result = agent.answer("ما آخر أخبار هذه التقنية اليوم؟")
     assert result["kind"] == "insufficient_evidence"
     assert result["research_quality"] == "failed"
     assert "لم أجد معلومات موثوقة كافية" in result["answer"]
     assert result["search_report"]["independent_sources"] == 1
+
+    assert len(calls) == 2
+    repair = result["search_report"]["evidence_repair"]
+    assert repair["attempted"] is True
+    assert repair["new_sources_added"] == 0
+    assert repair["recovered"] is False
+    assert repair["reason"] == "single_bounded_retry_still_insufficient"
 
 
 def test_generate_keeps_web_evidence_in_separate_untrusted_user_message(monkeypatch):
@@ -1224,3 +1304,182 @@ def test_single_property_listing_is_returned_with_safety_caveat(monkeypatch):
     assert result["kind"] == "web_research"
     assert len(result["sources"]) == 1
     assert "إعلانات/قوائم مرشحة فقط" in " ".join(result["warnings"])
+
+
+
+def test_normalized_source_url_key_ignores_tracking_parameters_and_fragment():
+    normalize = WebAgent._normalized_source_url_key
+    assert normalize("HTTPS://EXAMPLE.COM:443/article/?utm_source=newsletter#section") == (
+        "https://example.com/article"
+    )
+    assert normalize("https://example.com/article?fbclid=abc&x=1") == (
+        "https://example.com/article?x=1"
+    )
+    assert normalize("file:///etc/passwd") == ""
+
+
+def test_bounded_repair_deduplicates_same_page_even_with_tracking_url(monkeypatch):
+    agent = WebAgent()
+    plan = {
+        "queries": ["معلومات عن شركة ألفا اليوم"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "current",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    calls = []
+
+    def collect(research_plan):
+        calls.append(dict(research_plan))
+        source = sample_source(0)
+        if len(calls) > 1:
+            source["url"] = "https://EXAMPLE.com/research/?utm_source=test#details"
+            source["providers"] = ["second_provider"]
+            source["page_fetched"] = False
+        return [source], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": research_plan["queries"][0], "results": 1}],
+            "unique_sources": 1,
+            "pages_fetched": 1 if len(calls) == 1 else 0,
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": 1},
+            "social_direct_results": 0,
+            "depth": "standard",
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: pytest.fail("Duplicate URL must not satisfy corroboration"),
+    )
+
+    result = agent.answer("ما آخر معلومات عن شركة ألفا اليوم؟")
+
+    assert len(calls) == 2
+    repair = result["search_report"]["evidence_repair"]
+    assert repair["attempted"] is True
+    assert repair["new_sources_added"] == 0
+    assert repair["recovered"] is False
+    assert result["search_report"]["independent_sources"] == 1
+    assert result["kind"] == "insufficient_evidence"
+
+
+def test_social_focused_partial_evidence_does_not_trigger_general_repair(monkeypatch):
+    agent = WebAgent()
+    plan = {
+        "queries": ["تجارب المستخدمين حول التقنية"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    calls = []
+
+    def collect(research_plan):
+        calls.append(dict(research_plan))
+        return [sample_source(0)], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [],
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": 1},
+            "social_direct_results": 1,
+            "depth": "standard",
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "إشارات أولية فقط [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("اجمع آراء الناس حول هذه التقنية", mode="social")
+
+    assert len(calls) == 1
+    assert calls[0]["social_focus"] is True
+    assert result["search_report"]["evidence_repair"]["attempted"] is False
+    assert result["search_report"]["evidence_repair"]["reason"] == "task_specific_partial_evidence"
+    assert result["research_quality"] == "partial"
+
+
+
+def test_question_coverage_targets_extract_arabic_and_english_explicit_criteria():
+    arabic = WebAgent._question_coverage_targets(
+        "قارن بين خدمتين من حيث السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، "
+        "واذكر ما لا تستطيع التحقق منه."
+    )
+    assert arabic == ["السعر", "الخصوصية", "الاعتمادية", "خيار التواصل مع الدعم"]
+
+    english = WebAgent._question_coverage_targets(
+        "Compare two services in terms of price, privacy, reliability and customer support?"
+    )
+    assert english == ["price", "privacy", "reliability", "customer support"]
+
+    english_with_period = WebAgent._question_coverage_targets(
+        "Compare two services in terms of price, privacy and reliability."
+    )
+    assert english_with_period == ["price", "privacy", "reliability"]
+
+
+def test_question_coverage_targets_do_not_invent_parts_for_simple_question():
+    assert WebAgent._question_coverage_targets("ما الذي يقوله المصدر؟") == []
+
+
+def test_generator_includes_extracted_targets_as_a_non_authoritative_checklist(monkeypatch):
+    agent = WebAgent()
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "مقارنة مختصرة."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    result = agent._generate(
+        question="قارن بين خدمتين من حيث السعر، الخصوصية والاعتمادية",
+        history=[],
+        sources=[sample_source(0), sample_source(1)],
+        search_warning=None,
+        research_plan={"depth": "deep", "queries": ["مقارنة الخدمتين"]},
+        search_report={},
+    )
+
+    user_content = "\n".join(m["content"] for m in captured["messages"] if m["role"] == "user")
+    assert result == "مقارنة مختصرة."
+    assert "قائمة محاور مستخرجة آليًا" in user_content
+    for target in ("السعر", "الخصوصية", "الاعتمادية"):
+        assert target in user_content
+
+
+def test_reviewer_checks_coverage_targets_without_claiming_independent_verification(monkeypatch):
+    agent = WebAgent()
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "تمت مراجعة المسودة."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    result = agent._review_answer(
+        question="قارن بين خدمتين من حيث السعر، الخصوصية والاعتمادية",
+        answer="السعر مناسب [المصدر 1].",
+        sources=[sample_source(0)],
+    )
+    system_content = "\n".join(m["content"] for m in captured["messages"] if m["role"] == "system")
+    user_content = "\n".join(m["content"] for m in captured["messages"] if m["role"] == "user")
+    assert result == "تمت مراجعة المسودة."
+    assert "اكتمال الإجابة مقابل" in system_content
+    assert "الاعتمادية" in user_content
+    assert "قائمة محاور مستخرجة آليًا" in user_content

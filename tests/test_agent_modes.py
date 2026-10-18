@@ -65,4 +65,6 @@ def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatc
     assert len(seen["plan"]["queries"]) > 1
     assert result["research_plan"]["mode"] == "deep"
     assert "evidence_signals" in result["search_report"]
+    assert result["search_report"]["evidence_repair"]["attempted"] is False
+    assert result["search_report"]["evidence_repair"]["reason"] == "deep_research_already_expanded"
     assert result["search_report"]["evidence_signals"]["unique_domains"] == 1
