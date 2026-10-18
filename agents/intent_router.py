@@ -79,23 +79,24 @@ def _is_smalltalk(question: str) -> bool:
 
 
 def _has_context(history: Any) -> bool:
+    """Check whether the latest user turn can plausibly anchor a short follow-up.
+
+    Do not resurrect an older topic after the user's most recent turn was only
+    an acknowledgment; stale context is a common source of wrong referents.
+    """
     if not isinstance(history, list):
         return False
-    for item in reversed(history[-8:]):
-        if not isinstance(item, dict):
-            continue
-        if item.get("role") not in {"user", "assistant"}:
+    for item in reversed(history[-MAX_HISTORY_ITEMS:]):
+        if not isinstance(item, dict) or item.get("role") != "user":
             continue
         content = item.get("content")
         if not isinstance(content, str):
             continue
         normalized = _normalize(content)
         if not normalized or _is_smalltalk(normalized):
-            continue
-        # A substantive earlier turn is context; a bare greeting/acknowledgment is not.
-        meaningful = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", normalized)
-        if len(meaningful) >= 2 and len(normalized) >= 8:
-            return True
+            return False
+        meaningful = re.findall(r"[a-z0-9]+|[\\u0600-\\u06FF]+", normalized)
+        return len(meaningful) >= 2 and len(normalized) >= 8
     return False
 
 
