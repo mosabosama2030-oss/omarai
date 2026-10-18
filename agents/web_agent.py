@@ -584,6 +584,14 @@ class WebAgent:
             if not isinstance(raw, str) or not raw.strip():
                 continue
             normalized = _normalize_search_query(raw).casefold()
+            negations = (
+                "not looking to buy", "not interested in buying",
+                "not interested in purchasing", "no longer looking to buy",
+                "مش بدور على", "مش عايز اشتري", "مش عاوز اشتري",
+                "لا اريد شراء", "لا ارغب في شراء", "مش محتاج اشتري",
+            )
+            if any(_normalize_search_query(term).casefold() in normalized for term in negations):
+                continue
             for phrase in phrases:
                 needle = _normalize_search_query(phrase).casefold()
                 if needle and needle in normalized:
@@ -2676,6 +2684,10 @@ class WebAgent:
 
         started = time.monotonic()
         self._reset_deepseek_search_budget()
+        # Keep this report scoped to the current diagnostics request, not earlier asks.
+        with self._provider_diagnostics_lock:
+            self._provider_diagnostics = []
+        self.model_usage = []
         report: dict[str, Any] = {
             "timestamp_utc": datetime.now(UTC).isoformat(timespec="seconds"),
             "checks": {},
@@ -2747,15 +2759,21 @@ class WebAgent:
                 1 for item in self._provider_diagnostics
                 if item.get("status") in {"failed", "timeout"}
             )
-        if probe_result_list or completed_connector_responses:
+        if probe_result_list:
             web_status = "passed"
             web_note = (
-                "A public search connector completed a live request; result count describes "
-                "retrieved matches, not general reachability or answer quality."
+                "A public search connector returned a usable result. This confirms a successful "
+                "probe, not general reachability or answer quality."
+            )
+        elif completed_connector_responses:
+            web_status = "degraded"
+            web_note = (
+                "At least one connector completed a request, but no usable results were returned. "
+                "This differs from a confirmed connection failure."
             )
         elif probe_errors or provider_failure_count:
             web_status = "failed"
-            web_note = "No search connector returned usable results or confirmed a completed response."
+            web_note = "All probes failed before any completed connector response or usable result was confirmed."
         else:
             web_status = "degraded"
             web_note = (

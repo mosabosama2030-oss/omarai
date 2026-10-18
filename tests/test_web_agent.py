@@ -2274,3 +2274,33 @@ def test_deepseek_search_request_budget_defaults_to_one_and_is_bounded(monkeypat
     assert other_agent._reserve_deepseek_search_request() is True
     assert other_agent._reserve_deepseek_search_request() is True
     assert other_agent._reserve_deepseek_search_request() is False
+
+
+
+def test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure(monkeypatch):
+    agent = WebAgent()
+    # A stale record from a prior search must not make a new diagnostics call pass.
+    agent._record_provider_diagnostic("old_provider", "old query", "ok", 1)
+
+    def no_results(query):
+        agent._record_provider_diagnostic("duckduckgo_html", query, "no_results")
+        raise RuntimeError("no parseable results")
+
+    monkeypatch.setattr(agent, "_search_web", no_results)
+    report = agent.diagnostics(test_model=False, test_social=False)
+
+    check = report["checks"]["web_search"]
+    assert check["status"] == "degraded"
+    assert check["result_count"] == 0
+    assert check["completed_connector_responses"] >= 1
+    assert "completed a request" in check["note"]
+    assert "old_provider" not in str(check)
+
+
+def test_buyer_intent_phrase_inside_negated_text_is_not_a_lead_signal():
+    source = {
+        "title": "Buyer discussion",
+        "snippet": "I am not looking to buy an apartment this year.",
+        "page_text": "I am not looking to buy an apartment this year.",
+    }
+    assert WebAgent._lead_intent_evidence(source) is None
