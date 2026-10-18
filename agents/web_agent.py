@@ -475,7 +475,7 @@ class WebAgent:
             r"(?:من\s+حيث|من\s+ناحية|من\s+الناحية|فيما\s+يتعلق\s+ب|فيما\s+يخص|"
             r"من\s+منظور|in\s+terms\s+of|with\s+respect\s+to|"
             r"from\s+the\s+perspective\s+of|based\s+on\s+the\s+following\s+criteria)"
-            r"\s*(.+?)(?=[؟?؛;\n]|$)",
+            r"\s*(.+?)(?=[؟?!.؛;\n]|$)",
             flags=re.IGNORECASE,
         )
         match = marker.search(text)
@@ -508,7 +508,7 @@ class WebAgent:
         targets: list[str] = []
         seen: set[str] = set()
         for piece in pieces:
-            target = re.sub(r"^[\s:،,؛;/\-–—]+|[\s:،,؛;/\-–—]+$", "", piece).strip()
+            target = re.sub(r"^[\s:،,؛;/.!?\-–—]+|[\s:،,؛;/.!?\-–—]+$", "", piece).strip()
             target = re.sub(r"^(?:و\s*)", "", target).strip()
             if len(target) < 2:
                 continue
