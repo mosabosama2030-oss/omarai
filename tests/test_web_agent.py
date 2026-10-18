@@ -2239,3 +2239,38 @@ def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(mon
     assert rows[0]["snippet"] == "Looking to buy a flat in the requested area."
     assert rows[0]["provider_rerank_score"] == 2.2
     assert "test-secret-key-that-must-not-appear" not in str(rows)
+
+
+
+def test_diagnostics_distinguishes_connector_response_without_matches_from_offline(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(agent, "_request_completion", lambda *args, **kwargs: "OK")
+
+    def completed_empty_search(query):
+        agent._record_provider_diagnostic(
+            "bing_rss", query, "no_results", result_count=0,
+            error="connector completed but returned no parseable results",
+        )
+        raise RuntimeError("no usable search matches")
+
+    monkeypatch.setattr(agent, "_search_web", completed_empty_search)
+    report = agent.diagnostics(test_model=False, test_social=False)
+
+    assert report["checks"]["web_search"]["status"] == "passed"
+    assert report["checks"]["web_search"]["result_count"] == 0
+    assert report["checks"]["web_search"]["completed_connector_responses"] >= 1
+    assert "result count" in report["checks"]["web_search"]["note"]
+
+
+def test_deepseek_search_request_budget_defaults_to_one_and_is_bounded(monkeypatch):
+    monkeypatch.setenv("DEEPSEEK_SEARCH_API_KEY", "test-secret-key")
+    monkeypatch.delenv("OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET", raising=False)
+    agent = WebAgent()
+    assert agent._reserve_deepseek_search_request() is True
+    assert agent._reserve_deepseek_search_request() is False
+
+    monkeypatch.setenv("OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET", "2")
+    other_agent = WebAgent()
+    assert other_agent._reserve_deepseek_search_request() is True
+    assert other_agent._reserve_deepseek_search_request() is True
+    assert other_agent._reserve_deepseek_search_request() is False

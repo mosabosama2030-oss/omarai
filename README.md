@@ -28,6 +28,9 @@ This is a tool-using research agent built around existing language models, not a
 Omarai can optionally compare results from DeepSeek's Search API when
 `DEEPSEEK_SEARCH_API_KEY` is configured in the host's secret settings. It is
 **disabled by default**; DuckDuckGo and Bing remain configured as before.
+To limit possible spend when opted in, the request budget defaults to **one
+DeepSeek Search call per answer/diagnostic operation**. It can be set from 0 to 3
+using `OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET`; invalid values fall back to 1.
 DeepSeek Search is billed per successful request (currently documented at
 US$0.75 per 1,000 successful searches); review the
 [official Search & Fetch guide](https://api-docs.deepseek.com/guides/search/)

@@ -297,6 +297,8 @@ class WebAgent:
         self.server_search_sources: list[dict[str, Any]] = []
         self._provider_diagnostics: list[dict[str, Any]] = []
         self._provider_diagnostics_lock = threading.Lock()
+        self._deepseek_budget_lock = threading.Lock()
+        self._deepseek_search_requests_reserved = 0
         self.openrouter_web_search_enabled = (
             os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
             and "openrouter.ai" in self.base_url.lower()
@@ -984,6 +986,28 @@ class WebAgent:
                 break
         return rows
 
+    def _reset_deepseek_search_budget(self) -> None:
+        """Reset the bounded optional Search API request budget for one operation."""
+        with self._deepseek_budget_lock:
+            self._deepseek_search_requests_reserved = 0
+
+    def _reserve_deepseek_search_request(self) -> bool:
+        """Reserve one paid search request before concurrent queries invoke the provider."""
+        if not os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip():
+            return False
+        try:
+            configured_budget = int(
+                os.getenv("OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET", "1").strip()
+            )
+        except ValueError:
+            configured_budget = 1
+        budget = max(0, min(configured_budget, 3))
+        with self._deepseek_budget_lock:
+            if self._deepseek_search_requests_reserved >= budget:
+                return False
+            self._deepseek_search_requests_reserved += 1
+            return True
+
     def _search_web(self, query: str) -> list[dict[str, Any]]:
         """Run configured search connectors concurrently with isolated failures and relevance checks."""
         from agents.research import detect_freshness
@@ -995,12 +1019,17 @@ class WebAgent:
         ]
         # Experimental opt-in only: DeepSeek Search is billed per successful request.
         # Do not promote it to primary without a measured comparison.
-        if os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip():
-            adapters.append(("deepseek_search_api", self._search_deepseek_api))
-        else:
+        if not os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip():
             self._record_provider_diagnostic(
                 "deepseek_search_api", search_query, "not_configured",
                 error="DEEPSEEK_SEARCH_API_KEY is not set",
+            )
+        elif self._reserve_deepseek_search_request():
+            adapters.append(("deepseek_search_api", self._search_deepseek_api))
+        else:
+            self._record_provider_diagnostic(
+                "deepseek_search_api", search_query, "budget_exhausted",
+                error="per-operation DeepSeek Search request budget exhausted",
             )
         if os.getenv("BRAVE_SEARCH_API_KEY", "").strip():
             adapters.append(("brave_search_api", self._search_brave))
@@ -2646,6 +2675,7 @@ class WebAgent:
         from datetime import UTC, datetime
 
         started = time.monotonic()
+        self._reset_deepseek_search_budget()
         report: dict[str, Any] = {
             "timestamp_utc": datetime.now(UTC).isoformat(timespec="seconds"),
             "checks": {},
@@ -2855,6 +2885,7 @@ class WebAgent:
         if len(question) > MAX_QUESTION_CHARS:
             raise ValueError(f"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.")
         clean_history = self._sanitize_history(history)
+        self._reset_deepseek_search_budget()
         self.server_search_sources = []
         self.model_usage = []
         with self._provider_diagnostics_lock:
