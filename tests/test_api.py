@@ -50,6 +50,8 @@ def test_api_health_analyze_save_duplicate_list_and_status(local_api):
     assert status == 200
     assert health["app"] == "Omarai"
     assert health["mode"] == "web-research"
+    assert health["agent"]["verification_scope"]["live_network_checks_performed"] is False
+    assert health["agent"]["verification_scope"]["live_diagnostics_endpoint"] == "POST /api/diagnostics"
 
     text = "بدور على شقة في التجمع الخامس وممكن معاينة"
     status, assessment = request_json(
