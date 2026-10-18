@@ -26,6 +26,46 @@ def sample_source(index=0):
     }
 
 
+def test_relevant_passage_selection_finds_question_evidence_late_in_long_page():
+    opening = "مقدمة عامة لا تجيب عن السؤال وتتحدث عن تاريخ الشركة. " * 35
+    target = (
+        "التحديث الرسمي لشركة ألفا: السعر الحالي 150 جنيهًا، "
+        "وآخر تحديث منشور بتاريخ 18 أكتوبر 2026."
+    )
+    page = opening + "\n\n" + target + "\n\n" + ("تفاصيل عامة إضافية عن الشركة. " * 35)
+
+    selected, truncated = WebAgent._select_relevant_evidence(
+        page,
+        "ما السعر الحالي لشركة ألفا وآخر تحديث منشور؟",
+        limit=700,
+    )
+
+    assert truncated is True
+    assert len(selected) <= 700
+    assert "السعر الحالي 150 جنيهًا" in selected
+    assert "18 أكتوبر 2026" in selected
+    assert selected != page[:700]
+
+
+def test_relevant_passage_selection_preserves_short_evidence_unchanged():
+    evidence = "السعر الحالي 150 جنيهًا حسب البيان المنشور."
+    selected, truncated = WebAgent._select_relevant_evidence(
+        evidence, "ما السعر الحالي؟", limit=500
+    )
+    assert selected == evidence
+    assert truncated is False
+
+
+def test_relevant_passage_selection_is_bounded_and_falls_back_without_query_overlap():
+    page = ("معلومة عامة لا تحتوي على المصطلحات المطلوبة. " * 40)
+    selected, truncated = WebAgent._select_relevant_evidence(
+        page, "ZXQ astronomy quasar", limit=300
+    )
+    assert len(selected) <= 300
+    assert truncated is True
+    assert selected == page[:300] or selected.startswith("معلومة")
+
+
 def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     agent = WebAgent()
     agent.api_key = "test-key"
