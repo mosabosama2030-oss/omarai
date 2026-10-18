@@ -1840,3 +1840,65 @@ def test_success_report_counts_registrable_domains_not_sibling_subdomains(monkey
     assert result["search_report"]["distinct_registrable_domains"] == 2
     assert result["search_report"]["independent_sources"] == 2
     assert result["search_report"]["editorial_independence_status"] == "not_assessed"
+
+
+def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypatch):
+    import json
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "fallback/model"
+    called = []
+
+    class FakeResponse:
+        def __init__(self, content, finish_reason):
+            self.body = json.dumps({
+                "choices": [{
+                    "message": {"content": content},
+                    "finish_reason": finish_reason,
+                }]
+            }).encode("utf-8")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return self.body
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        called.append(model)
+        if model == "filtered/primary":
+            return FakeResponse("جزء جواب مفلتر لا ينبغي اعتباره مكتملا", "content_filter")
+        return FakeResponse("إجابة الاحتياط المكتملة", "stop")
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "اختبار"}],
+        model="filtered/primary",
+    )
+
+    assert result == "إجابة الاحتياط المكتملة"
+    assert called == ["filtered/primary", "fallback/model"]
+    assert "جزء جواب مفلتر" not in result
+
+
+def test_reviewer_rejects_duplicate_final_answer_delimiters(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    source = sample_source(0)
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (
+            "<<<OMARAI_FINAL_ANSWER>>>تقرير مراجعة داخلي "
+            "<<<OMARAI_FINAL_ANSWER>>>نص مزعوم"
+            "<<<END_OMARAI_FINAL_ANSWER>>><<<END_OMARAI_FINAL_ANSWER>>>"
+        ),
+    )
+
+    with pytest.raises(RuntimeError, match="فصل الإجابة النهائية"):
+        agent._review_answer("ما مضمون الصفحة؟", "مسودة", [source])

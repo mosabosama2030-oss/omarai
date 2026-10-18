@@ -2035,10 +2035,17 @@ class WebAgent:
                 choice = data["choices"][0]
                 if not isinstance(choice, dict):
                     raise TypeError("invalid completion choice")
-                if choice.get("finish_reason") in {"length", "max_tokens"}:
+                finish_reason = choice.get("finish_reason")
+                if finish_reason in {"length", "max_tokens"}:
                     last_error = RuntimeError(
                         "أعاد نموذج اللغة إجابة مبتورة بسبب الوصول إلى حد الرموز؛ "
                         "لم تُقبل كإجابة مكتملة."
+                    )
+                    continue
+                if finish_reason in {"content_filter", "error", "abort", "cancelled"}:
+                    last_error = RuntimeError(
+                        "لم تُكمل خدمة النموذج إنشاء الإجابة (حالة الإنهاء غير مكتملة)؛ "
+                        "لم تُقبل المخرجات كإجابة نهائية."
                     )
                     continue
                 message = choice["message"]
@@ -2418,12 +2425,20 @@ class WebAgent:
             timeout=min(self.timeout, 12),
             model=self.review_model,
         )
+        start_marker = "<<<OMARAI_FINAL_ANSWER>>>"
+        end_marker = "<<<END_OMARAI_FINAL_ANSWER>>>"
         final_answer = re.fullmatch(
             r"\s*<<<OMARAI_FINAL_ANSWER>>>\s*(.*?)\s*<<<END_OMARAI_FINAL_ANSWER>>>\s*",
             raw_review,
             flags=re.DOTALL,
         )
-        if final_answer is None or not final_answer.group(1).strip():
+        if (
+            raw_review.count(start_marker) != 1
+            or raw_review.count(end_marker) != 1
+            or final_answer is None
+            or not final_answer.group(1).strip()
+            or len(final_answer.group(1)) > 24_000
+        ):
             raise RuntimeError(
                 "تعذر فصل الإجابة النهائية عن مخرجات التدقيق؛ تم حجب المخرجات غير المنضبطة."
             )
@@ -3048,7 +3063,7 @@ class WebAgent:
         search_warning = "؛ ".join(dict.fromkeys(search_warnings)) if search_warnings else None
         if needs_corroboration and not task_specific_partial_evidence:
             reason = (
-                "لم أجد أدلة كافية مرتبطة بسؤالك من نطاقين مسجلين مختلفين على الأقل. "
+                "لم أجد معلومات موثوقة كافية مرتبطة بسؤالك من نطاقين مسجلين مختلفين على الأقل. "
                 "اختلاف النطاقات لا يثبت الاستقلال التحريري. لن أخمّن أو أقدّم نتيجة غير مدعومة؛ "
                 "جرّب صياغة أدق أو أعد المحاولة لاحقًا."
             )
