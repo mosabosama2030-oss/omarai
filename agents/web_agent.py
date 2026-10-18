@@ -2511,7 +2511,8 @@ class WebAgent:
             if not explicit_deep:
                 # The planner may overclassify short lookups as deep research. Preserve
                 # the user's actual intent first and cap routine searches to three queries.
-                fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
+                contextual_question = self._history_search_query(question, clean_history)
+                fallback_queries = fallback_plan(contextual_question, clean_history).get("queries") or [contextual_question]
                 model_queries = plan.get("queries") or []
                 if self._is_navigation_request(question):
                     subject = re.sub(
