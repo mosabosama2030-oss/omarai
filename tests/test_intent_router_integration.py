@@ -52,6 +52,7 @@ def test_greeting_is_local_without_model_or_search(monkeypatch) -> None:
     result = agent.answer("ازيك؟ عامل ايه النهاردة؟")
 
     assert result["kind"] == "local_conversation"
+    assert result["intent_route"] == "LOCAL"
     assert result["research_plan"]["intent_route"] == "LOCAL"
     assert result["used_web_search"] is False
     assert result["used_language_model"] is False
@@ -71,6 +72,7 @@ def test_ambiguous_question_clarifies_without_model_or_search(monkeypatch) -> No
     result = agent.answer("كام سعرها؟")
 
     assert result["kind"] == "clarification_needed"
+    assert result["intent_route"] == "CLARIFY"
     assert result["research_plan"]["intent_route"] == "CLARIFY"
     assert "تقصد" in result["answer"]
     assert result["used_web_search"] is False
@@ -102,6 +104,7 @@ def test_contextual_price_followup_searches_with_previous_subject(monkeypatch) -
 
     result = agent.answer("كام سعرها؟", history=history)
 
+    assert result["intent_route"] == "WEB_SIMPLE"
     assert result["research_plan"]["intent_route"] == "WEB_SIMPLE"
     assert result["used_web_search"] is True
     assert any("iPhone 17" in query for query in seen["plan"]["queries"])
@@ -143,6 +146,7 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
         history=history,
     )
 
+    assert result["intent_route"] == "WEB_DEEP"
     assert result["research_plan"]["intent_route"] == "WEB_DEEP"
     assert result["research_plan"]["depth"] == "deep"
     assert len(seen["plan"]["queries"]) > 1
