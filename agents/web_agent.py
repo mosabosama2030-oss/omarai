@@ -2531,6 +2531,16 @@ class WebAgent:
                 ))[:3]
                 plan["depth"] = "standard"
         base_query = (plan.get("queries") or [question])[0]
+        if clean_mode == "auto" and intent_route == "WEB_DEEP":
+            deep_candidates = [
+                f"{base_query} official sources evidence",
+                f"{base_query} risks limitations alternatives",
+                f"{base_query} recent data reviews comparison",
+            ]
+            plan["queries"] = list(dict.fromkeys(
+                (plan.get("queries") or [])[:5] + deep_candidates
+            ))[:MAX_PLAN_QUERIES]
+            base_query = (plan.get("queries") or [question])[0]
         # Explicit user-selected modes are control inputs. They do not bypass source
         # validation and never permit private-source access.
         if clean_mode == "deep":
