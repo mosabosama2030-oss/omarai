@@ -962,6 +962,16 @@ def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(m
 
 def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):
     agent = WebAgent()
+    plan = {
+        "queries": ["معلومات عن هذه التقنية"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
     calls = []
 
     def collect_only_one_source(research_plan):
@@ -985,7 +995,7 @@ def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monk
         agent, "_generate",
         lambda *args, **kwargs: pytest.fail("LLM must not answer without two independent domains"),
     )
-    result = agent.answer("قارن هذه التقنية")
+    result = agent.answer("ما آخر أخبار هذه التقنية اليوم؟")
     assert result["kind"] == "insufficient_evidence"
     assert result["research_quality"] == "failed"
     assert "لم أجد معلومات موثوقة كافية" in result["answer"]
