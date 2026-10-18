@@ -2785,13 +2785,17 @@ class WebAgent:
         # Scope diagnostic evidence to this research attempt; a reused WebAgent must not
         # accidentally inherit provider attempts from an earlier question.
         with self._provider_diagnostics_lock:
-            research_diagnostic_start = len(self._provider_diagnostics)
+            research_diagnostic_baseline = list(self._provider_diagnostics)
         try:
             sources, search_warnings, report = self._collect_research(plan)
         except (RuntimeError, AgentDependencyError, ValueError) as exc:
             search_warnings.append(str(exc))
+            baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}
             with self._provider_diagnostics_lock:
-                failure_diagnostics = list(self._provider_diagnostics[research_diagnostic_start:])
+                failure_diagnostics = [
+                    item for item in self._provider_diagnostics
+                    if id(item) not in baseline_diagnostic_ids
+                ]
             provider_attempt_observed = any(
                 item.get("status") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
                 for item in failure_diagnostics
@@ -3064,10 +3068,12 @@ class WebAgent:
                 else:
                     evidence_repair["reason"] = "repair_query_was_not_distinct"
         report["evidence_repair"] = evidence_repair
+        baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}
         with self._provider_diagnostics_lock:
-            current_research_diagnostics = list(
-                self._provider_diagnostics[research_diagnostic_start:]
-            )
+            current_research_diagnostics = [
+                item for item in self._provider_diagnostics
+                if id(item) not in baseline_diagnostic_ids
+            ]
         report["provider_diagnostics"] = current_research_diagnostics
         provider_attempt_observed = any(
             item.get("status") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
