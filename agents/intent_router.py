@@ -151,6 +151,16 @@ def _is_deep(question: str) -> bool:
     )
 
 
+def _is_summarization_request(question: str) -> bool:
+    """User asked to summarize a page/article/link; prefer a web/page path over MODEL_ONLY."""
+    normalized = _normalize(question)
+    terms = (
+        "لخص", "تلخيص", "ملخص",
+        "summarize", "summarise", "summary",
+    )
+    return any(_normalize(term) in normalized for term in terms)
+
+
 def route_intent(
     question: str,
     history: Any = None,
@@ -186,6 +196,16 @@ def route_intent(
         return {
             "route": "LOCAL",
             "reason": "short_conversational_turn",
+            "context_available": context_available,
+            "needs_clarification": False,
+        }
+
+    # Summarization of a page/article/link is a research-shaped task; do not
+    # leave it on MODEL_ONLY when the user explicitly asked to summarize.
+    if _is_summarization_request(question):
+        return {
+            "route": "WEB_SIMPLE",
+            "reason": "summarization_request",
             "context_available": context_available,
             "needs_clarification": False,
         }
