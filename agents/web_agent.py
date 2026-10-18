@@ -2724,7 +2724,7 @@ class WebAgent:
                 evidence_repair["reason"] = "task_specific_partial_evidence"
             elif plan.get("social_focus"):
                 evidence_repair["reason"] = "social_search_not_retried"
-            elif report.get("expansion_queries"):
+            elif plan.get("depth") == "deep" or report.get("expansion_queries"):
                 evidence_repair["reason"] = "deep_research_already_expanded"
             else:
                 original_queries = [
