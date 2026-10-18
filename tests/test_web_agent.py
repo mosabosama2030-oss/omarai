@@ -638,6 +638,12 @@ def test_health_status_reports_models_without_credentials(monkeypatch):
     assert status["answer_model"] == "google/gemma-4-31b-it:free"
     assert status["fallback_model"] == "openrouter/free"
     assert status["language_model_configured"] is False
+    assert status["verification_scope"]["kind"] == "configuration_snapshot"
+    assert status["verification_scope"]["live_network_checks_performed"] is False
+    assert status["verification_scope"]["language_model_configured_means"] == (
+        "credential_present_not_successful_completion"
+    )
+    assert status["verification_scope"]["live_diagnostics_endpoint"] == "POST /api/diagnostics"
     assert "api_key" not in status
 
 
