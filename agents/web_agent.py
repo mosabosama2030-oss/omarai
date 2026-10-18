@@ -550,7 +550,9 @@ class WebAgent:
     def _annotate_intent_route(
         result: dict[str, Any], route: str, reason: str, mode: str = "auto"
     ) -> dict[str, Any]:
-        """Attach route diagnostics to the existing research-plan metadata."""
+        """Attach route diagnostics to both response and research-plan metadata."""
+        result["intent_route"] = route
+        result["intent_route_reason"] = reason
         plan = result.get("research_plan")
         if not isinstance(plan, dict):
             plan = {}
@@ -2720,6 +2722,8 @@ class WebAgent:
                 "used_social_search": bool(report.get("social_direct_results", 0)),
                 "warnings": list(dict.fromkeys(search_warnings + [reason])),
                 "kind": "insufficient_evidence",
+                "intent_route": intent_route,
+                "intent_route_reason": intent_reason,
                 "research_quality": "failed",
             }
 
@@ -2877,4 +2881,6 @@ class WebAgent:
             "used_social_search": bool(report.get("social_direct_results", 0)),
             "warnings": warnings,
             "kind": "web_research" if used_llm else "web_fallback",
+            "intent_route": intent_route,
+            "intent_route_reason": intent_reason,
         }
