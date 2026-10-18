@@ -23,17 +23,79 @@ Examples
 from __future__ import annotations
 
 import argparse
+import ipaddress
 import json
 import os
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import UTC, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CORPUS = ROOT / "tests" / "fixtures" / "answer_quality_cases.json"
+MAX_RESPONSE_BYTES = 2_000_000
+
+
+def validate_base_url(base_url: str, *, token_present: bool = False) -> str:
+    """Validate and normalize an API origin before any request can carry a token."""
+    if not isinstance(base_url, str) or not base_url.strip():
+        raise ValueError("Base URL must be a non-empty HTTP(S) origin.")
+    try:
+        parsed = urllib.parse.urlsplit(base_url.strip())
+        scheme = parsed.scheme.lower()
+        host = (parsed.hostname or "").lower().rstrip(".")
+        port = parsed.port
+    except ValueError as exc:
+        raise ValueError("Base URL is malformed.") from exc
+
+    if scheme not in {"http", "https"} or not host:
+        raise ValueError("Base URL must use HTTP or HTTPS and include a hostname.")
+    if parsed.username is not None or parsed.password is not None:
+        raise ValueError("Base URL must not include a username or password.")
+    if parsed.path not in {"", "/"} or parsed.query or parsed.fragment:
+        raise ValueError("Base URL must contain only the origin, without path, query, or fragment.")
+
+    loopback = host == "localhost"
+    try:
+        loopback = ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        pass
+
+    if scheme == "http" and not loopback:
+        raise ValueError("Plain HTTP is allowed only for localhost or a loopback IP.")
+
+    if (scheme == "https" and port == 443) or (scheme == "http" and port == 80):
+        port = None
+    host_for_origin = f"[{host}]" if ":" in host else host
+    origin = f"{scheme}://{host_for_origin}" + (f":{port}" if port is not None else "")
+
+    if token_present and not loopback:
+        allowed = os.getenv("OMARAI_BENCHMARK_ALLOWED_ORIGIN", "").strip()
+        if not allowed:
+            raise ValueError(
+                "A bearer token requires OMARAI_BENCHMARK_ALLOWED_ORIGIN to match "
+                "the exact HTTPS deployment origin."
+            )
+        allowed_origin = validate_base_url(allowed, token_present=False)
+        if allowed_origin != origin:
+            raise ValueError(
+                "Refusing to send the bearer token: base URL does not match "
+                "OMARAI_BENCHMARK_ALLOWED_ORIGIN."
+            )
+    return origin
+
+
+class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Do not follow redirects; the bearer token must never move to another origin."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+_NO_REDIRECT_OPENER = urllib.request.build_opener(_NoRedirectHandler())
 
 REQUIRED_FIELDS = {
     "case_id",
@@ -128,26 +190,35 @@ def post_agent(
     timeout: float,
     token: str | None,
 ) -> tuple[int, dict | str]:
-    url = base_url.rstrip("/") + "/api/agent"
+    origin = validate_base_url(base_url, token_present=bool(token))
+    url = origin + "/api/agent"
     body = json.dumps({"question": question, "history": []}, ensure_ascii=False).encode("utf-8")
     headers = {"Content-Type": "application/json", "Content-Length": str(len(body))}
     if token:
         headers["Authorization"] = "Bearer " + token
     req = urllib.request.Request(url, data=body, headers=headers, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            raw = resp.read().decode("utf-8", errors="replace")
+        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:
+            raw_bytes = resp.read(MAX_RESPONSE_BYTES + 1)
+            if len(raw_bytes) > MAX_RESPONSE_BYTES:
+                return 0, {"error": "ResponseTooLarge", "detail": "Response exceeded the 2 MB limit."}
+            raw = raw_bytes.decode("utf-8", errors="replace")
             status = getattr(resp, "status", 200)
             try:
                 return status, json.loads(raw)
             except json.JSONDecodeError:
                 return status, raw
     except urllib.error.HTTPError as exc:
-        raw = exc.read().decode("utf-8", errors="replace")
+        raw_bytes = exc.read(MAX_RESPONSE_BYTES + 1)
+        if len(raw_bytes) > MAX_RESPONSE_BYTES:
+            return exc.code, {"error": "ResponseTooLarge", "detail": "Response exceeded the 2 MB limit."}
+        raw = raw_bytes.decode("utf-8", errors="replace")
         try:
             return exc.code, json.loads(raw)
         except json.JSONDecodeError:
             return exc.code, raw
+    except ValueError as exc:
+        return 0, {"error": "UnsafeBaseURL", "detail": str(exc)}
     except (urllib.error.URLError, TimeoutError, OSError) as exc:
         return 0, {"error": type(exc).__name__, "detail": str(exc)}
 
@@ -197,6 +268,11 @@ def run_live(
         return 2
 
     token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip() or None
+    try:
+        safe_base_url = validate_base_url(base_url, token_present=bool(token))
+    except ValueError as exc:
+        print(f"Unsafe base URL; refusing live run: {exc}", file=sys.stderr)
+        return 2
     cases = data["cases"]
     if case_id:
         cases = [c for c in cases if c["case_id"] == case_id]
@@ -214,7 +290,7 @@ def run_live(
     for case in cases:
         cid = case["case_id"]
         prompt = case["question"]
-        status_code, payload = post_agent(base_url, prompt, timeout, token)
+        status_code, payload = post_agent(safe_base_url, prompt, timeout, token)
         if isinstance(payload, dict):
             safe_payload = json.loads(redact_secrets(json.dumps(payload, ensure_ascii=False)))
         else:
@@ -227,7 +303,7 @@ def run_live(
             "benchmark_id": data.get("benchmark_id"),
             "executed_at_utc": _utc_now(),
             "mode": "live_api",
-            "base_url": base_url,
+            "base_url": safe_base_url,
             "http_status": status_code,
             "prompt": prompt,
             "expected_strategy": case["expected_strategy"],
