@@ -179,6 +179,49 @@ def _is_deep(question: str) -> bool:
     )
 
 
+def _is_page_summarization_request(question: str) -> bool:
+    """Recognize a request to summarize a specific web page or link."""
+    normalized = _normalize(question)
+    terms = ("لخص", "تلخيص", "ملخص", "summarize", "summarise", "summary")
+    page_references = (
+        "صفحه", "الصفحه", "مقال", "المقال", "رابط", "لينك", "url",
+        "link", "article", "page", "webpage", "web page", "website",
+    )
+    return (
+        any(_normalize(term) in normalized for term in terms)
+        and (
+            bool(re.search(r"https?://", question, flags=re.IGNORECASE))
+            or any(_normalize(term) in normalized for term in page_references)
+        )
+    )
+
+
+def _has_inline_summary_text(question: str) -> bool:
+    """Detect text explicitly pasted after a summary instruction, not a web page URL."""
+    if re.search(r"https?://", question, flags=re.IGNORECASE):
+        return False
+    normalized = _normalize(question)
+    markers = (
+        "النص التالي", "النص الاتي", "النص ده", "النص اللي جاي",
+        "this text", "following text", "the following text", "text below",
+        "text to summarize", "content below",
+    )
+    for marker in markers:
+        normalized_marker = _normalize(marker)
+        if normalized_marker in normalized:
+            remainder = normalized.split(normalized_marker, 1)[1].strip()
+            if len(remainder) >= 8:
+                return True
+    # Also allow a concise direct form such as "لخص: [pasted paragraph]".
+    return bool(
+        re.search(
+            r"^\s*(?:لخص(?:\s+لي)?|تلخيص|summari[sz]e|summary)\s*[:：]\s*\S.{12,}$",
+            question,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
 def route_intent(
     question: str,
     history: Any = None,
@@ -216,6 +259,30 @@ def route_intent(
             "reason": "short_conversational_turn",
             "context_available": context_available,
             "needs_clarification": False,
+        }
+
+    # A page/link summary needs a concrete source. Pasted text is handled locally;
+    # an absent source must trigger clarification rather than a search for "the page".
+    if _is_page_summarization_request(question):
+        if _has_inline_summary_text(question):
+            return {
+                "route": "MODEL_ONLY",
+                "reason": "summarization_text_provided",
+                "context_available": context_available,
+                "needs_clarification": False,
+            }
+        if re.search(r"https?://", question, flags=re.IGNORECASE):
+            return {
+                "route": "WEB_SIMPLE",
+                "reason": "summarization_request",
+                "context_available": context_available,
+                "needs_clarification": False,
+            }
+        return {
+            "route": "CLARIFY",
+            "reason": "missing_summarization_input",
+            "context_available": context_available,
+            "needs_clarification": True,
         }
 
     ambiguous = _needs_clarification(question)

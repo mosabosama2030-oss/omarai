@@ -93,3 +93,32 @@ def test_ambiguous_followup_does_not_reuse_stale_topic_after_acknowledgment() ->
 def test_explicit_mode_overrides_conversational_shortcuts() -> None:
     assert route_intent("ازيك؟", mode="deep")["route"] == "WEB_DEEP"
     assert route_intent("ما سعر الهاتف؟", mode="latest")["route"] == "WEB_SIMPLE"
+
+
+@pytest.mark.parametrize(
+    ("question", "expected_route", "expected_reason"),
+    [
+        (
+            "لخص الصفحة https://example.com/article",
+            "WEB_SIMPLE",
+            "summarization_request",
+        ),
+        (
+            "Summarize this page https://example.com/article",
+            "WEB_SIMPLE",
+            "summarization_request",
+        ),
+        ("لخص الصفحة", "CLARIFY", "missing_summarization_input"),
+        ("لخص لي هذا الرابط", "CLARIFY", "missing_summarization_input"),
+        ("summarize the page", "CLARIFY", "missing_summarization_input"),
+        ("تلخيص المقال", "CLARIFY", "missing_summarization_input"),
+        ("لخص النص التالي: هذا نص تجريبي", "MODEL_ONLY", "stable_knowledge_or_conversation"),
+        ("Summarize this text: the test content is here", "MODEL_ONLY", "stable_knowledge_or_conversation"),
+    ],
+)
+def test_summarization_routing_respects_page_text_and_missing_input(
+    question: str, expected_route: str, expected_reason: str
+) -> None:
+    decision = route_intent(question, [])
+    assert decision["route"] == expected_route
+    assert decision["reason"] == expected_reason
