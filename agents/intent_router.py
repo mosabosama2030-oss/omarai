@@ -9,6 +9,8 @@ import re
 import unicodedata
 from typing import Any
 
+MAX_CONTEXT_TURNS = 8
+
 ROUTES = frozenset({
     "LOCAL", "MODEL_ONLY", "CLARIFY", "WEB_SIMPLE", "WEB_DEEP",
 })
