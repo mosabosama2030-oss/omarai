@@ -99,6 +99,24 @@ def _has_context(history: Any) -> bool:
     return False
 
 
+def _has_live_signal(question: str) -> bool:
+    """Recognize common time-sensitive or explicit-search requests without a model."""
+    normalized = _normalize(question)
+    live_terms = (
+        "ابحث", "بحث عن", "دور على", "دورلي", "هات رابط", "هاتلي", "جيبلي",
+        "اعثر على", "موقع", "رابط", "لينك", "اخبار", "اخر", "احدث", "اليوم",
+        "دلوقتي", "حاليا", "سعر", "اسعار", "للبيع", "للايجار", "ايجار",
+        "معاينه", "عميل محتمل", "عملاء محتملين", "وظائف", "وظيفه", "حجز",
+        "موعد", "الطقس", "سهم", "سعر الصرف", "search", "find", "look up",
+        "latest", "today", "current", "news", "price", "for sale", "for rent",
+        "real estate", "job opening", "appointment", "reservation", "weather",
+        "stock price", "exchange rate",
+    )
+    return any(_normalize(term) in normalized for term in live_terms) or bool(
+        re.search(r"https?://", question, flags=re.IGNORECASE)
+    )
+
+
 def _needs_clarification(question: str) -> bool:
     normalized = _normalize(question)
     if normalized in _AMBIGUOUS_ARABIC or normalized in _AMBIGUOUS_ENGLISH:
@@ -183,7 +201,7 @@ def route_intent(
             "needs_clarification": False,
         }
 
-    if requires_web:
+    if requires_web or _has_live_signal(question):
         return {
             "route": "WEB_SIMPLE",
             "reason": "freshness_or_explicit_research_signal",
