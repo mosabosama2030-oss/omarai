@@ -2137,6 +2137,83 @@ class WebAgent:
             plan["queries"] = list(dict.fromkeys(query_list))[:MAX_PLAN_QUERIES]
         return plan
 
+    @staticmethod
+    def _select_relevant_evidence(
+        text: Any,
+        query: str,
+        limit: int = 2400,
+    ) -> tuple[str, bool]:
+        """Choose bounded, query-relevant passages from a long page instead of only its start."""
+        if not isinstance(text, str) or not text.strip() or limit <= 0:
+            return "", bool(text)
+        cleaned = _clean_text(text, MAX_PAGE_TEXT_CHARS * 2)
+        if len(cleaned) <= limit:
+            return cleaned, False
+
+        query_tokens = _search_tokens(query)
+        if len(query_tokens) < 2:
+            return cleaned[:limit], True
+
+        chunks: list[tuple[int, str, set[str]]] = []
+        position = 0
+        # Split on paragraph/sentence boundaries first; split unusually long blocks
+        # into bounded windows so a single legal/technical paragraph cannot dominate.
+        for piece in re.split(r"\n{2,}|(?<=[.!?؟؛。])\s+", cleaned):
+            piece = piece.strip()
+            if not piece:
+                continue
+            while len(piece) > 520:
+                cut = piece.rfind(" ", 200, 521)
+                if cut < 200:
+                    cut = 520
+                chunk = piece[:cut].strip()
+                if chunk:
+                    chunks.append((position, chunk, _search_tokens(chunk)))
+                    position += 1
+                piece = piece[cut:].strip()
+            if piece:
+                chunks.append((position, piece, _search_tokens(piece)))
+                position += 1
+
+        scored = [
+            (len(query_tokens & chunk_tokens), index, content, chunk_tokens)
+            for index, content, chunk_tokens in chunks
+            if query_tokens & chunk_tokens
+        ]
+        if not scored:
+            return cleaned[:limit], True
+
+        # Rank by useful term overlap, reject near-identical passages, and restore
+        # original document order for the final evidence shown to the model.
+        scored.sort(key=lambda item: (-item[0], item[1]))
+        selected: list[tuple[int, str, set[str]]] = []
+        selected_chars = 0
+        separator_chars = len("\n…\n")
+        for hits, index, content, chunk_tokens in scored:
+            duplicate = False
+            for _, _, existing_tokens in selected:
+                union = chunk_tokens | existing_tokens
+                if union and len(chunk_tokens & existing_tokens) / len(union) >= 0.90:
+                    duplicate = True
+                    break
+            if duplicate:
+                continue
+            cost = len(content) + (separator_chars if selected else 0)
+            if selected_chars + cost > limit:
+                remaining = limit - selected_chars - (separator_chars if selected else 0)
+                if remaining >= 120:
+                    selected.append((index, content[:remaining].rstrip(), chunk_tokens))
+                    selected_chars = limit
+                break
+            selected.append((index, content, chunk_tokens))
+            selected_chars += cost
+
+        if not selected:
+            return cleaned[:limit], True
+        selected.sort(key=lambda item: item[0])
+        chosen = "\n…\n".join(item[1] for item in selected)
+        return chosen[:limit], True
+
     def _generate(
         self,
         question: str,
@@ -2149,13 +2226,29 @@ class WebAgent:
         plan = research_plan or {}
         report = search_report or {}
         source_blocks: list[str] = []
+        selected_passages = 0
+        long_sources_considered = 0
+        passage_query = " ".join(
+            [question] + [
+                item for item in plan.get("queries", []) if isinstance(item, str)
+            ]
+        )
         for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):
-            evidence = (
+            raw_evidence = (
                 source.get("page_text")
                 or source.get("snippet")
                 or "لا يتوفر مقتطف نصي."
             )
-            evidence = _clean_text(evidence, 2400)
+            evidence, was_selected = self._select_relevant_evidence(
+                raw_evidence, passage_query, limit=2400
+            )
+            if was_selected:
+                selected_passages += 1
+                long_sources_considered += 1
+                evidence = (
+                    "مقتطفات منتقاة آليًا حسب صلتها بالسؤال من نص أطول؛ "
+                    "لا تمثل بالضرورة الصفحة كاملة.\n" + evidence
+                )[:2600]
             providers = ", ".join(source.get("providers", [])) or "غير محدد"
             queries = " | ".join(source.get("queries", [])[:3]) or "غير محدد"
             source_blocks.append(
@@ -2173,6 +2266,12 @@ class WebAgent:
             "\n\n".join(source_blocks)
             or "لم تتوفر نتائج ويب يمكن استخدامها في هذه الجولة."
         )
+        report["passage_selection"] = {
+            "method": "query_term_overlap_bounded_chunks",
+            "sources_considered": min(len(sources), MAX_LLM_CITED_SOURCES),
+            "long_sources_selected": selected_passages,
+            "all_long_text_preserved": False,
+        }
         report_text = json.dumps(
             {
                 "research_plan": {
@@ -2256,10 +2355,18 @@ class WebAgent:
     ) -> str:
         """Run a bounded evidence audit on deep-research answers; not an independent verifier."""
         source_blocks: list[str] = []
+        selected_passages = 0
         for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):
-            evidence = _clean_text(
-                source.get("page_text") or source.get("snippet") or "", 1400
+            raw_evidence = source.get("page_text") or source.get("snippet") or ""
+            evidence, was_selected = self._select_relevant_evidence(
+                raw_evidence, question, limit=1400
             )
+            if was_selected:
+                selected_passages += 1
+                evidence = (
+                    "مقتطفات منتقاة حسب صلتها بالسؤال من نص أطول، وليست الصفحة كاملة.\n"
+                    + evidence
+                )[:1550]
             source_blocks.append(
                 f"[المصدر {index}] {source.get('title', '')}\n"
                 f"URL: {source.get('url', '')}\n"
