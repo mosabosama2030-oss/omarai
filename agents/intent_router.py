@@ -68,7 +68,7 @@ def _normalize(value: str) -> str:
 
 def _is_smalltalk(question: str) -> bool:
     normalized = _normalize(question)
-    if normalized in _SMALLTALK:
+    if normalized in {_normalize(item) for item in _SMALLTALK}:
         return True
     # Keep these patterns narrow: an opening greeting followed by a real question
     # is not itself a greeting-only request.
@@ -119,7 +119,10 @@ def _has_live_signal(question: str) -> bool:
 
 def _needs_clarification(question: str) -> bool:
     normalized = _normalize(question)
-    if normalized in _AMBIGUOUS_ARABIC or normalized in _AMBIGUOUS_ENGLISH:
+    if (
+        normalized in {_normalize(item) for item in _AMBIGUOUS_ARABIC}
+        or normalized in {_normalize(item) for item in _AMBIGUOUS_ENGLISH}
+    ):
         return True
     # Common inflected forms missed by exact phrase matching.
     return bool(
