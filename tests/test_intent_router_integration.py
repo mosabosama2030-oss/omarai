@@ -80,6 +80,7 @@ def test_ambiguous_question_clarifies_without_model_or_search(monkeypatch) -> No
 
 def test_contextual_price_followup_searches_with_previous_subject(monkeypatch) -> None:
     agent = WebAgent()
+    agent.api_key = ""  # Keep this acceptance test deterministic and offline.
     seen: dict = {}
     history = [
         {"role": "user", "content": "عايز أعرف سعر iPhone 17 في مصر"},
