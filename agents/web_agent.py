@@ -2813,11 +2813,12 @@ class WebAgent:
                     else "unknown_after_research_error"
                 ),
                 "usable_sources_after_filtering": None,
-                "unique_sources": 0,
-                "pages_fetched": 0,
+                "unique_sources": None,
+                "pages_fetched": None,
                 "providers_used": [],
+                "provider_counts": None,
                 "platform_counts": {},
-                "social_direct_results": 0,
+                "social_direct_results": None,
                 "provider_diagnostics": failure_diagnostics,
                 "depth": plan.get("depth", "standard"),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
@@ -3103,7 +3104,7 @@ class WebAgent:
         report["queries_attempted_known"] = queries_attempted is not None
         report["search_attempted"] = search_attempted
         previous_search_outcome = report.get("search_outcome")
-        if previous_search_outcome in _RESEARCH_ERROR_OUTCOMES:
+        if previous_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:
             if provider_attempt_observed or search_attempted is True:
                 search_outcome = "attempted_research_error"
             elif search_attempted is False:
@@ -3118,9 +3119,17 @@ class WebAgent:
                 else "unknown_after_research_error"
             )
         report["search_outcome"] = search_outcome
-        report["usable_sources_after_filtering"] = (
-            None if search_outcome in _RESEARCH_ERROR_OUTCOMES else len(sources)
-        )
+        if search_outcome in _RESEARCH_ERROR_OUTCOMES:
+            report["usable_sources_after_filtering"] = None
+            report["unique_sources"] = None
+            report["pages_fetched"] = None
+            report["provider_counts"] = None
+        else:
+            report["usable_sources_after_filtering"] = len(sources)
+            if report.get("unique_sources") is None and sources:
+                report["unique_sources"] = len(sources)
+            if report.get("pages_fetched") is None and sources:
+                report["pages_fetched"] = sum(bool(source.get("page_fetched")) for source in sources)
         report["research_quality_semantics"] = "process_coverage_not_factual_probability"
         report["distinct_registrable_domains"] = len(independent_domains)
         report["independent_sources"] = len(independent_domains)  # Legacy alias; not editorial independence.
