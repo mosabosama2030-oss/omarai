@@ -1,9 +1,0 @@
-{
-  "benchmark_id": "OMARAI-REDTEAM-001",
-  "version": "1.0.0",
-  "title": "Omarai Answer Quality Adversarial Corpus",
-  "description": "Offline evaluation corpus for strategy selection, evidence fidelity, uncertainty, safety, and completeness. Validator tests structure only; they do not grade live model answers.",
-  "allowed_strategies": ["local", "model_no_search", "web_search", "clarify"],
-  "allowed_evaluation_modes": ["deterministic", "human_judgment", "human_judgment_with_fixture"],
-  "reference_main_commit": "ac05f4777f140694b285c5364e6c3875fdecdae6"
-}
