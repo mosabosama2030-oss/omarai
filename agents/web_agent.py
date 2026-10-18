@@ -2297,6 +2297,37 @@ class WebAgent:
         clean_answer = re.sub(r"\[المصدر\s+(\d+)\]", replace, answer)
         return clean_answer, warnings
 
+    @staticmethod
+    def _citation_validation_metadata(
+        answer: str,
+        source_count: int,
+        citation_warnings: list[str],
+        review_status: str,
+    ) -> dict[str, Any]:
+        """Report the scope of citation checks without claiming semantic fact verification."""
+        citation_count = len(re.findall(r"\[المصدر\s+\d+\]", answer))
+        max_citable_source_index = max(
+            0, min(MAX_LLM_CITED_SOURCES, int(source_count))
+        )
+        if citation_warnings:
+            status = "invalid_index_references_removed"
+        elif citation_count:
+            status = "index_range_check_passed"
+        else:
+            status = "no_citation_markers_present"
+        return {
+            "method": "numeric_source_index_range_only",
+            "status": status,
+            "valid_citation_count": citation_count,
+            "invalid_references_removed": len(citation_warnings),
+            "max_citable_source_index": max_citable_source_index,
+            "claim_support": (
+                "model_review_not_independent_fact_check"
+                if review_status == "model_claim_audit_completed"
+                else "not_verified"
+            ),
+        }
+
     def diagnostics(
         self,
         test_model: bool = True,
@@ -2691,6 +2722,10 @@ class WebAgent:
                 "publisher_url": source.get("publisher_url", ""),
                 "rank_score": round(float(source.get("rank_score", 0)), 6),
             } for source in sources]
+            citation_validation = self._citation_validation_metadata(
+                reason, 0, [], "not_run"
+            )
+            citation_validation["status"] = "not_applicable_no_generated_answer"
             report.update({
                 "unique_sources": len(sources),
                 "independent_sources": len(independent_domains),
@@ -2698,6 +2733,8 @@ class WebAgent:
                 "provider_diagnostics": list(self._provider_diagnostics),
                 "insufficient_evidence": True,
                 "research_quality": "failed",
+                "citation_check": citation_validation["status"],
+                "citation_validation": citation_validation,
             })
             return {
                 "answer": reason,
@@ -2725,6 +2762,7 @@ class WebAgent:
                 "intent_route": intent_route,
                 "intent_route_reason": intent_reason,
                 "research_quality": "failed",
+                "citation_validation": citation_validation,
             }
 
         answer = ""
@@ -2794,8 +2832,12 @@ class WebAgent:
             answer += "\n\nروابط إضافية من البحث المباشر عبر الويب:"
             for source in self.server_search_sources[:8]:
                 answer += "\n- " + source["title"] + " — " + source["url"]
+        max_citable_sources = min(MAX_LLM_CITED_SOURCES, len(sources))
         answer, citation_warnings = self._remove_invalid_citations(
-            answer, min(MAX_LLM_CITED_SOURCES, len(sources))
+            answer, max_citable_sources
+        )
+        citation_validation = self._citation_validation_metadata(
+            answer, max_citable_sources, citation_warnings, review_status
         )
         report["unique_sources"] = len(sources)
         report["pages_fetched"] = sum(bool(source.get("page_fetched")) for source in sources)
@@ -2828,9 +2870,10 @@ class WebAgent:
         report["research_quality"] = research_quality
         report["independent_sources"] = len(distinct_domains)
         report["insufficient_evidence"] = False
-        report["valid_citation_range"] = [1, min(MAX_LLM_CITED_SOURCES, len(sources))]
-        report["citation_count"] = len(re.findall(r"\[المصدر\s+\d+\]", answer))
-        report["citation_check"] = "invalid_references_removed" if citation_warnings else "no_invalid_reference_detected"
+        report["valid_citation_range"] = [1, max_citable_sources] if max_citable_sources else []
+        report["citation_count"] = citation_validation["valid_citation_count"]
+        report["citation_check"] = citation_validation["status"]
+        report["citation_validation"] = citation_validation
         warnings = list(dict.fromkeys(
             search_warnings
             + ([llm_warning] if llm_warning else [])
@@ -2876,6 +2919,7 @@ class WebAgent:
             "search_report": report,
             "sources": public_sources,
             "research_quality": research_quality,
+            "citation_validation": citation_validation,
             "used_language_model": used_llm,
             "used_web_search": bool(sources),
             "used_social_search": bool(report.get("social_direct_results", 0)),

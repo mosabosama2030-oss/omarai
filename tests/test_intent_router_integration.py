@@ -107,6 +107,8 @@ def test_contextual_price_followup_searches_with_previous_subject(monkeypatch) -
     assert result["intent_route"] == "WEB_SIMPLE"
     assert result["research_plan"]["intent_route"] == "WEB_SIMPLE"
     assert result["used_web_search"] is True
+    assert result["citation_validation"]["method"] == "numeric_source_index_range_only"
+    assert result["search_report"]["citation_validation"] == result["citation_validation"]
     assert any("iPhone 17" in query for query in seen["plan"]["queries"])
 
 
