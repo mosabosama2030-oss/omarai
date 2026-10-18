@@ -2256,10 +2256,10 @@ def test_diagnostics_distinguishes_connector_response_without_matches_from_offli
     monkeypatch.setattr(agent, "_search_web", completed_empty_search)
     report = agent.diagnostics(test_model=False, test_social=False)
 
-    assert report["checks"]["web_search"]["status"] == "passed"
+    assert report["checks"]["web_search"]["status"] == "degraded"
     assert report["checks"]["web_search"]["result_count"] == 0
     assert report["checks"]["web_search"]["completed_connector_responses"] >= 1
-    assert "result count" in report["checks"]["web_search"]["note"]
+    assert "completed a request" in report["checks"]["web_search"]["note"]
 
 
 def test_deepseek_search_request_budget_defaults_to_one_and_is_bounded(monkeypatch):
