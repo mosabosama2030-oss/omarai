@@ -23,6 +23,17 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 
 This is a tool-using research agent built around existing language models, not a foundation model trained from scratch. The role-specific defaults aim for more consistent behaviour than using a router that selects a different free model at random on each call. Exact availability and response quality still depend on OpenRouter/provider conditions. **Privacy warning:** the user's question, conversation context and selected web excerpts are sent to the configured external language-model provider for planning/synthesis/review. OpenRouter's NVIDIA Nemotron free endpoint states that session data may be logged for security and product improvement; do not send passwords, API keys, private information or personal/confidential customer data through the free endpoint. See the [NVIDIA Nemotron free-endpoint privacy notice](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free). Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: Reddit API access requires approved app credentials and is subject to Reddit's terms; Facebook Pages reads require a valid token, page identifiers and correct permissions; Instagram hashtag search requires a professional Instagram account token and the specific supported permissions; X API access requires an authorized bearer token and suitable access; YouTube direct API search requires a Google API key. These APIs do not grant universal access to all content, accounts or comments. Review each platform's terms, quotas and permitted use before using the agent commercially. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people.
 
+## Experimental DeepSeek Search provider
+
+Omarai can optionally compare results from DeepSeek's Search API when
+`DEEPSEEK_SEARCH_API_KEY` is configured in the host's secret settings. It is
+**disabled by default**; DuckDuckGo and Bing remain configured as before.
+DeepSeek Search is billed per successful request (currently documented at
+US$0.75 per 1,000 successful searches); review the
+[official Search & Fetch guide](https://api-docs.deepseek.com/guides/search/)
+before enabling it. Unit tests use a mocked response; this repository change
+does not claim live DeepSeek connectivity or answer-quality improvement.
+
 ## Hosted deployment
 
 A Dockerfile and Railway configuration are included for a public hosted instance. This is **deployment-ready configuration, not proof that a hosted service has already been created**: you must connect your Railway account to this GitHub repository, add secrets in the host dashboard, deploy, and run the live diagnostics.

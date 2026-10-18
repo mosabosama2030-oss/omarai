@@ -2040,3 +2040,202 @@ def test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed(mon
     assert report["search_outcome"] == "unknown_after_research_error"
     assert report["usable_sources_after_filtering"] is None
     assert report["unique_sources"] is None
+
+
+
+def test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results(monkeypatch):
+    agent = WebAgent()
+    calls = []
+
+    def search(query):
+        calls.append(query)
+        if len(calls) == 1:
+            return []
+        return [
+            {
+                "provider": "bing_rss",
+                "title": "OpenAI official website",
+                "url": "https://openai.com/",
+                "snippet": "Official website and products",
+            }
+        ]
+
+    monkeypatch.setattr(agent, "_search_web", search)
+    monkeypatch.setattr(agent, "_request_completion", lambda *args, **kwargs: "OK")
+    agent.api_key = "test-key"
+
+    report = agent.diagnostics(test_model=False, test_social=False)
+
+    assert len(calls) == 2
+    assert report["checks"]["web_search"]["status"] == "passed"
+    assert report["checks"]["web_search"]["probe_count"] == 2
+    assert report["checks"]["web_search"]["result_count"] == 1
+
+
+def test_lead_discovery_is_distinct_from_listing_search():
+    assert WebAgent._is_lead_search("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية")
+    assert WebAgent._is_lead_search("Find buyers looking to buy apartments")
+    assert not WebAgent._is_lead_search("ابحث عن شقق للبيع في العاصمة الإدارية")
+    assert not WebAgent._is_lead_search("Find apartments for sale")
+
+
+def test_buyer_intent_evidence_requires_explicit_purchase_signal():
+    listing = {
+        "title": "شقق للبيع في العاصمة الإدارية الجديدة",
+        "snippet": "أفضل شقق للبيع بالتقسيط",
+        "page_text": "إعلانات وحدات سكنية للبيع بمساحات مختلفة.",
+    }
+    buyer_post = {
+        "title": "بدور على شقة تمليك في العاصمة الإدارية",
+        "snippet": "مطلوب شقة تمليك في العاصمة الإدارية.",
+        "page_text": "أنا بدور على شقة تمليك في العاصمة الإدارية وعايز أشتري خلال شهر.",
+    }
+    assert WebAgent._lead_intent_evidence(listing) is None
+    signal = WebAgent._lead_intent_evidence(buyer_post)
+    assert signal is not None
+    assert signal["basis"] == "page_text"
+
+
+def test_lead_generation_does_not_present_sale_listings_as_buyers(monkeypatch):
+    agent = WebAgent()
+    question = "ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر"
+    source_a = sample_source(0)
+    source_a.update({
+        "title": "شقق للبيع في العاصمة الإدارية الجديدة",
+        "snippet": "قارن أسعار الشقق والمساحات وخطط السداد.",
+        "page_text": "إعلانات شقق للبيع من شركات تطوير عقاري.",
+        "queries": [question],
+    })
+    source_b = sample_source(1)
+    source_b.update({
+        "title": "مشروعات عقارية في العاصمة الإدارية",
+        "snippet": "تعرف على الوحدات السكنية المتاحة للبيع.",
+        "page_text": "معلومات عامة عن مشروعات وشقق للبيع.",
+        "queries": [question],
+    })
+    plan = {
+        "queries": [question],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda q, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", lambda p: (
+        [source_a, source_b], [], {
+            "queries_planned": 1, "queries_attempted": 1,
+            "query_results": [{"query": question, "results": 2}],
+            "unique_sources": 2, "pages_fetched": 2,
+            "providers_used": ["test_provider"], "provider_counts": {"test_provider": 2},
+            "platform_counts": {"web": 2}, "social_direct_results": 0,
+            "depth": "standard", "planning_method": "test",
+        }
+    ))
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("must not synthesize false leads")),
+    )
+
+    result = agent.answer(question)
+
+    assert result["intent_route"] == "LEAD_GENERATION"
+    assert result["kind"] == "lead_discovery_no_qualified_candidates"
+    assert result["search_report"]["lead_generation"]["qualified_candidate_count"] == 0
+    assert result["search_report"]["lead_generation"]["related_results_reviewed"] == 2
+    assert "لم أعتبر إعلانات البيع" in result["answer"]
+    assert all(s["lead_qualification"] == "related_result_not_lead" for s in result["sources"])
+
+
+def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
+    agent = WebAgent()
+    seen = {}
+    plan = {
+        "queries": ["generic apartment listings"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    def collect(research_plan):
+        seen.update(research_plan)
+        source = sample_source(0)
+        source.update({
+            "title": "مطلوب شقة تمليك في العاصمة الإدارية",
+            "snippet": "صاحب المنشور يبحث عن شقة للشراء",
+            "page_text": "مطلوب شقة تمليك في العاصمة الإدارية، أريد الشراء.",
+            "queries": list(research_plan["queries"]),
+        })
+        return [source], [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [],
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test_provider"],
+            "provider_counts": {"test_provider": 1},
+            "platform_counts": {"web": 1},
+            "social_direct_results": 0,
+            "depth": "standard",
+            "planning_method": "test",
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda q, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "عُثر على إشارة علنية محتملة [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر")
+
+    assert result["intent_route"] == "LEAD_GENERATION"
+    assert seen["social_focus"] is True
+    assert len(seen["queries"]) >= 4
+    assert any('"مطلوب شراء"' in q or '"مطلوب شقه تمليك"' in q for q in seen["queries"])
+    assert result["search_report"]["lead_generation"]["qualified_candidate_count"] == 1
+    assert result["sources"][0]["lead_qualification"] == "public_buyer_intent_signal"
+
+
+def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):
+    import httpx
+
+    monkeypatch.setenv("DEEPSEEK_SEARCH_API_KEY", "test-secret-key-that-must-not-appear")
+    agent = WebAgent()
+    seen = {}
+
+    class FakeResponse:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {
+                "results": [{
+                    "title": "Buyer wanted",
+                    "url": "https://example.com/buyer",
+                    "snippet": "Looking to buy a flat.",
+                    "summary": "Looking to buy a flat in the requested area.",
+                    "date": "2026-10-16T12:00:00Z",
+                    "site_name": "Example",
+                    "rerank_score": 2.2,
+                    "authority": 2,
+                }]
+            }
+
+    def fake_post(url, **kwargs):
+        seen["url"] = url
+        seen.update(kwargs)
+        return FakeResponse()
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+    rows = agent._search_deepseek_api("buyers looking to buy a flat")
+
+    assert seen["url"] == "https://api.deepseek.com/v1/tools/search"
+    assert seen["headers"]["Authorization"] == "Bearer test-secret-key-that-must-not-appear"
+    assert seen["json"]["count"] == 6
+    assert rows[0]["provider"] == "deepseek_search_api"
+    assert rows[0]["snippet"] == "Looking to buy a flat in the requested area."
+    assert rows[0]["provider_rerank_score"] == 2.2
+    assert "test-secret-key-that-must-not-appear" not in str(rows)

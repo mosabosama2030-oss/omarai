@@ -138,6 +138,8 @@ function renderSource(s,index){
  if(s.publisher_name)tags.push('<span class="tag">الناشر: '+escapeHtml(s.publisher_name)+'</span>');
  if(s.publisher_url&&safeSourceUrl(s.publisher_url))tags.push('<a class="tag" href="'+escapeHtml(s.publisher_url)+'" target="_blank" rel="noopener noreferrer">صفحة الناشر ↗</a>');
  if(providers.length)tags.push('<span class="tag">'+providers.join(" · ")+'</span>');
+ if(s.lead_qualification==="related_result_not_lead")tags.push('<span class="tag social">نتيجة مرتبطة وليست عميلًا محتملًا</span>');
+ if(s.lead_qualification==="public_buyer_intent_signal")tags.push('<span class="tag read">إشارة علنية محتملة لنية شراء؛ الهوية غير متحققة</span>');
  const heading=url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">['+(index+1)+'] '+title+' ↗</a>':'<strong>['+(index+1)+'] '+title+'</strong><p class="warning">لم يُعرض الرابط لأنه غير صالح.</p>';
  return '<article class="source">'+heading+'<p>'+escapeHtml(s.snippet||"لا يتوفر مقتطف نصي من هذه النتيجة.")+'</p><div class="source-meta">'+tags.join("")+'</div></article>';
 }
@@ -146,9 +148,16 @@ function renderReport(result){
  const e=r.evidence_signals&&typeof r.evidence_signals==="object"?r.evidence_signals:{};
  const sources=Array.isArray(result.sources)?result.sources:[];
  const researchErrorOutcome=["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome);
- const score=researchErrorOutcome?null:Number(e.coverage_score||0);
- const scoreLabel=researchErrorOutcome?"تعذر تحديد التغطية":(e.coverage_level||"تغطية محدودة");
- const metrics=[
+ const lead=r.lead_generation&&typeof r.lead_generation==="object"?r.lead_generation:null;
+ const noQualifiedLeads=!!lead&&Number(lead.qualified_candidate_count||0)===0;
+ const score=(researchErrorOutcome||lead)?null:Number(e.coverage_score||0);
+ const scoreLabel=lead?(noQualifiedLeads?"لم يُثبت وجود عميل محتمل":"إشارات نية شراء مرشحة"):(researchErrorOutcome?"تعذر تحديد التغطية":(e.coverage_level||"تغطية محدودة"));
+ const metrics=lead?[
+  [lead.qualified_candidate_count??0,"إشارة نية شراء مرشحة"],
+  [lead.related_results_reviewed??0,"نتيجة تمت مراجعتها"],
+  [r.pages_fetched??0,"صفحة قُرئت"],
+  [e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0),"محرك/واجهة بحث"]
+ ]:[
   [researchErrorOutcome?(r.unique_sources??"غير محدد"):(r.unique_sources??sources.length),"مصدرًا فريدًا"],
   [researchErrorOutcome?"غير محدد":(e.unique_domains??"—"),"نطاقًا مختلفًا"],
   [researchErrorOutcome?(r.pages_fetched??"غير محدد"):(r.pages_fetched??e.pages_read??0),"صفحة قُرئت"],
@@ -160,9 +169,13 @@ function renderReport(result){
  const notes=Array.isArray(e.warnings)?e.warnings:[];
  const queryList=Array.isArray(result.search_queries)?result.search_queries:[];
  const details=queryList.length?'<details class="details"><summary>زوايا البحث المستخدمة ('+queryList.length+')</summary><ol>'+queryList.map(q=>'<li>'+escapeHtml(q)+'</li>').join("")+'</ol></details>':"";
- const coverageText=researchErrorOutcome
-  ? "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا."
-  : "مؤشر تغطية البحث: "+score+"/100 · "+scoreLabel+" — لا يمثل احتمال صحة الإجابة.";
+ const coverageText=lead
+  ? (noQualifiedLeads
+     ? "لم تثبت النتائج وجود أي عميل محتمل. عدد صفحات العقارات أو النطاقات ليس عدد المشترين."
+     : "الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.")
+  : researchErrorOutcome
+   ? "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا."
+   : "مؤشر تغطية البحث: "+score+"/100 · "+scoreLabel+" — لا يمثل احتمال صحة الإجابة.";
  const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);
  const attemptText=result&&result.search_attempted===true
   ? (r.search_outcome==="attempted_research_error"

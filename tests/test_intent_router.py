@@ -70,3 +70,21 @@ def test_ambiguous_followup_does_not_reuse_stale_topic_after_acknowledgment() ->
 def test_explicit_mode_overrides_conversational_shortcuts() -> None:
     assert route_intent("ازيك؟", mode="deep")["route"] == "WEB_DEEP"
     assert route_intent("ما سعر الهاتف؟", mode="latest")["route"] == "WEB_SIMPLE"
+
+
+
+@pytest.mark.parametrize(
+    ("question", "expected"),
+    [
+        ("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر", "LEAD_GENERATION"),
+        ("ابحث عن شقق للبيع في العاصمة الإدارية", "WEB_SIMPLE"),
+        ("Find buyers looking to buy apartments in New Capital", "LEAD_GENERATION"),
+        ("لخص الصفحة https://example.com/article", "WEB_SIMPLE"),
+        ("Summarize this page https://example.com/article", "WEB_SIMPLE"),
+        ("لخص النص التالي: هذا نص تجريبي", "MODEL_ONLY"),
+    ],
+)
+def test_lead_generation_and_summarization_routes(question: str, expected: str) -> None:
+    decision = route_intent(question)
+    assert decision["route"] == expected
+    assert decision["reason"]
