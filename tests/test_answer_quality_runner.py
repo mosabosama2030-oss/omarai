@@ -133,6 +133,78 @@ def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):
     assert payload["results"][0]["transport_ok"] is True
 
 
+def test_validate_base_url_rejects_non_loopback_http():
+    mod = _load_runner()
+    with pytest.raises(ValueError, match="Plain HTTP"):
+        mod.validate_base_url("http://research.example")
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://user:password@example.com",
+        "https://example.com/private/path",
+        "https://example.com/?token=oops",
+        "https://example.com/#fragment",
+    ],
+)
+def test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls(url):
+    mod = _load_runner()
+    with pytest.raises(ValueError):
+        mod.validate_base_url(url)
+
+
+def test_remote_bearer_token_requires_exact_allowlisted_https_origin(monkeypatch):
+    mod = _load_runner()
+    monkeypatch.delenv("OMARAI_BENCHMARK_ALLOWED_ORIGIN", raising=False)
+    with pytest.raises(ValueError, match="OMARAI_BENCHMARK_ALLOWED_ORIGIN"):
+        mod.validate_base_url("https://app.example", token_present=True)
+
+    monkeypatch.setenv("OMARAI_BENCHMARK_ALLOWED_ORIGIN", "https://app.example")
+    assert mod.validate_base_url("https://app.example/", token_present=True) == "https://app.example"
+    with pytest.raises(ValueError, match="does not match"):
+        mod.validate_base_url("https://other.example", token_present=True)
+
+
+def test_remote_token_origin_comparison_normalizes_default_https_port(monkeypatch):
+    mod = _load_runner()
+    monkeypatch.setenv("OMARAI_BENCHMARK_ALLOWED_ORIGIN", "https://app.example")
+    assert (
+        mod.validate_base_url("https://app.example:443", token_present=True)
+        == "https://app.example"
+    )
+
+
+def test_redirect_handler_refuses_following_redirects():
+    mod = _load_runner()
+    handler = mod._NoRedirectHandler()
+    assert handler.redirect_request(
+        req=None,
+        fp=None,
+        code=302,
+        msg="Found",
+        headers={},
+        newurl="https://attacker.example/collect",
+    ) is None
+
+
+def test_live_rejects_unapproved_remote_url_before_network(monkeypatch, capsys):
+    mod = _load_runner()
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "a-test-token")
+    monkeypatch.delenv("OMARAI_BENCHMARK_ALLOWED_ORIGIN", raising=False)
+    rc = mod.run_live(
+        CORPUS,
+        "https://not-allowlisted.example",
+        "AQ-001",
+        1,
+        1.0,
+        0.0,
+        None,
+    )
+    assert rc == 2
+    assert "Unsafe base URL" in capsys.readouterr().err
+
+
 def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):
     mod = _load_runner()
 
