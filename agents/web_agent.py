@@ -2331,7 +2331,11 @@ class WebAgent:
             model=self.answer_model,
             enable_web_search=self.openrouter_web_search_enabled,
         )
-        return answer[:24_000]
+        if len(answer) > 24_000:
+            raise RuntimeError(
+                "إجابة النموذج تجاوزت حد طول النص؛ لم تُعرض باعتبارها إجابة مكتملة."
+            )
+        return answer
 
     def _review_answer(
         self,

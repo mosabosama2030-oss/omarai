@@ -631,6 +631,22 @@ def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
 
 
 
+
+def test_generator_rejects_silent_character_limit_truncation(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(agent, "_request_completion", lambda *args, **kwargs: "ن" * 24_001)
+
+    with pytest.raises(RuntimeError, match="تجاوزت حد طول النص"):
+        agent._generate(
+            question="لخص هذا المصدر",
+            history=[],
+            sources=[sample_source(0), sample_source(1)],
+            search_warning=None,
+            research_plan={"depth": "standard", "queries": ["لخص هذا المصدر"]},
+            search_report={},
+        )
+
+
 def test_completion_discards_truncated_primary_and_uses_complete_fallback(monkeypatch):
     import json
 
