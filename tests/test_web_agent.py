@@ -1428,6 +1428,11 @@ def test_question_coverage_targets_extract_arabic_and_english_explicit_criteria(
     )
     assert english == ["price", "privacy", "reliability", "customer support"]
 
+    english_with_period = WebAgent._question_coverage_targets(
+        "Compare two services in terms of price, privacy and reliability."
+    )
+    assert english_with_period == ["price", "privacy", "reliability"]
+
 
 def test_question_coverage_targets_do_not_invent_parts_for_simple_question():
     assert WebAgent._question_coverage_targets("ما الذي يقوله المصدر؟") == []
