@@ -67,13 +67,19 @@ python scripts/run_answer_quality_benchmark.py
 python scripts/run_answer_quality_benchmark.py --mode validate --summary
 
 # حي اختياري — يتطلب --case-id أو --limit؛ لا يحقن fixtures
-# الرمز من البيئة: OMARAI_ACCESS_TOKEN
+# على localhost يمكن استخدام HTTP. الرمز من البيئة: OMARAI_ACCESS_TOKEN
 python scripts/run_answer_quality_benchmark.py --mode live \
   --base-url http://127.0.0.1:8765 --case-id AQ-001 --limit 1 \
   --out /tmp/aq_results.json
+
+# للنشر عبر HTTPS فقط: اسمح بالأصل exact origin قبل تمرير الرمز
+export OMARAI_BENCHMARK_ALLOWED_ORIGIN=https://your-deployed-host.example
+export OMARAI_ACCESS_TOKEN=your-token-from-the-host-dashboard
+python scripts/run_answer_quality_benchmark.py --mode live \
+  --base-url https://your-deployed-host.example --case-id AQ-001 --limit 1
 ```
 
-الردود الحية تُسجَّل كـ `NOT_TESTED` لجودة الإجابة ما لم يراجعها إنسان.
+**حماية التشغيل الحي:** لا تقبل الأداة URL به بيانات دخول أو مسار/query/fragment. HTTP مسموح على loopback فقط. عند وجود رمز، يجب تطابق `OMARAI_BENCHMARK_ALLOWED_ORIGIN` حرفيًا مع أصل HTTPS المقصود. لا تتبع الأداة التحويلات (redirects)، وترفض الردود الأكبر من 2 MB.
 
 ## تشغيل التحقق البنيوي
 
