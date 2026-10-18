@@ -1010,7 +1010,7 @@ def test_answer_hides_unwrapped_internal_review_report(monkeypatch):
     agent.api_key = "test-key"
     sources = [sample_source(0), sample_source(1)]
     plan = {
-        "queries": ["قارن بين خدمتين من حيث السعر والخصوصية"],
+        "queries": ["قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية"],
         "direct_urls": [],
         "social_focus": False,
         "freshness": "any",
@@ -1049,7 +1049,7 @@ def test_answer_hides_unwrapped_internal_review_report(monkeypatch):
         ),
     )
 
-    result = agent.answer("قارن بين خدمتين من حيث السعر والخصوصية")
+    result = agent.answer("قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية")
 
     assert result["second_pass_review"] == "model_claim_audit_unavailable"
     assert "Audit Report" not in result["answer"]
