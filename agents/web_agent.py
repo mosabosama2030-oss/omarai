@@ -21,6 +21,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
+from agents.intent_router import route_intent
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
@@ -530,6 +531,53 @@ class WebAgent:
             "kind": kind,
             "research_quality": "not_applicable",
         }
+
+    @staticmethod
+    def _local_conversation_reply(question: str) -> str:
+        """Return a short greeting/acknowledgment without a model or web request."""
+        value = _normalize_search_query(question).casefold().strip(" \t\r\n؟?!.,،؛;")
+        if "السلام عليكم" in value:
+            return "وعليكم السلام ورحمة الله وبركاته. أنا معاك؛ أقدر أساعدك في إيه؟"
+        if any(term in value for term in ("شكرا", "متشكر", "متشكره", "العفو")):
+            return "العفو، تحت أمرك."
+        if re.search(r"[a-z]", value):
+            if any(term in value for term in ("thanks", "thank you", "got it")):
+                return "You're welcome—glad it helped."
+            return "Hi! I'm here and ready to help. What would you like to work on?"
+        return "أهلًا! أنا معاك. أقدر أساعدك في إيه؟"
+
+    @staticmethod
+    def _annotate_intent_route(
+        result: dict[str, Any], route: str, reason: str, mode: str = "auto"
+    ) -> dict[str, Any]:
+        """Attach route diagnostics to the existing research-plan metadata."""
+        plan = result.get("research_plan")
+        if not isinstance(plan, dict):
+            plan = {}
+            result["research_plan"] = plan
+        plan["intent_route"] = route
+        plan["intent_route_reason"] = reason
+        plan["mode"] = mode
+        return result
+
+    def _clarification_result(
+        self, question: str, mode: str, decision: dict[str, Any]
+    ) -> dict[str, Any]:
+        """Ask for a missing referent without calling the model or search providers."""
+        if re.search(r"[a-z]", question.casefold()):
+            answer = (
+                "What are you referring to? Please name the item or share its link, "
+                "and I'll continue without guessing."
+            )
+        else:
+            answer = (
+                "تقصد إيه تحديدًا؟ اكتب اسم الشيء أو المنتج المقصود، أو ابعت الرابط، "
+                "وأكمل معاك من غير ما أخمّن."
+            )
+        result = self._local_answer_result(question, answer, "clarification_needed")
+        return self._annotate_intent_route(
+            result, "CLARIFY", str(decision.get("reason", "missing_referent")), mode
+        )
 
     def _self_description_answer(self, question: str) -> dict[str, Any]:
         """Answer stable questions about Omarai without pretending a live search ran."""
@@ -1815,7 +1863,10 @@ class WebAgent:
         # Carry context into short follow-up searches such as "والسعر؟" or "and the price?"
         follow_up_markers = (
             "والسعر", "وسعر", "طب ", "وماذا", "وكمان", "تفاصيل اكتر",
+            "كام سعرها", "كم سعرها", "بكام دي", "بكام ده", "سعرها كام",
+            "سعره كام", "قارنهم", "قارن بينهم", "قارن بينهما",
             "and the price", "what about", "how about", "and also",
+            "how much is it", "what is its price", "compare them", "is it good",
         )
         if len(question) < 100 and history and any(
             marker in question.casefold() for marker in follow_up_markers
@@ -1945,6 +1996,13 @@ class WebAgent:
     ) -> dict[str, Any]:
         """Ask the language model how to search, then validate its proposal deterministically."""
         fallback = fallback_plan(question, history)
+        search_question = self._history_search_query(question, history)
+        if search_question != question:
+            existing_queries = fallback.get("queries", [])
+            fallback["queries"] = [search_question] + [
+                query for query in existing_queries
+                if query != search_question
+            ][: max(0, MAX_PLAN_QUERIES - 1)]
         if not self.api_key:
             return fallback
         platform_names = ", ".join(SOCIAL_DOMAINS)
@@ -1969,7 +2027,7 @@ class WebAgent:
                 "role": "user",
                 "content": json.dumps(
                     {
-                        "question": question[:MAX_QUESTION_CHARS],
+                        "question": search_question[:MAX_QUESTION_CHARS],
                         "recent_history": history[-4:],
                     },
                     ensure_ascii=False,
@@ -2400,26 +2458,61 @@ class WebAgent:
         clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
         if clean_mode not in {"auto", "deep", "latest", "social"}:
             raise ValueError("نمط البحث غير مدعوم. اختر auto أو deep أو latest أو social.")
-        if clean_mode == "auto":
+        decision = route_intent(
+            question,
+            clean_history,
+            clean_mode,
+            capability_question=self._is_self_question(question),
+            requires_web=self._requires_web_research(question, clean_mode),
+        )
+        intent_route = str(decision["route"])
+        intent_reason = str(decision["reason"])
+
+        if intent_route == "LOCAL":
             if self._is_self_question(question):
-                return self._self_description_answer(question)
-            if not self._requires_web_research(question, clean_mode):
-                general_answer = self._answer_without_search(question, clean_history)
-                if general_answer is not None:
-                    return general_answer
+                local_result = self._self_description_answer(question)
+            else:
+                local_result = self._local_answer_result(
+                    question, self._local_conversation_reply(question), "local_conversation"
+                )
+            return self._annotate_intent_route(
+                local_result, intent_route, intent_reason, clean_mode
+            )
+
+        if intent_route == "CLARIFY":
+            return self._clarification_result(question, clean_mode, decision)
+
+        if intent_route == "MODEL_ONLY":
+            general_answer = self._answer_without_search(question, clean_history)
+            if general_answer is not None:
+                return self._annotate_intent_route(
+                    general_answer, intent_route, intent_reason, clean_mode
+                )
+            # Preserve the existing degraded-mode behavior when generation is unavailable:
+            # run the current web pipeline rather than fabricate a model-only answer.
+            intent_route = "WEB_SIMPLE"
+            intent_reason = "model_unavailable_fallback_to_existing_web_research"
+
         plan = self._plan_search(question, clean_history)
         plan["mode"] = clean_mode
+        plan["intent_route"] = intent_route
+        plan["intent_route_reason"] = intent_reason
+        if clean_mode == "auto" and intent_route == "WEB_DEEP":
+            plan["depth"] = "deep"
         if clean_mode == "auto":
             normalized_question = _normalize_search_query(question).casefold()
             deep_terms = (
                 "بحث عميق", "بحث معمق", "بحث شامل", "بالتفصيل", "قارن", "مقارنة",
                 "تحقق", "استقصاء", "deep research", "comprehensive", "in-depth", "compare",
             )
-            explicit_deep = any(term in normalized_question for term in deep_terms)
+            explicit_deep = intent_route == "WEB_DEEP" or any(
+                term in normalized_question for term in deep_terms
+            )
             if not explicit_deep:
                 # The planner may overclassify short lookups as deep research. Preserve
                 # the user's actual intent first and cap routine searches to three queries.
-                fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
+                contextual_question = self._history_search_query(question, clean_history)
+                fallback_queries = fallback_plan(contextual_question, clean_history).get("queries") or [contextual_question]
                 model_queries = plan.get("queries") or []
                 if self._is_navigation_request(question):
                     subject = re.sub(
@@ -2439,6 +2532,16 @@ class WebAgent:
                 ))[:3]
                 plan["depth"] = "standard"
         base_query = (plan.get("queries") or [question])[0]
+        if clean_mode == "auto" and intent_route == "WEB_DEEP":
+            deep_candidates = [
+                f"{base_query} official sources evidence",
+                f"{base_query} risks limitations alternatives",
+                f"{base_query} recent data reviews comparison",
+            ]
+            plan["queries"] = list(dict.fromkeys(
+                (plan.get("queries") or [])[:5] + deep_candidates
+            ))[:MAX_PLAN_QUERIES]
+            base_query = (plan.get("queries") or [question])[0]
         # Explicit user-selected modes are control inputs. They do not bypass source
         # validation and never permit private-source access.
         if clean_mode == "deep":
@@ -2607,6 +2710,8 @@ class WebAgent:
                     "mode": clean_mode,
                     "direct_urls_provided": len(plan.get("direct_urls", [])),
                     "planning_method": plan.get("planning_method", "deterministic_fallback"),
+                    "intent_route": intent_route,
+                    "intent_route_reason": intent_reason,
                 },
                 "search_report": report,
                 "sources": public_sources,
@@ -2761,6 +2866,8 @@ class WebAgent:
                 "mode": clean_mode,
                 "direct_urls_provided": len(plan.get("direct_urls", [])),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
+                "intent_route": intent_route,
+                "intent_route_reason": intent_reason,
             },
             "search_report": report,
             "sources": public_sources,
