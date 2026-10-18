@@ -145,14 +145,14 @@ function renderReport(result){
  const r=result&&result.search_report&&typeof result.search_report==="object"?result.search_report:{};
  const e=r.evidence_signals&&typeof r.evidence_signals==="object"?r.evidence_signals:{};
  const sources=Array.isArray(result.sources)?result.sources:[];
- const score=Number(e.coverage_score||0);
- const scoreLabel=e.coverage_level||"تغطية محدودة";
  const researchErrorOutcome=["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome);
+ const score=researchErrorOutcome?null:Number(e.coverage_score||0);
+ const scoreLabel=researchErrorOutcome?"تعذر تحديد التغطية":(e.coverage_level||"تغطية محدودة");
  const metrics=[
   [researchErrorOutcome?(r.unique_sources??"غير محدد"):(r.unique_sources??sources.length),"مصدرًا فريدًا"],
   [researchErrorOutcome?"غير محدد":(e.unique_domains??"—"),"نطاقًا مختلفًا"],
   [researchErrorOutcome?(r.pages_fetched??"غير محدد"):(r.pages_fetched??e.pages_read??0),"صفحة قُرئت"],
-  [e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0),"محرك/واجهة بحث"]
+  [researchErrorOutcome?"غير محدد":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),"محرك/واجهة بحث"]
  ];
  const metricHtml=metrics.map(([v,l])=>'<div class="metric"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join("");
  const providerCounts=r.provider_counts&&typeof r.provider_counts==="object"&&!Array.isArray(r.provider_counts)?r.provider_counts:{};
@@ -160,7 +160,9 @@ function renderReport(result){
  const notes=Array.isArray(e.warnings)?e.warnings:[];
  const queryList=Array.isArray(result.search_queries)?result.search_queries:[];
  const details=queryList.length?'<details class="details"><summary>زوايا البحث المستخدمة ('+queryList.length+')</summary><ol>'+queryList.map(q=>'<li>'+escapeHtml(q)+'</li>').join("")+'</ol></details>':"";
- const coverageText='مؤشر تغطية البحث: '+score+'/100 · '+scoreLabel+' — لا يمثل احتمال صحة الإجابة.';
+ const coverageText=researchErrorOutcome
+  ? "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا."
+  : "مؤشر تغطية البحث: "+score+"/100 · "+scoreLabel+" — لا يمثل احتمال صحة الإجابة.";
  const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);
  const attemptText=result&&result.search_attempted===true
   ? (r.search_outcome==="attempted_research_error"
