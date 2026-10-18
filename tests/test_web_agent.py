@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from agents.web_agent import (
@@ -1902,3 +1904,11 @@ def test_reviewer_rejects_duplicate_final_answer_delimiters(monkeypatch):
 
     with pytest.raises(RuntimeError, match="فصل الإجابة النهائية"):
         agent._review_answer("ما مضمون الصفحة؟", "مسودة", [source])
+
+
+def test_frontend_review_status_matches_api_contract():
+    html = (Path(__file__).resolve().parents[1] / "web" / "agent.html").read_text(encoding="utf-8")
+    assert 'r.second_pass_review==="model_claim_audit_completed"' in html
+    assert 'r.second_pass_review==="model_claim_audit_unavailable"' in html
+    assert 'r.second_pass_review==="model_second_pass_completed"' not in html
+    assert 'r.second_pass_review==="model_second_pass_unavailable"' not in html
