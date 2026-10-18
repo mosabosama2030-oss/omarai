@@ -1407,3 +1407,68 @@ def test_social_focused_partial_evidence_does_not_trigger_general_repair(monkeyp
     assert result["search_report"]["evidence_repair"]["attempted"] is False
     assert result["search_report"]["evidence_repair"]["reason"] == "task_specific_partial_evidence"
     assert result["research_quality"] == "partial"
+
+
+
+def test_question_coverage_targets_extract_arabic_and_english_explicit_criteria():
+    arabic = WebAgent._question_coverage_targets(
+        "قارن بين خدمتين من حيث السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، "
+        "واذكر ما لا تستطيع التحقق منه."
+    )
+    assert arabic == ["السعر", "الخصوصية", "الاعتمادية", "خيار التواصل مع الدعم"]
+
+    english = WebAgent._question_coverage_targets(
+        "Compare two services in terms of price, privacy, reliability and customer support?"
+    )
+    assert english == ["price", "privacy", "reliability", "customer support"]
+
+
+def test_question_coverage_targets_do_not_invent_parts_for_simple_question():
+    assert WebAgent._question_coverage_targets("ما الذي يقوله المصدر؟") == []
+
+
+def test_generator_includes_extracted_targets_as_a_non_authoritative_checklist(monkeypatch):
+    agent = WebAgent()
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "مقارنة مختصرة."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    result = agent._generate(
+        question="قارن بين خدمتين من حيث السعر، الخصوصية والاعتمادية",
+        history=[],
+        sources=[sample_source(0), sample_source(1)],
+        search_warning=None,
+        research_plan={"depth": "deep", "queries": ["مقارنة الخدمتين"]},
+        search_report={},
+    )
+
+    user_content = "\n".join(m["content"] for m in captured["messages"] if m["role"] == "user")
+    assert result == "مقارنة مختصرة."
+    assert "قائمة محاور مستخرجة آليًا" in user_content
+    for target in ("السعر", "الخصوصية", "الاعتمادية"):
+        assert target in user_content
+
+
+def test_reviewer_checks_coverage_targets_without_claiming_independent_verification(monkeypatch):
+    agent = WebAgent()
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "تمت مراجعة المسودة."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    result = agent._review_answer(
+        question="قارن بين خدمتين من حيث السعر، الخصوصية والاعتمادية",
+        answer="السعر مناسب [المصدر 1].",
+        sources=[sample_source(0)],
+    )
+    system_content = "\n".join(m["content"] for m in captured["messages"] if m["role"] == "system")
+    user_content = "\n".join(m["content"] for m in captured["messages"] if m["role"] == "user")
+    assert result == "تمت مراجعة المسودة."
+    assert "اكتمال الإجابة مقابل" in system_content
+    assert "الاعتمادية" in user_content
+    assert "قائمة محاور مستخرجة آليًا" in user_content
