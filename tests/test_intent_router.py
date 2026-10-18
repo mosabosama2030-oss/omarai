@@ -88,3 +88,8 @@ def test_lead_generation_and_summarization_routes(question: str, expected: str) 
     decision = route_intent(question)
     assert decision["route"] == expected
     assert decision["reason"]
+
+
+def test_generic_explanation_of_lead_generation_is_not_a_lead_search() -> None:
+    assert route_intent("What is lead generation?")["route"] == "MODEL_ONLY"
+    assert route_intent("Create a prospect list for apartment buyers")["route"] == "LEAD_GENERATION"

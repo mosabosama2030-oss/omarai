@@ -3168,7 +3168,10 @@ class WebAgent:
                     "sources": public_related_sources,
                     "used_language_model": False,
                     "used_web_search": bool(sources),
-                    "search_attempted": search_attempted,
+                    "search_attempted": report.get(
+                        "search_attempted",
+                        bool(report.get("queries_attempted", 0)),
+                    ),
                     "used_social_search": bool(report.get("social_direct_results", 0)),
                     "warnings": [lead_answer],
                     "kind": "lead_discovery_no_qualified_candidates",
