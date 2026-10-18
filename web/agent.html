@@ -161,7 +161,6 @@ function renderReport(result){
  const queryList=Array.isArray(result.search_queries)?result.search_queries:[];
  const details=queryList.length?'<details class="details"><summary>زوايا البحث المستخدمة ('+queryList.length+')</summary><ol>'+queryList.map(q=>'<li>'+escapeHtml(q)+'</li>').join("")+'</ol></details>':"";
  const coverageText='مؤشر تغطية البحث: '+score+'/100 · '+scoreLabel+' — لا يمثل احتمال صحة الإجابة.';
- const researchErrorOutcome=["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome);
  const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);
  const attemptText=result&&result.search_attempted===true
   ? (r.search_outcome==="attempted_research_error"
