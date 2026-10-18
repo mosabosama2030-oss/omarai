@@ -2304,3 +2304,41 @@ def test_buyer_intent_phrase_inside_negated_text_is_not_a_lead_signal():
         "page_text": "I am not looking to buy an apartment this year.",
     }
     assert WebAgent._lead_intent_evidence(source) is None
+
+
+
+def test_lead_generation_preserves_unknown_state_when_research_throws(monkeypatch):
+    agent = WebAgent()
+    question = "ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر"
+    plan = {
+        "queries": [question],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda q, history: dict(plan))
+
+    def fail_research(research_plan):
+        raise RuntimeError("mocked interrupted research")
+
+    monkeypatch.setattr(agent, "_collect_research", fail_research)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: (_ for _ in ()).throw(
+            AssertionError("must not generate a lead from an incomplete search")
+        ),
+    )
+
+    result = agent.answer(question)
+    lead = result["search_report"]["lead_generation"]
+
+    assert lead["status"] == "research_incomplete"
+    assert lead["candidate_signal_count"] is None
+    assert lead["related_results_reviewed"] is None
+    assert result["search_report"]["usable_sources_after_filtering"] is None
+    assert result["search_report"]["evidence_signals"] is None
+    assert "لم أستطع تحديد" in result["answer"] or "تعطل مسار البحث" in result["answer"]

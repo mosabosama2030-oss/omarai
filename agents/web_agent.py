@@ -3156,18 +3156,26 @@ class WebAgent:
                     lead_evidence_sources.append(source)
                 else:
                     source["lead_qualification"] = "related_result_not_lead"
+            lead_research_incomplete = (
+                not sources
+                and report.get("search_outcome") in _RESEARCH_ERROR_OUTCOMES
+            )
             report["lead_generation"] = {
                 "status": (
-                    "candidate_signals_found"
-                    if lead_evidence_sources else "no_qualified_candidates_found"
+                    "research_incomplete" if lead_research_incomplete
+                    else "candidate_signals_found" if lead_evidence_sources
+                    else "no_qualified_candidates_found"
                 ),
-                "candidate_signal_count": len(lead_evidence_sources),
-                "related_results_reviewed": related_lead_results_count,
+                "candidate_signal_count": (
+                    None if lead_research_incomplete else len(lead_evidence_sources)
+                ),
+                "related_results_reviewed": (
+                    None if lead_research_incomplete else related_lead_results_count
+                ),
                 "qualification_rule": "explicit_public_buyer_intent_phrase",
                 "identity_verified": False,
             }
             if not lead_evidence_sources:
-                report["lead_generation"]["status"] = "no_qualified_candidates_found"
                 if sources:
                     lead_answer = (
                         "لم أعثر على إشارة نصية واضحة تثبت أن أي نتيجة في هذه الجولة تتعلق بشخص "
@@ -3186,10 +3194,15 @@ class WebAgent:
                         "لم تظهر نتائج قابلة للاستخدام تثبت نية شراء في هذه الجولة. هذا لا يثبت "
                         "عدم وجود عملاء؛ بل يعني أن البحث الحالي لم يعثر على دليل كافٍ."
                     )
-                report["qualified_lead_candidates"] = 0
                 report["research_quality"] = "failed"
-                report["usable_sources_after_filtering"] = 0
-                report["evidence_signals"] = evidence_signal_report([], plan.get("freshness", "any"))
+                # Distinguish zero qualified signals from unknown counts after an exception.
+                report["usable_sources_after_filtering"] = (
+                    None if lead_research_incomplete else len(sources)
+                )
+                report["evidence_signals"] = (
+                    None if lead_research_incomplete
+                    else evidence_signal_report(sources, plan.get("freshness", "any"))
+                )
                 public_related_sources = [{
                     "title": source.get("title") or "نتيجة ويب",
                     "url": source["url"],
