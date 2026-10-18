@@ -55,6 +55,18 @@ def test_comparison_followup_requires_context_before_deep_search() -> None:
     assert decision["context_available"] is True
 
 
+def test_ambiguous_followup_does_not_reuse_stale_topic_after_acknowledgment() -> None:
+    history = [
+        {"role": "user", "content": "عايز أعرف سعر iPhone 17 في مصر"},
+        {"role": "assistant", "content": "سأساعدك في العثور على أسعار حديثة."},
+        {"role": "user", "content": "شكرا"},
+        {"role": "assistant", "content": "العفو."},
+    ]
+    decision = route_intent("كام سعرها؟", history, requires_web=True)
+    assert decision["route"] == "CLARIFY"
+    assert decision["context_available"] is False
+
+
 def test_explicit_mode_overrides_conversational_shortcuts() -> None:
     assert route_intent("ازيك؟", mode="deep")["route"] == "WEB_DEEP"
     assert route_intent("ما سعر الهاتف؟", mode="latest")["route"] == "WEB_SIMPLE"
