@@ -2673,6 +2673,15 @@ class WebAgent:
                 returned = self._search_web(probe_query)
             except (RuntimeError, AgentDependencyError, ValueError, OSError) as exc:
                 probe_errors.append(type(exc).__name__)
+                with self._provider_diagnostics_lock:
+                    new_diagnostics = [
+                        item for item in self._provider_diagnostics
+                        if id(item) not in previous_ids
+                    ]
+                completed_connector_responses += sum(
+                    item.get("status") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
+                    for item in new_diagnostics
+                )
                 continue
 
             for source in returned:
@@ -3103,7 +3112,7 @@ class WebAgent:
                     "candidate_signals_found"
                     if lead_evidence_sources else "no_qualified_candidates_found"
                 ),
-                "qualified_candidate_count": len(lead_evidence_sources),
+                "candidate_signal_count": len(lead_evidence_sources),
                 "related_results_reviewed": related_lead_results_count,
                 "qualification_rule": "explicit_public_buyer_intent_phrase",
                 "identity_verified": False,
@@ -3747,6 +3756,8 @@ class WebAgent:
                 "publisher_name": source.get("publisher_name", ""),
                 "publisher_url": source.get("publisher_url", ""),
                 "rank_score": round(float(source.get("rank_score", 0)), 6),
+                "lead_qualification": source.get("lead_qualification"),
+                "lead_intent_evidence": source.get("lead_intent_evidence"),
             })
         return {
             "answer": answer,

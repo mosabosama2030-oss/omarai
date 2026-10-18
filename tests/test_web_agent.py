@@ -2002,7 +2002,7 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert '["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome)' in html
     assert "لم يمكن تحديد عدد المصادر القابلة للاستخدام" in html
     assert "غير محدد" in html
-    assert 'const score=researchErrorOutcome?null:Number(e.coverage_score||0)' in html
+    assert 'const score=(researchErrorOutcome||lead)?null:Number(e.coverage_score||0)' in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
 
@@ -2142,7 +2142,7 @@ def test_lead_generation_does_not_present_sale_listings_as_buyers(monkeypatch):
 
     assert result["intent_route"] == "LEAD_GENERATION"
     assert result["kind"] == "lead_discovery_no_qualified_candidates"
-    assert result["search_report"]["lead_generation"]["qualified_candidate_count"] == 0
+    assert result["search_report"]["lead_generation"]["candidate_signal_count"] == 0
     assert result["search_report"]["lead_generation"]["related_results_reviewed"] == 2
     assert "لم أعتبر إعلانات البيع" in result["answer"]
     assert all(s["lead_qualification"] == "related_result_not_lead" for s in result["sources"])
@@ -2195,7 +2195,7 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
     assert seen["social_focus"] is True
     assert len(seen["queries"]) >= 4
     assert any('"مطلوب شراء"' in q or '"مطلوب شقه تمليك"' in q for q in seen["queries"])
-    assert result["search_report"]["lead_generation"]["qualified_candidate_count"] == 1
+    assert result["search_report"]["lead_generation"]["candidate_signal_count"] == 1
     assert result["sources"][0]["lead_qualification"] == "public_buyer_intent_signal"
 
 

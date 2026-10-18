@@ -149,11 +149,11 @@ function renderReport(result){
  const sources=Array.isArray(result.sources)?result.sources:[];
  const researchErrorOutcome=["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome);
  const lead=r.lead_generation&&typeof r.lead_generation==="object"?r.lead_generation:null;
- const noQualifiedLeads=!!lead&&Number(lead.qualified_candidate_count||0)===0;
+ const noQualifiedLeads=!!lead&&Number(lead.candidate_signal_count||0)===0;
  const score=(researchErrorOutcome||lead)?null:Number(e.coverage_score||0);
  const scoreLabel=lead?(noQualifiedLeads?"لم يُثبت وجود عميل محتمل":"إشارات نية شراء مرشحة"):(researchErrorOutcome?"تعذر تحديد التغطية":(e.coverage_level||"تغطية محدودة"));
  const metrics=lead?[
-  [lead.qualified_candidate_count??0,"إشارة نية شراء مرشحة"],
+  [lead.candidate_signal_count??0,"إشارة نصية مرشحة لنية شراء"],
   [lead.related_results_reviewed??0,"نتيجة تمت مراجعتها"],
   [r.pages_fetched??0,"صفحة قُرئت"],
   [e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0),"محرك/واجهة بحث"]
