@@ -72,20 +72,30 @@ def test_explicit_mode_overrides_conversational_shortcuts() -> None:
     assert route_intent("ما سعر الهاتف؟", mode="latest")["route"] == "WEB_SIMPLE"
 
 
-def test_summarization_routes_to_web_simple():
-    """Summarization requests must route to WEB_SIMPLE, not CLARIFY or MODEL_ONLY."""
-    from agents.intent_router import route_intent
-
-    cases = [
-        "لخص الصفحة",
-        "لخص لي هذا الرابط",
-        "تلخيص المقال",
-        "summarize the page",
-        "summarize this article",
-    ]
-    for q in cases:
-        decision = route_intent(q, [])
-        route = decision["route"] if isinstance(decision, dict) else decision[0]
-        assert route == "WEB_SIMPLE", f"Failed: {q!r} -> {decision}"
-        if isinstance(decision, dict):
-            assert decision.get("reason") == "summarization_request"
+@pytest.mark.parametrize(
+    ("question", "expected_route", "expected_reason"),
+    [
+        (
+            "لخص الصفحة https://example.com/article",
+            "WEB_SIMPLE",
+            "summarization_request",
+        ),
+        (
+            "Summarize this page https://example.com/article",
+            "WEB_SIMPLE",
+            "summarization_request",
+        ),
+        ("لخص الصفحة", "CLARIFY", "missing_summarization_input"),
+        ("لخص لي هذا الرابط", "CLARIFY", "missing_summarization_input"),
+        ("summarize the page", "CLARIFY", "missing_summarization_input"),
+        ("تلخيص المقال", "CLARIFY", "missing_summarization_input"),
+        ("لخص النص التالي: هذا نص تجريبي", "MODEL_ONLY", "stable_knowledge_or_conversation"),
+        ("Summarize this text: the test content is here", "MODEL_ONLY", "stable_knowledge_or_conversation"),
+    ],
+)
+def test_summarization_routing_respects_page_text_and_missing_input(
+    question: str, expected_route: str, expected_reason: str
+) -> None:
+    decision = route_intent(question, [])
+    assert decision["route"] == expected_route
+    assert decision["reason"] == expected_reason
