@@ -1329,7 +1329,7 @@ def test_bounded_repair_deduplicates_same_page_even_with_tracking_url(monkeypatc
         calls.append(dict(research_plan))
         source = sample_source(0)
         if len(calls) > 1:
-            source["url"] = "https://EXAMPLE.com/iphone-17-price/?utm_source=test#details"
+            source["url"] = "https://EXAMPLE.com/research/?utm_source=test#details"
             source["providers"] = ["second_provider"]
             source["page_fetched"] = False
         return [source], [], {
