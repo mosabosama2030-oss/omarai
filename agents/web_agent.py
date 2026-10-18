@@ -44,8 +44,9 @@ MAX_PAGE_BYTES = 1_000_000
 MAX_PAGE_TEXT_CHARS = 12_000
 LLM_TIMEOUT_SECONDS = 35
 
-# Provider diagnostic statuses that show a search connector was invoked.
-_SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({"ok", "no_results", "filtered_all", "timeout", "failed"})
+# Only completed connector result-processing states positively confirm an attempt.
+# A generic "failed" or timeout diagnostic may occur before a network request is sent.
+_SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({"ok", "no_results", "filtered_all"})
 _RESEARCH_ERROR_OUTCOMES = frozenset({"attempted_research_error", "unknown_after_research_error"})
 
 
