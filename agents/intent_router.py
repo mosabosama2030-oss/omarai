@@ -131,9 +131,7 @@ def _is_lead_generation_request(question: str) -> bool:
     arabic_actions = ("ابحث عن", "دور على", "دورلي على", "اعثر على", "هاتلي", "هات")
     arabic_targets = ("عميل", "عملاء", "مشتري", "مشتر", "مشترين", "عملاء محتملين")
     english_patterns = (
-        r"(?:\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b"
-        r"(?:buyers?|customers?|prospects?|leads?)\b|"
-        r"\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b)",
+        r"\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b(?:buyers?|customers?|prospects?|leads?)\b|\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b",
     )
     if any(action in normalized for action in arabic_actions) and any(
         target in normalized for target in arabic_targets
