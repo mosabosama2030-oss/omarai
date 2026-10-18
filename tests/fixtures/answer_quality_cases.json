@@ -16,8 +16,14 @@
   ],
   "case_count": 45,
   "parts": [
-    "answer_quality_cases_part1.json",
-    "answer_quality_cases_part2.json",
-    "answer_quality_cases_part3.json"
+    "answer_quality_cases_s01.json",
+    "answer_quality_cases_s02.json",
+    "answer_quality_cases_s03.json",
+    "answer_quality_cases_s04.json",
+    "answer_quality_cases_s05.json",
+    "answer_quality_cases_s06.json",
+    "answer_quality_cases_s07.json",
+    "answer_quality_cases_s08.json",
+    "answer_quality_cases_s09.json"
   ]
 }
