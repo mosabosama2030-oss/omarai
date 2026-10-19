@@ -155,6 +155,7 @@ def test_current_request_search_status_is_not_confused_with_capability(monkeypat
 
 def test_generation_failure_returns_partial_sources_and_diagnostics(monkeypatch):
     agent = WebAgent()
+    agent.api_key = "test-key"
     question = "ابحث عن أحدث تقرير عن الذكاء الاصطناعي"
 
     sources = [
