@@ -295,6 +295,9 @@ class WebAgent:
         ).strip()
         self.model = self.answer_model  # Backwards-compatible alias.
         self.model_usage: list[dict[str, str]] = []
+        # Per-answer, bounded diagnostics contain only model identifiers and status metadata.
+        # They intentionally exclude prompts, generated text, and provider response bodies.
+        self.generation_diagnostics: list[dict[str, str]] = []
         self.server_search_sources: list[dict[str, Any]] = []
         self._provider_diagnostics: list[dict[str, Any]] = []
         self._provider_diagnostics_lock = threading.Lock()
@@ -364,11 +367,15 @@ class WebAgent:
                 "DuckDuckGo HTML",
                 "Bing RSS",
                 "Google News RSS for fresh queries",
+                "DeepSeek Search API when DEEPSEEK_SEARCH_API_KEY is configured (optional; may incur charges)",
                 "OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1",
                 "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
                 "Tavily Search API when TAVILY_API_KEY is configured",
             ],
             "brave_search_api_configured": bool(os.getenv("BRAVE_SEARCH_API_KEY", "").strip()),
+            "deepseek_search_api_configured": bool(
+                os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip()
+            ),
             "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
             "openrouter_web_search_enabled": (
                 os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
@@ -539,6 +546,26 @@ class WebAgent:
         return targets
 
     @staticmethod
+    def _is_current_search_status_question(question: str) -> bool:
+        """Recognize a question about whether this answer already used web search."""
+        value = _normalize_search_query(question).casefold()
+        asks_if_searched = any(
+            term in value
+            for term in ("بحثت", "اجريت بحث", "قمت بالبحث", "عملت بحث", "did you search", "did you browse")
+        )
+        references_web = any(
+            term in value for term in ("انترنت", "النت", "الويب", "ويب", "the web", "online")
+        )
+        references_current_answer = any(
+            term in value
+            for term in (
+                "اجاب", "الرد الحالي", "هذا السؤال", "هذه الاجابه",
+                "this answer", "this response",
+            )
+        )
+        return asks_if_searched and references_web and references_current_answer
+
+    @staticmethod
     def _is_self_question(question: str) -> bool:
         """Recognize questions about Omarai itself so they do not need web search."""
         value = _normalize_search_query(question).casefold()
@@ -551,11 +578,25 @@ class WebAgent:
             "كيف تبحث انت", "ازاي بتبحث", "كيف يعمل البحث عندك",
             "ما المواقع التي تستخدمها", "ما محركات البحث التي تستخدمها",
             "ما المواقع التي قدرت", "كيف تبحث على الانترنت",
+            "هل تستطيع البحث", "هل يمكنك البحث", "هل تقدر تبحث",
+            "هل تستطيع الوصول", "هل يمكنك الوصول",
+            "هل عندك اتصال بالانترنت", "هل عندك اتصال بالانترنيت",
+            "هل عندك انترنت",
+            "هل بحثت في الانترنت للاجابه الحاليه",
+            "هل بحثت علي الانترنت للاجابه الحاليه",
+            "هل بحثت في الانترنت لهذا السؤال",
+            "هل بحثت في النت للرد ده",
+            "did you search the web for this answer",
+            "did you browse for this response",
             "how do you search", "which search engines", "what sites do you use",
         )
-        return any(phrase in value for phrase in capability_phrases + search_phrases) or (
-            "omarai" in value
-            and any(token in value for token in ("بحث", "موقع", "تستطيع", "تقدر", "تعمل"))
+        return (
+            any(phrase in value for phrase in capability_phrases + search_phrases)
+            or WebAgent._is_current_search_status_question(question)
+            or (
+                "omarai" in value
+                and any(token in value for token in ("بحث", "موقع", "تستطيع", "تقدر", "تعمل"))
+            )
         )
 
     @staticmethod
@@ -672,6 +713,10 @@ class WebAgent:
     @staticmethod
     def _requires_web_research(question: str, mode: str) -> bool:
         """Use the web only when the user requests it or the answer depends on live data."""
+        # A question about whether the current answer already searched is a
+        # status query, not a request to launch fresh research in any UI mode.
+        if WebAgent._is_current_search_status_question(question):
+            return False
         if mode != "auto":
             return True
         value = _normalize_search_query(question).casefold()
@@ -760,42 +805,149 @@ class WebAgent:
             result, "CLARIFY", str(decision.get("reason", "missing_referent")), mode
         )
 
+    def _capability_status_snapshot(self) -> dict[str, Any]:
+        """Describe configured capabilities without claiming a live health check."""
+        status = self.status()
+        not_tested = "not_tested_in_this_response"
+        providers = [
+            {
+                "name": "duckduckgo_html",
+                "implemented": True,
+                "configuration_status": "built_in_no_api_key",
+                "runtime_status": not_tested,
+            },
+            {
+                "name": "bing_rss",
+                "implemented": True,
+                "configuration_status": "built_in_no_api_key",
+                "runtime_status": not_tested,
+            },
+            {
+                "name": "google_news_rss",
+                "implemented": True,
+                "configuration_status": "conditional_no_api_key",
+                "runtime_status": not_tested,
+            },
+            {
+                "name": "deepseek_search_api",
+                "implemented": True,
+                "configuration_status": (
+                    "configured" if status.get("deepseek_search_api_configured")
+                    else "not_configured"
+                ),
+                "runtime_status": not_tested if status.get("deepseek_search_api_configured")
+                else "not_configured",
+            },
+            {
+                "name": "brave_search_api",
+                "implemented": True,
+                "configuration_status": (
+                    "configured" if status.get("brave_search_api_configured")
+                    else "not_configured"
+                ),
+                "runtime_status": not_tested if status.get("brave_search_api_configured")
+                else "not_configured",
+            },
+            {
+                "name": "tavily_search_api",
+                "implemented": True,
+                "configuration_status": (
+                    "configured" if status.get("tavily_search_api_configured")
+                    else "not_configured"
+                ),
+                "runtime_status": not_tested if status.get("tavily_search_api_configured")
+                else "not_configured",
+            },
+            {
+                "name": "openrouter_web_search",
+                "implemented": True,
+                "configuration_status": (
+                    "enabled" if status.get("openrouter_web_search_enabled")
+                    else "disabled"
+                ),
+                "runtime_status": not_tested if status.get("openrouter_web_search_enabled")
+                else "disabled",
+            },
+        ]
+        return {
+            "web_search": {
+                "implemented": True,
+                "local_dependencies_ready": bool(status.get("web_search_ready")),
+                "runtime_status": not_tested,
+                "providers": providers,
+                "semantics": (
+                    "Configuration and installed dependencies do not prove that a live "
+                    "network request will succeed."
+                ),
+            },
+            "language_model": {
+                "configured": bool(status.get("language_model_configured")),
+                "runtime_status": not_tested,
+            },
+        }
+
     def _self_description_answer(self, question: str) -> dict[str, Any]:
-        """Answer stable questions about Omarai without pretending a live search ran."""
+        """Answer self/capability questions without inventing a live health result."""
         value = _normalize_search_query(question).casefold()
-        if any(term in value for term in (
+        current_search_question = self._is_current_search_status_question(question)
+
+        if current_search_question:
+            answer = (
+                "لا، لم أنفّذ بحثًا حيًا للإجابة عن هذا السؤال تحديدًا؛ هذا السؤال عن "
+                "طريقة عملي، ولذلك لم أبدأ بحث ويب في هذه الجولة. هذا لا يعني أن البحث "
+                "غير متاح؛ عند تنفيذ طلب يحتاج إلى معلومات حديثة سأوضح هل جرت محاولة البحث، "
+                "وما النتائج التي عادت، وما إذا اكتملت الإجابة."
+            )
+            result = self._local_answer_result(question, answer, "capability_answer")
+            result["request_execution_status"] = {
+                "search_attempted": False,
+                "search_outcome": "not_attempted",
+                "semantics": "status_of_this_request_only",
+            }
+            result["capability_status"] = self._capability_status_snapshot()
+            return result
+
+        capability_phrases = (
             "كيف تستطيع مساعدتي", "ازاي تقدر تساعدني", "ازاي ممكن تساعدني",
             "ماذا تستطيع ان تفعل", "ما الذي تستطيع فعله", "ايه اللي تقدر تعمله",
             "what can you do", "how can you help me",
-        )):
+        )
+        if any(term in value for term in capability_phrases):
             answer = (
-                "أقدر أساعدك في فهم الأسئلة وصياغة خطط عملية، والبحث في الويب عند طلب "
-                "معلومات حديثة أو روابط أو فرص بيع وشراء، ثم تلخيص النتائج مع روابطها "
-                "وبيان ما أمكن التحقق منه وما بقي غير مؤكد. أقدر أيضًا تحليل إشارات العملاء "
-                "المحتملين من الصفحات العامة المتاحة، لكنها تظل إشارات تحتاج مراجعة وليست "
-                "عملاء مؤكّدين. لا أضمن الوصول إلى كل موقع أو المنشورات والمجموعات المغلقة."
+                "أقدر أساعدك في شرح الأسئلة ووضع خطط عملية، كما يتضمن Omarai مسارًا "
+                "للبحث في الويب عند الحاجة إلى معلومات حديثة أو روابط أو مقارنة خيارات. "
+                "سأوضح في كل مهمة ما إذا نُفذ البحث فعلًا وما المصادر التي أمكن جمعها، "
+                "وما الذي لم يمكن التحقق منه. قد تعمل بعض الموصلات الاختيارية فقط عند "
+                "ضبط إعداداتها، ولا أضمن الوصول إلى كل موقع أو إلى المجموعات والمنشورات "
+                "الخاصة. لم أجرِ اختبار اتصال حي في هذه الإجابة."
             )
         else:
             status = self.status()
             providers = ["DuckDuckGo HTML", "Bing RSS"]
-            providers.append("Google News RSS للطلبات التي تبدو حديثة أو إخبارية")
+            providers.append("Google News RSS عند ملاءمة السؤال أو الحاجة إلى معلومات حديثة")
+            if status.get("deepseek_search_api_configured"):
+                providers.append(
+                    "DeepSeek Search API (مفتاحه مضبوط، لكنه غير مختبر في هذه الإجابة "
+                    "وقد يستهلك استخدامًا مدفوعًا)"
+                )
             if status.get("brave_search_api_configured"):
-                providers.append("Brave Search API (مفتاحه مضبوط)")
+                providers.append("Brave Search API (الإعداد موجود، وليس دليلًا على نجاح الاتصال)")
             if status.get("tavily_search_api_configured"):
-                providers.append("Tavily Search API (مفتاحه مضبوط)")
+                providers.append("Tavily Search API (الإعداد موجود، وليس دليلًا على نجاح الاتصال)")
             if status.get("openrouter_web_search_enabled"):
-                providers.append("بحث OpenRouter المباشر (مفعّل بالإعداد)")
+                providers.append("بحث OpenRouter المباشر (مفعّل بالإعداد، وقد يستهلك رصيدًا)")
             answer = (
-                "حسب الكود الحالي، يحاول Omarai البحث عبر: "
+                "بحسب الكود الحالي، يتضمن Omarai مسار بحث ويب يستخدم: "
                 + "، ".join(providers)
-                + ". يحاول بعد ذلك فحص بعض الصفحات العامة ودمج النتائج وإزالة التكرار؛ "
-                "وقد تُرفض الصفحات المحمية أو البطيئة أو غير المرتبطة بالسؤال. هذه قائمة "
-                "بالموصلات التي يحاول استخدامها وليست إثباتًا بأنها نجحت في كل طلب. "
-                "لا يوجد وصول مضمون إلى كل الإنترنت أو إلى مجموعات ومنشورات خاصة. "
-                "لم أنفذ بحثًا حيًا عن موقع بعينه في هذه الإجابة؛ استخدم «اختبار الاتصال» "
-                "للتأكد من حالة الموصلات الآن."
+                + ". هذه قائمة بالموصلات المضمّنة أو المهيأة، وليست إثباتًا بأنها نجحت "
+                "في هذه اللحظة. لم أنفّذ اختبار اتصال حي في هذه الإجابة، لذلك لا أستطيع "
+                "تأكيد توافر الشبكة الآن. عند طلب بحث فعلي، ينبغي أن يوضح التقرير ما إذا "
+                "بدأت المحاولة، وما الموصلات التي أعادت نتائج، وما الصفحات التي أمكن قراءة "
+                "محتواها. لا يوجد وصول مضمون إلى كل الإنترنت أو إلى المحتوى الخاص."
             )
-        return self._local_answer_result(question, answer, "capability_answer")
+        result = self._local_answer_result(question, answer, "capability_answer")
+        result["capability_status"] = self._capability_status_snapshot()
+        return result
 
     def _answer_without_search(
         self, question: str, history: list[dict[str, str]]
@@ -2184,6 +2336,27 @@ class WebAgent:
                 return (previous + " " + question)[:500]
         return question[:500]
 
+    def _record_generation_diagnostic(
+        self,
+        requested_model: str,
+        attempted_model: str,
+        status: str,
+        finish_reason: str | None = None,
+        error_class: str | None = None,
+    ) -> None:
+        """Store bounded completion metadata without prompts, output text, or secrets."""
+        record = {
+            "requested_model": str(requested_model)[:160],
+            "attempted_model": str(attempted_model)[:160],
+            "status": str(status)[:48],
+        }
+        if isinstance(finish_reason, str) and finish_reason.strip():
+            record["finish_reason"] = finish_reason.strip()[:48]
+        if isinstance(error_class, str) and error_class:
+            record["error_class"] = error_class[:80]
+        self.generation_diagnostics.append(record)
+        self.generation_diagnostics = self.generation_diagnostics[-12:]
+
     def _request_completion(
         self,
         messages: list[dict[str, str]],
@@ -2257,16 +2430,38 @@ class WebAgent:
                 if not isinstance(choice, dict):
                     raise TypeError("invalid completion choice")
                 finish_reason = choice.get("finish_reason")
-                if finish_reason in {"length", "max_tokens"}:
-                    last_error = RuntimeError(
-                        "أعاد نموذج اللغة إجابة مبتورة بسبب الوصول إلى حد الرموز؛ "
-                        "لم تُقبل كإجابة مكتملة."
-                    )
-                    continue
-                if finish_reason in {"content_filter", "error", "abort", "cancelled"}:
-                    last_error = RuntimeError(
-                        "لم تُكمل خدمة النموذج إنشاء الإجابة (حالة الإنهاء غير مكتملة)؛ "
-                        "لم تُقبل المخرجات كإجابة نهائية."
+                normalized_finish_reason = (
+                    finish_reason.strip().lower()
+                    if isinstance(finish_reason, str)
+                    else ""
+                )
+                # This application consumes a final text completion from an
+                # OpenAI-compatible /chat/completions endpoint. Fail closed when the
+                # provider does not explicitly report the standardized "stop" reason.
+                if normalized_finish_reason != "stop":
+                    if normalized_finish_reason in {"length", "max_tokens"}:
+                        diagnostic_status = "truncated"
+                        last_error = RuntimeError(
+                            "أعاد نموذج اللغة إجابة مبتورة بسبب الوصول إلى حد الرموز؛ "
+                            "لم تُقبل كإجابة مكتملة."
+                        )
+                    elif not normalized_finish_reason:
+                        diagnostic_status = "finish_reason_missing"
+                        last_error = RuntimeError(
+                            "لم تقدم خدمة النموذج سبب انتهاء واضحًا؛ لم تُقبل الإجابة "
+                            "كإجابة مكتملة."
+                        )
+                    else:
+                        diagnostic_status = "finish_reason_not_accepted"
+                        last_error = RuntimeError(
+                            "لم تُكمل خدمة النموذج إجابة نصية نهائية مقبولة "
+                            "(حالة الإنهاء: " + normalized_finish_reason[:40] + ")."
+                        )
+                    self._record_generation_diagnostic(
+                        requested_model=requested_model,
+                        attempted_model=candidate_model,
+                        status=diagnostic_status,
+                        finish_reason=normalized_finish_reason or None,
                     )
                     continue
                 message = choice["message"]
@@ -2304,6 +2499,12 @@ class WebAgent:
                     )
                 if not isinstance(answer, str) or not answer.strip():
                     raise ValueError("empty model response")
+                self._record_generation_diagnostic(
+                    requested_model=requested_model,
+                    attempted_model=candidate_model,
+                    status="accepted",
+                    finish_reason=normalized_finish_reason,
+                )
                 self.model_usage.append({
                     "requested_model": requested_model,
                     "used_model": candidate_model,
@@ -2312,14 +2513,26 @@ class WebAgent:
                 return answer.strip()
             except urllib.error.HTTPError as exc:
                 # Never echo provider response bodies: they may contain private diagnostics.
+                self._record_generation_diagnostic(
+                    requested_model, candidate_model, "provider_http_error",
+                    error_class="HTTPError",
+                )
                 last_error = RuntimeError(
                     f"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code}) على النموذج المحدد."
                 )
-            except (urllib.error.URLError, TimeoutError, OSError):
+            except (urllib.error.URLError, TimeoutError, OSError) as exc:
+                self._record_generation_diagnostic(
+                    requested_model, candidate_model, "connection_error",
+                    error_class=type(exc).__name__,
+                )
                 last_error = RuntimeError(
                     "تعذر الاتصال بخدمة نموذج اللغة؛ جرت محاولة استخدام النموذج الاحتياطي."
                 )
-            except (KeyError, IndexError, TypeError, ValueError):
+            except (KeyError, IndexError, TypeError, ValueError) as exc:
+                self._record_generation_diagnostic(
+                    requested_model, candidate_model, "invalid_response",
+                    error_class=type(exc).__name__,
+                )
                 last_error = RuntimeError(
                     "خدمة نموذج اللغة أعادت استجابة غير صالحة؛ جرت محاولة استخدام النموذج الاحتياطي."
                 )
@@ -2950,6 +3163,7 @@ class WebAgent:
     ) -> dict[str, Any]:
         """Run one answer with an isolated, observable resource budget."""
         previous_budget = getattr(self, "_request_budget", None)
+        self.generation_diagnostics = []
         budget = RequestBudget.from_environment()
         self._request_budget = budget
         try:
@@ -2992,6 +3206,7 @@ class WebAgent:
                 "used_social_search": False,
                 "warnings": [str(exc)],
                 "kind": "web_fallback",
+                "final_answer_status": "budget_exhausted",
                 "intent_route": "BUDGET_EXHAUSTED",
                 "intent_route_reason": "request_budget_exhausted",
             }
@@ -3000,6 +3215,25 @@ class WebAgent:
             self._request_budget = previous_budget
 
         result["request_budget"] = budget_summary
+        result["generation_diagnostics"] = list(self.generation_diagnostics[-12:])
+        if "final_answer_status" not in result:
+            if result.get("kind") in {"capability_answer", "local_conversation"}:
+                final_answer_status = "local_response_no_generation"
+            elif result.get("kind") == "insufficient_evidence":
+                final_answer_status = "insufficient_evidence_no_generation"
+            elif result.get("used_language_model") is True:
+                final_answer_status = "model_answer_generated"
+            elif self.generation_diagnostics:
+                final_answer_status = (
+                    "generation_failed_with_source_fallback"
+                    if result.get("sources")
+                    else "generation_failed"
+                )
+            elif result.get("kind") == "clarification":
+                final_answer_status = "clarification_required"
+            else:
+                final_answer_status = "not_attempted"
+            result["final_answer_status"] = final_answer_status
         if isinstance(result.get("search_report"), dict):
             result["search_report"]["request_budget"] = budget_summary
         if budget_summary["deadline_exceeded"]:
@@ -3020,17 +3254,22 @@ class WebAgent:
         self._reset_deepseek_search_budget()
         self.server_search_sources = []
         self.model_usage = []
+        self.generation_diagnostics = []
         with self._provider_diagnostics_lock:
             self._provider_diagnostics = []
         clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
         if clean_mode not in {"auto", "deep", "latest", "social"}:
             raise ValueError("نمط البحث غير مدعوم. اختر auto أو deep أو latest أو social.")
+        current_search_status_question = self._is_current_search_status_question(question)
+        # Explicit UI modes control research tasks, but must not turn a status
+        # question about this answer into a new web-search request.
+        routing_mode = "auto" if current_search_status_question else clean_mode
         decision = route_intent(
             question,
             clean_history,
-            clean_mode,
+            routing_mode,
             capability_question=self._is_self_question(question),
-            requires_web=self._requires_web_research(question, clean_mode),
+            requires_web=self._requires_web_research(question, routing_mode),
         )
         intent_route = str(decision["route"])
         intent_reason = str(decision["reason"])
@@ -3672,11 +3911,37 @@ class WebAgent:
             )
         search_warning = "؛ ".join(dict.fromkeys(search_warnings)) if search_warnings else None
         if needs_corroboration and not task_specific_partial_evidence:
-            reason = (
-                "لم أجد معلومات موثوقة كافية مرتبطة بسؤالك من نطاقين مسجلين مختلفين على الأقل. "
-                "اختلاف النطاقات لا يثبت الاستقلال التحريري. لن أخمّن أو أقدّم نتيجة غير مدعومة؛ "
-                "جرّب صياغة أدق أو أعد المحاولة لاحقًا."
-            )
+            if search_outcome == "unknown_after_research_error":
+                reason = (
+                    "تعذر إكمال مسار البحث بسبب خطأ، ولا توجد بيانات كافية لتحديد ما إذا "
+                    "كانت محاولة البحث قد اكتملت أو كم نتيجة جُمعت. لذلك لا أستطيع الجزم "
+                    "بأن البحث لم يُنفّذ أو أن الإنترنت لم يُعد نتائج. لم أتمكن من تقديم "
+                    "إجابة مكتملة؛ أعد المحاولة لاحقًا."
+                )
+            elif search_outcome == "attempted_research_error":
+                reason = (
+                    "توجد قرائن تشغيلية على بدء محاولة بحث، لكن مسار البحث فشل قبل إنتاج "
+                    "تقرير مكتمل. لا أستطيع تحديد عدد النتائج أو المصادر القابلة للاستخدام، "
+                    "لذلك لن أخمّن. أعد المحاولة لاحقًا."
+                )
+            elif search_outcome == "attempted_no_usable_sources":
+                reason = (
+                    "جرت محاولة البحث، لكن لم تتوفر مصادر صالحة وكافية للإجابة بعد تصفية "
+                    "النتائج. هذا لا يثبت أن جميع المواقع أو الإنترنت غير متاح؛ لن أخمّن "
+                    "أو أقدّم نتيجة غير مدعومة. جرّب صياغة أدق أو أعد المحاولة لاحقًا."
+                )
+            elif search_outcome == "not_attempted":
+                reason = (
+                    "لم تبدأ محاولة بحث ويب لهذا الطلب، لذلك لا تتوفر لدي أدلة ويب حالية "
+                    "كافية للإجابة. لن أقدّم نتيجة غير مدعومة؛ أعد المحاولة أو اطلب بحثًا "
+                    "صريحًا إذا كان ذلك مناسبًا."
+                )
+            else:
+                reason = (
+                    "لم أجد معلومات موثوقة كافية مرتبطة بسؤالك من نطاقين مسجلين مختلفين على الأقل. "
+                    "اختلاف النطاقات لا يثبت الاستقلال التحريري. لن أخمّن أو أقدّم نتيجة غير مدعومة؛ "
+                    "جرّب صياغة أدق أو أعد المحاولة لاحقًا."
+                )
             public_sources = [{
                 "title": source.get("title") or "نتيجة ويب",
                 "url": source["url"],
@@ -3750,6 +4015,7 @@ class WebAgent:
                 "used_social_search": bool(report.get("social_direct_results", 0)),
                 "warnings": list(dict.fromkeys(search_warnings + [reason])),
                 "kind": "insufficient_evidence",
+                "final_answer_status": "insufficient_evidence_no_generation",
                 "intent_route": intent_route,
                 "intent_route_reason": intent_reason,
                 "research_quality": "failed",
@@ -3760,6 +4026,7 @@ class WebAgent:
         answer = ""
         used_llm = False
         llm_warning: str | None = None
+        generation_budget_exhausted = False
         try:
             answer = self._generate(
                 question,
@@ -3793,9 +4060,15 @@ class WebAgent:
                 report["evidence_signals"] = evidence_signal_report(
                     sources, plan.get("freshness", "any")
                 )
-        except (RuntimeError, AgentDependencyError) as exc:
+        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
             llm_warning = str(exc)
-            if not self.api_key:
+            generation_budget_exhausted = isinstance(exc, RequestBudgetExceeded)
+            if generation_budget_exhausted:
+                reason = (
+                    "استُنفدت ميزانية محاولات النماذج قبل اكتمال الإجابة التحليلية. "
+                    "أعرض مقتطفات المصادر المتاحة فقط، ولا أعتبر المهمة مكتملة."
+                )
+            elif not self.api_key:
                 reason = (
                     "تم البحث، لكن الفهم التوليدي غير مفعّل بعد. اضبط OPENROUTER_API_KEY "
                     "في Termux لتفعيل تخطيط البحث والإجابة باللغة الطبيعية."
@@ -3809,13 +4082,19 @@ class WebAgent:
 
         review_status = "not_run"
         review_warning: str | None = None
+        review_budget_exhausted = False
         if used_llm and sources:
             try:
                 answer = self._review_answer(question, answer, sources[:MAX_LLM_CITED_SOURCES])
                 review_status = "model_claim_audit_completed"
-            except (RuntimeError, AgentDependencyError):
+            except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
                 review_status = "model_claim_audit_unavailable"
+                review_budget_exhausted = isinstance(exc, RequestBudgetExceeded)
                 review_warning = (
+                    "استُنفدت ميزانية النماذج قبل اكتمال تدقيق الإجابة؛ لذلك لن أعرض المسودة "
+                    "بوصفها إجابة مكتملة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد عليها."
+                    if review_budget_exhausted
+                    else
                     "تعذر تدقيق الادعاءات مقابل نصوص المصادر؛ لذلك لن أتعامل مع المسودة "
                     "كإجابة مؤكدة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد على المسودة."
                 )
@@ -3945,6 +4224,21 @@ class WebAgent:
         report["model_calls"] = list(self.model_usage)
         report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
         report["openrouter_web_search_results"] = len(self.server_search_sources)
+        if generation_budget_exhausted or review_budget_exhausted:
+            final_answer_status = "budget_exhausted_with_source_fallback"
+        elif llm_warning:
+            final_answer_status = (
+                "model_not_configured_fallback"
+                if not self.api_key
+                else "generation_failed_with_source_fallback"
+            )
+        elif review_warning:
+            final_answer_status = "review_failed_with_source_fallback"
+        elif used_llm:
+            final_answer_status = "model_answer_generated"
+        else:
+            final_answer_status = "source_fallback"
+
         public_sources = []
         for source in sources:
             public_sources.append({
@@ -3992,6 +4286,7 @@ class WebAgent:
             "used_social_search": bool(report.get("social_direct_results", 0)),
             "warnings": warnings,
             "kind": "web_research" if used_llm else "web_fallback",
+            "final_answer_status": final_answer_status,
             "intent_route": intent_route,
             "intent_route_reason": intent_reason,
         }

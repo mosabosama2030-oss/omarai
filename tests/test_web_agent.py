@@ -617,7 +617,10 @@ def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
 
         def read(self, limit):
             return json.dumps({
-                "choices": [{"message": {"content": "إجابة من النموذج الاحتياطي"}}]
+                "choices": [{
+                    "message": {"content": "إجابة من النموذج الاحتياطي"},
+                    "finish_reason": "stop",
+                }]
             }).encode("utf-8")
 
     def fake_urlopen(request, timeout):
@@ -933,7 +936,8 @@ def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeyp
                                 "content": "An excerpt returned by the live search service.",
                             },
                         }],
-                    }
+                    },
+                    "finish_reason": "stop",
                 }]
             }).encode("utf-8")
 
@@ -1111,6 +1115,7 @@ def test_answer_hides_unwrapped_internal_review_report(monkeypatch):
     result = agent.answer("قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية")
 
     assert result["search_report"]["second_pass_review"] == "model_claim_audit_unavailable"
+    assert result["final_answer_status"] == "review_failed_with_source_fallback"
     assert "Audit Report" not in result["answer"]
     assert "ملاحظة داخلية سرية" not in result["answer"]
     assert "إجابة نهائية مزعومة" not in result["answer"]
