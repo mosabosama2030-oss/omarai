@@ -558,8 +558,8 @@ class WebAgent:
             "هل تستطيع الوصول", "هل يمكنك الوصول",
             "هل عندك اتصال بالانترنت", "هل عندك اتصال بالانترنيت",
             "هل عندك انترنت",
-            "هل بحثت في الانترنت للاجابة الحاليه",
-            "هل بحثت علي الانترنت للاجابة الحاليه",
+            "هل بحثت في الانترنت للاجابه الحاليه",
+            "هل بحثت علي الانترنت للاجابه الحاليه",
             "هل بحثت في الانترنت لهذا السؤال",
             "هل بحثت في النت للرد ده",
             "did you search the web for this answer",
@@ -848,8 +848,8 @@ class WebAgent:
         """Answer self/capability questions without inventing a live health result."""
         value = _normalize_search_query(question).casefold()
         current_search_question = any(phrase in value for phrase in (
-            "هل بحثت في الانترنت للاجابة الحاليه",
-            "هل بحثت علي الانترنت للاجابة الحاليه",
+            "هل بحثت في الانترنت للاجابه الحاليه",
+            "هل بحثت علي الانترنت للاجابه الحاليه",
             "هل بحثت في الانترنت لهذا السؤال",
             "هل بحثت في النت للرد ده",
             "did you search the web for this answer",
