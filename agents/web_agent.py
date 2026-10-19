@@ -3115,7 +3115,7 @@ class WebAgent:
         start_marker = "<<<OMARAI_COVERAGE_REPAIR>>>"
         end_marker = "<<<END_OMARAI_COVERAGE_REPAIR>>>"
         repaired = re.fullmatch(
-            r"\\s*<<<OMARAI_COVERAGE_REPAIR>>>\\s*(.*?)\\s*<<<END_OMARAI_COVERAGE_REPAIR>>>\\s*",
+            r"\s*<<<OMARAI_COVERAGE_REPAIR>>>\s*(.*?)\s*<<<END_OMARAI_COVERAGE_REPAIR>>>\s*",
             raw,
             flags=re.DOTALL,
         )
