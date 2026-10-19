@@ -50,6 +50,31 @@ LLM_TIMEOUT_SECONDS = 35
 _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({"ok", "no_results", "filtered_all"})
 _RESEARCH_ERROR_OUTCOMES = frozenset({"attempted_research_error", "unknown_after_research_error"})
 
+# Only expose property-related numbers when the source text explicitly includes a
+# currency or an area unit. These patterns extract excerpts; they do not verify listings.
+_PROPERTY_PRICE_RE = re.compile(
+    r"(?i)(?:\\d{1,3}(?:[,\\u066c]\\d{3})+|\\d{4,}|"
+    r"\\d+(?:[.,]\\d+)?\\s*(?:مليون|مليار))\\s*"
+    r"(?:جنيه(?:\\s+مصري)?|ج\\.?\\s*م\\.?|EGP|L\\.E\\.|LE)"
+)
+_PROPERTY_PRICE_CURRENCY_FIRST_RE = re.compile(
+    r"(?i)(?<![A-Za-z])(?:EGP|L\\.E\\.|LE)\\s*"
+    r"(?:\\d{1,3}(?:[,\\u066c]\\d{3})+|\\d{4,}|"
+    r"\\d+(?:[.,]\\d+)?\\s*(?:million|billion))"
+)
+_PROPERTY_AREA_RE = re.compile(
+    r"(?ix)(?:مساحة\\s*[:：]?\\s*\\d{2,4}(?:[.,]\\d+)?\\s*متر(?:\\s+مربع)?|"
+    r"\\d{2,4}(?:[.,]\\d+)?\\s*(?:متر\\s+مربع|م[²2]|sqm|"
+    r"sq\\.?\\s*m(?:eters?)?|square\\s+meters?))"
+)
+_PROPERTY_LOCATION_RE = re.compile(
+    r"(?i)(?:في|بمنطقة|بمنطقه|بالقرب من|قريب من|near|in)\\s+"
+    r"(?P<location>[^،,؛;\\n]+?)"
+    r"(?=\\s+(?:بسعر|بميزانية|بالميزانية|سعر|مساحة|مساحه|للبيع|للايجار|ايجار|"
+    r"معاينة|معاينه|مطلوب|بحدود|بحد اقصى|under|below|with|for sale|for rent)\\b"
+    r"|[،,؛;\\n]|$)"
+)
+
 
 _ARABIC_SEARCH_TRANSLATION = str.maketrans({
     "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي",
@@ -659,8 +684,9 @@ class WebAgent:
             "real estate", "house", "villa", "job opening", "وظيفه", "وظائف",
         )
         actions = (
-            "ابحث", "دور", "هات", "عايز", "عاوز", "محتاج", "بدور", "للبيع",
-            "للايجار", "ايجار", "معاينه", "اعلان", "اعلانات", "find", "search",
+            "ابحث", "يبحث", "تبحث", "باحث عن", "عميل يبحث", "دور", "هات",
+            "عايز", "عاوز", "محتاج", "بدور", "مطلوب", "للبيع", "للايجار",
+            "ايجار", "معاينه", "اعلان", "اعلانات", "find", "search",
             "looking for", "for sale", "for rent",
         )
         normalized_entities = (_normalize_search_query(term).casefold() for term in entities)
@@ -668,6 +694,68 @@ class WebAgent:
         return any(term in value for term in normalized_entities) and any(
             term in value for term in normalized_actions
         )
+
+    @staticmethod
+    def _property_listing_details(question: str, source: dict[str, Any]) -> dict[str, Any]:
+        """Extract explicit property-like text only; do not infer missing listing fields."""
+        fields = [
+            (name, str(source.get(name) or ""))
+            for name in ("title", "snippet", "page_text")
+            if isinstance(source.get(name), str) and source.get(name).strip()
+        ]
+
+        price_text = None
+        price_source_field = None
+        for name, text in fields:
+            match = _PROPERTY_PRICE_RE.search(text) or _PROPERTY_PRICE_CURRENCY_FIRST_RE.search(text)
+            if match:
+                price_text = match.group(0).strip()
+                price_source_field = name
+                break
+
+        area_text = None
+        area_source_field = None
+        for name, text in fields:
+            match = _PROPERTY_AREA_RE.search(text)
+            if match:
+                area_text = match.group(0).strip()
+                area_source_field = name
+                break
+
+        requested_location_text = None
+        location_source_field = None
+        location_match = _PROPERTY_LOCATION_RE.search(question or "")
+        if location_match:
+            candidate = location_match.group("location").strip(" \t:-،,؛;")
+            if candidate and len(candidate) <= 80:
+                normalized_candidate = _normalize_search_query(candidate).casefold()
+                for name, text in fields:
+                    if normalized_candidate and normalized_candidate in (
+                        _normalize_search_query(text).casefold()
+                    ):
+                        requested_location_text = candidate
+                        location_source_field = name
+                        break
+
+        fields_not_found = []
+        if not price_text:
+            fields_not_found.append("price_text")
+        if not area_text:
+            fields_not_found.append("area_text")
+        if not requested_location_text:
+            fields_not_found.append("requested_location_text")
+
+        return {
+            "classification": "candidate_property_result",
+            "verification_status": "source_text_not_independently_verified",
+            "price_text": price_text,
+            "price_source_field": price_source_field,
+            "area_text": area_text,
+            "area_source_field": area_source_field,
+            "requested_location_text": requested_location_text,
+            "location_source_field": location_source_field,
+            "fields_not_found": fields_not_found,
+        }
 
     @staticmethod
     def _requires_web_research(question: str, mode: str) -> bool:
@@ -3258,6 +3346,10 @@ class WebAgent:
         navigation_request = self._is_navigation_request(question)
         lead_request = intent_route == "LEAD_GENERATION" or self._is_lead_search(question)
         listing_request = self._is_listing_discovery(question)
+        if listing_request:
+            for source in sources:
+                if isinstance(source, dict):
+                    source["property_listing"] = self._property_listing_details(question, source)
         lead_evidence_sources: list[dict[str, Any]] = []
         related_lead_results_count = 0
         if lead_request:
