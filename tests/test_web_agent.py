@@ -2342,3 +2342,14 @@ def test_lead_generation_preserves_unknown_state_when_research_throws(monkeypatc
     assert result["search_report"]["usable_sources_after_filtering"] is None
     assert result["search_report"]["evidence_signals"] is None
     assert "لم أستطع تحديد" in result["answer"] or "تعطل مسار البحث" in result["answer"]
+
+
+
+def test_local_answer_exposes_request_budget_without_claiming_live_search():
+    result = WebAgent().answer("مرحبا")
+
+    budget = result["request_budget"]
+    assert budget["policy"] == "cooperative_per_request_budget"
+    assert budget["counts"]["search_queries"] == 0
+    assert budget["counts"]["model_calls"] == 0
+    assert budget["hard_cancellation_guaranteed"] is False
