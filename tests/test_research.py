@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from agents.research import (
+    apply_mode_to_plan,
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
@@ -22,6 +23,52 @@ def test_follow_up_query_keeps_prior_topic():
     plan = fallback_plan("وطب الأسعار الحالية؟", history)
     assert "السيارات الكهربائية" in plan["queries"][0]
     assert plan["freshness"] == "current"
+
+
+def test_explicit_deep_mode_adds_distinct_real_estate_search_angles():
+    question = "شقة في التجمع الخامس بسعر 5000000 جنيه"
+    default_plan = fallback_plan(question)
+    deep_plan = fallback_plan(question, mode="deep")
+
+    assert len(default_plan["queries"]) == 1
+    assert deep_plan["depth"] == "deep"
+    assert len(deep_plan["queries"]) >= 3
+    assert any("إعلانات عقارية" in query for query in deep_plan["queries"])
+    assert any("متوسط أسعار السوق للمتر" in query for query in deep_plan["queries"])
+    assert len({query.casefold() for query in deep_plan["queries"]}) == len(
+        deep_plan["queries"]
+    )
+
+
+def test_explicit_modes_are_merged_into_existing_plans():
+    question = "شقة في التجمع الخامس بسعر 5000000 جنيه"
+    base_plan = {
+        "queries": [question],
+        "depth": "standard",
+        "freshness": "any",
+        "social_focus": False,
+        "platforms": [],
+    }
+
+    deep_plan = apply_mode_to_plan(question, None, dict(base_plan), "deep")
+    assert deep_plan["depth"] == "deep"
+    assert len(deep_plan["queries"]) >= 3
+    assert any("مواقع عقارية موثوقة" in query for query in deep_plan["queries"])
+
+    latest_plan = apply_mode_to_plan("سوق العقارات في مصر", None, {
+        **base_plan,
+        "queries": ["سوق العقارات في مصر"],
+    }, "latest")
+    assert latest_plan["freshness"] == "current"
+    assert any("أحدث مستجدات" in query for query in latest_plan["queries"])
+
+    social_plan = apply_mode_to_plan("العقارات وتجارب المشترين", None, {
+        **base_plan,
+        "queries": ["العقارات وتجارب المشترين"],
+    }, "social")
+    assert social_plan["social_focus"] is True
+    assert {"facebook", "instagram", "reddit"}.issubset(set(social_plan["platforms"]))
+    assert any("site:reddit.com" in query for query in social_plan["queries"])
 
 
 def test_plan_validation_caps_queries_and_rejects_non_string_values():
