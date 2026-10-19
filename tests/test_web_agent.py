@@ -155,6 +155,9 @@ def test_public_url_filter_rejects_local_and_credential_urls():
 def test_public_url_filter_accepts_basic_https_url():
     assert _public_http_url("https://example.com/path#section") == "https://example.com/path"
 
+def test_public_url_filter_rejects_nonstandard_ports():
+    assert _public_http_url("https://example.com:8443/private") is None
+
 
 def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
     import httpx
