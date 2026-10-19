@@ -2082,10 +2082,18 @@ class WebAgent:
         return results, warnings
 
     def _fetch_page(self, url: str) -> tuple[str, str]:
-        """Fetch a public page with bounded, individually validated redirects and size limits."""
+        """Fetch a public page with bounded redirects and an inspectable extraction outcome."""
+        def result(
+            title: str = "",
+            page_text: str = "",
+            status: str = "unknown",
+            error_class: str | None = None,
+        ) -> PageFetchResult:
+            return PageFetchResult(title, page_text, status, error_class)
+
         current_url = _public_http_url(url)
         if not current_url:
-            return "", ""
+            return result(status="rejected_url", error_class="PublicUrlRejected")
         budget = getattr(self, "_request_budget", None)
         if budget is not None:
             budget.reserve("page_fetches")
@@ -2103,6 +2111,7 @@ class WebAgent:
         }
         media_type = ""
         html = ""
+        bytes_truncated = False
         try:
             with httpx.Client(
                 timeout=self._effective_timeout(8.0),
@@ -2114,14 +2123,14 @@ class WebAgent:
                 for redirect_number in range(4):
                     parsed = urllib.parse.urlparse(current_url)
                     host = parsed.hostname or ""
-                    # Resolve and pin one public IP. httpx must not perform a
-                    # second lookup of the original hostname.
+                    # Resolve and pin a public IP. Do not let the HTTP client resolve
+                    # the original hostname a second time.
                     public_ips = _public_ip_literals(host)
                     if not public_ips:
-                        return "", ""
+                        return result(status="blocked_or_unresolved_host", error_class="HostResolutionOrSSRFCheck")
                     connect_url = _pinned_connect_url(current_url, public_ips[0])
                     if not connect_url:
-                        return "", ""
+                        return result(status="blocked_connection_target", error_class="PinnedTargetRejected")
                     request_headers = {"Host": host}
                     extensions = {"sni_hostname": host} if parsed.scheme == "https" else {}
                     with client.stream(
@@ -2133,28 +2142,28 @@ class WebAgent:
                         if response.status_code in {301, 302, 303, 307, 308}:
                             location = response.headers.get("location", "")
                             if not location or redirect_number >= 3:
-                                return "", ""
+                                return result(status="redirect_failed", error_class="RedirectLimitOrMissingLocation")
                             target = _public_http_url(
                                 urllib.parse.urljoin(current_url, location)
                             )
                             if not target:
-                                return "", ""
+                                return result(status="redirect_rejected", error_class="RedirectTargetRejected")
                             current_url = target
                             continue
                         if response.status_code < 200 or response.status_code >= 300:
-                            return "", ""
+                            return result(status="http_error", error_class="HTTPStatus")
                         media_type = response.headers.get(
                             "content-type", ""
                         ).split(";")[0].lower()
                         if media_type not in {
                             "text/html", "application/xhtml+xml", "text/plain"
                         }:
-                            return "", ""
+                            return result(status="unsupported_content_type", error_class="UnsupportedContentType")
                         content_length = response.headers.get("content-length")
                         if content_length:
                             try:
                                 if int(content_length) > MAX_PAGE_BYTES:
-                                    return "", ""
+                                    return result(status="page_too_large", error_class="ContentLengthLimit")
                             except ValueError:
                                 pass
                         chunks: list[bytes] = []
@@ -2165,6 +2174,7 @@ class WebAgent:
                                 remaining = max(0, MAX_PAGE_BYTES - (count - len(chunk)))
                                 if remaining:
                                     chunks.append(chunk[:remaining])
+                                bytes_truncated = True
                                 break
                             chunks.append(chunk)
                         raw = b"".join(chunks)
@@ -2172,12 +2182,21 @@ class WebAgent:
                         html = raw.decode(encoding, errors="replace")
                         break
                 else:
-                    return "", ""
-        except (OSError, ValueError, httpx.HTTPError):
-            return "", ""
+                    return result(status="redirect_limit", error_class="RedirectLimit")
+        except (OSError, ValueError, httpx.HTTPError) as exc:
+            return result(status="network_error", error_class=type(exc).__name__)
 
         if media_type == "text/plain":
-            return "", _clean_text(html, MAX_PAGE_TEXT_CHARS)
+            bounded_text = _clean_text(html, MAX_PAGE_TEXT_CHARS + 1)
+            text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS
+            page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)
+            status = (
+                "empty_content" if not page_text
+                else "partial_extraction" if bytes_truncated or text_truncated
+                else "content_extracted"
+            )
+            return result("", page_text, status)
+
         soup = BeautifulSoup(html, "html.parser")
         title = _clean_text(soup.title.get_text(" ", strip=True), 300) if soup.title else ""
         for element in soup([
@@ -2186,8 +2205,15 @@ class WebAgent:
         ]):
             element.decompose()
         main = soup.find("main") or soup.find("article") or soup.body or soup
-        text = _clean_text(main.get_text(" ", strip=True), MAX_PAGE_TEXT_CHARS)
-        return title, text
+        bounded_text = _clean_text(main.get_text(" ", strip=True), MAX_PAGE_TEXT_CHARS + 1)
+        text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS
+        page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)
+        status = (
+            "no_text_extracted" if not page_text
+            else "partial_extraction" if bytes_truncated or text_truncated
+            else "content_extracted"
+        )
+        return result(title, page_text, status)
 
     def _collect_sources(self, query: str) -> tuple[list[dict[str, Any]], str | None]:
         try:
