@@ -2524,3 +2524,146 @@ def test_explicit_deep_mode_augments_single_query_plan(monkeypatch):
     assert any("متوسط أسعار السوق للمتر" in query for query in planned["queries"])
     assert result["research_plan"]["mode"] == "deep"
     assert result["research_plan"]["depth"] == "deep"
+
+
+def test_repaired_answer_is_reaudited_before_being_returned(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "قارن بين خدمتين من حيث السعر، الخصوصية، الاعتمادية."
+    sources = [sample_source(0), sample_source(1)]
+    draft = "السعر واضح في الخدمة الأولى [المصدر 1]."
+    repaired = "السعر والخصوصية والاعتمادية مذكورة في المعلومات المتاحة [المصدر 1] [المصدر 2]."
+    final_reviewed = (
+        "بعد إعادة التدقيق: السعر والخصوصية والاعتمادية مذكورة في المصدرين "
+        "[المصدر 1] [المصدر 2]."
+    )
+    calls = {"review": 0, "repair": 0}
+
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": [],
+            "planning_method": "unit_test",
+        },
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            sources,
+            [],
+            {
+                "queries_planned": len(plan["queries"]),
+                "queries_attempted": len(plan["queries"]),
+                "search_attempted": True,
+                "search_outcome": "attempted_with_usable_sources",
+                "unique_sources": len(sources),
+                "pages_fetched": 2,
+                "providers_used": ["test_provider"],
+                "provider_counts": {"test_provider": 2},
+                "platform_counts": {"web": 2},
+                "social_direct_results": 0,
+                "depth": plan["depth"],
+                "planning_method": "unit_test",
+                "provider_diagnostics": [],
+                "evidence_signals": {},
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: draft)
+
+    def review(question, answer, review_sources):
+        calls["review"] += 1
+        return answer if calls["review"] == 1 else final_reviewed
+
+    def repair(question, answer, repair_sources, missing_targets):
+        calls["repair"] += 1
+        assert "الخصوصية" in missing_targets or "الاعتمادية" in missing_targets
+        return repaired
+
+    monkeypatch.setattr(agent, "_review_answer", review)
+    monkeypatch.setattr(agent, "_repair_answer_coverage", repair)
+
+    result = agent.answer(question, mode="deep")
+
+    assert calls["repair"] == 1
+    assert calls["review"] == 2
+    assert result["answer"] == final_reviewed
+    assert result["search_report"]["coverage_repair_status"] == "revised_and_reaudited"
+    assert result["search_report"]["second_pass_review"] == "model_claim_audit_completed"
+    assert result["answer_coverage"]["automatically_graded"] is False
+
+
+def test_repaired_answer_falls_back_to_sources_if_final_reaudit_fails(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "قارن بين خدمتين من حيث السعر، الخصوصية، الاعتمادية."
+    sources = [sample_source(0), sample_source(1)]
+    draft = "السعر واضح في الخدمة الأولى [المصدر 1]."
+    repaired = "السعر والخصوصية والاعتمادية مذكورة في المعلومات المتاحة [المصدر 1] [المصدر 2]."
+    calls = {"review": 0}
+
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": [],
+            "planning_method": "unit_test",
+        },
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            sources,
+            [],
+            {
+                "queries_planned": len(plan["queries"]),
+                "queries_attempted": len(plan["queries"]),
+                "search_attempted": True,
+                "search_outcome": "attempted_with_usable_sources",
+                "unique_sources": len(sources),
+                "pages_fetched": 2,
+                "providers_used": ["test_provider"],
+                "provider_counts": {"test_provider": 2},
+                "platform_counts": {"web": 2},
+                "social_direct_results": 0,
+                "depth": plan["depth"],
+                "planning_method": "unit_test",
+                "provider_diagnostics": [],
+                "evidence_signals": {},
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: draft)
+    monkeypatch.setattr(agent, "_repair_answer_coverage", lambda *args, **kwargs: repaired)
+
+    def review(question, answer, review_sources):
+        calls["review"] += 1
+        if calls["review"] == 1:
+            return answer
+        raise RuntimeError("simulated final re-audit failure")
+
+    monkeypatch.setattr(agent, "_review_answer", review)
+
+    result = agent.answer(question, mode="deep")
+
+    assert calls["review"] == 2
+    assert result["search_report"]["coverage_repair_status"] == "reaudit_unavailable"
+    assert result["search_report"]["second_pass_review"] == "model_claim_audit_unavailable"
+    assert result["final_answer_status"] == "review_failed_with_source_fallback"
+    assert "تعذرت إعادة تدقيق الإجابة المعدلة" in result["answer"]
+    assert "نص مستخرج من الصفحة" in result["answer"]
