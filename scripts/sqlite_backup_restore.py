@@ -58,14 +58,17 @@ def _create_destination_exclusively(path: Path) -> None:
 
 def _copy_verified_database(source: str | Path, destination: str | Path) -> dict[str, Any]:
     source_path = Path(source).expanduser().resolve(strict=True)
-    destination_path = Path(destination).expanduser().resolve(strict=False)
+    requested_destination = Path(destination).expanduser()
+    destination_path = requested_destination.resolve(strict=False)
 
     if not source_path.is_file():
         raise BackupError("source must be an existing regular file")
     if source_path == destination_path:
         raise BackupError("source and destination must be different paths")
-    if destination_path.exists():
-        raise FileExistsError(f"destination already exists: {destination_path}")
+    # Check the user-supplied path before resolving it so a dangling symlink is
+    # never mistaken for an absent destination and followed to a new target.
+    if requested_destination.exists() or requested_destination.is_symlink() or destination_path.exists():
+        raise FileExistsError(f"destination already exists: {requested_destination}")
 
     # Validate the source before creating anything at the destination.
     with closing(_open_read_only(source_path)) as source_db:
