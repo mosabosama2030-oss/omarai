@@ -119,6 +119,7 @@ def test_capability_question_distinguishes_configuration_from_live_health(monkey
     result = agent.answer("هل تستطيع البحث على الانترنت؟")
 
     assert result["kind"] == "capability_answer"
+    assert result["final_answer_status"] == "local_response_no_generation"
     assert result["search_attempted"] is False
     assert result["used_web_search"] is False
     capability = result["capability_status"]["web_search"]
@@ -238,6 +239,7 @@ def test_generation_failure_returns_partial_sources_and_diagnostics(monkeypatch)
 
     assert result["used_web_search"] is True
     assert result["used_language_model"] is False
+    assert result["final_answer_status"] == "generation_failed_with_source_fallback"
     assert len(result["sources"]) == 2
     assert "تعذر توليد إجابة تحليلية" in result["answer"]
     assert "مقتطف تجريبي من المصدر الأول" in result["answer"]
