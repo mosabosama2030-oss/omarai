@@ -2030,6 +2030,9 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "حالة تنفيذ المطلوب:" in html
     assert "possible_gap_detected" in html
     assert "not_assessed_insufficient_evidence" in html
+    assert "حالة إصلاح التغطية:" in html
+    assert "revised_after_review_not_reaudited" in html
+    assert "لم تخضع لمراجعة ادعاءات ثانية" in html
     assert "ليس تحققًا من الحقيقة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
