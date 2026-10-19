@@ -497,3 +497,25 @@ def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):
     assert _configured_agent_concurrency_limit() == 8
     monkeypatch.setenv("OMARAI_MAX_CONCURRENT_AGENT_REQUESTS", "invalid")
     assert _configured_agent_concurrency_limit() == 4
+
+def test_agent_concurrency_slot_is_released_when_operation_raises(monkeypatch):
+    """A failed request must not leak a process-local agent concurrency slot."""
+
+    class FakeHandler(Handler):
+        def respond(self, status, payload):
+            return status, payload
+
+    monkeypatch.setattr(FakeHandler, "_agent_semaphore", threading.BoundedSemaphore(1))
+    handler = FakeHandler.__new__(FakeHandler)
+
+    def fail_operation():
+        raise RuntimeError("synthetic operation failure")
+
+    with pytest.raises(RuntimeError, match="synthetic operation failure"):
+        handler._run_bounded_agent_operation(fail_operation)
+
+    # If the finally block failed to release the slot, this non-blocking acquire
+    # would fail and subsequent valid requests could be rejected indefinitely.
+    assert FakeHandler._agent_semaphore.acquire(blocking=False)
+    FakeHandler._agent_semaphore.release()
+
