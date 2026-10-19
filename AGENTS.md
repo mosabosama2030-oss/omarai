@@ -4,6 +4,7 @@ These rules apply to every AI agent, human contributor, code change, test report
 
 ## Source of truth
 - Read `docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md` before architecture, security, performance, data-flow, search, model, tool-execution, concurrency, or deployment changes.
+- Read `docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md` for broad platform requirements and release reviews involving reliability/SRE, capacity, API/security, privacy/data governance, CI/CD/supply chain, recovery, accessibility, search quality, AI/agent evaluation, cost, and operational governance. Apply only the controls relevant to the change, but explicitly record material gaps and risks.
 - The charter is a design requirement, not evidence that controls already exist. Inspect the actual code and tests before describing implementation status.
 - Treat `README.md` as a description of the current documented behavior, but verify claims against code and runtime evidence when the task requires it.
 
@@ -48,6 +49,13 @@ These rules apply to every AI agent, human contributor, code change, test report
 - Never merge a pull request, force-update a protected branch, or deploy to production without explicit authorization from the Human Director.
 - Do not present a proposed or unmerged change as already effective on `main`.
 - Update the charter or related documentation when a material design decision changes; document major architectural choices and exceptions with rationale, risks, tests, and rollback considerations.
+
+## Platform-grade readiness
+- For material production-facing changes, assess the applicable release gates in both the charter and the Global Platform Engineering Baseline; do not treat a checklist as proof of compliance.
+- Define measurable SLI/SLO or a baseline where useful. Never invent uptime, latency, capacity, security maturity, cost, or recovery guarantees.
+- Review blast radius, dependency failure, graceful degradation, quotas, per-request budgets, data lifecycle, tenant isolation when multi-user, supply-chain exposure, observability/privacy, and recovery proportional to risk.
+- For AI/agent changes, test Arabic task quality, citation support, prompt injection, untrusted tool/page content, unauthorized actions, loops, provider failures, cost bounds, and safe fallback as applicable.
+- Require an explicit reason before adding distributed infrastructure; document simpler alternatives and lifecycle costs. Do not apply every enterprise control blindly to a small deployment, but do not conceal a risk merely because a control is expensive or not yet supported.
 
 ## Acceptance principle
 A capability is not complete because it appears in a plan, comment, prompt, or documentation. It is complete only to the extent supported by the implementation, relevant tests, observed output, and explicitly stated limitations.
