@@ -253,8 +253,12 @@ def test_generation_failure_returns_partial_sources_and_diagnostics(monkeypatch)
     assert "مقتطف تجريبي من المصدر الأول" in result["answer"]
     assert result["generation_diagnostics"] == [
         {
+            "attempt_number": 1,
             "requested_model": "primary/model",
             "attempted_model": "fallback/model",
+            "fallback_used": True,
+            "request_started": True,
+            "remote_response_received": True,
             "status": "truncated",
             "finish_reason": "length",
         }
