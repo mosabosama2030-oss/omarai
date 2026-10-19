@@ -3187,6 +3187,7 @@ class WebAgent:
                 "used_social_search": False,
                 "warnings": [str(exc)],
                 "kind": "web_fallback",
+                "final_answer_status": "budget_exhausted",
                 "intent_route": "BUDGET_EXHAUSTED",
                 "intent_route_reason": "request_budget_exhausted",
             }
@@ -3196,6 +3197,24 @@ class WebAgent:
 
         result["request_budget"] = budget_summary
         result["generation_diagnostics"] = list(self.generation_diagnostics[-12:])
+        if "final_answer_status" not in result:
+            if result.get("kind") in {"capability_answer", "local_conversation"}:
+                final_answer_status = "local_response_no_generation"
+            elif result.get("kind") == "insufficient_evidence":
+                final_answer_status = "insufficient_evidence_no_generation"
+            elif result.get("used_language_model") is True:
+                final_answer_status = "model_answer_generated"
+            elif self.generation_diagnostics:
+                final_answer_status = (
+                    "generation_failed_with_source_fallback"
+                    if result.get("sources")
+                    else "generation_failed"
+                )
+            elif result.get("kind") == "clarification":
+                final_answer_status = "clarification_required"
+            else:
+                final_answer_status = "not_attempted"
+            result["final_answer_status"] = final_answer_status
         if isinstance(result.get("search_report"), dict):
             result["search_report"]["request_budget"] = budget_summary
         if budget_summary["deadline_exceeded"]:
@@ -3951,6 +3970,7 @@ class WebAgent:
                 "used_social_search": bool(report.get("social_direct_results", 0)),
                 "warnings": list(dict.fromkeys(search_warnings + [reason])),
                 "kind": "insufficient_evidence",
+                "final_answer_status": "insufficient_evidence_no_generation",
                 "intent_route": intent_route,
                 "intent_route_reason": intent_reason,
                 "research_quality": "failed",
@@ -4146,6 +4166,19 @@ class WebAgent:
         report["model_calls"] = list(self.model_usage)
         report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
         report["openrouter_web_search_results"] = len(self.server_search_sources)
+        if llm_warning:
+            final_answer_status = (
+                "model_not_configured_fallback"
+                if not self.api_key
+                else "generation_failed_with_source_fallback"
+            )
+        elif review_warning:
+            final_answer_status = "review_failed_with_source_fallback"
+        elif used_llm:
+            final_answer_status = "model_answer_generated"
+        else:
+            final_answer_status = "source_fallback"
+
         public_sources = []
         for source in sources:
             public_sources.append({
@@ -4193,6 +4226,7 @@ class WebAgent:
             "used_social_search": bool(report.get("social_direct_results", 0)),
             "warnings": warnings,
             "kind": "web_research" if used_llm else "web_fallback",
+            "final_answer_status": final_answer_status,
             "intent_route": intent_route,
             "intent_route_reason": intent_reason,
         }
