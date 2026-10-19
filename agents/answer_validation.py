@@ -134,7 +134,7 @@ def audit_answer_integrity(
     citation_alignment: list[dict[str, Any]] = []
     sentence_parts = [
         part.strip()
-        for part in re.split(r"(?<=[.!?؟])\\s+|\\n+", answer_text)
+        for part in re.split(r"(?<=[.!?؟])\s+|\n+", answer_text)
         if part.strip()
     ]
     for sentence_number, sentence in enumerate(sentence_parts[:40], 1):
