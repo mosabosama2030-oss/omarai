@@ -136,3 +136,48 @@ def test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence():
     )
     assert result["citation_lexical_alignment"][0]["citations"][0]["evidence_basis"] == "search_snippet"
     assert result["citation_entailment"] == "not_checked"
+
+
+def test_bounded_coverage_repair_parses_one_delimited_answer_and_supplies_evidence(monkeypatch):
+    agent = WebAgent()
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "<<<OMARAI_COVERAGE_REPAIR>>>تم توضيح السعر والمساحة [المصدر 1].<<<END_OMARAI_COVERAGE_REPAIR>>>"
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    repaired = agent._repair_answer_coverage(
+        "قارن السعر والمساحة",
+        "الإجابة الأولية.",
+        [{
+            "title": "إعلان",
+            "url": "https://example.com/listing",
+            "page_fetched": False,
+            "snippet": "السعر مذكور والمساحة غير مذكورة",
+        }],
+        ["المساحة"],
+    )
+    assert repaired == "تم توضيح السعر والمساحة [المصدر 1]."
+    assert "المساحة" in captured["messages"][2]["content"]
+    assert "السعر مذكور والمساحة غير مذكورة" in captured["messages"][4]["content"]
+    assert "مقتطف بحث" in captured["messages"][4]["content"]
+
+
+def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (
+            "<<<OMARAI_COVERAGE_REPAIR>>>إجابة<<<END_OMARAI_COVERAGE_REPAIR>>>"
+            "<<<END_OMARAI_COVERAGE_REPAIR>>>"
+        ),
+    )
+    with __import__("pytest").raises(RuntimeError, match="إصلاح تغطية آمن"):
+        agent._repair_answer_coverage(
+            "قارن السعر",
+            "مسودة",
+            [{"title": "مصدر", "url": "https://example.com", "snippet": "السعر 100 جنيه"}],
+            ["السعر"],
+        )
