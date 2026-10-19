@@ -225,6 +225,8 @@ def fallback_plan(
 
     if social_focus:
         selected = platforms or ["facebook", "instagram", "reddit"]
+        if mode == "social" and not platforms:
+            platforms = list(selected)
         for platform in selected[:3]:
             domain = SOCIAL_DOMAINS[platform]
             site_query = _compact(f"site:{domain} {base}", 500)
@@ -268,6 +270,57 @@ def fallback_plan(
         "platforms": platforms,
         "planning_method": "deterministic_fallback",
     }
+
+
+def apply_mode_to_plan(
+    question: str,
+    history: list[dict[str, str]] | None,
+    plan: dict[str, Any],
+    mode: str,
+) -> dict[str, Any]:
+    """Apply explicit deep/latest/social mode requirements to a model or fallback plan."""
+    clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
+    if clean_mode not in {"deep", "latest", "social"}:
+        return plan
+
+    fallback = fallback_plan(question, history, mode=clean_mode)
+    existing = plan.get("queries", [])
+    if not isinstance(existing, list):
+        existing = []
+    candidates: list[str] = []
+    if existing:
+        candidates.append(existing[0])
+    candidates.extend(fallback.get("queries", []))
+    candidates.extend(existing[1:])
+
+    queries: list[str] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        if not isinstance(candidate, str):
+            continue
+        query = _compact(candidate, 500)
+        key = query.casefold()
+        if query and key not in seen:
+            seen.add(key)
+            queries.append(query)
+        if len(queries) >= MAX_PLAN_QUERIES:
+            break
+    plan["queries"] = queries or fallback.get("queries", [])
+
+    if clean_mode == "deep":
+        plan["depth"] = "deep"
+    elif clean_mode == "latest":
+        plan["freshness"] = "current"
+    elif clean_mode == "social":
+        plan["social_focus"] = True
+        platforms = plan.get("platforms", [])
+        if not isinstance(platforms, list):
+            platforms = []
+        plan["platforms"] = list(dict.fromkeys(
+            [item for item in platforms + fallback.get("platforms", [])
+             if isinstance(item, str) and item in SOCIAL_DOMAINS]
+        ))[:5]
+    return plan
 
 
 def validate_plan(
