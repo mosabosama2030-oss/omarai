@@ -5,6 +5,7 @@ import hmac
 import ipaddress
 import json
 import os
+import socket
 import threading
 import time
 from collections import defaultdict, deque
@@ -19,6 +20,9 @@ from agents.web_agent import WebAgent
 ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
+MAX_REQUEST_BODY_BYTES = 200_000
+REQUEST_BODY_READ_TIMEOUT_SECONDS = 10.0
+MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0
 
 
 def _configured_agent_concurrency_limit() -> int:
@@ -141,6 +145,55 @@ class Handler(BaseHTTPRequestHandler):
             events.append(now)
             return True
 
+    def _read_request_body(self) -> bytes | None:
+        """Read a bounded JSON body with a socket timeout to avoid slow-body stalls."""
+        raw_size = self.headers.get("Content-Length", "").strip()
+        if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():
+            self.respond(400, {"error": "valid Content-Length is required"})
+            return None
+        try:
+            size = int(raw_size)
+        except ValueError:
+            self.respond(400, {"error": "valid Content-Length is required"})
+            return None
+        if size <= 0:
+            self.respond(400, {"error": "request body is required"})
+            return None
+        if size > MAX_REQUEST_BODY_BYTES:
+            self.respond(413, {"error": "request too large"})
+            return None
+
+        previous_timeout = self.connection.gettimeout()
+        read_timeout = max(
+            0.1,
+            min(
+                float(REQUEST_BODY_READ_TIMEOUT_SECONDS),
+                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,
+            ),
+        )
+        body: bytes | None = None
+        timed_out = False
+        try:
+            self.connection.settimeout(read_timeout)
+            body = self.rfile.read(size)
+        except (TimeoutError, socket.timeout):
+            timed_out = True
+        finally:
+            try:
+                self.connection.settimeout(previous_timeout)
+            except OSError:
+                pass
+
+        if timed_out:
+            self.close_connection = True
+            self.respond(408, {"error": "request body read timed out"})
+            return None
+        if body is None or len(body) != size:
+            self.close_connection = True
+            self.respond(400, {"error": "incomplete request body"})
+            return None
+        return body
+
     def respond(self, status, payload, content_type="application/json; charset=utf-8"):
         body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()
         self.send_response(status)
@@ -206,12 +259,10 @@ class Handler(BaseHTTPRequestHandler):
             if origin and not self._origin_allowed(origin):
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
 
-            size = int(self.headers.get("Content-Length", "0"))
-            if size <= 0:
-                return self.respond(400, {"error": "request body is required"})
-            if size > 200_000:
-                return self.respond(413, {"error": "request too large"})
-            data = json.loads(self.rfile.read(size))
+            raw_body = self._read_request_body()
+            if raw_body is None:
+                return
+            data = json.loads(raw_body)
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
             if path == "/api/diagnostics":
