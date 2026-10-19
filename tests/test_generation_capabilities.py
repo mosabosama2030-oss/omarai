@@ -129,7 +129,8 @@ def test_capability_question_distinguishes_configuration_from_live_health(monkey
     assert "DuckDuckGo HTML" in result["answer"]
 
 
-def test_current_request_search_status_is_not_confused_with_capability(monkeypatch):
+@pytest.mark.parametrize("mode", ["auto", "deep", "latest", "social"])
+def test_current_request_search_status_is_not_confused_with_capability(monkeypatch, mode):
     agent = WebAgent()
     monkeypatch.setattr(
         agent,
@@ -137,7 +138,7 @@ def test_current_request_search_status_is_not_confused_with_capability(monkeypat
         lambda plan: pytest.fail("This asks about the current response, not a web lookup"),
     )
 
-    result = agent.answer("هل بحثت في الانترنت للاجابة الحالية؟")
+    result = agent.answer("هل بحثت في الانترنت للاجابة الحالية؟", mode=mode)
 
     assert result["kind"] == "capability_answer"
     assert result["request_execution_status"] == {
