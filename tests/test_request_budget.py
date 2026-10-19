@@ -60,3 +60,26 @@ def test_environment_overrides_are_clamped(monkeypatch):
     assert snapshot["limits"]["search_calls"] == 40
     assert snapshot["limits"]["model_calls"] == 1
     assert snapshot["limits"]["tool_calls"] == 0
+
+    
+def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):
+    from agents.web_agent import WebAgent
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+
+    agent._request_budget = RequestBudget(limits={"search_queries": 0})
+    with pytest.raises(RequestBudgetExceeded, match="search_queries"):
+        agent._search_web("budget test")
+
+    agent._request_budget = RequestBudget(limits={"model_calls": 0})
+    monkeypatch.setattr(
+        "agents.web_agent.urllib.request.urlopen",
+        lambda *args, **kwargs: pytest.fail("model HTTP request must not start"),
+    )
+    with pytest.raises(RequestBudgetExceeded, match="model_calls"):
+        agent._request_completion([{"role": "user", "content": "test"}])
+
+    agent._request_budget = RequestBudget(limits={"page_fetches": 0})
+    with pytest.raises(RequestBudgetExceeded, match="page_fetches"):
+        agent._fetch_page("https://example.com/")
