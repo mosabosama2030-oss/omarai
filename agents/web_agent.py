@@ -554,7 +554,10 @@ class WebAgent:
         )
         references_current_answer = any(
             term in value
-            for term in ("الاجاب", "الرد الحالي", "هذا السؤال", "هذه الاجابه", "this answer", "this response")
+            for term in (
+                "اجاب", "الرد الحالي", "هذا السؤال", "هذه الاجابه",
+                "this answer", "this response",
+            )
         )
         return asks_if_searched and references_web and references_current_answer
 
