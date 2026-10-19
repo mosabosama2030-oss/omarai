@@ -20,8 +20,11 @@ ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 MAX_REQUEST_BODY_BYTES = 200_000
+# Absolute deadline for reading the entire body, not merely a per-read idle timeout.
 REQUEST_BODY_READ_TIMEOUT_SECONDS = 10.0
+REQUEST_BODY_IDLE_TIMEOUT_SECONDS = 2.0
 MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0
+REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 
 
 def _configured_agent_concurrency_limit() -> int:
@@ -145,7 +148,7 @@ class Handler(BaseHTTPRequestHandler):
             return True
 
     def _read_request_body(self) -> bytes | None:
-        """Read a bounded JSON body with a socket timeout to avoid slow-body stalls."""
+        """Read a bounded body with both idle and absolute wall-clock deadlines."""
         raw_size = self.headers.get("Content-Length", "").strip()
         if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():
             self.respond(400, {"error": "valid Content-Length is required"})
@@ -162,21 +165,43 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(413, {"error": "request too large"})
             return None
 
-        previous_timeout = self.connection.gettimeout()
-        read_timeout = max(
+        total_timeout = max(
             0.1,
             min(
                 float(REQUEST_BODY_READ_TIMEOUT_SECONDS),
                 MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,
             ),
         )
-        body: bytes | None = None
+        idle_timeout = max(
+            0.1,
+            min(
+                float(REQUEST_BODY_IDLE_TIMEOUT_SECONDS),
+                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,
+            ),
+        )
+        deadline = time.monotonic() + total_timeout
+        previous_timeout = self.connection.gettimeout()
+        body = bytearray()
         timed_out = False
         try:
-            self.connection.settimeout(read_timeout)
-            body = self.rfile.read(size)
-        except TimeoutError:
-            timed_out = True
+            while len(body) < size:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    timed_out = True
+                    break
+                self.connection.settimeout(min(idle_timeout, remaining))
+                try:
+                    # read1 performs at most one underlying read, letting us re-check
+                    # the absolute deadline between body fragments.
+                    chunk = self.rfile.read1(
+                        min(size - len(body), REQUEST_BODY_READ_CHUNK_BYTES)
+                    )
+                except TimeoutError:
+                    timed_out = True
+                    break
+                if not chunk:
+                    break
+                body.extend(chunk)
         finally:
             try:
                 self.connection.settimeout(previous_timeout)
@@ -187,11 +212,11 @@ class Handler(BaseHTTPRequestHandler):
             self.close_connection = True
             self.respond(408, {"error": "request body read timed out"})
             return None
-        if body is None or len(body) != size:
+        if len(body) != size:
             self.close_connection = True
             self.respond(400, {"error": "incomplete request body"})
             return None
-        return body
+        return bytes(body)
 
     def respond(self, status, payload, content_type="application/json; charset=utf-8"):
         body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()
