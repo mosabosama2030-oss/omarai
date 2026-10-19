@@ -497,9 +497,9 @@ class WebAgent:
 
         def redact(value: Any) -> str:
             safe = _clean_text(str(value or ""), 180)
-            safe = re.sub(r"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*", r"\\1[REDACTED]", safe)
-            safe = re.sub(r"(?i)\\b(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\\s*[:=]\\s*[^\\s,;]+", r"\\1=[REDACTED]", safe)
-            safe = re.sub(r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\\s]+", r"\\1[REDACTED]", safe)
+            safe = re.sub(r"(?i)(bearer\s+)[A-Za-z0-9._~+/-]+=*", r"\1[REDACTED]", safe)
+            safe = re.sub(r"(?i)\b(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\s*[:=]\s*[^\s,;]+", r"\1=[REDACTED]", safe)
+            safe = re.sub(r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\s]+", r"\1[REDACTED]", safe)
             return safe[:180]
 
         names = set(config) | set(grouped) | set(useful)
