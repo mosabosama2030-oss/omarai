@@ -3878,6 +3878,33 @@ class WebAgent:
             research_quality = "good"
         else:
             research_quality = "partial"
+
+        # Source breadth and a completed model-assisted review do not justify a
+        # positive research-quality label if the final answer has no valid source
+        # citation markers. This is a deterministic presentation guard, not a
+        # semantic entailment check.
+        uncited_reviewed_answer = (
+            used_llm
+            and bool(sources)
+            and review_status == "model_claim_audit_completed"
+            and citation_validation["valid_citation_count"] == 0
+        )
+        if uncited_reviewed_answer:
+            research_quality = "partial"
+            citation_validation["claim_support"] = "not_established_no_valid_source_citations"
+            answer_evidence_status = "reviewed_answer_has_no_valid_citations"
+            uncited_answer_warning = (
+                "اكتملت مراجعة النموذج، لكن الإجابة النهائية لا تحتوي على إحالات صالحة "
+                "إلى قائمة المصادر؛ لذلك صُنّفت جودة البحث «جزئية». وجود المصادر أو "
+                "اكتمال مراجعة النموذج لا يثبت دعم كل ادعاء."
+            )
+        elif citation_validation["valid_citation_count"] > 0:
+            answer_evidence_status = "citation_indices_validated_only"
+            uncited_answer_warning = None
+        else:
+            answer_evidence_status = "not_assessed"
+            uncited_answer_warning = None
+
         search_attempted = search_attempted or bool(self.server_search_sources)
         report["search_attempted"] = search_attempted
         report["search_outcome"] = (
@@ -3888,6 +3915,7 @@ class WebAgent:
         report["usable_sources_after_filtering"] = len(sources)
         report["research_quality"] = research_quality
         report["research_quality_semantics"] = "process_coverage_not_factual_probability"
+        report["answer_evidence_status"] = answer_evidence_status
         report["distinct_registrable_domains"] = len(distinct_domains)
         report["independent_sources"] = len(distinct_domains)  # Legacy alias; not editorial independence.
         report["independent_sources_field_semantics"] = (
@@ -3912,6 +3940,7 @@ class WebAgent:
             + ([llm_warning] if llm_warning else [])
             + ([review_warning] if review_warning else [])
             + citation_warnings
+            + ([uncited_answer_warning] if uncited_answer_warning else [])
         ))
         report["model_calls"] = list(self.model_usage)
         report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
@@ -3955,6 +3984,7 @@ class WebAgent:
             "sources": public_sources,
             "research_quality": research_quality,
             "citation_validation": citation_validation,
+            "answer_evidence_status": answer_evidence_status,
             "answer_coverage": answer_coverage,
             "used_language_model": used_llm,
             "used_web_search": bool(sources),
