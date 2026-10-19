@@ -61,7 +61,7 @@ def test_environment_overrides_are_clamped(monkeypatch):
     assert snapshot["limits"]["model_calls"] == 1
     assert snapshot["limits"]["tool_calls"] == 0
 
-    
+
 def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):
     from agents.web_agent import WebAgent
 
