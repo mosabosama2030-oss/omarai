@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import socket
 
+import pytest
+
 from agents.web_agent import WebAgent, _public_ip_literals
 
 
@@ -275,3 +277,30 @@ def test_private_redirect_target_is_rejected_before_a_second_connection(monkeypa
     assert connections[0].startswith("https://1.1.1.1/")
     assert resolutions == ["example.com"]
 
+
+
+@pytest.mark.parametrize(
+    "address",
+    [
+        "0.0.0.0",          # unspecified IPv4
+        "127.0.0.1",        # loopback IPv4
+        "10.0.0.1",         # private IPv4
+        "172.16.0.1",       # private IPv4
+        "192.168.1.1",      # private IPv4
+        "169.254.169.254",  # link-local / common metadata endpoint
+        "100.64.0.1",       # shared address space
+        "::",                # unspecified IPv6
+        "::1",               # loopback IPv6
+        "fc00::1",           # unique-local IPv6
+        "fe80::1",           # link-local IPv6
+    ],
+)
+def test_non_global_ipv4_and_ipv6_dns_answers_are_rejected(address, monkeypatch):
+    """No DNS answer from a non-global range may pass the page-fetch gate."""
+    monkeypatch.setattr(
+        socket,
+        "getaddrinfo",
+        lambda host, port, *args, **kwargs: _addrinfo(address),
+    )
+
+    assert _public_ip_literals("public.example") is None
