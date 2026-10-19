@@ -61,7 +61,7 @@ def test_csv_requires_columns(tmp_path):
         store.import_csv(bad)
 
 
-def test_csv_export_neutralizes_spreadsheet_formula_injection():
+def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     store = LeadStore(tmp_path / "db.sqlite3")
     store.add(
         '=HYPERLINK("https://evil.example","click")',
