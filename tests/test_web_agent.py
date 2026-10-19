@@ -2353,3 +2353,80 @@ def test_local_answer_exposes_request_budget_without_claiming_live_search():
     assert budget["counts"]["search_queries"] == 0
     assert budget["counts"]["model_calls"] == 0
     assert budget["hard_cancellation_guaranteed"] is False
+
+
+@pytest.mark.parametrize(
+    "draft_answer",
+    [
+        "وفق المقارنة، الخيار الأول أفضل من الثاني.",
+        "وفق المقارنة، الخيار الأول أفضل من الثاني [المصدر 99].",
+    ],
+)
+def test_reviewed_answer_without_valid_citations_cannot_be_rated_good(
+    monkeypatch, draft_answer
+):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    domains = ["alpha.org", "beta.net", "gamma.io", "delta.dev"]
+    providers = ["duckduckgo_html", "bing_rss", "duckduckgo_html", "bing_rss"]
+    sources = []
+    for index, (domain, provider) in enumerate(zip(domains, providers, strict=True)):
+        source = sample_source(0)
+        source.update(
+            {
+                "title": f"مصدر اختبار {index + 1}",
+                "url": f"https://{domain}/research",
+                "domain": domain,
+                "providers": [provider],
+                "queries": ["قارن بالتفصيل بين طرق إدارة الميزانية"],
+                "page_fetched": True,
+                "page_text": f"نص مصدر الاختبار رقم {index + 1}.",
+            }
+        )
+        sources.append(source)
+
+    plan = {
+        "queries": ["قارن بالتفصيل بين طرق إدارة الميزانية"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "deep",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    report = {
+        "queries_planned": 1,
+        "queries_attempted": 1,
+        "query_results": [{"query": plan["queries"][0], "results": 4}],
+        "unique_sources": 4,
+        "pages_fetched": 4,
+        "providers_used": providers,
+        "provider_counts": {"duckduckgo_html": 2, "bing_rss": 2},
+        "platform_counts": {"web": 4},
+        "social_direct_results": 0,
+        "depth": "deep",
+        "planning_method": "test",
+        "evidence_signals": {},
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(
+        agent, "_collect_research", lambda research_plan: (sources, [], dict(report))
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: draft_answer)
+    monkeypatch.setattr(
+        agent, "_review_answer", lambda question, answer, review_sources: answer
+    )
+
+    result = agent.answer(plan["queries"][0], mode="deep")
+
+    assert result["used_language_model"] is True
+    assert result["search_report"]["second_pass_review"] == "model_claim_audit_completed"
+    assert result["citation_validation"]["valid_citation_count"] == 0
+    assert result["research_quality"] == "partial"
+    assert result["search_report"]["research_quality"] == "partial"
+    assert result["answer_evidence_status"] == "reviewed_answer_has_no_valid_citations"
+    assert result["citation_validation"]["claim_support"] == (
+        "not_established_no_valid_source_citations"
+    )
+    assert any("لا تحتوي على إحالات صالحة" in warning for warning in result["warnings"])
