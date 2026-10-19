@@ -183,3 +183,74 @@ def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatc
             [{"title": "مصدر", "url": "https://example.com", "snippet": "السعر 100 جنيه"}],
             ["السعر"],
         )
+
+
+def test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source():
+    result = audit_answer_integrity(
+        "قارن أسعار المنتجين",
+        "سعر المنتج الأول 500 جنيه [المصدر 1].",
+        [
+            {
+                "title": "سعر المنتج الأول",
+                "snippet": "سعر المنتج الأول 300 جنيه",
+                "page_fetched": False,
+            },
+            {
+                "title": "سعر المنتج الثاني",
+                "snippet": "سعر المنتج الثاني 500 جنيه",
+                "page_fetched": False,
+            },
+        ],
+    )
+
+    assert result["potentially_unsupported_numeric_literals"] == []
+    assert result["potentially_unsupported_numeric_by_citation_count"] == 1
+    cited_check = result["citation_numeric_support"][0]
+    assert cited_check["cited_source_indexes"] == [1]
+    assert cited_check["potentially_unsupported_numeric_literals"] == ["500"]
+    assert cited_check["status"] == "potentially_unsupported_numeric_literals_for_cited_sources"
+
+
+def test_different_price_values_are_flagged_for_review_not_called_contradictions():
+    result = audit_answer_integrity(
+        "قارن العروض",
+        "العرض الأول أرخص من الثاني [المصدر 1] [المصدر 2].",
+        [
+            {
+                "title": "شقة القاهرة",
+                "snippet": "السعر 100000 جنيه",
+                "page_fetched": False,
+            },
+            {
+                "title": "شقة القاهرة",
+                "snippet": "السعر 120000 جنيه",
+                "page_fetched": False,
+            },
+        ],
+    )
+
+    price = next(
+        item for item in result["potential_value_discrepancies"]
+        if item["dimension"] == "price_or_cost"
+    )
+    assert {item["value"] for item in price["values"]} == {"100000", "120000"}
+    assert price["status"] == "potential_variation_or_conflict_requires_entity_review"
+    assert "contradiction" not in price["status"]
+    assert result["independent_fact_check"] is False
+
+
+def test_date_in_answer_missing_from_its_cited_source_is_flagged():
+    result = audit_answer_integrity(
+        "ما تاريخ التقرير؟",
+        "صدر التقرير في 2026 [المصدر 1].",
+        [{
+            "title": "تقرير سابق",
+            "snippet": "تقرير منشور في 2024.",
+            "published_at": "2024",
+            "page_fetched": False,
+        }],
+    )
+
+    numeric_check = result["citation_numeric_support"][0]
+    assert numeric_check["potentially_unsupported_numeric_literals"] == ["2026"]
+    assert numeric_check["status"] == "potentially_unsupported_numeric_literals_for_cited_sources"
