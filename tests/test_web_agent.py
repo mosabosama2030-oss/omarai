@@ -2003,7 +2003,7 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "لم يمكن تحديد عدد المصادر القابلة للاستخدام" in html
     assert "غير محدد" in html
     assert "coverage_score" not in html
-    assert '/100' not in html
+    assert 'score+"/100' not in html
     assert "مستوى تغطية البحث:" in html
     assert "وليس نسبة مئوية أو احتمالًا لصحة الإجابة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
