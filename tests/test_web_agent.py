@@ -2044,6 +2044,17 @@ def test_general_answer_does_not_silently_slice_overlong_model_output(monkeypatc
     assert result is None
 
 
+def test_frontend_property_card_explains_extracted_fields_are_unverified():
+    html = (Path(__file__).resolve().parents[1] / "web" / "agent.html").read_text(encoding="utf-8")
+    assert "function renderPropertyCard(source)" in html
+    assert "function renderPropertyField(label,value,sourceField)" in html
+    assert "renderPropertyCard(s)" in html
+    assert "غير ظاهر في النص المتاح" in html
+    assert "غير متحقق منها مستقلًا" in html
+    assert "الأرقام أو المنطقة قد لا تصف وحدة عقارية بعينها" in html
+    assert "escapeHtml(value)" in html
+
+
 def test_frontend_discloses_unknown_counts_after_research_error():
     html = (Path(__file__).resolve().parents[1] / "web" / "agent.html").read_text(encoding="utf-8")
     assert '["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome)' in html
