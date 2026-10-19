@@ -267,6 +267,22 @@ def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:
     return "\n\n".join(lines)
 
 
+class PageFetchResult(tuple):
+    """Two-item tuple compatible with legacy callers, with structured extraction status."""
+
+    def __new__(
+        cls,
+        title: str = "",
+        page_text: str = "",
+        status: str = "unknown",
+        error_class: str | None = None,
+    ):
+        value = super().__new__(cls, (title, page_text))
+        value.status = status
+        value.error_class = error_class
+        return value
+
+
 class WebAgent:
     """Search, inspect, and synthesize web evidence for open-ended questions."""
 
