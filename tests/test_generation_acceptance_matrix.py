@@ -231,6 +231,166 @@ def test_operational_truth_overrides_a_model_claim_about_this_request(monkeypatc
     assert "تحققت من المصادر" not in result["answer"]
 
 
+def test_generation_budget_exhaustion_preserves_partial_sources(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "ابحث عن أحدث معلومات حول الطاقة المتجددة"
+    monkeypatch.setenv("OMARAI_REQUEST_MAX_MODEL_CALLS", "1")
+    sources = [
+        source(
+            "https://one.example/energy",
+            "one.example",
+            page_fetched=True,
+            page_text="معلومة مستخرجة من المصدر الأول عن الطاقة المتجددة.",
+            provider="duckduckgo_html",
+        ),
+        source(
+            "https://two.example/energy",
+            "two.example",
+            page_fetched=False,
+            snippet="مقتطف المصدر الثاني عن الطاقة المتجددة.",
+            provider="bing_rss",
+        ),
+    ]
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "current",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            sources,
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "search_attempted": True,
+                "search_outcome": "attempted_with_usable_sources",
+                "unique_sources": 2,
+                "pages_fetched": 1,
+                "providers_used": ["duckduckgo_html", "bing_rss"],
+                "provider_counts": {"duckduckgo_html": 1, "bing_rss": 1},
+                "platform_counts": {"web": 2},
+                "social_direct_results": 0,
+                "provider_diagnostics": [],
+                "evidence_signals": {},
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, item: True)
+    calls: list[str] = []
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        calls.append(model)
+        return FakeCompletionResponse("إجابة مبتورة لا يجوز عرضها", "length")
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+
+    result = agent.answer(question)
+
+    assert len(calls) == 1
+    assert result["request_budget"]["counts"]["model_calls"] == 1
+    assert "model_calls" in result["request_budget"]["exhausted_reasons"]
+    assert result["final_answer_status"] == "budget_exhausted_with_source_fallback"
+    assert result["used_language_model"] is False
+    assert result["search_attempted"] is True
+    assert len(result["sources"]) == 2
+    assert "إجابة مبتورة لا يجوز عرضها" not in result["answer"]
+    assert "مقتطف المصدر الثاني عن الطاقة المتجددة" in result["answer"]
+    assert result["generation_diagnostics"][0]["status"] == "truncated"
+
+
+def test_review_budget_exhaustion_discards_draft_and_preserves_sources(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "قارن بين الخيارات من حيث السعر، المساحة، والبيانات الناقصة"
+    monkeypatch.setenv("OMARAI_REQUEST_MAX_MODEL_CALLS", "1")
+    sources = [
+        source(
+            "https://one.example/product",
+            "one.example",
+            page_fetched=True,
+            page_text="السعر الإجمالي 100000 جنيه والمساحة 100 متر.",
+            provider="duckduckgo_html",
+        ),
+        source(
+            "https://two.example/product",
+            "two.example",
+            page_fetched=False,
+            snippet="إعلان يذكر سعرًا دون بيان المساحة.",
+            provider="bing_rss",
+        ),
+    ]
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            sources,
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "search_attempted": True,
+                "search_outcome": "attempted_with_usable_sources",
+                "unique_sources": 2,
+                "pages_fetched": 1,
+                "providers_used": ["duckduckgo_html", "bing_rss"],
+                "provider_counts": {"duckduckgo_html": 1, "bing_rss": 1},
+                "platform_counts": {"web": 2},
+                "social_direct_results": 0,
+                "provider_diagnostics": [],
+                "evidence_signals": {},
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, item: True)
+    calls: list[str] = []
+
+    def fake_urlopen(request, timeout):
+        calls.append(json.loads(request.data.decode("utf-8"))["model"])
+        return FakeCompletionResponse(
+            "مسودة تحليل مولدة لكنها لم تخضع للتدقيق النهائي [المصدر 1].",
+            "stop",
+        )
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+
+    result = agent.answer(question)
+
+    assert len(calls) == 1
+    assert result["request_budget"]["counts"]["model_calls"] == 1
+    assert "model_calls" in result["request_budget"]["exhausted_reasons"]
+    assert result["final_answer_status"] == "budget_exhausted_with_source_fallback"
+    assert result["search_report"]["second_pass_review"] == "model_claim_audit_unavailable"
+    assert len(result["sources"]) == 2
+    assert "مسودة تحليل مولدة لكنها لم تخضع للتدقيق النهائي" not in result["answer"]
+    assert "معلومة مستخرجة من المصدر الأول" in result["answer"]
+
+
 def test_search_failure_is_not_reported_as_no_attempt_or_completed_answer(monkeypatch):
     agent = WebAgent()
     question = "ابحث عن أحدث معلومات حول الطاقة المتجددة"
