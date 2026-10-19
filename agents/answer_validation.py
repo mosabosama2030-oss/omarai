@@ -106,6 +106,85 @@ def audit_answer_integrity(
     answer_number_literals = _numeric_literals(answer_text, question=question)
     unsupported_numbers = sorted(answer_number_literals - source_number_literals)
     answer_tokens = set(_tokens(_CITATION.sub(" ", answer_text), drop_stopwords=True))
+
+    # Align citation-bearing sentences only by lexical overlap with the exact cited
+    # source index. This is an audit hint, not an entailment or truth check.
+    citable_sources = safe_sources[:12]
+    source_token_sets: list[set[str]] = []
+    source_bases: list[str] = []
+    for source in citable_sources:
+        page_text = str(source.get("page_text") or "")
+        snippet = str(source.get("snippet") or "")
+        title = str(source.get("title") or "")
+        if bool(source.get("page_fetched")) and page_text.strip():
+            selected_text = page_text
+            basis = "extracted_page_text"
+        elif snippet.strip():
+            selected_text = snippet
+            basis = "search_snippet"
+        elif title.strip():
+            selected_text = title
+            basis = "title_only"
+        else:
+            selected_text = ""
+            basis = "no_readable_text"
+        source_token_sets.append(set(_tokens(selected_text, drop_stopwords=True)))
+        source_bases.append(basis)
+
+    citation_alignment: list[dict[str, Any]] = []
+    sentence_parts = [
+        part.strip()
+        for part in re.split(r"(?<=[.!?؟])\\s+|\\n+", answer_text)
+        if part.strip()
+    ]
+    for sentence_number, sentence in enumerate(sentence_parts[:40], 1):
+        cited_indices = [
+            int(match.group(1))
+            for match in _CITATION.finditer(sentence)
+        ]
+        if not cited_indices:
+            continue
+        claim_tokens = list(dict.fromkeys(_tokens(_CITATION.sub(" ", sentence), drop_stopwords=True)))
+        cited_checks: list[dict[str, Any]] = []
+        for source_index in list(dict.fromkeys(cited_indices))[:8]:
+            if source_index < 1 or source_index > len(source_token_sets):
+                cited_checks.append({
+                    "source_index": source_index,
+                    "status": "source_index_out_of_scope",
+                    "evidence_basis": "unavailable",
+                    "matched_terms": [],
+                    "overlap_ratio": 0.0,
+                })
+                continue
+            available_tokens = source_token_sets[source_index - 1]
+            overlap = [token for token in claim_tokens if token in available_tokens]
+            ratio = len(overlap) / len(claim_tokens) if claim_tokens else 0.0
+            enough_overlap = bool(overlap) and (
+                ratio >= 0.25 if len(claim_tokens) >= 4 else len(overlap) >= 1
+            )
+            cited_checks.append({
+                "source_index": source_index,
+                "status": "lexical_overlap_signal_found" if enough_overlap else "weak_lexical_overlap",
+                "evidence_basis": source_bases[source_index - 1],
+                "matched_terms": overlap[:8],
+                "overlap_ratio": round(ratio, 3),
+            })
+        sentence_status = (
+            "lexical_overlap_signal_found"
+            if any(item["status"] == "lexical_overlap_signal_found" for item in cited_checks)
+            else "weak_lexical_overlap"
+        )
+        citation_alignment.append({
+            "sentence_number": sentence_number,
+            "status": sentence_status,
+            "claim_terms_checked": claim_tokens[:16],
+            "citations": cited_checks,
+        })
+
+    weak_citation_alignment_count = sum(
+        item["status"] == "weak_lexical_overlap"
+        for item in citation_alignment
+    )
     target_checks: list[dict[str, Any]] = []
     for target in (coverage_targets or [])[:8]:
         target_tokens = list(dict.fromkeys(_tokens(target, drop_stopwords=True)))
@@ -152,6 +231,9 @@ def audit_answer_integrity(
         "sources_with_snippets_only": snippet_count,
         "citation_marker_count": citation_count,
         "citation_entailment": "not_checked",
+        "citation_lexical_alignment_method": "content_word_overlap_heuristic_not_entailment",
+        "citation_lexical_alignment": citation_alignment[:30],
+        "weak_citation_alignment_count": weak_citation_alignment_count,
         "numeric_check_status": numeric_status,
         "checked_numeric_literals": sorted(answer_number_literals)[:40],
         "potentially_unsupported_numeric_literals": unsupported_numbers[:40],
@@ -163,6 +245,8 @@ def audit_answer_integrity(
         "limitations": [
             "Token overlap does not prove that an answer fulfills the intended task.",
             "A number appearing in any source does not prove that the source supports the claim.",
+            "Citation token overlap can be coincidental and does not establish that the source entails the claim.",
+            "Conflicting values across different entities are not automatically treated as contradictions.",
             "Contradictory sources and citation-to-claim entailment require claim-level review.",
             "Search snippets may be partial; extracted page text is still not independent verification.",
         ],
