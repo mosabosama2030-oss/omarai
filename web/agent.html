@@ -132,8 +132,17 @@ function renderSource(s,index){
  const tags=[];
  tags.push('<span class="tag">'+escapeHtml(s.source_class||"مصدر عام")+'</span>');
  const fetchStatus=s.page_fetch_status||(s.page_fetched?"content_extracted":"not_attempted");
- if(fetchStatus==="content_extracted"||s.page_fetched)tags.push('<span class="tag read">قُرئت الصفحة واستُخرج نص</span>');
- else if(fetchStatus==="no_text_extracted")tags.push('<span class="tag">جُلبت الصفحة لكن لم يُستخرج نص</span>');
+ if(fetchStatus==="partial_extraction")tags.push('<span class="tag read">اُستخرج جزء من النص فقط</span>');
+ else if(fetchStatus==="content_extracted"||s.page_fetched)tags.push('<span class="tag read">قُرئت الصفحة واستُخرج نص</span>');
+ else if(fetchStatus==="no_text_extracted"||fetchStatus==="empty_content")tags.push('<span class="tag">لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة</span>');
+ else if(fetchStatus==="blocked_or_unresolved_host"||fetchStatus==="blocked_connection_target")tags.push('<span class="tag">حُظر العنوان أو تعذّر التحقق الآمن منه</span>');
+ else if(["redirect_failed","redirect_rejected","redirect_limit"].includes(fetchStatus))tags.push('<span class="tag">تعذّر اتباع تحويل الرابط بأمان</span>');
+ else if(fetchStatus==="http_error")tags.push('<span class="tag">الموقع أعاد خطأ HTTP</span>');
+ else if(fetchStatus==="unsupported_content_type")tags.push('<span class="tag">نوع محتوى الصفحة غير مدعوم</span>');
+ else if(fetchStatus==="page_too_large")tags.push('<span class="tag">الصفحة تجاوزت حد الحجم الآمن</span>');
+ else if(fetchStatus==="network_error")tags.push('<span class="tag">تعذّر الاتصال بالصفحة</span>');
+ else if(fetchStatus==="budget_exhausted")tags.push('<span class="tag">توقفت القراءة بسبب حدود الموارد</span>');
+ else if(fetchStatus==="rejected_url")tags.push('<span class="tag">رُفض الرابط لأسباب أمان</span>');
  else if(fetchStatus==="fetch_failed")tags.push('<span class="tag">تعذّر جلب الصفحة</span>');
  else if(fetchStatus==="attempted")tags.push('<span class="tag">محاولة جلب الصفحة</span>');
  else tags.push('<span class="tag">مقتطف بحث — لم تُحاول قراءة الصفحة</span>');
@@ -174,8 +183,9 @@ function renderReport(result){
   [r.raw_results??"غير محدد","نتيجة خام"],
   [r.unique_urls??r.unique_sources??sources.length,"رابط فريد"],
   [r.pages_fetch_attempted??"غير محدد","محاولة جلب صفحة"],
-  [r.pages_content_extracted??r.pages_fetched??"غير محدد","نص مستخرج"],
-  [r.pages_extract_failed??"غير محدد","صفحة لم يُستخرج نصها"]
+  [r.pages_content_extracted??r.pages_fetched??"غير محدد","صفحة استُخرج منها نص"],
+  [r.pages_partial_extracted??"غير محدد","صفحة استُخرج جزء من نصها"],
+  [r.pages_extract_failed??"غير محدد","صفحة فشل استخراج نصها"]
  ];
  const operationalHtml='<div class="metrics">'+operationalMetrics.map(([v,l])=>'<div class="metric"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join("")+'</div>';
  const connectors=r.connector_summary&&Array.isArray(r.connector_summary.connectors)?r.connector_summary.connectors:[];
