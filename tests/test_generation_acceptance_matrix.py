@@ -544,8 +544,17 @@ def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatc
     )
     monkeypatch.setattr(agent, "_source_matches_query", lambda query, item: True)
     final_draft = "الخلاصة: يوجد اختلاف في اكتمال البيانات، ولا يمكن حسم المقارنة من المقتطف وحده [المصدر 1]."
+    repaired_answer = (
+        "السعر الإجمالي 100000 جنيه والمساحة 100 متر في المصدر الأول [المصدر 1]. "
+        "الإعلان الثاني يذكر سعرًا دون بيان المساحة، وهذه هي البيانات الناقصة [المصدر 2]."
+    )
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: final_draft)
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(
+        agent,
+        "_repair_answer_coverage",
+        lambda question, answer, sources, missing_targets: repaired_answer,
+    )
 
     result = agent.answer(question)
 
@@ -554,10 +563,13 @@ def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatc
     assert len(result["sources"]) == 2
     assert result["search_report"]["search_outcome"] == "attempted_with_usable_sources"
     assert result["search_report"]["pages_fetched"] == 1
-    assert result["final_answer_status"] == "model_answer_generated"
-    assert result["search_report"]["second_pass_review"] == "model_claim_audit_completed"
+    assert result["final_answer_status"] == "coverage_repaired_not_reaudited"
+    assert result["coverage_repair_status"] == "revised_after_review_not_reaudited"
+    assert result["search_report"]["second_pass_review"] == "model_claim_audit_completed_before_coverage_repair"
     assert result["answer_coverage"]["automatically_graded"] is False
-    assert result["answer_coverage"]["status"] == "model_review_requested_not_machine_verified"
+    assert result["answer_coverage"]["status"] == "model_review_pre_repair_only_final_repair_not_reaudited"
+    assert "السعر الإجمالي" in result["answer"]
+    assert "البيانات الناقصة" in result["answer"]
     assert result["citation_validation"]["method"] == "numeric_source_index_range_only"
     assert result["answer_integrity"]["method"] == "deterministic_lexical_screen_only"
     assert result["answer_integrity"]["semantic_verification"] is False
