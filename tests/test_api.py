@@ -651,4 +651,5 @@ def test_api_absolute_header_deadline_stops_slow_trickle(local_api, monkeypatch)
         elapsed = time.monotonic() - started
 
     assert elapsed < 0.8
-    assert not response.startswith(b"HTTP/1.0 200")
+    # The timed-out request never reached application dispatch; the handler closes silently.
+    assert response == b""
