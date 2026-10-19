@@ -2018,8 +2018,12 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "إخفاق ملاحظ:" in html
     assert "r.pages_content_extracted" in html
     assert "قُرئت الصفحة واستُخرج نص" in html
-    assert "جُلبت الصفحة لكن لم يُستخرج نص" in html
+    assert "لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة" in html
     assert "تعذّر جلب الصفحة" in html
+    assert "اُستخرج جزء من النص فقط" in html
+    assert "حُظر العنوان أو تعذّر التحقق الآمن منه" in html
+    assert "الموقع أعاد خطأ HTTP" in html
+    assert "r.pages_partial_extracted" in html
     assert "مقتطف بحث — لم تُحاول قراءة الصفحة" in html
     assert "فحص آلي أولي لاتساق الإجابة" in html
     assert "potentially_unsupported_numeric_literals" in html
