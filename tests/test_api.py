@@ -538,7 +538,7 @@ def test_api_rejects_malformed_content_length(local_api, monkeypatch):
 def test_api_returns_408_when_request_body_read_times_out(local_api, monkeypatch):
     monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
     monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
-    monkeypatch.setattr(Handler, "REQUEST_BODY_READ_TIMEOUT_SECONDS", 0.1)
+    monkeypatch.setattr("api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS", 0.1)
     host_port = local_api.rsplit(":", 1)
     with socket.create_connection((host_port[0].removeprefix("http://"), int(host_port[1])), timeout=2) as client:
         client.settimeout(2)
