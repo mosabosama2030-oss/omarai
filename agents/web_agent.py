@@ -470,22 +470,21 @@ class WebAgent:
             """Bound diagnostic text and redact common credential representations."""
             safe = _clean_text(value, limit)
             safe = re.sub(
-                r"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*",
-                r"\\1[REDACTED]",
+                r"(?i)(bearer\s+)[A-Za-z0-9._~+/-]+=*",
+                r"\1[REDACTED]",
                 safe,
             )
             safe = re.sub(
-                r"(?i)(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\\s*[:=]\\s*([^\\s,;&]+)",
-                r"\\1=[REDACTED]",
+                r"(?i)(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\s*[:=]\s*([^\s,;&]+)",
+                r"\1=[REDACTED]",
                 safe,
             )
             safe = re.sub(
-                r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\\s]+",
-                r"\\1[REDACTED]",
+                r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\s]+",
+                r"\1[REDACTED]",
                 safe,
             )
             return safe[:limit]
-
         record = {
             "provider": safe_diagnostic_text(provider, 80),
             "query": safe_diagnostic_text(query, 220),
