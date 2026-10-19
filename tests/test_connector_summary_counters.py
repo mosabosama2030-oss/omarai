@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 
-from agents.web_agent import WebAgent
+from agents.web_agent import PageFetchResult, WebAgent
 
 
 def test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets(monkeypatch):
@@ -150,3 +150,64 @@ def test_connector_summary_does_not_claim_timeout_or_budget_exhaustion_was_a_con
     assert deepseek["status"] == "budget_exhausted"
     assert deepseek["available_for_this_request"] is False
     assert deepseek["verified_for_this_request"] is None
+
+
+def test_collect_research_preserves_partial_and_http_failure_page_statuses(monkeypatch):
+    agent = WebAgent()
+    query = "renewable energy storage"
+    results = [
+        {
+            "title": "Renewable energy storage report",
+            "url": "https://example.com/report",
+            "snippet": "Renewable energy storage report",
+            "page_text": "",
+            "page_fetched": False,
+            "provider": "test_search",
+            "provider_rank": 1,
+            "search_query": query,
+            "published_at": "",
+        },
+        {
+            "title": "Renewable energy storage statistics",
+            "url": "https://example.org/statistics",
+            "snippet": "Renewable energy storage statistics",
+            "page_text": "",
+            "page_fetched": False,
+            "provider": "test_search",
+            "provider_rank": 2,
+            "search_query": query,
+            "published_at": "",
+        },
+    ]
+    monkeypatch.setattr(agent, "_search_web", lambda _query: results)
+
+    def fetch(url: str):
+        if "example.com" in url:
+            return PageFetchResult(
+                "Report page",
+                "Renewable energy storage body, with an explicit note that extraction was capped.",
+                "partial_extraction",
+            )
+        return PageFetchResult("", "", "http_error", "HTTPStatus")
+
+    monkeypatch.setattr(agent, "_fetch_page", fetch)
+    sources, warnings, report = agent._collect_research({
+        "queries": [query],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "unit_test",
+    })
+
+    assert warnings
+    assert report["pages_fetch_attempted"] == 2
+    assert report["pages_content_extracted"] == 1
+    assert report["pages_partial_extracted"] == 1
+    assert report["pages_extract_failed"] == 1
+    assert report["page_fetch_status_counts"]["partial_extraction"] == 1
+    assert report["page_fetch_status_counts"]["http_error"] == 1
+    assert sum(item["page_fetch_status"] == "partial_extraction" for item in sources) == 1
+    assert sum(item["page_fetch_status"] == "http_error" for item in sources) == 1
+    assert any("HTTPError" in str(item.get("page_fetch_error_class")) for item in sources)
