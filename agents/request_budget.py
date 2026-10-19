@@ -14,7 +14,7 @@ from collections.abc import Callable, Mapping
 from typing import Any
 
 
-class RequestBudgetExceeded(RuntimeError):
+class RequestBudgetExceeded(Exception):
     """Raised when a request cannot start more work within its resource budget."""
 
 
