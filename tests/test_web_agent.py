@@ -1509,7 +1509,47 @@ def test_routine_lookup_ignores_planner_overclassification(monkeypatch):
 def test_listing_discovery_detects_arabic_property_requests():
     assert WebAgent._is_listing_discovery("ابحث عن شقة في التجمع الخامس، ممكن معاينة")
     assert WebAgent._is_listing_discovery("عايز شقق للايجار في القاهرة")
+    assert WebAgent._is_listing_discovery("عميل يبحث عن شقة في التجمع الخامس بسعر 5000000 جنيه")
     assert not WebAgent._is_listing_discovery("اشرح الفرق بين الشقة والفيلا")
+
+
+def test_property_listing_extraction_uses_only_explicit_source_text():
+    question = "ابحث عن شقة في التجمع الخامس بسعر 5,000,000 جنيه"
+    source = {
+        "title": "شقة للبيع في التجمع الخامس",
+        "snippet": "السعر 5,000,000 جنيه، المساحة 150 متر مربع.",
+        "page_text": "تفاصيل الإعلان: السعر 5,000,000 جنيه والمساحة 150 متر مربع.",
+    }
+
+    details = WebAgent._property_listing_details(question, source)
+
+    assert details["classification"] == "candidate_property_result"
+    assert details["verification_status"] == "source_text_not_independently_verified"
+    assert details["price_text"] == "5,000,000 جنيه"
+    assert details["price_source_field"] == "snippet"
+    assert details["area_text"] == "مساحة 150 متر مربع"
+    assert details["area_source_field"] == "snippet"
+    assert details["requested_location_text"] == "التجمع الخامس"
+    assert details["location_source_field"] == "title"
+    assert details["fields_not_found"] == []
+
+
+def test_property_listing_extraction_does_not_infer_missing_price_area_or_location():
+    question = "ابحث عن شقة في التجمع الخامس بسعر مناسب"
+    source = {
+        "title": "وحدات سكنية قريبة من القاهرة",
+        "snippet": "وحدات متنوعة متاحة. تواصل مع المعلن للتفاصيل.",
+        "page_text": "",
+    }
+
+    details = WebAgent._property_listing_details(question, source)
+
+    assert details["price_text"] is None
+    assert details["area_text"] is None
+    assert details["requested_location_text"] is None
+    assert set(details["fields_not_found"]) == {
+        "price_text", "area_text", "requested_location_text"
+    }
 
 
 def test_single_property_listing_is_returned_with_safety_caveat(monkeypatch):
@@ -1518,8 +1558,8 @@ def test_single_property_listing_is_returned_with_safety_caveat(monkeypatch):
     source = {
         "title": "شقة للبيع في التجمع الخامس",
         "url": "https://example.com/listing/123",
-        "snippet": "شقة في التجمع الخامس، معاينة بالتنسيق مع المعلن.",
-        "page_text": "شقة في التجمع الخامس، معاينة بالتنسيق مع المعلن.",
+        "snippet": "شقة في التجمع الخامس، السعر 5,000,000 جنيه، المساحة 150 متر مربع.",
+        "page_text": "شقة في التجمع الخامس، السعر 5,000,000 جنيه، المساحة 150 متر مربع.",
         "page_fetched": True,
         "providers": ["test_provider"],
         "queries": ["شقة في التجمع الخامس"],
@@ -1550,11 +1590,18 @@ def test_single_property_listing_is_returned_with_safety_caveat(monkeypatch):
     )
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
 
-    result = agent.answer("ابحث عن شقة في التجمع الخامس، ممكن معاينة")
+    result = agent.answer(
+        "ابحث عن شقة في التجمع الخامس بسعر 5,000,000 جنيه، ممكن معاينة"
+    )
 
     assert result["kind"] == "web_research"
     assert len(result["sources"]) == 1
     assert "إعلانات/قوائم مرشحة فقط" in " ".join(result["warnings"])
+    property_card = result["sources"][0]["property_listing"]
+    assert property_card["price_text"] == "5,000,000 جنيه"
+    assert property_card["area_text"] == "مساحة 150 متر مربع"
+    assert property_card["requested_location_text"] == "التجمع الخامس"
+    assert property_card["verification_status"] == "source_text_not_independently_verified"
 
 
 
