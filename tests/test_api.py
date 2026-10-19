@@ -622,10 +622,10 @@ def test_api_absolute_header_deadline_stops_slow_trickle(local_api, monkeypatch)
         client.settimeout(1.2)
         started = time.monotonic()
         client.sendall(
-            b"POST /api/analyze HTTP/1.1\\r\\n"
-            b"Host: localhost\\r\\n"
-            b"Content-Type: application/json\\r\\n"
-            b"Content-Length: 40\\r\\n"
+            b"POST /api/analyze HTTP/1.1\r\n"
+            b"Host: localhost\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 40\r\n"
             b"X-Slow: "
         )
         # Each tiny fragment is sent well before the 0.35s idle timeout. No
