@@ -89,3 +89,17 @@ def test_restore_rejects_corrupt_backup_without_overwriting_source(tmp_path):
 
     assert backup_path.read_bytes() == b"not a sqlite database"
     assert not destination.exists()
+
+def test_backup_rejects_dangling_symlink_destination(tmp_path):
+    source_path = tmp_path / "source.sqlite3"
+    LeadStore(source_path)
+    target_path = tmp_path / "target.sqlite3"
+    destination_link = tmp_path / "backup-link.sqlite3"
+    destination_link.symlink_to(target_path)
+
+    with pytest.raises(FileExistsError):
+        backup_database(source_path, destination_link)
+
+    assert destination_link.is_symlink()
+    assert not target_path.exists()
+
