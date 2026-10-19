@@ -2589,6 +2589,9 @@ class WebAgent:
             "request_started": bool(request_started),
             "status": str(status)[:48],
         }
+        if remote_response_received is None and isinstance(finish_reason, str) and finish_reason.strip():
+            # A concrete finish_reason can only be observed after a provider response was received.
+            remote_response_received = True
         if remote_response_received is not None:
             record["remote_response_received"] = bool(remote_response_received)
         if isinstance(finish_reason, str) and finish_reason.strip():
