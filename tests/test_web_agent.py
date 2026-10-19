@@ -2027,6 +2027,9 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "citation_lexical_alignment" in html
     assert "weak_lexical_overlap" in html
     assert "لم يظهر تطابق لفظي كافٍ في" in html
+    assert "حالة تنفيذ المطلوب:" in html
+    assert "possible_gap_detected" in html
+    assert "not_assessed_insufficient_evidence" in html
     assert "ليس تحققًا من الحقيقة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
