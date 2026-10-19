@@ -98,6 +98,64 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     assert seen["history"] == [{"role": "user", "content": "ما هي التقنية؟"}]
 
 
+def test_explicit_deep_mode_augments_single_query_plan(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "شقة في التجمع الخامس بسعر 5000000 جنيه"
+    seen = {}
+
+    def one_query_plan(question, history):
+        return {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+        }
+
+    def collect(research_plan):
+        seen["plan"] = research_plan
+        sources = [sample_source(0), sample_source(1)]
+        return sources, [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [
+                {"query": query, "results": 1}
+                for query in research_plan["queries"]
+            ],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["test"],
+            "platform_counts": {"web": len(sources)},
+            "social_direct_results": 0,
+            "depth": research_plan["depth"],
+            "planning_method": "test",
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", one_query_plan)
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda question, history, sources, search_warning, research_plan=None,
+               search_report=None: "وجدت نتائج عقارية للمراجعة [المصدر 1].",
+    )
+
+    result = agent.answer(question, mode="deep")
+
+    planned = seen["plan"]
+    assert planned["mode"] == "deep"
+    assert planned["depth"] == "deep"
+    assert len(planned["queries"]) >= 3
+    assert any("إعلانات عقارية" in query for query in planned["queries"])
+    assert any("متوسط أسعار السوق للمتر" in query for query in planned["queries"])
+    assert result["research_plan"]["mode"] == "deep"
+    assert result["research_plan"]["depth"] == "deep"
+
+
 def test_agent_returns_search_snippets_if_model_not_configured(monkeypatch):
     agent = WebAgent()
     agent.api_key = ""
