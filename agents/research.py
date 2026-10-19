@@ -212,7 +212,9 @@ def fallback_plan(
         base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
     social_focus = detect_social_focus(question, history) or mode == "social"
     fresh = detect_freshness(question) or mode == "latest"
-    deep = detect_depth(question) or mode == "deep"
+    detected_depth = detect_depth(question)
+    deep = detected_depth == "deep" or mode == "deep"
+    depth = "deep" if deep else "standard"
     platforms = mentioned_social_platforms(question + " " + " ".join(
         item.get("content", "") for item in (history or [])[-4:]
     ))
@@ -266,7 +268,7 @@ def fallback_plan(
         "direct_urls": direct_urls,
         "social_focus": social_focus,
         "freshness": "current" if fresh else "any",
-        "depth": deep,
+        "depth": depth,
         "platforms": platforms,
         "planning_method": "deterministic_fallback",
     }
