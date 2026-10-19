@@ -99,3 +99,24 @@ def test_social_provider_reserves_budget_before_network_io(monkeypatch):
     )
     with pytest.raises(RequestBudgetExceeded, match="search_calls"):
         agent._search_social("budget test", ["reddit"])
+
+
+def test_concurrent_reservations_never_exceed_resource_limit():
+    from concurrent.futures import ThreadPoolExecutor
+
+    budget = RequestBudget(timeout_seconds=10, limits={"search_calls": 5})
+
+    def reserve_once(_):
+        try:
+            budget.reserve("search_calls")
+            return True
+        except RequestBudgetExceeded:
+            return False
+
+    with ThreadPoolExecutor(max_workers=20) as pool:
+        accepted = list(pool.map(reserve_once, range(100)))
+
+    snapshot = budget.snapshot()
+    assert sum(accepted) == 5
+    assert snapshot["counts"]["search_calls"] == 5
+    assert snapshot["counts"]["search_calls"] <= snapshot["limits"]["search_calls"]
