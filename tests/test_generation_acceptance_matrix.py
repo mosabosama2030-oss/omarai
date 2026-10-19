@@ -81,8 +81,12 @@ def test_only_normal_stop_is_accepted_as_a_complete_text_answer(
     assert agent.model_usage == []
     assert agent.generation_diagnostics == [
         {
+            "attempt_number": 1,
             "requested_model": "primary/model",
             "attempted_model": "primary/model",
+            "fallback_used": False,
+            "request_started": True,
+            "remote_response_received": True,
             "status": "finish_reason_not_accepted",
             "finish_reason": finish_reason,
         }
@@ -140,7 +144,12 @@ def test_model_fallback_cannot_exceed_request_model_call_budget(monkeypatch):
 
     assert calls == ["primary/model"]
     assert budget.snapshot()["counts"]["model_calls"] == 1
-    assert [item["status"] for item in agent.generation_diagnostics] == ["truncated"]
+    assert [item["status"] for item in agent.generation_diagnostics] == [
+        "truncated",
+        "budget_exhausted",
+    ]
+    assert agent.generation_diagnostics[1]["request_started"] is False
+    assert agent.generation_diagnostics[1]["remote_response_received"] is False
     assert agent.model_usage == []
 
 
