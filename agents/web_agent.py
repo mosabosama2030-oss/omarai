@@ -528,7 +528,7 @@ class WebAgent:
             failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
             available: bool | None = (
                 True if successful_statuses or useful.get(name, 0)
-                else False if error_response_statuses or not ready or "disabled" in statuses
+                else False if error_response_statuses or not ready or "disabled" in statuses or "budget_exhausted" in statuses
                 else None
             )
             verified: bool | None = (
