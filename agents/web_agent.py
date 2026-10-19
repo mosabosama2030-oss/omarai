@@ -63,7 +63,7 @@ _PROPERTY_PRICE_CURRENCY_FIRST_RE = re.compile(
     r"\d+(?:[.,]\d+)?\s*(?:million|billion))"
 )
 _PROPERTY_AREA_RE = re.compile(
-    r"(?ix)(?:مساحة\s*[:：]?\s*\d{2,4}(?:[.,]\d+)?\s*متر(?:\s+مربع)?|"
+    r"(?i)(?:مساحة\s*[:：]?\s*\d{2,4}(?:[.,]\d+)?\s*متر(?:\s+مربع)?|"
     r"\d{2,4}(?:[.,]\d+)?\s*(?:متر\s+مربع|م[²2]|sqm|"
     r"sq\.?\s*m(?:eters?)?|square\s+meters?))"
 )
