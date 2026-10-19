@@ -26,6 +26,7 @@ from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
+    apply_mode_to_plan,
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
@@ -3061,6 +3062,7 @@ class WebAgent:
             intent_reason = "model_unavailable_fallback_to_existing_web_research"
 
         plan = self._plan_search(question, clean_history)
+        plan = apply_mode_to_plan(question, clean_history, plan, clean_mode)
         plan["mode"] = clean_mode
         plan["intent_route"] = intent_route
         plan["intent_route_reason"] = intent_reason
