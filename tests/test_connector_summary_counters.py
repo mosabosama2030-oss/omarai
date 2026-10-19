@@ -211,3 +211,21 @@ def test_collect_research_preserves_partial_and_http_failure_page_statuses(monke
     assert sum(item["page_fetch_status"] == "partial_extraction" for item in sources) == 1
     assert sum(item["page_fetch_status"] == "http_error" for item in sources) == 1
     assert any("HTTPStatus" in str(item.get("page_fetch_error_class")) for item in sources)
+
+
+def test_raw_provider_diagnostics_redact_credentials_from_queries_and_errors():
+    agent = WebAgent()
+    agent._record_provider_diagnostic(
+        provider="test_provider",
+        query="research API_KEY=query-secret",
+        status="failed",
+        error=(
+            "Authorization: Bearer bearer-secret access_token=access-secret; "
+            "URL https://example.test/search?token=url-secret"
+        ),
+    )
+
+    diagnostic_json = json.dumps(agent._provider_diagnostics, ensure_ascii=False)
+    for secret in ("query-secret", "bearer-secret", "access-secret", "url-secret"):
+        assert secret not in diagnostic_json
+    assert "[REDACTED]" in diagnostic_json
