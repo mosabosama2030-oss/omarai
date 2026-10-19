@@ -2474,6 +2474,7 @@ class WebAgent:
         finish_reason: str | None = None,
         error_class: str | None = None,
         request_started: bool = True,
+        remote_response_received: bool | None = None,
     ) -> None:
         """Store bounded metadata for each model attempt; never retain prompts or output."""
         self._generation_attempt_sequence = getattr(self, "_generation_attempt_sequence", 0) + 1
@@ -2485,6 +2486,8 @@ class WebAgent:
             "request_started": bool(request_started),
             "status": str(status)[:48],
         }
+        if remote_response_received is not None:
+            record["remote_response_received"] = bool(remote_response_received)
         if isinstance(finish_reason, str) and finish_reason.strip():
             record["finish_reason"] = finish_reason.strip()[:48]
         if isinstance(error_class, str) and error_class:
@@ -2510,6 +2513,7 @@ class WebAgent:
                 status="not_configured",
                 error_class="MissingAPIKey",
                 request_started=False,
+                remote_response_received=False,
             )
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
 
@@ -2539,6 +2543,7 @@ class WebAgent:
                         status="budget_exhausted",
                         error_class=type(exc).__name__,
                         request_started=False,
+                        remote_response_received=False,
                     )
                     raise
             else:
@@ -2615,6 +2620,7 @@ class WebAgent:
                         status=diagnostic_status,
                         finish_reason=normalized_finish_reason or None,
                         request_started=True,
+                        remote_response_received=True,
                     )
                     continue
                 message = choice["message"]
@@ -2658,6 +2664,7 @@ class WebAgent:
                     status="accepted",
                     finish_reason=normalized_finish_reason,
                     request_started=True,
+                    remote_response_received=True,
                 )
                 self.model_usage.append({
                     "requested_model": requested_model,
@@ -2670,6 +2677,7 @@ class WebAgent:
                 self._record_generation_diagnostic(
                     requested_model, candidate_model, "provider_http_error",
                     error_class="HTTPError", request_started=True,
+                    remote_response_received=True,
                 )
                 last_error = RuntimeError(
                     f"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code}) على النموذج المحدد."
@@ -2678,6 +2686,7 @@ class WebAgent:
                 self._record_generation_diagnostic(
                     requested_model, candidate_model, "connection_error",
                     error_class=type(exc).__name__, request_started=True,
+                    remote_response_received=None,
                 )
                 last_error = RuntimeError(
                     "تعذر الاتصال بخدمة نموذج اللغة؛ جرت محاولة استخدام النموذج الاحتياطي."
@@ -2686,6 +2695,7 @@ class WebAgent:
                 self._record_generation_diagnostic(
                     requested_model, candidate_model, "invalid_response",
                     error_class=type(exc).__name__, request_started=True,
+                    remote_response_received=True,
                 )
                 last_error = RuntimeError(
                     "خدمة نموذج اللغة أعادت استجابة غير صالحة؛ جرت محاولة استخدام النموذج الاحتياطي."
