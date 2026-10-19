@@ -2017,6 +2017,10 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "جُلبت الصفحة لكن لم يُستخرج نص" in html
     assert "تعذّر جلب الصفحة" in html
     assert "مقتطف بحث — لم تُحاول قراءة الصفحة" in html
+    assert "فحص آلي أولي لاتساق الإجابة" in html
+    assert "potentially_unsupported_numeric_literals" in html
+    assert "target_coverage" in html
+    assert "ليس تحققًا من الحقيقة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
 
