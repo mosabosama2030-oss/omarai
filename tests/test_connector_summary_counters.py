@@ -117,3 +117,24 @@ def test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction
     assert sum(source["page_fetch_status"] == "content_extracted" for source in sources) == 1
     assert sum(source["page_fetch_status"] == "no_text_extracted" for source in sources) == 1
     assert report["connector_summary"]["scope"] == "this_request_only"
+
+
+def test_connector_summary_does_not_claim_timeout_or_budget_exhaustion_was_a_confirmed_attempt(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setenv("TAVILY_API_KEY", "configured-test-key")
+    timeout = agent._connector_status_summary(
+        [{"provider": "tavily_search_api", "query": "query", "status": "timeout", "error": "request timed out"}],
+        [],
+    )
+    exhausted = agent._connector_status_summary(
+        [{"provider": "deepseek_search_api", "query": "query", "status": "budget_exhausted"}],
+        [],
+    )
+    tavily = next(item for item in timeout["connectors"] if item["name"] == "tavily_search_api")
+    deepseek = next(item for item in exhausted["connectors"] if item["name"] == "deepseek_search_api")
+    assert tavily["configured"] is True
+    assert tavily["attempted"] is None
+    assert tavily["status"] == "timeout"
+    assert deepseek["configured"] is False
+    assert deepseek["attempted"] is False
+    assert deepseek["status"] == "budget_exhausted"
