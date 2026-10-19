@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from agents.answer_validation import audit_answer_integrity
@@ -254,3 +256,13 @@ def test_date_in_answer_missing_from_its_cited_source_is_flagged():
     numeric_check = result["citation_numeric_support"][0]
     assert numeric_check["potentially_unsupported_numeric_literals"] == ["2026"]
     assert numeric_check["status"] == "potentially_unsupported_numeric_literals_for_cited_sources"
+
+
+def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():
+    html_path = Path(__file__).resolve().parents[1] / "web" / "agent.html"
+    html = html_path.read_text(encoding="utf-8")
+
+    assert "citation_numeric_support" in html
+    assert "potential_value_discrepancies" in html
+    assert "هذه ليست إثباتًا تلقائيًا لوجود تناقض" in html
+    assert "ليس تحققًا من الحقيقة" in html
