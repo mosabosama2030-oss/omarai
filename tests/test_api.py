@@ -497,3 +497,52 @@ def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):
     assert _configured_agent_concurrency_limit() == 8
     monkeypatch.setenv("OMARAI_MAX_CONCURRENT_AGENT_REQUESTS", "invalid")
     assert _configured_agent_concurrency_limit() == 4
+
+
+def test_agent_concurrency_slot_released_after_operation_error(
+    local_api, monkeypatch
+):
+    from api.omarai import WebAgent
+
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.setattr(Handler, "_request_times", defaultdict(deque))
+    monkeypatch.setattr(Handler, "_rate_last_cleanup", 0.0)
+    monkeypatch.setattr(Handler, "_agent_semaphore", threading.BoundedSemaphore(1))
+    state = {"fail": True}
+
+    def answer_with_one_transient_failure(self, question, history=None, mode="auto"):
+        if state["fail"]:
+            raise RuntimeError("synthetic operation failure")
+        return {
+            "answer": "اختبار ناجح",
+            "question": question,
+            "search_query": question,
+            "search_queries": [],
+            "search_report": {
+                "search_attempted": False,
+                "search_outcome": "not_attempted",
+            },
+            "sources": [],
+            "used_language_model": False,
+            "used_web_search": False,
+            "search_attempted": False,
+            "used_social_search": False,
+            "warnings": [],
+            "kind": "web_fallback",
+        }
+
+    monkeypatch.setattr(WebAgent, "answer", answer_with_one_transient_failure)
+
+    status, payload = request_json(
+        local_api, "/api/agent", method="POST", payload={"question": "الطلب الأول"}
+    )
+    assert status == 500
+    assert payload["error"] == "internal server error"
+
+    state["fail"] = False
+    status, payload = request_json(
+        local_api, "/api/agent", method="POST", payload={"question": "الطلب الثاني"}
+    )
+    assert status == 200
+    assert payload["answer"] == "اختبار ناجح"
