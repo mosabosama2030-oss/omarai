@@ -1,6 +1,6 @@
 # Omarai — Web Research & Generative Q&A Agent
 
-> **Foundational engineering requirements:** the architecture, performance, resilience, security, AI-safety, evidence-quality, testing, and release-governance target is documented in [OMARAI Foundational Engineering Charter (Arabic)](docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md). This is a normative design target, not a claim that every listed control is already implemented or tested.
+> **Foundational engineering requirements:** mandatory contributor/agent rules are in [AGENTS.md](AGENTS.md), and the full architecture, performance, resilience, security, AI-safety, evidence-quality, testing, and release-governance target is in the [OMARAI Foundational Engineering Charter (Arabic)](docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md). These define required engineering direction; they do not claim that every listed control is already implemented or tested.
 
 Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You can ask open-ended questions in natural language, search the public web, extract text from accessible pages, compare and summarize findings, ask follow-up questions, and inspect the source links.
 
