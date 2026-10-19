@@ -55,6 +55,7 @@ def test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used(monkeypa
     assert [item["attempt_number"] for item in agent.generation_diagnostics] == [1, 2]
     assert [item["fallback_used"] for item in agent.generation_diagnostics] == [False, True]
     assert all(item["request_started"] is True for item in agent.generation_diagnostics)
+    assert all(item["remote_response_received"] is True for item in agent.generation_diagnostics)
 
 
 def test_unknown_finish_reason_is_rejected_and_fallback_is_used(monkeypatch):
@@ -109,6 +110,7 @@ def test_missing_finish_reason_from_all_models_fails_closed(monkeypatch):
         "attempted_model": "primary/model",
         "fallback_used": False,
         "request_started": True,
+        "remote_response_received": True,
         "status": "finish_reason_missing",
     }]
 
@@ -277,6 +279,7 @@ def test_missing_api_key_is_reported_as_not_configured_not_attempted(monkeypatch
         "attempted_model": "primary/model",
         "fallback_used": False,
         "request_started": False,
+        "remote_response_received": False,
         "status": "not_configured",
         "error_class": "MissingAPIKey",
     }]
