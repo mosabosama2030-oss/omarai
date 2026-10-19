@@ -2012,6 +2012,10 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "مستوى تغطية البحث:" in html
     assert "وليس نسبة مئوية أو احتمالًا لصحة الإجابة" in html
     assert "تشخيص الموصلات في هذا الطلب" in html
+    assert "متاح في هذا الطلب:" in html
+    assert "تم التحقق:" in html
+    assert "غير محسوم" in html
+    assert "إخفاق ملاحظ:" in html
     assert "r.pages_content_extracted" in html
     assert "قُرئت الصفحة واستُخرج نص" in html
     assert "جُلبت الصفحة لكن لم يُستخرج نص" in html
