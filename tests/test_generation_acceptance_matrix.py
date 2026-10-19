@@ -444,6 +444,9 @@ def test_search_failure_is_not_reported_as_no_attempt_or_completed_answer(monkey
     assert result["final_answer_status"] == "insufficient_evidence_no_generation"
     assert result["used_language_model"] is False
     assert result["research_quality"] == "failed"
+    assert result["answer_integrity"]["method"] == "deterministic_lexical_screen_only"
+    assert result["answer_integrity"]["independent_fact_check"] is False
+    assert result["search_report"]["answer_integrity"] == result["answer_integrity"]
 
 
 def test_research_exception_does_not_claim_no_results_or_no_search(monkeypatch):
@@ -556,6 +559,11 @@ def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatc
     assert result["answer_coverage"]["automatically_graded"] is False
     assert result["answer_coverage"]["status"] == "model_review_requested_not_machine_verified"
     assert result["citation_validation"]["method"] == "numeric_source_index_range_only"
+    assert result["answer_integrity"]["method"] == "deterministic_lexical_screen_only"
+    assert result["answer_integrity"]["semantic_verification"] is False
+    assert result["search_report"]["answer_integrity"] == result["answer_integrity"]
+    assert result["answer_integrity"]["pages_with_extracted_text"] == 1
+    assert result["answer_integrity"]["potentially_missing_target_count"] >= 0
 
 
 @pytest.mark.parametrize(
