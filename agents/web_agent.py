@@ -466,15 +466,35 @@ class WebAgent:
         self, provider: str, query: str, status: str, result_count: int = 0,
         rejected_count: int = 0, error: str | None = None,
     ) -> None:
+        def safe_diagnostic_text(value: Any, limit: int) -> str:
+            """Bound diagnostic text and redact common credential representations."""
+            safe = _clean_text(value, limit)
+            safe = re.sub(
+                r"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*",
+                r"\\1[REDACTED]",
+                safe,
+            )
+            safe = re.sub(
+                r"(?i)(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\\s*[:=]\\s*([^\\s,;&]+)",
+                r"\\1=[REDACTED]",
+                safe,
+            )
+            safe = re.sub(
+                r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\\s]+",
+                r"\\1[REDACTED]",
+                safe,
+            )
+            return safe[:limit]
+
         record = {
-            "provider": provider,
-            "query": _clean_text(query, 220),
-            "status": status,
+            "provider": safe_diagnostic_text(provider, 80),
+            "query": safe_diagnostic_text(query, 220),
+            "status": safe_diagnostic_text(status, 40),
             "result_count": int(result_count),
             "rejected_count": int(rejected_count),
         }
         if error:
-            record["error"] = _clean_text(error, 180)
+            record["error"] = safe_diagnostic_text(error, 180)
         with self._provider_diagnostics_lock:
             self._provider_diagnostics.append(record)
             # Bound memory when the instance serves many user requests.
