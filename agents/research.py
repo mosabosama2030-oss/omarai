@@ -197,17 +197,24 @@ def _followup_query(question: str, history: list[dict[str, str]] | None) -> str:
 
 
 def fallback_plan(
-    question: str, history: list[dict[str, str]] | None = None
+    question: str,
+    history: list[dict[str, str]] | None = None,
+    mode: str = "auto",
 ) -> dict[str, Any]:
-    """Build a small but varied plan when no model planner is configured or parsing fails."""
+    """Build a varied deterministic plan that honors the selected search mode."""
+    mode = mode.strip().lower() if isinstance(mode, str) else "auto"
+    if mode not in {"auto", "deep", "latest", "social"}:
+        mode = "auto"
     contextual_question = _followup_query(question, history)
     direct_urls = extract_urls(question)
     base = _compact(re.sub(r"https?://[^\s<>()]+", " ", contextual_question), 500)
     if not base:
         base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
-    social_focus = detect_social_focus(question, history)
-    fresh = detect_freshness(question)
-    deep = detect_depth(question)
+    social_focus = detect_social_focus(question, history) or mode == "social"
+    fresh = detect_freshness(question) or mode == "latest"
+    detected_depth = detect_depth(question)
+    deep = detected_depth == "deep" or mode == "deep"
+    depth = "deep" if deep else "standard"
     platforms = mentioned_social_platforms(question + " " + " ".join(
         item.get("content", "") for item in (history or [])[-4:]
     ))
@@ -220,6 +227,8 @@ def fallback_plan(
 
     if social_focus:
         selected = platforms or ["facebook", "instagram", "reddit"]
+        if mode == "social" and not platforms:
+            platforms = list(selected)
         for platform in selected[:3]:
             domain = SOCIAL_DOMAINS[platform]
             site_query = _compact(f"site:{domain} {base}", 500)
@@ -227,7 +236,20 @@ def fallback_plan(
                 queries.append(site_query)
 
     if deep and not social_focus and len(queries) < MAX_PLAN_QUERIES:
-        queries.append(_compact(base + " مصادر موثوقة تقارير إحصاءات", 500))
+        real_estate_terms = (
+            "شقة", "شقق", "عقار", "عقارات", "عقاري", "عقارية", "فيلا", "فلل",
+            "أرض", "أراضي", "ارض", "اراضي", "apartment", "apartments", "flat",
+            "property", "properties", "real estate", "real-estate", "housing",
+        )
+        if _contains_any(question, real_estate_terms):
+            # Separate property-listing, price context, and source-quality angles.
+            queries.extend([
+                _compact(base + " إعلانات عقارية السعر المساحة والموقع", 500),
+                _compact(base + " متوسط أسعار السوق للمتر والتقارير", 500),
+                _compact(base + " مواقع عقارية موثوقة وعروض للبيع", 500),
+            ])
+        else:
+            queries.append(_compact(base + " مصادر موثوقة تقارير إحصاءات", 500))
 
     unique: list[str] = []
     seen: set[str] = set()
@@ -245,10 +267,62 @@ def fallback_plan(
         "direct_urls": direct_urls,
         "social_focus": social_focus,
         "freshness": "current" if fresh else "any",
-        "depth": deep,
+        "depth": depth,
         "platforms": platforms,
         "planning_method": "deterministic_fallback",
     }
+
+
+def apply_mode_to_plan(
+    question: str,
+    history: list[dict[str, str]] | None,
+    plan: dict[str, Any],
+    mode: str,
+) -> dict[str, Any]:
+    """Apply explicit deep/latest/social requirements to a model or fallback plan."""
+    clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
+    if clean_mode not in {"deep", "latest", "social"}:
+        return plan
+
+    fallback = fallback_plan(question, history, mode=clean_mode)
+    existing = plan.get("queries", [])
+    if not isinstance(existing, list):
+        existing = []
+    candidates: list[str] = []
+    if existing:
+        candidates.append(existing[0])
+    candidates.extend(fallback.get("queries", []))
+    candidates.extend(existing[1:])
+
+    queries: list[str] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        if not isinstance(candidate, str):
+            continue
+        query = _compact(candidate, 500)
+        key = query.casefold()
+        if query and key not in seen:
+            seen.add(key)
+            queries.append(query)
+        if len(queries) >= MAX_PLAN_QUERIES:
+            break
+    plan["queries"] = queries or fallback.get("queries", [])
+
+    if clean_mode == "deep":
+        plan["depth"] = "deep"
+    elif clean_mode == "latest":
+        plan["freshness"] = "current"
+    elif clean_mode == "social":
+        plan["social_focus"] = True
+        platforms = plan.get("platforms", [])
+        if not isinstance(platforms, list):
+            platforms = []
+        merged = [
+            item for item in platforms + fallback.get("platforms", [])
+            if isinstance(item, str) and item in SOCIAL_DOMAINS
+        ]
+        plan["platforms"] = list(dict.fromkeys(merged))[:5]
+    return plan
 
 
 def validate_plan(
