@@ -708,8 +708,9 @@ class WebAgent:
         price_source_field = None
         for name, text in fields:
             match = _PROPERTY_PRICE_RE.search(text) or _PROPERTY_PRICE_CURRENCY_FIRST_RE.search(text)
-            if match:
-                price_text = match.group(0).strip()
+            candidate_price = match.group(0).strip() if match else ""
+            if candidate_price and len(candidate_price) <= 64:
+                price_text = candidate_price
                 price_source_field = name
                 break
 
