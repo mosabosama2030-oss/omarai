@@ -559,3 +559,50 @@ def test_api_returns_408_when_request_body_read_times_out(local_api, monkeypatch
 
     assert response.startswith(b"HTTP/1.0 408")
     assert b"request body read timed out" in response
+
+
+def test_api_absolute_body_deadline_stops_slow_trickle(local_api, monkeypatch):
+    """A client must not evade the total deadline by sending before each idle timeout."""
+    import time
+
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.setattr("api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS", 0.45)
+    monkeypatch.setattr("api.omarai.REQUEST_BODY_IDLE_TIMEOUT_SECONDS", 0.20)
+    host, port = local_api.removeprefix("http://").rsplit(":", 1)
+
+    with socket.create_connection((host, int(port)), timeout=2) as client:
+        client.settimeout(2)
+        started = time.monotonic()
+        client.sendall(
+            b"POST /api/analyze HTTP/1.1\r\n"
+            b"Host: localhost\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 100\r\n"
+            b"Connection: close\r\n\r\n"
+            b"{"
+        )
+        # Each fragment arrives before the 0.20s idle timeout, but the complete
+        # request body never arrives before the 0.45s absolute deadline.
+        for fragment in (b'"', b"text", b'"', b":"):
+            time.sleep(0.08)
+            try:
+                client.sendall(fragment)
+            except OSError:
+                break
+
+        response = bytearray()
+        while True:
+            try:
+                chunk = client.recv(4096)
+            except TimeoutError:
+                break
+            if not chunk:
+                break
+            response.extend(chunk)
+
+    elapsed = time.monotonic() - started
+    assert response.startswith(b"HTTP/1.0 408")
+    assert b"request body read timed out" in response
+    assert elapsed < 1.5
+
