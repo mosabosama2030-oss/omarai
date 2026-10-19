@@ -4026,6 +4026,7 @@ class WebAgent:
         answer = ""
         used_llm = False
         llm_warning: str | None = None
+        generation_budget_exhausted = False
         try:
             answer = self._generate(
                 question,
@@ -4059,9 +4060,15 @@ class WebAgent:
                 report["evidence_signals"] = evidence_signal_report(
                     sources, plan.get("freshness", "any")
                 )
-        except (RuntimeError, AgentDependencyError) as exc:
+        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
             llm_warning = str(exc)
-            if not self.api_key:
+            generation_budget_exhausted = isinstance(exc, RequestBudgetExceeded)
+            if generation_budget_exhausted:
+                reason = (
+                    "استُنفدت ميزانية محاولات النماذج قبل اكتمال الإجابة التحليلية. "
+                    "أعرض مقتطفات المصادر المتاحة فقط، ولا أعتبر المهمة مكتملة."
+                )
+            elif not self.api_key:
                 reason = (
                     "تم البحث، لكن الفهم التوليدي غير مفعّل بعد. اضبط OPENROUTER_API_KEY "
                     "في Termux لتفعيل تخطيط البحث والإجابة باللغة الطبيعية."
@@ -4075,13 +4082,19 @@ class WebAgent:
 
         review_status = "not_run"
         review_warning: str | None = None
+        review_budget_exhausted = False
         if used_llm and sources:
             try:
                 answer = self._review_answer(question, answer, sources[:MAX_LLM_CITED_SOURCES])
                 review_status = "model_claim_audit_completed"
-            except (RuntimeError, AgentDependencyError):
+            except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
                 review_status = "model_claim_audit_unavailable"
+                review_budget_exhausted = isinstance(exc, RequestBudgetExceeded)
                 review_warning = (
+                    "استُنفدت ميزانية النماذج قبل اكتمال تدقيق الإجابة؛ لذلك لن أعرض المسودة "
+                    "بوصفها إجابة مكتملة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد عليها."
+                    if review_budget_exhausted
+                    else
                     "تعذر تدقيق الادعاءات مقابل نصوص المصادر؛ لذلك لن أتعامل مع المسودة "
                     "كإجابة مؤكدة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد على المسودة."
                 )
@@ -4211,7 +4224,9 @@ class WebAgent:
         report["model_calls"] = list(self.model_usage)
         report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
         report["openrouter_web_search_results"] = len(self.server_search_sources)
-        if llm_warning:
+        if generation_budget_exhausted or review_budget_exhausted:
+            final_answer_status = "budget_exhausted_with_source_fallback"
+        elif llm_warning:
             final_answer_status = (
                 "model_not_configured_fallback"
                 if not self.api_key
