@@ -213,7 +213,9 @@ function renderReport(result){
  const taskFulfillmentHtml='<p class="'+(taskFulfillmentStatus==="possible_gap_detected"?"warning":"report-note")+'">حالة تنفيذ المطلوب: '+escapeHtml(taskFulfillmentText)+'</p>';
  const coverageRepairStatus=r.coverage_repair_status||result.coverage_repair_status||"";
  const coverageRepairMessages={
-  revised_after_review_not_reaudited:"عُدّلت الإجابة لاستكمال محاور محتملة النقص بعد المراجعة الأولى، لكن النسخة المعدلة لم تخضع لمراجعة ادعاءات ثانية.",
+  revised_and_reaudited:"عُدّلت الإجابة بعد رصد محور محتمل النقص ثم خضعت لمراجعة أدلة ثانية؛ تظل المراجعة بمساعدة نموذج وليست تحققًا مستقلًا.",
+  reaudit_budget_exhausted:"انتهت ميزانية النماذج قبل إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.",
+  reaudit_unavailable:"تعذرت إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.",
   budget_exhausted:"انتهت ميزانية النماذج قبل استكمال محور محتمل النقص.",
   unavailable:"تعذرت محاولة إصلاح محور محتمل النقص.",
   no_change_gap_unresolved:"لم تغيّر محاولة الإصلاح الإجابة؛ لا يزال احتمال نقص أحد المحاور قائمًا."
