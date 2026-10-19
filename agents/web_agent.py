@@ -2190,12 +2190,16 @@ class WebAgent:
         last_error: RuntimeError | None = None
         for candidate_model in model_candidates:
             budget = getattr(self, "_request_budget", None)
+            use_web_search = enable_web_search and self.openrouter_web_search_enabled
             if budget is not None:
                 budget.reserve("model_calls")
                 request_timeout = budget.timeout_for(timeout or self.timeout)
-                if enable_web_search and self.openrouter_web_search_enabled:
-                    # Conservatively reserve the maximum server-side tool calls offered
-                    # by this request; provider-reported actual use may be lower.
+                if use_web_search and budget.remaining_units("tool_calls") < 3:
+                    # The model may still answer, but the optional server-side search
+                    # tool is disabled when its separate budget is unavailable.
+                    use_web_search = False
+                elif use_web_search:
+                    # Reserve the maximum server-side tool calls offered by this request.
                     budget.reserve("tool_calls", amount=3)
             else:
                 request_timeout = timeout or self.timeout
@@ -2205,7 +2209,7 @@ class WebAgent:
                 "temperature": temperature,
                 "max_tokens": max(100, min(int(max_tokens), 3000)),
             }
-            if enable_web_search and self.openrouter_web_search_enabled:
+            if use_web_search:
                 # OpenRouter executes these searches server-side and returns URL citations.
                 # This is opt-in because provider search incurs usage charges.
                 request_payload["tools"] = [{
@@ -2252,7 +2256,7 @@ class WebAgent:
                     continue
                 message = choice["message"]
                 answer = message["content"]
-                if enable_web_search and self.openrouter_web_search_enabled:
+                if use_web_search:
                     for annotation in message.get("annotations", []):
                         if not isinstance(annotation, dict) or annotation.get("type") != "url_citation":
                             continue
@@ -2941,6 +2945,8 @@ class WebAgent:
                 if isinstance(question, str)
                 else ""
             )
+            budget_at_failure = budget.snapshot()
+            search_attempted = budget_at_failure["counts"]["search_calls"] > 0
             result = {
                 "answer": (
                     "توقفت العملية لأن ميزانية الوقت أو الموارد المحددة لهذا الطلب "
@@ -2951,8 +2957,12 @@ class WebAgent:
                 "search_query": safe_question,
                 "search_queries": [],
                 "search_report": {
-                    "search_attempted": False,
-                    "search_outcome": "not_attempted",
+                    "search_attempted": search_attempted,
+                    "search_outcome": (
+                        "unknown_after_budget_exhaustion"
+                        if search_attempted
+                        else "not_attempted"
+                    ),
                     "insufficient_evidence": True,
                     "budget_exhausted": True,
                     "warnings": [str(exc)],
@@ -2963,7 +2973,7 @@ class WebAgent:
                 "answer_coverage": {},
                 "used_language_model": False,
                 "used_web_search": False,
-                "search_attempted": False,
+                "search_attempted": search_attempted,
                 "used_social_search": False,
                 "warnings": [str(exc)],
                 "kind": "web_fallback",
