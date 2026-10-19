@@ -4383,7 +4383,12 @@ class WebAgent:
                 )
                 answer = _fallback_answer(sources, review_warning)
 
-        if coverage_targets and review_status == "model_claim_audit_completed" and sources:
+        if (
+            coverage_targets
+            and review_status == "model_claim_audit_completed"
+            and sources
+            and self.api_key
+        ):
             initial_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
             missing_targets = [
                 item["target"] for item in initial_integrity["target_coverage"]
@@ -4420,6 +4425,8 @@ class WebAgent:
                         + type(exc).__name__
                         + ")؛ راجع المحاور المطلوبة قبل اعتماد الإجابة."
                     )
+        elif coverage_targets and review_status == "model_claim_audit_completed" and not self.api_key:
+            coverage_repair_status = "skipped_no_model_configuration"
         elif coverage_targets:
             coverage_repair_status = "skipped_review_unavailable"
 
