@@ -432,3 +432,68 @@ def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):
     assert "192.0.2.1" not in Handler._request_times
     assert "192.0.2.2" in Handler._request_times
 
+
+
+def test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.setattr(Handler, "_request_times", defaultdict(deque))
+    monkeypatch.setattr(Handler, "_rate_last_cleanup", 0.0)
+    monkeypatch.setattr(Handler, "_agent_semaphore", threading.BoundedSemaphore(1))
+
+    entered = threading.Event()
+    release = threading.Event()
+    first_result = {}
+
+    def slow_answer(self, question, history=None, mode="auto"):
+        entered.set()
+        assert release.wait(timeout=2), "test did not release the held research slot"
+        return {
+            "answer": "نتيجة اختبار محدودة",
+            "question": question,
+            "search_query": question,
+            "search_queries": [],
+            "search_report": {"search_attempted": False, "search_outcome": "not_attempted"},
+            "sources": [],
+            "used_language_model": False,
+            "used_web_search": False,
+            "search_attempted": False,
+            "used_social_search": False,
+            "warnings": [],
+            "kind": "web_fallback",
+        }
+
+    monkeypatch.setattr(WebAgent, "answer", slow_answer)
+
+    def first_request():
+        first_result["response"] = request_json(
+            local_api, "/api/agent", method="POST", payload={"question": "السؤال الأول"}
+        )
+
+    worker = threading.Thread(target=first_request, daemon=True)
+    worker.start()
+    try:
+        assert entered.wait(timeout=1), "first request did not acquire the research slot"
+        status, payload = request_json(
+            local_api, "/api/agent", method="POST", payload={"question": "السؤال الثاني"}
+        )
+        assert status == 503
+        assert payload["retry_after_seconds"] == 5
+        assert "مشغولة" in payload["error"]
+    finally:
+        release.set()
+        worker.join(timeout=3)
+
+    assert not worker.is_alive()
+    assert first_result["response"][0] == 200
+
+
+def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):
+    from api.omarai import _configured_agent_concurrency_limit
+
+    monkeypatch.setenv("OMARAI_MAX_CONCURRENT_AGENT_REQUESTS", "99")
+    assert _configured_agent_concurrency_limit() == 8
+    monkeypatch.setenv("OMARAI_MAX_CONCURRENT_AGENT_REQUESTS", "invalid")
+    assert _configured_agent_concurrency_limit() == 4
