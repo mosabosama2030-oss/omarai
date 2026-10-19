@@ -94,3 +94,45 @@ def test_review_prompt_explicitly_requires_number_and_conflict_audit(monkeypatch
     assert answer == "لا تكفي الأدلة."
     assert "المبالغ والأسعار والنسب والتواريخ والمدد والقياسات" in prompt
     assert "قيمًا متعارضة" in prompt
+
+
+def test_citation_alignment_uses_fetched_page_text_and_flags_weak_overlap():
+    page_source = {
+        "title": "Report",
+        "snippet": "completely unrelated snippet about fruit",
+        "page_text": "Renewable energy storage costs decreased during the reporting period.",
+        "page_fetched": True,
+        "published_at": "",
+    }
+    good = audit_answer_integrity(
+        "What changed?",
+        "Renewable energy storage costs decreased [source 1].",
+        [page_source],
+    )
+    assert good["citation_lexical_alignment_method"] == "content_word_overlap_heuristic_not_entailment"
+    assert good["citation_lexical_alignment"][0]["status"] == "lexical_overlap_signal_found"
+    assert good["citation_lexical_alignment"][0]["citations"][0]["evidence_basis"] == "extracted_page_text"
+    assert good["citation_entailment"] == "not_checked"
+
+    weak = audit_answer_integrity(
+        "What happened?",
+        "Mango harvest volume rose sharply [source 1].",
+        [page_source],
+    )
+    assert weak["citation_lexical_alignment"][0]["status"] == "weak_lexical_overlap"
+    assert weak["weak_citation_alignment_count"] == 1
+    assert weak["independent_fact_check"] is False
+
+
+def test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence():
+    result = audit_answer_integrity(
+        "What was reported?",
+        "The reported costs changed [المصدر 1].",
+        [{
+            "title": "Costs report",
+            "snippet": "Reported costs changed in the new report.",
+            "page_fetched": False,
+        }],
+    )
+    assert result["citation_lexical_alignment"][0]["citations"][0]["evidence_basis"] == "search_snippet"
+    assert result["citation_entailment"] == "not_checked"
