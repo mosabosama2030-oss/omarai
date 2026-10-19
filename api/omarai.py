@@ -35,15 +35,16 @@ REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 class _DeadlineRequestReader:
     """Read HTTP header lines with one absolute deadline across all fragments.
 
-    BaseHTTPRequestHandler's default buffered readline can spend indefinitely
-    waiting for a newline if a client keeps trickling bytes. This tiny socket
-    reader checks the same deadline before each byte and preserves body bytes
-    by never reading ahead beyond the requested line.
+    The standard buffered readline can wait indefinitely for a newline if a
+    client keeps trickling bytes. This reader checks the same deadline before
+    every socket read and buffers only bounded look-ahead so request body bytes
+    received with the headers are preserved for read1().
     """
 
     def __init__(self, connection, handler):
         self.connection = connection
         self.handler = handler
+        self._buffer = bytearray()
 
     def readline(self, limit=-1):
         if limit == 0:
@@ -59,6 +60,24 @@ class _DeadlineRequestReader:
                 remaining = deadline - time.monotonic()
                 if remaining <= 0:
                     raise TimeoutError("absolute request-header deadline exceeded")
+
+                newline_index = self._buffer.find(b"\\n")
+                if newline_index >= 0:
+                    take = min(newline_index + 1, max_bytes - len(line))
+                    line.extend(self._buffer[:take])
+                    del self._buffer[:take]
+                    break
+
+                if self._buffer:
+                    take = min(len(self._buffer), max_bytes - len(line))
+                    line.extend(self._buffer[:take])
+                    del self._buffer[:take]
+                    if len(line) >= max_bytes:
+                        break
+
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise TimeoutError("absolute request-header deadline exceeded")
                 idle_timeout = max(
                     0.1,
                     min(
@@ -67,12 +86,10 @@ class _DeadlineRequestReader:
                     ),
                 )
                 self.connection.settimeout(min(idle_timeout, remaining))
-                chunk = self.connection.recv(1)
+                chunk = self.connection.recv(min(4_096, max_bytes - len(line)))
                 if not chunk:
                     break
-                line.extend(chunk)
-                if chunk == b"\n":
-                    break
+                self._buffer.extend(chunk)
         finally:
             try:
                 self.connection.settimeout(previous_timeout)
@@ -81,11 +98,16 @@ class _DeadlineRequestReader:
         return bytes(line)
 
     def read1(self, size=-1):
-        """Read one socket chunk; body code applies its own deadlines."""
+        """Read one chunk; body code applies its own idle and absolute deadlines."""
         if size == 0:
             return b""
         if size is None or size < 0:
             size = 8_192
+        if self._buffer:
+            take = min(len(self._buffer), size)
+            data = bytes(self._buffer[:take])
+            del self._buffer[:take]
+            return data
         return self.connection.recv(size)
 
     def close(self):
