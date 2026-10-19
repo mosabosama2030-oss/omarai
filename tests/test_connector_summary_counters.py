@@ -115,11 +115,11 @@ def test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction
     assert report["pages_fetch_attempted"] == 2
     assert report["pages_content_extracted"] == 1
     assert report["pages_extract_failed"] == 1
-    assert report["page_fetch_status_counts"] == {
-        "content_extracted": 1,
-        "no_text_extracted": 1,
-        "fetch_failed": 0,
-    }
+    assert report["page_fetch_status_counts"]["content_extracted"] == 1
+    assert report["page_fetch_status_counts"]["no_text_extracted"] == 1
+    assert report["page_fetch_status_counts"]["fetch_failed"] == 0
+    assert report["page_fetch_status_counts"]["partial_extraction"] == 0
+    assert report["pages_partial_extracted"] == 0
     assert sum(source["page_fetch_status"] == "content_extracted" for source in sources) == 1
     assert sum(source["page_fetch_status"] == "no_text_extracted" for source in sources) == 1
     assert report["connector_summary"]["scope"] == "this_request_only"
