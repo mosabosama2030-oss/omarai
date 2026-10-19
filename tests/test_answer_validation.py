@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from agents.answer_validation import audit_answer_integrity
 from agents.web_agent import WebAgent
 
@@ -174,7 +176,7 @@ def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatc
             "<<<END_OMARAI_COVERAGE_REPAIR>>>"
         ),
     )
-    with __import__("pytest").raises(RuntimeError, match="إصلاح تغطية آمن"):
+    with pytest.raises(RuntimeError, match="إصلاح تغطية آمن"):
         agent._repair_answer_coverage(
             "قارن السعر",
             "مسودة",
