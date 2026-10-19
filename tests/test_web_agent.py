@@ -617,7 +617,10 @@ def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
 
         def read(self, limit):
             return json.dumps({
-                "choices": [{"message": {"content": "إجابة من النموذج الاحتياطي"}}]
+                "choices": [{
+                    "message": {"content": "إجابة من النموذج الاحتياطي"},
+                    "finish_reason": "stop",
+                }]
             }).encode("utf-8")
 
     def fake_urlopen(request, timeout):
@@ -933,7 +936,8 @@ def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeyp
                                 "content": "An excerpt returned by the live search service.",
                             },
                         }],
-                    }
+                    },
+                    "finish_reason": "stop",
                 }]
             }).encode("utf-8")
 
