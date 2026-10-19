@@ -128,6 +128,7 @@ def test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction
 def test_connector_summary_does_not_claim_timeout_or_budget_exhaustion_was_a_confirmed_attempt(monkeypatch):
     agent = WebAgent()
     monkeypatch.setenv("TAVILY_API_KEY", "configured-test-key")
+    monkeypatch.setenv("DEEPSEEK_SEARCH_API_KEY", "configured-test-key")
     timeout = agent._connector_status_summary(
         [{"provider": "tavily_search_api", "query": "query", "status": "timeout", "error": "request timed out"}],
         [],
@@ -144,7 +145,7 @@ def test_connector_summary_does_not_claim_timeout_or_budget_exhaustion_was_a_con
     assert tavily["available_for_this_request"] is None
     assert tavily["verified_for_this_request"] is None
     assert tavily["failure_observed"] is True
-    assert deepseek["configured"] is False
+    assert deepseek["configured"] is True
     assert deepseek["attempted"] is False
     assert deepseek["status"] == "budget_exhausted"
     assert deepseek["available_for_this_request"] is False
