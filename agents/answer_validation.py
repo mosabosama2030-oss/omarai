@@ -266,7 +266,7 @@ def audit_answer_integrity(
         })
 
     value_evidence: dict[str, list[dict[str, Any]]] = {}
-    for source_index in source_text_by_index.keys():
+    for source_index in source_text_by_index:
         source = safe_sources[source_index - 1]
         page_text = str(source.get("page_text") or "")
         snippet = str(source.get("snippet") or "")
