@@ -197,17 +197,22 @@ def _followup_query(question: str, history: list[dict[str, str]] | None) -> str:
 
 
 def fallback_plan(
-    question: str, history: list[dict[str, str]] | None = None
+    question: str,
+    history: list[dict[str, str]] | None = None,
+    mode: str = "auto",
 ) -> dict[str, Any]:
-    """Build a small but varied plan when no model planner is configured or parsing fails."""
+    """Build a varied deterministic plan, honoring the selected search mode."""
+    mode = mode.strip().lower() if isinstance(mode, str) else "auto"
+    if mode not in {"auto", "deep", "latest", "social"}:
+        mode = "auto"
     contextual_question = _followup_query(question, history)
     direct_urls = extract_urls(question)
     base = _compact(re.sub(r"https?://[^\s<>()]+", " ", contextual_question), 500)
     if not base:
         base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
-    social_focus = detect_social_focus(question, history)
-    fresh = detect_freshness(question)
-    deep = detect_depth(question)
+    social_focus = detect_social_focus(question, history) or mode == "social"
+    fresh = detect_freshness(question) or mode == "latest"
+    deep = detect_depth(question) or mode == "deep"
     platforms = mentioned_social_platforms(question + " " + " ".join(
         item.get("content", "") for item in (history or [])[-4:]
     ))
@@ -227,7 +232,21 @@ def fallback_plan(
                 queries.append(site_query)
 
     if deep and not social_focus and len(queries) < MAX_PLAN_QUERIES:
-        queries.append(_compact(base + " مصادر موثوقة تقارير إحصاءات", 500))
+        real_estate_terms = (
+            "شقة", "شقق", "عقار", "عقارات", "عقاري", "عقارية", "فيلا", "فلل",
+            "أرض", "أراضي", "ارض", "اراضي", "apartment", "apartments", "flat",
+            "property", "properties", "real estate", "real-estate", "housing",
+        )
+        if _contains_any(question, real_estate_terms):
+            # For property discovery, separate listing, price-context, and source angles
+            # so the fallback is useful even without a planner-model response.
+            queries.extend([
+                _compact(base + " إعلانات عقارية السعر المساحة والموقع", 500),
+                _compact(base + " متوسط أسعار السوق للمتر والتقارير", 500),
+                _compact(base + " مواقع عقارية موثوقة وعروض للبيع", 500),
+            ])
+        else:
+            queries.append(_compact(base + " مصادر موثوقة تقارير إحصاءات", 500))
 
     unique: list[str] = []
     seen: set[str] = set()
