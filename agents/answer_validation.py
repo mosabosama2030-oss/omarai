@@ -102,11 +102,10 @@ def audit_answer_integrity(
             source_texts.append(source_text[:16000])
             source_number_literals.update(_numeric_literals(source_text))
 
-    combined_source_text = " ".join(source_texts)
     answer_text = str(answer or "")[:24000]
     answer_number_literals = _numeric_literals(answer_text, question=question)
     unsupported_numbers = sorted(answer_number_literals - source_number_literals)
-    answer_tokens = set(_tokens(_CITATION.sub(" ", answer_text), drop_stopwords=True)
+    answer_tokens = set(_tokens(_CITATION.sub(" ", answer_text), drop_stopwords=True))
     target_checks: list[dict[str, Any]] = []
     for target in (coverage_targets or [])[:8]:
         target_tokens = list(dict.fromkeys(_tokens(target, drop_stopwords=True)))
