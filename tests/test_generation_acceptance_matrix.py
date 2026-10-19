@@ -256,7 +256,7 @@ def test_search_failure_is_not_reported_as_no_attempt_or_completed_answer(monkey
 
 def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatch):
     agent = WebAgent()
-    question = "قارن بين سعر المنتج ومساحته واذكر البيانات الناقصة"
+    question = "قارن بين الخيارات من حيث السعر، المساحة، والبيانات الناقصة"
     sources = [
         source(
             "https://one.example/product",
