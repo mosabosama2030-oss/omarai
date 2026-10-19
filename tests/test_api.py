@@ -606,3 +606,49 @@ def test_api_absolute_body_deadline_stops_slow_trickle(local_api, monkeypatch):
     assert b"request body read timed out" in response
     assert elapsed < 1.5
 
+
+
+def test_api_absolute_header_deadline_stops_slow_trickle(local_api, monkeypatch):
+    """Header bytes arriving before idle timeout must not extend the total deadline."""
+    import time
+
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.setattr("api.omarai.REQUEST_HEADER_READ_TIMEOUT_SECONDS", 0.5)
+    monkeypatch.setattr("api.omarai.REQUEST_HEADER_IDLE_TIMEOUT_SECONDS", 0.35)
+    host, port = local_api.removeprefix("http://").rsplit(":", 1)
+
+    with socket.create_connection((host, int(port)), timeout=2) as client:
+        client.settimeout(1.2)
+        started = time.monotonic()
+        client.sendall(
+            b"POST /api/analyze HTTP/1.1\\r\\n"
+            b"Host: localhost\\r\\n"
+            b"Content-Type: application/json\\r\\n"
+            b"Content-Length: 40\\r\\n"
+            b"X-Slow: "
+        )
+        # Each tiny fragment is sent well before the 0.35s idle timeout. No
+        # newline completes X-Slow, so only an absolute header deadline can stop it.
+        for fragment in (b"a", b"b", b"c", b"d", b"e", b"f", b"g", b"h", b"i"):
+            time.sleep(0.12)
+            try:
+                client.sendall(fragment)
+            except OSError:
+                break
+
+        response = bytearray()
+        while True:
+            try:
+                chunk = client.recv(4096)
+            except TimeoutError:
+                break
+            except OSError:
+                break
+            if not chunk:
+                break
+            response.extend(chunk)
+        elapsed = time.monotonic() - started
+
+    assert elapsed < 0.8
+    assert not response.startswith(b"HTTP/1.0 200")
