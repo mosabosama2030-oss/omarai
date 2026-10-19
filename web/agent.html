@@ -152,7 +152,6 @@ function renderReport(result){
  const leadResearchIncomplete=!!lead&&lead.status==="research_incomplete";
  const leadSignalCount=lead&&lead.candidate_signal_count!==null&&lead.candidate_signal_count!==undefined&&Number.isFinite(Number(lead.candidate_signal_count))?Number(lead.candidate_signal_count):null;
  const noQualifiedLeads=!!lead&&!leadResearchIncomplete&&leadSignalCount===0;
- const score=(researchErrorOutcome||lead)?null:Number(e.coverage_score||0);
  const scoreLabel=lead?(leadResearchIncomplete?"تعذر حسم البحث عن العملاء":noQualifiedLeads?"لم يُثبت وجود عميل محتمل":"إشارات نية شراء مرشحة"):(researchErrorOutcome?"تعذر تحديد التغطية":(e.coverage_level||"تغطية محدودة"));
  const metrics=lead?[
   [leadSignalCount??"غير محدد","إشارة نصية مرشحة لنية شراء"],
@@ -179,7 +178,7 @@ function renderReport(result){
       : "الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.")
   : researchErrorOutcome
    ? "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا."
-   : "مؤشر تغطية البحث: "+score+"/100 · "+scoreLabel+" — لا يمثل احتمال صحة الإجابة.";
+   : "مستوى تغطية البحث: "+scoreLabel+". هذا وصف لاتساع وتنوع الأدلة التي جُمعت، وليس نسبة مئوية أو احتمالًا لصحة الإجابة.";
  const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);
  const attemptText=result&&result.search_attempted===true
   ? (r.search_outcome==="attempted_research_error"
