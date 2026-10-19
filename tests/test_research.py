@@ -31,6 +31,7 @@ def test_explicit_deep_mode_adds_distinct_real_estate_search_angles():
     deep_plan = fallback_plan(question, mode="deep")
 
     assert len(default_plan["queries"]) == 1
+    assert default_plan["depth"] == "standard"
     assert deep_plan["depth"] == "deep"
     assert len(deep_plan["queries"]) >= 3
     assert any("إعلانات عقارية" in query for query in deep_plan["queries"])
