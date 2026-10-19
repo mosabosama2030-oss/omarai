@@ -2474,7 +2474,7 @@ class WebAgent:
                         host = urllib.parse.urlparse(source.get("url", "")).hostname or "المصدر"
                         if source["page_fetch_status"] in {"no_text_extracted", "empty_content"}:
                             warnings.append(
-                                f"جُلبت أو جرت محاولة قراءة {host} لكن لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة."
+                                f"لم يمكن استخراج نص من {host}؛ جُلبت الصفحة أو جرت محاولة قراءتها لكن قد تكون ديناميكية أو محجوبة."
                             )
                         else:
                             warnings.append(
