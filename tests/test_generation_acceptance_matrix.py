@@ -490,6 +490,7 @@ def test_research_exception_does_not_claim_no_results_or_no_search(monkeypatch):
 
 def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatch):
     agent = WebAgent()
+    agent.api_key = "test-key"
     question = "قارن بين الخيارات من حيث السعر، المساحة، والبيانات الناقصة"
     sources = [
         source(
