@@ -2013,6 +2013,10 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "وليس نسبة مئوية أو احتمالًا لصحة الإجابة" in html
     assert "تشخيص الموصلات في هذا الطلب" in html
     assert "r.pages_content_extracted" in html
+    assert "قُرئت الصفحة واستُخرج نص" in html
+    assert "جُلبت الصفحة لكن لم يُستخرج نص" in html
+    assert "تعذّر جلب الصفحة" in html
+    assert "مقتطف بحث — لم تُحاول قراءة الصفحة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
 
