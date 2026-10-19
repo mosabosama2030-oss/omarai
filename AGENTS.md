@@ -5,6 +5,7 @@ These rules apply to every AI agent, human contributor, code change, test report
 ## Source of truth
 - Read `docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md` before architecture, security, performance, data-flow, search, model, tool-execution, concurrency, or deployment changes.
 - Read `docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md` for broad platform requirements and release reviews involving reliability/SRE, capacity, API/security, privacy/data governance, CI/CD/supply chain, recovery, accessibility, search quality, AI/agent evaluation, cost, and operational governance. Apply only the controls relevant to the change, but explicitly record material gaps and risks.
+- Use `docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md` to classify important requirements, identify relevant expert-review lenses, record evidence and limitations, prioritize risks, and apply the change/release gates. Do not mark a requirement VERIFIED without implementation and reproducible evidence.
 - The charter is a design requirement, not evidence that controls already exist. Inspect the actual code and tests before describing implementation status.
 - Treat `README.md` as a description of the current documented behavior, but verify claims against code and runtime evidence when the task requires it.
 
@@ -56,6 +57,12 @@ These rules apply to every AI agent, human contributor, code change, test report
 - Review blast radius, dependency failure, graceful degradation, quotas, per-request budgets, data lifecycle, tenant isolation when multi-user, supply-chain exposure, observability/privacy, and recovery proportional to risk.
 - For AI/agent changes, test Arabic task quality, citation support, prompt injection, untrusted tool/page content, unauthorized actions, loops, provider failures, cost bounds, and safe fallback as applicable.
 - Require an explicit reason before adding distributed infrastructure; document simpler alternatives and lifecycle costs. Do not apply every enterprise control blindly to a small deployment, but do not conceal a risk merely because a control is expensive or not yet supported.
+
+## Requirement traceability and expert review
+- For material changes, create or update stable requirement IDs and record applicability, status, evidence, test command/results, environment, limitations, residual risk, and owner in the requirements register or an equivalent reviewed record.
+- Use all relevant discipline lenses (architecture, security, privacy, data, SRE, performance, AI evaluation, search/evidence, accessibility, supply chain, cost, and operations); do not claim that a human specialist independently reviewed work unless that actually happened.
+- Keep non-applicable and waived requirements distinct from unknown ones. Exceptions to MUST controls need scope, compensating controls, an approver, a revisit/expiry condition, and recorded residual risk.
+- Do not build advanced infrastructure to satisfy a checklist by appearance. Use trigger conditions and evidence in the baseline to decide when advanced requirements apply.
 
 ## Acceptance principle
 A capability is not complete because it appears in a plan, comment, prompt, or documentation. It is complete only to the extent supported by the implementation, relevant tests, observed output, and explicitly stated limitations.
