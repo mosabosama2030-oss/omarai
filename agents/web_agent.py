@@ -367,11 +367,15 @@ class WebAgent:
                 "DuckDuckGo HTML",
                 "Bing RSS",
                 "Google News RSS for fresh queries",
+                "DeepSeek Search API when DEEPSEEK_SEARCH_API_KEY is configured (optional; may incur charges)",
                 "OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1",
                 "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
                 "Tavily Search API when TAVILY_API_KEY is configured",
             ],
             "brave_search_api_configured": bool(os.getenv("BRAVE_SEARCH_API_KEY", "").strip()),
+            "deepseek_search_api_configured": bool(
+                os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip()
+            ),
             "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
             "openrouter_web_search_enabled": (
                 os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
@@ -825,6 +829,16 @@ class WebAgent:
                 "runtime_status": not_tested,
             },
             {
+                "name": "deepseek_search_api",
+                "implemented": True,
+                "configuration_status": (
+                    "configured" if status.get("deepseek_search_api_configured")
+                    else "not_configured"
+                ),
+                "runtime_status": not_tested if status.get("deepseek_search_api_configured")
+                else "not_configured",
+            },
+            {
                 "name": "brave_search_api",
                 "implemented": True,
                 "configuration_status": (
@@ -911,6 +925,11 @@ class WebAgent:
             status = self.status()
             providers = ["DuckDuckGo HTML", "Bing RSS"]
             providers.append("Google News RSS عند ملاءمة السؤال أو الحاجة إلى معلومات حديثة")
+            if status.get("deepseek_search_api_configured"):
+                providers.append(
+                    "DeepSeek Search API (مفتاحه مضبوط، لكنه غير مختبر في هذه الإجابة "
+                    "وقد يستهلك استخدامًا مدفوعًا)"
+                )
             if status.get("brave_search_api_configured"):
                 providers.append("Brave Search API (الإعداد موجود، وليس دليلًا على نجاح الاتصال)")
             if status.get("tavily_search_api_configured"):
