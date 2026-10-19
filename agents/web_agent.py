@@ -51,6 +51,17 @@ LLM_TIMEOUT_SECONDS = 35
 _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({"ok", "no_results", "filtered_all"})
 _RESEARCH_ERROR_OUTCOMES = frozenset({"attempted_research_error", "unknown_after_research_error"})
 
+_PAGE_FETCH_STATUS_VALUES = (
+    "not_attempted", "attempted", "content_extracted", "partial_extraction",
+    "no_text_extracted", "empty_content", "fetch_failed", "rejected_url",
+    "blocked_or_unresolved_host", "blocked_connection_target", "redirect_failed",
+    "redirect_rejected", "redirect_limit", "http_error", "unsupported_content_type",
+    "page_too_large", "network_error", "budget_exhausted",
+)
+_PAGE_FETCH_FAILURE_STATUSES = frozenset(_PAGE_FETCH_STATUS_VALUES) - {
+    "not_attempted", "attempted", "content_extracted", "partial_extraction",
+}
+
 
 _ARABIC_SEARCH_TRANSLATION = str.maketrans({
     "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي",
@@ -4224,14 +4235,34 @@ class WebAgent:
             )
         report["search_outcome"] = search_outcome
         if search_outcome in _RESEARCH_ERROR_OUTCOMES:
-            for count_key in ("raw_results", "unique_urls", "pages_fetch_attempted", "pages_content_extracted", "pages_extract_failed"):
+            for count_key in (
+                "raw_results", "unique_urls", "pages_fetch_attempted",
+                "pages_content_extracted", "pages_partial_extracted", "pages_extract_failed",
+            ):
                 report[count_key] = None
+            report["page_fetch_status_counts"] = None
         else:
-            report["unique_urls"] = len({self._normalized_source_url_key(source.get("url")) for source in sources if self._normalized_source_url_key(source.get("url"))})
+            report["unique_urls"] = len({
+                self._normalized_source_url_key(source.get("url"))
+                for source in sources if self._normalized_source_url_key(source.get("url"))
+            })
             report["pages_content_extracted"] = sum(bool(source.get("page_fetched")) for source in sources)
+            report["pages_partial_extracted"] = sum(
+                source.get("page_fetch_status") == "partial_extraction" for source in sources
+            )
             report.setdefault("raw_results", len(sources))
-            report.setdefault("pages_fetch_attempted", sum(source.get("page_fetch_status") != "not_attempted" for source in sources))
-            report.setdefault("pages_extract_failed", sum(source.get("page_fetch_status") in {"fetch_failed", "no_text_extracted"} for source in sources))
+            report["pages_fetch_attempted"] = sum(
+                source.get("page_fetch_status", "not_attempted") != "not_attempted"
+                for source in sources
+            )
+            report["pages_extract_failed"] = sum(
+                source.get("page_fetch_status") in _PAGE_FETCH_FAILURE_STATUSES
+                for source in sources
+            )
+            report["page_fetch_status_counts"] = {
+                status: sum(source.get("page_fetch_status", "not_attempted") == status for source in sources)
+                for status in _PAGE_FETCH_STATUS_VALUES
+            }
         if search_outcome in _RESEARCH_ERROR_OUTCOMES:
             report["usable_sources_after_filtering"] = None
             report["unique_sources"] = None
