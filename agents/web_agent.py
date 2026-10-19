@@ -3424,6 +3424,10 @@ class WebAgent:
                     "publisher_url": source.get("publisher_url", ""),
                     "rank_score": round(float(source.get("rank_score", 0)), 6),
                     "lead_qualification": "related_result_not_lead",
+                    **(
+                        {"property_listing": source["property_listing"]}
+                        if isinstance(source.get("property_listing"), dict) else {}
+                    ),
                 } for source in sources]
                 return {
                     "answer": lead_answer,
@@ -3785,6 +3789,10 @@ class WebAgent:
                 "rank_score": round(float(source.get("rank_score", 0)), 6),
                 "lead_qualification": source.get("lead_qualification"),
                 "lead_intent_evidence": source.get("lead_intent_evidence"),
+                **(
+                    {"property_listing": source["property_listing"]}
+                    if isinstance(source.get("property_listing"), dict) else {}
+                ),
             } for source in sources]
             citation_validation = self._citation_validation_metadata(
                 reason, 0, [], "not_run"
@@ -4055,6 +4063,10 @@ class WebAgent:
                 "rank_score": round(float(source.get("rank_score", 0)), 6),
                 "lead_qualification": source.get("lead_qualification"),
                 "lead_intent_evidence": source.get("lead_intent_evidence"),
+                **(
+                    {"property_listing": source["property_listing"]}
+                    if isinstance(source.get("property_listing"), dict) else {}
+                ),
             })
         return {
             "answer": answer,
