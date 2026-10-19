@@ -3896,6 +3896,18 @@ class WebAgent:
                     report["query_results"] = list(report.get("query_results", [])) + list(
                         repair_report.get("query_results", [])
                     )
+                    initial_raw_results = report.get("raw_results")
+                    repair_raw_results = repair_report.get("raw_results")
+                    if (
+                        isinstance(initial_raw_results, int)
+                        and not isinstance(initial_raw_results, bool)
+                        and isinstance(repair_raw_results, int)
+                        and not isinstance(repair_raw_results, bool)
+                    ):
+                        report["raw_results"] = initial_raw_results + repair_raw_results
+                    else:
+                        # A failed bounded retry leaves the total raw-row count unknown.
+                        report["raw_results"] = None
                     merged_providers = {
                         provider
                         for source in sources
