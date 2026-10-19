@@ -83,3 +83,19 @@ def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):
     agent._request_budget = RequestBudget(limits={"page_fetches": 0})
     with pytest.raises(RequestBudgetExceeded, match="page_fetches"):
         agent._fetch_page("https://example.com/")
+
+
+def test_social_provider_reserves_budget_before_network_io(monkeypatch):
+    from agents.web_agent import WebAgent
+
+    monkeypatch.setenv("REDDIT_CLIENT_ID", "test-client")
+    monkeypatch.setenv("REDDIT_CLIENT_SECRET", "test-secret")
+    agent = WebAgent()
+    agent._request_budget = RequestBudget(limits={"search_calls": 0})
+
+    monkeypatch.setattr(
+        "httpx.post",
+        lambda *args, **kwargs: pytest.fail("social HTTP request must not start"),
+    )
+    with pytest.raises(RequestBudgetExceeded, match="search_calls"):
+        agent._search_social("budget test", ["reddit"])
