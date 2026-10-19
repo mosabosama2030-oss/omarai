@@ -2035,7 +2035,7 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "possible_gap_detected" in html
     assert "not_assessed_insufficient_evidence" in html
     assert "حالة إصلاح التغطية:" in html
-    assert "revised_after_review_not_reaudited" in html
+    assert "revised_and_reaudited" in html
     assert "لم تخضع لمراجعة ادعاءات ثانية" in html
     assert "model_claim_audit_completed_before_coverage_repair" in html
     assert "ليس تحققًا من الحقيقة" in html
@@ -2666,4 +2666,4 @@ def test_repaired_answer_falls_back_to_sources_if_final_reaudit_fails(monkeypatc
     assert result["search_report"]["second_pass_review"] == "model_claim_audit_unavailable"
     assert result["final_answer_status"] == "review_failed_with_source_fallback"
     assert "تعذرت إعادة تدقيق الإجابة المعدلة" in result["answer"]
-    assert "نص مستخرج من الصفحة" in result["answer"]
+    assert "يشرح هذا المصدر التقنية وسبب المقارنة." in result["answer"]
