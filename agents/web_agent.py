@@ -709,12 +709,12 @@ class WebAgent:
     @staticmethod
     def _requires_web_research(question: str, mode: str) -> bool:
         """Use the web only when the user requests it or the answer depends on live data."""
-        if mode != "auto":
-            return True
         # A question about whether the current answer already searched is a
-        # status query, not a request to launch fresh research.
+        # status query, not a request to launch fresh research in any UI mode.
         if WebAgent._is_current_search_status_question(question):
             return False
+        if mode != "auto":
+            return True
         value = _normalize_search_query(question).casefold()
         dynamic_terms = (
             "ابحث", "بحث عن", "دور على", "دورلي", "هات رابط", "هاتلي",
@@ -3222,12 +3222,16 @@ class WebAgent:
         clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
         if clean_mode not in {"auto", "deep", "latest", "social"}:
             raise ValueError("نمط البحث غير مدعوم. اختر auto أو deep أو latest أو social.")
+        current_search_status_question = self._is_current_search_status_question(question)
+        # Explicit UI modes control research tasks, but must not turn a status
+        # question about this answer into a new web-search request.
+        routing_mode = "auto" if current_search_status_question else clean_mode
         decision = route_intent(
             question,
             clean_history,
-            clean_mode,
+            routing_mode,
             capability_question=self._is_self_question(question),
-            requires_web=self._requires_web_research(question, clean_mode),
+            requires_web=self._requires_web_research(question, routing_mode),
         )
         intent_route = str(decision["route"])
         intent_reason = str(decision["reason"])
