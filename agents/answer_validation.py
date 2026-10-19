@@ -75,6 +75,47 @@ def _canonical_number(value: str) -> str:
     return text.replace(",", "")
 
 
+
+_VALUE_CUES = {
+    "price_or_cost": re.compile(
+        r"(?:السعر|سعر|تكلفه|تكلفة|التكاليف|المبلغ|الثمن|price|cost|fee|amount|"
+        r"جنيه|دولار|ريال|يورو|egp|usd|eur|\\$|€|£)",
+        re.IGNORECASE,
+    ),
+    "area_or_size": re.compile(
+        r"(?:المساحه|المساحة|مساحه|مساحة|متر مربع|متر|sqm|square\\s+met(?:er|re)s?|area|size)",
+        re.IGNORECASE,
+    ),
+    "duration": re.compile(
+        r"(?:المده|المدة|الوقت|مده|مدة|فتره|فترة|duration|elapsed|days?|weeks?|months?|years?|"
+        r"يوم|أيام|اسبوع|أسبوع|شهر|أشهر|سنه|سنة|سنوات|عام|أعوام|ساعة|ساعات|دقيقة|دقائق)",
+        re.IGNORECASE,
+    ),
+    "percentage_or_rate": re.compile(
+        r"(?:النسبه|النسبة|نسبة|مئويه|مئوية|percent(?:age)?|rate|٪|%)",
+        re.IGNORECASE,
+    ),
+    "date_or_year": re.compile(
+        r"(?:التاريخ|تاريخ|الموعد|موعد|صدر|نشر|بتاريخ|date|published|year|deadline|"
+        r"يناير|فبراير|مارس|ابريل|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)",
+        re.IGNORECASE,
+    ),
+}
+
+
+def _numeric_values_with_cues(value: Any) -> list[tuple[str, str]]:
+    """Extract number/dimension pairs as review signals, not as semantic claims."""
+    text = _normalize(value)
+    found: list[tuple[str, str]] = []
+    for match in _NUMBER.finditer(text):
+        number = _canonical_number(match.group(0))
+        context = text[max(0, match.start() - 55):min(len(text), match.end() + 55)]
+        for dimension, pattern in _VALUE_CUES.items():
+            if pattern.search(context):
+                found.append((dimension, number))
+    return found
+
+
 def audit_answer_integrity(
     question: str,
     answer: str,
@@ -87,8 +128,9 @@ def audit_answer_integrity(
     extracted_page_count = 0
     snippet_count = 0
     source_number_literals: set[str] = set()
+    source_text_by_index: dict[int, str] = {}
 
-    for source in safe_sources[:40]:
+    for source_index, source in enumerate(safe_sources[:40], 1):
         page_text = str(source.get("page_text") or "")
         snippet = str(source.get("snippet") or "")
         title = str(source.get("title") or "")
@@ -99,8 +141,10 @@ def audit_answer_integrity(
             snippet_count += 1
         source_text = " ".join(part for part in (title, snippet, page_text, published_at) if part)
         if source_text.strip():
-            source_texts.append(source_text[:16000])
-            source_number_literals.update(_numeric_literals(source_text))
+            bounded_source_text = source_text[:16000]
+            source_texts.append(bounded_source_text)
+            source_text_by_index[source_index] = bounded_source_text
+            source_number_literals.update(_numeric_literals(bounded_source_text))
 
     answer_text = str(answer or "")[:24000]
     answer_number_literals = _numeric_literals(answer_text, question=question)
@@ -181,6 +225,78 @@ def audit_answer_integrity(
             "citations": cited_checks,
         })
 
+
+    # Check numeric literals against the exact source indices cited in each sentence.
+    # Values found in some unrelated source do not count as support for this citation.
+    source_numbers_by_index = {
+        index: _numeric_literals(text)
+        for index, text in source_text_by_index.items()
+    }
+    citation_numeric_support: list[dict[str, Any]] = []
+    for sentence_number, sentence in enumerate(sentence_parts[:40], 1):
+        cited_indices = list(dict.fromkeys(
+            int(match.group(1)) for match in _CITATION.finditer(sentence)
+        ))
+        if not cited_indices:
+            continue
+        claim_numbers = sorted(_numeric_literals(sentence, question=question))
+        valid_indices = [index for index in cited_indices if 1 <= index <= len(citable_sources)]
+        supported_numbers = {
+            number
+            for number in claim_numbers
+            if any(number in source_numbers_by_index.get(index, set()) for index in valid_indices)
+        }
+        unsupported_for_citation = [
+            number for number in claim_numbers if number not in supported_numbers
+        ]
+        citation_numeric_support.append({
+            "sentence_number": sentence_number,
+            "cited_source_indexes": cited_indices[:8],
+            "claim_numeric_literals": claim_numbers[:30],
+            "potentially_unsupported_numeric_literals": unsupported_for_citation[:30],
+            "status": (
+                "potentially_unsupported_numeric_literals_for_cited_sources"
+                if unsupported_for_citation
+                else "numeric_literals_seen_in_cited_source_text"
+                if claim_numbers and valid_indices
+                else "no_numeric_literals_to_check"
+                if not claim_numbers
+                else "not_assessable_no_readable_cited_source"
+            ),
+        })
+
+    value_evidence: dict[str, list[dict[str, Any]]] = {}
+    for source_index, text_value in source_text_by_index.items():
+        source = safe_sources[source_index - 1]
+        page_text = str(source.get("page_text") or "")
+        snippet = str(source.get("snippet") or "")
+        selected_evidence = page_text if bool(source.get("page_fetched")) and page_text.strip() else snippet
+        if not selected_evidence.strip():
+            selected_evidence = str(source.get("title") or "")
+        for dimension, number in _numeric_values_with_cues(selected_evidence):
+            value_evidence.setdefault(dimension, []).append({
+                "source_index": source_index,
+                "value": number,
+            })
+    potential_value_discrepancies: list[dict[str, Any]] = []
+    for dimension, entries in sorted(value_evidence.items()):
+        unique_values = list(dict.fromkeys(entry["value"] for entry in entries))
+        source_indexes = sorted({entry["source_index"] for entry in entries})
+        if len(unique_values) < 2 or len(source_indexes) < 2:
+            continue
+        by_value = []
+        for value in unique_values[:8]:
+            supporting_indexes = sorted({
+                entry["source_index"] for entry in entries if entry["value"] == value
+            })
+            by_value.append({"value": value, "source_indexes": supporting_indexes[:8]})
+        potential_value_discrepancies.append({
+            "dimension": dimension,
+            "values": by_value,
+            "source_indexes": source_indexes[:12],
+            "status": "potential_variation_or_conflict_requires_entity_review",
+        })
+
     weak_citation_alignment_count = sum(
         item["status"] == "weak_lexical_overlap"
         for item in citation_alignment
@@ -234,6 +350,13 @@ def audit_answer_integrity(
         "citation_lexical_alignment_method": "content_word_overlap_heuristic_not_entailment",
         "citation_lexical_alignment": citation_alignment[:30],
         "weak_citation_alignment_count": weak_citation_alignment_count,
+        "citation_numeric_support": citation_numeric_support[:30],
+        "potentially_unsupported_numeric_by_citation_count": sum(
+            len(item["potentially_unsupported_numeric_literals"])
+            for item in citation_numeric_support
+        ),
+        "potential_value_discrepancies": potential_value_discrepancies[:8],
+        "potential_value_discrepancy_count": len(potential_value_discrepancies),
         "numeric_check_status": numeric_status,
         "checked_numeric_literals": sorted(answer_number_literals)[:40],
         "potentially_unsupported_numeric_literals": unsupported_numbers[:40],
@@ -246,7 +369,7 @@ def audit_answer_integrity(
             "Token overlap does not prove that an answer fulfills the intended task.",
             "A number appearing in any source does not prove that the source supports the claim.",
             "Citation token overlap can be coincidental and does not establish that the source entails the claim.",
-            "Conflicting values across different entities are not automatically treated as contradictions.",
+            "Value-discrepancy flags may reflect different products, periods, or units; they are not automatic contradiction findings.",
             "Contradictory sources and citation-to-claim entailment require claim-level review.",
             "Search snippets may be partial; extracted page text is still not independent verification.",
         ],
