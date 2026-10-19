@@ -22,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 from agents.intent_router import route_intent
+from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
@@ -306,6 +307,14 @@ class WebAgent:
         self.timeout = max(
             5, min(int(os.getenv("OMARAI_LLM_TIMEOUT", str(LLM_TIMEOUT_SECONDS))), 60)
         )
+        self._request_budget: RequestBudget | None = None
+
+    def _effective_timeout(self, configured_seconds: float) -> float:
+        """Limit one outbound operation to the remaining per-answer time budget."""
+        budget = getattr(self, "_request_budget", None)
+        if budget is None:
+            return float(configured_seconds)
+        return budget.timeout_for(configured_seconds)
 
     @staticmethod
     def status() -> dict[str, Any]:
@@ -815,7 +824,7 @@ class WebAgent:
                 messages,
                 max_tokens=1500,
                 temperature=0.2,
-                timeout=min(self.timeout, 28),
+                timeout=self._effective_timeout(min(self.timeout, 28)),
                 model=self.answer_model,
                 enable_web_search=False,
             )
@@ -859,7 +868,7 @@ class WebAgent:
                 ),
                 "Accept-Language": "ar,en;q=0.9",
             },
-            timeout=9.0,
+            timeout=self._effective_timeout(9.0),
             follow_redirects=True,
         )
         if response.status_code != 200:
@@ -908,7 +917,7 @@ class WebAgent:
                 ),
                 "Accept-Language": "ar,en;q=0.9",
             },
-            timeout=9.0,
+            timeout=self._effective_timeout(9.0),
             follow_redirects=True,
         )
         if response.status_code != 200:
@@ -958,7 +967,7 @@ class WebAgent:
                 "count": min(MAX_PROVIDER_RESULTS, 10),
                 "need_content": False,
             },
-            timeout=9.0,
+            timeout=self._effective_timeout(9.0),
             follow_redirects=False,
         )
         response.raise_for_status()
@@ -1021,6 +1030,9 @@ class WebAgent:
         from agents.research import detect_freshness
 
         search_query = _normalize_search_query(query)
+        budget = getattr(self, "_request_budget", None)
+        if budget is not None:
+            budget.reserve("search_queries")
         adapters: list[tuple[str, Any]] = [
             ("duckduckgo_html", self._search_duckduckgo_html),
             ("bing_rss", self._search_bing_rss),
@@ -1058,8 +1070,11 @@ class WebAgent:
 
         async def run_one(name: str, method: Any) -> list[dict[str, Any]]:
             try:
+                if budget is not None:
+                    budget.reserve("search_calls")
+                provider_timeout = self._effective_timeout(10.0)
                 raw = await asyncio.wait_for(
-                    asyncio.to_thread(method, search_query), timeout=10.0
+                    asyncio.to_thread(method, search_query), timeout=provider_timeout
                 )
                 if not isinstance(raw, list):
                     raise TypeError("connector returned a non-list result")
@@ -1095,9 +1110,13 @@ class WebAgent:
                     name, search_query, status, len(accepted), rejected, error
                 )
                 return accepted
+            except RequestBudgetExceeded as exc:
+                self._record_provider_diagnostic(
+                    name, search_query, "budget_exhausted", error=str(exc)
+                )
             except TimeoutError:
                 self._record_provider_diagnostic(
-                    name, search_query, "timeout", error="provider exceeded 10-second wrapper timeout"
+                    name, search_query, "timeout", error="provider exceeded its bounded request timeout"
                 )
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
                 detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
@@ -1146,7 +1165,7 @@ class WebAgent:
                 "X-Subscription-Token": api_key,
                 "User-Agent": "OmaraiResearchAgent/1.0",
             },
-            timeout=8.5,
+            timeout=self._effective_timeout(8.5),
             follow_redirects=False,
         )
         response.raise_for_status()
@@ -1201,7 +1220,7 @@ class WebAgent:
                 "Content-Type": "application/json",
                 "User-Agent": "OmaraiResearchAgent/1.0",
             },
-            timeout=8.5,
+            timeout=self._effective_timeout(8.5),
             follow_redirects=False,
         )
         response.raise_for_status()
@@ -1240,7 +1259,7 @@ class WebAgent:
                 "User-Agent": "OmaraiResearchBot/1.2",
                 "Accept-Language": "ar,en;q=0.9",
             },
-            timeout=9.0,
+            timeout=self._effective_timeout(9.0),
             follow_redirects=True,
         )
         if response.status_code != 200:
@@ -1329,7 +1348,7 @@ class WebAgent:
                     data={"grant_type": "client_credentials"},
                     auth=(reddit_client_id, reddit_client_secret),
                     headers={"User-Agent": reddit_user_agent},
-                    timeout=9.0,
+                    timeout=self._effective_timeout(9.0),
                     follow_redirects=False,
                 )
                 if token_response.status_code == 200:
@@ -1349,7 +1368,7 @@ class WebAgent:
                                 "User-Agent": reddit_user_agent,
                                 "Authorization": "Bearer " + access_token,
                             },
-                            timeout=9.0,
+                            timeout=self._effective_timeout(9.0),
                             follow_redirects=False,
                         )
                         if search_response.status_code == 200:
@@ -1405,7 +1424,7 @@ class WebAgent:
                     "https://www.reddit.com/search.rss",
                     params={"q": query, "sort": "relevance", "t": "all", "limit": "8"},
                     headers=headers,
-                    timeout=9.0,
+                    timeout=self._effective_timeout(9.0),
                     follow_redirects=False,
                 )
                 if response.status_code == 200:
@@ -1450,7 +1469,7 @@ class WebAgent:
                     "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
                     params={"q": query, "limit": 10},
                     headers=headers,
-                    timeout=9.0,
+                    timeout=self._effective_timeout(9.0),
                     follow_redirects=False,
                 )
                 if response.status_code == 200:
@@ -1515,7 +1534,7 @@ class WebAgent:
                                 **headers,
                                 "Authorization": "Bearer " + fb_token,
                             },
-                            timeout=9.0,
+                            timeout=self._effective_timeout(9.0),
                             follow_redirects=False,
                         )
                         if response.status_code != 200:
@@ -1603,7 +1622,7 @@ class WebAgent:
                                 "access_token": ig_token,
                             },
                             headers=headers,
-                            timeout=9.0,
+                            timeout=self._effective_timeout(9.0),
                             follow_redirects=False,
                         )
                         if search_response.status_code != 200:
@@ -1627,7 +1646,7 @@ class WebAgent:
                                 "access_token": ig_token,
                             },
                             headers=headers,
-                            timeout=9.0,
+                            timeout=self._effective_timeout(9.0),
                             follow_redirects=False,
                         )
                         if media_response.status_code != 200:
@@ -1685,7 +1704,7 @@ class WebAgent:
                         **headers,
                         "Authorization": "Bearer " + os.getenv("X_BEARER_TOKEN", "").strip(),
                     },
-                    timeout=9.0,
+                    timeout=self._effective_timeout(9.0),
                     follow_redirects=False,
                 )
                 if response.status_code == 200:
@@ -1733,7 +1752,7 @@ class WebAgent:
                         "key": os.getenv("YOUTUBE_API_KEY", "").strip(),
                     },
                     headers=headers,
-                    timeout=9.0,
+                    timeout=self._effective_timeout(9.0),
                     follow_redirects=False,
                 )
                 if response.status_code == 200:
@@ -1771,6 +1790,9 @@ class WebAgent:
         current_url = _public_http_url(url)
         if not current_url:
             return "", ""
+        budget = getattr(self, "_request_budget", None)
+        if budget is not None:
+            budget.reserve("page_fetches")
         try:
             import httpx
             from bs4 import BeautifulSoup
@@ -1787,7 +1809,7 @@ class WebAgent:
         html = ""
         try:
             with httpx.Client(
-                timeout=8.0,
+                timeout=self._effective_timeout(8.0),
                 follow_redirects=False,
                 headers=headers,
                 verify=True,
@@ -2167,6 +2189,16 @@ class WebAgent:
 
         last_error: RuntimeError | None = None
         for candidate_model in model_candidates:
+            budget = getattr(self, "_request_budget", None)
+            if budget is not None:
+                budget.reserve("model_calls")
+                request_timeout = budget.timeout_for(timeout or self.timeout)
+                if enable_web_search and self.openrouter_web_search_enabled:
+                    # Conservatively reserve the maximum server-side tool calls offered
+                    # by this request; provider-reported actual use may be lower.
+                    budget.reserve("tool_calls", amount=3)
+            else:
+                request_timeout = timeout or self.timeout
             request_payload: dict[str, Any] = {
                 "model": candidate_model,
                 "messages": messages,
@@ -2200,7 +2232,7 @@ class WebAgent:
                 method="POST",
             )
             try:
-                with urllib.request.urlopen(request, timeout=timeout or self.timeout) as response:
+                with urllib.request.urlopen(request, timeout=request_timeout) as response:
                     data = json.loads(response.read(2_000_000).decode("utf-8"))
                 choice = data["choices"][0]
                 if not isinstance(choice, dict):
@@ -2323,7 +2355,7 @@ class WebAgent:
                 messages,
                 max_tokens=650,
                 temperature=0.0,
-                timeout=min(self.timeout, 12),
+                timeout=self._effective_timeout(min(self.timeout, 12)),
                 model=self.planner_model,
             )
             start = raw.find("{")
@@ -2521,7 +2553,7 @@ class WebAgent:
             messages,
             max_tokens=2200 if plan.get("depth") == "deep" else 1500,
             temperature=0.15,
-            timeout=min(self.timeout, 28),
+            timeout=self._effective_timeout(min(self.timeout, 28)),
             model=self.answer_model,
             enable_web_search=self.openrouter_web_search_enabled,
         )
@@ -2605,7 +2637,7 @@ class WebAgent:
             messages,
             max_tokens=1700,
             temperature=0.0,
-            timeout=min(self.timeout, 12),
+            timeout=self._effective_timeout(min(self.timeout, 12)),
             model=self.review_model,
         )
         start_marker = "<<<OMARAI_FINAL_ANSWER>>>"
@@ -2816,7 +2848,7 @@ class WebAgent:
                     ],
                     max_tokens=12,
                     temperature=0.0,
-                    timeout=min(self.timeout, 12),
+                    timeout=self._effective_timeout(min(self.timeout, 12)),
                     model=self.answer_model,
                 )
                 report["checks"]["language_model"] = {
@@ -2895,6 +2927,63 @@ class WebAgent:
         return report
 
     def answer(
+        self, question: str, history: Any = None, mode: str = "auto"
+    ) -> dict[str, Any]:
+        """Run one answer with an isolated, observable resource budget."""
+        previous_budget = getattr(self, "_request_budget", None)
+        budget = RequestBudget.from_environment()
+        self._request_budget = budget
+        try:
+            result = self._answer_with_budget(question, history, mode)
+        except RequestBudgetExceeded as exc:
+            safe_question = (
+                question.strip()[:MAX_QUESTION_CHARS]
+                if isinstance(question, str)
+                else ""
+            )
+            result = {
+                "answer": (
+                    "توقفت العملية لأن ميزانية الوقت أو الموارد المحددة لهذا الطلب "
+                    "قد استُنفدت. لم أتمكن من إكمال البحث ضمن الحدود الحالية؛ "
+                    "لا تعتبر هذه النتيجة بحثًا مكتملًا."
+                ),
+                "question": safe_question,
+                "search_query": safe_question,
+                "search_queries": [],
+                "search_report": {
+                    "search_attempted": False,
+                    "search_outcome": "not_attempted",
+                    "insufficient_evidence": True,
+                    "budget_exhausted": True,
+                    "warnings": [str(exc)],
+                },
+                "sources": [],
+                "research_quality": "failed",
+                "citation_validation": {"status": "not_checked"},
+                "answer_coverage": {},
+                "used_language_model": False,
+                "used_web_search": False,
+                "search_attempted": False,
+                "used_social_search": False,
+                "warnings": [str(exc)],
+                "kind": "web_fallback",
+                "intent_route": "BUDGET_EXHAUSTED",
+                "intent_route_reason": "request_budget_exhausted",
+            }
+        finally:
+            budget_summary = budget.snapshot()
+            self._request_budget = previous_budget
+
+        result["request_budget"] = budget_summary
+        if isinstance(result.get("search_report"), dict):
+            result["search_report"]["request_budget"] = budget_summary
+        if budget_summary["deadline_exceeded"]:
+            result.setdefault("warnings", []).append(
+                "انتهت نافذة الوقت المحددة للطلب أو جرى تجاوزها قليلًا أثناء إنهاء اتصال جارٍ."
+            )
+        return result
+
+    def _answer_with_budget(
         self, question: str, history: Any = None, mode: str = "auto"
     ) -> dict[str, Any]:
         if not isinstance(question, str) or not question.strip():
