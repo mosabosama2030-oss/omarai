@@ -53,26 +53,26 @@ _RESEARCH_ERROR_OUTCOMES = frozenset({"attempted_research_error", "unknown_after
 # Only expose property-related numbers when the source text explicitly includes a
 # currency or an area unit. These patterns extract excerpts; they do not verify listings.
 _PROPERTY_PRICE_RE = re.compile(
-    r"(?i)(?:\\d{1,3}(?:[,\\u066c]\\d{3})+|\\d{4,}|"
-    r"\\d+(?:[.,]\\d+)?\\s*(?:مليون|مليار))\\s*"
-    r"(?:جنيه(?:\\s+مصري)?|ج\\.?\\s*م\\.?|EGP|L\\.E\\.|LE)"
+    r"(?i)(?:\d{1,3}(?:[,\u066c]\d{3})+|\d{4,}|"
+    r"\d+(?:[.,]\d+)?\s*(?:مليون|مليار))\s*"
+    r"(?:جنيه(?:\s+مصري)?|ج\.?\s*م\.?|EGP|L\.E\.|LE)"
 )
 _PROPERTY_PRICE_CURRENCY_FIRST_RE = re.compile(
-    r"(?i)(?<![A-Za-z])(?:EGP|L\\.E\\.|LE)\\s*"
-    r"(?:\\d{1,3}(?:[,\\u066c]\\d{3})+|\\d{4,}|"
-    r"\\d+(?:[.,]\\d+)?\\s*(?:million|billion))"
+    r"(?i)(?<![A-Za-z])(?:EGP|L\.E\.|LE)\s*"
+    r"(?:\d{1,3}(?:[,\u066c]\d{3})+|\d{4,}|"
+    r"\d+(?:[.,]\d+)?\s*(?:million|billion))"
 )
 _PROPERTY_AREA_RE = re.compile(
-    r"(?ix)(?:مساحة\\s*[:：]?\\s*\\d{2,4}(?:[.,]\\d+)?\\s*متر(?:\\s+مربع)?|"
-    r"\\d{2,4}(?:[.,]\\d+)?\\s*(?:متر\\s+مربع|م[²2]|sqm|"
-    r"sq\\.?\\s*m(?:eters?)?|square\\s+meters?))"
+    r"(?ix)(?:مساحة\s*[:：]?\s*\d{2,4}(?:[.,]\d+)?\s*متر(?:\s+مربع)?|"
+    r"\d{2,4}(?:[.,]\d+)?\s*(?:متر\s+مربع|م[²2]|sqm|"
+    r"sq\.?\s*m(?:eters?)?|square\s+meters?))"
 )
 _PROPERTY_LOCATION_RE = re.compile(
-    r"(?i)(?:في|بمنطقة|بمنطقه|بالقرب من|قريب من|near|in)\\s+"
-    r"(?P<location>[^،,؛;\\n]+?)"
-    r"(?=\\s+(?:بسعر|بميزانية|بالميزانية|سعر|مساحة|مساحه|للبيع|للايجار|ايجار|"
-    r"معاينة|معاينه|مطلوب|بحدود|بحد اقصى|under|below|with|for sale|for rent)\\b"
-    r"|[،,؛;\\n]|$)"
+    r"(?i)(?:في|بمنطقة|بمنطقه|بالقرب من|قريب من|near|in)\s+"
+    r"(?P<location>[^،,؛;\n]+?)"
+    r"(?=\s+(?:بسعر|بميزانية|بالميزانية|سعر|مساحة|مساحه|للبيع|للايجار|ايجار|"
+    r"معاينة|معاينه|مطلوب|بحدود|بحد اقصى|under|below|with|for sale|for rent)\b"
+    r"|[،,؛;\n]|$)"
 )
 
 
