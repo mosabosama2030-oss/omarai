@@ -4084,6 +4084,10 @@ class WebAgent:
                 ),
                 "automatically_graded": False,
             }
+            answer_integrity = audit_answer_integrity(question, reason, sources, coverage_targets)
+            answer_coverage["target_checks"] = answer_integrity["target_coverage"]
+            answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
+            answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
             research_failed = search_outcome in _RESEARCH_ERROR_OUTCOMES
             report.update({
                 # When collection failed, an empty local list is not evidence that
@@ -4101,6 +4105,7 @@ class WebAgent:
                 "citation_check": citation_validation["status"],
                 "citation_validation": citation_validation,
                 "answer_coverage": answer_coverage,
+                "answer_integrity": answer_integrity,
             })
             return {
                 "answer": reason,
@@ -4132,6 +4137,7 @@ class WebAgent:
                 "research_quality": "failed",
                 "citation_validation": citation_validation,
                 "answer_coverage": answer_coverage,
+                "answer_integrity": answer_integrity,
             }
 
         answer = ""
@@ -4399,6 +4405,7 @@ class WebAgent:
             "citation_validation": citation_validation,
             "answer_evidence_status": answer_evidence_status,
             "answer_coverage": answer_coverage,
+            "answer_integrity": answer_integrity,
             "used_language_model": used_llm,
             "used_web_search": bool(sources),
             "search_attempted": search_attempted,
