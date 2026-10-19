@@ -41,9 +41,15 @@ def test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets
     assert duckduckgo["result_count"] == 3
     assert duckduckgo["useful_result_count"] == 1
     assert duckduckgo["rejected_count"] == 1
+    assert duckduckgo["implementation_status"] == "implemented_in_code"
+    assert duckduckgo["available_for_this_request"] is True
+    assert duckduckgo["verified_for_this_request"] is True
+    assert duckduckgo["failure_observed"] is True
     assert "secret-value" not in json.dumps(summary)
     assert brave["configured"] is False
     assert brave["status"] == "not_configured"
+    assert brave["available_for_this_request"] is False
+    assert brave["verified_for_this_request"] is None
 
 
 def test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction(monkeypatch):
@@ -135,6 +141,11 @@ def test_connector_summary_does_not_claim_timeout_or_budget_exhaustion_was_a_con
     assert tavily["configured"] is True
     assert tavily["attempted"] is None
     assert tavily["status"] == "timeout"
+    assert tavily["available_for_this_request"] is None
+    assert tavily["verified_for_this_request"] is None
+    assert tavily["failure_observed"] is True
     assert deepseek["configured"] is False
     assert deepseek["attempted"] is False
     assert deepseek["status"] == "budget_exhausted"
+    assert deepseek["available_for_this_request"] is False
+    assert deepseek["verified_for_this_request"] is None
