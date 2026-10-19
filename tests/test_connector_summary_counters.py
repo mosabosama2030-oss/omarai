@@ -210,4 +210,4 @@ def test_collect_research_preserves_partial_and_http_failure_page_statuses(monke
     assert report["page_fetch_status_counts"]["http_error"] == 1
     assert sum(item["page_fetch_status"] == "partial_extraction" for item in sources) == 1
     assert sum(item["page_fetch_status"] == "http_error" for item in sources) == 1
-    assert any("HTTPError" in str(item.get("page_fetch_error_class")) for item in sources)
+    assert any("HTTPStatus" in str(item.get("page_fetch_error_class")) for item in sources)
