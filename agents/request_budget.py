@@ -57,6 +57,7 @@ class RequestBudget:
             for value in [limits[key] if limits and key in limits else default]
         }
         self._counts = {key: 0 for key in self._limits}
+        self._exhausted_reasons: set[str] = set()
         self._lock = threading.Lock()
 
     @classmethod
@@ -85,6 +86,8 @@ class RequestBudget:
         """Cap one outbound timeout to time remaining; raise instead of starting at zero."""
         remaining = self.remaining_seconds()
         if remaining <= 0:
+            with self._lock:
+                self._exhausted_reasons.add("deadline")
             raise RequestBudgetExceeded("انتهت ميزانية وقت الطلب.")
         return min(float(configured_seconds), remaining)
 
@@ -105,9 +108,11 @@ class RequestBudget:
             raise ValueError("reservation amount must be positive")
         with self._lock:
             if self.remaining_seconds() <= 0:
+                self._exhausted_reasons.add("deadline")
                 raise RequestBudgetExceeded("انتهت ميزانية وقت الطلب.")
             limit = self._limits[resource]
             if self._counts[resource] + amount > limit:
+                self._exhausted_reasons.add(resource)
                 raise RequestBudgetExceeded(
                     f"تم بلوغ حد موارد الطلب: {resource}."
                 )
@@ -117,6 +122,7 @@ class RequestBudget:
         with self._lock:
             counts = dict(self._counts)
             limits = dict(self._limits)
+            exhausted_reasons = sorted(self._exhausted_reasons)
         remaining = self.remaining_seconds()
         return {
             "policy": "cooperative_per_request_budget",
@@ -124,6 +130,8 @@ class RequestBudget:
             "elapsed_seconds": round(max(0.0, self._clock() - self.started_at), 3),
             "remaining_seconds": round(remaining, 3),
             "deadline_exceeded": remaining <= 0,
+            "budget_exhausted": bool(exhausted_reasons) or remaining <= 0,
+            "exhausted_reasons": exhausted_reasons,
             "counts": counts,
             "limits": limits,
             "resources_at_limit": [
