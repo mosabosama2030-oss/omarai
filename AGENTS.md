@@ -6,6 +6,7 @@ These rules apply to every AI agent, human contributor, code change, test report
 - Read `docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md` before architecture, security, performance, data-flow, search, model, tool-execution, concurrency, or deployment changes.
 - Read `docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md` for broad platform requirements and release reviews involving reliability/SRE, capacity, API/security, privacy/data governance, CI/CD/supply chain, recovery, accessibility, search quality, AI/agent evaluation, cost, and operational governance. Apply only the controls relevant to the change, but explicitly record material gaps and risks.
 - Use `docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md` to classify important requirements, identify relevant expert-review lenses, record evidence and limitations, prioritize risks, and apply the change/release gates. Do not mark a requirement VERIFIED without implementation and reproducible evidence.
+- Keep `docs/OMARAI_REQUIREMENTS_REGISTER.md` synchronized with material changes: record new findings and update the related requirement status only when supporting evidence exists. Until the code and relevant tests have been examined, use UNKNOWN; state unrun checks as NOT_RUN.
 - The charter is a design requirement, not evidence that controls already exist. Inspect the actual code and tests before describing implementation status.
 - Treat `README.md` as a description of the current documented behavior, but verify claims against code and runtime evidence when the task requires it.
 
