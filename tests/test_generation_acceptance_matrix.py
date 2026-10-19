@@ -254,6 +254,45 @@ def test_search_failure_is_not_reported_as_no_attempt_or_completed_answer(monkey
     assert result["research_quality"] == "failed"
 
 
+def test_research_exception_does_not_claim_no_results_or_no_search(monkeypatch):
+    agent = WebAgent()
+    question = "ابحث عن أحدث معلومات حول الطاقة المتجددة"
+
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "current",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+
+    def collect_fails_before_diagnostics(plan):
+        raise RuntimeError("collector failed before the attempt status was known")
+
+    monkeypatch.setattr(agent, "_collect_research", collect_fails_before_diagnostics)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: pytest.fail("No synthesis when the research state is unknown"),
+    )
+
+    result = agent.answer(question)
+
+    assert result["search_report"]["search_outcome"] == "unknown_after_research_error"
+    assert result["search_report"]["unique_sources"] is None
+    assert result["search_report"]["pages_fetched"] is None
+    assert result["search_attempted"] is None
+    assert result["final_answer_status"] == "insufficient_evidence_no_generation"
+    assert "لا أستطيع الجزم" in result["answer"]
+    assert "لم أجد معلومات موثوقة كافية" not in result["answer"]
+
+
 def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatch):
     agent = WebAgent()
     question = "قارن بين الخيارات من حيث السعر، المساحة، والبيانات الناقصة"
