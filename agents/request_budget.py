@@ -60,7 +60,7 @@ class RequestBudget:
         self._lock = threading.Lock()
 
     @classmethod
-    def from_environment(cls) -> "RequestBudget":
+    def from_environment(cls) -> RequestBudget:
         timeout = _bounded_env_int(
             "OMARAI_REQUEST_BUDGET_SECONDS",
             DEFAULT_TIMEOUT_SECONDS,
