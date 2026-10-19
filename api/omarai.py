@@ -20,11 +20,99 @@ ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 MAX_REQUEST_BODY_BYTES = 200_000
+# Bound request-line + header parsing before application code or body processing.
+REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0
+REQUEST_HEADER_IDLE_TIMEOUT_SECONDS = 2.0
+MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS = 15.0
 # Absolute deadline for reading the entire body, not merely a per-read idle timeout.
 REQUEST_BODY_READ_TIMEOUT_SECONDS = 10.0
 REQUEST_BODY_IDLE_TIMEOUT_SECONDS = 2.0
 MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0
 REQUEST_BODY_READ_CHUNK_BYTES = 8_192
+
+
+
+class _DeadlineRequestReader:
+    """Read HTTP header lines with one absolute deadline across all fragments.
+
+    The standard buffered readline can wait indefinitely for a newline if a
+    client keeps trickling bytes. This reader checks the same deadline before
+    every socket read and buffers only bounded look-ahead so request body bytes
+    received with the headers are preserved for read1().
+    """
+
+    def __init__(self, connection, handler):
+        self.connection = connection
+        self.handler = handler
+        self._buffer = bytearray()
+
+    def readline(self, limit=-1):
+        if limit == 0:
+            return b""
+        max_bytes = int(limit) if limit is not None and limit > 0 else 65_537
+        previous_timeout = self.connection.gettimeout()
+        line = bytearray()
+        try:
+            while len(line) < max_bytes:
+                deadline = getattr(self.handler, "_request_header_deadline", None)
+                if deadline is None:
+                    raise TimeoutError("request-header deadline is not active")
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise TimeoutError("absolute request-header deadline exceeded")
+
+                newline_index = self._buffer.find(b"\n")
+                if newline_index >= 0:
+                    take = min(newline_index + 1, max_bytes - len(line))
+                    line.extend(self._buffer[:take])
+                    del self._buffer[:take]
+                    break
+
+                if self._buffer:
+                    take = min(len(self._buffer), max_bytes - len(line))
+                    line.extend(self._buffer[:take])
+                    del self._buffer[:take]
+                    if len(line) >= max_bytes:
+                        break
+
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise TimeoutError("absolute request-header deadline exceeded")
+                idle_timeout = max(
+                    0.1,
+                    min(
+                        float(REQUEST_HEADER_IDLE_TIMEOUT_SECONDS),
+                        MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,
+                    ),
+                )
+                self.connection.settimeout(min(idle_timeout, remaining))
+                chunk = self.connection.recv(min(4_096, max_bytes - len(line)))
+                if not chunk:
+                    break
+                self._buffer.extend(chunk)
+        finally:
+            try:
+                self.connection.settimeout(previous_timeout)
+            except OSError:
+                pass
+        return bytes(line)
+
+    def read1(self, size=-1):
+        """Read one chunk; body code applies its own idle and absolute deadlines."""
+        if size == 0:
+            return b""
+        if size is None or size < 0:
+            size = 8_192
+        if self._buffer:
+            take = min(len(self._buffer), size)
+            data = bytes(self._buffer[:take])
+            del self._buffer[:take]
+            return data
+        return self.connection.recv(size)
+
+    def close(self):
+        # The request handler owns the socket and closes its output stream.
+        return None
 
 
 def _configured_agent_concurrency_limit() -> int:
@@ -37,6 +125,33 @@ def _configured_agent_concurrency_limit() -> int:
 
 
 class Handler(BaseHTTPRequestHandler):
+    def setup(self):
+        """Install a reader with a strict deadline for the request line and headers."""
+        self.connection = self.request
+        if self.timeout is not None:
+            self.connection.settimeout(self.timeout)
+        self._request_header_deadline = None
+        self.rfile = _DeadlineRequestReader(self.connection, self)
+        self.wfile = self.connection.makefile("wb", self.wbufsize)
+
+    def handle_one_request(self):
+        timeout = max(
+            0.1,
+            min(
+                float(REQUEST_HEADER_READ_TIMEOUT_SECONDS),
+                MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,
+            ),
+        )
+        self._request_header_deadline = time.monotonic() + timeout
+        try:
+            super().handle_one_request()
+        except TimeoutError:
+            # Incomplete request line/headers are untrusted protocol input;
+            # close the socket without trying to parse or answer a partial request.
+            self.close_connection = True
+        finally:
+            self._request_header_deadline = None
+
     store = LeadStore()
     _rate_lock = threading.Lock()
     _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
