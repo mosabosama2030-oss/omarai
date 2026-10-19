@@ -61,7 +61,7 @@ class _DeadlineRequestReader:
                 if remaining <= 0:
                     raise TimeoutError("absolute request-header deadline exceeded")
 
-                newline_index = self._buffer.find(b"\\n")
+                newline_index = self._buffer.find(b"\n")
                 if newline_index >= 0:
                     take = min(newline_index + 1, max_bytes - len(line))
                     line.extend(self._buffer[:take])
