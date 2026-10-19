@@ -52,6 +52,9 @@ def test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used(monkeypa
     ]
     assert agent.generation_diagnostics[0]["attempted_model"] == "primary/model"
     assert agent.generation_diagnostics[1]["attempted_model"] == "backup/model"
+    assert [item["attempt_number"] for item in agent.generation_diagnostics] == [1, 2]
+    assert [item["fallback_used"] for item in agent.generation_diagnostics] == [False, True]
+    assert all(item["request_started"] is True for item in agent.generation_diagnostics)
 
 
 def test_unknown_finish_reason_is_rejected_and_fallback_is_used(monkeypatch):
@@ -101,8 +104,11 @@ def test_missing_finish_reason_from_all_models_fails_closed(monkeypatch):
     assert calls == ["primary/model"]
     assert agent.model_usage == []
     assert agent.generation_diagnostics == [{
+        "attempt_number": 1,
         "requested_model": "primary/model",
         "attempted_model": "primary/model",
+        "fallback_used": False,
+        "request_started": True,
         "status": "finish_reason_missing",
     }]
 
@@ -253,3 +259,24 @@ def test_generation_failure_returns_partial_sources_and_diagnostics(monkeypatch)
     ]
     assert result["search_report"]["research_quality"] == "partial"
     assert result["citation_validation"]["status"] != "validated_as_fact"
+
+
+def test_missing_api_key_is_reported_as_not_configured_not_attempted(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = ""
+    agent.generation_diagnostics = []
+    agent._generation_attempt_sequence = 0
+    with pytest.raises(RuntimeError, match="لم يتم ضبط مفتاح"):
+        agent._request_completion(
+            [{"role": "user", "content": "اختبار"}],
+            model="primary/model",
+        )
+    assert agent.generation_diagnostics == [{
+        "attempt_number": 1,
+        "requested_model": "primary/model",
+        "attempted_model": "primary/model",
+        "fallback_used": False,
+        "request_started": False,
+        "status": "not_configured",
+        "error_class": "MissingAPIKey",
+    }]
