@@ -388,7 +388,7 @@ def test_review_budget_exhaustion_discards_draft_and_preserves_sources(monkeypat
     assert result["search_report"]["second_pass_review"] == "model_claim_audit_unavailable"
     assert len(result["sources"]) == 2
     assert "مسودة تحليل مولدة لكنها لم تخضع للتدقيق النهائي" not in result["answer"]
-    assert "معلومة مستخرجة من المصدر الأول" in result["answer"]
+    assert "السعر الإجمالي 100000 جنيه والمساحة 100 متر." in result["answer"]
 
 
 def test_search_failure_is_not_reported_as_no_attempt_or_completed_answer(monkeypatch):
