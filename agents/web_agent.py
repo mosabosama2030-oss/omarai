@@ -542,6 +542,23 @@ class WebAgent:
         return targets
 
     @staticmethod
+    def _is_current_search_status_question(question: str) -> bool:
+        """Recognize a question about whether this answer already used web search."""
+        value = _normalize_search_query(question).casefold()
+        asks_if_searched = any(
+            term in value
+            for term in ("بحثت", "اجريت بحث", "قمت بالبحث", "عملت بحث", "did you search", "did you browse")
+        )
+        references_web = any(
+            term in value for term in ("انترنت", "النت", "الويب", "ويب", "the web", "online")
+        )
+        references_current_answer = any(
+            term in value
+            for term in ("الاجاب", "الرد الحالي", "هذا السؤال", "هذه الاجابه", "this answer", "this response")
+        )
+        return asks_if_searched and references_web and references_current_answer
+
+    @staticmethod
     def _is_self_question(question: str) -> bool:
         """Recognize questions about Omarai itself so they do not need web search."""
         value = _normalize_search_query(question).casefold()
@@ -566,9 +583,13 @@ class WebAgent:
             "did you browse for this response",
             "how do you search", "which search engines", "what sites do you use",
         )
-        return any(phrase in value for phrase in capability_phrases + search_phrases) or (
-            "omarai" in value
-            and any(token in value for token in ("بحث", "موقع", "تستطيع", "تقدر", "تعمل"))
+        return (
+            any(phrase in value for phrase in capability_phrases + search_phrases)
+            or WebAgent._is_current_search_status_question(question)
+            or (
+                "omarai" in value
+                and any(token in value for token in ("بحث", "موقع", "تستطيع", "تقدر", "تعمل"))
+            )
         )
 
     @staticmethod
@@ -687,6 +708,10 @@ class WebAgent:
         """Use the web only when the user requests it or the answer depends on live data."""
         if mode != "auto":
             return True
+        # A question about whether the current answer already searched is a
+        # status query, not a request to launch fresh research.
+        if WebAgent._is_current_search_status_question(question):
+            return False
         value = _normalize_search_query(question).casefold()
         dynamic_terms = (
             "ابحث", "بحث عن", "دور على", "دورلي", "هات رابط", "هاتلي",
@@ -847,14 +872,7 @@ class WebAgent:
     def _self_description_answer(self, question: str) -> dict[str, Any]:
         """Answer self/capability questions without inventing a live health result."""
         value = _normalize_search_query(question).casefold()
-        current_search_question = any(phrase in value for phrase in (
-            "هل بحثت في الانترنت للاجابه الحاليه",
-            "هل بحثت علي الانترنت للاجابه الحاليه",
-            "هل بحثت في الانترنت لهذا السؤال",
-            "هل بحثت في النت للرد ده",
-            "did you search the web for this answer",
-            "did you browse for this response",
-        ))
+        current_search_question = self._is_current_search_status_question(question)
 
         if current_search_question:
             answer = (
