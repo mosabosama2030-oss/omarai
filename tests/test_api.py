@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import socket
 import threading
 from collections import defaultdict, deque
 from http.server import ThreadingHTTPServer
@@ -497,6 +498,113 @@ def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):
     assert _configured_agent_concurrency_limit() == 8
     monkeypatch.setenv("OMARAI_MAX_CONCURRENT_AGENT_REQUESTS", "invalid")
     assert _configured_agent_concurrency_limit() == 4
+
+
+def test_api_rejects_oversized_request_body(local_api):
+    status, payload = request_json(
+        local_api,
+        "/api/analyze",
+        method="POST",
+        payload={"text": "x" * 200_001},
+    )
+
+    assert status == 413
+    assert payload["error"] == "request too large"
+
+
+def test_api_rejects_malformed_content_length(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    host_port = local_api.rsplit(":", 1)
+    with socket.create_connection((host_port[0].removeprefix("http://"), int(host_port[1])), timeout=2) as client:
+        client.sendall(
+            b"POST /api/analyze HTTP/1.1\r\n"
+            b"Host: localhost\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: invalid\r\n"
+            b"Connection: close\r\n\r\n"
+        )
+        response = b""
+        while True:
+            chunk = client.recv(4096)
+            if not chunk:
+                break
+            response += chunk
+
+    assert response.startswith(b"HTTP/1.0 400")
+    assert b"valid Content-Length is required" in response
+
+
+def test_api_returns_408_when_request_body_read_times_out(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.setattr("api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS", 0.1)
+    host_port = local_api.rsplit(":", 1)
+    with socket.create_connection((host_port[0].removeprefix("http://"), int(host_port[1])), timeout=2) as client:
+        client.settimeout(2)
+        client.sendall(
+            b"POST /api/analyze HTTP/1.1\r\n"
+            b"Host: localhost\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 40\r\n"
+            b"Connection: close\r\n\r\n"
+            b"{}"
+        )
+        response = b""
+        while True:
+            chunk = client.recv(4096)
+            if not chunk:
+                break
+            response += chunk
+
+    assert response.startswith(b"HTTP/1.0 408")
+    assert b"request body read timed out" in response
+
+
+def test_api_absolute_body_deadline_stops_slow_trickle(local_api, monkeypatch):
+    """A client must not evade the total deadline by sending before each idle timeout."""
+    import time
+
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.setattr("api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS", 0.45)
+    monkeypatch.setattr("api.omarai.REQUEST_BODY_IDLE_TIMEOUT_SECONDS", 0.20)
+    host, port = local_api.removeprefix("http://").rsplit(":", 1)
+
+    with socket.create_connection((host, int(port)), timeout=2) as client:
+        client.settimeout(2)
+        started = time.monotonic()
+        client.sendall(
+            b"POST /api/analyze HTTP/1.1\r\n"
+            b"Host: localhost\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 100\r\n"
+            b"Connection: close\r\n\r\n"
+            b"{"
+        )
+        # Each fragment arrives before the 0.20s idle timeout, but the complete
+        # request body never arrives before the 0.45s absolute deadline.
+        for fragment in (b'"', b"text", b'"', b":"):
+            time.sleep(0.08)
+            try:
+                client.sendall(fragment)
+            except OSError:
+                break
+
+        response = bytearray()
+        while True:
+            try:
+                chunk = client.recv(4096)
+            except TimeoutError:
+                break
+            if not chunk:
+                break
+            response.extend(chunk)
+
+    elapsed = time.monotonic() - started
+    assert response.startswith(b"HTTP/1.0 408")
+    assert b"request body read timed out" in response
+    assert elapsed < 1.5
 
 
 def test_agent_concurrency_slot_released_after_operation_error(
