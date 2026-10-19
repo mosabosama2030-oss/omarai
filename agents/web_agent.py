@@ -4540,9 +4540,34 @@ class WebAgent:
                         question, answer, sources, missing_targets
                     )
                     if repaired_answer.strip() != answer.strip():
-                        answer = repaired_answer
-                        coverage_repair_status = "revised_after_review_not_reaudited"
-                        review_status = "model_claim_audit_completed_before_coverage_repair"
+                        # A repaired draft is not allowed to bypass the final evidence audit.
+                        # If this bounded re-audit cannot run, fall back to source excerpts.
+                        try:
+                            reaudit_answer = self._review_answer(
+                                question,
+                                repaired_answer,
+                                sources[:MAX_LLM_CITED_SOURCES],
+                            )
+                            answer = reaudit_answer
+                            coverage_repair_status = "revised_and_reaudited"
+                            review_status = "model_claim_audit_completed"
+                        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
+                            review_status = "model_claim_audit_unavailable"
+                            review_budget_exhausted = isinstance(exc, RequestBudgetExceeded)
+                            coverage_repair_status = (
+                                "reaudit_budget_exhausted"
+                                if review_budget_exhausted
+                                else "reaudit_unavailable"
+                            )
+                            review_warning = (
+                                "استُنفدت ميزانية النماذج قبل إعادة تدقيق الإجابة المعدلة؛ "
+                                "لذلك لن أعرض النص المعدل بوصفه إجابة مكتملة، وأعرض مقتطفات المصادر بدلًا منه."
+                                if review_budget_exhausted
+                                else
+                                "تعذرت إعادة تدقيق الإجابة المعدلة مقابل الأدلة؛ لذلك لن أعرضها بوصفها إجابة مكتملة، "
+                                "وأعرض مقتطفات المصادر بدلًا منها."
+                            )
+                            answer = _fallback_answer(sources, review_warning)
                     else:
                         coverage_repair_status = "no_change_gap_unresolved"
                         coverage_repair_warning = (
