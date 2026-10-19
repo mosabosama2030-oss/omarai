@@ -489,7 +489,7 @@ class WebAgent:
                 providers = []
             if isinstance(source.get("provider"), str):
                 providers = providers + [source["provider"]]
-            for name in set(str(value) for value in providers if value):
+            for name in {str(value) for value in providers if value}:
                 useful[name] = useful.get(name, 0) + 1
         priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
                     "disabled": 4, "not_configured": 5, "rate_limited": 6,
