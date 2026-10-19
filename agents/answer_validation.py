@@ -79,11 +79,11 @@ def _canonical_number(value: str) -> str:
 _VALUE_CUES = {
     "price_or_cost": re.compile(
         r"(?:السعر|سعر|تكلفه|تكلفة|التكاليف|المبلغ|الثمن|price|cost|fee|amount|"
-        r"جنيه|دولار|ريال|يورو|egp|usd|eur|\\$|€|£)",
+        r"جنيه|دولار|ريال|يورو|egp|usd|eur|\$|€|£)",
         re.IGNORECASE,
     ),
     "area_or_size": re.compile(
-        r"(?:المساحه|المساحة|مساحه|مساحة|متر مربع|متر|sqm|square\\s+met(?:er|re)s?|area|size)",
+        r"(?:المساحه|المساحة|مساحه|مساحة|متر مربع|متر|sqm|square\s+met(?:er|re)s?|area|size)",
         re.IGNORECASE,
     ),
     "duration": re.compile(
