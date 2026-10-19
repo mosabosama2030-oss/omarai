@@ -1,6 +1,8 @@
 """Unit tests for Omarai's per-request resource budget."""
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
+
 import pytest
 
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
@@ -99,3 +101,28 @@ def test_social_provider_reserves_budget_before_network_io(monkeypatch):
     )
     with pytest.raises(RequestBudgetExceeded, match="search_calls"):
         agent._search_social("budget test", ["reddit"])
+
+def test_concurrent_reservations_never_exceed_resource_limit():
+    """Concurrent provider workers cannot reserve more calls than the request cap."""
+    limit = 5
+    workers = 32
+    budget = RequestBudget(
+        timeout_seconds=30,
+        limits={"search_calls": limit},
+    )
+
+    def attempt_reservation() -> bool:
+        try:
+            budget.reserve("search_calls")
+            return True
+        except RequestBudgetExceeded:
+            return False
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        outcomes = list(pool.map(lambda _index: attempt_reservation(), range(workers)))
+
+    snapshot = budget.snapshot()
+    assert sum(outcomes) == limit
+    assert snapshot["counts"]["search_calls"] == limit
+    assert snapshot["limits"]["search_calls"] == limit
+
