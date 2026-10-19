@@ -4441,10 +4441,14 @@ class WebAgent:
         answer_coverage = {
             "method": "explicit_criteria_heuristic",
             "targets": coverage_targets,
-            "review_prompted": review_status == "model_claim_audit_completed",
+            "review_prompted": review_status in {
+                "model_claim_audit_completed", "model_claim_audit_completed_before_coverage_repair"
+            },
             "status": (
                 "model_review_requested_not_machine_verified"
                 if coverage_targets and review_status == "model_claim_audit_completed"
+                else "model_review_pre_repair_only_final_repair_not_reaudited"
+                if coverage_targets and review_status == "model_claim_audit_completed_before_coverage_repair"
                 else "review_unavailable"
                 if coverage_targets
                 else "no_explicit_targets_detected"
