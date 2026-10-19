@@ -492,8 +492,13 @@ class WebAgent:
             for name in {str(value) for value in providers if value}:
                 useful[name] = useful.get(name, 0) + 1
         priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
-                    "disabled": 4, "not_configured": 5, "rate_limited": 6,
-                    "unauthorized": 7, "http_error": 8, "timeout": 9, "failed": 10, "error": 10}
+                    "disabled": 4, "not_configured": 5, "budget_exhausted": 6,
+                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "http_error": 9,
+                    "timeout": 10, "failed": 11, "error": 11}
+        confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | {
+            "http_error", "unauthorized", "rate_limited", "invalid_response"
+        }
+        uncertain_attempt_statuses = {"timeout", "failed", "error", "unknown", "inconclusive"}
 
         def redact(value: Any) -> str:
             safe = _clean_text(str(value or ""), 180)
@@ -508,8 +513,14 @@ class WebAgent:
             ready, config_status = config.get(name, (bool(grouped.get(name) or useful.get(name)), "observed_in_code_path"))
             attempts = grouped.get(name, [])
             statuses = [_clean_text(row.get("status", "unknown"), 40).lower() or "unknown" for row in attempts]
-            status = max(statuses, key=lambda value: priority.get(value, 8)) if statuses else (
+            status = max(statuses, key=lambda value: priority.get(value, 6)) if statuses else (
                 "ok" if useful.get(name, 0) else "not_configured" if not ready else "not_attempted")
+            if any(value in confirmed_attempt_statuses for value in statuses) or useful.get(name, 0):
+                attempted: bool | None = True
+            elif any(value in uncertain_attempt_statuses for value in statuses):
+                attempted = None
+            else:
+                attempted = False
             queries = list(dict.fromkeys(_clean_text(row.get("query", ""), 180) for row in attempts if row.get("query")))[:3]
             errors = list(dict.fromkeys(redact(row.get("error")) for row in attempts if row.get("error")))[:3]
             result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
@@ -517,7 +528,7 @@ class WebAgent:
             connectors.append({
                 "name": name, "in_codebase": name in config or bool(attempts),
                 "configured": bool(ready), "configuration_status": config_status,
-                "attempted": bool(attempts) or bool(useful.get(name, 0)), "status": status,
+                "attempted": attempted, "status": status,
                 "observed_statuses": list(dict.fromkeys(statuses))[:6],
                 "result_count": result_count, "useful_result_count": useful.get(name, 0),
                 "rejected_count": rejected_count, "queries": queries, "errors": errors,
