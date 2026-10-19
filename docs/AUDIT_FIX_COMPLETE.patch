@@ -1,0 +1,47 @@
+diff --git a/agents/research.py b/agents/research.py
+index 8b4b176..13ff602 100644
+--- a/agents/research.py
++++ b/agents/research.py
+@@ -207,7 +207,10 @@ def fallback_plan(
+         base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
+     social_focus = detect_social_focus(question, history)
+     fresh = detect_freshness(question)
+-    deep = detect_depth(question)
++    # detect_depth returns the enum strings "deep" | "standard" — never use the
++    # string itself as a boolean: non-empty "standard" is always truthy in Python.
++    depth = detect_depth(question)
++    deep = depth == "deep"
+     platforms = mentioned_social_platforms(question + " " + " ".join(
+         item.get("content", "") for item in (history or [])[-4:]
+     ))
+@@ -245,7 +248,7 @@ def fallback_plan(
+         "direct_urls": direct_urls,
+         "social_focus": social_focus,
+         "freshness": "current" if fresh else "any",
+-        "depth": deep,
++        "depth": depth,
+         "platforms": platforms,
+         "planning_method": "deterministic_fallback",
+     }
+diff --git a/api/omarai.py b/api/omarai.py
+index 920e208..d1956af 100644
+--- a/api/omarai.py
++++ b/api/omarai.py
+@@ -186,7 +186,16 @@ class Handler(BaseHTTPRequestHandler):
+         supplied = self.headers.get("Authorization", "")
+         if not supplied.startswith("Bearer "):
+             return False
+-        return hmac.compare_digest(supplied[7:].strip(), expected)
++        # Compare digests on UTF-8 bytes so non-ASCII header values return
++        # unauthorized (False) instead of raising TypeError from str compare.
++        token = supplied[7:].strip()
++        try:
++            return hmac.compare_digest(
++                token.encode("utf-8"),
++                expected.encode("utf-8"),
++            )
++        except (TypeError, UnicodeEncodeError):
++            return False
+
+     def _allowed_origins(self):
+         """Return configured browser origins plus this service’s own origin.
