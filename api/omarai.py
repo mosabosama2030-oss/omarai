@@ -1,4 +1,4 @@
-"""Loopback-only HTTP API for Omarai's web-research agent and lead workspace."""
+"""HTTP API for Omarai's web-research agent and lead workspace."""
 from __future__ import annotations
 
 import hmac
