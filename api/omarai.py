@@ -21,6 +21,15 @@ AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 
 
+def _configured_agent_concurrency_limit() -> int:
+    """Return a process-local cap for expensive research and diagnostics operations."""
+    try:
+        configured = int(os.getenv("OMARAI_MAX_CONCURRENT_AGENT_REQUESTS", "4").strip())
+    except ValueError:
+        configured = 4
+    return max(1, min(configured, 8))
+
+
 class Handler(BaseHTTPRequestHandler):
     store = LeadStore()
     _rate_lock = threading.Lock()
@@ -29,6 +38,25 @@ class Handler(BaseHTTPRequestHandler):
     RATE_LIMIT_REQUESTS = 20
     RATE_LIMIT_WINDOW_SECONDS = 60
     RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60
+    AGENT_CONCURRENCY_LIMIT = _configured_agent_concurrency_limit()
+    _agent_semaphore = threading.BoundedSemaphore(AGENT_CONCURRENCY_LIMIT)
+
+    def _run_bounded_agent_operation(self, operation):
+        """Run an expensive operation only when a process-local slot is available."""
+        cls = type(self)
+        if not cls._agent_semaphore.acquire(blocking=False):
+            return self.respond(
+                503,
+                {
+                    "error": "خدمة البحث مشغولة حاليًا؛ أعد المحاولة بعد قليل.",
+                    "retry_after_seconds": 5,
+                    "process_concurrency_limit": cls.AGENT_CONCURRENCY_LIMIT,
+                },
+            )
+        try:
+            return self.respond(200, operation())
+        finally:
+            cls._agent_semaphore.release()
 
     def _authorized(self):
         expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
@@ -194,12 +222,11 @@ class Handler(BaseHTTPRequestHandler):
                         400,
                         {"error": "test_model and test_social must be booleans"},
                     )
-                return self.respond(
-                    200,
-                    WebAgent().diagnostics(
+                return self._run_bounded_agent_operation(
+                    lambda: WebAgent().diagnostics(
                         test_model=test_model,
                         test_social=test_social,
-                    ),
+                    )
                 )
 
             if path == "/api/agent":
@@ -209,8 +236,12 @@ class Handler(BaseHTTPRequestHandler):
                 agent = WebAgent()
                 history = data.get("history", [])
                 if "mode" not in data:
-                    return self.respond(200, agent.answer(question, history))
-                return self.respond(200, agent.answer(question, history, data.get("mode")))
+                    return self._run_bounded_agent_operation(
+                        lambda: agent.answer(question, history)
+                    )
+                return self._run_bounded_agent_operation(
+                    lambda: agent.answer(question, history, data.get("mode"))
+                )
 
             if path == "/api/ask":
                 question = data.get("question", "")
