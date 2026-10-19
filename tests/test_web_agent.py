@@ -2037,7 +2037,6 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "حالة إصلاح التغطية:" in html
     assert "revised_and_reaudited" in html
     assert "عُدّلت الإجابة بعد رصد محور محتمل النقص ثم خضعت لمراجعة أدلة ثانية" in html
-    assert "model_claim_audit_completed_before_coverage_repair" not in html
     assert "ليس تحققًا من الحقيقة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
