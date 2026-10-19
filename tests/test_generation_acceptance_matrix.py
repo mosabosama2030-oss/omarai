@@ -152,6 +152,7 @@ def test_capability_snapshot_separates_configuration_from_live_health(monkeypatc
         lambda: {
             "web_search_ready": True,
             "language_model_configured": True,
+            "deepseek_search_api_configured": True,
             "brave_search_api_configured": True,
             "tavily_search_api_configured": False,
             "openrouter_web_search_enabled": False,
@@ -166,12 +167,43 @@ def test_capability_snapshot_separates_configuration_from_live_health(monkeypatc
     assert snapshot["web_search"]["runtime_status"] == "not_tested_in_this_response"
     assert providers["duckduckgo_html"]["configuration_status"] == "built_in_no_api_key"
     assert providers["duckduckgo_html"]["runtime_status"] == "not_tested_in_this_response"
+    assert providers["deepseek_search_api"]["configuration_status"] == "configured"
+    assert providers["deepseek_search_api"]["runtime_status"] == "not_tested_in_this_response"
     assert providers["brave_search_api"]["configuration_status"] == "configured"
     assert providers["brave_search_api"]["runtime_status"] == "not_tested_in_this_response"
     assert providers["tavily_search_api"]["configuration_status"] == "not_configured"
     assert providers["tavily_search_api"]["runtime_status"] == "not_configured"
     assert providers["openrouter_web_search"]["configuration_status"] == "disabled"
     assert providers["openrouter_web_search"]["runtime_status"] == "disabled"
+
+
+def test_capability_answer_discloses_optional_deepseek_search_status(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent,
+        "status",
+        lambda: {
+            "web_search_ready": True,
+            "language_model_configured": True,
+            "deepseek_search_api_configured": True,
+            "brave_search_api_configured": False,
+            "tavily_search_api_configured": False,
+            "openrouter_web_search_enabled": False,
+        },
+    )
+
+    result = agent.answer("ما محركات البحث التي تستخدمها؟")
+
+    assert result["kind"] == "capability_answer"
+    assert "DeepSeek Search API" in result["answer"]
+    assert "غير مختبر في هذه الإجابة" in result["answer"]
+    assert "قد يستهلك استخدامًا مدفوعًا" in result["answer"]
+    provider = next(
+        item for item in result["capability_status"]["web_search"]["providers"]
+        if item["name"] == "deepseek_search_api"
+    )
+    assert provider["configuration_status"] == "configured"
+    assert provider["runtime_status"] == "not_tested_in_this_response"
 
 
 def test_operational_truth_overrides_a_model_claim_about_this_request(monkeypatch):
