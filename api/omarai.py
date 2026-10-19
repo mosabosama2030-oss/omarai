@@ -5,7 +5,6 @@ import hmac
 import ipaddress
 import json
 import os
-import socket
 import threading
 import time
 from collections import defaultdict, deque
@@ -176,7 +175,7 @@ class Handler(BaseHTTPRequestHandler):
         try:
             self.connection.settimeout(read_timeout)
             body = self.rfile.read(size)
-        except (TimeoutError, socket.timeout):
+        except TimeoutError:
             timed_out = True
         finally:
             try:
