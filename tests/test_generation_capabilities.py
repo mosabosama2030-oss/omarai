@@ -151,3 +151,89 @@ def test_current_request_search_status_is_not_confused_with_capability(monkeypat
         "not_tested_in_this_response"
     )
     assert result["search_attempted"] is False
+
+
+def test_generation_failure_returns_partial_sources_and_diagnostics(monkeypatch):
+    agent = WebAgent()
+    question = "ابحث عن أحدث تقرير عن الذكاء الاصطناعي"
+
+    sources = [
+        {
+            "title": "تقرير ذكاء اصطناعي",
+            "url": "https://example.com/report",
+            "snippet": "مقتطف تجريبي من المصدر الأول",
+            "page_fetched": False,
+            "providers": ["duckduckgo_html"],
+            "queries": [question],
+            "domain": "example.com",
+            "source_class": "general",
+            "platform": "web",
+            "published_at": "",
+            "rank_score": 0.9,
+        },
+        {
+            "title": "مصدر ثان",
+            "url": "https://example.net/report",
+            "snippet": "مقتطف تجريبي من المصدر الثاني",
+            "page_fetched": False,
+            "providers": ["bing_rss"],
+            "queries": [question],
+            "domain": "example.net",
+            "source_class": "general",
+            "platform": "web",
+            "published_at": "",
+            "rank_score": 0.8,
+        },
+    ]
+
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda plan: (
+            sources,
+            [],
+            {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "queries_attempted_known": True,
+                "search_attempted": True,
+                "search_outcome": "attempted_with_usable_sources",
+                "unique_sources": 2,
+                "pages_fetched": 0,
+                "providers_used": ["duckduckgo_html", "bing_rss"],
+                "provider_counts": {"duckduckgo_html": 1, "bing_rss": 1},
+                "platform_counts": {"web": 2},
+                "evidence_signals": {},
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+
+    def failed_generate(*args, **kwargs):
+        agent._record_generation_diagnostic(
+            requested_model="primary/model",
+            attempted_model="fallback/model",
+            status="truncated",
+            finish_reason="length",
+        )
+        raise RuntimeError("اختبار: فشل التوليد بعد انتهاء حد الرموز")
+
+    monkeypatch.setattr(agent, "_generate", failed_generate)
+
+    result = agent.answer(question)
+
+    assert result["used_web_search"] is True
+    assert result["used_language_model"] is False
+    assert len(result["sources"]) == 2
+    assert "تعذر توليد إجابة تحليلية" in result["answer"]
+    assert "مقتطف تجريبي من المصدر الأول" in result["answer"]
+    assert result["generation_diagnostics"] == [
+        {
+            "requested_model": "primary/model",
+            "attempted_model": "fallback/model",
+            "status": "truncated",
+            "finish_reason": "length",
+        }
+    ]
+    assert result["search_report"]["research_quality"] == "partial"
+    assert result["citation_validation"]["status"] != "validated_as_fact"
