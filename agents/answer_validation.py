@@ -17,7 +17,7 @@ _ARABIC_NORMALIZATION = str.maketrans({
 _DIACRITICS = re.compile(r"[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED]")
 _TOKEN = re.compile(r"[a-z0-9]+|[\u0621-\u064A\u0660-\u0669]+", re.IGNORECASE)
 _NUMBER = re.compile(r"(?<![\w])\d+(?:[.,٬٫]\d+)*(?![\w])")
-_CITATION = re.compile(r"\[(?:المصدر|source)\s+\d+\]", re.IGNORECASE)
+_CITATION = re.compile(r"\[(?:المصدر|source)\s+(\d+)\]", re.IGNORECASE)
 _STOPWORDS = {
     "من", "في", "على", "عن", "الى", "و", "او", "هل", "ما", "ماذا", "كيف",
     "مع", "بين", "هذا", "هذه", "ذلك", "تلك", "الذي", "التي", "هو", "هي",
