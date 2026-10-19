@@ -2024,6 +2024,9 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert "فحص آلي أولي لاتساق الإجابة" in html
     assert "potentially_unsupported_numeric_literals" in html
     assert "target_coverage" in html
+    assert "citation_lexical_alignment" in html
+    assert "weak_lexical_overlap" in html
+    assert "لم يظهر تطابق لفظي كافٍ في" in html
     assert "ليس تحققًا من الحقيقة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
