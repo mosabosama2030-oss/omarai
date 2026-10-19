@@ -522,15 +522,36 @@ class WebAgent:
                 attempted = None
             else:
                 attempted = False
+            successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
+            error_response_statuses = set(statuses) & {"http_error", "unauthorized", "rate_limited"}
+            uncertain_failure_statuses = set(statuses) & {"timeout", "failed", "error", "unknown", "inconclusive"}
+            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
+            available: bool | None = (
+                True if successful_statuses or useful.get(name, 0)
+                else False if error_response_statuses or not ready or "disabled" in statuses
+                else None
+            )
+            verified: bool | None = (
+                True if successful_statuses or useful.get(name, 0)
+                else False if error_response_statuses
+                else None
+            )
+            implementation_status = (
+                "implemented_in_code" if name in config
+                else "observed_runtime_path" if attempts or useful.get(name, 0)
+                else "unknown"
+            )
             queries = list(dict.fromkeys(_clean_text(row.get("query", ""), 180) for row in attempts if row.get("query")))[:3]
             errors = list(dict.fromkeys(redact(row.get("error")) for row in attempts if row.get("error")))[:3]
             result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
             rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
             connectors.append({
                 "name": name, "in_codebase": name in config or bool(attempts),
+                "implementation_status": implementation_status,
                 "configured": bool(ready), "configuration_status": config_status,
-                "attempted": attempted, "status": status,
-                "observed_statuses": list(dict.fromkeys(statuses))[:6],
+                "attempted": attempted, "available_for_this_request": available,
+                "verified_for_this_request": verified, "failure_observed": failure_observed,
+                "status": status, "observed_statuses": list(dict.fromkeys(statuses))[:6],
                 "result_count": result_count, "useful_result_count": useful.get(name, 0),
                 "rejected_count": rejected_count, "queries": queries, "errors": errors,
             })
