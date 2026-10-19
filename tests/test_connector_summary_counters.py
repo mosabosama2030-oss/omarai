@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from agents.web_agent import WebAgent
+from agents.search_report_metrics import (
+    enrich_search_report_counters,
+    summarize_connector_diagnostics,
+)
 
 
 def test_summarize_connector_distinguishes_configured_attempted_and_empty():
@@ -29,7 +32,7 @@ def test_summarize_connector_distinguishes_configured_attempted_and_empty():
         },
     ]
     summary = {
-        row["name"]: row for row in WebAgent._summarize_connector_diagnostics(diagnostics)
+        row["name"]: row for row in summarize_connector_diagnostics(diagnostics)
     }
     assert summary["duckduckgo_html"]["attempted"] is True
     assert summary["duckduckgo_html"]["status"] == "returned_results"
@@ -38,7 +41,6 @@ def test_summarize_connector_distinguishes_configured_attempted_and_empty():
     assert summary["bing_rss"]["status"] == "empty_or_filtered"
     assert summary["brave_search_api"]["attempted"] is False
     assert summary["brave_search_api"]["status"] == "not_configured"
-    # Planned-but-not-executed is not implied by catalog-only rows without diagnostics.
     assert summary["tavily_search_api"]["status"] in {"not_configured", "not_attempted"}
 
 
@@ -59,7 +61,7 @@ def test_summarize_connector_failure_does_not_claim_results():
         },
     ]
     summary = {
-        row["name"]: row for row in WebAgent._summarize_connector_diagnostics(diagnostics)
+        row["name"]: row for row in summarize_connector_diagnostics(diagnostics)
     }
     assert summary["duckduckgo_html"]["status"] == "failed"
     assert summary["duckduckgo_html"]["result_count"] == 0
@@ -98,14 +100,14 @@ def test_enrich_search_report_splits_raw_unique_and_page_counters():
         {"provider": "bing_rss", "status": "ok", "result_count": 3},
     ]
     report: dict = {}
-    WebAgent._enrich_search_report_counters(report, sources, diagnostics)
+    enrich_search_report_counters(report, sources, diagnostics)
     assert report["raw_search_hits"] == 7
     assert report["unique_urls"] == 3
     assert report["unique_domains"] == 3
     assert report["pages_fetch_attempted"] == 2
     assert report["pages_content_extracted"] == 1
     assert report["pages_extraction_failed"] == 1
-    assert report["pages_fetched"] == 1  # legacy alias for extracted only
+    assert report["pages_fetched"] == 1
     assert any(row["name"] == "duckduckgo_html" for row in report["connector_summary"])
     assert report["counter_semantics"]["pages_fetched"] == (
         "legacy_alias_for_pages_content_extracted"
@@ -123,6 +125,6 @@ def test_enrich_does_not_treat_snippet_only_as_page_read():
         }
     ]
     report: dict = {}
-    WebAgent._enrich_search_report_counters(report, sources, [])
+    enrich_search_report_counters(report, sources, [])
     assert report["pages_content_extracted"] == 0
     assert report["pages_fetched"] == 0
