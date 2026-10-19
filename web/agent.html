@@ -131,7 +131,12 @@ function renderSource(s,index){
  const title=escapeHtml(s.title||("نتيجة ويب "+(index+1)));
  const tags=[];
  tags.push('<span class="tag">'+escapeHtml(s.source_class||"مصدر عام")+'</span>');
- tags.push(s.page_fetched?'<span class="tag read">قُرئت الصفحة</span>':'<span class="tag">مقتطف بحث</span>');
+ const fetchStatus=s.page_fetch_status||(s.page_fetched?"content_extracted":"not_attempted");
+ if(fetchStatus==="content_extracted"||s.page_fetched)tags.push('<span class="tag read">قُرئت الصفحة واستُخرج نص</span>');
+ else if(fetchStatus==="no_text_extracted")tags.push('<span class="tag">جُلبت الصفحة لكن لم يُستخرج نص</span>');
+ else if(fetchStatus==="fetch_failed")tags.push('<span class="tag">تعذّر جلب الصفحة</span>');
+ else if(fetchStatus==="attempted")tags.push('<span class="tag">محاولة جلب الصفحة</span>');
+ else tags.push('<span class="tag">مقتطف بحث — لم تُحاول قراءة الصفحة</span>');
  if(s.platform&&s.platform!=="web")tags.push('<span class="tag social">'+escapeHtml(s.platform)+'</span>');
  if(s.published_at)tags.push('<span class="tag">تاريخ ظاهر: '+escapeHtml(s.published_at)+'</span>');
  const providers=Array.isArray(s.providers)?s.providers.map(escapeHtml):[];
