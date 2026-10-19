@@ -1115,6 +1115,7 @@ def test_answer_hides_unwrapped_internal_review_report(monkeypatch):
     result = agent.answer("قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية")
 
     assert result["search_report"]["second_pass_review"] == "model_claim_audit_unavailable"
+    assert result["final_answer_status"] == "review_failed_with_source_fallback"
     assert "Audit Report" not in result["answer"]
     assert "ملاحظة داخلية سرية" not in result["answer"]
     assert "إجابة نهائية مزعومة" not in result["answer"]
