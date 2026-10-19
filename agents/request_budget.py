@@ -86,7 +86,16 @@ class RequestBudget:
         remaining = self.remaining_seconds()
         if remaining <= 0:
             raise RequestBudgetExceeded("انتهت ميزانية وقت الطلب.")
-        return max(0.05, min(float(configured_seconds), remaining))
+        return min(float(configured_seconds), remaining)
+
+    def remaining_units(self, resource: str) -> int:
+        """Return unused units for a resource; zero means disabled, exhausted, or expired."""
+        if resource not in self._limits:
+            raise ValueError(f"unknown request-budget resource: {resource}")
+        if self.remaining_seconds() <= 0:
+            return 0
+        with self._lock:
+            return max(0, self._limits[resource] - self._counts[resource])
 
     def reserve(self, resource: str, amount: int = 1) -> None:
         """Atomically reserve resource units before initiating external work."""
@@ -117,8 +126,9 @@ class RequestBudget:
             "deadline_exceeded": remaining <= 0,
             "counts": counts,
             "limits": limits,
-            "resource_limits_reached": [
-                key for key, limit in limits.items() if counts[key] >= limit
+            "resources_at_limit": [
+                key for key, limit in limits.items() if limit > 0 and counts[key] >= limit
             ],
+            "disabled_resources": [key for key, limit in limits.items() if limit == 0],
             "hard_cancellation_guaranteed": False,
         }
