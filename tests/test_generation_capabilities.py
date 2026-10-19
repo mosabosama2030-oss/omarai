@@ -189,6 +189,19 @@ def test_generation_failure_returns_partial_sources_and_diagnostics(monkeypatch)
 
     monkeypatch.setattr(
         agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "depth": "standard",
+            "freshness": "any",
+            "social_focus": False,
+            "platforms": [],
+            "planning_method": "test_fixture",
+            "direct_urls": [],
+        },
+    )
+    monkeypatch.setattr(
+        agent,
         "_collect_research",
         lambda plan: (
             sources,
