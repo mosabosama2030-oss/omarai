@@ -1141,6 +1141,12 @@ class WebAgent:
             raise RuntimeError("لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.")
         return list(unique.values())
 
+    def _reserve_search_call(self) -> None:
+        """Reserve one outbound search/social-provider request before network I/O."""
+        budget = getattr(self, "_request_budget", None)
+        if budget is not None:
+            budget.reserve("search_calls")
+
     def _search_brave(self, query: str) -> list[dict[str, Any]]:
         """Use Brave's official web-search API when the operator provides an API key."""
         api_key = os.getenv("BRAVE_SEARCH_API_KEY", "").strip()
@@ -1343,6 +1349,7 @@ class WebAgent:
         ).strip()
         if "reddit" in platforms and reddit_client_id and reddit_client_secret:
             try:
+                self._reserve_search_call()
                 token_response = httpx.post(
                     "https://www.reddit.com/api/v1/access_token",
                     data={"grant_type": "client_credentials"},
@@ -1354,6 +1361,7 @@ class WebAgent:
                 if token_response.status_code == 200:
                     access_token = token_response.json().get("access_token", "")
                     if access_token:
+                        self._reserve_search_call()
                         search_response = httpx.get(
                             "https://oauth.reddit.com/search",
                             params={
@@ -1420,6 +1428,7 @@ class WebAgent:
             row.get("provider") == "reddit_oauth_api" for row in results
         ):
             try:
+                self._reserve_search_call()
                 response = httpx.get(
                     "https://www.reddit.com/search.rss",
                     params={"q": query, "sort": "relevance", "t": "all", "limit": "8"},
@@ -1465,6 +1474,7 @@ class WebAgent:
 
         if "bluesky" in platforms:
             try:
+                self._reserve_search_call()
                 response = httpx.get(
                     "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
                     params={"q": query, "limit": 10},
@@ -1521,6 +1531,7 @@ class WebAgent:
                 }
                 for page_id in page_ids:
                     try:
+                        self._reserve_search_call()
                         response = httpx.get(
                             f"https://graph.facebook.com/{graph_version}/{page_id}/posts",
                             params={
@@ -1613,6 +1624,7 @@ class WebAgent:
                 # connector conservative and use no more than two tags per user request.
                 for hashtag in list(dict.fromkeys(hashtags))[:1]:
                     try:
+                        self._reserve_search_call()
                         search_response = httpx.get(
                             f"https://graph.facebook.com/{graph_version}/ig_hashtag_search",
                             params={
@@ -1637,6 +1649,7 @@ class WebAgent:
                         hashtag_id = tag_data[0].get("id")
                         if not hashtag_id:
                             continue
+                        self._reserve_search_call()
                         media_response = httpx.get(
                             f"https://graph.facebook.com/{graph_version}/{hashtag_id}/recent_media",
                             params={
@@ -1691,6 +1704,7 @@ class WebAgent:
 
         if "x" in platforms and os.getenv("X_BEARER_TOKEN", "").strip():
             try:
+                self._reserve_search_call()
                 response = httpx.get(
                     "https://api.x.com/2/tweets/search/recent",
                     params={
@@ -1742,6 +1756,7 @@ class WebAgent:
 
         if "youtube" in platforms and os.getenv("YOUTUBE_API_KEY", "").strip():
             try:
+                self._reserve_search_call()
                 response = httpx.get(
                     "https://www.googleapis.com/youtube/v3/search",
                     params={
