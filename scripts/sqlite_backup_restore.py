@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import closing
 import json
 import os
 import sqlite3
@@ -67,12 +68,13 @@ def _copy_verified_database(source: str | Path, destination: str | Path) -> dict
         raise FileExistsError(f"destination already exists: {destination_path}")
 
     # Validate the source before creating anything at the destination.
-    with _open_read_only(source_path) as source_db:
+    with closing(_open_read_only(source_path)) as source_db:
         source_count = _validate_omarai_database(source_db)
         _create_destination_exclusively(destination_path)
         try:
-            with sqlite3.connect(destination_path, timeout=10) as destination_db:
+            with closing(sqlite3.connect(destination_path, timeout=10)) as destination_db:
                 source_db.backup(destination_db)
+                destination_db.commit()
                 restored_count = _validate_omarai_database(destination_db)
                 if restored_count != source_count:
                     raise BackupError(
