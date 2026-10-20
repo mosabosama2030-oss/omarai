@@ -1,4 +1,4 @@
-name: Update Omarai living index
+name: Update Omarai repository-wide living index
 
 on:
   push:
@@ -34,8 +34,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate the living index
+      - name: Generate the living repository index
         run: python docs/generate_index.py
+
+      - name: Verify the generated index is reproducible
+        run: python docs/generate_index.py --check
 
       - name: Commit and publish only when the index changes
         shell: bash
@@ -51,26 +54,36 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "docs(index): refresh Python symbol inventory"
+          git commit -m "docs(index): refresh repository-wide symbol inventory"
 
-          # Prefer a direct update. If main is protected, publish a dedicated branch
-          # and open/update a PR rather than silently losing the generated index.
+          # Prefer an automatic fast-forward update. If main rejects the write,
+          # publish a PR without force-updating an existing automation branch.
           if git push origin HEAD:main; then
             echo "MASTER_INDEX.md was pushed to main."
             exit 0
           fi
 
           automation_branch="automation/living-index"
-          git push --force origin "HEAD:${automation_branch}"
+          if ! git push origin "HEAD:${automation_branch}"; then
+            automation_branch="automation/living-index-${GITHUB_RUN_ID}"
+            git push origin "HEAD:${automation_branch}"
+            gh pr create \
+              --base main \
+              --head "${automation_branch}" \
+              --title "docs(index): refresh repository-wide symbol inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md. The index contains a repository file inventory, Python AST definitions, and static navigation symbols for frontend/configuration/documentation files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
+            exit 0
+          fi
+
           pr_number="$(gh pr list --state open --base main --head "${automation_branch}" --json number --jq '.[0].number // empty')"
           if [ -z "${pr_number}" ]; then
             gh pr create \
               --base main \
               --head "${automation_branch}" \
-              --title "docs(index): refresh Python symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is opened because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
+              --title "docs(index): refresh repository-wide symbol inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md. The index contains a repository file inventory, Python AST definitions, and static navigation symbols for frontend/configuration/documentation files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
           else
             gh pr edit "${pr_number}" \
-              --title "docs(index): refresh Python symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is updated because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
+              --title "docs(index): refresh repository-wide symbol inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md. The index contains a repository file inventory, Python AST definitions, and static navigation symbols for frontend/configuration/documentation files. This PR is updated because direct publication to main was rejected. No auto-merge was performed."
           fi
