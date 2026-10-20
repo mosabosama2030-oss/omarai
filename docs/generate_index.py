@@ -9,6 +9,7 @@ import json
 import os
 import posixpath
 import re
+import subprocess
 import sys
 import tempfile
 import tokenize
@@ -478,8 +479,39 @@ def build_file_inventory(root: Path) -> list[IndexedFile]:
     return inventory
 
 
+def _tracked_paths_or_none(root: Path) -> set[str] | None:
+    """Return tracked repository paths, or None when the root is not a Git checkout."""
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(root), "ls-files", "-z"],
+            check=True,
+            capture_output=True,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+    try:
+        return {
+            path
+            for path in result.stdout.decode("utf-8").split("\\x00")
+            if path
+        }
+    except UnicodeError:
+        return None
+
+
 def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
-    """List excluded path names and reasons without opening excluded file contents."""
+    """List excluded tracked path names and reasons without opening excluded contents."""
+    tracked_paths = _tracked_paths_or_none(root)
+
+    def tracked_scope_contains(relative_path: str, is_directory: bool = False) -> bool:
+        if tracked_paths is None:
+            return True
+        normalized = relative_path.rstrip("/")
+        if is_directory:
+            prefix = normalized + "/"
+            return any(path.startswith(prefix) for path in tracked_paths)
+        return normalized in tracked_paths
+
     excluded: list[tuple[str, str]] = [
         (path, "مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية")
         for path in sorted(INDEX_OUTPUT_PATHS)
@@ -500,11 +532,14 @@ def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
             candidate = Path(current_directory) / name
             relative = candidate.relative_to(root).as_posix()
             if candidate.is_symlink():
-                excluded.append((relative + "/", "رابط رمزي مستبعد لسلامة التتبع"))
+                if tracked_scope_contains(relative, is_directory=True):
+                    excluded.append((relative + "/", "رابط رمزي مستبعد لسلامة التتبع"))
             elif name in EXCLUDED_DIRECTORIES:
-                excluded.append((relative + "/", "مجلد بيئة أو اعتماديات أو مخرجات مولدة مستبعد"))
+                if tracked_scope_contains(relative, is_directory=True):
+                    excluded.append((relative + "/", "مجلد بيئة أو اعتماديات أو مخرجات مولدة مستبعد"))
             elif name.lower().endswith((".egg-info", ".dist-info")):
-                excluded.append((relative + "/", "بيانات تغليف مولدة مستبعدة"))
+                if tracked_scope_contains(relative, is_directory=True):
+                    excluded.append((relative + "/", "بيانات تغليف مولدة مستبعدة"))
             elif relative == SOURCE_LINES_PAGES_DIR:
                 excluded.append(
                     (
@@ -520,19 +555,22 @@ def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
             candidate = Path(current_directory) / name
             relative = candidate.relative_to(root).as_posix()
             if candidate.is_symlink():
-                excluded.append((relative, "رابط رمزي مستبعد لسلامة التتبع"))
+                if tracked_scope_contains(relative):
+                    excluded.append((relative, "رابط رمزي مستبعد لسلامة التتبع"))
             elif _is_sensitive_or_runtime_path(candidate):
-                if name.lower().startswith(".env") and name.lower() != ".env.example":
-                    reason = "ملف بيئة محلي مستبعد وقائيًا؛ لم تُقرأ محتوياته"
-                elif candidate.suffix.lower() in EXCLUDED_SUFFIXES:
-                    reason = "قاعدة بيانات أو ملف مفتاح/شهادة مستبعد"
-                else:
-                    reason = "اسم ملف حساس معروف؛ لم تُقرأ محتوياته"
-                excluded.append((relative, reason))
+                if tracked_scope_contains(relative):
+                    if name.lower().startswith(".env") and name.lower() != ".env.example":
+                        reason = "ملف بيئة محلي مستبعد وقائيًا؛ لم تُقرأ محتوياته"
+                    elif candidate.suffix.lower() in EXCLUDED_SUFFIXES:
+                        reason = "قاعدة بيانات أو ملف مفتاح/شهادة مستبعد"
+                    else:
+                        reason = "اسم ملف حساس معروف؛ لم تُقرأ محتوياته"
+                    excluded.append((relative, reason))
             elif relative in INDEX_OUTPUT_PATHS:
                 excluded.append((relative, "مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية"))
             elif relative.startswith(SOURCE_LINES_PAGES_DIR + "/"):
-                excluded.append((relative, "صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية"))
+                if tracked_scope_contains(relative):
+                    excluded.append((relative, "صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية"))
 
     return sorted(set(excluded), key=lambda item: (item[0].casefold(), item[1]))
 
