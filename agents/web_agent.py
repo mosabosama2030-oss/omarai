@@ -3357,6 +3357,20 @@ class WebAgent:
                 f"{base_query} risks limitations alternatives",
                 f"{base_query} case studies recent analysis",
             ]
+            # Real-estate discovery needs market/listing angles, not only general analysis.
+            normalized_question = _normalize_search_query(question).casefold()
+            property_terms = (
+                "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
+                "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
+            )
+            if self._is_listing_discovery(question) and any(
+                term in normalized_question for term in property_terms
+            ):
+                candidates.extend([
+                    f"{base_query} إعلانات عقارية ومواقع العقارات",
+                    f"{base_query} متوسط أسعار السوق للمتر",
+                    f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
+                ])
             # Keep query budget for evidence-gap searches if first-round coverage is weak.
             plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:3] + candidates))[
                 :MAX_PLAN_QUERIES
