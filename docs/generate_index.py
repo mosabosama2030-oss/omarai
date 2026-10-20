@@ -349,6 +349,7 @@ def discover_repository_files(root: Path) -> list[Path]:
             name
             for name in directory_names
             if name not in EXCLUDED_DIRECTORIES
+            and not name.lower().endswith((".egg-info", ".dist-info"))
             and not (Path(current_directory) / name).is_symlink()
         )
         for file_name in sorted(file_names):
