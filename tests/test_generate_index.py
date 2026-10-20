@@ -265,7 +265,11 @@ def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path)
     source_lines = INDEXER.scan_source_lines(tmp_path, inventory)
     findings = INDEXER.scan_finding_annotations(source_lines)
     line_by_file_and_number = {(line.file, line.line): line for line in source_lines}
-    lines_markdown = INDEXER.render_source_lines_markdown(source_lines, inventory, findings)
+    pages, pages_by_file = INDEXER.render_source_line_pages(source_lines, inventory, findings)
+    lines_markdown = INDEXER.render_source_lines_markdown(
+        source_lines, inventory, findings, pages_by_file, pages
+    )
+    all_page_content = "\n".join(pages.values())
 
     assert ("app.py", 1) in line_by_file_and_number
     assert ("app.py", 2) in line_by_file_and_number
@@ -277,8 +281,10 @@ def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path)
     assert line_by_file_and_number[("app.py", 1)].category == "ملفات أخرى"
     assert "PRIVATE_TOKEN" not in lines_markdown
     assert "payload.bin" not in {line.file for line in source_lines}
-    assert "Second documented step." in lines_markdown
-    assert "SRC-" in lines_markdown
+    assert "Second documented step." in all_page_content
+    assert "SRC-" in all_page_content
+    assert "SOURCE_LINES_001" in lines_markdown
+    assert pages_by_file["app.py"]
 
 
 def test_explicit_review_markers_have_unique_codes_and_source_line_links(
