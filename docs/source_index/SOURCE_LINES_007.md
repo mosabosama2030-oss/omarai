@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003125 إلى SRC-1AE03B9EC3-L003924
+- النطاق: SRC-1AE03B9EC3-L003124 إلى SRC-1AE03B9EC3-L003923
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003124](../../agents/web_agent.py#L3124) | 3124 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L003125](../../agents/web_agent.py#L3125) | 3125 | `"                providers: dict[str, int] = {}"` | — |
 | [SRC-1AE03B9EC3-L003126](../../agents/web_agent.py#L3126) | 3126 | `"                for source in social_results:"` | — |
 | [SRC-1AE03B9EC3-L003127](../../agents/web_agent.py#L3127) | 3127 | `"                    provider = str(source.get(\"provider\") or \"unknown\")"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003921](../../agents/web_agent.py#L3921) | 3921 | `"            elif search_outcome == \"attempted_research_error\":"` | — |
 | [SRC-1AE03B9EC3-L003922](../../agents/web_agent.py#L3922) | 3922 | `"                reason = ("` | — |
 | [SRC-1AE03B9EC3-L003923](../../agents/web_agent.py#L3923) | 3923 | `"                    \"توجد قرائن تشغيلية على بدء محاولة بحث، لكن مسار البحث فشل قبل إنتاج \""` | — |
-| [SRC-1AE03B9EC3-L003924](../../agents/web_agent.py#L3924) | 3924 | `"                    \"تقرير مكتمل. لا أستطيع تحديد عدد النتائج أو المصادر القابلة للاستخدام، \""` | — |

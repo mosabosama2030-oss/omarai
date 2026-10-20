@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000432 إلى SRC-E599346ABE-L000301
+- النطاق: SRC-EEF2E6447C-L000431 إلى SRC-E599346ABE-L000300
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000431](../../api/omarai.py#L431) | 431 | `"                    )"` | — |
 | [SRC-EEF2E6447C-L000432](../../api/omarai.py#L432) | 432 | `"                return self._run_bounded_agent_operation("` | — |
 | [SRC-EEF2E6447C-L000433](../../api/omarai.py#L433) | 433 | `"                    lambda: agent.answer(question, history, data.get(\"mode\"))"` | — |
 | [SRC-EEF2E6447C-L000434](../../api/omarai.py#L434) | 434 | `"                )"` | — |
@@ -887,4 +888,3 @@
 | [SRC-E599346ABE-L000298](../generate_index.py#L298) | 298 | `"        return True"` | — |
 | [SRC-E599346ABE-L000299](../generate_index.py#L299) | 299 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
 | [SRC-E599346ABE-L000300](../generate_index.py#L300) | 300 | `"        return True"` | — |
-| [SRC-E599346ABE-L000301](../generate_index.py#L301) | 301 | `"    return path.suffix.lower() in EXCLUDED_SUFFIXES"` | — |

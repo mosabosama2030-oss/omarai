@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003925 إلى SRC-EEF2E6447C-L000431
+- النطاق: SRC-1AE03B9EC3-L003924 إلى SRC-EEF2E6447C-L000430
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003924](../../agents/web_agent.py#L3924) | 3924 | `"                    \"تقرير مكتمل. لا أستطيع تحديد عدد النتائج أو المصادر القابلة للاستخدام، \""` | — |
 | [SRC-1AE03B9EC3-L003925](../../agents/web_agent.py#L3925) | 3925 | `"                    \"لذلك لن أخمّن. أعد المحاولة لاحقًا.\""` | — |
 | [SRC-1AE03B9EC3-L003926](../../agents/web_agent.py#L3926) | 3926 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L003927](../../agents/web_agent.py#L3927) | 3927 | `"            elif search_outcome == \"attempted_no_usable_sources\":"` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000428](../../api/omarai.py#L428) | 428 | `"                if \"mode\" not in data:"` | — |
 | [SRC-EEF2E6447C-L000429](../../api/omarai.py#L429) | 429 | `"                    return self._run_bounded_agent_operation("` | — |
 | [SRC-EEF2E6447C-L000430](../../api/omarai.py#L430) | 430 | `"                        lambda: agent.answer(question, history)"` | — |
-| [SRC-EEF2E6447C-L000431](../../api/omarai.py#L431) | 431 | `"                    )"` | — |

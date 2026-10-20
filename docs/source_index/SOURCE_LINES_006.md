@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002325 إلى SRC-1AE03B9EC3-L003124
+- النطاق: SRC-1AE03B9EC3-L002324 إلى SRC-1AE03B9EC3-L003123
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002324](../../agents/web_agent.py#L2324) | 2324 | `"            \"سعره كام\", \"قارنهم\", \"قارن بينهم\", \"قارن بينهما\","` | — |
 | [SRC-1AE03B9EC3-L002325](../../agents/web_agent.py#L2325) | 2325 | `"            \"and the price\", \"what about\", \"how about\", \"and also\","` | — |
 | [SRC-1AE03B9EC3-L002326](../../agents/web_agent.py#L2326) | 2326 | `"            \"how much is it\", \"what is its price\", \"compare them\", \"is it good\","` | — |
 | [SRC-1AE03B9EC3-L002327](../../agents/web_agent.py#L2327) | 2327 | `"        )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003121](../../agents/web_agent.py#L3121) | 3121 | `"            try:"` | — |
 | [SRC-1AE03B9EC3-L003122](../../agents/web_agent.py#L3122) | 3122 | `"                social_results, social_warnings = self._search_social("` | — |
 | [SRC-1AE03B9EC3-L003123](../../agents/web_agent.py#L3123) | 3123 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
-| [SRC-1AE03B9EC3-L003124](../../agents/web_agent.py#L3124) | 3124 | `"                )"` | — |

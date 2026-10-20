@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000601 إلى SRC-1AE03B9EC3-L000724
+- النطاق: SRC-59CF4B7DE8-L000600 إلى SRC-1AE03B9EC3-L000723
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000600](../../agents/research.py#L600) | 600 | `"    if score >= 18:"` | — |
 | [SRC-59CF4B7DE8-L000601](../../agents/research.py#L601) | 601 | `"        return {\"accepted\": True, \"score\": score, \"reason\": \"accepted\"}"` | — |
 | [SRC-59CF4B7DE8-L000602](../../agents/research.py#L602) | 602 | `"    return {\"accepted\": False, \"score\": score, \"reason\": \"low_overlap\"}"` | — |
 | [SRC-59CF4B7DE8-L000603](../../agents/research.py#L603) | 603 | `""` | — |
@@ -824,4 +825,3 @@
 | [SRC-1AE03B9EC3-L000721](../../agents/web_agent.py#L721) | 721 | `"            return True"` | — |
 | [SRC-1AE03B9EC3-L000722](../../agents/web_agent.py#L722) | 722 | `"        value = _normalize_search_query(question).casefold()"` | — |
 | [SRC-1AE03B9EC3-L000723](../../agents/web_agent.py#L723) | 723 | `"        dynamic_terms = ("` | — |
-| [SRC-1AE03B9EC3-L000724](../../agents/web_agent.py#L724) | 724 | `"            \"ابحث\", \"بحث عن\", \"دور على\", \"دورلي\", \"هات رابط\", \"هاتلي\","` | — |

@@ -10,15 +10,16 @@
 
 - ملفات المستودع في الجرد: **68**
 - ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **817**
-- تعريفات Python موثقة بوجود Docstring: **156**
+- تعريفات Python المفهرسة: **820**
+- تعريفات Python موثقة بوجود Docstring: **159**
 - تعريفات Python بلا Docstring: **497**
 - تعريفات لا ينطبق عليها Docstring: **164**
-- الرموز الساكنة الإضافية: **1236**
-- الأسطر النصية المفهرسة حرفيًا: **20948**
-- وسوم المراجعة/الإصلاح المسجلة: **14**
+- الرموز الساكنة الإضافية: **1241**
+- الأسطر النصية المفهرسة حرفيًا: **21126**
+- وسوم المراجعة/الإصلاح المسجلة: **15**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
+- تدقيق التغطية والاستثناءات: [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md)
 - كل سجل سطر يحمل معرّفًا من الشكل SRC-<FILEHASH>-L000001.
 
 ## جرد ملفات المستودع
@@ -31,7 +32,7 @@
 | FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1193 | 26 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1622 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 3870 | 98 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4902 | 104 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4970 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 9297 | 69 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
@@ -49,7 +50,7 @@
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 8689 | 88 | جرد الملف + عناوين Markdown |
-| FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 61963 | 1533 | جرد الملف + AST Python |
+| FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 68631 | 1653 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 4013 | 35 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 8675 | 47 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
@@ -65,7 +66,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 21051 | 179 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 21666 | 182 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 8627 | 190 | جرد الملف + AST Python |
@@ -79,7 +80,7 @@
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
-| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 14256 | 334 | جرد الملف + AST Python |
+| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 16971 | 388 | جرد الملف + AST Python |
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 21784 | 586 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 9324 | 255 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 6541 | 174 | جرد الملف + AST Python |
@@ -409,29 +410,30 @@
 | [docs/generate_index.py](generate_index.py#L436) | دالة | _indexing_scope | Describe precisely whether a file receives symbol extraction or path inventory only. | موثق | 436 | [SRC-E599346ABE-L000436](generate_index.py#L436) |
 | [docs/generate_index.py](generate_index.py#L462) | دالة | build_file_inventory | Inventory repository files and record whether static symbol scanning was possible. | موثق | 462 | [SRC-E599346ABE-L000462](generate_index.py#L462) |
 | [docs/generate_index.py](generate_index.py#L481) | دالة | discover_excluded_paths | List excluded path names and reasons without opening excluded file contents. | موثق | 481 | [SRC-E599346ABE-L000481](generate_index.py#L481) |
-| [docs/generate_index.py](generate_index.py#L524) | دالة | _text_index_skip_reason | Return a concrete safe reason when a file could not be line-indexed. | موثق | 524 | [SRC-E599346ABE-L000524](generate_index.py#L524) |
-| [docs/generate_index.py](generate_index.py#L541) | دالة | validate_source_line_coverage | Fail generation if any eligible text line is missing, duplicated, or misnumbered. | موثق | 541 | [SRC-E599346ABE-L000541](generate_index.py#L541) |
-| [docs/generate_index.py](generate_index.py#L580) | دالة | discover_python_files | Return sorted Python files from the eligible repository inventory. | موثق | 580 | [SRC-E599346ABE-L000580](generate_index.py#L580) |
-| [docs/generate_index.py](generate_index.py#L590) | دالة | scan_repository | Parse every eligible Python file or fail without producing a partial index. | موثق | 590 | [SRC-E599346ABE-L000590](generate_index.py#L590) |
-| [docs/generate_index.py](generate_index.py#L632) | دالة | _line_at | Return a 1-based line number for a match in the supplied source fragment. | موثق | 632 | [SRC-E599346ABE-L000632](generate_index.py#L632) |
-| [docs/generate_index.py](generate_index.py#L637) | دالة | _add_marker | Add the first occurrence of a symbol category within one file. | موثق | 637 | [SRC-E599346ABE-L000637](generate_index.py#L637) |
-| [docs/generate_index.py](generate_index.py#L663) | دالة | _scan_javascript | Extract navigational JS/TS declarations using bounded regular-expression heuristics. | موثق | 663 | [SRC-E599346ABE-L000663](generate_index.py#L663) |
-| [docs/generate_index.py](generate_index.py#L715) | دالة | _scan_css | Extract CSS class/id selectors and custom properties; this is not a full CSS parser. | موثق | 715 | [SRC-E599346ABE-L000715](generate_index.py#L715) |
-| [docs/generate_index.py](generate_index.py#L744) | دالة | _scan_html | Extract HTML navigation attributes plus embedded JS and CSS declarations. | موثق | 744 | [SRC-E599346ABE-L000744](generate_index.py#L744) |
-| [docs/generate_index.py](generate_index.py#L774) | دالة | _scan_config_keys | Extract configuration keys/sections without evaluating or loading configuration. | موثق | 774 | [SRC-E599346ABE-L000774](generate_index.py#L774) |
-| [docs/generate_index.py](generate_index.py#L810) | دالة | scan_static_symbols | Extract supplementary navigational symbols from frontend, docs, config and scripts. | موثق | 810 | [SRC-E599346ABE-L000810](generate_index.py#L810) |
-| [docs/generate_index.py](generate_index.py#L897) | دالة | _source_file_href | Return a relative source link from a generated index page to the original file. | موثق | 897 | [SRC-E599346ABE-L000897](generate_index.py#L897) |
-| [docs/generate_index.py](generate_index.py#L908) | دالة | _source_line_id | Return a consistent line code wherever a symbol, finding, or source line is shown. | موثق | 908 | [SRC-E599346ABE-L000908](generate_index.py#L908) |
-| [docs/generate_index.py](generate_index.py#L914) | دالة | _markdown_cell | Normalize text and escape Markdown table delimiters. | موثق | 914 | [SRC-E599346ABE-L000914](generate_index.py#L914) |
-| [docs/generate_index.py](generate_index.py#L921) | دالة | scan_source_lines | Index every logical line of each eligible text file readable within the size bound. | موثق | 921 | [SRC-E599346ABE-L000921](generate_index.py#L921) |
-| [docs/generate_index.py](generate_index.py#L943) | دالة | scan_finding_annotations | Index explicit review/fix markers; they are hints for review, not proven defects. | موثق | 943 | [SRC-E599346ABE-L000943](generate_index.py#L943) |
-| [docs/generate_index.py](generate_index.py#L969) | دالة | _markdown_code_span | Render a Markdown inline-code span safely, including backticks in source text. | موثق | 969 | [SRC-E599346ABE-L000969](generate_index.py#L969) |
-| [docs/generate_index.py](generate_index.py#L981) | دالة | render_source_line_pages | Split line-level records into deterministic small pages and map each file to its pages. | موثق | 981 | [SRC-E599346ABE-L000981](generate_index.py#L981) |
-| [docs/generate_index.py](generate_index.py#L1057) | دالة | render_source_lines_markdown | Render a compact table of contents for the sharded full source-line index. | موثق | 1057 | [SRC-E599346ABE-L001057](generate_index.py#L1057) |
-| [docs/generate_index.py](generate_index.py#L1150) | دالة | render_markdown | Render the repository file, symbol, explicit-review-marker, and line-index overview. | موثق | 1150 | [SRC-E599346ABE-L001150](generate_index.py#L1150) |
-| [docs/generate_index.py](generate_index.py#L1343) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1343 | [SRC-E599346ABE-L001343](generate_index.py#L1343) |
-| [docs/generate_index.py](generate_index.py#L1372) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1372 | [SRC-E599346ABE-L001372](generate_index.py#L1372) |
-| [docs/generate_index.py](generate_index.py#L1404) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1404 | [SRC-E599346ABE-L001404](generate_index.py#L1404) |
+| [docs/generate_index.py](generate_index.py#L540) | دالة | _text_index_skip_reason | Return a concrete safe reason when a file could not be line-indexed. | موثق | 540 | [SRC-E599346ABE-L000540](generate_index.py#L540) |
+| [docs/generate_index.py](generate_index.py#L557) | دالة | validate_source_line_coverage | Fail generation if any eligible text line is missing, duplicated, or misnumbered. | موثق | 557 | [SRC-E599346ABE-L000557](generate_index.py#L557) |
+| [docs/generate_index.py](generate_index.py#L596) | دالة | discover_python_files | Return sorted Python files from the eligible repository inventory. | موثق | 596 | [SRC-E599346ABE-L000596](generate_index.py#L596) |
+| [docs/generate_index.py](generate_index.py#L606) | دالة | scan_repository | Parse every eligible Python file or fail without producing a partial index. | موثق | 606 | [SRC-E599346ABE-L000606](generate_index.py#L606) |
+| [docs/generate_index.py](generate_index.py#L648) | دالة | _line_at | Return a 1-based line number for a match in the supplied source fragment. | موثق | 648 | [SRC-E599346ABE-L000648](generate_index.py#L648) |
+| [docs/generate_index.py](generate_index.py#L653) | دالة | _add_marker | Add the first occurrence of a symbol category within one file. | موثق | 653 | [SRC-E599346ABE-L000653](generate_index.py#L653) |
+| [docs/generate_index.py](generate_index.py#L679) | دالة | _scan_javascript | Extract navigational JS/TS declarations using bounded regular-expression heuristics. | موثق | 679 | [SRC-E599346ABE-L000679](generate_index.py#L679) |
+| [docs/generate_index.py](generate_index.py#L731) | دالة | _scan_css | Extract CSS class/id selectors and custom properties; this is not a full CSS parser. | موثق | 731 | [SRC-E599346ABE-L000731](generate_index.py#L731) |
+| [docs/generate_index.py](generate_index.py#L760) | دالة | _scan_html | Extract HTML navigation attributes plus embedded JS and CSS declarations. | موثق | 760 | [SRC-E599346ABE-L000760](generate_index.py#L760) |
+| [docs/generate_index.py](generate_index.py#L790) | دالة | _scan_config_keys | Extract configuration keys/sections without evaluating or loading configuration. | موثق | 790 | [SRC-E599346ABE-L000790](generate_index.py#L790) |
+| [docs/generate_index.py](generate_index.py#L826) | دالة | scan_static_symbols | Extract supplementary navigational symbols from frontend, docs, config and scripts. | موثق | 826 | [SRC-E599346ABE-L000826](generate_index.py#L826) |
+| [docs/generate_index.py](generate_index.py#L913) | دالة | _source_file_href | Return a relative source link from a generated index page to the original file. | موثق | 913 | [SRC-E599346ABE-L000913](generate_index.py#L913) |
+| [docs/generate_index.py](generate_index.py#L924) | دالة | _source_line_id | Return a consistent line code wherever a symbol, finding, or source line is shown. | موثق | 924 | [SRC-E599346ABE-L000924](generate_index.py#L924) |
+| [docs/generate_index.py](generate_index.py#L930) | دالة | _markdown_cell | Normalize text and escape Markdown table delimiters. | موثق | 930 | [SRC-E599346ABE-L000930](generate_index.py#L930) |
+| [docs/generate_index.py](generate_index.py#L937) | دالة | scan_source_lines | Index every logical line of each eligible text file readable within the size bound. | موثق | 937 | [SRC-E599346ABE-L000937](generate_index.py#L937) |
+| [docs/generate_index.py](generate_index.py#L959) | دالة | scan_finding_annotations | Index explicit review/fix markers; they are hints for review, not proven defects. | موثق | 959 | [SRC-E599346ABE-L000959](generate_index.py#L959) |
+| [docs/generate_index.py](generate_index.py#L985) | دالة | _markdown_code_span | Render a Markdown inline-code span safely, including backticks in source text. | موثق | 985 | [SRC-E599346ABE-L000985](generate_index.py#L985) |
+| [docs/generate_index.py](generate_index.py#L997) | دالة | render_source_line_pages | Split line-level records into deterministic small pages and map each file to its pages. | موثق | 997 | [SRC-E599346ABE-L000997](generate_index.py#L997) |
+| [docs/generate_index.py](generate_index.py#L1073) | دالة | render_source_lines_markdown | Render a compact table of contents for the sharded full source-line index. | موثق | 1073 | [SRC-E599346ABE-L001073](generate_index.py#L1073) |
+| [docs/generate_index.py](generate_index.py#L1167) | دالة | render_coverage_audit_markdown | Render a generated coverage ledger with exact line-index coverage and exclusions. | موثق | 1167 | [SRC-E599346ABE-L001167](generate_index.py#L1167) |
+| [docs/generate_index.py](generate_index.py#L1259) | دالة | render_markdown | Render the repository file, symbol, explicit-review-marker, and line-index overview. | موثق | 1259 | [SRC-E599346ABE-L001259](generate_index.py#L1259) |
+| [docs/generate_index.py](generate_index.py#L1453) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1453 | [SRC-E599346ABE-L001453](generate_index.py#L1453) |
+| [docs/generate_index.py](generate_index.py#L1482) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1482 | [SRC-E599346ABE-L001482](generate_index.py#L1482) |
+| [docs/generate_index.py](generate_index.py#L1520) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1520 | [SRC-E599346ABE-L001520](generate_index.py#L1520) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L15) | كلاس | SmokeError | A live acceptance check failed. | موثق | 15 | [SRC-A8360B1B03-L000015](../scripts/hosted_smoke_test.py#L15) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L19) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 19 | [SRC-A8360B1B03-L000019](../scripts/hosted_smoke_test.py#L19) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L23) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 23 | [SRC-A8360B1B03-L000023](../scripts/hosted_smoke_test.py#L23) |
@@ -590,20 +592,22 @@
 | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L8) | دالة | test_evidence_signal_report_uses_domain_provider_page_and_date_coverage | لا توجد Docstring. | ناقص | 8 | [SRC-8455F405B6-L000008](../tests/test_evidence_signals.py#L8) |
 | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L42) | دالة | test_evidence_signal_report_warns_when_no_sources_are_available | لا توجد Docstring. | ناقص | 42 | [SRC-8455F405B6-L000042](../tests/test_evidence_signals.py#L42) |
 | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L50) | دالة | test_publication_date_parser_handles_iso_rfc822_and_relative_dates | لا توجد Docstring. | ناقص | 50 | [SRC-8455F405B6-L000050](../tests/test_evidence_signals.py#L50) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L8) | متغير/ثابت Python | INDEXER_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-FA4E1423C3-L000008](../tests/test_generate_index.py#L8) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L9) | متغير/ثابت Python | INDEXER_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-FA4E1423C3-L000009](../tests/test_generate_index.py#L9) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L15) | متغير/ثابت Python | INDEXER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-FA4E1423C3-L000015](../tests/test_generate_index.py#L15) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L20) | دالة | test_indexes_functions_classes_methods_and_docstring_status | The Python AST index includes qualified names and documentation state. | موثق | 20 | [SRC-FA4E1423C3-L000020](../tests/test_generate_index.py#L20) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L59) | دالة | test_indexes_module_and_class_assignments_but_not_function_locals | Module/class attributes are searchable without flooding the index with locals. | موثق | 59 | [SRC-FA4E1423C3-L000059](../tests/test_generate_index.py#L59) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L82) | دالة | test_indexes_frontend_ids_javascript_symbols_css_and_documentation_headings | Frontend declarations and Markdown headings remain navigable without language parsers. | موثق | 82 | [SRC-FA4E1423C3-L000082](../tests/test_generate_index.py#L82) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L133) | دالة | test_repository_inventory_covers_files_and_excludes_private_runtime_paths | The file inventory includes docs/config and excludes known local secret/runtime files. | موثق | 133 | [SRC-FA4E1423C3-L000133](../tests/test_generate_index.py#L133) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L161) | دالة | test_skips_virtual_environments_and_generated_dependency_directories | The scan avoids vendored dependencies, build outputs, and virtual environments. | موثق | 161 | [SRC-FA4E1423C3-L000161](../tests/test_generate_index.py#L161) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L189) | دالة | test_syntax_error_does_not_overwrite_the_previous_index | A failed parse leaves the prior index intact rather than publishing partial data. | موثق | 189 | [SRC-FA4E1423C3-L000189](../tests/test_generate_index.py#L189) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L210) | دالة | test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_index | An unchanged scan produces identical Markdown and avoids an unnecessary write. | موثق | 210 | [SRC-FA4E1423C3-L000210](../tests/test_generate_index.py#L210) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L236) | دالة | test_check_mode_detects_stale_index_without_modifying_it | Check mode fails on a stale index and leaves the existing file untouched. | موثق | 236 | [SRC-FA4E1423C3-L000236](../tests/test_generate_index.py#L236) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L252) | دالة | test_indexes_every_eligible_text_line_with_file_and_line_ids | All readable text lines, including blank lines and unfamiliar extensions, are searchable. | موثق | 252 | [SRC-FA4E1423C3-L000252](../tests/test_generate_index.py#L252) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L295) | دالة | test_explicit_review_markers_have_unique_codes_and_source_line_links | TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines. | موثق | 295 | [SRC-FA4E1423C3-L000295](../tests/test_generate_index.py#L295) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L320) | دالة | test_check_mode_validates_both_generated_indexes | Check mode detects a missing or stale line index as well as a stale master index. | موثق | 320 | [SRC-FA4E1423C3-L000320](../tests/test_generate_index.py#L320) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L10) | متغير/ثابت Python | INDEXER_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-FA4E1423C3-L000010](../tests/test_generate_index.py#L10) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L11) | متغير/ثابت Python | INDEXER_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-FA4E1423C3-L000011](../tests/test_generate_index.py#L11) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L17) | متغير/ثابت Python | INDEXER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-FA4E1423C3-L000017](../tests/test_generate_index.py#L17) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L22) | دالة | test_indexes_functions_classes_methods_and_docstring_status | The Python AST index includes qualified names and documentation state. | موثق | 22 | [SRC-FA4E1423C3-L000022](../tests/test_generate_index.py#L22) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L61) | دالة | test_indexes_module_and_class_assignments_but_not_function_locals | Module/class attributes are searchable without flooding the index with locals. | موثق | 61 | [SRC-FA4E1423C3-L000061](../tests/test_generate_index.py#L61) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L84) | دالة | test_indexes_frontend_ids_javascript_symbols_css_and_documentation_headings | Frontend declarations and Markdown headings remain navigable without language parsers. | موثق | 84 | [SRC-FA4E1423C3-L000084](../tests/test_generate_index.py#L84) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L135) | دالة | test_repository_inventory_covers_files_and_excludes_private_runtime_paths | The file inventory includes docs/config and excludes known local secret/runtime files. | موثق | 135 | [SRC-FA4E1423C3-L000135](../tests/test_generate_index.py#L135) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L163) | دالة | test_skips_virtual_environments_and_generated_dependency_directories | The scan avoids vendored dependencies, build outputs, and virtual environments. | موثق | 163 | [SRC-FA4E1423C3-L000163](../tests/test_generate_index.py#L163) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L191) | دالة | test_syntax_error_does_not_overwrite_the_previous_index | A failed parse leaves the prior index intact rather than publishing partial data. | موثق | 191 | [SRC-FA4E1423C3-L000191](../tests/test_generate_index.py#L191) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L212) | دالة | test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_index | An unchanged scan produces identical Markdown and avoids an unnecessary write. | موثق | 212 | [SRC-FA4E1423C3-L000212](../tests/test_generate_index.py#L212) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L238) | دالة | test_check_mode_detects_stale_index_without_modifying_it | Check mode fails on a stale index and leaves the existing file untouched. | موثق | 238 | [SRC-FA4E1423C3-L000238](../tests/test_generate_index.py#L238) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L254) | دالة | test_indexes_every_eligible_text_line_with_file_and_line_ids | All readable text lines, including blank lines and unfamiliar extensions, are searchable. | موثق | 254 | [SRC-FA4E1423C3-L000254](../tests/test_generate_index.py#L254) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L297) | دالة | test_explicit_review_markers_have_unique_codes_and_source_line_links | TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines. | موثق | 297 | [SRC-FA4E1423C3-L000297](../tests/test_generate_index.py#L297) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L322) | دالة | test_check_mode_validates_all_generated_indexes | Check mode detects stale master, line, and coverage indexes. | موثق | 322 | [SRC-FA4E1423C3-L000322](../tests/test_generate_index.py#L322) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L350) | دالة | test_source_line_coverage_validator_rejects_missing_or_duplicate_lines | A gap or duplicate in line IDs prevents the generator from claiming full coverage. | موثق | 350 | [SRC-FA4E1423C3-L000350](../tests/test_generate_index.py#L350) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L364) | دالة | test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secrets | Coverage report states exact skipped-file reasons without exposing secret contents. | موثق | 364 | [SRC-FA4E1423C3-L000364](../tests/test_generate_index.py#L364) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L11) | كلاس | FakeCompletionResponse | لا توجد Docstring. | ناقص | 11 | [SRC-829A979985-L000011](../tests/test_generation_acceptance_matrix.py#L11) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L12) | دالة | FakeCompletionResponse.__init__ | لا توجد Docstring. | ناقص | 12 | [SRC-829A979985-L000012](../tests/test_generation_acceptance_matrix.py#L12) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L24) | دالة | FakeCompletionResponse.__enter__ | لا توجد Docstring. | ناقص | 24 | [SRC-829A979985-L000024](../tests/test_generation_acceptance_matrix.py#L24) |
@@ -992,29 +996,30 @@
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L6) | مفتاح إعداد YAML | paths-ignore | 6 | [SRC-84F7DE82AF-L000006](../.github/workflows/update_index.yml#L6) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 7 | [SRC-84F7DE82AF-L000007](../.github/workflows/update_index.yml#L7) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 8 | [SRC-84F7DE82AF-L000008](../.github/workflows/update_index.yml#L8) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L10) | مفتاح إعداد YAML | workflow_dispatch | 10 | [SRC-84F7DE82AF-L000010](../.github/workflows/update_index.yml#L10) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L11) | مفتاح إعداد YAML | permissions | 11 | [SRC-84F7DE82AF-L000011](../.github/workflows/update_index.yml#L11) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L13) | مفتاح إعداد YAML | contents | 13 | [SRC-84F7DE82AF-L000013](../.github/workflows/update_index.yml#L13) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L14) | مفتاح إعداد YAML | pull-requests | 14 | [SRC-84F7DE82AF-L000014](../.github/workflows/update_index.yml#L14) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L17) | مفتاح إعداد YAML | concurrency | 17 | [SRC-84F7DE82AF-L000017](../.github/workflows/update_index.yml#L17) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L18) | مفتاح إعداد YAML | group | 18 | [SRC-84F7DE82AF-L000018](../.github/workflows/update_index.yml#L18) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L19) | مفتاح إعداد YAML | cancel-in-progress | 19 | [SRC-84F7DE82AF-L000019](../.github/workflows/update_index.yml#L19) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L20) | مفتاح إعداد YAML | jobs | 20 | [SRC-84F7DE82AF-L000020](../.github/workflows/update_index.yml#L20) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L22) | مفتاح إعداد YAML | refresh-index | 22 | [SRC-84F7DE82AF-L000022](../.github/workflows/update_index.yml#L22) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L24) | مفتاح إعداد YAML | runs-on | 24 | [SRC-84F7DE82AF-L000024](../.github/workflows/update_index.yml#L24) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L25) | مفتاح إعداد YAML | steps | 25 | [SRC-84F7DE82AF-L000025](../.github/workflows/update_index.yml#L25) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L27) | مفتاح إعداد YAML | uses | 27 | [SRC-84F7DE82AF-L000027](../.github/workflows/update_index.yml#L27) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L30) | مفتاح إعداد YAML | shell | 30 | [SRC-84F7DE82AF-L000030](../.github/workflows/update_index.yml#L30) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L31) | مفتاح إعداد YAML | env | 31 | [SRC-84F7DE82AF-L000031](../.github/workflows/update_index.yml#L31) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRANCH_NAME | 32 | [SRC-84F7DE82AF-L000032](../.github/workflows/update_index.yml#L32) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L32) | مفتاح إعداد YAML | BRANCH_NAME | 32 | [SRC-84F7DE82AF-L000032](../.github/workflows/update_index.yml#L32) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L33) | مفتاح إعداد YAML | run | 33 | [SRC-84F7DE82AF-L000033](../.github/workflows/update_index.yml#L33) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L40) | مفتاح إعداد YAML | with | 40 | [SRC-84F7DE82AF-L000040](../.github/workflows/update_index.yml#L40) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L41) | مفتاح إعداد YAML | python-version | 41 | [SRC-84F7DE82AF-L000041](../.github/workflows/update_index.yml#L41) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GH_TOKEN | 52 | [SRC-84F7DE82AF-L000052](../.github/workflows/update_index.yml#L52) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_TOKEN | 52 | [SRC-84F7DE82AF-L000052](../.github/workflows/update_index.yml#L52) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L52) | مفتاح إعداد YAML | GH_TOKEN | 52 | [SRC-84F7DE82AF-L000052](../.github/workflows/update_index.yml#L52) |
-| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_RUN_ID | 83 | [SRC-84F7DE82AF-L000083](../.github/workflows/update_index.yml#L83) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 9 | [SRC-84F7DE82AF-L000009](../.github/workflows/update_index.yml#L9) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L11) | مفتاح إعداد YAML | workflow_dispatch | 11 | [SRC-84F7DE82AF-L000011](../.github/workflows/update_index.yml#L11) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L12) | مفتاح إعداد YAML | permissions | 12 | [SRC-84F7DE82AF-L000012](../.github/workflows/update_index.yml#L12) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L14) | مفتاح إعداد YAML | contents | 14 | [SRC-84F7DE82AF-L000014](../.github/workflows/update_index.yml#L14) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L15) | مفتاح إعداد YAML | pull-requests | 15 | [SRC-84F7DE82AF-L000015](../.github/workflows/update_index.yml#L15) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L18) | مفتاح إعداد YAML | concurrency | 18 | [SRC-84F7DE82AF-L000018](../.github/workflows/update_index.yml#L18) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L19) | مفتاح إعداد YAML | group | 19 | [SRC-84F7DE82AF-L000019](../.github/workflows/update_index.yml#L19) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L20) | مفتاح إعداد YAML | cancel-in-progress | 20 | [SRC-84F7DE82AF-L000020](../.github/workflows/update_index.yml#L20) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L21) | مفتاح إعداد YAML | jobs | 21 | [SRC-84F7DE82AF-L000021](../.github/workflows/update_index.yml#L21) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L23) | مفتاح إعداد YAML | refresh-index | 23 | [SRC-84F7DE82AF-L000023](../.github/workflows/update_index.yml#L23) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L25) | مفتاح إعداد YAML | runs-on | 25 | [SRC-84F7DE82AF-L000025](../.github/workflows/update_index.yml#L25) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L26) | مفتاح إعداد YAML | steps | 26 | [SRC-84F7DE82AF-L000026](../.github/workflows/update_index.yml#L26) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L28) | مفتاح إعداد YAML | uses | 28 | [SRC-84F7DE82AF-L000028](../.github/workflows/update_index.yml#L28) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L31) | مفتاح إعداد YAML | shell | 31 | [SRC-84F7DE82AF-L000031](../.github/workflows/update_index.yml#L31) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L32) | مفتاح إعداد YAML | env | 32 | [SRC-84F7DE82AF-L000032](../.github/workflows/update_index.yml#L32) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRANCH_NAME | 33 | [SRC-84F7DE82AF-L000033](../.github/workflows/update_index.yml#L33) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L33) | مفتاح إعداد YAML | BRANCH_NAME | 33 | [SRC-84F7DE82AF-L000033](../.github/workflows/update_index.yml#L33) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L34) | مفتاح إعداد YAML | run | 34 | [SRC-84F7DE82AF-L000034](../.github/workflows/update_index.yml#L34) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L41) | مفتاح إعداد YAML | with | 41 | [SRC-84F7DE82AF-L000041](../.github/workflows/update_index.yml#L41) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L42) | مفتاح إعداد YAML | python-version | 42 | [SRC-84F7DE82AF-L000042](../.github/workflows/update_index.yml#L42) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GH_TOKEN | 53 | [SRC-84F7DE82AF-L000053](../.github/workflows/update_index.yml#L53) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_TOKEN | 53 | [SRC-84F7DE82AF-L000053](../.github/workflows/update_index.yml#L53) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L53) | مفتاح إعداد YAML | GH_TOKEN | 53 | [SRC-84F7DE82AF-L000053](../.github/workflows/update_index.yml#L53) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_RUN_ID | 84 | [SRC-84F7DE82AF-L000084](../.github/workflows/update_index.yml#L84) |
 | [AGENTS.md](../AGENTS.md#L1) | عنوان Markdown (H1) | Omarai — Mandatory Agent and Contributor Instructions | 1 | [SRC-A54FF182C7-L000001](../AGENTS.md#L1) |
 | [AGENTS.md](../AGENTS.md#L4) | عنوان Markdown (H2) | Source of truth | 4 | [SRC-A54FF182C7-L000004](../AGENTS.md#L4) |
 | [AGENTS.md](../AGENTS.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 6 | [SRC-A54FF182C7-L000006](../AGENTS.md#L6) |
@@ -1218,7 +1223,7 @@
 | [docs/generate_index.py](generate_index.py#L122) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_RE | 122 | [SRC-E599346ABE-L000122](generate_index.py#L122) |
 | [docs/generate_index.py](generate_index.py#L123) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_PATH_RE | 123 | [SRC-E599346ABE-L000123](generate_index.py#L123) |
 | [docs/generate_index.py](generate_index.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FINDING_MARKER_RE | 124 | [SRC-E599346ABE-L000124](generate_index.py#L124) |
-| [docs/generate_index.py](generate_index.py#L871) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 871 | [SRC-E599346ABE-L000871](generate_index.py#L871) |
+| [docs/generate_index.py](generate_index.py#L887) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 887 | [SRC-E599346ABE-L000887](generate_index.py#L887) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | عنوان Markdown (H1) | قائمة قبول Omarai قبل التشغيل العام | 1 | [SRC-6E35221BFA-L000001](GO_LIVE_CHECKLIST_AR.md#L1) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 5 | [SRC-6E35221BFA-L000005](GO_LIVE_CHECKLIST_AR.md#L5) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L6) | عنوان Markdown (H2) | إعداد الاستضافة | 6 | [SRC-6E35221BFA-L000006](GO_LIVE_CHECKLIST_AR.md#L6) |
@@ -1644,48 +1649,49 @@
 | [README.md](../README.md#L27) | عنوان Markdown (H2) | Living repository index | 27 | [SRC-B335630551-L000027](../README.md#L27) |
 | [README.md](../README.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 33 | [SRC-B335630551-L000033](../README.md#L33) |
 | [README.md](../README.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 34 | [SRC-B335630551-L000034](../README.md#L34) |
-| [README.md](../README.md#L47) | عنوان Markdown (H2) | Per-request resource budget | 47 | [SRC-B335630551-L000047](../README.md#L47) |
-| [README.md](../README.md#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 50 | [SRC-B335630551-L000050](../README.md#L50) |
-| [README.md](../README.md#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 50 | [SRC-B335630551-L000050](../README.md#L50) |
-| [README.md](../README.md#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_PAGE_FETCHES | 50 | [SRC-B335630551-L000050](../README.md#L50) |
-| [README.md](../README.md#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 50 | [SRC-B335630551-L000050](../README.md#L50) |
-| [README.md](../README.md#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 50 | [SRC-B335630551-L000050](../README.md#L50) |
-| [README.md](../README.md#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 50 | [SRC-B335630551-L000050](../README.md#L50) |
-| [README.md](../README.md#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 54 | [SRC-B335630551-L000054](../README.md#L54) |
-| [README.md](../README.md#L55) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 55 | [SRC-B335630551-L000055](../README.md#L55) |
-| [README.md](../README.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 59 | [SRC-B335630551-L000059](../README.md#L59) |
-| [README.md](../README.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 63 | [SRC-B335630551-L000063](../README.md#L63) |
-| [README.md](../README.md#L69) | عنوان Markdown (H2) | Hosted deployment | 69 | [SRC-B335630551-L000069](../README.md#L69) |
-| [README.md](../README.md#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 74 | [SRC-B335630551-L000074](../README.md#L74) |
-| [README.md](../README.md#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 74 | [SRC-B335630551-L000074](../README.md#L74) |
-| [README.md](../README.md#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 74 | [SRC-B335630551-L000074](../README.md#L74) |
-| [README.md](../README.md#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 74 | [SRC-B335630551-L000074](../README.md#L74) |
-| [README.md](../README.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 76 | [SRC-B335630551-L000076](../README.md#L76) |
-| [README.md](../README.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 76 | [SRC-B335630551-L000076](../README.md#L76) |
-| [README.md](../README.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 76 | [SRC-B335630551-L000076](../README.md#L76) |
-| [README.md](../README.md#L77) | عنوان Markdown (H2) | Free hosted deployment (SnapDeploy) | 77 | [SRC-B335630551-L000077](../README.md#L77) |
-| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 80 | [SRC-B335630551-L000080](../README.md#L80) |
-| [README.md](../README.md#L83) | عنوان Markdown (H2) | Free hosted deployment (Render) | 83 | [SRC-B335630551-L000083](../README.md#L83) |
-| [README.md](../README.md#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 86 | [SRC-B335630551-L000086](../README.md#L86) |
-| [README.md](../README.md#L89) | عنوان Markdown (H2) | Run on Android / Termux | 89 | [SRC-B335630551-L000089](../README.md#L89) |
-| [README.md](../README.md#L110) | عنوان Markdown (H3) | Optional configuration | 110 | [SRC-B335630551-L000110](../README.md#L110) |
-| [README.md](../README.md#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 116 | [SRC-B335630551-L000116](../README.md#L116) |
-| [README.md](../README.md#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 117 | [SRC-B335630551-L000117](../README.md#L117) |
-| [README.md](../README.md#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 124 | [SRC-B335630551-L000124](../README.md#L124) |
-| [README.md](../README.md#L125) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 125 | [SRC-B335630551-L000125](../README.md#L125) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L132) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 132 | [SRC-B335630551-L000132](../README.md#L132) |
-| [README.md](../README.md#L133) | عنوان Markdown (H2) | API | 133 | [SRC-B335630551-L000133](../README.md#L133) |
-| [README.md](../README.md#L154) | عنوان Markdown (H2) | Existing lead workspace | 154 | [SRC-B335630551-L000154](../README.md#L154) |
-| [README.md](../README.md#L172) | عنوان Markdown (H2) | Checks | 172 | [SRC-B335630551-L000172](../README.md#L172) |
+| [README.md](../README.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 35 | [SRC-B335630551-L000035](../README.md#L35) |
+| [README.md](../README.md#L50) | عنوان Markdown (H2) | Per-request resource budget | 50 | [SRC-B335630551-L000050](../README.md#L50) |
+| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_PAGE_FETCHES | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L57) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 57 | [SRC-B335630551-L000057](../README.md#L57) |
+| [README.md](../README.md#L58) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 58 | [SRC-B335630551-L000058](../README.md#L58) |
+| [README.md](../README.md#L62) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 62 | [SRC-B335630551-L000062](../README.md#L62) |
+| [README.md](../README.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 66 | [SRC-B335630551-L000066](../README.md#L66) |
+| [README.md](../README.md#L72) | عنوان Markdown (H2) | Hosted deployment | 72 | [SRC-B335630551-L000072](../README.md#L72) |
+| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 77 | [SRC-B335630551-L000077](../README.md#L77) |
+| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 77 | [SRC-B335630551-L000077](../README.md#L77) |
+| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 77 | [SRC-B335630551-L000077](../README.md#L77) |
+| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 77 | [SRC-B335630551-L000077](../README.md#L77) |
+| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 79 | [SRC-B335630551-L000079](../README.md#L79) |
+| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 79 | [SRC-B335630551-L000079](../README.md#L79) |
+| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 79 | [SRC-B335630551-L000079](../README.md#L79) |
+| [README.md](../README.md#L80) | عنوان Markdown (H2) | Free hosted deployment (SnapDeploy) | 80 | [SRC-B335630551-L000080](../README.md#L80) |
+| [README.md](../README.md#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 83 | [SRC-B335630551-L000083](../README.md#L83) |
+| [README.md](../README.md#L86) | عنوان Markdown (H2) | Free hosted deployment (Render) | 86 | [SRC-B335630551-L000086](../README.md#L86) |
+| [README.md](../README.md#L89) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 89 | [SRC-B335630551-L000089](../README.md#L89) |
+| [README.md](../README.md#L92) | عنوان Markdown (H2) | Run on Android / Termux | 92 | [SRC-B335630551-L000092](../README.md#L92) |
+| [README.md](../README.md#L113) | عنوان Markdown (H3) | Optional configuration | 113 | [SRC-B335630551-L000113](../README.md#L113) |
+| [README.md](../README.md#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 119 | [SRC-B335630551-L000119](../README.md#L119) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 127 | [SRC-B335630551-L000127](../README.md#L127) |
+| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 128 | [SRC-B335630551-L000128](../README.md#L128) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L135) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 135 | [SRC-B335630551-L000135](../README.md#L135) |
+| [README.md](../README.md#L136) | عنوان Markdown (H2) | API | 136 | [SRC-B335630551-L000136](../README.md#L136) |
+| [README.md](../README.md#L157) | عنوان Markdown (H2) | Existing lead workspace | 157 | [SRC-B335630551-L000157](../README.md#L157) |
+| [README.md](../README.md#L175) | عنوان Markdown (H2) | Checks | 175 | [SRC-B335630551-L000175](../README.md#L175) |
 | [render.yaml](../render.yaml#L1) | مفتاح إعداد YAML | services | 1 | [SRC-A64CF250B4-L000001](../render.yaml#L1) |
 | [render.yaml](../render.yaml#L3) | مفتاح إعداد YAML | name | 3 | [SRC-A64CF250B4-L000003](../render.yaml#L3) |
 | [render.yaml](../render.yaml#L4) | مفتاح إعداد YAML | runtime | 4 | [SRC-A64CF250B4-L000004](../render.yaml#L4) |
@@ -1797,19 +1803,22 @@
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 13 | [SRC-6BCB799CEC-L000013](../tests/test_evidence_provenance.py#L13) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L202) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTTP_PROXY | 202 | [SRC-6BCB799CEC-L000202](../tests/test_evidence_provenance.py#L202) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L202) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTTPS_PROXY | 202 | [SRC-6BCB799CEC-L000202](../tests/test_evidence_provenance.py#L202) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEXER_PATH | 8 | [SRC-FA4E1423C3-L000008](../tests/test_generate_index.py#L8) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEXER_SPEC | 9 | [SRC-FA4E1423C3-L000009](../tests/test_generate_index.py#L9) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODULE_SETTING | 64 | [SRC-FA4E1423C3-L000064](../tests/test_generate_index.py#L64) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLASS_SETTING | 66 | [SRC-FA4E1423C3-L000066](../tests/test_generate_index.py#L66) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN | 100 | [SRC-FA4E1423C3-L000100](../tests/test_generate_index.py#L100) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ENABLED | 109 | [SRC-FA4E1423C3-L000109](../tests/test_generate_index.py#L109) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 130 | [SRC-FA4E1423C3-L000130](../tests/test_generate_index.py#L130) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L141) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 141 | [SRC-FA4E1423C3-L000141](../tests/test_generate_index.py#L141) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L196) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 196 | [SRC-FA4E1423C3-L000196](../tests/test_generate_index.py#L196) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L266) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PRIVATE_TOKEN | 266 | [SRC-FA4E1423C3-L000266](../tests/test_generate_index.py#L266) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L291) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_001 | 291 | [SRC-FA4E1423C3-L000291](../tests/test_generate_index.py#L291) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L325) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_RELATIVE_PATH | 325 | [SRC-FA4E1423C3-L000325](../tests/test_generate_index.py#L325) |
-| [tests/test_generate_index.py](../tests/test_generate_index.py#L326) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX_RELATIVE_PATH | 326 | [SRC-FA4E1423C3-L000326](../tests/test_generate_index.py#L326) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEXER_PATH | 10 | [SRC-FA4E1423C3-L000010](../tests/test_generate_index.py#L10) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEXER_SPEC | 11 | [SRC-FA4E1423C3-L000011](../tests/test_generate_index.py#L11) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODULE_SETTING | 66 | [SRC-FA4E1423C3-L000066](../tests/test_generate_index.py#L66) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLASS_SETTING | 68 | [SRC-FA4E1423C3-L000068](../tests/test_generate_index.py#L68) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN | 102 | [SRC-FA4E1423C3-L000102](../tests/test_generate_index.py#L102) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L111) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ENABLED | 111 | [SRC-FA4E1423C3-L000111](../tests/test_generate_index.py#L111) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L132) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 132 | [SRC-FA4E1423C3-L000132](../tests/test_generate_index.py#L132) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L143) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 143 | [SRC-FA4E1423C3-L000143](../tests/test_generate_index.py#L143) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L198) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 198 | [SRC-FA4E1423C3-L000198](../tests/test_generate_index.py#L198) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L268) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PRIVATE_TOKEN | 268 | [SRC-FA4E1423C3-L000268](../tests/test_generate_index.py#L268) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L293) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_001 | 293 | [SRC-FA4E1423C3-L000293](../tests/test_generate_index.py#L293) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L328) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_RELATIVE_PATH | 328 | [SRC-FA4E1423C3-L000328](../tests/test_generate_index.py#L328) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L329) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX_RELATIVE_PATH | 329 | [SRC-FA4E1423C3-L000329](../tests/test_generate_index.py#L329) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L330) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COVERAGE_AUDIT_RELATIVE_PATH | 330 | [SRC-FA4E1423C3-L000330](../tests/test_generate_index.py#L330) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L369) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PRIVATE_API_TOKEN | 369 | [SRC-FA4E1423C3-L000369](../tests/test_generate_index.py#L369) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L370) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_INDEXED_TEXT_BYTES | 370 | [SRC-FA4E1423C3-L000370](../tests/test_generate_index.py#L370) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L238) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 238 | [SRC-829A979985-L000238](../tests/test_generation_acceptance_matrix.py#L238) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L565) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 565 | [SRC-829A979985-L000565](../tests/test_generation_acceptance_matrix.py#L565) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L566) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 566 | [SRC-829A979985-L000566](../tests/test_generation_acceptance_matrix.py#L566) |
@@ -2169,20 +2178,21 @@
 
 | كود الهفوة/الوسم | النوع | الملف | السطر | وصف الوسم | كود السطر | نص السطر |
 |---|---|---|---:|---|---|---|
-| FND-BUG-FA4E1423C3-L000298 | BUG | [tests/test_generate_index.py](../tests/test_generate_index.py#L298) | 298 | BUG: style annotations receive stable named IDs linked to their exact lines.""" | [SRC-FA4E1423C3-L000298](../tests/test_generate_index.py#L298) | `"    \"\"\"TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines.\"\"\""` |
-| FND-FIXME-FA4E1423C3-L000301 | FIXME | [tests/test_generate_index.py](../tests/test_generate_index.py#L301) | 301 | FIXME: handle overflow\n" | [SRC-FA4E1423C3-L000301](../tests/test_generate_index.py#L301) | `"        \"value = 1  # FIXME: handle overflow\\n\""` |
-| FND-REVIEW-84F7DE82AF-L000043 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L43) | 43 | REVIEW: marker, and paginated source-line indexes | [SRC-84F7DE82AF-L000043](../.github/workflows/update_index.yml#L43) | `"      - name: Generate the master, review-marker, and paginated source-line indexes"` |
-| FND-REVIEW-84F7DE82AF-L000089 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L89) | 89 | REVIEW: marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed." | [SRC-84F7DE82AF-L000089](../.github/workflows/update_index.yml#L89) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` |
-| FND-REVIEW-84F7DE82AF-L000099 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L99) | 99 | REVIEW: marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed." | [SRC-84F7DE82AF-L000099](../.github/workflows/update_index.yml#L99) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` |
-| FND-REVIEW-84F7DE82AF-L000103 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L103) | 103 | REVIEW: marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed." | [SRC-84F7DE82AF-L000103](../.github/workflows/update_index.yml#L103) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed.\""` |
-| FND-REVIEW-E599346ABE-L001158 | REVIEW | [docs/generate_index.py](generate_index.py#L1158) | 1158 | REVIEW: marker, and line-index overview.""" | [SRC-E599346ABE-L001158](generate_index.py#L1158) | `"    \"\"\"Render the repository file, symbol, explicit-review-marker, and line-index overview.\"\"\""` |
+| FND-BUG-B335630551-L000038 | BUG | [README.md](../README.md#L38) | 38 | BUG: explain the defect`) so the generated `FND-...` register can point to the corresponding `SRC-...` line. | [SRC-B335630551-L000038](../README.md#L38) | ``"The generator now refuses to publish indexes if any eligible file has missing, duplicated, or misnumbered source-line records. It still cannot infer every unmarked logical/programming defect; known issues should be recorded explicitly with a supported marker (for example, `# BUG: explain the defect`) so the generated `FND-...` register can point to the corresponding `SRC-...` line."`` |
+| FND-BUG-FA4E1423C3-L000300 | BUG | [tests/test_generate_index.py](../tests/test_generate_index.py#L300) | 300 | BUG: style annotations receive stable named IDs linked to their exact lines.""" | [SRC-FA4E1423C3-L000300](../tests/test_generate_index.py#L300) | `"    \"\"\"TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines.\"\"\""` |
+| FND-FIXME-FA4E1423C3-L000303 | FIXME | [tests/test_generate_index.py](../tests/test_generate_index.py#L303) | 303 | FIXME: handle overflow\n" | [SRC-FA4E1423C3-L000303](../tests/test_generate_index.py#L303) | `"        \"value = 1  # FIXME: handle overflow\\n\""` |
+| FND-REVIEW-84F7DE82AF-L000044 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L44) | 44 | REVIEW: marker, and paginated source-line indexes | [SRC-84F7DE82AF-L000044](../.github/workflows/update_index.yml#L44) | `"      - name: Generate the master, review-marker, and paginated source-line indexes"` |
+| FND-REVIEW-84F7DE82AF-L000090 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L90) | 90 | REVIEW: marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed." | [SRC-84F7DE82AF-L000090](../.github/workflows/update_index.yml#L90) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` |
+| FND-REVIEW-84F7DE82AF-L000100 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L100) | 100 | REVIEW: marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed." | [SRC-84F7DE82AF-L000100](../.github/workflows/update_index.yml#L100) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` |
+| FND-REVIEW-84F7DE82AF-L000104 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L104) | 104 | REVIEW: marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed." | [SRC-84F7DE82AF-L000104](../.github/workflows/update_index.yml#L104) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed.\""` |
+| FND-REVIEW-E599346ABE-L001267 | REVIEW | [docs/generate_index.py](generate_index.py#L1267) | 1267 | REVIEW: marker, and line-index overview.""" | [SRC-E599346ABE-L001267](generate_index.py#L1267) | `"    \"\"\"Render the repository file, symbol, explicit-review-marker, and line-index overview.\"\"\""` |
 | FND-SECURITY-E73001D9AC-L000807 | SECURITY | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L807) | 807 | SECURITY: verification-standard-aisvs-docs) — متطلبات تحقق أمنية مخصصة لأنظمة الذكاء الاصطناعي. | [SRC-E73001D9AC-L000807](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L807) | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs) — متطلبات تحقق أمنية مخصصة لأنظمة الذكاء الاصطناعي."` |
 | FND-SECURITY-D17CE3D12F-L000997 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | 997 | SECURITY: verification-standard/). | [SRC-D17CE3D12F-L000997](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | `"- [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/)."` |
 | FND-SECURITY-D17CE3D12F-L001000 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | 1000 | SECURITY: verification-standard-aisvs-docs). | [SRC-D17CE3D12F-L001000](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` |
 | FND-SECURITY-D17CE3D12F-L001017 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1017) | 1017 | SECURITY: verification-standard-aisvs-docs). | [SRC-D17CE3D12F-L001017](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1017) | `"- [OWASP AISVS](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` |
 | FND-SECURITY-65551FB29F-L000536 | SECURITY | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L536) | 536 | SECURITY: verification-standard/) | [SRC-65551FB29F-L000536](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L536) | `"- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)"` |
-| FND-SECURITY-FA4E1423C3-L000302 | SECURITY | [tests/test_generate_index.py](../tests/test_generate_index.py#L302) | 302 | SECURITY: check token handling\n" | [SRC-FA4E1423C3-L000302](../tests/test_generate_index.py#L302) | `"        \"# SECURITY: check token handling\\n\""` |
-| FND-TODO-FA4E1423C3-L000300 | TODO | [tests/test_generate_index.py](../tests/test_generate_index.py#L300) | 300 | TODO: verify fallback\n" | [SRC-FA4E1423C3-L000300](../tests/test_generate_index.py#L300) | `"        \"# TODO: verify fallback\\n\""` |
+| FND-SECURITY-FA4E1423C3-L000304 | SECURITY | [tests/test_generate_index.py](../tests/test_generate_index.py#L304) | 304 | SECURITY: check token handling\n" | [SRC-FA4E1423C3-L000304](../tests/test_generate_index.py#L304) | `"        \"# SECURITY: check token handling\\n\""` |
+| FND-TODO-FA4E1423C3-L000302 | TODO | [tests/test_generate_index.py](../tests/test_generate_index.py#L302) | 302 | TODO: verify fallback\n" | [SRC-FA4E1423C3-L000302](../tests/test_generate_index.py#L302) | `"        \"# TODO: verify fallback\\n\""` |
 
 ---
 

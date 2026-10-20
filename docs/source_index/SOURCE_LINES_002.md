@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000103 إلى SRC-59CF4B7DE8-L000600
+- النطاق: SRC-C9CF9B54F8-L000102 إلى SRC-59CF4B7DE8-L000599
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000102](../../agents/omarai.py#L102) | 102 | `"        normalized = normalize(text)"` | — |
 | [SRC-C9CF9B54F8-L000103](../../agents/omarai.py#L103) | 103 | `"        fingerprint = hashlib.sha256((url.rstrip(\"/\") + \"\\n\" + normalized).encode()).hexdigest()"` | — |
 | [SRC-C9CF9B54F8-L000104](../../agents/omarai.py#L104) | 104 | `"        lead_id = fingerprint[:24]"` | — |
 | [SRC-C9CF9B54F8-L000105](../../agents/omarai.py#L105) | 105 | `"        timestamp = observed_at or now_utc()"` | — |
@@ -833,4 +834,3 @@
 | [SRC-59CF4B7DE8-L000597](../../agents/research.py#L597) | 597 | `"        return {\"accepted\": True, \"score\": score,"` | — |
 | [SRC-59CF4B7DE8-L000598](../../agents/research.py#L598) | 598 | `"                \"reason\": \"kept_official_despite_low_overlap\"}"` | — |
 | [SRC-59CF4B7DE8-L000599](../../agents/research.py#L599) | 599 | `""` | — |
-| [SRC-59CF4B7DE8-L000600](../../agents/research.py#L600) | 600 | `"    if score >= 18:"` | — |

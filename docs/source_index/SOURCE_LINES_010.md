@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000302 إلى SRC-E599346ABE-L001101
+- النطاق: SRC-E599346ABE-L000301 إلى SRC-E599346ABE-L001100
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000301](../generate_index.py#L301) | 301 | `"    return path.suffix.lower() in EXCLUDED_SUFFIXES"` | — |
 | [SRC-E599346ABE-L000302](../generate_index.py#L302) | 302 | `""` | — |
 | [SRC-E599346ABE-L000303](../generate_index.py#L303) | 303 | `""` | — |
 | [SRC-E599346ABE-L000304](../generate_index.py#L304) | 304 | `"def _stable_file_id(relative_file: str) -> str:"` | — |
@@ -197,622 +198,621 @@
 | [SRC-E599346ABE-L000480](../generate_index.py#L480) | 480 | `""` | — |
 | [SRC-E599346ABE-L000481](../generate_index.py#L481) | 481 | `"def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:"` | — |
 | [SRC-E599346ABE-L000482](../generate_index.py#L482) | 482 | `"    \"\"\"List excluded path names and reasons without opening excluded file contents.\"\"\""` | — |
-| [SRC-E599346ABE-L000483](../generate_index.py#L483) | 483 | `"    excluded: list[tuple[str, str]] = []"` | — |
-| [SRC-E599346ABE-L000484](../generate_index.py#L484) | 484 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
-| [SRC-E599346ABE-L000485](../generate_index.py#L485) | 485 | `"        root,"` | — |
-| [SRC-E599346ABE-L000486](../generate_index.py#L486) | 486 | `"        topdown=True,"` | — |
-| [SRC-E599346ABE-L000487](../generate_index.py#L487) | 487 | `"        followlinks=False,"` | — |
-| [SRC-E599346ABE-L000488](../generate_index.py#L488) | 488 | `"    ):"` | — |
-| [SRC-E599346ABE-L000489](../generate_index.py#L489) | 489 | `"        kept_directories: list[str] = []"` | — |
-| [SRC-E599346ABE-L000490](../generate_index.py#L490) | 490 | `"        for name in sorted(directory_names):"` | — |
-| [SRC-E599346ABE-L000491](../generate_index.py#L491) | 491 | `"            candidate = Path(current_directory) / name"` | — |
-| [SRC-E599346ABE-L000492](../generate_index.py#L492) | 492 | `"            relative = candidate.relative_to(root).as_posix()"` | — |
-| [SRC-E599346ABE-L000493](../generate_index.py#L493) | 493 | `"            if candidate.is_symlink():"` | — |
-| [SRC-E599346ABE-L000494](../generate_index.py#L494) | 494 | `"                excluded.append((relative + \"/\", \"رابط رمزي مستبعد لسلامة التتبع\"))"` | — |
-| [SRC-E599346ABE-L000495](../generate_index.py#L495) | 495 | `"            elif name in EXCLUDED_DIRECTORIES:"` | — |
-| [SRC-E599346ABE-L000496](../generate_index.py#L496) | 496 | `"                excluded.append((relative + \"/\", \"مجلد بيئة أو اعتماديات أو مخرجات مولدة مستبعد\"))"` | — |
-| [SRC-E599346ABE-L000497](../generate_index.py#L497) | 497 | `"            elif name.lower().endswith((\".egg-info\", \".dist-info\")):"` | — |
-| [SRC-E599346ABE-L000498](../generate_index.py#L498) | 498 | `"                excluded.append((relative + \"/\", \"بيانات تغليف مولدة مستبعدة\"))"` | — |
-| [SRC-E599346ABE-L000499](../generate_index.py#L499) | 499 | `"            else:"` | — |
-| [SRC-E599346ABE-L000500](../generate_index.py#L500) | 500 | `"                kept_directories.append(name)"` | — |
-| [SRC-E599346ABE-L000501](../generate_index.py#L501) | 501 | `"        directory_names[:] = kept_directories"` | — |
-| [SRC-E599346ABE-L000502](../generate_index.py#L502) | 502 | `""` | — |
-| [SRC-E599346ABE-L000503](../generate_index.py#L503) | 503 | `"        for name in sorted(file_names):"` | — |
-| [SRC-E599346ABE-L000504](../generate_index.py#L504) | 504 | `"            candidate = Path(current_directory) / name"` | — |
-| [SRC-E599346ABE-L000505](../generate_index.py#L505) | 505 | `"            relative = candidate.relative_to(root).as_posix()"` | — |
-| [SRC-E599346ABE-L000506](../generate_index.py#L506) | 506 | `"            if candidate.is_symlink():"` | — |
-| [SRC-E599346ABE-L000507](../generate_index.py#L507) | 507 | `"                excluded.append((relative, \"رابط رمزي مستبعد لسلامة التتبع\"))"` | — |
-| [SRC-E599346ABE-L000508](../generate_index.py#L508) | 508 | `"            elif _is_sensitive_or_runtime_path(candidate):"` | — |
-| [SRC-E599346ABE-L000509](../generate_index.py#L509) | 509 | `"                if name.lower().startswith(\".env\") and name.lower() != \".env.example\":"` | — |
-| [SRC-E599346ABE-L000510](../generate_index.py#L510) | 510 | `"                    reason = \"ملف بيئة محلي مستبعد وقائيًا؛ لم تُقرأ محتوياته\""` | — |
-| [SRC-E599346ABE-L000511](../generate_index.py#L511) | 511 | `"                elif candidate.suffix.lower() in EXCLUDED_SUFFIXES:"` | — |
-| [SRC-E599346ABE-L000512](../generate_index.py#L512) | 512 | `"                    reason = \"قاعدة بيانات أو ملف مفتاح/شهادة مستبعد\""` | — |
-| [SRC-E599346ABE-L000513](../generate_index.py#L513) | 513 | `"                else:"` | — |
-| [SRC-E599346ABE-L000514](../generate_index.py#L514) | 514 | `"                    reason = \"اسم ملف حساس معروف؛ لم تُقرأ محتوياته\""` | — |
-| [SRC-E599346ABE-L000515](../generate_index.py#L515) | 515 | `"                excluded.append((relative, reason))"` | — |
-| [SRC-E599346ABE-L000516](../generate_index.py#L516) | 516 | `"            elif relative in INDEX_OUTPUT_PATHS:"` | — |
-| [SRC-E599346ABE-L000517](../generate_index.py#L517) | 517 | `"                excluded.append((relative, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\"))"` | — |
-| [SRC-E599346ABE-L000518](../generate_index.py#L518) | 518 | `"            elif relative.startswith(SOURCE_LINES_PAGES_DIR + \"/\"):"` | — |
-| [SRC-E599346ABE-L000519](../generate_index.py#L519) | 519 | `"                excluded.append((relative, \"صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية\"))"` | — |
-| [SRC-E599346ABE-L000520](../generate_index.py#L520) | 520 | `""` | — |
-| [SRC-E599346ABE-L000521](../generate_index.py#L521) | 521 | `"    return sorted(set(excluded), key=lambda item: (item[0].casefold(), item[1]))"` | — |
-| [SRC-E599346ABE-L000522](../generate_index.py#L522) | 522 | `""` | — |
-| [SRC-E599346ABE-L000523](../generate_index.py#L523) | 523 | `""` | — |
-| [SRC-E599346ABE-L000524](../generate_index.py#L524) | 524 | `"def _text_index_skip_reason(path: Path) -> str:"` | — |
-| [SRC-E599346ABE-L000525](../generate_index.py#L525) | 525 | `"    \"\"\"Return a concrete safe reason when a file could not be line-indexed.\"\"\""` | — |
-| [SRC-E599346ABE-L000526](../generate_index.py#L526) | 526 | `"    try:"` | — |
-| [SRC-E599346ABE-L000527](../generate_index.py#L527) | 527 | `"        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:"` | — |
-| [SRC-E599346ABE-L000528](../generate_index.py#L528) | 528 | `"            return f\"الحجم يتجاوز حد الفهرسة ({MAX_INDEXED_TEXT_BYTES} بايت)\""` | — |
-| [SRC-E599346ABE-L000529](../generate_index.py#L529) | 529 | `"        if path.suffix.lower() == \".py\":"` | — |
-| [SRC-E599346ABE-L000530](../generate_index.py#L530) | 530 | `"            with tokenize.open(str(path)) as source_stream:"` | — |
-| [SRC-E599346ABE-L000531](../generate_index.py#L531) | 531 | `"                source = source_stream.read()"` | — |
-| [SRC-E599346ABE-L000532](../generate_index.py#L532) | 532 | `"        else:"` | — |
-| [SRC-E599346ABE-L000533](../generate_index.py#L533) | 533 | `"            source = path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-E599346ABE-L000534](../generate_index.py#L534) | 534 | `"        if \"\\x00\" in source:"` | — |
-| [SRC-E599346ABE-L000535](../generate_index.py#L535) | 535 | `"            return \"يحتوي محرف NUL؛ عومل كملف غير نصي\""` | — |
-| [SRC-E599346ABE-L000536](../generate_index.py#L536) | 536 | `"    except (OSError, UnicodeError, LookupError, tokenize.TokenError):"` | — |
-| [SRC-E599346ABE-L000537](../generate_index.py#L537) | 537 | `"        return \"تعذرت قراءته كنص صالح بترميز مدعوم\""` | — |
-| [SRC-E599346ABE-L000538](../generate_index.py#L538) | 538 | `"    return \"سبب غير مصنف؛ يحتاج مراجعة أداة الفهرسة\""` | — |
+| [SRC-E599346ABE-L000483](../generate_index.py#L483) | 483 | `"    excluded: list[tuple[str, str]] = ["` | — |
+| [SRC-E599346ABE-L000484](../generate_index.py#L484) | 484 | `"        (path, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\")"` | — |
+| [SRC-E599346ABE-L000485](../generate_index.py#L485) | 485 | `"        for path in sorted(INDEX_OUTPUT_PATHS)"` | — |
+| [SRC-E599346ABE-L000486](../generate_index.py#L486) | 486 | `"    ]"` | — |
+| [SRC-E599346ABE-L000487](../generate_index.py#L487) | 487 | `"    excluded.append("` | — |
+| [SRC-E599346ABE-L000488](../generate_index.py#L488) | 488 | `"        ("` | — |
+| [SRC-E599346ABE-L000489](../generate_index.py#L489) | 489 | `"            SOURCE_LINES_PAGES_DIR + \"/\","` | — |
+| [SRC-E599346ABE-L000490](../generate_index.py#L490) | 490 | `"            \"مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية\","` | — |
+| [SRC-E599346ABE-L000491](../generate_index.py#L491) | 491 | `"        )"` | — |
+| [SRC-E599346ABE-L000492](../generate_index.py#L492) | 492 | `"    )"` | — |
+| [SRC-E599346ABE-L000493](../generate_index.py#L493) | 493 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
+| [SRC-E599346ABE-L000494](../generate_index.py#L494) | 494 | `"        root,"` | — |
+| [SRC-E599346ABE-L000495](../generate_index.py#L495) | 495 | `"        topdown=True,"` | — |
+| [SRC-E599346ABE-L000496](../generate_index.py#L496) | 496 | `"        followlinks=False,"` | — |
+| [SRC-E599346ABE-L000497](../generate_index.py#L497) | 497 | `"    ):"` | — |
+| [SRC-E599346ABE-L000498](../generate_index.py#L498) | 498 | `"        kept_directories: list[str] = []"` | — |
+| [SRC-E599346ABE-L000499](../generate_index.py#L499) | 499 | `"        for name in sorted(directory_names):"` | — |
+| [SRC-E599346ABE-L000500](../generate_index.py#L500) | 500 | `"            candidate = Path(current_directory) / name"` | — |
+| [SRC-E599346ABE-L000501](../generate_index.py#L501) | 501 | `"            relative = candidate.relative_to(root).as_posix()"` | — |
+| [SRC-E599346ABE-L000502](../generate_index.py#L502) | 502 | `"            if candidate.is_symlink():"` | — |
+| [SRC-E599346ABE-L000503](../generate_index.py#L503) | 503 | `"                excluded.append((relative + \"/\", \"رابط رمزي مستبعد لسلامة التتبع\"))"` | — |
+| [SRC-E599346ABE-L000504](../generate_index.py#L504) | 504 | `"            elif name in EXCLUDED_DIRECTORIES:"` | — |
+| [SRC-E599346ABE-L000505](../generate_index.py#L505) | 505 | `"                excluded.append((relative + \"/\", \"مجلد بيئة أو اعتماديات أو مخرجات مولدة مستبعد\"))"` | — |
+| [SRC-E599346ABE-L000506](../generate_index.py#L506) | 506 | `"            elif name.lower().endswith((\".egg-info\", \".dist-info\")):"` | — |
+| [SRC-E599346ABE-L000507](../generate_index.py#L507) | 507 | `"                excluded.append((relative + \"/\", \"بيانات تغليف مولدة مستبعدة\"))"` | — |
+| [SRC-E599346ABE-L000508](../generate_index.py#L508) | 508 | `"            elif relative == SOURCE_LINES_PAGES_DIR:"` | — |
+| [SRC-E599346ABE-L000509](../generate_index.py#L509) | 509 | `"                excluded.append("` | — |
+| [SRC-E599346ABE-L000510](../generate_index.py#L510) | 510 | `"                    ("` | — |
+| [SRC-E599346ABE-L000511](../generate_index.py#L511) | 511 | `"                        relative + \"/\","` | — |
+| [SRC-E599346ABE-L000512](../generate_index.py#L512) | 512 | `"                        \"مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية\","` | — |
+| [SRC-E599346ABE-L000513](../generate_index.py#L513) | 513 | `"                    )"` | — |
+| [SRC-E599346ABE-L000514](../generate_index.py#L514) | 514 | `"                )"` | — |
+| [SRC-E599346ABE-L000515](../generate_index.py#L515) | 515 | `"            else:"` | — |
+| [SRC-E599346ABE-L000516](../generate_index.py#L516) | 516 | `"                kept_directories.append(name)"` | — |
+| [SRC-E599346ABE-L000517](../generate_index.py#L517) | 517 | `"        directory_names[:] = kept_directories"` | — |
+| [SRC-E599346ABE-L000518](../generate_index.py#L518) | 518 | `""` | — |
+| [SRC-E599346ABE-L000519](../generate_index.py#L519) | 519 | `"        for name in sorted(file_names):"` | — |
+| [SRC-E599346ABE-L000520](../generate_index.py#L520) | 520 | `"            candidate = Path(current_directory) / name"` | — |
+| [SRC-E599346ABE-L000521](../generate_index.py#L521) | 521 | `"            relative = candidate.relative_to(root).as_posix()"` | — |
+| [SRC-E599346ABE-L000522](../generate_index.py#L522) | 522 | `"            if candidate.is_symlink():"` | — |
+| [SRC-E599346ABE-L000523](../generate_index.py#L523) | 523 | `"                excluded.append((relative, \"رابط رمزي مستبعد لسلامة التتبع\"))"` | — |
+| [SRC-E599346ABE-L000524](../generate_index.py#L524) | 524 | `"            elif _is_sensitive_or_runtime_path(candidate):"` | — |
+| [SRC-E599346ABE-L000525](../generate_index.py#L525) | 525 | `"                if name.lower().startswith(\".env\") and name.lower() != \".env.example\":"` | — |
+| [SRC-E599346ABE-L000526](../generate_index.py#L526) | 526 | `"                    reason = \"ملف بيئة محلي مستبعد وقائيًا؛ لم تُقرأ محتوياته\""` | — |
+| [SRC-E599346ABE-L000527](../generate_index.py#L527) | 527 | `"                elif candidate.suffix.lower() in EXCLUDED_SUFFIXES:"` | — |
+| [SRC-E599346ABE-L000528](../generate_index.py#L528) | 528 | `"                    reason = \"قاعدة بيانات أو ملف مفتاح/شهادة مستبعد\""` | — |
+| [SRC-E599346ABE-L000529](../generate_index.py#L529) | 529 | `"                else:"` | — |
+| [SRC-E599346ABE-L000530](../generate_index.py#L530) | 530 | `"                    reason = \"اسم ملف حساس معروف؛ لم تُقرأ محتوياته\""` | — |
+| [SRC-E599346ABE-L000531](../generate_index.py#L531) | 531 | `"                excluded.append((relative, reason))"` | — |
+| [SRC-E599346ABE-L000532](../generate_index.py#L532) | 532 | `"            elif relative in INDEX_OUTPUT_PATHS:"` | — |
+| [SRC-E599346ABE-L000533](../generate_index.py#L533) | 533 | `"                excluded.append((relative, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\"))"` | — |
+| [SRC-E599346ABE-L000534](../generate_index.py#L534) | 534 | `"            elif relative.startswith(SOURCE_LINES_PAGES_DIR + \"/\"):"` | — |
+| [SRC-E599346ABE-L000535](../generate_index.py#L535) | 535 | `"                excluded.append((relative, \"صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية\"))"` | — |
+| [SRC-E599346ABE-L000536](../generate_index.py#L536) | 536 | `""` | — |
+| [SRC-E599346ABE-L000537](../generate_index.py#L537) | 537 | `"    return sorted(set(excluded), key=lambda item: (item[0].casefold(), item[1]))"` | — |
+| [SRC-E599346ABE-L000538](../generate_index.py#L538) | 538 | `""` | — |
 | [SRC-E599346ABE-L000539](../generate_index.py#L539) | 539 | `""` | — |
-| [SRC-E599346ABE-L000540](../generate_index.py#L540) | 540 | `""` | — |
-| [SRC-E599346ABE-L000541](../generate_index.py#L541) | 541 | `"def validate_source_line_coverage("` | — |
-| [SRC-E599346ABE-L000542](../generate_index.py#L542) | 542 | `"    inventory: list[IndexedFile],"` | — |
-| [SRC-E599346ABE-L000543](../generate_index.py#L543) | 543 | `"    source_lines: list[IndexedLine],"` | — |
-| [SRC-E599346ABE-L000544](../generate_index.py#L544) | 544 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000545](../generate_index.py#L545) | 545 | `"    \"\"\"Fail generation if any eligible text line is missing, duplicated, or misnumbered.\"\"\""` | — |
-| [SRC-E599346ABE-L000546](../generate_index.py#L546) | 546 | `"    expected_by_file = {"` | — |
-| [SRC-E599346ABE-L000547](../generate_index.py#L547) | 547 | `"        item.file: item.line_count"` | — |
-| [SRC-E599346ABE-L000548](../generate_index.py#L548) | 548 | `"        for item in inventory"` | — |
-| [SRC-E599346ABE-L000549](../generate_index.py#L549) | 549 | `"        if item.line_count is not None"` | — |
-| [SRC-E599346ABE-L000550](../generate_index.py#L550) | 550 | `"    }"` | — |
-| [SRC-E599346ABE-L000551](../generate_index.py#L551) | 551 | `"    actual_lines: dict[str, list[int]] = {file: [] for file in expected_by_file}"` | — |
-| [SRC-E599346ABE-L000552](../generate_index.py#L552) | 552 | `"    seen_ids: set[str] = set()"` | — |
-| [SRC-E599346ABE-L000553](../generate_index.py#L553) | 553 | `"    failures: list[str] = []"` | — |
-| [SRC-E599346ABE-L000554](../generate_index.py#L554) | 554 | `""` | — |
-| [SRC-E599346ABE-L000555](../generate_index.py#L555) | 555 | `"    for source_line in source_lines:"` | — |
-| [SRC-E599346ABE-L000556](../generate_index.py#L556) | 556 | `"        if source_line.file not in expected_by_file:"` | — |
-| [SRC-E599346ABE-L000557](../generate_index.py#L557) | 557 | `"            failures.append(f\"{source_line.file}: سجل سطر لملف غير مؤهل\")"` | — |
-| [SRC-E599346ABE-L000558](../generate_index.py#L558) | 558 | `"            continue"` | — |
-| [SRC-E599346ABE-L000559](../generate_index.py#L559) | 559 | `"        actual_lines[source_line.file].append(source_line.line)"` | — |
-| [SRC-E599346ABE-L000560](../generate_index.py#L560) | 560 | `"        if source_line.line_id in seen_ids:"` | — |
-| [SRC-E599346ABE-L000561](../generate_index.py#L561) | 561 | `"            failures.append(f\"{source_line.file}:{source_line.line}: معرّف SRC مكرر\")"` | — |
-| [SRC-E599346ABE-L000562](../generate_index.py#L562) | 562 | `"        seen_ids.add(source_line.line_id)"` | — |
-| [SRC-E599346ABE-L000563](../generate_index.py#L563) | 563 | `""` | — |
-| [SRC-E599346ABE-L000564](../generate_index.py#L564) | 564 | `"    for file, expected_count in expected_by_file.items():"` | — |
-| [SRC-E599346ABE-L000565](../generate_index.py#L565) | 565 | `"        actual = sorted(actual_lines[file])"` | — |
-| [SRC-E599346ABE-L000566](../generate_index.py#L566) | 566 | `"        expected = list(range(1, (expected_count or 0) + 1))"` | — |
-| [SRC-E599346ABE-L000567](../generate_index.py#L567) | 567 | `"        if actual != expected:"` | — |
-| [SRC-E599346ABE-L000568](../generate_index.py#L568) | 568 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000569](../generate_index.py#L569) | 569 | `"                f\"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، \""` | — |
-| [SRC-E599346ABE-L000570](../generate_index.py#L570) | 570 | `"                f\"الموجود {len(actual)}\""` | — |
-| [SRC-E599346ABE-L000571](../generate_index.py#L571) | 571 | `"            )"` | — |
-| [SRC-E599346ABE-L000572](../generate_index.py#L572) | 572 | `""` | — |
-| [SRC-E599346ABE-L000573](../generate_index.py#L573) | 573 | `"    if failures:"` | — |
-| [SRC-E599346ABE-L000574](../generate_index.py#L574) | 574 | `"        raise IndexGenerationError("` | — |
-| [SRC-E599346ABE-L000575](../generate_index.py#L575) | 575 | `"            \"فشل تحقق اكتمال فهرسة السطور؛ لن يُنشر فهرس جزئي:\\n- \""` | — |
-| [SRC-E599346ABE-L000576](../generate_index.py#L576) | 576 | `"            + \"\\n- \".join(sorted(set(failures)))"` | — |
-| [SRC-E599346ABE-L000577](../generate_index.py#L577) | 577 | `"        )"` | — |
-| [SRC-E599346ABE-L000578](../generate_index.py#L578) | 578 | `""` | — |
+| [SRC-E599346ABE-L000540](../generate_index.py#L540) | 540 | `"def _text_index_skip_reason(path: Path) -> str:"` | — |
+| [SRC-E599346ABE-L000541](../generate_index.py#L541) | 541 | `"    \"\"\"Return a concrete safe reason when a file could not be line-indexed.\"\"\""` | — |
+| [SRC-E599346ABE-L000542](../generate_index.py#L542) | 542 | `"    try:"` | — |
+| [SRC-E599346ABE-L000543](../generate_index.py#L543) | 543 | `"        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:"` | — |
+| [SRC-E599346ABE-L000544](../generate_index.py#L544) | 544 | `"            return f\"الحجم يتجاوز حد الفهرسة ({MAX_INDEXED_TEXT_BYTES} بايت)\""` | — |
+| [SRC-E599346ABE-L000545](../generate_index.py#L545) | 545 | `"        if path.suffix.lower() == \".py\":"` | — |
+| [SRC-E599346ABE-L000546](../generate_index.py#L546) | 546 | `"            with tokenize.open(str(path)) as source_stream:"` | — |
+| [SRC-E599346ABE-L000547](../generate_index.py#L547) | 547 | `"                source = source_stream.read()"` | — |
+| [SRC-E599346ABE-L000548](../generate_index.py#L548) | 548 | `"        else:"` | — |
+| [SRC-E599346ABE-L000549](../generate_index.py#L549) | 549 | `"            source = path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-E599346ABE-L000550](../generate_index.py#L550) | 550 | `"        if \"\\x00\" in source:"` | — |
+| [SRC-E599346ABE-L000551](../generate_index.py#L551) | 551 | `"            return \"يحتوي محرف NUL؛ عومل كملف غير نصي\""` | — |
+| [SRC-E599346ABE-L000552](../generate_index.py#L552) | 552 | `"    except (OSError, UnicodeError, LookupError, tokenize.TokenError):"` | — |
+| [SRC-E599346ABE-L000553](../generate_index.py#L553) | 553 | `"        return \"تعذرت قراءته كنص صالح بترميز مدعوم\""` | — |
+| [SRC-E599346ABE-L000554](../generate_index.py#L554) | 554 | `"    return \"سبب غير مصنف؛ يحتاج مراجعة أداة الفهرسة\""` | — |
+| [SRC-E599346ABE-L000555](../generate_index.py#L555) | 555 | `""` | — |
+| [SRC-E599346ABE-L000556](../generate_index.py#L556) | 556 | `""` | — |
+| [SRC-E599346ABE-L000557](../generate_index.py#L557) | 557 | `"def validate_source_line_coverage("` | — |
+| [SRC-E599346ABE-L000558](../generate_index.py#L558) | 558 | `"    inventory: list[IndexedFile],"` | — |
+| [SRC-E599346ABE-L000559](../generate_index.py#L559) | 559 | `"    source_lines: list[IndexedLine],"` | — |
+| [SRC-E599346ABE-L000560](../generate_index.py#L560) | 560 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000561](../generate_index.py#L561) | 561 | `"    \"\"\"Fail generation if any eligible text line is missing, duplicated, or misnumbered.\"\"\""` | — |
+| [SRC-E599346ABE-L000562](../generate_index.py#L562) | 562 | `"    expected_by_file = {"` | — |
+| [SRC-E599346ABE-L000563](../generate_index.py#L563) | 563 | `"        item.file: item.line_count"` | — |
+| [SRC-E599346ABE-L000564](../generate_index.py#L564) | 564 | `"        for item in inventory"` | — |
+| [SRC-E599346ABE-L000565](../generate_index.py#L565) | 565 | `"        if item.line_count is not None"` | — |
+| [SRC-E599346ABE-L000566](../generate_index.py#L566) | 566 | `"    }"` | — |
+| [SRC-E599346ABE-L000567](../generate_index.py#L567) | 567 | `"    actual_lines: dict[str, list[int]] = {file: [] for file in expected_by_file}"` | — |
+| [SRC-E599346ABE-L000568](../generate_index.py#L568) | 568 | `"    seen_ids: set[str] = set()"` | — |
+| [SRC-E599346ABE-L000569](../generate_index.py#L569) | 569 | `"    failures: list[str] = []"` | — |
+| [SRC-E599346ABE-L000570](../generate_index.py#L570) | 570 | `""` | — |
+| [SRC-E599346ABE-L000571](../generate_index.py#L571) | 571 | `"    for source_line in source_lines:"` | — |
+| [SRC-E599346ABE-L000572](../generate_index.py#L572) | 572 | `"        if source_line.file not in expected_by_file:"` | — |
+| [SRC-E599346ABE-L000573](../generate_index.py#L573) | 573 | `"            failures.append(f\"{source_line.file}: سجل سطر لملف غير مؤهل\")"` | — |
+| [SRC-E599346ABE-L000574](../generate_index.py#L574) | 574 | `"            continue"` | — |
+| [SRC-E599346ABE-L000575](../generate_index.py#L575) | 575 | `"        actual_lines[source_line.file].append(source_line.line)"` | — |
+| [SRC-E599346ABE-L000576](../generate_index.py#L576) | 576 | `"        if source_line.line_id in seen_ids:"` | — |
+| [SRC-E599346ABE-L000577](../generate_index.py#L577) | 577 | `"            failures.append(f\"{source_line.file}:{source_line.line}: معرّف SRC مكرر\")"` | — |
+| [SRC-E599346ABE-L000578](../generate_index.py#L578) | 578 | `"        seen_ids.add(source_line.line_id)"` | — |
 | [SRC-E599346ABE-L000579](../generate_index.py#L579) | 579 | `""` | — |
-| [SRC-E599346ABE-L000580](../generate_index.py#L580) | 580 | `"def discover_python_files(root: Path) -> list[Path]:"` | — |
-| [SRC-E599346ABE-L000581](../generate_index.py#L581) | 581 | `"    \"\"\"Return sorted Python files from the eligible repository inventory.\"\"\""` | — |
-| [SRC-E599346ABE-L000582](../generate_index.py#L582) | 582 | `""` | — |
-| [SRC-E599346ABE-L000583](../generate_index.py#L583) | 583 | `"    return ["` | — |
-| [SRC-E599346ABE-L000584](../generate_index.py#L584) | 584 | `"        path"` | — |
-| [SRC-E599346ABE-L000585](../generate_index.py#L585) | 585 | `"        for path in discover_repository_files(root)"` | — |
-| [SRC-E599346ABE-L000586](../generate_index.py#L586) | 586 | `"        if path.suffix.lower() == \".py\""` | — |
-| [SRC-E599346ABE-L000587](../generate_index.py#L587) | 587 | `"    ]"` | — |
+| [SRC-E599346ABE-L000580](../generate_index.py#L580) | 580 | `"    for file, expected_count in expected_by_file.items():"` | — |
+| [SRC-E599346ABE-L000581](../generate_index.py#L581) | 581 | `"        actual = sorted(actual_lines[file])"` | — |
+| [SRC-E599346ABE-L000582](../generate_index.py#L582) | 582 | `"        expected = list(range(1, (expected_count or 0) + 1))"` | — |
+| [SRC-E599346ABE-L000583](../generate_index.py#L583) | 583 | `"        if actual != expected:"` | — |
+| [SRC-E599346ABE-L000584](../generate_index.py#L584) | 584 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000585](../generate_index.py#L585) | 585 | `"                f\"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، \""` | — |
+| [SRC-E599346ABE-L000586](../generate_index.py#L586) | 586 | `"                f\"الموجود {len(actual)}\""` | — |
+| [SRC-E599346ABE-L000587](../generate_index.py#L587) | 587 | `"            )"` | — |
 | [SRC-E599346ABE-L000588](../generate_index.py#L588) | 588 | `""` | — |
-| [SRC-E599346ABE-L000589](../generate_index.py#L589) | 589 | `""` | — |
-| [SRC-E599346ABE-L000590](../generate_index.py#L590) | 590 | `"def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:"` | — |
-| [SRC-E599346ABE-L000591](../generate_index.py#L591) | 591 | `"    \"\"\"Parse every eligible Python file or fail without producing a partial index.\"\"\""` | — |
-| [SRC-E599346ABE-L000592](../generate_index.py#L592) | 592 | `"    python_files = discover_python_files(root)"` | — |
-| [SRC-E599346ABE-L000593](../generate_index.py#L593) | 593 | `"    all_symbols: list[IndexedSymbol] = []"` | — |
-| [SRC-E599346ABE-L000594](../generate_index.py#L594) | 594 | `"    failures: list[str] = []"` | — |
+| [SRC-E599346ABE-L000589](../generate_index.py#L589) | 589 | `"    if failures:"` | — |
+| [SRC-E599346ABE-L000590](../generate_index.py#L590) | 590 | `"        raise IndexGenerationError("` | — |
+| [SRC-E599346ABE-L000591](../generate_index.py#L591) | 591 | `"            \"فشل تحقق اكتمال فهرسة السطور؛ لن يُنشر فهرس جزئي:\\n- \""` | — |
+| [SRC-E599346ABE-L000592](../generate_index.py#L592) | 592 | `"            + \"\\n- \".join(sorted(set(failures)))"` | — |
+| [SRC-E599346ABE-L000593](../generate_index.py#L593) | 593 | `"        )"` | — |
+| [SRC-E599346ABE-L000594](../generate_index.py#L594) | 594 | `""` | — |
 | [SRC-E599346ABE-L000595](../generate_index.py#L595) | 595 | `""` | — |
-| [SRC-E599346ABE-L000596](../generate_index.py#L596) | 596 | `"    for source_path in python_files:"` | — |
-| [SRC-E599346ABE-L000597](../generate_index.py#L597) | 597 | `"        relative_file = source_path.relative_to(root).as_posix()"` | — |
-| [SRC-E599346ABE-L000598](../generate_index.py#L598) | 598 | `"        try:"` | — |
-| [SRC-E599346ABE-L000599](../generate_index.py#L599) | 599 | `"            with tokenize.open(str(source_path)) as source_stream:"` | — |
-| [SRC-E599346ABE-L000600](../generate_index.py#L600) | 600 | `"                source = source_stream.read()"` | — |
-| [SRC-E599346ABE-L000601](../generate_index.py#L601) | 601 | `"            syntax_tree = ast.parse(source, filename=relative_file)"` | — |
-| [SRC-E599346ABE-L000602](../generate_index.py#L602) | 602 | `"        except SyntaxError as exc:"` | — |
-| [SRC-E599346ABE-L000603](../generate_index.py#L603) | 603 | `"            location = f\"السطر {exc.lineno}: {exc.msg}\" if exc.lineno else exc.msg"` | — |
-| [SRC-E599346ABE-L000604](../generate_index.py#L604) | 604 | `"            failures.append(f\"{relative_file}: {location}\")"` | — |
-| [SRC-E599346ABE-L000605](../generate_index.py#L605) | 605 | `"            continue"` | — |
-| [SRC-E599346ABE-L000606](../generate_index.py#L606) | 606 | `"        except (OSError, UnicodeError, LookupError, tokenize.TokenError) as exc:"` | — |
-| [SRC-E599346ABE-L000607](../generate_index.py#L607) | 607 | `"            failures.append(f\"{relative_file}: {type(exc).__name__}: {exc}\")"` | — |
-| [SRC-E599346ABE-L000608](../generate_index.py#L608) | 608 | `"            continue"` | — |
-| [SRC-E599346ABE-L000609](../generate_index.py#L609) | 609 | `""` | — |
-| [SRC-E599346ABE-L000610](../generate_index.py#L610) | 610 | `"        visitor = SymbolVisitor(relative_file)"` | — |
-| [SRC-E599346ABE-L000611](../generate_index.py#L611) | 611 | `"        visitor.visit(syntax_tree)"` | — |
-| [SRC-E599346ABE-L000612](../generate_index.py#L612) | 612 | `"        all_symbols.extend(visitor.symbols)"` | — |
-| [SRC-E599346ABE-L000613](../generate_index.py#L613) | 613 | `""` | — |
-| [SRC-E599346ABE-L000614](../generate_index.py#L614) | 614 | `"    if failures:"` | — |
-| [SRC-E599346ABE-L000615](../generate_index.py#L615) | 615 | `"        detail = \"\\n\".join(f\"- {failure}\" for failure in failures)"` | — |
-| [SRC-E599346ABE-L000616](../generate_index.py#L616) | 616 | `"        raise IndexGenerationError("` | — |
-| [SRC-E599346ABE-L000617](../generate_index.py#L617) | 617 | `"            \"تعذر إنشاء فهرس Python كامل؛ لم يُكتب MASTER_INDEX.md. \""` | — |
-| [SRC-E599346ABE-L000618](../generate_index.py#L618) | 618 | `"            \"أصلح الملفات التالية ثم أعد التشغيل:\\n\" + detail"` | — |
-| [SRC-E599346ABE-L000619](../generate_index.py#L619) | 619 | `"        )"` | — |
-| [SRC-E599346ABE-L000620](../generate_index.py#L620) | 620 | `""` | — |
-| [SRC-E599346ABE-L000621](../generate_index.py#L621) | 621 | `"    all_symbols.sort("` | — |
-| [SRC-E599346ABE-L000622](../generate_index.py#L622) | 622 | `"        key=lambda symbol: ("` | — |
-| [SRC-E599346ABE-L000623](../generate_index.py#L623) | 623 | `"            symbol.file.casefold(),"` | — |
-| [SRC-E599346ABE-L000624](../generate_index.py#L624) | 624 | `"            symbol.line,"` | — |
-| [SRC-E599346ABE-L000625](../generate_index.py#L625) | 625 | `"            symbol.name.casefold(),"` | — |
-| [SRC-E599346ABE-L000626](../generate_index.py#L626) | 626 | `"            symbol.kind,"` | — |
-| [SRC-E599346ABE-L000627](../generate_index.py#L627) | 627 | `"        )"` | — |
-| [SRC-E599346ABE-L000628](../generate_index.py#L628) | 628 | `"    )"` | — |
-| [SRC-E599346ABE-L000629](../generate_index.py#L629) | 629 | `"    return all_symbols, len(python_files)"` | — |
-| [SRC-E599346ABE-L000630](../generate_index.py#L630) | 630 | `""` | — |
-| [SRC-E599346ABE-L000631](../generate_index.py#L631) | 631 | `""` | — |
-| [SRC-E599346ABE-L000632](../generate_index.py#L632) | 632 | `"def _line_at(source: str, offset: int, base_line: int = 1) -> int:"` | — |
-| [SRC-E599346ABE-L000633](../generate_index.py#L633) | 633 | `"    \"\"\"Return a 1-based line number for a match in the supplied source fragment.\"\"\""` | — |
-| [SRC-E599346ABE-L000634](../generate_index.py#L634) | 634 | `"    return base_line + source.count(\"\\n\", 0, offset)"` | — |
-| [SRC-E599346ABE-L000635](../generate_index.py#L635) | 635 | `""` | — |
+| [SRC-E599346ABE-L000596](../generate_index.py#L596) | 596 | `"def discover_python_files(root: Path) -> list[Path]:"` | — |
+| [SRC-E599346ABE-L000597](../generate_index.py#L597) | 597 | `"    \"\"\"Return sorted Python files from the eligible repository inventory.\"\"\""` | — |
+| [SRC-E599346ABE-L000598](../generate_index.py#L598) | 598 | `""` | — |
+| [SRC-E599346ABE-L000599](../generate_index.py#L599) | 599 | `"    return ["` | — |
+| [SRC-E599346ABE-L000600](../generate_index.py#L600) | 600 | `"        path"` | — |
+| [SRC-E599346ABE-L000601](../generate_index.py#L601) | 601 | `"        for path in discover_repository_files(root)"` | — |
+| [SRC-E599346ABE-L000602](../generate_index.py#L602) | 602 | `"        if path.suffix.lower() == \".py\""` | — |
+| [SRC-E599346ABE-L000603](../generate_index.py#L603) | 603 | `"    ]"` | — |
+| [SRC-E599346ABE-L000604](../generate_index.py#L604) | 604 | `""` | — |
+| [SRC-E599346ABE-L000605](../generate_index.py#L605) | 605 | `""` | — |
+| [SRC-E599346ABE-L000606](../generate_index.py#L606) | 606 | `"def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:"` | — |
+| [SRC-E599346ABE-L000607](../generate_index.py#L607) | 607 | `"    \"\"\"Parse every eligible Python file or fail without producing a partial index.\"\"\""` | — |
+| [SRC-E599346ABE-L000608](../generate_index.py#L608) | 608 | `"    python_files = discover_python_files(root)"` | — |
+| [SRC-E599346ABE-L000609](../generate_index.py#L609) | 609 | `"    all_symbols: list[IndexedSymbol] = []"` | — |
+| [SRC-E599346ABE-L000610](../generate_index.py#L610) | 610 | `"    failures: list[str] = []"` | — |
+| [SRC-E599346ABE-L000611](../generate_index.py#L611) | 611 | `""` | — |
+| [SRC-E599346ABE-L000612](../generate_index.py#L612) | 612 | `"    for source_path in python_files:"` | — |
+| [SRC-E599346ABE-L000613](../generate_index.py#L613) | 613 | `"        relative_file = source_path.relative_to(root).as_posix()"` | — |
+| [SRC-E599346ABE-L000614](../generate_index.py#L614) | 614 | `"        try:"` | — |
+| [SRC-E599346ABE-L000615](../generate_index.py#L615) | 615 | `"            with tokenize.open(str(source_path)) as source_stream:"` | — |
+| [SRC-E599346ABE-L000616](../generate_index.py#L616) | 616 | `"                source = source_stream.read()"` | — |
+| [SRC-E599346ABE-L000617](../generate_index.py#L617) | 617 | `"            syntax_tree = ast.parse(source, filename=relative_file)"` | — |
+| [SRC-E599346ABE-L000618](../generate_index.py#L618) | 618 | `"        except SyntaxError as exc:"` | — |
+| [SRC-E599346ABE-L000619](../generate_index.py#L619) | 619 | `"            location = f\"السطر {exc.lineno}: {exc.msg}\" if exc.lineno else exc.msg"` | — |
+| [SRC-E599346ABE-L000620](../generate_index.py#L620) | 620 | `"            failures.append(f\"{relative_file}: {location}\")"` | — |
+| [SRC-E599346ABE-L000621](../generate_index.py#L621) | 621 | `"            continue"` | — |
+| [SRC-E599346ABE-L000622](../generate_index.py#L622) | 622 | `"        except (OSError, UnicodeError, LookupError, tokenize.TokenError) as exc:"` | — |
+| [SRC-E599346ABE-L000623](../generate_index.py#L623) | 623 | `"            failures.append(f\"{relative_file}: {type(exc).__name__}: {exc}\")"` | — |
+| [SRC-E599346ABE-L000624](../generate_index.py#L624) | 624 | `"            continue"` | — |
+| [SRC-E599346ABE-L000625](../generate_index.py#L625) | 625 | `""` | — |
+| [SRC-E599346ABE-L000626](../generate_index.py#L626) | 626 | `"        visitor = SymbolVisitor(relative_file)"` | — |
+| [SRC-E599346ABE-L000627](../generate_index.py#L627) | 627 | `"        visitor.visit(syntax_tree)"` | — |
+| [SRC-E599346ABE-L000628](../generate_index.py#L628) | 628 | `"        all_symbols.extend(visitor.symbols)"` | — |
+| [SRC-E599346ABE-L000629](../generate_index.py#L629) | 629 | `""` | — |
+| [SRC-E599346ABE-L000630](../generate_index.py#L630) | 630 | `"    if failures:"` | — |
+| [SRC-E599346ABE-L000631](../generate_index.py#L631) | 631 | `"        detail = \"\\n\".join(f\"- {failure}\" for failure in failures)"` | — |
+| [SRC-E599346ABE-L000632](../generate_index.py#L632) | 632 | `"        raise IndexGenerationError("` | — |
+| [SRC-E599346ABE-L000633](../generate_index.py#L633) | 633 | `"            \"تعذر إنشاء فهرس Python كامل؛ لم يُكتب MASTER_INDEX.md. \""` | — |
+| [SRC-E599346ABE-L000634](../generate_index.py#L634) | 634 | `"            \"أصلح الملفات التالية ثم أعد التشغيل:\\n\" + detail"` | — |
+| [SRC-E599346ABE-L000635](../generate_index.py#L635) | 635 | `"        )"` | — |
 | [SRC-E599346ABE-L000636](../generate_index.py#L636) | 636 | `""` | — |
-| [SRC-E599346ABE-L000637](../generate_index.py#L637) | 637 | `"def _add_marker("` | — |
-| [SRC-E599346ABE-L000638](../generate_index.py#L638) | 638 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000639](../generate_index.py#L639) | 639 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000640](../generate_index.py#L640) | 640 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000641](../generate_index.py#L641) | 641 | `"    name: str,"` | — |
-| [SRC-E599346ABE-L000642](../generate_index.py#L642) | 642 | `"    kind: str,"` | — |
-| [SRC-E599346ABE-L000643](../generate_index.py#L643) | 643 | `"    line: int,"` | — |
-| [SRC-E599346ABE-L000644](../generate_index.py#L644) | 644 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000645](../generate_index.py#L645) | 645 | `"    \"\"\"Add the first occurrence of a symbol category within one file.\"\"\""` | — |
-| [SRC-E599346ABE-L000646](../generate_index.py#L646) | 646 | `"    clean_name = \" \".join(name.strip().split())"` | — |
-| [SRC-E599346ABE-L000647](../generate_index.py#L647) | 647 | `"    if not clean_name:"` | — |
-| [SRC-E599346ABE-L000648](../generate_index.py#L648) | 648 | `"        return"` | — |
-| [SRC-E599346ABE-L000649](../generate_index.py#L649) | 649 | `"    key = (relative_file, clean_name, kind)"` | — |
-| [SRC-E599346ABE-L000650](../generate_index.py#L650) | 650 | `"    if key in seen:"` | — |
-| [SRC-E599346ABE-L000651](../generate_index.py#L651) | 651 | `"        return"` | — |
-| [SRC-E599346ABE-L000652](../generate_index.py#L652) | 652 | `"    seen.add(key)"` | — |
-| [SRC-E599346ABE-L000653](../generate_index.py#L653) | 653 | `"    markers.append("` | — |
-| [SRC-E599346ABE-L000654](../generate_index.py#L654) | 654 | `"        IndexedMarker("` | — |
-| [SRC-E599346ABE-L000655](../generate_index.py#L655) | 655 | `"            file=relative_file,"` | — |
-| [SRC-E599346ABE-L000656](../generate_index.py#L656) | 656 | `"            name=clean_name,"` | — |
-| [SRC-E599346ABE-L000657](../generate_index.py#L657) | 657 | `"            kind=kind,"` | — |
-| [SRC-E599346ABE-L000658](../generate_index.py#L658) | 658 | `"            line=max(line, 1),"` | — |
-| [SRC-E599346ABE-L000659](../generate_index.py#L659) | 659 | `"        )"` | — |
-| [SRC-E599346ABE-L000660](../generate_index.py#L660) | 660 | `"    )"` | — |
-| [SRC-E599346ABE-L000661](../generate_index.py#L661) | 661 | `""` | — |
-| [SRC-E599346ABE-L000662](../generate_index.py#L662) | 662 | `""` | — |
-| [SRC-E599346ABE-L000663](../generate_index.py#L663) | 663 | `"def _scan_javascript("` | — |
-| [SRC-E599346ABE-L000664](../generate_index.py#L664) | 664 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000665](../generate_index.py#L665) | 665 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000666](../generate_index.py#L666) | 666 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000667](../generate_index.py#L667) | 667 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000668](../generate_index.py#L668) | 668 | `"    base_line: int = 1,"` | — |
-| [SRC-E599346ABE-L000669](../generate_index.py#L669) | 669 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000670](../generate_index.py#L670) | 670 | `"    \"\"\"Extract navigational JS/TS declarations using bounded regular-expression heuristics.\"\"\""` | — |
-| [SRC-E599346ABE-L000671](../generate_index.py#L671) | 671 | `"    for pattern, kind in ("` | — |
-| [SRC-E599346ABE-L000672](../generate_index.py#L672) | 672 | `"        (JS_FUNCTION_RE, \"دالة JavaScript/TypeScript\"),"` | — |
-| [SRC-E599346ABE-L000673](../generate_index.py#L673) | 673 | `"        (JS_CLASS_RE, \"كلاس JavaScript/TypeScript\"),"` | — |
-| [SRC-E599346ABE-L000674](../generate_index.py#L674) | 674 | `"    ):"` | — |
-| [SRC-E599346ABE-L000675](../generate_index.py#L675) | 675 | `"        for match in pattern.finditer(source):"` | — |
-| [SRC-E599346ABE-L000676](../generate_index.py#L676) | 676 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000677](../generate_index.py#L677) | 677 | `"                markers,"` | — |
-| [SRC-E599346ABE-L000678](../generate_index.py#L678) | 678 | `"                seen,"` | — |
-| [SRC-E599346ABE-L000679](../generate_index.py#L679) | 679 | `"                relative_file,"` | — |
-| [SRC-E599346ABE-L000680](../generate_index.py#L680) | 680 | `"                match.group(1),"` | — |
-| [SRC-E599346ABE-L000681](../generate_index.py#L681) | 681 | `"                kind,"` | — |
-| [SRC-E599346ABE-L000682](../generate_index.py#L682) | 682 | `"                _line_at(source, match.start(), base_line),"` | — |
-| [SRC-E599346ABE-L000683](../generate_index.py#L683) | 683 | `"            )"` | — |
-| [SRC-E599346ABE-L000684](../generate_index.py#L684) | 684 | `""` | — |
-| [SRC-E599346ABE-L000685](../generate_index.py#L685) | 685 | `"    function_variable_locations: set[tuple[str, int]] = set()"` | — |
-| [SRC-E599346ABE-L000686](../generate_index.py#L686) | 686 | `"    for pattern in (JS_ARROW_ASSIGNMENT_RE, JS_FUNCTION_ASSIGNMENT_RE):"` | — |
-| [SRC-E599346ABE-L000687](../generate_index.py#L687) | 687 | `"        for match in pattern.finditer(source):"` | — |
-| [SRC-E599346ABE-L000688](../generate_index.py#L688) | 688 | `"            line = _line_at(source, match.start(), base_line)"` | — |
-| [SRC-E599346ABE-L000689](../generate_index.py#L689) | 689 | `"            name = match.group(1)"` | — |
-| [SRC-E599346ABE-L000690](../generate_index.py#L690) | 690 | `"            function_variable_locations.add((name, line))"` | — |
-| [SRC-E599346ABE-L000691](../generate_index.py#L691) | 691 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000692](../generate_index.py#L692) | 692 | `"                markers,"` | — |
-| [SRC-E599346ABE-L000693](../generate_index.py#L693) | 693 | `"                seen,"` | — |
-| [SRC-E599346ABE-L000694](../generate_index.py#L694) | 694 | `"                relative_file,"` | — |
-| [SRC-E599346ABE-L000695](../generate_index.py#L695) | 695 | `"                name,"` | — |
-| [SRC-E599346ABE-L000696](../generate_index.py#L696) | 696 | `"                \"دالة JavaScript/TypeScript\","` | — |
-| [SRC-E599346ABE-L000697](../generate_index.py#L697) | 697 | `"                line,"` | — |
-| [SRC-E599346ABE-L000698](../generate_index.py#L698) | 698 | `"            )"` | — |
-| [SRC-E599346ABE-L000699](../generate_index.py#L699) | 699 | `""` | — |
-| [SRC-E599346ABE-L000700](../generate_index.py#L700) | 700 | `"    for match in JS_VARIABLE_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000701](../generate_index.py#L701) | 701 | `"        line = _line_at(source, match.start(), base_line)"` | — |
-| [SRC-E599346ABE-L000702](../generate_index.py#L702) | 702 | `"        name = match.group(1)"` | — |
-| [SRC-E599346ABE-L000703](../generate_index.py#L703) | 703 | `"        if (name, line) in function_variable_locations:"` | — |
-| [SRC-E599346ABE-L000704](../generate_index.py#L704) | 704 | `"            continue"` | — |
-| [SRC-E599346ABE-L000705](../generate_index.py#L705) | 705 | `"        _add_marker("` | — |
-| [SRC-E599346ABE-L000706](../generate_index.py#L706) | 706 | `"            markers,"` | — |
-| [SRC-E599346ABE-L000707](../generate_index.py#L707) | 707 | `"            seen,"` | — |
-| [SRC-E599346ABE-L000708](../generate_index.py#L708) | 708 | `"            relative_file,"` | — |
-| [SRC-E599346ABE-L000709](../generate_index.py#L709) | 709 | `"            name,"` | — |
-| [SRC-E599346ABE-L000710](../generate_index.py#L710) | 710 | `"            \"متغير JavaScript/TypeScript\","` | — |
-| [SRC-E599346ABE-L000711](../generate_index.py#L711) | 711 | `"            line,"` | — |
-| [SRC-E599346ABE-L000712](../generate_index.py#L712) | 712 | `"        )"` | — |
-| [SRC-E599346ABE-L000713](../generate_index.py#L713) | 713 | `""` | — |
-| [SRC-E599346ABE-L000714](../generate_index.py#L714) | 714 | `""` | — |
-| [SRC-E599346ABE-L000715](../generate_index.py#L715) | 715 | `"def _scan_css("` | — |
-| [SRC-E599346ABE-L000716](../generate_index.py#L716) | 716 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000717](../generate_index.py#L717) | 717 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000718](../generate_index.py#L718) | 718 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000719](../generate_index.py#L719) | 719 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000720](../generate_index.py#L720) | 720 | `"    base_line: int = 1,"` | — |
-| [SRC-E599346ABE-L000721](../generate_index.py#L721) | 721 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000722](../generate_index.py#L722) | 722 | `"    \"\"\"Extract CSS class/id selectors and custom properties; this is not a full CSS parser.\"\"\""` | — |
-| [SRC-E599346ABE-L000723](../generate_index.py#L723) | 723 | `"    cleaned = CSS_COMMENT_RE.sub("` | — |
-| [SRC-E599346ABE-L000724](../generate_index.py#L724) | 724 | `"        lambda match: \"\".join(\"\\n\" if char == \"\\n\" else \" \" for char in match.group(0)),"` | — |
-| [SRC-E599346ABE-L000725](../generate_index.py#L725) | 725 | `"        source,"` | — |
-| [SRC-E599346ABE-L000726](../generate_index.py#L726) | 726 | `"    )"` | — |
-| [SRC-E599346ABE-L000727](../generate_index.py#L727) | 727 | `"    patterns = ("` | — |
-| [SRC-E599346ABE-L000728](../generate_index.py#L728) | 728 | `"        (CSS_CUSTOM_PROPERTY_RE, \"متغير CSS مخصص\"),"` | — |
-| [SRC-E599346ABE-L000729](../generate_index.py#L729) | 729 | `"        (CSS_CLASS_RE, \"محدد class في CSS\"),"` | — |
-| [SRC-E599346ABE-L000730](../generate_index.py#L730) | 730 | `"        (CSS_ID_RE, \"محدد id في CSS\"),"` | — |
-| [SRC-E599346ABE-L000731](../generate_index.py#L731) | 731 | `"    )"` | — |
-| [SRC-E599346ABE-L000732](../generate_index.py#L732) | 732 | `"    for pattern, kind in patterns:"` | — |
-| [SRC-E599346ABE-L000733](../generate_index.py#L733) | 733 | `"        for match in pattern.finditer(cleaned):"` | — |
-| [SRC-E599346ABE-L000734](../generate_index.py#L734) | 734 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000735](../generate_index.py#L735) | 735 | `"                markers,"` | — |
-| [SRC-E599346ABE-L000736](../generate_index.py#L736) | 736 | `"                seen,"` | — |
-| [SRC-E599346ABE-L000737](../generate_index.py#L737) | 737 | `"                relative_file,"` | — |
-| [SRC-E599346ABE-L000738](../generate_index.py#L738) | 738 | `"                match.group(1),"` | — |
-| [SRC-E599346ABE-L000739](../generate_index.py#L739) | 739 | `"                kind,"` | — |
-| [SRC-E599346ABE-L000740](../generate_index.py#L740) | 740 | `"                _line_at(cleaned, match.start(), base_line),"` | — |
-| [SRC-E599346ABE-L000741](../generate_index.py#L741) | 741 | `"            )"` | — |
-| [SRC-E599346ABE-L000742](../generate_index.py#L742) | 742 | `""` | — |
-| [SRC-E599346ABE-L000743](../generate_index.py#L743) | 743 | `""` | — |
-| [SRC-E599346ABE-L000744](../generate_index.py#L744) | 744 | `"def _scan_html("` | — |
-| [SRC-E599346ABE-L000745](../generate_index.py#L745) | 745 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000746](../generate_index.py#L746) | 746 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000747](../generate_index.py#L747) | 747 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000748](../generate_index.py#L748) | 748 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000749](../generate_index.py#L749) | 749 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000750](../generate_index.py#L750) | 750 | `"    \"\"\"Extract HTML navigation attributes plus embedded JS and CSS declarations.\"\"\""` | — |
-| [SRC-E599346ABE-L000751](../generate_index.py#L751) | 751 | `"    for match in HTML_ATTRIBUTE_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000752](../generate_index.py#L752) | 752 | `"        attribute = match.group(1).lower()"` | — |
-| [SRC-E599346ABE-L000753](../generate_index.py#L753) | 753 | `"        raw_value = match.group(3).strip()"` | — |
-| [SRC-E599346ABE-L000754](../generate_index.py#L754) | 754 | `"        for value in raw_value.split() if attribute == \"data-testid\" else [raw_value]:"` | — |
-| [SRC-E599346ABE-L000755](../generate_index.py#L755) | 755 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000756](../generate_index.py#L756) | 756 | `"                markers,"` | — |
-| [SRC-E599346ABE-L000757](../generate_index.py#L757) | 757 | `"                seen,"` | — |
-| [SRC-E599346ABE-L000758](../generate_index.py#L758) | 758 | `"                relative_file,"` | — |
-| [SRC-E599346ABE-L000759](../generate_index.py#L759) | 759 | `"                value,"` | — |
-| [SRC-E599346ABE-L000760](../generate_index.py#L760) | 760 | `"                f\"قيمة سمة HTML ({attribute})\","` | — |
-| [SRC-E599346ABE-L000761](../generate_index.py#L761) | 761 | `"                _line_at(source, match.start()),"` | — |
-| [SRC-E599346ABE-L000762](../generate_index.py#L762) | 762 | `"            )"` | — |
-| [SRC-E599346ABE-L000763](../generate_index.py#L763) | 763 | `""` | — |
-| [SRC-E599346ABE-L000764](../generate_index.py#L764) | 764 | `"    for match in HTML_SCRIPT_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000765](../generate_index.py#L765) | 765 | `"        script = match.group(1)"` | — |
-| [SRC-E599346ABE-L000766](../generate_index.py#L766) | 766 | `"        base_line = _line_at(source, match.start(1))"` | — |
-| [SRC-E599346ABE-L000767](../generate_index.py#L767) | 767 | `"        _scan_javascript(script, relative_file, markers, seen, base_line)"` | — |
-| [SRC-E599346ABE-L000768](../generate_index.py#L768) | 768 | `"    for match in HTML_STYLE_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000769](../generate_index.py#L769) | 769 | `"        style = match.group(1)"` | — |
-| [SRC-E599346ABE-L000770](../generate_index.py#L770) | 770 | `"        base_line = _line_at(source, match.start(1))"` | — |
-| [SRC-E599346ABE-L000771](../generate_index.py#L771) | 771 | `"        _scan_css(style, relative_file, markers, seen, base_line)"` | — |
-| [SRC-E599346ABE-L000772](../generate_index.py#L772) | 772 | `""` | — |
-| [SRC-E599346ABE-L000773](../generate_index.py#L773) | 773 | `""` | — |
-| [SRC-E599346ABE-L000774](../generate_index.py#L774) | 774 | `"def _scan_config_keys("` | — |
-| [SRC-E599346ABE-L000775](../generate_index.py#L775) | 775 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000776](../generate_index.py#L776) | 776 | `"    suffix: str,"` | — |
-| [SRC-E599346ABE-L000777](../generate_index.py#L777) | 777 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000778](../generate_index.py#L778) | 778 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000779](../generate_index.py#L779) | 779 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000780](../generate_index.py#L780) | 780 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000781](../generate_index.py#L781) | 781 | `"    \"\"\"Extract configuration keys/sections without evaluating or loading configuration.\"\"\""` | — |
-| [SRC-E599346ABE-L000782](../generate_index.py#L782) | 782 | `"    if suffix in {\".yml\", \".yaml\"}:"` | — |
-| [SRC-E599346ABE-L000783](../generate_index.py#L783) | 783 | `"        patterns = ((YAML_KEY_RE, \"مفتاح إعداد YAML\"),)"` | — |
-| [SRC-E599346ABE-L000784](../generate_index.py#L784) | 784 | `"    elif suffix == \".toml\":"` | — |
-| [SRC-E599346ABE-L000785](../generate_index.py#L785) | 785 | `"        patterns = ("` | — |
-| [SRC-E599346ABE-L000786](../generate_index.py#L786) | 786 | `"            (TOML_SECTION_RE, \"قسم TOML\"),"` | — |
-| [SRC-E599346ABE-L000787](../generate_index.py#L787) | 787 | `"            (TOML_KEY_RE, \"مفتاح إعداد TOML\"),"` | — |
-| [SRC-E599346ABE-L000788](../generate_index.py#L788) | 788 | `"        )"` | — |
-| [SRC-E599346ABE-L000789](../generate_index.py#L789) | 789 | `"    elif suffix == \".json\":"` | — |
-| [SRC-E599346ABE-L000790](../generate_index.py#L790) | 790 | `"        patterns = ((JSON_KEY_RE, \"مفتاح JSON\"),)"` | — |
-| [SRC-E599346ABE-L000791](../generate_index.py#L791) | 791 | `"    elif suffix in {\".ini\", \".cfg\"}:"` | — |
-| [SRC-E599346ABE-L000792](../generate_index.py#L792) | 792 | `"        patterns = ("` | — |
-| [SRC-E599346ABE-L000793](../generate_index.py#L793) | 793 | `"            (INI_SECTION_RE, \"قسم إعداد\"),"` | — |
-| [SRC-E599346ABE-L000794](../generate_index.py#L794) | 794 | `"            (INI_KEY_RE, \"مفتاح إعداد\"),"` | — |
-| [SRC-E599346ABE-L000795](../generate_index.py#L795) | 795 | `"        )"` | — |
-| [SRC-E599346ABE-L000796](../generate_index.py#L796) | 796 | `"    else:"` | — |
-| [SRC-E599346ABE-L000797](../generate_index.py#L797) | 797 | `"        patterns = ()"` | — |
-| [SRC-E599346ABE-L000798](../generate_index.py#L798) | 798 | `"    for pattern, kind in patterns:"` | — |
-| [SRC-E599346ABE-L000799](../generate_index.py#L799) | 799 | `"        for match in pattern.finditer(source):"` | — |
-| [SRC-E599346ABE-L000800](../generate_index.py#L800) | 800 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000801](../generate_index.py#L801) | 801 | `"                markers,"` | — |
-| [SRC-E599346ABE-L000802](../generate_index.py#L802) | 802 | `"                seen,"` | — |
-| [SRC-E599346ABE-L000803](../generate_index.py#L803) | 803 | `"                relative_file,"` | — |
-| [SRC-E599346ABE-L000804](../generate_index.py#L804) | 804 | `"                match.group(1),"` | — |
-| [SRC-E599346ABE-L000805](../generate_index.py#L805) | 805 | `"                kind,"` | — |
-| [SRC-E599346ABE-L000806](../generate_index.py#L806) | 806 | `"                _line_at(source, match.start()),"` | — |
-| [SRC-E599346ABE-L000807](../generate_index.py#L807) | 807 | `"            )"` | — |
-| [SRC-E599346ABE-L000808](../generate_index.py#L808) | 808 | `""` | — |
-| [SRC-E599346ABE-L000809](../generate_index.py#L809) | 809 | `""` | — |
-| [SRC-E599346ABE-L000810](../generate_index.py#L810) | 810 | `"def scan_static_symbols(root: Path, inventory: list[IndexedFile]) -> list[IndexedMarker]:"` | — |
-| [SRC-E599346ABE-L000811](../generate_index.py#L811) | 811 | `"    \"\"\"Extract supplementary navigational symbols from frontend, docs, config and scripts.\"\"\""` | — |
-| [SRC-E599346ABE-L000812](../generate_index.py#L812) | 812 | `"    markers: list[IndexedMarker] = []"` | — |
-| [SRC-E599346ABE-L000813](../generate_index.py#L813) | 813 | `"    seen: set[tuple[str, str, str]] = set()"` | — |
-| [SRC-E599346ABE-L000814](../generate_index.py#L814) | 814 | `"    for indexed_file in inventory:"` | — |
-| [SRC-E599346ABE-L000815](../generate_index.py#L815) | 815 | `"        path = root / indexed_file.file"` | — |
-| [SRC-E599346ABE-L000816](../generate_index.py#L816) | 816 | `"        suffix = path.suffix.lower()"` | — |
-| [SRC-E599346ABE-L000817](../generate_index.py#L817) | 817 | `"        file_name = path.name.lower()"` | — |
-| [SRC-E599346ABE-L000818](../generate_index.py#L818) | 818 | `"        is_example_env = file_name == \".env.example\""` | — |
-| [SRC-E599346ABE-L000819](../generate_index.py#L819) | 819 | `"        if suffix not in TEXT_SCAN_EXTENSIONS and not is_example_env and file_name not in {"` | — |
-| [SRC-E599346ABE-L000820](../generate_index.py#L820) | 820 | `"            \"dockerfile\","` | — |
-| [SRC-E599346ABE-L000821](../generate_index.py#L821) | 821 | `"            \"makefile\","` | — |
-| [SRC-E599346ABE-L000822](../generate_index.py#L822) | 822 | `"            \"procfile\","` | — |
-| [SRC-E599346ABE-L000823](../generate_index.py#L823) | 823 | `"        }:"` | — |
-| [SRC-E599346ABE-L000824](../generate_index.py#L824) | 824 | `"            continue"` | — |
+| [SRC-E599346ABE-L000637](../generate_index.py#L637) | 637 | `"    all_symbols.sort("` | — |
+| [SRC-E599346ABE-L000638](../generate_index.py#L638) | 638 | `"        key=lambda symbol: ("` | — |
+| [SRC-E599346ABE-L000639](../generate_index.py#L639) | 639 | `"            symbol.file.casefold(),"` | — |
+| [SRC-E599346ABE-L000640](../generate_index.py#L640) | 640 | `"            symbol.line,"` | — |
+| [SRC-E599346ABE-L000641](../generate_index.py#L641) | 641 | `"            symbol.name.casefold(),"` | — |
+| [SRC-E599346ABE-L000642](../generate_index.py#L642) | 642 | `"            symbol.kind,"` | — |
+| [SRC-E599346ABE-L000643](../generate_index.py#L643) | 643 | `"        )"` | — |
+| [SRC-E599346ABE-L000644](../generate_index.py#L644) | 644 | `"    )"` | — |
+| [SRC-E599346ABE-L000645](../generate_index.py#L645) | 645 | `"    return all_symbols, len(python_files)"` | — |
+| [SRC-E599346ABE-L000646](../generate_index.py#L646) | 646 | `""` | — |
+| [SRC-E599346ABE-L000647](../generate_index.py#L647) | 647 | `""` | — |
+| [SRC-E599346ABE-L000648](../generate_index.py#L648) | 648 | `"def _line_at(source: str, offset: int, base_line: int = 1) -> int:"` | — |
+| [SRC-E599346ABE-L000649](../generate_index.py#L649) | 649 | `"    \"\"\"Return a 1-based line number for a match in the supplied source fragment.\"\"\""` | — |
+| [SRC-E599346ABE-L000650](../generate_index.py#L650) | 650 | `"    return base_line + source.count(\"\\n\", 0, offset)"` | — |
+| [SRC-E599346ABE-L000651](../generate_index.py#L651) | 651 | `""` | — |
+| [SRC-E599346ABE-L000652](../generate_index.py#L652) | 652 | `""` | — |
+| [SRC-E599346ABE-L000653](../generate_index.py#L653) | 653 | `"def _add_marker("` | — |
+| [SRC-E599346ABE-L000654](../generate_index.py#L654) | 654 | `"    markers: list[IndexedMarker],"` | — |
+| [SRC-E599346ABE-L000655](../generate_index.py#L655) | 655 | `"    seen: set[tuple[str, str, str]],"` | — |
+| [SRC-E599346ABE-L000656](../generate_index.py#L656) | 656 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000657](../generate_index.py#L657) | 657 | `"    name: str,"` | — |
+| [SRC-E599346ABE-L000658](../generate_index.py#L658) | 658 | `"    kind: str,"` | — |
+| [SRC-E599346ABE-L000659](../generate_index.py#L659) | 659 | `"    line: int,"` | — |
+| [SRC-E599346ABE-L000660](../generate_index.py#L660) | 660 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000661](../generate_index.py#L661) | 661 | `"    \"\"\"Add the first occurrence of a symbol category within one file.\"\"\""` | — |
+| [SRC-E599346ABE-L000662](../generate_index.py#L662) | 662 | `"    clean_name = \" \".join(name.strip().split())"` | — |
+| [SRC-E599346ABE-L000663](../generate_index.py#L663) | 663 | `"    if not clean_name:"` | — |
+| [SRC-E599346ABE-L000664](../generate_index.py#L664) | 664 | `"        return"` | — |
+| [SRC-E599346ABE-L000665](../generate_index.py#L665) | 665 | `"    key = (relative_file, clean_name, kind)"` | — |
+| [SRC-E599346ABE-L000666](../generate_index.py#L666) | 666 | `"    if key in seen:"` | — |
+| [SRC-E599346ABE-L000667](../generate_index.py#L667) | 667 | `"        return"` | — |
+| [SRC-E599346ABE-L000668](../generate_index.py#L668) | 668 | `"    seen.add(key)"` | — |
+| [SRC-E599346ABE-L000669](../generate_index.py#L669) | 669 | `"    markers.append("` | — |
+| [SRC-E599346ABE-L000670](../generate_index.py#L670) | 670 | `"        IndexedMarker("` | — |
+| [SRC-E599346ABE-L000671](../generate_index.py#L671) | 671 | `"            file=relative_file,"` | — |
+| [SRC-E599346ABE-L000672](../generate_index.py#L672) | 672 | `"            name=clean_name,"` | — |
+| [SRC-E599346ABE-L000673](../generate_index.py#L673) | 673 | `"            kind=kind,"` | — |
+| [SRC-E599346ABE-L000674](../generate_index.py#L674) | 674 | `"            line=max(line, 1),"` | — |
+| [SRC-E599346ABE-L000675](../generate_index.py#L675) | 675 | `"        )"` | — |
+| [SRC-E599346ABE-L000676](../generate_index.py#L676) | 676 | `"    )"` | — |
+| [SRC-E599346ABE-L000677](../generate_index.py#L677) | 677 | `""` | — |
+| [SRC-E599346ABE-L000678](../generate_index.py#L678) | 678 | `""` | — |
+| [SRC-E599346ABE-L000679](../generate_index.py#L679) | 679 | `"def _scan_javascript("` | — |
+| [SRC-E599346ABE-L000680](../generate_index.py#L680) | 680 | `"    source: str,"` | — |
+| [SRC-E599346ABE-L000681](../generate_index.py#L681) | 681 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000682](../generate_index.py#L682) | 682 | `"    markers: list[IndexedMarker],"` | — |
+| [SRC-E599346ABE-L000683](../generate_index.py#L683) | 683 | `"    seen: set[tuple[str, str, str]],"` | — |
+| [SRC-E599346ABE-L000684](../generate_index.py#L684) | 684 | `"    base_line: int = 1,"` | — |
+| [SRC-E599346ABE-L000685](../generate_index.py#L685) | 685 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000686](../generate_index.py#L686) | 686 | `"    \"\"\"Extract navigational JS/TS declarations using bounded regular-expression heuristics.\"\"\""` | — |
+| [SRC-E599346ABE-L000687](../generate_index.py#L687) | 687 | `"    for pattern, kind in ("` | — |
+| [SRC-E599346ABE-L000688](../generate_index.py#L688) | 688 | `"        (JS_FUNCTION_RE, \"دالة JavaScript/TypeScript\"),"` | — |
+| [SRC-E599346ABE-L000689](../generate_index.py#L689) | 689 | `"        (JS_CLASS_RE, \"كلاس JavaScript/TypeScript\"),"` | — |
+| [SRC-E599346ABE-L000690](../generate_index.py#L690) | 690 | `"    ):"` | — |
+| [SRC-E599346ABE-L000691](../generate_index.py#L691) | 691 | `"        for match in pattern.finditer(source):"` | — |
+| [SRC-E599346ABE-L000692](../generate_index.py#L692) | 692 | `"            _add_marker("` | — |
+| [SRC-E599346ABE-L000693](../generate_index.py#L693) | 693 | `"                markers,"` | — |
+| [SRC-E599346ABE-L000694](../generate_index.py#L694) | 694 | `"                seen,"` | — |
+| [SRC-E599346ABE-L000695](../generate_index.py#L695) | 695 | `"                relative_file,"` | — |
+| [SRC-E599346ABE-L000696](../generate_index.py#L696) | 696 | `"                match.group(1),"` | — |
+| [SRC-E599346ABE-L000697](../generate_index.py#L697) | 697 | `"                kind,"` | — |
+| [SRC-E599346ABE-L000698](../generate_index.py#L698) | 698 | `"                _line_at(source, match.start(), base_line),"` | — |
+| [SRC-E599346ABE-L000699](../generate_index.py#L699) | 699 | `"            )"` | — |
+| [SRC-E599346ABE-L000700](../generate_index.py#L700) | 700 | `""` | — |
+| [SRC-E599346ABE-L000701](../generate_index.py#L701) | 701 | `"    function_variable_locations: set[tuple[str, int]] = set()"` | — |
+| [SRC-E599346ABE-L000702](../generate_index.py#L702) | 702 | `"    for pattern in (JS_ARROW_ASSIGNMENT_RE, JS_FUNCTION_ASSIGNMENT_RE):"` | — |
+| [SRC-E599346ABE-L000703](../generate_index.py#L703) | 703 | `"        for match in pattern.finditer(source):"` | — |
+| [SRC-E599346ABE-L000704](../generate_index.py#L704) | 704 | `"            line = _line_at(source, match.start(), base_line)"` | — |
+| [SRC-E599346ABE-L000705](../generate_index.py#L705) | 705 | `"            name = match.group(1)"` | — |
+| [SRC-E599346ABE-L000706](../generate_index.py#L706) | 706 | `"            function_variable_locations.add((name, line))"` | — |
+| [SRC-E599346ABE-L000707](../generate_index.py#L707) | 707 | `"            _add_marker("` | — |
+| [SRC-E599346ABE-L000708](../generate_index.py#L708) | 708 | `"                markers,"` | — |
+| [SRC-E599346ABE-L000709](../generate_index.py#L709) | 709 | `"                seen,"` | — |
+| [SRC-E599346ABE-L000710](../generate_index.py#L710) | 710 | `"                relative_file,"` | — |
+| [SRC-E599346ABE-L000711](../generate_index.py#L711) | 711 | `"                name,"` | — |
+| [SRC-E599346ABE-L000712](../generate_index.py#L712) | 712 | `"                \"دالة JavaScript/TypeScript\","` | — |
+| [SRC-E599346ABE-L000713](../generate_index.py#L713) | 713 | `"                line,"` | — |
+| [SRC-E599346ABE-L000714](../generate_index.py#L714) | 714 | `"            )"` | — |
+| [SRC-E599346ABE-L000715](../generate_index.py#L715) | 715 | `""` | — |
+| [SRC-E599346ABE-L000716](../generate_index.py#L716) | 716 | `"    for match in JS_VARIABLE_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000717](../generate_index.py#L717) | 717 | `"        line = _line_at(source, match.start(), base_line)"` | — |
+| [SRC-E599346ABE-L000718](../generate_index.py#L718) | 718 | `"        name = match.group(1)"` | — |
+| [SRC-E599346ABE-L000719](../generate_index.py#L719) | 719 | `"        if (name, line) in function_variable_locations:"` | — |
+| [SRC-E599346ABE-L000720](../generate_index.py#L720) | 720 | `"            continue"` | — |
+| [SRC-E599346ABE-L000721](../generate_index.py#L721) | 721 | `"        _add_marker("` | — |
+| [SRC-E599346ABE-L000722](../generate_index.py#L722) | 722 | `"            markers,"` | — |
+| [SRC-E599346ABE-L000723](../generate_index.py#L723) | 723 | `"            seen,"` | — |
+| [SRC-E599346ABE-L000724](../generate_index.py#L724) | 724 | `"            relative_file,"` | — |
+| [SRC-E599346ABE-L000725](../generate_index.py#L725) | 725 | `"            name,"` | — |
+| [SRC-E599346ABE-L000726](../generate_index.py#L726) | 726 | `"            \"متغير JavaScript/TypeScript\","` | — |
+| [SRC-E599346ABE-L000727](../generate_index.py#L727) | 727 | `"            line,"` | — |
+| [SRC-E599346ABE-L000728](../generate_index.py#L728) | 728 | `"        )"` | — |
+| [SRC-E599346ABE-L000729](../generate_index.py#L729) | 729 | `""` | — |
+| [SRC-E599346ABE-L000730](../generate_index.py#L730) | 730 | `""` | — |
+| [SRC-E599346ABE-L000731](../generate_index.py#L731) | 731 | `"def _scan_css("` | — |
+| [SRC-E599346ABE-L000732](../generate_index.py#L732) | 732 | `"    source: str,"` | — |
+| [SRC-E599346ABE-L000733](../generate_index.py#L733) | 733 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000734](../generate_index.py#L734) | 734 | `"    markers: list[IndexedMarker],"` | — |
+| [SRC-E599346ABE-L000735](../generate_index.py#L735) | 735 | `"    seen: set[tuple[str, str, str]],"` | — |
+| [SRC-E599346ABE-L000736](../generate_index.py#L736) | 736 | `"    base_line: int = 1,"` | — |
+| [SRC-E599346ABE-L000737](../generate_index.py#L737) | 737 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000738](../generate_index.py#L738) | 738 | `"    \"\"\"Extract CSS class/id selectors and custom properties; this is not a full CSS parser.\"\"\""` | — |
+| [SRC-E599346ABE-L000739](../generate_index.py#L739) | 739 | `"    cleaned = CSS_COMMENT_RE.sub("` | — |
+| [SRC-E599346ABE-L000740](../generate_index.py#L740) | 740 | `"        lambda match: \"\".join(\"\\n\" if char == \"\\n\" else \" \" for char in match.group(0)),"` | — |
+| [SRC-E599346ABE-L000741](../generate_index.py#L741) | 741 | `"        source,"` | — |
+| [SRC-E599346ABE-L000742](../generate_index.py#L742) | 742 | `"    )"` | — |
+| [SRC-E599346ABE-L000743](../generate_index.py#L743) | 743 | `"    patterns = ("` | — |
+| [SRC-E599346ABE-L000744](../generate_index.py#L744) | 744 | `"        (CSS_CUSTOM_PROPERTY_RE, \"متغير CSS مخصص\"),"` | — |
+| [SRC-E599346ABE-L000745](../generate_index.py#L745) | 745 | `"        (CSS_CLASS_RE, \"محدد class في CSS\"),"` | — |
+| [SRC-E599346ABE-L000746](../generate_index.py#L746) | 746 | `"        (CSS_ID_RE, \"محدد id في CSS\"),"` | — |
+| [SRC-E599346ABE-L000747](../generate_index.py#L747) | 747 | `"    )"` | — |
+| [SRC-E599346ABE-L000748](../generate_index.py#L748) | 748 | `"    for pattern, kind in patterns:"` | — |
+| [SRC-E599346ABE-L000749](../generate_index.py#L749) | 749 | `"        for match in pattern.finditer(cleaned):"` | — |
+| [SRC-E599346ABE-L000750](../generate_index.py#L750) | 750 | `"            _add_marker("` | — |
+| [SRC-E599346ABE-L000751](../generate_index.py#L751) | 751 | `"                markers,"` | — |
+| [SRC-E599346ABE-L000752](../generate_index.py#L752) | 752 | `"                seen,"` | — |
+| [SRC-E599346ABE-L000753](../generate_index.py#L753) | 753 | `"                relative_file,"` | — |
+| [SRC-E599346ABE-L000754](../generate_index.py#L754) | 754 | `"                match.group(1),"` | — |
+| [SRC-E599346ABE-L000755](../generate_index.py#L755) | 755 | `"                kind,"` | — |
+| [SRC-E599346ABE-L000756](../generate_index.py#L756) | 756 | `"                _line_at(cleaned, match.start(), base_line),"` | — |
+| [SRC-E599346ABE-L000757](../generate_index.py#L757) | 757 | `"            )"` | — |
+| [SRC-E599346ABE-L000758](../generate_index.py#L758) | 758 | `""` | — |
+| [SRC-E599346ABE-L000759](../generate_index.py#L759) | 759 | `""` | — |
+| [SRC-E599346ABE-L000760](../generate_index.py#L760) | 760 | `"def _scan_html("` | — |
+| [SRC-E599346ABE-L000761](../generate_index.py#L761) | 761 | `"    source: str,"` | — |
+| [SRC-E599346ABE-L000762](../generate_index.py#L762) | 762 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000763](../generate_index.py#L763) | 763 | `"    markers: list[IndexedMarker],"` | — |
+| [SRC-E599346ABE-L000764](../generate_index.py#L764) | 764 | `"    seen: set[tuple[str, str, str]],"` | — |
+| [SRC-E599346ABE-L000765](../generate_index.py#L765) | 765 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000766](../generate_index.py#L766) | 766 | `"    \"\"\"Extract HTML navigation attributes plus embedded JS and CSS declarations.\"\"\""` | — |
+| [SRC-E599346ABE-L000767](../generate_index.py#L767) | 767 | `"    for match in HTML_ATTRIBUTE_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000768](../generate_index.py#L768) | 768 | `"        attribute = match.group(1).lower()"` | — |
+| [SRC-E599346ABE-L000769](../generate_index.py#L769) | 769 | `"        raw_value = match.group(3).strip()"` | — |
+| [SRC-E599346ABE-L000770](../generate_index.py#L770) | 770 | `"        for value in raw_value.split() if attribute == \"data-testid\" else [raw_value]:"` | — |
+| [SRC-E599346ABE-L000771](../generate_index.py#L771) | 771 | `"            _add_marker("` | — |
+| [SRC-E599346ABE-L000772](../generate_index.py#L772) | 772 | `"                markers,"` | — |
+| [SRC-E599346ABE-L000773](../generate_index.py#L773) | 773 | `"                seen,"` | — |
+| [SRC-E599346ABE-L000774](../generate_index.py#L774) | 774 | `"                relative_file,"` | — |
+| [SRC-E599346ABE-L000775](../generate_index.py#L775) | 775 | `"                value,"` | — |
+| [SRC-E599346ABE-L000776](../generate_index.py#L776) | 776 | `"                f\"قيمة سمة HTML ({attribute})\","` | — |
+| [SRC-E599346ABE-L000777](../generate_index.py#L777) | 777 | `"                _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000778](../generate_index.py#L778) | 778 | `"            )"` | — |
+| [SRC-E599346ABE-L000779](../generate_index.py#L779) | 779 | `""` | — |
+| [SRC-E599346ABE-L000780](../generate_index.py#L780) | 780 | `"    for match in HTML_SCRIPT_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000781](../generate_index.py#L781) | 781 | `"        script = match.group(1)"` | — |
+| [SRC-E599346ABE-L000782](../generate_index.py#L782) | 782 | `"        base_line = _line_at(source, match.start(1))"` | — |
+| [SRC-E599346ABE-L000783](../generate_index.py#L783) | 783 | `"        _scan_javascript(script, relative_file, markers, seen, base_line)"` | — |
+| [SRC-E599346ABE-L000784](../generate_index.py#L784) | 784 | `"    for match in HTML_STYLE_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000785](../generate_index.py#L785) | 785 | `"        style = match.group(1)"` | — |
+| [SRC-E599346ABE-L000786](../generate_index.py#L786) | 786 | `"        base_line = _line_at(source, match.start(1))"` | — |
+| [SRC-E599346ABE-L000787](../generate_index.py#L787) | 787 | `"        _scan_css(style, relative_file, markers, seen, base_line)"` | — |
+| [SRC-E599346ABE-L000788](../generate_index.py#L788) | 788 | `""` | — |
+| [SRC-E599346ABE-L000789](../generate_index.py#L789) | 789 | `""` | — |
+| [SRC-E599346ABE-L000790](../generate_index.py#L790) | 790 | `"def _scan_config_keys("` | — |
+| [SRC-E599346ABE-L000791](../generate_index.py#L791) | 791 | `"    source: str,"` | — |
+| [SRC-E599346ABE-L000792](../generate_index.py#L792) | 792 | `"    suffix: str,"` | — |
+| [SRC-E599346ABE-L000793](../generate_index.py#L793) | 793 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000794](../generate_index.py#L794) | 794 | `"    markers: list[IndexedMarker],"` | — |
+| [SRC-E599346ABE-L000795](../generate_index.py#L795) | 795 | `"    seen: set[tuple[str, str, str]],"` | — |
+| [SRC-E599346ABE-L000796](../generate_index.py#L796) | 796 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000797](../generate_index.py#L797) | 797 | `"    \"\"\"Extract configuration keys/sections without evaluating or loading configuration.\"\"\""` | — |
+| [SRC-E599346ABE-L000798](../generate_index.py#L798) | 798 | `"    if suffix in {\".yml\", \".yaml\"}:"` | — |
+| [SRC-E599346ABE-L000799](../generate_index.py#L799) | 799 | `"        patterns = ((YAML_KEY_RE, \"مفتاح إعداد YAML\"),)"` | — |
+| [SRC-E599346ABE-L000800](../generate_index.py#L800) | 800 | `"    elif suffix == \".toml\":"` | — |
+| [SRC-E599346ABE-L000801](../generate_index.py#L801) | 801 | `"        patterns = ("` | — |
+| [SRC-E599346ABE-L000802](../generate_index.py#L802) | 802 | `"            (TOML_SECTION_RE, \"قسم TOML\"),"` | — |
+| [SRC-E599346ABE-L000803](../generate_index.py#L803) | 803 | `"            (TOML_KEY_RE, \"مفتاح إعداد TOML\"),"` | — |
+| [SRC-E599346ABE-L000804](../generate_index.py#L804) | 804 | `"        )"` | — |
+| [SRC-E599346ABE-L000805](../generate_index.py#L805) | 805 | `"    elif suffix == \".json\":"` | — |
+| [SRC-E599346ABE-L000806](../generate_index.py#L806) | 806 | `"        patterns = ((JSON_KEY_RE, \"مفتاح JSON\"),)"` | — |
+| [SRC-E599346ABE-L000807](../generate_index.py#L807) | 807 | `"    elif suffix in {\".ini\", \".cfg\"}:"` | — |
+| [SRC-E599346ABE-L000808](../generate_index.py#L808) | 808 | `"        patterns = ("` | — |
+| [SRC-E599346ABE-L000809](../generate_index.py#L809) | 809 | `"            (INI_SECTION_RE, \"قسم إعداد\"),"` | — |
+| [SRC-E599346ABE-L000810](../generate_index.py#L810) | 810 | `"            (INI_KEY_RE, \"مفتاح إعداد\"),"` | — |
+| [SRC-E599346ABE-L000811](../generate_index.py#L811) | 811 | `"        )"` | — |
+| [SRC-E599346ABE-L000812](../generate_index.py#L812) | 812 | `"    else:"` | — |
+| [SRC-E599346ABE-L000813](../generate_index.py#L813) | 813 | `"        patterns = ()"` | — |
+| [SRC-E599346ABE-L000814](../generate_index.py#L814) | 814 | `"    for pattern, kind in patterns:"` | — |
+| [SRC-E599346ABE-L000815](../generate_index.py#L815) | 815 | `"        for match in pattern.finditer(source):"` | — |
+| [SRC-E599346ABE-L000816](../generate_index.py#L816) | 816 | `"            _add_marker("` | — |
+| [SRC-E599346ABE-L000817](../generate_index.py#L817) | 817 | `"                markers,"` | — |
+| [SRC-E599346ABE-L000818](../generate_index.py#L818) | 818 | `"                seen,"` | — |
+| [SRC-E599346ABE-L000819](../generate_index.py#L819) | 819 | `"                relative_file,"` | — |
+| [SRC-E599346ABE-L000820](../generate_index.py#L820) | 820 | `"                match.group(1),"` | — |
+| [SRC-E599346ABE-L000821](../generate_index.py#L821) | 821 | `"                kind,"` | — |
+| [SRC-E599346ABE-L000822](../generate_index.py#L822) | 822 | `"                _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000823](../generate_index.py#L823) | 823 | `"            )"` | — |
+| [SRC-E599346ABE-L000824](../generate_index.py#L824) | 824 | `""` | — |
 | [SRC-E599346ABE-L000825](../generate_index.py#L825) | 825 | `""` | — |
-| [SRC-E599346ABE-L000826](../generate_index.py#L826) | 826 | `"        source = _read_text_bounded(path)"` | — |
-| [SRC-E599346ABE-L000827](../generate_index.py#L827) | 827 | `"        if source is None:"` | — |
-| [SRC-E599346ABE-L000828](../generate_index.py#L828) | 828 | `"            continue"` | — |
-| [SRC-E599346ABE-L000829](../generate_index.py#L829) | 829 | `""` | — |
-| [SRC-E599346ABE-L000830](../generate_index.py#L830) | 830 | `"        if suffix in JAVASCRIPT_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000831](../generate_index.py#L831) | 831 | `"            _scan_javascript(source, indexed_file.file, markers, seen)"` | — |
-| [SRC-E599346ABE-L000832](../generate_index.py#L832) | 832 | `"        elif suffix in CSS_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000833](../generate_index.py#L833) | 833 | `"            _scan_css(source, indexed_file.file, markers, seen)"` | — |
-| [SRC-E599346ABE-L000834](../generate_index.py#L834) | 834 | `"        elif suffix in {\".html\", \".htm\"}:"` | — |
-| [SRC-E599346ABE-L000835](../generate_index.py#L835) | 835 | `"            _scan_html(source, indexed_file.file, markers, seen)"` | — |
-| [SRC-E599346ABE-L000836](../generate_index.py#L836) | 836 | `"        elif suffix == \".md\":"` | — |
-| [SRC-E599346ABE-L000837](../generate_index.py#L837) | 837 | `"            for match in MARKDOWN_HEADING_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000838](../generate_index.py#L838) | 838 | `"                heading = match.group(2).strip()"` | — |
-| [SRC-E599346ABE-L000839](../generate_index.py#L839) | 839 | `"                _add_marker("` | — |
-| [SRC-E599346ABE-L000840](../generate_index.py#L840) | 840 | `"                    markers,"` | — |
-| [SRC-E599346ABE-L000841](../generate_index.py#L841) | 841 | `"                    seen,"` | — |
-| [SRC-E599346ABE-L000842](../generate_index.py#L842) | 842 | `"                    indexed_file.file,"` | — |
-| [SRC-E599346ABE-L000843](../generate_index.py#L843) | 843 | `"                    heading,"` | — |
-| [SRC-E599346ABE-L000844](../generate_index.py#L844) | 844 | `"                    f\"عنوان Markdown (H{len(match.group(1))})\","` | — |
-| [SRC-E599346ABE-L000845](../generate_index.py#L845) | 845 | `"                    _line_at(source, match.start()),"` | — |
-| [SRC-E599346ABE-L000846](../generate_index.py#L846) | 846 | `"                )"` | — |
-| [SRC-E599346ABE-L000847](../generate_index.py#L847) | 847 | `"        elif suffix == \".sh\":"` | — |
-| [SRC-E599346ABE-L000848](../generate_index.py#L848) | 848 | `"            for match in SHELL_FUNCTION_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000849](../generate_index.py#L849) | 849 | `"                _add_marker("` | — |
-| [SRC-E599346ABE-L000850](../generate_index.py#L850) | 850 | `"                    markers,"` | — |
-| [SRC-E599346ABE-L000851](../generate_index.py#L851) | 851 | `"                    seen,"` | — |
-| [SRC-E599346ABE-L000852](../generate_index.py#L852) | 852 | `"                    indexed_file.file,"` | — |
-| [SRC-E599346ABE-L000853](../generate_index.py#L853) | 853 | `"                    match.group(1),"` | — |
-| [SRC-E599346ABE-L000854](../generate_index.py#L854) | 854 | `"                    \"دالة Shell\","` | — |
-| [SRC-E599346ABE-L000855](../generate_index.py#L855) | 855 | `"                    _line_at(source, match.start()),"` | — |
-| [SRC-E599346ABE-L000856](../generate_index.py#L856) | 856 | `"                )"` | — |
-| [SRC-E599346ABE-L000857](../generate_index.py#L857) | 857 | `"        elif suffix in CONFIG_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000858](../generate_index.py#L858) | 858 | `"            _scan_config_keys(source, suffix, indexed_file.file, markers, seen)"` | — |
-| [SRC-E599346ABE-L000859](../generate_index.py#L859) | 859 | `""` | — |
-| [SRC-E599346ABE-L000860](../generate_index.py#L860) | 860 | `"        if suffix in TEXT_SCAN_EXTENSIONS or is_example_env or file_name in {"` | — |
-| [SRC-E599346ABE-L000861](../generate_index.py#L861) | 861 | `"            \"dockerfile\","` | — |
-| [SRC-E599346ABE-L000862](../generate_index.py#L862) | 862 | `"            \"makefile\","` | — |
-| [SRC-E599346ABE-L000863](../generate_index.py#L863) | 863 | `"            \"procfile\","` | — |
-| [SRC-E599346ABE-L000864](../generate_index.py#L864) | 864 | `"        }:"` | — |
-| [SRC-E599346ABE-L000865](../generate_index.py#L865) | 865 | `"            for match in UPPER_SNAKE_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000866](../generate_index.py#L866) | 866 | `"                _add_marker("` | — |
-| [SRC-E599346ABE-L000867](../generate_index.py#L867) | 867 | `"                    markers,"` | — |
-| [SRC-E599346ABE-L000868](../generate_index.py#L868) | 868 | `"                    seen,"` | — |
-| [SRC-E599346ABE-L000869](../generate_index.py#L869) | 869 | `"                    indexed_file.file,"` | — |
-| [SRC-E599346ABE-L000870](../generate_index.py#L870) | 870 | `"                    match.group(0),"` | — |
-| [SRC-E599346ABE-L000871](../generate_index.py#L871) | 871 | `"                    \"اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE\","` | — |
-| [SRC-E599346ABE-L000872](../generate_index.py#L872) | 872 | `"                    _line_at(source, match.start()),"` | — |
-| [SRC-E599346ABE-L000873](../generate_index.py#L873) | 873 | `"                )"` | — |
-| [SRC-E599346ABE-L000874](../generate_index.py#L874) | 874 | `""` | — |
-| [SRC-E599346ABE-L000875](../generate_index.py#L875) | 875 | `"        if suffix in PYTHON_EXTENSIONS \| JAVASCRIPT_EXTENSIONS \| {\".html\", \".htm\"}:"` | — |
-| [SRC-E599346ABE-L000876](../generate_index.py#L876) | 876 | `"            for match in API_PATH_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000877](../generate_index.py#L877) | 877 | `"                _add_marker("` | — |
-| [SRC-E599346ABE-L000878](../generate_index.py#L878) | 878 | `"                    markers,"` | — |
-| [SRC-E599346ABE-L000879](../generate_index.py#L879) | 879 | `"                    seen,"` | — |
-| [SRC-E599346ABE-L000880](../generate_index.py#L880) | 880 | `"                    indexed_file.file,"` | — |
-| [SRC-E599346ABE-L000881](../generate_index.py#L881) | 881 | `"                    match.group(1),"` | — |
-| [SRC-E599346ABE-L000882](../generate_index.py#L882) | 882 | `"                    \"مسار API/واجهة محتمل\","` | — |
-| [SRC-E599346ABE-L000883](../generate_index.py#L883) | 883 | `"                    _line_at(source, match.start()),"` | — |
-| [SRC-E599346ABE-L000884](../generate_index.py#L884) | 884 | `"                )"` | — |
-| [SRC-E599346ABE-L000885](../generate_index.py#L885) | 885 | `""` | — |
-| [SRC-E599346ABE-L000886](../generate_index.py#L886) | 886 | `"    markers.sort("` | — |
-| [SRC-E599346ABE-L000887](../generate_index.py#L887) | 887 | `"        key=lambda marker: ("` | — |
-| [SRC-E599346ABE-L000888](../generate_index.py#L888) | 888 | `"            marker.file.casefold(),"` | — |
-| [SRC-E599346ABE-L000889](../generate_index.py#L889) | 889 | `"            marker.line,"` | — |
-| [SRC-E599346ABE-L000890](../generate_index.py#L890) | 890 | `"            marker.kind.casefold(),"` | — |
-| [SRC-E599346ABE-L000891](../generate_index.py#L891) | 891 | `"            marker.name.casefold(),"` | — |
-| [SRC-E599346ABE-L000892](../generate_index.py#L892) | 892 | `"        )"` | — |
-| [SRC-E599346ABE-L000893](../generate_index.py#L893) | 893 | `"    )"` | — |
-| [SRC-E599346ABE-L000894](../generate_index.py#L894) | 894 | `"    return markers"` | — |
-| [SRC-E599346ABE-L000895](../generate_index.py#L895) | 895 | `""` | — |
-| [SRC-E599346ABE-L000896](../generate_index.py#L896) | 896 | `""` | — |
-| [SRC-E599346ABE-L000897](../generate_index.py#L897) | 897 | `"def _source_file_href("` | — |
-| [SRC-E599346ABE-L000898](../generate_index.py#L898) | 898 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000899](../generate_index.py#L899) | 899 | `"    line: int = 1,"` | — |
-| [SRC-E599346ABE-L000900](../generate_index.py#L900) | 900 | `"    index_directory: str = \"docs\","` | — |
-| [SRC-E599346ABE-L000901](../generate_index.py#L901) | 901 | `") -> str:"` | — |
-| [SRC-E599346ABE-L000902](../generate_index.py#L902) | 902 | `"    \"\"\"Return a relative source link from a generated index page to the original file.\"\"\""` | — |
-| [SRC-E599346ABE-L000903](../generate_index.py#L903) | 903 | `"    normalized = relative_file.replace(\"\\\\\", \"/\")"` | — |
-| [SRC-E599346ABE-L000904](../generate_index.py#L904) | 904 | `"    target = posixpath.relpath(normalized, index_directory)"` | — |
-| [SRC-E599346ABE-L000905](../generate_index.py#L905) | 905 | `"    return f\"{quote(target, safe='/._-')}#L{max(line, 1)}\""` | — |
-| [SRC-E599346ABE-L000906](../generate_index.py#L906) | 906 | `""` | — |
-| [SRC-E599346ABE-L000907](../generate_index.py#L907) | 907 | `""` | — |
-| [SRC-E599346ABE-L000908](../generate_index.py#L908) | 908 | `"def _source_line_id(relative_file: str, line: int) -> str:"` | — |
-| [SRC-E599346ABE-L000909](../generate_index.py#L909) | 909 | `"    \"\"\"Return a consistent line code wherever a symbol, finding, or source line is shown.\"\"\""` | — |
-| [SRC-E599346ABE-L000910](../generate_index.py#L910) | 910 | `"    file_hash = _stable_file_id(relative_file).removeprefix(\"FILE-\")"` | — |
-| [SRC-E599346ABE-L000911](../generate_index.py#L911) | 911 | `"    return f\"SRC-{file_hash}-L{line:06d}\""` | — |
+| [SRC-E599346ABE-L000826](../generate_index.py#L826) | 826 | `"def scan_static_symbols(root: Path, inventory: list[IndexedFile]) -> list[IndexedMarker]:"` | — |
+| [SRC-E599346ABE-L000827](../generate_index.py#L827) | 827 | `"    \"\"\"Extract supplementary navigational symbols from frontend, docs, config and scripts.\"\"\""` | — |
+| [SRC-E599346ABE-L000828](../generate_index.py#L828) | 828 | `"    markers: list[IndexedMarker] = []"` | — |
+| [SRC-E599346ABE-L000829](../generate_index.py#L829) | 829 | `"    seen: set[tuple[str, str, str]] = set()"` | — |
+| [SRC-E599346ABE-L000830](../generate_index.py#L830) | 830 | `"    for indexed_file in inventory:"` | — |
+| [SRC-E599346ABE-L000831](../generate_index.py#L831) | 831 | `"        path = root / indexed_file.file"` | — |
+| [SRC-E599346ABE-L000832](../generate_index.py#L832) | 832 | `"        suffix = path.suffix.lower()"` | — |
+| [SRC-E599346ABE-L000833](../generate_index.py#L833) | 833 | `"        file_name = path.name.lower()"` | — |
+| [SRC-E599346ABE-L000834](../generate_index.py#L834) | 834 | `"        is_example_env = file_name == \".env.example\""` | — |
+| [SRC-E599346ABE-L000835](../generate_index.py#L835) | 835 | `"        if suffix not in TEXT_SCAN_EXTENSIONS and not is_example_env and file_name not in {"` | — |
+| [SRC-E599346ABE-L000836](../generate_index.py#L836) | 836 | `"            \"dockerfile\","` | — |
+| [SRC-E599346ABE-L000837](../generate_index.py#L837) | 837 | `"            \"makefile\","` | — |
+| [SRC-E599346ABE-L000838](../generate_index.py#L838) | 838 | `"            \"procfile\","` | — |
+| [SRC-E599346ABE-L000839](../generate_index.py#L839) | 839 | `"        }:"` | — |
+| [SRC-E599346ABE-L000840](../generate_index.py#L840) | 840 | `"            continue"` | — |
+| [SRC-E599346ABE-L000841](../generate_index.py#L841) | 841 | `""` | — |
+| [SRC-E599346ABE-L000842](../generate_index.py#L842) | 842 | `"        source = _read_text_bounded(path)"` | — |
+| [SRC-E599346ABE-L000843](../generate_index.py#L843) | 843 | `"        if source is None:"` | — |
+| [SRC-E599346ABE-L000844](../generate_index.py#L844) | 844 | `"            continue"` | — |
+| [SRC-E599346ABE-L000845](../generate_index.py#L845) | 845 | `""` | — |
+| [SRC-E599346ABE-L000846](../generate_index.py#L846) | 846 | `"        if suffix in JAVASCRIPT_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L000847](../generate_index.py#L847) | 847 | `"            _scan_javascript(source, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000848](../generate_index.py#L848) | 848 | `"        elif suffix in CSS_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L000849](../generate_index.py#L849) | 849 | `"            _scan_css(source, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000850](../generate_index.py#L850) | 850 | `"        elif suffix in {\".html\", \".htm\"}:"` | — |
+| [SRC-E599346ABE-L000851](../generate_index.py#L851) | 851 | `"            _scan_html(source, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000852](../generate_index.py#L852) | 852 | `"        elif suffix == \".md\":"` | — |
+| [SRC-E599346ABE-L000853](../generate_index.py#L853) | 853 | `"            for match in MARKDOWN_HEADING_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000854](../generate_index.py#L854) | 854 | `"                heading = match.group(2).strip()"` | — |
+| [SRC-E599346ABE-L000855](../generate_index.py#L855) | 855 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L000856](../generate_index.py#L856) | 856 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000857](../generate_index.py#L857) | 857 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L000858](../generate_index.py#L858) | 858 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L000859](../generate_index.py#L859) | 859 | `"                    heading,"` | — |
+| [SRC-E599346ABE-L000860](../generate_index.py#L860) | 860 | `"                    f\"عنوان Markdown (H{len(match.group(1))})\","` | — |
+| [SRC-E599346ABE-L000861](../generate_index.py#L861) | 861 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000862](../generate_index.py#L862) | 862 | `"                )"` | — |
+| [SRC-E599346ABE-L000863](../generate_index.py#L863) | 863 | `"        elif suffix == \".sh\":"` | — |
+| [SRC-E599346ABE-L000864](../generate_index.py#L864) | 864 | `"            for match in SHELL_FUNCTION_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000865](../generate_index.py#L865) | 865 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L000866](../generate_index.py#L866) | 866 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000867](../generate_index.py#L867) | 867 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L000868](../generate_index.py#L868) | 868 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L000869](../generate_index.py#L869) | 869 | `"                    match.group(1),"` | — |
+| [SRC-E599346ABE-L000870](../generate_index.py#L870) | 870 | `"                    \"دالة Shell\","` | — |
+| [SRC-E599346ABE-L000871](../generate_index.py#L871) | 871 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000872](../generate_index.py#L872) | 872 | `"                )"` | — |
+| [SRC-E599346ABE-L000873](../generate_index.py#L873) | 873 | `"        elif suffix in CONFIG_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L000874](../generate_index.py#L874) | 874 | `"            _scan_config_keys(source, suffix, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000875](../generate_index.py#L875) | 875 | `""` | — |
+| [SRC-E599346ABE-L000876](../generate_index.py#L876) | 876 | `"        if suffix in TEXT_SCAN_EXTENSIONS or is_example_env or file_name in {"` | — |
+| [SRC-E599346ABE-L000877](../generate_index.py#L877) | 877 | `"            \"dockerfile\","` | — |
+| [SRC-E599346ABE-L000878](../generate_index.py#L878) | 878 | `"            \"makefile\","` | — |
+| [SRC-E599346ABE-L000879](../generate_index.py#L879) | 879 | `"            \"procfile\","` | — |
+| [SRC-E599346ABE-L000880](../generate_index.py#L880) | 880 | `"        }:"` | — |
+| [SRC-E599346ABE-L000881](../generate_index.py#L881) | 881 | `"            for match in UPPER_SNAKE_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000882](../generate_index.py#L882) | 882 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L000883](../generate_index.py#L883) | 883 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000884](../generate_index.py#L884) | 884 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L000885](../generate_index.py#L885) | 885 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L000886](../generate_index.py#L886) | 886 | `"                    match.group(0),"` | — |
+| [SRC-E599346ABE-L000887](../generate_index.py#L887) | 887 | `"                    \"اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE\","` | — |
+| [SRC-E599346ABE-L000888](../generate_index.py#L888) | 888 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000889](../generate_index.py#L889) | 889 | `"                )"` | — |
+| [SRC-E599346ABE-L000890](../generate_index.py#L890) | 890 | `""` | — |
+| [SRC-E599346ABE-L000891](../generate_index.py#L891) | 891 | `"        if suffix in PYTHON_EXTENSIONS \| JAVASCRIPT_EXTENSIONS \| {\".html\", \".htm\"}:"` | — |
+| [SRC-E599346ABE-L000892](../generate_index.py#L892) | 892 | `"            for match in API_PATH_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000893](../generate_index.py#L893) | 893 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L000894](../generate_index.py#L894) | 894 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000895](../generate_index.py#L895) | 895 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L000896](../generate_index.py#L896) | 896 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L000897](../generate_index.py#L897) | 897 | `"                    match.group(1),"` | — |
+| [SRC-E599346ABE-L000898](../generate_index.py#L898) | 898 | `"                    \"مسار API/واجهة محتمل\","` | — |
+| [SRC-E599346ABE-L000899](../generate_index.py#L899) | 899 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000900](../generate_index.py#L900) | 900 | `"                )"` | — |
+| [SRC-E599346ABE-L000901](../generate_index.py#L901) | 901 | `""` | — |
+| [SRC-E599346ABE-L000902](../generate_index.py#L902) | 902 | `"    markers.sort("` | — |
+| [SRC-E599346ABE-L000903](../generate_index.py#L903) | 903 | `"        key=lambda marker: ("` | — |
+| [SRC-E599346ABE-L000904](../generate_index.py#L904) | 904 | `"            marker.file.casefold(),"` | — |
+| [SRC-E599346ABE-L000905](../generate_index.py#L905) | 905 | `"            marker.line,"` | — |
+| [SRC-E599346ABE-L000906](../generate_index.py#L906) | 906 | `"            marker.kind.casefold(),"` | — |
+| [SRC-E599346ABE-L000907](../generate_index.py#L907) | 907 | `"            marker.name.casefold(),"` | — |
+| [SRC-E599346ABE-L000908](../generate_index.py#L908) | 908 | `"        )"` | — |
+| [SRC-E599346ABE-L000909](../generate_index.py#L909) | 909 | `"    )"` | — |
+| [SRC-E599346ABE-L000910](../generate_index.py#L910) | 910 | `"    return markers"` | — |
+| [SRC-E599346ABE-L000911](../generate_index.py#L911) | 911 | `""` | — |
 | [SRC-E599346ABE-L000912](../generate_index.py#L912) | 912 | `""` | — |
-| [SRC-E599346ABE-L000913](../generate_index.py#L913) | 913 | `""` | — |
-| [SRC-E599346ABE-L000914](../generate_index.py#L914) | 914 | `"def _markdown_cell(value: str) -> str:"` | — |
-| [SRC-E599346ABE-L000915](../generate_index.py#L915) | 915 | `"    \"\"\"Normalize text and escape Markdown table delimiters.\"\"\""` | — |
-| [SRC-E599346ABE-L000916](../generate_index.py#L916) | 916 | `"    return \" \".join(value.replace(\"\\r\", \" \").replace(\"\\n\", \" \").split()).replace("` | — |
-| [SRC-E599346ABE-L000917](../generate_index.py#L917) | 917 | `"        \"\|\", r\"\\\|\""` | — |
-| [SRC-E599346ABE-L000918](../generate_index.py#L918) | 918 | `"    )"` | — |
-| [SRC-E599346ABE-L000919](../generate_index.py#L919) | 919 | `""` | — |
-| [SRC-E599346ABE-L000920](../generate_index.py#L920) | 920 | `""` | — |
-| [SRC-E599346ABE-L000921](../generate_index.py#L921) | 921 | `"def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:"` | — |
-| [SRC-E599346ABE-L000922](../generate_index.py#L922) | 922 | `"    \"\"\"Index every logical line of each eligible text file readable within the size bound.\"\"\""` | — |
-| [SRC-E599346ABE-L000923](../generate_index.py#L923) | 923 | `"    indexed_lines: list[IndexedLine] = []"` | — |
-| [SRC-E599346ABE-L000924](../generate_index.py#L924) | 924 | `"    for item in inventory:"` | — |
-| [SRC-E599346ABE-L000925](../generate_index.py#L925) | 925 | `"        source = _read_text_bounded(root / item.file)"` | — |
-| [SRC-E599346ABE-L000926](../generate_index.py#L926) | 926 | `"        if source is None:"` | — |
-| [SRC-E599346ABE-L000927](../generate_index.py#L927) | 927 | `"            continue"` | — |
-| [SRC-E599346ABE-L000928](../generate_index.py#L928) | 928 | `"        for line_number, content in enumerate(source.splitlines(), start=1):"` | — |
-| [SRC-E599346ABE-L000929](../generate_index.py#L929) | 929 | `"            indexed_lines.append("` | — |
-| [SRC-E599346ABE-L000930](../generate_index.py#L930) | 930 | `"                IndexedLine("` | — |
-| [SRC-E599346ABE-L000931](../generate_index.py#L931) | 931 | `"                    file=item.file,"` | — |
-| [SRC-E599346ABE-L000932](../generate_index.py#L932) | 932 | `"                    file_id=item.file_id,"` | — |
-| [SRC-E599346ABE-L000933](../generate_index.py#L933) | 933 | `"                    line_id=_source_line_id(item.file, line_number),"` | — |
-| [SRC-E599346ABE-L000934](../generate_index.py#L934) | 934 | `"                    category=item.category,"` | — |
-| [SRC-E599346ABE-L000935](../generate_index.py#L935) | 935 | `"                    line=line_number,"` | — |
-| [SRC-E599346ABE-L000936](../generate_index.py#L936) | 936 | `"                    content=content,"` | — |
-| [SRC-E599346ABE-L000937](../generate_index.py#L937) | 937 | `"                )"` | — |
-| [SRC-E599346ABE-L000938](../generate_index.py#L938) | 938 | `"            )"` | — |
-| [SRC-E599346ABE-L000939](../generate_index.py#L939) | 939 | `"    indexed_lines.sort(key=lambda item: (item.file.casefold(), item.line))"` | — |
-| [SRC-E599346ABE-L000940](../generate_index.py#L940) | 940 | `"    return indexed_lines"` | — |
-| [SRC-E599346ABE-L000941](../generate_index.py#L941) | 941 | `""` | — |
-| [SRC-E599346ABE-L000942](../generate_index.py#L942) | 942 | `""` | — |
-| [SRC-E599346ABE-L000943](../generate_index.py#L943) | 943 | `"def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFinding]:"` | — |
-| [SRC-E599346ABE-L000944](../generate_index.py#L944) | 944 | `"    \"\"\"Index explicit review/fix markers; they are hints for review, not proven defects.\"\"\""` | — |
-| [SRC-E599346ABE-L000945](../generate_index.py#L945) | 945 | `"    findings: list[IndexedFinding] = []"` | — |
-| [SRC-E599346ABE-L000946](../generate_index.py#L946) | 946 | `"    for source_line in source_lines:"` | — |
-| [SRC-E599346ABE-L000947](../generate_index.py#L947) | 947 | `"        match = FINDING_MARKER_RE.search(source_line.content)"` | — |
-| [SRC-E599346ABE-L000948](../generate_index.py#L948) | 948 | `"        if match is None:"` | — |
-| [SRC-E599346ABE-L000949](../generate_index.py#L949) | 949 | `"            continue"` | — |
-| [SRC-E599346ABE-L000950](../generate_index.py#L950) | 950 | `"        marker = match.group(1).upper()"` | — |
-| [SRC-E599346ABE-L000951](../generate_index.py#L951) | 951 | `"        detail = (match.group(2) or \"\").strip()"` | — |
-| [SRC-E599346ABE-L000952](../generate_index.py#L952) | 952 | `"        description = marker if not detail else f\"{marker}: {detail}\""` | — |
-| [SRC-E599346ABE-L000953](../generate_index.py#L953) | 953 | `"        findings.append("` | — |
-| [SRC-E599346ABE-L000954](../generate_index.py#L954) | 954 | `"            IndexedFinding("` | — |
-| [SRC-E599346ABE-L000955](../generate_index.py#L955) | 955 | `"                finding_id=("` | — |
-| [SRC-E599346ABE-L000956](../generate_index.py#L956) | 956 | `"                    f\"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}\""` | — |
-| [SRC-E599346ABE-L000957](../generate_index.py#L957) | 957 | `"                    f\"-L{source_line.line:06d}\""` | — |
-| [SRC-E599346ABE-L000958](../generate_index.py#L958) | 958 | `"                ),"` | — |
-| [SRC-E599346ABE-L000959](../generate_index.py#L959) | 959 | `"                file=source_line.file,"` | — |
-| [SRC-E599346ABE-L000960](../generate_index.py#L960) | 960 | `"                line_id=source_line.line_id,"` | — |
-| [SRC-E599346ABE-L000961](../generate_index.py#L961) | 961 | `"                marker=marker,"` | — |
-| [SRC-E599346ABE-L000962](../generate_index.py#L962) | 962 | `"                description=description,"` | — |
-| [SRC-E599346ABE-L000963](../generate_index.py#L963) | 963 | `"            )"` | — |
-| [SRC-E599346ABE-L000964](../generate_index.py#L964) | 964 | `"        )"` | — |
-| [SRC-E599346ABE-L000965](../generate_index.py#L965) | 965 | `"    findings.sort(key=lambda item: (item.marker, item.file.casefold(), item.line_id))"` | — |
-| [SRC-E599346ABE-L000966](../generate_index.py#L966) | 966 | `"    return findings"` | — |
-| [SRC-E599346ABE-L000967](../generate_index.py#L967) | 967 | `""` | — |
-| [SRC-E599346ABE-L000968](../generate_index.py#L968) | 968 | `""` | — |
-| [SRC-E599346ABE-L000969](../generate_index.py#L969) | 969 | `"def _markdown_code_span(value: str) -> str:"` | — |
-| [SRC-E599346ABE-L000970](../generate_index.py#L970) | 970 | `"    \"\"\"Render a Markdown inline-code span safely, including backticks in source text.\"\"\""` | — |
-| [SRC-E599346ABE-L000971](../generate_index.py#L971) | 971 | `"    tick = chr(96)"` | — |
-| [SRC-E599346ABE-L000972](../generate_index.py#L972) | 972 | `"    longest = max("` | — |
-| [SRC-E599346ABE-L000973](../generate_index.py#L973) | 973 | `"        (len(match.group(0)) for match in re.finditer(r\"\\u0060+\", value)),"` | — |
-| [SRC-E599346ABE-L000974](../generate_index.py#L974) | 974 | `"        default=0,"` | — |
-| [SRC-E599346ABE-L000975](../generate_index.py#L975) | 975 | `"    )"` | — |
-| [SRC-E599346ABE-L000976](../generate_index.py#L976) | 976 | `"    fence = tick * (longest + 1)"` | — |
-| [SRC-E599346ABE-L000977](../generate_index.py#L977) | 977 | `"    content = f\" {value} \" if value.startswith(tick) or value.endswith(tick) else value"` | — |
-| [SRC-E599346ABE-L000978](../generate_index.py#L978) | 978 | `"    return f\"{fence}{content}{fence}\""` | — |
-| [SRC-E599346ABE-L000979](../generate_index.py#L979) | 979 | `""` | — |
-| [SRC-E599346ABE-L000980](../generate_index.py#L980) | 980 | `""` | — |
-| [SRC-E599346ABE-L000981](../generate_index.py#L981) | 981 | `"def render_source_line_pages("` | — |
-| [SRC-E599346ABE-L000982](../generate_index.py#L982) | 982 | `"    source_lines: list[IndexedLine],"` | — |
-| [SRC-E599346ABE-L000983](../generate_index.py#L983) | 983 | `"    inventory: list[IndexedFile],"` | — |
-| [SRC-E599346ABE-L000984](../generate_index.py#L984) | 984 | `"    findings: list[IndexedFinding],"` | — |
-| [SRC-E599346ABE-L000985](../generate_index.py#L985) | 985 | `") -> tuple[dict[str, str], dict[str, list[str]]]:"` | — |
-| [SRC-E599346ABE-L000986](../generate_index.py#L986) | 986 | `"    \"\"\"Split line-level records into deterministic small pages and map each file to its pages.\"\"\""` | — |
-| [SRC-E599346ABE-L000987](../generate_index.py#L987) | 987 | `"    pages: dict[str, str] = {}"` | — |
-| [SRC-E599346ABE-L000988](../generate_index.py#L988) | 988 | `"    pages_by_file: dict[str, list[str]] = {}"` | — |
-| [SRC-E599346ABE-L000989](../generate_index.py#L989) | 989 | `"    inventory_by_path = {item.file: item for item in inventory}"` | — |
-| [SRC-E599346ABE-L000990](../generate_index.py#L990) | 990 | `"    findings_by_line = {finding.line_id: finding for finding in findings}"` | — |
-| [SRC-E599346ABE-L000991](../generate_index.py#L991) | 991 | `""` | — |
-| [SRC-E599346ABE-L000992](../generate_index.py#L992) | 992 | `"    for page_number, start in enumerate("` | — |
-| [SRC-E599346ABE-L000993](../generate_index.py#L993) | 993 | `"        range(0, len(source_lines), SOURCE_LINES_PAGE_SIZE),"` | — |
-| [SRC-E599346ABE-L000994](../generate_index.py#L994) | 994 | `"        start=1,"` | — |
-| [SRC-E599346ABE-L000995](../generate_index.py#L995) | 995 | `"    ):"` | — |
-| [SRC-E599346ABE-L000996](../generate_index.py#L996) | 996 | `"        chunk = source_lines[start : start + SOURCE_LINES_PAGE_SIZE]"` | — |
-| [SRC-E599346ABE-L000997](../generate_index.py#L997) | 997 | `"        page_path = f\"{SOURCE_LINES_PAGES_DIR}/SOURCE_LINES_{page_number:03d}.md\""` | — |
-| [SRC-E599346ABE-L000998](../generate_index.py#L998) | 998 | `"        lines = ["` | — |
-| [SRC-E599346ABE-L000999](../generate_index.py#L999) | 999 | `"            \"# Omarai Source Lines\","` | — |
-| [SRC-E599346ABE-L001000](../generate_index.py#L1000) | 1000 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001001](../generate_index.py#L1001) | 1001 | `"            \"<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->\","` | — |
-| [SRC-E599346ABE-L001002](../generate_index.py#L1002) | 1002 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001003](../generate_index.py#L1003) | 1003 | `"            f\"- الصفحة: **{page_number:03d}**\","` | — |
-| [SRC-E599346ABE-L001004](../generate_index.py#L1004) | 1004 | `"            f\"- سجلات الأسطر: **{len(chunk)}**\","` | — |
-| [SRC-E599346ABE-L001005](../generate_index.py#L1005) | 1005 | `"            f\"- النطاق: {chunk[0].line_id} إلى {chunk[-1].line_id}\","` | — |
-| [SRC-E599346ABE-L001006](../generate_index.py#L1006) | 1006 | `"            \"- الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)\","` | — |
-| [SRC-E599346ABE-L001007](../generate_index.py#L1007) | 1007 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001008](../generate_index.py#L1008) | 1008 | `"        ]"` | — |
-| [SRC-E599346ABE-L001009](../generate_index.py#L1009) | 1009 | `"        current_file: str \| None = None"` | — |
-| [SRC-E599346ABE-L001010](../generate_index.py#L1010) | 1010 | `"        for source_line in chunk:"` | — |
-| [SRC-E599346ABE-L001011](../generate_index.py#L1011) | 1011 | `"            item = inventory_by_path[source_line.file]"` | — |
-| [SRC-E599346ABE-L001012](../generate_index.py#L1012) | 1012 | `"            if source_line.file != current_file:"` | — |
-| [SRC-E599346ABE-L001013](../generate_index.py#L1013) | 1013 | `"                current_file = source_line.file"` | — |
-| [SRC-E599346ABE-L001014](../generate_index.py#L1014) | 1014 | `"                lines.extend("` | — |
-| [SRC-E599346ABE-L001015](../generate_index.py#L1015) | 1015 | `"                    ["` | — |
-| [SRC-E599346ABE-L001016](../generate_index.py#L1016) | 1016 | `"                        f\"## {item.category}\","` | — |
-| [SRC-E599346ABE-L001017](../generate_index.py#L1017) | 1017 | `"                        \"\","` | — |
-| [SRC-E599346ABE-L001018](../generate_index.py#L1018) | 1018 | `"                        f\"### {item.file_id} — [{_markdown_cell(item.file)}]({_source_file_href(item.file, index_directory=SOURCE_LINES_PAGES_DIR)})\","` | — |
-| [SRC-E599346ABE-L001019](../generate_index.py#L1019) | 1019 | `"                        \"\","` | — |
-| [SRC-E599346ABE-L001020](../generate_index.py#L1020) | 1020 | `"                        f\"- النوع: **{item.file_type}**\","` | — |
-| [SRC-E599346ABE-L001021](../generate_index.py#L1021) | 1021 | `"                        f\"- نطاق الفهرسة: {_markdown_cell(item.indexing_scope)}\","` | — |
-| [SRC-E599346ABE-L001022](../generate_index.py#L1022) | 1022 | `"                        \"\","` | — |
-| [SRC-E599346ABE-L001023](../generate_index.py#L1023) | 1023 | `"                        \"\| كود السطر \| السطر \| النص الكامل للسطر \| كود الوسم \|\","` | — |
-| [SRC-E599346ABE-L001024](../generate_index.py#L1024) | 1024 | `"                        \"\|---\|---:\|---\|---\|\","` | — |
-| [SRC-E599346ABE-L001025](../generate_index.py#L1025) | 1025 | `"                    ]"` | — |
-| [SRC-E599346ABE-L001026](../generate_index.py#L1026) | 1026 | `"                )"` | — |
-| [SRC-E599346ABE-L001027](../generate_index.py#L1027) | 1027 | `"            finding = findings_by_line.get(source_line.line_id)"` | — |
-| [SRC-E599346ABE-L001028](../generate_index.py#L1028) | 1028 | `"            finding_code = finding.finding_id if finding else \"—\""` | — |
-| [SRC-E599346ABE-L001029](../generate_index.py#L1029) | 1029 | `"            exact_text = json.dumps(source_line.content, ensure_ascii=False)"` | — |
-| [SRC-E599346ABE-L001030](../generate_index.py#L1030) | 1030 | `"            escaped_text = exact_text.replace(\"\|\", r\"\\\|\")"` | — |
-| [SRC-E599346ABE-L001031](../generate_index.py#L1031) | 1031 | `"            href = _source_file_href("` | — |
-| [SRC-E599346ABE-L001032](../generate_index.py#L1032) | 1032 | `"                source_line.file,"` | — |
-| [SRC-E599346ABE-L001033](../generate_index.py#L1033) | 1033 | `"                source_line.line,"` | — |
-| [SRC-E599346ABE-L001034](../generate_index.py#L1034) | 1034 | `"                index_directory=SOURCE_LINES_PAGES_DIR,"` | — |
-| [SRC-E599346ABE-L001035](../generate_index.py#L1035) | 1035 | `"            )"` | — |
-| [SRC-E599346ABE-L001036](../generate_index.py#L1036) | 1036 | `"            line_code = f\"[{source_line.line_id}]({href})\""` | — |
-| [SRC-E599346ABE-L001037](../generate_index.py#L1037) | 1037 | `"            lines.append("` | — |
-| [SRC-E599346ABE-L001038](../generate_index.py#L1038) | 1038 | `"                \"\| \""` | — |
-| [SRC-E599346ABE-L001039](../generate_index.py#L1039) | 1039 | `"                + \" \| \".join("` | — |
-| [SRC-E599346ABE-L001040](../generate_index.py#L1040) | 1040 | `"                    ("` | — |
-| [SRC-E599346ABE-L001041](../generate_index.py#L1041) | 1041 | `"                        line_code,"` | — |
-| [SRC-E599346ABE-L001042](../generate_index.py#L1042) | 1042 | `"                        str(source_line.line),"` | — |
-| [SRC-E599346ABE-L001043](../generate_index.py#L1043) | 1043 | `"                        _markdown_code_span(escaped_text),"` | — |
-| [SRC-E599346ABE-L001044](../generate_index.py#L1044) | 1044 | `"                        finding_code,"` | — |
-| [SRC-E599346ABE-L001045](../generate_index.py#L1045) | 1045 | `"                    )"` | — |
-| [SRC-E599346ABE-L001046](../generate_index.py#L1046) | 1046 | `"                )"` | — |
-| [SRC-E599346ABE-L001047](../generate_index.py#L1047) | 1047 | `"                + \" \|\""` | — |
-| [SRC-E599346ABE-L001048](../generate_index.py#L1048) | 1048 | `"            )"` | — |
-| [SRC-E599346ABE-L001049](../generate_index.py#L1049) | 1049 | `"            refs = pages_by_file.setdefault(source_line.file, [])"` | — |
-| [SRC-E599346ABE-L001050](../generate_index.py#L1050) | 1050 | `"            if page_path not in refs:"` | — |
-| [SRC-E599346ABE-L001051](../generate_index.py#L1051) | 1051 | `"                refs.append(page_path)"` | — |
-| [SRC-E599346ABE-L001052](../generate_index.py#L1052) | 1052 | `"        pages[page_path] = \"\\n\".join(lines) + \"\\n\""` | — |
-| [SRC-E599346ABE-L001053](../generate_index.py#L1053) | 1053 | `""` | — |
-| [SRC-E599346ABE-L001054](../generate_index.py#L1054) | 1054 | `"    return pages, pages_by_file"` | — |
-| [SRC-E599346ABE-L001055](../generate_index.py#L1055) | 1055 | `""` | — |
-| [SRC-E599346ABE-L001056](../generate_index.py#L1056) | 1056 | `""` | — |
-| [SRC-E599346ABE-L001057](../generate_index.py#L1057) | 1057 | `"def render_source_lines_markdown("` | — |
-| [SRC-E599346ABE-L001058](../generate_index.py#L1058) | 1058 | `"    source_lines: list[IndexedLine],"` | — |
-| [SRC-E599346ABE-L001059](../generate_index.py#L1059) | 1059 | `"    inventory: list[IndexedFile],"` | — |
-| [SRC-E599346ABE-L001060](../generate_index.py#L1060) | 1060 | `"    findings: list[IndexedFinding],"` | — |
-| [SRC-E599346ABE-L001061](../generate_index.py#L1061) | 1061 | `"    pages_by_file: dict[str, list[str]] \| None = None,"` | — |
-| [SRC-E599346ABE-L001062](../generate_index.py#L1062) | 1062 | `"    source_pages: dict[str, str] \| None = None,"` | — |
-| [SRC-E599346ABE-L001063](../generate_index.py#L1063) | 1063 | `") -> str:"` | — |
-| [SRC-E599346ABE-L001064](../generate_index.py#L1064) | 1064 | `"    \"\"\"Render a compact table of contents for the sharded full source-line index.\"\"\""` | — |
-| [SRC-E599346ABE-L001065](../generate_index.py#L1065) | 1065 | `"    assigned_pages = pages_by_file or {}"` | — |
-| [SRC-E599346ABE-L001066](../generate_index.py#L1066) | 1066 | `"    rendered_pages = source_pages or {}"` | — |
-| [SRC-E599346ABE-L001067](../generate_index.py#L1067) | 1067 | `"    files_with_lines = sum(item.line_count is not None for item in inventory)"` | — |
-| [SRC-E599346ABE-L001068](../generate_index.py#L1068) | 1068 | `"    lines = ["` | — |
-| [SRC-E599346ABE-L001069](../generate_index.py#L1069) | 1069 | `"        \"# SOURCE LINES INDEX — Omarai\","` | — |
-| [SRC-E599346ABE-L001070](../generate_index.py#L1070) | 1070 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001071](../generate_index.py#L1071) | 1071 | `"        \"<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->\","` | — |
-| [SRC-E599346ABE-L001072](../generate_index.py#L1072) | 1072 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001073](../generate_index.py#L1073) | 1073 | `"        \"> هذا دليل الوصول إلى فهرس الأسطر الكامل. يحتوي كل سطر في الملفات النصية المؤهلة على كود SRC- ورقم السطر ونص السطر كاملًا.\","` | — |
-| [SRC-E599346ABE-L001074](../generate_index.py#L1074) | 1074 | `"        \"> قُسّم المحتوى إلى صفحات صغيرة حتى تظل كل صفحة قابلة للفتح والبحث بسرعة من الهاتف والمتصفح.\","` | — |
-| [SRC-E599346ABE-L001075](../generate_index.py#L1075) | 1075 | `"        \"> ابدأ من [MASTER INDEX](MASTER_INDEX.md) للعثور حسب اسم الملف أو الدالة أو الكلاس أو وسم المراجعة.\","` | — |
-| [SRC-E599346ABE-L001076](../generate_index.py#L1076) | 1076 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001077](../generate_index.py#L1077) | 1077 | `"        \"## ملخص التغطية\","` | — |
-| [SRC-E599346ABE-L001078](../generate_index.py#L1078) | 1078 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001079](../generate_index.py#L1079) | 1079 | `"        f\"- الملفات في جرد المستودع: **{len(inventory)}**\","` | — |
-| [SRC-E599346ABE-L001080](../generate_index.py#L1080) | 1080 | `"        f\"- الملفات النصية المفهرسة سطرًا بسطر: **{files_with_lines}**\","` | — |
-| [SRC-E599346ABE-L001081](../generate_index.py#L1081) | 1081 | `"        f\"- الأسطر المفهرسة: **{len(source_lines)}**\","` | — |
-| [SRC-E599346ABE-L001082](../generate_index.py#L1082) | 1082 | `"        f\"- وسوم المراجعة/الإصلاح المسجلة: **{len(findings)}**\","` | — |
-| [SRC-E599346ABE-L001083](../generate_index.py#L1083) | 1083 | `"        f\"- صفحات الأسطر: **{len(rendered_pages)}**\","` | — |
-| [SRC-E599346ABE-L001084](../generate_index.py#L1084) | 1084 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001085](../generate_index.py#L1085) | 1085 | `"        \"## صفحات الأسطر\","` | — |
+| [SRC-E599346ABE-L000913](../generate_index.py#L913) | 913 | `"def _source_file_href("` | — |
+| [SRC-E599346ABE-L000914](../generate_index.py#L914) | 914 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000915](../generate_index.py#L915) | 915 | `"    line: int = 1,"` | — |
+| [SRC-E599346ABE-L000916](../generate_index.py#L916) | 916 | `"    index_directory: str = \"docs\","` | — |
+| [SRC-E599346ABE-L000917](../generate_index.py#L917) | 917 | `") -> str:"` | — |
+| [SRC-E599346ABE-L000918](../generate_index.py#L918) | 918 | `"    \"\"\"Return a relative source link from a generated index page to the original file.\"\"\""` | — |
+| [SRC-E599346ABE-L000919](../generate_index.py#L919) | 919 | `"    normalized = relative_file.replace(\"\\\\\", \"/\")"` | — |
+| [SRC-E599346ABE-L000920](../generate_index.py#L920) | 920 | `"    target = posixpath.relpath(normalized, index_directory)"` | — |
+| [SRC-E599346ABE-L000921](../generate_index.py#L921) | 921 | `"    return f\"{quote(target, safe='/._-')}#L{max(line, 1)}\""` | — |
+| [SRC-E599346ABE-L000922](../generate_index.py#L922) | 922 | `""` | — |
+| [SRC-E599346ABE-L000923](../generate_index.py#L923) | 923 | `""` | — |
+| [SRC-E599346ABE-L000924](../generate_index.py#L924) | 924 | `"def _source_line_id(relative_file: str, line: int) -> str:"` | — |
+| [SRC-E599346ABE-L000925](../generate_index.py#L925) | 925 | `"    \"\"\"Return a consistent line code wherever a symbol, finding, or source line is shown.\"\"\""` | — |
+| [SRC-E599346ABE-L000926](../generate_index.py#L926) | 926 | `"    file_hash = _stable_file_id(relative_file).removeprefix(\"FILE-\")"` | — |
+| [SRC-E599346ABE-L000927](../generate_index.py#L927) | 927 | `"    return f\"SRC-{file_hash}-L{line:06d}\""` | — |
+| [SRC-E599346ABE-L000928](../generate_index.py#L928) | 928 | `""` | — |
+| [SRC-E599346ABE-L000929](../generate_index.py#L929) | 929 | `""` | — |
+| [SRC-E599346ABE-L000930](../generate_index.py#L930) | 930 | `"def _markdown_cell(value: str) -> str:"` | — |
+| [SRC-E599346ABE-L000931](../generate_index.py#L931) | 931 | `"    \"\"\"Normalize text and escape Markdown table delimiters.\"\"\""` | — |
+| [SRC-E599346ABE-L000932](../generate_index.py#L932) | 932 | `"    return \" \".join(value.replace(\"\\r\", \" \").replace(\"\\n\", \" \").split()).replace("` | — |
+| [SRC-E599346ABE-L000933](../generate_index.py#L933) | 933 | `"        \"\|\", r\"\\\|\""` | — |
+| [SRC-E599346ABE-L000934](../generate_index.py#L934) | 934 | `"    )"` | — |
+| [SRC-E599346ABE-L000935](../generate_index.py#L935) | 935 | `""` | — |
+| [SRC-E599346ABE-L000936](../generate_index.py#L936) | 936 | `""` | — |
+| [SRC-E599346ABE-L000937](../generate_index.py#L937) | 937 | `"def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:"` | — |
+| [SRC-E599346ABE-L000938](../generate_index.py#L938) | 938 | `"    \"\"\"Index every logical line of each eligible text file readable within the size bound.\"\"\""` | — |
+| [SRC-E599346ABE-L000939](../generate_index.py#L939) | 939 | `"    indexed_lines: list[IndexedLine] = []"` | — |
+| [SRC-E599346ABE-L000940](../generate_index.py#L940) | 940 | `"    for item in inventory:"` | — |
+| [SRC-E599346ABE-L000941](../generate_index.py#L941) | 941 | `"        source = _read_text_bounded(root / item.file)"` | — |
+| [SRC-E599346ABE-L000942](../generate_index.py#L942) | 942 | `"        if source is None:"` | — |
+| [SRC-E599346ABE-L000943](../generate_index.py#L943) | 943 | `"            continue"` | — |
+| [SRC-E599346ABE-L000944](../generate_index.py#L944) | 944 | `"        for line_number, content in enumerate(source.splitlines(), start=1):"` | — |
+| [SRC-E599346ABE-L000945](../generate_index.py#L945) | 945 | `"            indexed_lines.append("` | — |
+| [SRC-E599346ABE-L000946](../generate_index.py#L946) | 946 | `"                IndexedLine("` | — |
+| [SRC-E599346ABE-L000947](../generate_index.py#L947) | 947 | `"                    file=item.file,"` | — |
+| [SRC-E599346ABE-L000948](../generate_index.py#L948) | 948 | `"                    file_id=item.file_id,"` | — |
+| [SRC-E599346ABE-L000949](../generate_index.py#L949) | 949 | `"                    line_id=_source_line_id(item.file, line_number),"` | — |
+| [SRC-E599346ABE-L000950](../generate_index.py#L950) | 950 | `"                    category=item.category,"` | — |
+| [SRC-E599346ABE-L000951](../generate_index.py#L951) | 951 | `"                    line=line_number,"` | — |
+| [SRC-E599346ABE-L000952](../generate_index.py#L952) | 952 | `"                    content=content,"` | — |
+| [SRC-E599346ABE-L000953](../generate_index.py#L953) | 953 | `"                )"` | — |
+| [SRC-E599346ABE-L000954](../generate_index.py#L954) | 954 | `"            )"` | — |
+| [SRC-E599346ABE-L000955](../generate_index.py#L955) | 955 | `"    indexed_lines.sort(key=lambda item: (item.file.casefold(), item.line))"` | — |
+| [SRC-E599346ABE-L000956](../generate_index.py#L956) | 956 | `"    return indexed_lines"` | — |
+| [SRC-E599346ABE-L000957](../generate_index.py#L957) | 957 | `""` | — |
+| [SRC-E599346ABE-L000958](../generate_index.py#L958) | 958 | `""` | — |
+| [SRC-E599346ABE-L000959](../generate_index.py#L959) | 959 | `"def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFinding]:"` | — |
+| [SRC-E599346ABE-L000960](../generate_index.py#L960) | 960 | `"    \"\"\"Index explicit review/fix markers; they are hints for review, not proven defects.\"\"\""` | — |
+| [SRC-E599346ABE-L000961](../generate_index.py#L961) | 961 | `"    findings: list[IndexedFinding] = []"` | — |
+| [SRC-E599346ABE-L000962](../generate_index.py#L962) | 962 | `"    for source_line in source_lines:"` | — |
+| [SRC-E599346ABE-L000963](../generate_index.py#L963) | 963 | `"        match = FINDING_MARKER_RE.search(source_line.content)"` | — |
+| [SRC-E599346ABE-L000964](../generate_index.py#L964) | 964 | `"        if match is None:"` | — |
+| [SRC-E599346ABE-L000965](../generate_index.py#L965) | 965 | `"            continue"` | — |
+| [SRC-E599346ABE-L000966](../generate_index.py#L966) | 966 | `"        marker = match.group(1).upper()"` | — |
+| [SRC-E599346ABE-L000967](../generate_index.py#L967) | 967 | `"        detail = (match.group(2) or \"\").strip()"` | — |
+| [SRC-E599346ABE-L000968](../generate_index.py#L968) | 968 | `"        description = marker if not detail else f\"{marker}: {detail}\""` | — |
+| [SRC-E599346ABE-L000969](../generate_index.py#L969) | 969 | `"        findings.append("` | — |
+| [SRC-E599346ABE-L000970](../generate_index.py#L970) | 970 | `"            IndexedFinding("` | — |
+| [SRC-E599346ABE-L000971](../generate_index.py#L971) | 971 | `"                finding_id=("` | — |
+| [SRC-E599346ABE-L000972](../generate_index.py#L972) | 972 | `"                    f\"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}\""` | — |
+| [SRC-E599346ABE-L000973](../generate_index.py#L973) | 973 | `"                    f\"-L{source_line.line:06d}\""` | — |
+| [SRC-E599346ABE-L000974](../generate_index.py#L974) | 974 | `"                ),"` | — |
+| [SRC-E599346ABE-L000975](../generate_index.py#L975) | 975 | `"                file=source_line.file,"` | — |
+| [SRC-E599346ABE-L000976](../generate_index.py#L976) | 976 | `"                line_id=source_line.line_id,"` | — |
+| [SRC-E599346ABE-L000977](../generate_index.py#L977) | 977 | `"                marker=marker,"` | — |
+| [SRC-E599346ABE-L000978](../generate_index.py#L978) | 978 | `"                description=description,"` | — |
+| [SRC-E599346ABE-L000979](../generate_index.py#L979) | 979 | `"            )"` | — |
+| [SRC-E599346ABE-L000980](../generate_index.py#L980) | 980 | `"        )"` | — |
+| [SRC-E599346ABE-L000981](../generate_index.py#L981) | 981 | `"    findings.sort(key=lambda item: (item.marker, item.file.casefold(), item.line_id))"` | — |
+| [SRC-E599346ABE-L000982](../generate_index.py#L982) | 982 | `"    return findings"` | — |
+| [SRC-E599346ABE-L000983](../generate_index.py#L983) | 983 | `""` | — |
+| [SRC-E599346ABE-L000984](../generate_index.py#L984) | 984 | `""` | — |
+| [SRC-E599346ABE-L000985](../generate_index.py#L985) | 985 | `"def _markdown_code_span(value: str) -> str:"` | — |
+| [SRC-E599346ABE-L000986](../generate_index.py#L986) | 986 | `"    \"\"\"Render a Markdown inline-code span safely, including backticks in source text.\"\"\""` | — |
+| [SRC-E599346ABE-L000987](../generate_index.py#L987) | 987 | `"    tick = chr(96)"` | — |
+| [SRC-E599346ABE-L000988](../generate_index.py#L988) | 988 | `"    longest = max("` | — |
+| [SRC-E599346ABE-L000989](../generate_index.py#L989) | 989 | `"        (len(match.group(0)) for match in re.finditer(r\"\\u0060+\", value)),"` | — |
+| [SRC-E599346ABE-L000990](../generate_index.py#L990) | 990 | `"        default=0,"` | — |
+| [SRC-E599346ABE-L000991](../generate_index.py#L991) | 991 | `"    )"` | — |
+| [SRC-E599346ABE-L000992](../generate_index.py#L992) | 992 | `"    fence = tick * (longest + 1)"` | — |
+| [SRC-E599346ABE-L000993](../generate_index.py#L993) | 993 | `"    content = f\" {value} \" if value.startswith(tick) or value.endswith(tick) else value"` | — |
+| [SRC-E599346ABE-L000994](../generate_index.py#L994) | 994 | `"    return f\"{fence}{content}{fence}\""` | — |
+| [SRC-E599346ABE-L000995](../generate_index.py#L995) | 995 | `""` | — |
+| [SRC-E599346ABE-L000996](../generate_index.py#L996) | 996 | `""` | — |
+| [SRC-E599346ABE-L000997](../generate_index.py#L997) | 997 | `"def render_source_line_pages("` | — |
+| [SRC-E599346ABE-L000998](../generate_index.py#L998) | 998 | `"    source_lines: list[IndexedLine],"` | — |
+| [SRC-E599346ABE-L000999](../generate_index.py#L999) | 999 | `"    inventory: list[IndexedFile],"` | — |
+| [SRC-E599346ABE-L001000](../generate_index.py#L1000) | 1000 | `"    findings: list[IndexedFinding],"` | — |
+| [SRC-E599346ABE-L001001](../generate_index.py#L1001) | 1001 | `") -> tuple[dict[str, str], dict[str, list[str]]]:"` | — |
+| [SRC-E599346ABE-L001002](../generate_index.py#L1002) | 1002 | `"    \"\"\"Split line-level records into deterministic small pages and map each file to its pages.\"\"\""` | — |
+| [SRC-E599346ABE-L001003](../generate_index.py#L1003) | 1003 | `"    pages: dict[str, str] = {}"` | — |
+| [SRC-E599346ABE-L001004](../generate_index.py#L1004) | 1004 | `"    pages_by_file: dict[str, list[str]] = {}"` | — |
+| [SRC-E599346ABE-L001005](../generate_index.py#L1005) | 1005 | `"    inventory_by_path = {item.file: item for item in inventory}"` | — |
+| [SRC-E599346ABE-L001006](../generate_index.py#L1006) | 1006 | `"    findings_by_line = {finding.line_id: finding for finding in findings}"` | — |
+| [SRC-E599346ABE-L001007](../generate_index.py#L1007) | 1007 | `""` | — |
+| [SRC-E599346ABE-L001008](../generate_index.py#L1008) | 1008 | `"    for page_number, start in enumerate("` | — |
+| [SRC-E599346ABE-L001009](../generate_index.py#L1009) | 1009 | `"        range(0, len(source_lines), SOURCE_LINES_PAGE_SIZE),"` | — |
+| [SRC-E599346ABE-L001010](../generate_index.py#L1010) | 1010 | `"        start=1,"` | — |
+| [SRC-E599346ABE-L001011](../generate_index.py#L1011) | 1011 | `"    ):"` | — |
+| [SRC-E599346ABE-L001012](../generate_index.py#L1012) | 1012 | `"        chunk = source_lines[start : start + SOURCE_LINES_PAGE_SIZE]"` | — |
+| [SRC-E599346ABE-L001013](../generate_index.py#L1013) | 1013 | `"        page_path = f\"{SOURCE_LINES_PAGES_DIR}/SOURCE_LINES_{page_number:03d}.md\""` | — |
+| [SRC-E599346ABE-L001014](../generate_index.py#L1014) | 1014 | `"        lines = ["` | — |
+| [SRC-E599346ABE-L001015](../generate_index.py#L1015) | 1015 | `"            \"# Omarai Source Lines\","` | — |
+| [SRC-E599346ABE-L001016](../generate_index.py#L1016) | 1016 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001017](../generate_index.py#L1017) | 1017 | `"            \"<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->\","` | — |
+| [SRC-E599346ABE-L001018](../generate_index.py#L1018) | 1018 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001019](../generate_index.py#L1019) | 1019 | `"            f\"- الصفحة: **{page_number:03d}**\","` | — |
+| [SRC-E599346ABE-L001020](../generate_index.py#L1020) | 1020 | `"            f\"- سجلات الأسطر: **{len(chunk)}**\","` | — |
+| [SRC-E599346ABE-L001021](../generate_index.py#L1021) | 1021 | `"            f\"- النطاق: {chunk[0].line_id} إلى {chunk[-1].line_id}\","` | — |
+| [SRC-E599346ABE-L001022](../generate_index.py#L1022) | 1022 | `"            \"- الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)\","` | — |
+| [SRC-E599346ABE-L001023](../generate_index.py#L1023) | 1023 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001024](../generate_index.py#L1024) | 1024 | `"        ]"` | — |
+| [SRC-E599346ABE-L001025](../generate_index.py#L1025) | 1025 | `"        current_file: str \| None = None"` | — |
+| [SRC-E599346ABE-L001026](../generate_index.py#L1026) | 1026 | `"        for source_line in chunk:"` | — |
+| [SRC-E599346ABE-L001027](../generate_index.py#L1027) | 1027 | `"            item = inventory_by_path[source_line.file]"` | — |
+| [SRC-E599346ABE-L001028](../generate_index.py#L1028) | 1028 | `"            if source_line.file != current_file:"` | — |
+| [SRC-E599346ABE-L001029](../generate_index.py#L1029) | 1029 | `"                current_file = source_line.file"` | — |
+| [SRC-E599346ABE-L001030](../generate_index.py#L1030) | 1030 | `"                lines.extend("` | — |
+| [SRC-E599346ABE-L001031](../generate_index.py#L1031) | 1031 | `"                    ["` | — |
+| [SRC-E599346ABE-L001032](../generate_index.py#L1032) | 1032 | `"                        f\"## {item.category}\","` | — |
+| [SRC-E599346ABE-L001033](../generate_index.py#L1033) | 1033 | `"                        \"\","` | — |
+| [SRC-E599346ABE-L001034](../generate_index.py#L1034) | 1034 | `"                        f\"### {item.file_id} — [{_markdown_cell(item.file)}]({_source_file_href(item.file, index_directory=SOURCE_LINES_PAGES_DIR)})\","` | — |
+| [SRC-E599346ABE-L001035](../generate_index.py#L1035) | 1035 | `"                        \"\","` | — |
+| [SRC-E599346ABE-L001036](../generate_index.py#L1036) | 1036 | `"                        f\"- النوع: **{item.file_type}**\","` | — |
+| [SRC-E599346ABE-L001037](../generate_index.py#L1037) | 1037 | `"                        f\"- نطاق الفهرسة: {_markdown_cell(item.indexing_scope)}\","` | — |
+| [SRC-E599346ABE-L001038](../generate_index.py#L1038) | 1038 | `"                        \"\","` | — |
+| [SRC-E599346ABE-L001039](../generate_index.py#L1039) | 1039 | `"                        \"\| كود السطر \| السطر \| النص الكامل للسطر \| كود الوسم \|\","` | — |
+| [SRC-E599346ABE-L001040](../generate_index.py#L1040) | 1040 | `"                        \"\|---\|---:\|---\|---\|\","` | — |
+| [SRC-E599346ABE-L001041](../generate_index.py#L1041) | 1041 | `"                    ]"` | — |
+| [SRC-E599346ABE-L001042](../generate_index.py#L1042) | 1042 | `"                )"` | — |
+| [SRC-E599346ABE-L001043](../generate_index.py#L1043) | 1043 | `"            finding = findings_by_line.get(source_line.line_id)"` | — |
+| [SRC-E599346ABE-L001044](../generate_index.py#L1044) | 1044 | `"            finding_code = finding.finding_id if finding else \"—\""` | — |
+| [SRC-E599346ABE-L001045](../generate_index.py#L1045) | 1045 | `"            exact_text = json.dumps(source_line.content, ensure_ascii=False)"` | — |
+| [SRC-E599346ABE-L001046](../generate_index.py#L1046) | 1046 | `"            escaped_text = exact_text.replace(\"\|\", r\"\\\|\")"` | — |
+| [SRC-E599346ABE-L001047](../generate_index.py#L1047) | 1047 | `"            href = _source_file_href("` | — |
+| [SRC-E599346ABE-L001048](../generate_index.py#L1048) | 1048 | `"                source_line.file,"` | — |
+| [SRC-E599346ABE-L001049](../generate_index.py#L1049) | 1049 | `"                source_line.line,"` | — |
+| [SRC-E599346ABE-L001050](../generate_index.py#L1050) | 1050 | `"                index_directory=SOURCE_LINES_PAGES_DIR,"` | — |
+| [SRC-E599346ABE-L001051](../generate_index.py#L1051) | 1051 | `"            )"` | — |
+| [SRC-E599346ABE-L001052](../generate_index.py#L1052) | 1052 | `"            line_code = f\"[{source_line.line_id}]({href})\""` | — |
+| [SRC-E599346ABE-L001053](../generate_index.py#L1053) | 1053 | `"            lines.append("` | — |
+| [SRC-E599346ABE-L001054](../generate_index.py#L1054) | 1054 | `"                \"\| \""` | — |
+| [SRC-E599346ABE-L001055](../generate_index.py#L1055) | 1055 | `"                + \" \| \".join("` | — |
+| [SRC-E599346ABE-L001056](../generate_index.py#L1056) | 1056 | `"                    ("` | — |
+| [SRC-E599346ABE-L001057](../generate_index.py#L1057) | 1057 | `"                        line_code,"` | — |
+| [SRC-E599346ABE-L001058](../generate_index.py#L1058) | 1058 | `"                        str(source_line.line),"` | — |
+| [SRC-E599346ABE-L001059](../generate_index.py#L1059) | 1059 | `"                        _markdown_code_span(escaped_text),"` | — |
+| [SRC-E599346ABE-L001060](../generate_index.py#L1060) | 1060 | `"                        finding_code,"` | — |
+| [SRC-E599346ABE-L001061](../generate_index.py#L1061) | 1061 | `"                    )"` | — |
+| [SRC-E599346ABE-L001062](../generate_index.py#L1062) | 1062 | `"                )"` | — |
+| [SRC-E599346ABE-L001063](../generate_index.py#L1063) | 1063 | `"                + \" \|\""` | — |
+| [SRC-E599346ABE-L001064](../generate_index.py#L1064) | 1064 | `"            )"` | — |
+| [SRC-E599346ABE-L001065](../generate_index.py#L1065) | 1065 | `"            refs = pages_by_file.setdefault(source_line.file, [])"` | — |
+| [SRC-E599346ABE-L001066](../generate_index.py#L1066) | 1066 | `"            if page_path not in refs:"` | — |
+| [SRC-E599346ABE-L001067](../generate_index.py#L1067) | 1067 | `"                refs.append(page_path)"` | — |
+| [SRC-E599346ABE-L001068](../generate_index.py#L1068) | 1068 | `"        pages[page_path] = \"\\n\".join(lines) + \"\\n\""` | — |
+| [SRC-E599346ABE-L001069](../generate_index.py#L1069) | 1069 | `""` | — |
+| [SRC-E599346ABE-L001070](../generate_index.py#L1070) | 1070 | `"    return pages, pages_by_file"` | — |
+| [SRC-E599346ABE-L001071](../generate_index.py#L1071) | 1071 | `""` | — |
+| [SRC-E599346ABE-L001072](../generate_index.py#L1072) | 1072 | `""` | — |
+| [SRC-E599346ABE-L001073](../generate_index.py#L1073) | 1073 | `"def render_source_lines_markdown("` | — |
+| [SRC-E599346ABE-L001074](../generate_index.py#L1074) | 1074 | `"    source_lines: list[IndexedLine],"` | — |
+| [SRC-E599346ABE-L001075](../generate_index.py#L1075) | 1075 | `"    inventory: list[IndexedFile],"` | — |
+| [SRC-E599346ABE-L001076](../generate_index.py#L1076) | 1076 | `"    findings: list[IndexedFinding],"` | — |
+| [SRC-E599346ABE-L001077](../generate_index.py#L1077) | 1077 | `"    pages_by_file: dict[str, list[str]] \| None = None,"` | — |
+| [SRC-E599346ABE-L001078](../generate_index.py#L1078) | 1078 | `"    source_pages: dict[str, str] \| None = None,"` | — |
+| [SRC-E599346ABE-L001079](../generate_index.py#L1079) | 1079 | `") -> str:"` | — |
+| [SRC-E599346ABE-L001080](../generate_index.py#L1080) | 1080 | `"    \"\"\"Render a compact table of contents for the sharded full source-line index.\"\"\""` | — |
+| [SRC-E599346ABE-L001081](../generate_index.py#L1081) | 1081 | `"    assigned_pages = pages_by_file or {}"` | — |
+| [SRC-E599346ABE-L001082](../generate_index.py#L1082) | 1082 | `"    rendered_pages = source_pages or {}"` | — |
+| [SRC-E599346ABE-L001083](../generate_index.py#L1083) | 1083 | `"    files_with_lines = sum(item.line_count is not None for item in inventory)"` | — |
+| [SRC-E599346ABE-L001084](../generate_index.py#L1084) | 1084 | `"    lines = ["` | — |
+| [SRC-E599346ABE-L001085](../generate_index.py#L1085) | 1085 | `"        \"# SOURCE LINES INDEX — Omarai\","` | — |
 | [SRC-E599346ABE-L001086](../generate_index.py#L1086) | 1086 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001087](../generate_index.py#L1087) | 1087 | `"        \"\| الصفحة \| عدد السجلات \| من كود \| إلى كود \|\","` | — |
-| [SRC-E599346ABE-L001088](../generate_index.py#L1088) | 1088 | `"        \"\|---\|---:\|---\|---\|\","` | — |
-| [SRC-E599346ABE-L001089](../generate_index.py#L1089) | 1089 | `"    ]"` | — |
-| [SRC-E599346ABE-L001090](../generate_index.py#L1090) | 1090 | `"    for page_path, page_content in rendered_pages.items():"` | — |
-| [SRC-E599346ABE-L001091](../generate_index.py#L1091) | 1091 | `"        count = sum(1 for line in page_content.splitlines() if line.startswith(\"\| [SRC-\"))"` | — |
-| [SRC-E599346ABE-L001092](../generate_index.py#L1092) | 1092 | `"        ids = re.findall(r\"\\bSRC-[A-F0-9]+-L\\d{6}\\b\", page_content)"` | — |
-| [SRC-E599346ABE-L001093](../generate_index.py#L1093) | 1093 | `"        label = Path(page_path).stem"` | — |
-| [SRC-E599346ABE-L001094](../generate_index.py#L1094) | 1094 | `"        lines.append("` | — |
-| [SRC-E599346ABE-L001095](../generate_index.py#L1095) | 1095 | `"            f\"\| [{label}]({Path(page_path).relative_to('docs').as_posix()}) \| \""` | — |
-| [SRC-E599346ABE-L001096](../generate_index.py#L1096) | 1096 | `"            f\"{count} \| {ids[0] if ids else '—'} \| {ids[-1] if ids else '—'} \|\""` | — |
-| [SRC-E599346ABE-L001097](../generate_index.py#L1097) | 1097 | `"        )"` | — |
-| [SRC-E599346ABE-L001098](../generate_index.py#L1098) | 1098 | `"    lines.extend("` | — |
-| [SRC-E599346ABE-L001099](../generate_index.py#L1099) | 1099 | `"        ["` | — |
-| [SRC-E599346ABE-L001100](../generate_index.py#L1100) | 1100 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001101](../generate_index.py#L1101) | 1101 | `"            \"## جرد الملفات والوصول حسب الاسم\","` | — |
+| [SRC-E599346ABE-L001087](../generate_index.py#L1087) | 1087 | `"        \"<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->\","` | — |
+| [SRC-E599346ABE-L001088](../generate_index.py#L1088) | 1088 | `"        \"\","` | — |
+| [SRC-E599346ABE-L001089](../generate_index.py#L1089) | 1089 | `"        \"> هذا دليل الوصول إلى فهرس الأسطر الكامل. يحتوي كل سطر في الملفات النصية المؤهلة على كود SRC- ورقم السطر ونص السطر كاملًا.\","` | — |
+| [SRC-E599346ABE-L001090](../generate_index.py#L1090) | 1090 | `"        \"> قُسّم المحتوى إلى صفحات صغيرة حتى تظل كل صفحة قابلة للفتح والبحث بسرعة من الهاتف والمتصفح.\","` | — |
+| [SRC-E599346ABE-L001091](../generate_index.py#L1091) | 1091 | `"        \"> ابدأ من [MASTER INDEX](MASTER_INDEX.md) للعثور حسب اسم الملف أو الدالة أو الكلاس أو وسم المراجعة.\","` | — |
+| [SRC-E599346ABE-L001092](../generate_index.py#L1092) | 1092 | `"        \"> راجع [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md) للاطلاع على نسبة التغطية وأسباب الاستبعاد.\","` | — |
+| [SRC-E599346ABE-L001093](../generate_index.py#L1093) | 1093 | `"        \"\","` | — |
+| [SRC-E599346ABE-L001094](../generate_index.py#L1094) | 1094 | `"        \"## ملخص التغطية\","` | — |
+| [SRC-E599346ABE-L001095](../generate_index.py#L1095) | 1095 | `"        \"\","` | — |
+| [SRC-E599346ABE-L001096](../generate_index.py#L1096) | 1096 | `"        f\"- الملفات في جرد المستودع: **{len(inventory)}**\","` | — |
+| [SRC-E599346ABE-L001097](../generate_index.py#L1097) | 1097 | `"        f\"- الملفات النصية المفهرسة سطرًا بسطر: **{files_with_lines}**\","` | — |
+| [SRC-E599346ABE-L001098](../generate_index.py#L1098) | 1098 | `"        f\"- الأسطر المفهرسة: **{len(source_lines)}**\","` | — |
+| [SRC-E599346ABE-L001099](../generate_index.py#L1099) | 1099 | `"        f\"- وسوم المراجعة/الإصلاح المسجلة: **{len(findings)}**\","` | — |
+| [SRC-E599346ABE-L001100](../generate_index.py#L1100) | 1100 | `"        f\"- صفحات الأسطر: **{len(rendered_pages)}**\","` | — |

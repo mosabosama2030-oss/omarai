@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-C9CF9B54F8-L000102
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-C9CF9B54F8-L000101
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -242,102 +242,103 @@
 | [SRC-84F7DE82AF-L000006](../../.github/workflows/update_index.yml#L6) | 6 | `"    paths-ignore:"` | — |
 | [SRC-84F7DE82AF-L000007](../../.github/workflows/update_index.yml#L7) | 7 | `"      - \"docs/MASTER_INDEX.md\""` | — |
 | [SRC-84F7DE82AF-L000008](../../.github/workflows/update_index.yml#L8) | 8 | `"      - \"docs/SOURCE_LINES_INDEX.md\""` | — |
-| [SRC-84F7DE82AF-L000009](../../.github/workflows/update_index.yml#L9) | 9 | `"      - \"docs/source_index/**\""` | — |
-| [SRC-84F7DE82AF-L000010](../../.github/workflows/update_index.yml#L10) | 10 | `"  workflow_dispatch:"` | — |
-| [SRC-84F7DE82AF-L000011](../../.github/workflows/update_index.yml#L11) | 11 | `""` | — |
-| [SRC-84F7DE82AF-L000012](../../.github/workflows/update_index.yml#L12) | 12 | `"permissions:"` | — |
-| [SRC-84F7DE82AF-L000013](../../.github/workflows/update_index.yml#L13) | 13 | `"  contents: write"` | — |
-| [SRC-84F7DE82AF-L000014](../../.github/workflows/update_index.yml#L14) | 14 | `"  pull-requests: write"` | — |
-| [SRC-84F7DE82AF-L000015](../../.github/workflows/update_index.yml#L15) | 15 | `""` | — |
-| [SRC-84F7DE82AF-L000016](../../.github/workflows/update_index.yml#L16) | 16 | `"# Serialize updates separately per branch. Generated-index-only commits are ignored above."` | — |
-| [SRC-84F7DE82AF-L000017](../../.github/workflows/update_index.yml#L17) | 17 | `"concurrency:"` | — |
-| [SRC-84F7DE82AF-L000018](../../.github/workflows/update_index.yml#L18) | 18 | `"  group: omarai-living-index-${{ github.ref }}"` | — |
-| [SRC-84F7DE82AF-L000019](../../.github/workflows/update_index.yml#L19) | 19 | `"  cancel-in-progress: false"` | — |
-| [SRC-84F7DE82AF-L000020](../../.github/workflows/update_index.yml#L20) | 20 | `""` | — |
-| [SRC-84F7DE82AF-L000021](../../.github/workflows/update_index.yml#L21) | 21 | `"jobs:"` | — |
-| [SRC-84F7DE82AF-L000022](../../.github/workflows/update_index.yml#L22) | 22 | `"  refresh-index:"` | — |
-| [SRC-84F7DE82AF-L000023](../../.github/workflows/update_index.yml#L23) | 23 | `"    name: Generate and publish all repository indexes"` | — |
-| [SRC-84F7DE82AF-L000024](../../.github/workflows/update_index.yml#L24) | 24 | `"    runs-on: ubuntu-latest"` | — |
-| [SRC-84F7DE82AF-L000025](../../.github/workflows/update_index.yml#L25) | 25 | `"    steps:"` | — |
-| [SRC-84F7DE82AF-L000026](../../.github/workflows/update_index.yml#L26) | 26 | `"      - name: Check out repository"` | — |
-| [SRC-84F7DE82AF-L000027](../../.github/workflows/update_index.yml#L27) | 27 | `"        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
-| [SRC-84F7DE82AF-L000028](../../.github/workflows/update_index.yml#L28) | 28 | `""` | — |
-| [SRC-84F7DE82AF-L000029](../../.github/workflows/update_index.yml#L29) | 29 | `"      - name: Fetch the latest revision of the triggering branch"` | — |
-| [SRC-84F7DE82AF-L000030](../../.github/workflows/update_index.yml#L30) | 30 | `"        shell: bash"` | — |
-| [SRC-84F7DE82AF-L000031](../../.github/workflows/update_index.yml#L31) | 31 | `"        env:"` | — |
-| [SRC-84F7DE82AF-L000032](../../.github/workflows/update_index.yml#L32) | 32 | `"          BRANCH_NAME: ${{ github.ref_name }}"` | — |
-| [SRC-84F7DE82AF-L000033](../../.github/workflows/update_index.yml#L33) | 33 | `"        run: \|"` | — |
-| [SRC-84F7DE82AF-L000034](../../.github/workflows/update_index.yml#L34) | 34 | `"          set -euo pipefail"` | — |
-| [SRC-84F7DE82AF-L000035](../../.github/workflows/update_index.yml#L35) | 35 | `"          git fetch --no-tags origin \"${BRANCH_NAME}\""` | — |
-| [SRC-84F7DE82AF-L000036](../../.github/workflows/update_index.yml#L36) | 36 | `"          git checkout --force -B \"${BRANCH_NAME}\" \"origin/${BRANCH_NAME}\""` | — |
-| [SRC-84F7DE82AF-L000037](../../.github/workflows/update_index.yml#L37) | 37 | `""` | — |
-| [SRC-84F7DE82AF-L000038](../../.github/workflows/update_index.yml#L38) | 38 | `"      - name: Set up Python"` | — |
-| [SRC-84F7DE82AF-L000039](../../.github/workflows/update_index.yml#L39) | 39 | `"        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0"` | — |
-| [SRC-84F7DE82AF-L000040](../../.github/workflows/update_index.yml#L40) | 40 | `"        with:"` | — |
-| [SRC-84F7DE82AF-L000041](../../.github/workflows/update_index.yml#L41) | 41 | `"          python-version: \"3.12\""` | — |
-| [SRC-84F7DE82AF-L000042](../../.github/workflows/update_index.yml#L42) | 42 | `""` | — |
-| [SRC-84F7DE82AF-L000043](../../.github/workflows/update_index.yml#L43) | 43 | `"      - name: Generate the master, review-marker, and paginated source-line indexes"` | FND-REVIEW-84F7DE82AF-L000043 |
-| [SRC-84F7DE82AF-L000044](../../.github/workflows/update_index.yml#L44) | 44 | `"        run: python docs/generate_index.py"` | — |
-| [SRC-84F7DE82AF-L000045](../../.github/workflows/update_index.yml#L45) | 45 | `""` | — |
-| [SRC-84F7DE82AF-L000046](../../.github/workflows/update_index.yml#L46) | 46 | `"      - name: Verify every generated index and remove stale-page drift"` | — |
-| [SRC-84F7DE82AF-L000047](../../.github/workflows/update_index.yml#L47) | 47 | `"        run: python docs/generate_index.py --check"` | — |
-| [SRC-84F7DE82AF-L000048](../../.github/workflows/update_index.yml#L48) | 48 | `""` | — |
-| [SRC-84F7DE82AF-L000049](../../.github/workflows/update_index.yml#L49) | 49 | `"      - name: Commit and publish the generated indexes only when changed"` | — |
-| [SRC-84F7DE82AF-L000050](../../.github/workflows/update_index.yml#L50) | 50 | `"        shell: bash"` | — |
-| [SRC-84F7DE82AF-L000051](../../.github/workflows/update_index.yml#L51) | 51 | `"        env:"` | — |
-| [SRC-84F7DE82AF-L000052](../../.github/workflows/update_index.yml#L52) | 52 | `"          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}"` | — |
-| [SRC-84F7DE82AF-L000053](../../.github/workflows/update_index.yml#L53) | 53 | `"          BRANCH_NAME: ${{ github.ref_name }}"` | — |
-| [SRC-84F7DE82AF-L000054](../../.github/workflows/update_index.yml#L54) | 54 | `"        run: \|"` | — |
-| [SRC-84F7DE82AF-L000055](../../.github/workflows/update_index.yml#L55) | 55 | `"          set -euo pipefail"` | — |
-| [SRC-84F7DE82AF-L000056](../../.github/workflows/update_index.yml#L56) | 56 | `"          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/source_index/"` | — |
-| [SRC-84F7DE82AF-L000057](../../.github/workflows/update_index.yml#L57) | 57 | `"          if git diff --cached --quiet; then"` | — |
-| [SRC-84F7DE82AF-L000058](../../.github/workflows/update_index.yml#L58) | 58 | `"            echo \"All generated index files are already up to date; no commit is needed.\""` | — |
-| [SRC-84F7DE82AF-L000059](../../.github/workflows/update_index.yml#L59) | 59 | `"            exit 0"` | — |
-| [SRC-84F7DE82AF-L000060](../../.github/workflows/update_index.yml#L60) | 60 | `"          fi"` | — |
-| [SRC-84F7DE82AF-L000061](../../.github/workflows/update_index.yml#L61) | 61 | `""` | — |
-| [SRC-84F7DE82AF-L000062](../../.github/workflows/update_index.yml#L62) | 62 | `"          git config user.name \"github-actions[bot]\""` | — |
-| [SRC-84F7DE82AF-L000063](../../.github/workflows/update_index.yml#L63) | 63 | `"          git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\""` | — |
-| [SRC-84F7DE82AF-L000064](../../.github/workflows/update_index.yml#L64) | 64 | `"          git commit -m \"docs(index): refresh repository source-line inventory\""` | — |
-| [SRC-84F7DE82AF-L000065](../../.github/workflows/update_index.yml#L65) | 65 | `""` | — |
-| [SRC-84F7DE82AF-L000066](../../.github/workflows/update_index.yml#L66) | 66 | `"          if [[ \"${BRANCH_NAME}\" != \"main\" ]]; then"` | — |
-| [SRC-84F7DE82AF-L000067](../../.github/workflows/update_index.yml#L67) | 67 | `"            # Keep feature/fix branches reviewable with their generated index outputs."` | — |
-| [SRC-84F7DE82AF-L000068](../../.github/workflows/update_index.yml#L68) | 68 | `"            # This is a normal push; no force update and no merge are performed."` | — |
-| [SRC-84F7DE82AF-L000069](../../.github/workflows/update_index.yml#L69) | 69 | `"            git push origin \"HEAD:${BRANCH_NAME}\""` | — |
-| [SRC-84F7DE82AF-L000070](../../.github/workflows/update_index.yml#L70) | 70 | `"            echo \"Generated indexes committed to branch ${BRANCH_NAME}.\""` | — |
-| [SRC-84F7DE82AF-L000071](../../.github/workflows/update_index.yml#L71) | 71 | `"            exit 0"` | — |
-| [SRC-84F7DE82AF-L000072](../../.github/workflows/update_index.yml#L72) | 72 | `"          fi"` | — |
-| [SRC-84F7DE82AF-L000073](../../.github/workflows/update_index.yml#L73) | 73 | `""` | — |
-| [SRC-84F7DE82AF-L000074](../../.github/workflows/update_index.yml#L74) | 74 | `"          # On main, publish only a fast-forward update. If policy rejects it,"` | — |
-| [SRC-84F7DE82AF-L000075](../../.github/workflows/update_index.yml#L75) | 75 | `"          # offer a PR as the fallback; never force-push or auto-merge."` | — |
-| [SRC-84F7DE82AF-L000076](../../.github/workflows/update_index.yml#L76) | 76 | `"          if git push origin HEAD:main; then"` | — |
-| [SRC-84F7DE82AF-L000077](../../.github/workflows/update_index.yml#L77) | 77 | `"            echo \"Generated indexes were pushed to main.\""` | — |
-| [SRC-84F7DE82AF-L000078](../../.github/workflows/update_index.yml#L78) | 78 | `"            exit 0"` | — |
-| [SRC-84F7DE82AF-L000079](../../.github/workflows/update_index.yml#L79) | 79 | `"          fi"` | — |
-| [SRC-84F7DE82AF-L000080](../../.github/workflows/update_index.yml#L80) | 80 | `""` | — |
-| [SRC-84F7DE82AF-L000081](../../.github/workflows/update_index.yml#L81) | 81 | `"          automation_branch=\"automation/living-index\""` | — |
-| [SRC-84F7DE82AF-L000082](../../.github/workflows/update_index.yml#L82) | 82 | `"          if ! git push origin \"HEAD:${automation_branch}\"; then"` | — |
-| [SRC-84F7DE82AF-L000083](../../.github/workflows/update_index.yml#L83) | 83 | `"            automation_branch=\"automation/living-index-${GITHUB_RUN_ID}\""` | — |
-| [SRC-84F7DE82AF-L000084](../../.github/workflows/update_index.yml#L84) | 84 | `"            git push origin \"HEAD:${automation_branch}\""` | — |
-| [SRC-84F7DE82AF-L000085](../../.github/workflows/update_index.yml#L85) | 85 | `"            gh pr create \\"` | — |
-| [SRC-84F7DE82AF-L000086](../../.github/workflows/update_index.yml#L86) | 86 | `"              --base main \\"` | — |
-| [SRC-84F7DE82AF-L000087](../../.github/workflows/update_index.yml#L87) | 87 | `"              --head \"${automation_branch}\" \\"` | — |
-| [SRC-84F7DE82AF-L000088](../../.github/workflows/update_index.yml#L88) | 88 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
-| [SRC-84F7DE82AF-L000089](../../.github/workflows/update_index.yml#L89) | 89 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000089 |
-| [SRC-84F7DE82AF-L000090](../../.github/workflows/update_index.yml#L90) | 90 | `"            exit 0"` | — |
-| [SRC-84F7DE82AF-L000091](../../.github/workflows/update_index.yml#L91) | 91 | `"          fi"` | — |
-| [SRC-84F7DE82AF-L000092](../../.github/workflows/update_index.yml#L92) | 92 | `""` | — |
-| [SRC-84F7DE82AF-L000093](../../.github/workflows/update_index.yml#L93) | 93 | `"          pr_number=\"$(gh pr list --state open --base main --head \"${automation_branch}\" --json number --jq '.[0].number // empty')\""` | — |
-| [SRC-84F7DE82AF-L000094](../../.github/workflows/update_index.yml#L94) | 94 | `"          if [ -z \"${pr_number}\" ]; then"` | — |
-| [SRC-84F7DE82AF-L000095](../../.github/workflows/update_index.yml#L95) | 95 | `"            gh pr create \\"` | — |
-| [SRC-84F7DE82AF-L000096](../../.github/workflows/update_index.yml#L96) | 96 | `"              --base main \\"` | — |
-| [SRC-84F7DE82AF-L000097](../../.github/workflows/update_index.yml#L97) | 97 | `"              --head \"${automation_branch}\" \\"` | — |
-| [SRC-84F7DE82AF-L000098](../../.github/workflows/update_index.yml#L98) | 98 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
-| [SRC-84F7DE82AF-L000099](../../.github/workflows/update_index.yml#L99) | 99 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000099 |
-| [SRC-84F7DE82AF-L000100](../../.github/workflows/update_index.yml#L100) | 100 | `"          else"` | — |
-| [SRC-84F7DE82AF-L000101](../../.github/workflows/update_index.yml#L101) | 101 | `"            gh pr edit \"${pr_number}\" \\"` | — |
-| [SRC-84F7DE82AF-L000102](../../.github/workflows/update_index.yml#L102) | 102 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
-| [SRC-84F7DE82AF-L000103](../../.github/workflows/update_index.yml#L103) | 103 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000103 |
-| [SRC-84F7DE82AF-L000104](../../.github/workflows/update_index.yml#L104) | 104 | `"          fi"` | — |
+| [SRC-84F7DE82AF-L000009](../../.github/workflows/update_index.yml#L9) | 9 | `"      - \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
+| [SRC-84F7DE82AF-L000010](../../.github/workflows/update_index.yml#L10) | 10 | `"      - \"docs/source_index/**\""` | — |
+| [SRC-84F7DE82AF-L000011](../../.github/workflows/update_index.yml#L11) | 11 | `"  workflow_dispatch:"` | — |
+| [SRC-84F7DE82AF-L000012](../../.github/workflows/update_index.yml#L12) | 12 | `""` | — |
+| [SRC-84F7DE82AF-L000013](../../.github/workflows/update_index.yml#L13) | 13 | `"permissions:"` | — |
+| [SRC-84F7DE82AF-L000014](../../.github/workflows/update_index.yml#L14) | 14 | `"  contents: write"` | — |
+| [SRC-84F7DE82AF-L000015](../../.github/workflows/update_index.yml#L15) | 15 | `"  pull-requests: write"` | — |
+| [SRC-84F7DE82AF-L000016](../../.github/workflows/update_index.yml#L16) | 16 | `""` | — |
+| [SRC-84F7DE82AF-L000017](../../.github/workflows/update_index.yml#L17) | 17 | `"# Serialize updates separately per branch. Generated-index-only commits are ignored above."` | — |
+| [SRC-84F7DE82AF-L000018](../../.github/workflows/update_index.yml#L18) | 18 | `"concurrency:"` | — |
+| [SRC-84F7DE82AF-L000019](../../.github/workflows/update_index.yml#L19) | 19 | `"  group: omarai-living-index-${{ github.ref }}"` | — |
+| [SRC-84F7DE82AF-L000020](../../.github/workflows/update_index.yml#L20) | 20 | `"  cancel-in-progress: false"` | — |
+| [SRC-84F7DE82AF-L000021](../../.github/workflows/update_index.yml#L21) | 21 | `""` | — |
+| [SRC-84F7DE82AF-L000022](../../.github/workflows/update_index.yml#L22) | 22 | `"jobs:"` | — |
+| [SRC-84F7DE82AF-L000023](../../.github/workflows/update_index.yml#L23) | 23 | `"  refresh-index:"` | — |
+| [SRC-84F7DE82AF-L000024](../../.github/workflows/update_index.yml#L24) | 24 | `"    name: Generate and publish all repository indexes"` | — |
+| [SRC-84F7DE82AF-L000025](../../.github/workflows/update_index.yml#L25) | 25 | `"    runs-on: ubuntu-latest"` | — |
+| [SRC-84F7DE82AF-L000026](../../.github/workflows/update_index.yml#L26) | 26 | `"    steps:"` | — |
+| [SRC-84F7DE82AF-L000027](../../.github/workflows/update_index.yml#L27) | 27 | `"      - name: Check out repository"` | — |
+| [SRC-84F7DE82AF-L000028](../../.github/workflows/update_index.yml#L28) | 28 | `"        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
+| [SRC-84F7DE82AF-L000029](../../.github/workflows/update_index.yml#L29) | 29 | `""` | — |
+| [SRC-84F7DE82AF-L000030](../../.github/workflows/update_index.yml#L30) | 30 | `"      - name: Fetch the latest revision of the triggering branch"` | — |
+| [SRC-84F7DE82AF-L000031](../../.github/workflows/update_index.yml#L31) | 31 | `"        shell: bash"` | — |
+| [SRC-84F7DE82AF-L000032](../../.github/workflows/update_index.yml#L32) | 32 | `"        env:"` | — |
+| [SRC-84F7DE82AF-L000033](../../.github/workflows/update_index.yml#L33) | 33 | `"          BRANCH_NAME: ${{ github.ref_name }}"` | — |
+| [SRC-84F7DE82AF-L000034](../../.github/workflows/update_index.yml#L34) | 34 | `"        run: \|"` | — |
+| [SRC-84F7DE82AF-L000035](../../.github/workflows/update_index.yml#L35) | 35 | `"          set -euo pipefail"` | — |
+| [SRC-84F7DE82AF-L000036](../../.github/workflows/update_index.yml#L36) | 36 | `"          git fetch --no-tags origin \"${BRANCH_NAME}\""` | — |
+| [SRC-84F7DE82AF-L000037](../../.github/workflows/update_index.yml#L37) | 37 | `"          git checkout --force -B \"${BRANCH_NAME}\" \"origin/${BRANCH_NAME}\""` | — |
+| [SRC-84F7DE82AF-L000038](../../.github/workflows/update_index.yml#L38) | 38 | `""` | — |
+| [SRC-84F7DE82AF-L000039](../../.github/workflows/update_index.yml#L39) | 39 | `"      - name: Set up Python"` | — |
+| [SRC-84F7DE82AF-L000040](../../.github/workflows/update_index.yml#L40) | 40 | `"        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0"` | — |
+| [SRC-84F7DE82AF-L000041](../../.github/workflows/update_index.yml#L41) | 41 | `"        with:"` | — |
+| [SRC-84F7DE82AF-L000042](../../.github/workflows/update_index.yml#L42) | 42 | `"          python-version: \"3.12\""` | — |
+| [SRC-84F7DE82AF-L000043](../../.github/workflows/update_index.yml#L43) | 43 | `""` | — |
+| [SRC-84F7DE82AF-L000044](../../.github/workflows/update_index.yml#L44) | 44 | `"      - name: Generate the master, review-marker, and paginated source-line indexes"` | FND-REVIEW-84F7DE82AF-L000044 |
+| [SRC-84F7DE82AF-L000045](../../.github/workflows/update_index.yml#L45) | 45 | `"        run: python docs/generate_index.py"` | — |
+| [SRC-84F7DE82AF-L000046](../../.github/workflows/update_index.yml#L46) | 46 | `""` | — |
+| [SRC-84F7DE82AF-L000047](../../.github/workflows/update_index.yml#L47) | 47 | `"      - name: Verify every generated index and remove stale-page drift"` | — |
+| [SRC-84F7DE82AF-L000048](../../.github/workflows/update_index.yml#L48) | 48 | `"        run: python docs/generate_index.py --check"` | — |
+| [SRC-84F7DE82AF-L000049](../../.github/workflows/update_index.yml#L49) | 49 | `""` | — |
+| [SRC-84F7DE82AF-L000050](../../.github/workflows/update_index.yml#L50) | 50 | `"      - name: Commit and publish the generated indexes only when changed"` | — |
+| [SRC-84F7DE82AF-L000051](../../.github/workflows/update_index.yml#L51) | 51 | `"        shell: bash"` | — |
+| [SRC-84F7DE82AF-L000052](../../.github/workflows/update_index.yml#L52) | 52 | `"        env:"` | — |
+| [SRC-84F7DE82AF-L000053](../../.github/workflows/update_index.yml#L53) | 53 | `"          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}"` | — |
+| [SRC-84F7DE82AF-L000054](../../.github/workflows/update_index.yml#L54) | 54 | `"          BRANCH_NAME: ${{ github.ref_name }}"` | — |
+| [SRC-84F7DE82AF-L000055](../../.github/workflows/update_index.yml#L55) | 55 | `"        run: \|"` | — |
+| [SRC-84F7DE82AF-L000056](../../.github/workflows/update_index.yml#L56) | 56 | `"          set -euo pipefail"` | — |
+| [SRC-84F7DE82AF-L000057](../../.github/workflows/update_index.yml#L57) | 57 | `"          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/INDEX_COVERAGE_AUDIT.md docs/source_index/"` | — |
+| [SRC-84F7DE82AF-L000058](../../.github/workflows/update_index.yml#L58) | 58 | `"          if git diff --cached --quiet; then"` | — |
+| [SRC-84F7DE82AF-L000059](../../.github/workflows/update_index.yml#L59) | 59 | `"            echo \"All generated index files are already up to date; no commit is needed.\""` | — |
+| [SRC-84F7DE82AF-L000060](../../.github/workflows/update_index.yml#L60) | 60 | `"            exit 0"` | — |
+| [SRC-84F7DE82AF-L000061](../../.github/workflows/update_index.yml#L61) | 61 | `"          fi"` | — |
+| [SRC-84F7DE82AF-L000062](../../.github/workflows/update_index.yml#L62) | 62 | `""` | — |
+| [SRC-84F7DE82AF-L000063](../../.github/workflows/update_index.yml#L63) | 63 | `"          git config user.name \"github-actions[bot]\""` | — |
+| [SRC-84F7DE82AF-L000064](../../.github/workflows/update_index.yml#L64) | 64 | `"          git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\""` | — |
+| [SRC-84F7DE82AF-L000065](../../.github/workflows/update_index.yml#L65) | 65 | `"          git commit -m \"docs(index): refresh repository source-line inventory\""` | — |
+| [SRC-84F7DE82AF-L000066](../../.github/workflows/update_index.yml#L66) | 66 | `""` | — |
+| [SRC-84F7DE82AF-L000067](../../.github/workflows/update_index.yml#L67) | 67 | `"          if [[ \"${BRANCH_NAME}\" != \"main\" ]]; then"` | — |
+| [SRC-84F7DE82AF-L000068](../../.github/workflows/update_index.yml#L68) | 68 | `"            # Keep feature/fix branches reviewable with their generated index outputs."` | — |
+| [SRC-84F7DE82AF-L000069](../../.github/workflows/update_index.yml#L69) | 69 | `"            # This is a normal push; no force update and no merge are performed."` | — |
+| [SRC-84F7DE82AF-L000070](../../.github/workflows/update_index.yml#L70) | 70 | `"            git push origin \"HEAD:${BRANCH_NAME}\""` | — |
+| [SRC-84F7DE82AF-L000071](../../.github/workflows/update_index.yml#L71) | 71 | `"            echo \"Generated indexes committed to branch ${BRANCH_NAME}.\""` | — |
+| [SRC-84F7DE82AF-L000072](../../.github/workflows/update_index.yml#L72) | 72 | `"            exit 0"` | — |
+| [SRC-84F7DE82AF-L000073](../../.github/workflows/update_index.yml#L73) | 73 | `"          fi"` | — |
+| [SRC-84F7DE82AF-L000074](../../.github/workflows/update_index.yml#L74) | 74 | `""` | — |
+| [SRC-84F7DE82AF-L000075](../../.github/workflows/update_index.yml#L75) | 75 | `"          # On main, publish only a fast-forward update. If policy rejects it,"` | — |
+| [SRC-84F7DE82AF-L000076](../../.github/workflows/update_index.yml#L76) | 76 | `"          # offer a PR as the fallback; never force-push or auto-merge."` | — |
+| [SRC-84F7DE82AF-L000077](../../.github/workflows/update_index.yml#L77) | 77 | `"          if git push origin HEAD:main; then"` | — |
+| [SRC-84F7DE82AF-L000078](../../.github/workflows/update_index.yml#L78) | 78 | `"            echo \"Generated indexes were pushed to main.\""` | — |
+| [SRC-84F7DE82AF-L000079](../../.github/workflows/update_index.yml#L79) | 79 | `"            exit 0"` | — |
+| [SRC-84F7DE82AF-L000080](../../.github/workflows/update_index.yml#L80) | 80 | `"          fi"` | — |
+| [SRC-84F7DE82AF-L000081](../../.github/workflows/update_index.yml#L81) | 81 | `""` | — |
+| [SRC-84F7DE82AF-L000082](../../.github/workflows/update_index.yml#L82) | 82 | `"          automation_branch=\"automation/living-index\""` | — |
+| [SRC-84F7DE82AF-L000083](../../.github/workflows/update_index.yml#L83) | 83 | `"          if ! git push origin \"HEAD:${automation_branch}\"; then"` | — |
+| [SRC-84F7DE82AF-L000084](../../.github/workflows/update_index.yml#L84) | 84 | `"            automation_branch=\"automation/living-index-${GITHUB_RUN_ID}\""` | — |
+| [SRC-84F7DE82AF-L000085](../../.github/workflows/update_index.yml#L85) | 85 | `"            git push origin \"HEAD:${automation_branch}\""` | — |
+| [SRC-84F7DE82AF-L000086](../../.github/workflows/update_index.yml#L86) | 86 | `"            gh pr create \\"` | — |
+| [SRC-84F7DE82AF-L000087](../../.github/workflows/update_index.yml#L87) | 87 | `"              --base main \\"` | — |
+| [SRC-84F7DE82AF-L000088](../../.github/workflows/update_index.yml#L88) | 88 | `"              --head \"${automation_branch}\" \\"` | — |
+| [SRC-84F7DE82AF-L000089](../../.github/workflows/update_index.yml#L89) | 89 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
+| [SRC-84F7DE82AF-L000090](../../.github/workflows/update_index.yml#L90) | 90 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000090 |
+| [SRC-84F7DE82AF-L000091](../../.github/workflows/update_index.yml#L91) | 91 | `"            exit 0"` | — |
+| [SRC-84F7DE82AF-L000092](../../.github/workflows/update_index.yml#L92) | 92 | `"          fi"` | — |
+| [SRC-84F7DE82AF-L000093](../../.github/workflows/update_index.yml#L93) | 93 | `""` | — |
+| [SRC-84F7DE82AF-L000094](../../.github/workflows/update_index.yml#L94) | 94 | `"          pr_number=\"$(gh pr list --state open --base main --head \"${automation_branch}\" --json number --jq '.[0].number // empty')\""` | — |
+| [SRC-84F7DE82AF-L000095](../../.github/workflows/update_index.yml#L95) | 95 | `"          if [ -z \"${pr_number}\" ]; then"` | — |
+| [SRC-84F7DE82AF-L000096](../../.github/workflows/update_index.yml#L96) | 96 | `"            gh pr create \\"` | — |
+| [SRC-84F7DE82AF-L000097](../../.github/workflows/update_index.yml#L97) | 97 | `"              --base main \\"` | — |
+| [SRC-84F7DE82AF-L000098](../../.github/workflows/update_index.yml#L98) | 98 | `"              --head \"${automation_branch}\" \\"` | — |
+| [SRC-84F7DE82AF-L000099](../../.github/workflows/update_index.yml#L99) | 99 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
+| [SRC-84F7DE82AF-L000100](../../.github/workflows/update_index.yml#L100) | 100 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000100 |
+| [SRC-84F7DE82AF-L000101](../../.github/workflows/update_index.yml#L101) | 101 | `"          else"` | — |
+| [SRC-84F7DE82AF-L000102](../../.github/workflows/update_index.yml#L102) | 102 | `"            gh pr edit \"${pr_number}\" \\"` | — |
+| [SRC-84F7DE82AF-L000103](../../.github/workflows/update_index.yml#L103) | 103 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
+| [SRC-84F7DE82AF-L000104](../../.github/workflows/update_index.yml#L104) | 104 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000104 |
+| [SRC-84F7DE82AF-L000105](../../.github/workflows/update_index.yml#L105) | 105 | `"          fi"` | — |
 ## إعدادات وتشغيل
 
 ### FILE-BC37D034BA — [.gitignore](../../.gitignore#L1)
@@ -896,4 +897,3 @@
 | [SRC-C9CF9B54F8-L000099](../../agents/omarai.py#L99) | 99 | `"        if len(text) > MAX_TEXT:"` | — |
 | [SRC-C9CF9B54F8-L000100](../../agents/omarai.py#L100) | 100 | `"            raise ValueError(\"text is too long\")"` | — |
 | [SRC-C9CF9B54F8-L000101](../../agents/omarai.py#L101) | 101 | `"        url = validate_url(source_url)"` | — |
-| [SRC-C9CF9B54F8-L000102](../../agents/omarai.py#L102) | 102 | `"        normalized = normalize(text)"` | — |
