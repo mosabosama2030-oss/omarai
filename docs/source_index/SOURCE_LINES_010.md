@@ -210,7 +210,7 @@
 | [SRC-E599346ABE-L000492](../generate_index.py#L492) | 492 | `"    try:"` | — |
 | [SRC-E599346ABE-L000493](../generate_index.py#L493) | 493 | `"        return {"` | — |
 | [SRC-E599346ABE-L000494](../generate_index.py#L494) | 494 | `"            path"` | — |
-| [SRC-E599346ABE-L000495](../generate_index.py#L495) | 495 | `"            for path in result.stdout.decode(\"utf-8\").split(\"\\\\x00\")"` | — |
+| [SRC-E599346ABE-L000495](../generate_index.py#L495) | 495 | `"            for path in result.stdout.decode(\"utf-8\").split(\"\\x00\")"` | — |
 | [SRC-E599346ABE-L000496](../generate_index.py#L496) | 496 | `"            if path"` | — |
 | [SRC-E599346ABE-L000497](../generate_index.py#L497) | 497 | `"        }"` | — |
 | [SRC-E599346ABE-L000498](../generate_index.py#L498) | 498 | `"    except UnicodeError:"` | — |
