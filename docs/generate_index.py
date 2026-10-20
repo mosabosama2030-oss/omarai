@@ -13,6 +13,7 @@ import subprocess
 import sys
 import tempfile
 import tokenize
+from io import StringIO
 from urllib.parse import quote
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -1044,8 +1045,7 @@ def _python_comment_map(source: str) -> dict[int, list[str]]:
     """Return real Python comment tokens, excluding strings and docstrings."""
     comments: dict[int, list[str]] = {}
     try:
-        line_iterator = iter(source.splitlines(keepends=True))
-        for token in tokenize.generate_tokens(line_iterator.__next__):
+        for token in tokenize.generate_tokens(StringIO(source).readline):
             if token.type == tokenize.COMMENT:
                 _append_comment_text(comments, token.start[0], token.string[1:])
     except (tokenize.TokenError, IndentationError, SyntaxError, StopIteration):
