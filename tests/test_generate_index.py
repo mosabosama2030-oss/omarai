@@ -386,3 +386,28 @@ def test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secre
     assert "never-print-this-secret" not in report
     assert "PRIVATE_API_TOKEN" not in report
     assert "PRIVATE = True" not in report
+
+
+def test_multiple_review_markers_on_one_line_each_get_a_unique_finding_code(
+    tmp_path: Path,
+) -> None:
+    """Different and repeated review tags on a single line must not overwrite each other."""
+    source_file = tmp_path / "module.py"
+    source_file.write_text(
+        "# BUG: first defect; FIXME: repair it; BUG: second defect\n",
+        encoding="utf-8",
+    )
+
+    inventory = INDEXER.build_file_inventory(tmp_path)
+    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)
+    findings = INDEXER.scan_finding_annotations(source_lines)
+    pages, _ = INDEXER.render_source_line_pages(source_lines, inventory, findings)
+
+    assert len(findings) == 3
+    assert {item.marker for item in findings} == {"BUG", "FIXME"}
+    assert len({item.finding_id for item in findings}) == 3
+    bug_ids = [item.finding_id for item in findings if item.marker == "BUG"]
+    assert any(item.endswith("-M01") for item in bug_ids)
+    assert any(item.endswith("-M02") for item in bug_ids)
+    page_content = "\n".join(pages.values())
+    assert all(item.finding_id in page_content for item in findings)
