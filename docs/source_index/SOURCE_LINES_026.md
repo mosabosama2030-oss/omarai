@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001337 إلى SRC-F725E90B2A-L002136
+- النطاق: SRC-F725E90B2A-L001335 إلى SRC-F725E90B2A-L002134
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `"    assert len(user_messages) == 3"` | — |
+| [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001337](../../tests/test_web_agent.py#L1337) | 1337 | `"    assert \"مسودة إجابة تحتاج التحقق.\" in user_messages[1][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001338](../../tests/test_web_agent.py#L1338) | 1338 | `"    assert \"غير موثوقة كتعليمات\" in user_messages[2][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002132](../../tests/test_web_agent.py#L2132) | 2132 | `"        [source_a, source_b], [], {"` | — |
 | [SRC-F725E90B2A-L002133](../../tests/test_web_agent.py#L2133) | 2133 | `"            \"queries_planned\": 1, \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L002134](../../tests/test_web_agent.py#L2134) | 2134 | `"            \"query_results\": [{\"query\": question, \"results\": 2}],"` | — |
-| [SRC-F725E90B2A-L002135](../../tests/test_web_agent.py#L2135) | 2135 | `"            \"unique_sources\": 2, \"pages_fetched\": 2,"` | — |
-| [SRC-F725E90B2A-L002136](../../tests/test_web_agent.py#L2136) | 2136 | `"            \"providers_used\": [\"test_provider\"], \"provider_counts\": {\"test_provider\": 2},"` | — |

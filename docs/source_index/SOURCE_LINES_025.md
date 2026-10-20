@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000537 إلى SRC-F725E90B2A-L001336
+- النطاق: SRC-F725E90B2A-L000535 إلى SRC-F725E90B2A-L001334
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000535](../../tests/test_web_agent.py#L535) | 535 | `"            return json.dumps(self.payload).encode()"` | — |
+| [SRC-F725E90B2A-L000536](../../tests/test_web_agent.py#L536) | 536 | `""` | — |
 | [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `""` | — |
 | [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    def fake_post(url, **kwargs):"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001332](../../tests/test_web_agent.py#L1332) | 1332 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
 | [SRC-F725E90B2A-L001333](../../tests/test_web_agent.py#L1333) | 1333 | `""` | — |
 | [SRC-F725E90B2A-L001334](../../tests/test_web_agent.py#L1334) | 1334 | `"    assert result == \"تم تدقيق الإجابة.\""` | — |
-| [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `"    assert len(user_messages) == 3"` | — |
-| [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
