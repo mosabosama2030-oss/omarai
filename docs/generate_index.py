@@ -537,7 +537,10 @@ def _scan_css(
     base_line: int = 1,
 ) -> None:
     """Extract CSS class/id selectors and custom properties; this is not a full CSS parser."""
-    cleaned = CSS_COMMENT_RE.sub(\n        lambda match: "".join("\\n" if char == "\\n" else " " for char in match.group(0)),\n        source,\n    )
+    cleaned = CSS_COMMENT_RE.sub(
+        lambda match: "".join("\\n" if char == "\\n" else " " for char in match.group(0)),
+        source,
+    )
     patterns = (
         (CSS_CUSTOM_PROPERTY_RE, "متغير CSS مخصص"),
         (CSS_CLASS_RE, "محدد class في CSS"),
