@@ -2484,7 +2484,9 @@ def test_fetch_page_rejects_private_redirect_before_connecting(monkeypatch):
 
     class RedirectResponse:
         status_code = 302
-        headers = {"location": "http://127.0.0.1/admin"}
+
+        def __init__(self):
+            self.headers = {"location": "http://127.0.0.1/admin"}
 
     @contextmanager
     def fake_stream(self, method, url, **kwargs):
@@ -2534,7 +2536,9 @@ def test_fetch_page_revalidates_dns_for_each_redirect_destination(monkeypatch):
 
     class RedirectResponse:
         status_code = 302
-        headers = {"location": "https://second.example/internal"}
+
+        def __init__(self):
+            self.headers = {"location": "https://second.example/internal"}
 
     @contextmanager
     def fake_stream(self, method, url, **kwargs):
