@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **69**
-- ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **859**
-- تعريفات Python موثقة بوجود Docstring: **172**
-- تعريفات Python بلا Docstring: **521**
-- تعريفات لا ينطبق عليها Docstring: **166**
+- ملفات المستودع في الجرد: **71**
+- ملفات Python المحللة: **38**
+- تعريفات Python المفهرسة: **883**
+- تعريفات Python موثقة بوجود Docstring: **175**
+- تعريفات Python بلا Docstring: **533**
+- تعريفات لا ينطبق عليها Docstring: **175**
 - الرموز الساكنة الإضافية: **1335**
-- الأسطر النصية المفهرسة حرفيًا: **22798**
+- الأسطر النصية المفهرسة حرفيًا: **23357**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -36,6 +36,7 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 10096 | 71 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
+| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 17701 | 376 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 13767 | 326 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
@@ -77,6 +78,7 @@
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
+| FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 7520 | 183 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 25437 | 696 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -104,6 +106,21 @@
 
 | الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر | كود السطر للوصول المباشر |
 |---|---|---|---|---|---:|---|
+| [agents/answer_validation.py](../agents/answer_validation.py#L12) | متغير/ثابت Python | _DIGITS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-138992B1FC-L000012](../agents/answer_validation.py#L12) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L13) | متغير/ثابت Python | _ARABIC_NORMALIZATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-138992B1FC-L000013](../agents/answer_validation.py#L13) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L17) | متغير/ثابت Python | _DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-138992B1FC-L000017](../agents/answer_validation.py#L17) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L18) | متغير/ثابت Python | _TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-138992B1FC-L000018](../agents/answer_validation.py#L18) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L19) | متغير/ثابت Python | _NUMBER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-138992B1FC-L000019](../agents/answer_validation.py#L19) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L20) | متغير/ثابت Python | _CITATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-138992B1FC-L000020](../agents/answer_validation.py#L20) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L21) | متغير/ثابت Python | _STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-138992B1FC-L000021](../agents/answer_validation.py#L21) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L28) | متغير/ثابت Python | _UNIT_OR_VALUE_CONTEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-138992B1FC-L000028](../agents/answer_validation.py#L28) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L37) | دالة | _normalize | لا توجد Docstring. | ناقص | 37 | [SRC-138992B1FC-L000037](../agents/answer_validation.py#L37) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L43) | دالة | _tokens | لا توجد Docstring. | ناقص | 43 | [SRC-138992B1FC-L000043](../agents/answer_validation.py#L43) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L50) | دالة | _numeric_literals | Extract explicit numeric literals, ignoring citation indices and unqualified single digits. | موثق | 50 | [SRC-138992B1FC-L000050](../agents/answer_validation.py#L50) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L71) | دالة | _canonical_number | لا توجد Docstring. | ناقص | 71 | [SRC-138992B1FC-L000071](../agents/answer_validation.py#L71) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L79) | متغير/ثابت Python | _VALUE_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 79 | [SRC-138992B1FC-L000079](../agents/answer_validation.py#L79) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L106) | دالة | _numeric_values_with_cues | Extract number/dimension pairs as review signals, not as semantic claims. | موثق | 106 | [SRC-138992B1FC-L000106](../agents/answer_validation.py#L106) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L119) | دالة | audit_answer_integrity | Return bounded lexical checks; never label them as semantic fact verification. | موثق | 119 | [SRC-138992B1FC-L000119](../agents/answer_validation.py#L119) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | متغير/ثابت Python | MAX_CONTEXT_TURNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L14) | متغير/ثابت Python | ROUTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-5587371288-L000014](../agents/intent_router.py#L14) |
 | [agents/intent_router.py](../agents/intent_router.py#L19) | متغير/ثابت Python | _ARABIC_DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-5587371288-L000019](../agents/intent_router.py#L19) |
@@ -526,6 +543,15 @@
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L191) | دالة | test_live_rejects_unapproved_remote_url_before_network | لا توجد Docstring. | ناقص | 191 | [SRC-B3062EB677-L000191](../tests/test_answer_quality_runner.py#L191) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L208) | دالة | test_live_transport_error_still_not_pass | لا توجد Docstring. | ناقص | 208 | [SRC-B3062EB677-L000208](../tests/test_answer_quality_runner.py#L208) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L211) | دالة | test_live_transport_error_still_not_pass.fake_post | لا توجد Docstring. | ناقص | 211 | [SRC-B3062EB677-L000211](../tests/test_answer_quality_runner.py#L211) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L7) | دالة | test_numeric_screen_accepts_arabic_digits_and_thousands_formatting | لا توجد Docstring. | ناقص | 7 | [SRC-1C77C97630-L000007](../tests/test_answer_validation.py#L7) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L27) | دالة | test_numeric_screen_flags_number_absent_from_available_evidence | لا توجد Docstring. | ناقص | 27 | [SRC-1C77C97630-L000027](../tests/test_answer_validation.py#L27) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L43) | دالة | test_task_coverage_screen_flags_a_potentially_missing_target_without_claiming_failure | لا توجد Docstring. | ناقص | 43 | [SRC-1C77C97630-L000043](../tests/test_answer_validation.py#L43) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L62) | دالة | test_source_scope_does_not_confuse_snippet_with_fetched_page | لا توجد Docstring. | ناقص | 62 | [SRC-1C77C97630-L000062](../tests/test_answer_validation.py#L62) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L73) | دالة | test_citation_alignment_uses_fetched_page_text_and_flags_weak_overlap | لا توجد Docstring. | ناقص | 73 | [SRC-1C77C97630-L000073](../tests/test_answer_validation.py#L73) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L101) | دالة | test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence | لا توجد Docstring. | ناقص | 101 | [SRC-1C77C97630-L000101](../tests/test_answer_validation.py#L101) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L115) | دالة | test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source | لا توجد Docstring. | ناقص | 115 | [SRC-1C77C97630-L000115](../tests/test_answer_validation.py#L115) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L141) | دالة | test_different_price_values_are_flagged_for_review_not_called_contradictions | لا توجد Docstring. | ناقص | 141 | [SRC-1C77C97630-L000141](../tests/test_answer_validation.py#L141) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L169) | دالة | test_date_in_answer_missing_from_its_cited_source_is_flagged | لا توجد Docstring. | ناقص | 169 | [SRC-1C77C97630-L000169](../tests/test_answer_validation.py#L169) |
 | [tests/test_api.py](../tests/test_api.py#L20) | دالة | local_api | Run the real handler on an ephemeral loopback port with an isolated database. | موثق | 20 | [SRC-3451CC474D-L000020](../tests/test_api.py#L20) |
 | [tests/test_api.py](../tests/test_api.py#L36) | دالة | request_json | لا توجد Docstring. | ناقص | 36 | [SRC-3451CC474D-L000036](../tests/test_api.py#L36) |
 | [tests/test_api.py](../tests/test_api.py#L49) | دالة | test_api_health_analyze_save_duplicate_list_and_status | لا توجد Docstring. | ناقص | 49 | [SRC-3451CC474D-L000049](../tests/test_api.py#L49) |
