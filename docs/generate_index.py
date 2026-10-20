@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Generate Omarai's deterministic Python symbol and docstring inventory."""
 
 from __future__ import annotations
@@ -11,7 +10,7 @@ import tempfile
 import tokenize
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Sequence
+from collections.abc import Sequence
 
 
 EXCLUDED_DIRECTORIES = frozenset(
@@ -251,8 +250,10 @@ def render_markdown(symbols: list[IndexedSymbol], files_scanned: int) -> str:
             "",
             "---",
             "",
-            "أُنشئ هذا الفهرس بتحليل AST القياسي في Python. تُستثنى مجلدات البيئات الافتراضية "
-            "والاعتماديات والملفات المولدة لتجنب فهرسة نواتج البناء أو نسخ المكتبات.",
+            (
+                "أُنشئ هذا الفهرس بتحليل AST القياسي في Python. تُستثنى مجلدات البيئات الافتراضية "
+                "والاعتماديات والملفات المولدة لتجنب فهرسة نواتج البناء أو نسخ المكتبات."
+            ),
             "",
         ]
     )
