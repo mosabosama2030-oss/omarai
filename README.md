@@ -25,6 +25,20 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 
 This is a tool-using research agent built around existing language models, not a foundation model trained from scratch. The role-specific defaults aim for more consistent behaviour than using a router that selects a different free model at random on each call. Exact availability and response quality still depend on OpenRouter/provider conditions. **Privacy warning:** the user's question, conversation context and selected web excerpts are sent to the configured external language-model provider for planning/synthesis/review. OpenRouter's NVIDIA Nemotron free endpoint states that session data may be logged for security and product improvement; do not send passwords, API keys, private information or personal/confidential customer data through the free endpoint. See the [NVIDIA Nemotron free-endpoint privacy notice](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free). Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: Reddit API access requires approved app credentials and is subject to Reddit's terms; Facebook Pages reads require a valid token, page identifiers and correct permissions; Instagram hashtag search requires a professional Instagram account token and the specific supported permissions; X API access requires an authorized bearer token and suitable access; YouTube direct API search requires a Google API key. These APIs do not grant universal access to all content, accounts or comments. Review each platform's terms, quotas and permitted use before using the agent commercially. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people.
 
+
+## Living repository index
+
+The generated [MASTER INDEX](docs/MASTER_INDEX.md) provides a navigable inventory of eligible repository files, Python classes/functions/methods and module/class assignments, plus static navigation symbols for JavaScript/TypeScript, HTML, CSS, configuration files, shell scripts and Markdown headings. It is designed for locating code and documentation quickly; it is not a full-text index of every word, and non-Python extraction uses documented static heuristics.
+
+Regenerate the index locally after editing files:
+
+```bash
+python docs/generate_index.py
+python docs/generate_index.py --check
+```
+
+The GitHub Actions workflow `.github/workflows/update_index.yml` refreshes the generated index on pushes to `main` and commits only when the output changes. If direct publication is rejected, it opens a pull request instead; it does not auto-merge a pull request. The generator excludes the generated index itself, common build/dependency directories, known local secret files and runtime databases. Files larger than 2 MiB or that cannot be read as UTF-8 may be listed by metadata without internal symbol extraction.
+
 ## Per-request resource budget
 
 Each `POST /api/agent` answer includes a `request_budget` object with elapsed and remaining time, reserved resource counts, and configured limits. The current defaults are a 90-second cooperative deadline, at most 8 search queries, 32 provider search calls, 8 model HTTP attempts, 8 page fetches, and up to 3 optional server-side search-tool calls per request. Operator limits may be lowered or raised only within hard caps: `OMARAI_REQUEST_BUDGET_SECONDS` (10–120), `OMARAI_REQUEST_MAX_SEARCH_QUERIES` (1–8), `OMARAI_REQUEST_MAX_SEARCH_CALLS` (1–40), `OMARAI_REQUEST_MAX_MODEL_CALLS` (1–12), `OMARAI_REQUEST_MAX_PAGE_FETCHES` (1–8), and `OMARAI_REQUEST_MAX_TOOL_CALLS` (0–3). Invalid numeric values fall back to the defaults; out-of-range values are clamped.
