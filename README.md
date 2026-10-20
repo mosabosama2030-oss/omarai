@@ -28,16 +28,19 @@ This is a tool-using research agent built around existing language models, not a
 
 ## Living repository index
 
-The generated [MASTER INDEX](docs/MASTER_INDEX.md) provides a navigable inventory of eligible repository files, Python classes/functions/methods and module/class assignments, plus static navigation symbols for JavaScript/TypeScript, HTML, CSS, configuration files, shell scripts and Markdown headings. It is designed for locating code and documentation quickly; it is not a full-text index of every word, and non-Python extraction uses documented static heuristics.
+Omarai maintains two generated navigation indexes:
 
-Regenerate the index locally after editing files:
+- [MASTER INDEX](docs/MASTER_INDEX.md): categorized file inventory with stable file IDs, Python AST definitions, static frontend/configuration symbols, and explicit TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED review-marker entries. Each review marker has its own `FND-...` code and points to an exact source-line ID.
+- [SOURCE LINES INDEX](docs/SOURCE_LINES_INDEX.md): line-by-line index of every logical line in each eligible readable text file. Each row carries a deterministic `SRC-<FILEHASH>-L000001` code, original file path, category, line number and JSON-escaped source text. Use browser Find to search a function, variable, phrase, marker or file path, then open the source file at the listed line.
+
+Regenerate both indexes locally:
 
 ```bash
 python docs/generate_index.py
 python docs/generate_index.py --check
 ```
 
-The GitHub Actions workflow `.github/workflows/update_index.yml` refreshes the generated index on pushes to `main` and commits only when the output changes. If direct publication is rejected, it opens a pull request instead; it does not auto-merge a pull request. The generator excludes the generated index itself, common build/dependency directories, known local secret files and runtime databases. Files larger than 2 MiB or that cannot be read as UTF-8 may be listed by metadata without internal symbol extraction.
+GitHub Actions validates generation and reproducibility on Python 3.11 and 3.12. The workflow triggered by pushes to `main` regenerates and commits both files only when output changes. If direct publication is rejected, it opens a pull request rather than force-updating a branch or auto-merging. Files excluded for safety or practicality include known local secrets, runtime databases, generated/dependency directories, binary/unreadable files and individual text files larger than 2 MiB. The line index is a source-navigation aid, not a proof that each statement is correct. Explicit review markers are recorded, but arbitrary logic defects cannot be identified with 100% certainty by static indexing alone.
 
 ## Per-request resource budget
 
