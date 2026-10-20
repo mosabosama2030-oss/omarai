@@ -942,10 +942,14 @@ def render_markdown(
     files_scanned: int,
     inventory: list[IndexedFile] | None = None,
     static_symbols: list[IndexedMarker] | None = None,
+    source_lines: list[IndexedLine] | None = None,
+    findings: list[IndexedFinding] | None = None,
 ) -> str:
-    """Render the repository inventory and source-symbol index deterministically."""
+    """Render the repository file, symbol, explicit-review-marker, and line-index overview."""
     file_inventory = inventory or []
     marker_inventory = static_symbols or []
+    line_inventory = source_lines or []
+    finding_inventory = findings or []
     documented_count = sum(symbol.documented is True for symbol in symbols)
     missing_count = sum(symbol.documented is False for symbol in symbols)
     not_applicable_count = sum(symbol.documented is None for symbol in symbols)
@@ -954,9 +958,9 @@ def render_markdown(
         "",
         "<!-- هذا الملف مُولَّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
         "",
-        "> هذا فهرس تنقّل ساكن للمستودع، وليس فهرسًا لكل كلمة أو دليلًا على صحة كل ملف.",
-        "> يُفهرس Python عبر AST؛ أما JavaScript/TypeScript وHTML وCSS والإعدادات والعناوين",
-        "> فتُلتقط رموزها بأساليب ساكنة محدودة، وقد تتضمن النتائج الرمزية بعض المطابقات التقريبية.",
+        "> MASTER INDEX يجمع جرد الملفات والتعريفات المسماة ووسوم المراجعة؛ SOURCE LINES INDEX يحتوي الأسطر الكاملة",
+        "> لكل ملف نصي مؤهل قابل للقراءة، مع معرّف سطر ورقم السطر الأصلي.",
+        "> استخراج الرموز غير Python تقريبي؛ أما فهرسة الأسطر فمخصصة للوصول إلى النص الموجود وليست حكمًا على صحته.",
         "",
         "## ملخص الفهرسة",
         "",
@@ -967,6 +971,11 @@ def render_markdown(
         f"- تعريفات Python بلا Docstring: **{missing_count}**",
         f"- تعريفات لا ينطبق عليها Docstring: **{not_applicable_count}**",
         f"- الرموز الساكنة الإضافية: **{len(marker_inventory)}**",
+        f"- الأسطر النصية المفهرسة حرفيًا: **{len(line_inventory)}**",
+        f"- وسوم المراجعة/الإصلاح المسجلة: **{len(finding_inventory)}**",
+        "",
+        "- فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)",
+        "- كل سجل سطر يحمل معرّفًا من الشكل SRC-<FILEHASH>-L000001.",
         "",
         "## جرد ملفات المستودع",
         "",
@@ -974,8 +983,8 @@ def render_markdown(
         "يُستثنى ملف الفهرس المولّد نفسه لتجنب الحلقة الذاتية، كما تُستثنى المجلدات المولّدة "
         "والبيئات والملفات المحلية الحساسة وقواعد البيانات والمفاتيح المعروفة."),
         "",
-        "| الملف | النوع | الحجم (بايت) | عدد الأسطر | نطاق الفهرسة |",
-        "|---|---|---:|---:|---|",
+        "| معرّف الملف | التصنيف | الملف | النوع | الحجم (بايت) | عدد الأسطر | نطاق الفهرسة |",
+        "|---|---|---|---|---:|---:|---|",
     ]
 
     if file_inventory:
@@ -985,6 +994,8 @@ def render_markdown(
                 "| "
                 + " | ".join(
                     (
+                        item.file_id,
+                        _markdown_cell(item.category),
                         _markdown_cell(item.file),
                         _markdown_cell(item.file_type),
                         str(item.size_bytes),
@@ -995,7 +1006,7 @@ def render_markdown(
                 + " |"
             )
     else:
-        lines.append("| — | — | — | — | لم يُمرر جرد ملفات إلى المولّد. |")
+        lines.append("| — | — | — | — | — | — | لم يُمرر جرد ملفات إلى المولّد. |")
 
     lines.extend(
         [
@@ -1067,12 +1078,44 @@ def render_markdown(
     lines.extend(
         [
             "",
+            "## سجل وسوم المراجعة والإصلاح",
+            "",
+            "هذه قائمة بالوسوم الصريحة التي تستدعي المتابعة. وجود الوسم ليس إثباتًا آليًا أن السطر معيب؛ افتح الملف عند رقم السطر وراجع السياق.",
+            "",
+            "| كود الهفوة/الوسم | النوع | الملف | السطر | وصف الوسم | معرّف السطر |",
+            "|---|---|---|---:|---|---|",
+        ]
+    )
+    if finding_inventory:
+        line_map = {source_line.line_id: source_line for source_line in line_inventory}
+        for finding in finding_inventory:
+            source_line = line_map.get(finding.line_id)
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        finding.finding_id,
+                        finding.marker,
+                        _markdown_cell(finding.file),
+                        str(source_line.line if source_line else "غير متاح"),
+                        _markdown_cell(finding.description),
+                        finding.line_id,
+                    )
+                )
+                + " |"
+            )
+    else:
+        lines.append("| — | — | — | — | لم تُكتشف وسوم صريحة من الأنواع المعروفة. | — |")
+
+    lines.extend(
+        [
+            "",
             "---",
             "",
             "## حدود الفهرسة",
             "",
-            "- جرد الملفات لا يعني فهرسة محتوى كل ملف نصيًا؛ بعض الملفات مدرجة بالمسار والحجم فقط.",
-            "- الملفات النصية الأكبر من 2 MiB أو غير القابلة للقراءة لا تُحلل رموزها.",
+            "- كل الأسطر المنطقية للملفات النصية المؤهلة القابلة للقراءة مفهرسة في SOURCE LINES INDEX، لا في هذا الجدول المختصر.",
+            "- الملفات الأكبر من 2 MiB أو غير القابلة للقراءة أو الثنائية تبقى ضمن الجرد الوصفي، دون فهرسة سطورها.",
             "- لا تُفحص محتويات البيئة الافتراضية والاعتماديات والمجلدات المولدة.",
             "- لا تُقرأ ملفات البيئة المحلية وقواعد البيانات والمفاتيح المعروفة.",
             "- تحليل Python يرفض إنشاء فهرس جزئي عند وجود خطأ نحوي في أي ملف Python مؤهل.",
