@@ -7,6 +7,7 @@ import ast
 import hashlib
 import json
 import os
+import posixpath
 import re
 import sys
 import tempfile
@@ -65,6 +66,9 @@ MAX_DESCRIPTION_LENGTH = 240
 INDEX_RELATIVE_PATH = "docs/MASTER_INDEX.md"
 SOURCE_LINES_INDEX_RELATIVE_PATH = "docs/SOURCE_LINES_INDEX.md"
 INDEX_OUTPUT_PATHS = frozenset({INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH})
+SOURCE_LINES_PAGES_DIR = "docs/source_index"
+SOURCE_LINES_PAGE_SIZE = 800
+SOURCE_LINES_PAGE_RE = re.compile(r"SOURCE_LINES_\d{3,}\.md")
 
 PYTHON_EXTENSIONS = frozenset({".py"})
 JAVASCRIPT_EXTENSIONS = frozenset({".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"})
@@ -352,8 +356,11 @@ def discover_repository_files(root: Path) -> list[Path]:
             if candidate.is_symlink() or _is_sensitive_or_runtime_path(candidate):
                 continue
             relative_file = candidate.relative_to(root).as_posix()
-            if relative_file in INDEX_OUTPUT_PATHS:
-                # Generated indexes must not index themselves or destabilize their own size.
+            if (
+                relative_file in INDEX_OUTPUT_PATHS
+                or relative_file.startswith(SOURCE_LINES_PAGES_DIR + "/")
+            ):
+                # Exclude generated index outputs to prevent self-indexing loops.
                 continue
             discovered.append(candidate)
 
@@ -783,13 +790,14 @@ def scan_static_symbols(root: Path, inventory: list[IndexedFile]) -> list[Indexe
     return markers
 
 
-def _source_file_href(relative_file: str, line: int = 1) -> str:
-    """Return a repository-relative GitHub-style source link from a file stored under docs/."""
+def _source_file_href(
+    relative_file: str,
+    line: int = 1,
+    index_directory: str = "docs",
+) -> str:
+    """Return a relative source link from a generated index page to the original file."""
     normalized = relative_file.replace("\\", "/")
-    if normalized.startswith("docs/"):
-        target = normalized.removeprefix("docs/")
-    else:
-        target = "../" + normalized
+    target = posixpath.relpath(normalized, index_directory)
     return f"{quote(target, safe='/._-')}#L{max(line, 1)}"
 
 
