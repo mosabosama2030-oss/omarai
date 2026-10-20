@@ -11,6 +11,7 @@ import re
 import sys
 import tempfile
 import tokenize
+from urllib.parse import quote
 from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
@@ -113,7 +114,7 @@ INI_SECTION_RE = re.compile(r"^\s*\[([^\]]+)\]\s*$", re.MULTILINE)
 INI_KEY_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*=", re.MULTILINE)
 UPPER_SNAKE_RE = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
 API_PATH_RE = re.compile(r"""["'](/(?:api|leads)(?:/[A-Za-z0-9_{}./-]+)*)["']""")
-FINDING_MARKER_RE = re.compile(r"\b(TODO|FIXME|BUG|HACK|XXX|REVIEW|SECURITY|DEPRECATED)\b(?:\s*[:#-]?\s*(.*))?", re.IGNORECASE)
+FINDING_MARKER_RE = re.compile(r"\b(TODO|FIXME|BUG|HACK|XXX|REVIEW|SECURITY|DEPRECATED)\b\s*[:#-]\s*(.*)", re.IGNORECASE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -782,6 +783,22 @@ def scan_static_symbols(root: Path, inventory: list[IndexedFile]) -> list[Indexe
     return markers
 
 
+def _source_file_href(relative_file: str, line: int = 1) -> str:
+    """Return a repository-relative GitHub-style source link from a file stored under docs/."""
+    normalized = relative_file.replace("\\", "/")
+    if normalized.startswith("docs/"):
+        target = normalized.removeprefix("docs/")
+    else:
+        target = "../" + normalized
+    return f"{quote(target, safe='/._-')}#L{max(line, 1)}"
+
+
+def _source_line_id(relative_file: str, line: int) -> str:
+    """Return a consistent line code wherever a symbol, finding, or source line is shown."""
+    file_hash = _stable_file_id(relative_file).removeprefix("FILE-")
+    return f"SRC-{file_hash}-L{line:06d}"
+
+
 def _markdown_cell(value: str) -> str:
     """Normalize text and escape Markdown table delimiters."""
     return " ".join(value.replace("\r", " ").replace("\n", " ").split()).replace(
@@ -801,7 +818,7 @@ def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedL
                 IndexedLine(
                     file=item.file,
                     file_id=item.file_id,
-                    line_id=f"SRC-{item.file_id.removeprefix('FILE-')}-L{line_number:06d}",
+                    line_id=_source_line_id(item.file, line_number),
                     category=item.category,
                     line=line_number,
                     content=content,
@@ -856,11 +873,14 @@ def render_source_lines_markdown(
 ) -> str:
     """Render every indexed source line with a stable ID and exact JSON-escaped text."""
     by_file: dict[str, list[IndexedLine]] = {}
+    for item in inventory:
+        if item.line_count is not None:
+            by_file.setdefault(item.file, [])
     for source_line in source_lines:
         by_file.setdefault(source_line.file, []).append(source_line)
     findings_by_line = {finding.line_id: finding for finding in findings}
     inventory_by_path = {item.file: item for item in inventory}
-    files_with_lines = sum(bool(by_file.get(item.file)) for item in inventory)
+    files_with_lines = sum(item.line_count is not None for item in inventory)
     lines = [
         "# SOURCE LINES INDEX — Omarai",
         "",
@@ -890,7 +910,7 @@ def render_source_lines_markdown(
             lines.extend([f"## {current_category}", ""])
         lines.extend(
             [
-                f"### {item.file_id} — {_markdown_cell(relative_file)}",
+                f"### {item.file_id} — [{_markdown_cell(relative_file)}]({_source_file_href(relative_file)})",
                 "",
                 f"- النوع: **{item.file_type}**",
                 f"- نطاق الفهرسة: {_markdown_cell(item.indexing_scope)}",
@@ -900,16 +920,20 @@ def render_source_lines_markdown(
                 "|---|---:|---|---|",
             ]
         )
+        if not by_file[relative_file]:
+            lines.append("| — | — | ملف نصي فارغ (صفر سطر) | — |")
         for source_line in by_file[relative_file]:
             finding = findings_by_line.get(source_line.line_id)
             finding_text = finding.finding_id if finding else "—"
             exact_text = json.dumps(source_line.content, ensure_ascii=False)
             escaped_text = exact_text.replace("|", r"\|")
+            href = _source_file_href(relative_file, source_line.line)
+            line_code = f"[{source_line.line_id}]({href})"
             lines.append(
                 "| "
                 + " | ".join(
                     (
-                        source_line.line_id,
+                        line_code,
                         str(source_line.line),
                         _markdown_code_span(escaped_text),
                         finding_text,
