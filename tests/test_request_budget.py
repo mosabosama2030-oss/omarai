@@ -99,3 +99,49 @@ def test_social_provider_reserves_budget_before_network_io(monkeypatch):
     )
     with pytest.raises(RequestBudgetExceeded, match="search_calls"):
         agent._search_social("budget test", ["reddit"])
+
+
+
+@pytest.mark.parametrize(
+    ("resource", "limit"),
+    [
+        ("search_queries", 8),
+        ("search_calls", 32),
+        ("model_calls", 8),
+        ("page_fetches", 8),
+        ("tool_calls", 3),
+    ],
+)
+def test_each_resource_counter_stops_at_its_limit(resource, limit):
+    budget = RequestBudget(timeout_seconds=10, limits={resource: limit})
+
+    for expected_count in range(1, limit + 1):
+        budget.reserve(resource)
+        snapshot = budget.snapshot()
+        assert snapshot["counts"][resource] == expected_count
+        assert snapshot["counts"][resource] <= snapshot["limits"][resource]
+
+    with pytest.raises(RequestBudgetExceeded, match=resource):
+        budget.reserve(resource)
+
+    snapshot = budget.snapshot()
+    assert snapshot["counts"][resource] == limit
+    assert resource in snapshot["exhausted_reasons"]
+
+
+@pytest.mark.parametrize(
+    "resource",
+    ["search_queries", "search_calls", "model_calls", "page_fetches", "tool_calls"],
+)
+def test_disabled_resource_never_starts_work(resource):
+    budget = RequestBudget(timeout_seconds=10, limits={resource: 0})
+
+    assert budget.remaining_units(resource) == 0
+    with pytest.raises(RequestBudgetExceeded, match=resource):
+        budget.reserve(resource)
+
+    snapshot = budget.snapshot()
+    assert snapshot["counts"][resource] == 0
+    assert snapshot["limits"][resource] == 0
+    assert resource in snapshot["disabled_resources"]
+    assert resource in snapshot["exhausted_reasons"]
