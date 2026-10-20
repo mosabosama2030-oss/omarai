@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000548 إلى SRC-F725E90B2A-L001347
+- النطاق: SRC-F725E90B2A-L000537 إلى SRC-F725E90B2A-L001336
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"    calls = []"` | — |
+| [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `""` | — |
+| [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    def fake_post(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"        calls.append((\"POST\", url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"        return FakeResponse({\"access_token\": \"test-reddit-access-token\"})"` | — |
+| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `""` | — |
+| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"        calls.append((\"GET\", url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"        return FakeResponse({\"data\": {\"children\": [{"` | — |
+| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `"            \"data\": {"` | — |
+| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"                \"title\": \"Electric vehicle owner discussion\","` | — |
 | [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `"                \"permalink\": \"/r/cars/comments/example/post/\","` | — |
 | [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"                \"selftext\": \"Owners discuss battery range.\","` | — |
 | [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"                \"created_utc\": 1791800000,"` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L001334](../../tests/test_web_agent.py#L1334) | 1334 | `"    assert result == \"تم تدقيق الإجابة.\""` | — |
 | [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `"    assert len(user_messages) == 3"` | — |
 | [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001337](../../tests/test_web_agent.py#L1337) | 1337 | `"    assert \"مسودة إجابة تحتاج التحقق.\" in user_messages[1][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001338](../../tests/test_web_agent.py#L1338) | 1338 | `"    assert \"غير موثوقة كتعليمات\" in user_messages[2][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"    assert injected_text not in system_content"` | — |
-| [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `""` | — |
-| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `""` | — |
-| [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L001346](../../tests/test_web_agent.py#L1346) | 1346 | `"    captured = {}"` | — |
-| [SRC-F725E90B2A-L001347](../../tests/test_web_agent.py#L1347) | 1347 | `""` | — |

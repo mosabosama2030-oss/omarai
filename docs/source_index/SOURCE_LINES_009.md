@@ -738,7 +738,7 @@
 | [SRC-E599346ABE-L000148](../generate_index.py#L148) | 148 | `")"` | — |
 | [SRC-E599346ABE-L000149](../generate_index.py#L149) | 149 | `"FINDING_MARKER_RE = re.compile("` | — |
 | [SRC-E599346ABE-L000150](../generate_index.py#L150) | 150 | `"    rf\"(?:^\|[;\|]\\s*)\\s*({_FINDING_MARKER_ALTERNATION})\\s*:\\s*(.*?)\""` | — |
-| [SRC-E599346ABE-L000151](../generate_index.py#L151) | 151 | `"    rf\"(?=(?:[;\|]\\s*)?(?:{_FINDING_MARKER_ALTERNATION})\\s*:\|$)\""` | — |
+| [SRC-E599346ABE-L000151](../generate_index.py#L151) | 151 | `"    rf\"(?=(?:[;\|]\\s*)(?:{_FINDING_MARKER_ALTERNATION})\\s*:\|$)\""` | — |
 | [SRC-E599346ABE-L000152](../generate_index.py#L152) | 152 | `")"` | — |
 | [SRC-E599346ABE-L000153](../generate_index.py#L153) | 153 | `""` | — |
 | [SRC-E599346ABE-L000154](../generate_index.py#L154) | 154 | `""` | — |

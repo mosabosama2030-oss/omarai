@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **498**
 - تعريفات لا ينطبق عليها Docstring: **166**
 - الرموز الساكنة الإضافية: **1244**
-- الأسطر النصية المفهرسة حرفيًا: **21471**
+- الأسطر النصية المفهرسة حرفيًا: **21482**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -50,7 +50,7 @@
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 8689 | 88 | جرد الملف + عناوين Markdown |
-| FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 78346 | 1915 | جرد الملف + AST Python |
+| FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 78812 | 1926 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 4013 | 35 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 8675 | 47 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
@@ -432,18 +432,18 @@
 | [docs/generate_index.py](generate_index.py#L1033) | دالة | _append_comment_text | Map comment text fragments onto original 1-based source lines. | موثق | 1033 | [SRC-E599346ABE-L001033](generate_index.py#L1033) |
 | [docs/generate_index.py](generate_index.py#L1043) | دالة | _python_comment_map | Return real Python comment tokens, excluding strings and docstrings. | موثق | 1043 | [SRC-E599346ABE-L001043](generate_index.py#L1043) |
 | [docs/generate_index.py](generate_index.py#L1056) | دالة | _c_style_comment_map | Extract C-style or hash comments while skipping quoted strings. | موثق | 1056 | [SRC-E599346ABE-L001056](generate_index.py#L1056) |
-| [docs/generate_index.py](generate_index.py#L1113) | دالة | _html_comment_map | Return HTML comments only. | موثق | 1113 | [SRC-E599346ABE-L001113](generate_index.py#L1113) |
-| [docs/generate_index.py](generate_index.py#L1123) | دالة | _markdown_annotation_map | Accept explicit annotations at the start of Markdown prose, skipping fenced code. | موثق | 1123 | [SRC-E599346ABE-L001123](generate_index.py#L1123) |
-| [docs/generate_index.py](generate_index.py#L1155) | دالة | _finding_comments_by_file | Extract intended comment/prose annotations by file type, not arbitrary tokens. | موثق | 1155 | [SRC-E599346ABE-L001155](generate_index.py#L1155) |
-| [docs/generate_index.py](generate_index.py#L1188) | دالة | scan_finding_annotations | Index explicit comments/prose annotations, not incidental words in source code. | موثق | 1188 | [SRC-E599346ABE-L001188](generate_index.py#L1188) |
-| [docs/generate_index.py](generate_index.py#L1245) | دالة | _markdown_code_span | Render a Markdown inline-code span safely, including backticks in source text. | موثق | 1245 | [SRC-E599346ABE-L001245](generate_index.py#L1245) |
-| [docs/generate_index.py](generate_index.py#L1257) | دالة | render_source_line_pages | Split line-level records into deterministic small pages and map each file to its pages. | موثق | 1257 | [SRC-E599346ABE-L001257](generate_index.py#L1257) |
-| [docs/generate_index.py](generate_index.py#L1335) | دالة | render_source_lines_markdown | Render a compact table of contents for the sharded full source-line index. | موثق | 1335 | [SRC-E599346ABE-L001335](generate_index.py#L1335) |
-| [docs/generate_index.py](generate_index.py#L1429) | دالة | render_coverage_audit_markdown | Render a generated coverage ledger with exact line-index coverage and exclusions. | موثق | 1429 | [SRC-E599346ABE-L001429](generate_index.py#L1429) |
-| [docs/generate_index.py](generate_index.py#L1521) | دالة | render_markdown | Render the repository file, symbol, explicit-review-marker, and line-index overview. | موثق | 1521 | [SRC-E599346ABE-L001521](generate_index.py#L1521) |
-| [docs/generate_index.py](generate_index.py#L1715) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1715 | [SRC-E599346ABE-L001715](generate_index.py#L1715) |
-| [docs/generate_index.py](generate_index.py#L1744) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1744 | [SRC-E599346ABE-L001744](generate_index.py#L1744) |
-| [docs/generate_index.py](generate_index.py#L1782) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1782 | [SRC-E599346ABE-L001782](generate_index.py#L1782) |
+| [docs/generate_index.py](generate_index.py#L1113) | دالة | _html_comment_map | Return HTML comments while ignoring HTML-looking text inside script/style blocks. | موثق | 1113 | [SRC-E599346ABE-L001113](generate_index.py#L1113) |
+| [docs/generate_index.py](generate_index.py#L1134) | دالة | _markdown_annotation_map | Accept explicit annotations at the start of Markdown prose, skipping fenced code. | موثق | 1134 | [SRC-E599346ABE-L001134](generate_index.py#L1134) |
+| [docs/generate_index.py](generate_index.py#L1166) | دالة | _finding_comments_by_file | Extract intended comment/prose annotations by file type, not arbitrary tokens. | موثق | 1166 | [SRC-E599346ABE-L001166](generate_index.py#L1166) |
+| [docs/generate_index.py](generate_index.py#L1199) | دالة | scan_finding_annotations | Index explicit comments/prose annotations, not incidental words in source code. | موثق | 1199 | [SRC-E599346ABE-L001199](generate_index.py#L1199) |
+| [docs/generate_index.py](generate_index.py#L1256) | دالة | _markdown_code_span | Render a Markdown inline-code span safely, including backticks in source text. | موثق | 1256 | [SRC-E599346ABE-L001256](generate_index.py#L1256) |
+| [docs/generate_index.py](generate_index.py#L1268) | دالة | render_source_line_pages | Split line-level records into deterministic small pages and map each file to its pages. | موثق | 1268 | [SRC-E599346ABE-L001268](generate_index.py#L1268) |
+| [docs/generate_index.py](generate_index.py#L1346) | دالة | render_source_lines_markdown | Render a compact table of contents for the sharded full source-line index. | موثق | 1346 | [SRC-E599346ABE-L001346](generate_index.py#L1346) |
+| [docs/generate_index.py](generate_index.py#L1440) | دالة | render_coverage_audit_markdown | Render a generated coverage ledger with exact line-index coverage and exclusions. | موثق | 1440 | [SRC-E599346ABE-L001440](generate_index.py#L1440) |
+| [docs/generate_index.py](generate_index.py#L1532) | دالة | render_markdown | Render the repository file, symbol, explicit-review-marker, and line-index overview. | موثق | 1532 | [SRC-E599346ABE-L001532](generate_index.py#L1532) |
+| [docs/generate_index.py](generate_index.py#L1726) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1726 | [SRC-E599346ABE-L001726](generate_index.py#L1726) |
+| [docs/generate_index.py](generate_index.py#L1755) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1755 | [SRC-E599346ABE-L001755](generate_index.py#L1755) |
+| [docs/generate_index.py](generate_index.py#L1793) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1793 | [SRC-E599346ABE-L001793](generate_index.py#L1793) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L15) | كلاس | SmokeError | A live acceptance check failed. | موثق | 15 | [SRC-A8360B1B03-L000015](../scripts/hosted_smoke_test.py#L15) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L19) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 19 | [SRC-A8360B1B03-L000019](../scripts/hosted_smoke_test.py#L19) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L23) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 23 | [SRC-A8360B1B03-L000023](../scripts/hosted_smoke_test.py#L23) |
