@@ -2,653 +2,2367 @@
 
 <!-- هذا الملف مُولَّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
-> حالة التوثيق هنا تعني وجود Docstring غير فارغة فقط؛ ولا تُقيّم دقتها أو كفايتها.
-> يعرض عمود الوصف أول فقرة من الـDocstring للمحافظة على سهولة قراءة الفهرس.
+> MASTER INDEX يجمع جرد الملفات والتعريفات المسماة ووسوم المراجعة؛ SOURCE LINES INDEX يحتوي الأسطر الكاملة
+> لكل ملف نصي مؤهل قابل للقراءة، مع معرّف سطر ورقم السطر الأصلي.
+> استخراج الرموز غير Python تقريبي؛ أما فهرسة الأسطر فمخصصة للوصول إلى النص الموجود وليست حكمًا على صحته.
 
 ## ملخص الفهرسة
 
-- ملفات Python المفحوصة: **36**
-- الدوال والكلاسات المفهرسة: **632**
-- موثق بوجود Docstring: **115**
-- ناقص Docstring: **517**
+- ملفات المستودع في الجرد: **72**
+- ملفات Python المحللة: **38**
+- تعريفات Python المفهرسة: **863**
+- تعريفات Python موثقة بوجود Docstring: **160**
+- تعريفات Python بلا Docstring: **522**
+- تعريفات لا ينطبق عليها Docstring: **181**
+- الرموز الساكنة الإضافية: **1358**
+- الأسطر النصية المفهرسة حرفيًا: **22474**
+- وسوم المراجعة/الإصلاح المسجلة: **14**
 
-## سجل الدوال والكلاسات
+- فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
+- كل سجل سطر يحمل معرّفًا من الشكل SRC-<FILEHASH>-L000001.
 
-| الملف | النوع | اسم الدالة / الكلاس | الوصف | حالة التوثيق | السطر |
-|---|---|---|---|---|---:|
-| agents/intent_router.py | دالة | _normalize | لا توجد Docstring. | ناقص | 62 |
-| agents/intent_router.py | دالة | _is_smalltalk | لا توجد Docstring. | ناقص | 72 |
-| agents/intent_router.py | دالة | _has_context | Check whether the latest user turn can plausibly anchor a short follow-up. | موثق | 84 |
-| agents/intent_router.py | دالة | _has_live_signal | Recognize common time-sensitive or explicit-search requests without a model. | موثق | 106 |
-| agents/intent_router.py | دالة | _is_lead_generation_request | Recognize an explicit request to discover prospective buyers/customers. | موثق | 124 |
-| agents/intent_router.py | دالة | _needs_clarification | لا توجد Docstring. | ناقص | 151 |
-| agents/intent_router.py | دالة | _is_deep | لا توجد Docstring. | ناقص | 165 |
-| agents/intent_router.py | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 182 |
-| agents/intent_router.py | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 199 |
-| agents/intent_router.py | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 225 |
-| agents/omarai.py | دالة | normalize | لا توجد Docstring. | ناقص | 24 |
-| agents/omarai.py | دالة | now_utc | لا توجد Docstring. | ناقص | 29 |
-| agents/omarai.py | دالة | _csv_safe_cell | Prefix spreadsheet formulas even when hidden whitespace/control chars precede them. | موثق | 32 |
-| agents/omarai.py | دالة | analyze | لا توجد Docstring. | ناقص | 51 |
-| agents/omarai.py | دالة | validate_url | لا توجد Docstring. | ناقص | 73 |
-| agents/omarai.py | كلاس | LeadStore | لا توجد Docstring. | ناقص | 81 |
-| agents/omarai.py | دالة | LeadStore.__init__ | لا توجد Docstring. | ناقص | 82 |
-| agents/omarai.py | دالة | LeadStore.connect | لا توجد Docstring. | ناقص | 92 |
-| agents/omarai.py | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 96 |
-| agents/omarai.py | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 115 |
-| agents/omarai.py | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 119 |
-| agents/omarai.py | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 124 |
-| agents/omarai.py | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 132 |
-| agents/omarai.py | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 146 |
-| agents/request_budget.py | كلاس | RequestBudgetExceeded | Raised when a request cannot start more work within its resource budget. | موثق | 17 |
-| agents/request_budget.py | دالة | _bounded_env_int | لا توجد Docstring. | ناقص | 32 |
-| agents/request_budget.py | كلاس | RequestBudget | Thread-safe counters and a cooperative monotonic deadline for one answer. | موثق | 41 |
-| agents/request_budget.py | دالة | RequestBudget.__init__ | لا توجد Docstring. | ناقص | 44 |
-| agents/request_budget.py | دالة | RequestBudget.from_environment | لا توجد Docstring. | ناقص | 64 |
-| agents/request_budget.py | دالة | RequestBudget.remaining_seconds | لا توجد Docstring. | ناقص | 82 |
-| agents/request_budget.py | دالة | RequestBudget.timeout_for | Cap one outbound timeout to time remaining; raise instead of starting at zero. | موثق | 85 |
-| agents/request_budget.py | دالة | RequestBudget.remaining_units | Return unused units for a resource; zero means disabled, exhausted, or expired. | موثق | 94 |
-| agents/request_budget.py | دالة | RequestBudget.reserve | Atomically reserve resource units before initiating external work. | موثق | 103 |
-| agents/request_budget.py | دالة | RequestBudget.snapshot | لا توجد Docstring. | ناقص | 121 |
-| agents/research.py | دالة | registrable_domain | Return a normalized registrable domain (or normalized IP/unknown hostname). | موثق | 31 |
-| agents/research.py | دالة | extract_urls | Extract explicit HTTP(S) URLs without trying to interpret their content as instructions. | موثق | 99 |
-| agents/research.py | دالة | _compact | لا توجد Docstring. | ناقص | 112 |
-| agents/research.py | دالة | _normalize_arabic | لا توجد Docstring. | ناقص | 121 |
-| agents/research.py | دالة | _contains_any | لا توجد Docstring. | ناقص | 131 |
-| agents/research.py | دالة | detect_social_focus | لا توجد Docstring. | ناقص | 149 |
-| agents/research.py | دالة | detect_freshness | لا توجد Docstring. | ناقص | 156 |
-| agents/research.py | دالة | detect_depth | لا توجد Docstring. | ناقص | 160 |
-| agents/research.py | دالة | mentioned_social_platforms | لا توجد Docstring. | ناقص | 164 |
-| agents/research.py | دالة | _followup_query | لا توجد Docstring. | ناقص | 180 |
-| agents/research.py | دالة | fallback_plan | Build a small but varied plan when no model planner is configured or parsing fails. | موثق | 199 |
-| agents/research.py | دالة | validate_plan | لا توجد Docstring. | ناقص | 254 |
-| agents/research.py | دالة | _canonical_result_url | لا توجد Docstring. | ناقص | 294 |
-| agents/research.py | دالة | classify_source | لا توجد Docstring. | ناقص | 313 |
-| agents/research.py | دالة | fuse_ranked_results | Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs. | موثق | 346 |
-| agents/research.py | دالة | _parse_publication_date | Parse common search/RSS publication dates without guessing missing dates. | موثق | 415 |
-| agents/research.py | دالة | evidence_signal_report | Summarize research coverage; signals describe evidence coverage, not factual truth. | موثق | 457 |
-| agents/research.py | دالة | _tokenize | لا توجد Docstring. | ناقص | 563 |
-| agents/research.py | دالة | source_relevance_score | لا توجد Docstring. | ناقص | 571 |
-| agents/research.py | دالة | filter_relevant_sources | لا توجد Docstring. | ناقص | 605 |
-| agents/research.py | دالة | decide_evidence_status | لا توجد Docstring. | ناقص | 642 |
-| agents/web_agent.py | دالة | _normalize_search_query | Normalize Arabic letters/diacritics while preserving search operators and dates. | موثق | 102 |
-| agents/web_agent.py | دالة | _search_tokens | Tokenize Arabic/English text and expand a small bilingual vocabulary. | موثق | 119 |
-| agents/web_agent.py | دالة | _relevance_ratio | Fraction of meaningful query concepts present in a candidate's title/snippet. | موثق | 142 |
-| agents/web_agent.py | دالة | _blocked_source_url | لا توجد Docstring. | ناقص | 166 |
-| agents/web_agent.py | كلاس | AgentDependencyError | A required optional runtime dependency is unavailable. | موثق | 174 |
-| agents/web_agent.py | دالة | _clean_text | لا توجد Docstring. | ناقص | 178 |
-| agents/web_agent.py | دالة | _public_http_url | Lexically validate an HTTP URL before using it as a search source. | موثق | 184 |
-| agents/web_agent.py | دالة | _public_ip_literals | Resolve host and return its public addresses. | موثق | 211 |
-| agents/web_agent.py | دالة | _host_resolves_publicly | Reject local/private destinations before fetching a third-party page. | موثق | 241 |
-| agents/web_agent.py | دالة | _pinned_connect_url | Rewrite a validated public URL so the connection target is a checked IP. | موثق | 246 |
-| agents/web_agent.py | دالة | _fallback_answer | لا توجد Docstring. | ناقص | 256 |
-| agents/web_agent.py | كلاس | WebAgent | Search, inspect, and synthesize web evidence for open-ended questions. | موثق | 269 |
-| agents/web_agent.py | دالة | WebAgent.__init__ | لا توجد Docstring. | ناقص | 272 |
-| agents/web_agent.py | دالة | WebAgent._effective_timeout | Limit one outbound operation to the remaining per-answer time budget. | موثق | 315 |
-| agents/web_agent.py | دالة | WebAgent.status | لا توجد Docstring. | ناقص | 323 |
-| agents/web_agent.py | دالة | WebAgent._unwrap_search_url | لا توجد Docstring. | ناقص | 422 |
-| agents/web_agent.py | دالة | WebAgent._record_provider_diagnostic | لا توجد Docstring. | ناقص | 435 |
-| agents/web_agent.py | دالة | WebAgent._source_matches_query | لا توجد Docstring. | ناقص | 454 |
-| agents/web_agent.py | دالة | WebAgent._normalized_source_url_key | Normalize a public HTTP(S) URL for duplicate detection across search rounds. | موثق | 464 |
-| agents/web_agent.py | دالة | WebAgent._question_coverage_targets | Extract explicit multi-part answer requirements conservatively; this is not semantic grading. | موثق | 492 |
-| agents/web_agent.py | دالة | WebAgent._is_current_search_status_question | Recognize a question about whether this answer already used web search. | موثق | 549 |
-| agents/web_agent.py | دالة | WebAgent._is_self_question | Recognize questions about Omarai itself so they do not need web search. | موثق | 569 |
-| agents/web_agent.py | دالة | WebAgent._is_navigation_request | A link-finding task can be useful with one clearly labelled candidate result. | موثق | 603 |
-| agents/web_agent.py | دالة | WebAgent._is_lead_search | Keep lead discovery distinct from listing searches and generic explanations. | موثق | 613 |
-| agents/web_agent.py | دالة | WebAgent._lead_intent_evidence | Return a narrow, inspectable public buyer-intent phrase signal, if present. | موثق | 618 |
-| agents/web_agent.py | دالة | WebAgent._lead_generation_queries | Create high-intent buyer-search variants without changing the product/location. | موثق | 652 |
-| agents/web_agent.py | دالة | WebAgent._is_listing_discovery | Recognize property/job/product discovery where candidates are useful with caveats. | موثق | 694 |
-| agents/web_agent.py | دالة | WebAgent._requires_web_research | Use the web only when the user requests it or the answer depends on live data. | موثق | 714 |
-| agents/web_agent.py | دالة | WebAgent._local_answer_result | Build a consistently shaped answer for non-research conversational requests. | موثق | 737 |
-| agents/web_agent.py | دالة | WebAgent._local_conversation_reply | Return a short greeting/acknowledgment without a model or web request. | موثق | 760 |
-| agents/web_agent.py | دالة | WebAgent._annotate_intent_route | Attach route diagnostics to both response and research-plan metadata. | موثق | 774 |
-| agents/web_agent.py | دالة | WebAgent._clarification_result | Ask for a missing referent without calling the model or search providers. | موثق | 789 |
-| agents/web_agent.py | دالة | WebAgent._capability_status_snapshot | Describe configured capabilities without claiming a live health check. | موثق | 808 |
-| agents/web_agent.py | دالة | WebAgent._self_description_answer | Answer self/capability questions without inventing a live health result. | موثق | 889 |
-| agents/web_agent.py | دالة | WebAgent._answer_without_search | Answer stable informational questions with the configured LLM, without fake citations. | موثق | 952 |
-| agents/web_agent.py | دالة | WebAgent._search_duckduckgo_html | لا توجد Docstring. | ناقص | 1009 |
-| agents/web_agent.py | دالة | WebAgent._search_bing_rss | لا توجد Docstring. | ناقص | 1057 |
-| agents/web_agent.py | دالة | WebAgent._search_deepseek_api | Use DeepSeek's optional Search API as a comparison provider, never by default. | موثق | 1102 |
-| agents/web_agent.py | دالة | WebAgent._reset_deepseek_search_budget | Reset the bounded optional Search API request budget for one operation. | موثق | 1158 |
-| agents/web_agent.py | دالة | WebAgent._reserve_deepseek_search_request | Reserve one paid search request before concurrent queries invoke the provider. | موثق | 1163 |
-| agents/web_agent.py | دالة | WebAgent._search_web | Run configured search connectors concurrently with isolated failures and relevance checks. | موثق | 1180 |
-| agents/web_agent.py | دالة غير متزامنة | WebAgent._search_web.run_one | لا توجد Docstring. | ناقص | 1223 |
-| agents/web_agent.py | دالة غير متزامنة | WebAgent._search_web.run_all | لا توجد Docstring. | ناقص | 1278 |
-| agents/web_agent.py | دالة | WebAgent._reserve_search_call | Reserve one outbound search/social-provider request before network I/O. | موثق | 1296 |
-| agents/web_agent.py | دالة | WebAgent._search_brave | Use Brave's official web-search API when the operator provides an API key. | موثق | 1302 |
-| agents/web_agent.py | دالة | WebAgent._search_tavily | Use Tavily's official search API for structured, extractable live web results. | موثق | 1354 |
-| agents/web_agent.py | دالة | WebAgent._search_news | Read the public Google News RSS search feed for freshness-sensitive queries. | موثق | 1407 |
-| agents/web_agent.py | دالة | WebAgent._search_social | Search public social content through exposed public endpoints only. | موثق | 1475 |
-| agents/web_agent.py | دالة | WebAgent._fetch_page | Fetch a public page with bounded, individually validated redirects and size limits. | موثق | 1955 |
-| agents/web_agent.py | دالة | WebAgent._collect_sources | لا توجد Docstring. | ناقص | 2063 |
-| agents/web_agent.py | دالة | WebAgent._collect_research | Run independent query searches concurrently, fuse evidence, then fetch top pages. | موثق | 2082 |
-| agents/web_agent.py | دالة | WebAgent._sanitize_history | لا توجد Docstring. | ناقص | 2306 |
-| agents/web_agent.py | دالة | WebAgent._history_search_query | لا توجد Docstring. | ناقص | 2319 |
-| agents/web_agent.py | دالة | WebAgent._record_generation_diagnostic | Store bounded completion metadata without prompts, output text, or secrets. | موثق | 2339 |
-| agents/web_agent.py | دالة | WebAgent._request_completion | Call an OpenAI-compatible API with bounded fallback and optional live server search. | موثق | 2360 |
-| agents/web_agent.py | دالة | WebAgent._plan_search | Ask the language model how to search, then validate its proposal deterministically. | موثق | 2542 |
-| agents/web_agent.py | دالة | WebAgent._generate | لا توجد Docstring. | ناقص | 2658 |
-| agents/web_agent.py | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 2798 |
-| agents/web_agent.py | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 2895 |
-| agents/web_agent.py | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 2899 |
-| agents/web_agent.py | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 2910 |
-| agents/web_agent.py | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 2940 |
-| agents/web_agent.py | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 3161 |
-| agents/web_agent.py | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 3245 |
-| api/omarai.py | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 35 |
-| api/omarai.py | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 44 |
-| api/omarai.py | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 49 |
-| api/omarai.py | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 100 |
-| api/omarai.py | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 113 |
-| api/omarai.py | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 118 |
-| api/omarai.py | كلاس | Handler | لا توجد Docstring. | ناقص | 127 |
-| api/omarai.py | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 128 |
-| api/omarai.py | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 137 |
-| api/omarai.py | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 165 |
-| api/omarai.py | دالة | Handler._authorized | لا توجد Docstring. | ناقص | 182 |
-| api/omarai.py | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 191 |
-| api/omarai.py | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 221 |
-| api/omarai.py | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 224 |
-| api/omarai.py | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 240 |
-| api/omarai.py | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 265 |
-| api/omarai.py | دالة | Handler.respond | لا توجد Docstring. | ناقص | 336 |
-| api/omarai.py | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 350 |
-| api/omarai.py | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 384 |
-| api/omarai.py | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 473 |
-| api/omarai.py | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 486 |
-| api/omarai.py | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 490 |
-| api/omarai.py | دالة | serve | لا توجد Docstring. | ناقص | 526 |
-| cli/omarai.py | دالة | main | لا توجد Docstring. | ناقص | 9 |
-| docs/generate_index.py | كلاس | IndexedSymbol | Represent a class or function discovered in a Python source file. | موثق | 41 |
-| docs/generate_index.py | كلاس | IndexGenerationError | Signal that a complete and trustworthy index could not be generated. | موثق | 52 |
-| docs/generate_index.py | كلاس | SymbolVisitor | Collect classes, functions, methods, and their docstring summaries. | موثق | 56 |
-| docs/generate_index.py | دالة | SymbolVisitor.__init__ | Initialize the visitor for one repository-relative Python file. | موثق | 59 |
-| docs/generate_index.py | دالة | SymbolVisitor._description | Return a compact first-paragraph summary and its documentation state. | موثق | 66 |
-| docs/generate_index.py | دالة | SymbolVisitor._record | Record one definition while preserving its qualified scope. | موثق | 78 |
-| docs/generate_index.py | دالة | SymbolVisitor.visit_ClassDef | Record a class and recursively inspect its body. | موثق | 97 |
-| docs/generate_index.py | دالة | SymbolVisitor.visit_FunctionDef | Record a synchronous function or method and nested definitions. | موثق | 106 |
-| docs/generate_index.py | دالة | SymbolVisitor.visit_AsyncFunctionDef | Record an asynchronous function or method and nested definitions. | موثق | 115 |
-| docs/generate_index.py | دالة | discover_python_files | Return sorted repository-local Python files, excluding generated environments. | موثق | 125 |
-| docs/generate_index.py | دالة | scan_repository | Parse every eligible Python file or fail without producing a partial index. | موثق | 153 |
-| docs/generate_index.py | دالة | _markdown_cell | Normalize text and escape Markdown table delimiters. | موثق | 196 |
-| docs/generate_index.py | دالة | render_markdown | Render a stable Markdown index; documentation means a non-empty docstring exists. | موثق | 203 |
-| docs/generate_index.py | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 263 |
-| docs/generate_index.py | دالة | main | Run indexing from the selected repository root and report changes clearly. | موثق | 292 |
-| scripts/hosted_smoke_test.py | كلاس | SmokeError | A live acceptance check failed. | موثق | 15 |
-| scripts/hosted_smoke_test.py | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 19 |
-| scripts/hosted_smoke_test.py | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 23 |
-| scripts/hosted_smoke_test.py | دالة | _SameOriginRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 33 |
-| scripts/hosted_smoke_test.py | دالة | normalize_origin | لا توجد Docstring. | ناقص | 48 |
-| scripts/hosted_smoke_test.py | دالة | request_json | لا توجد Docstring. | ناقص | 72 |
-| scripts/hosted_smoke_test.py | دالة | run_smoke | لا توجد Docstring. | ناقص | 99 |
-| scripts/hosted_smoke_test.py | دالة | main | لا توجد Docstring. | ناقص | 172 |
-| scripts/run_answer_quality_benchmark.py | دالة | validate_base_url | Validate and normalize an API origin before any request can carry a token. | موثق | 42 |
-| scripts/run_answer_quality_benchmark.py | كلاس | _NoRedirectHandler | Do not follow redirects; the bearer token must never move to another origin. | موثق | 91 |
-| scripts/run_answer_quality_benchmark.py | دالة | _NoRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 94 |
-| scripts/run_answer_quality_benchmark.py | دالة | _utc_now | لا توجد Docstring. | ناقص | 116 |
-| scripts/run_answer_quality_benchmark.py | دالة | load_corpus | لا توجد Docstring. | ناقص | 120 |
-| scripts/run_answer_quality_benchmark.py | دالة | validate_corpus | Return a list of human-readable problems (empty => OK). | موثق | 131 |
-| scripts/run_answer_quality_benchmark.py | دالة | redact_secrets | Best-effort redaction of common secret patterns from stored outputs. | موثق | 164 |
-| scripts/run_answer_quality_benchmark.py | دالة | post_agent | لا توجد Docstring. | ناقص | 187 |
-| scripts/run_answer_quality_benchmark.py | دالة | run_validate | لا توجد Docstring. | ناقص | 226 |
-| scripts/run_answer_quality_benchmark.py | دالة | run_live | لا توجد Docstring. | ناقص | 253 |
-| scripts/run_answer_quality_benchmark.py | دالة | main | لا توجد Docstring. | ناقص | 359 |
-| scripts/sqlite_backup_restore.py | كلاس | BackupError | Raised when a backup/restore operation cannot be proven safe. | موثق | 15 |
-| scripts/sqlite_backup_restore.py | دالة | _open_read_only | Open an existing SQLite database without accidentally creating a missing source. | موثق | 19 |
-| scripts/sqlite_backup_restore.py | دالة | _validate_omarai_database | Require a healthy SQLite file containing the Omarai leads table. | موثق | 27 |
-| scripts/sqlite_backup_restore.py | دالة | _create_destination_exclusively | Create a new destination without overwriting an existing file or following its symlink. | موثق | 46 |
-| scripts/sqlite_backup_restore.py | دالة | _copy_verified_database | لا توجد Docstring. | ناقص | 59 |
-| scripts/sqlite_backup_restore.py | دالة | backup_database | Create a consistent SQLite snapshot of a healthy Omarai leads database. | موثق | 105 |
-| scripts/sqlite_backup_restore.py | دالة | restore_database | Restore a snapshot into a new destination; existing files are never overwritten. | موثق | 110 |
-| scripts/sqlite_backup_restore.py | دالة | main | لا توجد Docstring. | ناقص | 115 |
-| tests/test_agent_modes.py | دالة | test_deep_mode_expands_search_angles_and_returns_coverage_signals | لا توجد Docstring. | ناقص | 7 |
-| tests/test_agent_modes.py | دالة | test_deep_mode_expands_search_angles_and_returns_coverage_signals.plan | لا توجد Docstring. | ناقص | 12 |
-| tests/test_agent_modes.py | دالة | test_deep_mode_expands_search_angles_and_returns_coverage_signals.collect | لا توجد Docstring. | ناقص | 39 |
-| tests/test_answer_quality_corpus.py | دالة | _load_corpus | لا توجد Docstring. | ناقص | 78 |
-| tests/test_answer_quality_corpus.py | دالة | test_corpus_file_loads_as_utf8_json | لا توجد Docstring. | ناقص | 88 |
-| tests/test_answer_quality_corpus.py | دالة | test_minimum_case_count | لا توجد Docstring. | ناقص | 95 |
-| tests/test_answer_quality_corpus.py | دالة | test_case_ids_unique_and_shaped | لا توجد Docstring. | ناقص | 101 |
-| tests/test_answer_quality_corpus.py | دالة | test_required_fields_and_types | لا توجد Docstring. | ناقص | 110 |
-| tests/test_answer_quality_corpus.py | دالة | test_required_theme_categories_represented | لا توجد Docstring. | ناقص | 135 |
-| tests/test_answer_quality_corpus.py | دالة | test_no_empty_or_exact_duplicate_questions | لا توجد Docstring. | ناقص | 142 |
-| tests/test_answer_quality_corpus.py | دالة | test_research_cases_declare_fixture_or_controlled_env | لا توجد Docstring. | ناقص | 154 |
-| tests/test_answer_quality_corpus.py | دالة | test_safety_categories_include_injection_and_secrets | لا توجد Docstring. | ناقص | 172 |
-| tests/test_answer_quality_corpus.py | دالة | test_corpus_does_not_claim_live_execution_results | لا توجد Docstring. | ناقص | 188 |
-| tests/test_answer_quality_corpus.py | دالة | test_languages_include_arabic_english_and_mixed | لا توجد Docstring. | ناقص | 196 |
-| tests/test_answer_quality_corpus.py | دالة | test_documented_high_risk_examples_match_json_categories | لا توجد Docstring. | ناقص | 206 |
-| tests/test_answer_quality_corpus.py | دالة | test_docs_mention_corrected_high_risk_ids | لا توجد Docstring. | ناقص | 218 |
-| tests/test_answer_quality_corpus.py | دالة | test_no_placeholder_corpus_content | لا توجد Docstring. | ناقص | 225 |
-| tests/test_answer_quality_runner.py | دالة | _load_runner | لا توجد Docstring. | ناقص | 16 |
-| tests/test_answer_quality_runner.py | دالة | test_runner_script_exists | لا توجد Docstring. | ناقص | 25 |
-| tests/test_answer_quality_runner.py | دالة | test_validate_mode_succeeds_on_real_corpus | لا توجد Docstring. | ناقص | 29 |
-| tests/test_answer_quality_runner.py | دالة | test_validate_rejects_missing_file | لا توجد Docstring. | ناقص | 38 |
-| tests/test_answer_quality_runner.py | دالة | test_validate_detects_bad_case_count | لا توجد Docstring. | ناقص | 45 |
-| tests/test_answer_quality_runner.py | دالة | test_validate_detects_missing_required_field | لا توجد Docstring. | ناقص | 55 |
-| tests/test_answer_quality_runner.py | دالة | test_live_refuses_unbounded_without_limit_or_case_id | لا توجد Docstring. | ناقص | 67 |
-| tests/test_answer_quality_runner.py | دالة | test_live_unknown_case_id | لا توجد Docstring. | ناقص | 75 |
-| tests/test_answer_quality_runner.py | دالة | test_redact_secrets_strips_token_value | لا توجد Docstring. | ناقص | 92 |
-| tests/test_answer_quality_runner.py | دالة | test_live_records_not_tested_not_pass | Even on HTTP 200, quality status stays NOT_TESTED (no keyword auto-PASS). | موثق | 101 |
-| tests/test_answer_quality_runner.py | دالة | test_live_records_not_tested_not_pass.fake_post | لا توجد Docstring. | ناقص | 105 |
-| tests/test_answer_quality_runner.py | دالة | test_validate_base_url_rejects_non_loopback_http | لا توجد Docstring. | ناقص | 136 |
-| tests/test_answer_quality_runner.py | دالة | test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls | لا توجد Docstring. | ناقص | 151 |
-| tests/test_answer_quality_runner.py | دالة | test_remote_bearer_token_requires_exact_allowlisted_https_origin | لا توجد Docstring. | ناقص | 157 |
-| tests/test_answer_quality_runner.py | دالة | test_remote_token_origin_comparison_normalizes_default_https_port | لا توجد Docstring. | ناقص | 169 |
-| tests/test_answer_quality_runner.py | دالة | test_redirect_handler_refuses_following_redirects | لا توجد Docstring. | ناقص | 178 |
-| tests/test_answer_quality_runner.py | دالة | test_live_rejects_unapproved_remote_url_before_network | لا توجد Docstring. | ناقص | 191 |
-| tests/test_answer_quality_runner.py | دالة | test_live_transport_error_still_not_pass | لا توجد Docstring. | ناقص | 208 |
-| tests/test_answer_quality_runner.py | دالة | test_live_transport_error_still_not_pass.fake_post | لا توجد Docstring. | ناقص | 211 |
-| tests/test_api.py | دالة | local_api | Run the real handler on an ephemeral loopback port with an isolated database. | موثق | 20 |
-| tests/test_api.py | دالة | request_json | لا توجد Docstring. | ناقص | 36 |
-| tests/test_api.py | دالة | test_api_health_analyze_save_duplicate_list_and_status | لا توجد Docstring. | ناقص | 49 |
-| tests/test_api.py | دالة | test_api_rejects_invalid_filters_and_request_shapes | لا توجد Docstring. | ناقص | 120 |
-| tests/test_api.py | دالة | test_api_blocks_non_json_and_cross_origin_posts | لا توجد Docstring. | ناقص | 146 |
-| tests/test_api.py | دالة | test_configured_frontend_origin_supports_preflight_and_post | لا توجد Docstring. | ناقص | 169 |
-| tests/test_api.py | دالة | test_preflight_rejects_unconfigured_origin | لا توجد Docstring. | ناقص | 202 |
-| tests/test_api.py | دالة | test_ask_is_honest_when_database_is_empty | لا توجد Docstring. | ناقص | 217 |
-| tests/test_api.py | دالة | test_web_agent_endpoint_uses_agent_result | لا توجد Docstring. | ناقص | 227 |
-| tests/test_api.py | دالة | test_web_agent_endpoint_uses_agent_result.fake_answer | لا توجد Docstring. | ناقص | 230 |
-| tests/test_api.py | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets | لا توجد Docstring. | ناقص | 255 |
-| tests/test_api.py | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets.fake_diagnostics | لا توجد Docstring. | ناقص | 258 |
-| tests/test_api.py | دالة | test_diagnostics_endpoint_requires_boolean_options | لا توجد Docstring. | ناقص | 287 |
-| tests/test_api.py | دالة | test_rate_limit_ignores_spoofed_forwarded_for_by_default | لا توجد Docstring. | ناقص | 299 |
-| tests/test_api.py | دالة | test_rate_limit_uses_rightmost_valid_proxy_ip_only_when_enabled | لا توجد Docstring. | ناقص | 308 |
-| tests/test_api.py | دالة | test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip | لا توجد Docstring. | ناقص | 317 |
-| tests/test_api.py | دالة | test_public_api_authentication_and_rate_limit_precede_json_parsing | Reject untrusted API calls before parsing bodies and throttle repeated failures. | موثق | 326 |
-| tests/test_api.py | دالة | test_hosted_api_requires_private_token_for_search_and_lead_data | لا توجد Docstring. | ناقص | 354 |
-| tests/test_api.py | دالة | test_hosted_api_rate_limits_authenticated_requests | لا توجد Docstring. | ناقص | 379 |
-| tests/test_api.py | دالة | test_public_binding_requires_explicit_deployment_flag_and_strong_token | لا توجد Docstring. | ناقص | 400 |
-| tests/test_api.py | دالة | test_rate_limiter_prunes_expired_client_buckets | Client IPs do not accumulate forever after their 60-second window expires. | موثق | 413 |
-| tests/test_api.py | كلاس | test_rate_limiter_prunes_expired_client_buckets.FakeHandler | لا توجد Docstring. | ناقص | 421 |
-| tests/test_api.py | دالة | test_rate_limiter_prunes_expired_client_buckets.FakeHandler.__init__ | لا توجد Docstring. | ناقص | 422 |
-| tests/test_api.py | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy | لا توجد Docstring. | ناقص | 438 |
-| tests/test_api.py | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.slow_answer | لا توجد Docstring. | ناقص | 451 |
-| tests/test_api.py | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.first_request | لا توجد Docstring. | ناقص | 471 |
-| tests/test_api.py | دالة | test_agent_concurrency_limit_has_hard_bounds | لا توجد Docstring. | ناقص | 494 |
-| tests/test_api.py | دالة | test_api_rejects_oversized_request_body | لا توجد Docstring. | ناقص | 503 |
-| tests/test_api.py | دالة | test_api_rejects_malformed_content_length | لا توجد Docstring. | ناقص | 515 |
-| tests/test_api.py | دالة | test_api_returns_408_when_request_body_read_times_out | لا توجد Docstring. | ناقص | 538 |
-| tests/test_api.py | دالة | test_api_absolute_body_deadline_stops_slow_trickle | A client must not evade the total deadline by sending before each idle timeout. | موثق | 564 |
-| tests/test_api.py | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 611 |
-| tests/test_dashboard_security.py | دالة | test_hosted_lead_dashboard_can_send_the_private_access_token | لا توجد Docstring. | ناقص | 7 |
-| tests/test_dashboard_security.py | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 14 |
-| tests/test_evidence_provenance.py | دالة | _addrinfo | لا توجد Docstring. | ناقص | 11 |
-| tests/test_evidence_provenance.py | دالة | test_failed_page_read_is_not_reported_as_fetched | An empty extraction must not set page_fetched through the real collector. | موثق | 16 |
-| tests/test_evidence_provenance.py | دالة | test_failed_page_read_is_not_reported_as_fetched.search | لا توجد Docstring. | ناقص | 20 |
-| tests/test_evidence_provenance.py | دالة | test_openrouter_citations_stay_unread_in_public_answer | Server-side citations must not be misreported as direct source-page reads. | موثق | 55 |
-| tests/test_evidence_provenance.py | دالة | test_openrouter_citations_stay_unread_in_public_answer.collect | لا توجد Docstring. | ناقص | 61 |
-| tests/test_evidence_provenance.py | دالة | test_openrouter_citations_stay_unread_in_public_answer.generate | لا توجد Docstring. | ناقص | 110 |
-| tests/test_evidence_provenance.py | دالة | test_private_resolution_blocks_page_fetch | لا توجد Docstring. | ناقص | 148 |
-| tests/test_evidence_provenance.py | دالة | test_private_resolution_blocks_page_fetch.fake_getaddrinfo | لا توجد Docstring. | ناقص | 151 |
-| tests/test_evidence_provenance.py | كلاس | test_private_resolution_blocks_page_fetch.FakeClient | لا توجد Docstring. | ناقص | 154 |
-| tests/test_evidence_provenance.py | دالة | test_private_resolution_blocks_page_fetch.FakeClient.__init__ | لا توجد Docstring. | ناقص | 155 |
-| tests/test_evidence_provenance.py | دالة | test_private_resolution_blocks_page_fetch.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 158 |
-| tests/test_evidence_provenance.py | دالة | test_private_resolution_blocks_page_fetch.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 161 |
-| tests/test_evidence_provenance.py | دالة | test_private_resolution_blocks_page_fetch.FakeClient.stream | لا توجد Docstring. | ناقص | 164 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip | لا توجد Docstring. | ناقص | 175 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.fake_getaddrinfo | لا توجد Docstring. | ناقص | 178 |
-| tests/test_evidence_provenance.py | كلاس | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse | لا توجد Docstring. | ناقص | 182 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 186 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.iter_bytes | لا توجد Docstring. | ناقص | 189 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 192 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 195 |
-| tests/test_evidence_provenance.py | كلاس | test_page_fetch_connects_to_the_validated_public_ip.FakeClient | لا توجد Docstring. | ناقص | 198 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.__init__ | لا توجد Docstring. | ناقص | 199 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 205 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 208 |
-| tests/test_evidence_provenance.py | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.stream | لا توجد Docstring. | ناقص | 211 |
-| tests/test_evidence_provenance.py | دالة | test_mixed_public_and_private_dns_answers_block_page_fetch | A hostname is rejected when even one DNS answer is non-global. | موثق | 227 |
-| tests/test_evidence_provenance.py | دالة | test_mixed_public_and_private_dns_answers_block_page_fetch.fake_getaddrinfo | لا توجد Docstring. | ناقص | 229 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection | Every redirect is validated independently, even after a pinned public request. | موثق | 236 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.fake_getaddrinfo | لا توجد Docstring. | ناقص | 241 |
-| tests/test_evidence_provenance.py | كلاس | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse | لا توجد Docstring. | ناقص | 246 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 249 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 252 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 255 |
-| tests/test_evidence_provenance.py | كلاس | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient | لا توجد Docstring. | ناقص | 258 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.__init__ | لا توجد Docstring. | ناقص | 259 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 263 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 266 |
-| tests/test_evidence_provenance.py | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.stream | لا توجد Docstring. | ناقص | 269 |
-| tests/test_evidence_provenance.py | دالة | test_non_global_ipv4_and_ipv6_dns_answers_are_rejected | No DNS answer from a non-global range may pass the page-fetch gate. | موثق | 298 |
-| tests/test_evidence_signals.py | دالة | test_evidence_signal_report_uses_domain_provider_page_and_date_coverage | لا توجد Docstring. | ناقص | 8 |
-| tests/test_evidence_signals.py | دالة | test_evidence_signal_report_warns_when_no_sources_are_available | لا توجد Docstring. | ناقص | 42 |
-| tests/test_evidence_signals.py | دالة | test_publication_date_parser_handles_iso_rfc822_and_relative_dates | لا توجد Docstring. | ناقص | 50 |
-| tests/test_generate_index.py | دالة | test_indexes_functions_classes_methods_and_docstring_status | The index includes qualified names and distinguishes documented from missing. | موثق | 20 |
-| tests/test_generate_index.py | دالة | test_skips_virtual_environments_and_generated_dependency_directories | The scan avoids vendored dependencies, build outputs, and virtual environments. | موثق | 59 |
-| tests/test_generate_index.py | دالة | test_syntax_error_does_not_overwrite_the_previous_index | A failed parse leaves the prior index intact rather than publishing partial data. | موثق | 82 |
-| tests/test_generate_index.py | دالة | test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_index | An unchanged scan produces identical Markdown and avoids an unnecessary write. | موثق | 103 |
-| tests/test_generation_acceptance_matrix.py | كلاس | FakeCompletionResponse | لا توجد Docstring. | ناقص | 11 |
-| tests/test_generation_acceptance_matrix.py | دالة | FakeCompletionResponse.__init__ | لا توجد Docstring. | ناقص | 12 |
-| tests/test_generation_acceptance_matrix.py | دالة | FakeCompletionResponse.__enter__ | لا توجد Docstring. | ناقص | 24 |
-| tests/test_generation_acceptance_matrix.py | دالة | FakeCompletionResponse.__exit__ | لا توجد Docstring. | ناقص | 27 |
-| tests/test_generation_acceptance_matrix.py | دالة | FakeCompletionResponse.read | لا توجد Docstring. | ناقص | 30 |
-| tests/test_generation_acceptance_matrix.py | دالة | source | لا توجد Docstring. | ناقص | 34 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_only_normal_stop_is_accepted_as_a_complete_text_answer | لا توجد Docstring. | ناقص | 63 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_both_models_truncated_fail_without_returning_either_partial_answer | لا توجد Docstring. | ناقص | 92 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_both_models_truncated_fail_without_returning_either_partial_answer.fake_urlopen | لا توجد Docstring. | ناقص | 98 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_model_fallback_cannot_exceed_request_model_call_budget | لا توجد Docstring. | ناقص | 120 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_model_fallback_cannot_exceed_request_model_call_budget.fake_urlopen | لا توجد Docstring. | ناقص | 128 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_capability_snapshot_separates_configuration_from_live_health | لا توجد Docstring. | ناقص | 147 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_capability_answer_discloses_optional_deepseek_search_status | لا توجد Docstring. | ناقص | 180 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_operational_truth_overrides_a_model_claim_about_this_request | لا توجد Docstring. | ناقص | 209 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_operational_truth_overrides_a_model_claim_about_this_request.dishonest_model | لا توجد Docstring. | ناقص | 213 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_generation_budget_exhaustion_preserves_partial_sources | لا توجد Docstring. | ناقص | 234 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_generation_budget_exhaustion_preserves_partial_sources.fake_urlopen | لا توجد Docstring. | ناقص | 293 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_review_budget_exhaustion_discards_draft_and_preserves_sources | لا توجد Docstring. | ناقص | 314 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_review_budget_exhaustion_discards_draft_and_preserves_sources.fake_urlopen | لا توجد Docstring. | ناقص | 373 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_search_failure_is_not_reported_as_no_attempt_or_completed_answer | لا توجد Docstring. | ناقص | 394 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_research_exception_does_not_claim_no_results_or_no_search | لا توجد Docstring. | ناقص | 449 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_research_exception_does_not_claim_no_results_or_no_search.collect_fails_before_diagnostics | لا توجد Docstring. | ناقص | 467 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_search_extraction_generation_and_task_review_remain_distinct | لا توجد Docstring. | ناقص | 488 |
-| tests/test_generation_acceptance_matrix.py | دالة | test_reviewer_rejects_missing_or_unbounded_final_answer_delimiters | لا توجد Docstring. | ناقص | 569 |
-| tests/test_generation_capabilities.py | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 10 |
-| tests/test_generation_capabilities.py | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 11 |
-| tests/test_generation_capabilities.py | دالة | FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 17 |
-| tests/test_generation_capabilities.py | دالة | FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 20 |
-| tests/test_generation_capabilities.py | دالة | FakeResponse.read | لا توجد Docstring. | ناقص | 23 |
-| tests/test_generation_capabilities.py | دالة | test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used | لا توجد Docstring. | ناقص | 27 |
-| tests/test_generation_capabilities.py | دالة | test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used.fake_urlopen | لا توجد Docstring. | ناقص | 33 |
-| tests/test_generation_capabilities.py | دالة | test_unknown_finish_reason_is_rejected_and_fallback_is_used | لا توجد Docstring. | ناقص | 57 |
-| tests/test_generation_capabilities.py | دالة | test_unknown_finish_reason_is_rejected_and_fallback_is_used.fake_urlopen | لا توجد Docstring. | ناقص | 63 |
-| tests/test_generation_capabilities.py | دالة | test_missing_finish_reason_from_all_models_fails_closed | لا توجد Docstring. | ناقص | 83 |
-| tests/test_generation_capabilities.py | دالة | test_missing_finish_reason_from_all_models_fails_closed.fake_urlopen | لا توجد Docstring. | ناقص | 89 |
-| tests/test_generation_capabilities.py | دالة | test_capability_question_distinguishes_configuration_from_live_health | لا توجد Docstring. | ناقص | 110 |
-| tests/test_generation_capabilities.py | دالة | test_current_request_search_status_is_not_confused_with_capability | لا توجد Docstring. | ناقص | 134 |
-| tests/test_generation_capabilities.py | دالة | test_generation_failure_returns_partial_sources_and_diagnostics | لا توجد Docstring. | ناقص | 157 |
-| tests/test_generation_capabilities.py | دالة | test_generation_failure_returns_partial_sources_and_diagnostics.failed_generate | لا توجد Docstring. | ناقص | 227 |
-| tests/test_hosted_smoke.py | كلاس | Handler | لا توجد Docstring. | ناقص | 16 |
-| tests/test_hosted_smoke.py | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 17 |
-| tests/test_hosted_smoke.py | دالة | Handler.respond | لا توجد Docstring. | ناقص | 20 |
-| tests/test_hosted_smoke.py | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 28 |
-| tests/test_hosted_smoke.py | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 34 |
-| tests/test_hosted_smoke.py | دالة | hosted_server | لا توجد Docstring. | ناقص | 65 |
-| tests/test_hosted_smoke.py | دالة | test_normalize_origin_requires_https_and_rejects_credentials_or_paths | لا توجد Docstring. | ناقص | 77 |
-| tests/test_hosted_smoke.py | دالة | test_normalize_origin_allows_plain_http_only_for_local_test | لا توجد Docstring. | ناقص | 89 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_checks_health_auth_live_diagnostics_and_agent | لا توجد Docstring. | ناقص | 97 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect | لا توجد Docstring. | ناقص | 106 |
-| tests/test_hosted_smoke.py | كلاس | test_smoke_never_forwards_bearer_to_cross_origin_redirect.RedirectHandler | لا توجد Docstring. | ناقص | 109 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.RedirectHandler.log_message | لا توجد Docstring. | ناقص | 110 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.RedirectHandler.do_GET | لا توجد Docstring. | ناقص | 113 |
-| tests/test_hosted_smoke.py | كلاس | test_smoke_never_forwards_bearer_to_cross_origin_redirect.DestinationHandler | لا توجد Docstring. | ناقص | 119 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.DestinationHandler.log_message | لا توجد Docstring. | ناقص | 120 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.DestinationHandler.do_GET | لا توجد Docstring. | ناقص | 123 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_refuses_missing_or_short_access_token | لا توجد Docstring. | ناقص | 156 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_fails_when_agent_returns_no_live_source | لا توجد Docstring. | ناقص | 161 |
-| tests/test_hosted_smoke.py | دالة | test_smoke_fails_when_agent_returns_no_live_source.without_sources | لا توجد Docstring. | ناقص | 164 |
-| tests/test_intent_router.py | دالة | test_deterministic_intent_routes | لا توجد Docstring. | ناقص | 23 |
-| tests/test_intent_router.py | دالة | test_lead_generation_and_summarization_routes | لا توجد Docstring. | ناقص | 40 |
-| tests/test_intent_router.py | دالة | test_generic_explanation_of_lead_generation_is_not_a_lead_search | لا توجد Docstring. | ناقص | 46 |
-| tests/test_intent_router.py | دالة | test_capability_question_is_local | لا توجد Docstring. | ناقص | 52 |
-| tests/test_intent_router.py | دالة | test_ambiguous_followup_uses_existing_conversation_context | لا توجد Docstring. | ناقص | 62 |
-| tests/test_intent_router.py | دالة | test_comparison_followup_requires_context_before_deep_search | لا توجد Docstring. | ناقص | 73 |
-| tests/test_intent_router.py | دالة | test_ambiguous_followup_does_not_reuse_stale_topic_after_acknowledgment | لا توجد Docstring. | ناقص | 81 |
-| tests/test_intent_router.py | دالة | test_explicit_mode_overrides_conversational_shortcuts | لا توجد Docstring. | ناقص | 93 |
-| tests/test_intent_router.py | دالة | test_summarization_routing_respects_page_text_and_missing_input | لا توجد Docstring. | ناقص | 119 |
-| tests/test_intent_router_integration.py | دالة | _evidence | لا توجد Docstring. | ناقص | 9 |
-| tests/test_intent_router_integration.py | دالة | _report | لا توجد Docstring. | ناقص | 26 |
-| tests/test_intent_router_integration.py | دالة | test_greeting_is_local_without_model_or_search | لا توجد Docstring. | ناقص | 43 |
-| tests/test_intent_router_integration.py | دالة | test_greeting_is_local_without_model_or_search.unexpected | لا توجد Docstring. | ناقص | 46 |
-| tests/test_intent_router_integration.py | دالة | test_ambiguous_question_clarifies_without_model_or_search | لا توجد Docstring. | ناقص | 62 |
-| tests/test_intent_router_integration.py | دالة | test_ambiguous_question_clarifies_without_model_or_search.unexpected | لا توجد Docstring. | ناقص | 65 |
-| tests/test_intent_router_integration.py | دالة | test_contextual_price_followup_searches_with_previous_subject | لا توجد Docstring. | ناقص | 83 |
-| tests/test_intent_router_integration.py | دالة | test_contextual_price_followup_searches_with_previous_subject.collect | لا توجد Docstring. | ناقص | 92 |
-| tests/test_intent_router_integration.py | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles | لا توجد Docstring. | ناقص | 115 |
-| tests/test_intent_router_integration.py | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles.plan | لا توجد Docstring. | ناقص | 121 |
-| tests/test_intent_router_integration.py | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles.collect | لا توجد Docstring. | ناقص | 132 |
-| tests/test_live_search_connectors.py | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 8 |
-| tests/test_live_search_connectors.py | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 9 |
-| tests/test_live_search_connectors.py | دالة | FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 13 |
-| tests/test_live_search_connectors.py | دالة | FakeResponse.json | لا توجد Docstring. | ناقص | 16 |
-| tests/test_live_search_connectors.py | دالة | test_brave_search_adapter_normalizes_real_api_response | لا توجد Docstring. | ناقص | 20 |
-| tests/test_live_search_connectors.py | دالة | test_brave_search_adapter_normalizes_real_api_response.fake_get | لا توجد Docstring. | ناقص | 24 |
-| tests/test_live_search_connectors.py | دالة | test_tavily_search_adapter_normalizes_live_search_results | لا توجد Docstring. | ناقص | 48 |
-| tests/test_live_search_connectors.py | دالة | test_tavily_search_adapter_normalizes_live_search_results.fake_post | لا توجد Docstring. | ناقص | 52 |
-| tests/test_live_search_connectors.py | دالة | test_search_api_setup_status_reports_only_presence_not_secret_values | لا توجد Docstring. | ناقص | 74 |
-| tests/test_omarai.py | دالة | test_arabic_normalization | لا توجد Docstring. | ناقص | 8 |
-| tests/test_omarai.py | دالة | test_high_intent_with_next_step | لا توجد Docstring. | ناقص | 11 |
-| tests/test_omarai.py | دالة | test_non_buyer_override | لا توجد Docstring. | ناقص | 16 |
-| tests/test_omarai.py | دالة | test_empty_text_rejected | لا توجد Docstring. | ناقص | 21 |
-| tests/test_omarai.py | دالة | test_url_required_and_validated | لا توجد Docstring. | ناقص | 25 |
-| tests/test_omarai.py | دالة | test_duplicate_is_idempotent | لا توجد Docstring. | ناقص | 32 |
-| tests/test_omarai.py | دالة | test_status_updates_are_explicit | لا توجد Docstring. | ناقص | 40 |
-| tests/test_omarai.py | دالة | test_csv_requires_columns | لا توجد Docstring. | ناقص | 48 |
-| tests/test_omarai.py | دالة | test_csv_export_neutralizes_spreadsheet_formula_injection | لا توجد Docstring. | ناقص | 55 |
-| tests/test_proxy_origin.py | دالة | port | لا توجد Docstring. | ناقص | 14 |
-| tests/test_proxy_origin.py | دالة | call | لا توجد Docstring. | ناقص | 30 |
-| tests/test_proxy_origin.py | دالة | test_own_origin_is_accepted_behind_a_proxy | لا توجد Docstring. | ناقص | 55 |
-| tests/test_proxy_origin.py | دالة | test_a_foreign_site_is_still_refused | لا توجد Docstring. | ناقص | 61 |
-| tests/test_proxy_origin.py | دالة | test_configured_origin_still_works_without_any_proxy_headers | لا توجد Docstring. | ناقص | 66 |
-| tests/test_request_budget.py | كلاس | FakeClock | لا توجد Docstring. | ناقص | 9 |
-| tests/test_request_budget.py | دالة | FakeClock.__init__ | لا توجد Docstring. | ناقص | 10 |
-| tests/test_request_budget.py | دالة | FakeClock.__call__ | لا توجد Docstring. | ناقص | 13 |
-| tests/test_request_budget.py | دالة | test_resource_reservations_are_bounded_and_thread_safe_in_snapshot | لا توجد Docstring. | ناقص | 17 |
-| tests/test_request_budget.py | دالة | test_deadline_blocks_new_work_and_caps_outbound_timeout | لا توجد Docstring. | ناقص | 35 |
-| tests/test_request_budget.py | دالة | test_environment_overrides_are_clamped | لا توجد Docstring. | ناقص | 51 |
-| tests/test_request_budget.py | دالة | test_web_agent_reserves_search_model_and_page_work_before_io | لا توجد Docstring. | ناقص | 65 |
-| tests/test_request_budget.py | دالة | test_social_provider_reserves_budget_before_network_io | لا توجد Docstring. | ناقص | 88 |
-| tests/test_research.py | دالة | test_social_question_gets_platform_targeted_queries | لا توجد Docstring. | ناقص | 12 |
-| tests/test_research.py | دالة | test_follow_up_query_keeps_prior_topic | لا توجد Docstring. | ناقص | 20 |
-| tests/test_research.py | دالة | test_plan_validation_caps_queries_and_rejects_non_string_values | لا توجد Docstring. | ناقص | 27 |
-| tests/test_research.py | دالة | test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates | لا توجد Docstring. | ناقص | 42 |
-| tests/test_research.py | دالة | test_source_classification_distinguishes_social_and_government | لا توجد Docstring. | ناقص | 72 |
-| tests/test_research.py | دالة | test_explicit_page_urls_are_extracted_and_not_left_in_search_terms | لا توجد Docstring. | ناقص | 79 |
-| tests/test_research.py | دالة | test_registrable_domain_groups_subdomains_and_respects_public_suffixes | لا توجد Docstring. | ناقص | 88 |
-| tests/test_research.py | دالة | test_evidence_coverage_does_not_count_sibling_subdomains_as_independent | لا توجد Docstring. | ناقص | 97 |
-| tests/test_research_guardrails.py | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 |
-| tests/test_research_guardrails.py | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 |
-| tests/test_research_guardrails.py | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 |
-| tests/test_research_guardrails.py | دالة | test_depth_does_not_trigger_on_partial_words | لا توجد Docstring. | ناقص | 35 |
-| tests/test_research_guardrails.py | دالة | test_freshness_positive_english | لا توجد Docstring. | ناقص | 43 |
-| tests/test_research_guardrails.py | دالة | test_freshness_positive_arabic | لا توجد Docstring. | ناقص | 50 |
-| tests/test_research_guardrails.py | دالة | test_freshness_negative_know_and_snowden | لا توجد Docstring. | ناقص | 56 |
-| tests/test_research_guardrails.py | دالة | test_relevance_keeps_matching_source | لا توجد Docstring. | ناقص | 65 |
-| tests/test_research_guardrails.py | دالة | test_relevance_rejects_unrelated | لا توجد Docstring. | ناقص | 91 |
-| tests/test_research_guardrails.py | دالة | test_relevance_keeps_official_despite_wording | لا توجد Docstring. | ناقص | 104 |
-| tests/test_research_guardrails.py | دالة | test_filter_deduplicates | لا توجد Docstring. | ناقص | 118 |
-| tests/test_research_guardrails.py | دالة | test_filter_empty_and_failed_extract | لا توجد Docstring. | ناقص | 144 |
-| tests/test_research_guardrails.py | دالة | test_evidence_adequate | لا توجد Docstring. | ناقص | 164 |
-| tests/test_research_guardrails.py | دالة | test_evidence_insufficient_empty | لا توجد Docstring. | ناقص | 176 |
-| tests/test_research_guardrails.py | دالة | test_evidence_failed_provider | لا توجد Docstring. | ناقص | 182 |
-| tests/test_research_guardrails.py | دالة | test_evidence_partial_single_source | لا توجد Docstring. | ناقص | 188 |
-| tests/test_sqlite_backup_restore.py | دالة | test_backup_and_restore_preserve_omarai_leads | لا توجد Docstring. | ناقص | 11 |
-| tests/test_sqlite_backup_restore.py | دالة | test_backup_never_overwrites_an_existing_destination | لا توجد Docstring. | ناقص | 50 |
-| tests/test_sqlite_backup_restore.py | دالة | test_backup_rejects_non_omarai_sqlite_database_without_leaving_destination | لا توجد Docstring. | ناقص | 62 |
-| tests/test_sqlite_backup_restore.py | دالة | test_backup_rejects_same_source_and_destination | لا توجد Docstring. | ناقص | 74 |
-| tests/test_sqlite_backup_restore.py | دالة | test_restore_rejects_corrupt_backup_without_overwriting_source | لا توجد Docstring. | ناقص | 82 |
-| tests/test_sqlite_backup_restore.py | دالة | test_backup_rejects_dangling_symlink_destination | لا توجد Docstring. | ناقص | 93 |
-| tests/test_web_agent.py | دالة | sample_source | لا توجد Docstring. | ناقص | 15 |
-| tests/test_web_agent.py | دالة | test_agent_synthesizes_with_sources_without_live_network | لا توجد Docstring. | ناقص | 31 |
-| tests/test_web_agent.py | دالة | test_agent_synthesizes_with_sources_without_live_network.plan | لا توجد Docstring. | ناقص | 36 |
-| tests/test_web_agent.py | دالة | test_agent_synthesizes_with_sources_without_live_network.collect | لا توجد Docstring. | ناقص | 46 |
-| tests/test_web_agent.py | دالة | test_agent_synthesizes_with_sources_without_live_network.generate | لا توجد Docstring. | ناقص | 61 |
-| tests/test_web_agent.py | دالة | test_agent_returns_search_snippets_if_model_not_configured | لا توجد Docstring. | ناقص | 101 |
-| tests/test_web_agent.py | دالة | test_agent_rejects_empty_or_oversized_question | لا توجد Docstring. | ناقص | 133 |
-| tests/test_web_agent.py | دالة | test_history_search_query_expands_short_follow_up | لا توجد Docstring. | ناقص | 141 |
-| tests/test_web_agent.py | دالة | test_public_url_filter_rejects_local_and_credential_urls | لا توجد Docstring. | ناقص | 148 |
-| tests/test_web_agent.py | دالة | test_public_url_filter_accepts_basic_https_url | لا توجد Docstring. | ناقص | 155 |
-| tests/test_web_agent.py | دالة | test_search_web_parses_duckduckgo_and_bing_without_ddgs | لا توجد Docstring. | ناقص | 159 |
-| tests/test_web_agent.py | كلاس | test_search_web_parses_duckduckgo_and_bing_without_ddgs.FakeResponse | لا توجد Docstring. | ناقص | 178 |
-| tests/test_web_agent.py | دالة | test_search_web_parses_duckduckgo_and_bing_without_ddgs.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 181 |
-| tests/test_web_agent.py | دالة | test_search_web_parses_duckduckgo_and_bing_without_ddgs.fake_get | لا توجد Docstring. | ناقص | 187 |
-| tests/test_web_agent.py | دالة | test_model_planner_preserves_social_intent_and_adds_targeted_query | لا توجد Docstring. | ناقص | 203 |
-| tests/test_web_agent.py | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results | لا توجد Docstring. | ناقص | 224 |
-| tests/test_web_agent.py | كلاس | test_direct_social_search_reads_public_reddit_and_bluesky_results.FakeResponse | لا توجد Docstring. | ناقص | 234 |
-| tests/test_web_agent.py | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 237 |
-| tests/test_web_agent.py | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results.FakeResponse.json | لا توجد Docstring. | ناقص | 242 |
-| tests/test_web_agent.py | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results.fake_get | لا توجد Docstring. | ناقص | 245 |
-| tests/test_web_agent.py | دالة | test_research_collection_fuses_multiple_queries_and_reports_provenance | لا توجد Docstring. | ناقص | 272 |
-| tests/test_web_agent.py | دالة | test_research_collection_fuses_multiple_queries_and_reports_provenance.search | لا توجد Docstring. | ناقص | 275 |
-| tests/test_web_agent.py | دالة | test_invalid_citations_are_removed_and_valid_ones_preserved | لا توجد Docstring. | ناقص | 310 |
-| tests/test_web_agent.py | دالة | test_citation_metadata_limits_claim_to_index_range_validation | لا توجد Docstring. | ناقص | 319 |
-| tests/test_web_agent.py | دالة | test_citation_metadata_reports_invalid_reference_repair | لا توجد Docstring. | ناقص | 336 |
-| tests/test_web_agent.py | دالة | test_citation_metadata_reports_absent_markers_and_empty_source_range | لا توجد Docstring. | ناقص | 349 |
-| tests/test_web_agent.py | دالة | test_user_supplied_url_is_prioritized_and_page_content_is_extracted | لا توجد Docstring. | ناقص | 358 |
-| tests/test_web_agent.py | دالة | test_official_x_search_is_used_only_with_explicit_bearer_token | لا توجد Docstring. | ناقص | 383 |
-| tests/test_web_agent.py | كلاس | test_official_x_search_is_used_only_with_explicit_bearer_token.FakeResponse | لا توجد Docstring. | ناقص | 388 |
-| tests/test_web_agent.py | دالة | test_official_x_search_is_used_only_with_explicit_bearer_token.FakeResponse.json | لا توجد Docstring. | ناقص | 391 |
-| tests/test_web_agent.py | دالة | test_official_x_search_is_used_only_with_explicit_bearer_token.fake_get | لا توجد Docstring. | ناقص | 406 |
-| tests/test_web_agent.py | دالة | test_instagram_graph_api_returns_only_public_hashtag_media | لا توجد Docstring. | ناقص | 422 |
-| tests/test_web_agent.py | كلاس | test_instagram_graph_api_returns_only_public_hashtag_media.FakeResponse | لا توجد Docstring. | ناقص | 429 |
-| tests/test_web_agent.py | دالة | test_instagram_graph_api_returns_only_public_hashtag_media.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 432 |
-| tests/test_web_agent.py | دالة | test_instagram_graph_api_returns_only_public_hashtag_media.FakeResponse.json | لا توجد Docstring. | ناقص | 435 |
-| tests/test_web_agent.py | دالة | test_instagram_graph_api_returns_only_public_hashtag_media.fake_get | لا توجد Docstring. | ناقص | 440 |
-| tests/test_web_agent.py | دالة | test_instagram_api_not_configured_uses_honest_fallback_warning | لا توجد Docstring. | ناقص | 469 |
-| tests/test_web_agent.py | دالة | test_facebook_pages_api_reads_only_operator_configured_pages | لا توجد Docstring. | ناقص | 479 |
-| tests/test_web_agent.py | كلاس | test_facebook_pages_api_reads_only_operator_configured_pages.FakeResponse | لا توجد Docstring. | ناقص | 485 |
-| tests/test_web_agent.py | دالة | test_facebook_pages_api_reads_only_operator_configured_pages.FakeResponse.json | لا توجد Docstring. | ناقص | 488 |
-| tests/test_web_agent.py | دالة | test_facebook_pages_api_reads_only_operator_configured_pages.fake_get | لا توجد Docstring. | ناقص | 500 |
-| tests/test_web_agent.py | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured | لا توجد Docstring. | ناقص | 516 |
-| tests/test_web_agent.py | كلاس | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse | لا توجد Docstring. | ناقص | 523 |
-| tests/test_web_agent.py | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 526 |
-| tests/test_web_agent.py | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse.json | لا توجد Docstring. | ناقص | 529 |
-| tests/test_web_agent.py | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse.content | لا توجد Docstring. | ناقص | 533 |
-| tests/test_web_agent.py | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.fake_post | لا توجد Docstring. | ناقص | 539 |
-| tests/test_web_agent.py | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.fake_get | لا توجد Docstring. | ناقص | 543 |
-| tests/test_web_agent.py | دالة | test_role_models_are_explicit_and_have_a_fallback | لا توجد Docstring. | ناقص | 572 |
-| tests/test_web_agent.py | دالة | test_global_model_override_is_preserved_for_existing_users | لا توجد Docstring. | ناقص | 589 |
-| tests/test_web_agent.py | دالة | test_completion_uses_fallback_model_after_primary_http_error | لا توجد Docstring. | ناقص | 601 |
-| tests/test_web_agent.py | كلاس | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse | لا توجد Docstring. | ناقص | 611 |
-| tests/test_web_agent.py | دالة | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 612 |
-| tests/test_web_agent.py | دالة | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 615 |
-| tests/test_web_agent.py | دالة | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse.read | لا توجد Docstring. | ناقص | 618 |
-| tests/test_web_agent.py | دالة | test_completion_uses_fallback_model_after_primary_http_error.fake_urlopen | لا توجد Docstring. | ناقص | 626 |
-| tests/test_web_agent.py | دالة | test_generator_rejects_silent_character_limit_truncation | لا توجد Docstring. | ناقص | 656 |
-| tests/test_web_agent.py | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback | لا توجد Docstring. | ناقص | 671 |
-| tests/test_web_agent.py | كلاس | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse | لا توجد Docstring. | ناقص | 679 |
-| tests/test_web_agent.py | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 680 |
-| tests/test_web_agent.py | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 688 |
-| tests/test_web_agent.py | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 691 |
-| tests/test_web_agent.py | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.read | لا توجد Docstring. | ناقص | 694 |
-| tests/test_web_agent.py | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.fake_urlopen | لا توجد Docstring. | ناقص | 697 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_response_when_all_models_are_truncated | لا توجد Docstring. | ناقص | 720 |
-| tests/test_web_agent.py | كلاس | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse | لا توجد Docstring. | ناقص | 728 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 729 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 732 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse.read | لا توجد Docstring. | ناقص | 735 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_response_when_all_models_are_truncated.fake_urlopen | لا توجد Docstring. | ناقص | 743 |
-| tests/test_web_agent.py | دالة | test_completion_falls_back_for_malformed_choice | لا توجد Docstring. | ناقص | 758 |
-| tests/test_web_agent.py | كلاس | test_completion_falls_back_for_malformed_choice.FakeResponse | لا توجد Docstring. | ناقص | 766 |
-| tests/test_web_agent.py | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 767 |
-| tests/test_web_agent.py | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 770 |
-| tests/test_web_agent.py | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 773 |
-| tests/test_web_agent.py | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.read | لا توجد Docstring. | ناقص | 776 |
-| tests/test_web_agent.py | دالة | test_completion_falls_back_for_malformed_choice.fake_urlopen | لا توجد Docstring. | ناقص | 779 |
-| tests/test_web_agent.py | دالة | test_health_status_reports_models_without_credentials | لا توجد Docstring. | ناقص | 799 |
-| tests/test_web_agent.py | دالة | test_health_status_exposes_external_model_privacy_notice_without_secrets | لا توجد Docstring. | ناقص | 817 |
-| tests/test_web_agent.py | دالة | test_diagnostics_runs_real_search_and_can_skip_paid_or_rate_limited_model_calls | لا توجد Docstring. | ناقص | 829 |
-| tests/test_web_agent.py | دالة | test_diagnostics_calls_a_model_only_when_explicitly_requested | لا توجد Docstring. | ناقص | 851 |
-| tests/test_web_agent.py | دالة | test_diagnostics_calls_a_model_only_when_explicitly_requested.completion | لا توجد Docstring. | ناقص | 859 |
-| tests/test_web_agent.py | دالة | test_diagnostics_reports_degraded_when_search_has_no_results_and_model_is_unconfigured | لا توجد Docstring. | ناقص | 877 |
-| tests/test_web_agent.py | دالة | test_diagnostics_does_not_report_full_success_when_model_probe_fails | لا توجد Docstring. | ناقص | 890 |
-| tests/test_web_agent.py | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations | لا توجد Docstring. | ناقص | 910 |
-| tests/test_web_agent.py | كلاس | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse | لا توجد Docstring. | ناقص | 919 |
-| tests/test_web_agent.py | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 920 |
-| tests/test_web_agent.py | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 923 |
-| tests/test_web_agent.py | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse.read | لا توجد Docstring. | ناقص | 926 |
-| tests/test_web_agent.py | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.fake_urlopen | لا توجد Docstring. | ناقص | 944 |
-| tests/test_web_agent.py | دالة | test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in | لا توجد Docstring. | ناقص | 964 |
-| tests/test_web_agent.py | دالة | test_arabic_query_normalization_removes_diacritics_and_unifies_hamza | لا توجد Docstring. | ناقص | 971 |
-| tests/test_web_agent.py | دالة | test_relevance_filter_rejects_translation_and_sports_noise | لا توجد Docstring. | ناقص | 979 |
-| tests/test_web_agent.py | دالة | test_search_provider_failure_isolated_and_logged | لا توجد Docstring. | ناقص | 991 |
-| tests/test_web_agent.py | دالة | test_search_provider_failure_isolated_and_logged.broken | لا توجد Docstring. | ناقص | 994 |
-| tests/test_web_agent.py | دالة | test_search_provider_failure_isolated_and_logged.working | لا توجد Docstring. | ناقص | 997 |
-| tests/test_web_agent.py | دالة | test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration | لا توجد Docstring. | ناقص | 1023 |
-| tests/test_web_agent.py | دالة | test_answer_hides_unwrapped_internal_review_report | لا توجد Docstring. | ناقص | 1071 |
-| tests/test_web_agent.py | دالة | test_answer_hides_unwrapped_internal_review_report.collect | لا توجد Docstring. | ناقص | 1085 |
-| tests/test_web_agent.py | دالة | test_sibling_subdomains_do_not_satisfy_independent_evidence_gate | لا توجد Docstring. | ناقص | 1124 |
-| tests/test_web_agent.py | دالة | test_bounded_evidence_repair_recovers_with_one_relevant_independent_source | لا توجد Docstring. | ناقص | 1167 |
-| tests/test_web_agent.py | دالة | test_bounded_evidence_repair_recovers_with_one_relevant_independent_source.collect | لا توجد Docstring. | ناقص | 1181 |
-| tests/test_web_agent.py | دالة | test_insufficient_evidence_returns_explicit_refusal_without_calling_llm | لا توجد Docstring. | ناقص | 1225 |
-| tests/test_web_agent.py | دالة | test_insufficient_evidence_returns_explicit_refusal_without_calling_llm.collect_only_one_source | لا توجد Docstring. | ناقص | 1239 |
-| tests/test_web_agent.py | دالة | test_generate_keeps_web_evidence_in_separate_untrusted_user_message | لا توجد Docstring. | ناقص | 1274 |
-| tests/test_web_agent.py | دالة | test_generate_keeps_web_evidence_in_separate_untrusted_user_message.fake_completion | لا توجد Docstring. | ناقص | 1281 |
-| tests/test_web_agent.py | دالة | test_review_keeps_untrusted_evidence_out_of_system_message | لا توجد Docstring. | ناقص | 1310 |
-| tests/test_web_agent.py | دالة | test_review_keeps_untrusted_evidence_out_of_system_message.fake_completion | لا توجد Docstring. | ناقص | 1317 |
-| tests/test_web_agent.py | دالة | test_general_question_uses_model_without_needlessly_searching | لا توجد Docstring. | ناقص | 1343 |
-| tests/test_web_agent.py | دالة | test_general_question_uses_model_without_needlessly_searching.fake_completion | لا توجد Docstring. | ناقص | 1348 |
-| tests/test_web_agent.py | دالة | test_omarai_capability_question_is_answered_without_network | لا توجد Docstring. | ناقص | 1369 |
-| tests/test_web_agent.py | دالة | test_link_lookup_can_return_one_clearly_labelled_candidate | لا توجد Docstring. | ناقص | 1386 |
-| tests/test_web_agent.py | دالة | test_google_news_preserves_publisher_identity | لا توجد Docstring. | ناقص | 1432 |
-| tests/test_web_agent.py | كلاس | test_google_news_preserves_publisher_identity.FakeResponse | لا توجد Docstring. | ناقص | 1443 |
-| tests/test_web_agent.py | دالة | test_relevance_matching_handles_arabic_names_with_english_results | لا توجد Docstring. | ناقص | 1458 |
-| tests/test_web_agent.py | دالة | test_routine_lookup_ignores_planner_overclassification | لا توجد Docstring. | ناقص | 1465 |
-| tests/test_web_agent.py | دالة | test_routine_lookup_ignores_planner_overclassification.collect | لا توجد Docstring. | ناقص | 1493 |
-| tests/test_web_agent.py | دالة | test_listing_discovery_detects_arabic_property_requests | لا توجد Docstring. | ناقص | 1514 |
-| tests/test_web_agent.py | دالة | test_single_property_listing_is_returned_with_safety_caveat | لا توجد Docstring. | ناقص | 1520 |
-| tests/test_web_agent.py | دالة | test_normalized_source_url_key_ignores_tracking_parameters_and_fragment | لا توجد Docstring. | ناقص | 1566 |
-| tests/test_web_agent.py | دالة | test_bounded_repair_deduplicates_same_page_even_with_tracking_url | لا توجد Docstring. | ناقص | 1577 |
-| tests/test_web_agent.py | دالة | test_bounded_repair_deduplicates_same_page_even_with_tracking_url.collect | لا توجد Docstring. | ناقص | 1590 |
-| tests/test_web_agent.py | دالة | test_social_focused_partial_evidence_does_not_trigger_general_repair | لا توجد Docstring. | ناقص | 1630 |
-| tests/test_web_agent.py | دالة | test_social_focused_partial_evidence_does_not_trigger_general_repair.collect | لا توجد Docstring. | ناقص | 1643 |
-| tests/test_web_agent.py | دالة | test_question_coverage_targets_extract_arabic_and_english_explicit_criteria | لا توجد Docstring. | ناقص | 1675 |
-| tests/test_web_agent.py | دالة | test_question_coverage_targets_do_not_invent_parts_for_simple_question | لا توجد Docstring. | ناقص | 1693 |
-| tests/test_web_agent.py | دالة | test_generator_includes_extracted_targets_as_a_non_authoritative_checklist | لا توجد Docstring. | ناقص | 1697 |
-| tests/test_web_agent.py | دالة | test_generator_includes_extracted_targets_as_a_non_authoritative_checklist.fake_completion | لا توجد Docstring. | ناقص | 1701 |
-| tests/test_web_agent.py | دالة | test_reviewer_checks_coverage_targets_without_claiming_independent_verification | لا توجد Docstring. | ناقص | 1722 |
-| tests/test_web_agent.py | دالة | test_reviewer_checks_coverage_targets_without_claiming_independent_verification.fake_completion | لا توجد Docstring. | ناقص | 1726 |
-| tests/test_web_agent.py | دالة | test_search_attempt_is_reported_when_no_sources_survive | لا توجد Docstring. | ناقص | 1744 |
-| tests/test_web_agent.py | دالة | test_search_attempt_is_reported_when_no_sources_survive.collect | لا توجد Docstring. | ناقص | 1758 |
-| tests/test_web_agent.py | دالة | test_success_report_counts_registrable_domains_not_sibling_subdomains | لا توجد Docstring. | ناقص | 1795 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback | لا توجد Docstring. | ناقص | 1852 |
-| tests/test_web_agent.py | كلاس | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse | لا توجد Docstring. | ناقص | 1860 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 1861 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 1869 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 1872 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.read | لا توجد Docstring. | ناقص | 1875 |
-| tests/test_web_agent.py | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.fake_urlopen | لا توجد Docstring. | ناقص | 1878 |
-| tests/test_web_agent.py | دالة | test_reviewer_rejects_duplicate_final_answer_delimiters | لا توجد Docstring. | ناقص | 1896 |
-| tests/test_web_agent.py | دالة | test_frontend_review_status_matches_api_contract | لا توجد Docstring. | ناقص | 1914 |
-| tests/test_web_agent.py | دالة | test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts | لا توجد Docstring. | ناقص | 1923 |
-| tests/test_web_agent.py | دالة | test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts.failed_after_provider_result | لا توجد Docstring. | ناقص | 1935 |
-| tests/test_web_agent.py | دالة | test_research_error_without_provider_diagnostics_is_reported_as_unknown | لا توجد Docstring. | ناقص | 1962 |
-| tests/test_web_agent.py | دالة | test_research_error_without_provider_diagnostics_is_reported_as_unknown.fail_before_attempt | لا توجد Docstring. | ناقص | 1974 |
-| tests/test_web_agent.py | دالة | test_general_answer_does_not_silently_slice_overlong_model_output | لا توجد Docstring. | ناقص | 1991 |
-| tests/test_web_agent.py | دالة | test_frontend_discloses_unknown_counts_after_research_error | لا توجد Docstring. | ناقص | 2005 |
-| tests/test_web_agent.py | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed | لا توجد Docstring. | ناقص | 2014 |
-| tests/test_web_agent.py | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed.fail_after_generic_provider_error | لا توجد Docstring. | ناقص | 2026 |
-| tests/test_web_agent.py | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results | لا توجد Docstring. | ناقص | 2051 |
-| tests/test_web_agent.py | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results.search | لا توجد Docstring. | ناقص | 2055 |
-| tests/test_web_agent.py | دالة | test_lead_discovery_is_distinct_from_listing_search | لا توجد Docstring. | ناقص | 2080 |
-| tests/test_web_agent.py | دالة | test_buyer_intent_evidence_requires_explicit_purchase_signal | لا توجد Docstring. | ناقص | 2087 |
-| tests/test_web_agent.py | دالة | test_lead_generation_does_not_present_sale_listings_as_buyers | لا توجد Docstring. | ناقص | 2104 |
-| tests/test_web_agent.py | دالة | test_lead_generation_search_plan_includes_high_intent_queries | لا توجد Docstring. | ناقص | 2156 |
-| tests/test_web_agent.py | دالة | test_lead_generation_search_plan_includes_high_intent_queries.collect | لا توجد Docstring. | ناقص | 2169 |
-| tests/test_web_agent.py | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key | لا توجد Docstring. | ناقص | 2207 |
-| tests/test_web_agent.py | كلاس | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse | لا توجد Docstring. | ناقص | 2214 |
-| tests/test_web_agent.py | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 2215 |
-| tests/test_web_agent.py | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.json | لا توجد Docstring. | ناقص | 2218 |
-| tests/test_web_agent.py | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.fake_post | لا توجد Docstring. | ناقص | 2232 |
-| tests/test_web_agent.py | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline | لا توجد Docstring. | ناقص | 2250 |
-| tests/test_web_agent.py | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline.completed_empty_search | لا توجد Docstring. | ناقص | 2254 |
-| tests/test_web_agent.py | دالة | test_deepseek_search_request_budget_defaults_to_one_and_is_bounded | لا توجد Docstring. | ناقص | 2270 |
-| tests/test_web_agent.py | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure | لا توجد Docstring. | ناقص | 2285 |
-| tests/test_web_agent.py | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure.no_results | لا توجد Docstring. | ناقص | 2290 |
-| tests/test_web_agent.py | دالة | test_buyer_intent_phrase_inside_negated_text_is_not_a_lead_signal | لا توجد Docstring. | ناقص | 2305 |
-| tests/test_web_agent.py | دالة | test_lead_generation_preserves_unknown_state_when_research_throws | لا توجد Docstring. | ناقص | 2315 |
-| tests/test_web_agent.py | دالة | test_lead_generation_preserves_unknown_state_when_research_throws.fail_research | لا توجد Docstring. | ناقص | 2329 |
-| tests/test_web_agent.py | دالة | test_local_answer_exposes_request_budget_without_claiming_live_search | لا توجد Docstring. | ناقص | 2353 |
-| tests/test_web_agent.py | دالة | test_reviewed_answer_without_valid_citations_cannot_be_rated_good | لا توجد Docstring. | ناقص | 2370 |
-| tests/test_web_agent.py | دالة | test_public_ip_literals_rejects_mixed_public_and_private_dns_answers | لا توجد Docstring. | ناقص | 2441 |
-| tests/test_web_agent.py | دالة | test_pinned_connect_url_uses_checked_ip_without_losing_logical_path | لا توجد Docstring. | ناقص | 2460 |
-| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting | لا توجد Docstring. | ناقص | 2469 |
-| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.resolve_public_ip | لا توجد Docstring. | ناقص | 2479 |
-| tests/test_web_agent.py | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse | لا توجد Docstring. | ناقص | 2485 |
-| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2488 |
-| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.fake_stream | لا توجد Docstring. | ناقص | 2492 |
-| tests/test_web_agent.py | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient | لا توجد Docstring. | ناقص | 2496 |
-| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2497 |
-| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2500 |
-| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2503 |
-| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination | لا توجد Docstring. | ناقص | 2518 |
-| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.resolve_public_ip | لا توجد Docstring. | ناقص | 2528 |
-| tests/test_web_agent.py | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse | لا توجد Docstring. | ناقص | 2537 |
-| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2540 |
-| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.fake_stream | لا توجد Docstring. | ناقص | 2544 |
-| tests/test_web_agent.py | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient | لا توجد Docstring. | ناقص | 2548 |
-| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2549 |
-| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2552 |
-| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2555 |
+## جرد ملفات المستودع
+
+يشمل الملفات المؤهلة من الشفرة والواجهة والاختبارات والوثائق والإعدادات وCI. يُستثنى ملف الفهرس المولّد نفسه لتجنب الحلقة الذاتية، كما تُستثنى المجلدات المولّدة والبيئات والملفات المحلية الحساسة وقواعد البيانات والمفاتيح المعروفة.
+
+| معرّف الملف | التصنيف | الملف | النوع | الحجم (بايت) | عدد الأسطر | نطاق الفهرسة |
+|---|---|---|---|---:|---:|---|
+| FILE-2F754321D6 | إعدادات وتشغيل | [.dockerignore](../.dockerignore#L1) | بدون امتداد | 103 | 11 | جرد ملف نصي فقط |
+| FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1193 | 26 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1622 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 3869 | 97 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 3739 | 103 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
+| FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 10736 | 73 | جرد الملف + عناوين Markdown |
+| FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
+| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 13767 | 326 | جرد الملف + AST Python |
+| FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
+| FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
+| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 28426 | 676 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 219930 | 4292 | جرد الملف + AST Python |
+| FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 26654 | 549 | جرد الملف + AST Python |
+| FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
+| FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
+| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 369 | 17 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
+| FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
+| FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
+| FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 8689 | 88 | جرد الملف + عناوين Markdown |
+| FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 58140 | 1470 | جرد الملف + AST Python |
+| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 4013 | 35 | جرد الملف + عناوين Markdown |
+| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 8675 | 47 | جرد الملف + عناوين Markdown |
+| FILE-401D6AACE1 | وثائق وفهرسة | [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L1) | Markdown | 5129 | 56 | جرد الملف + عناوين Markdown |
+| FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
+| FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
+| FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
+| FILE-89BEE4CE47 | وثائق وفهرسة | [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 23084 | 136 | جرد الملف + عناوين Markdown |
+| FILE-855DA3B8BC | وثائق وفهرسة | [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 49883 | 260 | جرد الملف + عناوين Markdown |
+| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 58862 | 184 | جرد الملف + عناوين Markdown |
+| FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
+| FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 76904 | 852 | جرد الملف + عناوين Markdown |
+| FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 12809 | 97 | جرد الملف + عناوين Markdown |
+| FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
+| FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
+| FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 8860 | 287 | جرد الملف + AST Python |
+| FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
+| FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 19795 | 171 | جرد الملف + عناوين Markdown |
+| FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
+| FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 8627 | 190 | جرد الملف + AST Python |
+| FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 15025 | 404 | جرد الملف + AST Python |
+| FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
+| FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
+| FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
+| FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 23926 | 655 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
+| FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
+| FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
+| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 15978 | 375 | جرد الملف + AST Python |
+| FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 21784 | 586 | جرد الملف + AST Python |
+| FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 9324 | 255 | جرد الملف + AST Python |
+| FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 6541 | 174 | جرد الملف + AST Python |
+| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 5118 | 124 | جرد الملف + AST Python |
+| FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 6391 | 160 | جرد الملف + AST Python |
+| FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
+| FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
+| FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 2978 | 69 | جرد الملف + AST Python |
+| FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 3540 | 101 | جرد الملف + AST Python |
+| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 4526 | 111 | جرد الملف + AST Python |
+| FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
+| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 3456 | 87 | جرد الملف + AST Python |
+| FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 99277 | 2566 | جرد الملف + AST Python |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 41061 | 337 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16299 | 44 | جرد الملف + معرفات HTML والرموز داخل script/style |
+
+## تعريفات Python من AST
+
+> تُحسب حالة Docstring للدوال والكلاسات فقط. المتغيرات والثوابت لا تُصنّف على أنها موثقة أو ناقصة Docstring.
+
+| الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر | كود السطر للوصول المباشر |
+|---|---|---|---|---|---:|---|
+| [agents/intent_router.py](../agents/intent_router.py#L12) | متغير/ثابت Python | MAX_CONTEXT_TURNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
+| [agents/intent_router.py](../agents/intent_router.py#L14) | متغير/ثابت Python | ROUTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-5587371288-L000014](../agents/intent_router.py#L14) |
+| [agents/intent_router.py](../agents/intent_router.py#L19) | متغير/ثابت Python | _ARABIC_DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-5587371288-L000019](../agents/intent_router.py#L19) |
+| [agents/intent_router.py](../agents/intent_router.py#L20) | متغير/ثابت Python | _PUNCTUATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-5587371288-L000020](../agents/intent_router.py#L20) |
+| [agents/intent_router.py](../agents/intent_router.py#L21) | متغير/ثابت Python | _SPACE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-5587371288-L000021](../agents/intent_router.py#L21) |
+| [agents/intent_router.py](../agents/intent_router.py#L23) | متغير/ثابت Python | _SMALLTALK | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-5587371288-L000023](../agents/intent_router.py#L23) |
+| [agents/intent_router.py](../agents/intent_router.py#L35) | متغير/ثابت Python | _AMBIGUOUS_ARABIC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 35 | [SRC-5587371288-L000035](../agents/intent_router.py#L35) |
+| [agents/intent_router.py](../agents/intent_router.py#L43) | متغير/ثابت Python | _AMBIGUOUS_ENGLISH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-5587371288-L000043](../agents/intent_router.py#L43) |
+| [agents/intent_router.py](../agents/intent_router.py#L49) | متغير/ثابت Python | _DEEP_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 49 | [SRC-5587371288-L000049](../agents/intent_router.py#L49) |
+| [agents/intent_router.py](../agents/intent_router.py#L55) | متغير/ثابت Python | _MULTIPART_MARKERS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 55 | [SRC-5587371288-L000055](../agents/intent_router.py#L55) |
+| [agents/intent_router.py](../agents/intent_router.py#L62) | دالة | _normalize | لا توجد Docstring. | ناقص | 62 | [SRC-5587371288-L000062](../agents/intent_router.py#L62) |
+| [agents/intent_router.py](../agents/intent_router.py#L72) | دالة | _is_smalltalk | لا توجد Docstring. | ناقص | 72 | [SRC-5587371288-L000072](../agents/intent_router.py#L72) |
+| [agents/intent_router.py](../agents/intent_router.py#L84) | دالة | _has_context | Check whether the latest user turn can plausibly anchor a short follow-up. | موثق | 84 | [SRC-5587371288-L000084](../agents/intent_router.py#L84) |
+| [agents/intent_router.py](../agents/intent_router.py#L106) | دالة | _has_live_signal | Recognize common time-sensitive or explicit-search requests without a model. | موثق | 106 | [SRC-5587371288-L000106](../agents/intent_router.py#L106) |
+| [agents/intent_router.py](../agents/intent_router.py#L124) | دالة | _is_lead_generation_request | Recognize an explicit request to discover prospective buyers/customers. | موثق | 124 | [SRC-5587371288-L000124](../agents/intent_router.py#L124) |
+| [agents/intent_router.py](../agents/intent_router.py#L151) | دالة | _needs_clarification | لا توجد Docstring. | ناقص | 151 | [SRC-5587371288-L000151](../agents/intent_router.py#L151) |
+| [agents/intent_router.py](../agents/intent_router.py#L165) | دالة | _is_deep | لا توجد Docstring. | ناقص | 165 | [SRC-5587371288-L000165](../agents/intent_router.py#L165) |
+| [agents/intent_router.py](../agents/intent_router.py#L182) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 182 | [SRC-5587371288-L000182](../agents/intent_router.py#L182) |
+| [agents/intent_router.py](../agents/intent_router.py#L199) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 199 | [SRC-5587371288-L000199](../agents/intent_router.py#L199) |
+| [agents/intent_router.py](../agents/intent_router.py#L225) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 225 | [SRC-5587371288-L000225](../agents/intent_router.py#L225) |
+| [agents/omarai.py](../agents/omarai.py#L14) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-C9CF9B54F8-L000014](../agents/omarai.py#L14) |
+| [agents/omarai.py](../agents/omarai.py#L15) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-C9CF9B54F8-L000015](../agents/omarai.py#L15) |
+| [agents/omarai.py](../agents/omarai.py#L16) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-C9CF9B54F8-L000016](../agents/omarai.py#L16) |
+| [agents/omarai.py](../agents/omarai.py#L22) | متغير/ثابت Python | NOT_BUYER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
+| [agents/omarai.py](../agents/omarai.py#L24) | دالة | normalize | لا توجد Docstring. | ناقص | 24 | [SRC-C9CF9B54F8-L000024](../agents/omarai.py#L24) |
+| [agents/omarai.py](../agents/omarai.py#L29) | دالة | now_utc | لا توجد Docstring. | ناقص | 29 | [SRC-C9CF9B54F8-L000029](../agents/omarai.py#L29) |
+| [agents/omarai.py](../agents/omarai.py#L32) | دالة | _csv_safe_cell | Prefix spreadsheet formulas even when hidden whitespace/control chars precede them. | موثق | 32 | [SRC-C9CF9B54F8-L000032](../agents/omarai.py#L32) |
+| [agents/omarai.py](../agents/omarai.py#L51) | دالة | analyze | لا توجد Docstring. | ناقص | 51 | [SRC-C9CF9B54F8-L000051](../agents/omarai.py#L51) |
+| [agents/omarai.py](../agents/omarai.py#L73) | دالة | validate_url | لا توجد Docstring. | ناقص | 73 | [SRC-C9CF9B54F8-L000073](../agents/omarai.py#L73) |
+| [agents/omarai.py](../agents/omarai.py#L81) | كلاس | LeadStore | لا توجد Docstring. | ناقص | 81 | [SRC-C9CF9B54F8-L000081](../agents/omarai.py#L81) |
+| [agents/omarai.py](../agents/omarai.py#L82) | دالة | LeadStore.__init__ | لا توجد Docstring. | ناقص | 82 | [SRC-C9CF9B54F8-L000082](../agents/omarai.py#L82) |
+| [agents/omarai.py](../agents/omarai.py#L92) | دالة | LeadStore.connect | لا توجد Docstring. | ناقص | 92 | [SRC-C9CF9B54F8-L000092](../agents/omarai.py#L92) |
+| [agents/omarai.py](../agents/omarai.py#L96) | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 96 | [SRC-C9CF9B54F8-L000096](../agents/omarai.py#L96) |
+| [agents/omarai.py](../agents/omarai.py#L115) | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 115 | [SRC-C9CF9B54F8-L000115](../agents/omarai.py#L115) |
+| [agents/omarai.py](../agents/omarai.py#L119) | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 119 | [SRC-C9CF9B54F8-L000119](../agents/omarai.py#L119) |
+| [agents/omarai.py](../agents/omarai.py#L124) | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 124 | [SRC-C9CF9B54F8-L000124](../agents/omarai.py#L124) |
+| [agents/omarai.py](../agents/omarai.py#L132) | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 132 | [SRC-C9CF9B54F8-L000132](../agents/omarai.py#L132) |
+| [agents/omarai.py](../agents/omarai.py#L146) | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 146 | [SRC-C9CF9B54F8-L000146](../agents/omarai.py#L146) |
+| [agents/request_budget.py](../agents/request_budget.py#L17) | كلاس | RequestBudgetExceeded | Raised when a request cannot start more work within its resource budget. | موثق | 17 | [SRC-FDEEAFDFCA-L000017](../agents/request_budget.py#L17) |
+| [agents/request_budget.py](../agents/request_budget.py#L21) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
+| [agents/request_budget.py](../agents/request_budget.py#L22) | متغير/ثابت Python | MAX_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
+| [agents/request_budget.py](../agents/request_budget.py#L23) | متغير/ثابت Python | RESOURCE_LIMITS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-FDEEAFDFCA-L000023](../agents/request_budget.py#L23) |
+| [agents/request_budget.py](../agents/request_budget.py#L32) | دالة | _bounded_env_int | لا توجد Docstring. | ناقص | 32 | [SRC-FDEEAFDFCA-L000032](../agents/request_budget.py#L32) |
+| [agents/request_budget.py](../agents/request_budget.py#L41) | كلاس | RequestBudget | Thread-safe counters and a cooperative monotonic deadline for one answer. | موثق | 41 | [SRC-FDEEAFDFCA-L000041](../agents/request_budget.py#L41) |
+| [agents/request_budget.py](../agents/request_budget.py#L44) | دالة | RequestBudget.__init__ | لا توجد Docstring. | ناقص | 44 | [SRC-FDEEAFDFCA-L000044](../agents/request_budget.py#L44) |
+| [agents/request_budget.py](../agents/request_budget.py#L64) | دالة | RequestBudget.from_environment | لا توجد Docstring. | ناقص | 64 | [SRC-FDEEAFDFCA-L000064](../agents/request_budget.py#L64) |
+| [agents/request_budget.py](../agents/request_budget.py#L82) | دالة | RequestBudget.remaining_seconds | لا توجد Docstring. | ناقص | 82 | [SRC-FDEEAFDFCA-L000082](../agents/request_budget.py#L82) |
+| [agents/request_budget.py](../agents/request_budget.py#L85) | دالة | RequestBudget.timeout_for | Cap one outbound timeout to time remaining; raise instead of starting at zero. | موثق | 85 | [SRC-FDEEAFDFCA-L000085](../agents/request_budget.py#L85) |
+| [agents/request_budget.py](../agents/request_budget.py#L94) | دالة | RequestBudget.remaining_units | Return unused units for a resource; zero means disabled, exhausted, or expired. | موثق | 94 | [SRC-FDEEAFDFCA-L000094](../agents/request_budget.py#L94) |
+| [agents/request_budget.py](../agents/request_budget.py#L103) | دالة | RequestBudget.reserve | Atomically reserve resource units before initiating external work. | موثق | 103 | [SRC-FDEEAFDFCA-L000103](../agents/request_budget.py#L103) |
+| [agents/request_budget.py](../agents/request_budget.py#L121) | دالة | RequestBudget.snapshot | لا توجد Docstring. | ناقص | 121 | [SRC-FDEEAFDFCA-L000121](../agents/request_budget.py#L121) |
+| [agents/research.py](../agents/research.py#L17) | متغير/ثابت Python | MAX_PLAN_QUERIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-59CF4B7DE8-L000017](../agents/research.py#L17) |
+| [agents/research.py](../agents/research.py#L18) | متغير/ثابت Python | MAX_QUERY_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-59CF4B7DE8-L000018](../agents/research.py#L18) |
+| [agents/research.py](../agents/research.py#L19) | متغير/ثابت Python | MAX_FUSED_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-59CF4B7DE8-L000019](../agents/research.py#L19) |
+| [agents/research.py](../agents/research.py#L25) | متغير/ثابت Python | _DOMAIN_EXTRACTOR | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-59CF4B7DE8-L000025](../agents/research.py#L25) |
+| [agents/research.py](../agents/research.py#L31) | دالة | registrable_domain | Return a normalized registrable domain (or normalized IP/unknown hostname). | موثق | 31 | [SRC-59CF4B7DE8-L000031](../agents/research.py#L31) |
+| [agents/research.py](../agents/research.py#L56) | متغير/ثابت Python | SOCIAL_DOMAINS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 56 | [SRC-59CF4B7DE8-L000056](../agents/research.py#L56) |
+| [agents/research.py](../agents/research.py#L69) | متغير/ثابت Python | _SOCIAL_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 69 | [SRC-59CF4B7DE8-L000069](../agents/research.py#L69) |
+| [agents/research.py](../agents/research.py#L82) | متغير/ثابت Python | _FRESH_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 82 | [SRC-59CF4B7DE8-L000082](../agents/research.py#L82) |
+| [agents/research.py](../agents/research.py#L90) | متغير/ثابت Python | _DEEP_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 90 | [SRC-59CF4B7DE8-L000090](../agents/research.py#L90) |
+| [agents/research.py](../agents/research.py#L99) | دالة | extract_urls | Extract explicit HTTP(S) URLs without trying to interpret their content as instructions. | موثق | 99 | [SRC-59CF4B7DE8-L000099](../agents/research.py#L99) |
+| [agents/research.py](../agents/research.py#L112) | دالة | _compact | لا توجد Docstring. | ناقص | 112 | [SRC-59CF4B7DE8-L000112](../agents/research.py#L112) |
+| [agents/research.py](../agents/research.py#L118) | متغير/ثابت Python | _ARABIC_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 118 | [SRC-59CF4B7DE8-L000118](../agents/research.py#L118) |
+| [agents/research.py](../agents/research.py#L121) | دالة | _normalize_arabic | لا توجد Docstring. | ناقص | 121 | [SRC-59CF4B7DE8-L000121](../agents/research.py#L121) |
+| [agents/research.py](../agents/research.py#L131) | دالة | _contains_any | لا توجد Docstring. | ناقص | 131 | [SRC-59CF4B7DE8-L000131](../agents/research.py#L131) |
+| [agents/research.py](../agents/research.py#L149) | دالة | detect_social_focus | لا توجد Docstring. | ناقص | 149 | [SRC-59CF4B7DE8-L000149](../agents/research.py#L149) |
+| [agents/research.py](../agents/research.py#L156) | دالة | detect_freshness | لا توجد Docstring. | ناقص | 156 | [SRC-59CF4B7DE8-L000156](../agents/research.py#L156) |
+| [agents/research.py](../agents/research.py#L160) | دالة | detect_depth | لا توجد Docstring. | ناقص | 160 | [SRC-59CF4B7DE8-L000160](../agents/research.py#L160) |
+| [agents/research.py](../agents/research.py#L164) | دالة | mentioned_social_platforms | لا توجد Docstring. | ناقص | 164 | [SRC-59CF4B7DE8-L000164](../agents/research.py#L164) |
+| [agents/research.py](../agents/research.py#L180) | دالة | _followup_query | لا توجد Docstring. | ناقص | 180 | [SRC-59CF4B7DE8-L000180](../agents/research.py#L180) |
+| [agents/research.py](../agents/research.py#L199) | دالة | fallback_plan | Build a small but varied plan when no model planner is configured or parsing fails. | موثق | 199 | [SRC-59CF4B7DE8-L000199](../agents/research.py#L199) |
+| [agents/research.py](../agents/research.py#L254) | دالة | validate_plan | لا توجد Docstring. | ناقص | 254 | [SRC-59CF4B7DE8-L000254](../agents/research.py#L254) |
+| [agents/research.py](../agents/research.py#L294) | دالة | _canonical_result_url | لا توجد Docstring. | ناقص | 294 | [SRC-59CF4B7DE8-L000294](../agents/research.py#L294) |
+| [agents/research.py](../agents/research.py#L313) | دالة | classify_source | لا توجد Docstring. | ناقص | 313 | [SRC-59CF4B7DE8-L000313](../agents/research.py#L313) |
+| [agents/research.py](../agents/research.py#L346) | دالة | fuse_ranked_results | Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs. | موثق | 346 | [SRC-59CF4B7DE8-L000346](../agents/research.py#L346) |
+| [agents/research.py](../agents/research.py#L415) | دالة | _parse_publication_date | Parse common search/RSS publication dates without guessing missing dates. | موثق | 415 | [SRC-59CF4B7DE8-L000415](../agents/research.py#L415) |
+| [agents/research.py](../agents/research.py#L457) | دالة | evidence_signal_report | Summarize research coverage; signals describe evidence coverage, not factual truth. | موثق | 457 | [SRC-59CF4B7DE8-L000457](../agents/research.py#L457) |
+| [agents/research.py](../agents/research.py#L553) | متغير/ثابت Python | _RELEVANCE_STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 553 | [SRC-59CF4B7DE8-L000553](../agents/research.py#L553) |
+| [agents/research.py](../agents/research.py#L560) | متغير/ثابت Python | _OFFICIAL_CLASSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 560 | [SRC-59CF4B7DE8-L000560](../agents/research.py#L560) |
+| [agents/research.py](../agents/research.py#L563) | دالة | _tokenize | لا توجد Docstring. | ناقص | 563 | [SRC-59CF4B7DE8-L000563](../agents/research.py#L563) |
+| [agents/research.py](../agents/research.py#L571) | دالة | source_relevance_score | لا توجد Docstring. | ناقص | 571 | [SRC-59CF4B7DE8-L000571](../agents/research.py#L571) |
+| [agents/research.py](../agents/research.py#L605) | دالة | filter_relevant_sources | لا توجد Docstring. | ناقص | 605 | [SRC-59CF4B7DE8-L000605](../agents/research.py#L605) |
+| [agents/research.py](../agents/research.py#L642) | دالة | decide_evidence_status | لا توجد Docstring. | ناقص | 642 | [SRC-59CF4B7DE8-L000642](../agents/research.py#L642) |
+| [agents/web_agent.py](../agents/web_agent.py#L36) | متغير/ثابت Python | MAX_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 36 | [SRC-1AE03B9EC3-L000036](../agents/web_agent.py#L36) |
+| [agents/web_agent.py](../agents/web_agent.py#L37) | متغير/ثابت Python | MAX_HISTORY_ITEMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 37 | [SRC-1AE03B9EC3-L000037](../agents/web_agent.py#L37) |
+| [agents/web_agent.py](../agents/web_agent.py#L38) | متغير/ثابت Python | MAX_HISTORY_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 38 | [SRC-1AE03B9EC3-L000038](../agents/web_agent.py#L38) |
+| [agents/web_agent.py](../agents/web_agent.py#L39) | متغير/ثابت Python | MAX_SEARCH_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 39 | [SRC-1AE03B9EC3-L000039](../agents/web_agent.py#L39) |
+| [agents/web_agent.py](../agents/web_agent.py#L40) | متغير/ثابت Python | MAX_PROVIDER_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 40 | [SRC-1AE03B9EC3-L000040](../agents/web_agent.py#L40) |
+| [agents/web_agent.py](../agents/web_agent.py#L41) | متغير/ثابت Python | MAX_FETCHED_PAGES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 41 | [SRC-1AE03B9EC3-L000041](../agents/web_agent.py#L41) |
+| [agents/web_agent.py](../agents/web_agent.py#L42) | متغير/ثابت Python | MAX_LLM_CITED_SOURCES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 42 | [SRC-1AE03B9EC3-L000042](../agents/web_agent.py#L42) |
+| [agents/web_agent.py](../agents/web_agent.py#L43) | متغير/ثابت Python | MAX_RESEARCH_WORKERS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-1AE03B9EC3-L000043](../agents/web_agent.py#L43) |
+| [agents/web_agent.py](../agents/web_agent.py#L44) | متغير/ثابت Python | MAX_PAGE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 44 | [SRC-1AE03B9EC3-L000044](../agents/web_agent.py#L44) |
+| [agents/web_agent.py](../agents/web_agent.py#L45) | متغير/ثابت Python | MAX_PAGE_TEXT_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 45 | [SRC-1AE03B9EC3-L000045](../agents/web_agent.py#L45) |
+| [agents/web_agent.py](../agents/web_agent.py#L46) | متغير/ثابت Python | LLM_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 46 | [SRC-1AE03B9EC3-L000046](../agents/web_agent.py#L46) |
+| [agents/web_agent.py](../agents/web_agent.py#L50) | متغير/ثابت Python | _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 50 | [SRC-1AE03B9EC3-L000050](../agents/web_agent.py#L50) |
+| [agents/web_agent.py](../agents/web_agent.py#L51) | متغير/ثابت Python | _RESEARCH_ERROR_OUTCOMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 51 | [SRC-1AE03B9EC3-L000051](../agents/web_agent.py#L51) |
+| [agents/web_agent.py](../agents/web_agent.py#L54) | متغير/ثابت Python | _ARABIC_SEARCH_TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 54 | [SRC-1AE03B9EC3-L000054](../agents/web_agent.py#L54) |
+| [agents/web_agent.py](../agents/web_agent.py#L58) | متغير/ثابت Python | _ARABIC_DIACRITICS_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 58 | [SRC-1AE03B9EC3-L000058](../agents/web_agent.py#L58) |
+| [agents/web_agent.py](../agents/web_agent.py#L59) | متغير/ثابت Python | _SEARCH_STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 59 | [SRC-1AE03B9EC3-L000059](../agents/web_agent.py#L59) |
+| [agents/web_agent.py](../agents/web_agent.py#L69) | متغير/ثابت Python | _SEARCH_SYNONYMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 69 | [SRC-1AE03B9EC3-L000069](../agents/web_agent.py#L69) |
+| [agents/web_agent.py](../agents/web_agent.py#L90) | متغير/ثابت Python | _CALENDAR_MONTHS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 90 | [SRC-1AE03B9EC3-L000090](../agents/web_agent.py#L90) |
+| [agents/web_agent.py](../agents/web_agent.py#L97) | متغير/ثابت Python | _BLOCKED_SOURCE_DOMAINS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 97 | [SRC-1AE03B9EC3-L000097](../agents/web_agent.py#L97) |
+| [agents/web_agent.py](../agents/web_agent.py#L102) | دالة | _normalize_search_query | Normalize Arabic letters/diacritics while preserving search operators and dates. | موثق | 102 | [SRC-1AE03B9EC3-L000102](../agents/web_agent.py#L102) |
+| [agents/web_agent.py](../agents/web_agent.py#L111) | متغير/ثابت Python | _NORMALIZED_SEARCH_SYNONYMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 111 | [SRC-1AE03B9EC3-L000111](../agents/web_agent.py#L111) |
+| [agents/web_agent.py](../agents/web_agent.py#L113) | متغير/ثابت Python | _normalized_key | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 113 | [SRC-1AE03B9EC3-L000113](../agents/web_agent.py#L113) |
+| [agents/web_agent.py](../agents/web_agent.py#L119) | دالة | _search_tokens | Tokenize Arabic/English text and expand a small bilingual vocabulary. | موثق | 119 | [SRC-1AE03B9EC3-L000119](../agents/web_agent.py#L119) |
+| [agents/web_agent.py](../agents/web_agent.py#L142) | دالة | _relevance_ratio | Fraction of meaningful query concepts present in a candidate's title/snippet. | موثق | 142 | [SRC-1AE03B9EC3-L000142](../agents/web_agent.py#L142) |
+| [agents/web_agent.py](../agents/web_agent.py#L166) | دالة | _blocked_source_url | لا توجد Docstring. | ناقص | 166 | [SRC-1AE03B9EC3-L000166](../agents/web_agent.py#L166) |
+| [agents/web_agent.py](../agents/web_agent.py#L174) | كلاس | AgentDependencyError | A required optional runtime dependency is unavailable. | موثق | 174 | [SRC-1AE03B9EC3-L000174](../agents/web_agent.py#L174) |
+| [agents/web_agent.py](../agents/web_agent.py#L178) | دالة | _clean_text | لا توجد Docstring. | ناقص | 178 | [SRC-1AE03B9EC3-L000178](../agents/web_agent.py#L178) |
+| [agents/web_agent.py](../agents/web_agent.py#L184) | دالة | _public_http_url | Lexically validate an HTTP URL before using it as a search source. | موثق | 184 | [SRC-1AE03B9EC3-L000184](../agents/web_agent.py#L184) |
+| [agents/web_agent.py](../agents/web_agent.py#L211) | دالة | _public_ip_literals | Resolve host and return its public addresses. | موثق | 211 | [SRC-1AE03B9EC3-L000211](../agents/web_agent.py#L211) |
+| [agents/web_agent.py](../agents/web_agent.py#L241) | دالة | _host_resolves_publicly | Reject local/private destinations before fetching a third-party page. | موثق | 241 | [SRC-1AE03B9EC3-L000241](../agents/web_agent.py#L241) |
+| [agents/web_agent.py](../agents/web_agent.py#L246) | دالة | _pinned_connect_url | Rewrite a validated public URL so the connection target is a checked IP. | موثق | 246 | [SRC-1AE03B9EC3-L000246](../agents/web_agent.py#L246) |
+| [agents/web_agent.py](../agents/web_agent.py#L256) | دالة | _fallback_answer | لا توجد Docstring. | ناقص | 256 | [SRC-1AE03B9EC3-L000256](../agents/web_agent.py#L256) |
+| [agents/web_agent.py](../agents/web_agent.py#L269) | كلاس | WebAgent | Search, inspect, and synthesize web evidence for open-ended questions. | موثق | 269 | [SRC-1AE03B9EC3-L000269](../agents/web_agent.py#L269) |
+| [agents/web_agent.py](../agents/web_agent.py#L272) | دالة | WebAgent.__init__ | لا توجد Docstring. | ناقص | 272 | [SRC-1AE03B9EC3-L000272](../agents/web_agent.py#L272) |
+| [agents/web_agent.py](../agents/web_agent.py#L315) | دالة | WebAgent._effective_timeout | Limit one outbound operation to the remaining per-answer time budget. | موثق | 315 | [SRC-1AE03B9EC3-L000315](../agents/web_agent.py#L315) |
+| [agents/web_agent.py](../agents/web_agent.py#L323) | دالة | WebAgent.status | لا توجد Docstring. | ناقص | 323 | [SRC-1AE03B9EC3-L000323](../agents/web_agent.py#L323) |
+| [agents/web_agent.py](../agents/web_agent.py#L422) | دالة | WebAgent._unwrap_search_url | لا توجد Docstring. | ناقص | 422 | [SRC-1AE03B9EC3-L000422](../agents/web_agent.py#L422) |
+| [agents/web_agent.py](../agents/web_agent.py#L435) | دالة | WebAgent._record_provider_diagnostic | لا توجد Docstring. | ناقص | 435 | [SRC-1AE03B9EC3-L000435](../agents/web_agent.py#L435) |
+| [agents/web_agent.py](../agents/web_agent.py#L454) | دالة | WebAgent._source_matches_query | لا توجد Docstring. | ناقص | 454 | [SRC-1AE03B9EC3-L000454](../agents/web_agent.py#L454) |
+| [agents/web_agent.py](../agents/web_agent.py#L464) | دالة | WebAgent._normalized_source_url_key | Normalize a public HTTP(S) URL for duplicate detection across search rounds. | موثق | 464 | [SRC-1AE03B9EC3-L000464](../agents/web_agent.py#L464) |
+| [agents/web_agent.py](../agents/web_agent.py#L492) | دالة | WebAgent._question_coverage_targets | Extract explicit multi-part answer requirements conservatively; this is not semantic grading. | موثق | 492 | [SRC-1AE03B9EC3-L000492](../agents/web_agent.py#L492) |
+| [agents/web_agent.py](../agents/web_agent.py#L549) | دالة | WebAgent._is_current_search_status_question | Recognize a question about whether this answer already used web search. | موثق | 549 | [SRC-1AE03B9EC3-L000549](../agents/web_agent.py#L549) |
+| [agents/web_agent.py](../agents/web_agent.py#L569) | دالة | WebAgent._is_self_question | Recognize questions about Omarai itself so they do not need web search. | موثق | 569 | [SRC-1AE03B9EC3-L000569](../agents/web_agent.py#L569) |
+| [agents/web_agent.py](../agents/web_agent.py#L603) | دالة | WebAgent._is_navigation_request | A link-finding task can be useful with one clearly labelled candidate result. | موثق | 603 | [SRC-1AE03B9EC3-L000603](../agents/web_agent.py#L603) |
+| [agents/web_agent.py](../agents/web_agent.py#L613) | دالة | WebAgent._is_lead_search | Keep lead discovery distinct from listing searches and generic explanations. | موثق | 613 | [SRC-1AE03B9EC3-L000613](../agents/web_agent.py#L613) |
+| [agents/web_agent.py](../agents/web_agent.py#L618) | دالة | WebAgent._lead_intent_evidence | Return a narrow, inspectable public buyer-intent phrase signal, if present. | موثق | 618 | [SRC-1AE03B9EC3-L000618](../agents/web_agent.py#L618) |
+| [agents/web_agent.py](../agents/web_agent.py#L652) | دالة | WebAgent._lead_generation_queries | Create high-intent buyer-search variants without changing the product/location. | موثق | 652 | [SRC-1AE03B9EC3-L000652](../agents/web_agent.py#L652) |
+| [agents/web_agent.py](../agents/web_agent.py#L694) | دالة | WebAgent._is_listing_discovery | Recognize property/job/product discovery where candidates are useful with caveats. | موثق | 694 | [SRC-1AE03B9EC3-L000694](../agents/web_agent.py#L694) |
+| [agents/web_agent.py](../agents/web_agent.py#L714) | دالة | WebAgent._requires_web_research | Use the web only when the user requests it or the answer depends on live data. | موثق | 714 | [SRC-1AE03B9EC3-L000714](../agents/web_agent.py#L714) |
+| [agents/web_agent.py](../agents/web_agent.py#L737) | دالة | WebAgent._local_answer_result | Build a consistently shaped answer for non-research conversational requests. | موثق | 737 | [SRC-1AE03B9EC3-L000737](../agents/web_agent.py#L737) |
+| [agents/web_agent.py](../agents/web_agent.py#L760) | دالة | WebAgent._local_conversation_reply | Return a short greeting/acknowledgment without a model or web request. | موثق | 760 | [SRC-1AE03B9EC3-L000760](../agents/web_agent.py#L760) |
+| [agents/web_agent.py](../agents/web_agent.py#L774) | دالة | WebAgent._annotate_intent_route | Attach route diagnostics to both response and research-plan metadata. | موثق | 774 | [SRC-1AE03B9EC3-L000774](../agents/web_agent.py#L774) |
+| [agents/web_agent.py](../agents/web_agent.py#L789) | دالة | WebAgent._clarification_result | Ask for a missing referent without calling the model or search providers. | موثق | 789 | [SRC-1AE03B9EC3-L000789](../agents/web_agent.py#L789) |
+| [agents/web_agent.py](../agents/web_agent.py#L808) | دالة | WebAgent._capability_status_snapshot | Describe configured capabilities without claiming a live health check. | موثق | 808 | [SRC-1AE03B9EC3-L000808](../agents/web_agent.py#L808) |
+| [agents/web_agent.py](../agents/web_agent.py#L889) | دالة | WebAgent._self_description_answer | Answer self/capability questions without inventing a live health result. | موثق | 889 | [SRC-1AE03B9EC3-L000889](../agents/web_agent.py#L889) |
+| [agents/web_agent.py](../agents/web_agent.py#L952) | دالة | WebAgent._answer_without_search | Answer stable informational questions with the configured LLM, without fake citations. | موثق | 952 | [SRC-1AE03B9EC3-L000952](../agents/web_agent.py#L952) |
+| [agents/web_agent.py](../agents/web_agent.py#L1009) | دالة | WebAgent._search_duckduckgo_html | لا توجد Docstring. | ناقص | 1009 | [SRC-1AE03B9EC3-L001009](../agents/web_agent.py#L1009) |
+| [agents/web_agent.py](../agents/web_agent.py#L1057) | دالة | WebAgent._search_bing_rss | لا توجد Docstring. | ناقص | 1057 | [SRC-1AE03B9EC3-L001057](../agents/web_agent.py#L1057) |
+| [agents/web_agent.py](../agents/web_agent.py#L1102) | دالة | WebAgent._search_deepseek_api | Use DeepSeek's optional Search API as a comparison provider, never by default. | موثق | 1102 | [SRC-1AE03B9EC3-L001102](../agents/web_agent.py#L1102) |
+| [agents/web_agent.py](../agents/web_agent.py#L1158) | دالة | WebAgent._reset_deepseek_search_budget | Reset the bounded optional Search API request budget for one operation. | موثق | 1158 | [SRC-1AE03B9EC3-L001158](../agents/web_agent.py#L1158) |
+| [agents/web_agent.py](../agents/web_agent.py#L1163) | دالة | WebAgent._reserve_deepseek_search_request | Reserve one paid search request before concurrent queries invoke the provider. | موثق | 1163 | [SRC-1AE03B9EC3-L001163](../agents/web_agent.py#L1163) |
+| [agents/web_agent.py](../agents/web_agent.py#L1180) | دالة | WebAgent._search_web | Run configured search connectors concurrently with isolated failures and relevance checks. | موثق | 1180 | [SRC-1AE03B9EC3-L001180](../agents/web_agent.py#L1180) |
+| [agents/web_agent.py](../agents/web_agent.py#L1223) | دالة غير متزامنة | WebAgent._search_web.run_one | لا توجد Docstring. | ناقص | 1223 | [SRC-1AE03B9EC3-L001223](../agents/web_agent.py#L1223) |
+| [agents/web_agent.py](../agents/web_agent.py#L1278) | دالة غير متزامنة | WebAgent._search_web.run_all | لا توجد Docstring. | ناقص | 1278 | [SRC-1AE03B9EC3-L001278](../agents/web_agent.py#L1278) |
+| [agents/web_agent.py](../agents/web_agent.py#L1296) | دالة | WebAgent._reserve_search_call | Reserve one outbound search/social-provider request before network I/O. | موثق | 1296 | [SRC-1AE03B9EC3-L001296](../agents/web_agent.py#L1296) |
+| [agents/web_agent.py](../agents/web_agent.py#L1302) | دالة | WebAgent._search_brave | Use Brave's official web-search API when the operator provides an API key. | موثق | 1302 | [SRC-1AE03B9EC3-L001302](../agents/web_agent.py#L1302) |
+| [agents/web_agent.py](../agents/web_agent.py#L1354) | دالة | WebAgent._search_tavily | Use Tavily's official search API for structured, extractable live web results. | موثق | 1354 | [SRC-1AE03B9EC3-L001354](../agents/web_agent.py#L1354) |
+| [agents/web_agent.py](../agents/web_agent.py#L1407) | دالة | WebAgent._search_news | Read the public Google News RSS search feed for freshness-sensitive queries. | موثق | 1407 | [SRC-1AE03B9EC3-L001407](../agents/web_agent.py#L1407) |
+| [agents/web_agent.py](../agents/web_agent.py#L1475) | دالة | WebAgent._search_social | Search public social content through exposed public endpoints only. | موثق | 1475 | [SRC-1AE03B9EC3-L001475](../agents/web_agent.py#L1475) |
+| [agents/web_agent.py](../agents/web_agent.py#L1955) | دالة | WebAgent._fetch_page | Fetch a public page with bounded, individually validated redirects and size limits. | موثق | 1955 | [SRC-1AE03B9EC3-L001955](../agents/web_agent.py#L1955) |
+| [agents/web_agent.py](../agents/web_agent.py#L2063) | دالة | WebAgent._collect_sources | لا توجد Docstring. | ناقص | 2063 | [SRC-1AE03B9EC3-L002063](../agents/web_agent.py#L2063) |
+| [agents/web_agent.py](../agents/web_agent.py#L2082) | دالة | WebAgent._collect_research | Run independent query searches concurrently, fuse evidence, then fetch top pages. | موثق | 2082 | [SRC-1AE03B9EC3-L002082](../agents/web_agent.py#L2082) |
+| [agents/web_agent.py](../agents/web_agent.py#L2306) | دالة | WebAgent._sanitize_history | لا توجد Docstring. | ناقص | 2306 | [SRC-1AE03B9EC3-L002306](../agents/web_agent.py#L2306) |
+| [agents/web_agent.py](../agents/web_agent.py#L2319) | دالة | WebAgent._history_search_query | لا توجد Docstring. | ناقص | 2319 | [SRC-1AE03B9EC3-L002319](../agents/web_agent.py#L2319) |
+| [agents/web_agent.py](../agents/web_agent.py#L2339) | دالة | WebAgent._record_generation_diagnostic | Store bounded completion metadata without prompts, output text, or secrets. | موثق | 2339 | [SRC-1AE03B9EC3-L002339](../agents/web_agent.py#L2339) |
+| [agents/web_agent.py](../agents/web_agent.py#L2360) | دالة | WebAgent._request_completion | Call an OpenAI-compatible API with bounded fallback and optional live server search. | موثق | 2360 | [SRC-1AE03B9EC3-L002360](../agents/web_agent.py#L2360) |
+| [agents/web_agent.py](../agents/web_agent.py#L2542) | دالة | WebAgent._plan_search | Ask the language model how to search, then validate its proposal deterministically. | موثق | 2542 | [SRC-1AE03B9EC3-L002542](../agents/web_agent.py#L2542) |
+| [agents/web_agent.py](../agents/web_agent.py#L2658) | دالة | WebAgent._generate | لا توجد Docstring. | ناقص | 2658 | [SRC-1AE03B9EC3-L002658](../agents/web_agent.py#L2658) |
+| [agents/web_agent.py](../agents/web_agent.py#L2798) | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 2798 | [SRC-1AE03B9EC3-L002798](../agents/web_agent.py#L2798) |
+| [agents/web_agent.py](../agents/web_agent.py#L2895) | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 2895 | [SRC-1AE03B9EC3-L002895](../agents/web_agent.py#L2895) |
+| [agents/web_agent.py](../agents/web_agent.py#L2899) | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 2899 | [SRC-1AE03B9EC3-L002899](../agents/web_agent.py#L2899) |
+| [agents/web_agent.py](../agents/web_agent.py#L2910) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 2910 | [SRC-1AE03B9EC3-L002910](../agents/web_agent.py#L2910) |
+| [agents/web_agent.py](../agents/web_agent.py#L2940) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 2940 | [SRC-1AE03B9EC3-L002940](../agents/web_agent.py#L2940) |
+| [agents/web_agent.py](../agents/web_agent.py#L3161) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 3161 | [SRC-1AE03B9EC3-L003161](../agents/web_agent.py#L3161) |
+| [agents/web_agent.py](../agents/web_agent.py#L3245) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 3245 | [SRC-1AE03B9EC3-L003245](../agents/web_agent.py#L3245) |
+| [api/omarai.py](../api/omarai.py#L19) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-EEF2E6447C-L000019](../api/omarai.py#L19) |
+| [api/omarai.py](../api/omarai.py#L20) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-EEF2E6447C-L000020](../api/omarai.py#L20) |
+| [api/omarai.py](../api/omarai.py#L21) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-EEF2E6447C-L000021](../api/omarai.py#L21) |
+| [api/omarai.py](../api/omarai.py#L22) | متغير/ثابت Python | MAX_REQUEST_BODY_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-EEF2E6447C-L000022](../api/omarai.py#L22) |
+| [api/omarai.py](../api/omarai.py#L24) | متغير/ثابت Python | REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
+| [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
+| [api/omarai.py](../api/omarai.py#L26) | متغير/ثابت Python | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
+| [api/omarai.py](../api/omarai.py#L28) | متغير/ثابت Python | REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
+| [api/omarai.py](../api/omarai.py#L29) | متغير/ثابت Python | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
+| [api/omarai.py](../api/omarai.py#L30) | متغير/ثابت Python | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
+| [api/omarai.py](../api/omarai.py#L31) | متغير/ثابت Python | REQUEST_BODY_READ_CHUNK_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 31 | [SRC-EEF2E6447C-L000031](../api/omarai.py#L31) |
+| [api/omarai.py](../api/omarai.py#L35) | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 35 | [SRC-EEF2E6447C-L000035](../api/omarai.py#L35) |
+| [api/omarai.py](../api/omarai.py#L44) | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 44 | [SRC-EEF2E6447C-L000044](../api/omarai.py#L44) |
+| [api/omarai.py](../api/omarai.py#L49) | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 49 | [SRC-EEF2E6447C-L000049](../api/omarai.py#L49) |
+| [api/omarai.py](../api/omarai.py#L100) | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 100 | [SRC-EEF2E6447C-L000100](../api/omarai.py#L100) |
+| [api/omarai.py](../api/omarai.py#L113) | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 113 | [SRC-EEF2E6447C-L000113](../api/omarai.py#L113) |
+| [api/omarai.py](../api/omarai.py#L118) | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 118 | [SRC-EEF2E6447C-L000118](../api/omarai.py#L118) |
+| [api/omarai.py](../api/omarai.py#L127) | كلاس | Handler | لا توجد Docstring. | ناقص | 127 | [SRC-EEF2E6447C-L000127](../api/omarai.py#L127) |
+| [api/omarai.py](../api/omarai.py#L128) | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 128 | [SRC-EEF2E6447C-L000128](../api/omarai.py#L128) |
+| [api/omarai.py](../api/omarai.py#L137) | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 137 | [SRC-EEF2E6447C-L000137](../api/omarai.py#L137) |
+| [api/omarai.py](../api/omarai.py#L155) | متغير/ثابت Python | Handler.store | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 155 | [SRC-EEF2E6447C-L000155](../api/omarai.py#L155) |
+| [api/omarai.py](../api/omarai.py#L156) | متغير/ثابت Python | Handler._rate_lock | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 156 | [SRC-EEF2E6447C-L000156](../api/omarai.py#L156) |
+| [api/omarai.py](../api/omarai.py#L157) | متغير/ثابت Python | Handler._request_times | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 157 | [SRC-EEF2E6447C-L000157](../api/omarai.py#L157) |
+| [api/omarai.py](../api/omarai.py#L158) | متغير/ثابت Python | Handler._rate_last_cleanup | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 158 | [SRC-EEF2E6447C-L000158](../api/omarai.py#L158) |
+| [api/omarai.py](../api/omarai.py#L159) | متغير/ثابت Python | Handler.RATE_LIMIT_REQUESTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 159 | [SRC-EEF2E6447C-L000159](../api/omarai.py#L159) |
+| [api/omarai.py](../api/omarai.py#L160) | متغير/ثابت Python | Handler.RATE_LIMIT_WINDOW_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 160 | [SRC-EEF2E6447C-L000160](../api/omarai.py#L160) |
+| [api/omarai.py](../api/omarai.py#L161) | متغير/ثابت Python | Handler.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 161 | [SRC-EEF2E6447C-L000161](../api/omarai.py#L161) |
+| [api/omarai.py](../api/omarai.py#L162) | متغير/ثابت Python | Handler.AGENT_CONCURRENCY_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 162 | [SRC-EEF2E6447C-L000162](../api/omarai.py#L162) |
+| [api/omarai.py](../api/omarai.py#L163) | متغير/ثابت Python | Handler._agent_semaphore | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 163 | [SRC-EEF2E6447C-L000163](../api/omarai.py#L163) |
+| [api/omarai.py](../api/omarai.py#L165) | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 165 | [SRC-EEF2E6447C-L000165](../api/omarai.py#L165) |
+| [api/omarai.py](../api/omarai.py#L182) | دالة | Handler._authorized | لا توجد Docstring. | ناقص | 182 | [SRC-EEF2E6447C-L000182](../api/omarai.py#L182) |
+| [api/omarai.py](../api/omarai.py#L191) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 191 | [SRC-EEF2E6447C-L000191](../api/omarai.py#L191) |
+| [api/omarai.py](../api/omarai.py#L221) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 221 | [SRC-EEF2E6447C-L000221](../api/omarai.py#L221) |
+| [api/omarai.py](../api/omarai.py#L224) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 224 | [SRC-EEF2E6447C-L000224](../api/omarai.py#L224) |
+| [api/omarai.py](../api/omarai.py#L240) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 240 | [SRC-EEF2E6447C-L000240](../api/omarai.py#L240) |
+| [api/omarai.py](../api/omarai.py#L265) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 265 | [SRC-EEF2E6447C-L000265](../api/omarai.py#L265) |
+| [api/omarai.py](../api/omarai.py#L336) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 336 | [SRC-EEF2E6447C-L000336](../api/omarai.py#L336) |
+| [api/omarai.py](../api/omarai.py#L350) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 350 | [SRC-EEF2E6447C-L000350](../api/omarai.py#L350) |
+| [api/omarai.py](../api/omarai.py#L384) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 384 | [SRC-EEF2E6447C-L000384](../api/omarai.py#L384) |
+| [api/omarai.py](../api/omarai.py#L473) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 473 | [SRC-EEF2E6447C-L000473](../api/omarai.py#L473) |
+| [api/omarai.py](../api/omarai.py#L486) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 486 | [SRC-EEF2E6447C-L000486](../api/omarai.py#L486) |
+| [api/omarai.py](../api/omarai.py#L490) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 490 | [SRC-EEF2E6447C-L000490](../api/omarai.py#L490) |
+| [api/omarai.py](../api/omarai.py#L526) | دالة | serve | لا توجد Docstring. | ناقص | 526 | [SRC-EEF2E6447C-L000526](../api/omarai.py#L526) |
+| [cli/omarai.py](../cli/omarai.py#L9) | دالة | main | لا توجد Docstring. | ناقص | 9 | [SRC-9C97DF51AC-L000009](../cli/omarai.py#L9) |
+| [docs/generate_index.py](generate_index.py#L20) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-E599346ABE-L000020](generate_index.py#L20) |
+| [docs/generate_index.py](generate_index.py#L41) | متغير/ثابت Python | SENSITIVE_FILENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 41 | [SRC-E599346ABE-L000041](generate_index.py#L41) |
+| [docs/generate_index.py](generate_index.py#L68) | متغير/ثابت Python | SENSITIVE_DIRECTORY_NAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 68 | [SRC-E599346ABE-L000068](generate_index.py#L68) |
+| [docs/generate_index.py](generate_index.py#L77) | متغير/ثابت Python | SENSITIVE_NAME_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 77 | [SRC-E599346ABE-L000077](generate_index.py#L77) |
+| [docs/generate_index.py](generate_index.py#L81) | متغير/ثابت Python | SENSITIVE_CONFIG_SUFFIXES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 81 | [SRC-E599346ABE-L000081](generate_index.py#L81) |
+| [docs/generate_index.py](generate_index.py#L84) | متغير/ثابت Python | EXCLUDED_SUFFIXES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 84 | [SRC-E599346ABE-L000084](generate_index.py#L84) |
+| [docs/generate_index.py](generate_index.py#L97) | متغير/ثابت Python | MAX_INDEXED_TEXT_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 97 | [SRC-E599346ABE-L000097](generate_index.py#L97) |
+| [docs/generate_index.py](generate_index.py#L98) | متغير/ثابت Python | MAX_DESCRIPTION_LENGTH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 98 | [SRC-E599346ABE-L000098](generate_index.py#L98) |
+| [docs/generate_index.py](generate_index.py#L99) | متغير/ثابت Python | INDEX_RELATIVE_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 99 | [SRC-E599346ABE-L000099](generate_index.py#L99) |
+| [docs/generate_index.py](generate_index.py#L100) | متغير/ثابت Python | SOURCE_LINES_INDEX_RELATIVE_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 100 | [SRC-E599346ABE-L000100](generate_index.py#L100) |
+| [docs/generate_index.py](generate_index.py#L101) | متغير/ثابت Python | INDEX_OUTPUT_PATHS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 101 | [SRC-E599346ABE-L000101](generate_index.py#L101) |
+| [docs/generate_index.py](generate_index.py#L102) | متغير/ثابت Python | SOURCE_LINES_PAGES_DIR | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 102 | [SRC-E599346ABE-L000102](generate_index.py#L102) |
+| [docs/generate_index.py](generate_index.py#L103) | متغير/ثابت Python | SOURCE_LINES_PAGE_SIZE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 103 | [SRC-E599346ABE-L000103](generate_index.py#L103) |
+| [docs/generate_index.py](generate_index.py#L104) | متغير/ثابت Python | SOURCE_LINES_PAGE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 104 | [SRC-E599346ABE-L000104](generate_index.py#L104) |
+| [docs/generate_index.py](generate_index.py#L106) | متغير/ثابت Python | PYTHON_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 106 | [SRC-E599346ABE-L000106](generate_index.py#L106) |
+| [docs/generate_index.py](generate_index.py#L107) | متغير/ثابت Python | JAVASCRIPT_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 107 | [SRC-E599346ABE-L000107](generate_index.py#L107) |
+| [docs/generate_index.py](generate_index.py#L108) | متغير/ثابت Python | CSS_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 108 | [SRC-E599346ABE-L000108](generate_index.py#L108) |
+| [docs/generate_index.py](generate_index.py#L109) | متغير/ثابت Python | CONFIG_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 109 | [SRC-E599346ABE-L000109](generate_index.py#L109) |
+| [docs/generate_index.py](generate_index.py#L110) | متغير/ثابت Python | TEXT_SCAN_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 110 | [SRC-E599346ABE-L000110](generate_index.py#L110) |
+| [docs/generate_index.py](generate_index.py#L118) | متغير/ثابت Python | JS_IDENTIFIER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 118 | [SRC-E599346ABE-L000118](generate_index.py#L118) |
+| [docs/generate_index.py](generate_index.py#L119) | متغير/ثابت Python | JS_FUNCTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 119 | [SRC-E599346ABE-L000119](generate_index.py#L119) |
+| [docs/generate_index.py](generate_index.py#L122) | متغير/ثابت Python | JS_CLASS_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 122 | [SRC-E599346ABE-L000122](generate_index.py#L122) |
+| [docs/generate_index.py](generate_index.py#L123) | متغير/ثابت Python | JS_ARROW_ASSIGNMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 123 | [SRC-E599346ABE-L000123](generate_index.py#L123) |
+| [docs/generate_index.py](generate_index.py#L127) | متغير/ثابت Python | JS_FUNCTION_ASSIGNMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 127 | [SRC-E599346ABE-L000127](generate_index.py#L127) |
+| [docs/generate_index.py](generate_index.py#L130) | متغير/ثابت Python | JS_VARIABLE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 130 | [SRC-E599346ABE-L000130](generate_index.py#L130) |
+| [docs/generate_index.py](generate_index.py#L131) | متغير/ثابت Python | HTML_ATTRIBUTE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 131 | [SRC-E599346ABE-L000131](generate_index.py#L131) |
+| [docs/generate_index.py](generate_index.py#L135) | متغير/ثابت Python | HTML_SCRIPT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 135 | [SRC-E599346ABE-L000135](generate_index.py#L135) |
+| [docs/generate_index.py](generate_index.py#L136) | متغير/ثابت Python | HTML_STYLE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 136 | [SRC-E599346ABE-L000136](generate_index.py#L136) |
+| [docs/generate_index.py](generate_index.py#L137) | متغير/ثابت Python | CSS_COMMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 137 | [SRC-E599346ABE-L000137](generate_index.py#L137) |
+| [docs/generate_index.py](generate_index.py#L138) | متغير/ثابت Python | CSS_CUSTOM_PROPERTY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 138 | [SRC-E599346ABE-L000138](generate_index.py#L138) |
+| [docs/generate_index.py](generate_index.py#L139) | متغير/ثابت Python | CSS_CLASS_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 139 | [SRC-E599346ABE-L000139](generate_index.py#L139) |
+| [docs/generate_index.py](generate_index.py#L140) | متغير/ثابت Python | CSS_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 140 | [SRC-E599346ABE-L000140](generate_index.py#L140) |
+| [docs/generate_index.py](generate_index.py#L141) | متغير/ثابت Python | SHELL_FUNCTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 141 | [SRC-E599346ABE-L000141](generate_index.py#L141) |
+| [docs/generate_index.py](generate_index.py#L145) | متغير/ثابت Python | MARKDOWN_HEADING_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 145 | [SRC-E599346ABE-L000145](generate_index.py#L145) |
+| [docs/generate_index.py](generate_index.py#L146) | متغير/ثابت Python | YAML_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 146 | [SRC-E599346ABE-L000146](generate_index.py#L146) |
+| [docs/generate_index.py](generate_index.py#L147) | متغير/ثابت Python | TOML_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 147 | [SRC-E599346ABE-L000147](generate_index.py#L147) |
+| [docs/generate_index.py](generate_index.py#L148) | متغير/ثابت Python | TOML_SECTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 148 | [SRC-E599346ABE-L000148](generate_index.py#L148) |
+| [docs/generate_index.py](generate_index.py#L149) | متغير/ثابت Python | JSON_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 149 | [SRC-E599346ABE-L000149](generate_index.py#L149) |
+| [docs/generate_index.py](generate_index.py#L150) | متغير/ثابت Python | INI_SECTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 150 | [SRC-E599346ABE-L000150](generate_index.py#L150) |
+| [docs/generate_index.py](generate_index.py#L151) | متغير/ثابت Python | INI_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 151 | [SRC-E599346ABE-L000151](generate_index.py#L151) |
+| [docs/generate_index.py](generate_index.py#L152) | متغير/ثابت Python | UPPER_SNAKE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 152 | [SRC-E599346ABE-L000152](generate_index.py#L152) |
+| [docs/generate_index.py](generate_index.py#L153) | متغير/ثابت Python | API_PATH_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 153 | [SRC-E599346ABE-L000153](generate_index.py#L153) |
+| [docs/generate_index.py](generate_index.py#L154) | متغير/ثابت Python | FINDING_MARKER_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 154 | [SRC-E599346ABE-L000154](generate_index.py#L154) |
+| [docs/generate_index.py](generate_index.py#L158) | كلاس | IndexedSymbol | Represent a Python definition or module/class assignment. | موثق | 158 | [SRC-E599346ABE-L000158](generate_index.py#L158) |
+| [docs/generate_index.py](generate_index.py#L161) | متغير/ثابت Python | IndexedSymbol.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 161 | [SRC-E599346ABE-L000161](generate_index.py#L161) |
+| [docs/generate_index.py](generate_index.py#L162) | متغير/ثابت Python | IndexedSymbol.name | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 162 | [SRC-E599346ABE-L000162](generate_index.py#L162) |
+| [docs/generate_index.py](generate_index.py#L163) | متغير/ثابت Python | IndexedSymbol.kind | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 163 | [SRC-E599346ABE-L000163](generate_index.py#L163) |
+| [docs/generate_index.py](generate_index.py#L164) | متغير/ثابت Python | IndexedSymbol.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 164 | [SRC-E599346ABE-L000164](generate_index.py#L164) |
+| [docs/generate_index.py](generate_index.py#L165) | متغير/ثابت Python | IndexedSymbol.description | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 165 | [SRC-E599346ABE-L000165](generate_index.py#L165) |
+| [docs/generate_index.py](generate_index.py#L166) | متغير/ثابت Python | IndexedSymbol.documented | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 166 | [SRC-E599346ABE-L000166](generate_index.py#L166) |
+| [docs/generate_index.py](generate_index.py#L170) | كلاس | IndexedFile | Represent a repository file with stable identifiers and navigation metadata. | موثق | 170 | [SRC-E599346ABE-L000170](generate_index.py#L170) |
+| [docs/generate_index.py](generate_index.py#L173) | متغير/ثابت Python | IndexedFile.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 173 | [SRC-E599346ABE-L000173](generate_index.py#L173) |
+| [docs/generate_index.py](generate_index.py#L174) | متغير/ثابت Python | IndexedFile.file_type | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 174 | [SRC-E599346ABE-L000174](generate_index.py#L174) |
+| [docs/generate_index.py](generate_index.py#L175) | متغير/ثابت Python | IndexedFile.size_bytes | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 175 | [SRC-E599346ABE-L000175](generate_index.py#L175) |
+| [docs/generate_index.py](generate_index.py#L176) | متغير/ثابت Python | IndexedFile.line_count | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 176 | [SRC-E599346ABE-L000176](generate_index.py#L176) |
+| [docs/generate_index.py](generate_index.py#L177) | متغير/ثابت Python | IndexedFile.indexing_scope | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 177 | [SRC-E599346ABE-L000177](generate_index.py#L177) |
+| [docs/generate_index.py](generate_index.py#L178) | متغير/ثابت Python | IndexedFile.file_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 178 | [SRC-E599346ABE-L000178](generate_index.py#L178) |
+| [docs/generate_index.py](generate_index.py#L179) | متغير/ثابت Python | IndexedFile.category | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 179 | [SRC-E599346ABE-L000179](generate_index.py#L179) |
+| [docs/generate_index.py](generate_index.py#L183) | كلاس | IndexedMarker | Represent a statically discovered symbol outside the Python AST index. | موثق | 183 | [SRC-E599346ABE-L000183](generate_index.py#L183) |
+| [docs/generate_index.py](generate_index.py#L186) | متغير/ثابت Python | IndexedMarker.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 186 | [SRC-E599346ABE-L000186](generate_index.py#L186) |
+| [docs/generate_index.py](generate_index.py#L187) | متغير/ثابت Python | IndexedMarker.name | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 187 | [SRC-E599346ABE-L000187](generate_index.py#L187) |
+| [docs/generate_index.py](generate_index.py#L188) | متغير/ثابت Python | IndexedMarker.kind | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 188 | [SRC-E599346ABE-L000188](generate_index.py#L188) |
+| [docs/generate_index.py](generate_index.py#L189) | متغير/ثابت Python | IndexedMarker.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 189 | [SRC-E599346ABE-L000189](generate_index.py#L189) |
+| [docs/generate_index.py](generate_index.py#L193) | كلاس | IndexedLine | Represent one exact logical line from an eligible readable repository text file. | موثق | 193 | [SRC-E599346ABE-L000193](generate_index.py#L193) |
+| [docs/generate_index.py](generate_index.py#L196) | متغير/ثابت Python | IndexedLine.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 196 | [SRC-E599346ABE-L000196](generate_index.py#L196) |
+| [docs/generate_index.py](generate_index.py#L197) | متغير/ثابت Python | IndexedLine.file_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 197 | [SRC-E599346ABE-L000197](generate_index.py#L197) |
+| [docs/generate_index.py](generate_index.py#L198) | متغير/ثابت Python | IndexedLine.line_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 198 | [SRC-E599346ABE-L000198](generate_index.py#L198) |
+| [docs/generate_index.py](generate_index.py#L199) | متغير/ثابت Python | IndexedLine.category | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 199 | [SRC-E599346ABE-L000199](generate_index.py#L199) |
+| [docs/generate_index.py](generate_index.py#L200) | متغير/ثابت Python | IndexedLine.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 200 | [SRC-E599346ABE-L000200](generate_index.py#L200) |
+| [docs/generate_index.py](generate_index.py#L201) | متغير/ثابت Python | IndexedLine.content | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 201 | [SRC-E599346ABE-L000201](generate_index.py#L201) |
+| [docs/generate_index.py](generate_index.py#L205) | كلاس | IndexedFinding | Represent a source annotation that explicitly requests attention. | موثق | 205 | [SRC-E599346ABE-L000205](generate_index.py#L205) |
+| [docs/generate_index.py](generate_index.py#L208) | متغير/ثابت Python | IndexedFinding.finding_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 208 | [SRC-E599346ABE-L000208](generate_index.py#L208) |
+| [docs/generate_index.py](generate_index.py#L209) | متغير/ثابت Python | IndexedFinding.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 209 | [SRC-E599346ABE-L000209](generate_index.py#L209) |
+| [docs/generate_index.py](generate_index.py#L210) | متغير/ثابت Python | IndexedFinding.line_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 210 | [SRC-E599346ABE-L000210](generate_index.py#L210) |
+| [docs/generate_index.py](generate_index.py#L211) | متغير/ثابت Python | IndexedFinding.marker | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 211 | [SRC-E599346ABE-L000211](generate_index.py#L211) |
+| [docs/generate_index.py](generate_index.py#L212) | متغير/ثابت Python | IndexedFinding.description | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 212 | [SRC-E599346ABE-L000212](generate_index.py#L212) |
+| [docs/generate_index.py](generate_index.py#L215) | كلاس | IndexGenerationError | Signal that a complete Python AST index could not be generated. | موثق | 215 | [SRC-E599346ABE-L000215](generate_index.py#L215) |
+| [docs/generate_index.py](generate_index.py#L219) | كلاس | SymbolVisitor | Collect Python classes, functions, methods and module/class assignments. | موثق | 219 | [SRC-E599346ABE-L000219](generate_index.py#L219) |
+| [docs/generate_index.py](generate_index.py#L222) | دالة | SymbolVisitor.__init__ | Initialize the visitor for one repository-relative Python file. | موثق | 222 | [SRC-E599346ABE-L000222](generate_index.py#L222) |
+| [docs/generate_index.py](generate_index.py#L230) | دالة | SymbolVisitor._description | Return a compact first-paragraph summary and its documentation state. | موثق | 230 | [SRC-E599346ABE-L000230](generate_index.py#L230) |
+| [docs/generate_index.py](generate_index.py#L242) | دالة | SymbolVisitor._record_definition | Record one class/function definition while preserving its qualified scope. | موثق | 242 | [SRC-E599346ABE-L000242](generate_index.py#L242) |
+| [docs/generate_index.py](generate_index.py#L261) | دالة | SymbolVisitor._record_assignment_target | Record declared names from a module-level or class-level assignment. | موثق | 261 | [SRC-E599346ABE-L000261](generate_index.py#L261) |
+| [docs/generate_index.py](generate_index.py#L279) | دالة | SymbolVisitor.visit_Assign | Index module/class assignment names but avoid flooding the index with locals. | موثق | 279 | [SRC-E599346ABE-L000279](generate_index.py#L279) |
+| [docs/generate_index.py](generate_index.py#L286) | دالة | SymbolVisitor.visit_AnnAssign | Index annotated module/class assignments without counting local variables. | موثق | 286 | [SRC-E599346ABE-L000286](generate_index.py#L286) |
+| [docs/generate_index.py](generate_index.py#L292) | دالة | SymbolVisitor.visit_ClassDef | Record a class and recursively inspect its body. | موثق | 292 | [SRC-E599346ABE-L000292](generate_index.py#L292) |
+| [docs/generate_index.py](generate_index.py#L301) | دالة | SymbolVisitor.visit_FunctionDef | Record a synchronous function or method and nested definitions. | موثق | 301 | [SRC-E599346ABE-L000301](generate_index.py#L301) |
+| [docs/generate_index.py](generate_index.py#L312) | دالة | SymbolVisitor.visit_AsyncFunctionDef | Record an asynchronous function or method and nested definitions. | موثق | 312 | [SRC-E599346ABE-L000312](generate_index.py#L312) |
+| [docs/generate_index.py](generate_index.py#L324) | دالة | _is_sensitive_or_runtime_path | Exclude known local secrets, credential directories, runtime data and keys. | موثق | 324 | [SRC-E599346ABE-L000324](generate_index.py#L324) |
+| [docs/generate_index.py](generate_index.py#L341) | دالة | _stable_file_id | Return a deterministic path-derived identifier without hashing file contents. | موثق | 341 | [SRC-E599346ABE-L000341](generate_index.py#L341) |
+| [docs/generate_index.py](generate_index.py#L347) | دالة | _category_for_path | Assign an understandable navigation category from the repository-relative path. | موثق | 347 | [SRC-E599346ABE-L000347](generate_index.py#L347) |
+| [docs/generate_index.py](generate_index.py#L380) | دالة | discover_repository_files | Return the stable file inventory, excluding the generated index and runtime data. | موثق | 380 | [SRC-E599346ABE-L000380](generate_index.py#L380) |
+| [docs/generate_index.py](generate_index.py#L414) | دالة | _read_text_bounded | Read supported UTF-8 text files only when they are within the scan-size bound. | موثق | 414 | [SRC-E599346ABE-L000414](generate_index.py#L414) |
+| [docs/generate_index.py](generate_index.py#L431) | دالة | _count_lines | Count source lines without adding an extra line for a trailing newline. | موثق | 431 | [SRC-E599346ABE-L000431](generate_index.py#L431) |
+| [docs/generate_index.py](generate_index.py#L438) | دالة | _file_type | Return a readable file type based on a known filename or extension. | موثق | 438 | [SRC-E599346ABE-L000438](generate_index.py#L438) |
+| [docs/generate_index.py](generate_index.py#L473) | دالة | _indexing_scope | Describe precisely whether a file receives symbol extraction or path inventory only. | موثق | 473 | [SRC-E599346ABE-L000473](generate_index.py#L473) |
+| [docs/generate_index.py](generate_index.py#L499) | دالة | build_file_inventory | Inventory repository files and record whether static symbol scanning was possible. | موثق | 499 | [SRC-E599346ABE-L000499](generate_index.py#L499) |
+| [docs/generate_index.py](generate_index.py#L518) | دالة | discover_python_files | Return sorted Python files from the eligible repository inventory. | موثق | 518 | [SRC-E599346ABE-L000518](generate_index.py#L518) |
+| [docs/generate_index.py](generate_index.py#L527) | دالة | scan_repository | Parse every eligible Python file or fail without producing a partial index. | موثق | 527 | [SRC-E599346ABE-L000527](generate_index.py#L527) |
+| [docs/generate_index.py](generate_index.py#L569) | دالة | _line_at | Return a 1-based line number for a match in the supplied source fragment. | موثق | 569 | [SRC-E599346ABE-L000569](generate_index.py#L569) |
+| [docs/generate_index.py](generate_index.py#L574) | دالة | _add_marker | Add the first occurrence of a symbol category within one file. | موثق | 574 | [SRC-E599346ABE-L000574](generate_index.py#L574) |
+| [docs/generate_index.py](generate_index.py#L600) | دالة | _scan_javascript | Extract navigational JS/TS declarations using bounded regular-expression heuristics. | موثق | 600 | [SRC-E599346ABE-L000600](generate_index.py#L600) |
+| [docs/generate_index.py](generate_index.py#L652) | دالة | _scan_css | Extract CSS class/id selectors and custom properties; this is not a full CSS parser. | موثق | 652 | [SRC-E599346ABE-L000652](generate_index.py#L652) |
+| [docs/generate_index.py](generate_index.py#L681) | دالة | _scan_html | Extract HTML navigation attributes plus embedded JS and CSS declarations. | موثق | 681 | [SRC-E599346ABE-L000681](generate_index.py#L681) |
+| [docs/generate_index.py](generate_index.py#L711) | دالة | _scan_config_keys | Extract configuration keys/sections without evaluating or loading configuration. | موثق | 711 | [SRC-E599346ABE-L000711](generate_index.py#L711) |
+| [docs/generate_index.py](generate_index.py#L747) | دالة | scan_static_symbols | Extract supplementary navigational symbols from frontend, docs, config and scripts. | موثق | 747 | [SRC-E599346ABE-L000747](generate_index.py#L747) |
+| [docs/generate_index.py](generate_index.py#L834) | دالة | _source_file_href | Return a relative source link from a generated index page to the original file. | موثق | 834 | [SRC-E599346ABE-L000834](generate_index.py#L834) |
+| [docs/generate_index.py](generate_index.py#L845) | دالة | _source_line_id | Return a consistent line code wherever a symbol, finding, or source line is shown. | موثق | 845 | [SRC-E599346ABE-L000845](generate_index.py#L845) |
+| [docs/generate_index.py](generate_index.py#L851) | دالة | _markdown_cell | Normalize text and escape Markdown table delimiters. | موثق | 851 | [SRC-E599346ABE-L000851](generate_index.py#L851) |
+| [docs/generate_index.py](generate_index.py#L858) | دالة | scan_source_lines | Index every logical line of each eligible text file readable within the size bound. | موثق | 858 | [SRC-E599346ABE-L000858](generate_index.py#L858) |
+| [docs/generate_index.py](generate_index.py#L880) | دالة | scan_finding_annotations | Index explicit review/fix markers; they are hints for review, not proven defects. | موثق | 880 | [SRC-E599346ABE-L000880](generate_index.py#L880) |
+| [docs/generate_index.py](generate_index.py#L906) | دالة | _markdown_code_span | Render a Markdown inline-code span safely, including backticks in source text. | موثق | 906 | [SRC-E599346ABE-L000906](generate_index.py#L906) |
+| [docs/generate_index.py](generate_index.py#L918) | دالة | render_source_line_pages | Split line-level records into deterministic small pages and map each file to its pages. | موثق | 918 | [SRC-E599346ABE-L000918](generate_index.py#L918) |
+| [docs/generate_index.py](generate_index.py#L994) | دالة | render_source_lines_markdown | Render a compact table of contents for the sharded full source-line index. | موثق | 994 | [SRC-E599346ABE-L000994](generate_index.py#L994) |
+| [docs/generate_index.py](generate_index.py#L1087) | دالة | render_markdown | Render the repository file, symbol, explicit-review-marker, and line-index overview. | موثق | 1087 | [SRC-E599346ABE-L001087](generate_index.py#L1087) |
+| [docs/generate_index.py](generate_index.py#L1280) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1280 | [SRC-E599346ABE-L001280](generate_index.py#L1280) |
+| [docs/generate_index.py](generate_index.py#L1309) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1309 | [SRC-E599346ABE-L001309](generate_index.py#L1309) |
+| [docs/generate_index.py](generate_index.py#L1341) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1341 | [SRC-E599346ABE-L001341](generate_index.py#L1341) |
+| [docs/search_code.py](search_code.py#L21) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-69F3587825-L000021](search_code.py#L21) |
+| [docs/search_code.py](search_code.py#L50) | متغير/ثابت Python | SECRET_BASENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 50 | [SRC-69F3587825-L000050](search_code.py#L50) |
+| [docs/search_code.py](search_code.py#L77) | متغير/ثابت Python | SENSITIVE_NAME_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 77 | [SRC-69F3587825-L000077](search_code.py#L77) |
+| [docs/search_code.py](search_code.py#L81) | متغير/ثابت Python | SENSITIVE_CONFIG_SUFFIXES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 81 | [SRC-69F3587825-L000081](search_code.py#L81) |
+| [docs/search_code.py](search_code.py#L84) | متغير/ثابت Python | MAX_SEARCH_FILE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 84 | [SRC-69F3587825-L000084](search_code.py#L84) |
+| [docs/search_code.py](search_code.py#L87) | دالة | _is_sensitive_path | Return whether a local path appears to contain credentials or private runtime data. | موثق | 87 | [SRC-69F3587825-L000087](search_code.py#L87) |
+| [docs/search_code.py](search_code.py#L100) | متغير/ثابت Python | DEFAULT_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 100 | [SRC-69F3587825-L000100](search_code.py#L100) |
+| [docs/search_code.py](search_code.py#L117) | متغير/ثابت Python | GITHUB_BLOB_BASE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 117 | [SRC-69F3587825-L000117](search_code.py#L117) |
+| [docs/search_code.py](search_code.py#L121) | كلاس | SearchHit | لا توجد Docstring. | ناقص | 121 | [SRC-69F3587825-L000121](search_code.py#L121) |
+| [docs/search_code.py](search_code.py#L122) | متغير/ثابت Python | SearchHit.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 122 | [SRC-69F3587825-L000122](search_code.py#L122) |
+| [docs/search_code.py](search_code.py#L123) | متغير/ثابت Python | SearchHit.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 123 | [SRC-69F3587825-L000123](search_code.py#L123) |
+| [docs/search_code.py](search_code.py#L124) | متغير/ثابت Python | SearchHit.text | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 124 | [SRC-69F3587825-L000124](search_code.py#L124) |
+| [docs/search_code.py](search_code.py#L125) | متغير/ثابت Python | SearchHit.context_before | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 125 | [SRC-69F3587825-L000125](search_code.py#L125) |
+| [docs/search_code.py](search_code.py#L126) | متغير/ثابت Python | SearchHit.context_after | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 126 | [SRC-69F3587825-L000126](search_code.py#L126) |
+| [docs/search_code.py](search_code.py#L129) | دالة | SearchHit.link | لا توجد Docstring. | ناقص | 129 | [SRC-69F3587825-L000129](search_code.py#L129) |
+| [docs/search_code.py](search_code.py#L133) | دالة | discover_text_files | لا توجد Docstring. | ناقص | 133 | [SRC-69F3587825-L000133](search_code.py#L133) |
+| [docs/search_code.py](search_code.py#L156) | دالة | search_repository | Return ordered text matches with short context. | موثق | 156 | [SRC-69F3587825-L000156](search_code.py#L156) |
+| [docs/search_code.py](search_code.py#L212) | دالة | format_hits | لا توجد Docstring. | ناقص | 212 | [SRC-69F3587825-L000212](search_code.py#L212) |
+| [docs/search_code.py](search_code.py#L233) | دالة | main | لا توجد Docstring. | ناقص | 233 | [SRC-69F3587825-L000233](search_code.py#L233) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L15) | كلاس | SmokeError | A live acceptance check failed. | موثق | 15 | [SRC-A8360B1B03-L000015](../scripts/hosted_smoke_test.py#L15) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L19) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 19 | [SRC-A8360B1B03-L000019](../scripts/hosted_smoke_test.py#L19) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L23) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 23 | [SRC-A8360B1B03-L000023](../scripts/hosted_smoke_test.py#L23) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L33) | دالة | _SameOriginRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 33 | [SRC-A8360B1B03-L000033](../scripts/hosted_smoke_test.py#L33) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L48) | دالة | normalize_origin | لا توجد Docstring. | ناقص | 48 | [SRC-A8360B1B03-L000048](../scripts/hosted_smoke_test.py#L48) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L72) | دالة | request_json | لا توجد Docstring. | ناقص | 72 | [SRC-A8360B1B03-L000072](../scripts/hosted_smoke_test.py#L72) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L99) | دالة | run_smoke | لا توجد Docstring. | ناقص | 99 | [SRC-A8360B1B03-L000099](../scripts/hosted_smoke_test.py#L99) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L172) | دالة | main | لا توجد Docstring. | ناقص | 172 | [SRC-A8360B1B03-L000172](../scripts/hosted_smoke_test.py#L172) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L37) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 37 | [SRC-4FFD5AFC54-L000037](../scripts/run_answer_quality_benchmark.py#L37) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L38) | متغير/ثابت Python | DEFAULT_CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 38 | [SRC-4FFD5AFC54-L000038](../scripts/run_answer_quality_benchmark.py#L38) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L39) | متغير/ثابت Python | MAX_RESPONSE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 39 | [SRC-4FFD5AFC54-L000039](../scripts/run_answer_quality_benchmark.py#L39) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L42) | دالة | validate_base_url | Validate and normalize an API origin before any request can carry a token. | موثق | 42 | [SRC-4FFD5AFC54-L000042](../scripts/run_answer_quality_benchmark.py#L42) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L91) | كلاس | _NoRedirectHandler | Do not follow redirects; the bearer token must never move to another origin. | موثق | 91 | [SRC-4FFD5AFC54-L000091](../scripts/run_answer_quality_benchmark.py#L91) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L94) | دالة | _NoRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 94 | [SRC-4FFD5AFC54-L000094](../scripts/run_answer_quality_benchmark.py#L94) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L98) | متغير/ثابت Python | _NO_REDIRECT_OPENER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 98 | [SRC-4FFD5AFC54-L000098](../scripts/run_answer_quality_benchmark.py#L98) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L100) | متغير/ثابت Python | REQUIRED_FIELDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 100 | [SRC-4FFD5AFC54-L000100](../scripts/run_answer_quality_benchmark.py#L100) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L112) | متغير/ثابت Python | ALLOWED_STRATEGIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 112 | [SRC-4FFD5AFC54-L000112](../scripts/run_answer_quality_benchmark.py#L112) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L113) | متغير/ثابت Python | ALLOWED_EVAL_MODES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 113 | [SRC-4FFD5AFC54-L000113](../scripts/run_answer_quality_benchmark.py#L113) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L116) | دالة | _utc_now | لا توجد Docstring. | ناقص | 116 | [SRC-4FFD5AFC54-L000116](../scripts/run_answer_quality_benchmark.py#L116) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L120) | دالة | load_corpus | لا توجد Docstring. | ناقص | 120 | [SRC-4FFD5AFC54-L000120](../scripts/run_answer_quality_benchmark.py#L120) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L131) | دالة | validate_corpus | Return a list of human-readable problems (empty => OK). | موثق | 131 | [SRC-4FFD5AFC54-L000131](../scripts/run_answer_quality_benchmark.py#L131) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L164) | دالة | redact_secrets | Best-effort redaction of common secret patterns from stored outputs. | موثق | 164 | [SRC-4FFD5AFC54-L000164](../scripts/run_answer_quality_benchmark.py#L164) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L187) | دالة | post_agent | لا توجد Docstring. | ناقص | 187 | [SRC-4FFD5AFC54-L000187](../scripts/run_answer_quality_benchmark.py#L187) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L226) | دالة | run_validate | لا توجد Docstring. | ناقص | 226 | [SRC-4FFD5AFC54-L000226](../scripts/run_answer_quality_benchmark.py#L226) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L253) | دالة | run_live | لا توجد Docstring. | ناقص | 253 | [SRC-4FFD5AFC54-L000253](../scripts/run_answer_quality_benchmark.py#L253) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L359) | دالة | main | لا توجد Docstring. | ناقص | 359 | [SRC-4FFD5AFC54-L000359](../scripts/run_answer_quality_benchmark.py#L359) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L15) | كلاس | BackupError | Raised when a backup/restore operation cannot be proven safe. | موثق | 15 | [SRC-547CAF1FE3-L000015](../scripts/sqlite_backup_restore.py#L15) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L19) | دالة | _open_read_only | Open an existing SQLite database without accidentally creating a missing source. | موثق | 19 | [SRC-547CAF1FE3-L000019](../scripts/sqlite_backup_restore.py#L19) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L27) | دالة | _validate_omarai_database | Require a healthy SQLite file containing the Omarai leads table. | موثق | 27 | [SRC-547CAF1FE3-L000027](../scripts/sqlite_backup_restore.py#L27) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L46) | دالة | _create_destination_exclusively | Create a new destination without overwriting an existing file or following its symlink. | موثق | 46 | [SRC-547CAF1FE3-L000046](../scripts/sqlite_backup_restore.py#L46) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L59) | دالة | _copy_verified_database | لا توجد Docstring. | ناقص | 59 | [SRC-547CAF1FE3-L000059](../scripts/sqlite_backup_restore.py#L59) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L105) | دالة | backup_database | Create a consistent SQLite snapshot of a healthy Omarai leads database. | موثق | 105 | [SRC-547CAF1FE3-L000105](../scripts/sqlite_backup_restore.py#L105) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L110) | دالة | restore_database | Restore a snapshot into a new destination; existing files are never overwritten. | موثق | 110 | [SRC-547CAF1FE3-L000110](../scripts/sqlite_backup_restore.py#L110) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L115) | دالة | main | لا توجد Docstring. | ناقص | 115 | [SRC-547CAF1FE3-L000115](../scripts/sqlite_backup_restore.py#L115) |
+| [tests/test_agent_modes.py](../tests/test_agent_modes.py#L7) | دالة | test_deep_mode_expands_search_angles_and_returns_coverage_signals | لا توجد Docstring. | ناقص | 7 | [SRC-CAC5F305FE-L000007](../tests/test_agent_modes.py#L7) |
+| [tests/test_agent_modes.py](../tests/test_agent_modes.py#L12) | دالة | test_deep_mode_expands_search_angles_and_returns_coverage_signals.plan | لا توجد Docstring. | ناقص | 12 | [SRC-CAC5F305FE-L000012](../tests/test_agent_modes.py#L12) |
+| [tests/test_agent_modes.py](../tests/test_agent_modes.py#L39) | دالة | test_deep_mode_expands_search_angles_and_returns_coverage_signals.collect | لا توجد Docstring. | ناقص | 39 | [SRC-CAC5F305FE-L000039](../tests/test_agent_modes.py#L39) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | متغير/ثابت Python | DOCS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L17) | متغير/ثابت Python | REQUIRED_CASE_FIELDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-4CCB1F172B-L000017](../tests/test_answer_quality_corpus.py#L17) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L30) | متغير/ثابت Python | ALLOWED_STRATEGIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-4CCB1F172B-L000030](../tests/test_answer_quality_corpus.py#L30) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L31) | متغير/ثابت Python | ALLOWED_EVAL_MODES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 31 | [SRC-4CCB1F172B-L000031](../tests/test_answer_quality_corpus.py#L31) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L33) | متغير/ثابت Python | REQUIRED_THEME_CATEGORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 33 | [SRC-4CCB1F172B-L000033](../tests/test_answer_quality_corpus.py#L33) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L56) | متغير/ثابت Python | DOC_EXAMPLE_CATEGORY_EXPECTATIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 56 | [SRC-4CCB1F172B-L000056](../tests/test_answer_quality_corpus.py#L56) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L75) | متغير/ثابت Python | CASE_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 75 | [SRC-4CCB1F172B-L000075](../tests/test_answer_quality_corpus.py#L75) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L78) | دالة | _load_corpus | لا توجد Docstring. | ناقص | 78 | [SRC-4CCB1F172B-L000078](../tests/test_answer_quality_corpus.py#L78) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L88) | دالة | test_corpus_file_loads_as_utf8_json | لا توجد Docstring. | ناقص | 88 | [SRC-4CCB1F172B-L000088](../tests/test_answer_quality_corpus.py#L88) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L95) | دالة | test_minimum_case_count | لا توجد Docstring. | ناقص | 95 | [SRC-4CCB1F172B-L000095](../tests/test_answer_quality_corpus.py#L95) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L101) | دالة | test_case_ids_unique_and_shaped | لا توجد Docstring. | ناقص | 101 | [SRC-4CCB1F172B-L000101](../tests/test_answer_quality_corpus.py#L101) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L110) | دالة | test_required_fields_and_types | لا توجد Docstring. | ناقص | 110 | [SRC-4CCB1F172B-L000110](../tests/test_answer_quality_corpus.py#L110) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L135) | دالة | test_required_theme_categories_represented | لا توجد Docstring. | ناقص | 135 | [SRC-4CCB1F172B-L000135](../tests/test_answer_quality_corpus.py#L135) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L142) | دالة | test_no_empty_or_exact_duplicate_questions | لا توجد Docstring. | ناقص | 142 | [SRC-4CCB1F172B-L000142](../tests/test_answer_quality_corpus.py#L142) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L154) | دالة | test_research_cases_declare_fixture_or_controlled_env | لا توجد Docstring. | ناقص | 154 | [SRC-4CCB1F172B-L000154](../tests/test_answer_quality_corpus.py#L154) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L172) | دالة | test_safety_categories_include_injection_and_secrets | لا توجد Docstring. | ناقص | 172 | [SRC-4CCB1F172B-L000172](../tests/test_answer_quality_corpus.py#L172) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L188) | دالة | test_corpus_does_not_claim_live_execution_results | لا توجد Docstring. | ناقص | 188 | [SRC-4CCB1F172B-L000188](../tests/test_answer_quality_corpus.py#L188) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L196) | دالة | test_languages_include_arabic_english_and_mixed | لا توجد Docstring. | ناقص | 196 | [SRC-4CCB1F172B-L000196](../tests/test_answer_quality_corpus.py#L196) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L206) | دالة | test_documented_high_risk_examples_match_json_categories | لا توجد Docstring. | ناقص | 206 | [SRC-4CCB1F172B-L000206](../tests/test_answer_quality_corpus.py#L206) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L218) | دالة | test_docs_mention_corrected_high_risk_ids | لا توجد Docstring. | ناقص | 218 | [SRC-4CCB1F172B-L000218](../tests/test_answer_quality_corpus.py#L218) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L225) | دالة | test_no_placeholder_corpus_content | لا توجد Docstring. | ناقص | 225 | [SRC-4CCB1F172B-L000225](../tests/test_answer_quality_corpus.py#L225) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L11) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-B3062EB677-L000011](../tests/test_answer_quality_runner.py#L11) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L12) | متغير/ثابت Python | SCRIPT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-B3062EB677-L000012](../tests/test_answer_quality_runner.py#L12) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L13) | متغير/ثابت Python | CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-B3062EB677-L000013](../tests/test_answer_quality_runner.py#L13) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L16) | دالة | _load_runner | لا توجد Docstring. | ناقص | 16 | [SRC-B3062EB677-L000016](../tests/test_answer_quality_runner.py#L16) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L25) | دالة | test_runner_script_exists | لا توجد Docstring. | ناقص | 25 | [SRC-B3062EB677-L000025](../tests/test_answer_quality_runner.py#L25) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L29) | دالة | test_validate_mode_succeeds_on_real_corpus | لا توجد Docstring. | ناقص | 29 | [SRC-B3062EB677-L000029](../tests/test_answer_quality_runner.py#L29) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L38) | دالة | test_validate_rejects_missing_file | لا توجد Docstring. | ناقص | 38 | [SRC-B3062EB677-L000038](../tests/test_answer_quality_runner.py#L38) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L45) | دالة | test_validate_detects_bad_case_count | لا توجد Docstring. | ناقص | 45 | [SRC-B3062EB677-L000045](../tests/test_answer_quality_runner.py#L45) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L55) | دالة | test_validate_detects_missing_required_field | لا توجد Docstring. | ناقص | 55 | [SRC-B3062EB677-L000055](../tests/test_answer_quality_runner.py#L55) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L67) | دالة | test_live_refuses_unbounded_without_limit_or_case_id | لا توجد Docstring. | ناقص | 67 | [SRC-B3062EB677-L000067](../tests/test_answer_quality_runner.py#L67) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L75) | دالة | test_live_unknown_case_id | لا توجد Docstring. | ناقص | 75 | [SRC-B3062EB677-L000075](../tests/test_answer_quality_runner.py#L75) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L92) | دالة | test_redact_secrets_strips_token_value | لا توجد Docstring. | ناقص | 92 | [SRC-B3062EB677-L000092](../tests/test_answer_quality_runner.py#L92) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L101) | دالة | test_live_records_not_tested_not_pass | Even on HTTP 200, quality status stays NOT_TESTED (no keyword auto-PASS). | موثق | 101 | [SRC-B3062EB677-L000101](../tests/test_answer_quality_runner.py#L101) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L105) | دالة | test_live_records_not_tested_not_pass.fake_post | لا توجد Docstring. | ناقص | 105 | [SRC-B3062EB677-L000105](../tests/test_answer_quality_runner.py#L105) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L136) | دالة | test_validate_base_url_rejects_non_loopback_http | لا توجد Docstring. | ناقص | 136 | [SRC-B3062EB677-L000136](../tests/test_answer_quality_runner.py#L136) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L151) | دالة | test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls | لا توجد Docstring. | ناقص | 151 | [SRC-B3062EB677-L000151](../tests/test_answer_quality_runner.py#L151) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L157) | دالة | test_remote_bearer_token_requires_exact_allowlisted_https_origin | لا توجد Docstring. | ناقص | 157 | [SRC-B3062EB677-L000157](../tests/test_answer_quality_runner.py#L157) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L169) | دالة | test_remote_token_origin_comparison_normalizes_default_https_port | لا توجد Docstring. | ناقص | 169 | [SRC-B3062EB677-L000169](../tests/test_answer_quality_runner.py#L169) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L178) | دالة | test_redirect_handler_refuses_following_redirects | لا توجد Docstring. | ناقص | 178 | [SRC-B3062EB677-L000178](../tests/test_answer_quality_runner.py#L178) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L191) | دالة | test_live_rejects_unapproved_remote_url_before_network | لا توجد Docstring. | ناقص | 191 | [SRC-B3062EB677-L000191](../tests/test_answer_quality_runner.py#L191) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L208) | دالة | test_live_transport_error_still_not_pass | لا توجد Docstring. | ناقص | 208 | [SRC-B3062EB677-L000208](../tests/test_answer_quality_runner.py#L208) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L211) | دالة | test_live_transport_error_still_not_pass.fake_post | لا توجد Docstring. | ناقص | 211 | [SRC-B3062EB677-L000211](../tests/test_answer_quality_runner.py#L211) |
+| [tests/test_api.py](../tests/test_api.py#L20) | دالة | local_api | Run the real handler on an ephemeral loopback port with an isolated database. | موثق | 20 | [SRC-3451CC474D-L000020](../tests/test_api.py#L20) |
+| [tests/test_api.py](../tests/test_api.py#L36) | دالة | request_json | لا توجد Docstring. | ناقص | 36 | [SRC-3451CC474D-L000036](../tests/test_api.py#L36) |
+| [tests/test_api.py](../tests/test_api.py#L49) | دالة | test_api_health_analyze_save_duplicate_list_and_status | لا توجد Docstring. | ناقص | 49 | [SRC-3451CC474D-L000049](../tests/test_api.py#L49) |
+| [tests/test_api.py](../tests/test_api.py#L120) | دالة | test_api_rejects_invalid_filters_and_request_shapes | لا توجد Docstring. | ناقص | 120 | [SRC-3451CC474D-L000120](../tests/test_api.py#L120) |
+| [tests/test_api.py](../tests/test_api.py#L146) | دالة | test_api_blocks_non_json_and_cross_origin_posts | لا توجد Docstring. | ناقص | 146 | [SRC-3451CC474D-L000146](../tests/test_api.py#L146) |
+| [tests/test_api.py](../tests/test_api.py#L169) | دالة | test_configured_frontend_origin_supports_preflight_and_post | لا توجد Docstring. | ناقص | 169 | [SRC-3451CC474D-L000169](../tests/test_api.py#L169) |
+| [tests/test_api.py](../tests/test_api.py#L202) | دالة | test_preflight_rejects_unconfigured_origin | لا توجد Docstring. | ناقص | 202 | [SRC-3451CC474D-L000202](../tests/test_api.py#L202) |
+| [tests/test_api.py](../tests/test_api.py#L217) | دالة | test_ask_is_honest_when_database_is_empty | لا توجد Docstring. | ناقص | 217 | [SRC-3451CC474D-L000217](../tests/test_api.py#L217) |
+| [tests/test_api.py](../tests/test_api.py#L227) | دالة | test_web_agent_endpoint_uses_agent_result | لا توجد Docstring. | ناقص | 227 | [SRC-3451CC474D-L000227](../tests/test_api.py#L227) |
+| [tests/test_api.py](../tests/test_api.py#L230) | دالة | test_web_agent_endpoint_uses_agent_result.fake_answer | لا توجد Docstring. | ناقص | 230 | [SRC-3451CC474D-L000230](../tests/test_api.py#L230) |
+| [tests/test_api.py](../tests/test_api.py#L255) | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets | لا توجد Docstring. | ناقص | 255 | [SRC-3451CC474D-L000255](../tests/test_api.py#L255) |
+| [tests/test_api.py](../tests/test_api.py#L258) | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets.fake_diagnostics | لا توجد Docstring. | ناقص | 258 | [SRC-3451CC474D-L000258](../tests/test_api.py#L258) |
+| [tests/test_api.py](../tests/test_api.py#L287) | دالة | test_diagnostics_endpoint_requires_boolean_options | لا توجد Docstring. | ناقص | 287 | [SRC-3451CC474D-L000287](../tests/test_api.py#L287) |
+| [tests/test_api.py](../tests/test_api.py#L299) | دالة | test_rate_limit_ignores_spoofed_forwarded_for_by_default | لا توجد Docstring. | ناقص | 299 | [SRC-3451CC474D-L000299](../tests/test_api.py#L299) |
+| [tests/test_api.py](../tests/test_api.py#L308) | دالة | test_rate_limit_uses_rightmost_valid_proxy_ip_only_when_enabled | لا توجد Docstring. | ناقص | 308 | [SRC-3451CC474D-L000308](../tests/test_api.py#L308) |
+| [tests/test_api.py](../tests/test_api.py#L317) | دالة | test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip | لا توجد Docstring. | ناقص | 317 | [SRC-3451CC474D-L000317](../tests/test_api.py#L317) |
+| [tests/test_api.py](../tests/test_api.py#L326) | دالة | test_public_api_authentication_and_rate_limit_precede_json_parsing | Reject untrusted API calls before parsing bodies and throttle repeated failures. | موثق | 326 | [SRC-3451CC474D-L000326](../tests/test_api.py#L326) |
+| [tests/test_api.py](../tests/test_api.py#L354) | دالة | test_hosted_api_requires_private_token_for_search_and_lead_data | لا توجد Docstring. | ناقص | 354 | [SRC-3451CC474D-L000354](../tests/test_api.py#L354) |
+| [tests/test_api.py](../tests/test_api.py#L379) | دالة | test_hosted_api_rate_limits_authenticated_requests | لا توجد Docstring. | ناقص | 379 | [SRC-3451CC474D-L000379](../tests/test_api.py#L379) |
+| [tests/test_api.py](../tests/test_api.py#L400) | دالة | test_public_binding_requires_explicit_deployment_flag_and_strong_token | لا توجد Docstring. | ناقص | 400 | [SRC-3451CC474D-L000400](../tests/test_api.py#L400) |
+| [tests/test_api.py](../tests/test_api.py#L413) | دالة | test_rate_limiter_prunes_expired_client_buckets | Client IPs do not accumulate forever after their 60-second window expires. | موثق | 413 | [SRC-3451CC474D-L000413](../tests/test_api.py#L413) |
+| [tests/test_api.py](../tests/test_api.py#L421) | كلاس | test_rate_limiter_prunes_expired_client_buckets.FakeHandler | لا توجد Docstring. | ناقص | 421 | [SRC-3451CC474D-L000421](../tests/test_api.py#L421) |
+| [tests/test_api.py](../tests/test_api.py#L422) | دالة | test_rate_limiter_prunes_expired_client_buckets.FakeHandler.__init__ | لا توجد Docstring. | ناقص | 422 | [SRC-3451CC474D-L000422](../tests/test_api.py#L422) |
+| [tests/test_api.py](../tests/test_api.py#L438) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy | لا توجد Docstring. | ناقص | 438 | [SRC-3451CC474D-L000438](../tests/test_api.py#L438) |
+| [tests/test_api.py](../tests/test_api.py#L451) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.slow_answer | لا توجد Docstring. | ناقص | 451 | [SRC-3451CC474D-L000451](../tests/test_api.py#L451) |
+| [tests/test_api.py](../tests/test_api.py#L471) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.first_request | لا توجد Docstring. | ناقص | 471 | [SRC-3451CC474D-L000471](../tests/test_api.py#L471) |
+| [tests/test_api.py](../tests/test_api.py#L494) | دالة | test_agent_concurrency_limit_has_hard_bounds | لا توجد Docstring. | ناقص | 494 | [SRC-3451CC474D-L000494](../tests/test_api.py#L494) |
+| [tests/test_api.py](../tests/test_api.py#L503) | دالة | test_api_rejects_oversized_request_body | لا توجد Docstring. | ناقص | 503 | [SRC-3451CC474D-L000503](../tests/test_api.py#L503) |
+| [tests/test_api.py](../tests/test_api.py#L515) | دالة | test_api_rejects_malformed_content_length | لا توجد Docstring. | ناقص | 515 | [SRC-3451CC474D-L000515](../tests/test_api.py#L515) |
+| [tests/test_api.py](../tests/test_api.py#L538) | دالة | test_api_returns_408_when_request_body_read_times_out | لا توجد Docstring. | ناقص | 538 | [SRC-3451CC474D-L000538](../tests/test_api.py#L538) |
+| [tests/test_api.py](../tests/test_api.py#L564) | دالة | test_api_absolute_body_deadline_stops_slow_trickle | A client must not evade the total deadline by sending before each idle timeout. | موثق | 564 | [SRC-3451CC474D-L000564](../tests/test_api.py#L564) |
+| [tests/test_api.py](../tests/test_api.py#L611) | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 611 | [SRC-3451CC474D-L000611](../tests/test_api.py#L611) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L4) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 4 | [SRC-3D0A619359-L000004](../tests/test_dashboard_security.py#L4) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L7) | دالة | test_hosted_lead_dashboard_can_send_the_private_access_token | لا توجد Docstring. | ناقص | 7 | [SRC-3D0A619359-L000007](../tests/test_dashboard_security.py#L7) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L14) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 14 | [SRC-3D0A619359-L000014](../tests/test_dashboard_security.py#L14) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L11) | دالة | _addrinfo | لا توجد Docstring. | ناقص | 11 | [SRC-6BCB799CEC-L000011](../tests/test_evidence_provenance.py#L11) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L16) | دالة | test_failed_page_read_is_not_reported_as_fetched | An empty extraction must not set page_fetched through the real collector. | موثق | 16 | [SRC-6BCB799CEC-L000016](../tests/test_evidence_provenance.py#L16) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L20) | دالة | test_failed_page_read_is_not_reported_as_fetched.search | لا توجد Docstring. | ناقص | 20 | [SRC-6BCB799CEC-L000020](../tests/test_evidence_provenance.py#L20) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L55) | دالة | test_openrouter_citations_stay_unread_in_public_answer | Server-side citations must not be misreported as direct source-page reads. | موثق | 55 | [SRC-6BCB799CEC-L000055](../tests/test_evidence_provenance.py#L55) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L61) | دالة | test_openrouter_citations_stay_unread_in_public_answer.collect | لا توجد Docstring. | ناقص | 61 | [SRC-6BCB799CEC-L000061](../tests/test_evidence_provenance.py#L61) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L110) | دالة | test_openrouter_citations_stay_unread_in_public_answer.generate | لا توجد Docstring. | ناقص | 110 | [SRC-6BCB799CEC-L000110](../tests/test_evidence_provenance.py#L110) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L148) | دالة | test_private_resolution_blocks_page_fetch | لا توجد Docstring. | ناقص | 148 | [SRC-6BCB799CEC-L000148](../tests/test_evidence_provenance.py#L148) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L151) | دالة | test_private_resolution_blocks_page_fetch.fake_getaddrinfo | لا توجد Docstring. | ناقص | 151 | [SRC-6BCB799CEC-L000151](../tests/test_evidence_provenance.py#L151) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L154) | كلاس | test_private_resolution_blocks_page_fetch.FakeClient | لا توجد Docstring. | ناقص | 154 | [SRC-6BCB799CEC-L000154](../tests/test_evidence_provenance.py#L154) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L155) | دالة | test_private_resolution_blocks_page_fetch.FakeClient.__init__ | لا توجد Docstring. | ناقص | 155 | [SRC-6BCB799CEC-L000155](../tests/test_evidence_provenance.py#L155) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L158) | دالة | test_private_resolution_blocks_page_fetch.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 158 | [SRC-6BCB799CEC-L000158](../tests/test_evidence_provenance.py#L158) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L161) | دالة | test_private_resolution_blocks_page_fetch.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 161 | [SRC-6BCB799CEC-L000161](../tests/test_evidence_provenance.py#L161) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L164) | دالة | test_private_resolution_blocks_page_fetch.FakeClient.stream | لا توجد Docstring. | ناقص | 164 | [SRC-6BCB799CEC-L000164](../tests/test_evidence_provenance.py#L164) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L175) | دالة | test_page_fetch_connects_to_the_validated_public_ip | لا توجد Docstring. | ناقص | 175 | [SRC-6BCB799CEC-L000175](../tests/test_evidence_provenance.py#L175) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L178) | دالة | test_page_fetch_connects_to_the_validated_public_ip.fake_getaddrinfo | لا توجد Docstring. | ناقص | 178 | [SRC-6BCB799CEC-L000178](../tests/test_evidence_provenance.py#L178) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L182) | كلاس | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse | لا توجد Docstring. | ناقص | 182 | [SRC-6BCB799CEC-L000182](../tests/test_evidence_provenance.py#L182) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L186) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 186 | [SRC-6BCB799CEC-L000186](../tests/test_evidence_provenance.py#L186) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L189) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.iter_bytes | لا توجد Docstring. | ناقص | 189 | [SRC-6BCB799CEC-L000189](../tests/test_evidence_provenance.py#L189) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L192) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 192 | [SRC-6BCB799CEC-L000192](../tests/test_evidence_provenance.py#L192) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L195) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 195 | [SRC-6BCB799CEC-L000195](../tests/test_evidence_provenance.py#L195) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L198) | كلاس | test_page_fetch_connects_to_the_validated_public_ip.FakeClient | لا توجد Docstring. | ناقص | 198 | [SRC-6BCB799CEC-L000198](../tests/test_evidence_provenance.py#L198) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L199) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.__init__ | لا توجد Docstring. | ناقص | 199 | [SRC-6BCB799CEC-L000199](../tests/test_evidence_provenance.py#L199) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L205) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 205 | [SRC-6BCB799CEC-L000205](../tests/test_evidence_provenance.py#L205) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L208) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 208 | [SRC-6BCB799CEC-L000208](../tests/test_evidence_provenance.py#L208) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L211) | دالة | test_page_fetch_connects_to_the_validated_public_ip.FakeClient.stream | لا توجد Docstring. | ناقص | 211 | [SRC-6BCB799CEC-L000211](../tests/test_evidence_provenance.py#L211) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L227) | دالة | test_mixed_public_and_private_dns_answers_block_page_fetch | A hostname is rejected when even one DNS answer is non-global. | موثق | 227 | [SRC-6BCB799CEC-L000227](../tests/test_evidence_provenance.py#L227) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L229) | دالة | test_mixed_public_and_private_dns_answers_block_page_fetch.fake_getaddrinfo | لا توجد Docstring. | ناقص | 229 | [SRC-6BCB799CEC-L000229](../tests/test_evidence_provenance.py#L229) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L236) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection | Every redirect is validated independently, even after a pinned public request. | موثق | 236 | [SRC-6BCB799CEC-L000236](../tests/test_evidence_provenance.py#L236) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L241) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.fake_getaddrinfo | لا توجد Docstring. | ناقص | 241 | [SRC-6BCB799CEC-L000241](../tests/test_evidence_provenance.py#L241) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L246) | كلاس | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse | لا توجد Docstring. | ناقص | 246 | [SRC-6BCB799CEC-L000246](../tests/test_evidence_provenance.py#L246) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L249) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 249 | [SRC-6BCB799CEC-L000249](../tests/test_evidence_provenance.py#L249) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L252) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 252 | [SRC-6BCB799CEC-L000252](../tests/test_evidence_provenance.py#L252) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L255) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 255 | [SRC-6BCB799CEC-L000255](../tests/test_evidence_provenance.py#L255) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L258) | كلاس | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient | لا توجد Docstring. | ناقص | 258 | [SRC-6BCB799CEC-L000258](../tests/test_evidence_provenance.py#L258) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L259) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.__init__ | لا توجد Docstring. | ناقص | 259 | [SRC-6BCB799CEC-L000259](../tests/test_evidence_provenance.py#L259) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L263) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 263 | [SRC-6BCB799CEC-L000263](../tests/test_evidence_provenance.py#L263) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L266) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 266 | [SRC-6BCB799CEC-L000266](../tests/test_evidence_provenance.py#L266) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L269) | دالة | test_private_redirect_target_is_rejected_before_a_second_connection.FakeClient.stream | لا توجد Docstring. | ناقص | 269 | [SRC-6BCB799CEC-L000269](../tests/test_evidence_provenance.py#L269) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L298) | دالة | test_non_global_ipv4_and_ipv6_dns_answers_are_rejected | No DNS answer from a non-global range may pass the page-fetch gate. | موثق | 298 | [SRC-6BCB799CEC-L000298](../tests/test_evidence_provenance.py#L298) |
+| [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L8) | دالة | test_evidence_signal_report_uses_domain_provider_page_and_date_coverage | لا توجد Docstring. | ناقص | 8 | [SRC-8455F405B6-L000008](../tests/test_evidence_signals.py#L8) |
+| [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L42) | دالة | test_evidence_signal_report_warns_when_no_sources_are_available | لا توجد Docstring. | ناقص | 42 | [SRC-8455F405B6-L000042](../tests/test_evidence_signals.py#L42) |
+| [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L50) | دالة | test_publication_date_parser_handles_iso_rfc822_and_relative_dates | لا توجد Docstring. | ناقص | 50 | [SRC-8455F405B6-L000050](../tests/test_evidence_signals.py#L50) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L8) | متغير/ثابت Python | INDEXER_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-FA4E1423C3-L000008](../tests/test_generate_index.py#L8) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L9) | متغير/ثابت Python | INDEXER_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-FA4E1423C3-L000009](../tests/test_generate_index.py#L9) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L15) | متغير/ثابت Python | INDEXER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-FA4E1423C3-L000015](../tests/test_generate_index.py#L15) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L20) | دالة | test_indexes_functions_classes_methods_and_docstring_status | The Python AST index includes qualified names and documentation state. | موثق | 20 | [SRC-FA4E1423C3-L000020](../tests/test_generate_index.py#L20) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L59) | دالة | test_indexes_module_and_class_assignments_but_not_function_locals | Module/class attributes are searchable without flooding the index with locals. | موثق | 59 | [SRC-FA4E1423C3-L000059](../tests/test_generate_index.py#L59) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L82) | دالة | test_indexes_frontend_ids_javascript_symbols_css_and_documentation_headings | Frontend declarations and Markdown headings remain navigable without language parsers. | موثق | 82 | [SRC-FA4E1423C3-L000082](../tests/test_generate_index.py#L82) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L133) | دالة | test_repository_inventory_covers_files_and_excludes_private_runtime_paths | The file inventory includes docs/config and excludes known local secret/runtime files. | موثق | 133 | [SRC-FA4E1423C3-L000133](../tests/test_generate_index.py#L133) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L162) | دالة | test_excludes_credential_names_and_secret_directories | The repository index does not copy common local credential files into generated docs. | موثق | 162 | [SRC-FA4E1423C3-L000162](../tests/test_generate_index.py#L162) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L202) | دالة | test_skips_virtual_environments_and_generated_dependency_directories | The scan avoids vendored dependencies, build outputs, and virtual environments. | موثق | 202 | [SRC-FA4E1423C3-L000202](../tests/test_generate_index.py#L202) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L230) | دالة | test_syntax_error_does_not_overwrite_the_previous_index | A failed parse leaves the prior index intact rather than publishing partial data. | موثق | 230 | [SRC-FA4E1423C3-L000230](../tests/test_generate_index.py#L230) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L251) | دالة | test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_index | An unchanged scan produces identical Markdown and avoids an unnecessary write. | موثق | 251 | [SRC-FA4E1423C3-L000251](../tests/test_generate_index.py#L251) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L277) | دالة | test_check_mode_detects_stale_index_without_modifying_it | Check mode fails on a stale index and leaves the existing file untouched. | موثق | 277 | [SRC-FA4E1423C3-L000277](../tests/test_generate_index.py#L277) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L293) | دالة | test_indexes_every_eligible_text_line_with_file_and_line_ids | All readable text lines, including blank lines and unfamiliar extensions, are searchable. | موثق | 293 | [SRC-FA4E1423C3-L000293](../tests/test_generate_index.py#L293) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L336) | دالة | test_explicit_review_markers_have_unique_codes_and_source_line_links | TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines. | موثق | 336 | [SRC-FA4E1423C3-L000336](../tests/test_generate_index.py#L336) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L361) | دالة | test_check_mode_validates_both_generated_indexes | Check mode detects a missing or stale line index as well as a stale master index. | موثق | 361 | [SRC-FA4E1423C3-L000361](../tests/test_generate_index.py#L361) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L11) | كلاس | FakeCompletionResponse | لا توجد Docstring. | ناقص | 11 | [SRC-829A979985-L000011](../tests/test_generation_acceptance_matrix.py#L11) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L12) | دالة | FakeCompletionResponse.__init__ | لا توجد Docstring. | ناقص | 12 | [SRC-829A979985-L000012](../tests/test_generation_acceptance_matrix.py#L12) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L24) | دالة | FakeCompletionResponse.__enter__ | لا توجد Docstring. | ناقص | 24 | [SRC-829A979985-L000024](../tests/test_generation_acceptance_matrix.py#L24) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L27) | دالة | FakeCompletionResponse.__exit__ | لا توجد Docstring. | ناقص | 27 | [SRC-829A979985-L000027](../tests/test_generation_acceptance_matrix.py#L27) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L30) | دالة | FakeCompletionResponse.read | لا توجد Docstring. | ناقص | 30 | [SRC-829A979985-L000030](../tests/test_generation_acceptance_matrix.py#L30) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L34) | دالة | source | لا توجد Docstring. | ناقص | 34 | [SRC-829A979985-L000034](../tests/test_generation_acceptance_matrix.py#L34) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L63) | دالة | test_only_normal_stop_is_accepted_as_a_complete_text_answer | لا توجد Docstring. | ناقص | 63 | [SRC-829A979985-L000063](../tests/test_generation_acceptance_matrix.py#L63) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L92) | دالة | test_both_models_truncated_fail_without_returning_either_partial_answer | لا توجد Docstring. | ناقص | 92 | [SRC-829A979985-L000092](../tests/test_generation_acceptance_matrix.py#L92) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L98) | دالة | test_both_models_truncated_fail_without_returning_either_partial_answer.fake_urlopen | لا توجد Docstring. | ناقص | 98 | [SRC-829A979985-L000098](../tests/test_generation_acceptance_matrix.py#L98) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L120) | دالة | test_model_fallback_cannot_exceed_request_model_call_budget | لا توجد Docstring. | ناقص | 120 | [SRC-829A979985-L000120](../tests/test_generation_acceptance_matrix.py#L120) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L128) | دالة | test_model_fallback_cannot_exceed_request_model_call_budget.fake_urlopen | لا توجد Docstring. | ناقص | 128 | [SRC-829A979985-L000128](../tests/test_generation_acceptance_matrix.py#L128) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L147) | دالة | test_capability_snapshot_separates_configuration_from_live_health | لا توجد Docstring. | ناقص | 147 | [SRC-829A979985-L000147](../tests/test_generation_acceptance_matrix.py#L147) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L180) | دالة | test_capability_answer_discloses_optional_deepseek_search_status | لا توجد Docstring. | ناقص | 180 | [SRC-829A979985-L000180](../tests/test_generation_acceptance_matrix.py#L180) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L209) | دالة | test_operational_truth_overrides_a_model_claim_about_this_request | لا توجد Docstring. | ناقص | 209 | [SRC-829A979985-L000209](../tests/test_generation_acceptance_matrix.py#L209) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L213) | دالة | test_operational_truth_overrides_a_model_claim_about_this_request.dishonest_model | لا توجد Docstring. | ناقص | 213 | [SRC-829A979985-L000213](../tests/test_generation_acceptance_matrix.py#L213) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L234) | دالة | test_generation_budget_exhaustion_preserves_partial_sources | لا توجد Docstring. | ناقص | 234 | [SRC-829A979985-L000234](../tests/test_generation_acceptance_matrix.py#L234) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L293) | دالة | test_generation_budget_exhaustion_preserves_partial_sources.fake_urlopen | لا توجد Docstring. | ناقص | 293 | [SRC-829A979985-L000293](../tests/test_generation_acceptance_matrix.py#L293) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L314) | دالة | test_review_budget_exhaustion_discards_draft_and_preserves_sources | لا توجد Docstring. | ناقص | 314 | [SRC-829A979985-L000314](../tests/test_generation_acceptance_matrix.py#L314) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L373) | دالة | test_review_budget_exhaustion_discards_draft_and_preserves_sources.fake_urlopen | لا توجد Docstring. | ناقص | 373 | [SRC-829A979985-L000373](../tests/test_generation_acceptance_matrix.py#L373) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L394) | دالة | test_search_failure_is_not_reported_as_no_attempt_or_completed_answer | لا توجد Docstring. | ناقص | 394 | [SRC-829A979985-L000394](../tests/test_generation_acceptance_matrix.py#L394) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L449) | دالة | test_research_exception_does_not_claim_no_results_or_no_search | لا توجد Docstring. | ناقص | 449 | [SRC-829A979985-L000449](../tests/test_generation_acceptance_matrix.py#L449) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L467) | دالة | test_research_exception_does_not_claim_no_results_or_no_search.collect_fails_before_diagnostics | لا توجد Docstring. | ناقص | 467 | [SRC-829A979985-L000467](../tests/test_generation_acceptance_matrix.py#L467) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L488) | دالة | test_search_extraction_generation_and_task_review_remain_distinct | لا توجد Docstring. | ناقص | 488 | [SRC-829A979985-L000488](../tests/test_generation_acceptance_matrix.py#L488) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L569) | دالة | test_reviewer_rejects_missing_or_unbounded_final_answer_delimiters | لا توجد Docstring. | ناقص | 569 | [SRC-829A979985-L000569](../tests/test_generation_acceptance_matrix.py#L569) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L10) | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 10 | [SRC-AAA21D04E8-L000010](../tests/test_generation_capabilities.py#L10) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L11) | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 11 | [SRC-AAA21D04E8-L000011](../tests/test_generation_capabilities.py#L11) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L17) | دالة | FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 17 | [SRC-AAA21D04E8-L000017](../tests/test_generation_capabilities.py#L17) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L20) | دالة | FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 20 | [SRC-AAA21D04E8-L000020](../tests/test_generation_capabilities.py#L20) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L23) | دالة | FakeResponse.read | لا توجد Docstring. | ناقص | 23 | [SRC-AAA21D04E8-L000023](../tests/test_generation_capabilities.py#L23) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L27) | دالة | test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used | لا توجد Docstring. | ناقص | 27 | [SRC-AAA21D04E8-L000027](../tests/test_generation_capabilities.py#L27) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L33) | دالة | test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used.fake_urlopen | لا توجد Docstring. | ناقص | 33 | [SRC-AAA21D04E8-L000033](../tests/test_generation_capabilities.py#L33) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L57) | دالة | test_unknown_finish_reason_is_rejected_and_fallback_is_used | لا توجد Docstring. | ناقص | 57 | [SRC-AAA21D04E8-L000057](../tests/test_generation_capabilities.py#L57) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L63) | دالة | test_unknown_finish_reason_is_rejected_and_fallback_is_used.fake_urlopen | لا توجد Docstring. | ناقص | 63 | [SRC-AAA21D04E8-L000063](../tests/test_generation_capabilities.py#L63) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L83) | دالة | test_missing_finish_reason_from_all_models_fails_closed | لا توجد Docstring. | ناقص | 83 | [SRC-AAA21D04E8-L000083](../tests/test_generation_capabilities.py#L83) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L89) | دالة | test_missing_finish_reason_from_all_models_fails_closed.fake_urlopen | لا توجد Docstring. | ناقص | 89 | [SRC-AAA21D04E8-L000089](../tests/test_generation_capabilities.py#L89) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L110) | دالة | test_capability_question_distinguishes_configuration_from_live_health | لا توجد Docstring. | ناقص | 110 | [SRC-AAA21D04E8-L000110](../tests/test_generation_capabilities.py#L110) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L134) | دالة | test_current_request_search_status_is_not_confused_with_capability | لا توجد Docstring. | ناقص | 134 | [SRC-AAA21D04E8-L000134](../tests/test_generation_capabilities.py#L134) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L157) | دالة | test_generation_failure_returns_partial_sources_and_diagnostics | لا توجد Docstring. | ناقص | 157 | [SRC-AAA21D04E8-L000157](../tests/test_generation_capabilities.py#L157) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L227) | دالة | test_generation_failure_returns_partial_sources_and_diagnostics.failed_generate | لا توجد Docstring. | ناقص | 227 | [SRC-AAA21D04E8-L000227](../tests/test_generation_capabilities.py#L227) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L13) | متغير/ثابت Python | TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-1A176AD4F0-L000013](../tests/test_hosted_smoke.py#L13) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L16) | كلاس | Handler | لا توجد Docstring. | ناقص | 16 | [SRC-1A176AD4F0-L000016](../tests/test_hosted_smoke.py#L16) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L17) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 17 | [SRC-1A176AD4F0-L000017](../tests/test_hosted_smoke.py#L17) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L20) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 20 | [SRC-1A176AD4F0-L000020](../tests/test_hosted_smoke.py#L20) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L28) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 28 | [SRC-1A176AD4F0-L000028](../tests/test_hosted_smoke.py#L28) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L34) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 34 | [SRC-1A176AD4F0-L000034](../tests/test_hosted_smoke.py#L34) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L65) | دالة | hosted_server | لا توجد Docstring. | ناقص | 65 | [SRC-1A176AD4F0-L000065](../tests/test_hosted_smoke.py#L65) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L77) | دالة | test_normalize_origin_requires_https_and_rejects_credentials_or_paths | لا توجد Docstring. | ناقص | 77 | [SRC-1A176AD4F0-L000077](../tests/test_hosted_smoke.py#L77) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L89) | دالة | test_normalize_origin_allows_plain_http_only_for_local_test | لا توجد Docstring. | ناقص | 89 | [SRC-1A176AD4F0-L000089](../tests/test_hosted_smoke.py#L89) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L97) | دالة | test_smoke_checks_health_auth_live_diagnostics_and_agent | لا توجد Docstring. | ناقص | 97 | [SRC-1A176AD4F0-L000097](../tests/test_hosted_smoke.py#L97) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L106) | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect | لا توجد Docstring. | ناقص | 106 | [SRC-1A176AD4F0-L000106](../tests/test_hosted_smoke.py#L106) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L109) | كلاس | test_smoke_never_forwards_bearer_to_cross_origin_redirect.RedirectHandler | لا توجد Docstring. | ناقص | 109 | [SRC-1A176AD4F0-L000109](../tests/test_hosted_smoke.py#L109) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L110) | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.RedirectHandler.log_message | لا توجد Docstring. | ناقص | 110 | [SRC-1A176AD4F0-L000110](../tests/test_hosted_smoke.py#L110) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L113) | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.RedirectHandler.do_GET | لا توجد Docstring. | ناقص | 113 | [SRC-1A176AD4F0-L000113](../tests/test_hosted_smoke.py#L113) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L119) | كلاس | test_smoke_never_forwards_bearer_to_cross_origin_redirect.DestinationHandler | لا توجد Docstring. | ناقص | 119 | [SRC-1A176AD4F0-L000119](../tests/test_hosted_smoke.py#L119) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L120) | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.DestinationHandler.log_message | لا توجد Docstring. | ناقص | 120 | [SRC-1A176AD4F0-L000120](../tests/test_hosted_smoke.py#L120) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L123) | دالة | test_smoke_never_forwards_bearer_to_cross_origin_redirect.DestinationHandler.do_GET | لا توجد Docstring. | ناقص | 123 | [SRC-1A176AD4F0-L000123](../tests/test_hosted_smoke.py#L123) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L156) | دالة | test_smoke_refuses_missing_or_short_access_token | لا توجد Docstring. | ناقص | 156 | [SRC-1A176AD4F0-L000156](../tests/test_hosted_smoke.py#L156) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L161) | دالة | test_smoke_fails_when_agent_returns_no_live_source | لا توجد Docstring. | ناقص | 161 | [SRC-1A176AD4F0-L000161](../tests/test_hosted_smoke.py#L161) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L164) | دالة | test_smoke_fails_when_agent_returns_no_live_source.without_sources | لا توجد Docstring. | ناقص | 164 | [SRC-1A176AD4F0-L000164](../tests/test_hosted_smoke.py#L164) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L23) | دالة | test_deterministic_intent_routes | لا توجد Docstring. | ناقص | 23 | [SRC-EA6EC52573-L000023](../tests/test_intent_router.py#L23) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L40) | دالة | test_lead_generation_and_summarization_routes | لا توجد Docstring. | ناقص | 40 | [SRC-EA6EC52573-L000040](../tests/test_intent_router.py#L40) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L46) | دالة | test_generic_explanation_of_lead_generation_is_not_a_lead_search | لا توجد Docstring. | ناقص | 46 | [SRC-EA6EC52573-L000046](../tests/test_intent_router.py#L46) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L52) | دالة | test_capability_question_is_local | لا توجد Docstring. | ناقص | 52 | [SRC-EA6EC52573-L000052](../tests/test_intent_router.py#L52) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L62) | دالة | test_ambiguous_followup_uses_existing_conversation_context | لا توجد Docstring. | ناقص | 62 | [SRC-EA6EC52573-L000062](../tests/test_intent_router.py#L62) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L73) | دالة | test_comparison_followup_requires_context_before_deep_search | لا توجد Docstring. | ناقص | 73 | [SRC-EA6EC52573-L000073](../tests/test_intent_router.py#L73) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L81) | دالة | test_ambiguous_followup_does_not_reuse_stale_topic_after_acknowledgment | لا توجد Docstring. | ناقص | 81 | [SRC-EA6EC52573-L000081](../tests/test_intent_router.py#L81) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L93) | دالة | test_explicit_mode_overrides_conversational_shortcuts | لا توجد Docstring. | ناقص | 93 | [SRC-EA6EC52573-L000093](../tests/test_intent_router.py#L93) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L119) | دالة | test_summarization_routing_respects_page_text_and_missing_input | لا توجد Docstring. | ناقص | 119 | [SRC-EA6EC52573-L000119](../tests/test_intent_router.py#L119) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L9) | دالة | _evidence | لا توجد Docstring. | ناقص | 9 | [SRC-4397BC2CD2-L000009](../tests/test_intent_router_integration.py#L9) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L26) | دالة | _report | لا توجد Docstring. | ناقص | 26 | [SRC-4397BC2CD2-L000026](../tests/test_intent_router_integration.py#L26) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L43) | دالة | test_greeting_is_local_without_model_or_search | لا توجد Docstring. | ناقص | 43 | [SRC-4397BC2CD2-L000043](../tests/test_intent_router_integration.py#L43) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L46) | دالة | test_greeting_is_local_without_model_or_search.unexpected | لا توجد Docstring. | ناقص | 46 | [SRC-4397BC2CD2-L000046](../tests/test_intent_router_integration.py#L46) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L62) | دالة | test_ambiguous_question_clarifies_without_model_or_search | لا توجد Docstring. | ناقص | 62 | [SRC-4397BC2CD2-L000062](../tests/test_intent_router_integration.py#L62) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L65) | دالة | test_ambiguous_question_clarifies_without_model_or_search.unexpected | لا توجد Docstring. | ناقص | 65 | [SRC-4397BC2CD2-L000065](../tests/test_intent_router_integration.py#L65) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L83) | دالة | test_contextual_price_followup_searches_with_previous_subject | لا توجد Docstring. | ناقص | 83 | [SRC-4397BC2CD2-L000083](../tests/test_intent_router_integration.py#L83) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L92) | دالة | test_contextual_price_followup_searches_with_previous_subject.collect | لا توجد Docstring. | ناقص | 92 | [SRC-4397BC2CD2-L000092](../tests/test_intent_router_integration.py#L92) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L115) | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles | لا توجد Docstring. | ناقص | 115 | [SRC-4397BC2CD2-L000115](../tests/test_intent_router_integration.py#L115) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L121) | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles.plan | لا توجد Docstring. | ناقص | 121 | [SRC-4397BC2CD2-L000121](../tests/test_intent_router_integration.py#L121) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L132) | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles.collect | لا توجد Docstring. | ناقص | 132 | [SRC-4397BC2CD2-L000132](../tests/test_intent_router_integration.py#L132) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L8) | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 8 | [SRC-62DC597310-L000008](../tests/test_live_search_connectors.py#L8) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L9) | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 9 | [SRC-62DC597310-L000009](../tests/test_live_search_connectors.py#L9) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L13) | دالة | FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 13 | [SRC-62DC597310-L000013](../tests/test_live_search_connectors.py#L13) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L16) | دالة | FakeResponse.json | لا توجد Docstring. | ناقص | 16 | [SRC-62DC597310-L000016](../tests/test_live_search_connectors.py#L16) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L20) | دالة | test_brave_search_adapter_normalizes_real_api_response | لا توجد Docstring. | ناقص | 20 | [SRC-62DC597310-L000020](../tests/test_live_search_connectors.py#L20) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L24) | دالة | test_brave_search_adapter_normalizes_real_api_response.fake_get | لا توجد Docstring. | ناقص | 24 | [SRC-62DC597310-L000024](../tests/test_live_search_connectors.py#L24) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L48) | دالة | test_tavily_search_adapter_normalizes_live_search_results | لا توجد Docstring. | ناقص | 48 | [SRC-62DC597310-L000048](../tests/test_live_search_connectors.py#L48) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L52) | دالة | test_tavily_search_adapter_normalizes_live_search_results.fake_post | لا توجد Docstring. | ناقص | 52 | [SRC-62DC597310-L000052](../tests/test_live_search_connectors.py#L52) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L74) | دالة | test_search_api_setup_status_reports_only_presence_not_secret_values | لا توجد Docstring. | ناقص | 74 | [SRC-62DC597310-L000074](../tests/test_live_search_connectors.py#L74) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L8) | دالة | test_arabic_normalization | لا توجد Docstring. | ناقص | 8 | [SRC-44CDA52D01-L000008](../tests/test_omarai.py#L8) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L11) | دالة | test_high_intent_with_next_step | لا توجد Docstring. | ناقص | 11 | [SRC-44CDA52D01-L000011](../tests/test_omarai.py#L11) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L16) | دالة | test_non_buyer_override | لا توجد Docstring. | ناقص | 16 | [SRC-44CDA52D01-L000016](../tests/test_omarai.py#L16) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L21) | دالة | test_empty_text_rejected | لا توجد Docstring. | ناقص | 21 | [SRC-44CDA52D01-L000021](../tests/test_omarai.py#L21) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L25) | دالة | test_url_required_and_validated | لا توجد Docstring. | ناقص | 25 | [SRC-44CDA52D01-L000025](../tests/test_omarai.py#L25) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L32) | دالة | test_duplicate_is_idempotent | لا توجد Docstring. | ناقص | 32 | [SRC-44CDA52D01-L000032](../tests/test_omarai.py#L32) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L40) | دالة | test_status_updates_are_explicit | لا توجد Docstring. | ناقص | 40 | [SRC-44CDA52D01-L000040](../tests/test_omarai.py#L40) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L48) | دالة | test_csv_requires_columns | لا توجد Docstring. | ناقص | 48 | [SRC-44CDA52D01-L000048](../tests/test_omarai.py#L48) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L55) | دالة | test_csv_export_neutralizes_spreadsheet_formula_injection | لا توجد Docstring. | ناقص | 55 | [SRC-44CDA52D01-L000055](../tests/test_omarai.py#L55) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L10) | متغير/ثابت Python | TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-B106ADC5EF-L000010](../tests/test_proxy_origin.py#L10) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | متغير/ثابت Python | PUBLIC_NAME | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L14) | دالة | port | لا توجد Docstring. | ناقص | 14 | [SRC-B106ADC5EF-L000014](../tests/test_proxy_origin.py#L14) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L30) | دالة | call | لا توجد Docstring. | ناقص | 30 | [SRC-B106ADC5EF-L000030](../tests/test_proxy_origin.py#L30) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L46) | متغير/ثابت Python | ALLOWED_SHAPES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 46 | [SRC-B106ADC5EF-L000046](../tests/test_proxy_origin.py#L46) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L55) | دالة | test_own_origin_is_accepted_behind_a_proxy | لا توجد Docstring. | ناقص | 55 | [SRC-B106ADC5EF-L000055](../tests/test_proxy_origin.py#L55) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L61) | دالة | test_a_foreign_site_is_still_refused | لا توجد Docstring. | ناقص | 61 | [SRC-B106ADC5EF-L000061](../tests/test_proxy_origin.py#L61) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L66) | دالة | test_configured_origin_still_works_without_any_proxy_headers | لا توجد Docstring. | ناقص | 66 | [SRC-B106ADC5EF-L000066](../tests/test_proxy_origin.py#L66) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L9) | كلاس | FakeClock | لا توجد Docstring. | ناقص | 9 | [SRC-C353AAAC10-L000009](../tests/test_request_budget.py#L9) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L10) | دالة | FakeClock.__init__ | لا توجد Docstring. | ناقص | 10 | [SRC-C353AAAC10-L000010](../tests/test_request_budget.py#L10) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L13) | دالة | FakeClock.__call__ | لا توجد Docstring. | ناقص | 13 | [SRC-C353AAAC10-L000013](../tests/test_request_budget.py#L13) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L17) | دالة | test_resource_reservations_are_bounded_and_thread_safe_in_snapshot | لا توجد Docstring. | ناقص | 17 | [SRC-C353AAAC10-L000017](../tests/test_request_budget.py#L17) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L35) | دالة | test_deadline_blocks_new_work_and_caps_outbound_timeout | لا توجد Docstring. | ناقص | 35 | [SRC-C353AAAC10-L000035](../tests/test_request_budget.py#L35) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L51) | دالة | test_environment_overrides_are_clamped | لا توجد Docstring. | ناقص | 51 | [SRC-C353AAAC10-L000051](../tests/test_request_budget.py#L51) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L65) | دالة | test_web_agent_reserves_search_model_and_page_work_before_io | لا توجد Docstring. | ناقص | 65 | [SRC-C353AAAC10-L000065](../tests/test_request_budget.py#L65) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L88) | دالة | test_social_provider_reserves_budget_before_network_io | لا توجد Docstring. | ناقص | 88 | [SRC-C353AAAC10-L000088](../tests/test_request_budget.py#L88) |
+| [tests/test_research.py](../tests/test_research.py#L12) | دالة | test_social_question_gets_platform_targeted_queries | لا توجد Docstring. | ناقص | 12 | [SRC-6BF96689A8-L000012](../tests/test_research.py#L12) |
+| [tests/test_research.py](../tests/test_research.py#L20) | دالة | test_follow_up_query_keeps_prior_topic | لا توجد Docstring. | ناقص | 20 | [SRC-6BF96689A8-L000020](../tests/test_research.py#L20) |
+| [tests/test_research.py](../tests/test_research.py#L27) | دالة | test_plan_validation_caps_queries_and_rejects_non_string_values | لا توجد Docstring. | ناقص | 27 | [SRC-6BF96689A8-L000027](../tests/test_research.py#L27) |
+| [tests/test_research.py](../tests/test_research.py#L42) | دالة | test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates | لا توجد Docstring. | ناقص | 42 | [SRC-6BF96689A8-L000042](../tests/test_research.py#L42) |
+| [tests/test_research.py](../tests/test_research.py#L72) | دالة | test_source_classification_distinguishes_social_and_government | لا توجد Docstring. | ناقص | 72 | [SRC-6BF96689A8-L000072](../tests/test_research.py#L72) |
+| [tests/test_research.py](../tests/test_research.py#L79) | دالة | test_explicit_page_urls_are_extracted_and_not_left_in_search_terms | لا توجد Docstring. | ناقص | 79 | [SRC-6BF96689A8-L000079](../tests/test_research.py#L79) |
+| [tests/test_research.py](../tests/test_research.py#L88) | دالة | test_registrable_domain_groups_subdomains_and_respects_public_suffixes | لا توجد Docstring. | ناقص | 88 | [SRC-6BF96689A8-L000088](../tests/test_research.py#L88) |
+| [tests/test_research.py](../tests/test_research.py#L97) | دالة | test_evidence_coverage_does_not_count_sibling_subdomains_as_independent | لا توجد Docstring. | ناقص | 97 | [SRC-6BF96689A8-L000097](../tests/test_research.py#L97) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L15) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 | [SRC-01E35ABC46-L000015](../tests/test_research_guardrails.py#L15) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L21) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 | [SRC-01E35ABC46-L000021](../tests/test_research_guardrails.py#L21) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L27) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 | [SRC-01E35ABC46-L000027](../tests/test_research_guardrails.py#L27) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L35) | دالة | test_depth_does_not_trigger_on_partial_words | لا توجد Docstring. | ناقص | 35 | [SRC-01E35ABC46-L000035](../tests/test_research_guardrails.py#L35) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L43) | دالة | test_freshness_positive_english | لا توجد Docstring. | ناقص | 43 | [SRC-01E35ABC46-L000043](../tests/test_research_guardrails.py#L43) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L50) | دالة | test_freshness_positive_arabic | لا توجد Docstring. | ناقص | 50 | [SRC-01E35ABC46-L000050](../tests/test_research_guardrails.py#L50) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L56) | دالة | test_freshness_negative_know_and_snowden | لا توجد Docstring. | ناقص | 56 | [SRC-01E35ABC46-L000056](../tests/test_research_guardrails.py#L56) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L65) | دالة | test_relevance_keeps_matching_source | لا توجد Docstring. | ناقص | 65 | [SRC-01E35ABC46-L000065](../tests/test_research_guardrails.py#L65) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L91) | دالة | test_relevance_rejects_unrelated | لا توجد Docstring. | ناقص | 91 | [SRC-01E35ABC46-L000091](../tests/test_research_guardrails.py#L91) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L104) | دالة | test_relevance_keeps_official_despite_wording | لا توجد Docstring. | ناقص | 104 | [SRC-01E35ABC46-L000104](../tests/test_research_guardrails.py#L104) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L118) | دالة | test_filter_deduplicates | لا توجد Docstring. | ناقص | 118 | [SRC-01E35ABC46-L000118](../tests/test_research_guardrails.py#L118) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L144) | دالة | test_filter_empty_and_failed_extract | لا توجد Docstring. | ناقص | 144 | [SRC-01E35ABC46-L000144](../tests/test_research_guardrails.py#L144) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L164) | دالة | test_evidence_adequate | لا توجد Docstring. | ناقص | 164 | [SRC-01E35ABC46-L000164](../tests/test_research_guardrails.py#L164) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L176) | دالة | test_evidence_insufficient_empty | لا توجد Docstring. | ناقص | 176 | [SRC-01E35ABC46-L000176](../tests/test_research_guardrails.py#L176) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L182) | دالة | test_evidence_failed_provider | لا توجد Docstring. | ناقص | 182 | [SRC-01E35ABC46-L000182](../tests/test_research_guardrails.py#L182) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L188) | دالة | test_evidence_partial_single_source | لا توجد Docstring. | ناقص | 188 | [SRC-01E35ABC46-L000188](../tests/test_research_guardrails.py#L188) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L17) | دالة | test_search_returns_stable_file_line_and_source_link | Text search returns the exact file and 1-based line without network access. | موثق | 17 | [SRC-2614DCB6FB-L000017](../tests/test_search_code.py#L17) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L31) | دالة | test_search_supports_multiline_context_and_regex | The context argument returns the requested number of adjacent lines. | موثق | 31 | [SRC-2614DCB6FB-L000031](../tests/test_search_code.py#L31) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L45) | دالة | test_search_excludes_common_secret_files_and_runtime_directories | Local searches skip common secret paths and binary/runtime data. | موثق | 45 | [SRC-2614DCB6FB-L000045](../tests/test_search_code.py#L45) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L66) | دالة | test_search_validates_query_limits_and_reports_invalid_regex | Invalid search controls fail clearly instead of silently returning confusing results. | موثق | 66 | [SRC-2614DCB6FB-L000066](../tests/test_search_code.py#L66) |
+| [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L11) | دالة | test_backup_and_restore_preserve_omarai_leads | لا توجد Docstring. | ناقص | 11 | [SRC-1C0D3D1206-L000011](../tests/test_sqlite_backup_restore.py#L11) |
+| [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L50) | دالة | test_backup_never_overwrites_an_existing_destination | لا توجد Docstring. | ناقص | 50 | [SRC-1C0D3D1206-L000050](../tests/test_sqlite_backup_restore.py#L50) |
+| [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L62) | دالة | test_backup_rejects_non_omarai_sqlite_database_without_leaving_destination | لا توجد Docstring. | ناقص | 62 | [SRC-1C0D3D1206-L000062](../tests/test_sqlite_backup_restore.py#L62) |
+| [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L74) | دالة | test_backup_rejects_same_source_and_destination | لا توجد Docstring. | ناقص | 74 | [SRC-1C0D3D1206-L000074](../tests/test_sqlite_backup_restore.py#L74) |
+| [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L82) | دالة | test_restore_rejects_corrupt_backup_without_overwriting_source | لا توجد Docstring. | ناقص | 82 | [SRC-1C0D3D1206-L000082](../tests/test_sqlite_backup_restore.py#L82) |
+| [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L93) | دالة | test_backup_rejects_dangling_symlink_destination | لا توجد Docstring. | ناقص | 93 | [SRC-1C0D3D1206-L000093](../tests/test_sqlite_backup_restore.py#L93) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L15) | دالة | sample_source | لا توجد Docstring. | ناقص | 15 | [SRC-F725E90B2A-L000015](../tests/test_web_agent.py#L15) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L31) | دالة | test_agent_synthesizes_with_sources_without_live_network | لا توجد Docstring. | ناقص | 31 | [SRC-F725E90B2A-L000031](../tests/test_web_agent.py#L31) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L36) | دالة | test_agent_synthesizes_with_sources_without_live_network.plan | لا توجد Docstring. | ناقص | 36 | [SRC-F725E90B2A-L000036](../tests/test_web_agent.py#L36) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L46) | دالة | test_agent_synthesizes_with_sources_without_live_network.collect | لا توجد Docstring. | ناقص | 46 | [SRC-F725E90B2A-L000046](../tests/test_web_agent.py#L46) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L61) | دالة | test_agent_synthesizes_with_sources_without_live_network.generate | لا توجد Docstring. | ناقص | 61 | [SRC-F725E90B2A-L000061](../tests/test_web_agent.py#L61) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L101) | دالة | test_agent_returns_search_snippets_if_model_not_configured | لا توجد Docstring. | ناقص | 101 | [SRC-F725E90B2A-L000101](../tests/test_web_agent.py#L101) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L133) | دالة | test_agent_rejects_empty_or_oversized_question | لا توجد Docstring. | ناقص | 133 | [SRC-F725E90B2A-L000133](../tests/test_web_agent.py#L133) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L141) | دالة | test_history_search_query_expands_short_follow_up | لا توجد Docstring. | ناقص | 141 | [SRC-F725E90B2A-L000141](../tests/test_web_agent.py#L141) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L148) | دالة | test_public_url_filter_rejects_local_and_credential_urls | لا توجد Docstring. | ناقص | 148 | [SRC-F725E90B2A-L000148](../tests/test_web_agent.py#L148) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L155) | دالة | test_public_url_filter_accepts_basic_https_url | لا توجد Docstring. | ناقص | 155 | [SRC-F725E90B2A-L000155](../tests/test_web_agent.py#L155) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L159) | دالة | test_search_web_parses_duckduckgo_and_bing_without_ddgs | لا توجد Docstring. | ناقص | 159 | [SRC-F725E90B2A-L000159](../tests/test_web_agent.py#L159) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L178) | كلاس | test_search_web_parses_duckduckgo_and_bing_without_ddgs.FakeResponse | لا توجد Docstring. | ناقص | 178 | [SRC-F725E90B2A-L000178](../tests/test_web_agent.py#L178) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L181) | دالة | test_search_web_parses_duckduckgo_and_bing_without_ddgs.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 181 | [SRC-F725E90B2A-L000181](../tests/test_web_agent.py#L181) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L187) | دالة | test_search_web_parses_duckduckgo_and_bing_without_ddgs.fake_get | لا توجد Docstring. | ناقص | 187 | [SRC-F725E90B2A-L000187](../tests/test_web_agent.py#L187) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L203) | دالة | test_model_planner_preserves_social_intent_and_adds_targeted_query | لا توجد Docstring. | ناقص | 203 | [SRC-F725E90B2A-L000203](../tests/test_web_agent.py#L203) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L224) | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results | لا توجد Docstring. | ناقص | 224 | [SRC-F725E90B2A-L000224](../tests/test_web_agent.py#L224) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L234) | كلاس | test_direct_social_search_reads_public_reddit_and_bluesky_results.FakeResponse | لا توجد Docstring. | ناقص | 234 | [SRC-F725E90B2A-L000234](../tests/test_web_agent.py#L234) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L237) | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 237 | [SRC-F725E90B2A-L000237](../tests/test_web_agent.py#L237) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L242) | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results.FakeResponse.json | لا توجد Docstring. | ناقص | 242 | [SRC-F725E90B2A-L000242](../tests/test_web_agent.py#L242) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L245) | دالة | test_direct_social_search_reads_public_reddit_and_bluesky_results.fake_get | لا توجد Docstring. | ناقص | 245 | [SRC-F725E90B2A-L000245](../tests/test_web_agent.py#L245) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L272) | دالة | test_research_collection_fuses_multiple_queries_and_reports_provenance | لا توجد Docstring. | ناقص | 272 | [SRC-F725E90B2A-L000272](../tests/test_web_agent.py#L272) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L275) | دالة | test_research_collection_fuses_multiple_queries_and_reports_provenance.search | لا توجد Docstring. | ناقص | 275 | [SRC-F725E90B2A-L000275](../tests/test_web_agent.py#L275) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L310) | دالة | test_invalid_citations_are_removed_and_valid_ones_preserved | لا توجد Docstring. | ناقص | 310 | [SRC-F725E90B2A-L000310](../tests/test_web_agent.py#L310) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L319) | دالة | test_citation_metadata_limits_claim_to_index_range_validation | لا توجد Docstring. | ناقص | 319 | [SRC-F725E90B2A-L000319](../tests/test_web_agent.py#L319) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L336) | دالة | test_citation_metadata_reports_invalid_reference_repair | لا توجد Docstring. | ناقص | 336 | [SRC-F725E90B2A-L000336](../tests/test_web_agent.py#L336) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L349) | دالة | test_citation_metadata_reports_absent_markers_and_empty_source_range | لا توجد Docstring. | ناقص | 349 | [SRC-F725E90B2A-L000349](../tests/test_web_agent.py#L349) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L358) | دالة | test_user_supplied_url_is_prioritized_and_page_content_is_extracted | لا توجد Docstring. | ناقص | 358 | [SRC-F725E90B2A-L000358](../tests/test_web_agent.py#L358) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L383) | دالة | test_official_x_search_is_used_only_with_explicit_bearer_token | لا توجد Docstring. | ناقص | 383 | [SRC-F725E90B2A-L000383](../tests/test_web_agent.py#L383) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L388) | كلاس | test_official_x_search_is_used_only_with_explicit_bearer_token.FakeResponse | لا توجد Docstring. | ناقص | 388 | [SRC-F725E90B2A-L000388](../tests/test_web_agent.py#L388) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L391) | دالة | test_official_x_search_is_used_only_with_explicit_bearer_token.FakeResponse.json | لا توجد Docstring. | ناقص | 391 | [SRC-F725E90B2A-L000391](../tests/test_web_agent.py#L391) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L406) | دالة | test_official_x_search_is_used_only_with_explicit_bearer_token.fake_get | لا توجد Docstring. | ناقص | 406 | [SRC-F725E90B2A-L000406](../tests/test_web_agent.py#L406) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L422) | دالة | test_instagram_graph_api_returns_only_public_hashtag_media | لا توجد Docstring. | ناقص | 422 | [SRC-F725E90B2A-L000422](../tests/test_web_agent.py#L422) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L429) | كلاس | test_instagram_graph_api_returns_only_public_hashtag_media.FakeResponse | لا توجد Docstring. | ناقص | 429 | [SRC-F725E90B2A-L000429](../tests/test_web_agent.py#L429) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L432) | دالة | test_instagram_graph_api_returns_only_public_hashtag_media.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 432 | [SRC-F725E90B2A-L000432](../tests/test_web_agent.py#L432) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L435) | دالة | test_instagram_graph_api_returns_only_public_hashtag_media.FakeResponse.json | لا توجد Docstring. | ناقص | 435 | [SRC-F725E90B2A-L000435](../tests/test_web_agent.py#L435) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L440) | دالة | test_instagram_graph_api_returns_only_public_hashtag_media.fake_get | لا توجد Docstring. | ناقص | 440 | [SRC-F725E90B2A-L000440](../tests/test_web_agent.py#L440) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L469) | دالة | test_instagram_api_not_configured_uses_honest_fallback_warning | لا توجد Docstring. | ناقص | 469 | [SRC-F725E90B2A-L000469](../tests/test_web_agent.py#L469) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L479) | دالة | test_facebook_pages_api_reads_only_operator_configured_pages | لا توجد Docstring. | ناقص | 479 | [SRC-F725E90B2A-L000479](../tests/test_web_agent.py#L479) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L485) | كلاس | test_facebook_pages_api_reads_only_operator_configured_pages.FakeResponse | لا توجد Docstring. | ناقص | 485 | [SRC-F725E90B2A-L000485](../tests/test_web_agent.py#L485) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L488) | دالة | test_facebook_pages_api_reads_only_operator_configured_pages.FakeResponse.json | لا توجد Docstring. | ناقص | 488 | [SRC-F725E90B2A-L000488](../tests/test_web_agent.py#L488) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L500) | دالة | test_facebook_pages_api_reads_only_operator_configured_pages.fake_get | لا توجد Docstring. | ناقص | 500 | [SRC-F725E90B2A-L000500](../tests/test_web_agent.py#L500) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L516) | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured | لا توجد Docstring. | ناقص | 516 | [SRC-F725E90B2A-L000516](../tests/test_web_agent.py#L516) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L523) | كلاس | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse | لا توجد Docstring. | ناقص | 523 | [SRC-F725E90B2A-L000523](../tests/test_web_agent.py#L523) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L526) | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 526 | [SRC-F725E90B2A-L000526](../tests/test_web_agent.py#L526) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L529) | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse.json | لا توجد Docstring. | ناقص | 529 | [SRC-F725E90B2A-L000529](../tests/test_web_agent.py#L529) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L533) | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.FakeResponse.content | لا توجد Docstring. | ناقص | 533 | [SRC-F725E90B2A-L000533](../tests/test_web_agent.py#L533) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L539) | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.fake_post | لا توجد Docstring. | ناقص | 539 | [SRC-F725E90B2A-L000539](../tests/test_web_agent.py#L539) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L543) | دالة | test_reddit_oauth_api_is_preferred_when_credentials_are_configured.fake_get | لا توجد Docstring. | ناقص | 543 | [SRC-F725E90B2A-L000543](../tests/test_web_agent.py#L543) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L572) | دالة | test_role_models_are_explicit_and_have_a_fallback | لا توجد Docstring. | ناقص | 572 | [SRC-F725E90B2A-L000572](../tests/test_web_agent.py#L572) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L589) | دالة | test_global_model_override_is_preserved_for_existing_users | لا توجد Docstring. | ناقص | 589 | [SRC-F725E90B2A-L000589](../tests/test_web_agent.py#L589) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L601) | دالة | test_completion_uses_fallback_model_after_primary_http_error | لا توجد Docstring. | ناقص | 601 | [SRC-F725E90B2A-L000601](../tests/test_web_agent.py#L601) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L611) | كلاس | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse | لا توجد Docstring. | ناقص | 611 | [SRC-F725E90B2A-L000611](../tests/test_web_agent.py#L611) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L612) | دالة | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 612 | [SRC-F725E90B2A-L000612](../tests/test_web_agent.py#L612) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L615) | دالة | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 615 | [SRC-F725E90B2A-L000615](../tests/test_web_agent.py#L615) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L618) | دالة | test_completion_uses_fallback_model_after_primary_http_error.FakeResponse.read | لا توجد Docstring. | ناقص | 618 | [SRC-F725E90B2A-L000618](../tests/test_web_agent.py#L618) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L626) | دالة | test_completion_uses_fallback_model_after_primary_http_error.fake_urlopen | لا توجد Docstring. | ناقص | 626 | [SRC-F725E90B2A-L000626](../tests/test_web_agent.py#L626) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L656) | دالة | test_generator_rejects_silent_character_limit_truncation | لا توجد Docstring. | ناقص | 656 | [SRC-F725E90B2A-L000656](../tests/test_web_agent.py#L656) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L671) | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback | لا توجد Docstring. | ناقص | 671 | [SRC-F725E90B2A-L000671](../tests/test_web_agent.py#L671) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L679) | كلاس | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse | لا توجد Docstring. | ناقص | 679 | [SRC-F725E90B2A-L000679](../tests/test_web_agent.py#L679) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L680) | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 680 | [SRC-F725E90B2A-L000680](../tests/test_web_agent.py#L680) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L688) | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 688 | [SRC-F725E90B2A-L000688](../tests/test_web_agent.py#L688) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L691) | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 691 | [SRC-F725E90B2A-L000691](../tests/test_web_agent.py#L691) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L694) | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.FakeResponse.read | لا توجد Docstring. | ناقص | 694 | [SRC-F725E90B2A-L000694](../tests/test_web_agent.py#L694) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L697) | دالة | test_completion_discards_truncated_primary_and_uses_complete_fallback.fake_urlopen | لا توجد Docstring. | ناقص | 697 | [SRC-F725E90B2A-L000697](../tests/test_web_agent.py#L697) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L720) | دالة | test_completion_rejects_response_when_all_models_are_truncated | لا توجد Docstring. | ناقص | 720 | [SRC-F725E90B2A-L000720](../tests/test_web_agent.py#L720) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L728) | كلاس | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse | لا توجد Docstring. | ناقص | 728 | [SRC-F725E90B2A-L000728](../tests/test_web_agent.py#L728) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L729) | دالة | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 729 | [SRC-F725E90B2A-L000729](../tests/test_web_agent.py#L729) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L732) | دالة | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 732 | [SRC-F725E90B2A-L000732](../tests/test_web_agent.py#L732) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L735) | دالة | test_completion_rejects_response_when_all_models_are_truncated.FakeResponse.read | لا توجد Docstring. | ناقص | 735 | [SRC-F725E90B2A-L000735](../tests/test_web_agent.py#L735) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L743) | دالة | test_completion_rejects_response_when_all_models_are_truncated.fake_urlopen | لا توجد Docstring. | ناقص | 743 | [SRC-F725E90B2A-L000743](../tests/test_web_agent.py#L743) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L758) | دالة | test_completion_falls_back_for_malformed_choice | لا توجد Docstring. | ناقص | 758 | [SRC-F725E90B2A-L000758](../tests/test_web_agent.py#L758) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L766) | كلاس | test_completion_falls_back_for_malformed_choice.FakeResponse | لا توجد Docstring. | ناقص | 766 | [SRC-F725E90B2A-L000766](../tests/test_web_agent.py#L766) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L767) | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 767 | [SRC-F725E90B2A-L000767](../tests/test_web_agent.py#L767) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L770) | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 770 | [SRC-F725E90B2A-L000770](../tests/test_web_agent.py#L770) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L773) | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 773 | [SRC-F725E90B2A-L000773](../tests/test_web_agent.py#L773) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L776) | دالة | test_completion_falls_back_for_malformed_choice.FakeResponse.read | لا توجد Docstring. | ناقص | 776 | [SRC-F725E90B2A-L000776](../tests/test_web_agent.py#L776) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L779) | دالة | test_completion_falls_back_for_malformed_choice.fake_urlopen | لا توجد Docstring. | ناقص | 779 | [SRC-F725E90B2A-L000779](../tests/test_web_agent.py#L779) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L799) | دالة | test_health_status_reports_models_without_credentials | لا توجد Docstring. | ناقص | 799 | [SRC-F725E90B2A-L000799](../tests/test_web_agent.py#L799) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L817) | دالة | test_health_status_exposes_external_model_privacy_notice_without_secrets | لا توجد Docstring. | ناقص | 817 | [SRC-F725E90B2A-L000817](../tests/test_web_agent.py#L817) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L829) | دالة | test_diagnostics_runs_real_search_and_can_skip_paid_or_rate_limited_model_calls | لا توجد Docstring. | ناقص | 829 | [SRC-F725E90B2A-L000829](../tests/test_web_agent.py#L829) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L851) | دالة | test_diagnostics_calls_a_model_only_when_explicitly_requested | لا توجد Docstring. | ناقص | 851 | [SRC-F725E90B2A-L000851](../tests/test_web_agent.py#L851) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L859) | دالة | test_diagnostics_calls_a_model_only_when_explicitly_requested.completion | لا توجد Docstring. | ناقص | 859 | [SRC-F725E90B2A-L000859](../tests/test_web_agent.py#L859) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L877) | دالة | test_diagnostics_reports_degraded_when_search_has_no_results_and_model_is_unconfigured | لا توجد Docstring. | ناقص | 877 | [SRC-F725E90B2A-L000877](../tests/test_web_agent.py#L877) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L890) | دالة | test_diagnostics_does_not_report_full_success_when_model_probe_fails | لا توجد Docstring. | ناقص | 890 | [SRC-F725E90B2A-L000890](../tests/test_web_agent.py#L890) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L910) | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations | لا توجد Docstring. | ناقص | 910 | [SRC-F725E90B2A-L000910](../tests/test_web_agent.py#L910) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L919) | كلاس | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse | لا توجد Docstring. | ناقص | 919 | [SRC-F725E90B2A-L000919](../tests/test_web_agent.py#L919) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L920) | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 920 | [SRC-F725E90B2A-L000920](../tests/test_web_agent.py#L920) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L923) | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 923 | [SRC-F725E90B2A-L000923](../tests/test_web_agent.py#L923) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L926) | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.FakeResponse.read | لا توجد Docstring. | ناقص | 926 | [SRC-F725E90B2A-L000926](../tests/test_web_agent.py#L926) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L944) | دالة | test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations.fake_urlopen | لا توجد Docstring. | ناقص | 944 | [SRC-F725E90B2A-L000944](../tests/test_web_agent.py#L944) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L964) | دالة | test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in | لا توجد Docstring. | ناقص | 964 | [SRC-F725E90B2A-L000964](../tests/test_web_agent.py#L964) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L971) | دالة | test_arabic_query_normalization_removes_diacritics_and_unifies_hamza | لا توجد Docstring. | ناقص | 971 | [SRC-F725E90B2A-L000971](../tests/test_web_agent.py#L971) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L979) | دالة | test_relevance_filter_rejects_translation_and_sports_noise | لا توجد Docstring. | ناقص | 979 | [SRC-F725E90B2A-L000979](../tests/test_web_agent.py#L979) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L991) | دالة | test_search_provider_failure_isolated_and_logged | لا توجد Docstring. | ناقص | 991 | [SRC-F725E90B2A-L000991](../tests/test_web_agent.py#L991) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L994) | دالة | test_search_provider_failure_isolated_and_logged.broken | لا توجد Docstring. | ناقص | 994 | [SRC-F725E90B2A-L000994](../tests/test_web_agent.py#L994) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L997) | دالة | test_search_provider_failure_isolated_and_logged.working | لا توجد Docstring. | ناقص | 997 | [SRC-F725E90B2A-L000997](../tests/test_web_agent.py#L997) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1023) | دالة | test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration | لا توجد Docstring. | ناقص | 1023 | [SRC-F725E90B2A-L001023](../tests/test_web_agent.py#L1023) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1071) | دالة | test_answer_hides_unwrapped_internal_review_report | لا توجد Docstring. | ناقص | 1071 | [SRC-F725E90B2A-L001071](../tests/test_web_agent.py#L1071) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1085) | دالة | test_answer_hides_unwrapped_internal_review_report.collect | لا توجد Docstring. | ناقص | 1085 | [SRC-F725E90B2A-L001085](../tests/test_web_agent.py#L1085) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1124) | دالة | test_sibling_subdomains_do_not_satisfy_independent_evidence_gate | لا توجد Docstring. | ناقص | 1124 | [SRC-F725E90B2A-L001124](../tests/test_web_agent.py#L1124) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1167) | دالة | test_bounded_evidence_repair_recovers_with_one_relevant_independent_source | لا توجد Docstring. | ناقص | 1167 | [SRC-F725E90B2A-L001167](../tests/test_web_agent.py#L1167) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1181) | دالة | test_bounded_evidence_repair_recovers_with_one_relevant_independent_source.collect | لا توجد Docstring. | ناقص | 1181 | [SRC-F725E90B2A-L001181](../tests/test_web_agent.py#L1181) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1225) | دالة | test_insufficient_evidence_returns_explicit_refusal_without_calling_llm | لا توجد Docstring. | ناقص | 1225 | [SRC-F725E90B2A-L001225](../tests/test_web_agent.py#L1225) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1239) | دالة | test_insufficient_evidence_returns_explicit_refusal_without_calling_llm.collect_only_one_source | لا توجد Docstring. | ناقص | 1239 | [SRC-F725E90B2A-L001239](../tests/test_web_agent.py#L1239) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1274) | دالة | test_generate_keeps_web_evidence_in_separate_untrusted_user_message | لا توجد Docstring. | ناقص | 1274 | [SRC-F725E90B2A-L001274](../tests/test_web_agent.py#L1274) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1281) | دالة | test_generate_keeps_web_evidence_in_separate_untrusted_user_message.fake_completion | لا توجد Docstring. | ناقص | 1281 | [SRC-F725E90B2A-L001281](../tests/test_web_agent.py#L1281) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1310) | دالة | test_review_keeps_untrusted_evidence_out_of_system_message | لا توجد Docstring. | ناقص | 1310 | [SRC-F725E90B2A-L001310](../tests/test_web_agent.py#L1310) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1317) | دالة | test_review_keeps_untrusted_evidence_out_of_system_message.fake_completion | لا توجد Docstring. | ناقص | 1317 | [SRC-F725E90B2A-L001317](../tests/test_web_agent.py#L1317) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1343) | دالة | test_general_question_uses_model_without_needlessly_searching | لا توجد Docstring. | ناقص | 1343 | [SRC-F725E90B2A-L001343](../tests/test_web_agent.py#L1343) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1348) | دالة | test_general_question_uses_model_without_needlessly_searching.fake_completion | لا توجد Docstring. | ناقص | 1348 | [SRC-F725E90B2A-L001348](../tests/test_web_agent.py#L1348) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1369) | دالة | test_omarai_capability_question_is_answered_without_network | لا توجد Docstring. | ناقص | 1369 | [SRC-F725E90B2A-L001369](../tests/test_web_agent.py#L1369) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1386) | دالة | test_link_lookup_can_return_one_clearly_labelled_candidate | لا توجد Docstring. | ناقص | 1386 | [SRC-F725E90B2A-L001386](../tests/test_web_agent.py#L1386) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1432) | دالة | test_google_news_preserves_publisher_identity | لا توجد Docstring. | ناقص | 1432 | [SRC-F725E90B2A-L001432](../tests/test_web_agent.py#L1432) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1443) | كلاس | test_google_news_preserves_publisher_identity.FakeResponse | لا توجد Docstring. | ناقص | 1443 | [SRC-F725E90B2A-L001443](../tests/test_web_agent.py#L1443) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1458) | دالة | test_relevance_matching_handles_arabic_names_with_english_results | لا توجد Docstring. | ناقص | 1458 | [SRC-F725E90B2A-L001458](../tests/test_web_agent.py#L1458) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1465) | دالة | test_routine_lookup_ignores_planner_overclassification | لا توجد Docstring. | ناقص | 1465 | [SRC-F725E90B2A-L001465](../tests/test_web_agent.py#L1465) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1493) | دالة | test_routine_lookup_ignores_planner_overclassification.collect | لا توجد Docstring. | ناقص | 1493 | [SRC-F725E90B2A-L001493](../tests/test_web_agent.py#L1493) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1514) | دالة | test_listing_discovery_detects_arabic_property_requests | لا توجد Docstring. | ناقص | 1514 | [SRC-F725E90B2A-L001514](../tests/test_web_agent.py#L1514) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1520) | دالة | test_single_property_listing_is_returned_with_safety_caveat | لا توجد Docstring. | ناقص | 1520 | [SRC-F725E90B2A-L001520](../tests/test_web_agent.py#L1520) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1566) | دالة | test_normalized_source_url_key_ignores_tracking_parameters_and_fragment | لا توجد Docstring. | ناقص | 1566 | [SRC-F725E90B2A-L001566](../tests/test_web_agent.py#L1566) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1577) | دالة | test_bounded_repair_deduplicates_same_page_even_with_tracking_url | لا توجد Docstring. | ناقص | 1577 | [SRC-F725E90B2A-L001577](../tests/test_web_agent.py#L1577) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1590) | دالة | test_bounded_repair_deduplicates_same_page_even_with_tracking_url.collect | لا توجد Docstring. | ناقص | 1590 | [SRC-F725E90B2A-L001590](../tests/test_web_agent.py#L1590) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1630) | دالة | test_social_focused_partial_evidence_does_not_trigger_general_repair | لا توجد Docstring. | ناقص | 1630 | [SRC-F725E90B2A-L001630](../tests/test_web_agent.py#L1630) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1643) | دالة | test_social_focused_partial_evidence_does_not_trigger_general_repair.collect | لا توجد Docstring. | ناقص | 1643 | [SRC-F725E90B2A-L001643](../tests/test_web_agent.py#L1643) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1675) | دالة | test_question_coverage_targets_extract_arabic_and_english_explicit_criteria | لا توجد Docstring. | ناقص | 1675 | [SRC-F725E90B2A-L001675](../tests/test_web_agent.py#L1675) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1693) | دالة | test_question_coverage_targets_do_not_invent_parts_for_simple_question | لا توجد Docstring. | ناقص | 1693 | [SRC-F725E90B2A-L001693](../tests/test_web_agent.py#L1693) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1697) | دالة | test_generator_includes_extracted_targets_as_a_non_authoritative_checklist | لا توجد Docstring. | ناقص | 1697 | [SRC-F725E90B2A-L001697](../tests/test_web_agent.py#L1697) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1701) | دالة | test_generator_includes_extracted_targets_as_a_non_authoritative_checklist.fake_completion | لا توجد Docstring. | ناقص | 1701 | [SRC-F725E90B2A-L001701](../tests/test_web_agent.py#L1701) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1722) | دالة | test_reviewer_checks_coverage_targets_without_claiming_independent_verification | لا توجد Docstring. | ناقص | 1722 | [SRC-F725E90B2A-L001722](../tests/test_web_agent.py#L1722) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1726) | دالة | test_reviewer_checks_coverage_targets_without_claiming_independent_verification.fake_completion | لا توجد Docstring. | ناقص | 1726 | [SRC-F725E90B2A-L001726](../tests/test_web_agent.py#L1726) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1744) | دالة | test_search_attempt_is_reported_when_no_sources_survive | لا توجد Docstring. | ناقص | 1744 | [SRC-F725E90B2A-L001744](../tests/test_web_agent.py#L1744) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1758) | دالة | test_search_attempt_is_reported_when_no_sources_survive.collect | لا توجد Docstring. | ناقص | 1758 | [SRC-F725E90B2A-L001758](../tests/test_web_agent.py#L1758) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1795) | دالة | test_success_report_counts_registrable_domains_not_sibling_subdomains | لا توجد Docstring. | ناقص | 1795 | [SRC-F725E90B2A-L001795](../tests/test_web_agent.py#L1795) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1852) | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback | لا توجد Docstring. | ناقص | 1852 | [SRC-F725E90B2A-L001852](../tests/test_web_agent.py#L1852) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1860) | كلاس | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse | لا توجد Docstring. | ناقص | 1860 | [SRC-F725E90B2A-L001860](../tests/test_web_agent.py#L1860) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1861) | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 1861 | [SRC-F725E90B2A-L001861](../tests/test_web_agent.py#L1861) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1869) | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 1869 | [SRC-F725E90B2A-L001869](../tests/test_web_agent.py#L1869) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1872) | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 1872 | [SRC-F725E90B2A-L001872](../tests/test_web_agent.py#L1872) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1875) | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.FakeResponse.read | لا توجد Docstring. | ناقص | 1875 | [SRC-F725E90B2A-L001875](../tests/test_web_agent.py#L1875) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1878) | دالة | test_completion_rejects_content_filtered_primary_and_uses_fallback.fake_urlopen | لا توجد Docstring. | ناقص | 1878 | [SRC-F725E90B2A-L001878](../tests/test_web_agent.py#L1878) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1896) | دالة | test_reviewer_rejects_duplicate_final_answer_delimiters | لا توجد Docstring. | ناقص | 1896 | [SRC-F725E90B2A-L001896](../tests/test_web_agent.py#L1896) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1914) | دالة | test_frontend_review_status_matches_api_contract | لا توجد Docstring. | ناقص | 1914 | [SRC-F725E90B2A-L001914](../tests/test_web_agent.py#L1914) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1923) | دالة | test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts | لا توجد Docstring. | ناقص | 1923 | [SRC-F725E90B2A-L001923](../tests/test_web_agent.py#L1923) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1935) | دالة | test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts.failed_after_provider_result | لا توجد Docstring. | ناقص | 1935 | [SRC-F725E90B2A-L001935](../tests/test_web_agent.py#L1935) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1962) | دالة | test_research_error_without_provider_diagnostics_is_reported_as_unknown | لا توجد Docstring. | ناقص | 1962 | [SRC-F725E90B2A-L001962](../tests/test_web_agent.py#L1962) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1974) | دالة | test_research_error_without_provider_diagnostics_is_reported_as_unknown.fail_before_attempt | لا توجد Docstring. | ناقص | 1974 | [SRC-F725E90B2A-L001974](../tests/test_web_agent.py#L1974) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1991) | دالة | test_general_answer_does_not_silently_slice_overlong_model_output | لا توجد Docstring. | ناقص | 1991 | [SRC-F725E90B2A-L001991](../tests/test_web_agent.py#L1991) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2005) | دالة | test_frontend_discloses_unknown_counts_after_research_error | لا توجد Docstring. | ناقص | 2005 | [SRC-F725E90B2A-L002005](../tests/test_web_agent.py#L2005) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2014) | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed | لا توجد Docstring. | ناقص | 2014 | [SRC-F725E90B2A-L002014](../tests/test_web_agent.py#L2014) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2026) | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed.fail_after_generic_provider_error | لا توجد Docstring. | ناقص | 2026 | [SRC-F725E90B2A-L002026](../tests/test_web_agent.py#L2026) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2051) | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results | لا توجد Docstring. | ناقص | 2051 | [SRC-F725E90B2A-L002051](../tests/test_web_agent.py#L2051) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2055) | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results.search | لا توجد Docstring. | ناقص | 2055 | [SRC-F725E90B2A-L002055](../tests/test_web_agent.py#L2055) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2080) | دالة | test_lead_discovery_is_distinct_from_listing_search | لا توجد Docstring. | ناقص | 2080 | [SRC-F725E90B2A-L002080](../tests/test_web_agent.py#L2080) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2087) | دالة | test_buyer_intent_evidence_requires_explicit_purchase_signal | لا توجد Docstring. | ناقص | 2087 | [SRC-F725E90B2A-L002087](../tests/test_web_agent.py#L2087) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2104) | دالة | test_lead_generation_does_not_present_sale_listings_as_buyers | لا توجد Docstring. | ناقص | 2104 | [SRC-F725E90B2A-L002104](../tests/test_web_agent.py#L2104) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2156) | دالة | test_lead_generation_search_plan_includes_high_intent_queries | لا توجد Docstring. | ناقص | 2156 | [SRC-F725E90B2A-L002156](../tests/test_web_agent.py#L2156) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2169) | دالة | test_lead_generation_search_plan_includes_high_intent_queries.collect | لا توجد Docstring. | ناقص | 2169 | [SRC-F725E90B2A-L002169](../tests/test_web_agent.py#L2169) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2207) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key | لا توجد Docstring. | ناقص | 2207 | [SRC-F725E90B2A-L002207](../tests/test_web_agent.py#L2207) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2214) | كلاس | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse | لا توجد Docstring. | ناقص | 2214 | [SRC-F725E90B2A-L002214](../tests/test_web_agent.py#L2214) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2215) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 2215 | [SRC-F725E90B2A-L002215](../tests/test_web_agent.py#L2215) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2218) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.json | لا توجد Docstring. | ناقص | 2218 | [SRC-F725E90B2A-L002218](../tests/test_web_agent.py#L2218) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2232) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.fake_post | لا توجد Docstring. | ناقص | 2232 | [SRC-F725E90B2A-L002232](../tests/test_web_agent.py#L2232) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2250) | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline | لا توجد Docstring. | ناقص | 2250 | [SRC-F725E90B2A-L002250](../tests/test_web_agent.py#L2250) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2254) | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline.completed_empty_search | لا توجد Docstring. | ناقص | 2254 | [SRC-F725E90B2A-L002254](../tests/test_web_agent.py#L2254) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2270) | دالة | test_deepseek_search_request_budget_defaults_to_one_and_is_bounded | لا توجد Docstring. | ناقص | 2270 | [SRC-F725E90B2A-L002270](../tests/test_web_agent.py#L2270) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2285) | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure | لا توجد Docstring. | ناقص | 2285 | [SRC-F725E90B2A-L002285](../tests/test_web_agent.py#L2285) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2290) | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure.no_results | لا توجد Docstring. | ناقص | 2290 | [SRC-F725E90B2A-L002290](../tests/test_web_agent.py#L2290) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2305) | دالة | test_buyer_intent_phrase_inside_negated_text_is_not_a_lead_signal | لا توجد Docstring. | ناقص | 2305 | [SRC-F725E90B2A-L002305](../tests/test_web_agent.py#L2305) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2315) | دالة | test_lead_generation_preserves_unknown_state_when_research_throws | لا توجد Docstring. | ناقص | 2315 | [SRC-F725E90B2A-L002315](../tests/test_web_agent.py#L2315) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2329) | دالة | test_lead_generation_preserves_unknown_state_when_research_throws.fail_research | لا توجد Docstring. | ناقص | 2329 | [SRC-F725E90B2A-L002329](../tests/test_web_agent.py#L2329) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2353) | دالة | test_local_answer_exposes_request_budget_without_claiming_live_search | لا توجد Docstring. | ناقص | 2353 | [SRC-F725E90B2A-L002353](../tests/test_web_agent.py#L2353) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2370) | دالة | test_reviewed_answer_without_valid_citations_cannot_be_rated_good | لا توجد Docstring. | ناقص | 2370 | [SRC-F725E90B2A-L002370](../tests/test_web_agent.py#L2370) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2441) | دالة | test_public_ip_literals_rejects_mixed_public_and_private_dns_answers | لا توجد Docstring. | ناقص | 2441 | [SRC-F725E90B2A-L002441](../tests/test_web_agent.py#L2441) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2460) | دالة | test_pinned_connect_url_uses_checked_ip_without_losing_logical_path | لا توجد Docstring. | ناقص | 2460 | [SRC-F725E90B2A-L002460](../tests/test_web_agent.py#L2460) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2469) | دالة | test_fetch_page_rejects_private_redirect_before_connecting | لا توجد Docstring. | ناقص | 2469 | [SRC-F725E90B2A-L002469](../tests/test_web_agent.py#L2469) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2479) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.resolve_public_ip | لا توجد Docstring. | ناقص | 2479 | [SRC-F725E90B2A-L002479](../tests/test_web_agent.py#L2479) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2485) | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse | لا توجد Docstring. | ناقص | 2485 | [SRC-F725E90B2A-L002485](../tests/test_web_agent.py#L2485) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2488) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2488 | [SRC-F725E90B2A-L002488](../tests/test_web_agent.py#L2488) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2492) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.fake_stream | لا توجد Docstring. | ناقص | 2492 | [SRC-F725E90B2A-L002492](../tests/test_web_agent.py#L2492) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2496) | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient | لا توجد Docstring. | ناقص | 2496 | [SRC-F725E90B2A-L002496](../tests/test_web_agent.py#L2496) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2497) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2497 | [SRC-F725E90B2A-L002497](../tests/test_web_agent.py#L2497) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2500) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2500 | [SRC-F725E90B2A-L002500](../tests/test_web_agent.py#L2500) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2503) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2503 | [SRC-F725E90B2A-L002503](../tests/test_web_agent.py#L2503) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2518) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination | لا توجد Docstring. | ناقص | 2518 | [SRC-F725E90B2A-L002518](../tests/test_web_agent.py#L2518) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2528) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.resolve_public_ip | لا توجد Docstring. | ناقص | 2528 | [SRC-F725E90B2A-L002528](../tests/test_web_agent.py#L2528) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2537) | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse | لا توجد Docstring. | ناقص | 2537 | [SRC-F725E90B2A-L002537](../tests/test_web_agent.py#L2537) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2540) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2540 | [SRC-F725E90B2A-L002540](../tests/test_web_agent.py#L2540) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2544) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.fake_stream | لا توجد Docstring. | ناقص | 2544 | [SRC-F725E90B2A-L002544](../tests/test_web_agent.py#L2544) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2548) | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient | لا توجد Docstring. | ناقص | 2548 | [SRC-F725E90B2A-L002548](../tests/test_web_agent.py#L2548) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2549) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2549 | [SRC-F725E90B2A-L002549](../tests/test_web_agent.py#L2549) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2552) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2552 | [SRC-F725E90B2A-L002552](../tests/test_web_agent.py#L2552) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2555) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2555 | [SRC-F725E90B2A-L002555](../tests/test_web_agent.py#L2555) |
+
+## الرموز الساكنة الإضافية
+
+هذا القسم للمساعدة في الوصول إلى الواجهة والإعدادات والوثائق؛ استخراج الرموز غير المحللة بـAST استدلالي وقد لا يساوي تحليلًا كاملًا للغة.
+
+| الملف | نوع الرمز | الاسم/القيمة | السطر | كود السطر للوصول المباشر |
+|---|---|---|---:|---|
+| [.env.example](../.env.example#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 3 | [SRC-A3046DA0D1-L000003](../.env.example#L3) |
+| [.env.example](../.env.example#L4) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 4 | [SRC-A3046DA0D1-L000004](../.env.example#L4) |
+| [.env.example](../.env.example#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 5 | [SRC-A3046DA0D1-L000005](../.env.example#L5) |
+| [.env.example](../.env.example#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 8 | [SRC-A3046DA0D1-L000008](../.env.example#L8) |
+| [.env.example](../.env.example#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 9 | [SRC-A3046DA0D1-L000009](../.env.example#L9) |
+| [.env.example](../.env.example#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 10 | [SRC-A3046DA0D1-L000010](../.env.example#L10) |
+| [.env.example](../.env.example#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 11 | [SRC-A3046DA0D1-L000011](../.env.example#L11) |
+| [.env.example](../.env.example#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 14 | [SRC-A3046DA0D1-L000014](../.env.example#L14) |
+| [.env.example](../.env.example#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 17 | [SRC-A3046DA0D1-L000017](../.env.example#L17) |
+| [.env.example](../.env.example#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 18 | [SRC-A3046DA0D1-L000018](../.env.example#L18) |
+| [.env.example](../.env.example#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 24 | [SRC-A3046DA0D1-L000024](../.env.example#L24) |
+| [.env.example](../.env.example#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 26 | [SRC-A3046DA0D1-L000026](../.env.example#L26) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-9F6E30987B-L000001](../.github/workflows/hosted-smoke.yml#L1) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-9F6E30987B-L000002](../.github/workflows/hosted-smoke.yml#L2) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L4) | مفتاح إعداد YAML | workflow_dispatch | 4 | [SRC-9F6E30987B-L000004](../.github/workflows/hosted-smoke.yml#L4) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L5) | مفتاح إعداد YAML | permissions | 5 | [SRC-9F6E30987B-L000005](../.github/workflows/hosted-smoke.yml#L5) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L7) | مفتاح إعداد YAML | contents | 7 | [SRC-9F6E30987B-L000007](../.github/workflows/hosted-smoke.yml#L7) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L8) | مفتاح إعداد YAML | concurrency | 8 | [SRC-9F6E30987B-L000008](../.github/workflows/hosted-smoke.yml#L8) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L10) | مفتاح إعداد YAML | group | 10 | [SRC-9F6E30987B-L000010](../.github/workflows/hosted-smoke.yml#L10) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L11) | مفتاح إعداد YAML | cancel-in-progress | 11 | [SRC-9F6E30987B-L000011](../.github/workflows/hosted-smoke.yml#L11) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L12) | مفتاح إعداد YAML | jobs | 12 | [SRC-9F6E30987B-L000012](../.github/workflows/hosted-smoke.yml#L12) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L14) | مفتاح إعداد YAML | hosted-smoke | 14 | [SRC-9F6E30987B-L000014](../.github/workflows/hosted-smoke.yml#L14) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L15) | مفتاح إعداد YAML | runs-on | 15 | [SRC-9F6E30987B-L000015](../.github/workflows/hosted-smoke.yml#L15) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L16) | مفتاح إعداد YAML | timeout-minutes | 16 | [SRC-9F6E30987B-L000016](../.github/workflows/hosted-smoke.yml#L16) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L17) | مفتاح إعداد YAML | env | 17 | [SRC-9F6E30987B-L000017](../.github/workflows/hosted-smoke.yml#L17) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 18 | [SRC-9F6E30987B-L000018](../.github/workflows/hosted-smoke.yml#L18) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L18) | مفتاح إعداد YAML | OMARAI_BASE_URL | 18 | [SRC-9F6E30987B-L000018](../.github/workflows/hosted-smoke.yml#L18) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 19 | [SRC-9F6E30987B-L000019](../.github/workflows/hosted-smoke.yml#L19) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L19) | مفتاح إعداد YAML | OMARAI_ACCESS_TOKEN | 19 | [SRC-9F6E30987B-L000019](../.github/workflows/hosted-smoke.yml#L19) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L20) | مفتاح إعداد YAML | steps | 20 | [SRC-9F6E30987B-L000020](../.github/workflows/hosted-smoke.yml#L20) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L22) | مفتاح إعداد YAML | shell | 22 | [SRC-9F6E30987B-L000022](../.github/workflows/hosted-smoke.yml#L22) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L23) | مفتاح إعداد YAML | run | 23 | [SRC-9F6E30987B-L000023](../.github/workflows/hosted-smoke.yml#L23) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L39) | مفتاح إعداد YAML | uses | 39 | [SRC-9F6E30987B-L000039](../.github/workflows/hosted-smoke.yml#L39) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L43) | مفتاح إعداد YAML | with | 43 | [SRC-9F6E30987B-L000043](../.github/workflows/hosted-smoke.yml#L43) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L44) | مفتاح إعداد YAML | python-version | 44 | [SRC-9F6E30987B-L000044](../.github/workflows/hosted-smoke.yml#L44) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-1DB27D9318-L000001](../.github/workflows/tests.yml#L1) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-1DB27D9318-L000002](../.github/workflows/tests.yml#L2) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L3) | مفتاح إعداد YAML | push | 3 | [SRC-1DB27D9318-L000003](../.github/workflows/tests.yml#L3) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L4) | مفتاح إعداد YAML | branches | 4 | [SRC-1DB27D9318-L000004](../.github/workflows/tests.yml#L4) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L5) | مفتاح إعداد YAML | pull_request | 5 | [SRC-1DB27D9318-L000005](../.github/workflows/tests.yml#L5) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L7) | مفتاح إعداد YAML | workflow_dispatch | 7 | [SRC-1DB27D9318-L000007](../.github/workflows/tests.yml#L7) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L8) | مفتاح إعداد YAML | permissions | 8 | [SRC-1DB27D9318-L000008](../.github/workflows/tests.yml#L8) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L9) | مفتاح إعداد YAML | contents | 9 | [SRC-1DB27D9318-L000009](../.github/workflows/tests.yml#L9) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L10) | مفتاح إعداد YAML | jobs | 10 | [SRC-1DB27D9318-L000010](../.github/workflows/tests.yml#L10) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L11) | مفتاح إعداد YAML | test | 11 | [SRC-1DB27D9318-L000011](../.github/workflows/tests.yml#L11) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L12) | مفتاح إعداد YAML | runs-on | 12 | [SRC-1DB27D9318-L000012](../.github/workflows/tests.yml#L12) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L13) | مفتاح إعداد YAML | strategy | 13 | [SRC-1DB27D9318-L000013](../.github/workflows/tests.yml#L13) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L14) | مفتاح إعداد YAML | fail-fast | 14 | [SRC-1DB27D9318-L000014](../.github/workflows/tests.yml#L14) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L15) | مفتاح إعداد YAML | matrix | 15 | [SRC-1DB27D9318-L000015](../.github/workflows/tests.yml#L15) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L16) | مفتاح إعداد YAML | python-version | 16 | [SRC-1DB27D9318-L000016](../.github/workflows/tests.yml#L16) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L17) | مفتاح إعداد YAML | steps | 17 | [SRC-1DB27D9318-L000017](../.github/workflows/tests.yml#L17) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L20) | مفتاح إعداد YAML | with | 20 | [SRC-1DB27D9318-L000020](../.github/workflows/tests.yml#L20) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L25) | مفتاح إعداد YAML | if | 25 | [SRC-1DB27D9318-L000025](../.github/workflows/tests.yml#L25) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L26) | مفتاح إعداد YAML | run | 26 | [SRC-1DB27D9318-L000026](../.github/workflows/tests.yml#L26) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L28) | مفتاح إعداد YAML | container-build | 28 | [SRC-1DB27D9318-L000028](../.github/workflows/tests.yml#L28) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L36) | مفتاح إعداد YAML | shell | 36 | [SRC-1DB27D9318-L000036](../.github/workflows/tests.yml#L36) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 41 | [SRC-1DB27D9318-L000041](../.github/workflows/tests.yml#L41) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 42 | [SRC-1DB27D9318-L000042](../.github/workflows/tests.yml#L42) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L43) | مفتاح إعداد YAML | omarai | 43 | [SRC-1DB27D9318-L000043](../.github/workflows/tests.yml#L43) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L72) | مفتاح إعداد YAML | http | 72 | [SRC-1DB27D9318-L000072](../.github/workflows/tests.yml#L72) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-84F7DE82AF-L000001](../.github/workflows/update_index.yml#L1) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-84F7DE82AF-L000002](../.github/workflows/update_index.yml#L2) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L4) | مفتاح إعداد YAML | push | 4 | [SRC-84F7DE82AF-L000004](../.github/workflows/update_index.yml#L4) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L5) | مفتاح إعداد YAML | branches | 5 | [SRC-84F7DE82AF-L000005](../.github/workflows/update_index.yml#L5) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L6) | مفتاح إعداد YAML | paths-ignore | 6 | [SRC-84F7DE82AF-L000006](../.github/workflows/update_index.yml#L6) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 7 | [SRC-84F7DE82AF-L000007](../.github/workflows/update_index.yml#L7) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 8 | [SRC-84F7DE82AF-L000008](../.github/workflows/update_index.yml#L8) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L10) | مفتاح إعداد YAML | workflow_dispatch | 10 | [SRC-84F7DE82AF-L000010](../.github/workflows/update_index.yml#L10) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L11) | مفتاح إعداد YAML | permissions | 11 | [SRC-84F7DE82AF-L000011](../.github/workflows/update_index.yml#L11) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L13) | مفتاح إعداد YAML | actions | 13 | [SRC-84F7DE82AF-L000013](../.github/workflows/update_index.yml#L13) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L14) | مفتاح إعداد YAML | contents | 14 | [SRC-84F7DE82AF-L000014](../.github/workflows/update_index.yml#L14) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L15) | مفتاح إعداد YAML | pull-requests | 15 | [SRC-84F7DE82AF-L000015](../.github/workflows/update_index.yml#L15) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L16) | مفتاح إعداد YAML | concurrency | 16 | [SRC-84F7DE82AF-L000016](../.github/workflows/update_index.yml#L16) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L18) | مفتاح إعداد YAML | group | 18 | [SRC-84F7DE82AF-L000018](../.github/workflows/update_index.yml#L18) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L19) | مفتاح إعداد YAML | cancel-in-progress | 19 | [SRC-84F7DE82AF-L000019](../.github/workflows/update_index.yml#L19) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L20) | مفتاح إعداد YAML | jobs | 20 | [SRC-84F7DE82AF-L000020](../.github/workflows/update_index.yml#L20) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L22) | مفتاح إعداد YAML | refresh-index | 22 | [SRC-84F7DE82AF-L000022](../.github/workflows/update_index.yml#L22) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L24) | مفتاح إعداد YAML | runs-on | 24 | [SRC-84F7DE82AF-L000024](../.github/workflows/update_index.yml#L24) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L25) | مفتاح إعداد YAML | steps | 25 | [SRC-84F7DE82AF-L000025](../.github/workflows/update_index.yml#L25) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L27) | مفتاح إعداد YAML | uses | 27 | [SRC-84F7DE82AF-L000027](../.github/workflows/update_index.yml#L27) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L30) | مفتاح إعداد YAML | shell | 30 | [SRC-84F7DE82AF-L000030](../.github/workflows/update_index.yml#L30) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L31) | مفتاح إعداد YAML | env | 31 | [SRC-84F7DE82AF-L000031](../.github/workflows/update_index.yml#L31) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRANCH_NAME | 32 | [SRC-84F7DE82AF-L000032](../.github/workflows/update_index.yml#L32) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L32) | مفتاح إعداد YAML | BRANCH_NAME | 32 | [SRC-84F7DE82AF-L000032](../.github/workflows/update_index.yml#L32) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L33) | مفتاح إعداد YAML | run | 33 | [SRC-84F7DE82AF-L000033](../.github/workflows/update_index.yml#L33) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L40) | مفتاح إعداد YAML | with | 40 | [SRC-84F7DE82AF-L000040](../.github/workflows/update_index.yml#L40) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L41) | مفتاح إعداد YAML | python-version | 41 | [SRC-84F7DE82AF-L000041](../.github/workflows/update_index.yml#L41) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L50) | مفتاح إعداد YAML | id | 50 | [SRC-84F7DE82AF-L000050](../.github/workflows/update_index.yml#L50) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L58) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_OUTPUT | 58 | [SRC-84F7DE82AF-L000058](../.github/workflows/update_index.yml#L58) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L69) | مفتاح إعداد YAML | if | 69 | [SRC-84F7DE82AF-L000069](../.github/workflows/update_index.yml#L69) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GH_TOKEN | 81 | [SRC-84F7DE82AF-L000081](../.github/workflows/update_index.yml#L81) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_TOKEN | 81 | [SRC-84F7DE82AF-L000081](../.github/workflows/update_index.yml#L81) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L81) | مفتاح إعداد YAML | GH_TOKEN | 81 | [SRC-84F7DE82AF-L000081](../.github/workflows/update_index.yml#L81) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_RUN_ATTEMPT | 84 | [SRC-84F7DE82AF-L000084](../.github/workflows/update_index.yml#L84) |
+| [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_RUN_ID | 84 | [SRC-84F7DE82AF-L000084](../.github/workflows/update_index.yml#L84) |
+| [AGENTS.md](../AGENTS.md#L1) | عنوان Markdown (H1) | Omarai — Mandatory Agent and Contributor Instructions | 1 | [SRC-A54FF182C7-L000001](../AGENTS.md#L1) |
+| [AGENTS.md](../AGENTS.md#L4) | عنوان Markdown (H2) | Source of truth | 4 | [SRC-A54FF182C7-L000004](../AGENTS.md#L4) |
+| [AGENTS.md](../AGENTS.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 6 | [SRC-A54FF182C7-L000006](../AGENTS.md#L6) |
+| [AGENTS.md](../AGENTS.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 7 | [SRC-A54FF182C7-L000007](../AGENTS.md#L7) |
+| [AGENTS.md](../AGENTS.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 8 | [SRC-A54FF182C7-L000008](../AGENTS.md#L8) |
+| [AGENTS.md](../AGENTS.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 9 | [SRC-A54FF182C7-L000009](../AGENTS.md#L9) |
+| [AGENTS.md](../AGENTS.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 10 | [SRC-A54FF182C7-L000010](../AGENTS.md#L10) |
+| [AGENTS.md](../AGENTS.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 10 | [SRC-A54FF182C7-L000010](../AGENTS.md#L10) |
+| [AGENTS.md](../AGENTS.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 13 | [SRC-A54FF182C7-L000013](../AGENTS.md#L13) |
+| [AGENTS.md](../AGENTS.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 13 | [SRC-A54FF182C7-L000013](../AGENTS.md#L13) |
+| [AGENTS.md](../AGENTS.md#L14) | عنوان Markdown (H2) | Evidence discipline | 14 | [SRC-A54FF182C7-L000014](../AGENTS.md#L14) |
+| [AGENTS.md](../AGENTS.md#L21) | عنوان Markdown (H2) | Architecture evolution and scalability | 21 | [SRC-A54FF182C7-L000021](../AGENTS.md#L21) |
+| [AGENTS.md](../AGENTS.md#L35) | عنوان Markdown (H2) | Required engineering behavior | 35 | [SRC-A54FF182C7-L000035](../AGENTS.md#L35) |
+| [AGENTS.md](../AGENTS.md#L48) | عنوان Markdown (H2) | Change and release control | 48 | [SRC-A54FF182C7-L000048](../AGENTS.md#L48) |
+| [AGENTS.md](../AGENTS.md#L58) | عنوان Markdown (H2) | Platform-grade readiness | 58 | [SRC-A54FF182C7-L000058](../AGENTS.md#L58) |
+| [AGENTS.md](../AGENTS.md#L65) | عنوان Markdown (H2) | Requirement traceability and expert review | 65 | [SRC-A54FF182C7-L000065](../AGENTS.md#L65) |
+| [AGENTS.md](../AGENTS.md#L71) | عنوان Markdown (H2) | Acceptance principle | 71 | [SRC-A54FF182C7-L000071](../AGENTS.md#L71) |
+| [agents/intent_router.py](../agents/intent_router.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONTEXT_TURNS | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
+| [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
+| [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
+| [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
+| [agents/intent_router.py](../agents/intent_router.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 16 | [SRC-5587371288-L000016](../agents/intent_router.py#L16) |
+| [agents/omarai.py](../agents/omarai.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TEXT | 14 | [SRC-C9CF9B54F8-L000014](../agents/omarai.py#L14) |
+| [agents/omarai.py](../agents/omarai.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_BUYER | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
+| [agents/omarai.py](../agents/omarai.py#L150) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 150 | [SRC-C9CF9B54F8-L000150](../agents/omarai.py#L150) |
+| [agents/request_budget.py](../agents/request_budget.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
+| [agents/request_budget.py](../agents/request_budget.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TIMEOUT_SECONDS | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
+| [agents/request_budget.py](../agents/request_budget.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESOURCE_LIMITS | 23 | [SRC-FDEEAFDFCA-L000023](../agents/request_budget.py#L23) |
+| [agents/request_budget.py](../agents/request_budget.py#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 66 | [SRC-FDEEAFDFCA-L000066](../agents/request_budget.py#L66) |
+| [agents/research.py](../agents/research.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 17 | [SRC-59CF4B7DE8-L000017](../agents/research.py#L17) |
+| [agents/research.py](../agents/research.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_QUERY_CHARS | 18 | [SRC-59CF4B7DE8-L000018](../agents/research.py#L18) |
+| [agents/research.py](../agents/research.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_FUSED_RESULTS | 19 | [SRC-59CF4B7DE8-L000019](../agents/research.py#L19) |
+| [agents/research.py](../agents/research.py#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 56 | [SRC-59CF4B7DE8-L000056](../agents/research.py#L56) |
+| [agents/web_agent.py](../agents/web_agent.py#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 27 | [SRC-1AE03B9EC3-L000027](../agents/web_agent.py#L27) |
+| [agents/web_agent.py](../agents/web_agent.py#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 28 | [SRC-1AE03B9EC3-L000028](../agents/web_agent.py#L28) |
+| [agents/web_agent.py](../agents/web_agent.py#L36) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_QUESTION_CHARS | 36 | [SRC-1AE03B9EC3-L000036](../agents/web_agent.py#L36) |
+| [agents/web_agent.py](../agents/web_agent.py#L37) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_HISTORY_ITEMS | 37 | [SRC-1AE03B9EC3-L000037](../agents/web_agent.py#L37) |
+| [agents/web_agent.py](../agents/web_agent.py#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_HISTORY_CHARS | 38 | [SRC-1AE03B9EC3-L000038](../agents/web_agent.py#L38) |
+| [agents/web_agent.py](../agents/web_agent.py#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_SEARCH_RESULTS | 39 | [SRC-1AE03B9EC3-L000039](../agents/web_agent.py#L39) |
+| [agents/web_agent.py](../agents/web_agent.py#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PROVIDER_RESULTS | 40 | [SRC-1AE03B9EC3-L000040](../agents/web_agent.py#L40) |
+| [agents/web_agent.py](../agents/web_agent.py#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_FETCHED_PAGES | 41 | [SRC-1AE03B9EC3-L000041](../agents/web_agent.py#L41) |
+| [agents/web_agent.py](../agents/web_agent.py#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_LLM_CITED_SOURCES | 42 | [SRC-1AE03B9EC3-L000042](../agents/web_agent.py#L42) |
+| [agents/web_agent.py](../agents/web_agent.py#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RESEARCH_WORKERS | 43 | [SRC-1AE03B9EC3-L000043](../agents/web_agent.py#L43) |
+| [agents/web_agent.py](../agents/web_agent.py#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PAGE_BYTES | 44 | [SRC-1AE03B9EC3-L000044](../agents/web_agent.py#L44) |
+| [agents/web_agent.py](../agents/web_agent.py#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PAGE_TEXT_CHARS | 45 | [SRC-1AE03B9EC3-L000045](../agents/web_agent.py#L45) |
+| [agents/web_agent.py](../agents/web_agent.py#L46) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LLM_TIMEOUT_SECONDS | 46 | [SRC-1AE03B9EC3-L000046](../agents/web_agent.py#L46) |
+| [agents/web_agent.py](../agents/web_agent.py#L222) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 222 | [SRC-1AE03B9EC3-L000222](../agents/web_agent.py#L222) |
+| [agents/web_agent.py](../agents/web_agent.py#L274) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 274 | [SRC-1AE03B9EC3-L000274](../agents/web_agent.py#L274) |
+| [agents/web_agent.py](../agents/web_agent.py#L275) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 275 | [SRC-1AE03B9EC3-L000275](../agents/web_agent.py#L275) |
+| [agents/web_agent.py](../agents/web_agent.py#L278) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 278 | [SRC-1AE03B9EC3-L000278](../agents/web_agent.py#L278) |
+| [agents/web_agent.py](../agents/web_agent.py#L281) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 281 | [SRC-1AE03B9EC3-L000281](../agents/web_agent.py#L281) |
+| [agents/web_agent.py](../agents/web_agent.py#L284) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 284 | [SRC-1AE03B9EC3-L000284](../agents/web_agent.py#L284) |
+| [agents/web_agent.py](../agents/web_agent.py#L287) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 287 | [SRC-1AE03B9EC3-L000287](../agents/web_agent.py#L287) |
+| [agents/web_agent.py](../agents/web_agent.py#L291) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 291 | [SRC-1AE03B9EC3-L000291](../agents/web_agent.py#L291) |
+| [agents/web_agent.py](../agents/web_agent.py#L294) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 294 | [SRC-1AE03B9EC3-L000294](../agents/web_agent.py#L294) |
+| [agents/web_agent.py](../agents/web_agent.py#L307) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 307 | [SRC-1AE03B9EC3-L000307](../agents/web_agent.py#L307) |
+| [agents/web_agent.py](../agents/web_agent.py#L311) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 311 | [SRC-1AE03B9EC3-L000311](../agents/web_agent.py#L311) |
+| [agents/web_agent.py](../agents/web_agent.py#L370) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 370 | [SRC-1AE03B9EC3-L000370](../agents/web_agent.py#L370) |
+| [agents/web_agent.py](../agents/web_agent.py#L372) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 372 | [SRC-1AE03B9EC3-L000372](../agents/web_agent.py#L372) |
+| [agents/web_agent.py](../agents/web_agent.py#L373) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 373 | [SRC-1AE03B9EC3-L000373](../agents/web_agent.py#L373) |
+| [agents/web_agent.py](../agents/web_agent.py#L392) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 392 | [SRC-1AE03B9EC3-L000392](../agents/web_agent.py#L392) |
+| [agents/web_agent.py](../agents/web_agent.py#L395) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 395 | [SRC-1AE03B9EC3-L000395](../agents/web_agent.py#L395) |
+| [agents/web_agent.py](../agents/web_agent.py#L396) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 396 | [SRC-1AE03B9EC3-L000396](../agents/web_agent.py#L396) |
+| [agents/web_agent.py](../agents/web_agent.py#L399) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 399 | [SRC-1AE03B9EC3-L000399](../agents/web_agent.py#L399) |
+| [agents/web_agent.py](../agents/web_agent.py#L400) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 400 | [SRC-1AE03B9EC3-L000400](../agents/web_agent.py#L400) |
+| [agents/web_agent.py](../agents/web_agent.py#L404) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 404 | [SRC-1AE03B9EC3-L000404](../agents/web_agent.py#L404) |
+| [agents/web_agent.py](../agents/web_agent.py#L405) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 405 | [SRC-1AE03B9EC3-L000405](../agents/web_agent.py#L405) |
+| [agents/web_agent.py](../agents/web_agent.py#L407) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 407 | [SRC-1AE03B9EC3-L000407](../agents/web_agent.py#L407) |
+| [agents/web_agent.py](../agents/web_agent.py#L408) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 408 | [SRC-1AE03B9EC3-L000408](../agents/web_agent.py#L408) |
+| [agents/web_agent.py](../agents/web_agent.py#L615) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 615 | [SRC-1AE03B9EC3-L000615](../agents/web_agent.py#L615) |
+| [agents/web_agent.py](../agents/web_agent.py#L1169) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 1169 | [SRC-1AE03B9EC3-L001169](../agents/web_agent.py#L1169) |
+| [agents/web_agent.py](../agents/web_agent.py#L1499) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 1499 | [SRC-1AE03B9EC3-L001499](../agents/web_agent.py#L1499) |
+| [agents/web_agent.py](../agents/web_agent.py#L2833) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 2833 | [SRC-1AE03B9EC3-L002833](../agents/web_agent.py#L2833) |
+| [agents/web_agent.py](../agents/web_agent.py#L2833) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 2833 | [SRC-1AE03B9EC3-L002833](../agents/web_agent.py#L2833) |
+| [agents/web_agent.py](../agents/web_agent.py#L3210) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 3210 | [SRC-1AE03B9EC3-L003210](../agents/web_agent.py#L3210) |
+| [agents/web_agent.py](../agents/web_agent.py#L3291) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 3291 | [SRC-1AE03B9EC3-L003291](../agents/web_agent.py#L3291) |
+| [agents/web_agent.py](../agents/web_agent.py#L3299) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 3299 | [SRC-1AE03B9EC3-L003299](../agents/web_agent.py#L3299) |
+| [agents/web_agent.py](../agents/web_agent.py#L3306) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 3306 | [SRC-1AE03B9EC3-L003306](../agents/web_agent.py#L3306) |
+| [api/omarai.py](../api/omarai.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 20 | [SRC-EEF2E6447C-L000020](../api/omarai.py#L20) |
+| [api/omarai.py](../api/omarai.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 21 | [SRC-EEF2E6447C-L000021](../api/omarai.py#L21) |
+| [api/omarai.py](../api/omarai.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 22 | [SRC-EEF2E6447C-L000022](../api/omarai.py#L22) |
+| [api/omarai.py](../api/omarai.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
+| [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
+| [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
+| [api/omarai.py](../api/omarai.py#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
+| [api/omarai.py](../api/omarai.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
+| [api/omarai.py](../api/omarai.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
+| [api/omarai.py](../api/omarai.py#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_CHUNK_BYTES | 31 | [SRC-EEF2E6447C-L000031](../api/omarai.py#L31) |
+| [api/omarai.py](../api/omarai.py#L121) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 121 | [SRC-EEF2E6447C-L000121](../api/omarai.py#L121) |
+| [api/omarai.py](../api/omarai.py#L159) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 159 | [SRC-EEF2E6447C-L000159](../api/omarai.py#L159) |
+| [api/omarai.py](../api/omarai.py#L160) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 160 | [SRC-EEF2E6447C-L000160](../api/omarai.py#L160) |
+| [api/omarai.py](../api/omarai.py#L161) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 161 | [SRC-EEF2E6447C-L000161](../api/omarai.py#L161) |
+| [api/omarai.py](../api/omarai.py#L162) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 162 | [SRC-EEF2E6447C-L000162](../api/omarai.py#L162) |
+| [api/omarai.py](../api/omarai.py#L183) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 183 | [SRC-EEF2E6447C-L000183](../api/omarai.py#L183) |
+| [api/omarai.py](../api/omarai.py#L185) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 185 | [SRC-EEF2E6447C-L000185](../api/omarai.py#L185) |
+| [api/omarai.py](../api/omarai.py#L194) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 194 | [SRC-EEF2E6447C-L000194](../api/omarai.py#L194) |
+| [api/omarai.py](../api/omarai.py#L227) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 227 | [SRC-EEF2E6447C-L000227](../api/omarai.py#L227) |
+| [api/omarai.py](../api/omarai.py#L356) | مسار API/واجهة محتمل | /leads | 356 | [SRC-EEF2E6447C-L000356](../api/omarai.py#L356) |
+| [api/omarai.py](../api/omarai.py#L360) | مسار API/واجهة محتمل | /api/health | 360 | [SRC-EEF2E6447C-L000360](../api/omarai.py#L360) |
+| [api/omarai.py](../api/omarai.py#L370) | مسار API/واجهة محتمل | /api/leads | 370 | [SRC-EEF2E6447C-L000370](../api/omarai.py#L370) |
+| [api/omarai.py](../api/omarai.py#L407) | مسار API/واجهة محتمل | /api/diagnostics | 407 | [SRC-EEF2E6447C-L000407](../api/omarai.py#L407) |
+| [api/omarai.py](../api/omarai.py#L422) | مسار API/واجهة محتمل | /api/agent | 422 | [SRC-EEF2E6447C-L000422](../api/omarai.py#L422) |
+| [api/omarai.py](../api/omarai.py#L436) | مسار API/واجهة محتمل | /api/ask | 436 | [SRC-EEF2E6447C-L000436](../api/omarai.py#L436) |
+| [api/omarai.py](../api/omarai.py#L443) | مسار API/واجهة محتمل | /api/analyze | 443 | [SRC-EEF2E6447C-L000443](../api/omarai.py#L443) |
+| [Dockerfile](../Dockerfile#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PIP_DISABLE_PIP_VERSION_CHECK | 5 | [SRC-DD2C0EB6EA-L000005](../Dockerfile#L5) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | عنوان Markdown (H1) | معيار تقييم جودة الإجابة (عدائي / Red-Team) | 1 | [SRC-792A9A235D-L000001](ANSWER_QUALITY_BENCHMARK_AR.md#L1) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L13) | عنوان Markdown (H2) | الملفات | 13 | [SRC-792A9A235D-L000013](ANSWER_QUALITY_BENCHMARK_AR.md#L13) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ANSWER_QUALITY_BENCHMARK_AR | 21 | [SRC-792A9A235D-L000021](ANSWER_QUALITY_BENCHMARK_AR.md#L21) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L22) | عنوان Markdown (H2) | الاستراتيجيات المسموحة في الحقل `expected_strategy` | 22 | [SRC-792A9A235D-L000022](ANSWER_QUALITY_BENCHMARK_AR.md#L22) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L33) | عنوان Markdown (H2) | أوضاع التقييم `evaluation_mode` | 33 | [SRC-792A9A235D-L000033](ANSWER_QUALITY_BENCHMARK_AR.md#L33) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L41) | عنوان Markdown (H2) | بروتوكول تسجيل النتيجة | 41 | [SRC-792A9A235D-L000041](ANSWER_QUALITY_BENCHMARK_AR.md#L41) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 48 | [SRC-792A9A235D-L000048](ANSWER_QUALITY_BENCHMARK_AR.md#L48) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L49) | عنوان Markdown (H3) | أبعاد المراجعة | 49 | [SRC-792A9A235D-L000049](ANSWER_QUALITY_BENCHMARK_AR.md#L49) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L62) | عنوان Markdown (H2) | أداة التشغيل (stdlib فقط) | 62 | [SRC-792A9A235D-L000062](ANSWER_QUALITY_BENCHMARK_AR.md#L62) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L68) | عنوان Markdown (H1) | حي اختياري — يتطلب --case-id أو --limit؛ لا يحقن fixtures | 68 | [SRC-792A9A235D-L000068](ANSWER_QUALITY_BENCHMARK_AR.md#L68) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L70) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 70 | [SRC-792A9A235D-L000070](ANSWER_QUALITY_BENCHMARK_AR.md#L70) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L70) | عنوان Markdown (H1) | على localhost يمكن استخدام HTTP. الرمز من البيئة: OMARAI_ACCESS_TOKEN | 70 | [SRC-792A9A235D-L000070](ANSWER_QUALITY_BENCHMARK_AR.md#L70) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L74) | عنوان Markdown (H1) | للنشر عبر HTTPS فقط: اسمح بالأصل exact origin قبل تمرير الرمز | 74 | [SRC-792A9A235D-L000074](ANSWER_QUALITY_BENCHMARK_AR.md#L74) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 76 | [SRC-792A9A235D-L000076](ANSWER_QUALITY_BENCHMARK_AR.md#L76) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L83) | عنوان Markdown (H2) | تشغيل التحقق البنيوي | 83 | [SRC-792A9A235D-L000083](ANSWER_QUALITY_BENCHMARK_AR.md#L83) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L90) | عنوان Markdown (H2) | أمثلة حالات عالية الخطورة | 90 | [SRC-792A9A235D-L000090](ANSWER_QUALITY_BENCHMARK_AR.md#L90) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L106) | عنوان Markdown (H2) | مقارنة نسختين من عمرai (قبل/بعد) | 106 | [SRC-792A9A235D-L000106](ANSWER_QUALITY_BENCHMARK_AR.md#L106) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L116) | عنوان Markdown (H2) | نقاط عمياء معروفة | 116 | [SRC-792A9A235D-L000116](ANSWER_QUALITY_BENCHMARK_AR.md#L116) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L123) | عنوان Markdown (H2) | إضافة حالات لاحقًا | 123 | [SRC-792A9A235D-L000123](ANSWER_QUALITY_BENCHMARK_AR.md#L123) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على Railway — دليل عربي | 1 | [SRC-C7C7FA8853-L000001](DEPLOY_RAILWAY_AR.md#L1) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L4) | عنوان Markdown (H2) | المتطلبات | 4 | [SRC-C7C7FA8853-L000004](DEPLOY_RAILWAY_AR.md#L4) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L11) | عنوان Markdown (H2) | النشر | 11 | [SRC-C7C7FA8853-L000011](DEPLOY_RAILWAY_AR.md#L11) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 19 | [SRC-C7C7FA8853-L000019](DEPLOY_RAILWAY_AR.md#L19) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 20 | [SRC-C7C7FA8853-L000020](DEPLOY_RAILWAY_AR.md#L20) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 21 | [SRC-C7C7FA8853-L000021](DEPLOY_RAILWAY_AR.md#L21) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 22 | [SRC-C7C7FA8853-L000022](DEPLOY_RAILWAY_AR.md#L22) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 23 | [SRC-C7C7FA8853-L000023](DEPLOY_RAILWAY_AR.md#L23) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L27) | عنوان Markdown (H2) | الحماية | 27 | [SRC-C7C7FA8853-L000027](DEPLOY_RAILWAY_AR.md#L27) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L35) | عنوان Markdown (H2) | حدود الإنتاج الحالية | 35 | [SRC-C7C7FA8853-L000035](DEPLOY_RAILWAY_AR.md#L35) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L43) | عنوان Markdown (H2) | إعادة النشر | 43 | [SRC-C7C7FA8853-L000043](DEPLOY_RAILWAY_AR.md#L43) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على Render Free — دليل عربي | 1 | [SRC-D57B0BB030-L000001](DEPLOY_RENDER_AR.md#L1) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L4) | عنوان Markdown (H2) | ما الذي أُعدّ في المستودع؟ | 4 | [SRC-D57B0BB030-L000004](DEPLOY_RENDER_AR.md#L4) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 9 | [SRC-D57B0BB030-L000009](DEPLOY_RENDER_AR.md#L9) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 10 | [SRC-D57B0BB030-L000010](DEPLOY_RENDER_AR.md#L10) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L13) | عنوان Markdown (H2) | خطوات النشر | 13 | [SRC-D57B0BB030-L000013](DEPLOY_RENDER_AR.md#L13) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L24) | عنوان Markdown (H2) | توليد رمز الوصول | 24 | [SRC-D57B0BB030-L000024](DEPLOY_RENDER_AR.md#L24) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L34) | عنوان Markdown (H2) | حدود النسخة المجانية | 34 | [SRC-D57B0BB030-L000034](DEPLOY_RENDER_AR.md#L34) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 42 | [SRC-D57B0BB030-L000042](DEPLOY_RENDER_AR.md#L42) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L44) | عنوان Markdown (H2) | اختبار التشغيل الحي | 44 | [SRC-D57B0BB030-L000044](DEPLOY_RENDER_AR.md#L44) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 47 | [SRC-D57B0BB030-L000047](DEPLOY_RENDER_AR.md#L47) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L50) | عنوان Markdown (H2) | إذا فشل النشر | 50 | [SRC-D57B0BB030-L000050](DEPLOY_RENDER_AR.md#L50) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 56 | [SRC-D57B0BB030-L000056](DEPLOY_RENDER_AR.md#L56) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 59 | [SRC-D57B0BB030-L000059](DEPLOY_RENDER_AR.md#L59) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على SnapDeploy Free — دليل عربي | 1 | [SRC-51D44BE378-L000001](DEPLOY_SNAPDEPLOY_AR.md#L1) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L4) | عنوان Markdown (H2) | حدود الخطة المجانية — راجعها قبل النشر | 4 | [SRC-51D44BE378-L000004](DEPLOY_SNAPDEPLOY_AR.md#L4) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L15) | عنوان Markdown (H2) | 1. إنشاء الحساب وربط GitHub | 15 | [SRC-51D44BE378-L000015](DEPLOY_SNAPDEPLOY_AR.md#L15) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L24) | عنوان Markdown (H2) | 2. ضبط متغيرات البيئة والأسرار | 24 | [SRC-51D44BE378-L000024](DEPLOY_SNAPDEPLOY_AR.md#L24) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 33 | [SRC-51D44BE378-L000033](DEPLOY_SNAPDEPLOY_AR.md#L33) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 34 | [SRC-51D44BE378-L000034](DEPLOY_SNAPDEPLOY_AR.md#L34) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 35 | [SRC-51D44BE378-L000035](DEPLOY_SNAPDEPLOY_AR.md#L35) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 45 | [SRC-51D44BE378-L000045](DEPLOY_SNAPDEPLOY_AR.md#L45) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L46) | عنوان Markdown (H2) | 3. النشر الأول | 46 | [SRC-51D44BE378-L000046](DEPLOY_SNAPDEPLOY_AR.md#L46) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L54) | عنوان Markdown (H2) | 4. اختبار Omarai من الهاتف | 54 | [SRC-51D44BE378-L000054](DEPLOY_SNAPDEPLOY_AR.md#L54) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L63) | عنوان Markdown (H2) | 5. اختبار القبول الآلي الاختياري | 63 | [SRC-51D44BE378-L000063](DEPLOY_SNAPDEPLOY_AR.md#L63) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L70) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 70 | [SRC-51D44BE378-L000070](DEPLOY_SNAPDEPLOY_AR.md#L70) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L75) | عنوان Markdown (H2) | القيود الحالية التي لا يحلها النشر | 75 | [SRC-51D44BE378-L000075](DEPLOY_SNAPDEPLOY_AR.md#L75) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L83) | عنوان Markdown (H2) | روابط مرجعية | 83 | [SRC-51D44BE378-L000083](DEPLOY_SNAPDEPLOY_AR.md#L83) |
+| [docs/generate_index.py](generate_index.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_DIRECTORIES | 20 | [SRC-E599346ABE-L000020](generate_index.py#L20) |
+| [docs/generate_index.py](generate_index.py#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_FILENAMES | 41 | [SRC-E599346ABE-L000041](generate_index.py#L41) |
+| [docs/generate_index.py](generate_index.py#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_DIRECTORY_NAMES | 68 | [SRC-E599346ABE-L000068](generate_index.py#L68) |
+| [docs/generate_index.py](generate_index.py#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_NAME_RE | 77 | [SRC-E599346ABE-L000077](generate_index.py#L77) |
+| [docs/generate_index.py](generate_index.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_CONFIG_SUFFIXES | 81 | [SRC-E599346ABE-L000081](generate_index.py#L81) |
+| [docs/generate_index.py](generate_index.py#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_SUFFIXES | 84 | [SRC-E599346ABE-L000084](generate_index.py#L84) |
+| [docs/generate_index.py](generate_index.py#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_INDEXED_TEXT_BYTES | 97 | [SRC-E599346ABE-L000097](generate_index.py#L97) |
+| [docs/generate_index.py](generate_index.py#L98) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_DESCRIPTION_LENGTH | 98 | [SRC-E599346ABE-L000098](generate_index.py#L98) |
+| [docs/generate_index.py](generate_index.py#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_RELATIVE_PATH | 99 | [SRC-E599346ABE-L000099](generate_index.py#L99) |
+| [docs/generate_index.py](generate_index.py#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 99 | [SRC-E599346ABE-L000099](generate_index.py#L99) |
+| [docs/generate_index.py](generate_index.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 100 | [SRC-E599346ABE-L000100](generate_index.py#L100) |
+| [docs/generate_index.py](generate_index.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX_RELATIVE_PATH | 100 | [SRC-E599346ABE-L000100](generate_index.py#L100) |
+| [docs/generate_index.py](generate_index.py#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_OUTPUT_PATHS | 101 | [SRC-E599346ABE-L000101](generate_index.py#L101) |
+| [docs/generate_index.py](generate_index.py#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGES_DIR | 102 | [SRC-E599346ABE-L000102](generate_index.py#L102) |
+| [docs/generate_index.py](generate_index.py#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGE_SIZE | 103 | [SRC-E599346ABE-L000103](generate_index.py#L103) |
+| [docs/generate_index.py](generate_index.py#L104) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGE_RE | 104 | [SRC-E599346ABE-L000104](generate_index.py#L104) |
+| [docs/generate_index.py](generate_index.py#L106) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PYTHON_EXTENSIONS | 106 | [SRC-E599346ABE-L000106](generate_index.py#L106) |
+| [docs/generate_index.py](generate_index.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JAVASCRIPT_EXTENSIONS | 107 | [SRC-E599346ABE-L000107](generate_index.py#L107) |
+| [docs/generate_index.py](generate_index.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_EXTENSIONS | 108 | [SRC-E599346ABE-L000108](generate_index.py#L108) |
+| [docs/generate_index.py](generate_index.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONFIG_EXTENSIONS | 109 | [SRC-E599346ABE-L000109](generate_index.py#L109) |
+| [docs/generate_index.py](generate_index.py#L110) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TEXT_SCAN_EXTENSIONS | 110 | [SRC-E599346ABE-L000110](generate_index.py#L110) |
+| [docs/generate_index.py](generate_index.py#L118) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_IDENTIFIER | 118 | [SRC-E599346ABE-L000118](generate_index.py#L118) |
+| [docs/generate_index.py](generate_index.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_FUNCTION_RE | 119 | [SRC-E599346ABE-L000119](generate_index.py#L119) |
+| [docs/generate_index.py](generate_index.py#L122) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_CLASS_RE | 122 | [SRC-E599346ABE-L000122](generate_index.py#L122) |
+| [docs/generate_index.py](generate_index.py#L123) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_ARROW_ASSIGNMENT_RE | 123 | [SRC-E599346ABE-L000123](generate_index.py#L123) |
+| [docs/generate_index.py](generate_index.py#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_FUNCTION_ASSIGNMENT_RE | 127 | [SRC-E599346ABE-L000127](generate_index.py#L127) |
+| [docs/generate_index.py](generate_index.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_VARIABLE_RE | 130 | [SRC-E599346ABE-L000130](generate_index.py#L130) |
+| [docs/generate_index.py](generate_index.py#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_ATTRIBUTE_RE | 131 | [SRC-E599346ABE-L000131](generate_index.py#L131) |
+| [docs/generate_index.py](generate_index.py#L135) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_SCRIPT_RE | 135 | [SRC-E599346ABE-L000135](generate_index.py#L135) |
+| [docs/generate_index.py](generate_index.py#L136) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_STYLE_RE | 136 | [SRC-E599346ABE-L000136](generate_index.py#L136) |
+| [docs/generate_index.py](generate_index.py#L137) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_COMMENT_RE | 137 | [SRC-E599346ABE-L000137](generate_index.py#L137) |
+| [docs/generate_index.py](generate_index.py#L138) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_CUSTOM_PROPERTY_RE | 138 | [SRC-E599346ABE-L000138](generate_index.py#L138) |
+| [docs/generate_index.py](generate_index.py#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_CLASS_RE | 139 | [SRC-E599346ABE-L000139](generate_index.py#L139) |
+| [docs/generate_index.py](generate_index.py#L140) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_ID_RE | 140 | [SRC-E599346ABE-L000140](generate_index.py#L140) |
+| [docs/generate_index.py](generate_index.py#L141) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SHELL_FUNCTION_RE | 141 | [SRC-E599346ABE-L000141](generate_index.py#L141) |
+| [docs/generate_index.py](generate_index.py#L145) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MARKDOWN_HEADING_RE | 145 | [SRC-E599346ABE-L000145](generate_index.py#L145) |
+| [docs/generate_index.py](generate_index.py#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YAML_KEY_RE | 146 | [SRC-E599346ABE-L000146](generate_index.py#L146) |
+| [docs/generate_index.py](generate_index.py#L147) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOML_KEY_RE | 147 | [SRC-E599346ABE-L000147](generate_index.py#L147) |
+| [docs/generate_index.py](generate_index.py#L148) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOML_SECTION_RE | 148 | [SRC-E599346ABE-L000148](generate_index.py#L148) |
+| [docs/generate_index.py](generate_index.py#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JSON_KEY_RE | 149 | [SRC-E599346ABE-L000149](generate_index.py#L149) |
+| [docs/generate_index.py](generate_index.py#L150) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INI_SECTION_RE | 150 | [SRC-E599346ABE-L000150](generate_index.py#L150) |
+| [docs/generate_index.py](generate_index.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INI_KEY_RE | 151 | [SRC-E599346ABE-L000151](generate_index.py#L151) |
+| [docs/generate_index.py](generate_index.py#L152) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_RE | 152 | [SRC-E599346ABE-L000152](generate_index.py#L152) |
+| [docs/generate_index.py](generate_index.py#L153) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_PATH_RE | 153 | [SRC-E599346ABE-L000153](generate_index.py#L153) |
+| [docs/generate_index.py](generate_index.py#L154) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FINDING_MARKER_RE | 154 | [SRC-E599346ABE-L000154](generate_index.py#L154) |
+| [docs/generate_index.py](generate_index.py#L808) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 808 | [SRC-E599346ABE-L000808](generate_index.py#L808) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | عنوان Markdown (H1) | قائمة قبول Omarai قبل التشغيل العام | 1 | [SRC-6E35221BFA-L000001](GO_LIVE_CHECKLIST_AR.md#L1) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 5 | [SRC-6E35221BFA-L000005](GO_LIVE_CHECKLIST_AR.md#L5) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L6) | عنوان Markdown (H2) | إعداد الاستضافة | 6 | [SRC-6E35221BFA-L000006](GO_LIVE_CHECKLIST_AR.md#L6) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 9 | [SRC-6E35221BFA-L000009](GO_LIVE_CHECKLIST_AR.md#L9) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 12 | [SRC-6E35221BFA-L000012](GO_LIVE_CHECKLIST_AR.md#L12) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L14) | عنوان Markdown (H2) | اختبار قبول حي | 14 | [SRC-6E35221BFA-L000014](GO_LIVE_CHECKLIST_AR.md#L14) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 17 | [SRC-6E35221BFA-L000017](GO_LIVE_CHECKLIST_AR.md#L17) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L20) | عنوان Markdown (H2) | شروط النجاح | 20 | [SRC-6E35221BFA-L000020](GO_LIVE_CHECKLIST_AR.md#L20) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L28) | عنوان Markdown (H2) | اختبار يدوي على Android | 28 | [SRC-6E35221BFA-L000028](GO_LIVE_CHECKLIST_AR.md#L28) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L32) | عنوان Markdown (H2) | حدود مهمة | 32 | [SRC-6E35221BFA-L000032](GO_LIVE_CHECKLIST_AR.md#L32) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدوده | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L7) | عنوان Markdown (H2) | Implemented in the repository | 7 | [SRC-C8EA754D73-L000007](IMPLEMENTATION_SCOPE.md#L7) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L18) | عنوان Markdown (H2) | Explicitly out of scope or not yet proven | 18 | [SRC-C8EA754D73-L000018](IMPLEMENTATION_SCOPE.md#L18) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L30) | عنوان Markdown (H2) | Operating assumptions | 30 | [SRC-C8EA754D73-L000030](IMPLEMENTATION_SCOPE.md#L30) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L37) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 37 | [SRC-C8EA754D73-L000037](IMPLEMENTATION_SCOPE.md#L37) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L38) | عنوان Markdown (H2) | Recommended next increments | 38 | [SRC-C8EA754D73-L000038](IMPLEMENTATION_SCOPE.md#L38) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L1) | عنوان Markdown (H1) | دليل فهرسة Omarai وسجل الهفوات | 1 | [SRC-401D6AACE1-L000001](INDEXING_AND_FINDINGS_GUIDE_AR.md#L1) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L5) | عنوان Markdown (H2) | 1. أين أبدأ؟ | 5 | [SRC-401D6AACE1-L000005](INDEXING_AND_FINDINGS_GUIDE_AR.md#L5) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 8 | [SRC-401D6AACE1-L000008](INDEXING_AND_FINDINGS_GUIDE_AR.md#L8) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 9 | [SRC-401D6AACE1-L000009](INDEXING_AND_FINDINGS_GUIDE_AR.md#L9) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 12 | [SRC-401D6AACE1-L000012](INDEXING_AND_FINDINGS_GUIDE_AR.md#L12) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L15) | عنوان Markdown (H2) | 2. البحث من الكمبيوتر أو Termux | 15 | [SRC-401D6AACE1-L000015](INDEXING_AND_FINDINGS_GUIDE_AR.md#L15) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L29) | عنوان Markdown (H2) | 3. كيف نسجل الهفوات المعروفة؟ | 29 | [SRC-401D6AACE1-L000029](INDEXING_AND_FINDINGS_GUIDE_AR.md#L29) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L35) | عنوان Markdown (H1) | TODO: DOC-INDEX-001 — توثيق الحالة المتبقية وخطوة إغلاقها. | 35 | [SRC-401D6AACE1-L000035](INDEXING_AND_FINDINGS_GUIDE_AR.md#L35) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L36) | عنوان Markdown (H1) | FIXME: SEC-001 — وصف قصير للمشكلة المثبتة والاختبار المطلوب. | 36 | [SRC-401D6AACE1-L000036](INDEXING_AND_FINDINGS_GUIDE_AR.md#L36) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L37) | عنوان Markdown (H1) | REVIEW: EVD-001 — مراجعة دليل الاستشهاد قبل اعتماد هذا المسار. | 37 | [SRC-401D6AACE1-L000037](INDEXING_AND_FINDINGS_GUIDE_AR.md#L37) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L43) | عنوان Markdown (H2) | 4. ما الذي يدخل الفهرس وما حدوده؟ | 43 | [SRC-401D6AACE1-L000043](INDEXING_AND_FINDINGS_GUIDE_AR.md#L43) |
+| [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L49) | عنوان Markdown (H2) | 5. سياسة التحديث والموافقة | 49 | [SRC-401D6AACE1-L000049](INDEXING_AND_FINDINGS_GUIDE_AR.md#L49) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل الاستثناءات والقرارات المؤجلة | 1 | [SRC-21D5D044E2-L000001](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) | عنوان Markdown (H2) | 1. الغرض وقواعد الاستخدام | 8 | [SRC-21D5D044E2-L000008](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) | عنوان Markdown (H2) | 2. سجل الاستثناءات المعتمدة | 22 | [SRC-21D5D044E2-L000022](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L28) | عنوان Markdown (H2) | 3. مقترحات للمراجعة — ليست استثناءات معتمدة | 28 | [SRC-21D5D044E2-L000028](OMARAI_EXCEPTIONS_REGISTER_AR.md#L28) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L30) | عنوان Markdown (H3) | EX-PROP-001 — حصر النسخة على مشغّل واحد | 30 | [SRC-21D5D044E2-L000030](OMARAI_EXCEPTIONS_REGISTER_AR.md#L30) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L41) | عنوان Markdown (H3) | EX-PROP-002 — استمرارية البيانات في بيئة تجريبية قابلة للفقد | 41 | [SRC-21D5D044E2-L000041](OMARAI_EXCEPTIONS_REGISTER_AR.md#L41) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L52) | عنوان Markdown (H3) | EX-PROP-003 — عدم إعلان سعة/توافر غير مقاس | 52 | [SRC-21D5D044E2-L000052](OMARAI_EXCEPTIONS_REGISTER_AR.md#L52) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L63) | عنوان Markdown (H3) | EX-PROP-004 — الموصلات الاختيارية غير المتحققة | 63 | [SRC-21D5D044E2-L000063](OMARAI_EXCEPTIONS_REGISTER_AR.md#L63) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 69 | [SRC-21D5D044E2-L000069](OMARAI_EXCEPTIONS_REGISTER_AR.md#L69) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L73) | عنوان Markdown (H2) | 4. متطلبات لا يجوز اعتبارها مستثناة بهذا السجل | 73 | [SRC-21D5D044E2-L000073](OMARAI_EXCEPTIONS_REGISTER_AR.md#L73) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L87) | عنوان Markdown (H2) | 5. سجل قرارات المدير | 87 | [SRC-21D5D044E2-L000087](OMARAI_EXCEPTIONS_REGISTER_AR.md#L87) |
+| [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L91) | عنوان Markdown (H2) | 6. مراجعة دورية وإغلاق | 91 | [SRC-21D5D044E2-L000091](OMARAI_EXCEPTIONS_REGISTER_AR.md#L91) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | عنوان Markdown (H1) | Omarai — الدستور التأسيسي للهندسة والموثوقية والأمان والذكاء | 1 | [SRC-E73001D9AC-L000001](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 14 | [SRC-E73001D9AC-L000014](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 14 | [SRC-E73001D9AC-L000014](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 14 | [SRC-E73001D9AC-L000014](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 14 | [SRC-E73001D9AC-L000014](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L15) | عنوان Markdown (H2) | 0. كيف تُقرأ هذه الوثيقة؟ | 15 | [SRC-E73001D9AC-L000015](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L15) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L31) | عنوان Markdown (H1) | الجزء الأول — الرسالة العليا ومبادئ التصميم | 31 | [SRC-E73001D9AC-L000031](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L31) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L33) | عنوان Markdown (H2) | 1. الرؤية | 33 | [SRC-E73001D9AC-L000033](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L33) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L39) | عنوان Markdown (H2) | 2. المبادئ الحاكمة غير القابلة للتفاوض | 39 | [SRC-E73001D9AC-L000039](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L39) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L60) | عنوان Markdown (H2) | 3. الطموح الأقصى لا يعني تعقيدًا أقصى | 60 | [SRC-E73001D9AC-L000060](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L60) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L64) | عنوان Markdown (H3) | 3.1 قاعدة حاكمة لتنظيم القدرات والمهارات والوكلاء | 64 | [SRC-E73001D9AC-L000064](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L64) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L79) | عنوان Markdown (H1) | الجزء الثاني — حوكمة الخبراء والمراجعة متعددة التخصصات | 79 | [SRC-E73001D9AC-L000079](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L79) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L81) | عنوان Markdown (H2) | 4. مجالات الخبرة التي يجب تغطيتها | 81 | [SRC-E73001D9AC-L000081](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L81) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L106) | عنوان Markdown (H3) | 4.1 قاعدة المراجعة | 106 | [SRC-E73001D9AC-L000106](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L106) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L116) | عنوان Markdown (H1) | الجزء الثالث — المعمارية المنطقية المستهدفة | 116 | [SRC-E73001D9AC-L000116](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L116) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L118) | عنوان Markdown (H2) | 5. طبقات النظام وحدود الثقة | 118 | [SRC-E73001D9AC-L000118](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L118) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L122) | عنوان Markdown (H3) | الطبقة 1 — واجهة المستخدم وقنوات الإدخال | 122 | [SRC-E73001D9AC-L000122](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L122) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L129) | عنوان Markdown (H3) | الطبقة 2 — حافة الخدمة وواجهة API | 129 | [SRC-E73001D9AC-L000129](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L129) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L137) | عنوان Markdown (H3) | الطبقة 3 — الهوية والمستأجرون والصلاحيات | 137 | [SRC-E73001D9AC-L000137](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L137) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L144) | عنوان Markdown (H3) | الطبقة 4 — بوابة السياسات وإساءة الاستخدام | 144 | [SRC-E73001D9AC-L000144](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L144) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L152) | عنوان Markdown (H3) | الطبقة 5 — منسق الطلبات (Request Orchestrator) | 152 | [SRC-E73001D9AC-L000152](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L152) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L162) | عنوان Markdown (H3) | الطبقة 6 — فهم النية والتخطيط | 162 | [SRC-E73001D9AC-L000162](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L162) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L174) | عنوان Markdown (H3) | الطبقة 7 — طبقة البحث وجلب الصفحات | 174 | [SRC-E73001D9AC-L000174](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L174) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L184) | عنوان Markdown (H3) | الطبقة 8 — بوابة الأدوات وسجل قدراتها | 184 | [SRC-E73001D9AC-L000184](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L184) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L199) | عنوان Markdown (H3) | الطبقة 9 — تنفيذ الأدوات والعزل | 199 | [SRC-E73001D9AC-L000199](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L199) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L213) | عنوان Markdown (H3) | الطبقة 10 — توحيد الأدلة والمصادر (Evidence Ledger) | 213 | [SRC-E73001D9AC-L000213](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L213) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L222) | عنوان Markdown (H3) | الطبقة 11 — التحقق من الإجابة والنتائج | 222 | [SRC-E73001D9AC-L000222](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L222) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L231) | عنوان Markdown (H3) | الطبقة 12 — الذاكرة والتخزين المؤقت | 231 | [SRC-E73001D9AC-L000231](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L231) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L242) | عنوان Markdown (H3) | الطبقة 13 — الطوابير والعمال والمهام الطويلة | 242 | [SRC-E73001D9AC-L000242](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L242) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L252) | عنوان Markdown (H3) | الطبقة 14 — المراقبة والتدقيق والاستجابة للحوادث | 252 | [SRC-E73001D9AC-L000252](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L252) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L262) | عنوان Markdown (H3) | الطبقة 15 — التكوين والأسرار وسلسلة التوريد | 262 | [SRC-E73001D9AC-L000262](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L262) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L276) | عنوان Markdown (H1) | الجزء الرابع — الأمن السيبراني ونموذج التهديدات | 276 | [SRC-E73001D9AC-L000276](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L276) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L278) | عنوان Markdown (H2) | 6. نموذج التهديد (Threat Model) | 278 | [SRC-E73001D9AC-L000278](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L278) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L282) | عنوان Markdown (H3) | 6.1 حماية الطلبات وواجهات API | 282 | [SRC-E73001D9AC-L000282](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L282) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L292) | عنوان Markdown (H3) | 6.2 حماية وكيل البحث من SSRF والوصول إلى الشبكة الداخلية | 292 | [SRC-E73001D9AC-L000292](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L292) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L305) | عنوان Markdown (H3) | 6.3 حماية النماذج والوكلاء من حقن التعليمات | 305 | [SRC-E73001D9AC-L000305](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L305) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L315) | عنوان Markdown (H3) | 6.4 حماية البيانات والخصوصية | 315 | [SRC-E73001D9AC-L000315](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L315) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L325) | عنوان Markdown (H3) | 6.5 الصلاحيات والإجراءات ذات الأثر | 325 | [SRC-E73001D9AC-L000325](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L325) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L333) | عنوان Markdown (H3) | 6.6 التوافر ومقاومة استنزاف الموارد | 333 | [SRC-E73001D9AC-L000333](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L333) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L342) | عنوان Markdown (H3) | 6.7 الاستجابة الأمنية | 342 | [SRC-E73001D9AC-L000342](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L342) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L350) | عنوان Markdown (H3) | 6.8 ضمانات الأمن السيبراني الحاكمة للمهارات وسير العمل والوكلاء | 350 | [SRC-E73001D9AC-L000350](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L350) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L366) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 366 | [SRC-E73001D9AC-L000366](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L366) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L371) | عنوان Markdown (H1) | الجزء الخامس — الأداء، التزامن، السعة والتوسع | 371 | [SRC-E73001D9AC-L000371](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L371) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L373) | عنوان Markdown (H2) | 7. استراتيجية التحمل والسرعة | 373 | [SRC-E73001D9AC-L000373](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L373) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L375) | عنوان Markdown (H3) | 7.1 ميزانية لكل طلب | 375 | [SRC-E73001D9AC-L000375](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L375) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L388) | عنوان Markdown (H3) | 7.2 تحسين المسارات | 388 | [SRC-E73001D9AC-L000388](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L388) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L399) | عنوان Markdown (H3) | 7.3 حماية التنفيذ المتزامن | 399 | [SRC-E73001D9AC-L000399](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L399) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L407) | عنوان Markdown (H3) | 7.4 المرونة عند تعطل الموفرات | 407 | [SRC-E73001D9AC-L000407](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L407) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L417) | عنوان Markdown (H3) | 7.5 التوسع | 417 | [SRC-E73001D9AC-L000417](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L417) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L429) | عنوان Markdown (H2) | 8. مؤشرات الأداء والاعتمادية | 429 | [SRC-E73001D9AC-L000429](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L429) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L446) | عنوان Markdown (H3) | 8.1 أهداف الخدمة (SLOs) | 446 | [SRC-E73001D9AC-L000446](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L446) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L455) | عنوان Markdown (H1) | الجزء السادس — جودة الإجابات والذكاء العملي | 455 | [SRC-E73001D9AC-L000455](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L455) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L457) | عنوان Markdown (H2) | 9. عقد الإجابة | 457 | [SRC-E73001D9AC-L000457](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L457) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L473) | عنوان Markdown (H2) | 10. تحقق الادعاءات وجودة المصادر | 473 | [SRC-E73001D9AC-L000473](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L473) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L482) | عنوان Markdown (H2) | 11. التقييم والتحسين | 482 | [SRC-E73001D9AC-L000482](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L482) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L494) | عنوان Markdown (H1) | الجزء السابع — دورة التطوير والإصدارات | 494 | [SRC-E73001D9AC-L000494](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L494) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L496) | عنوان Markdown (H2) | 12. قواعد التطوير الآمن | 496 | [SRC-E73001D9AC-L000496](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L496) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L509) | عنوان Markdown (H2) | 13. طبقات الاختبار المطلوبة | 509 | [SRC-E73001D9AC-L000509](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L509) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L511) | عنوان Markdown (H3) | T0 — فحوص محلية أساسية | 511 | [SRC-E73001D9AC-L000511](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L511) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L514) | عنوان Markdown (H3) | T1 — اختبارات الوحدة | 514 | [SRC-E73001D9AC-L000514](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L514) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L517) | عنوان Markdown (H3) | T2 — اختبارات العقود والتكامل | 517 | [SRC-E73001D9AC-L000517](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L517) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L520) | عنوان Markdown (H3) | T3 — اختبارات النظام من طرف إلى طرف | 520 | [SRC-E73001D9AC-L000520](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L520) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L523) | عنوان Markdown (H3) | T4 — اختبارات التزامن والعزل | 523 | [SRC-E73001D9AC-L000523](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L523) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L526) | عنوان Markdown (H3) | T5 — اختبارات الأداء والحمل | 526 | [SRC-E73001D9AC-L000526](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L526) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L529) | عنوان Markdown (H3) | T6 — اختبارات الفشل والتعافي | 529 | [SRC-E73001D9AC-L000529](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L529) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L532) | عنوان Markdown (H3) | T7 — اختبارات الأمن والخصوصية | 532 | [SRC-E73001D9AC-L000532](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L532) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L535) | عنوان Markdown (H3) | T8 — تقييم جودة الإجابة | 535 | [SRC-E73001D9AC-L000535](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L535) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L540) | عنوان Markdown (H2) | 14. بوابات إصدار مقترحة | 540 | [SRC-E73001D9AC-L000540](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L540) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L552) | عنوان Markdown (H1) | الجزء الثامن — تشغيل الخدمة والتعافي | 552 | [SRC-E73001D9AC-L000552](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L552) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L554) | عنوان Markdown (H2) | 15. الجاهزية والتشخيص | 554 | [SRC-E73001D9AC-L000554](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L554) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L563) | عنوان Markdown (H2) | 16. النسخ الاحتياطي والاستعادة | 563 | [SRC-E73001D9AC-L000563](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L563) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L572) | عنوان Markdown (H2) | 17. خطة التدهور الآمن | 572 | [SRC-E73001D9AC-L000572](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L572) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L584) | عنوان Markdown (H1) | الجزء التاسع — خارطة التنفيذ والاعتماد | 584 | [SRC-E73001D9AC-L000584](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L584) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L586) | عنوان Markdown (H2) | 18. ترتيب التنفيذ بحسب المخاطر والاعتماديات | 586 | [SRC-E73001D9AC-L000586](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L586) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L636) | عنوان Markdown (H3) | ترتيب توسيع القدرات والمهارات والوكلاء | 636 | [SRC-E73001D9AC-L000636](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L636) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) | عنوان Markdown (H1) | الجزء العاشر — معمارية التوسع والتطوير المستمر | 647 | [SRC-E73001D9AC-L000647](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L651) | عنوان Markdown (H2) | 19. النتيجة المعمارية المستهدفة | 651 | [SRC-E73001D9AC-L000651](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L651) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L668) | عنوان Markdown (H2) | 20. نمط البداية: Modular Monolith بحدود واضحة | 668 | [SRC-E73001D9AC-L000668](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L668) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L683) | عنوان Markdown (H3) | متى نفصل الوحدة إلى خدمة مستقلة؟ | 683 | [SRC-E73001D9AC-L000683](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L683) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L694) | عنوان Markdown (H2) | 21. حدود المجال والواجهات (Domain Boundaries, Ports & Adapters) | 694 | [SRC-E73001D9AC-L000694](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L694) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L708) | عنوان Markdown (H2) | 22. عقود الأدوات والقدرات والمهارات وسير العمل والوكلاء والإضافات | 708 | [SRC-E73001D9AC-L000708](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L708) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L746) | عنوان Markdown (H2) | 23. إصدار واجهات API وعقود الرسائل | 746 | [SRC-E73001D9AC-L000746](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L746) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L758) | عنوان Markdown (H2) | 24. تطور مخططات البيانات والترحيلات | 758 | [SRC-E73001D9AC-L000758](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L758) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L772) | عنوان Markdown (H2) | 25. حالة الطلب والتوزيع والتوسع الأفقي | 772 | [SRC-E73001D9AC-L000772](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L772) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L787) | عنوان Markdown (H2) | 26. اختبارات اللياقة المعمارية (Architecture Fitness Functions) | 787 | [SRC-E73001D9AC-L000787](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L787) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L810) | عنوان Markdown (H2) | 27. إدارة الديون التقنية والتغيير المستمر | 810 | [SRC-E73001D9AC-L000810](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L810) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L823) | عنوان Markdown (H2) | 28. بوابة قبول التوسع والتطوير | 823 | [SRC-E73001D9AC-L000823](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L823) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L843) | عنوان Markdown (H1) | الجزء الحادي عشر — تعريف “مكتمل” وقرار تغيير المتطلبات | 843 | [SRC-E73001D9AC-L000843](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L843) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L845) | عنوان Markdown (H2) | 29. تعريف الإنجاز | 845 | [SRC-E73001D9AC-L000845](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L845) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L857) | عنوان Markdown (H2) | 30. سجل القرارات والاستثناءات | 857 | [SRC-E73001D9AC-L000857](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L857) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L872) | عنوان Markdown (H2) | 31. القاعدة النهائية | 872 | [SRC-E73001D9AC-L000872](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L872) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L878) | عنوان Markdown (H1) | مراجع معيارية خارجية للمراجعة الدورية | 878 | [SRC-E73001D9AC-L000878](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L878) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | عنوان Markdown (H1) | Omarai — خط الأساس الهندسي للمنصات العالمية واسعة النطاق | 1 | [SRC-D17CE3D12F-L000001](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 7 | [SRC-D17CE3D12F-L000007](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 7 | [SRC-D17CE3D12F-L000007](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L11) | عنوان Markdown (H2) | 0. حدود الوثيقة وكيفية استخدامها | 11 | [SRC-D17CE3D12F-L000011](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L11) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L17) | عنوان Markdown (H3) | 0.1 الكلمات الملزمة | 17 | [SRC-D17CE3D12F-L000017](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L17) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L27) | عنوان Markdown (H3) | 0.2 مبدأ الملاءمة ومنع التضخم المعماري | 27 | [SRC-D17CE3D12F-L000027](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L27) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L38) | عنوان Markdown (H1) | القسم الأول — المتطلبات المؤسسية والتصميمية | 38 | [SRC-D17CE3D12F-L000038](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L38) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L40) | عنوان Markdown (H2) | 1. تعريف المنتج وعقود السلوك | 40 | [SRC-D17CE3D12F-L000040](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L40) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L50) | عنوان Markdown (H2) | 2. نموذج الخدمة والملكية والمسؤولية | 50 | [SRC-D17CE3D12F-L000050](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L50) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L59) | عنوان Markdown (H2) | 3. مبادئ القرار المعماري | 59 | [SRC-D17CE3D12F-L000059](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L59) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L70) | عنوان Markdown (H1) | القسم الثاني — هندسة الخدمة الموثوقة (SRE) والاستعداد التشغيلي | 70 | [SRC-D17CE3D12F-L000070](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L70) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L72) | عنوان Markdown (H2) | 4. مؤشرات مستوى الخدمة SLI والأهداف SLO واتفاقيات SLA | 72 | [SRC-D17CE3D12F-L000072](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L72) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L82) | عنوان Markdown (H2) | 5. مراجعة الاستعداد للإنتاج (Production Readiness Review) | 82 | [SRC-D17CE3D12F-L000082](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L82) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L99) | عنوان Markdown (H2) | 6. إدارة الحوادث والمشكلات | 99 | [SRC-D17CE3D12F-L000099](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L99) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L109) | عنوان Markdown (H2) | 7. المرونة والتدهور الآمن | 109 | [SRC-D17CE3D12F-L000109](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L109) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L123) | عنوان Markdown (H1) | القسم الثالث — السعة والأداء والأنظمة الموزعة | 123 | [SRC-D17CE3D12F-L000123](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L123) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L125) | عنوان Markdown (H2) | 8. هندسة الأداء والسعة | 125 | [SRC-D17CE3D12F-L000125](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L125) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L138) | عنوان Markdown (H2) | 9. حدود الموارد والتوازن بين الإنصاف والتكلفة | 138 | [SRC-D17CE3D12F-L000138](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L138) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L149) | عنوان Markdown (H2) | 10. قرارات الأنظمة الموزعة | 149 | [SRC-D17CE3D12F-L000149](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L149) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L163) | عنوان Markdown (H1) | القسم الرابع — هندسة البيانات والخصوصية والهوية | 163 | [SRC-D17CE3D12F-L000163](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L163) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L165) | عنوان Markdown (H2) | 11. حوكمة البيانات وجودتها ودورة حياتها | 165 | [SRC-D17CE3D12F-L000165](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L165) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L178) | عنوان Markdown (H2) | 12. الهوية والمصادقة والتفويض | 178 | [SRC-D17CE3D12F-L000178](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L178) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L192) | عنوان Markdown (H2) | 13. العزل متعدد المستأجرين (Multi-tenancy) | 192 | [SRC-D17CE3D12F-L000192](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L192) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L206) | عنوان Markdown (H2) | 14. الخصوصية والموافقة والمتطلبات القانونية | 206 | [SRC-D17CE3D12F-L000206](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L206) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L221) | عنوان Markdown (H1) | القسم الخامس — أمن التطبيق وواجهات API وسلسلة التوريد | 221 | [SRC-D17CE3D12F-L000221](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L221) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L223) | عنوان Markdown (H2) | 15. دورة حياة التطوير الآمن (Secure SDLC) | 223 | [SRC-D17CE3D12F-L000223](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L223) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L236) | عنوان Markdown (H2) | 16. أمن واجهات API وحدود الشبكة | 236 | [SRC-D17CE3D12F-L000236](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L236) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L249) | عنوان Markdown (H2) | 17. إدارة الأسرار والتشفير والثقة | 249 | [SRC-D17CE3D12F-L000249](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L249) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L262) | عنوان Markdown (H2) | 18. أمن سلسلة توريد البرمجيات | 262 | [SRC-D17CE3D12F-L000262](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L262) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L268) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_TOKEN | 268 | [SRC-D17CE3D12F-L000268](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L268) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L277) | عنوان Markdown (H1) | القسم السادس — التسليم والتشغيل واستعادة الخدمة | 277 | [SRC-D17CE3D12F-L000277](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L277) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L279) | عنوان Markdown (H2) | 19. هندسة CI/CD وإدارة الإصدارات | 279 | [SRC-D17CE3D12F-L000279](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L279) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L294) | عنوان Markdown (H2) | 20. النسخ الاحتياطي والتعافي من الكوارث | 294 | [SRC-D17CE3D12F-L000294](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L294) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L307) | عنوان Markdown (H2) | 21. جاهزية التشغيل والمراقبة والتنبيه | 307 | [SRC-D17CE3D12F-L000307](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L307) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L322) | عنوان Markdown (H1) | القسم السابع — الواجهة وتجربة المستخدم وإمكانية الوصول | 322 | [SRC-D17CE3D12F-L000322](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L322) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L324) | عنوان Markdown (H2) | 22. الوصولية Accessibility والتوافق مع المتصفحات | 324 | [SRC-D17CE3D12F-L000324](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L324) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L337) | عنوان Markdown (H2) | 23. العربية والتدويل والاتجاه من اليمين إلى اليسار | 337 | [SRC-D17CE3D12F-L000337](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L337) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L350) | عنوان Markdown (H2) | 24. أداء الواجهة وتجربة الفشل | 350 | [SRC-D17CE3D12F-L000350](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L350) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L363) | عنوان Markdown (H1) | القسم الثامن — محرك البحث والمعرفة وجودة الإجابة | 363 | [SRC-D17CE3D12F-L000363](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L363) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L365) | عنوان Markdown (H2) | 25. جودة خط البحث والاسترجاع (Search/Retrieval Quality) | 365 | [SRC-D17CE3D12F-L000365](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L365) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L380) | عنوان Markdown (H2) | 26. إسناد الادعاءات والمعرفة وحدود اليقين | 380 | [SRC-D17CE3D12F-L000380](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L380) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L395) | عنوان Markdown (H1) | القسم التاسع — هندسة الذكاء الاصطناعي والوكلاء (LLMOps/AgentOps) | 395 | [SRC-D17CE3D12F-L000395](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L395) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L397) | عنوان Markdown (H2) | 27. فصل التخطيط والتفويض والتنفيذ والتحقق | 397 | [SRC-D17CE3D12F-L000397](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L397) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L410) | عنوان Markdown (H2) | 28. حقن التعليمات والبيانات غير الموثوقة | 410 | [SRC-D17CE3D12F-L000410](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L410) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L423) | عنوان Markdown (H2) | 29. تقييم النماذج والموجهات وتغييراتها (AI Evaluation) | 423 | [SRC-D17CE3D12F-L000423](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L423) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L436) | عنوان Markdown (H2) | 30. توجيه النماذج والموفرين والكلفة | 436 | [SRC-D17CE3D12F-L000436](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L436) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L449) | عنوان Markdown (H2) | 31. الأدوات والقدرات ذات الأثر | 449 | [SRC-D17CE3D12F-L000449](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L449) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L464) | عنوان Markdown (H1) | القسم العاشر — الاختبارات والجودة والتحسين | 464 | [SRC-D17CE3D12F-L000464](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L464) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L466) | عنوان Markdown (H2) | 32. مصفوفة الاختبارات | 466 | [SRC-D17CE3D12F-L000466](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L466) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L485) | عنوان Markdown (H2) | 33. جودة القياس والاختبار | 485 | [SRC-D17CE3D12F-L000485](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L485) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L498) | عنوان Markdown (H2) | 34. مراجعة الكود والتعاون مع الوكلاء | 498 | [SRC-D17CE3D12F-L000498](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L498) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L513) | عنوان Markdown (H1) | القسم الحادي عشر — التكلفة والاستدامة والاعتماد على الأطراف | 513 | [SRC-D17CE3D12F-L000513](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L513) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L515) | عنوان Markdown (H2) | 35. هندسة التكلفة (FinOps) | 515 | [SRC-D17CE3D12F-L000515](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L515) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L528) | عنوان Markdown (H2) | 36. الاستدامة وكفاءة الموارد | 528 | [SRC-D17CE3D12F-L000528](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L528) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L536) | عنوان Markdown (H2) | 37. الاعتمادية على الموردين وقابلية النقل | 536 | [SRC-D17CE3D12F-L000536](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L536) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L548) | عنوان Markdown (H1) | القسم الثاني عشر — تجربة المنتج والنمو القابل للقياس | 548 | [SRC-D17CE3D12F-L000548](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L548) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L550) | عنوان Markdown (H2) | 38. ملاحظات المستخدم والتحليلات والتجارب | 550 | [SRC-D17CE3D12F-L000550](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L550) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L563) | عنوان Markdown (H2) | 39. توثيق المنتج والتشغيل والتغيير | 563 | [SRC-D17CE3D12F-L000563](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L563) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L578) | عنوان Markdown (H1) | القسم الثالث عشر — النضج والأولويات ومعايير القبول | 578 | [SRC-D17CE3D12F-L000578](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L578) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L580) | عنوان Markdown (H2) | 40. مستويات النضج | 580 | [SRC-D17CE3D12F-L000580](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L580) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L592) | عنوان Markdown (H2) | 41. بوابة قبول تغيير مؤثر | 592 | [SRC-D17CE3D12F-L000592](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L592) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L613) | عنوان Markdown (H2) | 42. قائمة مراجعة الإصدار | 613 | [SRC-D17CE3D12F-L000613](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L613) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L635) | عنوان Markdown (H1) | القسم الرابع عشر — طبقات المنصة والبنية التحتية وحدود الاستخدام | 635 | [SRC-D17CE3D12F-L000635](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L635) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L637) | عنوان Markdown (H2) | 43. إدارة البنية التحتية والإعدادات ككود (IaC & Configuration Management) | 637 | [SRC-D17CE3D12F-L000637](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L637) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L652) | عنوان Markdown (H2) | 44. هندسة التخزين والاستعلامات والـ Cache | 652 | [SRC-D17CE3D12F-L000652](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L652) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L667) | عنوان Markdown (H2) | 45. الرسائل والأحداث والمهام غير المتزامنة | 667 | [SRC-D17CE3D12F-L000667](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L667) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L684) | عنوان Markdown (H2) | 46. حدود الشبكة وتقديم المحتوى والواجهات الطرفية | 684 | [SRC-D17CE3D12F-L000684](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L684) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L699) | عنوان Markdown (H2) | 47. مكافحة الإساءة والطلبات المؤتمتة واستنزاف الموارد | 699 | [SRC-D17CE3D12F-L000699](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L699) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L714) | عنوان Markdown (H2) | 48. تجربة المطوّر والمسارات القياسية الآمنة (Developer Experience / Paved Roads) | 714 | [SRC-D17CE3D12F-L000714](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L714) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L731) | عنوان Markdown (H2) | 49. الحوكمة القانونية والتراخيص وسياسة المصادر المفتوحة | 731 | [SRC-D17CE3D12F-L000731](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L731) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L746) | عنوان Markdown (H2) | 50. حالة الخدمة والتواصل والثقة مع المستخدم | 746 | [SRC-D17CE3D12F-L000746](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L746) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L759) | عنوان Markdown (H1) | القسم الخامس عشر — متطلبات هندسية عليا مكملة | 759 | [SRC-D17CE3D12F-L000759](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L759) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L763) | عنوان Markdown (H2) | 51. التفكير المنظومي وتحليل حدود الخدمة | 763 | [SRC-D17CE3D12F-L000763](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L763) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L776) | عنوان Markdown (H2) | 52. تحليل المخاطر والتهديدات وسيناريوهات الإساءة | 776 | [SRC-D17CE3D12F-L000776](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L776) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L789) | عنوان Markdown (H2) | 53. Zero Trust وهوية المكونات والاتصالات الداخلية | 789 | [SRC-D17CE3D12F-L000789](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L789) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L804) | عنوان Markdown (H2) | 54. التوافر الجغرافي وتعدد المناطق وتوطين البيانات | 804 | [SRC-D17CE3D12F-L000804](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L804) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L819) | عنوان Markdown (H2) | 55. هندسة الفشل وتحليل الأوضاع والآثار (FMEA / Fault Tree) | 819 | [SRC-D17CE3D12F-L000819](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L819) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L832) | عنوان Markdown (H2) | 56. دورة حياة API والحوكمة التعاقدية | 832 | [SRC-D17CE3D12F-L000832](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L832) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L845) | عنوان Markdown (H2) | 57. دورة حياة فهرس البحث والاسترجاع والمحتوى | 845 | [SRC-D17CE3D12F-L000845](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L845) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L858) | عنوان Markdown (H2) | 58. حوكمة دورة حياة النموذج والبيانات والـ prompts | 858 | [SRC-D17CE3D12F-L000858](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L858) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L871) | عنوان Markdown (H2) | 59. انحراف الجودة بعد النشر والمراقبة المستمرة للذكاء الاصطناعي | 871 | [SRC-D17CE3D12F-L000871](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L871) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L884) | عنوان Markdown (H2) | 60. البيانات الاصطناعية ومجموعات الاختبار وحماية بيانات الإنتاج | 884 | [SRC-D17CE3D12F-L000884](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L884) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L897) | عنوان Markdown (H2) | 61. إدارة التغيير والطرح التدريجي والتجارب | 897 | [SRC-D17CE3D12F-L000897](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L897) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L910) | عنوان Markdown (H2) | 62. إدارة الثغرات والإفصاح الأمني ودورة الإصلاح | 910 | [SRC-D17CE3D12F-L000910](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L910) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L923) | عنوان Markdown (H2) | 63. إدارة الاستمرارية المعرفية والفريق البشري | 923 | [SRC-D17CE3D12F-L000923](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L923) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L936) | عنوان Markdown (H2) | 64. قابلية النقل وتجنب الارتباط القاتل بمزود (Portability / Exit Strategy) | 936 | [SRC-D17CE3D12F-L000936](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L936) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L949) | عنوان Markdown (H2) | 65. حوكمة المعايير والامتثال دون ادعاء الشهادة | 949 | [SRC-D17CE3D12F-L000949](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L949) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L962) | عنوان Markdown (H2) | 66. نمط التشغيل منخفض الموارد والعمل المحدود عند الانقطاع | 962 | [SRC-D17CE3D12F-L000962](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L962) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L979) | عنوان Markdown (H1) | القسم السادس عشر — خريطة المرجعيات الخارجية | 979 | [SRC-D17CE3D12F-L000979](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L979) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L983) | عنوان Markdown (H2) | أطر المعمارية والتشغيل | 983 | [SRC-D17CE3D12F-L000983](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L983) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L991) | عنوان Markdown (H2) | الأمن والخصوصية وسلسلة التوريد | 991 | [SRC-D17CE3D12F-L000991](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L991) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1003) | عنوان Markdown (H2) | الرصد والوصولية والتكلفة | 1003 | [SRC-D17CE3D12F-L001003](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1003) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1008) | عنوان Markdown (H2) | الذكاء الاصطناعي وتقييم المخاطر | 1008 | [SRC-D17CE3D12F-L001008](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1008) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1018) | عنوان Markdown (H3) | قاعدة استخدام المراجع | 1018 | [SRC-D17CE3D12F-L001018](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1018) |
+| [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1028) | عنوان Markdown (H1) | الخلاصة الحاكمة | 1028 | [SRC-D17CE3D12F-L001028](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1028) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | عنوان Markdown (H1) | Omarai — تسوية الأدلة بعد دمج الإصلاحات الأولية | 1 | [SRC-89BEE4CE47-L000001](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L7) | عنوان Markdown (H2) | 1. دلالات الحالة | 7 | [SRC-89BEE4CE47-L000007](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L7) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 14 | [SRC-89BEE4CE47-L000014](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L20) | عنوان Markdown (H2) | 2. خط الأساس وسلسلة الأدلة | 20 | [SRC-89BEE4CE47-L000020](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L20) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L22) | عنوان Markdown (H3) | نسخة المصدر | 22 | [SRC-89BEE4CE47-L000022](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L22) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L26) | عنوان Markdown (H3) | تغييرات مدمجة ذات صلة | 26 | [SRC-89BEE4CE47-L000026](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L26) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L36) | عنوان Markdown (H3) | تغييرات وفحوص مفتوحة أو بديلة | 36 | [SRC-89BEE4CE47-L000036](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L36) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L48) | عنوان Markdown (H2) | 3. تسوية أهم المتطلبات | 48 | [SRC-89BEE4CE47-L000048](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L48) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L71) | عنوان Markdown (H2) | 4. ماذا أُنجز في مسار التشغيل خلال هذه الجولة؟ | 71 | [SRC-89BEE4CE47-L000071](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L71) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L73) | عنوان Markdown (H3) | M-01 — قراءة جسم طلب API | 73 | [SRC-89BEE4CE47-L000073](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L73) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) | عنوان Markdown (H3) | M-02 — الميزانية والتزامن | 79 | [SRC-89BEE4CE47-L000079](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L85) | عنوان Markdown (H3) | M-03/M-04 — سجل الأدلة والاستثناءات | 85 | [SRC-89BEE4CE47-L000085](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L85) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L89) | عنوان Markdown (H3) | M-05 — النسخ والاستعادة | 89 | [SRC-89BEE4CE47-L000089](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L89) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L93) | عنوان Markdown (H3) | M-06 — فصل دليل الاختبارات وقبول التكامل الحي | 93 | [SRC-89BEE4CE47-L000093](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L93) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L99) | عنوان Markdown (H3) | M-07 — قبول الاستضافة | 99 | [SRC-89BEE4CE47-L000099](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L99) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L103) | عنوان Markdown (H3) | M-08 — مراجعة نتيجة Grok ومراجعة مصدر مستقلة مبدئية | 103 | [SRC-89BEE4CE47-L000103](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L103) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L120) | عنوان Markdown (H2) | 5. بوابات الإغلاق | 120 | [SRC-89BEE4CE47-L000120](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L120) |
+| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L131) | عنوان Markdown (H2) | 6. حكم الحالة | 131 | [SRC-89BEE4CE47-L000131](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L131) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | عنوان Markdown (H1) | تدقيق Omarai التأسيسي — نتائج P0 من الكود والاختبارات | 1 | [SRC-855DA3B8BC-L000001](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 3 | [SRC-855DA3B8BC-L000003](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L3) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L14) | عنوان Markdown (H2) | 1. الحكم التنفيذي | 14 | [SRC-855DA3B8BC-L000014](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L14) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L39) | عنوان Markdown (H2) | 2. الأدلة التي تم فحصها | 39 | [SRC-855DA3B8BC-L000039](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L39) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L41) | عنوان Markdown (H3) | مرجع النسخة | 41 | [SRC-855DA3B8BC-L000041](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L41) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L51) | عنوان Markdown (H3) | نتائج CI المثبتة من GitHub Actions | 51 | [SRC-855DA3B8BC-L000051](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L51) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) | عنوان Markdown (H2) | 3. معنى الحالات المستخدمة | 65 | [SRC-855DA3B8BC-L000065](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L73) | عنوان Markdown (H2) | 4. أهم نتائج المخاطر — مرتبة حسب أثرها | 73 | [SRC-855DA3B8BC-L000073](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L73) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L75) | عنوان Markdown (H3) | A-01 — غياب حد عالمي للتوازي وميزانية زمنية موحدة للطلب | 75 | [SRC-855DA3B8BC-L000075](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L75) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 79 | [SRC-855DA3B8BC-L000079](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L79) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L84) | عنوان Markdown (H3) | A-02 — لا يوجد عزل بيانات لكل مستخدم/مستأجر | 84 | [SRC-855DA3B8BC-L000084](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L84) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 88 | [SRC-855DA3B8BC-L000088](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L88) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L93) | عنوان Markdown (H3) | A-03 — فحص الاستشهادات يثبت رقم المصدر، لا دعم الادعاء بصورة مستقلة | 93 | [SRC-855DA3B8BC-L000093](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L93) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L100) | عنوان Markdown (H3) | A-04 — تغطية اختبار SSRF أقل من قوة التصميم | 100 | [SRC-855DA3B8BC-L000100](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L100) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L109) | عنوان Markdown (H3) | A-05 — تهيئة Origin خلف الوكيل العكسي تحتاج تأكيدًا تشغيليًا | 109 | [SRC-855DA3B8BC-L000109](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L109) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 113 | [SRC-855DA3B8BC-L000113](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 115 | [SRC-855DA3B8BC-L000115](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) | عنوان Markdown (H3) | A-06 — رمز Bearer مشترك محفوظ في localStorage | 116 | [SRC-855DA3B8BC-L000116](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L123) | عنوان Markdown (H3) | A-07 — استمرارية قاعدة SQLite في بيئة النشر غير مثبتة | 123 | [SRC-855DA3B8BC-L000123](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L123) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L130) | عنوان Markdown (H2) | 5. سجل نتائج جميع متطلبات P0 (42 متطلبًا) | 130 | [SRC-855DA3B8BC-L000130](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L130) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L179) | عنوان Markdown (H2) | 6. ماذا نعدّ مثبتًا حاليًا، وماذا لا نعدّه مثبتًا؟ | 179 | [SRC-855DA3B8BC-L000179](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L179) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) | عنوان Markdown (H3) | مثبت ضمن نطاق محدود | 181 | [SRC-855DA3B8BC-L000181](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L188) | عنوان Markdown (H3) | استدلالي أو جزئي | 188 | [SRC-855DA3B8BC-L000188](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L188) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L196) | عنوان Markdown (H3) | غير معلوم أو غير مستوفى في النطاق الأوسع | 196 | [SRC-855DA3B8BC-L000196](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L196) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) | عنوان Markdown (H2) | 7. خطة إغلاق بالترتيب | 204 | [SRC-855DA3B8BC-L000204](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) | عنوان Markdown (H3) | Gate 1 — قبل توسيع الوصول العام | 206 | [SRC-855DA3B8BC-L000206](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) | عنوان Markdown (H3) | Gate 2 — تحديد نموذج المستخدمين | 212 | [SRC-855DA3B8BC-L000212](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L217) | عنوان Markdown (H3) | Gate 3 — استكمال اختبارات الأمن | 217 | [SRC-855DA3B8BC-L000217](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L217) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L223) | عنوان Markdown (H3) | Gate 4 — صدق الأدلة | 223 | [SRC-855DA3B8BC-L000223](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L223) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L229) | عنوان Markdown (H3) | Gate 5 — إثبات النشر والتخزين | 229 | [SRC-855DA3B8BC-L000229](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L229) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L235) | عنوان Markdown (H2) | 8. متى نسمح بالانتقال للمرحلة التالية؟ | 235 | [SRC-855DA3B8BC-L000235](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L235) |
+| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) | عنوان Markdown (H2) | 9. الخلاصة النهائية | 250 | [SRC-855DA3B8BC-L000250](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات الأساسية الأولي | 1 | [SRC-B9C3015420-L000001](OMARAI_REQUIREMENTS_REGISTER.md#L1) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 6 | [SRC-B9C3015420-L000006](OMARAI_REQUIREMENTS_REGISTER.md#L6) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L8) | عنوان Markdown (H2) | طريقة القراءة | 8 | [SRC-B9C3015420-L000008](OMARAI_REQUIREMENTS_REGISTER.md#L8) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_P0_CODING_AUDIT_2026 | 22 | [SRC-B9C3015420-L000022](OMARAI_REQUIREMENTS_REGISTER.md#L22) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 24 | [SRC-B9C3015420-L000024](OMARAI_REQUIREMENTS_REGISTER.md#L24) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 59 | [SRC-B9C3015420-L000059](OMARAI_REQUIREMENTS_REGISTER.md#L59) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 63 | [SRC-B9C3015420-L000063](OMARAI_REQUIREMENTS_REGISTER.md#L63) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L93) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 93 | [SRC-B9C3015420-L000093](OMARAI_REQUIREMENTS_REGISTER.md#L93) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L117) | عنوان Markdown (H2) | متطلبات معمارية إضافية: القدرات والمهارات وسير العمل والوكلاء | 117 | [SRC-B9C3015420-L000117](OMARAI_REQUIREMENTS_REGISTER.md#L117) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L133) | عنوان Markdown (H2) | متطلبات الأمن السيبراني الإضافية لمعمارية المهارات وسير العمل والوكلاء | 133 | [SRC-B9C3015420-L000133](OMARAI_REQUIREMENTS_REGISTER.md#L133) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L155) | عنوان Markdown (H2) | متطلبات فهرسة المستودع والتنقل إلى موضع المصدر | 155 | [SRC-B9C3015420-L000155](OMARAI_REQUIREMENTS_REGISTER.md#L155) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L165) | عنوان Markdown (H2) | كيفية استخدام هذا السجل في التنفيذ | 165 | [SRC-B9C3015420-L000165](OMARAI_REQUIREMENTS_REGISTER.md#L165) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L175) | عنوان Markdown (H2) | الحالة بعد تسوية الأدلة | 175 | [SRC-B9C3015420-L000175](OMARAI_REQUIREMENTS_REGISTER.md#L175) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات والتتبع والنضج وبوابات الاعتماد | 1 | [SRC-65551FB29F-L000001](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L12) | عنوان Markdown (H2) | 0. الغرض الأعلى | 12 | [SRC-65551FB29F-L000012](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L12) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L18) | عنوان Markdown (H2) | 1. مبادئ غير قابلة للتفاوض | 18 | [SRC-65551FB29F-L000018](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L18) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L35) | عنوان Markdown (H1) | الجزء الأول — الأدوار والخبرات التي يجب أن تمر بها المراجعة | 35 | [SRC-65551FB29F-L000035](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L35) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L39) | عنوان Markdown (H2) | 2. مصفوفة المراجعة متعددة التخصصات | 39 | [SRC-65551FB29F-L000039](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L39) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L76) | عنوان Markdown (H2) | 3. قواعد استخدام عدسات الخبرة | 76 | [SRC-65551FB29F-L000076](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L76) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L89) | عنوان Markdown (H1) | الجزء الثاني — خريطة الطبقات المنطقية للنظام | 89 | [SRC-65551FB29F-L000089](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L89) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L91) | عنوان Markdown (H2) | 4. المبدأ | 91 | [SRC-65551FB29F-L000091](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L91) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L95) | عنوان Markdown (H2) | 5. الطبقات المرجعية المقترحة | 95 | [SRC-65551FB29F-L000095](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L95) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L142) | عنوان Markdown (H2) | 5.1 خط أساس الأمن السيبراني للمراجعة | 142 | [SRC-65551FB29F-L000142](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L142) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L148) | عنوان Markdown (H2) | 5.2 التسلسل المرجعي لتوسيع القدرات | 148 | [SRC-65551FB29F-L000148](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L148) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L158) | عنوان Markdown (H1) | الجزء الثالث — تصنيف المتطلبات وتتبعها | 158 | [SRC-65551FB29F-L000158](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L158) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L160) | عنوان Markdown (H2) | 6. حالات المتطلب | 160 | [SRC-65551FB29F-L000160](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L160) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L171) | عنوان Markdown (H2) | 7. تصنيف الإلزام | 171 | [SRC-65551FB29F-L000171](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L171) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L179) | عنوان Markdown (H2) | 8. معرفات المتطلبات | 179 | [SRC-65551FB29F-L000179](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L179) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L211) | عنوان Markdown (H2) | 9. سجل التتبع الإلزامي | 211 | [SRC-65551FB29F-L000211](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L211) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L240) | عنوان Markdown (H1) | الجزء الرابع — تصنيف المخاطر والأولويات | 240 | [SRC-65551FB29F-L000240](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L240) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L242) | عنوان Markdown (H2) | 10. نموذج أولوية داخلي | 242 | [SRC-65551FB29F-L000242](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L242) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L252) | عنوان Markdown (H3) | قواعد الأولوية | 252 | [SRC-65551FB29F-L000252](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L252) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L260) | عنوان Markdown (H2) | 11. درجات الاستعجال | 260 | [SRC-65551FB29F-L000260](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L260) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L269) | عنوان Markdown (H2) | 12. متطلبات أساسية لا يجوز تأجيلها في المسارات التي تستخدمها | 269 | [SRC-65551FB29F-L000269](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L269) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L286) | عنوان Markdown (H1) | الجزء الخامس — مصفوفة ربط المجالات بالأدلة | 286 | [SRC-65551FB29F-L000286](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L286) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L288) | عنوان Markdown (H2) | 13. مصفوفة الدليل المطلوبة | 288 | [SRC-65551FB29F-L000288](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L288) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L313) | عنوان Markdown (H1) | الجزء السادس — بوابات التطوير والإطلاق | 313 | [SRC-65551FB29F-L000313](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L313) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L315) | عنوان Markdown (H2) | 14. بوابة A: تعريف التغيير | 315 | [SRC-65551FB29F-L000315](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L315) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L326) | عنوان Markdown (H2) | 15. بوابة B: التصميم | 326 | [SRC-65551FB29F-L000326](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L326) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L337) | عنوان Markdown (H2) | 16. بوابة C: التنفيذ | 337 | [SRC-65551FB29F-L000337](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L337) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L348) | عنوان Markdown (H2) | 17. بوابة D: التحقق | 348 | [SRC-65551FB29F-L000348](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L348) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L359) | عنوان Markdown (H2) | 18. بوابة E: الإصدار | 359 | [SRC-65551FB29F-L000359](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L359) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L370) | عنوان Markdown (H2) | 19. بوابة F: ما بعد الإصدار | 370 | [SRC-65551FB29F-L000370](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L370) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L383) | عنوان Markdown (H1) | الجزء السابع — خطة النضج المرحلية لـ Omarai | 383 | [SRC-65551FB29F-L000383](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L383) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L385) | عنوان Markdown (H2) | 20. المرحلة 0: تثبيت الحقيقة | 385 | [SRC-65551FB29F-L000385](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L385) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L399) | عنوان Markdown (H2) | 21. المرحلة 1: السلامة والحقيقة والحدود | 399 | [SRC-65551FB29F-L000399](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L399) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L412) | عنوان Markdown (H2) | 22. المرحلة 2: قابلية إعادة الاختبار والتشخيص | 412 | [SRC-65551FB29F-L000412](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L412) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L422) | عنوان Markdown (H2) | 23. المرحلة 3: ضبط التشغيل والتعافي | 422 | [SRC-65551FB29F-L000422](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L422) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L432) | عنوان Markdown (H2) | 24. المرحلة 4: تحسين الأداء والتوسع بالقياس | 432 | [SRC-65551FB29F-L000432](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L432) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L443) | عنوان Markdown (H2) | 25. المرحلة 5: نضج الذكاء الاصطناعي | 443 | [SRC-65551FB29F-L000443](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L443) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L453) | عنوان Markdown (H2) | 26. المرحلة 6: القدرات المؤسسية المشروطة | 453 | [SRC-65551FB29F-L000453](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L453) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L468) | عنوان Markdown (H1) | الجزء الثامن — تعريف النجاح ومراقبة اكتمال المتطلبات | 468 | [SRC-65551FB29F-L000468](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L468) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L470) | عنوان Markdown (H2) | 27. كيف نعرف أن منظومة المتطلبات نفسها ناجحة؟ | 470 | [SRC-65551FB29F-L000470](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L470) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L483) | عنوان Markdown (H2) | 28. نموذج سجل متطلب قابل للنسخ | 483 | [SRC-65551FB29F-L000483](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L483) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L501) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 501 | [SRC-65551FB29F-L000501](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L501) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L512) | عنوان Markdown (H2) | 29. سجل الاستثناء | 512 | [SRC-65551FB29F-L000512](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L512) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L525) | عنوان Markdown (H2) | 30. ملكية القرار النهائي | 525 | [SRC-65551FB29F-L000525](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L525) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L535) | عنوان Markdown (H1) | الجزء التاسع — خريطة المرجعيات | 535 | [SRC-65551FB29F-L000535](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L535) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L539) | عنوان Markdown (H2) | المعمارية والموثوقية | 539 | [SRC-65551FB29F-L000539](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L539) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L546) | عنوان Markdown (H2) | الأمن والهوية وسلسلة التوريد | 546 | [SRC-65551FB29F-L000546](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L546) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L554) | عنوان Markdown (H2) | الذكاء الاصطناعي والبيانات والرصد | 554 | [SRC-65551FB29F-L000554](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L554) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L560) | عنوان Markdown (H2) | تجربة المستخدم والاقتصاد | 560 | [SRC-65551FB29F-L000560](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L560) |
+| [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L568) | عنوان Markdown (H1) | القرار الحاكم | 568 | [SRC-65551FB29F-L000568](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L568) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | عنوان Markdown (H1) | Omarai — المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء | 1 | [SRC-0F910493E8-L000001](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 7 | [SRC-0F910493E8-L000007](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 7 | [SRC-0F910493E8-L000007](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 7 | [SRC-0F910493E8-L000007](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 7 | [SRC-0F910493E8-L000007](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L10) | عنوان Markdown (H2) | 0. كيفية استخدام هذه الوثيقة وحدودها | 10 | [SRC-0F910493E8-L000010](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L10) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L22) | عنوان Markdown (H3) | قاعدة عدم الفقد وعدم الانحراف | 22 | [SRC-0F910493E8-L000022](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L22) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L32) | عنوان Markdown (H1) | 1. القرار المعماري الحاكم | 32 | [SRC-0F910493E8-L000032](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L32) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L34) | عنوان Markdown (H2) | 1.1 الاتجاه | 34 | [SRC-0F910493E8-L000034](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L34) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L49) | عنوان Markdown (H2) | 1.2 لماذا هذا هو الخيار الافتراضي؟ | 49 | [SRC-0F910493E8-L000049](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L49) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L57) | عنوان Markdown (H2) | 1.3 ما الذي لا يتغير؟ | 57 | [SRC-0F910493E8-L000057](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L57) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L72) | عنوان Markdown (H1) | 2. المفاهيم التي يجب عدم الخلط بينها | 72 | [SRC-0F910493E8-L000072](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L72) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L76) | عنوان Markdown (H2) | 2.1 الأداة Tool | 76 | [SRC-0F910493E8-L000076](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L76) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L82) | عنوان Markdown (H2) | 2.2 القدرة Capability | 82 | [SRC-0F910493E8-L000082](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L82) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L88) | عنوان Markdown (H2) | 2.3 المهارة Skill | 88 | [SRC-0F910493E8-L000088](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L88) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L103) | عنوان Markdown (H2) | 2.4 سير العمل Workflow | 103 | [SRC-0F910493E8-L000103](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L103) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L109) | عنوان Markdown (H2) | 2.5 مواصفة المهمة TaskSpec | 109 | [SRC-0F910493E8-L000109](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L109) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L126) | عنوان Markdown (H2) | 2.6 ملف تعريف الوكيل Agent Profile | 126 | [SRC-0F910493E8-L000126](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L126) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L132) | عنوان Markdown (H2) | 2.7 الوكيل Agent | 132 | [SRC-0F910493E8-L000132](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L132) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L138) | عنوان Markdown (H2) | 2.8 الإضافة Plugin | 138 | [SRC-0F910493E8-L000138](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L138) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L144) | عنوان Markdown (H1) | 3. تدفق العمل القياسي للطلب | 144 | [SRC-0F910493E8-L000144](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L144) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L163) | عنوان Markdown (H2) | 3.1 حالات النهاية | 163 | [SRC-0F910493E8-L000163](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L163) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L169) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NEEDS_CLARIFICATION | 169 | [SRC-0F910493E8-L000169](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L169) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L170) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | POLICY_BLOCKED | 170 | [SRC-0F910493E8-L000170](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L170) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L177) | عنوان Markdown (H1) | 4. حدود الثقة وفصل إدارة التعريفات عن التشغيل | 177 | [SRC-0F910493E8-L000177](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L177) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L179) | عنوان Markdown (H2) | 4.1 Runtime Plane — مسار التشغيل | 179 | [SRC-0F910493E8-L000179](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L179) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L193) | عنوان Markdown (H2) | 4.2 Control / Definition Plane — إدارة التعريفات والتغيير | 193 | [SRC-0F910493E8-L000193](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L193) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L206) | عنوان Markdown (H2) | 4.3 بوابة التفعيل | 206 | [SRC-0F910493E8-L000206](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L206) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L222) | عنوان Markdown (H1) | 5. نموذج الصلاحيات | 222 | [SRC-0F910493E8-L000222](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L222) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L245) | عنوان Markdown (H1) | 6. عقود الأدوات والمهارات وسير العمل | 245 | [SRC-0F910493E8-L000245](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L245) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L247) | عنوان Markdown (H2) | 6.1 عقد الأداة | 247 | [SRC-0F910493E8-L000247](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L247) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L263) | عنوان Markdown (H2) | 6.2 عقد المهارة | 263 | [SRC-0F910493E8-L000263](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L263) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L279) | عنوان Markdown (H2) | 6.3 عقد سير العمل | 279 | [SRC-0F910493E8-L000279](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L279) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L293) | عنوان Markdown (H2) | 6.4 ملفات التعريف وإصداراتها | 293 | [SRC-0F910493E8-L000293](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L293) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L301) | عنوان Markdown (H1) | 7. الذاكرة وسياق التنفيذ | 301 | [SRC-0F910493E8-L000301](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L301) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L317) | عنوان Markdown (H1) | 8. الأدلة والتحقق وجودة الإجابات | 317 | [SRC-0F910493E8-L000317](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L317) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L334) | عنوان Markdown (H1) | 9. Meta-Agent: قدرة مؤجلة ومشروطة | 334 | [SRC-0F910493E8-L000334](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L334) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L350) | عنوان Markdown (H2) | 9.1 توليد الكود التنفيذي | 350 | [SRC-0F910493E8-L000350](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L350) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L364) | عنوان Markdown (H1) | 10. التعامل مع الفشل والتدهور الآمن | 364 | [SRC-0F910493E8-L000364](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L364) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L382) | عنوان Markdown (H1) | 11. منع التضخم والتكرار المعماري | 382 | [SRC-0F910493E8-L000382](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L382) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L400) | عنوان Markdown (H1) | 12. خارطة التنفيذ وبوابات الانتقال | 400 | [SRC-0F910493E8-L000400](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L400) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L404) | عنوان Markdown (H2) | P0 — إثبات الحالة وخط الأساس | 404 | [SRC-0F910493E8-L000404](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L404) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L415) | عنوان Markdown (H2) | P1 — سلامة العقود والصلاحيات | 415 | [SRC-0F910493E8-L000415](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L415) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L424) | عنوان Markdown (H2) | P2 — المهارات وسير العمل | 424 | [SRC-0F910493E8-L000424](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L424) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L434) | عنوان Markdown (H2) | P3 — مواصفات مهام محدودة وتركيب القدرات | 434 | [SRC-0F910493E8-L000434](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L434) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L444) | عنوان Markdown (H2) | P4 — تجربة محدودة لإنشاء تعريفات بمساعدة Meta-Agent | 444 | [SRC-0F910493E8-L000444](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L444) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L456) | عنوان Markdown (H2) | P5 — توليد الكود التنفيذي (اختياري) | 456 | [SRC-0F910493E8-L000456](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L456) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L464) | عنوان Markdown (H1) | 13. متطلبات القياس والتقييم | 464 | [SRC-0F910493E8-L000464](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L464) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L484) | عنوان Markdown (H1) | 14. قائمة المراجعة الإلزامية قبل كل تغيير مؤثر | 484 | [SRC-0F910493E8-L000484](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L484) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L505) | عنوان Markdown (H1) | 15. قرارات يجب أن تبقى واضحة في الوثائق والمراجعات | 505 | [SRC-0F910493E8-L000505](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L505) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L520) | عنوان Markdown (H1) | 16. شروط تحديث هذه المعمارية | 520 | [SRC-0F910493E8-L000520](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L520) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L532) | عنوان Markdown (H1) | 17. خط الأساس الحاكم للأمن السيبراني وضمانات الثقة | 532 | [SRC-0F910493E8-L000532](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L532) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L534) | عنوان Markdown (H2) | 17.1 هدف الأمن وحدود الادعاء | 534 | [SRC-0F910493E8-L000534](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L534) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L542) | عنوان Markdown (H2) | 17.2 أطر مرجعية ومبدأ عدم الادعاء بالامتثال | 542 | [SRC-0F910493E8-L000542](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L542) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L563) | عنوان Markdown (H2) | 17.3 الأصول التي يجب حمايتها | 563 | [SRC-0F910493E8-L000563](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L563) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L579) | عنوان Markdown (H2) | 17.4 حدود الثقة ونموذج التهديد الإلزامي | 579 | [SRC-0F910493E8-L000579](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L579) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L604) | عنوان Markdown (H2) | 17.5 الهوية والمصادقة والتفويض | 604 | [SRC-0F910493E8-L000604](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L604) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L619) | عنوان Markdown (H2) | 17.6 وسيط الأدوات وتفويض القدرات | 619 | [SRC-0F910493E8-L000619](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L619) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L639) | عنوان Markdown (H2) | 17.7 مقاومة حقن التعليمات وإساءة استخدام النموذج | 639 | [SRC-0F910493E8-L000639](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L639) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L655) | عنوان Markdown (H2) | 17.8 البحث والشبكة وSSRF وDNS rebinding | 655 | [SRC-0F910493E8-L000655](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L655) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L675) | عنوان Markdown (H2) | 17.9 حماية API والويب والمتصفح | 675 | [SRC-0F910493E8-L000675](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L675) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L690) | عنوان Markdown (H2) | 17.10 الأسرار وخصوصية مزودي النماذج | 690 | [SRC-0F910493E8-L000690](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L690) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L704) | عنوان Markdown (H2) | 17.11 الذاكرة، العزل، التزامن، وتسميم البيانات | 704 | [SRC-0F910493E8-L000704](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L704) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L715) | عنوان Markdown (H2) | 17.12 سلسلة توريد البرمجيات وأمن التطوير وCI/CD | 715 | [SRC-0F910493E8-L000715](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L715) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L734) | عنوان Markdown (H2) | 17.13 عزل الكود المولد — عند دراسة هذه القدرة مستقبلًا فقط | 734 | [SRC-0F910493E8-L000734](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L734) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L754) | عنوان Markdown (H2) | 17.14 حدود الموارد ومقاومة الإساءة | 754 | [SRC-0F910493E8-L000754](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L754) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L765) | عنوان Markdown (H2) | 17.15 السجلات، المراقبة، كشف الحوادث والتعافي | 765 | [SRC-0F910493E8-L000765](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L765) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L777) | عنوان Markdown (H2) | 17.16 فحوص الأمان الإلزامية قبل اعتماد تغيير مؤثر | 777 | [SRC-0F910493E8-L000777](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L777) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L794) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 794 | [SRC-0F910493E8-L000794](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L794) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L795) | عنوان Markdown (H2) | 17.17 بوابات إطلاق أمنية (Security Release Gates) | 795 | [SRC-0F910493E8-L000795](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L795) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L799) | عنوان Markdown (H3) | البوابة S0 — سلامة الأساس | 799 | [SRC-0F910493E8-L000799](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L799) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L806) | عنوان Markdown (H3) | البوابة S1 — أدوات وشبكة وبيانات | 806 | [SRC-0F910493E8-L000806](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L806) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L812) | عنوان Markdown (H3) | البوابة S2 — وكيل جديد أو صلاحية جديدة | 812 | [SRC-0F910493E8-L000812](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L812) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L819) | عنوان Markdown (H3) | البوابة S3 — تنفيذ كود مولد أو فعل خارجي عالي الأثر | 819 | [SRC-0F910493E8-L000819](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L819) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L829) | عنوان Markdown (H2) | 17.18 الأمن كدورة حياة، لا كقائمة نهائية | 829 | [SRC-0F910493E8-L000829](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L829) |
+| [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L845) | عنوان Markdown (H2) | الخلاصة الحاكمة | 845 | [SRC-0F910493E8-L000845](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L845) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | عنوان Markdown (H1) | Omarai — مصفوفة أدلة الاختبار: محلي، Mock، حاوية، وتكامل حي | 1 | [SRC-61B24BEFCC-L000001](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L7) | عنوان Markdown (H2) | 1. أنواع الدليل | 7 | [SRC-61B24BEFCC-L000007](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L7) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L19) | عنوان Markdown (H2) | 2. تصنيف الموجود في المستودع | 19 | [SRC-61B24BEFCC-L000019](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L19) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 28 | [SRC-61B24BEFCC-L000028](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L28) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 31 | [SRC-61B24BEFCC-L000031](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L31) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 31 | [SRC-61B24BEFCC-L000031](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L31) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L32) | عنوان Markdown (H2) | 3. أمثلة تشغيل CI الحديثة وحدود الاستدلال | 32 | [SRC-61B24BEFCC-L000032](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L32) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L50) | عنوان Markdown (H2) | 4. ما الذي لا يزال NOT_RUN / UNKNOWN؟ | 50 | [SRC-61B24BEFCC-L000050](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L50) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 51 | [SRC-61B24BEFCC-L000051](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L51) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L62) | عنوان Markdown (H2) | 5. طريقة تشغيل قبول حي — بعد الموافقة فقط | 62 | [SRC-61B24BEFCC-L000062](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L62) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L83) | عنوان Markdown (H2) | 6. شروط قبول نتيجة أي اختبار | 83 | [SRC-61B24BEFCC-L000083](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L83) |
+| [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | عنوان Markdown (H1) | دليل تشغيل Omarai | 1 | [SRC-B6BD2CE1A8-L000001](OPERATIONS_AR.md#L1) |
+| [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L2) | عنوان Markdown (H2) | التشغيل | 2 | [SRC-B6BD2CE1A8-L000002](OPERATIONS_AR.md#L2) |
+| [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L9) | عنوان Markdown (H2) | سير العمل | 9 | [SRC-B6BD2CE1A8-L000009](OPERATIONS_AR.md#L9) |
+| [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L19) | عنوان Markdown (H2) | قواعد مهمة | 19 | [SRC-B6BD2CE1A8-L000019](OPERATIONS_AR.md#L19) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | عنوان Markdown (H1) | دليل البحث المتقدم والموصلات الاجتماعية — Omarai | 1 | [SRC-D911B73392-L000001](RESEARCH_CONNECTORS_AR.md#L1) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L4) | عنوان Markdown (H2) | 1. كيف يجري Omarai البحث؟ | 4 | [SRC-D911B73392-L000004](RESEARCH_CONNECTORS_AR.md#L4) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L16) | عنوان Markdown (H2) | 2.1 واجهات بحث ويب اختيارية | 16 | [SRC-D911B73392-L000016](RESEARCH_CONNECTORS_AR.md#L16) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 22 | [SRC-D911B73392-L000022](RESEARCH_CONNECTORS_AR.md#L22) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 23 | [SRC-D911B73392-L000023](RESEARCH_CONNECTORS_AR.md#L23) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L27) | عنوان Markdown (H2) | 2. المصادر والحدود | 27 | [SRC-D911B73392-L000027](RESEARCH_CONNECTORS_AR.md#L27) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L41) | عنوان Markdown (H2) | 3. تشغيل الطبقة التوليدية | 41 | [SRC-D911B73392-L000041](RESEARCH_CONNECTORS_AR.md#L41) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 47 | [SRC-D911B73392-L000047](RESEARCH_CONNECTORS_AR.md#L47) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L53) | عنوان Markdown (H2) | 4. إعداد الموصلات الرسمية الاختيارية | 53 | [SRC-D911B73392-L000053](RESEARCH_CONNECTORS_AR.md#L53) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L57) | عنوان Markdown (H3) | Reddit OAuth | 57 | [SRC-D911B73392-L000057](RESEARCH_CONNECTORS_AR.md#L57) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 63 | [SRC-D911B73392-L000063](RESEARCH_CONNECTORS_AR.md#L63) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 64 | [SRC-D911B73392-L000064](RESEARCH_CONNECTORS_AR.md#L64) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 65 | [SRC-D911B73392-L000065](RESEARCH_CONNECTORS_AR.md#L65) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L69) | عنوان Markdown (H3) | Instagram Graph API — وسوم عامة | 69 | [SRC-D911B73392-L000069](RESEARCH_CONNECTORS_AR.md#L69) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 75 | [SRC-D911B73392-L000075](RESEARCH_CONNECTORS_AR.md#L75) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 76 | [SRC-D911B73392-L000076](RESEARCH_CONNECTORS_AR.md#L76) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 79 | [SRC-D911B73392-L000079](RESEARCH_CONNECTORS_AR.md#L79) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L80) | عنوان Markdown (H3) | Facebook Pages — صفحات محددة فقط | 80 | [SRC-D911B73392-L000080](RESEARCH_CONNECTORS_AR.md#L80) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 86 | [SRC-D911B73392-L000086](RESEARCH_CONNECTORS_AR.md#L86) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L87) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 87 | [SRC-D911B73392-L000087](RESEARCH_CONNECTORS_AR.md#L87) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L91) | عنوان Markdown (H3) | X وYouTube | 91 | [SRC-D911B73392-L000091](RESEARCH_CONNECTORS_AR.md#L91) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 95 | [SRC-D911B73392-L000095](RESEARCH_CONNECTORS_AR.md#L95) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L96) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 96 | [SRC-D911B73392-L000096](RESEARCH_CONNECTORS_AR.md#L96) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L100) | عنوان Markdown (H3) | البدء بعد الإعداد | 100 | [SRC-D911B73392-L000100](RESEARCH_CONNECTORS_AR.md#L100) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L110) | عنوان Markdown (H2) | 5. اختبار حي للاتصال | 110 | [SRC-D911B73392-L000110](RESEARCH_CONNECTORS_AR.md#L110) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L124) | عنوان Markdown (H2) | 6. قراءة الأدلة والتحقق منها | 124 | [SRC-D911B73392-L000124](RESEARCH_CONNECTORS_AR.md#L124) |
+| [docs/search_code.py](search_code.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_DIRECTORIES | 21 | [SRC-69F3587825-L000021](search_code.py#L21) |
+| [docs/search_code.py](search_code.py#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SECRET_BASENAMES | 50 | [SRC-69F3587825-L000050](search_code.py#L50) |
+| [docs/search_code.py](search_code.py#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_NAME_RE | 77 | [SRC-69F3587825-L000077](search_code.py#L77) |
+| [docs/search_code.py](search_code.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_CONFIG_SUFFIXES | 81 | [SRC-69F3587825-L000081](search_code.py#L81) |
+| [docs/search_code.py](search_code.py#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_SEARCH_FILE_BYTES | 84 | [SRC-69F3587825-L000084](search_code.py#L84) |
+| [docs/search_code.py](search_code.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_EXTENSIONS | 100 | [SRC-69F3587825-L000100](search_code.py#L100) |
+| [docs/search_code.py](search_code.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 117 | [SRC-69F3587825-L000117](search_code.py#L117) |
+| [pyproject.toml](../pyproject.toml#L1) | قسم TOML | build-system | 1 | [SRC-50C86B7ED8-L000001](../pyproject.toml#L1) |
+| [pyproject.toml](../pyproject.toml#L2) | مفتاح إعداد TOML | requires | 2 | [SRC-50C86B7ED8-L000002](../pyproject.toml#L2) |
+| [pyproject.toml](../pyproject.toml#L3) | مفتاح إعداد TOML | build-backend | 3 | [SRC-50C86B7ED8-L000003](../pyproject.toml#L3) |
+| [pyproject.toml](../pyproject.toml#L4) | قسم TOML | project | 4 | [SRC-50C86B7ED8-L000004](../pyproject.toml#L4) |
+| [pyproject.toml](../pyproject.toml#L6) | مفتاح إعداد TOML | name | 6 | [SRC-50C86B7ED8-L000006](../pyproject.toml#L6) |
+| [pyproject.toml](../pyproject.toml#L7) | مفتاح إعداد TOML | version | 7 | [SRC-50C86B7ED8-L000007](../pyproject.toml#L7) |
+| [pyproject.toml](../pyproject.toml#L8) | مفتاح إعداد TOML | description | 8 | [SRC-50C86B7ED8-L000008](../pyproject.toml#L8) |
+| [pyproject.toml](../pyproject.toml#L9) | مفتاح إعداد TOML | readme | 9 | [SRC-50C86B7ED8-L000009](../pyproject.toml#L9) |
+| [pyproject.toml](../pyproject.toml#L10) | مفتاح إعداد TOML | requires-python | 10 | [SRC-50C86B7ED8-L000010](../pyproject.toml#L10) |
+| [pyproject.toml](../pyproject.toml#L11) | مفتاح إعداد TOML | license | 11 | [SRC-50C86B7ED8-L000011](../pyproject.toml#L11) |
+| [pyproject.toml](../pyproject.toml#L12) | مفتاح إعداد TOML | dependencies | 12 | [SRC-50C86B7ED8-L000012](../pyproject.toml#L12) |
+| [pyproject.toml](../pyproject.toml#L17) | قسم TOML | project.optional-dependencies | 17 | [SRC-50C86B7ED8-L000017](../pyproject.toml#L17) |
+| [pyproject.toml](../pyproject.toml#L19) | مفتاح إعداد TOML | dev | 19 | [SRC-50C86B7ED8-L000019](../pyproject.toml#L19) |
+| [pyproject.toml](../pyproject.toml#L20) | قسم TOML | tool.pytest.ini_options | 20 | [SRC-50C86B7ED8-L000020](../pyproject.toml#L20) |
+| [pyproject.toml](../pyproject.toml#L22) | مفتاح إعداد TOML | testpaths | 22 | [SRC-50C86B7ED8-L000022](../pyproject.toml#L22) |
+| [pyproject.toml](../pyproject.toml#L23) | قسم TOML | tool.setuptools.packages.find | 23 | [SRC-50C86B7ED8-L000023](../pyproject.toml#L23) |
+| [pyproject.toml](../pyproject.toml#L25) | مفتاح إعداد TOML | include | 25 | [SRC-50C86B7ED8-L000025](../pyproject.toml#L25) |
+| [pyproject.toml](../pyproject.toml#L26) | مفتاح إعداد TOML | exclude | 26 | [SRC-50C86B7ED8-L000026](../pyproject.toml#L26) |
+| [pyproject.toml](../pyproject.toml#L27) | قسم TOML | tool.ruff | 27 | [SRC-50C86B7ED8-L000027](../pyproject.toml#L27) |
+| [pyproject.toml](../pyproject.toml#L29) | مفتاح إعداد TOML | line-length | 29 | [SRC-50C86B7ED8-L000029](../pyproject.toml#L29) |
+| [pyproject.toml](../pyproject.toml#L30) | مفتاح إعداد TOML | target-version | 30 | [SRC-50C86B7ED8-L000030](../pyproject.toml#L30) |
+| [pyproject.toml](../pyproject.toml#L31) | قسم TOML | tool.ruff.lint | 31 | [SRC-50C86B7ED8-L000031](../pyproject.toml#L31) |
+| [pyproject.toml](../pyproject.toml#L39) | مفتاح إعداد TOML | ignore | 39 | [SRC-50C86B7ED8-L000039](../pyproject.toml#L39) |
+| [railway.json](../railway.json#L2) | مفتاح JSON | $schema | 2 | [SRC-115C2027D9-L000002](../railway.json#L2) |
+| [railway.json](../railway.json#L3) | مفتاح JSON | build | 3 | [SRC-115C2027D9-L000003](../railway.json#L3) |
+| [railway.json](../railway.json#L4) | مفتاح JSON | builder | 4 | [SRC-115C2027D9-L000004](../railway.json#L4) |
+| [railway.json](../railway.json#L5) | مفتاح JSON | dockerfilePath | 5 | [SRC-115C2027D9-L000005](../railway.json#L5) |
+| [railway.json](../railway.json#L7) | مفتاح JSON | deploy | 7 | [SRC-115C2027D9-L000007](../railway.json#L7) |
+| [railway.json](../railway.json#L8) | مفتاح JSON | startCommand | 8 | [SRC-115C2027D9-L000008](../railway.json#L8) |
+| [railway.json](../railway.json#L9) | مفتاح JSON | healthcheckPath | 9 | [SRC-115C2027D9-L000009](../railway.json#L9) |
+| [railway.json](../railway.json#L10) | مفتاح JSON | healthcheckTimeout | 10 | [SRC-115C2027D9-L000010](../railway.json#L10) |
+| [railway.json](../railway.json#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ON_FAILURE | 11 | [SRC-115C2027D9-L000011](../railway.json#L11) |
+| [railway.json](../railway.json#L11) | مفتاح JSON | restartPolicyType | 11 | [SRC-115C2027D9-L000011](../railway.json#L11) |
+| [railway.json](../railway.json#L12) | مفتاح JSON | restartPolicyMaxRetries | 12 | [SRC-115C2027D9-L000012](../railway.json#L12) |
+| [README.md](../README.md#L1) | عنوان Markdown (H1) | Omarai — Web Research & Generative Q&A Agent | 1 | [SRC-B335630551-L000001](../README.md#L1) |
+| [README.md](../README.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 3 | [SRC-B335630551-L000003](../README.md#L3) |
+| [README.md](../README.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 3 | [SRC-B335630551-L000003](../README.md#L3) |
+| [README.md](../README.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 3 | [SRC-B335630551-L000003](../README.md#L3) |
+| [README.md](../README.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 3 | [SRC-B335630551-L000003](../README.md#L3) |
+| [README.md](../README.md#L6) | عنوان Markdown (H2) | Repository navigation and indexing | 6 | [SRC-B335630551-L000006](../README.md#L6) |
+| [README.md](../README.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 9 | [SRC-B335630551-L000009](../README.md#L9) |
+| [README.md](../README.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 9 | [SRC-B335630551-L000009](../README.md#L9) |
+| [README.md](../README.md#L18) | عنوان Markdown (H2) | What this version does | 18 | [SRC-B335630551-L000018](../README.md#L18) |
+| [README.md](../README.md#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 26 | [SRC-B335630551-L000026](../README.md#L26) |
+| [README.md](../README.md#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 26 | [SRC-B335630551-L000026](../README.md#L26) |
+| [README.md](../README.md#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 29 | [SRC-B335630551-L000029](../README.md#L29) |
+| [README.md](../README.md#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 29 | [SRC-B335630551-L000029](../README.md#L29) |
+| [README.md](../README.md#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 30 | [SRC-B335630551-L000030](../README.md#L30) |
+| [README.md](../README.md#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 30 | [SRC-B335630551-L000030](../README.md#L30) |
+| [README.md](../README.md#L39) | عنوان Markdown (H2) | Per-request resource budget | 39 | [SRC-B335630551-L000039](../README.md#L39) |
+| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 42 | [SRC-B335630551-L000042](../README.md#L42) |
+| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 42 | [SRC-B335630551-L000042](../README.md#L42) |
+| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_PAGE_FETCHES | 42 | [SRC-B335630551-L000042](../README.md#L42) |
+| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 42 | [SRC-B335630551-L000042](../README.md#L42) |
+| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 42 | [SRC-B335630551-L000042](../README.md#L42) |
+| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 42 | [SRC-B335630551-L000042](../README.md#L42) |
+| [README.md](../README.md#L46) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 46 | [SRC-B335630551-L000046](../README.md#L46) |
+| [README.md](../README.md#L47) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 47 | [SRC-B335630551-L000047](../README.md#L47) |
+| [README.md](../README.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 51 | [SRC-B335630551-L000051](../README.md#L51) |
+| [README.md](../README.md#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 55 | [SRC-B335630551-L000055](../README.md#L55) |
+| [README.md](../README.md#L61) | عنوان Markdown (H2) | Hosted deployment | 61 | [SRC-B335630551-L000061](../README.md#L61) |
+| [README.md](../README.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 66 | [SRC-B335630551-L000066](../README.md#L66) |
+| [README.md](../README.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 66 | [SRC-B335630551-L000066](../README.md#L66) |
+| [README.md](../README.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 66 | [SRC-B335630551-L000066](../README.md#L66) |
+| [README.md](../README.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 66 | [SRC-B335630551-L000066](../README.md#L66) |
+| [README.md](../README.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 68 | [SRC-B335630551-L000068](../README.md#L68) |
+| [README.md](../README.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 68 | [SRC-B335630551-L000068](../README.md#L68) |
+| [README.md](../README.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 68 | [SRC-B335630551-L000068](../README.md#L68) |
+| [README.md](../README.md#L69) | عنوان Markdown (H2) | Free hosted deployment (SnapDeploy) | 69 | [SRC-B335630551-L000069](../README.md#L69) |
+| [README.md](../README.md#L72) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 72 | [SRC-B335630551-L000072](../README.md#L72) |
+| [README.md](../README.md#L75) | عنوان Markdown (H2) | Free hosted deployment (Render) | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 78 | [SRC-B335630551-L000078](../README.md#L78) |
+| [README.md](../README.md#L81) | عنوان Markdown (H2) | Run on Android / Termux | 81 | [SRC-B335630551-L000081](../README.md#L81) |
+| [README.md](../README.md#L102) | عنوان Markdown (H3) | Optional configuration | 102 | [SRC-B335630551-L000102](../README.md#L102) |
+| [README.md](../README.md#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 108 | [SRC-B335630551-L000108](../README.md#L108) |
+| [README.md](../README.md#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 109 | [SRC-B335630551-L000109](../README.md#L109) |
+| [README.md](../README.md#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 116 | [SRC-B335630551-L000116](../README.md#L116) |
+| [README.md](../README.md#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 117 | [SRC-B335630551-L000117](../README.md#L117) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 120 | [SRC-B335630551-L000120](../README.md#L120) |
+| [README.md](../README.md#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 124 | [SRC-B335630551-L000124](../README.md#L124) |
+| [README.md](../README.md#L125) | عنوان Markdown (H2) | API | 125 | [SRC-B335630551-L000125](../README.md#L125) |
+| [README.md](../README.md#L146) | عنوان Markdown (H2) | Existing lead workspace | 146 | [SRC-B335630551-L000146](../README.md#L146) |
+| [README.md](../README.md#L164) | عنوان Markdown (H2) | Checks | 164 | [SRC-B335630551-L000164](../README.md#L164) |
+| [render.yaml](../render.yaml#L1) | مفتاح إعداد YAML | services | 1 | [SRC-A64CF250B4-L000001](../render.yaml#L1) |
+| [render.yaml](../render.yaml#L3) | مفتاح إعداد YAML | name | 3 | [SRC-A64CF250B4-L000003](../render.yaml#L3) |
+| [render.yaml](../render.yaml#L4) | مفتاح إعداد YAML | runtime | 4 | [SRC-A64CF250B4-L000004](../render.yaml#L4) |
+| [render.yaml](../render.yaml#L5) | مفتاح إعداد YAML | plan | 5 | [SRC-A64CF250B4-L000005](../render.yaml#L5) |
+| [render.yaml](../render.yaml#L6) | مفتاح إعداد YAML | region | 6 | [SRC-A64CF250B4-L000006](../render.yaml#L6) |
+| [render.yaml](../render.yaml#L7) | مفتاح إعداد YAML | dockerfilePath | 7 | [SRC-A64CF250B4-L000007](../render.yaml#L7) |
+| [render.yaml](../render.yaml#L8) | مفتاح إعداد YAML | healthCheckPath | 8 | [SRC-A64CF250B4-L000008](../render.yaml#L8) |
+| [render.yaml](../render.yaml#L9) | مفتاح إعداد YAML | envVars | 9 | [SRC-A64CF250B4-L000009](../render.yaml#L9) |
+| [render.yaml](../render.yaml#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 10 | [SRC-A64CF250B4-L000010](../render.yaml#L10) |
+| [render.yaml](../render.yaml#L11) | مفتاح إعداد YAML | value | 11 | [SRC-A64CF250B4-L000011](../render.yaml#L11) |
+| [render.yaml](../render.yaml#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 12 | [SRC-A64CF250B4-L000012](../render.yaml#L12) |
+| [render.yaml](../render.yaml#L13) | مفتاح إعداد YAML | sync | 13 | [SRC-A64CF250B4-L000013](../render.yaml#L13) |
+| [render.yaml](../render.yaml#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 14 | [SRC-A64CF250B4-L000014](../render.yaml#L14) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 103 | [SRC-A8360B1B03-L000103](../scripts/hosted_smoke_test.py#L103) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L174) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 174 | [SRC-A8360B1B03-L000174](../scripts/hosted_smoke_test.py#L174) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 11 | [SRC-4FFD5AFC54-L000011](../scripts/run_answer_quality_benchmark.py#L11) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_CORPUS | 38 | [SRC-4FFD5AFC54-L000038](../scripts/run_answer_quality_benchmark.py#L38) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RESPONSE_BYTES | 39 | [SRC-4FFD5AFC54-L000039](../scripts/run_answer_quality_benchmark.py#L39) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 76 | [SRC-4FFD5AFC54-L000076](../scripts/run_answer_quality_benchmark.py#L76) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUIRED_FIELDS | 100 | [SRC-4FFD5AFC54-L000100](../scripts/run_answer_quality_benchmark.py#L100) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STRATEGIES | 112 | [SRC-4FFD5AFC54-L000112](../scripts/run_answer_quality_benchmark.py#L112) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L113) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_EVAL_MODES | 113 | [SRC-4FFD5AFC54-L000113](../scripts/run_answer_quality_benchmark.py#L113) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L170) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 170 | [SRC-4FFD5AFC54-L000170](../scripts/run_answer_quality_benchmark.py#L170) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L171) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 171 | [SRC-4FFD5AFC54-L000171](../scripts/run_answer_quality_benchmark.py#L171) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L172) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 172 | [SRC-4FFD5AFC54-L000172](../scripts/run_answer_quality_benchmark.py#L172) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L194) | مسار API/واجهة محتمل | /api/agent | 194 | [SRC-4FFD5AFC54-L000194](../scripts/run_answer_quality_benchmark.py#L194) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_CREAT | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_EXCL | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
+| [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_WRONLY | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L2) | مفتاح JSON | benchmark_id | 2 | [SRC-90FAA34ADE-L000002](../tests/fixtures/answer_quality_cases.json#L2) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L3) | مفتاح JSON | version | 3 | [SRC-90FAA34ADE-L000003](../tests/fixtures/answer_quality_cases.json#L3) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L4) | مفتاح JSON | base_commit_reference | 4 | [SRC-90FAA34ADE-L000004](../tests/fixtures/answer_quality_cases.json#L4) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L5) | مفتاح JSON | description | 5 | [SRC-90FAA34ADE-L000005](../tests/fixtures/answer_quality_cases.json#L5) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L6) | مفتاح JSON | allowed_strategies | 6 | [SRC-90FAA34ADE-L000006](../tests/fixtures/answer_quality_cases.json#L6) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L12) | مفتاح JSON | allowed_evaluation_modes | 12 | [SRC-90FAA34ADE-L000012](../tests/fixtures/answer_quality_cases.json#L12) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L17) | مفتاح JSON | case_count | 17 | [SRC-90FAA34ADE-L000017](../tests/fixtures/answer_quality_cases.json#L17) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L18) | مفتاح JSON | cases | 18 | [SRC-90FAA34ADE-L000018](../tests/fixtures/answer_quality_cases.json#L18) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L20) | مفتاح JSON | case_id | 20 | [SRC-90FAA34ADE-L000020](../tests/fixtures/answer_quality_cases.json#L20) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L21) | مفتاح JSON | category | 21 | [SRC-90FAA34ADE-L000021](../tests/fixtures/answer_quality_cases.json#L21) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L22) | مفتاح JSON | language | 22 | [SRC-90FAA34ADE-L000022](../tests/fixtures/answer_quality_cases.json#L22) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L23) | مفتاح JSON | question | 23 | [SRC-90FAA34ADE-L000023](../tests/fixtures/answer_quality_cases.json#L23) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L24) | مفتاح JSON | expected_strategy | 24 | [SRC-90FAA34ADE-L000024](../tests/fixtures/answer_quality_cases.json#L24) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L25) | مفتاح JSON | required_behaviors | 25 | [SRC-90FAA34ADE-L000025](../tests/fixtures/answer_quality_cases.json#L25) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L30) | مفتاح JSON | forbidden_behaviors | 30 | [SRC-90FAA34ADE-L000030](../tests/fixtures/answer_quality_cases.json#L30) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L35) | مفتاح JSON | evidence_fixture | 35 | [SRC-90FAA34ADE-L000035](../tests/fixtures/answer_quality_cases.json#L35) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L36) | مفتاح JSON | type | 36 | [SRC-90FAA34ADE-L000036](../tests/fixtures/answer_quality_cases.json#L36) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L37) | مفتاح JSON | notes | 37 | [SRC-90FAA34ADE-L000037](../tests/fixtures/answer_quality_cases.json#L37) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L39) | مفتاح JSON | failure_conditions | 39 | [SRC-90FAA34ADE-L000039](../tests/fixtures/answer_quality_cases.json#L39) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L43) | مفتاح JSON | evaluation_mode | 43 | [SRC-90FAA34ADE-L000043](../tests/fixtures/answer_quality_cases.json#L43) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L148) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 148 | [SRC-90FAA34ADE-L000148](../tests/fixtures/answer_quality_cases.json#L148) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L148) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 148 | [SRC-90FAA34ADE-L000148](../tests/fixtures/answer_quality_cases.json#L148) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L176) | مفتاح JSON | sources | 176 | [SRC-90FAA34ADE-L000176](../tests/fixtures/answer_quality_cases.json#L176) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L178) | مفتاح JSON | title | 178 | [SRC-90FAA34ADE-L000178](../tests/fixtures/answer_quality_cases.json#L178) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L179) | مفتاح JSON | url | 179 | [SRC-90FAA34ADE-L000179](../tests/fixtures/answer_quality_cases.json#L179) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L180) | مفتاح JSON | snippet | 180 | [SRC-90FAA34ADE-L000180](../tests/fixtures/answer_quality_cases.json#L180) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L181) | مفتاح JSON | published_at | 181 | [SRC-90FAA34ADE-L000181](../tests/fixtures/answer_quality_cases.json#L181) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L182) | مفتاح JSON | domain | 182 | [SRC-90FAA34ADE-L000182](../tests/fixtures/answer_quality_cases.json#L182) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L183) | مفتاح JSON | provider | 183 | [SRC-90FAA34ADE-L000183](../tests/fixtures/answer_quality_cases.json#L183) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L371) | مفتاح JSON | relevance | 371 | [SRC-90FAA34ADE-L000371](../tests/fixtures/answer_quality_cases.json#L371) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L379) | مفتاح JSON | source_class | 379 | [SRC-90FAA34ADE-L000379](../tests/fixtures/answer_quality_cases.json#L379) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L407) | مفتاح JSON | providers | 407 | [SRC-90FAA34ADE-L000407](../tests/fixtures/answer_quality_cases.json#L407) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L438) | مفتاح JSON | name | 438 | [SRC-90FAA34ADE-L000438](../tests/fixtures/answer_quality_cases.json#L438) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L439) | مفتاح JSON | error | 439 | [SRC-90FAA34ADE-L000439](../tests/fixtures/answer_quality_cases.json#L439) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L598) | مفتاح JSON | publisher | 598 | [SRC-90FAA34ADE-L000598](../tests/fixtures/answer_quality_cases.json#L598) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L676) | مفتاح JSON | expected_fetch | 676 | [SRC-90FAA34ADE-L000676](../tests/fixtures/answer_quality_cases.json#L676) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L703) | مفتاح JSON | body | 703 | [SRC-90FAA34ADE-L000703](../tests/fixtures/answer_quality_cases.json#L703) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L704) | مفتاح JSON | trusted_facts | 704 | [SRC-90FAA34ADE-L000704](../tests/fixtures/answer_quality_cases.json#L704) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L733) | مفتاح JSON | secret_values_available_to_harness | 733 | [SRC-90FAA34ADE-L000733](../tests/fixtures/answer_quality_cases.json#L733) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L758) | مفتاح JSON | missing | 758 | [SRC-90FAA34ADE-L000758](../tests/fixtures/answer_quality_cases.json#L758) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L761) | مفتاح JSON | provider_state | 761 | [SRC-90FAA34ADE-L000761](../tests/fixtures/answer_quality_cases.json#L761) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L853) | مفتاح JSON | verification_status | 853 | [SRC-90FAA34ADE-L000853](../tests/fixtures/answer_quality_cases.json#L853) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1171) | مفتاح JSON | review_service | 1171 | [SRC-90FAA34ADE-L001171](../tests/fixtures/answer_quality_cases.json#L1171) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1172) | مفتاح JSON | answer_model | 1172 | [SRC-90FAA34ADE-L001172](../tests/fixtures/answer_quality_cases.json#L1172) |
+| [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1198) | مفتاح JSON | provided_artifact | 1198 | [SRC-90FAA34ADE-L001198](../tests/fixtures/answer_quality_cases.json#L1198) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CORPUS_PATH | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ANSWER_QUALITY_BENCHMARK_AR | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOCS_PATH | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUIRED_CASE_FIELDS | 17 | [SRC-4CCB1F172B-L000017](../tests/test_answer_quality_corpus.py#L17) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STRATEGIES | 30 | [SRC-4CCB1F172B-L000030](../tests/test_answer_quality_corpus.py#L30) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_EVAL_MODES | 31 | [SRC-4CCB1F172B-L000031](../tests/test_answer_quality_corpus.py#L31) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUIRED_THEME_CATEGORIES | 33 | [SRC-4CCB1F172B-L000033](../tests/test_answer_quality_corpus.py#L33) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOC_EXAMPLE_CATEGORY_EXPECTATIONS | 56 | [SRC-4CCB1F172B-L000056](../tests/test_answer_quality_corpus.py#L56) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CASE_ID_RE | 75 | [SRC-4CCB1F172B-L000075](../tests/test_answer_quality_corpus.py#L75) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L228) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEE_LOCAL_FILE | 228 | [SRC-4CCB1F172B-L000228](../tests/test_answer_quality_corpus.py#L228) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 35 | [SRC-B3062EB677-L000035](../tests/test_answer_quality_runner.py#L35) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 94 | [SRC-B3062EB677-L000094](../tests/test_answer_quality_runner.py#L94) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 95 | [SRC-B3062EB677-L000095](../tests/test_answer_quality_runner.py#L95) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L159) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 159 | [SRC-B3062EB677-L000159](../tests/test_answer_quality_runner.py#L159) |
+| [tests/test_api.py](../tests/test_api.py#L50) | مسار API/واجهة محتمل | /api/health | 50 | [SRC-3451CC474D-L000050](../tests/test_api.py#L50) |
+| [tests/test_api.py](../tests/test_api.py#L60) | مسار API/واجهة محتمل | /api/analyze | 60 | [SRC-3451CC474D-L000060](../tests/test_api.py#L60) |
+| [tests/test_api.py](../tests/test_api.py#L77) | مسار API/واجهة محتمل | /api/leads | 77 | [SRC-3451CC474D-L000077](../tests/test_api.py#L77) |
+| [tests/test_api.py](../tests/test_api.py#L95) | مسار API/واجهة محتمل | /api/leads/{lead_id}/status | 95 | [SRC-3451CC474D-L000095](../tests/test_api.py#L95) |
+| [tests/test_api.py](../tests/test_api.py#L103) | مسار API/واجهة محتمل | /api/ask | 103 | [SRC-3451CC474D-L000103](../tests/test_api.py#L103) |
+| [tests/test_api.py](../tests/test_api.py#L147) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 147 | [SRC-3451CC474D-L000147](../tests/test_api.py#L147) |
+| [tests/test_api.py](../tests/test_api.py#L174) | مسار API/واجهة محتمل | /api/agent | 174 | [SRC-3451CC474D-L000174](../tests/test_api.py#L174) |
+| [tests/test_api.py](../tests/test_api.py#L276) | مسار API/واجهة محتمل | /api/diagnostics | 276 | [SRC-3451CC474D-L000276](../tests/test_api.py#L276) |
+| [tests/test_api.py](../tests/test_api.py#L300) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 300 | [SRC-3451CC474D-L000300](../tests/test_api.py#L300) |
+| [tests/test_api.py](../tests/test_api.py#L328) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 328 | [SRC-3451CC474D-L000328](../tests/test_api.py#L328) |
+| [tests/test_api.py](../tests/test_api.py#L329) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 329 | [SRC-3451CC474D-L000329](../tests/test_api.py#L329) |
+| [tests/test_api.py](../tests/test_api.py#L330) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 330 | [SRC-3451CC474D-L000330](../tests/test_api.py#L330) |
+| [tests/test_api.py](../tests/test_api.py#L497) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 497 | [SRC-3451CC474D-L000497](../tests/test_api.py#L497) |
+| [tests/test_api.py](../tests/test_api.py#L541) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 541 | [SRC-3451CC474D-L000541](../tests/test_api.py#L541) |
+| [tests/test_api.py](../tests/test_api.py#L571) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 571 | [SRC-3451CC474D-L000571](../tests/test_api.py#L571) |
+| [tests/test_api.py](../tests/test_api.py#L617) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 617 | [SRC-3451CC474D-L000617](../tests/test_api.py#L617) |
+| [tests/test_api.py](../tests/test_api.py#L618) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 618 | [SRC-3451CC474D-L000618](../tests/test_api.py#L618) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN_STORAGE_KEY | 9 | [SRC-3D0A619359-L000009](../tests/test_dashboard_security.py#L9) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 13 | [SRC-6BCB799CEC-L000013](../tests/test_evidence_provenance.py#L13) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L202) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTTP_PROXY | 202 | [SRC-6BCB799CEC-L000202](../tests/test_evidence_provenance.py#L202) |
+| [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L202) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTTPS_PROXY | 202 | [SRC-6BCB799CEC-L000202](../tests/test_evidence_provenance.py#L202) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEXER_PATH | 8 | [SRC-FA4E1423C3-L000008](../tests/test_generate_index.py#L8) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEXER_SPEC | 9 | [SRC-FA4E1423C3-L000009](../tests/test_generate_index.py#L9) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODULE_SETTING | 64 | [SRC-FA4E1423C3-L000064](../tests/test_generate_index.py#L64) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLASS_SETTING | 66 | [SRC-FA4E1423C3-L000066](../tests/test_generate_index.py#L66) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN | 100 | [SRC-FA4E1423C3-L000100](../tests/test_generate_index.py#L100) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ENABLED | 109 | [SRC-FA4E1423C3-L000109](../tests/test_generate_index.py#L109) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 130 | [SRC-FA4E1423C3-L000130](../tests/test_generate_index.py#L130) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L141) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 141 | [SRC-FA4E1423C3-L000141](../tests/test_generate_index.py#L141) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L237) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 237 | [SRC-FA4E1423C3-L000237](../tests/test_generate_index.py#L237) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L307) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PRIVATE_TOKEN | 307 | [SRC-FA4E1423C3-L000307](../tests/test_generate_index.py#L307) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L332) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_001 | 332 | [SRC-FA4E1423C3-L000332](../tests/test_generate_index.py#L332) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L366) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_RELATIVE_PATH | 366 | [SRC-FA4E1423C3-L000366](../tests/test_generate_index.py#L366) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L367) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX_RELATIVE_PATH | 367 | [SRC-FA4E1423C3-L000367](../tests/test_generate_index.py#L367) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L238) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 238 | [SRC-829A979985-L000238](../tests/test_generation_acceptance_matrix.py#L238) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L565) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 565 | [SRC-829A979985-L000565](../tests/test_generation_acceptance_matrix.py#L565) |
+| [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L566) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 566 | [SRC-829A979985-L000566](../tests/test_generation_acceptance_matrix.py#L566) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L29) | مسار API/واجهة محتمل | /api/health | 29 | [SRC-1A176AD4F0-L000029](../tests/test_hosted_smoke.py#L29) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L40) | مسار API/واجهة محتمل | /api/diagnostics | 40 | [SRC-1A176AD4F0-L000040](../tests/test_hosted_smoke.py#L40) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L52) | مسار API/واجهة محتمل | /api/agent | 52 | [SRC-1A176AD4F0-L000052](../tests/test_hosted_smoke.py#L52) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L157) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 157 | [SRC-1A176AD4F0-L000157](../tests/test_hosted_smoke.py#L157) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 13 | [SRC-EA6EC52573-L000013](../tests/test_intent_router.py#L13) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 16 | [SRC-EA6EC52573-L000016](../tests/test_intent_router.py#L16) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 19 | [SRC-EA6EC52573-L000019](../tests/test_intent_router.py#L19) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 32 | [SRC-EA6EC52573-L000032](../tests/test_intent_router.py#L32) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 107 | [SRC-4397BC2CD2-L000107](../tests/test_intent_router_integration.py#L107) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 151 | [SRC-4397BC2CD2-L000151](../tests/test_intent_router_integration.py#L151) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 21 | [SRC-62DC597310-L000021](../tests/test_live_search_connectors.py#L21) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 49 | [SRC-62DC597310-L000049](../tests/test_live_search_connectors.py#L49) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_NAME | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 15 | [SRC-B106ADC5EF-L000015](../tests/test_proxy_origin.py#L15) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 16 | [SRC-B106ADC5EF-L000016](../tests/test_proxy_origin.py#L16) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 17 | [SRC-B106ADC5EF-L000017](../tests/test_proxy_origin.py#L17) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 19 | [SRC-B106ADC5EF-L000019](../tests/test_proxy_origin.py#L19) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L34) | مسار API/واجهة محتمل | /api/ask | 34 | [SRC-B106ADC5EF-L000034](../tests/test_proxy_origin.py#L34) |
+| [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L46) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_SHAPES | 46 | [SRC-B106ADC5EF-L000046](../tests/test_proxy_origin.py#L46) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 52 | [SRC-C353AAAC10-L000052](../tests/test_request_budget.py#L52) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 53 | [SRC-C353AAAC10-L000053](../tests/test_request_budget.py#L53) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 54 | [SRC-C353AAAC10-L000054](../tests/test_request_budget.py#L54) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 55 | [SRC-C353AAAC10-L000055](../tests/test_request_budget.py#L55) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L91) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 91 | [SRC-C353AAAC10-L000091](../tests/test_request_budget.py#L91) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 92 | [SRC-C353AAAC10-L000092](../tests/test_request_budget.py#L92) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_PATH | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 129 | [SRC-F725E90B2A-L000129](../tests/test_web_agent.py#L129) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L386) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 386 | [SRC-F725E90B2A-L000386](../tests/test_web_agent.py#L386) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L425) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 425 | [SRC-F725E90B2A-L000425](../tests/test_web_agent.py#L425) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L426) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 426 | [SRC-F725E90B2A-L000426](../tests/test_web_agent.py#L426) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L427) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 427 | [SRC-F725E90B2A-L000427](../tests/test_web_agent.py#L427) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L482) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 482 | [SRC-F725E90B2A-L000482](../tests/test_web_agent.py#L482) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L483) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 483 | [SRC-F725E90B2A-L000483](../tests/test_web_agent.py#L483) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L519) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 519 | [SRC-F725E90B2A-L000519](../tests/test_web_agent.py#L519) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L520) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 520 | [SRC-F725E90B2A-L000520](../tests/test_web_agent.py#L520) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L521) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 521 | [SRC-F725E90B2A-L000521](../tests/test_web_agent.py#L521) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L574) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 574 | [SRC-F725E90B2A-L000574](../tests/test_web_agent.py#L574) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L575) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 575 | [SRC-F725E90B2A-L000575](../tests/test_web_agent.py#L575) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L576) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 576 | [SRC-F725E90B2A-L000576](../tests/test_web_agent.py#L576) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L577) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 577 | [SRC-F725E90B2A-L000577](../tests/test_web_agent.py#L577) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L578) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 578 | [SRC-F725E90B2A-L000578](../tests/test_web_agent.py#L578) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L801) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 801 | [SRC-F725E90B2A-L000801](../tests/test_web_agent.py#L801) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L913) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 913 | [SRC-F725E90B2A-L000913](../tests/test_web_agent.py#L913) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L914) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 914 | [SRC-F725E90B2A-L000914](../tests/test_web_agent.py#L914) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1319) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 1319 | [SRC-F725E90B2A-L001319](../tests/test_web_agent.py#L1319) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L1319) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 1319 | [SRC-F725E90B2A-L001319](../tests/test_web_agent.py#L1319) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2148) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 2148 | [SRC-F725E90B2A-L002148](../tests/test_web_agent.py#L2148) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2210) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 2210 | [SRC-F725E90B2A-L002210](../tests/test_web_agent.py#L2210) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2272) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 2272 | [SRC-F725E90B2A-L002272](../tests/test_web_agent.py#L2272) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2447) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 2447 | [SRC-F725E90B2A-L002447](../tests/test_web_agent.py#L2447) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2447) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IPPROTO_TCP | 2447 | [SRC-F725E90B2A-L002447](../tests/test_web_agent.py#L2447) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2447) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 2447 | [SRC-F725E90B2A-L002447](../tests/test_web_agent.py#L2447) |
+| [web/agent.html](../web/agent.html#L5) | قيمة سمة HTML (name) | viewport | 5 | [SRC-DE7EABE998-L000005](../web/agent.html#L5) |
+| [web/agent.html](../web/agent.html#L6) | قيمة سمة HTML (name) | theme-color | 6 | [SRC-DE7EABE998-L000006](../web/agent.html#L6) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | amber | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | bg | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | blue | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | green | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | line | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | muted | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | panel | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | panel2 | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | radius | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | red | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | teal | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | text | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | محدد id في CSS | f0f5fc | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | محدد id في CSS | ff929e | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L9) | محدد id في CSS | ffd28a | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
+| [web/agent.html](../web/agent.html#L13) | محدد class في CSS | shell | 13 | [SRC-DE7EABE998-L000013](../web/agent.html#L13) |
+| [web/agent.html](../web/agent.html#L14) | محدد class في CSS | topbar | 14 | [SRC-DE7EABE998-L000014](../web/agent.html#L14) |
+| [web/agent.html](../web/agent.html#L15) | محدد class في CSS | brand | 15 | [SRC-DE7EABE998-L000015](../web/agent.html#L15) |
+| [web/agent.html](../web/agent.html#L15) | محدد class في CSS | logo | 15 | [SRC-DE7EABE998-L000015](../web/agent.html#L15) |
+| [web/agent.html](../web/agent.html#L17) | محدد class في CSS | dot | 17 | [SRC-DE7EABE998-L000017](../web/agent.html#L17) |
+| [web/agent.html](../web/agent.html#L17) | محدد class في CSS | status | 17 | [SRC-DE7EABE998-L000017](../web/agent.html#L17) |
+| [web/agent.html](../web/agent.html#L17) | محدد class في CSS | top-actions | 17 | [SRC-DE7EABE998-L000017](../web/agent.html#L17) |
+| [web/agent.html](../web/agent.html#L18) | محدد class في CSS | ghost | 18 | [SRC-DE7EABE998-L000018](../web/agent.html#L18) |
+| [web/agent.html](../web/agent.html#L18) | محدد class في CSS | primary | 18 | [SRC-DE7EABE998-L000018](../web/agent.html#L18) |
+| [web/agent.html](../web/agent.html#L18) | محدد id في CSS | acc4ff | 18 | [SRC-DE7EABE998-L000018](../web/agent.html#L18) |
+| [web/agent.html](../web/agent.html#L18) | محدد id في CSS | d9e6f8 | 18 | [SRC-DE7EABE998-L000018](../web/agent.html#L18) |
+| [web/agent.html](../web/agent.html#L19) | محدد class في CSS | eyebrow | 19 | [SRC-DE7EABE998-L000019](../web/agent.html#L19) |
+| [web/agent.html](../web/agent.html#L19) | محدد class في CSS | hero | 19 | [SRC-DE7EABE998-L000019](../web/agent.html#L19) |
+| [web/agent.html](../web/agent.html#L19) | محدد class في CSS | trust | 19 | [SRC-DE7EABE998-L000019](../web/agent.html#L19) |
+| [web/agent.html](../web/agent.html#L19) | محدد id في CSS | b5f7e8 | 19 | [SRC-DE7EABE998-L000019](../web/agent.html#L19) |
+| [web/agent.html](../web/agent.html#L19) | محدد id في CSS | e4fffa | 19 | [SRC-DE7EABE998-L000019](../web/agent.html#L19) |
+| [web/agent.html](../web/agent.html#L20) | محدد class في CSS | layout | 20 | [SRC-DE7EABE998-L000020](../web/agent.html#L20) |
+| [web/agent.html](../web/agent.html#L21) | محدد class في CSS | chatpanel | 21 | [SRC-DE7EABE998-L000021](../web/agent.html#L21) |
+| [web/agent.html](../web/agent.html#L21) | محدد class في CSS | sidepanel | 21 | [SRC-DE7EABE998-L000021](../web/agent.html#L21) |
+| [web/agent.html](../web/agent.html#L22) | محدد class في CSS | chathead | 22 | [SRC-DE7EABE998-L000022](../web/agent.html#L22) |
+| [web/agent.html](../web/agent.html#L22) | محدد class في CSS | live-tag | 22 | [SRC-DE7EABE998-L000022](../web/agent.html#L22) |
+| [web/agent.html](../web/agent.html#L22) | محدد id في CSS | b9fff2 | 22 | [SRC-DE7EABE998-L000022](../web/agent.html#L22) |
+| [web/agent.html](../web/agent.html#L23) | محدد class في CSS | mode-btn | 23 | [SRC-DE7EABE998-L000023](../web/agent.html#L23) |
+| [web/agent.html](../web/agent.html#L23) | محدد class في CSS | mode-label | 23 | [SRC-DE7EABE998-L000023](../web/agent.html#L23) |
+| [web/agent.html](../web/agent.html#L23) | محدد class في CSS | modebar | 23 | [SRC-DE7EABE998-L000023](../web/agent.html#L23) |
+| [web/agent.html](../web/agent.html#L23) | محدد id في CSS | a8c1ff | 23 | [SRC-DE7EABE998-L000023](../web/agent.html#L23) |
+| [web/agent.html](../web/agent.html#L23) | محدد id في CSS | c3d3e8 | 23 | [SRC-DE7EABE998-L000023](../web/agent.html#L23) |
+| [web/agent.html](../web/agent.html#L24) | محدد class في CSS | messages | 24 | [SRC-DE7EABE998-L000024](../web/agent.html#L24) |
+| [web/agent.html](../web/agent.html#L24) | محدد class في CSS | suggestions | 24 | [SRC-DE7EABE998-L000024](../web/agent.html#L24) |
+| [web/agent.html](../web/agent.html#L24) | محدد class في CSS | welcome | 24 | [SRC-DE7EABE998-L000024](../web/agent.html#L24) |
+| [web/agent.html](../web/agent.html#L24) | محدد class في CSS | welcome-icon | 24 | [SRC-DE7EABE998-L000024](../web/agent.html#L24) |
+| [web/agent.html](../web/agent.html#L24) | محدد id في CSS | c4d6ec | 24 | [SRC-DE7EABE998-L000024](../web/agent.html#L24) |
+| [web/agent.html](../web/agent.html#L25) | محدد class في CSS | bubble | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد class في CSS | message | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد class في CSS | user | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد class في CSS | who | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد id في CSS | b4d4ff | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد id في CSS | dce8fc | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد id في CSS | e6eef9 | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد id في CSS | e8fffb | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L25) | محدد id في CSS | f6fbff | 25 | [SRC-DE7EABE998-L000025](../web/agent.html#L25) |
+| [web/agent.html](../web/agent.html#L26) | محدد class في CSS | pending | 26 | [SRC-DE7EABE998-L000026](../web/agent.html#L26) |
+| [web/agent.html](../web/agent.html#L26) | محدد class في CSS | spinner | 26 | [SRC-DE7EABE998-L000026](../web/agent.html#L26) |
+| [web/agent.html](../web/agent.html#L26) | محدد id في CSS | b5c7dc | 26 | [SRC-DE7EABE998-L000026](../web/agent.html#L26) |
+| [web/agent.html](../web/agent.html#L27) | محدد class في CSS | coverage | 27 | [SRC-DE7EABE998-L000027](../web/agent.html#L27) |
+| [web/agent.html](../web/agent.html#L27) | محدد class في CSS | report | 27 | [SRC-DE7EABE998-L000027](../web/agent.html#L27) |
+| [web/agent.html](../web/agent.html#L27) | محدد class في CSS | report-head | 27 | [SRC-DE7EABE998-L000027](../web/agent.html#L27) |
+| [web/agent.html](../web/agent.html#L27) | محدد id في CSS | b9ffeb | 27 | [SRC-DE7EABE998-L000027](../web/agent.html#L27) |
+| [web/agent.html](../web/agent.html#L28) | محدد class في CSS | metric | 28 | [SRC-DE7EABE998-L000028](../web/agent.html#L28) |
+| [web/agent.html](../web/agent.html#L28) | محدد class في CSS | metrics | 28 | [SRC-DE7EABE998-L000028](../web/agent.html#L28) |
+| [web/agent.html](../web/agent.html#L28) | محدد class في CSS | provider | 28 | [SRC-DE7EABE998-L000028](../web/agent.html#L28) |
+| [web/agent.html](../web/agent.html#L28) | محدد class في CSS | providers | 28 | [SRC-DE7EABE998-L000028](../web/agent.html#L28) |
+| [web/agent.html](../web/agent.html#L28) | محدد class في CSS | report-note | 28 | [SRC-DE7EABE998-L000028](../web/agent.html#L28) |
+| [web/agent.html](../web/agent.html#L28) | محدد id في CSS | b7c8dc | 28 | [SRC-DE7EABE998-L000028](../web/agent.html#L28) |
+| [web/agent.html](../web/agent.html#L28) | محدد id في CSS | c3d5ea | 28 | [SRC-DE7EABE998-L000028](../web/agent.html#L28) |
+| [web/agent.html](../web/agent.html#L29) | محدد class في CSS | details | 29 | [SRC-DE7EABE998-L000029](../web/agent.html#L29) |
+| [web/agent.html](../web/agent.html#L29) | محدد id في CSS | b9f8eb | 29 | [SRC-DE7EABE998-L000029](../web/agent.html#L29) |
+| [web/agent.html](../web/agent.html#L29) | محدد id في CSS | c6d5e7 | 29 | [SRC-DE7EABE998-L000029](../web/agent.html#L29) |
+| [web/agent.html](../web/agent.html#L30) | محدد class في CSS | no-sources | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد class في CSS | source | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد class في CSS | source-meta | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد class في CSS | sources | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد class في CSS | tag | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد class في CSS | warning | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد id في CSS | aabbd0 | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد id في CSS | acbdd1 | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد id في CSS | c2d9ff | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد id في CSS | f0cc8f | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L30) | محدد id في CSS | ffdfa2 | 30 | [SRC-DE7EABE998-L000030](../web/agent.html#L30) |
+| [web/agent.html](../web/agent.html#L31) | محدد class في CSS | composer | 31 | [SRC-DE7EABE998-L000031](../web/agent.html#L31) |
+| [web/agent.html](../web/agent.html#L31) | محدد class في CSS | hint | 31 | [SRC-DE7EABE998-L000031](../web/agent.html#L31) |
+| [web/agent.html](../web/agent.html#L31) | محدد class في CSS | inputwrap | 31 | [SRC-DE7EABE998-L000031](../web/agent.html#L31) |
+| [web/agent.html](../web/agent.html#L31) | محدد class في CSS | send | 31 | [SRC-DE7EABE998-L000031](../web/agent.html#L31) |
+| [web/agent.html](../web/agent.html#L32) | محدد class في CSS | sideblock | 32 | [SRC-DE7EABE998-L000032](../web/agent.html#L32) |
+| [web/agent.html](../web/agent.html#L32) | محدد class في CSS | sidefeature | 32 | [SRC-DE7EABE998-L000032](../web/agent.html#L32) |
+| [web/agent.html](../web/agent.html#L32) | محدد class في CSS | sideicon | 32 | [SRC-DE7EABE998-L000032](../web/agent.html#L32) |
+| [web/agent.html](../web/agent.html#L33) | محدد class في CSS | checkbutton | 33 | [SRC-DE7EABE998-L000033](../web/agent.html#L33) |
+| [web/agent.html](../web/agent.html#L33) | محدد class في CSS | config-label | 33 | [SRC-DE7EABE998-L000033](../web/agent.html#L33) |
+| [web/agent.html](../web/agent.html#L33) | محدد class في CSS | diag | 33 | [SRC-DE7EABE998-L000033](../web/agent.html#L33) |
+| [web/agent.html](../web/agent.html#L33) | محدد class في CSS | foot | 33 | [SRC-DE7EABE998-L000033](../web/agent.html#L33) |
+| [web/agent.html](../web/agent.html#L33) | محدد id في CSS | b7c9de | 33 | [SRC-DE7EABE998-L000033](../web/agent.html#L33) |
+| [web/agent.html](../web/agent.html#L37) | محدد class في CSS | message-context | 37 | [SRC-DE7EABE998-L000037](../web/agent.html#L37) |
+| [web/agent.html](../web/agent.html#L37) | محدد class في CSS | retry-button | 37 | [SRC-DE7EABE998-L000037](../web/agent.html#L37) |
+| [web/agent.html](../web/agent.html#L37) | محدد class في CSS | retry-row | 37 | [SRC-DE7EABE998-L000037](../web/agent.html#L37) |
+| [web/agent.html](../web/agent.html#L44) | قيمة سمة HTML (id) | clear | 44 | [SRC-DE7EABE998-L000044](../web/agent.html#L44) |
+| [web/agent.html](../web/agent.html#L44) | قيمة سمة HTML (id) | status | 44 | [SRC-DE7EABE998-L000044](../web/agent.html#L44) |
+| [web/agent.html](../web/agent.html#L62) | قيمة سمة HTML (id) | messages | 62 | [SRC-DE7EABE998-L000062](../web/agent.html#L62) |
+| [web/agent.html](../web/agent.html#L63) | قيمة سمة HTML (id) | welcome | 63 | [SRC-DE7EABE998-L000063](../web/agent.html#L63) |
+| [web/agent.html](../web/agent.html#L65) | قيمة سمة HTML (id) | question | 65 | [SRC-DE7EABE998-L000065](../web/agent.html#L65) |
+| [web/agent.html](../web/agent.html#L65) | قيمة سمة HTML (id) | send | 65 | [SRC-DE7EABE998-L000065](../web/agent.html#L65) |
+| [web/agent.html](../web/agent.html#L72) | قيمة سمة HTML (id) | accessToken | 72 | [SRC-DE7EABE998-L000072](../web/agent.html#L72) |
+| [web/agent.html](../web/agent.html#L73) | قيمة سمة HTML (id) | saveAccessToken | 73 | [SRC-DE7EABE998-L000073](../web/agent.html#L73) |
+| [web/agent.html](../web/agent.html#L78) | قيمة سمة HTML (id) | setupStatus | 78 | [SRC-DE7EABE998-L000078](../web/agent.html#L78) |
+| [web/agent.html](../web/agent.html#L79) | قيمة سمة HTML (id) | diagSocial | 79 | [SRC-DE7EABE998-L000079](../web/agent.html#L79) |
+| [web/agent.html](../web/agent.html#L80) | قيمة سمة HTML (id) | runDiagnostics | 80 | [SRC-DE7EABE998-L000080](../web/agent.html#L80) |
+| [web/agent.html](../web/agent.html#L81) | قيمة سمة HTML (id) | diagnosticsResult | 81 | [SRC-DE7EABE998-L000081](../web/agent.html#L81) |
+| [web/agent.html](../web/agent.html#L88) | قيمة سمة HTML (id) | providerSetup | 88 | [SRC-DE7EABE998-L000088](../web/agent.html#L88) |
+| [web/agent.html](../web/agent.html#L100) | دالة JavaScript/TypeScript | $ | 100 | [SRC-DE7EABE998-L000100](../web/agent.html#L100) |
+| [web/agent.html](../web/agent.html#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN_STORAGE_KEY | 101 | [SRC-DE7EABE998-L000101](../web/agent.html#L101) |
+| [web/agent.html](../web/agent.html#L101) | متغير JavaScript/TypeScript | ACCESS_TOKEN_STORAGE_KEY | 101 | [SRC-DE7EABE998-L000101](../web/agent.html#L101) |
+| [web/agent.html](../web/agent.html#L102) | دالة JavaScript/TypeScript | apiHeaders | 102 | [SRC-DE7EABE998-L000102](../web/agent.html#L102) |
+| [web/agent.html](../web/agent.html#L102) | متغير JavaScript/TypeScript | headers | 102 | [SRC-DE7EABE998-L000102](../web/agent.html#L102) |
+| [web/agent.html](../web/agent.html#L102) | متغير JavaScript/TypeScript | token | 102 | [SRC-DE7EABE998-L000102](../web/agent.html#L102) |
+| [web/agent.html](../web/agent.html#L103) | متغير JavaScript/TypeScript | history | 103 | [SRC-DE7EABE998-L000103](../web/agent.html#L103) |
+| [web/agent.html](../web/agent.html#L104) | متغير JavaScript/TypeScript | busy | 104 | [SRC-DE7EABE998-L000104](../web/agent.html#L104) |
+| [web/agent.html](../web/agent.html#L105) | متغير JavaScript/TypeScript | activeMode | 105 | [SRC-DE7EABE998-L000105](../web/agent.html#L105) |
+| [web/agent.html](../web/agent.html#L106) | متغير JavaScript/TypeScript | modeLabels | 106 | [SRC-DE7EABE998-L000106](../web/agent.html#L106) |
+| [web/agent.html](../web/agent.html#L107) | دالة JavaScript/TypeScript | escapeHtml | 107 | [SRC-DE7EABE998-L000107](../web/agent.html#L107) |
+| [web/agent.html](../web/agent.html#L108) | دالة JavaScript/TypeScript | answerMarkup | 108 | [SRC-DE7EABE998-L000108](../web/agent.html#L108) |
+| [web/agent.html](../web/agent.html#L109) | متغير JavaScript/TypeScript | escaped | 109 | [SRC-DE7EABE998-L000109](../web/agent.html#L109) |
+| [web/agent.html](../web/agent.html#L119) | دالة JavaScript/TypeScript | setStatus | 119 | [SRC-DE7EABE998-L000119](../web/agent.html#L119) |
+| [web/agent.html](../web/agent.html#L120) | دالة JavaScript/TypeScript | modeName | 120 | [SRC-DE7EABE998-L000120](../web/agent.html#L120) |
+| [web/agent.html](../web/agent.html#L121) | دالة JavaScript/TypeScript | safeSourceUrl | 121 | [SRC-DE7EABE998-L000121](../web/agent.html#L121) |
+| [web/agent.html](../web/agent.html#L123) | متغير JavaScript/TypeScript | parsed | 123 | [SRC-DE7EABE998-L000123](../web/agent.html#L123) |
+| [web/agent.html](../web/agent.html#L128) | دالة JavaScript/TypeScript | renderSource | 128 | [SRC-DE7EABE998-L000128](../web/agent.html#L128) |
+| [web/agent.html](../web/agent.html#L130) | متغير JavaScript/TypeScript | url | 130 | [SRC-DE7EABE998-L000130](../web/agent.html#L130) |
+| [web/agent.html](../web/agent.html#L131) | متغير JavaScript/TypeScript | title | 131 | [SRC-DE7EABE998-L000131](../web/agent.html#L131) |
+| [web/agent.html](../web/agent.html#L132) | متغير JavaScript/TypeScript | tags | 132 | [SRC-DE7EABE998-L000132](../web/agent.html#L132) |
+| [web/agent.html](../web/agent.html#L137) | متغير JavaScript/TypeScript | providers | 137 | [SRC-DE7EABE998-L000137](../web/agent.html#L137) |
+| [web/agent.html](../web/agent.html#L143) | متغير JavaScript/TypeScript | heading | 143 | [SRC-DE7EABE998-L000143](../web/agent.html#L143) |
+| [web/agent.html](../web/agent.html#L146) | دالة JavaScript/TypeScript | renderReport | 146 | [SRC-DE7EABE998-L000146](../web/agent.html#L146) |
+| [web/agent.html](../web/agent.html#L147) | متغير JavaScript/TypeScript | r | 147 | [SRC-DE7EABE998-L000147](../web/agent.html#L147) |
+| [web/agent.html](../web/agent.html#L148) | متغير JavaScript/TypeScript | e | 148 | [SRC-DE7EABE998-L000148](../web/agent.html#L148) |
+| [web/agent.html](../web/agent.html#L149) | متغير JavaScript/TypeScript | sources | 149 | [SRC-DE7EABE998-L000149](../web/agent.html#L149) |
+| [web/agent.html](../web/agent.html#L150) | متغير JavaScript/TypeScript | researchErrorOutcome | 150 | [SRC-DE7EABE998-L000150](../web/agent.html#L150) |
+| [web/agent.html](../web/agent.html#L151) | متغير JavaScript/TypeScript | lead | 151 | [SRC-DE7EABE998-L000151](../web/agent.html#L151) |
+| [web/agent.html](../web/agent.html#L152) | متغير JavaScript/TypeScript | leadResearchIncomplete | 152 | [SRC-DE7EABE998-L000152](../web/agent.html#L152) |
+| [web/agent.html](../web/agent.html#L153) | متغير JavaScript/TypeScript | leadSignalCount | 153 | [SRC-DE7EABE998-L000153](../web/agent.html#L153) |
+| [web/agent.html](../web/agent.html#L154) | متغير JavaScript/TypeScript | noQualifiedLeads | 154 | [SRC-DE7EABE998-L000154](../web/agent.html#L154) |
+| [web/agent.html](../web/agent.html#L155) | متغير JavaScript/TypeScript | score | 155 | [SRC-DE7EABE998-L000155](../web/agent.html#L155) |
+| [web/agent.html](../web/agent.html#L156) | متغير JavaScript/TypeScript | scoreLabel | 156 | [SRC-DE7EABE998-L000156](../web/agent.html#L156) |
+| [web/agent.html](../web/agent.html#L157) | متغير JavaScript/TypeScript | metrics | 157 | [SRC-DE7EABE998-L000157](../web/agent.html#L157) |
+| [web/agent.html](../web/agent.html#L168) | متغير JavaScript/TypeScript | metricHtml | 168 | [SRC-DE7EABE998-L000168](../web/agent.html#L168) |
+| [web/agent.html](../web/agent.html#L169) | متغير JavaScript/TypeScript | providerCounts | 169 | [SRC-DE7EABE998-L000169](../web/agent.html#L169) |
+| [web/agent.html](../web/agent.html#L170) | متغير JavaScript/TypeScript | providerHtml | 170 | [SRC-DE7EABE998-L000170](../web/agent.html#L170) |
+| [web/agent.html](../web/agent.html#L171) | متغير JavaScript/TypeScript | notes | 171 | [SRC-DE7EABE998-L000171](../web/agent.html#L171) |
+| [web/agent.html](../web/agent.html#L172) | متغير JavaScript/TypeScript | queryList | 172 | [SRC-DE7EABE998-L000172](../web/agent.html#L172) |
+| [web/agent.html](../web/agent.html#L173) | متغير JavaScript/TypeScript | details | 173 | [SRC-DE7EABE998-L000173](../web/agent.html#L173) |
+| [web/agent.html](../web/agent.html#L174) | متغير JavaScript/TypeScript | coverageText | 174 | [SRC-DE7EABE998-L000174](../web/agent.html#L174) |
+| [web/agent.html](../web/agent.html#L183) | متغير JavaScript/TypeScript | usableSourceCount | 183 | [SRC-DE7EABE998-L000183](../web/agent.html#L183) |
+| [web/agent.html](../web/agent.html#L184) | متغير JavaScript/TypeScript | attemptText | 184 | [SRC-DE7EABE998-L000184](../web/agent.html#L184) |
+| [web/agent.html](../web/agent.html#L193) | متغير JavaScript/TypeScript | qualityText | 193 | [SRC-DE7EABE998-L000193](../web/agent.html#L193) |
+| [web/agent.html](../web/agent.html#L194) | متغير JavaScript/TypeScript | reviewText | 194 | [SRC-DE7EABE998-L000194](../web/agent.html#L194) |
+| [web/agent.html](../web/agent.html#L195) | متغير JavaScript/TypeScript | diversityText | 195 | [SRC-DE7EABE998-L000195](../web/agent.html#L195) |
+| [web/agent.html](../web/agent.html#L196) | متغير JavaScript/TypeScript | reportNotes | 196 | [SRC-DE7EABE998-L000196](../web/agent.html#L196) |
+| [web/agent.html](../web/agent.html#L197) | متغير JavaScript/TypeScript | review | 197 | [SRC-DE7EABE998-L000197](../web/agent.html#L197) |
+| [web/agent.html](../web/agent.html#L200) | دالة JavaScript/TypeScript | addMessage | 200 | [SRC-DE7EABE998-L000200](../web/agent.html#L200) |
+| [web/agent.html](../web/agent.html#L201) | متغير JavaScript/TypeScript | welcome | 201 | [SRC-DE7EABE998-L000201](../web/agent.html#L201) |
+| [web/agent.html](../web/agent.html#L202) | متغير JavaScript/TypeScript | box | 202 | [SRC-DE7EABE998-L000202](../web/agent.html#L202) |
+| [web/agent.html](../web/agent.html#L203) | متغير JavaScript/TypeScript | who | 203 | [SRC-DE7EABE998-L000203](../web/agent.html#L203) |
+| [web/agent.html](../web/agent.html#L206) | متغير JavaScript/TypeScript | linkedQuestion | 206 | [SRC-DE7EABE998-L000206](../web/agent.html#L206) |
+| [web/agent.html](../web/agent.html#L208) | متغير JavaScript/TypeScript | context | 208 | [SRC-DE7EABE998-L000208](../web/agent.html#L208) |
+| [web/agent.html](../web/agent.html#L211) | متغير JavaScript/TypeScript | bubble | 211 | [SRC-DE7EABE998-L000211](../web/agent.html#L211) |
+| [web/agent.html](../web/agent.html#L213) | متغير JavaScript/TypeScript | notice | 213 | [SRC-DE7EABE998-L000213](../web/agent.html#L213) |
+| [web/agent.html](../web/agent.html#L223) | متغير JavaScript/TypeScript | report | 223 | [SRC-DE7EABE998-L000223](../web/agent.html#L223) |
+| [web/agent.html](../web/agent.html#L226) | متغير JavaScript/TypeScript | warning | 226 | [SRC-DE7EABE998-L000226](../web/agent.html#L226) |
+| [web/agent.html](../web/agent.html#L229) | متغير JavaScript/TypeScript | rawSources | 229 | [SRC-DE7EABE998-L000229](../web/agent.html#L229) |
+| [web/agent.html](../web/agent.html#L230) | متغير JavaScript/TypeScript | usableSources | 230 | [SRC-DE7EABE998-L000230](../web/agent.html#L230) |
+| [web/agent.html](../web/agent.html#L235) | متغير JavaScript/TypeScript | no | 235 | [SRC-DE7EABE998-L000235](../web/agent.html#L235) |
+| [web/agent.html](../web/agent.html#L242) | دالة JavaScript/TypeScript | setBusy | 242 | [SRC-DE7EABE998-L000242](../web/agent.html#L242) |
+| [web/agent.html](../web/agent.html#L243) | دالة JavaScript/TypeScript | ask | 243 | [SRC-DE7EABE998-L000243](../web/agent.html#L243) |
+| [web/agent.html](../web/agent.html#L244) | متغير JavaScript/TypeScript | q | 244 | [SRC-DE7EABE998-L000244](../web/agent.html#L244) |
+| [web/agent.html](../web/agent.html#L247) | متغير JavaScript/TypeScript | pending | 247 | [SRC-DE7EABE998-L000247](../web/agent.html#L247) |
+| [web/agent.html](../web/agent.html#L251) | متغير JavaScript/TypeScript | response | 251 | [SRC-DE7EABE998-L000251](../web/agent.html#L251) |
+| [web/agent.html](../web/agent.html#L251) | مسار API/واجهة محتمل | /api/agent | 251 | [SRC-DE7EABE998-L000251](../web/agent.html#L251) |
+| [web/agent.html](../web/agent.html#L252) | متغير JavaScript/TypeScript | data | 252 | [SRC-DE7EABE998-L000252](../web/agent.html#L252) |
+| [web/agent.html](../web/agent.html#L275) | متغير JavaScript/TypeScript | safeMessage | 275 | [SRC-DE7EABE998-L000275](../web/agent.html#L275) |
+| [web/agent.html](../web/agent.html#L277) | متغير JavaScript/TypeScript | actions | 277 | [SRC-DE7EABE998-L000277](../web/agent.html#L277) |
+| [web/agent.html](../web/agent.html#L278) | متغير JavaScript/TypeScript | retry | 278 | [SRC-DE7EABE998-L000278](../web/agent.html#L278) |
+| [web/agent.html](../web/agent.html#L286) | دالة JavaScript/TypeScript | runDiagnostics | 286 | [SRC-DE7EABE998-L000286](../web/agent.html#L286) |
+| [web/agent.html](../web/agent.html#L287) | متغير JavaScript/TypeScript | button | 287 | [SRC-DE7EABE998-L000287](../web/agent.html#L287) |
+| [web/agent.html](../web/agent.html#L290) | مسار API/واجهة محتمل | /api/diagnostics | 290 | [SRC-DE7EABE998-L000290](../web/agent.html#L290) |
+| [web/agent.html](../web/agent.html#L292) | متغير JavaScript/TypeScript | labels | 292 | [SRC-DE7EABE998-L000292](../web/agent.html#L292) |
+| [web/agent.html](../web/agent.html#L293) | متغير JavaScript/TypeScript | lines | 293 | [SRC-DE7EABE998-L000293](../web/agent.html#L293) |
+| [web/agent.html](../web/agent.html#L295) | متغير JavaScript/TypeScript | item | 295 | [SRC-DE7EABE998-L000295](../web/agent.html#L295) |
+| [web/agent.html](../web/agent.html#L307) | دالة JavaScript/TypeScript | checkHealth | 307 | [SRC-DE7EABE998-L000307](../web/agent.html#L307) |
+| [web/agent.html](../web/agent.html#L309) | متغير JavaScript/TypeScript | a | 309 | [SRC-DE7EABE998-L000309](../web/agent.html#L309) |
+| [web/agent.html](../web/agent.html#L309) | متغير JavaScript/TypeScript | d | 309 | [SRC-DE7EABE998-L000309](../web/agent.html#L309) |
+| [web/agent.html](../web/agent.html#L309) | مسار API/واجهة محتمل | /api/health | 309 | [SRC-DE7EABE998-L000309](../web/agent.html#L309) |
+| [web/agent.html](../web/agent.html#L310) | متغير JavaScript/TypeScript | configured | 310 | [SRC-DE7EABE998-L000310](../web/agent.html#L310) |
+| [web/agent.html](../web/agent.html#L318) | متغير JavaScript/TypeScript | model | 318 | [SRC-DE7EABE998-L000318](../web/agent.html#L318) |
+| [web/agent.html](../web/agent.html#L326) | متغير JavaScript/TypeScript | active | 326 | [SRC-DE7EABE998-L000326](../web/agent.html#L326) |
+| [web/dashboard.html](../web/dashboard.html#L4) | قيمة سمة HTML (name) | viewport | 4 | [SRC-A16FA6D4B5-L000004](../web/dashboard.html#L4) |
+| [web/dashboard.html](../web/dashboard.html#L5) | قيمة سمة HTML (name) | theme-color | 5 | [SRC-A16FA6D4B5-L000005](../web/dashboard.html#L5) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | amber | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | bg | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | blue | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | cyan | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | green | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | line | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | muted | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | panel | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | red | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | text | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | محدد id في CSS | edf4ff | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | محدد id في CSS | ff8494 | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L7) | محدد id في CSS | ffca72 | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
+| [web/dashboard.html](../web/dashboard.html#L9) | محدد class في CSS | badge | 9 | [SRC-A16FA6D4B5-L000009](../web/dashboard.html#L9) |
+| [web/dashboard.html](../web/dashboard.html#L9) | محدد class في CSS | brand | 9 | [SRC-A16FA6D4B5-L000009](../web/dashboard.html#L9) |
+| [web/dashboard.html](../web/dashboard.html#L9) | محدد class في CSS | logo | 9 | [SRC-A16FA6D4B5-L000009](../web/dashboard.html#L9) |
+| [web/dashboard.html](../web/dashboard.html#L9) | محدد class في CSS | top | 9 | [SRC-A16FA6D4B5-L000009](../web/dashboard.html#L9) |
+| [web/dashboard.html](../web/dashboard.html#L9) | محدد class في CSS | wrap | 9 | [SRC-A16FA6D4B5-L000009](../web/dashboard.html#L9) |
+| [web/dashboard.html](../web/dashboard.html#L10) | محدد class في CSS | card | 10 | [SRC-A16FA6D4B5-L000010](../web/dashboard.html#L10) |
+| [web/dashboard.html](../web/dashboard.html#L10) | محدد class في CSS | eyebrow | 10 | [SRC-A16FA6D4B5-L000010](../web/dashboard.html#L10) |
+| [web/dashboard.html](../web/dashboard.html#L10) | محدد class في CSS | hero | 10 | [SRC-A16FA6D4B5-L000010](../web/dashboard.html#L10) |
+| [web/dashboard.html](../web/dashboard.html#L10) | محدد class في CSS | muted | 10 | [SRC-A16FA6D4B5-L000010](../web/dashboard.html#L10) |
+| [web/dashboard.html](../web/dashboard.html#L10) | محدد class في CSS | stat | 10 | [SRC-A16FA6D4B5-L000010](../web/dashboard.html#L10) |
+| [web/dashboard.html](../web/dashboard.html#L10) | محدد class في CSS | stats | 10 | [SRC-A16FA6D4B5-L000010](../web/dashboard.html#L10) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | empty | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | field | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | foot | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | layout | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | lead | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | leadhead | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | leads | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | pill | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | primary | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | result | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | row | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | score | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | secondary | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | signal | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد class في CSS | warning | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد id في CSS | c7d4ea | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L11) | محدد id في CSS | dce8ff | 11 | [SRC-A16FA6D4B5-L000011](../web/dashboard.html#L11) |
+| [web/dashboard.html](../web/dashboard.html#L19) | قيمة سمة HTML (id) | accessToken | 19 | [SRC-A16FA6D4B5-L000019](../web/dashboard.html#L19) |
+| [web/dashboard.html](../web/dashboard.html#L21) | قيمة سمة HTML (id) | saveAccessToken | 21 | [SRC-A16FA6D4B5-L000021](../web/dashboard.html#L21) |
+| [web/dashboard.html](../web/dashboard.html#L23) | قيمة سمة HTML (id) | authMessage | 23 | [SRC-A16FA6D4B5-L000023](../web/dashboard.html#L23) |
+| [web/dashboard.html](../web/dashboard.html#L25) | قيمة سمة HTML (id) | qualified | 25 | [SRC-A16FA6D4B5-L000025](../web/dashboard.html#L25) |
+| [web/dashboard.html](../web/dashboard.html#L25) | قيمة سمة HTML (id) | review | 25 | [SRC-A16FA6D4B5-L000025](../web/dashboard.html#L25) |
+| [web/dashboard.html](../web/dashboard.html#L25) | قيمة سمة HTML (id) | total | 25 | [SRC-A16FA6D4B5-L000025](../web/dashboard.html#L25) |
+| [web/dashboard.html](../web/dashboard.html#L26) | قيمة سمة HTML (id) | analyze | 26 | [SRC-A16FA6D4B5-L000026](../web/dashboard.html#L26) |
+| [web/dashboard.html](../web/dashboard.html#L26) | قيمة سمة HTML (id) | location | 26 | [SRC-A16FA6D4B5-L000026](../web/dashboard.html#L26) |
+| [web/dashboard.html](../web/dashboard.html#L26) | قيمة سمة HTML (id) | product | 26 | [SRC-A16FA6D4B5-L000026](../web/dashboard.html#L26) |
+| [web/dashboard.html](../web/dashboard.html#L26) | قيمة سمة HTML (id) | result | 26 | [SRC-A16FA6D4B5-L000026](../web/dashboard.html#L26) |
+| [web/dashboard.html](../web/dashboard.html#L26) | قيمة سمة HTML (id) | text | 26 | [SRC-A16FA6D4B5-L000026](../web/dashboard.html#L26) |
+| [web/dashboard.html](../web/dashboard.html#L27) | قيمة سمة HTML (id) | message | 27 | [SRC-A16FA6D4B5-L000027](../web/dashboard.html#L27) |
+| [web/dashboard.html](../web/dashboard.html#L27) | قيمة سمة HTML (id) | note | 27 | [SRC-A16FA6D4B5-L000027](../web/dashboard.html#L27) |
+| [web/dashboard.html](../web/dashboard.html#L27) | قيمة سمة HTML (id) | platform | 27 | [SRC-A16FA6D4B5-L000027](../web/dashboard.html#L27) |
+| [web/dashboard.html](../web/dashboard.html#L27) | قيمة سمة HTML (id) | save | 27 | [SRC-A16FA6D4B5-L000027](../web/dashboard.html#L27) |
+| [web/dashboard.html](../web/dashboard.html#L27) | قيمة سمة HTML (id) | source | 27 | [SRC-A16FA6D4B5-L000027](../web/dashboard.html#L27) |
+| [web/dashboard.html](../web/dashboard.html#L28) | قيمة سمة HTML (id) | askBtn | 28 | [SRC-A16FA6D4B5-L000028](../web/dashboard.html#L28) |
+| [web/dashboard.html](../web/dashboard.html#L28) | قيمة سمة HTML (id) | askInput | 28 | [SRC-A16FA6D4B5-L000028](../web/dashboard.html#L28) |
+| [web/dashboard.html](../web/dashboard.html#L28) | قيمة سمة HTML (id) | askMessages | 28 | [SRC-A16FA6D4B5-L000028](../web/dashboard.html#L28) |
+| [web/dashboard.html](../web/dashboard.html#L28) | قيمة سمة HTML (id) | leadlist | 28 | [SRC-A16FA6D4B5-L000028](../web/dashboard.html#L28) |
+| [web/dashboard.html](../web/dashboard.html#L28) | قيمة سمة HTML (id) | refresh | 28 | [SRC-A16FA6D4B5-L000028](../web/dashboard.html#L28) |
+| [web/dashboard.html](../web/dashboard.html#L30) | دالة JavaScript/TypeScript | $ | 30 | [SRC-A16FA6D4B5-L000030](../web/dashboard.html#L30) |
+| [web/dashboard.html](../web/dashboard.html#L30) | متغير JavaScript/TypeScript | lastAnalysisInput | 30 | [SRC-A16FA6D4B5-L000030](../web/dashboard.html#L30) |
+| [web/dashboard.html](../web/dashboard.html#L30) | متغير JavaScript/TypeScript | lastAssessment | 30 | [SRC-A16FA6D4B5-L000030](../web/dashboard.html#L30) |
+| [web/dashboard.html](../web/dashboard.html#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN_STORAGE_KEY | 31 | [SRC-A16FA6D4B5-L000031](../web/dashboard.html#L31) |
+| [web/dashboard.html](../web/dashboard.html#L31) | متغير JavaScript/TypeScript | ACCESS_TOKEN_STORAGE_KEY | 31 | [SRC-A16FA6D4B5-L000031](../web/dashboard.html#L31) |
+| [web/dashboard.html](../web/dashboard.html#L32) | متغير JavaScript/TypeScript | labels | 32 | [SRC-A16FA6D4B5-L000032](../web/dashboard.html#L32) |
+| [web/dashboard.html](../web/dashboard.html#L33) | دالة JavaScript/TypeScript | esc | 33 | [SRC-A16FA6D4B5-L000033](../web/dashboard.html#L33) |
+| [web/dashboard.html](../web/dashboard.html#L34) | دالة JavaScript/TypeScript | currentAccessToken | 34 | [SRC-A16FA6D4B5-L000034](../web/dashboard.html#L34) |
+| [web/dashboard.html](../web/dashboard.html#L34) | متغير JavaScript/TypeScript | field | 34 | [SRC-A16FA6D4B5-L000034](../web/dashboard.html#L34) |
+| [web/dashboard.html](../web/dashboard.html#L35) | دالة JavaScript/TypeScript | requestHeaders | 35 | [SRC-A16FA6D4B5-L000035](../web/dashboard.html#L35) |
+| [web/dashboard.html](../web/dashboard.html#L35) | متغير JavaScript/TypeScript | headers | 35 | [SRC-A16FA6D4B5-L000035](../web/dashboard.html#L35) |
+| [web/dashboard.html](../web/dashboard.html#L35) | متغير JavaScript/TypeScript | token | 35 | [SRC-A16FA6D4B5-L000035](../web/dashboard.html#L35) |
+| [web/dashboard.html](../web/dashboard.html#L36) | دالة JavaScript/TypeScript | request | 36 | [SRC-A16FA6D4B5-L000036](../web/dashboard.html#L36) |
+| [web/dashboard.html](../web/dashboard.html#L36) | متغير JavaScript/TypeScript | d | 36 | [SRC-A16FA6D4B5-L000036](../web/dashboard.html#L36) |
+| [web/dashboard.html](../web/dashboard.html#L36) | متغير JavaScript/TypeScript | r | 36 | [SRC-A16FA6D4B5-L000036](../web/dashboard.html#L36) |
+| [web/dashboard.html](../web/dashboard.html#L37) | دالة JavaScript/TypeScript | safeSourceUrl | 37 | [SRC-A16FA6D4B5-L000037](../web/dashboard.html#L37) |
+| [web/dashboard.html](../web/dashboard.html#L37) | متغير JavaScript/TypeScript | url | 37 | [SRC-A16FA6D4B5-L000037](../web/dashboard.html#L37) |
+| [web/dashboard.html](../web/dashboard.html#L38) | متغير JavaScript/TypeScript | a | 38 | [SRC-A16FA6D4B5-L000038](../web/dashboard.html#L38) |
+| [web/dashboard.html](../web/dashboard.html#L38) | متغير JavaScript/TypeScript | location_terms | 38 | [SRC-A16FA6D4B5-L000038](../web/dashboard.html#L38) |
+| [web/dashboard.html](../web/dashboard.html#L38) | متغير JavaScript/TypeScript | product_terms | 38 | [SRC-A16FA6D4B5-L000038](../web/dashboard.html#L38) |
+| [web/dashboard.html](../web/dashboard.html#L38) | متغير JavaScript/TypeScript | text | 38 | [SRC-A16FA6D4B5-L000038](../web/dashboard.html#L38) |
+| [web/dashboard.html](../web/dashboard.html#L38) | مسار API/واجهة محتمل | /api/analyze | 38 | [SRC-A16FA6D4B5-L000038](../web/dashboard.html#L38) |
+| [web/dashboard.html](../web/dashboard.html#L39) | متغير JavaScript/TypeScript | data | 39 | [SRC-A16FA6D4B5-L000039](../web/dashboard.html#L39) |
+| [web/dashboard.html](../web/dashboard.html#L39) | مسار API/واجهة محتمل | /api/leads | 39 | [SRC-A16FA6D4B5-L000039](../web/dashboard.html#L39) |
+| [web/dashboard.html](../web/dashboard.html#L40) | دالة JavaScript/TypeScript | refresh | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
+| [web/dashboard.html](../web/dashboard.html#L40) | قيمة سمة HTML (id) | status-'+esc(l.id)+' | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
+| [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | rows | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
+| [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | sourceLink | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
+| [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | sourceUrl | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
+| [web/dashboard.html](../web/dashboard.html#L43) | دالة JavaScript/TypeScript | askOmarai | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | answer | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | box | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | question | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | result | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | status | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | user | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | مسار API/واجهة محتمل | /api/ask | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L43) | مسار API/واجهة محتمل | /api/leads/ | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+
+## سجل وسوم المراجعة والإصلاح
+
+هذه قائمة بالوسوم الصريحة التي تستدعي المتابعة. وجود الوسم ليس إثباتًا آليًا أن السطر معيب؛ افتح الملف عند رقم السطر وراجع السياق.
+
+| كود الهفوة/الوسم | النوع | الملف | السطر | وصف الوسم | كود السطر | نص السطر |
+|---|---|---|---:|---|---|---|
+| FND-BUG-FA4E1423C3-L000339 | BUG | [tests/test_generate_index.py](../tests/test_generate_index.py#L339) | 339 | BUG: style annotations receive stable named IDs linked to their exact lines.""" | [SRC-FA4E1423C3-L000339](../tests/test_generate_index.py#L339) | `"    \"\"\"TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines.\"\"\""` |
+| FND-FIXME-401D6AACE1-L000036 | FIXME | [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L36) | 36 | FIXME: SEC-001 — وصف قصير للمشكلة المثبتة والاختبار المطلوب. | [SRC-401D6AACE1-L000036](INDEXING_AND_FINDINGS_GUIDE_AR.md#L36) | `"# FIXME: SEC-001 — وصف قصير للمشكلة المثبتة والاختبار المطلوب."` |
+| FND-FIXME-FA4E1423C3-L000342 | FIXME | [tests/test_generate_index.py](../tests/test_generate_index.py#L342) | 342 | FIXME: handle overflow\n" | [SRC-FA4E1423C3-L000342](../tests/test_generate_index.py#L342) | `"        \"value = 1  # FIXME: handle overflow\\n\""` |
+| FND-REVIEW-E599346ABE-L001095 | REVIEW | [docs/generate_index.py](generate_index.py#L1095) | 1095 | REVIEW: marker, and line-index overview.""" | [SRC-E599346ABE-L001095](generate_index.py#L1095) | `"    \"\"\"Render the repository file, symbol, explicit-review-marker, and line-index overview.\"\"\""` |
+| FND-REVIEW-401D6AACE1-L000037 | REVIEW | [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L37) | 37 | REVIEW: EVD-001 — مراجعة دليل الاستشهاد قبل اعتماد هذا المسار. | [SRC-401D6AACE1-L000037](INDEXING_AND_FINDINGS_GUIDE_AR.md#L37) | `"# REVIEW: EVD-001 — مراجعة دليل الاستشهاد قبل اعتماد هذا المسار."` |
+| FND-SECURITY-E73001D9AC-L000888 | SECURITY | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L888) | 888 | SECURITY: verification-standard-aisvs-docs) — متطلبات تحقق أمنية مخصصة لأنظمة الذكاء الاصطناعي. | [SRC-E73001D9AC-L000888](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L888) | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs) — متطلبات تحقق أمنية مخصصة لأنظمة الذكاء الاصطناعي."` |
+| FND-SECURITY-D17CE3D12F-L000997 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | 997 | SECURITY: verification-standard/). | [SRC-D17CE3D12F-L000997](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | `"- [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/)."` |
+| FND-SECURITY-D17CE3D12F-L001000 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | 1000 | SECURITY: verification-standard-aisvs-docs). | [SRC-D17CE3D12F-L001000](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` |
+| FND-SECURITY-D17CE3D12F-L001017 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1017) | 1017 | SECURITY: verification-standard-aisvs-docs). | [SRC-D17CE3D12F-L001017](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1017) | `"- [OWASP AISVS](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` |
+| FND-SECURITY-65551FB29F-L000550 | SECURITY | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L550) | 550 | SECURITY: verification-standard/) | [SRC-65551FB29F-L000550](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L550) | `"- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)"` |
+| FND-SECURITY-0F910493E8-L000562 | SECURITY | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L562) | 562 | SECURITY: https://owasp.org/API-Security/ | [SRC-0F910493E8-L000562](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L562) | `"- OWASP API Security: https://owasp.org/API-Security/"` |
+| FND-SECURITY-FA4E1423C3-L000343 | SECURITY | [tests/test_generate_index.py](../tests/test_generate_index.py#L343) | 343 | SECURITY: check token handling\n" | [SRC-FA4E1423C3-L000343](../tests/test_generate_index.py#L343) | `"        \"# SECURITY: check token handling\\n\""` |
+| FND-TODO-401D6AACE1-L000035 | TODO | [docs/INDEXING_AND_FINDINGS_GUIDE_AR.md](INDEXING_AND_FINDINGS_GUIDE_AR.md#L35) | 35 | TODO: DOC-INDEX-001 — توثيق الحالة المتبقية وخطوة إغلاقها. | [SRC-401D6AACE1-L000035](INDEXING_AND_FINDINGS_GUIDE_AR.md#L35) | `"# TODO: DOC-INDEX-001 — توثيق الحالة المتبقية وخطوة إغلاقها."` |
+| FND-TODO-FA4E1423C3-L000341 | TODO | [tests/test_generate_index.py](../tests/test_generate_index.py#L341) | 341 | TODO: verify fallback\n" | [SRC-FA4E1423C3-L000341](../tests/test_generate_index.py#L341) | `"        \"# TODO: verify fallback\\n\""` |
 
 ---
 
-أُنشئ هذا الفهرس بتحليل AST القياسي في Python. تُستثنى مجلدات البيئات الافتراضية والاعتماديات والملفات المولدة لتجنب فهرسة نواتج البناء أو نسخ المكتبات.
+## حدود الفهرسة
+
+- كل الأسطر المنطقية للملفات النصية المؤهلة القابلة للقراءة مفهرسة في SOURCE LINES INDEX، لا في هذا الجدول المختصر.
+- الملفات الأكبر من 2 MiB أو غير القابلة للقراءة أو الثنائية تبقى ضمن الجرد الوصفي، دون فهرسة سطورها.
+- لا تُفحص محتويات البيئة الافتراضية والاعتماديات والمجلدات المولدة.
+- لا تُقرأ ملفات البيئة المحلية وقواعد البيانات والمفاتيح المعروفة.
+- تحليل Python يرفض إنشاء فهرس جزئي عند وجود خطأ نحوي في أي ملف Python مؤهل.
+- يُحدّث هذا الفهرس آليًا عبر GitHub Actions عند دفع تغيير إلى main؛ وتظل تغييرات المصدر قيد المراجعة حتى تُدمج وفق سياسة المستودع.
