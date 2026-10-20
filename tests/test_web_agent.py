@@ -2605,7 +2605,11 @@ def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):
                search_report=None: "توجد نتائج أولية للمراجعة [المصدر 1].",
     )
 
-    result = agent.answer("الطاقة المتجددة في مصر", mode=mode)
+    question = (
+        "ابحث عن شقة في التجمع الخامس بسعر 5000000 جنيه"
+        if mode == "deep" else "الطاقة المتجددة في مصر"
+    )
+    result = agent.answer(question, mode=mode)
     plan = seen["plan"]
 
     assert plan["mode"] == mode
@@ -2613,6 +2617,8 @@ def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):
     if mode == "deep":
         assert plan["depth"] == "deep"
         assert len(plan["queries"]) >= 3
+        assert any("إعلانات عقارية" in query for query in plan["queries"])
+        assert any("متوسط أسعار السوق للمتر" in query for query in plan["queries"])
     elif mode == "latest":
         assert plan["freshness"] == "current"
         assert any("latest" in query.lower() or "recent" in query.lower() for query in plan["queries"])
