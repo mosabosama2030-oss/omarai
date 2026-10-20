@@ -411,3 +411,61 @@ def test_multiple_review_markers_on_one_line_each_get_a_unique_finding_code(
     assert any(item.endswith("-M02") for item in bug_ids)
     page_content = "\n".join(pages.values())
     assert all(item.finding_id in page_content for item in findings)
+
+
+def test_finding_scan_ignores_incidental_words_but_finds_real_annotations(
+    tmp_path: Path,
+) -> None:
+    """Only explicit comment or prose markers become findings, never syntax/URLs/strings."""
+    (tmp_path / "sample.py").write_text(
+        'framework_url = "https://example.org/risk-management-framework"\\n'
+        'error = "ordinary error variable"\\n'
+        'template = "# BUG: this is inside a string"\\n'
+        '# BUG: real Python defect\\n',
+        encoding="utf-8",
+    )
+    (tmp_path / "app.js").write_text(
+        'const template = "// BUG: not a comment";\\n'
+        'const error = 1;\\n'
+        'const x = 2; // FIXME: actual JS issue\\n'
+        '/* SECURITY: actual CSS/JS comment issue */\\n',
+        encoding="utf-8",
+    )
+    (tmp_path / "styles.css").write_text(
+        ".box{gap:8px;color:red}\\n"
+        "/* GAP: deliberate comment annotation */\\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "page.html").write_text(
+        '<!-- REVIEW: check the navigation landmark -->\\n'
+        '<script>const template = "<!-- BUG: not a markup comment -->";</script>\\n',
+        encoding="utf-8",
+    )
+    (tmp_path / "guide.md").write_text(
+        "The risk-management framework reports an error.\\n"
+        "```text\\n"
+        "# BUG: this sample should be ignored\\n"
+        "```\\n"
+        "- DEFECT: this explicitly documented defect should be indexed\\n",
+        encoding="utf-8",
+    )
+
+    inventory = INDEXER.build_file_inventory(tmp_path)
+    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)
+    findings = INDEXER.scan_finding_annotations(source_lines)
+    summarized = {(item.file, item.marker, item.description) for item in findings}
+
+    assert {item.marker for item in findings} == {
+        "BUG", "FIXME", "SECURITY", "GAP", "REVIEW", "DEFECT"
+    }
+    assert any(path == "sample.py" and marker == "BUG" and "real Python defect" in desc
+               for path, marker, desc in summarized)
+    assert any(path == "app.js" and marker == "FIXME" for path, marker, _ in summarized)
+    assert any(path == "app.js" and marker == "SECURITY" for path, marker, _ in summarized)
+    assert any(path == "styles.css" and marker == "GAP" for path, marker, _ in summarized)
+    assert any(path == "page.html" and marker == "REVIEW" for path, marker, _ in summarized)
+    assert any(path == "guide.md" and marker == "DEFECT" for path, marker, _ in summarized)
+    assert not any("risk-management" in desc.lower() for _, _, desc in summarized)
+    assert not any("ordinary error variable" in desc for _, _, desc in summarized)
+    assert not any("inside a string" in desc for _, _, desc in summarized)
+    assert not any("sample should be ignored" in desc for _, _, desc in summarized)
