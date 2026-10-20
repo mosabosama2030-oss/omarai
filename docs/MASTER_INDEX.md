@@ -8,9 +8,9 @@
 ## ملخص الفهرسة
 
 - ملفات Python المفحوصة: **36**
-- الدوال والكلاسات المفهرسة: **612**
+- الدوال والكلاسات المفهرسة: **632**
 - موثق بوجود Docstring: **115**
-- ناقص Docstring: **497**
+- ناقص Docstring: **517**
 
 ## سجل الدوال والكلاسات
 
@@ -628,6 +628,26 @@
 | tests/test_web_agent.py | دالة | test_lead_generation_preserves_unknown_state_when_research_throws.fail_research | لا توجد Docstring. | ناقص | 2329 |
 | tests/test_web_agent.py | دالة | test_local_answer_exposes_request_budget_without_claiming_live_search | لا توجد Docstring. | ناقص | 2353 |
 | tests/test_web_agent.py | دالة | test_reviewed_answer_without_valid_citations_cannot_be_rated_good | لا توجد Docstring. | ناقص | 2370 |
+| tests/test_web_agent.py | دالة | test_public_ip_literals_rejects_mixed_public_and_private_dns_answers | لا توجد Docstring. | ناقص | 2441 |
+| tests/test_web_agent.py | دالة | test_pinned_connect_url_uses_checked_ip_without_losing_logical_path | لا توجد Docstring. | ناقص | 2460 |
+| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting | لا توجد Docstring. | ناقص | 2469 |
+| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.resolve_public_ip | لا توجد Docstring. | ناقص | 2479 |
+| tests/test_web_agent.py | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse | لا توجد Docstring. | ناقص | 2485 |
+| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2488 |
+| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.fake_stream | لا توجد Docstring. | ناقص | 2492 |
+| tests/test_web_agent.py | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient | لا توجد Docstring. | ناقص | 2496 |
+| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2497 |
+| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2500 |
+| tests/test_web_agent.py | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2503 |
+| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination | لا توجد Docstring. | ناقص | 2518 |
+| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.resolve_public_ip | لا توجد Docstring. | ناقص | 2528 |
+| tests/test_web_agent.py | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse | لا توجد Docstring. | ناقص | 2537 |
+| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2540 |
+| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.fake_stream | لا توجد Docstring. | ناقص | 2544 |
+| tests/test_web_agent.py | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient | لا توجد Docstring. | ناقص | 2548 |
+| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2549 |
+| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2552 |
+| tests/test_web_agent.py | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2555 |
 
 ---
 
