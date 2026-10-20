@@ -270,7 +270,7 @@
 | [SRC-E599346ABE-L001353](../generate_index.py#L1353) | 1353 | `"                    return 1"` | — |
 | [SRC-E599346ABE-L001354](../generate_index.py#L1354) | 1354 | `"                if current_content != expected_content:"` | — |
 | [SRC-E599346ABE-L001355](../generate_index.py#L1355) | 1355 | `"                    if relative_path == INDEX_RELATIVE_PATH:"` | — |
-| [SRC-E599346ABE-L001356](../generate_index.py#L1356) | 1356 | `"                        message = \"الفهرس الرئيسي قديم\""` | — |
+| [SRC-E599346ABE-L001356](../generate_index.py#L1356) | 1356 | `"                        message = \"الفهرس قديم (الرئيسي)\""` | — |
 | [SRC-E599346ABE-L001357](../generate_index.py#L1357) | 1357 | `"                    else:"` | — |
 | [SRC-E599346ABE-L001358](../generate_index.py#L1358) | 1358 | `"                        message = \"فهرس الأسطر قديم\""` | — |
 | [SRC-E599346ABE-L001359](../generate_index.py#L1359) | 1359 | `"                    print("` | — |
