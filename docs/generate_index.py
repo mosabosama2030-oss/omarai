@@ -1073,6 +1073,7 @@ def render_source_lines_markdown(
         "> هذا دليل الوصول إلى فهرس الأسطر الكامل. يحتوي كل سطر في الملفات النصية المؤهلة على كود SRC- ورقم السطر ونص السطر كاملًا.",
         "> قُسّم المحتوى إلى صفحات صغيرة حتى تظل كل صفحة قابلة للفتح والبحث بسرعة من الهاتف والمتصفح.",
         "> ابدأ من [MASTER INDEX](MASTER_INDEX.md) للعثور حسب اسم الملف أو الدالة أو الكلاس أو وسم المراجعة.",
+        "> راجع [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md) للاطلاع على نسبة التغطية وأسباب الاستبعاد.",
         "",
         "## ملخص التغطية",
         "",
@@ -1147,6 +1148,98 @@ def render_source_lines_markdown(
     return "\n".join(lines) + "\n"
 
 
+def render_coverage_audit_markdown(
+    root: Path,
+    inventory: list[IndexedFile],
+    source_lines: list[IndexedLine],
+    excluded_paths: list[tuple[str, str]],
+) -> str:
+    """Render a generated coverage ledger with exact line-index coverage and exclusions."""
+    indexed_files = [item for item in inventory if item.line_count is not None]
+    metadata_only = [item for item in inventory if item.line_count is None]
+    expected_line_count = sum(item.line_count or 0 for item in indexed_files)
+    actual_line_count = len(source_lines)
+    coverage_ok = expected_line_count == actual_line_count
+    lines = [
+        "# OMARAI INDEX COVERAGE AUDIT",
+        "",
+        "<!-- هذا الملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
+        "",
+        "> سجل أدلة تغطية الفهرس وحدوده، وليس ادعاءً باكتشاف كل عيب منطقي في البرنامج.",
+        "",
+        "## نتيجة تغطية السطور",
+        "",
+        f"- ملفات المستودع المؤهلة في الجرد: **{len(inventory)}**",
+        f"- الملفات المفهرسة سطرًا بسطر: **{len(indexed_files)}**",
+        f"- الملفات الوصفية فقط التي لا تتوفر سطورها: **{len(metadata_only)}**",
+        f"- السطور المتوقع فهرستها من عدادات الملفات: **{expected_line_count}**",
+        f"- سجلات السطور الفعلية: **{actual_line_count}**",
+        f"- تحقق العدد الإجمالي: **{'PASS' if coverage_ok else 'FAIL'}**",
+        f"- نسبة التغطية الحسابية ضمن الملفات المؤهلة القابلة للقراءة: **{(100.0 if coverage_ok and expected_line_count == actual_line_count else (actual_line_count / expected_line_count * 100 if expected_line_count else 100.0)):.2f}%**",
+        "",
+        "يتحقق المولد كذلك من أن أرقام السطور متتابعة لكل ملف ومن عدم تكرار معرّفات SRC؛ أي فشل يمنع نشر الفهرس.",
+        "",
+        "## الملفات التي لا تُفهرس سطورها",
+        "",
+        "هذه الملفات تظل ظاهرة في جرد MASTER INDEX مع سبب الاستثناء. لا يُدرج التقرير محتوياتها.",
+        "",
+        "| معرّف الملف | المسار | الحجم بالبايت | السبب |",
+        "|---|---|---:|---|",
+    ]
+
+    if metadata_only:
+        for item in metadata_only:
+            reason = _text_index_skip_reason(root / item.file)
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        item.file_id,
+                        _markdown_code_span(item.file),
+                        str(item.size_bytes),
+                        _markdown_cell(reason),
+                    )
+                )
+                + " |"
+            )
+    else:
+        lines.append("| — | — | — | لا توجد ملفات مؤهلة بالجرد الوصفي فقط. |")
+
+    lines.extend(
+        [
+            "",
+            "## المسارات المستبعدة عمدًا",
+            "",
+            "يحتوي هذا السجل أسماء المسارات وأسباب الاستثناء فقط، ولا يقرأ محتوى الأسرار أو قواعد البيانات أو المجلدات المستبعدة.",
+            "",
+            "| المسار المستبعد | السبب |",
+            "|---|---|",
+        ]
+    )
+    if excluded_paths:
+        for excluded_path, reason in excluded_paths:
+            lines.append(f"| {_markdown_code_span(excluded_path)} | {_markdown_cell(reason)} |")
+    else:
+        lines.append("| — | لا توجد مسارات مستبعدة مكتشفة. |")
+
+    lines.extend(
+        [
+            "",
+            "## ما تعنيه النتيجة وما لا تعنيه",
+            "",
+            "- التغطية بنسبة 100% تعني أن كل سطر منطقي في كل ملف نصي مؤهل وقابل للقراءة ضمن حد الحجم له سجل SRC فريد ورقم سطر مطابق.",
+            "- لا تعني أن كل مسار مستبعد أو كل ملف ثنائي/كبير مفهرس سطرًا بسطر؛ أسباب الاستبعاد مسجلة أعلاه.",
+            "- لا تعني اكتشاف كل عيب برمجي أو أمني أو منطقي. العيوب المعروفة التي يوسمها المطور صراحة تظهر في سجل FND داخل MASTER INDEX.",
+            "- الرموز غير Python مستخرجة بقواعد ساكنة تقريبية؛ استخدم فهرس السطور للوصول إلى النص الأصلي والتحقق يدويًا.",
+            "- المولد لا يعدّل كود التطبيق ولا يدمج الفروع؛ وظيفته بناء الأدلة والفهرس والتحقق من اتساقهما.",
+            "",
+            "[افتح MASTER INDEX](MASTER_INDEX.md) | [افتح SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def render_markdown(
     symbols: list[IndexedSymbol],
     files_scanned: int,
@@ -1185,6 +1278,7 @@ def render_markdown(
         f"- وسوم المراجعة/الإصلاح المسجلة: **{len(finding_inventory)}**",
         "",
         "- فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)",
+        "- تدقيق التغطية والاستثناءات: [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md)",
         "- كل سجل سطر يحمل معرّفًا من الشكل SRC-<FILEHASH>-L000001.",
         "",
         "## جرد ملفات المستودع",
@@ -1377,7 +1471,12 @@ def _generate(
     symbols, python_file_count = scan_repository(root)
     static_symbols = scan_static_symbols(root, inventory)
     source_lines = scan_source_lines(root, inventory)
+    validate_source_line_coverage(inventory, source_lines)
     findings = scan_finding_annotations(source_lines)
+    excluded_paths = discover_excluded_paths(root)
+    coverage_audit_markdown = render_coverage_audit_markdown(
+        root, inventory, source_lines, excluded_paths
+    )
     source_pages, pages_by_file = render_source_line_pages(
         source_lines, inventory, findings
     )
@@ -1390,6 +1489,7 @@ def _generate(
     return (
         markdown,
         source_lines_markdown,
+        coverage_audit_markdown,
         source_pages,
         python_file_count,
         len(inventory),
@@ -1426,6 +1526,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         (
             markdown,
             source_lines_markdown,
+            coverage_audit_markdown,
             source_pages,
             python_file_count,
             repository_file_count,
@@ -1440,6 +1541,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         generated_outputs = {
             INDEX_RELATIVE_PATH: markdown,
             SOURCE_LINES_INDEX_RELATIVE_PATH: source_lines_markdown,
+            COVERAGE_AUDIT_RELATIVE_PATH: coverage_audit_markdown,
             **source_pages,
         }
 
