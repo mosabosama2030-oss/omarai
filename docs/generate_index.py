@@ -70,7 +70,7 @@ TEXT_SCAN_EXTENSIONS = (
     | JAVASCRIPT_EXTENSIONS
     | CSS_EXTENSIONS
     | CONFIG_EXTENSIONS
-    | frozenset({".html", ".sh", ".md", ".env.example", ".example"})
+    | frozenset({".html", ".htm", ".sh", ".md", ".env.example", ".example"})
 )
 
 JS_IDENTIFIER = r"[A-Za-z_$][A-Za-z0-9_$]*"
@@ -104,7 +104,7 @@ MARKDOWN_HEADING_RE = re.compile(r"^\s{0,3}(#{1,6})\s+(.+?)\s*#*\s*$", re.MULTIL
 YAML_KEY_RE = re.compile(r"^\s*([A-Za-z_][A-Za-z0-9_.-]*)\s*:", re.MULTILINE)
 TOML_KEY_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*=", re.MULTILINE)
 TOML_SECTION_RE = re.compile(r"^\s*\[([^\]]+)\]\s*$", re.MULTILINE)
-JSON_KEY_RE = re.compile(r'^\s*"([^"]+)"\s*:', re.MULTILINE)
+JSON_KEY_RE = re.compile(r'"([^"]+)"\s*:')
 INI_SECTION_RE = re.compile(r"^\s*\[([^\]]+)\]\s*$", re.MULTILINE)
 INI_KEY_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*=", re.MULTILINE)
 UPPER_SNAKE_RE = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
@@ -537,7 +537,7 @@ def _scan_css(
     base_line: int = 1,
 ) -> None:
     """Extract CSS class/id selectors and custom properties; this is not a full CSS parser."""
-    cleaned = CSS_COMMENT_RE.sub(" ", source)
+    cleaned = CSS_COMMENT_RE.sub(\n        lambda match: "".join("\\n" if char == "\\n" else " " for char in match.group(0)),\n        source,\n    )
     patterns = (
         (CSS_CUSTOM_PROPERTY_RE, "متغير CSS مخصص"),
         (CSS_CLASS_RE, "محدد class في CSS"),
