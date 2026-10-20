@@ -28,19 +28,22 @@ This is a tool-using research agent built around existing language models, not a
 
 ## Living repository index
 
-Omarai maintains two generated navigation indexes:
+Omarai maintains a categorized master index and a paginated, line-by-line source index:
 
-- [MASTER INDEX](docs/MASTER_INDEX.md): categorized file inventory with stable file IDs, Python AST definitions, static frontend/configuration symbols, and explicit TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED review-marker entries. Each review marker has its own `FND-...` code and points to an exact source-line ID.
-- [SOURCE LINES INDEX](docs/SOURCE_LINES_INDEX.md): line-by-line index of every logical line in each eligible readable text file. Each row carries a deterministic `SRC-<FILEHASH>-L000001` code, original file path, category, line number and JSON-escaped source text. Use browser Find to search a function, variable, phrase, marker or file path, then open the source file at the listed line.
+- [MASTER INDEX](docs/MASTER_INDEX.md): file inventory with stable file IDs, Python AST definitions, static frontend/configuration symbols, and explicitly marked TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED entries. Each review marker has an `FND-...` code and a link to the exact source line.
+- [SOURCE LINES INDEX](docs/SOURCE_LINES_INDEX.md): coverage summary, search-friendly directory of files, page links, and per-file line counts.
+- [Source line pages](docs/source_index/): small generated pages containing every logical line from eligible readable text files. Each line has a `SRC-<FILEHASH>-L000001` code, exact JSON-escaped text, and a link back to the source file at the matching line. Pages are capped at 800 line records to remain navigable on mobile and in GitHub's web view.
 
-Regenerate both indexes locally:
+Regenerate and verify the indexes locally:
 
 ```bash
 python docs/generate_index.py
 python docs/generate_index.py --check
 ```
 
-GitHub Actions validates generation and reproducibility on Python 3.11 and 3.12. The workflow triggered by pushes to `main` regenerates and commits both files only when output changes. If direct publication is rejected, it opens a pull request rather than force-updating a branch or auto-merging. Files excluded for safety or practicality include known local secrets, runtime databases, generated/dependency directories, binary/unreadable files and individual text files larger than 2 MiB. The line index is a source-navigation aid, not a proof that each statement is correct. Explicit review markers are recorded, but arbitrary logic defects cannot be identified with 100% certainty by static indexing alone.
+GitHub Actions validates the generator on Python 3.11 and 3.12. The workflow triggered by pushes to `main` regenerates and commits all indexes and generated pages only when output changes; obsolete generated pages are removed. If direct publication is rejected, it opens a pull request instead of force-updating a branch or auto-merging.
+
+Coverage includes every logical line in eligible readable text files up to 2 MiB. Known local secrets, runtime databases, dependency/build directories, binary/unreadable files and oversized files are excluded from line-level indexing by design but listed by metadata where eligible. Static review markers help track explicit findings; no source index can prove that every arbitrary logic bug has been detected or that all code is correct.
 
 ## Per-request resource budget
 
