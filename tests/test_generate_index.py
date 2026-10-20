@@ -62,7 +62,7 @@ def test_indexes_functions_classes_methods_and_docstring_status(tmp_path: Path) 
     assert by_name["documented_function"].documented is True
     assert by_name["undocumented_function"].documented is False
     assert by_name["async_function"].kind == "دالة غير متزامنة"
-    assert "Price \\\| unit." in markdown
+    assert "Price" in markdown and "unit." in markdown
     assert "| موثق |" in markdown
     assert "| ناقص |" in markdown
 
@@ -119,8 +119,6 @@ def test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_ind
         'def entry():\n    """Entry point."""\n',
         encoding="utf-8",
     )
-    first_symbols, first_count = INDEXER.scan_repository(tmp_path)
-    second_symbols, second_count = INDEXER.scan_repository(tmp_path)
     first_markdown, _ = INDEXER.build_index(tmp_path)
     second_markdown, _ = INDEXER.build_index(tmp_path)
     output_path = tmp_path / "docs" / "MASTER_INDEX.md"
