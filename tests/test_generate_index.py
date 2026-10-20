@@ -418,35 +418,35 @@ def test_finding_scan_ignores_incidental_words_but_finds_real_annotations(
 ) -> None:
     """Only explicit comment or prose markers become findings, never syntax/URLs/strings."""
     (tmp_path / "sample.py").write_text(
-        'framework_url = "https://example.org/risk-management-framework"\\n'
-        'error = "ordinary error variable"\\n'
-        'template = "# BUG: this is inside a string"\\n'
-        '# BUG: real Python defect\\n',
+        'framework_url = "https://example.org/risk-management-framework"\n'
+        'error = "ordinary error variable"\n'
+        'template = "# BUG: this is inside a string"\n'
+        '# BUG: real Python defect\n',
         encoding="utf-8",
     )
     (tmp_path / "app.js").write_text(
-        'const template = "// BUG: not a comment";\\n'
-        'const error = 1;\\n'
-        'const x = 2; // FIXME: actual JS issue\\n'
-        '/* SECURITY: actual CSS/JS comment issue */\\n',
+        'const template = "// BUG: not a comment";\n'
+        'const error = 1;\n'
+        'const x = 2; // FIXME: actual JS issue\n'
+        '/* SECURITY: actual CSS/JS comment issue */\n',
         encoding="utf-8",
     )
     (tmp_path / "styles.css").write_text(
-        ".box{gap:8px;color:red}\\n"
-        "/* GAP: deliberate comment annotation */\\n",
+        ".box{gap:8px;color:red}\n"
+        "/* GAP: deliberate comment annotation */\n",
         encoding="utf-8",
     )
     (tmp_path / "page.html").write_text(
-        '<!-- REVIEW: check the navigation landmark -->\\n'
-        '<script>const template = "<!-- BUG: not a markup comment -->";</script>\\n',
+        '<!-- REVIEW: check the navigation landmark -->\n'
+        '<script>const template = "<!-- BUG: not a markup comment -->";</script>\n',
         encoding="utf-8",
     )
     (tmp_path / "guide.md").write_text(
-        "The risk-management framework reports an error.\\n"
-        "```text\\n"
-        "# BUG: this sample should be ignored\\n"
-        "```\\n"
-        "- DEFECT: this explicitly documented defect should be indexed\\n",
+        "The risk-management framework reports an error.\n"
+        "```text\n"
+        "# BUG: this sample should be ignored\n"
+        "```\n"
+        "- DEFECT: this explicitly documented defect should be indexed\n",
         encoding="utf-8",
     )
 
