@@ -293,6 +293,45 @@ def _is_sensitive_or_runtime_path(path: Path) -> bool:
     return path.suffix.lower() in EXCLUDED_SUFFIXES
 
 
+def _stable_file_id(relative_file: str) -> str:
+    """Return a deterministic path-derived identifier without hashing file contents."""
+    digest = hashlib.sha256(relative_file.encode("utf-8")).hexdigest()[:10].upper()
+    return f"FILE-{digest}"
+
+
+def _category_for_path(relative_file: str) -> str:
+    """Assign an understandable navigation category from the repository-relative path."""
+    normalized = relative_file.replace("\\", "/")
+    name = Path(normalized).name.lower()
+    suffix = Path(normalized).suffix.lower()
+    if normalized.startswith("tests/") or "/tests/" in normalized:
+        return "اختبارات"
+    if normalized.startswith(".github/workflows/"):
+        return "CI وأتمتة"
+    if normalized.startswith("agents/"):
+        return "الوكيل والمنطق"
+    if normalized.startswith("api/"):
+        return "واجهات API"
+    if normalized.startswith("cli/"):
+        return "واجهة سطر الأوامر"
+    if normalized.startswith("docs/"):
+        return "وثائق وفهرسة"
+    if normalized.startswith(("web/", "static/", "templates/")) or suffix in {
+        ".html", ".htm", ".css", ".scss", ".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx",
+        ".vue", ".svelte",
+    }:
+        return "واجهة الويب"
+    if name in {
+        "dockerfile", "makefile", "procfile", "pyproject.toml",
+        "requirements.txt", "requirements-dev.txt", ".gitignore",
+        ".dockerignore", ".editorconfig",
+    } or suffix in {".yml", ".yaml", ".toml", ".ini", ".cfg", ".json", ".jsonl", ".xml"}:
+        return "إعدادات وتشغيل"
+    if suffix in {".md", ".rst", ".txt"}:
+        return "وثائق ونصوص"
+    return "ملفات أخرى"
+
+
 def discover_repository_files(root: Path) -> list[Path]:
     """Return the stable file inventory, excluding the generated index and runtime data."""
     discovered: list[Path] = []
@@ -312,8 +351,8 @@ def discover_repository_files(root: Path) -> list[Path]:
             if candidate.is_symlink() or _is_sensitive_or_runtime_path(candidate):
                 continue
             relative_file = candidate.relative_to(root).as_posix()
-            if relative_file == INDEX_RELATIVE_PATH:
-                # Exclude the output to avoid a self-referential size/line-count loop.
+            if relative_file in INDEX_OUTPUT_PATHS:
+                # Generated indexes must not index themselves or destabilize their own size.
                 continue
             discovered.append(candidate)
 
@@ -420,6 +459,8 @@ def build_file_inventory(root: Path) -> list[IndexedFile]:
                 size_bytes=path.stat().st_size,
                 line_count=_count_lines(text) if text is not None else None,
                 indexing_scope=_indexing_scope(path, text),
+                file_id=_stable_file_id(path.relative_to(root).as_posix()),
+                category=_category_for_path(path.relative_to(root).as_posix()),
             )
         )
     return inventory
