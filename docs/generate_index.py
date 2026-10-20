@@ -623,24 +623,59 @@ def _text_index_skip_reason(path: Path) -> str:
 
 
 def validate_source_line_coverage(
+    root: Path,
     inventory: list[IndexedFile],
     source_lines: list[IndexedLine],
 ) -> None:
-    """Fail generation if any eligible text line is missing, duplicated, or misnumbered."""
-    expected_by_file = {
-        item.file: item.line_count
+    """Fail generation if line coverage, IDs, or exact source text do not match."""
+    eligible_files = {
+        item.file: item
         for item in inventory
         if item.line_count is not None
     }
-    actual_lines: dict[str, list[int]] = {file: [] for file in expected_by_file}
-    seen_ids: set[str] = set()
+    expected_lines_by_file: dict[str, list[str]] = {}
     failures: list[str] = []
+    seen_ids: set[str] = set()
+    actual_lines: dict[str, list[int]] = {file: [] for file in eligible_files}
 
+    # Re-read every eligible source independently to detect races or corrupted line records.
+    for file, item in eligible_files.items():
+        source = _read_text_bounded(root / file)
+        if source is None:
+            failures.append(f"{file}: تعذرت إعادة قراءة ملف مؤهل للتحقق")
+            expected_lines_by_file[file] = []
+            continue
+        expected_contents = source.splitlines()
+        expected_lines_by_file[file] = expected_contents
+        if len(expected_contents) != item.line_count:
+            failures.append(
+                f"{file}: تغير عدد الأسطر بعد إعداد الجرد "
+                f"(الجرد {item.line_count}، الحالي {len(expected_contents)})"
+            )
+
+    actual_records_by_file: dict[str, dict[int, IndexedLine]] = {
+        file: {} for file in eligible_files
+    }
     for source_line in source_lines:
-        if source_line.file not in expected_by_file:
+        if source_line.file not in eligible_files:
             failures.append(f"{source_line.file}: سجل سطر لملف غير مؤهل")
             continue
+
         actual_lines[source_line.file].append(source_line.line)
+        actual_records_by_file[source_line.file][source_line.line] = source_line
+        expected_item = eligible_files[source_line.file]
+
+        if source_line.line < 1:
+            failures.append(f"{source_line.file}: رقم سطر غير صالح {source_line.line}")
+            continue
+
+        expected_contents = expected_lines_by_file.get(source_line.file, [])
+        if source_line.line <= len(expected_contents):
+            if source_line.content != expected_contents[source_line.line - 1]:
+                failures.append(
+                    f"{source_line.file}:{source_line.line}: نص السطر لا يطابق المصدر"
+                )
+
         expected_line_id = _source_line_id(source_line.file, source_line.line)
         if source_line.line_id != expected_line_id:
             failures.append(
@@ -650,13 +685,21 @@ def validate_source_line_coverage(
             failures.append(
                 f"{source_line.file}:{source_line.line}: كود FILE لا يطابق مسار الملف"
             )
+        if source_line.file_id != expected_item.file_id:
+            failures.append(
+                f"{source_line.file}:{source_line.line}: معرّف الملف لا يطابق الجرد"
+            )
+        if source_line.category != expected_item.category:
+            failures.append(
+                f"{source_line.file}:{source_line.line}: تصنيف السطر لا يطابق الجرد"
+            )
         if source_line.line_id in seen_ids:
             failures.append(f"{source_line.file}:{source_line.line}: معرّف SRC مكرر")
         seen_ids.add(source_line.line_id)
 
-    for file, expected_count in expected_by_file.items():
+    for file, item in eligible_files.items():
         actual = sorted(actual_lines[file])
-        expected = list(range(1, (expected_count or 0) + 1))
+        expected = list(range(1, (item.line_count or 0) + 1))
         if actual != expected:
             failures.append(
                 f"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، "
@@ -1762,7 +1805,7 @@ def _generate(
     symbols, python_file_count = scan_repository(root)
     static_symbols = scan_static_symbols(root, inventory)
     source_lines = scan_source_lines(root, inventory)
-    validate_source_line_coverage(inventory, source_lines)
+    validate_source_line_coverage(root, inventory, source_lines)
     findings = scan_finding_annotations(source_lines)
     excluded_paths = discover_excluded_paths(root)
     coverage_audit_markdown = render_coverage_audit_markdown(
