@@ -1,0 +1,76 @@
+name: Update Omarai living index
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Keep one index refresh in flight. Each run fetches the newest main before scanning.
+concurrency:
+  group: omarai-living-index-main
+  cancel-in-progress: false
+
+jobs:
+  refresh-index:
+    name: Generate and publish MASTER_INDEX.md
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Fetch the latest main revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          git checkout --force -B main origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Generate the living index
+        run: python docs/generate_index.py
+
+      - name: Commit and publish only when the index changes
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git add -- docs/MASTER_INDEX.md
+          if git diff --cached --quiet; then
+            echo "MASTER_INDEX.md is already up to date; no commit is needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs(index): refresh Python symbol inventory"
+
+          # Prefer a direct update. If main is protected, publish a dedicated branch
+          # and open/update a PR rather than silently losing the generated index.
+          if git push origin HEAD:main; then
+            echo "MASTER_INDEX.md was pushed to main."
+            exit 0
+          fi
+
+          automation_branch="automation/living-index"
+          git push --force origin "HEAD:${automation_branch}"
+          pr_number="$(gh pr list --state open --base main --head "${automation_branch}" --json number --jq '.[0].number // empty')"
+          if [ -z "${pr_number}" ]; then
+            gh pr create \
+              --base main \
+              --head "${automation_branch}" \
+              --title "docs(index): refresh Python symbol inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is opened because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
+          else
+            gh pr edit "${pr_number}" \
+              --title "docs(index): refresh Python symbol inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is updated because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
+          fi
