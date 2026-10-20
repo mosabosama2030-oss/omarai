@@ -1,76 +1,103 @@
-name: Update Omarai living index
+name: Update Omarai complete source and symbol indexes
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "feat/**", "fix/**", "feature/**"]
+    paths-ignore:
+      - "docs/MASTER_INDEX.md"
+      - "docs/SOURCE_LINES_INDEX.md"
+      - "docs/source_index/**"
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
-# Keep one index refresh in flight. Each run fetches the newest main before scanning.
 concurrency:
-  group: omarai-living-index-main
+  group: omarai-living-index-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   refresh-index:
-    name: Generate and publish MASTER_INDEX.md
+    name: Generate and validate repository indexes
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Fetch the latest main revision
+      - name: Fetch the latest revision of the triggering branch
         shell: bash
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
-          git fetch --no-tags origin main
-          git checkout --force -B main origin/main
+          git fetch --no-tags origin "${BRANCH_NAME}"
+          git checkout --force -B "${BRANCH_NAME}" "origin/${BRANCH_NAME}"
 
       - name: Set up Python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97b1 # v7.0.0
         with:
           python-version: "3.12"
 
-      - name: Generate the living index
+      - name: Generate all indexes
         run: python docs/generate_index.py
 
-      - name: Commit and publish only when the index changes
+      - name: Verify generated index is internally consistent
+        run: python docs/generate_index.py --check
+
+      - name: Commit generated outputs when changed
+        id: update
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
-          git add -- docs/MASTER_INDEX.md
+          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/source_index/
           if git diff --cached --quiet; then
-            echo "MASTER_INDEX.md is already up to date; no commit is needed."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "All generated index files are already up to date."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "docs(index): refresh Python symbol inventory"
+          git commit -m "docs(index): refresh repository source-line inventory"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
-          # Prefer a direct update. If main is protected, publish a dedicated branch
-          # and open/update a PR rather than silently losing the generated index.
-          if git push origin HEAD:main; then
-            echo "MASTER_INDEX.md was pushed to main."
-            exit 0
-          fi
+      - name: Update the triggering review branch
+        if: steps.update.outputs.changed == 'true' && github.ref_name != 'main'
+        shell: bash
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git push origin "HEAD:${BRANCH_NAME}"
 
-          automation_branch="automation/living-index"
-          git push --force origin "HEAD:${automation_branch}"
-          pr_number="$(gh pr list --state open --base main --head "${automation_branch}" --json number --jq '.[0].number // empty')"
-          if [ -z "${pr_number}" ]; then
-            gh pr create \
-              --base main \
-              --head "${automation_branch}" \
-              --title "docs(index): refresh Python symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is opened because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
-          else
-            gh pr edit "${pr_number}" \
-              --title "docs(index): refresh Python symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is updated because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
+      - name: Open a reviewable index pull request for main
+        if: steps.update.outputs.changed == 'true' && github.ref_name == 'main'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          automation_branch="automation/living-index-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git push origin "HEAD:${automation_branch}"
+          gh pr create \
+            --base main \
+            --head "${automation_branch}" \
+            --title "docs(index): refresh repository source-line inventory" \
+            --body "Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and docs/source_index/. The generated output was checked with python docs/generate_index.py --check. This PR is intentionally not auto-merged; Human Director review is required."
+
+      - name: Dispatch validation after index outputs are published
+        if: steps.update.outputs.changed == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [[ "${BRANCH_NAME}" == "main" ]]; then
+            BRANCH_NAME="automation/living-index-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           fi
+          gh workflow run tests.yml --ref "${BRANCH_NAME}"

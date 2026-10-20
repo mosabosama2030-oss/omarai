@@ -4,6 +4,18 @@
 
 Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You can ask open-ended questions in natural language, search the public web, extract text from accessible pages, compare and summarize findings, ask follow-up questions, and inspect the source links.
 
+## Repository navigation and indexing
+
+Use [the generated master index](docs/MASTER_INDEX.md) to browse repository files, Python definitions, front-end/configuration symbols, and explicit review annotations. Use [the source-line index](docs/SOURCE_LINES_INDEX.md) to jump to a specific eligible source line, or search locally without an external service:
+
+```bash
+python docs/search_code.py "Handler._allowed_origins"
+python docs/search_code.py --regex "OMARAI_[A-Z_]+" --ext py
+python docs/search_code.py "X-Forwarded-Host" --context 2
+```
+
+Regenerate the index with `python docs/generate_index.py` and check a committed snapshot with `python docs/generate_index.py --check`. Index entries are navigation aids, not proof that a requirement is implemented or that every defect has been detected. The generator excludes known secret and runtime-data paths and bounds file sizes; it is not a complete secret scanner or a substitute for code review. On changes to `main`, the index workflow must open a reviewable pull request rather than write directly to `main` or merge automatically.
+
 ## What this version does
 
 - Plans up to eight search queries from a natural-language question with a dedicated reasoning/planning model, and uses a deterministic multi-query fallback when the model is unavailable.

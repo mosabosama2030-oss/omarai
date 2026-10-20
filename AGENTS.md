@@ -10,6 +10,7 @@ These rules apply to every AI agent, human contributor, code change, test report
 - Keep `docs/OMARAI_REQUIREMENTS_REGISTER.md` synchronized with material changes: record new findings and update the related requirement status only when supporting evidence exists. Until the code and relevant tests have been examined, use UNKNOWN; state unrun checks as NOT_RUN.
 - The charter is a design requirement, not evidence that controls already exist. Inspect the actual code and tests before describing implementation status.
 - Treat `README.md` as a description of the current documented behavior, but verify claims against code and runtime evidence when the task requires it.
+- Use `docs/MASTER_INDEX.md` and `docs/SOURCE_LINES_INDEX.md` to navigate the current repository; use `python docs/search_code.py` with a search term for local text search. Generated indexes are navigation aids, not sources of truth or proof that every defect is found. Do not edit generated index outputs manually; regenerate and verify them with `python docs/generate_index.py` and `python docs/generate_index.py --check`.
 
 ## Evidence discipline
 - Label consequential findings **VERIFIED**, **INFERRED**, **PROPOSED**, or **UNKNOWN**.
@@ -52,6 +53,7 @@ These rules apply to every AI agent, human contributor, code change, test report
 - Review the final diff and verify documentation links and new-file paths.
 - Never merge a pull request, force-update a protected branch, or deploy to production without explicit authorization from the Human Director.
 - Do not present a proposed or unmerged change as already effective on `main`.
+- Generated-index automation must never push directly to `main`, force-update any branch, or merge automatically. A refresh needed on `main` must be proposed through a normal pull request for Human Director review.
 - Update the charter or related documentation when a material design decision changes; document major architectural choices and exceptions with rationale, risks, tests, and rollback considerations.
 
 ## Platform-grade readiness
