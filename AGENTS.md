@@ -4,6 +4,7 @@ These rules apply to every AI agent, human contributor, code change, test report
 
 ## Source of truth
 - Read `docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md` before architecture, security, performance, data-flow, search, model, tool-execution, concurrency, or deployment changes.
+- Read `docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md` before adding or changing tools, capabilities, skills, workflows, TaskSpec, agent profiles, agents, Meta-Agent, memory scope, or generated-code execution. Treat it as a supplementary architecture contract; do not replace the charter or assert its proposed controls are implemented without evidence.
 - Read `docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md` for broad platform requirements and release reviews involving reliability/SRE, capacity, API/security, privacy/data governance, CI/CD/supply chain, recovery, accessibility, search quality, AI/agent evaluation, cost, and operational governance. Apply only the controls relevant to the change, but explicitly record material gaps and risks.
 - Use `docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md` to classify important requirements, identify relevant expert-review lenses, record evidence and limitations, prioritize risks, and apply the change/release gates. Do not mark a requirement VERIFIED without implementation and reproducible evidence.
 - Keep `docs/OMARAI_REQUIREMENTS_REGISTER.md` synchronized with material changes: record new findings and update the related requirement status only when supporting evidence exists. Until the code and relevant tests have been examined, use UNKNOWN; state unrun checks as NOT_RUN.
@@ -40,6 +41,7 @@ These rules apply to every AI agent, human contributor, code change, test report
 - Do not weaken authentication, authorization, SSRF protections, tenant/session isolation, resource limits, or test coverage to improve speed.
 - Do not give a model unrestricted shell, filesystem, network, or database access. Tools must be explicitly registered, scoped, bounded, and verified.
 - For any change affecting security, external networking, persistence, concurrency, or tool execution, add or identify appropriate negative/failure tests, not only happy-path checks.
+- For changes that cross a trust boundary, update or reference the threat model, validate deny-by-default authorization at execution time, and document negative tests for the relevant attack paths (e.g., prompt injection, SSRF/redirects, cross-user access, XSS, secret leakage, resource exhaustion, or supply-chain exposure). Disable or narrow a capability when required security controls cannot be demonstrated in its target environment.
 - For performance or scalability work, establish a baseline and test in a named environment. Never claim support for an arbitrary user count without a reproducible load-test result.
 - If evidence is insufficient, state the unknown and the smallest safe method to verify it.
 
