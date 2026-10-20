@@ -2567,3 +2567,55 @@ def test_fetch_page_revalidates_dns_for_each_redirect_destination(monkeypatch):
     # The second host is validated before any connection attempt to it.
     assert len(requests) == 1
 
+
+
+@pytest.mark.parametrize("mode", ["deep", "latest", "social"])
+def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):
+    """A missing planner model must not erase a mode explicitly selected by the user."""
+    agent = WebAgent()
+    agent.api_key = ""
+    seen = {}
+
+    def collect(research_plan):
+        seen["plan"] = dict(research_plan)
+        sources = [sample_source(0), sample_source(1)]
+        return sources, [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [
+                {"query": query, "results": 1}
+                for query in research_plan["queries"]
+            ],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": len(sources)},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "deterministic_fallback",
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda question, history, sources, search_warning, research_plan=None,
+               search_report=None: "توجد نتائج أولية للمراجعة [المصدر 1].",
+    )
+
+    result = agent.answer("الطاقة المتجددة في مصر", mode=mode)
+    plan = seen["plan"]
+
+    assert plan["mode"] == mode
+    assert result["research_plan"]["mode"] == mode
+    if mode == "deep":
+        assert plan["depth"] == "deep"
+        assert len(plan["queries"]) >= 3
+    elif mode == "latest":
+        assert plan["freshness"] == "current"
+        assert any("latest" in query.lower() or "recent" in query.lower() for query in plan["queries"])
+    else:
+        assert plan["social_focus"] is True
+        assert any(query.startswith("site:") for query in plan["queries"])
