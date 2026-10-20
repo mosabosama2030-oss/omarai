@@ -4,6 +4,8 @@ import importlib.util
 import sys
 from pathlib import Path
 
+import pytest
+
 
 INDEXER_PATH = Path(__file__).resolve().parents[1] / "docs" / "generate_index.py"
 INDEXER_SPEC = importlib.util.spec_from_file_location(
@@ -317,18 +319,70 @@ def test_explicit_review_markers_have_unique_codes_and_source_line_links(
         assert finding.file == "module.py"
 
 
-def test_check_mode_validates_both_generated_indexes(tmp_path: Path, capsys) -> None:
-    """Check mode detects a missing or stale line index as well as a stale master index."""
+def test_check_mode_validates_all_generated_indexes(tmp_path: Path, capsys) -> None:
+    """Check mode detects stale master, line, and coverage indexes."""
+
     (tmp_path / "app.py").write_text("VALUE = 1\n", encoding="utf-8")
 
     assert INDEXER.main(["--root", str(tmp_path)]) == 0
     master_path = tmp_path / INDEXER.INDEX_RELATIVE_PATH
     line_index_path = tmp_path / INDEXER.SOURCE_LINES_INDEX_RELATIVE_PATH
+    coverage_path = tmp_path / INDEXER.COVERAGE_AUDIT_RELATIVE_PATH
     assert master_path.exists()
     assert line_index_path.exists()
+    assert coverage_path.exists()
     assert INDEXER.main(["--root", str(tmp_path), "--check"]) == 0
 
+    original_line_index = line_index_path.read_text(encoding="utf-8")
     line_index_path.write_text("stale line index", encoding="utf-8")
     assert INDEXER.main(["--root", str(tmp_path), "--check"]) == 1
     assert line_index_path.read_text(encoding="utf-8") == "stale line index"
     assert "فهرس الأسطر قديم" in capsys.readouterr().err
+
+    line_index_path.write_text(original_line_index, encoding="utf-8")
+    coverage_path.write_text("stale coverage audit", encoding="utf-8")
+    assert INDEXER.main(["--root", str(tmp_path), "--check"]) == 1
+    assert coverage_path.read_text(encoding="utf-8") == "stale coverage audit"
+    assert "فهرس تغطية الفهرسة قديم" in capsys.readouterr().err
+
+
+
+def test_source_line_coverage_validator_rejects_missing_or_duplicate_lines(tmp_path: Path) -> None:
+    """A gap or duplicate in line IDs prevents the generator from claiming full coverage."""
+    source_file = tmp_path / "src.py"
+    source_file.write_text("FIRST = 1\nSECOND = 2\n", encoding="utf-8")
+    inventory = INDEXER.build_file_inventory(tmp_path)
+    lines = INDEXER.scan_source_lines(tmp_path, inventory)
+
+    INDEXER.validate_source_line_coverage(inventory, lines)
+    with pytest.raises(INDEXER.IndexGenerationError, match="اكتمال فهرسة السطور"):
+        INDEXER.validate_source_line_coverage(inventory, lines[:-1])
+    with pytest.raises(INDEXER.IndexGenerationError, match="معرّف SRC مكرر"):
+        INDEXER.validate_source_line_coverage(inventory, lines + [lines[0]])
+
+
+def test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secrets(
+    tmp_path: Path,
+) -> None:
+    """Coverage report states exact skipped-file reasons without exposing secret contents."""
+    (tmp_path / "source.py").write_text("VALUE = 7\n", encoding="utf-8")
+    (tmp_path / ".env").write_text("PRIVATE_API_TOKEN=never-print-this-secret\n", encoding="utf-8")
+    (tmp_path / "large.txt").write_bytes(b"x" * (INDEXER.MAX_INDEXED_TEXT_BYTES + 1))
+    (tmp_path / ".venv" / "lib").mkdir(parents=True)
+    (tmp_path / ".venv" / "lib" / "hidden.py").write_text("PRIVATE = True\n", encoding="utf-8")
+
+    inventory = INDEXER.build_file_inventory(tmp_path)
+    lines = INDEXER.scan_source_lines(tmp_path, inventory)
+    INDEXER.validate_source_line_coverage(inventory, lines)
+    exclusions = INDEXER.discover_excluded_paths(tmp_path)
+    report = INDEXER.render_coverage_audit_markdown(tmp_path, inventory, lines, exclusions)
+
+    assert "100.00%" in report
+    assert "large.txt" in report
+    assert f"يتجاوز حد الفهرسة ({INDEXER.MAX_INDEXED_TEXT_BYTES} بايت)" in report
+    assert ".env" in report
+    assert ".venv/" in report
+    assert "لم تُقرأ محتوياته" in report
+    assert "never-print-this-secret" not in report
+    assert "PRIVATE_API_TOKEN" not in report
+    assert "PRIVATE = True" not in report
