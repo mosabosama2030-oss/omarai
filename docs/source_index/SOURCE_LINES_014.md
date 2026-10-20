@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-89BEE4CE47-L000035 إلى SRC-65551FB29F-L000302
+- النطاق: SRC-89BEE4CE47-L000034 إلى SRC-65551FB29F-L000301
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-89BEE4CE47-L000034](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) | 34 | `"\| [PR #47](https://github.com/mosabosama2030-oss/omarai/pull/47) \| خفض تقييم بعض الإجابات التي لا تحتوي استشهادات صالحة. \| تحقق دلالي حتمي من أن كل ادعاء مدعوم بمصدره. \|"` | — |
 | [SRC-89BEE4CE47-L000035](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L35) | 35 | `"\| [PR #48](https://github.com/mosabosama2030-oss/omarai/pull/48) \| دمج حد زمني مطلق وخمول لقراءة جسم طلب API مع اختبارات stalled/slow-trickle والتحقق من طول الجسم. \| لا يثبت مهلة قراءة الرؤوس البطيئة، أو حماية شاملة من كل أنماط Slowloris، أو حدًا قاطعًا لمدة تنفيذ الوكيل كاملة. \|"` | — |
 | [SRC-89BEE4CE47-L000036](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L36) | 36 | `""` | — |
 | [SRC-89BEE4CE47-L000037](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L37) | 37 | `"### تغييرات وفحوص مفتوحة أو بديلة"` | — |
@@ -842,4 +843,3 @@
 | [SRC-65551FB29F-L000299](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L299) | 299 | `""` | — |
 | [SRC-65551FB29F-L000300](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L300) | 300 | `"# الجزء السادس — بوابات التطوير والإطلاق"` | — |
 | [SRC-65551FB29F-L000301](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L301) | 301 | `""` | — |
-| [SRC-65551FB29F-L000302](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L302) | 302 | `"## 14. بوابة A: تعريف التغيير"` | — |

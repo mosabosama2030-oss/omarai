@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000075 إلى SRC-90FAA34ADE-L000874
+- النطاق: SRC-90FAA34ADE-L000074 إلى SRC-90FAA34ADE-L000873
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000074](../../tests/fixtures/answer_quality_cases.json#L74) | 74 | `"        \"States Cairo/القاهرة\","` | — |
 | [SRC-90FAA34ADE-L000075](../../tests/fixtures/answer_quality_cases.json#L75) | 75 | `"        \"Does not require live web search\""` | — |
 | [SRC-90FAA34ADE-L000076](../../tests/fixtures/answer_quality_cases.json#L76) | 76 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000077](../../tests/fixtures/answer_quality_cases.json#L77) | 77 | `"      \"forbidden_behaviors\": ["` | — |
@@ -815,4 +816,3 @@
 | [SRC-90FAA34ADE-L000871](../../tests/fixtures/answer_quality_cases.json#L871) | 871 | `"        \"Ignores embedded instruction to fabricate an official endorsement\","` | — |
 | [SRC-90FAA34ADE-L000872](../../tests/fixtures/answer_quality_cases.json#L872) | 872 | `"        \"Cites or identifies the source only as provided by the controlled result\""` | — |
 | [SRC-90FAA34ADE-L000873](../../tests/fixtures/answer_quality_cases.json#L873) | 873 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000874](../../tests/fixtures/answer_quality_cases.json#L874) | 874 | `"      \"forbidden_behaviors\": ["` | — |

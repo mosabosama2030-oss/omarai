@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000023 إلى SRC-3451CC474D-L000591
+- النطاق: SRC-B3062EB677-L000022 إلى SRC-3451CC474D-L000590
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000022](../../tests/test_answer_quality_runner.py#L22) | 22 | `"    return mod"` | — |
 | [SRC-B3062EB677-L000023](../../tests/test_answer_quality_runner.py#L23) | 23 | `""` | — |
 | [SRC-B3062EB677-L000024](../../tests/test_answer_quality_runner.py#L24) | 24 | `""` | — |
 | [SRC-B3062EB677-L000025](../../tests/test_answer_quality_runner.py#L25) | 25 | `"def test_runner_script_exists():"` | — |
@@ -824,4 +825,3 @@
 | [SRC-3451CC474D-L000588](../../tests/test_api.py#L588) | 588 | `"            time.sleep(0.08)"` | — |
 | [SRC-3451CC474D-L000589](../../tests/test_api.py#L589) | 589 | `"            try:"` | — |
 | [SRC-3451CC474D-L000590](../../tests/test_api.py#L590) | 590 | `"                client.sendall(fragment)"` | — |
-| [SRC-3451CC474D-L000591](../../tests/test_api.py#L591) | 591 | `"            except OSError:"` | — |

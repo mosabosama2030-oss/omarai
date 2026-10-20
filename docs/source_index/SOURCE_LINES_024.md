@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000380 إلى SRC-F725E90B2A-L001179
+- النطاق: SRC-F725E90B2A-L000374 إلى SRC-F725E90B2A-L001173
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000374](../../tests/test_web_agent.py#L374) | 374 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000375](../../tests/test_web_agent.py#L375) | 375 | `"    assert len(sources) == 1"` | — |
+| [SRC-F725E90B2A-L000376](../../tests/test_web_agent.py#L376) | 376 | `"    assert sources[0][\"url\"] == \"https://example.com/article\""` | — |
+| [SRC-F725E90B2A-L000377](../../tests/test_web_agent.py#L377) | 377 | `"    assert sources[0][\"title\"] == \"User page title\""` | — |
+| [SRC-F725E90B2A-L000378](../../tests/test_web_agent.py#L378) | 378 | `"    assert sources[0][\"page_fetched\"] is True"` | — |
+| [SRC-F725E90B2A-L000379](../../tests/test_web_agent.py#L379) | 379 | `"    assert \"user_supplied_url\" in report[\"providers_used\"]"` | — |
 | [SRC-F725E90B2A-L000380](../../tests/test_web_agent.py#L380) | 380 | `""` | — |
 | [SRC-F725E90B2A-L000381](../../tests/test_web_agent.py#L381) | 381 | `""` | — |
 | [SRC-F725E90B2A-L000382](../../tests/test_web_agent.py#L382) | 382 | `""` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001171](../../tests/test_web_agent.py#L1171) | 1171 | `"        \"queries\": [\"شركة ألفا التقنية معلومات\"],"` | — |
 | [SRC-F725E90B2A-L001172](../../tests/test_web_agent.py#L1172) | 1172 | `"        \"direct_urls\": [],"` | — |
 | [SRC-F725E90B2A-L001173](../../tests/test_web_agent.py#L1173) | 1173 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L001174](../../tests/test_web_agent.py#L1174) | 1174 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L001175](../../tests/test_web_agent.py#L1175) | 1175 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L001176](../../tests/test_web_agent.py#L1176) | 1176 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001177](../../tests/test_web_agent.py#L1177) | 1177 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001178](../../tests/test_web_agent.py#L1178) | 1178 | `"    }"` | — |
-| [SRC-F725E90B2A-L001179](../../tests/test_web_agent.py#L1179) | 1179 | `"    calls = []"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001980 إلى SRC-A16FA6D4B5-L000005
+- النطاق: SRC-F725E90B2A-L001974 إلى SRC-DE7EABE998-L000336
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001974](../../tests/test_web_agent.py#L1974) | 1974 | `"    def fail_before_attempt(research_plan):"` | — |
+| [SRC-F725E90B2A-L001975](../../tests/test_web_agent.py#L1975) | 1975 | `"        raise RuntimeError(\"simulated scheduler failure\")"` | — |
+| [SRC-F725E90B2A-L001976](../../tests/test_web_agent.py#L1976) | 1976 | `""` | — |
+| [SRC-F725E90B2A-L001977](../../tests/test_web_agent.py#L1977) | 1977 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L001978](../../tests/test_web_agent.py#L1978) | 1978 | `"    monkeypatch.setattr(agent, \"_collect_research\", fail_before_attempt)"` | — |
+| [SRC-F725E90B2A-L001979](../../tests/test_web_agent.py#L1979) | 1979 | `""` | — |
 | [SRC-F725E90B2A-L001980](../../tests/test_web_agent.py#L1980) | 1980 | `"    result = agent.answer(\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\")"` | — |
 | [SRC-F725E90B2A-L001981](../../tests/test_web_agent.py#L1981) | 1981 | `""` | — |
 | [SRC-F725E90B2A-L001982](../../tests/test_web_agent.py#L1982) | 1982 | `"    report = result[\"search_report\"]"` | — |
@@ -819,18 +825,3 @@
 | [SRC-DE7EABE998-L000334](../../web/agent.html#L334) | 334 | `"$(\"runDiagnostics\").addEventListener(\"click\",runDiagnostics);checkHealth();"` | — |
 | [SRC-DE7EABE998-L000335](../../web/agent.html#L335) | 335 | `"</script>"` | — |
 | [SRC-DE7EABE998-L000336](../../web/agent.html#L336) | 336 | `"</body>"` | — |
-| [SRC-DE7EABE998-L000337](../../web/agent.html#L337) | 337 | `"</html>"` | — |
-## واجهة الويب
-
-### FILE-A16FA6D4B5 — [web/dashboard.html](../../web/dashboard.html#L1)
-
-- النوع: **HTML**
-- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-A16FA6D4B5-L000001](../../web/dashboard.html#L1) | 1 | `"<!doctype html>"` | — |
-| [SRC-A16FA6D4B5-L000002](../../web/dashboard.html#L2) | 2 | `"<html lang=\"ar\" dir=\"rtl\">"` | — |
-| [SRC-A16FA6D4B5-L000003](../../web/dashboard.html#L3) | 3 | `"<head>"` | — |
-| [SRC-A16FA6D4B5-L000004](../../web/dashboard.html#L4) | 4 | `"<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"` | — |
-| [SRC-A16FA6D4B5-L000005](../../web/dashboard.html#L5) | 5 | `"<meta name=\"theme-color\" content=\"#0b1020\"><title>Omarai \| مساعد اكتشاف العملاء</title>"` | — |

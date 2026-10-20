@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001180 إلى SRC-F725E90B2A-L001979
+- النطاق: SRC-F725E90B2A-L001174 إلى SRC-F725E90B2A-L001973
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001174](../../tests/test_web_agent.py#L1174) | 1174 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L001175](../../tests/test_web_agent.py#L1175) | 1175 | `"        \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L001176](../../tests/test_web_agent.py#L1176) | 1176 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001177](../../tests/test_web_agent.py#L1177) | 1177 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001178](../../tests/test_web_agent.py#L1178) | 1178 | `"    }"` | — |
+| [SRC-F725E90B2A-L001179](../../tests/test_web_agent.py#L1179) | 1179 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001180](../../tests/test_web_agent.py#L1180) | 1180 | `""` | — |
 | [SRC-F725E90B2A-L001181](../../tests/test_web_agent.py#L1181) | 1181 | `"    def collect(research_plan):"` | — |
 | [SRC-F725E90B2A-L001182](../../tests/test_web_agent.py#L1182) | 1182 | `"        calls.append(dict(research_plan))"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001971](../../tests/test_web_agent.py#L1971) | 1971 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001972](../../tests/test_web_agent.py#L1972) | 1972 | `"    }"` | — |
 | [SRC-F725E90B2A-L001973](../../tests/test_web_agent.py#L1973) | 1973 | `""` | — |
-| [SRC-F725E90B2A-L001974](../../tests/test_web_agent.py#L1974) | 1974 | `"    def fail_before_attempt(research_plan):"` | — |
-| [SRC-F725E90B2A-L001975](../../tests/test_web_agent.py#L1975) | 1975 | `"        raise RuntimeError(\"simulated scheduler failure\")"` | — |
-| [SRC-F725E90B2A-L001976](../../tests/test_web_agent.py#L1976) | 1976 | `""` | — |
-| [SRC-F725E90B2A-L001977](../../tests/test_web_agent.py#L1977) | 1977 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001978](../../tests/test_web_agent.py#L1978) | 1978 | `"    monkeypatch.setattr(agent, \"_collect_research\", fail_before_attempt)"` | — |
-| [SRC-F725E90B2A-L001979](../../tests/test_web_agent.py#L1979) | 1979 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000021 إلى SRC-90FAA34ADE-L000074
+- النطاق: SRC-A8360B1B03-L000020 إلى SRC-90FAA34ADE-L000073
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000020](../../scripts/hosted_smoke_test.py#L20) | 20 | `"    \"\"\"Never forward a bearer token to a different origin during an HTTP redirect.\"\"\""` | — |
 | [SRC-A8360B1B03-L000021](../../scripts/hosted_smoke_test.py#L21) | 21 | `""` | — |
 | [SRC-A8360B1B03-L000022](../../scripts/hosted_smoke_test.py#L22) | 22 | `"    @staticmethod"` | — |
 | [SRC-A8360B1B03-L000023](../../scripts/hosted_smoke_test.py#L23) | 23 | `"    def _origin(url: str) -> tuple[str, str, int \| None]:"` | — |
@@ -842,4 +843,3 @@
 | [SRC-90FAA34ADE-L000071](../../tests/fixtures/answer_quality_cases.json#L71) | 71 | `"      \"question\": \"ما عاصمة مصر؟\","` | — |
 | [SRC-90FAA34ADE-L000072](../../tests/fixtures/answer_quality_cases.json#L72) | 72 | `"      \"expected_strategy\": \"model_no_search\","` | — |
 | [SRC-90FAA34ADE-L000073](../../tests/fixtures/answer_quality_cases.json#L73) | 73 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000074](../../tests/fixtures/answer_quality_cases.json#L74) | 74 | `"        \"States Cairo/القاهرة\","` | — |

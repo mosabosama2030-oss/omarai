@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000292 إلى SRC-D17CE3D12F-L000269
+- النطاق: SRC-E73001D9AC-L000291 إلى SRC-D17CE3D12F-L000268
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000291](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L291) | 291 | `"- منع استدعاء أدوات غير مسجلة، أو تعديل الصلاحيات والميزانيات من مخرجات النموذج."` | — |
 | [SRC-E73001D9AC-L000292](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L292) | 292 | `"- استخدام اختبارات red-team لحالات prompt injection المباشرة وغير المباشرة، وتسريب الأسرار، ورفض السياسات، وتسميم السياق."` | — |
 | [SRC-E73001D9AC-L000293](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L293) | 293 | `"- عدم افتراض أن تعليمات النظام وحدها تمنع الهجمات؛ يجب فرض الضوابط عند حدود التنفيذ."` | — |
 | [SRC-E73001D9AC-L000294](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L294) | 294 | `""` | — |
@@ -824,4 +825,3 @@
 | [SRC-D17CE3D12F-L000266](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L266) | 266 | `"2. SHOULD مراقبة الثغرات والاعتماديات المهجورة والتراخيص والتعارضات، وتحديثها باختبارات توافق."` | — |
 | [SRC-D17CE3D12F-L000267](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L267) | 267 | `"3. MUST عدم تثبيت artifact أو action أو dependency مجهولة المصدر أو متغيرة بصمت في مسار إنتاج حساس."` | — |
 | [SRC-D17CE3D12F-L000268](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L268) | 268 | `"4. SHOULD تثبيت GitHub Actions الخارجية على full-length commit SHA عند استخدامها، مع تقليل صلاحيات GITHUB_TOKEN إلى أدنى ما يلزم."` | — |
-| [SRC-D17CE3D12F-L000269](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L269) | 269 | `"5. MUST عدم تشغيل بناء أو اختبار على كود غير موثوق مع أسرار إنتاج أو صلاحيات نشر."` | — |

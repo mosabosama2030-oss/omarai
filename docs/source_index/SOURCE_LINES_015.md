@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000303 إلى SRC-A8360B1B03-L000020
+- النطاق: SRC-65551FB29F-L000302 إلى SRC-A8360B1B03-L000019
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000302](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L302) | 302 | `"## 14. بوابة A: تعريف التغيير"` | — |
 | [SRC-65551FB29F-L000303](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L303) | 303 | `""` | — |
 | [SRC-65551FB29F-L000304](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L304) | 304 | `"قبل التنفيذ:"` | — |
 | [SRC-65551FB29F-L000305](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L305) | 305 | `"1. تحديد المتطلب ومعرفه."` | — |
@@ -905,4 +906,3 @@
 | [SRC-A8360B1B03-L000017](../../scripts/hosted_smoke_test.py#L17) | 17 | `""` | — |
 | [SRC-A8360B1B03-L000018](../../scripts/hosted_smoke_test.py#L18) | 18 | `""` | — |
 | [SRC-A8360B1B03-L000019](../../scripts/hosted_smoke_test.py#L19) | 19 | `"class _SameOriginRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
-| [SRC-A8360B1B03-L000020](../../scripts/hosted_smoke_test.py#L20) | 20 | `"    \"\"\"Never forward a bearer token to a different origin during an HTTP redirect.\"\"\""` | — |

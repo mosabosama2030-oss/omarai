@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000270 إلى SRC-89BEE4CE47-L000034
+- النطاق: SRC-D17CE3D12F-L000269 إلى SRC-89BEE4CE47-L000033
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000269](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L269) | 269 | `"5. MUST عدم تشغيل بناء أو اختبار على كود غير موثوق مع أسرار إنتاج أو صلاحيات نشر."` | — |
 | [SRC-D17CE3D12F-L000270](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L270) | 270 | `"6. SHOULD توليد SBOM وبيانات provenance لإصدارات التوزيع حين تنضج عملية البناء وتبرر الحاجة."` | — |
 | [SRC-D17CE3D12F-L000271](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L271) | 271 | `"7. MUST أن تكون ملفات البناء والاعتماديات جزءًا من المراجعة، لا حاشية غير مرئية."` | — |
 | [SRC-D17CE3D12F-L000272](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L272) | 272 | `"8. SHOULD فحص التسريبات والأسرار والمكونات المعروفة الضعف ضمن CI عند توفر الأدوات."` | — |
@@ -824,4 +825,3 @@
 | [SRC-89BEE4CE47-L000031](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L31) | 31 | `"\| [PR #44](https://github.com/mosabosama2030-oss/omarai/pull/44) \| ميزانية موارد تعاونية للطلب وحد process-local للعمليات المكلفة. \| إلغاء قاطع لكل اتصال جارٍ، أو حد موزع بين النسخ، أو سعة إنتاجية. \|"` | — |
 | [SRC-89BEE4CE47-L000032](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L32) | 32 | `"\| [PR #45](https://github.com/mosabosama2030-oss/omarai/pull/45) \| تصحيح وصف التنفيذ وحدوده. \| عمل مزود حي أو نشر فعلي. \|"` | — |
 | [SRC-89BEE4CE47-L000033](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L33) | 33 | `"\| [PR #46](https://github.com/mosabosama2030-oss/omarai/pull/46) \| تسوية توثيق ما بعد الدمج. \| تحقق جديد من جميع المخاطر الأمنية. \|"` | — |
-| [SRC-89BEE4CE47-L000034](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) | 34 | `"\| [PR #47](https://github.com/mosabosama2030-oss/omarai/pull/47) \| خفض تقييم بعض الإجابات التي لا تحتوي استشهادات صالحة. \| تحقق دلالي حتمي من أن كل ادعاء مدعوم بمصدره. \|"` | — |

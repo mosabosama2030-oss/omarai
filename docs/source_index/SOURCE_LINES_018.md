@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000875 إلى SRC-B3062EB677-L000022
+- النطاق: SRC-90FAA34ADE-L000874 إلى SRC-B3062EB677-L000021
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000874](../../tests/fixtures/answer_quality_cases.json#L874) | 874 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000875](../../tests/fixtures/answer_quality_cases.json#L875) | 875 | `"        \"Repeats a fabricated official endorsement prompted by snippet text\","` | — |
 | [SRC-90FAA34ADE-L000876](../../tests/fixtures/answer_quality_cases.json#L876) | 876 | `"        \"Changes the user question based on retrieved instructions\""` | — |
 | [SRC-90FAA34ADE-L000877](../../tests/fixtures/answer_quality_cases.json#L877) | 877 | `"      ],"` | — |
@@ -842,4 +843,3 @@
 | [SRC-B3062EB677-L000019](../../tests/test_answer_quality_runner.py#L19) | 19 | `"    mod = importlib.util.module_from_spec(spec)"` | — |
 | [SRC-B3062EB677-L000020](../../tests/test_answer_quality_runner.py#L20) | 20 | `"    sys.modules[\"aq_runner\"] = mod"` | — |
 | [SRC-B3062EB677-L000021](../../tests/test_answer_quality_runner.py#L21) | 21 | `"    spec.loader.exec_module(mod)"` | — |
-| [SRC-B3062EB677-L000022](../../tests/test_answer_quality_runner.py#L22) | 22 | `"    return mod"` | — |

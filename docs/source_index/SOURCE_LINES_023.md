@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C353AAAC10-L000092 إلى SRC-F725E90B2A-L000379
+- النطاق: SRC-C353AAAC10-L000086 إلى SRC-F725E90B2A-L000373
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C353AAAC10-L000086](../../tests/test_request_budget.py#L86) | 86 | `""` | — |
+| [SRC-C353AAAC10-L000087](../../tests/test_request_budget.py#L87) | 87 | `""` | — |
+| [SRC-C353AAAC10-L000088](../../tests/test_request_budget.py#L88) | 88 | `"def test_social_provider_reserves_budget_before_network_io(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000089](../../tests/test_request_budget.py#L89) | 89 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-C353AAAC10-L000090](../../tests/test_request_budget.py#L90) | 90 | `""` | — |
+| [SRC-C353AAAC10-L000091](../../tests/test_request_budget.py#L91) | 91 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"test-client\")"` | — |
 | [SRC-C353AAAC10-L000092](../../tests/test_request_budget.py#L92) | 92 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"test-secret\")"` | — |
 | [SRC-C353AAAC10-L000093](../../tests/test_request_budget.py#L93) | 93 | `"    agent = WebAgent()"` | — |
 | [SRC-C353AAAC10-L000094](../../tests/test_request_budget.py#L94) | 94 | `"    agent._request_budget = RequestBudget(limits={\"search_calls\": 0})"` | — |
@@ -846,9 +852,3 @@
 | [SRC-F725E90B2A-L000371](../../tests/test_web_agent.py#L371) | 371 | `"        \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L000372](../../tests/test_web_agent.py#L372) | 372 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L000373](../../tests/test_web_agent.py#L373) | 373 | `"    })"` | — |
-| [SRC-F725E90B2A-L000374](../../tests/test_web_agent.py#L374) | 374 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000375](../../tests/test_web_agent.py#L375) | 375 | `"    assert len(sources) == 1"` | — |
-| [SRC-F725E90B2A-L000376](../../tests/test_web_agent.py#L376) | 376 | `"    assert sources[0][\"url\"] == \"https://example.com/article\""` | — |
-| [SRC-F725E90B2A-L000377](../../tests/test_web_agent.py#L377) | 377 | `"    assert sources[0][\"title\"] == \"User page title\""` | — |
-| [SRC-F725E90B2A-L000378](../../tests/test_web_agent.py#L378) | 378 | `"    assert sources[0][\"page_fetched\"] is True"` | — |
-| [SRC-F725E90B2A-L000379](../../tests/test_web_agent.py#L379) | 379 | `"    assert \"user_supplied_url\" in report[\"providers_used\"]"` | — |

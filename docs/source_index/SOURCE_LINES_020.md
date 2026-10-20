@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000592 إلى SRC-829A979985-L000024
+- النطاق: SRC-3451CC474D-L000591 إلى SRC-829A979985-L000018
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000591](../../tests/test_api.py#L591) | 591 | `"            except OSError:"` | — |
 | [SRC-3451CC474D-L000592](../../tests/test_api.py#L592) | 592 | `"                break"` | — |
 | [SRC-3451CC474D-L000593](../../tests/test_api.py#L593) | 593 | `""` | — |
 | [SRC-3451CC474D-L000594](../../tests/test_api.py#L594) | 594 | `"        response = bytearray()"` | — |
@@ -671,163 +672,168 @@
 | [SRC-FA4E1423C3-L000170](../../tests/test_generate_index.py#L170) | 170 | `"        tmp_path / \".venv\" / \"lib\" / \"hidden.py\","` | — |
 | [SRC-FA4E1423C3-L000171](../../tests/test_generate_index.py#L171) | 171 | `"        tmp_path / \"node_modules\" / \"package\" / \"hidden.py\","` | — |
 | [SRC-FA4E1423C3-L000172](../../tests/test_generate_index.py#L172) | 172 | `"        tmp_path / \"build\" / \"generated.py\","` | — |
-| [SRC-FA4E1423C3-L000173](../../tests/test_generate_index.py#L173) | 173 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000174](../../tests/test_generate_index.py#L174) | 174 | `"    for path in excluded_files:"` | — |
-| [SRC-FA4E1423C3-L000175](../../tests/test_generate_index.py#L175) | 175 | `"        path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-FA4E1423C3-L000176](../../tests/test_generate_index.py#L176) | 176 | `"        path.write_text(\"def should_not_be_indexed():\\n    pass\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000177](../../tests/test_generate_index.py#L177) | 177 | `""` | — |
-| [SRC-FA4E1423C3-L000178](../../tests/test_generate_index.py#L178) | 178 | `"    symbols, files_scanned = INDEXER.scan_repository(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000173](../../tests/test_generate_index.py#L173) | 173 | `"        tmp_path / \"omarai_agent.egg-info\" / \"PKG-INFO\","` | — |
+| [SRC-FA4E1423C3-L000174](../../tests/test_generate_index.py#L174) | 174 | `"        tmp_path / \"package.dist-info\" / \"METADATA\","` | — |
+| [SRC-FA4E1423C3-L000175](../../tests/test_generate_index.py#L175) | 175 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000176](../../tests/test_generate_index.py#L176) | 176 | `"    for path in excluded_files:"` | — |
+| [SRC-FA4E1423C3-L000177](../../tests/test_generate_index.py#L177) | 177 | `"        path.parent.mkdir(parents=True, exist_ok=True)"` | — |
+| [SRC-FA4E1423C3-L000178](../../tests/test_generate_index.py#L178) | 178 | `"        path.write_text(\"def should_not_be_indexed():\\n    pass\\n\", encoding=\"utf-8\")"` | — |
 | [SRC-FA4E1423C3-L000179](../../tests/test_generate_index.py#L179) | 179 | `""` | — |
-| [SRC-FA4E1423C3-L000180](../../tests/test_generate_index.py#L180) | 180 | `"    assert files_scanned == 1"` | — |
-| [SRC-FA4E1423C3-L000181](../../tests/test_generate_index.py#L181) | 181 | `"    assert [symbol.name for symbol in symbols] == [\"application_entry\"]"` | — |
-| [SRC-FA4E1423C3-L000182](../../tests/test_generate_index.py#L182) | 182 | `""` | — |
-| [SRC-FA4E1423C3-L000183](../../tests/test_generate_index.py#L183) | 183 | `""` | — |
-| [SRC-FA4E1423C3-L000184](../../tests/test_generate_index.py#L184) | 184 | `"def test_syntax_error_does_not_overwrite_the_previous_index("` | — |
-| [SRC-FA4E1423C3-L000185](../../tests/test_generate_index.py#L185) | 185 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000186](../../tests/test_generate_index.py#L186) | 186 | `"    capsys,"` | — |
-| [SRC-FA4E1423C3-L000187](../../tests/test_generate_index.py#L187) | 187 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000188](../../tests/test_generate_index.py#L188) | 188 | `"    \"\"\"A failed parse leaves the prior index intact rather than publishing partial data.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000189](../../tests/test_generate_index.py#L189) | 189 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000190](../../tests/test_generate_index.py#L190) | 190 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000191](../../tests/test_generate_index.py#L191) | 191 | `"    index_path = docs_dir / \"MASTER_INDEX.md\""` | — |
-| [SRC-FA4E1423C3-L000192](../../tests/test_generate_index.py#L192) | 192 | `"    index_path.write_text(\"previous index must survive\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000193](../../tests/test_generate_index.py#L193) | 193 | `"    (tmp_path / \"broken.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000194](../../tests/test_generate_index.py#L194) | 194 | `"        \"def incomplete(:\\n    pass\\n\","` | — |
-| [SRC-FA4E1423C3-L000195](../../tests/test_generate_index.py#L195) | 195 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000196](../../tests/test_generate_index.py#L196) | 196 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000197](../../tests/test_generate_index.py#L197) | 197 | `""` | — |
-| [SRC-FA4E1423C3-L000198](../../tests/test_generate_index.py#L198) | 198 | `"    result = INDEXER.main([\"--root\", str(tmp_path)])"` | — |
-| [SRC-FA4E1423C3-L000199](../../tests/test_generate_index.py#L199) | 199 | `""` | — |
-| [SRC-FA4E1423C3-L000200](../../tests/test_generate_index.py#L200) | 200 | `"    assert result == 1"` | — |
-| [SRC-FA4E1423C3-L000201](../../tests/test_generate_index.py#L201) | 201 | `"    assert index_path.read_text(encoding=\"utf-8\") == \"previous index must survive\""` | — |
-| [SRC-FA4E1423C3-L000202](../../tests/test_generate_index.py#L202) | 202 | `"    assert \"لم يُكتب MASTER_INDEX.md\" in capsys.readouterr().err"` | — |
-| [SRC-FA4E1423C3-L000203](../../tests/test_generate_index.py#L203) | 203 | `""` | — |
+| [SRC-FA4E1423C3-L000180](../../tests/test_generate_index.py#L180) | 180 | `"    symbols, files_scanned = INDEXER.scan_repository(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000181](../../tests/test_generate_index.py#L181) | 181 | `""` | — |
+| [SRC-FA4E1423C3-L000182](../../tests/test_generate_index.py#L182) | 182 | `"    assert files_scanned == 1"` | — |
+| [SRC-FA4E1423C3-L000183](../../tests/test_generate_index.py#L183) | 183 | `"    assert [symbol.name for symbol in symbols] == [\"application_entry\"]"` | — |
+| [SRC-FA4E1423C3-L000184](../../tests/test_generate_index.py#L184) | 184 | `"    inventory_paths = {item.file for item in INDEXER.build_file_inventory(tmp_path)}"` | — |
+| [SRC-FA4E1423C3-L000185](../../tests/test_generate_index.py#L185) | 185 | `"    assert not any(\".egg-info/\" in path for path in inventory_paths)"` | — |
+| [SRC-FA4E1423C3-L000186](../../tests/test_generate_index.py#L186) | 186 | `"    assert not any(\".dist-info/\" in path for path in inventory_paths)"` | — |
+| [SRC-FA4E1423C3-L000187](../../tests/test_generate_index.py#L187) | 187 | `""` | — |
+| [SRC-FA4E1423C3-L000188](../../tests/test_generate_index.py#L188) | 188 | `""` | — |
+| [SRC-FA4E1423C3-L000189](../../tests/test_generate_index.py#L189) | 189 | `"def test_syntax_error_does_not_overwrite_the_previous_index("` | — |
+| [SRC-FA4E1423C3-L000190](../../tests/test_generate_index.py#L190) | 190 | `"    tmp_path: Path,"` | — |
+| [SRC-FA4E1423C3-L000191](../../tests/test_generate_index.py#L191) | 191 | `"    capsys,"` | — |
+| [SRC-FA4E1423C3-L000192](../../tests/test_generate_index.py#L192) | 192 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000193](../../tests/test_generate_index.py#L193) | 193 | `"    \"\"\"A failed parse leaves the prior index intact rather than publishing partial data.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000194](../../tests/test_generate_index.py#L194) | 194 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000195](../../tests/test_generate_index.py#L195) | 195 | `"    docs_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000196](../../tests/test_generate_index.py#L196) | 196 | `"    index_path = docs_dir / \"MASTER_INDEX.md\""` | — |
+| [SRC-FA4E1423C3-L000197](../../tests/test_generate_index.py#L197) | 197 | `"    index_path.write_text(\"previous index must survive\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000198](../../tests/test_generate_index.py#L198) | 198 | `"    (tmp_path / \"broken.py\").write_text("` | — |
+| [SRC-FA4E1423C3-L000199](../../tests/test_generate_index.py#L199) | 199 | `"        \"def incomplete(:\\n    pass\\n\","` | — |
+| [SRC-FA4E1423C3-L000200](../../tests/test_generate_index.py#L200) | 200 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000201](../../tests/test_generate_index.py#L201) | 201 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000202](../../tests/test_generate_index.py#L202) | 202 | `""` | — |
+| [SRC-FA4E1423C3-L000203](../../tests/test_generate_index.py#L203) | 203 | `"    result = INDEXER.main([\"--root\", str(tmp_path)])"` | — |
 | [SRC-FA4E1423C3-L000204](../../tests/test_generate_index.py#L204) | 204 | `""` | — |
-| [SRC-FA4E1423C3-L000205](../../tests/test_generate_index.py#L205) | 205 | `"def test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_index("` | — |
-| [SRC-FA4E1423C3-L000206](../../tests/test_generate_index.py#L206) | 206 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000207](../../tests/test_generate_index.py#L207) | 207 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000208](../../tests/test_generate_index.py#L208) | 208 | `"    \"\"\"An unchanged scan produces identical Markdown and avoids an unnecessary write.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000209](../../tests/test_generate_index.py#L209) | 209 | `"    (tmp_path / \"app.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000210](../../tests/test_generate_index.py#L210) | 210 | `"        'def entry():\\n    \"\"\"Entry point.\"\"\"\\n', encoding=\"utf-8\""` | — |
-| [SRC-FA4E1423C3-L000211](../../tests/test_generate_index.py#L211) | 211 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000212](../../tests/test_generate_index.py#L212) | 212 | `"    first_symbols, first_count = INDEXER.scan_repository(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000213](../../tests/test_generate_index.py#L213) | 213 | `"    second_symbols, second_count = INDEXER.scan_repository(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000214](../../tests/test_generate_index.py#L214) | 214 | `"    first_inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000215](../../tests/test_generate_index.py#L215) | 215 | `"    second_inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000216](../../tests/test_generate_index.py#L216) | 216 | `"    first_static = INDEXER.scan_static_symbols(tmp_path, first_inventory)"` | — |
-| [SRC-FA4E1423C3-L000217](../../tests/test_generate_index.py#L217) | 217 | `"    second_static = INDEXER.scan_static_symbols(tmp_path, second_inventory)"` | — |
-| [SRC-FA4E1423C3-L000218](../../tests/test_generate_index.py#L218) | 218 | `"    first_markdown = INDEXER.render_markdown("` | — |
-| [SRC-FA4E1423C3-L000219](../../tests/test_generate_index.py#L219) | 219 | `"        first_symbols, first_count, first_inventory, first_static"` | — |
-| [SRC-FA4E1423C3-L000220](../../tests/test_generate_index.py#L220) | 220 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000221](../../tests/test_generate_index.py#L221) | 221 | `"    second_markdown = INDEXER.render_markdown("` | — |
-| [SRC-FA4E1423C3-L000222](../../tests/test_generate_index.py#L222) | 222 | `"        second_symbols, second_count, second_inventory, second_static"` | — |
-| [SRC-FA4E1423C3-L000223](../../tests/test_generate_index.py#L223) | 223 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000224](../../tests/test_generate_index.py#L224) | 224 | `"    output_path = tmp_path / \"docs\" / \"MASTER_INDEX.md\""` | — |
-| [SRC-FA4E1423C3-L000225](../../tests/test_generate_index.py#L225) | 225 | `""` | — |
-| [SRC-FA4E1423C3-L000226](../../tests/test_generate_index.py#L226) | 226 | `"    assert first_markdown == second_markdown"` | — |
-| [SRC-FA4E1423C3-L000227](../../tests/test_generate_index.py#L227) | 227 | `"    assert INDEXER.write_if_changed(output_path, first_markdown) is True"` | — |
-| [SRC-FA4E1423C3-L000228](../../tests/test_generate_index.py#L228) | 228 | `"    assert INDEXER.write_if_changed(output_path, second_markdown) is False"` | — |
-| [SRC-FA4E1423C3-L000229](../../tests/test_generate_index.py#L229) | 229 | `""` | — |
+| [SRC-FA4E1423C3-L000205](../../tests/test_generate_index.py#L205) | 205 | `"    assert result == 1"` | — |
+| [SRC-FA4E1423C3-L000206](../../tests/test_generate_index.py#L206) | 206 | `"    assert index_path.read_text(encoding=\"utf-8\") == \"previous index must survive\""` | — |
+| [SRC-FA4E1423C3-L000207](../../tests/test_generate_index.py#L207) | 207 | `"    assert \"لم يُكتب MASTER_INDEX.md\" in capsys.readouterr().err"` | — |
+| [SRC-FA4E1423C3-L000208](../../tests/test_generate_index.py#L208) | 208 | `""` | — |
+| [SRC-FA4E1423C3-L000209](../../tests/test_generate_index.py#L209) | 209 | `""` | — |
+| [SRC-FA4E1423C3-L000210](../../tests/test_generate_index.py#L210) | 210 | `"def test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_index("` | — |
+| [SRC-FA4E1423C3-L000211](../../tests/test_generate_index.py#L211) | 211 | `"    tmp_path: Path,"` | — |
+| [SRC-FA4E1423C3-L000212](../../tests/test_generate_index.py#L212) | 212 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000213](../../tests/test_generate_index.py#L213) | 213 | `"    \"\"\"An unchanged scan produces identical Markdown and avoids an unnecessary write.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000214](../../tests/test_generate_index.py#L214) | 214 | `"    (tmp_path / \"app.py\").write_text("` | — |
+| [SRC-FA4E1423C3-L000215](../../tests/test_generate_index.py#L215) | 215 | `"        'def entry():\\n    \"\"\"Entry point.\"\"\"\\n', encoding=\"utf-8\""` | — |
+| [SRC-FA4E1423C3-L000216](../../tests/test_generate_index.py#L216) | 216 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000217](../../tests/test_generate_index.py#L217) | 217 | `"    first_symbols, first_count = INDEXER.scan_repository(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000218](../../tests/test_generate_index.py#L218) | 218 | `"    second_symbols, second_count = INDEXER.scan_repository(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000219](../../tests/test_generate_index.py#L219) | 219 | `"    first_inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000220](../../tests/test_generate_index.py#L220) | 220 | `"    second_inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000221](../../tests/test_generate_index.py#L221) | 221 | `"    first_static = INDEXER.scan_static_symbols(tmp_path, first_inventory)"` | — |
+| [SRC-FA4E1423C3-L000222](../../tests/test_generate_index.py#L222) | 222 | `"    second_static = INDEXER.scan_static_symbols(tmp_path, second_inventory)"` | — |
+| [SRC-FA4E1423C3-L000223](../../tests/test_generate_index.py#L223) | 223 | `"    first_markdown = INDEXER.render_markdown("` | — |
+| [SRC-FA4E1423C3-L000224](../../tests/test_generate_index.py#L224) | 224 | `"        first_symbols, first_count, first_inventory, first_static"` | — |
+| [SRC-FA4E1423C3-L000225](../../tests/test_generate_index.py#L225) | 225 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000226](../../tests/test_generate_index.py#L226) | 226 | `"    second_markdown = INDEXER.render_markdown("` | — |
+| [SRC-FA4E1423C3-L000227](../../tests/test_generate_index.py#L227) | 227 | `"        second_symbols, second_count, second_inventory, second_static"` | — |
+| [SRC-FA4E1423C3-L000228](../../tests/test_generate_index.py#L228) | 228 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000229](../../tests/test_generate_index.py#L229) | 229 | `"    output_path = tmp_path / \"docs\" / \"MASTER_INDEX.md\""` | — |
 | [SRC-FA4E1423C3-L000230](../../tests/test_generate_index.py#L230) | 230 | `""` | — |
-| [SRC-FA4E1423C3-L000231](../../tests/test_generate_index.py#L231) | 231 | `"def test_check_mode_detects_stale_index_without_modifying_it(tmp_path: Path, capsys) -> None:"` | — |
-| [SRC-FA4E1423C3-L000232](../../tests/test_generate_index.py#L232) | 232 | `"    \"\"\"Check mode fails on a stale index and leaves the existing file untouched.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000233](../../tests/test_generate_index.py#L233) | 233 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000234](../../tests/test_generate_index.py#L234) | 234 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000235](../../tests/test_generate_index.py#L235) | 235 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000236](../../tests/test_generate_index.py#L236) | 236 | `"    index_path = docs_dir / \"MASTER_INDEX.md\""` | — |
-| [SRC-FA4E1423C3-L000237](../../tests/test_generate_index.py#L237) | 237 | `"    index_path.write_text(\"stale\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000238](../../tests/test_generate_index.py#L238) | 238 | `""` | — |
-| [SRC-FA4E1423C3-L000239](../../tests/test_generate_index.py#L239) | 239 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
-| [SRC-FA4E1423C3-L000240](../../tests/test_generate_index.py#L240) | 240 | `"    assert index_path.read_text(encoding=\"utf-8\") == \"stale\""` | — |
-| [SRC-FA4E1423C3-L000241](../../tests/test_generate_index.py#L241) | 241 | `"    assert \"الفهرس قديم\" in capsys.readouterr().err"` | — |
-| [SRC-FA4E1423C3-L000242](../../tests/test_generate_index.py#L242) | 242 | `""` | — |
-| [SRC-FA4E1423C3-L000243](../../tests/test_generate_index.py#L243) | 243 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
-| [SRC-FA4E1423C3-L000244](../../tests/test_generate_index.py#L244) | 244 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
-| [SRC-FA4E1423C3-L000245](../../tests/test_generate_index.py#L245) | 245 | `""` | — |
-| [SRC-FA4E1423C3-L000246](../../tests/test_generate_index.py#L246) | 246 | `""` | — |
-| [SRC-FA4E1423C3-L000247](../../tests/test_generate_index.py#L247) | 247 | `"def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path) -> None:"` | — |
-| [SRC-FA4E1423C3-L000248](../../tests/test_generate_index.py#L248) | 248 | `"    \"\"\"All readable text lines, including blank lines and unfamiliar extensions, are searchable.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000249](../../tests/test_generate_index.py#L249) | 249 | `"    (tmp_path / \"app.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000250](../../tests/test_generate_index.py#L250) | 250 | `"        'VALUE = 1\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000251](../../tests/test_generate_index.py#L251) | 251 | `"        'def greet():\\n'"` | — |
-| [SRC-FA4E1423C3-L000252](../../tests/test_generate_index.py#L252) | 252 | `"        '    return \"hello\"\\n',"` | — |
-| [SRC-FA4E1423C3-L000253](../../tests/test_generate_index.py#L253) | 253 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000254](../../tests/test_generate_index.py#L254) | 254 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000255](../../tests/test_generate_index.py#L255) | 255 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000256](../../tests/test_generate_index.py#L256) | 256 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000257](../../tests/test_generate_index.py#L257) | 257 | `"    (docs_dir / \"guide.txt\").write_text("` | — |
-| [SRC-FA4E1423C3-L000258](../../tests/test_generate_index.py#L258) | 258 | `"        \"First documented step.\\nSecond documented step.\\n\","` | — |
-| [SRC-FA4E1423C3-L000259](../../tests/test_generate_index.py#L259) | 259 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000260](../../tests/test_generate_index.py#L260) | 260 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000261](../../tests/test_generate_index.py#L261) | 261 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_TOKEN=do-not-index\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000262](../../tests/test_generate_index.py#L262) | 262 | `"    (tmp_path / \"payload.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
-| [SRC-FA4E1423C3-L000263](../../tests/test_generate_index.py#L263) | 263 | `""` | — |
-| [SRC-FA4E1423C3-L000264](../../tests/test_generate_index.py#L264) | 264 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000265](../../tests/test_generate_index.py#L265) | 265 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000266](../../tests/test_generate_index.py#L266) | 266 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000267](../../tests/test_generate_index.py#L267) | 267 | `"    line_by_file_and_number = {(line.file, line.line): line for line in source_lines}"` | — |
-| [SRC-FA4E1423C3-L000268](../../tests/test_generate_index.py#L268) | 268 | `"    pages, pages_by_file = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |
-| [SRC-FA4E1423C3-L000269](../../tests/test_generate_index.py#L269) | 269 | `"    lines_markdown = INDEXER.render_source_lines_markdown("` | — |
-| [SRC-FA4E1423C3-L000270](../../tests/test_generate_index.py#L270) | 270 | `"        source_lines, inventory, findings, pages_by_file, pages"` | — |
-| [SRC-FA4E1423C3-L000271](../../tests/test_generate_index.py#L271) | 271 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000272](../../tests/test_generate_index.py#L272) | 272 | `"    all_page_content = \"\\n\".join(pages.values())"` | — |
-| [SRC-FA4E1423C3-L000273](../../tests/test_generate_index.py#L273) | 273 | `""` | — |
-| [SRC-FA4E1423C3-L000274](../../tests/test_generate_index.py#L274) | 274 | `"    assert (\"app.py\", 1) in line_by_file_and_number"` | — |
-| [SRC-FA4E1423C3-L000275](../../tests/test_generate_index.py#L275) | 275 | `"    assert (\"app.py\", 2) in line_by_file_and_number"` | — |
-| [SRC-FA4E1423C3-L000276](../../tests/test_generate_index.py#L276) | 276 | `"    assert line_by_file_and_number[(\"app.py\", 2)].content == \"\""` | — |
-| [SRC-FA4E1423C3-L000277](../../tests/test_generate_index.py#L277) | 277 | `"    assert line_by_file_and_number[(\"app.py\", 4)].content == '    return \"hello\"'"` | — |
-| [SRC-FA4E1423C3-L000278](../../tests/test_generate_index.py#L278) | 278 | `"    assert line_by_file_and_number[(\"docs/guide.txt\", 2)].content == \"Second documented step.\""` | — |
-| [SRC-FA4E1423C3-L000279](../../tests/test_generate_index.py#L279) | 279 | `"    assert line_by_file_and_number[(\"app.py\", 1)].line_id.startswith(\"SRC-\")"` | — |
-| [SRC-FA4E1423C3-L000280](../../tests/test_generate_index.py#L280) | 280 | `"    assert line_by_file_and_number[(\"app.py\", 1)].file_id.startswith(\"FILE-\")"` | — |
-| [SRC-FA4E1423C3-L000281](../../tests/test_generate_index.py#L281) | 281 | `"    assert line_by_file_and_number[(\"app.py\", 1)].category == \"ملفات أخرى\""` | — |
-| [SRC-FA4E1423C3-L000282](../../tests/test_generate_index.py#L282) | 282 | `"    assert \"PRIVATE_TOKEN\" not in lines_markdown"` | — |
-| [SRC-FA4E1423C3-L000283](../../tests/test_generate_index.py#L283) | 283 | `"    assert \"payload.bin\" not in {line.file for line in source_lines}"` | — |
-| [SRC-FA4E1423C3-L000284](../../tests/test_generate_index.py#L284) | 284 | `"    assert \"Second documented step.\" in all_page_content"` | — |
-| [SRC-FA4E1423C3-L000285](../../tests/test_generate_index.py#L285) | 285 | `"    assert \"SRC-\" in all_page_content"` | — |
-| [SRC-FA4E1423C3-L000286](../../tests/test_generate_index.py#L286) | 286 | `"    assert \"SOURCE_LINES_001\" in lines_markdown"` | — |
-| [SRC-FA4E1423C3-L000287](../../tests/test_generate_index.py#L287) | 287 | `"    assert pages_by_file[\"app.py\"]"` | — |
-| [SRC-FA4E1423C3-L000288](../../tests/test_generate_index.py#L288) | 288 | `""` | — |
-| [SRC-FA4E1423C3-L000289](../../tests/test_generate_index.py#L289) | 289 | `""` | — |
-| [SRC-FA4E1423C3-L000290](../../tests/test_generate_index.py#L290) | 290 | `"def test_explicit_review_markers_have_unique_codes_and_source_line_links("` | — |
-| [SRC-FA4E1423C3-L000291](../../tests/test_generate_index.py#L291) | 291 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000292](../../tests/test_generate_index.py#L292) | 292 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000293](../../tests/test_generate_index.py#L293) | 293 | `"    \"\"\"TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines.\"\"\""` | FND-BUG-FA4E1423C3-L000293 |
-| [SRC-FA4E1423C3-L000294](../../tests/test_generate_index.py#L294) | 294 | `"    (tmp_path / \"module.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000295](../../tests/test_generate_index.py#L295) | 295 | `"        \"# TODO: verify fallback\\n\""` | FND-TODO-FA4E1423C3-L000295 |
-| [SRC-FA4E1423C3-L000296](../../tests/test_generate_index.py#L296) | 296 | `"        \"value = 1  # FIXME: handle overflow\\n\""` | FND-FIXME-FA4E1423C3-L000296 |
-| [SRC-FA4E1423C3-L000297](../../tests/test_generate_index.py#L297) | 297 | `"        \"# SECURITY: check token handling\\n\""` | FND-SECURITY-FA4E1423C3-L000297 |
-| [SRC-FA4E1423C3-L000298](../../tests/test_generate_index.py#L298) | 298 | `"        \"def ready():\\n\""` | — |
-| [SRC-FA4E1423C3-L000299](../../tests/test_generate_index.py#L299) | 299 | `"        \"    return True\\n\","` | — |
-| [SRC-FA4E1423C3-L000300](../../tests/test_generate_index.py#L300) | 300 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000301](../../tests/test_generate_index.py#L301) | 301 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000302](../../tests/test_generate_index.py#L302) | 302 | `""` | — |
-| [SRC-FA4E1423C3-L000303](../../tests/test_generate_index.py#L303) | 303 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000304](../../tests/test_generate_index.py#L304) | 304 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000305](../../tests/test_generate_index.py#L305) | 305 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000306](../../tests/test_generate_index.py#L306) | 306 | `""` | — |
-| [SRC-FA4E1423C3-L000307](../../tests/test_generate_index.py#L307) | 307 | `"    assert [item.marker for item in findings] == [\"FIXME\", \"SECURITY\", \"TODO\"]"` | — |
-| [SRC-FA4E1423C3-L000308](../../tests/test_generate_index.py#L308) | 308 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
-| [SRC-FA4E1423C3-L000309](../../tests/test_generate_index.py#L309) | 309 | `"    for finding in findings:"` | — |
-| [SRC-FA4E1423C3-L000310](../../tests/test_generate_index.py#L310) | 310 | `"        assert finding.finding_id.startswith(f\"FND-{finding.marker}-\")"` | — |
-| [SRC-FA4E1423C3-L000311](../../tests/test_generate_index.py#L311) | 311 | `"        assert finding.line_id.startswith(\"SRC-\")"` | — |
-| [SRC-FA4E1423C3-L000312](../../tests/test_generate_index.py#L312) | 312 | `"        assert finding.file == \"module.py\""` | — |
-| [SRC-FA4E1423C3-L000313](../../tests/test_generate_index.py#L313) | 313 | `""` | — |
-| [SRC-FA4E1423C3-L000314](../../tests/test_generate_index.py#L314) | 314 | `""` | — |
-| [SRC-FA4E1423C3-L000315](../../tests/test_generate_index.py#L315) | 315 | `"def test_check_mode_validates_both_generated_indexes(tmp_path: Path, capsys) -> None:"` | — |
-| [SRC-FA4E1423C3-L000316](../../tests/test_generate_index.py#L316) | 316 | `"    \"\"\"Check mode detects a missing or stale line index as well as a stale master index.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000317](../../tests/test_generate_index.py#L317) | 317 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000231](../../tests/test_generate_index.py#L231) | 231 | `"    assert first_markdown == second_markdown"` | — |
+| [SRC-FA4E1423C3-L000232](../../tests/test_generate_index.py#L232) | 232 | `"    assert INDEXER.write_if_changed(output_path, first_markdown) is True"` | — |
+| [SRC-FA4E1423C3-L000233](../../tests/test_generate_index.py#L233) | 233 | `"    assert INDEXER.write_if_changed(output_path, second_markdown) is False"` | — |
+| [SRC-FA4E1423C3-L000234](../../tests/test_generate_index.py#L234) | 234 | `""` | — |
+| [SRC-FA4E1423C3-L000235](../../tests/test_generate_index.py#L235) | 235 | `""` | — |
+| [SRC-FA4E1423C3-L000236](../../tests/test_generate_index.py#L236) | 236 | `"def test_check_mode_detects_stale_index_without_modifying_it(tmp_path: Path, capsys) -> None:"` | — |
+| [SRC-FA4E1423C3-L000237](../../tests/test_generate_index.py#L237) | 237 | `"    \"\"\"Check mode fails on a stale index and leaves the existing file untouched.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000238](../../tests/test_generate_index.py#L238) | 238 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000239](../../tests/test_generate_index.py#L239) | 239 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000240](../../tests/test_generate_index.py#L240) | 240 | `"    docs_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000241](../../tests/test_generate_index.py#L241) | 241 | `"    index_path = docs_dir / \"MASTER_INDEX.md\""` | — |
+| [SRC-FA4E1423C3-L000242](../../tests/test_generate_index.py#L242) | 242 | `"    index_path.write_text(\"stale\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000243](../../tests/test_generate_index.py#L243) | 243 | `""` | — |
+| [SRC-FA4E1423C3-L000244](../../tests/test_generate_index.py#L244) | 244 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
+| [SRC-FA4E1423C3-L000245](../../tests/test_generate_index.py#L245) | 245 | `"    assert index_path.read_text(encoding=\"utf-8\") == \"stale\""` | — |
+| [SRC-FA4E1423C3-L000246](../../tests/test_generate_index.py#L246) | 246 | `"    assert \"الفهرس قديم\" in capsys.readouterr().err"` | — |
+| [SRC-FA4E1423C3-L000247](../../tests/test_generate_index.py#L247) | 247 | `""` | — |
+| [SRC-FA4E1423C3-L000248](../../tests/test_generate_index.py#L248) | 248 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
+| [SRC-FA4E1423C3-L000249](../../tests/test_generate_index.py#L249) | 249 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
+| [SRC-FA4E1423C3-L000250](../../tests/test_generate_index.py#L250) | 250 | `""` | — |
+| [SRC-FA4E1423C3-L000251](../../tests/test_generate_index.py#L251) | 251 | `""` | — |
+| [SRC-FA4E1423C3-L000252](../../tests/test_generate_index.py#L252) | 252 | `"def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path) -> None:"` | — |
+| [SRC-FA4E1423C3-L000253](../../tests/test_generate_index.py#L253) | 253 | `"    \"\"\"All readable text lines, including blank lines and unfamiliar extensions, are searchable.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000254](../../tests/test_generate_index.py#L254) | 254 | `"    (tmp_path / \"app.py\").write_text("` | — |
+| [SRC-FA4E1423C3-L000255](../../tests/test_generate_index.py#L255) | 255 | `"        'VALUE = 1\\n\\n'"` | — |
+| [SRC-FA4E1423C3-L000256](../../tests/test_generate_index.py#L256) | 256 | `"        'def greet():\\n'"` | — |
+| [SRC-FA4E1423C3-L000257](../../tests/test_generate_index.py#L257) | 257 | `"        '    return \"hello\"\\n',"` | — |
+| [SRC-FA4E1423C3-L000258](../../tests/test_generate_index.py#L258) | 258 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000259](../../tests/test_generate_index.py#L259) | 259 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000260](../../tests/test_generate_index.py#L260) | 260 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000261](../../tests/test_generate_index.py#L261) | 261 | `"    docs_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000262](../../tests/test_generate_index.py#L262) | 262 | `"    (docs_dir / \"guide.txt\").write_text("` | — |
+| [SRC-FA4E1423C3-L000263](../../tests/test_generate_index.py#L263) | 263 | `"        \"First documented step.\\nSecond documented step.\\n\","` | — |
+| [SRC-FA4E1423C3-L000264](../../tests/test_generate_index.py#L264) | 264 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000265](../../tests/test_generate_index.py#L265) | 265 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000266](../../tests/test_generate_index.py#L266) | 266 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_TOKEN=do-not-index\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000267](../../tests/test_generate_index.py#L267) | 267 | `"    (tmp_path / \"payload.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
+| [SRC-FA4E1423C3-L000268](../../tests/test_generate_index.py#L268) | 268 | `""` | — |
+| [SRC-FA4E1423C3-L000269](../../tests/test_generate_index.py#L269) | 269 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000270](../../tests/test_generate_index.py#L270) | 270 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
+| [SRC-FA4E1423C3-L000271](../../tests/test_generate_index.py#L271) | 271 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
+| [SRC-FA4E1423C3-L000272](../../tests/test_generate_index.py#L272) | 272 | `"    line_by_file_and_number = {(line.file, line.line): line for line in source_lines}"` | — |
+| [SRC-FA4E1423C3-L000273](../../tests/test_generate_index.py#L273) | 273 | `"    pages, pages_by_file = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |
+| [SRC-FA4E1423C3-L000274](../../tests/test_generate_index.py#L274) | 274 | `"    lines_markdown = INDEXER.render_source_lines_markdown("` | — |
+| [SRC-FA4E1423C3-L000275](../../tests/test_generate_index.py#L275) | 275 | `"        source_lines, inventory, findings, pages_by_file, pages"` | — |
+| [SRC-FA4E1423C3-L000276](../../tests/test_generate_index.py#L276) | 276 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000277](../../tests/test_generate_index.py#L277) | 277 | `"    all_page_content = \"\\n\".join(pages.values())"` | — |
+| [SRC-FA4E1423C3-L000278](../../tests/test_generate_index.py#L278) | 278 | `""` | — |
+| [SRC-FA4E1423C3-L000279](../../tests/test_generate_index.py#L279) | 279 | `"    assert (\"app.py\", 1) in line_by_file_and_number"` | — |
+| [SRC-FA4E1423C3-L000280](../../tests/test_generate_index.py#L280) | 280 | `"    assert (\"app.py\", 2) in line_by_file_and_number"` | — |
+| [SRC-FA4E1423C3-L000281](../../tests/test_generate_index.py#L281) | 281 | `"    assert line_by_file_and_number[(\"app.py\", 2)].content == \"\""` | — |
+| [SRC-FA4E1423C3-L000282](../../tests/test_generate_index.py#L282) | 282 | `"    assert line_by_file_and_number[(\"app.py\", 4)].content == '    return \"hello\"'"` | — |
+| [SRC-FA4E1423C3-L000283](../../tests/test_generate_index.py#L283) | 283 | `"    assert line_by_file_and_number[(\"docs/guide.txt\", 2)].content == \"Second documented step.\""` | — |
+| [SRC-FA4E1423C3-L000284](../../tests/test_generate_index.py#L284) | 284 | `"    assert line_by_file_and_number[(\"app.py\", 1)].line_id.startswith(\"SRC-\")"` | — |
+| [SRC-FA4E1423C3-L000285](../../tests/test_generate_index.py#L285) | 285 | `"    assert line_by_file_and_number[(\"app.py\", 1)].file_id.startswith(\"FILE-\")"` | — |
+| [SRC-FA4E1423C3-L000286](../../tests/test_generate_index.py#L286) | 286 | `"    assert line_by_file_and_number[(\"app.py\", 1)].category == \"ملفات أخرى\""` | — |
+| [SRC-FA4E1423C3-L000287](../../tests/test_generate_index.py#L287) | 287 | `"    assert \"PRIVATE_TOKEN\" not in lines_markdown"` | — |
+| [SRC-FA4E1423C3-L000288](../../tests/test_generate_index.py#L288) | 288 | `"    assert \"payload.bin\" not in {line.file for line in source_lines}"` | — |
+| [SRC-FA4E1423C3-L000289](../../tests/test_generate_index.py#L289) | 289 | `"    assert \"Second documented step.\" in all_page_content"` | — |
+| [SRC-FA4E1423C3-L000290](../../tests/test_generate_index.py#L290) | 290 | `"    assert \"SRC-\" in all_page_content"` | — |
+| [SRC-FA4E1423C3-L000291](../../tests/test_generate_index.py#L291) | 291 | `"    assert \"SOURCE_LINES_001\" in lines_markdown"` | — |
+| [SRC-FA4E1423C3-L000292](../../tests/test_generate_index.py#L292) | 292 | `"    assert pages_by_file[\"app.py\"]"` | — |
+| [SRC-FA4E1423C3-L000293](../../tests/test_generate_index.py#L293) | 293 | `""` | — |
+| [SRC-FA4E1423C3-L000294](../../tests/test_generate_index.py#L294) | 294 | `""` | — |
+| [SRC-FA4E1423C3-L000295](../../tests/test_generate_index.py#L295) | 295 | `"def test_explicit_review_markers_have_unique_codes_and_source_line_links("` | — |
+| [SRC-FA4E1423C3-L000296](../../tests/test_generate_index.py#L296) | 296 | `"    tmp_path: Path,"` | — |
+| [SRC-FA4E1423C3-L000297](../../tests/test_generate_index.py#L297) | 297 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000298](../../tests/test_generate_index.py#L298) | 298 | `"    \"\"\"TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines.\"\"\""` | FND-BUG-FA4E1423C3-L000298 |
+| [SRC-FA4E1423C3-L000299](../../tests/test_generate_index.py#L299) | 299 | `"    (tmp_path / \"module.py\").write_text("` | — |
+| [SRC-FA4E1423C3-L000300](../../tests/test_generate_index.py#L300) | 300 | `"        \"# TODO: verify fallback\\n\""` | FND-TODO-FA4E1423C3-L000300 |
+| [SRC-FA4E1423C3-L000301](../../tests/test_generate_index.py#L301) | 301 | `"        \"value = 1  # FIXME: handle overflow\\n\""` | FND-FIXME-FA4E1423C3-L000301 |
+| [SRC-FA4E1423C3-L000302](../../tests/test_generate_index.py#L302) | 302 | `"        \"# SECURITY: check token handling\\n\""` | FND-SECURITY-FA4E1423C3-L000302 |
+| [SRC-FA4E1423C3-L000303](../../tests/test_generate_index.py#L303) | 303 | `"        \"def ready():\\n\""` | — |
+| [SRC-FA4E1423C3-L000304](../../tests/test_generate_index.py#L304) | 304 | `"        \"    return True\\n\","` | — |
+| [SRC-FA4E1423C3-L000305](../../tests/test_generate_index.py#L305) | 305 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000306](../../tests/test_generate_index.py#L306) | 306 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000307](../../tests/test_generate_index.py#L307) | 307 | `""` | — |
+| [SRC-FA4E1423C3-L000308](../../tests/test_generate_index.py#L308) | 308 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000309](../../tests/test_generate_index.py#L309) | 309 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
+| [SRC-FA4E1423C3-L000310](../../tests/test_generate_index.py#L310) | 310 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
+| [SRC-FA4E1423C3-L000311](../../tests/test_generate_index.py#L311) | 311 | `""` | — |
+| [SRC-FA4E1423C3-L000312](../../tests/test_generate_index.py#L312) | 312 | `"    assert [item.marker for item in findings] == [\"FIXME\", \"SECURITY\", \"TODO\"]"` | — |
+| [SRC-FA4E1423C3-L000313](../../tests/test_generate_index.py#L313) | 313 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
+| [SRC-FA4E1423C3-L000314](../../tests/test_generate_index.py#L314) | 314 | `"    for finding in findings:"` | — |
+| [SRC-FA4E1423C3-L000315](../../tests/test_generate_index.py#L315) | 315 | `"        assert finding.finding_id.startswith(f\"FND-{finding.marker}-\")"` | — |
+| [SRC-FA4E1423C3-L000316](../../tests/test_generate_index.py#L316) | 316 | `"        assert finding.line_id.startswith(\"SRC-\")"` | — |
+| [SRC-FA4E1423C3-L000317](../../tests/test_generate_index.py#L317) | 317 | `"        assert finding.file == \"module.py\""` | — |
 | [SRC-FA4E1423C3-L000318](../../tests/test_generate_index.py#L318) | 318 | `""` | — |
-| [SRC-FA4E1423C3-L000319](../../tests/test_generate_index.py#L319) | 319 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
-| [SRC-FA4E1423C3-L000320](../../tests/test_generate_index.py#L320) | 320 | `"    master_path = tmp_path / INDEXER.INDEX_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000321](../../tests/test_generate_index.py#L321) | 321 | `"    line_index_path = tmp_path / INDEXER.SOURCE_LINES_INDEX_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000322](../../tests/test_generate_index.py#L322) | 322 | `"    assert master_path.exists()"` | — |
-| [SRC-FA4E1423C3-L000323](../../tests/test_generate_index.py#L323) | 323 | `"    assert line_index_path.exists()"` | — |
-| [SRC-FA4E1423C3-L000324](../../tests/test_generate_index.py#L324) | 324 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
-| [SRC-FA4E1423C3-L000325](../../tests/test_generate_index.py#L325) | 325 | `""` | — |
-| [SRC-FA4E1423C3-L000326](../../tests/test_generate_index.py#L326) | 326 | `"    line_index_path.write_text(\"stale line index\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000327](../../tests/test_generate_index.py#L327) | 327 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
-| [SRC-FA4E1423C3-L000328](../../tests/test_generate_index.py#L328) | 328 | `"    assert line_index_path.read_text(encoding=\"utf-8\") == \"stale line index\""` | — |
-| [SRC-FA4E1423C3-L000329](../../tests/test_generate_index.py#L329) | 329 | `"    assert \"فهرس الأسطر قديم\" in capsys.readouterr().err"` | — |
+| [SRC-FA4E1423C3-L000319](../../tests/test_generate_index.py#L319) | 319 | `""` | — |
+| [SRC-FA4E1423C3-L000320](../../tests/test_generate_index.py#L320) | 320 | `"def test_check_mode_validates_both_generated_indexes(tmp_path: Path, capsys) -> None:"` | — |
+| [SRC-FA4E1423C3-L000321](../../tests/test_generate_index.py#L321) | 321 | `"    \"\"\"Check mode detects a missing or stale line index as well as a stale master index.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000322](../../tests/test_generate_index.py#L322) | 322 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000323](../../tests/test_generate_index.py#L323) | 323 | `""` | — |
+| [SRC-FA4E1423C3-L000324](../../tests/test_generate_index.py#L324) | 324 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
+| [SRC-FA4E1423C3-L000325](../../tests/test_generate_index.py#L325) | 325 | `"    master_path = tmp_path / INDEXER.INDEX_RELATIVE_PATH"` | — |
+| [SRC-FA4E1423C3-L000326](../../tests/test_generate_index.py#L326) | 326 | `"    line_index_path = tmp_path / INDEXER.SOURCE_LINES_INDEX_RELATIVE_PATH"` | — |
+| [SRC-FA4E1423C3-L000327](../../tests/test_generate_index.py#L327) | 327 | `"    assert master_path.exists()"` | — |
+| [SRC-FA4E1423C3-L000328](../../tests/test_generate_index.py#L328) | 328 | `"    assert line_index_path.exists()"` | — |
+| [SRC-FA4E1423C3-L000329](../../tests/test_generate_index.py#L329) | 329 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
+| [SRC-FA4E1423C3-L000330](../../tests/test_generate_index.py#L330) | 330 | `""` | — |
+| [SRC-FA4E1423C3-L000331](../../tests/test_generate_index.py#L331) | 331 | `"    line_index_path.write_text(\"stale line index\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000332](../../tests/test_generate_index.py#L332) | 332 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
+| [SRC-FA4E1423C3-L000333](../../tests/test_generate_index.py#L333) | 333 | `"    assert line_index_path.read_text(encoding=\"utf-8\") == \"stale line index\""` | — |
+| [SRC-FA4E1423C3-L000334](../../tests/test_generate_index.py#L334) | 334 | `"    assert \"فهرس الأسطر قديم\" in capsys.readouterr().err"` | — |
 ## اختبارات
 
 ### FILE-829A979985 — [tests/test_generation_acceptance_matrix.py](../../tests/test_generation_acceptance_matrix.py#L1)
@@ -855,9 +861,3 @@
 | [SRC-829A979985-L000016](../../tests/test_generation_acceptance_matrix.py#L16) | 16 | `"        *,"` | — |
 | [SRC-829A979985-L000017](../../tests/test_generation_acceptance_matrix.py#L17) | 17 | `"        include_reason: bool = True,"` | — |
 | [SRC-829A979985-L000018](../../tests/test_generation_acceptance_matrix.py#L18) | 18 | `"    ) -> None:"` | — |
-| [SRC-829A979985-L000019](../../tests/test_generation_acceptance_matrix.py#L19) | 19 | `"        choice = {\"message\": {\"content\": content}}"` | — |
-| [SRC-829A979985-L000020](../../tests/test_generation_acceptance_matrix.py#L20) | 20 | `"        if include_reason:"` | — |
-| [SRC-829A979985-L000021](../../tests/test_generation_acceptance_matrix.py#L21) | 21 | `"            choice[\"finish_reason\"] = finish_reason"` | — |
-| [SRC-829A979985-L000022](../../tests/test_generation_acceptance_matrix.py#L22) | 22 | `"        self.body = json.dumps({\"choices\": [choice]}).encode(\"utf-8\")"` | — |
-| [SRC-829A979985-L000023](../../tests/test_generation_acceptance_matrix.py#L23) | 23 | `""` | — |
-| [SRC-829A979985-L000024](../../tests/test_generation_acceptance_matrix.py#L24) | 24 | `"    def __enter__(self):"` | — |

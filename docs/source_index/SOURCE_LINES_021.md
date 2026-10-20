@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000025 إلى SRC-AAA21D04E8-L000238
+- النطاق: SRC-829A979985-L000019 إلى SRC-AAA21D04E8-L000232
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000019](../../tests/test_generation_acceptance_matrix.py#L19) | 19 | `"        choice = {\"message\": {\"content\": content}}"` | — |
+| [SRC-829A979985-L000020](../../tests/test_generation_acceptance_matrix.py#L20) | 20 | `"        if include_reason:"` | — |
+| [SRC-829A979985-L000021](../../tests/test_generation_acceptance_matrix.py#L21) | 21 | `"            choice[\"finish_reason\"] = finish_reason"` | — |
+| [SRC-829A979985-L000022](../../tests/test_generation_acceptance_matrix.py#L22) | 22 | `"        self.body = json.dumps({\"choices\": [choice]}).encode(\"utf-8\")"` | — |
+| [SRC-829A979985-L000023](../../tests/test_generation_acceptance_matrix.py#L23) | 23 | `""` | — |
+| [SRC-829A979985-L000024](../../tests/test_generation_acceptance_matrix.py#L24) | 24 | `"    def __enter__(self):"` | — |
 | [SRC-829A979985-L000025](../../tests/test_generation_acceptance_matrix.py#L25) | 25 | `"        return self"` | — |
 | [SRC-829A979985-L000026](../../tests/test_generation_acceptance_matrix.py#L26) | 26 | `""` | — |
 | [SRC-829A979985-L000027](../../tests/test_generation_acceptance_matrix.py#L27) | 27 | `"    def __exit__(self, exc_type, exc, traceback):"` | — |
@@ -819,9 +825,3 @@
 | [SRC-AAA21D04E8-L000230](../../tests/test_generation_capabilities.py#L230) | 230 | `"            attempted_model=\"fallback/model\","` | — |
 | [SRC-AAA21D04E8-L000231](../../tests/test_generation_capabilities.py#L231) | 231 | `"            status=\"truncated\","` | — |
 | [SRC-AAA21D04E8-L000232](../../tests/test_generation_capabilities.py#L232) | 232 | `"            finish_reason=\"length\","` | — |
-| [SRC-AAA21D04E8-L000233](../../tests/test_generation_capabilities.py#L233) | 233 | `"        )"` | — |
-| [SRC-AAA21D04E8-L000234](../../tests/test_generation_capabilities.py#L234) | 234 | `"        raise RuntimeError(\"اختبار: فشل التوليد بعد انتهاء حد الرموز\")"` | — |
-| [SRC-AAA21D04E8-L000235](../../tests/test_generation_capabilities.py#L235) | 235 | `""` | — |
-| [SRC-AAA21D04E8-L000236](../../tests/test_generation_capabilities.py#L236) | 236 | `"    monkeypatch.setattr(agent, \"_generate\", failed_generate)"` | — |
-| [SRC-AAA21D04E8-L000237](../../tests/test_generation_capabilities.py#L237) | 237 | `""` | — |
-| [SRC-AAA21D04E8-L000238](../../tests/test_generation_capabilities.py#L238) | 238 | `"    result = agent.answer(question)"` | — |
