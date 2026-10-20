@@ -146,9 +146,12 @@ def discover_text_files(root: Path, extensions: frozenset[str]) -> list[Path]:
             if candidate.is_symlink() or _is_sensitive_path(candidate.relative_to(root)):
                 continue
             suffix = candidate.suffix.lower()
-            if suffix not in extensions and not file_name.endswith(".example"):
-                if file_name not in {".gitignore", ".dockerignore", "Dockerfile", "LICENSE"}:
-                    continue
+            if (
+                suffix not in extensions
+                and not file_name.endswith(".example")
+                and file_name not in {".gitignore", ".dockerignore", "Dockerfile", "LICENSE"}
+            ):
+                continue
             discovered.append(candidate)
     return sorted(discovered, key=lambda p: p.relative_to(root).as_posix().casefold())
 
