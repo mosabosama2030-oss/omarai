@@ -480,7 +480,16 @@ def build_file_inventory(root: Path) -> list[IndexedFile]:
 
 def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
     """List excluded path names and reasons without opening excluded file contents."""
-    excluded: list[tuple[str, str]] = []
+    excluded: list[tuple[str, str]] = [
+        (path, "مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية")
+        for path in sorted(INDEX_OUTPUT_PATHS)
+    ]
+    excluded.append(
+        (
+            SOURCE_LINES_PAGES_DIR + "/",
+            "مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية",
+        )
+    )
     for current_directory, directory_names, file_names in os.walk(
         root,
         topdown=True,
@@ -496,6 +505,13 @@ def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
                 excluded.append((relative + "/", "مجلد بيئة أو اعتماديات أو مخرجات مولدة مستبعد"))
             elif name.lower().endswith((".egg-info", ".dist-info")):
                 excluded.append((relative + "/", "بيانات تغليف مولدة مستبعدة"))
+            elif relative == SOURCE_LINES_PAGES_DIR:
+                excluded.append(
+                    (
+                        relative + "/",
+                        "مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية",
+                    )
+                )
             else:
                 kept_directories.append(name)
         directory_names[:] = kept_directories
