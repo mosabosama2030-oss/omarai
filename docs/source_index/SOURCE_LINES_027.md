@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **027**
-- سجلات الأسطر: **45**
-- النطاق: SRC-DE7EABE998-L000337 إلى SRC-A16FA6D4B5-L000044
+- سجلات الأسطر: **148**
+- النطاق: SRC-DE7EABE998-L000234 إلى SRC-A16FA6D4B5-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,109 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000234](../../web/agent.html#L234) | 234 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000235](../../web/agent.html#L235) | 235 | `"  const no=document.createElement(\"p\");no.className=\"no-sources\";"` | — |
+| [SRC-DE7EABE998-L000236](../../web/agent.html#L236) | 236 | `"  no.textContent=\"لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.\";"` | — |
+| [SRC-DE7EABE998-L000237](../../web/agent.html#L237) | 237 | `"  box.appendChild(no);"` | — |
+| [SRC-DE7EABE998-L000238](../../web/agent.html#L238) | 238 | `" }"` | — |
+| [SRC-DE7EABE998-L000239](../../web/agent.html#L239) | 239 | `" $(\"messages\").appendChild(box);box.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000240](../../web/agent.html#L240) | 240 | `" return box;"` | — |
+| [SRC-DE7EABE998-L000241](../../web/agent.html#L241) | 241 | `"}"` | — |
+| [SRC-DE7EABE998-L000242](../../web/agent.html#L242) | 242 | `"function setBusy(on){busy=on;$(\"send\").disabled=on;$(\"send\").textContent=on?\"يبحث…\":\"ابحث ←\";$(\"question\").disabled=on;document.querySelectorAll(\".mode-btn\").forEach(b=>b.disabled=on);}"` | — |
+| [SRC-DE7EABE998-L000243](../../web/agent.html#L243) | 243 | `"async function ask(value){"` | — |
+| [SRC-DE7EABE998-L000244](../../web/agent.html#L244) | 244 | `" const q=(value??$(\"question\").value).trim();if(!q\|\|busy)return;"` | — |
+| [SRC-DE7EABE998-L000245](../../web/agent.html#L245) | 245 | `" addMessage(\"user\",q);$(\"question\").value=\"\";setBusy(true);"` | — |
+| [SRC-DE7EABE998-L000246](../../web/agent.html#L246) | 246 | `" setStatus(\"جارٍ تنفيذ البحث عن السؤال الحالي…\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000247](../../web/agent.html#L247) | 247 | `" const pending=document.createElement(\"div\");pending.className=\"message assistant\";"` | — |
+| [SRC-DE7EABE998-L000248](../../web/agent.html#L248) | 248 | `" pending.innerHTML='<div class=\"who\">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class=\"bubble\"><div class=\"pending\"><span class=\"spinner\"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';"` | — |
+| [SRC-DE7EABE998-L000249](../../web/agent.html#L249) | 249 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000250](../../web/agent.html#L250) | 250 | `" try{"` | — |
+| [SRC-DE7EABE998-L000251](../../web/agent.html#L251) | 251 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
+| [SRC-DE7EABE998-L000252](../../web/agent.html#L252) | 252 | `"  const data=await response.json().catch(()=>({}));"` | — |
+| [SRC-DE7EABE998-L000253](../../web/agent.html#L253) | 253 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000254](../../web/agent.html#L254) | 254 | `"  if(!response.ok){"` | — |
+| [SRC-DE7EABE998-L000255](../../web/agent.html#L255) | 255 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
+| [SRC-DE7EABE998-L000256](../../web/agent.html#L256) | 256 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
+| [SRC-DE7EABE998-L000257](../../web/agent.html#L257) | 257 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |
+| [SRC-DE7EABE998-L000258](../../web/agent.html#L258) | 258 | `"  }"` | — |
+| [SRC-DE7EABE998-L000259](../../web/agent.html#L259) | 259 | `"  addMessage(\"assistant\",data.answer\|\|\"لم يرجع الخادم نص إجابة.\",data);"` | — |
+| [SRC-DE7EABE998-L000260](../../web/agent.html#L260) | 260 | `"  history.push({role:\"user\",content:q},{role:\"assistant\",content:String(data.answer\|\|\"\")});"` | — |
+| [SRC-DE7EABE998-L000261](../../web/agent.html#L261) | 261 | `"  const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];"` | — |
+| [SRC-DE7EABE998-L000262](../../web/agent.html#L262) | 262 | `"  if(data.kind===\"general_answer\"){"` | — |
+| [SRC-DE7EABE998-L000263](../../web/agent.html#L263) | 263 | `"   setStatus(\"اكتملت إجابة المعرفة العامة دون بحث ويب\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000264](../../web/agent.html#L264) | 264 | `"  }else if(data.kind===\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000265](../../web/agent.html#L265) | 265 | `"   setStatus(\"إجابة عن قدرات Omarai وحدوده · لم يُجر بحث حي\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000266](../../web/agent.html#L266) | 266 | `"  }else if(data.used_web_search===true&&data.used_language_model===true&&sources.length>0){"` | — |
+| [SRC-DE7EABE998-L000267](../../web/agent.html#L267) | 267 | `"   setStatus(\"اكتمل البحث والتحليل · \"+sources.length+\" مصدرًا صالحًا\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000268](../../web/agent.html#L268) | 268 | `"  }else if(data.used_web_search===true&&sources.length>0){"` | — |
+| [SRC-DE7EABE998-L000269](../../web/agent.html#L269) | 269 | `"   setStatus(\"البحث أعاد مصادر، لكن التحليل غير مكتمل\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000270](../../web/agent.html#L270) | 270 | `"  }else{"` | — |
+| [SRC-DE7EABE998-L000271](../../web/agent.html#L271) | 271 | `"   setStatus(\"نتيجة جزئية: لا يوجد بحث حي مؤكد مع مصادر كافية\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000272](../../web/agent.html#L272) | 272 | `"  }"` | — |
+| [SRC-DE7EABE998-L000273](../../web/agent.html#L273) | 273 | `" }catch(error){"` | — |
+| [SRC-DE7EABE998-L000274](../../web/agent.html#L274) | 274 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000275](../../web/agent.html#L275) | 275 | `"  const safeMessage=error&&error.message?error.message:\"تعذر إكمال الطلب.\";"` | — |
+| [SRC-DE7EABE998-L000276](../../web/agent.html#L276) | 276 | `"  const box=addMessage(\"assistant\",safeMessage,null,{question:q});"` | — |
+| [SRC-DE7EABE998-L000277](../../web/agent.html#L277) | 277 | `"  const actions=document.createElement(\"div\");actions.className=\"retry-row\";"` | — |
+| [SRC-DE7EABE998-L000278](../../web/agent.html#L278) | 278 | `"  const retry=document.createElement(\"button\");retry.type=\"button\";retry.className=\"retry-button\";"` | — |
+| [SRC-DE7EABE998-L000279](../../web/agent.html#L279) | 279 | `"  retry.textContent=\"إعادة محاولة هذا السؤال\";"` | — |
+| [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `"  retry.addEventListener(\"click\",()=>ask(q));actions.appendChild(retry);box.appendChild(actions);"` | — |
+| [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `"  setStatus(\"لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `" }finally{"` | — |
+| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `"  setBusy(false);$(\"question\").focus();"` | — |
+| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" }"` | — |
+| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `"}"` | — |
+| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `"async function runDiagnostics(){"` | — |
+| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `" const button=$(\"runDiagnostics\"),output=$(\"diagnosticsResult\");if(button.disabled)return;"` | — |
+| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `" button.disabled=true;button.textContent=\"جارٍ الاختبار الحقيقي…\";output.textContent=\"يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.\";"` | — |
+| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `" try{"` | — |
+| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `"  const response=await fetch(\"/api/diagnostics\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$(\"diagSocial\").checked})});"` | — |
+| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `"  const data=await response.json();if(!response.ok)throw Error(data.error\|\|\"فشل طلب الاختبار\");"` | — |
+| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `"  const labels={passed:\"نجح فعليًا\",degraded:\"جزئي أو بلا نتائج كافية\",failed:\"فشل\",skipped:\"لم يُختبر\",not_configured:\"غير مضبوط\"};"` | — |
+| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  const lines=[\"النتيجة: \"+(labels[data.overall_status]\|\|data.overall_status)];"` | — |
+| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `"  for(const [key,label] of [[\"web_search\",\"بحث الإنترنت\"],[\"language_model\",\"النموذج اللغوي\"],[\"social_search\",\"المصادر الاجتماعية\"]]){"` | — |
+| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `"   const item=(data.checks\|\|{})[key];if(!item)continue;"` | — |
+| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `"   lines.push(label+\": \"+(labels[item.status]\|\|item.status)+(item.result_count!==undefined?\" · \"+item.result_count+\" نتيجة\":\"\"));"` | — |
+| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `"   if(item.provider_counts&&Object.keys(item.provider_counts).length)lines.push(\"المصادر التي أعادت نتائج: \"+Object.entries(item.provider_counts).map(([p,n])=>p+\" (\"+n+\")\").join(\"، \"));"` | — |
+| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `"   if(item.note)lines.push(item.note);"` | — |
+| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"   if(item.warnings&&item.warnings.length)lines.push(item.warnings.join(\"؛ \"));"` | — |
+| [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `"  }"` | — |
+| [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `"  if(data.model_usage&&data.model_usage.length)lines.push(\"النموذج المستخدم: \"+data.model_usage.map(x=>x.used_model).join(\"، \"));"` | — |
+| [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `"  if(data.elapsed_ms!==undefined)lines.push(\"مدة الاختبار: \"+(data.elapsed_ms/1000).toFixed(1)+\" ثانية\");"` | — |
+| [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `"  output.textContent=lines.join(\"\\n\");setStatus(data.overall_status===\"passed\"?\"نجح الاختبار الحي\":data.overall_status===\"failed\"?\"فشل الاختبار الحي\":\"نتيجة الاختبار جزئية\",data.overall_status===\"passed\"?\"ok\":data.overall_status===\"failed\"?\"bad\":\"warn\");"` | — |
+| [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" }catch(e){output.textContent=\"تعذّر الاختبار الحي: \"+(e&&e.message?e.message:\"خطأ غير معروف\");setStatus(\"فشل الاختبار الحي\",\"bad\");}"` | — |
+| [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
+| [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `"}"` | — |
+| [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `"async function checkHealth(){"` | — |
+| [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `" try{"` | — |
+| [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
+| [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `"  const configured=[];"` | — |
+| [SRC-DE7EABE998-L000311](../../web/agent.html#L311) | 311 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
+| [SRC-DE7EABE998-L000312](../../web/agent.html#L312) | 312 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |
+| [SRC-DE7EABE998-L000313](../../web/agent.html#L313) | 313 | `"  if(a.reddit_oauth_configured)configured.push(\"Reddit OAuth\");"` | — |
+| [SRC-DE7EABE998-L000314](../../web/agent.html#L314) | 314 | `"  if(a.facebook_pages_api_configured)configured.push(\"Facebook Pages\");"` | — |
+| [SRC-DE7EABE998-L000315](../../web/agent.html#L315) | 315 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |
+| [SRC-DE7EABE998-L000316](../../web/agent.html#L316) | 316 | `"  if(a.x_api_configured)configured.push(\"X API\");"` | — |
+| [SRC-DE7EABE998-L000317](../../web/agent.html#L317) | 317 | `"  if(a.youtube_api_configured)configured.push(\"YouTube API\");"` | — |
+| [SRC-DE7EABE998-L000318](../../web/agent.html#L318) | 318 | `"  const model=!!a.language_model_configured, search=!!a.web_search_ready;"` | — |
+| [SRC-DE7EABE998-L000319](../../web/agent.html#L319) | 319 | `"  $(\"setupStatus\").textContent=(search?\"حزم البحث مثبتة. \":\"حزم البحث تحتاج تثبيتًا. \")+(model?\"مفتاح نموذج اللغة موجود في جلسة الخادم. \":\"النموذج التوليدي غير مضبوط بعد. \")+\"لم يتم تأكيد اتصال الإنترنت من هذه الشاشة وحدها؛ شغّل الاختبار الحي. لا تظهر هنا مفاتيح الخدمات أو قيمها.\";"` | — |
+| [SRC-DE7EABE998-L000320](../../web/agent.html#L320) | 320 | `"  $(\"providerSetup\").innerHTML=configured.length?'<span class=\"config-label\">موصلات مفاتيحها مضبوطة: '+configured.map(escapeHtml).join(\" · \")+'</span>':'<p>لم تُضبط مفاتيح API البحثية الإضافية؛ يظل Omarai قادرًا على تجربة محركات البحث العامة المتاحة.</p>';"` | — |
+| [SRC-DE7EABE998-L000321](../../web/agent.html#L321) | 321 | `"  setStatus(\"الإعداد ظاهر · يلزم اختبار حي\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000322](../../web/agent.html#L322) | 322 | `" }catch(e){setStatus(\"تعذر فحص الإعداد\",\"bad\");$(\"setupStatus\").textContent=\"تعذر الاتصال بخادم Omarai المحلي. تأكد أن الخادم يعمل في Termux.\";}"` | — |
+| [SRC-DE7EABE998-L000323](../../web/agent.html#L323) | 323 | `"}"` | — |
+| [SRC-DE7EABE998-L000324](../../web/agent.html#L324) | 324 | `"document.querySelectorAll(\".mode-btn\").forEach(button=>button.addEventListener(\"click\",()=>{"` | — |
+| [SRC-DE7EABE998-L000325](../../web/agent.html#L325) | 325 | `" activeMode=button.dataset.mode;"` | — |
+| [SRC-DE7EABE998-L000326](../../web/agent.html#L326) | 326 | `" document.querySelectorAll(\".mode-btn\").forEach(other=>{const active=other===button;other.classList.toggle(\"active\",active);other.setAttribute(\"aria-pressed\",String(active));});"` | — |
+| [SRC-DE7EABE998-L000327](../../web/agent.html#L327) | 327 | `"}));"` | — |
+| [SRC-DE7EABE998-L000328](../../web/agent.html#L328) | 328 | `"$(\"send\").addEventListener(\"click\",()=>ask());"` | — |
+| [SRC-DE7EABE998-L000329](../../web/agent.html#L329) | 329 | `"$(\"question\").addEventListener(\"keydown\",e=>{if(e.key===\"Enter\"&&!e.shiftKey){e.preventDefault();ask();}});"` | — |
+| [SRC-DE7EABE998-L000330](../../web/agent.html#L330) | 330 | `"$(\"clear\").addEventListener(\"click\",()=>{history.length=0;$(\"messages\").innerHTML='<div class=\"welcome\" id=\"welcome\"><div class=\"welcome-icon\">⌕</div><h3>محادثة جديدة</h3><p>اكتب سؤالك واختر نمط البحث المناسب. المصادر والتغطية سيظهران أسفل الإجابة.</p></div>';$(\"question\").focus();});"` | — |
+| [SRC-DE7EABE998-L000331](../../web/agent.html#L331) | 331 | `"document.querySelectorAll(\".suggestions button\").forEach(b=>b.addEventListener(\"click\",()=>ask(b.textContent)));"` | — |
+| [SRC-DE7EABE998-L000332](../../web/agent.html#L332) | 332 | `"$(\"saveAccessToken\").addEventListener(\"click\",()=>{const token=$(\"accessToken\").value.trim();if(token)localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY,token);else localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);$(\"saveAccessToken\").textContent=token?\"تم حفظ الرمز على هذا الجهاز\":\"تم مسح الرمز المحفوظ\";});"` | — |
+| [SRC-DE7EABE998-L000333](../../web/agent.html#L333) | 333 | `"$(\"accessToken\").value=localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY)\|\|\"\";"` | — |
+| [SRC-DE7EABE998-L000334](../../web/agent.html#L334) | 334 | `"$(\"runDiagnostics\").addEventListener(\"click\",runDiagnostics);checkHealth();"` | — |
+| [SRC-DE7EABE998-L000335](../../web/agent.html#L335) | 335 | `"</script>"` | — |
+| [SRC-DE7EABE998-L000336](../../web/agent.html#L336) | 336 | `"</body>"` | — |
 | [SRC-DE7EABE998-L000337](../../web/agent.html#L337) | 337 | `"</html>"` | — |
 ## واجهة الويب
 

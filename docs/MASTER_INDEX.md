@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **68**
 - ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **813**
-- تعريفات Python موثقة بوجود Docstring: **153**
+- تعريفات Python المفهرسة: **817**
+- تعريفات Python موثقة بوجود Docstring: **156**
 - تعريفات Python بلا Docstring: **497**
-- تعريفات لا ينطبق عليها Docstring: **163**
-- الرموز الساكنة الإضافية: **1234**
-- الأسطر النصية المفهرسة حرفيًا: **20845**
+- تعريفات لا ينطبق عليها Docstring: **164**
+- الرموز الساكنة الإضافية: **1236**
+- الأسطر النصية المفهرسة حرفيًا: **20948**
 - وسوم المراجعة/الإصلاح المسجلة: **14**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -49,7 +49,7 @@
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 8689 | 88 | جرد الملف + عناوين Markdown |
-| FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 56948 | 1430 | جرد الملف + AST Python |
+| FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 61963 | 1533 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 4013 | 35 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 8675 | 47 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
@@ -321,113 +321,117 @@
 | [docs/generate_index.py](generate_index.py#L65) | متغير/ثابت Python | MAX_DESCRIPTION_LENGTH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 65 | [SRC-E599346ABE-L000065](generate_index.py#L65) |
 | [docs/generate_index.py](generate_index.py#L66) | متغير/ثابت Python | INDEX_RELATIVE_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 66 | [SRC-E599346ABE-L000066](generate_index.py#L66) |
 | [docs/generate_index.py](generate_index.py#L67) | متغير/ثابت Python | SOURCE_LINES_INDEX_RELATIVE_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 67 | [SRC-E599346ABE-L000067](generate_index.py#L67) |
-| [docs/generate_index.py](generate_index.py#L68) | متغير/ثابت Python | INDEX_OUTPUT_PATHS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 68 | [SRC-E599346ABE-L000068](generate_index.py#L68) |
-| [docs/generate_index.py](generate_index.py#L69) | متغير/ثابت Python | SOURCE_LINES_PAGES_DIR | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 69 | [SRC-E599346ABE-L000069](generate_index.py#L69) |
-| [docs/generate_index.py](generate_index.py#L70) | متغير/ثابت Python | SOURCE_LINES_PAGE_SIZE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 70 | [SRC-E599346ABE-L000070](generate_index.py#L70) |
-| [docs/generate_index.py](generate_index.py#L71) | متغير/ثابت Python | SOURCE_LINES_PAGE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 71 | [SRC-E599346ABE-L000071](generate_index.py#L71) |
-| [docs/generate_index.py](generate_index.py#L73) | متغير/ثابت Python | PYTHON_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 73 | [SRC-E599346ABE-L000073](generate_index.py#L73) |
-| [docs/generate_index.py](generate_index.py#L74) | متغير/ثابت Python | JAVASCRIPT_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 74 | [SRC-E599346ABE-L000074](generate_index.py#L74) |
-| [docs/generate_index.py](generate_index.py#L75) | متغير/ثابت Python | CSS_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 75 | [SRC-E599346ABE-L000075](generate_index.py#L75) |
-| [docs/generate_index.py](generate_index.py#L76) | متغير/ثابت Python | CONFIG_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 76 | [SRC-E599346ABE-L000076](generate_index.py#L76) |
-| [docs/generate_index.py](generate_index.py#L77) | متغير/ثابت Python | TEXT_SCAN_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 77 | [SRC-E599346ABE-L000077](generate_index.py#L77) |
-| [docs/generate_index.py](generate_index.py#L85) | متغير/ثابت Python | JS_IDENTIFIER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 85 | [SRC-E599346ABE-L000085](generate_index.py#L85) |
-| [docs/generate_index.py](generate_index.py#L86) | متغير/ثابت Python | JS_FUNCTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 86 | [SRC-E599346ABE-L000086](generate_index.py#L86) |
-| [docs/generate_index.py](generate_index.py#L89) | متغير/ثابت Python | JS_CLASS_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 89 | [SRC-E599346ABE-L000089](generate_index.py#L89) |
-| [docs/generate_index.py](generate_index.py#L90) | متغير/ثابت Python | JS_ARROW_ASSIGNMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 90 | [SRC-E599346ABE-L000090](generate_index.py#L90) |
-| [docs/generate_index.py](generate_index.py#L94) | متغير/ثابت Python | JS_FUNCTION_ASSIGNMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 94 | [SRC-E599346ABE-L000094](generate_index.py#L94) |
-| [docs/generate_index.py](generate_index.py#L97) | متغير/ثابت Python | JS_VARIABLE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 97 | [SRC-E599346ABE-L000097](generate_index.py#L97) |
-| [docs/generate_index.py](generate_index.py#L98) | متغير/ثابت Python | HTML_ATTRIBUTE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 98 | [SRC-E599346ABE-L000098](generate_index.py#L98) |
-| [docs/generate_index.py](generate_index.py#L102) | متغير/ثابت Python | HTML_SCRIPT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 102 | [SRC-E599346ABE-L000102](generate_index.py#L102) |
-| [docs/generate_index.py](generate_index.py#L103) | متغير/ثابت Python | HTML_STYLE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 103 | [SRC-E599346ABE-L000103](generate_index.py#L103) |
-| [docs/generate_index.py](generate_index.py#L104) | متغير/ثابت Python | CSS_COMMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 104 | [SRC-E599346ABE-L000104](generate_index.py#L104) |
-| [docs/generate_index.py](generate_index.py#L105) | متغير/ثابت Python | CSS_CUSTOM_PROPERTY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 105 | [SRC-E599346ABE-L000105](generate_index.py#L105) |
-| [docs/generate_index.py](generate_index.py#L106) | متغير/ثابت Python | CSS_CLASS_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 106 | [SRC-E599346ABE-L000106](generate_index.py#L106) |
-| [docs/generate_index.py](generate_index.py#L107) | متغير/ثابت Python | CSS_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 107 | [SRC-E599346ABE-L000107](generate_index.py#L107) |
-| [docs/generate_index.py](generate_index.py#L108) | متغير/ثابت Python | SHELL_FUNCTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 108 | [SRC-E599346ABE-L000108](generate_index.py#L108) |
-| [docs/generate_index.py](generate_index.py#L112) | متغير/ثابت Python | MARKDOWN_HEADING_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 112 | [SRC-E599346ABE-L000112](generate_index.py#L112) |
-| [docs/generate_index.py](generate_index.py#L113) | متغير/ثابت Python | YAML_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 113 | [SRC-E599346ABE-L000113](generate_index.py#L113) |
-| [docs/generate_index.py](generate_index.py#L114) | متغير/ثابت Python | TOML_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 114 | [SRC-E599346ABE-L000114](generate_index.py#L114) |
-| [docs/generate_index.py](generate_index.py#L115) | متغير/ثابت Python | TOML_SECTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 115 | [SRC-E599346ABE-L000115](generate_index.py#L115) |
-| [docs/generate_index.py](generate_index.py#L116) | متغير/ثابت Python | JSON_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 116 | [SRC-E599346ABE-L000116](generate_index.py#L116) |
-| [docs/generate_index.py](generate_index.py#L117) | متغير/ثابت Python | INI_SECTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 117 | [SRC-E599346ABE-L000117](generate_index.py#L117) |
-| [docs/generate_index.py](generate_index.py#L118) | متغير/ثابت Python | INI_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 118 | [SRC-E599346ABE-L000118](generate_index.py#L118) |
-| [docs/generate_index.py](generate_index.py#L119) | متغير/ثابت Python | UPPER_SNAKE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 119 | [SRC-E599346ABE-L000119](generate_index.py#L119) |
-| [docs/generate_index.py](generate_index.py#L120) | متغير/ثابت Python | API_PATH_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 120 | [SRC-E599346ABE-L000120](generate_index.py#L120) |
-| [docs/generate_index.py](generate_index.py#L121) | متغير/ثابت Python | FINDING_MARKER_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 121 | [SRC-E599346ABE-L000121](generate_index.py#L121) |
-| [docs/generate_index.py](generate_index.py#L125) | كلاس | IndexedSymbol | Represent a Python definition or module/class assignment. | موثق | 125 | [SRC-E599346ABE-L000125](generate_index.py#L125) |
-| [docs/generate_index.py](generate_index.py#L128) | متغير/ثابت Python | IndexedSymbol.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 128 | [SRC-E599346ABE-L000128](generate_index.py#L128) |
-| [docs/generate_index.py](generate_index.py#L129) | متغير/ثابت Python | IndexedSymbol.name | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 129 | [SRC-E599346ABE-L000129](generate_index.py#L129) |
-| [docs/generate_index.py](generate_index.py#L130) | متغير/ثابت Python | IndexedSymbol.kind | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 130 | [SRC-E599346ABE-L000130](generate_index.py#L130) |
-| [docs/generate_index.py](generate_index.py#L131) | متغير/ثابت Python | IndexedSymbol.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 131 | [SRC-E599346ABE-L000131](generate_index.py#L131) |
-| [docs/generate_index.py](generate_index.py#L132) | متغير/ثابت Python | IndexedSymbol.description | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 132 | [SRC-E599346ABE-L000132](generate_index.py#L132) |
-| [docs/generate_index.py](generate_index.py#L133) | متغير/ثابت Python | IndexedSymbol.documented | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 133 | [SRC-E599346ABE-L000133](generate_index.py#L133) |
-| [docs/generate_index.py](generate_index.py#L137) | كلاس | IndexedFile | Represent a repository file with stable identifiers and navigation metadata. | موثق | 137 | [SRC-E599346ABE-L000137](generate_index.py#L137) |
-| [docs/generate_index.py](generate_index.py#L140) | متغير/ثابت Python | IndexedFile.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 140 | [SRC-E599346ABE-L000140](generate_index.py#L140) |
-| [docs/generate_index.py](generate_index.py#L141) | متغير/ثابت Python | IndexedFile.file_type | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 141 | [SRC-E599346ABE-L000141](generate_index.py#L141) |
-| [docs/generate_index.py](generate_index.py#L142) | متغير/ثابت Python | IndexedFile.size_bytes | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 142 | [SRC-E599346ABE-L000142](generate_index.py#L142) |
-| [docs/generate_index.py](generate_index.py#L143) | متغير/ثابت Python | IndexedFile.line_count | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 143 | [SRC-E599346ABE-L000143](generate_index.py#L143) |
-| [docs/generate_index.py](generate_index.py#L144) | متغير/ثابت Python | IndexedFile.indexing_scope | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 144 | [SRC-E599346ABE-L000144](generate_index.py#L144) |
-| [docs/generate_index.py](generate_index.py#L145) | متغير/ثابت Python | IndexedFile.file_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 145 | [SRC-E599346ABE-L000145](generate_index.py#L145) |
-| [docs/generate_index.py](generate_index.py#L146) | متغير/ثابت Python | IndexedFile.category | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 146 | [SRC-E599346ABE-L000146](generate_index.py#L146) |
-| [docs/generate_index.py](generate_index.py#L150) | كلاس | IndexedMarker | Represent a statically discovered symbol outside the Python AST index. | موثق | 150 | [SRC-E599346ABE-L000150](generate_index.py#L150) |
-| [docs/generate_index.py](generate_index.py#L153) | متغير/ثابت Python | IndexedMarker.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 153 | [SRC-E599346ABE-L000153](generate_index.py#L153) |
-| [docs/generate_index.py](generate_index.py#L154) | متغير/ثابت Python | IndexedMarker.name | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 154 | [SRC-E599346ABE-L000154](generate_index.py#L154) |
-| [docs/generate_index.py](generate_index.py#L155) | متغير/ثابت Python | IndexedMarker.kind | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 155 | [SRC-E599346ABE-L000155](generate_index.py#L155) |
-| [docs/generate_index.py](generate_index.py#L156) | متغير/ثابت Python | IndexedMarker.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 156 | [SRC-E599346ABE-L000156](generate_index.py#L156) |
-| [docs/generate_index.py](generate_index.py#L160) | كلاس | IndexedLine | Represent one exact logical line from an eligible readable repository text file. | موثق | 160 | [SRC-E599346ABE-L000160](generate_index.py#L160) |
-| [docs/generate_index.py](generate_index.py#L163) | متغير/ثابت Python | IndexedLine.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 163 | [SRC-E599346ABE-L000163](generate_index.py#L163) |
-| [docs/generate_index.py](generate_index.py#L164) | متغير/ثابت Python | IndexedLine.file_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 164 | [SRC-E599346ABE-L000164](generate_index.py#L164) |
-| [docs/generate_index.py](generate_index.py#L165) | متغير/ثابت Python | IndexedLine.line_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 165 | [SRC-E599346ABE-L000165](generate_index.py#L165) |
-| [docs/generate_index.py](generate_index.py#L166) | متغير/ثابت Python | IndexedLine.category | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 166 | [SRC-E599346ABE-L000166](generate_index.py#L166) |
-| [docs/generate_index.py](generate_index.py#L167) | متغير/ثابت Python | IndexedLine.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 167 | [SRC-E599346ABE-L000167](generate_index.py#L167) |
-| [docs/generate_index.py](generate_index.py#L168) | متغير/ثابت Python | IndexedLine.content | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 168 | [SRC-E599346ABE-L000168](generate_index.py#L168) |
-| [docs/generate_index.py](generate_index.py#L172) | كلاس | IndexedFinding | Represent a source annotation that explicitly requests attention. | موثق | 172 | [SRC-E599346ABE-L000172](generate_index.py#L172) |
-| [docs/generate_index.py](generate_index.py#L175) | متغير/ثابت Python | IndexedFinding.finding_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 175 | [SRC-E599346ABE-L000175](generate_index.py#L175) |
-| [docs/generate_index.py](generate_index.py#L176) | متغير/ثابت Python | IndexedFinding.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 176 | [SRC-E599346ABE-L000176](generate_index.py#L176) |
-| [docs/generate_index.py](generate_index.py#L177) | متغير/ثابت Python | IndexedFinding.line_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 177 | [SRC-E599346ABE-L000177](generate_index.py#L177) |
-| [docs/generate_index.py](generate_index.py#L178) | متغير/ثابت Python | IndexedFinding.marker | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 178 | [SRC-E599346ABE-L000178](generate_index.py#L178) |
-| [docs/generate_index.py](generate_index.py#L179) | متغير/ثابت Python | IndexedFinding.description | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 179 | [SRC-E599346ABE-L000179](generate_index.py#L179) |
-| [docs/generate_index.py](generate_index.py#L182) | كلاس | IndexGenerationError | Signal that a complete Python AST index could not be generated. | موثق | 182 | [SRC-E599346ABE-L000182](generate_index.py#L182) |
-| [docs/generate_index.py](generate_index.py#L186) | كلاس | SymbolVisitor | Collect Python classes, functions, methods and module/class assignments. | موثق | 186 | [SRC-E599346ABE-L000186](generate_index.py#L186) |
-| [docs/generate_index.py](generate_index.py#L189) | دالة | SymbolVisitor.__init__ | Initialize the visitor for one repository-relative Python file. | موثق | 189 | [SRC-E599346ABE-L000189](generate_index.py#L189) |
-| [docs/generate_index.py](generate_index.py#L197) | دالة | SymbolVisitor._description | Return a compact first-paragraph summary and its documentation state. | موثق | 197 | [SRC-E599346ABE-L000197](generate_index.py#L197) |
-| [docs/generate_index.py](generate_index.py#L209) | دالة | SymbolVisitor._record_definition | Record one class/function definition while preserving its qualified scope. | موثق | 209 | [SRC-E599346ABE-L000209](generate_index.py#L209) |
-| [docs/generate_index.py](generate_index.py#L228) | دالة | SymbolVisitor._record_assignment_target | Record declared names from a module-level or class-level assignment. | موثق | 228 | [SRC-E599346ABE-L000228](generate_index.py#L228) |
-| [docs/generate_index.py](generate_index.py#L246) | دالة | SymbolVisitor.visit_Assign | Index module/class assignment names but avoid flooding the index with locals. | موثق | 246 | [SRC-E599346ABE-L000246](generate_index.py#L246) |
-| [docs/generate_index.py](generate_index.py#L253) | دالة | SymbolVisitor.visit_AnnAssign | Index annotated module/class assignments without counting local variables. | موثق | 253 | [SRC-E599346ABE-L000253](generate_index.py#L253) |
-| [docs/generate_index.py](generate_index.py#L259) | دالة | SymbolVisitor.visit_ClassDef | Record a class and recursively inspect its body. | موثق | 259 | [SRC-E599346ABE-L000259](generate_index.py#L259) |
-| [docs/generate_index.py](generate_index.py#L268) | دالة | SymbolVisitor.visit_FunctionDef | Record a synchronous function or method and nested definitions. | موثق | 268 | [SRC-E599346ABE-L000268](generate_index.py#L268) |
-| [docs/generate_index.py](generate_index.py#L279) | دالة | SymbolVisitor.visit_AsyncFunctionDef | Record an asynchronous function or method and nested definitions. | موثق | 279 | [SRC-E599346ABE-L000279](generate_index.py#L279) |
-| [docs/generate_index.py](generate_index.py#L291) | دالة | _is_sensitive_or_runtime_path | Exclude known local secrets, runtime databases, keys and generated bytecode. | موثق | 291 | [SRC-E599346ABE-L000291](generate_index.py#L291) |
-| [docs/generate_index.py](generate_index.py#L301) | دالة | _stable_file_id | Return a deterministic path-derived identifier without hashing file contents. | موثق | 301 | [SRC-E599346ABE-L000301](generate_index.py#L301) |
-| [docs/generate_index.py](generate_index.py#L307) | دالة | _category_for_path | Assign an understandable navigation category from the repository-relative path. | موثق | 307 | [SRC-E599346ABE-L000307](generate_index.py#L307) |
-| [docs/generate_index.py](generate_index.py#L340) | دالة | discover_repository_files | Return the stable file inventory, excluding the generated index and runtime data. | موثق | 340 | [SRC-E599346ABE-L000340](generate_index.py#L340) |
-| [docs/generate_index.py](generate_index.py#L374) | دالة | _read_text_bounded | Read supported UTF-8 text files only when they are within the scan-size bound. | موثق | 374 | [SRC-E599346ABE-L000374](generate_index.py#L374) |
-| [docs/generate_index.py](generate_index.py#L391) | دالة | _count_lines | Count source lines without adding an extra line for a trailing newline. | موثق | 391 | [SRC-E599346ABE-L000391](generate_index.py#L391) |
-| [docs/generate_index.py](generate_index.py#L398) | دالة | _file_type | Return a readable file type based on a known filename or extension. | موثق | 398 | [SRC-E599346ABE-L000398](generate_index.py#L398) |
-| [docs/generate_index.py](generate_index.py#L433) | دالة | _indexing_scope | Describe precisely whether a file receives symbol extraction or path inventory only. | موثق | 433 | [SRC-E599346ABE-L000433](generate_index.py#L433) |
-| [docs/generate_index.py](generate_index.py#L459) | دالة | build_file_inventory | Inventory repository files and record whether static symbol scanning was possible. | موثق | 459 | [SRC-E599346ABE-L000459](generate_index.py#L459) |
-| [docs/generate_index.py](generate_index.py#L478) | دالة | discover_python_files | Return sorted Python files from the eligible repository inventory. | موثق | 478 | [SRC-E599346ABE-L000478](generate_index.py#L478) |
-| [docs/generate_index.py](generate_index.py#L487) | دالة | scan_repository | Parse every eligible Python file or fail without producing a partial index. | موثق | 487 | [SRC-E599346ABE-L000487](generate_index.py#L487) |
-| [docs/generate_index.py](generate_index.py#L529) | دالة | _line_at | Return a 1-based line number for a match in the supplied source fragment. | موثق | 529 | [SRC-E599346ABE-L000529](generate_index.py#L529) |
-| [docs/generate_index.py](generate_index.py#L534) | دالة | _add_marker | Add the first occurrence of a symbol category within one file. | موثق | 534 | [SRC-E599346ABE-L000534](generate_index.py#L534) |
-| [docs/generate_index.py](generate_index.py#L560) | دالة | _scan_javascript | Extract navigational JS/TS declarations using bounded regular-expression heuristics. | موثق | 560 | [SRC-E599346ABE-L000560](generate_index.py#L560) |
-| [docs/generate_index.py](generate_index.py#L612) | دالة | _scan_css | Extract CSS class/id selectors and custom properties; this is not a full CSS parser. | موثق | 612 | [SRC-E599346ABE-L000612](generate_index.py#L612) |
-| [docs/generate_index.py](generate_index.py#L641) | دالة | _scan_html | Extract HTML navigation attributes plus embedded JS and CSS declarations. | موثق | 641 | [SRC-E599346ABE-L000641](generate_index.py#L641) |
-| [docs/generate_index.py](generate_index.py#L671) | دالة | _scan_config_keys | Extract configuration keys/sections without evaluating or loading configuration. | موثق | 671 | [SRC-E599346ABE-L000671](generate_index.py#L671) |
-| [docs/generate_index.py](generate_index.py#L707) | دالة | scan_static_symbols | Extract supplementary navigational symbols from frontend, docs, config and scripts. | موثق | 707 | [SRC-E599346ABE-L000707](generate_index.py#L707) |
-| [docs/generate_index.py](generate_index.py#L794) | دالة | _source_file_href | Return a relative source link from a generated index page to the original file. | موثق | 794 | [SRC-E599346ABE-L000794](generate_index.py#L794) |
-| [docs/generate_index.py](generate_index.py#L805) | دالة | _source_line_id | Return a consistent line code wherever a symbol, finding, or source line is shown. | موثق | 805 | [SRC-E599346ABE-L000805](generate_index.py#L805) |
-| [docs/generate_index.py](generate_index.py#L811) | دالة | _markdown_cell | Normalize text and escape Markdown table delimiters. | موثق | 811 | [SRC-E599346ABE-L000811](generate_index.py#L811) |
-| [docs/generate_index.py](generate_index.py#L818) | دالة | scan_source_lines | Index every logical line of each eligible text file readable within the size bound. | موثق | 818 | [SRC-E599346ABE-L000818](generate_index.py#L818) |
-| [docs/generate_index.py](generate_index.py#L840) | دالة | scan_finding_annotations | Index explicit review/fix markers; they are hints for review, not proven defects. | موثق | 840 | [SRC-E599346ABE-L000840](generate_index.py#L840) |
-| [docs/generate_index.py](generate_index.py#L866) | دالة | _markdown_code_span | Render a Markdown inline-code span safely, including backticks in source text. | موثق | 866 | [SRC-E599346ABE-L000866](generate_index.py#L866) |
-| [docs/generate_index.py](generate_index.py#L878) | دالة | render_source_line_pages | Split line-level records into deterministic small pages and map each file to its pages. | موثق | 878 | [SRC-E599346ABE-L000878](generate_index.py#L878) |
-| [docs/generate_index.py](generate_index.py#L954) | دالة | render_source_lines_markdown | Render a compact table of contents for the sharded full source-line index. | موثق | 954 | [SRC-E599346ABE-L000954](generate_index.py#L954) |
-| [docs/generate_index.py](generate_index.py#L1047) | دالة | render_markdown | Render the repository file, symbol, explicit-review-marker, and line-index overview. | موثق | 1047 | [SRC-E599346ABE-L001047](generate_index.py#L1047) |
-| [docs/generate_index.py](generate_index.py#L1240) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1240 | [SRC-E599346ABE-L001240](generate_index.py#L1240) |
-| [docs/generate_index.py](generate_index.py#L1269) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1269 | [SRC-E599346ABE-L001269](generate_index.py#L1269) |
-| [docs/generate_index.py](generate_index.py#L1301) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1301 | [SRC-E599346ABE-L001301](generate_index.py#L1301) |
+| [docs/generate_index.py](generate_index.py#L68) | متغير/ثابت Python | COVERAGE_AUDIT_RELATIVE_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 68 | [SRC-E599346ABE-L000068](generate_index.py#L68) |
+| [docs/generate_index.py](generate_index.py#L69) | متغير/ثابت Python | INDEX_OUTPUT_PATHS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 69 | [SRC-E599346ABE-L000069](generate_index.py#L69) |
+| [docs/generate_index.py](generate_index.py#L72) | متغير/ثابت Python | SOURCE_LINES_PAGES_DIR | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 72 | [SRC-E599346ABE-L000072](generate_index.py#L72) |
+| [docs/generate_index.py](generate_index.py#L73) | متغير/ثابت Python | SOURCE_LINES_PAGE_SIZE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 73 | [SRC-E599346ABE-L000073](generate_index.py#L73) |
+| [docs/generate_index.py](generate_index.py#L74) | متغير/ثابت Python | SOURCE_LINES_PAGE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 74 | [SRC-E599346ABE-L000074](generate_index.py#L74) |
+| [docs/generate_index.py](generate_index.py#L76) | متغير/ثابت Python | PYTHON_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 76 | [SRC-E599346ABE-L000076](generate_index.py#L76) |
+| [docs/generate_index.py](generate_index.py#L77) | متغير/ثابت Python | JAVASCRIPT_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 77 | [SRC-E599346ABE-L000077](generate_index.py#L77) |
+| [docs/generate_index.py](generate_index.py#L78) | متغير/ثابت Python | CSS_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 78 | [SRC-E599346ABE-L000078](generate_index.py#L78) |
+| [docs/generate_index.py](generate_index.py#L79) | متغير/ثابت Python | CONFIG_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 79 | [SRC-E599346ABE-L000079](generate_index.py#L79) |
+| [docs/generate_index.py](generate_index.py#L80) | متغير/ثابت Python | TEXT_SCAN_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 80 | [SRC-E599346ABE-L000080](generate_index.py#L80) |
+| [docs/generate_index.py](generate_index.py#L88) | متغير/ثابت Python | JS_IDENTIFIER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 88 | [SRC-E599346ABE-L000088](generate_index.py#L88) |
+| [docs/generate_index.py](generate_index.py#L89) | متغير/ثابت Python | JS_FUNCTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 89 | [SRC-E599346ABE-L000089](generate_index.py#L89) |
+| [docs/generate_index.py](generate_index.py#L92) | متغير/ثابت Python | JS_CLASS_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 92 | [SRC-E599346ABE-L000092](generate_index.py#L92) |
+| [docs/generate_index.py](generate_index.py#L93) | متغير/ثابت Python | JS_ARROW_ASSIGNMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 93 | [SRC-E599346ABE-L000093](generate_index.py#L93) |
+| [docs/generate_index.py](generate_index.py#L97) | متغير/ثابت Python | JS_FUNCTION_ASSIGNMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 97 | [SRC-E599346ABE-L000097](generate_index.py#L97) |
+| [docs/generate_index.py](generate_index.py#L100) | متغير/ثابت Python | JS_VARIABLE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 100 | [SRC-E599346ABE-L000100](generate_index.py#L100) |
+| [docs/generate_index.py](generate_index.py#L101) | متغير/ثابت Python | HTML_ATTRIBUTE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 101 | [SRC-E599346ABE-L000101](generate_index.py#L101) |
+| [docs/generate_index.py](generate_index.py#L105) | متغير/ثابت Python | HTML_SCRIPT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 105 | [SRC-E599346ABE-L000105](generate_index.py#L105) |
+| [docs/generate_index.py](generate_index.py#L106) | متغير/ثابت Python | HTML_STYLE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 106 | [SRC-E599346ABE-L000106](generate_index.py#L106) |
+| [docs/generate_index.py](generate_index.py#L107) | متغير/ثابت Python | CSS_COMMENT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 107 | [SRC-E599346ABE-L000107](generate_index.py#L107) |
+| [docs/generate_index.py](generate_index.py#L108) | متغير/ثابت Python | CSS_CUSTOM_PROPERTY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 108 | [SRC-E599346ABE-L000108](generate_index.py#L108) |
+| [docs/generate_index.py](generate_index.py#L109) | متغير/ثابت Python | CSS_CLASS_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 109 | [SRC-E599346ABE-L000109](generate_index.py#L109) |
+| [docs/generate_index.py](generate_index.py#L110) | متغير/ثابت Python | CSS_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 110 | [SRC-E599346ABE-L000110](generate_index.py#L110) |
+| [docs/generate_index.py](generate_index.py#L111) | متغير/ثابت Python | SHELL_FUNCTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 111 | [SRC-E599346ABE-L000111](generate_index.py#L111) |
+| [docs/generate_index.py](generate_index.py#L115) | متغير/ثابت Python | MARKDOWN_HEADING_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 115 | [SRC-E599346ABE-L000115](generate_index.py#L115) |
+| [docs/generate_index.py](generate_index.py#L116) | متغير/ثابت Python | YAML_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 116 | [SRC-E599346ABE-L000116](generate_index.py#L116) |
+| [docs/generate_index.py](generate_index.py#L117) | متغير/ثابت Python | TOML_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 117 | [SRC-E599346ABE-L000117](generate_index.py#L117) |
+| [docs/generate_index.py](generate_index.py#L118) | متغير/ثابت Python | TOML_SECTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 118 | [SRC-E599346ABE-L000118](generate_index.py#L118) |
+| [docs/generate_index.py](generate_index.py#L119) | متغير/ثابت Python | JSON_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 119 | [SRC-E599346ABE-L000119](generate_index.py#L119) |
+| [docs/generate_index.py](generate_index.py#L120) | متغير/ثابت Python | INI_SECTION_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 120 | [SRC-E599346ABE-L000120](generate_index.py#L120) |
+| [docs/generate_index.py](generate_index.py#L121) | متغير/ثابت Python | INI_KEY_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 121 | [SRC-E599346ABE-L000121](generate_index.py#L121) |
+| [docs/generate_index.py](generate_index.py#L122) | متغير/ثابت Python | UPPER_SNAKE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 122 | [SRC-E599346ABE-L000122](generate_index.py#L122) |
+| [docs/generate_index.py](generate_index.py#L123) | متغير/ثابت Python | API_PATH_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 123 | [SRC-E599346ABE-L000123](generate_index.py#L123) |
+| [docs/generate_index.py](generate_index.py#L124) | متغير/ثابت Python | FINDING_MARKER_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 124 | [SRC-E599346ABE-L000124](generate_index.py#L124) |
+| [docs/generate_index.py](generate_index.py#L128) | كلاس | IndexedSymbol | Represent a Python definition or module/class assignment. | موثق | 128 | [SRC-E599346ABE-L000128](generate_index.py#L128) |
+| [docs/generate_index.py](generate_index.py#L131) | متغير/ثابت Python | IndexedSymbol.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 131 | [SRC-E599346ABE-L000131](generate_index.py#L131) |
+| [docs/generate_index.py](generate_index.py#L132) | متغير/ثابت Python | IndexedSymbol.name | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 132 | [SRC-E599346ABE-L000132](generate_index.py#L132) |
+| [docs/generate_index.py](generate_index.py#L133) | متغير/ثابت Python | IndexedSymbol.kind | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 133 | [SRC-E599346ABE-L000133](generate_index.py#L133) |
+| [docs/generate_index.py](generate_index.py#L134) | متغير/ثابت Python | IndexedSymbol.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 134 | [SRC-E599346ABE-L000134](generate_index.py#L134) |
+| [docs/generate_index.py](generate_index.py#L135) | متغير/ثابت Python | IndexedSymbol.description | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 135 | [SRC-E599346ABE-L000135](generate_index.py#L135) |
+| [docs/generate_index.py](generate_index.py#L136) | متغير/ثابت Python | IndexedSymbol.documented | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 136 | [SRC-E599346ABE-L000136](generate_index.py#L136) |
+| [docs/generate_index.py](generate_index.py#L140) | كلاس | IndexedFile | Represent a repository file with stable identifiers and navigation metadata. | موثق | 140 | [SRC-E599346ABE-L000140](generate_index.py#L140) |
+| [docs/generate_index.py](generate_index.py#L143) | متغير/ثابت Python | IndexedFile.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 143 | [SRC-E599346ABE-L000143](generate_index.py#L143) |
+| [docs/generate_index.py](generate_index.py#L144) | متغير/ثابت Python | IndexedFile.file_type | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 144 | [SRC-E599346ABE-L000144](generate_index.py#L144) |
+| [docs/generate_index.py](generate_index.py#L145) | متغير/ثابت Python | IndexedFile.size_bytes | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 145 | [SRC-E599346ABE-L000145](generate_index.py#L145) |
+| [docs/generate_index.py](generate_index.py#L146) | متغير/ثابت Python | IndexedFile.line_count | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 146 | [SRC-E599346ABE-L000146](generate_index.py#L146) |
+| [docs/generate_index.py](generate_index.py#L147) | متغير/ثابت Python | IndexedFile.indexing_scope | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 147 | [SRC-E599346ABE-L000147](generate_index.py#L147) |
+| [docs/generate_index.py](generate_index.py#L148) | متغير/ثابت Python | IndexedFile.file_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 148 | [SRC-E599346ABE-L000148](generate_index.py#L148) |
+| [docs/generate_index.py](generate_index.py#L149) | متغير/ثابت Python | IndexedFile.category | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 149 | [SRC-E599346ABE-L000149](generate_index.py#L149) |
+| [docs/generate_index.py](generate_index.py#L153) | كلاس | IndexedMarker | Represent a statically discovered symbol outside the Python AST index. | موثق | 153 | [SRC-E599346ABE-L000153](generate_index.py#L153) |
+| [docs/generate_index.py](generate_index.py#L156) | متغير/ثابت Python | IndexedMarker.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 156 | [SRC-E599346ABE-L000156](generate_index.py#L156) |
+| [docs/generate_index.py](generate_index.py#L157) | متغير/ثابت Python | IndexedMarker.name | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 157 | [SRC-E599346ABE-L000157](generate_index.py#L157) |
+| [docs/generate_index.py](generate_index.py#L158) | متغير/ثابت Python | IndexedMarker.kind | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 158 | [SRC-E599346ABE-L000158](generate_index.py#L158) |
+| [docs/generate_index.py](generate_index.py#L159) | متغير/ثابت Python | IndexedMarker.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 159 | [SRC-E599346ABE-L000159](generate_index.py#L159) |
+| [docs/generate_index.py](generate_index.py#L163) | كلاس | IndexedLine | Represent one exact logical line from an eligible readable repository text file. | موثق | 163 | [SRC-E599346ABE-L000163](generate_index.py#L163) |
+| [docs/generate_index.py](generate_index.py#L166) | متغير/ثابت Python | IndexedLine.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 166 | [SRC-E599346ABE-L000166](generate_index.py#L166) |
+| [docs/generate_index.py](generate_index.py#L167) | متغير/ثابت Python | IndexedLine.file_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 167 | [SRC-E599346ABE-L000167](generate_index.py#L167) |
+| [docs/generate_index.py](generate_index.py#L168) | متغير/ثابت Python | IndexedLine.line_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 168 | [SRC-E599346ABE-L000168](generate_index.py#L168) |
+| [docs/generate_index.py](generate_index.py#L169) | متغير/ثابت Python | IndexedLine.category | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 169 | [SRC-E599346ABE-L000169](generate_index.py#L169) |
+| [docs/generate_index.py](generate_index.py#L170) | متغير/ثابت Python | IndexedLine.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 170 | [SRC-E599346ABE-L000170](generate_index.py#L170) |
+| [docs/generate_index.py](generate_index.py#L171) | متغير/ثابت Python | IndexedLine.content | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 171 | [SRC-E599346ABE-L000171](generate_index.py#L171) |
+| [docs/generate_index.py](generate_index.py#L175) | كلاس | IndexedFinding | Represent a source annotation that explicitly requests attention. | موثق | 175 | [SRC-E599346ABE-L000175](generate_index.py#L175) |
+| [docs/generate_index.py](generate_index.py#L178) | متغير/ثابت Python | IndexedFinding.finding_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 178 | [SRC-E599346ABE-L000178](generate_index.py#L178) |
+| [docs/generate_index.py](generate_index.py#L179) | متغير/ثابت Python | IndexedFinding.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 179 | [SRC-E599346ABE-L000179](generate_index.py#L179) |
+| [docs/generate_index.py](generate_index.py#L180) | متغير/ثابت Python | IndexedFinding.line_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 180 | [SRC-E599346ABE-L000180](generate_index.py#L180) |
+| [docs/generate_index.py](generate_index.py#L181) | متغير/ثابت Python | IndexedFinding.marker | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 181 | [SRC-E599346ABE-L000181](generate_index.py#L181) |
+| [docs/generate_index.py](generate_index.py#L182) | متغير/ثابت Python | IndexedFinding.description | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 182 | [SRC-E599346ABE-L000182](generate_index.py#L182) |
+| [docs/generate_index.py](generate_index.py#L185) | كلاس | IndexGenerationError | Signal that a complete Python AST index could not be generated. | موثق | 185 | [SRC-E599346ABE-L000185](generate_index.py#L185) |
+| [docs/generate_index.py](generate_index.py#L189) | كلاس | SymbolVisitor | Collect Python classes, functions, methods and module/class assignments. | موثق | 189 | [SRC-E599346ABE-L000189](generate_index.py#L189) |
+| [docs/generate_index.py](generate_index.py#L192) | دالة | SymbolVisitor.__init__ | Initialize the visitor for one repository-relative Python file. | موثق | 192 | [SRC-E599346ABE-L000192](generate_index.py#L192) |
+| [docs/generate_index.py](generate_index.py#L200) | دالة | SymbolVisitor._description | Return a compact first-paragraph summary and its documentation state. | موثق | 200 | [SRC-E599346ABE-L000200](generate_index.py#L200) |
+| [docs/generate_index.py](generate_index.py#L212) | دالة | SymbolVisitor._record_definition | Record one class/function definition while preserving its qualified scope. | موثق | 212 | [SRC-E599346ABE-L000212](generate_index.py#L212) |
+| [docs/generate_index.py](generate_index.py#L231) | دالة | SymbolVisitor._record_assignment_target | Record declared names from a module-level or class-level assignment. | موثق | 231 | [SRC-E599346ABE-L000231](generate_index.py#L231) |
+| [docs/generate_index.py](generate_index.py#L249) | دالة | SymbolVisitor.visit_Assign | Index module/class assignment names but avoid flooding the index with locals. | موثق | 249 | [SRC-E599346ABE-L000249](generate_index.py#L249) |
+| [docs/generate_index.py](generate_index.py#L256) | دالة | SymbolVisitor.visit_AnnAssign | Index annotated module/class assignments without counting local variables. | موثق | 256 | [SRC-E599346ABE-L000256](generate_index.py#L256) |
+| [docs/generate_index.py](generate_index.py#L262) | دالة | SymbolVisitor.visit_ClassDef | Record a class and recursively inspect its body. | موثق | 262 | [SRC-E599346ABE-L000262](generate_index.py#L262) |
+| [docs/generate_index.py](generate_index.py#L271) | دالة | SymbolVisitor.visit_FunctionDef | Record a synchronous function or method and nested definitions. | موثق | 271 | [SRC-E599346ABE-L000271](generate_index.py#L271) |
+| [docs/generate_index.py](generate_index.py#L282) | دالة | SymbolVisitor.visit_AsyncFunctionDef | Record an asynchronous function or method and nested definitions. | موثق | 282 | [SRC-E599346ABE-L000282](generate_index.py#L282) |
+| [docs/generate_index.py](generate_index.py#L294) | دالة | _is_sensitive_or_runtime_path | Exclude known local secrets, runtime databases, keys and generated bytecode. | موثق | 294 | [SRC-E599346ABE-L000294](generate_index.py#L294) |
+| [docs/generate_index.py](generate_index.py#L304) | دالة | _stable_file_id | Return a deterministic path-derived identifier without hashing file contents. | موثق | 304 | [SRC-E599346ABE-L000304](generate_index.py#L304) |
+| [docs/generate_index.py](generate_index.py#L310) | دالة | _category_for_path | Assign an understandable navigation category from the repository-relative path. | موثق | 310 | [SRC-E599346ABE-L000310](generate_index.py#L310) |
+| [docs/generate_index.py](generate_index.py#L343) | دالة | discover_repository_files | Return the stable file inventory, excluding the generated index and runtime data. | موثق | 343 | [SRC-E599346ABE-L000343](generate_index.py#L343) |
+| [docs/generate_index.py](generate_index.py#L377) | دالة | _read_text_bounded | Read supported UTF-8 text files only when they are within the scan-size bound. | موثق | 377 | [SRC-E599346ABE-L000377](generate_index.py#L377) |
+| [docs/generate_index.py](generate_index.py#L394) | دالة | _count_lines | Count source lines without adding an extra line for a trailing newline. | موثق | 394 | [SRC-E599346ABE-L000394](generate_index.py#L394) |
+| [docs/generate_index.py](generate_index.py#L401) | دالة | _file_type | Return a readable file type based on a known filename or extension. | موثق | 401 | [SRC-E599346ABE-L000401](generate_index.py#L401) |
+| [docs/generate_index.py](generate_index.py#L436) | دالة | _indexing_scope | Describe precisely whether a file receives symbol extraction or path inventory only. | موثق | 436 | [SRC-E599346ABE-L000436](generate_index.py#L436) |
+| [docs/generate_index.py](generate_index.py#L462) | دالة | build_file_inventory | Inventory repository files and record whether static symbol scanning was possible. | موثق | 462 | [SRC-E599346ABE-L000462](generate_index.py#L462) |
+| [docs/generate_index.py](generate_index.py#L481) | دالة | discover_excluded_paths | List excluded path names and reasons without opening excluded file contents. | موثق | 481 | [SRC-E599346ABE-L000481](generate_index.py#L481) |
+| [docs/generate_index.py](generate_index.py#L524) | دالة | _text_index_skip_reason | Return a concrete safe reason when a file could not be line-indexed. | موثق | 524 | [SRC-E599346ABE-L000524](generate_index.py#L524) |
+| [docs/generate_index.py](generate_index.py#L541) | دالة | validate_source_line_coverage | Fail generation if any eligible text line is missing, duplicated, or misnumbered. | موثق | 541 | [SRC-E599346ABE-L000541](generate_index.py#L541) |
+| [docs/generate_index.py](generate_index.py#L580) | دالة | discover_python_files | Return sorted Python files from the eligible repository inventory. | موثق | 580 | [SRC-E599346ABE-L000580](generate_index.py#L580) |
+| [docs/generate_index.py](generate_index.py#L590) | دالة | scan_repository | Parse every eligible Python file or fail without producing a partial index. | موثق | 590 | [SRC-E599346ABE-L000590](generate_index.py#L590) |
+| [docs/generate_index.py](generate_index.py#L632) | دالة | _line_at | Return a 1-based line number for a match in the supplied source fragment. | موثق | 632 | [SRC-E599346ABE-L000632](generate_index.py#L632) |
+| [docs/generate_index.py](generate_index.py#L637) | دالة | _add_marker | Add the first occurrence of a symbol category within one file. | موثق | 637 | [SRC-E599346ABE-L000637](generate_index.py#L637) |
+| [docs/generate_index.py](generate_index.py#L663) | دالة | _scan_javascript | Extract navigational JS/TS declarations using bounded regular-expression heuristics. | موثق | 663 | [SRC-E599346ABE-L000663](generate_index.py#L663) |
+| [docs/generate_index.py](generate_index.py#L715) | دالة | _scan_css | Extract CSS class/id selectors and custom properties; this is not a full CSS parser. | موثق | 715 | [SRC-E599346ABE-L000715](generate_index.py#L715) |
+| [docs/generate_index.py](generate_index.py#L744) | دالة | _scan_html | Extract HTML navigation attributes plus embedded JS and CSS declarations. | موثق | 744 | [SRC-E599346ABE-L000744](generate_index.py#L744) |
+| [docs/generate_index.py](generate_index.py#L774) | دالة | _scan_config_keys | Extract configuration keys/sections without evaluating or loading configuration. | موثق | 774 | [SRC-E599346ABE-L000774](generate_index.py#L774) |
+| [docs/generate_index.py](generate_index.py#L810) | دالة | scan_static_symbols | Extract supplementary navigational symbols from frontend, docs, config and scripts. | موثق | 810 | [SRC-E599346ABE-L000810](generate_index.py#L810) |
+| [docs/generate_index.py](generate_index.py#L897) | دالة | _source_file_href | Return a relative source link from a generated index page to the original file. | موثق | 897 | [SRC-E599346ABE-L000897](generate_index.py#L897) |
+| [docs/generate_index.py](generate_index.py#L908) | دالة | _source_line_id | Return a consistent line code wherever a symbol, finding, or source line is shown. | موثق | 908 | [SRC-E599346ABE-L000908](generate_index.py#L908) |
+| [docs/generate_index.py](generate_index.py#L914) | دالة | _markdown_cell | Normalize text and escape Markdown table delimiters. | موثق | 914 | [SRC-E599346ABE-L000914](generate_index.py#L914) |
+| [docs/generate_index.py](generate_index.py#L921) | دالة | scan_source_lines | Index every logical line of each eligible text file readable within the size bound. | موثق | 921 | [SRC-E599346ABE-L000921](generate_index.py#L921) |
+| [docs/generate_index.py](generate_index.py#L943) | دالة | scan_finding_annotations | Index explicit review/fix markers; they are hints for review, not proven defects. | موثق | 943 | [SRC-E599346ABE-L000943](generate_index.py#L943) |
+| [docs/generate_index.py](generate_index.py#L969) | دالة | _markdown_code_span | Render a Markdown inline-code span safely, including backticks in source text. | موثق | 969 | [SRC-E599346ABE-L000969](generate_index.py#L969) |
+| [docs/generate_index.py](generate_index.py#L981) | دالة | render_source_line_pages | Split line-level records into deterministic small pages and map each file to its pages. | موثق | 981 | [SRC-E599346ABE-L000981](generate_index.py#L981) |
+| [docs/generate_index.py](generate_index.py#L1057) | دالة | render_source_lines_markdown | Render a compact table of contents for the sharded full source-line index. | موثق | 1057 | [SRC-E599346ABE-L001057](generate_index.py#L1057) |
+| [docs/generate_index.py](generate_index.py#L1150) | دالة | render_markdown | Render the repository file, symbol, explicit-review-marker, and line-index overview. | موثق | 1150 | [SRC-E599346ABE-L001150](generate_index.py#L1150) |
+| [docs/generate_index.py](generate_index.py#L1343) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1343 | [SRC-E599346ABE-L001343](generate_index.py#L1343) |
+| [docs/generate_index.py](generate_index.py#L1372) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1372 | [SRC-E599346ABE-L001372](generate_index.py#L1372) |
+| [docs/generate_index.py](generate_index.py#L1404) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1404 | [SRC-E599346ABE-L001404](generate_index.py#L1404) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L15) | كلاس | SmokeError | A live acceptance check failed. | موثق | 15 | [SRC-A8360B1B03-L000015](../scripts/hosted_smoke_test.py#L15) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L19) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 19 | [SRC-A8360B1B03-L000019](../scripts/hosted_smoke_test.py#L19) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L23) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 23 | [SRC-A8360B1B03-L000023](../scripts/hosted_smoke_test.py#L23) |
@@ -1179,40 +1183,42 @@
 | [docs/generate_index.py](generate_index.py#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 66 | [SRC-E599346ABE-L000066](generate_index.py#L66) |
 | [docs/generate_index.py](generate_index.py#L67) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 67 | [SRC-E599346ABE-L000067](generate_index.py#L67) |
 | [docs/generate_index.py](generate_index.py#L67) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX_RELATIVE_PATH | 67 | [SRC-E599346ABE-L000067](generate_index.py#L67) |
-| [docs/generate_index.py](generate_index.py#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_OUTPUT_PATHS | 68 | [SRC-E599346ABE-L000068](generate_index.py#L68) |
-| [docs/generate_index.py](generate_index.py#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGES_DIR | 69 | [SRC-E599346ABE-L000069](generate_index.py#L69) |
-| [docs/generate_index.py](generate_index.py#L70) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGE_SIZE | 70 | [SRC-E599346ABE-L000070](generate_index.py#L70) |
-| [docs/generate_index.py](generate_index.py#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGE_RE | 71 | [SRC-E599346ABE-L000071](generate_index.py#L71) |
-| [docs/generate_index.py](generate_index.py#L73) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PYTHON_EXTENSIONS | 73 | [SRC-E599346ABE-L000073](generate_index.py#L73) |
-| [docs/generate_index.py](generate_index.py#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JAVASCRIPT_EXTENSIONS | 74 | [SRC-E599346ABE-L000074](generate_index.py#L74) |
-| [docs/generate_index.py](generate_index.py#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_EXTENSIONS | 75 | [SRC-E599346ABE-L000075](generate_index.py#L75) |
-| [docs/generate_index.py](generate_index.py#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONFIG_EXTENSIONS | 76 | [SRC-E599346ABE-L000076](generate_index.py#L76) |
-| [docs/generate_index.py](generate_index.py#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TEXT_SCAN_EXTENSIONS | 77 | [SRC-E599346ABE-L000077](generate_index.py#L77) |
-| [docs/generate_index.py](generate_index.py#L85) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_IDENTIFIER | 85 | [SRC-E599346ABE-L000085](generate_index.py#L85) |
-| [docs/generate_index.py](generate_index.py#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_FUNCTION_RE | 86 | [SRC-E599346ABE-L000086](generate_index.py#L86) |
-| [docs/generate_index.py](generate_index.py#L89) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_CLASS_RE | 89 | [SRC-E599346ABE-L000089](generate_index.py#L89) |
-| [docs/generate_index.py](generate_index.py#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_ARROW_ASSIGNMENT_RE | 90 | [SRC-E599346ABE-L000090](generate_index.py#L90) |
-| [docs/generate_index.py](generate_index.py#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_FUNCTION_ASSIGNMENT_RE | 94 | [SRC-E599346ABE-L000094](generate_index.py#L94) |
-| [docs/generate_index.py](generate_index.py#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_VARIABLE_RE | 97 | [SRC-E599346ABE-L000097](generate_index.py#L97) |
-| [docs/generate_index.py](generate_index.py#L98) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_ATTRIBUTE_RE | 98 | [SRC-E599346ABE-L000098](generate_index.py#L98) |
-| [docs/generate_index.py](generate_index.py#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_SCRIPT_RE | 102 | [SRC-E599346ABE-L000102](generate_index.py#L102) |
-| [docs/generate_index.py](generate_index.py#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_STYLE_RE | 103 | [SRC-E599346ABE-L000103](generate_index.py#L103) |
-| [docs/generate_index.py](generate_index.py#L104) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_COMMENT_RE | 104 | [SRC-E599346ABE-L000104](generate_index.py#L104) |
-| [docs/generate_index.py](generate_index.py#L105) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_CUSTOM_PROPERTY_RE | 105 | [SRC-E599346ABE-L000105](generate_index.py#L105) |
-| [docs/generate_index.py](generate_index.py#L106) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_CLASS_RE | 106 | [SRC-E599346ABE-L000106](generate_index.py#L106) |
-| [docs/generate_index.py](generate_index.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_ID_RE | 107 | [SRC-E599346ABE-L000107](generate_index.py#L107) |
-| [docs/generate_index.py](generate_index.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SHELL_FUNCTION_RE | 108 | [SRC-E599346ABE-L000108](generate_index.py#L108) |
-| [docs/generate_index.py](generate_index.py#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MARKDOWN_HEADING_RE | 112 | [SRC-E599346ABE-L000112](generate_index.py#L112) |
-| [docs/generate_index.py](generate_index.py#L113) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YAML_KEY_RE | 113 | [SRC-E599346ABE-L000113](generate_index.py#L113) |
-| [docs/generate_index.py](generate_index.py#L114) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOML_KEY_RE | 114 | [SRC-E599346ABE-L000114](generate_index.py#L114) |
-| [docs/generate_index.py](generate_index.py#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOML_SECTION_RE | 115 | [SRC-E599346ABE-L000115](generate_index.py#L115) |
-| [docs/generate_index.py](generate_index.py#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JSON_KEY_RE | 116 | [SRC-E599346ABE-L000116](generate_index.py#L116) |
-| [docs/generate_index.py](generate_index.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INI_SECTION_RE | 117 | [SRC-E599346ABE-L000117](generate_index.py#L117) |
-| [docs/generate_index.py](generate_index.py#L118) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INI_KEY_RE | 118 | [SRC-E599346ABE-L000118](generate_index.py#L118) |
-| [docs/generate_index.py](generate_index.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_RE | 119 | [SRC-E599346ABE-L000119](generate_index.py#L119) |
-| [docs/generate_index.py](generate_index.py#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_PATH_RE | 120 | [SRC-E599346ABE-L000120](generate_index.py#L120) |
-| [docs/generate_index.py](generate_index.py#L121) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FINDING_MARKER_RE | 121 | [SRC-E599346ABE-L000121](generate_index.py#L121) |
-| [docs/generate_index.py](generate_index.py#L768) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 768 | [SRC-E599346ABE-L000768](generate_index.py#L768) |
+| [docs/generate_index.py](generate_index.py#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COVERAGE_AUDIT_RELATIVE_PATH | 68 | [SRC-E599346ABE-L000068](generate_index.py#L68) |
+| [docs/generate_index.py](generate_index.py#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 68 | [SRC-E599346ABE-L000068](generate_index.py#L68) |
+| [docs/generate_index.py](generate_index.py#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_OUTPUT_PATHS | 69 | [SRC-E599346ABE-L000069](generate_index.py#L69) |
+| [docs/generate_index.py](generate_index.py#L72) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGES_DIR | 72 | [SRC-E599346ABE-L000072](generate_index.py#L72) |
+| [docs/generate_index.py](generate_index.py#L73) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGE_SIZE | 73 | [SRC-E599346ABE-L000073](generate_index.py#L73) |
+| [docs/generate_index.py](generate_index.py#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_PAGE_RE | 74 | [SRC-E599346ABE-L000074](generate_index.py#L74) |
+| [docs/generate_index.py](generate_index.py#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PYTHON_EXTENSIONS | 76 | [SRC-E599346ABE-L000076](generate_index.py#L76) |
+| [docs/generate_index.py](generate_index.py#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JAVASCRIPT_EXTENSIONS | 77 | [SRC-E599346ABE-L000077](generate_index.py#L77) |
+| [docs/generate_index.py](generate_index.py#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_EXTENSIONS | 78 | [SRC-E599346ABE-L000078](generate_index.py#L78) |
+| [docs/generate_index.py](generate_index.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONFIG_EXTENSIONS | 79 | [SRC-E599346ABE-L000079](generate_index.py#L79) |
+| [docs/generate_index.py](generate_index.py#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TEXT_SCAN_EXTENSIONS | 80 | [SRC-E599346ABE-L000080](generate_index.py#L80) |
+| [docs/generate_index.py](generate_index.py#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_IDENTIFIER | 88 | [SRC-E599346ABE-L000088](generate_index.py#L88) |
+| [docs/generate_index.py](generate_index.py#L89) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_FUNCTION_RE | 89 | [SRC-E599346ABE-L000089](generate_index.py#L89) |
+| [docs/generate_index.py](generate_index.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_CLASS_RE | 92 | [SRC-E599346ABE-L000092](generate_index.py#L92) |
+| [docs/generate_index.py](generate_index.py#L93) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_ARROW_ASSIGNMENT_RE | 93 | [SRC-E599346ABE-L000093](generate_index.py#L93) |
+| [docs/generate_index.py](generate_index.py#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_FUNCTION_ASSIGNMENT_RE | 97 | [SRC-E599346ABE-L000097](generate_index.py#L97) |
+| [docs/generate_index.py](generate_index.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JS_VARIABLE_RE | 100 | [SRC-E599346ABE-L000100](generate_index.py#L100) |
+| [docs/generate_index.py](generate_index.py#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_ATTRIBUTE_RE | 101 | [SRC-E599346ABE-L000101](generate_index.py#L101) |
+| [docs/generate_index.py](generate_index.py#L105) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_SCRIPT_RE | 105 | [SRC-E599346ABE-L000105](generate_index.py#L105) |
+| [docs/generate_index.py](generate_index.py#L106) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HTML_STYLE_RE | 106 | [SRC-E599346ABE-L000106](generate_index.py#L106) |
+| [docs/generate_index.py](generate_index.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_COMMENT_RE | 107 | [SRC-E599346ABE-L000107](generate_index.py#L107) |
+| [docs/generate_index.py](generate_index.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_CUSTOM_PROPERTY_RE | 108 | [SRC-E599346ABE-L000108](generate_index.py#L108) |
+| [docs/generate_index.py](generate_index.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_CLASS_RE | 109 | [SRC-E599346ABE-L000109](generate_index.py#L109) |
+| [docs/generate_index.py](generate_index.py#L110) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CSS_ID_RE | 110 | [SRC-E599346ABE-L000110](generate_index.py#L110) |
+| [docs/generate_index.py](generate_index.py#L111) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SHELL_FUNCTION_RE | 111 | [SRC-E599346ABE-L000111](generate_index.py#L111) |
+| [docs/generate_index.py](generate_index.py#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MARKDOWN_HEADING_RE | 115 | [SRC-E599346ABE-L000115](generate_index.py#L115) |
+| [docs/generate_index.py](generate_index.py#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YAML_KEY_RE | 116 | [SRC-E599346ABE-L000116](generate_index.py#L116) |
+| [docs/generate_index.py](generate_index.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOML_KEY_RE | 117 | [SRC-E599346ABE-L000117](generate_index.py#L117) |
+| [docs/generate_index.py](generate_index.py#L118) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOML_SECTION_RE | 118 | [SRC-E599346ABE-L000118](generate_index.py#L118) |
+| [docs/generate_index.py](generate_index.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | JSON_KEY_RE | 119 | [SRC-E599346ABE-L000119](generate_index.py#L119) |
+| [docs/generate_index.py](generate_index.py#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INI_SECTION_RE | 120 | [SRC-E599346ABE-L000120](generate_index.py#L120) |
+| [docs/generate_index.py](generate_index.py#L121) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INI_KEY_RE | 121 | [SRC-E599346ABE-L000121](generate_index.py#L121) |
+| [docs/generate_index.py](generate_index.py#L122) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_RE | 122 | [SRC-E599346ABE-L000122](generate_index.py#L122) |
+| [docs/generate_index.py](generate_index.py#L123) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_PATH_RE | 123 | [SRC-E599346ABE-L000123](generate_index.py#L123) |
+| [docs/generate_index.py](generate_index.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FINDING_MARKER_RE | 124 | [SRC-E599346ABE-L000124](generate_index.py#L124) |
+| [docs/generate_index.py](generate_index.py#L871) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 871 | [SRC-E599346ABE-L000871](generate_index.py#L871) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | عنوان Markdown (H1) | قائمة قبول Omarai قبل التشغيل العام | 1 | [SRC-6E35221BFA-L000001](GO_LIVE_CHECKLIST_AR.md#L1) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 5 | [SRC-6E35221BFA-L000005](GO_LIVE_CHECKLIST_AR.md#L5) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L6) | عنوان Markdown (H2) | إعداد الاستضافة | 6 | [SRC-6E35221BFA-L000006](GO_LIVE_CHECKLIST_AR.md#L6) |
@@ -2169,7 +2175,7 @@
 | FND-REVIEW-84F7DE82AF-L000089 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L89) | 89 | REVIEW: marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed." | [SRC-84F7DE82AF-L000089](../.github/workflows/update_index.yml#L89) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` |
 | FND-REVIEW-84F7DE82AF-L000099 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L99) | 99 | REVIEW: marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed." | [SRC-84F7DE82AF-L000099](../.github/workflows/update_index.yml#L99) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` |
 | FND-REVIEW-84F7DE82AF-L000103 | REVIEW | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L103) | 103 | REVIEW: marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed." | [SRC-84F7DE82AF-L000103](../.github/workflows/update_index.yml#L103) | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed.\""` |
-| FND-REVIEW-E599346ABE-L001055 | REVIEW | [docs/generate_index.py](generate_index.py#L1055) | 1055 | REVIEW: marker, and line-index overview.""" | [SRC-E599346ABE-L001055](generate_index.py#L1055) | `"    \"\"\"Render the repository file, symbol, explicit-review-marker, and line-index overview.\"\"\""` |
+| FND-REVIEW-E599346ABE-L001158 | REVIEW | [docs/generate_index.py](generate_index.py#L1158) | 1158 | REVIEW: marker, and line-index overview.""" | [SRC-E599346ABE-L001158](generate_index.py#L1158) | `"    \"\"\"Render the repository file, symbol, explicit-review-marker, and line-index overview.\"\"\""` |
 | FND-SECURITY-E73001D9AC-L000807 | SECURITY | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L807) | 807 | SECURITY: verification-standard-aisvs-docs) — متطلبات تحقق أمنية مخصصة لأنظمة الذكاء الاصطناعي. | [SRC-E73001D9AC-L000807](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L807) | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs) — متطلبات تحقق أمنية مخصصة لأنظمة الذكاء الاصطناعي."` |
 | FND-SECURITY-D17CE3D12F-L000997 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | 997 | SECURITY: verification-standard/). | [SRC-D17CE3D12F-L000997](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | `"- [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/)."` |
 | FND-SECURITY-D17CE3D12F-L001000 | SECURITY | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | 1000 | SECURITY: verification-standard-aisvs-docs). | [SRC-D17CE3D12F-L001000](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` |
