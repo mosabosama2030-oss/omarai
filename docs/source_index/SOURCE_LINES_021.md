@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000126 إلى SRC-829A979985-L000537
+- النطاق: SRC-FA4E1423C3-L000088 إلى SRC-829A979985-L000499
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000088](../../tests/test_generate_index.py#L88) | 88 | `"    web_dir = tmp_path / \"web\""` | — |
+| [SRC-FA4E1423C3-L000089](../../tests/test_generate_index.py#L89) | 89 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000090](../../tests/test_generate_index.py#L90) | 90 | `"    web_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000091](../../tests/test_generate_index.py#L91) | 91 | `"    docs_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000092](../../tests/test_generate_index.py#L92) | 92 | `"    (web_dir / \"agent.html\").write_text("` | — |
+| [SRC-FA4E1423C3-L000093](../../tests/test_generate_index.py#L93) | 93 | `"        '<div id=\"chat-panel\" name=\"question-box\" data-testid=\"send-button\"></div>\\n'"` | — |
+| [SRC-FA4E1423C3-L000094](../../tests/test_generate_index.py#L94) | 94 | `"        \"<style>\\n\""` | — |
+| [SRC-FA4E1423C3-L000095](../../tests/test_generate_index.py#L95) | 95 | `"        \".chat-panel { --accent-color: #fff; }\\n\""` | — |
+| [SRC-FA4E1423C3-L000096](../../tests/test_generate_index.py#L96) | 96 | `"        \"#answer-panel { display: block; }\\n\""` | — |
+| [SRC-FA4E1423C3-L000097](../../tests/test_generate_index.py#L97) | 97 | `"        \"</style>\\n\""` | — |
+| [SRC-FA4E1423C3-L000098](../../tests/test_generate_index.py#L98) | 98 | `"        \"<script>\\n\""` | — |
+| [SRC-FA4E1423C3-L000099](../../tests/test_generate_index.py#L99) | 99 | `"        \"function sendMessage() { return true; }\\n\""` | — |
+| [SRC-FA4E1423C3-L000100](../../tests/test_generate_index.py#L100) | 100 | `"        \"class AgentCore {}\\n\""` | — |
+| [SRC-FA4E1423C3-L000101](../../tests/test_generate_index.py#L101) | 101 | `"        \"const fetchAnswer = async (question) => question;\\n\""` | — |
+| [SRC-FA4E1423C3-L000102](../../tests/test_generate_index.py#L102) | 102 | `"        \"const ACCESS_TOKEN = 'example';\\n\""` | — |
+| [SRC-FA4E1423C3-L000103](../../tests/test_generate_index.py#L103) | 103 | `"        \"</script>\\n\","` | — |
+| [SRC-FA4E1423C3-L000104](../../tests/test_generate_index.py#L104) | 104 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000105](../../tests/test_generate_index.py#L105) | 105 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000106](../../tests/test_generate_index.py#L106) | 106 | `"    (docs_dir / \"guide.md\").write_text("` | — |
+| [SRC-FA4E1423C3-L000107](../../tests/test_generate_index.py#L107) | 107 | `"        \"# User Guide\\n## Troubleshooting\\n\","` | — |
+| [SRC-FA4E1423C3-L000108](../../tests/test_generate_index.py#L108) | 108 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000109](../../tests/test_generate_index.py#L109) | 109 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000110](../../tests/test_generate_index.py#L110) | 110 | `"    (tmp_path / \"settings.yml\").write_text("` | — |
+| [SRC-FA4E1423C3-L000111](../../tests/test_generate_index.py#L111) | 111 | `"        \"OMARAI_ENABLED: true\\nrequest-budget:\\n  max-calls: 3\\n\","` | — |
+| [SRC-FA4E1423C3-L000112](../../tests/test_generate_index.py#L112) | 112 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000113](../../tests/test_generate_index.py#L113) | 113 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000114](../../tests/test_generate_index.py#L114) | 114 | `""` | — |
+| [SRC-FA4E1423C3-L000115](../../tests/test_generate_index.py#L115) | 115 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000116](../../tests/test_generate_index.py#L116) | 116 | `"    symbols = INDEXER.scan_static_symbols(tmp_path, inventory)"` | — |
+| [SRC-FA4E1423C3-L000117](../../tests/test_generate_index.py#L117) | 117 | `"    names_by_kind = {(symbol.kind, symbol.name) for symbol in symbols}"` | — |
+| [SRC-FA4E1423C3-L000118](../../tests/test_generate_index.py#L118) | 118 | `""` | — |
+| [SRC-FA4E1423C3-L000119](../../tests/test_generate_index.py#L119) | 119 | `"    assert (\"قيمة سمة HTML (id)\", \"chat-panel\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000120](../../tests/test_generate_index.py#L120) | 120 | `"    assert (\"قيمة سمة HTML (name)\", \"question-box\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000121](../../tests/test_generate_index.py#L121) | 121 | `"    assert (\"قيمة سمة HTML (data-testid)\", \"send-button\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000122](../../tests/test_generate_index.py#L122) | 122 | `"    assert (\"دالة JavaScript/TypeScript\", \"sendMessage\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000123](../../tests/test_generate_index.py#L123) | 123 | `"    assert (\"كلاس JavaScript/TypeScript\", \"AgentCore\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000124](../../tests/test_generate_index.py#L124) | 124 | `"    assert (\"دالة JavaScript/TypeScript\", \"fetchAnswer\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000125](../../tests/test_generate_index.py#L125) | 125 | `"    assert (\"متغير JavaScript/TypeScript\", \"ACCESS_TOKEN\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000126](../../tests/test_generate_index.py#L126) | 126 | `"    assert (\"محدد class في CSS\", \"chat-panel\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000127](../../tests/test_generate_index.py#L127) | 127 | `"    assert (\"محدد id في CSS\", \"answer-panel\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000128](../../tests/test_generate_index.py#L128) | 128 | `"    assert (\"متغير CSS مخصص\", \"accent-color\") in names_by_kind"` | — |
@@ -787,41 +825,3 @@
 | [SRC-829A979985-L000497](../../tests/test_generation_acceptance_matrix.py#L497) | 497 | `"            provider=\"duckduckgo_html\","` | — |
 | [SRC-829A979985-L000498](../../tests/test_generation_acceptance_matrix.py#L498) | 498 | `"        ),"` | — |
 | [SRC-829A979985-L000499](../../tests/test_generation_acceptance_matrix.py#L499) | 499 | `"        source("` | — |
-| [SRC-829A979985-L000500](../../tests/test_generation_acceptance_matrix.py#L500) | 500 | `"            \"https://two.example/product\","` | — |
-| [SRC-829A979985-L000501](../../tests/test_generation_acceptance_matrix.py#L501) | 501 | `"            \"two.example\","` | — |
-| [SRC-829A979985-L000502](../../tests/test_generation_acceptance_matrix.py#L502) | 502 | `"            page_fetched=False,"` | — |
-| [SRC-829A979985-L000503](../../tests/test_generation_acceptance_matrix.py#L503) | 503 | `"            snippet=\"إعلان يذكر سعرًا دون بيان المساحة.\","` | — |
-| [SRC-829A979985-L000504](../../tests/test_generation_acceptance_matrix.py#L504) | 504 | `"            provider=\"bing_rss\","` | — |
-| [SRC-829A979985-L000505](../../tests/test_generation_acceptance_matrix.py#L505) | 505 | `"        ),"` | — |
-| [SRC-829A979985-L000506](../../tests/test_generation_acceptance_matrix.py#L506) | 506 | `"    ]"` | — |
-| [SRC-829A979985-L000507](../../tests/test_generation_acceptance_matrix.py#L507) | 507 | `"    monkeypatch.setattr("` | — |
-| [SRC-829A979985-L000508](../../tests/test_generation_acceptance_matrix.py#L508) | 508 | `"        agent,"` | — |
-| [SRC-829A979985-L000509](../../tests/test_generation_acceptance_matrix.py#L509) | 509 | `"        \"_plan_search\","` | — |
-| [SRC-829A979985-L000510](../../tests/test_generation_acceptance_matrix.py#L510) | 510 | `"        lambda question, history: {"` | — |
-| [SRC-829A979985-L000511](../../tests/test_generation_acceptance_matrix.py#L511) | 511 | `"            \"queries\": [question],"` | — |
-| [SRC-829A979985-L000512](../../tests/test_generation_acceptance_matrix.py#L512) | 512 | `"            \"direct_urls\": [],"` | — |
-| [SRC-829A979985-L000513](../../tests/test_generation_acceptance_matrix.py#L513) | 513 | `"            \"social_focus\": False,"` | — |
-| [SRC-829A979985-L000514](../../tests/test_generation_acceptance_matrix.py#L514) | 514 | `"            \"freshness\": \"any\","` | — |
-| [SRC-829A979985-L000515](../../tests/test_generation_acceptance_matrix.py#L515) | 515 | `"            \"depth\": \"deep\","` | — |
-| [SRC-829A979985-L000516](../../tests/test_generation_acceptance_matrix.py#L516) | 516 | `"            \"platforms\": [],"` | — |
-| [SRC-829A979985-L000517](../../tests/test_generation_acceptance_matrix.py#L517) | 517 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-829A979985-L000518](../../tests/test_generation_acceptance_matrix.py#L518) | 518 | `"        },"` | — |
-| [SRC-829A979985-L000519](../../tests/test_generation_acceptance_matrix.py#L519) | 519 | `"    )"` | — |
-| [SRC-829A979985-L000520](../../tests/test_generation_acceptance_matrix.py#L520) | 520 | `"    monkeypatch.setattr("` | — |
-| [SRC-829A979985-L000521](../../tests/test_generation_acceptance_matrix.py#L521) | 521 | `"        agent,"` | — |
-| [SRC-829A979985-L000522](../../tests/test_generation_acceptance_matrix.py#L522) | 522 | `"        \"_collect_research\","` | — |
-| [SRC-829A979985-L000523](../../tests/test_generation_acceptance_matrix.py#L523) | 523 | `"        lambda plan: ("` | — |
-| [SRC-829A979985-L000524](../../tests/test_generation_acceptance_matrix.py#L524) | 524 | `"            sources,"` | — |
-| [SRC-829A979985-L000525](../../tests/test_generation_acceptance_matrix.py#L525) | 525 | `"            [],"` | — |
-| [SRC-829A979985-L000526](../../tests/test_generation_acceptance_matrix.py#L526) | 526 | `"            {"` | — |
-| [SRC-829A979985-L000527](../../tests/test_generation_acceptance_matrix.py#L527) | 527 | `"                \"queries_planned\": 1,"` | — |
-| [SRC-829A979985-L000528](../../tests/test_generation_acceptance_matrix.py#L528) | 528 | `"                \"queries_attempted\": 1,"` | — |
-| [SRC-829A979985-L000529](../../tests/test_generation_acceptance_matrix.py#L529) | 529 | `"                \"search_attempted\": True,"` | — |
-| [SRC-829A979985-L000530](../../tests/test_generation_acceptance_matrix.py#L530) | 530 | `"                \"search_outcome\": \"attempted_with_usable_sources\","` | — |
-| [SRC-829A979985-L000531](../../tests/test_generation_acceptance_matrix.py#L531) | 531 | `"                \"unique_sources\": 2,"` | — |
-| [SRC-829A979985-L000532](../../tests/test_generation_acceptance_matrix.py#L532) | 532 | `"                \"pages_fetched\": 1,"` | — |
-| [SRC-829A979985-L000533](../../tests/test_generation_acceptance_matrix.py#L533) | 533 | `"                \"providers_used\": [\"duckduckgo_html\", \"bing_rss\"],"` | — |
-| [SRC-829A979985-L000534](../../tests/test_generation_acceptance_matrix.py#L534) | 534 | `"                \"provider_counts\": {\"duckduckgo_html\": 1, \"bing_rss\": 1},"` | — |
-| [SRC-829A979985-L000535](../../tests/test_generation_acceptance_matrix.py#L535) | 535 | `"                \"platform_counts\": {\"web\": 2},"` | — |
-| [SRC-829A979985-L000536](../../tests/test_generation_acceptance_matrix.py#L536) | 536 | `"                \"social_direct_results\": 0,"` | — |
-| [SRC-829A979985-L000537](../../tests/test_generation_acceptance_matrix.py#L537) | 537 | `"                \"provider_diagnostics\": [],"` | — |

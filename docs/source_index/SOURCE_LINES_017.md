@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000403 إلى SRC-90FAA34ADE-L000646
+- النطاق: SRC-4FFD5AFC54-L000365 إلى SRC-90FAA34ADE-L000608
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000365](../../scripts/run_answer_quality_benchmark.py#L365) | 365 | `"        help=\"validate=offline corpus check (default); live=opt-in API calls\","` | — |
+| [SRC-4FFD5AFC54-L000366](../../scripts/run_answer_quality_benchmark.py#L366) | 366 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000367](../../scripts/run_answer_quality_benchmark.py#L367) | 367 | `"    parser.add_argument("` | — |
+| [SRC-4FFD5AFC54-L000368](../../scripts/run_answer_quality_benchmark.py#L368) | 368 | `"        \"--corpus\","` | — |
+| [SRC-4FFD5AFC54-L000369](../../scripts/run_answer_quality_benchmark.py#L369) | 369 | `"        type=Path,"` | — |
+| [SRC-4FFD5AFC54-L000370](../../scripts/run_answer_quality_benchmark.py#L370) | 370 | `"        default=DEFAULT_CORPUS,"` | — |
+| [SRC-4FFD5AFC54-L000371](../../scripts/run_answer_quality_benchmark.py#L371) | 371 | `"        help=\"Path to answer_quality_cases.json\","` | — |
+| [SRC-4FFD5AFC54-L000372](../../scripts/run_answer_quality_benchmark.py#L372) | 372 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000373](../../scripts/run_answer_quality_benchmark.py#L373) | 373 | `"    parser.add_argument(\"--summary\", action=\"store_true\", help=\"Extra validate summary\")"` | — |
+| [SRC-4FFD5AFC54-L000374](../../scripts/run_answer_quality_benchmark.py#L374) | 374 | `"    parser.add_argument(\"--base-url\", default=\"http://127.0.0.1:8765\")"` | — |
+| [SRC-4FFD5AFC54-L000375](../../scripts/run_answer_quality_benchmark.py#L375) | 375 | `"    parser.add_argument(\"--case-id\", default=None, help=\"Run a single case (live)\")"` | — |
+| [SRC-4FFD5AFC54-L000376](../../scripts/run_answer_quality_benchmark.py#L376) | 376 | `"    parser.add_argument(\"--limit\", type=int, default=0, help=\"Max cases in live mode (0=all selected)\")"` | — |
+| [SRC-4FFD5AFC54-L000377](../../scripts/run_answer_quality_benchmark.py#L377) | 377 | `"    parser.add_argument(\"--timeout\", type=float, default=60.0)"` | — |
+| [SRC-4FFD5AFC54-L000378](../../scripts/run_answer_quality_benchmark.py#L378) | 378 | `"    parser.add_argument(\"--delay\", type=float, default=0.0, help=\"Seconds between live requests\")"` | — |
+| [SRC-4FFD5AFC54-L000379](../../scripts/run_answer_quality_benchmark.py#L379) | 379 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Write live results JSON\")"` | — |
+| [SRC-4FFD5AFC54-L000380](../../scripts/run_answer_quality_benchmark.py#L380) | 380 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-4FFD5AFC54-L000381](../../scripts/run_answer_quality_benchmark.py#L381) | 381 | `""` | — |
+| [SRC-4FFD5AFC54-L000382](../../scripts/run_answer_quality_benchmark.py#L382) | 382 | `"    if args.mode == \"validate\":"` | — |
+| [SRC-4FFD5AFC54-L000383](../../scripts/run_answer_quality_benchmark.py#L383) | 383 | `"        return run_validate(args.corpus, args.summary)"` | — |
+| [SRC-4FFD5AFC54-L000384](../../scripts/run_answer_quality_benchmark.py#L384) | 384 | `"    if args.mode == \"live\":"` | — |
+| [SRC-4FFD5AFC54-L000385](../../scripts/run_answer_quality_benchmark.py#L385) | 385 | `"        if not args.case_id and args.limit <= 0:"` | — |
+| [SRC-4FFD5AFC54-L000386](../../scripts/run_answer_quality_benchmark.py#L386) | 386 | `"            print("` | — |
+| [SRC-4FFD5AFC54-L000387](../../scripts/run_answer_quality_benchmark.py#L387) | 387 | `"                \"Refusing unbounded live run. Pass --case-id and/or --limit > 0.\","` | — |
+| [SRC-4FFD5AFC54-L000388](../../scripts/run_answer_quality_benchmark.py#L388) | 388 | `"                file=sys.stderr,"` | — |
+| [SRC-4FFD5AFC54-L000389](../../scripts/run_answer_quality_benchmark.py#L389) | 389 | `"            )"` | — |
+| [SRC-4FFD5AFC54-L000390](../../scripts/run_answer_quality_benchmark.py#L390) | 390 | `"            return 2"` | — |
+| [SRC-4FFD5AFC54-L000391](../../scripts/run_answer_quality_benchmark.py#L391) | 391 | `"        return run_live("` | — |
+| [SRC-4FFD5AFC54-L000392](../../scripts/run_answer_quality_benchmark.py#L392) | 392 | `"            args.corpus,"` | — |
+| [SRC-4FFD5AFC54-L000393](../../scripts/run_answer_quality_benchmark.py#L393) | 393 | `"            args.base_url,"` | — |
+| [SRC-4FFD5AFC54-L000394](../../scripts/run_answer_quality_benchmark.py#L394) | 394 | `"            args.case_id,"` | — |
+| [SRC-4FFD5AFC54-L000395](../../scripts/run_answer_quality_benchmark.py#L395) | 395 | `"            args.limit,"` | — |
+| [SRC-4FFD5AFC54-L000396](../../scripts/run_answer_quality_benchmark.py#L396) | 396 | `"            args.timeout,"` | — |
+| [SRC-4FFD5AFC54-L000397](../../scripts/run_answer_quality_benchmark.py#L397) | 397 | `"            args.delay,"` | — |
+| [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"            args.out,"` | — |
+| [SRC-4FFD5AFC54-L000399](../../scripts/run_answer_quality_benchmark.py#L399) | 399 | `"        )"` | — |
+| [SRC-4FFD5AFC54-L000400](../../scripts/run_answer_quality_benchmark.py#L400) | 400 | `"    return 2"` | — |
+| [SRC-4FFD5AFC54-L000401](../../scripts/run_answer_quality_benchmark.py#L401) | 401 | `""` | — |
+| [SRC-4FFD5AFC54-L000402](../../scripts/run_answer_quality_benchmark.py#L402) | 402 | `""` | — |
 | [SRC-4FFD5AFC54-L000403](../../scripts/run_answer_quality_benchmark.py#L403) | 403 | `"if __name__ == \"__main__\":"` | — |
 | [SRC-4FFD5AFC54-L000404](../../scripts/run_answer_quality_benchmark.py#L404) | 404 | `"    raise SystemExit(main())"` | — |
 ## ملفات أخرى
@@ -796,41 +834,3 @@
 | [SRC-90FAA34ADE-L000606](../../tests/fixtures/answer_quality_cases.json#L606) | 606 | `"            \"publisher\": \"WireDesk\""` | — |
 | [SRC-90FAA34ADE-L000607](../../tests/fixtures/answer_quality_cases.json#L607) | 607 | `"          },"` | — |
 | [SRC-90FAA34ADE-L000608](../../tests/fixtures/answer_quality_cases.json#L608) | 608 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000609](../../tests/fixtures/answer_quality_cases.json#L609) | 609 | `"            \"title\": \"Release copy C\","` | — |
-| [SRC-90FAA34ADE-L000610](../../tests/fixtures/answer_quality_cases.json#L610) | 610 | `"            \"url\": \"https://news-c.example.test/story\","` | — |
-| [SRC-90FAA34ADE-L000611](../../tests/fixtures/answer_quality_cases.json#L611) | 611 | `"            \"snippet\": \"According to the ministry press release: Service launches on Monday.\","` | — |
-| [SRC-90FAA34ADE-L000612](../../tests/fixtures/answer_quality_cases.json#L612) | 612 | `"            \"domain\": \"news-c.example.test\","` | — |
-| [SRC-90FAA34ADE-L000613](../../tests/fixtures/answer_quality_cases.json#L613) | 613 | `"            \"provider\": \"fixture_c\","` | — |
-| [SRC-90FAA34ADE-L000614](../../tests/fixtures/answer_quality_cases.json#L614) | 614 | `"            \"publisher\": \"WireDesk\""` | — |
-| [SRC-90FAA34ADE-L000615](../../tests/fixtures/answer_quality_cases.json#L615) | 615 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000616](../../tests/fixtures/answer_quality_cases.json#L616) | 616 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000617](../../tests/fixtures/answer_quality_cases.json#L617) | 617 | `"        \"notes\": \"النتائج الثلاثة من نفس الناشر الأصلي ونصها متطابق\""` | — |
-| [SRC-90FAA34ADE-L000618](../../tests/fixtures/answer_quality_cases.json#L618) | 618 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000619](../../tests/fixtures/answer_quality_cases.json#L619) | 619 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000620](../../tests/fixtures/answer_quality_cases.json#L620) | 620 | `"        \"يحسب المواقع الثلاثة تأكيدًا مستقلًا بلا تحفظ\","` | — |
-| [SRC-90FAA34ADE-L000621](../../tests/fixtures/answer_quality_cases.json#L621) | 621 | `"        \"يقول إن الخبر تحقق بثلاثة مصادر مستقلة\""` | — |
-| [SRC-90FAA34ADE-L000622](../../tests/fixtures/answer_quality_cases.json#L622) | 622 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000623](../../tests/fixtures/answer_quality_cases.json#L623) | 623 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000624](../../tests/fixtures/answer_quality_cases.json#L624) | 624 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000625](../../tests/fixtures/answer_quality_cases.json#L625) | 625 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000626](../../tests/fixtures/answer_quality_cases.json#L626) | 626 | `"      \"case_id\": \"AQ-022\","` | — |
-| [SRC-90FAA34ADE-L000627](../../tests/fixtures/answer_quality_cases.json#L627) | 627 | `"      \"category\": \"unsupported_claim\","` | — |
-| [SRC-90FAA34ADE-L000628](../../tests/fixtures/answer_quality_cases.json#L628) | 628 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000629](../../tests/fixtures/answer_quality_cases.json#L629) | 629 | `"      \"question\": \"المصدر المرفق يذكر أن المتجر يفتح الساعة التاسعة فقط. هل هذا يثبت أنه يعمل طوال اليوم؟\","` | — |
-| [SRC-90FAA34ADE-L000630](../../tests/fixtures/answer_quality_cases.json#L630) | 630 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000631](../../tests/fixtures/answer_quality_cases.json#L631) | 631 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000632](../../tests/fixtures/answer_quality_cases.json#L632) | 632 | `"        \"يقول إن المقتطف لا يثبت استمرار العمل طوال اليوم\","` | — |
-| [SRC-90FAA34ADE-L000633](../../tests/fixtures/answer_quality_cases.json#L633) | 633 | `"        \"يميّز بوضوح بين المعلومة المذكورة والاستنتاج غير المدعوم\","` | — |
-| [SRC-90FAA34ADE-L000634](../../tests/fixtures/answer_quality_cases.json#L634) | 634 | `"        \"يطلب مصدر ساعات عمل كامل أو يذكر أن المعلومة غير كافية\""` | — |
-| [SRC-90FAA34ADE-L000635](../../tests/fixtures/answer_quality_cases.json#L635) | 635 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000636](../../tests/fixtures/answer_quality_cases.json#L636) | 636 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000637](../../tests/fixtures/answer_quality_cases.json#L637) | 637 | `"        \"يستنتج أن المتجر مفتوح طوال اليوم من وقت فتح واحد\","` | — |
-| [SRC-90FAA34ADE-L000638](../../tests/fixtures/answer_quality_cases.json#L638) | 638 | `"        \"ينسب ادعاء غير موجود إلى المصدر\""` | — |
-| [SRC-90FAA34ADE-L000639](../../tests/fixtures/answer_quality_cases.json#L639) | 639 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000640](../../tests/fixtures/answer_quality_cases.json#L640) | 640 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000641](../../tests/fixtures/answer_quality_cases.json#L641) | 641 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000642](../../tests/fixtures/answer_quality_cases.json#L642) | 642 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000643](../../tests/fixtures/answer_quality_cases.json#L643) | 643 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000644](../../tests/fixtures/answer_quality_cases.json#L644) | 644 | `"            \"title\": \"Store opening note\","` | — |
-| [SRC-90FAA34ADE-L000645](../../tests/fixtures/answer_quality_cases.json#L645) | 645 | `"            \"url\": \"https://shop.example.test/opening\","` | — |
-| [SRC-90FAA34ADE-L000646](../../tests/fixtures/answer_quality_cases.json#L646) | 646 | `"            \"snippet\": \"Doors open at 9:00 AM.\","` | — |
