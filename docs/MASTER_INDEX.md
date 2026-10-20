@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **71**
 - ملفات Python المحللة: **38**
-- تعريفات Python المفهرسة: **885**
+- تعريفات Python المفهرسة: **889**
 - تعريفات Python موثقة بوجود Docstring: **175**
-- تعريفات Python بلا Docstring: **535**
+- تعريفات Python بلا Docstring: **539**
 - تعريفات لا ينطبق عليها Docstring: **175**
 - الرموز الساكنة الإضافية: **1339**
-- الأسطر النصية المفهرسة حرفيًا: **23469**
+- الأسطر النصية المفهرسة حرفيًا: **23563**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -79,7 +79,7 @@
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 7520 | 183 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 25437 | 696 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 27223 | 744 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
@@ -92,7 +92,7 @@
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
-| FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 3540 | 101 | جرد الملف + AST Python |
+| FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5019 | 147 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 5152 | 123 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -586,6 +586,8 @@
 | [tests/test_api.py](../tests/test_api.py#L611) | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 611 | [SRC-3451CC474D-L000611](../tests/test_api.py#L611) |
 | [tests/test_api.py](../tests/test_api.py#L657) | دالة | test_public_preflight_does_not_trust_spoofed_forwarded_host | A client-controlled X-Forwarded-Host must not grant an origin CORS access. | موثق | 657 | [SRC-3451CC474D-L000657](../tests/test_api.py#L657) |
 | [tests/test_api.py](../tests/test_api.py#L678) | دالة | test_public_origin_still_allows_the_requested_host | Same-service public UI remains compatible when the request Host is trusted. | موثق | 678 | [SRC-3451CC474D-L000678](../tests/test_api.py#L678) |
+| [tests/test_api.py](../tests/test_api.py#L700) | دالة | test_agent_concurrency_slot_released_after_operation_error | لا توجد Docstring. | ناقص | 700 | [SRC-3451CC474D-L000700](../tests/test_api.py#L700) |
+| [tests/test_api.py](../tests/test_api.py#L710) | دالة | test_agent_concurrency_slot_released_after_operation_error.answer_with_one_transient_failure | لا توجد Docstring. | ناقص | 710 | [SRC-3451CC474D-L000710](../tests/test_api.py#L710) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L4) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 4 | [SRC-3D0A619359-L000004](../tests/test_dashboard_security.py#L4) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L7) | دالة | test_hosted_lead_dashboard_can_send_the_private_access_token | لا توجد Docstring. | ناقص | 7 | [SRC-3D0A619359-L000007](../tests/test_dashboard_security.py#L7) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L14) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 14 | [SRC-3D0A619359-L000014](../tests/test_dashboard_security.py#L14) |
@@ -763,6 +765,8 @@
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L51) | دالة | test_environment_overrides_are_clamped | لا توجد Docstring. | ناقص | 51 | [SRC-C353AAAC10-L000051](../tests/test_request_budget.py#L51) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L65) | دالة | test_web_agent_reserves_search_model_and_page_work_before_io | لا توجد Docstring. | ناقص | 65 | [SRC-C353AAAC10-L000065](../tests/test_request_budget.py#L65) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L88) | دالة | test_social_provider_reserves_budget_before_network_io | لا توجد Docstring. | ناقص | 88 | [SRC-C353AAAC10-L000088](../tests/test_request_budget.py#L88) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L115) | دالة | test_each_resource_counter_stops_at_its_limit | لا توجد Docstring. | ناقص | 115 | [SRC-C353AAAC10-L000115](../tests/test_request_budget.py#L115) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L136) | دالة | test_disabled_resource_never_starts_work | لا توجد Docstring. | ناقص | 136 | [SRC-C353AAAC10-L000136](../tests/test_request_budget.py#L136) |
 | [tests/test_research.py](../tests/test_research.py#L12) | دالة | test_social_question_gets_platform_targeted_queries | لا توجد Docstring. | ناقص | 12 | [SRC-6BF96689A8-L000012](../tests/test_research.py#L12) |
 | [tests/test_research.py](../tests/test_research.py#L20) | دالة | test_follow_up_query_keeps_prior_topic | لا توجد Docstring. | ناقص | 20 | [SRC-6BF96689A8-L000020](../tests/test_research.py#L20) |
 | [tests/test_research.py](../tests/test_research.py#L27) | دالة | test_plan_validation_caps_queries_and_rejects_non_string_values | لا توجد Docstring. | ناقص | 27 | [SRC-6BF96689A8-L000027](../tests/test_research.py#L27) |
