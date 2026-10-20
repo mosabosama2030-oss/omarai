@@ -242,3 +242,82 @@ def test_check_mode_detects_stale_index_without_modifying_it(tmp_path: Path, cap
 
     assert INDEXER.main(["--root", str(tmp_path)]) == 0
     assert INDEXER.main(["--root", str(tmp_path), "--check"]) == 0
+
+
+def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path) -> None:
+    """All readable text lines, including blank lines and unfamiliar extensions, are searchable."""
+    (tmp_path / "app.py").write_text(
+        'VALUE = 1\n\n'
+        'def greet():\n'
+        '    return "hello"\n',
+        encoding="utf-8",
+    )
+    docs_dir = tmp_path / "docs"
+    docs_dir.mkdir()
+    (docs_dir / "guide.txt").write_text(
+        "First documented step.\nSecond documented step.\n",
+        encoding="utf-8",
+    )
+    (tmp_path / ".env").write_text("PRIVATE_TOKEN=do-not-index\n", encoding="utf-8")
+    (tmp_path / "payload.bin").write_bytes(b"\x00\x01\x02")
+
+    inventory = INDEXER.build_file_inventory(tmp_path)
+    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)
+    findings = INDEXER.scan_finding_annotations(source_lines)
+    line_by_file_and_number = {(line.file, line.line): line for line in source_lines}
+    lines_markdown = INDEXER.render_source_lines_markdown(source_lines, inventory, findings)
+
+    assert ("app.py", 1) in line_by_file_and_number
+    assert ("app.py", 2) in line_by_file_and_number
+    assert line_by_file_and_number[("app.py", 2)].content == ""
+    assert line_by_file_and_number[("app.py", 4)].content == '    return "hello"'
+    assert line_by_file_and_number[("docs/guide.txt", 2)].content == "Second documented step."
+    assert line_by_file_and_number[("app.py", 1)].line_id.startswith("SRC-")
+    assert line_by_file_and_number[("app.py", 1)].file_id.startswith("FILE-")
+    assert line_by_file_and_number[("app.py", 1)].category == "ملفات أخرى"
+    assert "PRIVATE_TOKEN" not in lines_markdown
+    assert "payload.bin" not in {line.file for line in source_lines}
+    assert "Second documented step." in lines_markdown
+    assert "SRC-" in lines_markdown
+
+
+def test_explicit_review_markers_have_unique_codes_and_source_line_links(
+    tmp_path: Path,
+) -> None:
+    """TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines."""
+    (tmp_path / "module.py").write_text(
+        "# TODO: verify fallback\n"
+        "value = 1  # FIXME: handle overflow\n"
+        "# SECURITY: check token handling\n"
+        "def ready():\n"
+        "    return True\n",
+        encoding="utf-8",
+    )
+
+    inventory = INDEXER.build_file_inventory(tmp_path)
+    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)
+    findings = INDEXER.scan_finding_annotations(source_lines)
+
+    assert [item.marker for item in findings] == ["FIXME", "SECURITY", "TODO"]
+    assert len({item.finding_id for item in findings}) == 3
+    for finding in findings:
+        assert finding.finding_id.startswith(f"FND-{finding.marker}-")
+        assert finding.line_id.startswith("SRC-")
+        assert finding.file == "module.py"
+
+
+def test_check_mode_validates_both_generated_indexes(tmp_path: Path, capsys) -> None:
+    """Check mode detects a missing or stale line index as well as a stale master index."""
+    (tmp_path / "app.py").write_text("VALUE = 1\n", encoding="utf-8")
+
+    assert INDEXER.main(["--root", str(tmp_path)]) == 0
+    master_path = tmp_path / INDEXER.INDEX_RELATIVE_PATH
+    line_index_path = tmp_path / INDEXER.SOURCE_LINES_INDEX_RELATIVE_PATH
+    assert master_path.exists()
+    assert line_index_path.exists()
+    assert INDEXER.main(["--root", str(tmp_path), "--check"]) == 0
+
+    line_index_path.write_text("stale line index", encoding="utf-8")
+    assert INDEXER.main(["--root", str(tmp_path), "--check"]) == 1
+    assert line_index_path.read_text(encoding="utf-8") == "stale line index"
+    assert "فهرس الأسطر قديم" in capsys.readouterr().err
