@@ -1352,8 +1352,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                     )
                     return 1
                 if current_content != expected_content:
+                    if relative_path == INDEX_RELATIVE_PATH:
+                        message = "الفهرس الرئيسي قديم"
+                    else:
+                        message = "فهرس الأسطر قديم"
                     print(
-                        f"فهرس قديم: {generated_path}. "
+                        f"{message}: {generated_path}. "
                         "شغّل python docs/generate_index.py.",
                         file=sys.stderr,
                     )
