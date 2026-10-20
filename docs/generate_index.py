@@ -789,6 +789,154 @@ def _markdown_cell(value: str) -> str:
     )
 
 
+def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:
+    """Index every logical line of each eligible text file readable within the size bound."""
+    indexed_lines: list[IndexedLine] = []
+    for item in inventory:
+        source = _read_text_bounded(root / item.file)
+        if source is None:
+            continue
+        for line_number, content in enumerate(source.splitlines(), start=1):
+            indexed_lines.append(
+                IndexedLine(
+                    file=item.file,
+                    file_id=item.file_id,
+                    line_id=f"SRC-{item.file_id.removeprefix('FILE-')}-L{line_number:06d}",
+                    category=item.category,
+                    line=line_number,
+                    content=content,
+                )
+            )
+    indexed_lines.sort(key=lambda item: (item.file.casefold(), item.line))
+    return indexed_lines
+
+
+def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFinding]:
+    """Index explicit review/fix markers; they are hints for review, not proven defects."""
+    findings: list[IndexedFinding] = []
+    for source_line in source_lines:
+        match = FINDING_MARKER_RE.search(source_line.content)
+        if match is None:
+            continue
+        marker = match.group(1).upper()
+        detail = (match.group(2) or "").strip()
+        description = marker if not detail else f"{marker}: {detail}"
+        findings.append(
+            IndexedFinding(
+                finding_id=(
+                    f"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}"
+                    f"-L{source_line.line:06d}"
+                ),
+                file=source_line.file,
+                line_id=source_line.line_id,
+                marker=marker,
+                description=description,
+            )
+        )
+    findings.sort(key=lambda item: (item.marker, item.file.casefold(), item.line_id))
+    return findings
+
+
+def _markdown_code_span(value: str) -> str:
+    """Render a Markdown inline-code span safely, including backticks in source text."""
+    tick = chr(96)
+    longest = max(
+        (len(match.group(0)) for match in re.finditer(r"\u0060+", value)),
+        default=0,
+    )
+    fence = tick * (longest + 1)
+    content = f" {value} " if value.startswith(tick) or value.endswith(tick) else value
+    return f"{fence}{content}{fence}"
+
+
+def render_source_lines_markdown(
+    source_lines: list[IndexedLine],
+    inventory: list[IndexedFile],
+    findings: list[IndexedFinding],
+) -> str:
+    """Render every indexed source line with a stable ID and exact JSON-escaped text."""
+    by_file: dict[str, list[IndexedLine]] = {}
+    for source_line in source_lines:
+        by_file.setdefault(source_line.file, []).append(source_line)
+    findings_by_line = {finding.line_id: finding for finding in findings}
+    inventory_by_path = {item.file: item for item in inventory}
+    files_with_lines = sum(bool(by_file.get(item.file)) for item in inventory)
+    lines = [
+        "# SOURCE LINES INDEX — Omarai",
+        "",
+        "<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
+        "",
+        "> هذا الفهرس يدرج كل سطر منطقي من كل ملف نصي مؤهل يمكن قراءته ضمن حد الحجم.",
+        "> لكل سطر معرّف حتمي مشتق من مسار الملف ورقم السطر، والنص الكامل معروض بصيغة JSON مقتبسة.",
+        "> ابدأ من MASTER_INDEX.md للوصول حسب اسم الدالة أو الكلاس أو الملف، ثم استخدم معرّف السطر للوصول الدقيق.",
+        "",
+        "## ملخص التغطية",
+        "",
+        f"- ملفات المستودع في الجرد: **{len(inventory)}**",
+        f"- ملفات نصية مفهرسة سطرًا بسطر: **{files_with_lines}**",
+        f"- إجمالي الأسطر المفهرسة: **{len(source_lines)}**",
+        f"- وسوم المراجعة/الإصلاح المكتشفة: **{len(findings)}**",
+        "",
+        "## فهرس الأسطر حسب التصنيف والملف",
+        "",
+        "كل سجل يضم معرّفًا فريدًا داخل المسار، ورقم السطر الأصلي، والنص الكامل لذلك السطر.",
+        "",
+    ]
+    current_category: str | None = None
+    for relative_file in sorted(by_file, key=str.casefold):
+        item = inventory_by_path[relative_file]
+        if item.category != current_category:
+            current_category = item.category
+            lines.extend([f"## {current_category}", ""])
+        lines.extend(
+            [
+                f"### {item.file_id} — {_markdown_cell(relative_file)}",
+                "",
+                f"- النوع: **{item.file_type}**",
+                f"- نطاق الفهرسة: {_markdown_cell(item.indexing_scope)}",
+                f"- عدد الأسطر: **{item.line_count if item.line_count is not None else 'غير متاح'}**",
+                "",
+                "| معرّف السطر | السطر | النص الكامل للسطر | وسم مراجعة |",
+                "|---|---:|---|---|",
+            ]
+        )
+        for source_line in by_file[relative_file]:
+            finding = findings_by_line.get(source_line.line_id)
+            finding_text = finding.finding_id if finding else "—"
+            exact_text = json.dumps(source_line.content, ensure_ascii=False)
+            escaped_text = exact_text.replace("|", r"\|")
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        source_line.line_id,
+                        str(source_line.line),
+                        _markdown_code_span(escaped_text),
+                        finding_text,
+                    )
+                )
+                + " |"
+            )
+        lines.append("")
+    if not by_file:
+        lines.extend(["لا توجد ملفات نصية مؤهلة للعرض سطرًا بسطر.", ""])
+    lines.extend(
+        [
+            "---",
+            "",
+            "## حدود الفهرس",
+            "",
+            "- ملفات الفهرس المولّدة نفسها مستثناة لمنع الحلقة الذاتية.",
+            "- الملفات التي تتجاوز 2 MiB أو تحتوي بيانات ثنائية أو لا يمكن فك ترميزها لا تُعرض سطرًا بسطر؛ تبقى بياناتها الوصفية في MASTER INDEX.",
+            "- ملفات الأسرار المعروفة ومجلدات البيئات والاعتماديات والبناء مستثناة عمدًا.",
+            "- معرّفات الأسطر تعتمد على المسار ورقم السطر؛ تتغير معرفات الأسطر اللاحقة إذا أُضيفت أسطر قبلها.",
+            "- وجود TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED يعني وسم مراجعة صريحًا فقط، ولا يثبت وحده وجود خلل.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def render_markdown(
     symbols: list[IndexedSymbol],
     files_scanned: int,
