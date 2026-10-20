@@ -1,0 +1,52 @@
+name: Update Omarai living index
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Keep one index refresh in flight. Each run fetches the newest main before scanning.
+concurrency:
+  group: omarai-living-index-main
+  cancel-in-progress: false
+
+jobs:
+  refresh-index:
+    name: Generate and publish MASTER_INDEX.md
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Fetch the latest main revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          git checkout --force -B main origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Generate the living index
+        run: python docs/generate_index.py
+
+      - name: Commit and push only when the index changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- docs/MASTER_INDEX.md
+          if git diff --cached --quiet; then
+            echo "MASTER_INDEX.md is already up to date; no commit is needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs(index): refresh Python symbol inventory"
+          git push origin HEAD:main
