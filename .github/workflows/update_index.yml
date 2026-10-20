@@ -1,4 +1,4 @@
-name: Update Omarai repository-wide living index
+name: Update Omarai complete source and symbol indexes
 
 on:
   push:
@@ -34,10 +34,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate the living repository index
+      - name: Generate master, full source-line, and review-marker indexes
         run: python docs/generate_index.py
 
-      - name: Verify the generated index is reproducible
+      - name: Verify both generated indexes are reproducible
         run: python docs/generate_index.py --check
 
       - name: Commit and publish only when the index changes
@@ -46,9 +46,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          git add -- docs/MASTER_INDEX.md
+          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md
           if git diff --cached --quiet; then
-            echo "MASTER_INDEX.md is already up to date; no commit is needed."
+            echo "Both generated indexes are already up to date; no commit is needed."
             exit 0
           fi
 
@@ -71,7 +71,7 @@ jobs:
               --base main \
               --head "${automation_branch}" \
               --title "docs(index): refresh repository-wide symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. The index contains a repository file inventory, Python AST definitions, and static navigation symbols for frontend/configuration/documentation files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
+              --body "Automated refresh of docs/MASTER_INDEX.md and docs/SOURCE_LINES_INDEX.md. The indexes contain the repository inventory, Python AST definitions, explicit review-marker IDs, and exact line-level navigation for all eligible readable text files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
             exit 0
           fi
 
@@ -81,7 +81,7 @@ jobs:
               --base main \
               --head "${automation_branch}" \
               --title "docs(index): refresh repository-wide symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. The index contains a repository file inventory, Python AST definitions, and static navigation symbols for frontend/configuration/documentation files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
+              --body "Automated refresh of docs/MASTER_INDEX.md and docs/SOURCE_LINES_INDEX.md. The indexes contain the repository inventory, Python AST definitions, explicit review-marker IDs, and exact line-level navigation for all eligible readable text files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
           else
             gh pr edit "${pr_number}" \
               --title "docs(index): refresh repository-wide symbol inventory" \
