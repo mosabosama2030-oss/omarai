@@ -46,9 +46,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md
+          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/source_index/
           if git diff --cached --quiet; then
-            echo "Both generated indexes are already up to date; no commit is needed."
+            echo "All generated index files are already up to date; no commit is needed."
             exit 0
           fi
 
@@ -71,7 +71,7 @@ jobs:
               --base main \
               --head "${automation_branch}" \
               --title "docs(index): refresh repository-wide symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md and docs/SOURCE_LINES_INDEX.md. The indexes contain the repository inventory, Python AST definitions, explicit review-marker IDs, and exact line-level navigation for all eligible readable text files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
+              --body "Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and sharded pages under docs/source_index/. The indexes contain the repository inventory, Python AST definitions, explicit review-marker IDs, and exact line-level navigation for all eligible readable text files. This PR was opened because direct publication to main was rejected. No force update or auto-merge was performed."
             exit 0
           fi
 
