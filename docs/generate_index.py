@@ -148,7 +148,7 @@ _FINDING_MARKER_ALTERNATION = "|".join(
 )
 FINDING_MARKER_RE = re.compile(
     rf"(?:^|[;|]\s*)\s*({_FINDING_MARKER_ALTERNATION})\s*:\s*(.*?)"
-    rf"(?=(?:[;|]\s*)?(?:{_FINDING_MARKER_ALTERNATION})\s*:|$)"
+    rf"(?=(?:[;|]\s*)(?:{_FINDING_MARKER_ALTERNATION})\s*:|$)"
 )
 
 
@@ -1111,12 +1111,23 @@ def _c_style_comment_map(source: str, *, hash_comments: bool = False) -> dict[in
 
 
 def _html_comment_map(source: str) -> dict[int, list[str]]:
-    """Return HTML comments only."""
+    """Return HTML comments while ignoring HTML-looking text inside script/style blocks."""
     comments: dict[int, list[str]] = {}
+    masked_chars = list(source)
+    for pattern in (HTML_SCRIPT_RE, HTML_STYLE_RE):
+        for match in pattern.finditer(source):
+            for position in range(match.start(), match.end()):
+                if masked_chars[position] != "\\n":
+                    masked_chars[position] = " "
+    masked_source = "".join(masked_chars)
     comment_re = re.compile(r"<!--(.*?)-->", re.DOTALL)
-    for match in comment_re.finditer(source):
+    for match in comment_re.finditer(masked_source):
         starting_line = _line_at(source, match.start(1))
-        _append_comment_text(comments, starting_line, match.group(1))
+        _append_comment_text(
+            comments,
+            starting_line,
+            source[match.start(1):match.end(1)],
+        )
     return comments
 
 
