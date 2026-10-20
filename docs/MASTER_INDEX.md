@@ -10,13 +10,13 @@
 
 - ملفات المستودع في الجرد: **68**
 - ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **824**
-- تعريفات Python موثقة بوجود Docstring: **160**
+- تعريفات Python المفهرسة: **825**
+- تعريفات Python موثقة بوجود Docstring: **161**
 - تعريفات Python بلا Docstring: **498**
 - تعريفات لا ينطبق عليها Docstring: **166**
-- الرموز الساكنة الإضافية: **1243**
-- الأسطر النصية المفهرسة حرفيًا: **21213**
-- وسوم المراجعة/الإصلاح المسجلة: **69**
+- الرموز الساكنة الإضافية: **1244**
+- الأسطر النصية المفهرسة حرفيًا: **21238**
+- وسوم المراجعة/الإصلاح المسجلة: **72**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
 - تدقيق التغطية والاستثناءات: [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md)
@@ -66,7 +66,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 21666 | 182 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 21845 | 182 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 8627 | 190 | جرد الملف + AST Python |
@@ -80,7 +80,7 @@
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
-| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 16971 | 388 | جرد الملف + AST Python |
+| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 18077 | 413 | جرد الملف + AST Python |
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 21784 | 586 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 9324 | 255 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 6541 | 174 | جرد الملف + AST Python |
@@ -612,6 +612,7 @@
 | [tests/test_generate_index.py](../tests/test_generate_index.py#L322) | دالة | test_check_mode_validates_all_generated_indexes | Check mode detects stale master, line, and coverage indexes. | موثق | 322 | [SRC-FA4E1423C3-L000322](../tests/test_generate_index.py#L322) |
 | [tests/test_generate_index.py](../tests/test_generate_index.py#L350) | دالة | test_source_line_coverage_validator_rejects_missing_or_duplicate_lines | A gap or duplicate in line IDs prevents the generator from claiming full coverage. | موثق | 350 | [SRC-FA4E1423C3-L000350](../tests/test_generate_index.py#L350) |
 | [tests/test_generate_index.py](../tests/test_generate_index.py#L364) | دالة | test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secrets | Coverage report states exact skipped-file reasons without exposing secret contents. | موثق | 364 | [SRC-FA4E1423C3-L000364](../tests/test_generate_index.py#L364) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L391) | دالة | test_multiple_review_markers_on_one_line_each_get_a_unique_finding_code | Different and repeated review tags on a single line must not overwrite each other. | موثق | 391 | [SRC-FA4E1423C3-L000391](../tests/test_generate_index.py#L391) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L11) | كلاس | FakeCompletionResponse | لا توجد Docstring. | ناقص | 11 | [SRC-829A979985-L000011](../tests/test_generation_acceptance_matrix.py#L11) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L12) | دالة | FakeCompletionResponse.__init__ | لا توجد Docstring. | ناقص | 12 | [SRC-829A979985-L000012](../tests/test_generation_acceptance_matrix.py#L12) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L24) | دالة | FakeCompletionResponse.__enter__ | لا توجد Docstring. | ناقص | 24 | [SRC-829A979985-L000024](../tests/test_generation_acceptance_matrix.py#L24) |
@@ -1653,6 +1654,7 @@
 | [README.md](../README.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 18 | [SRC-B335630551-L000018](../README.md#L18) |
 | [README.md](../README.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 18 | [SRC-B335630551-L000018](../README.md#L18) |
 | [README.md](../README.md#L27) | عنوان Markdown (H2) | Living repository index | 27 | [SRC-B335630551-L000027](../README.md#L27) |
+| [README.md](../README.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DATA_LOSS | 33 | [SRC-B335630551-L000033](../README.md#L33) |
 | [README.md](../README.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 33 | [SRC-B335630551-L000033](../README.md#L33) |
 | [README.md](../README.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 34 | [SRC-B335630551-L000034](../README.md#L34) |
 | [README.md](../README.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 35 | [SRC-B335630551-L000035](../README.md#L35) |
@@ -2186,6 +2188,8 @@
 |---|---|---|---:|---|---|---|
 | FND-BUG-B335630551-L000038 | BUG | [README.md](../README.md#L38) | 38 | BUG: explain the defect`) so the generated `FND-...` register can point to the corresponding `SRC-...` line. | [SRC-B335630551-L000038](../README.md#L38) | ``"The generator now refuses to publish indexes if any eligible file has missing, duplicated, or misnumbered source-line records. It still cannot infer every unmarked logical/programming defect; known issues should be recorded explicitly with a supported marker (for example, `# BUG: explain the defect`) so the generated `FND-...` register can point to the corresponding `SRC-...` line."`` |
 | FND-BUG-FA4E1423C3-L000300 | BUG | [tests/test_generate_index.py](../tests/test_generate_index.py#L300) | 300 | BUG: style annotations receive stable named IDs linked to their exact lines.""" | [SRC-FA4E1423C3-L000300](../tests/test_generate_index.py#L300) | `"    \"\"\"TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines.\"\"\""` |
+| FND-BUG-FA4E1423C3-L000397-M01 | BUG | [tests/test_generate_index.py](../tests/test_generate_index.py#L397) | 397 | BUG: first defect; | [SRC-FA4E1423C3-L000397](../tests/test_generate_index.py#L397) | `"        \"# BUG: first defect; FIXME: repair it; BUG: second defect\\n\","` |
+| FND-BUG-FA4E1423C3-L000397-M02 | BUG | [tests/test_generate_index.py](../tests/test_generate_index.py#L397) | 397 | BUG: second defect\n", | [SRC-FA4E1423C3-L000397](../tests/test_generate_index.py#L397) | `"        \"# BUG: first defect; FIXME: repair it; BUG: second defect\\n\","` |
 | FND-ERROR-9F6E30987B-L000025 | ERROR | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L25) | 25 | ERROR: :GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short." | [SRC-9F6E30987B-L000025](../.github/workflows/hosted-smoke.yml#L25) | `"            echo \"::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short.\""` |
 | FND-ERROR-9F6E30987B-L000029 | ERROR | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L29) | 29 | ERROR: :GitHub Actions secret OMARAI_BASE_URL is missing." | [SRC-9F6E30987B-L000029](../.github/workflows/hosted-smoke.yml#L29) | `"            echo \"::error::GitHub Actions secret OMARAI_BASE_URL is missing.\""` |
 | FND-ERROR-9F6E30987B-L000033 | ERROR | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L33) | 33 | ERROR: :OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment." | [SRC-9F6E30987B-L000033](../.github/workflows/hosted-smoke.yml#L33) | `"            echo \"::error::OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment.\""` |
@@ -2197,6 +2201,7 @@
 | FND-ERROR-3451CC474D-L000349 | ERROR | [tests/test_api.py](../tests/test_api.py#L349) | 349 | ERROR | [SRC-3451CC474D-L000349](../tests/test_api.py#L349) | `"    except HTTPError as error:"` |
 | FND-ERROR-A16FA6D4B5-L000036 | ERROR | [web/dashboard.html](../web/dashboard.html#L36) | 36 | ERROR: "استجابة غير صالحة من الخادم"}}if(!r.ok)throw Error(d.error\|\|"حدث خطأ");return d} | [SRC-A16FA6D4B5-L000036](../web/dashboard.html#L36) | `"async function request(url,opts={}){const r=await fetch(url,{...opts,headers:requestHeaders(opts.headers\|\|{})});let d;try{d=await r.json()}catch(_error){d={error:\"استجابة غير صالحة من الخادم\"}}if(!r.ok)throw Error(d.error\|\|\"حدث خطأ\");return d}"` |
 | FND-FIXME-FA4E1423C3-L000303 | FIXME | [tests/test_generate_index.py](../tests/test_generate_index.py#L303) | 303 | FIXME: handle overflow\n" | [SRC-FA4E1423C3-L000303](../tests/test_generate_index.py#L303) | `"        \"value = 1  # FIXME: handle overflow\\n\""` |
+| FND-FIXME-FA4E1423C3-L000397 | FIXME | [tests/test_generate_index.py](../tests/test_generate_index.py#L397) | 397 | FIXME: repair it; | [SRC-FA4E1423C3-L000397](../tests/test_generate_index.py#L397) | `"        \"# BUG: first defect; FIXME: repair it; BUG: second defect\\n\","` |
 | FND-GAP-DE7EABE998-L000014 | GAP | [web/agent.html](../web/agent.html#L14) | 14 | GAP: 12px;padding:7px 2px 18px;border-bottom:1px solid #26384b} | [SRC-DE7EABE998-L000014](../web/agent.html#L14) | `".topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 2px 18px;border-bottom:1px solid #26384b}"` |
 | FND-GAP-DE7EABE998-L000015 | GAP | [web/agent.html](../web/agent.html#L15) | 15 | GAP: 11px;min-width:0}.logo{height:45px;width:45px;border-radius:15px;display:grid;place-items:center;color:#07131e;background:linear-gradient(135deg,#73f0d8,#9bbcff);font-weight:950;font-size:25px;box-shadow:0 8px 30px #67e8df22} | [SRC-DE7EABE998-L000015](../web/agent.html#L15) | `".brand{display:flex;align-items:center;gap:11px;min-width:0}.logo{height:45px;width:45px;border-radius:15px;display:grid;place-items:center;color:#07131e;background:linear-gradient(135deg,#73f0d8,#9bbcff);font-weight:950;font-size:25px;box-shadow:0 8px 30px #67e8df22}"` |
 | FND-GAP-DE7EABE998-L000017-M01 | GAP | [web/agent.html](../web/agent.html#L17) | 17 | GAP: 8px}.status{display:flex; | [SRC-DE7EABE998-L000017](../web/agent.html#L17) | `".top-actions{display:flex;align-items:center;gap:8px}.status{display:flex;gap:8px;align-items:center;padding:8px 11px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:#8394aa;flex:none}.dot.ok{background:var(--green);box-shadow:0 0 11px #84e0a966}.dot.warn{background:var(--amber)}.dot.bad{background:var(--red)}"` |

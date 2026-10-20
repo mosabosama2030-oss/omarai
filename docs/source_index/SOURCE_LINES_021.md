@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000039 إلى SRC-829A979985-L000450
+- النطاق: SRC-FA4E1423C3-L000039 إلى SRC-829A979985-L000425
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -366,6 +366,31 @@
 | [SRC-FA4E1423C3-L000386](../../tests/test_generate_index.py#L386) | 386 | `"    assert \"never-print-this-secret\" not in report"` | — |
 | [SRC-FA4E1423C3-L000387](../../tests/test_generate_index.py#L387) | 387 | `"    assert \"PRIVATE_API_TOKEN\" not in report"` | — |
 | [SRC-FA4E1423C3-L000388](../../tests/test_generate_index.py#L388) | 388 | `"    assert \"PRIVATE = True\" not in report"` | — |
+| [SRC-FA4E1423C3-L000389](../../tests/test_generate_index.py#L389) | 389 | `""` | — |
+| [SRC-FA4E1423C3-L000390](../../tests/test_generate_index.py#L390) | 390 | `""` | — |
+| [SRC-FA4E1423C3-L000391](../../tests/test_generate_index.py#L391) | 391 | `"def test_multiple_review_markers_on_one_line_each_get_a_unique_finding_code("` | — |
+| [SRC-FA4E1423C3-L000392](../../tests/test_generate_index.py#L392) | 392 | `"    tmp_path: Path,"` | — |
+| [SRC-FA4E1423C3-L000393](../../tests/test_generate_index.py#L393) | 393 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000394](../../tests/test_generate_index.py#L394) | 394 | `"    \"\"\"Different and repeated review tags on a single line must not overwrite each other.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000395](../../tests/test_generate_index.py#L395) | 395 | `"    source_file = tmp_path / \"module.py\""` | — |
+| [SRC-FA4E1423C3-L000396](../../tests/test_generate_index.py#L396) | 396 | `"    source_file.write_text("` | — |
+| [SRC-FA4E1423C3-L000397](../../tests/test_generate_index.py#L397) | 397 | `"        \"# BUG: first defect; FIXME: repair it; BUG: second defect\\n\","` | FND-BUG-FA4E1423C3-L000397-M01, FND-BUG-FA4E1423C3-L000397-M02, FND-FIXME-FA4E1423C3-L000397 |
+| [SRC-FA4E1423C3-L000398](../../tests/test_generate_index.py#L398) | 398 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000399](../../tests/test_generate_index.py#L399) | 399 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000400](../../tests/test_generate_index.py#L400) | 400 | `""` | — |
+| [SRC-FA4E1423C3-L000401](../../tests/test_generate_index.py#L401) | 401 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000402](../../tests/test_generate_index.py#L402) | 402 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
+| [SRC-FA4E1423C3-L000403](../../tests/test_generate_index.py#L403) | 403 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
+| [SRC-FA4E1423C3-L000404](../../tests/test_generate_index.py#L404) | 404 | `"    pages, _ = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |
+| [SRC-FA4E1423C3-L000405](../../tests/test_generate_index.py#L405) | 405 | `""` | — |
+| [SRC-FA4E1423C3-L000406](../../tests/test_generate_index.py#L406) | 406 | `"    assert len(findings) == 3"` | — |
+| [SRC-FA4E1423C3-L000407](../../tests/test_generate_index.py#L407) | 407 | `"    assert {item.marker for item in findings} == {\"BUG\", \"FIXME\"}"` | — |
+| [SRC-FA4E1423C3-L000408](../../tests/test_generate_index.py#L408) | 408 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
+| [SRC-FA4E1423C3-L000409](../../tests/test_generate_index.py#L409) | 409 | `"    bug_ids = [item.finding_id for item in findings if item.marker == \"BUG\"]"` | — |
+| [SRC-FA4E1423C3-L000410](../../tests/test_generate_index.py#L410) | 410 | `"    assert any(item.endswith(\"-M01\") for item in bug_ids)"` | — |
+| [SRC-FA4E1423C3-L000411](../../tests/test_generate_index.py#L411) | 411 | `"    assert any(item.endswith(\"-M02\") for item in bug_ids)"` | — |
+| [SRC-FA4E1423C3-L000412](../../tests/test_generate_index.py#L412) | 412 | `"    page_content = \"\\n\".join(pages.values())"` | — |
+| [SRC-FA4E1423C3-L000413](../../tests/test_generate_index.py#L413) | 413 | `"    assert all(item.finding_id in page_content for item in findings)"` | — |
 ## اختبارات
 
 ### FILE-829A979985 — [tests/test_generation_acceptance_matrix.py](../../tests/test_generation_acceptance_matrix.py#L1)
@@ -800,28 +825,3 @@
 | [SRC-829A979985-L000423](../../tests/test_generation_acceptance_matrix.py#L423) | 423 | `"                \"pages_fetched\": 0,"` | — |
 | [SRC-829A979985-L000424](../../tests/test_generation_acceptance_matrix.py#L424) | 424 | `"                \"providers_used\": [],"` | — |
 | [SRC-829A979985-L000425](../../tests/test_generation_acceptance_matrix.py#L425) | 425 | `"                \"provider_diagnostics\": ["` | — |
-| [SRC-829A979985-L000426](../../tests/test_generation_acceptance_matrix.py#L426) | 426 | `"                    {\"provider\": \"duckduckgo_html\", \"status\": \"failed\"},"` | — |
-| [SRC-829A979985-L000427](../../tests/test_generation_acceptance_matrix.py#L427) | 427 | `"                    {\"provider\": \"bing_rss\", \"status\": \"timeout\"},"` | — |
-| [SRC-829A979985-L000428](../../tests/test_generation_acceptance_matrix.py#L428) | 428 | `"                ],"` | — |
-| [SRC-829A979985-L000429](../../tests/test_generation_acceptance_matrix.py#L429) | 429 | `"                \"evidence_signals\": {},"` | — |
-| [SRC-829A979985-L000430](../../tests/test_generation_acceptance_matrix.py#L430) | 430 | `"            },"` | — |
-| [SRC-829A979985-L000431](../../tests/test_generation_acceptance_matrix.py#L431) | 431 | `"        ),"` | — |
-| [SRC-829A979985-L000432](../../tests/test_generation_acceptance_matrix.py#L432) | 432 | `"    )"` | — |
-| [SRC-829A979985-L000433](../../tests/test_generation_acceptance_matrix.py#L433) | 433 | `"    monkeypatch.setattr("` | — |
-| [SRC-829A979985-L000434](../../tests/test_generation_acceptance_matrix.py#L434) | 434 | `"        agent,"` | — |
-| [SRC-829A979985-L000435](../../tests/test_generation_acceptance_matrix.py#L435) | 435 | `"        \"_generate\","` | — |
-| [SRC-829A979985-L000436](../../tests/test_generation_acceptance_matrix.py#L436) | 436 | `"        lambda *args, **kwargs: pytest.fail(\"No final synthesis without usable sources\"),"` | — |
-| [SRC-829A979985-L000437](../../tests/test_generation_acceptance_matrix.py#L437) | 437 | `"    )"` | — |
-| [SRC-829A979985-L000438](../../tests/test_generation_acceptance_matrix.py#L438) | 438 | `""` | — |
-| [SRC-829A979985-L000439](../../tests/test_generation_acceptance_matrix.py#L439) | 439 | `"    result = agent.answer(question)"` | — |
-| [SRC-829A979985-L000440](../../tests/test_generation_acceptance_matrix.py#L440) | 440 | `""` | — |
-| [SRC-829A979985-L000441](../../tests/test_generation_acceptance_matrix.py#L441) | 441 | `"    assert result[\"search_attempted\"] is True"` | — |
-| [SRC-829A979985-L000442](../../tests/test_generation_acceptance_matrix.py#L442) | 442 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-829A979985-L000443](../../tests/test_generation_acceptance_matrix.py#L443) | 443 | `"    assert result[\"search_report\"][\"search_outcome\"] == \"attempted_no_usable_sources\""` | — |
-| [SRC-829A979985-L000444](../../tests/test_generation_acceptance_matrix.py#L444) | 444 | `"    assert result[\"final_answer_status\"] == \"insufficient_evidence_no_generation\""` | — |
-| [SRC-829A979985-L000445](../../tests/test_generation_acceptance_matrix.py#L445) | 445 | `"    assert result[\"used_language_model\"] is False"` | — |
-| [SRC-829A979985-L000446](../../tests/test_generation_acceptance_matrix.py#L446) | 446 | `"    assert result[\"research_quality\"] == \"failed\""` | — |
-| [SRC-829A979985-L000447](../../tests/test_generation_acceptance_matrix.py#L447) | 447 | `""` | — |
-| [SRC-829A979985-L000448](../../tests/test_generation_acceptance_matrix.py#L448) | 448 | `""` | — |
-| [SRC-829A979985-L000449](../../tests/test_generation_acceptance_matrix.py#L449) | 449 | `"def test_research_exception_does_not_claim_no_results_or_no_search(monkeypatch):"` | — |
-| [SRC-829A979985-L000450](../../tests/test_generation_acceptance_matrix.py#L450) | 450 | `"    agent = WebAgent()"` | — |

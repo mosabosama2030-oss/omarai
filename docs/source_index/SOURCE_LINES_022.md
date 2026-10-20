@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000451 إلى SRC-4397BC2CD2-L000111
+- النطاق: SRC-829A979985-L000426 إلى SRC-4397BC2CD2-L000086
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000426](../../tests/test_generation_acceptance_matrix.py#L426) | 426 | `"                    {\"provider\": \"duckduckgo_html\", \"status\": \"failed\"},"` | — |
+| [SRC-829A979985-L000427](../../tests/test_generation_acceptance_matrix.py#L427) | 427 | `"                    {\"provider\": \"bing_rss\", \"status\": \"timeout\"},"` | — |
+| [SRC-829A979985-L000428](../../tests/test_generation_acceptance_matrix.py#L428) | 428 | `"                ],"` | — |
+| [SRC-829A979985-L000429](../../tests/test_generation_acceptance_matrix.py#L429) | 429 | `"                \"evidence_signals\": {},"` | — |
+| [SRC-829A979985-L000430](../../tests/test_generation_acceptance_matrix.py#L430) | 430 | `"            },"` | — |
+| [SRC-829A979985-L000431](../../tests/test_generation_acceptance_matrix.py#L431) | 431 | `"        ),"` | — |
+| [SRC-829A979985-L000432](../../tests/test_generation_acceptance_matrix.py#L432) | 432 | `"    )"` | — |
+| [SRC-829A979985-L000433](../../tests/test_generation_acceptance_matrix.py#L433) | 433 | `"    monkeypatch.setattr("` | — |
+| [SRC-829A979985-L000434](../../tests/test_generation_acceptance_matrix.py#L434) | 434 | `"        agent,"` | — |
+| [SRC-829A979985-L000435](../../tests/test_generation_acceptance_matrix.py#L435) | 435 | `"        \"_generate\","` | — |
+| [SRC-829A979985-L000436](../../tests/test_generation_acceptance_matrix.py#L436) | 436 | `"        lambda *args, **kwargs: pytest.fail(\"No final synthesis without usable sources\"),"` | — |
+| [SRC-829A979985-L000437](../../tests/test_generation_acceptance_matrix.py#L437) | 437 | `"    )"` | — |
+| [SRC-829A979985-L000438](../../tests/test_generation_acceptance_matrix.py#L438) | 438 | `""` | — |
+| [SRC-829A979985-L000439](../../tests/test_generation_acceptance_matrix.py#L439) | 439 | `"    result = agent.answer(question)"` | — |
+| [SRC-829A979985-L000440](../../tests/test_generation_acceptance_matrix.py#L440) | 440 | `""` | — |
+| [SRC-829A979985-L000441](../../tests/test_generation_acceptance_matrix.py#L441) | 441 | `"    assert result[\"search_attempted\"] is True"` | — |
+| [SRC-829A979985-L000442](../../tests/test_generation_acceptance_matrix.py#L442) | 442 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-829A979985-L000443](../../tests/test_generation_acceptance_matrix.py#L443) | 443 | `"    assert result[\"search_report\"][\"search_outcome\"] == \"attempted_no_usable_sources\""` | — |
+| [SRC-829A979985-L000444](../../tests/test_generation_acceptance_matrix.py#L444) | 444 | `"    assert result[\"final_answer_status\"] == \"insufficient_evidence_no_generation\""` | — |
+| [SRC-829A979985-L000445](../../tests/test_generation_acceptance_matrix.py#L445) | 445 | `"    assert result[\"used_language_model\"] is False"` | — |
+| [SRC-829A979985-L000446](../../tests/test_generation_acceptance_matrix.py#L446) | 446 | `"    assert result[\"research_quality\"] == \"failed\""` | — |
+| [SRC-829A979985-L000447](../../tests/test_generation_acceptance_matrix.py#L447) | 447 | `""` | — |
+| [SRC-829A979985-L000448](../../tests/test_generation_acceptance_matrix.py#L448) | 448 | `""` | — |
+| [SRC-829A979985-L000449](../../tests/test_generation_acceptance_matrix.py#L449) | 449 | `"def test_research_exception_does_not_claim_no_results_or_no_search(monkeypatch):"` | — |
+| [SRC-829A979985-L000450](../../tests/test_generation_acceptance_matrix.py#L450) | 450 | `"    agent = WebAgent()"` | — |
 | [SRC-829A979985-L000451](../../tests/test_generation_acceptance_matrix.py#L451) | 451 | `"    question = \"ابحث عن أحدث معلومات حول الطاقة المتجددة\""` | — |
 | [SRC-829A979985-L000452](../../tests/test_generation_acceptance_matrix.py#L452) | 452 | `""` | — |
 | [SRC-829A979985-L000453](../../tests/test_generation_acceptance_matrix.py#L453) | 453 | `"    monkeypatch.setattr("` | — |
@@ -827,28 +852,3 @@
 | [SRC-4397BC2CD2-L000084](../../tests/test_intent_router_integration.py#L84) | 84 | `"    agent = WebAgent()"` | — |
 | [SRC-4397BC2CD2-L000085](../../tests/test_intent_router_integration.py#L85) | 85 | `"    agent.api_key = \"\"  # Keep this acceptance test deterministic and offline."` | — |
 | [SRC-4397BC2CD2-L000086](../../tests/test_intent_router_integration.py#L86) | 86 | `"    seen: dict = {}"` | — |
-| [SRC-4397BC2CD2-L000087](../../tests/test_intent_router_integration.py#L87) | 87 | `"    history = ["` | — |
-| [SRC-4397BC2CD2-L000088](../../tests/test_intent_router_integration.py#L88) | 88 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 في مصر\"},"` | — |
-| [SRC-4397BC2CD2-L000089](../../tests/test_intent_router_integration.py#L89) | 89 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن هاتف iPhone 17 في السوق المصري.\"},"` | — |
-| [SRC-4397BC2CD2-L000090](../../tests/test_intent_router_integration.py#L90) | 90 | `"    ]"` | — |
-| [SRC-4397BC2CD2-L000091](../../tests/test_intent_router_integration.py#L91) | 91 | `""` | — |
-| [SRC-4397BC2CD2-L000092](../../tests/test_intent_router_integration.py#L92) | 92 | `"    def collect(plan):"` | — |
-| [SRC-4397BC2CD2-L000093](../../tests/test_intent_router_integration.py#L93) | 93 | `"        seen[\"plan\"] = dict(plan)"` | — |
-| [SRC-4397BC2CD2-L000094](../../tests/test_intent_router_integration.py#L94) | 94 | `"        sources = ["` | — |
-| [SRC-4397BC2CD2-L000095](../../tests/test_intent_router_integration.py#L95) | 95 | `"            _evidence(\"example.com\", plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000096](../../tests/test_intent_router_integration.py#L96) | 96 | `"            _evidence(\"example.net\", plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000097](../../tests/test_intent_router_integration.py#L97) | 97 | `"        ]"` | — |
-| [SRC-4397BC2CD2-L000098](../../tests/test_intent_router_integration.py#L98) | 98 | `"        return sources, [], _report(plan, sources)"` | — |
-| [SRC-4397BC2CD2-L000099](../../tests/test_intent_router_integration.py#L99) | 99 | `""` | — |
-| [SRC-4397BC2CD2-L000100](../../tests/test_intent_router_integration.py#L100) | 100 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-4397BC2CD2-L000101](../../tests/test_intent_router_integration.py#L101) | 101 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
-| [SRC-4397BC2CD2-L000102](../../tests/test_intent_router_integration.py#L102) | 102 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"توجد أسعار مختلفة حسب النسخة [المصدر 1].\")"` | — |
-| [SRC-4397BC2CD2-L000103](../../tests/test_intent_router_integration.py#L103) | 103 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-4397BC2CD2-L000104](../../tests/test_intent_router_integration.py#L104) | 104 | `""` | — |
-| [SRC-4397BC2CD2-L000105](../../tests/test_intent_router_integration.py#L105) | 105 | `"    result = agent.answer(\"كام سعرها؟\", history=history)"` | — |
-| [SRC-4397BC2CD2-L000106](../../tests/test_intent_router_integration.py#L106) | 106 | `""` | — |
-| [SRC-4397BC2CD2-L000107](../../tests/test_intent_router_integration.py#L107) | 107 | `"    assert result[\"intent_route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-4397BC2CD2-L000108](../../tests/test_intent_router_integration.py#L108) | 108 | `"    assert result[\"research_plan\"][\"intent_route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-4397BC2CD2-L000109](../../tests/test_intent_router_integration.py#L109) | 109 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-4397BC2CD2-L000110](../../tests/test_intent_router_integration.py#L110) | 110 | `"    assert result[\"citation_validation\"][\"method\"] == \"numeric_source_index_range_only\""` | — |
-| [SRC-4397BC2CD2-L000111](../../tests/test_intent_router_integration.py#L111) | 111 | `"    assert result[\"search_report\"][\"citation_validation\"] == result[\"citation_validation\"]"` | — |

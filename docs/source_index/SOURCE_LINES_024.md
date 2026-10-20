@@ -4,9 +4,38 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000006 إلى SRC-F725E90B2A-L000805
+- النطاق: SRC-1C0D3D1206-L000086 إلى SRC-F725E90B2A-L000780
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-1C0D3D1206 — [tests/test_sqlite_backup_restore.py](../../tests/test_sqlite_backup_restore.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1C0D3D1206-L000086](../../tests/test_sqlite_backup_restore.py#L86) | 86 | `""` | — |
+| [SRC-1C0D3D1206-L000087](../../tests/test_sqlite_backup_restore.py#L87) | 87 | `"    with pytest.raises(BackupError):"` | — |
+| [SRC-1C0D3D1206-L000088](../../tests/test_sqlite_backup_restore.py#L88) | 88 | `"        restore_database(backup_path, destination)"` | — |
+| [SRC-1C0D3D1206-L000089](../../tests/test_sqlite_backup_restore.py#L89) | 89 | `""` | — |
+| [SRC-1C0D3D1206-L000090](../../tests/test_sqlite_backup_restore.py#L90) | 90 | `"    assert backup_path.read_bytes() == b\"not a sqlite database\""` | — |
+| [SRC-1C0D3D1206-L000091](../../tests/test_sqlite_backup_restore.py#L91) | 91 | `"    assert not destination.exists()"` | — |
+| [SRC-1C0D3D1206-L000092](../../tests/test_sqlite_backup_restore.py#L92) | 92 | `""` | — |
+| [SRC-1C0D3D1206-L000093](../../tests/test_sqlite_backup_restore.py#L93) | 93 | `"def test_backup_rejects_dangling_symlink_destination(tmp_path):"` | — |
+| [SRC-1C0D3D1206-L000094](../../tests/test_sqlite_backup_restore.py#L94) | 94 | `"    source_path = tmp_path / \"source.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000095](../../tests/test_sqlite_backup_restore.py#L95) | 95 | `"    LeadStore(source_path)"` | — |
+| [SRC-1C0D3D1206-L000096](../../tests/test_sqlite_backup_restore.py#L96) | 96 | `"    target_path = tmp_path / \"target.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000097](../../tests/test_sqlite_backup_restore.py#L97) | 97 | `"    destination_link = tmp_path / \"backup-link.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000098](../../tests/test_sqlite_backup_restore.py#L98) | 98 | `"    destination_link.symlink_to(target_path)"` | — |
+| [SRC-1C0D3D1206-L000099](../../tests/test_sqlite_backup_restore.py#L99) | 99 | `""` | — |
+| [SRC-1C0D3D1206-L000100](../../tests/test_sqlite_backup_restore.py#L100) | 100 | `"    with pytest.raises(FileExistsError):"` | — |
+| [SRC-1C0D3D1206-L000101](../../tests/test_sqlite_backup_restore.py#L101) | 101 | `"        backup_database(source_path, destination_link)"` | — |
+| [SRC-1C0D3D1206-L000102](../../tests/test_sqlite_backup_restore.py#L102) | 102 | `""` | — |
+| [SRC-1C0D3D1206-L000103](../../tests/test_sqlite_backup_restore.py#L103) | 103 | `"    assert destination_link.is_symlink()"` | — |
+| [SRC-1C0D3D1206-L000104](../../tests/test_sqlite_backup_restore.py#L104) | 104 | `"    assert not target_path.exists()"` | — |
+| [SRC-1C0D3D1206-L000105](../../tests/test_sqlite_backup_restore.py#L105) | 105 | `""` | — |
 ## اختبارات
 
 ### FILE-F725E90B2A — [tests/test_web_agent.py](../../tests/test_web_agent.py#L1)
@@ -16,6 +45,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000001](../../tests/test_web_agent.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-F725E90B2A-L000002](../../tests/test_web_agent.py#L2) | 2 | `""` | — |
+| [SRC-F725E90B2A-L000003](../../tests/test_web_agent.py#L3) | 3 | `"from pathlib import Path"` | — |
+| [SRC-F725E90B2A-L000004](../../tests/test_web_agent.py#L4) | 4 | `""` | — |
+| [SRC-F725E90B2A-L000005](../../tests/test_web_agent.py#L5) | 5 | `"import pytest"` | — |
 | [SRC-F725E90B2A-L000006](../../tests/test_web_agent.py#L6) | 6 | `""` | — |
 | [SRC-F725E90B2A-L000007](../../tests/test_web_agent.py#L7) | 7 | `"from agents.web_agent import ("` | — |
 | [SRC-F725E90B2A-L000008](../../tests/test_web_agent.py#L8) | 8 | `"    WebAgent,"` | — |
@@ -791,28 +825,3 @@
 | [SRC-F725E90B2A-L000778](../../tests/test_web_agent.py#L778) | 778 | `""` | — |
 | [SRC-F725E90B2A-L000779](../../tests/test_web_agent.py#L779) | 779 | `"    def fake_urlopen(request, timeout):"` | — |
 | [SRC-F725E90B2A-L000780](../../tests/test_web_agent.py#L780) | 780 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
-| [SRC-F725E90B2A-L000781](../../tests/test_web_agent.py#L781) | 781 | `"        called.append(model)"` | — |
-| [SRC-F725E90B2A-L000782](../../tests/test_web_agent.py#L782) | 782 | `"        choices = ("` | — |
-| [SRC-F725E90B2A-L000783](../../tests/test_web_agent.py#L783) | 783 | `"            [\"malformed choice\"]"` | — |
-| [SRC-F725E90B2A-L000784](../../tests/test_web_agent.py#L784) | 784 | `"            if model == \"broken/primary\""` | — |
-| [SRC-F725E90B2A-L000785](../../tests/test_web_agent.py#L785) | 785 | `"            else [{\"message\": {\"content\": \"fallback answer\"}, \"finish_reason\": \"stop\"}]"` | — |
-| [SRC-F725E90B2A-L000786](../../tests/test_web_agent.py#L786) | 786 | `"        )"` | — |
-| [SRC-F725E90B2A-L000787](../../tests/test_web_agent.py#L787) | 787 | `"        return FakeResponse(json.dumps({\"choices\": choices}).encode(\"utf-8\"))"` | — |
-| [SRC-F725E90B2A-L000788](../../tests/test_web_agent.py#L788) | 788 | `""` | — |
-| [SRC-F725E90B2A-L000789](../../tests/test_web_agent.py#L789) | 789 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-F725E90B2A-L000790](../../tests/test_web_agent.py#L790) | 790 | `"    result = agent._request_completion("` | — |
-| [SRC-F725E90B2A-L000791](../../tests/test_web_agent.py#L791) | 791 | `"        [{\"role\": \"user\", \"content\": \"test\"}],"` | — |
-| [SRC-F725E90B2A-L000792](../../tests/test_web_agent.py#L792) | 792 | `"        model=\"broken/primary\","` | — |
-| [SRC-F725E90B2A-L000793](../../tests/test_web_agent.py#L793) | 793 | `"    )"` | — |
-| [SRC-F725E90B2A-L000794](../../tests/test_web_agent.py#L794) | 794 | `""` | — |
-| [SRC-F725E90B2A-L000795](../../tests/test_web_agent.py#L795) | 795 | `"    assert result == \"fallback answer\""` | — |
-| [SRC-F725E90B2A-L000796](../../tests/test_web_agent.py#L796) | 796 | `"    assert called == [\"broken/primary\", \"fallback/model\"]"` | — |
-| [SRC-F725E90B2A-L000797](../../tests/test_web_agent.py#L797) | 797 | `""` | — |
-| [SRC-F725E90B2A-L000798](../../tests/test_web_agent.py#L798) | 798 | `""` | — |
-| [SRC-F725E90B2A-L000799](../../tests/test_web_agent.py#L799) | 799 | `"def test_health_status_reports_models_without_credentials(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000800](../../tests/test_web_agent.py#L800) | 800 | `"    monkeypatch.delenv(\"OPENROUTER_API_KEY\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000801](../../tests/test_web_agent.py#L801) | 801 | `"    monkeypatch.delenv(\"OMARAI_LLM_API_KEY\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000802](../../tests/test_web_agent.py#L802) | 802 | `"    status = WebAgent.status()"` | — |
-| [SRC-F725E90B2A-L000803](../../tests/test_web_agent.py#L803) | 803 | `"    assert status[\"planner_model\"] == \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
-| [SRC-F725E90B2A-L000804](../../tests/test_web_agent.py#L804) | 804 | `"    assert status[\"answer_model\"] == \"google/gemma-4-31b-it:free\""` | — |
-| [SRC-F725E90B2A-L000805](../../tests/test_web_agent.py#L805) | 805 | `"    assert status[\"fallback_model\"] == \"openrouter/free\""` | — |
