@@ -2625,3 +2625,44 @@ def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):
     else:
         assert plan["social_focus"] is True
         assert any(query.startswith("site:") for query in plan["queries"])
+
+
+def test_web_answer_integrity_is_attached_without_live_network(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(agent, "_question_coverage_targets", lambda question: ["السعر", "المساحة"])
+    monkeypatch.setattr(agent, "_answer_with_budget", lambda question, history, mode: {
+        "kind": "web_research",
+        "answer": "السعر 500 جنيه [المصدر 1].",
+        "sources": [{
+            "title": "تفاصيل العرض",
+            "url": "https://example.com/offer",
+            "snippet": "السعر 300 جنيه",
+            "page_fetched": False,
+        }],
+        "research_quality": "partial",
+        "search_report": {},
+        "answer_coverage": {},
+        "used_language_model": True,
+        "used_web_search": True,
+        "warnings": [],
+    })
+
+    result = agent.answer("قارن السعر والمساحة", mode="auto")
+
+    assert result["answer_integrity"]["semantic_verification"] is False
+    assert result["answer_integrity"]["independent_fact_check"] is False
+    assert result["answer_integrity"]["potentially_unsupported_numeric_count"] == 1
+    assert result["answer_integrity"]["potentially_unsupported_numeric_by_citation_count"] == 1
+    assert result["answer_integrity"]["potentially_missing_target_count"] == 1
+    assert result["task_fulfillment_status"] == "possible_gap_detected"
+    assert result["answer_coverage"]["lexical_screen_method"] == (
+        "deterministic_lexical_screen_only_not_semantic_grading"
+    )
+
+
+def test_frontend_labels_answer_integrity_screen_as_non_semantic():
+    html = (Path(__file__).resolve().parents[1] / "web" / "agent.html").read_text(encoding="utf-8")
+    assert "فحص لفظي أولي:" in html
+    assert "لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد" in html
+    assert "potentially_unsupported_numeric_by_citation_count" in html
+    assert "potential_value_discrepancy_count" in html
