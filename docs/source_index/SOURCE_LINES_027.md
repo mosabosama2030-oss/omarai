@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **027**
-- سجلات الأسطر: **731**
-- النطاق: SRC-F725E90B2A-L002088 إلى SRC-A16FA6D4B5-L000044
+- سجلات الأسطر: **733**
+- النطاق: SRC-F725E90B2A-L002086 إلى SRC-A16FA6D4B5-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002086](../../tests/test_web_agent.py#L2086) | 2086 | `""` | — |
+| [SRC-F725E90B2A-L002087](../../tests/test_web_agent.py#L2087) | 2087 | `"def test_buyer_intent_evidence_requires_explicit_purchase_signal():"` | — |
 | [SRC-F725E90B2A-L002088](../../tests/test_web_agent.py#L2088) | 2088 | `"    listing = {"` | — |
 | [SRC-F725E90B2A-L002089](../../tests/test_web_agent.py#L2089) | 2089 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
 | [SRC-F725E90B2A-L002090](../../tests/test_web_agent.py#L2090) | 2090 | `"        \"snippet\": \"أفضل شقق للبيع بالتقسيط\","` | — |

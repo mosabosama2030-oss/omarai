@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000488 إلى SRC-F725E90B2A-L001287
+- النطاق: SRC-F725E90B2A-L000486 إلى SRC-F725E90B2A-L001285
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000486](../../tests/test_web_agent.py#L486) | 486 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L000487](../../tests/test_web_agent.py#L487) | 487 | `""` | — |
 | [SRC-F725E90B2A-L000488](../../tests/test_web_agent.py#L488) | 488 | `"        def json(self):"` | — |
 | [SRC-F725E90B2A-L000489](../../tests/test_web_agent.py#L489) | 489 | `"            return {\"data\": [{"` | — |
 | [SRC-F725E90B2A-L000490](../../tests/test_web_agent.py#L490) | 490 | `"                \"message\": \"Electric car owners looking for charging advice\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001283](../../tests/test_web_agent.py#L1283) | 1283 | `"        return \"إجابة اختبارية.\""` | — |
 | [SRC-F725E90B2A-L001284](../../tests/test_web_agent.py#L1284) | 1284 | `""` | — |
 | [SRC-F725E90B2A-L001285](../../tests/test_web_agent.py#L1285) | 1285 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001286](../../tests/test_web_agent.py#L1286) | 1286 | `"    answer = agent._generate("` | — |
-| [SRC-F725E90B2A-L001287](../../tests/test_web_agent.py#L1287) | 1287 | `"        question=\"ما الذي يقوله المصدر؟\","` | — |

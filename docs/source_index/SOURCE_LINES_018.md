@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000329 إلى SRC-90FAA34ADE-L001128
+- النطاق: SRC-90FAA34ADE-L000327 إلى SRC-90FAA34ADE-L001126
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000327](../../tests/fixtures/answer_quality_cases.json#L327) | 327 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000328](../../tests/fixtures/answer_quality_cases.json#L328) | 328 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000329](../../tests/fixtures/answer_quality_cases.json#L329) | 329 | `"      \"case_id\": \"AQ-014\","` | — |
 | [SRC-90FAA34ADE-L000330](../../tests/fixtures/answer_quality_cases.json#L330) | 330 | `"      \"category\": \"spelling_variation\","` | — |
 | [SRC-90FAA34ADE-L000331](../../tests/fixtures/answer_quality_cases.json#L331) | 331 | `"      \"language\": \"mixed\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-90FAA34ADE-L001124](../../tests/fixtures/answer_quality_cases.json#L1124) | 1124 | `"      \"category\": \"empty_or_failed_search\","` | — |
 | [SRC-90FAA34ADE-L001125](../../tests/fixtures/answer_quality_cases.json#L1125) | 1125 | `"      \"language\": \"ar-MSA\","` | — |
 | [SRC-90FAA34ADE-L001126](../../tests/fixtures/answer_quality_cases.json#L1126) | 1126 | `"      \"question\": \"ابحث عن إعلان رسمي محدد باسم «برنامج النور 2026»، لكن بيئة الاختبار لا تسمح إلا بنتائج فارغة.\","` | — |
-| [SRC-90FAA34ADE-L001127](../../tests/fixtures/answer_quality_cases.json#L1127) | 1127 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001128](../../tests/fixtures/answer_quality_cases.json#L1128) | 1128 | `"      \"required_behaviors\": ["` | — |
