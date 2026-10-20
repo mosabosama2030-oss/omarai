@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+from dataclasses import replace
 import sys
 from pathlib import Path
 
@@ -354,11 +355,14 @@ def test_source_line_coverage_validator_rejects_missing_or_duplicate_lines(tmp_p
     inventory = INDEXER.build_file_inventory(tmp_path)
     lines = INDEXER.scan_source_lines(tmp_path, inventory)
 
-    INDEXER.validate_source_line_coverage(inventory, lines)
+    INDEXER.validate_source_line_coverage(tmp_path, inventory, lines)
     with pytest.raises(INDEXER.IndexGenerationError, match="اكتمال فهرسة السطور"):
-        INDEXER.validate_source_line_coverage(inventory, lines[:-1])
+        INDEXER.validate_source_line_coverage(tmp_path, inventory, lines[:-1])
     with pytest.raises(INDEXER.IndexGenerationError, match="معرّف SRC مكرر"):
-        INDEXER.validate_source_line_coverage(inventory, lines + [lines[0]])
+        INDEXER.validate_source_line_coverage(tmp_path, inventory, lines + [lines[0]])
+    corrupted = [replace(lines[0], content="not the source"), *lines[1:]]
+    with pytest.raises(INDEXER.IndexGenerationError, match="نص السطر لا يطابق المصدر"):
+        INDEXER.validate_source_line_coverage(tmp_path, inventory, corrupted)
 
 
 def test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secrets(
@@ -373,7 +377,7 @@ def test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secre
 
     inventory = INDEXER.build_file_inventory(tmp_path)
     lines = INDEXER.scan_source_lines(tmp_path, inventory)
-    INDEXER.validate_source_line_coverage(inventory, lines)
+    INDEXER.validate_source_line_coverage(tmp_path, inventory, lines)
     exclusions = INDEXER.discover_excluded_paths(tmp_path)
     report = INDEXER.render_coverage_audit_markdown(tmp_path, inventory, lines, exclusions)
 
