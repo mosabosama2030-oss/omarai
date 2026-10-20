@@ -670,11 +670,13 @@ def validate_source_line_coverage(
             continue
 
         expected_contents = expected_lines_by_file.get(source_line.file, [])
-        if source_line.line <= len(expected_contents):
-            if source_line.content != expected_contents[source_line.line - 1]:
-                failures.append(
-                    f"{source_line.file}:{source_line.line}: نص السطر لا يطابق المصدر"
-                )
+        if (
+            source_line.line <= len(expected_contents)
+            and source_line.content != expected_contents[source_line.line - 1]
+        ):
+            failures.append(
+                f"{source_line.file}:{source_line.line}: نص السطر لا يطابق المصدر"
+            )
 
         expected_line_id = _source_line_id(source_line.file, source_line.line)
         if source_line.line_id != expected_line_id:
