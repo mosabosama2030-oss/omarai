@@ -122,7 +122,35 @@ INI_SECTION_RE = re.compile(r"^\s*\[([^\]]+)\]\s*$", re.MULTILINE)
 INI_KEY_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*=", re.MULTILINE)
 UPPER_SNAKE_RE = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
 API_PATH_RE = re.compile(r"""["'](/(?:api|leads)(?:/[A-Za-z0-9_{}./-]+)*)["']""")
-FINDING_MARKER_RE = re.compile(r"\b(TODO|FIXME|BUG|HACK|XXX|REVIEW|SECURITY|DEPRECATED)\b\s*[:#-]\s*(.*)", re.IGNORECASE)
+FINDING_MARKER_NAMES = (
+    "TODO",
+    "FIXME",
+    "BUG",
+    "HACK",
+    "XXX",
+    "REVIEW",
+    "SECURITY",
+    "DEPRECATED",
+    "ISSUE",
+    "DEFECT",
+    "REGRESSION",
+    "RISK",
+    "GAP",
+    "ERROR",
+    "WARNING",
+    "PERF",
+    "PRIVACY",
+    "DATA_LOSS",
+    "ACCESSIBILITY",
+)
+_FINDING_MARKER_ALTERNATION = "|".join(
+    sorted(FINDING_MARKER_NAMES, key=len, reverse=True)
+)
+FINDING_MARKER_RE = re.compile(
+    rf"\b({_FINDING_MARKER_ALTERNATION})\b\s*[:#-]\s*(.*?)"
+    rf"(?=\b(?:{_FINDING_MARKER_ALTERNATION})\b\s*[:#-]|$)",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -611,6 +639,15 @@ def validate_source_line_coverage(
             failures.append(f"{source_line.file}: سجل سطر لملف غير مؤهل")
             continue
         actual_lines[source_line.file].append(source_line.line)
+        expected_line_id = _source_line_id(source_line.file, source_line.line)
+        if source_line.line_id != expected_line_id:
+            failures.append(
+                f"{source_line.file}:{source_line.line}: كود SRC لا يطابق المسار ورقم السطر"
+            )
+        if source_line.file_id != _stable_file_id(source_line.file):
+            failures.append(
+                f"{source_line.file}:{source_line.line}: كود FILE لا يطابق مسار الملف"
+            )
         if source_line.line_id in seen_ids:
             failures.append(f"{source_line.file}:{source_line.line}: معرّف SRC مكرر")
         seen_ids.add(source_line.line_id)
@@ -998,24 +1035,34 @@ def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFin
     """Index explicit review/fix markers; they are hints for review, not proven defects."""
     findings: list[IndexedFinding] = []
     for source_line in source_lines:
-        match = FINDING_MARKER_RE.search(source_line.content)
-        if match is None:
+        matches = list(FINDING_MARKER_RE.finditer(source_line.content))
+        if not matches:
             continue
-        marker = match.group(1).upper()
-        detail = (match.group(2) or "").strip()
-        description = marker if not detail else f"{marker}: {detail}"
-        findings.append(
-            IndexedFinding(
-                finding_id=(
-                    f"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}"
-                    f"-L{source_line.line:06d}"
-                ),
-                file=source_line.file,
-                line_id=source_line.line_id,
-                marker=marker,
-                description=description,
+        totals: dict[str, int] = {}
+        for match in matches:
+            key = match.group(1).upper()
+            totals[key] = totals.get(key, 0) + 1
+        occurrences: dict[str, int] = {}
+        for match in matches:
+            marker = match.group(1).upper()
+            occurrences[marker] = occurrences.get(marker, 0) + 1
+            detail = (match.group(2) or "").strip()
+            description = marker if not detail else f"{marker}: {detail}"
+            finding_id = (
+                f"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}"
+                f"-L{source_line.line:06d}"
             )
-        )
+            if totals[marker] > 1:
+                finding_id += f"-M{occurrences[marker]:02d}"
+            findings.append(
+                IndexedFinding(
+                    finding_id=finding_id,
+                    file=source_line.file,
+                    line_id=source_line.line_id,
+                    marker=marker,
+                    description=description,
+                )
+            )
     findings.sort(key=lambda item: (item.marker, item.file.casefold(), item.line_id))
     return findings
 
@@ -1041,7 +1088,9 @@ def render_source_line_pages(
     pages: dict[str, str] = {}
     pages_by_file: dict[str, list[str]] = {}
     inventory_by_path = {item.file: item for item in inventory}
-    findings_by_line = {finding.line_id: finding for finding in findings}
+    findings_by_line: dict[str, list[IndexedFinding]] = {}
+    for finding in findings:
+        findings_by_line.setdefault(finding.line_id, []).append(finding)
 
     for page_number, start in enumerate(
         range(0, len(source_lines), SOURCE_LINES_PAGE_SIZE),
@@ -1078,8 +1127,8 @@ def render_source_line_pages(
                         "|---|---:|---|---|",
                     ]
                 )
-            finding = findings_by_line.get(source_line.line_id)
-            finding_code = finding.finding_id if finding else "—"
+            line_findings = findings_by_line.get(source_line.line_id, [])
+            finding_code = ", ".join(item.finding_id for item in line_findings) or "—"
             exact_text = json.dumps(source_line.content, ensure_ascii=False)
             escaped_text = exact_text.replace("|", r"\|")
             href = _source_file_href(
@@ -1187,7 +1236,7 @@ def render_source_lines_markdown(
             "## سجل وسوم المراجعة والإصلاح",
             "",
             "كل كود FND- في MASTER INDEX يحدد وسمًا صريحًا ويشير إلى كود السطر في إحدى صفحات هذا الفهرس.",
-            "الوسوم المعروفة: TODO وFIXME وBUG وHACK وXXX وREVIEW وSECURITY وDEPRECATED.",
+            "الوسوم المعروفة: TODO وFIXME وBUG وHACK وXXX وREVIEW وSECURITY وDEPRECATED وISSUE وDEFECT وREGRESSION وRISK وGAP وERROR وWARNING وPERF وPRIVACY وDATA_LOSS وACCESSIBILITY.",
             "",
             "## الاستثناءات وحدود التغطية",
             "",
