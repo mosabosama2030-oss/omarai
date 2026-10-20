@@ -1,17 +1,23 @@
-"""Generate Omarai's deterministic Python symbol and docstring inventory."""
+"""Generate Omarai's deterministic repository-wide file and source-symbol index."""
 
 from __future__ import annotations
 
 import argparse
 import ast
+import hashlib
+import json
 import os
+import posixpath
+import re
+import subprocess
 import sys
 import tempfile
 import tokenize
+from io import StringIO
+from urllib.parse import quote
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from collections.abc import Sequence
-
 
 EXCLUDED_DIRECTORIES = frozenset(
     {
@@ -34,33 +40,190 @@ EXCLUDED_DIRECTORIES = frozenset(
         "dist",
     }
 )
+SENSITIVE_FILENAMES = frozenset(
+    {
+        ".env",
+        ".env.local",
+        ".env.production",
+        ".env.development",
+        "id_rsa",
+        "id_ed25519",
+    }
+)
+EXCLUDED_SUFFIXES = frozenset(
+    {
+        ".pyc",
+        ".pyo",
+        ".sqlite",
+        ".sqlite3",
+        ".db",
+        ".pem",
+        ".key",
+        ".p12",
+        ".pfx",
+    }
+)
+MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024
 MAX_DESCRIPTION_LENGTH = 240
+INDEX_RELATIVE_PATH = "docs/MASTER_INDEX.md"
+SOURCE_LINES_INDEX_RELATIVE_PATH = "docs/SOURCE_LINES_INDEX.md"
+COVERAGE_AUDIT_RELATIVE_PATH = "docs/INDEX_COVERAGE_AUDIT.md"
+INDEX_OUTPUT_PATHS = frozenset(
+    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}
+)
+SOURCE_LINES_PAGES_DIR = "docs/source_index"
+SOURCE_LINES_PAGE_SIZE = 800
+SOURCE_LINES_PAGE_RE = re.compile(r"SOURCE_LINES_\d{3,}\.md")
+
+PYTHON_EXTENSIONS = frozenset({".py"})
+JAVASCRIPT_EXTENSIONS = frozenset({".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"})
+CSS_EXTENSIONS = frozenset({".css", ".scss"})
+CONFIG_EXTENSIONS = frozenset({".yml", ".yaml", ".toml", ".json", ".ini", ".cfg"})
+TEXT_SCAN_EXTENSIONS = (
+    PYTHON_EXTENSIONS
+    | JAVASCRIPT_EXTENSIONS
+    | CSS_EXTENSIONS
+    | CONFIG_EXTENSIONS
+    | frozenset({".html", ".htm", ".sh", ".md", ".env.example", ".example"})
+)
+
+JS_IDENTIFIER = r"[A-Za-z_$][A-Za-z0-9_$]*"
+JS_FUNCTION_RE = re.compile(
+    rf"\b(?:async\s+)?function\s*\*?\s+({JS_IDENTIFIER})\s*\("
+)
+JS_CLASS_RE = re.compile(rf"\bclass\s+({JS_IDENTIFIER})\b")
+JS_ARROW_ASSIGNMENT_RE = re.compile(
+    rf"\b(?:const|let|var)\s+({JS_IDENTIFIER})\s*=\s*"
+    rf"(?:async\s*)?(?:\([^;\n]*?\)|{JS_IDENTIFIER})\s*=>"
+)
+JS_FUNCTION_ASSIGNMENT_RE = re.compile(
+    rf"\b(?:const|let|var)\s+({JS_IDENTIFIER})\s*=\s*(?:async\s*)?function\b"
+)
+JS_VARIABLE_RE = re.compile(rf"\b(?:const|let|var)\s+({JS_IDENTIFIER})\b")
+HTML_ATTRIBUTE_RE = re.compile(
+    r"""\b(id|name|data-testid)\s*=\s*(["'])(.*?)\2""",
+    flags=re.IGNORECASE | re.DOTALL,
+)
+HTML_SCRIPT_RE = re.compile(r"<script\b[^>]*>(.*?)</script\s*>", re.IGNORECASE | re.DOTALL)
+HTML_STYLE_RE = re.compile(r"<style\b[^>]*>(.*?)</style\s*>", re.IGNORECASE | re.DOTALL)
+CSS_COMMENT_RE = re.compile(r"/\*.*?\*/", re.DOTALL)
+CSS_CUSTOM_PROPERTY_RE = re.compile(r"--([A-Za-z_][A-Za-z0-9_-]*)\s*:")
+CSS_CLASS_RE = re.compile(r"(?<![\w.-])\.([A-Za-z_][A-Za-z0-9_-]*)")
+CSS_ID_RE = re.compile(r"(?<![\w.#])#([A-Za-z_][A-Za-z0-9_-]*)")
+SHELL_FUNCTION_RE = re.compile(
+    r"^\s*(?:function\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*\(\s*\)\s*\{?",
+    re.MULTILINE,
+)
+MARKDOWN_HEADING_RE = re.compile(r"^\s{0,3}(#{1,6})\s+(.+?)\s*#*\s*$", re.MULTILINE)
+YAML_KEY_RE = re.compile(r"^\s*([A-Za-z_][A-Za-z0-9_.-]*)\s*:", re.MULTILINE)
+TOML_KEY_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*=", re.MULTILINE)
+TOML_SECTION_RE = re.compile(r"^\s*\[([^\]]+)\]\s*$", re.MULTILINE)
+JSON_KEY_RE = re.compile(r'"([^"]+)"\s*:')
+INI_SECTION_RE = re.compile(r"^\s*\[([^\]]+)\]\s*$", re.MULTILINE)
+INI_KEY_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*=", re.MULTILINE)
+UPPER_SNAKE_RE = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
+API_PATH_RE = re.compile(r"""["'](/(?:api|leads)(?:/[A-Za-z0-9_{}./-]+)*)["']""")
+FINDING_MARKER_NAMES = (
+    "TODO",
+    "FIXME",
+    "BUG",
+    "HACK",
+    "XXX",
+    "REVIEW",
+    "SECURITY",
+    "DEPRECATED",
+    "ISSUE",
+    "DEFECT",
+    "REGRESSION",
+    "RISK",
+    "GAP",
+    "ERROR",
+    "WARNING",
+    "PERF",
+    "PRIVACY",
+    "DATA_LOSS",
+    "ACCESSIBILITY",
+)
+_FINDING_MARKER_ALTERNATION = "|".join(
+    sorted(FINDING_MARKER_NAMES, key=len, reverse=True)
+)
+FINDING_MARKER_RE = re.compile(
+    rf"(?:^|[;|]\s*)\s*({_FINDING_MARKER_ALTERNATION})\s*:\s*(.*?)"
+    rf"(?=(?:[;|]\s*)(?:{_FINDING_MARKER_ALTERNATION})\s*:|$)"
+)
 
 
 @dataclass(frozen=True, slots=True)
 class IndexedSymbol:
-    """Represent a class or function discovered in a Python source file."""
+    """Represent a Python definition or module/class assignment."""
 
     file: str
     name: str
     kind: str
     line: int
     description: str
-    documented: bool
+    documented: bool | None
+
+
+@dataclass(frozen=True, slots=True)
+class IndexedFile:
+    """Represent a repository file with stable identifiers and navigation metadata."""
+
+    file: str
+    file_type: str
+    size_bytes: int
+    line_count: int | None
+    indexing_scope: str
+    file_id: str
+    category: str
+
+
+@dataclass(frozen=True, slots=True)
+class IndexedMarker:
+    """Represent a statically discovered symbol outside the Python AST index."""
+
+    file: str
+    name: str
+    kind: str
+    line: int
+
+
+@dataclass(frozen=True, slots=True)
+class IndexedLine:
+    """Represent one exact logical line from an eligible readable repository text file."""
+
+    file: str
+    file_id: str
+    line_id: str
+    category: str
+    line: int
+    content: str
+
+
+@dataclass(frozen=True, slots=True)
+class IndexedFinding:
+    """Represent a source annotation that explicitly requests attention."""
+
+    finding_id: str
+    file: str
+    line_id: str
+    marker: str
+    description: str
 
 
 class IndexGenerationError(RuntimeError):
-    """Signal that a complete and trustworthy index could not be generated."""
+    """Signal that a complete Python AST index could not be generated."""
 
 
 class SymbolVisitor(ast.NodeVisitor):
-    """Collect classes, functions, methods, and their docstring summaries."""
+    """Collect Python classes, functions, methods and module/class assignments."""
 
     def __init__(self, relative_file: str) -> None:
         """Initialize the visitor for one repository-relative Python file."""
         self.relative_file = relative_file
         self.symbols: list[IndexedSymbol] = []
         self.scope: list[str] = []
+        self.function_depth = 0
 
     @staticmethod
     def _description(node: ast.AST) -> tuple[str, bool]:
@@ -75,12 +238,12 @@ class SymbolVisitor(ast.NodeVisitor):
             summary = summary[: MAX_DESCRIPTION_LENGTH - 3].rstrip() + "..."
         return summary, True
 
-    def _record(
+    def _record_definition(
         self,
         node: ast.ClassDef | ast.FunctionDef | ast.AsyncFunctionDef,
         kind: str,
     ) -> None:
-        """Record one definition while preserving its qualified scope."""
+        """Record one class/function definition while preserving its qualified scope."""
         description, documented = self._description(node)
         qualified_name = ".".join((*self.scope, node.name))
         self.symbols.append(
@@ -94,9 +257,40 @@ class SymbolVisitor(ast.NodeVisitor):
             )
         )
 
+    def _record_assignment_target(self, node: ast.AST, line: int) -> None:
+        """Record declared names from a module-level or class-level assignment."""
+        if isinstance(node, ast.Name):
+            qualified_name = ".".join((*self.scope, node.id))
+            self.symbols.append(
+                IndexedSymbol(
+                    file=self.relative_file,
+                    name=qualified_name,
+                    kind="متغير/ثابت Python",
+                    line=line,
+                    description="تعريف على مستوى الوحدة أو الكلاس.",
+                    documented=None,
+                )
+            )
+        elif isinstance(node, (ast.Tuple, ast.List)):
+            for element in node.elts:
+                self._record_assignment_target(element, line)
+
+    def visit_Assign(self, node: ast.Assign) -> None:
+        """Index module/class assignment names but avoid flooding the index with locals."""
+        if self.function_depth == 0:
+            for target in node.targets:
+                self._record_assignment_target(target, node.lineno)
+        self.generic_visit(node)
+
+    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:
+        """Index annotated module/class assignments without counting local variables."""
+        if self.function_depth == 0:
+            self._record_assignment_target(node.target, node.lineno)
+        self.generic_visit(node)
+
     def visit_ClassDef(self, node: ast.ClassDef) -> None:
         """Record a class and recursively inspect its body."""
-        self._record(node, "كلاس")
+        self._record_definition(node, "كلاس")
         self.scope.append(node.name)
         try:
             self.generic_visit(node)
@@ -105,25 +299,78 @@ class SymbolVisitor(ast.NodeVisitor):
 
     def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
         """Record a synchronous function or method and nested definitions."""
-        self._record(node, "دالة")
+        self._record_definition(node, "دالة")
         self.scope.append(node.name)
+        self.function_depth += 1
         try:
             self.generic_visit(node)
         finally:
+            self.function_depth -= 1
             self.scope.pop()
 
     def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:
         """Record an asynchronous function or method and nested definitions."""
-        self._record(node, "دالة غير متزامنة")
+        self._record_definition(node, "دالة غير متزامنة")
         self.scope.append(node.name)
+        self.function_depth += 1
         try:
             self.generic_visit(node)
         finally:
+            self.function_depth -= 1
             self.scope.pop()
 
 
-def discover_python_files(root: Path) -> list[Path]:
-    """Return sorted repository-local Python files, excluding generated environments."""
+def _is_sensitive_or_runtime_path(path: Path) -> bool:
+    """Exclude known local secrets, runtime databases, keys and generated bytecode."""
+    name = path.name.lower()
+    if name in SENSITIVE_FILENAMES:
+        return True
+    if name.startswith(".env") and name != ".env.example":
+        return True
+    return path.suffix.lower() in EXCLUDED_SUFFIXES
+
+
+def _stable_file_id(relative_file: str) -> str:
+    """Return a deterministic path-derived identifier without hashing file contents."""
+    digest = hashlib.sha256(relative_file.encode("utf-8")).hexdigest()[:10].upper()
+    return f"FILE-{digest}"
+
+
+def _category_for_path(relative_file: str) -> str:
+    """Assign an understandable navigation category from the repository-relative path."""
+    normalized = relative_file.replace("\\", "/")
+    name = Path(normalized).name.lower()
+    suffix = Path(normalized).suffix.lower()
+    if normalized.startswith("tests/") or "/tests/" in normalized:
+        return "اختبارات"
+    if normalized.startswith(".github/workflows/"):
+        return "CI وأتمتة"
+    if normalized.startswith("agents/"):
+        return "الوكيل والمنطق"
+    if normalized.startswith("api/"):
+        return "واجهات API"
+    if normalized.startswith("cli/"):
+        return "واجهة سطر الأوامر"
+    if normalized.startswith("docs/"):
+        return "وثائق وفهرسة"
+    if normalized.startswith(("web/", "static/", "templates/")) or suffix in {
+        ".html", ".htm", ".css", ".scss", ".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx",
+        ".vue", ".svelte",
+    }:
+        return "واجهة الويب"
+    if name in {
+        "dockerfile", "makefile", "procfile", "pyproject.toml",
+        "requirements.txt", "requirements-dev.txt", ".gitignore",
+        ".dockerignore", ".editorconfig",
+    } or suffix in {".yml", ".yaml", ".toml", ".ini", ".cfg", ".json", ".jsonl", ".xml"}:
+        return "إعدادات وتشغيل"
+    if suffix in {".md", ".rst", ".txt"}:
+        return "وثائق ونصوص"
+    return "ملفات أخرى"
+
+
+def discover_repository_files(root: Path) -> list[Path]:
+    """Return the stable file inventory, excluding the generated index and runtime data."""
     discovered: list[Path] = []
     for current_directory, directory_names, file_names in os.walk(
         root,
@@ -134,13 +381,19 @@ def discover_python_files(root: Path) -> list[Path]:
             name
             for name in directory_names
             if name not in EXCLUDED_DIRECTORIES
+            and not name.lower().endswith((".egg-info", ".dist-info"))
             and not (Path(current_directory) / name).is_symlink()
         )
         for file_name in sorted(file_names):
-            if not file_name.endswith(".py"):
-                continue
             candidate = Path(current_directory) / file_name
-            if candidate.is_symlink():
+            if candidate.is_symlink() or _is_sensitive_or_runtime_path(candidate):
+                continue
+            relative_file = candidate.relative_to(root).as_posix()
+            if (
+                relative_file in INDEX_OUTPUT_PATHS
+                or relative_file.startswith(SOURCE_LINES_PAGES_DIR + "/")
+            ):
+                # Exclude generated index outputs to prevent self-indexing loops.
                 continue
             discovered.append(candidate)
 
@@ -148,6 +401,328 @@ def discover_python_files(root: Path) -> list[Path]:
         discovered,
         key=lambda path: path.relative_to(root).as_posix().casefold(),
     )
+
+
+def _read_text_bounded(path: Path) -> str | None:
+    """Read supported UTF-8 text files only when they are within the scan-size bound."""
+    try:
+        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:
+            return None
+        if path.suffix.lower() == ".py":
+            with tokenize.open(str(path)) as source_stream:
+                text = source_stream.read()
+        else:
+            text = path.read_text(encoding="utf-8")
+        if "\x00" in text:
+            return None
+        return text
+    except (OSError, UnicodeError, LookupError, tokenize.TokenError):
+        return None
+
+
+def _count_lines(text: str) -> int:
+    """Count source lines without adding an extra line for a trailing newline."""
+    if not text:
+        return 0
+    return text.count("\n") + (not text.endswith("\n"))
+
+
+def _file_type(path: Path) -> str:
+    """Return a readable file type based on a known filename or extension."""
+    name = path.name.lower()
+    if name in {"dockerfile", "makefile", "procfile"}:
+        return name.capitalize()
+    suffix = path.suffix.lower()
+    labels = {
+        ".py": "Python",
+        ".html": "HTML",
+        ".htm": "HTML",
+        ".js": "JavaScript",
+        ".mjs": "JavaScript module",
+        ".cjs": "CommonJS",
+        ".jsx": "React JSX",
+        ".ts": "TypeScript",
+        ".tsx": "TypeScript JSX",
+        ".css": "CSS",
+        ".scss": "SCSS",
+        ".md": "Markdown",
+        ".yml": "YAML",
+        ".yaml": "YAML",
+        ".json": "JSON",
+        ".toml": "TOML",
+        ".sh": "Shell",
+        ".sql": "SQL",
+        ".txt": "Text",
+        ".svg": "SVG",
+        ".png": "PNG image",
+        ".jpg": "JPEG image",
+        ".jpeg": "JPEG image",
+        ".webp": "WebP image",
+    }
+    return labels.get(suffix, suffix[1:].upper() if suffix else "بدون امتداد")
+
+
+def _indexing_scope(path: Path, text: str | None) -> str:
+    """Describe precisely whether a file receives symbol extraction or path inventory only."""
+    if text is None:
+        return "جرد المسار والحجم فقط (ثنائي/غير مقروء/أكبر من حد الفحص)"
+    suffix = path.suffix.lower()
+    if suffix in PYTHON_EXTENSIONS:
+        return "جرد الملف + AST Python"
+    if suffix in JAVASCRIPT_EXTENSIONS:
+        return "جرد الملف + رموز JavaScript/TypeScript ساكنة"
+    if suffix in CSS_EXTENSIONS:
+        return "جرد الملف + محددات CSS والمتغيرات المخصصة"
+    if suffix in {".html", ".htm"}:
+        return "جرد الملف + معرفات HTML والرموز داخل script/style"
+    if suffix == ".md":
+        return "جرد الملف + عناوين Markdown"
+    if suffix in CONFIG_EXTENSIONS:
+        return "جرد الملف + مفاتيح إعداد ساكنة"
+    if suffix == ".sh":
+        return "جرد الملف + دوال Shell"
+    if path.name.lower() in {"dockerfile", "makefile", "procfile"}:
+        return "جرد الملف + أسماء إعدادات عامة إن وجدت"
+    if path.name.lower() == ".env.example" or suffix == ".example":
+        return "جرد الملف + أسماء إعدادات عامة إن وجدت"
+    return "جرد ملف نصي فقط"
+
+
+def build_file_inventory(root: Path) -> list[IndexedFile]:
+    """Inventory repository files and record whether static symbol scanning was possible."""
+    inventory: list[IndexedFile] = []
+    for path in discover_repository_files(root):
+        text = _read_text_bounded(path)
+        inventory.append(
+            IndexedFile(
+                file=path.relative_to(root).as_posix(),
+                file_type=_file_type(path),
+                size_bytes=path.stat().st_size,
+                line_count=_count_lines(text) if text is not None else None,
+                indexing_scope=_indexing_scope(path, text),
+                file_id=_stable_file_id(path.relative_to(root).as_posix()),
+                category=_category_for_path(path.relative_to(root).as_posix()),
+            )
+        )
+    return inventory
+
+
+def _tracked_paths_or_none(root: Path) -> set[str] | None:
+    """Return tracked repository paths, or None when the root is not a Git checkout."""
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(root), "ls-files", "-z"],
+            check=True,
+            capture_output=True,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+    try:
+        return {
+            path
+            for path in result.stdout.decode("utf-8").split("\x00")
+            if path
+        }
+    except UnicodeError:
+        return None
+
+
+def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
+    """List excluded tracked path names and reasons without opening excluded contents."""
+    tracked_paths = _tracked_paths_or_none(root)
+
+    def tracked_scope_contains(relative_path: str, is_directory: bool = False) -> bool:
+        if tracked_paths is None:
+            return True
+        normalized = relative_path.rstrip("/")
+        if is_directory:
+            prefix = normalized + "/"
+            return any(path.startswith(prefix) for path in tracked_paths)
+        return normalized in tracked_paths
+
+    excluded: list[tuple[str, str]] = [
+        (path, "مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية")
+        for path in sorted(INDEX_OUTPUT_PATHS)
+    ]
+    excluded.append(
+        (
+            SOURCE_LINES_PAGES_DIR + "/",
+            "مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية",
+        )
+    )
+    for current_directory, directory_names, file_names in os.walk(
+        root,
+        topdown=True,
+        followlinks=False,
+    ):
+        kept_directories: list[str] = []
+        for name in sorted(directory_names):
+            candidate = Path(current_directory) / name
+            relative = candidate.relative_to(root).as_posix()
+            if candidate.is_symlink():
+                if tracked_scope_contains(relative, is_directory=True):
+                    excluded.append((relative + "/", "رابط رمزي مستبعد لسلامة التتبع"))
+            elif name in EXCLUDED_DIRECTORIES:
+                if tracked_scope_contains(relative, is_directory=True):
+                    excluded.append((relative + "/", "مجلد بيئة أو اعتماديات أو مخرجات مولدة مستبعد"))
+            elif name.lower().endswith((".egg-info", ".dist-info")):
+                if tracked_scope_contains(relative, is_directory=True):
+                    excluded.append((relative + "/", "بيانات تغليف مولدة مستبعدة"))
+            elif relative == SOURCE_LINES_PAGES_DIR:
+                excluded.append(
+                    (
+                        relative + "/",
+                        "مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية",
+                    )
+                )
+            else:
+                kept_directories.append(name)
+        directory_names[:] = kept_directories
+
+        for name in sorted(file_names):
+            candidate = Path(current_directory) / name
+            relative = candidate.relative_to(root).as_posix()
+            if candidate.is_symlink():
+                if tracked_scope_contains(relative):
+                    excluded.append((relative, "رابط رمزي مستبعد لسلامة التتبع"))
+            elif _is_sensitive_or_runtime_path(candidate):
+                if tracked_scope_contains(relative):
+                    if name.lower().startswith(".env") and name.lower() != ".env.example":
+                        reason = "ملف بيئة محلي مستبعد وقائيًا؛ لم تُقرأ محتوياته"
+                    elif candidate.suffix.lower() in EXCLUDED_SUFFIXES:
+                        reason = "قاعدة بيانات أو ملف مفتاح/شهادة مستبعد"
+                    else:
+                        reason = "اسم ملف حساس معروف؛ لم تُقرأ محتوياته"
+                    excluded.append((relative, reason))
+            elif relative in INDEX_OUTPUT_PATHS:
+                excluded.append((relative, "مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية"))
+            elif (
+                relative.startswith(SOURCE_LINES_PAGES_DIR + "/")
+                and tracked_scope_contains(relative)
+            ):
+                excluded.append((relative, "صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية"))
+
+    return sorted(set(excluded), key=lambda item: (item[0].casefold(), item[1]))
+
+
+def _text_index_skip_reason(path: Path) -> str:
+    """Return a concrete safe reason when a file could not be line-indexed."""
+    try:
+        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:
+            return f"الحجم يتجاوز حد الفهرسة ({MAX_INDEXED_TEXT_BYTES} بايت)"
+        if path.suffix.lower() == ".py":
+            with tokenize.open(str(path)) as source_stream:
+                source = source_stream.read()
+        else:
+            source = path.read_text(encoding="utf-8")
+        if "\x00" in source:
+            return "يحتوي محرف NUL؛ عومل كملف غير نصي"
+    except (OSError, UnicodeError, LookupError, tokenize.TokenError):
+        return "تعذرت قراءته كنص صالح بترميز مدعوم"
+    return "سبب غير مصنف؛ يحتاج مراجعة أداة الفهرسة"
+
+
+def validate_source_line_coverage(
+    root: Path,
+    inventory: list[IndexedFile],
+    source_lines: list[IndexedLine],
+) -> None:
+    """Fail generation if line coverage, IDs, or exact source text do not match."""
+    eligible_files = {
+        item.file: item
+        for item in inventory
+        if item.line_count is not None
+    }
+    expected_lines_by_file: dict[str, list[str]] = {}
+    failures: list[str] = []
+    seen_ids: set[str] = set()
+    actual_lines: dict[str, list[int]] = {file: [] for file in eligible_files}
+
+    # Re-read every eligible source independently to detect races or corrupted line records.
+    for file, item in eligible_files.items():
+        source = _read_text_bounded(root / file)
+        if source is None:
+            failures.append(f"{file}: تعذرت إعادة قراءة ملف مؤهل للتحقق")
+            expected_lines_by_file[file] = []
+            continue
+        expected_contents = source.splitlines()
+        expected_lines_by_file[file] = expected_contents
+        if len(expected_contents) != item.line_count:
+            failures.append(
+                f"{file}: تغير عدد الأسطر بعد إعداد الجرد "
+                f"(الجرد {item.line_count}، الحالي {len(expected_contents)})"
+            )
+
+    actual_records_by_file: dict[str, dict[int, IndexedLine]] = {
+        file: {} for file in eligible_files
+    }
+    for source_line in source_lines:
+        if source_line.file not in eligible_files:
+            failures.append(f"{source_line.file}: سجل سطر لملف غير مؤهل")
+            continue
+
+        actual_lines[source_line.file].append(source_line.line)
+        actual_records_by_file[source_line.file][source_line.line] = source_line
+        expected_item = eligible_files[source_line.file]
+
+        if source_line.line < 1:
+            failures.append(f"{source_line.file}: رقم سطر غير صالح {source_line.line}")
+            continue
+
+        expected_contents = expected_lines_by_file.get(source_line.file, [])
+        if (
+            source_line.line <= len(expected_contents)
+            and source_line.content != expected_contents[source_line.line - 1]
+        ):
+            failures.append(
+                f"{source_line.file}:{source_line.line}: نص السطر لا يطابق المصدر"
+            )
+
+        expected_line_id = _source_line_id(source_line.file, source_line.line)
+        if source_line.line_id != expected_line_id:
+            failures.append(
+                f"{source_line.file}:{source_line.line}: كود SRC لا يطابق المسار ورقم السطر"
+            )
+        if source_line.file_id != _stable_file_id(source_line.file):
+            failures.append(
+                f"{source_line.file}:{source_line.line}: كود FILE لا يطابق مسار الملف"
+            )
+        if source_line.file_id != expected_item.file_id:
+            failures.append(
+                f"{source_line.file}:{source_line.line}: معرّف الملف لا يطابق الجرد"
+            )
+        if source_line.category != expected_item.category:
+            failures.append(
+                f"{source_line.file}:{source_line.line}: تصنيف السطر لا يطابق الجرد"
+            )
+        if source_line.line_id in seen_ids:
+            failures.append(f"{source_line.file}:{source_line.line}: معرّف SRC مكرر")
+        seen_ids.add(source_line.line_id)
+
+    for file, item in eligible_files.items():
+        actual = sorted(actual_lines[file])
+        expected = list(range(1, (item.line_count or 0) + 1))
+        if actual != expected:
+            failures.append(
+                f"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، "
+                f"الموجود {len(actual)}"
+            )
+
+    if failures:
+        raise IndexGenerationError(
+            "فشل تحقق اكتمال فهرسة السطور؛ لن يُنشر فهرس جزئي:\n- "
+            + "\n- ".join(sorted(set(failures)))
+        )
+
+
+def discover_python_files(root: Path) -> list[Path]:
+    """Return sorted Python files from the eligible repository inventory."""
+
+    return [
+        path
+        for path in discover_repository_files(root)
+        if path.suffix.lower() == ".py"
+    ]
 
 
 def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:
@@ -159,7 +734,6 @@ def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:
     for source_path in python_files:
         relative_file = source_path.relative_to(root).as_posix()
         try:
-            # tokenize.open honors Python source encoding declarations.
             with tokenize.open(str(source_path)) as source_stream:
                 source = source_stream.read()
             syntax_tree = ast.parse(source, filename=relative_file)
@@ -178,8 +752,8 @@ def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:
     if failures:
         detail = "\n".join(f"- {failure}" for failure in failures)
         raise IndexGenerationError(
-            "تعذر إنشاء فهرس كامل؛ لم يُكتب MASTER_INDEX.md. "
-            "أصلح ملفات Python التالية ثم أعد التشغيل:\n" + detail
+            "تعذر إنشاء فهرس Python كامل؛ لم يُكتب MASTER_INDEX.md. "
+            "أصلح الملفات التالية ثم أعد التشغيل:\n" + detail
         )
 
     all_symbols.sort(
@@ -193,6 +767,288 @@ def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:
     return all_symbols, len(python_files)
 
 
+def _line_at(source: str, offset: int, base_line: int = 1) -> int:
+    """Return a 1-based line number for a match in the supplied source fragment."""
+    return base_line + source.count("\n", 0, offset)
+
+
+def _add_marker(
+    markers: list[IndexedMarker],
+    seen: set[tuple[str, str, str]],
+    relative_file: str,
+    name: str,
+    kind: str,
+    line: int,
+) -> None:
+    """Add the first occurrence of a symbol category within one file."""
+    clean_name = " ".join(name.strip().split())
+    if not clean_name:
+        return
+    key = (relative_file, clean_name, kind)
+    if key in seen:
+        return
+    seen.add(key)
+    markers.append(
+        IndexedMarker(
+            file=relative_file,
+            name=clean_name,
+            kind=kind,
+            line=max(line, 1),
+        )
+    )
+
+
+def _scan_javascript(
+    source: str,
+    relative_file: str,
+    markers: list[IndexedMarker],
+    seen: set[tuple[str, str, str]],
+    base_line: int = 1,
+) -> None:
+    """Extract navigational JS/TS declarations using bounded regular-expression heuristics."""
+    for pattern, kind in (
+        (JS_FUNCTION_RE, "دالة JavaScript/TypeScript"),
+        (JS_CLASS_RE, "كلاس JavaScript/TypeScript"),
+    ):
+        for match in pattern.finditer(source):
+            _add_marker(
+                markers,
+                seen,
+                relative_file,
+                match.group(1),
+                kind,
+                _line_at(source, match.start(), base_line),
+            )
+
+    function_variable_locations: set[tuple[str, int]] = set()
+    for pattern in (JS_ARROW_ASSIGNMENT_RE, JS_FUNCTION_ASSIGNMENT_RE):
+        for match in pattern.finditer(source):
+            line = _line_at(source, match.start(), base_line)
+            name = match.group(1)
+            function_variable_locations.add((name, line))
+            _add_marker(
+                markers,
+                seen,
+                relative_file,
+                name,
+                "دالة JavaScript/TypeScript",
+                line,
+            )
+
+    for match in JS_VARIABLE_RE.finditer(source):
+        line = _line_at(source, match.start(), base_line)
+        name = match.group(1)
+        if (name, line) in function_variable_locations:
+            continue
+        _add_marker(
+            markers,
+            seen,
+            relative_file,
+            name,
+            "متغير JavaScript/TypeScript",
+            line,
+        )
+
+
+def _scan_css(
+    source: str,
+    relative_file: str,
+    markers: list[IndexedMarker],
+    seen: set[tuple[str, str, str]],
+    base_line: int = 1,
+) -> None:
+    """Extract CSS class/id selectors and custom properties; this is not a full CSS parser."""
+    cleaned = CSS_COMMENT_RE.sub(
+        lambda match: "".join("\n" if char == "\n" else " " for char in match.group(0)),
+        source,
+    )
+    patterns = (
+        (CSS_CUSTOM_PROPERTY_RE, "متغير CSS مخصص"),
+        (CSS_CLASS_RE, "محدد class في CSS"),
+        (CSS_ID_RE, "محدد id في CSS"),
+    )
+    for pattern, kind in patterns:
+        for match in pattern.finditer(cleaned):
+            _add_marker(
+                markers,
+                seen,
+                relative_file,
+                match.group(1),
+                kind,
+                _line_at(cleaned, match.start(), base_line),
+            )
+
+
+def _scan_html(
+    source: str,
+    relative_file: str,
+    markers: list[IndexedMarker],
+    seen: set[tuple[str, str, str]],
+) -> None:
+    """Extract HTML navigation attributes plus embedded JS and CSS declarations."""
+    for match in HTML_ATTRIBUTE_RE.finditer(source):
+        attribute = match.group(1).lower()
+        raw_value = match.group(3).strip()
+        for value in raw_value.split() if attribute == "data-testid" else [raw_value]:
+            _add_marker(
+                markers,
+                seen,
+                relative_file,
+                value,
+                f"قيمة سمة HTML ({attribute})",
+                _line_at(source, match.start()),
+            )
+
+    for match in HTML_SCRIPT_RE.finditer(source):
+        script = match.group(1)
+        base_line = _line_at(source, match.start(1))
+        _scan_javascript(script, relative_file, markers, seen, base_line)
+    for match in HTML_STYLE_RE.finditer(source):
+        style = match.group(1)
+        base_line = _line_at(source, match.start(1))
+        _scan_css(style, relative_file, markers, seen, base_line)
+
+
+def _scan_config_keys(
+    source: str,
+    suffix: str,
+    relative_file: str,
+    markers: list[IndexedMarker],
+    seen: set[tuple[str, str, str]],
+) -> None:
+    """Extract configuration keys/sections without evaluating or loading configuration."""
+    if suffix in {".yml", ".yaml"}:
+        patterns = ((YAML_KEY_RE, "مفتاح إعداد YAML"),)
+    elif suffix == ".toml":
+        patterns = (
+            (TOML_SECTION_RE, "قسم TOML"),
+            (TOML_KEY_RE, "مفتاح إعداد TOML"),
+        )
+    elif suffix == ".json":
+        patterns = ((JSON_KEY_RE, "مفتاح JSON"),)
+    elif suffix in {".ini", ".cfg"}:
+        patterns = (
+            (INI_SECTION_RE, "قسم إعداد"),
+            (INI_KEY_RE, "مفتاح إعداد"),
+        )
+    else:
+        patterns = ()
+    for pattern, kind in patterns:
+        for match in pattern.finditer(source):
+            _add_marker(
+                markers,
+                seen,
+                relative_file,
+                match.group(1),
+                kind,
+                _line_at(source, match.start()),
+            )
+
+
+def scan_static_symbols(root: Path, inventory: list[IndexedFile]) -> list[IndexedMarker]:
+    """Extract supplementary navigational symbols from frontend, docs, config and scripts."""
+    markers: list[IndexedMarker] = []
+    seen: set[tuple[str, str, str]] = set()
+    for indexed_file in inventory:
+        path = root / indexed_file.file
+        suffix = path.suffix.lower()
+        file_name = path.name.lower()
+        is_example_env = file_name == ".env.example"
+        if suffix not in TEXT_SCAN_EXTENSIONS and not is_example_env and file_name not in {
+            "dockerfile",
+            "makefile",
+            "procfile",
+        }:
+            continue
+
+        source = _read_text_bounded(path)
+        if source is None:
+            continue
+
+        if suffix in JAVASCRIPT_EXTENSIONS:
+            _scan_javascript(source, indexed_file.file, markers, seen)
+        elif suffix in CSS_EXTENSIONS:
+            _scan_css(source, indexed_file.file, markers, seen)
+        elif suffix in {".html", ".htm"}:
+            _scan_html(source, indexed_file.file, markers, seen)
+        elif suffix == ".md":
+            for match in MARKDOWN_HEADING_RE.finditer(source):
+                heading = match.group(2).strip()
+                _add_marker(
+                    markers,
+                    seen,
+                    indexed_file.file,
+                    heading,
+                    f"عنوان Markdown (H{len(match.group(1))})",
+                    _line_at(source, match.start()),
+                )
+        elif suffix == ".sh":
+            for match in SHELL_FUNCTION_RE.finditer(source):
+                _add_marker(
+                    markers,
+                    seen,
+                    indexed_file.file,
+                    match.group(1),
+                    "دالة Shell",
+                    _line_at(source, match.start()),
+                )
+        elif suffix in CONFIG_EXTENSIONS:
+            _scan_config_keys(source, suffix, indexed_file.file, markers, seen)
+
+        if suffix in TEXT_SCAN_EXTENSIONS or is_example_env or file_name in {
+            "dockerfile",
+            "makefile",
+            "procfile",
+        }:
+            for match in UPPER_SNAKE_RE.finditer(source):
+                _add_marker(
+                    markers,
+                    seen,
+                    indexed_file.file,
+                    match.group(0),
+                    "اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE",
+                    _line_at(source, match.start()),
+                )
+
+        if suffix in PYTHON_EXTENSIONS | JAVASCRIPT_EXTENSIONS | {".html", ".htm"}:
+            for match in API_PATH_RE.finditer(source):
+                _add_marker(
+                    markers,
+                    seen,
+                    indexed_file.file,
+                    match.group(1),
+                    "مسار API/واجهة محتمل",
+                    _line_at(source, match.start()),
+                )
+
+    markers.sort(
+        key=lambda marker: (
+            marker.file.casefold(),
+            marker.line,
+            marker.kind.casefold(),
+            marker.name.casefold(),
+        )
+    )
+    return markers
+
+
+def _source_file_href(
+    relative_file: str,
+    line: int = 1,
+    index_directory: str = "docs",
+) -> str:
+    """Return a relative source link from a generated index page to the original file."""
+    normalized = relative_file.replace("\\", "/")
+    target = posixpath.relpath(normalized, index_directory)
+    return f"{quote(target, safe='/._-')}#L{max(line, 1)}"
+
+
+def _source_line_id(relative_file: str, line: int) -> str:
+    """Return a consistent line code wherever a symbol, finding, or source line is shown."""
+    file_hash = _stable_file_id(relative_file).removeprefix("FILE-")
+    return f"SRC-{file_hash}-L{line:06d}"
+
+
 def _markdown_cell(value: str) -> str:
     """Normalize text and escape Markdown table delimiters."""
     return " ".join(value.replace("\r", " ").replace("\n", " ").split()).replace(
@@ -200,46 +1056,632 @@ def _markdown_cell(value: str) -> str:
     )
 
 
-def render_markdown(symbols: list[IndexedSymbol], files_scanned: int) -> str:
-    """Render a stable Markdown index; documentation means a non-empty docstring exists."""
-    documented_count = sum(symbol.documented for symbol in symbols)
-    missing_count = len(symbols) - documented_count
+def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:
+    """Index every logical line of each eligible text file readable within the size bound."""
+    indexed_lines: list[IndexedLine] = []
+    for item in inventory:
+        source = _read_text_bounded(root / item.file)
+        if source is None:
+            continue
+        for line_number, content in enumerate(source.splitlines(), start=1):
+            indexed_lines.append(
+                IndexedLine(
+                    file=item.file,
+                    file_id=item.file_id,
+                    line_id=_source_line_id(item.file, line_number),
+                    category=item.category,
+                    line=line_number,
+                    content=content,
+                )
+            )
+    indexed_lines.sort(key=lambda item: (item.file.casefold(), item.line))
+    return indexed_lines
+
+
+def _append_comment_text(
+    comments: dict[int, list[str]],
+    starting_line: int,
+    text: str,
+) -> None:
+    """Map comment text fragments onto original 1-based source lines."""
+    for offset, line_text in enumerate(text.splitlines() or [text]):
+        comments.setdefault(starting_line + offset, []).append(line_text)
+
+
+def _python_comment_map(source: str) -> dict[int, list[str]]:
+    """Return real Python comment tokens, excluding strings and docstrings."""
+    comments: dict[int, list[str]] = {}
+    try:
+        for token in tokenize.generate_tokens(StringIO(source).readline):
+            if token.type == tokenize.COMMENT:
+                _append_comment_text(comments, token.start[0], token.string[1:])
+    except (tokenize.TokenError, IndentationError, SyntaxError, StopIteration):
+        return comments
+    return comments
+
+
+def _c_style_comment_map(source: str, *, hash_comments: bool = False) -> dict[int, list[str]]:
+    """Extract C-style or hash comments while skipping quoted strings."""
+    comments: dict[int, list[str]] = {}
+    lines = source.splitlines(keepends=True)
+    if not lines and source:
+        lines = [source]
+    quote: str | None = None
+    in_block = False
+
+    for line_number, line in enumerate(lines, start=1):
+        i = 0
+        while i < len(line):
+            if in_block:
+                end = line.find("*/", i)
+                if end < 0:
+                    _append_comment_text(comments, line_number, line[i:])
+                    i = len(line)
+                else:
+                    _append_comment_text(comments, line_number, line[i:end])
+                    i = end + 2
+                    in_block = False
+                continue
+
+            ch = line[i]
+            if quote is not None:
+                if ch == "\\":
+                    i += 2
+                    continue
+                if ch == quote:
+                    quote = None
+                i += 1
+                continue
+
+            if ch in ("'", '"', chr(96)):
+                quote = ch
+                i += 1
+                continue
+
+            if line.startswith("//", i):
+                _append_comment_text(comments, line_number, line[i + 2:].rstrip("\r\n"))
+                break
+            if line.startswith("/*", i):
+                in_block = True
+                i += 2
+                continue
+
+            if hash_comments and ch == "#" and (i == 0 or line[i - 1].isspace()):
+                _append_comment_text(comments, line_number, line[i + 1:].rstrip("\r\n"))
+                break
+            i += 1
+
+        if quote in ("'", '"') and not line.rstrip("\r\n").endswith("\\"):
+            quote = None
+
+    return comments
+
+
+def _html_comment_map(source: str) -> dict[int, list[str]]:
+    """Return HTML comments while ignoring HTML-looking text inside script/style blocks."""
+    comments: dict[int, list[str]] = {}
+    masked_chars = list(source)
+    for pattern in (HTML_SCRIPT_RE, HTML_STYLE_RE):
+        for match in pattern.finditer(source):
+            for position in range(match.start(), match.end()):
+                if masked_chars[position] != "\\n":
+                    masked_chars[position] = " "
+    masked_source = "".join(masked_chars)
+    comment_re = re.compile(r"<!--(.*?)-->", re.DOTALL)
+    for match in comment_re.finditer(masked_source):
+        starting_line = _line_at(source, match.start(1))
+        _append_comment_text(
+            comments,
+            starting_line,
+            source[match.start(1):match.end(1)],
+        )
+    return comments
+
+
+def _markdown_annotation_map(source: str) -> dict[int, list[str]]:
+    """Accept explicit annotations at the start of Markdown prose, skipping fenced code."""
+    comments: dict[int, list[str]] = {}
+    in_fence = False
+    fence_character = ""
+    fence_width = 0
+    marker_start_re = re.compile(
+        rf"^\s*(?:(?:[-*+]|>)\s*)?({_FINDING_MARKER_ALTERNATION})\s*:\s*(.*)$"
+    )
+    for line_number, line in enumerate(source.splitlines(), start=1):
+        fence_match = re.match(r"^\s*(~{3,})", line) or re.match(
+            r"^\s*(" + re.escape(chr(96)) + "{3,})", line
+        )
+        if fence_match:
+            fence = fence_match.group(1)
+            if not in_fence:
+                in_fence = True
+                fence_character = fence[0]
+                fence_width = len(fence)
+            elif fence[0] == fence_character and len(fence) >= fence_width:
+                in_fence = False
+            continue
+        if in_fence:
+            continue
+        match = marker_start_re.match(line)
+        if match:
+            comments.setdefault(line_number, []).append(
+                f"{match.group(1)}: {match.group(2)}"
+            )
+    return comments
+
+
+def _finding_comments_by_file(relative_file: str, source: str) -> dict[int, list[str]]:
+    """Extract intended comment/prose annotations by file type, not arbitrary tokens."""
+    path = Path(relative_file)
+    suffix = path.suffix.lower()
+    name = path.name.lower()
+    if suffix == ".py":
+        return _python_comment_map(source)
+    if suffix in JAVASCRIPT_EXTENSIONS | CSS_EXTENSIONS:
+        return _c_style_comment_map(source, hash_comments=suffix == ".scss")
+    if suffix in {".html", ".htm"}:
+        comments = _html_comment_map(source)
+        for pattern in (HTML_SCRIPT_RE, HTML_STYLE_RE):
+            for match in pattern.finditer(source):
+                embedded = match.group(1)
+                local_comments = _c_style_comment_map(embedded)
+                base_line = _line_at(source, match.start(1))
+                for local_line, fragments in local_comments.items():
+                    for fragment in fragments:
+                        comments.setdefault(base_line + local_line - 1, []).append(fragment)
+        return comments
+    if suffix in {".md", ".rst"}:
+        return _markdown_annotation_map(source)
+    if suffix in {".yml", ".yaml", ".toml", ".ini", ".cfg", ".sh"} or name in {
+        "dockerfile",
+        "makefile",
+        "procfile",
+    }:
+        return _c_style_comment_map(source, hash_comments=True)
+    if suffix == ".txt":
+        return _markdown_annotation_map(source)
+    return {}
+
+
+def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFinding]:
+    """Index explicit comments/prose annotations, not incidental words in source code."""
+    findings: list[IndexedFinding] = []
+    by_file: dict[str, list[IndexedLine]] = {}
+    for source_line in source_lines:
+        by_file.setdefault(source_line.file, []).append(source_line)
+
+    for relative_file, records in by_file.items():
+        records.sort(key=lambda item: item.line)
+        source = "\n".join(item.content for item in records)
+        comments = _finding_comments_by_file(relative_file, source)
+        record_by_line = {item.line: item for item in records}
+
+        for line_number, fragments in comments.items():
+            source_line = record_by_line.get(line_number)
+            if source_line is None:
+                continue
+            matches = [
+                match
+                for fragment in fragments
+                for match in FINDING_MARKER_RE.finditer(
+                    fragment.lstrip().lstrip("*").strip()
+                )
+            ]
+            if not matches:
+                continue
+            totals: dict[str, int] = {}
+            for match in matches:
+                marker = match.group(1)
+                totals[marker] = totals.get(marker, 0) + 1
+            occurrences: dict[str, int] = {}
+            for match in matches:
+                marker = match.group(1)
+                occurrences[marker] = occurrences.get(marker, 0) + 1
+                detail = (match.group(2) or "").strip()
+                description = marker if not detail else f"{marker}: {detail}"
+                finding_id = (
+                    f"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}"
+                    f"-L{source_line.line:06d}"
+                )
+                if totals[marker] > 1:
+                    finding_id += f"-M{occurrences[marker]:02d}"
+                findings.append(
+                    IndexedFinding(
+                        finding_id=finding_id,
+                        file=source_line.file,
+                        line_id=source_line.line_id,
+                        marker=marker,
+                        description=description,
+                    )
+                )
+    findings.sort(
+        key=lambda item: (item.marker, item.file.casefold(), item.line_id, item.finding_id)
+    )
+    return findings
+
+
+def _markdown_code_span(value: str) -> str:
+    """Render a Markdown inline-code span safely, including backticks in source text."""
+    tick = chr(96)
+    longest = max(
+        (len(match.group(0)) for match in re.finditer(r"\u0060+", value)),
+        default=0,
+    )
+    fence = tick * (longest + 1)
+    content = f" {value} " if value.startswith(tick) or value.endswith(tick) else value
+    return f"{fence}{content}{fence}"
+
+
+def render_source_line_pages(
+    source_lines: list[IndexedLine],
+    inventory: list[IndexedFile],
+    findings: list[IndexedFinding],
+) -> tuple[dict[str, str], dict[str, list[str]]]:
+    """Split line-level records into deterministic small pages and map each file to its pages."""
+    pages: dict[str, str] = {}
+    pages_by_file: dict[str, list[str]] = {}
+    inventory_by_path = {item.file: item for item in inventory}
+    findings_by_line: dict[str, list[IndexedFinding]] = {}
+    for finding in findings:
+        findings_by_line.setdefault(finding.line_id, []).append(finding)
+
+    for page_number, start in enumerate(
+        range(0, len(source_lines), SOURCE_LINES_PAGE_SIZE),
+        start=1,
+    ):
+        chunk = source_lines[start : start + SOURCE_LINES_PAGE_SIZE]
+        page_path = f"{SOURCE_LINES_PAGES_DIR}/SOURCE_LINES_{page_number:03d}.md"
+        lines = [
+            "# Omarai Source Lines",
+            "",
+            "<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
+            "",
+            f"- الصفحة: **{page_number:03d}**",
+            f"- سجلات الأسطر: **{len(chunk)}**",
+            f"- النطاق: {chunk[0].line_id} إلى {chunk[-1].line_id}",
+            "- الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)",
+            "",
+        ]
+        current_file: str | None = None
+        for source_line in chunk:
+            item = inventory_by_path[source_line.file]
+            if source_line.file != current_file:
+                current_file = source_line.file
+                lines.extend(
+                    [
+                        f"## {item.category}",
+                        "",
+                        f"### {item.file_id} — [{_markdown_cell(item.file)}]({_source_file_href(item.file, index_directory=SOURCE_LINES_PAGES_DIR)})",
+                        "",
+                        f"- النوع: **{item.file_type}**",
+                        f"- نطاق الفهرسة: {_markdown_cell(item.indexing_scope)}",
+                        "",
+                        "| كود السطر | السطر | النص الكامل للسطر | كود الوسم |",
+                        "|---|---:|---|---|",
+                    ]
+                )
+            line_findings = findings_by_line.get(source_line.line_id, [])
+            finding_code = ", ".join(item.finding_id for item in line_findings) or "—"
+            exact_text = json.dumps(source_line.content, ensure_ascii=False)
+            escaped_text = exact_text.replace("|", r"\|")
+            href = _source_file_href(
+                source_line.file,
+                source_line.line,
+                index_directory=SOURCE_LINES_PAGES_DIR,
+            )
+            line_code = f"[{source_line.line_id}]({href})"
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        line_code,
+                        str(source_line.line),
+                        _markdown_code_span(escaped_text),
+                        finding_code,
+                    )
+                )
+                + " |"
+            )
+            refs = pages_by_file.setdefault(source_line.file, [])
+            if page_path not in refs:
+                refs.append(page_path)
+        pages[page_path] = "\n".join(lines) + "\n"
+
+    return pages, pages_by_file
+
+
+def render_source_lines_markdown(
+    source_lines: list[IndexedLine],
+    inventory: list[IndexedFile],
+    findings: list[IndexedFinding],
+    pages_by_file: dict[str, list[str]] | None = None,
+    source_pages: dict[str, str] | None = None,
+) -> str:
+    """Render a compact table of contents for the sharded full source-line index."""
+    assigned_pages = pages_by_file or {}
+    rendered_pages = source_pages or {}
+    files_with_lines = sum(item.line_count is not None for item in inventory)
+    lines = [
+        "# SOURCE LINES INDEX — Omarai",
+        "",
+        "<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
+        "",
+        "> هذا دليل الوصول إلى فهرس الأسطر الكامل. يحتوي كل سطر في الملفات النصية المؤهلة على كود SRC- ورقم السطر ونص السطر كاملًا.",
+        "> قُسّم المحتوى إلى صفحات صغيرة حتى تظل كل صفحة قابلة للفتح والبحث بسرعة من الهاتف والمتصفح.",
+        "> ابدأ من [MASTER INDEX](MASTER_INDEX.md) للعثور حسب اسم الملف أو الدالة أو الكلاس أو وسم المراجعة.",
+        "> راجع [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md) للاطلاع على نسبة التغطية وأسباب الاستبعاد.",
+        "",
+        "## ملخص التغطية",
+        "",
+        f"- الملفات في جرد المستودع: **{len(inventory)}**",
+        f"- الملفات النصية المفهرسة سطرًا بسطر: **{files_with_lines}**",
+        f"- الأسطر المفهرسة: **{len(source_lines)}**",
+        f"- وسوم المراجعة/الإصلاح المسجلة: **{len(findings)}**",
+        f"- صفحات الأسطر: **{len(rendered_pages)}**",
+        "",
+        "## صفحات الأسطر",
+        "",
+        "| الصفحة | عدد السجلات | من كود | إلى كود |",
+        "|---|---:|---|---|",
+    ]
+    for page_path, page_content in rendered_pages.items():
+        count = sum(1 for line in page_content.splitlines() if line.startswith("| [SRC-"))
+        ids = re.findall(r"\bSRC-[A-F0-9]+-L\d{6}\b", page_content)
+        label = Path(page_path).stem
+        lines.append(
+            f"| [{label}]({Path(page_path).relative_to('docs').as_posix()}) | "
+            f"{count} | {ids[0] if ids else '—'} | {ids[-1] if ids else '—'} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## جرد الملفات والوصول حسب الاسم",
+            "",
+            "| معرّف الملف | التصنيف | الملف | الأسطر | صفحات الفهرسة |",
+            "|---|---|---|---:|---|",
+        ]
+    )
+    for item in sorted(inventory, key=lambda entry: (entry.category, entry.file.casefold())):
+        if item.line_count is None:
+            line_count = "بيانات وصفية فقط"
+        else:
+            line_count = str(item.line_count)
+        page_links = assigned_pages.get(item.file, [])
+        if page_links:
+            link_text = ", ".join(
+                f"[{Path(page_path).stem}]({Path(page_path).relative_to('docs').as_posix()})"
+                for page_path in page_links
+            )
+        elif item.line_count == 0:
+            link_text = "ملف نصي فارغ"
+        elif item.line_count is None:
+            link_text = "غير مفهرس سطرًا بسطر"
+        else:
+            link_text = "لا توجد سجلات"
+        target = _source_file_href(item.file, index_directory="docs")
+        lines.append(
+            f"| {item.file_id} | {_markdown_cell(item.category)} | "
+            f"[{_markdown_cell(item.file)}]({target}) | {line_count} | {link_text} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## سجل وسوم المراجعة والإصلاح",
+            "",
+            "كل كود FND- في MASTER INDEX يحدد وسمًا صريحًا ويشير إلى كود السطر في إحدى صفحات هذا الفهرس.",
+            "الوسوم المعروفة: TODO وFIXME وBUG وHACK وXXX وREVIEW وSECURITY وDEPRECATED وISSUE وDEFECT وREGRESSION وRISK وGAP وERROR وWARNING وPERF وPRIVACY وDATA_LOSS وACCESSIBILITY.",
+            "",
+            "## الاستثناءات وحدود التغطية",
+            "",
+            "- ملفات الفهرسة المولّدة نفسها مستثناة لمنع الحلقة الذاتية.",
+            "- تُفهرس سطور كل ملف نصي قابل للقراءة وحجمه حتى 2 MiB؛ الملفات الثنائية أو الأكبر أو غير القابلة للقراءة تظهر في جرد الملفات فقط.",
+            "- الملفات الحساسة المعروفة وقواعد البيانات والبيئات المحلية ومجلدات البناء والاعتماديات مستثناة عمدًا.",
+            "- أكواد الأسطر مشتقة من مسار الملف ورقم السطر؛ يتغير رقم الكود عند تحرك السطر بسبب تغييرات سابقة في الملف.",
+            "- وسوم المراجعة ليست تشخيصًا آليًا لكل عيب منطقي؛ الفهرس يسهل العثور على الكود لكنه لا يستطيع إثبات خلوه من الأخطاء.",
+            "",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def render_coverage_audit_markdown(
+    root: Path,
+    inventory: list[IndexedFile],
+    source_lines: list[IndexedLine],
+    excluded_paths: list[tuple[str, str]],
+) -> str:
+    """Render a generated coverage ledger with exact line-index coverage and exclusions."""
+    indexed_files = [item for item in inventory if item.line_count is not None]
+    metadata_only = [item for item in inventory if item.line_count is None]
+    expected_line_count = sum(item.line_count or 0 for item in indexed_files)
+    actual_line_count = len(source_lines)
+    coverage_ok = expected_line_count == actual_line_count
+    lines = [
+        "# OMARAI INDEX COVERAGE AUDIT",
+        "",
+        "<!-- هذا الملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
+        "",
+        "> سجل أدلة تغطية الفهرس وحدوده، وليس ادعاءً باكتشاف كل عيب منطقي في البرنامج.",
+        "",
+        "## نتيجة تغطية السطور",
+        "",
+        f"- ملفات المستودع المؤهلة في الجرد: **{len(inventory)}**",
+        f"- الملفات المفهرسة سطرًا بسطر: **{len(indexed_files)}**",
+        f"- الملفات الوصفية فقط التي لا تتوفر سطورها: **{len(metadata_only)}**",
+        f"- السطور المتوقع فهرستها من عدادات الملفات: **{expected_line_count}**",
+        f"- سجلات السطور الفعلية: **{actual_line_count}**",
+        f"- تحقق العدد الإجمالي: **{'PASS' if coverage_ok else 'FAIL'}**",
+        f"- نسبة التغطية الحسابية ضمن الملفات المؤهلة القابلة للقراءة: **{(100.0 if coverage_ok and expected_line_count == actual_line_count else (actual_line_count / expected_line_count * 100 if expected_line_count else 100.0)):.2f}%**",
+        "",
+        "يتحقق المولد كذلك من أن أرقام السطور متتابعة لكل ملف ومن عدم تكرار معرّفات SRC؛ أي فشل يمنع نشر الفهرس.",
+        "",
+        "## الملفات التي لا تُفهرس سطورها",
+        "",
+        "هذه الملفات تظل ظاهرة في جرد MASTER INDEX مع سبب الاستثناء. لا يُدرج التقرير محتوياتها.",
+        "",
+        "| معرّف الملف | المسار | الحجم بالبايت | السبب |",
+        "|---|---|---:|---|",
+    ]
+
+    if metadata_only:
+        for item in metadata_only:
+            reason = _text_index_skip_reason(root / item.file)
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        item.file_id,
+                        _markdown_code_span(item.file),
+                        str(item.size_bytes),
+                        _markdown_cell(reason),
+                    )
+                )
+                + " |"
+            )
+    else:
+        lines.append("| — | — | — | لا توجد ملفات مؤهلة بالجرد الوصفي فقط. |")
+
+    lines.extend(
+        [
+            "",
+            "## المسارات المستبعدة عمدًا",
+            "",
+            "يحتوي هذا السجل أسماء المسارات وأسباب الاستثناء فقط، ولا يقرأ محتوى الأسرار أو قواعد البيانات أو المجلدات المستبعدة.",
+            "",
+            "| المسار المستبعد | السبب |",
+            "|---|---|",
+        ]
+    )
+    if excluded_paths:
+        for excluded_path, reason in excluded_paths:
+            lines.append(f"| {_markdown_code_span(excluded_path)} | {_markdown_cell(reason)} |")
+    else:
+        lines.append("| — | لا توجد مسارات مستبعدة مكتشفة. |")
+
+    lines.extend(
+        [
+            "",
+            "## ما تعنيه النتيجة وما لا تعنيه",
+            "",
+            "- التغطية بنسبة 100% تعني أن كل سطر منطقي في كل ملف نصي مؤهل وقابل للقراءة ضمن حد الحجم له سجل SRC فريد ورقم سطر مطابق.",
+            "- لا تعني أن كل مسار مستبعد أو كل ملف ثنائي/كبير مفهرس سطرًا بسطر؛ أسباب الاستبعاد مسجلة أعلاه.",
+            "- لا تعني اكتشاف كل عيب برمجي أو أمني أو منطقي. العيوب المعروفة التي يوسمها المطور صراحة تظهر في سجل FND داخل MASTER INDEX.",
+            "- الرموز غير Python مستخرجة بقواعد ساكنة تقريبية؛ استخدم فهرس السطور للوصول إلى النص الأصلي والتحقق يدويًا.",
+            "- المولد لا يعدّل كود التطبيق ولا يدمج الفروع؛ وظيفته بناء الأدلة والفهرس والتحقق من اتساقهما.",
+            "",
+            "[افتح MASTER INDEX](MASTER_INDEX.md) | [افتح SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def render_markdown(
+    symbols: list[IndexedSymbol],
+    files_scanned: int,
+    inventory: list[IndexedFile] | None = None,
+    static_symbols: list[IndexedMarker] | None = None,
+    source_lines: list[IndexedLine] | None = None,
+    findings: list[IndexedFinding] | None = None,
+) -> str:
+    """Render the repository file, symbol, explicit-review-marker, and line-index overview."""
+    file_inventory = inventory or []
+    marker_inventory = static_symbols or []
+    line_inventory = source_lines or []
+    finding_inventory = findings or []
+    documented_count = sum(symbol.documented is True for symbol in symbols)
+    missing_count = sum(symbol.documented is False for symbol in symbols)
+    not_applicable_count = sum(symbol.documented is None for symbol in symbols)
     lines = [
         "# MASTER INDEX — Omarai",
         "",
         "<!-- هذا الملف مُولَّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
         "",
-        "> حالة التوثيق هنا تعني وجود Docstring غير فارغة فقط؛ ولا تُقيّم دقتها أو كفايتها.",
-        "> يعرض عمود الوصف أول فقرة من الـDocstring للمحافظة على سهولة قراءة الفهرس.",
+        "> MASTER INDEX يجمع جرد الملفات والتعريفات المسماة ووسوم المراجعة؛ SOURCE LINES INDEX يحتوي الأسطر الكاملة",
+        "> لكل ملف نصي مؤهل قابل للقراءة، مع معرّف سطر ورقم السطر الأصلي.",
+        "> استخراج الرموز غير Python تقريبي؛ أما فهرسة الأسطر فمخصصة للوصول إلى النص الموجود وليست حكمًا على صحته.",
         "",
         "## ملخص الفهرسة",
         "",
-        f"- ملفات Python المفحوصة: **{files_scanned}**",
-        f"- الدوال والكلاسات المفهرسة: **{len(symbols)}**",
-        f"- موثق بوجود Docstring: **{documented_count}**",
-        f"- ناقص Docstring: **{missing_count}**",
+        f"- ملفات المستودع في الجرد: **{len(file_inventory)}**",
+        f"- ملفات Python المحللة: **{files_scanned}**",
+        f"- تعريفات Python المفهرسة: **{len(symbols)}**",
+        f"- تعريفات Python موثقة بوجود Docstring: **{documented_count}**",
+        f"- تعريفات Python بلا Docstring: **{missing_count}**",
+        f"- تعريفات لا ينطبق عليها Docstring: **{not_applicable_count}**",
+        f"- الرموز الساكنة الإضافية: **{len(marker_inventory)}**",
+        f"- الأسطر النصية المفهرسة حرفيًا: **{len(line_inventory)}**",
+        f"- وسوم المراجعة/الإصلاح المسجلة: **{len(finding_inventory)}**",
         "",
-        "## سجل الدوال والكلاسات",
+        "- فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)",
+        "- تدقيق التغطية والاستثناءات: [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md)",
+        "- كل سجل سطر يحمل معرّفًا من الشكل SRC-<FILEHASH>-L000001.",
         "",
-        "| الملف | النوع | اسم الدالة / الكلاس | الوصف | حالة التوثيق | السطر |",
-        "|---|---|---|---|---|---:|",
+        "## جرد ملفات المستودع",
+        "",
+        ("يشمل الملفات المؤهلة من الشفرة والواجهة والاختبارات والوثائق والإعدادات وCI. "
+        "يُستثنى ملف الفهرس المولّد نفسه لتجنب الحلقة الذاتية، كما تُستثنى المجلدات المولّدة "
+        "والبيئات والملفات المحلية الحساسة وقواعد البيانات والمفاتيح المعروفة."),
+        "",
+        "| معرّف الملف | التصنيف | الملف | النوع | الحجم (بايت) | عدد الأسطر | نطاق الفهرسة |",
+        "|---|---|---|---|---:|---:|---|",
     ]
 
-    if not symbols:
-        lines.append("| — | — | — | لم تُكتشف دوال أو كلاسات في ملفات Python المفحوصة. | — | — |")
-    else:
-        for symbol in symbols:
-            status = "موثق" if symbol.documented else "ناقص"
+    if file_inventory:
+        for item in file_inventory:
+            line_count = str(item.line_count) if item.line_count is not None else "غير متاح"
             lines.append(
                 "| "
                 + " | ".join(
                     (
-                        _markdown_cell(symbol.file),
+                        item.file_id,
+                        _markdown_cell(item.category),
+                        f"[{_markdown_cell(item.file)}]({_source_file_href(item.file)})",
+                        _markdown_cell(item.file_type),
+                        str(item.size_bytes),
+                        line_count,
+                        _markdown_cell(item.indexing_scope),
+                    )
+                )
+                + " |"
+            )
+    else:
+        lines.append("| — | — | — | — | — | — | لم يُمرر جرد ملفات إلى المولّد. |")
+
+    lines.extend(
+        [
+            "",
+            "## تعريفات Python من AST",
+            "",
+            ("> تُحسب حالة Docstring للدوال والكلاسات فقط. المتغيرات والثوابت لا تُصنّف "
+            "على أنها موثقة أو ناقصة Docstring."),
+            "",
+            "| الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر | كود السطر للوصول المباشر |",
+            "|---|---|---|---|---|---:|---|",
+        ]
+    )
+
+    if not symbols:
+        lines.append("| — | — | — | لا توجد تعريفات Python في الملفات المؤهلة. | — | — | — |")
+    else:
+        for symbol in symbols:
+            if symbol.documented is True:
+                status = "موثق"
+            elif symbol.documented is False:
+                status = "ناقص"
+            else:
+                status = "لا ينطبق"
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        f"[{_markdown_cell(symbol.file)}]({_source_file_href(symbol.file, symbol.line)})",
                         _markdown_cell(symbol.kind),
                         _markdown_cell(symbol.name),
                         _markdown_cell(symbol.description),
                         status,
                         str(symbol.line),
+                        f"[{_source_line_id(symbol.file, symbol.line)}]({_source_file_href(symbol.file, symbol.line)})",
                     )
                 )
                 + " |"
@@ -248,12 +1690,80 @@ def render_markdown(symbols: list[IndexedSymbol], files_scanned: int) -> str:
     lines.extend(
         [
             "",
+            "## الرموز الساكنة الإضافية",
+            "",
+            ("هذا القسم للمساعدة في الوصول إلى الواجهة والإعدادات والوثائق؛ "
+            "استخراج الرموز غير المحللة بـAST استدلالي وقد لا يساوي تحليلًا كاملًا للغة."),
+            "",
+            "| الملف | نوع الرمز | الاسم/القيمة | السطر | كود السطر للوصول المباشر |",
+            "|---|---|---|---:|---|",
+        ]
+    )
+    if marker_inventory:
+        for marker in marker_inventory:
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        f"[{_markdown_cell(marker.file)}]({_source_file_href(marker.file, marker.line)})",
+                        _markdown_cell(marker.kind),
+                        _markdown_cell(marker.name),
+                        str(marker.line),
+                        f"[{_source_line_id(marker.file, marker.line)}]({_source_file_href(marker.file, marker.line)})",
+                    )
+                )
+                + " |"
+            )
+    else:
+        lines.append("| — | — | — | لم تُكتشف رموز ساكنة إضافية. | — |")
+
+    lines.extend(
+        [
+            "",
+            "## سجل وسوم المراجعة والإصلاح",
+            "",
+            "هذه قائمة بالوسوم الصريحة التي تستدعي المتابعة. وجود الوسم ليس إثباتًا آليًا أن السطر معيب؛ افتح الملف عند رقم السطر وراجع السياق.",
+            "",
+            "| كود الهفوة/الوسم | النوع | الملف | السطر | وصف الوسم | كود السطر | نص السطر |",
+            "|---|---|---|---:|---|---|---|",
+        ]
+    )
+    if finding_inventory:
+        line_map = {source_line.line_id: source_line for source_line in line_inventory}
+        for finding in finding_inventory:
+            source_line = line_map.get(finding.line_id)
+            lines.append(
+                "| "
+                + " | ".join(
+                    (
+                        finding.finding_id,
+                        finding.marker,
+                        f"[{_markdown_cell(finding.file)}]({_source_file_href(finding.file, source_line.line if source_line else 1)})",
+                        str(source_line.line if source_line else "غير متاح"),
+                        _markdown_cell(finding.description),
+                        f"[{finding.line_id}]({_source_file_href(finding.file, source_line.line if source_line else 1)})",
+                        _markdown_code_span(json.dumps(source_line.content, ensure_ascii=False).replace("|", r"\|")) if source_line else "غير متاح",
+                    )
+                )
+                + " |"
+            )
+    else:
+        lines.append("| — | — | — | — | لم تُكتشف وسوم صريحة من الأنواع المعروفة. | — | — |")
+
+    lines.extend(
+        [
+            "",
             "---",
             "",
-            (
-                "أُنشئ هذا الفهرس بتحليل AST القياسي في Python. تُستثنى مجلدات البيئات الافتراضية "
-                "والاعتماديات والملفات المولدة لتجنب فهرسة نواتج البناء أو نسخ المكتبات."
-            ),
+            "## حدود الفهرسة",
+            "",
+            "- كل الأسطر المنطقية للملفات النصية المؤهلة القابلة للقراءة مفهرسة في SOURCE LINES INDEX، لا في هذا الجدول المختصر.",
+            "- الملفات الأكبر من 2 MiB أو غير القابلة للقراءة أو الثنائية تبقى ضمن الجرد الوصفي، دون فهرسة سطورها.",
+            "- لا تُفحص محتويات البيئة الافتراضية والاعتماديات والمجلدات المولدة.",
+            "- لا تُقرأ ملفات البيئة المحلية وقواعد البيانات والمفاتيح المعروفة.",
+            "- تحليل Python يرفض إنشاء فهرس جزئي عند وجود خطأ نحوي في أي ملف Python مؤهل.",
+            ("- يُحدّث هذا الفهرس آليًا عبر GitHub Actions عند دفع تغيير إلى main؛ "
+            "وتظل تغييرات المصدر قيد المراجعة حتى تُدمج وفق سياسة المستودع."),
             "",
         ]
     )
@@ -289,10 +1799,48 @@ def write_if_changed(output_path: Path, content: str) -> bool:
     return True
 
 
+def _generate(
+    root: Path,
+) -> tuple[str, str, str, dict[str, str], int, int, int, int, int, int, int]:
+    """Create deterministic overview, source-line pages, and all counts without writing."""
+    inventory = build_file_inventory(root)
+    symbols, python_file_count = scan_repository(root)
+    static_symbols = scan_static_symbols(root, inventory)
+    source_lines = scan_source_lines(root, inventory)
+    validate_source_line_coverage(root, inventory, source_lines)
+    findings = scan_finding_annotations(source_lines)
+    excluded_paths = discover_excluded_paths(root)
+    coverage_audit_markdown = render_coverage_audit_markdown(
+        root, inventory, source_lines, excluded_paths
+    )
+    source_pages, pages_by_file = render_source_line_pages(
+        source_lines, inventory, findings
+    )
+    markdown = render_markdown(
+        symbols, python_file_count, inventory, static_symbols, source_lines, findings
+    )
+    source_lines_markdown = render_source_lines_markdown(
+        source_lines, inventory, findings, pages_by_file, source_pages
+    )
+    return (
+        markdown,
+        source_lines_markdown,
+        coverage_audit_markdown,
+        source_pages,
+        python_file_count,
+        len(inventory),
+        len(symbols),
+        len(source_lines),
+        len(findings),
+        sum(symbol.documented is True for symbol in symbols),
+        sum(symbol.documented is False for symbol in symbols),
+    )
+
+
 def main(argv: Sequence[str] | None = None) -> int:
-    """Run indexing from the selected repository root and report changes clearly."""
+    """Generate the living repository index or check that the committed copy is current."""
     parser = argparse.ArgumentParser(
-        description="إنشاء فهرس Markdown للدوال والكلاسات والـDocstrings في Omarai."
+        description="إنشاء/فحص فهرس مستودع Omarai وملفات الشفرة والرموز الساكنة."
     )
     parser.add_argument(
         "--root",
@@ -300,28 +1848,123 @@ def main(argv: Sequence[str] | None = None) -> int:
         default=Path(__file__).resolve().parents[1],
         help="مسار جذر المستودع (الافتراضي: جذر مشروع Omarai).",
     )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="لا تكتب ملفات؛ أعد حالة فشل إذا كان أي فهرس مولّد قديمًا أو مفقودًا.",
+    )
     arguments = parser.parse_args(argv)
 
     try:
         root = arguments.root.resolve(strict=True)
         if not root.is_dir():
             raise ValueError(f"المسار المحدد ليس مجلدًا: {root}")
+        (
+            markdown,
+            source_lines_markdown,
+            coverage_audit_markdown,
+            source_pages,
+            python_file_count,
+            repository_file_count,
+            symbol_count,
+            source_line_count,
+            finding_count,
+            documented_count,
+            missing_count,
+        ) = _generate(root)
+        output_path = root / INDEX_RELATIVE_PATH
+        source_lines_output_path = root / SOURCE_LINES_INDEX_RELATIVE_PATH
+        generated_outputs = {
+            INDEX_RELATIVE_PATH: markdown,
+            SOURCE_LINES_INDEX_RELATIVE_PATH: source_lines_markdown,
+            COVERAGE_AUDIT_RELATIVE_PATH: coverage_audit_markdown,
+            **source_pages,
+        }
 
-        symbols, files_scanned = scan_repository(root)
-        output_path = root / "docs" / "MASTER_INDEX.md"
-        markdown = render_markdown(symbols, files_scanned)
-        changed = write_if_changed(output_path, markdown)
+        if arguments.check:
+            for relative_path, expected_content in generated_outputs.items():
+                generated_path = root / relative_path
+                try:
+                    current_content = generated_path.read_text(encoding="utf-8")
+                except FileNotFoundError:
+                    print(
+                        f"فهرس مولّد مفقود: {generated_path}. "
+                        "شغّل python docs/generate_index.py.",
+                        file=sys.stderr,
+                    )
+                    return 1
+                if current_content != expected_content:
+                    if relative_path == INDEX_RELATIVE_PATH:
+                        message = "الفهرس قديم (الرئيسي)"
+                    elif relative_path == SOURCE_LINES_INDEX_RELATIVE_PATH:
+                        message = "فهرس الأسطر قديم"
+                    else:
+                        message = "فهرس تغطية الفهرسة قديم"
+                    print(
+                        f"{message}: {generated_path}. "
+                        "شغّل python docs/generate_index.py.",
+                        file=sys.stderr,
+                    )
+                    return 1
+
+            pages_directory = root / SOURCE_LINES_PAGES_DIR
+            expected_page_names = {
+                Path(relative_path).name
+                for relative_path in source_pages
+            }
+            if pages_directory.exists():
+                actual_page_names = {
+                    path.name
+                    for path in pages_directory.iterdir()
+                    if path.is_file() and SOURCE_LINES_PAGE_RE.fullmatch(path.name)
+                }
+                stale_pages = actual_page_names - expected_page_names
+                if stale_pages:
+                    print(
+                        "صفحات فهرس قديمة يجب حذفها بإعادة التوليد: "
+                        + ", ".join(sorted(stale_pages)),
+                        file=sys.stderr,
+                    )
+                    return 1
+            changed = False
+        else:
+            changed = False
+            for relative_path, generated_content in generated_outputs.items():
+                if write_if_changed(root / relative_path, generated_content):
+                    changed = True
+
+            pages_directory = root / SOURCE_LINES_PAGES_DIR
+            if pages_directory.exists():
+                expected_page_names = {
+                    Path(relative_path).name
+                    for relative_path in source_pages
+                }
+                for path in pages_directory.iterdir():
+                    if (
+                        path.is_file()
+                        and SOURCE_LINES_PAGE_RE.fullmatch(path.name)
+                        and path.name not in expected_page_names
+                    ):
+                        path.unlink()
+                        changed = True
     except (IndexGenerationError, OSError, ValueError) as exc:
         print(f"خطأ في إنشاء فهرس Omarai: {exc}", file=sys.stderr)
         return 1
 
-    action = "تم تحديث" if changed else "الفهرس محدث بالفعل"
+    if arguments.check:
+        action = "الفهرس محدث والتحقق ناجح"
+    else:
+        action = "تم تحديث" if changed else "الفهرس محدث بالفعل"
     print(
         f"{action}: {output_path} | "
-        f"ملفات Python: {files_scanned} | "
-        f"تعريفات: {len(symbols)} | "
-        f"موثق: {sum(symbol.documented for symbol in symbols)} | "
-        f"ناقص: {sum(not symbol.documented for symbol in symbols)}"
+        f"ملفات المستودع: {repository_file_count} | "
+        f"ملفات Python: {python_file_count} | "
+        f"تعريفات Python: {symbol_count} | "
+        f"أسطر مفهرسة: {source_line_count} | "
+        f"صفحات أسطر: {len(source_pages)} | "
+        f"وسوم مراجعة: {finding_count} | "
+        f"موثق: {documented_count} | "
+        f"ناقص Docstring: {missing_count}"
     )
     return 0
 
