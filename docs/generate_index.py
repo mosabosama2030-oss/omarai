@@ -65,7 +65,10 @@ MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024
 MAX_DESCRIPTION_LENGTH = 240
 INDEX_RELATIVE_PATH = "docs/MASTER_INDEX.md"
 SOURCE_LINES_INDEX_RELATIVE_PATH = "docs/SOURCE_LINES_INDEX.md"
-INDEX_OUTPUT_PATHS = frozenset({INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH})
+COVERAGE_AUDIT_RELATIVE_PATH = "docs/INDEX_COVERAGE_AUDIT.md"
+INDEX_OUTPUT_PATHS = frozenset(
+    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}
+)
 SOURCE_LINES_PAGES_DIR = "docs/source_index"
 SOURCE_LINES_PAGE_SIZE = 800
 SOURCE_LINES_PAGE_RE = re.compile(r"SOURCE_LINES_\d{3,}\.md")
@@ -475,8 +478,108 @@ def build_file_inventory(root: Path) -> list[IndexedFile]:
     return inventory
 
 
+def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
+    """List excluded path names and reasons without opening excluded file contents."""
+    excluded: list[tuple[str, str]] = []
+    for current_directory, directory_names, file_names in os.walk(
+        root,
+        topdown=True,
+        followlinks=False,
+    ):
+        kept_directories: list[str] = []
+        for name in sorted(directory_names):
+            candidate = Path(current_directory) / name
+            relative = candidate.relative_to(root).as_posix()
+            if candidate.is_symlink():
+                excluded.append((relative + "/", "رابط رمزي مستبعد لسلامة التتبع"))
+            elif name in EXCLUDED_DIRECTORIES:
+                excluded.append((relative + "/", "مجلد بيئة أو اعتماديات أو مخرجات مولدة مستبعد"))
+            elif name.lower().endswith((".egg-info", ".dist-info")):
+                excluded.append((relative + "/", "بيانات تغليف مولدة مستبعدة"))
+            else:
+                kept_directories.append(name)
+        directory_names[:] = kept_directories
+
+        for name in sorted(file_names):
+            candidate = Path(current_directory) / name
+            relative = candidate.relative_to(root).as_posix()
+            if candidate.is_symlink():
+                excluded.append((relative, "رابط رمزي مستبعد لسلامة التتبع"))
+            elif _is_sensitive_or_runtime_path(candidate):
+                if name.lower().startswith(".env") and name.lower() != ".env.example":
+                    reason = "ملف بيئة محلي مستبعد وقائيًا؛ لم تُقرأ محتوياته"
+                elif candidate.suffix.lower() in EXCLUDED_SUFFIXES:
+                    reason = "قاعدة بيانات أو ملف مفتاح/شهادة مستبعد"
+                else:
+                    reason = "اسم ملف حساس معروف؛ لم تُقرأ محتوياته"
+                excluded.append((relative, reason))
+            elif relative in INDEX_OUTPUT_PATHS:
+                excluded.append((relative, "مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية"))
+            elif relative.startswith(SOURCE_LINES_PAGES_DIR + "/"):
+                excluded.append((relative, "صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية"))
+
+    return sorted(set(excluded), key=lambda item: (item[0].casefold(), item[1]))
+
+
+def _text_index_skip_reason(path: Path) -> str:
+    """Return a concrete safe reason when a file could not be line-indexed."""
+    try:
+        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:
+            return f"الحجم يتجاوز حد الفهرسة ({MAX_INDEXED_TEXT_BYTES} بايت)"
+        if path.suffix.lower() == ".py":
+            with tokenize.open(str(path)) as source_stream:
+                source = source_stream.read()
+        else:
+            source = path.read_text(encoding="utf-8")
+        if "\x00" in source:
+            return "يحتوي محرف NUL؛ عومل كملف غير نصي"
+    except (OSError, UnicodeError, LookupError, tokenize.TokenError):
+        return "تعذرت قراءته كنص صالح بترميز مدعوم"
+    return "سبب غير مصنف؛ يحتاج مراجعة أداة الفهرسة"
+
+
+def validate_source_line_coverage(
+    inventory: list[IndexedFile],
+    source_lines: list[IndexedLine],
+) -> None:
+    """Fail generation if any eligible text line is missing, duplicated, or misnumbered."""
+    expected_by_file = {
+        item.file: item.line_count
+        for item in inventory
+        if item.line_count is not None
+    }
+    actual_lines: dict[str, list[int]] = {file: [] for file in expected_by_file}
+    seen_ids: set[str] = set()
+    failures: list[str] = []
+
+    for source_line in source_lines:
+        if source_line.file not in expected_by_file:
+            failures.append(f"{source_line.file}: سجل سطر لملف غير مؤهل")
+            continue
+        actual_lines[source_line.file].append(source_line.line)
+        if source_line.line_id in seen_ids:
+            failures.append(f"{source_line.file}:{source_line.line}: معرّف SRC مكرر")
+        seen_ids.add(source_line.line_id)
+
+    for file, expected_count in expected_by_file.items():
+        actual = sorted(actual_lines[file])
+        expected = list(range(1, (expected_count or 0) + 1))
+        if actual != expected:
+            failures.append(
+                f"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، "
+                f"الموجود {len(actual)}"
+            )
+
+    if failures:
+        raise IndexGenerationError(
+            "فشل تحقق اكتمال فهرسة السطور؛ لن يُنشر فهرس جزئي:\n- "
+            + "\n- ".join(sorted(set(failures)))
+        )
+
+
 def discover_python_files(root: Path) -> list[Path]:
     """Return sorted Python files from the eligible repository inventory."""
+
     return [
         path
         for path in discover_repository_files(root)
