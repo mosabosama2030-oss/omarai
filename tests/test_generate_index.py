@@ -170,6 +170,8 @@ def test_skips_virtual_environments_and_generated_dependency_directories(
         tmp_path / ".venv" / "lib" / "hidden.py",
         tmp_path / "node_modules" / "package" / "hidden.py",
         tmp_path / "build" / "generated.py",
+        tmp_path / "omarai_agent.egg-info" / "PKG-INFO",
+        tmp_path / "package.dist-info" / "METADATA",
     )
     for path in excluded_files:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -179,6 +181,9 @@ def test_skips_virtual_environments_and_generated_dependency_directories(
 
     assert files_scanned == 1
     assert [symbol.name for symbol in symbols] == ["application_entry"]
+    inventory_paths = {item.file for item in INDEXER.build_file_inventory(tmp_path)}
+    assert not any(".egg-info/" in path for path in inventory_paths)
+    assert not any(".dist-info/" in path for path in inventory_paths)
 
 
 def test_syntax_error_does_not_overwrite_the_previous_index(
