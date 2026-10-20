@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e ".[dev]" ruff
-      - run: ruff check agents api cli tests
+      - run: ruff check agents api cli docs tests
       - run: python -m pytest -q
 
   container-build:
