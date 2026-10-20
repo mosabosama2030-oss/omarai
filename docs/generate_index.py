@@ -147,9 +147,8 @@ _FINDING_MARKER_ALTERNATION = "|".join(
     sorted(FINDING_MARKER_NAMES, key=len, reverse=True)
 )
 FINDING_MARKER_RE = re.compile(
-    rf"\b({_FINDING_MARKER_ALTERNATION})\b\s*[:#-]\s*(.*?)"
-    rf"(?=\b(?:{_FINDING_MARKER_ALTERNATION})\b\s*[:#-]|$)",
-    re.IGNORECASE,
+    rf"(?:^|[;|]\s*)\s*({_FINDING_MARKER_ALTERNATION})\s*:\s*(.*?)"
+    rf"(?=(?:[;|]\s*)?(?:{_FINDING_MARKER_ALTERNATION})\s*:|$)"
 )
 
 
@@ -1031,39 +1030,215 @@ def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedL
     return indexed_lines
 
 
-def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFinding]:
-    """Index explicit review/fix markers; they are hints for review, not proven defects."""
-    findings: list[IndexedFinding] = []
-    for source_line in source_lines:
-        matches = list(FINDING_MARKER_RE.finditer(source_line.content))
-        if not matches:
+def _append_comment_text(
+    comments: dict[int, list[str]],
+    starting_line: int,
+    text: str,
+) -> None:
+    """Map comment text fragments onto original 1-based source lines."""
+    for offset, line_text in enumerate(text.splitlines() or [text]):
+        comments.setdefault(starting_line + offset, []).append(line_text)
+
+
+def _python_comment_map(source: str) -> dict[int, list[str]]:
+    """Return real Python comment tokens, excluding strings and docstrings."""
+    comments: dict[int, list[str]] = {}
+    try:
+        line_iterator = iter(source.splitlines(keepends=True))
+        for token in tokenize.generate_tokens(line_iterator.__next__):
+            if token.type == tokenize.COMMENT:
+                _append_comment_text(comments, token.start[0], token.string[1:])
+    except (tokenize.TokenError, IndentationError, SyntaxError, StopIteration):
+        return comments
+    return comments
+
+
+def _c_style_comment_map(source: str, *, hash_comments: bool = False) -> dict[int, list[str]]:
+    """Extract C-style or hash comments while skipping quoted strings."""
+    comments: dict[int, list[str]] = {}
+    lines = source.splitlines(keepends=True)
+    if not lines and source:
+        lines = [source]
+    quote: str | None = None
+    in_block = False
+
+    for line_number, line in enumerate(lines, start=1):
+        i = 0
+        while i < len(line):
+            if in_block:
+                end = line.find("*/", i)
+                if end < 0:
+                    _append_comment_text(comments, line_number, line[i:])
+                    i = len(line)
+                else:
+                    _append_comment_text(comments, line_number, line[i:end])
+                    i = end + 2
+                    in_block = False
+                continue
+
+            ch = line[i]
+            if quote is not None:
+                if ch == "\\":
+                    i += 2
+                    continue
+                if ch == quote:
+                    quote = None
+                i += 1
+                continue
+
+            if ch in ("'", '"', chr(96)):
+                quote = ch
+                i += 1
+                continue
+
+            if line.startswith("//", i):
+                _append_comment_text(comments, line_number, line[i + 2:].rstrip("\r\n"))
+                break
+            if line.startswith("/*", i):
+                in_block = True
+                i += 2
+                continue
+
+            if hash_comments and ch == "#" and (i == 0 or line[i - 1].isspace()):
+                _append_comment_text(comments, line_number, line[i + 1:].rstrip("\r\n"))
+                break
+            i += 1
+
+        if quote in ("'", '"') and not line.rstrip("\r\n").endswith("\\"):
+            quote = None
+
+    return comments
+
+
+def _html_comment_map(source: str) -> dict[int, list[str]]:
+    """Return HTML comments only."""
+    comments: dict[int, list[str]] = {}
+    comment_re = re.compile(r"<!--(.*?)-->", re.DOTALL)
+    for match in comment_re.finditer(source):
+        starting_line = _line_at(source, match.start(1))
+        _append_comment_text(comments, starting_line, match.group(1))
+    return comments
+
+
+def _markdown_annotation_map(source: str) -> dict[int, list[str]]:
+    """Accept explicit annotations at the start of Markdown prose, skipping fenced code."""
+    comments: dict[int, list[str]] = {}
+    in_fence = False
+    fence_character = ""
+    fence_width = 0
+    marker_start_re = re.compile(
+        rf"^\s*(?:(?:[-*+]|>)\s*)?({_FINDING_MARKER_ALTERNATION})\s*:\s*(.*)$"
+    )
+    for line_number, line in enumerate(source.splitlines(), start=1):
+        fence_match = re.match(r"^\s*(~{3,})", line) or re.match(
+            r"^\s*(" + re.escape(chr(96)) + "{3,})", line
+        )
+        if fence_match:
+            fence = fence_match.group(1)
+            if not in_fence:
+                in_fence = True
+                fence_character = fence[0]
+                fence_width = len(fence)
+            elif fence[0] == fence_character and len(fence) >= fence_width:
+                in_fence = False
             continue
-        totals: dict[str, int] = {}
-        for match in matches:
-            key = match.group(1).upper()
-            totals[key] = totals.get(key, 0) + 1
-        occurrences: dict[str, int] = {}
-        for match in matches:
-            marker = match.group(1).upper()
-            occurrences[marker] = occurrences.get(marker, 0) + 1
-            detail = (match.group(2) or "").strip()
-            description = marker if not detail else f"{marker}: {detail}"
-            finding_id = (
-                f"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}"
-                f"-L{source_line.line:06d}"
+        if in_fence:
+            continue
+        match = marker_start_re.match(line)
+        if match:
+            comments.setdefault(line_number, []).append(
+                f"{match.group(1)}: {match.group(2)}"
             )
-            if totals[marker] > 1:
-                finding_id += f"-M{occurrences[marker]:02d}"
-            findings.append(
-                IndexedFinding(
-                    finding_id=finding_id,
-                    file=source_line.file,
-                    line_id=source_line.line_id,
-                    marker=marker,
-                    description=description,
+    return comments
+
+
+def _finding_comments_by_file(relative_file: str, source: str) -> dict[int, list[str]]:
+    """Extract intended comment/prose annotations by file type, not arbitrary tokens."""
+    path = Path(relative_file)
+    suffix = path.suffix.lower()
+    name = path.name.lower()
+    if suffix == ".py":
+        return _python_comment_map(source)
+    if suffix in JAVASCRIPT_EXTENSIONS | CSS_EXTENSIONS:
+        return _c_style_comment_map(source, hash_comments=suffix == ".scss")
+    if suffix in {".html", ".htm"}:
+        comments = _html_comment_map(source)
+        for pattern in (HTML_SCRIPT_RE, HTML_STYLE_RE):
+            for match in pattern.finditer(source):
+                embedded = match.group(1)
+                local_comments = _c_style_comment_map(embedded)
+                base_line = _line_at(source, match.start(1))
+                for local_line, fragments in local_comments.items():
+                    for fragment in fragments:
+                        comments.setdefault(base_line + local_line - 1, []).append(fragment)
+        return comments
+    if suffix in {".md", ".rst"}:
+        return _markdown_annotation_map(source)
+    if suffix in {".yml", ".yaml", ".toml", ".ini", ".cfg", ".sh"} or name in {
+        "dockerfile",
+        "makefile",
+        "procfile",
+    }:
+        return _c_style_comment_map(source, hash_comments=True)
+    if suffix == ".txt":
+        return _markdown_annotation_map(source)
+    return {}
+
+
+def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFinding]:
+    """Index explicit comments/prose annotations, not incidental words in source code."""
+    findings: list[IndexedFinding] = []
+    by_file: dict[str, list[IndexedLine]] = {}
+    for source_line in source_lines:
+        by_file.setdefault(source_line.file, []).append(source_line)
+
+    for relative_file, records in by_file.items():
+        records.sort(key=lambda item: item.line)
+        source = "\n".join(item.content for item in records)
+        comments = _finding_comments_by_file(relative_file, source)
+        record_by_line = {item.line: item for item in records}
+
+        for line_number, fragments in comments.items():
+            source_line = record_by_line.get(line_number)
+            if source_line is None:
+                continue
+            matches = [
+                match
+                for fragment in fragments
+                for match in FINDING_MARKER_RE.finditer(
+                    fragment.lstrip().lstrip("*").strip()
                 )
-            )
-    findings.sort(key=lambda item: (item.marker, item.file.casefold(), item.line_id))
+            ]
+            if not matches:
+                continue
+            totals: dict[str, int] = {}
+            for match in matches:
+                marker = match.group(1)
+                totals[marker] = totals.get(marker, 0) + 1
+            occurrences: dict[str, int] = {}
+            for match in matches:
+                marker = match.group(1)
+                occurrences[marker] = occurrences.get(marker, 0) + 1
+                detail = (match.group(2) or "").strip()
+                description = marker if not detail else f"{marker}: {detail}"
+                finding_id = (
+                    f"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}"
+                    f"-L{source_line.line:06d}"
+                )
+                if totals[marker] > 1:
+                    finding_id += f"-M{occurrences[marker]:02d}"
+                findings.append(
+                    IndexedFinding(
+                        finding_id=finding_id,
+                        file=source_line.file,
+                        line_id=source_line.line_id,
+                        marker=marker,
+                        description=description,
+                    )
+                )
+    findings.sort(
+        key=lambda item: (item.marker, item.file.casefold(), item.line_id, item.finding_id)
+    )
     return findings
 
 
