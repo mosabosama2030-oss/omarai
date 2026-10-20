@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000374 إلى SRC-AAA21D04E8-L000112
+- النطاق: SRC-FA4E1423C3-L000359 إلى SRC-AAA21D04E8-L000097
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000359](../../tests/test_generate_index.py#L359) | 359 | `"    with pytest.raises(INDEXER.IndexGenerationError, match=\"اكتمال فهرسة السطور\"):"` | — |
+| [SRC-FA4E1423C3-L000360](../../tests/test_generate_index.py#L360) | 360 | `"        INDEXER.validate_source_line_coverage(tmp_path, inventory, lines[:-1])"` | — |
+| [SRC-FA4E1423C3-L000361](../../tests/test_generate_index.py#L361) | 361 | `"    with pytest.raises(INDEXER.IndexGenerationError, match=\"معرّف SRC مكرر\"):"` | — |
+| [SRC-FA4E1423C3-L000362](../../tests/test_generate_index.py#L362) | 362 | `"        INDEXER.validate_source_line_coverage(tmp_path, inventory, lines + [lines[0]])"` | — |
+| [SRC-FA4E1423C3-L000363](../../tests/test_generate_index.py#L363) | 363 | `"    corrupted = [replace(lines[0], content=\"not the source\"), *lines[1:]]"` | — |
+| [SRC-FA4E1423C3-L000364](../../tests/test_generate_index.py#L364) | 364 | `"    with pytest.raises(INDEXER.IndexGenerationError, match=\"نص السطر لا يطابق المصدر\"):"` | — |
+| [SRC-FA4E1423C3-L000365](../../tests/test_generate_index.py#L365) | 365 | `"        INDEXER.validate_source_line_coverage(tmp_path, inventory, corrupted)"` | — |
+| [SRC-FA4E1423C3-L000366](../../tests/test_generate_index.py#L366) | 366 | `""` | — |
+| [SRC-FA4E1423C3-L000367](../../tests/test_generate_index.py#L367) | 367 | `""` | — |
+| [SRC-FA4E1423C3-L000368](../../tests/test_generate_index.py#L368) | 368 | `"def test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secrets("` | — |
+| [SRC-FA4E1423C3-L000369](../../tests/test_generate_index.py#L369) | 369 | `"    tmp_path: Path,"` | — |
+| [SRC-FA4E1423C3-L000370](../../tests/test_generate_index.py#L370) | 370 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000371](../../tests/test_generate_index.py#L371) | 371 | `"    \"\"\"Coverage report states exact skipped-file reasons without exposing secret contents.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000372](../../tests/test_generate_index.py#L372) | 372 | `"    (tmp_path / \"source.py\").write_text(\"VALUE = 7\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000373](../../tests/test_generate_index.py#L373) | 373 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_API_TOKEN=never-print-this-secret\\n\", encoding=\"utf-8\")"` | — |
 | [SRC-FA4E1423C3-L000374](../../tests/test_generate_index.py#L374) | 374 | `"    (tmp_path / \"large.txt\").write_bytes(b\"x\" * (INDEXER.MAX_INDEXED_TEXT_BYTES + 1))"` | — |
 | [SRC-FA4E1423C3-L000375](../../tests/test_generate_index.py#L375) | 375 | `"    (tmp_path / \".venv\" / \"lib\").mkdir(parents=True)"` | — |
 | [SRC-FA4E1423C3-L000376](../../tests/test_generate_index.py#L376) | 376 | `"    (tmp_path / \".venv\" / \"lib\" / \"hidden.py\").write_text(\"PRIVATE = True\\n\", encoding=\"utf-8\")"` | — |
@@ -819,18 +834,3 @@
 | [SRC-AAA21D04E8-L000095](../../tests/test_generation_capabilities.py#L95) | 95 | `"    with pytest.raises(RuntimeError, match=\"سبب انتهاء واضحًا\"):"` | — |
 | [SRC-AAA21D04E8-L000096](../../tests/test_generation_capabilities.py#L96) | 96 | `"        agent._request_completion("` | — |
 | [SRC-AAA21D04E8-L000097](../../tests/test_generation_capabilities.py#L97) | 97 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
-| [SRC-AAA21D04E8-L000098](../../tests/test_generation_capabilities.py#L98) | 98 | `"            model=\"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000099](../../tests/test_generation_capabilities.py#L99) | 99 | `"        )"` | — |
-| [SRC-AAA21D04E8-L000100](../../tests/test_generation_capabilities.py#L100) | 100 | `""` | — |
-| [SRC-AAA21D04E8-L000101](../../tests/test_generation_capabilities.py#L101) | 101 | `"    assert calls == [\"primary/model\"]"` | — |
-| [SRC-AAA21D04E8-L000102](../../tests/test_generation_capabilities.py#L102) | 102 | `"    assert agent.model_usage == []"` | — |
-| [SRC-AAA21D04E8-L000103](../../tests/test_generation_capabilities.py#L103) | 103 | `"    assert agent.generation_diagnostics == [{"` | — |
-| [SRC-AAA21D04E8-L000104](../../tests/test_generation_capabilities.py#L104) | 104 | `"        \"requested_model\": \"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000105](../../tests/test_generation_capabilities.py#L105) | 105 | `"        \"attempted_model\": \"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000106](../../tests/test_generation_capabilities.py#L106) | 106 | `"        \"status\": \"finish_reason_missing\","` | — |
-| [SRC-AAA21D04E8-L000107](../../tests/test_generation_capabilities.py#L107) | 107 | `"    }]"` | — |
-| [SRC-AAA21D04E8-L000108](../../tests/test_generation_capabilities.py#L108) | 108 | `""` | — |
-| [SRC-AAA21D04E8-L000109](../../tests/test_generation_capabilities.py#L109) | 109 | `""` | — |
-| [SRC-AAA21D04E8-L000110](../../tests/test_generation_capabilities.py#L110) | 110 | `"def test_capability_question_distinguishes_configuration_from_live_health(monkeypatch):"` | — |
-| [SRC-AAA21D04E8-L000111](../../tests/test_generation_capabilities.py#L111) | 111 | `"    agent = WebAgent()"` | — |
-| [SRC-AAA21D04E8-L000112](../../tests/test_generation_capabilities.py#L112) | 112 | `""` | — |

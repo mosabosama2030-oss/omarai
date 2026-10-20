@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001837 إلى SRC-DE7EABE998-L000015
+- النطاق: SRC-F725E90B2A-L001810 إلى SRC-F725E90B2A-L002609
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001810](../../tests/test_web_agent.py#L1810) | 1810 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L001811](../../tests/test_web_agent.py#L1811) | 1811 | `"        \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L001812](../../tests/test_web_agent.py#L1812) | 1812 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001813](../../tests/test_web_agent.py#L1813) | 1813 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001814](../../tests/test_web_agent.py#L1814) | 1814 | `"    }"` | — |
+| [SRC-F725E90B2A-L001815](../../tests/test_web_agent.py#L1815) | 1815 | `""` | — |
+| [SRC-F725E90B2A-L001816](../../tests/test_web_agent.py#L1816) | 1816 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L001817](../../tests/test_web_agent.py#L1817) | 1817 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001818](../../tests/test_web_agent.py#L1818) | 1818 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L001819](../../tests/test_web_agent.py#L1819) | 1819 | `"        \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001820](../../tests/test_web_agent.py#L1820) | 1820 | `"        lambda research_plan: ("` | — |
+| [SRC-F725E90B2A-L001821](../../tests/test_web_agent.py#L1821) | 1821 | `"            sources,"` | — |
+| [SRC-F725E90B2A-L001822](../../tests/test_web_agent.py#L1822) | 1822 | `"            [],"` | — |
+| [SRC-F725E90B2A-L001823](../../tests/test_web_agent.py#L1823) | 1823 | `"            {"` | — |
+| [SRC-F725E90B2A-L001824](../../tests/test_web_agent.py#L1824) | 1824 | `"                \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L001825](../../tests/test_web_agent.py#L1825) | 1825 | `"                \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L001826](../../tests/test_web_agent.py#L1826) | 1826 | `"                \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 3}],"` | — |
+| [SRC-F725E90B2A-L001827](../../tests/test_web_agent.py#L1827) | 1827 | `"                \"unique_sources\": 3,"` | — |
+| [SRC-F725E90B2A-L001828](../../tests/test_web_agent.py#L1828) | 1828 | `"                \"pages_fetched\": 3,"` | — |
+| [SRC-F725E90B2A-L001829](../../tests/test_web_agent.py#L1829) | 1829 | `"                \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001830](../../tests/test_web_agent.py#L1830) | 1830 | `"                \"provider_counts\": {\"test_provider\": 3},"` | — |
+| [SRC-F725E90B2A-L001831](../../tests/test_web_agent.py#L1831) | 1831 | `"                \"platform_counts\": {\"web\": 3},"` | — |
+| [SRC-F725E90B2A-L001832](../../tests/test_web_agent.py#L1832) | 1832 | `"                \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L001833](../../tests/test_web_agent.py#L1833) | 1833 | `"                \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L001834](../../tests/test_web_agent.py#L1834) | 1834 | `"                \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001835](../../tests/test_web_agent.py#L1835) | 1835 | `"                \"evidence_signals\": {},"` | — |
+| [SRC-F725E90B2A-L001836](../../tests/test_web_agent.py#L1836) | 1836 | `"            },"` | — |
 | [SRC-F725E90B2A-L001837](../../tests/test_web_agent.py#L1837) | 1837 | `"        ),"` | — |
 | [SRC-F725E90B2A-L001838](../../tests/test_web_agent.py#L1838) | 1838 | `"    )"` | — |
 | [SRC-F725E90B2A-L001839](../../tests/test_web_agent.py#L1839) | 1839 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
@@ -787,41 +814,5 @@
 | [SRC-F725E90B2A-L002605](../../tests/test_web_agent.py#L2605) | 2605 | `"               search_report=None: \"توجد نتائج أولية للمراجعة [المصدر 1].\","` | — |
 | [SRC-F725E90B2A-L002606](../../tests/test_web_agent.py#L2606) | 2606 | `"    )"` | — |
 | [SRC-F725E90B2A-L002607](../../tests/test_web_agent.py#L2607) | 2607 | `""` | — |
-| [SRC-F725E90B2A-L002608](../../tests/test_web_agent.py#L2608) | 2608 | `"    result = agent.answer(\"الطاقة المتجددة في مصر\", mode=mode)"` | — |
-| [SRC-F725E90B2A-L002609](../../tests/test_web_agent.py#L2609) | 2609 | `"    plan = seen[\"plan\"]"` | — |
-| [SRC-F725E90B2A-L002610](../../tests/test_web_agent.py#L2610) | 2610 | `""` | — |
-| [SRC-F725E90B2A-L002611](../../tests/test_web_agent.py#L2611) | 2611 | `"    assert plan[\"mode\"] == mode"` | — |
-| [SRC-F725E90B2A-L002612](../../tests/test_web_agent.py#L2612) | 2612 | `"    assert result[\"research_plan\"][\"mode\"] == mode"` | — |
-| [SRC-F725E90B2A-L002613](../../tests/test_web_agent.py#L2613) | 2613 | `"    if mode == \"deep\":"` | — |
-| [SRC-F725E90B2A-L002614](../../tests/test_web_agent.py#L2614) | 2614 | `"        assert plan[\"depth\"] == \"deep\""` | — |
-| [SRC-F725E90B2A-L002615](../../tests/test_web_agent.py#L2615) | 2615 | `"        assert len(plan[\"queries\"]) >= 3"` | — |
-| [SRC-F725E90B2A-L002616](../../tests/test_web_agent.py#L2616) | 2616 | `"    elif mode == \"latest\":"` | — |
-| [SRC-F725E90B2A-L002617](../../tests/test_web_agent.py#L2617) | 2617 | `"        assert plan[\"freshness\"] == \"current\""` | — |
-| [SRC-F725E90B2A-L002618](../../tests/test_web_agent.py#L2618) | 2618 | `"        assert any(\"latest\" in query.lower() or \"recent\" in query.lower() for query in plan[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L002619](../../tests/test_web_agent.py#L2619) | 2619 | `"    else:"` | — |
-| [SRC-F725E90B2A-L002620](../../tests/test_web_agent.py#L2620) | 2620 | `"        assert plan[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L002621](../../tests/test_web_agent.py#L2621) | 2621 | `"        assert any(query.startswith(\"site:\") for query in plan[\"queries\"])"` | — |
-## واجهة الويب
-
-### FILE-DE7EABE998 — [web/agent.html](../../web/agent.html#L1)
-
-- النوع: **HTML**
-- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-DE7EABE998-L000001](../../web/agent.html#L1) | 1 | `"<!doctype html>"` | — |
-| [SRC-DE7EABE998-L000002](../../web/agent.html#L2) | 2 | `"<html lang=\"ar\" dir=\"rtl\">"` | — |
-| [SRC-DE7EABE998-L000003](../../web/agent.html#L3) | 3 | `"<head>"` | — |
-| [SRC-DE7EABE998-L000004](../../web/agent.html#L4) | 4 | `"<meta charset=\"utf-8\">"` | — |
-| [SRC-DE7EABE998-L000005](../../web/agent.html#L5) | 5 | `"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">"` | — |
-| [SRC-DE7EABE998-L000006](../../web/agent.html#L6) | 6 | `"<meta name=\"theme-color\" content=\"#0a1220\">"` | — |
-| [SRC-DE7EABE998-L000007](../../web/agent.html#L7) | 7 | `"<title>Omarai \| وكيل البحث والتحليل</title>"` | — |
-| [SRC-DE7EABE998-L000008](../../web/agent.html#L8) | 8 | `"<style>"` | — |
-| [SRC-DE7EABE998-L000009](../../web/agent.html#L9) | 9 | `":root{color-scheme:dark;--bg:#0a1220;--panel:#101b2c;--panel2:#132238;--line:#263b55;--text:#f0f5fc;--muted:#9cabc0;--teal:#65e5d0;--blue:#9bbcff;--green:#84e0a9;--amber:#ffd28a;--red:#ff929e;--radius:20px}"` | — |
-| [SRC-DE7EABE998-L000010](../../web/agent.html#L10) | 10 | `"*{box-sizing:border-box}"` | — |
-| [SRC-DE7EABE998-L000011](../../web/agent.html#L11) | 11 | `"body{margin:0;background:radial-gradient(ellipse at 92% -10%,#173755 0,transparent 38%),radial-gradient(ellipse at 5% 40%,#10273a 0,transparent 32%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,\"Segoe UI\",sans-serif;min-height:100vh}"` | — |
-| [SRC-DE7EABE998-L000012](../../web/agent.html#L12) | 12 | `"button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,textarea:focus-visible{outline:2px solid var(--teal);outline-offset:2px}"` | — |
-| [SRC-DE7EABE998-L000013](../../web/agent.html#L13) | 13 | `".shell{max-width:1240px;margin:auto;padding:18px;min-height:100vh;display:flex;flex-direction:column}"` | — |
-| [SRC-DE7EABE998-L000014](../../web/agent.html#L14) | 14 | `".topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 2px 18px;border-bottom:1px solid #26384b}"` | — |
-| [SRC-DE7EABE998-L000015](../../web/agent.html#L15) | 15 | `".brand{display:flex;align-items:center;gap:11px;min-width:0}.logo{height:45px;width:45px;border-radius:15px;display:grid;place-items:center;color:#07131e;background:linear-gradient(135deg,#73f0d8,#9bbcff);font-weight:950;font-size:25px;box-shadow:0 8px 30px #67e8df22}"` | — |
+| [SRC-F725E90B2A-L002608](../../tests/test_web_agent.py#L2608) | 2608 | `"    question = ("` | — |
+| [SRC-F725E90B2A-L002609](../../tests/test_web_agent.py#L2609) | 2609 | `"        \"ابحث عن شقة في التجمع الخامس بسعر 5000000 جنيه\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001522 إلى SRC-1AE03B9EC3-L002321
+- النطاق: SRC-1AE03B9EC3-L001521 إلى SRC-1AE03B9EC3-L002320
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001521](../../agents/web_agent.py#L1521) | 1521 | `"                                \"sort\": \"relevance\","` | — |
 | [SRC-1AE03B9EC3-L001522](../../agents/web_agent.py#L1522) | 1522 | `"                                \"t\": \"all\","` | — |
 | [SRC-1AE03B9EC3-L001523](../../agents/web_agent.py#L1523) | 1523 | `"                                \"limit\": 10,"` | — |
 | [SRC-1AE03B9EC3-L001524](../../agents/web_agent.py#L1524) | 1524 | `"                                \"type\": \"link\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002318](../../agents/web_agent.py#L2318) | 2318 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L002319](../../agents/web_agent.py#L2319) | 2319 | `"    def _history_search_query(question: str, history: list[dict[str, str]]) -> str:"` | — |
 | [SRC-1AE03B9EC3-L002320](../../agents/web_agent.py#L2320) | 2320 | `"        # Carry context into short follow-up searches such as \"والسعر؟\" or \"and the price?\""` | — |
-| [SRC-1AE03B9EC3-L002321](../../agents/web_agent.py#L2321) | 2321 | `"        follow_up_markers = ("` | — |

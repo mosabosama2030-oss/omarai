@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000936 إلى SRC-B3062EB677-L000083
+- النطاق: SRC-90FAA34ADE-L000921 إلى SRC-B3062EB677-L000068
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000921](../../tests/fixtures/answer_quality_cases.json#L921) | 921 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
+| [SRC-90FAA34ADE-L000922](../../tests/fixtures/answer_quality_cases.json#L922) | 922 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000923](../../tests/fixtures/answer_quality_cases.json#L923) | 923 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000924](../../tests/fixtures/answer_quality_cases.json#L924) | 924 | `"      \"case_id\": \"AQ-032\","` | — |
+| [SRC-90FAA34ADE-L000925](../../tests/fixtures/answer_quality_cases.json#L925) | 925 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000926](../../tests/fixtures/answer_quality_cases.json#L926) | 926 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L000927](../../tests/fixtures/answer_quality_cases.json#L927) | 927 | `"      \"question\": \"A public company directory lists a Cairo bakery with a phone number. Can we mark it as a verified sales prospect?\","` | — |
+| [SRC-90FAA34ADE-L000928](../../tests/fixtures/answer_quality_cases.json#L928) | 928 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000929](../../tests/fixtures/answer_quality_cases.json#L929) | 929 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000930](../../tests/fixtures/answer_quality_cases.json#L930) | 930 | `"        \"Distinguishes public listing data from verified current contact and buying intent\","` | — |
+| [SRC-90FAA34ADE-L000931](../../tests/fixtures/answer_quality_cases.json#L931) | 931 | `"        \"Recommends validating contact details and fit before qualification\","` | — |
+| [SRC-90FAA34ADE-L000932](../../tests/fixtures/answer_quality_cases.json#L932) | 932 | `"        \"Marks purchase intent as unknown unless direct evidence exists\""` | — |
+| [SRC-90FAA34ADE-L000933](../../tests/fixtures/answer_quality_cases.json#L933) | 933 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000934](../../tests/fixtures/answer_quality_cases.json#L934) | 934 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000935](../../tests/fixtures/answer_quality_cases.json#L935) | 935 | `"        \"Marks the prospect fully verified from one directory entry\","` | — |
 | [SRC-90FAA34ADE-L000936](../../tests/fixtures/answer_quality_cases.json#L936) | 936 | `"        \"Infers purchase intent solely from business category\""` | — |
 | [SRC-90FAA34ADE-L000937](../../tests/fixtures/answer_quality_cases.json#L937) | 937 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000938](../../tests/fixtures/answer_quality_cases.json#L938) | 938 | `"      \"evidence_fixture\": {"` | — |
@@ -828,18 +843,3 @@
 | [SRC-B3062EB677-L000066](../../tests/test_answer_quality_runner.py#L66) | 66 | `""` | — |
 | [SRC-B3062EB677-L000067](../../tests/test_answer_quality_runner.py#L67) | 67 | `"def test_live_refuses_unbounded_without_limit_or_case_id(capsys):"` | — |
 | [SRC-B3062EB677-L000068](../../tests/test_answer_quality_runner.py#L68) | 68 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000069](../../tests/test_answer_quality_runner.py#L69) | 69 | `"    rc = mod.main([\"--mode\", \"live\", \"--corpus\", str(CORPUS)])"` | — |
-| [SRC-B3062EB677-L000070](../../tests/test_answer_quality_runner.py#L70) | 70 | `"    assert rc == 2"` | — |
-| [SRC-B3062EB677-L000071](../../tests/test_answer_quality_runner.py#L71) | 71 | `"    err = capsys.readouterr().err"` | — |
-| [SRC-B3062EB677-L000072](../../tests/test_answer_quality_runner.py#L72) | 72 | `"    assert \"Refusing unbounded\" in err"` | — |
-| [SRC-B3062EB677-L000073](../../tests/test_answer_quality_runner.py#L73) | 73 | `""` | — |
-| [SRC-B3062EB677-L000074](../../tests/test_answer_quality_runner.py#L74) | 74 | `""` | — |
-| [SRC-B3062EB677-L000075](../../tests/test_answer_quality_runner.py#L75) | 75 | `"def test_live_unknown_case_id(capsys):"` | — |
-| [SRC-B3062EB677-L000076](../../tests/test_answer_quality_runner.py#L76) | 76 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000077](../../tests/test_answer_quality_runner.py#L77) | 77 | `"    rc = mod.main("` | — |
-| [SRC-B3062EB677-L000078](../../tests/test_answer_quality_runner.py#L78) | 78 | `"        ["` | — |
-| [SRC-B3062EB677-L000079](../../tests/test_answer_quality_runner.py#L79) | 79 | `"            \"--mode\","` | — |
-| [SRC-B3062EB677-L000080](../../tests/test_answer_quality_runner.py#L80) | 80 | `"            \"live\","` | — |
-| [SRC-B3062EB677-L000081](../../tests/test_answer_quality_runner.py#L81) | 81 | `"            \"--corpus\","` | — |
-| [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
-| [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
