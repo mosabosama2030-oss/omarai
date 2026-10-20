@@ -1156,17 +1156,25 @@ def write_if_changed(output_path: Path, content: str) -> bool:
     return True
 
 
-def _generate(root: Path) -> tuple[str, int, int, int, int, int]:
-    """Create the complete in-memory index without writing files."""
+def _generate(root: Path) -> tuple[str, str, int, int, int, int, int, int, int]:
+    """Create deterministic file/symbol/line indexes completely in memory."""
     inventory = build_file_inventory(root)
     symbols, python_file_count = scan_repository(root)
     static_symbols = scan_static_symbols(root, inventory)
-    markdown = render_markdown(symbols, python_file_count, inventory, static_symbols)
+    source_lines = scan_source_lines(root, inventory)
+    findings = scan_finding_annotations(source_lines)
+    markdown = render_markdown(
+        symbols, python_file_count, inventory, static_symbols, source_lines, findings
+    )
+    source_lines_markdown = render_source_lines_markdown(source_lines, inventory, findings)
     return (
         markdown,
+        source_lines_markdown,
         python_file_count,
         len(inventory),
         len(symbols),
+        len(source_lines),
+        len(findings),
         sum(symbol.documented is True for symbol in symbols),
         sum(symbol.documented is False for symbol in symbols),
     )
@@ -1196,13 +1204,17 @@ def main(argv: Sequence[str] | None = None) -> int:
             raise ValueError(f"المسار المحدد ليس مجلدًا: {root}")
         (
             markdown,
+            source_lines_markdown,
             python_file_count,
             repository_file_count,
             symbol_count,
+            source_line_count,
+            finding_count,
             documented_count,
             missing_count,
         ) = _generate(root)
         output_path = root / INDEX_RELATIVE_PATH
+        source_lines_output_path = root / SOURCE_LINES_INDEX_RELATIVE_PATH
 
         if arguments.check:
             try:
@@ -1219,9 +1231,27 @@ def main(argv: Sequence[str] | None = None) -> int:
                     file=sys.stderr,
                 )
                 return 1
+            try:
+                current_source_lines = source_lines_output_path.read_text(encoding="utf-8")
+            except FileNotFoundError:
+                print(
+                    f"فهرس الأسطر غير موجود: {source_lines_output_path}. "
+                    "شغّل المولّد دون --check.",
+                    file=sys.stderr,
+                )
+                return 1
+            if current_source_lines != source_lines_markdown:
+                print(
+                    f"فهرس الأسطر قديم: {source_lines_output_path}. "
+                    "شغّل python docs/generate_index.py.",
+                    file=sys.stderr,
+                )
+                return 1
             changed = False
         else:
-            changed = write_if_changed(output_path, markdown)
+            changed_master = write_if_changed(output_path, markdown)
+            changed_lines = write_if_changed(source_lines_output_path, source_lines_markdown)
+            changed = changed_master or changed_lines
     except (IndexGenerationError, OSError, ValueError) as exc:
         print(f"خطأ في إنشاء فهرس Omarai: {exc}", file=sys.stderr)
         return 1
@@ -1235,6 +1265,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         f"ملفات المستودع: {repository_file_count} | "
         f"ملفات Python: {python_file_count} | "
         f"تعريفات Python: {symbol_count} | "
+        f"أسطر مفهرسة: {source_line_count} | "
+        f"وسوم مراجعة: {finding_count} | "
         f"موثق: {documented_count} | "
         f"ناقص Docstring: {missing_count}"
     )
