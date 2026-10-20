@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import argparse
 import ast
+import hashlib
+import json
 import os
 import re
 import sys
@@ -60,6 +62,8 @@ EXCLUDED_SUFFIXES = frozenset(
 MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024
 MAX_DESCRIPTION_LENGTH = 240
 INDEX_RELATIVE_PATH = "docs/MASTER_INDEX.md"
+SOURCE_LINES_INDEX_RELATIVE_PATH = "docs/SOURCE_LINES_INDEX.md"
+INDEX_OUTPUT_PATHS = frozenset({INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH})
 
 PYTHON_EXTENSIONS = frozenset({".py"})
 JAVASCRIPT_EXTENSIONS = frozenset({".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"})
@@ -109,6 +113,7 @@ INI_SECTION_RE = re.compile(r"^\s*\[([^\]]+)\]\s*$", re.MULTILINE)
 INI_KEY_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*=", re.MULTILINE)
 UPPER_SNAKE_RE = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
 API_PATH_RE = re.compile(r"""["'](/(?:api|leads)(?:/[A-Za-z0-9_{}./-]+)*)["']""")
+FINDING_MARKER_RE = re.compile(r"\b(TODO|FIXME|BUG|HACK|XXX|REVIEW|SECURITY|DEPRECATED)\b(?:\s*[:#-]?\s*(.*))?", re.IGNORECASE)
 
 
 @dataclass(frozen=True, slots=True)
@@ -125,13 +130,15 @@ class IndexedSymbol:
 
 @dataclass(frozen=True, slots=True)
 class IndexedFile:
-    """Represent a repository file without including its contents in the index."""
+    """Represent a repository file with stable identifiers and navigation metadata."""
 
     file: str
     file_type: str
     size_bytes: int
     line_count: int | None
     indexing_scope: str
+    file_id: str
+    category: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -142,6 +149,29 @@ class IndexedMarker:
     name: str
     kind: str
     line: int
+
+
+@dataclass(frozen=True, slots=True)
+class IndexedLine:
+    """Represent one exact logical line from an eligible readable repository text file."""
+
+    file: str
+    file_id: str
+    line_id: str
+    category: str
+    line: int
+    content: str
+
+
+@dataclass(frozen=True, slots=True)
+class IndexedFinding:
+    """Represent a source annotation that explicitly requests attention."""
+
+    finding_id: str
+    file: str
+    line_id: str
+    marker: str
+    description: str
 
 
 class IndexGenerationError(RuntimeError):
