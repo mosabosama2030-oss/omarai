@@ -1353,7 +1353,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                     return 1
                 if current_content != expected_content:
                     if relative_path == INDEX_RELATIVE_PATH:
-                        message = "الفهرس الرئيسي قديم"
+                        message = "الفهرس قديم (الرئيسي)"
                     else:
                         message = "فهرس الأسطر قديم"
                     print(
