@@ -1,76 +1,105 @@
-name: Update Omarai living index
+name: Update Omarai complete source and symbol indexes
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "feat/**", "fix/**", "feature/**"]
+    paths-ignore:
+      - "docs/MASTER_INDEX.md"
+      - "docs/SOURCE_LINES_INDEX.md"
+      - "docs/INDEX_COVERAGE_AUDIT.md"
+      - "docs/source_index/**"
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
 
-# Keep one index refresh in flight. Each run fetches the newest main before scanning.
+# Serialize updates separately per branch. Generated-index-only commits are ignored above.
 concurrency:
-  group: omarai-living-index-main
+  group: omarai-living-index-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   refresh-index:
-    name: Generate and publish MASTER_INDEX.md
+    name: Generate and publish all repository indexes
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Fetch the latest main revision
+      - name: Fetch the latest revision of the triggering branch
         shell: bash
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
-          git fetch --no-tags origin main
-          git checkout --force -B main origin/main
+          git fetch --no-tags origin "${BRANCH_NAME}"
+          git checkout --force -B "${BRANCH_NAME}" "origin/${BRANCH_NAME}"
 
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
 
-      - name: Generate the living index
+      - name: Generate the master, review-marker, and paginated source-line indexes
         run: python docs/generate_index.py
 
-      - name: Commit and publish only when the index changes
+      - name: Verify every generated index and remove stale-page drift
+        run: python docs/generate_index.py --check
+
+      - name: Commit and publish the generated indexes only when changed
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
-          git add -- docs/MASTER_INDEX.md
+          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/INDEX_COVERAGE_AUDIT.md docs/source_index/
           if git diff --cached --quiet; then
-            echo "MASTER_INDEX.md is already up to date; no commit is needed."
+            echo "All generated index files are already up to date; no commit is needed."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "docs(index): refresh Python symbol inventory"
+          git commit -m "docs(index): refresh repository source-line inventory"
 
-          # Prefer a direct update. If main is protected, publish a dedicated branch
-          # and open/update a PR rather than silently losing the generated index.
+          if [[ "${BRANCH_NAME}" != "main" ]]; then
+            # Keep feature/fix branches reviewable with their generated index outputs.
+            # This is a normal push; no force update and no merge are performed.
+            git push origin "HEAD:${BRANCH_NAME}"
+            echo "Generated indexes committed to branch ${BRANCH_NAME}."
+            exit 0
+          fi
+
+          # On main, publish only a fast-forward update. If policy rejects it,
+          # offer a PR as the fallback; never force-push or auto-merge.
           if git push origin HEAD:main; then
-            echo "MASTER_INDEX.md was pushed to main."
+            echo "Generated indexes were pushed to main."
             exit 0
           fi
 
           automation_branch="automation/living-index"
-          git push --force origin "HEAD:${automation_branch}"
+          if ! git push origin "HEAD:${automation_branch}"; then
+            automation_branch="automation/living-index-${GITHUB_RUN_ID}"
+            git push origin "HEAD:${automation_branch}"
+            gh pr create \
+              --base main \
+              --head "${automation_branch}" \
+              --title "docs(index): refresh repository source-line inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed."
+            exit 0
+          fi
+
           pr_number="$(gh pr list --state open --base main --head "${automation_branch}" --json number --jq '.[0].number // empty')"
           if [ -z "${pr_number}" ]; then
             gh pr create \
               --base main \
               --head "${automation_branch}" \
-              --title "docs(index): refresh Python symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is opened because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
+              --title "docs(index): refresh repository source-line inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed."
           else
             gh pr edit "${pr_number}" \
-              --title "docs(index): refresh Python symbol inventory" \
-              --body "Automated refresh of docs/MASTER_INDEX.md. This PR is updated because the workflow could not push directly to main. The index is generated from repository Python ASTs; statuses indicate only whether a non-empty docstring exists."
+              --title "docs(index): refresh repository source-line inventory" \
+              --body "Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed."
           fi
