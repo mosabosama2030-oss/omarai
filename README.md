@@ -41,9 +41,9 @@ python docs/generate_index.py
 python docs/generate_index.py --check
 ```
 
-GitHub Actions validates the generator on Python 3.11 and 3.12. The workflow triggered by pushes to `main` regenerates and commits all indexes and generated pages only when output changes; obsolete generated pages are removed. If direct publication is rejected, it opens a pull request instead of force-updating a branch or auto-merging.
+GitHub Actions validates the generator on Python 3.11 and 3.12. The indexing workflow runs on pushes to `main` and the `feat/**`, `fix/**`, and `feature/**` branches. It regenerates and commits all indexes and generated pages only when output changes; obsolete generated pages are removed, while generated-index-only commits are ignored to avoid loops. If direct publication to `main` is rejected, it opens a pull request instead of force-updating a branch or auto-merging.
 
-Coverage includes every logical line in eligible readable text files up to 2 MiB. Known local secrets, runtime databases, dependency/build directories, binary/unreadable files and oversized files are excluded from line-level indexing by design but listed by metadata where eligible. Static review markers help track explicit findings; no source index can prove that every arbitrary logic bug has been detected or that all code is correct.
+When a known code issue is found, add a source comment using one supported marker name (TODO, FIXME, BUG, HACK, XXX, REVIEW, SECURITY, or DEPRECATED), followed by a colon and a concise description. The index assigns an `FND-...` code and links it to the exact `SRC-...` source-line record; removing or editing that source annotation updates the generated register on the next index run. Coverage includes every logical line in eligible readable text files up to 2 MiB. Known local secrets, runtime databases, dependency/build directories, binary/unreadable files and oversized files are excluded from line-level indexing by design but listed by metadata where eligible. Static review markers help track explicit findings; no source index can prove that every arbitrary logic bug has been detected or that all code is correct.
 
 ## Per-request resource budget
 
