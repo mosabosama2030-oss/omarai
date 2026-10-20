@@ -874,68 +874,61 @@ def _markdown_code_span(value: str) -> str:
     return f"{fence}{content}{fence}"
 
 
-def render_source_lines_markdown(
+def render_source_line_pages(
     source_lines: list[IndexedLine],
     inventory: list[IndexedFile],
     findings: list[IndexedFinding],
-) -> str:
-    """Render every indexed source line with a stable ID and exact JSON-escaped text."""
-    by_file: dict[str, list[IndexedLine]] = {}
-    for item in inventory:
-        if item.line_count is not None:
-            by_file.setdefault(item.file, [])
-    for source_line in source_lines:
-        by_file.setdefault(source_line.file, []).append(source_line)
-    findings_by_line = {finding.line_id: finding for finding in findings}
+) -> tuple[dict[str, str], dict[str, list[str]]]:
+    """Split line-level records into deterministic small pages and map each file to its pages."""
+    pages: dict[str, str] = {}
+    pages_by_file: dict[str, list[str]] = {}
     inventory_by_path = {item.file: item for item in inventory}
-    files_with_lines = sum(item.line_count is not None for item in inventory)
-    lines = [
-        "# SOURCE LINES INDEX — Omarai",
-        "",
-        "<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
-        "",
-        "> هذا الفهرس يدرج كل سطر منطقي من كل ملف نصي مؤهل يمكن قراءته ضمن حد الحجم.",
-        "> لكل سطر معرّف حتمي مشتق من مسار الملف ورقم السطر، والنص الكامل معروض بصيغة JSON مقتبسة.",
-        "> ابدأ من MASTER_INDEX.md للوصول حسب اسم الدالة أو الكلاس أو الملف، ثم استخدم معرّف السطر للوصول الدقيق.",
-        "",
-        "## ملخص التغطية",
-        "",
-        f"- ملفات المستودع في الجرد: **{len(inventory)}**",
-        f"- ملفات نصية مفهرسة سطرًا بسطر: **{files_with_lines}**",
-        f"- إجمالي الأسطر المفهرسة: **{len(source_lines)}**",
-        f"- وسوم المراجعة/الإصلاح المكتشفة: **{len(findings)}**",
-        "",
-        "## فهرس الأسطر حسب التصنيف والملف",
-        "",
-        "كل سجل يضم معرّفًا فريدًا داخل المسار، ورقم السطر الأصلي، والنص الكامل لذلك السطر.",
-        "",
-    ]
-    current_category: str | None = None
-    for relative_file in sorted(by_file, key=str.casefold):
-        item = inventory_by_path[relative_file]
-        if item.category != current_category:
-            current_category = item.category
-            lines.extend([f"## {current_category}", ""])
-        lines.extend(
-            [
-                f"### {item.file_id} — [{_markdown_cell(relative_file)}]({_source_file_href(relative_file)})",
-                "",
-                f"- النوع: **{item.file_type}**",
-                f"- نطاق الفهرسة: {_markdown_cell(item.indexing_scope)}",
-                f"- عدد الأسطر: **{item.line_count if item.line_count is not None else 'غير متاح'}**",
-                "",
-                "| معرّف السطر | السطر | النص الكامل للسطر | وسم مراجعة |",
-                "|---|---:|---|---|",
-            ]
-        )
-        if not by_file[relative_file]:
-            lines.append("| — | — | ملف نصي فارغ (صفر سطر) | — |")
-        for source_line in by_file[relative_file]:
+    findings_by_line = {finding.line_id: finding for finding in findings}
+
+    for page_number, start in enumerate(
+        range(0, len(source_lines), SOURCE_LINES_PAGE_SIZE),
+        start=1,
+    ):
+        chunk = source_lines[start : start + SOURCE_LINES_PAGE_SIZE]
+        page_path = f"{SOURCE_LINES_PAGES_DIR}/SOURCE_LINES_{page_number:03d}.md"
+        lines = [
+            "# Omarai Source Lines",
+            "",
+            "<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
+            "",
+            f"- الصفحة: **{page_number:03d}**",
+            f"- سجلات الأسطر: **{len(chunk)}**",
+            f"- النطاق: {chunk[0].line_id} إلى {chunk[-1].line_id}",
+            "- الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)",
+            "",
+        ]
+        current_file: str | None = None
+        for source_line in chunk:
+            item = inventory_by_path[source_line.file]
+            if source_line.file != current_file:
+                current_file = source_line.file
+                lines.extend(
+                    [
+                        f"## {item.category}",
+                        "",
+                        f"### {item.file_id} — [{_markdown_cell(item.file)}]({_source_file_href(item.file, index_directory=SOURCE_LINES_PAGES_DIR)})",
+                        "",
+                        f"- النوع: **{item.file_type}**",
+                        f"- نطاق الفهرسة: {_markdown_cell(item.indexing_scope)}",
+                        "",
+                        "| كود السطر | السطر | النص الكامل للسطر | كود الوسم |",
+                        "|---|---:|---|---|",
+                    ]
+                )
             finding = findings_by_line.get(source_line.line_id)
-            finding_text = finding.finding_id if finding else "—"
+            finding_code = finding.finding_id if finding else "—"
             exact_text = json.dumps(source_line.content, ensure_ascii=False)
             escaped_text = exact_text.replace("|", r"\|")
-            href = _source_file_href(relative_file, source_line.line)
+            href = _source_file_href(
+                source_line.file,
+                source_line.line,
+                index_directory=SOURCE_LINES_PAGES_DIR,
+            )
             line_code = f"[{source_line.line_id}]({href})"
             lines.append(
                 "| "
@@ -944,29 +937,110 @@ def render_source_lines_markdown(
                         line_code,
                         str(source_line.line),
                         _markdown_code_span(escaped_text),
-                        finding_text,
+                        finding_code,
                     )
                 )
                 + " |"
             )
-        lines.append("")
-    if not by_file:
-        lines.extend(["لا توجد ملفات نصية مؤهلة للعرض سطرًا بسطر.", ""])
+            refs = pages_by_file.setdefault(source_line.file, [])
+            if page_path not in refs:
+                refs.append(page_path)
+        pages[page_path] = "\n".join(lines) + "\n"
+
+    return pages, pages_by_file
+
+
+def render_source_lines_markdown(
+    source_lines: list[IndexedLine],
+    inventory: list[IndexedFile],
+    findings: list[IndexedFinding],
+    pages_by_file: dict[str, list[str]] | None = None,
+    source_pages: dict[str, str] | None = None,
+) -> str:
+    """Render a compact table of contents for the sharded full source-line index."""
+    assigned_pages = pages_by_file or {}
+    rendered_pages = source_pages or {}
+    files_with_lines = sum(item.line_count is not None for item in inventory)
+    lines = [
+        "# SOURCE LINES INDEX — Omarai",
+        "",
+        "<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->",
+        "",
+        "> هذا دليل الوصول إلى فهرس الأسطر الكامل. يحتوي كل سطر في الملفات النصية المؤهلة على كود SRC- ورقم السطر ونص السطر كاملًا.",
+        "> قُسّم المحتوى إلى صفحات صغيرة حتى تظل كل صفحة قابلة للفتح والبحث بسرعة من الهاتف والمتصفح.",
+        "> ابدأ من [MASTER INDEX](MASTER_INDEX.md) للعثور حسب اسم الملف أو الدالة أو الكلاس أو وسم المراجعة.",
+        "",
+        "## ملخص التغطية",
+        "",
+        f"- الملفات في جرد المستودع: **{len(inventory)}**",
+        f"- الملفات النصية المفهرسة سطرًا بسطر: **{files_with_lines}**",
+        f"- الأسطر المفهرسة: **{len(source_lines)}**",
+        f"- وسوم المراجعة/الإصلاح المسجلة: **{len(findings)}**",
+        f"- صفحات الأسطر: **{len(rendered_pages)}**",
+        "",
+        "## صفحات الأسطر",
+        "",
+        "| الصفحة | عدد السجلات | من كود | إلى كود |",
+        "|---|---:|---|---|",
+    ]
+    for page_path, page_content in rendered_pages.items():
+        count = sum(1 for line in page_content.splitlines() if line.startswith("| [SRC-"))
+        ids = re.findall(r"\bSRC-[A-F0-9]+-L\d{6}\b", page_content)
+        label = Path(page_path).stem
+        lines.append(
+            f"| [{label}]({Path(page_path).relative_to('docs').as_posix()}) | "
+            f"{count} | {ids[0] if ids else '—'} | {ids[-1] if ids else '—'} |"
+        )
     lines.extend(
         [
-            "---",
             "",
-            "## حدود الفهرس",
+            "## جرد الملفات والوصول حسب الاسم",
             "",
-            "- ملفات الفهرس المولّدة نفسها مستثناة لمنع الحلقة الذاتية.",
-            "- الملفات التي تتجاوز 2 MiB أو تحتوي بيانات ثنائية أو لا يمكن فك ترميزها لا تُعرض سطرًا بسطر؛ تبقى بياناتها الوصفية في MASTER INDEX.",
-            "- ملفات الأسرار المعروفة ومجلدات البيئات والاعتماديات والبناء مستثناة عمدًا.",
-            "- معرّفات الأسطر تعتمد على المسار ورقم السطر؛ تتغير معرفات الأسطر اللاحقة إذا أُضيفت أسطر قبلها.",
-            "- وجود TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED يعني وسم مراجعة صريحًا فقط، ولا يثبت وحده وجود خلل.",
+            "| معرّف الملف | التصنيف | الملف | الأسطر | صفحات الفهرسة |",
+            "|---|---|---|---:|---|",
+        ]
+    )
+    for item in sorted(inventory, key=lambda entry: (entry.category, entry.file.casefold())):
+        if item.line_count is None:
+            line_count = "بيانات وصفية فقط"
+        else:
+            line_count = str(item.line_count)
+        page_links = assigned_pages.get(item.file, [])
+        if page_links:
+            link_text = ", ".join(
+                f"[{Path(page_path).stem}]({Path(page_path).relative_to('docs').as_posix()})"
+                for page_path in page_links
+            )
+        elif item.line_count == 0:
+            link_text = "ملف نصي فارغ"
+        elif item.line_count is None:
+            link_text = "غير مفهرس سطرًا بسطر"
+        else:
+            link_text = "لا توجد سجلات"
+        target = _source_file_href(item.file, index_directory="docs")
+        lines.append(
+            f"| {item.file_id} | {_markdown_cell(item.category)} | "
+            f"[{_markdown_cell(item.file)}]({target}) | {line_count} | {link_text} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## سجل وسوم المراجعة والإصلاح",
+            "",
+            "كل كود FND- في MASTER INDEX يحدد وسمًا صريحًا ويشير إلى كود السطر في إحدى صفحات هذا الفهرس.",
+            "الوسوم المعروفة: TODO وFIXME وBUG وHACK وXXX وREVIEW وSECURITY وDEPRECATED.",
+            "",
+            "## الاستثناءات وحدود التغطية",
+            "",
+            "- ملفات الفهرسة المولّدة نفسها مستثناة لمنع الحلقة الذاتية.",
+            "- تُفهرس سطور كل ملف نصي قابل للقراءة وحجمه حتى 2 MiB؛ الملفات الثنائية أو الأكبر أو غير القابلة للقراءة تظهر في جرد الملفات فقط.",
+            "- الملفات الحساسة المعروفة وقواعد البيانات والبيئات المحلية ومجلدات البناء والاعتماديات مستثناة عمدًا.",
+            "- أكواد الأسطر مشتقة من مسار الملف ورقم السطر؛ يتغير رقم الكود عند تحرك السطر بسبب تغييرات سابقة في الملف.",
+            "- وسوم المراجعة ليست تشخيصًا آليًا لكل عيب منطقي؛ الفهرس يسهل العثور على الكود لكنه لا يستطيع إثبات خلوه من الأخطاء.",
             "",
         ]
     )
-    return "\n".join(lines)
+    return "\n".join(lines) + "\n"
 
 
 def render_markdown(
