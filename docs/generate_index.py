@@ -1465,7 +1465,7 @@ def write_if_changed(output_path: Path, content: str) -> bool:
 
 def _generate(
     root: Path,
-) -> tuple[str, str, dict[str, str], int, int, int, int, int, int, int]:
+) -> tuple[str, str, str, dict[str, str], int, int, int, int, int, int, int]:
     """Create deterministic overview, source-line pages, and all counts without writing."""
     inventory = build_file_inventory(root)
     symbols, python_file_count = scan_repository(root)
@@ -1515,7 +1515,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="لا تكتب أي ملف؛ أعد حالة فشل إذا كان MASTER_INDEX.md قديمًا أو مفقودًا.",
+        help="لا تكتب ملفات؛ أعد حالة فشل إذا كان أي فهرس مولّد قديمًا أو مفقودًا.",
     )
     arguments = parser.parse_args(argv)
 
@@ -1560,8 +1560,10 @@ def main(argv: Sequence[str] | None = None) -> int:
                 if current_content != expected_content:
                     if relative_path == INDEX_RELATIVE_PATH:
                         message = "الفهرس قديم (الرئيسي)"
-                    else:
+                    elif relative_path == SOURCE_LINES_INDEX_RELATIVE_PATH:
                         message = "فهرس الأسطر قديم"
+                    else:
+                        message = "فهرس تغطية الفهرسة قديم"
                     print(
                         f"{message}: {generated_path}. "
                         "شغّل python docs/generate_index.py.",
