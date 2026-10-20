@@ -4,9 +4,186 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-CAC5F305FE-L000008 إلى SRC-3451CC474D-L000276
+- النطاق: SRC-90FAA34ADE-L001185 إلى SRC-3451CC474D-L000101
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-90FAA34ADE — [tests/fixtures/answer_quality_cases.json](../../tests/fixtures/answer_quality_cases.json#L1)
+
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-90FAA34ADE-L001185](../../tests/fixtures/answer_quality_cases.json#L1185) | 1185 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001186](../../tests/fixtures/answer_quality_cases.json#L1186) | 1186 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001187](../../tests/fixtures/answer_quality_cases.json#L1187) | 1187 | `"        \"Says the screenshot alone cannot authenticate current rate or date\","` | — |
+| [SRC-90FAA34ADE-L001188](../../tests/fixtures/answer_quality_cases.json#L1188) | 1188 | `"        \"Seeks a timestamped reliable source or explicitly abstains\","` | — |
+| [SRC-90FAA34ADE-L001189](../../tests/fixtures/answer_quality_cases.json#L1189) | 1189 | `"        \"Separates what is visible in the image from external verification\""` | — |
+| [SRC-90FAA34ADE-L001190](../../tests/fixtures/answer_quality_cases.json#L1190) | 1190 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001191](../../tests/fixtures/answer_quality_cases.json#L1191) | 1191 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001192](../../tests/fixtures/answer_quality_cases.json#L1192) | 1192 | `"        \"Confirms today's rate based only on the cropped screenshot\","` | — |
+| [SRC-90FAA34ADE-L001193](../../tests/fixtures/answer_quality_cases.json#L1193) | 1193 | `"        \"Invents source metadata\""` | — |
+| [SRC-90FAA34ADE-L001194](../../tests/fixtures/answer_quality_cases.json#L1194) | 1194 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001195](../../tests/fixtures/answer_quality_cases.json#L1195) | 1195 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001196](../../tests/fixtures/answer_quality_cases.json#L1196) | 1196 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001197](../../tests/fixtures/answer_quality_cases.json#L1197) | 1197 | `"        \"sources\": [],"` | — |
+| [SRC-90FAA34ADE-L001198](../../tests/fixtures/answer_quality_cases.json#L1198) | 1198 | `"        \"provided_artifact\": {"` | — |
+| [SRC-90FAA34ADE-L001199](../../tests/fixtures/answer_quality_cases.json#L1199) | 1199 | `"          \"description\": \"cropped screenshot with a number but no timestamp or source\""` | — |
+| [SRC-90FAA34ADE-L001200](../../tests/fixtures/answer_quality_cases.json#L1200) | 1200 | `"        }"` | — |
+| [SRC-90FAA34ADE-L001201](../../tests/fixtures/answer_quality_cases.json#L1201) | 1201 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001202](../../tests/fixtures/answer_quality_cases.json#L1202) | 1202 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001203](../../tests/fixtures/answer_quality_cases.json#L1203) | 1203 | `"        \"Claims screenshot proves a current official rate\","` | — |
+| [SRC-90FAA34ADE-L001204](../../tests/fixtures/answer_quality_cases.json#L1204) | 1204 | `"        \"Provides unverified rate as confirmed\""` | — |
+| [SRC-90FAA34ADE-L001205](../../tests/fixtures/answer_quality_cases.json#L1205) | 1205 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001206](../../tests/fixtures/answer_quality_cases.json#L1206) | 1206 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001207](../../tests/fixtures/answer_quality_cases.json#L1207) | 1207 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001208](../../tests/fixtures/answer_quality_cases.json#L1208) | 1208 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001209](../../tests/fixtures/answer_quality_cases.json#L1209) | 1209 | `"      \"case_id\": \"AQ-041\","` | — |
+| [SRC-90FAA34ADE-L001210](../../tests/fixtures/answer_quality_cases.json#L1210) | 1210 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L001211](../../tests/fixtures/answer_quality_cases.json#L1211) | 1211 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001212](../../tests/fixtures/answer_quality_cases.json#L1212) | 1212 | `"      \"question\": \"Compare Cairo and Alexandria for a two-day family trip: transport, likely weather, kid-friendly activities, and one caveat for each city.\","` | — |
+| [SRC-90FAA34ADE-L001213](../../tests/fixtures/answer_quality_cases.json#L1213) | 1213 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001214](../../tests/fixtures/answer_quality_cases.json#L1214) | 1214 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001215](../../tests/fixtures/answer_quality_cases.json#L1215) | 1215 | `"        \"Addresses all four requested dimensions for both cities or states which could not be verified\","` | — |
+| [SRC-90FAA34ADE-L001216](../../tests/fixtures/answer_quality_cases.json#L1216) | 1216 | `"        \"Uses current sources for likely weather and labels forecasts by date\","` | — |
+| [SRC-90FAA34ADE-L001217](../../tests/fixtures/answer_quality_cases.json#L1217) | 1217 | `"        \"Keeps city-specific details distinct\""` | — |
+| [SRC-90FAA34ADE-L001218](../../tests/fixtures/answer_quality_cases.json#L1218) | 1218 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001219](../../tests/fixtures/answer_quality_cases.json#L1219) | 1219 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001220](../../tests/fixtures/answer_quality_cases.json#L1220) | 1220 | `"        \"Only describes Cairo and ignores Alexandria\","` | — |
+| [SRC-90FAA34ADE-L001221](../../tests/fixtures/answer_quality_cases.json#L1221) | 1221 | `"        \"Invents live weather without a retrieval source\""` | — |
+| [SRC-90FAA34ADE-L001222](../../tests/fixtures/answer_quality_cases.json#L1222) | 1222 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001223](../../tests/fixtures/answer_quality_cases.json#L1223) | 1223 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001224](../../tests/fixtures/answer_quality_cases.json#L1224) | 1224 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001225](../../tests/fixtures/answer_quality_cases.json#L1225) | 1225 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001226](../../tests/fixtures/answer_quality_cases.json#L1226) | 1226 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001227](../../tests/fixtures/answer_quality_cases.json#L1227) | 1227 | `"            \"title\": \"Cairo forecast fixture\","` | — |
+| [SRC-90FAA34ADE-L001228](../../tests/fixtures/answer_quality_cases.json#L1228) | 1228 | `"            \"url\": \"https://weather-cairo.example.test/forecast\","` | — |
+| [SRC-90FAA34ADE-L001229](../../tests/fixtures/answer_quality_cases.json#L1229) | 1229 | `"            \"snippet\": \"Forecast available only for Cairo on 2026-10-18.\","` | — |
+| [SRC-90FAA34ADE-L001230](../../tests/fixtures/answer_quality_cases.json#L1230) | 1230 | `"            \"domain\": \"weather-cairo.example.test\","` | — |
+| [SRC-90FAA34ADE-L001231](../../tests/fixtures/answer_quality_cases.json#L1231) | 1231 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001232](../../tests/fixtures/answer_quality_cases.json#L1232) | 1232 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001233](../../tests/fixtures/answer_quality_cases.json#L1233) | 1233 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L001234](../../tests/fixtures/answer_quality_cases.json#L1234) | 1234 | `"        \"notes\": \"No Alexandria weather fixture; reviewer must check explicit missing-data handling\""` | — |
+| [SRC-90FAA34ADE-L001235](../../tests/fixtures/answer_quality_cases.json#L1235) | 1235 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001236](../../tests/fixtures/answer_quality_cases.json#L1236) | 1236 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001237](../../tests/fixtures/answer_quality_cases.json#L1237) | 1237 | `"        \"One city or one of the four dimensions is silently omitted\","` | — |
+| [SRC-90FAA34ADE-L001238](../../tests/fixtures/answer_quality_cases.json#L1238) | 1238 | `"        \"Claims a verified Alexandria forecast despite no such result\""` | — |
+| [SRC-90FAA34ADE-L001239](../../tests/fixtures/answer_quality_cases.json#L1239) | 1239 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001240](../../tests/fixtures/answer_quality_cases.json#L1240) | 1240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001241](../../tests/fixtures/answer_quality_cases.json#L1241) | 1241 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001242](../../tests/fixtures/answer_quality_cases.json#L1242) | 1242 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |
+| [SRC-90FAA34ADE-L001244](../../tests/fixtures/answer_quality_cases.json#L1244) | 1244 | `"      \"category\": \"stale_sources_for_current\","` | — |
+| [SRC-90FAA34ADE-L001245](../../tests/fixtures/answer_quality_cases.json#L1245) | 1245 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001246](../../tests/fixtures/answer_quality_cases.json#L1246) | 1246 | `"      \"question\": \"عايز القواعد الحالية للتسجيل في خدمة حكومية في مصر؛ result timestamp بتاع صفحة الشروط هو 2020 بس.\","` | — |
+| [SRC-90FAA34ADE-L001247](../../tests/fixtures/answer_quality_cases.json#L1247) | 1247 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001248](../../tests/fixtures/answer_quality_cases.json#L1248) | 1248 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001249](../../tests/fixtures/answer_quality_cases.json#L1249) | 1249 | `"        \"يراعي أن صفحة 2020 قد لا تمثل القواعد الحالية\","` | — |
+| [SRC-90FAA34ADE-L001250](../../tests/fixtures/answer_quality_cases.json#L1250) | 1250 | `"        \"يبحث عن صفحة حديثة/رسمية أو يصرح بأن التحقق لم يكتمل\","` | — |
+| [SRC-90FAA34ADE-L001251](../../tests/fixtures/answer_quality_cases.json#L1251) | 1251 | `"        \"يعرض تاريخ المصدر بوضوح عند الاستشهاد به\""` | — |
+| [SRC-90FAA34ADE-L001252](../../tests/fixtures/answer_quality_cases.json#L1252) | 1252 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001253](../../tests/fixtures/answer_quality_cases.json#L1253) | 1253 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001254](../../tests/fixtures/answer_quality_cases.json#L1254) | 1254 | `"        \"يعتمد على شروط 2020 كأنها حالية بلا تنبيه\","` | — |
+| [SRC-90FAA34ADE-L001255](../../tests/fixtures/answer_quality_cases.json#L1255) | 1255 | `"        \"يختلق تحديثًا أحدث\""` | — |
+| [SRC-90FAA34ADE-L001256](../../tests/fixtures/answer_quality_cases.json#L1256) | 1256 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001257](../../tests/fixtures/answer_quality_cases.json#L1257) | 1257 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001258](../../tests/fixtures/answer_quality_cases.json#L1258) | 1258 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001259](../../tests/fixtures/answer_quality_cases.json#L1259) | 1259 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001260](../../tests/fixtures/answer_quality_cases.json#L1260) | 1260 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001261](../../tests/fixtures/answer_quality_cases.json#L1261) | 1261 | `"            \"title\": \"Service registration guide\","` | — |
+| [SRC-90FAA34ADE-L001262](../../tests/fixtures/answer_quality_cases.json#L1262) | 1262 | `"            \"url\": \"https://service.example.test/register-2020\","` | — |
+| [SRC-90FAA34ADE-L001263](../../tests/fixtures/answer_quality_cases.json#L1263) | 1263 | `"            \"snippet\": \"Registration terms updated in 2020.\","` | — |
+| [SRC-90FAA34ADE-L001264](../../tests/fixtures/answer_quality_cases.json#L1264) | 1264 | `"            \"published_at\": \"2020-01-10\","` | — |
+| [SRC-90FAA34ADE-L001265](../../tests/fixtures/answer_quality_cases.json#L1265) | 1265 | `"            \"domain\": \"service.example.test\","` | — |
+| [SRC-90FAA34ADE-L001266](../../tests/fixtures/answer_quality_cases.json#L1266) | 1266 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001267](../../tests/fixtures/answer_quality_cases.json#L1267) | 1267 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001268](../../tests/fixtures/answer_quality_cases.json#L1268) | 1268 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L001269](../../tests/fixtures/answer_quality_cases.json#L1269) | 1269 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001270](../../tests/fixtures/answer_quality_cases.json#L1270) | 1270 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001271](../../tests/fixtures/answer_quality_cases.json#L1271) | 1271 | `"        \"ادعاء أن الشروط حالية من مصدر 2020 فقط\","` | — |
+| [SRC-90FAA34ADE-L001272](../../tests/fixtures/answer_quality_cases.json#L1272) | 1272 | `"        \"غياب التحذير من قدم المصدر\""` | — |
+| [SRC-90FAA34ADE-L001273](../../tests/fixtures/answer_quality_cases.json#L1273) | 1273 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001274](../../tests/fixtures/answer_quality_cases.json#L1274) | 1274 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001276](../../tests/fixtures/answer_quality_cases.json#L1276) | 1276 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001277](../../tests/fixtures/answer_quality_cases.json#L1277) | 1277 | `"      \"case_id\": \"AQ-043\","` | — |
+| [SRC-90FAA34ADE-L001278](../../tests/fixtures/answer_quality_cases.json#L1278) | 1278 | `"      \"category\": \"ambiguous_clarify\","` | — |
+| [SRC-90FAA34ADE-L001279](../../tests/fixtures/answer_quality_cases.json#L1279) | 1279 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001280](../../tests/fixtures/answer_quality_cases.json#L1280) | 1280 | `"      \"question\": \"Can you check it for me and tell me if it is safe?\","` | — |
+| [SRC-90FAA34ADE-L001281](../../tests/fixtures/answer_quality_cases.json#L1281) | 1281 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L001282](../../tests/fixtures/answer_quality_cases.json#L1282) | 1282 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001283](../../tests/fixtures/answer_quality_cases.json#L1283) | 1283 | `"        \"Asks what 'it' refers to and what safety dimension matters\","` | — |
+| [SRC-90FAA34ADE-L001284](../../tests/fixtures/answer_quality_cases.json#L1284) | 1284 | `"        \"Avoids a definitive assessment before context is supplied\","` | — |
+| [SRC-90FAA34ADE-L001285](../../tests/fixtures/answer_quality_cases.json#L1285) | 1285 | `"        \"Keeps clarification concise\""` | — |
+| [SRC-90FAA34ADE-L001286](../../tests/fixtures/answer_quality_cases.json#L1286) | 1286 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001287](../../tests/fixtures/answer_quality_cases.json#L1287) | 1287 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001288](../../tests/fixtures/answer_quality_cases.json#L1288) | 1288 | `"        \"Assumes a specific product, URL, person, or situation\","` | — |
+| [SRC-90FAA34ADE-L001289](../../tests/fixtures/answer_quality_cases.json#L1289) | 1289 | `"        \"Gives a confident safety verdict without identifying the subject\""` | — |
+| [SRC-90FAA34ADE-L001290](../../tests/fixtures/answer_quality_cases.json#L1290) | 1290 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001291](../../tests/fixtures/answer_quality_cases.json#L1291) | 1291 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001292](../../tests/fixtures/answer_quality_cases.json#L1292) | 1292 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001293](../../tests/fixtures/answer_quality_cases.json#L1293) | 1293 | `"        \"notes\": \"No prior context is available to resolve the pronoun\""` | — |
+| [SRC-90FAA34ADE-L001294](../../tests/fixtures/answer_quality_cases.json#L1294) | 1294 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001295](../../tests/fixtures/answer_quality_cases.json#L1295) | 1295 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001296](../../tests/fixtures/answer_quality_cases.json#L1296) | 1296 | `"        \"Definitive yes/no safety answer with no referent\","` | — |
+| [SRC-90FAA34ADE-L001297](../../tests/fixtures/answer_quality_cases.json#L1297) | 1297 | `"        \"No clarifying question\""` | — |
+| [SRC-90FAA34ADE-L001298](../../tests/fixtures/answer_quality_cases.json#L1298) | 1298 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001299](../../tests/fixtures/answer_quality_cases.json#L1299) | 1299 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001300](../../tests/fixtures/answer_quality_cases.json#L1300) | 1300 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001301](../../tests/fixtures/answer_quality_cases.json#L1301) | 1301 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001302](../../tests/fixtures/answer_quality_cases.json#L1302) | 1302 | `"      \"case_id\": \"AQ-044\","` | — |
+| [SRC-90FAA34ADE-L001303](../../tests/fixtures/answer_quality_cases.json#L1303) | 1303 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L001304](../../tests/fixtures/answer_quality_cases.json#L1304) | 1304 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L001305](../../tests/fixtures/answer_quality_cases.json#L1305) | 1305 | `"      \"question\": \"قارن بين خدمتين من ناحية السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، واذكر ما لا تستطيع التحقق منه.\","` | — |
+| [SRC-90FAA34ADE-L001306](../../tests/fixtures/answer_quality_cases.json#L1306) | 1306 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L001307](../../tests/fixtures/answer_quality_cases.json#L1307) | 1307 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001308](../../tests/fixtures/answer_quality_cases.json#L1308) | 1308 | `"        \"يطلب اسم الخدمتين إذا لم تكونا محددتين في السياق\","` | — |
+| [SRC-90FAA34ADE-L001309](../../tests/fixtures/answer_quality_cases.json#L1309) | 1309 | `"        \"يحافظ على أبعاد المقارنة الأربعة في خطة الإجابة\","` | — |
+| [SRC-90FAA34ADE-L001310](../../tests/fixtures/answer_quality_cases.json#L1310) | 1310 | `"        \"يصرح بحدود التحقق بدل اختلاق تفاصيل\""` | — |
+| [SRC-90FAA34ADE-L001311](../../tests/fixtures/answer_quality_cases.json#L1311) | 1311 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001312](../../tests/fixtures/answer_quality_cases.json#L1312) | 1312 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001313](../../tests/fixtures/answer_quality_cases.json#L1313) | 1313 | `"        \"يخمن أسماء خدمات أو أسعارًا\","` | — |
+| [SRC-90FAA34ADE-L001314](../../tests/fixtures/answer_quality_cases.json#L1314) | 1314 | `"        \"يقدم مقارنة ناقصة على أنها نهائية\""` | — |
+| [SRC-90FAA34ADE-L001315](../../tests/fixtures/answer_quality_cases.json#L1315) | 1315 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001316](../../tests/fixtures/answer_quality_cases.json#L1316) | 1316 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001317](../../tests/fixtures/answer_quality_cases.json#L1317) | 1317 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001318](../../tests/fixtures/answer_quality_cases.json#L1318) | 1318 | `"        \"notes\": \"لم تُذكر أسماء الخدمات في السؤال ولا يوجد سياق سابق\""` | — |
+| [SRC-90FAA34ADE-L001319](../../tests/fixtures/answer_quality_cases.json#L1319) | 1319 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001320](../../tests/fixtures/answer_quality_cases.json#L1320) | 1320 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001321](../../tests/fixtures/answer_quality_cases.json#L1321) | 1321 | `"        \"عدم طلب توضيح عن الخدمتين\","` | — |
+| [SRC-90FAA34ADE-L001322](../../tests/fixtures/answer_quality_cases.json#L1322) | 1322 | `"        \"إعلان نتيجة مقارنة بلا بيانات عن أي خدمة\""` | — |
+| [SRC-90FAA34ADE-L001323](../../tests/fixtures/answer_quality_cases.json#L1323) | 1323 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001324](../../tests/fixtures/answer_quality_cases.json#L1324) | 1324 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001325](../../tests/fixtures/answer_quality_cases.json#L1325) | 1325 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001326](../../tests/fixtures/answer_quality_cases.json#L1326) | 1326 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001327](../../tests/fixtures/answer_quality_cases.json#L1327) | 1327 | `"      \"case_id\": \"AQ-045\","` | — |
+| [SRC-90FAA34ADE-L001328](../../tests/fixtures/answer_quality_cases.json#L1328) | 1328 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L001329](../../tests/fixtures/answer_quality_cases.json#L1329) | 1329 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L001330](../../tests/fixtures/answer_quality_cases.json#L1330) | 1330 | `"      \"question\": \"في شركة تشطيب في القاهرة، موقعها فيه نموذج تواصل بس ومفيش دليل إنها محتاجة عملاء جدد. صنّفها في نظام leads.\","` | — |
+| [SRC-90FAA34ADE-L001331](../../tests/fixtures/answer_quality_cases.json#L1331) | 1331 | `"      \"expected_strategy\": \"local\","` | — |
+| [SRC-90FAA34ADE-L001332](../../tests/fixtures/answer_quality_cases.json#L1332) | 1332 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001333](../../tests/fixtures/answer_quality_cases.json#L1333) | 1333 | `"        \"يسجل الشركة كجهة محتملة فقط لا كعميل جاهز\","` | — |
+| [SRC-90FAA34ADE-L001334](../../tests/fixtures/answer_quality_cases.json#L1334) | 1334 | `"        \"يفصل وجود نموذج التواصل عن دليل الاحتياج أو نية الشراء\","` | — |
+| [SRC-90FAA34ADE-L001335](../../tests/fixtures/answer_quality_cases.json#L1335) | 1335 | `"        \"يحدد حالة التحقق والخطوة التالية المقترحة دون إرسال تلقائي\""` | — |
+| [SRC-90FAA34ADE-L001336](../../tests/fixtures/answer_quality_cases.json#L1336) | 1336 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001337](../../tests/fixtures/answer_quality_cases.json#L1337) | 1337 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001338](../../tests/fixtures/answer_quality_cases.json#L1338) | 1338 | `"        \"يستنتج أن الشركة تبحث عن عملاء أو اشترت الخدمة\","` | — |
+| [SRC-90FAA34ADE-L001339](../../tests/fixtures/answer_quality_cases.json#L1339) | 1339 | `"        \"يدّعي أنه تواصل معها أو حصل على رد\""` | — |
+| [SRC-90FAA34ADE-L001340](../../tests/fixtures/answer_quality_cases.json#L1340) | 1340 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001341](../../tests/fixtures/answer_quality_cases.json#L1341) | 1341 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001342](../../tests/fixtures/answer_quality_cases.json#L1342) | 1342 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001343](../../tests/fixtures/answer_quality_cases.json#L1343) | 1343 | `"        \"notes\": \"المتاح فقط نموذج تواصل عام؛ لا يوجد تفاعل أو تصريح باحتياج شراء\""` | — |
+| [SRC-90FAA34ADE-L001344](../../tests/fixtures/answer_quality_cases.json#L1344) | 1344 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001345](../../tests/fixtures/answer_quality_cases.json#L1345) | 1345 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001346](../../tests/fixtures/answer_quality_cases.json#L1346) | 1346 | `"        \"تسجيل نية شراء مؤكدة بلا دليل\","` | — |
+| [SRC-90FAA34ADE-L001347](../../tests/fixtures/answer_quality_cases.json#L1347) | 1347 | `"        \"ادعاء إجراء تواصل لم يحدث\""` | — |
+| [SRC-90FAA34ADE-L001348](../../tests/fixtures/answer_quality_cases.json#L1348) | 1348 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001349](../../tests/fixtures/answer_quality_cases.json#L1349) | 1349 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001350](../../tests/fixtures/answer_quality_cases.json#L1350) | 1350 | `"    }"` | — |
+| [SRC-90FAA34ADE-L001351](../../tests/fixtures/answer_quality_cases.json#L1351) | 1351 | `"  ]"` | — |
+| [SRC-90FAA34ADE-L001352](../../tests/fixtures/answer_quality_cases.json#L1352) | 1352 | `"}"` | — |
 ## اختبارات
 
 ### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
@@ -16,6 +193,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-CAC5F305FE-L000001](../../tests/test_agent_modes.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-CAC5F305FE-L000002](../../tests/test_agent_modes.py#L2) | 2 | `""` | — |
+| [SRC-CAC5F305FE-L000003](../../tests/test_agent_modes.py#L3) | 3 | `"from agents.research import evidence_signal_report"` | — |
+| [SRC-CAC5F305FE-L000004](../../tests/test_agent_modes.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-CAC5F305FE-L000005](../../tests/test_agent_modes.py#L5) | 5 | `""` | — |
+| [SRC-CAC5F305FE-L000006](../../tests/test_agent_modes.py#L6) | 6 | `""` | — |
+| [SRC-CAC5F305FE-L000007](../../tests/test_agent_modes.py#L7) | 7 | `"def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatch):"` | — |
 | [SRC-CAC5F305FE-L000008](../../tests/test_agent_modes.py#L8) | 8 | `"    agent = WebAgent()"` | — |
 | [SRC-CAC5F305FE-L000009](../../tests/test_agent_modes.py#L9) | 9 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-CAC5F305FE-L000010](../../tests/test_agent_modes.py#L10) | 10 | `"    seen = {}"` | — |
@@ -611,7 +795,7 @@
 | [SRC-3451CC474D-L000042](../../tests/test_api.py#L42) | 42 | `"    try:"` | — |
 | [SRC-3451CC474D-L000043](../../tests/test_api.py#L43) | 43 | `"        with urlopen(request, timeout=3) as response:"` | — |
 | [SRC-3451CC474D-L000044](../../tests/test_api.py#L44) | 44 | `"            return response.status, json.loads(response.read().decode(\"utf-8\"))"` | — |
-| [SRC-3451CC474D-L000045](../../tests/test_api.py#L45) | 45 | `"    except HTTPError as error:"` | FND-ERROR-3451CC474D-L000045 |
+| [SRC-3451CC474D-L000045](../../tests/test_api.py#L45) | 45 | `"    except HTTPError as error:"` | — |
 | [SRC-3451CC474D-L000046](../../tests/test_api.py#L46) | 46 | `"        return error.code, json.loads(error.read().decode(\"utf-8\"))"` | — |
 | [SRC-3451CC474D-L000047](../../tests/test_api.py#L47) | 47 | `""` | — |
 | [SRC-3451CC474D-L000048](../../tests/test_api.py#L48) | 48 | `""` | — |
@@ -668,178 +852,3 @@
 | [SRC-3451CC474D-L000099](../../tests/test_api.py#L99) | 99 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000100](../../tests/test_api.py#L100) | 100 | `"    assert changed[\"lead\"][\"status\"] == \"qualified\""` | — |
 | [SRC-3451CC474D-L000101](../../tests/test_api.py#L101) | 101 | `""` | — |
-| [SRC-3451CC474D-L000102](../../tests/test_api.py#L102) | 102 | `"    status, stats = request_json("` | — |
-| [SRC-3451CC474D-L000103](../../tests/test_api.py#L103) | 103 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"كام عميل عندي؟\"}"` | — |
-| [SRC-3451CC474D-L000104](../../tests/test_api.py#L104) | 104 | `"    )"` | — |
-| [SRC-3451CC474D-L000105](../../tests/test_api.py#L105) | 105 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000106](../../tests/test_api.py#L106) | 106 | `"    assert stats[\"kind\"] == \"local_statistics\""` | — |
-| [SRC-3451CC474D-L000107](../../tests/test_api.py#L107) | 107 | `"    assert \"1 إشارة\" in stats[\"answer\"]"` | — |
-| [SRC-3451CC474D-L000108](../../tests/test_api.py#L108) | 108 | `""` | — |
-| [SRC-3451CC474D-L000109](../../tests/test_api.py#L109) | 109 | `"    status, recommendation = request_json("` | — |
-| [SRC-3451CC474D-L000110](../../tests/test_api.py#L110) | 110 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000111](../../tests/test_api.py#L111) | 111 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L000112](../../tests/test_api.py#L112) | 112 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000113](../../tests/test_api.py#L113) | 113 | `"        payload={\"question\": \"مين أفضل إشارة أراجعها؟\"},"` | — |
-| [SRC-3451CC474D-L000114](../../tests/test_api.py#L114) | 114 | `"    )"` | — |
-| [SRC-3451CC474D-L000115](../../tests/test_api.py#L115) | 115 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000116](../../tests/test_api.py#L116) | 116 | `"    assert recommendation[\"kind\"] == \"lead_recommendation\""` | — |
-| [SRC-3451CC474D-L000117](../../tests/test_api.py#L117) | 117 | `"    assert payload[\"source_url\"] in recommendation[\"answer\"]"` | — |
-| [SRC-3451CC474D-L000118](../../tests/test_api.py#L118) | 118 | `""` | — |
-| [SRC-3451CC474D-L000119](../../tests/test_api.py#L119) | 119 | `""` | — |
-| [SRC-3451CC474D-L000120](../../tests/test_api.py#L120) | 120 | `"def test_api_rejects_invalid_filters_and_request_shapes(local_api):"` | — |
-| [SRC-3451CC474D-L000121](../../tests/test_api.py#L121) | 121 | `"    status, error = request_json(local_api, \"/api/leads?limit=not-a-number\")"` | — |
-| [SRC-3451CC474D-L000122](../../tests/test_api.py#L122) | 122 | `"    assert status == 400"` | — |
-| [SRC-3451CC474D-L000123](../../tests/test_api.py#L123) | 123 | `"    assert \"limit\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000124](../../tests/test_api.py#L124) | 124 | `""` | — |
-| [SRC-3451CC474D-L000125](../../tests/test_api.py#L125) | 125 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000126](../../tests/test_api.py#L126) | 126 | `"        local_api, \"/api/analyze\", method=\"POST\", payload=[\"not\", \"an\", \"object\"]"` | — |
-| [SRC-3451CC474D-L000127](../../tests/test_api.py#L127) | 127 | `"    )"` | — |
-| [SRC-3451CC474D-L000128](../../tests/test_api.py#L128) | 128 | `"    assert status == 400"` | — |
-| [SRC-3451CC474D-L000129](../../tests/test_api.py#L129) | 129 | `"    assert \"object\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000130](../../tests/test_api.py#L130) | 130 | `""` | — |
-| [SRC-3451CC474D-L000131](../../tests/test_api.py#L131) | 131 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000132](../../tests/test_api.py#L132) | 132 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"\"}"` | — |
-| [SRC-3451CC474D-L000133](../../tests/test_api.py#L133) | 133 | `"    )"` | — |
-| [SRC-3451CC474D-L000134](../../tests/test_api.py#L134) | 134 | `"    assert status == 400"` | — |
-| [SRC-3451CC474D-L000135](../../tests/test_api.py#L135) | 135 | `"    assert \"question\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000136](../../tests/test_api.py#L136) | 136 | `""` | — |
-| [SRC-3451CC474D-L000137](../../tests/test_api.py#L137) | 137 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000138](../../tests/test_api.py#L138) | 138 | `"        local_api, \"/api/leads\", method=\"POST\", payload={"` | — |
-| [SRC-3451CC474D-L000139](../../tests/test_api.py#L139) | 139 | `"            \"text\": \"بدور على شقة\", \"source_url\": \"file:///private/data\", \"platform\": \"manual\""` | — |
-| [SRC-3451CC474D-L000140](../../tests/test_api.py#L140) | 140 | `"        }"` | — |
-| [SRC-3451CC474D-L000141](../../tests/test_api.py#L141) | 141 | `"    )"` | — |
-| [SRC-3451CC474D-L000142](../../tests/test_api.py#L142) | 142 | `"    assert status == 400"` | — |
-| [SRC-3451CC474D-L000143](../../tests/test_api.py#L143) | 143 | `"    assert \"absolute\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000144](../../tests/test_api.py#L144) | 144 | `""` | — |
-| [SRC-3451CC474D-L000145](../../tests/test_api.py#L145) | 145 | `""` | — |
-| [SRC-3451CC474D-L000146](../../tests/test_api.py#L146) | 146 | `"def test_api_blocks_non_json_and_cross_origin_posts(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000147](../../tests/test_api.py#L147) | 147 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000148](../../tests/test_api.py#L148) | 148 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000149](../../tests/test_api.py#L149) | 149 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000150](../../tests/test_api.py#L150) | 150 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L000151](../../tests/test_api.py#L151) | 151 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000152](../../tests/test_api.py#L152) | 152 | `"        payload={\"question\": \"كام عميل؟\"},"` | — |
-| [SRC-3451CC474D-L000153](../../tests/test_api.py#L153) | 153 | `"        headers={\"Content-Type\": \"text/plain\"},"` | — |
-| [SRC-3451CC474D-L000154](../../tests/test_api.py#L154) | 154 | `"    )"` | — |
-| [SRC-3451CC474D-L000155](../../tests/test_api.py#L155) | 155 | `"    assert status == 415"` | — |
-| [SRC-3451CC474D-L000156](../../tests/test_api.py#L156) | 156 | `"    assert \"Content-Type\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000157](../../tests/test_api.py#L157) | 157 | `""` | — |
-| [SRC-3451CC474D-L000158](../../tests/test_api.py#L158) | 158 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000159](../../tests/test_api.py#L159) | 159 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000160](../../tests/test_api.py#L160) | 160 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L000161](../../tests/test_api.py#L161) | 161 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000162](../../tests/test_api.py#L162) | 162 | `"        payload={\"question\": \"كام عميل؟\"},"` | — |
-| [SRC-3451CC474D-L000163](../../tests/test_api.py#L163) | 163 | `"        headers={\"Origin\": \"https://attacker.example\"},"` | — |
-| [SRC-3451CC474D-L000164](../../tests/test_api.py#L164) | 164 | `"    )"` | — |
-| [SRC-3451CC474D-L000165](../../tests/test_api.py#L165) | 165 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L000166](../../tests/test_api.py#L166) | 166 | `"    assert \"cross-origin\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000167](../../tests/test_api.py#L167) | 167 | `""` | — |
-| [SRC-3451CC474D-L000168](../../tests/test_api.py#L168) | 168 | `""` | — |
-| [SRC-3451CC474D-L000169](../../tests/test_api.py#L169) | 169 | `"def test_configured_frontend_origin_supports_preflight_and_post(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000170](../../tests/test_api.py#L170) | 170 | `"    origin = \"https://frontend.example\""` | — |
-| [SRC-3451CC474D-L000171](../../tests/test_api.py#L171) | 171 | `"    monkeypatch.setenv(\"OMARAI_ALLOWED_ORIGINS\", origin)"` | — |
-| [SRC-3451CC474D-L000172](../../tests/test_api.py#L172) | 172 | `""` | — |
-| [SRC-3451CC474D-L000173](../../tests/test_api.py#L173) | 173 | `"    preflight = Request("` | — |
-| [SRC-3451CC474D-L000174](../../tests/test_api.py#L174) | 174 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000175](../../tests/test_api.py#L175) | 175 | `"        method=\"OPTIONS\","` | — |
-| [SRC-3451CC474D-L000176](../../tests/test_api.py#L176) | 176 | `"        headers={"` | — |
-| [SRC-3451CC474D-L000177](../../tests/test_api.py#L177) | 177 | `"            \"Origin\": origin,"` | — |
-| [SRC-3451CC474D-L000178](../../tests/test_api.py#L178) | 178 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
-| [SRC-3451CC474D-L000179](../../tests/test_api.py#L179) | 179 | `"            \"Access-Control-Request-Headers\": \"authorization,content-type\","` | — |
-| [SRC-3451CC474D-L000180](../../tests/test_api.py#L180) | 180 | `"        },"` | — |
-| [SRC-3451CC474D-L000181](../../tests/test_api.py#L181) | 181 | `"    )"` | — |
-| [SRC-3451CC474D-L000182](../../tests/test_api.py#L182) | 182 | `"    with urlopen(preflight, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000183](../../tests/test_api.py#L183) | 183 | `"        assert response.status == 204"` | — |
-| [SRC-3451CC474D-L000184](../../tests/test_api.py#L184) | 184 | `"        assert response.headers.get(\"Access-Control-Allow-Origin\") == origin"` | — |
-| [SRC-3451CC474D-L000185](../../tests/test_api.py#L185) | 185 | `"        assert response.headers.get(\"Access-Control-Allow-Methods\") == \"GET, POST, OPTIONS\""` | — |
-| [SRC-3451CC474D-L000186](../../tests/test_api.py#L186) | 186 | `"        assert response.headers.get(\"Access-Control-Allow-Headers\") == \"Authorization, Content-Type\""` | — |
-| [SRC-3451CC474D-L000187](../../tests/test_api.py#L187) | 187 | `""` | — |
-| [SRC-3451CC474D-L000188](../../tests/test_api.py#L188) | 188 | `"    body = json.dumps({\"question\": \"مين أفضل إشارة أراجعها؟\"}, ensure_ascii=False).encode(\"utf-8\")"` | — |
-| [SRC-3451CC474D-L000189](../../tests/test_api.py#L189) | 189 | `"    post = Request("` | — |
-| [SRC-3451CC474D-L000190](../../tests/test_api.py#L190) | 190 | `"        local_api + \"/api/ask\","` | — |
-| [SRC-3451CC474D-L000191](../../tests/test_api.py#L191) | 191 | `"        data=body,"` | — |
-| [SRC-3451CC474D-L000192](../../tests/test_api.py#L192) | 192 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000193](../../tests/test_api.py#L193) | 193 | `"        headers={\"Content-Type\": \"application/json\", \"Origin\": origin},"` | — |
-| [SRC-3451CC474D-L000194](../../tests/test_api.py#L194) | 194 | `"    )"` | — |
-| [SRC-3451CC474D-L000195](../../tests/test_api.py#L195) | 195 | `"    with urlopen(post, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000196](../../tests/test_api.py#L196) | 196 | `"        payload = json.loads(response.read().decode(\"utf-8\"))"` | — |
-| [SRC-3451CC474D-L000197](../../tests/test_api.py#L197) | 197 | `"        assert response.status == 200"` | — |
-| [SRC-3451CC474D-L000198](../../tests/test_api.py#L198) | 198 | `"        assert response.headers.get(\"Access-Control-Allow-Origin\") == origin"` | — |
-| [SRC-3451CC474D-L000199](../../tests/test_api.py#L199) | 199 | `"        assert payload[\"kind\"] == \"no_data\""` | — |
-| [SRC-3451CC474D-L000200](../../tests/test_api.py#L200) | 200 | `""` | — |
-| [SRC-3451CC474D-L000201](../../tests/test_api.py#L201) | 201 | `""` | — |
-| [SRC-3451CC474D-L000202](../../tests/test_api.py#L202) | 202 | `"def test_preflight_rejects_unconfigured_origin(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000203](../../tests/test_api.py#L203) | 203 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000204](../../tests/test_api.py#L204) | 204 | `"    preflight = Request("` | — |
-| [SRC-3451CC474D-L000205](../../tests/test_api.py#L205) | 205 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000206](../../tests/test_api.py#L206) | 206 | `"        method=\"OPTIONS\","` | — |
-| [SRC-3451CC474D-L000207](../../tests/test_api.py#L207) | 207 | `"        headers={"` | — |
-| [SRC-3451CC474D-L000208](../../tests/test_api.py#L208) | 208 | `"            \"Origin\": \"https://attacker.example\","` | — |
-| [SRC-3451CC474D-L000209](../../tests/test_api.py#L209) | 209 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
-| [SRC-3451CC474D-L000210](../../tests/test_api.py#L210) | 210 | `"        },"` | — |
-| [SRC-3451CC474D-L000211](../../tests/test_api.py#L211) | 211 | `"    )"` | — |
-| [SRC-3451CC474D-L000212](../../tests/test_api.py#L212) | 212 | `"    with pytest.raises(HTTPError) as error:"` | FND-ERROR-3451CC474D-L000212 |
-| [SRC-3451CC474D-L000213](../../tests/test_api.py#L213) | 213 | `"        urlopen(preflight, timeout=3)"` | — |
-| [SRC-3451CC474D-L000214](../../tests/test_api.py#L214) | 214 | `"    assert error.value.code == 403"` | — |
-| [SRC-3451CC474D-L000215](../../tests/test_api.py#L215) | 215 | `""` | — |
-| [SRC-3451CC474D-L000216](../../tests/test_api.py#L216) | 216 | `""` | — |
-| [SRC-3451CC474D-L000217](../../tests/test_api.py#L217) | 217 | `"def test_ask_is_honest_when_database_is_empty(local_api):"` | — |
-| [SRC-3451CC474D-L000218](../../tests/test_api.py#L218) | 218 | `"    status, answer = request_json("` | — |
-| [SRC-3451CC474D-L000219](../../tests/test_api.py#L219) | 219 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"مين أفضل إشارة أراجعها؟\"}"` | — |
-| [SRC-3451CC474D-L000220](../../tests/test_api.py#L220) | 220 | `"    )"` | — |
-| [SRC-3451CC474D-L000221](../../tests/test_api.py#L221) | 221 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000222](../../tests/test_api.py#L222) | 222 | `"    assert answer[\"kind\"] == \"no_data\""` | — |
-| [SRC-3451CC474D-L000223](../../tests/test_api.py#L223) | 223 | `"    assert \"لا توجد إشارة\" in answer[\"answer\"]"` | — |
-| [SRC-3451CC474D-L000224](../../tests/test_api.py#L224) | 224 | `""` | — |
-| [SRC-3451CC474D-L000225](../../tests/test_api.py#L225) | 225 | `""` | — |
-| [SRC-3451CC474D-L000226](../../tests/test_api.py#L226) | 226 | `""` | — |
-| [SRC-3451CC474D-L000227](../../tests/test_api.py#L227) | 227 | `"def test_web_agent_endpoint_uses_agent_result(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000228](../../tests/test_api.py#L228) | 228 | `"    from api.omarai import WebAgent"` | — |
-| [SRC-3451CC474D-L000229](../../tests/test_api.py#L229) | 229 | `""` | — |
-| [SRC-3451CC474D-L000230](../../tests/test_api.py#L230) | 230 | `"    def fake_answer(self, question, history=None):"` | — |
-| [SRC-3451CC474D-L000231](../../tests/test_api.py#L231) | 231 | `"        return {"` | — |
-| [SRC-3451CC474D-L000232](../../tests/test_api.py#L232) | 232 | `"            \"answer\": \"إجابة اختبار [المصدر 1]\","` | — |
-| [SRC-3451CC474D-L000233](../../tests/test_api.py#L233) | 233 | `"            \"question\": question,"` | — |
-| [SRC-3451CC474D-L000234](../../tests/test_api.py#L234) | 234 | `"            \"search_query\": question,"` | — |
-| [SRC-3451CC474D-L000235](../../tests/test_api.py#L235) | 235 | `"            \"sources\": [{\"title\": \"مصدر\", \"url\": \"https://example.com\", \"snippet\": \"نص\", \"page_fetched\": False}],"` | — |
-| [SRC-3451CC474D-L000236](../../tests/test_api.py#L236) | 236 | `"            \"used_language_model\": True,"` | — |
-| [SRC-3451CC474D-L000237](../../tests/test_api.py#L237) | 237 | `"            \"used_web_search\": True,"` | — |
-| [SRC-3451CC474D-L000238](../../tests/test_api.py#L238) | 238 | `"            \"warnings\": [],"` | — |
-| [SRC-3451CC474D-L000239](../../tests/test_api.py#L239) | 239 | `"            \"kind\": \"web_research\","` | — |
-| [SRC-3451CC474D-L000240](../../tests/test_api.py#L240) | 240 | `"        }"` | — |
-| [SRC-3451CC474D-L000241](../../tests/test_api.py#L241) | 241 | `""` | — |
-| [SRC-3451CC474D-L000242](../../tests/test_api.py#L242) | 242 | `"    monkeypatch.setattr(WebAgent, \"answer\", fake_answer)"` | — |
-| [SRC-3451CC474D-L000243](../../tests/test_api.py#L243) | 243 | `"    status, response = request_json("` | — |
-| [SRC-3451CC474D-L000244](../../tests/test_api.py#L244) | 244 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000245](../../tests/test_api.py#L245) | 245 | `"        \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000246](../../tests/test_api.py#L246) | 246 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000247](../../tests/test_api.py#L247) | 247 | `"        payload={\"question\": \"ابحث عن موضوع\", \"history\": []},"` | — |
-| [SRC-3451CC474D-L000248](../../tests/test_api.py#L248) | 248 | `"    )"` | — |
-| [SRC-3451CC474D-L000249](../../tests/test_api.py#L249) | 249 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000250](../../tests/test_api.py#L250) | 250 | `"    assert response[\"kind\"] == \"web_research\""` | — |
-| [SRC-3451CC474D-L000251](../../tests/test_api.py#L251) | 251 | `"    assert response[\"sources\"][0][\"url\"] == \"https://example.com\""` | — |
-| [SRC-3451CC474D-L000252](../../tests/test_api.py#L252) | 252 | `""` | — |
-| [SRC-3451CC474D-L000253](../../tests/test_api.py#L253) | 253 | `""` | — |
-| [SRC-3451CC474D-L000254](../../tests/test_api.py#L254) | 254 | `""` | — |
-| [SRC-3451CC474D-L000255](../../tests/test_api.py#L255) | 255 | `"def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000256](../../tests/test_api.py#L256) | 256 | `"    from api.omarai import WebAgent"` | — |
-| [SRC-3451CC474D-L000257](../../tests/test_api.py#L257) | 257 | `""` | — |
-| [SRC-3451CC474D-L000258](../../tests/test_api.py#L258) | 258 | `"    def fake_diagnostics(self, test_model=True, test_social=False):"` | — |
-| [SRC-3451CC474D-L000259](../../tests/test_api.py#L259) | 259 | `"        return {"` | — |
-| [SRC-3451CC474D-L000260](../../tests/test_api.py#L260) | 260 | `"            \"overall_status\": \"passed\","` | — |
-| [SRC-3451CC474D-L000261](../../tests/test_api.py#L261) | 261 | `"            \"checks\": {"` | — |
-| [SRC-3451CC474D-L000262](../../tests/test_api.py#L262) | 262 | `"                \"web_search\": {\"status\": \"passed\", \"result_count\": 4},"` | — |
-| [SRC-3451CC474D-L000263](../../tests/test_api.py#L263) | 263 | `"                \"language_model\": {\"status\": \"passed\", \"response_received\": True},"` | — |
-| [SRC-3451CC474D-L000264](../../tests/test_api.py#L264) | 264 | `"                \"social_search\": {\"status\": \"skipped\"},"` | — |
-| [SRC-3451CC474D-L000265](../../tests/test_api.py#L265) | 265 | `"            },"` | — |
-| [SRC-3451CC474D-L000266](../../tests/test_api.py#L266) | 266 | `"            \"model_usage\": [{"` | — |
-| [SRC-3451CC474D-L000267](../../tests/test_api.py#L267) | 267 | `"                \"requested_model\": \"google/gemma-4-31b-it:free\","` | — |
-| [SRC-3451CC474D-L000268](../../tests/test_api.py#L268) | 268 | `"                \"used_model\": \"google/gemma-4-31b-it:free\","` | — |
-| [SRC-3451CC474D-L000269](../../tests/test_api.py#L269) | 269 | `"                \"fallback_used\": \"false\","` | — |
-| [SRC-3451CC474D-L000270](../../tests/test_api.py#L270) | 270 | `"            }],"` | — |
-| [SRC-3451CC474D-L000271](../../tests/test_api.py#L271) | 271 | `"        }"` | — |
-| [SRC-3451CC474D-L000272](../../tests/test_api.py#L272) | 272 | `""` | — |
-| [SRC-3451CC474D-L000273](../../tests/test_api.py#L273) | 273 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", fake_diagnostics)"` | — |
-| [SRC-3451CC474D-L000274](../../tests/test_api.py#L274) | 274 | `"    status, report = request_json("` | — |
-| [SRC-3451CC474D-L000275](../../tests/test_api.py#L275) | 275 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000276](../../tests/test_api.py#L276) | 276 | `"        \"/api/diagnostics\","` | — |

@@ -737,154 +737,154 @@
 | [SRC-E599346ABE-L000147](../generate_index.py#L147) | 147 | `"    sorted(FINDING_MARKER_NAMES, key=len, reverse=True)"` | — |
 | [SRC-E599346ABE-L000148](../generate_index.py#L148) | 148 | `")"` | — |
 | [SRC-E599346ABE-L000149](../generate_index.py#L149) | 149 | `"FINDING_MARKER_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000150](../generate_index.py#L150) | 150 | `"    rf\"\\b({_FINDING_MARKER_ALTERNATION})\\b\\s*[:#-]\\s*(.*?)\""` | — |
-| [SRC-E599346ABE-L000151](../generate_index.py#L151) | 151 | `"    rf\"(?=\\b(?:{_FINDING_MARKER_ALTERNATION})\\b\\s*[:#-]\|$)\","` | — |
-| [SRC-E599346ABE-L000152](../generate_index.py#L152) | 152 | `"    re.IGNORECASE,"` | — |
-| [SRC-E599346ABE-L000153](../generate_index.py#L153) | 153 | `")"` | — |
+| [SRC-E599346ABE-L000150](../generate_index.py#L150) | 150 | `"    rf\"(?:^\|[;\|]\\s*)\\s*({_FINDING_MARKER_ALTERNATION})\\s*:\\s*(.*?)\""` | — |
+| [SRC-E599346ABE-L000151](../generate_index.py#L151) | 151 | `"    rf\"(?=(?:[;\|]\\s*)?(?:{_FINDING_MARKER_ALTERNATION})\\s*:\|$)\""` | — |
+| [SRC-E599346ABE-L000152](../generate_index.py#L152) | 152 | `")"` | — |
+| [SRC-E599346ABE-L000153](../generate_index.py#L153) | 153 | `""` | — |
 | [SRC-E599346ABE-L000154](../generate_index.py#L154) | 154 | `""` | — |
-| [SRC-E599346ABE-L000155](../generate_index.py#L155) | 155 | `""` | — |
-| [SRC-E599346ABE-L000156](../generate_index.py#L156) | 156 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000157](../generate_index.py#L157) | 157 | `"class IndexedSymbol:"` | — |
-| [SRC-E599346ABE-L000158](../generate_index.py#L158) | 158 | `"    \"\"\"Represent a Python definition or module/class assignment.\"\"\""` | — |
-| [SRC-E599346ABE-L000159](../generate_index.py#L159) | 159 | `""` | — |
-| [SRC-E599346ABE-L000160](../generate_index.py#L160) | 160 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000161](../generate_index.py#L161) | 161 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000162](../generate_index.py#L162) | 162 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000163](../generate_index.py#L163) | 163 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000164](../generate_index.py#L164) | 164 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000165](../generate_index.py#L165) | 165 | `"    documented: bool \| None"` | — |
+| [SRC-E599346ABE-L000155](../generate_index.py#L155) | 155 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-E599346ABE-L000156](../generate_index.py#L156) | 156 | `"class IndexedSymbol:"` | — |
+| [SRC-E599346ABE-L000157](../generate_index.py#L157) | 157 | `"    \"\"\"Represent a Python definition or module/class assignment.\"\"\""` | — |
+| [SRC-E599346ABE-L000158](../generate_index.py#L158) | 158 | `""` | — |
+| [SRC-E599346ABE-L000159](../generate_index.py#L159) | 159 | `"    file: str"` | — |
+| [SRC-E599346ABE-L000160](../generate_index.py#L160) | 160 | `"    name: str"` | — |
+| [SRC-E599346ABE-L000161](../generate_index.py#L161) | 161 | `"    kind: str"` | — |
+| [SRC-E599346ABE-L000162](../generate_index.py#L162) | 162 | `"    line: int"` | — |
+| [SRC-E599346ABE-L000163](../generate_index.py#L163) | 163 | `"    description: str"` | — |
+| [SRC-E599346ABE-L000164](../generate_index.py#L164) | 164 | `"    documented: bool \| None"` | — |
+| [SRC-E599346ABE-L000165](../generate_index.py#L165) | 165 | `""` | — |
 | [SRC-E599346ABE-L000166](../generate_index.py#L166) | 166 | `""` | — |
-| [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `""` | — |
-| [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000169](../generate_index.py#L169) | 169 | `"class IndexedFile:"` | — |
-| [SRC-E599346ABE-L000170](../generate_index.py#L170) | 170 | `"    \"\"\"Represent a repository file with stable identifiers and navigation metadata.\"\"\""` | — |
-| [SRC-E599346ABE-L000171](../generate_index.py#L171) | 171 | `""` | — |
-| [SRC-E599346ABE-L000172](../generate_index.py#L172) | 172 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000173](../generate_index.py#L173) | 173 | `"    file_type: str"` | — |
-| [SRC-E599346ABE-L000174](../generate_index.py#L174) | 174 | `"    size_bytes: int"` | — |
-| [SRC-E599346ABE-L000175](../generate_index.py#L175) | 175 | `"    line_count: int \| None"` | — |
-| [SRC-E599346ABE-L000176](../generate_index.py#L176) | 176 | `"    indexing_scope: str"` | — |
-| [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
+| [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"class IndexedFile:"` | — |
+| [SRC-E599346ABE-L000169](../generate_index.py#L169) | 169 | `"    \"\"\"Represent a repository file with stable identifiers and navigation metadata.\"\"\""` | — |
+| [SRC-E599346ABE-L000170](../generate_index.py#L170) | 170 | `""` | — |
+| [SRC-E599346ABE-L000171](../generate_index.py#L171) | 171 | `"    file: str"` | — |
+| [SRC-E599346ABE-L000172](../generate_index.py#L172) | 172 | `"    file_type: str"` | — |
+| [SRC-E599346ABE-L000173](../generate_index.py#L173) | 173 | `"    size_bytes: int"` | — |
+| [SRC-E599346ABE-L000174](../generate_index.py#L174) | 174 | `"    line_count: int \| None"` | — |
+| [SRC-E599346ABE-L000175](../generate_index.py#L175) | 175 | `"    indexing_scope: str"` | — |
+| [SRC-E599346ABE-L000176](../generate_index.py#L176) | 176 | `"    file_id: str"` | — |
+| [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    category: str"` | — |
+| [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `""` | — |
 | [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
-| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
-| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"class IndexedMarker:"` | — |
-| [SRC-E599346ABE-L000183](../generate_index.py#L183) | 183 | `"    \"\"\"Represent a statically discovered symbol outside the Python AST index.\"\"\""` | — |
-| [SRC-E599346ABE-L000184](../generate_index.py#L184) | 184 | `""` | — |
-| [SRC-E599346ABE-L000185](../generate_index.py#L185) | 185 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000186](../generate_index.py#L186) | 186 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000187](../generate_index.py#L187) | 187 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000188](../generate_index.py#L188) | 188 | `"    line: int"` | — |
+| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"class IndexedMarker:"` | — |
+| [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"    \"\"\"Represent a statically discovered symbol outside the Python AST index.\"\"\""` | — |
+| [SRC-E599346ABE-L000183](../generate_index.py#L183) | 183 | `""` | — |
+| [SRC-E599346ABE-L000184](../generate_index.py#L184) | 184 | `"    file: str"` | — |
+| [SRC-E599346ABE-L000185](../generate_index.py#L185) | 185 | `"    name: str"` | — |
+| [SRC-E599346ABE-L000186](../generate_index.py#L186) | 186 | `"    kind: str"` | — |
+| [SRC-E599346ABE-L000187](../generate_index.py#L187) | 187 | `"    line: int"` | — |
+| [SRC-E599346ABE-L000188](../generate_index.py#L188) | 188 | `""` | — |
 | [SRC-E599346ABE-L000189](../generate_index.py#L189) | 189 | `""` | — |
-| [SRC-E599346ABE-L000190](../generate_index.py#L190) | 190 | `""` | — |
-| [SRC-E599346ABE-L000191](../generate_index.py#L191) | 191 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000192](../generate_index.py#L192) | 192 | `"class IndexedLine:"` | — |
-| [SRC-E599346ABE-L000193](../generate_index.py#L193) | 193 | `"    \"\"\"Represent one exact logical line from an eligible readable repository text file.\"\"\""` | — |
-| [SRC-E599346ABE-L000194](../generate_index.py#L194) | 194 | `""` | — |
-| [SRC-E599346ABE-L000195](../generate_index.py#L195) | 195 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000196](../generate_index.py#L196) | 196 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000197](../generate_index.py#L197) | 197 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000198](../generate_index.py#L198) | 198 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000199](../generate_index.py#L199) | 199 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000200](../generate_index.py#L200) | 200 | `"    content: str"` | — |
+| [SRC-E599346ABE-L000190](../generate_index.py#L190) | 190 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-E599346ABE-L000191](../generate_index.py#L191) | 191 | `"class IndexedLine:"` | — |
+| [SRC-E599346ABE-L000192](../generate_index.py#L192) | 192 | `"    \"\"\"Represent one exact logical line from an eligible readable repository text file.\"\"\""` | — |
+| [SRC-E599346ABE-L000193](../generate_index.py#L193) | 193 | `""` | — |
+| [SRC-E599346ABE-L000194](../generate_index.py#L194) | 194 | `"    file: str"` | — |
+| [SRC-E599346ABE-L000195](../generate_index.py#L195) | 195 | `"    file_id: str"` | — |
+| [SRC-E599346ABE-L000196](../generate_index.py#L196) | 196 | `"    line_id: str"` | — |
+| [SRC-E599346ABE-L000197](../generate_index.py#L197) | 197 | `"    category: str"` | — |
+| [SRC-E599346ABE-L000198](../generate_index.py#L198) | 198 | `"    line: int"` | — |
+| [SRC-E599346ABE-L000199](../generate_index.py#L199) | 199 | `"    content: str"` | — |
+| [SRC-E599346ABE-L000200](../generate_index.py#L200) | 200 | `""` | — |
 | [SRC-E599346ABE-L000201](../generate_index.py#L201) | 201 | `""` | — |
-| [SRC-E599346ABE-L000202](../generate_index.py#L202) | 202 | `""` | — |
-| [SRC-E599346ABE-L000203](../generate_index.py#L203) | 203 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000204](../generate_index.py#L204) | 204 | `"class IndexedFinding:"` | — |
-| [SRC-E599346ABE-L000205](../generate_index.py#L205) | 205 | `"    \"\"\"Represent a source annotation that explicitly requests attention.\"\"\""` | — |
-| [SRC-E599346ABE-L000206](../generate_index.py#L206) | 206 | `""` | — |
-| [SRC-E599346ABE-L000207](../generate_index.py#L207) | 207 | `"    finding_id: str"` | — |
-| [SRC-E599346ABE-L000208](../generate_index.py#L208) | 208 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000209](../generate_index.py#L209) | 209 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000210](../generate_index.py#L210) | 210 | `"    marker: str"` | — |
-| [SRC-E599346ABE-L000211](../generate_index.py#L211) | 211 | `"    description: str"` | — |
+| [SRC-E599346ABE-L000202](../generate_index.py#L202) | 202 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-E599346ABE-L000203](../generate_index.py#L203) | 203 | `"class IndexedFinding:"` | — |
+| [SRC-E599346ABE-L000204](../generate_index.py#L204) | 204 | `"    \"\"\"Represent a source annotation that explicitly requests attention.\"\"\""` | — |
+| [SRC-E599346ABE-L000205](../generate_index.py#L205) | 205 | `""` | — |
+| [SRC-E599346ABE-L000206](../generate_index.py#L206) | 206 | `"    finding_id: str"` | — |
+| [SRC-E599346ABE-L000207](../generate_index.py#L207) | 207 | `"    file: str"` | — |
+| [SRC-E599346ABE-L000208](../generate_index.py#L208) | 208 | `"    line_id: str"` | — |
+| [SRC-E599346ABE-L000209](../generate_index.py#L209) | 209 | `"    marker: str"` | — |
+| [SRC-E599346ABE-L000210](../generate_index.py#L210) | 210 | `"    description: str"` | — |
+| [SRC-E599346ABE-L000211](../generate_index.py#L211) | 211 | `""` | — |
 | [SRC-E599346ABE-L000212](../generate_index.py#L212) | 212 | `""` | — |
-| [SRC-E599346ABE-L000213](../generate_index.py#L213) | 213 | `""` | — |
-| [SRC-E599346ABE-L000214](../generate_index.py#L214) | 214 | `"class IndexGenerationError(RuntimeError):"` | — |
-| [SRC-E599346ABE-L000215](../generate_index.py#L215) | 215 | `"    \"\"\"Signal that a complete Python AST index could not be generated.\"\"\""` | — |
+| [SRC-E599346ABE-L000213](../generate_index.py#L213) | 213 | `"class IndexGenerationError(RuntimeError):"` | — |
+| [SRC-E599346ABE-L000214](../generate_index.py#L214) | 214 | `"    \"\"\"Signal that a complete Python AST index could not be generated.\"\"\""` | — |
+| [SRC-E599346ABE-L000215](../generate_index.py#L215) | 215 | `""` | — |
 | [SRC-E599346ABE-L000216](../generate_index.py#L216) | 216 | `""` | — |
-| [SRC-E599346ABE-L000217](../generate_index.py#L217) | 217 | `""` | — |
-| [SRC-E599346ABE-L000218](../generate_index.py#L218) | 218 | `"class SymbolVisitor(ast.NodeVisitor):"` | — |
-| [SRC-E599346ABE-L000219](../generate_index.py#L219) | 219 | `"    \"\"\"Collect Python classes, functions, methods and module/class assignments.\"\"\""` | — |
-| [SRC-E599346ABE-L000220](../generate_index.py#L220) | 220 | `""` | — |
-| [SRC-E599346ABE-L000221](../generate_index.py#L221) | 221 | `"    def __init__(self, relative_file: str) -> None:"` | — |
-| [SRC-E599346ABE-L000222](../generate_index.py#L222) | 222 | `"        \"\"\"Initialize the visitor for one repository-relative Python file.\"\"\""` | — |
-| [SRC-E599346ABE-L000223](../generate_index.py#L223) | 223 | `"        self.relative_file = relative_file"` | — |
-| [SRC-E599346ABE-L000224](../generate_index.py#L224) | 224 | `"        self.symbols: list[IndexedSymbol] = []"` | — |
-| [SRC-E599346ABE-L000225](../generate_index.py#L225) | 225 | `"        self.scope: list[str] = []"` | — |
-| [SRC-E599346ABE-L000226](../generate_index.py#L226) | 226 | `"        self.function_depth = 0"` | — |
-| [SRC-E599346ABE-L000227](../generate_index.py#L227) | 227 | `""` | — |
-| [SRC-E599346ABE-L000228](../generate_index.py#L228) | 228 | `"    @staticmethod"` | — |
-| [SRC-E599346ABE-L000229](../generate_index.py#L229) | 229 | `"    def _description(node: ast.AST) -> tuple[str, bool]:"` | — |
-| [SRC-E599346ABE-L000230](../generate_index.py#L230) | 230 | `"        \"\"\"Return a compact first-paragraph summary and its documentation state.\"\"\""` | — |
-| [SRC-E599346ABE-L000231](../generate_index.py#L231) | 231 | `"        docstring = ast.get_docstring(node, clean=True)"` | — |
-| [SRC-E599346ABE-L000232](../generate_index.py#L232) | 232 | `"        if not docstring or not docstring.strip():"` | — |
-| [SRC-E599346ABE-L000233](../generate_index.py#L233) | 233 | `"            return \"لا توجد Docstring.\", False"` | — |
-| [SRC-E599346ABE-L000234](../generate_index.py#L234) | 234 | `""` | — |
-| [SRC-E599346ABE-L000235](../generate_index.py#L235) | 235 | `"        first_paragraph = docstring.strip().split(\"\\n\\n\", maxsplit=1)[0]"` | — |
-| [SRC-E599346ABE-L000236](../generate_index.py#L236) | 236 | `"        summary = \" \".join(first_paragraph.split())"` | — |
-| [SRC-E599346ABE-L000237](../generate_index.py#L237) | 237 | `"        if len(summary) > MAX_DESCRIPTION_LENGTH:"` | — |
-| [SRC-E599346ABE-L000238](../generate_index.py#L238) | 238 | `"            summary = summary[: MAX_DESCRIPTION_LENGTH - 3].rstrip() + \"...\""` | — |
-| [SRC-E599346ABE-L000239](../generate_index.py#L239) | 239 | `"        return summary, True"` | — |
-| [SRC-E599346ABE-L000240](../generate_index.py#L240) | 240 | `""` | — |
-| [SRC-E599346ABE-L000241](../generate_index.py#L241) | 241 | `"    def _record_definition("` | — |
-| [SRC-E599346ABE-L000242](../generate_index.py#L242) | 242 | `"        self,"` | — |
-| [SRC-E599346ABE-L000243](../generate_index.py#L243) | 243 | `"        node: ast.ClassDef \| ast.FunctionDef \| ast.AsyncFunctionDef,"` | — |
-| [SRC-E599346ABE-L000244](../generate_index.py#L244) | 244 | `"        kind: str,"` | — |
-| [SRC-E599346ABE-L000245](../generate_index.py#L245) | 245 | `"    ) -> None:"` | — |
-| [SRC-E599346ABE-L000246](../generate_index.py#L246) | 246 | `"        \"\"\"Record one class/function definition while preserving its qualified scope.\"\"\""` | — |
-| [SRC-E599346ABE-L000247](../generate_index.py#L247) | 247 | `"        description, documented = self._description(node)"` | — |
-| [SRC-E599346ABE-L000248](../generate_index.py#L248) | 248 | `"        qualified_name = \".\".join((*self.scope, node.name))"` | — |
-| [SRC-E599346ABE-L000249](../generate_index.py#L249) | 249 | `"        self.symbols.append("` | — |
-| [SRC-E599346ABE-L000250](../generate_index.py#L250) | 250 | `"            IndexedSymbol("` | — |
-| [SRC-E599346ABE-L000251](../generate_index.py#L251) | 251 | `"                file=self.relative_file,"` | — |
-| [SRC-E599346ABE-L000252](../generate_index.py#L252) | 252 | `"                name=qualified_name,"` | — |
-| [SRC-E599346ABE-L000253](../generate_index.py#L253) | 253 | `"                kind=kind,"` | — |
-| [SRC-E599346ABE-L000254](../generate_index.py#L254) | 254 | `"                line=node.lineno,"` | — |
-| [SRC-E599346ABE-L000255](../generate_index.py#L255) | 255 | `"                description=description,"` | — |
-| [SRC-E599346ABE-L000256](../generate_index.py#L256) | 256 | `"                documented=documented,"` | — |
-| [SRC-E599346ABE-L000257](../generate_index.py#L257) | 257 | `"            )"` | — |
-| [SRC-E599346ABE-L000258](../generate_index.py#L258) | 258 | `"        )"` | — |
-| [SRC-E599346ABE-L000259](../generate_index.py#L259) | 259 | `""` | — |
-| [SRC-E599346ABE-L000260](../generate_index.py#L260) | 260 | `"    def _record_assignment_target(self, node: ast.AST, line: int) -> None:"` | — |
-| [SRC-E599346ABE-L000261](../generate_index.py#L261) | 261 | `"        \"\"\"Record declared names from a module-level or class-level assignment.\"\"\""` | — |
-| [SRC-E599346ABE-L000262](../generate_index.py#L262) | 262 | `"        if isinstance(node, ast.Name):"` | — |
-| [SRC-E599346ABE-L000263](../generate_index.py#L263) | 263 | `"            qualified_name = \".\".join((*self.scope, node.id))"` | — |
-| [SRC-E599346ABE-L000264](../generate_index.py#L264) | 264 | `"            self.symbols.append("` | — |
-| [SRC-E599346ABE-L000265](../generate_index.py#L265) | 265 | `"                IndexedSymbol("` | — |
-| [SRC-E599346ABE-L000266](../generate_index.py#L266) | 266 | `"                    file=self.relative_file,"` | — |
-| [SRC-E599346ABE-L000267](../generate_index.py#L267) | 267 | `"                    name=qualified_name,"` | — |
-| [SRC-E599346ABE-L000268](../generate_index.py#L268) | 268 | `"                    kind=\"متغير/ثابت Python\","` | — |
-| [SRC-E599346ABE-L000269](../generate_index.py#L269) | 269 | `"                    line=line,"` | — |
-| [SRC-E599346ABE-L000270](../generate_index.py#L270) | 270 | `"                    description=\"تعريف على مستوى الوحدة أو الكلاس.\","` | — |
-| [SRC-E599346ABE-L000271](../generate_index.py#L271) | 271 | `"                    documented=None,"` | — |
-| [SRC-E599346ABE-L000272](../generate_index.py#L272) | 272 | `"                )"` | — |
-| [SRC-E599346ABE-L000273](../generate_index.py#L273) | 273 | `"            )"` | — |
-| [SRC-E599346ABE-L000274](../generate_index.py#L274) | 274 | `"        elif isinstance(node, (ast.Tuple, ast.List)):"` | — |
-| [SRC-E599346ABE-L000275](../generate_index.py#L275) | 275 | `"            for element in node.elts:"` | — |
-| [SRC-E599346ABE-L000276](../generate_index.py#L276) | 276 | `"                self._record_assignment_target(element, line)"` | — |
-| [SRC-E599346ABE-L000277](../generate_index.py#L277) | 277 | `""` | — |
-| [SRC-E599346ABE-L000278](../generate_index.py#L278) | 278 | `"    def visit_Assign(self, node: ast.Assign) -> None:"` | — |
-| [SRC-E599346ABE-L000279](../generate_index.py#L279) | 279 | `"        \"\"\"Index module/class assignment names but avoid flooding the index with locals.\"\"\""` | — |
-| [SRC-E599346ABE-L000280](../generate_index.py#L280) | 280 | `"        if self.function_depth == 0:"` | — |
-| [SRC-E599346ABE-L000281](../generate_index.py#L281) | 281 | `"            for target in node.targets:"` | — |
-| [SRC-E599346ABE-L000282](../generate_index.py#L282) | 282 | `"                self._record_assignment_target(target, node.lineno)"` | — |
-| [SRC-E599346ABE-L000283](../generate_index.py#L283) | 283 | `"        self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000284](../generate_index.py#L284) | 284 | `""` | — |
-| [SRC-E599346ABE-L000285](../generate_index.py#L285) | 285 | `"    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:"` | — |
-| [SRC-E599346ABE-L000286](../generate_index.py#L286) | 286 | `"        \"\"\"Index annotated module/class assignments without counting local variables.\"\"\""` | — |
-| [SRC-E599346ABE-L000287](../generate_index.py#L287) | 287 | `"        if self.function_depth == 0:"` | — |
-| [SRC-E599346ABE-L000288](../generate_index.py#L288) | 288 | `"            self._record_assignment_target(node.target, node.lineno)"` | — |
-| [SRC-E599346ABE-L000289](../generate_index.py#L289) | 289 | `"        self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000290](../generate_index.py#L290) | 290 | `""` | — |
-| [SRC-E599346ABE-L000291](../generate_index.py#L291) | 291 | `"    def visit_ClassDef(self, node: ast.ClassDef) -> None:"` | — |
-| [SRC-E599346ABE-L000292](../generate_index.py#L292) | 292 | `"        \"\"\"Record a class and recursively inspect its body.\"\"\""` | — |
-| [SRC-E599346ABE-L000293](../generate_index.py#L293) | 293 | `"        self._record_definition(node, \"كلاس\")"` | — |
-| [SRC-E599346ABE-L000294](../generate_index.py#L294) | 294 | `"        self.scope.append(node.name)"` | — |
-| [SRC-E599346ABE-L000295](../generate_index.py#L295) | 295 | `"        try:"` | — |
-| [SRC-E599346ABE-L000296](../generate_index.py#L296) | 296 | `"            self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000297](../generate_index.py#L297) | 297 | `"        finally:"` | — |
-| [SRC-E599346ABE-L000298](../generate_index.py#L298) | 298 | `"            self.scope.pop()"` | — |
-| [SRC-E599346ABE-L000299](../generate_index.py#L299) | 299 | `""` | — |
-| [SRC-E599346ABE-L000300](../generate_index.py#L300) | 300 | `"    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:"` | — |
+| [SRC-E599346ABE-L000217](../generate_index.py#L217) | 217 | `"class SymbolVisitor(ast.NodeVisitor):"` | — |
+| [SRC-E599346ABE-L000218](../generate_index.py#L218) | 218 | `"    \"\"\"Collect Python classes, functions, methods and module/class assignments.\"\"\""` | — |
+| [SRC-E599346ABE-L000219](../generate_index.py#L219) | 219 | `""` | — |
+| [SRC-E599346ABE-L000220](../generate_index.py#L220) | 220 | `"    def __init__(self, relative_file: str) -> None:"` | — |
+| [SRC-E599346ABE-L000221](../generate_index.py#L221) | 221 | `"        \"\"\"Initialize the visitor for one repository-relative Python file.\"\"\""` | — |
+| [SRC-E599346ABE-L000222](../generate_index.py#L222) | 222 | `"        self.relative_file = relative_file"` | — |
+| [SRC-E599346ABE-L000223](../generate_index.py#L223) | 223 | `"        self.symbols: list[IndexedSymbol] = []"` | — |
+| [SRC-E599346ABE-L000224](../generate_index.py#L224) | 224 | `"        self.scope: list[str] = []"` | — |
+| [SRC-E599346ABE-L000225](../generate_index.py#L225) | 225 | `"        self.function_depth = 0"` | — |
+| [SRC-E599346ABE-L000226](../generate_index.py#L226) | 226 | `""` | — |
+| [SRC-E599346ABE-L000227](../generate_index.py#L227) | 227 | `"    @staticmethod"` | — |
+| [SRC-E599346ABE-L000228](../generate_index.py#L228) | 228 | `"    def _description(node: ast.AST) -> tuple[str, bool]:"` | — |
+| [SRC-E599346ABE-L000229](../generate_index.py#L229) | 229 | `"        \"\"\"Return a compact first-paragraph summary and its documentation state.\"\"\""` | — |
+| [SRC-E599346ABE-L000230](../generate_index.py#L230) | 230 | `"        docstring = ast.get_docstring(node, clean=True)"` | — |
+| [SRC-E599346ABE-L000231](../generate_index.py#L231) | 231 | `"        if not docstring or not docstring.strip():"` | — |
+| [SRC-E599346ABE-L000232](../generate_index.py#L232) | 232 | `"            return \"لا توجد Docstring.\", False"` | — |
+| [SRC-E599346ABE-L000233](../generate_index.py#L233) | 233 | `""` | — |
+| [SRC-E599346ABE-L000234](../generate_index.py#L234) | 234 | `"        first_paragraph = docstring.strip().split(\"\\n\\n\", maxsplit=1)[0]"` | — |
+| [SRC-E599346ABE-L000235](../generate_index.py#L235) | 235 | `"        summary = \" \".join(first_paragraph.split())"` | — |
+| [SRC-E599346ABE-L000236](../generate_index.py#L236) | 236 | `"        if len(summary) > MAX_DESCRIPTION_LENGTH:"` | — |
+| [SRC-E599346ABE-L000237](../generate_index.py#L237) | 237 | `"            summary = summary[: MAX_DESCRIPTION_LENGTH - 3].rstrip() + \"...\""` | — |
+| [SRC-E599346ABE-L000238](../generate_index.py#L238) | 238 | `"        return summary, True"` | — |
+| [SRC-E599346ABE-L000239](../generate_index.py#L239) | 239 | `""` | — |
+| [SRC-E599346ABE-L000240](../generate_index.py#L240) | 240 | `"    def _record_definition("` | — |
+| [SRC-E599346ABE-L000241](../generate_index.py#L241) | 241 | `"        self,"` | — |
+| [SRC-E599346ABE-L000242](../generate_index.py#L242) | 242 | `"        node: ast.ClassDef \| ast.FunctionDef \| ast.AsyncFunctionDef,"` | — |
+| [SRC-E599346ABE-L000243](../generate_index.py#L243) | 243 | `"        kind: str,"` | — |
+| [SRC-E599346ABE-L000244](../generate_index.py#L244) | 244 | `"    ) -> None:"` | — |
+| [SRC-E599346ABE-L000245](../generate_index.py#L245) | 245 | `"        \"\"\"Record one class/function definition while preserving its qualified scope.\"\"\""` | — |
+| [SRC-E599346ABE-L000246](../generate_index.py#L246) | 246 | `"        description, documented = self._description(node)"` | — |
+| [SRC-E599346ABE-L000247](../generate_index.py#L247) | 247 | `"        qualified_name = \".\".join((*self.scope, node.name))"` | — |
+| [SRC-E599346ABE-L000248](../generate_index.py#L248) | 248 | `"        self.symbols.append("` | — |
+| [SRC-E599346ABE-L000249](../generate_index.py#L249) | 249 | `"            IndexedSymbol("` | — |
+| [SRC-E599346ABE-L000250](../generate_index.py#L250) | 250 | `"                file=self.relative_file,"` | — |
+| [SRC-E599346ABE-L000251](../generate_index.py#L251) | 251 | `"                name=qualified_name,"` | — |
+| [SRC-E599346ABE-L000252](../generate_index.py#L252) | 252 | `"                kind=kind,"` | — |
+| [SRC-E599346ABE-L000253](../generate_index.py#L253) | 253 | `"                line=node.lineno,"` | — |
+| [SRC-E599346ABE-L000254](../generate_index.py#L254) | 254 | `"                description=description,"` | — |
+| [SRC-E599346ABE-L000255](../generate_index.py#L255) | 255 | `"                documented=documented,"` | — |
+| [SRC-E599346ABE-L000256](../generate_index.py#L256) | 256 | `"            )"` | — |
+| [SRC-E599346ABE-L000257](../generate_index.py#L257) | 257 | `"        )"` | — |
+| [SRC-E599346ABE-L000258](../generate_index.py#L258) | 258 | `""` | — |
+| [SRC-E599346ABE-L000259](../generate_index.py#L259) | 259 | `"    def _record_assignment_target(self, node: ast.AST, line: int) -> None:"` | — |
+| [SRC-E599346ABE-L000260](../generate_index.py#L260) | 260 | `"        \"\"\"Record declared names from a module-level or class-level assignment.\"\"\""` | — |
+| [SRC-E599346ABE-L000261](../generate_index.py#L261) | 261 | `"        if isinstance(node, ast.Name):"` | — |
+| [SRC-E599346ABE-L000262](../generate_index.py#L262) | 262 | `"            qualified_name = \".\".join((*self.scope, node.id))"` | — |
+| [SRC-E599346ABE-L000263](../generate_index.py#L263) | 263 | `"            self.symbols.append("` | — |
+| [SRC-E599346ABE-L000264](../generate_index.py#L264) | 264 | `"                IndexedSymbol("` | — |
+| [SRC-E599346ABE-L000265](../generate_index.py#L265) | 265 | `"                    file=self.relative_file,"` | — |
+| [SRC-E599346ABE-L000266](../generate_index.py#L266) | 266 | `"                    name=qualified_name,"` | — |
+| [SRC-E599346ABE-L000267](../generate_index.py#L267) | 267 | `"                    kind=\"متغير/ثابت Python\","` | — |
+| [SRC-E599346ABE-L000268](../generate_index.py#L268) | 268 | `"                    line=line,"` | — |
+| [SRC-E599346ABE-L000269](../generate_index.py#L269) | 269 | `"                    description=\"تعريف على مستوى الوحدة أو الكلاس.\","` | — |
+| [SRC-E599346ABE-L000270](../generate_index.py#L270) | 270 | `"                    documented=None,"` | — |
+| [SRC-E599346ABE-L000271](../generate_index.py#L271) | 271 | `"                )"` | — |
+| [SRC-E599346ABE-L000272](../generate_index.py#L272) | 272 | `"            )"` | — |
+| [SRC-E599346ABE-L000273](../generate_index.py#L273) | 273 | `"        elif isinstance(node, (ast.Tuple, ast.List)):"` | — |
+| [SRC-E599346ABE-L000274](../generate_index.py#L274) | 274 | `"            for element in node.elts:"` | — |
+| [SRC-E599346ABE-L000275](../generate_index.py#L275) | 275 | `"                self._record_assignment_target(element, line)"` | — |
+| [SRC-E599346ABE-L000276](../generate_index.py#L276) | 276 | `""` | — |
+| [SRC-E599346ABE-L000277](../generate_index.py#L277) | 277 | `"    def visit_Assign(self, node: ast.Assign) -> None:"` | — |
+| [SRC-E599346ABE-L000278](../generate_index.py#L278) | 278 | `"        \"\"\"Index module/class assignment names but avoid flooding the index with locals.\"\"\""` | — |
+| [SRC-E599346ABE-L000279](../generate_index.py#L279) | 279 | `"        if self.function_depth == 0:"` | — |
+| [SRC-E599346ABE-L000280](../generate_index.py#L280) | 280 | `"            for target in node.targets:"` | — |
+| [SRC-E599346ABE-L000281](../generate_index.py#L281) | 281 | `"                self._record_assignment_target(target, node.lineno)"` | — |
+| [SRC-E599346ABE-L000282](../generate_index.py#L282) | 282 | `"        self.generic_visit(node)"` | — |
+| [SRC-E599346ABE-L000283](../generate_index.py#L283) | 283 | `""` | — |
+| [SRC-E599346ABE-L000284](../generate_index.py#L284) | 284 | `"    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:"` | — |
+| [SRC-E599346ABE-L000285](../generate_index.py#L285) | 285 | `"        \"\"\"Index annotated module/class assignments without counting local variables.\"\"\""` | — |
+| [SRC-E599346ABE-L000286](../generate_index.py#L286) | 286 | `"        if self.function_depth == 0:"` | — |
+| [SRC-E599346ABE-L000287](../generate_index.py#L287) | 287 | `"            self._record_assignment_target(node.target, node.lineno)"` | — |
+| [SRC-E599346ABE-L000288](../generate_index.py#L288) | 288 | `"        self.generic_visit(node)"` | — |
+| [SRC-E599346ABE-L000289](../generate_index.py#L289) | 289 | `""` | — |
+| [SRC-E599346ABE-L000290](../generate_index.py#L290) | 290 | `"    def visit_ClassDef(self, node: ast.ClassDef) -> None:"` | — |
+| [SRC-E599346ABE-L000291](../generate_index.py#L291) | 291 | `"        \"\"\"Record a class and recursively inspect its body.\"\"\""` | — |
+| [SRC-E599346ABE-L000292](../generate_index.py#L292) | 292 | `"        self._record_definition(node, \"كلاس\")"` | — |
+| [SRC-E599346ABE-L000293](../generate_index.py#L293) | 293 | `"        self.scope.append(node.name)"` | — |
+| [SRC-E599346ABE-L000294](../generate_index.py#L294) | 294 | `"        try:"` | — |
+| [SRC-E599346ABE-L000295](../generate_index.py#L295) | 295 | `"            self.generic_visit(node)"` | — |
+| [SRC-E599346ABE-L000296](../generate_index.py#L296) | 296 | `"        finally:"` | — |
+| [SRC-E599346ABE-L000297](../generate_index.py#L297) | 297 | `"            self.scope.pop()"` | — |
+| [SRC-E599346ABE-L000298](../generate_index.py#L298) | 298 | `""` | — |
+| [SRC-E599346ABE-L000299](../generate_index.py#L299) | 299 | `"    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:"` | — |
+| [SRC-E599346ABE-L000300](../generate_index.py#L300) | 300 | `"        \"\"\"Record a synchronous function or method and nested definitions.\"\"\""` | — |

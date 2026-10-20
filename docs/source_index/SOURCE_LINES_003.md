@@ -538,7 +538,7 @@
 | [SRC-1AE03B9EC3-L000434](../../agents/web_agent.py#L434) | 434 | `""` | — |
 | [SRC-1AE03B9EC3-L000435](../../agents/web_agent.py#L435) | 435 | `"    def _record_provider_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L000436](../../agents/web_agent.py#L436) | 436 | `"        self, provider: str, query: str, status: str, result_count: int = 0,"` | — |
-| [SRC-1AE03B9EC3-L000437](../../agents/web_agent.py#L437) | 437 | `"        rejected_count: int = 0, error: str \| None = None,"` | FND-ERROR-1AE03B9EC3-L000437 |
+| [SRC-1AE03B9EC3-L000437](../../agents/web_agent.py#L437) | 437 | `"        rejected_count: int = 0, error: str \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L000438](../../agents/web_agent.py#L438) | 438 | `"    ) -> None:"` | — |
 | [SRC-1AE03B9EC3-L000439](../../agents/web_agent.py#L439) | 439 | `"        record = {"` | — |
 | [SRC-1AE03B9EC3-L000440](../../agents/web_agent.py#L440) | 440 | `"            \"provider\": provider,"` | — |
@@ -547,7 +547,7 @@
 | [SRC-1AE03B9EC3-L000443](../../agents/web_agent.py#L443) | 443 | `"            \"result_count\": int(result_count),"` | — |
 | [SRC-1AE03B9EC3-L000444](../../agents/web_agent.py#L444) | 444 | `"            \"rejected_count\": int(rejected_count),"` | — |
 | [SRC-1AE03B9EC3-L000445](../../agents/web_agent.py#L445) | 445 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L000446](../../agents/web_agent.py#L446) | 446 | `"        if error:"` | FND-ERROR-1AE03B9EC3-L000446 |
+| [SRC-1AE03B9EC3-L000446](../../agents/web_agent.py#L446) | 446 | `"        if error:"` | — |
 | [SRC-1AE03B9EC3-L000447](../../agents/web_agent.py#L447) | 447 | `"            record[\"error\"] = _clean_text(error, 180)"` | — |
 | [SRC-1AE03B9EC3-L000448](../../agents/web_agent.py#L448) | 448 | `"        with self._provider_diagnostics_lock:"` | — |
 | [SRC-1AE03B9EC3-L000449](../../agents/web_agent.py#L449) | 449 | `"            self._provider_diagnostics.append(record)"` | — |

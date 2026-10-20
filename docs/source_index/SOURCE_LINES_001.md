@@ -95,15 +95,15 @@
 | [SRC-9F6E30987B-L000022](../../.github/workflows/hosted-smoke.yml#L22) | 22 | `"        shell: bash"` | — |
 | [SRC-9F6E30987B-L000023](../../.github/workflows/hosted-smoke.yml#L23) | 23 | `"        run: \|"` | — |
 | [SRC-9F6E30987B-L000024](../../.github/workflows/hosted-smoke.yml#L24) | 24 | `"          if [[ -z \"${OMARAI_ACCESS_TOKEN}\" \|\| ${#OMARAI_ACCESS_TOKEN} -lt 32 ]]; then"` | — |
-| [SRC-9F6E30987B-L000025](../../.github/workflows/hosted-smoke.yml#L25) | 25 | `"            echo \"::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short.\""` | FND-ERROR-9F6E30987B-L000025 |
+| [SRC-9F6E30987B-L000025](../../.github/workflows/hosted-smoke.yml#L25) | 25 | `"            echo \"::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short.\""` | — |
 | [SRC-9F6E30987B-L000026](../../.github/workflows/hosted-smoke.yml#L26) | 26 | `"            exit 1"` | — |
 | [SRC-9F6E30987B-L000027](../../.github/workflows/hosted-smoke.yml#L27) | 27 | `"          fi"` | — |
 | [SRC-9F6E30987B-L000028](../../.github/workflows/hosted-smoke.yml#L28) | 28 | `"          if [[ -z \"${OMARAI_BASE_URL}\" ]]; then"` | — |
-| [SRC-9F6E30987B-L000029](../../.github/workflows/hosted-smoke.yml#L29) | 29 | `"            echo \"::error::GitHub Actions secret OMARAI_BASE_URL is missing.\""` | FND-ERROR-9F6E30987B-L000029 |
+| [SRC-9F6E30987B-L000029](../../.github/workflows/hosted-smoke.yml#L29) | 29 | `"            echo \"::error::GitHub Actions secret OMARAI_BASE_URL is missing.\""` | — |
 | [SRC-9F6E30987B-L000030](../../.github/workflows/hosted-smoke.yml#L30) | 30 | `"            exit 1"` | — |
 | [SRC-9F6E30987B-L000031](../../.github/workflows/hosted-smoke.yml#L31) | 31 | `"          fi"` | — |
 | [SRC-9F6E30987B-L000032](../../.github/workflows/hosted-smoke.yml#L32) | 32 | `"          if [[ \"${OMARAI_BASE_URL}\" != https://* \|\| \"${OMARAI_BASE_URL}\" == *\\?* \|\| \"${OMARAI_BASE_URL}\" == *\\#* ]]; then"` | — |
-| [SRC-9F6E30987B-L000033](../../.github/workflows/hosted-smoke.yml#L33) | 33 | `"            echo \"::error::OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment.\""` | FND-ERROR-9F6E30987B-L000033 |
+| [SRC-9F6E30987B-L000033](../../.github/workflows/hosted-smoke.yml#L33) | 33 | `"            echo \"::error::OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment.\""` | — |
 | [SRC-9F6E30987B-L000034](../../.github/workflows/hosted-smoke.yml#L34) | 34 | `"            exit 1"` | — |
 | [SRC-9F6E30987B-L000035](../../.github/workflows/hosted-smoke.yml#L35) | 35 | `"          fi"` | — |
 | [SRC-9F6E30987B-L000036](../../.github/workflows/hosted-smoke.yml#L36) | 36 | `"          echo \"Hosted target and access-token secrets are present; values not printed.\""` | — |
@@ -277,7 +277,7 @@
 | [SRC-84F7DE82AF-L000041](../../.github/workflows/update_index.yml#L41) | 41 | `"        with:"` | — |
 | [SRC-84F7DE82AF-L000042](../../.github/workflows/update_index.yml#L42) | 42 | `"          python-version: \"3.12\""` | — |
 | [SRC-84F7DE82AF-L000043](../../.github/workflows/update_index.yml#L43) | 43 | `""` | — |
-| [SRC-84F7DE82AF-L000044](../../.github/workflows/update_index.yml#L44) | 44 | `"      - name: Generate the master, review-marker, and paginated source-line indexes"` | FND-REVIEW-84F7DE82AF-L000044 |
+| [SRC-84F7DE82AF-L000044](../../.github/workflows/update_index.yml#L44) | 44 | `"      - name: Generate the master, review-marker, and paginated source-line indexes"` | — |
 | [SRC-84F7DE82AF-L000045](../../.github/workflows/update_index.yml#L45) | 45 | `"        run: python docs/generate_index.py"` | — |
 | [SRC-84F7DE82AF-L000046](../../.github/workflows/update_index.yml#L46) | 46 | `""` | — |
 | [SRC-84F7DE82AF-L000047](../../.github/workflows/update_index.yml#L47) | 47 | `"      - name: Verify every generated index and remove stale-page drift"` | — |
@@ -323,7 +323,7 @@
 | [SRC-84F7DE82AF-L000087](../../.github/workflows/update_index.yml#L87) | 87 | `"              --base main \\"` | — |
 | [SRC-84F7DE82AF-L000088](../../.github/workflows/update_index.yml#L88) | 88 | `"              --head \"${automation_branch}\" \\"` | — |
 | [SRC-84F7DE82AF-L000089](../../.github/workflows/update_index.yml#L89) | 89 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
-| [SRC-84F7DE82AF-L000090](../../.github/workflows/update_index.yml#L90) | 90 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000090 |
+| [SRC-84F7DE82AF-L000090](../../.github/workflows/update_index.yml#L90) | 90 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | — |
 | [SRC-84F7DE82AF-L000091](../../.github/workflows/update_index.yml#L91) | 91 | `"            exit 0"` | — |
 | [SRC-84F7DE82AF-L000092](../../.github/workflows/update_index.yml#L92) | 92 | `"          fi"` | — |
 | [SRC-84F7DE82AF-L000093](../../.github/workflows/update_index.yml#L93) | 93 | `""` | — |
@@ -333,11 +333,11 @@
 | [SRC-84F7DE82AF-L000097](../../.github/workflows/update_index.yml#L97) | 97 | `"              --base main \\"` | — |
 | [SRC-84F7DE82AF-L000098](../../.github/workflows/update_index.yml#L98) | 98 | `"              --head \"${automation_branch}\" \\"` | — |
 | [SRC-84F7DE82AF-L000099](../../.github/workflows/update_index.yml#L99) | 99 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
-| [SRC-84F7DE82AF-L000100](../../.github/workflows/update_index.yml#L100) | 100 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000100 |
+| [SRC-84F7DE82AF-L000100](../../.github/workflows/update_index.yml#L100) | 100 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Opened because direct publication to main was rejected. No force update or auto-merge was performed.\""` | — |
 | [SRC-84F7DE82AF-L000101](../../.github/workflows/update_index.yml#L101) | 101 | `"          else"` | — |
 | [SRC-84F7DE82AF-L000102](../../.github/workflows/update_index.yml#L102) | 102 | `"            gh pr edit \"${pr_number}\" \\"` | — |
 | [SRC-84F7DE82AF-L000103](../../.github/workflows/update_index.yml#L103) | 103 | `"              --title \"docs(index): refresh repository source-line inventory\" \\"` | — |
-| [SRC-84F7DE82AF-L000104](../../.github/workflows/update_index.yml#L104) | 104 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed.\""` | FND-REVIEW-84F7DE82AF-L000104 |
+| [SRC-84F7DE82AF-L000104](../../.github/workflows/update_index.yml#L104) | 104 | `"              --body \"Automated refresh of docs/MASTER_INDEX.md, docs/SOURCE_LINES_INDEX.md, and paginated files under docs/source_index/. Includes the repository inventory, named symbol index, explicit review-marker register, and all eligible readable source lines. Updated because direct publication to main was rejected. No auto-merge was performed.\""` | — |
 | [SRC-84F7DE82AF-L000105](../../.github/workflows/update_index.yml#L105) | 105 | `"          fi"` | — |
 ## إعدادات وتشغيل
 
