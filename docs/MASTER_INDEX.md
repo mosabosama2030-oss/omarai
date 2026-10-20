@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **68**
 - ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **831**
-- تعريفات Python موثقة بوجود Docstring: **167**
+- تعريفات Python المفهرسة: **832**
+- تعريفات Python موثقة بوجود Docstring: **168**
 - تعريفات Python بلا Docstring: **498**
 - تعريفات لا ينطبق عليها Docstring: **166**
 - الرموز الساكنة الإضافية: **1244**
-- الأسطر النصية المفهرسة حرفيًا: **21413**
+- الأسطر النصية المفهرسة حرفيًا: **21471**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -80,7 +80,7 @@
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
-| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 18077 | 413 | جرد الملف + AST Python |
+| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 20829 | 471 | جرد الملف + AST Python |
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 21784 | 586 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 9324 | 255 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 6541 | 174 | جرد الملف + AST Python |
@@ -619,6 +619,7 @@
 | [tests/test_generate_index.py](../tests/test_generate_index.py#L350) | دالة | test_source_line_coverage_validator_rejects_missing_or_duplicate_lines | A gap or duplicate in line IDs prevents the generator from claiming full coverage. | موثق | 350 | [SRC-FA4E1423C3-L000350](../tests/test_generate_index.py#L350) |
 | [tests/test_generate_index.py](../tests/test_generate_index.py#L364) | دالة | test_coverage_audit_discloses_metadata_only_and_excluded_paths_without_secrets | Coverage report states exact skipped-file reasons without exposing secret contents. | موثق | 364 | [SRC-FA4E1423C3-L000364](../tests/test_generate_index.py#L364) |
 | [tests/test_generate_index.py](../tests/test_generate_index.py#L391) | دالة | test_multiple_review_markers_on_one_line_each_get_a_unique_finding_code | Different and repeated review tags on a single line must not overwrite each other. | موثق | 391 | [SRC-FA4E1423C3-L000391](../tests/test_generate_index.py#L391) |
+| [tests/test_generate_index.py](../tests/test_generate_index.py#L416) | دالة | test_finding_scan_ignores_incidental_words_but_finds_real_annotations | Only explicit comment or prose markers become findings, never syntax/URLs/strings. | موثق | 416 | [SRC-FA4E1423C3-L000416](../tests/test_generate_index.py#L416) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L11) | كلاس | FakeCompletionResponse | لا توجد Docstring. | ناقص | 11 | [SRC-829A979985-L000011](../tests/test_generation_acceptance_matrix.py#L11) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L12) | دالة | FakeCompletionResponse.__init__ | لا توجد Docstring. | ناقص | 12 | [SRC-829A979985-L000012](../tests/test_generation_acceptance_matrix.py#L12) |
 | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L24) | دالة | FakeCompletionResponse.__enter__ | لا توجد Docstring. | ناقص | 24 | [SRC-829A979985-L000024](../tests/test_generation_acceptance_matrix.py#L24) |
