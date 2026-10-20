@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **522**
 - تعريفات لا ينطبق عليها Docstring: **181**
 - الرموز الساكنة الإضافية: **1358**
-- الأسطر النصية المفهرسة حرفيًا: **22474**
+- الأسطر النصية المفهرسة حرفيًا: **22477**
 - وسوم المراجعة/الإصلاح المسجلة: **14**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -31,7 +31,7 @@
 | FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1193 | 26 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1622 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 3869 | 97 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 3739 | 103 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 3737 | 103 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 10736 | 73 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
@@ -64,7 +64,7 @@
 | FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 12809 | 97 | جرد الملف + عناوين Markdown |
 | FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
-| FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 8860 | 287 | جرد الملف + AST Python |
+| FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 8904 | 290 | جرد الملف + AST Python |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -451,9 +451,9 @@
 | [docs/search_code.py](search_code.py#L126) | متغير/ثابت Python | SearchHit.context_after | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 126 | [SRC-69F3587825-L000126](search_code.py#L126) |
 | [docs/search_code.py](search_code.py#L129) | دالة | SearchHit.link | لا توجد Docstring. | ناقص | 129 | [SRC-69F3587825-L000129](search_code.py#L129) |
 | [docs/search_code.py](search_code.py#L133) | دالة | discover_text_files | لا توجد Docstring. | ناقص | 133 | [SRC-69F3587825-L000133](search_code.py#L133) |
-| [docs/search_code.py](search_code.py#L156) | دالة | search_repository | Return ordered text matches with short context. | موثق | 156 | [SRC-69F3587825-L000156](search_code.py#L156) |
-| [docs/search_code.py](search_code.py#L212) | دالة | format_hits | لا توجد Docstring. | ناقص | 212 | [SRC-69F3587825-L000212](search_code.py#L212) |
-| [docs/search_code.py](search_code.py#L233) | دالة | main | لا توجد Docstring. | ناقص | 233 | [SRC-69F3587825-L000233](search_code.py#L233) |
+| [docs/search_code.py](search_code.py#L159) | دالة | search_repository | Return ordered text matches with short context. | موثق | 159 | [SRC-69F3587825-L000159](search_code.py#L159) |
+| [docs/search_code.py](search_code.py#L215) | دالة | format_hits | لا توجد Docstring. | ناقص | 215 | [SRC-69F3587825-L000215](search_code.py#L215) |
+| [docs/search_code.py](search_code.py#L236) | دالة | main | لا توجد Docstring. | ناقص | 236 | [SRC-69F3587825-L000236](search_code.py#L236) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L15) | كلاس | SmokeError | A live acceptance check failed. | موثق | 15 | [SRC-A8360B1B03-L000015](../scripts/hosted_smoke_test.py#L15) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L19) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 19 | [SRC-A8360B1B03-L000019](../scripts/hosted_smoke_test.py#L19) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L23) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 23 | [SRC-A8360B1B03-L000023](../scripts/hosted_smoke_test.py#L23) |

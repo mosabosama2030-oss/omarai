@@ -271,7 +271,7 @@
 | [SRC-84F7DE82AF-L000036](../../.github/workflows/update_index.yml#L36) | 36 | `"          git checkout --force -B \"${BRANCH_NAME}\" \"origin/${BRANCH_NAME}\""` | — |
 | [SRC-84F7DE82AF-L000037](../../.github/workflows/update_index.yml#L37) | 37 | `""` | — |
 | [SRC-84F7DE82AF-L000038](../../.github/workflows/update_index.yml#L38) | 38 | `"      - name: Set up Python"` | — |
-| [SRC-84F7DE82AF-L000039](../../.github/workflows/update_index.yml#L39) | 39 | `"        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97b1 # v7.0.0"` | — |
+| [SRC-84F7DE82AF-L000039](../../.github/workflows/update_index.yml#L39) | 39 | `"        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0"` | — |
 | [SRC-84F7DE82AF-L000040](../../.github/workflows/update_index.yml#L40) | 40 | `"        with:"` | — |
 | [SRC-84F7DE82AF-L000041](../../.github/workflows/update_index.yml#L41) | 41 | `"          python-version: \"3.12\""` | — |
 | [SRC-84F7DE82AF-L000042](../../.github/workflows/update_index.yml#L42) | 42 | `""` | — |

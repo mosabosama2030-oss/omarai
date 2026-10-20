@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001274 إلى SRC-F725E90B2A-L002073
+- النطاق: SRC-F725E90B2A-L001271 إلى SRC-F725E90B2A-L002070
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"    assert repair[\"reason\"] == \"single_bounded_retry_still_insufficient\""` | — |
+| [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `""` | — |
+| [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `""` | — |
 | [SRC-F725E90B2A-L001274](../../tests/test_web_agent.py#L1274) | 1274 | `"def test_generate_keeps_web_evidence_in_separate_untrusted_user_message(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001275](../../tests/test_web_agent.py#L1275) | 1275 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001276](../../tests/test_web_agent.py#L1276) | 1276 | `"    source = sample_source(0)"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L002068](../../tests/test_web_agent.py#L2068) | 2068 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
 | [SRC-F725E90B2A-L002069](../../tests/test_web_agent.py#L2069) | 2069 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"OK\")"` | — |
 | [SRC-F725E90B2A-L002070](../../tests/test_web_agent.py#L2070) | 2070 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L002071](../../tests/test_web_agent.py#L2071) | 2071 | `""` | — |
-| [SRC-F725E90B2A-L002072](../../tests/test_web_agent.py#L2072) | 2072 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
-| [SRC-F725E90B2A-L002073](../../tests/test_web_agent.py#L2073) | 2073 | `""` | — |

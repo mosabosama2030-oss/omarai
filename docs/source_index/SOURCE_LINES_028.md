@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002074 إلى SRC-DE7EABE998-L000307
+- النطاق: SRC-F725E90B2A-L002071 إلى SRC-DE7EABE998-L000304
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002071](../../tests/test_web_agent.py#L2071) | 2071 | `""` | — |
+| [SRC-F725E90B2A-L002072](../../tests/test_web_agent.py#L2072) | 2072 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
+| [SRC-F725E90B2A-L002073](../../tests/test_web_agent.py#L2073) | 2073 | `""` | — |
 | [SRC-F725E90B2A-L002074](../../tests/test_web_agent.py#L2074) | 2074 | `"    assert len(calls) == 2"` | — |
 | [SRC-F725E90B2A-L002075](../../tests/test_web_agent.py#L2075) | 2075 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"passed\""` | — |
 | [SRC-F725E90B2A-L002076](../../tests/test_web_agent.py#L2076) | 2076 | `"    assert report[\"checks\"][\"web_search\"][\"probe_count\"] == 2"` | — |
@@ -822,6 +825,3 @@
 | [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `"  if(data.elapsed_ms!==undefined)lines.push(\"مدة الاختبار: \"+(data.elapsed_ms/1000).toFixed(1)+\" ثانية\");"` | — |
 | [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `"  output.textContent=lines.join(\"\\n\");setStatus(data.overall_status===\"passed\"?\"نجح الاختبار الحي\":data.overall_status===\"failed\"?\"فشل الاختبار الحي\":\"نتيجة الاختبار جزئية\",data.overall_status===\"passed\"?\"ok\":data.overall_status===\"failed\"?\"bad\":\"warn\");"` | — |
 | [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" }catch(e){output.textContent=\"تعذّر الاختبار الحي: \"+(e&&e.message?e.message:\"خطأ غير معروف\");setStatus(\"فشل الاختبار الحي\",\"bad\");}"` | — |
-| [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
-| [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `"}"` | — |
-| [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `"async function checkHealth(){"` | — |

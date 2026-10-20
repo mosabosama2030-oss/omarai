@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **029**
-- سجلات الأسطر: **74**
-- النطاق: SRC-DE7EABE998-L000308 إلى SRC-A16FA6D4B5-L000044
+- سجلات الأسطر: **77**
+- النطاق: SRC-DE7EABE998-L000305 إلى SRC-A16FA6D4B5-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
+| [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `"}"` | — |
+| [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `"async function checkHealth(){"` | — |
 | [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `" try{"` | — |
 | [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
 | [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `"  const configured=[];"` | — |

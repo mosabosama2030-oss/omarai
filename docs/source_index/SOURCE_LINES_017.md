@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D911B73392-L000126 إلى SRC-4FFD5AFC54-L000057
+- النطاق: SRC-D911B73392-L000126 إلى SRC-4FFD5AFC54-L000054
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -178,145 +178,148 @@
 | [SRC-69F3587825-L000146](../search_code.py#L146) | 146 | `"            if candidate.is_symlink() or _is_sensitive_path(candidate.relative_to(root)):"` | — |
 | [SRC-69F3587825-L000147](../search_code.py#L147) | 147 | `"                continue"` | — |
 | [SRC-69F3587825-L000148](../search_code.py#L148) | 148 | `"            suffix = candidate.suffix.lower()"` | — |
-| [SRC-69F3587825-L000149](../search_code.py#L149) | 149 | `"            if suffix not in extensions and not file_name.endswith(\".example\"):"` | — |
-| [SRC-69F3587825-L000150](../search_code.py#L150) | 150 | `"                if file_name not in {\".gitignore\", \".dockerignore\", \"Dockerfile\", \"LICENSE\"}:"` | — |
-| [SRC-69F3587825-L000151](../search_code.py#L151) | 151 | `"                    continue"` | — |
-| [SRC-69F3587825-L000152](../search_code.py#L152) | 152 | `"            discovered.append(candidate)"` | — |
-| [SRC-69F3587825-L000153](../search_code.py#L153) | 153 | `"    return sorted(discovered, key=lambda p: p.relative_to(root).as_posix().casefold())"` | — |
-| [SRC-69F3587825-L000154](../search_code.py#L154) | 154 | `""` | — |
-| [SRC-69F3587825-L000155](../search_code.py#L155) | 155 | `""` | — |
-| [SRC-69F3587825-L000156](../search_code.py#L156) | 156 | `"def search_repository("` | — |
-| [SRC-69F3587825-L000157](../search_code.py#L157) | 157 | `"    root: Path,"` | — |
-| [SRC-69F3587825-L000158](../search_code.py#L158) | 158 | `"    query: str,"` | — |
-| [SRC-69F3587825-L000159](../search_code.py#L159) | 159 | `"    *,"` | — |
-| [SRC-69F3587825-L000160](../search_code.py#L160) | 160 | `"    use_regex: bool = False,"` | — |
-| [SRC-69F3587825-L000161](../search_code.py#L161) | 161 | `"    case_sensitive: bool = False,"` | — |
-| [SRC-69F3587825-L000162](../search_code.py#L162) | 162 | `"    extensions: frozenset[str] = DEFAULT_EXTENSIONS,"` | — |
-| [SRC-69F3587825-L000163](../search_code.py#L163) | 163 | `"    max_results: int = 50,"` | — |
-| [SRC-69F3587825-L000164](../search_code.py#L164) | 164 | `"    context: int = 1,"` | — |
-| [SRC-69F3587825-L000165](../search_code.py#L165) | 165 | `") -> list[SearchHit]:"` | — |
-| [SRC-69F3587825-L000166](../search_code.py#L166) | 166 | `"    \"\"\"Return ordered text matches with short context.\"\"\""` | — |
-| [SRC-69F3587825-L000167](../search_code.py#L167) | 167 | `"    if not query:"` | — |
-| [SRC-69F3587825-L000168](../search_code.py#L168) | 168 | `"        raise ValueError(\"استعلام البحث فارغ.\")"` | — |
-| [SRC-69F3587825-L000169](../search_code.py#L169) | 169 | `"    if max_results < 1:"` | — |
-| [SRC-69F3587825-L000170](../search_code.py#L170) | 170 | `"        raise ValueError(\"max_results يجب أن يكون 1 أو أكبر.\")"` | — |
-| [SRC-69F3587825-L000171](../search_code.py#L171) | 171 | `"    if context < 0:"` | — |
-| [SRC-69F3587825-L000172](../search_code.py#L172) | 172 | `"        raise ValueError(\"context لا يمكن أن يكون سالبًا.\")"` | — |
-| [SRC-69F3587825-L000173](../search_code.py#L173) | 173 | `""` | — |
-| [SRC-69F3587825-L000174](../search_code.py#L174) | 174 | `"    flags = 0 if case_sensitive else re.IGNORECASE"` | — |
-| [SRC-69F3587825-L000175](../search_code.py#L175) | 175 | `"    if use_regex:"` | — |
-| [SRC-69F3587825-L000176](../search_code.py#L176) | 176 | `"        pattern = re.compile(query, flags)"` | — |
-| [SRC-69F3587825-L000177](../search_code.py#L177) | 177 | `"    else:"` | — |
-| [SRC-69F3587825-L000178](../search_code.py#L178) | 178 | `"        pattern = re.compile(re.escape(query), flags)"` | — |
-| [SRC-69F3587825-L000179](../search_code.py#L179) | 179 | `""` | — |
-| [SRC-69F3587825-L000180](../search_code.py#L180) | 180 | `"    hits: list[SearchHit] = []"` | — |
-| [SRC-69F3587825-L000181](../search_code.py#L181) | 181 | `"    for path in discover_text_files(root, extensions):"` | — |
-| [SRC-69F3587825-L000182](../search_code.py#L182) | 182 | `"        relative = path.relative_to(root).as_posix()"` | — |
-| [SRC-69F3587825-L000183](../search_code.py#L183) | 183 | `"        try:"` | — |
-| [SRC-69F3587825-L000184](../search_code.py#L184) | 184 | `"            if path.stat().st_size > MAX_SEARCH_FILE_BYTES:"` | — |
-| [SRC-69F3587825-L000185](../search_code.py#L185) | 185 | `"                continue"` | — |
-| [SRC-69F3587825-L000186](../search_code.py#L186) | 186 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-69F3587825-L000187](../search_code.py#L187) | 187 | `"        except (OSError, UnicodeDecodeError):"` | — |
-| [SRC-69F3587825-L000188](../search_code.py#L188) | 188 | `"            continue"` | — |
-| [SRC-69F3587825-L000189](../search_code.py#L189) | 189 | `"        lines = text.splitlines()"` | — |
-| [SRC-69F3587825-L000190](../search_code.py#L190) | 190 | `"        for index, line in enumerate(lines):"` | — |
-| [SRC-69F3587825-L000191](../search_code.py#L191) | 191 | `"            if pattern.search(line):"` | — |
-| [SRC-69F3587825-L000192](../search_code.py#L192) | 192 | `"                before = \"\\n\".join(lines[max(0, index - context) : index]) if context else \"\""` | — |
-| [SRC-69F3587825-L000193](../search_code.py#L193) | 193 | `"                after = ("` | — |
-| [SRC-69F3587825-L000194](../search_code.py#L194) | 194 | `"                    \"\\n\".join(lines[index + 1 : min(len(lines), index + 1 + context)])"` | — |
-| [SRC-69F3587825-L000195](../search_code.py#L195) | 195 | `"                    if context"` | — |
-| [SRC-69F3587825-L000196](../search_code.py#L196) | 196 | `"                    else \"\""` | — |
-| [SRC-69F3587825-L000197](../search_code.py#L197) | 197 | `"                )"` | — |
-| [SRC-69F3587825-L000198](../search_code.py#L198) | 198 | `"                hits.append("` | — |
-| [SRC-69F3587825-L000199](../search_code.py#L199) | 199 | `"                    SearchHit("` | — |
-| [SRC-69F3587825-L000200](../search_code.py#L200) | 200 | `"                        file=relative,"` | — |
-| [SRC-69F3587825-L000201](../search_code.py#L201) | 201 | `"                        line=index + 1,"` | — |
-| [SRC-69F3587825-L000202](../search_code.py#L202) | 202 | `"                        text=line.rstrip(),"` | — |
-| [SRC-69F3587825-L000203](../search_code.py#L203) | 203 | `"                        context_before=before.rstrip(),"` | — |
-| [SRC-69F3587825-L000204](../search_code.py#L204) | 204 | `"                        context_after=after.rstrip(),"` | — |
-| [SRC-69F3587825-L000205](../search_code.py#L205) | 205 | `"                    )"` | — |
-| [SRC-69F3587825-L000206](../search_code.py#L206) | 206 | `"                )"` | — |
-| [SRC-69F3587825-L000207](../search_code.py#L207) | 207 | `"                if len(hits) >= max_results:"` | — |
-| [SRC-69F3587825-L000208](../search_code.py#L208) | 208 | `"                    return hits"` | — |
-| [SRC-69F3587825-L000209](../search_code.py#L209) | 209 | `"    return hits"` | — |
-| [SRC-69F3587825-L000210](../search_code.py#L210) | 210 | `""` | — |
-| [SRC-69F3587825-L000211](../search_code.py#L211) | 211 | `""` | — |
-| [SRC-69F3587825-L000212](../search_code.py#L212) | 212 | `"def format_hits(hits: list[SearchHit]) -> str:"` | — |
-| [SRC-69F3587825-L000213](../search_code.py#L213) | 213 | `"    if not hits:"` | — |
-| [SRC-69F3587825-L000214](../search_code.py#L214) | 214 | `"        return \"لا توجد نتائج.\""` | — |
-| [SRC-69F3587825-L000215](../search_code.py#L215) | 215 | `"    blocks: list[str] = []"` | — |
-| [SRC-69F3587825-L000216](../search_code.py#L216) | 216 | `"    for hit in hits:"` | — |
-| [SRC-69F3587825-L000217](../search_code.py#L217) | 217 | `"        blocks.append("` | — |
-| [SRC-69F3587825-L000218](../search_code.py#L218) | 218 | `"            f\"{hit.file}:{hit.line}\\n\""` | — |
-| [SRC-69F3587825-L000219](../search_code.py#L219) | 219 | `"            f\"  {hit.text}\\n\""` | — |
-| [SRC-69F3587825-L000220](../search_code.py#L220) | 220 | `"            f\"  → {hit.link}\""` | — |
-| [SRC-69F3587825-L000221](../search_code.py#L221) | 221 | `"        )"` | — |
-| [SRC-69F3587825-L000222](../search_code.py#L222) | 222 | `"        if hit.context_before:"` | — |
-| [SRC-69F3587825-L000223](../search_code.py#L223) | 223 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
-| [SRC-69F3587825-L000224](../search_code.py#L224) | 224 | `"                f\"  · {line}\" for line in hit.context_before.splitlines()"` | — |
-| [SRC-69F3587825-L000225](../search_code.py#L225) | 225 | `"            )"` | — |
-| [SRC-69F3587825-L000226](../search_code.py#L226) | 226 | `"        if hit.context_after:"` | — |
-| [SRC-69F3587825-L000227](../search_code.py#L227) | 227 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
-| [SRC-69F3587825-L000228](../search_code.py#L228) | 228 | `"                f\"  · {line}\" for line in hit.context_after.splitlines()"` | — |
-| [SRC-69F3587825-L000229](../search_code.py#L229) | 229 | `"            )"` | — |
-| [SRC-69F3587825-L000230](../search_code.py#L230) | 230 | `"    return \"\\n\\n\".join(blocks)"` | — |
-| [SRC-69F3587825-L000231](../search_code.py#L231) | 231 | `""` | — |
-| [SRC-69F3587825-L000232](../search_code.py#L232) | 232 | `""` | — |
-| [SRC-69F3587825-L000233](../search_code.py#L233) | 233 | `"def main(argv: Sequence[str] \| None = None) -> int:"` | — |
-| [SRC-69F3587825-L000234](../search_code.py#L234) | 234 | `"    parser = argparse.ArgumentParser("` | — |
-| [SRC-69F3587825-L000235](../search_code.py#L235) | 235 | `"        description=\"بحث نصي داخل ملفات مستودع Omarai (بدون خدمات خارجية).\""` | — |
-| [SRC-69F3587825-L000236](../search_code.py#L236) | 236 | `"    )"` | — |
-| [SRC-69F3587825-L000237](../search_code.py#L237) | 237 | `"    parser.add_argument(\"query\", help=\"النص أو التعبير المنتظم للبحث.\")"` | — |
-| [SRC-69F3587825-L000238](../search_code.py#L238) | 238 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000239](../search_code.py#L239) | 239 | `"        \"--root\","` | — |
-| [SRC-69F3587825-L000240](../search_code.py#L240) | 240 | `"        type=Path,"` | — |
-| [SRC-69F3587825-L000241](../search_code.py#L241) | 241 | `"        default=Path(__file__).resolve().parents[1],"` | — |
-| [SRC-69F3587825-L000242](../search_code.py#L242) | 242 | `"        help=\"جذر المستودع.\","` | — |
-| [SRC-69F3587825-L000243](../search_code.py#L243) | 243 | `"    )"` | — |
-| [SRC-69F3587825-L000244](../search_code.py#L244) | 244 | `"    parser.add_argument(\"--regex\", action=\"store_true\", help=\"تفسير الاستعلام كتعبير منتظم.\")"` | — |
-| [SRC-69F3587825-L000245](../search_code.py#L245) | 245 | `"    parser.add_argument(\"--case-sensitive\", action=\"store_true\", help=\"مطابقة حساسة لحالة الأحرف.\")"` | — |
-| [SRC-69F3587825-L000246](../search_code.py#L246) | 246 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000247](../search_code.py#L247) | 247 | `"        \"--ext\","` | — |
-| [SRC-69F3587825-L000248](../search_code.py#L248) | 248 | `"        action=\"append\","` | — |
-| [SRC-69F3587825-L000249](../search_code.py#L249) | 249 | `"        default=[],"` | — |
-| [SRC-69F3587825-L000250](../search_code.py#L250) | 250 | `"        help=\"امتداد ملف للبحث (يمكن تكراره)، مثل: --ext py --ext html\","` | — |
-| [SRC-69F3587825-L000251](../search_code.py#L251) | 251 | `"    )"` | — |
-| [SRC-69F3587825-L000252](../search_code.py#L252) | 252 | `"    parser.add_argument(\"--max\", type=int, default=50, help=\"أقصى عدد نتائج (افتراضي 50).\")"` | — |
-| [SRC-69F3587825-L000253](../search_code.py#L253) | 253 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000254](../search_code.py#L254) | 254 | `"        \"--context\","` | — |
-| [SRC-69F3587825-L000255](../search_code.py#L255) | 255 | `"        type=int,"` | — |
-| [SRC-69F3587825-L000256](../search_code.py#L256) | 256 | `"        default=0,"` | — |
-| [SRC-69F3587825-L000257](../search_code.py#L257) | 257 | `"        help=\"عدد أسطر السياق قبل/بعد.\","` | — |
-| [SRC-69F3587825-L000258](../search_code.py#L258) | 258 | `"    )"` | — |
-| [SRC-69F3587825-L000259](../search_code.py#L259) | 259 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-69F3587825-L000260](../search_code.py#L260) | 260 | `""` | — |
-| [SRC-69F3587825-L000261](../search_code.py#L261) | 261 | `"    try:"` | — |
-| [SRC-69F3587825-L000262](../search_code.py#L262) | 262 | `"        root = args.root.resolve(strict=True)"` | — |
-| [SRC-69F3587825-L000263](../search_code.py#L263) | 263 | `"        extensions = ("` | — |
-| [SRC-69F3587825-L000264](../search_code.py#L264) | 264 | `"            frozenset(f\".{ext.lstrip('.')}\" for ext in args.ext)"` | — |
-| [SRC-69F3587825-L000265](../search_code.py#L265) | 265 | `"            if args.ext"` | — |
-| [SRC-69F3587825-L000266](../search_code.py#L266) | 266 | `"            else DEFAULT_EXTENSIONS"` | — |
-| [SRC-69F3587825-L000267](../search_code.py#L267) | 267 | `"        )"` | — |
-| [SRC-69F3587825-L000268](../search_code.py#L268) | 268 | `"        hits = search_repository("` | — |
-| [SRC-69F3587825-L000269](../search_code.py#L269) | 269 | `"            root,"` | — |
-| [SRC-69F3587825-L000270](../search_code.py#L270) | 270 | `"            args.query,"` | — |
-| [SRC-69F3587825-L000271](../search_code.py#L271) | 271 | `"            use_regex=args.regex,"` | — |
-| [SRC-69F3587825-L000272](../search_code.py#L272) | 272 | `"            case_sensitive=args.case_sensitive,"` | — |
-| [SRC-69F3587825-L000273](../search_code.py#L273) | 273 | `"            extensions=extensions,"` | — |
-| [SRC-69F3587825-L000274](../search_code.py#L274) | 274 | `"            max_results=max(1, args.max),"` | — |
-| [SRC-69F3587825-L000275](../search_code.py#L275) | 275 | `"            context=max(0, args.context),"` | — |
-| [SRC-69F3587825-L000276](../search_code.py#L276) | 276 | `"        )"` | — |
-| [SRC-69F3587825-L000277](../search_code.py#L277) | 277 | `"    except (OSError, ValueError, re.error) as exc:"` | — |
-| [SRC-69F3587825-L000278](../search_code.py#L278) | 278 | `"        print(f\"خطأ في البحث: {exc}\", file=sys.stderr)"` | — |
-| [SRC-69F3587825-L000279](../search_code.py#L279) | 279 | `"        return 1"` | — |
-| [SRC-69F3587825-L000280](../search_code.py#L280) | 280 | `""` | — |
-| [SRC-69F3587825-L000281](../search_code.py#L281) | 281 | `"    print(format_hits(hits))"` | — |
-| [SRC-69F3587825-L000282](../search_code.py#L282) | 282 | `"    print(f\"\\n# عدد النتائج: {len(hits)}\")"` | — |
-| [SRC-69F3587825-L000283](../search_code.py#L283) | 283 | `"    return 0"` | — |
-| [SRC-69F3587825-L000284](../search_code.py#L284) | 284 | `""` | — |
-| [SRC-69F3587825-L000285](../search_code.py#L285) | 285 | `""` | — |
-| [SRC-69F3587825-L000286](../search_code.py#L286) | 286 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-69F3587825-L000287](../search_code.py#L287) | 287 | `"    raise SystemExit(main())"` | — |
+| [SRC-69F3587825-L000149](../search_code.py#L149) | 149 | `"            if ("` | — |
+| [SRC-69F3587825-L000150](../search_code.py#L150) | 150 | `"                suffix not in extensions"` | — |
+| [SRC-69F3587825-L000151](../search_code.py#L151) | 151 | `"                and not file_name.endswith(\".example\")"` | — |
+| [SRC-69F3587825-L000152](../search_code.py#L152) | 152 | `"                and file_name not in {\".gitignore\", \".dockerignore\", \"Dockerfile\", \"LICENSE\"}"` | — |
+| [SRC-69F3587825-L000153](../search_code.py#L153) | 153 | `"            ):"` | — |
+| [SRC-69F3587825-L000154](../search_code.py#L154) | 154 | `"                continue"` | — |
+| [SRC-69F3587825-L000155](../search_code.py#L155) | 155 | `"            discovered.append(candidate)"` | — |
+| [SRC-69F3587825-L000156](../search_code.py#L156) | 156 | `"    return sorted(discovered, key=lambda p: p.relative_to(root).as_posix().casefold())"` | — |
+| [SRC-69F3587825-L000157](../search_code.py#L157) | 157 | `""` | — |
+| [SRC-69F3587825-L000158](../search_code.py#L158) | 158 | `""` | — |
+| [SRC-69F3587825-L000159](../search_code.py#L159) | 159 | `"def search_repository("` | — |
+| [SRC-69F3587825-L000160](../search_code.py#L160) | 160 | `"    root: Path,"` | — |
+| [SRC-69F3587825-L000161](../search_code.py#L161) | 161 | `"    query: str,"` | — |
+| [SRC-69F3587825-L000162](../search_code.py#L162) | 162 | `"    *,"` | — |
+| [SRC-69F3587825-L000163](../search_code.py#L163) | 163 | `"    use_regex: bool = False,"` | — |
+| [SRC-69F3587825-L000164](../search_code.py#L164) | 164 | `"    case_sensitive: bool = False,"` | — |
+| [SRC-69F3587825-L000165](../search_code.py#L165) | 165 | `"    extensions: frozenset[str] = DEFAULT_EXTENSIONS,"` | — |
+| [SRC-69F3587825-L000166](../search_code.py#L166) | 166 | `"    max_results: int = 50,"` | — |
+| [SRC-69F3587825-L000167](../search_code.py#L167) | 167 | `"    context: int = 1,"` | — |
+| [SRC-69F3587825-L000168](../search_code.py#L168) | 168 | `") -> list[SearchHit]:"` | — |
+| [SRC-69F3587825-L000169](../search_code.py#L169) | 169 | `"    \"\"\"Return ordered text matches with short context.\"\"\""` | — |
+| [SRC-69F3587825-L000170](../search_code.py#L170) | 170 | `"    if not query:"` | — |
+| [SRC-69F3587825-L000171](../search_code.py#L171) | 171 | `"        raise ValueError(\"استعلام البحث فارغ.\")"` | — |
+| [SRC-69F3587825-L000172](../search_code.py#L172) | 172 | `"    if max_results < 1:"` | — |
+| [SRC-69F3587825-L000173](../search_code.py#L173) | 173 | `"        raise ValueError(\"max_results يجب أن يكون 1 أو أكبر.\")"` | — |
+| [SRC-69F3587825-L000174](../search_code.py#L174) | 174 | `"    if context < 0:"` | — |
+| [SRC-69F3587825-L000175](../search_code.py#L175) | 175 | `"        raise ValueError(\"context لا يمكن أن يكون سالبًا.\")"` | — |
+| [SRC-69F3587825-L000176](../search_code.py#L176) | 176 | `""` | — |
+| [SRC-69F3587825-L000177](../search_code.py#L177) | 177 | `"    flags = 0 if case_sensitive else re.IGNORECASE"` | — |
+| [SRC-69F3587825-L000178](../search_code.py#L178) | 178 | `"    if use_regex:"` | — |
+| [SRC-69F3587825-L000179](../search_code.py#L179) | 179 | `"        pattern = re.compile(query, flags)"` | — |
+| [SRC-69F3587825-L000180](../search_code.py#L180) | 180 | `"    else:"` | — |
+| [SRC-69F3587825-L000181](../search_code.py#L181) | 181 | `"        pattern = re.compile(re.escape(query), flags)"` | — |
+| [SRC-69F3587825-L000182](../search_code.py#L182) | 182 | `""` | — |
+| [SRC-69F3587825-L000183](../search_code.py#L183) | 183 | `"    hits: list[SearchHit] = []"` | — |
+| [SRC-69F3587825-L000184](../search_code.py#L184) | 184 | `"    for path in discover_text_files(root, extensions):"` | — |
+| [SRC-69F3587825-L000185](../search_code.py#L185) | 185 | `"        relative = path.relative_to(root).as_posix()"` | — |
+| [SRC-69F3587825-L000186](../search_code.py#L186) | 186 | `"        try:"` | — |
+| [SRC-69F3587825-L000187](../search_code.py#L187) | 187 | `"            if path.stat().st_size > MAX_SEARCH_FILE_BYTES:"` | — |
+| [SRC-69F3587825-L000188](../search_code.py#L188) | 188 | `"                continue"` | — |
+| [SRC-69F3587825-L000189](../search_code.py#L189) | 189 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-69F3587825-L000190](../search_code.py#L190) | 190 | `"        except (OSError, UnicodeDecodeError):"` | — |
+| [SRC-69F3587825-L000191](../search_code.py#L191) | 191 | `"            continue"` | — |
+| [SRC-69F3587825-L000192](../search_code.py#L192) | 192 | `"        lines = text.splitlines()"` | — |
+| [SRC-69F3587825-L000193](../search_code.py#L193) | 193 | `"        for index, line in enumerate(lines):"` | — |
+| [SRC-69F3587825-L000194](../search_code.py#L194) | 194 | `"            if pattern.search(line):"` | — |
+| [SRC-69F3587825-L000195](../search_code.py#L195) | 195 | `"                before = \"\\n\".join(lines[max(0, index - context) : index]) if context else \"\""` | — |
+| [SRC-69F3587825-L000196](../search_code.py#L196) | 196 | `"                after = ("` | — |
+| [SRC-69F3587825-L000197](../search_code.py#L197) | 197 | `"                    \"\\n\".join(lines[index + 1 : min(len(lines), index + 1 + context)])"` | — |
+| [SRC-69F3587825-L000198](../search_code.py#L198) | 198 | `"                    if context"` | — |
+| [SRC-69F3587825-L000199](../search_code.py#L199) | 199 | `"                    else \"\""` | — |
+| [SRC-69F3587825-L000200](../search_code.py#L200) | 200 | `"                )"` | — |
+| [SRC-69F3587825-L000201](../search_code.py#L201) | 201 | `"                hits.append("` | — |
+| [SRC-69F3587825-L000202](../search_code.py#L202) | 202 | `"                    SearchHit("` | — |
+| [SRC-69F3587825-L000203](../search_code.py#L203) | 203 | `"                        file=relative,"` | — |
+| [SRC-69F3587825-L000204](../search_code.py#L204) | 204 | `"                        line=index + 1,"` | — |
+| [SRC-69F3587825-L000205](../search_code.py#L205) | 205 | `"                        text=line.rstrip(),"` | — |
+| [SRC-69F3587825-L000206](../search_code.py#L206) | 206 | `"                        context_before=before.rstrip(),"` | — |
+| [SRC-69F3587825-L000207](../search_code.py#L207) | 207 | `"                        context_after=after.rstrip(),"` | — |
+| [SRC-69F3587825-L000208](../search_code.py#L208) | 208 | `"                    )"` | — |
+| [SRC-69F3587825-L000209](../search_code.py#L209) | 209 | `"                )"` | — |
+| [SRC-69F3587825-L000210](../search_code.py#L210) | 210 | `"                if len(hits) >= max_results:"` | — |
+| [SRC-69F3587825-L000211](../search_code.py#L211) | 211 | `"                    return hits"` | — |
+| [SRC-69F3587825-L000212](../search_code.py#L212) | 212 | `"    return hits"` | — |
+| [SRC-69F3587825-L000213](../search_code.py#L213) | 213 | `""` | — |
+| [SRC-69F3587825-L000214](../search_code.py#L214) | 214 | `""` | — |
+| [SRC-69F3587825-L000215](../search_code.py#L215) | 215 | `"def format_hits(hits: list[SearchHit]) -> str:"` | — |
+| [SRC-69F3587825-L000216](../search_code.py#L216) | 216 | `"    if not hits:"` | — |
+| [SRC-69F3587825-L000217](../search_code.py#L217) | 217 | `"        return \"لا توجد نتائج.\""` | — |
+| [SRC-69F3587825-L000218](../search_code.py#L218) | 218 | `"    blocks: list[str] = []"` | — |
+| [SRC-69F3587825-L000219](../search_code.py#L219) | 219 | `"    for hit in hits:"` | — |
+| [SRC-69F3587825-L000220](../search_code.py#L220) | 220 | `"        blocks.append("` | — |
+| [SRC-69F3587825-L000221](../search_code.py#L221) | 221 | `"            f\"{hit.file}:{hit.line}\\n\""` | — |
+| [SRC-69F3587825-L000222](../search_code.py#L222) | 222 | `"            f\"  {hit.text}\\n\""` | — |
+| [SRC-69F3587825-L000223](../search_code.py#L223) | 223 | `"            f\"  → {hit.link}\""` | — |
+| [SRC-69F3587825-L000224](../search_code.py#L224) | 224 | `"        )"` | — |
+| [SRC-69F3587825-L000225](../search_code.py#L225) | 225 | `"        if hit.context_before:"` | — |
+| [SRC-69F3587825-L000226](../search_code.py#L226) | 226 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
+| [SRC-69F3587825-L000227](../search_code.py#L227) | 227 | `"                f\"  · {line}\" for line in hit.context_before.splitlines()"` | — |
+| [SRC-69F3587825-L000228](../search_code.py#L228) | 228 | `"            )"` | — |
+| [SRC-69F3587825-L000229](../search_code.py#L229) | 229 | `"        if hit.context_after:"` | — |
+| [SRC-69F3587825-L000230](../search_code.py#L230) | 230 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
+| [SRC-69F3587825-L000231](../search_code.py#L231) | 231 | `"                f\"  · {line}\" for line in hit.context_after.splitlines()"` | — |
+| [SRC-69F3587825-L000232](../search_code.py#L232) | 232 | `"            )"` | — |
+| [SRC-69F3587825-L000233](../search_code.py#L233) | 233 | `"    return \"\\n\\n\".join(blocks)"` | — |
+| [SRC-69F3587825-L000234](../search_code.py#L234) | 234 | `""` | — |
+| [SRC-69F3587825-L000235](../search_code.py#L235) | 235 | `""` | — |
+| [SRC-69F3587825-L000236](../search_code.py#L236) | 236 | `"def main(argv: Sequence[str] \| None = None) -> int:"` | — |
+| [SRC-69F3587825-L000237](../search_code.py#L237) | 237 | `"    parser = argparse.ArgumentParser("` | — |
+| [SRC-69F3587825-L000238](../search_code.py#L238) | 238 | `"        description=\"بحث نصي داخل ملفات مستودع Omarai (بدون خدمات خارجية).\""` | — |
+| [SRC-69F3587825-L000239](../search_code.py#L239) | 239 | `"    )"` | — |
+| [SRC-69F3587825-L000240](../search_code.py#L240) | 240 | `"    parser.add_argument(\"query\", help=\"النص أو التعبير المنتظم للبحث.\")"` | — |
+| [SRC-69F3587825-L000241](../search_code.py#L241) | 241 | `"    parser.add_argument("` | — |
+| [SRC-69F3587825-L000242](../search_code.py#L242) | 242 | `"        \"--root\","` | — |
+| [SRC-69F3587825-L000243](../search_code.py#L243) | 243 | `"        type=Path,"` | — |
+| [SRC-69F3587825-L000244](../search_code.py#L244) | 244 | `"        default=Path(__file__).resolve().parents[1],"` | — |
+| [SRC-69F3587825-L000245](../search_code.py#L245) | 245 | `"        help=\"جذر المستودع.\","` | — |
+| [SRC-69F3587825-L000246](../search_code.py#L246) | 246 | `"    )"` | — |
+| [SRC-69F3587825-L000247](../search_code.py#L247) | 247 | `"    parser.add_argument(\"--regex\", action=\"store_true\", help=\"تفسير الاستعلام كتعبير منتظم.\")"` | — |
+| [SRC-69F3587825-L000248](../search_code.py#L248) | 248 | `"    parser.add_argument(\"--case-sensitive\", action=\"store_true\", help=\"مطابقة حساسة لحالة الأحرف.\")"` | — |
+| [SRC-69F3587825-L000249](../search_code.py#L249) | 249 | `"    parser.add_argument("` | — |
+| [SRC-69F3587825-L000250](../search_code.py#L250) | 250 | `"        \"--ext\","` | — |
+| [SRC-69F3587825-L000251](../search_code.py#L251) | 251 | `"        action=\"append\","` | — |
+| [SRC-69F3587825-L000252](../search_code.py#L252) | 252 | `"        default=[],"` | — |
+| [SRC-69F3587825-L000253](../search_code.py#L253) | 253 | `"        help=\"امتداد ملف للبحث (يمكن تكراره)، مثل: --ext py --ext html\","` | — |
+| [SRC-69F3587825-L000254](../search_code.py#L254) | 254 | `"    )"` | — |
+| [SRC-69F3587825-L000255](../search_code.py#L255) | 255 | `"    parser.add_argument(\"--max\", type=int, default=50, help=\"أقصى عدد نتائج (افتراضي 50).\")"` | — |
+| [SRC-69F3587825-L000256](../search_code.py#L256) | 256 | `"    parser.add_argument("` | — |
+| [SRC-69F3587825-L000257](../search_code.py#L257) | 257 | `"        \"--context\","` | — |
+| [SRC-69F3587825-L000258](../search_code.py#L258) | 258 | `"        type=int,"` | — |
+| [SRC-69F3587825-L000259](../search_code.py#L259) | 259 | `"        default=0,"` | — |
+| [SRC-69F3587825-L000260](../search_code.py#L260) | 260 | `"        help=\"عدد أسطر السياق قبل/بعد.\","` | — |
+| [SRC-69F3587825-L000261](../search_code.py#L261) | 261 | `"    )"` | — |
+| [SRC-69F3587825-L000262](../search_code.py#L262) | 262 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-69F3587825-L000263](../search_code.py#L263) | 263 | `""` | — |
+| [SRC-69F3587825-L000264](../search_code.py#L264) | 264 | `"    try:"` | — |
+| [SRC-69F3587825-L000265](../search_code.py#L265) | 265 | `"        root = args.root.resolve(strict=True)"` | — |
+| [SRC-69F3587825-L000266](../search_code.py#L266) | 266 | `"        extensions = ("` | — |
+| [SRC-69F3587825-L000267](../search_code.py#L267) | 267 | `"            frozenset(f\".{ext.lstrip('.')}\" for ext in args.ext)"` | — |
+| [SRC-69F3587825-L000268](../search_code.py#L268) | 268 | `"            if args.ext"` | — |
+| [SRC-69F3587825-L000269](../search_code.py#L269) | 269 | `"            else DEFAULT_EXTENSIONS"` | — |
+| [SRC-69F3587825-L000270](../search_code.py#L270) | 270 | `"        )"` | — |
+| [SRC-69F3587825-L000271](../search_code.py#L271) | 271 | `"        hits = search_repository("` | — |
+| [SRC-69F3587825-L000272](../search_code.py#L272) | 272 | `"            root,"` | — |
+| [SRC-69F3587825-L000273](../search_code.py#L273) | 273 | `"            args.query,"` | — |
+| [SRC-69F3587825-L000274](../search_code.py#L274) | 274 | `"            use_regex=args.regex,"` | — |
+| [SRC-69F3587825-L000275](../search_code.py#L275) | 275 | `"            case_sensitive=args.case_sensitive,"` | — |
+| [SRC-69F3587825-L000276](../search_code.py#L276) | 276 | `"            extensions=extensions,"` | — |
+| [SRC-69F3587825-L000277](../search_code.py#L277) | 277 | `"            max_results=max(1, args.max),"` | — |
+| [SRC-69F3587825-L000278](../search_code.py#L278) | 278 | `"            context=max(0, args.context),"` | — |
+| [SRC-69F3587825-L000279](../search_code.py#L279) | 279 | `"        )"` | — |
+| [SRC-69F3587825-L000280](../search_code.py#L280) | 280 | `"    except (OSError, ValueError, re.error) as exc:"` | — |
+| [SRC-69F3587825-L000281](../search_code.py#L281) | 281 | `"        print(f\"خطأ في البحث: {exc}\", file=sys.stderr)"` | — |
+| [SRC-69F3587825-L000282](../search_code.py#L282) | 282 | `"        return 1"` | — |
+| [SRC-69F3587825-L000283](../search_code.py#L283) | 283 | `""` | — |
+| [SRC-69F3587825-L000284](../search_code.py#L284) | 284 | `"    print(format_hits(hits))"` | — |
+| [SRC-69F3587825-L000285](../search_code.py#L285) | 285 | `"    print(f\"\\n# عدد النتائج: {len(hits)}\")"` | — |
+| [SRC-69F3587825-L000286](../search_code.py#L286) | 286 | `"    return 0"` | — |
+| [SRC-69F3587825-L000287](../search_code.py#L287) | 287 | `""` | — |
+| [SRC-69F3587825-L000288](../search_code.py#L288) | 288 | `""` | — |
+| [SRC-69F3587825-L000289](../search_code.py#L289) | 289 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-69F3587825-L000290](../search_code.py#L290) | 290 | `"    raise SystemExit(main())"` | — |
 ## ملفات أخرى
 
 ### FILE-C693279643 — [LICENSE](../../LICENSE#L1)
@@ -894,6 +897,3 @@
 | [SRC-4FFD5AFC54-L000052](../../scripts/run_answer_quality_benchmark.py#L52) | 52 | `"        raise ValueError(\"Base URL is malformed.\") from exc"` | — |
 | [SRC-4FFD5AFC54-L000053](../../scripts/run_answer_quality_benchmark.py#L53) | 53 | `""` | — |
 | [SRC-4FFD5AFC54-L000054](../../scripts/run_answer_quality_benchmark.py#L54) | 54 | `"    if scheme not in {\"http\", \"https\"} or not host:"` | — |
-| [SRC-4FFD5AFC54-L000055](../../scripts/run_answer_quality_benchmark.py#L55) | 55 | `"        raise ValueError(\"Base URL must use HTTP or HTTPS and include a hostname.\")"` | — |
-| [SRC-4FFD5AFC54-L000056](../../scripts/run_answer_quality_benchmark.py#L56) | 56 | `"    if parsed.username is not None or parsed.password is not None:"` | — |
-| [SRC-4FFD5AFC54-L000057](../../scripts/run_answer_quality_benchmark.py#L57) | 57 | `"        raise ValueError(\"Base URL must not include a username or password.\")"` | — |
