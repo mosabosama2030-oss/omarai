@@ -14,7 +14,8 @@ PUBLIC_NAME = "app-1234.hosting.example"
 def port(tmp_path, monkeypatch):
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", TOKEN)
-    monkeypatch.delenv("OMARAI_ALLOWED_ORIGINS", raising=False)
+    # The public host is explicitly configured; do not infer it from a client header.
+    monkeypatch.setenv("OMARAI_ALLOWED_ORIGINS", "https://" + PUBLIC_NAME)
     monkeypatch.setattr(Handler, "store", LeadStore(tmp_path / "origin-test.sqlite3"))
     monkeypatch.setattr(Handler, "RATE_LIMIT_REQUESTS", 10_000)
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
@@ -67,3 +68,19 @@ def test_configured_origin_still_works_without_any_proxy_headers(port, monkeypat
     monkeypatch.setenv("OMARAI_ALLOWED_ORIGINS", "https://frontend.example")
     headers = {"Host": "127.0.0.1:8000", "Origin": "https://frontend.example"}
     assert call(port, "POST", headers) == 200
+
+def test_spoofed_forwarded_host_cannot_add_an_unapproved_origin(port):
+    """A client-supplied X-Forwarded-Host must not expand the CORS allowlist."""
+    headers = {
+        "Host": "127.0.0.1:8000",
+        "X-Forwarded-Host": "evil.example",
+        "X-Forwarded-Proto": "https",
+        "Origin": "https://evil.example",
+    }
+    assert call(port, "POST", headers) == 403
+    assert call(
+        port,
+        "OPTIONS",
+        {key: value for key, value in headers.items() if key != "Authorization"},
+    ) == 403
+

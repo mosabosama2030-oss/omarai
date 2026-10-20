@@ -201,12 +201,14 @@ class Handler(BaseHTTPRequestHandler):
             if item.strip()
         }
         if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            # Host identifies the requested service origin. Do not derive allowed
+            # origins from X-Forwarded-Host: direct clients can spoof that header
+            # unless the reverse proxy is separately configured to overwrite it.
             scheme = self.headers.get("X-Forwarded-Proto", "https").split(",", 1)[0].strip().lower()
-            for header in ("Host", "X-Forwarded-Host"):
-                host = self.headers.get(header, "").split(",", 1)[0].strip()
-                if host:
-                    origins.add(f"https://{host}".rstrip("/"))
-                    origins.add(f"{scheme}://{host}".rstrip("/"))
+            host = self.headers.get("Host", "").split(",", 1)[0].strip()
+            if host:
+                origins.add(f"https://{host}".rstrip("/"))
+                origins.add(f"{scheme}://{host}".rstrip("/"))
         else:
             port = self.server.server_port
             origins.update(

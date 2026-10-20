@@ -653,3 +653,44 @@ def test_api_absolute_header_deadline_stops_slow_trickle(local_api, monkeypatch)
     assert elapsed < 0.8
     # The timed-out request never reached application dispatch; the handler closes silently.
     assert response == b""
+
+def test_public_preflight_does_not_trust_spoofed_forwarded_host(local_api, monkeypatch):
+    """A client-controlled X-Forwarded-Host must not grant an origin CORS access."""
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.delenv("OMARAI_ALLOWED_ORIGINS", raising=False)
+
+    request = Request(
+        local_api + "/api/agent",
+        method="OPTIONS",
+        headers={
+            "Origin": "https://attacker.example",
+            "X-Forwarded-Host": "attacker.example",
+            "X-Forwarded-Proto": "https",
+            "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "authorization,content-type",
+        },
+    )
+    with pytest.raises(HTTPError) as error:
+        urlopen(request, timeout=3)
+    assert error.value.code == 403
+
+
+def test_public_origin_still_allows_the_requested_host(local_api, monkeypatch):
+    """Same-service public UI remains compatible when the request Host is trusted."""
+    from types import SimpleNamespace
+
+    from api.omarai import Handler
+
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.delenv("OMARAI_ALLOWED_ORIGINS", raising=False)
+    handler = SimpleNamespace(
+        headers={
+            "Host": "omarai.example",
+            "X-Forwarded-Proto": "https",
+            "X-Forwarded-Host": "attacker.example",
+        }
+    )
+    allowed = Handler._allowed_origins(handler)
+    assert "https://omarai.example" in allowed
+    assert "https://attacker.example" not in allowed
+

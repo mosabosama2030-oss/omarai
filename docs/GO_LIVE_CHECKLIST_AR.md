@@ -12,6 +12,8 @@
 4. اترك `OMARAI_OPENROUTER_WEB_SEARCH` غير مضبوط ما لم تراجع التكلفة وتوافق عليها.
 5. أنشئ نطاق HTTPS وتحقق من `https://your-app.example.com/api/health`.
 
+**حد الثقة الخاص بـ CORS خلف الوكيل العكسي:** يحسب Omarai أصل الخدمة من `Host`، ولا يثق برأس `X-Forwarded-Host` الذي قد يرسله العميل. إذا كانت منصة الاستضافة تعيد كتابة `Host` إلى اسم داخلي، اضبط `OMARAI_ALLOWED_ORIGINS=https://your-app.example.com` في إعدادات الخدمة لاستخدام النطاق العام الدقيق. لا تستخدم wildcard ولا تضف نطاقًا لا تملكه.
+
 ## اختبار قبول حي
 
 أضف GitHub Actions secret باسم `OMARAI_ACCESS_TOKEN` واجعل قيمته مطابقة لرمز الوصول في الاستضافة، وأضف secret باسم `OMARAI_BASE_URL` بقيمة أصل HTTPS للخدمة مثل `https://your-app.example.com` دون مسار إضافي. لا تضع رمز الوصول في مدخلات workflow أو الدردشة أو السجلات. بعد ضبط السرّين، افتح **Actions → Omarai hosted acceptance smoke → Run workflow**. يستهدف الاختبار النطاق المحفوظ في إعدادات المستودع؛ لا يأخذ عنوانًا حرًا من مُشغّل workflow، لتجنب إرسال رمز الوصول إلى وجهة غير مقصودة.
