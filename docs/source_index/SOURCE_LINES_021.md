@@ -604,35 +604,35 @@
 | [SRC-FA4E1423C3-L000418](../../tests/test_generate_index.py#L418) | 418 | `") -> None:"` | — |
 | [SRC-FA4E1423C3-L000419](../../tests/test_generate_index.py#L419) | 419 | `"    \"\"\"Only explicit comment or prose markers become findings, never syntax/URLs/strings.\"\"\""` | — |
 | [SRC-FA4E1423C3-L000420](../../tests/test_generate_index.py#L420) | 420 | `"    (tmp_path / \"sample.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000421](../../tests/test_generate_index.py#L421) | 421 | `"        'framework_url = \"https://example.org/risk-management-framework\"\\\\n'"` | — |
-| [SRC-FA4E1423C3-L000422](../../tests/test_generate_index.py#L422) | 422 | `"        'error = \"ordinary error variable\"\\\\n'"` | — |
-| [SRC-FA4E1423C3-L000423](../../tests/test_generate_index.py#L423) | 423 | `"        'template = \"# BUG: this is inside a string\"\\\\n'"` | — |
-| [SRC-FA4E1423C3-L000424](../../tests/test_generate_index.py#L424) | 424 | `"        '# BUG: real Python defect\\\\n',"` | — |
+| [SRC-FA4E1423C3-L000421](../../tests/test_generate_index.py#L421) | 421 | `"        'framework_url = \"https://example.org/risk-management-framework\"\\n'"` | — |
+| [SRC-FA4E1423C3-L000422](../../tests/test_generate_index.py#L422) | 422 | `"        'error = \"ordinary error variable\"\\n'"` | — |
+| [SRC-FA4E1423C3-L000423](../../tests/test_generate_index.py#L423) | 423 | `"        'template = \"# BUG: this is inside a string\"\\n'"` | — |
+| [SRC-FA4E1423C3-L000424](../../tests/test_generate_index.py#L424) | 424 | `"        '# BUG: real Python defect\\n',"` | — |
 | [SRC-FA4E1423C3-L000425](../../tests/test_generate_index.py#L425) | 425 | `"        encoding=\"utf-8\","` | — |
 | [SRC-FA4E1423C3-L000426](../../tests/test_generate_index.py#L426) | 426 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000427](../../tests/test_generate_index.py#L427) | 427 | `"    (tmp_path / \"app.js\").write_text("` | — |
-| [SRC-FA4E1423C3-L000428](../../tests/test_generate_index.py#L428) | 428 | `"        'const template = \"// BUG: not a comment\";\\\\n'"` | — |
-| [SRC-FA4E1423C3-L000429](../../tests/test_generate_index.py#L429) | 429 | `"        'const error = 1;\\\\n'"` | — |
-| [SRC-FA4E1423C3-L000430](../../tests/test_generate_index.py#L430) | 430 | `"        'const x = 2; // FIXME: actual JS issue\\\\n'"` | — |
-| [SRC-FA4E1423C3-L000431](../../tests/test_generate_index.py#L431) | 431 | `"        '/* SECURITY: actual CSS/JS comment issue */\\\\n',"` | — |
+| [SRC-FA4E1423C3-L000428](../../tests/test_generate_index.py#L428) | 428 | `"        'const template = \"// BUG: not a comment\";\\n'"` | — |
+| [SRC-FA4E1423C3-L000429](../../tests/test_generate_index.py#L429) | 429 | `"        'const error = 1;\\n'"` | — |
+| [SRC-FA4E1423C3-L000430](../../tests/test_generate_index.py#L430) | 430 | `"        'const x = 2; // FIXME: actual JS issue\\n'"` | — |
+| [SRC-FA4E1423C3-L000431](../../tests/test_generate_index.py#L431) | 431 | `"        '/* SECURITY: actual CSS/JS comment issue */\\n',"` | — |
 | [SRC-FA4E1423C3-L000432](../../tests/test_generate_index.py#L432) | 432 | `"        encoding=\"utf-8\","` | — |
 | [SRC-FA4E1423C3-L000433](../../tests/test_generate_index.py#L433) | 433 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000434](../../tests/test_generate_index.py#L434) | 434 | `"    (tmp_path / \"styles.css\").write_text("` | — |
-| [SRC-FA4E1423C3-L000435](../../tests/test_generate_index.py#L435) | 435 | `"        \".box{gap:8px;color:red}\\\\n\""` | — |
-| [SRC-FA4E1423C3-L000436](../../tests/test_generate_index.py#L436) | 436 | `"        \"/* GAP: deliberate comment annotation */\\\\n\","` | — |
+| [SRC-FA4E1423C3-L000435](../../tests/test_generate_index.py#L435) | 435 | `"        \".box{gap:8px;color:red}\\n\""` | — |
+| [SRC-FA4E1423C3-L000436](../../tests/test_generate_index.py#L436) | 436 | `"        \"/* GAP: deliberate comment annotation */\\n\","` | — |
 | [SRC-FA4E1423C3-L000437](../../tests/test_generate_index.py#L437) | 437 | `"        encoding=\"utf-8\","` | — |
 | [SRC-FA4E1423C3-L000438](../../tests/test_generate_index.py#L438) | 438 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000439](../../tests/test_generate_index.py#L439) | 439 | `"    (tmp_path / \"page.html\").write_text("` | — |
-| [SRC-FA4E1423C3-L000440](../../tests/test_generate_index.py#L440) | 440 | `"        '<!-- REVIEW: check the navigation landmark -->\\\\n'"` | — |
-| [SRC-FA4E1423C3-L000441](../../tests/test_generate_index.py#L441) | 441 | `"        '<script>const template = \"<!-- BUG: not a markup comment -->\";</script>\\\\n',"` | — |
+| [SRC-FA4E1423C3-L000440](../../tests/test_generate_index.py#L440) | 440 | `"        '<!-- REVIEW: check the navigation landmark -->\\n'"` | — |
+| [SRC-FA4E1423C3-L000441](../../tests/test_generate_index.py#L441) | 441 | `"        '<script>const template = \"<!-- BUG: not a markup comment -->\";</script>\\n',"` | — |
 | [SRC-FA4E1423C3-L000442](../../tests/test_generate_index.py#L442) | 442 | `"        encoding=\"utf-8\","` | — |
 | [SRC-FA4E1423C3-L000443](../../tests/test_generate_index.py#L443) | 443 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000444](../../tests/test_generate_index.py#L444) | 444 | `"    (tmp_path / \"guide.md\").write_text("` | — |
-| [SRC-FA4E1423C3-L000445](../../tests/test_generate_index.py#L445) | 445 | `"        \"The risk-management framework reports an error.\\\\n\""` | — |
-| [SRC-FA4E1423C3-L000446](../../tests/test_generate_index.py#L446) | 446 | ````"        \"```text\\\\n\""```` | — |
-| [SRC-FA4E1423C3-L000447](../../tests/test_generate_index.py#L447) | 447 | `"        \"# BUG: this sample should be ignored\\\\n\""` | — |
-| [SRC-FA4E1423C3-L000448](../../tests/test_generate_index.py#L448) | 448 | ````"        \"```\\\\n\""```` | — |
-| [SRC-FA4E1423C3-L000449](../../tests/test_generate_index.py#L449) | 449 | `"        \"- DEFECT: this explicitly documented defect should be indexed\\\\n\","` | — |
+| [SRC-FA4E1423C3-L000445](../../tests/test_generate_index.py#L445) | 445 | `"        \"The risk-management framework reports an error.\\n\""` | — |
+| [SRC-FA4E1423C3-L000446](../../tests/test_generate_index.py#L446) | 446 | ````"        \"```text\\n\""```` | — |
+| [SRC-FA4E1423C3-L000447](../../tests/test_generate_index.py#L447) | 447 | `"        \"# BUG: this sample should be ignored\\n\""` | — |
+| [SRC-FA4E1423C3-L000448](../../tests/test_generate_index.py#L448) | 448 | ````"        \"```\\n\""```` | — |
+| [SRC-FA4E1423C3-L000449](../../tests/test_generate_index.py#L449) | 449 | `"        \"- DEFECT: this explicitly documented defect should be indexed\\n\","` | — |
 | [SRC-FA4E1423C3-L000450](../../tests/test_generate_index.py#L450) | 450 | `"        encoding=\"utf-8\","` | — |
 | [SRC-FA4E1423C3-L000451](../../tests/test_generate_index.py#L451) | 451 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000452](../../tests/test_generate_index.py#L452) | 452 | `""` | — |
