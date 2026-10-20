@@ -2435,3 +2435,132 @@ def test_reviewed_answer_without_valid_citations_cannot_be_rated_good(
         "not_established_no_valid_source_citations"
     )
     assert any("لا تحتوي على إحالات صالحة" in warning for warning in result["warnings"])
+
+# Network-boundary regression tests. These use mocked transports and never make
+# an outbound connection; they protect against SSRF and redirect/DNS-rebinding regressions.
+def test_public_ip_literals_rejects_mixed_public_and_private_dns_answers(monkeypatch):
+    import socket
+
+    from agents import web_agent
+
+    answers = [
+        (socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, "", ("93.184.216.34", 80)),
+        (socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, "", ("10.10.0.8", 80)),
+    ]
+    monkeypatch.setattr(
+        web_agent.socket,
+        "getaddrinfo",
+        lambda host, port, type: answers,
+    )
+
+    # One private DNS answer must fail closed, even when another answer is public.
+    assert web_agent._public_ip_literals("mixed.example") is None
+
+
+def test_pinned_connect_url_uses_checked_ip_without_losing_logical_path():
+    from agents.web_agent import _pinned_connect_url
+
+    assert _pinned_connect_url(
+        "https://example.test:443/path?q=1",
+        "93.184.216.34",
+    ) == "https://93.184.216.34:443/path?q=1"
+
+
+def test_fetch_page_rejects_private_redirect_before_connecting(monkeypatch):
+    from contextlib import contextmanager
+
+    import httpx
+
+    from agents import web_agent
+
+    resolved_hosts = []
+    requests = []
+
+    def resolve_public_ip(host):
+        resolved_hosts.append(host)
+        return ["93.184.216.34"] if host == "first.example" else None
+
+    monkeypatch.setattr(web_agent, "_public_ip_literals", resolve_public_ip)
+
+    class RedirectResponse:
+        status_code = 302
+
+        def __init__(self):
+            self.headers = {"location": "http://127.0.0.1/admin"}
+
+    @contextmanager
+    def fake_stream(self, method, url, **kwargs):
+        requests.append((method, str(url), kwargs))
+        yield RedirectResponse()
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            self.options = kwargs
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        stream = fake_stream
+
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+
+    assert web_agent.WebAgent()._fetch_page("https://first.example/article") == ("", "")
+    assert resolved_hosts == ["first.example"]
+    assert len(requests) == 1
+    assert requests[0][1] == "https://93.184.216.34/article"
+    assert requests[0][2]["headers"]["Host"] == "first.example"
+    assert requests[0][2]["extensions"]["sni_hostname"] == "first.example"
+
+
+def test_fetch_page_revalidates_dns_for_each_redirect_destination(monkeypatch):
+    from contextlib import contextmanager
+
+    import httpx
+
+    from agents import web_agent
+
+    resolved_hosts = []
+    requests = []
+
+    def resolve_public_ip(host):
+        resolved_hosts.append(host)
+        if host == "first.example":
+            return ["93.184.216.34"]
+        # Model a redirect destination that resolves to no verified public IP.
+        return None
+
+    monkeypatch.setattr(web_agent, "_public_ip_literals", resolve_public_ip)
+
+    class RedirectResponse:
+        status_code = 302
+
+        def __init__(self):
+            self.headers = {"location": "https://second.example/internal"}
+
+    @contextmanager
+    def fake_stream(self, method, url, **kwargs):
+        requests.append((method, str(url), kwargs))
+        yield RedirectResponse()
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            self.options = kwargs
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        stream = fake_stream
+
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+
+    assert web_agent.WebAgent()._fetch_page("https://first.example/article") == ("", "")
+    assert resolved_hosts == ["first.example", "second.example"]
+    # The second host is validated before any connection attempt to it.
+    assert len(requests) == 1
+
