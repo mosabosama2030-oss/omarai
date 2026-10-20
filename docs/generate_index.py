@@ -596,9 +596,11 @@ def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:
                     excluded.append((relative, reason))
             elif relative in INDEX_OUTPUT_PATHS:
                 excluded.append((relative, "مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية"))
-            elif relative.startswith(SOURCE_LINES_PAGES_DIR + "/"):
-                if tracked_scope_contains(relative):
-                    excluded.append((relative, "صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية"))
+            elif (
+                relative.startswith(SOURCE_LINES_PAGES_DIR + "/")
+                and tracked_scope_contains(relative)
+            ):
+                excluded.append((relative, "صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية"))
 
     return sorted(set(excluded), key=lambda item: (item[0].casefold(), item[1]))
 
