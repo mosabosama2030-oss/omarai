@@ -492,7 +492,7 @@ def _tracked_paths_or_none(root: Path) -> set[str] | None:
     try:
         return {
             path
-            for path in result.stdout.decode("utf-8").split("\\x00")
+            for path in result.stdout.decode("utf-8").split("\x00")
             if path
         }
     except UnicodeError:
