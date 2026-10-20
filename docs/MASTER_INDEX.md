@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **69**
 - ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **855**
-- تعريفات Python موثقة بوجود Docstring: **171**
-- تعريفات Python بلا Docstring: **518**
+- تعريفات Python المفهرسة: **857**
+- تعريفات Python موثقة بوجود Docstring: **172**
+- تعريفات Python بلا Docstring: **519**
 - تعريفات لا ينطبق عليها Docstring: **166**
 - الرموز الساكنة الإضافية: **1335**
-- الأسطر النصية المفهرسة حرفيًا: **22713**
+- الأسطر النصية المفهرسة حرفيًا: **22765**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -94,7 +94,7 @@
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 4526 | 111 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 99534 | 2569 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 101702 | 2621 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 41027 | 336 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16299 | 44 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -959,6 +959,8 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2552) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2552 | [SRC-F725E90B2A-L002552](../tests/test_web_agent.py#L2552) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2555) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2555 | [SRC-F725E90B2A-L002555](../tests/test_web_agent.py#L2555) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2558) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2558 | [SRC-F725E90B2A-L002558](../tests/test_web_agent.py#L2558) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2573) | دالة | test_explicit_modes_survive_deterministic_planning | A missing planner model must not erase a mode explicitly selected by the user. | موثق | 2573 | [SRC-F725E90B2A-L002573](../tests/test_web_agent.py#L2573) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2579) | دالة | test_explicit_modes_survive_deterministic_planning.collect | لا توجد Docstring. | ناقص | 2579 | [SRC-F725E90B2A-L002579](../tests/test_web_agent.py#L2579) |
 
 ## الرموز الساكنة الإضافية
 
