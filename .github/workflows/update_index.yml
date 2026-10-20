@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - "docs/MASTER_INDEX.md"
       - "docs/SOURCE_LINES_INDEX.md"
+      - "docs/INDEX_COVERAGE_AUDIT.md"
       - "docs/source_index/**"
   workflow_dispatch:
 
@@ -53,7 +54,7 @@ jobs:
           BRANCH_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
-          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/source_index/
+          git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/INDEX_COVERAGE_AUDIT.md docs/source_index/
           if git diff --cached --quiet; then
             echo "All generated index files are already up to date; no commit is needed."
             exit 0
