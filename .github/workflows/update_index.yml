@@ -15,7 +15,7 @@ permissions:
 
 # Serialize updates separately per branch. Generated-index-only commits are ignored above.
 concurrency:
-  group: omarai-living-index-${ github.ref }
+  group: omarai-living-index-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
       - name: Fetch the latest revision of the triggering branch
         shell: bash
         env:
-          BRANCH_NAME: ${ github.ref_name }
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
           git fetch --no-tags origin "${BRANCH_NAME}"
@@ -49,8 +49,8 @@ jobs:
       - name: Commit and publish the generated indexes only when changed
         shell: bash
         env:
-          GH_TOKEN: ${ secrets.GITHUB_TOKEN }
-          BRANCH_NAME: ${ github.ref_name }
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
           git add -- docs/MASTER_INDEX.md docs/SOURCE_LINES_INDEX.md docs/source_index/
