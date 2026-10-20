@@ -1020,7 +1020,7 @@ def render_markdown(
                     (
                         item.file_id,
                         _markdown_cell(item.category),
-                        _markdown_cell(item.file),
+                        f"[{_markdown_cell(item.file)}]({_source_file_href(item.file)})",
                         _markdown_cell(item.file_type),
                         str(item.size_bytes),
                         line_count,
@@ -1040,13 +1040,13 @@ def render_markdown(
             ("> تُحسب حالة Docstring للدوال والكلاسات فقط. المتغيرات والثوابت لا تُصنّف "
             "على أنها موثقة أو ناقصة Docstring."),
             "",
-            "| الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر |",
-            "|---|---|---|---|---|---:|",
+            "| الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر | كود السطر للوصول المباشر |",
+            "|---|---|---|---|---|---:|---|",
         ]
     )
 
     if not symbols:
-        lines.append("| — | — | — | لا توجد تعريفات Python في الملفات المؤهلة. | — | — |")
+        lines.append("| — | — | — | لا توجد تعريفات Python في الملفات المؤهلة. | — | — | — |")
     else:
         for symbol in symbols:
             if symbol.documented is True:
@@ -1059,12 +1059,13 @@ def render_markdown(
                 "| "
                 + " | ".join(
                     (
-                        _markdown_cell(symbol.file),
+                        f"[{_markdown_cell(symbol.file)}]({_source_file_href(symbol.file, symbol.line)})",
                         _markdown_cell(symbol.kind),
                         _markdown_cell(symbol.name),
                         _markdown_cell(symbol.description),
                         status,
                         str(symbol.line),
+                        f"[{_source_line_id(symbol.file, symbol.line)}]({_source_file_href(symbol.file, symbol.line)})",
                     )
                 )
                 + " |"
@@ -1078,8 +1079,8 @@ def render_markdown(
             ("هذا القسم للمساعدة في الوصول إلى الواجهة والإعدادات والوثائق؛ "
             "استخراج الرموز غير المحللة بـAST استدلالي وقد لا يساوي تحليلًا كاملًا للغة."),
             "",
-            "| الملف | نوع الرمز | الاسم/القيمة | السطر |",
-            "|---|---|---|---:|",
+            "| الملف | نوع الرمز | الاسم/القيمة | السطر | كود السطر للوصول المباشر |",
+            "|---|---|---|---:|---|",
         ]
     )
     if marker_inventory:
@@ -1088,16 +1089,17 @@ def render_markdown(
                 "| "
                 + " | ".join(
                     (
-                        _markdown_cell(marker.file),
+                        f"[{_markdown_cell(marker.file)}]({_source_file_href(marker.file, marker.line)})",
                         _markdown_cell(marker.kind),
                         _markdown_cell(marker.name),
                         str(marker.line),
+                        f"[{_source_line_id(marker.file, marker.line)}]({_source_file_href(marker.file, marker.line)})",
                     )
                 )
                 + " |"
             )
     else:
-        lines.append("| — | — | — | لم تُكتشف رموز ساكنة إضافية. |")
+        lines.append("| — | — | — | لم تُكتشف رموز ساكنة إضافية. | — |")
 
     lines.extend(
         [
@@ -1106,8 +1108,8 @@ def render_markdown(
             "",
             "هذه قائمة بالوسوم الصريحة التي تستدعي المتابعة. وجود الوسم ليس إثباتًا آليًا أن السطر معيب؛ افتح الملف عند رقم السطر وراجع السياق.",
             "",
-            "| كود الهفوة/الوسم | النوع | الملف | السطر | وصف الوسم | معرّف السطر |",
-            "|---|---|---|---:|---|---|",
+            "| كود الهفوة/الوسم | النوع | الملف | السطر | وصف الوسم | كود السطر | نص السطر |",
+            "|---|---|---|---:|---|---|---|",
         ]
     )
     if finding_inventory:
@@ -1120,16 +1122,17 @@ def render_markdown(
                     (
                         finding.finding_id,
                         finding.marker,
-                        _markdown_cell(finding.file),
+                        f"[{_markdown_cell(finding.file)}]({_source_file_href(finding.file, source_line.line if source_line else 1)})",
                         str(source_line.line if source_line else "غير متاح"),
                         _markdown_cell(finding.description),
-                        finding.line_id,
+                        f"[{finding.line_id}]({_source_file_href(finding.file, source_line.line if source_line else 1)})",
+                        _markdown_code_span(json.dumps(source_line.content, ensure_ascii=False).replace("|", r"\|")) if source_line else "غير متاح",
                     )
                 )
                 + " |"
             )
     else:
-        lines.append("| — | — | — | — | لم تُكتشف وسوم صريحة من الأنواع المعروفة. | — |")
+        lines.append("| — | — | — | — | لم تُكتشف وسوم صريحة من الأنواع المعروفة. | — | — |")
 
     lines.extend(
         [
