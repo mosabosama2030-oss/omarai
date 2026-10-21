@@ -2349,6 +2349,116 @@ class WebAgent:
         """Backward-compatible wrapper for the shared follow-up resolver."""
         return resolve_followup_query(question, history)
 
+    def _connector_status_summary(self, diagnostics: list[dict[str, Any]] | None,
+                                  sources: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+        """Summarize this request's connector states without exposing credentials."""
+        optional = {
+            "deepseek_search_api": ("DEEPSEEK_SEARCH_API_KEY",), "brave_search_api": ("BRAVE_SEARCH_API_KEY",),
+            "tavily_search_api": ("TAVILY_API_KEY",), "reddit_oauth_api": ("REDDIT_CLIENT_ID", "REDDIT_CLIENT_SECRET"),
+            "facebook_pages_api": ("FACEBOOK_PAGE_ACCESS_TOKEN", "FACEBOOK_PAGE_IDS"),
+            "instagram_graph_api": ("INSTAGRAM_USER_ID", "INSTAGRAM_ACCESS_TOKEN"),
+            "x_official_api": ("X_BEARER_TOKEN",), "youtube_data_api": ("YOUTUBE_API_KEY",),
+        }
+        config: dict[str, tuple[bool, str]] = {
+            "duckduckgo_html": (True, "built_in_no_api_key"), "bing_rss": (True, "built_in_no_api_key"),
+            "google_news_rss": (True, "built_in_conditional_no_api_key"),
+            "reddit_public_rss": (True, "built_in_no_api_key"), "bluesky_public_search": (True, "built_in_no_api_key"),
+            "openrouter_web_search": (bool(self.openrouter_web_search_enabled),
+                "enabled" if self.openrouter_web_search_enabled else "disabled"),
+            "user_supplied_url": (True, "request_driven"),
+        }
+        for name, keys in optional.items():
+            ready = all(bool(os.getenv(key, "").strip()) for key in keys)
+            config[name] = (ready, "configured" if ready else "not_configured")
+        grouped: dict[str, list[dict[str, Any]]] = {}
+        for item in diagnostics or []:
+            if isinstance(item, dict):
+                name = _clean_text(item.get("provider", "unknown"), 80) or "unknown"
+                grouped.setdefault(name, []).append(item)
+        useful: dict[str, int] = {}
+        for source in sources or []:
+            if not isinstance(source, dict):
+                continue
+            providers = source.get("providers", [])
+            if isinstance(providers, str):
+                providers = [providers]
+            if not isinstance(providers, list):
+                providers = []
+            if isinstance(source.get("provider"), str):
+                providers = providers + [source["provider"]]
+            for name in {str(value) for value in providers if value}:
+                useful[name] = useful.get(name, 0) + 1
+        priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
+                    "disabled": 4, "not_configured": 5, "budget_exhausted": 6,
+                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "http_error": 9,
+                    "timeout": 10, "failed": 11, "error": 11}
+        confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | {
+            "http_error", "unauthorized", "rate_limited", "invalid_response"
+        }
+        uncertain_attempt_statuses = {"timeout", "failed", "error", "unknown", "inconclusive"}
+
+        def redact(value: Any) -> str:
+            safe = _clean_text(str(value or ""), 180)
+            safe = re.sub(r"(?i)(bearer\s+)[A-Za-z0-9._~+/-]+=*", r"\1[REDACTED]", safe)
+            safe = re.sub(r"(?i)\b(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\s*[:=]\s*[^\s,;]+", r"\1=[REDACTED]", safe)
+            safe = re.sub(r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\s]+", r"\1[REDACTED]", safe)
+            return safe[:180]
+
+        names = set(config) | set(grouped) | set(useful)
+        connectors = []
+        for name in sorted(names):
+            ready, config_status = config.get(name, (bool(grouped.get(name) or useful.get(name)), "observed_in_code_path"))
+            attempts = grouped.get(name, [])
+            statuses = [_clean_text(row.get("status", "unknown"), 40).lower() or "unknown" for row in attempts]
+            status = max(statuses, key=lambda value: priority.get(value, 6)) if statuses else (
+                "ok" if useful.get(name, 0) else "not_configured" if not ready else "not_attempted")
+            if any(value in confirmed_attempt_statuses for value in statuses) or useful.get(name, 0):
+                attempted: bool | None = True
+            elif any(value in uncertain_attempt_statuses for value in statuses):
+                attempted = None
+            else:
+                attempted = False
+            successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
+            error_response_statuses = set(statuses) & {"http_error", "unauthorized", "rate_limited"}
+            uncertain_failure_statuses = set(statuses) & {"timeout", "failed", "error", "unknown", "inconclusive"}
+            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
+            available: bool | None = (
+                True if successful_statuses or useful.get(name, 0)
+                else False if error_response_statuses or not ready or "disabled" in statuses or "budget_exhausted" in statuses
+                else None
+            )
+            verified: bool | None = (
+                True if successful_statuses or useful.get(name, 0)
+                else False if error_response_statuses
+                else None
+            )
+            implementation_status = (
+                "implemented_in_code" if name in config
+                else "observed_runtime_path" if attempts or useful.get(name, 0)
+                else "unknown"
+            )
+            queries = list(dict.fromkeys(_clean_text(row.get("query", ""), 180) for row in attempts if row.get("query")))[:3]
+            errors = list(dict.fromkeys(redact(row.get("error")) for row in attempts if row.get("error")))[:3]
+            result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
+            rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
+            connectors.append({
+                "name": name, "in_codebase": name in config or bool(attempts),
+                "implementation_status": implementation_status,
+                "configured": bool(ready), "configuration_status": config_status,
+                "attempted": attempted, "available_for_this_request": available,
+                "verified_for_this_request": verified, "failure_observed": failure_observed,
+                "status": status, "observed_statuses": list(dict.fromkeys(statuses))[:6],
+                "result_count": result_count, "useful_result_count": useful.get(name, 0),
+                "rejected_count": rejected_count, "queries": queries, "errors": errors,
+            })
+        return {
+            "scope": "this_request_only",
+            "semantics": "result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.",
+            "attempted_count": sum(bool(item["attempted"]) for item in connectors),
+            "failed_count": sum(item["status"] in {"failed", "error", "timeout", "http_error", "unauthorized", "rate_limited"} for item in connectors),
+            "connectors": connectors[:24],
+        }
+
     @staticmethod
     def _sanitize_history(history: Any) -> list[dict[str, str]]:
         if not isinstance(history, list):
