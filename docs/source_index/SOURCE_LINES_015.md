@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000584 إلى SRC-855DA3B8BC-L000212
+- النطاق: SRC-D17CE3D12F-L000398 إلى SRC-855DA3B8BC-L000026
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,192 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000398](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L398) | 398 | `"## 27. فصل التخطيط والتفويض والتنفيذ والتحقق"` | — |
+| [SRC-D17CE3D12F-L000399](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L399) | 399 | `""` | — |
+| [SRC-D17CE3D12F-L000400](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L400) | 400 | `"1. MUST أن تظل قواعد الأمان والتفويض والحدود في كود/سياسة موثوقة لا في prompt النموذج وحده."` | — |
+| [SRC-D17CE3D12F-L000401](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L401) | 401 | `"2. MUST ألا تمنح مخرجات النموذج صلاحيات أو تنفذ أمرًا خطيرًا دون تحقق مستقل من المخول والمدخلات والسياسة."` | — |
+| [SRC-D17CE3D12F-L000402](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L402) | 402 | `"3. SHOULD تقسيم المهمة إلى مراحل معلومة: فهم، وخطة محدودة، وتنفيذ أدوات، وتجميع أدلة، وتحقق، وصياغة، مع السماح بتجاوز المراحل غير اللازمة."` | — |
+| [SRC-D17CE3D12F-L000403](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L403) | 403 | `"4. MUST تحديد حد أقصى للخطوات والدورات والمراجعات وتوازي الأدوات والوقت والتكلفة، مع سبب توقف نهائي واضح."` | — |
+| [SRC-D17CE3D12F-L000404](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L404) | 404 | `"5. MUST التحقق من مخطط البيانات القادمة من النموذج قبل استخدامها في قرار تنفيذي."` | — |
+| [SRC-D17CE3D12F-L000405](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L405) | 405 | `"6. MUST اعتبار prompt ونتيجة النموذج والصفحات المستخرجة ونتيجة الأداة بيانات غير موثوقة، حتى لو جاءت من موفر مشهور."` | — |
+| [SRC-D17CE3D12F-L000406](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L406) | 406 | `"7. MUST وجود سياج مستقل يمنع النموذج من تغيير إعدادات الأمان أو تعطيل سجلات التدقيق أو رفع ميزانية التشغيل."` | — |
+| [SRC-D17CE3D12F-L000407](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L407) | 407 | `"8. SHOULD حفظ أثر تدقيق مختصر قابل للتتبع لمسار الوكيل وقرارات الأدوات، دون الاحتفاظ غير الضروري بالمحتوى الخاص."` | — |
+| [SRC-D17CE3D12F-L000408](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L408) | 408 | `"9. MUST أن تكون أدوات الكتابة/الحذف/النشر/الدفع أو أي أثر خارجي حساس ذات صلاحيات صريحة، مع موافقة بشرية حين يتناسب ذلك مع درجة الخطر."` | — |
+| [SRC-D17CE3D12F-L000409](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L409) | 409 | `"10. SHOULD إعطاء الأدوات صلاحيات ضيقة لكل مهمة بدل مشاركة حساب إداري شامل بين الوكلاء."` | — |
+| [SRC-D17CE3D12F-L000410](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L410) | 410 | `""` | — |
+| [SRC-D17CE3D12F-L000411](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L411) | 411 | `"## 28. حقن التعليمات والبيانات غير الموثوقة"` | — |
+| [SRC-D17CE3D12F-L000412](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L412) | 412 | `""` | — |
+| [SRC-D17CE3D12F-L000413](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L413) | 413 | `"1. MUST التمييز بين تعليمات النظام/السياسة وبين محتوى الويب ورسائل المستخدم والمرفقات ومخرجات الأدوات."` | — |
+| [SRC-D17CE3D12F-L000414](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L414) | 414 | `"2. MUST ألا يتحول النص الذي تطلب صفحة خارجية من Omarai تنفيذه إلى تعليمات عليا؛ تُعامل هذه النصوص كبيانات قابلة للتحليل."` | — |
+| [SRC-D17CE3D12F-L000415](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L415) | 415 | `"3. MUST اختبار prompt injection المباشر وغير المباشر، بما فيه محاولة تسريب الأسرار، وتجاوز السياسة، وتبديل الهدف، واستدعاء أداة غير مصرح بها."` | — |
+| [SRC-D17CE3D12F-L000416](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L416) | 416 | `"4. MUST ألا تُدرج الأسرار في سياق النموذج لمجرد أن مهمة قد تستفيد منها."` | — |
+| [SRC-D17CE3D12F-L000417](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L417) | 417 | `"5. SHOULD تقليل ما يدخل سياق النموذج إلى المعلومات اللازمة للمهمة فقط."` | — |
+| [SRC-D17CE3D12F-L000418](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L418) | 418 | `"6. MUST فحص مخرجات النموذج قبل عرض HTML أو تنفيذ كود أو تفسيرها كاستعلام/أمر ذي أثر."` | — |
+| [SRC-D17CE3D12F-L000419](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L419) | 419 | `"7. MUST استخدام قائمة أدوات مسموحة مع مخططات ومدخلات وصلاحيات محددة، لا تنفيذ أسماء أدوات ديناميكية غير موثقة."` | — |
+| [SRC-D17CE3D12F-L000420](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L420) | 420 | `"8. SHOULD توفير اختبارات red-team دورية لمخاطر LLM والوكيل مع حالات هجوم محفوظة كـ regression tests."` | — |
+| [SRC-D17CE3D12F-L000421](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L421) | 421 | `"9. MUST عدم اعتبار «طلب رفضه النموذج» ضابطًا أمنيًا كافيًا إذا كان بإمكانه الوصول إلى مورد أو أداة حساسة."` | — |
+| [SRC-D17CE3D12F-L000422](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L422) | 422 | `"10. MUST عزل الأدوات التي تنفذ أوامر أو تشغل كودًا عن أسرار العملية ومخزن البيانات بحسب الحاجة؛ والأفضل عدم توفير تنفيذ عام للأوامر إن لم يكن ضرورة مثبتة."` | — |
+| [SRC-D17CE3D12F-L000423](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L423) | 423 | `""` | — |
+| [SRC-D17CE3D12F-L000424](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L424) | 424 | `"## 29. تقييم النماذج والموجهات وتغييراتها (AI Evaluation)"` | — |
+| [SRC-D17CE3D12F-L000425](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L425) | 425 | `""` | — |
+| [SRC-D17CE3D12F-L000426](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L426) | 426 | `"1. MUST اعتبار تغيير النموذج أو إصدار SDK أو system prompt أو قالب الاسترجاع أو إعدادات sampling تغييرًا قد يؤثر في السلوك، وأن يمر باختبارات تناسب أثره."` | — |
+| [SRC-D17CE3D12F-L000427](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L427) | 427 | `"2. SHOULD حفظ prompts المهمة والإصدارات والتغييرات بطريقة قابلة للمراجعة، مع عدم تخزين أسرار داخلها."` | — |
+| [SRC-D17CE3D12F-L000428](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L428) | 428 | `"3. MUST امتلاك مجموعة تقييم عربية ثابتة تشمل الأسئلة البسيطة، والبحث الحديث، والتعارض، والغموض، والرفض المناسب، وحقن التعليمات، والمصادر المفقودة، والمدخلات الطويلة."` | — |
+| [SRC-D17CE3D12F-L000429](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L429) | 429 | `"4. SHOULD تقييم الإجابة عبر محاور منفصلة مثل صحة الادعاء، والاستشهاد، والاكتمال، واللغة، والرفض، والتكلفة، وزمن الإنجاز."` | — |
+| [SRC-D17CE3D12F-L000430](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L430) | 430 | `"5. MUST مقارنة الإصدارات الجديدة بمجموعة الأساس؛ لا يكفي مثال واحد أعجب المراجع."` | — |
+| [SRC-D17CE3D12F-L000431](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L431) | 431 | `"6. SHOULD استخدام مراجعة بشرية للعينات ذات الأثر العالي أو الحالات التي لا توجد لها مقاييس آلية موثوقة."` | — |
+| [SRC-D17CE3D12F-L000432](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L432) | 432 | `"7. MUST تسجيل نسخة النموذج وإعداداته الأساسية عند قياس الجودة، مع إدراك أن الاستجابات قد تختلف رغم نفس الإصدار."` | — |
+| [SRC-D17CE3D12F-L000433](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L433) | 433 | `"8. MUST عدم السماح لمقيّم يستخدم النموذج نفسه أن يكون الدليل الوحيد على صحة ذلك النموذج."` | — |
+| [SRC-D17CE3D12F-L000434](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L434) | 434 | `"9. SHOULD اختبار الموجهات على هجمات الخصم والتكرار وتغيير ترتيب النصوص وتضارب التعليمات."` | — |
+| [SRC-D17CE3D12F-L000435](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L435) | 435 | `"10. MUST توثيق حدود التقييم: حجم العينة، وتغطيتها، وأوجه التحيز، وما لم يتم اختباره."` | — |
+| [SRC-D17CE3D12F-L000436](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L436) | 436 | `""` | — |
+| [SRC-D17CE3D12F-L000437](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L437) | 437 | `"## 30. توجيه النماذج والموفرين والكلفة"` | — |
+| [SRC-D17CE3D12F-L000438](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L438) | 438 | `""` | — |
+| [SRC-D17CE3D12F-L000439](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L439) | 439 | `"1. MUST عزل كل موفر عبر adapter وعقد موحد، مع مهلة واستجابة خطأ موحدة واختبارات توافق."` | — |
+| [SRC-D17CE3D12F-L000440](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L440) | 440 | `"2. SHOULD قياس زمن البدء، وزمن الاستجابة، وحدود السياق، ومعدل الأخطاء، واستهلاك الرموز، والكلفة/الحصة بحسب المتاح."` | — |
+| [SRC-D17CE3D12F-L000441](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L441) | 441 | `"3. MUST تحديد fallback واضح عند فشل نموذج أو موفر، مع منع تدهور الجودة بصمت."` | — |
+| [SRC-D17CE3D12F-L000442](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L442) | 442 | `"4. MUST عدم تبديل إلى موفر أقل جودة ثم تقديم النتيجة على أنها مكافئة دون سياسة واضحة أو اختبار."` | — |
+| [SRC-D17CE3D12F-L000443](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L443) | 443 | `"5. SHOULD استخدام توجيه حسب المهمة: نموذج صغير/أرخص للأعمال البسيطة، وقدرة أقوى حين تبررها الحاجة، بشرط تحقق الجودة والأمان."` | — |
+| [SRC-D17CE3D12F-L000444](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L444) | 444 | `"6. MUST وضع حدود لتكلفة المهمة بما فيها التخطيط والبحث والتركيب والمراجعة؛ لا تترك الاستدعاءات مفتوحة."` | — |
+| [SRC-D17CE3D12F-L000445](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L445) | 445 | `"7. SHOULD caching لمخرجات آمنة قابلة لإعادة الاستخدام مع مراعاة الحداثة والخصوصية ونطاق المستخدم."` | — |
+| [SRC-D17CE3D12F-L000446](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L446) | 446 | `"8. MUST تجنب تخزين إجابات شخصية أو سرية في cache مشترك أو إعادة عرضها لمستخدم آخر."` | — |
+| [SRC-D17CE3D12F-L000447](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L447) | 447 | `"9. SHOULD اختبار انتهاء الحصة، ورفض الخدمة، والـ timeout، والردود المشوهة، وتغير شكل استجابة الموفر."` | — |
+| [SRC-D17CE3D12F-L000448](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L448) | 448 | `"10. MUST فصل «المفتاح موجود» و«الموصل مهيأ» عن «الموفر reachable» و«الطلب نجح»؛ لكل حالة دليل مختلف."` | — |
+| [SRC-D17CE3D12F-L000449](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L449) | 449 | `""` | — |
+| [SRC-D17CE3D12F-L000450](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L450) | 450 | `"## 31. الأدوات والقدرات ذات الأثر"` | — |
+| [SRC-D17CE3D12F-L000451](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L451) | 451 | `""` | — |
+| [SRC-D17CE3D12F-L000452](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L452) | 452 | `"1. MUST تصنيف الأدوات إلى قراءة عامة، وقراءة بيانات خاصة، وكتابة داخلية، وأثر خارجي حساس."` | — |
+| [SRC-D17CE3D12F-L000453](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L453) | 453 | `"2. MUST إجراء تحقق صلاحيات من جهة الخادم قبل كل عملية حساسة."` | — |
+| [SRC-D17CE3D12F-L000454](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L454) | 454 | `"3. MUST تحديد idempotency أو تأكيد بشري أو إجراء تعويضي للعمليات التي قد تتكرر أو لا يمكن عكسها."` | — |
+| [SRC-D17CE3D12F-L000455](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L455) | 455 | `"4. SHOULD عرض معاينة واضحة لما سيُرسل أو يُغيّر قبل تنفيذ إجراء خارجي مؤثر."` | — |
+| [SRC-D17CE3D12F-L000456](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L456) | 456 | `"5. MUST توفير kill switch لتعطيل أداة متضررة أو إساءة استخدامها دون تعطيل غير مرتبط بها متى أمكن."` | — |
+| [SRC-D17CE3D12F-L000457](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L457) | 457 | `"6. MUST الاحتفاظ بسجل تدقيق يكفي لمعرفة من طلب العملية، وما السياسة التي سمحت بها، وما المخرج، دون تسريب زائد."` | — |
+| [SRC-D17CE3D12F-L000458](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L458) | 458 | `"7. MUST عدم اعتبار نتيجة أداة untrusted executable code؛ تُفحص وتُتحقق وفق نوعها."` | — |
+| [SRC-D17CE3D12F-L000459](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L459) | 459 | `"8. SHOULD استخدام sandbox محدود عند تشغيل محتوى أو كود، مع حدود شبكة وملفات وذاكرة ووقت."` | — |
+| [SRC-D17CE3D12F-L000460](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L460) | 460 | `"9. MUST ألا تعود أخطاء الأداة بمعلومات سرية إلى النموذج أو المستخدم بلا تنقيح."` | — |
+| [SRC-D17CE3D12F-L000461](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L461) | 461 | `"10. MUST اختبار فشل الأداة وبطئها وردها المضلل ومدخلاتها الحدودية، لا النجاح الطبيعي فقط."` | — |
+| [SRC-D17CE3D12F-L000462](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L462) | 462 | `""` | — |
+| [SRC-D17CE3D12F-L000463](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L463) | 463 | `"---"` | — |
+| [SRC-D17CE3D12F-L000464](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L464) | 464 | `""` | — |
+| [SRC-D17CE3D12F-L000465](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L465) | 465 | `"# القسم العاشر — الاختبارات والجودة والتحسين"` | — |
+| [SRC-D17CE3D12F-L000466](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L466) | 466 | `""` | — |
+| [SRC-D17CE3D12F-L000467](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L467) | 467 | `"## 32. مصفوفة الاختبارات"` | — |
+| [SRC-D17CE3D12F-L000468](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L468) | 468 | `""` | — |
+| [SRC-D17CE3D12F-L000469](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L469) | 469 | `"تُختار الاختبارات بحسب المخاطر، وتشمل عند انطباقها:"` | — |
+| [SRC-D17CE3D12F-L000470](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L470) | 470 | `"- Unit tests لمنطق الوحدة."` | — |
+| [SRC-D17CE3D12F-L000471](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L471) | 471 | `"- Integration tests للتفاعل مع التخزين والموفرين."` | — |
+| [SRC-D17CE3D12F-L000472](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L472) | 472 | `"- Contract tests لواجهات API والأدوات."` | — |
+| [SRC-D17CE3D12F-L000473](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L473) | 473 | `"- End-to-end tests لرحلات المستخدم الرئيسية."` | — |
+| [SRC-D17CE3D12F-L000474](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L474) | 474 | `"- Regression tests لكل عيب مثبت تم إصلاحه."` | — |
+| [SRC-D17CE3D12F-L000475](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L475) | 475 | `"- Property-based/fuzz tests لمدخلات معقدة أو غير موثوقة."` | — |
+| [SRC-D17CE3D12F-L000476](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L476) | 476 | `"- Concurrency/race tests لبيانات المستخدمين والحالة المشتركة."` | — |
+| [SRC-D17CE3D12F-L000477](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L477) | 477 | `"- Load/stress/soak tests للسعة والأداء."` | — |
+| [SRC-D17CE3D12F-L000478](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L478) | 478 | `"- Fault-injection/chaos tests للانقطاع الجزئي والتأخير."` | — |
+| [SRC-D17CE3D12F-L000479](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L479) | 479 | `"- Security tests للهوية والصلاحيات وSSRF وXSS والأسرار."` | — |
+| [SRC-D17CE3D12F-L000480](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L480) | 480 | `"- Accessibility tests للواجهة."` | — |
+| [SRC-D17CE3D12F-L000481](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L481) | 481 | `"- AI evaluation/red-team tests لجودة الإجابات وأمان الأدوات."` | — |
+| [SRC-D17CE3D12F-L000482](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L482) | 482 | `"- Migration/restore tests لتغيير البيانات واستعادتها."` | — |
+| [SRC-D17CE3D12F-L000483](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L483) | 483 | `""` | — |
+| [SRC-D17CE3D12F-L000484](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L484) | 484 | `"MUST أن يكون لكل اختبار اسم وأمر تشغيل وشرط نجاح وبيانات اختبار واضحة بقدر الإمكان. MUST التمييز بين «لم يفشل الاختبار» و«لم يتم تشغيل الاختبار». SHOULD أن تكون الاختبارات الحتمية مستقرة؛ الاختبارات المتذبذبة تُعالج ولا تُعتاد على تجاهلها."` | — |
+| [SRC-D17CE3D12F-L000485](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L485) | 485 | `""` | — |
+| [SRC-D17CE3D12F-L000486](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L486) | 486 | `"## 33. جودة القياس والاختبار"` | — |
+| [SRC-D17CE3D12F-L000487](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L487) | 487 | `""` | — |
+| [SRC-D17CE3D12F-L000488](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L488) | 488 | `"1. MUST الإبلاغ عن عدد الاختبارات المنفذة والناجحة والفاشلة والمتخطاة، مع ذكر سبب التخطي."` | — |
+| [SRC-D17CE3D12F-L000489](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L489) | 489 | `"2. MUST عدم إخفاء تحذير أو فشل أو flaky test إذا كان يؤثر في الاستنتاج."` | — |
+| [SRC-D17CE3D12F-L000490](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L490) | 490 | `"3. SHOULD قياس تغطية الاختبارات للمسارات الحرجة لا chasing رقم تغطية مجرد."` | — |
+| [SRC-D17CE3D12F-L000491](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L491) | 491 | `"4. MUST حفظ بيانات/عينات صناعية لا تكشف بيانات المستخدم الحقيقية."` | — |
+| [SRC-D17CE3D12F-L000492](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L492) | 492 | `"5. SHOULD استخدام حراس جودة في CI للملفات ذات المخاطر، مع تبرير الاستثناءات."` | — |
+| [SRC-D17CE3D12F-L000493](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L493) | 493 | `"6. MUST إعادة اختبار إصلاح العيب نفسه واختبار عدم رجوعه."` | — |
+| [SRC-D17CE3D12F-L000494](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L494) | 494 | `"7. MUST ألا تتحول نتيجة mock إلى ادعاء بأن الاتصال الخارجي يعمل حقيقة."` | — |
+| [SRC-D17CE3D12F-L000495](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L495) | 495 | `"8. SHOULD فصل الاختبارات التي تستخدم خدمات حقيقية أو أسرارًا عن الاختبارات المحلية حتى يمكن معرفة ما يثبته كل تشغيل."` | — |
+| [SRC-D17CE3D12F-L000496](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L496) | 496 | `"9. MUST توثيق قيود بيئة الاختبار وأثرها على الحكم النهائي."` | — |
+| [SRC-D17CE3D12F-L000497](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L497) | 497 | `"10. SHOULD مراجعة فشل الاختبارات وتحويل الأسباب المتكررة إلى تحسينات في التصميم أو الأدوات."` | — |
+| [SRC-D17CE3D12F-L000498](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L498) | 498 | `""` | — |
+| [SRC-D17CE3D12F-L000499](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L499) | 499 | `"## 34. مراجعة الكود والتعاون مع الوكلاء"` | — |
+| [SRC-D17CE3D12F-L000500](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L500) | 500 | `""` | — |
+| [SRC-D17CE3D12F-L000501](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L501) | 501 | `"1. MUST أن يتضمن كل تغيير غرضًا محدودًا ومعروفًا وأثرًا متوقعًا."` | — |
+| [SRC-D17CE3D12F-L000502](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L502) | 502 | `"2. SHOULD أن تراجع التغييرات من زاوية التصميم والتعقيد والصحة والأمن والأداء والاختبارات والقابلية للصيانة، وفق مخاطرها."` | — |
+| [SRC-D17CE3D12F-L000503](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L503) | 503 | `"3. MUST مراجعة كامل diff بعد تحرير الملفات آليًا، والتحقق من عدم ضياع أجزاء سابقة أو تغيير تنسيق/سلوك غير مقصود."` | — |
+| [SRC-D17CE3D12F-L000504](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L504) | 504 | `"4. MUST ألا يحرر أكثر من منفذ/وكيل الملف نفسه بالتوازي دون تنسيق وتحديث على النسخة الأحدث."` | — |
+| [SRC-D17CE3D12F-L000505](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L505) | 505 | `"5. MUST ألا يُقبل تقرير «تم الإصلاح» بدون تحديد الملفات والاختبارات والنتيجة."` | — |
+| [SRC-D17CE3D12F-L000506](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L506) | 506 | `"6. SHOULD استخدام قوالب موحدة لطلبات التغيير وإصلاح العيوب ومراجعة الأمن."` | — |
+| [SRC-D17CE3D12F-L000507](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L507) | 507 | `"7. MUST الحفاظ على حق مدير المشروع في قرارات الدمج والنشر والمخاطر المقبولة؛ الأدوات والوكلاء يقترحون وينفذون ضمن الصلاحيات ولا ينتزعون سلطة الاعتماد."` | — |
+| [SRC-D17CE3D12F-L000508](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L508) | 508 | `"8. MUST ألا ينشئ الوكيل اختبارات تافهة تمر دائمًا لتغطية بند شكلي؛ يجب أن تفشل عند كسر السلوك المقصود."` | — |
+| [SRC-D17CE3D12F-L000509](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L509) | 509 | `"9. SHOULD توثيق الافتراضات غير المثبتة بدل بناء طبقات فوقها."` | — |
+| [SRC-D17CE3D12F-L000510](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L510) | 510 | `"10. MUST عدم اعتبار موافقة نموذج آخر أو تقرير ذاتي مراجعة مستقلة كافية للقرارات الحساسة."` | — |
+| [SRC-D17CE3D12F-L000511](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L511) | 511 | `""` | — |
+| [SRC-D17CE3D12F-L000512](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L512) | 512 | `"---"` | — |
+| [SRC-D17CE3D12F-L000513](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L513) | 513 | `""` | — |
+| [SRC-D17CE3D12F-L000514](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L514) | 514 | `"# القسم الحادي عشر — التكلفة والاستدامة والاعتماد على الأطراف"` | — |
+| [SRC-D17CE3D12F-L000515](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L515) | 515 | `""` | — |
+| [SRC-D17CE3D12F-L000516](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L516) | 516 | `"## 35. هندسة التكلفة (FinOps)"` | — |
+| [SRC-D17CE3D12F-L000517](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L517) | 517 | `""` | — |
+| [SRC-D17CE3D12F-L000518](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L518) | 518 | `"1. MUST أن تظل التكلفة المرصودة أو المقدرة لكل طلب ومهمة ضمن حدود محددة عندما تستخدم موارد مدفوعة أو حصصًا محدودة."` | — |
+| [SRC-D17CE3D12F-L000519](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L519) | 519 | `"2. MUST تحديد حدود الاستخدام المجاني لكل موفر إن توفرت معلومات موثوقة، مع عدم اعتبار «مجاني الآن» ضمانًا للاستمرار."` | — |
+| [SRC-D17CE3D12F-L000520](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L520) | 520 | `"3. SHOULD تتبع عدد نداءات النموذج والبحث والصفحات المستخرجة وطول السياق وزمن التنفيذ والكلفة النقدية أو البديلة."` | — |
+| [SRC-D17CE3D12F-L000521](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L521) | 521 | `"4. MUST توفير حد إيقاف أو تخفيف عند استهلاك الحصة أو بلوغ الميزانية، حتى لا تؤدي حلقة وكيل إلى نفاد الرصيد."` | — |
+| [SRC-D17CE3D12F-L000522](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L522) | 522 | `"5. SHOULD استخدام تكلفة الوحدة (cost per successful task) بدل النظر إلى التكلفة الإجمالية فقط."` | — |
+| [SRC-D17CE3D12F-L000523](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L523) | 523 | `"6. MUST توثيق الاعتماد على مزود واحد وخطة الحد الأدنى لاستعادة الخدمة إذا أغلق الحساب أو غيّر الحصص."` | — |
+| [SRC-D17CE3D12F-L000524](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L524) | 524 | `"7. SHOULD مقارنة كلفة التشغيل والكلفة الذهنية للصيانة قبل اعتماد تقنية جديدة."` | — |
+| [SRC-D17CE3D12F-L000525](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L525) | 525 | `"8. MUST ألا نستخدم بنية أعلى كلفة أو تعقيدًا دون قيمة مقاسة أو خطر تستوجبه."` | — |
+| [SRC-D17CE3D12F-L000526](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L526) | 526 | `"9. SHOULD مراقبة الموارد الخاملة والتخزين المتضخم والـ logs والـ caches التي لا تنتهي صلاحيتها."` | — |
+| [SRC-D17CE3D12F-L000527](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L527) | 527 | `"10. MUST التمييز بين التكلفة النقدية وتكلفة وقت المطور والمخاطر التشغيلية."` | — |
+| [SRC-D17CE3D12F-L000528](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L528) | 528 | `""` | — |
+| [SRC-D17CE3D12F-L000529](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L529) | 529 | `"## 36. الاستدامة وكفاءة الموارد"` | — |
+| [SRC-D17CE3D12F-L000530](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L530) | 530 | `""` | — |
+| [SRC-D17CE3D12F-L000531](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L531) | 531 | `"1. SHOULD تقليل العمل المكرر والتحميل غير الضروري والطلبات التي لا تضيف قيمة، بما يخفض الكلفة واستهلاك الموارد."` | — |
+| [SRC-D17CE3D12F-L000532](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L532) | 532 | `"2. SHOULD اختيار أحجام موارد مناسبة بدل الإفراط في تخصيصها أو جعلها قريبة من حد الانهيار."` | — |
+| [SRC-D17CE3D12F-L000533](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L533) | 533 | `"3. MUST عدم التضحية بالأمان أو سلامة النتيجة من أجل تخفيض تكلفة صغير."` | — |
+| [SRC-D17CE3D12F-L000534](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L534) | 534 | `"4. SHOULD قياس الأثر عندما يصبح استهلاك الموارد مهمًا، بدل إطلاق ادعاءات بيئية غير مقاسة."` | — |
+| [SRC-D17CE3D12F-L000535](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L535) | 535 | `"5. MUST تصميم حدود الموارد كجزء من الأمان والموثوقية، لا باعتبارها تحسينًا ماليًا فقط."` | — |
+| [SRC-D17CE3D12F-L000536](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L536) | 536 | `""` | — |
+| [SRC-D17CE3D12F-L000537](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L537) | 537 | `"## 37. الاعتمادية على الموردين وقابلية النقل"` | — |
+| [SRC-D17CE3D12F-L000538](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L538) | 538 | `""` | — |
+| [SRC-D17CE3D12F-L000539](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L539) | 539 | `"1. MUST تسجيل كل خدمة خارجية حرجة، وما البيانات التي ترسل إليها، وحدود حصتها، وشروطها المؤثرة، وطريقة كشف تعطلها."` | — |
+| [SRC-D17CE3D12F-L000540](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L540) | 540 | `"2. SHOULD عزل تفاصيل الموفر في adapter لتسهيل التبديل، مع الاعتراف بأن التكافؤ بين النماذج/المصادر غير مضمون."` | — |
+| [SRC-D17CE3D12F-L000541](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L541) | 541 | `"3. MUST تحديد ما الذي يستمر في العمل عند فقد كل موفر: الواجهة، والأسئلة غير المعتمدة على البحث، ونتائج cache المناسبة، ورسالة الفشل."` | — |
+| [SRC-D17CE3D12F-L000542](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L542) | 542 | `"4. SHOULD الاحتفاظ بخطة تصدير للبيانات الأساسية ونقلها من الاستضافة/المخزن، وفق الإمكانات الفعلية."` | — |
+| [SRC-D17CE3D12F-L000543](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L543) | 543 | `"5. MUST عدم الاعتماد على ميزة مجانية حساسة دون خطة بديلة أو التصريح بأن الخدمة قد تتوقف عند انتهاء الحصة."` | — |
+| [SRC-D17CE3D12F-L000544](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L544) | 544 | `"6. MUST عدم نقل أسرار أو بيانات خاصة إلى موفر احتياطي دون السماح بذلك بنفس سياسة الخصوصية والأمن."` | — |
+| [SRC-D17CE3D12F-L000545](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L545) | 545 | `"7. SHOULD اختبار fallbacks فعليًا بصورة دورية، لا افتراض أنها تعمل لأنها مذكورة في الإعداد."` | — |
+| [SRC-D17CE3D12F-L000546](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L546) | 546 | `""` | — |
+| [SRC-D17CE3D12F-L000547](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L547) | 547 | `"---"` | — |
+| [SRC-D17CE3D12F-L000548](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L548) | 548 | `""` | — |
+| [SRC-D17CE3D12F-L000549](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L549) | 549 | `"# القسم الثاني عشر — تجربة المنتج والنمو القابل للقياس"` | — |
+| [SRC-D17CE3D12F-L000550](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L550) | 550 | `""` | — |
+| [SRC-D17CE3D12F-L000551](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L551) | 551 | `"## 38. ملاحظات المستخدم والتحليلات والتجارب"` | — |
+| [SRC-D17CE3D12F-L000552](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L552) | 552 | `""` | — |
+| [SRC-D17CE3D12F-L000553](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L553) | 553 | `"1. SHOULD جمع أقل قدر من telemetry المنتج اللازم لفهم نجاح المسارات والأخطاء، مع احترام الخصوصية."` | — |
+| [SRC-D17CE3D12F-L000554](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L554) | 554 | `"2. MUST تعريف معنى كل مقياس (مثل «إجابة ناجحة» أو «بحث مكتمل») ومنع تغيير معناه بصمت."` | — |
+| [SRC-D17CE3D12F-L000555](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L555) | 555 | `"3. SHOULD الفصل بين البيانات التشغيلية المطلوبة لتصحيح الأعطال والتحليلات المطلوبة لتحسين المنتج."` | — |
+| [SRC-D17CE3D12F-L000556](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L556) | 556 | `"4. MUST تجنب إدخال نص السؤال أو الإجابة كاملة في التحليلات الافتراضية ما لم توجد ضرورة وسياسة واضحة."` | — |
+| [SRC-D17CE3D12F-L000557](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L557) | 557 | `"5. SHOULD دعم feedback بسيط ومحدد، مع ربطه بإصدار وسياق تقني مناسب عندما لا يكشف بيانات خاصة."` | — |
+| [SRC-D17CE3D12F-L000558](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L558) | 558 | `"6. MUST عدم اعتبار تفاعل المستخدم أو طول الإجابة أو إعجابًا واحدًا دليلًا منفردًا على صحة الإجابة."` | — |
+| [SRC-D17CE3D12F-L000559](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L559) | 559 | `"7. SHOULD اختبار التغييرات الخطرة عبر إطلاق محدود أو feature flag عند توفر المنصة."` | — |
+| [SRC-D17CE3D12F-L000560](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L560) | 560 | `"8. MUST وضع معايير إيقاف للتجربة إذا تدهورت الجودة أو الأمن أو معدل الأخطاء أو الكلفة."` | — |
+| [SRC-D17CE3D12F-L000561](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L561) | 561 | `"9. SHOULD التمييز بين المقاييس الكمية والتعليقات النوعية، والتحقق من تحيز العينة."` | — |
+| [SRC-D17CE3D12F-L000562](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L562) | 562 | `"10. MUST ألا تجمع تجارب المنتج بيانات حساسة بلا أساس أو تُفعّل تتبعًا خفيًا للمستخدم."` | — |
+| [SRC-D17CE3D12F-L000563](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L563) | 563 | `""` | — |
+| [SRC-D17CE3D12F-L000564](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L564) | 564 | `"## 39. توثيق المنتج والتشغيل والتغيير"` | — |
+| [SRC-D17CE3D12F-L000565](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L565) | 565 | `""` | — |
+| [SRC-D17CE3D12F-L000566](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L566) | 566 | `"1. MUST إبقاء README ومخططات المعمارية وملفات الإعداد متوافقة مع السلوك المثبت."` | — |
+| [SRC-D17CE3D12F-L000567](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L567) | 567 | `"2. SHOULD وجود runbook مختصر لكل عطل معروف أو مهمة تشغيل مهمة."` | — |
+| [SRC-D17CE3D12F-L000568](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L568) | 568 | `"3. MUST توثيق المتطلبات البيئية والأوامر الدقيقة لتثبيت واختبار وتشغيل التطبيق."` | — |
+| [SRC-D17CE3D12F-L000569](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L569) | 569 | `"4. SHOULD الاحتفاظ بقاموس للمصطلحات والمقاييس وعقود البيانات المهمة."` | — |
+| [SRC-D17CE3D12F-L000570](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L570) | 570 | `"5. MUST توثيق خطوات التراجع وعواقب ترحيل البيانات التي لا يمكن عكسها تلقائيًا."` | — |
+| [SRC-D17CE3D12F-L000571](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L571) | 571 | `"6. SHOULD توثيق مسارات تصعيد المشكلة وحدود ما يستطيع النظام إثباته بنفسه."` | — |
+| [SRC-D17CE3D12F-L000572](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L572) | 572 | `"7. MUST التعامل مع المستندات ككود قابل للمراجعة؛ تُراجع الروابط والأسماء والإصدارات بعد التغيير."` | — |
+| [SRC-D17CE3D12F-L000573](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L573) | 573 | `"8. MUST إزالة الإرشادات القديمة المتعارضة أو وسمها بأنها تاريخية وغير صالحة للتنفيذ."` | — |
+| [SRC-D17CE3D12F-L000574](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L574) | 574 | `"9. SHOULD وجود سجل معروف للقيود والديون التقنية والمخاطر، مع مالك أو أولوية أو موعد مراجعة."` | — |
+| [SRC-D17CE3D12F-L000575](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L575) | 575 | `"10. MUST عدم استعمال التوثيق لإعلان قدرات لم تثبتها الاختبارات."` | — |
+| [SRC-D17CE3D12F-L000576](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L576) | 576 | `""` | — |
+| [SRC-D17CE3D12F-L000577](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L577) | 577 | `"---"` | — |
+| [SRC-D17CE3D12F-L000578](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L578) | 578 | `""` | — |
+| [SRC-D17CE3D12F-L000579](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L579) | 579 | `"# القسم الثالث عشر — النضج والأولويات ومعايير القبول"` | — |
+| [SRC-D17CE3D12F-L000580](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L580) | 580 | `""` | — |
+| [SRC-D17CE3D12F-L000581](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L581) | 581 | `"## 40. مستويات النضج"` | — |
+| [SRC-D17CE3D12F-L000582](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L582) | 582 | `""` | — |
+| [SRC-D17CE3D12F-L000583](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L583) | 583 | `"لا ينبغي تطبيق مستوى واحد على كل نظام. يُحدد المستوى لكل مجال حسب المخاطر والحاجة:"` | — |
 | [SRC-D17CE3D12F-L000584](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L584) | 584 | `""` | — |
 | [SRC-D17CE3D12F-L000585](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L585) | 585 | `"- **المستوى 0 — غير موصوف:** لا يوجد تعريف أو دليل كافٍ؛ الحالة UNKNOWN."` | — |
 | [SRC-D17CE3D12F-L000586](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L586) | 586 | `"- **المستوى 1 — أساس مضبوط:** تعريف المتطلب، وسلوك آمن، واختبارات أساسية، ووثائق أولية."` | — |
@@ -648,189 +834,3 @@
 | [SRC-855DA3B8BC-L000024](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L24) | 24 | `"- يوجد فصل مقصود بين تعليمات النظام ومحتوى الويب غير الموثوق، وتوجد مراجعة بمساعدة نموذج ثانٍ للادعاءات، مع إفصاح صريح بأنها ليست تحققًا مستقلًا من الحقيقة."` | — |
 | [SRC-855DA3B8BC-L000025](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L25) | 25 | `"- API يتطلب Bearer token في وضع النشر العام، ويقارن الرمز بطريقة ثابتة الزمن، ويطبق تحديد معدل على مستوى عنوان العميل، ويحظر طلبات غير مصادق عليها قبل تحليل جسم الطلب."` | — |
 | [SRC-855DA3B8BC-L000026](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L26) | 26 | `"- نتائج الفشل والبحث غير المكتمل ليست دائمًا مغطاة بصياغة نجاح؛ توجد اختبارات تؤكد إبقاء بعض حالات الفشل والحالة المجهولة صريحة."` | — |
-| [SRC-855DA3B8BC-L000027](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L27) | 27 | `""` | — |
-| [SRC-855DA3B8BC-L000028](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L28) | 28 | `"لكن توجد أربع فجوات رئيسية يجب ألا نحجبها:"` | — |
-| [SRC-855DA3B8BC-L000029](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L29) | 29 | `"1. **لا تظهر في الكود ميزانية موحدة لنهاية الطلب أو حد عالمي للتوازي.** حدود كل مرحلة جيدة كبداية، لكنها لا تمنع عددًا كبيرًا من الطلبات المتزامنة من تضخيم تكلفة البحث والنماذج واستهلاك العمال."` | — |
-| [SRC-855DA3B8BC-L000030](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L30) | 30 | `"2. **التطبيق الحالي يستخدم رمز وصول مشتركًا وقاعدة عملاء مشتركة.** عزل بيانات المستخدمين/المستأجرين غير مثبت ولا يوجد تصميم هوية وصلاحيات لكل مستخدم. هذا مقبول فقط إذا كان النطاق المقصود مساحة خاصة لمشغّل واحد؛ وهو مانع قبل تقديمه كخدمة متعددة المستخدمين."` | — |
-| [SRC-855DA3B8BC-L000031](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L31) | 31 | `"3. **الاستشهادات لا تُتحقق دلاليًا بصورة حتمية.** فحص الكود يتأكد أساسًا من أن رقم المصدر يقع ضمن المجال، والمراجعة الدلالية مفوضة إلى نموذج لغوي آخر. هذا تحسين مفيد لكنه ليس إثباتًا مستقلًا أن كل مصدر يسند كل ادعاء."` | — |
-| [SRC-855DA3B8BC-L000032](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L32) | 32 | `"4. **اختبارات SSRF وحقن التعليمات لا تغطي جميع فروع الحماية المرصودة.** التصميم المصدري أقوى من التغطية الحالية؛ لذلك نحتفظ بالحكم «جزئي/استدلالي» بدل «مثبت بالكامل»."` | — |
-| [SRC-855DA3B8BC-L000033](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L33) | 33 | `""` | — |
-| [SRC-855DA3B8BC-L000034](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L34) | 34 | `"**قرار الاستخدام المقترح:**"` | — |
-| [SRC-855DA3B8BC-L000035](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L35) | 35 | `"- **نسخة تجريبية خاصة بمشغّل واحد:** يمكن مواصلة العمل والاختبار مع رمز قوي محفوظ كسر، وعدم إدخال معلومات سرية إلى الموفر الخارجي، وعدم الاعتماد على تخزين البيانات دون التحقق من استمراريته."` | — |
-| [SRC-855DA3B8BC-L000036](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L36) | 36 | `"- **إطلاق عام أو خدمة لعدة مستخدمين:** لا أوصي باعتبارها جاهزة بعد؛ أولوية الإغلاق هي حد توازي وdeadline شامل، ثم تصميم الهوية وعزل البيانات، وتقوية اختبارات SSRF/حقن التعليمات، وتحديد حدود دلالية صادقة للاستشهادات، ومراجعة تهيئة الوكيل العكسي والتخزين الفعلي."` | — |
-| [SRC-855DA3B8BC-L000037](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L37) | 37 | `""` | — |
-| [SRC-855DA3B8BC-L000038](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L38) | 38 | `"هذا ليس حكمًا بأن الكود سيئ؛ بل دليل على أنه **أساس هندسي واعد يحتاج استكمال عدد محدد من ضوابط الإنتاج** قبل توسيع نطاق الثقة فيه."` | — |
-| [SRC-855DA3B8BC-L000039](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L39) | 39 | `""` | — |
-| [SRC-855DA3B8BC-L000040](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L40) | 40 | `"## 2. الأدلة التي تم فحصها"` | — |
-| [SRC-855DA3B8BC-L000041](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L41) | 41 | `""` | — |
-| [SRC-855DA3B8BC-L000042](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L42) | 42 | `"### مرجع النسخة"` | — |
-| [SRC-855DA3B8BC-L000043](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L43) | 43 | `"- main: 08319cce3652c332e414f691a71cc153dfbfd92e"` | — |
-| [SRC-855DA3B8BC-L000044](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L44) | 44 | `"- كود الوكيل: agents/web_agent.py، 3854 سطرًا عند النسخة المدققة."` | — |
-| [SRC-855DA3B8BC-L000045](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L45) | 45 | `"- API: api/omarai.py، 329 سطرًا."` | — |
-| [SRC-855DA3B8BC-L000046](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L46) | 46 | `"- التحليل/التخزين: agents/omarai.py وagents/research.py."` | — |
-| [SRC-855DA3B8BC-L000047](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L47) | 47 | `"- الواجهات: web/agent.html وweb/dashboard.html."` | — |
-| [SRC-855DA3B8BC-L000048](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L48) | 48 | `"- اختبارات ذات صلة: tests/test_web_agent.py، tests/test_api.py، tests/test_omarai.py، tests/test_hosted_smoke.py، tests/test_proxy_origin.py، tests/test_intent_router.py، tests/test_answer_quality_runner.py."` | — |
-| [SRC-855DA3B8BC-L000049](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L49) | 49 | `"- CI: .github/workflows/tests.yml."` | — |
-| [SRC-855DA3B8BC-L000050](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L50) | 50 | `"- إعداد النشر المعلن في المستودع: render.yaml وDockerfile."` | — |
-| [SRC-855DA3B8BC-L000051](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L51) | 51 | `""` | — |
-| [SRC-855DA3B8BC-L000052](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L52) | 52 | `"### نتائج CI المثبتة من GitHub Actions"` | — |
-| [SRC-855DA3B8BC-L000053](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L53) | 53 | `"\| الفحص \| النتيجة المسجلة \| ما تثبته النتيجة وما لا تثبته \|"` | — |
-| [SRC-855DA3B8BC-L000054](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L54) | 54 | `"\|---\|---\|---\|"` | — |
-| [SRC-855DA3B8BC-L000055](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L55) | 55 | `"\| Python 3.11 — Ruff \| PASS \| اجتاز فحص الصياغة/النمط المحدد، وليس فحصًا أمنيًا شاملًا \|"` | — |
-| [SRC-855DA3B8BC-L000056](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L56) | 56 | `"\| Python 3.11 — pytest \| PASS \| اجتازت مجموعة الاختبارات الحالية على بيئة CI \|"` | — |
-| [SRC-855DA3B8BC-L000057](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L57) | 57 | `"\| Python 3.12 — Ruff \| PASS \| اجتاز فحص الصياغة/النمط المحدد \|"` | — |
-| [SRC-855DA3B8BC-L000058](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L58) | 58 | `"\| Python 3.12 — pytest \| PASS \| اجتازت مجموعة الاختبارات الحالية على بيئة CI \|"` | — |
-| [SRC-855DA3B8BC-L000059](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L59) | 59 | `"\| Docker build \| PASS \| أمكن بناء الصورة على CI \|"` | — |
-| [SRC-855DA3B8BC-L000060](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L60) | 60 | `"\| Smoke test للحاوية \| PASS \| استجابت health، ورُفضت طلبات غير مصادق عليها، وقُبلت طلبات مصادق عليها المحددة في السكربت \|"` | — |
-| [SRC-855DA3B8BC-L000061](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L61) | 61 | `""` | — |
-| [SRC-855DA3B8BC-L000062](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L62) | 62 | `"روابط تشغيل CI: [Python 3.11](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864363)، [Python 3.12](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864528)، [Docker + protected API smoke test](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864488)."` | — |
-| [SRC-855DA3B8BC-L000063](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L63) | 63 | `""` | — |
-| [SRC-855DA3B8BC-L000064](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L64) | 64 | `"**حدود التحقق:** لم أشغّل الاختبارات محليًا داخل بيئة مستنسخة في هذه الجولة؛ استند تأكيد نجاح الاختبارات إلى نتائج CI الفعلية أعلاه. لم أنفذ اختبار اختراق حيًا، أو اختبار حمل، أو استدعاءً فعليًا بمفاتيح المستخدم لمزودي البحث/النماذج، أو اختبارًا على نشر Render الفعلي. لا تتضمن هذه النتيجة ادعاء بأن تلك الاختبارات حدثت."` | — |
-| [SRC-855DA3B8BC-L000065](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) | 65 | `""` | — |
-| [SRC-855DA3B8BC-L000066](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L66) | 66 | `"## 3. معنى الحالات المستخدمة"` | — |
-| [SRC-855DA3B8BC-L000067](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L67) | 67 | `""` | — |
-| [SRC-855DA3B8BC-L000068](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L68) | 68 | `"- **VERIFIED — ضمن نطاق محدد:** توجد شواهد مباشرة من الكود و/أو اختبار تلقائي يثبت السلوك المحدد فقط؛ لا يعني ضمانًا شاملًا."` | — |
-| [SRC-855DA3B8BC-L000069](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L69) | 69 | `"- **INFERRED — موجود جزئيًا/استدلالي:** توجد آلية واضحة في الكود، لكن لم يُثبت كل سلوكها باختبار مباشر أو بيئة حية."` | — |
-| [SRC-855DA3B8BC-L000070](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L70) | 70 | `"- **PROPOSED / GAP — غير مستوفى حسب النطاق الحالي:** لا تظهر آلية كافية لتنفيذ المتطلب المحدد، أو ثبت أن النطاق المعلن يتطلب قدرة غير موجودة."` | — |
-| [SRC-855DA3B8BC-L000071](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L71) | 71 | `"- **UNKNOWN — غير محسوم:** يلزم الاطلاع على إعداد تشغيل/استضافة أو سجل غير متاح أو إجراء اختبار إضافي."` | — |
-| [SRC-855DA3B8BC-L000072](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L72) | 72 | `"- **N/A مشروط:** لا ينطبق على القدرات الحالية، لكن يجب إعادة تفعيله عندما تتغير القدرة أو نطاق المستخدمين."` | — |
-| [SRC-855DA3B8BC-L000073](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L73) | 73 | `""` | — |
-| [SRC-855DA3B8BC-L000074](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L74) | 74 | `"## 4. أهم نتائج المخاطر — مرتبة حسب أثرها"` | — |
-| [SRC-855DA3B8BC-L000075](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L75) | 75 | `""` | — |
-| [SRC-855DA3B8BC-L000076](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L76) | 76 | `"### A-01 — غياب حد عالمي للتوازي وميزانية زمنية موحدة للطلب"` | — |
-| [SRC-855DA3B8BC-L000077](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L77) | 77 | `"**النتيجة:** فجوة موثقة من قراءة الكود؛ الأولوية P1 قبل إتاحة عامة، وقد تصبح P0 عند تعريض النظام لحمل غير موثوق أو تكلفة مدفوعة كبيرة."` | — |
-| [SRC-855DA3B8BC-L000078](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L78) | 78 | `""` | — |
-| [SRC-855DA3B8BC-L000079](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L79) | 79 | `"توجد حدود جيدة لكل مرحلة: MAX_PLAN_QUERIES=8، وMAX_RESEARCH_WORKERS=8، وMAX_FETCHED_PAGES=8، وMAX_PAGE_BYTES=1,000,000، ومهلة 8 ثوانٍ لجلب الصفحة، و10 ثوانٍ لكل موصل بحث في غلاف البحث، وحدود زمنية لاستدعاءات التخطيط والإجابة والمراجعة. كما توجد محاولة واحدة إضافية لإصلاح فجوة الأدلة، وحدود لعدد استدعاءات بعض الموفرين."` | — |
-| [SRC-855DA3B8BC-L000080](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L80) | 80 | `""` | — |
-| [SRC-855DA3B8BC-L000081](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L81) | 81 | `"لكن ThreadingHTTPServer ينشئ خيط معالجة لكل طلب ولا يظهر حول /api/agent حد تزامن عام أو طابور محدود. وكل طلب قد ينفذ عدة استعلامات؛ كل استعلام بدوره قد يشغّل عدة موصلات بالتوازي، ثم جلب صفحات، ثم استدعاءات نموذج رئيسية واحتياطية ومراجعة. مهلة asyncio.wait_for على to_thread لا تضمن قتل العمل المتزامن الجاري داخل الخيط عند انتهائها. ولا يظهر deadline واحد ينتقل بين كل هذه المراحل ويمنع بدء مرحلة جديدة عندما تبقى للطلب ميزانية غير كافية."` | — |
-| [SRC-855DA3B8BC-L000082](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L82) | 82 | `""` | — |
-| [SRC-855DA3B8BC-L000083](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L83) | 83 | `"**المطلوب:** إضافة ميزانية نهاية-إلى-نهاية باستخدام monotonic deadline، وحد تزامن عالمي للبحث/النماذج، وحد انتظار قصير يعيد استجابة ازدحام مفهومة، وميزانية استدعاءات واضحة لكل نمط، واختبار ضغط يثبت أن عدد العمال والتكلفة لا ينفلتان. يجب قياس هذه الحدود بدل تخمينها."` | — |
-| [SRC-855DA3B8BC-L000084](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L84) | 84 | `""` | — |
-| [SRC-855DA3B8BC-L000085](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L85) | 85 | `"### A-02 — لا يوجد عزل بيانات لكل مستخدم/مستأجر"` | — |
-| [SRC-855DA3B8BC-L000086](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L86) | 86 | `"**النتيجة:** الفجوة قائمة إذا كان Omarai سيخدم عدة مستخدمين مستقلين؛ النطاق الحالي أقرب إلى تطبيق بمشغّل واحد ورمز مشترك."` | — |
-| [SRC-855DA3B8BC-L000087](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L87) | 87 | `""` | — |
-| [SRC-855DA3B8BC-L000088](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L88) | 88 | `"تستخدم Handler.store مخزن LeadStore واحدًا على مستوى الصنف، ويستخدم المخزن ملف SQLite واحدًا. المصادقة تعتمد على قيمة OMARAI_ACCESS_TOKEN مشتركة، لا هوية مستخدم مستقلة أو صلاحية على سجل بعينه. لا توجد في السجل الحالي مفاتيح مالك/tenant تُستخدم لتقييد list/add/update. وكل شخص يمتلك الرمز نفسه يستطيع الوصول إلى مجموعة السجلات نفسها."` | — |
-| [SRC-855DA3B8BC-L000089](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L89) | 89 | `""` | — |
-| [SRC-855DA3B8BC-L000090](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L90) | 90 | `"في المقابل، يُنشأ WebAgent جديد لكل طلب /api/agent وتُصفّر داخله قوائم المصادر وتشخيصات الموفر عند بدء answer()، وهذا يقلل خطر تداخل حالة البحث المحلية بين طلبين داخل عملية التطبيق. لكنه **ليس** بديلًا عن عزل بيانات العملاء."` | — |
-| [SRC-855DA3B8BC-L000091](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L91) | 91 | `""` | — |
-| [SRC-855DA3B8BC-L000092](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L92) | 92 | `"**المطلوب:** إما اعتماد النطاق صراحةً كأداة خاصة بمشغّل واحد مع عدم وصفها بخدمة multi-user، أو إضافة هوية وتفويض لكل مستخدم وملكية لكل سجل واختبارات سلبية تؤكد أن مستخدم A لا يستطيع رؤية أو تعديل بيانات مستخدم B. لا يكفي تغيير الواجهة أو إعطاء رموز مختلفة من دون فرض النطاق داخل API وقاعدة البيانات."` | — |
-| [SRC-855DA3B8BC-L000093](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L93) | 93 | `""` | — |
-| [SRC-855DA3B8BC-L000094](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L94) | 94 | `"### A-03 — فحص الاستشهادات يثبت رقم المصدر، لا دعم الادعاء بصورة مستقلة"` | — |
-| [SRC-855DA3B8BC-L000095](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L95) | 95 | `"**النتيجة:** جزئي، مع شفافية جيدة حول هذا القيد."` | — |
-| [SRC-855DA3B8BC-L000096](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L96) | 96 | `""` | — |
-| [SRC-855DA3B8BC-L000097](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L97) | 97 | `"تزيل الدالة _remove_invalid_citations أرقام المصادر الخارجة عن نطاق المصادر المرسلة. وتسمّي _citation_validation_metadata الطريقة numeric_source_index_range_only، وتعيد claim_support بما يوضح أن المراجعة النموذجية ليست تدقيقًا مستقلًا للحقيقة. يمرر النظام الأدلة إلى نموذج الإجابة، ويطلب من نموذج المراجعة إزالة الادعاءات غير المدعومة وعدم اختراع حقائق. هذه خطوات صحيحة ومفيدة، لكنها لا تجعل فحص رقم الاستشهاد مساويًا لإثبات دلالي، كما أن نموذج المراجعة نفسه نموذج لغوي معرض للخطأ."` | — |
-| [SRC-855DA3B8BC-L000098](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L98) | 98 | `""` | — |
-| [SRC-855DA3B8BC-L000099](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L99) | 99 | `"**المطلوب:** الإبقاء على الوصف الصادق الحالي، ثم بناء مجموعة تقييم claim-to-source على عينات عربية/إنجليزية؛ والتحقق من الرابط والمقتطف الذي يدعم الادعاء المحدد؛ وقياس الادعاءات غير المسندة والاستشهادات الصحيحة شكليًا والخاطئة دلاليًا. لا تسمَّ الإجابة VERIFIED FACTUALITY قبل تحقق مناسب مستقل أو مرجعي."` | — |
-| [SRC-855DA3B8BC-L000100](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L100) | 100 | `""` | — |
-| [SRC-855DA3B8BC-L000101](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L101) | 101 | `"### A-04 — تغطية اختبار SSRF أقل من قوة التصميم"` | — |
-| [SRC-855DA3B8BC-L000102](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L102) | 102 | `"**النتيجة:** التصميم يستحق التقدير؛ إثباته الاختباري غير مكتمل."` | — |
-| [SRC-855DA3B8BC-L000103](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L103) | 103 | `""` | — |
-| [SRC-855DA3B8BC-L000104](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L104) | 104 | `"يحتوي _public_http_url على رفض للمخططات غير HTTP(S)، والبيانات المضمنة للمصادقة، والمنافذ غير المعتمدة، وبعض المضيفين المحليين، وعناوين IP غير العامة. وتحل _public_ip_literals كل عنوان DNS وتطلب أن تكون جميع الإجابات عامة. ويثبت _fetch_page عنوان اتصال عامًّا بدل إجراء اتصال جديد باسم المضيف، ويوقف التحويلات التلقائية، ويعيد التحقق من كل وجهة redirect، ويقيد أنواع المحتوى وحجم الصفحة وعدد التحويلات."` | — |
-| [SRC-855DA3B8BC-L000105](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L105) | 105 | `""` | — |
-| [SRC-855DA3B8BC-L000106](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L106) | 106 | `"لكن الاختبارات الموجودة التي أمكن تحديدها في test_web_agent.py تغطي بشكل مباشر حالات URL النصية مثل 127.0.0.1 وlocalhost وبيانات المصادقة وfile://، ولا يظهر ضمن أسماء الاختبارات الحالية اختبار مباشر يثبت رفض redirect من نطاق عام إلى عنوان داخلي، أو DNS بإجابات مختلطة عامة/خاصة، أو DNS rebinding، أو IPv6 link-local/metadata، أو تجاوز حجم الصفحة مع Content-Length كاذب. عدم وجود اختبار بهذا الاسم ليس برهانًا رياضيًا على غياب أي تغطية أخرى، لكنه فجوة دليل واضحة تستحق الإغلاق."` | — |
-| [SRC-855DA3B8BC-L000107](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L107) | 107 | `""` | — |
-| [SRC-855DA3B8BC-L000108](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L108) | 108 | `"**المطلوب:** إضافة اختبارات حتمية بمزود DNS وHTTP وهمي (mock) تختبر كل هذه الحالات، مع اختبار أن الاتصال الفعلي لا يعيد تحليل الاسم بعد التحقق."` | — |
-| [SRC-855DA3B8BC-L000109](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L109) | 109 | `""` | — |
-| [SRC-855DA3B8BC-L000110](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L110) | 110 | `"### A-05 — تهيئة Origin خلف الوكيل العكسي تحتاج تأكيدًا تشغيليًا"` | — |
-| [SRC-855DA3B8BC-L000111](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L111) | 111 | `"**النتيجة:** مشروطة بإعداد الاستضافة الفعلي."` | — |
-| [SRC-855DA3B8BC-L000112](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L112) | 112 | `""` | — |
-| [SRC-855DA3B8BC-L000113](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) | 113 | `"في وضع النشر العام، يضيف _allowed_origins أصولًا مشتقة من Host وX-Forwarded-Host وX-Forwarded-Proto في الطلب الوارد. ويمكن أن يكون هذا مقبولًا إذا كان الوكيل العكسي الموثوق يحذف رؤوس العميل ويعيد كتابتها بشكل صحيح؛ أما الاعتماد على رؤوس قابلة للتلاعب مباشرة دون إثبات هذا الشرط في بيئة النشر فلا يكفي. كما يعتمد rate limiting على عنوان اتصال الخادم افتراضيًا، ولا يقرأ X-Forwarded-For إلا عند تفعيل OMARAI_TRUST_PROXY_HEADERS=1؛ يجب التأكد أن الإعداد في البيئة الحقيقية لا يجعل كل العملاء خلف الوكيل يشاركون bucket واحدًا أو يجعل الترويسات القابلة للانتحال أساسًا للحدود."` | — |
-| [SRC-855DA3B8BC-L000114](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L114) | 114 | `""` | — |
-| [SRC-855DA3B8BC-L000115](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) | 115 | `"**المطلوب:** ضبط OMARAI_ALLOWED_ORIGINS صراحةً للنطاق الموثوق، والتحقق من سلوك proxy headers في الاستضافة الفعلية، واختبار الطلبات من أصول غير مسموحة ومن ترويسات مزورة."` | — |
-| [SRC-855DA3B8BC-L000116](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) | 116 | `""` | — |
-| [SRC-855DA3B8BC-L000117](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L117) | 117 | `"### A-06 — رمز Bearer مشترك محفوظ في localStorage"` | — |
-| [SRC-855DA3B8BC-L000118](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L118) | 118 | `"**النتيجة:** تصميم مقبول لتجربة خاصة بسيطة، لكنه يوسّع أثر أي XSS ولا يقدم هوية أو صلاحيات فردية."` | — |
-| [SRC-855DA3B8BC-L000119](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L119) | 119 | `""` | — |
-| [SRC-855DA3B8BC-L000120](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L120) | 120 | `"تعالج الواجهات قدرًا كبيرًا من نصوص المستخدم والمصادر عبر escaping، وتتحقق من أن رابط المصدر HTTP(S) ولا يحتوي بيانات مصادقة. لكن صفحة الوكيل وصفحة العملاء تحفظان رمز التطبيق في localStorage؛ الرمز المشترك يعني أن أي سكربت خبيث ينجح في سياق الصفحة يمكنه نظريًا قراءته واستخدام الصلاحيات نفسها. لا توجد جلسات لكل مستخدم أو صلاحيات سجل أو انتهاء صلاحية مدمجة في الرمز."` | — |
-| [SRC-855DA3B8BC-L000121](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L121) | 121 | `""` | — |
-| [SRC-855DA3B8BC-L000122](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L122) | 122 | `"**المطلوب:** إبقاء الوصول خاصًا ومحدودًا حاليًا، وعدم مشاركة الرمز. إذا تحولت الخدمة إلى عدة مستخدمين، فاستبدال الرمز المشترك بهوية وجلسات أو رموز قصيرة العمر وصلاحيات مناسبة، مع مراجعة CSP واختبارات XSS. لا تُعدّ معالجة escaping وحدها شهادة أمن واجهة."` | — |
-| [SRC-855DA3B8BC-L000123](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L123) | 123 | `""` | — |
-| [SRC-855DA3B8BC-L000124](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L124) | 124 | `"### A-07 — استمرارية قاعدة SQLite في بيئة النشر غير مثبتة"` | — |
-| [SRC-855DA3B8BC-L000125](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L125) | 125 | `"**النتيجة:** UNKNOWN تشغيليًا، وليست عيبًا مؤكدًا في الكود."` | — |
-| [SRC-855DA3B8BC-L000126](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L126) | 126 | `""` | — |
-| [SRC-855DA3B8BC-L000127](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L127) | 127 | `"يحدد LeadStore المسار الافتراضي تحت مجلد المنزل وينشئ الملف إن لم يوجد. يحتوي render.yaml على خدمة Docker مجانية ومفاتيح بيئة، ولا يوضح ملف الإعداد نفسه قرصًا دائمًا أو استراتيجية نسخ احتياطي واستعادة. لم يُفحص حساب الاستضافة المباشر، ولا توجد في هذه الجولة تجربة restart/redeploy تؤكد بقاء السجلات."` | — |
-| [SRC-855DA3B8BC-L000128](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L128) | 128 | `""` | — |
-| [SRC-855DA3B8BC-L000129](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L129) | 129 | `"**المطلوب:** تأكيد نظام ملفات الاستضافة وسياسة بقائه رسميًا، وتجربة حفظ سجل ثم إعادة تشغيل/نشر ثم التحقق من بقائه. قبل حفظ بيانات تشغيلية مهمة، إعداد قرص دائم إن كان متاحًا ضمن البيئة أو تخزين دائم بديل ونسخ احتياطي واستعادة مختبرة."` | — |
-| [SRC-855DA3B8BC-L000130](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L130) | 130 | `""` | — |
-| [SRC-855DA3B8BC-L000131](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L131) | 131 | `"## 5. سجل نتائج جميع متطلبات P0 (42 متطلبًا)"` | — |
-| [SRC-855DA3B8BC-L000132](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L132) | 132 | `""` | — |
-| [SRC-855DA3B8BC-L000133](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L133) | 133 | `"الحالة هنا تصف قوة الدليل على **تنفيذ المتطلب في النطاق المدقق**، وليست تصنيفًا نهائيًا لكل التطبيق. المراجع المحلية تشير إلى ملف/سطر أو اختبار يدعم النتيجة. وُسِمت البنود المشروطة صراحةً حتى لا تختلط جاهزية مشغّل واحد بجاهزية منصة متعددة المستخدمين."` | — |
-| [SRC-855DA3B8BC-L000134](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L134) | 134 | `""` | — |
-| [SRC-855DA3B8BC-L000135](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L135) | 135 | `"\| المعرف \| نتيجة التدقيق \| الدليل المرصود والحد المتبقي \|"` | — |
-| [SRC-855DA3B8BC-L000136](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L136) | 136 | `"\|---\|---\|---\|"` | — |
-| [SRC-855DA3B8BC-L000137](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L137) | 137 | `"\| GOV-001 \| INFERRED \| يعرض وكيل البحث حقولًا مثل search_outcome وresearch_quality_semantics وcitation_validation، وتوجد اختبارات لحفظ UNKNOWN عند فشل البحث؛ لكن لم تُراجع جميع مخرجات المشروع لإثبات أن كل تقرير مؤثر يستخدم حالات موحدة. انظر agents/web_agent.py: 3065–3251 و3583–3642، والاختبارات test_web_agent.py: 1739–1753 و1957–2046 و2310–2345. \|"` | — |
-| [SRC-855DA3B8BC-L000138](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L138) | 138 | `"\| GOV-003 \| UNKNOWN \| توجد سياسة للاستثناءات في الدستور وAGENTS.md، لكن لم يُعثر ضمن نطاق ملفات التشغيل المدققة على سجل فعلي للاستثناءات المقبولة وتواريخ انتهائها. غياب السجل من الملفات المفحوصة لا يثبت عدم وجود قرار خارجي؛ يلزم تأكيد واعتماد سجل الاستثناءات. \|"` | — |
-| [SRC-855DA3B8BC-L000139](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L139) | 139 | `"\| GOV-005 \| INFERRED \| سياسة عدم الدمج/النشر دون صلاحية بشرية مثبتة في AGENTS.md ووثائق الحوكمة. فُحص workflow الخاص بالاختبارات، لا إعدادات حماية الفروع أو أذونات النشر في الحساب الفعلي؛ إذن enforcement التشغيلي UNKNOWN. \|"` | — |
-| [SRC-855DA3B8BC-L000140](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L140) | 140 | `"\| PRD-001 \| INFERRED \| الواجهة تعرض تحذيرًا عندما لا يؤكد النظام البحث الحي، والتشخيص يفرق بين نتائج حقيقية وتعطل الموفر؛ لكن لم تجرِ مراجعة شاملة لكل ادعاءات README والواجهة مقابل كل قدرة تشغيلية. انظر web/agent.html: 204–215 وagents/web_agent.py: 2676–2896. \|"` | — |
-| [SRC-855DA3B8BC-L000141](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L141) | 141 | `"\| PRD-003 \| VERIFIED (نطاق جزئي) \| توجد حالات فشل/نقص دليل صريحة واختبارات تمنع ادعاء وجود عميل عند انقطاع البحث، وكذلك fallback للمقتطفات عند غياب النموذج. انظر tests/test_web_agent.py: 101–130 و1220–1268 و1957–2046 و2310–2345. لا يشمل ذلك جميع الموفرين الحقيقيين في الإنتاج. \|"` | — |
-| [SRC-855DA3B8BC-L000142](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L142) | 142 | `"\| API-001 \| INFERRED \| API يفرض JSON، حد 200KB، وbody كائنًا، ويفحص السؤال؛ WebAgent يقيد السؤال عند 4000 حرف، والسجل يقيد النص عند 12000. لكن التحقق النوعي الصارم من كل حقول product_terms/location_terms/platform ومدة قراءة body/نهاية الطلب ليس شاملًا. انظر api/omarai.py: 164–247 وagents/web_agent.py: 35–45 وagents/omarai.py: 51–110. \|"` | — |
-| [SRC-855DA3B8BC-L000143](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L143) | 143 | `"\| API-002 \| PROPOSED/GAP عند تعدد المستخدمين \| لا يوجد تفويض بحسب مالك السجل؛ كل حامل للرمز نفسه يصل إلى LeadStore واحد مشترك. مناسب فقط لنطاق مشغّل واحد، وغير كافٍ لحسابات مستقلة أو tenants. انظر api/omarai.py: 24–40 و207–240، وagents/omarai.py: 81–124. \|"` | — |
-| [SRC-855DA3B8BC-L000144](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L144) | 144 | `"\| API-004 \| VERIFIED (العمليات الحالية فقط) \| LeadStore.add يستخدم fingerprint فريدًا وINSERT OR IGNORE لمنع تكرار السجل؛ ومسودات التواصل تصرح أنها لم تُرسل. لا توجد حاليًا أداة نموذجية ترسل رسائل تلقائيًا. انظر agents/omarai.py: 96–114 وapi/omarai.py: 269–304 وtests/test_omarai.py: 25–47. يجب إعادة التقييم لو أضيف إرسال خارجي. \|"` | — |
-| [SRC-855DA3B8BC-L000145](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L145) | 145 | `"\| IDN-001 \| INFERRED / GAP متعدد المستخدمين \| Bearer token يتحقق على مستوى التطبيق فقط؛ لا توجد هوية فردية/أدوار أو تفويض لكل سجل. التوثيق الحالي مناسب للمدخل الخاص أكثر من خدمة متعددة المستخدمين. انظر api/omarai.py: 33–40 و164–180. \|"` | — |
-| [SRC-855DA3B8BC-L000146](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L146) | 146 | `"\| IDN-002 \| INFERRED / GAP \| الرمز المشترك يمكن تغييره من إعداد البيئة، لكن لا توجد صلاحية انتهاء/إبطال فردية أو جلسات لكل مستخدم ضمن الكود المرصود. التدوير اليدوي يتطلب إجراء تشغيليًا لم يُختبر في هذه الجولة. \|"` | — |
-| [SRC-855DA3B8BC-L000147](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L147) | 147 | `"\| IDN-003 \| PARTIAL \| إنشاء WebAgent مستقل لكل /api/agent مع تصفير حالته يقلل مشاركة mutable search state بين الطلبات. لكن LeadStore عالمي ومشترك ولا توجد owner/tenant keys؛ لذلك عزل بيانات المستخدمين غير متحقق. انظر api/omarai.py: 25–26 و207–213، وagents/web_agent.py: 2897–2915. \|"` | — |
-| [SRC-855DA3B8BC-L000148](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L148) | 148 | `"\| IDN-004 \| VERIFIED (نطاق API الحالي) \| المصادقة مطلوبة لمسارات /api في وضع النشر العام، وGET /api/leads محمي، والـ CI smoke يثبت 401 لطلبات غير مصادق عليها. /api/health عام ويكشف بيانات حالة/إعدادات غير سرية نسبيًا؛ يجب عدم خلط ذلك مع حماية بيانات العملاء. انظر api/omarai.py: 130–162 و164–180، وCI container smoke. \|"` | — |
-| [SRC-855DA3B8BC-L000149](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L149) | 149 | `"\| SEC-001 \| INFERRED \| مفاتيح النموذج تؤخذ من متغيرات البيئة، وأخطاء النموذج لا تعيد جسم استجابة المزود، و.env وSQLite ضمن .gitignore، ويوجد اختبار تنقيح السر من ناتج benchmark. لم يُنفذ secret scanning لتاريخ Git أو فحص أسرار على تشغيل إنتاج حقيقي في هذا التدقيق. انظر agents/web_agent.py: 268–310 و2150–2277، .gitignore، وtests/test_answer_quality_runner.py: 92–99. \|"` | — |
-| [SRC-855DA3B8BC-L000150](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L150) | 150 | `"\| SEC-002 \| PARTIAL \| توجد حماية SSRF متعددة الطبقات في agents/web_agent.py: 183–252 و1769–1874، واختبارات URL محلية وcredentials/file scheme في tests/test_web_agent.py: 148–155. يلزم إضافة اختبارات DNS مختلط، وredirect إلى IP داخلي، وDNS rebinding وIPv6 metadata/الحجم. لا تُعلن SSRF VERIFIED بالكامل قبل هذه الاختبارات. \|"` | — |
-| [SRC-855DA3B8BC-L000151](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L151) | 151 | `"\| SEC-003 \| INFERRED \| system prompts تصف نص صفحات الويب كمحتوى غير موثوق، وتفصله في رسالة user عن system policy؛ اختبارات test_web_agent.py: 1269–1337 تفحص الفصل في مسار الإجابة والمراجعة. لا توجد مجموعة red-team شاملة لكل حقن مباشر وغير مباشر أو لكل موصل. \|"` | — |
-| [SRC-855DA3B8BC-L000152](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L152) | 152 | `"\| SEC-004 \| N/A مشروط للقدرات الحالية / INFERRED \| لم يظهر منفذ أدوات يمنح النموذج عمليات كتابة أو إرسال خارجية؛ OpenRouter web search اختياري ومقيد بعدد استدعاءات، وواجهات تعديل سجل العملاء تتطلب رمز التطبيق. هذا لا يغطي المستقبل: أي أداة تنفذ فعلًا خارجيًا أو عملية حساسة يجب أن تحصل على policy gate وتفويض مستقلين. انظر agents/web_agent.py: 2150–2200 وapi/omarai.py: 164–247. \|"` | — |
-| [SRC-855DA3B8BC-L000153](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L153) | 153 | `"\| SEC-005 \| INFERRED \| جلب الصفحات يستخدم verify=True، والاتصالات الخارجية تستخدم عميلًا/مكتبات افتراضيها تحقق TLS؛ لم يُنفذ اختبار شهادة حية أو اختبار نشر طرف إلى طرف في هذه الجولة. انظر agents/web_agent.py: 1782–1789 و2150–2200. \|"` | — |
-| [SRC-855DA3B8BC-L000154](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L154) | 154 | `"\| SEC-006 \| INFERRED \| web/agent.html وweb/dashboard.html تستخدمان escaping للنص الديناميكي والتحقق من الروابط قبل بناء HTML؛ لكن لم يُنفذ اختبار متصفح عدائي يثبت رفض XSS لجميع حقول API، ولم يظهر فحص CSP ضمن الملفات المفحوصة. انظر web/agent.html: 107–145 وweb/dashboard.html: 31–40. \|"` | — |
-| [SRC-855DA3B8BC-L000155](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L155) | 155 | `"\| SEC-008 \| PARTIAL \| البحث يعتمد على موصلات محددة وبيانات اعتماد من البيئة، ولا توجد صلاحيات تعسفية يختارها النموذج؛ لكن رمز API مشترك على نطاق التطبيق، ولا توجد صلاحيات لكل مستخدم أو لكل نوع سجل، كما لا يوجد سقف توازي عام. انظر agents/web_agent.py: 1019–1125 وapi/omarai.py: 33–40. \|"` | — |
-| [SRC-855DA3B8BC-L000156](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L156) | 156 | `"\| PRI-001 \| PARTIAL \| يوجد تحديد لأطوال السؤال/التاريخ/مقتطفات الصفحات والمصادر المرسلة للنموذج، وتحذير من إرسال أسرار أو بيانات عميل سرية؛ لكن لا توجد مراجعة مكتملة لخريطة الاحتفاظ/الحذف والتسجيل في كل خدمة خارجية، وحد history الكلي يمكن أن يصل إلى عدة عناصر × 4000 حرف. انظر agents/web_agent.py: 35–45 و2117–2130 و2394–2534. \|"` | — |
-| [SRC-855DA3B8BC-L000157](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L157) | 157 | `"\| PRI-002 \| INFERRED \| status() يعرض إشعارًا بأن السؤال وبعض مقتطفات الصفحات تُرسل إلى مزود نموذج خارجي؛ ويستخدم fallback model عنوان base_url نفسه في التنفيذ الحالي. لم يتم التحقق من ظهور الإشعار للمستخدم قبل إدخال معلومات حساسة، ولا من شروط موفر خارجي بعينه أو طلب حي. انظر agents/web_agent.py: 311–360 و2150–2277، والواجهة web/agent.html. \|"` | — |
-| [SRC-855DA3B8BC-L000158](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L158) | 158 | `"\| REL-001 \| PARTIAL \| توجد مهلات لعمليات الجلب والبحث والنماذج، لكن لا يوجد deadline شامل من بداية HTTP request حتى الرد ولا ميزانية زمنية تنتقل بين المراحل. قد تتراكم مهلات متتابعة/احتياطية مع تعدد الاستعلامات. انظر agents/web_agent.py: 35–45 و1059–1125 و1769–1874 و2150–2277 و2534–2630. \|"` | — |
-| [SRC-855DA3B8BC-L000159](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L159) | 159 | `"\| REL-002 \| INFERRED \| عدد نماذج fallback محدود، وعدد استعلامات التخطيط والأدلة الإضافية محدد، ويوجد اختبار لحد طلب DeepSeek؛ لكن لا توجد سياسة backoff موحدة لكل الموفرين ولا ميزانية retry زمنية شاملة. انظر agents/web_agent.py: 997–1018 و2150–2277 و3280–3467، والاختبار test_web_agent.py: 2265–2279. \|"` | — |
-| [SRC-855DA3B8BC-L000160](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L160) | 160 | `"\| REL-003 \| VERIFIED (نطاق الاختبارات الحالية) \| اختبارات موثقّة تفصل تعطل البحث عن غياب النتائج وتبقي حالة فشل البحث غير محسومة، واختبارات fallback للمقتطفات/تعذر النموذج موجودة. راجع tests/test_web_agent.py: 101–130 و874–906 و1957–2046 و2280–2299. التشغيل الحي لجميع الموفرين ما زال UNKNOWN. \|"` | — |
-| [SRC-855DA3B8BC-L000161](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L161) | 161 | `"\| PER-002 \| PARTIAL \| توجد حدود للطلب والصفحات والنتائج وعدد العمال داخل عملية بحث واحدة. لا يوجد حد عالمي لعدد HTTP worker threads، ولا اختبار حمل يثبت سلوك النظام تحت آلاف الطلبات المتزامنة؛ كما لا يوجد حد إجمالي موحد لتكلفة جميع مراحل الطلب. انظر api/omarai.py: 24–30 و305–319، agents/web_agent.py: 35–45 و1893–1980. \|"` | — |
-| [SRC-855DA3B8BC-L000162](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L162) | 162 | `"\| PER-003 \| PROPOSED/GAP \| توجد حدود لكل مرحلة وعدد الاستعلامات وبعض استدعاءات الموفرين، لكن لا توجد ميزانية واحدة قابلة للقياس للزمن وعدد اتصالات النموذج/البحث/جلب الصفحات عبر الطلب كاملًا. هذه الفجوة مشتركة مع A-01 وتحتاج deadline + global semaphore/queue + اختبارات إغلاق الميزانية. \|"` | — |
-| [SRC-855DA3B8BC-L000163](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L163) | 163 | `"\| SRH-001 \| VERIFIED لسلوك التشخيص فقط؛ UNKNOWN للتوافر الحي الحالي \| diagnostics() تنفذ مجسات بحث عامة ولا تعتبر وجود مفتاح/اسم موصل دليلًا على نجاحه؛ توجد اختبارات تميز عدم وجود نتائج عن عطل الاتصال. لكنها لا تثبت أن البحث الحي يعمل الآن في حساب الاستضافة أو بمفاتيحك. انظر agents/web_agent.py: 2676–2896 وtests/test_web_agent.py: 826–906 و2245–2299. \|"` | — |
-| [SRC-855DA3B8BC-L000164](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L164) | 164 | `"\| EVD-001 \| PARTIAL \| توجد مراجعة نموذجية تطلب دعم الادعاءات من مقتطف المصدر، وطلب إظهار نقص الأدلة، وحد لرقم الاستشهاد؛ لكن لا يوجد تحقق دلالي مستقل لكل claim-source pair. انظر agents/web_agent.py: 2394–2676 و3714–3795، والاختبارات 310–358. \|"` | — |
-| [SRC-855DA3B8BC-L000165](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L165) | 165 | `"\| EVD-002 \| PARTIAL \| توجد تعليمات صريحة لاختلاق URL/التواريخ/الأرقام، وتنقية روابط المصدر، وإزالة أرقام الاستشهاد غير الصالحة. لكن لا توجد قاعدة حتمية تثبت أن كل تاريخ أو سعر أو ادعاء ظهر في النص موجود في المصدر؛ تبقى مخاطرة هلوسة غير صفرية. \|"` | — |
-| [SRC-855DA3B8BC-L000166](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L166) | 166 | `"\| EVD-004 \| INFERRED \| تقارير البحث تميز بعض حالات insufficient_evidence وfailed وpartial، وتوضح أن research_quality قياس لتغطية العملية لا احتمال صحة، وتفصح أن مراجعة النموذج ليست تحققًا مستقلًا. لكن ليس كل جواب عام يضع وسومًا صريحة لكل معلوم/استنتاج/مقترح/مجهول. انظر agents/web_agent.py: 2676–2896 و3583–3848. \|"` | — |
-| [SRC-855DA3B8BC-L000167](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L167) | 167 | `"\| AIG-001 \| INFERRED \| قيود الأمان موجودة في الكود وAPI، ومحتوى الويب يُفصل عن تعليمات النظام؛ لكن policy gate مستقل عن النموذج لا يغطي أفعالًا متنوعة لأن نطاق الأدوات الحالي يغلب عليه البحث فقط. يُعاد التقييم قبل إضافة أدوات ذات آثار جانبية. \|"` | — |
-| [SRC-855DA3B8BC-L000168](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L168) | 168 | `"\| AIG-002 \| PARTIAL \| التخطيط bounded بثمانية استعلامات كحد، والبحث المتوازي داخل العملية بثمانية عمال، ومعالجة نقص الأدلة بمحاولة إضافية واحدة في المسار المحدد، وأداة web search الاختيارية بحد max_tool_calls=5. تبقى فجوة توازي الخادم والdeadline الشامل. انظر agents/research.py: 16–18 وagents/web_agent.py: 35–45 و2150–2200 و3280–3467. \|"` | — |
-| [SRC-855DA3B8BC-L000169](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L169) | 169 | `"\| AIG-003 \| INFERRED \| المقترح التخطيطي يحلل JSON ثم يمر عبر validate_plan، ويُرفض شكل الرد غير الصالح أو المبتور من النموذج. لا توجد أداة كتابة مفعّلة عبر LLM تحتاج تنفيذ فعل حساس حاليًا؛ ينبغي اختبار schemas مباشرة عند إضافة أي أداة جديدة. انظر agents/web_agent.py: 2278–2394 و2150–2277. \|"` | — |
-| [SRC-855DA3B8BC-L000170](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L170) | 170 | `"\| AIG-005 \| INFERRED \| fallback_model يتصل عبر base_url نفسه، وتوجد رسالة خصوصية على إرسال prompts ومقتطفات إلى المزود المضبوط؛ لكن لم تتم مراجعة تدفقات البيانات لكل موصل اجتماعي اختياري أو إجراء فحص حي لمحتوى الطلب المرسل. انظر agents/web_agent.py: 311–360 و2150–2277 وموصلات البحث الاختيارية. \|"` | — |
-| [SRC-855DA3B8BC-L000171](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L171) | 171 | `"\| AIG-006 \| N/A مشروط للقدرات الحالية \| لم يُرصد إرسال تلقائي لرسالة أو تنفيذ خارجي على قرار LLM؛ مسودة التواصل توضح أن الإرسال لم يحدث. أي connector جديد يرسل أو يعدّل أو يشتري أو يحذف أو ينشر يجب أن يُعامل كقدرة جديدة مع تحقق صلاحيات وموافقة مناسبة. انظر api/omarai.py: 269–304. \|"` | — |
-| [SRC-855DA3B8BC-L000172](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L172) | 172 | `"\| AIE-003 \| PARTIAL \| اختبارات تثبت فصل محتوى الويب غير الموثوق عن system message في مساري التوليد والمراجعة، لكن لم تُثبت بعد مجموعة red-team كاملة بهجمات injection مباشرة/غير مباشرة واختبارات انحدار لكل المصادر. انظر tests/test_web_agent.py: 1269–1337. \|"` | — |
-| [SRC-855DA3B8BC-L000173](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L173) | 173 | `"\| TST-003 \| VERIFIED (سياسة اختبارات الجودة) \| test_answer_quality_runner.py يتضمن test_live_records_not_tested_not_pass؛ وسكربت القياس يرفض التشغيل الحي غير المحدود ويصنّف فشل النقل بشكل غير ناجح. أما هذا التدقيق نفسه فلم ينفذ تشغيلًا محليًا، ولذلك يذكر بوضوح أنه لم ينفذ محليًا. انظر tests/test_answer_quality_runner.py: 67–135 و191–232. \|"` | — |
-| [SRC-855DA3B8BC-L000174](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L174) | 174 | `"\| SCM-002 \| PARTIAL \| workflow يحدد permissions: contents: read ولا يطلب مفاتيح موفر النموذج لتشغيل الاختبارات، وهذا جيد. لكنه يستخدم actions بالـ major tag مثل checkout@v4 وsetup-python@v5 لا SHA ثابتًا، ولم يظهر ضمن workflow فحص أسرار/ثغرات اعتماديات/CodeQL. لا تُوصف سلسلة التوريد بالمكتملة. انظر .github/workflows/tests.yml: 1–25. \|"` | — |
-| [SRC-855DA3B8BC-L000175](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L175) | 175 | `"\| DPL-001 \| UNKNOWN للتوزيع الحقيقي / VERIFIED لاختبار الحاوية على CI \| بنيت الحاوية واختُبر smoke test عند نسخة معروفة من main، لكن لم يتم إثبات أن نشر الاستضافة الفعلي يطابق هذه النسخة، أو أن هناك سجل deployment/rollback يمكن ربطه بالـ commit. انظر .github/workflows/tests.yml وrender.yaml؛ تحقق النشر يحتاج منصة الاستضافة نفسها. \|"` | — |
-| [SRC-855DA3B8BC-L000176](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L176) | 176 | `"\| DPL-005 \| INFERRED \| الدستور وAGENTS.md يثبتان قاعدة موافقة مدير المشروع، لكن لم تُقرأ إعدادات branch protection أو deployment protection في حساب GitHub/الاستضافة. وجود نص القاعدة لا يثبت فرضها آليًا. \|"` | — |
-| [SRC-855DA3B8BC-L000177](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L177) | 177 | `"\| UX-004 \| INFERRED \| الواجهات تستخدم escapeHtml/esc وتفحص روابط HTTP(S) قبل عرضها؛ هذا يقلل خطر XSS. لم يظهر اختبار متصفح يغطي حمولة عدائية في كل حقل، ولم يظهر CSP في فحص الملفات. انظر web/agent.html: 107–145 وweb/dashboard.html: 31–40. \|"` | — |
-| [SRC-855DA3B8BC-L000178](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L178) | 178 | `"\| FIN-001 \| PARTIAL / فجوة مهمة عند النشر العام \| يوجد rate limit 20 طلبًا/60 ثانية لكل عنوان عميل وحدود داخلية للبحث والنماذج، لكن لا يوجد سقف تكلفة أو توازي عالمي، والاحتياط النموذجي يمكن أن يضاعف الطلبات. لا يكفي تحديد المعدل وحده لمنع الحمل المجمع من عدد كبير من العملاء. انظر api/omarai.py: 24–115 وagents/web_agent.py: 2150–2277. \|"` | — |
-| [SRC-855DA3B8BC-L000179](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L179) | 179 | `""` | — |
-| [SRC-855DA3B8BC-L000180](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L180) | 180 | `"## 6. ماذا نعدّ مثبتًا حاليًا، وماذا لا نعدّه مثبتًا؟"` | — |
-| [SRC-855DA3B8BC-L000181](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) | 181 | `""` | — |
-| [SRC-855DA3B8BC-L000182](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L182) | 182 | `"### مثبت ضمن نطاق محدود"` | — |
-| [SRC-855DA3B8BC-L000183](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L183) | 183 | `"1. فحوص Python/Ruff/pytest وDocker smoke test نجحت في GitHub Actions لنسخة main المسجلة."` | — |
-| [SRC-855DA3B8BC-L000184](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L184) | 184 | `"2. هناك مصادقة server-side في وضع النشر العام، وحد أقصى لطول جسم الطلب، وحد معدل محلي، وخيارات آمنة افتراضية للربط المحلي."` | — |
-| [SRC-855DA3B8BC-L000185](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L185) | 185 | `"3. توجد آليات واضحة للحد من SSRF، وفصل محتوى البحث غير الموثوق، وتنقية HTML في الواجهات، وإزالة أرقام الاستشهاد غير الصالحة."` | — |
-| [SRC-855DA3B8BC-L000186](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L186) | 186 | `"4. توجد اختبارات انحدار مهمة للبحث الفاشل، والنقص في الأدلة، وفشل الموفر، ومجموعة من أخطاء النماذج، وفشل HTTP غير المصادق عليه."` | — |
-| [SRC-855DA3B8BC-L000187](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L187) | 187 | `"5. أدوات البحث/قراءة الصفحات الحالية لا تنفذ بحد ذاتها إرسال رسائل للناس أو عمليات كتابة خارجية؛ مسودة التواصل ليست إرسالًا."` | — |
-| [SRC-855DA3B8BC-L000188](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L188) | 188 | `""` | — |
-| [SRC-855DA3B8BC-L000189](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L189) | 189 | `"### استدلالي أو جزئي"` | — |
-| [SRC-855DA3B8BC-L000190](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L190) | 190 | `"1. القوة الفعلية لدفاعات SSRF أمام DNS/redirect adversarial inputs."` | — |
-| [SRC-855DA3B8BC-L000191](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L191) | 191 | `"2. مقاومة prompt injection عبر طيف كامل من المصادر."` | — |
-| [SRC-855DA3B8BC-L000192](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L192) | 192 | `"3. صحة الاستشهادات دلاليًا، لا مجرد صحة فهرس المصدر."` | — |
-| [SRC-855DA3B8BC-L000193](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L193) | 193 | `"4. جودة الناتج على أسئلة فعلية متنوعة ومصادر حية عربية/إنجليزية."` | — |
-| [SRC-855DA3B8BC-L000194](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L194) | 194 | `"5. متانة حدود الوقت تحت فشل مزود متكرر أو تزامن كبير."` | — |
-| [SRC-855DA3B8BC-L000195](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L195) | 195 | `"6. حماية الواجهات من XSS على مستوى كل حقل؛ يوجد escaping لكن التغطية الاختبارية المباشرة محدودة."` | — |
-| [SRC-855DA3B8BC-L000196](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L196) | 196 | `""` | — |
-| [SRC-855DA3B8BC-L000197](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L197) | 197 | `"### غير معلوم أو غير مستوفى في النطاق الأوسع"` | — |
-| [SRC-855DA3B8BC-L000198](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L198) | 198 | `"1. فصل سجلات المستخدمين: غير متاح في نموذج رمز مشترك/مخزن مشترك."` | — |
-| [SRC-855DA3B8BC-L000199](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L199) | 199 | `"2. حد توازي عام وdeadline موحد: لا تظهر لهما آلية كافية في الكود الحالي."` | — |
-| [SRC-855DA3B8BC-L000200](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L200) | 200 | `"3. استمرارية البيانات على الاستضافة الفعلية والنسخ الاحتياطي والاستعادة."` | — |
-| [SRC-855DA3B8BC-L000201](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L201) | 201 | `"4. قواعد حساب GitHub/الاستضافة التي تفرض الموافقة البشرية عمليًا."` | — |
-| [SRC-855DA3B8BC-L000202](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L202) | 202 | `"5. سلامة الاتصال الحي بمفاتيحك ومزوديك من بيئة النشر الحالية."` | — |
-| [SRC-855DA3B8BC-L000203](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L203) | 203 | `"6. نتائج load test أو اختبار اختراق حي أو مراجعة قانونية/امتثال."` | — |
-| [SRC-855DA3B8BC-L000204](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) | 204 | `""` | — |
-| [SRC-855DA3B8BC-L000205](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L205) | 205 | `"## 7. خطة إغلاق بالترتيب"` | — |
-| [SRC-855DA3B8BC-L000206](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) | 206 | `""` | — |
-| [SRC-855DA3B8BC-L000207](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L207) | 207 | `"### Gate 1 — قبل توسيع الوصول العام"` | — |
-| [SRC-855DA3B8BC-L000208](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L208) | 208 | `"1. إضافة global semaphore/queue محدودة لطلبات الوكيل و/أو عمليات البحث والنماذج، مع رفض ازدحام واضح."` | — |
-| [SRC-855DA3B8BC-L000209](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L209) | 209 | `"2. تطبيق deadline موحد يمرر الوقت المتبقي إلى البحث وجلب الصفحة وكل استدعاء نموذج، ويمنع بدء مراحل لا يمكن إكمالها ضمن الميزانية."` | — |
-| [SRC-855DA3B8BC-L000210](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L210) | 210 | `"3. وضع حدود صريحة للتوازي وعدد صفحات fetch وإجمالي model calls لكل طلب ونمط؛ توثيق سقف التكلفة والقياس."` | — |
-| [SRC-855DA3B8BC-L000211](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L211) | 211 | `"4. اختبار سوء استخدام عبر طلبات متزامنة وموفر متأخر/معلق، وتأكيد أن عدد الخيوط والمهام لا يرتفع بلا سقف."` | — |
-| [SRC-855DA3B8BC-L000212](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) | 212 | `""` | — |

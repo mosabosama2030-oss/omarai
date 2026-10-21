@@ -4,9 +4,180 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-9C97DF51AC-L000034 إلى SRC-E599346ABE-L000445
+- النطاق: SRC-EEF2E6447C-L000433 إلى SRC-E599346ABE-L000259
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## واجهات API
+
+### FILE-EEF2E6447C — [api/omarai.py](../../api/omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-EEF2E6447C-L000433](../../api/omarai.py#L433) | 433 | `"            if origin and not self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000434](../../api/omarai.py#L434) | 434 | `"                return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
+| [SRC-EEF2E6447C-L000435](../../api/omarai.py#L435) | 435 | `""` | — |
+| [SRC-EEF2E6447C-L000436](../../api/omarai.py#L436) | 436 | `"            raw_body = self._read_request_body()"` | — |
+| [SRC-EEF2E6447C-L000437](../../api/omarai.py#L437) | 437 | `"            if raw_body is None:"` | — |
+| [SRC-EEF2E6447C-L000438](../../api/omarai.py#L438) | 438 | `"                return"` | — |
+| [SRC-EEF2E6447C-L000439](../../api/omarai.py#L439) | 439 | `"            data = json.loads(raw_body)"` | — |
+| [SRC-EEF2E6447C-L000440](../../api/omarai.py#L440) | 440 | `"            if not isinstance(data, dict):"` | — |
+| [SRC-EEF2E6447C-L000441](../../api/omarai.py#L441) | 441 | `"                return self.respond(400, {\"error\": \"request body must be a JSON object\"})"` | — |
+| [SRC-EEF2E6447C-L000442](../../api/omarai.py#L442) | 442 | `"            if path == \"/api/diagnostics\":"` | — |
+| [SRC-EEF2E6447C-L000443](../../api/omarai.py#L443) | 443 | `"                test_model = data.get(\"test_model\", True)"` | — |
+| [SRC-EEF2E6447C-L000444](../../api/omarai.py#L444) | 444 | `"                test_social = data.get(\"test_social\", False)"` | — |
+| [SRC-EEF2E6447C-L000445](../../api/omarai.py#L445) | 445 | `"                if not isinstance(test_model, bool) or not isinstance(test_social, bool):"` | — |
+| [SRC-EEF2E6447C-L000446](../../api/omarai.py#L446) | 446 | `"                    return self.respond("` | — |
+| [SRC-EEF2E6447C-L000447](../../api/omarai.py#L447) | 447 | `"                        400,"` | — |
+| [SRC-EEF2E6447C-L000448](../../api/omarai.py#L448) | 448 | `"                        {\"error\": \"test_model and test_social must be booleans\"},"` | — |
+| [SRC-EEF2E6447C-L000449](../../api/omarai.py#L449) | 449 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000450](../../api/omarai.py#L450) | 450 | `"                return self._run_bounded_agent_operation("` | — |
+| [SRC-EEF2E6447C-L000451](../../api/omarai.py#L451) | 451 | `"                    lambda: WebAgent().diagnostics("` | — |
+| [SRC-EEF2E6447C-L000452](../../api/omarai.py#L452) | 452 | `"                        test_model=test_model,"` | — |
+| [SRC-EEF2E6447C-L000453](../../api/omarai.py#L453) | 453 | `"                        test_social=test_social,"` | — |
+| [SRC-EEF2E6447C-L000454](../../api/omarai.py#L454) | 454 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000455](../../api/omarai.py#L455) | 455 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000456](../../api/omarai.py#L456) | 456 | `""` | — |
+| [SRC-EEF2E6447C-L000457](../../api/omarai.py#L457) | 457 | `"            if path == \"/api/agent\":"` | — |
+| [SRC-EEF2E6447C-L000458](../../api/omarai.py#L458) | 458 | `"                question = data.get(\"question\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000459](../../api/omarai.py#L459) | 459 | `"                if not isinstance(question, str) or not question.strip():"` | — |
+| [SRC-EEF2E6447C-L000460](../../api/omarai.py#L460) | 460 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
+| [SRC-EEF2E6447C-L000461](../../api/omarai.py#L461) | 461 | `"                agent = WebAgent()"` | — |
+| [SRC-EEF2E6447C-L000462](../../api/omarai.py#L462) | 462 | `"                history = data.get(\"history\", [])"` | — |
+| [SRC-EEF2E6447C-L000463](../../api/omarai.py#L463) | 463 | `"                if \"mode\" not in data:"` | — |
+| [SRC-EEF2E6447C-L000464](../../api/omarai.py#L464) | 464 | `"                    return self._run_bounded_agent_operation("` | — |
+| [SRC-EEF2E6447C-L000465](../../api/omarai.py#L465) | 465 | `"                        lambda: agent.answer(question, history)"` | — |
+| [SRC-EEF2E6447C-L000466](../../api/omarai.py#L466) | 466 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000467](../../api/omarai.py#L467) | 467 | `"                return self._run_bounded_agent_operation("` | — |
+| [SRC-EEF2E6447C-L000468](../../api/omarai.py#L468) | 468 | `"                    lambda: agent.answer(question, history, data.get(\"mode\"))"` | — |
+| [SRC-EEF2E6447C-L000469](../../api/omarai.py#L469) | 469 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000470](../../api/omarai.py#L470) | 470 | `""` | — |
+| [SRC-EEF2E6447C-L000471](../../api/omarai.py#L471) | 471 | `"            if path == \"/api/ask\":"` | — |
+| [SRC-EEF2E6447C-L000472](../../api/omarai.py#L472) | 472 | `"                question = data.get(\"question\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000473](../../api/omarai.py#L473) | 473 | `"                if not isinstance(question, str) or not question.strip():"` | — |
+| [SRC-EEF2E6447C-L000474](../../api/omarai.py#L474) | 474 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
+| [SRC-EEF2E6447C-L000475](../../api/omarai.py#L475) | 475 | `"                if len(question) > 1000:"` | — |
+| [SRC-EEF2E6447C-L000476](../../api/omarai.py#L476) | 476 | `"                    return self.respond(400, {\"error\": \"question must be at most 1000 characters\"})"` | — |
+| [SRC-EEF2E6447C-L000477](../../api/omarai.py#L477) | 477 | `"                return self.respond(200, answer_question(question, self.store))"` | — |
+| [SRC-EEF2E6447C-L000478](../../api/omarai.py#L478) | 478 | `"            if path == \"/api/analyze\":"` | — |
+| [SRC-EEF2E6447C-L000479](../../api/omarai.py#L479) | 479 | `"                return self.respond("` | — |
+| [SRC-EEF2E6447C-L000480](../../api/omarai.py#L480) | 480 | `"                    200,"` | — |
+| [SRC-EEF2E6447C-L000481](../../api/omarai.py#L481) | 481 | `"                    analyze("` | — |
+| [SRC-EEF2E6447C-L000482](../../api/omarai.py#L482) | 482 | `"                        data.get(\"text\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000483](../../api/omarai.py#L483) | 483 | `"                        data.get(\"product_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000484](../../api/omarai.py#L484) | 484 | `"                        data.get(\"location_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000485](../../api/omarai.py#L485) | 485 | `"                    ),"` | — |
+| [SRC-EEF2E6447C-L000486](../../api/omarai.py#L486) | 486 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000487](../../api/omarai.py#L487) | 487 | `"            if path == \"/api/leads\":"` | — |
+| [SRC-EEF2E6447C-L000488](../../api/omarai.py#L488) | 488 | `"                lead, created = self.store.add("` | — |
+| [SRC-EEF2E6447C-L000489](../../api/omarai.py#L489) | 489 | `"                    data.get(\"text\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000490](../../api/omarai.py#L490) | 490 | `"                    data.get(\"source_url\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000491](../../api/omarai.py#L491) | 491 | `"                    data.get(\"platform\", \"manual\"),"` | — |
+| [SRC-EEF2E6447C-L000492](../../api/omarai.py#L492) | 492 | `"                    data.get(\"observed_at\"),"` | — |
+| [SRC-EEF2E6447C-L000493](../../api/omarai.py#L493) | 493 | `"                    data.get(\"note\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000494](../../api/omarai.py#L494) | 494 | `"                    data.get(\"product_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000495](../../api/omarai.py#L495) | 495 | `"                    data.get(\"location_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000496](../../api/omarai.py#L496) | 496 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000497](../../api/omarai.py#L497) | 497 | `"                return self.respond(201 if created else 200, {\"lead\": lead, \"created\": created})"` | — |
+| [SRC-EEF2E6447C-L000498](../../api/omarai.py#L498) | 498 | `"            route = path.split(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000499](../../api/omarai.py#L499) | 499 | `"            if len(route) == 5 and route[1:3] == [\"api\", \"leads\"] and route[4] == \"status\":"` | — |
+| [SRC-EEF2E6447C-L000500](../../api/omarai.py#L500) | 500 | `"                lead = self.store.update_status(route[3], data.get(\"status\", \"new\"))"` | — |
+| [SRC-EEF2E6447C-L000501](../../api/omarai.py#L501) | 501 | `"                return self.respond(200, {\"lead\": lead}) if lead else self.respond(404, {\"error\": \"lead not found\"})"` | — |
+| [SRC-EEF2E6447C-L000502](../../api/omarai.py#L502) | 502 | `"            return self.respond(404, {\"error\": \"not found\"})"` | — |
+| [SRC-EEF2E6447C-L000503](../../api/omarai.py#L503) | 503 | `"        except (ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
+| [SRC-EEF2E6447C-L000504](../../api/omarai.py#L504) | 504 | `"            return self.respond(400, {\"error\": str(exc)})"` | — |
+| [SRC-EEF2E6447C-L000505](../../api/omarai.py#L505) | 505 | `"        except Exception:  # noqa: BLE001 — keep unexpected details out of API responses"` | — |
+| [SRC-EEF2E6447C-L000506](../../api/omarai.py#L506) | 506 | `"            return self.respond(500, {\"error\": \"internal server error\"})"` | — |
+| [SRC-EEF2E6447C-L000507](../../api/omarai.py#L507) | 507 | `""` | — |
+| [SRC-EEF2E6447C-L000508](../../api/omarai.py#L508) | 508 | `"    def do_OPTIONS(self):"` | — |
+| [SRC-EEF2E6447C-L000509](../../api/omarai.py#L509) | 509 | `"        origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000510](../../api/omarai.py#L510) | 510 | `"        if not origin or not self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000511](../../api/omarai.py#L511) | 511 | `"            return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
+| [SRC-EEF2E6447C-L000512](../../api/omarai.py#L512) | 512 | `"        self.send_response(204)"` | — |
+| [SRC-EEF2E6447C-L000513](../../api/omarai.py#L513) | 513 | `"        self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
+| [SRC-EEF2E6447C-L000514](../../api/omarai.py#L514) | 514 | `"        self.send_header(\"Vary\", \"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000515](../../api/omarai.py#L515) | 515 | `"        self.send_header(\"Access-Control-Allow-Methods\", \"GET, POST, OPTIONS\")"` | — |
+| [SRC-EEF2E6447C-L000516](../../api/omarai.py#L516) | 516 | `"        self.send_header(\"Access-Control-Allow-Headers\", \"Authorization, Content-Type\")"` | — |
+| [SRC-EEF2E6447C-L000517](../../api/omarai.py#L517) | 517 | `"        self.send_header(\"Access-Control-Max-Age\", \"600\")"` | — |
+| [SRC-EEF2E6447C-L000518](../../api/omarai.py#L518) | 518 | `"        self.send_header(\"Content-Length\", \"0\")"` | — |
+| [SRC-EEF2E6447C-L000519](../../api/omarai.py#L519) | 519 | `"        self.end_headers()"` | — |
+| [SRC-EEF2E6447C-L000520](../../api/omarai.py#L520) | 520 | `""` | — |
+| [SRC-EEF2E6447C-L000521](../../api/omarai.py#L521) | 521 | `"    def log_message(self, *args):"` | — |
+| [SRC-EEF2E6447C-L000522](../../api/omarai.py#L522) | 522 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000523](../../api/omarai.py#L523) | 523 | `""` | — |
+| [SRC-EEF2E6447C-L000524](../../api/omarai.py#L524) | 524 | `""` | — |
+| [SRC-EEF2E6447C-L000525](../../api/omarai.py#L525) | 525 | `"def answer_question(question, store):"` | — |
+| [SRC-EEF2E6447C-L000526](../../api/omarai.py#L526) | 526 | `"    \"\"\"Answer common operational questions from local records using explicit rules.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000527](../../api/omarai.py#L527) | 527 | `"    normalized = normalize(question)"` | — |
+| [SRC-EEF2E6447C-L000528](../../api/omarai.py#L528) | 528 | `"    leads = store.list(limit=500)"` | — |
+| [SRC-EEF2E6447C-L000529](../../api/omarai.py#L529) | 529 | `"    active = [lead for lead in leads if lead[\"status\"] not in {\"rejected\", \"converted\"}]"` | — |
+| [SRC-EEF2E6447C-L000530](../../api/omarai.py#L530) | 530 | `"    if any(term in normalized for term in (\"افضل عميل\", \"احسن عميل\", \"افضل اشارة\", \"احسن اشارة\", \"اشارة اراجعها\", \"مين افضل\", \"مين اتابع\", \"اتابع مين\", \"اهم عميل\")):"` | — |
+| [SRC-EEF2E6447C-L000531](../../api/omarai.py#L531) | 531 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000532](../../api/omarai.py#L532) | 532 | `"            return {\"answer\": \"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.\", \"kind\": \"no_data\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000533](../../api/omarai.py#L533) | 533 | `"        lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000534](../../api/omarai.py#L534) | 534 | `"        assessment = lead[\"assessment\"]"` | — |
+| [SRC-EEF2E6447C-L000535](../../api/omarai.py#L535) | 535 | `"        answer = \"الأولوية المقترحة للمراجعة هي الإشارة \" + lead[\"id\"][:8] + \" بدرجة قواعد \" + str(assessment[\"score\"]) + \"/100. السبب: \" + assessment[\"summary\"] + \" المصدر: \" + lead[\"source_url\"] + \". هذه أولوية مراجعة وليست تأكيدًا أن صاحبه سيشتري.\""` | — |
+| [SRC-EEF2E6447C-L000536](../../api/omarai.py#L536) | 536 | `"        return {\"answer\": answer, \"kind\": \"lead_recommendation\", \"lead_id\": lead[\"id\"]}"` | — |
+| [SRC-EEF2E6447C-L000537](../../api/omarai.py#L537) | 537 | `"    if any(term in normalized for term in (\"كام عميل\", \"كم عميل\", \"عدد العملاء\", \"عدد الاشارات\", \"الاحصائيات\", \"احصائيات\")):"` | — |
+| [SRC-EEF2E6447C-L000538](../../api/omarai.py#L538) | 538 | `"        keys = (\"new\", \"qualified\", \"contacted\", \"converted\", \"needs_review\", \"rejected\")"` | — |
+| [SRC-EEF2E6447C-L000539](../../api/omarai.py#L539) | 539 | `"        by_status = {key: sum(lead[\"status\"] == key for lead in leads) for key in keys}"` | — |
+| [SRC-EEF2E6447C-L000540](../../api/omarai.py#L540) | 540 | `"        high = sum(lead[\"assessment\"][\"label\"] == \"high_intent\" for lead in leads)"` | — |
+| [SRC-EEF2E6447C-L000541](../../api/omarai.py#L541) | 541 | `"        answer = \"في السجل المحلي \" + str(len(leads)) + \" إشارة، منها \" + str(high) + \" بإشارة قوية نسبيًا وفق القواعد. الحالات: جديد \" + str(by_status[\"new\"]) + \"، مؤهل \" + str(by_status[\"qualified\"]) + \"، تم التواصل \" + str(by_status[\"contacted\"]) + \"، تم البيع \" + str(by_status[\"converted\"]) + \"، تحتاج مراجعة \" + str(by_status[\"needs_review\"]) + \"، مرفوض \" + str(by_status[\"rejected\"]) + \".\""` | — |
+| [SRC-EEF2E6447C-L000542](../../api/omarai.py#L542) | 542 | `"        return {\"answer\": answer, \"kind\": \"local_statistics\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000543](../../api/omarai.py#L543) | 543 | `"    if any(term in normalized for term in (\"ليه الدرجه\", \"سبب الدرجه\", \"طريقة التقييم\", \"بتقيم ازاي\", \"معيار التقييم\")):"` | — |
+| [SRC-EEF2E6447C-L000544](../../api/omarai.py#L544) | 544 | `"        latest = max(leads, key=lambda item: item[\"updated_at\"], default=None)"` | — |
+| [SRC-EEF2E6447C-L000545](../../api/omarai.py#L545) | 545 | `"        if latest:"` | — |
+| [SRC-EEF2E6447C-L000546](../../api/omarai.py#L546) | 546 | `"            signals = \"، \".join(signal[\"phrase\"] for signal in latest[\"assessment\"][\"matched_signals\"]) or \"لم تُطابق عبارات معروفة\""` | — |
+| [SRC-EEF2E6447C-L000547](../../api/omarai.py#L547) | 547 | `"            answer = \"الإشارة الأحدث درجتها \" + str(latest[\"assessment\"][\"score\"]) + \"/100 لأن القواعد طابقت: \" + signals + \". الدرجة ليست احتمالًا إحصائيًا ولا تثبت نية الكاتب.\""` | — |
+| [SRC-EEF2E6447C-L000548](../../api/omarai.py#L548) | 548 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000549](../../api/omarai.py#L549) | 549 | `"            answer = \"أحسب الدرجة بقواعد واضحة: تعبير الشراء، خطوة تجارية تالية، السعر أو الميزانية، وسياق المنتج والمكان. كل فئة تحتسب مرة واحدة فقط.\""` | — |
+| [SRC-EEF2E6447C-L000550](../../api/omarai.py#L550) | 550 | `"        return {\"answer\": answer, \"kind\": \"scoring_explanation\", \"lead_id\": latest[\"id\"] if latest else None}"` | — |
+| [SRC-EEF2E6447C-L000551](../../api/omarai.py#L551) | 551 | `"    if any(term in normalized for term in (\"اكتب رساله\", \"اكتب رسالة\", \"رساله تواصل\", \"رسالة تواصل\", \"ابعتله\", \"اتواصل ازاي\")):"` | — |
+| [SRC-EEF2E6447C-L000552](../../api/omarai.py#L552) | 552 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000553](../../api/omarai.py#L553) | 553 | `"            answer = \"لا توجد إشارة محفوظة أخصص مسودة لها بعد. أدخل نصًا ومصدرًا أولًا.\""` | — |
+| [SRC-EEF2E6447C-L000554](../../api/omarai.py#L554) | 554 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000555](../../api/omarai.py#L555) | 555 | `"            lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000556](../../api/omarai.py#L556) | 556 | `"            answer = \"مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة \" + lead[\"id\"][:8] + \". لم يتم إرسال أي رسالة.\""` | — |
+| [SRC-EEF2E6447C-L000557](../../api/omarai.py#L557) | 557 | `"        return {\"answer\": answer, \"kind\": \"message_draft\", \"lead_id\": active[0][\"id\"] if active else None}"` | — |
+| [SRC-EEF2E6447C-L000558](../../api/omarai.py#L558) | 558 | `"    return {\"answer\": \"أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.\", \"kind\": \"help\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000559](../../api/omarai.py#L559) | 559 | `""` | — |
+| [SRC-EEF2E6447C-L000560](../../api/omarai.py#L560) | 560 | `""` | — |
+| [SRC-EEF2E6447C-L000561](../../api/omarai.py#L561) | 561 | `"def serve(host=\"127.0.0.1\", port=8765):"` | — |
+| [SRC-EEF2E6447C-L000562](../../api/omarai.py#L562) | 562 | `"    public_deployment = os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\""` | — |
+| [SRC-EEF2E6447C-L000563](../../api/omarai.py#L563) | 563 | `"    access_token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000564](../../api/omarai.py#L564) | 564 | `"    if host not in (\"127.0.0.1\", \"localhost\", \"::1\") and ("` | — |
+| [SRC-EEF2E6447C-L000565](../../api/omarai.py#L565) | 565 | `"        not public_deployment or len(access_token) < 32"` | — |
+| [SRC-EEF2E6447C-L000566](../../api/omarai.py#L566) | 566 | `"    ):"` | — |
+| [SRC-EEF2E6447C-L000567](../../api/omarai.py#L567) | 567 | `"        raise ValueError("` | — |
+| [SRC-EEF2E6447C-L000568](../../api/omarai.py#L568) | 568 | `"                \"Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and \""` | — |
+| [SRC-EEF2E6447C-L000569](../../api/omarai.py#L569) | 569 | `"                \"a private OMARAI_ACCESS_TOKEN of at least 32 characters.\""` | — |
+| [SRC-EEF2E6447C-L000570](../../api/omarai.py#L570) | 570 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000571](../../api/omarai.py#L571) | 571 | `"    server = ThreadingHTTPServer((host, port), Handler)"` | — |
+| [SRC-EEF2E6447C-L000572](../../api/omarai.py#L572) | 572 | `"    server.daemon_threads = True"` | — |
+| [SRC-EEF2E6447C-L000573](../../api/omarai.py#L573) | 573 | `"    print(f\"Omarai running at http://{host}:{port} — Ctrl+C to stop\")"` | — |
+| [SRC-EEF2E6447C-L000574](../../api/omarai.py#L574) | 574 | `"    print(\"Web research agent: /   \|   Lead workspace: /leads\")"` | — |
+| [SRC-EEF2E6447C-L000575](../../api/omarai.py#L575) | 575 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000576](../../api/omarai.py#L576) | 576 | `"        server.serve_forever()"` | — |
+| [SRC-EEF2E6447C-L000577](../../api/omarai.py#L577) | 577 | `"    except KeyboardInterrupt:"` | — |
+| [SRC-EEF2E6447C-L000578](../../api/omarai.py#L578) | 578 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000579](../../api/omarai.py#L579) | 579 | `"    finally:"` | — |
+| [SRC-EEF2E6447C-L000580](../../api/omarai.py#L580) | 580 | `"        server.server_close()"` | — |
+| [SRC-EEF2E6447C-L000581](../../api/omarai.py#L581) | 581 | `""` | — |
+| [SRC-EEF2E6447C-L000582](../../api/omarai.py#L582) | 582 | `""` | — |
+| [SRC-EEF2E6447C-L000583](../../api/omarai.py#L583) | 583 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-EEF2E6447C-L000584](../../api/omarai.py#L584) | 584 | `"    serve()"` | — |
+## واجهة سطر الأوامر
+
+### FILE-14C6359E27 — [cli/__init__.py](../../cli/__init__.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-14C6359E27-L000001](../../cli/__init__.py#L1) | 1 | `"\"\"\"Omarai command-line package.\"\"\""` | — |
 ## واجهة سطر الأوامر
 
 ### FILE-9C97DF51AC — [cli/omarai.py](../../cli/omarai.py#L1)
@@ -16,6 +187,39 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-9C97DF51AC-L000001](../../cli/omarai.py#L1) | 1 | `"\"\"\"Command-line interface for Omarai.\"\"\""` | — |
+| [SRC-9C97DF51AC-L000002](../../cli/omarai.py#L2) | 2 | `"import argparse"` | — |
+| [SRC-9C97DF51AC-L000003](../../cli/omarai.py#L3) | 3 | `"import json"` | — |
+| [SRC-9C97DF51AC-L000004](../../cli/omarai.py#L4) | 4 | `""` | — |
+| [SRC-9C97DF51AC-L000005](../../cli/omarai.py#L5) | 5 | `"from agents.omarai import LeadStore, analyze"` | — |
+| [SRC-9C97DF51AC-L000006](../../cli/omarai.py#L6) | 6 | `"from api.omarai import serve"` | — |
+| [SRC-9C97DF51AC-L000007](../../cli/omarai.py#L7) | 7 | `""` | — |
+| [SRC-9C97DF51AC-L000008](../../cli/omarai.py#L8) | 8 | `""` | — |
+| [SRC-9C97DF51AC-L000009](../../cli/omarai.py#L9) | 9 | `"def main():"` | — |
+| [SRC-9C97DF51AC-L000010](../../cli/omarai.py#L10) | 10 | `"    parser=argparse.ArgumentParser(prog=\"omarai\",description=\"Arabic lead-intent helper\")"` | — |
+| [SRC-9C97DF51AC-L000011](../../cli/omarai.py#L11) | 11 | `"    sub=parser.add_subparsers(dest=\"command\",required=True)"` | — |
+| [SRC-9C97DF51AC-L000012](../../cli/omarai.py#L12) | 12 | `"    p=sub.add_parser(\"analyze\")"` | — |
+| [SRC-9C97DF51AC-L000013](../../cli/omarai.py#L13) | 13 | `"    p.add_argument(\"--text\",required=True)"` | — |
+| [SRC-9C97DF51AC-L000014](../../cli/omarai.py#L14) | 14 | `"    p.add_argument(\"--product\",default=\"\")"` | — |
+| [SRC-9C97DF51AC-L000015](../../cli/omarai.py#L15) | 15 | `"    p.add_argument(\"--location\",default=\"\")"` | — |
+| [SRC-9C97DF51AC-L000016](../../cli/omarai.py#L16) | 16 | `"    p=sub.add_parser(\"serve\")"` | — |
+| [SRC-9C97DF51AC-L000017](../../cli/omarai.py#L17) | 17 | `"    p.add_argument(\"--host\",default=\"127.0.0.1\")"` | — |
+| [SRC-9C97DF51AC-L000018](../../cli/omarai.py#L18) | 18 | `"    p.add_argument(\"--port\",type=int,default=8765)"` | — |
+| [SRC-9C97DF51AC-L000019](../../cli/omarai.py#L19) | 19 | `"    p=sub.add_parser(\"import-csv\")"` | — |
+| [SRC-9C97DF51AC-L000020](../../cli/omarai.py#L20) | 20 | `"    p.add_argument(\"--file\",required=True)"` | — |
+| [SRC-9C97DF51AC-L000021](../../cli/omarai.py#L21) | 21 | `"    p=sub.add_parser(\"list\")"` | — |
+| [SRC-9C97DF51AC-L000022](../../cli/omarai.py#L22) | 22 | `"    p.add_argument(\"--limit\",type=int,default=100)"` | — |
+| [SRC-9C97DF51AC-L000023](../../cli/omarai.py#L23) | 23 | `"    p.add_argument(\"--status\")"` | — |
+| [SRC-9C97DF51AC-L000024](../../cli/omarai.py#L24) | 24 | `"    p=sub.add_parser(\"export-csv\")"` | — |
+| [SRC-9C97DF51AC-L000025](../../cli/omarai.py#L25) | 25 | `"    p.add_argument(\"--file\",required=True)"` | — |
+| [SRC-9C97DF51AC-L000026](../../cli/omarai.py#L26) | 26 | `"    args=parser.parse_args()"` | — |
+| [SRC-9C97DF51AC-L000027](../../cli/omarai.py#L27) | 27 | `"    if args.command==\"analyze\":"` | — |
+| [SRC-9C97DF51AC-L000028](../../cli/omarai.py#L28) | 28 | `"        result=analyze(args.text,[x.strip() for x in args.product.split(\",\") if x.strip()],[x.strip() for x in args.location.split(\",\") if x.strip()])"` | — |
+| [SRC-9C97DF51AC-L000029](../../cli/omarai.py#L29) | 29 | `"        print(json.dumps(result,ensure_ascii=False,indent=2))"` | — |
+| [SRC-9C97DF51AC-L000030](../../cli/omarai.py#L30) | 30 | `"        return"` | — |
+| [SRC-9C97DF51AC-L000031](../../cli/omarai.py#L31) | 31 | `"    store=LeadStore()"` | — |
+| [SRC-9C97DF51AC-L000032](../../cli/omarai.py#L32) | 32 | `"    if args.command==\"serve\":"` | — |
+| [SRC-9C97DF51AC-L000033](../../cli/omarai.py#L33) | 33 | `"        serve(args.host,args.port)"` | — |
 | [SRC-9C97DF51AC-L000034](../../cli/omarai.py#L34) | 34 | `"    elif args.command==\"import-csv\":"` | — |
 | [SRC-9C97DF51AC-L000035](../../cli/omarai.py#L35) | 35 | `"        print(json.dumps(store.import_csv(args.file),ensure_ascii=False,indent=2))"` | — |
 | [SRC-9C97DF51AC-L000036](../../cli/omarai.py#L36) | 36 | `"    elif args.command==\"list\":"` | — |
@@ -684,189 +888,3 @@
 | [SRC-E599346ABE-L000257](../generate_index.py#L257) | 257 | `"            )"` | — |
 | [SRC-E599346ABE-L000258](../generate_index.py#L258) | 258 | `"        )"` | — |
 | [SRC-E599346ABE-L000259](../generate_index.py#L259) | 259 | `""` | — |
-| [SRC-E599346ABE-L000260](../generate_index.py#L260) | 260 | `"    def _record_assignment_target(self, node: ast.AST, line: int) -> None:"` | — |
-| [SRC-E599346ABE-L000261](../generate_index.py#L261) | 261 | `"        \"\"\"Record declared names from a module-level or class-level assignment.\"\"\""` | — |
-| [SRC-E599346ABE-L000262](../generate_index.py#L262) | 262 | `"        if isinstance(node, ast.Name):"` | — |
-| [SRC-E599346ABE-L000263](../generate_index.py#L263) | 263 | `"            qualified_name = \".\".join((*self.scope, node.id))"` | — |
-| [SRC-E599346ABE-L000264](../generate_index.py#L264) | 264 | `"            self.symbols.append("` | — |
-| [SRC-E599346ABE-L000265](../generate_index.py#L265) | 265 | `"                IndexedSymbol("` | — |
-| [SRC-E599346ABE-L000266](../generate_index.py#L266) | 266 | `"                    file=self.relative_file,"` | — |
-| [SRC-E599346ABE-L000267](../generate_index.py#L267) | 267 | `"                    name=qualified_name,"` | — |
-| [SRC-E599346ABE-L000268](../generate_index.py#L268) | 268 | `"                    kind=\"متغير/ثابت Python\","` | — |
-| [SRC-E599346ABE-L000269](../generate_index.py#L269) | 269 | `"                    line=line,"` | — |
-| [SRC-E599346ABE-L000270](../generate_index.py#L270) | 270 | `"                    description=\"تعريف على مستوى الوحدة أو الكلاس.\","` | — |
-| [SRC-E599346ABE-L000271](../generate_index.py#L271) | 271 | `"                    documented=None,"` | — |
-| [SRC-E599346ABE-L000272](../generate_index.py#L272) | 272 | `"                )"` | — |
-| [SRC-E599346ABE-L000273](../generate_index.py#L273) | 273 | `"            )"` | — |
-| [SRC-E599346ABE-L000274](../generate_index.py#L274) | 274 | `"        elif isinstance(node, (ast.Tuple, ast.List)):"` | — |
-| [SRC-E599346ABE-L000275](../generate_index.py#L275) | 275 | `"            for element in node.elts:"` | — |
-| [SRC-E599346ABE-L000276](../generate_index.py#L276) | 276 | `"                self._record_assignment_target(element, line)"` | — |
-| [SRC-E599346ABE-L000277](../generate_index.py#L277) | 277 | `""` | — |
-| [SRC-E599346ABE-L000278](../generate_index.py#L278) | 278 | `"    def visit_Assign(self, node: ast.Assign) -> None:"` | — |
-| [SRC-E599346ABE-L000279](../generate_index.py#L279) | 279 | `"        \"\"\"Index module/class assignment names but avoid flooding the index with locals.\"\"\""` | — |
-| [SRC-E599346ABE-L000280](../generate_index.py#L280) | 280 | `"        if self.function_depth == 0:"` | — |
-| [SRC-E599346ABE-L000281](../generate_index.py#L281) | 281 | `"            for target in node.targets:"` | — |
-| [SRC-E599346ABE-L000282](../generate_index.py#L282) | 282 | `"                self._record_assignment_target(target, node.lineno)"` | — |
-| [SRC-E599346ABE-L000283](../generate_index.py#L283) | 283 | `"        self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000284](../generate_index.py#L284) | 284 | `""` | — |
-| [SRC-E599346ABE-L000285](../generate_index.py#L285) | 285 | `"    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:"` | — |
-| [SRC-E599346ABE-L000286](../generate_index.py#L286) | 286 | `"        \"\"\"Index annotated module/class assignments without counting local variables.\"\"\""` | — |
-| [SRC-E599346ABE-L000287](../generate_index.py#L287) | 287 | `"        if self.function_depth == 0:"` | — |
-| [SRC-E599346ABE-L000288](../generate_index.py#L288) | 288 | `"            self._record_assignment_target(node.target, node.lineno)"` | — |
-| [SRC-E599346ABE-L000289](../generate_index.py#L289) | 289 | `"        self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000290](../generate_index.py#L290) | 290 | `""` | — |
-| [SRC-E599346ABE-L000291](../generate_index.py#L291) | 291 | `"    def visit_ClassDef(self, node: ast.ClassDef) -> None:"` | — |
-| [SRC-E599346ABE-L000292](../generate_index.py#L292) | 292 | `"        \"\"\"Record a class and recursively inspect its body.\"\"\""` | — |
-| [SRC-E599346ABE-L000293](../generate_index.py#L293) | 293 | `"        self._record_definition(node, \"كلاس\")"` | — |
-| [SRC-E599346ABE-L000294](../generate_index.py#L294) | 294 | `"        self.scope.append(node.name)"` | — |
-| [SRC-E599346ABE-L000295](../generate_index.py#L295) | 295 | `"        try:"` | — |
-| [SRC-E599346ABE-L000296](../generate_index.py#L296) | 296 | `"            self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000297](../generate_index.py#L297) | 297 | `"        finally:"` | — |
-| [SRC-E599346ABE-L000298](../generate_index.py#L298) | 298 | `"            self.scope.pop()"` | — |
-| [SRC-E599346ABE-L000299](../generate_index.py#L299) | 299 | `""` | — |
-| [SRC-E599346ABE-L000300](../generate_index.py#L300) | 300 | `"    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:"` | — |
-| [SRC-E599346ABE-L000301](../generate_index.py#L301) | 301 | `"        \"\"\"Record a synchronous function or method and nested definitions.\"\"\""` | — |
-| [SRC-E599346ABE-L000302](../generate_index.py#L302) | 302 | `"        self._record_definition(node, \"دالة\")"` | — |
-| [SRC-E599346ABE-L000303](../generate_index.py#L303) | 303 | `"        self.scope.append(node.name)"` | — |
-| [SRC-E599346ABE-L000304](../generate_index.py#L304) | 304 | `"        self.function_depth += 1"` | — |
-| [SRC-E599346ABE-L000305](../generate_index.py#L305) | 305 | `"        try:"` | — |
-| [SRC-E599346ABE-L000306](../generate_index.py#L306) | 306 | `"            self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000307](../generate_index.py#L307) | 307 | `"        finally:"` | — |
-| [SRC-E599346ABE-L000308](../generate_index.py#L308) | 308 | `"            self.function_depth -= 1"` | — |
-| [SRC-E599346ABE-L000309](../generate_index.py#L309) | 309 | `"            self.scope.pop()"` | — |
-| [SRC-E599346ABE-L000310](../generate_index.py#L310) | 310 | `""` | — |
-| [SRC-E599346ABE-L000311](../generate_index.py#L311) | 311 | `"    def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:"` | — |
-| [SRC-E599346ABE-L000312](../generate_index.py#L312) | 312 | `"        \"\"\"Record an asynchronous function or method and nested definitions.\"\"\""` | — |
-| [SRC-E599346ABE-L000313](../generate_index.py#L313) | 313 | `"        self._record_definition(node, \"دالة غير متزامنة\")"` | — |
-| [SRC-E599346ABE-L000314](../generate_index.py#L314) | 314 | `"        self.scope.append(node.name)"` | — |
-| [SRC-E599346ABE-L000315](../generate_index.py#L315) | 315 | `"        self.function_depth += 1"` | — |
-| [SRC-E599346ABE-L000316](../generate_index.py#L316) | 316 | `"        try:"` | — |
-| [SRC-E599346ABE-L000317](../generate_index.py#L317) | 317 | `"            self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000318](../generate_index.py#L318) | 318 | `"        finally:"` | — |
-| [SRC-E599346ABE-L000319](../generate_index.py#L319) | 319 | `"            self.function_depth -= 1"` | — |
-| [SRC-E599346ABE-L000320](../generate_index.py#L320) | 320 | `"            self.scope.pop()"` | — |
-| [SRC-E599346ABE-L000321](../generate_index.py#L321) | 321 | `""` | — |
-| [SRC-E599346ABE-L000322](../generate_index.py#L322) | 322 | `""` | — |
-| [SRC-E599346ABE-L000323](../generate_index.py#L323) | 323 | `"def _is_sensitive_or_runtime_path(path: Path) -> bool:"` | — |
-| [SRC-E599346ABE-L000324](../generate_index.py#L324) | 324 | `"    \"\"\"Exclude known local secrets, runtime databases, keys and generated bytecode.\"\"\""` | — |
-| [SRC-E599346ABE-L000325](../generate_index.py#L325) | 325 | `"    name = path.name.lower()"` | — |
-| [SRC-E599346ABE-L000326](../generate_index.py#L326) | 326 | `"    if name in SENSITIVE_FILENAMES:"` | — |
-| [SRC-E599346ABE-L000327](../generate_index.py#L327) | 327 | `"        return True"` | — |
-| [SRC-E599346ABE-L000328](../generate_index.py#L328) | 328 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
-| [SRC-E599346ABE-L000329](../generate_index.py#L329) | 329 | `"        return True"` | — |
-| [SRC-E599346ABE-L000330](../generate_index.py#L330) | 330 | `"    return path.suffix.lower() in EXCLUDED_SUFFIXES"` | — |
-| [SRC-E599346ABE-L000331](../generate_index.py#L331) | 331 | `""` | — |
-| [SRC-E599346ABE-L000332](../generate_index.py#L332) | 332 | `""` | — |
-| [SRC-E599346ABE-L000333](../generate_index.py#L333) | 333 | `"def _stable_file_id(relative_file: str) -> str:"` | — |
-| [SRC-E599346ABE-L000334](../generate_index.py#L334) | 334 | `"    \"\"\"Return a deterministic path-derived identifier without hashing file contents.\"\"\""` | — |
-| [SRC-E599346ABE-L000335](../generate_index.py#L335) | 335 | `"    digest = hashlib.sha256(relative_file.encode(\"utf-8\")).hexdigest()[:10].upper()"` | — |
-| [SRC-E599346ABE-L000336](../generate_index.py#L336) | 336 | `"    return f\"FILE-{digest}\""` | — |
-| [SRC-E599346ABE-L000337](../generate_index.py#L337) | 337 | `""` | — |
-| [SRC-E599346ABE-L000338](../generate_index.py#L338) | 338 | `""` | — |
-| [SRC-E599346ABE-L000339](../generate_index.py#L339) | 339 | `"def _category_for_path(relative_file: str) -> str:"` | — |
-| [SRC-E599346ABE-L000340](../generate_index.py#L340) | 340 | `"    \"\"\"Assign an understandable navigation category from the repository-relative path.\"\"\""` | — |
-| [SRC-E599346ABE-L000341](../generate_index.py#L341) | 341 | `"    normalized = relative_file.replace(\"\\\\\", \"/\")"` | — |
-| [SRC-E599346ABE-L000342](../generate_index.py#L342) | 342 | `"    name = Path(normalized).name.lower()"` | — |
-| [SRC-E599346ABE-L000343](../generate_index.py#L343) | 343 | `"    suffix = Path(normalized).suffix.lower()"` | — |
-| [SRC-E599346ABE-L000344](../generate_index.py#L344) | 344 | `"    if normalized.startswith(\"tests/\") or \"/tests/\" in normalized:"` | — |
-| [SRC-E599346ABE-L000345](../generate_index.py#L345) | 345 | `"        return \"اختبارات\""` | — |
-| [SRC-E599346ABE-L000346](../generate_index.py#L346) | 346 | `"    if normalized.startswith(\".github/workflows/\"):"` | — |
-| [SRC-E599346ABE-L000347](../generate_index.py#L347) | 347 | `"        return \"CI وأتمتة\""` | — |
-| [SRC-E599346ABE-L000348](../generate_index.py#L348) | 348 | `"    if normalized.startswith(\"agents/\"):"` | — |
-| [SRC-E599346ABE-L000349](../generate_index.py#L349) | 349 | `"        return \"الوكيل والمنطق\""` | — |
-| [SRC-E599346ABE-L000350](../generate_index.py#L350) | 350 | `"    if normalized.startswith(\"api/\"):"` | — |
-| [SRC-E599346ABE-L000351](../generate_index.py#L351) | 351 | `"        return \"واجهات API\""` | — |
-| [SRC-E599346ABE-L000352](../generate_index.py#L352) | 352 | `"    if normalized.startswith(\"cli/\"):"` | — |
-| [SRC-E599346ABE-L000353](../generate_index.py#L353) | 353 | `"        return \"واجهة سطر الأوامر\""` | — |
-| [SRC-E599346ABE-L000354](../generate_index.py#L354) | 354 | `"    if normalized.startswith(\"docs/\"):"` | — |
-| [SRC-E599346ABE-L000355](../generate_index.py#L355) | 355 | `"        return \"وثائق وفهرسة\""` | — |
-| [SRC-E599346ABE-L000356](../generate_index.py#L356) | 356 | `"    if normalized.startswith((\"web/\", \"static/\", \"templates/\")) or suffix in {"` | — |
-| [SRC-E599346ABE-L000357](../generate_index.py#L357) | 357 | `"        \".html\", \".htm\", \".css\", \".scss\", \".js\", \".mjs\", \".cjs\", \".jsx\", \".ts\", \".tsx\","` | — |
-| [SRC-E599346ABE-L000358](../generate_index.py#L358) | 358 | `"        \".vue\", \".svelte\","` | — |
-| [SRC-E599346ABE-L000359](../generate_index.py#L359) | 359 | `"    }:"` | — |
-| [SRC-E599346ABE-L000360](../generate_index.py#L360) | 360 | `"        return \"واجهة الويب\""` | — |
-| [SRC-E599346ABE-L000361](../generate_index.py#L361) | 361 | `"    if name in {"` | — |
-| [SRC-E599346ABE-L000362](../generate_index.py#L362) | 362 | `"        \"dockerfile\", \"makefile\", \"procfile\", \"pyproject.toml\","` | — |
-| [SRC-E599346ABE-L000363](../generate_index.py#L363) | 363 | `"        \"requirements.txt\", \"requirements-dev.txt\", \".gitignore\","` | — |
-| [SRC-E599346ABE-L000364](../generate_index.py#L364) | 364 | `"        \".dockerignore\", \".editorconfig\","` | — |
-| [SRC-E599346ABE-L000365](../generate_index.py#L365) | 365 | `"    } or suffix in {\".yml\", \".yaml\", \".toml\", \".ini\", \".cfg\", \".json\", \".jsonl\", \".xml\"}:"` | — |
-| [SRC-E599346ABE-L000366](../generate_index.py#L366) | 366 | `"        return \"إعدادات وتشغيل\""` | — |
-| [SRC-E599346ABE-L000367](../generate_index.py#L367) | 367 | `"    if suffix in {\".md\", \".rst\", \".txt\"}:"` | — |
-| [SRC-E599346ABE-L000368](../generate_index.py#L368) | 368 | `"        return \"وثائق ونصوص\""` | — |
-| [SRC-E599346ABE-L000369](../generate_index.py#L369) | 369 | `"    return \"ملفات أخرى\""` | — |
-| [SRC-E599346ABE-L000370](../generate_index.py#L370) | 370 | `""` | — |
-| [SRC-E599346ABE-L000371](../generate_index.py#L371) | 371 | `""` | — |
-| [SRC-E599346ABE-L000372](../generate_index.py#L372) | 372 | `"def discover_repository_files(root: Path) -> list[Path]:"` | — |
-| [SRC-E599346ABE-L000373](../generate_index.py#L373) | 373 | `"    \"\"\"Return the stable file inventory, excluding the generated index and runtime data.\"\"\""` | — |
-| [SRC-E599346ABE-L000374](../generate_index.py#L374) | 374 | `"    discovered: list[Path] = []"` | — |
-| [SRC-E599346ABE-L000375](../generate_index.py#L375) | 375 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
-| [SRC-E599346ABE-L000376](../generate_index.py#L376) | 376 | `"        root,"` | — |
-| [SRC-E599346ABE-L000377](../generate_index.py#L377) | 377 | `"        topdown=True,"` | — |
-| [SRC-E599346ABE-L000378](../generate_index.py#L378) | 378 | `"        followlinks=False,"` | — |
-| [SRC-E599346ABE-L000379](../generate_index.py#L379) | 379 | `"    ):"` | — |
-| [SRC-E599346ABE-L000380](../generate_index.py#L380) | 380 | `"        directory_names[:] = sorted("` | — |
-| [SRC-E599346ABE-L000381](../generate_index.py#L381) | 381 | `"            name"` | — |
-| [SRC-E599346ABE-L000382](../generate_index.py#L382) | 382 | `"            for name in directory_names"` | — |
-| [SRC-E599346ABE-L000383](../generate_index.py#L383) | 383 | `"            if name not in EXCLUDED_DIRECTORIES"` | — |
-| [SRC-E599346ABE-L000384](../generate_index.py#L384) | 384 | `"            and not name.lower().endswith((\".egg-info\", \".dist-info\"))"` | — |
-| [SRC-E599346ABE-L000385](../generate_index.py#L385) | 385 | `"            and not (Path(current_directory) / name).is_symlink()"` | — |
-| [SRC-E599346ABE-L000386](../generate_index.py#L386) | 386 | `"        )"` | — |
-| [SRC-E599346ABE-L000387](../generate_index.py#L387) | 387 | `"        for file_name in sorted(file_names):"` | — |
-| [SRC-E599346ABE-L000388](../generate_index.py#L388) | 388 | `"            candidate = Path(current_directory) / file_name"` | — |
-| [SRC-E599346ABE-L000389](../generate_index.py#L389) | 389 | `"            if candidate.is_symlink() or _is_sensitive_or_runtime_path(candidate):"` | — |
-| [SRC-E599346ABE-L000390](../generate_index.py#L390) | 390 | `"                continue"` | — |
-| [SRC-E599346ABE-L000391](../generate_index.py#L391) | 391 | `"            relative_file = candidate.relative_to(root).as_posix()"` | — |
-| [SRC-E599346ABE-L000392](../generate_index.py#L392) | 392 | `"            if ("` | — |
-| [SRC-E599346ABE-L000393](../generate_index.py#L393) | 393 | `"                relative_file in INDEX_OUTPUT_PATHS"` | — |
-| [SRC-E599346ABE-L000394](../generate_index.py#L394) | 394 | `"                or relative_file.startswith(SOURCE_LINES_PAGES_DIR + \"/\")"` | — |
-| [SRC-E599346ABE-L000395](../generate_index.py#L395) | 395 | `"            ):"` | — |
-| [SRC-E599346ABE-L000396](../generate_index.py#L396) | 396 | `"                # Exclude generated index outputs to prevent self-indexing loops."` | — |
-| [SRC-E599346ABE-L000397](../generate_index.py#L397) | 397 | `"                continue"` | — |
-| [SRC-E599346ABE-L000398](../generate_index.py#L398) | 398 | `"            discovered.append(candidate)"` | — |
-| [SRC-E599346ABE-L000399](../generate_index.py#L399) | 399 | `""` | — |
-| [SRC-E599346ABE-L000400](../generate_index.py#L400) | 400 | `"    return sorted("` | — |
-| [SRC-E599346ABE-L000401](../generate_index.py#L401) | 401 | `"        discovered,"` | — |
-| [SRC-E599346ABE-L000402](../generate_index.py#L402) | 402 | `"        key=lambda path: path.relative_to(root).as_posix().casefold(),"` | — |
-| [SRC-E599346ABE-L000403](../generate_index.py#L403) | 403 | `"    )"` | — |
-| [SRC-E599346ABE-L000404](../generate_index.py#L404) | 404 | `""` | — |
-| [SRC-E599346ABE-L000405](../generate_index.py#L405) | 405 | `""` | — |
-| [SRC-E599346ABE-L000406](../generate_index.py#L406) | 406 | `"def _read_text_bounded(path: Path) -> str \| None:"` | — |
-| [SRC-E599346ABE-L000407](../generate_index.py#L407) | 407 | `"    \"\"\"Read supported UTF-8 text files only when they are within the scan-size bound.\"\"\""` | — |
-| [SRC-E599346ABE-L000408](../generate_index.py#L408) | 408 | `"    try:"` | — |
-| [SRC-E599346ABE-L000409](../generate_index.py#L409) | 409 | `"        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:"` | — |
-| [SRC-E599346ABE-L000410](../generate_index.py#L410) | 410 | `"            return None"` | — |
-| [SRC-E599346ABE-L000411](../generate_index.py#L411) | 411 | `"        if path.suffix.lower() == \".py\":"` | — |
-| [SRC-E599346ABE-L000412](../generate_index.py#L412) | 412 | `"            with tokenize.open(str(path)) as source_stream:"` | — |
-| [SRC-E599346ABE-L000413](../generate_index.py#L413) | 413 | `"                text = source_stream.read()"` | — |
-| [SRC-E599346ABE-L000414](../generate_index.py#L414) | 414 | `"        else:"` | — |
-| [SRC-E599346ABE-L000415](../generate_index.py#L415) | 415 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-E599346ABE-L000416](../generate_index.py#L416) | 416 | `"        if \"\\x00\" in text:"` | — |
-| [SRC-E599346ABE-L000417](../generate_index.py#L417) | 417 | `"            return None"` | — |
-| [SRC-E599346ABE-L000418](../generate_index.py#L418) | 418 | `"        return text"` | — |
-| [SRC-E599346ABE-L000419](../generate_index.py#L419) | 419 | `"    except (OSError, UnicodeError, LookupError, tokenize.TokenError):"` | — |
-| [SRC-E599346ABE-L000420](../generate_index.py#L420) | 420 | `"        return None"` | — |
-| [SRC-E599346ABE-L000421](../generate_index.py#L421) | 421 | `""` | — |
-| [SRC-E599346ABE-L000422](../generate_index.py#L422) | 422 | `""` | — |
-| [SRC-E599346ABE-L000423](../generate_index.py#L423) | 423 | `"def _count_lines(text: str) -> int:"` | — |
-| [SRC-E599346ABE-L000424](../generate_index.py#L424) | 424 | `"    \"\"\"Count source lines without adding an extra line for a trailing newline.\"\"\""` | — |
-| [SRC-E599346ABE-L000425](../generate_index.py#L425) | 425 | `"    if not text:"` | — |
-| [SRC-E599346ABE-L000426](../generate_index.py#L426) | 426 | `"        return 0"` | — |
-| [SRC-E599346ABE-L000427](../generate_index.py#L427) | 427 | `"    return text.count(\"\\n\") + (not text.endswith(\"\\n\"))"` | — |
-| [SRC-E599346ABE-L000428](../generate_index.py#L428) | 428 | `""` | — |
-| [SRC-E599346ABE-L000429](../generate_index.py#L429) | 429 | `""` | — |
-| [SRC-E599346ABE-L000430](../generate_index.py#L430) | 430 | `"def _file_type(path: Path) -> str:"` | — |
-| [SRC-E599346ABE-L000431](../generate_index.py#L431) | 431 | `"    \"\"\"Return a readable file type based on a known filename or extension.\"\"\""` | — |
-| [SRC-E599346ABE-L000432](../generate_index.py#L432) | 432 | `"    name = path.name.lower()"` | — |
-| [SRC-E599346ABE-L000433](../generate_index.py#L433) | 433 | `"    if name in {\"dockerfile\", \"makefile\", \"procfile\"}:"` | — |
-| [SRC-E599346ABE-L000434](../generate_index.py#L434) | 434 | `"        return name.capitalize()"` | — |
-| [SRC-E599346ABE-L000435](../generate_index.py#L435) | 435 | `"    suffix = path.suffix.lower()"` | — |
-| [SRC-E599346ABE-L000436](../generate_index.py#L436) | 436 | `"    labels = {"` | — |
-| [SRC-E599346ABE-L000437](../generate_index.py#L437) | 437 | `"        \".py\": \"Python\","` | — |
-| [SRC-E599346ABE-L000438](../generate_index.py#L438) | 438 | `"        \".html\": \"HTML\","` | — |
-| [SRC-E599346ABE-L000439](../generate_index.py#L439) | 439 | `"        \".htm\": \"HTML\","` | — |
-| [SRC-E599346ABE-L000440](../generate_index.py#L440) | 440 | `"        \".js\": \"JavaScript\","` | — |
-| [SRC-E599346ABE-L000441](../generate_index.py#L441) | 441 | `"        \".mjs\": \"JavaScript module\","` | — |
-| [SRC-E599346ABE-L000442](../generate_index.py#L442) | 442 | `"        \".cjs\": \"CommonJS\","` | — |
-| [SRC-E599346ABE-L000443](../generate_index.py#L443) | 443 | `"        \".jsx\": \"React JSX\","` | — |
-| [SRC-E599346ABE-L000444](../generate_index.py#L444) | 444 | `"        \".ts\": \"TypeScript\","` | — |
-| [SRC-E599346ABE-L000445](../generate_index.py#L445) | 445 | `"        \".tsx\": \"TypeScript JSX\","` | — |
