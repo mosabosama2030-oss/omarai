@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003499 إلى SRC-1AE03B9EC3-L004298
+- النطاق: SRC-1AE03B9EC3-L003492 إلى SRC-1AE03B9EC3-L004291
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003492](../../agents/web_agent.py#L3492) | 3492 | `"                platform"` | — |
+| [SRC-1AE03B9EC3-L003493](../../agents/web_agent.py#L3493) | 3493 | `"                for platform, is_configured in optional_connectors.items()"` | — |
+| [SRC-1AE03B9EC3-L003494](../../agents/web_agent.py#L3494) | 3494 | `"                if is_configured"` | — |
+| [SRC-1AE03B9EC3-L003495](../../agents/web_agent.py#L3495) | 3495 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003496](../../agents/web_agent.py#L3496) | 3496 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L003497](../../agents/web_agent.py#L3497) | 3497 | `"                social_results, social_warnings = self._search_social("` | — |
+| [SRC-1AE03B9EC3-L003498](../../agents/web_agent.py#L3498) | 3498 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
 | [SRC-1AE03B9EC3-L003499](../../agents/web_agent.py#L3499) | 3499 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L003500](../../agents/web_agent.py#L3500) | 3500 | `"                providers: dict[str, int] = {}"` | — |
 | [SRC-1AE03B9EC3-L003501](../../agents/web_agent.py#L3501) | 3501 | `"                for source in social_results:"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L004289](../../agents/web_agent.py#L4289) | 4289 | `"                if id(item) not in baseline_diagnostic_ids"` | — |
 | [SRC-1AE03B9EC3-L004290](../../agents/web_agent.py#L4290) | 4290 | `"            ]"` | — |
 | [SRC-1AE03B9EC3-L004291](../../agents/web_agent.py#L4291) | 4291 | `"        report[\"provider_diagnostics\"] = current_research_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L004292](../../agents/web_agent.py#L4292) | 4292 | `"        provider_attempt_observed = any("` | — |
-| [SRC-1AE03B9EC3-L004293](../../agents/web_agent.py#L4293) | 4293 | `"            item.get(\"status\") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
-| [SRC-1AE03B9EC3-L004294](../../agents/web_agent.py#L4294) | 4294 | `"            for item in current_research_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L004295](../../agents/web_agent.py#L4295) | 4295 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004296](../../agents/web_agent.py#L4296) | 4296 | `"        raw_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L004297](../../agents/web_agent.py#L4297) | 4297 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L004298](../../agents/web_agent.py#L4298) | 4298 | `"            queries_attempted = ("` | — |

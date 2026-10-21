@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **033**
-- سجلات الأسطر: **142**
-- النطاق: SRC-DE7EABE998-L000299 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **149**
+- النطاق: SRC-DE7EABE998-L000292 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `"  const no=document.createElement(\"p\");no.className=\"no-sources\";"` | — |
+| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  no.textContent=\"لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.\";"` | — |
+| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `"  box.appendChild(no);"` | — |
+| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `" }"` | — |
+| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `" $(\"messages\").appendChild(box);box.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `" return box;"` | — |
+| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `"}"` | — |
 | [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"function setBusy(on){busy=on;$(\"send\").disabled=on;$(\"send\").textContent=on?\"يبحث…\":\"ابحث ←\";$(\"question\").disabled=on;document.querySelectorAll(\".mode-btn\").forEach(b=>b.disabled=on);}"` | — |
 | [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `"async function ask(value){"` | — |
 | [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `" const q=(value??$(\"question\").value).trim();if(!q\|\|busy)return;"` | — |

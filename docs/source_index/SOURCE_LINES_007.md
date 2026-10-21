@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002699 إلى SRC-1AE03B9EC3-L003498
+- النطاق: SRC-1AE03B9EC3-L002692 إلى SRC-1AE03B9EC3-L003491
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002692](../../agents/web_agent.py#L2692) | 2692 | `"                self.base_url + \"/chat/completions\","` | — |
+| [SRC-1AE03B9EC3-L002693](../../agents/web_agent.py#L2693) | 2693 | `"                data=payload,"` | — |
+| [SRC-1AE03B9EC3-L002694](../../agents/web_agent.py#L2694) | 2694 | `"                headers={"` | — |
+| [SRC-1AE03B9EC3-L002695](../../agents/web_agent.py#L2695) | 2695 | `"                    \"Authorization\": \"Bearer \" + self.api_key,"` | — |
+| [SRC-1AE03B9EC3-L002696](../../agents/web_agent.py#L2696) | 2696 | `"                    \"Content-Type\": \"application/json\","` | — |
+| [SRC-1AE03B9EC3-L002697](../../agents/web_agent.py#L2697) | 2697 | `"                    \"HTTP-Referer\": \"https://github.com/mosabosama2030-oss/omarai\","` | — |
+| [SRC-1AE03B9EC3-L002698](../../agents/web_agent.py#L2698) | 2698 | `"                    \"X-Title\": \"Omarai Web Agent\","` | — |
 | [SRC-1AE03B9EC3-L002699](../../agents/web_agent.py#L2699) | 2699 | `"                },"` | — |
 | [SRC-1AE03B9EC3-L002700](../../agents/web_agent.py#L2700) | 2700 | `"                method=\"POST\","` | — |
 | [SRC-1AE03B9EC3-L002701](../../agents/web_agent.py#L2701) | 2701 | `"            )"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L003489](../../agents/web_agent.py#L3489) | 3489 | `"                \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
 | [SRC-1AE03B9EC3-L003490](../../agents/web_agent.py#L3490) | 3490 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L003491](../../agents/web_agent.py#L3491) | 3491 | `"            configured_platforms.extend("` | — |
-| [SRC-1AE03B9EC3-L003492](../../agents/web_agent.py#L3492) | 3492 | `"                platform"` | — |
-| [SRC-1AE03B9EC3-L003493](../../agents/web_agent.py#L3493) | 3493 | `"                for platform, is_configured in optional_connectors.items()"` | — |
-| [SRC-1AE03B9EC3-L003494](../../agents/web_agent.py#L3494) | 3494 | `"                if is_configured"` | — |
-| [SRC-1AE03B9EC3-L003495](../../agents/web_agent.py#L3495) | 3495 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003496](../../agents/web_agent.py#L3496) | 3496 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L003497](../../agents/web_agent.py#L3497) | 3497 | `"                social_results, social_warnings = self._search_social("` | — |
-| [SRC-1AE03B9EC3-L003498](../../agents/web_agent.py#L3498) | 3498 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
