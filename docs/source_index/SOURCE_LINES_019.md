@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000284 إلى SRC-4FFD5AFC54-L000288
+- النطاق: SRC-69F3587825-L000276 إلى SRC-4FFD5AFC54-L000280
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000276](../search_code.py#L276) | 276 | `"            extensions=extensions,"` | — |
+| [SRC-69F3587825-L000277](../search_code.py#L277) | 277 | `"            max_results=max(1, args.max),"` | — |
+| [SRC-69F3587825-L000278](../search_code.py#L278) | 278 | `"            context=max(0, args.context),"` | — |
+| [SRC-69F3587825-L000279](../search_code.py#L279) | 279 | `"        )"` | — |
+| [SRC-69F3587825-L000280](../search_code.py#L280) | 280 | `"    except (OSError, ValueError, re.error) as exc:"` | — |
+| [SRC-69F3587825-L000281](../search_code.py#L281) | 281 | `"        print(f\"خطأ في البحث: {exc}\", file=sys.stderr)"` | — |
+| [SRC-69F3587825-L000282](../search_code.py#L282) | 282 | `"        return 1"` | — |
+| [SRC-69F3587825-L000283](../search_code.py#L283) | 283 | `""` | — |
 | [SRC-69F3587825-L000284](../search_code.py#L284) | 284 | `"    print(format_hits(hits))"` | — |
 | [SRC-69F3587825-L000285](../search_code.py#L285) | 285 | `"    print(f\"\\n# عدد النتائج: {len(hits)}\")"` | — |
 | [SRC-69F3587825-L000286](../search_code.py#L286) | 286 | `"    return 0"` | — |
@@ -880,11 +888,3 @@
 | [SRC-4FFD5AFC54-L000278](../../scripts/run_answer_quality_benchmark.py#L278) | 278 | `"        cases = [c for c in cases if c[\"case_id\"] == case_id]"` | — |
 | [SRC-4FFD5AFC54-L000279](../../scripts/run_answer_quality_benchmark.py#L279) | 279 | `"        if not cases:"` | — |
 | [SRC-4FFD5AFC54-L000280](../../scripts/run_answer_quality_benchmark.py#L280) | 280 | `"            print(f\"Unknown case_id: {case_id}\", file=sys.stderr)"` | — |
-| [SRC-4FFD5AFC54-L000281](../../scripts/run_answer_quality_benchmark.py#L281) | 281 | `"            return 2"` | — |
-| [SRC-4FFD5AFC54-L000282](../../scripts/run_answer_quality_benchmark.py#L282) | 282 | `"    if limit > 0:"` | — |
-| [SRC-4FFD5AFC54-L000283](../../scripts/run_answer_quality_benchmark.py#L283) | 283 | `"        cases = cases[:limit]"` | — |
-| [SRC-4FFD5AFC54-L000284](../../scripts/run_answer_quality_benchmark.py#L284) | 284 | `""` | — |
-| [SRC-4FFD5AFC54-L000285](../../scripts/run_answer_quality_benchmark.py#L285) | 285 | `"    results = []"` | — |
-| [SRC-4FFD5AFC54-L000286](../../scripts/run_answer_quality_benchmark.py#L286) | 286 | `"    print("` | — |
-| [SRC-4FFD5AFC54-L000287](../../scripts/run_answer_quality_benchmark.py#L287) | 287 | `"        \"LIVE mode: fixtures are NOT injected into the server. \""` | — |
-| [SRC-4FFD5AFC54-L000288](../../scripts/run_answer_quality_benchmark.py#L288) | 288 | `"        \"Answers are recorded as NOT_TESTED (quality) unless transport fails.\""` | — |
