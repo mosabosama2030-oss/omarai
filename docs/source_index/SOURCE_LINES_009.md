@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000429 إلى SRC-E599346ABE-L000296
+- النطاق: SRC-EEF2E6447C-L000428 إلى SRC-E599346ABE-L000295
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000428](../../api/omarai.py#L428) | 428 | `"                agent = WebAgent()"` | — |
 | [SRC-EEF2E6447C-L000429](../../api/omarai.py#L429) | 429 | `"                history = data.get(\"history\", [])"` | — |
 | [SRC-EEF2E6447C-L000430](../../api/omarai.py#L430) | 430 | `"                if \"mode\" not in data:"` | — |
 | [SRC-EEF2E6447C-L000431](../../api/omarai.py#L431) | 431 | `"                    return self._run_bounded_agent_operation("` | — |
@@ -887,4 +888,3 @@
 | [SRC-E599346ABE-L000293](../generate_index.py#L293) | 293 | `"        self._record_definition(node, \"كلاس\")"` | — |
 | [SRC-E599346ABE-L000294](../generate_index.py#L294) | 294 | `"        self.scope.append(node.name)"` | — |
 | [SRC-E599346ABE-L000295](../generate_index.py#L295) | 295 | `"        try:"` | — |
-| [SRC-E599346ABE-L000296](../generate_index.py#L296) | 296 | `"            self.generic_visit(node)"` | — |

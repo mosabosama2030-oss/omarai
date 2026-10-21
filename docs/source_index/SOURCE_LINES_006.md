@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002322 إلى SRC-1AE03B9EC3-L003121
+- النطاق: SRC-1AE03B9EC3-L002321 إلى SRC-1AE03B9EC3-L003120
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002321](../../agents/web_agent.py#L2321) | 2321 | `"        follow_up_markers = ("` | — |
 | [SRC-1AE03B9EC3-L002322](../../agents/web_agent.py#L2322) | 2322 | `"            \"والسعر\", \"وسعر\", \"طب \", \"وماذا\", \"وكمان\", \"تفاصيل اكتر\","` | — |
 | [SRC-1AE03B9EC3-L002323](../../agents/web_agent.py#L2323) | 2323 | `"            \"كام سعرها\", \"كم سعرها\", \"بكام دي\", \"بكام ده\", \"سعرها كام\","` | — |
 | [SRC-1AE03B9EC3-L002324](../../agents/web_agent.py#L2324) | 2324 | `"            \"سعره كام\", \"قارنهم\", \"قارن بينهم\", \"قارن بينهما\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003118](../../agents/web_agent.py#L3118) | 3118 | `"                for platform, is_configured in optional_connectors.items()"` | — |
 | [SRC-1AE03B9EC3-L003119](../../agents/web_agent.py#L3119) | 3119 | `"                if is_configured"` | — |
 | [SRC-1AE03B9EC3-L003120](../../agents/web_agent.py#L3120) | 3120 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003121](../../agents/web_agent.py#L3121) | 3121 | `"            try:"` | — |

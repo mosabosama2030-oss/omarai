@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000722 إلى SRC-1AE03B9EC3-L001521
+- النطاق: SRC-1AE03B9EC3-L000721 إلى SRC-1AE03B9EC3-L001520
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000721](../../agents/web_agent.py#L721) | 721 | `"            return True"` | — |
 | [SRC-1AE03B9EC3-L000722](../../agents/web_agent.py#L722) | 722 | `"        value = _normalize_search_query(question).casefold()"` | — |
 | [SRC-1AE03B9EC3-L000723](../../agents/web_agent.py#L723) | 723 | `"        dynamic_terms = ("` | — |
 | [SRC-1AE03B9EC3-L000724](../../agents/web_agent.py#L724) | 724 | `"            \"ابحث\", \"بحث عن\", \"دور على\", \"دورلي\", \"هات رابط\", \"هاتلي\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001518](../../agents/web_agent.py#L1518) | 1518 | `"                            \"https://oauth.reddit.com/search\","` | — |
 | [SRC-1AE03B9EC3-L001519](../../agents/web_agent.py#L1519) | 1519 | `"                            params={"` | — |
 | [SRC-1AE03B9EC3-L001520](../../agents/web_agent.py#L1520) | 1520 | `"                                \"q\": query,"` | — |
-| [SRC-1AE03B9EC3-L001521](../../agents/web_agent.py#L1521) | 1521 | `"                                \"sort\": \"relevance\","` | — |

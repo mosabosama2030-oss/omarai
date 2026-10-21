@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **69**
 - ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **855**
+- تعريفات Python المفهرسة: **857**
 - تعريفات Python موثقة بوجود Docstring: **171**
-- تعريفات Python بلا Docstring: **518**
+- تعريفات Python بلا Docstring: **520**
 - تعريفات لا ينطبق عليها Docstring: **166**
-- الرموز الساكنة الإضافية: **1336**
-- الأسطر النصية المفهرسة حرفيًا: **22711**
+- الرموز الساكنة الإضافية: **1335**
+- الأسطر النصية المفهرسة حرفيًا: **22728**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 13767 | 326 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
-| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 28426 | 676 | جرد الملف + AST Python |
+| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 28482 | 677 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 219930 | 4292 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 26827 | 551 | جرد الملف + AST Python |
@@ -91,11 +91,11 @@
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 3540 | 101 | جرد الملف + AST Python |
-| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 4526 | 111 | جرد الملف + AST Python |
+| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 5153 | 124 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 99277 | 2566 | جرد الملف + AST Python |
-| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 41061 | 337 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 99534 | 2569 | جرد الملف + AST Python |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 41028 | 337 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16299 | 44 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
@@ -175,18 +175,18 @@
 | [agents/research.py](../agents/research.py#L164) | دالة | mentioned_social_platforms | لا توجد Docstring. | ناقص | 164 | [SRC-59CF4B7DE8-L000164](../agents/research.py#L164) |
 | [agents/research.py](../agents/research.py#L180) | دالة | _followup_query | لا توجد Docstring. | ناقص | 180 | [SRC-59CF4B7DE8-L000180](../agents/research.py#L180) |
 | [agents/research.py](../agents/research.py#L199) | دالة | fallback_plan | Build a small but varied plan when no model planner is configured or parsing fails. | موثق | 199 | [SRC-59CF4B7DE8-L000199](../agents/research.py#L199) |
-| [agents/research.py](../agents/research.py#L254) | دالة | validate_plan | لا توجد Docstring. | ناقص | 254 | [SRC-59CF4B7DE8-L000254](../agents/research.py#L254) |
-| [agents/research.py](../agents/research.py#L294) | دالة | _canonical_result_url | لا توجد Docstring. | ناقص | 294 | [SRC-59CF4B7DE8-L000294](../agents/research.py#L294) |
-| [agents/research.py](../agents/research.py#L313) | دالة | classify_source | لا توجد Docstring. | ناقص | 313 | [SRC-59CF4B7DE8-L000313](../agents/research.py#L313) |
-| [agents/research.py](../agents/research.py#L346) | دالة | fuse_ranked_results | Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs. | موثق | 346 | [SRC-59CF4B7DE8-L000346](../agents/research.py#L346) |
-| [agents/research.py](../agents/research.py#L415) | دالة | _parse_publication_date | Parse common search/RSS publication dates without guessing missing dates. | موثق | 415 | [SRC-59CF4B7DE8-L000415](../agents/research.py#L415) |
-| [agents/research.py](../agents/research.py#L457) | دالة | evidence_signal_report | Summarize research coverage; signals describe evidence coverage, not factual truth. | موثق | 457 | [SRC-59CF4B7DE8-L000457](../agents/research.py#L457) |
-| [agents/research.py](../agents/research.py#L553) | متغير/ثابت Python | _RELEVANCE_STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 553 | [SRC-59CF4B7DE8-L000553](../agents/research.py#L553) |
-| [agents/research.py](../agents/research.py#L560) | متغير/ثابت Python | _OFFICIAL_CLASSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 560 | [SRC-59CF4B7DE8-L000560](../agents/research.py#L560) |
-| [agents/research.py](../agents/research.py#L563) | دالة | _tokenize | لا توجد Docstring. | ناقص | 563 | [SRC-59CF4B7DE8-L000563](../agents/research.py#L563) |
-| [agents/research.py](../agents/research.py#L571) | دالة | source_relevance_score | لا توجد Docstring. | ناقص | 571 | [SRC-59CF4B7DE8-L000571](../agents/research.py#L571) |
-| [agents/research.py](../agents/research.py#L605) | دالة | filter_relevant_sources | لا توجد Docstring. | ناقص | 605 | [SRC-59CF4B7DE8-L000605](../agents/research.py#L605) |
-| [agents/research.py](../agents/research.py#L642) | دالة | decide_evidence_status | لا توجد Docstring. | ناقص | 642 | [SRC-59CF4B7DE8-L000642](../agents/research.py#L642) |
+| [agents/research.py](../agents/research.py#L255) | دالة | validate_plan | لا توجد Docstring. | ناقص | 255 | [SRC-59CF4B7DE8-L000255](../agents/research.py#L255) |
+| [agents/research.py](../agents/research.py#L295) | دالة | _canonical_result_url | لا توجد Docstring. | ناقص | 295 | [SRC-59CF4B7DE8-L000295](../agents/research.py#L295) |
+| [agents/research.py](../agents/research.py#L314) | دالة | classify_source | لا توجد Docstring. | ناقص | 314 | [SRC-59CF4B7DE8-L000314](../agents/research.py#L314) |
+| [agents/research.py](../agents/research.py#L347) | دالة | fuse_ranked_results | Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs. | موثق | 347 | [SRC-59CF4B7DE8-L000347](../agents/research.py#L347) |
+| [agents/research.py](../agents/research.py#L416) | دالة | _parse_publication_date | Parse common search/RSS publication dates without guessing missing dates. | موثق | 416 | [SRC-59CF4B7DE8-L000416](../agents/research.py#L416) |
+| [agents/research.py](../agents/research.py#L458) | دالة | evidence_signal_report | Summarize research coverage; signals describe evidence coverage, not factual truth. | موثق | 458 | [SRC-59CF4B7DE8-L000458](../agents/research.py#L458) |
+| [agents/research.py](../agents/research.py#L554) | متغير/ثابت Python | _RELEVANCE_STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 554 | [SRC-59CF4B7DE8-L000554](../agents/research.py#L554) |
+| [agents/research.py](../agents/research.py#L561) | متغير/ثابت Python | _OFFICIAL_CLASSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 561 | [SRC-59CF4B7DE8-L000561](../agents/research.py#L561) |
+| [agents/research.py](../agents/research.py#L564) | دالة | _tokenize | لا توجد Docstring. | ناقص | 564 | [SRC-59CF4B7DE8-L000564](../agents/research.py#L564) |
+| [agents/research.py](../agents/research.py#L572) | دالة | source_relevance_score | لا توجد Docstring. | ناقص | 572 | [SRC-59CF4B7DE8-L000572](../agents/research.py#L572) |
+| [agents/research.py](../agents/research.py#L606) | دالة | filter_relevant_sources | لا توجد Docstring. | ناقص | 606 | [SRC-59CF4B7DE8-L000606](../agents/research.py#L606) |
+| [agents/research.py](../agents/research.py#L643) | دالة | decide_evidence_status | لا توجد Docstring. | ناقص | 643 | [SRC-59CF4B7DE8-L000643](../agents/research.py#L643) |
 | [agents/web_agent.py](../agents/web_agent.py#L36) | متغير/ثابت Python | MAX_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 36 | [SRC-1AE03B9EC3-L000036](../agents/web_agent.py#L36) |
 | [agents/web_agent.py](../agents/web_agent.py#L37) | متغير/ثابت Python | MAX_HISTORY_ITEMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 37 | [SRC-1AE03B9EC3-L000037](../agents/web_agent.py#L37) |
 | [agents/web_agent.py](../agents/web_agent.py#L38) | متغير/ثابت Python | MAX_HISTORY_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 38 | [SRC-1AE03B9EC3-L000038](../agents/web_agent.py#L38) |
@@ -745,6 +745,8 @@
 | [tests/test_research.py](../tests/test_research.py#L79) | دالة | test_explicit_page_urls_are_extracted_and_not_left_in_search_terms | لا توجد Docstring. | ناقص | 79 | [SRC-6BF96689A8-L000079](../tests/test_research.py#L79) |
 | [tests/test_research.py](../tests/test_research.py#L88) | دالة | test_registrable_domain_groups_subdomains_and_respects_public_suffixes | لا توجد Docstring. | ناقص | 88 | [SRC-6BF96689A8-L000088](../tests/test_research.py#L88) |
 | [tests/test_research.py](../tests/test_research.py#L97) | دالة | test_evidence_coverage_does_not_count_sibling_subdomains_as_independent | لا توجد Docstring. | ناقص | 97 | [SRC-6BF96689A8-L000097](../tests/test_research.py#L97) |
+| [tests/test_research.py](../tests/test_research.py#L115) | دالة | test_standard_fallback_plan_does_not_add_deep_research_query | لا توجد Docstring. | ناقص | 115 | [SRC-6BF96689A8-L000115](../tests/test_research.py#L115) |
+| [tests/test_research.py](../tests/test_research.py#L121) | دالة | test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison | لا توجد Docstring. | ناقص | 121 | [SRC-6BF96689A8-L000121](../tests/test_research.py#L121) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L15) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 | [SRC-01E35ABC46-L000015](../tests/test_research_guardrails.py#L15) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L21) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 | [SRC-01E35ABC46-L000021](../tests/test_research_guardrails.py#L21) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L27) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 | [SRC-01E35ABC46-L000027](../tests/test_research_guardrails.py#L27) |
@@ -915,50 +917,50 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L1974) | دالة | test_research_error_without_provider_diagnostics_is_reported_as_unknown.fail_before_attempt | لا توجد Docstring. | ناقص | 1974 | [SRC-F725E90B2A-L001974](../tests/test_web_agent.py#L1974) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L1991) | دالة | test_general_answer_does_not_silently_slice_overlong_model_output | لا توجد Docstring. | ناقص | 1991 | [SRC-F725E90B2A-L001991](../tests/test_web_agent.py#L1991) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2005) | دالة | test_frontend_discloses_unknown_counts_after_research_error | لا توجد Docstring. | ناقص | 2005 | [SRC-F725E90B2A-L002005](../tests/test_web_agent.py#L2005) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2014) | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed | لا توجد Docstring. | ناقص | 2014 | [SRC-F725E90B2A-L002014](../tests/test_web_agent.py#L2014) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2026) | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed.fail_after_generic_provider_error | لا توجد Docstring. | ناقص | 2026 | [SRC-F725E90B2A-L002026](../tests/test_web_agent.py#L2026) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2051) | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results | لا توجد Docstring. | ناقص | 2051 | [SRC-F725E90B2A-L002051](../tests/test_web_agent.py#L2051) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2055) | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results.search | لا توجد Docstring. | ناقص | 2055 | [SRC-F725E90B2A-L002055](../tests/test_web_agent.py#L2055) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2080) | دالة | test_lead_discovery_is_distinct_from_listing_search | لا توجد Docstring. | ناقص | 2080 | [SRC-F725E90B2A-L002080](../tests/test_web_agent.py#L2080) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2087) | دالة | test_buyer_intent_evidence_requires_explicit_purchase_signal | لا توجد Docstring. | ناقص | 2087 | [SRC-F725E90B2A-L002087](../tests/test_web_agent.py#L2087) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2104) | دالة | test_lead_generation_does_not_present_sale_listings_as_buyers | لا توجد Docstring. | ناقص | 2104 | [SRC-F725E90B2A-L002104](../tests/test_web_agent.py#L2104) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2156) | دالة | test_lead_generation_search_plan_includes_high_intent_queries | لا توجد Docstring. | ناقص | 2156 | [SRC-F725E90B2A-L002156](../tests/test_web_agent.py#L2156) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2169) | دالة | test_lead_generation_search_plan_includes_high_intent_queries.collect | لا توجد Docstring. | ناقص | 2169 | [SRC-F725E90B2A-L002169](../tests/test_web_agent.py#L2169) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2207) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key | لا توجد Docstring. | ناقص | 2207 | [SRC-F725E90B2A-L002207](../tests/test_web_agent.py#L2207) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2214) | كلاس | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse | لا توجد Docstring. | ناقص | 2214 | [SRC-F725E90B2A-L002214](../tests/test_web_agent.py#L2214) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2215) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 2215 | [SRC-F725E90B2A-L002215](../tests/test_web_agent.py#L2215) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2218) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.json | لا توجد Docstring. | ناقص | 2218 | [SRC-F725E90B2A-L002218](../tests/test_web_agent.py#L2218) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2232) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.fake_post | لا توجد Docstring. | ناقص | 2232 | [SRC-F725E90B2A-L002232](../tests/test_web_agent.py#L2232) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2250) | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline | لا توجد Docstring. | ناقص | 2250 | [SRC-F725E90B2A-L002250](../tests/test_web_agent.py#L2250) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2254) | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline.completed_empty_search | لا توجد Docstring. | ناقص | 2254 | [SRC-F725E90B2A-L002254](../tests/test_web_agent.py#L2254) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2270) | دالة | test_deepseek_search_request_budget_defaults_to_one_and_is_bounded | لا توجد Docstring. | ناقص | 2270 | [SRC-F725E90B2A-L002270](../tests/test_web_agent.py#L2270) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2285) | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure | لا توجد Docstring. | ناقص | 2285 | [SRC-F725E90B2A-L002285](../tests/test_web_agent.py#L2285) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2290) | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure.no_results | لا توجد Docstring. | ناقص | 2290 | [SRC-F725E90B2A-L002290](../tests/test_web_agent.py#L2290) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2305) | دالة | test_buyer_intent_phrase_inside_negated_text_is_not_a_lead_signal | لا توجد Docstring. | ناقص | 2305 | [SRC-F725E90B2A-L002305](../tests/test_web_agent.py#L2305) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2315) | دالة | test_lead_generation_preserves_unknown_state_when_research_throws | لا توجد Docstring. | ناقص | 2315 | [SRC-F725E90B2A-L002315](../tests/test_web_agent.py#L2315) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2329) | دالة | test_lead_generation_preserves_unknown_state_when_research_throws.fail_research | لا توجد Docstring. | ناقص | 2329 | [SRC-F725E90B2A-L002329](../tests/test_web_agent.py#L2329) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2353) | دالة | test_local_answer_exposes_request_budget_without_claiming_live_search | لا توجد Docstring. | ناقص | 2353 | [SRC-F725E90B2A-L002353](../tests/test_web_agent.py#L2353) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2370) | دالة | test_reviewed_answer_without_valid_citations_cannot_be_rated_good | لا توجد Docstring. | ناقص | 2370 | [SRC-F725E90B2A-L002370](../tests/test_web_agent.py#L2370) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2441) | دالة | test_public_ip_literals_rejects_mixed_public_and_private_dns_answers | لا توجد Docstring. | ناقص | 2441 | [SRC-F725E90B2A-L002441](../tests/test_web_agent.py#L2441) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2460) | دالة | test_pinned_connect_url_uses_checked_ip_without_losing_logical_path | لا توجد Docstring. | ناقص | 2460 | [SRC-F725E90B2A-L002460](../tests/test_web_agent.py#L2460) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2469) | دالة | test_fetch_page_rejects_private_redirect_before_connecting | لا توجد Docstring. | ناقص | 2469 | [SRC-F725E90B2A-L002469](../tests/test_web_agent.py#L2469) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2479) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.resolve_public_ip | لا توجد Docstring. | ناقص | 2479 | [SRC-F725E90B2A-L002479](../tests/test_web_agent.py#L2479) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2485) | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse | لا توجد Docstring. | ناقص | 2485 | [SRC-F725E90B2A-L002485](../tests/test_web_agent.py#L2485) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2488) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2488 | [SRC-F725E90B2A-L002488](../tests/test_web_agent.py#L2488) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2492) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.fake_stream | لا توجد Docstring. | ناقص | 2492 | [SRC-F725E90B2A-L002492](../tests/test_web_agent.py#L2492) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2496) | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient | لا توجد Docstring. | ناقص | 2496 | [SRC-F725E90B2A-L002496](../tests/test_web_agent.py#L2496) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2497) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2497 | [SRC-F725E90B2A-L002497](../tests/test_web_agent.py#L2497) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2500) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2500 | [SRC-F725E90B2A-L002500](../tests/test_web_agent.py#L2500) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2503) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2503 | [SRC-F725E90B2A-L002503](../tests/test_web_agent.py#L2503) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2518) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination | لا توجد Docstring. | ناقص | 2518 | [SRC-F725E90B2A-L002518](../tests/test_web_agent.py#L2518) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2528) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.resolve_public_ip | لا توجد Docstring. | ناقص | 2528 | [SRC-F725E90B2A-L002528](../tests/test_web_agent.py#L2528) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2537) | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse | لا توجد Docstring. | ناقص | 2537 | [SRC-F725E90B2A-L002537](../tests/test_web_agent.py#L2537) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2540) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2540 | [SRC-F725E90B2A-L002540](../tests/test_web_agent.py#L2540) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2544) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.fake_stream | لا توجد Docstring. | ناقص | 2544 | [SRC-F725E90B2A-L002544](../tests/test_web_agent.py#L2544) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2548) | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient | لا توجد Docstring. | ناقص | 2548 | [SRC-F725E90B2A-L002548](../tests/test_web_agent.py#L2548) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2549) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2549 | [SRC-F725E90B2A-L002549](../tests/test_web_agent.py#L2549) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2552) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2552 | [SRC-F725E90B2A-L002552](../tests/test_web_agent.py#L2552) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2555) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2555 | [SRC-F725E90B2A-L002555](../tests/test_web_agent.py#L2555) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2017) | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed | لا توجد Docstring. | ناقص | 2017 | [SRC-F725E90B2A-L002017](../tests/test_web_agent.py#L2017) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2029) | دالة | test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed.fail_after_generic_provider_error | لا توجد Docstring. | ناقص | 2029 | [SRC-F725E90B2A-L002029](../tests/test_web_agent.py#L2029) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2054) | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results | لا توجد Docstring. | ناقص | 2054 | [SRC-F725E90B2A-L002054](../tests/test_web_agent.py#L2054) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2058) | دالة | test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results.search | لا توجد Docstring. | ناقص | 2058 | [SRC-F725E90B2A-L002058](../tests/test_web_agent.py#L2058) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2083) | دالة | test_lead_discovery_is_distinct_from_listing_search | لا توجد Docstring. | ناقص | 2083 | [SRC-F725E90B2A-L002083](../tests/test_web_agent.py#L2083) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2090) | دالة | test_buyer_intent_evidence_requires_explicit_purchase_signal | لا توجد Docstring. | ناقص | 2090 | [SRC-F725E90B2A-L002090](../tests/test_web_agent.py#L2090) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2107) | دالة | test_lead_generation_does_not_present_sale_listings_as_buyers | لا توجد Docstring. | ناقص | 2107 | [SRC-F725E90B2A-L002107](../tests/test_web_agent.py#L2107) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2159) | دالة | test_lead_generation_search_plan_includes_high_intent_queries | لا توجد Docstring. | ناقص | 2159 | [SRC-F725E90B2A-L002159](../tests/test_web_agent.py#L2159) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2172) | دالة | test_lead_generation_search_plan_includes_high_intent_queries.collect | لا توجد Docstring. | ناقص | 2172 | [SRC-F725E90B2A-L002172](../tests/test_web_agent.py#L2172) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2210) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key | لا توجد Docstring. | ناقص | 2210 | [SRC-F725E90B2A-L002210](../tests/test_web_agent.py#L2210) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2217) | كلاس | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse | لا توجد Docstring. | ناقص | 2217 | [SRC-F725E90B2A-L002217](../tests/test_web_agent.py#L2217) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2218) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 2218 | [SRC-F725E90B2A-L002218](../tests/test_web_agent.py#L2218) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2221) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.FakeResponse.json | لا توجد Docstring. | ناقص | 2221 | [SRC-F725E90B2A-L002221](../tests/test_web_agent.py#L2221) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2235) | دالة | test_deepseek_search_adapter_normalizes_results_without_exposing_api_key.fake_post | لا توجد Docstring. | ناقص | 2235 | [SRC-F725E90B2A-L002235](../tests/test_web_agent.py#L2235) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2253) | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline | لا توجد Docstring. | ناقص | 2253 | [SRC-F725E90B2A-L002253](../tests/test_web_agent.py#L2253) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2257) | دالة | test_diagnostics_distinguishes_connector_response_without_matches_from_offline.completed_empty_search | لا توجد Docstring. | ناقص | 2257 | [SRC-F725E90B2A-L002257](../tests/test_web_agent.py#L2257) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2273) | دالة | test_deepseek_search_request_budget_defaults_to_one_and_is_bounded | لا توجد Docstring. | ناقص | 2273 | [SRC-F725E90B2A-L002273](../tests/test_web_agent.py#L2273) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2288) | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure | لا توجد Docstring. | ناقص | 2288 | [SRC-F725E90B2A-L002288](../tests/test_web_agent.py#L2288) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2293) | دالة | test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure.no_results | لا توجد Docstring. | ناقص | 2293 | [SRC-F725E90B2A-L002293](../tests/test_web_agent.py#L2293) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2308) | دالة | test_buyer_intent_phrase_inside_negated_text_is_not_a_lead_signal | لا توجد Docstring. | ناقص | 2308 | [SRC-F725E90B2A-L002308](../tests/test_web_agent.py#L2308) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2318) | دالة | test_lead_generation_preserves_unknown_state_when_research_throws | لا توجد Docstring. | ناقص | 2318 | [SRC-F725E90B2A-L002318](../tests/test_web_agent.py#L2318) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2332) | دالة | test_lead_generation_preserves_unknown_state_when_research_throws.fail_research | لا توجد Docstring. | ناقص | 2332 | [SRC-F725E90B2A-L002332](../tests/test_web_agent.py#L2332) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2356) | دالة | test_local_answer_exposes_request_budget_without_claiming_live_search | لا توجد Docstring. | ناقص | 2356 | [SRC-F725E90B2A-L002356](../tests/test_web_agent.py#L2356) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2373) | دالة | test_reviewed_answer_without_valid_citations_cannot_be_rated_good | لا توجد Docstring. | ناقص | 2373 | [SRC-F725E90B2A-L002373](../tests/test_web_agent.py#L2373) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2444) | دالة | test_public_ip_literals_rejects_mixed_public_and_private_dns_answers | لا توجد Docstring. | ناقص | 2444 | [SRC-F725E90B2A-L002444](../tests/test_web_agent.py#L2444) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2463) | دالة | test_pinned_connect_url_uses_checked_ip_without_losing_logical_path | لا توجد Docstring. | ناقص | 2463 | [SRC-F725E90B2A-L002463](../tests/test_web_agent.py#L2463) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2472) | دالة | test_fetch_page_rejects_private_redirect_before_connecting | لا توجد Docstring. | ناقص | 2472 | [SRC-F725E90B2A-L002472](../tests/test_web_agent.py#L2472) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2482) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.resolve_public_ip | لا توجد Docstring. | ناقص | 2482 | [SRC-F725E90B2A-L002482](../tests/test_web_agent.py#L2482) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2488) | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse | لا توجد Docstring. | ناقص | 2488 | [SRC-F725E90B2A-L002488](../tests/test_web_agent.py#L2488) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2491) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2491 | [SRC-F725E90B2A-L002491](../tests/test_web_agent.py#L2491) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2495) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.fake_stream | لا توجد Docstring. | ناقص | 2495 | [SRC-F725E90B2A-L002495](../tests/test_web_agent.py#L2495) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2499) | كلاس | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient | لا توجد Docstring. | ناقص | 2499 | [SRC-F725E90B2A-L002499](../tests/test_web_agent.py#L2499) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2500) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2500 | [SRC-F725E90B2A-L002500](../tests/test_web_agent.py#L2500) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2503) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2503 | [SRC-F725E90B2A-L002503](../tests/test_web_agent.py#L2503) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2506) | دالة | test_fetch_page_rejects_private_redirect_before_connecting.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2506 | [SRC-F725E90B2A-L002506](../tests/test_web_agent.py#L2506) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2521) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination | لا توجد Docstring. | ناقص | 2521 | [SRC-F725E90B2A-L002521](../tests/test_web_agent.py#L2521) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2531) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.resolve_public_ip | لا توجد Docstring. | ناقص | 2531 | [SRC-F725E90B2A-L002531](../tests/test_web_agent.py#L2531) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2540) | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse | لا توجد Docstring. | ناقص | 2540 | [SRC-F725E90B2A-L002540](../tests/test_web_agent.py#L2540) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2543) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.RedirectResponse.__init__ | لا توجد Docstring. | ناقص | 2543 | [SRC-F725E90B2A-L002543](../tests/test_web_agent.py#L2543) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2547) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.fake_stream | لا توجد Docstring. | ناقص | 2547 | [SRC-F725E90B2A-L002547](../tests/test_web_agent.py#L2547) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2551) | كلاس | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient | لا توجد Docstring. | ناقص | 2551 | [SRC-F725E90B2A-L002551](../tests/test_web_agent.py#L2551) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2552) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__init__ | لا توجد Docstring. | ناقص | 2552 | [SRC-F725E90B2A-L002552](../tests/test_web_agent.py#L2552) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2555) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 2555 | [SRC-F725E90B2A-L002555](../tests/test_web_agent.py#L2555) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2558) | دالة | test_fetch_page_revalidates_dns_for_each_redirect_destination.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 2558 | [SRC-F725E90B2A-L002558](../tests/test_web_agent.py#L2558) |
 
 ## الرموز الساكنة الإضافية
 
@@ -1995,12 +1997,12 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L914) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 914 | [SRC-F725E90B2A-L000914](../tests/test_web_agent.py#L914) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L1319) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 1319 | [SRC-F725E90B2A-L001319](../tests/test_web_agent.py#L1319) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L1319) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 1319 | [SRC-F725E90B2A-L001319](../tests/test_web_agent.py#L1319) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2148) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 2148 | [SRC-F725E90B2A-L002148](../tests/test_web_agent.py#L2148) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2210) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 2210 | [SRC-F725E90B2A-L002210](../tests/test_web_agent.py#L2210) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2272) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 2272 | [SRC-F725E90B2A-L002272](../tests/test_web_agent.py#L2272) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2447) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 2447 | [SRC-F725E90B2A-L002447](../tests/test_web_agent.py#L2447) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2447) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IPPROTO_TCP | 2447 | [SRC-F725E90B2A-L002447](../tests/test_web_agent.py#L2447) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2447) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 2447 | [SRC-F725E90B2A-L002447](../tests/test_web_agent.py#L2447) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 2151 | [SRC-F725E90B2A-L002151](../tests/test_web_agent.py#L2151) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2213) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 2213 | [SRC-F725E90B2A-L002213](../tests/test_web_agent.py#L2213) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2275) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 2275 | [SRC-F725E90B2A-L002275](../tests/test_web_agent.py#L2275) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2450) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 2450 | [SRC-F725E90B2A-L002450](../tests/test_web_agent.py#L2450) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2450) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IPPROTO_TCP | 2450 | [SRC-F725E90B2A-L002450](../tests/test_web_agent.py#L2450) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2450) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 2450 | [SRC-F725E90B2A-L002450](../tests/test_web_agent.py#L2450) |
 | [web/agent.html](../web/agent.html#L5) | قيمة سمة HTML (name) | viewport | 5 | [SRC-DE7EABE998-L000005](../web/agent.html#L5) |
 | [web/agent.html](../web/agent.html#L6) | قيمة سمة HTML (name) | theme-color | 6 | [SRC-DE7EABE998-L000006](../web/agent.html#L6) |
 | [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | amber | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
@@ -2147,7 +2149,6 @@
 | [web/agent.html](../web/agent.html#L152) | متغير JavaScript/TypeScript | leadResearchIncomplete | 152 | [SRC-DE7EABE998-L000152](../web/agent.html#L152) |
 | [web/agent.html](../web/agent.html#L153) | متغير JavaScript/TypeScript | leadSignalCount | 153 | [SRC-DE7EABE998-L000153](../web/agent.html#L153) |
 | [web/agent.html](../web/agent.html#L154) | متغير JavaScript/TypeScript | noQualifiedLeads | 154 | [SRC-DE7EABE998-L000154](../web/agent.html#L154) |
-| [web/agent.html](../web/agent.html#L155) | متغير JavaScript/TypeScript | score | 155 | [SRC-DE7EABE998-L000155](../web/agent.html#L155) |
 | [web/agent.html](../web/agent.html#L156) | متغير JavaScript/TypeScript | scoreLabel | 156 | [SRC-DE7EABE998-L000156](../web/agent.html#L156) |
 | [web/agent.html](../web/agent.html#L157) | متغير JavaScript/TypeScript | metrics | 157 | [SRC-DE7EABE998-L000157](../web/agent.html#L157) |
 | [web/agent.html](../web/agent.html#L168) | متغير JavaScript/TypeScript | metricHtml | 168 | [SRC-DE7EABE998-L000168](../web/agent.html#L168) |

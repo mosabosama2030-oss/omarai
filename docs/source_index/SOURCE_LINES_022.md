@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000653 إلى SRC-FA4E1423C3-L000373
+- النطاق: SRC-3451CC474D-L000652 إلى SRC-FA4E1423C3-L000372
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000652](../../tests/test_api.py#L652) | 652 | `""` | — |
 | [SRC-3451CC474D-L000653](../../tests/test_api.py#L653) | 653 | `"    assert elapsed < 0.8"` | — |
 | [SRC-3451CC474D-L000654](../../tests/test_api.py#L654) | 654 | `"    # The timed-out request never reached application dispatch; the handler closes silently."` | — |
 | [SRC-3451CC474D-L000655](../../tests/test_api.py#L655) | 655 | `"    assert response == b\"\""` | — |
@@ -851,4 +852,3 @@
 | [SRC-FA4E1423C3-L000370](../../tests/test_generate_index.py#L370) | 370 | `") -> None:"` | — |
 | [SRC-FA4E1423C3-L000371](../../tests/test_generate_index.py#L371) | 371 | `"    \"\"\"Coverage report states exact skipped-file reasons without exposing secret contents.\"\"\""` | — |
 | [SRC-FA4E1423C3-L000372](../../tests/test_generate_index.py#L372) | 372 | `"    (tmp_path / \"source.py\").write_text(\"VALUE = 7\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000373](../../tests/test_generate_index.py#L373) | 373 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_API_TOKEN=never-print-this-secret\\n\", encoding=\"utf-8\")"` | — |
