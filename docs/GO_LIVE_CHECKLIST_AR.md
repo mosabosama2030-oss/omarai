@@ -11,8 +11,8 @@
 3. اضبط الأسرار من لوحة الاستضافة فقط: `OMARAI_PUBLIC_DEPLOYMENT=1`، ورمز `OMARAI_ACCESS_TOKEN` عشوائي بطول 32 حرفًا على الأقل، ومفتاح مزود النموذج `OPENROUTER_API_KEY` أو `OMARAI_LLM_API_KEY`.
 4. اترك `OMARAI_OPENROUTER_WEB_SEARCH` غير مضبوط ما لم تراجع التكلفة وتوافق عليها.
 5. أنشئ نطاق HTTPS وتحقق من `https://your-app.example.com/api/health`.
-6. عند بناء صورة Docker، مرّر SHA الكامل للمصدر عبر وسيط البناء: `--build-arg OMARAI_BUILD_SHA="$(git rev-parse HEAD)"`. يجب أن تعيد `/api/health` قيمة `build.sha` المطابقة لذلك الـSHA.
-7. إذا كانت منصة الاستضافة لا تسمح بتمرير وسيط البناء، فربط SHA يظل غير مثبت؛ لا تعتبر قبول النشر مكتملًا حتى تتوفر طريقة موثوقة لخبز نسخة المصدر في الصورة.
+6. تحقّق من `/api/health` وأن `build.sha` يساوي SHA كاملًا للالتزام المستهدف، وأن `build.sha_source` يوضح مصدر الإثبات. يفضّل النظام SHA المخبوز في الصورة، ثم يستعمل متغير Git commit الرسمي الموثق من Railway أو Render عند توفره.
+7. في مضيف Docker آخر، مرّر SHA عبر وسيط البناء `--build-arg OMARAI_BUILD_SHA="$(git rev-parse HEAD)"`. إذا لم تتوفر بيانات صورة أو بيانات منصة موثوقة، فربط النسخة يظل غير مثبت ولا تعتبر قبول النشر مكتملًا.
 
 **حد الثقة الخاص بـ CORS خلف الوكيل العكسي:** يحسب Omarai أصل الخدمة من `Host`، ولا يثق برأس `X-Forwarded-Host` الذي قد يرسله العميل. إذا كانت منصة الاستضافة تعيد كتابة `Host` إلى اسم داخلي، اضبط `OMARAI_ALLOWED_ORIGINS=https://your-app.example.com` في إعدادات الخدمة لاستخدام النطاق العام الدقيق. لا تستخدم wildcard ولا تضف نطاقًا لا تملكه.
 
