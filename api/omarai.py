@@ -1,10 +1,13 @@
 """HTTP API for Omarai's web-research agent and lead workspace."""
 from __future__ import annotations
 
+import base64
+import hashlib
 import hmac
 import ipaddress
 import json
 import os
+import re
 import threading
 import time
 from collections import defaultdict, deque
@@ -20,6 +23,76 @@ ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 MAX_REQUEST_BODY_BYTES = 200_000
+
+
+def _csp_hash_source(value: str) -> str:
+    digest = base64.b64encode(hashlib.sha256(value.encode("utf-8")).digest()).decode("ascii")
+    return f"'sha256-{digest}'"
+
+
+def _content_security_policy() -> str:
+    """Allow only known inline blocks/attributes from the static first-party HTML.
+
+    Hashes deliberately replace unsafe-inline. Updating an inline script/style means its
+    hash changes automatically with the served source. This is not a sanitizer for
+    untrusted HTML; callers must never splice untrusted input into these static files.
+    """
+    script_hashes: set[str] = set()
+    style_hashes: set[str] = set()
+    event_handler_hashes: set[str] = set()
+    style_attribute_hashes: set[str] = set()
+
+    for html_path in sorted(ROOT.glob("*.html")):
+        try:
+            document = html_path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            continue
+
+        for match in re.finditer(
+            r"<script\\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            if re.search(r"\\bsrc\\s*=", match.group("attrs"), re.IGNORECASE):
+                continue
+            script_hashes.add(_csp_hash_source(match.group("body")))
+
+        for match in re.finditer(
+            r"<style\\b[^>]*>(?P<body>.*?)</style\\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_hashes.add(_csp_hash_source(match.group("body")))
+
+        # This scan intentionally includes style/event attributes embedded in
+        # trusted first-party HTML templates assembled by inline scripts.
+        for match in re.finditer(
+            r"""\\bstyle\\s*=\\s*(["'])(.*?)\\1""",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_attribute_hashes.add(_csp_hash_source(match.group(2).strip()))
+
+        for match in re.finditer(
+            r"""\\bon[a-z]+\\s*=\\s*(["'])(.*?)\\1""",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            event_handler_hashes.add(_csp_hash_source(match.group(2).strip()))
+
+    script_sources = ["'self'", *sorted(script_hashes)]
+    style_sources = ["'self'", *sorted(style_hashes)]
+    if event_handler_hashes:
+        script_sources.extend(["'unsafe-hashes'", *sorted(event_handler_hashes)])
+    if style_attribute_hashes:
+        style_sources.extend(["'unsafe-hashes'", *sorted(style_attribute_hashes)])
+
+    return (
+        "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
+        "form-action 'self'; connect-src 'self'; img-src 'self' data:; "
+        f"script-src {' '.join(script_sources)}; "
+        f"style-src {' '.join(style_sources)}; font-src 'self' data:"
+    )
 # Bound request-line + header parsing before application code or body processing.
 REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0
 REQUEST_HEADER_IDLE_TIMEOUT_SECONDS = 2.0
@@ -380,12 +453,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("X-Frame-Options", "DENY")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
         self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
-        self.send_header(
-            "Content-Security-Policy",
-            "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
-            "form-action 'self'; connect-src 'self'; img-src 'self' data:; "
-            "style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:",
-        )
+        self.send_header("Content-Security-Policy", _content_security_policy())
         super().end_headers()
 
     def respond(self, status, payload, content_type="application/json; charset=utf-8"):
