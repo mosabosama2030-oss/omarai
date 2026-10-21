@@ -2596,3 +2596,34 @@ def test_frontend_exposes_structured_page_fetch_statuses():
     assert "partial_extraction" in html
     assert "لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة" in html
     assert "تشخيص الموصلات في هذا الطلب" in html
+
+
+@pytest.mark.parametrize(
+    "method_name",
+    ["_search_duckduckgo_html", "_search_bing_rss", "_search_news"],
+)
+def test_search_providers_do_not_follow_redirects_automatically(
+    monkeypatch, method_name
+):
+    import httpx
+
+    agent = WebAgent()
+    observed = []
+
+    class RedirectResponse:
+        status_code = 302
+        headers = {"location": "http://127.0.0.1:8765/private"}
+        text = "redirect"
+        content = b"redirect"
+
+    def fake_get(url, **kwargs):
+        observed.append((url, kwargs.get("follow_redirects")))
+        return RedirectResponse()
+
+    monkeypatch.setattr(httpx, "get", fake_get)
+    method = getattr(agent, method_name)
+    with pytest.raises(RuntimeError, match="HTTP 302"):
+        method("redirect regression test")
+
+    assert len(observed) == 1
+    assert observed[0][1] is False
