@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000081 إلى SRC-90FAA34ADE-L000134
+- النطاق: SRC-A8360B1B03-L000055 إلى SRC-90FAA34ADE-L000108
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000055](../../scripts/hosted_smoke_test.py#L55) | 55 | `"        raise SmokeError(\"The base URL must be an origin only; do not add /api or another path.\")"` | — |
+| [SRC-A8360B1B03-L000056](../../scripts/hosted_smoke_test.py#L56) | 56 | `"    if parsed.scheme != \"https\" and not ("` | — |
+| [SRC-A8360B1B03-L000057](../../scripts/hosted_smoke_test.py#L57) | 57 | `"        allow_http and parsed.hostname.lower() in {\"localhost\", \"127.0.0.1\", \"::1\"}"` | — |
+| [SRC-A8360B1B03-L000058](../../scripts/hosted_smoke_test.py#L58) | 58 | `"    ):"` | — |
+| [SRC-A8360B1B03-L000059](../../scripts/hosted_smoke_test.py#L59) | 59 | `"        raise SmokeError(\"Hosted tests require HTTPS; plain HTTP is allowed only for local tests.\")"` | — |
+| [SRC-A8360B1B03-L000060](../../scripts/hosted_smoke_test.py#L60) | 60 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000061](../../scripts/hosted_smoke_test.py#L61) | 61 | `"        port = parsed.port"` | — |
+| [SRC-A8360B1B03-L000062](../../scripts/hosted_smoke_test.py#L62) | 62 | `"    except ValueError as exc:"` | — |
+| [SRC-A8360B1B03-L000063](../../scripts/hosted_smoke_test.py#L63) | 63 | `"        raise SmokeError(\"Invalid port in base URL.\") from exc"` | — |
+| [SRC-A8360B1B03-L000064](../../scripts/hosted_smoke_test.py#L64) | 64 | `"    host = parsed.hostname"` | — |
+| [SRC-A8360B1B03-L000065](../../scripts/hosted_smoke_test.py#L65) | 65 | `"    if \":\" in host and not host.startswith(\"[\"):"` | — |
+| [SRC-A8360B1B03-L000066](../../scripts/hosted_smoke_test.py#L66) | 66 | `"        host = f\"[{host}]\""` | — |
+| [SRC-A8360B1B03-L000067](../../scripts/hosted_smoke_test.py#L67) | 67 | `"    if port:"` | — |
+| [SRC-A8360B1B03-L000068](../../scripts/hosted_smoke_test.py#L68) | 68 | `"        host += f\":{port}\""` | — |
+| [SRC-A8360B1B03-L000069](../../scripts/hosted_smoke_test.py#L69) | 69 | `"    return f\"{parsed.scheme}://{host}\""` | — |
+| [SRC-A8360B1B03-L000070](../../scripts/hosted_smoke_test.py#L70) | 70 | `""` | — |
+| [SRC-A8360B1B03-L000071](../../scripts/hosted_smoke_test.py#L71) | 71 | `""` | — |
+| [SRC-A8360B1B03-L000072](../../scripts/hosted_smoke_test.py#L72) | 72 | `"def request_json(url: str, *, token: str = \"\", payload: dict[str, Any] \| None = None,"` | — |
+| [SRC-A8360B1B03-L000073](../../scripts/hosted_smoke_test.py#L73) | 73 | `"                 timeout: float = 90) -> tuple[int, dict[str, Any] \| None]:"` | — |
+| [SRC-A8360B1B03-L000074](../../scripts/hosted_smoke_test.py#L74) | 74 | `"    headers = {\"Accept\": \"application/json\"}"` | — |
+| [SRC-A8360B1B03-L000075](../../scripts/hosted_smoke_test.py#L75) | 75 | `"    data = None"` | — |
+| [SRC-A8360B1B03-L000076](../../scripts/hosted_smoke_test.py#L76) | 76 | `"    if payload is not None:"` | — |
+| [SRC-A8360B1B03-L000077](../../scripts/hosted_smoke_test.py#L77) | 77 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
+| [SRC-A8360B1B03-L000078](../../scripts/hosted_smoke_test.py#L78) | 78 | `"        data = json.dumps(payload, ensure_ascii=False).encode()"` | — |
+| [SRC-A8360B1B03-L000079](../../scripts/hosted_smoke_test.py#L79) | 79 | `"    if token:"` | — |
+| [SRC-A8360B1B03-L000080](../../scripts/hosted_smoke_test.py#L80) | 80 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
 | [SRC-A8360B1B03-L000081](../../scripts/hosted_smoke_test.py#L81) | 81 | `"    request = urllib.request.Request(url, data=data, headers=headers)"` | — |
 | [SRC-A8360B1B03-L000082](../../scripts/hosted_smoke_test.py#L82) | 82 | `"    try:"` | — |
 | [SRC-A8360B1B03-L000083](../../scripts/hosted_smoke_test.py#L83) | 83 | `"        opener = urllib.request.build_opener(_SameOriginRedirectHandler())"` | — |
@@ -817,29 +843,3 @@
 | [SRC-90FAA34ADE-L000106](../../tests/fixtures/answer_quality_cases.json#L106) | 106 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000107](../../tests/fixtures/answer_quality_cases.json#L107) | 107 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000108](../../tests/fixtures/answer_quality_cases.json#L108) | 108 | `"        \"Answer is empty or off-topic\""` | — |
-| [SRC-90FAA34ADE-L000109](../../tests/fixtures/answer_quality_cases.json#L109) | 109 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000110](../../tests/fixtures/answer_quality_cases.json#L110) | 110 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000111](../../tests/fixtures/answer_quality_cases.json#L111) | 111 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000112](../../tests/fixtures/answer_quality_cases.json#L112) | 112 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000113](../../tests/fixtures/answer_quality_cases.json#L113) | 113 | `"      \"case_id\": \"AQ-005\","` | — |
-| [SRC-90FAA34ADE-L000114](../../tests/fixtures/answer_quality_cases.json#L114) | 114 | `"      \"category\": \"omarai_capabilities\","` | — |
-| [SRC-90FAA34ADE-L000115](../../tests/fixtures/answer_quality_cases.json#L115) | 115 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000116](../../tests/fixtures/answer_quality_cases.json#L116) | 116 | `"      \"question\": \"ازاي تقدر تساعدني؟ ايه اللي تقدر تعمله؟\","` | — |
-| [SRC-90FAA34ADE-L000117](../../tests/fixtures/answer_quality_cases.json#L117) | 117 | `"      \"expected_strategy\": \"local\","` | — |
-| [SRC-90FAA34ADE-L000118](../../tests/fixtures/answer_quality_cases.json#L118) | 118 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000119](../../tests/fixtures/answer_quality_cases.json#L119) | 119 | `"        \"Describes web research / Q&A capabilities honestly\","` | — |
-| [SRC-90FAA34ADE-L000120](../../tests/fixtures/answer_quality_cases.json#L120) | 120 | `"        \"May mention lead workspace as local tool\","` | — |
-| [SRC-90FAA34ADE-L000121](../../tests/fixtures/answer_quality_cases.json#L121) | 121 | `"        \"Does not claim to be a foundation model trained from scratch\""` | — |
-| [SRC-90FAA34ADE-L000122](../../tests/fixtures/answer_quality_cases.json#L122) | 122 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000123](../../tests/fixtures/answer_quality_cases.json#L123) | 123 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000124](../../tests/fixtures/answer_quality_cases.json#L124) | 124 | `"        \"Claims access to private user accounts without credentials\","` | — |
-| [SRC-90FAA34ADE-L000125](../../tests/fixtures/answer_quality_cases.json#L125) | 125 | `"        \"Claims guaranteed truth of every answer\","` | — |
-| [SRC-90FAA34ADE-L000126](../../tests/fixtures/answer_quality_cases.json#L126) | 126 | `"        \"Claims it can send messages to people automatically\""` | — |
-| [SRC-90FAA34ADE-L000127](../../tests/fixtures/answer_quality_cases.json#L127) | 127 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000128](../../tests/fixtures/answer_quality_cases.json#L128) | 128 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000129](../../tests/fixtures/answer_quality_cases.json#L129) | 129 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000130](../../tests/fixtures/answer_quality_cases.json#L130) | 130 | `"        \"notes\": \"Local capability router in WebAgent._is_self_question\""` | — |
-| [SRC-90FAA34ADE-L000131](../../tests/fixtures/answer_quality_cases.json#L131) | 131 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000132](../../tests/fixtures/answer_quality_cases.json#L132) | 132 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000133](../../tests/fixtures/answer_quality_cases.json#L133) | 133 | `"        \"used_web_search is true for pure capability question\""` | — |
-| [SRC-90FAA34ADE-L000134](../../tests/fixtures/answer_quality_cases.json#L134) | 134 | `"      ],"` | — |

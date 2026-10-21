@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000083 إلى SRC-3451CC474D-L000651
+- النطاق: SRC-B3062EB677-L000057 إلى SRC-3451CC474D-L000625
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000057](../../tests/test_answer_quality_runner.py#L57) | 57 | `"    data = json.loads(CORPUS.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-B3062EB677-L000058](../../tests/test_answer_quality_runner.py#L58) | 58 | `"    data[\"cases\"] = [dict(data[\"cases\"][0])]"` | — |
+| [SRC-B3062EB677-L000059](../../tests/test_answer_quality_runner.py#L59) | 59 | `"    del data[\"cases\"][0][\"question\"]"` | — |
+| [SRC-B3062EB677-L000060](../../tests/test_answer_quality_runner.py#L60) | 60 | `"    data[\"case_count\"] = 1"` | — |
+| [SRC-B3062EB677-L000061](../../tests/test_answer_quality_runner.py#L61) | 61 | `"    bad = tmp_path / \"bad2.json\""` | — |
+| [SRC-B3062EB677-L000062](../../tests/test_answer_quality_runner.py#L62) | 62 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |
+| [SRC-B3062EB677-L000063](../../tests/test_answer_quality_runner.py#L63) | 63 | `"    problems = mod.validate_corpus(mod.load_corpus(bad))"` | — |
+| [SRC-B3062EB677-L000064](../../tests/test_answer_quality_runner.py#L64) | 64 | `"    assert problems"` | — |
+| [SRC-B3062EB677-L000065](../../tests/test_answer_quality_runner.py#L65) | 65 | `""` | — |
+| [SRC-B3062EB677-L000066](../../tests/test_answer_quality_runner.py#L66) | 66 | `""` | — |
+| [SRC-B3062EB677-L000067](../../tests/test_answer_quality_runner.py#L67) | 67 | `"def test_live_refuses_unbounded_without_limit_or_case_id(capsys):"` | — |
+| [SRC-B3062EB677-L000068](../../tests/test_answer_quality_runner.py#L68) | 68 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000069](../../tests/test_answer_quality_runner.py#L69) | 69 | `"    rc = mod.main([\"--mode\", \"live\", \"--corpus\", str(CORPUS)])"` | — |
+| [SRC-B3062EB677-L000070](../../tests/test_answer_quality_runner.py#L70) | 70 | `"    assert rc == 2"` | — |
+| [SRC-B3062EB677-L000071](../../tests/test_answer_quality_runner.py#L71) | 71 | `"    err = capsys.readouterr().err"` | — |
+| [SRC-B3062EB677-L000072](../../tests/test_answer_quality_runner.py#L72) | 72 | `"    assert \"Refusing unbounded\" in err"` | — |
+| [SRC-B3062EB677-L000073](../../tests/test_answer_quality_runner.py#L73) | 73 | `""` | — |
+| [SRC-B3062EB677-L000074](../../tests/test_answer_quality_runner.py#L74) | 74 | `""` | — |
+| [SRC-B3062EB677-L000075](../../tests/test_answer_quality_runner.py#L75) | 75 | `"def test_live_unknown_case_id(capsys):"` | — |
+| [SRC-B3062EB677-L000076](../../tests/test_answer_quality_runner.py#L76) | 76 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000077](../../tests/test_answer_quality_runner.py#L77) | 77 | `"    rc = mod.main("` | — |
+| [SRC-B3062EB677-L000078](../../tests/test_answer_quality_runner.py#L78) | 78 | `"        ["` | — |
+| [SRC-B3062EB677-L000079](../../tests/test_answer_quality_runner.py#L79) | 79 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000080](../../tests/test_answer_quality_runner.py#L80) | 80 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000081](../../tests/test_answer_quality_runner.py#L81) | 81 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
 | [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
 | [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
 | [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
@@ -799,29 +825,3 @@
 | [SRC-3451CC474D-L000623](../../tests/test_api.py#L623) | 623 | `"        started = time.monotonic()"` | — |
 | [SRC-3451CC474D-L000624](../../tests/test_api.py#L624) | 624 | `"        client.sendall("` | — |
 | [SRC-3451CC474D-L000625](../../tests/test_api.py#L625) | 625 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
-| [SRC-3451CC474D-L000626](../../tests/test_api.py#L626) | 626 | `"            b\"Host: localhost\\r\\n\""` | — |
-| [SRC-3451CC474D-L000627](../../tests/test_api.py#L627) | 627 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
-| [SRC-3451CC474D-L000628](../../tests/test_api.py#L628) | 628 | `"            b\"Content-Length: 40\\r\\n\""` | — |
-| [SRC-3451CC474D-L000629](../../tests/test_api.py#L629) | 629 | `"            b\"X-Slow: \""` | — |
-| [SRC-3451CC474D-L000630](../../tests/test_api.py#L630) | 630 | `"        )"` | — |
-| [SRC-3451CC474D-L000631](../../tests/test_api.py#L631) | 631 | `"        # Each tiny fragment is sent well before the 0.35s idle timeout. No"` | — |
-| [SRC-3451CC474D-L000632](../../tests/test_api.py#L632) | 632 | `"        # newline completes X-Slow, so only an absolute header deadline can stop it."` | — |
-| [SRC-3451CC474D-L000633](../../tests/test_api.py#L633) | 633 | `"        for fragment in (b\"a\", b\"b\", b\"c\", b\"d\", b\"e\", b\"f\", b\"g\", b\"h\", b\"i\"):"` | — |
-| [SRC-3451CC474D-L000634](../../tests/test_api.py#L634) | 634 | `"            time.sleep(0.12)"` | — |
-| [SRC-3451CC474D-L000635](../../tests/test_api.py#L635) | 635 | `"            try:"` | — |
-| [SRC-3451CC474D-L000636](../../tests/test_api.py#L636) | 636 | `"                client.sendall(fragment)"` | — |
-| [SRC-3451CC474D-L000637](../../tests/test_api.py#L637) | 637 | `"            except OSError:"` | — |
-| [SRC-3451CC474D-L000638](../../tests/test_api.py#L638) | 638 | `"                break"` | — |
-| [SRC-3451CC474D-L000639](../../tests/test_api.py#L639) | 639 | `""` | — |
-| [SRC-3451CC474D-L000640](../../tests/test_api.py#L640) | 640 | `"        response = bytearray()"` | — |
-| [SRC-3451CC474D-L000641](../../tests/test_api.py#L641) | 641 | `"        while True:"` | — |
-| [SRC-3451CC474D-L000642](../../tests/test_api.py#L642) | 642 | `"            try:"` | — |
-| [SRC-3451CC474D-L000643](../../tests/test_api.py#L643) | 643 | `"                chunk = client.recv(4096)"` | — |
-| [SRC-3451CC474D-L000644](../../tests/test_api.py#L644) | 644 | `"            except TimeoutError:"` | — |
-| [SRC-3451CC474D-L000645](../../tests/test_api.py#L645) | 645 | `"                break"` | — |
-| [SRC-3451CC474D-L000646](../../tests/test_api.py#L646) | 646 | `"            except OSError:"` | — |
-| [SRC-3451CC474D-L000647](../../tests/test_api.py#L647) | 647 | `"                break"` | — |
-| [SRC-3451CC474D-L000648](../../tests/test_api.py#L648) | 648 | `"            if not chunk:"` | — |
-| [SRC-3451CC474D-L000649](../../tests/test_api.py#L649) | 649 | `"                break"` | — |
-| [SRC-3451CC474D-L000650](../../tests/test_api.py#L650) | 650 | `"            response.extend(chunk)"` | — |
-| [SRC-3451CC474D-L000651](../../tests/test_api.py#L651) | 651 | `"        elapsed = time.monotonic() - started"` | — |
