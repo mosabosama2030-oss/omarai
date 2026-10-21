@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000713 إلى SRC-FA4E1423C3-L000173
+- النطاق: SRC-3451CC474D-L000687 إلى SRC-FA4E1423C3-L000147
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000687](../../tests/test_api.py#L687) | 687 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000688](../../tests/test_api.py#L688) | 688 | `"            \"Host\": \"omarai.example\","` | — |
+| [SRC-3451CC474D-L000689](../../tests/test_api.py#L689) | 689 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
+| [SRC-3451CC474D-L000690](../../tests/test_api.py#L690) | 690 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
+| [SRC-3451CC474D-L000691](../../tests/test_api.py#L691) | 691 | `"        }"` | — |
+| [SRC-3451CC474D-L000692](../../tests/test_api.py#L692) | 692 | `"    )"` | — |
+| [SRC-3451CC474D-L000693](../../tests/test_api.py#L693) | 693 | `"    allowed = Handler._allowed_origins(handler)"` | — |
+| [SRC-3451CC474D-L000694](../../tests/test_api.py#L694) | 694 | `"    assert \"https://omarai.example\" in allowed"` | — |
+| [SRC-3451CC474D-L000695](../../tests/test_api.py#L695) | 695 | `"    assert \"https://attacker.example\" not in allowed"` | — |
+| [SRC-3451CC474D-L000696](../../tests/test_api.py#L696) | 696 | `""` | — |
+| [SRC-3451CC474D-L000697](../../tests/test_api.py#L697) | 697 | `""` | — |
+| [SRC-3451CC474D-L000698](../../tests/test_api.py#L698) | 698 | `""` | — |
+| [SRC-3451CC474D-L000699](../../tests/test_api.py#L699) | 699 | `"def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000700](../../tests/test_api.py#L700) | 700 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000701](../../tests/test_api.py#L701) | 701 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000702](../../tests/test_api.py#L702) | 702 | `"    for path in (\"/api/health\", \"/\"):"` | — |
+| [SRC-3451CC474D-L000703](../../tests/test_api.py#L703) | 703 | `"        request = Request(local_api + path)"` | — |
+| [SRC-3451CC474D-L000704](../../tests/test_api.py#L704) | 704 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000705](../../tests/test_api.py#L705) | 705 | `"            headers = {name.lower(): value for name, value in response.headers.items()}"` | — |
+| [SRC-3451CC474D-L000706](../../tests/test_api.py#L706) | 706 | `"            assert headers[\"x-content-type-options\"] == \"nosniff\""` | — |
+| [SRC-3451CC474D-L000707](../../tests/test_api.py#L707) | 707 | `"            assert headers[\"x-frame-options\"] == \"DENY\""` | — |
+| [SRC-3451CC474D-L000708](../../tests/test_api.py#L708) | 708 | `"            assert headers[\"referrer-policy\"] == \"strict-origin-when-cross-origin\""` | — |
+| [SRC-3451CC474D-L000709](../../tests/test_api.py#L709) | 709 | `"            assert \"default-src 'self'\" in headers[\"content-security-policy\"]"` | — |
+| [SRC-3451CC474D-L000710](../../tests/test_api.py#L710) | 710 | `"            assert \"frame-ancestors 'none'\" in headers[\"content-security-policy\"]"` | — |
+| [SRC-3451CC474D-L000711](../../tests/test_api.py#L711) | 711 | `"            assert headers[\"permissions-policy\"] == ("` | — |
+| [SRC-3451CC474D-L000712](../../tests/test_api.py#L712) | 712 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
 | [SRC-3451CC474D-L000713](../../tests/test_api.py#L713) | 713 | `"            )"` | — |
 | [SRC-3451CC474D-L000714](../../tests/test_api.py#L714) | 714 | `""` | — |
 | [SRC-3451CC474D-L000715](../../tests/test_api.py#L715) | 715 | `""` | — |
@@ -835,29 +861,3 @@
 | [SRC-FA4E1423C3-L000145](../../tests/test_generate_index.py#L145) | 145 | `"    (tmp_path / \".env.example\").write_text("` | — |
 | [SRC-FA4E1423C3-L000146](../../tests/test_generate_index.py#L146) | 146 | `"        \"OPENROUTER_API_KEY=replace-me\\n\", encoding=\"utf-8\""` | — |
 | [SRC-FA4E1423C3-L000147](../../tests/test_generate_index.py#L147) | 147 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000148](../../tests/test_generate_index.py#L148) | 148 | `"    (tmp_path / \"local.sqlite3\").write_bytes(b\"not a real database\")"` | — |
-| [SRC-FA4E1423C3-L000149](../../tests/test_generate_index.py#L149) | 149 | `"    (tmp_path / \"logo.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
-| [SRC-FA4E1423C3-L000150](../../tests/test_generate_index.py#L150) | 150 | `""` | — |
-| [SRC-FA4E1423C3-L000151](../../tests/test_generate_index.py#L151) | 151 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000152](../../tests/test_generate_index.py#L152) | 152 | `"    paths = {item.file for item in inventory}"` | — |
-| [SRC-FA4E1423C3-L000153](../../tests/test_generate_index.py#L153) | 153 | `"    by_path = {item.file: item for item in inventory}"` | — |
-| [SRC-FA4E1423C3-L000154](../../tests/test_generate_index.py#L154) | 154 | `""` | — |
-| [SRC-FA4E1423C3-L000155](../../tests/test_generate_index.py#L155) | 155 | `"    assert \"app.py\" in paths"` | — |
-| [SRC-FA4E1423C3-L000156](../../tests/test_generate_index.py#L156) | 156 | `"    assert \"docs/guide.md\" in paths"` | — |
-| [SRC-FA4E1423C3-L000157](../../tests/test_generate_index.py#L157) | 157 | `"    assert \".env.example\" in paths"` | — |
-| [SRC-FA4E1423C3-L000158](../../tests/test_generate_index.py#L158) | 158 | `"    assert \".env\" not in paths"` | — |
-| [SRC-FA4E1423C3-L000159](../../tests/test_generate_index.py#L159) | 159 | `"    assert \"local.sqlite3\" not in paths"` | — |
-| [SRC-FA4E1423C3-L000160](../../tests/test_generate_index.py#L160) | 160 | `"    assert \"logo.bin\" in paths"` | — |
-| [SRC-FA4E1423C3-L000161](../../tests/test_generate_index.py#L161) | 161 | `"    assert by_path[\"logo.bin\"].line_count is None"` | — |
-| [SRC-FA4E1423C3-L000162](../../tests/test_generate_index.py#L162) | 162 | `""` | — |
-| [SRC-FA4E1423C3-L000163](../../tests/test_generate_index.py#L163) | 163 | `""` | — |
-| [SRC-FA4E1423C3-L000164](../../tests/test_generate_index.py#L164) | 164 | `"def test_skips_virtual_environments_and_generated_dependency_directories("` | — |
-| [SRC-FA4E1423C3-L000165](../../tests/test_generate_index.py#L165) | 165 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000166](../../tests/test_generate_index.py#L166) | 166 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000167](../../tests/test_generate_index.py#L167) | 167 | `"    \"\"\"The scan avoids vendored dependencies, build outputs, and virtual environments.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000168](../../tests/test_generate_index.py#L168) | 168 | `"    (tmp_path / \"app.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000169](../../tests/test_generate_index.py#L169) | 169 | `"        'def application_entry():\\n    \"\"\"Main entry point.\"\"\"\\n',"` | — |
-| [SRC-FA4E1423C3-L000170](../../tests/test_generate_index.py#L170) | 170 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000171](../../tests/test_generate_index.py#L171) | 171 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000172](../../tests/test_generate_index.py#L172) | 172 | `"    excluded_files = ("` | — |
-| [SRC-FA4E1423C3-L000173](../../tests/test_generate_index.py#L173) | 173 | `"        tmp_path / \".venv\" / \"lib\" / \"hidden.py\","` | — |

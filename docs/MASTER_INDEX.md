@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **74**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **945**
+- تعريفات Python المفهرسة: **947**
 - تعريفات Python موثقة بوجود Docstring: **187**
-- تعريفات Python بلا Docstring: **566**
+- تعريفات Python بلا Docstring: **568**
 - تعريفات لا ينطبق عليها Docstring: **192**
 - الرموز الساكنة الإضافية: **1396**
-- الأسطر النصية المفهرسة حرفيًا: **24791**
+- الأسطر النصية المفهرسة حرفيًا: **24862**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -41,7 +41,7 @@
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 27751 | 660 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 247587 | 4740 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 249176 | 4766 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 28268 | 584 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
@@ -94,7 +94,7 @@
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
-| FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 3540 | 101 | جرد الملف + AST Python |
+| FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 6023 | 145 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 3456 | 87 | جرد الملف + AST Python |
@@ -818,6 +818,8 @@
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L51) | دالة | test_environment_overrides_are_clamped | لا توجد Docstring. | ناقص | 51 | [SRC-C353AAAC10-L000051](../tests/test_request_budget.py#L51) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L65) | دالة | test_web_agent_reserves_search_model_and_page_work_before_io | لا توجد Docstring. | ناقص | 65 | [SRC-C353AAAC10-L000065](../tests/test_request_budget.py#L65) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L88) | دالة | test_social_provider_reserves_budget_before_network_io | لا توجد Docstring. | ناقص | 88 | [SRC-C353AAAC10-L000088](../tests/test_request_budget.py#L88) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L114) | دالة | test_each_resource_counter_stops_at_its_limit | لا توجد Docstring. | ناقص | 114 | [SRC-C353AAAC10-L000114](../tests/test_request_budget.py#L114) |
+| [tests/test_request_budget.py](../tests/test_request_budget.py#L135) | دالة | test_disabled_resource_never_starts_work | لا توجد Docstring. | ناقص | 135 | [SRC-C353AAAC10-L000135](../tests/test_request_budget.py#L135) |
 | [tests/test_research.py](../tests/test_research.py#L12) | دالة | test_social_question_gets_platform_targeted_queries | لا توجد Docstring. | ناقص | 12 | [SRC-6BF96689A8-L000012](../tests/test_research.py#L12) |
 | [tests/test_research.py](../tests/test_research.py#L20) | دالة | test_follow_up_query_keeps_prior_topic | لا توجد Docstring. | ناقص | 20 | [SRC-6BF96689A8-L000020](../tests/test_research.py#L20) |
 | [tests/test_research.py](../tests/test_research.py#L27) | دالة | test_plan_validation_caps_queries_and_rejects_non_string_values | لا توجد Docstring. | ناقص | 27 | [SRC-6BF96689A8-L000027](../tests/test_research.py#L27) |

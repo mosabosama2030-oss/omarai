@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000220 إلى SRC-90FAA34ADE-L000463
+- النطاق: SRC-4FFD5AFC54-L000194 إلى SRC-90FAA34ADE-L000437
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000194](../../scripts/run_answer_quality_benchmark.py#L194) | 194 | `"    url = origin + \"/api/agent\""` | — |
+| [SRC-4FFD5AFC54-L000195](../../scripts/run_answer_quality_benchmark.py#L195) | 195 | `"    body = json.dumps({\"question\": question, \"history\": []}, ensure_ascii=False).encode(\"utf-8\")"` | — |
+| [SRC-4FFD5AFC54-L000196](../../scripts/run_answer_quality_benchmark.py#L196) | 196 | `"    headers = {\"Content-Type\": \"application/json\", \"Content-Length\": str(len(body))}"` | — |
+| [SRC-4FFD5AFC54-L000197](../../scripts/run_answer_quality_benchmark.py#L197) | 197 | `"    if token:"` | — |
+| [SRC-4FFD5AFC54-L000198](../../scripts/run_answer_quality_benchmark.py#L198) | 198 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
+| [SRC-4FFD5AFC54-L000199](../../scripts/run_answer_quality_benchmark.py#L199) | 199 | `"    req = urllib.request.Request(url, data=body, headers=headers, method=\"POST\")"` | — |
+| [SRC-4FFD5AFC54-L000200](../../scripts/run_answer_quality_benchmark.py#L200) | 200 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000201](../../scripts/run_answer_quality_benchmark.py#L201) | 201 | `"        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:"` | — |
+| [SRC-4FFD5AFC54-L000202](../../scripts/run_answer_quality_benchmark.py#L202) | 202 | `"            raw_bytes = resp.read(MAX_RESPONSE_BYTES + 1)"` | — |
+| [SRC-4FFD5AFC54-L000203](../../scripts/run_answer_quality_benchmark.py#L203) | 203 | `"            if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
+| [SRC-4FFD5AFC54-L000204](../../scripts/run_answer_quality_benchmark.py#L204) | 204 | `"                return 0, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
+| [SRC-4FFD5AFC54-L000205](../../scripts/run_answer_quality_benchmark.py#L205) | 205 | `"            raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
+| [SRC-4FFD5AFC54-L000206](../../scripts/run_answer_quality_benchmark.py#L206) | 206 | `"            status = getattr(resp, \"status\", 200)"` | — |
+| [SRC-4FFD5AFC54-L000207](../../scripts/run_answer_quality_benchmark.py#L207) | 207 | `"            try:"` | — |
+| [SRC-4FFD5AFC54-L000208](../../scripts/run_answer_quality_benchmark.py#L208) | 208 | `"                return status, json.loads(raw)"` | — |
+| [SRC-4FFD5AFC54-L000209](../../scripts/run_answer_quality_benchmark.py#L209) | 209 | `"            except json.JSONDecodeError:"` | — |
+| [SRC-4FFD5AFC54-L000210](../../scripts/run_answer_quality_benchmark.py#L210) | 210 | `"                return status, raw"` | — |
+| [SRC-4FFD5AFC54-L000211](../../scripts/run_answer_quality_benchmark.py#L211) | 211 | `"    except urllib.error.HTTPError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000212](../../scripts/run_answer_quality_benchmark.py#L212) | 212 | `"        raw_bytes = exc.read(MAX_RESPONSE_BYTES + 1)"` | — |
+| [SRC-4FFD5AFC54-L000213](../../scripts/run_answer_quality_benchmark.py#L213) | 213 | `"        if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
+| [SRC-4FFD5AFC54-L000214](../../scripts/run_answer_quality_benchmark.py#L214) | 214 | `"            return exc.code, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
+| [SRC-4FFD5AFC54-L000215](../../scripts/run_answer_quality_benchmark.py#L215) | 215 | `"        raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
+| [SRC-4FFD5AFC54-L000216](../../scripts/run_answer_quality_benchmark.py#L216) | 216 | `"        try:"` | — |
+| [SRC-4FFD5AFC54-L000217](../../scripts/run_answer_quality_benchmark.py#L217) | 217 | `"            return exc.code, json.loads(raw)"` | — |
+| [SRC-4FFD5AFC54-L000218](../../scripts/run_answer_quality_benchmark.py#L218) | 218 | `"        except json.JSONDecodeError:"` | — |
+| [SRC-4FFD5AFC54-L000219](../../scripts/run_answer_quality_benchmark.py#L219) | 219 | `"            return exc.code, raw"` | — |
 | [SRC-4FFD5AFC54-L000220](../../scripts/run_answer_quality_benchmark.py#L220) | 220 | `"    except ValueError as exc:"` | — |
 | [SRC-4FFD5AFC54-L000221](../../scripts/run_answer_quality_benchmark.py#L221) | 221 | `"        return 0, {\"error\": \"UnsafeBaseURL\", \"detail\": str(exc)}"` | — |
 | [SRC-4FFD5AFC54-L000222](../../scripts/run_answer_quality_benchmark.py#L222) | 222 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
@@ -808,29 +834,3 @@
 | [SRC-90FAA34ADE-L000435](../../tests/fixtures/answer_quality_cases.json#L435) | 435 | `"        \"type\": \"controlled_fetch_failure\","` | — |
 | [SRC-90FAA34ADE-L000436](../../tests/fixtures/answer_quality_cases.json#L436) | 436 | `"        \"providers\": ["` | — |
 | [SRC-90FAA34ADE-L000437](../../tests/fixtures/answer_quality_cases.json#L437) | 437 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000438](../../tests/fixtures/answer_quality_cases.json#L438) | 438 | `"            \"name\": \"fixture_search_a\","` | — |
-| [SRC-90FAA34ADE-L000439](../../tests/fixtures/answer_quality_cases.json#L439) | 439 | `"            \"error\": \"timeout\""` | — |
-| [SRC-90FAA34ADE-L000440](../../tests/fixtures/answer_quality_cases.json#L440) | 440 | `"          },"` | — |
-| [SRC-90FAA34ADE-L000441](../../tests/fixtures/answer_quality_cases.json#L441) | 441 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000442](../../tests/fixtures/answer_quality_cases.json#L442) | 442 | `"            \"name\": \"fixture_search_b\","` | — |
-| [SRC-90FAA34ADE-L000443](../../tests/fixtures/answer_quality_cases.json#L443) | 443 | `"            \"error\": \"503\""` | — |
-| [SRC-90FAA34ADE-L000444](../../tests/fixtures/answer_quality_cases.json#L444) | 444 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000445](../../tests/fixtures/answer_quality_cases.json#L445) | 445 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000446](../../tests/fixtures/answer_quality_cases.json#L446) | 446 | `"        \"sources\": [],"` | — |
-| [SRC-90FAA34ADE-L000447](../../tests/fixtures/answer_quality_cases.json#L447) | 447 | `"        \"notes\": \"Both search providers fail deterministically\""` | — |
-| [SRC-90FAA34ADE-L000448](../../tests/fixtures/answer_quality_cases.json#L448) | 448 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000449](../../tests/fixtures/answer_quality_cases.json#L449) | 449 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000450](../../tests/fixtures/answer_quality_cases.json#L450) | 450 | `"        \"Claims to have found an announcement despite zero retrieved documents\","` | — |
-| [SRC-90FAA34ADE-L000451](../../tests/fixtures/answer_quality_cases.json#L451) | 451 | `"        \"Invents a source URL\""` | — |
-| [SRC-90FAA34ADE-L000452](../../tests/fixtures/answer_quality_cases.json#L452) | 452 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000453](../../tests/fixtures/answer_quality_cases.json#L453) | 453 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000454](../../tests/fixtures/answer_quality_cases.json#L454) | 454 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000455](../../tests/fixtures/answer_quality_cases.json#L455) | 455 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000456](../../tests/fixtures/answer_quality_cases.json#L456) | 456 | `"      \"case_id\": \"AQ-018\","` | — |
-| [SRC-90FAA34ADE-L000457](../../tests/fixtures/answer_quality_cases.json#L457) | 457 | `"      \"category\": \"conflicting_sources\","` | — |
-| [SRC-90FAA34ADE-L000458](../../tests/fixtures/answer_quality_cases.json#L458) | 458 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000459](../../tests/fixtures/answer_quality_cases.json#L459) | 459 | `"      \"question\": \"وجدت مصدرين عن موعد بدء تطبيق القرار؛ الأول يقول 1 نوفمبر والثاني يقول 15 نوفمبر. ما الذي يمكن الجزم به؟\","` | — |
-| [SRC-90FAA34ADE-L000460](../../tests/fixtures/answer_quality_cases.json#L460) | 460 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000461](../../tests/fixtures/answer_quality_cases.json#L461) | 461 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000462](../../tests/fixtures/answer_quality_cases.json#L462) | 462 | `"        \"يعرض التعارض بوضوح وينسب كل تاريخ إلى مصدره\","` | — |
-| [SRC-90FAA34ADE-L000463](../../tests/fixtures/answer_quality_cases.json#L463) | 463 | `"        \"يتحقق من تاريخ النشر والجهة الرسمية قبل الترجيح\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000215 إلى SRC-4FFD5AFC54-L000219
+- النطاق: SRC-69F3587825-L000189 إلى SRC-4FFD5AFC54-L000193
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000189](../search_code.py#L189) | 189 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-69F3587825-L000190](../search_code.py#L190) | 190 | `"        except (OSError, UnicodeDecodeError):"` | — |
+| [SRC-69F3587825-L000191](../search_code.py#L191) | 191 | `"            continue"` | — |
+| [SRC-69F3587825-L000192](../search_code.py#L192) | 192 | `"        lines = text.splitlines()"` | — |
+| [SRC-69F3587825-L000193](../search_code.py#L193) | 193 | `"        for index, line in enumerate(lines):"` | — |
+| [SRC-69F3587825-L000194](../search_code.py#L194) | 194 | `"            if pattern.search(line):"` | — |
+| [SRC-69F3587825-L000195](../search_code.py#L195) | 195 | `"                before = \"\\n\".join(lines[max(0, index - context) : index]) if context else \"\""` | — |
+| [SRC-69F3587825-L000196](../search_code.py#L196) | 196 | `"                after = ("` | — |
+| [SRC-69F3587825-L000197](../search_code.py#L197) | 197 | `"                    \"\\n\".join(lines[index + 1 : min(len(lines), index + 1 + context)])"` | — |
+| [SRC-69F3587825-L000198](../search_code.py#L198) | 198 | `"                    if context"` | — |
+| [SRC-69F3587825-L000199](../search_code.py#L199) | 199 | `"                    else \"\""` | — |
+| [SRC-69F3587825-L000200](../search_code.py#L200) | 200 | `"                )"` | — |
+| [SRC-69F3587825-L000201](../search_code.py#L201) | 201 | `"                hits.append("` | — |
+| [SRC-69F3587825-L000202](../search_code.py#L202) | 202 | `"                    SearchHit("` | — |
+| [SRC-69F3587825-L000203](../search_code.py#L203) | 203 | `"                        file=relative,"` | — |
+| [SRC-69F3587825-L000204](../search_code.py#L204) | 204 | `"                        line=index + 1,"` | — |
+| [SRC-69F3587825-L000205](../search_code.py#L205) | 205 | `"                        text=line.rstrip(),"` | — |
+| [SRC-69F3587825-L000206](../search_code.py#L206) | 206 | `"                        context_before=before.rstrip(),"` | — |
+| [SRC-69F3587825-L000207](../search_code.py#L207) | 207 | `"                        context_after=after.rstrip(),"` | — |
+| [SRC-69F3587825-L000208](../search_code.py#L208) | 208 | `"                    )"` | — |
+| [SRC-69F3587825-L000209](../search_code.py#L209) | 209 | `"                )"` | — |
+| [SRC-69F3587825-L000210](../search_code.py#L210) | 210 | `"                if len(hits) >= max_results:"` | — |
+| [SRC-69F3587825-L000211](../search_code.py#L211) | 211 | `"                    return hits"` | — |
+| [SRC-69F3587825-L000212](../search_code.py#L212) | 212 | `"    return hits"` | — |
+| [SRC-69F3587825-L000213](../search_code.py#L213) | 213 | `""` | — |
+| [SRC-69F3587825-L000214](../search_code.py#L214) | 214 | `""` | — |
 | [SRC-69F3587825-L000215](../search_code.py#L215) | 215 | `"def format_hits(hits: list[SearchHit]) -> str:"` | — |
 | [SRC-69F3587825-L000216](../search_code.py#L216) | 216 | `"    if not hits:"` | — |
 | [SRC-69F3587825-L000217](../search_code.py#L217) | 217 | `"        return \"لا توجد نتائج.\""` | — |
@@ -862,29 +888,3 @@
 | [SRC-4FFD5AFC54-L000191](../../scripts/run_answer_quality_benchmark.py#L191) | 191 | `"    token: str \| None,"` | — |
 | [SRC-4FFD5AFC54-L000192](../../scripts/run_answer_quality_benchmark.py#L192) | 192 | `") -> tuple[int, dict \| str]:"` | — |
 | [SRC-4FFD5AFC54-L000193](../../scripts/run_answer_quality_benchmark.py#L193) | 193 | `"    origin = validate_base_url(base_url, token_present=bool(token))"` | — |
-| [SRC-4FFD5AFC54-L000194](../../scripts/run_answer_quality_benchmark.py#L194) | 194 | `"    url = origin + \"/api/agent\""` | — |
-| [SRC-4FFD5AFC54-L000195](../../scripts/run_answer_quality_benchmark.py#L195) | 195 | `"    body = json.dumps({\"question\": question, \"history\": []}, ensure_ascii=False).encode(\"utf-8\")"` | — |
-| [SRC-4FFD5AFC54-L000196](../../scripts/run_answer_quality_benchmark.py#L196) | 196 | `"    headers = {\"Content-Type\": \"application/json\", \"Content-Length\": str(len(body))}"` | — |
-| [SRC-4FFD5AFC54-L000197](../../scripts/run_answer_quality_benchmark.py#L197) | 197 | `"    if token:"` | — |
-| [SRC-4FFD5AFC54-L000198](../../scripts/run_answer_quality_benchmark.py#L198) | 198 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
-| [SRC-4FFD5AFC54-L000199](../../scripts/run_answer_quality_benchmark.py#L199) | 199 | `"    req = urllib.request.Request(url, data=body, headers=headers, method=\"POST\")"` | — |
-| [SRC-4FFD5AFC54-L000200](../../scripts/run_answer_quality_benchmark.py#L200) | 200 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000201](../../scripts/run_answer_quality_benchmark.py#L201) | 201 | `"        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:"` | — |
-| [SRC-4FFD5AFC54-L000202](../../scripts/run_answer_quality_benchmark.py#L202) | 202 | `"            raw_bytes = resp.read(MAX_RESPONSE_BYTES + 1)"` | — |
-| [SRC-4FFD5AFC54-L000203](../../scripts/run_answer_quality_benchmark.py#L203) | 203 | `"            if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
-| [SRC-4FFD5AFC54-L000204](../../scripts/run_answer_quality_benchmark.py#L204) | 204 | `"                return 0, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
-| [SRC-4FFD5AFC54-L000205](../../scripts/run_answer_quality_benchmark.py#L205) | 205 | `"            raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-4FFD5AFC54-L000206](../../scripts/run_answer_quality_benchmark.py#L206) | 206 | `"            status = getattr(resp, \"status\", 200)"` | — |
-| [SRC-4FFD5AFC54-L000207](../../scripts/run_answer_quality_benchmark.py#L207) | 207 | `"            try:"` | — |
-| [SRC-4FFD5AFC54-L000208](../../scripts/run_answer_quality_benchmark.py#L208) | 208 | `"                return status, json.loads(raw)"` | — |
-| [SRC-4FFD5AFC54-L000209](../../scripts/run_answer_quality_benchmark.py#L209) | 209 | `"            except json.JSONDecodeError:"` | — |
-| [SRC-4FFD5AFC54-L000210](../../scripts/run_answer_quality_benchmark.py#L210) | 210 | `"                return status, raw"` | — |
-| [SRC-4FFD5AFC54-L000211](../../scripts/run_answer_quality_benchmark.py#L211) | 211 | `"    except urllib.error.HTTPError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000212](../../scripts/run_answer_quality_benchmark.py#L212) | 212 | `"        raw_bytes = exc.read(MAX_RESPONSE_BYTES + 1)"` | — |
-| [SRC-4FFD5AFC54-L000213](../../scripts/run_answer_quality_benchmark.py#L213) | 213 | `"        if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
-| [SRC-4FFD5AFC54-L000214](../../scripts/run_answer_quality_benchmark.py#L214) | 214 | `"            return exc.code, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
-| [SRC-4FFD5AFC54-L000215](../../scripts/run_answer_quality_benchmark.py#L215) | 215 | `"        raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-4FFD5AFC54-L000216](../../scripts/run_answer_quality_benchmark.py#L216) | 216 | `"        try:"` | — |
-| [SRC-4FFD5AFC54-L000217](../../scripts/run_answer_quality_benchmark.py#L217) | 217 | `"            return exc.code, json.loads(raw)"` | — |
-| [SRC-4FFD5AFC54-L000218](../../scripts/run_answer_quality_benchmark.py#L218) | 218 | `"        except json.JSONDecodeError:"` | — |
-| [SRC-4FFD5AFC54-L000219](../../scripts/run_answer_quality_benchmark.py#L219) | 219 | `"            return exc.code, raw"` | — |

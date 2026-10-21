@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000356 إلى SRC-E599346ABE-L000182
+- النطاق: SRC-EEF2E6447C-L000330 إلى SRC-E599346ABE-L000156
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000330](../../api/omarai.py#L330) | 330 | `"                except TimeoutError:"` | — |
+| [SRC-EEF2E6447C-L000331](../../api/omarai.py#L331) | 331 | `"                    timed_out = True"` | — |
+| [SRC-EEF2E6447C-L000332](../../api/omarai.py#L332) | 332 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000333](../../api/omarai.py#L333) | 333 | `"                if not chunk:"` | — |
+| [SRC-EEF2E6447C-L000334](../../api/omarai.py#L334) | 334 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000335](../../api/omarai.py#L335) | 335 | `"                body.extend(chunk)"` | — |
+| [SRC-EEF2E6447C-L000336](../../api/omarai.py#L336) | 336 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000337](../../api/omarai.py#L337) | 337 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000338](../../api/omarai.py#L338) | 338 | `"                self.connection.settimeout(previous_timeout)"` | — |
+| [SRC-EEF2E6447C-L000339](../../api/omarai.py#L339) | 339 | `"            except OSError:"` | — |
+| [SRC-EEF2E6447C-L000340](../../api/omarai.py#L340) | 340 | `"                pass"` | — |
+| [SRC-EEF2E6447C-L000341](../../api/omarai.py#L341) | 341 | `""` | — |
+| [SRC-EEF2E6447C-L000342](../../api/omarai.py#L342) | 342 | `"        if timed_out:"` | — |
+| [SRC-EEF2E6447C-L000343](../../api/omarai.py#L343) | 343 | `"            self.close_connection = True"` | — |
+| [SRC-EEF2E6447C-L000344](../../api/omarai.py#L344) | 344 | `"            self.respond(408, {\"error\": \"request body read timed out\"})"` | — |
+| [SRC-EEF2E6447C-L000345](../../api/omarai.py#L345) | 345 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000346](../../api/omarai.py#L346) | 346 | `"        if len(body) != size:"` | — |
+| [SRC-EEF2E6447C-L000347](../../api/omarai.py#L347) | 347 | `"            self.close_connection = True"` | — |
+| [SRC-EEF2E6447C-L000348](../../api/omarai.py#L348) | 348 | `"            self.respond(400, {\"error\": \"incomplete request body\"})"` | — |
+| [SRC-EEF2E6447C-L000349](../../api/omarai.py#L349) | 349 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000350](../../api/omarai.py#L350) | 350 | `"        return bytes(body)"` | — |
+| [SRC-EEF2E6447C-L000351](../../api/omarai.py#L351) | 351 | `""` | — |
+| [SRC-EEF2E6447C-L000352](../../api/omarai.py#L352) | 352 | `"    def end_headers(self):"` | — |
+| [SRC-EEF2E6447C-L000353](../../api/omarai.py#L353) | 353 | `"        \"\"\"Apply defensive browser headers to successful and error responses alike.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000354](../../api/omarai.py#L354) | 354 | `"        self.send_header(\"X-Content-Type-Options\", \"nosniff\")"` | — |
+| [SRC-EEF2E6447C-L000355](../../api/omarai.py#L355) | 355 | `"        self.send_header(\"X-Frame-Options\", \"DENY\")"` | — |
 | [SRC-EEF2E6447C-L000356](../../api/omarai.py#L356) | 356 | `"        self.send_header(\"Referrer-Policy\", \"strict-origin-when-cross-origin\")"` | — |
 | [SRC-EEF2E6447C-L000357](../../api/omarai.py#L357) | 357 | `"        self.send_header(\"Permissions-Policy\", \"camera=(), microphone=(), geolocation=()\")"` | — |
 | [SRC-EEF2E6447C-L000358](../../api/omarai.py#L358) | 358 | `"        self.send_header("` | — |
@@ -862,29 +888,3 @@
 | [SRC-E599346ABE-L000154](../generate_index.py#L154) | 154 | `""` | — |
 | [SRC-E599346ABE-L000155](../generate_index.py#L155) | 155 | `""` | — |
 | [SRC-E599346ABE-L000156](../generate_index.py#L156) | 156 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000157](../generate_index.py#L157) | 157 | `"class IndexedSymbol:"` | — |
-| [SRC-E599346ABE-L000158](../generate_index.py#L158) | 158 | `"    \"\"\"Represent a Python definition or module/class assignment.\"\"\""` | — |
-| [SRC-E599346ABE-L000159](../generate_index.py#L159) | 159 | `""` | — |
-| [SRC-E599346ABE-L000160](../generate_index.py#L160) | 160 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000161](../generate_index.py#L161) | 161 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000162](../generate_index.py#L162) | 162 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000163](../generate_index.py#L163) | 163 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000164](../generate_index.py#L164) | 164 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000165](../generate_index.py#L165) | 165 | `"    documented: bool \| None"` | — |
-| [SRC-E599346ABE-L000166](../generate_index.py#L166) | 166 | `""` | — |
-| [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `""` | — |
-| [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000169](../generate_index.py#L169) | 169 | `"class IndexedFile:"` | — |
-| [SRC-E599346ABE-L000170](../generate_index.py#L170) | 170 | `"    \"\"\"Represent a repository file with stable identifiers and navigation metadata.\"\"\""` | — |
-| [SRC-E599346ABE-L000171](../generate_index.py#L171) | 171 | `""` | — |
-| [SRC-E599346ABE-L000172](../generate_index.py#L172) | 172 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000173](../generate_index.py#L173) | 173 | `"    file_type: str"` | — |
-| [SRC-E599346ABE-L000174](../generate_index.py#L174) | 174 | `"    size_bytes: int"` | — |
-| [SRC-E599346ABE-L000175](../generate_index.py#L175) | 175 | `"    line_count: int \| None"` | — |
-| [SRC-E599346ABE-L000176](../generate_index.py#L176) | 176 | `"    indexing_scope: str"` | — |
-| [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
-| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
-| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"class IndexedMarker:"` | — |

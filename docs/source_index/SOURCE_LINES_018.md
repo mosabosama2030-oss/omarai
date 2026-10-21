@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000527 إلى SRC-69F3587825-L000214
+- النطاق: SRC-0F910493E8-L000501 إلى SRC-69F3587825-L000188
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000501](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L501) | 501 | `""` | — |
+| [SRC-0F910493E8-L000502](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L502) | 502 | `"إذا تعارضت الرغبة في سرعة التنفيذ مع وجود فجوة أمان أو احتمال كسر سلوك قائم، فالأولوية لتصغير التغيير أو عزله أو تأجيله، لا لإخفاء الخطر."` | — |
+| [SRC-0F910493E8-L000503](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L503) | 503 | `""` | — |
+| [SRC-0F910493E8-L000504](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L504) | 504 | `"---"` | — |
+| [SRC-0F910493E8-L000505](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L505) | 505 | `""` | — |
+| [SRC-0F910493E8-L000506](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L506) | 506 | `"# 15. قرارات يجب أن تبقى واضحة في الوثائق والمراجعات"` | — |
+| [SRC-0F910493E8-L000507](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L507) | 507 | `""` | — |
+| [SRC-0F910493E8-L000508](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L508) | 508 | `"1. **[PROPOSED]** Skill/Workflow-First وCapability-Based Security هما اتجاه التوسع الافتراضي."` | — |
+| [SRC-0F910493E8-L000509](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L509) | 509 | `"2. **[PROPOSED]** لا يوجد وكيل مستقل لكل سؤال أو تخصص بالضرورة."` | — |
+| [SRC-0F910493E8-L000510](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L510) | 510 | `"3. **[PROPOSED]** سياق تنفيذ مؤقت هو الافتراضي؛ الذاكرة الدائمة مشروطة بحاجة وسياسة."` | — |
+| [SRC-0F910493E8-L000511](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L511) | 511 | `"4. **[PROPOSED]** النموذج يقترح الخطة، والكود يتحقق من الصلاحيات وينفذ الحدود."` | — |
+| [SRC-0F910493E8-L000512](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L512) | 512 | `"5. **[PROPOSED]** ملفات التعريف والمسودات لا تمنح الصلاحيات."` | — |
+| [SRC-0F910493E8-L000513](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L513) | 513 | `"6. **[PROPOSED]** فصل الإدارة عن التشغيل منطقي وإلزامي في التصميم، لكن لا يلزم أن يكون خدمة مستقلة."` | — |
+| [SRC-0F910493E8-L000514](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L514) | 514 | `"7. **[PROPOSED]** Meta-Agent مؤجل، ويبدأ بمسودات فقط إذا أثبتت الحاجة."` | — |
+| [SRC-0F910493E8-L000515](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L515) | 515 | `"8. **[PROPOSED]** توليد الكود التنفيذي ليس هدفًا تلقائيًا، وقد لا يكون مطلوبًا أصلًا."` | — |
+| [SRC-0F910493E8-L000516](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L516) | 516 | `"9. **[VERIFIED]** وجود هذه الوثيقة أو أي متطلب مكتوب لا يثبت التنفيذ."` | — |
+| [SRC-0F910493E8-L000517](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L517) | 517 | `"10. **[UNKNOWN]** لا تُحسم حالة أي قدرة أو اختبار إلا بالدليل المرتبط بنسخة وبيئة محددتين."` | — |
+| [SRC-0F910493E8-L000518](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L518) | 518 | `""` | — |
+| [SRC-0F910493E8-L000519](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L519) | 519 | `"---"` | — |
+| [SRC-0F910493E8-L000520](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L520) | 520 | `""` | — |
+| [SRC-0F910493E8-L000521](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L521) | 521 | `"# 16. شروط تحديث هذه المعمارية"` | — |
+| [SRC-0F910493E8-L000522](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L522) | 522 | `""` | — |
+| [SRC-0F910493E8-L000523](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L523) | 523 | `"تُراجع هذه الوثيقة عند حدوث واحد من الأمور التالية:"` | — |
+| [SRC-0F910493E8-L000524](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L524) | 524 | `"- ظهور دليل أن المهارات وسير العمل لا يلبّيان حاجة متكررة."` | — |
+| [SRC-0F910493E8-L000525](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L525) | 525 | `"- تغيّر واضح في نموذج المنتج أو المستخدمين."` | — |
+| [SRC-0F910493E8-L000526](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L526) | 526 | `"- إضافة صلاحيات أو بيانات أو آثار خارجية أعلى خطورة."` | — |
 | [SRC-0F910493E8-L000527](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L527) | 527 | `"- اكتشاف تناقض مع الدستور التأسيسي أو مع متطلب أمني."` | — |
 | [SRC-0F910493E8-L000528](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L528) | 528 | `"- نتائج تقييم تثبت أن القرار الحالي يسبب تكلفة أو فشلًا أعلى من البدائل."` | — |
 | [SRC-0F910493E8-L000529](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L529) | 529 | `"- تغير جوهري في بيئة التشغيل أو موارد الاستضافة."` | — |
@@ -826,29 +852,3 @@
 | [SRC-69F3587825-L000186](../search_code.py#L186) | 186 | `"        try:"` | — |
 | [SRC-69F3587825-L000187](../search_code.py#L187) | 187 | `"            if path.stat().st_size > MAX_SEARCH_FILE_BYTES:"` | — |
 | [SRC-69F3587825-L000188](../search_code.py#L188) | 188 | `"                continue"` | — |
-| [SRC-69F3587825-L000189](../search_code.py#L189) | 189 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-69F3587825-L000190](../search_code.py#L190) | 190 | `"        except (OSError, UnicodeDecodeError):"` | — |
-| [SRC-69F3587825-L000191](../search_code.py#L191) | 191 | `"            continue"` | — |
-| [SRC-69F3587825-L000192](../search_code.py#L192) | 192 | `"        lines = text.splitlines()"` | — |
-| [SRC-69F3587825-L000193](../search_code.py#L193) | 193 | `"        for index, line in enumerate(lines):"` | — |
-| [SRC-69F3587825-L000194](../search_code.py#L194) | 194 | `"            if pattern.search(line):"` | — |
-| [SRC-69F3587825-L000195](../search_code.py#L195) | 195 | `"                before = \"\\n\".join(lines[max(0, index - context) : index]) if context else \"\""` | — |
-| [SRC-69F3587825-L000196](../search_code.py#L196) | 196 | `"                after = ("` | — |
-| [SRC-69F3587825-L000197](../search_code.py#L197) | 197 | `"                    \"\\n\".join(lines[index + 1 : min(len(lines), index + 1 + context)])"` | — |
-| [SRC-69F3587825-L000198](../search_code.py#L198) | 198 | `"                    if context"` | — |
-| [SRC-69F3587825-L000199](../search_code.py#L199) | 199 | `"                    else \"\""` | — |
-| [SRC-69F3587825-L000200](../search_code.py#L200) | 200 | `"                )"` | — |
-| [SRC-69F3587825-L000201](../search_code.py#L201) | 201 | `"                hits.append("` | — |
-| [SRC-69F3587825-L000202](../search_code.py#L202) | 202 | `"                    SearchHit("` | — |
-| [SRC-69F3587825-L000203](../search_code.py#L203) | 203 | `"                        file=relative,"` | — |
-| [SRC-69F3587825-L000204](../search_code.py#L204) | 204 | `"                        line=index + 1,"` | — |
-| [SRC-69F3587825-L000205](../search_code.py#L205) | 205 | `"                        text=line.rstrip(),"` | — |
-| [SRC-69F3587825-L000206](../search_code.py#L206) | 206 | `"                        context_before=before.rstrip(),"` | — |
-| [SRC-69F3587825-L000207](../search_code.py#L207) | 207 | `"                        context_after=after.rstrip(),"` | — |
-| [SRC-69F3587825-L000208](../search_code.py#L208) | 208 | `"                    )"` | — |
-| [SRC-69F3587825-L000209](../search_code.py#L209) | 209 | `"                )"` | — |
-| [SRC-69F3587825-L000210](../search_code.py#L210) | 210 | `"                if len(hits) >= max_results:"` | — |
-| [SRC-69F3587825-L000211](../search_code.py#L211) | 211 | `"                    return hits"` | — |
-| [SRC-69F3587825-L000212](../search_code.py#L212) | 212 | `"    return hits"` | — |
-| [SRC-69F3587825-L000213](../search_code.py#L213) | 213 | `""` | — |
-| [SRC-69F3587825-L000214](../search_code.py#L214) | 214 | `""` | — |

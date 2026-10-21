@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-89BEE4CE47-L000080 إلى SRC-65551FB29F-L000301
+- النطاق: SRC-89BEE4CE47-L000054 إلى SRC-65551FB29F-L000275
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-89BEE4CE47-L000054](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L54) | 54 | ``"- **PR #59:** اقتراح لتثبيت GitHub Actions على commit SHAs كاملة بدل وسوم major متغيرة. CI [39225038734](https://github.com/mosabosama2030-oss/omarai/actions/runs/39225038734) نجح على HEAD `2b8c3de983f09ea1a7c4ca73d4c1a09a54ab987a`: Ruff و238 اختبارًا على Python 3.11 و238 على Python 3.12 وبناء الحاوية وفحص API المحمية. PR مفتوح وغير مدمج؛ ما زالت نسخة `main` تستخدم المراجع القديمة حتى دمج التغيير بموافقة بشرية."`` | — |
+| [SRC-89BEE4CE47-L000055](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L55) | 55 | ``"- **PR #43:** أُغلق دون دمج بعد استبداله بـPR #57، الذي يعيد تقديم الوثائق على أساس `main` الحالي؛ يظل التقرير الأولي عند `08319cce3652c332e414f691a71cc153dfbfd92e` لقطة تاريخية فقط."`` | — |
+| [SRC-89BEE4CE47-L000056](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L56) | 56 | `""` | — |
+| [SRC-89BEE4CE47-L000057](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L57) | 57 | `"## 3. تسوية أهم المتطلبات"` | — |
+| [SRC-89BEE4CE47-L000058](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L58) | 58 | `""` | — |
+| [SRC-89BEE4CE47-L000059](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L59) | 59 | `"\| المعرف \| الحالة الحالية في نطاق اللقطة \| الدليل والحدود \|"` | — |
+| [SRC-89BEE4CE47-L000060](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L60) | 60 | `"\|---\|---\|---\|"` | — |
+| [SRC-89BEE4CE47-L000061](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L61) | 61 | ``"\| `API-001` \| PARTIAL — تحسن مدمج مع فجوات متبقية \| `main` عند `871d2930405d164d3ae4c53f368937a4f5f01a6f` يتضمن PR #48: فحص Content-Length وحجم الجسم والحد الكلي ومهلة الخمول، مع اختبار stalled/slow-trickle. لا يثبت هذا مهلة قراءة الرؤوس البطيئة أو حماية شاملة من جميع هجمات Slowloris، ولا حدًا زمنيًا قاطعًا لتنفيذ الوكيل كاملًا. \|"`` | — |
+| [SRC-89BEE4CE47-L000062](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L62) | 62 | ``"\| `REL-001` \| PARTIAL \| PR #44 يضيف ميزانية تعاونية تحد من العمل الجديد وتضبط مهلات العمليات الخارجية. لا توجد ضمانة hard cancellation، ولا يثبت ذلك كل مسارات التشخيص أو التشغيل الحي. \|"`` | — |
+| [SRC-89BEE4CE47-L000063](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L63) | 63 | ``"\| `PER-002` \| PARTIAL \| الحد process-local للعمليات المكلفة موجود، لكنه لا يحد جميع خيوط HTTP بصورة عالمية ولا يثبت أداءً على حمل ممثل. \|"`` | — |
+| [SRC-89BEE4CE47-L000064](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L64) | 64 | ``"\| `PER-003` \| VERIFIED ضمن اختبار ميزانية الوحدات \| حدود البحث/النموذج/الصفحات/الأدوات وميزانية الوقت موجودة في الكود ومغطاة باختبارات الميزانية. هذا لا يثبت سقف تكلفة مالية شاملًا أو سعة إنتاجية أو إلغاء اتصال جارٍ. \|"`` | — |
+| [SRC-89BEE4CE47-L000065](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L65) | 65 | ``"\| `AIG-002` \| PARTIAL \| تخطيط البحث وعدد من الموارد محدود، والميزانية التعاونية توقف بدء أعمال جديدة عند نفاد الحد. الاختبارات العدائية لكل مسارات الإنهاك ليست مكتملة. \|"`` | — |
+| [SRC-89BEE4CE47-L000066](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L66) | 66 | ``"\| `FIN-001` \| PARTIAL \| حدود لكل طلب وتحديد معدل وتزامن محلي؛ لا توجد ميزانية إنفاق عالمية مضمونة عبر عدة نسخ/مزودين. \|"`` | — |
+| [SRC-89BEE4CE47-L000067](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L67) | 67 | ``"\| `EVD-001` \| PARTIAL \| فحص رقم الاستشهاد ومراجعة بمساعدة النموذج لا يثبتان دعم كل claim-source pair بصورة مستقلة. \|"`` | — |
+| [SRC-89BEE4CE47-L000068](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L68) | 68 | ``"\| `SEC-001` \| INFERRED / UNKNOWN لتاريخ Git \| القراءة من متغيرات البيئة لا تثبت خلو تاريخ الالتزامات الكامل أو إعدادات الإنتاج من الأسرار. لم يُنجز هنا فحص شامل لتاريخ Git أو بيئة إنتاج حقيقية. \|"`` | — |
+| [SRC-89BEE4CE47-L000069](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L69) | 69 | ``"\| `SEC-002` \| PARTIAL \| توجد حماية SSRF في الكود، لكن تغطية DNS المختلط وIPv6 والتحويل إلى عنوان محظور وسباق DNS تحتاج تدقيقًا عدائيًا مستقلًا. \|"`` | — |
+| [SRC-89BEE4CE47-L000070](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L70) | 70 | ``"\| `SEC-003` و`AIE-003` \| PARTIAL \| توجد معالجة لمحتوى صفحات الويب بوصفه غير موثوق واختبارات لفصل الرسائل؛ مجموعة red-team الكاملة لكل المصادر والمسارات غير مثبتة. \|"`` | — |
+| [SRC-89BEE4CE47-L000071](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L71) | 71 | ``"\| `UX-004` \| INFERRED \| توجد آليات escaping والتحقق من الروابط؛ اختبار XSS شامل على واجهة فعلية لم يُثبت في هذه اللقطة. \|"`` | — |
+| [SRC-89BEE4CE47-L000072](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L72) | 72 | ``"\| `IDN-001` و`IDN-003` \| النطاق الحالي مشغّل واحد؛ تعدد المستخدمين غير مطبق \| رمز Bearer مشترك ومخزن leads مشترك. لا يدعم هذا عزل مستأجرين أو تفويضًا لكل سجل. \|"`` | — |
+| [SRC-89BEE4CE47-L000073](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L73) | 73 | ``"\| `PRI-002` و`AIG-005` \| INFERRED / PARTIAL \| يرسل مسار النموذج السؤال وبعض السجل والمقتطفات إلى مزود خارجي حسب الإعداد. جرد تدفق بيانات حي شامل لكل الموصلات وشروط الاحتفاظ لم يُنجز هنا. \|"`` | — |
+| [SRC-89BEE4CE47-L000074](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L74) | 74 | ``"\| `REL-005` و`EXT-002` \| UNKNOWN \| لم تُثبت استعادة SQLite على مضيف فعلي، ولا دوام التخزين بعد إعادة إنشاء الحاوية. \|"`` | — |
+| [SRC-89BEE4CE47-L000075](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L75) | 75 | ``"\| `SRH-001` و`TST-005` \| UNKNOWN للتكامل الحي الشامل \| وجود موصل أو نجاح Mock لا يثبت اتصالًا حيًا بكل مزود. لم يتم تشغيل قبول حي شامل في هذه الجولة. \|"`` | — |
+| [SRC-89BEE4CE47-L000076](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L76) | 76 | ``"\| `DPL-001` و`DPL-004` \| UNKNOWN للنشر الفعلي \| بناء Docker واختبار الحاوية على CI لا يثبتان وجود خدمة عامة أو تطابقها مع SHA منشور. \|"`` | — |
+| [SRC-89BEE4CE47-L000077](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L77) | 77 | ``"\| `PER-004` و`REL-006` \| UNKNOWN \| لا يوجد تقرير حمل ممثل أو خط أساس SLO قابل للاعتماد في نطاق الأدلة الحالية. \|"`` | — |
+| [SRC-89BEE4CE47-L000078](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L78) | 78 | ``"\| `GOV-003` \| UNKNOWN — قرار بشري مطلوب \| لا يوجد سجل استثناءات معتمد مثبت ضمن هذه اللقطة. غياب سجل بالمستودع لا يثبت عدم وجود قرار خارجي. \|"`` | — |
+| [SRC-89BEE4CE47-L000079](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) | 79 | `""` | — |
 | [SRC-89BEE4CE47-L000080](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L80) | 80 | `"## 4. ماذا أُنجز في مسار التشغيل خلال هذه الجولة؟"` | — |
 | [SRC-89BEE4CE47-L000081](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L81) | 81 | `""` | — |
 | [SRC-89BEE4CE47-L000082](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L82) | 82 | `"### M-01 — قراءة جسم طلب API"` | — |
@@ -817,29 +843,3 @@
 | [SRC-65551FB29F-L000273](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L273) | 273 | `"2. لا تعرض استشهادًا على أنه يدعم ادعاءً دون فحص محتواه."` | — |
 | [SRC-65551FB29F-L000274](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L274) | 274 | `"3. لا تمرر محتوى صفحة أو أداة إلى صلاحيات تعليمات أعلى."` | — |
 | [SRC-65551FB29F-L000275](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L275) | 275 | `"4. لا تنفذ أداة أو أثرًا خارجيًا حساسًا بلا صلاحية."` | — |
-| [SRC-65551FB29F-L000276](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L276) | 276 | `"5. لا تسمح لطلب واحد بتجاوز الميزانيات أو الدخول في حلقة لا نهائية."` | — |
-| [SRC-65551FB29F-L000277](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L277) | 277 | `"6. لا تسمح بأن تتسرب حالة المستخدم إلى طلب آخر."` | — |
-| [SRC-65551FB29F-L000278](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L278) | 278 | `"7. لا تعرض أسرارًا أو بيانات خاصة في logs أو أخطاء عامة."` | — |
-| [SRC-65551FB29F-L000279](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L279) | 279 | `"8. لا تغيّر بيانات دائمة دون خطة ترحيل/استعادة عند انطباقها."` | — |
-| [SRC-65551FB29F-L000280](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L280) | 280 | `"9. لا تدع فشل مزود خارجي يتحول إلى نجاح زائف."` | — |
-| [SRC-65551FB29F-L000281](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L281) | 281 | `"10. لا تدّع أن اختبارًا أو ميزة أو حد سعة تم التحقق منه ما لم توجد نتيجة."` | — |
-| [SRC-65551FB29F-L000282](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L282) | 282 | `"11. لا تدمج أو تنشر أو تقبل خطرًا حرجًا نيابة عن صاحب المشروع دون تفويض."` | — |
-| [SRC-65551FB29F-L000283](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L283) | 283 | `"12. يجب أن تكون نتيجة كل فشل مفهومة للمنظومة: خطأ متوقع مصنف أو حالة مجهولة موثقة، لا استثناء صامتًا."` | — |
-| [SRC-65551FB29F-L000284](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L284) | 284 | `""` | — |
-| [SRC-65551FB29F-L000285](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L285) | 285 | `"---"` | — |
-| [SRC-65551FB29F-L000286](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L286) | 286 | `""` | — |
-| [SRC-65551FB29F-L000287](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L287) | 287 | `"# الجزء الخامس — مصفوفة ربط المجالات بالأدلة"` | — |
-| [SRC-65551FB29F-L000288](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L288) | 288 | `""` | — |
-| [SRC-65551FB29F-L000289](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L289) | 289 | `"## 13. مصفوفة الدليل المطلوبة"` | — |
-| [SRC-65551FB29F-L000290](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L290) | 290 | `""` | — |
-| [SRC-65551FB29F-L000291](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L291) | 291 | `"\| المجال \| أدلة مناسبة للقبول \| أدلة غير كافية وحدها \|"` | — |
-| [SRC-65551FB29F-L000292](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L292) | 292 | `"\|---\|---\|---\|"` | — |
-| [SRC-65551FB29F-L000293](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L293) | 293 | `"\| صحة الوظيفة \| unit/integration/e2e ونتيجة مرصودة \| تعليق أو تقرير ذاتي \|"` | — |
-| [SRC-65551FB29F-L000294](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L294) | 294 | `"\| البحث الحي \| اختبار اتصال فعلي من بيئة محددة وتحقق محتوى \| وجود API key أو إعداد connector \|"` | — |
-| [SRC-65551FB29F-L000295](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L295) | 295 | `"\| جودة الاستشهاد \| اختبار claim-to-source ومراجعة العينة \| رابط ظاهر دون فحص دعمه \|"` | — |
-| [SRC-65551FB29F-L000296](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L296) | 296 | `"\| الأمن \| نموذج تهديد وفحص مناسب واختبار سلبي \| إقرار النموذج بأنه آمن \|"` | — |
-| [SRC-65551FB29F-L000297](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L297) | 297 | `"\| التفويض \| اختبار API مباشر بهويات وصلاحيات مختلفة \| إخفاء الزر بالواجهة \|"` | — |
-| [SRC-65551FB29F-L000298](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L298) | 298 | `"\| عدم اختلاط المستخدمين \| اختبار تزامن وحدود جلسة/مستأجر \| مراجعة سطحية لمتغيرات عامة فقط \|"` | — |
-| [SRC-65551FB29F-L000299](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L299) | 299 | `"\| الأداء \| workload وقياسات p95/p99 وموارد وإعدادات \| اختبار يدوي سريع أو رقم تخميني \|"` | — |
-| [SRC-65551FB29F-L000300](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L300) | 300 | `"\| التوسع \| قياس عنق الزجاجة واختبار متعددة النسخ عند الادعاء \| قول «قابل للتوسع» \|"` | — |
-| [SRC-65551FB29F-L000301](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L301) | 301 | `"\| التعافي \| استعادة فعلية وقياس زمن وفقد البيانات \| ملف backup موجود \|"` | — |

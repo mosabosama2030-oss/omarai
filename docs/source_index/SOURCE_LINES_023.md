@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000181 إلى SRC-3451CC474D-L000712
+- النطاق: SRC-1C77C97630-L000155 إلى SRC-3451CC474D-L000686
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000155](../../tests/test_answer_validation.py#L155) | 155 | `"        \"قارن السعر والمساحة\","` | — |
+| [SRC-1C77C97630-L000156](../../tests/test_answer_validation.py#L156) | 156 | `"        \"الإجابة الأولية.\","` | — |
+| [SRC-1C77C97630-L000157](../../tests/test_answer_validation.py#L157) | 157 | `"        [{"` | — |
+| [SRC-1C77C97630-L000158](../../tests/test_answer_validation.py#L158) | 158 | `"            \"title\": \"إعلان\","` | — |
+| [SRC-1C77C97630-L000159](../../tests/test_answer_validation.py#L159) | 159 | `"            \"url\": \"https://example.com/listing\","` | — |
+| [SRC-1C77C97630-L000160](../../tests/test_answer_validation.py#L160) | 160 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000161](../../tests/test_answer_validation.py#L161) | 161 | `"            \"snippet\": \"السعر مذكور والمساحة غير مذكورة\","` | — |
+| [SRC-1C77C97630-L000162](../../tests/test_answer_validation.py#L162) | 162 | `"        }],"` | — |
+| [SRC-1C77C97630-L000163](../../tests/test_answer_validation.py#L163) | 163 | `"        [\"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000164](../../tests/test_answer_validation.py#L164) | 164 | `"    )"` | — |
+| [SRC-1C77C97630-L000165](../../tests/test_answer_validation.py#L165) | 165 | `"    assert repaired == \"تم توضيح السعر والمساحة [المصدر 1].\""` | — |
+| [SRC-1C77C97630-L000166](../../tests/test_answer_validation.py#L166) | 166 | `"    assert \"المساحة\" in captured[\"messages\"][2][\"content\"]"` | — |
+| [SRC-1C77C97630-L000167](../../tests/test_answer_validation.py#L167) | 167 | `"    assert \"السعر مذكور والمساحة غير مذكورة\" in captured[\"messages\"][4][\"content\"]"` | — |
+| [SRC-1C77C97630-L000168](../../tests/test_answer_validation.py#L168) | 168 | `"    assert \"مقتطف بحث\" in captured[\"messages\"][4][\"content\"]"` | — |
+| [SRC-1C77C97630-L000169](../../tests/test_answer_validation.py#L169) | 169 | `""` | — |
+| [SRC-1C77C97630-L000170](../../tests/test_answer_validation.py#L170) | 170 | `""` | — |
+| [SRC-1C77C97630-L000171](../../tests/test_answer_validation.py#L171) | 171 | `"def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatch):"` | — |
+| [SRC-1C77C97630-L000172](../../tests/test_answer_validation.py#L172) | 172 | `"    agent = WebAgent()"` | — |
+| [SRC-1C77C97630-L000173](../../tests/test_answer_validation.py#L173) | 173 | `"    monkeypatch.setattr("` | — |
+| [SRC-1C77C97630-L000174](../../tests/test_answer_validation.py#L174) | 174 | `"        agent,"` | — |
+| [SRC-1C77C97630-L000175](../../tests/test_answer_validation.py#L175) | 175 | `"        \"_request_completion\","` | — |
+| [SRC-1C77C97630-L000176](../../tests/test_answer_validation.py#L176) | 176 | `"        lambda *args, **kwargs: ("` | — |
+| [SRC-1C77C97630-L000177](../../tests/test_answer_validation.py#L177) | 177 | `"            \"<<<OMARAI_COVERAGE_REPAIR>>>إجابة<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000178](../../tests/test_answer_validation.py#L178) | 178 | `"            \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000179](../../tests/test_answer_validation.py#L179) | 179 | `"        ),"` | — |
+| [SRC-1C77C97630-L000180](../../tests/test_answer_validation.py#L180) | 180 | `"    )"` | — |
 | [SRC-1C77C97630-L000181](../../tests/test_answer_validation.py#L181) | 181 | `"    with pytest.raises(RuntimeError, match=\"إصلاح تغطية آمن\"):"` | — |
 | [SRC-1C77C97630-L000182](../../tests/test_answer_validation.py#L182) | 182 | `"        agent._repair_answer_coverage("` | — |
 | [SRC-1C77C97630-L000183](../../tests/test_answer_validation.py#L183) | 183 | `"            \"قارن السعر\","` | — |
@@ -799,29 +825,3 @@
 | [SRC-3451CC474D-L000684](../../tests/test_api.py#L684) | 684 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
 | [SRC-3451CC474D-L000685](../../tests/test_api.py#L685) | 685 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
 | [SRC-3451CC474D-L000686](../../tests/test_api.py#L686) | 686 | `"    handler = SimpleNamespace("` | — |
-| [SRC-3451CC474D-L000687](../../tests/test_api.py#L687) | 687 | `"        headers={"` | — |
-| [SRC-3451CC474D-L000688](../../tests/test_api.py#L688) | 688 | `"            \"Host\": \"omarai.example\","` | — |
-| [SRC-3451CC474D-L000689](../../tests/test_api.py#L689) | 689 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
-| [SRC-3451CC474D-L000690](../../tests/test_api.py#L690) | 690 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
-| [SRC-3451CC474D-L000691](../../tests/test_api.py#L691) | 691 | `"        }"` | — |
-| [SRC-3451CC474D-L000692](../../tests/test_api.py#L692) | 692 | `"    )"` | — |
-| [SRC-3451CC474D-L000693](../../tests/test_api.py#L693) | 693 | `"    allowed = Handler._allowed_origins(handler)"` | — |
-| [SRC-3451CC474D-L000694](../../tests/test_api.py#L694) | 694 | `"    assert \"https://omarai.example\" in allowed"` | — |
-| [SRC-3451CC474D-L000695](../../tests/test_api.py#L695) | 695 | `"    assert \"https://attacker.example\" not in allowed"` | — |
-| [SRC-3451CC474D-L000696](../../tests/test_api.py#L696) | 696 | `""` | — |
-| [SRC-3451CC474D-L000697](../../tests/test_api.py#L697) | 697 | `""` | — |
-| [SRC-3451CC474D-L000698](../../tests/test_api.py#L698) | 698 | `""` | — |
-| [SRC-3451CC474D-L000699](../../tests/test_api.py#L699) | 699 | `"def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000700](../../tests/test_api.py#L700) | 700 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000701](../../tests/test_api.py#L701) | 701 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000702](../../tests/test_api.py#L702) | 702 | `"    for path in (\"/api/health\", \"/\"):"` | — |
-| [SRC-3451CC474D-L000703](../../tests/test_api.py#L703) | 703 | `"        request = Request(local_api + path)"` | — |
-| [SRC-3451CC474D-L000704](../../tests/test_api.py#L704) | 704 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000705](../../tests/test_api.py#L705) | 705 | `"            headers = {name.lower(): value for name, value in response.headers.items()}"` | — |
-| [SRC-3451CC474D-L000706](../../tests/test_api.py#L706) | 706 | `"            assert headers[\"x-content-type-options\"] == \"nosniff\""` | — |
-| [SRC-3451CC474D-L000707](../../tests/test_api.py#L707) | 707 | `"            assert headers[\"x-frame-options\"] == \"DENY\""` | — |
-| [SRC-3451CC474D-L000708](../../tests/test_api.py#L708) | 708 | `"            assert headers[\"referrer-policy\"] == \"strict-origin-when-cross-origin\""` | — |
-| [SRC-3451CC474D-L000709](../../tests/test_api.py#L709) | 709 | `"            assert \"default-src 'self'\" in headers[\"content-security-policy\"]"` | — |
-| [SRC-3451CC474D-L000710](../../tests/test_api.py#L710) | 710 | `"            assert \"frame-ancestors 'none'\" in headers[\"content-security-policy\"]"` | — |
-| [SRC-3451CC474D-L000711](../../tests/test_api.py#L711) | 711 | `"            assert headers[\"permissions-policy\"] == ("` | — |
-| [SRC-3451CC474D-L000712](../../tests/test_api.py#L712) | 712 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
