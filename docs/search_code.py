@@ -12,10 +12,12 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import subprocess
 import sys
 from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import quote
 
 
 EXCLUDED_DIRECTORIES = frozenset(
@@ -114,7 +116,30 @@ DEFAULT_EXTENSIONS = frozenset(
         ".example",
     }
 )
-GITHUB_BLOB_BASE = "https://github.com/mosabosama2030-oss/omarai/blob/main"
+GITHUB_BLOB_BASE = "https://github.com/mosabosama2030-oss/omarai/blob"
+
+
+def default_repository_ref(root: Path) -> str:
+    """Choose an exact revision for source links, with an explicit operator override."""
+    configured = os.getenv("OMARAI_GITHUB_REF", "").strip()
+    if configured:
+        return configured
+    action_sha = os.getenv("GITHUB_SHA", "").strip()
+    if re.fullmatch(r"[0-9a-fA-F]{40}", action_sha):
+        return action_sha.lower()
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=2,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return "main"
+    revision = result.stdout.strip()
+    return revision.lower() if re.fullmatch(r"[0-9a-fA-F]{40}", revision) else "main"
 
 
 @dataclass(frozen=True, slots=True)
@@ -124,10 +149,13 @@ class SearchHit:
     text: str
     context_before: str
     context_after: str
+    repository_ref: str = "main"
 
     @property
     def link(self) -> str:
-        return f"{GITHUB_BLOB_BASE}/{self.file}#L{self.line}"
+        revision = quote(self.repository_ref, safe="/-._~")
+        path = quote(self.file, safe="/-._~")
+        return f"{GITHUB_BLOB_BASE}/{revision}/{path}#L{self.line}"
 
 
 def discover_text_files(root: Path, extensions: frozenset[str]) -> list[Path]:
@@ -163,6 +191,7 @@ def search_repository(
     use_regex: bool = False,
     case_sensitive: bool = False,
     extensions: frozenset[str] = DEFAULT_EXTENSIONS,
+    repository_ref: str = "main",
     max_results: int = 50,
     context: int = 1,
 ) -> list[SearchHit]:
@@ -205,6 +234,7 @@ def search_repository(
                         text=line.rstrip(),
                         context_before=before.rstrip(),
                         context_after=after.rstrip(),
+                        repository_ref=repository_ref,
                     )
                 )
                 if len(hits) >= max_results:
@@ -259,6 +289,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         default=0,
         help="عدد أسطر السياق قبل/بعد.",
     )
+    parser.add_argument(
+        "--ref",
+        default=None,
+        help="مرجع GitHub للروابط (SHA أو فرع). افتراضيًا يُستخدم SHA المحلي/بيئة CI ثم main كخيار أخير.",
+    )
     args = parser.parse_args(argv)
 
     try:
@@ -268,12 +303,14 @@ def main(argv: Sequence[str] | None = None) -> int:
             if args.ext
             else DEFAULT_EXTENSIONS
         )
+        repository_ref = args.ref.strip() if isinstance(args.ref, str) and args.ref.strip() else default_repository_ref(root)
         hits = search_repository(
             root,
             args.query,
             use_regex=args.regex,
             case_sensitive=args.case_sensitive,
             extensions=extensions,
+            repository_ref=repository_ref,
             max_results=max(1, args.max),
             context=max(0, args.context),
         )
