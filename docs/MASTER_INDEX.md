@@ -14,7 +14,7 @@
 - تعريفات Python موثقة بوجود Docstring: **189**
 - تعريفات Python بلا Docstring: **577**
 - تعريفات لا ينطبق عليها Docstring: **193**
-- الرموز الساكنة الإضافية: **1409**
+- الرموز الساكنة الإضافية: **1410**
 - الأسطر النصية المفهرسة حرفيًا: **25079**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
@@ -69,7 +69,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22612 | 185 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22955 | 185 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
@@ -1938,6 +1938,7 @@
 | [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 82 | [SRC-B335630551-L000082](../README.md#L82) |
 | [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 82 | [SRC-B335630551-L000082](../README.md#L82) |
 | [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 82 | [SRC-B335630551-L000082](../README.md#L82) |
+| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 82 | [SRC-B335630551-L000082](../README.md#L82) |
 | [README.md](../README.md#L83) | عنوان Markdown (H2) | Free hosted deployment (SnapDeploy) | 83 | [SRC-B335630551-L000083](../README.md#L83) |
 | [README.md](../README.md#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 86 | [SRC-B335630551-L000086](../README.md#L86) |
 | [README.md](../README.md#L89) | عنوان Markdown (H2) | Free hosted deployment (Render) | 89 | [SRC-B335630551-L000089](../README.md#L89) |
