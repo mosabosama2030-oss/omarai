@@ -2,14 +2,14 @@
 
 **Purpose:** Keep this scope note aligned with the source code and operator-visible claims. This document is a scope description, not a certification of compliance or live-provider availability.
 
-**Baseline reviewed:** `main` at commit `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81` (2026-10-21, after PR #75). The audit-closure branch is proposed work and is not part of `main` until merged.  
+**Latest post-merge baseline checked:** `main` at merge commit `528a2552c0cda809d6c444713466e0e075c13ed9` after PR #76 merged on 2026-10-21. The earlier `d46a546...` baseline below is a historical audit snapshot. Current verification and gaps are recorded in [the post-merge verification report](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md).  
 **Evidence labels:** `VERIFIED` means directly confirmed in source or a named automated check; `INFERRED` means a bounded conclusion from source structure; `UNKNOWN` means live or environmental evidence is not available. A source-level capability must not be described as a live integration test.
 
-## Current baseline addendum — 2026-10-21
+## Baseline history and post-merge correction — 2026-10-21
 
-The current `main` baseline is `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. CI run [39584599539](https://github.com/mosabosama2030-oss/omarai/actions/runs/39584599539) passed 308 tests on Python 3.11 and 308 on Python 3.12, Ruff, index verification, production container build, and protected API smoke.
+The original baseline section below records `main` at `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`, after PR #75, when the audit-closure changes had not yet merged. PR #76 has now merged into `main` via `528a2552c0cda809d6c444713466e0e075c13ed9`. The latest PR-head CI inspected after that merge is [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040), with 384 passing tests on both Python 3.11 and 3.12, successful Ruff/index checks, and a successful production-container/API smoke job.
 
-This establishes automated checks against that source revision; it does **not** establish live provider availability, a hosted service, factual correctness of all answers, durable storage on a target host, load capacity, or multi-tenant isolation. The audit-closure branch proposes additional intent routing, evidence diagnostics, page-fetch statuses, response headers, and deployment SHA checks. Those proposed capabilities must remain marked unverified until the PR-head CI passes; hosted acceptance remains `NOT_RUN` until a real target is configured and explicitly tested.
+**CI on the merge SHA itself remains `NOT_CONFIRMED` in this review.** This update does not establish live provider availability, a hosted service, factual correctness of all answers, durable storage on a target host, load capacity, or multi-tenant isolation. Full evidence and remaining acceptance gates are in [the post-merge verification report](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md).
 
 ## Implemented in the repository
 
@@ -63,11 +63,16 @@ The current shared bearer token and local lead store do not establish per-user i
 - آخر تشغيل شامل أخضر **قبل** تغيير `docs/search_code.py` و`.github/workflows/tests.yml` هو [run #39651908777](https://github.com/mosabosama2030-oss/omarai/actions/runs/39651908777) على `5a2259ef787d4a4553a503276daf399fa6514f3f`: 380 اختبارًا لكل من Python 3.11 و3.12، وRuff، وفحص الفهرس، وبناء الحاوية واختبار API المحمي ناجحة. لا يغطي هذا التشغيل التغييرات التي أضيفت بعده.
 - أُضيف إلى أداة البحث خيار `--ref`، مع `OMARAI_GITHUB_REF` والالتقاط الآمن لمرجع SHA المحلي/CI، حتى تشير الروابط إلى النسخة التي تُراجع بدل تثبيتها على `blob/main`. أضيفت اختبارات لهذه السلوكيات، لكن pytest لم يصل إليها في التشغيل الأخير.
 - غُيّر CI إلى فحص الفهرس الملتزم مباشرة باستخدام `python docs/generate_index.py --check`. في [run #39652716421](https://github.com/mosabosama2030-oss/omarai/actions/runs/39652716421) نجح Ruff، لكن فحص الفهرس اكتشف ملفات مولدة قديمة في لقطة PR merge قبل تحديثها آليًا؛ لذلك توقفت pytest ولم تُشغّل.
-- بعد تحديث الفهرس، ظل تشغيل [#39653239007](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653239007) على رأس bot بحالة `action_required` بلا jobs. رأس PR #76 شوهد وقت إضافة هذا التحديث كـ `de619aefc8375dcfbf0d96ab32b36e156b2273cb`؛ يجب أخذ الرأس الحي من GitHub قبل قرار الدمج لأن تحديث الفهرس قد يضيف commit آخر.
-- لذلك حالة التغييرات الأخيرة للبحث وفحص الفهرس هي **PARTIAL / NOT YET FULLY TESTED**، وليست `FIXED_AND_TESTED`. يلزم اعتماد وتشغيل GitHub Actions على الرأس الحالي ثم مراجعة نتائج pytest وRuff والفهرس والحاوية.
+- **حالة تاريخية وقت كتابة هذا المقطع:** بعد تحديث الفهرس، كان تشغيل [#39653239007](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653239007) على رأس bot بحالة `action_required` بلا jobs. لاحقًا نجح [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) على رأس PR `3fb028...` قبل الدمج؛ #76 أصبح مدمجًا عبر `528a255...`. تفاصيل الحالة الحالية في تقرير ما بعد الدمج.
+- لذلك كانت حالة التغييرات الأخيرة للبحث وفحص الفهرس **PARTIAL / NOT YET FULLY TESTED وقت كتابة هذا المقطع**. استُكملت لاحقًا فحوص CI على رأس PR #76 في run #39654908040. انظر الملحق الحالي أعلى الوثيقة وتقرير ما بعد الدمج.
 - لا يغيّر ذلك حالة الاختبارات الحية المستقلة: `NOT_RUN/UNKNOWN` ما زالت تنطبق على hosted smoke، وتوافر كل موفري البحث والنموذج، والتقييم الدلالي لـAQ-001–045، ودوام التخزين/الاستعادة على المضيف، واختبار الحمل، وعزل تعدد المستأجرين، والتقرير المستقل الكامل من Grok.
 - **السجل المركزي الوحيد لجميع المعرفات ومعايير الإغلاق:** [`OMARAI_REMEDIATION_REGISTER_AR.md`](OMARAI_REMEDIATION_REGISTER_AR.md). لا تكرر بنودًا جديدة هنا دون إضافتها إلى ذلك السجل.
 
 ## تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026
 
 تم بعد الملاحظة التاريخية أعلاه إكمال بوابة CI على كود/اختبارات/Workflow مرشح الإغلاق: الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، [تشغيل PR #39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) — 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة. بعد ذلك تُظهر المقارنة مع رأس PR الذي شوهد `b848f96...` تغييرات وثائق وفهرسة مولّدة فقط، من دون تغيير التطبيق أو الاختبارات أو Workflow. يظل هذا التصحيح خاصًا بالاختبارات الآلية؛ الاستضافة الحقيقية، ومزودو البحث/النماذج الحيون، وتقييم الجودة الدلالي، ودوام التخزين/الاستعادة، والحمل، والتدقيق المستقل تبقى `NOT_RUN/UNKNOWN`. السجل التفصيلي المعتمد: [سجل الإغلاق المركزي](OMARAI_REMEDIATION_REGISTER_AR.md).
+
+
+## تحديث نهائي بعد دمج PR #76 — 21 أكتوبر 2026
+
+PR #76 مُدمج في `main` عبر `528a2552c0cda809d6c444713466e0e075c13ed9`. CI على رأس PR قبل الدمج [#39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) نجح: 384 اختبارًا على Python 3.11 و384 على Python 3.12، وRuff والفهرس وبناء الحاوية وAPI smoke ناجحة. **لم يُثبت في هذه المراجعة تشغيل CI على SHA الدمج نفسه**. الاستضافة الحية، وتوافر المزودين، والصحة الدلالية، ودوام SQLite/الاستعادة، والحمل، والاختبار الأحمر المستقل، وقبول Android/RTL تبقى غير محسومة حسب معيار كل منها. المرجع الأحدث: [تقرير التحقق بعد الدمج](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md).
