@@ -4,9 +4,172 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000274 إلى SRC-4FFD5AFC54-L000278
+- النطاق: SRC-B6BD2CE1A8-L000011 إلى SRC-A8360B1B03-L000090
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-B6BD2CE1A8 — [docs/OPERATIONS_AR.md](../OPERATIONS_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B6BD2CE1A8-L000011](../OPERATIONS_AR.md#L11) | 11 | `""` | — |
+| [SRC-B6BD2CE1A8-L000012](../OPERATIONS_AR.md#L12) | 12 | `"يمكنك كذلك استخدام مربع «اسأل Omarai» لطلب إحصائيات السجل المحلي أو ترشيح إشارة للمراجعة أو تفسير الدرجة أو صياغة مسودة تواصل. الإجابات مبنية على قواعد محلية وسجلات محفوظة فقط؛ لا يوجد نموذج سحابي ولا تُرسل أي رسالة تلقائيًا."` | — |
+| [SRC-B6BD2CE1A8-L000013](../OPERATIONS_AR.md#L13) | 13 | `""` | — |
+| [SRC-B6BD2CE1A8-L000014](../OPERATIONS_AR.md#L14) | 14 | `"1. أدخل نصًا من مصدر عام أو مصدر لديك إذن باستخدامه."` | — |
+| [SRC-B6BD2CE1A8-L000015](../OPERATIONS_AR.md#L15) | 15 | `"2. اضغط «حلّل الإشارة» وافحص العبارات المطابقة وسبب النقاط."` | — |
+| [SRC-B6BD2CE1A8-L000016](../OPERATIONS_AR.md#L16) | 16 | `"3. أضف رابط المصدر الحقيقي قبل الحفظ."` | — |
+| [SRC-B6BD2CE1A8-L000017](../OPERATIONS_AR.md#L17) | 17 | `"4. راجع الإشارات يدويًا وغيّر الحالة إلى مؤهل أو يحتاج مراجعة أو غير ذلك."` | — |
+| [SRC-B6BD2CE1A8-L000018](../OPERATIONS_AR.md#L18) | 18 | `"5. صدّر CSV عند الحاجة واحتفظ بنسخة احتياطية آمنة."` | — |
+| [SRC-B6BD2CE1A8-L000019](../OPERATIONS_AR.md#L19) | 19 | `""` | — |
+| [SRC-B6BD2CE1A8-L000020](../OPERATIONS_AR.md#L20) | 20 | `"## قواعد مهمة"` | — |
+| [SRC-B6BD2CE1A8-L000021](../OPERATIONS_AR.md#L21) | 21 | `"- لا تدخل رسائل خاصة أو بيانات اعتماد أو أرقام هواتف غير لازمة."` | — |
+| [SRC-B6BD2CE1A8-L000022](../OPERATIONS_AR.md#L22) | 22 | `"- لا تعتبر الدرجة احتمالًا للشراء."` | — |
+| [SRC-B6BD2CE1A8-L000023](../OPERATIONS_AR.md#L23) | 23 | `"- لا يتصفح Omarai المنصات تلقائيًا ولا يرسل رسائل."` | — |
+| [SRC-B6BD2CE1A8-L000024](../OPERATIONS_AR.md#L24) | 24 | `"- الخادم مربوط بعنوان loopback افتراضيًا، ويرفض أنواع المحتوى غير JSON والطلبات ذات Origin غير محلي. لا تكشفه للشبكة أو الإنترنت دون مصادقة واختبار أمني."` | — |
+| [SRC-B6BD2CE1A8-L000025](../OPERATIONS_AR.md#L25) | 25 | ``"- قاعدة البيانات الافتراضية: `~/.omarai/omarai.sqlite3`."`` | — |
+## وثائق وفهرسة
+
+### FILE-D911B73392 — [docs/RESEARCH_CONNECTORS_AR.md](../RESEARCH_CONNECTORS_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D911B73392-L000001](../RESEARCH_CONNECTORS_AR.md#L1) | 1 | `"# دليل البحث المتقدم والموصلات الاجتماعية — Omarai"` | — |
+| [SRC-D911B73392-L000002](../RESEARCH_CONNECTORS_AR.md#L2) | 2 | `""` | — |
+| [SRC-D911B73392-L000003](../RESEARCH_CONNECTORS_AR.md#L3) | 3 | `"هذا الدليل يشرح ما يستطيع Omarai الوصول إليه فعلًا، وما يحتاج إلى مفاتيح وصلاحيات، وكيفية إعدادها من Termux. لا توجد طريقة شرعية أو تقنية مضمونة للوصول إلى كل منشورات كل منصة: بعض البيانات تتطلب مراجعة تطبيق وصلاحيات، وبعضها لا يظهر إلا في البحث المفهرس."` | — |
+| [SRC-D911B73392-L000004](../RESEARCH_CONNECTORS_AR.md#L4) | 4 | `""` | — |
+| [SRC-D911B73392-L000005](../RESEARCH_CONNECTORS_AR.md#L5) | 5 | `"## 1. كيف يجري Omarai البحث؟"` | — |
+| [SRC-D911B73392-L000006](../RESEARCH_CONNECTORS_AR.md#L6) | 6 | `""` | — |
+| [SRC-D911B73392-L000007](../RESEARCH_CONNECTORS_AR.md#L7) | 7 | `"1. يفهم السؤال ويخطط حتى ثمانية استعلامات بحث، باستخدام النموذج اللغوي إذا كان مفتاحه مضبوطًا؛ وإلا يستخدم خطة احتياطية محددة."` | — |
+| [SRC-D911B73392-L000008](../RESEARCH_CONNECTORS_AR.md#L8) | 8 | `"2. يبحث في DuckDuckGo HTML وBing RSS لكل استعلام، ويمكنه إضافة واجهتي البحث الرسميتين Brave Search وTavily عند ضبط مفاتيحهما، ويستخدم موجز Google News للأسئلة الحديثة."` | — |
+| [SRC-D911B73392-L000009](../RESEARCH_CONNECTORS_AR.md#L9) | 9 | `"3. إذا كان السؤال اجتماعيًا، يجرّب المصادر العامة المتاحة والموصلات الرسمية التي أُعدّت بياناتها."` | — |
+| [SRC-D911B73392-L000010](../RESEARCH_CONNECTORS_AR.md#L10) | 10 | `"4. يزيل النتائج المكررة ويجمع تكرار ظهور المصدر عبر الاستعلامات ومحركات البحث مع الاحتفاظ باسم الموفر والاستعلام ورابط المصدر."` | — |
+| [SRC-D911B73392-L000011](../RESEARCH_CONNECTORS_AR.md#L11) | 11 | `"5. يحاول قراءة النص من أفضل ثماني صفحات عامة على الأكثر، ضمن حدود زمنية وحجمية، مع اتباع عدد محدود من التحويلات العامة بشرط التحقق من كل وجهة قبل الاتصال بها."` | — |
+| [SRC-D911B73392-L000012](../RESEARCH_CONNECTORS_AR.md#L12) | 12 | `"6. ينتج إجابة بلغة السؤال مع روابط قابلة للمراجعة وتقرير يوضح ما جرى فعليًا: عدد الاستعلامات، المصادر والنطاقات الفريدة، الصفحات المقروءة، تنوع المحركات، نوع المصادر، وتغطية تواريخ النشر والتحذيرات. يحتوي على أوضاع تلقائي/معمّق/الأحدث/آراء الناس. مؤشرات التغطية تقيس اتساع البحث وقابلية مراجعة الدليل، ولا تعني نسبة صحة الإجابة."` | — |
+| [SRC-D911B73392-L000013](../RESEARCH_CONNECTORS_AR.md#L13) | 13 | `"7. في البحث العميق، يمرر المسودة على مراجعة ثانية للاتساق مع المصادر. هذه مراجعة من النموذج/الموفر نفسه وليست تحققًا مستقلًا من الحقيقة."` | — |
+| [SRC-D911B73392-L000014](../RESEARCH_CONNECTORS_AR.md#L14) | 14 | `""` | — |
+| [SRC-D911B73392-L000015](../RESEARCH_CONNECTORS_AR.md#L15) | 15 | `"لا ينبغي تفسير اتفاق نتيجتين بحثيتين على أنه تصديق مستقل، ولا اعتبار عينة من التعليقات ممثلة لكل المستخدمين."` | — |
+| [SRC-D911B73392-L000016](../RESEARCH_CONNECTORS_AR.md#L16) | 16 | `""` | — |
+| [SRC-D911B73392-L000017](../RESEARCH_CONNECTORS_AR.md#L17) | 17 | `"## 2.1 واجهات بحث ويب اختيارية"` | — |
+| [SRC-D911B73392-L000018](../RESEARCH_CONNECTORS_AR.md#L18) | 18 | `""` | — |
+| [SRC-D911B73392-L000019](../RESEARCH_CONNECTORS_AR.md#L19) | 19 | `"يمكنك إضافة فهرسين مباشرين للبحث بدل الاعتماد على استخراج صفحات نتائج محركات البحث فقط. قد يحتاج كل مزود إلى حساب أو خطة أو حصّة استخدام؛ لا تفترض أن الخدمة مجانية أو أن المفتاح صالح قبل الاختبار الحي."` | — |
+| [SRC-D911B73392-L000020](../RESEARCH_CONNECTORS_AR.md#L20) | 20 | `""` | — |
+| [SRC-D911B73392-L000021](../RESEARCH_CONNECTORS_AR.md#L21) | 21 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000022](../RESEARCH_CONNECTORS_AR.md#L22) | 22 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-D911B73392-L000023](../RESEARCH_CONNECTORS_AR.md#L23) | 23 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-D911B73392-L000024](../RESEARCH_CONNECTORS_AR.md#L24) | 24 | ````"```"```` | — |
+| [SRC-D911B73392-L000025](../RESEARCH_CONNECTORS_AR.md#L25) | 25 | `""` | — |
+| [SRC-D911B73392-L000026](../RESEARCH_CONNECTORS_AR.md#L26) | 26 | `"يدمج Omarai النتائج من هذه الواجهات مع محركات البحث العامة عند ضبط المتغيرات. لا تُحفظ المفاتيح في المستودع أو واجهة HTML، ولا يُرجعها تقرير الصحة. إذا فشل المفتاح أو انتهت الحصة، قد تظهر نتائج من المحركات العامة الأخرى؛ افحص أسماء المحركات الفعلية في تقرير البحث لتعرف ما أعاد نتائج في هذه الجولة."` | — |
+| [SRC-D911B73392-L000027](../RESEARCH_CONNECTORS_AR.md#L27) | 27 | `""` | — |
+| [SRC-D911B73392-L000028](../RESEARCH_CONNECTORS_AR.md#L28) | 28 | `"## 2. المصادر والحدود"` | — |
+| [SRC-D911B73392-L000029](../RESEARCH_CONNECTORS_AR.md#L29) | 29 | `""` | — |
+| [SRC-D911B73392-L000030](../RESEARCH_CONNECTORS_AR.md#L30) | 30 | `"\| المصدر \| ما يستخدمه Omarai \| ما يلزم أو ما لا يمكن ضمانه \|"` | — |
+| [SRC-D911B73392-L000031](../RESEARCH_CONNECTORS_AR.md#L31) | 31 | `"\| --- \| --- \| --- \|"` | — |
+| [SRC-D911B73392-L000032](../RESEARCH_CONNECTORS_AR.md#L32) | 32 | `"\| صفحات الويب العامة \| DuckDuckGo HTML وBing RSS، وBrave Search API وTavily Search API عند إعداد المفاتيح، واستخراج نص الصفحات المتاحة \| قد تمنع بعض المواقع القراءة أو لا تظهر في نتائج البحث؛ لا يتم تجاوز تسجيل الدخول أو الجدران المدفوعة \|"` | — |
+| [SRC-D911B73392-L000033](../RESEARCH_CONNECTORS_AR.md#L33) | 33 | `"\| الأخبار الحديثة \| Google News RSS بالإضافة إلى البحث العام \| التاريخ الذي يظهر في موجز البحث قد لا يكون تاريخ نشر الصفحة الأصلية؛ يجب فتح المصدر والتحقق \|"` | — |
+| [SRC-D911B73392-L000034](../RESEARCH_CONNECTORS_AR.md#L34) | 34 | `"\| Reddit \| موجز البحث العام RSS \| قد يُحجب أو يُقيَّد أحيانًا؛ يمكن إعداد OAuth لطلب API رسمي عند توفر وصول مسموح \|"` | — |
+| [SRC-D911B73392-L000035](../RESEARCH_CONNECTORS_AR.md#L35) | 35 | `"\| Bluesky \| واجهة البحث العامة للمنشورات \| بحث عام وليس بيانات خاصة أو رسائل مباشرة \|"` | — |
+| [SRC-D911B73392-L000036](../RESEARCH_CONNECTORS_AR.md#L36) | 36 | `"\| Instagram \| صفحات عامة مفهرسة؛ وموصل Graph API للوسوم العامة عند إعداده \| واجهة الوسوم الرسمية ليست بحثًا شاملًا في كل المنشورات، وتتطلب حسابًا وصلاحيات وموافقة/ميزات مناسبة وحدود استخدام \|"` | — |
+| [SRC-D911B73392-L000037](../RESEARCH_CONNECTORS_AR.md#L37) | 37 | `"\| Facebook \| صفحات عامة مفهرسة؛ وموصل مباشر لصفحات محددة صراحةً عند إعداده \| الموصل المباشر ليس بحثًا عالميًا في Facebook؛ يعمل فقط على Page IDs يمكن للرمز والصلاحيات قراءتها \|"` | — |
+| [SRC-D911B73392-L000038](../RESEARCH_CONNECTORS_AR.md#L38) | 38 | `"\| X \| صفحات عامة مفهرسة؛ وواجهة البحث الحديث الرسمية عند إعداد Bearer Token \| يتطلب وصول API مناسبًا، ونطاق البحث والحدود تابعان لخطة X \|"` | — |
+| [SRC-D911B73392-L000039](../RESEARCH_CONNECTORS_AR.md#L39) | 39 | `"\| YouTube \| صفحات الفيديو العامة المفهرسة؛ وYouTube Data API عند إعداد المفتاح \| الواجهة الرسمية لها حصص استخدام، وقد لا تعيد كل الفيديوهات \|"` | — |
+| [SRC-D911B73392-L000040](../RESEARCH_CONNECTORS_AR.md#L40) | 40 | `"\| TikTok \| الصفحات العامة التي تظهر في محركات البحث \| لا يدّعي Omarai أنه يملك بحثًا رسميًا شاملًا في TikTok. أدوات Research API تتطلب الأهلية والموافقة البحثية، وهي ليست واجهة عامة تلقائية للاستخدام التجاري \|"` | — |
+| [SRC-D911B73392-L000041](../RESEARCH_CONNECTORS_AR.md#L41) | 41 | `""` | — |
+| [SRC-D911B73392-L000042](../RESEARCH_CONNECTORS_AR.md#L42) | 42 | `"## 3. تشغيل الطبقة التوليدية"` | — |
+| [SRC-D911B73392-L000043](../RESEARCH_CONNECTORS_AR.md#L43) | 43 | `""` | — |
+| [SRC-D911B73392-L000044](../RESEARCH_CONNECTORS_AR.md#L44) | 44 | ``"يقرأ Omarai مفتاح النموذج من متغيرات بيئة Termux. افتراضيًا يستخدم نموذج NVIDIA Nemotron 3 Ultra (المجاني) لتخطيط البحث، وGoogle Gemma 4 31B Instruct (المجاني) لصياغة الإجابة ومراجعة الاتساق الثانية، مع الرجوع إلى `openrouter/free` إذا أخفق النموذج المحدد. هذا يقلل تغيير النموذج عشوائيًا بين الطلبات، لكنه لا يضمن استجابة كل موفر أو إجابة صحيحة. المفتاح يتيح تخطيط البحث والإجابة التوليدية والمراجعة الثانية. لا تحفظه داخل مستودع GitHub أو ملف HTML أو المحادثة. **تنبيه خصوصية مهم:** يرسل Omarai السؤال وسياق المتابعة ومقتطفات الصفحات المختارة إلى مزود النموذج الخارجي لكي يخطط ويكتب الإجابة ويراجعها. نقطة نهاية NVIDIA Nemotron المجانية في OpenRouter توضّح أن جلسات الاستخدام قد تُسجل لأغراض الأمان وتحسين منتجات NVIDIA؛ لذلك لا تستخدم هذا الإعداد مع كلمات مرور أو مفاتيح أو معلومات سرية أو بيانات شخصية/تجارية حساسة. راجع [إشعار الخصوصية لنقطة Nemotron المجانية](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free)."`` | — |
+| [SRC-D911B73392-L000045](../RESEARCH_CONNECTORS_AR.md#L45) | 45 | `""` | — |
+| [SRC-D911B73392-L000046](../RESEARCH_CONNECTORS_AR.md#L46) | 46 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000047](../RESEARCH_CONNECTORS_AR.md#L47) | 47 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
+| [SRC-D911B73392-L000048](../RESEARCH_CONNECTORS_AR.md#L48) | 48 | `"printf '\\n'"` | — |
+| [SRC-D911B73392-L000049](../RESEARCH_CONNECTORS_AR.md#L49) | 49 | `"export OPENROUTER_API_KEY"` | — |
+| [SRC-D911B73392-L000050](../RESEARCH_CONNECTORS_AR.md#L50) | 50 | ````"```"```` | — |
+| [SRC-D911B73392-L000051](../RESEARCH_CONNECTORS_AR.md#L51) | 51 | `""` | — |
+| [SRC-D911B73392-L000052](../RESEARCH_CONNECTORS_AR.md#L52) | 52 | ``"يمكن تغيير موفر النموذج المتوافق مع OpenAI عبر `OMARAI_LLM_BASE_URL`. اضبط `OMARAI_PLANNER_MODEL` و`OMARAI_ANSWER_MODEL` و`OMARAI_REVIEW_MODEL` لتغيير الأدوار كلٌ على حدة، أو `OMARAI_LLM_MODEL` لتطبيق نموذج واحد على الأدوار التي لم تُحدد لها قيمة منفصلة، و`OMARAI_LLM_FALLBACK_MODEL` لتغيير النموذج الاحتياطي. توافر النماذج المجانية وحدودها يتغير؛ لذلك لا يفترض التطبيق أن النموذج مجاني دائمًا أو أن الطلب سينجح كل مرة."`` | — |
+| [SRC-D911B73392-L000053](../RESEARCH_CONNECTORS_AR.md#L53) | 53 | `""` | — |
+| [SRC-D911B73392-L000054](../RESEARCH_CONNECTORS_AR.md#L54) | 54 | `"## 4. إعداد الموصلات الرسمية الاختيارية"` | — |
+| [SRC-D911B73392-L000055](../RESEARCH_CONNECTORS_AR.md#L55) | 55 | `""` | — |
+| [SRC-D911B73392-L000056](../RESEARCH_CONNECTORS_AR.md#L56) | 56 | `"نفّذ فقط الأجزاء التي تملك بيانات اعتمادها وصلاحيات استخدامها. الأوامر أدناه تطلب السر دون إظهاره أثناء الكتابة، لكنها تبقيه في بيئة جلسة Termux الحالية حتى توقف الخادم أو تغلق الجلسة."` | — |
+| [SRC-D911B73392-L000057](../RESEARCH_CONNECTORS_AR.md#L57) | 57 | `""` | — |
+| [SRC-D911B73392-L000058](../RESEARCH_CONNECTORS_AR.md#L58) | 58 | `"### Reddit OAuth"` | — |
+| [SRC-D911B73392-L000059](../RESEARCH_CONNECTORS_AR.md#L59) | 59 | `""` | — |
+| [SRC-D911B73392-L000060](../RESEARCH_CONNECTORS_AR.md#L60) | 60 | `"يتطلب بيانات تطبيق Reddit مع وصول API مسموحًا وفق شروط Reddit:"` | — |
+| [SRC-D911B73392-L000061](../RESEARCH_CONNECTORS_AR.md#L61) | 61 | `""` | — |
+| [SRC-D911B73392-L000062](../RESEARCH_CONNECTORS_AR.md#L62) | 62 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000063](../RESEARCH_CONNECTORS_AR.md#L63) | 63 | `"read -r -s -p \"Reddit client ID: \" REDDIT_CLIENT_ID; printf '\\n'; export REDDIT_CLIENT_ID"` | — |
+| [SRC-D911B73392-L000064](../RESEARCH_CONNECTORS_AR.md#L64) | 64 | `"read -r -s -p \"Reddit client secret: \" REDDIT_CLIENT_SECRET; printf '\\n'; export REDDIT_CLIENT_SECRET"` | — |
+| [SRC-D911B73392-L000065](../RESEARCH_CONNECTORS_AR.md#L65) | 65 | `"read -r -p \"Reddit User-Agent: \" REDDIT_USER_AGENT; export REDDIT_USER_AGENT"` | — |
+| [SRC-D911B73392-L000066](../RESEARCH_CONNECTORS_AR.md#L66) | 66 | ````"```"```` | — |
+| [SRC-D911B73392-L000067](../RESEARCH_CONNECTORS_AR.md#L67) | 67 | `""` | — |
+| [SRC-D911B73392-L000068](../RESEARCH_CONNECTORS_AR.md#L68) | 68 | `"عند ضبط هذه القيم، يجرّب Omarai OAuth API. إن تعذر العثور على نتائج عبر API، فقد يحاول موجز البحث العام كبديل؛ ولا يعني ذلك أن البديل مضمون."` | — |
+| [SRC-D911B73392-L000069](../RESEARCH_CONNECTORS_AR.md#L69) | 69 | `""` | — |
+| [SRC-D911B73392-L000070](../RESEARCH_CONNECTORS_AR.md#L70) | 70 | `"### Instagram Graph API — وسوم عامة"` | — |
+| [SRC-D911B73392-L000071](../RESEARCH_CONNECTORS_AR.md#L71) | 71 | `""` | — |
+| [SRC-D911B73392-L000072](../RESEARCH_CONNECTORS_AR.md#L72) | 72 | `"يتطلب Instagram User ID ورمز وصول صالحًا، مع الأذونات/الميزات اللازمة في تطبيق Meta. يقتصر الموصل على بحث الوسوم وجلب عينة من الوسائط العامة الحديثة؛ لا يصل إلى الحسابات الخاصة ولا يبحث كل Instagram."` | — |
+| [SRC-D911B73392-L000073](../RESEARCH_CONNECTORS_AR.md#L73) | 73 | `""` | — |
+| [SRC-D911B73392-L000074](../RESEARCH_CONNECTORS_AR.md#L74) | 74 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000075](../RESEARCH_CONNECTORS_AR.md#L75) | 75 | `"read -r -p \"Instagram professional user ID: \" INSTAGRAM_USER_ID; export INSTAGRAM_USER_ID"` | — |
+| [SRC-D911B73392-L000076](../RESEARCH_CONNECTORS_AR.md#L76) | 76 | `"read -r -s -p \"Instagram access token: \" INSTAGRAM_ACCESS_TOKEN; printf '\\n'; export INSTAGRAM_ACCESS_TOKEN"` | — |
+| [SRC-D911B73392-L000077](../RESEARCH_CONNECTORS_AR.md#L77) | 77 | ````"```"```` | — |
+| [SRC-D911B73392-L000078](../RESEARCH_CONNECTORS_AR.md#L78) | 78 | `""` | — |
+| [SRC-D911B73392-L000079](../RESEARCH_CONNECTORS_AR.md#L79) | 79 | ``"يمكن ضبط إصدار Graph API الذي يطابق تطبيقك عبر `META_GRAPH_VERSION`. يبدأ Omarai بوسم واحد في الطلب لتقليل استهلاك حصة الوسوم؛ قد يظل الموصل يرفض الطلب إذا لم تكن الصلاحيات أو الحصة أو نسخة API مناسبة."`` | — |
+| [SRC-D911B73392-L000080](../RESEARCH_CONNECTORS_AR.md#L80) | 80 | `""` | — |
+| [SRC-D911B73392-L000081](../RESEARCH_CONNECTORS_AR.md#L81) | 81 | `"### Facebook Pages — صفحات محددة فقط"` | — |
+| [SRC-D911B73392-L000082](../RESEARCH_CONNECTORS_AR.md#L82) | 82 | `""` | — |
+| [SRC-D911B73392-L000083](../RESEARCH_CONNECTORS_AR.md#L83) | 83 | `"حدّد الصفحات التي لديك وصول مصرح بها. لا تضع رمزًا عامًا أو تحاول استخدام رمز لا يملك صلاحية الوصول للصفحة:"` | — |
+| [SRC-D911B73392-L000084](../RESEARCH_CONNECTORS_AR.md#L84) | 84 | `""` | — |
+| [SRC-D911B73392-L000085](../RESEARCH_CONNECTORS_AR.md#L85) | 85 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000086](../RESEARCH_CONNECTORS_AR.md#L86) | 86 | `"read -r -s -p \"Facebook Page access token: \" FACEBOOK_PAGE_ACCESS_TOKEN; printf '\\n'; export FACEBOOK_PAGE_ACCESS_TOKEN"` | — |
+| [SRC-D911B73392-L000087](../RESEARCH_CONNECTORS_AR.md#L87) | 87 | `"read -r -p \"Authorized Page IDs, comma-separated: \" FACEBOOK_PAGE_IDS; export FACEBOOK_PAGE_IDS"` | — |
+| [SRC-D911B73392-L000088](../RESEARCH_CONNECTORS_AR.md#L88) | 88 | ````"```"```` | — |
+| [SRC-D911B73392-L000089](../RESEARCH_CONNECTORS_AR.md#L89) | 89 | `""` | — |
+| [SRC-D911B73392-L000090](../RESEARCH_CONNECTORS_AR.md#L90) | 90 | `"يقرأ الموصل أحدث منشورات الصفحات المحددة وعينة محدودة من التعليقات العامة التي تسمح بها الصلاحيات. قد تفشل قراءة المنشورات أو التعليقات إذا كانت صلاحيات التطبيق لا تسمح بها."` | — |
+| [SRC-D911B73392-L000091](../RESEARCH_CONNECTORS_AR.md#L91) | 91 | `""` | — |
+| [SRC-D911B73392-L000092](../RESEARCH_CONNECTORS_AR.md#L92) | 92 | `"### X وYouTube"` | — |
+| [SRC-D911B73392-L000093](../RESEARCH_CONNECTORS_AR.md#L93) | 93 | `""` | — |
+| [SRC-D911B73392-L000094](../RESEARCH_CONNECTORS_AR.md#L94) | 94 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000095](../RESEARCH_CONNECTORS_AR.md#L95) | 95 | `"read -r -s -p \"X API bearer token: \" X_BEARER_TOKEN; printf '\\n'; export X_BEARER_TOKEN"` | — |
+| [SRC-D911B73392-L000096](../RESEARCH_CONNECTORS_AR.md#L96) | 96 | `"read -r -s -p \"YouTube Data API key: \" YOUTUBE_API_KEY; printf '\\n'; export YOUTUBE_API_KEY"` | — |
+| [SRC-D911B73392-L000097](../RESEARCH_CONNECTORS_AR.md#L97) | 97 | ````"```"```` | — |
+| [SRC-D911B73392-L000098](../RESEARCH_CONNECTORS_AR.md#L98) | 98 | `""` | — |
+| [SRC-D911B73392-L000099](../RESEARCH_CONNECTORS_AR.md#L99) | 99 | `"يجب أن يكون رمز X مرتبطًا بخطة وصول تشمل نقطة البحث المستخدمة. مفتاح YouTube يحتاج إلى مشروع Google Cloud تم تفعيل YouTube Data API فيه، ويخضع للحصة. لا يضمن وجود المفتاح أن الحساب يملك كل الصلاحيات أو حصة كافية."` | — |
+| [SRC-D911B73392-L000100](../RESEARCH_CONNECTORS_AR.md#L100) | 100 | `""` | — |
+| [SRC-D911B73392-L000101](../RESEARCH_CONNECTORS_AR.md#L101) | 101 | `"### البدء بعد الإعداد"` | — |
+| [SRC-D911B73392-L000102](../RESEARCH_CONNECTORS_AR.md#L102) | 102 | `""` | — |
+| [SRC-D911B73392-L000103](../RESEARCH_CONNECTORS_AR.md#L103) | 103 | `"بعد إعداد أي متغيرات اختيارية تريدها، ابدأ الخادم في **جلسة Termux نفسها**:"` | — |
+| [SRC-D911B73392-L000104](../RESEARCH_CONNECTORS_AR.md#L104) | 104 | `""` | — |
+| [SRC-D911B73392-L000105](../RESEARCH_CONNECTORS_AR.md#L105) | 105 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000106](../RESEARCH_CONNECTORS_AR.md#L106) | 106 | `"python -m cli.omarai serve"` | — |
+| [SRC-D911B73392-L000107](../RESEARCH_CONNECTORS_AR.md#L107) | 107 | ````"```"```` | — |
+| [SRC-D911B73392-L000108](../RESEARCH_CONNECTORS_AR.md#L108) | 108 | `""` | — |
+| [SRC-D911B73392-L000109](../RESEARCH_CONNECTORS_AR.md#L109) | 109 | ``"افتح `http://127.0.0.1:8765` للمحادثة البحثية و`http://127.0.0.1:8765/api/health` لحالة الإعداد. تقرير الصحة يذكر ما إذا كانت المتغيرات موجودة فقط؛ ولا يمكنه التأكد من صلاحيتها حتى يجرب الموصل طلبًا حقيقيًا."`` | — |
+| [SRC-D911B73392-L000110](../RESEARCH_CONNECTORS_AR.md#L110) | 110 | `""` | — |
+| [SRC-D911B73392-L000111](../RESEARCH_CONNECTORS_AR.md#L111) | 111 | `"## 5. اختبار حي للاتصال"` | — |
+| [SRC-D911B73392-L000112](../RESEARCH_CONNECTORS_AR.md#L112) | 112 | `""` | — |
+| [SRC-D911B73392-L000113](../RESEARCH_CONNECTORS_AR.md#L113) | 113 | `"افتح لوحة Omarai واضغط **«اختبار حي للبحث والنموذج»**. هذا الفحص ينفّذ طلب بحث فعليًا إلى محركات البحث العامة، ويرسل طلبًا صغيرًا إلى نموذج الإجابة إذا كان المفتاح مضبوطًا. إذا فعّلت خيار اختبار المصادر الاجتماعية، فسينفّذ طلبات عامة/مصرحًا بها إلى الموصلات المناسبة. قد يستغرق فحص الشبكات الاجتماعية وقتًا أطول، وقد يستهلك حصص APIs أو يواجه حدود المعدل."` | — |
+| [SRC-D911B73392-L000114](../RESEARCH_CONNECTORS_AR.md#L114) | 114 | `""` | — |
+| [SRC-D911B73392-L000115](../RESEARCH_CONNECTORS_AR.md#L115) | 115 | `"يمكن تنفيذ الفحص نفسه من الطرفية أو أداة API:"` | — |
+| [SRC-D911B73392-L000116](../RESEARCH_CONNECTORS_AR.md#L116) | 116 | `""` | — |
+| [SRC-D911B73392-L000117](../RESEARCH_CONNECTORS_AR.md#L117) | 117 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000118](../RESEARCH_CONNECTORS_AR.md#L118) | 118 | `"curl -sS -X POST http://127.0.0.1:8765/api/diagnostics \\"` | — |
+| [SRC-D911B73392-L000119](../RESEARCH_CONNECTORS_AR.md#L119) | 119 | `"  -H 'Content-Type: application/json' \\"` | — |
+| [SRC-D911B73392-L000120](../RESEARCH_CONNECTORS_AR.md#L120) | 120 | `"  -d '{\"test_model\":true,\"test_social\":false}'"` | — |
+| [SRC-D911B73392-L000121](../RESEARCH_CONNECTORS_AR.md#L121) | 121 | ````"```"```` | — |
+| [SRC-D911B73392-L000122](../RESEARCH_CONNECTORS_AR.md#L122) | 122 | `""` | — |
+| [SRC-D911B73392-L000123](../RESEARCH_CONNECTORS_AR.md#L123) | 123 | ``"للفحص الاجتماعي أيضًا، غيّر `test_social` إلى `true`. تعني حالة `degraded` أن الفحص لم يحصل على نتائج كافية أو أن أحد الأجزاء لم يعمل كما هو متوقع؛ ولا تثبت وحدها أن المنصة متوقفة. يظهر `/api/health` وجود إعدادات البيئة فقط، أما الفحص الحي فيختبر اتصالًا فعليًا. لا يعرض التقرير المفاتيح السرية أو يحتفظ بنص استجابة اختبار النموذج."`` | — |
+| [SRC-D911B73392-L000124](../RESEARCH_CONNECTORS_AR.md#L124) | 124 | `""` | — |
+| [SRC-D911B73392-L000125](../RESEARCH_CONNECTORS_AR.md#L125) | 125 | `"## 6. قراءة الأدلة والتحقق منها"` | — |
+| [SRC-D911B73392-L000126](../RESEARCH_CONNECTORS_AR.md#L126) | 126 | `""` | — |
+| [SRC-D911B73392-L000127](../RESEARCH_CONNECTORS_AR.md#L127) | 127 | `"- افتح المصادر الأساسية واقرأ السياق الكامل قبل اتخاذ قرار تجاري أو قانوني أو طبي."` | — |
+| [SRC-D911B73392-L000128](../RESEARCH_CONNECTORS_AR.md#L128) | 128 | `"- المنشور أو التعليق قد يكون ساخرًا أو قديمًا أو ترويجيًا أو خارج السياق. يوضح Omarai المصدر والنص المتاح، لكنه لا يثبت هوية الكاتب أو صحة كلامه."` | — |
+| [SRC-D911B73392-L000129](../RESEARCH_CONNECTORS_AR.md#L129) | 129 | `"- لا تستخدم بيانات شخصية غير لازمة، ولا تجمع محتوى خاصًا أو تتجاوز شروط أي منصة."` | — |
+| [SRC-D911B73392-L000130](../RESEARCH_CONNECTORS_AR.md#L130) | 130 | `"- لا يرسل Omarai رسائل أو يتواصل مع أصحاب الحسابات تلقائيًا. أي تواصل أو إجراء خارجي يجب أن يبقى بقرار بشري ومراجعة منفصلة."` | — |
 ## وثائق وفهرسة
 
 ### FILE-69F3587825 — [docs/search_code.py](../search_code.py#L1)
@@ -16,6 +179,279 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000001](../search_code.py#L1) | 1 | `"\"\"\"Text search across Omarai repository source files (no external AI required)."` | — |
+| [SRC-69F3587825-L000002](../search_code.py#L2) | 2 | `""` | — |
+| [SRC-69F3587825-L000003](../search_code.py#L3) | 3 | `"Examples:"` | — |
+| [SRC-69F3587825-L000004](../search_code.py#L4) | 4 | `"  python docs/search_code.py \"def analyze\""` | — |
+| [SRC-69F3587825-L000005](../search_code.py#L5) | 5 | `"  python docs/search_code.py --regex \"OMARAI_[A-Z_]+\" --ext py"` | — |
+| [SRC-69F3587825-L000006](../search_code.py#L6) | 6 | `"  python docs/search_code.py \"access token\" --max 20"` | — |
+| [SRC-69F3587825-L000007](../search_code.py#L7) | 7 | `"  python docs/search_code.py --root /path/to/omarai \"do_POST\""` | — |
+| [SRC-69F3587825-L000008](../search_code.py#L8) | 8 | `"\"\"\""` | — |
+| [SRC-69F3587825-L000009](../search_code.py#L9) | 9 | `""` | — |
+| [SRC-69F3587825-L000010](../search_code.py#L10) | 10 | `"from __future__ import annotations"` | — |
+| [SRC-69F3587825-L000011](../search_code.py#L11) | 11 | `""` | — |
+| [SRC-69F3587825-L000012](../search_code.py#L12) | 12 | `"import argparse"` | — |
+| [SRC-69F3587825-L000013](../search_code.py#L13) | 13 | `"import os"` | — |
+| [SRC-69F3587825-L000014](../search_code.py#L14) | 14 | `"import re"` | — |
+| [SRC-69F3587825-L000015](../search_code.py#L15) | 15 | `"import sys"` | — |
+| [SRC-69F3587825-L000016](../search_code.py#L16) | 16 | `"from collections.abc import Sequence"` | — |
+| [SRC-69F3587825-L000017](../search_code.py#L17) | 17 | `"from dataclasses import dataclass"` | — |
+| [SRC-69F3587825-L000018](../search_code.py#L18) | 18 | `"from pathlib import Path"` | — |
+| [SRC-69F3587825-L000019](../search_code.py#L19) | 19 | `""` | — |
+| [SRC-69F3587825-L000020](../search_code.py#L20) | 20 | `""` | — |
+| [SRC-69F3587825-L000021](../search_code.py#L21) | 21 | `"EXCLUDED_DIRECTORIES = frozenset("` | — |
+| [SRC-69F3587825-L000022](../search_code.py#L22) | 22 | `"    {"` | — |
+| [SRC-69F3587825-L000023](../search_code.py#L23) | 23 | `"        \".git\","` | — |
+| [SRC-69F3587825-L000024](../search_code.py#L24) | 24 | `"        \".hg\","` | — |
+| [SRC-69F3587825-L000025](../search_code.py#L25) | 25 | `"        \".svn\","` | — |
+| [SRC-69F3587825-L000026](../search_code.py#L26) | 26 | `"        \".venv\","` | — |
+| [SRC-69F3587825-L000027](../search_code.py#L27) | 27 | `"        \"venv\","` | — |
+| [SRC-69F3587825-L000028](../search_code.py#L28) | 28 | `"        \"env\","` | — |
+| [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"virtualenv\","` | — |
+| [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"__pycache__\","` | — |
+| [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \".pytest_cache\","` | — |
+| [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \".ruff_cache\","` | — |
+| [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".mypy_cache\","` | — |
+| [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".tox\","` | — |
+| [SRC-69F3587825-L000035](../search_code.py#L35) | 35 | `"        \".nox\","` | — |
+| [SRC-69F3587825-L000036](../search_code.py#L36) | 36 | `"        \"node_modules\","` | — |
+| [SRC-69F3587825-L000037](../search_code.py#L37) | 37 | `"        \"site-packages\","` | — |
+| [SRC-69F3587825-L000038](../search_code.py#L38) | 38 | `"        \"build\","` | — |
+| [SRC-69F3587825-L000039](../search_code.py#L39) | 39 | `"        \"dist\","` | — |
+| [SRC-69F3587825-L000040](../search_code.py#L40) | 40 | `"        \".tmp\","` | — |
+| [SRC-69F3587825-L000041](../search_code.py#L41) | 41 | `"        \".idea\","` | — |
+| [SRC-69F3587825-L000042](../search_code.py#L42) | 42 | `"        \".vscode\","` | — |
+| [SRC-69F3587825-L000043](../search_code.py#L43) | 43 | `"        \".aws\","` | — |
+| [SRC-69F3587825-L000044](../search_code.py#L44) | 44 | `"        \".secrets\","` | — |
+| [SRC-69F3587825-L000045](../search_code.py#L45) | 45 | `"        \".ssh\","` | — |
+| [SRC-69F3587825-L000046](../search_code.py#L46) | 46 | `"        \"credentials\","` | — |
+| [SRC-69F3587825-L000047](../search_code.py#L47) | 47 | `"        \"secrets\","` | — |
+| [SRC-69F3587825-L000048](../search_code.py#L48) | 48 | `"    }"` | — |
+| [SRC-69F3587825-L000049](../search_code.py#L49) | 49 | `")"` | — |
+| [SRC-69F3587825-L000050](../search_code.py#L50) | 50 | `"SECRET_BASENAMES = frozenset("` | — |
+| [SRC-69F3587825-L000051](../search_code.py#L51) | 51 | `"    {"` | — |
+| [SRC-69F3587825-L000052](../search_code.py#L52) | 52 | `"        \".env\","` | — |
+| [SRC-69F3587825-L000053](../search_code.py#L53) | 53 | `"        \".env.local\","` | — |
+| [SRC-69F3587825-L000054](../search_code.py#L54) | 54 | `"        \".env.production\","` | — |
+| [SRC-69F3587825-L000055](../search_code.py#L55) | 55 | `"        \".env.staging\","` | — |
+| [SRC-69F3587825-L000056](../search_code.py#L56) | 56 | `"        \".netrc\","` | — |
+| [SRC-69F3587825-L000057](../search_code.py#L57) | 57 | `"        \".npmrc\","` | — |
+| [SRC-69F3587825-L000058](../search_code.py#L58) | 58 | `"        \".pypirc\","` | — |
+| [SRC-69F3587825-L000059](../search_code.py#L59) | 59 | `"        \"authorized_keys\","` | — |
+| [SRC-69F3587825-L000060](../search_code.py#L60) | 60 | `"        \"client_secret.json\","` | — |
+| [SRC-69F3587825-L000061](../search_code.py#L61) | 61 | `"        \"client_secrets.json\","` | — |
+| [SRC-69F3587825-L000062](../search_code.py#L62) | 62 | `"        \"credentials\","` | — |
+| [SRC-69F3587825-L000063](../search_code.py#L63) | 63 | `"        \"credentials.json\","` | — |
+| [SRC-69F3587825-L000064](../search_code.py#L64) | 64 | `"        \"credentials.yaml\","` | — |
+| [SRC-69F3587825-L000065](../search_code.py#L65) | 65 | `"        \"credentials.yml\","` | — |
+| [SRC-69F3587825-L000066](../search_code.py#L66) | 66 | `"        \"id_dsa\","` | — |
+| [SRC-69F3587825-L000067](../search_code.py#L67) | 67 | `"        \"id_ecdsa\","` | — |
+| [SRC-69F3587825-L000068](../search_code.py#L68) | 68 | `"        \"id_ed25519\","` | — |
+| [SRC-69F3587825-L000069](../search_code.py#L69) | 69 | `"        \"id_rsa\","` | — |
+| [SRC-69F3587825-L000070](../search_code.py#L70) | 70 | `"        \"secrets.json\","` | — |
+| [SRC-69F3587825-L000071](../search_code.py#L71) | 71 | `"        \"secrets.yaml\","` | — |
+| [SRC-69F3587825-L000072](../search_code.py#L72) | 72 | `"        \"secrets.yml\","` | — |
+| [SRC-69F3587825-L000073](../search_code.py#L73) | 73 | `"        \"service-account.json\","` | — |
+| [SRC-69F3587825-L000074](../search_code.py#L74) | 74 | `"        \"token.json\","` | — |
+| [SRC-69F3587825-L000075](../search_code.py#L75) | 75 | `"    }"` | — |
+| [SRC-69F3587825-L000076](../search_code.py#L76) | 76 | `")"` | — |
+| [SRC-69F3587825-L000077](../search_code.py#L77) | 77 | `"SENSITIVE_NAME_RE = re.compile("` | — |
+| [SRC-69F3587825-L000078](../search_code.py#L78) | 78 | `"    r\"(?:^\|[._-])(?:secret\|secrets\|credential\|credentials\|password\|passwords\|token\|tokens\|private[_-]?key)(?:[._-]\|$)\","` | — |
+| [SRC-69F3587825-L000079](../search_code.py#L79) | 79 | `"    re.IGNORECASE,"` | — |
+| [SRC-69F3587825-L000080](../search_code.py#L80) | 80 | `")"` | — |
+| [SRC-69F3587825-L000081](../search_code.py#L81) | 81 | `"SENSITIVE_CONFIG_SUFFIXES = frozenset("` | — |
+| [SRC-69F3587825-L000082](../search_code.py#L82) | 82 | `"    {\".cfg\", \".conf\", \".ini\", \".json\", \".properties\", \".toml\", \".txt\", \".xml\", \".yaml\", \".yml\"}"` | — |
+| [SRC-69F3587825-L000083](../search_code.py#L83) | 83 | `")"` | — |
+| [SRC-69F3587825-L000084](../search_code.py#L84) | 84 | `"MAX_SEARCH_FILE_BYTES = 2 * 1024 * 1024"` | — |
+| [SRC-69F3587825-L000085](../search_code.py#L85) | 85 | `""` | — |
+| [SRC-69F3587825-L000086](../search_code.py#L86) | 86 | `""` | — |
+| [SRC-69F3587825-L000087](../search_code.py#L87) | 87 | `"def _is_sensitive_path(path: Path) -> bool:"` | — |
+| [SRC-69F3587825-L000088](../search_code.py#L88) | 88 | `"    \"\"\"Return whether a local path appears to contain credentials or private runtime data.\"\"\""` | — |
+| [SRC-69F3587825-L000089](../search_code.py#L89) | 89 | `"    name = path.name.lower()"` | — |
+| [SRC-69F3587825-L000090](../search_code.py#L90) | 90 | `"    parent_names = {part.lower() for part in path.parts[:-1]}"` | — |
+| [SRC-69F3587825-L000091](../search_code.py#L91) | 91 | `"    if name in SECRET_BASENAMES or parent_names & EXCLUDED_DIRECTORIES:"` | — |
+| [SRC-69F3587825-L000092](../search_code.py#L92) | 92 | `"        return True"` | — |
+| [SRC-69F3587825-L000093](../search_code.py#L93) | 93 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
+| [SRC-69F3587825-L000094](../search_code.py#L94) | 94 | `"        return True"` | — |
+| [SRC-69F3587825-L000095](../search_code.py#L95) | 95 | `"    if name.endswith((\".example\", \".sample\", \".template\")):"` | — |
+| [SRC-69F3587825-L000096](../search_code.py#L96) | 96 | `"        return False"` | — |
+| [SRC-69F3587825-L000097](../search_code.py#L97) | 97 | `"    if SENSITIVE_NAME_RE.search(name) and path.suffix.lower() in SENSITIVE_CONFIG_SUFFIXES:"` | — |
+| [SRC-69F3587825-L000098](../search_code.py#L98) | 98 | `"        return True"` | — |
+| [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
+| [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
+| [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    {"` | — |
+| [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"        \".py\","` | — |
+| [SRC-69F3587825-L000103](../search_code.py#L103) | 103 | `"        \".md\","` | — |
+| [SRC-69F3587825-L000104](../search_code.py#L104) | 104 | `"        \".html\","` | — |
+| [SRC-69F3587825-L000105](../search_code.py#L105) | 105 | `"        \".htm\","` | — |
+| [SRC-69F3587825-L000106](../search_code.py#L106) | 106 | `"        \".js\","` | — |
+| [SRC-69F3587825-L000107](../search_code.py#L107) | 107 | `"        \".css\","` | — |
+| [SRC-69F3587825-L000108](../search_code.py#L108) | 108 | `"        \".json\","` | — |
+| [SRC-69F3587825-L000109](../search_code.py#L109) | 109 | `"        \".yml\","` | — |
+| [SRC-69F3587825-L000110](../search_code.py#L110) | 110 | `"        \".yaml\","` | — |
+| [SRC-69F3587825-L000111](../search_code.py#L111) | 111 | `"        \".toml\","` | — |
+| [SRC-69F3587825-L000112](../search_code.py#L112) | 112 | `"        \".txt\","` | — |
+| [SRC-69F3587825-L000113](../search_code.py#L113) | 113 | `"        \".sh\","` | — |
+| [SRC-69F3587825-L000114](../search_code.py#L114) | 114 | `"        \".example\","` | — |
+| [SRC-69F3587825-L000115](../search_code.py#L115) | 115 | `"    }"` | — |
+| [SRC-69F3587825-L000116](../search_code.py#L116) | 116 | `")"` | — |
+| [SRC-69F3587825-L000117](../search_code.py#L117) | 117 | `"GITHUB_BLOB_BASE = \"https://github.com/mosabosama2030-oss/omarai/blob/main\""` | — |
+| [SRC-69F3587825-L000118](../search_code.py#L118) | 118 | `""` | — |
+| [SRC-69F3587825-L000119](../search_code.py#L119) | 119 | `""` | — |
+| [SRC-69F3587825-L000120](../search_code.py#L120) | 120 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-69F3587825-L000121](../search_code.py#L121) | 121 | `"class SearchHit:"` | — |
+| [SRC-69F3587825-L000122](../search_code.py#L122) | 122 | `"    file: str"` | — |
+| [SRC-69F3587825-L000123](../search_code.py#L123) | 123 | `"    line: int"` | — |
+| [SRC-69F3587825-L000124](../search_code.py#L124) | 124 | `"    text: str"` | — |
+| [SRC-69F3587825-L000125](../search_code.py#L125) | 125 | `"    context_before: str"` | — |
+| [SRC-69F3587825-L000126](../search_code.py#L126) | 126 | `"    context_after: str"` | — |
+| [SRC-69F3587825-L000127](../search_code.py#L127) | 127 | `""` | — |
+| [SRC-69F3587825-L000128](../search_code.py#L128) | 128 | `"    @property"` | — |
+| [SRC-69F3587825-L000129](../search_code.py#L129) | 129 | `"    def link(self) -> str:"` | — |
+| [SRC-69F3587825-L000130](../search_code.py#L130) | 130 | `"        return f\"{GITHUB_BLOB_BASE}/{self.file}#L{self.line}\""` | — |
+| [SRC-69F3587825-L000131](../search_code.py#L131) | 131 | `""` | — |
+| [SRC-69F3587825-L000132](../search_code.py#L132) | 132 | `""` | — |
+| [SRC-69F3587825-L000133](../search_code.py#L133) | 133 | `"def discover_text_files(root: Path, extensions: frozenset[str]) -> list[Path]:"` | — |
+| [SRC-69F3587825-L000134](../search_code.py#L134) | 134 | `"    discovered: list[Path] = []"` | — |
+| [SRC-69F3587825-L000135](../search_code.py#L135) | 135 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
+| [SRC-69F3587825-L000136](../search_code.py#L136) | 136 | `"        root, topdown=True, followlinks=False"` | — |
+| [SRC-69F3587825-L000137](../search_code.py#L137) | 137 | `"    ):"` | — |
+| [SRC-69F3587825-L000138](../search_code.py#L138) | 138 | `"        directory_names[:] = sorted("` | — |
+| [SRC-69F3587825-L000139](../search_code.py#L139) | 139 | `"            name"` | — |
+| [SRC-69F3587825-L000140](../search_code.py#L140) | 140 | `"            for name in directory_names"` | — |
+| [SRC-69F3587825-L000141](../search_code.py#L141) | 141 | `"            if name not in EXCLUDED_DIRECTORIES"` | — |
+| [SRC-69F3587825-L000142](../search_code.py#L142) | 142 | `"            and not (Path(current_directory) / name).is_symlink()"` | — |
+| [SRC-69F3587825-L000143](../search_code.py#L143) | 143 | `"        )"` | — |
+| [SRC-69F3587825-L000144](../search_code.py#L144) | 144 | `"        for file_name in sorted(file_names):"` | — |
+| [SRC-69F3587825-L000145](../search_code.py#L145) | 145 | `"            candidate = Path(current_directory) / file_name"` | — |
+| [SRC-69F3587825-L000146](../search_code.py#L146) | 146 | `"            if candidate.is_symlink() or _is_sensitive_path(candidate.relative_to(root)):"` | — |
+| [SRC-69F3587825-L000147](../search_code.py#L147) | 147 | `"                continue"` | — |
+| [SRC-69F3587825-L000148](../search_code.py#L148) | 148 | `"            suffix = candidate.suffix.lower()"` | — |
+| [SRC-69F3587825-L000149](../search_code.py#L149) | 149 | `"            if ("` | — |
+| [SRC-69F3587825-L000150](../search_code.py#L150) | 150 | `"                suffix not in extensions"` | — |
+| [SRC-69F3587825-L000151](../search_code.py#L151) | 151 | `"                and not file_name.endswith(\".example\")"` | — |
+| [SRC-69F3587825-L000152](../search_code.py#L152) | 152 | `"                and file_name not in {\".gitignore\", \".dockerignore\", \"Dockerfile\", \"LICENSE\"}"` | — |
+| [SRC-69F3587825-L000153](../search_code.py#L153) | 153 | `"            ):"` | — |
+| [SRC-69F3587825-L000154](../search_code.py#L154) | 154 | `"                continue"` | — |
+| [SRC-69F3587825-L000155](../search_code.py#L155) | 155 | `"            discovered.append(candidate)"` | — |
+| [SRC-69F3587825-L000156](../search_code.py#L156) | 156 | `"    return sorted(discovered, key=lambda p: p.relative_to(root).as_posix().casefold())"` | — |
+| [SRC-69F3587825-L000157](../search_code.py#L157) | 157 | `""` | — |
+| [SRC-69F3587825-L000158](../search_code.py#L158) | 158 | `""` | — |
+| [SRC-69F3587825-L000159](../search_code.py#L159) | 159 | `"def search_repository("` | — |
+| [SRC-69F3587825-L000160](../search_code.py#L160) | 160 | `"    root: Path,"` | — |
+| [SRC-69F3587825-L000161](../search_code.py#L161) | 161 | `"    query: str,"` | — |
+| [SRC-69F3587825-L000162](../search_code.py#L162) | 162 | `"    *,"` | — |
+| [SRC-69F3587825-L000163](../search_code.py#L163) | 163 | `"    use_regex: bool = False,"` | — |
+| [SRC-69F3587825-L000164](../search_code.py#L164) | 164 | `"    case_sensitive: bool = False,"` | — |
+| [SRC-69F3587825-L000165](../search_code.py#L165) | 165 | `"    extensions: frozenset[str] = DEFAULT_EXTENSIONS,"` | — |
+| [SRC-69F3587825-L000166](../search_code.py#L166) | 166 | `"    max_results: int = 50,"` | — |
+| [SRC-69F3587825-L000167](../search_code.py#L167) | 167 | `"    context: int = 1,"` | — |
+| [SRC-69F3587825-L000168](../search_code.py#L168) | 168 | `") -> list[SearchHit]:"` | — |
+| [SRC-69F3587825-L000169](../search_code.py#L169) | 169 | `"    \"\"\"Return ordered text matches with short context.\"\"\""` | — |
+| [SRC-69F3587825-L000170](../search_code.py#L170) | 170 | `"    if not query:"` | — |
+| [SRC-69F3587825-L000171](../search_code.py#L171) | 171 | `"        raise ValueError(\"استعلام البحث فارغ.\")"` | — |
+| [SRC-69F3587825-L000172](../search_code.py#L172) | 172 | `"    if max_results < 1:"` | — |
+| [SRC-69F3587825-L000173](../search_code.py#L173) | 173 | `"        raise ValueError(\"max_results يجب أن يكون 1 أو أكبر.\")"` | — |
+| [SRC-69F3587825-L000174](../search_code.py#L174) | 174 | `"    if context < 0:"` | — |
+| [SRC-69F3587825-L000175](../search_code.py#L175) | 175 | `"        raise ValueError(\"context لا يمكن أن يكون سالبًا.\")"` | — |
+| [SRC-69F3587825-L000176](../search_code.py#L176) | 176 | `""` | — |
+| [SRC-69F3587825-L000177](../search_code.py#L177) | 177 | `"    flags = 0 if case_sensitive else re.IGNORECASE"` | — |
+| [SRC-69F3587825-L000178](../search_code.py#L178) | 178 | `"    if use_regex:"` | — |
+| [SRC-69F3587825-L000179](../search_code.py#L179) | 179 | `"        pattern = re.compile(query, flags)"` | — |
+| [SRC-69F3587825-L000180](../search_code.py#L180) | 180 | `"    else:"` | — |
+| [SRC-69F3587825-L000181](../search_code.py#L181) | 181 | `"        pattern = re.compile(re.escape(query), flags)"` | — |
+| [SRC-69F3587825-L000182](../search_code.py#L182) | 182 | `""` | — |
+| [SRC-69F3587825-L000183](../search_code.py#L183) | 183 | `"    hits: list[SearchHit] = []"` | — |
+| [SRC-69F3587825-L000184](../search_code.py#L184) | 184 | `"    for path in discover_text_files(root, extensions):"` | — |
+| [SRC-69F3587825-L000185](../search_code.py#L185) | 185 | `"        relative = path.relative_to(root).as_posix()"` | — |
+| [SRC-69F3587825-L000186](../search_code.py#L186) | 186 | `"        try:"` | — |
+| [SRC-69F3587825-L000187](../search_code.py#L187) | 187 | `"            if path.stat().st_size > MAX_SEARCH_FILE_BYTES:"` | — |
+| [SRC-69F3587825-L000188](../search_code.py#L188) | 188 | `"                continue"` | — |
+| [SRC-69F3587825-L000189](../search_code.py#L189) | 189 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-69F3587825-L000190](../search_code.py#L190) | 190 | `"        except (OSError, UnicodeDecodeError):"` | — |
+| [SRC-69F3587825-L000191](../search_code.py#L191) | 191 | `"            continue"` | — |
+| [SRC-69F3587825-L000192](../search_code.py#L192) | 192 | `"        lines = text.splitlines()"` | — |
+| [SRC-69F3587825-L000193](../search_code.py#L193) | 193 | `"        for index, line in enumerate(lines):"` | — |
+| [SRC-69F3587825-L000194](../search_code.py#L194) | 194 | `"            if pattern.search(line):"` | — |
+| [SRC-69F3587825-L000195](../search_code.py#L195) | 195 | `"                before = \"\\n\".join(lines[max(0, index - context) : index]) if context else \"\""` | — |
+| [SRC-69F3587825-L000196](../search_code.py#L196) | 196 | `"                after = ("` | — |
+| [SRC-69F3587825-L000197](../search_code.py#L197) | 197 | `"                    \"\\n\".join(lines[index + 1 : min(len(lines), index + 1 + context)])"` | — |
+| [SRC-69F3587825-L000198](../search_code.py#L198) | 198 | `"                    if context"` | — |
+| [SRC-69F3587825-L000199](../search_code.py#L199) | 199 | `"                    else \"\""` | — |
+| [SRC-69F3587825-L000200](../search_code.py#L200) | 200 | `"                )"` | — |
+| [SRC-69F3587825-L000201](../search_code.py#L201) | 201 | `"                hits.append("` | — |
+| [SRC-69F3587825-L000202](../search_code.py#L202) | 202 | `"                    SearchHit("` | — |
+| [SRC-69F3587825-L000203](../search_code.py#L203) | 203 | `"                        file=relative,"` | — |
+| [SRC-69F3587825-L000204](../search_code.py#L204) | 204 | `"                        line=index + 1,"` | — |
+| [SRC-69F3587825-L000205](../search_code.py#L205) | 205 | `"                        text=line.rstrip(),"` | — |
+| [SRC-69F3587825-L000206](../search_code.py#L206) | 206 | `"                        context_before=before.rstrip(),"` | — |
+| [SRC-69F3587825-L000207](../search_code.py#L207) | 207 | `"                        context_after=after.rstrip(),"` | — |
+| [SRC-69F3587825-L000208](../search_code.py#L208) | 208 | `"                    )"` | — |
+| [SRC-69F3587825-L000209](../search_code.py#L209) | 209 | `"                )"` | — |
+| [SRC-69F3587825-L000210](../search_code.py#L210) | 210 | `"                if len(hits) >= max_results:"` | — |
+| [SRC-69F3587825-L000211](../search_code.py#L211) | 211 | `"                    return hits"` | — |
+| [SRC-69F3587825-L000212](../search_code.py#L212) | 212 | `"    return hits"` | — |
+| [SRC-69F3587825-L000213](../search_code.py#L213) | 213 | `""` | — |
+| [SRC-69F3587825-L000214](../search_code.py#L214) | 214 | `""` | — |
+| [SRC-69F3587825-L000215](../search_code.py#L215) | 215 | `"def format_hits(hits: list[SearchHit]) -> str:"` | — |
+| [SRC-69F3587825-L000216](../search_code.py#L216) | 216 | `"    if not hits:"` | — |
+| [SRC-69F3587825-L000217](../search_code.py#L217) | 217 | `"        return \"لا توجد نتائج.\""` | — |
+| [SRC-69F3587825-L000218](../search_code.py#L218) | 218 | `"    blocks: list[str] = []"` | — |
+| [SRC-69F3587825-L000219](../search_code.py#L219) | 219 | `"    for hit in hits:"` | — |
+| [SRC-69F3587825-L000220](../search_code.py#L220) | 220 | `"        blocks.append("` | — |
+| [SRC-69F3587825-L000221](../search_code.py#L221) | 221 | `"            f\"{hit.file}:{hit.line}\\n\""` | — |
+| [SRC-69F3587825-L000222](../search_code.py#L222) | 222 | `"            f\"  {hit.text}\\n\""` | — |
+| [SRC-69F3587825-L000223](../search_code.py#L223) | 223 | `"            f\"  → {hit.link}\""` | — |
+| [SRC-69F3587825-L000224](../search_code.py#L224) | 224 | `"        )"` | — |
+| [SRC-69F3587825-L000225](../search_code.py#L225) | 225 | `"        if hit.context_before:"` | — |
+| [SRC-69F3587825-L000226](../search_code.py#L226) | 226 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
+| [SRC-69F3587825-L000227](../search_code.py#L227) | 227 | `"                f\"  · {line}\" for line in hit.context_before.splitlines()"` | — |
+| [SRC-69F3587825-L000228](../search_code.py#L228) | 228 | `"            )"` | — |
+| [SRC-69F3587825-L000229](../search_code.py#L229) | 229 | `"        if hit.context_after:"` | — |
+| [SRC-69F3587825-L000230](../search_code.py#L230) | 230 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
+| [SRC-69F3587825-L000231](../search_code.py#L231) | 231 | `"                f\"  · {line}\" for line in hit.context_after.splitlines()"` | — |
+| [SRC-69F3587825-L000232](../search_code.py#L232) | 232 | `"            )"` | — |
+| [SRC-69F3587825-L000233](../search_code.py#L233) | 233 | `"    return \"\\n\\n\".join(blocks)"` | — |
+| [SRC-69F3587825-L000234](../search_code.py#L234) | 234 | `""` | — |
+| [SRC-69F3587825-L000235](../search_code.py#L235) | 235 | `""` | — |
+| [SRC-69F3587825-L000236](../search_code.py#L236) | 236 | `"def main(argv: Sequence[str] \| None = None) -> int:"` | — |
+| [SRC-69F3587825-L000237](../search_code.py#L237) | 237 | `"    parser = argparse.ArgumentParser("` | — |
+| [SRC-69F3587825-L000238](../search_code.py#L238) | 238 | `"        description=\"بحث نصي داخل ملفات مستودع Omarai (بدون خدمات خارجية).\""` | — |
+| [SRC-69F3587825-L000239](../search_code.py#L239) | 239 | `"    )"` | — |
+| [SRC-69F3587825-L000240](../search_code.py#L240) | 240 | `"    parser.add_argument(\"query\", help=\"النص أو التعبير المنتظم للبحث.\")"` | — |
+| [SRC-69F3587825-L000241](../search_code.py#L241) | 241 | `"    parser.add_argument("` | — |
+| [SRC-69F3587825-L000242](../search_code.py#L242) | 242 | `"        \"--root\","` | — |
+| [SRC-69F3587825-L000243](../search_code.py#L243) | 243 | `"        type=Path,"` | — |
+| [SRC-69F3587825-L000244](../search_code.py#L244) | 244 | `"        default=Path(__file__).resolve().parents[1],"` | — |
+| [SRC-69F3587825-L000245](../search_code.py#L245) | 245 | `"        help=\"جذر المستودع.\","` | — |
+| [SRC-69F3587825-L000246](../search_code.py#L246) | 246 | `"    )"` | — |
+| [SRC-69F3587825-L000247](../search_code.py#L247) | 247 | `"    parser.add_argument(\"--regex\", action=\"store_true\", help=\"تفسير الاستعلام كتعبير منتظم.\")"` | — |
+| [SRC-69F3587825-L000248](../search_code.py#L248) | 248 | `"    parser.add_argument(\"--case-sensitive\", action=\"store_true\", help=\"مطابقة حساسة لحالة الأحرف.\")"` | — |
+| [SRC-69F3587825-L000249](../search_code.py#L249) | 249 | `"    parser.add_argument("` | — |
+| [SRC-69F3587825-L000250](../search_code.py#L250) | 250 | `"        \"--ext\","` | — |
+| [SRC-69F3587825-L000251](../search_code.py#L251) | 251 | `"        action=\"append\","` | — |
+| [SRC-69F3587825-L000252](../search_code.py#L252) | 252 | `"        default=[],"` | — |
+| [SRC-69F3587825-L000253](../search_code.py#L253) | 253 | `"        help=\"امتداد ملف للبحث (يمكن تكراره)، مثل: --ext py --ext html\","` | — |
+| [SRC-69F3587825-L000254](../search_code.py#L254) | 254 | `"    )"` | — |
+| [SRC-69F3587825-L000255](../search_code.py#L255) | 255 | `"    parser.add_argument(\"--max\", type=int, default=50, help=\"أقصى عدد نتائج (افتراضي 50).\")"` | — |
+| [SRC-69F3587825-L000256](../search_code.py#L256) | 256 | `"    parser.add_argument("` | — |
+| [SRC-69F3587825-L000257](../search_code.py#L257) | 257 | `"        \"--context\","` | — |
+| [SRC-69F3587825-L000258](../search_code.py#L258) | 258 | `"        type=int,"` | — |
+| [SRC-69F3587825-L000259](../search_code.py#L259) | 259 | `"        default=0,"` | — |
+| [SRC-69F3587825-L000260](../search_code.py#L260) | 260 | `"        help=\"عدد أسطر السياق قبل/بعد.\","` | — |
+| [SRC-69F3587825-L000261](../search_code.py#L261) | 261 | `"    )"` | — |
+| [SRC-69F3587825-L000262](../search_code.py#L262) | 262 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-69F3587825-L000263](../search_code.py#L263) | 263 | `""` | — |
+| [SRC-69F3587825-L000264](../search_code.py#L264) | 264 | `"    try:"` | — |
+| [SRC-69F3587825-L000265](../search_code.py#L265) | 265 | `"        root = args.root.resolve(strict=True)"` | — |
+| [SRC-69F3587825-L000266](../search_code.py#L266) | 266 | `"        extensions = ("` | — |
+| [SRC-69F3587825-L000267](../search_code.py#L267) | 267 | `"            frozenset(f\".{ext.lstrip('.')}\" for ext in args.ext)"` | — |
+| [SRC-69F3587825-L000268](../search_code.py#L268) | 268 | `"            if args.ext"` | — |
+| [SRC-69F3587825-L000269](../search_code.py#L269) | 269 | `"            else DEFAULT_EXTENSIONS"` | — |
+| [SRC-69F3587825-L000270](../search_code.py#L270) | 270 | `"        )"` | — |
+| [SRC-69F3587825-L000271](../search_code.py#L271) | 271 | `"        hits = search_repository("` | — |
+| [SRC-69F3587825-L000272](../search_code.py#L272) | 272 | `"            root,"` | — |
+| [SRC-69F3587825-L000273](../search_code.py#L273) | 273 | `"            args.query,"` | — |
 | [SRC-69F3587825-L000274](../search_code.py#L274) | 274 | `"            use_regex=args.regex,"` | — |
 | [SRC-69F3587825-L000275](../search_code.py#L275) | 275 | `"            case_sensitive=args.case_sensitive,"` | — |
 | [SRC-69F3587825-L000276](../search_code.py#L276) | 276 | `"            extensions=extensions,"` | — |
@@ -461,430 +897,3 @@
 | [SRC-A8360B1B03-L000088](../../scripts/hosted_smoke_test.py#L88) | 88 | `"        status = exc.code"` | — |
 | [SRC-A8360B1B03-L000089](../../scripts/hosted_smoke_test.py#L89) | 89 | `"        body = exc.read(100_000)"` | — |
 | [SRC-A8360B1B03-L000090](../../scripts/hosted_smoke_test.py#L90) | 90 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
-| [SRC-A8360B1B03-L000091](../../scripts/hosted_smoke_test.py#L91) | 91 | `"        path = urllib.parse.urlsplit(url).path"` | — |
-| [SRC-A8360B1B03-L000092](../../scripts/hosted_smoke_test.py#L92) | 92 | `"        raise SmokeError(f\"Network request failed at {path}; check the service and network.\") from exc"` | — |
-| [SRC-A8360B1B03-L000093](../../scripts/hosted_smoke_test.py#L93) | 93 | `"    try:"` | — |
-| [SRC-A8360B1B03-L000094](../../scripts/hosted_smoke_test.py#L94) | 94 | `"        result = json.loads(body.decode(\"utf-8\"))"` | — |
-| [SRC-A8360B1B03-L000095](../../scripts/hosted_smoke_test.py#L95) | 95 | `"    except (UnicodeDecodeError, json.JSONDecodeError):"` | — |
-| [SRC-A8360B1B03-L000096](../../scripts/hosted_smoke_test.py#L96) | 96 | `"        result = None"` | — |
-| [SRC-A8360B1B03-L000097](../../scripts/hosted_smoke_test.py#L97) | 97 | `"    return status, result if isinstance(result, dict) else None"` | — |
-| [SRC-A8360B1B03-L000098](../../scripts/hosted_smoke_test.py#L98) | 98 | `""` | — |
-| [SRC-A8360B1B03-L000099](../../scripts/hosted_smoke_test.py#L99) | 99 | `""` | — |
-| [SRC-A8360B1B03-L000100](../../scripts/hosted_smoke_test.py#L100) | 100 | `"def run_smoke("` | — |
-| [SRC-A8360B1B03-L000101](../../scripts/hosted_smoke_test.py#L101) | 101 | `"    origin: str,"` | — |
-| [SRC-A8360B1B03-L000102](../../scripts/hosted_smoke_test.py#L102) | 102 | `"    token: str,"` | — |
-| [SRC-A8360B1B03-L000103](../../scripts/hosted_smoke_test.py#L103) | 103 | `"    *,"` | — |
-| [SRC-A8360B1B03-L000104](../../scripts/hosted_smoke_test.py#L104) | 104 | `"    timeout: float = 90,"` | — |
-| [SRC-A8360B1B03-L000105](../../scripts/hosted_smoke_test.py#L105) | 105 | `"    allow_http: bool = False,"` | — |
-| [SRC-A8360B1B03-L000106](../../scripts/hosted_smoke_test.py#L106) | 106 | `"    expected_sha: str \| None = None,"` | — |
-| [SRC-A8360B1B03-L000107](../../scripts/hosted_smoke_test.py#L107) | 107 | `") -> dict[str, Any]:"` | — |
-| [SRC-A8360B1B03-L000108](../../scripts/hosted_smoke_test.py#L108) | 108 | `"    origin = normalize_origin(origin, allow_http)"` | — |
-| [SRC-A8360B1B03-L000109](../../scripts/hosted_smoke_test.py#L109) | 109 | `"    if expected_sha is not None and not re.fullmatch(r\"[0-9a-fA-F]{40}\", expected_sha.strip()):"` | — |
-| [SRC-A8360B1B03-L000110](../../scripts/hosted_smoke_test.py#L110) | 110 | `"        raise SmokeError(\"The expected source revision must be a full 40-character Git SHA.\")"` | — |
-| [SRC-A8360B1B03-L000111](../../scripts/hosted_smoke_test.py#L111) | 111 | `"    if len(token.strip()) < 32:"` | — |
-| [SRC-A8360B1B03-L000112](../../scripts/hosted_smoke_test.py#L112) | 112 | `"        raise SmokeError(\"OMARAI_ACCESS_TOKEN is missing or shorter than 32 characters.\")"` | — |
-| [SRC-A8360B1B03-L000113](../../scripts/hosted_smoke_test.py#L113) | 113 | `""` | — |
-| [SRC-A8360B1B03-L000114](../../scripts/hosted_smoke_test.py#L114) | 114 | `"    status, health = request_json(f\"{origin}/api/health\", timeout=min(timeout, 20))"` | — |
-| [SRC-A8360B1B03-L000115](../../scripts/hosted_smoke_test.py#L115) | 115 | `"    if status != 200 or not health or health.get(\"ok\") is not True:"` | — |
-| [SRC-A8360B1B03-L000116](../../scripts/hosted_smoke_test.py#L116) | 116 | `"        raise SmokeError(f\"Health check failed (HTTP {status}).\")"` | — |
-| [SRC-A8360B1B03-L000117](../../scripts/hosted_smoke_test.py#L117) | 117 | `"    checks: dict[str, Any] = {\"health\": \"passed\"}"` | — |
-| [SRC-A8360B1B03-L000118](../../scripts/hosted_smoke_test.py#L118) | 118 | `""` | — |
-| [SRC-A8360B1B03-L000119](../../scripts/hosted_smoke_test.py#L119) | 119 | `"    build = health.get(\"build\")"` | — |
-| [SRC-A8360B1B03-L000120](../../scripts/hosted_smoke_test.py#L120) | 120 | `"    reported_sha = build.get(\"sha\") if isinstance(build, dict) else None"` | — |
-| [SRC-A8360B1B03-L000121](../../scripts/hosted_smoke_test.py#L121) | 121 | `"    if expected_sha is not None:"` | — |
-| [SRC-A8360B1B03-L000122](../../scripts/hosted_smoke_test.py#L122) | 122 | `"        expected = expected_sha.strip().lower()"` | — |
-| [SRC-A8360B1B03-L000123](../../scripts/hosted_smoke_test.py#L123) | 123 | `"        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:"` | — |
-| [SRC-A8360B1B03-L000124](../../scripts/hosted_smoke_test.py#L124) | 124 | `"            raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000125](../../scripts/hosted_smoke_test.py#L125) | 125 | `"                \"The deployed service SHA does not match the expected Git commit. \""` | — |
-| [SRC-A8360B1B03-L000126](../../scripts/hosted_smoke_test.py#L126) | 126 | `"                \"Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, \""` | — |
-| [SRC-A8360B1B03-L000127](../../scripts/hosted_smoke_test.py#L127) | 127 | `"                \"then rebuild and redeploy.\""` | — |
-| [SRC-A8360B1B03-L000128](../../scripts/hosted_smoke_test.py#L128) | 128 | `"            )"` | — |
-| [SRC-A8360B1B03-L000129](../../scripts/hosted_smoke_test.py#L129) | 129 | `"        checks[\"build_identity\"] = {"` | — |
-| [SRC-A8360B1B03-L000130](../../scripts/hosted_smoke_test.py#L130) | 130 | `"            \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000131](../../scripts/hosted_smoke_test.py#L131) | 131 | `"            \"expected_sha\": expected,"` | — |
-| [SRC-A8360B1B03-L000132](../../scripts/hosted_smoke_test.py#L132) | 132 | `"            \"reported_sha\": reported_sha.lower(),"` | — |
-| [SRC-A8360B1B03-L000133](../../scripts/hosted_smoke_test.py#L133) | 133 | `"        }"` | — |
-| [SRC-A8360B1B03-L000134](../../scripts/hosted_smoke_test.py#L134) | 134 | `"    else:"` | — |
-| [SRC-A8360B1B03-L000135](../../scripts/hosted_smoke_test.py#L135) | 135 | `"        checks[\"build_identity\"] = {"` | — |
-| [SRC-A8360B1B03-L000136](../../scripts/hosted_smoke_test.py#L136) | 136 | `"            \"status\": \"not_checked\","` | — |
-| [SRC-A8360B1B03-L000137](../../scripts/hosted_smoke_test.py#L137) | 137 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
-| [SRC-A8360B1B03-L000138](../../scripts/hosted_smoke_test.py#L138) | 138 | `"        }"` | — |
-| [SRC-A8360B1B03-L000139](../../scripts/hosted_smoke_test.py#L139) | 139 | `""` | — |
-| [SRC-A8360B1B03-L000140](../../scripts/hosted_smoke_test.py#L140) | 140 | `"    status, _ = request_json("` | — |
-| [SRC-A8360B1B03-L000141](../../scripts/hosted_smoke_test.py#L141) | 141 | `"        f\"{origin}/api/agent\", payload={\"question\": \"اختبار رفض الوصول غير المصرح به\"},"` | — |
-| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"        timeout=min(timeout, 20),"` | — |
-| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    )"` | — |
-| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `"    if status != 401:"` | — |
-| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `"        raise SmokeError(f\"Unauthenticated POST /api/agent should return 401, received {status}.\")"` | — |
-| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"    checks[\"authentication\"] = \"passed\""` | — |
-| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `""` | — |
-| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
-| [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    status, diagnostics = request_json("` | — |
-| [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
-| [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"        payload={\"test_model\": True, \"test_social\": False}, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"    )"` | — |
-| [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    if status != 200 or not diagnostics:"` | — |
-| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\")"` | — |
-| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
-| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
-| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    model = parts.get(\"language_model\", {}) if isinstance(parts, dict) else {}"` | — |
-| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    if not isinstance(web, dict) or web.get(\"status\") != \"passed\":"` | — |
-| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"        raise SmokeError(\"The real web-search connectivity test did not pass.\")"` | — |
-| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"    if not isinstance(model, dict) or model.get(\"status\") != \"passed\":"` | — |
-| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        raise SmokeError(\"The configured language model did not pass a real completion test.\")"` | — |
-| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `"    checks[\"live_search\"] = {"` | — |
-| [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"        \"status\": \"passed\", \"result_count\": web.get(\"result_count\", 0),"` | — |
-| [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        \"provider_counts\": web.get(\"provider_counts\", {}),"` | — |
-| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"    }"` | — |
-| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    checks[\"language_model\"] = {\"status\": \"passed\", \"response_received\": True}"` | — |
-| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `""` | — |
-| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"    status, answer = request_json("` | — |
-| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"        payload={"` | — |
-| [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"            \"question\": \"اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر.\","` | — |
-| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            \"history\": [], \"mode\": \"auto\","` | — |
-| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        },"` | — |
-| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"    )"` | — |
-| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"    if status != 200 or not answer:"` | — |
-| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\")"` | — |
-| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"    sources = answer.get(\"sources\")"` | — |
-| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    usable = ["` | — |
-| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        item for item in sources if isinstance(item, dict)"` | — |
-| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"        and isinstance(item.get(\"url\"), str)"` | — |
-| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
-| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
-| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"    ] if isinstance(sources, list) else []"` | — |
-| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
-| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        raise SmokeError(\"Agent request did not return a live web search with usable source URLs.\")"` | — |
-| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
-| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"        raise SmokeError(\"Agent request did not confirm that a language model was used.\")"` | — |
-| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"    report = answer.get(\"search_report\")"` | — |
-| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"    checks[\"agent_request\"] = {"` | — |
-| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
-| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `"        \"direct_pages_read\": report.get(\"pages_fetched\") if isinstance(report, dict) else None,"` | — |
-| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"        \"providers_reported\": report.get(\"providers_used\", []) if isinstance(report, dict) else [],"` | — |
-| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"        \"answer_received\": bool(str(answer.get(\"answer\", \"\")).strip()),"` | — |
-| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"    }"` | — |
-| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"    return {"` | — |
-| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"        \"result\": \"passed\", \"target_host\": urllib.parse.urlsplit(origin).hostname,"` | — |
-| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"        \"checks\": checks,"` | — |
-| [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"        \"note\": \"This proves the request path worked at test time, not continuous uptime. Provider usage may incur charges.\","` | — |
-| [SRC-A8360B1B03-L000199](../../scripts/hosted_smoke_test.py#L199) | 199 | `"    }"` | — |
-| [SRC-A8360B1B03-L000200](../../scripts/hosted_smoke_test.py#L200) | 200 | `""` | — |
-| [SRC-A8360B1B03-L000201](../../scripts/hosted_smoke_test.py#L201) | 201 | `""` | — |
-| [SRC-A8360B1B03-L000202](../../scripts/hosted_smoke_test.py#L202) | 202 | `"def main() -> int:"` | — |
-| [SRC-A8360B1B03-L000203](../../scripts/hosted_smoke_test.py#L203) | 203 | `"    parser = argparse.ArgumentParser(description=\"Run live acceptance checks against hosted Omarai.\")"` | — |
-| [SRC-A8360B1B03-L000204](../../scripts/hosted_smoke_test.py#L204) | 204 | `"    parser.add_argument(\"--base-url\", default=os.getenv(\"OMARAI_BASE_URL\", \"\"))"` | — |
-| [SRC-A8360B1B03-L000205](../../scripts/hosted_smoke_test.py#L205) | 205 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
-| [SRC-A8360B1B03-L000206](../../scripts/hosted_smoke_test.py#L206) | 206 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000207](../../scripts/hosted_smoke_test.py#L207) | 207 | `"        \"--expected-sha\","` | — |
-| [SRC-A8360B1B03-L000208](../../scripts/hosted_smoke_test.py#L208) | 208 | `"        default=os.getenv(\"OMARAI_EXPECTED_BUILD_SHA\", \"\"),"` | — |
-| [SRC-A8360B1B03-L000209](../../scripts/hosted_smoke_test.py#L209) | 209 | `"        help=\"Require the deployed image to report this full 40-character source Git SHA.\","` | — |
-| [SRC-A8360B1B03-L000210](../../scripts/hosted_smoke_test.py#L210) | 210 | `"    )"` | — |
-| [SRC-A8360B1B03-L000211](../../scripts/hosted_smoke_test.py#L211) | 211 | `"    parser.add_argument(\"--allow-http\", action=\"store_true\","` | — |
-| [SRC-A8360B1B03-L000212](../../scripts/hosted_smoke_test.py#L212) | 212 | `"                        help=\"Allow HTTP only for localhost/127.0.0.1/::1 testing.\")"` | — |
-| [SRC-A8360B1B03-L000213](../../scripts/hosted_smoke_test.py#L213) | 213 | `"    args = parser.parse_args()"` | — |
-| [SRC-A8360B1B03-L000214](../../scripts/hosted_smoke_test.py#L214) | 214 | `"    try:"` | — |
-| [SRC-A8360B1B03-L000215](../../scripts/hosted_smoke_test.py#L215) | 215 | `"        result = run_smoke("` | — |
-| [SRC-A8360B1B03-L000216](../../scripts/hosted_smoke_test.py#L216) | 216 | `"            args.base_url,"` | — |
-| [SRC-A8360B1B03-L000217](../../scripts/hosted_smoke_test.py#L217) | 217 | `"            os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip(),"` | — |
-| [SRC-A8360B1B03-L000218](../../scripts/hosted_smoke_test.py#L218) | 218 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
-| [SRC-A8360B1B03-L000219](../../scripts/hosted_smoke_test.py#L219) | 219 | `"            allow_http=args.allow_http,"` | — |
-| [SRC-A8360B1B03-L000220](../../scripts/hosted_smoke_test.py#L220) | 220 | `"            expected_sha=args.expected_sha or None,"` | — |
-| [SRC-A8360B1B03-L000221](../../scripts/hosted_smoke_test.py#L221) | 221 | `"        )"` | — |
-| [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"    except SmokeError as exc:"` | — |
-| [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `"        print(json.dumps({\"result\": \"failed\", \"error\": str(exc)}, ensure_ascii=False, indent=2))"` | — |
-| [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"        return 1"` | — |
-| [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
-| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"    return 0"` | — |
-| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `""` | — |
-| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `""` | — |
-| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"    sys.exit(main())"` | — |
-## ملفات أخرى
-
-### FILE-4FFD5AFC54 — [scripts/run_answer_quality_benchmark.py](../../scripts/run_answer_quality_benchmark.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-4FFD5AFC54-L000001](../../scripts/run_answer_quality_benchmark.py#L1) | 1 | `"\"\"\"Offline / optional live runner for OMARAI-REDTEAM-001 answer-quality cases."` | — |
-| [SRC-4FFD5AFC54-L000002](../../scripts/run_answer_quality_benchmark.py#L2) | 2 | `""` | — |
-| [SRC-4FFD5AFC54-L000003](../../scripts/run_answer_quality_benchmark.py#L3) | 3 | `"Modes"` | — |
-| [SRC-4FFD5AFC54-L000004](../../scripts/run_answer_quality_benchmark.py#L4) | 4 | `"-----"` | — |
-| [SRC-4FFD5AFC54-L000005](../../scripts/run_answer_quality_benchmark.py#L5) | 5 | `"validate (default)"` | — |
-| [SRC-4FFD5AFC54-L000006](../../scripts/run_answer_quality_benchmark.py#L6) | 6 | `"    Load and structurally validate the corpus. No network."` | — |
-| [SRC-4FFD5AFC54-L000007](../../scripts/run_answer_quality_benchmark.py#L7) | 7 | `""` | — |
-| [SRC-4FFD5AFC54-L000008](../../scripts/run_answer_quality_benchmark.py#L8) | 8 | `"live (explicit opt-in)"` | — |
-| [SRC-4FFD5AFC54-L000009](../../scripts/run_answer_quality_benchmark.py#L9) | 9 | `"    POST selected cases to an existing Omarai HTTP API (/api/agent)."` | — |
-| [SRC-4FFD5AFC54-L000010](../../scripts/run_answer_quality_benchmark.py#L10) | 10 | `"    Does NOT inject JSON evidence fixtures into the server."` | — |
-| [SRC-4FFD5AFC54-L000011](../../scripts/run_answer_quality_benchmark.py#L11) | 11 | `"    Does NOT auto-grade PASS/FAIL for answer quality; records NOT_TESTED"` | — |
-| [SRC-4FFD5AFC54-L000012](../../scripts/run_answer_quality_benchmark.py#L12) | 12 | `"    unless a transport/auth error makes the run unusable."` | — |
-| [SRC-4FFD5AFC54-L000013](../../scripts/run_answer_quality_benchmark.py#L13) | 13 | `""` | — |
-| [SRC-4FFD5AFC54-L000014](../../scripts/run_answer_quality_benchmark.py#L14) | 14 | `"Standard library only. Secrets only via environment (never CLI flags for tokens)."` | — |
-| [SRC-4FFD5AFC54-L000015](../../scripts/run_answer_quality_benchmark.py#L15) | 15 | `""` | — |
-| [SRC-4FFD5AFC54-L000016](../../scripts/run_answer_quality_benchmark.py#L16) | 16 | `"Examples"` | — |
-| [SRC-4FFD5AFC54-L000017](../../scripts/run_answer_quality_benchmark.py#L17) | 17 | `"--------"` | — |
-| [SRC-4FFD5AFC54-L000018](../../scripts/run_answer_quality_benchmark.py#L18) | 18 | `"  python scripts/run_answer_quality_benchmark.py"` | — |
-| [SRC-4FFD5AFC54-L000019](../../scripts/run_answer_quality_benchmark.py#L19) | 19 | `"  python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
-| [SRC-4FFD5AFC54-L000020](../../scripts/run_answer_quality_benchmark.py#L20) | 20 | `"  python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 \\\\"` | — |
-| [SRC-4FFD5AFC54-L000021](../../scripts/run_answer_quality_benchmark.py#L21) | 21 | `"      --case-id AQ-001 --limit 1 --out /tmp/aq_results.json"` | — |
-| [SRC-4FFD5AFC54-L000022](../../scripts/run_answer_quality_benchmark.py#L22) | 22 | `"\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000023](../../scripts/run_answer_quality_benchmark.py#L23) | 23 | `"from __future__ import annotations"` | — |
-| [SRC-4FFD5AFC54-L000024](../../scripts/run_answer_quality_benchmark.py#L24) | 24 | `""` | — |
-| [SRC-4FFD5AFC54-L000025](../../scripts/run_answer_quality_benchmark.py#L25) | 25 | `"import argparse"` | — |
-| [SRC-4FFD5AFC54-L000026](../../scripts/run_answer_quality_benchmark.py#L26) | 26 | `"import ipaddress"` | — |
-| [SRC-4FFD5AFC54-L000027](../../scripts/run_answer_quality_benchmark.py#L27) | 27 | `"import json"` | — |
-| [SRC-4FFD5AFC54-L000028](../../scripts/run_answer_quality_benchmark.py#L28) | 28 | `"import os"` | — |
-| [SRC-4FFD5AFC54-L000029](../../scripts/run_answer_quality_benchmark.py#L29) | 29 | `"import sys"` | — |
-| [SRC-4FFD5AFC54-L000030](../../scripts/run_answer_quality_benchmark.py#L30) | 30 | `"import time"` | — |
-| [SRC-4FFD5AFC54-L000031](../../scripts/run_answer_quality_benchmark.py#L31) | 31 | `"import urllib.error"` | — |
-| [SRC-4FFD5AFC54-L000032](../../scripts/run_answer_quality_benchmark.py#L32) | 32 | `"import urllib.parse"` | — |
-| [SRC-4FFD5AFC54-L000033](../../scripts/run_answer_quality_benchmark.py#L33) | 33 | `"import urllib.request"` | — |
-| [SRC-4FFD5AFC54-L000034](../../scripts/run_answer_quality_benchmark.py#L34) | 34 | `"from datetime import UTC, datetime"` | — |
-| [SRC-4FFD5AFC54-L000035](../../scripts/run_answer_quality_benchmark.py#L35) | 35 | `"from pathlib import Path"` | — |
-| [SRC-4FFD5AFC54-L000036](../../scripts/run_answer_quality_benchmark.py#L36) | 36 | `""` | — |
-| [SRC-4FFD5AFC54-L000037](../../scripts/run_answer_quality_benchmark.py#L37) | 37 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-4FFD5AFC54-L000038](../../scripts/run_answer_quality_benchmark.py#L38) | 38 | `"DEFAULT_CORPUS = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-4FFD5AFC54-L000039](../../scripts/run_answer_quality_benchmark.py#L39) | 39 | `"MAX_RESPONSE_BYTES = 2_000_000"` | — |
-| [SRC-4FFD5AFC54-L000040](../../scripts/run_answer_quality_benchmark.py#L40) | 40 | `""` | — |
-| [SRC-4FFD5AFC54-L000041](../../scripts/run_answer_quality_benchmark.py#L41) | 41 | `""` | — |
-| [SRC-4FFD5AFC54-L000042](../../scripts/run_answer_quality_benchmark.py#L42) | 42 | `"def validate_base_url(base_url: str, *, token_present: bool = False) -> str:"` | — |
-| [SRC-4FFD5AFC54-L000043](../../scripts/run_answer_quality_benchmark.py#L43) | 43 | `"    \"\"\"Validate and normalize an API origin before any request can carry a token.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000044](../../scripts/run_answer_quality_benchmark.py#L44) | 44 | `"    if not isinstance(base_url, str) or not base_url.strip():"` | — |
-| [SRC-4FFD5AFC54-L000045](../../scripts/run_answer_quality_benchmark.py#L45) | 45 | `"        raise ValueError(\"Base URL must be a non-empty HTTP(S) origin.\")"` | — |
-| [SRC-4FFD5AFC54-L000046](../../scripts/run_answer_quality_benchmark.py#L46) | 46 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000047](../../scripts/run_answer_quality_benchmark.py#L47) | 47 | `"        parsed = urllib.parse.urlsplit(base_url.strip())"` | — |
-| [SRC-4FFD5AFC54-L000048](../../scripts/run_answer_quality_benchmark.py#L48) | 48 | `"        scheme = parsed.scheme.lower()"` | — |
-| [SRC-4FFD5AFC54-L000049](../../scripts/run_answer_quality_benchmark.py#L49) | 49 | `"        host = (parsed.hostname or \"\").lower().rstrip(\".\")"` | — |
-| [SRC-4FFD5AFC54-L000050](../../scripts/run_answer_quality_benchmark.py#L50) | 50 | `"        port = parsed.port"` | — |
-| [SRC-4FFD5AFC54-L000051](../../scripts/run_answer_quality_benchmark.py#L51) | 51 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000052](../../scripts/run_answer_quality_benchmark.py#L52) | 52 | `"        raise ValueError(\"Base URL is malformed.\") from exc"` | — |
-| [SRC-4FFD5AFC54-L000053](../../scripts/run_answer_quality_benchmark.py#L53) | 53 | `""` | — |
-| [SRC-4FFD5AFC54-L000054](../../scripts/run_answer_quality_benchmark.py#L54) | 54 | `"    if scheme not in {\"http\", \"https\"} or not host:"` | — |
-| [SRC-4FFD5AFC54-L000055](../../scripts/run_answer_quality_benchmark.py#L55) | 55 | `"        raise ValueError(\"Base URL must use HTTP or HTTPS and include a hostname.\")"` | — |
-| [SRC-4FFD5AFC54-L000056](../../scripts/run_answer_quality_benchmark.py#L56) | 56 | `"    if parsed.username is not None or parsed.password is not None:"` | — |
-| [SRC-4FFD5AFC54-L000057](../../scripts/run_answer_quality_benchmark.py#L57) | 57 | `"        raise ValueError(\"Base URL must not include a username or password.\")"` | — |
-| [SRC-4FFD5AFC54-L000058](../../scripts/run_answer_quality_benchmark.py#L58) | 58 | `"    if parsed.path not in {\"\", \"/\"} or parsed.query or parsed.fragment:"` | — |
-| [SRC-4FFD5AFC54-L000059](../../scripts/run_answer_quality_benchmark.py#L59) | 59 | `"        raise ValueError(\"Base URL must contain only the origin, without path, query, or fragment.\")"` | — |
-| [SRC-4FFD5AFC54-L000060](../../scripts/run_answer_quality_benchmark.py#L60) | 60 | `""` | — |
-| [SRC-4FFD5AFC54-L000061](../../scripts/run_answer_quality_benchmark.py#L61) | 61 | `"    loopback = host == \"localhost\""` | — |
-| [SRC-4FFD5AFC54-L000062](../../scripts/run_answer_quality_benchmark.py#L62) | 62 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000063](../../scripts/run_answer_quality_benchmark.py#L63) | 63 | `"        loopback = ipaddress.ip_address(host).is_loopback"` | — |
-| [SRC-4FFD5AFC54-L000064](../../scripts/run_answer_quality_benchmark.py#L64) | 64 | `"    except ValueError:"` | — |
-| [SRC-4FFD5AFC54-L000065](../../scripts/run_answer_quality_benchmark.py#L65) | 65 | `"        pass"` | — |
-| [SRC-4FFD5AFC54-L000066](../../scripts/run_answer_quality_benchmark.py#L66) | 66 | `""` | — |
-| [SRC-4FFD5AFC54-L000067](../../scripts/run_answer_quality_benchmark.py#L67) | 67 | `"    if scheme == \"http\" and not loopback:"` | — |
-| [SRC-4FFD5AFC54-L000068](../../scripts/run_answer_quality_benchmark.py#L68) | 68 | `"        raise ValueError(\"Plain HTTP is allowed only for localhost or a loopback IP.\")"` | — |
-| [SRC-4FFD5AFC54-L000069](../../scripts/run_answer_quality_benchmark.py#L69) | 69 | `""` | — |
-| [SRC-4FFD5AFC54-L000070](../../scripts/run_answer_quality_benchmark.py#L70) | 70 | `"    if (scheme == \"https\" and port == 443) or (scheme == \"http\" and port == 80):"` | — |
-| [SRC-4FFD5AFC54-L000071](../../scripts/run_answer_quality_benchmark.py#L71) | 71 | `"        port = None"` | — |
-| [SRC-4FFD5AFC54-L000072](../../scripts/run_answer_quality_benchmark.py#L72) | 72 | `"    host_for_origin = f\"[{host}]\" if \":\" in host else host"` | — |
-| [SRC-4FFD5AFC54-L000073](../../scripts/run_answer_quality_benchmark.py#L73) | 73 | `"    origin = f\"{scheme}://{host_for_origin}\" + (f\":{port}\" if port is not None else \"\")"` | — |
-| [SRC-4FFD5AFC54-L000074](../../scripts/run_answer_quality_benchmark.py#L74) | 74 | `""` | — |
-| [SRC-4FFD5AFC54-L000075](../../scripts/run_answer_quality_benchmark.py#L75) | 75 | `"    if token_present and not loopback:"` | — |
-| [SRC-4FFD5AFC54-L000076](../../scripts/run_answer_quality_benchmark.py#L76) | 76 | `"        allowed = os.getenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", \"\").strip()"` | — |
-| [SRC-4FFD5AFC54-L000077](../../scripts/run_answer_quality_benchmark.py#L77) | 77 | `"        if not allowed:"` | — |
-| [SRC-4FFD5AFC54-L000078](../../scripts/run_answer_quality_benchmark.py#L78) | 78 | `"            raise ValueError("` | — |
-| [SRC-4FFD5AFC54-L000079](../../scripts/run_answer_quality_benchmark.py#L79) | 79 | `"                \"A bearer token requires OMARAI_BENCHMARK_ALLOWED_ORIGIN to match \""` | — |
-| [SRC-4FFD5AFC54-L000080](../../scripts/run_answer_quality_benchmark.py#L80) | 80 | `"                \"the exact HTTPS deployment origin.\""` | — |
-| [SRC-4FFD5AFC54-L000081](../../scripts/run_answer_quality_benchmark.py#L81) | 81 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000082](../../scripts/run_answer_quality_benchmark.py#L82) | 82 | `"        allowed_origin = validate_base_url(allowed, token_present=False)"` | — |
-| [SRC-4FFD5AFC54-L000083](../../scripts/run_answer_quality_benchmark.py#L83) | 83 | `"        if allowed_origin != origin:"` | — |
-| [SRC-4FFD5AFC54-L000084](../../scripts/run_answer_quality_benchmark.py#L84) | 84 | `"            raise ValueError("` | — |
-| [SRC-4FFD5AFC54-L000085](../../scripts/run_answer_quality_benchmark.py#L85) | 85 | `"                \"Refusing to send the bearer token: base URL does not match \""` | — |
-| [SRC-4FFD5AFC54-L000086](../../scripts/run_answer_quality_benchmark.py#L86) | 86 | `"                \"OMARAI_BENCHMARK_ALLOWED_ORIGIN.\""` | — |
-| [SRC-4FFD5AFC54-L000087](../../scripts/run_answer_quality_benchmark.py#L87) | 87 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000088](../../scripts/run_answer_quality_benchmark.py#L88) | 88 | `"    return origin"` | — |
-| [SRC-4FFD5AFC54-L000089](../../scripts/run_answer_quality_benchmark.py#L89) | 89 | `""` | — |
-| [SRC-4FFD5AFC54-L000090](../../scripts/run_answer_quality_benchmark.py#L90) | 90 | `""` | — |
-| [SRC-4FFD5AFC54-L000091](../../scripts/run_answer_quality_benchmark.py#L91) | 91 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
-| [SRC-4FFD5AFC54-L000092](../../scripts/run_answer_quality_benchmark.py#L92) | 92 | `"    \"\"\"Do not follow redirects; the bearer token must never move to another origin.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000093](../../scripts/run_answer_quality_benchmark.py#L93) | 93 | `""` | — |
-| [SRC-4FFD5AFC54-L000094](../../scripts/run_answer_quality_benchmark.py#L94) | 94 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
-| [SRC-4FFD5AFC54-L000095](../../scripts/run_answer_quality_benchmark.py#L95) | 95 | `"        return None"` | — |
-| [SRC-4FFD5AFC54-L000096](../../scripts/run_answer_quality_benchmark.py#L96) | 96 | `""` | — |
-| [SRC-4FFD5AFC54-L000097](../../scripts/run_answer_quality_benchmark.py#L97) | 97 | `""` | — |
-| [SRC-4FFD5AFC54-L000098](../../scripts/run_answer_quality_benchmark.py#L98) | 98 | `"_NO_REDIRECT_OPENER = urllib.request.build_opener(_NoRedirectHandler())"` | — |
-| [SRC-4FFD5AFC54-L000099](../../scripts/run_answer_quality_benchmark.py#L99) | 99 | `""` | — |
-| [SRC-4FFD5AFC54-L000100](../../scripts/run_answer_quality_benchmark.py#L100) | 100 | `"REQUIRED_FIELDS = {"` | — |
-| [SRC-4FFD5AFC54-L000101](../../scripts/run_answer_quality_benchmark.py#L101) | 101 | `"    \"case_id\","` | — |
-| [SRC-4FFD5AFC54-L000102](../../scripts/run_answer_quality_benchmark.py#L102) | 102 | `"    \"category\","` | — |
-| [SRC-4FFD5AFC54-L000103](../../scripts/run_answer_quality_benchmark.py#L103) | 103 | `"    \"language\","` | — |
-| [SRC-4FFD5AFC54-L000104](../../scripts/run_answer_quality_benchmark.py#L104) | 104 | `"    \"question\","` | — |
-| [SRC-4FFD5AFC54-L000105](../../scripts/run_answer_quality_benchmark.py#L105) | 105 | `"    \"expected_strategy\","` | — |
-| [SRC-4FFD5AFC54-L000106](../../scripts/run_answer_quality_benchmark.py#L106) | 106 | `"    \"required_behaviors\","` | — |
-| [SRC-4FFD5AFC54-L000107](../../scripts/run_answer_quality_benchmark.py#L107) | 107 | `"    \"forbidden_behaviors\","` | — |
-| [SRC-4FFD5AFC54-L000108](../../scripts/run_answer_quality_benchmark.py#L108) | 108 | `"    \"evidence_fixture\","` | — |
-| [SRC-4FFD5AFC54-L000109](../../scripts/run_answer_quality_benchmark.py#L109) | 109 | `"    \"failure_conditions\","` | — |
-| [SRC-4FFD5AFC54-L000110](../../scripts/run_answer_quality_benchmark.py#L110) | 110 | `"    \"evaluation_mode\","` | — |
-| [SRC-4FFD5AFC54-L000111](../../scripts/run_answer_quality_benchmark.py#L111) | 111 | `"}"` | — |
-| [SRC-4FFD5AFC54-L000112](../../scripts/run_answer_quality_benchmark.py#L112) | 112 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
-| [SRC-4FFD5AFC54-L000113](../../scripts/run_answer_quality_benchmark.py#L113) | 113 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
-| [SRC-4FFD5AFC54-L000114](../../scripts/run_answer_quality_benchmark.py#L114) | 114 | `""` | — |
-| [SRC-4FFD5AFC54-L000115](../../scripts/run_answer_quality_benchmark.py#L115) | 115 | `""` | — |
-| [SRC-4FFD5AFC54-L000116](../../scripts/run_answer_quality_benchmark.py#L116) | 116 | `"def _utc_now() -> str:"` | — |
-| [SRC-4FFD5AFC54-L000117](../../scripts/run_answer_quality_benchmark.py#L117) | 117 | `"    return datetime.now(UTC).isoformat(timespec=\"seconds\")"` | — |
-| [SRC-4FFD5AFC54-L000118](../../scripts/run_answer_quality_benchmark.py#L118) | 118 | `""` | — |
-| [SRC-4FFD5AFC54-L000119](../../scripts/run_answer_quality_benchmark.py#L119) | 119 | `""` | — |
-| [SRC-4FFD5AFC54-L000120](../../scripts/run_answer_quality_benchmark.py#L120) | 120 | `"def load_corpus(path: Path) -> dict:"` | — |
-| [SRC-4FFD5AFC54-L000121](../../scripts/run_answer_quality_benchmark.py#L121) | 121 | `"    if not path.is_file():"` | — |
-| [SRC-4FFD5AFC54-L000122](../../scripts/run_answer_quality_benchmark.py#L122) | 122 | `"        raise FileNotFoundError(f\"Corpus not found: {path}\")"` | — |
-| [SRC-4FFD5AFC54-L000123](../../scripts/run_answer_quality_benchmark.py#L123) | 123 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-4FFD5AFC54-L000124](../../scripts/run_answer_quality_benchmark.py#L124) | 124 | `"    if not isinstance(data, dict) or not isinstance(data.get(\"cases\"), list):"` | — |
-| [SRC-4FFD5AFC54-L000125](../../scripts/run_answer_quality_benchmark.py#L125) | 125 | `"        raise TypeError(\"Corpus root must be an object with a cases array\")"` | — |
-| [SRC-4FFD5AFC54-L000126](../../scripts/run_answer_quality_benchmark.py#L126) | 126 | `"    if data.get(\"parts\"):"` | — |
-| [SRC-4FFD5AFC54-L000127](../../scripts/run_answer_quality_benchmark.py#L127) | 127 | `"        raise ValueError(\"Incomplete shard index is not accepted; use merged cases[] corpus\")"` | — |
-| [SRC-4FFD5AFC54-L000128](../../scripts/run_answer_quality_benchmark.py#L128) | 128 | `"    return data"` | — |
-| [SRC-4FFD5AFC54-L000129](../../scripts/run_answer_quality_benchmark.py#L129) | 129 | `""` | — |
-| [SRC-4FFD5AFC54-L000130](../../scripts/run_answer_quality_benchmark.py#L130) | 130 | `""` | — |
-| [SRC-4FFD5AFC54-L000131](../../scripts/run_answer_quality_benchmark.py#L131) | 131 | `"def validate_corpus(data: dict) -> list[str]:"` | — |
-| [SRC-4FFD5AFC54-L000132](../../scripts/run_answer_quality_benchmark.py#L132) | 132 | `"    \"\"\"Return a list of human-readable problems (empty => OK).\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000133](../../scripts/run_answer_quality_benchmark.py#L133) | 133 | `"    problems: list[str] = []"` | — |
-| [SRC-4FFD5AFC54-L000134](../../scripts/run_answer_quality_benchmark.py#L134) | 134 | `"    cases = data.get(\"cases\") or []"` | — |
-| [SRC-4FFD5AFC54-L000135](../../scripts/run_answer_quality_benchmark.py#L135) | 135 | `"    if data.get(\"case_count\") != len(cases):"` | — |
-| [SRC-4FFD5AFC54-L000136](../../scripts/run_answer_quality_benchmark.py#L136) | 136 | `"        problems.append("` | — |
-| [SRC-4FFD5AFC54-L000137](../../scripts/run_answer_quality_benchmark.py#L137) | 137 | `"            f\"case_count metadata {data.get('case_count')!r} != len(cases) {len(cases)}\""` | — |
-| [SRC-4FFD5AFC54-L000138](../../scripts/run_answer_quality_benchmark.py#L138) | 138 | `"        )"` | — |
-| [SRC-4FFD5AFC54-L000139](../../scripts/run_answer_quality_benchmark.py#L139) | 139 | `"    if len(cases) < 40:"` | — |
-| [SRC-4FFD5AFC54-L000140](../../scripts/run_answer_quality_benchmark.py#L140) | 140 | `"        problems.append(f\"expected at least 40 cases, found {len(cases)}\")"` | — |
-| [SRC-4FFD5AFC54-L000141](../../scripts/run_answer_quality_benchmark.py#L141) | 141 | `"    ids: list[str] = []"` | — |
-| [SRC-4FFD5AFC54-L000142](../../scripts/run_answer_quality_benchmark.py#L142) | 142 | `"    for i, case in enumerate(cases):"` | — |
-| [SRC-4FFD5AFC54-L000143](../../scripts/run_answer_quality_benchmark.py#L143) | 143 | `"        if not isinstance(case, dict):"` | — |
-| [SRC-4FFD5AFC54-L000144](../../scripts/run_answer_quality_benchmark.py#L144) | 144 | `"            problems.append(f\"cases[{i}] is not an object\")"` | — |
-| [SRC-4FFD5AFC54-L000145](../../scripts/run_answer_quality_benchmark.py#L145) | 145 | `"            continue"` | — |
-| [SRC-4FFD5AFC54-L000146](../../scripts/run_answer_quality_benchmark.py#L146) | 146 | `"        missing = REQUIRED_FIELDS - set(case)"` | — |
-| [SRC-4FFD5AFC54-L000147](../../scripts/run_answer_quality_benchmark.py#L147) | 147 | `"        if missing:"` | — |
-| [SRC-4FFD5AFC54-L000148](../../scripts/run_answer_quality_benchmark.py#L148) | 148 | `"            problems.append(f\"{case.get('case_id', i)}: missing {sorted(missing)}\")"` | — |
-| [SRC-4FFD5AFC54-L000149](../../scripts/run_answer_quality_benchmark.py#L149) | 149 | `"        cid = case.get(\"case_id\")"` | — |
-| [SRC-4FFD5AFC54-L000150](../../scripts/run_answer_quality_benchmark.py#L150) | 150 | `"        if isinstance(cid, str):"` | — |
-| [SRC-4FFD5AFC54-L000151](../../scripts/run_answer_quality_benchmark.py#L151) | 151 | `"            ids.append(cid)"` | — |
-| [SRC-4FFD5AFC54-L000152](../../scripts/run_answer_quality_benchmark.py#L152) | 152 | `"        if case.get(\"expected_strategy\") not in ALLOWED_STRATEGIES:"` | — |
-| [SRC-4FFD5AFC54-L000153](../../scripts/run_answer_quality_benchmark.py#L153) | 153 | `"            problems.append(f\"{cid}: bad strategy {case.get('expected_strategy')!r}\")"` | — |
-| [SRC-4FFD5AFC54-L000154](../../scripts/run_answer_quality_benchmark.py#L154) | 154 | `"        if case.get(\"evaluation_mode\") not in ALLOWED_EVAL_MODES:"` | — |
-| [SRC-4FFD5AFC54-L000155](../../scripts/run_answer_quality_benchmark.py#L155) | 155 | `"            problems.append(f\"{cid}: bad evaluation_mode {case.get('evaluation_mode')!r}\")"` | — |
-| [SRC-4FFD5AFC54-L000156](../../scripts/run_answer_quality_benchmark.py#L156) | 156 | `"        q = case.get(\"question\")"` | — |
-| [SRC-4FFD5AFC54-L000157](../../scripts/run_answer_quality_benchmark.py#L157) | 157 | `"        if not isinstance(q, str) or len(q.strip()) < 2:"` | — |
-| [SRC-4FFD5AFC54-L000158](../../scripts/run_answer_quality_benchmark.py#L158) | 158 | `"            problems.append(f\"{cid}: empty question\")"` | — |
-| [SRC-4FFD5AFC54-L000159](../../scripts/run_answer_quality_benchmark.py#L159) | 159 | `"    if len(ids) != len(set(ids)):"` | — |
-| [SRC-4FFD5AFC54-L000160](../../scripts/run_answer_quality_benchmark.py#L160) | 160 | `"        problems.append(\"duplicate case_id values\")"` | — |
-| [SRC-4FFD5AFC54-L000161](../../scripts/run_answer_quality_benchmark.py#L161) | 161 | `"    return problems"` | — |
-| [SRC-4FFD5AFC54-L000162](../../scripts/run_answer_quality_benchmark.py#L162) | 162 | `""` | — |
-| [SRC-4FFD5AFC54-L000163](../../scripts/run_answer_quality_benchmark.py#L163) | 163 | `""` | — |
-| [SRC-4FFD5AFC54-L000164](../../scripts/run_answer_quality_benchmark.py#L164) | 164 | `"def redact_secrets(text: str) -> str:"` | — |
-| [SRC-4FFD5AFC54-L000165](../../scripts/run_answer_quality_benchmark.py#L165) | 165 | `"    \"\"\"Best-effort redaction of common secret patterns from stored outputs.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000166](../../scripts/run_answer_quality_benchmark.py#L166) | 166 | `"    if not text:"` | — |
-| [SRC-4FFD5AFC54-L000167](../../scripts/run_answer_quality_benchmark.py#L167) | 167 | `"        return text"` | — |
-| [SRC-4FFD5AFC54-L000168](../../scripts/run_answer_quality_benchmark.py#L168) | 168 | `"    out = text"` | — |
-| [SRC-4FFD5AFC54-L000169](../../scripts/run_answer_quality_benchmark.py#L169) | 169 | `"    for key in ("` | — |
-| [SRC-4FFD5AFC54-L000170](../../scripts/run_answer_quality_benchmark.py#L170) | 170 | `"        \"OPENROUTER_API_KEY\","` | — |
-| [SRC-4FFD5AFC54-L000171](../../scripts/run_answer_quality_benchmark.py#L171) | 171 | `"        \"OMARAI_ACCESS_TOKEN\","` | — |
-| [SRC-4FFD5AFC54-L000172](../../scripts/run_answer_quality_benchmark.py#L172) | 172 | `"        \"OMARAI_LLM_API_KEY\","` | — |
-| [SRC-4FFD5AFC54-L000173](../../scripts/run_answer_quality_benchmark.py#L173) | 173 | `"        \"Authorization\","` | — |
-| [SRC-4FFD5AFC54-L000174](../../scripts/run_answer_quality_benchmark.py#L174) | 174 | `"        \"Bearer \","` | — |
-| [SRC-4FFD5AFC54-L000175](../../scripts/run_answer_quality_benchmark.py#L175) | 175 | `"    ):"` | — |
-| [SRC-4FFD5AFC54-L000176](../../scripts/run_answer_quality_benchmark.py#L176) | 176 | `"        out = out.replace(key, f\"[REDACTED:{key.strip()}]\")"` | — |
-| [SRC-4FFD5AFC54-L000177](../../scripts/run_answer_quality_benchmark.py#L177) | 177 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-4FFD5AFC54-L000178](../../scripts/run_answer_quality_benchmark.py#L178) | 178 | `"    if token and token in out:"` | — |
-| [SRC-4FFD5AFC54-L000179](../../scripts/run_answer_quality_benchmark.py#L179) | 179 | `"        out = out.replace(token, \"[REDACTED:OMARAI_ACCESS_TOKEN]\")"` | — |
-| [SRC-4FFD5AFC54-L000180](../../scripts/run_answer_quality_benchmark.py#L180) | 180 | `"    for env_name in (\"OPENROUTER_API_KEY\", \"OMARAI_LLM_API_KEY\"):"` | — |
-| [SRC-4FFD5AFC54-L000181](../../scripts/run_answer_quality_benchmark.py#L181) | 181 | `"        val = os.getenv(env_name, \"\").strip()"` | — |
-| [SRC-4FFD5AFC54-L000182](../../scripts/run_answer_quality_benchmark.py#L182) | 182 | `"        if val and val in out:"` | — |
-| [SRC-4FFD5AFC54-L000183](../../scripts/run_answer_quality_benchmark.py#L183) | 183 | `"            out = out.replace(val, f\"[REDACTED:{env_name}]\")"` | — |
-| [SRC-4FFD5AFC54-L000184](../../scripts/run_answer_quality_benchmark.py#L184) | 184 | `"    return out"` | — |
-| [SRC-4FFD5AFC54-L000185](../../scripts/run_answer_quality_benchmark.py#L185) | 185 | `""` | — |
-| [SRC-4FFD5AFC54-L000186](../../scripts/run_answer_quality_benchmark.py#L186) | 186 | `""` | — |
-| [SRC-4FFD5AFC54-L000187](../../scripts/run_answer_quality_benchmark.py#L187) | 187 | `"def post_agent("` | — |
-| [SRC-4FFD5AFC54-L000188](../../scripts/run_answer_quality_benchmark.py#L188) | 188 | `"    base_url: str,"` | — |
-| [SRC-4FFD5AFC54-L000189](../../scripts/run_answer_quality_benchmark.py#L189) | 189 | `"    question: str,"` | — |
-| [SRC-4FFD5AFC54-L000190](../../scripts/run_answer_quality_benchmark.py#L190) | 190 | `"    timeout: float,"` | — |
-| [SRC-4FFD5AFC54-L000191](../../scripts/run_answer_quality_benchmark.py#L191) | 191 | `"    token: str \| None,"` | — |
-| [SRC-4FFD5AFC54-L000192](../../scripts/run_answer_quality_benchmark.py#L192) | 192 | `") -> tuple[int, dict \| str]:"` | — |
-| [SRC-4FFD5AFC54-L000193](../../scripts/run_answer_quality_benchmark.py#L193) | 193 | `"    origin = validate_base_url(base_url, token_present=bool(token))"` | — |
-| [SRC-4FFD5AFC54-L000194](../../scripts/run_answer_quality_benchmark.py#L194) | 194 | `"    url = origin + \"/api/agent\""` | — |
-| [SRC-4FFD5AFC54-L000195](../../scripts/run_answer_quality_benchmark.py#L195) | 195 | `"    body = json.dumps({\"question\": question, \"history\": []}, ensure_ascii=False).encode(\"utf-8\")"` | — |
-| [SRC-4FFD5AFC54-L000196](../../scripts/run_answer_quality_benchmark.py#L196) | 196 | `"    headers = {\"Content-Type\": \"application/json\", \"Content-Length\": str(len(body))}"` | — |
-| [SRC-4FFD5AFC54-L000197](../../scripts/run_answer_quality_benchmark.py#L197) | 197 | `"    if token:"` | — |
-| [SRC-4FFD5AFC54-L000198](../../scripts/run_answer_quality_benchmark.py#L198) | 198 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
-| [SRC-4FFD5AFC54-L000199](../../scripts/run_answer_quality_benchmark.py#L199) | 199 | `"    req = urllib.request.Request(url, data=body, headers=headers, method=\"POST\")"` | — |
-| [SRC-4FFD5AFC54-L000200](../../scripts/run_answer_quality_benchmark.py#L200) | 200 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000201](../../scripts/run_answer_quality_benchmark.py#L201) | 201 | `"        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:"` | — |
-| [SRC-4FFD5AFC54-L000202](../../scripts/run_answer_quality_benchmark.py#L202) | 202 | `"            raw_bytes = resp.read(MAX_RESPONSE_BYTES + 1)"` | — |
-| [SRC-4FFD5AFC54-L000203](../../scripts/run_answer_quality_benchmark.py#L203) | 203 | `"            if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
-| [SRC-4FFD5AFC54-L000204](../../scripts/run_answer_quality_benchmark.py#L204) | 204 | `"                return 0, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
-| [SRC-4FFD5AFC54-L000205](../../scripts/run_answer_quality_benchmark.py#L205) | 205 | `"            raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-4FFD5AFC54-L000206](../../scripts/run_answer_quality_benchmark.py#L206) | 206 | `"            status = getattr(resp, \"status\", 200)"` | — |
-| [SRC-4FFD5AFC54-L000207](../../scripts/run_answer_quality_benchmark.py#L207) | 207 | `"            try:"` | — |
-| [SRC-4FFD5AFC54-L000208](../../scripts/run_answer_quality_benchmark.py#L208) | 208 | `"                return status, json.loads(raw)"` | — |
-| [SRC-4FFD5AFC54-L000209](../../scripts/run_answer_quality_benchmark.py#L209) | 209 | `"            except json.JSONDecodeError:"` | — |
-| [SRC-4FFD5AFC54-L000210](../../scripts/run_answer_quality_benchmark.py#L210) | 210 | `"                return status, raw"` | — |
-| [SRC-4FFD5AFC54-L000211](../../scripts/run_answer_quality_benchmark.py#L211) | 211 | `"    except urllib.error.HTTPError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000212](../../scripts/run_answer_quality_benchmark.py#L212) | 212 | `"        raw_bytes = exc.read(MAX_RESPONSE_BYTES + 1)"` | — |
-| [SRC-4FFD5AFC54-L000213](../../scripts/run_answer_quality_benchmark.py#L213) | 213 | `"        if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
-| [SRC-4FFD5AFC54-L000214](../../scripts/run_answer_quality_benchmark.py#L214) | 214 | `"            return exc.code, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
-| [SRC-4FFD5AFC54-L000215](../../scripts/run_answer_quality_benchmark.py#L215) | 215 | `"        raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-4FFD5AFC54-L000216](../../scripts/run_answer_quality_benchmark.py#L216) | 216 | `"        try:"` | — |
-| [SRC-4FFD5AFC54-L000217](../../scripts/run_answer_quality_benchmark.py#L217) | 217 | `"            return exc.code, json.loads(raw)"` | — |
-| [SRC-4FFD5AFC54-L000218](../../scripts/run_answer_quality_benchmark.py#L218) | 218 | `"        except json.JSONDecodeError:"` | — |
-| [SRC-4FFD5AFC54-L000219](../../scripts/run_answer_quality_benchmark.py#L219) | 219 | `"            return exc.code, raw"` | — |
-| [SRC-4FFD5AFC54-L000220](../../scripts/run_answer_quality_benchmark.py#L220) | 220 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000221](../../scripts/run_answer_quality_benchmark.py#L221) | 221 | `"        return 0, {\"error\": \"UnsafeBaseURL\", \"detail\": str(exc)}"` | — |
-| [SRC-4FFD5AFC54-L000222](../../scripts/run_answer_quality_benchmark.py#L222) | 222 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
-| [SRC-4FFD5AFC54-L000223](../../scripts/run_answer_quality_benchmark.py#L223) | 223 | `"        return 0, {\"error\": type(exc).__name__, \"detail\": str(exc)}"` | — |
-| [SRC-4FFD5AFC54-L000224](../../scripts/run_answer_quality_benchmark.py#L224) | 224 | `""` | — |
-| [SRC-4FFD5AFC54-L000225](../../scripts/run_answer_quality_benchmark.py#L225) | 225 | `""` | — |
-| [SRC-4FFD5AFC54-L000226](../../scripts/run_answer_quality_benchmark.py#L226) | 226 | `"def run_validate(corpus_path: Path, summary: bool) -> int:"` | — |
-| [SRC-4FFD5AFC54-L000227](../../scripts/run_answer_quality_benchmark.py#L227) | 227 | `"    data = load_corpus(corpus_path)"` | — |
-| [SRC-4FFD5AFC54-L000228](../../scripts/run_answer_quality_benchmark.py#L228) | 228 | `"    problems = validate_corpus(data)"` | — |
-| [SRC-4FFD5AFC54-L000229](../../scripts/run_answer_quality_benchmark.py#L229) | 229 | `"    if problems:"` | — |
-| [SRC-4FFD5AFC54-L000230](../../scripts/run_answer_quality_benchmark.py#L230) | 230 | `"        print(\"VALIDATE FAIL\")"` | — |
-| [SRC-4FFD5AFC54-L000231](../../scripts/run_answer_quality_benchmark.py#L231) | 231 | `"        for p in problems:"` | — |
-| [SRC-4FFD5AFC54-L000232](../../scripts/run_answer_quality_benchmark.py#L232) | 232 | `"            print(\" -\", p)"` | — |
-| [SRC-4FFD5AFC54-L000233](../../scripts/run_answer_quality_benchmark.py#L233) | 233 | `"        return 1"` | — |
-| [SRC-4FFD5AFC54-L000234](../../scripts/run_answer_quality_benchmark.py#L234) | 234 | `"    cases = data[\"cases\"]"` | — |
-| [SRC-4FFD5AFC54-L000235](../../scripts/run_answer_quality_benchmark.py#L235) | 235 | `"    cats = sorted({c[\"category\"] for c in cases})"` | — |
-| [SRC-4FFD5AFC54-L000236](../../scripts/run_answer_quality_benchmark.py#L236) | 236 | `"    langs = sorted({c[\"language\"] for c in cases})"` | — |
-| [SRC-4FFD5AFC54-L000237](../../scripts/run_answer_quality_benchmark.py#L237) | 237 | `"    print(\"VALIDATE OK\")"` | — |
-| [SRC-4FFD5AFC54-L000238](../../scripts/run_answer_quality_benchmark.py#L238) | 238 | `"    print(f\"benchmark_id={data.get('benchmark_id')} version={data.get('version')}\")"` | — |
-| [SRC-4FFD5AFC54-L000239](../../scripts/run_answer_quality_benchmark.py#L239) | 239 | `"    print(f\"cases={len(cases)} categories={len(cats)} languages={langs}\")"` | — |
-| [SRC-4FFD5AFC54-L000240](../../scripts/run_answer_quality_benchmark.py#L240) | 240 | `"    if summary:"` | — |
-| [SRC-4FFD5AFC54-L000241](../../scripts/run_answer_quality_benchmark.py#L241) | 241 | `"        from collections import Counter"` | — |
-| [SRC-4FFD5AFC54-L000242](../../scripts/run_answer_quality_benchmark.py#L242) | 242 | `""` | — |
-| [SRC-4FFD5AFC54-L000243](../../scripts/run_answer_quality_benchmark.py#L243) | 243 | `"        print(\"strategies:\", dict(Counter(c[\"expected_strategy\"] for c in cases)))"` | — |
-| [SRC-4FFD5AFC54-L000244](../../scripts/run_answer_quality_benchmark.py#L244) | 244 | `"        print(\"eval_modes:\", dict(Counter(c[\"evaluation_mode\"] for c in cases)))"` | — |
-| [SRC-4FFD5AFC54-L000245](../../scripts/run_answer_quality_benchmark.py#L245) | 245 | `"        print(\"categories:\", \", \".join(cats))"` | — |
-| [SRC-4FFD5AFC54-L000246](../../scripts/run_answer_quality_benchmark.py#L246) | 246 | `"    print("` | — |
-| [SRC-4FFD5AFC54-L000247](../../scripts/run_answer_quality_benchmark.py#L247) | 247 | `"        \"NOTE: Structural validation is not answer-quality evaluation. \""` | — |
-| [SRC-4FFD5AFC54-L000248](../../scripts/run_answer_quality_benchmark.py#L248) | 248 | `"        \"All reasoning cases remain NOT_TESTED until reviewed.\""` | — |
-| [SRC-4FFD5AFC54-L000249](../../scripts/run_answer_quality_benchmark.py#L249) | 249 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000250](../../scripts/run_answer_quality_benchmark.py#L250) | 250 | `"    return 0"` | — |
-| [SRC-4FFD5AFC54-L000251](../../scripts/run_answer_quality_benchmark.py#L251) | 251 | `""` | — |
-| [SRC-4FFD5AFC54-L000252](../../scripts/run_answer_quality_benchmark.py#L252) | 252 | `""` | — |
-| [SRC-4FFD5AFC54-L000253](../../scripts/run_answer_quality_benchmark.py#L253) | 253 | `"def run_live("` | — |
-| [SRC-4FFD5AFC54-L000254](../../scripts/run_answer_quality_benchmark.py#L254) | 254 | `"    corpus_path: Path,"` | — |
-| [SRC-4FFD5AFC54-L000255](../../scripts/run_answer_quality_benchmark.py#L255) | 255 | `"    base_url: str,"` | — |
-| [SRC-4FFD5AFC54-L000256](../../scripts/run_answer_quality_benchmark.py#L256) | 256 | `"    case_id: str \| None,"` | — |
-| [SRC-4FFD5AFC54-L000257](../../scripts/run_answer_quality_benchmark.py#L257) | 257 | `"    limit: int,"` | — |
-| [SRC-4FFD5AFC54-L000258](../../scripts/run_answer_quality_benchmark.py#L258) | 258 | `"    timeout: float,"` | — |
-| [SRC-4FFD5AFC54-L000259](../../scripts/run_answer_quality_benchmark.py#L259) | 259 | `"    delay: float,"` | — |
-| [SRC-4FFD5AFC54-L000260](../../scripts/run_answer_quality_benchmark.py#L260) | 260 | `"    out_path: Path \| None,"` | — |
-| [SRC-4FFD5AFC54-L000261](../../scripts/run_answer_quality_benchmark.py#L261) | 261 | `") -> int:"` | — |
-| [SRC-4FFD5AFC54-L000262](../../scripts/run_answer_quality_benchmark.py#L262) | 262 | `"    data = load_corpus(corpus_path)"` | — |
-| [SRC-4FFD5AFC54-L000263](../../scripts/run_answer_quality_benchmark.py#L263) | 263 | `"    problems = validate_corpus(data)"` | — |
-| [SRC-4FFD5AFC54-L000264](../../scripts/run_answer_quality_benchmark.py#L264) | 264 | `"    if problems:"` | — |
-| [SRC-4FFD5AFC54-L000265](../../scripts/run_answer_quality_benchmark.py#L265) | 265 | `"        print(\"Corpus invalid; refusing live run:\")"` | — |
-| [SRC-4FFD5AFC54-L000266](../../scripts/run_answer_quality_benchmark.py#L266) | 266 | `"        for p in problems:"` | — |
-| [SRC-4FFD5AFC54-L000267](../../scripts/run_answer_quality_benchmark.py#L267) | 267 | `"            print(\" -\", p)"` | — |
-| [SRC-4FFD5AFC54-L000268](../../scripts/run_answer_quality_benchmark.py#L268) | 268 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000269](../../scripts/run_answer_quality_benchmark.py#L269) | 269 | `""` | — |
-| [SRC-4FFD5AFC54-L000270](../../scripts/run_answer_quality_benchmark.py#L270) | 270 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip() or None"` | — |
-| [SRC-4FFD5AFC54-L000271](../../scripts/run_answer_quality_benchmark.py#L271) | 271 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000272](../../scripts/run_answer_quality_benchmark.py#L272) | 272 | `"        safe_base_url = validate_base_url(base_url, token_present=bool(token))"` | — |
-| [SRC-4FFD5AFC54-L000273](../../scripts/run_answer_quality_benchmark.py#L273) | 273 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000274](../../scripts/run_answer_quality_benchmark.py#L274) | 274 | `"        print(f\"Unsafe base URL; refusing live run: {exc}\", file=sys.stderr)"` | — |
-| [SRC-4FFD5AFC54-L000275](../../scripts/run_answer_quality_benchmark.py#L275) | 275 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000276](../../scripts/run_answer_quality_benchmark.py#L276) | 276 | `"    cases = data[\"cases\"]"` | — |
-| [SRC-4FFD5AFC54-L000277](../../scripts/run_answer_quality_benchmark.py#L277) | 277 | `"    if case_id:"` | — |
-| [SRC-4FFD5AFC54-L000278](../../scripts/run_answer_quality_benchmark.py#L278) | 278 | `"        cases = [c for c in cases if c[\"case_id\"] == case_id]"` | — |

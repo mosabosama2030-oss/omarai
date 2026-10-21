@@ -4,9 +4,53 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000393 إلى SRC-E599346ABE-L000219
+- النطاق: SRC-1AE03B9EC3-L004297 إلى SRC-792A9A235D-L000129
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1AE03B9EC3-L004297](../../agents/web_agent.py#L4297) | 4297 | `"                \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
+| [SRC-1AE03B9EC3-L004298](../../agents/web_agent.py#L4298) | 4298 | `"                \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
+| [SRC-1AE03B9EC3-L004299](../../agents/web_agent.py#L4299) | 4299 | `"                \"platforms\": plan.get(\"platforms\", []),"` | — |
+| [SRC-1AE03B9EC3-L004300](../../agents/web_agent.py#L4300) | 4300 | `"                \"mode\": clean_mode,"` | — |
+| [SRC-1AE03B9EC3-L004301](../../agents/web_agent.py#L4301) | 4301 | `"                \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
+| [SRC-1AE03B9EC3-L004302](../../agents/web_agent.py#L4302) | 4302 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
+| [SRC-1AE03B9EC3-L004303](../../agents/web_agent.py#L4303) | 4303 | `"                \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L004304](../../agents/web_agent.py#L4304) | 4304 | `"                \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L004305](../../agents/web_agent.py#L4305) | 4305 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L004306](../../agents/web_agent.py#L4306) | 4306 | `"            \"search_report\": report,"` | — |
+| [SRC-1AE03B9EC3-L004307](../../agents/web_agent.py#L4307) | 4307 | `"            \"sources\": public_sources,"` | — |
+| [SRC-1AE03B9EC3-L004308](../../agents/web_agent.py#L4308) | 4308 | `"            \"research_quality\": research_quality,"` | — |
+| [SRC-1AE03B9EC3-L004309](../../agents/web_agent.py#L4309) | 4309 | `"            \"citation_validation\": citation_validation,"` | — |
+| [SRC-1AE03B9EC3-L004310](../../agents/web_agent.py#L4310) | 4310 | `"            \"answer_evidence_status\": answer_evidence_status,"` | — |
+| [SRC-1AE03B9EC3-L004311](../../agents/web_agent.py#L4311) | 4311 | `"            \"answer_coverage\": answer_coverage,"` | — |
+| [SRC-1AE03B9EC3-L004312](../../agents/web_agent.py#L4312) | 4312 | `"            \"used_language_model\": used_llm,"` | — |
+| [SRC-1AE03B9EC3-L004313](../../agents/web_agent.py#L4313) | 4313 | `"            \"used_web_search\": bool(sources),"` | — |
+| [SRC-1AE03B9EC3-L004314](../../agents/web_agent.py#L4314) | 4314 | `"            \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L004315](../../agents/web_agent.py#L4315) | 4315 | `"            \"used_social_search\": bool(report.get(\"social_direct_results\", 0)),"` | — |
+| [SRC-1AE03B9EC3-L004316](../../agents/web_agent.py#L4316) | 4316 | `"            \"warnings\": warnings,"` | — |
+| [SRC-1AE03B9EC3-L004317](../../agents/web_agent.py#L4317) | 4317 | `"            \"kind\": \"web_research\" if used_llm else \"web_fallback\","` | — |
+| [SRC-1AE03B9EC3-L004318](../../agents/web_agent.py#L4318) | 4318 | `"            \"final_answer_status\": final_answer_status,"` | — |
+| [SRC-1AE03B9EC3-L004319](../../agents/web_agent.py#L4319) | 4319 | `"            \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L004320](../../agents/web_agent.py#L4320) | 4320 | `"            \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L004321](../../agents/web_agent.py#L4321) | 4321 | `"        }"` | — |
+## واجهات API
+
+### FILE-D8438CDB65 — [api/__init__.py](../../api/__init__.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D8438CDB65-L000001](../../api/__init__.py#L1) | 1 | `"\"\"\"Omarai local API package.\"\"\""` | — |
 ## واجهات API
 
 ### FILE-EEF2E6447C — [api/omarai.py](../../api/omarai.py#L1)
@@ -16,6 +60,398 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000001](../../api/omarai.py#L1) | 1 | `"\"\"\"HTTP API for Omarai's web-research agent and lead workspace.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000002](../../api/omarai.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-EEF2E6447C-L000003](../../api/omarai.py#L3) | 3 | `""` | — |
+| [SRC-EEF2E6447C-L000004](../../api/omarai.py#L4) | 4 | `"import hmac"` | — |
+| [SRC-EEF2E6447C-L000005](../../api/omarai.py#L5) | 5 | `"import ipaddress"` | — |
+| [SRC-EEF2E6447C-L000006](../../api/omarai.py#L6) | 6 | `"import json"` | — |
+| [SRC-EEF2E6447C-L000007](../../api/omarai.py#L7) | 7 | `"import os"` | — |
+| [SRC-EEF2E6447C-L000008](../../api/omarai.py#L8) | 8 | `"import threading"` | — |
+| [SRC-EEF2E6447C-L000009](../../api/omarai.py#L9) | 9 | `"import time"` | — |
+| [SRC-EEF2E6447C-L000010](../../api/omarai.py#L10) | 10 | `"from collections import defaultdict, deque"` | — |
+| [SRC-EEF2E6447C-L000011](../../api/omarai.py#L11) | 11 | `"from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer"` | — |
+| [SRC-EEF2E6447C-L000012](../../api/omarai.py#L12) | 12 | `"from pathlib import Path"` | — |
+| [SRC-EEF2E6447C-L000013](../../api/omarai.py#L13) | 13 | `"from typing import ClassVar"` | — |
+| [SRC-EEF2E6447C-L000014](../../api/omarai.py#L14) | 14 | `"from urllib.parse import parse_qs, urlparse"` | — |
+| [SRC-EEF2E6447C-L000015](../../api/omarai.py#L15) | 15 | `""` | — |
+| [SRC-EEF2E6447C-L000016](../../api/omarai.py#L16) | 16 | `"from agents.omarai import LeadStore, analyze, normalize"` | — |
+| [SRC-EEF2E6447C-L000017](../../api/omarai.py#L17) | 17 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-EEF2E6447C-L000018](../../api/omarai.py#L18) | 18 | `""` | — |
+| [SRC-EEF2E6447C-L000019](../../api/omarai.py#L19) | 19 | `"ROOT = Path(__file__).resolve().parents[1] / \"web\""` | — |
+| [SRC-EEF2E6447C-L000020](../../api/omarai.py#L20) | 20 | `"AGENT_DASHBOARD = ROOT / \"agent.html\""` | — |
+| [SRC-EEF2E6447C-L000021](../../api/omarai.py#L21) | 21 | `"LEADS_DASHBOARD = ROOT / \"dashboard.html\""` | — |
+| [SRC-EEF2E6447C-L000022](../../api/omarai.py#L22) | 22 | `"MAX_REQUEST_BODY_BYTES = 200_000"` | — |
+| [SRC-EEF2E6447C-L000023](../../api/omarai.py#L23) | 23 | `"# Bound request-line + header parsing before application code or body processing."` | — |
+| [SRC-EEF2E6447C-L000024](../../api/omarai.py#L24) | 24 | `"REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0"` | — |
+| [SRC-EEF2E6447C-L000025](../../api/omarai.py#L25) | 25 | `"REQUEST_HEADER_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
+| [SRC-EEF2E6447C-L000026](../../api/omarai.py#L26) | 26 | `"MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS = 15.0"` | — |
+| [SRC-EEF2E6447C-L000027](../../api/omarai.py#L27) | 27 | `"# Absolute deadline for reading the entire body, not merely a per-read idle timeout."` | — |
+| [SRC-EEF2E6447C-L000028](../../api/omarai.py#L28) | 28 | `"REQUEST_BODY_READ_TIMEOUT_SECONDS = 10.0"` | — |
+| [SRC-EEF2E6447C-L000029](../../api/omarai.py#L29) | 29 | `"REQUEST_BODY_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
+| [SRC-EEF2E6447C-L000030](../../api/omarai.py#L30) | 30 | `"MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0"` | — |
+| [SRC-EEF2E6447C-L000031](../../api/omarai.py#L31) | 31 | `"REQUEST_BODY_READ_CHUNK_BYTES = 8_192"` | — |
+| [SRC-EEF2E6447C-L000032](../../api/omarai.py#L32) | 32 | `""` | — |
+| [SRC-EEF2E6447C-L000033](../../api/omarai.py#L33) | 33 | `""` | — |
+| [SRC-EEF2E6447C-L000034](../../api/omarai.py#L34) | 34 | `""` | — |
+| [SRC-EEF2E6447C-L000035](../../api/omarai.py#L35) | 35 | `"class _DeadlineRequestReader:"` | — |
+| [SRC-EEF2E6447C-L000036](../../api/omarai.py#L36) | 36 | `"    \"\"\"Read HTTP header lines with one absolute deadline across all fragments."` | — |
+| [SRC-EEF2E6447C-L000037](../../api/omarai.py#L37) | 37 | `""` | — |
+| [SRC-EEF2E6447C-L000038](../../api/omarai.py#L38) | 38 | `"    The standard buffered readline can wait indefinitely for a newline if a"` | — |
+| [SRC-EEF2E6447C-L000039](../../api/omarai.py#L39) | 39 | `"    client keeps trickling bytes. This reader checks the same deadline before"` | — |
+| [SRC-EEF2E6447C-L000040](../../api/omarai.py#L40) | 40 | `"    every socket read and buffers only bounded look-ahead so request body bytes"` | — |
+| [SRC-EEF2E6447C-L000041](../../api/omarai.py#L41) | 41 | `"    received with the headers are preserved for read1()."` | — |
+| [SRC-EEF2E6447C-L000042](../../api/omarai.py#L42) | 42 | `"    \"\"\""` | — |
+| [SRC-EEF2E6447C-L000043](../../api/omarai.py#L43) | 43 | `""` | — |
+| [SRC-EEF2E6447C-L000044](../../api/omarai.py#L44) | 44 | `"    def __init__(self, connection, handler):"` | — |
+| [SRC-EEF2E6447C-L000045](../../api/omarai.py#L45) | 45 | `"        self.connection = connection"` | — |
+| [SRC-EEF2E6447C-L000046](../../api/omarai.py#L46) | 46 | `"        self.handler = handler"` | — |
+| [SRC-EEF2E6447C-L000047](../../api/omarai.py#L47) | 47 | `"        self._buffer = bytearray()"` | — |
+| [SRC-EEF2E6447C-L000048](../../api/omarai.py#L48) | 48 | `""` | — |
+| [SRC-EEF2E6447C-L000049](../../api/omarai.py#L49) | 49 | `"    def readline(self, limit=-1):"` | — |
+| [SRC-EEF2E6447C-L000050](../../api/omarai.py#L50) | 50 | `"        if limit == 0:"` | — |
+| [SRC-EEF2E6447C-L000051](../../api/omarai.py#L51) | 51 | `"            return b\"\""` | — |
+| [SRC-EEF2E6447C-L000052](../../api/omarai.py#L52) | 52 | `"        max_bytes = int(limit) if limit is not None and limit > 0 else 65_537"` | — |
+| [SRC-EEF2E6447C-L000053](../../api/omarai.py#L53) | 53 | `"        previous_timeout = self.connection.gettimeout()"` | — |
+| [SRC-EEF2E6447C-L000054](../../api/omarai.py#L54) | 54 | `"        line = bytearray()"` | — |
+| [SRC-EEF2E6447C-L000055](../../api/omarai.py#L55) | 55 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000056](../../api/omarai.py#L56) | 56 | `"            while len(line) < max_bytes:"` | — |
+| [SRC-EEF2E6447C-L000057](../../api/omarai.py#L57) | 57 | `"                deadline = getattr(self.handler, \"_request_header_deadline\", None)"` | — |
+| [SRC-EEF2E6447C-L000058](../../api/omarai.py#L58) | 58 | `"                if deadline is None:"` | — |
+| [SRC-EEF2E6447C-L000059](../../api/omarai.py#L59) | 59 | `"                    raise TimeoutError(\"request-header deadline is not active\")"` | — |
+| [SRC-EEF2E6447C-L000060](../../api/omarai.py#L60) | 60 | `"                remaining = deadline - time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000061](../../api/omarai.py#L61) | 61 | `"                if remaining <= 0:"` | — |
+| [SRC-EEF2E6447C-L000062](../../api/omarai.py#L62) | 62 | `"                    raise TimeoutError(\"absolute request-header deadline exceeded\")"` | — |
+| [SRC-EEF2E6447C-L000063](../../api/omarai.py#L63) | 63 | `""` | — |
+| [SRC-EEF2E6447C-L000064](../../api/omarai.py#L64) | 64 | `"                newline_index = self._buffer.find(b\"\\n\")"` | — |
+| [SRC-EEF2E6447C-L000065](../../api/omarai.py#L65) | 65 | `"                if newline_index >= 0:"` | — |
+| [SRC-EEF2E6447C-L000066](../../api/omarai.py#L66) | 66 | `"                    take = min(newline_index + 1, max_bytes - len(line))"` | — |
+| [SRC-EEF2E6447C-L000067](../../api/omarai.py#L67) | 67 | `"                    line.extend(self._buffer[:take])"` | — |
+| [SRC-EEF2E6447C-L000068](../../api/omarai.py#L68) | 68 | `"                    del self._buffer[:take]"` | — |
+| [SRC-EEF2E6447C-L000069](../../api/omarai.py#L69) | 69 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000070](../../api/omarai.py#L70) | 70 | `""` | — |
+| [SRC-EEF2E6447C-L000071](../../api/omarai.py#L71) | 71 | `"                if self._buffer:"` | — |
+| [SRC-EEF2E6447C-L000072](../../api/omarai.py#L72) | 72 | `"                    take = min(len(self._buffer), max_bytes - len(line))"` | — |
+| [SRC-EEF2E6447C-L000073](../../api/omarai.py#L73) | 73 | `"                    line.extend(self._buffer[:take])"` | — |
+| [SRC-EEF2E6447C-L000074](../../api/omarai.py#L74) | 74 | `"                    del self._buffer[:take]"` | — |
+| [SRC-EEF2E6447C-L000075](../../api/omarai.py#L75) | 75 | `"                    if len(line) >= max_bytes:"` | — |
+| [SRC-EEF2E6447C-L000076](../../api/omarai.py#L76) | 76 | `"                        break"` | — |
+| [SRC-EEF2E6447C-L000077](../../api/omarai.py#L77) | 77 | `""` | — |
+| [SRC-EEF2E6447C-L000078](../../api/omarai.py#L78) | 78 | `"                remaining = deadline - time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000079](../../api/omarai.py#L79) | 79 | `"                if remaining <= 0:"` | — |
+| [SRC-EEF2E6447C-L000080](../../api/omarai.py#L80) | 80 | `"                    raise TimeoutError(\"absolute request-header deadline exceeded\")"` | — |
+| [SRC-EEF2E6447C-L000081](../../api/omarai.py#L81) | 81 | `"                idle_timeout = max("` | — |
+| [SRC-EEF2E6447C-L000082](../../api/omarai.py#L82) | 82 | `"                    0.1,"` | — |
+| [SRC-EEF2E6447C-L000083](../../api/omarai.py#L83) | 83 | `"                    min("` | — |
+| [SRC-EEF2E6447C-L000084](../../api/omarai.py#L84) | 84 | `"                        float(REQUEST_HEADER_IDLE_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000085](../../api/omarai.py#L85) | 85 | `"                        MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,"` | — |
+| [SRC-EEF2E6447C-L000086](../../api/omarai.py#L86) | 86 | `"                    ),"` | — |
+| [SRC-EEF2E6447C-L000087](../../api/omarai.py#L87) | 87 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000088](../../api/omarai.py#L88) | 88 | `"                self.connection.settimeout(min(idle_timeout, remaining))"` | — |
+| [SRC-EEF2E6447C-L000089](../../api/omarai.py#L89) | 89 | `"                chunk = self.connection.recv(min(4_096, max_bytes - len(line)))"` | — |
+| [SRC-EEF2E6447C-L000090](../../api/omarai.py#L90) | 90 | `"                if not chunk:"` | — |
+| [SRC-EEF2E6447C-L000091](../../api/omarai.py#L91) | 91 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000092](../../api/omarai.py#L92) | 92 | `"                self._buffer.extend(chunk)"` | — |
+| [SRC-EEF2E6447C-L000093](../../api/omarai.py#L93) | 93 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000094](../../api/omarai.py#L94) | 94 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000095](../../api/omarai.py#L95) | 95 | `"                self.connection.settimeout(previous_timeout)"` | — |
+| [SRC-EEF2E6447C-L000096](../../api/omarai.py#L96) | 96 | `"            except OSError:"` | — |
+| [SRC-EEF2E6447C-L000097](../../api/omarai.py#L97) | 97 | `"                pass"` | — |
+| [SRC-EEF2E6447C-L000098](../../api/omarai.py#L98) | 98 | `"        return bytes(line)"` | — |
+| [SRC-EEF2E6447C-L000099](../../api/omarai.py#L99) | 99 | `""` | — |
+| [SRC-EEF2E6447C-L000100](../../api/omarai.py#L100) | 100 | `"    def read1(self, size=-1):"` | — |
+| [SRC-EEF2E6447C-L000101](../../api/omarai.py#L101) | 101 | `"        \"\"\"Read one chunk; body code applies its own idle and absolute deadlines.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000102](../../api/omarai.py#L102) | 102 | `"        if size == 0:"` | — |
+| [SRC-EEF2E6447C-L000103](../../api/omarai.py#L103) | 103 | `"            return b\"\""` | — |
+| [SRC-EEF2E6447C-L000104](../../api/omarai.py#L104) | 104 | `"        if size is None or size < 0:"` | — |
+| [SRC-EEF2E6447C-L000105](../../api/omarai.py#L105) | 105 | `"            size = 8_192"` | — |
+| [SRC-EEF2E6447C-L000106](../../api/omarai.py#L106) | 106 | `"        if self._buffer:"` | — |
+| [SRC-EEF2E6447C-L000107](../../api/omarai.py#L107) | 107 | `"            take = min(len(self._buffer), size)"` | — |
+| [SRC-EEF2E6447C-L000108](../../api/omarai.py#L108) | 108 | `"            data = bytes(self._buffer[:take])"` | — |
+| [SRC-EEF2E6447C-L000109](../../api/omarai.py#L109) | 109 | `"            del self._buffer[:take]"` | — |
+| [SRC-EEF2E6447C-L000110](../../api/omarai.py#L110) | 110 | `"            return data"` | — |
+| [SRC-EEF2E6447C-L000111](../../api/omarai.py#L111) | 111 | `"        return self.connection.recv(size)"` | — |
+| [SRC-EEF2E6447C-L000112](../../api/omarai.py#L112) | 112 | `""` | — |
+| [SRC-EEF2E6447C-L000113](../../api/omarai.py#L113) | 113 | `"    def close(self):"` | — |
+| [SRC-EEF2E6447C-L000114](../../api/omarai.py#L114) | 114 | `"        # The request handler owns the socket and closes its output stream."` | — |
+| [SRC-EEF2E6447C-L000115](../../api/omarai.py#L115) | 115 | `"        return None"` | — |
+| [SRC-EEF2E6447C-L000116](../../api/omarai.py#L116) | 116 | `""` | — |
+| [SRC-EEF2E6447C-L000117](../../api/omarai.py#L117) | 117 | `""` | — |
+| [SRC-EEF2E6447C-L000118](../../api/omarai.py#L118) | 118 | `"def _configured_agent_concurrency_limit() -> int:"` | — |
+| [SRC-EEF2E6447C-L000119](../../api/omarai.py#L119) | 119 | `"    \"\"\"Return a process-local cap for expensive research and diagnostics operations.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000120](../../api/omarai.py#L120) | 120 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000121](../../api/omarai.py#L121) | 121 | `"        configured = int(os.getenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"4\").strip())"` | — |
+| [SRC-EEF2E6447C-L000122](../../api/omarai.py#L122) | 122 | `"    except ValueError:"` | — |
+| [SRC-EEF2E6447C-L000123](../../api/omarai.py#L123) | 123 | `"        configured = 4"` | — |
+| [SRC-EEF2E6447C-L000124](../../api/omarai.py#L124) | 124 | `"    return max(1, min(configured, 8))"` | — |
+| [SRC-EEF2E6447C-L000125](../../api/omarai.py#L125) | 125 | `""` | — |
+| [SRC-EEF2E6447C-L000126](../../api/omarai.py#L126) | 126 | `""` | — |
+| [SRC-EEF2E6447C-L000127](../../api/omarai.py#L127) | 127 | `"BUILD_SHA_FILE = Path(__file__).resolve().parents[1] / \"BUILD_SHA\""` | — |
+| [SRC-EEF2E6447C-L000128](../../api/omarai.py#L128) | 128 | `""` | — |
+| [SRC-EEF2E6447C-L000129](../../api/omarai.py#L129) | 129 | `""` | — |
+| [SRC-EEF2E6447C-L000130](../../api/omarai.py#L130) | 130 | `"def _build_sha() -> str:"` | — |
+| [SRC-EEF2E6447C-L000131](../../api/omarai.py#L131) | 131 | `"    \"\"\"Read the source revision baked into the image; never trust a runtime env override.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000132](../../api/omarai.py#L132) | 132 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000133](../../api/omarai.py#L133) | 133 | `"        candidate = BUILD_SHA_FILE.read_text(encoding=\"ascii\").strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000134](../../api/omarai.py#L134) | 134 | `"    except (OSError, UnicodeError):"` | — |
+| [SRC-EEF2E6447C-L000135](../../api/omarai.py#L135) | 135 | `"        return \"unknown\""` | — |
+| [SRC-EEF2E6447C-L000136](../../api/omarai.py#L136) | 136 | `"    if len(candidate) == 40 and all(char in \"0123456789abcdef\" for char in candidate):"` | — |
+| [SRC-EEF2E6447C-L000137](../../api/omarai.py#L137) | 137 | `"        return candidate"` | — |
+| [SRC-EEF2E6447C-L000138](../../api/omarai.py#L138) | 138 | `"    return \"unknown\""` | — |
+| [SRC-EEF2E6447C-L000139](../../api/omarai.py#L139) | 139 | `""` | — |
+| [SRC-EEF2E6447C-L000140](../../api/omarai.py#L140) | 140 | `""` | — |
+| [SRC-EEF2E6447C-L000141](../../api/omarai.py#L141) | 141 | `"class Handler(BaseHTTPRequestHandler):"` | — |
+| [SRC-EEF2E6447C-L000142](../../api/omarai.py#L142) | 142 | `"    def setup(self):"` | — |
+| [SRC-EEF2E6447C-L000143](../../api/omarai.py#L143) | 143 | `"        \"\"\"Install a reader with a strict deadline for the request line and headers.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000144](../../api/omarai.py#L144) | 144 | `"        self.connection = self.request"` | — |
+| [SRC-EEF2E6447C-L000145](../../api/omarai.py#L145) | 145 | `"        if self.timeout is not None:"` | — |
+| [SRC-EEF2E6447C-L000146](../../api/omarai.py#L146) | 146 | `"            self.connection.settimeout(self.timeout)"` | — |
+| [SRC-EEF2E6447C-L000147](../../api/omarai.py#L147) | 147 | `"        self._request_header_deadline = None"` | — |
+| [SRC-EEF2E6447C-L000148](../../api/omarai.py#L148) | 148 | `"        self.rfile = _DeadlineRequestReader(self.connection, self)"` | — |
+| [SRC-EEF2E6447C-L000149](../../api/omarai.py#L149) | 149 | `"        self.wfile = self.connection.makefile(\"wb\", self.wbufsize)"` | — |
+| [SRC-EEF2E6447C-L000150](../../api/omarai.py#L150) | 150 | `""` | — |
+| [SRC-EEF2E6447C-L000151](../../api/omarai.py#L151) | 151 | `"    def handle_one_request(self):"` | — |
+| [SRC-EEF2E6447C-L000152](../../api/omarai.py#L152) | 152 | `"        timeout = max("` | — |
+| [SRC-EEF2E6447C-L000153](../../api/omarai.py#L153) | 153 | `"            0.1,"` | — |
+| [SRC-EEF2E6447C-L000154](../../api/omarai.py#L154) | 154 | `"            min("` | — |
+| [SRC-EEF2E6447C-L000155](../../api/omarai.py#L155) | 155 | `"                float(REQUEST_HEADER_READ_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000156](../../api/omarai.py#L156) | 156 | `"                MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,"` | — |
+| [SRC-EEF2E6447C-L000157](../../api/omarai.py#L157) | 157 | `"            ),"` | — |
+| [SRC-EEF2E6447C-L000158](../../api/omarai.py#L158) | 158 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000159](../../api/omarai.py#L159) | 159 | `"        self._request_header_deadline = time.monotonic() + timeout"` | — |
+| [SRC-EEF2E6447C-L000160](../../api/omarai.py#L160) | 160 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000161](../../api/omarai.py#L161) | 161 | `"            super().handle_one_request()"` | — |
+| [SRC-EEF2E6447C-L000162](../../api/omarai.py#L162) | 162 | `"        except TimeoutError:"` | — |
+| [SRC-EEF2E6447C-L000163](../../api/omarai.py#L163) | 163 | `"            # Incomplete request line/headers are untrusted protocol input;"` | — |
+| [SRC-EEF2E6447C-L000164](../../api/omarai.py#L164) | 164 | `"            # close the socket without trying to parse or answer a partial request."` | — |
+| [SRC-EEF2E6447C-L000165](../../api/omarai.py#L165) | 165 | `"            self.close_connection = True"` | — |
+| [SRC-EEF2E6447C-L000166](../../api/omarai.py#L166) | 166 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000167](../../api/omarai.py#L167) | 167 | `"            self._request_header_deadline = None"` | — |
+| [SRC-EEF2E6447C-L000168](../../api/omarai.py#L168) | 168 | `""` | — |
+| [SRC-EEF2E6447C-L000169](../../api/omarai.py#L169) | 169 | `"    store = LeadStore()"` | — |
+| [SRC-EEF2E6447C-L000170](../../api/omarai.py#L170) | 170 | `"    _rate_lock = threading.Lock()"` | — |
+| [SRC-EEF2E6447C-L000171](../../api/omarai.py#L171) | 171 | `"    _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)"` | — |
+| [SRC-EEF2E6447C-L000172](../../api/omarai.py#L172) | 172 | `"    _rate_last_cleanup: ClassVar[float] = 0.0"` | — |
+| [SRC-EEF2E6447C-L000173](../../api/omarai.py#L173) | 173 | `"    RATE_LIMIT_REQUESTS = 20"` | — |
+| [SRC-EEF2E6447C-L000174](../../api/omarai.py#L174) | 174 | `"    RATE_LIMIT_WINDOW_SECONDS = 60"` | — |
+| [SRC-EEF2E6447C-L000175](../../api/omarai.py#L175) | 175 | `"    RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60"` | — |
+| [SRC-EEF2E6447C-L000176](../../api/omarai.py#L176) | 176 | `"    AGENT_CONCURRENCY_LIMIT = _configured_agent_concurrency_limit()"` | — |
+| [SRC-EEF2E6447C-L000177](../../api/omarai.py#L177) | 177 | `"    _agent_semaphore = threading.BoundedSemaphore(AGENT_CONCURRENCY_LIMIT)"` | — |
+| [SRC-EEF2E6447C-L000178](../../api/omarai.py#L178) | 178 | `""` | — |
+| [SRC-EEF2E6447C-L000179](../../api/omarai.py#L179) | 179 | `"    def _run_bounded_agent_operation(self, operation):"` | — |
+| [SRC-EEF2E6447C-L000180](../../api/omarai.py#L180) | 180 | `"        \"\"\"Run an expensive operation only when a process-local slot is available.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000181](../../api/omarai.py#L181) | 181 | `"        cls = type(self)"` | — |
+| [SRC-EEF2E6447C-L000182](../../api/omarai.py#L182) | 182 | `"        if not cls._agent_semaphore.acquire(blocking=False):"` | — |
+| [SRC-EEF2E6447C-L000183](../../api/omarai.py#L183) | 183 | `"            return self.respond("` | — |
+| [SRC-EEF2E6447C-L000184](../../api/omarai.py#L184) | 184 | `"                503,"` | — |
+| [SRC-EEF2E6447C-L000185](../../api/omarai.py#L185) | 185 | `"                {"` | — |
+| [SRC-EEF2E6447C-L000186](../../api/omarai.py#L186) | 186 | `"                    \"error\": \"خدمة البحث مشغولة حاليًا؛ أعد المحاولة بعد قليل.\","` | — |
+| [SRC-EEF2E6447C-L000187](../../api/omarai.py#L187) | 187 | `"                    \"retry_after_seconds\": 5,"` | — |
+| [SRC-EEF2E6447C-L000188](../../api/omarai.py#L188) | 188 | `"                    \"process_concurrency_limit\": cls.AGENT_CONCURRENCY_LIMIT,"` | — |
+| [SRC-EEF2E6447C-L000189](../../api/omarai.py#L189) | 189 | `"                },"` | — |
+| [SRC-EEF2E6447C-L000190](../../api/omarai.py#L190) | 190 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000191](../../api/omarai.py#L191) | 191 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000192](../../api/omarai.py#L192) | 192 | `"            return self.respond(200, operation())"` | — |
+| [SRC-EEF2E6447C-L000193](../../api/omarai.py#L193) | 193 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000194](../../api/omarai.py#L194) | 194 | `"            cls._agent_semaphore.release()"` | — |
+| [SRC-EEF2E6447C-L000195](../../api/omarai.py#L195) | 195 | `""` | — |
+| [SRC-EEF2E6447C-L000196](../../api/omarai.py#L196) | 196 | `"    def _authorized(self):"` | — |
+| [SRC-EEF2E6447C-L000197](../../api/omarai.py#L197) | 197 | `"        expected = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000198](../../api/omarai.py#L198) | 198 | `"        if not expected:"` | — |
+| [SRC-EEF2E6447C-L000199](../../api/omarai.py#L199) | 199 | `"            return os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() != \"1\""` | — |
+| [SRC-EEF2E6447C-L000200](../../api/omarai.py#L200) | 200 | `"        supplied = self.headers.get(\"Authorization\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000201](../../api/omarai.py#L201) | 201 | `"        if not supplied.startswith(\"Bearer \"):"` | — |
+| [SRC-EEF2E6447C-L000202](../../api/omarai.py#L202) | 202 | `"            return False"` | — |
+| [SRC-EEF2E6447C-L000203](../../api/omarai.py#L203) | 203 | `"        return hmac.compare_digest(supplied[7:].strip(), expected)"` | — |
+| [SRC-EEF2E6447C-L000204](../../api/omarai.py#L204) | 204 | `""` | — |
+| [SRC-EEF2E6447C-L000205](../../api/omarai.py#L205) | 205 | `"    def _allowed_origins(self):"` | — |
+| [SRC-EEF2E6447C-L000206](../../api/omarai.py#L206) | 206 | `"        \"\"\"Return configured browser origins plus this service’s own origin."` | — |
+| [SRC-EEF2E6447C-L000207](../../api/omarai.py#L207) | 207 | `""` | — |
+| [SRC-EEF2E6447C-L000208](../../api/omarai.py#L208) | 208 | `"        OMARAI_ALLOWED_ORIGINS is a comma-separated list of trusted origins"` | — |
+| [SRC-EEF2E6447C-L000209](../../api/omarai.py#L209) | 209 | `"        (scheme + host + optional port; no path and no wildcard)."` | — |
+| [SRC-EEF2E6447C-L000210](../../api/omarai.py#L210) | 210 | `"        \"\"\""` | — |
+| [SRC-EEF2E6447C-L000211](../../api/omarai.py#L211) | 211 | `"        configured = os.getenv(\"OMARAI_ALLOWED_ORIGINS\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000212](../../api/omarai.py#L212) | 212 | `"        origins = {"` | — |
+| [SRC-EEF2E6447C-L000213](../../api/omarai.py#L213) | 213 | `"            item.strip().rstrip(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000214](../../api/omarai.py#L214) | 214 | `"            for item in configured.split(\",\")"` | — |
+| [SRC-EEF2E6447C-L000215](../../api/omarai.py#L215) | 215 | `"            if item.strip()"` | — |
+| [SRC-EEF2E6447C-L000216](../../api/omarai.py#L216) | 216 | `"        }"` | — |
+| [SRC-EEF2E6447C-L000217](../../api/omarai.py#L217) | 217 | `"        if os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\":"` | — |
+| [SRC-EEF2E6447C-L000218](../../api/omarai.py#L218) | 218 | `"            # Host identifies the requested service origin. Do not derive allowed"` | — |
+| [SRC-EEF2E6447C-L000219](../../api/omarai.py#L219) | 219 | `"            # origins from X-Forwarded-Host: direct clients can spoof that header"` | — |
+| [SRC-EEF2E6447C-L000220](../../api/omarai.py#L220) | 220 | `"            # unless the reverse proxy is separately configured to overwrite it."` | — |
+| [SRC-EEF2E6447C-L000221](../../api/omarai.py#L221) | 221 | `"            scheme = self.headers.get(\"X-Forwarded-Proto\", \"https\").split(\",\", 1)[0].strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000222](../../api/omarai.py#L222) | 222 | `"            host = self.headers.get(\"Host\", \"\").split(\",\", 1)[0].strip()"` | — |
+| [SRC-EEF2E6447C-L000223](../../api/omarai.py#L223) | 223 | `"            if host:"` | — |
+| [SRC-EEF2E6447C-L000224](../../api/omarai.py#L224) | 224 | `"                origins.add(f\"https://{host}\".rstrip(\"/\"))"` | — |
+| [SRC-EEF2E6447C-L000225](../../api/omarai.py#L225) | 225 | `"                origins.add(f\"{scheme}://{host}\".rstrip(\"/\"))"` | — |
+| [SRC-EEF2E6447C-L000226](../../api/omarai.py#L226) | 226 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000227](../../api/omarai.py#L227) | 227 | `"            port = self.server.server_port"` | — |
+| [SRC-EEF2E6447C-L000228](../../api/omarai.py#L228) | 228 | `"            origins.update("` | — |
+| [SRC-EEF2E6447C-L000229](../../api/omarai.py#L229) | 229 | `"                {"` | — |
+| [SRC-EEF2E6447C-L000230](../../api/omarai.py#L230) | 230 | `"                    f\"http://127.0.0.1:{port}\","` | — |
+| [SRC-EEF2E6447C-L000231](../../api/omarai.py#L231) | 231 | `"                    f\"http://localhost:{port}\","` | — |
+| [SRC-EEF2E6447C-L000232](../../api/omarai.py#L232) | 232 | `"                    f\"http://[::1]:{port}\","` | — |
+| [SRC-EEF2E6447C-L000233](../../api/omarai.py#L233) | 233 | `"                }"` | — |
+| [SRC-EEF2E6447C-L000234](../../api/omarai.py#L234) | 234 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000235](../../api/omarai.py#L235) | 235 | `"        return origins"` | — |
+| [SRC-EEF2E6447C-L000236](../../api/omarai.py#L236) | 236 | `""` | — |
+| [SRC-EEF2E6447C-L000237](../../api/omarai.py#L237) | 237 | `"    def _origin_allowed(self, origin):"` | — |
+| [SRC-EEF2E6447C-L000238](../../api/omarai.py#L238) | 238 | `"        return bool(origin) and origin.rstrip(\"/\") in self._allowed_origins()"` | — |
+| [SRC-EEF2E6447C-L000239](../../api/omarai.py#L239) | 239 | `""` | — |
+| [SRC-EEF2E6447C-L000240](../../api/omarai.py#L240) | 240 | `"    def _rate_limit_client_key(self):"` | — |
+| [SRC-EEF2E6447C-L000241](../../api/omarai.py#L241) | 241 | `"        \"\"\"Choose a rate-limit identity without trusting spoofable proxy headers by default."` | — |
+| [SRC-EEF2E6447C-L000242](../../api/omarai.py#L242) | 242 | `""` | — |
+| [SRC-EEF2E6447C-L000243](../../api/omarai.py#L243) | 243 | `"        Set OMARAI_TRUST_PROXY_HEADERS=1 only when the deployment's trusted reverse"` | — |
+| [SRC-EEF2E6447C-L000244](../../api/omarai.py#L244) | 244 | `"        proxy appends the actual client IP as the rightmost X-Forwarded-For value."` | — |
+| [SRC-EEF2E6447C-L000245](../../api/omarai.py#L245) | 245 | `"        \"\"\""` | — |
+| [SRC-EEF2E6447C-L000246](../../api/omarai.py#L246) | 246 | `"        direct_ip = self.client_address[0]"` | — |
+| [SRC-EEF2E6447C-L000247](../../api/omarai.py#L247) | 247 | `"        if os.getenv(\"OMARAI_TRUST_PROXY_HEADERS\", \"\").strip() != \"1\":"` | — |
+| [SRC-EEF2E6447C-L000248](../../api/omarai.py#L248) | 248 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000249](../../api/omarai.py#L249) | 249 | `"        forwarded = self.headers.get(\"X-Forwarded-For\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000250](../../api/omarai.py#L250) | 250 | `"        candidate = forwarded.rsplit(\",\", 1)[-1].strip() if forwarded else \"\""` | — |
+| [SRC-EEF2E6447C-L000251](../../api/omarai.py#L251) | 251 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000252](../../api/omarai.py#L252) | 252 | `"            return str(ipaddress.ip_address(candidate))"` | — |
+| [SRC-EEF2E6447C-L000253](../../api/omarai.py#L253) | 253 | `"        except ValueError:"` | — |
+| [SRC-EEF2E6447C-L000254](../../api/omarai.py#L254) | 254 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000255](../../api/omarai.py#L255) | 255 | `""` | — |
+| [SRC-EEF2E6447C-L000256](../../api/omarai.py#L256) | 256 | `"    def _rate_limit_ok(self):"` | — |
+| [SRC-EEF2E6447C-L000257](../../api/omarai.py#L257) | 257 | `"        client_ip = self._rate_limit_client_key()"` | — |
+| [SRC-EEF2E6447C-L000258](../../api/omarai.py#L258) | 258 | `"        now = time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000259](../../api/omarai.py#L259) | 259 | `"        cls = type(self)"` | — |
+| [SRC-EEF2E6447C-L000260](../../api/omarai.py#L260) | 260 | `"        with self._rate_lock:"` | — |
+| [SRC-EEF2E6447C-L000261](../../api/omarai.py#L261) | 261 | `"            # Periodically remove IP buckets whose entire sliding window has expired."` | — |
+| [SRC-EEF2E6447C-L000262](../../api/omarai.py#L262) | 262 | `"            # Without this sweep, a public endpoint could retain one empty deque per"` | — |
+| [SRC-EEF2E6447C-L000263](../../api/omarai.py#L263) | 263 | `"            # distinct client IP forever, even though the rate-limit window is 60 sec."` | — |
+| [SRC-EEF2E6447C-L000264](../../api/omarai.py#L264) | 264 | `"            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:"` | — |
+| [SRC-EEF2E6447C-L000265](../../api/omarai.py#L265) | 265 | `"                cutoff = now - cls.RATE_LIMIT_WINDOW_SECONDS"` | — |
+| [SRC-EEF2E6447C-L000266](../../api/omarai.py#L266) | 266 | `"                for key, timestamps in list(cls._request_times.items()):"` | — |
+| [SRC-EEF2E6447C-L000267](../../api/omarai.py#L267) | 267 | `"                    while timestamps and timestamps[0] <= cutoff:"` | — |
+| [SRC-EEF2E6447C-L000268](../../api/omarai.py#L268) | 268 | `"                        timestamps.popleft()"` | — |
+| [SRC-EEF2E6447C-L000269](../../api/omarai.py#L269) | 269 | `"                    if not timestamps:"` | — |
+| [SRC-EEF2E6447C-L000270](../../api/omarai.py#L270) | 270 | `"                        cls._request_times.pop(key, None)"` | — |
+| [SRC-EEF2E6447C-L000271](../../api/omarai.py#L271) | 271 | `"                cls._rate_last_cleanup = now"` | — |
+| [SRC-EEF2E6447C-L000272](../../api/omarai.py#L272) | 272 | `""` | — |
+| [SRC-EEF2E6447C-L000273](../../api/omarai.py#L273) | 273 | `"            events = cls._request_times[client_ip]"` | — |
+| [SRC-EEF2E6447C-L000274](../../api/omarai.py#L274) | 274 | `"            while events and now - events[0] >= cls.RATE_LIMIT_WINDOW_SECONDS:"` | — |
+| [SRC-EEF2E6447C-L000275](../../api/omarai.py#L275) | 275 | `"                events.popleft()"` | — |
+| [SRC-EEF2E6447C-L000276](../../api/omarai.py#L276) | 276 | `"            if len(events) >= cls.RATE_LIMIT_REQUESTS:"` | — |
+| [SRC-EEF2E6447C-L000277](../../api/omarai.py#L277) | 277 | `"                return False"` | — |
+| [SRC-EEF2E6447C-L000278](../../api/omarai.py#L278) | 278 | `"            events.append(now)"` | — |
+| [SRC-EEF2E6447C-L000279](../../api/omarai.py#L279) | 279 | `"            return True"` | — |
+| [SRC-EEF2E6447C-L000280](../../api/omarai.py#L280) | 280 | `""` | — |
+| [SRC-EEF2E6447C-L000281](../../api/omarai.py#L281) | 281 | `"    def _read_request_body(self) -> bytes \| None:"` | — |
+| [SRC-EEF2E6447C-L000282](../../api/omarai.py#L282) | 282 | `"        \"\"\"Read a bounded body with both idle and absolute wall-clock deadlines.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000283](../../api/omarai.py#L283) | 283 | `"        raw_size = self.headers.get(\"Content-Length\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000284](../../api/omarai.py#L284) | 284 | `"        if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():"` | — |
+| [SRC-EEF2E6447C-L000285](../../api/omarai.py#L285) | 285 | `"            self.respond(400, {\"error\": \"valid Content-Length is required\"})"` | — |
+| [SRC-EEF2E6447C-L000286](../../api/omarai.py#L286) | 286 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000287](../../api/omarai.py#L287) | 287 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000288](../../api/omarai.py#L288) | 288 | `"            size = int(raw_size)"` | — |
+| [SRC-EEF2E6447C-L000289](../../api/omarai.py#L289) | 289 | `"        except ValueError:"` | — |
+| [SRC-EEF2E6447C-L000290](../../api/omarai.py#L290) | 290 | `"            self.respond(400, {\"error\": \"valid Content-Length is required\"})"` | — |
+| [SRC-EEF2E6447C-L000291](../../api/omarai.py#L291) | 291 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000292](../../api/omarai.py#L292) | 292 | `"        if size <= 0:"` | — |
+| [SRC-EEF2E6447C-L000293](../../api/omarai.py#L293) | 293 | `"            self.respond(400, {\"error\": \"request body is required\"})"` | — |
+| [SRC-EEF2E6447C-L000294](../../api/omarai.py#L294) | 294 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000295](../../api/omarai.py#L295) | 295 | `"        if size > MAX_REQUEST_BODY_BYTES:"` | — |
+| [SRC-EEF2E6447C-L000296](../../api/omarai.py#L296) | 296 | `"            self.respond(413, {\"error\": \"request too large\"})"` | — |
+| [SRC-EEF2E6447C-L000297](../../api/omarai.py#L297) | 297 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000298](../../api/omarai.py#L298) | 298 | `""` | — |
+| [SRC-EEF2E6447C-L000299](../../api/omarai.py#L299) | 299 | `"        total_timeout = max("` | — |
+| [SRC-EEF2E6447C-L000300](../../api/omarai.py#L300) | 300 | `"            0.1,"` | — |
+| [SRC-EEF2E6447C-L000301](../../api/omarai.py#L301) | 301 | `"            min("` | — |
+| [SRC-EEF2E6447C-L000302](../../api/omarai.py#L302) | 302 | `"                float(REQUEST_BODY_READ_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000303](../../api/omarai.py#L303) | 303 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
+| [SRC-EEF2E6447C-L000304](../../api/omarai.py#L304) | 304 | `"            ),"` | — |
+| [SRC-EEF2E6447C-L000305](../../api/omarai.py#L305) | 305 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000306](../../api/omarai.py#L306) | 306 | `"        idle_timeout = max("` | — |
+| [SRC-EEF2E6447C-L000307](../../api/omarai.py#L307) | 307 | `"            0.1,"` | — |
+| [SRC-EEF2E6447C-L000308](../../api/omarai.py#L308) | 308 | `"            min("` | — |
+| [SRC-EEF2E6447C-L000309](../../api/omarai.py#L309) | 309 | `"                float(REQUEST_BODY_IDLE_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000310](../../api/omarai.py#L310) | 310 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
+| [SRC-EEF2E6447C-L000311](../../api/omarai.py#L311) | 311 | `"            ),"` | — |
+| [SRC-EEF2E6447C-L000312](../../api/omarai.py#L312) | 312 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000313](../../api/omarai.py#L313) | 313 | `"        deadline = time.monotonic() + total_timeout"` | — |
+| [SRC-EEF2E6447C-L000314](../../api/omarai.py#L314) | 314 | `"        previous_timeout = self.connection.gettimeout()"` | — |
+| [SRC-EEF2E6447C-L000315](../../api/omarai.py#L315) | 315 | `"        body = bytearray()"` | — |
+| [SRC-EEF2E6447C-L000316](../../api/omarai.py#L316) | 316 | `"        timed_out = False"` | — |
+| [SRC-EEF2E6447C-L000317](../../api/omarai.py#L317) | 317 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000318](../../api/omarai.py#L318) | 318 | `"            while len(body) < size:"` | — |
+| [SRC-EEF2E6447C-L000319](../../api/omarai.py#L319) | 319 | `"                remaining = deadline - time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000320](../../api/omarai.py#L320) | 320 | `"                if remaining <= 0:"` | — |
+| [SRC-EEF2E6447C-L000321](../../api/omarai.py#L321) | 321 | `"                    timed_out = True"` | — |
+| [SRC-EEF2E6447C-L000322](../../api/omarai.py#L322) | 322 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000323](../../api/omarai.py#L323) | 323 | `"                self.connection.settimeout(min(idle_timeout, remaining))"` | — |
+| [SRC-EEF2E6447C-L000324](../../api/omarai.py#L324) | 324 | `"                try:"` | — |
+| [SRC-EEF2E6447C-L000325](../../api/omarai.py#L325) | 325 | `"                    # read1 performs at most one underlying read, letting us re-check"` | — |
+| [SRC-EEF2E6447C-L000326](../../api/omarai.py#L326) | 326 | `"                    # the absolute deadline between body fragments."` | — |
+| [SRC-EEF2E6447C-L000327](../../api/omarai.py#L327) | 327 | `"                    chunk = self.rfile.read1("` | — |
+| [SRC-EEF2E6447C-L000328](../../api/omarai.py#L328) | 328 | `"                        min(size - len(body), REQUEST_BODY_READ_CHUNK_BYTES)"` | — |
+| [SRC-EEF2E6447C-L000329](../../api/omarai.py#L329) | 329 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000330](../../api/omarai.py#L330) | 330 | `"                except TimeoutError:"` | — |
+| [SRC-EEF2E6447C-L000331](../../api/omarai.py#L331) | 331 | `"                    timed_out = True"` | — |
+| [SRC-EEF2E6447C-L000332](../../api/omarai.py#L332) | 332 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000333](../../api/omarai.py#L333) | 333 | `"                if not chunk:"` | — |
+| [SRC-EEF2E6447C-L000334](../../api/omarai.py#L334) | 334 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000335](../../api/omarai.py#L335) | 335 | `"                body.extend(chunk)"` | — |
+| [SRC-EEF2E6447C-L000336](../../api/omarai.py#L336) | 336 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000337](../../api/omarai.py#L337) | 337 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000338](../../api/omarai.py#L338) | 338 | `"                self.connection.settimeout(previous_timeout)"` | — |
+| [SRC-EEF2E6447C-L000339](../../api/omarai.py#L339) | 339 | `"            except OSError:"` | — |
+| [SRC-EEF2E6447C-L000340](../../api/omarai.py#L340) | 340 | `"                pass"` | — |
+| [SRC-EEF2E6447C-L000341](../../api/omarai.py#L341) | 341 | `""` | — |
+| [SRC-EEF2E6447C-L000342](../../api/omarai.py#L342) | 342 | `"        if timed_out:"` | — |
+| [SRC-EEF2E6447C-L000343](../../api/omarai.py#L343) | 343 | `"            self.close_connection = True"` | — |
+| [SRC-EEF2E6447C-L000344](../../api/omarai.py#L344) | 344 | `"            self.respond(408, {\"error\": \"request body read timed out\"})"` | — |
+| [SRC-EEF2E6447C-L000345](../../api/omarai.py#L345) | 345 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000346](../../api/omarai.py#L346) | 346 | `"        if len(body) != size:"` | — |
+| [SRC-EEF2E6447C-L000347](../../api/omarai.py#L347) | 347 | `"            self.close_connection = True"` | — |
+| [SRC-EEF2E6447C-L000348](../../api/omarai.py#L348) | 348 | `"            self.respond(400, {\"error\": \"incomplete request body\"})"` | — |
+| [SRC-EEF2E6447C-L000349](../../api/omarai.py#L349) | 349 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000350](../../api/omarai.py#L350) | 350 | `"        return bytes(body)"` | — |
+| [SRC-EEF2E6447C-L000351](../../api/omarai.py#L351) | 351 | `""` | — |
+| [SRC-EEF2E6447C-L000352](../../api/omarai.py#L352) | 352 | `"    def end_headers(self):"` | — |
+| [SRC-EEF2E6447C-L000353](../../api/omarai.py#L353) | 353 | `"        \"\"\"Apply defensive browser headers to successful and error responses alike.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000354](../../api/omarai.py#L354) | 354 | `"        self.send_header(\"X-Content-Type-Options\", \"nosniff\")"` | — |
+| [SRC-EEF2E6447C-L000355](../../api/omarai.py#L355) | 355 | `"        self.send_header(\"X-Frame-Options\", \"DENY\")"` | — |
+| [SRC-EEF2E6447C-L000356](../../api/omarai.py#L356) | 356 | `"        self.send_header(\"Referrer-Policy\", \"strict-origin-when-cross-origin\")"` | — |
+| [SRC-EEF2E6447C-L000357](../../api/omarai.py#L357) | 357 | `"        self.send_header(\"Permissions-Policy\", \"camera=(), microphone=(), geolocation=()\")"` | — |
+| [SRC-EEF2E6447C-L000358](../../api/omarai.py#L358) | 358 | `"        self.send_header("` | — |
+| [SRC-EEF2E6447C-L000359](../../api/omarai.py#L359) | 359 | `"            \"Content-Security-Policy\","` | — |
+| [SRC-EEF2E6447C-L000360](../../api/omarai.py#L360) | 360 | `"            \"default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; \""` | — |
+| [SRC-EEF2E6447C-L000361](../../api/omarai.py#L361) | 361 | `"            \"form-action 'self'; connect-src 'self'; img-src 'self' data:; \""` | — |
+| [SRC-EEF2E6447C-L000362](../../api/omarai.py#L362) | 362 | `"            \"style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:\","` | — |
+| [SRC-EEF2E6447C-L000363](../../api/omarai.py#L363) | 363 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000364](../../api/omarai.py#L364) | 364 | `"        super().end_headers()"` | — |
+| [SRC-EEF2E6447C-L000365](../../api/omarai.py#L365) | 365 | `""` | — |
+| [SRC-EEF2E6447C-L000366](../../api/omarai.py#L366) | 366 | `"    def respond(self, status, payload, content_type=\"application/json; charset=utf-8\"):"` | — |
+| [SRC-EEF2E6447C-L000367](../../api/omarai.py#L367) | 367 | `"        body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()"` | — |
+| [SRC-EEF2E6447C-L000368](../../api/omarai.py#L368) | 368 | `"        self.send_response(status)"` | — |
+| [SRC-EEF2E6447C-L000369](../../api/omarai.py#L369) | 369 | `"        self.send_header(\"Content-Type\", content_type)"` | — |
+| [SRC-EEF2E6447C-L000370](../../api/omarai.py#L370) | 370 | `"        self.send_header(\"Content-Length\", str(len(body)))"` | — |
+| [SRC-EEF2E6447C-L000371](../../api/omarai.py#L371) | 371 | `"        self.send_header(\"Cache-Control\", \"no-store\")"` | — |
+| [SRC-EEF2E6447C-L000372](../../api/omarai.py#L372) | 372 | `"        origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000373](../../api/omarai.py#L373) | 373 | `"        if origin and self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000374](../../api/omarai.py#L374) | 374 | `"            self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
+| [SRC-EEF2E6447C-L000375](../../api/omarai.py#L375) | 375 | `"            self.send_header(\"Vary\", \"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000376](../../api/omarai.py#L376) | 376 | `"        self.end_headers()"` | — |
+| [SRC-EEF2E6447C-L000377](../../api/omarai.py#L377) | 377 | `"        self.wfile.write(body)"` | — |
+| [SRC-EEF2E6447C-L000378](../../api/omarai.py#L378) | 378 | `""` | — |
+| [SRC-EEF2E6447C-L000379](../../api/omarai.py#L379) | 379 | `"    def do_GET(self):"` | — |
+| [SRC-EEF2E6447C-L000380](../../api/omarai.py#L380) | 380 | `"        parsed = urlparse(self.path)"` | — |
+| [SRC-EEF2E6447C-L000381](../../api/omarai.py#L381) | 381 | `"        if parsed.path in {\"/\", \"/agent\"}:"` | — |
+| [SRC-EEF2E6447C-L000382](../../api/omarai.py#L382) | 382 | `"            if not AGENT_DASHBOARD.exists():"` | — |
+| [SRC-EEF2E6447C-L000383](../../api/omarai.py#L383) | 383 | `"                return self.respond(404, {\"error\": \"agent dashboard missing\"})"` | — |
+| [SRC-EEF2E6447C-L000384](../../api/omarai.py#L384) | 384 | `"            return self.respond(200, AGENT_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000385](../../api/omarai.py#L385) | 385 | `"        if parsed.path == \"/leads\":"` | — |
+| [SRC-EEF2E6447C-L000386](../../api/omarai.py#L386) | 386 | `"            if not LEADS_DASHBOARD.exists():"` | — |
+| [SRC-EEF2E6447C-L000387](../../api/omarai.py#L387) | 387 | `"                return self.respond(404, {\"error\": \"leads dashboard missing\"})"` | — |
+| [SRC-EEF2E6447C-L000388](../../api/omarai.py#L388) | 388 | `"            return self.respond(200, LEADS_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000389](../../api/omarai.py#L389) | 389 | `"        if parsed.path == \"/api/health\":"` | — |
+| [SRC-EEF2E6447C-L000390](../../api/omarai.py#L390) | 390 | `"            return self.respond("` | — |
+| [SRC-EEF2E6447C-L000391](../../api/omarai.py#L391) | 391 | `"                200,"` | — |
+| [SRC-EEF2E6447C-L000392](../../api/omarai.py#L392) | 392 | `"                {"` | — |
 | [SRC-EEF2E6447C-L000393](../../api/omarai.py#L393) | 393 | `"                    \"ok\": True,"` | — |
 | [SRC-EEF2E6447C-L000394](../../api/omarai.py#L394) | 394 | `"                    \"app\": \"Omarai\","` | — |
 | [SRC-EEF2E6447C-L000395](../../api/omarai.py#L395) | 395 | `"                    \"mode\": \"web-research\","` | — |
@@ -434,457 +870,3 @@
 | [SRC-792A9A235D-L000127](../ANSWER_QUALITY_BENCHMARK_AR.md#L127) | 127 | ``"2. حدّث `case_count`."`` | — |
 | [SRC-792A9A235D-L000128](../ANSWER_QUALITY_BENCHMARK_AR.md#L128) | 128 | `"3. شغّل pytest للذخيرة والأداة."` | — |
 | [SRC-792A9A235D-L000129](../ANSWER_QUALITY_BENCHMARK_AR.md#L129) | 129 | `"4. لا تُدرج نتائج PASS/FAIL داخل JSON."` | — |
-## وثائق وفهرسة
-
-### FILE-C7C7FA8853 — [docs/DEPLOY_RAILWAY_AR.md](../DEPLOY_RAILWAY_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-C7C7FA8853-L000001](../DEPLOY_RAILWAY_AR.md#L1) | 1 | `"# نشر Omarai على Railway — دليل عربي"` | — |
-| [SRC-C7C7FA8853-L000002](../DEPLOY_RAILWAY_AR.md#L2) | 2 | `""` | — |
-| [SRC-C7C7FA8853-L000003](../DEPLOY_RAILWAY_AR.md#L3) | 3 | `"هذا المستودع أصبح يحتوي على Dockerfile وإعداد Railway قابلين للبناء. **وجود الإعدادات لا يعني أن الخدمة نُشرت بالفعل**؛ يلزم ربط حساب الاستضافة بالمستودع وإضافة الأسرار من لوحة التحكم."` | — |
-| [SRC-C7C7FA8853-L000004](../DEPLOY_RAILWAY_AR.md#L4) | 4 | `""` | — |
-| [SRC-C7C7FA8853-L000005](../DEPLOY_RAILWAY_AR.md#L5) | 5 | `"## المتطلبات"` | — |
-| [SRC-C7C7FA8853-L000006](../DEPLOY_RAILWAY_AR.md#L6) | 6 | `""` | — |
-| [SRC-C7C7FA8853-L000007](../DEPLOY_RAILWAY_AR.md#L7) | 7 | `"1. حساب GitHub لديه صلاحية قراءة المستودع."` | — |
-| [SRC-C7C7FA8853-L000008](../DEPLOY_RAILWAY_AR.md#L8) | 8 | `"2. حساب Railway وربطه بـ GitHub."` | — |
-| [SRC-C7C7FA8853-L000009](../DEPLOY_RAILWAY_AR.md#L9) | 9 | `"3. مفتاح OpenRouter صالح. استخدام النموذج والبحث قد يستهلك رصيدًا؛ راجع أسعار النموذج وأدوات البحث قبل التشغيل."` | — |
-| [SRC-C7C7FA8853-L000010](../DEPLOY_RAILWAY_AR.md#L10) | 10 | `"4. رمز وصول منفصل وسري للتطبيق، لا يقل عن 32 حرفًا. لا تستخدم مفتاح OpenRouter نفسه."` | — |
-| [SRC-C7C7FA8853-L000011](../DEPLOY_RAILWAY_AR.md#L11) | 11 | `""` | — |
-| [SRC-C7C7FA8853-L000012](../DEPLOY_RAILWAY_AR.md#L12) | 12 | `"## النشر"` | — |
-| [SRC-C7C7FA8853-L000013](../DEPLOY_RAILWAY_AR.md#L13) | 13 | `""` | — |
-| [SRC-C7C7FA8853-L000014](../DEPLOY_RAILWAY_AR.md#L14) | 14 | `"1. افتح Railway وسجّل الدخول."` | — |
-| [SRC-C7C7FA8853-L000015](../DEPLOY_RAILWAY_AR.md#L15) | 15 | `"2. أنشئ مشروعًا جديدًا واختر النشر من مستودع GitHub."` | — |
-| [SRC-C7C7FA8853-L000016](../DEPLOY_RAILWAY_AR.md#L16) | 16 | `"3. اختر mosabosama2030-oss/omarai والفرع main."` | — |
-| [SRC-C7C7FA8853-L000017](../DEPLOY_RAILWAY_AR.md#L17) | 17 | `"4. اجعل Railway يبني باستخدام Dockerfile الموجود في المستودع."` | — |
-| [SRC-C7C7FA8853-L000018](../DEPLOY_RAILWAY_AR.md#L18) | 18 | `"5. افتح Variables وأضف:"` | — |
-| [SRC-C7C7FA8853-L000019](../DEPLOY_RAILWAY_AR.md#L19) | 19 | `"   - OMARAI_PUBLIC_DEPLOYMENT=1"` | — |
-| [SRC-C7C7FA8853-L000020](../DEPLOY_RAILWAY_AR.md#L20) | 20 | `"   - OMARAI_ACCESS_TOKEN = رمز عشوائي سري قوي (32 حرفًا على الأقل)"` | — |
-| [SRC-C7C7FA8853-L000021](../DEPLOY_RAILWAY_AR.md#L21) | 21 | `"   - OPENROUTER_API_KEY = مفتاحك الشخصي"` | — |
-| [SRC-C7C7FA8853-L000022](../DEPLOY_RAILWAY_AR.md#L22) | 22 | `"   - اختياريًا: OMARAI_ANSWER_MODEL وOMARAI_PLANNER_MODEL وOMARAI_REVIEW_MODEL بعد التحقق من صلاحية النماذج وأسعارها."` | — |
-| [SRC-C7C7FA8853-L000023](../DEPLOY_RAILWAY_AR.md#L23) | 23 | `"   - اختياريًا لتفعيل بحث مباشر ينفذه مزود OpenRouter داخل طلب التوليد: OMARAI_OPENROUTER_WEB_SEARCH=1. هذا خيار إضافي قد يستهلك رصيد بحث فوق تكلفة النموذج؛ اتركه غير مضبوط إذا لم توافق على التكلفة."` | — |
-| [SRC-C7C7FA8853-L000024](../DEPLOY_RAILWAY_AR.md#L24) | 24 | `"6. انشر الخدمة، ثم فعّل Generate Domain من Networking."` | — |
-| [SRC-C7C7FA8853-L000025](../DEPLOY_RAILWAY_AR.md#L25) | 25 | `"7. افتح الرابط العام. أدخل OMARAI_ACCESS_TOKEN في قسم «الوصول الآمن» واضغط «حفظ الرمز على هذا الجهاز»."` | — |
-| [SRC-C7C7FA8853-L000026](../DEPLOY_RAILWAY_AR.md#L26) | 26 | `"8. اضغط «اختبار حي للإنترنت والنموذج». لا تعتبر الصفحة منشورة بنجاح حتى ينجح اختبار الشبكة والنموذج من رابط الاستضافة."` | — |
-| [SRC-C7C7FA8853-L000027](../DEPLOY_RAILWAY_AR.md#L27) | 27 | `""` | — |
-| [SRC-C7C7FA8853-L000028](../DEPLOY_RAILWAY_AR.md#L28) | 28 | `"## الحماية"` | — |
-| [SRC-C7C7FA8853-L000029](../DEPLOY_RAILWAY_AR.md#L29) | 29 | `""` | — |
-| [SRC-C7C7FA8853-L000030](../DEPLOY_RAILWAY_AR.md#L30) | 30 | `"- يمنع التطبيق الربط على واجهة عامة إلا عند تفعيل OMARAI_PUBLIC_DEPLOYMENT=1 وضبط رمز قوي."` | — |
-| [SRC-C7C7FA8853-L000031](../DEPLOY_RAILWAY_AR.md#L31) | 31 | `"- طلبات API محمية برمز Bearer، مع حد مبدئي 20 طلبًا في الدقيقة لكل عنوان عميل."` | — |
-| [SRC-C7C7FA8853-L000032](../DEPLOY_RAILWAY_AR.md#L32) | 32 | `"- رمز الوصول يُخزن في localStorage للمتصفح الذي تختاره. استخدم جهازًا موثوقًا، وامسح الرمز من المتصفح عند الحاجة."` | — |
-| [SRC-C7C7FA8853-L000033](../DEPLOY_RAILWAY_AR.md#L33) | 33 | `"- لا تضع مفاتيح مزود النموذج في HTML أو GitHub أو في خانة رمز الوصول."` | — |
-| [SRC-C7C7FA8853-L000034](../DEPLOY_RAILWAY_AR.md#L34) | 34 | `"- لا يوجد تسجيل مستخدمين متعددين حتى الآن؛ الرمز مشترك لمن تتيحه لهم. لا تفتح الخدمة للجمهور دون خطة مصادقة وإدارة استخدام أقوى."` | — |
-| [SRC-C7C7FA8853-L000035](../DEPLOY_RAILWAY_AR.md#L35) | 35 | `""` | — |
-| [SRC-C7C7FA8853-L000036](../DEPLOY_RAILWAY_AR.md#L36) | 36 | `"## حدود الإنتاج الحالية"` | — |
-| [SRC-C7C7FA8853-L000037](../DEPLOY_RAILWAY_AR.md#L37) | 37 | `""` | — |
-| [SRC-C7C7FA8853-L000038](../DEPLOY_RAILWAY_AR.md#L38) | 38 | `"- هذا نشر أولي آمن نسبيًا للاستخدام الشخصي/المحدود، وليس منصة SaaS عامة جاهزة للتوسع."` | — |
-| [SRC-C7C7FA8853-L000039](../DEPLOY_RAILWAY_AR.md#L39) | 39 | `"- SQLite وسجل العملاء المحلي لا يضمنان استمرارية البيانات على حاوية استضافة مؤقتة. لا تعتمد على صفحة العملاء كقاعدة بيانات دائمة قبل ربط PostgreSQL واختبار النسخ الاحتياطي."` | — |
-| [SRC-C7C7FA8853-L000040](../DEPLOY_RAILWAY_AR.md#L40) | 40 | `"- حدود المعدل الحالية محفوظة في ذاكرة العملية، فلا تستبدل نظام تحديد معدل موزعًا عند تشغيل أكثر من نسخة."` | — |
-| [SRC-C7C7FA8853-L000041](../DEPLOY_RAILWAY_AR.md#L41) | 41 | `"- واجهات البحث العامة قد تتعرض للحجب أو تحديد المعدل. أضف مفاتيح البحث الاختيارية إذا كنت تحتاج تغطية أوسع، وراقب تكلفتها. أداة OpenRouter الحية اختيارية، وتكاليفها تتغير حسب محرك البحث والمزود."` | — |
-| [SRC-C7C7FA8853-L000042](../DEPLOY_RAILWAY_AR.md#L42) | 42 | `"- اختبر الوصول، وطلبات API غير المصرح بها، وسلوك حدود المزود قبل مشاركة الرابط مع أي شخص."` | — |
-| [SRC-C7C7FA8853-L000043](../DEPLOY_RAILWAY_AR.md#L43) | 43 | `""` | — |
-| [SRC-C7C7FA8853-L000044](../DEPLOY_RAILWAY_AR.md#L44) | 44 | `"## إعادة النشر"` | — |
-| [SRC-C7C7FA8853-L000045](../DEPLOY_RAILWAY_AR.md#L45) | 45 | `""` | — |
-| [SRC-C7C7FA8853-L000046](../DEPLOY_RAILWAY_AR.md#L46) | 46 | `"كل تحديث إلى الفرع main يمكن أن يؤدي إلى إعادة بناء تلقائية إذا فُعّلت عمليات النشر التلقائية في إعدادات Railway."` | — |
-## وثائق وفهرسة
-
-### FILE-D57B0BB030 — [docs/DEPLOY_RENDER_AR.md](../DEPLOY_RENDER_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-D57B0BB030-L000001](../DEPLOY_RENDER_AR.md#L1) | 1 | `"# نشر Omarai على Render Free — دليل عربي"` | — |
-| [SRC-D57B0BB030-L000002](../DEPLOY_RENDER_AR.md#L2) | 2 | `""` | — |
-| [SRC-D57B0BB030-L000003](../DEPLOY_RENDER_AR.md#L3) | 3 | `"هذا الخيار يستخدم خدمة ويب مجانية بمواصفات محدودة لتجربة Omarai والتحقق منه. ليس ضمانًا لتشغيل دائم أو مناسبًا لبيانات العملاء المهمة."` | — |
-| [SRC-D57B0BB030-L000004](../DEPLOY_RENDER_AR.md#L4) | 4 | `""` | — |
-| [SRC-D57B0BB030-L000005](../DEPLOY_RENDER_AR.md#L5) | 5 | `"## ما الذي أُعدّ في المستودع؟"` | — |
-| [SRC-D57B0BB030-L000006](../DEPLOY_RENDER_AR.md#L6) | 6 | `""` | — |
-| [SRC-D57B0BB030-L000007](../DEPLOY_RENDER_AR.md#L7) | 7 | ``"يوجد ملف `render.yaml` في جذر المشروع لإنشاء خدمة ويب تستخدم Dockerfile الحالي، وتعمل في منطقة Frankfurt، وتستخدم `/api/health` لفحص السلامة. عند إنشاء الخدمة سيطلب Render إدخال قيمتي الأسرار بدل حفظهما داخل المستودع:"`` | — |
-| [SRC-D57B0BB030-L000008](../DEPLOY_RENDER_AR.md#L8) | 8 | `""` | — |
-| [SRC-D57B0BB030-L000009](../DEPLOY_RENDER_AR.md#L9) | 9 | ``"- `OMARAI_ACCESS_TOKEN`: رمز وصول عشوائي، لا يقل عن 32 حرفًا."`` | — |
-| [SRC-D57B0BB030-L000010](../DEPLOY_RENDER_AR.md#L10) | 10 | ``"- `OPENROUTER_API_KEY`: مفتاح مزود النموذج الذي تملكه."`` | — |
-| [SRC-D57B0BB030-L000011](../DEPLOY_RENDER_AR.md#L11) | 11 | `""` | — |
-| [SRC-D57B0BB030-L000012](../DEPLOY_RENDER_AR.md#L12) | 12 | `"لا تضع القيم السرية في GitHub أو هذا الملف أو الدردشة."` | — |
-| [SRC-D57B0BB030-L000013](../DEPLOY_RENDER_AR.md#L13) | 13 | `""` | — |
-| [SRC-D57B0BB030-L000014](../DEPLOY_RENDER_AR.md#L14) | 14 | `"## خطوات النشر"` | — |
-| [SRC-D57B0BB030-L000015](../DEPLOY_RENDER_AR.md#L15) | 15 | `""` | — |
-| [SRC-D57B0BB030-L000016](../DEPLOY_RENDER_AR.md#L16) | 16 | `"1. سجّل الدخول إلى Render وافتح Dashboard."` | — |
-| [SRC-D57B0BB030-L000017](../DEPLOY_RENDER_AR.md#L17) | 17 | ``"2. اختر إنشاء **Blueprint** جديد واربط حساب GitHub بالمستودع `mosabosama2030-oss/omarai`."`` | — |
-| [SRC-D57B0BB030-L000018](../DEPLOY_RENDER_AR.md#L18) | 18 | ``"3. اختر الفرع `main`، ودع Render يقرأ ملف `render.yaml` الموجود في جذر المستودع."`` | — |
-| [SRC-D57B0BB030-L000019](../DEPLOY_RENDER_AR.md#L19) | 19 | `"4. راجع إعداد الخدمة وتأكد أن الخطة هي **Free**. سيطلب منك Render قيم المتغيرات السرية؛ أدخل رمز الوصول ومفتاح النموذج في النموذج الآمن فقط."` | — |
-| [SRC-D57B0BB030-L000020](../DEPLOY_RENDER_AR.md#L20) | 20 | `"5. أنشئ الخدمة وانتظر انتهاء بناء Docker والنشر. إذا طلب Render التأكيد على خطة مدفوعة، لا تتابع؛ ارجع وتحقق من اختيار Free."` | — |
-| [SRC-D57B0BB030-L000021](../DEPLOY_RENDER_AR.md#L21) | 21 | ``"6. افتح عنوان `onrender.com` الذي يقدمه Render، ثم جرّب `/api/health`."`` | — |
-| [SRC-D57B0BB030-L000022](../DEPLOY_RENDER_AR.md#L22) | 22 | ``"7. افتح الواجهة، وأدخل `OMARAI_ACCESS_TOKEN` في خانة رمز الوصول. اضغط «اختبار حي للإنترنت والنموذج» وتحقق من كل حالة."`` | — |
-| [SRC-D57B0BB030-L000023](../DEPLOY_RENDER_AR.md#L23) | 23 | `"8. لا تعتبر النشر مقبولًا حتى ينجح سؤال عربي فعلي من الواجهة وتظهر مصادر قابلة للفتح."` | — |
-| [SRC-D57B0BB030-L000024](../DEPLOY_RENDER_AR.md#L24) | 24 | `""` | — |
-| [SRC-D57B0BB030-L000025](../DEPLOY_RENDER_AR.md#L25) | 25 | `"## توليد رمز الوصول"` | — |
-| [SRC-D57B0BB030-L000026](../DEPLOY_RENDER_AR.md#L26) | 26 | `""` | — |
-| [SRC-D57B0BB030-L000027](../DEPLOY_RENDER_AR.md#L27) | 27 | `"ولّد رمزًا مستقلًا قويًا على جهازك، باستخدام Python:"` | — |
-| [SRC-D57B0BB030-L000028](../DEPLOY_RENDER_AR.md#L28) | 28 | `""` | — |
-| [SRC-D57B0BB030-L000029](../DEPLOY_RENDER_AR.md#L29) | 29 | ````"```bash"```` | — |
-| [SRC-D57B0BB030-L000030](../DEPLOY_RENDER_AR.md#L30) | 30 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
-| [SRC-D57B0BB030-L000031](../DEPLOY_RENDER_AR.md#L31) | 31 | ````"```"```` | — |
-| [SRC-D57B0BB030-L000032](../DEPLOY_RENDER_AR.md#L32) | 32 | `""` | — |
-| [SRC-D57B0BB030-L000033](../DEPLOY_RENDER_AR.md#L33) | 33 | ``"انسخ القيمة إلى حقل `OMARAI_ACCESS_TOKEN` في إعدادات Render. لا تستخدم مفتاح OpenRouter نفسه كرمز وصول للتطبيق."`` | — |
-| [SRC-D57B0BB030-L000034](../DEPLOY_RENDER_AR.md#L34) | 34 | `""` | — |
-| [SRC-D57B0BB030-L000035](../DEPLOY_RENDER_AR.md#L35) | 35 | `"## حدود النسخة المجانية"` | — |
-| [SRC-D57B0BB030-L000036](../DEPLOY_RENDER_AR.md#L36) | 36 | `""` | — |
-| [SRC-D57B0BB030-L000037](../DEPLOY_RENDER_AR.md#L37) | 37 | `"- قد يوقف Render خدمة الويب المجانية بعد 15 دقيقة من عدم وجود زيارات؛ أول زيارة تالية قد تحتاج نحو دقيقة لبدء الخدمة."` | — |
-| [SRC-D57B0BB030-L000038](../DEPLOY_RENDER_AR.md#L38) | 38 | `"- الملفات المحلية مؤقتة. SQLite وسجل العملاء قد تضيع بياناتهما عند إعادة التشغيل أو إعادة النشر أو إيقاف الخدمة مؤقتًا. لا تحفظ بيانات مهمة أو شخصية في لوحة العملاء المستضافة."` | — |
-| [SRC-D57B0BB030-L000039](../DEPLOY_RENDER_AR.md#L39) | 39 | `"- تمنح الخطة 750 ساعة تشغيل مجانية شهريًا لكل مساحة عمل، وتُوقف الخدمات المجانية إذا نفدت الساعات."` | — |
-| [SRC-D57B0BB030-L000040](../DEPLOY_RENDER_AR.md#L40) | 40 | `"- توجد حدود شهرية لحركة البيانات الخارجة ودقائق بناء النشر. إذا لم تُضف وسيلة دفع، قد تُعلَّق الخدمات عند تجاوز حدود الاستخدام المجاني؛ وإذا أضفت وسيلة دفع فقد تنطبق رسوم على الاستهلاك الزائد، لذا راقب Usage/Billing."` | — |
-| [SRC-D57B0BB030-L000041](../DEPLOY_RENDER_AR.md#L41) | 41 | `"- الخدمة المجانية مناسبة للتجربة والاختبار الشخصي، وليست استضافة إنتاج مضمونة. لا يوجد ضمان توافر دائم."` | — |
-| [SRC-D57B0BB030-L000042](../DEPLOY_RENDER_AR.md#L42) | 42 | ``"- تكاليف مزود النموذج وأدوات البحث منفصلة عن خطة الاستضافة. قد تكون بعض النماذج المجانية محدودة أو غير متاحة في وقت معين. لا تفعّل `OMARAI_OPENROUTER_WEB_SEARCH=1` قبل مراجعة التكلفة والموافقة عليها."`` | — |
-| [SRC-D57B0BB030-L000043](../DEPLOY_RENDER_AR.md#L43) | 43 | `"- الأسئلة ومقتطفات صفحات الويب قد تُرسل إلى مزود النموذج الخارجي. لا ترسل أسرارًا أو بيانات عملاء سرية."` | — |
-| [SRC-D57B0BB030-L000044](../DEPLOY_RENDER_AR.md#L44) | 44 | `""` | — |
-| [SRC-D57B0BB030-L000045](../DEPLOY_RENDER_AR.md#L45) | 45 | `"## اختبار التشغيل الحي"` | — |
-| [SRC-D57B0BB030-L000046](../DEPLOY_RENDER_AR.md#L46) | 46 | `""` | — |
-| [SRC-D57B0BB030-L000047](../DEPLOY_RENDER_AR.md#L47) | 47 | ``"ملف قبول التشغيل `scripts/hosted_smoke_test.py` متاح على الفرع الذي أُعدّت فيه هذه الحزمة. بعد دمجه في `main`، أضف GitHub Actions secrets باسم `OMARAI_ACCESS_TOKEN` (نفس رمز الخدمة) و`OMARAI_BASE_URL` (أصل HTTPS للخدمة فقط)، ثم شغّل workflow اليدوي `Omarai hosted acceptance smoke`. يستخدم الاختبار العنوان المحفوظ في إعدادات المستودع لتجنب إرسال رمز الوصول إلى عنوان حرّ. الاختبار ينفذ اتصالات بحث ونموذج فعلية وقد يستهلك استخدامًا من حساب المزود."`` | — |
-| [SRC-D57B0BB030-L000048](../DEPLOY_RENDER_AR.md#L48) | 48 | `""` | — |
-| [SRC-D57B0BB030-L000049](../DEPLOY_RENDER_AR.md#L49) | 49 | `"إذا لم تدمج حزمة الاختبار بعد، استخدم زر الاختبار الحي المدمج في واجهة Omarai، ثم أجرِ فحص HTTP 401 دون رمز وصول، وتجربة سؤال عربي ومراجعة المصادر."` | — |
-| [SRC-D57B0BB030-L000050](../DEPLOY_RENDER_AR.md#L50) | 50 | `""` | — |
-| [SRC-D57B0BB030-L000051](../DEPLOY_RENDER_AR.md#L51) | 51 | `"## إذا فشل النشر"` | — |
-| [SRC-D57B0BB030-L000052](../DEPLOY_RENDER_AR.md#L52) | 52 | `""` | — |
-| [SRC-D57B0BB030-L000053](../DEPLOY_RENDER_AR.md#L53) | 53 | `"- افتح Logs على Render، ولا تنشر أي قيمة سرية في Issue عام."` | — |
-| [SRC-D57B0BB030-L000054](../DEPLOY_RENDER_AR.md#L54) | 54 | ``"- تحقق أن الخادم يستمع على الواجهة العامة والمنفذ الذي توفره بيئة الاستضافة؛ يستخدم Dockerfile الحالي متغير `PORT`."`` | — |
-| [SRC-D57B0BB030-L000055](../DEPLOY_RENDER_AR.md#L55) | 55 | ``"- إذا كانت الخدمة تبدأ ثم تفشل فحص الصحة، راجع أن `/api/health` يعيد HTTP 200."`` | — |
-| [SRC-D57B0BB030-L000056](../DEPLOY_RENDER_AR.md#L56) | 56 | ``"- تحقق أن `OMARAI_PUBLIC_DEPLOYMENT=1` ورمز الوصول مضبوطين، وأن الرمز 32 حرفًا على الأقل."`` | — |
-| [SRC-D57B0BB030-L000057](../DEPLOY_RENDER_AR.md#L57) | 57 | `"- إذا فشل النموذج، تحقق من صحة مفتاح المزود وحدوده. وإذا فشل البحث فقط، قد تكون محركات البحث العامة حظرت الطلب أو لم ترجع نتائج قابلة للتحليل."` | — |
-| [SRC-D57B0BB030-L000058](../DEPLOY_RENDER_AR.md#L58) | 58 | `""` | — |
-| [SRC-D57B0BB030-L000059](../DEPLOY_RENDER_AR.md#L59) | 59 | `"راجع كذلك [دليل القبول العام](GO_LIVE_CHECKLIST_AR.md) قبل اعتماد النسخة."` | — |
-## وثائق وفهرسة
-
-### FILE-51D44BE378 — [docs/DEPLOY_SNAPDEPLOY_AR.md](../DEPLOY_SNAPDEPLOY_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-51D44BE378-L000001](../DEPLOY_SNAPDEPLOY_AR.md#L1) | 1 | `"# نشر Omarai على SnapDeploy Free — دليل عربي"` | — |
-| [SRC-51D44BE378-L000002](../DEPLOY_SNAPDEPLOY_AR.md#L2) | 2 | `""` | — |
-| [SRC-51D44BE378-L000003](../DEPLOY_SNAPDEPLOY_AR.md#L3) | 3 | ``"هذا دليل بديل للنشر بعد تعذّر Render. الإعداد الموجود في المستودع متوافق مبدئيًا مع تشغيل Docker على SnapDeploy: `Dockerfile` في جذر المشروع، وخادم يستمع على `0.0.0.0` والمنفذ الذي توفره البيئة، وفحص صحة عبر `/api/health`. **هذا الدليل لا يعني أن حسابًا أو خدمة قد أُنشئت بالفعل.**"`` | — |
-| [SRC-51D44BE378-L000004](../DEPLOY_SNAPDEPLOY_AR.md#L4) | 4 | `""` | — |
-| [SRC-51D44BE378-L000005](../DEPLOY_SNAPDEPLOY_AR.md#L5) | 5 | `"## حدود الخطة المجانية — راجعها قبل النشر"` | — |
-| [SRC-51D44BE378-L000006](../DEPLOY_SNAPDEPLOY_AR.md#L6) | 6 | `""` | — |
-| [SRC-51D44BE378-L000007](../DEPLOY_SNAPDEPLOY_AR.md#L7) | 7 | `"بحسب وثائق SnapDeploy الحالية وقت كتابة الدليل:"` | — |
-| [SRC-51D44BE378-L000008](../DEPLOY_SNAPDEPLOY_AR.md#L8) | 8 | `"- لا يلزم إدخال بطاقة دفع للبدء في الخطة المجانية."` | — |
-| [SRC-51D44BE378-L000009](../DEPLOY_SNAPDEPLOY_AR.md#L9) | 9 | `"- الحد المشترك هو 100 ساعة تشغيل للحاويات شهريًا، وحتى 4 حاويات بالحجم الصغير."` | — |
-| [SRC-51D44BE378-L000010](../DEPLOY_SNAPDEPLOY_AR.md#L10) | 10 | `"- الحاوية الصغيرة لها 512 MB RAM و0.25 vCPU، وتدخل في السكون بعد نحو 15 دقيقة بلا زيارات؛ قد يستغرق الاستيقاظ قرابة 60 ثانية."` | — |
-| [SRC-51D44BE378-L000011](../DEPLOY_SNAPDEPLOY_AR.md#L11) | 11 | `"- لا يوجد قرص دائم في الخطة المجانية؛ يُعاد ضبط نظام الملفات عند الاستيقاظ أو إعادة التشغيل أو النشر."` | — |
-| [SRC-51D44BE378-L000012](../DEPLOY_SNAPDEPLOY_AR.md#L12) | 12 | `"- يحصل التطبيق على عنوان HTTPS فرعي وشهادة TLS."` | — |
-| [SRC-51D44BE378-L000013](../DEPLOY_SNAPDEPLOY_AR.md#L13) | 13 | `""` | — |
-| [SRC-51D44BE378-L000014](../DEPLOY_SNAPDEPLOY_AR.md#L14) | 14 | `"قد تتغير الحدود والشروط؛ راجع [وثائق الخطة المجانية](https://snapdeploy.dev/docs/free-tier) قبل المتابعة. الخطة مناسبة لتجربة شخصية واختبار قبول، وليست تشغيلًا دائمًا أو مكانًا لحفظ بيانات عملاء."` | — |
-| [SRC-51D44BE378-L000015](../DEPLOY_SNAPDEPLOY_AR.md#L15) | 15 | `""` | — |
-| [SRC-51D44BE378-L000016](../DEPLOY_SNAPDEPLOY_AR.md#L16) | 16 | `"## 1. إنشاء الحساب وربط GitHub"` | — |
-| [SRC-51D44BE378-L000017](../DEPLOY_SNAPDEPLOY_AR.md#L17) | 17 | `""` | — |
-| [SRC-51D44BE378-L000018](../DEPLOY_SNAPDEPLOY_AR.md#L18) | 18 | `"1. افتح [SnapDeploy](https://snapdeploy.dev/) من متصفح الهاتف وأنشئ حسابًا بالبريد أو عبر GitHub."` | — |
-| [SRC-51D44BE378-L000019](../DEPLOY_SNAPDEPLOY_AR.md#L19) | 19 | `"2. أكّد البريد إذا طُلب ذلك، ثم افتح لوحة التحكم."` | — |
-| [SRC-51D44BE378-L000020](../DEPLOY_SNAPDEPLOY_AR.md#L20) | 20 | `"3. اختر **Deploy** ثم طريقة النشر من **GitHub repository**."` | — |
-| [SRC-51D44BE378-L000021](../DEPLOY_SNAPDEPLOY_AR.md#L21) | 21 | `"4. اربط حساب GitHub. إذا ظهرت إعدادات اختيار المستودعات، امنح الحد الأدنى من الوصول المطلوب بدل توسيع الصلاحيات بلا حاجة."` | — |
-| [SRC-51D44BE378-L000022](../DEPLOY_SNAPDEPLOY_AR.md#L22) | 22 | ``"5. اختر المستودع `mosabosama2030-oss/omarai)، والفرع `main)، ومجلد الجذر الذي يحتوي على `Dockerfile`."`` | — |
-| [SRC-51D44BE378-L000023](../DEPLOY_SNAPDEPLOY_AR.md#L23) | 23 | ``"6. تأكد أن المنصة اكتشفت `Dockerfile` الموجود في جذر المستودع. لا تحتاج إلى إنشاء ملف إعدادات خاص بالمنصة لهذه النسخة."`` | — |
-| [SRC-51D44BE378-L000024](../DEPLOY_SNAPDEPLOY_AR.md#L24) | 24 | `""` | — |
-| [SRC-51D44BE378-L000025](../DEPLOY_SNAPDEPLOY_AR.md#L25) | 25 | `"## ربط نسخة النشر بالمصدر"` | — |
-| [SRC-51D44BE378-L000026](../DEPLOY_SNAPDEPLOY_AR.md#L26) | 26 | `""` | — |
-| [SRC-51D44BE378-L000027](../DEPLOY_SNAPDEPLOY_AR.md#L27) | 27 | ``"لا يكفي أن يعمل `/api/health`؛ يجب أن يمكن ربط الخدمة بالالتزام الذي بُنيت منه الصورة. عند توفر إعداد Docker build arguments في المنصة، اضبط `OMARAI_BUILD_SHA` على SHA الكامل لالتزام المصدر الذي تنشره. هذا وسيط بناء للصورة، وليس سرًا، ولا تضعه في README على أنه تحقق لمجرد إدخاله."`` | — |
-| [SRC-51D44BE378-L000028](../DEPLOY_SNAPDEPLOY_AR.md#L28) | 28 | `""` | — |
-| [SRC-51D44BE378-L000029](../DEPLOY_SNAPDEPLOY_AR.md#L29) | 29 | ``"بعد النشر، يجب أن تعرض `/api/health` قيمة `build.sha` المطابقة، وأن ينجح hosted smoke على الالتزام نفسه. إذا لم تدعم المنصة تمرير وسيط البناء، فربط النسخة يظل غير مثبت ولا تعلن قبول النشر."`` | — |
-| [SRC-51D44BE378-L000030](../DEPLOY_SNAPDEPLOY_AR.md#L30) | 30 | `""` | — |
-| [SRC-51D44BE378-L000031](../DEPLOY_SNAPDEPLOY_AR.md#L31) | 31 | `"## 2. ضبط متغيرات البيئة والأسرار"` | — |
-| [SRC-51D44BE378-L000032](../DEPLOY_SNAPDEPLOY_AR.md#L32) | 32 | `""` | — |
-| [SRC-51D44BE378-L000033](../DEPLOY_SNAPDEPLOY_AR.md#L33) | 33 | ``"قد تعرض المنصة متغيرات مكتشفة من `.env.example`. القيم المكتوبة على شكل أمثلة ليست أسرارًا صالحة؛ استبدلها بقيمك الحقيقية في لوحة SnapDeploy فقط."`` | — |
-| [SRC-51D44BE378-L000034](../DEPLOY_SNAPDEPLOY_AR.md#L34) | 34 | `""` | — |
-| [SRC-51D44BE378-L000035](../DEPLOY_SNAPDEPLOY_AR.md#L35) | 35 | `"أضف أو اضبط المتغيرات الثلاثة التالية:"` | — |
-| [SRC-51D44BE378-L000036](../DEPLOY_SNAPDEPLOY_AR.md#L36) | 36 | `""` | — |
-| [SRC-51D44BE378-L000037](../DEPLOY_SNAPDEPLOY_AR.md#L37) | 37 | `"\| المتغير \| القيمة \|"` | — |
-| [SRC-51D44BE378-L000038](../DEPLOY_SNAPDEPLOY_AR.md#L38) | 38 | `"\|---\|---\|"` | — |
-| [SRC-51D44BE378-L000039](../DEPLOY_SNAPDEPLOY_AR.md#L39) | 39 | ``"\| `OMARAI_PUBLIC_DEPLOYMENT` \| `1` \|"`` | — |
-| [SRC-51D44BE378-L000040](../DEPLOY_SNAPDEPLOY_AR.md#L40) | 40 | ``"\| `OMARAI_ACCESS_TOKEN` \| رمز وصول عشوائي خاص بك، طوله 32 حرفًا على الأقل \|"`` | — |
-| [SRC-51D44BE378-L000041](../DEPLOY_SNAPDEPLOY_AR.md#L41) | 41 | ``"\| `OPENROUTER_API_KEY` \| مفتاح OpenRouter الخاص بك لتوليد الإجابات والتحليل \|"`` | — |
-| [SRC-51D44BE378-L000042](../DEPLOY_SNAPDEPLOY_AR.md#L42) | 42 | `""` | — |
-| [SRC-51D44BE378-L000043](../DEPLOY_SNAPDEPLOY_AR.md#L43) | 43 | `"أنشئ رمز الوصول في Termux محليًا باستخدام Python، ثم انسخه مباشرة إلى خانة السر في SnapDeploy:"` | — |
-| [SRC-51D44BE378-L000044](../DEPLOY_SNAPDEPLOY_AR.md#L44) | 44 | `""` | — |
-| [SRC-51D44BE378-L000045](../DEPLOY_SNAPDEPLOY_AR.md#L45) | 45 | ````"```bash"```` | — |
-| [SRC-51D44BE378-L000046](../DEPLOY_SNAPDEPLOY_AR.md#L46) | 46 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
-| [SRC-51D44BE378-L000047](../DEPLOY_SNAPDEPLOY_AR.md#L47) | 47 | ````"```"```` | — |
-| [SRC-51D44BE378-L000048](../DEPLOY_SNAPDEPLOY_AR.md#L48) | 48 | `""` | — |
-| [SRC-51D44BE378-L000049](../DEPLOY_SNAPDEPLOY_AR.md#L49) | 49 | `"لا ترسل الرمز أو مفتاح OpenRouter إلى ChatGPT أو DeepSeek، ولا تضعهما في GitHub أو ملف README أو لقطات شاشة. لا تستخدم مفتاح OpenRouter نفسه رمزًا لدخول التطبيق."` | — |
-| [SRC-51D44BE378-L000050](../DEPLOY_SNAPDEPLOY_AR.md#L50) | 50 | `""` | — |
-| [SRC-51D44BE378-L000051](../DEPLOY_SNAPDEPLOY_AR.md#L51) | 51 | ``"اترك `OMARAI_OPENROUTER_WEB_SEARCH` غير مضبوط؛ تفعيله خيار إضافي يمكن أن يستهلك رصيدًا. استخدام النماذج المجانية قد يظل خاضعًا لحصص ومعدلات توفر المزود، وقد تتغير النماذج المتاحة. راجع التسعير وحدود المفتاح لدى OpenRouter ولا توافق على موارد أو استخدام مدفوع."`` | — |
-| [SRC-51D44BE378-L000052](../DEPLOY_SNAPDEPLOY_AR.md#L52) | 52 | `""` | — |
-| [SRC-51D44BE378-L000053](../DEPLOY_SNAPDEPLOY_AR.md#L53) | 53 | `"## 3. النشر الأول"` | — |
-| [SRC-51D44BE378-L000054](../DEPLOY_SNAPDEPLOY_AR.md#L54) | 54 | `""` | — |
-| [SRC-51D44BE378-L000055](../DEPLOY_SNAPDEPLOY_AR.md#L55) | 55 | `"1. راجع اختيار المستودع والفرع والمتغيرات مرة أخيرة."` | — |
-| [SRC-51D44BE378-L000056](../DEPLOY_SNAPDEPLOY_AR.md#L56) | 56 | `"2. اضغط **Deploy** مرة واحدة وانتظر نتيجة البناء والتشغيل."` | — |
-| [SRC-51D44BE378-L000057](../DEPLOY_SNAPDEPLOY_AR.md#L57) | 57 | `"3. إذا فشل البناء، افتح سجل البناء واقرأ أول خطأ حقيقي قبل إعادة المحاولة؛ المحاولات الفاشلة قد تُحتسب ضمن حد النشر اليومي."` | — |
-| [SRC-51D44BE378-L000058](../DEPLOY_SNAPDEPLOY_AR.md#L58) | 58 | `"4. افتح عنوان HTTPS الذي أعطته المنصة. قد تكون أول زيارة بعد السكون صفحة استيقاظ أو تحتاج إلى الانتظار قرابة دقيقة."` | — |
-| [SRC-51D44BE378-L000059](../DEPLOY_SNAPDEPLOY_AR.md#L59) | 59 | ``"5. افتح `https://عنوان-خدمتك/api/health`. النجاح المبدئي هو استجابة HTTP 200 ومحتوى JSON يحتوي على `\"ok\": true`. نجاح الصحة وحده لا يثبت أن البحث والنموذج يعملان."`` | — |
-| [SRC-51D44BE378-L000060](../DEPLOY_SNAPDEPLOY_AR.md#L60) | 60 | `""` | — |
-| [SRC-51D44BE378-L000061](../DEPLOY_SNAPDEPLOY_AR.md#L61) | 61 | `"## 4. اختبار Omarai من الهاتف"` | — |
-| [SRC-51D44BE378-L000062](../DEPLOY_SNAPDEPLOY_AR.md#L62) | 62 | `""` | — |
-| [SRC-51D44BE378-L000063](../DEPLOY_SNAPDEPLOY_AR.md#L63) | 63 | `"1. افتح الصفحة الرئيسية للرابط المستضاف."` | — |
-| [SRC-51D44BE378-L000064](../DEPLOY_SNAPDEPLOY_AR.md#L64) | 64 | ``"2. أدخل `OMARAI_ACCESS_TOKEN` في خانة الوصول الآمن داخل الواجهة واحفظه على هذا الجهاز فقط."`` | — |
-| [SRC-51D44BE378-L000065](../DEPLOY_SNAPDEPLOY_AR.md#L65) | 65 | `"3. شغّل زر **اختبار حي للإنترنت والنموذج**."` | — |
-| [SRC-51D44BE378-L000066](../DEPLOY_SNAPDEPLOY_AR.md#L66) | 66 | `"4. أرسل سؤالًا عامًا بالعربية، مثل: «ما عاصمة مصر؟ اذكر مصادر قابلة للفتح». تأكد من ظهور إجابة ومصادر حقيقية، وافتح مصدرًا واحدًا على الأقل."` | — |
-| [SRC-51D44BE378-L000067](../DEPLOY_SNAPDEPLOY_AR.md#L67) | 67 | `"5. جرّب الطلب برمز غير صحيح وتأكد من رفض الوصول. لا تختبر ببيانات شخصية أو بيانات عملاء."` | — |
-| [SRC-51D44BE378-L000068](../DEPLOY_SNAPDEPLOY_AR.md#L68) | 68 | `"6. لا تعتبر النشر مقبولًا إذا نجحت الصفحة فقط وفشل تشخيص البحث أو النموذج."` | — |
-| [SRC-51D44BE378-L000069](../DEPLOY_SNAPDEPLOY_AR.md#L69) | 69 | `""` | — |
-| [SRC-51D44BE378-L000070](../DEPLOY_SNAPDEPLOY_AR.md#L70) | 70 | `"## 5. اختبار القبول الآلي الاختياري"` | — |
-| [SRC-51D44BE378-L000071](../DEPLOY_SNAPDEPLOY_AR.md#L71) | 71 | `""` | — |
-| [SRC-51D44BE378-L000072](../DEPLOY_SNAPDEPLOY_AR.md#L72) | 72 | `"المستودع يحتوي على workflow يدوي باسم **Omarai hosted acceptance smoke** في GitHub Actions. بعد أن تكون الخدمة قد استيقظت وتعمل:"` | — |
-| [SRC-51D44BE378-L000073](../DEPLOY_SNAPDEPLOY_AR.md#L73) | 73 | `""` | — |
-| [SRC-51D44BE378-L000074](../DEPLOY_SNAPDEPLOY_AR.md#L74) | 74 | `"1. افتح إعدادات المستودع في GitHub ثم **Settings → Secrets and variables → Actions**."` | — |
-| [SRC-51D44BE378-L000075](../DEPLOY_SNAPDEPLOY_AR.md#L75) | 75 | ``"2. أضف Secret باسم `OMARAI_ACCESS_TOKEN`، والقيمة مطابقة تمامًا لرمز التطبيق في SnapDeploy."`` | — |
-| [SRC-51D44BE378-L000076](../DEPLOY_SNAPDEPLOY_AR.md#L76) | 76 | ``"3. أضف Secret باسم `OMARAI_BASE_URL`، والقيمة هي أصل HTTPS فقط، مثل `https://your-service.containers.snapdeploy.app`؛ لا تضف `/api` ولا الرمز إلى الرابط."`` | — |
-| [SRC-51D44BE378-L000077](../DEPLOY_SNAPDEPLOY_AR.md#L77) | 77 | `"4. افتح **Actions → Omarai hosted acceptance smoke → Run workflow**."` | — |
-| [SRC-51D44BE378-L000078](../DEPLOY_SNAPDEPLOY_AR.md#L78) | 78 | `"5. راجع نتيجة الفحص. الاختبار يتصل فعليًا بالبحث والنموذج ويمكن أن يستهلك حصة المزود. لا تشغله حتى تكون موافقًا على هذا الاستخدام. خدمات SnapDeploy النائمة قد لا تستيقظ عبر طلبات CI؛ افتح الرابط يدويًا أولًا وانتظر اكتمال الاستيقاظ."` | — |
-| [SRC-51D44BE378-L000079](../DEPLOY_SNAPDEPLOY_AR.md#L79) | 79 | `""` | — |
-| [SRC-51D44BE378-L000080](../DEPLOY_SNAPDEPLOY_AR.md#L80) | 80 | `"لا تنشر سجلًا يحتوي على أسرار. احذف أو احجب أي رموز من السجلات قبل مشاركتها."` | — |
-| [SRC-51D44BE378-L000081](../DEPLOY_SNAPDEPLOY_AR.md#L81) | 81 | `""` | — |
-| [SRC-51D44BE378-L000082](../DEPLOY_SNAPDEPLOY_AR.md#L82) | 82 | `"## القيود الحالية التي لا يحلها النشر"` | — |
-| [SRC-51D44BE378-L000083](../DEPLOY_SNAPDEPLOY_AR.md#L83) | 83 | `""` | — |
-| [SRC-51D44BE378-L000084](../DEPLOY_SNAPDEPLOY_AR.md#L84) | 84 | `"- Omarai يرسل سؤال المستخدم والسياق المختار ومقتطفات المصادر إلى مزود النموذج الخارجي عند استخدام التوليد؛ لا تُدخل كلمات مرور أو بيانات سرية."` | — |
-| [SRC-51D44BE378-L000085](../DEPLOY_SNAPDEPLOY_AR.md#L85) | 85 | `"- البحث العام قد يتعطل أو يتعرض للتحديد والحجب؛ لا يوجد ضمان أن كل سؤال سينجح أو أن كل منصة اجتماعية ستكون قابلة للبحث."` | — |
-| [SRC-51D44BE378-L000086](../DEPLOY_SNAPDEPLOY_AR.md#L86) | 86 | ``"- قاعدة العملاء SQLite موجودة محليًا، لكن نظام الملفات المجاني مؤقت. لا تعتمد على `/leads` لحفظ بيانات دائمة؛ قد تضيع البيانات بعد السكون أو إعادة التشغيل أو النشر."`` | — |
-| [SRC-51D44BE378-L000087](../DEPLOY_SNAPDEPLOY_AR.md#L87) | 87 | `"- رمز التطبيق مشترك وليس نظام مستخدمين متعددين. لا توزعه على أشخاص لا تثق بهم."` | — |
-| [SRC-51D44BE378-L000088](../DEPLOY_SNAPDEPLOY_AR.md#L88) | 88 | `"- لا تعني نتيجة Smoke Test ضمان تشغيل دائم أو تدقيق أمني كامل."` | — |
-| [SRC-51D44BE378-L000089](../DEPLOY_SNAPDEPLOY_AR.md#L89) | 89 | `""` | — |
-| [SRC-51D44BE378-L000090](../DEPLOY_SNAPDEPLOY_AR.md#L90) | 90 | `"## روابط مرجعية"` | — |
-| [SRC-51D44BE378-L000091](../DEPLOY_SNAPDEPLOY_AR.md#L91) | 91 | `""` | — |
-| [SRC-51D44BE378-L000092](../DEPLOY_SNAPDEPLOY_AR.md#L92) | 92 | `"- [SnapDeploy — النشر من GitHub](https://snapdeploy.dev/docs/github)"` | — |
-| [SRC-51D44BE378-L000093](../DEPLOY_SNAPDEPLOY_AR.md#L93) | 93 | `"- [SnapDeploy — متغيرات البيئة والأسرار](https://snapdeploy.dev/docs/environment-variables)"` | — |
-| [SRC-51D44BE378-L000094](../DEPLOY_SNAPDEPLOY_AR.md#L94) | 94 | `"- [SnapDeploy — الخطة المجانية والحدود](https://snapdeploy.dev/docs/free-tier)"` | — |
-## وثائق وفهرسة
-
-### FILE-E599346ABE — [docs/generate_index.py](../generate_index.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-E599346ABE-L000001](../generate_index.py#L1) | 1 | `"\"\"\"Generate Omarai's deterministic repository-wide file and source-symbol index.\"\"\""` | — |
-| [SRC-E599346ABE-L000002](../generate_index.py#L2) | 2 | `""` | — |
-| [SRC-E599346ABE-L000003](../generate_index.py#L3) | 3 | `"from __future__ import annotations"` | — |
-| [SRC-E599346ABE-L000004](../generate_index.py#L4) | 4 | `""` | — |
-| [SRC-E599346ABE-L000005](../generate_index.py#L5) | 5 | `"import argparse"` | — |
-| [SRC-E599346ABE-L000006](../generate_index.py#L6) | 6 | `"import ast"` | — |
-| [SRC-E599346ABE-L000007](../generate_index.py#L7) | 7 | `"import hashlib"` | — |
-| [SRC-E599346ABE-L000008](../generate_index.py#L8) | 8 | `"import json"` | — |
-| [SRC-E599346ABE-L000009](../generate_index.py#L9) | 9 | `"import os"` | — |
-| [SRC-E599346ABE-L000010](../generate_index.py#L10) | 10 | `"import posixpath"` | — |
-| [SRC-E599346ABE-L000011](../generate_index.py#L11) | 11 | `"import re"` | — |
-| [SRC-E599346ABE-L000012](../generate_index.py#L12) | 12 | `"import subprocess"` | — |
-| [SRC-E599346ABE-L000013](../generate_index.py#L13) | 13 | `"import sys"` | — |
-| [SRC-E599346ABE-L000014](../generate_index.py#L14) | 14 | `"import tempfile"` | — |
-| [SRC-E599346ABE-L000015](../generate_index.py#L15) | 15 | `"import tokenize"` | — |
-| [SRC-E599346ABE-L000016](../generate_index.py#L16) | 16 | `"from io import StringIO"` | — |
-| [SRC-E599346ABE-L000017](../generate_index.py#L17) | 17 | `"from urllib.parse import quote"` | — |
-| [SRC-E599346ABE-L000018](../generate_index.py#L18) | 18 | `"from collections.abc import Sequence"` | — |
-| [SRC-E599346ABE-L000019](../generate_index.py#L19) | 19 | `"from dataclasses import dataclass"` | — |
-| [SRC-E599346ABE-L000020](../generate_index.py#L20) | 20 | `"from pathlib import Path"` | — |
-| [SRC-E599346ABE-L000021](../generate_index.py#L21) | 21 | `""` | — |
-| [SRC-E599346ABE-L000022](../generate_index.py#L22) | 22 | `"EXCLUDED_DIRECTORIES = frozenset("` | — |
-| [SRC-E599346ABE-L000023](../generate_index.py#L23) | 23 | `"    {"` | — |
-| [SRC-E599346ABE-L000024](../generate_index.py#L24) | 24 | `"        \".git\","` | — |
-| [SRC-E599346ABE-L000025](../generate_index.py#L25) | 25 | `"        \".hg\","` | — |
-| [SRC-E599346ABE-L000026](../generate_index.py#L26) | 26 | `"        \".svn\","` | — |
-| [SRC-E599346ABE-L000027](../generate_index.py#L27) | 27 | `"        \".venv\","` | — |
-| [SRC-E599346ABE-L000028](../generate_index.py#L28) | 28 | `"        \"venv\","` | — |
-| [SRC-E599346ABE-L000029](../generate_index.py#L29) | 29 | `"        \"env\","` | — |
-| [SRC-E599346ABE-L000030](../generate_index.py#L30) | 30 | `"        \"virtualenv\","` | — |
-| [SRC-E599346ABE-L000031](../generate_index.py#L31) | 31 | `"        \"__pycache__\","` | — |
-| [SRC-E599346ABE-L000032](../generate_index.py#L32) | 32 | `"        \".pytest_cache\","` | — |
-| [SRC-E599346ABE-L000033](../generate_index.py#L33) | 33 | `"        \".ruff_cache\","` | — |
-| [SRC-E599346ABE-L000034](../generate_index.py#L34) | 34 | `"        \".mypy_cache\","` | — |
-| [SRC-E599346ABE-L000035](../generate_index.py#L35) | 35 | `"        \".tox\","` | — |
-| [SRC-E599346ABE-L000036](../generate_index.py#L36) | 36 | `"        \".nox\","` | — |
-| [SRC-E599346ABE-L000037](../generate_index.py#L37) | 37 | `"        \"node_modules\","` | — |
-| [SRC-E599346ABE-L000038](../generate_index.py#L38) | 38 | `"        \"site-packages\","` | — |
-| [SRC-E599346ABE-L000039](../generate_index.py#L39) | 39 | `"        \"build\","` | — |
-| [SRC-E599346ABE-L000040](../generate_index.py#L40) | 40 | `"        \"dist\","` | — |
-| [SRC-E599346ABE-L000041](../generate_index.py#L41) | 41 | `"    }"` | — |
-| [SRC-E599346ABE-L000042](../generate_index.py#L42) | 42 | `")"` | — |
-| [SRC-E599346ABE-L000043](../generate_index.py#L43) | 43 | `"SENSITIVE_FILENAMES = frozenset("` | — |
-| [SRC-E599346ABE-L000044](../generate_index.py#L44) | 44 | `"    {"` | — |
-| [SRC-E599346ABE-L000045](../generate_index.py#L45) | 45 | `"        \".env\","` | — |
-| [SRC-E599346ABE-L000046](../generate_index.py#L46) | 46 | `"        \".env.local\","` | — |
-| [SRC-E599346ABE-L000047](../generate_index.py#L47) | 47 | `"        \".env.production\","` | — |
-| [SRC-E599346ABE-L000048](../generate_index.py#L48) | 48 | `"        \".env.development\","` | — |
-| [SRC-E599346ABE-L000049](../generate_index.py#L49) | 49 | `"        \"id_rsa\","` | — |
-| [SRC-E599346ABE-L000050](../generate_index.py#L50) | 50 | `"        \"id_ed25519\","` | — |
-| [SRC-E599346ABE-L000051](../generate_index.py#L51) | 51 | `"    }"` | — |
-| [SRC-E599346ABE-L000052](../generate_index.py#L52) | 52 | `")"` | — |
-| [SRC-E599346ABE-L000053](../generate_index.py#L53) | 53 | `"EXCLUDED_SUFFIXES = frozenset("` | — |
-| [SRC-E599346ABE-L000054](../generate_index.py#L54) | 54 | `"    {"` | — |
-| [SRC-E599346ABE-L000055](../generate_index.py#L55) | 55 | `"        \".pyc\","` | — |
-| [SRC-E599346ABE-L000056](../generate_index.py#L56) | 56 | `"        \".pyo\","` | — |
-| [SRC-E599346ABE-L000057](../generate_index.py#L57) | 57 | `"        \".sqlite\","` | — |
-| [SRC-E599346ABE-L000058](../generate_index.py#L58) | 58 | `"        \".sqlite3\","` | — |
-| [SRC-E599346ABE-L000059](../generate_index.py#L59) | 59 | `"        \".db\","` | — |
-| [SRC-E599346ABE-L000060](../generate_index.py#L60) | 60 | `"        \".pem\","` | — |
-| [SRC-E599346ABE-L000061](../generate_index.py#L61) | 61 | `"        \".key\","` | — |
-| [SRC-E599346ABE-L000062](../generate_index.py#L62) | 62 | `"        \".p12\","` | — |
-| [SRC-E599346ABE-L000063](../generate_index.py#L63) | 63 | `"        \".pfx\","` | — |
-| [SRC-E599346ABE-L000064](../generate_index.py#L64) | 64 | `"    }"` | — |
-| [SRC-E599346ABE-L000065](../generate_index.py#L65) | 65 | `")"` | — |
-| [SRC-E599346ABE-L000066](../generate_index.py#L66) | 66 | `"MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024"` | — |
-| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |
-| [SRC-E599346ABE-L000068](../generate_index.py#L68) | 68 | `"INDEX_RELATIVE_PATH = \"docs/MASTER_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000069](../generate_index.py#L69) | 69 | `"SOURCE_LINES_INDEX_RELATIVE_PATH = \"docs/SOURCE_LINES_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000070](../generate_index.py#L70) | 70 | `"COVERAGE_AUDIT_RELATIVE_PATH = \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
-| [SRC-E599346ABE-L000071](../generate_index.py#L71) | 71 | `"INDEX_OUTPUT_PATHS = frozenset("` | — |
-| [SRC-E599346ABE-L000072](../generate_index.py#L72) | 72 | `"    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}"` | — |
-| [SRC-E599346ABE-L000073](../generate_index.py#L73) | 73 | `")"` | — |
-| [SRC-E599346ABE-L000074](../generate_index.py#L74) | 74 | `"SOURCE_LINES_PAGES_DIR = \"docs/source_index\""` | — |
-| [SRC-E599346ABE-L000075](../generate_index.py#L75) | 75 | `"SOURCE_LINES_PAGE_SIZE = 800"` | — |
-| [SRC-E599346ABE-L000076](../generate_index.py#L76) | 76 | `"SOURCE_LINES_PAGE_RE = re.compile(r\"SOURCE_LINES_\\d{3,}\\.md\")"` | — |
-| [SRC-E599346ABE-L000077](../generate_index.py#L77) | 77 | `""` | — |
-| [SRC-E599346ABE-L000078](../generate_index.py#L78) | 78 | `"PYTHON_EXTENSIONS = frozenset({\".py\"})"` | — |
-| [SRC-E599346ABE-L000079](../generate_index.py#L79) | 79 | `"JAVASCRIPT_EXTENSIONS = frozenset({\".js\", \".mjs\", \".cjs\", \".jsx\", \".ts\", \".tsx\"})"` | — |
-| [SRC-E599346ABE-L000080](../generate_index.py#L80) | 80 | `"CSS_EXTENSIONS = frozenset({\".css\", \".scss\"})"` | — |
-| [SRC-E599346ABE-L000081](../generate_index.py#L81) | 81 | `"CONFIG_EXTENSIONS = frozenset({\".yml\", \".yaml\", \".toml\", \".json\", \".ini\", \".cfg\"})"` | — |
-| [SRC-E599346ABE-L000082](../generate_index.py#L82) | 82 | `"TEXT_SCAN_EXTENSIONS = ("` | — |
-| [SRC-E599346ABE-L000083](../generate_index.py#L83) | 83 | `"    PYTHON_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000084](../generate_index.py#L84) | 84 | `"    \| JAVASCRIPT_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000085](../generate_index.py#L85) | 85 | `"    \| CSS_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000086](../generate_index.py#L86) | 86 | `"    \| CONFIG_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000087](../generate_index.py#L87) | 87 | `"    \| frozenset({\".html\", \".htm\", \".sh\", \".md\", \".env.example\", \".example\"})"` | — |
-| [SRC-E599346ABE-L000088](../generate_index.py#L88) | 88 | `")"` | — |
-| [SRC-E599346ABE-L000089](../generate_index.py#L89) | 89 | `""` | — |
-| [SRC-E599346ABE-L000090](../generate_index.py#L90) | 90 | `"JS_IDENTIFIER = r\"[A-Za-z_$][A-Za-z0-9_$]*\""` | — |
-| [SRC-E599346ABE-L000091](../generate_index.py#L91) | 91 | `"JS_FUNCTION_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000092](../generate_index.py#L92) | 92 | `"    rf\"\\b(?:async\\s+)?function\\s*\\*?\\s+({JS_IDENTIFIER})\\s*\\(\""` | — |
-| [SRC-E599346ABE-L000093](../generate_index.py#L93) | 93 | `")"` | — |
-| [SRC-E599346ABE-L000094](../generate_index.py#L94) | 94 | `"JS_CLASS_RE = re.compile(rf\"\\bclass\\s+({JS_IDENTIFIER})\\b\")"` | — |
-| [SRC-E599346ABE-L000095](../generate_index.py#L95) | 95 | `"JS_ARROW_ASSIGNMENT_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000096](../generate_index.py#L96) | 96 | `"    rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\s*=\\s*\""` | — |
-| [SRC-E599346ABE-L000097](../generate_index.py#L97) | 97 | `"    rf\"(?:async\\s*)?(?:\\([^;\\n]*?\\)\|{JS_IDENTIFIER})\\s*=>\""` | — |
-| [SRC-E599346ABE-L000098](../generate_index.py#L98) | 98 | `")"` | — |
-| [SRC-E599346ABE-L000099](../generate_index.py#L99) | 99 | `"JS_FUNCTION_ASSIGNMENT_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000100](../generate_index.py#L100) | 100 | `"    rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\s*=\\s*(?:async\\s*)?function\\b\""` | — |
-| [SRC-E599346ABE-L000101](../generate_index.py#L101) | 101 | `")"` | — |
-| [SRC-E599346ABE-L000102](../generate_index.py#L102) | 102 | `"JS_VARIABLE_RE = re.compile(rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\b\")"` | — |
-| [SRC-E599346ABE-L000103](../generate_index.py#L103) | 103 | `"HTML_ATTRIBUTE_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000104](../generate_index.py#L104) | 104 | `"    r\"\"\"\\b(id\|name\|data-testid)\\s*=\\s*([\"'])(.*?)\\2\"\"\","` | — |
-| [SRC-E599346ABE-L000105](../generate_index.py#L105) | 105 | `"    flags=re.IGNORECASE \| re.DOTALL,"` | — |
-| [SRC-E599346ABE-L000106](../generate_index.py#L106) | 106 | `")"` | — |
-| [SRC-E599346ABE-L000107](../generate_index.py#L107) | 107 | `"HTML_SCRIPT_RE = re.compile(r\"<script\\b[^>]*>(.*?)</script\\s*>\", re.IGNORECASE \| re.DOTALL)"` | — |
-| [SRC-E599346ABE-L000108](../generate_index.py#L108) | 108 | `"HTML_STYLE_RE = re.compile(r\"<style\\b[^>]*>(.*?)</style\\s*>\", re.IGNORECASE \| re.DOTALL)"` | — |
-| [SRC-E599346ABE-L000109](../generate_index.py#L109) | 109 | `"CSS_COMMENT_RE = re.compile(r\"/\\*.*?\\*/\", re.DOTALL)"` | — |
-| [SRC-E599346ABE-L000110](../generate_index.py#L110) | 110 | `"CSS_CUSTOM_PROPERTY_RE = re.compile(r\"--([A-Za-z_][A-Za-z0-9_-]*)\\s*:\")"` | — |
-| [SRC-E599346ABE-L000111](../generate_index.py#L111) | 111 | `"CSS_CLASS_RE = re.compile(r\"(?<![\\w.-])\\.([A-Za-z_][A-Za-z0-9_-]*)\")"` | — |
-| [SRC-E599346ABE-L000112](../generate_index.py#L112) | 112 | `"CSS_ID_RE = re.compile(r\"(?<![\\w.#])#([A-Za-z_][A-Za-z0-9_-]*)\")"` | — |
-| [SRC-E599346ABE-L000113](../generate_index.py#L113) | 113 | `"SHELL_FUNCTION_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000114](../generate_index.py#L114) | 114 | `"    r\"^\\s*(?:function\\s+)?([A-Za-z_][A-Za-z0-9_]*)\\s*\\(\\s*\\)\\s*\\{?\","` | — |
-| [SRC-E599346ABE-L000115](../generate_index.py#L115) | 115 | `"    re.MULTILINE,"` | — |
-| [SRC-E599346ABE-L000116](../generate_index.py#L116) | 116 | `")"` | — |
-| [SRC-E599346ABE-L000117](../generate_index.py#L117) | 117 | `"MARKDOWN_HEADING_RE = re.compile(r\"^\\s{0,3}(#{1,6})\\s+(.+?)\\s*#*\\s*$\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000118](../generate_index.py#L118) | 118 | `"YAML_KEY_RE = re.compile(r\"^\\s*([A-Za-z_][A-Za-z0-9_.-]*)\\s*:\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000119](../generate_index.py#L119) | 119 | `"TOML_KEY_RE = re.compile(r\"^\\s*([A-Za-z0-9_.-]+)\\s*=\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000120](../generate_index.py#L120) | 120 | `"TOML_SECTION_RE = re.compile(r\"^\\s*\\[([^\\]]+)\\]\\s*$\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000121](../generate_index.py#L121) | 121 | `"JSON_KEY_RE = re.compile(r'\"([^\"]+)\"\\s*:')"` | — |
-| [SRC-E599346ABE-L000122](../generate_index.py#L122) | 122 | `"INI_SECTION_RE = re.compile(r\"^\\s*\\[([^\\]]+)\\]\\s*$\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000123](../generate_index.py#L123) | 123 | `"INI_KEY_RE = re.compile(r\"^\\s*([A-Za-z0-9_.-]+)\\s*=\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000124](../generate_index.py#L124) | 124 | `"UPPER_SNAKE_RE = re.compile(r\"\\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\\b\")"` | — |
-| [SRC-E599346ABE-L000125](../generate_index.py#L125) | 125 | `"API_PATH_RE = re.compile(r\"\"\"[\"'](/(?:api\|leads)(?:/[A-Za-z0-9_{}./-]+)*)[\"']\"\"\")"` | — |
-| [SRC-E599346ABE-L000126](../generate_index.py#L126) | 126 | `"FINDING_MARKER_NAMES = ("` | — |
-| [SRC-E599346ABE-L000127](../generate_index.py#L127) | 127 | `"    \"TODO\","` | — |
-| [SRC-E599346ABE-L000128](../generate_index.py#L128) | 128 | `"    \"FIXME\","` | — |
-| [SRC-E599346ABE-L000129](../generate_index.py#L129) | 129 | `"    \"BUG\","` | — |
-| [SRC-E599346ABE-L000130](../generate_index.py#L130) | 130 | `"    \"HACK\","` | — |
-| [SRC-E599346ABE-L000131](../generate_index.py#L131) | 131 | `"    \"XXX\","` | — |
-| [SRC-E599346ABE-L000132](../generate_index.py#L132) | 132 | `"    \"REVIEW\","` | — |
-| [SRC-E599346ABE-L000133](../generate_index.py#L133) | 133 | `"    \"SECURITY\","` | — |
-| [SRC-E599346ABE-L000134](../generate_index.py#L134) | 134 | `"    \"DEPRECATED\","` | — |
-| [SRC-E599346ABE-L000135](../generate_index.py#L135) | 135 | `"    \"ISSUE\","` | — |
-| [SRC-E599346ABE-L000136](../generate_index.py#L136) | 136 | `"    \"DEFECT\","` | — |
-| [SRC-E599346ABE-L000137](../generate_index.py#L137) | 137 | `"    \"REGRESSION\","` | — |
-| [SRC-E599346ABE-L000138](../generate_index.py#L138) | 138 | `"    \"RISK\","` | — |
-| [SRC-E599346ABE-L000139](../generate_index.py#L139) | 139 | `"    \"GAP\","` | — |
-| [SRC-E599346ABE-L000140](../generate_index.py#L140) | 140 | `"    \"ERROR\","` | — |
-| [SRC-E599346ABE-L000141](../generate_index.py#L141) | 141 | `"    \"WARNING\","` | — |
-| [SRC-E599346ABE-L000142](../generate_index.py#L142) | 142 | `"    \"PERF\","` | — |
-| [SRC-E599346ABE-L000143](../generate_index.py#L143) | 143 | `"    \"PRIVACY\","` | — |
-| [SRC-E599346ABE-L000144](../generate_index.py#L144) | 144 | `"    \"DATA_LOSS\","` | — |
-| [SRC-E599346ABE-L000145](../generate_index.py#L145) | 145 | `"    \"ACCESSIBILITY\","` | — |
-| [SRC-E599346ABE-L000146](../generate_index.py#L146) | 146 | `")"` | — |
-| [SRC-E599346ABE-L000147](../generate_index.py#L147) | 147 | `"_FINDING_MARKER_ALTERNATION = \"\|\".join("` | — |
-| [SRC-E599346ABE-L000148](../generate_index.py#L148) | 148 | `"    sorted(FINDING_MARKER_NAMES, key=len, reverse=True)"` | — |
-| [SRC-E599346ABE-L000149](../generate_index.py#L149) | 149 | `")"` | — |
-| [SRC-E599346ABE-L000150](../generate_index.py#L150) | 150 | `"FINDING_MARKER_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000151](../generate_index.py#L151) | 151 | `"    rf\"(?:^\|[;\|]\\s*)\\s*({_FINDING_MARKER_ALTERNATION})\\s*:\\s*(.*?)\""` | — |
-| [SRC-E599346ABE-L000152](../generate_index.py#L152) | 152 | `"    rf\"(?=(?:[;\|]\\s*)(?:{_FINDING_MARKER_ALTERNATION})\\s*:\|$)\""` | — |
-| [SRC-E599346ABE-L000153](../generate_index.py#L153) | 153 | `")"` | — |
-| [SRC-E599346ABE-L000154](../generate_index.py#L154) | 154 | `""` | — |
-| [SRC-E599346ABE-L000155](../generate_index.py#L155) | 155 | `""` | — |
-| [SRC-E599346ABE-L000156](../generate_index.py#L156) | 156 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000157](../generate_index.py#L157) | 157 | `"class IndexedSymbol:"` | — |
-| [SRC-E599346ABE-L000158](../generate_index.py#L158) | 158 | `"    \"\"\"Represent a Python definition or module/class assignment.\"\"\""` | — |
-| [SRC-E599346ABE-L000159](../generate_index.py#L159) | 159 | `""` | — |
-| [SRC-E599346ABE-L000160](../generate_index.py#L160) | 160 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000161](../generate_index.py#L161) | 161 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000162](../generate_index.py#L162) | 162 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000163](../generate_index.py#L163) | 163 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000164](../generate_index.py#L164) | 164 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000165](../generate_index.py#L165) | 165 | `"    documented: bool \| None"` | — |
-| [SRC-E599346ABE-L000166](../generate_index.py#L166) | 166 | `""` | — |
-| [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `""` | — |
-| [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000169](../generate_index.py#L169) | 169 | `"class IndexedFile:"` | — |
-| [SRC-E599346ABE-L000170](../generate_index.py#L170) | 170 | `"    \"\"\"Represent a repository file with stable identifiers and navigation metadata.\"\"\""` | — |
-| [SRC-E599346ABE-L000171](../generate_index.py#L171) | 171 | `""` | — |
-| [SRC-E599346ABE-L000172](../generate_index.py#L172) | 172 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000173](../generate_index.py#L173) | 173 | `"    file_type: str"` | — |
-| [SRC-E599346ABE-L000174](../generate_index.py#L174) | 174 | `"    size_bytes: int"` | — |
-| [SRC-E599346ABE-L000175](../generate_index.py#L175) | 175 | `"    line_count: int \| None"` | — |
-| [SRC-E599346ABE-L000176](../generate_index.py#L176) | 176 | `"    indexing_scope: str"` | — |
-| [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
-| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
-| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"class IndexedMarker:"` | — |
-| [SRC-E599346ABE-L000183](../generate_index.py#L183) | 183 | `"    \"\"\"Represent a statically discovered symbol outside the Python AST index.\"\"\""` | — |
-| [SRC-E599346ABE-L000184](../generate_index.py#L184) | 184 | `""` | — |
-| [SRC-E599346ABE-L000185](../generate_index.py#L185) | 185 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000186](../generate_index.py#L186) | 186 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000187](../generate_index.py#L187) | 187 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000188](../generate_index.py#L188) | 188 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000189](../generate_index.py#L189) | 189 | `""` | — |
-| [SRC-E599346ABE-L000190](../generate_index.py#L190) | 190 | `""` | — |
-| [SRC-E599346ABE-L000191](../generate_index.py#L191) | 191 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000192](../generate_index.py#L192) | 192 | `"class IndexedLine:"` | — |
-| [SRC-E599346ABE-L000193](../generate_index.py#L193) | 193 | `"    \"\"\"Represent one exact logical line from an eligible readable repository text file.\"\"\""` | — |
-| [SRC-E599346ABE-L000194](../generate_index.py#L194) | 194 | `""` | — |
-| [SRC-E599346ABE-L000195](../generate_index.py#L195) | 195 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000196](../generate_index.py#L196) | 196 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000197](../generate_index.py#L197) | 197 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000198](../generate_index.py#L198) | 198 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000199](../generate_index.py#L199) | 199 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000200](../generate_index.py#L200) | 200 | `"    content: str"` | — |
-| [SRC-E599346ABE-L000201](../generate_index.py#L201) | 201 | `""` | — |
-| [SRC-E599346ABE-L000202](../generate_index.py#L202) | 202 | `""` | — |
-| [SRC-E599346ABE-L000203](../generate_index.py#L203) | 203 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000204](../generate_index.py#L204) | 204 | `"class IndexedFinding:"` | — |
-| [SRC-E599346ABE-L000205](../generate_index.py#L205) | 205 | `"    \"\"\"Represent a source annotation that explicitly requests attention.\"\"\""` | — |
-| [SRC-E599346ABE-L000206](../generate_index.py#L206) | 206 | `""` | — |
-| [SRC-E599346ABE-L000207](../generate_index.py#L207) | 207 | `"    finding_id: str"` | — |
-| [SRC-E599346ABE-L000208](../generate_index.py#L208) | 208 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000209](../generate_index.py#L209) | 209 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000210](../generate_index.py#L210) | 210 | `"    marker: str"` | — |
-| [SRC-E599346ABE-L000211](../generate_index.py#L211) | 211 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000212](../generate_index.py#L212) | 212 | `""` | — |
-| [SRC-E599346ABE-L000213](../generate_index.py#L213) | 213 | `""` | — |
-| [SRC-E599346ABE-L000214](../generate_index.py#L214) | 214 | `"class IndexGenerationError(RuntimeError):"` | — |
-| [SRC-E599346ABE-L000215](../generate_index.py#L215) | 215 | `"    \"\"\"Signal that a complete Python AST index could not be generated.\"\"\""` | — |
-| [SRC-E599346ABE-L000216](../generate_index.py#L216) | 216 | `""` | — |
-| [SRC-E599346ABE-L000217](../generate_index.py#L217) | 217 | `""` | — |
-| [SRC-E599346ABE-L000218](../generate_index.py#L218) | 218 | `"class SymbolVisitor(ast.NodeVisitor):"` | — |
-| [SRC-E599346ABE-L000219](../generate_index.py#L219) | 219 | `"    \"\"\"Collect Python classes, functions, methods and module/class assignments.\"\"\""` | — |
