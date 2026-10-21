@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **74**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **959**
+- تعريفات Python المفهرسة: **961**
 - تعريفات Python موثقة بوجود Docstring: **189**
-- تعريفات Python بلا Docstring: **577**
+- تعريفات Python بلا Docstring: **579**
 - تعريفات لا ينطبق عليها Docstring: **193**
 - الرموز الساكنة الإضافية: **1416**
-- الأسطر النصية المفهرسة حرفيًا: **25092**
+- الأسطر النصية المفهرسة حرفيًا: **25140**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -80,7 +80,7 @@
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 10872 | 268 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 28451 | 772 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 30237 | 820 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 9230 | 231 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -634,6 +634,8 @@
 | [tests/test_api.py](../tests/test_api.py#L736) | دالة | test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable | لا توجد Docstring. | ناقص | 736 | [SRC-3451CC474D-L000736](../tests/test_api.py#L736) |
 | [tests/test_api.py](../tests/test_api.py#L751) | دالة | test_invalid_platform_commit_does_not_create_build_identity | لا توجد Docstring. | ناقص | 751 | [SRC-3451CC474D-L000751](../tests/test_api.py#L751) |
 | [tests/test_api.py](../tests/test_api.py#L763) | دالة | test_lead_store_uses_configured_database_path | لا توجد Docstring. | ناقص | 763 | [SRC-3451CC474D-L000763](../tests/test_api.py#L763) |
+| [tests/test_api.py](../tests/test_api.py#L776) | دالة | test_agent_concurrency_slot_released_after_operation_error | لا توجد Docstring. | ناقص | 776 | [SRC-3451CC474D-L000776](../tests/test_api.py#L776) |
+| [tests/test_api.py](../tests/test_api.py#L786) | دالة | test_agent_concurrency_slot_released_after_operation_error.answer_with_one_transient_failure | لا توجد Docstring. | ناقص | 786 | [SRC-3451CC474D-L000786](../tests/test_api.py#L786) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L8) | دالة | test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets | لا توجد Docstring. | ناقص | 8 | [SRC-DA61479D59-L000008](../tests/test_connector_summary_counters.py#L8) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L55) | دالة | test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction | لا توجد Docstring. | ناقص | 55 | [SRC-DA61479D59-L000055](../tests/test_connector_summary_counters.py#L55) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L95) | دالة | test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction.fetch | لا توجد Docstring. | ناقص | 95 | [SRC-DA61479D59-L000095](../tests/test_connector_summary_counters.py#L95) |

@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000600 إلى SRC-FA4E1423C3-L000013
+- النطاق: SRC-3451CC474D-L000600 إلى SRC-8455F405B6-L000023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -189,6 +189,54 @@
 | [SRC-3451CC474D-L000770](../../tests/test_api.py#L770) | 770 | `""` | — |
 | [SRC-3451CC474D-L000771](../../tests/test_api.py#L771) | 771 | `"    assert store.path == database_path"` | — |
 | [SRC-3451CC474D-L000772](../../tests/test_api.py#L772) | 772 | `"    assert database_path.is_file()"` | — |
+| [SRC-3451CC474D-L000773](../../tests/test_api.py#L773) | 773 | `""` | — |
+| [SRC-3451CC474D-L000774](../../tests/test_api.py#L774) | 774 | `""` | — |
+| [SRC-3451CC474D-L000775](../../tests/test_api.py#L775) | 775 | `""` | — |
+| [SRC-3451CC474D-L000776](../../tests/test_api.py#L776) | 776 | `"def test_agent_concurrency_slot_released_after_operation_error(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000777](../../tests/test_api.py#L777) | 777 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-3451CC474D-L000778](../../tests/test_api.py#L778) | 778 | `""` | — |
+| [SRC-3451CC474D-L000779](../../tests/test_api.py#L779) | 779 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000780](../../tests/test_api.py#L780) | 780 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000781](../../tests/test_api.py#L781) | 781 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
+| [SRC-3451CC474D-L000782](../../tests/test_api.py#L782) | 782 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
+| [SRC-3451CC474D-L000783](../../tests/test_api.py#L783) | 783 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
+| [SRC-3451CC474D-L000784](../../tests/test_api.py#L784) | 784 | `"    state = {\"fail\": True}"` | — |
+| [SRC-3451CC474D-L000785](../../tests/test_api.py#L785) | 785 | `""` | — |
+| [SRC-3451CC474D-L000786](../../tests/test_api.py#L786) | 786 | `"    def answer_with_one_transient_failure(self, question, history=None, mode=\"auto\"):"` | — |
+| [SRC-3451CC474D-L000787](../../tests/test_api.py#L787) | 787 | `"        if state[\"fail\"]:"` | — |
+| [SRC-3451CC474D-L000788](../../tests/test_api.py#L788) | 788 | `"            raise RuntimeError(\"synthetic operation failure\")"` | — |
+| [SRC-3451CC474D-L000789](../../tests/test_api.py#L789) | 789 | `"        return {"` | — |
+| [SRC-3451CC474D-L000790](../../tests/test_api.py#L790) | 790 | `"            \"answer\": \"اختبار ناجح\","` | — |
+| [SRC-3451CC474D-L000791](../../tests/test_api.py#L791) | 791 | `"            \"question\": question,"` | — |
+| [SRC-3451CC474D-L000792](../../tests/test_api.py#L792) | 792 | `"            \"search_query\": question,"` | — |
+| [SRC-3451CC474D-L000793](../../tests/test_api.py#L793) | 793 | `"            \"search_queries\": [],"` | — |
+| [SRC-3451CC474D-L000794](../../tests/test_api.py#L794) | 794 | `"            \"search_report\": {"` | — |
+| [SRC-3451CC474D-L000795](../../tests/test_api.py#L795) | 795 | `"                \"search_attempted\": False,"` | — |
+| [SRC-3451CC474D-L000796](../../tests/test_api.py#L796) | 796 | `"                \"search_outcome\": \"not_attempted\","` | — |
+| [SRC-3451CC474D-L000797](../../tests/test_api.py#L797) | 797 | `"            },"` | — |
+| [SRC-3451CC474D-L000798](../../tests/test_api.py#L798) | 798 | `"            \"sources\": [],"` | — |
+| [SRC-3451CC474D-L000799](../../tests/test_api.py#L799) | 799 | `"            \"used_language_model\": False,"` | — |
+| [SRC-3451CC474D-L000800](../../tests/test_api.py#L800) | 800 | `"            \"used_web_search\": False,"` | — |
+| [SRC-3451CC474D-L000801](../../tests/test_api.py#L801) | 801 | `"            \"search_attempted\": False,"` | — |
+| [SRC-3451CC474D-L000802](../../tests/test_api.py#L802) | 802 | `"            \"used_social_search\": False,"` | — |
+| [SRC-3451CC474D-L000803](../../tests/test_api.py#L803) | 803 | `"            \"warnings\": [],"` | — |
+| [SRC-3451CC474D-L000804](../../tests/test_api.py#L804) | 804 | `"            \"kind\": \"web_fallback\","` | — |
+| [SRC-3451CC474D-L000805](../../tests/test_api.py#L805) | 805 | `"        }"` | — |
+| [SRC-3451CC474D-L000806](../../tests/test_api.py#L806) | 806 | `""` | — |
+| [SRC-3451CC474D-L000807](../../tests/test_api.py#L807) | 807 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
+| [SRC-3451CC474D-L000808](../../tests/test_api.py#L808) | 808 | `""` | — |
+| [SRC-3451CC474D-L000809](../../tests/test_api.py#L809) | 809 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000810](../../tests/test_api.py#L810) | 810 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |
+| [SRC-3451CC474D-L000811](../../tests/test_api.py#L811) | 811 | `"    )"` | — |
+| [SRC-3451CC474D-L000812](../../tests/test_api.py#L812) | 812 | `"    assert status == 500"` | — |
+| [SRC-3451CC474D-L000813](../../tests/test_api.py#L813) | 813 | `"    assert payload[\"error\"] == \"internal server error\""` | — |
+| [SRC-3451CC474D-L000814](../../tests/test_api.py#L814) | 814 | `""` | — |
+| [SRC-3451CC474D-L000815](../../tests/test_api.py#L815) | 815 | `"    state[\"fail\"] = False"` | — |
+| [SRC-3451CC474D-L000816](../../tests/test_api.py#L816) | 816 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000817](../../tests/test_api.py#L817) | 817 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الثاني\"}"` | — |
+| [SRC-3451CC474D-L000818](../../tests/test_api.py#L818) | 818 | `"    )"` | — |
+| [SRC-3451CC474D-L000819](../../tests/test_api.py#L819) | 819 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000820](../../tests/test_api.py#L820) | 820 | `"    assert payload[\"answer\"] == \"اختبار ناجح\""` | — |
 ## اختبارات
 
 ### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
@@ -804,60 +852,3 @@
 | [SRC-8455F405B6-L000021](../../tests/test_evidence_signals.py#L21) | 21 | `"            \"url\": f\"https://{domain}/article-{index}\","` | — |
 | [SRC-8455F405B6-L000022](../../tests/test_evidence_signals.py#L22) | 22 | `"            \"domain\": domain,"` | — |
 | [SRC-8455F405B6-L000023](../../tests/test_evidence_signals.py#L23) | 23 | `"            \"source_class\": source_class,"` | — |
-| [SRC-8455F405B6-L000024](../../tests/test_evidence_signals.py#L24) | 24 | `"            \"providers\": [\"brave_search_api\"] if index % 2 else [\"bing_rss\"],"` | — |
-| [SRC-8455F405B6-L000025](../../tests/test_evidence_signals.py#L25) | 25 | `"            \"page_fetched\": index < 3,"` | — |
-| [SRC-8455F405B6-L000026](../../tests/test_evidence_signals.py#L26) | 26 | `"            \"published_at\": \"2026-10-10T09:00:00Z\" if index < 6 else \"\","` | — |
-| [SRC-8455F405B6-L000027](../../tests/test_evidence_signals.py#L27) | 27 | `"        })"` | — |
-| [SRC-8455F405B6-L000028](../../tests/test_evidence_signals.py#L28) | 28 | `""` | — |
-| [SRC-8455F405B6-L000029](../../tests/test_evidence_signals.py#L29) | 29 | `"    report = evidence_signal_report(sources, freshness=\"current\", now=now)"` | — |
-| [SRC-8455F405B6-L000030](../../tests/test_evidence_signals.py#L30) | 30 | `""` | — |
-| [SRC-8455F405B6-L000031](../../tests/test_evidence_signals.py#L31) | 31 | `"    assert report[\"unique_sources\"] == 8"` | — |
-| [SRC-8455F405B6-L000032](../../tests/test_evidence_signals.py#L32) | 32 | `"    assert report[\"unique_domains\"] == 8"` | — |
-| [SRC-8455F405B6-L000033](../../tests/test_evidence_signals.py#L33) | 33 | `"    assert report[\"providers_count\"] == 2"` | — |
-| [SRC-8455F405B6-L000034](../../tests/test_evidence_signals.py#L34) | 34 | `"    assert report[\"pages_read\"] == 3"` | — |
-| [SRC-8455F405B6-L000035](../../tests/test_evidence_signals.py#L35) | 35 | `"    assert report[\"primary_sources\"] == 2"` | — |
-| [SRC-8455F405B6-L000036](../../tests/test_evidence_signals.py#L36) | 36 | `"    assert report[\"dated_sources\"] == 6"` | — |
-| [SRC-8455F405B6-L000037](../../tests/test_evidence_signals.py#L37) | 37 | `"    assert report[\"recent_sources\"] == 6"` | — |
-| [SRC-8455F405B6-L000038](../../tests/test_evidence_signals.py#L38) | 38 | `"    assert report[\"coverage_level\"] == \"متعدد المصادر\""` | — |
-| [SRC-8455F405B6-L000039](../../tests/test_evidence_signals.py#L39) | 39 | `"    assert \"ليس احتمال صحة الإجابة\" in report[\"score_meaning\"]"` | — |
-| [SRC-8455F405B6-L000040](../../tests/test_evidence_signals.py#L40) | 40 | `""` | — |
-| [SRC-8455F405B6-L000041](../../tests/test_evidence_signals.py#L41) | 41 | `""` | — |
-| [SRC-8455F405B6-L000042](../../tests/test_evidence_signals.py#L42) | 42 | `"def test_evidence_signal_report_warns_when_no_sources_are_available():"` | — |
-| [SRC-8455F405B6-L000043](../../tests/test_evidence_signals.py#L43) | 43 | `"    report = evidence_signal_report([], freshness=\"current\")"` | — |
-| [SRC-8455F405B6-L000044](../../tests/test_evidence_signals.py#L44) | 44 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
-| [SRC-8455F405B6-L000045](../../tests/test_evidence_signals.py#L45) | 45 | `"    assert report[\"coverage_score\"] == 0"` | — |
-| [SRC-8455F405B6-L000046](../../tests/test_evidence_signals.py#L46) | 46 | `"    assert any(\"لا توجد مصادر\" in warning for warning in report[\"warnings\"])"` | — |
-| [SRC-8455F405B6-L000047](../../tests/test_evidence_signals.py#L47) | 47 | `"    assert any(\"حداثة النتائج غير مؤكدة\" in warning for warning in report[\"warnings\"])"` | — |
-| [SRC-8455F405B6-L000048](../../tests/test_evidence_signals.py#L48) | 48 | `""` | — |
-| [SRC-8455F405B6-L000049](../../tests/test_evidence_signals.py#L49) | 49 | `""` | — |
-| [SRC-8455F405B6-L000050](../../tests/test_evidence_signals.py#L50) | 50 | `"def test_publication_date_parser_handles_iso_rfc822_and_relative_dates():"` | — |
-| [SRC-8455F405B6-L000051](../../tests/test_evidence_signals.py#L51) | 51 | `"    now = datetime(2026, 10, 12, 12, 0, tzinfo=UTC)"` | — |
-| [SRC-8455F405B6-L000052](../../tests/test_evidence_signals.py#L52) | 52 | `"    assert _parse_publication_date(\"2026-10-10T09:00:00Z\", now) == datetime("` | — |
-| [SRC-8455F405B6-L000053](../../tests/test_evidence_signals.py#L53) | 53 | `"        2026, 10, 10, 9, 0, tzinfo=UTC"` | — |
-| [SRC-8455F405B6-L000054](../../tests/test_evidence_signals.py#L54) | 54 | `"    )"` | — |
-| [SRC-8455F405B6-L000055](../../tests/test_evidence_signals.py#L55) | 55 | `"    assert _parse_publication_date(\"2 days ago\", now) == datetime("` | — |
-| [SRC-8455F405B6-L000056](../../tests/test_evidence_signals.py#L56) | 56 | `"        2026, 10, 10, 12, 0, tzinfo=UTC"` | — |
-| [SRC-8455F405B6-L000057](../../tests/test_evidence_signals.py#L57) | 57 | `"    )"` | — |
-| [SRC-8455F405B6-L000058](../../tests/test_evidence_signals.py#L58) | 58 | `"    assert _parse_publication_date(\"date not supplied\", now) is None"` | — |
-## اختبارات
-
-### FILE-FA4E1423C3 — [tests/test_generate_index.py](../../tests/test_generate_index.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-FA4E1423C3-L000001](../../tests/test_generate_index.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-FA4E1423C3-L000002](../../tests/test_generate_index.py#L2) | 2 | `""` | — |
-| [SRC-FA4E1423C3-L000003](../../tests/test_generate_index.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-FA4E1423C3-L000004](../../tests/test_generate_index.py#L4) | 4 | `"from dataclasses import replace"` | — |
-| [SRC-FA4E1423C3-L000005](../../tests/test_generate_index.py#L5) | 5 | `"import sys"` | — |
-| [SRC-FA4E1423C3-L000006](../../tests/test_generate_index.py#L6) | 6 | `"from pathlib import Path"` | — |
-| [SRC-FA4E1423C3-L000007](../../tests/test_generate_index.py#L7) | 7 | `""` | — |
-| [SRC-FA4E1423C3-L000008](../../tests/test_generate_index.py#L8) | 8 | `"import pytest"` | — |
-| [SRC-FA4E1423C3-L000009](../../tests/test_generate_index.py#L9) | 9 | `""` | — |
-| [SRC-FA4E1423C3-L000010](../../tests/test_generate_index.py#L10) | 10 | `""` | — |
-| [SRC-FA4E1423C3-L000011](../../tests/test_generate_index.py#L11) | 11 | `"INDEXER_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"generate_index.py\""` | — |
-| [SRC-FA4E1423C3-L000012](../../tests/test_generate_index.py#L12) | 12 | `"INDEXER_SPEC = importlib.util.spec_from_file_location("` | — |
-| [SRC-FA4E1423C3-L000013](../../tests/test_generate_index.py#L13) | 13 | `"    \"omarai_generate_index_for_tests\","` | — |
