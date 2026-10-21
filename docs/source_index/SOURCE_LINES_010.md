@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000286 إلى SRC-E599346ABE-L000087
+- النطاق: SRC-EEF2E6447C-L000288 إلى SRC-E599346ABE-L000089
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-EEF2E6447C-L000286](../../api/omarai.py#L286) | 286 | `"                    while timestamps and timestamps[0] <= cutoff:"` | — |
-| [SRC-EEF2E6447C-L000287](../../api/omarai.py#L287) | 287 | `"                        timestamps.popleft()"` | — |
 | [SRC-EEF2E6447C-L000288](../../api/omarai.py#L288) | 288 | `"                    if not timestamps:"` | — |
 | [SRC-EEF2E6447C-L000289](../../api/omarai.py#L289) | 289 | `"                        cls._request_times.pop(key, None)"` | — |
 | [SRC-EEF2E6447C-L000290](../../api/omarai.py#L290) | 290 | `"                cls._rate_last_cleanup = now"` | — |
@@ -888,3 +886,5 @@
 | [SRC-E599346ABE-L000085](../generate_index.py#L85) | 85 | `"    \| CSS_EXTENSIONS"` | — |
 | [SRC-E599346ABE-L000086](../generate_index.py#L86) | 86 | `"    \| CONFIG_EXTENSIONS"` | — |
 | [SRC-E599346ABE-L000087](../generate_index.py#L87) | 87 | `"    \| frozenset({\".html\", \".htm\", \".sh\", \".md\", \".env.example\", \".example\"})"` | — |
+| [SRC-E599346ABE-L000088](../generate_index.py#L88) | 88 | `")"` | — |
+| [SRC-E599346ABE-L000089](../generate_index.py#L89) | 89 | `""` | — |
