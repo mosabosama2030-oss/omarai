@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from agents.intent_router import route_intent
+from agents.intent_router import resolve_followup_query, route_intent
 
 
 @pytest.mark.parametrize(
@@ -122,3 +122,56 @@ def test_summarization_routing_respects_page_text_and_missing_input(
     decision = route_intent(question, [])
     assert decision["route"] == expected_route
     assert decision["reason"] == expected_reason
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "فين؟",
+        "فين هي؟",
+        "مكانها فين؟",
+        "هل فيه ضمان؟",
+        "هل لها ضمان؟",
+        "ضمانها إيه؟",
+        "Where is it?",
+        "Does it have a warranty?",
+    ],
+)
+def test_missing_referent_questions_clarify_without_context(question: str) -> None:
+    decision = route_intent(question, history=None, mode="auto", requires_web=True)
+    assert decision["route"] == "CLARIFY"
+    assert decision["needs_clarification"] is True
+    assert decision["context_available"] is False
+
+
+@pytest.mark.parametrize("question", ["فين؟", "هل فيه ضمان؟", "كام سعرها؟"])
+def test_missing_referent_still_clarifies_in_explicit_search_mode(question: str) -> None:
+    decision = route_intent(question, history=None, mode="deep")
+    assert decision["route"] == "CLARIFY"
+    assert decision["needs_clarification"] is True
+
+
+def test_followup_resolver_uses_topic_from_latest_user_turn() -> None:
+    history = [
+        {"role": "user", "content": "عايز أعرف سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن معلومات موثوقة."},
+    ]
+    resolved = resolve_followup_query("هل فيه ضمان؟", history)
+    assert "آيفون 16" in resolved
+    assert "ضمان" in resolved
+
+
+def test_followup_resolver_does_not_resurrect_topic_after_acknowledgment() -> None:
+    history = [
+        {"role": "user", "content": "عايز أعرف سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن معلومات موثوقة."},
+        {"role": "user", "content": "شكرًا"},
+        {"role": "assistant", "content": "العفو."},
+    ]
+    assert resolve_followup_query("فين؟", history) == "فين؟"
+
+
+def test_followup_resolver_bounds_output_and_handles_malformed_history() -> None:
+    history = [{"role": "user", "content": "س" * 4000}]
+    assert len(resolve_followup_query("والسعر؟", history)) <= 500
+    assert resolve_followup_query("فين؟", {"role": "user", "content": "topic"}) == "فين؟"
