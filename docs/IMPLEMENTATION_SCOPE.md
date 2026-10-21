@@ -42,6 +42,9 @@ This establishes automated checks against that source revision; it does **not** 
 4. Treat page text, snippets, social posts, user history, and model output as untrusted data. They are not an authority to override application policy or execute privileged actions.
 5. Label each live connector probe, deployed smoke test, migration/restore test, and load test as `NOT_RUN` until that specific test actually runs. Do not infer its success from unit-test CI.
 
+## Explicit operating boundary — 2026-10-21
+
+The current shared bearer token and local lead store do not establish per-user identity, per-tenant ownership, or multi-tenant isolation. Treat the deployed instance as a single-operator private tool only. Process-local concurrency and IP rate-limit state do not coordinate multiple replicas; no production load/soak test has been run. A public multi-customer service remains out of scope until identity/authorization, tenant-scoped data access, distributed limits, durable storage/restore, and adversarial isolation tests are implemented and evidenced.
 ## Recommended next increments
 
 1. Keep testing the merged cooperative budget against failure paths and resource exhaustion; do not describe it as hard cancellation or load-tested capacity.
