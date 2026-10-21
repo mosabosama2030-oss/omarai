@@ -124,9 +124,15 @@ def _configured_agent_concurrency_limit() -> int:
     return max(1, min(configured, 8))
 
 
+BUILD_SHA_FILE = Path(__file__).resolve().parents[1] / "BUILD_SHA"
+
+
 def _build_sha() -> str:
-    """Return the source revision embedded at image build time, or 'unknown'."""
-    candidate = os.getenv("OMARAI_BUILD_SHA", "").strip().lower()
+    """Read the source revision baked into the image; never trust a runtime env override."""
+    try:
+        candidate = BUILD_SHA_FILE.read_text(encoding="ascii").strip().lower()
+    except (OSError, UnicodeError):
+        return "unknown"
     if len(candidate) == 40 and all(char in "0123456789abcdef" for char in candidate):
         return candidate
     return "unknown"
