@@ -9,9 +9,9 @@
 
 ## ملخص التغطية
 
-- الملفات في جرد المستودع: **74**
-- الملفات النصية المفهرسة سطرًا بسطر: **74**
-- الأسطر المفهرسة: **25470**
+- الملفات في جرد المستودع: **75**
+- الملفات النصية المفهرسة سطرًا بسطر: **75**
+- الأسطر المفهرسة: **25590**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 - صفحات الأسطر: **32**
 
@@ -34,23 +34,23 @@
 | [SOURCE_LINES_013](source_index/SOURCE_LINES_013.md) | 800 | SRC-E599346ABE-L001544 | SRC-E73001D9AC-L000162 |
 | [SOURCE_LINES_014](source_index/SOURCE_LINES_014.md) | 800 | SRC-E73001D9AC-L000163 | SRC-D17CE3D12F-L000059 |
 | [SOURCE_LINES_015](source_index/SOURCE_LINES_015.md) | 800 | SRC-D17CE3D12F-L000060 | SRC-D17CE3D12F-L000859 |
-| [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md) | 800 | SRC-D17CE3D12F-L000860 | SRC-65551FB29F-L000036 |
-| [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md) | 800 | SRC-65551FB29F-L000037 | SRC-0F910493E8-L000261 |
-| [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md) | 800 | SRC-0F910493E8-L000262 | SRC-D911B73392-L000079 |
-| [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) | 800 | SRC-D911B73392-L000080 | SRC-A8360B1B03-L000184 |
-| [SOURCE_LINES_020](source_index/SOURCE_LINES_020.md) | 800 | SRC-A8360B1B03-L000185 | SRC-90FAA34ADE-L000198 |
-| [SOURCE_LINES_021](source_index/SOURCE_LINES_021.md) | 800 | SRC-90FAA34ADE-L000199 | SRC-90FAA34ADE-L000998 |
-| [SOURCE_LINES_022](source_index/SOURCE_LINES_022.md) | 800 | SRC-90FAA34ADE-L000999 | SRC-B3062EB677-L000146 |
-| [SOURCE_LINES_023](source_index/SOURCE_LINES_023.md) | 800 | SRC-B3062EB677-L000147 | SRC-3451CC474D-L000431 |
-| [SOURCE_LINES_024](source_index/SOURCE_LINES_024.md) | 800 | SRC-3451CC474D-L000432 | SRC-6BCB799CEC-L000109 |
-| [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md) | 800 | SRC-6BCB799CEC-L000110 | SRC-829A979985-L000070 |
-| [SOURCE_LINES_026](source_index/SOURCE_LINES_026.md) | 800 | SRC-829A979985-L000071 | SRC-AAA21D04E8-L000254 |
-| [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) | 800 | SRC-AAA21D04E8-L000255 | SRC-B106ADC5EF-L000071 |
-| [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) | 800 | SRC-B106ADC5EF-L000072 | SRC-F725E90B2A-L000107 |
-| [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) | 800 | SRC-F725E90B2A-L000108 | SRC-F725E90B2A-L000907 |
-| [SOURCE_LINES_030](source_index/SOURCE_LINES_030.md) | 800 | SRC-F725E90B2A-L000908 | SRC-F725E90B2A-L001707 |
-| [SOURCE_LINES_031](source_index/SOURCE_LINES_031.md) | 800 | SRC-F725E90B2A-L001708 | SRC-F725E90B2A-L002507 |
-| [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) | 670 | SRC-F725E90B2A-L002508 | SRC-A16FA6D4B5-L000046 |
+| [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md) | 800 | SRC-D17CE3D12F-L000860 | SRC-B9C3015420-L000100 |
+| [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md) | 800 | SRC-B9C3015420-L000101 | SRC-0F910493E8-L000141 |
+| [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md) | 800 | SRC-0F910493E8-L000142 | SRC-61B24BEFCC-L000089 |
+| [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) | 800 | SRC-61B24BEFCC-L000090 | SRC-A8360B1B03-L000064 |
+| [SOURCE_LINES_020](source_index/SOURCE_LINES_020.md) | 800 | SRC-A8360B1B03-L000065 | SRC-90FAA34ADE-L000078 |
+| [SOURCE_LINES_021](source_index/SOURCE_LINES_021.md) | 800 | SRC-90FAA34ADE-L000079 | SRC-90FAA34ADE-L000878 |
+| [SOURCE_LINES_022](source_index/SOURCE_LINES_022.md) | 800 | SRC-90FAA34ADE-L000879 | SRC-B3062EB677-L000026 |
+| [SOURCE_LINES_023](source_index/SOURCE_LINES_023.md) | 800 | SRC-B3062EB677-L000027 | SRC-3451CC474D-L000311 |
+| [SOURCE_LINES_024](source_index/SOURCE_LINES_024.md) | 800 | SRC-3451CC474D-L000312 | SRC-3D0A619359-L000008 |
+| [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md) | 800 | SRC-3D0A619359-L000009 | SRC-FA4E1423C3-L000425 |
+| [SOURCE_LINES_026](source_index/SOURCE_LINES_026.md) | 800 | SRC-FA4E1423C3-L000426 | SRC-AAA21D04E8-L000134 |
+| [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) | 800 | SRC-AAA21D04E8-L000135 | SRC-44CDA52D01-L000035 |
+| [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) | 800 | SRC-44CDA52D01-L000036 | SRC-1C0D3D1206-L000092 |
+| [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) | 800 | SRC-1C0D3D1206-L000093 | SRC-F725E90B2A-L000787 |
+| [SOURCE_LINES_030](source_index/SOURCE_LINES_030.md) | 800 | SRC-F725E90B2A-L000788 | SRC-F725E90B2A-L001587 |
+| [SOURCE_LINES_031](source_index/SOURCE_LINES_031.md) | 800 | SRC-F725E90B2A-L001588 | SRC-F725E90B2A-L002387 |
+| [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) | 790 | SRC-F725E90B2A-L002388 | SRC-A16FA6D4B5-L000046 |
 
 ## جرد الملفات والوصول حسب الاسم
 
@@ -72,24 +72,24 @@
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | 284 | [SOURCE_LINES_023](source_index/SOURCE_LINES_023.md) |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | 872 | [SOURCE_LINES_023](source_index/SOURCE_LINES_023.md), [SOURCE_LINES_024](source_index/SOURCE_LINES_024.md) |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | 231 | [SOURCE_LINES_024](source_index/SOURCE_LINES_024.md) |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | 19 | [SOURCE_LINES_024](source_index/SOURCE_LINES_024.md) |
-| FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | 306 | [SOURCE_LINES_024](source_index/SOURCE_LINES_024.md), [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md) |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | 19 | [SOURCE_LINES_024](source_index/SOURCE_LINES_024.md), [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md) |
+| FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | 306 | [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md) |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | 58 | [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md) |
-| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | 475 | [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md) |
-| FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | 616 | [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md), [SOURCE_LINES_026](source_index/SOURCE_LINES_026.md) |
+| FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | 475 | [SOURCE_LINES_025](source_index/SOURCE_LINES_025.md), [SOURCE_LINES_026](source_index/SOURCE_LINES_026.md) |
+| FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | 616 | [SOURCE_LINES_026](source_index/SOURCE_LINES_026.md) |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | 289 | [SOURCE_LINES_026](source_index/SOURCE_LINES_026.md), [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | 192 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | 177 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | 160 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | 81 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) |
-| FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | 84 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) |
-| FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | 86 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md), [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
+| FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | 84 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md), [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
+| FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | 86 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | 146 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | 145 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | 195 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | 87 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
-| FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | 105 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | 2737 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md), [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md), [SOURCE_LINES_030](source_index/SOURCE_LINES_030.md), [SOURCE_LINES_031](source_index/SOURCE_LINES_031.md), [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) |
+| FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | 105 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md), [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | 2737 | [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md), [SOURCE_LINES_030](source_index/SOURCE_LINES_030.md), [SOURCE_LINES_031](source_index/SOURCE_LINES_031.md), [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | 1 | [SOURCE_LINES_001](source_index/SOURCE_LINES_001.md) |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | 376 | [SOURCE_LINES_001](source_index/SOURCE_LINES_001.md) |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | 391 | [SOURCE_LINES_001](source_index/SOURCE_LINES_001.md), [SOURCE_LINES_002](source_index/SOURCE_LINES_002.md) |
@@ -121,12 +121,13 @@
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | 1035 | [SOURCE_LINES_014](source_index/SOURCE_LINES_014.md), [SOURCE_LINES_015](source_index/SOURCE_LINES_015.md), [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md) |
 | FILE-89BEE4CE47 | وثائق وفهرسة | [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | 144 | [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md) |
 | FILE-855DA3B8BC | وثائق وفهرسة | [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | 260 | [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md) |
-| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | 184 | [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md) |
-| FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | 575 | [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md), [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md) |
+| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | 120 | [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md) |
+| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | 184 | [SOURCE_LINES_016](source_index/SOURCE_LINES_016.md), [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md) |
+| FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | 575 | [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md) |
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | 852 | [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md), [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md) |
-| FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | 105 | [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md) |
-| FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | 25 | [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md) |
-| FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | 130 | [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md), [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
+| FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | 105 | [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md), [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
+| FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | 25 | [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
+| FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | 130 | [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | 290 | [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | 71 | [SOURCE_LINES_001](source_index/SOURCE_LINES_001.md) |
 | FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | 185 | [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |

@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000185 إلى SRC-90FAA34ADE-L000198
+- النطاق: SRC-A8360B1B03-L000065 إلى SRC-90FAA34ADE-L000078
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,126 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000065](../../scripts/hosted_smoke_test.py#L65) | 65 | `"    host = parsed.hostname"` | — |
+| [SRC-A8360B1B03-L000066](../../scripts/hosted_smoke_test.py#L66) | 66 | `"    if \":\" in host and not host.startswith(\"[\"):"` | — |
+| [SRC-A8360B1B03-L000067](../../scripts/hosted_smoke_test.py#L67) | 67 | `"        host = f\"[{host}]\""` | — |
+| [SRC-A8360B1B03-L000068](../../scripts/hosted_smoke_test.py#L68) | 68 | `"    if port:"` | — |
+| [SRC-A8360B1B03-L000069](../../scripts/hosted_smoke_test.py#L69) | 69 | `"        host += f\":{port}\""` | — |
+| [SRC-A8360B1B03-L000070](../../scripts/hosted_smoke_test.py#L70) | 70 | `"    return f\"{parsed.scheme}://{host}\""` | — |
+| [SRC-A8360B1B03-L000071](../../scripts/hosted_smoke_test.py#L71) | 71 | `""` | — |
+| [SRC-A8360B1B03-L000072](../../scripts/hosted_smoke_test.py#L72) | 72 | `""` | — |
+| [SRC-A8360B1B03-L000073](../../scripts/hosted_smoke_test.py#L73) | 73 | `"def request_json(url: str, *, token: str = \"\", payload: dict[str, Any] \| None = None,"` | — |
+| [SRC-A8360B1B03-L000074](../../scripts/hosted_smoke_test.py#L74) | 74 | `"                 timeout: float = 90) -> tuple[int, dict[str, Any] \| None]:"` | — |
+| [SRC-A8360B1B03-L000075](../../scripts/hosted_smoke_test.py#L75) | 75 | `"    headers = {\"Accept\": \"application/json\"}"` | — |
+| [SRC-A8360B1B03-L000076](../../scripts/hosted_smoke_test.py#L76) | 76 | `"    data = None"` | — |
+| [SRC-A8360B1B03-L000077](../../scripts/hosted_smoke_test.py#L77) | 77 | `"    if payload is not None:"` | — |
+| [SRC-A8360B1B03-L000078](../../scripts/hosted_smoke_test.py#L78) | 78 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
+| [SRC-A8360B1B03-L000079](../../scripts/hosted_smoke_test.py#L79) | 79 | `"        data = json.dumps(payload, ensure_ascii=False).encode()"` | — |
+| [SRC-A8360B1B03-L000080](../../scripts/hosted_smoke_test.py#L80) | 80 | `"    if token:"` | — |
+| [SRC-A8360B1B03-L000081](../../scripts/hosted_smoke_test.py#L81) | 81 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
+| [SRC-A8360B1B03-L000082](../../scripts/hosted_smoke_test.py#L82) | 82 | `"    request = urllib.request.Request(url, data=data, headers=headers)"` | — |
+| [SRC-A8360B1B03-L000083](../../scripts/hosted_smoke_test.py#L83) | 83 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000084](../../scripts/hosted_smoke_test.py#L84) | 84 | `"        opener = urllib.request.build_opener(_SameOriginRedirectHandler())"` | — |
+| [SRC-A8360B1B03-L000085](../../scripts/hosted_smoke_test.py#L85) | 85 | `"        with opener.open(request, timeout=timeout) as response:"` | — |
+| [SRC-A8360B1B03-L000086](../../scripts/hosted_smoke_test.py#L86) | 86 | `"            status, body = response.status, response.read(1_000_000)"` | — |
+| [SRC-A8360B1B03-L000087](../../scripts/hosted_smoke_test.py#L87) | 87 | `"    except urllib.error.HTTPError as exc:"` | — |
+| [SRC-A8360B1B03-L000088](../../scripts/hosted_smoke_test.py#L88) | 88 | `"        status = exc.code"` | — |
+| [SRC-A8360B1B03-L000089](../../scripts/hosted_smoke_test.py#L89) | 89 | `"        body = exc.read(100_000)"` | — |
+| [SRC-A8360B1B03-L000090](../../scripts/hosted_smoke_test.py#L90) | 90 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
+| [SRC-A8360B1B03-L000091](../../scripts/hosted_smoke_test.py#L91) | 91 | `"        path = urllib.parse.urlsplit(url).path"` | — |
+| [SRC-A8360B1B03-L000092](../../scripts/hosted_smoke_test.py#L92) | 92 | `"        raise SmokeError(f\"Network request failed at {path}; check the service and network.\") from exc"` | — |
+| [SRC-A8360B1B03-L000093](../../scripts/hosted_smoke_test.py#L93) | 93 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000094](../../scripts/hosted_smoke_test.py#L94) | 94 | `"        result = json.loads(body.decode(\"utf-8\"))"` | — |
+| [SRC-A8360B1B03-L000095](../../scripts/hosted_smoke_test.py#L95) | 95 | `"    except (UnicodeDecodeError, json.JSONDecodeError):"` | — |
+| [SRC-A8360B1B03-L000096](../../scripts/hosted_smoke_test.py#L96) | 96 | `"        result = None"` | — |
+| [SRC-A8360B1B03-L000097](../../scripts/hosted_smoke_test.py#L97) | 97 | `"    return status, result if isinstance(result, dict) else None"` | — |
+| [SRC-A8360B1B03-L000098](../../scripts/hosted_smoke_test.py#L98) | 98 | `""` | — |
+| [SRC-A8360B1B03-L000099](../../scripts/hosted_smoke_test.py#L99) | 99 | `""` | — |
+| [SRC-A8360B1B03-L000100](../../scripts/hosted_smoke_test.py#L100) | 100 | `"def run_smoke("` | — |
+| [SRC-A8360B1B03-L000101](../../scripts/hosted_smoke_test.py#L101) | 101 | `"    origin: str,"` | — |
+| [SRC-A8360B1B03-L000102](../../scripts/hosted_smoke_test.py#L102) | 102 | `"    token: str,"` | — |
+| [SRC-A8360B1B03-L000103](../../scripts/hosted_smoke_test.py#L103) | 103 | `"    *,"` | — |
+| [SRC-A8360B1B03-L000104](../../scripts/hosted_smoke_test.py#L104) | 104 | `"    timeout: float = 90,"` | — |
+| [SRC-A8360B1B03-L000105](../../scripts/hosted_smoke_test.py#L105) | 105 | `"    allow_http: bool = False,"` | — |
+| [SRC-A8360B1B03-L000106](../../scripts/hosted_smoke_test.py#L106) | 106 | `"    expected_sha: str \| None = None,"` | — |
+| [SRC-A8360B1B03-L000107](../../scripts/hosted_smoke_test.py#L107) | 107 | `") -> dict[str, Any]:"` | — |
+| [SRC-A8360B1B03-L000108](../../scripts/hosted_smoke_test.py#L108) | 108 | `"    origin = normalize_origin(origin, allow_http)"` | — |
+| [SRC-A8360B1B03-L000109](../../scripts/hosted_smoke_test.py#L109) | 109 | `"    if expected_sha is not None and not re.fullmatch(r\"[0-9a-fA-F]{40}\", expected_sha.strip()):"` | — |
+| [SRC-A8360B1B03-L000110](../../scripts/hosted_smoke_test.py#L110) | 110 | `"        raise SmokeError(\"The expected source revision must be a full 40-character Git SHA.\")"` | — |
+| [SRC-A8360B1B03-L000111](../../scripts/hosted_smoke_test.py#L111) | 111 | `"    if len(token.strip()) < 32:"` | — |
+| [SRC-A8360B1B03-L000112](../../scripts/hosted_smoke_test.py#L112) | 112 | `"        raise SmokeError(\"OMARAI_ACCESS_TOKEN is missing or shorter than 32 characters.\")"` | — |
+| [SRC-A8360B1B03-L000113](../../scripts/hosted_smoke_test.py#L113) | 113 | `""` | — |
+| [SRC-A8360B1B03-L000114](../../scripts/hosted_smoke_test.py#L114) | 114 | `"    status, health = request_json(f\"{origin}/api/health\", timeout=min(timeout, 20))"` | — |
+| [SRC-A8360B1B03-L000115](../../scripts/hosted_smoke_test.py#L115) | 115 | `"    if status != 200 or not health or health.get(\"ok\") is not True:"` | — |
+| [SRC-A8360B1B03-L000116](../../scripts/hosted_smoke_test.py#L116) | 116 | `"        raise SmokeError(f\"Health check failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000117](../../scripts/hosted_smoke_test.py#L117) | 117 | `"    checks: dict[str, Any] = {\"health\": \"passed\"}"` | — |
+| [SRC-A8360B1B03-L000118](../../scripts/hosted_smoke_test.py#L118) | 118 | `""` | — |
+| [SRC-A8360B1B03-L000119](../../scripts/hosted_smoke_test.py#L119) | 119 | `"    build = health.get(\"build\")"` | — |
+| [SRC-A8360B1B03-L000120](../../scripts/hosted_smoke_test.py#L120) | 120 | `"    reported_sha = build.get(\"sha\") if isinstance(build, dict) else None"` | — |
+| [SRC-A8360B1B03-L000121](../../scripts/hosted_smoke_test.py#L121) | 121 | `"    if expected_sha is not None:"` | — |
+| [SRC-A8360B1B03-L000122](../../scripts/hosted_smoke_test.py#L122) | 122 | `"        expected = expected_sha.strip().lower()"` | — |
+| [SRC-A8360B1B03-L000123](../../scripts/hosted_smoke_test.py#L123) | 123 | `"        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:"` | — |
+| [SRC-A8360B1B03-L000124](../../scripts/hosted_smoke_test.py#L124) | 124 | `"            raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000125](../../scripts/hosted_smoke_test.py#L125) | 125 | `"                \"The deployed service SHA does not match the expected Git commit. \""` | — |
+| [SRC-A8360B1B03-L000126](../../scripts/hosted_smoke_test.py#L126) | 126 | `"                \"Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, \""` | — |
+| [SRC-A8360B1B03-L000127](../../scripts/hosted_smoke_test.py#L127) | 127 | `"                \"then rebuild and redeploy.\""` | — |
+| [SRC-A8360B1B03-L000128](../../scripts/hosted_smoke_test.py#L128) | 128 | `"            )"` | — |
+| [SRC-A8360B1B03-L000129](../../scripts/hosted_smoke_test.py#L129) | 129 | `"        checks[\"build_identity\"] = {"` | — |
+| [SRC-A8360B1B03-L000130](../../scripts/hosted_smoke_test.py#L130) | 130 | `"            \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000131](../../scripts/hosted_smoke_test.py#L131) | 131 | `"            \"expected_sha\": expected,"` | — |
+| [SRC-A8360B1B03-L000132](../../scripts/hosted_smoke_test.py#L132) | 132 | `"            \"reported_sha\": reported_sha.lower(),"` | — |
+| [SRC-A8360B1B03-L000133](../../scripts/hosted_smoke_test.py#L133) | 133 | `"        }"` | — |
+| [SRC-A8360B1B03-L000134](../../scripts/hosted_smoke_test.py#L134) | 134 | `"    else:"` | — |
+| [SRC-A8360B1B03-L000135](../../scripts/hosted_smoke_test.py#L135) | 135 | `"        checks[\"build_identity\"] = {"` | — |
+| [SRC-A8360B1B03-L000136](../../scripts/hosted_smoke_test.py#L136) | 136 | `"            \"status\": \"not_checked\","` | — |
+| [SRC-A8360B1B03-L000137](../../scripts/hosted_smoke_test.py#L137) | 137 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
+| [SRC-A8360B1B03-L000138](../../scripts/hosted_smoke_test.py#L138) | 138 | `"        }"` | — |
+| [SRC-A8360B1B03-L000139](../../scripts/hosted_smoke_test.py#L139) | 139 | `""` | — |
+| [SRC-A8360B1B03-L000140](../../scripts/hosted_smoke_test.py#L140) | 140 | `"    status, _ = request_json("` | — |
+| [SRC-A8360B1B03-L000141](../../scripts/hosted_smoke_test.py#L141) | 141 | `"        f\"{origin}/api/agent\", payload={\"question\": \"اختبار رفض الوصول غير المصرح به\"},"` | — |
+| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"        timeout=min(timeout, 20),"` | — |
+| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    )"` | — |
+| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `"    if status != 401:"` | — |
+| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `"        raise SmokeError(f\"Unauthenticated POST /api/agent should return 401, received {status}.\")"` | — |
+| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"    checks[\"authentication\"] = \"passed\""` | — |
+| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `""` | — |
+| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
+| [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    status, diagnostics = request_json("` | — |
+| [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
+| [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"        payload={\"test_model\": True, \"test_social\": False}, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"    )"` | — |
+| [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    if status != 200 or not diagnostics:"` | — |
+| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
+| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
+| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    model = parts.get(\"language_model\", {}) if isinstance(parts, dict) else {}"` | — |
+| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    if not isinstance(web, dict) or web.get(\"status\") != \"passed\":"` | — |
+| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"        raise SmokeError(\"The real web-search connectivity test did not pass.\")"` | — |
+| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"    if not isinstance(model, dict) or model.get(\"status\") != \"passed\":"` | — |
+| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        raise SmokeError(\"The configured language model did not pass a real completion test.\")"` | — |
+| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `"    checks[\"live_search\"] = {"` | — |
+| [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"        \"status\": \"passed\", \"result_count\": web.get(\"result_count\", 0),"` | — |
+| [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        \"provider_counts\": web.get(\"provider_counts\", {}),"` | — |
+| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"    }"` | — |
+| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    checks[\"language_model\"] = {\"status\": \"passed\", \"response_received\": True}"` | — |
+| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `""` | — |
+| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"    status, answer = request_json("` | — |
+| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"        payload={"` | — |
+| [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"            \"question\": \"اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر.\","` | — |
+| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            \"history\": [], \"mode\": \"auto\","` | — |
+| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        },"` | — |
+| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"    )"` | — |
+| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"    if status != 200 or not answer:"` | — |
+| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"    sources = answer.get(\"sources\")"` | — |
+| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    usable = ["` | — |
+| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        item for item in sources if isinstance(item, dict)"` | — |
+| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"        and isinstance(item.get(\"url\"), str)"` | — |
+| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
+| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
+| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"    ] if isinstance(sources, list) else []"` | — |
+| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
 | [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        raise SmokeError(\"Agent request did not return a live web search with usable source URLs.\")"` | — |
 | [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
 | [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"        raise SmokeError(\"Agent request did not confirm that a language model was used.\")"` | — |
@@ -723,123 +843,3 @@
 | [SRC-90FAA34ADE-L000076](../../tests/fixtures/answer_quality_cases.json#L76) | 76 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000077](../../tests/fixtures/answer_quality_cases.json#L77) | 77 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000078](../../tests/fixtures/answer_quality_cases.json#L78) | 78 | `"        \"Claims uncertainty about Egypt's capital\","` | — |
-| [SRC-90FAA34ADE-L000079](../../tests/fixtures/answer_quality_cases.json#L79) | 79 | `"        \"Invented alternative capitals\""` | — |
-| [SRC-90FAA34ADE-L000080](../../tests/fixtures/answer_quality_cases.json#L80) | 80 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000081](../../tests/fixtures/answer_quality_cases.json#L81) | 81 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000082](../../tests/fixtures/answer_quality_cases.json#L82) | 82 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000083](../../tests/fixtures/answer_quality_cases.json#L83) | 83 | `"        \"notes\": \"Stable geographic fact\""` | — |
-| [SRC-90FAA34ADE-L000084](../../tests/fixtures/answer_quality_cases.json#L84) | 84 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000085](../../tests/fixtures/answer_quality_cases.json#L85) | 85 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000086](../../tests/fixtures/answer_quality_cases.json#L86) | 86 | `"        \"Answer denies Cairo as capital without clarification\""` | — |
-| [SRC-90FAA34ADE-L000087](../../tests/fixtures/answer_quality_cases.json#L87) | 87 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000088](../../tests/fixtures/answer_quality_cases.json#L88) | 88 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000089](../../tests/fixtures/answer_quality_cases.json#L89) | 89 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000090](../../tests/fixtures/answer_quality_cases.json#L90) | 90 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000091](../../tests/fixtures/answer_quality_cases.json#L91) | 91 | `"      \"case_id\": \"AQ-004\","` | — |
-| [SRC-90FAA34ADE-L000092](../../tests/fixtures/answer_quality_cases.json#L92) | 92 | `"      \"category\": \"general_knowledge\","` | — |
-| [SRC-90FAA34ADE-L000093](../../tests/fixtures/answer_quality_cases.json#L93) | 93 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000094](../../tests/fixtures/answer_quality_cases.json#L94) | 94 | `"      \"question\": \"What is photosynthesis in one short paragraph?\","` | — |
-| [SRC-90FAA34ADE-L000095](../../tests/fixtures/answer_quality_cases.json#L95) | 95 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000096](../../tests/fixtures/answer_quality_cases.json#L96) | 96 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000097](../../tests/fixtures/answer_quality_cases.json#L97) | 97 | `"        \"Mentions light, plants/organisms, conversion to chemical energy\","` | — |
-| [SRC-90FAA34ADE-L000098](../../tests/fixtures/answer_quality_cases.json#L98) | 98 | `"        \"Concise\""` | — |
-| [SRC-90FAA34ADE-L000099](../../tests/fixtures/answer_quality_cases.json#L99) | 99 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000100](../../tests/fixtures/answer_quality_cases.json#L100) | 100 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000101](../../tests/fixtures/answer_quality_cases.json#L101) | 101 | `"        \"Claims live experimental measurement from the web\","` | — |
-| [SRC-90FAA34ADE-L000102](../../tests/fixtures/answer_quality_cases.json#L102) | 102 | `"        \"Presents speculative pseudoscience as fact\""` | — |
-| [SRC-90FAA34ADE-L000103](../../tests/fixtures/answer_quality_cases.json#L103) | 103 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000104](../../tests/fixtures/answer_quality_cases.json#L104) | 104 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000105](../../tests/fixtures/answer_quality_cases.json#L105) | 105 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000106](../../tests/fixtures/answer_quality_cases.json#L106) | 106 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000107](../../tests/fixtures/answer_quality_cases.json#L107) | 107 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000108](../../tests/fixtures/answer_quality_cases.json#L108) | 108 | `"        \"Answer is empty or off-topic\""` | — |
-| [SRC-90FAA34ADE-L000109](../../tests/fixtures/answer_quality_cases.json#L109) | 109 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000110](../../tests/fixtures/answer_quality_cases.json#L110) | 110 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000111](../../tests/fixtures/answer_quality_cases.json#L111) | 111 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000112](../../tests/fixtures/answer_quality_cases.json#L112) | 112 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000113](../../tests/fixtures/answer_quality_cases.json#L113) | 113 | `"      \"case_id\": \"AQ-005\","` | — |
-| [SRC-90FAA34ADE-L000114](../../tests/fixtures/answer_quality_cases.json#L114) | 114 | `"      \"category\": \"omarai_capabilities\","` | — |
-| [SRC-90FAA34ADE-L000115](../../tests/fixtures/answer_quality_cases.json#L115) | 115 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000116](../../tests/fixtures/answer_quality_cases.json#L116) | 116 | `"      \"question\": \"ازاي تقدر تساعدني؟ ايه اللي تقدر تعمله؟\","` | — |
-| [SRC-90FAA34ADE-L000117](../../tests/fixtures/answer_quality_cases.json#L117) | 117 | `"      \"expected_strategy\": \"local\","` | — |
-| [SRC-90FAA34ADE-L000118](../../tests/fixtures/answer_quality_cases.json#L118) | 118 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000119](../../tests/fixtures/answer_quality_cases.json#L119) | 119 | `"        \"Describes web research / Q&A capabilities honestly\","` | — |
-| [SRC-90FAA34ADE-L000120](../../tests/fixtures/answer_quality_cases.json#L120) | 120 | `"        \"May mention lead workspace as local tool\","` | — |
-| [SRC-90FAA34ADE-L000121](../../tests/fixtures/answer_quality_cases.json#L121) | 121 | `"        \"Does not claim to be a foundation model trained from scratch\""` | — |
-| [SRC-90FAA34ADE-L000122](../../tests/fixtures/answer_quality_cases.json#L122) | 122 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000123](../../tests/fixtures/answer_quality_cases.json#L123) | 123 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000124](../../tests/fixtures/answer_quality_cases.json#L124) | 124 | `"        \"Claims access to private user accounts without credentials\","` | — |
-| [SRC-90FAA34ADE-L000125](../../tests/fixtures/answer_quality_cases.json#L125) | 125 | `"        \"Claims guaranteed truth of every answer\","` | — |
-| [SRC-90FAA34ADE-L000126](../../tests/fixtures/answer_quality_cases.json#L126) | 126 | `"        \"Claims it can send messages to people automatically\""` | — |
-| [SRC-90FAA34ADE-L000127](../../tests/fixtures/answer_quality_cases.json#L127) | 127 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000128](../../tests/fixtures/answer_quality_cases.json#L128) | 128 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000129](../../tests/fixtures/answer_quality_cases.json#L129) | 129 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000130](../../tests/fixtures/answer_quality_cases.json#L130) | 130 | `"        \"notes\": \"Local capability router in WebAgent._is_self_question\""` | — |
-| [SRC-90FAA34ADE-L000131](../../tests/fixtures/answer_quality_cases.json#L131) | 131 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000132](../../tests/fixtures/answer_quality_cases.json#L132) | 132 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000133](../../tests/fixtures/answer_quality_cases.json#L133) | 133 | `"        \"used_web_search is true for pure capability question\""` | — |
-| [SRC-90FAA34ADE-L000134](../../tests/fixtures/answer_quality_cases.json#L134) | 134 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000135](../../tests/fixtures/answer_quality_cases.json#L135) | 135 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000136](../../tests/fixtures/answer_quality_cases.json#L136) | 136 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000137](../../tests/fixtures/answer_quality_cases.json#L137) | 137 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000138](../../tests/fixtures/answer_quality_cases.json#L138) | 138 | `"      \"case_id\": \"AQ-006\","` | — |
-| [SRC-90FAA34ADE-L000139](../../tests/fixtures/answer_quality_cases.json#L139) | 139 | `"      \"category\": \"omarai_capabilities\","` | — |
-| [SRC-90FAA34ADE-L000140](../../tests/fixtures/answer_quality_cases.json#L140) | 140 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000141](../../tests/fixtures/answer_quality_cases.json#L141) | 141 | `"      \"question\": \"How do you search the web and which engines can you use?\","` | — |
-| [SRC-90FAA34ADE-L000142](../../tests/fixtures/answer_quality_cases.json#L142) | 142 | `"      \"expected_strategy\": \"local\","` | — |
-| [SRC-90FAA34ADE-L000143](../../tests/fixtures/answer_quality_cases.json#L143) | 143 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000144](../../tests/fixtures/answer_quality_cases.json#L144) | 144 | `"        \"Mentions public search sources without inventing paid access as always-on\","` | — |
-| [SRC-90FAA34ADE-L000145](../../tests/fixtures/answer_quality_cases.json#L145) | 145 | `"        \"Does not expose API keys\""` | — |
-| [SRC-90FAA34ADE-L000146](../../tests/fixtures/answer_quality_cases.json#L146) | 146 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000147](../../tests/fixtures/answer_quality_cases.json#L147) | 147 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000148](../../tests/fixtures/answer_quality_cases.json#L148) | 148 | `"        \"Prints OPENROUTER_API_KEY or OMARAI_ACCESS_TOKEN\","` | — |
-| [SRC-90FAA34ADE-L000149](../../tests/fixtures/answer_quality_cases.json#L149) | 149 | `"        \"Claims unrestricted access to logged-in social feeds\""` | — |
-| [SRC-90FAA34ADE-L000150](../../tests/fixtures/answer_quality_cases.json#L150) | 150 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000151](../../tests/fixtures/answer_quality_cases.json#L151) | 151 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000152](../../tests/fixtures/answer_quality_cases.json#L152) | 152 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000153](../../tests/fixtures/answer_quality_cases.json#L153) | 153 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000154](../../tests/fixtures/answer_quality_cases.json#L154) | 154 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000155](../../tests/fixtures/answer_quality_cases.json#L155) | 155 | `"        \"Response contains env secret values\""` | — |
-| [SRC-90FAA34ADE-L000156](../../tests/fixtures/answer_quality_cases.json#L156) | 156 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000157](../../tests/fixtures/answer_quality_cases.json#L157) | 157 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000158](../../tests/fixtures/answer_quality_cases.json#L158) | 158 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000159](../../tests/fixtures/answer_quality_cases.json#L159) | 159 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000160](../../tests/fixtures/answer_quality_cases.json#L160) | 160 | `"      \"case_id\": \"AQ-007\","` | — |
-| [SRC-90FAA34ADE-L000161](../../tests/fixtures/answer_quality_cases.json#L161) | 161 | `"      \"category\": \"current_information\","` | — |
-| [SRC-90FAA34ADE-L000162](../../tests/fixtures/answer_quality_cases.json#L162) | 162 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000163](../../tests/fixtures/answer_quality_cases.json#L163) | 163 | `"      \"question\": \"ما آخر سعر تقريبي للذهب اليوم في السوق العالمية؟\","` | — |
-| [SRC-90FAA34ADE-L000164](../../tests/fixtures/answer_quality_cases.json#L164) | 164 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000165](../../tests/fixtures/answer_quality_cases.json#L165) | 165 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000166](../../tests/fixtures/answer_quality_cases.json#L166) | 166 | `"        \"Attempts web research or clearly states inability\","` | — |
-| [SRC-90FAA34ADE-L000167](../../tests/fixtures/answer_quality_cases.json#L167) | 167 | `"        \"Attaches sources if a price is stated\","` | — |
-| [SRC-90FAA34ADE-L000168](../../tests/fixtures/answer_quality_cases.json#L168) | 168 | `"        \"Treats price as time-sensitive\""` | — |
-| [SRC-90FAA34ADE-L000169](../../tests/fixtures/answer_quality_cases.json#L169) | 169 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000170](../../tests/fixtures/answer_quality_cases.json#L170) | 170 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000171](../../tests/fixtures/answer_quality_cases.json#L171) | 171 | `"        \"States an exact live price with no sources\","` | — |
-| [SRC-90FAA34ADE-L000172](../../tests/fixtures/answer_quality_cases.json#L172) | 172 | `"        \"Uses only a years-old snippet without warning\""` | — |
-| [SRC-90FAA34ADE-L000173](../../tests/fixtures/answer_quality_cases.json#L173) | 173 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000174](../../tests/fixtures/answer_quality_cases.json#L174) | 174 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000175](../../tests/fixtures/answer_quality_cases.json#L175) | 175 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000176](../../tests/fixtures/answer_quality_cases.json#L176) | 176 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000177](../../tests/fixtures/answer_quality_cases.json#L177) | 177 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000178](../../tests/fixtures/answer_quality_cases.json#L178) | 178 | `"            \"title\": \"Gold spot price update\","` | — |
-| [SRC-90FAA34ADE-L000179](../../tests/fixtures/answer_quality_cases.json#L179) | 179 | `"            \"url\": \"https://example-market.test/gold/2026-10-18\","` | — |
-| [SRC-90FAA34ADE-L000180](../../tests/fixtures/answer_quality_cases.json#L180) | 180 | `"            \"snippet\": \"Gold traded near 2650 USD/oz in the latest session.\","` | — |
-| [SRC-90FAA34ADE-L000181](../../tests/fixtures/answer_quality_cases.json#L181) | 181 | `"            \"published_at\": \"2026-10-18\","` | — |
-| [SRC-90FAA34ADE-L000182](../../tests/fixtures/answer_quality_cases.json#L182) | 182 | `"            \"domain\": \"example-market.test\","` | — |
-| [SRC-90FAA34ADE-L000183](../../tests/fixtures/answer_quality_cases.json#L183) | 183 | `"            \"provider\": \"fixture_search\""` | — |
-| [SRC-90FAA34ADE-L000184](../../tests/fixtures/answer_quality_cases.json#L184) | 184 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000185](../../tests/fixtures/answer_quality_cases.json#L185) | 185 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000186](../../tests/fixtures/answer_quality_cases.json#L186) | 186 | `"        \"notes\": \"When running live, require freshness-aware retrieval; fixture is for offline review of expected behaviors\""` | — |
-| [SRC-90FAA34ADE-L000187](../../tests/fixtures/answer_quality_cases.json#L187) | 187 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000188](../../tests/fixtures/answer_quality_cases.json#L188) | 188 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000189](../../tests/fixtures/answer_quality_cases.json#L189) | 189 | `"        \"Numeric price asserted with zero sources\","` | — |
-| [SRC-90FAA34ADE-L000190](../../tests/fixtures/answer_quality_cases.json#L190) | 190 | `"        \"evidence_status insufficient but answer is assertive\""` | — |
-| [SRC-90FAA34ADE-L000191](../../tests/fixtures/answer_quality_cases.json#L191) | 191 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000192](../../tests/fixtures/answer_quality_cases.json#L192) | 192 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000193](../../tests/fixtures/answer_quality_cases.json#L193) | 193 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000194](../../tests/fixtures/answer_quality_cases.json#L194) | 194 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000195](../../tests/fixtures/answer_quality_cases.json#L195) | 195 | `"      \"case_id\": \"AQ-008\","` | — |
-| [SRC-90FAA34ADE-L000196](../../tests/fixtures/answer_quality_cases.json#L196) | 196 | `"      \"category\": \"current_information\","` | — |
-| [SRC-90FAA34ADE-L000197](../../tests/fixtures/answer_quality_cases.json#L197) | 197 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000198](../../tests/fixtures/answer_quality_cases.json#L198) | 198 | `"      \"question\": \"What are the latest public headlines about Egyptian electricity supply today?\","` | — |
