@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **75**
+- ملفات المستودع في الجرد: **76**
 - ملفات Python المحللة: **41**
 - تعريفات Python المفهرسة: **970**
 - تعريفات Python موثقة بوجود Docstring: **191**
 - تعريفات Python بلا Docstring: **586**
 - تعريفات لا ينطبق عليها Docstring: **193**
-- الرموز الساكنة الإضافية: **1441**
-- الأسطر النصية المفهرسة حرفيًا: **25590**
+- الرموز الساكنة الإضافية: **1452**
+- الأسطر النصية المفهرسة حرفيًا: **25666**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -54,6 +54,7 @@
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 7339 | 53 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 10255 | 56 | جرد الملف + عناوين Markdown |
+| FILE-18ADDFCAF4 | وثائق وفهرسة | [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) | Markdown | 9382 | 76 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
@@ -1432,6 +1433,17 @@
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L36) | عنوان Markdown (H2) | Operating assumptions | 36 | [SRC-C8EA754D73-L000036](IMPLEMENTATION_SCOPE.md#L36) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L44) | عنوان Markdown (H2) | Explicit operating boundary — 2026-10-21 | 44 | [SRC-C8EA754D73-L000044](IMPLEMENTATION_SCOPE.md#L44) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L48) | عنوان Markdown (H2) | Recommended next increments | 48 | [SRC-C8EA754D73-L000048](IMPLEMENTATION_SCOPE.md#L48) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) | عنوان Markdown (H1) | سجل إغلاق تقرير Omarai وتقرير Grok — 21 أكتوبر 2026 | 1 | [SRC-18ADDFCAF4-L000001](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 9 | [SRC-18ADDFCAF4-L000009](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L9) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L10) | عنوان Markdown (H2) | 1. بنود تقرير Grok | 10 | [SRC-18ADDFCAF4-L000010](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L10) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 15 | [SRC-18ADDFCAF4-L000015](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L15) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L30) | عنوان Markdown (H2) | 2. بنود الضعف | 30 | [SRC-18ADDFCAF4-L000030](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L30) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L37) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 37 | [SRC-18ADDFCAF4-L000037](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L37) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L42) | عنوان Markdown (H2) | 3. ملفات وطلبات الدمج | 42 | [SRC-18ADDFCAF4-L000042](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L42) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L51) | عنوان Markdown (H2) | 4. إثبات الاختبارات | 51 | [SRC-18ADDFCAF4-L000051](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L51) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L61) | عنوان Markdown (H2) | 5. ما يتطلب مشاركة بشرية وبيئة حقيقية | 61 | [SRC-18ADDFCAF4-L000061](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L61) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 66 | [SRC-18ADDFCAF4-L000066](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L66) |
+| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L73) | عنوان Markdown (H2) | 6. قرار البوابة | 73 | [SRC-18ADDFCAF4-L000073](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L73) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل الاستثناءات والقرارات المؤجلة | 1 | [SRC-21D5D044E2-L000001](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) | عنوان Markdown (H2) | 1. الغرض وقواعد الاستخدام | 8 | [SRC-21D5D044E2-L000008](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) | عنوان Markdown (H2) | 2. سجل الاستثناءات المعتمدة | 22 | [SRC-21D5D044E2-L000022](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) |
