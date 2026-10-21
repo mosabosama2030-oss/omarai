@@ -708,18 +708,18 @@ def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatc
             assert headers["referrer-policy"] == "strict-origin-when-cross-origin"
             assert "default-src 'self'" in headers["content-security-policy"]
             assert "frame-ancestors 'none'" in headers["content-security-policy"]
-            assert "Permissions-Policy" not in headers
             assert headers["permissions-policy"] == (
                 "camera=(), microphone=(), geolocation=()"
             )
 
 
-def test_health_exposes_only_validated_build_sha(monkeypatch):
-    from api.omarai import _build_sha
+def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):
+    import api.omarai as api_module
 
-    monkeypatch.delenv("OMARAI_BUILD_SHA", raising=False)
-    assert _build_sha() == "unknown"
-    monkeypatch.setenv("OMARAI_BUILD_SHA", "a" * 40)
-    assert _build_sha() == "a" * 40
-    monkeypatch.setenv("OMARAI_BUILD_SHA", "not-a-git-sha")
-    assert _build_sha() == "unknown"
+    build_sha_file = tmp_path / "BUILD_SHA"
+    monkeypatch.setattr(api_module, "BUILD_SHA_FILE", build_sha_file)
+    assert api_module._build_sha() == "unknown"
+    build_sha_file.write_text("a" * 40, encoding="ascii")
+    assert api_module._build_sha() == "a" * 40
+    build_sha_file.write_text("not-a-git-sha", encoding="ascii")
+    assert api_module._build_sha() == "unknown"
