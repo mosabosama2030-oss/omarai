@@ -161,7 +161,7 @@
 | [SRC-1DB27D9318-L000032](../../.github/workflows/tests.yml#L32) | 32 | `"    steps:"` | — |
 | [SRC-1DB27D9318-L000033](../../.github/workflows/tests.yml#L33) | 33 | `"      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
 | [SRC-1DB27D9318-L000034](../../.github/workflows/tests.yml#L34) | 34 | `"      - name: Build production container"` | — |
-| [SRC-1DB27D9318-L000035](../../.github/workflows/tests.yml#L35) | 35 | `"        run: docker build --tag omarai:ci ."` | — |
+| [SRC-1DB27D9318-L000035](../../.github/workflows/tests.yml#L35) | 35 | `"        run: docker build --build-arg OMARAI_BUILD_SHA=\"${GITHUB_SHA}\" --tag omarai:ci ."` | — |
 | [SRC-1DB27D9318-L000036](../../.github/workflows/tests.yml#L36) | 36 | `"      - name: Start container and smoke-test protected API"` | — |
 | [SRC-1DB27D9318-L000037](../../.github/workflows/tests.yml#L37) | 37 | `"        shell: bash"` | — |
 | [SRC-1DB27D9318-L000038](../../.github/workflows/tests.yml#L38) | 38 | `"        run: \|"` | — |
@@ -187,7 +187,7 @@
 | [SRC-1DB27D9318-L000058](../../.github/workflows/tests.yml#L58) | 58 | `"            docker logs omarai-ci"` | — |
 | [SRC-1DB27D9318-L000059](../../.github/workflows/tests.yml#L59) | 59 | `"            exit 1"` | — |
 | [SRC-1DB27D9318-L000060](../../.github/workflows/tests.yml#L60) | 60 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000061](../../.github/workflows/tests.yml#L61) | 61 | `"          python -c 'import json; assert json.load(open(\"/tmp/omarai-health.json\", encoding=\"utf-8\"))[\"ok\"] is True'"` | — |
+| [SRC-1DB27D9318-L000061](../../.github/workflows/tests.yml#L61) | 61 | `"          python -c 'import json, os; d=json.load(open(\"/tmp/omarai-health.json\", encoding=\"utf-8\")); assert d[\"ok\"] is True; assert d[\"build\"][\"sha\"] == os.environ[\"GITHUB_SHA\"].lower()'"` | — |
 | [SRC-1DB27D9318-L000062](../../.github/workflows/tests.yml#L62) | 62 | `""` | — |
 | [SRC-1DB27D9318-L000063](../../.github/workflows/tests.yml#L63) | 63 | `"          status=\"$(curl --silent --output /tmp/omarai-unauth.json --write-out \"%{http_code}\" \\"` | — |
 | [SRC-1DB27D9318-L000064](../../.github/workflows/tests.yml#L64) | 64 | `"            --header \"Content-Type: application/json\" \\"` | — |
