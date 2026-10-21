@@ -124,6 +124,14 @@ def _configured_agent_concurrency_limit() -> int:
     return max(1, min(configured, 8))
 
 
+def _build_sha() -> str:
+    """Return the source revision embedded at image build time, or 'unknown'."""
+    candidate = os.getenv("OMARAI_BUILD_SHA", "").strip().lower()
+    if len(candidate) == 40 and all(char in "0123456789abcdef" for char in candidate):
+        return candidate
+    return "unknown"
+
+
 class Handler(BaseHTTPRequestHandler):
     def setup(self):
         """Install a reader with a strict deadline for the request line and headers."""
@@ -335,12 +343,25 @@ class Handler(BaseHTTPRequestHandler):
             return None
         return bytes(body)
 
+    def end_headers(self):
+        """Apply defensive browser headers to successful and error responses alike."""
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Frame-Options", "DENY")
+        self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
+            "form-action 'self'; connect-src 'self'; img-src 'self' data:; "
+            "style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:",
+        )
+        super().end_headers()
+
     def respond(self, status, payload, content_type="application/json; charset=utf-8"):
         body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()
         self.send_response(status)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))
-        self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Cache-Control", "no-store")
         origin = self.headers.get("Origin")
         if origin and self._origin_allowed(origin):
@@ -367,6 +388,12 @@ class Handler(BaseHTTPRequestHandler):
                     "app": "Omarai",
                     "mode": "web-research",
                     "agent": WebAgent.status(),
+                    "build": {
+                        "sha": _build_sha(),
+                        "sha_status": (
+                            "available" if _build_sha() != "unknown" else "unknown"
+                        ),
+                    },
                 },
             )
         if parsed.path == "/api/leads":
