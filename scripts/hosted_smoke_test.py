@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -96,9 +97,17 @@ def request_json(url: str, *, token: str = "", payload: dict[str, Any] | None = 
     return status, result if isinstance(result, dict) else None
 
 
-def run_smoke(origin: str, token: str, *, timeout: float = 90,
-              allow_http: bool = False) -> dict[str, Any]:
+def run_smoke(
+    origin: str,
+    token: str,
+    *,
+    timeout: float = 90,
+    allow_http: bool = False,
+    expected_sha: str | None = None,
+) -> dict[str, Any]:
     origin = normalize_origin(origin, allow_http)
+    if expected_sha is not None and not re.fullmatch(r"[0-9a-fA-F]{40}", expected_sha.strip()):
+        raise SmokeError("The expected source revision must be a full 40-character Git SHA.")
     if len(token.strip()) < 32:
         raise SmokeError("OMARAI_ACCESS_TOKEN is missing or shorter than 32 characters.")
 
@@ -106,6 +115,27 @@ def run_smoke(origin: str, token: str, *, timeout: float = 90,
     if status != 200 or not health or health.get("ok") is not True:
         raise SmokeError(f"Health check failed (HTTP {status}).")
     checks: dict[str, Any] = {"health": "passed"}
+
+    build = health.get("build")
+    reported_sha = build.get("sha") if isinstance(build, dict) else None
+    if expected_sha is not None:
+        expected = expected_sha.strip().lower()
+        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:
+            raise SmokeError(
+                "The deployed service SHA does not match the expected Git commit. "
+                "Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, "
+                "then rebuild and redeploy."
+            )
+        checks["build_identity"] = {
+            "status": "passed",
+            "expected_sha": expected,
+            "reported_sha": reported_sha.lower(),
+        }
+    else:
+        checks["build_identity"] = {
+            "status": "not_checked",
+            "reported_sha": reported_sha if isinstance(reported_sha, str) else "unknown",
+        }
 
     status, _ = request_json(
         f"{origin}/api/agent", payload={"question": "اختبار رفض الوصول غير المصرح به"},
@@ -173,12 +203,22 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Run live acceptance checks against hosted Omarai.")
     parser.add_argument("--base-url", default=os.getenv("OMARAI_BASE_URL", ""))
     parser.add_argument("--timeout", type=float, default=90)
+    parser.add_argument(
+        "--expected-sha",
+        default=os.getenv("OMARAI_EXPECTED_BUILD_SHA", ""),
+        help="Require the deployed image to report this full 40-character source Git SHA.",
+    )
     parser.add_argument("--allow-http", action="store_true",
                         help="Allow HTTP only for localhost/127.0.0.1/::1 testing.")
     args = parser.parse_args()
     try:
-        result = run_smoke(args.base_url, os.getenv("OMARAI_ACCESS_TOKEN", "").strip(),
-                           timeout=max(5, min(args.timeout, 240)), allow_http=args.allow_http)
+        result = run_smoke(
+            args.base_url,
+            os.getenv("OMARAI_ACCESS_TOKEN", "").strip(),
+            timeout=max(5, min(args.timeout, 240)),
+            allow_http=args.allow_http,
+            expected_sha=args.expected_sha or None,
+        )
     except SmokeError as exc:
         print(json.dumps({"result": "failed", "error": str(exc)}, ensure_ascii=False, indent=2))
         return 1
