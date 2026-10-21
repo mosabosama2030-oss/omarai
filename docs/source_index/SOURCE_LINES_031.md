@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001865 إلى SRC-F725E90B2A-L002664
+- النطاق: SRC-F725E90B2A-L001859 إلى SRC-F725E90B2A-L002658
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001859](../../tests/test_web_agent.py#L1859) | 1859 | `""` | — |
+| [SRC-F725E90B2A-L001860](../../tests/test_web_agent.py#L1860) | 1860 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L001861](../../tests/test_web_agent.py#L1861) | 1861 | `"        def __init__(self, content, finish_reason):"` | — |
+| [SRC-F725E90B2A-L001862](../../tests/test_web_agent.py#L1862) | 1862 | `"            self.body = json.dumps({"` | — |
+| [SRC-F725E90B2A-L001863](../../tests/test_web_agent.py#L1863) | 1863 | `"                \"choices\": [{"` | — |
+| [SRC-F725E90B2A-L001864](../../tests/test_web_agent.py#L1864) | 1864 | `"                    \"message\": {\"content\": content},"` | — |
 | [SRC-F725E90B2A-L001865](../../tests/test_web_agent.py#L1865) | 1865 | `"                    \"finish_reason\": finish_reason,"` | — |
 | [SRC-F725E90B2A-L001866](../../tests/test_web_agent.py#L1866) | 1866 | `"                }]"` | — |
 | [SRC-F725E90B2A-L001867](../../tests/test_web_agent.py#L1867) | 1867 | `"            }).encode(\"utf-8\")"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L002656](../../tests/test_web_agent.py#L2656) | 2656 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-F725E90B2A-L002657](../../tests/test_web_agent.py#L2657) | 2657 | `"            \"planning_method\": \"deterministic_fallback\","` | — |
 | [SRC-F725E90B2A-L002658](../../tests/test_web_agent.py#L2658) | 2658 | `"        }"` | — |
-| [SRC-F725E90B2A-L002659](../../tests/test_web_agent.py#L2659) | 2659 | `""` | — |
-| [SRC-F725E90B2A-L002660](../../tests/test_web_agent.py#L2660) | 2660 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L002661](../../tests/test_web_agent.py#L2661) | 2661 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
-| [SRC-F725E90B2A-L002662](../../tests/test_web_agent.py#L2662) | 2662 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L002663](../../tests/test_web_agent.py#L2663) | 2663 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L002664](../../tests/test_web_agent.py#L2664) | 2664 | `"        agent,"` | — |

@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **190**
 - تعريفات Python بلا Docstring: **582**
 - تعريفات لا ينطبق عليها Docstring: **193**
-- الرموز الساكنة الإضافية: **1417**
-- الأسطر النصية المفهرسة حرفيًا: **25311**
+- الرموز الساكنة الإضافية: **1418**
+- الأسطر النصية المفهرسة حرفيًا: **25317**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -52,7 +52,7 @@
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 7599 | 66 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 9498 | 94 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
-| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 6363 | 47 | جرد الملف + عناوين Markdown |
+| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 7339 | 53 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 9654 | 53 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
@@ -69,7 +69,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22955 | 185 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 23402 | 185 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
@@ -1410,13 +1410,14 @@
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 12 | [SRC-6E35221BFA-L000012](GO_LIVE_CHECKLIST_AR.md#L12) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 15 | [SRC-6E35221BFA-L000015](GO_LIVE_CHECKLIST_AR.md#L15) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 17 | [SRC-6E35221BFA-L000017](GO_LIVE_CHECKLIST_AR.md#L17) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | عنوان Markdown (H2) | التخزين الدائم والنسخ الاحتياطي — شرط قبل بيانات العملاء | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 21 | [SRC-6E35221BFA-L000021](GO_LIVE_CHECKLIST_AR.md#L21) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L26) | عنوان Markdown (H2) | اختبار قبول حي | 26 | [SRC-6E35221BFA-L000026](GO_LIVE_CHECKLIST_AR.md#L26) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 28 | [SRC-6E35221BFA-L000028](GO_LIVE_CHECKLIST_AR.md#L28) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L31) | عنوان Markdown (H2) | شروط النجاح | 31 | [SRC-6E35221BFA-L000031](GO_LIVE_CHECKLIST_AR.md#L31) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L40) | عنوان Markdown (H2) | اختبار يدوي على Android | 40 | [SRC-6E35221BFA-L000040](GO_LIVE_CHECKLIST_AR.md#L40) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L44) | عنوان Markdown (H2) | حدود مهمة | 44 | [SRC-6E35221BFA-L000044](GO_LIVE_CHECKLIST_AR.md#L44) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | عنوان Markdown (H2) | حد الاستخدام الحالي — مشغّل واحد فقط | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L25) | عنوان Markdown (H2) | التخزين الدائم والنسخ الاحتياطي — شرط قبل بيانات العملاء | 25 | [SRC-6E35221BFA-L000025](GO_LIVE_CHECKLIST_AR.md#L25) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 27 | [SRC-6E35221BFA-L000027](GO_LIVE_CHECKLIST_AR.md#L27) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L32) | عنوان Markdown (H2) | اختبار قبول حي | 32 | [SRC-6E35221BFA-L000032](GO_LIVE_CHECKLIST_AR.md#L32) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 34 | [SRC-6E35221BFA-L000034](GO_LIVE_CHECKLIST_AR.md#L34) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L37) | عنوان Markdown (H2) | شروط النجاح | 37 | [SRC-6E35221BFA-L000037](GO_LIVE_CHECKLIST_AR.md#L37) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L46) | عنوان Markdown (H2) | اختبار يدوي على Android | 46 | [SRC-6E35221BFA-L000046](GO_LIVE_CHECKLIST_AR.md#L46) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L50) | عنوان Markdown (H2) | حدود مهمة | 50 | [SRC-6E35221BFA-L000050](GO_LIVE_CHECKLIST_AR.md#L50) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدوده | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L7) | عنوان Markdown (H2) | Current baseline addendum — 2026-10-21 | 7 | [SRC-C8EA754D73-L000007](IMPLEMENTATION_SCOPE.md#L7) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 12 | [SRC-C8EA754D73-L000012](IMPLEMENTATION_SCOPE.md#L12) |

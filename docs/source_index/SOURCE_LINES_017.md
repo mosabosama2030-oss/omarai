@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000126 إلى SRC-0F910493E8-L000350
+- النطاق: SRC-65551FB29F-L000120 إلى SRC-0F910493E8-L000344
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000120](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L120) | 120 | `"\| L20 — سجل الأدلة \| ربط الادعاء بالمصدر والمقطع \| لا استشهاد بلا دعم \|"` | — |
+| [SRC-65551FB29F-L000121](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L121) | 121 | `"\| L21 — التركيب والاستدلال \| الإجابة على أساس الأدلة \| تمييز حقيقة/استنتاج/مجهول \|"` | — |
+| [SRC-65551FB29F-L000122](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L122) | 122 | `"\| L22 — التحقق المستقل \| كشف التعارض أو نقص الإسناد \| اختبارات منفصلة؛ لا مراجعة شكلية \|"` | — |
+| [SRC-65551FB29F-L000123](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L123) | 123 | `"\| L23 — صياغة الخلاصة \| العربية والروابط والقيود \| لا تضخيم لليقين \|"` | — |
+| [SRC-65551FB29F-L000124](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L124) | 124 | `"\| L24 — الذاكرة \| سياق المحادثة والتفضيلات المسموحة \| نطاق مستخدم واحتفاظ واضح \|"` | — |
+| [SRC-65551FB29F-L000125](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L125) | 125 | `"\| L25 — تخزين الحالة \| الديمومة والترحيل والاستعادة \| migrations وintegrity \|"` | — |
 | [SRC-65551FB29F-L000126](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L126) | 126 | `"\| L26 — المهام غير المتزامنة \| jobs/workers/queues عند الحاجة \| idempotency وإعادة تشغيل آمنة \|"` | — |
 | [SRC-65551FB29F-L000127](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L127) | 127 | `"\| L27 — الكاش \| تقليل التكرار والكمون \| صلاحية وخصوصية وإبطال \|"` | — |
 | [SRC-65551FB29F-L000128](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L128) | 128 | `"\| L28 — المراقبة والتدقيق \| logs/metrics/traces ومؤشرات العمل \| تنقيح البيانات والربط \|"` | — |
@@ -819,9 +825,3 @@
 | [SRC-0F910493E8-L000342](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L342) | 342 | `"- تسجيل أداة تنفيذية جديدة مباشرة."` | — |
 | [SRC-0F910493E8-L000343](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L343) | 343 | `"- توليد كود وتشغيله في مسار الإنتاج."` | — |
 | [SRC-0F910493E8-L000344](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L344) | 344 | `"- تعديل قواعد الأمان أو سقف الصلاحيات."` | — |
-| [SRC-0F910493E8-L000345](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L345) | 345 | `"- منح نفسه قدرة جديدة."` | — |
-| [SRC-0F910493E8-L000346](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L346) | 346 | `"- اعتماد أو تفعيل مخرجاته."` | — |
-| [SRC-0F910493E8-L000347](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L347) | 347 | `"- الادعاء بأن مسودته صالحة للتنفيذ دون اختبار."` | — |
-| [SRC-0F910493E8-L000348](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L348) | 348 | `""` | — |
-| [SRC-0F910493E8-L000349](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L349) | 349 | `"ويجب أن يثبت تقييمه فائدته مقارنة بكتابة التكوين يدويًا، بما يشمل جودة المخرجات، ووقت المراجعة، وحالات الرفض، والكلفة، وعدم تراجع الأمان."` | — |
-| [SRC-0F910493E8-L000350](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L350) | 350 | `""` | — |

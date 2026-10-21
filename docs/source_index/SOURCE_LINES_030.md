@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001065 إلى SRC-F725E90B2A-L001864
+- النطاق: SRC-F725E90B2A-L001059 إلى SRC-F725E90B2A-L001858
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001059](../../tests/test_web_agent.py#L1059) | 1059 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L001060](../../tests/test_web_agent.py#L1060) | 1060 | `""` | — |
+| [SRC-F725E90B2A-L001061](../../tests/test_web_agent.py#L1061) | 1061 | `"    result = agent.answer(\"لخص الصفحة https://example.com/research\")"` | — |
+| [SRC-F725E90B2A-L001062](../../tests/test_web_agent.py#L1062) | 1062 | `""` | — |
+| [SRC-F725E90B2A-L001063](../../tests/test_web_agent.py#L1063) | 1063 | `"    assert result[\"kind\"] != \"insufficient_evidence\""` | — |
+| [SRC-F725E90B2A-L001064](../../tests/test_web_agent.py#L1064) | 1064 | `"    assert result[\"answer\"] == \"ملخص محتوى الصفحة [المصدر 1].\""` | — |
 | [SRC-F725E90B2A-L001065](../../tests/test_web_agent.py#L1065) | 1065 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
 | [SRC-F725E90B2A-L001066](../../tests/test_web_agent.py#L1066) | 1066 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
 | [SRC-F725E90B2A-L001067](../../tests/test_web_agent.py#L1067) | 1067 | `"    assert any(\"لم يتم تأكيد محتواه\" in warning for warning in result[\"warnings\"])"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001856](../../tests/test_web_agent.py#L1856) | 1856 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001857](../../tests/test_web_agent.py#L1857) | 1857 | `"    agent.fallback_model = \"fallback/model\""` | — |
 | [SRC-F725E90B2A-L001858](../../tests/test_web_agent.py#L1858) | 1858 | `"    called = []"` | — |
-| [SRC-F725E90B2A-L001859](../../tests/test_web_agent.py#L1859) | 1859 | `""` | — |
-| [SRC-F725E90B2A-L001860](../../tests/test_web_agent.py#L1860) | 1860 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L001861](../../tests/test_web_agent.py#L1861) | 1861 | `"        def __init__(self, content, finish_reason):"` | — |
-| [SRC-F725E90B2A-L001862](../../tests/test_web_agent.py#L1862) | 1862 | `"            self.body = json.dumps({"` | — |
-| [SRC-F725E90B2A-L001863](../../tests/test_web_agent.py#L1863) | 1863 | `"                \"choices\": [{"` | — |
-| [SRC-F725E90B2A-L001864](../../tests/test_web_agent.py#L1864) | 1864 | `"                    \"message\": {\"content\": content},"` | — |

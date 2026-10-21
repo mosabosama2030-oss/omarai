@@ -4,9 +4,20 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000005 إلى SRC-3451CC474D-L000536
+- النطاق: SRC-B3062EB677-L000230 إلى SRC-3451CC474D-L000530
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-B3062EB677 — [tests/test_answer_quality_runner.py](../../tests/test_answer_quality_runner.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B3062EB677-L000230](../../tests/test_answer_quality_runner.py#L230) | 230 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
+| [SRC-B3062EB677-L000231](../../tests/test_answer_quality_runner.py#L231) | 231 | `"    assert payload[\"results\"][0][\"transport_ok\"] is False"` | — |
 ## اختبارات
 
 ### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
@@ -16,6 +27,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
+| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
+| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |
 | [SRC-1C77C97630-L000005](../../tests/test_answer_validation.py#L5) | 5 | `"import pytest"` | — |
 | [SRC-1C77C97630-L000006](../../tests/test_answer_validation.py#L6) | 6 | `""` | — |
 | [SRC-1C77C97630-L000007](../../tests/test_answer_validation.py#L7) | 7 | `"from agents.answer_validation import audit_answer_integrity"` | — |
@@ -819,9 +834,3 @@
 | [SRC-3451CC474D-L000528](../../tests/test_api.py#L528) | 528 | `"        while True:"` | — |
 | [SRC-3451CC474D-L000529](../../tests/test_api.py#L529) | 529 | `"            chunk = client.recv(4096)"` | — |
 | [SRC-3451CC474D-L000530](../../tests/test_api.py#L530) | 530 | `"            if not chunk:"` | — |
-| [SRC-3451CC474D-L000531](../../tests/test_api.py#L531) | 531 | `"                break"` | — |
-| [SRC-3451CC474D-L000532](../../tests/test_api.py#L532) | 532 | `"            response += chunk"` | — |
-| [SRC-3451CC474D-L000533](../../tests/test_api.py#L533) | 533 | `""` | — |
-| [SRC-3451CC474D-L000534](../../tests/test_api.py#L534) | 534 | `"    assert response.startswith(b\"HTTP/1.0 400\")"` | — |
-| [SRC-3451CC474D-L000535](../../tests/test_api.py#L535) | 535 | `"    assert b\"valid Content-Length is required\" in response"` | — |
-| [SRC-3451CC474D-L000536](../../tests/test_api.py#L536) | 536 | `""` | — |

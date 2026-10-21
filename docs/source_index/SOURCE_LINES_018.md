@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000351 إلى SRC-69F3587825-L000038
+- النطاق: SRC-0F910493E8-L000345 إلى SRC-69F3587825-L000032
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000345](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L345) | 345 | `"- منح نفسه قدرة جديدة."` | — |
+| [SRC-0F910493E8-L000346](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L346) | 346 | `"- اعتماد أو تفعيل مخرجاته."` | — |
+| [SRC-0F910493E8-L000347](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L347) | 347 | `"- الادعاء بأن مسودته صالحة للتنفيذ دون اختبار."` | — |
+| [SRC-0F910493E8-L000348](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L348) | 348 | `""` | — |
+| [SRC-0F910493E8-L000349](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L349) | 349 | `"ويجب أن يثبت تقييمه فائدته مقارنة بكتابة التكوين يدويًا، بما يشمل جودة المخرجات، ووقت المراجعة، وحالات الرفض، والكلفة، وعدم تراجع الأمان."` | — |
+| [SRC-0F910493E8-L000350](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L350) | 350 | `""` | — |
 | [SRC-0F910493E8-L000351](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L351) | 351 | `"## 9.1 توليد الكود التنفيذي"` | — |
 | [SRC-0F910493E8-L000352](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L352) | 352 | `""` | — |
 | [SRC-0F910493E8-L000353](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L353) | 353 | `"هذه مرحلة مستقبلية مستقلة واختيارية. لا تُفتح إلا إذا:"` | — |
@@ -846,9 +852,3 @@
 | [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"__pycache__\","` | — |
 | [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \".pytest_cache\","` | — |
 | [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \".ruff_cache\","` | — |
-| [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".mypy_cache\","` | — |
-| [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".tox\","` | — |
-| [SRC-69F3587825-L000035](../search_code.py#L35) | 35 | `"        \".nox\","` | — |
-| [SRC-69F3587825-L000036](../search_code.py#L36) | 36 | `"        \"node_modules\","` | — |
-| [SRC-69F3587825-L000037](../search_code.py#L37) | 37 | `"        \"site-packages\","` | — |
-| [SRC-69F3587825-L000038](../search_code.py#L38) | 38 | `"        \"build\","` | — |

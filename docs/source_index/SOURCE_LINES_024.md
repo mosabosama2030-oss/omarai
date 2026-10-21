@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000537 إلى SRC-6BCB799CEC-L000266
+- النطاق: SRC-3451CC474D-L000531 إلى SRC-6BCB799CEC-L000260
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000531](../../tests/test_api.py#L531) | 531 | `"                break"` | — |
+| [SRC-3451CC474D-L000532](../../tests/test_api.py#L532) | 532 | `"            response += chunk"` | — |
+| [SRC-3451CC474D-L000533](../../tests/test_api.py#L533) | 533 | `""` | — |
+| [SRC-3451CC474D-L000534](../../tests/test_api.py#L534) | 534 | `"    assert response.startswith(b\"HTTP/1.0 400\")"` | — |
+| [SRC-3451CC474D-L000535](../../tests/test_api.py#L535) | 535 | `"    assert b\"valid Content-Length is required\" in response"` | — |
+| [SRC-3451CC474D-L000536](../../tests/test_api.py#L536) | 536 | `""` | — |
 | [SRC-3451CC474D-L000537](../../tests/test_api.py#L537) | 537 | `""` | — |
 | [SRC-3451CC474D-L000538](../../tests/test_api.py#L538) | 538 | `"def test_api_returns_408_when_request_body_read_times_out(local_api, monkeypatch):"` | — |
 | [SRC-3451CC474D-L000539](../../tests/test_api.py#L539) | 539 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
@@ -837,9 +843,3 @@
 | [SRC-6BCB799CEC-L000258](../../tests/test_evidence_provenance.py#L258) | 258 | `"    class FakeClient:"` | — |
 | [SRC-6BCB799CEC-L000259](../../tests/test_evidence_provenance.py#L259) | 259 | `"        def __init__(self, *args, **kwargs):"` | — |
 | [SRC-6BCB799CEC-L000260](../../tests/test_evidence_provenance.py#L260) | 260 | `"            assert kwargs.get(\"trust_env\") is False"` | — |
-| [SRC-6BCB799CEC-L000261](../../tests/test_evidence_provenance.py#L261) | 261 | `"            assert kwargs.get(\"follow_redirects\") is False"` | — |
-| [SRC-6BCB799CEC-L000262](../../tests/test_evidence_provenance.py#L262) | 262 | `""` | — |
-| [SRC-6BCB799CEC-L000263](../../tests/test_evidence_provenance.py#L263) | 263 | `"        def __enter__(self):"` | — |
-| [SRC-6BCB799CEC-L000264](../../tests/test_evidence_provenance.py#L264) | 264 | `"            return self"` | — |
-| [SRC-6BCB799CEC-L000265](../../tests/test_evidence_provenance.py#L265) | 265 | `""` | — |
-| [SRC-6BCB799CEC-L000266](../../tests/test_evidence_provenance.py#L266) | 266 | `"        def __exit__(self, *args):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000039 إلى SRC-4FFD5AFC54-L000043
+- النطاق: SRC-69F3587825-L000033 إلى SRC-4FFD5AFC54-L000037
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".mypy_cache\","` | — |
+| [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".tox\","` | — |
+| [SRC-69F3587825-L000035](../search_code.py#L35) | 35 | `"        \".nox\","` | — |
+| [SRC-69F3587825-L000036](../search_code.py#L36) | 36 | `"        \"node_modules\","` | — |
+| [SRC-69F3587825-L000037](../search_code.py#L37) | 37 | `"        \"site-packages\","` | — |
+| [SRC-69F3587825-L000038](../search_code.py#L38) | 38 | `"        \"build\","` | — |
 | [SRC-69F3587825-L000039](../search_code.py#L39) | 39 | `"        \"dist\","` | — |
 | [SRC-69F3587825-L000040](../search_code.py#L40) | 40 | `"        \".tmp\","` | — |
 | [SRC-69F3587825-L000041](../search_code.py#L41) | 41 | `"        \".idea\","` | — |
@@ -457,7 +463,7 @@
 | [SRC-B335630551-L000077](../../README.md#L77) | 77 | `""` | — |
 | [SRC-B335630551-L000078](../../README.md#L78) | 78 | ``"A Dockerfile and Railway configuration are included for a public hosted instance. The API reports the validated source revision at `/api/health`: it prefers image-baked `BUILD_SHA`, then uses the hosting platform's documented Git commit metadata (`RAILWAY_GIT_COMMIT_SHA` or `RENDER_GIT_COMMIT`) when available. For other Docker hosts, pass `--build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`. Hosted smoke compares the reported revision with the checked-out commit. This is **deployment-ready configuration, not proof that a hosted service has already been created**: you must connect your Railway account to this GitHub repository, add secrets in the host dashboard, deploy, and run the live diagnostics."`` | — |
 | [SRC-B335630551-L000079](../../README.md#L79) | 79 | `""` | — |
-| [SRC-B335630551-L000080](../../README.md#L80) | 80 | ``"Before public binding, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `OMARAI_ACCESS_TOKEN` of at least 32 characters. The app refuses public binding without both. Set `OPENROUTER_API_KEY` in the hosting provider's secret variables for natural-language planning and synthesis. If the browser UI is served from a different origin, set `OMARAI_ALLOWED_ORIGINS` to a comma-separated allowlist of trusted origins (scheme + host + optional port, no path and no `*`). The API sends CORS headers only to allowed origins and handles preflight `OPTIONS`; when you open `/` on the same deployed service, the built-in UI uses relative `/api/...` URLs and normally needs no extra origin entry. Public API routes require the bearer token and have a default in-memory limit of 20 requests per minute per client IP. The Arabic UI provides a separate access-token field; it stores only that app token in the browser's local storage, not the provider API key."`` | — |
+| [SRC-B335630551-L000080](../../README.md#L80) | 80 | ``"**Single-operator limit:** the current bearer token is shared application access, not an individual identity or tenant boundary. The lead workspace does not provide confirmed per-customer data isolation. Keep this deployment private to one operator; do not use it to store confidential records for multiple customers. Request concurrency and IP rate limits are process-local, not distributed, and no production load capacity has been established. Before public binding, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `OMARAI_ACCESS_TOKEN` of at least 32 characters. The app refuses public binding without both. Set `OPENROUTER_API_KEY` in the hosting provider's secret variables for natural-language planning and synthesis. If the browser UI is served from a different origin, set `OMARAI_ALLOWED_ORIGINS` to a comma-separated allowlist of trusted origins (scheme + host + optional port, no path and no `*`). The API sends CORS headers only to allowed origins and handles preflight `OPTIONS`; when you open `/` on the same deployed service, the built-in UI uses relative `/api/...` URLs and normally needs no extra origin entry. Public API routes require the bearer token and have a default in-memory limit of 20 requests per minute per client IP. The Arabic UI provides a separate access-token field; it stores only that app token in the browser's local storage, not the provider API key."`` | — |
 | [SRC-B335630551-L000081](../../README.md#L81) | 81 | `""` | — |
 | [SRC-B335630551-L000082](../../README.md#L82) | 82 | ``"See the step-by-step Arabic instructions in `docs/DEPLOY_RAILWAY_AR.md`. Before treating a deployment as accepted, follow the [hosted go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) and run the manually triggered [hosted acceptance smoke workflow](.github/workflows/hosted-smoke.yml) after configuring the GitHub Actions secrets `OMARAI_ACCESS_TOKEN` and `OMARAI_BASE_URL` (the latter must be only the service's HTTPS origin). The workflow uses that administrator-configured target rather than accepting a free-form URL alongside a secret, preventing accidental or unauthorized token disclosure to arbitrary hosts. It makes real model/search requests and may incur usage charges. SQLite on ephemeral hosting is not durable storage for customer records. When a host provides a genuinely persistent mounted volume, set `OMARAI_DB_PATH` to a file inside that mount (for example, `/data/omarai.sqlite3`). This variable only selects the path; it does not create or attach a volume, and it does not replace an automated backup and a tested restore. Keep the workspace disabled for important customer records until persistence across restart/redeploy and restore have been verified on the actual host."`` | — |
 | [SRC-B335630551-L000083](../../README.md#L83) | 83 | `""` | — |
@@ -882,9 +888,3 @@
 | [SRC-4FFD5AFC54-L000035](../../scripts/run_answer_quality_benchmark.py#L35) | 35 | `"from pathlib import Path"` | — |
 | [SRC-4FFD5AFC54-L000036](../../scripts/run_answer_quality_benchmark.py#L36) | 36 | `""` | — |
 | [SRC-4FFD5AFC54-L000037](../../scripts/run_answer_quality_benchmark.py#L37) | 37 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-4FFD5AFC54-L000038](../../scripts/run_answer_quality_benchmark.py#L38) | 38 | `"DEFAULT_CORPUS = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-4FFD5AFC54-L000039](../../scripts/run_answer_quality_benchmark.py#L39) | 39 | `"MAX_RESPONSE_BYTES = 2_000_000"` | — |
-| [SRC-4FFD5AFC54-L000040](../../scripts/run_answer_quality_benchmark.py#L40) | 40 | `""` | — |
-| [SRC-4FFD5AFC54-L000041](../../scripts/run_answer_quality_benchmark.py#L41) | 41 | `""` | — |
-| [SRC-4FFD5AFC54-L000042](../../scripts/run_answer_quality_benchmark.py#L42) | 42 | `"def validate_base_url(base_url: str, *, token_present: bool = False) -> str:"` | — |
-| [SRC-4FFD5AFC54-L000043](../../scripts/run_answer_quality_benchmark.py#L43) | 43 | `"    \"\"\"Validate and normalize an API origin before any request can carry a token.\"\"\""` | — |

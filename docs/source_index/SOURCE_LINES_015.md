@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000139 إلى SRC-D17CE3D12F-L000938
+- النطاق: SRC-D17CE3D12F-L000133 إلى SRC-D17CE3D12F-L000932
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000133](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L133) | 133 | `"6. SHOULD قياس كلفة الطلب من حيث زمن CPU والذاكرة وحركة الشبكة واستدعاءات البحث والنموذج والتخزين."` | — |
+| [SRC-D17CE3D12F-L000134](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L134) | 134 | `"7. MUST تحديد نقطة الفشل الأولى المعروفة أو المجهولة: حد الموفر، أو ذاكرة العملية، أو اتصالات قاعدة البيانات، أو زمن المهام، أو حصة الاستضافة."` | — |
+| [SRC-D17CE3D12F-L000135](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L135) | 135 | `"8. SHOULD إجراء اختبارات load وstress وsoak بصورة تدريجية عندما تسمح البيئة؛ لا يساوي اختبار قصير ناجح إثبات تحمل يوم كامل أو ذروة كبيرة."` | — |
+| [SRC-D17CE3D12F-L000136](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L136) | 136 | `"9. MUST فحص أثر المنافسة (contention) والـ N+1 queries والتكرار غير الضروري وفتح الاتصالات على زمن الاستجابة."` | — |
+| [SRC-D17CE3D12F-L000137](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L137) | 137 | `"10. MUST تحسين بناءً على قياسات، ثم إعادة القياس مع اختبار الانحدار."` | — |
+| [SRC-D17CE3D12F-L000138](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L138) | 138 | `""` | — |
 | [SRC-D17CE3D12F-L000139](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L139) | 139 | `"## 9. حدود الموارد والتوازن بين الإنصاف والتكلفة"` | — |
 | [SRC-D17CE3D12F-L000140](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L140) | 140 | `""` | — |
 | [SRC-D17CE3D12F-L000141](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L141) | 141 | `"1. MUST تحديد حد لكل طلب ولكل مستخدم/مفتاح عند وجود هوية، يشمل الوقت والحجم والتوازي وعدد الخطوات والاستدعاءات والتكلفة المقدرة."` | — |
@@ -810,9 +816,3 @@
 | [SRC-D17CE3D12F-L000930](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L930) | 930 | `"5. MUST توثيق أي إجراء يدوي عالي المخاطر بطريقة تقلل احتمال الخطأ عند تنفيذه."` | — |
 | [SRC-D17CE3D12F-L000931](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L931) | 931 | `"6. SHOULD توفير مبدأ فصل الواجبات منطقيًا حتى عندما يكون المنفذ شخصًا واحدًا، عبر مراجعة لاحقة مستقلة أو فحوص تلقائية في التغييرات الحساسة."` | — |
 | [SRC-D17CE3D12F-L000932](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L932) | 932 | `"7. MUST عدم إعطاء وكيل صلاحية اعتماد عمله بنفسه في الدمج أو النشر أو قبول المخاطر العالية."` | — |
-| [SRC-D17CE3D12F-L000933](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L933) | 933 | `"8. SHOULD الاحتفاظ بمؤشرات تشغيل واضحة تُقلل العبء المعرفي وتساعد التشخيص."` | — |
-| [SRC-D17CE3D12F-L000934](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L934) | 934 | `"9. MUST أن يكون هناك بديل تشغيلي مفهوم عند نفاد حصة موفر أو تعطل حساب أو غياب مطور لفترة."` | — |
-| [SRC-D17CE3D12F-L000935](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L935) | 935 | `"10. SHOULD استخدام قوائم تحقق للمهام المتكررة، لا كبديل للفهم بل لتقليل النسيان."` | — |
-| [SRC-D17CE3D12F-L000936](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L936) | 936 | `""` | — |
-| [SRC-D17CE3D12F-L000937](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L937) | 937 | `"## 64. قابلية النقل وتجنب الارتباط القاتل بمزود (Portability / Exit Strategy)"` | — |
-| [SRC-D17CE3D12F-L000938](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L938) | 938 | `""` | — |

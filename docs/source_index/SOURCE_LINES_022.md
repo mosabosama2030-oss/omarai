@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001088 إلى SRC-1C77C97630-L000004
+- النطاق: SRC-90FAA34ADE-L001082 إلى SRC-B3062EB677-L000229
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001084](../../tests/fixtures/answer_quality_cases.json#L1084) | 1084 | `"        \"States 18 hours as supported by this page\","` | — |
+| [SRC-90FAA34ADE-L001085](../../tests/fixtures/answer_quality_cases.json#L1085) | 1085 | `"        \"Attributes a nonexistent runtime specification to the source\""` | — |
+| [SRC-90FAA34ADE-L001086](../../tests/fixtures/answer_quality_cases.json#L1086) | 1086 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001087](../../tests/fixtures/answer_quality_cases.json#L1087) | 1087 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L001088](../../tests/fixtures/answer_quality_cases.json#L1088) | 1088 | `"    },"` | — |
 | [SRC-90FAA34ADE-L001089](../../tests/fixtures/answer_quality_cases.json#L1089) | 1089 | `"    {"` | — |
 | [SRC-90FAA34ADE-L001090](../../tests/fixtures/answer_quality_cases.json#L1090) | 1090 | `"      \"case_id\": \"AQ-037\","` | — |
@@ -837,18 +843,3 @@
 | [SRC-B3062EB677-L000227](../../tests/test_answer_quality_runner.py#L227) | 227 | `"    )"` | — |
 | [SRC-B3062EB677-L000228](../../tests/test_answer_quality_runner.py#L228) | 228 | `"    assert rc == 0"` | — |
 | [SRC-B3062EB677-L000229](../../tests/test_answer_quality_runner.py#L229) | 229 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-B3062EB677-L000230](../../tests/test_answer_quality_runner.py#L230) | 230 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
-| [SRC-B3062EB677-L000231](../../tests/test_answer_quality_runner.py#L231) | 231 | `"    assert payload[\"results\"][0][\"transport_ok\"] is False"` | — |
-## اختبارات
-
-### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
-| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |

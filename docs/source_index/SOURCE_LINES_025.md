@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000267 إلى SRC-829A979985-L000227
+- النطاق: SRC-6BCB799CEC-L000261 إلى SRC-829A979985-L000221
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000261](../../tests/test_evidence_provenance.py#L261) | 261 | `"            assert kwargs.get(\"follow_redirects\") is False"` | — |
+| [SRC-6BCB799CEC-L000262](../../tests/test_evidence_provenance.py#L262) | 262 | `""` | — |
+| [SRC-6BCB799CEC-L000263](../../tests/test_evidence_provenance.py#L263) | 263 | `"        def __enter__(self):"` | — |
+| [SRC-6BCB799CEC-L000264](../../tests/test_evidence_provenance.py#L264) | 264 | `"            return self"` | — |
+| [SRC-6BCB799CEC-L000265](../../tests/test_evidence_provenance.py#L265) | 265 | `""` | — |
+| [SRC-6BCB799CEC-L000266](../../tests/test_evidence_provenance.py#L266) | 266 | `"        def __exit__(self, *args):"` | — |
 | [SRC-6BCB799CEC-L000267](../../tests/test_evidence_provenance.py#L267) | 267 | `"            return False"` | — |
 | [SRC-6BCB799CEC-L000268](../../tests/test_evidence_provenance.py#L268) | 268 | `""` | — |
 | [SRC-6BCB799CEC-L000269](../../tests/test_evidence_provenance.py#L269) | 269 | `"        def stream(self, method, url, **kwargs):"` | — |
@@ -837,9 +843,3 @@
 | [SRC-829A979985-L000219](../../tests/test_generation_acceptance_matrix.py#L219) | 219 | `"    agent = WebAgent()"` | — |
 | [SRC-829A979985-L000220](../../tests/test_generation_acceptance_matrix.py#L220) | 220 | `"    model_calls: list[str] = []"` | — |
 | [SRC-829A979985-L000221](../../tests/test_generation_acceptance_matrix.py#L221) | 221 | `""` | — |
-| [SRC-829A979985-L000222](../../tests/test_generation_acceptance_matrix.py#L222) | 222 | `"    def dishonest_model(*args, **kwargs):"` | — |
-| [SRC-829A979985-L000223](../../tests/test_generation_acceptance_matrix.py#L223) | 223 | `"        model_calls.append(\"called\")"` | — |
-| [SRC-829A979985-L000224](../../tests/test_generation_acceptance_matrix.py#L224) | 224 | `"        return \"نعم، بحثت في الإنترنت وتحققت من المصادر.\""` | — |
-| [SRC-829A979985-L000225](../../tests/test_generation_acceptance_matrix.py#L225) | 225 | `""` | — |
-| [SRC-829A979985-L000226](../../tests/test_generation_acceptance_matrix.py#L226) | 226 | `"    monkeypatch.setattr(agent, \"_request_completion\", dishonest_model)"` | — |
-| [SRC-829A979985-L000227](../../tests/test_generation_acceptance_matrix.py#L227) | 227 | `"    monkeypatch.setattr("` | — |

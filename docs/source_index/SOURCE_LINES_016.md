@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000939 إلى SRC-65551FB29F-L000125
+- النطاق: SRC-D17CE3D12F-L000933 إلى SRC-65551FB29F-L000119
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000933](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L933) | 933 | `"8. SHOULD الاحتفاظ بمؤشرات تشغيل واضحة تُقلل العبء المعرفي وتساعد التشخيص."` | — |
+| [SRC-D17CE3D12F-L000934](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L934) | 934 | `"9. MUST أن يكون هناك بديل تشغيلي مفهوم عند نفاد حصة موفر أو تعطل حساب أو غياب مطور لفترة."` | — |
+| [SRC-D17CE3D12F-L000935](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L935) | 935 | `"10. SHOULD استخدام قوائم تحقق للمهام المتكررة، لا كبديل للفهم بل لتقليل النسيان."` | — |
+| [SRC-D17CE3D12F-L000936](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L936) | 936 | `""` | — |
+| [SRC-D17CE3D12F-L000937](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L937) | 937 | `"## 64. قابلية النقل وتجنب الارتباط القاتل بمزود (Portability / Exit Strategy)"` | — |
+| [SRC-D17CE3D12F-L000938](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L938) | 938 | `""` | — |
 | [SRC-D17CE3D12F-L000939](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L939) | 939 | `"1. MUST تحديد العناصر التي يصعب استبدالها: تنسيق البيانات، والنموذج، ومحرك البحث، والتخزين، والاستضافة، وإدارة الأسرار."` | — |
 | [SRC-D17CE3D12F-L000940](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L940) | 940 | `"2. SHOULD تقليل استخدام APIs الخاصة بمزود داخل منطق الأعمال، مع عدم إخفاء الفروق الحقيقية بين الخدمات."` | — |
 | [SRC-D17CE3D12F-L000941](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L941) | 941 | `"3. MUST توثيق ما يمكن نقله ووقت النقل المتوقع والبيانات التي لا يمكن استخراجها من الموفر إذا كان ذلك معروفًا."` | — |
@@ -846,9 +852,3 @@
 | [SRC-65551FB29F-L000117](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L117) | 117 | `"\| L17 — استخراج المحتوى وتنقيته \| تحويل الصفحة لنص آمن \| لا يُنفذ المحتوى كتعليمات \|"` | — |
 | [SRC-65551FB29F-L000118](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L118) | 118 | `"\| L18 — تقييم المصادر \| ملاءمة المصدر وحداثته وموثوقيته \| قواعد تقييم وقيود معلنة \|"` | — |
 | [SRC-65551FB29F-L000119](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L119) | 119 | `"\| L19 — الاسترجاع والفهرسة \| المقاطع والفهارس والـ embeddings عند الحاجة \| freshness وprovenance وعزل \|"` | — |
-| [SRC-65551FB29F-L000120](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L120) | 120 | `"\| L20 — سجل الأدلة \| ربط الادعاء بالمصدر والمقطع \| لا استشهاد بلا دعم \|"` | — |
-| [SRC-65551FB29F-L000121](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L121) | 121 | `"\| L21 — التركيب والاستدلال \| الإجابة على أساس الأدلة \| تمييز حقيقة/استنتاج/مجهول \|"` | — |
-| [SRC-65551FB29F-L000122](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L122) | 122 | `"\| L22 — التحقق المستقل \| كشف التعارض أو نقص الإسناد \| اختبارات منفصلة؛ لا مراجعة شكلية \|"` | — |
-| [SRC-65551FB29F-L000123](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L123) | 123 | `"\| L23 — صياغة الخلاصة \| العربية والروابط والقيود \| لا تضخيم لليقين \|"` | — |
-| [SRC-65551FB29F-L000124](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L124) | 124 | `"\| L24 — الذاكرة \| سياق المحادثة والتفضيلات المسموحة \| نطاق مستخدم واحتفاظ واضح \|"` | — |
-| [SRC-65551FB29F-L000125](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L125) | 125 | `"\| L25 — تخزين الحالة \| الديمومة والترحيل والاستعادة \| migrations وintegrity \|"` | — |

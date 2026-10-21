@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C353AAAC10-L000143 إلى SRC-F725E90B2A-L000264
+- النطاق: SRC-C353AAAC10-L000137 إلى SRC-F725E90B2A-L000258
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C353AAAC10-L000137](../../tests/test_request_budget.py#L137) | 137 | `""` | — |
+| [SRC-C353AAAC10-L000138](../../tests/test_request_budget.py#L138) | 138 | `"    assert budget.remaining_units(resource) == 0"` | — |
+| [SRC-C353AAAC10-L000139](../../tests/test_request_budget.py#L139) | 139 | `"    with pytest.raises(RequestBudgetExceeded, match=resource):"` | — |
+| [SRC-C353AAAC10-L000140](../../tests/test_request_budget.py#L140) | 140 | `"        budget.reserve(resource)"` | — |
+| [SRC-C353AAAC10-L000141](../../tests/test_request_budget.py#L141) | 141 | `""` | — |
+| [SRC-C353AAAC10-L000142](../../tests/test_request_budget.py#L142) | 142 | `"    snapshot = budget.snapshot()"` | — |
 | [SRC-C353AAAC10-L000143](../../tests/test_request_budget.py#L143) | 143 | `"    assert snapshot[\"counts\"][resource] == 0"` | — |
 | [SRC-C353AAAC10-L000144](../../tests/test_request_budget.py#L144) | 144 | `"    assert snapshot[\"limits\"][resource] == 0"` | — |
 | [SRC-C353AAAC10-L000145](../../tests/test_request_budget.py#L145) | 145 | `"    assert resource in snapshot[\"disabled_resources\"]"` | — |
@@ -855,9 +861,3 @@
 | [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `"                    }"` | — |
 | [SRC-F725E90B2A-L000257](../../tests/test_web_agent.py#L257) | 257 | `"                }]"` | — |
 | [SRC-F725E90B2A-L000258](../../tests/test_web_agent.py#L258) | 258 | `"            })"` | — |
-| [SRC-F725E90B2A-L000259](../../tests/test_web_agent.py#L259) | 259 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
-| [SRC-F725E90B2A-L000260](../../tests/test_web_agent.py#L260) | 260 | `""` | — |
-| [SRC-F725E90B2A-L000261](../../tests/test_web_agent.py#L261) | 261 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000262](../../tests/test_web_agent.py#L262) | 262 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000263](../../tests/test_web_agent.py#L263) | 263 | `"        \"سيارة كهربائية\", [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-F725E90B2A-L000264](../../tests/test_web_agent.py#L264) | 264 | `"    )"` | — |

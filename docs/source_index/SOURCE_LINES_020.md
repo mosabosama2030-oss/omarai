@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000044 إلى SRC-90FAA34ADE-L000287
+- النطاق: SRC-4FFD5AFC54-L000038 إلى SRC-90FAA34ADE-L000281
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000038](../../scripts/run_answer_quality_benchmark.py#L38) | 38 | `"DEFAULT_CORPUS = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
+| [SRC-4FFD5AFC54-L000039](../../scripts/run_answer_quality_benchmark.py#L39) | 39 | `"MAX_RESPONSE_BYTES = 2_000_000"` | — |
+| [SRC-4FFD5AFC54-L000040](../../scripts/run_answer_quality_benchmark.py#L40) | 40 | `""` | — |
+| [SRC-4FFD5AFC54-L000041](../../scripts/run_answer_quality_benchmark.py#L41) | 41 | `""` | — |
+| [SRC-4FFD5AFC54-L000042](../../scripts/run_answer_quality_benchmark.py#L42) | 42 | `"def validate_base_url(base_url: str, *, token_present: bool = False) -> str:"` | — |
+| [SRC-4FFD5AFC54-L000043](../../scripts/run_answer_quality_benchmark.py#L43) | 43 | `"    \"\"\"Validate and normalize an API origin before any request can carry a token.\"\"\""` | — |
 | [SRC-4FFD5AFC54-L000044](../../scripts/run_answer_quality_benchmark.py#L44) | 44 | `"    if not isinstance(base_url, str) or not base_url.strip():"` | — |
 | [SRC-4FFD5AFC54-L000045](../../scripts/run_answer_quality_benchmark.py#L45) | 45 | `"        raise ValueError(\"Base URL must be a non-empty HTTP(S) origin.\")"` | — |
 | [SRC-4FFD5AFC54-L000046](../../scripts/run_answer_quality_benchmark.py#L46) | 46 | `"    try:"` | — |
@@ -828,9 +834,3 @@
 | [SRC-90FAA34ADE-L000279](../../tests/fixtures/answer_quality_cases.json#L279) | 279 | `"        \"type\": \"none\""` | — |
 | [SRC-90FAA34ADE-L000280](../../tests/fixtures/answer_quality_cases.json#L280) | 280 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000281](../../tests/fixtures/answer_quality_cases.json#L281) | 281 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000282](../../tests/fixtures/answer_quality_cases.json#L282) | 282 | `"        \"Numeric price given without referent\""` | — |
-| [SRC-90FAA34ADE-L000283](../../tests/fixtures/answer_quality_cases.json#L283) | 283 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000284](../../tests/fixtures/answer_quality_cases.json#L284) | 284 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000285](../../tests/fixtures/answer_quality_cases.json#L285) | 285 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000286](../../tests/fixtures/answer_quality_cases.json#L286) | 286 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000287](../../tests/fixtures/answer_quality_cases.json#L287) | 287 | `"      \"case_id\": \"AQ-012\","` | — |

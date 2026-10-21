@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **032**
-- سجلات الأسطر: **511**
-- النطاق: SRC-F725E90B2A-L002665 إلى SRC-A16FA6D4B5-L000044
+- سجلات الأسطر: **517**
+- النطاق: SRC-F725E90B2A-L002659 إلى SRC-A16FA6D4B5-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002659](../../tests/test_web_agent.py#L2659) | 2659 | `""` | — |
+| [SRC-F725E90B2A-L002660](../../tests/test_web_agent.py#L2660) | 2660 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-F725E90B2A-L002661](../../tests/test_web_agent.py#L2661) | 2661 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-F725E90B2A-L002662](../../tests/test_web_agent.py#L2662) | 2662 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L002663](../../tests/test_web_agent.py#L2663) | 2663 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L002664](../../tests/test_web_agent.py#L2664) | 2664 | `"        agent,"` | — |
 | [SRC-F725E90B2A-L002665](../../tests/test_web_agent.py#L2665) | 2665 | `"        \"_generate\","` | — |
 | [SRC-F725E90B2A-L002666](../../tests/test_web_agent.py#L2666) | 2666 | `"        lambda question, history, sources, search_warning, research_plan=None,"` | — |
 | [SRC-F725E90B2A-L002667](../../tests/test_web_agent.py#L2667) | 2667 | `"               search_report=None: \"توجد نتائج أولية للمراجعة [المصدر 1].\","` | — |
