@@ -4796,6 +4796,7 @@ class WebAgent:
             "answer_coverage": answer_coverage,
             "answer_integrity": answer_integrity,
             "task_fulfillment_status": task_fulfillment_status,
+            "coverage_repair_status": coverage_repair_status,
             "used_language_model": used_llm,
             "used_web_search": bool(sources),
             "search_attempted": search_attempted,
