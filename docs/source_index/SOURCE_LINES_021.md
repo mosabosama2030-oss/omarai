@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000023 إلى SRC-90FAA34ADE-L000822
+- النطاق: SRC-90FAA34ADE-L000017 إلى SRC-90FAA34ADE-L000816
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000017](../../tests/fixtures/answer_quality_cases.json#L17) | 17 | `"  \"case_count\": 45,"` | — |
+| [SRC-90FAA34ADE-L000018](../../tests/fixtures/answer_quality_cases.json#L18) | 18 | `"  \"cases\": ["` | — |
+| [SRC-90FAA34ADE-L000019](../../tests/fixtures/answer_quality_cases.json#L19) | 19 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000020](../../tests/fixtures/answer_quality_cases.json#L20) | 20 | `"      \"case_id\": \"AQ-001\","` | — |
+| [SRC-90FAA34ADE-L000021](../../tests/fixtures/answer_quality_cases.json#L21) | 21 | `"      \"category\": \"simple_conversational\","` | — |
+| [SRC-90FAA34ADE-L000022](../../tests/fixtures/answer_quality_cases.json#L22) | 22 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000023](../../tests/fixtures/answer_quality_cases.json#L23) | 23 | `"      \"question\": \"ازيك؟ عامل ايه النهاردة؟\","` | — |
 | [SRC-90FAA34ADE-L000024](../../tests/fixtures/answer_quality_cases.json#L24) | 24 | `"      \"expected_strategy\": \"model_no_search\","` | — |
 | [SRC-90FAA34ADE-L000025](../../tests/fixtures/answer_quality_cases.json#L25) | 25 | `"      \"required_behaviors\": ["` | — |
@@ -810,9 +816,3 @@
 | [SRC-90FAA34ADE-L000814](../../tests/fixtures/answer_quality_cases.json#L814) | 814 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000815](../../tests/fixtures/answer_quality_cases.json#L815) | 815 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000816](../../tests/fixtures/answer_quality_cases.json#L816) | 816 | `"        \"يخترع تكلفة ومدة دون معرفة الخدمة\","` | — |
-| [SRC-90FAA34ADE-L000817](../../tests/fixtures/answer_quality_cases.json#L817) | 817 | `"        \"يجيب عن نقطة واحدة ويصف الإجابة بأنها كاملة\""` | — |
-| [SRC-90FAA34ADE-L000818](../../tests/fixtures/answer_quality_cases.json#L818) | 818 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000819](../../tests/fixtures/answer_quality_cases.json#L819) | 819 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000820](../../tests/fixtures/answer_quality_cases.json#L820) | 820 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000821](../../tests/fixtures/answer_quality_cases.json#L821) | 821 | `"        \"notes\": \"الموضوع نفسه غير محدد؛ الاختبار يقيس طلب التوضيح وحفظ قائمة المتطلبات\""` | — |
-| [SRC-90FAA34ADE-L000822](../../tests/fixtures/answer_quality_cases.json#L822) | 822 | `"      },"` | — |

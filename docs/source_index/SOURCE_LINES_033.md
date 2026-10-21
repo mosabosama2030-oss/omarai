@@ -3,10 +3,25 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **033**
-- سجلات الأسطر: **46**
-- النطاق: SRC-A16FA6D4B5-L000001 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **52**
+- النطاق: SRC-DE7EABE998-L000389 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## واجهة الويب
+
+### FILE-DE7EABE998 — [web/agent.html](../../web/agent.html#L1)
+
+- النوع: **HTML**
+- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-DE7EABE998-L000389](../../web/agent.html#L389) | 389 | `"$(\"saveAccessToken\").addEventListener(\"click\",()=>{const token=$(\"accessToken\").value.trim();if(token)localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY,token);else localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);$(\"saveAccessToken\").textContent=token?\"تم حفظ الرمز على هذا الجهاز\":\"تم مسح الرمز المحفوظ\";});"` | — |
+| [SRC-DE7EABE998-L000390](../../web/agent.html#L390) | 390 | `"$(\"accessToken\").value=localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY)\|\|\"\";"` | — |
+| [SRC-DE7EABE998-L000391](../../web/agent.html#L391) | 391 | `"$(\"runDiagnostics\").addEventListener(\"click\",runDiagnostics);checkHealth();"` | — |
+| [SRC-DE7EABE998-L000392](../../web/agent.html#L392) | 392 | `"</script>"` | — |
+| [SRC-DE7EABE998-L000393](../../web/agent.html#L393) | 393 | `"</body>"` | — |
+| [SRC-DE7EABE998-L000394](../../web/agent.html#L394) | 394 | `"</html>"` | — |
 ## واجهة الويب
 
 ### FILE-A16FA6D4B5 — [web/dashboard.html](../../web/dashboard.html#L1)
