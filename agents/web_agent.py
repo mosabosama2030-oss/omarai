@@ -1108,7 +1108,9 @@ class WebAgent:
                 "Accept-Language": "ar,en;q=0.9",
             },
             timeout=self._effective_timeout(9.0),
-            follow_redirects=True,
+            # Refuse automatic redirects from public search endpoints; never fetch an
+            # unchecked redirect target as part of a provider search request.
+            follow_redirects=False,
         )
         if response.status_code != 200:
             raise RuntimeError(f"HTTP {response.status_code}")
@@ -1456,7 +1458,9 @@ class WebAgent:
                 "Accept-Language": "ar,en;q=0.9",
             },
             timeout=self._effective_timeout(9.0),
-            follow_redirects=True,
+            # Refuse automatic redirects from public search endpoints; never fetch an
+            # unchecked redirect target as part of a provider search request.
+            follow_redirects=False,
         )
         if response.status_code != 200:
             raise RuntimeError(f"HTTP {response.status_code}")
