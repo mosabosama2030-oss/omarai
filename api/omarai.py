@@ -32,6 +32,12 @@ REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 
 
 
+def _lead_store_from_environment() -> LeadStore:
+    """Use an operator-configured database path when a persistent volume is available."""
+    configured_path = os.getenv("OMARAI_DB_PATH", "").strip()
+    return LeadStore(configured_path or None)
+
+
 class _DeadlineRequestReader:
     """Read HTTP header lines with one absolute deadline across all fragments.
 
@@ -185,7 +191,7 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             self._request_header_deadline = None
 
-    store = LeadStore()
+    store = _lead_store_from_environment()
     _rate_lock = threading.Lock()
     _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
     _rate_last_cleanup: ClassVar[float] = 0.0
