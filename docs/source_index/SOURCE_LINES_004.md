@@ -178,18 +178,18 @@
 | [SRC-1AE03B9EC3-L000456](../../agents/web_agent.py#L456) | 456 | `"        def redact(value: Any, limit: int) -> str:"` | — |
 | [SRC-1AE03B9EC3-L000457](../../agents/web_agent.py#L457) | 457 | `"            safe = _clean_text(str(value or \"\"), limit)"` | — |
 | [SRC-1AE03B9EC3-L000458](../../agents/web_agent.py#L458) | 458 | `"            safe = re.sub("` | — |
-| [SRC-1AE03B9EC3-L000459](../../agents/web_agent.py#L459) | 459 | `"                r\"(?i)(bearer\\\\s+)[A-Za-z0-9._~+/-]+=*\","` | — |
-| [SRC-1AE03B9EC3-L000460](../../agents/web_agent.py#L460) | 460 | `"                r\"\\\\1[REDACTED]\","` | — |
+| [SRC-1AE03B9EC3-L000459](../../agents/web_agent.py#L459) | 459 | `"                r\"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*\","` | — |
+| [SRC-1AE03B9EC3-L000460](../../agents/web_agent.py#L460) | 460 | `"                r\"\\1[REDACTED]\","` | — |
 | [SRC-1AE03B9EC3-L000461](../../agents/web_agent.py#L461) | 461 | `"                safe,"` | — |
 | [SRC-1AE03B9EC3-L000462](../../agents/web_agent.py#L462) | 462 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000463](../../agents/web_agent.py#L463) | 463 | `"            safe = re.sub("` | — |
-| [SRC-1AE03B9EC3-L000464](../../agents/web_agent.py#L464) | 464 | `"                r\"(?i)\\\\b(api[_-]?key\|access[_-]?token\|refresh[_-]?token\|token\|secret\|password)\\\\s*[:=]\\\\s*[^\\\\s,;]+\","` | — |
-| [SRC-1AE03B9EC3-L000465](../../agents/web_agent.py#L465) | 465 | `"                r\"\\\\1=[REDACTED]\","` | — |
+| [SRC-1AE03B9EC3-L000464](../../agents/web_agent.py#L464) | 464 | `"                r\"(?i)\\b(api[_-]?key\|access[_-]?token\|refresh[_-]?token\|token\|secret\|password)\\s*[:=]\\s*[^\\s,;]+\","` | — |
+| [SRC-1AE03B9EC3-L000465](../../agents/web_agent.py#L465) | 465 | `"                r\"\\1=[REDACTED]\","` | — |
 | [SRC-1AE03B9EC3-L000466](../../agents/web_agent.py#L466) | 466 | `"                safe,"` | — |
 | [SRC-1AE03B9EC3-L000467](../../agents/web_agent.py#L467) | 467 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000468](../../agents/web_agent.py#L468) | 468 | `"            safe = re.sub("` | — |
-| [SRC-1AE03B9EC3-L000469](../../agents/web_agent.py#L469) | 469 | `"                r\"(?i)([?&](?:api[_-]?key\|access[_-]?token\|token\|key)=)[^&\\\\s]+\","` | — |
-| [SRC-1AE03B9EC3-L000470](../../agents/web_agent.py#L470) | 470 | `"                r\"\\\\1[REDACTED]\","` | — |
+| [SRC-1AE03B9EC3-L000469](../../agents/web_agent.py#L469) | 469 | `"                r\"(?i)([?&](?:api[_-]?key\|access[_-]?token\|token\|key)=)[^&\\s]+\","` | — |
+| [SRC-1AE03B9EC3-L000470](../../agents/web_agent.py#L470) | 470 | `"                r\"\\1[REDACTED]\","` | — |
 | [SRC-1AE03B9EC3-L000471](../../agents/web_agent.py#L471) | 471 | `"                safe,"` | — |
 | [SRC-1AE03B9EC3-L000472](../../agents/web_agent.py#L472) | 472 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000473](../../agents/web_agent.py#L473) | 473 | `"            return safe[:limit]"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000353 إلى SRC-E599346ABE-L000179
+- النطاق: SRC-EEF2E6447C-L000356 إلى SRC-E599346ABE-L000182
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-EEF2E6447C-L000353](../../api/omarai.py#L353) | 353 | `"        \"\"\"Apply defensive browser headers to successful and error responses alike.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000354](../../api/omarai.py#L354) | 354 | `"        self.send_header(\"X-Content-Type-Options\", \"nosniff\")"` | — |
-| [SRC-EEF2E6447C-L000355](../../api/omarai.py#L355) | 355 | `"        self.send_header(\"X-Frame-Options\", \"DENY\")"` | — |
 | [SRC-EEF2E6447C-L000356](../../api/omarai.py#L356) | 356 | `"        self.send_header(\"Referrer-Policy\", \"strict-origin-when-cross-origin\")"` | — |
 | [SRC-EEF2E6447C-L000357](../../api/omarai.py#L357) | 357 | `"        self.send_header(\"Permissions-Policy\", \"camera=(), microphone=(), geolocation=()\")"` | — |
 | [SRC-EEF2E6447C-L000358](../../api/omarai.py#L358) | 358 | `"        self.send_header("` | — |
@@ -888,3 +885,6 @@
 | [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
 | [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
 | [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
+| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
+| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"class IndexedMarker:"` | — |
