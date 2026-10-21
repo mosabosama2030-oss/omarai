@@ -11,6 +11,7 @@ import re
 import threading
 import time
 from collections import defaultdict, deque
+from functools import lru_cache
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import ClassVar
@@ -30,6 +31,7 @@ def _csp_hash_source(value: str) -> str:
     return f"'sha256-{digest}'"
 
 
+@lru_cache(maxsize=1)
 def _content_security_policy() -> str:
     """Allow only known inline blocks/attributes from the static first-party HTML.
 
@@ -49,16 +51,16 @@ def _content_security_policy() -> str:
             continue
 
         for match in re.finditer(
-            r"<script\\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\\s*>",
+            r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\s*>",
             document,
             re.IGNORECASE | re.DOTALL,
         ):
-            if re.search(r"\\bsrc\\s*=", match.group("attrs"), re.IGNORECASE):
+            if re.search(r"\bsrc\s*=", match.group("attrs"), re.IGNORECASE):
                 continue
             script_hashes.add(_csp_hash_source(match.group("body")))
 
         for match in re.finditer(
-            r"<style\\b[^>]*>(?P<body>.*?)</style\\s*>",
+            r"<style\b[^>]*>(?P<body>.*?)</style\s*>",
             document,
             re.IGNORECASE | re.DOTALL,
         ):
@@ -67,14 +69,14 @@ def _content_security_policy() -> str:
         # This scan intentionally includes style/event attributes embedded in
         # trusted first-party HTML templates assembled by inline scripts.
         for match in re.finditer(
-            r"""\\bstyle\\s*=\\s*(["'])(.*?)\\1""",
+            r"""\bstyle\s*=\s*(["'])(.*?)\1""",
             document,
             re.IGNORECASE | re.DOTALL,
         ):
             style_attribute_hashes.add(_csp_hash_source(match.group(2).strip()))
 
         for match in re.finditer(
-            r"""\\bon[a-z]+\\s*=\\s*(["'])(.*?)\\1""",
+            r"""\bon[a-z]+\s*=\s*(["'])(.*?)\1""",
             document,
             re.IGNORECASE | re.DOTALL,
         ):
