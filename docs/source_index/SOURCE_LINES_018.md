@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000414 إلى SRC-69F3587825-L000101
+- النطاق: SRC-0F910493E8-L000351 إلى SRC-69F3587825-L000038
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,69 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000351](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L351) | 351 | `"## 9.1 توليد الكود التنفيذي"` | — |
+| [SRC-0F910493E8-L000352](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L352) | 352 | `""` | — |
+| [SRC-0F910493E8-L000353](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L353) | 353 | `"هذه مرحلة مستقبلية مستقلة واختيارية. لا تُفتح إلا إذا:"` | — |
+| [SRC-0F910493E8-L000354](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L354) | 354 | `"- ثبت أن مجموعة الأدوات والمهارات الحالية لا تغطي حاجة حقيقية متكررة."` | — |
+| [SRC-0F910493E8-L000355](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L355) | 355 | `"- وُجدت بيئة عزل ملائمة واختُبرت حدودها."` | — |
+| [SRC-0F910493E8-L000356](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L356) | 356 | `"- كانت الصلاحيات والشبكة والملفات والأسرار والموارد محدودة."` | — |
+| [SRC-0F910493E8-L000357](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L357) | 357 | `"- توفرت اختبارات مستقلة عن الاختبارات التي أنشأها النموذج."` | — |
+| [SRC-0F910493E8-L000358](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L358) | 358 | `"- تمت مراجعة بشرية وأُنشئت خطة تعطيل وتراجع."` | — |
+| [SRC-0F910493E8-L000359](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L359) | 359 | `"- تمت الموافقة على المخاطر المتبقية."` | — |
+| [SRC-0F910493E8-L000360](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L360) | 360 | `""` | — |
+| [SRC-0F910493E8-L000361](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L361) | 361 | `"نجاح الاختبارات الوظيفية وحده ليس إذنًا للنشر."` | — |
+| [SRC-0F910493E8-L000362](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L362) | 362 | `""` | — |
+| [SRC-0F910493E8-L000363](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L363) | 363 | `"---"` | — |
+| [SRC-0F910493E8-L000364](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L364) | 364 | `""` | — |
+| [SRC-0F910493E8-L000365](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L365) | 365 | `"# 10. التعامل مع الفشل والتدهور الآمن"` | — |
+| [SRC-0F910493E8-L000366](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L366) | 366 | `""` | — |
+| [SRC-0F910493E8-L000367](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L367) | 367 | `"يجب أن تكون حالات الفشل جزءًا من عقد كل أداة ومهارة وسير عمل."` | — |
+| [SRC-0F910493E8-L000368](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L368) | 368 | `""` | — |
+| [SRC-0F910493E8-L000369](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L369) | 369 | `"أمثلة:"` | — |
+| [SRC-0F910493E8-L000370](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L370) | 370 | `"- أداة غير مسجلة: رفض صريح، لا اختراع تنفيذ."` | — |
+| [SRC-0F910493E8-L000371](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L371) | 371 | `"- أداة مسجلة لكنها غير مهيأة: توضيح أن التهيئة ناقصة."` | — |
+| [SRC-0F910493E8-L000372](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L372) | 372 | `"- موصل فشل: تسجيل الفشل وإكمال المصادر الأخرى فقط إن كانت الخطة تسمح."` | — |
+| [SRC-0F910493E8-L000373](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L373) | 373 | `"- مصادر غير كافية: إجابة محدودة أو تصريح بعدم كفاية الأدلة."` | — |
+| [SRC-0F910493E8-L000374](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L374) | 374 | `"- طلب غامض: سؤال توضيحي عندما يؤثر الغموض في النتيجة."` | — |
+| [SRC-0F910493E8-L000375](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L375) | 375 | `"- تجاوز ميزانية: توقف مضبوط، لا حلقة إعادة محاولة غير محدودة."` | — |
+| [SRC-0F910493E8-L000376](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L376) | 376 | `"- رفض سياسة: بيان مختصر بالحد الممكن من الإفصاح دون كشف أسرار النظام."` | — |
+| [SRC-0F910493E8-L000377](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L377) | 377 | `"- فشل في التحقق: لا تعرض حالة مكتملة كأنها مؤكدة."` | — |
+| [SRC-0F910493E8-L000378](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L378) | 378 | `""` | — |
+| [SRC-0F910493E8-L000379](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L379) | 379 | `"يجوز تقديم بديل مفيد، مثل الإجابة من المعرفة المتاحة دون بحث حي، لكن يجب وصف مصدر المعرفة والقيود بصدق، وعدم اختراع حداثة أو مصدر حي."` | — |
+| [SRC-0F910493E8-L000380](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L380) | 380 | `""` | — |
+| [SRC-0F910493E8-L000381](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L381) | 381 | `"---"` | — |
+| [SRC-0F910493E8-L000382](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L382) | 382 | `""` | — |
+| [SRC-0F910493E8-L000383](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L383) | 383 | `"# 11. منع التضخم والتكرار المعماري"` | — |
+| [SRC-0F910493E8-L000384](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L384) | 384 | `""` | — |
+| [SRC-0F910493E8-L000385](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L385) | 385 | `"قبل إضافة طبقة أو مهارة أو أداة أو وكيل جديد، يجب الإجابة عن الأسئلة التالية:"` | — |
+| [SRC-0F910493E8-L000386](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L386) | 386 | `"1. ما حاجة المستخدم أو الخطر الفعلي الذي يعالجه؟"` | — |
+| [SRC-0F910493E8-L000387](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L387) | 387 | `"2. هل تغطيه وظيفة أو مهارة أو سير عمل موجود؟"` | — |
+| [SRC-0F910493E8-L000388](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L388) | 388 | `"3. ما الذي لا تستطيع البنية الحالية فعله، مع الدليل؟"` | — |
+| [SRC-0F910493E8-L000389](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L389) | 389 | `"4. ما أقل تغيير يحقق الهدف؟"` | — |
+| [SRC-0F910493E8-L000390](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L390) | 390 | `"5. ما أثره على الأمان والخصوصية والتكلفة والاعتمادية؟"` | — |
+| [SRC-0F910493E8-L000391](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L391) | 391 | `"6. كيف سنختبر النجاح والفشل وعدم الانحدار؟"` | — |
+| [SRC-0F910493E8-L000392](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L392) | 392 | `"7. كيف سنعطل التغيير أو نتراجع عنه؟"` | — |
+| [SRC-0F910493E8-L000393](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L393) | 393 | `"8. من يملك قرار قبول المخاطر؟"` | — |
+| [SRC-0F910493E8-L000394](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L394) | 394 | `""` | — |
+| [SRC-0F910493E8-L000395](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L395) | 395 | `"يمكن استخدام التشابه الدلالي للمساعدة في اكتشاف مهارات أو أدوات مكررة، لكنه لا يكون وحده سببًا آليًا للحذف أو الرفض. القرار يعتمد على العقود والوظيفة والصلاحيات والاختبارات، مع مراجعة عند الغموض."` | — |
+| [SRC-0F910493E8-L000396](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L396) | 396 | `""` | — |
+| [SRC-0F910493E8-L000397](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L397) | 397 | `"لا تُنشأ خدمة مستقلة أو قاعدة بيانات أو طابور أو محرك Workflow عام لمجرد التوقع. ابدأ بأبسط بنية تحافظ على الحدود والاختبار، ثم وسعها عند وجود مبرر."` | — |
+| [SRC-0F910493E8-L000398](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L398) | 398 | `""` | — |
+| [SRC-0F910493E8-L000399](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L399) | 399 | `"---"` | — |
+| [SRC-0F910493E8-L000400](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L400) | 400 | `""` | — |
+| [SRC-0F910493E8-L000401](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L401) | 401 | `"# 12. خارطة التنفيذ وبوابات الانتقال"` | — |
+| [SRC-0F910493E8-L000402](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L402) | 402 | `""` | — |
+| [SRC-0F910493E8-L000403](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L403) | 403 | `"الترتيب التالي يخصص معمارية المهارات وسير العمل داخل مراحل النضج الموجودة في الدستور وسجل المتطلبات. لا يلغي المراحل الأوسع المتعلقة بالأمان والتشغيل والجودة والاستضافة."` | — |
+| [SRC-0F910493E8-L000404](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L404) | 404 | `""` | — |
+| [SRC-0F910493E8-L000405](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L405) | 405 | `"## P0 — إثبات الحالة وخط الأساس"` | — |
+| [SRC-0F910493E8-L000406](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L406) | 406 | `""` | — |
+| [SRC-0F910493E8-L000407](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L407) | 407 | `"- تثبيت الفرع وSHA وبيئة الاختبار."` | — |
+| [SRC-0F910493E8-L000408](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L408) | 408 | `"- رسم مسار الطلب الحقيقي."` | — |
+| [SRC-0F910493E8-L000409](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L409) | 409 | `"- حصر الأدوات والتكوينات والاعتماديات."` | — |
+| [SRC-0F910493E8-L000410](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L410) | 410 | `"- تشغيل الاختبارات ذات الصلة وتسجيل نتائجها."` | — |
+| [SRC-0F910493E8-L000411](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L411) | 411 | `"- تحديد أخطاء مثبتة وفجوات UNKNOWN."` | — |
+| [SRC-0F910493E8-L000412](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L412) | 412 | `"- حفظ مجموعة مرجعية للمسارات المهمة، بما فيها العربية وفشل المصادر وعدم كفاية الأدلة."` | — |
+| [SRC-0F910493E8-L000413](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L413) | 413 | `""` | — |
 | [SRC-0F910493E8-L000414](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L414) | 414 | `"**بوابة القبول:** حالة أساس وأدلة قابلة لإعادة التحقق، لا مجرد تقرير يصف ما يُفترض أنه موجود."` | — |
 | [SRC-0F910493E8-L000415](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L415) | 415 | `""` | — |
 | [SRC-0F910493E8-L000416](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L416) | 416 | `"## P1 — سلامة العقود والصلاحيات"` | — |
@@ -789,66 +852,3 @@
 | [SRC-69F3587825-L000036](../search_code.py#L36) | 36 | `"        \"node_modules\","` | — |
 | [SRC-69F3587825-L000037](../search_code.py#L37) | 37 | `"        \"site-packages\","` | — |
 | [SRC-69F3587825-L000038](../search_code.py#L38) | 38 | `"        \"build\","` | — |
-| [SRC-69F3587825-L000039](../search_code.py#L39) | 39 | `"        \"dist\","` | — |
-| [SRC-69F3587825-L000040](../search_code.py#L40) | 40 | `"        \".tmp\","` | — |
-| [SRC-69F3587825-L000041](../search_code.py#L41) | 41 | `"        \".idea\","` | — |
-| [SRC-69F3587825-L000042](../search_code.py#L42) | 42 | `"        \".vscode\","` | — |
-| [SRC-69F3587825-L000043](../search_code.py#L43) | 43 | `"        \".aws\","` | — |
-| [SRC-69F3587825-L000044](../search_code.py#L44) | 44 | `"        \".secrets\","` | — |
-| [SRC-69F3587825-L000045](../search_code.py#L45) | 45 | `"        \".ssh\","` | — |
-| [SRC-69F3587825-L000046](../search_code.py#L46) | 46 | `"        \"credentials\","` | — |
-| [SRC-69F3587825-L000047](../search_code.py#L47) | 47 | `"        \"secrets\","` | — |
-| [SRC-69F3587825-L000048](../search_code.py#L48) | 48 | `"    }"` | — |
-| [SRC-69F3587825-L000049](../search_code.py#L49) | 49 | `")"` | — |
-| [SRC-69F3587825-L000050](../search_code.py#L50) | 50 | `"SECRET_BASENAMES = frozenset("` | — |
-| [SRC-69F3587825-L000051](../search_code.py#L51) | 51 | `"    {"` | — |
-| [SRC-69F3587825-L000052](../search_code.py#L52) | 52 | `"        \".env\","` | — |
-| [SRC-69F3587825-L000053](../search_code.py#L53) | 53 | `"        \".env.local\","` | — |
-| [SRC-69F3587825-L000054](../search_code.py#L54) | 54 | `"        \".env.production\","` | — |
-| [SRC-69F3587825-L000055](../search_code.py#L55) | 55 | `"        \".env.staging\","` | — |
-| [SRC-69F3587825-L000056](../search_code.py#L56) | 56 | `"        \".netrc\","` | — |
-| [SRC-69F3587825-L000057](../search_code.py#L57) | 57 | `"        \".npmrc\","` | — |
-| [SRC-69F3587825-L000058](../search_code.py#L58) | 58 | `"        \".pypirc\","` | — |
-| [SRC-69F3587825-L000059](../search_code.py#L59) | 59 | `"        \"authorized_keys\","` | — |
-| [SRC-69F3587825-L000060](../search_code.py#L60) | 60 | `"        \"client_secret.json\","` | — |
-| [SRC-69F3587825-L000061](../search_code.py#L61) | 61 | `"        \"client_secrets.json\","` | — |
-| [SRC-69F3587825-L000062](../search_code.py#L62) | 62 | `"        \"credentials\","` | — |
-| [SRC-69F3587825-L000063](../search_code.py#L63) | 63 | `"        \"credentials.json\","` | — |
-| [SRC-69F3587825-L000064](../search_code.py#L64) | 64 | `"        \"credentials.yaml\","` | — |
-| [SRC-69F3587825-L000065](../search_code.py#L65) | 65 | `"        \"credentials.yml\","` | — |
-| [SRC-69F3587825-L000066](../search_code.py#L66) | 66 | `"        \"id_dsa\","` | — |
-| [SRC-69F3587825-L000067](../search_code.py#L67) | 67 | `"        \"id_ecdsa\","` | — |
-| [SRC-69F3587825-L000068](../search_code.py#L68) | 68 | `"        \"id_ed25519\","` | — |
-| [SRC-69F3587825-L000069](../search_code.py#L69) | 69 | `"        \"id_rsa\","` | — |
-| [SRC-69F3587825-L000070](../search_code.py#L70) | 70 | `"        \"secrets.json\","` | — |
-| [SRC-69F3587825-L000071](../search_code.py#L71) | 71 | `"        \"secrets.yaml\","` | — |
-| [SRC-69F3587825-L000072](../search_code.py#L72) | 72 | `"        \"secrets.yml\","` | — |
-| [SRC-69F3587825-L000073](../search_code.py#L73) | 73 | `"        \"service-account.json\","` | — |
-| [SRC-69F3587825-L000074](../search_code.py#L74) | 74 | `"        \"token.json\","` | — |
-| [SRC-69F3587825-L000075](../search_code.py#L75) | 75 | `"    }"` | — |
-| [SRC-69F3587825-L000076](../search_code.py#L76) | 76 | `")"` | — |
-| [SRC-69F3587825-L000077](../search_code.py#L77) | 77 | `"SENSITIVE_NAME_RE = re.compile("` | — |
-| [SRC-69F3587825-L000078](../search_code.py#L78) | 78 | `"    r\"(?:^\|[._-])(?:secret\|secrets\|credential\|credentials\|password\|passwords\|token\|tokens\|private[_-]?key)(?:[._-]\|$)\","` | — |
-| [SRC-69F3587825-L000079](../search_code.py#L79) | 79 | `"    re.IGNORECASE,"` | — |
-| [SRC-69F3587825-L000080](../search_code.py#L80) | 80 | `")"` | — |
-| [SRC-69F3587825-L000081](../search_code.py#L81) | 81 | `"SENSITIVE_CONFIG_SUFFIXES = frozenset("` | — |
-| [SRC-69F3587825-L000082](../search_code.py#L82) | 82 | `"    {\".cfg\", \".conf\", \".ini\", \".json\", \".properties\", \".toml\", \".txt\", \".xml\", \".yaml\", \".yml\"}"` | — |
-| [SRC-69F3587825-L000083](../search_code.py#L83) | 83 | `")"` | — |
-| [SRC-69F3587825-L000084](../search_code.py#L84) | 84 | `"MAX_SEARCH_FILE_BYTES = 2 * 1024 * 1024"` | — |
-| [SRC-69F3587825-L000085](../search_code.py#L85) | 85 | `""` | — |
-| [SRC-69F3587825-L000086](../search_code.py#L86) | 86 | `""` | — |
-| [SRC-69F3587825-L000087](../search_code.py#L87) | 87 | `"def _is_sensitive_path(path: Path) -> bool:"` | — |
-| [SRC-69F3587825-L000088](../search_code.py#L88) | 88 | `"    \"\"\"Return whether a local path appears to contain credentials or private runtime data.\"\"\""` | — |
-| [SRC-69F3587825-L000089](../search_code.py#L89) | 89 | `"    name = path.name.lower()"` | — |
-| [SRC-69F3587825-L000090](../search_code.py#L90) | 90 | `"    parent_names = {part.lower() for part in path.parts[:-1]}"` | — |
-| [SRC-69F3587825-L000091](../search_code.py#L91) | 91 | `"    if name in SECRET_BASENAMES or parent_names & EXCLUDED_DIRECTORIES:"` | — |
-| [SRC-69F3587825-L000092](../search_code.py#L92) | 92 | `"        return True"` | — |
-| [SRC-69F3587825-L000093](../search_code.py#L93) | 93 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
-| [SRC-69F3587825-L000094](../search_code.py#L94) | 94 | `"        return True"` | — |
-| [SRC-69F3587825-L000095](../search_code.py#L95) | 95 | `"    if name.endswith((\".example\", \".sample\", \".template\")):"` | — |
-| [SRC-69F3587825-L000096](../search_code.py#L96) | 96 | `"        return False"` | — |
-| [SRC-69F3587825-L000097](../search_code.py#L97) | 97 | `"    if SENSITIVE_NAME_RE.search(name) and path.suffix.lower() in SENSITIVE_CONFIG_SUFFIXES:"` | — |
-| [SRC-69F3587825-L000098](../search_code.py#L98) | 98 | `"        return True"` | — |
-| [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
-| [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
-| [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000102 إلى SRC-4FFD5AFC54-L000106
+- النطاق: SRC-69F3587825-L000039 إلى SRC-4FFD5AFC54-L000043
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,69 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000039](../search_code.py#L39) | 39 | `"        \"dist\","` | — |
+| [SRC-69F3587825-L000040](../search_code.py#L40) | 40 | `"        \".tmp\","` | — |
+| [SRC-69F3587825-L000041](../search_code.py#L41) | 41 | `"        \".idea\","` | — |
+| [SRC-69F3587825-L000042](../search_code.py#L42) | 42 | `"        \".vscode\","` | — |
+| [SRC-69F3587825-L000043](../search_code.py#L43) | 43 | `"        \".aws\","` | — |
+| [SRC-69F3587825-L000044](../search_code.py#L44) | 44 | `"        \".secrets\","` | — |
+| [SRC-69F3587825-L000045](../search_code.py#L45) | 45 | `"        \".ssh\","` | — |
+| [SRC-69F3587825-L000046](../search_code.py#L46) | 46 | `"        \"credentials\","` | — |
+| [SRC-69F3587825-L000047](../search_code.py#L47) | 47 | `"        \"secrets\","` | — |
+| [SRC-69F3587825-L000048](../search_code.py#L48) | 48 | `"    }"` | — |
+| [SRC-69F3587825-L000049](../search_code.py#L49) | 49 | `")"` | — |
+| [SRC-69F3587825-L000050](../search_code.py#L50) | 50 | `"SECRET_BASENAMES = frozenset("` | — |
+| [SRC-69F3587825-L000051](../search_code.py#L51) | 51 | `"    {"` | — |
+| [SRC-69F3587825-L000052](../search_code.py#L52) | 52 | `"        \".env\","` | — |
+| [SRC-69F3587825-L000053](../search_code.py#L53) | 53 | `"        \".env.local\","` | — |
+| [SRC-69F3587825-L000054](../search_code.py#L54) | 54 | `"        \".env.production\","` | — |
+| [SRC-69F3587825-L000055](../search_code.py#L55) | 55 | `"        \".env.staging\","` | — |
+| [SRC-69F3587825-L000056](../search_code.py#L56) | 56 | `"        \".netrc\","` | — |
+| [SRC-69F3587825-L000057](../search_code.py#L57) | 57 | `"        \".npmrc\","` | — |
+| [SRC-69F3587825-L000058](../search_code.py#L58) | 58 | `"        \".pypirc\","` | — |
+| [SRC-69F3587825-L000059](../search_code.py#L59) | 59 | `"        \"authorized_keys\","` | — |
+| [SRC-69F3587825-L000060](../search_code.py#L60) | 60 | `"        \"client_secret.json\","` | — |
+| [SRC-69F3587825-L000061](../search_code.py#L61) | 61 | `"        \"client_secrets.json\","` | — |
+| [SRC-69F3587825-L000062](../search_code.py#L62) | 62 | `"        \"credentials\","` | — |
+| [SRC-69F3587825-L000063](../search_code.py#L63) | 63 | `"        \"credentials.json\","` | — |
+| [SRC-69F3587825-L000064](../search_code.py#L64) | 64 | `"        \"credentials.yaml\","` | — |
+| [SRC-69F3587825-L000065](../search_code.py#L65) | 65 | `"        \"credentials.yml\","` | — |
+| [SRC-69F3587825-L000066](../search_code.py#L66) | 66 | `"        \"id_dsa\","` | — |
+| [SRC-69F3587825-L000067](../search_code.py#L67) | 67 | `"        \"id_ecdsa\","` | — |
+| [SRC-69F3587825-L000068](../search_code.py#L68) | 68 | `"        \"id_ed25519\","` | — |
+| [SRC-69F3587825-L000069](../search_code.py#L69) | 69 | `"        \"id_rsa\","` | — |
+| [SRC-69F3587825-L000070](../search_code.py#L70) | 70 | `"        \"secrets.json\","` | — |
+| [SRC-69F3587825-L000071](../search_code.py#L71) | 71 | `"        \"secrets.yaml\","` | — |
+| [SRC-69F3587825-L000072](../search_code.py#L72) | 72 | `"        \"secrets.yml\","` | — |
+| [SRC-69F3587825-L000073](../search_code.py#L73) | 73 | `"        \"service-account.json\","` | — |
+| [SRC-69F3587825-L000074](../search_code.py#L74) | 74 | `"        \"token.json\","` | — |
+| [SRC-69F3587825-L000075](../search_code.py#L75) | 75 | `"    }"` | — |
+| [SRC-69F3587825-L000076](../search_code.py#L76) | 76 | `")"` | — |
+| [SRC-69F3587825-L000077](../search_code.py#L77) | 77 | `"SENSITIVE_NAME_RE = re.compile("` | — |
+| [SRC-69F3587825-L000078](../search_code.py#L78) | 78 | `"    r\"(?:^\|[._-])(?:secret\|secrets\|credential\|credentials\|password\|passwords\|token\|tokens\|private[_-]?key)(?:[._-]\|$)\","` | — |
+| [SRC-69F3587825-L000079](../search_code.py#L79) | 79 | `"    re.IGNORECASE,"` | — |
+| [SRC-69F3587825-L000080](../search_code.py#L80) | 80 | `")"` | — |
+| [SRC-69F3587825-L000081](../search_code.py#L81) | 81 | `"SENSITIVE_CONFIG_SUFFIXES = frozenset("` | — |
+| [SRC-69F3587825-L000082](../search_code.py#L82) | 82 | `"    {\".cfg\", \".conf\", \".ini\", \".json\", \".properties\", \".toml\", \".txt\", \".xml\", \".yaml\", \".yml\"}"` | — |
+| [SRC-69F3587825-L000083](../search_code.py#L83) | 83 | `")"` | — |
+| [SRC-69F3587825-L000084](../search_code.py#L84) | 84 | `"MAX_SEARCH_FILE_BYTES = 2 * 1024 * 1024"` | — |
+| [SRC-69F3587825-L000085](../search_code.py#L85) | 85 | `""` | — |
+| [SRC-69F3587825-L000086](../search_code.py#L86) | 86 | `""` | — |
+| [SRC-69F3587825-L000087](../search_code.py#L87) | 87 | `"def _is_sensitive_path(path: Path) -> bool:"` | — |
+| [SRC-69F3587825-L000088](../search_code.py#L88) | 88 | `"    \"\"\"Return whether a local path appears to contain credentials or private runtime data.\"\"\""` | — |
+| [SRC-69F3587825-L000089](../search_code.py#L89) | 89 | `"    name = path.name.lower()"` | — |
+| [SRC-69F3587825-L000090](../search_code.py#L90) | 90 | `"    parent_names = {part.lower() for part in path.parts[:-1]}"` | — |
+| [SRC-69F3587825-L000091](../search_code.py#L91) | 91 | `"    if name in SECRET_BASENAMES or parent_names & EXCLUDED_DIRECTORIES:"` | — |
+| [SRC-69F3587825-L000092](../search_code.py#L92) | 92 | `"        return True"` | — |
+| [SRC-69F3587825-L000093](../search_code.py#L93) | 93 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
+| [SRC-69F3587825-L000094](../search_code.py#L94) | 94 | `"        return True"` | — |
+| [SRC-69F3587825-L000095](../search_code.py#L95) | 95 | `"    if name.endswith((\".example\", \".sample\", \".template\")):"` | — |
+| [SRC-69F3587825-L000096](../search_code.py#L96) | 96 | `"        return False"` | — |
+| [SRC-69F3587825-L000097](../search_code.py#L97) | 97 | `"    if SENSITIVE_NAME_RE.search(name) and path.suffix.lower() in SENSITIVE_CONFIG_SUFFIXES:"` | — |
+| [SRC-69F3587825-L000098](../search_code.py#L98) | 98 | `"        return True"` | — |
+| [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
+| [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
+| [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    {"` | — |
 | [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"        \".py\","` | — |
 | [SRC-69F3587825-L000103](../search_code.py#L103) | 103 | `"        \".md\","` | — |
 | [SRC-69F3587825-L000104](../search_code.py#L104) | 104 | `"        \".html\","` | — |
@@ -825,66 +888,3 @@
 | [SRC-4FFD5AFC54-L000041](../../scripts/run_answer_quality_benchmark.py#L41) | 41 | `""` | — |
 | [SRC-4FFD5AFC54-L000042](../../scripts/run_answer_quality_benchmark.py#L42) | 42 | `"def validate_base_url(base_url: str, *, token_present: bool = False) -> str:"` | — |
 | [SRC-4FFD5AFC54-L000043](../../scripts/run_answer_quality_benchmark.py#L43) | 43 | `"    \"\"\"Validate and normalize an API origin before any request can carry a token.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000044](../../scripts/run_answer_quality_benchmark.py#L44) | 44 | `"    if not isinstance(base_url, str) or not base_url.strip():"` | — |
-| [SRC-4FFD5AFC54-L000045](../../scripts/run_answer_quality_benchmark.py#L45) | 45 | `"        raise ValueError(\"Base URL must be a non-empty HTTP(S) origin.\")"` | — |
-| [SRC-4FFD5AFC54-L000046](../../scripts/run_answer_quality_benchmark.py#L46) | 46 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000047](../../scripts/run_answer_quality_benchmark.py#L47) | 47 | `"        parsed = urllib.parse.urlsplit(base_url.strip())"` | — |
-| [SRC-4FFD5AFC54-L000048](../../scripts/run_answer_quality_benchmark.py#L48) | 48 | `"        scheme = parsed.scheme.lower()"` | — |
-| [SRC-4FFD5AFC54-L000049](../../scripts/run_answer_quality_benchmark.py#L49) | 49 | `"        host = (parsed.hostname or \"\").lower().rstrip(\".\")"` | — |
-| [SRC-4FFD5AFC54-L000050](../../scripts/run_answer_quality_benchmark.py#L50) | 50 | `"        port = parsed.port"` | — |
-| [SRC-4FFD5AFC54-L000051](../../scripts/run_answer_quality_benchmark.py#L51) | 51 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000052](../../scripts/run_answer_quality_benchmark.py#L52) | 52 | `"        raise ValueError(\"Base URL is malformed.\") from exc"` | — |
-| [SRC-4FFD5AFC54-L000053](../../scripts/run_answer_quality_benchmark.py#L53) | 53 | `""` | — |
-| [SRC-4FFD5AFC54-L000054](../../scripts/run_answer_quality_benchmark.py#L54) | 54 | `"    if scheme not in {\"http\", \"https\"} or not host:"` | — |
-| [SRC-4FFD5AFC54-L000055](../../scripts/run_answer_quality_benchmark.py#L55) | 55 | `"        raise ValueError(\"Base URL must use HTTP or HTTPS and include a hostname.\")"` | — |
-| [SRC-4FFD5AFC54-L000056](../../scripts/run_answer_quality_benchmark.py#L56) | 56 | `"    if parsed.username is not None or parsed.password is not None:"` | — |
-| [SRC-4FFD5AFC54-L000057](../../scripts/run_answer_quality_benchmark.py#L57) | 57 | `"        raise ValueError(\"Base URL must not include a username or password.\")"` | — |
-| [SRC-4FFD5AFC54-L000058](../../scripts/run_answer_quality_benchmark.py#L58) | 58 | `"    if parsed.path not in {\"\", \"/\"} or parsed.query or parsed.fragment:"` | — |
-| [SRC-4FFD5AFC54-L000059](../../scripts/run_answer_quality_benchmark.py#L59) | 59 | `"        raise ValueError(\"Base URL must contain only the origin, without path, query, or fragment.\")"` | — |
-| [SRC-4FFD5AFC54-L000060](../../scripts/run_answer_quality_benchmark.py#L60) | 60 | `""` | — |
-| [SRC-4FFD5AFC54-L000061](../../scripts/run_answer_quality_benchmark.py#L61) | 61 | `"    loopback = host == \"localhost\""` | — |
-| [SRC-4FFD5AFC54-L000062](../../scripts/run_answer_quality_benchmark.py#L62) | 62 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000063](../../scripts/run_answer_quality_benchmark.py#L63) | 63 | `"        loopback = ipaddress.ip_address(host).is_loopback"` | — |
-| [SRC-4FFD5AFC54-L000064](../../scripts/run_answer_quality_benchmark.py#L64) | 64 | `"    except ValueError:"` | — |
-| [SRC-4FFD5AFC54-L000065](../../scripts/run_answer_quality_benchmark.py#L65) | 65 | `"        pass"` | — |
-| [SRC-4FFD5AFC54-L000066](../../scripts/run_answer_quality_benchmark.py#L66) | 66 | `""` | — |
-| [SRC-4FFD5AFC54-L000067](../../scripts/run_answer_quality_benchmark.py#L67) | 67 | `"    if scheme == \"http\" and not loopback:"` | — |
-| [SRC-4FFD5AFC54-L000068](../../scripts/run_answer_quality_benchmark.py#L68) | 68 | `"        raise ValueError(\"Plain HTTP is allowed only for localhost or a loopback IP.\")"` | — |
-| [SRC-4FFD5AFC54-L000069](../../scripts/run_answer_quality_benchmark.py#L69) | 69 | `""` | — |
-| [SRC-4FFD5AFC54-L000070](../../scripts/run_answer_quality_benchmark.py#L70) | 70 | `"    if (scheme == \"https\" and port == 443) or (scheme == \"http\" and port == 80):"` | — |
-| [SRC-4FFD5AFC54-L000071](../../scripts/run_answer_quality_benchmark.py#L71) | 71 | `"        port = None"` | — |
-| [SRC-4FFD5AFC54-L000072](../../scripts/run_answer_quality_benchmark.py#L72) | 72 | `"    host_for_origin = f\"[{host}]\" if \":\" in host else host"` | — |
-| [SRC-4FFD5AFC54-L000073](../../scripts/run_answer_quality_benchmark.py#L73) | 73 | `"    origin = f\"{scheme}://{host_for_origin}\" + (f\":{port}\" if port is not None else \"\")"` | — |
-| [SRC-4FFD5AFC54-L000074](../../scripts/run_answer_quality_benchmark.py#L74) | 74 | `""` | — |
-| [SRC-4FFD5AFC54-L000075](../../scripts/run_answer_quality_benchmark.py#L75) | 75 | `"    if token_present and not loopback:"` | — |
-| [SRC-4FFD5AFC54-L000076](../../scripts/run_answer_quality_benchmark.py#L76) | 76 | `"        allowed = os.getenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", \"\").strip()"` | — |
-| [SRC-4FFD5AFC54-L000077](../../scripts/run_answer_quality_benchmark.py#L77) | 77 | `"        if not allowed:"` | — |
-| [SRC-4FFD5AFC54-L000078](../../scripts/run_answer_quality_benchmark.py#L78) | 78 | `"            raise ValueError("` | — |
-| [SRC-4FFD5AFC54-L000079](../../scripts/run_answer_quality_benchmark.py#L79) | 79 | `"                \"A bearer token requires OMARAI_BENCHMARK_ALLOWED_ORIGIN to match \""` | — |
-| [SRC-4FFD5AFC54-L000080](../../scripts/run_answer_quality_benchmark.py#L80) | 80 | `"                \"the exact HTTPS deployment origin.\""` | — |
-| [SRC-4FFD5AFC54-L000081](../../scripts/run_answer_quality_benchmark.py#L81) | 81 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000082](../../scripts/run_answer_quality_benchmark.py#L82) | 82 | `"        allowed_origin = validate_base_url(allowed, token_present=False)"` | — |
-| [SRC-4FFD5AFC54-L000083](../../scripts/run_answer_quality_benchmark.py#L83) | 83 | `"        if allowed_origin != origin:"` | — |
-| [SRC-4FFD5AFC54-L000084](../../scripts/run_answer_quality_benchmark.py#L84) | 84 | `"            raise ValueError("` | — |
-| [SRC-4FFD5AFC54-L000085](../../scripts/run_answer_quality_benchmark.py#L85) | 85 | `"                \"Refusing to send the bearer token: base URL does not match \""` | — |
-| [SRC-4FFD5AFC54-L000086](../../scripts/run_answer_quality_benchmark.py#L86) | 86 | `"                \"OMARAI_BENCHMARK_ALLOWED_ORIGIN.\""` | — |
-| [SRC-4FFD5AFC54-L000087](../../scripts/run_answer_quality_benchmark.py#L87) | 87 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000088](../../scripts/run_answer_quality_benchmark.py#L88) | 88 | `"    return origin"` | — |
-| [SRC-4FFD5AFC54-L000089](../../scripts/run_answer_quality_benchmark.py#L89) | 89 | `""` | — |
-| [SRC-4FFD5AFC54-L000090](../../scripts/run_answer_quality_benchmark.py#L90) | 90 | `""` | — |
-| [SRC-4FFD5AFC54-L000091](../../scripts/run_answer_quality_benchmark.py#L91) | 91 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
-| [SRC-4FFD5AFC54-L000092](../../scripts/run_answer_quality_benchmark.py#L92) | 92 | `"    \"\"\"Do not follow redirects; the bearer token must never move to another origin.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000093](../../scripts/run_answer_quality_benchmark.py#L93) | 93 | `""` | — |
-| [SRC-4FFD5AFC54-L000094](../../scripts/run_answer_quality_benchmark.py#L94) | 94 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
-| [SRC-4FFD5AFC54-L000095](../../scripts/run_answer_quality_benchmark.py#L95) | 95 | `"        return None"` | — |
-| [SRC-4FFD5AFC54-L000096](../../scripts/run_answer_quality_benchmark.py#L96) | 96 | `""` | — |
-| [SRC-4FFD5AFC54-L000097](../../scripts/run_answer_quality_benchmark.py#L97) | 97 | `""` | — |
-| [SRC-4FFD5AFC54-L000098](../../scripts/run_answer_quality_benchmark.py#L98) | 98 | `"_NO_REDIRECT_OPENER = urllib.request.build_opener(_NoRedirectHandler())"` | — |
-| [SRC-4FFD5AFC54-L000099](../../scripts/run_answer_quality_benchmark.py#L99) | 99 | `""` | — |
-| [SRC-4FFD5AFC54-L000100](../../scripts/run_answer_quality_benchmark.py#L100) | 100 | `"REQUIRED_FIELDS = {"` | — |
-| [SRC-4FFD5AFC54-L000101](../../scripts/run_answer_quality_benchmark.py#L101) | 101 | `"    \"case_id\","` | — |
-| [SRC-4FFD5AFC54-L000102](../../scripts/run_answer_quality_benchmark.py#L102) | 102 | `"    \"category\","` | — |
-| [SRC-4FFD5AFC54-L000103](../../scripts/run_answer_quality_benchmark.py#L103) | 103 | `"    \"language\","` | — |
-| [SRC-4FFD5AFC54-L000104](../../scripts/run_answer_quality_benchmark.py#L104) | 104 | `"    \"question\","` | — |
-| [SRC-4FFD5AFC54-L000105](../../scripts/run_answer_quality_benchmark.py#L105) | 105 | `"    \"expected_strategy\","` | — |
-| [SRC-4FFD5AFC54-L000106](../../scripts/run_answer_quality_benchmark.py#L106) | 106 | `"    \"required_behaviors\","` | — |

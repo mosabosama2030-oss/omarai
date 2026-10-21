@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000600 إلى SRC-8455F405B6-L000023
+- النطاق: SRC-3451CC474D-L000537 إلى SRC-6BCB799CEC-L000266
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,69 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000537](../../tests/test_api.py#L537) | 537 | `""` | — |
+| [SRC-3451CC474D-L000538](../../tests/test_api.py#L538) | 538 | `"def test_api_returns_408_when_request_body_read_times_out(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000539](../../tests/test_api.py#L539) | 539 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000540](../../tests/test_api.py#L540) | 540 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000541](../../tests/test_api.py#L541) | 541 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS\", 0.1)"` | — |
+| [SRC-3451CC474D-L000542](../../tests/test_api.py#L542) | 542 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L000543](../../tests/test_api.py#L543) | 543 | `"    with socket.create_connection((host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2) as client:"` | — |
+| [SRC-3451CC474D-L000544](../../tests/test_api.py#L544) | 544 | `"        client.settimeout(2)"` | — |
+| [SRC-3451CC474D-L000545](../../tests/test_api.py#L545) | 545 | `"        client.sendall("` | — |
+| [SRC-3451CC474D-L000546](../../tests/test_api.py#L546) | 546 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
+| [SRC-3451CC474D-L000547](../../tests/test_api.py#L547) | 547 | `"            b\"Host: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L000548](../../tests/test_api.py#L548) | 548 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L000549](../../tests/test_api.py#L549) | 549 | `"            b\"Content-Length: 40\\r\\n\""` | — |
+| [SRC-3451CC474D-L000550](../../tests/test_api.py#L550) | 550 | `"            b\"Connection: close\\r\\n\\r\\n\""` | — |
+| [SRC-3451CC474D-L000551](../../tests/test_api.py#L551) | 551 | `"            b\"{}\""` | — |
+| [SRC-3451CC474D-L000552](../../tests/test_api.py#L552) | 552 | `"        )"` | — |
+| [SRC-3451CC474D-L000553](../../tests/test_api.py#L553) | 553 | `"        response = b\"\""` | — |
+| [SRC-3451CC474D-L000554](../../tests/test_api.py#L554) | 554 | `"        while True:"` | — |
+| [SRC-3451CC474D-L000555](../../tests/test_api.py#L555) | 555 | `"            chunk = client.recv(4096)"` | — |
+| [SRC-3451CC474D-L000556](../../tests/test_api.py#L556) | 556 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L000557](../../tests/test_api.py#L557) | 557 | `"                break"` | — |
+| [SRC-3451CC474D-L000558](../../tests/test_api.py#L558) | 558 | `"            response += chunk"` | — |
+| [SRC-3451CC474D-L000559](../../tests/test_api.py#L559) | 559 | `""` | — |
+| [SRC-3451CC474D-L000560](../../tests/test_api.py#L560) | 560 | `"    assert response.startswith(b\"HTTP/1.0 408\")"` | — |
+| [SRC-3451CC474D-L000561](../../tests/test_api.py#L561) | 561 | `"    assert b\"request body read timed out\" in response"` | — |
+| [SRC-3451CC474D-L000562](../../tests/test_api.py#L562) | 562 | `""` | — |
+| [SRC-3451CC474D-L000563](../../tests/test_api.py#L563) | 563 | `""` | — |
+| [SRC-3451CC474D-L000564](../../tests/test_api.py#L564) | 564 | `"def test_api_absolute_body_deadline_stops_slow_trickle(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000565](../../tests/test_api.py#L565) | 565 | `"    \"\"\"A client must not evade the total deadline by sending before each idle timeout.\"\"\""` | — |
+| [SRC-3451CC474D-L000566](../../tests/test_api.py#L566) | 566 | `"    import time"` | — |
+| [SRC-3451CC474D-L000567](../../tests/test_api.py#L567) | 567 | `""` | — |
+| [SRC-3451CC474D-L000568](../../tests/test_api.py#L568) | 568 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000569](../../tests/test_api.py#L569) | 569 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000570](../../tests/test_api.py#L570) | 570 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS\", 0.45)"` | — |
+| [SRC-3451CC474D-L000571](../../tests/test_api.py#L571) | 571 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_BODY_IDLE_TIMEOUT_SECONDS\", 0.20)"` | — |
+| [SRC-3451CC474D-L000572](../../tests/test_api.py#L572) | 572 | `"    host, port = local_api.removeprefix(\"http://\").rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L000573](../../tests/test_api.py#L573) | 573 | `""` | — |
+| [SRC-3451CC474D-L000574](../../tests/test_api.py#L574) | 574 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
+| [SRC-3451CC474D-L000575](../../tests/test_api.py#L575) | 575 | `"        client.settimeout(2)"` | — |
+| [SRC-3451CC474D-L000576](../../tests/test_api.py#L576) | 576 | `"        started = time.monotonic()"` | — |
+| [SRC-3451CC474D-L000577](../../tests/test_api.py#L577) | 577 | `"        client.sendall("` | — |
+| [SRC-3451CC474D-L000578](../../tests/test_api.py#L578) | 578 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
+| [SRC-3451CC474D-L000579](../../tests/test_api.py#L579) | 579 | `"            b\"Host: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L000580](../../tests/test_api.py#L580) | 580 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L000581](../../tests/test_api.py#L581) | 581 | `"            b\"Content-Length: 100\\r\\n\""` | — |
+| [SRC-3451CC474D-L000582](../../tests/test_api.py#L582) | 582 | `"            b\"Connection: close\\r\\n\\r\\n\""` | — |
+| [SRC-3451CC474D-L000583](../../tests/test_api.py#L583) | 583 | `"            b\"{\""` | — |
+| [SRC-3451CC474D-L000584](../../tests/test_api.py#L584) | 584 | `"        )"` | — |
+| [SRC-3451CC474D-L000585](../../tests/test_api.py#L585) | 585 | `"        # Each fragment arrives before the 0.20s idle timeout, but the complete"` | — |
+| [SRC-3451CC474D-L000586](../../tests/test_api.py#L586) | 586 | `"        # request body never arrives before the 0.45s absolute deadline."` | — |
+| [SRC-3451CC474D-L000587](../../tests/test_api.py#L587) | 587 | `"        for fragment in (b'\"', b\"text\", b'\"', b\":\"):"` | — |
+| [SRC-3451CC474D-L000588](../../tests/test_api.py#L588) | 588 | `"            time.sleep(0.08)"` | — |
+| [SRC-3451CC474D-L000589](../../tests/test_api.py#L589) | 589 | `"            try:"` | — |
+| [SRC-3451CC474D-L000590](../../tests/test_api.py#L590) | 590 | `"                client.sendall(fragment)"` | — |
+| [SRC-3451CC474D-L000591](../../tests/test_api.py#L591) | 591 | `"            except OSError:"` | — |
+| [SRC-3451CC474D-L000592](../../tests/test_api.py#L592) | 592 | `"                break"` | — |
+| [SRC-3451CC474D-L000593](../../tests/test_api.py#L593) | 593 | `""` | — |
+| [SRC-3451CC474D-L000594](../../tests/test_api.py#L594) | 594 | `"        response = bytearray()"` | — |
+| [SRC-3451CC474D-L000595](../../tests/test_api.py#L595) | 595 | `"        while True:"` | — |
+| [SRC-3451CC474D-L000596](../../tests/test_api.py#L596) | 596 | `"            try:"` | — |
+| [SRC-3451CC474D-L000597](../../tests/test_api.py#L597) | 597 | `"                chunk = client.recv(4096)"` | — |
+| [SRC-3451CC474D-L000598](../../tests/test_api.py#L598) | 598 | `"            except TimeoutError:"` | — |
+| [SRC-3451CC474D-L000599](../../tests/test_api.py#L599) | 599 | `"                break"` | — |
 | [SRC-3451CC474D-L000600](../../tests/test_api.py#L600) | 600 | `"            if not chunk:"` | — |
 | [SRC-3451CC474D-L000601](../../tests/test_api.py#L601) | 601 | `"                break"` | — |
 | [SRC-3451CC474D-L000602](../../tests/test_api.py#L602) | 602 | `"            response.extend(chunk)"` | — |
@@ -780,75 +843,3 @@
 | [SRC-6BCB799CEC-L000264](../../tests/test_evidence_provenance.py#L264) | 264 | `"            return self"` | — |
 | [SRC-6BCB799CEC-L000265](../../tests/test_evidence_provenance.py#L265) | 265 | `""` | — |
 | [SRC-6BCB799CEC-L000266](../../tests/test_evidence_provenance.py#L266) | 266 | `"        def __exit__(self, *args):"` | — |
-| [SRC-6BCB799CEC-L000267](../../tests/test_evidence_provenance.py#L267) | 267 | `"            return False"` | — |
-| [SRC-6BCB799CEC-L000268](../../tests/test_evidence_provenance.py#L268) | 268 | `""` | — |
-| [SRC-6BCB799CEC-L000269](../../tests/test_evidence_provenance.py#L269) | 269 | `"        def stream(self, method, url, **kwargs):"` | — |
-| [SRC-6BCB799CEC-L000270](../../tests/test_evidence_provenance.py#L270) | 270 | `"            connections.append(url)"` | — |
-| [SRC-6BCB799CEC-L000271](../../tests/test_evidence_provenance.py#L271) | 271 | `"            return FakeResponse()"` | — |
-| [SRC-6BCB799CEC-L000272](../../tests/test_evidence_provenance.py#L272) | 272 | `""` | — |
-| [SRC-6BCB799CEC-L000273](../../tests/test_evidence_provenance.py#L273) | 273 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
-| [SRC-6BCB799CEC-L000274](../../tests/test_evidence_provenance.py#L274) | 274 | `"    monkeypatch.setattr(\"httpx.Client\", FakeClient)"` | — |
-| [SRC-6BCB799CEC-L000275](../../tests/test_evidence_provenance.py#L275) | 275 | `"    assert WebAgent()._fetch_page(\"https://example.com/article\") == (\"\", \"\")"` | — |
-| [SRC-6BCB799CEC-L000276](../../tests/test_evidence_provenance.py#L276) | 276 | `"    assert len(connections) == 1"` | — |
-| [SRC-6BCB799CEC-L000277](../../tests/test_evidence_provenance.py#L277) | 277 | `"    assert connections[0].startswith(\"https://1.1.1.1/\")"` | — |
-| [SRC-6BCB799CEC-L000278](../../tests/test_evidence_provenance.py#L278) | 278 | `"    assert resolutions == [\"example.com\"]"` | — |
-| [SRC-6BCB799CEC-L000279](../../tests/test_evidence_provenance.py#L279) | 279 | `""` | — |
-| [SRC-6BCB799CEC-L000280](../../tests/test_evidence_provenance.py#L280) | 280 | `""` | — |
-| [SRC-6BCB799CEC-L000281](../../tests/test_evidence_provenance.py#L281) | 281 | `""` | — |
-| [SRC-6BCB799CEC-L000282](../../tests/test_evidence_provenance.py#L282) | 282 | `"@pytest.mark.parametrize("` | — |
-| [SRC-6BCB799CEC-L000283](../../tests/test_evidence_provenance.py#L283) | 283 | `"    \"address\","` | — |
-| [SRC-6BCB799CEC-L000284](../../tests/test_evidence_provenance.py#L284) | 284 | `"    ["` | — |
-| [SRC-6BCB799CEC-L000285](../../tests/test_evidence_provenance.py#L285) | 285 | `"        \"0.0.0.0\",          # unspecified IPv4"` | — |
-| [SRC-6BCB799CEC-L000286](../../tests/test_evidence_provenance.py#L286) | 286 | `"        \"127.0.0.1\",        # loopback IPv4"` | — |
-| [SRC-6BCB799CEC-L000287](../../tests/test_evidence_provenance.py#L287) | 287 | `"        \"10.0.0.1\",         # private IPv4"` | — |
-| [SRC-6BCB799CEC-L000288](../../tests/test_evidence_provenance.py#L288) | 288 | `"        \"172.16.0.1\",       # private IPv4"` | — |
-| [SRC-6BCB799CEC-L000289](../../tests/test_evidence_provenance.py#L289) | 289 | `"        \"192.168.1.1\",      # private IPv4"` | — |
-| [SRC-6BCB799CEC-L000290](../../tests/test_evidence_provenance.py#L290) | 290 | `"        \"169.254.169.254\",  # link-local / common metadata endpoint"` | — |
-| [SRC-6BCB799CEC-L000291](../../tests/test_evidence_provenance.py#L291) | 291 | `"        \"100.64.0.1\",       # shared address space"` | — |
-| [SRC-6BCB799CEC-L000292](../../tests/test_evidence_provenance.py#L292) | 292 | `"        \"::\",                # unspecified IPv6"` | — |
-| [SRC-6BCB799CEC-L000293](../../tests/test_evidence_provenance.py#L293) | 293 | `"        \"::1\",               # loopback IPv6"` | — |
-| [SRC-6BCB799CEC-L000294](../../tests/test_evidence_provenance.py#L294) | 294 | `"        \"fc00::1\",           # unique-local IPv6"` | — |
-| [SRC-6BCB799CEC-L000295](../../tests/test_evidence_provenance.py#L295) | 295 | `"        \"fe80::1\",           # link-local IPv6"` | — |
-| [SRC-6BCB799CEC-L000296](../../tests/test_evidence_provenance.py#L296) | 296 | `"    ],"` | — |
-| [SRC-6BCB799CEC-L000297](../../tests/test_evidence_provenance.py#L297) | 297 | `")"` | — |
-| [SRC-6BCB799CEC-L000298](../../tests/test_evidence_provenance.py#L298) | 298 | `"def test_non_global_ipv4_and_ipv6_dns_answers_are_rejected(address, monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000299](../../tests/test_evidence_provenance.py#L299) | 299 | `"    \"\"\"No DNS answer from a non-global range may pass the page-fetch gate.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000300](../../tests/test_evidence_provenance.py#L300) | 300 | `"    monkeypatch.setattr("` | — |
-| [SRC-6BCB799CEC-L000301](../../tests/test_evidence_provenance.py#L301) | 301 | `"        socket,"` | — |
-| [SRC-6BCB799CEC-L000302](../../tests/test_evidence_provenance.py#L302) | 302 | `"        \"getaddrinfo\","` | — |
-| [SRC-6BCB799CEC-L000303](../../tests/test_evidence_provenance.py#L303) | 303 | `"        lambda host, port, *args, **kwargs: _addrinfo(address),"` | — |
-| [SRC-6BCB799CEC-L000304](../../tests/test_evidence_provenance.py#L304) | 304 | `"    )"` | — |
-| [SRC-6BCB799CEC-L000305](../../tests/test_evidence_provenance.py#L305) | 305 | `""` | — |
-| [SRC-6BCB799CEC-L000306](../../tests/test_evidence_provenance.py#L306) | 306 | `"    assert _public_ip_literals(\"public.example\") is None"` | — |
-## اختبارات
-
-### FILE-8455F405B6 — [tests/test_evidence_signals.py](../../tests/test_evidence_signals.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-8455F405B6-L000001](../../tests/test_evidence_signals.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-8455F405B6-L000002](../../tests/test_evidence_signals.py#L2) | 2 | `""` | — |
-| [SRC-8455F405B6-L000003](../../tests/test_evidence_signals.py#L3) | 3 | `"from datetime import UTC, datetime"` | — |
-| [SRC-8455F405B6-L000004](../../tests/test_evidence_signals.py#L4) | 4 | `""` | — |
-| [SRC-8455F405B6-L000005](../../tests/test_evidence_signals.py#L5) | 5 | `"from agents.research import _parse_publication_date, evidence_signal_report"` | — |
-| [SRC-8455F405B6-L000006](../../tests/test_evidence_signals.py#L6) | 6 | `""` | — |
-| [SRC-8455F405B6-L000007](../../tests/test_evidence_signals.py#L7) | 7 | `""` | — |
-| [SRC-8455F405B6-L000008](../../tests/test_evidence_signals.py#L8) | 8 | `"def test_evidence_signal_report_uses_domain_provider_page_and_date_coverage():"` | — |
-| [SRC-8455F405B6-L000009](../../tests/test_evidence_signals.py#L9) | 9 | `"    now = datetime(2026, 10, 12, 12, 0, tzinfo=UTC)"` | — |
-| [SRC-8455F405B6-L000010](../../tests/test_evidence_signals.py#L10) | 10 | `"    sources = []"` | — |
-| [SRC-8455F405B6-L000011](../../tests/test_evidence_signals.py#L11) | 11 | `"    domains = ["` | — |
-| [SRC-8455F405B6-L000012](../../tests/test_evidence_signals.py#L12) | 12 | `"        \"agency.gov.eg\", \"university.edu.eg\", \"reuters.com\", \"apnews.com\","` | — |
-| [SRC-8455F405B6-L000013](../../tests/test_evidence_signals.py#L13) | 13 | `"        \"example.org\", \"example.net\", \"bbc.com\", \"sample.com\","` | — |
-| [SRC-8455F405B6-L000014](../../tests/test_evidence_signals.py#L14) | 14 | `"    ]"` | — |
-| [SRC-8455F405B6-L000015](../../tests/test_evidence_signals.py#L15) | 15 | `"    classes = ["` | — |
-| [SRC-8455F405B6-L000016](../../tests/test_evidence_signals.py#L16) | 16 | `"        \"government\", \"academic\", \"news\", \"news\","` | — |
-| [SRC-8455F405B6-L000017](../../tests/test_evidence_signals.py#L17) | 17 | `"        \"general\", \"general\", \"news\", \"general\","` | — |
-| [SRC-8455F405B6-L000018](../../tests/test_evidence_signals.py#L18) | 18 | `"    ]"` | — |
-| [SRC-8455F405B6-L000019](../../tests/test_evidence_signals.py#L19) | 19 | `"    for index, (domain, source_class) in enumerate(zip(domains, classes)):"` | — |
-| [SRC-8455F405B6-L000020](../../tests/test_evidence_signals.py#L20) | 20 | `"        sources.append({"` | — |
-| [SRC-8455F405B6-L000021](../../tests/test_evidence_signals.py#L21) | 21 | `"            \"url\": f\"https://{domain}/article-{index}\","` | — |
-| [SRC-8455F405B6-L000022](../../tests/test_evidence_signals.py#L22) | 22 | `"            \"domain\": domain,"` | — |
-| [SRC-8455F405B6-L000023](../../tests/test_evidence_signals.py#L23) | 23 | `"            \"source_class\": source_class,"` | — |

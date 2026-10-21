@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000287 إلى SRC-E599346ABE-L000076
+- النطاق: SRC-EEF2E6447C-L000224 إلى SRC-E599346ABE-L000013
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,69 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000224](../../api/omarai.py#L224) | 224 | `"            return os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() != \"1\""` | — |
+| [SRC-EEF2E6447C-L000225](../../api/omarai.py#L225) | 225 | `"        supplied = self.headers.get(\"Authorization\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000226](../../api/omarai.py#L226) | 226 | `"        if not supplied.startswith(\"Bearer \"):"` | — |
+| [SRC-EEF2E6447C-L000227](../../api/omarai.py#L227) | 227 | `"            return False"` | — |
+| [SRC-EEF2E6447C-L000228](../../api/omarai.py#L228) | 228 | `"        return hmac.compare_digest(supplied[7:].strip(), expected)"` | — |
+| [SRC-EEF2E6447C-L000229](../../api/omarai.py#L229) | 229 | `""` | — |
+| [SRC-EEF2E6447C-L000230](../../api/omarai.py#L230) | 230 | `"    def _allowed_origins(self):"` | — |
+| [SRC-EEF2E6447C-L000231](../../api/omarai.py#L231) | 231 | `"        \"\"\"Return configured browser origins plus this service’s own origin."` | — |
+| [SRC-EEF2E6447C-L000232](../../api/omarai.py#L232) | 232 | `""` | — |
+| [SRC-EEF2E6447C-L000233](../../api/omarai.py#L233) | 233 | `"        OMARAI_ALLOWED_ORIGINS is a comma-separated list of trusted origins"` | — |
+| [SRC-EEF2E6447C-L000234](../../api/omarai.py#L234) | 234 | `"        (scheme + host + optional port; no path and no wildcard)."` | — |
+| [SRC-EEF2E6447C-L000235](../../api/omarai.py#L235) | 235 | `"        \"\"\""` | — |
+| [SRC-EEF2E6447C-L000236](../../api/omarai.py#L236) | 236 | `"        configured = os.getenv(\"OMARAI_ALLOWED_ORIGINS\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000237](../../api/omarai.py#L237) | 237 | `"        origins = {"` | — |
+| [SRC-EEF2E6447C-L000238](../../api/omarai.py#L238) | 238 | `"            item.strip().rstrip(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000239](../../api/omarai.py#L239) | 239 | `"            for item in configured.split(\",\")"` | — |
+| [SRC-EEF2E6447C-L000240](../../api/omarai.py#L240) | 240 | `"            if item.strip()"` | — |
+| [SRC-EEF2E6447C-L000241](../../api/omarai.py#L241) | 241 | `"        }"` | — |
+| [SRC-EEF2E6447C-L000242](../../api/omarai.py#L242) | 242 | `"        if os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\":"` | — |
+| [SRC-EEF2E6447C-L000243](../../api/omarai.py#L243) | 243 | `"            # Host identifies the requested service origin. Do not derive allowed"` | — |
+| [SRC-EEF2E6447C-L000244](../../api/omarai.py#L244) | 244 | `"            # origins from X-Forwarded-Host: direct clients can spoof that header"` | — |
+| [SRC-EEF2E6447C-L000245](../../api/omarai.py#L245) | 245 | `"            # unless the reverse proxy is separately configured to overwrite it."` | — |
+| [SRC-EEF2E6447C-L000246](../../api/omarai.py#L246) | 246 | `"            scheme = self.headers.get(\"X-Forwarded-Proto\", \"https\").split(\",\", 1)[0].strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000247](../../api/omarai.py#L247) | 247 | `"            host = self.headers.get(\"Host\", \"\").split(\",\", 1)[0].strip()"` | — |
+| [SRC-EEF2E6447C-L000248](../../api/omarai.py#L248) | 248 | `"            if host:"` | — |
+| [SRC-EEF2E6447C-L000249](../../api/omarai.py#L249) | 249 | `"                origins.add(f\"https://{host}\".rstrip(\"/\"))"` | — |
+| [SRC-EEF2E6447C-L000250](../../api/omarai.py#L250) | 250 | `"                origins.add(f\"{scheme}://{host}\".rstrip(\"/\"))"` | — |
+| [SRC-EEF2E6447C-L000251](../../api/omarai.py#L251) | 251 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000252](../../api/omarai.py#L252) | 252 | `"            port = self.server.server_port"` | — |
+| [SRC-EEF2E6447C-L000253](../../api/omarai.py#L253) | 253 | `"            origins.update("` | — |
+| [SRC-EEF2E6447C-L000254](../../api/omarai.py#L254) | 254 | `"                {"` | — |
+| [SRC-EEF2E6447C-L000255](../../api/omarai.py#L255) | 255 | `"                    f\"http://127.0.0.1:{port}\","` | — |
+| [SRC-EEF2E6447C-L000256](../../api/omarai.py#L256) | 256 | `"                    f\"http://localhost:{port}\","` | — |
+| [SRC-EEF2E6447C-L000257](../../api/omarai.py#L257) | 257 | `"                    f\"http://[::1]:{port}\","` | — |
+| [SRC-EEF2E6447C-L000258](../../api/omarai.py#L258) | 258 | `"                }"` | — |
+| [SRC-EEF2E6447C-L000259](../../api/omarai.py#L259) | 259 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000260](../../api/omarai.py#L260) | 260 | `"        return origins"` | — |
+| [SRC-EEF2E6447C-L000261](../../api/omarai.py#L261) | 261 | `""` | — |
+| [SRC-EEF2E6447C-L000262](../../api/omarai.py#L262) | 262 | `"    def _origin_allowed(self, origin):"` | — |
+| [SRC-EEF2E6447C-L000263](../../api/omarai.py#L263) | 263 | `"        return bool(origin) and origin.rstrip(\"/\") in self._allowed_origins()"` | — |
+| [SRC-EEF2E6447C-L000264](../../api/omarai.py#L264) | 264 | `""` | — |
+| [SRC-EEF2E6447C-L000265](../../api/omarai.py#L265) | 265 | `"    def _rate_limit_client_key(self):"` | — |
+| [SRC-EEF2E6447C-L000266](../../api/omarai.py#L266) | 266 | `"        \"\"\"Choose a rate-limit identity without trusting spoofable proxy headers by default."` | — |
+| [SRC-EEF2E6447C-L000267](../../api/omarai.py#L267) | 267 | `""` | — |
+| [SRC-EEF2E6447C-L000268](../../api/omarai.py#L268) | 268 | `"        Set OMARAI_TRUST_PROXY_HEADERS=1 only when the deployment's trusted reverse"` | — |
+| [SRC-EEF2E6447C-L000269](../../api/omarai.py#L269) | 269 | `"        proxy appends the actual client IP as the rightmost X-Forwarded-For value."` | — |
+| [SRC-EEF2E6447C-L000270](../../api/omarai.py#L270) | 270 | `"        \"\"\""` | — |
+| [SRC-EEF2E6447C-L000271](../../api/omarai.py#L271) | 271 | `"        direct_ip = self.client_address[0]"` | — |
+| [SRC-EEF2E6447C-L000272](../../api/omarai.py#L272) | 272 | `"        if os.getenv(\"OMARAI_TRUST_PROXY_HEADERS\", \"\").strip() != \"1\":"` | — |
+| [SRC-EEF2E6447C-L000273](../../api/omarai.py#L273) | 273 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000274](../../api/omarai.py#L274) | 274 | `"        forwarded = self.headers.get(\"X-Forwarded-For\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000275](../../api/omarai.py#L275) | 275 | `"        candidate = forwarded.rsplit(\",\", 1)[-1].strip() if forwarded else \"\""` | — |
+| [SRC-EEF2E6447C-L000276](../../api/omarai.py#L276) | 276 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000277](../../api/omarai.py#L277) | 277 | `"            return str(ipaddress.ip_address(candidate))"` | — |
+| [SRC-EEF2E6447C-L000278](../../api/omarai.py#L278) | 278 | `"        except ValueError:"` | — |
+| [SRC-EEF2E6447C-L000279](../../api/omarai.py#L279) | 279 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000280](../../api/omarai.py#L280) | 280 | `""` | — |
+| [SRC-EEF2E6447C-L000281](../../api/omarai.py#L281) | 281 | `"    def _rate_limit_ok(self):"` | — |
+| [SRC-EEF2E6447C-L000282](../../api/omarai.py#L282) | 282 | `"        client_ip = self._rate_limit_client_key()"` | — |
+| [SRC-EEF2E6447C-L000283](../../api/omarai.py#L283) | 283 | `"        now = time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000284](../../api/omarai.py#L284) | 284 | `"        cls = type(self)"` | — |
+| [SRC-EEF2E6447C-L000285](../../api/omarai.py#L285) | 285 | `"        with self._rate_lock:"` | — |
+| [SRC-EEF2E6447C-L000286](../../api/omarai.py#L286) | 286 | `"            # Periodically remove IP buckets whose entire sliding window has expired."` | — |
 | [SRC-EEF2E6447C-L000287](../../api/omarai.py#L287) | 287 | `"            # Without this sweep, a public endpoint could retain one empty deque per"` | — |
 | [SRC-EEF2E6447C-L000288](../../api/omarai.py#L288) | 288 | `"            # distinct client IP forever, even though the rate-limit window is 60 sec."` | — |
 | [SRC-EEF2E6447C-L000289](../../api/omarai.py#L289) | 289 | `"            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:"` | — |
@@ -825,66 +888,3 @@
 | [SRC-E599346ABE-L000011](../generate_index.py#L11) | 11 | `"import re"` | — |
 | [SRC-E599346ABE-L000012](../generate_index.py#L12) | 12 | `"import subprocess"` | — |
 | [SRC-E599346ABE-L000013](../generate_index.py#L13) | 13 | `"import sys"` | — |
-| [SRC-E599346ABE-L000014](../generate_index.py#L14) | 14 | `"import tempfile"` | — |
-| [SRC-E599346ABE-L000015](../generate_index.py#L15) | 15 | `"import tokenize"` | — |
-| [SRC-E599346ABE-L000016](../generate_index.py#L16) | 16 | `"from io import StringIO"` | — |
-| [SRC-E599346ABE-L000017](../generate_index.py#L17) | 17 | `"from urllib.parse import quote"` | — |
-| [SRC-E599346ABE-L000018](../generate_index.py#L18) | 18 | `"from collections.abc import Sequence"` | — |
-| [SRC-E599346ABE-L000019](../generate_index.py#L19) | 19 | `"from dataclasses import dataclass"` | — |
-| [SRC-E599346ABE-L000020](../generate_index.py#L20) | 20 | `"from pathlib import Path"` | — |
-| [SRC-E599346ABE-L000021](../generate_index.py#L21) | 21 | `""` | — |
-| [SRC-E599346ABE-L000022](../generate_index.py#L22) | 22 | `"EXCLUDED_DIRECTORIES = frozenset("` | — |
-| [SRC-E599346ABE-L000023](../generate_index.py#L23) | 23 | `"    {"` | — |
-| [SRC-E599346ABE-L000024](../generate_index.py#L24) | 24 | `"        \".git\","` | — |
-| [SRC-E599346ABE-L000025](../generate_index.py#L25) | 25 | `"        \".hg\","` | — |
-| [SRC-E599346ABE-L000026](../generate_index.py#L26) | 26 | `"        \".svn\","` | — |
-| [SRC-E599346ABE-L000027](../generate_index.py#L27) | 27 | `"        \".venv\","` | — |
-| [SRC-E599346ABE-L000028](../generate_index.py#L28) | 28 | `"        \"venv\","` | — |
-| [SRC-E599346ABE-L000029](../generate_index.py#L29) | 29 | `"        \"env\","` | — |
-| [SRC-E599346ABE-L000030](../generate_index.py#L30) | 30 | `"        \"virtualenv\","` | — |
-| [SRC-E599346ABE-L000031](../generate_index.py#L31) | 31 | `"        \"__pycache__\","` | — |
-| [SRC-E599346ABE-L000032](../generate_index.py#L32) | 32 | `"        \".pytest_cache\","` | — |
-| [SRC-E599346ABE-L000033](../generate_index.py#L33) | 33 | `"        \".ruff_cache\","` | — |
-| [SRC-E599346ABE-L000034](../generate_index.py#L34) | 34 | `"        \".mypy_cache\","` | — |
-| [SRC-E599346ABE-L000035](../generate_index.py#L35) | 35 | `"        \".tox\","` | — |
-| [SRC-E599346ABE-L000036](../generate_index.py#L36) | 36 | `"        \".nox\","` | — |
-| [SRC-E599346ABE-L000037](../generate_index.py#L37) | 37 | `"        \"node_modules\","` | — |
-| [SRC-E599346ABE-L000038](../generate_index.py#L38) | 38 | `"        \"site-packages\","` | — |
-| [SRC-E599346ABE-L000039](../generate_index.py#L39) | 39 | `"        \"build\","` | — |
-| [SRC-E599346ABE-L000040](../generate_index.py#L40) | 40 | `"        \"dist\","` | — |
-| [SRC-E599346ABE-L000041](../generate_index.py#L41) | 41 | `"    }"` | — |
-| [SRC-E599346ABE-L000042](../generate_index.py#L42) | 42 | `")"` | — |
-| [SRC-E599346ABE-L000043](../generate_index.py#L43) | 43 | `"SENSITIVE_FILENAMES = frozenset("` | — |
-| [SRC-E599346ABE-L000044](../generate_index.py#L44) | 44 | `"    {"` | — |
-| [SRC-E599346ABE-L000045](../generate_index.py#L45) | 45 | `"        \".env\","` | — |
-| [SRC-E599346ABE-L000046](../generate_index.py#L46) | 46 | `"        \".env.local\","` | — |
-| [SRC-E599346ABE-L000047](../generate_index.py#L47) | 47 | `"        \".env.production\","` | — |
-| [SRC-E599346ABE-L000048](../generate_index.py#L48) | 48 | `"        \".env.development\","` | — |
-| [SRC-E599346ABE-L000049](../generate_index.py#L49) | 49 | `"        \"id_rsa\","` | — |
-| [SRC-E599346ABE-L000050](../generate_index.py#L50) | 50 | `"        \"id_ed25519\","` | — |
-| [SRC-E599346ABE-L000051](../generate_index.py#L51) | 51 | `"    }"` | — |
-| [SRC-E599346ABE-L000052](../generate_index.py#L52) | 52 | `")"` | — |
-| [SRC-E599346ABE-L000053](../generate_index.py#L53) | 53 | `"EXCLUDED_SUFFIXES = frozenset("` | — |
-| [SRC-E599346ABE-L000054](../generate_index.py#L54) | 54 | `"    {"` | — |
-| [SRC-E599346ABE-L000055](../generate_index.py#L55) | 55 | `"        \".pyc\","` | — |
-| [SRC-E599346ABE-L000056](../generate_index.py#L56) | 56 | `"        \".pyo\","` | — |
-| [SRC-E599346ABE-L000057](../generate_index.py#L57) | 57 | `"        \".sqlite\","` | — |
-| [SRC-E599346ABE-L000058](../generate_index.py#L58) | 58 | `"        \".sqlite3\","` | — |
-| [SRC-E599346ABE-L000059](../generate_index.py#L59) | 59 | `"        \".db\","` | — |
-| [SRC-E599346ABE-L000060](../generate_index.py#L60) | 60 | `"        \".pem\","` | — |
-| [SRC-E599346ABE-L000061](../generate_index.py#L61) | 61 | `"        \".key\","` | — |
-| [SRC-E599346ABE-L000062](../generate_index.py#L62) | 62 | `"        \".p12\","` | — |
-| [SRC-E599346ABE-L000063](../generate_index.py#L63) | 63 | `"        \".pfx\","` | — |
-| [SRC-E599346ABE-L000064](../generate_index.py#L64) | 64 | `"    }"` | — |
-| [SRC-E599346ABE-L000065](../generate_index.py#L65) | 65 | `")"` | — |
-| [SRC-E599346ABE-L000066](../generate_index.py#L66) | 66 | `"MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024"` | — |
-| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |
-| [SRC-E599346ABE-L000068](../generate_index.py#L68) | 68 | `"INDEX_RELATIVE_PATH = \"docs/MASTER_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000069](../generate_index.py#L69) | 69 | `"SOURCE_LINES_INDEX_RELATIVE_PATH = \"docs/SOURCE_LINES_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000070](../generate_index.py#L70) | 70 | `"COVERAGE_AUDIT_RELATIVE_PATH = \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
-| [SRC-E599346ABE-L000071](../generate_index.py#L71) | 71 | `"INDEX_OUTPUT_PATHS = frozenset("` | — |
-| [SRC-E599346ABE-L000072](../generate_index.py#L72) | 72 | `"    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}"` | — |
-| [SRC-E599346ABE-L000073](../generate_index.py#L73) | 73 | `")"` | — |
-| [SRC-E599346ABE-L000074](../generate_index.py#L74) | 74 | `"SOURCE_LINES_PAGES_DIR = \"docs/source_index\""` | — |
-| [SRC-E599346ABE-L000075](../generate_index.py#L75) | 75 | `"SOURCE_LINES_PAGE_SIZE = 800"` | — |
-| [SRC-E599346ABE-L000076](../generate_index.py#L76) | 76 | `"SOURCE_LINES_PAGE_RE = re.compile(r\"SOURCE_LINES_\\d{3,}\\.md\")"` | — |
