@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000033 إلى SRC-4FFD5AFC54-L000037
+- النطاق: SRC-69F3587825-L000030 إلى SRC-4FFD5AFC54-L000034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"__pycache__\","` | — |
+| [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \".pytest_cache\","` | — |
+| [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \".ruff_cache\","` | — |
 | [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".mypy_cache\","` | — |
 | [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".tox\","` | — |
 | [SRC-69F3587825-L000035](../search_code.py#L35) | 35 | `"        \".nox\","` | — |
@@ -885,6 +888,3 @@
 | [SRC-4FFD5AFC54-L000032](../../scripts/run_answer_quality_benchmark.py#L32) | 32 | `"import urllib.parse"` | — |
 | [SRC-4FFD5AFC54-L000033](../../scripts/run_answer_quality_benchmark.py#L33) | 33 | `"import urllib.request"` | — |
 | [SRC-4FFD5AFC54-L000034](../../scripts/run_answer_quality_benchmark.py#L34) | 34 | `"from datetime import UTC, datetime"` | — |
-| [SRC-4FFD5AFC54-L000035](../../scripts/run_answer_quality_benchmark.py#L35) | 35 | `"from pathlib import Path"` | — |
-| [SRC-4FFD5AFC54-L000036](../../scripts/run_answer_quality_benchmark.py#L36) | 36 | `""` | — |
-| [SRC-4FFD5AFC54-L000037](../../scripts/run_answer_quality_benchmark.py#L37) | 37 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
