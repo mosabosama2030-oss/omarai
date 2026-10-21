@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000372 إلى SRC-89BEE4CE47-L000136
+- النطاق: SRC-D17CE3D12F-L000312 إلى SRC-89BEE4CE47-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,66 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000312](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L312) | 312 | `"3. SHOULD توحيد التنسيق بين السجلات والمقاييس والتتبعات باستخدام معايير مثل OpenTelemetry عند ملاءمة الحجم."` | — |
+| [SRC-D17CE3D12F-L000313](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L313) | 313 | `"4. MUST ربط مسار الطلب بمعرّف تتبع عبر المكونات عند إمكان ذلك، دون استخدام المعرّف لإدخال معلومات شخصية حساسة."` | — |
+| [SRC-D17CE3D12F-L000314](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L314) | 314 | `"5. MUST أن تكون التنبيهات قابلة للتصرف ومرتبطة بأثر المستخدم أو خطر حقيقي، لا بكل حدث عابر."` | — |
+| [SRC-D17CE3D12F-L000315](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L315) | 315 | `"6. SHOULD تقليل التنبيهات المكررة وضبط الحساسية ومراجعة التنبيهات الكاذبة."` | — |
+| [SRC-D17CE3D12F-L000316](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L316) | 316 | `"7. MUST تحديد حدود للاحتفاظ بالـ logs/traces وحجمها وكاردينالية المقاييس وتكلفتها."` | — |
+| [SRC-D17CE3D12F-L000317](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L317) | 317 | `"8. MUST حجب أو تنقيح الأسرار والبيانات الشخصية من السجلات والتتبعات ورسائل الخطأ."` | — |
+| [SRC-D17CE3D12F-L000318](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L318) | 318 | `"9. SHOULD تضمين مؤشرات تجربة المستخدم، مثل نجاح المسار وزمن الإنجاز وفشل المصادر، وليس CPU وحده."` | — |
+| [SRC-D17CE3D12F-L000319](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L319) | 319 | `"10. MUST توثيق ما تستطيع لوحة القياس إثباته وما لا تستطيع إثباته."` | — |
+| [SRC-D17CE3D12F-L000320](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L320) | 320 | `""` | — |
+| [SRC-D17CE3D12F-L000321](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L321) | 321 | `"---"` | — |
+| [SRC-D17CE3D12F-L000322](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L322) | 322 | `""` | — |
+| [SRC-D17CE3D12F-L000323](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L323) | 323 | `"# القسم السابع — الواجهة وتجربة المستخدم وإمكانية الوصول"` | — |
+| [SRC-D17CE3D12F-L000324](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L324) | 324 | `""` | — |
+| [SRC-D17CE3D12F-L000325](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L325) | 325 | `"## 22. الوصولية Accessibility والتوافق مع المتصفحات"` | — |
+| [SRC-D17CE3D12F-L000326](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L326) | 326 | `""` | — |
+| [SRC-D17CE3D12F-L000327](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L327) | 327 | `"1. SHOULD استهداف WCAG 2.2 مستوى AA للواجهة العامة بدرجة تتناسب مع طبيعتها، مع تقييم عملي لا إعلان امتثال تلقائي."` | — |
+| [SRC-D17CE3D12F-L000328](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L328) | 328 | `"2. MUST أن تكون الوظائف الأساسية قابلة للاستخدام بلوحة المفاتيح، مع حالات تركيز واضحة وتسلسل منطقي."` | — |
+| [SRC-D17CE3D12F-L000329](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L329) | 329 | `"3. SHOULD استخدام دلالات HTML صحيحة، وتسميات واضحة لحقول الإدخال والأزرار ورسائل الأخطاء."` | — |
+| [SRC-D17CE3D12F-L000330](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L330) | 330 | `"4. MUST عدم الاعتماد على اللون وحده لإظهار الحالة أو الخطأ."` | — |
+| [SRC-D17CE3D12F-L000331](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L331) | 331 | `"5. SHOULD احترام تفضيل تقليل الحركة، والتباين، والتكبير، وحجم النص المناسب."` | — |
+| [SRC-D17CE3D12F-L000332](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L332) | 332 | `"6. MUST اختبار التفاعل مع قارئ شاشة بصورة دورية إذا كان المنتج عامًا أو يعتمد على تفاعل معقد."` | — |
+| [SRC-D17CE3D12F-L000333](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L333) | 333 | `"7. MUST ألا تخفي طبقات التحميل أو الأخطاء طريقة متابعة الاستخدام أو إعادة المحاولة."` | — |
+| [SRC-D17CE3D12F-L000334](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L334) | 334 | `"8. SHOULD اختبار المتصفحات والأجهزة الواقعية التي يستهدفها المنتج، خصوصًا Android إذا كان استخدامه أساسيًا."` | — |
+| [SRC-D17CE3D12F-L000335](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L335) | 335 | `"9. MUST حماية الواجهة من XSS باستخدام ترميز/تعقيم مناسب عند عرض HTML أو Markdown أو نصوص مستخرجة من صفحات خارجية."` | — |
+| [SRC-D17CE3D12F-L000336](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L336) | 336 | `"10. MUST اختبار حدود الواجهة بين المحتوى الموثوق وغير الموثوق؛ النص المستخرج لا يُعرض كـ HTML موثوق تلقائيًا."` | — |
+| [SRC-D17CE3D12F-L000337](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L337) | 337 | `""` | — |
+| [SRC-D17CE3D12F-L000338](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L338) | 338 | `"## 23. العربية والتدويل والاتجاه من اليمين إلى اليسار"` | — |
+| [SRC-D17CE3D12F-L000339](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L339) | 339 | `""` | — |
+| [SRC-D17CE3D12F-L000340](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L340) | 340 | `"1. MUST الحفاظ على Unicode وإجراء normalization مناسب للبحث والمقارنة دون تغيير معنى النص الأصلي المعروض."` | — |
+| [SRC-D17CE3D12F-L000341](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L341) | 341 | `"2. MUST اختبار النص المختلط عربي/إنجليزي والأرقام والروابط والكود وعناوين المصادر داخل واجهة RTL."` | — |
+| [SRC-D17CE3D12F-L000342](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L342) | 342 | ``"3. SHOULD استخدام خصائص الاتجاه والعزل ثنائي الاتجاه مثل `dir` و`bdi` و`unicode-bidi` بحذر مناسب، لا حيل تنسيق عامة تكسر النصوص."`` | — |
+| [SRC-D17CE3D12F-L000343](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L343) | 343 | `"4. MUST عدم تغيير ترتيب الرموز التقنية أو الروابط أو المعرفات عند عرضها داخل نص عربي."` | — |
+| [SRC-D17CE3D12F-L000344](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L344) | 344 | `"5. SHOULD فصل الرسائل المرئية عن مفاتيح النصوص حتى يمكن إضافة لغة مستقبلية دون إعادة كتابة المنطق."` | — |
+| [SRC-D17CE3D12F-L000345](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L345) | 345 | `"6. MUST تنسيق التواريخ والأرقام والوقت والعملات وفق locale عند عرضها، مع إظهار المنطقة الزمنية للمعلومات الحساسة للوقت."` | — |
+| [SRC-D17CE3D12F-L000346](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L346) | 346 | `"7. SHOULD اختبار اختلافات همزات الألف والتاء المربوطة والياء والألف المقصورة والتشكيل في البحث العربي، مع المحافظة على النص الأصلي والتعامل مع التطبيع بوصفه أداة بحث لا دليلاً على تطابق المعنى."` | — |
+| [SRC-D17CE3D12F-L000347](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L347) | 347 | `"8. MUST ألا يؤدي اتجاه RTL إلى كشف الرابط المضلل أو إخفاء نطاقه؛ اعرض النطاق بطريقة واضحة."` | — |
+| [SRC-D17CE3D12F-L000348](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L348) | 348 | `"9. SHOULD أن تكون رسائل الخطأ والحالة والقيود بالعربية الواضحة للمستخدم المستهدف."` | — |
+| [SRC-D17CE3D12F-L000349](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L349) | 349 | `"10. MUST اختبار النصوص الطويلة جدًا والروابط غير القابلة للكسر والتفاف الكود ومحتوى الأجهزة الصغيرة."` | — |
+| [SRC-D17CE3D12F-L000350](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L350) | 350 | `""` | — |
+| [SRC-D17CE3D12F-L000351](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L351) | 351 | `"## 24. أداء الواجهة وتجربة الفشل"` | — |
+| [SRC-D17CE3D12F-L000352](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L352) | 352 | `""` | — |
+| [SRC-D17CE3D12F-L000353](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L353) | 353 | `"1. SHOULD وضع ميزانية أداء للواجهة باستخدام مقاييس واقعية مثل Core Web Vitals عندما تنطبق."` | — |
+| [SRC-D17CE3D12F-L000354](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L354) | 354 | `"2. MUST إظهار حالة الطلب بوضوح عند التنفيذ الطويل: جاري البحث، جُمعت المصادر، تعطل مصدر، أو انتهى الطلب."` | — |
+| [SRC-D17CE3D12F-L000355](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L355) | 355 | `"3. SHOULD دعم إلغاء الطلب أو إعادة المحاولة دون تكرار إجراءات ضارة."` | — |
+| [SRC-D17CE3D12F-L000356](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L356) | 356 | `"4. MUST ألا يفقد المستخدم نصًا كتبه بسبب فشل شبكة غير متوقع دون توضيح أو وسيلة استعادة مناسبة."` | — |
+| [SRC-D17CE3D12F-L000357](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L357) | 357 | `"5. MUST التعامل مع الشبكات الضعيفة والأخطاء المؤقتة دون loops إعادة تحميل أو طلبات متكررة غير محدودة."` | — |
+| [SRC-D17CE3D12F-L000358](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L358) | 358 | `"6. SHOULD إظهار حالة جزئية صادقة إن كانت مفيدة، وفصلها عن النجاح الكامل."` | — |
+| [SRC-D17CE3D12F-L000359](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L359) | 359 | `"7. MUST عدم إظهار مصادر أو بيانات تجريبية وكأنها نتائج حقيقية في وضع الإنتاج."` | — |
+| [SRC-D17CE3D12F-L000360](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L360) | 360 | `"8. SHOULD الحفاظ على قابلية استخدام الواجهة عند غياب JavaScript أو تعطل مكوّن بصري إذا كانت طبيعة المنتج تسمح."` | — |
+| [SRC-D17CE3D12F-L000361](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L361) | 361 | `""` | — |
+| [SRC-D17CE3D12F-L000362](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L362) | 362 | `"---"` | — |
+| [SRC-D17CE3D12F-L000363](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L363) | 363 | `""` | — |
+| [SRC-D17CE3D12F-L000364](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L364) | 364 | `"# القسم الثامن — محرك البحث والمعرفة وجودة الإجابة"` | — |
+| [SRC-D17CE3D12F-L000365](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L365) | 365 | `""` | — |
+| [SRC-D17CE3D12F-L000366](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L366) | 366 | `"## 25. جودة خط البحث والاسترجاع (Search/Retrieval Quality)"` | — |
+| [SRC-D17CE3D12F-L000367](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L367) | 367 | `""` | — |
+| [SRC-D17CE3D12F-L000368](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L368) | 368 | `"1. MUST الفصل بين سؤال المستخدم، واستعلامات البحث، والصفحات المسترجعة، والمقاطع المستخرجة، والأدلة التي دعمت الإجابة."` | — |
+| [SRC-D17CE3D12F-L000369](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L369) | 369 | `"2. SHOULD قياس جودة البحث على مجموعة أسئلة تمثيلية عبر precision/recall أو مقاييس مناسبة للمهمة؛ لا تكفي مراجعة بعض النتائج يدويًا فقط."` | — |
+| [SRC-D17CE3D12F-L000370](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L370) | 370 | `"3. MUST إزالة التكرارات الواضحة ومعالجة إعادة النشر، والصفحات قليلة المحتوى، وصفحات الخطأ، والإعلانات التي تتظاهر بأنها محتوى."` | — |
+| [SRC-D17CE3D12F-L000371](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L371) | 371 | `"4. SHOULD تقدير حداثة المصدر وملاءمته وموثوقيته وتعارضه مع مصادر أخرى، وفق نوع الادعاء."` | — |
 | [SRC-D17CE3D12F-L000372](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L372) | 372 | `"5. MUST عدم معاملة ترتيب نتيجة البحث على أنه دليل قطعي على صحتها."` | — |
 | [SRC-D17CE3D12F-L000373](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L373) | 373 | `"6. MUST فصل وقت نشر المعلومة عن وقت وقوع الحدث وعن وقت جلب الصفحة عندما تتوفر هذه التواريخ، وتحديد التناقضات الزمنية."` | — |
 | [SRC-D17CE3D12F-L000374](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L374) | 374 | `"7. SHOULD حفظ أقل قدر من البيانات الوصفية اللازمة لتتبع المصدر: URL النهائي، العنوان، تاريخ الجلب، حالة الاستخراج، ومؤشرات الفشل."` | — |
@@ -765,63 +825,3 @@
 | [SRC-89BEE4CE47-L000074](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L74) | 74 | ``"\| `REL-005` و`EXT-002` \| UNKNOWN \| لم تُثبت استعادة SQLite على مضيف فعلي، ولا دوام التخزين بعد إعادة إنشاء الحاوية. \|"`` | — |
 | [SRC-89BEE4CE47-L000075](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L75) | 75 | ``"\| `SRH-001` و`TST-005` \| UNKNOWN للتكامل الحي الشامل \| وجود موصل أو نجاح Mock لا يثبت اتصالًا حيًا بكل مزود. لم يتم تشغيل قبول حي شامل في هذه الجولة. \|"`` | — |
 | [SRC-89BEE4CE47-L000076](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L76) | 76 | ``"\| `DPL-001` و`DPL-004` \| UNKNOWN للنشر الفعلي \| بناء Docker واختبار الحاوية على CI لا يثبتان وجود خدمة عامة أو تطابقها مع SHA منشور. \|"`` | — |
-| [SRC-89BEE4CE47-L000077](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L77) | 77 | ``"\| `PER-004` و`REL-006` \| UNKNOWN \| لا يوجد تقرير حمل ممثل أو خط أساس SLO قابل للاعتماد في نطاق الأدلة الحالية. \|"`` | — |
-| [SRC-89BEE4CE47-L000078](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L78) | 78 | ``"\| `GOV-003` \| UNKNOWN — قرار بشري مطلوب \| لا يوجد سجل استثناءات معتمد مثبت ضمن هذه اللقطة. غياب سجل بالمستودع لا يثبت عدم وجود قرار خارجي. \|"`` | — |
-| [SRC-89BEE4CE47-L000079](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) | 79 | `""` | — |
-| [SRC-89BEE4CE47-L000080](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L80) | 80 | `"## 4. ماذا أُنجز في مسار التشغيل خلال هذه الجولة؟"` | — |
-| [SRC-89BEE4CE47-L000081](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L81) | 81 | `""` | — |
-| [SRC-89BEE4CE47-L000082](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L82) | 82 | `"### M-01 — قراءة جسم طلب API"` | — |
-| [SRC-89BEE4CE47-L000083](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L83) | 83 | `""` | — |
-| [SRC-89BEE4CE47-L000084](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L84) | 84 | ``"**التنفيذ:** دُمج PR #48 وأصبح حد الجسم الزمني مطبقًا في `main` عند SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`. CI [39215710124](https://github.com/mosabosama2030-oss/omarai/actions/runs/39215710124) نجح على HEAD الخاص بالـPR: Ruff، و238 اختبارًا على Python 3.11 و238 على Python 3.12، وبناء الحاوية وفحص API المحمية."`` | — |
-| [SRC-89BEE4CE47-L000085](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L85) | 85 | `""` | — |
-| [SRC-89BEE4CE47-L000086](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L86) | 86 | ``"**الحالة:** الإصلاح المدمج يغطي طول الجسم وtimeout الخمول والمهلة الكلية وslow-trickle ضمن الاختبارات المضافة. CI الأحدث الخاص بـPR #55 [39224020934](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224020934) نجح على رأسه الحالي `4604a83d760b7fe913e1a75cdec04a102c33b0d6`: Ruff، و239 اختبارًا على Python 3.11 و239 على Python 3.12، وبناء الحاوية وفحص API المحمية. PR #55 ما زال مفتوحًا وغير مدمج، لذا لا يدخل إصلاح الرؤوس إلى `main` بعد. يظل `API-001` جزئيًا حتى يُراجع التغيير ويُدمج بتفويض بشري، ولا يدعي أي من هذه الاختبارات حماية شاملة من كل هجمات Slowloris أو حدًا قاطعًا لتنفيذ الوكيل كاملًا."`` | — |
-| [SRC-89BEE4CE47-L000087](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L87) | 87 | `""` | — |
-| [SRC-89BEE4CE47-L000088](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L88) | 88 | `"### M-02 — الميزانية والتزامن"` | — |
-| [SRC-89BEE4CE47-L000089](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L89) | 89 | `""` | — |
-| [SRC-89BEE4CE47-L000090](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L90) | 90 | ``"أُغلق PR #49 لأنه مكرر، وأُغلق PR #52 لأن فرعه انجرف عن `main`. PR #56 هو سطح المراجعة الحالي المبني مباشرة على `main` عند SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`. أضاف/يجمع: 100 محاولة حجز مقابل سقف 5، وحدود/تجاوز وموارد معطلة لكل من الموارد الخمسة، واختبار تحرير semaphore بعد استثناء غير متوقع."`` | — |
-| [SRC-89BEE4CE47-L000091](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L91) | 91 | `""` | — |
-| [SRC-89BEE4CE47-L000092](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L92) | 92 | ``"**الحالة:** CI run [39223310566](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223310566) نجح على الرأس `0ca1b14aa1dd63bdc48a8ca73f698f7f6bc83416`: Ruff و249 اختبارًا على Python 3.11 و249 على Python 3.12 وبناء الحاوية وفحص API المحمية. لا يزال الدليل وحدات/تكامل محليًا، وليس اختبار حمل أو ضمانًا موزعًا أو hard cancellation."`` | — |
-| [SRC-89BEE4CE47-L000093](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L93) | 93 | `""` | — |
-| [SRC-89BEE4CE47-L000094](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L94) | 94 | `"### M-03/M-04 — سجل الأدلة والاستثناءات"` | — |
-| [SRC-89BEE4CE47-L000095](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L95) | 95 | `""` | — |
-| [SRC-89BEE4CE47-L000096](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L96) | 96 | `"تحديث سجل المتطلبات وقائمة الاستثناءات مخصصان لهذا التغيير التوثيقي. ستظل الاستثناءات المقترحة غير معتمدة حتى يوافق مدير المشروع صراحة على كل قرار مطلوب. لا يعد وجود سجل دليلًا على قبول أي خطر."` | — |
-| [SRC-89BEE4CE47-L000097](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L97) | 97 | `""` | — |
-| [SRC-89BEE4CE47-L000098](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L98) | 98 | `"### M-05 — النسخ والاستعادة"` | — |
-| [SRC-89BEE4CE47-L000099](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L99) | 99 | `""` | — |
-| [SRC-89BEE4CE47-L000100](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L100) | 100 | ``"**الجزء المحلي مقترح ومثبت على فرع PR فقط؛ لم يدخل `main`.** PR #58 يضيف أداة نسخ/استعادة لا تستبدل الملفات الموجودة، وتفحص SQLite integrity وعدد السجلات، مع اختبارات round-trip والرفض الآمن. CI [39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) نجح على HEAD `59027f44388730d34c7bd7164450abdba2f9fd0a`: Ruff و244 اختبارًا على Python 3.11 و244 على Python 3.12 وبناء الحاوية وفحص API المحمية. PR #58 مفتوح وغير مدمج. دوام التخزين واستعادة نسخة على مضيف فعلي أو نسخة خارج المضيف: UNKNOWN/NOT_RUN."`` | — |
-| [SRC-89BEE4CE47-L000101](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L101) | 101 | `""` | — |
-| [SRC-89BEE4CE47-L000102](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L102) | 102 | `"### M-06 — فصل دليل الاختبارات وقبول التكامل الحي"` | — |
-| [SRC-89BEE4CE47-L000103](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L103) | 103 | `""` | — |
-| [SRC-89BEE4CE47-L000104](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L104) | 104 | ``"توجد مصفوفة فصل الأدلة في PR #51 على فرعه فقط، وهو مفتوح وغير مدمج. CI [39216670939](https://github.com/mosabosama2030-oss/omarai/actions/runs/39216670939) نجح على HEAD `9d1b64a982cf50f9558a4b58c3799fd4c96bd9ec`: Ruff و234 اختبارًا على كل من Python 3.11 و3.12 وبناء الحاوية وفحص API المحمية."`` | — |
-| [SRC-89BEE4CE47-L000105](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L105) | 105 | `""` | — |
-| [SRC-89BEE4CE47-L000106](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L106) | 106 | `"**الاختبار الحي لموفرين على استضافة محددة: NOT_RUN.** لم يُنفذ فحص حي شامل لكل موفري البحث والنموذج. إجراءات القبول الحية قد تستهلك رصيد مزود خارجي؛ لا تُشغّل دون تفويض مناسب وتحديد البيئة والهدف."` | — |
-| [SRC-89BEE4CE47-L000107](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L107) | 107 | `""` | — |
-| [SRC-89BEE4CE47-L000108](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L108) | 108 | `"### M-07 — قبول الاستضافة"` | — |
-| [SRC-89BEE4CE47-L000109](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L109) | 109 | `""` | — |
-| [SRC-89BEE4CE47-L000110](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L110) | 110 | `"**UNKNOWN / NOT_RUN.** لا يوجد في هذه اللقطة دليل مرتبط بعنوان خدمة مستضافة وSHA منشور يمكن التحقق منه. لا يُنشأ حساب أو تُمنح صلاحية GitHub أو تُنشر الخدمة ضمن هذا التقرير."` | — |
-| [SRC-89BEE4CE47-L000111](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L111) | 111 | `""` | — |
-| [SRC-89BEE4CE47-L000112](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L112) | 112 | `"### M-08 — مراجعة نتيجة Grok ومراجعة مصدر مستقلة مبدئية"` | — |
-| [SRC-89BEE4CE47-L000113](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L113) | 113 | `""` | — |
-| [SRC-89BEE4CE47-L000114](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L114) | 114 | `"**حالة مراجعة Grok: PENDING INPUT.** لم تتوفر نتيجة تدقيق Grok النهائية أو PRs الأمنية الناتجة عنه ضمن هذه اللقطة. لا يجوز اعتبار هذه المراجعة المصدرية بديلًا عن مدقق مستقل، ولا يمكن إعلان مراجعة Grok مكتملة دون تقريره الفعلي."` | — |
-| [SRC-89BEE4CE47-L000115](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L115) | 115 | `""` | — |
-| [SRC-89BEE4CE47-L000116](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L116) | 116 | ``"**نتيجة فحص مصدر محدود على `main` SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`:**"`` | — |
-| [SRC-89BEE4CE47-L000117](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L117) | 117 | `""` | — |
-| [SRC-89BEE4CE47-L000118](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L118) | 118 | `"\| المجال \| الدليل الذي شوهد \| التقييم الحالي والحد \|"` | — |
-| [SRC-89BEE4CE47-L000119](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L119) | 119 | `"\|---\|---\|---\|"` | — |
-| [SRC-89BEE4CE47-L000120](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L120) | 120 | ``"\| SSRF — التحقق قبل الاتصال \| `_public_http_url` يتحقق من HTTP(S)، بيانات الاعتماد، المنافذ، المضيفين المحليين وعناوين IP الحرفية غير العامة. `_public_ip_literals` يرفض فشل DNS وأي إجابة غير عامة. \| دفاع مصدر قوي ضمن المسار المفحوص، وليس شهادة لجميع تدفقات الشبكة أو لكل parser edge cases. \|"`` | — |
-| [SRC-89BEE4CE47-L000121](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L121) | 121 | ``"\| SSRF — DNS pinning / redirects \| `_fetch_page` يربط الاتصال بعنوان IP تم فحصه، يحتفظ بـHost وTLS SNI المناسبين، يوقف اتباع التحويلات التلقائي، يعيد فحص كل redirect، يستخدم `verify=True` و`trust_env=False` وحد حجم/نوع محتوى. توجد اختبارات محاكاة للـIP العام المثبت، إجابات DNS المختلطة، والتحويل إلى loopback. \| اختبارات المحاكاة لا تثبت الشبكة الحية أو كل سلوك مكتبات النقل/نظام التشغيل؛ لم يُجرِ هذا التدقيق اختبار شبكة عدائيًا حيًا. \|"`` | — |
-| [SRC-89BEE4CE47-L000122](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L122) | 122 | `"\| SSRF — فئات IPv4/IPv6 \| PR #54 يضيف اختبارات سلبية إضافية لنطاقات unspecified/loopback/private/link-local/shared وIPv6 ULA/link-local. \| CI run [39221649040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39221649040) نجح: Ruff، و249 اختبارًا على Python 3.11 و249 على Python 3.12، وبناء الحاوية وفحص API المحمية. يثبت ذلك الاختبارات المحاكية فقط، لا اختبار شبكة حي أو شهادة شاملة. \|"` | — |
-| [SRC-89BEE4CE47-L000123](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L123) | 123 | `"\| Prompt injection \| اختبارات موجودة تتحقق من بقاء محتوى الصفحة في رسائل الأدلة وعدم وضعه في رسالة النظام، للمسودّة والمراجعة. \| هذا يثبت فصلًا بنيويًا في حالات اختبار، لا مقاومة عامة لكل هجمات الحقن أو سلوك نموذج حي. \|"` | — |
-| [SRC-89BEE4CE47-L000124](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L124) | 124 | ``"\| XSS / العرض \| `web/agent.html` و`web/dashboard.html` يستخدمان escaping لنصوص النتائج، والتحقق من روابط HTTP(S)، و`rel=\"noopener noreferrer\"` للروابط الخارجية في المسارات المفحوصة. \| لم يُثبت فحص XSS عبر متصفح فعلي، أو تدقيق شامل لرؤوس CSP/security headers؛ الحالة INFERRED/PARTIAL. \|"`` | — |
-| [SRC-89BEE4CE47-L000125](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L125) | 125 | ``"\| الأسرار وسلسلة التوريد \| الـworkflows على `main` محدودة الصلاحية إلى `contents: read` لكنها ما زالت تستخدم مراجع Actions مثل `@v4` و`@v5`. PR #59 يقترح تثبيت checkout/setup-python على SHA كاملة؛ CI [39225038734](https://github.com/mosabosama2030-oss/omarai/actions/runs/39225038734) اجتاز Ruff و238 اختبارًا لكل إصدار Python وبناء الحاوية. \| PR #59 مفتوح وغير مدمج، لذلك الحماية المقترحة غير فعالة على `main` بعد. فحص تاريخ Git وإعدادات الاستضافة بحثًا عن الأسرار NOT_RUN؛ pinning لا يثبت أن مصدر الأكشنات خالٍ من الثغرات. \|"`` | — |
-| [SRC-89BEE4CE47-L000126](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L126) | 126 | `""` | — |
-| [SRC-89BEE4CE47-L000127](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L127) | 127 | `"**الخلاصة:** لا يوجد في هذه الجولة عيب SSRF مؤكد من القراءة وحدها في مسار جلب الصفحات، لكن الأدلة ليست كافية لإصدار قبول أمني شامل. تبقى مراجعة Grok المستقلة، فحص الأسرار التاريخي، واختبارات XSS الحية عناصر غير مكتملة."` | — |
-| [SRC-89BEE4CE47-L000128](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L128) | 128 | `""` | — |
-| [SRC-89BEE4CE47-L000129](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L129) | 129 | `"## 5. بوابات الإغلاق"` | — |
-| [SRC-89BEE4CE47-L000130](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L130) | 130 | `""` | — |
-| [SRC-89BEE4CE47-L000131](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L131) | 131 | `"لا تغلق النتيجة إلا إذا توفر ما ينطبق عليها من:"` | — |
-| [SRC-89BEE4CE47-L000132](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L132) | 132 | `"1. SHA واضح لنسخة المصدر."` | — |
-| [SRC-89BEE4CE47-L000133](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L133) | 133 | `"2. وصف قابل لإعادة إنتاج للمشكلة أو للسلوك المطلوب."` | — |
-| [SRC-89BEE4CE47-L000134](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L134) | 134 | `"3. اختبار مستقل عن التنفيذ يثبت النتيجة."` | — |
-| [SRC-89BEE4CE47-L000135](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L135) | 135 | `"4. نتيجة CI مرتبطة بالـSHA الحالي."` | — |
-| [SRC-89BEE4CE47-L000136](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L136) | 136 | `"5. دليل على أن اختبار Mock لم يُعرض بوصفه تكاملًا حيًا."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-89BEE4CE47-L000137 إلى SRC-65551FB29F-L000358
+- النطاق: SRC-89BEE4CE47-L000077 إلى SRC-65551FB29F-L000298
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,66 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-89BEE4CE47-L000077](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L77) | 77 | ``"\| `PER-004` و`REL-006` \| UNKNOWN \| لا يوجد تقرير حمل ممثل أو خط أساس SLO قابل للاعتماد في نطاق الأدلة الحالية. \|"`` | — |
+| [SRC-89BEE4CE47-L000078](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L78) | 78 | ``"\| `GOV-003` \| UNKNOWN — قرار بشري مطلوب \| لا يوجد سجل استثناءات معتمد مثبت ضمن هذه اللقطة. غياب سجل بالمستودع لا يثبت عدم وجود قرار خارجي. \|"`` | — |
+| [SRC-89BEE4CE47-L000079](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) | 79 | `""` | — |
+| [SRC-89BEE4CE47-L000080](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L80) | 80 | `"## 4. ماذا أُنجز في مسار التشغيل خلال هذه الجولة؟"` | — |
+| [SRC-89BEE4CE47-L000081](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L81) | 81 | `""` | — |
+| [SRC-89BEE4CE47-L000082](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L82) | 82 | `"### M-01 — قراءة جسم طلب API"` | — |
+| [SRC-89BEE4CE47-L000083](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L83) | 83 | `""` | — |
+| [SRC-89BEE4CE47-L000084](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L84) | 84 | ``"**التنفيذ:** دُمج PR #48 وأصبح حد الجسم الزمني مطبقًا في `main` عند SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`. CI [39215710124](https://github.com/mosabosama2030-oss/omarai/actions/runs/39215710124) نجح على HEAD الخاص بالـPR: Ruff، و238 اختبارًا على Python 3.11 و238 على Python 3.12، وبناء الحاوية وفحص API المحمية."`` | — |
+| [SRC-89BEE4CE47-L000085](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L85) | 85 | `""` | — |
+| [SRC-89BEE4CE47-L000086](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L86) | 86 | ``"**الحالة:** الإصلاح المدمج يغطي طول الجسم وtimeout الخمول والمهلة الكلية وslow-trickle ضمن الاختبارات المضافة. CI الأحدث الخاص بـPR #55 [39224020934](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224020934) نجح على رأسه الحالي `4604a83d760b7fe913e1a75cdec04a102c33b0d6`: Ruff، و239 اختبارًا على Python 3.11 و239 على Python 3.12، وبناء الحاوية وفحص API المحمية. PR #55 ما زال مفتوحًا وغير مدمج، لذا لا يدخل إصلاح الرؤوس إلى `main` بعد. يظل `API-001` جزئيًا حتى يُراجع التغيير ويُدمج بتفويض بشري، ولا يدعي أي من هذه الاختبارات حماية شاملة من كل هجمات Slowloris أو حدًا قاطعًا لتنفيذ الوكيل كاملًا."`` | — |
+| [SRC-89BEE4CE47-L000087](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L87) | 87 | `""` | — |
+| [SRC-89BEE4CE47-L000088](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L88) | 88 | `"### M-02 — الميزانية والتزامن"` | — |
+| [SRC-89BEE4CE47-L000089](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L89) | 89 | `""` | — |
+| [SRC-89BEE4CE47-L000090](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L90) | 90 | ``"أُغلق PR #49 لأنه مكرر، وأُغلق PR #52 لأن فرعه انجرف عن `main`. PR #56 هو سطح المراجعة الحالي المبني مباشرة على `main` عند SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`. أضاف/يجمع: 100 محاولة حجز مقابل سقف 5، وحدود/تجاوز وموارد معطلة لكل من الموارد الخمسة، واختبار تحرير semaphore بعد استثناء غير متوقع."`` | — |
+| [SRC-89BEE4CE47-L000091](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L91) | 91 | `""` | — |
+| [SRC-89BEE4CE47-L000092](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L92) | 92 | ``"**الحالة:** CI run [39223310566](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223310566) نجح على الرأس `0ca1b14aa1dd63bdc48a8ca73f698f7f6bc83416`: Ruff و249 اختبارًا على Python 3.11 و249 على Python 3.12 وبناء الحاوية وفحص API المحمية. لا يزال الدليل وحدات/تكامل محليًا، وليس اختبار حمل أو ضمانًا موزعًا أو hard cancellation."`` | — |
+| [SRC-89BEE4CE47-L000093](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L93) | 93 | `""` | — |
+| [SRC-89BEE4CE47-L000094](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L94) | 94 | `"### M-03/M-04 — سجل الأدلة والاستثناءات"` | — |
+| [SRC-89BEE4CE47-L000095](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L95) | 95 | `""` | — |
+| [SRC-89BEE4CE47-L000096](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L96) | 96 | `"تحديث سجل المتطلبات وقائمة الاستثناءات مخصصان لهذا التغيير التوثيقي. ستظل الاستثناءات المقترحة غير معتمدة حتى يوافق مدير المشروع صراحة على كل قرار مطلوب. لا يعد وجود سجل دليلًا على قبول أي خطر."` | — |
+| [SRC-89BEE4CE47-L000097](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L97) | 97 | `""` | — |
+| [SRC-89BEE4CE47-L000098](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L98) | 98 | `"### M-05 — النسخ والاستعادة"` | — |
+| [SRC-89BEE4CE47-L000099](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L99) | 99 | `""` | — |
+| [SRC-89BEE4CE47-L000100](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L100) | 100 | ``"**الجزء المحلي مقترح ومثبت على فرع PR فقط؛ لم يدخل `main`.** PR #58 يضيف أداة نسخ/استعادة لا تستبدل الملفات الموجودة، وتفحص SQLite integrity وعدد السجلات، مع اختبارات round-trip والرفض الآمن. CI [39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) نجح على HEAD `59027f44388730d34c7bd7164450abdba2f9fd0a`: Ruff و244 اختبارًا على Python 3.11 و244 على Python 3.12 وبناء الحاوية وفحص API المحمية. PR #58 مفتوح وغير مدمج. دوام التخزين واستعادة نسخة على مضيف فعلي أو نسخة خارج المضيف: UNKNOWN/NOT_RUN."`` | — |
+| [SRC-89BEE4CE47-L000101](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L101) | 101 | `""` | — |
+| [SRC-89BEE4CE47-L000102](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L102) | 102 | `"### M-06 — فصل دليل الاختبارات وقبول التكامل الحي"` | — |
+| [SRC-89BEE4CE47-L000103](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L103) | 103 | `""` | — |
+| [SRC-89BEE4CE47-L000104](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L104) | 104 | ``"توجد مصفوفة فصل الأدلة في PR #51 على فرعه فقط، وهو مفتوح وغير مدمج. CI [39216670939](https://github.com/mosabosama2030-oss/omarai/actions/runs/39216670939) نجح على HEAD `9d1b64a982cf50f9558a4b58c3799fd4c96bd9ec`: Ruff و234 اختبارًا على كل من Python 3.11 و3.12 وبناء الحاوية وفحص API المحمية."`` | — |
+| [SRC-89BEE4CE47-L000105](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L105) | 105 | `""` | — |
+| [SRC-89BEE4CE47-L000106](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L106) | 106 | `"**الاختبار الحي لموفرين على استضافة محددة: NOT_RUN.** لم يُنفذ فحص حي شامل لكل موفري البحث والنموذج. إجراءات القبول الحية قد تستهلك رصيد مزود خارجي؛ لا تُشغّل دون تفويض مناسب وتحديد البيئة والهدف."` | — |
+| [SRC-89BEE4CE47-L000107](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L107) | 107 | `""` | — |
+| [SRC-89BEE4CE47-L000108](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L108) | 108 | `"### M-07 — قبول الاستضافة"` | — |
+| [SRC-89BEE4CE47-L000109](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L109) | 109 | `""` | — |
+| [SRC-89BEE4CE47-L000110](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L110) | 110 | `"**UNKNOWN / NOT_RUN.** لا يوجد في هذه اللقطة دليل مرتبط بعنوان خدمة مستضافة وSHA منشور يمكن التحقق منه. لا يُنشأ حساب أو تُمنح صلاحية GitHub أو تُنشر الخدمة ضمن هذا التقرير."` | — |
+| [SRC-89BEE4CE47-L000111](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L111) | 111 | `""` | — |
+| [SRC-89BEE4CE47-L000112](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L112) | 112 | `"### M-08 — مراجعة نتيجة Grok ومراجعة مصدر مستقلة مبدئية"` | — |
+| [SRC-89BEE4CE47-L000113](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L113) | 113 | `""` | — |
+| [SRC-89BEE4CE47-L000114](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L114) | 114 | `"**حالة مراجعة Grok: PENDING INPUT.** لم تتوفر نتيجة تدقيق Grok النهائية أو PRs الأمنية الناتجة عنه ضمن هذه اللقطة. لا يجوز اعتبار هذه المراجعة المصدرية بديلًا عن مدقق مستقل، ولا يمكن إعلان مراجعة Grok مكتملة دون تقريره الفعلي."` | — |
+| [SRC-89BEE4CE47-L000115](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L115) | 115 | `""` | — |
+| [SRC-89BEE4CE47-L000116](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L116) | 116 | ``"**نتيجة فحص مصدر محدود على `main` SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`:**"`` | — |
+| [SRC-89BEE4CE47-L000117](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L117) | 117 | `""` | — |
+| [SRC-89BEE4CE47-L000118](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L118) | 118 | `"\| المجال \| الدليل الذي شوهد \| التقييم الحالي والحد \|"` | — |
+| [SRC-89BEE4CE47-L000119](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L119) | 119 | `"\|---\|---\|---\|"` | — |
+| [SRC-89BEE4CE47-L000120](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L120) | 120 | ``"\| SSRF — التحقق قبل الاتصال \| `_public_http_url` يتحقق من HTTP(S)، بيانات الاعتماد، المنافذ، المضيفين المحليين وعناوين IP الحرفية غير العامة. `_public_ip_literals` يرفض فشل DNS وأي إجابة غير عامة. \| دفاع مصدر قوي ضمن المسار المفحوص، وليس شهادة لجميع تدفقات الشبكة أو لكل parser edge cases. \|"`` | — |
+| [SRC-89BEE4CE47-L000121](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L121) | 121 | ``"\| SSRF — DNS pinning / redirects \| `_fetch_page` يربط الاتصال بعنوان IP تم فحصه، يحتفظ بـHost وTLS SNI المناسبين، يوقف اتباع التحويلات التلقائي، يعيد فحص كل redirect، يستخدم `verify=True` و`trust_env=False` وحد حجم/نوع محتوى. توجد اختبارات محاكاة للـIP العام المثبت، إجابات DNS المختلطة، والتحويل إلى loopback. \| اختبارات المحاكاة لا تثبت الشبكة الحية أو كل سلوك مكتبات النقل/نظام التشغيل؛ لم يُجرِ هذا التدقيق اختبار شبكة عدائيًا حيًا. \|"`` | — |
+| [SRC-89BEE4CE47-L000122](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L122) | 122 | `"\| SSRF — فئات IPv4/IPv6 \| PR #54 يضيف اختبارات سلبية إضافية لنطاقات unspecified/loopback/private/link-local/shared وIPv6 ULA/link-local. \| CI run [39221649040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39221649040) نجح: Ruff، و249 اختبارًا على Python 3.11 و249 على Python 3.12، وبناء الحاوية وفحص API المحمية. يثبت ذلك الاختبارات المحاكية فقط، لا اختبار شبكة حي أو شهادة شاملة. \|"` | — |
+| [SRC-89BEE4CE47-L000123](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L123) | 123 | `"\| Prompt injection \| اختبارات موجودة تتحقق من بقاء محتوى الصفحة في رسائل الأدلة وعدم وضعه في رسالة النظام، للمسودّة والمراجعة. \| هذا يثبت فصلًا بنيويًا في حالات اختبار، لا مقاومة عامة لكل هجمات الحقن أو سلوك نموذج حي. \|"` | — |
+| [SRC-89BEE4CE47-L000124](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L124) | 124 | ``"\| XSS / العرض \| `web/agent.html` و`web/dashboard.html` يستخدمان escaping لنصوص النتائج، والتحقق من روابط HTTP(S)، و`rel=\"noopener noreferrer\"` للروابط الخارجية في المسارات المفحوصة. \| لم يُثبت فحص XSS عبر متصفح فعلي، أو تدقيق شامل لرؤوس CSP/security headers؛ الحالة INFERRED/PARTIAL. \|"`` | — |
+| [SRC-89BEE4CE47-L000125](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L125) | 125 | ``"\| الأسرار وسلسلة التوريد \| الـworkflows على `main` محدودة الصلاحية إلى `contents: read` لكنها ما زالت تستخدم مراجع Actions مثل `@v4` و`@v5`. PR #59 يقترح تثبيت checkout/setup-python على SHA كاملة؛ CI [39225038734](https://github.com/mosabosama2030-oss/omarai/actions/runs/39225038734) اجتاز Ruff و238 اختبارًا لكل إصدار Python وبناء الحاوية. \| PR #59 مفتوح وغير مدمج، لذلك الحماية المقترحة غير فعالة على `main` بعد. فحص تاريخ Git وإعدادات الاستضافة بحثًا عن الأسرار NOT_RUN؛ pinning لا يثبت أن مصدر الأكشنات خالٍ من الثغرات. \|"`` | — |
+| [SRC-89BEE4CE47-L000126](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L126) | 126 | `""` | — |
+| [SRC-89BEE4CE47-L000127](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L127) | 127 | `"**الخلاصة:** لا يوجد في هذه الجولة عيب SSRF مؤكد من القراءة وحدها في مسار جلب الصفحات، لكن الأدلة ليست كافية لإصدار قبول أمني شامل. تبقى مراجعة Grok المستقلة، فحص الأسرار التاريخي، واختبارات XSS الحية عناصر غير مكتملة."` | — |
+| [SRC-89BEE4CE47-L000128](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L128) | 128 | `""` | — |
+| [SRC-89BEE4CE47-L000129](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L129) | 129 | `"## 5. بوابات الإغلاق"` | — |
+| [SRC-89BEE4CE47-L000130](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L130) | 130 | `""` | — |
+| [SRC-89BEE4CE47-L000131](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L131) | 131 | `"لا تغلق النتيجة إلا إذا توفر ما ينطبق عليها من:"` | — |
+| [SRC-89BEE4CE47-L000132](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L132) | 132 | `"1. SHA واضح لنسخة المصدر."` | — |
+| [SRC-89BEE4CE47-L000133](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L133) | 133 | `"2. وصف قابل لإعادة إنتاج للمشكلة أو للسلوك المطلوب."` | — |
+| [SRC-89BEE4CE47-L000134](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L134) | 134 | `"3. اختبار مستقل عن التنفيذ يثبت النتيجة."` | — |
+| [SRC-89BEE4CE47-L000135](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L135) | 135 | `"4. نتيجة CI مرتبطة بالـSHA الحالي."` | — |
+| [SRC-89BEE4CE47-L000136](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L136) | 136 | `"5. دليل على أن اختبار Mock لم يُعرض بوصفه تكاملًا حيًا."` | — |
 | [SRC-89BEE4CE47-L000137](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L137) | 137 | `"6. توثيق القيد المتبقي."` | — |
 | [SRC-89BEE4CE47-L000138](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L138) | 138 | `"7. موافقة بشرية مستقلة على الدمج أو الاستضافة أو قبول المخاطر عند انطباقها."` | — |
 | [SRC-89BEE4CE47-L000139](../OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L139) | 139 | `""` | — |
@@ -783,63 +843,3 @@
 | [SRC-65551FB29F-L000296](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L296) | 296 | `"\| الأمن \| نموذج تهديد وفحص مناسب واختبار سلبي \| إقرار النموذج بأنه آمن \|"` | — |
 | [SRC-65551FB29F-L000297](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L297) | 297 | `"\| التفويض \| اختبار API مباشر بهويات وصلاحيات مختلفة \| إخفاء الزر بالواجهة \|"` | — |
 | [SRC-65551FB29F-L000298](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L298) | 298 | `"\| عدم اختلاط المستخدمين \| اختبار تزامن وحدود جلسة/مستأجر \| مراجعة سطحية لمتغيرات عامة فقط \|"` | — |
-| [SRC-65551FB29F-L000299](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L299) | 299 | `"\| الأداء \| workload وقياسات p95/p99 وموارد وإعدادات \| اختبار يدوي سريع أو رقم تخميني \|"` | — |
-| [SRC-65551FB29F-L000300](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L300) | 300 | `"\| التوسع \| قياس عنق الزجاجة واختبار متعددة النسخ عند الادعاء \| قول «قابل للتوسع» \|"` | — |
-| [SRC-65551FB29F-L000301](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L301) | 301 | `"\| التعافي \| استعادة فعلية وقياس زمن وفقد البيانات \| ملف backup موجود \|"` | — |
-| [SRC-65551FB29F-L000302](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L302) | 302 | `"\| تكلفة المهمة \| قياس/تقدير موثق وحدود استدعاءات \| القول إن الخدمة مجانية \|"` | — |
-| [SRC-65551FB29F-L000303](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L303) | 303 | `"\| تغير النموذج \| مقارنة على eval set بنفس شروط القياس \| رد واحد يبدو أفضل \|"` | — |
-| [SRC-65551FB29F-L000304](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L304) | 304 | `"\| توافق API \| contract tests وإصدارات معروفة \| مثال JSON واحد \|"` | — |
-| [SRC-65551FB29F-L000305](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L305) | 305 | `"\| ترحيل البيانات \| ترحيل اختباري من إصدار سابق والتحقق من سلامة البيانات \| بدء التشغيل بنجاح على مخزن فارغ \|"` | — |
-| [SRC-65551FB29F-L000306](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L306) | 306 | `"\| سلاسل التوريد \| نتائج فحص الاعتماديات والأسرار وبناء معروف \| lockfile وحده \|"` | — |
-| [SRC-65551FB29F-L000307](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L307) | 307 | `"\| قابلية الوصول \| فحوص آلية ومراجعة لوحة مفاتيح/قارئ شاشة \| صفحة تظهر بشكل جميل \|"` | — |
-| [SRC-65551FB29F-L000308](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L308) | 308 | `"\| الاستضافة \| نسخة منشورة تطابق commit معروف وفحص smoke \| نجاح build على جهاز آخر \|"` | — |
-| [SRC-65551FB29F-L000309](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L309) | 309 | `"\| قابلية النقل \| export/restore أو تجربة نقل موثقة \| ادعاء أن الكود مفتوح المصدر \|"` | — |
-| [SRC-65551FB29F-L000310](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L310) | 310 | `"\| الامتثال \| تقييم نطاقي وأدلة ومتطلبات محددة \| إضافة اسم معيار إلى README \|"` | — |
-| [SRC-65551FB29F-L000311](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L311) | 311 | `""` | — |
-| [SRC-65551FB29F-L000312](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L312) | 312 | `"---"` | — |
-| [SRC-65551FB29F-L000313](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L313) | 313 | `""` | — |
-| [SRC-65551FB29F-L000314](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L314) | 314 | `"# الجزء السادس — بوابات التطوير والإطلاق"` | — |
-| [SRC-65551FB29F-L000315](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L315) | 315 | `""` | — |
-| [SRC-65551FB29F-L000316](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L316) | 316 | `"## 14. بوابة A: تعريف التغيير"` | — |
-| [SRC-65551FB29F-L000317](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L317) | 317 | `""` | — |
-| [SRC-65551FB29F-L000318](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L318) | 318 | `"قبل التنفيذ:"` | — |
-| [SRC-65551FB29F-L000319](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L319) | 319 | `"1. تحديد المتطلب ومعرفه."` | — |
-| [SRC-65551FB29F-L000320](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L320) | 320 | `"2. تحديد المشكلة وسيناريو الاستخدام."` | — |
-| [SRC-65551FB29F-L000321](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L321) | 321 | `"3. حصر الملفات والبيانات والاعتماديات المتأثرة."` | — |
-| [SRC-65551FB29F-L000322](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L322) | 322 | `"4. تحديد مستوى المخاطر والخبرة اللازمة للمراجعة."` | — |
-| [SRC-65551FB29F-L000323](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L323) | 323 | `"5. تحديد اختبار قبول النجاح والفشل."` | — |
-| [SRC-65551FB29F-L000324](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L324) | 324 | `"6. تحديد الميزانيات والأثر المتوقع والتراجع."` | — |
-| [SRC-65551FB29F-L000325](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L325) | 325 | `"7. تحديد ما لا يدخل في نطاق التغيير منعًا للاتساع العشوائي."` | — |
-| [SRC-65551FB29F-L000326](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L326) | 326 | `""` | — |
-| [SRC-65551FB29F-L000327](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L327) | 327 | `"## 15. بوابة B: التصميم"` | — |
-| [SRC-65551FB29F-L000328](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L328) | 328 | `""` | — |
-| [SRC-65551FB29F-L000329](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L329) | 329 | `"قبل تحرير الكود:"` | — |
-| [SRC-65551FB29F-L000330](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L330) | 330 | `"1. تقييم أبسط حل يحقق المتطلب."` | — |
-| [SRC-65551FB29F-L000331](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L331) | 331 | `"2. تحديد الحدود والعقود."` | — |
-| [SRC-65551FB29F-L000332](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L332) | 332 | `"3. مراجعة الأمن والخصوصية والـ failure modes."` | — |
-| [SRC-65551FB29F-L000333](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L333) | 333 | `"4. توثيق البدائل إن كان القرار معماريًا مؤثرًا."` | — |
-| [SRC-65551FB29F-L000334](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L334) | 334 | `"5. تحديد ما إذا كان المخزن أو الطابور أو الخدمة الجديدة ضرورة أم تضخمًا."` | — |
-| [SRC-65551FB29F-L000335](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L335) | 335 | `"6. تحديد كيفية قياس النتيجة."` | — |
-| [SRC-65551FB29F-L000336](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L336) | 336 | `"7. تسجيل الافتراضات المجهولة والخطر الناتج عنها."` | — |
-| [SRC-65551FB29F-L000337](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L337) | 337 | `""` | — |
-| [SRC-65551FB29F-L000338](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L338) | 338 | `"## 16. بوابة C: التنفيذ"` | — |
-| [SRC-65551FB29F-L000339](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L339) | 339 | `""` | — |
-| [SRC-65551FB29F-L000340](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L340) | 340 | `"أثناء التنفيذ:"` | — |
-| [SRC-65551FB29F-L000341](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L341) | 341 | `"1. تغيير محدود يمكن مراجعته."` | — |
-| [SRC-65551FB29F-L000342](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L342) | 342 | `"2. التحقق عند حدود الثقة."` | — |
-| [SRC-65551FB29F-L000343](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L343) | 343 | `"3. مهلات وحدود موارد حيث توجد عمليات خارجية أو مكلفة."` | — |
-| [SRC-65551FB29F-L000344](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L344) | 344 | `"4. اختبارات النجاح والفشل والحواف."` | — |
-| [SRC-65551FB29F-L000345](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L345) | 345 | `"5. سجل أخطاء مفيد دون تسريب."` | — |
-| [SRC-65551FB29F-L000346](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L346) | 346 | `"6. لا توجد أسرار أو تغييرات غير مطلوبة ضمن الـ diff."` | — |
-| [SRC-65551FB29F-L000347](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L347) | 347 | `"7. توثيق الحالة الحقيقية وما بقي مؤجلًا."` | — |
-| [SRC-65551FB29F-L000348](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L348) | 348 | `""` | — |
-| [SRC-65551FB29F-L000349](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L349) | 349 | `"## 17. بوابة D: التحقق"` | — |
-| [SRC-65551FB29F-L000350](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L350) | 350 | `""` | — |
-| [SRC-65551FB29F-L000351](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L351) | 351 | `"قبل قبول التغيير:"` | — |
-| [SRC-65551FB29F-L000352](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L352) | 352 | `"1. قراءة الـ diff النهائي كاملًا."` | — |
-| [SRC-65551FB29F-L000353](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L353) | 353 | `"2. تنفيذ الاختبارات الملائمة على النسخة الصحيحة."` | — |
-| [SRC-65551FB29F-L000354](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L354) | 354 | `"3. إعادة فحص حالات الانحدار والرفض والصلاحيات والفشل."` | — |
-| [SRC-65551FB29F-L000355](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L355) | 355 | `"4. تسجيل أوامر ونتائج وبيئة التشغيل."` | — |
-| [SRC-65551FB29F-L000356](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L356) | 356 | `"5. التأكد من أن الاختبارات لم تعتمد كلها على mocks عند ادعاء تكامل حي."` | — |
-| [SRC-65551FB29F-L000357](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L357) | 357 | `"6. التحقق من الروابط والمخططات والترحيلات والوثائق المحدثة."` | — |
-| [SRC-65551FB29F-L000358](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L358) | 358 | `"7. إبقاء كل اختبار غير منفذ موسومًا بوضوح."` | — |

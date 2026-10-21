@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000584 إلى SRC-69F3587825-L000271
+- النطاق: SRC-0F910493E8-L000524 إلى SRC-69F3587825-L000211
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,66 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000524](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L524) | 524 | `"- ظهور دليل أن المهارات وسير العمل لا يلبّيان حاجة متكررة."` | — |
+| [SRC-0F910493E8-L000525](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L525) | 525 | `"- تغيّر واضح في نموذج المنتج أو المستخدمين."` | — |
+| [SRC-0F910493E8-L000526](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L526) | 526 | `"- إضافة صلاحيات أو بيانات أو آثار خارجية أعلى خطورة."` | — |
+| [SRC-0F910493E8-L000527](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L527) | 527 | `"- اكتشاف تناقض مع الدستور التأسيسي أو مع متطلب أمني."` | — |
+| [SRC-0F910493E8-L000528](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L528) | 528 | `"- نتائج تقييم تثبت أن القرار الحالي يسبب تكلفة أو فشلًا أعلى من البدائل."` | — |
+| [SRC-0F910493E8-L000529](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L529) | 529 | `"- تغير جوهري في بيئة التشغيل أو موارد الاستضافة."` | — |
+| [SRC-0F910493E8-L000530](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L530) | 530 | `""` | — |
+| [SRC-0F910493E8-L000531](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L531) | 531 | `"أي تغيير في الاتجاه المعماري يسجل كقرار ADR مع المشكلة والبدائل والأدلة والمخاطر وخطة الاختبار والتراجع، ويحتاج إلى اعتماد المدير البشري إذا كان يغير المبادئ أو مستوى الاستقلالية أو الصلاحيات."` | — |
+| [SRC-0F910493E8-L000532](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L532) | 532 | `""` | — |
+| [SRC-0F910493E8-L000533](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L533) | 533 | `"# 17. خط الأساس الحاكم للأمن السيبراني وضمانات الثقة"` | — |
+| [SRC-0F910493E8-L000534](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L534) | 534 | `""` | — |
+| [SRC-0F910493E8-L000535](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L535) | 535 | `"## 17.1 هدف الأمن وحدود الادعاء"` | — |
+| [SRC-0F910493E8-L000536](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L536) | 536 | `""` | — |
+| [SRC-0F910493E8-L000537](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L537) | 537 | `"**[PROPOSED]** يُصمَّم Omarai وفق دفاع متعدد الطبقات (Defense in Depth)، وأقل صلاحية (Least Privilege)، ومنع افتراضي (Deny by Default)، والتحقق المستمر من الهوية والصلاحية (Zero Trust)، وبناء آمن وصيانة قابلة للتدقيق. المقصود هو الوصول إلى **أعلى مستوى عملي قابل للإثبات ضمن الموارد والبيئة ونموذج التهديد**، وليس الادعاء بأن أي نظام «آمن 100%» أو «غير قابل للاختراق»."` | — |
+| [SRC-0F910493E8-L000538](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L538) | 538 | `""` | — |
+| [SRC-0F910493E8-L000539](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L539) | 539 | `"لا توجد قائمة ضوابط تضمن الأمان المطلق. لكل قدرة مخاطر متبقية، ولكل حاجز حدود، وقد تفشل مكتبة أو منصة استضافة أو مزود خارجي. لذلك لا يُعلن مستوى أمان أو امتثال أو شهادة إلا بوجود تقييم محدد النطاق وأدلة مناسبة. وجود سياسة في هذه الوثيقة لا يعني تطبيقها، ووجود اختبار واحد لا يثبت الحماية الشاملة."` | — |
+| [SRC-0F910493E8-L000540](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L540) | 540 | `""` | — |
+| [SRC-0F910493E8-L000541](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L541) | 541 | `"هذه المواصفات تُكيَّف مع حجم Omarai وواقع الاستضافة، لكنها لا تسمح بتجاوز ضوابط الأساس التي تحمي الأسرار والصلاحيات والبيانات والاتصال بالشبكة. إذا كانت بيئة التشغيل لا تستطيع توفير عزل أو مصادقة أو حد شبكة مطلوبًا، فالحل هو تقليل القدرة أو تعطيلها أو عدم نشرها، لا اعتبار القيد غير موجود."` | — |
+| [SRC-0F910493E8-L000542](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L542) | 542 | `""` | — |
+| [SRC-0F910493E8-L000543](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L543) | 543 | `"## 17.2 أطر مرجعية ومبدأ عدم الادعاء بالامتثال"` | — |
+| [SRC-0F910493E8-L000544](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L544) | 544 | `""` | — |
+| [SRC-0F910493E8-L000545](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L545) | 545 | `"تُستخدم الأطر التالية كمراجع تصميم وتقييم بحسب الصلة:"` | — |
+| [SRC-0F910493E8-L000546](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L546) | 546 | `"- NIST Cybersecurity Framework (CSF) 2.0: الحوكمة، والتعرّف، والحماية، والكشف، والاستجابة، والتعافي."` | — |
+| [SRC-0F910493E8-L000547](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L547) | 547 | `"- NIST SP 800-207: مبادئ Zero Trust؛ لا تُمنح الثقة لمجرد موقع المكوّن داخل شبكة أو ملكيته."` | — |
+| [SRC-0F910493E8-L000548](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L548) | 548 | `"- NIST AI RMF وNIST AI 600-1: تحديد مخاطر الذكاء الاصطناعي التوليدي ومتابعتها عبر دورة الحياة."` | — |
+| [SRC-0F910493E8-L000549](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L549) | 549 | `"- NIST SP 800-218 SSDF: ممارسات تطوير البرمجيات الآمن. نسخة SP 800-218 Rev. 1 المنشورة كمسودة لا تُعامل كإصدار نهائي."` | — |
+| [SRC-0F910493E8-L000550](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L550) | 550 | `"- OWASP Top 10 for Agentic Applications 2026، وOWASP API Security، ومراجع OWASP الخاصة بأمن تطبيقات الويب والذكاء الاصطناعي حيث تنطبق."` | — |
+| [SRC-0F910493E8-L000551](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L551) | 551 | `"  "` | — |
+| [SRC-0F910493E8-L000552](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L552) | 552 | `"هذه المراجع نقاط انطلاق للمراجعة، وليست شهادة بأن Omarai متوافق معها. يجب تدوين المرجع والإصدار وتاريخ المراجعة عند تحويل أي منه إلى اختبار أو مطلب محدد، وعدم نقل ضوابط لا تلائم النطاق بلا مبرر."` | — |
+| [SRC-0F910493E8-L000553](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L553) | 553 | `""` | — |
+| [SRC-0F910493E8-L000554](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L554) | 554 | `"روابط المراجع:"` | — |
+| [SRC-0F910493E8-L000555](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L555) | 555 | `"- NIST CSF 2.0: https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"` | — |
+| [SRC-0F910493E8-L000556](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L556) | 556 | `"- NIST Zero Trust / SP 800-207: https://www.nist.gov/publications/zero-trust-architecture"` | — |
+| [SRC-0F910493E8-L000557](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L557) | 557 | `"- NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework"` | — |
+| [SRC-0F910493E8-L000558](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L558) | 558 | `"- NIST Generative AI Profile: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"` | — |
+| [SRC-0F910493E8-L000559](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L559) | 559 | `"- NIST SSDF: https://csrc.nist.gov/pubs/sp/800/218/final"` | — |
+| [SRC-0F910493E8-L000560](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L560) | 560 | `"- NIST SSDF publications, including status of revisions: https://csrc.nist.gov/projects/ssdf/publications"` | — |
+| [SRC-0F910493E8-L000561](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L561) | 561 | `"- OWASP Top 10 for Agentic Applications 2026: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"` | — |
+| [SRC-0F910493E8-L000562](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L562) | 562 | `"- OWASP API Security: https://owasp.org/API-Security/"` | — |
+| [SRC-0F910493E8-L000563](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L563) | 563 | `""` | — |
+| [SRC-0F910493E8-L000564](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L564) | 564 | `"## 17.3 الأصول التي يجب حمايتها"` | — |
+| [SRC-0F910493E8-L000565](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L565) | 565 | `""` | — |
+| [SRC-0F910493E8-L000566](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L566) | 566 | `"يُحدّث جرد الأصول قبل توسيع النظام أو كشف مسار جديد. يشمل على الأقل:"` | — |
+| [SRC-0F910493E8-L000567](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L567) | 567 | `"1. مفاتيح النموذج والبحث وأسرار الخدمات ورموز الوصول."` | — |
+| [SRC-0F910493E8-L000568](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L568) | 568 | `"2. أسئلة المستخدمين وسجل المحادثات والمدخلات والملفات."` | — |
+| [SRC-0F910493E8-L000569](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L569) | 569 | `"3. بيانات العملاء أو السجلات المحلية، إن كانت موجودة في النشر المعني."` | — |
+| [SRC-0F910493E8-L000570](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L570) | 570 | `"4. محتوى البحث ومقاطع الأدلة ومصادرها وبياناتها الوصفية."` | — |
+| [SRC-0F910493E8-L000571](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L571) | 571 | `"5. ملفات التكوين والمهارات وسير العمل وملفات تعريف الوكلاء."` | — |
+| [SRC-0F910493E8-L000572](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L572) | 572 | `"6. سياسات الصلاحيات وحدود الموارد وآليات الاعتماد."` | — |
+| [SRC-0F910493E8-L000573](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L573) | 573 | `"7. مستودع GitHub، ورموز CI/CD، وأصول البناء والنشر."` | — |
+| [SRC-0F910493E8-L000574](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L574) | 574 | `"8. سجلات الأحداث والتشخيصات والنسخ الاحتياطية."` | — |
+| [SRC-0F910493E8-L000575](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L575) | 575 | `"9. توافر الخدمة والحصص والتكلفة وسمعة النطاق."` | — |
+| [SRC-0F910493E8-L000576](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L576) | 576 | `"10. سلامة الإجابات وعدم تغيير معناها أو مصادرها بسبب مهاجم أو خطأ تكوين."` | — |
+| [SRC-0F910493E8-L000577](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L577) | 577 | `""` | — |
+| [SRC-0F910493E8-L000578](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L578) | 578 | `"يجب تحديد مالك كل فئة، وسبب جمعها، وأماكن تخزينها، والجهات الخارجية التي قد تتلقاها، ومدة الاحتفاظ، ومن يستطيع قراءتها أو تعديلها أو حذفها."` | — |
+| [SRC-0F910493E8-L000579](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L579) | 579 | `""` | — |
+| [SRC-0F910493E8-L000580](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L580) | 580 | `"## 17.4 حدود الثقة ونموذج التهديد الإلزامي"` | — |
+| [SRC-0F910493E8-L000581](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L581) | 581 | `""` | — |
+| [SRC-0F910493E8-L000582](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L582) | 582 | `"تُعامل العناصر التالية بوصفها غير موثوقة افتراضيًا:"` | — |
+| [SRC-0F910493E8-L000583](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L583) | 583 | `"- إدخال المستخدم وأي تاريخ محادثة قادم من عميل."` | — |
 | [SRC-0F910493E8-L000584](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L584) | 584 | `"- نصوص صفحات الويب والملفات والنتائج والاقتباسات."` | — |
 | [SRC-0F910493E8-L000585](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L585) | 585 | `"- مخرجات النموذج وخططه ووسائط استدعاء الأدوات."` | — |
 | [SRC-0F910493E8-L000586](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L586) | 586 | `"- ذاكرة سابقة جرى حفظها دون تحقق مستقل."` | — |
@@ -792,63 +852,3 @@
 | [SRC-69F3587825-L000209](../search_code.py#L209) | 209 | `"                )"` | — |
 | [SRC-69F3587825-L000210](../search_code.py#L210) | 210 | `"                if len(hits) >= max_results:"` | — |
 | [SRC-69F3587825-L000211](../search_code.py#L211) | 211 | `"                    return hits"` | — |
-| [SRC-69F3587825-L000212](../search_code.py#L212) | 212 | `"    return hits"` | — |
-| [SRC-69F3587825-L000213](../search_code.py#L213) | 213 | `""` | — |
-| [SRC-69F3587825-L000214](../search_code.py#L214) | 214 | `""` | — |
-| [SRC-69F3587825-L000215](../search_code.py#L215) | 215 | `"def format_hits(hits: list[SearchHit]) -> str:"` | — |
-| [SRC-69F3587825-L000216](../search_code.py#L216) | 216 | `"    if not hits:"` | — |
-| [SRC-69F3587825-L000217](../search_code.py#L217) | 217 | `"        return \"لا توجد نتائج.\""` | — |
-| [SRC-69F3587825-L000218](../search_code.py#L218) | 218 | `"    blocks: list[str] = []"` | — |
-| [SRC-69F3587825-L000219](../search_code.py#L219) | 219 | `"    for hit in hits:"` | — |
-| [SRC-69F3587825-L000220](../search_code.py#L220) | 220 | `"        blocks.append("` | — |
-| [SRC-69F3587825-L000221](../search_code.py#L221) | 221 | `"            f\"{hit.file}:{hit.line}\\n\""` | — |
-| [SRC-69F3587825-L000222](../search_code.py#L222) | 222 | `"            f\"  {hit.text}\\n\""` | — |
-| [SRC-69F3587825-L000223](../search_code.py#L223) | 223 | `"            f\"  → {hit.link}\""` | — |
-| [SRC-69F3587825-L000224](../search_code.py#L224) | 224 | `"        )"` | — |
-| [SRC-69F3587825-L000225](../search_code.py#L225) | 225 | `"        if hit.context_before:"` | — |
-| [SRC-69F3587825-L000226](../search_code.py#L226) | 226 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
-| [SRC-69F3587825-L000227](../search_code.py#L227) | 227 | `"                f\"  · {line}\" for line in hit.context_before.splitlines()"` | — |
-| [SRC-69F3587825-L000228](../search_code.py#L228) | 228 | `"            )"` | — |
-| [SRC-69F3587825-L000229](../search_code.py#L229) | 229 | `"        if hit.context_after:"` | — |
-| [SRC-69F3587825-L000230](../search_code.py#L230) | 230 | `"            blocks[-1] += \"\\n\" + \"\\n\".join("` | — |
-| [SRC-69F3587825-L000231](../search_code.py#L231) | 231 | `"                f\"  · {line}\" for line in hit.context_after.splitlines()"` | — |
-| [SRC-69F3587825-L000232](../search_code.py#L232) | 232 | `"            )"` | — |
-| [SRC-69F3587825-L000233](../search_code.py#L233) | 233 | `"    return \"\\n\\n\".join(blocks)"` | — |
-| [SRC-69F3587825-L000234](../search_code.py#L234) | 234 | `""` | — |
-| [SRC-69F3587825-L000235](../search_code.py#L235) | 235 | `""` | — |
-| [SRC-69F3587825-L000236](../search_code.py#L236) | 236 | `"def main(argv: Sequence[str] \| None = None) -> int:"` | — |
-| [SRC-69F3587825-L000237](../search_code.py#L237) | 237 | `"    parser = argparse.ArgumentParser("` | — |
-| [SRC-69F3587825-L000238](../search_code.py#L238) | 238 | `"        description=\"بحث نصي داخل ملفات مستودع Omarai (بدون خدمات خارجية).\""` | — |
-| [SRC-69F3587825-L000239](../search_code.py#L239) | 239 | `"    )"` | — |
-| [SRC-69F3587825-L000240](../search_code.py#L240) | 240 | `"    parser.add_argument(\"query\", help=\"النص أو التعبير المنتظم للبحث.\")"` | — |
-| [SRC-69F3587825-L000241](../search_code.py#L241) | 241 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000242](../search_code.py#L242) | 242 | `"        \"--root\","` | — |
-| [SRC-69F3587825-L000243](../search_code.py#L243) | 243 | `"        type=Path,"` | — |
-| [SRC-69F3587825-L000244](../search_code.py#L244) | 244 | `"        default=Path(__file__).resolve().parents[1],"` | — |
-| [SRC-69F3587825-L000245](../search_code.py#L245) | 245 | `"        help=\"جذر المستودع.\","` | — |
-| [SRC-69F3587825-L000246](../search_code.py#L246) | 246 | `"    )"` | — |
-| [SRC-69F3587825-L000247](../search_code.py#L247) | 247 | `"    parser.add_argument(\"--regex\", action=\"store_true\", help=\"تفسير الاستعلام كتعبير منتظم.\")"` | — |
-| [SRC-69F3587825-L000248](../search_code.py#L248) | 248 | `"    parser.add_argument(\"--case-sensitive\", action=\"store_true\", help=\"مطابقة حساسة لحالة الأحرف.\")"` | — |
-| [SRC-69F3587825-L000249](../search_code.py#L249) | 249 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000250](../search_code.py#L250) | 250 | `"        \"--ext\","` | — |
-| [SRC-69F3587825-L000251](../search_code.py#L251) | 251 | `"        action=\"append\","` | — |
-| [SRC-69F3587825-L000252](../search_code.py#L252) | 252 | `"        default=[],"` | — |
-| [SRC-69F3587825-L000253](../search_code.py#L253) | 253 | `"        help=\"امتداد ملف للبحث (يمكن تكراره)، مثل: --ext py --ext html\","` | — |
-| [SRC-69F3587825-L000254](../search_code.py#L254) | 254 | `"    )"` | — |
-| [SRC-69F3587825-L000255](../search_code.py#L255) | 255 | `"    parser.add_argument(\"--max\", type=int, default=50, help=\"أقصى عدد نتائج (افتراضي 50).\")"` | — |
-| [SRC-69F3587825-L000256](../search_code.py#L256) | 256 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000257](../search_code.py#L257) | 257 | `"        \"--context\","` | — |
-| [SRC-69F3587825-L000258](../search_code.py#L258) | 258 | `"        type=int,"` | — |
-| [SRC-69F3587825-L000259](../search_code.py#L259) | 259 | `"        default=0,"` | — |
-| [SRC-69F3587825-L000260](../search_code.py#L260) | 260 | `"        help=\"عدد أسطر السياق قبل/بعد.\","` | — |
-| [SRC-69F3587825-L000261](../search_code.py#L261) | 261 | `"    )"` | — |
-| [SRC-69F3587825-L000262](../search_code.py#L262) | 262 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-69F3587825-L000263](../search_code.py#L263) | 263 | `""` | — |
-| [SRC-69F3587825-L000264](../search_code.py#L264) | 264 | `"    try:"` | — |
-| [SRC-69F3587825-L000265](../search_code.py#L265) | 265 | `"        root = args.root.resolve(strict=True)"` | — |
-| [SRC-69F3587825-L000266](../search_code.py#L266) | 266 | `"        extensions = ("` | — |
-| [SRC-69F3587825-L000267](../search_code.py#L267) | 267 | `"            frozenset(f\".{ext.lstrip('.')}\" for ext in args.ext)"` | — |
-| [SRC-69F3587825-L000268](../search_code.py#L268) | 268 | `"            if args.ext"` | — |
-| [SRC-69F3587825-L000269](../search_code.py#L269) | 269 | `"            else DEFAULT_EXTENSIONS"` | — |
-| [SRC-69F3587825-L000270](../search_code.py#L270) | 270 | `"        )"` | — |
-| [SRC-69F3587825-L000271](../search_code.py#L271) | 271 | `"        hits = search_repository("` | — |

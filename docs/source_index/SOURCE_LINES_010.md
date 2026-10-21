@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000413 إلى SRC-E599346ABE-L000239
+- النطاق: SRC-EEF2E6447C-L000353 إلى SRC-E599346ABE-L000179
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,66 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000353](../../api/omarai.py#L353) | 353 | `"        \"\"\"Apply defensive browser headers to successful and error responses alike.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000354](../../api/omarai.py#L354) | 354 | `"        self.send_header(\"X-Content-Type-Options\", \"nosniff\")"` | — |
+| [SRC-EEF2E6447C-L000355](../../api/omarai.py#L355) | 355 | `"        self.send_header(\"X-Frame-Options\", \"DENY\")"` | — |
+| [SRC-EEF2E6447C-L000356](../../api/omarai.py#L356) | 356 | `"        self.send_header(\"Referrer-Policy\", \"strict-origin-when-cross-origin\")"` | — |
+| [SRC-EEF2E6447C-L000357](../../api/omarai.py#L357) | 357 | `"        self.send_header(\"Permissions-Policy\", \"camera=(), microphone=(), geolocation=()\")"` | — |
+| [SRC-EEF2E6447C-L000358](../../api/omarai.py#L358) | 358 | `"        self.send_header("` | — |
+| [SRC-EEF2E6447C-L000359](../../api/omarai.py#L359) | 359 | `"            \"Content-Security-Policy\","` | — |
+| [SRC-EEF2E6447C-L000360](../../api/omarai.py#L360) | 360 | `"            \"default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; \""` | — |
+| [SRC-EEF2E6447C-L000361](../../api/omarai.py#L361) | 361 | `"            \"form-action 'self'; connect-src 'self'; img-src 'self' data:; \""` | — |
+| [SRC-EEF2E6447C-L000362](../../api/omarai.py#L362) | 362 | `"            \"style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self' data:\","` | — |
+| [SRC-EEF2E6447C-L000363](../../api/omarai.py#L363) | 363 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000364](../../api/omarai.py#L364) | 364 | `"        super().end_headers()"` | — |
+| [SRC-EEF2E6447C-L000365](../../api/omarai.py#L365) | 365 | `""` | — |
+| [SRC-EEF2E6447C-L000366](../../api/omarai.py#L366) | 366 | `"    def respond(self, status, payload, content_type=\"application/json; charset=utf-8\"):"` | — |
+| [SRC-EEF2E6447C-L000367](../../api/omarai.py#L367) | 367 | `"        body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()"` | — |
+| [SRC-EEF2E6447C-L000368](../../api/omarai.py#L368) | 368 | `"        self.send_response(status)"` | — |
+| [SRC-EEF2E6447C-L000369](../../api/omarai.py#L369) | 369 | `"        self.send_header(\"Content-Type\", content_type)"` | — |
+| [SRC-EEF2E6447C-L000370](../../api/omarai.py#L370) | 370 | `"        self.send_header(\"Content-Length\", str(len(body)))"` | — |
+| [SRC-EEF2E6447C-L000371](../../api/omarai.py#L371) | 371 | `"        self.send_header(\"Cache-Control\", \"no-store\")"` | — |
+| [SRC-EEF2E6447C-L000372](../../api/omarai.py#L372) | 372 | `"        origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000373](../../api/omarai.py#L373) | 373 | `"        if origin and self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000374](../../api/omarai.py#L374) | 374 | `"            self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
+| [SRC-EEF2E6447C-L000375](../../api/omarai.py#L375) | 375 | `"            self.send_header(\"Vary\", \"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000376](../../api/omarai.py#L376) | 376 | `"        self.end_headers()"` | — |
+| [SRC-EEF2E6447C-L000377](../../api/omarai.py#L377) | 377 | `"        self.wfile.write(body)"` | — |
+| [SRC-EEF2E6447C-L000378](../../api/omarai.py#L378) | 378 | `""` | — |
+| [SRC-EEF2E6447C-L000379](../../api/omarai.py#L379) | 379 | `"    def do_GET(self):"` | — |
+| [SRC-EEF2E6447C-L000380](../../api/omarai.py#L380) | 380 | `"        parsed = urlparse(self.path)"` | — |
+| [SRC-EEF2E6447C-L000381](../../api/omarai.py#L381) | 381 | `"        if parsed.path in {\"/\", \"/agent\"}:"` | — |
+| [SRC-EEF2E6447C-L000382](../../api/omarai.py#L382) | 382 | `"            if not AGENT_DASHBOARD.exists():"` | — |
+| [SRC-EEF2E6447C-L000383](../../api/omarai.py#L383) | 383 | `"                return self.respond(404, {\"error\": \"agent dashboard missing\"})"` | — |
+| [SRC-EEF2E6447C-L000384](../../api/omarai.py#L384) | 384 | `"            return self.respond(200, AGENT_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000385](../../api/omarai.py#L385) | 385 | `"        if parsed.path == \"/leads\":"` | — |
+| [SRC-EEF2E6447C-L000386](../../api/omarai.py#L386) | 386 | `"            if not LEADS_DASHBOARD.exists():"` | — |
+| [SRC-EEF2E6447C-L000387](../../api/omarai.py#L387) | 387 | `"                return self.respond(404, {\"error\": \"leads dashboard missing\"})"` | — |
+| [SRC-EEF2E6447C-L000388](../../api/omarai.py#L388) | 388 | `"            return self.respond(200, LEADS_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000389](../../api/omarai.py#L389) | 389 | `"        if parsed.path == \"/api/health\":"` | — |
+| [SRC-EEF2E6447C-L000390](../../api/omarai.py#L390) | 390 | `"            return self.respond("` | — |
+| [SRC-EEF2E6447C-L000391](../../api/omarai.py#L391) | 391 | `"                200,"` | — |
+| [SRC-EEF2E6447C-L000392](../../api/omarai.py#L392) | 392 | `"                {"` | — |
+| [SRC-EEF2E6447C-L000393](../../api/omarai.py#L393) | 393 | `"                    \"ok\": True,"` | — |
+| [SRC-EEF2E6447C-L000394](../../api/omarai.py#L394) | 394 | `"                    \"app\": \"Omarai\","` | — |
+| [SRC-EEF2E6447C-L000395](../../api/omarai.py#L395) | 395 | `"                    \"mode\": \"web-research\","` | — |
+| [SRC-EEF2E6447C-L000396](../../api/omarai.py#L396) | 396 | `"                    \"agent\": WebAgent.status(),"` | — |
+| [SRC-EEF2E6447C-L000397](../../api/omarai.py#L397) | 397 | `"                    \"build\": {"` | — |
+| [SRC-EEF2E6447C-L000398](../../api/omarai.py#L398) | 398 | `"                        \"sha\": _build_sha(),"` | — |
+| [SRC-EEF2E6447C-L000399](../../api/omarai.py#L399) | 399 | `"                        \"sha_status\": ("` | — |
+| [SRC-EEF2E6447C-L000400](../../api/omarai.py#L400) | 400 | `"                            \"available\" if _build_sha() != \"unknown\" else \"unknown\""` | — |
+| [SRC-EEF2E6447C-L000401](../../api/omarai.py#L401) | 401 | `"                        ),"` | — |
+| [SRC-EEF2E6447C-L000402](../../api/omarai.py#L402) | 402 | `"                    },"` | — |
+| [SRC-EEF2E6447C-L000403](../../api/omarai.py#L403) | 403 | `"                },"` | — |
+| [SRC-EEF2E6447C-L000404](../../api/omarai.py#L404) | 404 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000405](../../api/omarai.py#L405) | 405 | `"        if parsed.path == \"/api/leads\":"` | — |
+| [SRC-EEF2E6447C-L000406](../../api/omarai.py#L406) | 406 | `"            if not self._rate_limit_ok():"` | — |
+| [SRC-EEF2E6447C-L000407](../../api/omarai.py#L407) | 407 | `"                return self.respond(429, {\"error\": \"تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة.\"})"` | — |
+| [SRC-EEF2E6447C-L000408](../../api/omarai.py#L408) | 408 | `"            if not self._authorized():"` | — |
+| [SRC-EEF2E6447C-L000409](../../api/omarai.py#L409) | 409 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول الخاص بالتطبيق.\"})"` | — |
+| [SRC-EEF2E6447C-L000410](../../api/omarai.py#L410) | 410 | `"            q = parse_qs(parsed.query)"` | — |
+| [SRC-EEF2E6447C-L000411](../../api/omarai.py#L411) | 411 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000412](../../api/omarai.py#L412) | 412 | `"                limit = max(1, min(int(q.get(\"limit\", [\"100\"])[0]), 500))"` | — |
 | [SRC-EEF2E6447C-L000413](../../api/omarai.py#L413) | 413 | `"                leads = self.store.list(q.get(\"status\", [None])[0], limit)"` | — |
 | [SRC-EEF2E6447C-L000414](../../api/omarai.py#L414) | 414 | `"            except (ValueError, TypeError):"` | — |
 | [SRC-EEF2E6447C-L000415](../../api/omarai.py#L415) | 415 | `"                return self.respond(400, {\"error\": \"invalid status or limit\"})"` | — |
@@ -828,63 +888,3 @@
 | [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
 | [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
 | [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
-| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
-| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"class IndexedMarker:"` | — |
-| [SRC-E599346ABE-L000183](../generate_index.py#L183) | 183 | `"    \"\"\"Represent a statically discovered symbol outside the Python AST index.\"\"\""` | — |
-| [SRC-E599346ABE-L000184](../generate_index.py#L184) | 184 | `""` | — |
-| [SRC-E599346ABE-L000185](../generate_index.py#L185) | 185 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000186](../generate_index.py#L186) | 186 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000187](../generate_index.py#L187) | 187 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000188](../generate_index.py#L188) | 188 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000189](../generate_index.py#L189) | 189 | `""` | — |
-| [SRC-E599346ABE-L000190](../generate_index.py#L190) | 190 | `""` | — |
-| [SRC-E599346ABE-L000191](../generate_index.py#L191) | 191 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000192](../generate_index.py#L192) | 192 | `"class IndexedLine:"` | — |
-| [SRC-E599346ABE-L000193](../generate_index.py#L193) | 193 | `"    \"\"\"Represent one exact logical line from an eligible readable repository text file.\"\"\""` | — |
-| [SRC-E599346ABE-L000194](../generate_index.py#L194) | 194 | `""` | — |
-| [SRC-E599346ABE-L000195](../generate_index.py#L195) | 195 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000196](../generate_index.py#L196) | 196 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000197](../generate_index.py#L197) | 197 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000198](../generate_index.py#L198) | 198 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000199](../generate_index.py#L199) | 199 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000200](../generate_index.py#L200) | 200 | `"    content: str"` | — |
-| [SRC-E599346ABE-L000201](../generate_index.py#L201) | 201 | `""` | — |
-| [SRC-E599346ABE-L000202](../generate_index.py#L202) | 202 | `""` | — |
-| [SRC-E599346ABE-L000203](../generate_index.py#L203) | 203 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000204](../generate_index.py#L204) | 204 | `"class IndexedFinding:"` | — |
-| [SRC-E599346ABE-L000205](../generate_index.py#L205) | 205 | `"    \"\"\"Represent a source annotation that explicitly requests attention.\"\"\""` | — |
-| [SRC-E599346ABE-L000206](../generate_index.py#L206) | 206 | `""` | — |
-| [SRC-E599346ABE-L000207](../generate_index.py#L207) | 207 | `"    finding_id: str"` | — |
-| [SRC-E599346ABE-L000208](../generate_index.py#L208) | 208 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000209](../generate_index.py#L209) | 209 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000210](../generate_index.py#L210) | 210 | `"    marker: str"` | — |
-| [SRC-E599346ABE-L000211](../generate_index.py#L211) | 211 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000212](../generate_index.py#L212) | 212 | `""` | — |
-| [SRC-E599346ABE-L000213](../generate_index.py#L213) | 213 | `""` | — |
-| [SRC-E599346ABE-L000214](../generate_index.py#L214) | 214 | `"class IndexGenerationError(RuntimeError):"` | — |
-| [SRC-E599346ABE-L000215](../generate_index.py#L215) | 215 | `"    \"\"\"Signal that a complete Python AST index could not be generated.\"\"\""` | — |
-| [SRC-E599346ABE-L000216](../generate_index.py#L216) | 216 | `""` | — |
-| [SRC-E599346ABE-L000217](../generate_index.py#L217) | 217 | `""` | — |
-| [SRC-E599346ABE-L000218](../generate_index.py#L218) | 218 | `"class SymbolVisitor(ast.NodeVisitor):"` | — |
-| [SRC-E599346ABE-L000219](../generate_index.py#L219) | 219 | `"    \"\"\"Collect Python classes, functions, methods and module/class assignments.\"\"\""` | — |
-| [SRC-E599346ABE-L000220](../generate_index.py#L220) | 220 | `""` | — |
-| [SRC-E599346ABE-L000221](../generate_index.py#L221) | 221 | `"    def __init__(self, relative_file: str) -> None:"` | — |
-| [SRC-E599346ABE-L000222](../generate_index.py#L222) | 222 | `"        \"\"\"Initialize the visitor for one repository-relative Python file.\"\"\""` | — |
-| [SRC-E599346ABE-L000223](../generate_index.py#L223) | 223 | `"        self.relative_file = relative_file"` | — |
-| [SRC-E599346ABE-L000224](../generate_index.py#L224) | 224 | `"        self.symbols: list[IndexedSymbol] = []"` | — |
-| [SRC-E599346ABE-L000225](../generate_index.py#L225) | 225 | `"        self.scope: list[str] = []"` | — |
-| [SRC-E599346ABE-L000226](../generate_index.py#L226) | 226 | `"        self.function_depth = 0"` | — |
-| [SRC-E599346ABE-L000227](../generate_index.py#L227) | 227 | `""` | — |
-| [SRC-E599346ABE-L000228](../generate_index.py#L228) | 228 | `"    @staticmethod"` | — |
-| [SRC-E599346ABE-L000229](../generate_index.py#L229) | 229 | `"    def _description(node: ast.AST) -> tuple[str, bool]:"` | — |
-| [SRC-E599346ABE-L000230](../generate_index.py#L230) | 230 | `"        \"\"\"Return a compact first-paragraph summary and its documentation state.\"\"\""` | — |
-| [SRC-E599346ABE-L000231](../generate_index.py#L231) | 231 | `"        docstring = ast.get_docstring(node, clean=True)"` | — |
-| [SRC-E599346ABE-L000232](../generate_index.py#L232) | 232 | `"        if not docstring or not docstring.strip():"` | — |
-| [SRC-E599346ABE-L000233](../generate_index.py#L233) | 233 | `"            return \"لا توجد Docstring.\", False"` | — |
-| [SRC-E599346ABE-L000234](../generate_index.py#L234) | 234 | `""` | — |
-| [SRC-E599346ABE-L000235](../generate_index.py#L235) | 235 | `"        first_paragraph = docstring.strip().split(\"\\n\\n\", maxsplit=1)[0]"` | — |
-| [SRC-E599346ABE-L000236](../generate_index.py#L236) | 236 | `"        summary = \" \".join(first_paragraph.split())"` | — |
-| [SRC-E599346ABE-L000237](../generate_index.py#L237) | 237 | `"        if len(summary) > MAX_DESCRIPTION_LENGTH:"` | — |
-| [SRC-E599346ABE-L000238](../generate_index.py#L238) | 238 | `"            summary = summary[: MAX_DESCRIPTION_LENGTH - 3].rstrip() + \"...\""` | — |
-| [SRC-E599346ABE-L000239](../generate_index.py#L239) | 239 | `"        return summary, True"` | — |

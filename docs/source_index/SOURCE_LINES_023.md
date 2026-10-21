@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000238 إلى SRC-DA61479D59-L000044
+- النطاق: SRC-1C77C97630-L000178 إلى SRC-3451CC474D-L000709
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,66 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000178](../../tests/test_answer_validation.py#L178) | 178 | `"            \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000179](../../tests/test_answer_validation.py#L179) | 179 | `"        ),"` | — |
+| [SRC-1C77C97630-L000180](../../tests/test_answer_validation.py#L180) | 180 | `"    )"` | — |
+| [SRC-1C77C97630-L000181](../../tests/test_answer_validation.py#L181) | 181 | `"    with pytest.raises(RuntimeError, match=\"إصلاح تغطية آمن\"):"` | — |
+| [SRC-1C77C97630-L000182](../../tests/test_answer_validation.py#L182) | 182 | `"        agent._repair_answer_coverage("` | — |
+| [SRC-1C77C97630-L000183](../../tests/test_answer_validation.py#L183) | 183 | `"            \"قارن السعر\","` | — |
+| [SRC-1C77C97630-L000184](../../tests/test_answer_validation.py#L184) | 184 | `"            \"مسودة\","` | — |
+| [SRC-1C77C97630-L000185](../../tests/test_answer_validation.py#L185) | 185 | `"            [{\"title\": \"مصدر\", \"url\": \"https://example.com\", \"snippet\": \"السعر 100 جنيه\"}],"` | — |
+| [SRC-1C77C97630-L000186](../../tests/test_answer_validation.py#L186) | 186 | `"            [\"السعر\"],"` | — |
+| [SRC-1C77C97630-L000187](../../tests/test_answer_validation.py#L187) | 187 | `"        )"` | — |
+| [SRC-1C77C97630-L000188](../../tests/test_answer_validation.py#L188) | 188 | `""` | — |
+| [SRC-1C77C97630-L000189](../../tests/test_answer_validation.py#L189) | 189 | `""` | — |
+| [SRC-1C77C97630-L000190](../../tests/test_answer_validation.py#L190) | 190 | `"def test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source():"` | — |
+| [SRC-1C77C97630-L000191](../../tests/test_answer_validation.py#L191) | 191 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000192](../../tests/test_answer_validation.py#L192) | 192 | `"        \"قارن أسعار المنتجين\","` | — |
+| [SRC-1C77C97630-L000193](../../tests/test_answer_validation.py#L193) | 193 | `"        \"سعر المنتج الأول 500 جنيه [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000194](../../tests/test_answer_validation.py#L194) | 194 | `"        ["` | — |
+| [SRC-1C77C97630-L000195](../../tests/test_answer_validation.py#L195) | 195 | `"            {"` | — |
+| [SRC-1C77C97630-L000196](../../tests/test_answer_validation.py#L196) | 196 | `"                \"title\": \"سعر المنتج الأول\","` | — |
+| [SRC-1C77C97630-L000197](../../tests/test_answer_validation.py#L197) | 197 | `"                \"snippet\": \"سعر المنتج الأول 300 جنيه\","` | — |
+| [SRC-1C77C97630-L000198](../../tests/test_answer_validation.py#L198) | 198 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000199](../../tests/test_answer_validation.py#L199) | 199 | `"            },"` | — |
+| [SRC-1C77C97630-L000200](../../tests/test_answer_validation.py#L200) | 200 | `"            {"` | — |
+| [SRC-1C77C97630-L000201](../../tests/test_answer_validation.py#L201) | 201 | `"                \"title\": \"سعر المنتج الثاني\","` | — |
+| [SRC-1C77C97630-L000202](../../tests/test_answer_validation.py#L202) | 202 | `"                \"snippet\": \"سعر المنتج الثاني 500 جنيه\","` | — |
+| [SRC-1C77C97630-L000203](../../tests/test_answer_validation.py#L203) | 203 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000204](../../tests/test_answer_validation.py#L204) | 204 | `"            },"` | — |
+| [SRC-1C77C97630-L000205](../../tests/test_answer_validation.py#L205) | 205 | `"        ],"` | — |
+| [SRC-1C77C97630-L000206](../../tests/test_answer_validation.py#L206) | 206 | `"    )"` | — |
+| [SRC-1C77C97630-L000207](../../tests/test_answer_validation.py#L207) | 207 | `""` | — |
+| [SRC-1C77C97630-L000208](../../tests/test_answer_validation.py#L208) | 208 | `"    assert result[\"potentially_unsupported_numeric_literals\"] == []"` | — |
+| [SRC-1C77C97630-L000209](../../tests/test_answer_validation.py#L209) | 209 | `"    assert result[\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000210](../../tests/test_answer_validation.py#L210) | 210 | `"    cited_check = result[\"citation_numeric_support\"][0]"` | — |
+| [SRC-1C77C97630-L000211](../../tests/test_answer_validation.py#L211) | 211 | `"    assert cited_check[\"cited_source_indexes\"] == [1]"` | — |
+| [SRC-1C77C97630-L000212](../../tests/test_answer_validation.py#L212) | 212 | `"    assert cited_check[\"potentially_unsupported_numeric_literals\"] == [\"500\"]"` | — |
+| [SRC-1C77C97630-L000213](../../tests/test_answer_validation.py#L213) | 213 | `"    assert cited_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
+| [SRC-1C77C97630-L000214](../../tests/test_answer_validation.py#L214) | 214 | `""` | — |
+| [SRC-1C77C97630-L000215](../../tests/test_answer_validation.py#L215) | 215 | `""` | — |
+| [SRC-1C77C97630-L000216](../../tests/test_answer_validation.py#L216) | 216 | `"def test_different_price_values_are_flagged_for_review_not_called_contradictions():"` | — |
+| [SRC-1C77C97630-L000217](../../tests/test_answer_validation.py#L217) | 217 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000218](../../tests/test_answer_validation.py#L218) | 218 | `"        \"قارن العروض\","` | — |
+| [SRC-1C77C97630-L000219](../../tests/test_answer_validation.py#L219) | 219 | `"        \"العرض الأول أرخص من الثاني [المصدر 1] [المصدر 2].\","` | — |
+| [SRC-1C77C97630-L000220](../../tests/test_answer_validation.py#L220) | 220 | `"        ["` | — |
+| [SRC-1C77C97630-L000221](../../tests/test_answer_validation.py#L221) | 221 | `"            {"` | — |
+| [SRC-1C77C97630-L000222](../../tests/test_answer_validation.py#L222) | 222 | `"                \"title\": \"شقة القاهرة\","` | — |
+| [SRC-1C77C97630-L000223](../../tests/test_answer_validation.py#L223) | 223 | `"                \"snippet\": \"السعر 100000 جنيه\","` | — |
+| [SRC-1C77C97630-L000224](../../tests/test_answer_validation.py#L224) | 224 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000225](../../tests/test_answer_validation.py#L225) | 225 | `"            },"` | — |
+| [SRC-1C77C97630-L000226](../../tests/test_answer_validation.py#L226) | 226 | `"            {"` | — |
+| [SRC-1C77C97630-L000227](../../tests/test_answer_validation.py#L227) | 227 | `"                \"title\": \"شقة القاهرة\","` | — |
+| [SRC-1C77C97630-L000228](../../tests/test_answer_validation.py#L228) | 228 | `"                \"snippet\": \"السعر 120000 جنيه\","` | — |
+| [SRC-1C77C97630-L000229](../../tests/test_answer_validation.py#L229) | 229 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000230](../../tests/test_answer_validation.py#L230) | 230 | `"            },"` | — |
+| [SRC-1C77C97630-L000231](../../tests/test_answer_validation.py#L231) | 231 | `"        ],"` | — |
+| [SRC-1C77C97630-L000232](../../tests/test_answer_validation.py#L232) | 232 | `"    )"` | — |
+| [SRC-1C77C97630-L000233](../../tests/test_answer_validation.py#L233) | 233 | `""` | — |
+| [SRC-1C77C97630-L000234](../../tests/test_answer_validation.py#L234) | 234 | `"    price = next("` | — |
+| [SRC-1C77C97630-L000235](../../tests/test_answer_validation.py#L235) | 235 | `"        item for item in result[\"potential_value_discrepancies\"]"` | — |
+| [SRC-1C77C97630-L000236](../../tests/test_answer_validation.py#L236) | 236 | `"        if item[\"dimension\"] == \"price_or_cost\""` | — |
+| [SRC-1C77C97630-L000237](../../tests/test_answer_validation.py#L237) | 237 | `"    )"` | — |
 | [SRC-1C77C97630-L000238](../../tests/test_answer_validation.py#L238) | 238 | `"    assert {item[\"value\"] for item in price[\"values\"]} == {\"100000\", \"120000\"}"` | — |
 | [SRC-1C77C97630-L000239](../../tests/test_answer_validation.py#L239) | 239 | `"    assert price[\"status\"] == \"potential_variation_or_conflict_requires_entity_review\""` | — |
 | [SRC-1C77C97630-L000240](../../tests/test_answer_validation.py#L240) | 240 | `"    assert \"contradiction\" not in price[\"status\"]"` | — |
@@ -765,72 +825,3 @@
 | [SRC-3451CC474D-L000707](../../tests/test_api.py#L707) | 707 | `"            assert headers[\"x-frame-options\"] == \"DENY\""` | — |
 | [SRC-3451CC474D-L000708](../../tests/test_api.py#L708) | 708 | `"            assert headers[\"referrer-policy\"] == \"strict-origin-when-cross-origin\""` | — |
 | [SRC-3451CC474D-L000709](../../tests/test_api.py#L709) | 709 | `"            assert \"default-src 'self'\" in headers[\"content-security-policy\"]"` | — |
-| [SRC-3451CC474D-L000710](../../tests/test_api.py#L710) | 710 | `"            assert \"frame-ancestors 'none'\" in headers[\"content-security-policy\"]"` | — |
-| [SRC-3451CC474D-L000711](../../tests/test_api.py#L711) | 711 | `"            assert headers[\"permissions-policy\"] == ("` | — |
-| [SRC-3451CC474D-L000712](../../tests/test_api.py#L712) | 712 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
-| [SRC-3451CC474D-L000713](../../tests/test_api.py#L713) | 713 | `"            )"` | — |
-| [SRC-3451CC474D-L000714](../../tests/test_api.py#L714) | 714 | `""` | — |
-| [SRC-3451CC474D-L000715](../../tests/test_api.py#L715) | 715 | `""` | — |
-| [SRC-3451CC474D-L000716](../../tests/test_api.py#L716) | 716 | `"def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):"` | — |
-| [SRC-3451CC474D-L000717](../../tests/test_api.py#L717) | 717 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000718](../../tests/test_api.py#L718) | 718 | `""` | — |
-| [SRC-3451CC474D-L000719](../../tests/test_api.py#L719) | 719 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
-| [SRC-3451CC474D-L000720](../../tests/test_api.py#L720) | 720 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
-| [SRC-3451CC474D-L000721](../../tests/test_api.py#L721) | 721 | `"    assert api_module._build_sha() == \"unknown\""` | — |
-| [SRC-3451CC474D-L000722](../../tests/test_api.py#L722) | 722 | `"    build_sha_file.write_text(\"a\" * 40, encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000723](../../tests/test_api.py#L723) | 723 | `"    assert api_module._build_sha() == \"a\" * 40"` | — |
-| [SRC-3451CC474D-L000724](../../tests/test_api.py#L724) | 724 | `"    build_sha_file.write_text(\"not-a-git-sha\", encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000725](../../tests/test_api.py#L725) | 725 | `"    assert api_module._build_sha() == \"unknown\""` | — |
-## اختبارات
-
-### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-DA61479D59-L000001](../../tests/test_connector_summary_counters.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-DA61479D59-L000002](../../tests/test_connector_summary_counters.py#L2) | 2 | `""` | — |
-| [SRC-DA61479D59-L000003](../../tests/test_connector_summary_counters.py#L3) | 3 | `"import json"` | — |
-| [SRC-DA61479D59-L000004](../../tests/test_connector_summary_counters.py#L4) | 4 | `""` | — |
-| [SRC-DA61479D59-L000005](../../tests/test_connector_summary_counters.py#L5) | 5 | `"from agents.web_agent import PageFetchResult, WebAgent"` | — |
-| [SRC-DA61479D59-L000006](../../tests/test_connector_summary_counters.py#L6) | 6 | `""` | — |
-| [SRC-DA61479D59-L000007](../../tests/test_connector_summary_counters.py#L7) | 7 | `""` | — |
-| [SRC-DA61479D59-L000008](../../tests/test_connector_summary_counters.py#L8) | 8 | `"def test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets(monkeypatch):"` | — |
-| [SRC-DA61479D59-L000009](../../tests/test_connector_summary_counters.py#L9) | 9 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000010](../../tests/test_connector_summary_counters.py#L10) | 10 | `"    monkeypatch.delenv(\"BRAVE_SEARCH_API_KEY\", raising=False)"` | — |
-| [SRC-DA61479D59-L000011](../../tests/test_connector_summary_counters.py#L11) | 11 | `"    diagnostics = ["` | — |
-| [SRC-DA61479D59-L000012](../../tests/test_connector_summary_counters.py#L12) | 12 | `"        {"` | — |
-| [SRC-DA61479D59-L000013](../../tests/test_connector_summary_counters.py#L13) | 13 | `"            \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-DA61479D59-L000014](../../tests/test_connector_summary_counters.py#L14) | 14 | `"            \"query\": \"renewable energy\","` | — |
-| [SRC-DA61479D59-L000015](../../tests/test_connector_summary_counters.py#L15) | 15 | `"            \"status\": \"ok\","` | — |
-| [SRC-DA61479D59-L000016](../../tests/test_connector_summary_counters.py#L16) | 16 | `"            \"result_count\": 3,"` | — |
-| [SRC-DA61479D59-L000017](../../tests/test_connector_summary_counters.py#L17) | 17 | `"            \"rejected_count\": 1,"` | — |
-| [SRC-DA61479D59-L000018](../../tests/test_connector_summary_counters.py#L18) | 18 | `"        },"` | — |
-| [SRC-DA61479D59-L000019](../../tests/test_connector_summary_counters.py#L19) | 19 | `"        {"` | — |
-| [SRC-DA61479D59-L000020](../../tests/test_connector_summary_counters.py#L20) | 20 | `"            \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-DA61479D59-L000021](../../tests/test_connector_summary_counters.py#L21) | 21 | `"            \"query\": \"renewable energy\","` | — |
-| [SRC-DA61479D59-L000022](../../tests/test_connector_summary_counters.py#L22) | 22 | `"            \"status\": \"failed\","` | — |
-| [SRC-DA61479D59-L000023](../../tests/test_connector_summary_counters.py#L23) | 23 | `"            \"result_count\": 0,"` | — |
-| [SRC-DA61479D59-L000024](../../tests/test_connector_summary_counters.py#L24) | 24 | `"            \"rejected_count\": 0,"` | — |
-| [SRC-DA61479D59-L000025](../../tests/test_connector_summary_counters.py#L25) | 25 | `"            \"error\": \"HTTP 500 token=secret-value\","` | — |
-| [SRC-DA61479D59-L000026](../../tests/test_connector_summary_counters.py#L26) | 26 | `"        },"` | — |
-| [SRC-DA61479D59-L000027](../../tests/test_connector_summary_counters.py#L27) | 27 | `"    ]"` | — |
-| [SRC-DA61479D59-L000028](../../tests/test_connector_summary_counters.py#L28) | 28 | `"    sources = ["` | — |
-| [SRC-DA61479D59-L000029](../../tests/test_connector_summary_counters.py#L29) | 29 | `"        {\"url\": \"https://example.com/a\", \"providers\": [\"duckduckgo_html\"]},"` | — |
-| [SRC-DA61479D59-L000030](../../tests/test_connector_summary_counters.py#L30) | 30 | `"        {\"url\": \"https://example.org/b\", \"providers\": [\"bing_rss\"]},"` | — |
-| [SRC-DA61479D59-L000031](../../tests/test_connector_summary_counters.py#L31) | 31 | `"    ]"` | — |
-| [SRC-DA61479D59-L000032](../../tests/test_connector_summary_counters.py#L32) | 32 | `""` | — |
-| [SRC-DA61479D59-L000033](../../tests/test_connector_summary_counters.py#L33) | 33 | `"    summary = agent._connector_status_summary(diagnostics, sources)"` | — |
-| [SRC-DA61479D59-L000034](../../tests/test_connector_summary_counters.py#L34) | 34 | `""` | — |
-| [SRC-DA61479D59-L000035](../../tests/test_connector_summary_counters.py#L35) | 35 | `"    duckduckgo = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"duckduckgo_html\")"` | — |
-| [SRC-DA61479D59-L000036](../../tests/test_connector_summary_counters.py#L36) | 36 | `"    brave = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"brave_search_api\")"` | — |
-| [SRC-DA61479D59-L000037](../../tests/test_connector_summary_counters.py#L37) | 37 | `"    assert summary[\"scope\"] == \"this_request_only\""` | — |
-| [SRC-DA61479D59-L000038](../../tests/test_connector_summary_counters.py#L38) | 38 | `"    assert duckduckgo[\"attempted\"] is True"` | — |
-| [SRC-DA61479D59-L000039](../../tests/test_connector_summary_counters.py#L39) | 39 | `"    assert duckduckgo[\"status\"] == \"failed\""` | — |
-| [SRC-DA61479D59-L000040](../../tests/test_connector_summary_counters.py#L40) | 40 | `"    assert duckduckgo[\"observed_statuses\"] == [\"ok\", \"failed\"]"` | — |
-| [SRC-DA61479D59-L000041](../../tests/test_connector_summary_counters.py#L41) | 41 | `"    assert duckduckgo[\"result_count\"] == 3"` | — |
-| [SRC-DA61479D59-L000042](../../tests/test_connector_summary_counters.py#L42) | 42 | `"    assert duckduckgo[\"useful_result_count\"] == 1"` | — |
-| [SRC-DA61479D59-L000043](../../tests/test_connector_summary_counters.py#L43) | 43 | `"    assert duckduckgo[\"rejected_count\"] == 1"` | — |
-| [SRC-DA61479D59-L000044](../../tests/test_connector_summary_counters.py#L44) | 44 | `"    assert duckduckgo[\"implementation_status\"] == \"implemented_in_code\""` | — |
