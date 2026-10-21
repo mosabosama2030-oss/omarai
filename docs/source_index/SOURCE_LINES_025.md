@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000273 إلى SRC-AAA21D04E8-L000011
+- النطاق: SRC-FA4E1423C3-L000257 إلى SRC-829A979985-L000581
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000257](../../tests/test_generate_index.py#L257) | 257 | `"    (tmp_path / \"app.py\").write_text("` | — |
+| [SRC-FA4E1423C3-L000258](../../tests/test_generate_index.py#L258) | 258 | `"        'VALUE = 1\\n\\n'"` | — |
+| [SRC-FA4E1423C3-L000259](../../tests/test_generate_index.py#L259) | 259 | `"        'def greet():\\n'"` | — |
+| [SRC-FA4E1423C3-L000260](../../tests/test_generate_index.py#L260) | 260 | `"        '    return \"hello\"\\n',"` | — |
+| [SRC-FA4E1423C3-L000261](../../tests/test_generate_index.py#L261) | 261 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000262](../../tests/test_generate_index.py#L262) | 262 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000263](../../tests/test_generate_index.py#L263) | 263 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000264](../../tests/test_generate_index.py#L264) | 264 | `"    docs_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000265](../../tests/test_generate_index.py#L265) | 265 | `"    (docs_dir / \"guide.txt\").write_text("` | — |
+| [SRC-FA4E1423C3-L000266](../../tests/test_generate_index.py#L266) | 266 | `"        \"First documented step.\\nSecond documented step.\\n\","` | — |
+| [SRC-FA4E1423C3-L000267](../../tests/test_generate_index.py#L267) | 267 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000268](../../tests/test_generate_index.py#L268) | 268 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000269](../../tests/test_generate_index.py#L269) | 269 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_TOKEN=do-not-index\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000270](../../tests/test_generate_index.py#L270) | 270 | `"    (tmp_path / \"payload.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
+| [SRC-FA4E1423C3-L000271](../../tests/test_generate_index.py#L271) | 271 | `""` | — |
+| [SRC-FA4E1423C3-L000272](../../tests/test_generate_index.py#L272) | 272 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
 | [SRC-FA4E1423C3-L000273](../../tests/test_generate_index.py#L273) | 273 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
 | [SRC-FA4E1423C3-L000274](../../tests/test_generate_index.py#L274) | 274 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
 | [SRC-FA4E1423C3-L000275](../../tests/test_generate_index.py#L275) | 275 | `"    line_by_file_and_number = {(line.file, line.line): line for line in source_lines}"` | — |
@@ -809,28 +825,3 @@
 | [SRC-829A979985-L000579](../../tests/test_generation_acceptance_matrix.py#L579) | 579 | `"        \"https://one.example/page\","` | — |
 | [SRC-829A979985-L000580](../../tests/test_generation_acceptance_matrix.py#L580) | 580 | `"        \"one.example\","` | — |
 | [SRC-829A979985-L000581](../../tests/test_generation_acceptance_matrix.py#L581) | 581 | `"        page_fetched=True,"` | — |
-| [SRC-829A979985-L000582](../../tests/test_generation_acceptance_matrix.py#L582) | 582 | `"        page_text=\"نص الصفحة\","` | — |
-| [SRC-829A979985-L000583](../../tests/test_generation_acceptance_matrix.py#L583) | 583 | `"    )"` | — |
-| [SRC-829A979985-L000584](../../tests/test_generation_acceptance_matrix.py#L584) | 584 | `""` | — |
-| [SRC-829A979985-L000585](../../tests/test_generation_acceptance_matrix.py#L585) | 585 | `"    with pytest.raises(RuntimeError, match=\"فصل الإجابة النهائية\"):"` | — |
-| [SRC-829A979985-L000586](../../tests/test_generation_acceptance_matrix.py#L586) | 586 | `"        agent._review_answer(\"ما مضمون الصفحة؟\", \"مسودة\", [test_source])"` | — |
-## اختبارات
-
-### FILE-AAA21D04E8 — [tests/test_generation_capabilities.py](../../tests/test_generation_capabilities.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-AAA21D04E8-L000001](../../tests/test_generation_capabilities.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-AAA21D04E8-L000002](../../tests/test_generation_capabilities.py#L2) | 2 | `""` | — |
-| [SRC-AAA21D04E8-L000003](../../tests/test_generation_capabilities.py#L3) | 3 | `"import json"` | — |
-| [SRC-AAA21D04E8-L000004](../../tests/test_generation_capabilities.py#L4) | 4 | `""` | — |
-| [SRC-AAA21D04E8-L000005](../../tests/test_generation_capabilities.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-AAA21D04E8-L000006](../../tests/test_generation_capabilities.py#L6) | 6 | `""` | — |
-| [SRC-AAA21D04E8-L000007](../../tests/test_generation_capabilities.py#L7) | 7 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-AAA21D04E8-L000008](../../tests/test_generation_capabilities.py#L8) | 8 | `""` | — |
-| [SRC-AAA21D04E8-L000009](../../tests/test_generation_capabilities.py#L9) | 9 | `""` | — |
-| [SRC-AAA21D04E8-L000010](../../tests/test_generation_capabilities.py#L10) | 10 | `"class FakeResponse:"` | — |
-| [SRC-AAA21D04E8-L000011](../../tests/test_generation_capabilities.py#L11) | 11 | `"    def __init__(self, content: str, finish_reason: str \| None = None, *, include_reason: bool = True):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000563 إلى SRC-CAC5F305FE-L000010
+- النطاق: SRC-90FAA34ADE-L000547 إلى SRC-90FAA34ADE-L001346
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000547](../../tests/fixtures/answer_quality_cases.json#L547) | 547 | `"        \"ينبّه أن المصدر قديم ولا يكفي لإثبات شروط 2026\","` | — |
+| [SRC-90FAA34ADE-L000548](../../tests/fixtures/answer_quality_cases.json#L548) | 548 | `"        \"يبحث عن إعلان حديث أو يصرح بأن الشروط الحالية غير مؤكدة\","` | — |
+| [SRC-90FAA34ADE-L000549](../../tests/fixtures/answer_quality_cases.json#L549) | 549 | `"        \"يفصل بين معلومات المصدر القديم وأي استنتاج\""` | — |
+| [SRC-90FAA34ADE-L000550](../../tests/fixtures/answer_quality_cases.json#L550) | 550 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000551](../../tests/fixtures/answer_quality_cases.json#L551) | 551 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000552](../../tests/fixtures/answer_quality_cases.json#L552) | 552 | `"        \"يعيد نشر شروط 2022 باعتبارها شروط 2026\","` | — |
+| [SRC-90FAA34ADE-L000553](../../tests/fixtures/answer_quality_cases.json#L553) | 553 | `"        \"يخفي تاريخ المصدر\""` | — |
+| [SRC-90FAA34ADE-L000554](../../tests/fixtures/answer_quality_cases.json#L554) | 554 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000555](../../tests/fixtures/answer_quality_cases.json#L555) | 555 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000556](../../tests/fixtures/answer_quality_cases.json#L556) | 556 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000557](../../tests/fixtures/answer_quality_cases.json#L557) | 557 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000558](../../tests/fixtures/answer_quality_cases.json#L558) | 558 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000559](../../tests/fixtures/answer_quality_cases.json#L559) | 559 | `"            \"title\": \"Scholarship rules 2022\","` | — |
+| [SRC-90FAA34ADE-L000560](../../tests/fixtures/answer_quality_cases.json#L560) | 560 | `"            \"url\": \"https://scholarship.example.test/rules-2022\","` | — |
+| [SRC-90FAA34ADE-L000561](../../tests/fixtures/answer_quality_cases.json#L561) | 561 | `"            \"snippet\": \"Eligibility rules for the 2022 cycle.\","` | — |
+| [SRC-90FAA34ADE-L000562](../../tests/fixtures/answer_quality_cases.json#L562) | 562 | `"            \"published_at\": \"2022-03-01\","` | — |
 | [SRC-90FAA34ADE-L000563](../../tests/fixtures/answer_quality_cases.json#L563) | 563 | `"            \"domain\": \"scholarship.example.test\","` | — |
 | [SRC-90FAA34ADE-L000564](../../tests/fixtures/answer_quality_cases.json#L564) | 564 | `"            \"provider\": \"fixture_search\""` | — |
 | [SRC-90FAA34ADE-L000565](../../tests/fixtures/answer_quality_cases.json#L565) | 565 | `"          }"` | — |
@@ -800,28 +816,3 @@
 | [SRC-90FAA34ADE-L001344](../../tests/fixtures/answer_quality_cases.json#L1344) | 1344 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001345](../../tests/fixtures/answer_quality_cases.json#L1345) | 1345 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L001346](../../tests/fixtures/answer_quality_cases.json#L1346) | 1346 | `"        \"تسجيل نية شراء مؤكدة بلا دليل\","` | — |
-| [SRC-90FAA34ADE-L001347](../../tests/fixtures/answer_quality_cases.json#L1347) | 1347 | `"        \"ادعاء إجراء تواصل لم يحدث\""` | — |
-| [SRC-90FAA34ADE-L001348](../../tests/fixtures/answer_quality_cases.json#L1348) | 1348 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001349](../../tests/fixtures/answer_quality_cases.json#L1349) | 1349 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L001350](../../tests/fixtures/answer_quality_cases.json#L1350) | 1350 | `"    }"` | — |
-| [SRC-90FAA34ADE-L001351](../../tests/fixtures/answer_quality_cases.json#L1351) | 1351 | `"  ]"` | — |
-| [SRC-90FAA34ADE-L001352](../../tests/fixtures/answer_quality_cases.json#L1352) | 1352 | `"}"` | — |
-## اختبارات
-
-### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-CAC5F305FE-L000001](../../tests/test_agent_modes.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-CAC5F305FE-L000002](../../tests/test_agent_modes.py#L2) | 2 | `""` | — |
-| [SRC-CAC5F305FE-L000003](../../tests/test_agent_modes.py#L3) | 3 | `"from agents.research import evidence_signal_report"` | — |
-| [SRC-CAC5F305FE-L000004](../../tests/test_agent_modes.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-CAC5F305FE-L000005](../../tests/test_agent_modes.py#L5) | 5 | `""` | — |
-| [SRC-CAC5F305FE-L000006](../../tests/test_agent_modes.py#L6) | 6 | `""` | — |
-| [SRC-CAC5F305FE-L000007](../../tests/test_agent_modes.py#L7) | 7 | `"def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatch):"` | — |
-| [SRC-CAC5F305FE-L000008](../../tests/test_agent_modes.py#L8) | 8 | `"    agent = WebAgent()"` | — |
-| [SRC-CAC5F305FE-L000009](../../tests/test_agent_modes.py#L9) | 9 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-CAC5F305FE-L000010](../../tests/test_agent_modes.py#L10) | 10 | `"    seen = {}"` | — |

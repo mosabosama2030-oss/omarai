@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000049 إلى SRC-F725E90B2A-L000743
+- النطاق: SRC-1C0D3D1206-L000033 إلى SRC-F725E90B2A-L000727
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000033](../../tests/test_sqlite_backup_restore.py#L33) | 33 | `"    assert backup_report[\"lead_count\"] == 2"` | — |
+| [SRC-1C0D3D1206-L000034](../../tests/test_sqlite_backup_restore.py#L34) | 34 | `"    assert backup_report[\"overwrite\"] is False"` | — |
+| [SRC-1C0D3D1206-L000035](../../tests/test_sqlite_backup_restore.py#L35) | 35 | `""` | — |
+| [SRC-1C0D3D1206-L000036](../../tests/test_sqlite_backup_restore.py#L36) | 36 | `"    restored_path = tmp_path / \"restored\" / \"restored.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000037](../../tests/test_sqlite_backup_restore.py#L37) | 37 | `"    restore_report = restore_database(snapshot_path, restored_path)"` | — |
+| [SRC-1C0D3D1206-L000038](../../tests/test_sqlite_backup_restore.py#L38) | 38 | `"    assert restore_report[\"result\"] == \"passed\""` | — |
+| [SRC-1C0D3D1206-L000039](../../tests/test_sqlite_backup_restore.py#L39) | 39 | `"    assert restore_report[\"integrity_check\"] == \"ok\""` | — |
+| [SRC-1C0D3D1206-L000040](../../tests/test_sqlite_backup_restore.py#L40) | 40 | `"    assert restore_report[\"lead_count\"] == 2"` | — |
+| [SRC-1C0D3D1206-L000041](../../tests/test_sqlite_backup_restore.py#L41) | 41 | `""` | — |
+| [SRC-1C0D3D1206-L000042](../../tests/test_sqlite_backup_restore.py#L42) | 42 | `"    restored = LeadStore(restored_path)"` | — |
+| [SRC-1C0D3D1206-L000043](../../tests/test_sqlite_backup_restore.py#L43) | 43 | `"    original_rows = {row[\"id\"]: row for row in source.list(limit=500)}"` | — |
+| [SRC-1C0D3D1206-L000044](../../tests/test_sqlite_backup_restore.py#L44) | 44 | `"    restored_rows = {row[\"id\"]: row for row in restored.list(limit=500)}"` | — |
+| [SRC-1C0D3D1206-L000045](../../tests/test_sqlite_backup_restore.py#L45) | 45 | `"    assert restored_rows == original_rows"` | — |
+| [SRC-1C0D3D1206-L000046](../../tests/test_sqlite_backup_restore.py#L46) | 46 | `"    assert restored_rows[first[\"id\"]][\"status\"] == \"qualified\""` | — |
+| [SRC-1C0D3D1206-L000047](../../tests/test_sqlite_backup_restore.py#L47) | 47 | `"    assert second[\"id\"] in restored_rows"` | — |
+| [SRC-1C0D3D1206-L000048](../../tests/test_sqlite_backup_restore.py#L48) | 48 | `""` | — |
 | [SRC-1C0D3D1206-L000049](../../tests/test_sqlite_backup_restore.py#L49) | 49 | `""` | — |
 | [SRC-1C0D3D1206-L000050](../../tests/test_sqlite_backup_restore.py#L50) | 50 | `"def test_backup_never_overwrites_an_existing_destination(tmp_path):"` | — |
 | [SRC-1C0D3D1206-L000051](../../tests/test_sqlite_backup_restore.py#L51) | 51 | `"    source_path = tmp_path / \"source.sqlite3\""` | — |
@@ -809,19 +825,3 @@
 | [SRC-F725E90B2A-L000725](../../tests/test_web_agent.py#L725) | 725 | `"    agent.fallback_model = \"fallback/model\""` | — |
 | [SRC-F725E90B2A-L000726](../../tests/test_web_agent.py#L726) | 726 | `"    called = []"` | — |
 | [SRC-F725E90B2A-L000727](../../tests/test_web_agent.py#L727) | 727 | `""` | — |
-| [SRC-F725E90B2A-L000728](../../tests/test_web_agent.py#L728) | 728 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000729](../../tests/test_web_agent.py#L729) | 729 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L000730](../../tests/test_web_agent.py#L730) | 730 | `"            return self"` | — |
-| [SRC-F725E90B2A-L000731](../../tests/test_web_agent.py#L731) | 731 | `""` | — |
-| [SRC-F725E90B2A-L000732](../../tests/test_web_agent.py#L732) | 732 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-F725E90B2A-L000733](../../tests/test_web_agent.py#L733) | 733 | `"            return False"` | — |
-| [SRC-F725E90B2A-L000734](../../tests/test_web_agent.py#L734) | 734 | `""` | — |
-| [SRC-F725E90B2A-L000735](../../tests/test_web_agent.py#L735) | 735 | `"        def read(self, limit):"` | — |
-| [SRC-F725E90B2A-L000736](../../tests/test_web_agent.py#L736) | 736 | `"            return json.dumps({"` | — |
-| [SRC-F725E90B2A-L000737](../../tests/test_web_agent.py#L737) | 737 | `"                \"choices\": [{"` | — |
-| [SRC-F725E90B2A-L000738](../../tests/test_web_agent.py#L738) | 738 | `"                    \"message\": {\"content\": \"نص مبتور\"},"` | — |
-| [SRC-F725E90B2A-L000739](../../tests/test_web_agent.py#L739) | 739 | `"                    \"finish_reason\": \"length\","` | — |
-| [SRC-F725E90B2A-L000740](../../tests/test_web_agent.py#L740) | 740 | `"                }]"` | — |
-| [SRC-F725E90B2A-L000741](../../tests/test_web_agent.py#L741) | 741 | `"            }).encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L000742](../../tests/test_web_agent.py#L742) | 742 | `""` | — |
-| [SRC-F725E90B2A-L000743](../../tests/test_web_agent.py#L743) | 743 | `"    def fake_urlopen(request, timeout):"` | — |

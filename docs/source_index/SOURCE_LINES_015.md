@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000398 إلى SRC-855DA3B8BC-L000026
+- النطاق: SRC-D17CE3D12F-L000382 إلى SRC-855DA3B8BC-L000010
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000382](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L382) | 382 | `""` | — |
+| [SRC-D17CE3D12F-L000383](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L383) | 383 | `"1. MUST أن يكون لكل ادعاء جوهري يستند إلى الويب مسار واضح إلى المصدر أو مجموعة المصادر الداعمة."` | — |
+| [SRC-D17CE3D12F-L000384](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L384) | 384 | `"2. MUST ألا تشير الإحالة إلى صفحة لم تدعم الادعاء فعليًا، وألا تُنشأ مراجع أو اقتباسات أو تواريخ غير موجودة."` | — |
+| [SRC-D17CE3D12F-L000385](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L385) | 385 | `"3. SHOULD التفريق بين حقيقة موثقة، واستنتاج، ورأي، وتوقع، ومعلومة غير متاحة."` | — |
+| [SRC-D17CE3D12F-L000386](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L386) | 386 | `"4. MUST التعامل مع تضارب المصادر بتوضيحه أو ترجيح الموثق مع بيان السبب؛ لا تُخفى المعارضة المهمة."` | — |
+| [SRC-D17CE3D12F-L000387](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L387) | 387 | `"5. MUST أن يحدد النظام عدم اليقين والقيود، ويطلب توضيحًا عندما يغيّر الغموض الإجابة بشكل جوهري."` | — |
+| [SRC-D17CE3D12F-L000388](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L388) | 388 | `"6. SHOULD بناء مجموعة تقييم عربية تغطي: صحة الحقائق، وملاءمة المصدر، وجودة الاستشهاد، واكتمال الإجابة، والتعامل مع عدم اليقين، وحداثة المعلومة."` | — |
+| [SRC-D17CE3D12F-L000389](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L389) | 389 | `"7. MUST اختبار حالات لا يوجد فيها مصدر كافٍ، أو توجد مصادر متعارضة، أو الروابط ميتة، أو التاريخ قديم، أو المصدر لا يدعم الجملة."` | — |
+| [SRC-D17CE3D12F-L000390](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L390) | 390 | `"8. SHOULD فصل جودة الصياغة عن صحة المحتوى؛ الإجابة الفصيحة قد تكون خاطئة."` | — |
+| [SRC-D17CE3D12F-L000391](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L391) | 391 | `"9. MUST عدم استخدام الثقة التي يعلنها النموذج عن نفسه بديلًا عن تحقق مستقل من الأدلة."` | — |
+| [SRC-D17CE3D12F-L000392](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L392) | 392 | `"10. MUST ألا تتجاوز اللغة درجة ما تسمح به الأدلة، ولا يحوّل الاستنتاج الاحتمالي إلى خبر مؤكد."` | — |
+| [SRC-D17CE3D12F-L000393](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L393) | 393 | `""` | — |
+| [SRC-D17CE3D12F-L000394](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L394) | 394 | `"---"` | — |
+| [SRC-D17CE3D12F-L000395](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L395) | 395 | `""` | — |
+| [SRC-D17CE3D12F-L000396](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L396) | 396 | `"# القسم التاسع — هندسة الذكاء الاصطناعي والوكلاء (LLMOps/AgentOps)"` | — |
+| [SRC-D17CE3D12F-L000397](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L397) | 397 | `""` | — |
 | [SRC-D17CE3D12F-L000398](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L398) | 398 | `"## 27. فصل التخطيط والتفويض والتنفيذ والتحقق"` | — |
 | [SRC-D17CE3D12F-L000399](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L399) | 399 | `""` | — |
 | [SRC-D17CE3D12F-L000400](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L400) | 400 | `"1. MUST أن تظل قواعد الأمان والتفويض والحدود في كود/سياسة موثوقة لا في prompt النموذج وحده."` | — |
@@ -818,19 +834,3 @@
 | [SRC-855DA3B8BC-L000008](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L8) | 8 | `"**نسخة المصدر المدققة:** 08319cce3652c332e414f691a71cc153dfbfd92e  "` | — |
 | [SRC-855DA3B8BC-L000009](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L9) | 9 | `"**نسخة التطبيق السابقة لدمج وثائق المتطلبات:** 3cad5031de3dfdea6977d2428bc00d1e8bfd1303  "` | — |
 | [SRC-855DA3B8BC-L000010](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L10) | 10 | `"**نطاق التقرير:** متطلبات P0 في سجل Omarai التأسيسي، مع تركيز على سلامة السلوك، وصلاحيات الأدوات، وحدود الموارد، وأمان البحث، وصحة الاستشهادات، وعزل المستخدمين.  "` | — |
-| [SRC-855DA3B8BC-L000011](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | 11 | `"**الوثائق الحاكمة:** [سجل المتطلبات](OMARAI_REQUIREMENTS_REGISTER.md)، [الدستور الهندسي](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md)، [خط الأساس الهندسي الموسع](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md)، [نموذج التتبع والنضج](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md)."` | — |
-| [SRC-855DA3B8BC-L000012](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L12) | 12 | `""` | — |
-| [SRC-855DA3B8BC-L000013](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) | 13 | `"---"` | — |
-| [SRC-855DA3B8BC-L000014](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L14) | 14 | `""` | — |
-| [SRC-855DA3B8BC-L000015](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L15) | 15 | `"## 1. الحكم التنفيذي"` | — |
-| [SRC-855DA3B8BC-L000016](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L16) | 16 | `""` | — |
-| [SRC-855DA3B8BC-L000017](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L17) | 17 | `"**الحكم المتوازن: اتجاه Omarai الهندسي جيد بوضوح، وتوجد بالفعل ضوابط مهمة في الكود واختبارات مناسبة لعدد من سيناريوهات الفشل؛ لكن لا يوجد حتى الآن ما يبرر القول إن جميع المتطلبات التأسيسية مستوفاة أو إن التطبيق جاهز كمنصة عامة متعددة المستخدمين.**"` | — |
-| [SRC-855DA3B8BC-L000018](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L18) | 18 | `""` | — |
-| [SRC-855DA3B8BC-L000019](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L19) | 19 | `"الأدلة الإيجابية الأقوى:"` | — |
-| [SRC-855DA3B8BC-L000020](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L20) | 20 | `"- اجتازت نسخة main المرجعية فحوص GitHub Actions على Python 3.11 و3.12؛ نجح تثبيت الاعتماديات، وRuff، وpytest."` | — |
-| [SRC-855DA3B8BC-L000021](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L21) | 21 | `"- نجح بناء حاوية Docker، ونجح smoke test يفحص الصحة، ويرفض الطلبات غير المصادق عليها إلى واجهتي الوكيل والعملاء، ويقبل بعض الطلبات المصادق عليها."` | — |
-| [SRC-855DA3B8BC-L000022](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L22) | 22 | `"- توجد حدود فعلية لأحجام الأسئلة والصفحات والنتائج وعدد الاستعلامات وبعض استدعاءات الموفرين، وتوجد مهلات على كثير من الاتصالات الخارجية."` | — |
-| [SRC-855DA3B8BC-L000023](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L23) | 23 | `"- جلب الصفحات يتضمن دفاعات SSRF جدية: فحص HTTP/HTTPS، ورفض عناوين محلية، وحل DNS، وتثبيت عنوان الاتصال، والتحقق من كل تحويل، والتحقق من نوع المحتوى والحجم."` | — |
-| [SRC-855DA3B8BC-L000024](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L24) | 24 | `"- يوجد فصل مقصود بين تعليمات النظام ومحتوى الويب غير الموثوق، وتوجد مراجعة بمساعدة نموذج ثانٍ للادعاءات، مع إفصاح صريح بأنها ليست تحققًا مستقلًا من الحقيقة."` | — |
-| [SRC-855DA3B8BC-L000025](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L25) | 25 | `"- API يتطلب Bearer token في وضع النشر العام، ويقارن الرمز بطريقة ثابتة الزمن، ويطبق تحديد معدل على مستوى عنوان العميل، ويحظر طلبات غير مصادق عليها قبل تحليل جسم الطلب."` | — |
-| [SRC-855DA3B8BC-L000026](../OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L26) | 26 | `"- نتائج الفشل والبحث غير المكتمل ليست دائمًا مغطاة بصياغة نجاح؛ توجد اختبارات تؤكد إبقاء بعض حالات الفشل والحالة المجهولة صريحة."` | — |

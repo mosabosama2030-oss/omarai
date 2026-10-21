@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000744 إلى SRC-F725E90B2A-L001543
+- النطاق: SRC-F725E90B2A-L000728 إلى SRC-F725E90B2A-L001527
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000728](../../tests/test_web_agent.py#L728) | 728 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000729](../../tests/test_web_agent.py#L729) | 729 | `"        def __enter__(self):"` | — |
+| [SRC-F725E90B2A-L000730](../../tests/test_web_agent.py#L730) | 730 | `"            return self"` | — |
+| [SRC-F725E90B2A-L000731](../../tests/test_web_agent.py#L731) | 731 | `""` | — |
+| [SRC-F725E90B2A-L000732](../../tests/test_web_agent.py#L732) | 732 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
+| [SRC-F725E90B2A-L000733](../../tests/test_web_agent.py#L733) | 733 | `"            return False"` | — |
+| [SRC-F725E90B2A-L000734](../../tests/test_web_agent.py#L734) | 734 | `""` | — |
+| [SRC-F725E90B2A-L000735](../../tests/test_web_agent.py#L735) | 735 | `"        def read(self, limit):"` | — |
+| [SRC-F725E90B2A-L000736](../../tests/test_web_agent.py#L736) | 736 | `"            return json.dumps({"` | — |
+| [SRC-F725E90B2A-L000737](../../tests/test_web_agent.py#L737) | 737 | `"                \"choices\": [{"` | — |
+| [SRC-F725E90B2A-L000738](../../tests/test_web_agent.py#L738) | 738 | `"                    \"message\": {\"content\": \"نص مبتور\"},"` | — |
+| [SRC-F725E90B2A-L000739](../../tests/test_web_agent.py#L739) | 739 | `"                    \"finish_reason\": \"length\","` | — |
+| [SRC-F725E90B2A-L000740](../../tests/test_web_agent.py#L740) | 740 | `"                }]"` | — |
+| [SRC-F725E90B2A-L000741](../../tests/test_web_agent.py#L741) | 741 | `"            }).encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000742](../../tests/test_web_agent.py#L742) | 742 | `""` | — |
+| [SRC-F725E90B2A-L000743](../../tests/test_web_agent.py#L743) | 743 | `"    def fake_urlopen(request, timeout):"` | — |
 | [SRC-F725E90B2A-L000744](../../tests/test_web_agent.py#L744) | 744 | `"        called.append(json.loads(request.data.decode(\"utf-8\"))[\"model\"])"` | — |
 | [SRC-F725E90B2A-L000745](../../tests/test_web_agent.py#L745) | 745 | `"        return FakeResponse()"` | — |
 | [SRC-F725E90B2A-L000746](../../tests/test_web_agent.py#L746) | 746 | `""` | — |
@@ -800,19 +816,3 @@
 | [SRC-F725E90B2A-L001525](../../tests/test_web_agent.py#L1525) | 1525 | `"        \"url\": \"https://example.com/listing/123\","` | — |
 | [SRC-F725E90B2A-L001526](../../tests/test_web_agent.py#L1526) | 1526 | `"        \"snippet\": \"شقة في التجمع الخامس، معاينة بالتنسيق مع المعلن.\","` | — |
 | [SRC-F725E90B2A-L001527](../../tests/test_web_agent.py#L1527) | 1527 | `"        \"page_text\": \"شقة في التجمع الخامس، معاينة بالتنسيق مع المعلن.\","` | — |
-| [SRC-F725E90B2A-L001528](../../tests/test_web_agent.py#L1528) | 1528 | `"        \"page_fetched\": True,"` | — |
-| [SRC-F725E90B2A-L001529](../../tests/test_web_agent.py#L1529) | 1529 | `"        \"providers\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001530](../../tests/test_web_agent.py#L1530) | 1530 | `"        \"queries\": [\"شقة في التجمع الخامس\"],"` | — |
-| [SRC-F725E90B2A-L001531](../../tests/test_web_agent.py#L1531) | 1531 | `"        \"domain\": \"example.com\","` | — |
-| [SRC-F725E90B2A-L001532](../../tests/test_web_agent.py#L1532) | 1532 | `"        \"source_class\": \"general\","` | — |
-| [SRC-F725E90B2A-L001533](../../tests/test_web_agent.py#L1533) | 1533 | `"        \"platform\": \"web\","` | — |
-| [SRC-F725E90B2A-L001534](../../tests/test_web_agent.py#L1534) | 1534 | `"    }"` | — |
-| [SRC-F725E90B2A-L001535](../../tests/test_web_agent.py#L1535) | 1535 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001536](../../tests/test_web_agent.py#L1536) | 1536 | `"        agent, \"_plan_search\","` | — |
-| [SRC-F725E90B2A-L001537](../../tests/test_web_agent.py#L1537) | 1537 | `"        lambda question, history: {"` | — |
-| [SRC-F725E90B2A-L001538](../../tests/test_web_agent.py#L1538) | 1538 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L001539](../../tests/test_web_agent.py#L1539) | 1539 | `"            \"freshness\": \"any\", \"depth\": \"standard\", \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001540](../../tests/test_web_agent.py#L1540) | 1540 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"        },"` | — |
-| [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"    )"` | — |
-| [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `"    monkeypatch.setattr("` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000433 إلى SRC-E599346ABE-L000259
+- النطاق: SRC-EEF2E6447C-L000417 إلى SRC-E599346ABE-L000243
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000417](../../api/omarai.py#L417) | 417 | `"        return self.respond(404, {\"error\": \"not found\"})"` | — |
+| [SRC-EEF2E6447C-L000418](../../api/omarai.py#L418) | 418 | `""` | — |
+| [SRC-EEF2E6447C-L000419](../../api/omarai.py#L419) | 419 | `"    def do_POST(self):"` | — |
+| [SRC-EEF2E6447C-L000420](../../api/omarai.py#L420) | 420 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000421](../../api/omarai.py#L421) | 421 | `"            # Count API attempts before origin/content-type/body validation so invalid"` | — |
+| [SRC-EEF2E6447C-L000422](../../api/omarai.py#L422) | 422 | `"            # credentials and malformed requests cannot bypass per-client throttling."` | — |
+| [SRC-EEF2E6447C-L000423](../../api/omarai.py#L423) | 423 | `"            path = urlparse(self.path).path"` | — |
+| [SRC-EEF2E6447C-L000424](../../api/omarai.py#L424) | 424 | `"            if path.startswith(\"/api/\") and not self._rate_limit_ok():"` | — |
+| [SRC-EEF2E6447C-L000425](../../api/omarai.py#L425) | 425 | `"                return self.respond(429, {\"error\": \"تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة.\"})"` | — |
+| [SRC-EEF2E6447C-L000426](../../api/omarai.py#L426) | 426 | `"            if path.startswith(\"/api/\") and not self._authorized():"` | — |
+| [SRC-EEF2E6447C-L000427](../../api/omarai.py#L427) | 427 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول الخاص بالتطبيق.\"})"` | — |
+| [SRC-EEF2E6447C-L000428](../../api/omarai.py#L428) | 428 | `""` | — |
+| [SRC-EEF2E6447C-L000429](../../api/omarai.py#L429) | 429 | `"            content_type = self.headers.get(\"Content-Type\", \"\").split(\";\", 1)[0].strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000430](../../api/omarai.py#L430) | 430 | `"            if content_type != \"application/json\":"` | — |
+| [SRC-EEF2E6447C-L000431](../../api/omarai.py#L431) | 431 | `"                return self.respond(415, {\"error\": \"Content-Type must be application/json\"})"` | — |
+| [SRC-EEF2E6447C-L000432](../../api/omarai.py#L432) | 432 | `"            origin = self.headers.get(\"Origin\")"` | — |
 | [SRC-EEF2E6447C-L000433](../../api/omarai.py#L433) | 433 | `"            if origin and not self._origin_allowed(origin):"` | — |
 | [SRC-EEF2E6447C-L000434](../../api/omarai.py#L434) | 434 | `"                return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
 | [SRC-EEF2E6447C-L000435](../../api/omarai.py#L435) | 435 | `""` | — |
@@ -872,19 +888,3 @@
 | [SRC-E599346ABE-L000241](../generate_index.py#L241) | 241 | `"    def _record_definition("` | — |
 | [SRC-E599346ABE-L000242](../generate_index.py#L242) | 242 | `"        self,"` | — |
 | [SRC-E599346ABE-L000243](../generate_index.py#L243) | 243 | `"        node: ast.ClassDef \| ast.FunctionDef \| ast.AsyncFunctionDef,"` | — |
-| [SRC-E599346ABE-L000244](../generate_index.py#L244) | 244 | `"        kind: str,"` | — |
-| [SRC-E599346ABE-L000245](../generate_index.py#L245) | 245 | `"    ) -> None:"` | — |
-| [SRC-E599346ABE-L000246](../generate_index.py#L246) | 246 | `"        \"\"\"Record one class/function definition while preserving its qualified scope.\"\"\""` | — |
-| [SRC-E599346ABE-L000247](../generate_index.py#L247) | 247 | `"        description, documented = self._description(node)"` | — |
-| [SRC-E599346ABE-L000248](../generate_index.py#L248) | 248 | `"        qualified_name = \".\".join((*self.scope, node.name))"` | — |
-| [SRC-E599346ABE-L000249](../generate_index.py#L249) | 249 | `"        self.symbols.append("` | — |
-| [SRC-E599346ABE-L000250](../generate_index.py#L250) | 250 | `"            IndexedSymbol("` | — |
-| [SRC-E599346ABE-L000251](../generate_index.py#L251) | 251 | `"                file=self.relative_file,"` | — |
-| [SRC-E599346ABE-L000252](../generate_index.py#L252) | 252 | `"                name=qualified_name,"` | — |
-| [SRC-E599346ABE-L000253](../generate_index.py#L253) | 253 | `"                kind=kind,"` | — |
-| [SRC-E599346ABE-L000254](../generate_index.py#L254) | 254 | `"                line=node.lineno,"` | — |
-| [SRC-E599346ABE-L000255](../generate_index.py#L255) | 255 | `"                description=description,"` | — |
-| [SRC-E599346ABE-L000256](../generate_index.py#L256) | 256 | `"                documented=documented,"` | — |
-| [SRC-E599346ABE-L000257](../generate_index.py#L257) | 257 | `"            )"` | — |
-| [SRC-E599346ABE-L000258](../generate_index.py#L258) | 258 | `"        )"` | — |
-| [SRC-E599346ABE-L000259](../generate_index.py#L259) | 259 | `""` | — |

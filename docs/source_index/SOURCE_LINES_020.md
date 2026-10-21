@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000319 إلى SRC-90FAA34ADE-L000562
+- النطاق: SRC-4FFD5AFC54-L000303 إلى SRC-90FAA34ADE-L000546
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000303](../../scripts/run_answer_quality_benchmark.py#L303) | 303 | `"            \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
+| [SRC-4FFD5AFC54-L000304](../../scripts/run_answer_quality_benchmark.py#L304) | 304 | `"            \"executed_at_utc\": _utc_now(),"` | — |
+| [SRC-4FFD5AFC54-L000305](../../scripts/run_answer_quality_benchmark.py#L305) | 305 | `"            \"mode\": \"live_api\","` | — |
+| [SRC-4FFD5AFC54-L000306](../../scripts/run_answer_quality_benchmark.py#L306) | 306 | `"            \"base_url\": safe_base_url,"` | — |
+| [SRC-4FFD5AFC54-L000307](../../scripts/run_answer_quality_benchmark.py#L307) | 307 | `"            \"http_status\": status_code,"` | — |
+| [SRC-4FFD5AFC54-L000308](../../scripts/run_answer_quality_benchmark.py#L308) | 308 | `"            \"prompt\": prompt,"` | — |
+| [SRC-4FFD5AFC54-L000309](../../scripts/run_answer_quality_benchmark.py#L309) | 309 | `"            \"expected_strategy\": case[\"expected_strategy\"],"` | — |
+| [SRC-4FFD5AFC54-L000310](../../scripts/run_answer_quality_benchmark.py#L310) | 310 | `"            \"category\": case[\"category\"],"` | — |
+| [SRC-4FFD5AFC54-L000311](../../scripts/run_answer_quality_benchmark.py#L311) | 311 | `"            \"response\": safe_payload,"` | — |
+| [SRC-4FFD5AFC54-L000312](../../scripts/run_answer_quality_benchmark.py#L312) | 312 | `"            \"used_web_search\": ("` | — |
+| [SRC-4FFD5AFC54-L000313](../../scripts/run_answer_quality_benchmark.py#L313) | 313 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
+| [SRC-4FFD5AFC54-L000314](../../scripts/run_answer_quality_benchmark.py#L314) | 314 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000315](../../scripts/run_answer_quality_benchmark.py#L315) | 315 | `"            \"used_language_model\": ("` | — |
+| [SRC-4FFD5AFC54-L000316](../../scripts/run_answer_quality_benchmark.py#L316) | 316 | `"                safe_payload.get(\"used_language_model\")"` | — |
+| [SRC-4FFD5AFC54-L000317](../../scripts/run_answer_quality_benchmark.py#L317) | 317 | `"                if isinstance(safe_payload, dict)"` | — |
+| [SRC-4FFD5AFC54-L000318](../../scripts/run_answer_quality_benchmark.py#L318) | 318 | `"                else None"` | — |
 | [SRC-4FFD5AFC54-L000319](../../scripts/run_answer_quality_benchmark.py#L319) | 319 | `"            ),"` | — |
 | [SRC-4FFD5AFC54-L000320](../../scripts/run_answer_quality_benchmark.py#L320) | 320 | `"            \"sources\": ("` | — |
 | [SRC-4FFD5AFC54-L000321](../../scripts/run_answer_quality_benchmark.py#L321) | 321 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
@@ -818,19 +834,3 @@
 | [SRC-90FAA34ADE-L000544](../../tests/fixtures/answer_quality_cases.json#L544) | 544 | `"      \"question\": \"إيه شروط التقديم الحالية لمنحة 2026؟ عندك نتيجة من صفحة منشورة سنة 2022 بس.\","` | — |
 | [SRC-90FAA34ADE-L000545](../../tests/fixtures/answer_quality_cases.json#L545) | 545 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000546](../../tests/fixtures/answer_quality_cases.json#L546) | 546 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000547](../../tests/fixtures/answer_quality_cases.json#L547) | 547 | `"        \"ينبّه أن المصدر قديم ولا يكفي لإثبات شروط 2026\","` | — |
-| [SRC-90FAA34ADE-L000548](../../tests/fixtures/answer_quality_cases.json#L548) | 548 | `"        \"يبحث عن إعلان حديث أو يصرح بأن الشروط الحالية غير مؤكدة\","` | — |
-| [SRC-90FAA34ADE-L000549](../../tests/fixtures/answer_quality_cases.json#L549) | 549 | `"        \"يفصل بين معلومات المصدر القديم وأي استنتاج\""` | — |
-| [SRC-90FAA34ADE-L000550](../../tests/fixtures/answer_quality_cases.json#L550) | 550 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000551](../../tests/fixtures/answer_quality_cases.json#L551) | 551 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000552](../../tests/fixtures/answer_quality_cases.json#L552) | 552 | `"        \"يعيد نشر شروط 2022 باعتبارها شروط 2026\","` | — |
-| [SRC-90FAA34ADE-L000553](../../tests/fixtures/answer_quality_cases.json#L553) | 553 | `"        \"يخفي تاريخ المصدر\""` | — |
-| [SRC-90FAA34ADE-L000554](../../tests/fixtures/answer_quality_cases.json#L554) | 554 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000555](../../tests/fixtures/answer_quality_cases.json#L555) | 555 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000556](../../tests/fixtures/answer_quality_cases.json#L556) | 556 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000557](../../tests/fixtures/answer_quality_cases.json#L557) | 557 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000558](../../tests/fixtures/answer_quality_cases.json#L558) | 558 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000559](../../tests/fixtures/answer_quality_cases.json#L559) | 559 | `"            \"title\": \"Scholarship rules 2022\","` | — |
-| [SRC-90FAA34ADE-L000560](../../tests/fixtures/answer_quality_cases.json#L560) | 560 | `"            \"url\": \"https://scholarship.example.test/rules-2022\","` | — |
-| [SRC-90FAA34ADE-L000561](../../tests/fixtures/answer_quality_cases.json#L561) | 561 | `"            \"snippet\": \"Eligibility rules for the 2022 cycle.\","` | — |
-| [SRC-90FAA34ADE-L000562](../../tests/fixtures/answer_quality_cases.json#L562) | 562 | `"            \"published_at\": \"2022-03-01\","` | — |

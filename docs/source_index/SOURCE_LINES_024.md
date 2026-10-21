@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA61479D59-L000087 إلى SRC-FA4E1423C3-L000272
+- النطاق: SRC-DA61479D59-L000071 إلى SRC-FA4E1423C3-L000256
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA61479D59-L000071](../../tests/test_connector_summary_counters.py#L71) | 71 | `"            \"title\": \"Renewable energy storage report (duplicate URL)\","` | — |
+| [SRC-DA61479D59-L000072](../../tests/test_connector_summary_counters.py#L72) | 72 | `"            \"url\": \"https://example.com/report?utm_source=test\","` | — |
+| [SRC-DA61479D59-L000073](../../tests/test_connector_summary_counters.py#L73) | 73 | `"            \"snippet\": \"Renewable energy storage data from a duplicate result\","` | — |
+| [SRC-DA61479D59-L000074](../../tests/test_connector_summary_counters.py#L74) | 74 | `"            \"page_text\": \"\","` | — |
+| [SRC-DA61479D59-L000075](../../tests/test_connector_summary_counters.py#L75) | 75 | `"            \"page_fetched\": False,"` | — |
+| [SRC-DA61479D59-L000076](../../tests/test_connector_summary_counters.py#L76) | 76 | `"            \"provider\": \"test_search\","` | — |
+| [SRC-DA61479D59-L000077](../../tests/test_connector_summary_counters.py#L77) | 77 | `"            \"provider_rank\": 2,"` | — |
+| [SRC-DA61479D59-L000078](../../tests/test_connector_summary_counters.py#L78) | 78 | `"            \"search_query\": query,"` | — |
+| [SRC-DA61479D59-L000079](../../tests/test_connector_summary_counters.py#L79) | 79 | `"            \"published_at\": \"\","` | — |
+| [SRC-DA61479D59-L000080](../../tests/test_connector_summary_counters.py#L80) | 80 | `"        },"` | — |
+| [SRC-DA61479D59-L000081](../../tests/test_connector_summary_counters.py#L81) | 81 | `"        {"` | — |
+| [SRC-DA61479D59-L000082](../../tests/test_connector_summary_counters.py#L82) | 82 | `"            \"title\": \"Renewable energy storage statistics\","` | — |
+| [SRC-DA61479D59-L000083](../../tests/test_connector_summary_counters.py#L83) | 83 | `"            \"url\": \"https://example.org/statistics\","` | — |
+| [SRC-DA61479D59-L000084](../../tests/test_connector_summary_counters.py#L84) | 84 | `"            \"snippet\": \"Renewable energy storage statistics\","` | — |
+| [SRC-DA61479D59-L000085](../../tests/test_connector_summary_counters.py#L85) | 85 | `"            \"page_text\": \"\","` | — |
+| [SRC-DA61479D59-L000086](../../tests/test_connector_summary_counters.py#L86) | 86 | `"            \"page_fetched\": False,"` | — |
 | [SRC-DA61479D59-L000087](../../tests/test_connector_summary_counters.py#L87) | 87 | `"            \"provider\": \"test_search\","` | — |
 | [SRC-DA61479D59-L000088](../../tests/test_connector_summary_counters.py#L88) | 88 | `"            \"provider_rank\": 3,"` | — |
 | [SRC-DA61479D59-L000089](../../tests/test_connector_summary_counters.py#L89) | 89 | `"            \"search_query\": query,"` | — |
@@ -836,19 +852,3 @@
 | [SRC-FA4E1423C3-L000254](../../tests/test_generate_index.py#L254) | 254 | `""` | — |
 | [SRC-FA4E1423C3-L000255](../../tests/test_generate_index.py#L255) | 255 | `"def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path) -> None:"` | — |
 | [SRC-FA4E1423C3-L000256](../../tests/test_generate_index.py#L256) | 256 | `"    \"\"\"All readable text lines, including blank lines and unfamiliar extensions, are searchable.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000257](../../tests/test_generate_index.py#L257) | 257 | `"    (tmp_path / \"app.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000258](../../tests/test_generate_index.py#L258) | 258 | `"        'VALUE = 1\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000259](../../tests/test_generate_index.py#L259) | 259 | `"        'def greet():\\n'"` | — |
-| [SRC-FA4E1423C3-L000260](../../tests/test_generate_index.py#L260) | 260 | `"        '    return \"hello\"\\n',"` | — |
-| [SRC-FA4E1423C3-L000261](../../tests/test_generate_index.py#L261) | 261 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000262](../../tests/test_generate_index.py#L262) | 262 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000263](../../tests/test_generate_index.py#L263) | 263 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000264](../../tests/test_generate_index.py#L264) | 264 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000265](../../tests/test_generate_index.py#L265) | 265 | `"    (docs_dir / \"guide.txt\").write_text("` | — |
-| [SRC-FA4E1423C3-L000266](../../tests/test_generate_index.py#L266) | 266 | `"        \"First documented step.\\nSecond documented step.\\n\","` | — |
-| [SRC-FA4E1423C3-L000267](../../tests/test_generate_index.py#L267) | 267 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000268](../../tests/test_generate_index.py#L268) | 268 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000269](../../tests/test_generate_index.py#L269) | 269 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_TOKEN=do-not-index\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000270](../../tests/test_generate_index.py#L270) | 270 | `"    (tmp_path / \"payload.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
-| [SRC-FA4E1423C3-L000271](../../tests/test_generate_index.py#L271) | 271 | `""` | — |
-| [SRC-FA4E1423C3-L000272](../../tests/test_generate_index.py#L272) | 272 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |

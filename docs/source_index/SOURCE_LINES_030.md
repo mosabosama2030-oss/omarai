@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001544 إلى SRC-F725E90B2A-L002343
+- النطاق: SRC-F725E90B2A-L001528 إلى SRC-F725E90B2A-L002327
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001528](../../tests/test_web_agent.py#L1528) | 1528 | `"        \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L001529](../../tests/test_web_agent.py#L1529) | 1529 | `"        \"providers\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001530](../../tests/test_web_agent.py#L1530) | 1530 | `"        \"queries\": [\"شقة في التجمع الخامس\"],"` | — |
+| [SRC-F725E90B2A-L001531](../../tests/test_web_agent.py#L1531) | 1531 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-F725E90B2A-L001532](../../tests/test_web_agent.py#L1532) | 1532 | `"        \"source_class\": \"general\","` | — |
+| [SRC-F725E90B2A-L001533](../../tests/test_web_agent.py#L1533) | 1533 | `"        \"platform\": \"web\","` | — |
+| [SRC-F725E90B2A-L001534](../../tests/test_web_agent.py#L1534) | 1534 | `"    }"` | — |
+| [SRC-F725E90B2A-L001535](../../tests/test_web_agent.py#L1535) | 1535 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001536](../../tests/test_web_agent.py#L1536) | 1536 | `"        agent, \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L001537](../../tests/test_web_agent.py#L1537) | 1537 | `"        lambda question, history: {"` | — |
+| [SRC-F725E90B2A-L001538](../../tests/test_web_agent.py#L1538) | 1538 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L001539](../../tests/test_web_agent.py#L1539) | 1539 | `"            \"freshness\": \"any\", \"depth\": \"standard\", \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001540](../../tests/test_web_agent.py#L1540) | 1540 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"        },"` | — |
+| [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"    )"` | — |
+| [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"        agent, \"_collect_research\","` | — |
 | [SRC-F725E90B2A-L001545](../../tests/test_web_agent.py#L1545) | 1545 | `"        lambda plan: ([source], [], {"` | — |
 | [SRC-F725E90B2A-L001546](../../tests/test_web_agent.py#L1546) | 1546 | `"            \"queries_planned\": 1, \"queries_attempted\": 1, \"unique_sources\": 1,"` | — |
@@ -800,19 +816,3 @@
 | [SRC-F725E90B2A-L002325](../../tests/test_web_agent.py#L2325) | 2325 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L002326](../../tests/test_web_agent.py#L2326) | 2326 | `"        \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L002327](../../tests/test_web_agent.py#L2327) | 2327 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002328](../../tests/test_web_agent.py#L2328) | 2328 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002329](../../tests/test_web_agent.py#L2329) | 2329 | `"    }"` | — |
-| [SRC-F725E90B2A-L002330](../../tests/test_web_agent.py#L2330) | 2330 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda q, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L002331](../../tests/test_web_agent.py#L2331) | 2331 | `""` | — |
-| [SRC-F725E90B2A-L002332](../../tests/test_web_agent.py#L2332) | 2332 | `"    def fail_research(research_plan):"` | — |
-| [SRC-F725E90B2A-L002333](../../tests/test_web_agent.py#L2333) | 2333 | `"        raise RuntimeError(\"mocked interrupted research\")"` | — |
-| [SRC-F725E90B2A-L002334](../../tests/test_web_agent.py#L2334) | 2334 | `""` | — |
-| [SRC-F725E90B2A-L002335](../../tests/test_web_agent.py#L2335) | 2335 | `"    monkeypatch.setattr(agent, \"_collect_research\", fail_research)"` | — |
-| [SRC-F725E90B2A-L002336](../../tests/test_web_agent.py#L2336) | 2336 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L002337](../../tests/test_web_agent.py#L2337) | 2337 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L002338](../../tests/test_web_agent.py#L2338) | 2338 | `"        \"_generate\","` | — |
-| [SRC-F725E90B2A-L002339](../../tests/test_web_agent.py#L2339) | 2339 | `"        lambda *args, **kwargs: (_ for _ in ()).throw("` | — |
-| [SRC-F725E90B2A-L002340](../../tests/test_web_agent.py#L2340) | 2340 | `"            AssertionError(\"must not generate a lead from an incomplete search\")"` | — |
-| [SRC-F725E90B2A-L002341](../../tests/test_web_agent.py#L2341) | 2341 | `"        ),"` | — |
-| [SRC-F725E90B2A-L002342](../../tests/test_web_agent.py#L2342) | 2342 | `"    )"` | — |
-| [SRC-F725E90B2A-L002343](../../tests/test_web_agent.py#L2343) | 2343 | `""` | — |

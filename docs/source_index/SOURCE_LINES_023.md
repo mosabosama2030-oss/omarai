@@ -4,9 +4,23 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000012 إلى SRC-DA61479D59-L000086
+- النطاق: SRC-1C77C97630-L000264 إلى SRC-DA61479D59-L000070
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1C77C97630-L000264](../../tests/test_answer_validation.py#L264) | 264 | `""` | — |
+| [SRC-1C77C97630-L000265](../../tests/test_answer_validation.py#L265) | 265 | `"    assert \"citation_numeric_support\" in html"` | — |
+| [SRC-1C77C97630-L000266](../../tests/test_answer_validation.py#L266) | 266 | `"    assert \"potential_value_discrepancies\" in html"` | — |
+| [SRC-1C77C97630-L000267](../../tests/test_answer_validation.py#L267) | 267 | `"    assert \"هذه ليست إثباتًا تلقائيًا لوجود تناقض\" in html"` | — |
+| [SRC-1C77C97630-L000268](../../tests/test_answer_validation.py#L268) | 268 | `"    assert \"ليس تحققًا من الحقيقة\" in html"` | — |
 ## اختبارات
 
 ### FILE-3451CC474D — [tests/test_api.py](../../tests/test_api.py#L1)
@@ -16,6 +30,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000001](../../tests/test_api.py#L1) | 1 | `"\"\"\"HTTP integration tests for Omarai local API and assistant endpoints.\"\"\""` | — |
+| [SRC-3451CC474D-L000002](../../tests/test_api.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-3451CC474D-L000003](../../tests/test_api.py#L3) | 3 | `""` | — |
+| [SRC-3451CC474D-L000004](../../tests/test_api.py#L4) | 4 | `"import json"` | — |
+| [SRC-3451CC474D-L000005](../../tests/test_api.py#L5) | 5 | `"import socket"` | — |
+| [SRC-3451CC474D-L000006](../../tests/test_api.py#L6) | 6 | `"import threading"` | — |
+| [SRC-3451CC474D-L000007](../../tests/test_api.py#L7) | 7 | `"from collections import defaultdict, deque"` | — |
+| [SRC-3451CC474D-L000008](../../tests/test_api.py#L8) | 8 | `"from http.server import ThreadingHTTPServer"` | — |
+| [SRC-3451CC474D-L000009](../../tests/test_api.py#L9) | 9 | `"from types import SimpleNamespace"` | — |
+| [SRC-3451CC474D-L000010](../../tests/test_api.py#L10) | 10 | `"from urllib.error import HTTPError"` | — |
+| [SRC-3451CC474D-L000011](../../tests/test_api.py#L11) | 11 | `"from urllib.request import Request, urlopen"` | — |
 | [SRC-3451CC474D-L000012](../../tests/test_api.py#L12) | 12 | `""` | — |
 | [SRC-3451CC474D-L000013](../../tests/test_api.py#L13) | 13 | `"import pytest"` | — |
 | [SRC-3451CC474D-L000014](../../tests/test_api.py#L14) | 14 | `""` | — |
@@ -809,19 +834,3 @@
 | [SRC-DA61479D59-L000068](../../tests/test_connector_summary_counters.py#L68) | 68 | `"            \"published_at\": \"\","` | — |
 | [SRC-DA61479D59-L000069](../../tests/test_connector_summary_counters.py#L69) | 69 | `"        },"` | — |
 | [SRC-DA61479D59-L000070](../../tests/test_connector_summary_counters.py#L70) | 70 | `"        {"` | — |
-| [SRC-DA61479D59-L000071](../../tests/test_connector_summary_counters.py#L71) | 71 | `"            \"title\": \"Renewable energy storage report (duplicate URL)\","` | — |
-| [SRC-DA61479D59-L000072](../../tests/test_connector_summary_counters.py#L72) | 72 | `"            \"url\": \"https://example.com/report?utm_source=test\","` | — |
-| [SRC-DA61479D59-L000073](../../tests/test_connector_summary_counters.py#L73) | 73 | `"            \"snippet\": \"Renewable energy storage data from a duplicate result\","` | — |
-| [SRC-DA61479D59-L000074](../../tests/test_connector_summary_counters.py#L74) | 74 | `"            \"page_text\": \"\","` | — |
-| [SRC-DA61479D59-L000075](../../tests/test_connector_summary_counters.py#L75) | 75 | `"            \"page_fetched\": False,"` | — |
-| [SRC-DA61479D59-L000076](../../tests/test_connector_summary_counters.py#L76) | 76 | `"            \"provider\": \"test_search\","` | — |
-| [SRC-DA61479D59-L000077](../../tests/test_connector_summary_counters.py#L77) | 77 | `"            \"provider_rank\": 2,"` | — |
-| [SRC-DA61479D59-L000078](../../tests/test_connector_summary_counters.py#L78) | 78 | `"            \"search_query\": query,"` | — |
-| [SRC-DA61479D59-L000079](../../tests/test_connector_summary_counters.py#L79) | 79 | `"            \"published_at\": \"\","` | — |
-| [SRC-DA61479D59-L000080](../../tests/test_connector_summary_counters.py#L80) | 80 | `"        },"` | — |
-| [SRC-DA61479D59-L000081](../../tests/test_connector_summary_counters.py#L81) | 81 | `"        {"` | — |
-| [SRC-DA61479D59-L000082](../../tests/test_connector_summary_counters.py#L82) | 82 | `"            \"title\": \"Renewable energy storage statistics\","` | — |
-| [SRC-DA61479D59-L000083](../../tests/test_connector_summary_counters.py#L83) | 83 | `"            \"url\": \"https://example.org/statistics\","` | — |
-| [SRC-DA61479D59-L000084](../../tests/test_connector_summary_counters.py#L84) | 84 | `"            \"snippet\": \"Renewable energy storage statistics\","` | — |
-| [SRC-DA61479D59-L000085](../../tests/test_connector_summary_counters.py#L85) | 85 | `"            \"page_text\": \"\","` | — |
-| [SRC-DA61479D59-L000086](../../tests/test_connector_summary_counters.py#L86) | 86 | `"            \"page_fetched\": False,"` | — |

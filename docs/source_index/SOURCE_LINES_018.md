@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000618 إلى SRC-50C86B7ED8-L000002
+- النطاق: SRC-0F910493E8-L000602 إلى SRC-C693279643-L000007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000602](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L602) | 602 | `""` | — |
+| [SRC-0F910493E8-L000603](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L603) | 603 | `"قبل تغيير أحد هذه الحدود، يُكتب تحليل مصغر يحدد الأصل المعرّض، والخصم أو الخطأ المحتمل، ومسار الاستغلال، والضوابط، والاختبار السلبي، والمخاطر المتبقية. لا يكفي وجود عنوان «Threat Model» في وثيقة دون ربطه بالتغيير المحدد."` | — |
+| [SRC-0F910493E8-L000604](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L604) | 604 | `""` | — |
+| [SRC-0F910493E8-L000605](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L605) | 605 | `"## 17.5 الهوية والمصادقة والتفويض"` | — |
+| [SRC-0F910493E8-L000606](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L606) | 606 | `""` | — |
+| [SRC-0F910493E8-L000607](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L607) | 607 | `"**[PROPOSED — ضوابط إلزامية في المسارات التي تتعرض للمستخدمين أو البيانات]**"` | — |
+| [SRC-0F910493E8-L000608](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L608) | 608 | `""` | — |
+| [SRC-0F910493E8-L000609](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L609) | 609 | `"- لا يُنشر endpoint إداري أو تشخيصي أو يحتوي على بيانات خاصة دون مصادقة ملائمة."` | — |
+| [SRC-0F910493E8-L000610](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L610) | 610 | `"- يحدد الخادم هوية المستخدم أو الجلسة وصلاحياتها؛ لا يثق في user_id أو tenant_id أو الدور المرسل من العميل دون تحقق."` | — |
+| [SRC-0F910493E8-L000611](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L611) | 611 | `"- يُجرى فحص ملكية المورد (object-level authorization) قبل كل قراءة أو تعديل أو تصدير لسجل خاص. إخفاء زر في الواجهة ليس تفويضًا."` | — |
+| [SRC-0F910493E8-L000612](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L612) | 612 | `"- تستخدم مفاتيح الوصول عالية العشوائية عند الحاجة، وتُخزن كأسرار، وتدعم الإلغاء والتدوير. لا تُضمَّن في JavaScript العام أو روابط قابلة للتسجيل."` | — |
+| [SRC-0F910493E8-L000613](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L613) | 613 | `"- تكون صلاحيات رموز API وCI والخدمات في أدنى نطاق عملي، ولكل بيئة أسرارها المنفصلة."` | — |
+| [SRC-0F910493E8-L000614](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L614) | 614 | `"- تستخدم جلسات آمنة وخصائص cookie المناسبة إذا كانت الجلسات عبر cookies، ويُراجع CSRF عند انطباقه. ولا يُعد CORS آلية مصادقة."` | — |
+| [SRC-0F910493E8-L000615](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L615) | 615 | `"- تُجرى المصادقة والتفويض والتحقق من حدود المورد على الخادم عند كل طلب ذي أثر، لا مرة واحدة في الواجهة."` | — |
+| [SRC-0F910493E8-L000616](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L616) | 616 | `"- تُعزل بيانات المستخدمين والمهام والذاكرة والتخزين المؤقت ومخرجات التصدير. ويُثبت العزل باختبارات تتعمد تبادل المعرفات ومحاولة الوصول الأفقي والرأسي."` | — |
+| [SRC-0F910493E8-L000617](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L617) | 617 | `"- تُستخدم موافقة إضافية (step-up/confirmation) قبل العمليات عالية الأثر أو الحساسة، مع عرض ما سينفذ بدقة."` | — |
 | [SRC-0F910493E8-L000618](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L618) | 618 | `"- إذا كان Omarai في وضع استخدام شخصي محلي، توثّق هذه الحقيقة ولا يُفترض أنها تنطبق على النشر العام. يتطلب الانتقال إلى خدمة متعددة المستخدمين إعادة تقييم الهوية والعزل والحدود والتدقيق قبل فتحها للجمهور."` | — |
 | [SRC-0F910493E8-L000619](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L619) | 619 | `""` | — |
 | [SRC-0F910493E8-L000620](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L620) | 620 | `"## 17.6 وسيط الأدوات وتفويض القدرات"` | — |
@@ -845,28 +861,3 @@
 | [SRC-C693279643-L000005](../../LICENSE#L5) | 5 | `"Permission is hereby granted, free of charge, to any person obtaining a copy"` | — |
 | [SRC-C693279643-L000006](../../LICENSE#L6) | 6 | `"of this software and associated documentation files (the \"Software\"), to deal"` | — |
 | [SRC-C693279643-L000007](../../LICENSE#L7) | 7 | `"in the Software without restriction, including without limitation the rights"` | — |
-| [SRC-C693279643-L000008](../../LICENSE#L8) | 8 | `"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell"` | — |
-| [SRC-C693279643-L000009](../../LICENSE#L9) | 9 | `"copies of the Software, and to permit persons to whom the Software is"` | — |
-| [SRC-C693279643-L000010](../../LICENSE#L10) | 10 | `"furnished to do so, subject to the following conditions:"` | — |
-| [SRC-C693279643-L000011](../../LICENSE#L11) | 11 | `""` | — |
-| [SRC-C693279643-L000012](../../LICENSE#L12) | 12 | `"The above copyright notice and this permission notice shall be included in all"` | — |
-| [SRC-C693279643-L000013](../../LICENSE#L13) | 13 | `"copies or substantial portions of the Software."` | — |
-| [SRC-C693279643-L000014](../../LICENSE#L14) | 14 | `""` | — |
-| [SRC-C693279643-L000015](../../LICENSE#L15) | 15 | `"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR"` | — |
-| [SRC-C693279643-L000016](../../LICENSE#L16) | 16 | `"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,"` | — |
-| [SRC-C693279643-L000017](../../LICENSE#L17) | 17 | `"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE"` | — |
-| [SRC-C693279643-L000018](../../LICENSE#L18) | 18 | `"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"` | — |
-| [SRC-C693279643-L000019](../../LICENSE#L19) | 19 | `"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,"` | — |
-| [SRC-C693279643-L000020](../../LICENSE#L20) | 20 | `"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE"` | — |
-| [SRC-C693279643-L000021](../../LICENSE#L21) | 21 | `"SOFTWARE."` | — |
-## إعدادات وتشغيل
-
-### FILE-50C86B7ED8 — [pyproject.toml](../../pyproject.toml#L1)
-
-- النوع: **TOML**
-- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-50C86B7ED8-L000001](../../pyproject.toml#L1) | 1 | `"[build-system]"` | — |
-| [SRC-50C86B7ED8-L000002](../../pyproject.toml#L2) | 2 | `"requires = [\"setuptools>=68\"]"` | — |

@@ -767,52 +767,52 @@
 | [SRC-1AE03B9EC3-L004245](../../agents/web_agent.py#L4245) | 4245 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L004246](../../agents/web_agent.py#L4246) | 4246 | `"                \"automatically_graded\": False,"` | — |
 | [SRC-1AE03B9EC3-L004247](../../agents/web_agent.py#L4247) | 4247 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L004248](../../agents/web_agent.py#L4248) | 4248 | `"            research_failed = search_outcome in _RESEARCH_ERROR_OUTCOMES"` | — |
-| [SRC-1AE03B9EC3-L004249](../../agents/web_agent.py#L4249) | 4249 | `"            report.update({"` | — |
-| [SRC-1AE03B9EC3-L004250](../../agents/web_agent.py#L4250) | 4250 | `"                # When collection failed, an empty local list is not evidence that"` | — |
-| [SRC-1AE03B9EC3-L004251](../../agents/web_agent.py#L4251) | 4251 | `"                # the remote search returned zero sources; preserve unknown counts."` | — |
-| [SRC-1AE03B9EC3-L004252](../../agents/web_agent.py#L4252) | 4252 | `"                \"unique_sources\": None if research_failed else len(sources),"` | — |
-| [SRC-1AE03B9EC3-L004253](../../agents/web_agent.py#L4253) | 4253 | `"                \"independent_sources\": None if research_failed else len(independent_domains),"` | — |
-| [SRC-1AE03B9EC3-L004254](../../agents/web_agent.py#L4254) | 4254 | `"                \"distinct_registrable_domains\": None if research_failed else len(independent_domains),"` | — |
-| [SRC-1AE03B9EC3-L004255](../../agents/web_agent.py#L4255) | 4255 | `"                \"pages_fetched\": ("` | — |
-| [SRC-1AE03B9EC3-L004256](../../agents/web_agent.py#L4256) | 4256 | `"                    None if research_failed"` | — |
-| [SRC-1AE03B9EC3-L004257](../../agents/web_agent.py#L4257) | 4257 | `"                    else sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
-| [SRC-1AE03B9EC3-L004258](../../agents/web_agent.py#L4258) | 4258 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L004259](../../agents/web_agent.py#L4259) | 4259 | `"                \"provider_diagnostics\": current_research_diagnostics,"` | — |
-| [SRC-1AE03B9EC3-L004260](../../agents/web_agent.py#L4260) | 4260 | `"                \"insufficient_evidence\": True,"` | — |
-| [SRC-1AE03B9EC3-L004261](../../agents/web_agent.py#L4261) | 4261 | `"                \"research_quality\": \"failed\","` | — |
-| [SRC-1AE03B9EC3-L004262](../../agents/web_agent.py#L4262) | 4262 | `"                \"citation_check\": citation_validation[\"status\"],"` | — |
-| [SRC-1AE03B9EC3-L004263](../../agents/web_agent.py#L4263) | 4263 | `"                \"citation_validation\": citation_validation,"` | — |
-| [SRC-1AE03B9EC3-L004264](../../agents/web_agent.py#L4264) | 4264 | `"                \"answer_coverage\": answer_coverage,"` | — |
-| [SRC-1AE03B9EC3-L004265](../../agents/web_agent.py#L4265) | 4265 | `"            })"` | — |
-| [SRC-1AE03B9EC3-L004266](../../agents/web_agent.py#L4266) | 4266 | `"            return {"` | — |
-| [SRC-1AE03B9EC3-L004267](../../agents/web_agent.py#L4267) | 4267 | `"                \"answer\": reason,"` | — |
-| [SRC-1AE03B9EC3-L004268](../../agents/web_agent.py#L4268) | 4268 | `"                \"question\": question,"` | — |
-| [SRC-1AE03B9EC3-L004269](../../agents/web_agent.py#L4269) | 4269 | `"                \"search_query\": plan.get(\"queries\", [question])[0],"` | — |
-| [SRC-1AE03B9EC3-L004270](../../agents/web_agent.py#L4270) | 4270 | `"                \"search_queries\": plan.get(\"queries\", []),"` | — |
-| [SRC-1AE03B9EC3-L004271](../../agents/web_agent.py#L4271) | 4271 | `"                \"research_plan\": {"` | — |
-| [SRC-1AE03B9EC3-L004272](../../agents/web_agent.py#L4272) | 4272 | `"                    \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-1AE03B9EC3-L004273](../../agents/web_agent.py#L4273) | 4273 | `"                    \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
-| [SRC-1AE03B9EC3-L004274](../../agents/web_agent.py#L4274) | 4274 | `"                    \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
-| [SRC-1AE03B9EC3-L004275](../../agents/web_agent.py#L4275) | 4275 | `"                    \"platforms\": plan.get(\"platforms\", []),"` | — |
-| [SRC-1AE03B9EC3-L004276](../../agents/web_agent.py#L4276) | 4276 | `"                    \"mode\": clean_mode,"` | — |
-| [SRC-1AE03B9EC3-L004277](../../agents/web_agent.py#L4277) | 4277 | `"                    \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
-| [SRC-1AE03B9EC3-L004278](../../agents/web_agent.py#L4278) | 4278 | `"                    \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L004279](../../agents/web_agent.py#L4279) | 4279 | `"                    \"intent_route\": intent_route,"` | — |
-| [SRC-1AE03B9EC3-L004280](../../agents/web_agent.py#L4280) | 4280 | `"                    \"intent_route_reason\": intent_reason,"` | — |
-| [SRC-1AE03B9EC3-L004281](../../agents/web_agent.py#L4281) | 4281 | `"                },"` | — |
-| [SRC-1AE03B9EC3-L004282](../../agents/web_agent.py#L4282) | 4282 | `"                \"search_report\": report,"` | — |
-| [SRC-1AE03B9EC3-L004283](../../agents/web_agent.py#L4283) | 4283 | `"                \"sources\": public_sources,"` | — |
-| [SRC-1AE03B9EC3-L004284](../../agents/web_agent.py#L4284) | 4284 | `"                \"used_language_model\": False,"` | — |
-| [SRC-1AE03B9EC3-L004285](../../agents/web_agent.py#L4285) | 4285 | `"                \"used_web_search\": bool(sources),"` | — |
-| [SRC-1AE03B9EC3-L004286](../../agents/web_agent.py#L4286) | 4286 | `"                \"search_attempted\": search_attempted,"` | — |
-| [SRC-1AE03B9EC3-L004287](../../agents/web_agent.py#L4287) | 4287 | `"                \"used_social_search\": bool(report.get(\"social_direct_results\", 0)),"` | — |
-| [SRC-1AE03B9EC3-L004288](../../agents/web_agent.py#L4288) | 4288 | `"                \"warnings\": list(dict.fromkeys(search_warnings + [reason])),"` | — |
-| [SRC-1AE03B9EC3-L004289](../../agents/web_agent.py#L4289) | 4289 | `"                \"kind\": \"insufficient_evidence\","` | — |
-| [SRC-1AE03B9EC3-L004290](../../agents/web_agent.py#L4290) | 4290 | `"                \"final_answer_status\": \"insufficient_evidence_no_generation\","` | — |
-| [SRC-1AE03B9EC3-L004291](../../agents/web_agent.py#L4291) | 4291 | `"                \"intent_route\": intent_route,"` | — |
-| [SRC-1AE03B9EC3-L004292](../../agents/web_agent.py#L4292) | 4292 | `"                \"intent_route_reason\": intent_reason,"` | — |
-| [SRC-1AE03B9EC3-L004293](../../agents/web_agent.py#L4293) | 4293 | `"                \"research_quality\": \"failed\","` | — |
-| [SRC-1AE03B9EC3-L004294](../../agents/web_agent.py#L4294) | 4294 | `"                \"citation_validation\": citation_validation,"` | — |
-| [SRC-1AE03B9EC3-L004295](../../agents/web_agent.py#L4295) | 4295 | `"                \"answer_coverage\": answer_coverage,"` | — |
-| [SRC-1AE03B9EC3-L004296](../../agents/web_agent.py#L4296) | 4296 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L004248](../../agents/web_agent.py#L4248) | 4248 | `"            answer_integrity = audit_answer_integrity(question, reason, sources, coverage_targets)"` | — |
+| [SRC-1AE03B9EC3-L004249](../../agents/web_agent.py#L4249) | 4249 | `"            answer_coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
+| [SRC-1AE03B9EC3-L004250](../../agents/web_agent.py#L4250) | 4250 | `"            answer_coverage[\"potentially_missing_target_count\"] = answer_integrity[\"potentially_missing_target_count\"]"` | — |
+| [SRC-1AE03B9EC3-L004251](../../agents/web_agent.py#L4251) | 4251 | `"            answer_coverage[\"lexical_screen_method\"] = \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
+| [SRC-1AE03B9EC3-L004252](../../agents/web_agent.py#L4252) | 4252 | `"            task_fulfillment_status = ("` | — |
+| [SRC-1AE03B9EC3-L004253](../../agents/web_agent.py#L4253) | 4253 | `"                \"not_assessed_insufficient_evidence\" if coverage_targets"` | — |
+| [SRC-1AE03B9EC3-L004254](../../agents/web_agent.py#L4254) | 4254 | `"                else \"not_machine_assessed_no_explicit_targets_detected\""` | — |
+| [SRC-1AE03B9EC3-L004255](../../agents/web_agent.py#L4255) | 4255 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004256](../../agents/web_agent.py#L4256) | 4256 | `"            answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
+| [SRC-1AE03B9EC3-L004257](../../agents/web_agent.py#L4257) | 4257 | `"            research_failed = search_outcome in _RESEARCH_ERROR_OUTCOMES"` | — |
+| [SRC-1AE03B9EC3-L004258](../../agents/web_agent.py#L4258) | 4258 | `"            report.update({"` | — |
+| [SRC-1AE03B9EC3-L004259](../../agents/web_agent.py#L4259) | 4259 | `"                # When collection failed, an empty local list is not evidence that"` | — |
+| [SRC-1AE03B9EC3-L004260](../../agents/web_agent.py#L4260) | 4260 | `"                # the remote search returned zero sources; preserve unknown counts."` | — |
+| [SRC-1AE03B9EC3-L004261](../../agents/web_agent.py#L4261) | 4261 | `"                \"unique_sources\": None if research_failed else len(sources),"` | — |
+| [SRC-1AE03B9EC3-L004262](../../agents/web_agent.py#L4262) | 4262 | `"                \"independent_sources\": None if research_failed else len(independent_domains),"` | — |
+| [SRC-1AE03B9EC3-L004263](../../agents/web_agent.py#L4263) | 4263 | `"                \"distinct_registrable_domains\": None if research_failed else len(independent_domains),"` | — |
+| [SRC-1AE03B9EC3-L004264](../../agents/web_agent.py#L4264) | 4264 | `"                \"pages_fetched\": ("` | — |
+| [SRC-1AE03B9EC3-L004265](../../agents/web_agent.py#L4265) | 4265 | `"                    None if research_failed"` | — |
+| [SRC-1AE03B9EC3-L004266](../../agents/web_agent.py#L4266) | 4266 | `"                    else sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
+| [SRC-1AE03B9EC3-L004267](../../agents/web_agent.py#L4267) | 4267 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L004268](../../agents/web_agent.py#L4268) | 4268 | `"                \"provider_diagnostics\": current_research_diagnostics,"` | — |
+| [SRC-1AE03B9EC3-L004269](../../agents/web_agent.py#L4269) | 4269 | `"                \"insufficient_evidence\": True,"` | — |
+| [SRC-1AE03B9EC3-L004270](../../agents/web_agent.py#L4270) | 4270 | `"                \"research_quality\": \"failed\","` | — |
+| [SRC-1AE03B9EC3-L004271](../../agents/web_agent.py#L4271) | 4271 | `"                \"citation_check\": citation_validation[\"status\"],"` | — |
+| [SRC-1AE03B9EC3-L004272](../../agents/web_agent.py#L4272) | 4272 | `"                \"citation_validation\": citation_validation,"` | — |
+| [SRC-1AE03B9EC3-L004273](../../agents/web_agent.py#L4273) | 4273 | `"                \"answer_coverage\": answer_coverage,"` | — |
+| [SRC-1AE03B9EC3-L004274](../../agents/web_agent.py#L4274) | 4274 | `"                \"answer_integrity\": answer_integrity,"` | — |
+| [SRC-1AE03B9EC3-L004275](../../agents/web_agent.py#L4275) | 4275 | `"                \"task_fulfillment_status\": task_fulfillment_status,"` | — |
+| [SRC-1AE03B9EC3-L004276](../../agents/web_agent.py#L4276) | 4276 | `"                \"connector_summary\": report.get(\"connector_summary\") or self._connector_status_summary("` | — |
+| [SRC-1AE03B9EC3-L004277](../../agents/web_agent.py#L4277) | 4277 | `"                    current_research_diagnostics, sources"` | — |
+| [SRC-1AE03B9EC3-L004278](../../agents/web_agent.py#L4278) | 4278 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L004279](../../agents/web_agent.py#L4279) | 4279 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L004280](../../agents/web_agent.py#L4280) | 4280 | `"            return {"` | — |
+| [SRC-1AE03B9EC3-L004281](../../agents/web_agent.py#L4281) | 4281 | `"                \"answer\": reason,"` | — |
+| [SRC-1AE03B9EC3-L004282](../../agents/web_agent.py#L4282) | 4282 | `"                \"question\": question,"` | — |
+| [SRC-1AE03B9EC3-L004283](../../agents/web_agent.py#L4283) | 4283 | `"                \"search_query\": plan.get(\"queries\", [question])[0],"` | — |
+| [SRC-1AE03B9EC3-L004284](../../agents/web_agent.py#L4284) | 4284 | `"                \"search_queries\": plan.get(\"queries\", []),"` | — |
+| [SRC-1AE03B9EC3-L004285](../../agents/web_agent.py#L4285) | 4285 | `"                \"research_plan\": {"` | — |
+| [SRC-1AE03B9EC3-L004286](../../agents/web_agent.py#L4286) | 4286 | `"                    \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-1AE03B9EC3-L004287](../../agents/web_agent.py#L4287) | 4287 | `"                    \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
+| [SRC-1AE03B9EC3-L004288](../../agents/web_agent.py#L4288) | 4288 | `"                    \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
+| [SRC-1AE03B9EC3-L004289](../../agents/web_agent.py#L4289) | 4289 | `"                    \"platforms\": plan.get(\"platforms\", []),"` | — |
+| [SRC-1AE03B9EC3-L004290](../../agents/web_agent.py#L4290) | 4290 | `"                    \"mode\": clean_mode,"` | — |
+| [SRC-1AE03B9EC3-L004291](../../agents/web_agent.py#L4291) | 4291 | `"                    \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
+| [SRC-1AE03B9EC3-L004292](../../agents/web_agent.py#L4292) | 4292 | `"                    \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
+| [SRC-1AE03B9EC3-L004293](../../agents/web_agent.py#L4293) | 4293 | `"                    \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L004294](../../agents/web_agent.py#L4294) | 4294 | `"                    \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L004295](../../agents/web_agent.py#L4295) | 4295 | `"                },"` | — |
+| [SRC-1AE03B9EC3-L004296](../../agents/web_agent.py#L4296) | 4296 | `"                \"search_report\": report,"` | — |

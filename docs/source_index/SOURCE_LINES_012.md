@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001060 إلى SRC-E599346ABE-L001859
+- النطاق: SRC-E599346ABE-L001044 إلى SRC-E599346ABE-L001843
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001044](../generate_index.py#L1044) | 1044 | `""` | — |
+| [SRC-E599346ABE-L001045](../generate_index.py#L1045) | 1045 | `""` | — |
+| [SRC-E599346ABE-L001046](../generate_index.py#L1046) | 1046 | `"def _source_line_id(relative_file: str, line: int) -> str:"` | — |
+| [SRC-E599346ABE-L001047](../generate_index.py#L1047) | 1047 | `"    \"\"\"Return a consistent line code wherever a symbol, finding, or source line is shown.\"\"\""` | — |
+| [SRC-E599346ABE-L001048](../generate_index.py#L1048) | 1048 | `"    file_hash = _stable_file_id(relative_file).removeprefix(\"FILE-\")"` | — |
+| [SRC-E599346ABE-L001049](../generate_index.py#L1049) | 1049 | `"    return f\"SRC-{file_hash}-L{line:06d}\""` | — |
+| [SRC-E599346ABE-L001050](../generate_index.py#L1050) | 1050 | `""` | — |
+| [SRC-E599346ABE-L001051](../generate_index.py#L1051) | 1051 | `""` | — |
+| [SRC-E599346ABE-L001052](../generate_index.py#L1052) | 1052 | `"def _markdown_cell(value: str) -> str:"` | — |
+| [SRC-E599346ABE-L001053](../generate_index.py#L1053) | 1053 | `"    \"\"\"Normalize text and escape Markdown table delimiters.\"\"\""` | — |
+| [SRC-E599346ABE-L001054](../generate_index.py#L1054) | 1054 | `"    return \" \".join(value.replace(\"\\r\", \" \").replace(\"\\n\", \" \").split()).replace("` | — |
+| [SRC-E599346ABE-L001055](../generate_index.py#L1055) | 1055 | `"        \"\|\", r\"\\\|\""` | — |
+| [SRC-E599346ABE-L001056](../generate_index.py#L1056) | 1056 | `"    )"` | — |
+| [SRC-E599346ABE-L001057](../generate_index.py#L1057) | 1057 | `""` | — |
+| [SRC-E599346ABE-L001058](../generate_index.py#L1058) | 1058 | `""` | — |
+| [SRC-E599346ABE-L001059](../generate_index.py#L1059) | 1059 | `"def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:"` | — |
 | [SRC-E599346ABE-L001060](../generate_index.py#L1060) | 1060 | `"    \"\"\"Index every logical line of each eligible text file readable within the size bound.\"\"\""` | — |
 | [SRC-E599346ABE-L001061](../generate_index.py#L1061) | 1061 | `"    indexed_lines: list[IndexedLine] = []"` | — |
 | [SRC-E599346ABE-L001062](../generate_index.py#L1062) | 1062 | `"    for item in inventory:"` | — |
@@ -800,19 +816,3 @@
 | [SRC-E599346ABE-L001841](../generate_index.py#L1841) | 1841 | `"    \"\"\"Generate the living repository index or check that the committed copy is current.\"\"\""` | — |
 | [SRC-E599346ABE-L001842](../generate_index.py#L1842) | 1842 | `"    parser = argparse.ArgumentParser("` | — |
 | [SRC-E599346ABE-L001843](../generate_index.py#L1843) | 1843 | `"        description=\"إنشاء/فحص فهرس مستودع Omarai وملفات الشفرة والرموز الساكنة.\""` | — |
-| [SRC-E599346ABE-L001844](../generate_index.py#L1844) | 1844 | `"    )"` | — |
-| [SRC-E599346ABE-L001845](../generate_index.py#L1845) | 1845 | `"    parser.add_argument("` | — |
-| [SRC-E599346ABE-L001846](../generate_index.py#L1846) | 1846 | `"        \"--root\","` | — |
-| [SRC-E599346ABE-L001847](../generate_index.py#L1847) | 1847 | `"        type=Path,"` | — |
-| [SRC-E599346ABE-L001848](../generate_index.py#L1848) | 1848 | `"        default=Path(__file__).resolve().parents[1],"` | — |
-| [SRC-E599346ABE-L001849](../generate_index.py#L1849) | 1849 | `"        help=\"مسار جذر المستودع (الافتراضي: جذر مشروع Omarai).\","` | — |
-| [SRC-E599346ABE-L001850](../generate_index.py#L1850) | 1850 | `"    )"` | — |
-| [SRC-E599346ABE-L001851](../generate_index.py#L1851) | 1851 | `"    parser.add_argument("` | — |
-| [SRC-E599346ABE-L001852](../generate_index.py#L1852) | 1852 | `"        \"--check\","` | — |
-| [SRC-E599346ABE-L001853](../generate_index.py#L1853) | 1853 | `"        action=\"store_true\","` | — |
-| [SRC-E599346ABE-L001854](../generate_index.py#L1854) | 1854 | `"        help=\"لا تكتب ملفات؛ أعد حالة فشل إذا كان أي فهرس مولّد قديمًا أو مفقودًا.\","` | — |
-| [SRC-E599346ABE-L001855](../generate_index.py#L1855) | 1855 | `"    )"` | — |
-| [SRC-E599346ABE-L001856](../generate_index.py#L1856) | 1856 | `"    arguments = parser.parse_args(argv)"` | — |
-| [SRC-E599346ABE-L001857](../generate_index.py#L1857) | 1857 | `""` | — |
-| [SRC-E599346ABE-L001858](../generate_index.py#L1858) | 1858 | `"    try:"` | — |
-| [SRC-E599346ABE-L001859](../generate_index.py#L1859) | 1859 | `"        root = arguments.root.resolve(strict=True)"` | — |

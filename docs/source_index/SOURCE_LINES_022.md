@@ -4,9 +4,24 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-CAC5F305FE-L000011 إلى SRC-3451CC474D-L000011
+- النطاق: SRC-90FAA34ADE-L001347 إلى SRC-1C77C97630-L000263
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-90FAA34ADE — [tests/fixtures/answer_quality_cases.json](../../tests/fixtures/answer_quality_cases.json#L1)
+
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-90FAA34ADE-L001347](../../tests/fixtures/answer_quality_cases.json#L1347) | 1347 | `"        \"ادعاء إجراء تواصل لم يحدث\""` | — |
+| [SRC-90FAA34ADE-L001348](../../tests/fixtures/answer_quality_cases.json#L1348) | 1348 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001349](../../tests/fixtures/answer_quality_cases.json#L1349) | 1349 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001350](../../tests/fixtures/answer_quality_cases.json#L1350) | 1350 | `"    }"` | — |
+| [SRC-90FAA34ADE-L001351](../../tests/fixtures/answer_quality_cases.json#L1351) | 1351 | `"  ]"` | — |
+| [SRC-90FAA34ADE-L001352](../../tests/fixtures/answer_quality_cases.json#L1352) | 1352 | `"}"` | — |
 ## اختبارات
 
 ### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
@@ -16,6 +31,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-CAC5F305FE-L000001](../../tests/test_agent_modes.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-CAC5F305FE-L000002](../../tests/test_agent_modes.py#L2) | 2 | `""` | — |
+| [SRC-CAC5F305FE-L000003](../../tests/test_agent_modes.py#L3) | 3 | `"from agents.research import evidence_signal_report"` | — |
+| [SRC-CAC5F305FE-L000004](../../tests/test_agent_modes.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-CAC5F305FE-L000005](../../tests/test_agent_modes.py#L5) | 5 | `""` | — |
+| [SRC-CAC5F305FE-L000006](../../tests/test_agent_modes.py#L6) | 6 | `""` | — |
+| [SRC-CAC5F305FE-L000007](../../tests/test_agent_modes.py#L7) | 7 | `"def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatch):"` | — |
+| [SRC-CAC5F305FE-L000008](../../tests/test_agent_modes.py#L8) | 8 | `"    agent = WebAgent()"` | — |
+| [SRC-CAC5F305FE-L000009](../../tests/test_agent_modes.py#L9) | 9 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-CAC5F305FE-L000010](../../tests/test_agent_modes.py#L10) | 10 | `"    seen = {}"` | — |
 | [SRC-CAC5F305FE-L000011](../../tests/test_agent_modes.py#L11) | 11 | `""` | — |
 | [SRC-CAC5F305FE-L000012](../../tests/test_agent_modes.py#L12) | 12 | `"    def plan(question, history):"` | — |
 | [SRC-CAC5F305FE-L000013](../../tests/test_agent_modes.py#L13) | 13 | `"        return {"` | — |
@@ -827,28 +852,3 @@
 | [SRC-1C77C97630-L000261](../../tests/test_answer_validation.py#L261) | 261 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |
 | [SRC-1C77C97630-L000262](../../tests/test_answer_validation.py#L262) | 262 | `"    html_path = Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
 | [SRC-1C77C97630-L000263](../../tests/test_answer_validation.py#L263) | 263 | `"    html = html_path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-1C77C97630-L000264](../../tests/test_answer_validation.py#L264) | 264 | `""` | — |
-| [SRC-1C77C97630-L000265](../../tests/test_answer_validation.py#L265) | 265 | `"    assert \"citation_numeric_support\" in html"` | — |
-| [SRC-1C77C97630-L000266](../../tests/test_answer_validation.py#L266) | 266 | `"    assert \"potential_value_discrepancies\" in html"` | — |
-| [SRC-1C77C97630-L000267](../../tests/test_answer_validation.py#L267) | 267 | `"    assert \"هذه ليست إثباتًا تلقائيًا لوجود تناقض\" in html"` | — |
-| [SRC-1C77C97630-L000268](../../tests/test_answer_validation.py#L268) | 268 | `"    assert \"ليس تحققًا من الحقيقة\" in html"` | — |
-## اختبارات
-
-### FILE-3451CC474D — [tests/test_api.py](../../tests/test_api.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-3451CC474D-L000001](../../tests/test_api.py#L1) | 1 | `"\"\"\"HTTP integration tests for Omarai local API and assistant endpoints.\"\"\""` | — |
-| [SRC-3451CC474D-L000002](../../tests/test_api.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-3451CC474D-L000003](../../tests/test_api.py#L3) | 3 | `""` | — |
-| [SRC-3451CC474D-L000004](../../tests/test_api.py#L4) | 4 | `"import json"` | — |
-| [SRC-3451CC474D-L000005](../../tests/test_api.py#L5) | 5 | `"import socket"` | — |
-| [SRC-3451CC474D-L000006](../../tests/test_api.py#L6) | 6 | `"import threading"` | — |
-| [SRC-3451CC474D-L000007](../../tests/test_api.py#L7) | 7 | `"from collections import defaultdict, deque"` | — |
-| [SRC-3451CC474D-L000008](../../tests/test_api.py#L8) | 8 | `"from http.server import ThreadingHTTPServer"` | — |
-| [SRC-3451CC474D-L000009](../../tests/test_api.py#L9) | 9 | `"from types import SimpleNamespace"` | — |
-| [SRC-3451CC474D-L000010](../../tests/test_api.py#L10) | 10 | `"from urllib.error import HTTPError"` | — |
-| [SRC-3451CC474D-L000011](../../tests/test_api.py#L11) | 11 | `"from urllib.request import Request, urlopen"` | — |

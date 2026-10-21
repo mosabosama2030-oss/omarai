@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000260 إلى SRC-E599346ABE-L001059
+- النطاق: SRC-E599346ABE-L000244 إلى SRC-E599346ABE-L001043
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000244](../generate_index.py#L244) | 244 | `"        kind: str,"` | — |
+| [SRC-E599346ABE-L000245](../generate_index.py#L245) | 245 | `"    ) -> None:"` | — |
+| [SRC-E599346ABE-L000246](../generate_index.py#L246) | 246 | `"        \"\"\"Record one class/function definition while preserving its qualified scope.\"\"\""` | — |
+| [SRC-E599346ABE-L000247](../generate_index.py#L247) | 247 | `"        description, documented = self._description(node)"` | — |
+| [SRC-E599346ABE-L000248](../generate_index.py#L248) | 248 | `"        qualified_name = \".\".join((*self.scope, node.name))"` | — |
+| [SRC-E599346ABE-L000249](../generate_index.py#L249) | 249 | `"        self.symbols.append("` | — |
+| [SRC-E599346ABE-L000250](../generate_index.py#L250) | 250 | `"            IndexedSymbol("` | — |
+| [SRC-E599346ABE-L000251](../generate_index.py#L251) | 251 | `"                file=self.relative_file,"` | — |
+| [SRC-E599346ABE-L000252](../generate_index.py#L252) | 252 | `"                name=qualified_name,"` | — |
+| [SRC-E599346ABE-L000253](../generate_index.py#L253) | 253 | `"                kind=kind,"` | — |
+| [SRC-E599346ABE-L000254](../generate_index.py#L254) | 254 | `"                line=node.lineno,"` | — |
+| [SRC-E599346ABE-L000255](../generate_index.py#L255) | 255 | `"                description=description,"` | — |
+| [SRC-E599346ABE-L000256](../generate_index.py#L256) | 256 | `"                documented=documented,"` | — |
+| [SRC-E599346ABE-L000257](../generate_index.py#L257) | 257 | `"            )"` | — |
+| [SRC-E599346ABE-L000258](../generate_index.py#L258) | 258 | `"        )"` | — |
+| [SRC-E599346ABE-L000259](../generate_index.py#L259) | 259 | `""` | — |
 | [SRC-E599346ABE-L000260](../generate_index.py#L260) | 260 | `"    def _record_assignment_target(self, node: ast.AST, line: int) -> None:"` | — |
 | [SRC-E599346ABE-L000261](../generate_index.py#L261) | 261 | `"        \"\"\"Record declared names from a module-level or class-level assignment.\"\"\""` | — |
 | [SRC-E599346ABE-L000262](../generate_index.py#L262) | 262 | `"        if isinstance(node, ast.Name):"` | — |
@@ -800,19 +816,3 @@
 | [SRC-E599346ABE-L001041](../generate_index.py#L1041) | 1041 | `"    normalized = relative_file.replace(\"\\\\\", \"/\")"` | — |
 | [SRC-E599346ABE-L001042](../generate_index.py#L1042) | 1042 | `"    target = posixpath.relpath(normalized, index_directory)"` | — |
 | [SRC-E599346ABE-L001043](../generate_index.py#L1043) | 1043 | `"    return f\"{quote(target, safe='/._-')}#L{max(line, 1)}\""` | — |
-| [SRC-E599346ABE-L001044](../generate_index.py#L1044) | 1044 | `""` | — |
-| [SRC-E599346ABE-L001045](../generate_index.py#L1045) | 1045 | `""` | — |
-| [SRC-E599346ABE-L001046](../generate_index.py#L1046) | 1046 | `"def _source_line_id(relative_file: str, line: int) -> str:"` | — |
-| [SRC-E599346ABE-L001047](../generate_index.py#L1047) | 1047 | `"    \"\"\"Return a consistent line code wherever a symbol, finding, or source line is shown.\"\"\""` | — |
-| [SRC-E599346ABE-L001048](../generate_index.py#L1048) | 1048 | `"    file_hash = _stable_file_id(relative_file).removeprefix(\"FILE-\")"` | — |
-| [SRC-E599346ABE-L001049](../generate_index.py#L1049) | 1049 | `"    return f\"SRC-{file_hash}-L{line:06d}\""` | — |
-| [SRC-E599346ABE-L001050](../generate_index.py#L1050) | 1050 | `""` | — |
-| [SRC-E599346ABE-L001051](../generate_index.py#L1051) | 1051 | `""` | — |
-| [SRC-E599346ABE-L001052](../generate_index.py#L1052) | 1052 | `"def _markdown_cell(value: str) -> str:"` | — |
-| [SRC-E599346ABE-L001053](../generate_index.py#L1053) | 1053 | `"    \"\"\"Normalize text and escape Markdown table delimiters.\"\"\""` | — |
-| [SRC-E599346ABE-L001054](../generate_index.py#L1054) | 1054 | `"    return \" \".join(value.replace(\"\\r\", \" \").replace(\"\\n\", \" \").split()).replace("` | — |
-| [SRC-E599346ABE-L001055](../generate_index.py#L1055) | 1055 | `"        \"\|\", r\"\\\|\""` | — |
-| [SRC-E599346ABE-L001056](../generate_index.py#L1056) | 1056 | `"    )"` | — |
-| [SRC-E599346ABE-L001057](../generate_index.py#L1057) | 1057 | `""` | — |
-| [SRC-E599346ABE-L001058](../generate_index.py#L1058) | 1058 | `""` | — |
-| [SRC-E599346ABE-L001059](../generate_index.py#L1059) | 1059 | `"def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:"` | — |
