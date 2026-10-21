@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000390 إلى SRC-F725E90B2A-L001189
+- النطاق: SRC-F725E90B2A-L000389 إلى SRC-F725E90B2A-L001188
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000389](../../tests/test_web_agent.py#L389) | 389 | `"        status_code = 200"` | — |
 | [SRC-F725E90B2A-L000390](../../tests/test_web_agent.py#L390) | 390 | `""` | — |
 | [SRC-F725E90B2A-L000391](../../tests/test_web_agent.py#L391) | 391 | `"        def json(self):"` | — |
 | [SRC-F725E90B2A-L000392](../../tests/test_web_agent.py#L392) | 392 | `"            return {"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001186](../../tests/test_web_agent.py#L1186) | 1186 | `"            \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001187](../../tests/test_web_agent.py#L1187) | 1187 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": len(sources)}],"` | — |
 | [SRC-F725E90B2A-L001188](../../tests/test_web_agent.py#L1188) | 1188 | `"            \"unique_sources\": len(sources),"` | — |
-| [SRC-F725E90B2A-L001189](../../tests/test_web_agent.py#L1189) | 1189 | `"            \"pages_fetched\": len(sources),"` | — |

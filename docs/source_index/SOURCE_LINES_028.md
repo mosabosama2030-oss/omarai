@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000122 إلى SRC-F725E90B2A-L000389
+- النطاق: SRC-6BF96689A8-L000121 إلى SRC-F725E90B2A-L000388
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000121](../../tests/test_research.py#L121) | 121 | `"def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():"` | — |
 | [SRC-6BF96689A8-L000122](../../tests/test_research.py#L122) | 122 | `"    plan = fallback_plan(\"قارن مميزات وعيوب المحرك الكهربائي\")"` | — |
 | [SRC-6BF96689A8-L000123](../../tests/test_research.py#L123) | 123 | `"    assert plan[\"depth\"] == \"deep\""` | — |
 | [SRC-6BF96689A8-L000124](../../tests/test_research.py#L124) | 124 | `"    assert any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
@@ -851,4 +852,3 @@
 | [SRC-F725E90B2A-L000386](../../tests/test_web_agent.py#L386) | 386 | `"    monkeypatch.setenv(\"X_BEARER_TOKEN\", \"test-token\")"` | — |
 | [SRC-F725E90B2A-L000387](../../tests/test_web_agent.py#L387) | 387 | `""` | — |
 | [SRC-F725E90B2A-L000388](../../tests/test_web_agent.py#L388) | 388 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000389](../../tests/test_web_agent.py#L389) | 389 | `"        status_code = 200"` | — |

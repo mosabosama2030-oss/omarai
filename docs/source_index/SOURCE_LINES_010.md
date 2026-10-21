@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000288 إلى SRC-E599346ABE-L000083
+- النطاق: SRC-EEF2E6447C-L000287 إلى SRC-E599346ABE-L000082
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000287](../../api/omarai.py#L287) | 287 | `"            # Without this sweep, a public endpoint could retain one empty deque per"` | — |
 | [SRC-EEF2E6447C-L000288](../../api/omarai.py#L288) | 288 | `"            # distinct client IP forever, even though the rate-limit window is 60 sec."` | — |
 | [SRC-EEF2E6447C-L000289](../../api/omarai.py#L289) | 289 | `"            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:"` | — |
 | [SRC-EEF2E6447C-L000290](../../api/omarai.py#L290) | 290 | `"                cutoff = now - cls.RATE_LIMIT_WINDOW_SECONDS"` | — |
@@ -887,4 +888,3 @@
 | [SRC-E599346ABE-L000080](../generate_index.py#L80) | 80 | `"CSS_EXTENSIONS = frozenset({\".css\", \".scss\"})"` | — |
 | [SRC-E599346ABE-L000081](../generate_index.py#L81) | 81 | `"CONFIG_EXTENSIONS = frozenset({\".yml\", \".yaml\", \".toml\", \".json\", \".ini\", \".cfg\"})"` | — |
 | [SRC-E599346ABE-L000082](../generate_index.py#L82) | 82 | `"TEXT_SCAN_EXTENSIONS = ("` | — |
-| [SRC-E599346ABE-L000083](../generate_index.py#L83) | 83 | `"    PYTHON_EXTENSIONS"` | — |
