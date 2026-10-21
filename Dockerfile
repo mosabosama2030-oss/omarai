@@ -6,6 +6,8 @@ ENV OMARAI_BUILD_SHA=${OMARAI_BUILD_SHA} \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
 WORKDIR /app
+ARG OMARAI_BUILD_SHA=unknown
+RUN printf '%s\\n' "$OMARAI_BUILD_SHA" > /app/BUILD_SHA
 COPY pyproject.toml README.md ./
 COPY agents ./agents
 COPY api ./api
