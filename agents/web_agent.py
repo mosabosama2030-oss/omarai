@@ -2589,13 +2589,24 @@ class WebAgent:
         status: str,
         finish_reason: str | None = None,
         error_class: str | None = None,
+        request_started: bool = True,
+        remote_response_received: bool | None = None,
     ) -> None:
-        """Store bounded completion metadata without prompts, output text, or secrets."""
-        record = {
+        """Store bounded metadata for each model attempt; never retain prompts or output."""
+        self._generation_attempt_sequence = getattr(self, "_generation_attempt_sequence", 0) + 1
+        record: dict[str, Any] = {
+            "attempt_number": self._generation_attempt_sequence,
             "requested_model": str(requested_model)[:160],
             "attempted_model": str(attempted_model)[:160],
+            "fallback_used": str(attempted_model) != str(requested_model),
+            "request_started": bool(request_started),
             "status": str(status)[:48],
         }
+        if remote_response_received is None and isinstance(finish_reason, str) and finish_reason.strip():
+            # A concrete finish_reason can only be observed after a provider response was received.
+            remote_response_received = True
+        if remote_response_received is not None:
+            record["remote_response_received"] = bool(remote_response_received)
         if isinstance(finish_reason, str) and finish_reason.strip():
             record["finish_reason"] = finish_reason.strip()[:48]
         if isinstance(error_class, str) and error_class:
@@ -2613,10 +2624,18 @@ class WebAgent:
         enable_web_search: bool = False,
     ) -> str:
         """Call an OpenAI-compatible API with bounded fallback and optional live server search."""
+        requested_model = (model or self.answer_model).strip()
         if not self.api_key:
+            self._record_generation_diagnostic(
+                requested_model=requested_model,
+                attempted_model=requested_model,
+                status="not_configured",
+                error_class="MissingAPIKey",
+                request_started=False,
+                remote_response_received=False,
+            )
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
 
-        requested_model = (model or self.answer_model).strip()
         model_candidates = [requested_model]
         if self.fallback_model and self.fallback_model not in model_candidates:
             model_candidates.append(self.fallback_model)
@@ -2626,15 +2645,26 @@ class WebAgent:
             budget = getattr(self, "_request_budget", None)
             use_web_search = enable_web_search and self.openrouter_web_search_enabled
             if budget is not None:
-                budget.reserve("model_calls")
-                request_timeout = budget.timeout_for(timeout or self.timeout)
-                if use_web_search and budget.remaining_units("tool_calls") < 3:
-                    # The model may still answer, but the optional server-side search
-                    # tool is disabled when its separate budget is unavailable.
-                    use_web_search = False
-                elif use_web_search:
-                    # Reserve the maximum server-side tool calls offered by this request.
-                    budget.reserve("tool_calls", amount=3)
+                try:
+                    budget.reserve("model_calls")
+                    request_timeout = budget.timeout_for(timeout or self.timeout)
+                    if use_web_search and budget.remaining_units("tool_calls") < 3:
+                        # The model may still answer, but the optional server-side search
+                        # tool is disabled when its separate budget is unavailable.
+                        use_web_search = False
+                    elif use_web_search:
+                        # Reserve the maximum server-side tool calls offered by this request.
+                        budget.reserve("tool_calls", amount=3)
+                except RequestBudgetExceeded as exc:
+                    self._record_generation_diagnostic(
+                        requested_model=requested_model,
+                        attempted_model=candidate_model,
+                        status="budget_exhausted",
+                        error_class=type(exc).__name__,
+                        request_started=False,
+                        remote_response_received=False,
+                    )
+                    raise
             else:
                 request_timeout = timeout or self.timeout
             request_payload: dict[str, Any] = {
@@ -2708,6 +2738,8 @@ class WebAgent:
                         attempted_model=candidate_model,
                         status=diagnostic_status,
                         finish_reason=normalized_finish_reason or None,
+                        request_started=True,
+                        remote_response_received=True,
                     )
                     continue
                 message = choice["message"]
@@ -2750,6 +2782,8 @@ class WebAgent:
                     attempted_model=candidate_model,
                     status="accepted",
                     finish_reason=normalized_finish_reason,
+                    request_started=True,
+                    remote_response_received=True,
                 )
                 self.model_usage.append({
                     "requested_model": requested_model,
@@ -2761,7 +2795,8 @@ class WebAgent:
                 # Never echo provider response bodies: they may contain private diagnostics.
                 self._record_generation_diagnostic(
                     requested_model, candidate_model, "provider_http_error",
-                    error_class="HTTPError",
+                    error_class="HTTPError", request_started=True,
+                    remote_response_received=True,
                 )
                 last_error = RuntimeError(
                     f"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code}) على النموذج المحدد."
@@ -2769,7 +2804,8 @@ class WebAgent:
             except (urllib.error.URLError, TimeoutError, OSError) as exc:
                 self._record_generation_diagnostic(
                     requested_model, candidate_model, "connection_error",
-                    error_class=type(exc).__name__,
+                    error_class=type(exc).__name__, request_started=True,
+                    remote_response_received=None,
                 )
                 last_error = RuntimeError(
                     "تعذر الاتصال بخدمة نموذج اللغة؛ جرت محاولة استخدام النموذج الاحتياطي."
@@ -2777,7 +2813,8 @@ class WebAgent:
             except (KeyError, IndexError, TypeError, ValueError) as exc:
                 self._record_generation_diagnostic(
                     requested_model, candidate_model, "invalid_response",
-                    error_class=type(exc).__name__,
+                    error_class=type(exc).__name__, request_started=True,
+                    remote_response_received=True,
                 )
                 last_error = RuntimeError(
                     "خدمة نموذج اللغة أعادت استجابة غير صالحة؛ جرت محاولة استخدام النموذج الاحتياطي."
@@ -3502,6 +3539,7 @@ class WebAgent:
         """Run one answer with an isolated, observable resource budget."""
         previous_budget = getattr(self, "_request_budget", None)
         self.generation_diagnostics = []
+        self._generation_attempt_sequence = 0
         budget = RequestBudget.from_environment()
         self._request_budget = budget
         try:
