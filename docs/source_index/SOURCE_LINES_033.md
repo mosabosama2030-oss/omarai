@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **033**
-- سجلات الأسطر: **133**
-- النطاق: SRC-DE7EABE998-L000308 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **142**
+- النطاق: SRC-DE7EABE998-L000299 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"function setBusy(on){busy=on;$(\"send\").disabled=on;$(\"send\").textContent=on?\"يبحث…\":\"ابحث ←\";$(\"question\").disabled=on;document.querySelectorAll(\".mode-btn\").forEach(b=>b.disabled=on);}"` | — |
+| [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `"async function ask(value){"` | — |
+| [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `" const q=(value??$(\"question\").value).trim();if(!q\|\|busy)return;"` | — |
+| [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `" addMessage(\"user\",q);$(\"question\").value=\"\";setBusy(true);"` | — |
+| [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `" setStatus(\"جارٍ تنفيذ البحث عن السؤال الحالي…\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" const pending=document.createElement(\"div\");pending.className=\"message assistant\";"` | — |
+| [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `" pending.innerHTML='<div class=\"who\">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class=\"bubble\"><div class=\"pending\"><span class=\"spinner\"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';"` | — |
+| [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `" try{"` | — |
 | [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
 | [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `"  const data=await response.json().catch(()=>({}));"` | — |
 | [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `"  pending.remove();"` | — |

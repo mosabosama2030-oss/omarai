@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000134 إلى SRC-90FAA34ADE-L000781
+- النطاق: SRC-547CAF1FE3-L000125 إلى SRC-90FAA34ADE-L000772
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000125](../../scripts/sqlite_backup_restore.py#L125) | 125 | `"    backup_parser.add_argument(\"destination\", help=\"new backup path; must not exist\")"` | — |
+| [SRC-547CAF1FE3-L000126](../../scripts/sqlite_backup_restore.py#L126) | 126 | `"    restore_parser = subparsers.add_parser(\"restore\", help=\"restore to a new database file\")"` | — |
+| [SRC-547CAF1FE3-L000127](../../scripts/sqlite_backup_restore.py#L127) | 127 | `"    restore_parser.add_argument(\"source\", help=\"existing verified backup path\")"` | — |
+| [SRC-547CAF1FE3-L000128](../../scripts/sqlite_backup_restore.py#L128) | 128 | `"    restore_parser.add_argument(\"destination\", help=\"new restore path; must not exist\")"` | — |
+| [SRC-547CAF1FE3-L000129](../../scripts/sqlite_backup_restore.py#L129) | 129 | `"    args = parser.parse_args()"` | — |
+| [SRC-547CAF1FE3-L000130](../../scripts/sqlite_backup_restore.py#L130) | 130 | `""` | — |
+| [SRC-547CAF1FE3-L000131](../../scripts/sqlite_backup_restore.py#L131) | 131 | `"    try:"` | — |
+| [SRC-547CAF1FE3-L000132](../../scripts/sqlite_backup_restore.py#L132) | 132 | `"        if args.command == \"backup\":"` | — |
+| [SRC-547CAF1FE3-L000133](../../scripts/sqlite_backup_restore.py#L133) | 133 | `"            result = backup_database(args.source, args.destination)"` | — |
 | [SRC-547CAF1FE3-L000134](../../scripts/sqlite_backup_restore.py#L134) | 134 | `"        else:"` | — |
 | [SRC-547CAF1FE3-L000135](../../scripts/sqlite_backup_restore.py#L135) | 135 | `"            result = restore_database(args.source, args.destination)"` | — |
 | [SRC-547CAF1FE3-L000136](../../scripts/sqlite_backup_restore.py#L136) | 136 | `"    except (BackupError, FileExistsError, OSError, sqlite3.Error, ValueError) as exc:"` | — |
@@ -816,12 +825,3 @@
 | [SRC-90FAA34ADE-L000770](../../tests/fixtures/answer_quality_cases.json#L770) | 770 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000771](../../tests/fixtures/answer_quality_cases.json#L771) | 771 | `"      \"case_id\": \"AQ-027\","` | — |
 | [SRC-90FAA34ADE-L000772](../../tests/fixtures/answer_quality_cases.json#L772) | 772 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
-| [SRC-90FAA34ADE-L000773](../../tests/fixtures/answer_quality_cases.json#L773) | 773 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000774](../../tests/fixtures/answer_quality_cases.json#L774) | 774 | `"      \"question\": \"هل أكيد الشركة دي نصابة؟ كل اللي عندي تعليق واحد مجهول بيقول كده.\","` | — |
-| [SRC-90FAA34ADE-L000775](../../tests/fixtures/answer_quality_cases.json#L775) | 775 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000776](../../tests/fixtures/answer_quality_cases.json#L776) | 776 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000777](../../tests/fixtures/answer_quality_cases.json#L777) | 777 | `"        \"يوضح أن تعليقًا مجهولًا واحدًا لا يثبت الاحتيال\","` | — |
-| [SRC-90FAA34ADE-L000778](../../tests/fixtures/answer_quality_cases.json#L778) | 778 | `"        \"يقترح التحقق من مصادر موثوقة أو الجهات الرسمية دون اتهام قطعي\","` | — |
-| [SRC-90FAA34ADE-L000779](../../tests/fixtures/answer_quality_cases.json#L779) | 779 | `"        \"يفصل بين ادعاء المستخدم والوقائع المثبتة\""` | — |
-| [SRC-90FAA34ADE-L000780](../../tests/fixtures/answer_quality_cases.json#L780) | 780 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000781](../../tests/fixtures/answer_quality_cases.json#L781) | 781 | `"      \"forbidden_behaviors\": ["` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000169 إلى SRC-547CAF1FE3-L000133
+- النطاق: SRC-B335630551-L000160 إلى SRC-547CAF1FE3-L000124
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000160](../../README.md#L160) | 160 | `""` | — |
+| [SRC-B335630551-L000161](../../README.md#L161) | 161 | `"## Existing lead workspace"` | — |
+| [SRC-B335630551-L000162](../../README.md#L162) | 162 | `""` | — |
+| [SRC-B335630551-L000163](../../README.md#L163) | 163 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
+| [SRC-B335630551-L000164](../../README.md#L164) | 164 | `""` | — |
+| [SRC-B335630551-L000165](../../README.md#L165) | 165 | `"Analyze text from the CLI:"` | — |
+| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `""` | — |
+| [SRC-B335630551-L000167](../../README.md#L167) | 167 | ````"```bash"```` | — |
+| [SRC-B335630551-L000168](../../README.md#L168) | 168 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
 | [SRC-B335630551-L000169](../../README.md#L169) | 169 | ````"```"```` | — |
 | [SRC-B335630551-L000170](../../README.md#L170) | 170 | `""` | — |
 | [SRC-B335630551-L000171](../../README.md#L171) | 171 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
@@ -852,12 +861,3 @@
 | [SRC-547CAF1FE3-L000122](../../scripts/sqlite_backup_restore.py#L122) | 122 | `"    subparsers = parser.add_subparsers(dest=\"command\", required=True)"` | — |
 | [SRC-547CAF1FE3-L000123](../../scripts/sqlite_backup_restore.py#L123) | 123 | `"    backup_parser = subparsers.add_parser(\"backup\", help=\"create a verified snapshot\")"` | — |
 | [SRC-547CAF1FE3-L000124](../../scripts/sqlite_backup_restore.py#L124) | 124 | `"    backup_parser.add_argument(\"source\", help=\"existing Omarai SQLite database path\")"` | — |
-| [SRC-547CAF1FE3-L000125](../../scripts/sqlite_backup_restore.py#L125) | 125 | `"    backup_parser.add_argument(\"destination\", help=\"new backup path; must not exist\")"` | — |
-| [SRC-547CAF1FE3-L000126](../../scripts/sqlite_backup_restore.py#L126) | 126 | `"    restore_parser = subparsers.add_parser(\"restore\", help=\"restore to a new database file\")"` | — |
-| [SRC-547CAF1FE3-L000127](../../scripts/sqlite_backup_restore.py#L127) | 127 | `"    restore_parser.add_argument(\"source\", help=\"existing verified backup path\")"` | — |
-| [SRC-547CAF1FE3-L000128](../../scripts/sqlite_backup_restore.py#L128) | 128 | `"    restore_parser.add_argument(\"destination\", help=\"new restore path; must not exist\")"` | — |
-| [SRC-547CAF1FE3-L000129](../../scripts/sqlite_backup_restore.py#L129) | 129 | `"    args = parser.parse_args()"` | — |
-| [SRC-547CAF1FE3-L000130](../../scripts/sqlite_backup_restore.py#L130) | 130 | `""` | — |
-| [SRC-547CAF1FE3-L000131](../../scripts/sqlite_backup_restore.py#L131) | 131 | `"    try:"` | — |
-| [SRC-547CAF1FE3-L000132](../../scripts/sqlite_backup_restore.py#L132) | 132 | `"        if args.command == \"backup\":"` | — |
-| [SRC-547CAF1FE3-L000133](../../scripts/sqlite_backup_restore.py#L133) | 133 | `"            result = backup_database(args.source, args.destination)"` | — |
