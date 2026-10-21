@@ -118,3 +118,16 @@ def test_default_repository_ref_uses_valid_ci_sha(
 
     assert SEARCH.default_repository_ref(tmp_path) == "b" * 40
 
+def test_cli_uses_explicit_ref_for_source_links(tmp_path: Path, capsys) -> None:
+    source = tmp_path / "app.py"
+    source.write_text("needle = 1\n", encoding="utf-8")
+
+    exit_code = SEARCH.main([
+        "needle", "--root", str(tmp_path), "--ref", "fix/cli-review"
+    ])
+
+    output = capsys.readouterr().out
+    assert exit_code == 0
+    assert "blob/fix/cli-review/app.py#L1" in output
+    assert "blob/main/app.py#L1" not in output
+
