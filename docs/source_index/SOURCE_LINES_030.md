@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000571 إلى SRC-F725E90B2A-L001370
+- النطاق: SRC-F725E90B2A-L000555 إلى SRC-F725E90B2A-L001354
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `""` | — |
+| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |
+| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `"        \"electric vehicles\", [\"reddit\"]"` | — |
+| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `"    )"` | — |
+| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"    assert results[0][\"provider\"] == \"reddit_oauth_api\""` | — |
+| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"    assert results[0][\"url\"] == \"https://www.reddit.com/r/cars/comments/example/post/\""` | — |
+| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"    assert \"score=25\" in results[0][\"snippet\"]"` | — |
+| [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `"    assert len([call for call in calls if call[0] == \"POST\"]) == 1"` | — |
+| [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `"    assert any(\"oauth.reddit.com/search\" in call[1] for call in calls if call[0] == \"GET\")"` | — |
+| [SRC-F725E90B2A-L000568](../../tests/test_web_agent.py#L568) | 568 | `"    assert \"test-reddit-access-token\" not in str(results)"` | — |
+| [SRC-F725E90B2A-L000569](../../tests/test_web_agent.py#L569) | 569 | `""` | — |
+| [SRC-F725E90B2A-L000570](../../tests/test_web_agent.py#L570) | 570 | `""` | — |
 | [SRC-F725E90B2A-L000571](../../tests/test_web_agent.py#L571) | 571 | `""` | — |
 | [SRC-F725E90B2A-L000572](../../tests/test_web_agent.py#L572) | 572 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000573](../../tests/test_web_agent.py#L573) | 573 | `"    for name in ("` | — |
@@ -800,19 +816,3 @@
 | [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `""` | — |
 | [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
 | [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
-| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"    )"` | — |
-| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `""` | — |
-| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
-| [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `""` | — |
-| [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
-| [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"    assert result[\"used_language_model\"] is True"` | — |
-| [SRC-F725E90B2A-L001363](../../tests/test_web_agent.py#L1363) | 1363 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001364](../../tests/test_web_agent.py#L1364) | 1364 | `"    assert result[\"sources\"] == []"` | — |
-| [SRC-F725E90B2A-L001365](../../tests/test_web_agent.py#L1365) | 1365 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001366](../../tests/test_web_agent.py#L1366) | 1366 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001367](../../tests/test_web_agent.py#L1367) | 1367 | `""` | — |
-| [SRC-F725E90B2A-L001368](../../tests/test_web_agent.py#L1368) | 1368 | `""` | — |
-| [SRC-F725E90B2A-L001369](../../tests/test_web_agent.py#L1369) | 1369 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001370](../../tests/test_web_agent.py#L1370) | 1370 | `"    agent = WebAgent()"` | — |

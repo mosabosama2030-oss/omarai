@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000095 إلى SRC-547CAF1FE3-L000059
+- النطاق: SRC-B335630551-L000079 إلى SRC-547CAF1FE3-L000043
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000079](../../README.md#L79) | 79 | `""` | — |
+| [SRC-B335630551-L000080](../../README.md#L80) | 80 | ``"**Single-operator limit:** the current bearer token is shared application access, not an individual identity or tenant boundary. The lead workspace does not provide confirmed per-customer data isolation. Keep this deployment private to one operator; do not use it to store confidential records for multiple customers. Request concurrency and IP rate limits are process-local, not distributed, and no production load capacity has been established. Before public binding, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `OMARAI_ACCESS_TOKEN` of at least 32 characters. The app refuses public binding without both. Set `OPENROUTER_API_KEY` in the hosting provider's secret variables for natural-language planning and synthesis. If the browser UI is served from a different origin, set `OMARAI_ALLOWED_ORIGINS` to a comma-separated allowlist of trusted origins (scheme + host + optional port, no path and no `*`). The API sends CORS headers only to allowed origins and handles preflight `OPTIONS`; when you open `/` on the same deployed service, the built-in UI uses relative `/api/...` URLs and normally needs no extra origin entry. Public API routes require the bearer token and have a default in-memory limit of 20 requests per minute per client IP. The Arabic UI provides a separate access-token field; it stores only that app token in the browser's local storage, not the provider API key."`` | — |
+| [SRC-B335630551-L000081](../../README.md#L81) | 81 | `""` | — |
+| [SRC-B335630551-L000082](../../README.md#L82) | 82 | ``"See the step-by-step Arabic instructions in `docs/DEPLOY_RAILWAY_AR.md`. Before treating a deployment as accepted, follow the [hosted go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) and run the manually triggered [hosted acceptance smoke workflow](.github/workflows/hosted-smoke.yml) after configuring the GitHub Actions secrets `OMARAI_ACCESS_TOKEN` and `OMARAI_BASE_URL` (the latter must be only the service's HTTPS origin). The workflow uses that administrator-configured target rather than accepting a free-form URL alongside a secret, preventing accidental or unauthorized token disclosure to arbitrary hosts. It makes real model/search requests and may incur usage charges. SQLite on ephemeral hosting is not durable storage for customer records. When a host provides a genuinely persistent mounted volume, set `OMARAI_DB_PATH` to a file inside that mount (for example, `/data/omarai.sqlite3`). This variable only selects the path; it does not create or attach a volume, and it does not replace an automated backup and a tested restore. Keep the workspace disabled for important customer records until persistence across restart/redeploy and restore have been verified on the actual host."`` | — |
+| [SRC-B335630551-L000083](../../README.md#L83) | 83 | `""` | — |
+| [SRC-B335630551-L000084](../../README.md#L84) | 84 | `"## Free hosted deployment (SnapDeploy)"` | — |
+| [SRC-B335630551-L000085](../../README.md#L85) | 85 | `""` | — |
+| [SRC-B335630551-L000086](../../README.md#L86) | 86 | `"For a free alternative when Render does not work, see the step-by-step Arabic [SnapDeploy guide](docs/DEPLOY_SNAPDEPLOY_AR.md). SnapDeploy's published free tier currently has monthly container-hour limits, sleeps after inactivity, and does not provide persistent disk storage. Treat it as a demo/acceptance-test host, not durable production hosting. Confirm the current limits and charges before deploying."` | — |
+| [SRC-B335630551-L000087](../../README.md#L87) | 87 | `""` | — |
+| [SRC-B335630551-L000088](../../README.md#L88) | 88 | ``"The guide covers GitHub linking, `main`, the Dockerfile, runtime secrets, HTTPS, live health/model/search tests, and the limitations of the existing SQLite lead workspace. No hosted service is created automatically by this repository."`` | — |
+| [SRC-B335630551-L000089](../../README.md#L89) | 89 | `""` | — |
+| [SRC-B335630551-L000090](../../README.md#L90) | 90 | `"## Free hosted deployment (Render)"` | — |
+| [SRC-B335630551-L000091](../../README.md#L91) | 91 | `""` | — |
+| [SRC-B335630551-L000092](../../README.md#L92) | 92 | ``"A starter Render Blueprint is included in `render.yaml`, with Arabic setup notes in [docs/DEPLOY_RENDER_AR.md](docs/DEPLOY_RENDER_AR.md). The free service sleeps after inactivity and has an ephemeral filesystem; do not rely on the hosted SQLite lead database for durable storage. This is intended for a personal demo and acceptance testing, not production availability."`` | — |
+| [SRC-B335630551-L000093](../../README.md#L93) | 93 | `""` | — |
+| [SRC-B335630551-L000094](../../README.md#L94) | 94 | `"Before accepting the deployment, use the [Arabic go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) when that file is present on the selected branch. Never commit provider keys or the app access token."` | — |
 | [SRC-B335630551-L000095](../../README.md#L95) | 95 | `""` | — |
 | [SRC-B335630551-L000096](../../README.md#L96) | 96 | `"## Run on Android / Termux"` | — |
 | [SRC-B335630551-L000097](../../README.md#L97) | 97 | `""` | — |
@@ -845,19 +861,3 @@
 | [SRC-547CAF1FE3-L000041](../../scripts/sqlite_backup_restore.py#L41) | 41 | `"        return int(count_row[0])"` | — |
 | [SRC-547CAF1FE3-L000042](../../scripts/sqlite_backup_restore.py#L42) | 42 | `"    except sqlite3.Error as exc:"` | — |
 | [SRC-547CAF1FE3-L000043](../../scripts/sqlite_backup_restore.py#L43) | 43 | `"        raise BackupError(f\"SQLite validation failed: {type(exc).__name__}\") from exc"` | — |
-| [SRC-547CAF1FE3-L000044](../../scripts/sqlite_backup_restore.py#L44) | 44 | `""` | — |
-| [SRC-547CAF1FE3-L000045](../../scripts/sqlite_backup_restore.py#L45) | 45 | `""` | — |
-| [SRC-547CAF1FE3-L000046](../../scripts/sqlite_backup_restore.py#L46) | 46 | `"def _create_destination_exclusively(path: Path) -> None:"` | — |
-| [SRC-547CAF1FE3-L000047](../../scripts/sqlite_backup_restore.py#L47) | 47 | `"    \"\"\"Create a new destination without overwriting an existing file or following its symlink.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000048](../../scripts/sqlite_backup_restore.py#L48) | 48 | `"    path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-547CAF1FE3-L000049](../../scripts/sqlite_backup_restore.py#L49) | 49 | `"    descriptor = os.open(path, os.O_CREAT \| os.O_EXCL \| os.O_WRONLY, 0o600)"` | — |
-| [SRC-547CAF1FE3-L000050](../../scripts/sqlite_backup_restore.py#L50) | 50 | `"    os.close(descriptor)"` | — |
-| [SRC-547CAF1FE3-L000051](../../scripts/sqlite_backup_restore.py#L51) | 51 | `"    try:"` | — |
-| [SRC-547CAF1FE3-L000052](../../scripts/sqlite_backup_restore.py#L52) | 52 | `"        path.chmod(0o600)"` | — |
-| [SRC-547CAF1FE3-L000053](../../scripts/sqlite_backup_restore.py#L53) | 53 | `"    except OSError:"` | — |
-| [SRC-547CAF1FE3-L000054](../../scripts/sqlite_backup_restore.py#L54) | 54 | `"        # The exclusive-create mode remains the primary permission setting; do not"` | — |
-| [SRC-547CAF1FE3-L000055](../../scripts/sqlite_backup_restore.py#L55) | 55 | `"        # discard a completed backup solely because chmod is unavailable on a host."` | — |
-| [SRC-547CAF1FE3-L000056](../../scripts/sqlite_backup_restore.py#L56) | 56 | `"        pass"` | — |
-| [SRC-547CAF1FE3-L000057](../../scripts/sqlite_backup_restore.py#L57) | 57 | `""` | — |
-| [SRC-547CAF1FE3-L000058](../../scripts/sqlite_backup_restore.py#L58) | 58 | `""` | — |
-| [SRC-547CAF1FE3-L000059](../../scripts/sqlite_backup_restore.py#L59) | 59 | `"def _copy_verified_database(source: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |

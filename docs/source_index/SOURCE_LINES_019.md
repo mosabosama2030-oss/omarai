@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000835 إلى SRC-B335630551-L000094
+- النطاق: SRC-0F910493E8-L000823 إلى SRC-B335630551-L000078
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000823](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L823) | 823 | `"- اختبار هروب وصلاحيات وموارد وسلسلة توريد."` | — |
+| [SRC-0F910493E8-L000824](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L824) | 824 | `"- فصل أسرار الإنتاج عن بيئة الاختبار."` | — |
+| [SRC-0F910493E8-L000825](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L825) | 825 | `"- مراجعة أمنية وموافقة بشرية وخطة استجابة وتراجع."` | — |
+| [SRC-0F910493E8-L000826](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L826) | 826 | `"- لا يُفعّل إذا تعذر إثبات أحد المتطلبات الحرجة."` | — |
+| [SRC-0F910493E8-L000827](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L827) | 827 | `""` | — |
+| [SRC-0F910493E8-L000828](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L828) | 828 | `"إذا كان هناك خطر حرج معروف أو مسار يسمح بتسرب سر أو تجاوز صلاحيات أو تنفيذ كود غير موثوق خارج العزل، فالقرار الافتراضي هو تعطيل المسار المتأثر حتى المعالجة، مع توثيق السبب. لا يمنع ذلك استمرار التطوير في مسارات أخرى غير معرضة للخطر."` | — |
+| [SRC-0F910493E8-L000829](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L829) | 829 | `""` | — |
+| [SRC-0F910493E8-L000830](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L830) | 830 | `"## 17.18 الأمن كدورة حياة، لا كقائمة نهائية"` | — |
+| [SRC-0F910493E8-L000831](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L831) | 831 | `""` | — |
+| [SRC-0F910493E8-L000832](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L832) | 832 | `"تبدأ المراجعة عند تعريف المتطلب، وتستمر خلال التصميم والتنفيذ والاختبار والنشر وما بعد النشر. لكل تغيير جوهري:"` | — |
+| [SRC-0F910493E8-L000833](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L833) | 833 | `"1. الحاجة والبيانات والأصول."` | — |
+| [SRC-0F910493E8-L000834](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L834) | 834 | `"2. حدود الثقة ونموذج التهديد."` | — |
 | [SRC-0F910493E8-L000835](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L835) | 835 | `"3. التصميم وأقل صلاحيات."` | — |
 | [SRC-0F910493E8-L000836](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L836) | 836 | `"4. اختبارات الفشل والهجوم المناسبة."` | — |
 | [SRC-0F910493E8-L000837](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L837) | 837 | `"5. مراجعة diff والاعتماديات والأسرار."` | — |
@@ -175,6 +187,10 @@
 | [SRC-61B24BEFCC-L000130](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L130) | 130 | ``"- لذلك حالة التغييرات الأخيرة للبحث وفحص الفهرس هي **PARTIAL / NOT YET FULLY TESTED**، وليست `FIXED_AND_TESTED`. يلزم اعتماد وتشغيل GitHub Actions على الرأس الحالي ثم مراجعة نتائج pytest وRuff والفهرس والحاوية."`` | — |
 | [SRC-61B24BEFCC-L000131](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L131) | 131 | ``"- لا يغيّر ذلك حالة الاختبارات الحية المستقلة: `NOT_RUN/UNKNOWN` ما زالت تنطبق على hosted smoke، وتوافر كل موفري البحث والنموذج، والتقييم الدلالي لـAQ-001–045، ودوام التخزين/الاستعادة على المضيف، واختبار الحمل، وعزل تعدد المستأجرين، والتقرير المستقل الكامل من Grok."`` | — |
 | [SRC-61B24BEFCC-L000132](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L132) | 132 | ``"- **السجل المركزي الوحيد لجميع المعرفات ومعايير الإغلاق:** [`OMARAI_REMEDIATION_REGISTER_AR.md`](OMARAI_REMEDIATION_REGISTER_AR.md). لا تكرر بنودًا جديدة هنا دون إضافتها إلى ذلك السجل."`` | — |
+| [SRC-61B24BEFCC-L000133](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L133) | 133 | `""` | — |
+| [SRC-61B24BEFCC-L000134](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L134) | 134 | `"## تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026"` | — |
+| [SRC-61B24BEFCC-L000135](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L135) | 135 | `""` | — |
+| [SRC-61B24BEFCC-L000136](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L136) | 136 | ``"تم بعد الملاحظة التاريخية أعلاه إكمال بوابة CI على كود/اختبارات/Workflow مرشح الإغلاق: الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، [تشغيل PR #39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) — 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة. بعد ذلك تُظهر المقارنة مع رأس PR الذي شوهد `b848f96...` تغييرات وثائق وفهرسة مولّدة فقط، من دون تغيير التطبيق أو الاختبارات أو Workflow. يظل هذا التصحيح خاصًا بالاختبارات الآلية؛ الاستضافة الحقيقية، ومزودو البحث/النماذج الحيون، وتقييم الجودة الدلالي، ودوام التخزين/الاستعادة، والحمل، والتدقيق المستقل تبقى `NOT_RUN/UNKNOWN`. السجل التفصيلي المعتمد: [سجل الإغلاق المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
 ## وثائق وفهرسة
 
 ### FILE-B6BD2CE1A8 — [docs/OPERATIONS_AR.md](../OPERATIONS_AR.md#L1)
@@ -872,19 +888,3 @@
 | [SRC-B335630551-L000076](../../README.md#L76) | 76 | `"## Hosted deployment"` | — |
 | [SRC-B335630551-L000077](../../README.md#L77) | 77 | `""` | — |
 | [SRC-B335630551-L000078](../../README.md#L78) | 78 | ``"A Dockerfile and Railway configuration are included for a public hosted instance. The API reports the validated source revision at `/api/health`: it prefers image-baked `BUILD_SHA`, then uses the hosting platform's documented Git commit metadata (`RAILWAY_GIT_COMMIT_SHA` or `RENDER_GIT_COMMIT`) when available. For other Docker hosts, pass `--build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`. Hosted smoke compares the reported revision with the checked-out commit. This is **deployment-ready configuration, not proof that a hosted service has already been created**: you must connect your Railway account to this GitHub repository, add secrets in the host dashboard, deploy, and run the live diagnostics."`` | — |
-| [SRC-B335630551-L000079](../../README.md#L79) | 79 | `""` | — |
-| [SRC-B335630551-L000080](../../README.md#L80) | 80 | ``"**Single-operator limit:** the current bearer token is shared application access, not an individual identity or tenant boundary. The lead workspace does not provide confirmed per-customer data isolation. Keep this deployment private to one operator; do not use it to store confidential records for multiple customers. Request concurrency and IP rate limits are process-local, not distributed, and no production load capacity has been established. Before public binding, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `OMARAI_ACCESS_TOKEN` of at least 32 characters. The app refuses public binding without both. Set `OPENROUTER_API_KEY` in the hosting provider's secret variables for natural-language planning and synthesis. If the browser UI is served from a different origin, set `OMARAI_ALLOWED_ORIGINS` to a comma-separated allowlist of trusted origins (scheme + host + optional port, no path and no `*`). The API sends CORS headers only to allowed origins and handles preflight `OPTIONS`; when you open `/` on the same deployed service, the built-in UI uses relative `/api/...` URLs and normally needs no extra origin entry. Public API routes require the bearer token and have a default in-memory limit of 20 requests per minute per client IP. The Arabic UI provides a separate access-token field; it stores only that app token in the browser's local storage, not the provider API key."`` | — |
-| [SRC-B335630551-L000081](../../README.md#L81) | 81 | `""` | — |
-| [SRC-B335630551-L000082](../../README.md#L82) | 82 | ``"See the step-by-step Arabic instructions in `docs/DEPLOY_RAILWAY_AR.md`. Before treating a deployment as accepted, follow the [hosted go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) and run the manually triggered [hosted acceptance smoke workflow](.github/workflows/hosted-smoke.yml) after configuring the GitHub Actions secrets `OMARAI_ACCESS_TOKEN` and `OMARAI_BASE_URL` (the latter must be only the service's HTTPS origin). The workflow uses that administrator-configured target rather than accepting a free-form URL alongside a secret, preventing accidental or unauthorized token disclosure to arbitrary hosts. It makes real model/search requests and may incur usage charges. SQLite on ephemeral hosting is not durable storage for customer records. When a host provides a genuinely persistent mounted volume, set `OMARAI_DB_PATH` to a file inside that mount (for example, `/data/omarai.sqlite3`). This variable only selects the path; it does not create or attach a volume, and it does not replace an automated backup and a tested restore. Keep the workspace disabled for important customer records until persistence across restart/redeploy and restore have been verified on the actual host."`` | — |
-| [SRC-B335630551-L000083](../../README.md#L83) | 83 | `""` | — |
-| [SRC-B335630551-L000084](../../README.md#L84) | 84 | `"## Free hosted deployment (SnapDeploy)"` | — |
-| [SRC-B335630551-L000085](../../README.md#L85) | 85 | `""` | — |
-| [SRC-B335630551-L000086](../../README.md#L86) | 86 | `"For a free alternative when Render does not work, see the step-by-step Arabic [SnapDeploy guide](docs/DEPLOY_SNAPDEPLOY_AR.md). SnapDeploy's published free tier currently has monthly container-hour limits, sleeps after inactivity, and does not provide persistent disk storage. Treat it as a demo/acceptance-test host, not durable production hosting. Confirm the current limits and charges before deploying."` | — |
-| [SRC-B335630551-L000087](../../README.md#L87) | 87 | `""` | — |
-| [SRC-B335630551-L000088](../../README.md#L88) | 88 | ``"The guide covers GitHub linking, `main`, the Dockerfile, runtime secrets, HTTPS, live health/model/search tests, and the limitations of the existing SQLite lead workspace. No hosted service is created automatically by this repository."`` | — |
-| [SRC-B335630551-L000089](../../README.md#L89) | 89 | `""` | — |
-| [SRC-B335630551-L000090](../../README.md#L90) | 90 | `"## Free hosted deployment (Render)"` | — |
-| [SRC-B335630551-L000091](../../README.md#L91) | 91 | `""` | — |
-| [SRC-B335630551-L000092](../../README.md#L92) | 92 | ``"A starter Render Blueprint is included in `render.yaml`, with Arabic setup notes in [docs/DEPLOY_RENDER_AR.md](docs/DEPLOY_RENDER_AR.md). The free service sleeps after inactivity and has an ephemeral filesystem; do not rely on the hosted SQLite lead database for durable storage. This is intended for a personal demo and acceptance testing, not production availability."`` | — |
-| [SRC-B335630551-L000093](../../README.md#L93) | 93 | `""` | — |
-| [SRC-B335630551-L000094](../../README.md#L94) | 94 | `"Before accepting the deployment, use the [Arabic go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) when that file is present on the selected branch. Never commit provider keys or the app access token."` | — |
