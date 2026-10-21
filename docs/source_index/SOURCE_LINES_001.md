@@ -668,9 +668,9 @@
 | [SRC-138992B1FC-L000203](../../agents/answer_validation.py#L203) | 203 | `"            available_tokens = source_token_sets[source_index - 1]"` | — |
 | [SRC-138992B1FC-L000204](../../agents/answer_validation.py#L204) | 204 | `"            overlap = [token for token in claim_tokens if token in available_tokens]"` | — |
 | [SRC-138992B1FC-L000205](../../agents/answer_validation.py#L205) | 205 | `"            ratio = len(overlap) / len(claim_tokens) if claim_tokens else 0.0"` | — |
-| [SRC-138992B1FC-L000206](../../agents/answer_validation.py#L206) | 206 | `"            enough_overlap = bool(overlap) and ("` | — |
-| [SRC-138992B1FC-L000207](../../agents/answer_validation.py#L207) | 207 | `"                ratio >= 0.25 if len(claim_tokens) >= 4 else len(overlap) >= 1"` | — |
-| [SRC-138992B1FC-L000208](../../agents/answer_validation.py#L208) | 208 | `"            )"` | — |
+| [SRC-138992B1FC-L000206](../../agents/answer_validation.py#L206) | 206 | `"            # A lexical match is only a weak proxy for relevance, not entailment."` | — |
+| [SRC-138992B1FC-L000207](../../agents/answer_validation.py#L207) | 207 | `"            # Require both relative coverage and at least two content-token matches."` | — |
+| [SRC-138992B1FC-L000208](../../agents/answer_validation.py#L208) | 208 | `"            enough_overlap = len(overlap) >= 2 and ratio >= 0.5"` | — |
 | [SRC-138992B1FC-L000209](../../agents/answer_validation.py#L209) | 209 | `"            cited_checks.append({"` | — |
 | [SRC-138992B1FC-L000210](../../agents/answer_validation.py#L210) | 210 | `"                \"source_index\": source_index,"` | — |
 | [SRC-138992B1FC-L000211](../../agents/answer_validation.py#L211) | 211 | `"                \"status\": \"lexical_overlap_signal_found\" if enough_overlap else \"weak_lexical_overlap\","` | — |

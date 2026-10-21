@@ -4,9 +4,73 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000014 إلى SRC-E599346ABE-L000813
+- النطاق: SRC-51D44BE378-L000040 إلى SRC-E599346ABE-L000745
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-51D44BE378 — [docs/DEPLOY_SNAPDEPLOY_AR.md](../DEPLOY_SNAPDEPLOY_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-51D44BE378-L000040](../DEPLOY_SNAPDEPLOY_AR.md#L40) | 40 | ``"\| `OMARAI_ACCESS_TOKEN` \| رمز وصول عشوائي خاص بك، طوله 32 حرفًا على الأقل \|"`` | — |
+| [SRC-51D44BE378-L000041](../DEPLOY_SNAPDEPLOY_AR.md#L41) | 41 | ``"\| `OPENROUTER_API_KEY` \| مفتاح OpenRouter الخاص بك لتوليد الإجابات والتحليل \|"`` | — |
+| [SRC-51D44BE378-L000042](../DEPLOY_SNAPDEPLOY_AR.md#L42) | 42 | `""` | — |
+| [SRC-51D44BE378-L000043](../DEPLOY_SNAPDEPLOY_AR.md#L43) | 43 | `"أنشئ رمز الوصول في Termux محليًا باستخدام Python، ثم انسخه مباشرة إلى خانة السر في SnapDeploy:"` | — |
+| [SRC-51D44BE378-L000044](../DEPLOY_SNAPDEPLOY_AR.md#L44) | 44 | `""` | — |
+| [SRC-51D44BE378-L000045](../DEPLOY_SNAPDEPLOY_AR.md#L45) | 45 | ````"```bash"```` | — |
+| [SRC-51D44BE378-L000046](../DEPLOY_SNAPDEPLOY_AR.md#L46) | 46 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
+| [SRC-51D44BE378-L000047](../DEPLOY_SNAPDEPLOY_AR.md#L47) | 47 | ````"```"```` | — |
+| [SRC-51D44BE378-L000048](../DEPLOY_SNAPDEPLOY_AR.md#L48) | 48 | `""` | — |
+| [SRC-51D44BE378-L000049](../DEPLOY_SNAPDEPLOY_AR.md#L49) | 49 | `"لا ترسل الرمز أو مفتاح OpenRouter إلى ChatGPT أو DeepSeek، ولا تضعهما في GitHub أو ملف README أو لقطات شاشة. لا تستخدم مفتاح OpenRouter نفسه رمزًا لدخول التطبيق."` | — |
+| [SRC-51D44BE378-L000050](../DEPLOY_SNAPDEPLOY_AR.md#L50) | 50 | `""` | — |
+| [SRC-51D44BE378-L000051](../DEPLOY_SNAPDEPLOY_AR.md#L51) | 51 | ``"اترك `OMARAI_OPENROUTER_WEB_SEARCH` غير مضبوط؛ تفعيله خيار إضافي يمكن أن يستهلك رصيدًا. استخدام النماذج المجانية قد يظل خاضعًا لحصص ومعدلات توفر المزود، وقد تتغير النماذج المتاحة. راجع التسعير وحدود المفتاح لدى OpenRouter ولا توافق على موارد أو استخدام مدفوع."`` | — |
+| [SRC-51D44BE378-L000052](../DEPLOY_SNAPDEPLOY_AR.md#L52) | 52 | `""` | — |
+| [SRC-51D44BE378-L000053](../DEPLOY_SNAPDEPLOY_AR.md#L53) | 53 | `"## 3. النشر الأول"` | — |
+| [SRC-51D44BE378-L000054](../DEPLOY_SNAPDEPLOY_AR.md#L54) | 54 | `""` | — |
+| [SRC-51D44BE378-L000055](../DEPLOY_SNAPDEPLOY_AR.md#L55) | 55 | `"1. راجع اختيار المستودع والفرع والمتغيرات مرة أخيرة."` | — |
+| [SRC-51D44BE378-L000056](../DEPLOY_SNAPDEPLOY_AR.md#L56) | 56 | `"2. اضغط **Deploy** مرة واحدة وانتظر نتيجة البناء والتشغيل."` | — |
+| [SRC-51D44BE378-L000057](../DEPLOY_SNAPDEPLOY_AR.md#L57) | 57 | `"3. إذا فشل البناء، افتح سجل البناء واقرأ أول خطأ حقيقي قبل إعادة المحاولة؛ المحاولات الفاشلة قد تُحتسب ضمن حد النشر اليومي."` | — |
+| [SRC-51D44BE378-L000058](../DEPLOY_SNAPDEPLOY_AR.md#L58) | 58 | `"4. افتح عنوان HTTPS الذي أعطته المنصة. قد تكون أول زيارة بعد السكون صفحة استيقاظ أو تحتاج إلى الانتظار قرابة دقيقة."` | — |
+| [SRC-51D44BE378-L000059](../DEPLOY_SNAPDEPLOY_AR.md#L59) | 59 | ``"5. افتح `https://عنوان-خدمتك/api/health`. النجاح المبدئي هو استجابة HTTP 200 ومحتوى JSON يحتوي على `\"ok\": true`. نجاح الصحة وحده لا يثبت أن البحث والنموذج يعملان."`` | — |
+| [SRC-51D44BE378-L000060](../DEPLOY_SNAPDEPLOY_AR.md#L60) | 60 | `""` | — |
+| [SRC-51D44BE378-L000061](../DEPLOY_SNAPDEPLOY_AR.md#L61) | 61 | `"## 4. اختبار Omarai من الهاتف"` | — |
+| [SRC-51D44BE378-L000062](../DEPLOY_SNAPDEPLOY_AR.md#L62) | 62 | `""` | — |
+| [SRC-51D44BE378-L000063](../DEPLOY_SNAPDEPLOY_AR.md#L63) | 63 | `"1. افتح الصفحة الرئيسية للرابط المستضاف."` | — |
+| [SRC-51D44BE378-L000064](../DEPLOY_SNAPDEPLOY_AR.md#L64) | 64 | ``"2. أدخل `OMARAI_ACCESS_TOKEN` في خانة الوصول الآمن داخل الواجهة واحفظه على هذا الجهاز فقط."`` | — |
+| [SRC-51D44BE378-L000065](../DEPLOY_SNAPDEPLOY_AR.md#L65) | 65 | `"3. شغّل زر **اختبار حي للإنترنت والنموذج**."` | — |
+| [SRC-51D44BE378-L000066](../DEPLOY_SNAPDEPLOY_AR.md#L66) | 66 | `"4. أرسل سؤالًا عامًا بالعربية، مثل: «ما عاصمة مصر؟ اذكر مصادر قابلة للفتح». تأكد من ظهور إجابة ومصادر حقيقية، وافتح مصدرًا واحدًا على الأقل."` | — |
+| [SRC-51D44BE378-L000067](../DEPLOY_SNAPDEPLOY_AR.md#L67) | 67 | `"5. جرّب الطلب برمز غير صحيح وتأكد من رفض الوصول. لا تختبر ببيانات شخصية أو بيانات عملاء."` | — |
+| [SRC-51D44BE378-L000068](../DEPLOY_SNAPDEPLOY_AR.md#L68) | 68 | `"6. لا تعتبر النشر مقبولًا إذا نجحت الصفحة فقط وفشل تشخيص البحث أو النموذج."` | — |
+| [SRC-51D44BE378-L000069](../DEPLOY_SNAPDEPLOY_AR.md#L69) | 69 | `""` | — |
+| [SRC-51D44BE378-L000070](../DEPLOY_SNAPDEPLOY_AR.md#L70) | 70 | `"## 5. اختبار القبول الآلي الاختياري"` | — |
+| [SRC-51D44BE378-L000071](../DEPLOY_SNAPDEPLOY_AR.md#L71) | 71 | `""` | — |
+| [SRC-51D44BE378-L000072](../DEPLOY_SNAPDEPLOY_AR.md#L72) | 72 | `"المستودع يحتوي على workflow يدوي باسم **Omarai hosted acceptance smoke** في GitHub Actions. بعد أن تكون الخدمة قد استيقظت وتعمل:"` | — |
+| [SRC-51D44BE378-L000073](../DEPLOY_SNAPDEPLOY_AR.md#L73) | 73 | `""` | — |
+| [SRC-51D44BE378-L000074](../DEPLOY_SNAPDEPLOY_AR.md#L74) | 74 | `"1. افتح إعدادات المستودع في GitHub ثم **Settings → Secrets and variables → Actions**."` | — |
+| [SRC-51D44BE378-L000075](../DEPLOY_SNAPDEPLOY_AR.md#L75) | 75 | ``"2. أضف Secret باسم `OMARAI_ACCESS_TOKEN`، والقيمة مطابقة تمامًا لرمز التطبيق في SnapDeploy."`` | — |
+| [SRC-51D44BE378-L000076](../DEPLOY_SNAPDEPLOY_AR.md#L76) | 76 | ``"3. أضف Secret باسم `OMARAI_BASE_URL`، والقيمة هي أصل HTTPS فقط، مثل `https://your-service.containers.snapdeploy.app`؛ لا تضف `/api` ولا الرمز إلى الرابط."`` | — |
+| [SRC-51D44BE378-L000077](../DEPLOY_SNAPDEPLOY_AR.md#L77) | 77 | `"4. افتح **Actions → Omarai hosted acceptance smoke → Run workflow**."` | — |
+| [SRC-51D44BE378-L000078](../DEPLOY_SNAPDEPLOY_AR.md#L78) | 78 | `"5. راجع نتيجة الفحص. الاختبار يتصل فعليًا بالبحث والنموذج ويمكن أن يستهلك حصة المزود. لا تشغله حتى تكون موافقًا على هذا الاستخدام. خدمات SnapDeploy النائمة قد لا تستيقظ عبر طلبات CI؛ افتح الرابط يدويًا أولًا وانتظر اكتمال الاستيقاظ."` | — |
+| [SRC-51D44BE378-L000079](../DEPLOY_SNAPDEPLOY_AR.md#L79) | 79 | `""` | — |
+| [SRC-51D44BE378-L000080](../DEPLOY_SNAPDEPLOY_AR.md#L80) | 80 | `"لا تنشر سجلًا يحتوي على أسرار. احذف أو احجب أي رموز من السجلات قبل مشاركتها."` | — |
+| [SRC-51D44BE378-L000081](../DEPLOY_SNAPDEPLOY_AR.md#L81) | 81 | `""` | — |
+| [SRC-51D44BE378-L000082](../DEPLOY_SNAPDEPLOY_AR.md#L82) | 82 | `"## القيود الحالية التي لا يحلها النشر"` | — |
+| [SRC-51D44BE378-L000083](../DEPLOY_SNAPDEPLOY_AR.md#L83) | 83 | `""` | — |
+| [SRC-51D44BE378-L000084](../DEPLOY_SNAPDEPLOY_AR.md#L84) | 84 | `"- Omarai يرسل سؤال المستخدم والسياق المختار ومقتطفات المصادر إلى مزود النموذج الخارجي عند استخدام التوليد؛ لا تُدخل كلمات مرور أو بيانات سرية."` | — |
+| [SRC-51D44BE378-L000085](../DEPLOY_SNAPDEPLOY_AR.md#L85) | 85 | `"- البحث العام قد يتعطل أو يتعرض للتحديد والحجب؛ لا يوجد ضمان أن كل سؤال سينجح أو أن كل منصة اجتماعية ستكون قابلة للبحث."` | — |
+| [SRC-51D44BE378-L000086](../DEPLOY_SNAPDEPLOY_AR.md#L86) | 86 | ``"- قاعدة العملاء SQLite موجودة محليًا، لكن نظام الملفات المجاني مؤقت. لا تعتمد على `/leads` لحفظ بيانات دائمة؛ قد تضيع البيانات بعد السكون أو إعادة التشغيل أو النشر."`` | — |
+| [SRC-51D44BE378-L000087](../DEPLOY_SNAPDEPLOY_AR.md#L87) | 87 | `"- رمز التطبيق مشترك وليس نظام مستخدمين متعددين. لا توزعه على أشخاص لا تثق بهم."` | — |
+| [SRC-51D44BE378-L000088](../DEPLOY_SNAPDEPLOY_AR.md#L88) | 88 | `"- لا تعني نتيجة Smoke Test ضمان تشغيل دائم أو تدقيق أمني كامل."` | — |
+| [SRC-51D44BE378-L000089](../DEPLOY_SNAPDEPLOY_AR.md#L89) | 89 | `""` | — |
+| [SRC-51D44BE378-L000090](../DEPLOY_SNAPDEPLOY_AR.md#L90) | 90 | `"## روابط مرجعية"` | — |
+| [SRC-51D44BE378-L000091](../DEPLOY_SNAPDEPLOY_AR.md#L91) | 91 | `""` | — |
+| [SRC-51D44BE378-L000092](../DEPLOY_SNAPDEPLOY_AR.md#L92) | 92 | `"- [SnapDeploy — النشر من GitHub](https://snapdeploy.dev/docs/github)"` | — |
+| [SRC-51D44BE378-L000093](../DEPLOY_SNAPDEPLOY_AR.md#L93) | 93 | `"- [SnapDeploy — متغيرات البيئة والأسرار](https://snapdeploy.dev/docs/environment-variables)"` | — |
+| [SRC-51D44BE378-L000094](../DEPLOY_SNAPDEPLOY_AR.md#L94) | 94 | `"- [SnapDeploy — الخطة المجانية والحدود](https://snapdeploy.dev/docs/free-tier)"` | — |
 ## وثائق وفهرسة
 
 ### FILE-E599346ABE — [docs/generate_index.py](../generate_index.py#L1)
@@ -16,6 +80,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000001](../generate_index.py#L1) | 1 | `"\"\"\"Generate Omarai's deterministic repository-wide file and source-symbol index.\"\"\""` | — |
+| [SRC-E599346ABE-L000002](../generate_index.py#L2) | 2 | `""` | — |
+| [SRC-E599346ABE-L000003](../generate_index.py#L3) | 3 | `"from __future__ import annotations"` | — |
+| [SRC-E599346ABE-L000004](../generate_index.py#L4) | 4 | `""` | — |
+| [SRC-E599346ABE-L000005](../generate_index.py#L5) | 5 | `"import argparse"` | — |
+| [SRC-E599346ABE-L000006](../generate_index.py#L6) | 6 | `"import ast"` | — |
+| [SRC-E599346ABE-L000007](../generate_index.py#L7) | 7 | `"import hashlib"` | — |
+| [SRC-E599346ABE-L000008](../generate_index.py#L8) | 8 | `"import json"` | — |
+| [SRC-E599346ABE-L000009](../generate_index.py#L9) | 9 | `"import os"` | — |
+| [SRC-E599346ABE-L000010](../generate_index.py#L10) | 10 | `"import posixpath"` | — |
+| [SRC-E599346ABE-L000011](../generate_index.py#L11) | 11 | `"import re"` | — |
+| [SRC-E599346ABE-L000012](../generate_index.py#L12) | 12 | `"import subprocess"` | — |
+| [SRC-E599346ABE-L000013](../generate_index.py#L13) | 13 | `"import sys"` | — |
 | [SRC-E599346ABE-L000014](../generate_index.py#L14) | 14 | `"import tempfile"` | — |
 | [SRC-E599346ABE-L000015](../generate_index.py#L15) | 15 | `"import tokenize"` | — |
 | [SRC-E599346ABE-L000016](../generate_index.py#L16) | 16 | `"from io import StringIO"` | — |
@@ -748,71 +825,3 @@
 | [SRC-E599346ABE-L000743](../generate_index.py#L743) | 743 | `"            continue"` | — |
 | [SRC-E599346ABE-L000744](../generate_index.py#L744) | 744 | `"        except (OSError, UnicodeError, LookupError, tokenize.TokenError) as exc:"` | — |
 | [SRC-E599346ABE-L000745](../generate_index.py#L745) | 745 | `"            failures.append(f\"{relative_file}: {type(exc).__name__}: {exc}\")"` | — |
-| [SRC-E599346ABE-L000746](../generate_index.py#L746) | 746 | `"            continue"` | — |
-| [SRC-E599346ABE-L000747](../generate_index.py#L747) | 747 | `""` | — |
-| [SRC-E599346ABE-L000748](../generate_index.py#L748) | 748 | `"        visitor = SymbolVisitor(relative_file)"` | — |
-| [SRC-E599346ABE-L000749](../generate_index.py#L749) | 749 | `"        visitor.visit(syntax_tree)"` | — |
-| [SRC-E599346ABE-L000750](../generate_index.py#L750) | 750 | `"        all_symbols.extend(visitor.symbols)"` | — |
-| [SRC-E599346ABE-L000751](../generate_index.py#L751) | 751 | `""` | — |
-| [SRC-E599346ABE-L000752](../generate_index.py#L752) | 752 | `"    if failures:"` | — |
-| [SRC-E599346ABE-L000753](../generate_index.py#L753) | 753 | `"        detail = \"\\n\".join(f\"- {failure}\" for failure in failures)"` | — |
-| [SRC-E599346ABE-L000754](../generate_index.py#L754) | 754 | `"        raise IndexGenerationError("` | — |
-| [SRC-E599346ABE-L000755](../generate_index.py#L755) | 755 | `"            \"تعذر إنشاء فهرس Python كامل؛ لم يُكتب MASTER_INDEX.md. \""` | — |
-| [SRC-E599346ABE-L000756](../generate_index.py#L756) | 756 | `"            \"أصلح الملفات التالية ثم أعد التشغيل:\\n\" + detail"` | — |
-| [SRC-E599346ABE-L000757](../generate_index.py#L757) | 757 | `"        )"` | — |
-| [SRC-E599346ABE-L000758](../generate_index.py#L758) | 758 | `""` | — |
-| [SRC-E599346ABE-L000759](../generate_index.py#L759) | 759 | `"    all_symbols.sort("` | — |
-| [SRC-E599346ABE-L000760](../generate_index.py#L760) | 760 | `"        key=lambda symbol: ("` | — |
-| [SRC-E599346ABE-L000761](../generate_index.py#L761) | 761 | `"            symbol.file.casefold(),"` | — |
-| [SRC-E599346ABE-L000762](../generate_index.py#L762) | 762 | `"            symbol.line,"` | — |
-| [SRC-E599346ABE-L000763](../generate_index.py#L763) | 763 | `"            symbol.name.casefold(),"` | — |
-| [SRC-E599346ABE-L000764](../generate_index.py#L764) | 764 | `"            symbol.kind,"` | — |
-| [SRC-E599346ABE-L000765](../generate_index.py#L765) | 765 | `"        )"` | — |
-| [SRC-E599346ABE-L000766](../generate_index.py#L766) | 766 | `"    )"` | — |
-| [SRC-E599346ABE-L000767](../generate_index.py#L767) | 767 | `"    return all_symbols, len(python_files)"` | — |
-| [SRC-E599346ABE-L000768](../generate_index.py#L768) | 768 | `""` | — |
-| [SRC-E599346ABE-L000769](../generate_index.py#L769) | 769 | `""` | — |
-| [SRC-E599346ABE-L000770](../generate_index.py#L770) | 770 | `"def _line_at(source: str, offset: int, base_line: int = 1) -> int:"` | — |
-| [SRC-E599346ABE-L000771](../generate_index.py#L771) | 771 | `"    \"\"\"Return a 1-based line number for a match in the supplied source fragment.\"\"\""` | — |
-| [SRC-E599346ABE-L000772](../generate_index.py#L772) | 772 | `"    return base_line + source.count(\"\\n\", 0, offset)"` | — |
-| [SRC-E599346ABE-L000773](../generate_index.py#L773) | 773 | `""` | — |
-| [SRC-E599346ABE-L000774](../generate_index.py#L774) | 774 | `""` | — |
-| [SRC-E599346ABE-L000775](../generate_index.py#L775) | 775 | `"def _add_marker("` | — |
-| [SRC-E599346ABE-L000776](../generate_index.py#L776) | 776 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000777](../generate_index.py#L777) | 777 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000778](../generate_index.py#L778) | 778 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000779](../generate_index.py#L779) | 779 | `"    name: str,"` | — |
-| [SRC-E599346ABE-L000780](../generate_index.py#L780) | 780 | `"    kind: str,"` | — |
-| [SRC-E599346ABE-L000781](../generate_index.py#L781) | 781 | `"    line: int,"` | — |
-| [SRC-E599346ABE-L000782](../generate_index.py#L782) | 782 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000783](../generate_index.py#L783) | 783 | `"    \"\"\"Add the first occurrence of a symbol category within one file.\"\"\""` | — |
-| [SRC-E599346ABE-L000784](../generate_index.py#L784) | 784 | `"    clean_name = \" \".join(name.strip().split())"` | — |
-| [SRC-E599346ABE-L000785](../generate_index.py#L785) | 785 | `"    if not clean_name:"` | — |
-| [SRC-E599346ABE-L000786](../generate_index.py#L786) | 786 | `"        return"` | — |
-| [SRC-E599346ABE-L000787](../generate_index.py#L787) | 787 | `"    key = (relative_file, clean_name, kind)"` | — |
-| [SRC-E599346ABE-L000788](../generate_index.py#L788) | 788 | `"    if key in seen:"` | — |
-| [SRC-E599346ABE-L000789](../generate_index.py#L789) | 789 | `"        return"` | — |
-| [SRC-E599346ABE-L000790](../generate_index.py#L790) | 790 | `"    seen.add(key)"` | — |
-| [SRC-E599346ABE-L000791](../generate_index.py#L791) | 791 | `"    markers.append("` | — |
-| [SRC-E599346ABE-L000792](../generate_index.py#L792) | 792 | `"        IndexedMarker("` | — |
-| [SRC-E599346ABE-L000793](../generate_index.py#L793) | 793 | `"            file=relative_file,"` | — |
-| [SRC-E599346ABE-L000794](../generate_index.py#L794) | 794 | `"            name=clean_name,"` | — |
-| [SRC-E599346ABE-L000795](../generate_index.py#L795) | 795 | `"            kind=kind,"` | — |
-| [SRC-E599346ABE-L000796](../generate_index.py#L796) | 796 | `"            line=max(line, 1),"` | — |
-| [SRC-E599346ABE-L000797](../generate_index.py#L797) | 797 | `"        )"` | — |
-| [SRC-E599346ABE-L000798](../generate_index.py#L798) | 798 | `"    )"` | — |
-| [SRC-E599346ABE-L000799](../generate_index.py#L799) | 799 | `""` | — |
-| [SRC-E599346ABE-L000800](../generate_index.py#L800) | 800 | `""` | — |
-| [SRC-E599346ABE-L000801](../generate_index.py#L801) | 801 | `"def _scan_javascript("` | — |
-| [SRC-E599346ABE-L000802](../generate_index.py#L802) | 802 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000803](../generate_index.py#L803) | 803 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000804](../generate_index.py#L804) | 804 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000805](../generate_index.py#L805) | 805 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000806](../generate_index.py#L806) | 806 | `"    base_line: int = 1,"` | — |
-| [SRC-E599346ABE-L000807](../generate_index.py#L807) | 807 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000808](../generate_index.py#L808) | 808 | `"    \"\"\"Extract navigational JS/TS declarations using bounded regular-expression heuristics.\"\"\""` | — |
-| [SRC-E599346ABE-L000809](../generate_index.py#L809) | 809 | `"    for pattern, kind in ("` | — |
-| [SRC-E599346ABE-L000810](../generate_index.py#L810) | 810 | `"        (JS_FUNCTION_RE, \"دالة JavaScript/TypeScript\"),"` | — |
-| [SRC-E599346ABE-L000811](../generate_index.py#L811) | 811 | `"        (JS_CLASS_RE, \"كلاس JavaScript/TypeScript\"),"` | — |
-| [SRC-E599346ABE-L000812](../generate_index.py#L812) | 812 | `"    ):"` | — |
-| [SRC-E599346ABE-L000813](../generate_index.py#L813) | 813 | `"        for match in pattern.finditer(source):"` | — |

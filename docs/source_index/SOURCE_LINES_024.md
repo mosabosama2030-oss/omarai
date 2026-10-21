@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000528 إلى SRC-6BCB799CEC-L000257
+- النطاق: SRC-3451CC474D-L000460 إلى SRC-6BCB799CEC-L000189
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,74 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000460](../../tests/test_api.py#L460) | 460 | `"            \"sources\": [],"` | — |
+| [SRC-3451CC474D-L000461](../../tests/test_api.py#L461) | 461 | `"            \"used_language_model\": False,"` | — |
+| [SRC-3451CC474D-L000462](../../tests/test_api.py#L462) | 462 | `"            \"used_web_search\": False,"` | — |
+| [SRC-3451CC474D-L000463](../../tests/test_api.py#L463) | 463 | `"            \"search_attempted\": False,"` | — |
+| [SRC-3451CC474D-L000464](../../tests/test_api.py#L464) | 464 | `"            \"used_social_search\": False,"` | — |
+| [SRC-3451CC474D-L000465](../../tests/test_api.py#L465) | 465 | `"            \"warnings\": [],"` | — |
+| [SRC-3451CC474D-L000466](../../tests/test_api.py#L466) | 466 | `"            \"kind\": \"web_fallback\","` | — |
+| [SRC-3451CC474D-L000467](../../tests/test_api.py#L467) | 467 | `"        }"` | — |
+| [SRC-3451CC474D-L000468](../../tests/test_api.py#L468) | 468 | `""` | — |
+| [SRC-3451CC474D-L000469](../../tests/test_api.py#L469) | 469 | `"    monkeypatch.setattr(WebAgent, \"answer\", slow_answer)"` | — |
+| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `""` | — |
+| [SRC-3451CC474D-L000471](../../tests/test_api.py#L471) | 471 | `"    def first_request():"` | — |
+| [SRC-3451CC474D-L000472](../../tests/test_api.py#L472) | 472 | `"        first_result[\"response\"] = request_json("` | — |
+| [SRC-3451CC474D-L000473](../../tests/test_api.py#L473) | 473 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الأول\"}"` | — |
+| [SRC-3451CC474D-L000474](../../tests/test_api.py#L474) | 474 | `"        )"` | — |
+| [SRC-3451CC474D-L000475](../../tests/test_api.py#L475) | 475 | `""` | — |
+| [SRC-3451CC474D-L000476](../../tests/test_api.py#L476) | 476 | `"    worker = threading.Thread(target=first_request, daemon=True)"` | — |
+| [SRC-3451CC474D-L000477](../../tests/test_api.py#L477) | 477 | `"    worker.start()"` | — |
+| [SRC-3451CC474D-L000478](../../tests/test_api.py#L478) | 478 | `"    try:"` | — |
+| [SRC-3451CC474D-L000479](../../tests/test_api.py#L479) | 479 | `"        assert entered.wait(timeout=1), \"first request did not acquire the research slot\""` | — |
+| [SRC-3451CC474D-L000480](../../tests/test_api.py#L480) | 480 | `"        status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000481](../../tests/test_api.py#L481) | 481 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الثاني\"}"` | — |
+| [SRC-3451CC474D-L000482](../../tests/test_api.py#L482) | 482 | `"        )"` | — |
+| [SRC-3451CC474D-L000483](../../tests/test_api.py#L483) | 483 | `"        assert status == 503"` | — |
+| [SRC-3451CC474D-L000484](../../tests/test_api.py#L484) | 484 | `"        assert payload[\"retry_after_seconds\"] == 5"` | — |
+| [SRC-3451CC474D-L000485](../../tests/test_api.py#L485) | 485 | `"        assert \"مشغولة\" in payload[\"error\"]"` | — |
+| [SRC-3451CC474D-L000486](../../tests/test_api.py#L486) | 486 | `"    finally:"` | — |
+| [SRC-3451CC474D-L000487](../../tests/test_api.py#L487) | 487 | `"        release.set()"` | — |
+| [SRC-3451CC474D-L000488](../../tests/test_api.py#L488) | 488 | `"        worker.join(timeout=3)"` | — |
+| [SRC-3451CC474D-L000489](../../tests/test_api.py#L489) | 489 | `""` | — |
+| [SRC-3451CC474D-L000490](../../tests/test_api.py#L490) | 490 | `"    assert not worker.is_alive()"` | — |
+| [SRC-3451CC474D-L000491](../../tests/test_api.py#L491) | 491 | `"    assert first_result[\"response\"][0] == 200"` | — |
+| [SRC-3451CC474D-L000492](../../tests/test_api.py#L492) | 492 | `""` | — |
+| [SRC-3451CC474D-L000493](../../tests/test_api.py#L493) | 493 | `""` | — |
+| [SRC-3451CC474D-L000494](../../tests/test_api.py#L494) | 494 | `"def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):"` | — |
+| [SRC-3451CC474D-L000495](../../tests/test_api.py#L495) | 495 | `"    from api.omarai import _configured_agent_concurrency_limit"` | — |
+| [SRC-3451CC474D-L000496](../../tests/test_api.py#L496) | 496 | `""` | — |
+| [SRC-3451CC474D-L000497](../../tests/test_api.py#L497) | 497 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"99\")"` | — |
+| [SRC-3451CC474D-L000498](../../tests/test_api.py#L498) | 498 | `"    assert _configured_agent_concurrency_limit() == 8"` | — |
+| [SRC-3451CC474D-L000499](../../tests/test_api.py#L499) | 499 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"invalid\")"` | — |
+| [SRC-3451CC474D-L000500](../../tests/test_api.py#L500) | 500 | `"    assert _configured_agent_concurrency_limit() == 4"` | — |
+| [SRC-3451CC474D-L000501](../../tests/test_api.py#L501) | 501 | `""` | — |
+| [SRC-3451CC474D-L000502](../../tests/test_api.py#L502) | 502 | `""` | — |
+| [SRC-3451CC474D-L000503](../../tests/test_api.py#L503) | 503 | `"def test_api_rejects_oversized_request_body(local_api):"` | — |
+| [SRC-3451CC474D-L000504](../../tests/test_api.py#L504) | 504 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000505](../../tests/test_api.py#L505) | 505 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L000506](../../tests/test_api.py#L506) | 506 | `"        \"/api/analyze\","` | — |
+| [SRC-3451CC474D-L000507](../../tests/test_api.py#L507) | 507 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000508](../../tests/test_api.py#L508) | 508 | `"        payload={\"text\": \"x\" * 200_001},"` | — |
+| [SRC-3451CC474D-L000509](../../tests/test_api.py#L509) | 509 | `"    )"` | — |
+| [SRC-3451CC474D-L000510](../../tests/test_api.py#L510) | 510 | `""` | — |
+| [SRC-3451CC474D-L000511](../../tests/test_api.py#L511) | 511 | `"    assert status == 413"` | — |
+| [SRC-3451CC474D-L000512](../../tests/test_api.py#L512) | 512 | `"    assert payload[\"error\"] == \"request too large\""` | — |
+| [SRC-3451CC474D-L000513](../../tests/test_api.py#L513) | 513 | `""` | — |
+| [SRC-3451CC474D-L000514](../../tests/test_api.py#L514) | 514 | `""` | — |
+| [SRC-3451CC474D-L000515](../../tests/test_api.py#L515) | 515 | `"def test_api_rejects_malformed_content_length(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000516](../../tests/test_api.py#L516) | 516 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000517](../../tests/test_api.py#L517) | 517 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000518](../../tests/test_api.py#L518) | 518 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L000519](../../tests/test_api.py#L519) | 519 | `"    with socket.create_connection((host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2) as client:"` | — |
+| [SRC-3451CC474D-L000520](../../tests/test_api.py#L520) | 520 | `"        client.sendall("` | — |
+| [SRC-3451CC474D-L000521](../../tests/test_api.py#L521) | 521 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
+| [SRC-3451CC474D-L000522](../../tests/test_api.py#L522) | 522 | `"            b\"Host: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L000523](../../tests/test_api.py#L523) | 523 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L000524](../../tests/test_api.py#L524) | 524 | `"            b\"Content-Length: invalid\\r\\n\""` | — |
+| [SRC-3451CC474D-L000525](../../tests/test_api.py#L525) | 525 | `"            b\"Connection: close\\r\\n\\r\\n\""` | — |
+| [SRC-3451CC474D-L000526](../../tests/test_api.py#L526) | 526 | `"        )"` | — |
+| [SRC-3451CC474D-L000527](../../tests/test_api.py#L527) | 527 | `"        response = b\"\""` | — |
 | [SRC-3451CC474D-L000528](../../tests/test_api.py#L528) | 528 | `"        while True:"` | — |
 | [SRC-3451CC474D-L000529](../../tests/test_api.py#L529) | 529 | `"            chunk = client.recv(4096)"` | — |
 | [SRC-3451CC474D-L000530](../../tests/test_api.py#L530) | 530 | `"            if not chunk:"` | — |
@@ -775,71 +843,3 @@
 | [SRC-6BCB799CEC-L000187](../../tests/test_evidence_provenance.py#L187) | 187 | `"            self.headers = {\"content-type\": \"text/plain; charset=utf-8\"}"` | — |
 | [SRC-6BCB799CEC-L000188](../../tests/test_evidence_provenance.py#L188) | 188 | `""` | — |
 | [SRC-6BCB799CEC-L000189](../../tests/test_evidence_provenance.py#L189) | 189 | `"        def iter_bytes(self):"` | — |
-| [SRC-6BCB799CEC-L000190](../../tests/test_evidence_provenance.py#L190) | 190 | `"            yield \"نص عام\".encode()"` | — |
-| [SRC-6BCB799CEC-L000191](../../tests/test_evidence_provenance.py#L191) | 191 | `""` | — |
-| [SRC-6BCB799CEC-L000192](../../tests/test_evidence_provenance.py#L192) | 192 | `"        def __enter__(self):"` | — |
-| [SRC-6BCB799CEC-L000193](../../tests/test_evidence_provenance.py#L193) | 193 | `"            return self"` | — |
-| [SRC-6BCB799CEC-L000194](../../tests/test_evidence_provenance.py#L194) | 194 | `""` | — |
-| [SRC-6BCB799CEC-L000195](../../tests/test_evidence_provenance.py#L195) | 195 | `"        def __exit__(self, *args):"` | — |
-| [SRC-6BCB799CEC-L000196](../../tests/test_evidence_provenance.py#L196) | 196 | `"            return False"` | — |
-| [SRC-6BCB799CEC-L000197](../../tests/test_evidence_provenance.py#L197) | 197 | `""` | — |
-| [SRC-6BCB799CEC-L000198](../../tests/test_evidence_provenance.py#L198) | 198 | `"    class FakeClient:"` | — |
-| [SRC-6BCB799CEC-L000199](../../tests/test_evidence_provenance.py#L199) | 199 | `"        def __init__(self, *args, **kwargs):"` | — |
-| [SRC-6BCB799CEC-L000200](../../tests/test_evidence_provenance.py#L200) | 200 | `"            assert kwargs.get(\"verify\") is True"` | — |
-| [SRC-6BCB799CEC-L000201](../../tests/test_evidence_provenance.py#L201) | 201 | `"            assert kwargs.get(\"follow_redirects\") is False"` | — |
-| [SRC-6BCB799CEC-L000202](../../tests/test_evidence_provenance.py#L202) | 202 | `"            # Do not allow HTTP_PROXY/HTTPS_PROXY to bypass the pinned IP."` | — |
-| [SRC-6BCB799CEC-L000203](../../tests/test_evidence_provenance.py#L203) | 203 | `"            assert kwargs.get(\"trust_env\") is False"` | — |
-| [SRC-6BCB799CEC-L000204](../../tests/test_evidence_provenance.py#L204) | 204 | `""` | — |
-| [SRC-6BCB799CEC-L000205](../../tests/test_evidence_provenance.py#L205) | 205 | `"        def __enter__(self):"` | — |
-| [SRC-6BCB799CEC-L000206](../../tests/test_evidence_provenance.py#L206) | 206 | `"            return self"` | — |
-| [SRC-6BCB799CEC-L000207](../../tests/test_evidence_provenance.py#L207) | 207 | `""` | — |
-| [SRC-6BCB799CEC-L000208](../../tests/test_evidence_provenance.py#L208) | 208 | `"        def __exit__(self, *args):"` | — |
-| [SRC-6BCB799CEC-L000209](../../tests/test_evidence_provenance.py#L209) | 209 | `"            return False"` | — |
-| [SRC-6BCB799CEC-L000210](../../tests/test_evidence_provenance.py#L210) | 210 | `""` | — |
-| [SRC-6BCB799CEC-L000211](../../tests/test_evidence_provenance.py#L211) | 211 | `"        def stream(self, method, url, headers=None, extensions=None):"` | — |
-| [SRC-6BCB799CEC-L000212](../../tests/test_evidence_provenance.py#L212) | 212 | `"            seen[\"method\"] = method"` | — |
-| [SRC-6BCB799CEC-L000213](../../tests/test_evidence_provenance.py#L213) | 213 | `"            seen[\"url\"] = url"` | — |
-| [SRC-6BCB799CEC-L000214](../../tests/test_evidence_provenance.py#L214) | 214 | `"            seen[\"headers\"] = headers"` | — |
-| [SRC-6BCB799CEC-L000215](../../tests/test_evidence_provenance.py#L215) | 215 | `"            seen[\"extensions\"] = extensions"` | — |
-| [SRC-6BCB799CEC-L000216](../../tests/test_evidence_provenance.py#L216) | 216 | `"            return FakeResponse()"` | — |
-| [SRC-6BCB799CEC-L000217](../../tests/test_evidence_provenance.py#L217) | 217 | `""` | — |
-| [SRC-6BCB799CEC-L000218](../../tests/test_evidence_provenance.py#L218) | 218 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
-| [SRC-6BCB799CEC-L000219](../../tests/test_evidence_provenance.py#L219) | 219 | `"    monkeypatch.setattr(\"httpx.Client\", FakeClient)"` | — |
-| [SRC-6BCB799CEC-L000220](../../tests/test_evidence_provenance.py#L220) | 220 | `"    title, text = WebAgent()._fetch_page(\"https://example.com/article\")"` | — |
-| [SRC-6BCB799CEC-L000221](../../tests/test_evidence_provenance.py#L221) | 221 | `"    assert title == \"\""` | — |
-| [SRC-6BCB799CEC-L000222](../../tests/test_evidence_provenance.py#L222) | 222 | `"    assert \"نص عام\" in text"` | — |
-| [SRC-6BCB799CEC-L000223](../../tests/test_evidence_provenance.py#L223) | 223 | `"    assert seen[\"url\"].startswith(\"https://1.1.1.1/\")"` | — |
-| [SRC-6BCB799CEC-L000224](../../tests/test_evidence_provenance.py#L224) | 224 | `"    assert seen[\"headers\"][\"Host\"] == \"example.com\""` | — |
-| [SRC-6BCB799CEC-L000225](../../tests/test_evidence_provenance.py#L225) | 225 | `"    assert seen[\"extensions\"][\"sni_hostname\"] == \"example.com\""` | — |
-| [SRC-6BCB799CEC-L000226](../../tests/test_evidence_provenance.py#L226) | 226 | `""` | — |
-| [SRC-6BCB799CEC-L000227](../../tests/test_evidence_provenance.py#L227) | 227 | `"def test_mixed_public_and_private_dns_answers_block_page_fetch(monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000228](../../tests/test_evidence_provenance.py#L228) | 228 | `"    \"\"\"A hostname is rejected when even one DNS answer is non-global.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000229](../../tests/test_evidence_provenance.py#L229) | 229 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
-| [SRC-6BCB799CEC-L000230](../../tests/test_evidence_provenance.py#L230) | 230 | `"        return _addrinfo(\"1.1.1.1\") + _addrinfo(\"127.0.0.1\")"` | — |
-| [SRC-6BCB799CEC-L000231](../../tests/test_evidence_provenance.py#L231) | 231 | `""` | — |
-| [SRC-6BCB799CEC-L000232](../../tests/test_evidence_provenance.py#L232) | 232 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
-| [SRC-6BCB799CEC-L000233](../../tests/test_evidence_provenance.py#L233) | 233 | `"    assert _public_ip_literals(\"example.com\") is None"` | — |
-| [SRC-6BCB799CEC-L000234](../../tests/test_evidence_provenance.py#L234) | 234 | `""` | — |
-| [SRC-6BCB799CEC-L000235](../../tests/test_evidence_provenance.py#L235) | 235 | `""` | — |
-| [SRC-6BCB799CEC-L000236](../../tests/test_evidence_provenance.py#L236) | 236 | `"def test_private_redirect_target_is_rejected_before_a_second_connection(monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000237](../../tests/test_evidence_provenance.py#L237) | 237 | `"    \"\"\"Every redirect is validated independently, even after a pinned public request.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000238](../../tests/test_evidence_provenance.py#L238) | 238 | `"    resolutions = []"` | — |
-| [SRC-6BCB799CEC-L000239](../../tests/test_evidence_provenance.py#L239) | 239 | `"    connections = []"` | — |
-| [SRC-6BCB799CEC-L000240](../../tests/test_evidence_provenance.py#L240) | 240 | `""` | — |
-| [SRC-6BCB799CEC-L000241](../../tests/test_evidence_provenance.py#L241) | 241 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
-| [SRC-6BCB799CEC-L000242](../../tests/test_evidence_provenance.py#L242) | 242 | `"        resolutions.append(host)"` | — |
-| [SRC-6BCB799CEC-L000243](../../tests/test_evidence_provenance.py#L243) | 243 | `"        assert host == \"example.com\""` | — |
-| [SRC-6BCB799CEC-L000244](../../tests/test_evidence_provenance.py#L244) | 244 | `"        return _addrinfo(\"1.1.1.1\")"` | — |
-| [SRC-6BCB799CEC-L000245](../../tests/test_evidence_provenance.py#L245) | 245 | `""` | — |
-| [SRC-6BCB799CEC-L000246](../../tests/test_evidence_provenance.py#L246) | 246 | `"    class FakeResponse:"` | — |
-| [SRC-6BCB799CEC-L000247](../../tests/test_evidence_provenance.py#L247) | 247 | `"        status_code = 302"` | — |
-| [SRC-6BCB799CEC-L000248](../../tests/test_evidence_provenance.py#L248) | 248 | `""` | — |
-| [SRC-6BCB799CEC-L000249](../../tests/test_evidence_provenance.py#L249) | 249 | `"        def __init__(self):"` | — |
-| [SRC-6BCB799CEC-L000250](../../tests/test_evidence_provenance.py#L250) | 250 | `"            self.headers = {\"location\": \"http://127.0.0.1/latest/meta-data/\"}"` | — |
-| [SRC-6BCB799CEC-L000251](../../tests/test_evidence_provenance.py#L251) | 251 | `""` | — |
-| [SRC-6BCB799CEC-L000252](../../tests/test_evidence_provenance.py#L252) | 252 | `"        def __enter__(self):"` | — |
-| [SRC-6BCB799CEC-L000253](../../tests/test_evidence_provenance.py#L253) | 253 | `"            return self"` | — |
-| [SRC-6BCB799CEC-L000254](../../tests/test_evidence_provenance.py#L254) | 254 | `""` | — |
-| [SRC-6BCB799CEC-L000255](../../tests/test_evidence_provenance.py#L255) | 255 | `"        def __exit__(self, *args):"` | — |
-| [SRC-6BCB799CEC-L000256](../../tests/test_evidence_provenance.py#L256) | 256 | `"            return False"` | — |
-| [SRC-6BCB799CEC-L000257](../../tests/test_evidence_provenance.py#L257) | 257 | `""` | — |

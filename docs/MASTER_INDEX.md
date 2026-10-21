@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **74**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **965**
-- تعريفات Python موثقة بوجود Docstring: **190**
-- تعريفات Python بلا Docstring: **582**
+- تعريفات Python المفهرسة: **967**
+- تعريفات Python موثقة بوجود Docstring: **191**
+- تعريفات Python بلا Docstring: **583**
 - تعريفات لا ينطبق عليها Docstring: **193**
-- الرموز الساكنة الإضافية: **1419**
-- الأسطر النصية المفهرسة حرفيًا: **25320**
+- الرموز الساكنة الإضافية: **1422**
+- الأسطر النصية المفهرسة حرفيًا: **25390**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -36,14 +36,14 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 10096 | 71 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
-| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 17701 | 376 | جرد الملف + AST Python |
+| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 17790 | 376 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 16450 | 391 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 27751 | 660 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 255302 | 4872 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
-| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 29256 | 610 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31784 | 678 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
 | FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 583 | 19 | جرد الملف + أسماء إعدادات عامة إن وجدت |
@@ -101,7 +101,7 @@
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 106227 | 2737 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 53774 | 394 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16299 | 44 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -300,56 +300,58 @@
 | [agents/web_agent.py](../agents/web_agent.py#L3315) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 3315 | [SRC-1AE03B9EC3-L003315](../agents/web_agent.py#L3315) |
 | [agents/web_agent.py](../agents/web_agent.py#L3536) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 3536 | [SRC-1AE03B9EC3-L003536](../agents/web_agent.py#L3536) |
 | [agents/web_agent.py](../agents/web_agent.py#L3684) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 3684 | [SRC-1AE03B9EC3-L003684](../agents/web_agent.py#L3684) |
-| [api/omarai.py](../api/omarai.py#L19) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-EEF2E6447C-L000019](../api/omarai.py#L19) |
-| [api/omarai.py](../api/omarai.py#L20) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-EEF2E6447C-L000020](../api/omarai.py#L20) |
-| [api/omarai.py](../api/omarai.py#L21) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-EEF2E6447C-L000021](../api/omarai.py#L21) |
-| [api/omarai.py](../api/omarai.py#L22) | متغير/ثابت Python | MAX_REQUEST_BODY_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-EEF2E6447C-L000022](../api/omarai.py#L22) |
-| [api/omarai.py](../api/omarai.py#L24) | متغير/ثابت Python | REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
-| [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
-| [api/omarai.py](../api/omarai.py#L26) | متغير/ثابت Python | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
-| [api/omarai.py](../api/omarai.py#L28) | متغير/ثابت Python | REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
-| [api/omarai.py](../api/omarai.py#L29) | متغير/ثابت Python | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
-| [api/omarai.py](../api/omarai.py#L30) | متغير/ثابت Python | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
-| [api/omarai.py](../api/omarai.py#L31) | متغير/ثابت Python | REQUEST_BODY_READ_CHUNK_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 31 | [SRC-EEF2E6447C-L000031](../api/omarai.py#L31) |
-| [api/omarai.py](../api/omarai.py#L35) | دالة | _lead_store_from_environment | Use an operator-configured database path when a persistent volume is available. | موثق | 35 | [SRC-EEF2E6447C-L000035](../api/omarai.py#L35) |
-| [api/omarai.py](../api/omarai.py#L41) | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 41 | [SRC-EEF2E6447C-L000041](../api/omarai.py#L41) |
-| [api/omarai.py](../api/omarai.py#L50) | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 50 | [SRC-EEF2E6447C-L000050](../api/omarai.py#L50) |
-| [api/omarai.py](../api/omarai.py#L55) | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 55 | [SRC-EEF2E6447C-L000055](../api/omarai.py#L55) |
-| [api/omarai.py](../api/omarai.py#L106) | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 106 | [SRC-EEF2E6447C-L000106](../api/omarai.py#L106) |
-| [api/omarai.py](../api/omarai.py#L119) | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 119 | [SRC-EEF2E6447C-L000119](../api/omarai.py#L119) |
-| [api/omarai.py](../api/omarai.py#L124) | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 124 | [SRC-EEF2E6447C-L000124](../api/omarai.py#L124) |
-| [api/omarai.py](../api/omarai.py#L133) | متغير/ثابت Python | BUILD_SHA_FILE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 133 | [SRC-EEF2E6447C-L000133](../api/omarai.py#L133) |
-| [api/omarai.py](../api/omarai.py#L134) | متغير/ثابت Python | _PLATFORM_BUILD_SHA_ENVIRONMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 134 | [SRC-EEF2E6447C-L000134](../api/omarai.py#L134) |
-| [api/omarai.py](../api/omarai.py#L140) | دالة | _valid_build_sha | لا توجد Docstring. | ناقص | 140 | [SRC-EEF2E6447C-L000140](../api/omarai.py#L140) |
-| [api/omarai.py](../api/omarai.py#L145) | دالة | _build_identity | Prefer immutable image metadata, then documented hosting-provided Git SHAs. | موثق | 145 | [SRC-EEF2E6447C-L000145](../api/omarai.py#L145) |
-| [api/omarai.py](../api/omarai.py#L161) | دالة | _build_sha | Return a validated source SHA, or 'unknown' when no trusted build evidence exists. | موثق | 161 | [SRC-EEF2E6447C-L000161](../api/omarai.py#L161) |
-| [api/omarai.py](../api/omarai.py#L166) | كلاس | Handler | لا توجد Docstring. | ناقص | 166 | [SRC-EEF2E6447C-L000166](../api/omarai.py#L166) |
-| [api/omarai.py](../api/omarai.py#L167) | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 167 | [SRC-EEF2E6447C-L000167](../api/omarai.py#L167) |
-| [api/omarai.py](../api/omarai.py#L176) | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 176 | [SRC-EEF2E6447C-L000176](../api/omarai.py#L176) |
-| [api/omarai.py](../api/omarai.py#L194) | متغير/ثابت Python | Handler.store | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 194 | [SRC-EEF2E6447C-L000194](../api/omarai.py#L194) |
-| [api/omarai.py](../api/omarai.py#L195) | متغير/ثابت Python | Handler._rate_lock | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 195 | [SRC-EEF2E6447C-L000195](../api/omarai.py#L195) |
-| [api/omarai.py](../api/omarai.py#L196) | متغير/ثابت Python | Handler._request_times | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 196 | [SRC-EEF2E6447C-L000196](../api/omarai.py#L196) |
-| [api/omarai.py](../api/omarai.py#L197) | متغير/ثابت Python | Handler._rate_last_cleanup | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 197 | [SRC-EEF2E6447C-L000197](../api/omarai.py#L197) |
-| [api/omarai.py](../api/omarai.py#L198) | متغير/ثابت Python | Handler.RATE_LIMIT_REQUESTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 198 | [SRC-EEF2E6447C-L000198](../api/omarai.py#L198) |
-| [api/omarai.py](../api/omarai.py#L199) | متغير/ثابت Python | Handler.RATE_LIMIT_WINDOW_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 199 | [SRC-EEF2E6447C-L000199](../api/omarai.py#L199) |
-| [api/omarai.py](../api/omarai.py#L200) | متغير/ثابت Python | Handler.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 200 | [SRC-EEF2E6447C-L000200](../api/omarai.py#L200) |
-| [api/omarai.py](../api/omarai.py#L201) | متغير/ثابت Python | Handler.AGENT_CONCURRENCY_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 201 | [SRC-EEF2E6447C-L000201](../api/omarai.py#L201) |
-| [api/omarai.py](../api/omarai.py#L202) | متغير/ثابت Python | Handler._agent_semaphore | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 202 | [SRC-EEF2E6447C-L000202](../api/omarai.py#L202) |
-| [api/omarai.py](../api/omarai.py#L204) | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 204 | [SRC-EEF2E6447C-L000204](../api/omarai.py#L204) |
-| [api/omarai.py](../api/omarai.py#L221) | دالة | Handler._authorized | لا توجد Docstring. | ناقص | 221 | [SRC-EEF2E6447C-L000221](../api/omarai.py#L221) |
-| [api/omarai.py](../api/omarai.py#L230) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 230 | [SRC-EEF2E6447C-L000230](../api/omarai.py#L230) |
-| [api/omarai.py](../api/omarai.py#L262) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 262 | [SRC-EEF2E6447C-L000262](../api/omarai.py#L262) |
-| [api/omarai.py](../api/omarai.py#L265) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 265 | [SRC-EEF2E6447C-L000265](../api/omarai.py#L265) |
-| [api/omarai.py](../api/omarai.py#L281) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 281 | [SRC-EEF2E6447C-L000281](../api/omarai.py#L281) |
-| [api/omarai.py](../api/omarai.py#L306) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 306 | [SRC-EEF2E6447C-L000306](../api/omarai.py#L306) |
-| [api/omarai.py](../api/omarai.py#L377) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 377 | [SRC-EEF2E6447C-L000377](../api/omarai.py#L377) |
-| [api/omarai.py](../api/omarai.py#L391) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 391 | [SRC-EEF2E6447C-L000391](../api/omarai.py#L391) |
-| [api/omarai.py](../api/omarai.py#L404) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 404 | [SRC-EEF2E6447C-L000404](../api/omarai.py#L404) |
-| [api/omarai.py](../api/omarai.py#L445) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 445 | [SRC-EEF2E6447C-L000445](../api/omarai.py#L445) |
-| [api/omarai.py](../api/omarai.py#L534) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 534 | [SRC-EEF2E6447C-L000534](../api/omarai.py#L534) |
-| [api/omarai.py](../api/omarai.py#L547) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 547 | [SRC-EEF2E6447C-L000547](../api/omarai.py#L547) |
-| [api/omarai.py](../api/omarai.py#L551) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 551 | [SRC-EEF2E6447C-L000551](../api/omarai.py#L551) |
-| [api/omarai.py](../api/omarai.py#L587) | دالة | serve | لا توجد Docstring. | ناقص | 587 | [SRC-EEF2E6447C-L000587](../api/omarai.py#L587) |
+| [api/omarai.py](../api/omarai.py#L22) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-EEF2E6447C-L000022](../api/omarai.py#L22) |
+| [api/omarai.py](../api/omarai.py#L23) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-EEF2E6447C-L000023](../api/omarai.py#L23) |
+| [api/omarai.py](../api/omarai.py#L24) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
+| [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | MAX_REQUEST_BODY_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
+| [api/omarai.py](../api/omarai.py#L28) | دالة | _csp_hash_source | لا توجد Docstring. | ناقص | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
+| [api/omarai.py](../api/omarai.py#L33) | دالة | _content_security_policy | Allow only known inline blocks/attributes from the static first-party HTML. | موثق | 33 | [SRC-EEF2E6447C-L000033](../api/omarai.py#L33) |
+| [api/omarai.py](../api/omarai.py#L97) | متغير/ثابت Python | REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 97 | [SRC-EEF2E6447C-L000097](../api/omarai.py#L97) |
+| [api/omarai.py](../api/omarai.py#L98) | متغير/ثابت Python | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 98 | [SRC-EEF2E6447C-L000098](../api/omarai.py#L98) |
+| [api/omarai.py](../api/omarai.py#L99) | متغير/ثابت Python | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 99 | [SRC-EEF2E6447C-L000099](../api/omarai.py#L99) |
+| [api/omarai.py](../api/omarai.py#L101) | متغير/ثابت Python | REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 101 | [SRC-EEF2E6447C-L000101](../api/omarai.py#L101) |
+| [api/omarai.py](../api/omarai.py#L102) | متغير/ثابت Python | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 102 | [SRC-EEF2E6447C-L000102](../api/omarai.py#L102) |
+| [api/omarai.py](../api/omarai.py#L103) | متغير/ثابت Python | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
+| [api/omarai.py](../api/omarai.py#L104) | متغير/ثابت Python | REQUEST_BODY_READ_CHUNK_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
+| [api/omarai.py](../api/omarai.py#L108) | دالة | _lead_store_from_environment | Use an operator-configured database path when a persistent volume is available. | موثق | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
+| [api/omarai.py](../api/omarai.py#L114) | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 114 | [SRC-EEF2E6447C-L000114](../api/omarai.py#L114) |
+| [api/omarai.py](../api/omarai.py#L123) | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 123 | [SRC-EEF2E6447C-L000123](../api/omarai.py#L123) |
+| [api/omarai.py](../api/omarai.py#L128) | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 128 | [SRC-EEF2E6447C-L000128](../api/omarai.py#L128) |
+| [api/omarai.py](../api/omarai.py#L179) | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 179 | [SRC-EEF2E6447C-L000179](../api/omarai.py#L179) |
+| [api/omarai.py](../api/omarai.py#L192) | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 192 | [SRC-EEF2E6447C-L000192](../api/omarai.py#L192) |
+| [api/omarai.py](../api/omarai.py#L197) | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 197 | [SRC-EEF2E6447C-L000197](../api/omarai.py#L197) |
+| [api/omarai.py](../api/omarai.py#L206) | متغير/ثابت Python | BUILD_SHA_FILE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 206 | [SRC-EEF2E6447C-L000206](../api/omarai.py#L206) |
+| [api/omarai.py](../api/omarai.py#L207) | متغير/ثابت Python | _PLATFORM_BUILD_SHA_ENVIRONMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 207 | [SRC-EEF2E6447C-L000207](../api/omarai.py#L207) |
+| [api/omarai.py](../api/omarai.py#L213) | دالة | _valid_build_sha | لا توجد Docstring. | ناقص | 213 | [SRC-EEF2E6447C-L000213](../api/omarai.py#L213) |
+| [api/omarai.py](../api/omarai.py#L218) | دالة | _build_identity | Prefer immutable image metadata, then documented hosting-provided Git SHAs. | موثق | 218 | [SRC-EEF2E6447C-L000218](../api/omarai.py#L218) |
+| [api/omarai.py](../api/omarai.py#L234) | دالة | _build_sha | Return a validated source SHA, or 'unknown' when no trusted build evidence exists. | موثق | 234 | [SRC-EEF2E6447C-L000234](../api/omarai.py#L234) |
+| [api/omarai.py](../api/omarai.py#L239) | كلاس | Handler | لا توجد Docstring. | ناقص | 239 | [SRC-EEF2E6447C-L000239](../api/omarai.py#L239) |
+| [api/omarai.py](../api/omarai.py#L240) | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 240 | [SRC-EEF2E6447C-L000240](../api/omarai.py#L240) |
+| [api/omarai.py](../api/omarai.py#L249) | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 249 | [SRC-EEF2E6447C-L000249](../api/omarai.py#L249) |
+| [api/omarai.py](../api/omarai.py#L267) | متغير/ثابت Python | Handler.store | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 267 | [SRC-EEF2E6447C-L000267](../api/omarai.py#L267) |
+| [api/omarai.py](../api/omarai.py#L268) | متغير/ثابت Python | Handler._rate_lock | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 268 | [SRC-EEF2E6447C-L000268](../api/omarai.py#L268) |
+| [api/omarai.py](../api/omarai.py#L269) | متغير/ثابت Python | Handler._request_times | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 269 | [SRC-EEF2E6447C-L000269](../api/omarai.py#L269) |
+| [api/omarai.py](../api/omarai.py#L270) | متغير/ثابت Python | Handler._rate_last_cleanup | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 270 | [SRC-EEF2E6447C-L000270](../api/omarai.py#L270) |
+| [api/omarai.py](../api/omarai.py#L271) | متغير/ثابت Python | Handler.RATE_LIMIT_REQUESTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 271 | [SRC-EEF2E6447C-L000271](../api/omarai.py#L271) |
+| [api/omarai.py](../api/omarai.py#L272) | متغير/ثابت Python | Handler.RATE_LIMIT_WINDOW_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 272 | [SRC-EEF2E6447C-L000272](../api/omarai.py#L272) |
+| [api/omarai.py](../api/omarai.py#L273) | متغير/ثابت Python | Handler.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 273 | [SRC-EEF2E6447C-L000273](../api/omarai.py#L273) |
+| [api/omarai.py](../api/omarai.py#L274) | متغير/ثابت Python | Handler.AGENT_CONCURRENCY_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 274 | [SRC-EEF2E6447C-L000274](../api/omarai.py#L274) |
+| [api/omarai.py](../api/omarai.py#L275) | متغير/ثابت Python | Handler._agent_semaphore | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 275 | [SRC-EEF2E6447C-L000275](../api/omarai.py#L275) |
+| [api/omarai.py](../api/omarai.py#L277) | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 277 | [SRC-EEF2E6447C-L000277](../api/omarai.py#L277) |
+| [api/omarai.py](../api/omarai.py#L294) | دالة | Handler._authorized | لا توجد Docstring. | ناقص | 294 | [SRC-EEF2E6447C-L000294](../api/omarai.py#L294) |
+| [api/omarai.py](../api/omarai.py#L303) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 303 | [SRC-EEF2E6447C-L000303](../api/omarai.py#L303) |
+| [api/omarai.py](../api/omarai.py#L335) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 335 | [SRC-EEF2E6447C-L000335](../api/omarai.py#L335) |
+| [api/omarai.py](../api/omarai.py#L338) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 338 | [SRC-EEF2E6447C-L000338](../api/omarai.py#L338) |
+| [api/omarai.py](../api/omarai.py#L354) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 354 | [SRC-EEF2E6447C-L000354](../api/omarai.py#L354) |
+| [api/omarai.py](../api/omarai.py#L379) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 379 | [SRC-EEF2E6447C-L000379](../api/omarai.py#L379) |
+| [api/omarai.py](../api/omarai.py#L450) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 450 | [SRC-EEF2E6447C-L000450](../api/omarai.py#L450) |
+| [api/omarai.py](../api/omarai.py#L459) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 459 | [SRC-EEF2E6447C-L000459](../api/omarai.py#L459) |
+| [api/omarai.py](../api/omarai.py#L472) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 472 | [SRC-EEF2E6447C-L000472](../api/omarai.py#L472) |
+| [api/omarai.py](../api/omarai.py#L513) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 513 | [SRC-EEF2E6447C-L000513](../api/omarai.py#L513) |
+| [api/omarai.py](../api/omarai.py#L602) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 602 | [SRC-EEF2E6447C-L000602](../api/omarai.py#L602) |
+| [api/omarai.py](../api/omarai.py#L615) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 615 | [SRC-EEF2E6447C-L000615](../api/omarai.py#L615) |
+| [api/omarai.py](../api/omarai.py#L619) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 619 | [SRC-EEF2E6447C-L000619](../api/omarai.py#L619) |
+| [api/omarai.py](../api/omarai.py#L655) | دالة | serve | لا توجد Docstring. | ناقص | 655 | [SRC-EEF2E6447C-L000655](../api/omarai.py#L655) |
 | [cli/omarai.py](../cli/omarai.py#L9) | دالة | main | لا توجد Docstring. | ناقص | 9 | [SRC-9C97DF51AC-L000009](../cli/omarai.py#L9) |
 | [docs/generate_index.py](generate_index.py#L22) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-E599346ABE-L000022](generate_index.py#L22) |
 | [docs/generate_index.py](generate_index.py#L43) | متغير/ثابت Python | SENSITIVE_FILENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-E599346ABE-L000043](generate_index.py#L43) |
@@ -1251,37 +1253,37 @@
 | [agents/web_agent.py](../agents/web_agent.py#L3730) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 3730 | [SRC-1AE03B9EC3-L003730](../agents/web_agent.py#L3730) |
 | [agents/web_agent.py](../agents/web_agent.py#L3738) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 3738 | [SRC-1AE03B9EC3-L003738](../agents/web_agent.py#L3738) |
 | [agents/web_agent.py](../agents/web_agent.py#L3745) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 3745 | [SRC-1AE03B9EC3-L003745](../agents/web_agent.py#L3745) |
-| [api/omarai.py](../api/omarai.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 20 | [SRC-EEF2E6447C-L000020](../api/omarai.py#L20) |
-| [api/omarai.py](../api/omarai.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 21 | [SRC-EEF2E6447C-L000021](../api/omarai.py#L21) |
-| [api/omarai.py](../api/omarai.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 22 | [SRC-EEF2E6447C-L000022](../api/omarai.py#L22) |
-| [api/omarai.py](../api/omarai.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
-| [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
-| [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
-| [api/omarai.py](../api/omarai.py#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
-| [api/omarai.py](../api/omarai.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
-| [api/omarai.py](../api/omarai.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
-| [api/omarai.py](../api/omarai.py#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_CHUNK_BYTES | 31 | [SRC-EEF2E6447C-L000031](../api/omarai.py#L31) |
-| [api/omarai.py](../api/omarai.py#L37) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 37 | [SRC-EEF2E6447C-L000037](../api/omarai.py#L37) |
-| [api/omarai.py](../api/omarai.py#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 127 | [SRC-EEF2E6447C-L000127](../api/omarai.py#L127) |
-| [api/omarai.py](../api/omarai.py#L133) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 133 | [SRC-EEF2E6447C-L000133](../api/omarai.py#L133) |
-| [api/omarai.py](../api/omarai.py#L133) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 133 | [SRC-EEF2E6447C-L000133](../api/omarai.py#L133) |
-| [api/omarai.py](../api/omarai.py#L135) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 135 | [SRC-EEF2E6447C-L000135](../api/omarai.py#L135) |
-| [api/omarai.py](../api/omarai.py#L136) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 136 | [SRC-EEF2E6447C-L000136](../api/omarai.py#L136) |
-| [api/omarai.py](../api/omarai.py#L198) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 198 | [SRC-EEF2E6447C-L000198](../api/omarai.py#L198) |
-| [api/omarai.py](../api/omarai.py#L199) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 199 | [SRC-EEF2E6447C-L000199](../api/omarai.py#L199) |
-| [api/omarai.py](../api/omarai.py#L200) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 200 | [SRC-EEF2E6447C-L000200](../api/omarai.py#L200) |
-| [api/omarai.py](../api/omarai.py#L201) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 201 | [SRC-EEF2E6447C-L000201](../api/omarai.py#L201) |
-| [api/omarai.py](../api/omarai.py#L222) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 222 | [SRC-EEF2E6447C-L000222](../api/omarai.py#L222) |
-| [api/omarai.py](../api/omarai.py#L224) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 224 | [SRC-EEF2E6447C-L000224](../api/omarai.py#L224) |
-| [api/omarai.py](../api/omarai.py#L233) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 233 | [SRC-EEF2E6447C-L000233](../api/omarai.py#L233) |
-| [api/omarai.py](../api/omarai.py#L268) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 268 | [SRC-EEF2E6447C-L000268](../api/omarai.py#L268) |
-| [api/omarai.py](../api/omarai.py#L410) | مسار API/واجهة محتمل | /leads | 410 | [SRC-EEF2E6447C-L000410](../api/omarai.py#L410) |
-| [api/omarai.py](../api/omarai.py#L414) | مسار API/واجهة محتمل | /api/health | 414 | [SRC-EEF2E6447C-L000414](../api/omarai.py#L414) |
-| [api/omarai.py](../api/omarai.py#L431) | مسار API/واجهة محتمل | /api/leads | 431 | [SRC-EEF2E6447C-L000431](../api/omarai.py#L431) |
-| [api/omarai.py](../api/omarai.py#L468) | مسار API/واجهة محتمل | /api/diagnostics | 468 | [SRC-EEF2E6447C-L000468](../api/omarai.py#L468) |
-| [api/omarai.py](../api/omarai.py#L483) | مسار API/واجهة محتمل | /api/agent | 483 | [SRC-EEF2E6447C-L000483](../api/omarai.py#L483) |
-| [api/omarai.py](../api/omarai.py#L497) | مسار API/واجهة محتمل | /api/ask | 497 | [SRC-EEF2E6447C-L000497](../api/omarai.py#L497) |
-| [api/omarai.py](../api/omarai.py#L504) | مسار API/واجهة محتمل | /api/analyze | 504 | [SRC-EEF2E6447C-L000504](../api/omarai.py#L504) |
+| [api/omarai.py](../api/omarai.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 23 | [SRC-EEF2E6447C-L000023](../api/omarai.py#L23) |
+| [api/omarai.py](../api/omarai.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
+| [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
+| [api/omarai.py](../api/omarai.py#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 97 | [SRC-EEF2E6447C-L000097](../api/omarai.py#L97) |
+| [api/omarai.py](../api/omarai.py#L98) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 98 | [SRC-EEF2E6447C-L000098](../api/omarai.py#L98) |
+| [api/omarai.py](../api/omarai.py#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | 99 | [SRC-EEF2E6447C-L000099](../api/omarai.py#L99) |
+| [api/omarai.py](../api/omarai.py#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 101 | [SRC-EEF2E6447C-L000101](../api/omarai.py#L101) |
+| [api/omarai.py](../api/omarai.py#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 102 | [SRC-EEF2E6447C-L000102](../api/omarai.py#L102) |
+| [api/omarai.py](../api/omarai.py#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
+| [api/omarai.py](../api/omarai.py#L104) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_CHUNK_BYTES | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
+| [api/omarai.py](../api/omarai.py#L110) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 110 | [SRC-EEF2E6447C-L000110](../api/omarai.py#L110) |
+| [api/omarai.py](../api/omarai.py#L200) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 200 | [SRC-EEF2E6447C-L000200](../api/omarai.py#L200) |
+| [api/omarai.py](../api/omarai.py#L206) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 206 | [SRC-EEF2E6447C-L000206](../api/omarai.py#L206) |
+| [api/omarai.py](../api/omarai.py#L206) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 206 | [SRC-EEF2E6447C-L000206](../api/omarai.py#L206) |
+| [api/omarai.py](../api/omarai.py#L208) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 208 | [SRC-EEF2E6447C-L000208](../api/omarai.py#L208) |
+| [api/omarai.py](../api/omarai.py#L209) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 209 | [SRC-EEF2E6447C-L000209](../api/omarai.py#L209) |
+| [api/omarai.py](../api/omarai.py#L271) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 271 | [SRC-EEF2E6447C-L000271](../api/omarai.py#L271) |
+| [api/omarai.py](../api/omarai.py#L272) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 272 | [SRC-EEF2E6447C-L000272](../api/omarai.py#L272) |
+| [api/omarai.py](../api/omarai.py#L273) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 273 | [SRC-EEF2E6447C-L000273](../api/omarai.py#L273) |
+| [api/omarai.py](../api/omarai.py#L274) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 274 | [SRC-EEF2E6447C-L000274](../api/omarai.py#L274) |
+| [api/omarai.py](../api/omarai.py#L295) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 295 | [SRC-EEF2E6447C-L000295](../api/omarai.py#L295) |
+| [api/omarai.py](../api/omarai.py#L297) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 297 | [SRC-EEF2E6447C-L000297](../api/omarai.py#L297) |
+| [api/omarai.py](../api/omarai.py#L306) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 306 | [SRC-EEF2E6447C-L000306](../api/omarai.py#L306) |
+| [api/omarai.py](../api/omarai.py#L341) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 341 | [SRC-EEF2E6447C-L000341](../api/omarai.py#L341) |
+| [api/omarai.py](../api/omarai.py#L478) | مسار API/واجهة محتمل | /leads | 478 | [SRC-EEF2E6447C-L000478](../api/omarai.py#L478) |
+| [api/omarai.py](../api/omarai.py#L482) | مسار API/واجهة محتمل | /api/health | 482 | [SRC-EEF2E6447C-L000482](../api/omarai.py#L482) |
+| [api/omarai.py](../api/omarai.py#L499) | مسار API/واجهة محتمل | /api/leads | 499 | [SRC-EEF2E6447C-L000499](../api/omarai.py#L499) |
+| [api/omarai.py](../api/omarai.py#L536) | مسار API/واجهة محتمل | /api/diagnostics | 536 | [SRC-EEF2E6447C-L000536](../api/omarai.py#L536) |
+| [api/omarai.py](../api/omarai.py#L551) | مسار API/واجهة محتمل | /api/agent | 551 | [SRC-EEF2E6447C-L000551](../api/omarai.py#L551) |
+| [api/omarai.py](../api/omarai.py#L565) | مسار API/واجهة محتمل | /api/ask | 565 | [SRC-EEF2E6447C-L000565](../api/omarai.py#L565) |
+| [api/omarai.py](../api/omarai.py#L572) | مسار API/واجهة محتمل | /api/analyze | 572 | [SRC-EEF2E6447C-L000572](../api/omarai.py#L572) |
 | [Dockerfile](../Dockerfile#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 3 | [SRC-DD2C0EB6EA-L000003](../Dockerfile#L3) |
 | [Dockerfile](../Dockerfile#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PIP_DISABLE_PIP_VERSION_CHECK | 6 | [SRC-DD2C0EB6EA-L000006](../Dockerfile#L6) |
 | [Dockerfile](../Dockerfile#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 16 | [SRC-DD2C0EB6EA-L000016](../Dockerfile#L16) |
@@ -2487,19 +2489,22 @@
 | [web/dashboard.html](../web/dashboard.html#L39) | متغير JavaScript/TypeScript | data | 39 | [SRC-A16FA6D4B5-L000039](../web/dashboard.html#L39) |
 | [web/dashboard.html](../web/dashboard.html#L39) | مسار API/واجهة محتمل | /api/leads | 39 | [SRC-A16FA6D4B5-L000039](../web/dashboard.html#L39) |
 | [web/dashboard.html](../web/dashboard.html#L40) | دالة JavaScript/TypeScript | refresh | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
+| [web/dashboard.html](../web/dashboard.html#L40) | قيمة سمة HTML (id) | '+esc(l.id)+'>تحديث الحالة</button></div></article>'}).join( | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
 | [web/dashboard.html](../web/dashboard.html#L40) | قيمة سمة HTML (id) | status-'+esc(l.id)+' | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
 | [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | rows | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
 | [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | sourceLink | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
 | [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | sourceUrl | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
-| [web/dashboard.html](../web/dashboard.html#L43) | دالة JavaScript/TypeScript | askOmarai | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
-| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | answer | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
-| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | box | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
-| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | question | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
-| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | result | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
 | [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | status | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
-| [web/dashboard.html](../web/dashboard.html#L43) | متغير JavaScript/TypeScript | user | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
-| [web/dashboard.html](../web/dashboard.html#L43) | مسار API/واجهة محتمل | /api/ask | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
 | [web/dashboard.html](../web/dashboard.html#L43) | مسار API/واجهة محتمل | /api/leads/ | 43 | [SRC-A16FA6D4B5-L000043](../web/dashboard.html#L43) |
+| [web/dashboard.html](../web/dashboard.html#L44) | متغير JavaScript/TypeScript | button | 44 | [SRC-A16FA6D4B5-L000044](../web/dashboard.html#L44) |
+| [web/dashboard.html](../web/dashboard.html#L44) | متغير JavaScript/TypeScript | id | 44 | [SRC-A16FA6D4B5-L000044](../web/dashboard.html#L44) |
+| [web/dashboard.html](../web/dashboard.html#L45) | دالة JavaScript/TypeScript | askOmarai | 45 | [SRC-A16FA6D4B5-L000045](../web/dashboard.html#L45) |
+| [web/dashboard.html](../web/dashboard.html#L45) | متغير JavaScript/TypeScript | answer | 45 | [SRC-A16FA6D4B5-L000045](../web/dashboard.html#L45) |
+| [web/dashboard.html](../web/dashboard.html#L45) | متغير JavaScript/TypeScript | box | 45 | [SRC-A16FA6D4B5-L000045](../web/dashboard.html#L45) |
+| [web/dashboard.html](../web/dashboard.html#L45) | متغير JavaScript/TypeScript | question | 45 | [SRC-A16FA6D4B5-L000045](../web/dashboard.html#L45) |
+| [web/dashboard.html](../web/dashboard.html#L45) | متغير JavaScript/TypeScript | result | 45 | [SRC-A16FA6D4B5-L000045](../web/dashboard.html#L45) |
+| [web/dashboard.html](../web/dashboard.html#L45) | متغير JavaScript/TypeScript | user | 45 | [SRC-A16FA6D4B5-L000045](../web/dashboard.html#L45) |
+| [web/dashboard.html](../web/dashboard.html#L45) | مسار API/واجهة محتمل | /api/ask | 45 | [SRC-A16FA6D4B5-L000045](../web/dashboard.html#L45) |
 
 ## سجل وسوم المراجعة والإصلاح
 
