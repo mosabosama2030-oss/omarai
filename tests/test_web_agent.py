@@ -2567,3 +2567,23 @@ def test_fetch_page_revalidates_dns_for_each_redirect_destination(monkeypatch):
     # The second host is validated before any connection attempt to it.
     assert len(requests) == 1
 
+
+
+def test_history_search_query_uses_shared_context_resolver():
+    history = [
+        {"role": "user", "content": "سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن السعر."},
+    ]
+    query = WebAgent._history_search_query("هل فيه ضمان؟", history)
+    assert "آيفون 16" in query
+    assert "ضمان" in query
+
+
+def test_history_search_query_does_not_reuse_stale_topic_after_acknowledgment():
+    history = [
+        {"role": "user", "content": "سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن السعر."},
+        {"role": "user", "content": "شكرا"},
+        {"role": "assistant", "content": "العفو."},
+    ]
+    assert WebAgent._history_search_query("فين؟", history) == "فين؟"
