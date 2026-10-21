@@ -2281,10 +2281,14 @@ class WebAgent:
                 }],
             })
 
+        raw_results_count = sum(len(batch.get("results", [])) for batch in batches if isinstance(batch, dict) and isinstance(batch.get("results", []), list))
         sources = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)
-
+        for source in sources:
+            source.setdefault("page_fetch_status", "not_attempted")
         # Fetch page text only for the best few public URLs; do it concurrently with strict bounds.
         fetch_targets = sources[:MAX_FETCHED_PAGES]
+        for source in fetch_targets:
+            source["page_fetch_status"] = "attempted"
         fetched_count = 0
         if fetch_targets:
             with ThreadPoolExecutor(max_workers=min(4, len(fetch_targets))) as pool:
@@ -2295,21 +2299,63 @@ class WebAgent:
                 for future in as_completed(futures):
                     source = futures[future]
                     try:
-                        title, page_text = future.result()
-                    except (RuntimeError, AgentDependencyError, ValueError):
+                        fetch_result = future.result()
+                    except RequestBudgetExceeded as exc:
+                        source["page_fetch_status"] = "budget_exhausted"
+                        source["page_fetch_error_class"] = type(exc).__name__
                         continue
+                    except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                        source["page_fetch_status"] = "fetch_failed"
+                        source["page_fetch_error_class"] = type(exc).__name__
+                        continue
+                    title, page_text = fetch_result
+                    observed_status = getattr(fetch_result, "status", None)
+                    error_class = getattr(fetch_result, "error_class", None)
                     if title:
                         source["title"] = title
                     if page_text and page_text.strip():
                         source["page_text"] = page_text
                         source["snippet"] = page_text[:1800]
                         source["page_fetched"] = True
-                        fetched_count += 1
-                    else:
-                        host = urllib.parse.urlparse(source.get("url", "")).hostname or "المصدر"
-                        warnings.append(
-                            f"لم يمكن استخراج نص من {host}؛ قد تكون الصفحة ديناميكية أو محجوبة."
+                        source["page_fetch_status"] = (
+                            observed_status
+                            if observed_status in {"content_extracted", "partial_extraction"}
+                            else "partial_extraction"
+                            if len(page_text) >= MAX_PAGE_TEXT_CHARS
+                            else "content_extracted"
                         )
+                        if error_class:
+                            source["page_fetch_error_class"] = str(error_class)[:80]
+                        else:
+                            source.pop("page_fetch_error_class", None)
+                        fetched_count += 1
+                        if source["page_fetch_status"] == "partial_extraction":
+                            host = urllib.parse.urlparse(source.get("url", "")).hostname or "المصدر"
+                            warnings.append(
+                                f"استُخرج جزء من نص {host} فقط؛ قد تكون الصفحة أطول من الحد الآمن."
+                            )
+                    else:
+                        source["page_fetched"] = False
+                        if observed_status in {
+                            "rejected_url", "blocked_or_unresolved_host", "blocked_connection_target",
+                            "redirect_failed", "redirect_rejected", "redirect_limit", "http_error",
+                            "unsupported_content_type", "page_too_large", "network_error",
+                            "empty_content", "no_text_extracted", "budget_exhausted",
+                        }:
+                            source["page_fetch_status"] = observed_status
+                        else:
+                            source["page_fetch_status"] = "no_text_extracted"
+                        if error_class:
+                            source["page_fetch_error_class"] = str(error_class)[:80]
+                        host = urllib.parse.urlparse(source.get("url", "")).hostname or "المصدر"
+                        if source["page_fetch_status"] in {"no_text_extracted", "empty_content"}:
+                            warnings.append(
+                                f"لم يمكن استخراج نص من {host}؛ جُلبت الصفحة أو جرت محاولة قراءتها لكن قد تكون ديناميكية أو محجوبة."
+                            )
+                        else:
+                            warnings.append(
+                                f"تعذرت قراءة نص {host} بسبب حالة الجلب: {source['page_fetch_status']}."
+                            )
 
         # Reorder on consensus first, and keep clear machine-readable provenance.
         sources.sort(key=lambda source: source.get("rank_score", 0), reverse=True)
