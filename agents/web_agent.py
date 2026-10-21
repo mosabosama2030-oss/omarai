@@ -21,7 +21,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
-from agents.intent_router import route_intent
+from agents.intent_router import resolve_followup_query, route_intent
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.research import (
     MAX_PLAN_QUERIES,
@@ -2315,27 +2315,6 @@ class WebAgent:
                 result.append({"role": item["role"], "content": text})
         return result
 
-    @staticmethod
-    def _history_search_query(question: str, history: list[dict[str, str]]) -> str:
-        # Carry context into short follow-up searches such as "والسعر؟" or "and the price?"
-        follow_up_markers = (
-            "والسعر", "وسعر", "طب ", "وماذا", "وكمان", "تفاصيل اكتر",
-            "كام سعرها", "كم سعرها", "بكام دي", "بكام ده", "سعرها كام",
-            "سعره كام", "قارنهم", "قارن بينهم", "قارن بينهما",
-            "and the price", "what about", "how about", "and also",
-            "how much is it", "what is its price", "compare them", "is it good",
-        )
-        if len(question) < 100 and history and any(
-            marker in question.casefold() for marker in follow_up_markers
-        ):
-            previous = next(
-                (item["content"] for item in reversed(history) if item["role"] == "user"),
-                "",
-            )
-            if previous:
-                return (previous + " " + question)[:500]
-        return question[:500]
-
     def _record_generation_diagnostic(
         self,
         requested_model: str,
@@ -3317,8 +3296,7 @@ class WebAgent:
             if not explicit_deep:
                 # The planner may overclassify short lookups as deep research. Preserve
                 # the user's actual intent first and cap routine searches to three queries.
-                contextual_question = self._history_search_query(question, clean_history)
-                fallback_queries = fallback_plan(contextual_question, clean_history).get("queries") or [contextual_question]
+                fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
                 model_queries = plan.get("queries") or []
                 if self._is_navigation_request(question):
                     subject = re.sub(
