@@ -117,7 +117,7 @@
 | [SRC-9F6E30987B-L000044](../../.github/workflows/hosted-smoke.yml#L44) | 44 | `"          python-version: \"3.12\""` | — |
 | [SRC-9F6E30987B-L000045](../../.github/workflows/hosted-smoke.yml#L45) | 45 | `""` | — |
 | [SRC-9F6E30987B-L000046](../../.github/workflows/hosted-smoke.yml#L46) | 46 | `"      - name: Run live hosted acceptance test"` | — |
-| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"        run: python scripts/hosted_smoke_test.py --base-url \"$OMARAI_BASE_URL\" --timeout 180"` | — |
+| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"        run: python scripts/hosted_smoke_test.py --base-url \"$OMARAI_BASE_URL\" --expected-sha \"$(git rev-parse HEAD)\" --timeout 180"` | — |
 ## CI وأتمتة
 
 ### FILE-1DB27D9318 — [.github/workflows/tests.yml](../../.github/workflows/tests.yml#L1)

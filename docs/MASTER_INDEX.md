@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **69**
 - ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **869**
+- تعريفات Python المفهرسة: **873**
 - تعريفات Python موثقة بوجود Docstring: **175**
-- تعريفات Python بلا Docstring: **527**
+- تعريفات Python بلا Docstring: **531**
 - تعريفات لا ينطبق عليها Docstring: **167**
-- الرموز الساكنة الإضافية: **1341**
-- الأسطر النصية المفهرسة حرفيًا: **22921**
+- الرموز الساكنة الإضافية: **1342**
+- الأسطر النصية المفهرسة حرفيًا: **22972**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -30,7 +30,7 @@
 |---|---|---|---|---:|---:|---|
 | FILE-2F754321D6 | إعدادات وتشغيل | [.dockerignore](../.dockerignore#L1) | بدون امتداد | 103 | 11 | جرد ملف نصي فقط |
 | FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1193 | 26 | جرد الملف + أسماء إعدادات عامة إن وجدت |
-| FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1622 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1661 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 3986 | 98 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4970 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
@@ -40,7 +40,7 @@
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 27751 | 660 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 218981 | 4275 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 219530 | 4279 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 28104 | 578 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
@@ -77,14 +77,14 @@
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 25437 | 696 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 26806 | 725 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
 | FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 21144 | 475 | جرد الملف + AST Python |
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 21784 | 586 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 9324 | 255 | جرد الملف + AST Python |
-| FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 6541 | 174 | جرد الملف + AST Python |
+| FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 7301 | 177 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 6391 | 160 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
@@ -266,13 +266,13 @@
 | [agents/web_agent.py](../agents/web_agent.py#L2344) | دالة | WebAgent._request_completion | Call an OpenAI-compatible API with bounded fallback and optional live server search. | موثق | 2344 | [SRC-1AE03B9EC3-L002344](../agents/web_agent.py#L2344) |
 | [agents/web_agent.py](../agents/web_agent.py#L2526) | دالة | WebAgent._plan_search | Ask the language model how to search, then validate its proposal deterministically. | موثق | 2526 | [SRC-1AE03B9EC3-L002526](../agents/web_agent.py#L2526) |
 | [agents/web_agent.py](../agents/web_agent.py#L2642) | دالة | WebAgent._generate | لا توجد Docstring. | ناقص | 2642 | [SRC-1AE03B9EC3-L002642](../agents/web_agent.py#L2642) |
-| [agents/web_agent.py](../agents/web_agent.py#L2782) | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 2782 | [SRC-1AE03B9EC3-L002782](../agents/web_agent.py#L2782) |
-| [agents/web_agent.py](../agents/web_agent.py#L2879) | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 2879 | [SRC-1AE03B9EC3-L002879](../agents/web_agent.py#L2879) |
-| [agents/web_agent.py](../agents/web_agent.py#L2883) | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 2883 | [SRC-1AE03B9EC3-L002883](../agents/web_agent.py#L2883) |
-| [agents/web_agent.py](../agents/web_agent.py#L2894) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 2894 | [SRC-1AE03B9EC3-L002894](../agents/web_agent.py#L2894) |
-| [agents/web_agent.py](../agents/web_agent.py#L2924) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 2924 | [SRC-1AE03B9EC3-L002924](../agents/web_agent.py#L2924) |
-| [agents/web_agent.py](../agents/web_agent.py#L3145) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 3145 | [SRC-1AE03B9EC3-L003145](../agents/web_agent.py#L3145) |
-| [agents/web_agent.py](../agents/web_agent.py#L3229) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 3229 | [SRC-1AE03B9EC3-L003229](../agents/web_agent.py#L3229) |
+| [agents/web_agent.py](../agents/web_agent.py#L2785) | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 2785 | [SRC-1AE03B9EC3-L002785](../agents/web_agent.py#L2785) |
+| [agents/web_agent.py](../agents/web_agent.py#L2883) | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 2883 | [SRC-1AE03B9EC3-L002883](../agents/web_agent.py#L2883) |
+| [agents/web_agent.py](../agents/web_agent.py#L2887) | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 2887 | [SRC-1AE03B9EC3-L002887](../agents/web_agent.py#L2887) |
+| [agents/web_agent.py](../agents/web_agent.py#L2898) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 2898 | [SRC-1AE03B9EC3-L002898](../agents/web_agent.py#L2898) |
+| [agents/web_agent.py](../agents/web_agent.py#L2928) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 2928 | [SRC-1AE03B9EC3-L002928](../agents/web_agent.py#L2928) |
+| [agents/web_agent.py](../agents/web_agent.py#L3149) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 3149 | [SRC-1AE03B9EC3-L003149](../agents/web_agent.py#L3149) |
+| [agents/web_agent.py](../agents/web_agent.py#L3233) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 3233 | [SRC-1AE03B9EC3-L003233](../agents/web_agent.py#L3233) |
 | [api/omarai.py](../api/omarai.py#L19) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-EEF2E6447C-L000019](../api/omarai.py#L19) |
 | [api/omarai.py](../api/omarai.py#L20) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-EEF2E6447C-L000020](../api/omarai.py#L20) |
 | [api/omarai.py](../api/omarai.py#L21) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-EEF2E6447C-L000021](../api/omarai.py#L21) |
@@ -563,6 +563,8 @@
 | [tests/test_api.py](../tests/test_api.py#L611) | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 611 | [SRC-3451CC474D-L000611](../tests/test_api.py#L611) |
 | [tests/test_api.py](../tests/test_api.py#L657) | دالة | test_public_preflight_does_not_trust_spoofed_forwarded_host | A client-controlled X-Forwarded-Host must not grant an origin CORS access. | موثق | 657 | [SRC-3451CC474D-L000657](../tests/test_api.py#L657) |
 | [tests/test_api.py](../tests/test_api.py#L678) | دالة | test_public_origin_still_allows_the_requested_host | Same-service public UI remains compatible when the request Host is trusted. | موثق | 678 | [SRC-3451CC474D-L000678](../tests/test_api.py#L678) |
+| [tests/test_api.py](../tests/test_api.py#L699) | دالة | test_security_headers_apply_to_json_and_html_responses | لا توجد Docstring. | ناقص | 699 | [SRC-3451CC474D-L000699](../tests/test_api.py#L699) |
+| [tests/test_api.py](../tests/test_api.py#L717) | دالة | test_health_exposes_only_validated_build_sha | لا توجد Docstring. | ناقص | 717 | [SRC-3451CC474D-L000717](../tests/test_api.py#L717) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L4) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 4 | [SRC-3D0A619359-L000004](../tests/test_dashboard_security.py#L4) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L7) | دالة | test_hosted_lead_dashboard_can_send_the_private_access_token | لا توجد Docstring. | ناقص | 7 | [SRC-3D0A619359-L000007](../tests/test_dashboard_security.py#L7) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L14) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 14 | [SRC-3D0A619359-L000014](../tests/test_dashboard_security.py#L14) |
@@ -685,6 +687,8 @@
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L156) | دالة | test_smoke_refuses_missing_or_short_access_token | لا توجد Docstring. | ناقص | 156 | [SRC-1A176AD4F0-L000156](../tests/test_hosted_smoke.py#L156) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L161) | دالة | test_smoke_fails_when_agent_returns_no_live_source | لا توجد Docstring. | ناقص | 161 | [SRC-1A176AD4F0-L000161](../tests/test_hosted_smoke.py#L161) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L164) | دالة | test_smoke_fails_when_agent_returns_no_live_source.without_sources | لا توجد Docstring. | ناقص | 164 | [SRC-1A176AD4F0-L000164](../tests/test_hosted_smoke.py#L164) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L177) | دالة | test_smoke_rejects_invalid_expected_source_sha | لا توجد Docstring. | ناقص | 177 | [SRC-1A176AD4F0-L000177](../tests/test_hosted_smoke.py#L177) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L184) | دالة | test_smoke_rejects_deployed_build_sha_mismatch | لا توجد Docstring. | ناقص | 184 | [SRC-1A176AD4F0-L000184](../tests/test_hosted_smoke.py#L184) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L23) | دالة | test_deterministic_intent_routes | لا توجد Docstring. | ناقص | 23 | [SRC-EA6EC52573-L000023](../tests/test_intent_router.py#L23) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L40) | دالة | test_lead_generation_and_summarization_routes | لا توجد Docstring. | ناقص | 40 | [SRC-EA6EC52573-L000040](../tests/test_intent_router.py#L40) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L46) | دالة | test_generic_explanation_of_lead_generation_is_not_a_lead_search | لا توجد Docstring. | ناقص | 46 | [SRC-EA6EC52573-L000046](../tests/test_intent_router.py#L46) |
@@ -1142,12 +1146,12 @@
 | [agents/web_agent.py](../agents/web_agent.py#L615) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 615 | [SRC-1AE03B9EC3-L000615](../agents/web_agent.py#L615) |
 | [agents/web_agent.py](../agents/web_agent.py#L1169) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 1169 | [SRC-1AE03B9EC3-L001169](../agents/web_agent.py#L1169) |
 | [agents/web_agent.py](../agents/web_agent.py#L1499) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 1499 | [SRC-1AE03B9EC3-L001499](../agents/web_agent.py#L1499) |
-| [agents/web_agent.py](../agents/web_agent.py#L2817) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 2817 | [SRC-1AE03B9EC3-L002817](../agents/web_agent.py#L2817) |
-| [agents/web_agent.py](../agents/web_agent.py#L2817) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 2817 | [SRC-1AE03B9EC3-L002817](../agents/web_agent.py#L2817) |
-| [agents/web_agent.py](../agents/web_agent.py#L3194) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 3194 | [SRC-1AE03B9EC3-L003194](../agents/web_agent.py#L3194) |
-| [agents/web_agent.py](../agents/web_agent.py#L3275) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 3275 | [SRC-1AE03B9EC3-L003275](../agents/web_agent.py#L3275) |
-| [agents/web_agent.py](../agents/web_agent.py#L3283) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 3283 | [SRC-1AE03B9EC3-L003283](../agents/web_agent.py#L3283) |
-| [agents/web_agent.py](../agents/web_agent.py#L3290) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 3290 | [SRC-1AE03B9EC3-L003290](../agents/web_agent.py#L3290) |
+| [agents/web_agent.py](../agents/web_agent.py#L2821) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 2821 | [SRC-1AE03B9EC3-L002821](../agents/web_agent.py#L2821) |
+| [agents/web_agent.py](../agents/web_agent.py#L2821) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 2821 | [SRC-1AE03B9EC3-L002821](../agents/web_agent.py#L2821) |
+| [agents/web_agent.py](../agents/web_agent.py#L3198) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 3198 | [SRC-1AE03B9EC3-L003198](../agents/web_agent.py#L3198) |
+| [agents/web_agent.py](../agents/web_agent.py#L3279) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 3279 | [SRC-1AE03B9EC3-L003279](../agents/web_agent.py#L3279) |
+| [agents/web_agent.py](../agents/web_agent.py#L3287) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 3287 | [SRC-1AE03B9EC3-L003287](../agents/web_agent.py#L3287) |
+| [agents/web_agent.py](../agents/web_agent.py#L3294) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 3294 | [SRC-1AE03B9EC3-L003294](../agents/web_agent.py#L3294) |
 | [api/omarai.py](../api/omarai.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 20 | [SRC-EEF2E6447C-L000020](../api/omarai.py#L20) |
 | [api/omarai.py](../api/omarai.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 21 | [SRC-EEF2E6447C-L000021](../api/omarai.py#L21) |
 | [api/omarai.py](../api/omarai.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 22 | [SRC-EEF2E6447C-L000022](../api/omarai.py#L22) |
@@ -1945,6 +1949,7 @@
 | [tests/test_api.py](../tests/test_api.py#L571) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 571 | [SRC-3451CC474D-L000571](../tests/test_api.py#L571) |
 | [tests/test_api.py](../tests/test_api.py#L617) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 617 | [SRC-3451CC474D-L000617](../tests/test_api.py#L617) |
 | [tests/test_api.py](../tests/test_api.py#L618) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 618 | [SRC-3451CC474D-L000618](../tests/test_api.py#L618) |
+| [tests/test_api.py](../tests/test_api.py#L720) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 720 | [SRC-3451CC474D-L000720](../tests/test_api.py#L720) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN_STORAGE_KEY | 9 | [SRC-3D0A619359-L000009](../tests/test_dashboard_security.py#L9) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |

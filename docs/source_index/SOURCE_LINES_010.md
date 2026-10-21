@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000237 إلى SRC-E599346ABE-L001036
+- النطاق: SRC-E599346ABE-L000233 إلى SRC-E599346ABE-L001032
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000233](../generate_index.py#L233) | 233 | `"            return \"لا توجد Docstring.\", False"` | — |
+| [SRC-E599346ABE-L000234](../generate_index.py#L234) | 234 | `""` | — |
+| [SRC-E599346ABE-L000235](../generate_index.py#L235) | 235 | `"        first_paragraph = docstring.strip().split(\"\\n\\n\", maxsplit=1)[0]"` | — |
+| [SRC-E599346ABE-L000236](../generate_index.py#L236) | 236 | `"        summary = \" \".join(first_paragraph.split())"` | — |
 | [SRC-E599346ABE-L000237](../generate_index.py#L237) | 237 | `"        if len(summary) > MAX_DESCRIPTION_LENGTH:"` | — |
 | [SRC-E599346ABE-L000238](../generate_index.py#L238) | 238 | `"            summary = summary[: MAX_DESCRIPTION_LENGTH - 3].rstrip() + \"...\""` | — |
 | [SRC-E599346ABE-L000239](../generate_index.py#L239) | 239 | `"        return summary, True"` | — |
@@ -812,7 +816,3 @@
 | [SRC-E599346ABE-L001030](../generate_index.py#L1030) | 1030 | `"        )"` | — |
 | [SRC-E599346ABE-L001031](../generate_index.py#L1031) | 1031 | `"    )"` | — |
 | [SRC-E599346ABE-L001032](../generate_index.py#L1032) | 1032 | `"    return markers"` | — |
-| [SRC-E599346ABE-L001033](../generate_index.py#L1033) | 1033 | `""` | — |
-| [SRC-E599346ABE-L001034](../generate_index.py#L1034) | 1034 | `""` | — |
-| [SRC-E599346ABE-L001035](../generate_index.py#L1035) | 1035 | `"def _source_file_href("` | — |
-| [SRC-E599346ABE-L001036](../generate_index.py#L1036) | 1036 | `"    relative_file: str,"` | — |

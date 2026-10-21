@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000036 إلى SRC-90FAA34ADE-L000835
+- النطاق: SRC-90FAA34ADE-L000032 إلى SRC-90FAA34ADE-L000831
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000032](../../tests/fixtures/answer_quality_cases.json#L32) | 32 | `"        \"Returns source links for a pure greeting\","` | — |
+| [SRC-90FAA34ADE-L000033](../../tests/fixtures/answer_quality_cases.json#L33) | 33 | `"        \"Answers in English only when the user wrote Egyptian Arabic\""` | — |
+| [SRC-90FAA34ADE-L000034](../../tests/fixtures/answer_quality_cases.json#L34) | 34 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000035](../../tests/fixtures/answer_quality_cases.json#L35) | 35 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000036](../../tests/fixtures/answer_quality_cases.json#L36) | 36 | `"        \"type\": \"none\","` | — |
 | [SRC-90FAA34ADE-L000037](../../tests/fixtures/answer_quality_cases.json#L37) | 37 | `"        \"notes\": \"No retrieval required\""` | — |
 | [SRC-90FAA34ADE-L000038](../../tests/fixtures/answer_quality_cases.json#L38) | 38 | `"      },"` | — |
@@ -812,7 +816,3 @@
 | [SRC-90FAA34ADE-L000829](../../tests/fixtures/answer_quality_cases.json#L829) | 829 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000830](../../tests/fixtures/answer_quality_cases.json#L830) | 830 | `"      \"case_id\": \"AQ-029\","` | — |
 | [SRC-90FAA34ADE-L000831](../../tests/fixtures/answer_quality_cases.json#L831) | 831 | `"      \"category\": \"lead_not_verified\","` | — |
-| [SRC-90FAA34ADE-L000832](../../tests/fixtures/answer_quality_cases.json#L832) | 832 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000833](../../tests/fixtures/answer_quality_cases.json#L833) | 833 | `"      \"question\": \"لقيت إعلان شقة في التجمع على صفحة عامة. اكتب لي ملخص lead أولي، من غير ما تعتبر الإعلان متحقق أو المعلن عميل جاهز.\","` | — |
-| [SRC-90FAA34ADE-L000834](../../tests/fixtures/answer_quality_cases.json#L834) | 834 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000835](../../tests/fixtures/answer_quality_cases.json#L835) | 835 | `"      \"required_behaviors\": ["` | — |
