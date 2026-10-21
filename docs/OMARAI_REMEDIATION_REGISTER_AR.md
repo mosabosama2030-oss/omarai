@@ -4,7 +4,7 @@
 **تاريخ اللقطة:** 2026-10-21  
 **خط أساس PR #76:** `main` عند `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`  
 **الفرع:** `fix/audit-closure-current-main-2026-10-21`  
-**رأس الكود/Workflow اجتاز CI كاملًا:** `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`. **رأس PR عند هذه اللقطة:** `8198aabc95ce426948d7a233e966c0bbad5e54b7`؛ ما بعد الرأس المختبَر يتكون من تغييرات توثيق التدقيق وصفحات الفهرس المولّدة فقط، بلا تغييرات لاحقة في التطبيق أو الاختبارات أو Workflow. راجع رأس PR الحي قبل القرار.
+**رأس الكود/Workflow اجتاز CI كاملًا:** `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`. **رأس PR عند هذه اللقطة:** `b848f96ab992dd876237f399391f69996151426e`؛ ما بعد الرأس المختبَر يتكون من تغييرات توثيق التدقيق وصفحات الفهرس المولّدة فقط، بلا تغييرات لاحقة في التطبيق أو الاختبارات أو Workflow. راجع رأس PR الحي قبل القرار.
 
 ## دليل الاختبارات وحالة الرأس الحالي
 
@@ -85,7 +85,7 @@
 | OMR-DOC-003 | README ودليل الاستضافة | وصف وظيفة غير موجودة أو حدود تشغيل غير صريحة | README، Go-Live، deployment docs، scope | **UPDATED_IN #76** — search_code، SHA البناء، single-operator، وVolume/hosted smoke موضحة | لا توثيق لوظيفة غير موجودة؛ الحفاظ على التحذير من NOT_RUN |
 | OMR-DOC-004 | تقرير Grok داخل artifacts | الملف الكامل غير قابل للعثور عليه في main بحسب جلب المسار | artifact path الوارد | **PARTIAL** — ملخص مقدم من Human Director؛ لا نختلق ملفًا أو ننسبه لـGrok GitHub | توفير artifact قابل للوصول أو الاستمرار بتتبع الملخص بصفته user-provided |
 | OMR-S-001 | البحث المحلي داخل الكود | P1 | الأداة كانت موصوفة في README وغير موجودة في main، وكانت الروابط ثابتة على `blob/main` | `docs/search_code.py`, `tests/test_search_code.py` | **FIXED_AND_TESTED IN PR #76** — أضيف `--ref` و`OMARAI_GITHUB_REF` واستخراج SHA من البيئة/HEAD المحلي؛ الاختبارات ضمن 384 اختبارًا ناجحًا على كلا إصدارَي Python في [#39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) | الوظيفة تدخل main بعد قرار دمج #76 فقط |
-| OMR-I-008 | روابط بحث الفهرس | P1 | تثبيت `GITHUB_BLOB_BASE` على `blob/main` يضلل مراجع PR لأن نتيجة البحث قد تكون في commit/فرع غير main | `docs/search_code.py`, `tests/test_search_code.py` | **FIX APPLIED; TEST NOT_RUN ON LATEST HEAD** — الروابط تتبع ref صريحًا أو `OMARAI_GITHUB_REF` أو SHA موثوقًا من البيئة/HEAD المحلي، مع اختبار فرع واختبار CLI. | CI ناجح على الرأس النهائي، وعند التشغيل على feature branch يجب أن تشير الروابط إلى نفس المرجع |
+| OMR-I-008 | روابط بحث الفهرس | P1 | تثبيت `GITHUB_BLOB_BASE` على `blob/main` يضلل مراجع PR لأن نتيجة البحث قد تكون في commit/فرع غير main | `docs/search_code.py`, `tests/test_search_code.py` | **FIXED_AND_TESTED على `f2f1bb3...`** — اختبارات المرجع الصريح وبيئة SHA والـCLI اجتازت CI ضمن 384 اختبارًا على Python 3.11 و3.12 في [#39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608). المقارنة من `f2f1bb3...` إلى رأس `b848f96...` لا تحتوي إلا وثائق وصفحات فهرس مولدة. | عند تغيير أداة البحث، أعد الاختبارات؛ الروابط الحالية يجب أن تشير إلى المرجع المختار لا `main` دائمًا |
 | OMR-S-002 | Skills/Workflows الدائمة أو تعدد الوكلاء | **PROPOSED / NOT REQUIRED FOR FOUNDATION** | لا تُنفذ الآن دون حاجة مثبتة؛ حافظ على نواة موثوقة وعقود أدوات وWorkflows قابلة للاختبار قبل توسع الوكلاء |
 | OMR-S-003 | موصلات بحث اختيارية | **REVIEW REQUIRED** | لا تحذف موصلًا بناءً على عدم استعماله في اختبار واحد؛ احتفظ به إن كان خلف إعداد اختياري وله اختبارات وحدود تكلفة واضحة؛ احذف التكرار المثبت فقط |
 
