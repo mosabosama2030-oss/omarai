@@ -85,3 +85,36 @@ def test_search_validates_query_limits_and_reports_invalid_regex(tmp_path: Path)
         pass
     else:
         raise AssertionError("An invalid regular expression should be rejected.")
+
+def test_search_links_use_the_requested_revision_not_main(tmp_path: Path) -> None:
+    source = tmp_path / "app.py"
+    source.write_text("needle = 1\n", encoding="utf-8")
+
+    hits = SEARCH.search_repository(
+        tmp_path, "needle", repository_ref="fix/review-branch"
+    )
+
+    assert len(hits) == 1
+    assert hits[0].link == (
+        "https://github.com/mosabosama2030-oss/omarai/"
+        "blob/fix/review-branch/app.py#L1"
+    )
+
+
+def test_default_repository_ref_prefers_explicit_environment_override(
+    monkeypatch, tmp_path: Path
+) -> None:
+    monkeypatch.setenv("OMARAI_GITHUB_REF", "feature/current-review")
+    monkeypatch.setenv("GITHUB_SHA", "a" * 40)
+
+    assert SEARCH.default_repository_ref(tmp_path) == "feature/current-review"
+
+
+def test_default_repository_ref_uses_valid_ci_sha(
+    monkeypatch, tmp_path: Path
+) -> None:
+    monkeypatch.delenv("OMARAI_GITHUB_REF", raising=False)
+    monkeypatch.setenv("GITHUB_SHA", "B" * 40)
+
+    assert SEARCH.default_repository_ref(tmp_path) == "b" * 40
+
