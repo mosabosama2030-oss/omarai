@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import socket
 import threading
 from collections import defaultdict, deque
@@ -707,7 +708,10 @@ def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatc
             assert headers["x-frame-options"] == "DENY"
             assert headers["referrer-policy"] == "strict-origin-when-cross-origin"
             assert "default-src 'self'" in headers["content-security-policy"]
-            assert "frame-ancestors 'none'" in headers["content-security-policy"]
+            policy = headers["content-security-policy"]
+            assert "frame-ancestors 'none'" in policy
+            assert "'unsafe-inline'" not in policy
+            assert "'sha256-" in policy
             assert headers["permissions-policy"] == (
                 "camera=(), microphone=(), geolocation=()"
             )
@@ -818,3 +822,49 @@ def test_agent_concurrency_slot_released_after_operation_error(local_api, monkey
     )
     assert status == 200
     assert payload["answer"] == "اختبار ناجح"
+
+
+def test_csp_hashes_match_all_first_party_inline_content_and_attributes():
+    import api.omarai as api_module
+
+    policy = api_module._content_security_policy()
+    assert "'unsafe-inline'" not in policy
+    script_blocks = 0
+    style_blocks = 0
+    style_attributes = 0
+    for html_path in api_module.ROOT.glob("*.html"):
+        document = html_path.read_text(encoding="utf-8")
+        for match in re.finditer(
+            r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            if re.search(r"\bsrc\s*=", match.group("attrs"), re.IGNORECASE):
+                continue
+            script_blocks += 1
+            assert api_module._csp_hash_source(match.group("body")) in policy
+        for match in re.finditer(
+            r"<style\b[^>]*>(?P<body>.*?)</style\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_blocks += 1
+            assert api_module._csp_hash_source(match.group("body")) in policy
+        for match in re.finditer(
+            r"""\\bstyle\\s*=\\s*(["'])(.*?)\\1""",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_attributes += 1
+            assert api_module._csp_hash_source(match.group(2).strip()) in policy
+    assert script_blocks >= 2
+    assert style_blocks >= 2
+    assert style_attributes >= 10
+
+
+def test_dashboard_uses_delegated_status_action_not_inline_onclick():
+    dashboard = (Path(__file__).resolve().parents[1] / "web" / "dashboard.html").read_text(
+        encoding="utf-8"
+    )
+    assert 'data-action="save-status"' in dashboard
+    assert 'onclick="saveStatus' not in dashboard
