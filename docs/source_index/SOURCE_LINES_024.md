@@ -445,7 +445,7 @@
 | [SRC-3451CC474D-L000868](../../tests/test_api.py#L868) | 868 | `"    )"` | — |
 | [SRC-3451CC474D-L000869](../../tests/test_api.py#L869) | 869 | `"    assert 'data-action=\"save-status\"' in dashboard"` | — |
 | [SRC-3451CC474D-L000870](../../tests/test_api.py#L870) | 870 | `"    assert 'onclick=\"saveStatus' not in dashboard"` | — |
-| [SRC-3451CC474D-L000871](../../tests/test_api.py#L871) | 871 | `"    assert 'data-lead-id=\\'\"+esc(l.id)+\\'\">' in dashboard"` | — |
+| [SRC-3451CC474D-L000871](../../tests/test_api.py#L871) | 871 | `"    assert \"\"\"data-lead-id=\"'+esc(l.id)+'\">\"\"\" in dashboard"` | — |
 ## اختبارات
 
 ### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
