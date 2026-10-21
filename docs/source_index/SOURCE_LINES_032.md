@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002229 إلى SRC-DE7EABE998-L000291
+- النطاق: SRC-F725E90B2A-L002226 إلى SRC-DE7EABE998-L000288
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002226](../../tests/test_web_agent.py#L2226) | 2226 | `"                    \"snippet\": \"Looking to buy a flat.\","` | — |
+| [SRC-F725E90B2A-L002227](../../tests/test_web_agent.py#L2227) | 2227 | `"                    \"summary\": \"Looking to buy a flat in the requested area.\","` | — |
+| [SRC-F725E90B2A-L002228](../../tests/test_web_agent.py#L2228) | 2228 | `"                    \"date\": \"2026-10-16T12:00:00Z\","` | — |
 | [SRC-F725E90B2A-L002229](../../tests/test_web_agent.py#L2229) | 2229 | `"                    \"site_name\": \"Example\","` | — |
 | [SRC-F725E90B2A-L002230](../../tests/test_web_agent.py#L2230) | 2230 | `"                    \"rerank_score\": 2.2,"` | — |
 | [SRC-F725E90B2A-L002231](../../tests/test_web_agent.py#L2231) | 2231 | `"                    \"authority\": 2,"` | — |
@@ -822,6 +825,3 @@
 | [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const rawSources=result&&Array.isArray(result.sources)?result.sources:[];"` | — |
 | [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `" const usableSources=rawSources.filter(s=>s&&typeof s===\"object\"&&safeSourceUrl(s.url));"` | — |
 | [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `" if(usableSources.length){"` | — |
-| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `"  const sources=document.createElement(\"div\");sources.className=\"sources\";"` | — |
-| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `"  sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join(\"\");box.appendChild(sources);"` | — |
-| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |

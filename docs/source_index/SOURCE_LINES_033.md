@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **033**
-- سجلات الأسطر: **149**
-- النطاق: SRC-DE7EABE998-L000292 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **152**
+- النطاق: SRC-DE7EABE998-L000289 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `"  const sources=document.createElement(\"div\");sources.className=\"sources\";"` | — |
+| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `"  sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join(\"\");box.appendChild(sources);"` | — |
+| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
 | [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `"  const no=document.createElement(\"p\");no.className=\"no-sources\";"` | — |
 | [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  no.textContent=\"لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.\";"` | — |
 | [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `"  box.appendChild(no);"` | — |

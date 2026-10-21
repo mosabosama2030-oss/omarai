@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000766 إلى SRC-4CCB1F172B-L000143
+- النطاق: SRC-90FAA34ADE-L000763 إلى SRC-4CCB1F172B-L000140
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000763](../../tests/fixtures/answer_quality_cases.json#L763) | 763 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000764](../../tests/fixtures/answer_quality_cases.json#L764) | 764 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000765](../../tests/fixtures/answer_quality_cases.json#L765) | 765 | `"        \"Claims successful review with provider unavailable\","` | — |
 | [SRC-90FAA34ADE-L000766](../../tests/fixtures/answer_quality_cases.json#L766) | 766 | `"        \"Invents a model score or review transcript\""` | — |
 | [SRC-90FAA34ADE-L000767](../../tests/fixtures/answer_quality_cases.json#L767) | 767 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000768](../../tests/fixtures/answer_quality_cases.json#L768) | 768 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
@@ -831,6 +834,3 @@
 | [SRC-4CCB1F172B-L000138](../../tests/test_answer_quality_corpus.py#L138) | 138 | `"    missing = REQUIRED_THEME_CATEGORIES - present"` | — |
 | [SRC-4CCB1F172B-L000139](../../tests/test_answer_quality_corpus.py#L139) | 139 | `"    assert not missing, f\"Missing required categories: {sorted(missing)}\""` | — |
 | [SRC-4CCB1F172B-L000140](../../tests/test_answer_quality_corpus.py#L140) | 140 | `""` | — |
-| [SRC-4CCB1F172B-L000141](../../tests/test_answer_quality_corpus.py#L141) | 141 | `""` | — |
-| [SRC-4CCB1F172B-L000142](../../tests/test_answer_quality_corpus.py#L142) | 142 | `"def test_no_empty_or_exact_duplicate_questions():"` | — |
-| [SRC-4CCB1F172B-L000143](../../tests/test_answer_quality_corpus.py#L143) | 143 | `"    data = _load_corpus()"` | — |

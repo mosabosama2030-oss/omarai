@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-61B24BEFCC-L000028 إلى SRC-B335630551-L000152
+- النطاق: SRC-61B24BEFCC-L000025 إلى SRC-B335630551-L000149
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-61B24BEFCC-L000025](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L25) | 25 | `"\| Hosted acceptance smoke \| مسار مصادق عليه يعمل على عنوان الاستضافة الذي فُحص وقت التشغيل. \| توافر مستمر، حمل إنتاجي، استعادة بيانات، أو امتثال أمني شامل. \|"` | — |
+| [SRC-61B24BEFCC-L000026](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L26) | 26 | `"\| Load / restore / red-team \| فقط النطاق المحدد في التقرير ونتائج الاختبار التي نُفذت. \| أي نطاق أو تهديد لم يشمله القياس أو الاختبار. \|"` | — |
+| [SRC-61B24BEFCC-L000027](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L27) | 27 | `""` | — |
 | [SRC-61B24BEFCC-L000028](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L28) | 28 | `"## 2. تصنيف الموجود في المستودع"` | — |
 | [SRC-61B24BEFCC-L000029](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L29) | 29 | `""` | — |
 | [SRC-61B24BEFCC-L000030](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L30) | 30 | `"\| المسار \| التصنيف \| الدليل الحالي \| الحالة والحدود \|"` | — |
@@ -876,6 +879,3 @@
 | [SRC-B335630551-L000147](../../README.md#L147) | 147 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
 | [SRC-B335630551-L000148](../../README.md#L148) | 148 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
 | [SRC-B335630551-L000149](../../README.md#L149) | 149 | `""` | — |
-| [SRC-B335630551-L000150](../../README.md#L150) | 150 | `"Example request:"` | — |
-| [SRC-B335630551-L000151](../../README.md#L151) | 151 | `""` | — |
-| [SRC-B335630551-L000152](../../README.md#L152) | 152 | ````"```json"```` | — |

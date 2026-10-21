@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000118 إلى SRC-90FAA34ADE-L000765
+- النطاق: SRC-547CAF1FE3-L000115 إلى SRC-90FAA34ADE-L000762
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000115](../../scripts/sqlite_backup_restore.py#L115) | 115 | `"def main() -> int:"` | — |
+| [SRC-547CAF1FE3-L000116](../../scripts/sqlite_backup_restore.py#L116) | 116 | `"    parser = argparse.ArgumentParser("` | — |
+| [SRC-547CAF1FE3-L000117](../../scripts/sqlite_backup_restore.py#L117) | 117 | `"        description=("` | — |
 | [SRC-547CAF1FE3-L000118](../../scripts/sqlite_backup_restore.py#L118) | 118 | `"            \"Back up or restore an Omarai SQLite leads database. \""` | — |
 | [SRC-547CAF1FE3-L000119](../../scripts/sqlite_backup_restore.py#L119) | 119 | `"            \"The destination must not already exist.\""` | — |
 | [SRC-547CAF1FE3-L000120](../../scripts/sqlite_backup_restore.py#L120) | 120 | `"        )"` | — |
@@ -822,6 +825,3 @@
 | [SRC-90FAA34ADE-L000760](../../tests/fixtures/answer_quality_cases.json#L760) | 760 | `"        ],"` | — |
 | [SRC-90FAA34ADE-L000761](../../tests/fixtures/answer_quality_cases.json#L761) | 761 | `"        \"provider_state\": \"unavailable\","` | — |
 | [SRC-90FAA34ADE-L000762](../../tests/fixtures/answer_quality_cases.json#L762) | 762 | `"        \"notes\": \"Controlled environment omits the model credential\""` | — |
-| [SRC-90FAA34ADE-L000763](../../tests/fixtures/answer_quality_cases.json#L763) | 763 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000764](../../tests/fixtures/answer_quality_cases.json#L764) | 764 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000765](../../tests/fixtures/answer_quality_cases.json#L765) | 765 | `"        \"Claims successful review with provider unavailable\","` | — |

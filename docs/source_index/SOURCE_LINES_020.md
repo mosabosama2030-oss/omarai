@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000153 إلى SRC-547CAF1FE3-L000117
+- النطاق: SRC-B335630551-L000150 إلى SRC-547CAF1FE3-L000114
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000150](../../README.md#L150) | 150 | `"Example request:"` | — |
+| [SRC-B335630551-L000151](../../README.md#L151) | 151 | `""` | — |
+| [SRC-B335630551-L000152](../../README.md#L152) | 152 | ````"```json"```` | — |
 | [SRC-B335630551-L000153](../../README.md#L153) | 153 | `"{"` | — |
 | [SRC-B335630551-L000154](../../README.md#L154) | 154 | `"  \"question\": \"Compare the latest public information about two technologies\","` | — |
 | [SRC-B335630551-L000155](../../README.md#L155) | 155 | `"  \"history\": []"` | — |
@@ -858,6 +861,3 @@
 | [SRC-547CAF1FE3-L000112](../../scripts/sqlite_backup_restore.py#L112) | 112 | `"    return _copy_verified_database(backup, destination)"` | — |
 | [SRC-547CAF1FE3-L000113](../../scripts/sqlite_backup_restore.py#L113) | 113 | `""` | — |
 | [SRC-547CAF1FE3-L000114](../../scripts/sqlite_backup_restore.py#L114) | 114 | `""` | — |
-| [SRC-547CAF1FE3-L000115](../../scripts/sqlite_backup_restore.py#L115) | 115 | `"def main() -> int:"` | — |
-| [SRC-547CAF1FE3-L000116](../../scripts/sqlite_backup_restore.py#L116) | 116 | `"    parser = argparse.ArgumentParser("` | — |
-| [SRC-547CAF1FE3-L000117](../../scripts/sqlite_backup_restore.py#L117) | 117 | `"        description=("` | — |
