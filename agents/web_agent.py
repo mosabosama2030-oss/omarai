@@ -3592,6 +3592,69 @@ class WebAgent:
 
         result["request_budget"] = budget_summary
         result["generation_diagnostics"] = list(self.generation_diagnostics[-12:])
+
+        # Keep the public result contract resilient if a fallback/alternate result
+        # builder omitted the lexical integrity fields. Normal research results are
+        # already audited inside _answer_with_budget, so do not duplicate that work.
+        if (
+            result.get("kind") in {"web_research", "web_fallback", "insufficient_evidence"}
+            and "answer_integrity" not in result
+        ):
+            try:
+                coverage_targets = self._question_coverage_targets(question)
+                source_rows = result.get("sources")
+                safe_sources = source_rows if isinstance(source_rows, list) else []
+                answer_integrity = audit_answer_integrity(
+                    question,
+                    str(result.get("answer") or ""),
+                    safe_sources,
+                    coverage_targets,
+                )
+                result["answer_integrity"] = answer_integrity
+                coverage = result.get("answer_coverage")
+                if not isinstance(coverage, dict):
+                    coverage = {}
+                coverage["targets"] = coverage_targets
+                coverage["target_checks"] = answer_integrity["target_coverage"]
+                coverage["potentially_missing_target_count"] = (
+                    answer_integrity["potentially_missing_target_count"]
+                )
+                coverage["lexical_screen_method"] = (
+                    "deterministic_lexical_screen_only_not_semantic_grading"
+                )
+                if (
+                    result.get("kind") == "insufficient_evidence"
+                    or result.get("research_quality") == "failed"
+                ):
+                    fulfillment_status = (
+                        "not_assessed_insufficient_evidence"
+                        if coverage_targets
+                        else "not_machine_assessed_no_explicit_targets_detected"
+                    )
+                elif answer_integrity["potentially_missing_target_count"] > 0:
+                    fulfillment_status = "possible_gap_detected"
+                elif coverage_targets:
+                    fulfillment_status = "lexical_signals_found_not_semantically_verified"
+                else:
+                    fulfillment_status = "not_machine_assessed_no_explicit_targets_detected"
+                coverage["task_fulfillment_status"] = fulfillment_status
+                result["answer_coverage"] = coverage
+                result["task_fulfillment_status"] = fulfillment_status
+                if isinstance(result.get("search_report"), dict):
+                    result["search_report"]["answer_integrity"] = answer_integrity
+                    result["search_report"]["task_fulfillment_status"] = fulfillment_status
+            except (AttributeError, KeyError, TypeError, ValueError):
+                # Auxiliary integrity screening never replaces the actual answer.
+                result["answer_integrity"] = {
+                    "method": "deterministic_lexical_screen_only",
+                    "status": "not_run",
+                    "semantic_verification": False,
+                    "independent_fact_check": False,
+                    "error_class": "integrity_screen_error",
+                }
+                result.setdefault("warnings", []).append(
+                    "تعذر تشغيل الفحص اللفظي الأولي لسلامة الأدلة؛ لم يُعدّ ذلك إثباتًا أو نفيًا لصحة الإجابة."
+                )
         if "final_answer_status" not in result:
             if result.get("kind") in {"capability_answer", "local_conversation"}:
                 final_answer_status = "local_response_no_generation"
