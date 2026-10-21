@@ -456,18 +456,18 @@ class WebAgent:
         def redact(value: Any, limit: int) -> str:
             safe = _clean_text(str(value or ""), limit)
             safe = re.sub(
-                r"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*",
-                r"\\1[REDACTED]",
+                r"(?i)(bearer\s+)[A-Za-z0-9._~+/-]+=*",
+                r"\1[REDACTED]",
                 safe,
             )
             safe = re.sub(
-                r"(?i)\\b(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\\s*[:=]\\s*[^\\s,;]+",
-                r"\\1=[REDACTED]",
+                r"(?i)\b(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\s*[:=]\s*[^\s,;]+",
+                r"\1=[REDACTED]",
                 safe,
             )
             safe = re.sub(
-                r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\\s]+",
-                r"\\1[REDACTED]",
+                r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\s]+",
+                r"\1[REDACTED]",
                 safe,
             )
             return safe[:limit]
@@ -2414,10 +2414,7 @@ class WebAgent:
                 for source in sources
                 if self._normalized_source_url_key(source.get("url"))
             }),
-            "pages_content_extracted": fetched_count - sum(
-                source.get("page_fetch_status") == "partial_extraction"
-                for source in fetch_targets
-            ),
+            "pages_content_extracted": fetched_count,
             "pages_partial_extracted": sum(
                 source.get("page_fetch_status") == "partial_extraction"
                 for source in fetch_targets
