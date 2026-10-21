@@ -21,10 +21,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e ".[dev]" ruff
       - run: ruff check agents api cli docs tests
-      - name: Verify living index generation against the full repository
-        run: |
-          python docs/generate_index.py
-          python docs/generate_index.py --check
+      - name: Verify committed living indexes against the full repository
+        run: python docs/generate_index.py --check
       - run: python -m pytest -q
 
   container-build:
