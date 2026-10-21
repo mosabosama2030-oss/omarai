@@ -2,8 +2,14 @@
 
 **Purpose:** Keep this scope note aligned with the source code and operator-visible claims. This document is a scope description, not a certification of compliance or live-provider availability.
 
-**Baseline reviewed:** `main` at merge commit `c3d3f8b1843cb58a9cbc02a69e8edc9e6410abaa` (2026-10-19), after PR #44 and PR #45 were merged.  
+**Baseline reviewed:** `main` at commit `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81` (2026-10-21, after PR #75). The audit-closure branch is proposed work and is not part of `main` until merged.  
 **Evidence labels:** `VERIFIED` means directly confirmed in source or a named automated check; `INFERRED` means a bounded conclusion from source structure; `UNKNOWN` means live or environmental evidence is not available. A source-level capability must not be described as a live integration test.
+
+## Current baseline addendum — 2026-10-21
+
+The current `main` baseline is `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. CI run [39584599539](https://github.com/mosabosama2030-oss/omarai/actions/runs/39584599539) passed 308 tests on Python 3.11 and 308 on Python 3.12, Ruff, index verification, production container build, and protected API smoke.
+
+This establishes automated checks against that source revision; it does **not** establish live provider availability, a hosted service, factual correctness of all answers, durable storage on a target host, load capacity, or multi-tenant isolation. The audit-closure branch proposes additional intent routing, evidence diagnostics, page-fetch statuses, response headers, and deployment SHA checks. Those proposed capabilities must remain marked unverified until the PR-head CI passes; hosted acceptance remains `NOT_RUN` until a real target is configured and explicitly tested.
 
 ## Implemented in the repository
 
