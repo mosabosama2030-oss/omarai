@@ -7,6 +7,7 @@ import socket
 import threading
 from collections import defaultdict, deque
 from http.server import ThreadingHTTPServer
+from pathlib import Path
 from types import SimpleNamespace
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
