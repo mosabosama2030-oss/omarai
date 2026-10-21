@@ -44,4 +44,4 @@ jobs:
           python-version: "3.12"
 
       - name: Run live hosted acceptance test
-        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --timeout 180
+        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --expected-sha "$(git rev-parse HEAD)" --timeout 180
