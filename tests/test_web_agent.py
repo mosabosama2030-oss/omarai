@@ -2007,7 +2007,10 @@ def test_frontend_discloses_unknown_counts_after_research_error():
     assert '["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome)' in html
     assert "لم يمكن تحديد عدد المصادر القابلة للاستخدام" in html
     assert "غير محدد" in html
-    assert 'const score=(researchErrorOutcome||lead)?null:Number(e.coverage_score||0)' in html
+    assert 'const score=(researchErrorOutcome||lead)?null:Number(e.coverage_score||0)' not in html
+    assert "مؤشر تغطية البحث:" not in html
+    assert '"تغطية الأدلة: "+scoreLabel' in html
+    assert "يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة" in html
     assert "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل" in html
 
 
