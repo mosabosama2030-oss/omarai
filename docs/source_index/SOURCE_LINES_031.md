@@ -746,7 +746,7 @@
 | [SRC-DE7EABE998-L000235](../../web/agent.html#L235) | 235 | `"      : \"الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.\")"` | — |
 | [SRC-DE7EABE998-L000236](../../web/agent.html#L236) | 236 | `"  : researchErrorOutcome"` | — |
 | [SRC-DE7EABE998-L000237](../../web/agent.html#L237) | 237 | `"   ? \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا.\""` | — |
-| [SRC-DE7EABE998-L000238](../../web/agent.html#L238) | 238 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع وتنوع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
+| [SRC-DE7EABE998-L000238](../../web/agent.html#L238) | 238 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
 | [SRC-DE7EABE998-L000239](../../web/agent.html#L239) | 239 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
 | [SRC-DE7EABE998-L000240](../../web/agent.html#L240) | 240 | `" const attemptText=result&&result.search_attempted===true"` | — |
 | [SRC-DE7EABE998-L000241](../../web/agent.html#L241) | 241 | `"  ? (r.search_outcome===\"attempted_research_error\""` | — |
