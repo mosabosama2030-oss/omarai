@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000860 إلى SRC-65551FB29F-L000046
+- النطاق: SRC-D17CE3D12F-L000860 إلى SRC-65551FB29F-L000036
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -797,6 +797,16 @@
 | [SRC-B9C3015420-L000172](../OMARAI_REQUIREMENTS_REGISTER.md#L172) | 172 | `"- **سجل الاستثناءات:** [سجل الاستثناءات المقترح](OMARAI_EXCEPTIONS_REGISTER_AR.md). لا يُعد فيه أي استثناء معتمد دون موافقة بشرية صريحة."` | — |
 | [SRC-B9C3015420-L000173](../OMARAI_REQUIREMENTS_REGISTER.md#L173) | 173 | `"- **الحدود:** توثيق حالة متطلب أو نجاح CI لا يثبت عمل موفر حي أو نشر فعلي أو استعادة بيانات أو أمانًا شاملًا. تبقى النتائج غير المختبرة UNKNOWN/NOT_RUN."` | — |
 | [SRC-B9C3015420-L000174](../OMARAI_REQUIREMENTS_REGISTER.md#L174) | 174 | `""` | — |
+| [SRC-B9C3015420-L000175](../OMARAI_REQUIREMENTS_REGISTER.md#L175) | 175 | `"## ملحق خط الأساس الحالي — 2026-10-21"` | — |
+| [SRC-B9C3015420-L000176](../OMARAI_REQUIREMENTS_REGISTER.md#L176) | 176 | `""` | — |
+| [SRC-B9C3015420-L000177](../OMARAI_REQUIREMENTS_REGISTER.md#L177) | 177 | `"> هذا الملحق لا يعيد كتابة التدقيق التاريخي أدناه، ولا يغير حالات المتطلبات تلقائيًا. يجب ربط أي حالة VERIFIED بالاختبار والـSHA المطابقين لها."` | — |
+| [SRC-B9C3015420-L000178](../OMARAI_REQUIREMENTS_REGISTER.md#L178) | 178 | `""` | — |
+| [SRC-B9C3015420-L000179](../OMARAI_REQUIREMENTS_REGISTER.md#L179) | 179 | ``"- **main بعد دمج PR #75:** `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. نجح CI على هذا الرأس في 308 اختبارات لكل من Python 3.11 و3.12، مع Ruff وفحص الفهرسة وبناء الحاوية واختبار API المحمي: [run #39584599539](https://github.com/mosabosama2030-oss/omarai/actions/runs/39584599539)."`` | — |
+| [SRC-B9C3015420-L000180](../OMARAI_REQUIREMENTS_REGISTER.md#L180) | 180 | ``"- **مرشح الإغلاق الموحد PR #76:** [الرابط](https://github.com/mosabosama2030-oss/omarai/pull/76)، مبني على `d46a546...` وغير مدمج. رأس الكود الذي نجح CI عليه هو `e30ee3dff8955f988ed6dc0cd33415ea8777c324`: 380 اختبارًا ناجحًا على Python 3.11 و380 على Python 3.12، وRuff ناجح، وبناء الحاوية واختبار API المحمي ناجحان. بعد ذلك أضاف workflow الفهرسة ملفات فهرسة مولدة فقط، فأصبح الرأس `5c75042fddcc878effd9fda38d3be4c5e83530a0`; المقارنة تُظهر تغييرات في ملفات الفهرسة المولدة فقط. سجل الاختبارات الكامل على هذا الرأس المولد لاحقًا يحتاج قبول GitHub Actions عند اشتراطه؛ لا تُخفَ هذه الملاحظة عند قرار الدمج."`` | — |
+| [SRC-B9C3015420-L000181](../OMARAI_REQUIREMENTS_REGISTER.md#L181) | 181 | ``"- **المعالجات في #76:** توجيه الأسئلة الغامضة إلى CLARIFY عند غياب مرجع، توحيد حل أسئلة المتابعة، تقوية إشارة التداخل اللفظي مع إبقاء `citation_entailment=not_checked`، منع `unsafe-inline` من سياسة CSP عبر hashes للمحتوى الثابت، حالات جلب الصفحات وتشخيص الموصلات، SHA البناء، مسار SQLite اختياري، أداة البحث المحلي، وتحديث وثائق النشر وقبول التشغيل."`` | — |
+| [SRC-B9C3015420-L000182](../OMARAI_REQUIREMENTS_REGISTER.md#L182) | 182 | `"- **UNKNOWN / NOT_RUN حتى الآن:** اختبار hosted smoke ضد خدمة منشورة فعلية؛ توفر جميع مزودي البحث والنموذج حيًا؛ تقييم الدقة الدلالية الفعلية لمجموعة AQ-001–AQ-045؛ دوام Volume واستعادة النسخ الاحتياطية في المضيف المستهدف؛ اختبار الحمل؛ وعزل المستأجرين. نجاح CI لا يغلق هذه المتطلبات."` | — |
+| [SRC-B9C3015420-L000183](../OMARAI_REQUIREMENTS_REGISTER.md#L183) | 183 | `"- **حد التشغيل:** الرمز الحالي مشترك لنمط مشغل واحد. لا تعلن جاهزية تعدد المستأجرين أو استخدام بيانات عملاء إنتاجية قبل تنفيذ الهوية والعزل والتخزين الدائم والتحقق التشغيلي المقابل."` | — |
+| [SRC-B9C3015420-L000184](../OMARAI_REQUIREMENTS_REGISTER.md#L184) | 184 | `""` | — |
 ## وثائق وفهرسة
 
 ### FILE-65551FB29F — [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1)
@@ -842,13 +852,3 @@
 | [SRC-65551FB29F-L000034](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L34) | 34 | `"---"` | — |
 | [SRC-65551FB29F-L000035](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L35) | 35 | `""` | — |
 | [SRC-65551FB29F-L000036](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L36) | 36 | `"# الجزء الأول — الأدوار والخبرات التي يجب أن تمر بها المراجعة"` | — |
-| [SRC-65551FB29F-L000037](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L37) | 37 | `""` | — |
-| [SRC-65551FB29F-L000038](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L38) | 38 | `"الأدوار التالية **عدسات مراجعة تخصصية** يجب استدعاء ما ينطبق منها. هذه القائمة لا تعني أن أشخاصًا متخصصين فعليين راجعوا المستودع. يمكن لشخص واحد أو مجلس وكلاء أن يستخدمها كقائمة مراجعة، لكن المراجعة الآلية ليست بديلًا عن الاختبار أو خبير مؤهل في مجال عالي الأثر."` | — |
-| [SRC-65551FB29F-L000039](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L39) | 39 | `""` | — |
-| [SRC-65551FB29F-L000040](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L40) | 40 | `"## 2. مصفوفة المراجعة متعددة التخصصات"` | — |
-| [SRC-65551FB29F-L000041](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L41) | 41 | `""` | — |
-| [SRC-65551FB29F-L000042](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L42) | 42 | `"\| # \| عدسة الخبرة \| الأسئلة المحورية \| الأدلة المقبولة \|"` | — |
-| [SRC-65551FB29F-L000043](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L43) | 43 | `"\|---:\|---\|---\|---\|"` | — |
-| [SRC-65551FB29F-L000044](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L44) | 44 | `"\| 1 \| مدير المنتج/متطلبات المنتج \| ما حاجة المستخدم؟ ما الذي لا نعد به؟ \| حالات استخدام، معايير قبول، حدود واضحة \|"` | — |
-| [SRC-65551FB29F-L000045](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L45) | 45 | `"\| 2 \| مهندس الأنظمة \| هل تتسق المكونات والتدفقات ونقاط الفشل؟ \| خريطة تدفق، حدود مسؤولية، تحليل أثر \|"` | — |
-| [SRC-65551FB29F-L000046](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L46) | 46 | `"\| 3 \| مهندس البرمجيات والمعمارية \| هل الوحدات قابلة للصيانة والتغيير؟ \| عقود، اعتماديات، ADR، اختبارات \|"` | — |
