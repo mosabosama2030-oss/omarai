@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000541 إلى SRC-FA4E1423C3-L000232
+- النطاق: SRC-3451CC474D-L000542 إلى SRC-FA4E1423C3-L000233
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000541](../../tests/test_api.py#L541) | 541 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS\", 0.1)"` | — |
 | [SRC-3451CC474D-L000542](../../tests/test_api.py#L542) | 542 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
 | [SRC-3451CC474D-L000543](../../tests/test_api.py#L543) | 543 | `"    with socket.create_connection((host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2) as client:"` | — |
 | [SRC-3451CC474D-L000544](../../tests/test_api.py#L544) | 544 | `"        client.settimeout(2)"` | — |
@@ -186,21 +185,21 @@
 | [SRC-3451CC474D-L000708](../../tests/test_api.py#L708) | 708 | `"            assert headers[\"referrer-policy\"] == \"strict-origin-when-cross-origin\""` | — |
 | [SRC-3451CC474D-L000709](../../tests/test_api.py#L709) | 709 | `"            assert \"default-src 'self'\" in headers[\"content-security-policy\"]"` | — |
 | [SRC-3451CC474D-L000710](../../tests/test_api.py#L710) | 710 | `"            assert \"frame-ancestors 'none'\" in headers[\"content-security-policy\"]"` | — |
-| [SRC-3451CC474D-L000711](../../tests/test_api.py#L711) | 711 | `"            assert \"Permissions-Policy\" not in headers"` | — |
-| [SRC-3451CC474D-L000712](../../tests/test_api.py#L712) | 712 | `"            assert headers[\"permissions-policy\"] == ("` | — |
-| [SRC-3451CC474D-L000713](../../tests/test_api.py#L713) | 713 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
-| [SRC-3451CC474D-L000714](../../tests/test_api.py#L714) | 714 | `"            )"` | — |
+| [SRC-3451CC474D-L000711](../../tests/test_api.py#L711) | 711 | `"            assert headers[\"permissions-policy\"] == ("` | — |
+| [SRC-3451CC474D-L000712](../../tests/test_api.py#L712) | 712 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
+| [SRC-3451CC474D-L000713](../../tests/test_api.py#L713) | 713 | `"            )"` | — |
+| [SRC-3451CC474D-L000714](../../tests/test_api.py#L714) | 714 | `""` | — |
 | [SRC-3451CC474D-L000715](../../tests/test_api.py#L715) | 715 | `""` | — |
-| [SRC-3451CC474D-L000716](../../tests/test_api.py#L716) | 716 | `""` | — |
-| [SRC-3451CC474D-L000717](../../tests/test_api.py#L717) | 717 | `"def test_health_exposes_only_validated_build_sha(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000718](../../tests/test_api.py#L718) | 718 | `"    from api.omarai import _build_sha"` | — |
-| [SRC-3451CC474D-L000719](../../tests/test_api.py#L719) | 719 | `""` | — |
-| [SRC-3451CC474D-L000720](../../tests/test_api.py#L720) | 720 | `"    monkeypatch.delenv(\"OMARAI_BUILD_SHA\", raising=False)"` | — |
-| [SRC-3451CC474D-L000721](../../tests/test_api.py#L721) | 721 | `"    assert _build_sha() == \"unknown\""` | — |
-| [SRC-3451CC474D-L000722](../../tests/test_api.py#L722) | 722 | `"    monkeypatch.setenv(\"OMARAI_BUILD_SHA\", \"a\" * 40)"` | — |
-| [SRC-3451CC474D-L000723](../../tests/test_api.py#L723) | 723 | `"    assert _build_sha() == \"a\" * 40"` | — |
-| [SRC-3451CC474D-L000724](../../tests/test_api.py#L724) | 724 | `"    monkeypatch.setenv(\"OMARAI_BUILD_SHA\", \"not-a-git-sha\")"` | — |
-| [SRC-3451CC474D-L000725](../../tests/test_api.py#L725) | 725 | `"    assert _build_sha() == \"unknown\""` | — |
+| [SRC-3451CC474D-L000716](../../tests/test_api.py#L716) | 716 | `"def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L000717](../../tests/test_api.py#L717) | 717 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000718](../../tests/test_api.py#L718) | 718 | `""` | — |
+| [SRC-3451CC474D-L000719](../../tests/test_api.py#L719) | 719 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
+| [SRC-3451CC474D-L000720](../../tests/test_api.py#L720) | 720 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
+| [SRC-3451CC474D-L000721](../../tests/test_api.py#L721) | 721 | `"    assert api_module._build_sha() == \"unknown\""` | — |
+| [SRC-3451CC474D-L000722](../../tests/test_api.py#L722) | 722 | `"    build_sha_file.write_text(\"a\" * 40, encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000723](../../tests/test_api.py#L723) | 723 | `"    assert api_module._build_sha() == \"a\" * 40"` | — |
+| [SRC-3451CC474D-L000724](../../tests/test_api.py#L724) | 724 | `"    build_sha_file.write_text(\"not-a-git-sha\", encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000725](../../tests/test_api.py#L725) | 725 | `"    assert api_module._build_sha() == \"unknown\""` | — |
 ## اختبارات
 
 ### FILE-3D0A619359 — [tests/test_dashboard_security.py](../../tests/test_dashboard_security.py#L1)
@@ -852,3 +851,4 @@
 | [SRC-FA4E1423C3-L000230](../../tests/test_generate_index.py#L230) | 230 | `"        second_symbols, second_count, second_inventory, second_static"` | — |
 | [SRC-FA4E1423C3-L000231](../../tests/test_generate_index.py#L231) | 231 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000232](../../tests/test_generate_index.py#L232) | 232 | `"    output_path = tmp_path / \"docs\" / \"MASTER_INDEX.md\""` | — |
+| [SRC-FA4E1423C3-L000233](../../tests/test_generate_index.py#L233) | 233 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000824 إلى SRC-4CCB1F172B-L000201
+- النطاق: SRC-90FAA34ADE-L000825 إلى SRC-4CCB1F172B-L000202
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-90FAA34ADE-L000824](../../tests/fixtures/answer_quality_cases.json#L824) | 824 | `"        \"عدم طلب تحديد الموضوع\","` | — |
 | [SRC-90FAA34ADE-L000825](../../tests/fixtures/answer_quality_cases.json#L825) | 825 | `"        \"تجاهل أي عنصر من العناصر الأربع بعد توضيح الموضوع\""` | — |
 | [SRC-90FAA34ADE-L000826](../../tests/fixtures/answer_quality_cases.json#L826) | 826 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000827](../../tests/fixtures/answer_quality_cases.json#L827) | 827 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
@@ -834,3 +833,4 @@
 | [SRC-4CCB1F172B-L000199](../../tests/test_answer_quality_corpus.py#L199) | 199 | `"    assert any(x.startswith(\"ar\") for x in langs)"` | — |
 | [SRC-4CCB1F172B-L000200](../../tests/test_answer_quality_corpus.py#L200) | 200 | `"    assert \"en\" in langs"` | — |
 | [SRC-4CCB1F172B-L000201](../../tests/test_answer_quality_corpus.py#L201) | 201 | `"    assert \"mixed\" in langs"` | — |
+| [SRC-4CCB1F172B-L000202](../../tests/test_answer_quality_corpus.py#L202) | 202 | `"    assert \"ar-EG\" in langs"` | — |

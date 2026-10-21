@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000225 إلى SRC-E599346ABE-L001024
+- النطاق: SRC-E599346ABE-L000226 إلى SRC-E599346ABE-L001025
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000225](../generate_index.py#L225) | 225 | `"        self.scope: list[str] = []"` | — |
 | [SRC-E599346ABE-L000226](../generate_index.py#L226) | 226 | `"        self.function_depth = 0"` | — |
 | [SRC-E599346ABE-L000227](../generate_index.py#L227) | 227 | `""` | — |
 | [SRC-E599346ABE-L000228](../generate_index.py#L228) | 228 | `"    @staticmethod"` | — |
@@ -816,3 +815,4 @@
 | [SRC-E599346ABE-L001022](../generate_index.py#L1022) | 1022 | `"                )"` | — |
 | [SRC-E599346ABE-L001023](../generate_index.py#L1023) | 1023 | `""` | — |
 | [SRC-E599346ABE-L001024](../generate_index.py#L1024) | 1024 | `"    markers.sort("` | — |
+| [SRC-E599346ABE-L001025](../generate_index.py#L1025) | 1025 | `"        key=lambda marker: ("` | — |

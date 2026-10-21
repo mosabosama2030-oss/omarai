@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000393 إلى SRC-E599346ABE-L000224
+- النطاق: SRC-EEF2E6447C-L000393 إلى SRC-E599346ABE-L000225
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -280,23 +280,22 @@
 | [SRC-DD2C0EB6EA-L000001](../../Dockerfile#L1) | 1 | `"FROM python:3.12-slim"` | — |
 | [SRC-DD2C0EB6EA-L000002](../../Dockerfile#L2) | 2 | `""` | — |
 | [SRC-DD2C0EB6EA-L000003](../../Dockerfile#L3) | 3 | `"ARG OMARAI_BUILD_SHA=unknown"` | — |
-| [SRC-DD2C0EB6EA-L000004](../../Dockerfile#L4) | 4 | `"ENV OMARAI_BUILD_SHA=${OMARAI_BUILD_SHA} \\"` | — |
-| [SRC-DD2C0EB6EA-L000005](../../Dockerfile#L5) | 5 | `"    PYTHONDONTWRITEBYTECODE=1 \\"` | — |
+| [SRC-DD2C0EB6EA-L000004](../../Dockerfile#L4) | 4 | `"ENV PYTHONDONTWRITEBYTECODE=1 \\"` | — |
+| [SRC-DD2C0EB6EA-L000005](../../Dockerfile#L5) | 5 | `"    PYTHONUNBUFFERED=1 \\"` | — |
 | [SRC-DD2C0EB6EA-L000006](../../Dockerfile#L6) | 6 | `"    PIP_DISABLE_PIP_VERSION_CHECK=1"` | — |
 | [SRC-DD2C0EB6EA-L000007](../../Dockerfile#L7) | 7 | `""` | — |
 | [SRC-DD2C0EB6EA-L000008](../../Dockerfile#L8) | 8 | `"WORKDIR /app"` | — |
-| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"ARG OMARAI_BUILD_SHA=unknown"` | — |
-| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"RUN printf '%s\\\\n' \"$OMARAI_BUILD_SHA\" > /app/BUILD_SHA"` | — |
-| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY pyproject.toml README.md ./"` | — |
-| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY agents ./agents"` | — |
-| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY api ./api"` | — |
-| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY cli ./cli"` | — |
-| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `"COPY web ./web"` | — |
-| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `""` | — |
-| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -m pip install --no-cache-dir ."` | — |
-| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
-| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
-| [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
+| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"RUN printf '%s\\n' \"$OMARAI_BUILD_SHA\" > /app/BUILD_SHA"` | — |
+| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY pyproject.toml README.md ./"` | — |
+| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY agents ./agents"` | — |
+| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY api ./api"` | — |
+| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY cli ./cli"` | — |
+| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
+| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
+| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
+| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `""` | — |
+| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `"EXPOSE 8000"` | — |
+| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
 ## وثائق وفهرسة
 
 ### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
@@ -888,3 +887,4 @@
 | [SRC-E599346ABE-L000222](../generate_index.py#L222) | 222 | `"        \"\"\"Initialize the visitor for one repository-relative Python file.\"\"\""` | — |
 | [SRC-E599346ABE-L000223](../generate_index.py#L223) | 223 | `"        self.relative_file = relative_file"` | — |
 | [SRC-E599346ABE-L000224](../generate_index.py#L224) | 224 | `"        self.symbols: list[IndexedSymbol] = []"` | — |
+| [SRC-E599346ABE-L000225](../generate_index.py#L225) | 225 | `"        self.scope: list[str] = []"` | — |

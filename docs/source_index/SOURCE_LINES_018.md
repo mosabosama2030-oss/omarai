@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000010 إلى SRC-90FAA34ADE-L000023
+- النطاق: SRC-A8360B1B03-L000011 إلى SRC-90FAA34ADE-L000024
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-A8360B1B03-L000010](../../scripts/hosted_smoke_test.py#L10) | 10 | `"import urllib.error"` | — |
 | [SRC-A8360B1B03-L000011](../../scripts/hosted_smoke_test.py#L11) | 11 | `"import urllib.parse"` | — |
 | [SRC-A8360B1B03-L000012](../../scripts/hosted_smoke_test.py#L12) | 12 | `"import urllib.request"` | — |
 | [SRC-A8360B1B03-L000013](../../scripts/hosted_smoke_test.py#L13) | 13 | `"from typing import Any"` | — |
@@ -843,3 +842,4 @@
 | [SRC-90FAA34ADE-L000021](../../tests/fixtures/answer_quality_cases.json#L21) | 21 | `"      \"category\": \"simple_conversational\","` | — |
 | [SRC-90FAA34ADE-L000022](../../tests/fixtures/answer_quality_cases.json#L22) | 22 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000023](../../tests/fixtures/answer_quality_cases.json#L23) | 23 | `"      \"question\": \"ازيك؟ عامل ايه النهاردة؟\","` | — |
+| [SRC-90FAA34ADE-L000024](../../tests/fixtures/answer_quality_cases.json#L24) | 24 | `"      \"expected_strategy\": \"model_no_search\","` | — |

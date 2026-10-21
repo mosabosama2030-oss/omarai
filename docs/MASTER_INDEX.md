@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **175**
 - تعريفات Python بلا Docstring: **531**
 - تعريفات لا ينطبق عليها Docstring: **168**
-- الرموز الساكنة الإضافية: **1344**
-- الأسطر النصية المفهرسة حرفيًا: **22980**
+- الرموز الساكنة الإضافية: **1345**
+- الأسطر النصية المفهرسة حرفيًا: **22979**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -45,7 +45,7 @@
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 28268 | 584 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
-| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 501 | 20 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 453 | 19 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
@@ -77,7 +77,7 @@
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 26806 | 725 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 26864 | 725 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
@@ -565,7 +565,7 @@
 | [tests/test_api.py](../tests/test_api.py#L657) | دالة | test_public_preflight_does_not_trust_spoofed_forwarded_host | A client-controlled X-Forwarded-Host must not grant an origin CORS access. | موثق | 657 | [SRC-3451CC474D-L000657](../tests/test_api.py#L657) |
 | [tests/test_api.py](../tests/test_api.py#L678) | دالة | test_public_origin_still_allows_the_requested_host | Same-service public UI remains compatible when the request Host is trusted. | موثق | 678 | [SRC-3451CC474D-L000678](../tests/test_api.py#L678) |
 | [tests/test_api.py](../tests/test_api.py#L699) | دالة | test_security_headers_apply_to_json_and_html_responses | لا توجد Docstring. | ناقص | 699 | [SRC-3451CC474D-L000699](../tests/test_api.py#L699) |
-| [tests/test_api.py](../tests/test_api.py#L717) | دالة | test_health_exposes_only_validated_build_sha | لا توجد Docstring. | ناقص | 717 | [SRC-3451CC474D-L000717](../tests/test_api.py#L717) |
+| [tests/test_api.py](../tests/test_api.py#L716) | دالة | test_health_exposes_only_validated_image_baked_sha | لا توجد Docstring. | ناقص | 716 | [SRC-3451CC474D-L000716](../tests/test_api.py#L716) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L4) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 4 | [SRC-3D0A619359-L000004](../tests/test_dashboard_security.py#L4) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L7) | دالة | test_hosted_lead_dashboard_can_send_the_private_access_token | لا توجد Docstring. | ناقص | 7 | [SRC-3D0A619359-L000007](../tests/test_dashboard_security.py#L7) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L14) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 14 | [SRC-3D0A619359-L000014](../tests/test_dashboard_security.py#L14) |
@@ -1183,7 +1183,7 @@
 | [api/omarai.py](../api/omarai.py#L478) | مسار API/واجهة محتمل | /api/analyze | 478 | [SRC-EEF2E6447C-L000478](../api/omarai.py#L478) |
 | [Dockerfile](../Dockerfile#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 3 | [SRC-DD2C0EB6EA-L000003](../Dockerfile#L3) |
 | [Dockerfile](../Dockerfile#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PIP_DISABLE_PIP_VERSION_CHECK | 6 | [SRC-DD2C0EB6EA-L000006](../Dockerfile#L6) |
-| [Dockerfile](../Dockerfile#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 10 | [SRC-DD2C0EB6EA-L000010](../Dockerfile#L10) |
+| [Dockerfile](../Dockerfile#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 9 | [SRC-DD2C0EB6EA-L000009](../Dockerfile#L9) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | عنوان Markdown (H1) | معيار تقييم جودة الإجابة (عدائي / Red-Team) | 1 | [SRC-792A9A235D-L000001](ANSWER_QUALITY_BENCHMARK_AR.md#L1) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L13) | عنوان Markdown (H2) | الملفات | 13 | [SRC-792A9A235D-L000013](ANSWER_QUALITY_BENCHMARK_AR.md#L13) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ANSWER_QUALITY_BENCHMARK_AR | 21 | [SRC-792A9A235D-L000021](ANSWER_QUALITY_BENCHMARK_AR.md#L21) |
@@ -1952,7 +1952,8 @@
 | [tests/test_api.py](../tests/test_api.py#L571) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 571 | [SRC-3451CC474D-L000571](../tests/test_api.py#L571) |
 | [tests/test_api.py](../tests/test_api.py#L617) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 617 | [SRC-3451CC474D-L000617](../tests/test_api.py#L617) |
 | [tests/test_api.py](../tests/test_api.py#L618) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 618 | [SRC-3451CC474D-L000618](../tests/test_api.py#L618) |
-| [tests/test_api.py](../tests/test_api.py#L720) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 720 | [SRC-3451CC474D-L000720](../tests/test_api.py#L720) |
+| [tests/test_api.py](../tests/test_api.py#L719) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 719 | [SRC-3451CC474D-L000719](../tests/test_api.py#L719) |
+| [tests/test_api.py](../tests/test_api.py#L720) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 720 | [SRC-3451CC474D-L000720](../tests/test_api.py#L720) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN_STORAGE_KEY | 9 | [SRC-3D0A619359-L000009](../tests/test_dashboard_security.py#L9) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
