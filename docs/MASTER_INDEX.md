@@ -46,7 +46,7 @@
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 28268 | 584 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
-| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 453 | 19 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 583 | 19 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
@@ -1260,7 +1260,7 @@
 | [api/omarai.py](../api/omarai.py#L478) | مسار API/واجهة محتمل | /api/analyze | 478 | [SRC-EEF2E6447C-L000478](../api/omarai.py#L478) |
 | [Dockerfile](../Dockerfile#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 3 | [SRC-DD2C0EB6EA-L000003](../Dockerfile#L3) |
 | [Dockerfile](../Dockerfile#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PIP_DISABLE_PIP_VERSION_CHECK | 6 | [SRC-DD2C0EB6EA-L000006](../Dockerfile#L6) |
-| [Dockerfile](../Dockerfile#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 9 | [SRC-DD2C0EB6EA-L000009](../Dockerfile#L9) |
+| [Dockerfile](../Dockerfile#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 16 | [SRC-DD2C0EB6EA-L000016](../Dockerfile#L16) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | عنوان Markdown (H1) | معيار تقييم جودة الإجابة (عدائي / Red-Team) | 1 | [SRC-792A9A235D-L000001](ANSWER_QUALITY_BENCHMARK_AR.md#L1) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L13) | عنوان Markdown (H2) | الملفات | 13 | [SRC-792A9A235D-L000013](ANSWER_QUALITY_BENCHMARK_AR.md#L13) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ANSWER_QUALITY_BENCHMARK_AR | 21 | [SRC-792A9A235D-L000021](ANSWER_QUALITY_BENCHMARK_AR.md#L21) |

@@ -265,14 +265,14 @@
 | [SRC-DD2C0EB6EA-L000006](../../Dockerfile#L6) | 6 | `"    PIP_DISABLE_PIP_VERSION_CHECK=1"` | — |
 | [SRC-DD2C0EB6EA-L000007](../../Dockerfile#L7) | 7 | `""` | — |
 | [SRC-DD2C0EB6EA-L000008](../../Dockerfile#L8) | 8 | `"WORKDIR /app"` | — |
-| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"RUN printf '%s\\n' \"$OMARAI_BUILD_SHA\" > /app/BUILD_SHA"` | — |
-| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY pyproject.toml README.md ./"` | — |
-| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY agents ./agents"` | — |
-| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY api ./api"` | — |
-| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY cli ./cli"` | — |
-| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
-| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
-| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
+| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"COPY pyproject.toml README.md ./"` | — |
+| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY agents ./agents"` | — |
+| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY api ./api"` | — |
+| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY cli ./cli"` | — |
+| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY web ./web"` | — |
+| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `""` | — |
+| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `"RUN python -m pip install --no-cache-dir ."` | — |
+| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -c \"from pathlib import Path; import api.omarai; Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text('${OMARAI_BUILD_SHA}\\\\n', encoding='ascii')\""` | — |
 | [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `""` | — |
 | [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `"EXPOSE 8000"` | — |
 | [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
