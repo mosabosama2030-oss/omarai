@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **032**
-- سجلات الأسطر: **154**
-- النطاق: SRC-DE7EABE998-L000284 إلى SRC-A16FA6D4B5-L000044
+- سجلات الأسطر: **155**
+- النطاق: SRC-DE7EABE998-L000283 إلى SRC-A16FA6D4B5-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `"  warning.textContent=result.warnings.join(\" \");box.appendChild(warning);"` | — |
 | [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" }"` | — |
 | [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" const rawSources=result&&Array.isArray(result.sources)?result.sources:[];"` | — |
 | [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const usableSources=rawSources.filter(s=>s&&typeof s===\"object\"&&safeSourceUrl(s.url));"` | — |
