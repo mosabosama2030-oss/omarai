@@ -723,3 +723,37 @@ def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):
     assert api_module._build_sha() == "a" * 40
     build_sha_file.write_text("not-a-git-sha", encoding="ascii")
     assert api_module._build_sha() == "unknown"
+
+
+
+@pytest.mark.parametrize(
+    ("variable", "source"),
+    [
+        ("RAILWAY_GIT_COMMIT_SHA", "platform:railway"),
+        ("RENDER_GIT_COMMIT", "platform:render"),
+    ],
+)
+def test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable(
+    monkeypatch, tmp_path, variable, source
+):
+    import api.omarai as api_module
+
+    build_sha_file = tmp_path / "BUILD_SHA"
+    monkeypatch.setattr(api_module, "BUILD_SHA_FILE", build_sha_file)
+    build_sha_file.write_text("unknown", encoding="ascii")
+    for name, _label in api_module._PLATFORM_BUILD_SHA_ENVIRONMENTS:
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv(variable, "b" * 40)
+
+    assert api_module._build_identity() == ("b" * 40, source)
+
+
+def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp_path):
+    import api.omarai as api_module
+
+    monkeypatch.setattr(api_module, "BUILD_SHA_FILE", tmp_path / "BUILD_SHA")
+    api_module.BUILD_SHA_FILE.write_text("unknown", encoding="ascii")
+    monkeypatch.setenv("RAILWAY_GIT_COMMIT_SHA", "not-a-sha")
+    monkeypatch.setenv("RENDER_GIT_COMMIT", "also-not-a-sha")
+
+    assert api_module._build_identity() == ("unknown", "unknown")
