@@ -4748,8 +4748,6 @@ class WebAgent:
             final_answer_status = "coverage_repair_budget_exhausted_with_possible_gap"
         elif coverage_repair_status == "unavailable":
             final_answer_status = "coverage_repair_unavailable_with_possible_gap"
-        elif coverage_repair_status == "revised_and_reaudited":
-            final_answer_status = "coverage_repaired_and_reaudited"
         elif used_llm:
             final_answer_status = "model_answer_generated"
         else:
