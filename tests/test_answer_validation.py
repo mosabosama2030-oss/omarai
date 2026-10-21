@@ -266,3 +266,19 @@ def test_frontend_surfaces_source_specific_number_and_possible_value_discrepanci
     assert "potential_value_discrepancies" in html
     assert "هذه ليست إثباتًا تلقائيًا لوجود تناقض" in html
     assert "ليس تحققًا من الحقيقة" in html
+
+
+def test_single_coincidental_token_does_not_count_as_citation_support():
+    result = audit_answer_integrity(
+        "What is the device quality?",
+        "Apple is a premium and exceptionally reliable device [source 1].",
+        [{
+            "title": "Apple catalog",
+            "snippet": "Apple product listing",
+            "page_text": "Apple products are listed with model identifiers and availability.",
+            "page_fetched": True,
+        }],
+    )
+    assert result["citation_lexical_alignment"][0]["status"] == "weak_lexical_overlap"
+    assert result["weak_citation_alignment_count"] == 1
+    assert result["citation_entailment"] == "not_checked"
