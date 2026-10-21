@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000347 إلى SRC-AAA21D04E8-L000085
+- النطاق: SRC-FA4E1423C3-L000342 إلى SRC-AAA21D04E8-L000080
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000342](../../tests/test_generate_index.py#L342) | 342 | `""` | — |
+| [SRC-FA4E1423C3-L000343](../../tests/test_generate_index.py#L343) | 343 | `"    line_index_path.write_text(original_line_index, encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000344](../../tests/test_generate_index.py#L344) | 344 | `"    coverage_path.write_text(\"stale coverage audit\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000345](../../tests/test_generate_index.py#L345) | 345 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
+| [SRC-FA4E1423C3-L000346](../../tests/test_generate_index.py#L346) | 346 | `"    assert coverage_path.read_text(encoding=\"utf-8\") == \"stale coverage audit\""` | — |
 | [SRC-FA4E1423C3-L000347](../../tests/test_generate_index.py#L347) | 347 | `"    assert \"فهرس تغطية الفهرسة قديم\" in capsys.readouterr().err"` | — |
 | [SRC-FA4E1423C3-L000348](../../tests/test_generate_index.py#L348) | 348 | `""` | — |
 | [SRC-FA4E1423C3-L000349](../../tests/test_generate_index.py#L349) | 349 | `""` | — |
@@ -829,8 +834,3 @@
 | [SRC-AAA21D04E8-L000078](../../tests/test_generation_capabilities.py#L78) | 78 | `"    assert calls == [\"primary/model\", \"backup/model\"]"` | — |
 | [SRC-AAA21D04E8-L000079](../../tests/test_generation_capabilities.py#L79) | 79 | `"    assert agent.generation_diagnostics[0][\"status\"] == \"finish_reason_not_accepted\""` | — |
 | [SRC-AAA21D04E8-L000080](../../tests/test_generation_capabilities.py#L80) | 80 | `"    assert agent.generation_diagnostics[0][\"finish_reason\"] == \"vendor_specific_done\""` | — |
-| [SRC-AAA21D04E8-L000081](../../tests/test_generation_capabilities.py#L81) | 81 | `""` | — |
-| [SRC-AAA21D04E8-L000082](../../tests/test_generation_capabilities.py#L82) | 82 | `""` | — |
-| [SRC-AAA21D04E8-L000083](../../tests/test_generation_capabilities.py#L83) | 83 | `"def test_missing_finish_reason_from_all_models_fails_closed(monkeypatch):"` | — |
-| [SRC-AAA21D04E8-L000084](../../tests/test_generation_capabilities.py#L84) | 84 | `"    agent = WebAgent()"` | — |
-| [SRC-AAA21D04E8-L000085](../../tests/test_generation_capabilities.py#L85) | 85 | `"    agent.api_key = \"test-key\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000057 إلى SRC-3451CC474D-L000625
+- النطاق: SRC-B3062EB677-L000052 إلى SRC-3451CC474D-L000620
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000052](../../tests/test_answer_quality_runner.py#L52) | 52 | `"    assert any(\"case_count\" in p for p in problems)"` | — |
+| [SRC-B3062EB677-L000053](../../tests/test_answer_quality_runner.py#L53) | 53 | `""` | — |
+| [SRC-B3062EB677-L000054](../../tests/test_answer_quality_runner.py#L54) | 54 | `""` | — |
+| [SRC-B3062EB677-L000055](../../tests/test_answer_quality_runner.py#L55) | 55 | `"def test_validate_detects_missing_required_field(tmp_path):"` | — |
+| [SRC-B3062EB677-L000056](../../tests/test_answer_quality_runner.py#L56) | 56 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000057](../../tests/test_answer_quality_runner.py#L57) | 57 | `"    data = json.loads(CORPUS.read_text(encoding=\"utf-8\"))"` | — |
 | [SRC-B3062EB677-L000058](../../tests/test_answer_quality_runner.py#L58) | 58 | `"    data[\"cases\"] = [dict(data[\"cases\"][0])]"` | — |
 | [SRC-B3062EB677-L000059](../../tests/test_answer_quality_runner.py#L59) | 59 | `"    del data[\"cases\"][0][\"question\"]"` | — |
@@ -820,8 +825,3 @@
 | [SRC-3451CC474D-L000618](../../tests/test_api.py#L618) | 618 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_HEADER_IDLE_TIMEOUT_SECONDS\", 0.35)"` | — |
 | [SRC-3451CC474D-L000619](../../tests/test_api.py#L619) | 619 | `"    host, port = local_api.removeprefix(\"http://\").rsplit(\":\", 1)"` | — |
 | [SRC-3451CC474D-L000620](../../tests/test_api.py#L620) | 620 | `""` | — |
-| [SRC-3451CC474D-L000621](../../tests/test_api.py#L621) | 621 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
-| [SRC-3451CC474D-L000622](../../tests/test_api.py#L622) | 622 | `"        client.settimeout(1.2)"` | — |
-| [SRC-3451CC474D-L000623](../../tests/test_api.py#L623) | 623 | `"        started = time.monotonic()"` | — |
-| [SRC-3451CC474D-L000624](../../tests/test_api.py#L624) | 624 | `"        client.sendall("` | — |
-| [SRC-3451CC474D-L000625](../../tests/test_api.py#L625) | 625 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |

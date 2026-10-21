@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000402 إلى SRC-E599346ABE-L000269
+- النطاق: SRC-EEF2E6447C-L000397 إلى SRC-E599346ABE-L000264
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000397](../../api/omarai.py#L397) | 397 | `"            if content_type != \"application/json\":"` | — |
+| [SRC-EEF2E6447C-L000398](../../api/omarai.py#L398) | 398 | `"                return self.respond(415, {\"error\": \"Content-Type must be application/json\"})"` | — |
+| [SRC-EEF2E6447C-L000399](../../api/omarai.py#L399) | 399 | `"            origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000400](../../api/omarai.py#L400) | 400 | `"            if origin and not self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000401](../../api/omarai.py#L401) | 401 | `"                return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
 | [SRC-EEF2E6447C-L000402](../../api/omarai.py#L402) | 402 | `""` | — |
 | [SRC-EEF2E6447C-L000403](../../api/omarai.py#L403) | 403 | `"            raw_body = self._read_request_body()"` | — |
 | [SRC-EEF2E6447C-L000404](../../api/omarai.py#L404) | 404 | `"            if raw_body is None:"` | — |
@@ -883,8 +888,3 @@
 | [SRC-E599346ABE-L000262](../generate_index.py#L262) | 262 | `"        if isinstance(node, ast.Name):"` | — |
 | [SRC-E599346ABE-L000263](../generate_index.py#L263) | 263 | `"            qualified_name = \".\".join((*self.scope, node.id))"` | — |
 | [SRC-E599346ABE-L000264](../generate_index.py#L264) | 264 | `"            self.symbols.append("` | — |
-| [SRC-E599346ABE-L000265](../generate_index.py#L265) | 265 | `"                IndexedSymbol("` | — |
-| [SRC-E599346ABE-L000266](../generate_index.py#L266) | 266 | `"                    file=self.relative_file,"` | — |
-| [SRC-E599346ABE-L000267](../generate_index.py#L267) | 267 | `"                    name=qualified_name,"` | — |
-| [SRC-E599346ABE-L000268](../generate_index.py#L268) | 268 | `"                    kind=\"متغير/ثابت Python\","` | — |
-| [SRC-E599346ABE-L000269](../generate_index.py#L269) | 269 | `"                    line=line,"` | — |

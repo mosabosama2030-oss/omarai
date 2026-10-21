@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000631 إلى SRC-A8360B1B03-L000054
+- النطاق: SRC-0F910493E8-L000626 إلى SRC-A8360B1B03-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000626](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L626) | 626 | `"2. تحقق من تسجيل الأداة وإصدارها وحالة إتاحتها."` | — |
+| [SRC-0F910493E8-L000627](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L627) | 627 | `"3. تحقق من صلاحية العملية على موردها المحدد."` | — |
+| [SRC-0F910493E8-L000628](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L628) | 628 | `"4. تحقق من صحة المخطط والأنواع والقيم والأحجام."` | — |
+| [SRC-0F910493E8-L000629](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L629) | 629 | `"5. تحقق من الميزانية والوقت والتزامن والحد الأقصى للخطوات."` | — |
+| [SRC-0F910493E8-L000630](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L630) | 630 | `"6. حدد هل الأداة قراءة فقط أم ذات أثر خارجي."` | — |
 | [SRC-0F910493E8-L000631](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L631) | 631 | `"7. اطلب تأكيدًا بشريًا حيث تتطلب السياسة ذلك."` | — |
 | [SRC-0F910493E8-L000632](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L632) | 632 | `"8. نفّذ عبر Adapter محدود."` | — |
 | [SRC-0F910493E8-L000633](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L633) | 633 | `"9. تحقق من النتيجة الفعلية للأداة."` | — |
@@ -901,8 +906,3 @@
 | [SRC-A8360B1B03-L000047](../../scripts/hosted_smoke_test.py#L47) | 47 | `""` | — |
 | [SRC-A8360B1B03-L000048](../../scripts/hosted_smoke_test.py#L48) | 48 | `"def normalize_origin(value: str, allow_http: bool = False) -> str:"` | — |
 | [SRC-A8360B1B03-L000049](../../scripts/hosted_smoke_test.py#L49) | 49 | `"    parsed = urllib.parse.urlsplit((value or \"\").strip())"` | — |
-| [SRC-A8360B1B03-L000050](../../scripts/hosted_smoke_test.py#L50) | 50 | `"    if parsed.scheme not in {\"https\", \"http\"} or not parsed.hostname:"` | — |
-| [SRC-A8360B1B03-L000051](../../scripts/hosted_smoke_test.py#L51) | 51 | `"        raise SmokeError(\"Provide an absolute HTTPS origin, for example https://your-app.example.com.\")"` | — |
-| [SRC-A8360B1B03-L000052](../../scripts/hosted_smoke_test.py#L52) | 52 | `"    if parsed.username or parsed.password or parsed.query or parsed.fragment:"` | — |
-| [SRC-A8360B1B03-L000053](../../scripts/hosted_smoke_test.py#L53) | 53 | `"        raise SmokeError(\"The base URL must not contain credentials, a query, or a fragment.\")"` | — |
-| [SRC-A8360B1B03-L000054](../../scripts/hosted_smoke_test.py#L54) | 54 | `"    if parsed.path not in {\"\", \"/\"}:"` | — |

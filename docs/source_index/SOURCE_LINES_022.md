@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000626 إلى SRC-FA4E1423C3-L000346
+- النطاق: SRC-3451CC474D-L000621 إلى SRC-FA4E1423C3-L000341
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000621](../../tests/test_api.py#L621) | 621 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
+| [SRC-3451CC474D-L000622](../../tests/test_api.py#L622) | 622 | `"        client.settimeout(1.2)"` | — |
+| [SRC-3451CC474D-L000623](../../tests/test_api.py#L623) | 623 | `"        started = time.monotonic()"` | — |
+| [SRC-3451CC474D-L000624](../../tests/test_api.py#L624) | 624 | `"        client.sendall("` | — |
+| [SRC-3451CC474D-L000625](../../tests/test_api.py#L625) | 625 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
 | [SRC-3451CC474D-L000626](../../tests/test_api.py#L626) | 626 | `"            b\"Host: localhost\\r\\n\""` | — |
 | [SRC-3451CC474D-L000627](../../tests/test_api.py#L627) | 627 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
 | [SRC-3451CC474D-L000628](../../tests/test_api.py#L628) | 628 | `"            b\"Content-Length: 40\\r\\n\""` | — |
@@ -847,8 +852,3 @@
 | [SRC-FA4E1423C3-L000339](../../tests/test_generate_index.py#L339) | 339 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
 | [SRC-FA4E1423C3-L000340](../../tests/test_generate_index.py#L340) | 340 | `"    assert line_index_path.read_text(encoding=\"utf-8\") == \"stale line index\""` | — |
 | [SRC-FA4E1423C3-L000341](../../tests/test_generate_index.py#L341) | 341 | `"    assert \"فهرس الأسطر قديم\" in capsys.readouterr().err"` | — |
-| [SRC-FA4E1423C3-L000342](../../tests/test_generate_index.py#L342) | 342 | `""` | — |
-| [SRC-FA4E1423C3-L000343](../../tests/test_generate_index.py#L343) | 343 | `"    line_index_path.write_text(original_line_index, encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000344](../../tests/test_generate_index.py#L344) | 344 | `"    coverage_path.write_text(\"stale coverage audit\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000345](../../tests/test_generate_index.py#L345) | 345 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
-| [SRC-FA4E1423C3-L000346](../../tests/test_generate_index.py#L346) | 346 | `"    assert coverage_path.read_text(encoding=\"utf-8\") == \"stale coverage audit\""` | — |

@@ -652,7 +652,7 @@
 | [SRC-5587371288-L000187](../../agents/intent_router.py#L187) | 187 | `"    \"\"\""` | — |
 | [SRC-5587371288-L000188](../../agents/intent_router.py#L188) | 188 | `"    if not isinstance(question, str):"` | — |
 | [SRC-5587371288-L000189](../../agents/intent_router.py#L189) | 189 | `"        return \"\""` | — |
-| [SRC-5587371288-L000190](../../agents/intent_router.py#L190) | 190 | `"    query = re.sub(r\"\\\\s+\", \" \", question).strip()"` | — |
+| [SRC-5587371288-L000190](../../agents/intent_router.py#L190) | 190 | `"    query = re.sub(r\"\\s+\", \" \", question).strip()"` | — |
 | [SRC-5587371288-L000191](../../agents/intent_router.py#L191) | 191 | `"    if not query:"` | — |
 | [SRC-5587371288-L000192](../../agents/intent_router.py#L192) | 192 | `"        return \"\""` | — |
 | [SRC-5587371288-L000193](../../agents/intent_router.py#L193) | 193 | `"    if len(query) >= 100 or not _has_context(history):"` | — |
@@ -667,7 +667,7 @@
 | [SRC-5587371288-L000202](../../agents/intent_router.py#L202) | 202 | `""` | — |
 | [SRC-5587371288-L000203](../../agents/intent_router.py#L203) | 203 | `"    previous = next("` | — |
 | [SRC-5587371288-L000204](../../agents/intent_router.py#L204) | 204 | `"        ("` | — |
-| [SRC-5587371288-L000205](../../agents/intent_router.py#L205) | 205 | `"            re.sub(r\"\\\\s+\", \" \", item.get(\"content\", \"\")).strip()"` | — |
+| [SRC-5587371288-L000205](../../agents/intent_router.py#L205) | 205 | `"            re.sub(r\"\\s+\", \" \", item.get(\"content\", \"\")).strip()"` | — |
 | [SRC-5587371288-L000206](../../agents/intent_router.py#L206) | 206 | `"            for item in reversed(history[-MAX_CONTEXT_TURNS:])"` | — |
 | [SRC-5587371288-L000207](../../agents/intent_router.py#L207) | 207 | `"            if isinstance(item, dict)"` | — |
 | [SRC-5587371288-L000208](../../agents/intent_router.py#L208) | 208 | `"            and item.get(\"role\") == \"user\""` | — |

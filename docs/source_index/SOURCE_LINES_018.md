@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000055 إلى SRC-90FAA34ADE-L000108
+- النطاق: SRC-A8360B1B03-L000050 إلى SRC-90FAA34ADE-L000103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000050](../../scripts/hosted_smoke_test.py#L50) | 50 | `"    if parsed.scheme not in {\"https\", \"http\"} or not parsed.hostname:"` | — |
+| [SRC-A8360B1B03-L000051](../../scripts/hosted_smoke_test.py#L51) | 51 | `"        raise SmokeError(\"Provide an absolute HTTPS origin, for example https://your-app.example.com.\")"` | — |
+| [SRC-A8360B1B03-L000052](../../scripts/hosted_smoke_test.py#L52) | 52 | `"    if parsed.username or parsed.password or parsed.query or parsed.fragment:"` | — |
+| [SRC-A8360B1B03-L000053](../../scripts/hosted_smoke_test.py#L53) | 53 | `"        raise SmokeError(\"The base URL must not contain credentials, a query, or a fragment.\")"` | — |
+| [SRC-A8360B1B03-L000054](../../scripts/hosted_smoke_test.py#L54) | 54 | `"    if parsed.path not in {\"\", \"/\"}:"` | — |
 | [SRC-A8360B1B03-L000055](../../scripts/hosted_smoke_test.py#L55) | 55 | `"        raise SmokeError(\"The base URL must be an origin only; do not add /api or another path.\")"` | — |
 | [SRC-A8360B1B03-L000056](../../scripts/hosted_smoke_test.py#L56) | 56 | `"    if parsed.scheme != \"https\" and not ("` | — |
 | [SRC-A8360B1B03-L000057](../../scripts/hosted_smoke_test.py#L57) | 57 | `"        allow_http and parsed.hostname.lower() in {\"localhost\", \"127.0.0.1\", \"::1\"}"` | — |
@@ -838,8 +843,3 @@
 | [SRC-90FAA34ADE-L000101](../../tests/fixtures/answer_quality_cases.json#L101) | 101 | `"        \"Claims live experimental measurement from the web\","` | — |
 | [SRC-90FAA34ADE-L000102](../../tests/fixtures/answer_quality_cases.json#L102) | 102 | `"        \"Presents speculative pseudoscience as fact\""` | — |
 | [SRC-90FAA34ADE-L000103](../../tests/fixtures/answer_quality_cases.json#L103) | 103 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000104](../../tests/fixtures/answer_quality_cases.json#L104) | 104 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000105](../../tests/fixtures/answer_quality_cases.json#L105) | 105 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000106](../../tests/fixtures/answer_quality_cases.json#L106) | 106 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000107](../../tests/fixtures/answer_quality_cases.json#L107) | 107 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000108](../../tests/fixtures/answer_quality_cases.json#L108) | 108 | `"        \"Answer is empty or off-topic\""` | — |
