@@ -632,205 +632,205 @@
 | [SRC-EEF2E6447C-L000125](../../api/omarai.py#L125) | 125 | `""` | — |
 | [SRC-EEF2E6447C-L000126](../../api/omarai.py#L126) | 126 | `""` | — |
 | [SRC-EEF2E6447C-L000127](../../api/omarai.py#L127) | 127 | `"BUILD_SHA_FILE = Path(__file__).resolve().parents[1] / \"BUILD_SHA\""` | — |
-| [SRC-EEF2E6447C-L000128](../../api/omarai.py#L128) | 128 | `""` | — |
-| [SRC-EEF2E6447C-L000129](../../api/omarai.py#L129) | 129 | `""` | — |
-| [SRC-EEF2E6447C-L000130](../../api/omarai.py#L130) | 130 | `"def _build_sha() -> str:"` | — |
-| [SRC-EEF2E6447C-L000131](../../api/omarai.py#L131) | 131 | `"    \"\"\"Read the source revision baked into the image; never trust a runtime env override.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000132](../../api/omarai.py#L132) | 132 | `"    try:"` | — |
-| [SRC-EEF2E6447C-L000133](../../api/omarai.py#L133) | 133 | `"        candidate = BUILD_SHA_FILE.read_text(encoding=\"ascii\").strip().lower()"` | — |
-| [SRC-EEF2E6447C-L000134](../../api/omarai.py#L134) | 134 | `"    except (OSError, UnicodeError):"` | — |
-| [SRC-EEF2E6447C-L000135](../../api/omarai.py#L135) | 135 | `"        return \"unknown\""` | — |
-| [SRC-EEF2E6447C-L000136](../../api/omarai.py#L136) | 136 | `"    if len(candidate) == 40 and all(char in \"0123456789abcdef\" for char in candidate):"` | — |
-| [SRC-EEF2E6447C-L000137](../../api/omarai.py#L137) | 137 | `"        return candidate"` | — |
-| [SRC-EEF2E6447C-L000138](../../api/omarai.py#L138) | 138 | `"    return \"unknown\""` | — |
-| [SRC-EEF2E6447C-L000139](../../api/omarai.py#L139) | 139 | `""` | — |
-| [SRC-EEF2E6447C-L000140](../../api/omarai.py#L140) | 140 | `""` | — |
-| [SRC-EEF2E6447C-L000141](../../api/omarai.py#L141) | 141 | `"class Handler(BaseHTTPRequestHandler):"` | — |
-| [SRC-EEF2E6447C-L000142](../../api/omarai.py#L142) | 142 | `"    def setup(self):"` | — |
-| [SRC-EEF2E6447C-L000143](../../api/omarai.py#L143) | 143 | `"        \"\"\"Install a reader with a strict deadline for the request line and headers.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000144](../../api/omarai.py#L144) | 144 | `"        self.connection = self.request"` | — |
-| [SRC-EEF2E6447C-L000145](../../api/omarai.py#L145) | 145 | `"        if self.timeout is not None:"` | — |
-| [SRC-EEF2E6447C-L000146](../../api/omarai.py#L146) | 146 | `"            self.connection.settimeout(self.timeout)"` | — |
-| [SRC-EEF2E6447C-L000147](../../api/omarai.py#L147) | 147 | `"        self._request_header_deadline = None"` | — |
-| [SRC-EEF2E6447C-L000148](../../api/omarai.py#L148) | 148 | `"        self.rfile = _DeadlineRequestReader(self.connection, self)"` | — |
-| [SRC-EEF2E6447C-L000149](../../api/omarai.py#L149) | 149 | `"        self.wfile = self.connection.makefile(\"wb\", self.wbufsize)"` | — |
-| [SRC-EEF2E6447C-L000150](../../api/omarai.py#L150) | 150 | `""` | — |
-| [SRC-EEF2E6447C-L000151](../../api/omarai.py#L151) | 151 | `"    def handle_one_request(self):"` | — |
-| [SRC-EEF2E6447C-L000152](../../api/omarai.py#L152) | 152 | `"        timeout = max("` | — |
-| [SRC-EEF2E6447C-L000153](../../api/omarai.py#L153) | 153 | `"            0.1,"` | — |
-| [SRC-EEF2E6447C-L000154](../../api/omarai.py#L154) | 154 | `"            min("` | — |
-| [SRC-EEF2E6447C-L000155](../../api/omarai.py#L155) | 155 | `"                float(REQUEST_HEADER_READ_TIMEOUT_SECONDS),"` | — |
-| [SRC-EEF2E6447C-L000156](../../api/omarai.py#L156) | 156 | `"                MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,"` | — |
-| [SRC-EEF2E6447C-L000157](../../api/omarai.py#L157) | 157 | `"            ),"` | — |
-| [SRC-EEF2E6447C-L000158](../../api/omarai.py#L158) | 158 | `"        )"` | — |
-| [SRC-EEF2E6447C-L000159](../../api/omarai.py#L159) | 159 | `"        self._request_header_deadline = time.monotonic() + timeout"` | — |
-| [SRC-EEF2E6447C-L000160](../../api/omarai.py#L160) | 160 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000161](../../api/omarai.py#L161) | 161 | `"            super().handle_one_request()"` | — |
-| [SRC-EEF2E6447C-L000162](../../api/omarai.py#L162) | 162 | `"        except TimeoutError:"` | — |
-| [SRC-EEF2E6447C-L000163](../../api/omarai.py#L163) | 163 | `"            # Incomplete request line/headers are untrusted protocol input;"` | — |
-| [SRC-EEF2E6447C-L000164](../../api/omarai.py#L164) | 164 | `"            # close the socket without trying to parse or answer a partial request."` | — |
-| [SRC-EEF2E6447C-L000165](../../api/omarai.py#L165) | 165 | `"            self.close_connection = True"` | — |
-| [SRC-EEF2E6447C-L000166](../../api/omarai.py#L166) | 166 | `"        finally:"` | — |
-| [SRC-EEF2E6447C-L000167](../../api/omarai.py#L167) | 167 | `"            self._request_header_deadline = None"` | — |
-| [SRC-EEF2E6447C-L000168](../../api/omarai.py#L168) | 168 | `""` | — |
-| [SRC-EEF2E6447C-L000169](../../api/omarai.py#L169) | 169 | `"    store = LeadStore()"` | — |
-| [SRC-EEF2E6447C-L000170](../../api/omarai.py#L170) | 170 | `"    _rate_lock = threading.Lock()"` | — |
-| [SRC-EEF2E6447C-L000171](../../api/omarai.py#L171) | 171 | `"    _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)"` | — |
-| [SRC-EEF2E6447C-L000172](../../api/omarai.py#L172) | 172 | `"    _rate_last_cleanup: ClassVar[float] = 0.0"` | — |
-| [SRC-EEF2E6447C-L000173](../../api/omarai.py#L173) | 173 | `"    RATE_LIMIT_REQUESTS = 20"` | — |
-| [SRC-EEF2E6447C-L000174](../../api/omarai.py#L174) | 174 | `"    RATE_LIMIT_WINDOW_SECONDS = 60"` | — |
-| [SRC-EEF2E6447C-L000175](../../api/omarai.py#L175) | 175 | `"    RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60"` | — |
-| [SRC-EEF2E6447C-L000176](../../api/omarai.py#L176) | 176 | `"    AGENT_CONCURRENCY_LIMIT = _configured_agent_concurrency_limit()"` | — |
-| [SRC-EEF2E6447C-L000177](../../api/omarai.py#L177) | 177 | `"    _agent_semaphore = threading.BoundedSemaphore(AGENT_CONCURRENCY_LIMIT)"` | — |
-| [SRC-EEF2E6447C-L000178](../../api/omarai.py#L178) | 178 | `""` | — |
-| [SRC-EEF2E6447C-L000179](../../api/omarai.py#L179) | 179 | `"    def _run_bounded_agent_operation(self, operation):"` | — |
-| [SRC-EEF2E6447C-L000180](../../api/omarai.py#L180) | 180 | `"        \"\"\"Run an expensive operation only when a process-local slot is available.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000181](../../api/omarai.py#L181) | 181 | `"        cls = type(self)"` | — |
-| [SRC-EEF2E6447C-L000182](../../api/omarai.py#L182) | 182 | `"        if not cls._agent_semaphore.acquire(blocking=False):"` | — |
-| [SRC-EEF2E6447C-L000183](../../api/omarai.py#L183) | 183 | `"            return self.respond("` | — |
-| [SRC-EEF2E6447C-L000184](../../api/omarai.py#L184) | 184 | `"                503,"` | — |
-| [SRC-EEF2E6447C-L000185](../../api/omarai.py#L185) | 185 | `"                {"` | — |
-| [SRC-EEF2E6447C-L000186](../../api/omarai.py#L186) | 186 | `"                    \"error\": \"خدمة البحث مشغولة حاليًا؛ أعد المحاولة بعد قليل.\","` | — |
-| [SRC-EEF2E6447C-L000187](../../api/omarai.py#L187) | 187 | `"                    \"retry_after_seconds\": 5,"` | — |
-| [SRC-EEF2E6447C-L000188](../../api/omarai.py#L188) | 188 | `"                    \"process_concurrency_limit\": cls.AGENT_CONCURRENCY_LIMIT,"` | — |
-| [SRC-EEF2E6447C-L000189](../../api/omarai.py#L189) | 189 | `"                },"` | — |
-| [SRC-EEF2E6447C-L000190](../../api/omarai.py#L190) | 190 | `"            )"` | — |
-| [SRC-EEF2E6447C-L000191](../../api/omarai.py#L191) | 191 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000192](../../api/omarai.py#L192) | 192 | `"            return self.respond(200, operation())"` | — |
-| [SRC-EEF2E6447C-L000193](../../api/omarai.py#L193) | 193 | `"        finally:"` | — |
-| [SRC-EEF2E6447C-L000194](../../api/omarai.py#L194) | 194 | `"            cls._agent_semaphore.release()"` | — |
-| [SRC-EEF2E6447C-L000195](../../api/omarai.py#L195) | 195 | `""` | — |
-| [SRC-EEF2E6447C-L000196](../../api/omarai.py#L196) | 196 | `"    def _authorized(self):"` | — |
-| [SRC-EEF2E6447C-L000197](../../api/omarai.py#L197) | 197 | `"        expected = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-EEF2E6447C-L000198](../../api/omarai.py#L198) | 198 | `"        if not expected:"` | — |
-| [SRC-EEF2E6447C-L000199](../../api/omarai.py#L199) | 199 | `"            return os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() != \"1\""` | — |
-| [SRC-EEF2E6447C-L000200](../../api/omarai.py#L200) | 200 | `"        supplied = self.headers.get(\"Authorization\", \"\")"` | — |
-| [SRC-EEF2E6447C-L000201](../../api/omarai.py#L201) | 201 | `"        if not supplied.startswith(\"Bearer \"):"` | — |
-| [SRC-EEF2E6447C-L000202](../../api/omarai.py#L202) | 202 | `"            return False"` | — |
-| [SRC-EEF2E6447C-L000203](../../api/omarai.py#L203) | 203 | `"        return hmac.compare_digest(supplied[7:].strip(), expected)"` | — |
-| [SRC-EEF2E6447C-L000204](../../api/omarai.py#L204) | 204 | `""` | — |
-| [SRC-EEF2E6447C-L000205](../../api/omarai.py#L205) | 205 | `"    def _allowed_origins(self):"` | — |
-| [SRC-EEF2E6447C-L000206](../../api/omarai.py#L206) | 206 | `"        \"\"\"Return configured browser origins plus this service’s own origin."` | — |
-| [SRC-EEF2E6447C-L000207](../../api/omarai.py#L207) | 207 | `""` | — |
-| [SRC-EEF2E6447C-L000208](../../api/omarai.py#L208) | 208 | `"        OMARAI_ALLOWED_ORIGINS is a comma-separated list of trusted origins"` | — |
-| [SRC-EEF2E6447C-L000209](../../api/omarai.py#L209) | 209 | `"        (scheme + host + optional port; no path and no wildcard)."` | — |
-| [SRC-EEF2E6447C-L000210](../../api/omarai.py#L210) | 210 | `"        \"\"\""` | — |
-| [SRC-EEF2E6447C-L000211](../../api/omarai.py#L211) | 211 | `"        configured = os.getenv(\"OMARAI_ALLOWED_ORIGINS\", \"\")"` | — |
-| [SRC-EEF2E6447C-L000212](../../api/omarai.py#L212) | 212 | `"        origins = {"` | — |
-| [SRC-EEF2E6447C-L000213](../../api/omarai.py#L213) | 213 | `"            item.strip().rstrip(\"/\")"` | — |
-| [SRC-EEF2E6447C-L000214](../../api/omarai.py#L214) | 214 | `"            for item in configured.split(\",\")"` | — |
-| [SRC-EEF2E6447C-L000215](../../api/omarai.py#L215) | 215 | `"            if item.strip()"` | — |
-| [SRC-EEF2E6447C-L000216](../../api/omarai.py#L216) | 216 | `"        }"` | — |
-| [SRC-EEF2E6447C-L000217](../../api/omarai.py#L217) | 217 | `"        if os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\":"` | — |
-| [SRC-EEF2E6447C-L000218](../../api/omarai.py#L218) | 218 | `"            # Host identifies the requested service origin. Do not derive allowed"` | — |
-| [SRC-EEF2E6447C-L000219](../../api/omarai.py#L219) | 219 | `"            # origins from X-Forwarded-Host: direct clients can spoof that header"` | — |
-| [SRC-EEF2E6447C-L000220](../../api/omarai.py#L220) | 220 | `"            # unless the reverse proxy is separately configured to overwrite it."` | — |
-| [SRC-EEF2E6447C-L000221](../../api/omarai.py#L221) | 221 | `"            scheme = self.headers.get(\"X-Forwarded-Proto\", \"https\").split(\",\", 1)[0].strip().lower()"` | — |
-| [SRC-EEF2E6447C-L000222](../../api/omarai.py#L222) | 222 | `"            host = self.headers.get(\"Host\", \"\").split(\",\", 1)[0].strip()"` | — |
-| [SRC-EEF2E6447C-L000223](../../api/omarai.py#L223) | 223 | `"            if host:"` | — |
-| [SRC-EEF2E6447C-L000224](../../api/omarai.py#L224) | 224 | `"                origins.add(f\"https://{host}\".rstrip(\"/\"))"` | — |
-| [SRC-EEF2E6447C-L000225](../../api/omarai.py#L225) | 225 | `"                origins.add(f\"{scheme}://{host}\".rstrip(\"/\"))"` | — |
-| [SRC-EEF2E6447C-L000226](../../api/omarai.py#L226) | 226 | `"        else:"` | — |
-| [SRC-EEF2E6447C-L000227](../../api/omarai.py#L227) | 227 | `"            port = self.server.server_port"` | — |
-| [SRC-EEF2E6447C-L000228](../../api/omarai.py#L228) | 228 | `"            origins.update("` | — |
-| [SRC-EEF2E6447C-L000229](../../api/omarai.py#L229) | 229 | `"                {"` | — |
-| [SRC-EEF2E6447C-L000230](../../api/omarai.py#L230) | 230 | `"                    f\"http://127.0.0.1:{port}\","` | — |
-| [SRC-EEF2E6447C-L000231](../../api/omarai.py#L231) | 231 | `"                    f\"http://localhost:{port}\","` | — |
-| [SRC-EEF2E6447C-L000232](../../api/omarai.py#L232) | 232 | `"                    f\"http://[::1]:{port}\","` | — |
-| [SRC-EEF2E6447C-L000233](../../api/omarai.py#L233) | 233 | `"                }"` | — |
-| [SRC-EEF2E6447C-L000234](../../api/omarai.py#L234) | 234 | `"            )"` | — |
-| [SRC-EEF2E6447C-L000235](../../api/omarai.py#L235) | 235 | `"        return origins"` | — |
-| [SRC-EEF2E6447C-L000236](../../api/omarai.py#L236) | 236 | `""` | — |
-| [SRC-EEF2E6447C-L000237](../../api/omarai.py#L237) | 237 | `"    def _origin_allowed(self, origin):"` | — |
-| [SRC-EEF2E6447C-L000238](../../api/omarai.py#L238) | 238 | `"        return bool(origin) and origin.rstrip(\"/\") in self._allowed_origins()"` | — |
-| [SRC-EEF2E6447C-L000239](../../api/omarai.py#L239) | 239 | `""` | — |
-| [SRC-EEF2E6447C-L000240](../../api/omarai.py#L240) | 240 | `"    def _rate_limit_client_key(self):"` | — |
-| [SRC-EEF2E6447C-L000241](../../api/omarai.py#L241) | 241 | `"        \"\"\"Choose a rate-limit identity without trusting spoofable proxy headers by default."` | — |
-| [SRC-EEF2E6447C-L000242](../../api/omarai.py#L242) | 242 | `""` | — |
-| [SRC-EEF2E6447C-L000243](../../api/omarai.py#L243) | 243 | `"        Set OMARAI_TRUST_PROXY_HEADERS=1 only when the deployment's trusted reverse"` | — |
-| [SRC-EEF2E6447C-L000244](../../api/omarai.py#L244) | 244 | `"        proxy appends the actual client IP as the rightmost X-Forwarded-For value."` | — |
-| [SRC-EEF2E6447C-L000245](../../api/omarai.py#L245) | 245 | `"        \"\"\""` | — |
-| [SRC-EEF2E6447C-L000246](../../api/omarai.py#L246) | 246 | `"        direct_ip = self.client_address[0]"` | — |
-| [SRC-EEF2E6447C-L000247](../../api/omarai.py#L247) | 247 | `"        if os.getenv(\"OMARAI_TRUST_PROXY_HEADERS\", \"\").strip() != \"1\":"` | — |
-| [SRC-EEF2E6447C-L000248](../../api/omarai.py#L248) | 248 | `"            return direct_ip"` | — |
-| [SRC-EEF2E6447C-L000249](../../api/omarai.py#L249) | 249 | `"        forwarded = self.headers.get(\"X-Forwarded-For\", \"\")"` | — |
-| [SRC-EEF2E6447C-L000250](../../api/omarai.py#L250) | 250 | `"        candidate = forwarded.rsplit(\",\", 1)[-1].strip() if forwarded else \"\""` | — |
-| [SRC-EEF2E6447C-L000251](../../api/omarai.py#L251) | 251 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000252](../../api/omarai.py#L252) | 252 | `"            return str(ipaddress.ip_address(candidate))"` | — |
-| [SRC-EEF2E6447C-L000253](../../api/omarai.py#L253) | 253 | `"        except ValueError:"` | — |
-| [SRC-EEF2E6447C-L000254](../../api/omarai.py#L254) | 254 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000128](../../api/omarai.py#L128) | 128 | `"_PLATFORM_BUILD_SHA_ENVIRONMENTS = ("` | — |
+| [SRC-EEF2E6447C-L000129](../../api/omarai.py#L129) | 129 | `"    (\"RAILWAY_GIT_COMMIT_SHA\", \"platform:railway\"),"` | — |
+| [SRC-EEF2E6447C-L000130](../../api/omarai.py#L130) | 130 | `"    (\"RENDER_GIT_COMMIT\", \"platform:render\"),"` | — |
+| [SRC-EEF2E6447C-L000131](../../api/omarai.py#L131) | 131 | `")"` | — |
+| [SRC-EEF2E6447C-L000132](../../api/omarai.py#L132) | 132 | `""` | — |
+| [SRC-EEF2E6447C-L000133](../../api/omarai.py#L133) | 133 | `""` | — |
+| [SRC-EEF2E6447C-L000134](../../api/omarai.py#L134) | 134 | `"def _valid_build_sha(value: str) -> bool:"` | — |
+| [SRC-EEF2E6447C-L000135](../../api/omarai.py#L135) | 135 | `"    candidate = value.strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000136](../../api/omarai.py#L136) | 136 | `"    return len(candidate) == 40 and all(char in \"0123456789abcdef\" for char in candidate)"` | — |
+| [SRC-EEF2E6447C-L000137](../../api/omarai.py#L137) | 137 | `""` | — |
+| [SRC-EEF2E6447C-L000138](../../api/omarai.py#L138) | 138 | `""` | — |
+| [SRC-EEF2E6447C-L000139](../../api/omarai.py#L139) | 139 | `"def _build_identity() -> tuple[str, str]:"` | — |
+| [SRC-EEF2E6447C-L000140](../../api/omarai.py#L140) | 140 | `"    \"\"\"Prefer immutable image metadata, then documented hosting-provided Git SHAs.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000141](../../api/omarai.py#L141) | 141 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000142](../../api/omarai.py#L142) | 142 | `"        baked = BUILD_SHA_FILE.read_text(encoding=\"ascii\").strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000143](../../api/omarai.py#L143) | 143 | `"    except (OSError, UnicodeError):"` | — |
+| [SRC-EEF2E6447C-L000144](../../api/omarai.py#L144) | 144 | `"        baked = \"\""` | — |
+| [SRC-EEF2E6447C-L000145](../../api/omarai.py#L145) | 145 | `"    if _valid_build_sha(baked):"` | — |
+| [SRC-EEF2E6447C-L000146](../../api/omarai.py#L146) | 146 | `"        return baked, \"image_baked\""` | — |
+| [SRC-EEF2E6447C-L000147](../../api/omarai.py#L147) | 147 | `""` | — |
+| [SRC-EEF2E6447C-L000148](../../api/omarai.py#L148) | 148 | `"    for environment_name, source in _PLATFORM_BUILD_SHA_ENVIRONMENTS:"` | — |
+| [SRC-EEF2E6447C-L000149](../../api/omarai.py#L149) | 149 | `"        candidate = os.getenv(environment_name, \"\").strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000150](../../api/omarai.py#L150) | 150 | `"        if _valid_build_sha(candidate):"` | — |
+| [SRC-EEF2E6447C-L000151](../../api/omarai.py#L151) | 151 | `"            return candidate, source"` | — |
+| [SRC-EEF2E6447C-L000152](../../api/omarai.py#L152) | 152 | `"    return \"unknown\", \"unknown\""` | — |
+| [SRC-EEF2E6447C-L000153](../../api/omarai.py#L153) | 153 | `""` | — |
+| [SRC-EEF2E6447C-L000154](../../api/omarai.py#L154) | 154 | `""` | — |
+| [SRC-EEF2E6447C-L000155](../../api/omarai.py#L155) | 155 | `"def _build_sha() -> str:"` | — |
+| [SRC-EEF2E6447C-L000156](../../api/omarai.py#L156) | 156 | `"    \"\"\"Return a validated source SHA, or 'unknown' when no trusted build evidence exists.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000157](../../api/omarai.py#L157) | 157 | `"    return _build_identity()[0]"` | — |
+| [SRC-EEF2E6447C-L000158](../../api/omarai.py#L158) | 158 | `""` | — |
+| [SRC-EEF2E6447C-L000159](../../api/omarai.py#L159) | 159 | `""` | — |
+| [SRC-EEF2E6447C-L000160](../../api/omarai.py#L160) | 160 | `"class Handler(BaseHTTPRequestHandler):"` | — |
+| [SRC-EEF2E6447C-L000161](../../api/omarai.py#L161) | 161 | `"    def setup(self):"` | — |
+| [SRC-EEF2E6447C-L000162](../../api/omarai.py#L162) | 162 | `"        \"\"\"Install a reader with a strict deadline for the request line and headers.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000163](../../api/omarai.py#L163) | 163 | `"        self.connection = self.request"` | — |
+| [SRC-EEF2E6447C-L000164](../../api/omarai.py#L164) | 164 | `"        if self.timeout is not None:"` | — |
+| [SRC-EEF2E6447C-L000165](../../api/omarai.py#L165) | 165 | `"            self.connection.settimeout(self.timeout)"` | — |
+| [SRC-EEF2E6447C-L000166](../../api/omarai.py#L166) | 166 | `"        self._request_header_deadline = None"` | — |
+| [SRC-EEF2E6447C-L000167](../../api/omarai.py#L167) | 167 | `"        self.rfile = _DeadlineRequestReader(self.connection, self)"` | — |
+| [SRC-EEF2E6447C-L000168](../../api/omarai.py#L168) | 168 | `"        self.wfile = self.connection.makefile(\"wb\", self.wbufsize)"` | — |
+| [SRC-EEF2E6447C-L000169](../../api/omarai.py#L169) | 169 | `""` | — |
+| [SRC-EEF2E6447C-L000170](../../api/omarai.py#L170) | 170 | `"    def handle_one_request(self):"` | — |
+| [SRC-EEF2E6447C-L000171](../../api/omarai.py#L171) | 171 | `"        timeout = max("` | — |
+| [SRC-EEF2E6447C-L000172](../../api/omarai.py#L172) | 172 | `"            0.1,"` | — |
+| [SRC-EEF2E6447C-L000173](../../api/omarai.py#L173) | 173 | `"            min("` | — |
+| [SRC-EEF2E6447C-L000174](../../api/omarai.py#L174) | 174 | `"                float(REQUEST_HEADER_READ_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000175](../../api/omarai.py#L175) | 175 | `"                MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,"` | — |
+| [SRC-EEF2E6447C-L000176](../../api/omarai.py#L176) | 176 | `"            ),"` | — |
+| [SRC-EEF2E6447C-L000177](../../api/omarai.py#L177) | 177 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000178](../../api/omarai.py#L178) | 178 | `"        self._request_header_deadline = time.monotonic() + timeout"` | — |
+| [SRC-EEF2E6447C-L000179](../../api/omarai.py#L179) | 179 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000180](../../api/omarai.py#L180) | 180 | `"            super().handle_one_request()"` | — |
+| [SRC-EEF2E6447C-L000181](../../api/omarai.py#L181) | 181 | `"        except TimeoutError:"` | — |
+| [SRC-EEF2E6447C-L000182](../../api/omarai.py#L182) | 182 | `"            # Incomplete request line/headers are untrusted protocol input;"` | — |
+| [SRC-EEF2E6447C-L000183](../../api/omarai.py#L183) | 183 | `"            # close the socket without trying to parse or answer a partial request."` | — |
+| [SRC-EEF2E6447C-L000184](../../api/omarai.py#L184) | 184 | `"            self.close_connection = True"` | — |
+| [SRC-EEF2E6447C-L000185](../../api/omarai.py#L185) | 185 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000186](../../api/omarai.py#L186) | 186 | `"            self._request_header_deadline = None"` | — |
+| [SRC-EEF2E6447C-L000187](../../api/omarai.py#L187) | 187 | `""` | — |
+| [SRC-EEF2E6447C-L000188](../../api/omarai.py#L188) | 188 | `"    store = LeadStore()"` | — |
+| [SRC-EEF2E6447C-L000189](../../api/omarai.py#L189) | 189 | `"    _rate_lock = threading.Lock()"` | — |
+| [SRC-EEF2E6447C-L000190](../../api/omarai.py#L190) | 190 | `"    _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)"` | — |
+| [SRC-EEF2E6447C-L000191](../../api/omarai.py#L191) | 191 | `"    _rate_last_cleanup: ClassVar[float] = 0.0"` | — |
+| [SRC-EEF2E6447C-L000192](../../api/omarai.py#L192) | 192 | `"    RATE_LIMIT_REQUESTS = 20"` | — |
+| [SRC-EEF2E6447C-L000193](../../api/omarai.py#L193) | 193 | `"    RATE_LIMIT_WINDOW_SECONDS = 60"` | — |
+| [SRC-EEF2E6447C-L000194](../../api/omarai.py#L194) | 194 | `"    RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60"` | — |
+| [SRC-EEF2E6447C-L000195](../../api/omarai.py#L195) | 195 | `"    AGENT_CONCURRENCY_LIMIT = _configured_agent_concurrency_limit()"` | — |
+| [SRC-EEF2E6447C-L000196](../../api/omarai.py#L196) | 196 | `"    _agent_semaphore = threading.BoundedSemaphore(AGENT_CONCURRENCY_LIMIT)"` | — |
+| [SRC-EEF2E6447C-L000197](../../api/omarai.py#L197) | 197 | `""` | — |
+| [SRC-EEF2E6447C-L000198](../../api/omarai.py#L198) | 198 | `"    def _run_bounded_agent_operation(self, operation):"` | — |
+| [SRC-EEF2E6447C-L000199](../../api/omarai.py#L199) | 199 | `"        \"\"\"Run an expensive operation only when a process-local slot is available.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000200](../../api/omarai.py#L200) | 200 | `"        cls = type(self)"` | — |
+| [SRC-EEF2E6447C-L000201](../../api/omarai.py#L201) | 201 | `"        if not cls._agent_semaphore.acquire(blocking=False):"` | — |
+| [SRC-EEF2E6447C-L000202](../../api/omarai.py#L202) | 202 | `"            return self.respond("` | — |
+| [SRC-EEF2E6447C-L000203](../../api/omarai.py#L203) | 203 | `"                503,"` | — |
+| [SRC-EEF2E6447C-L000204](../../api/omarai.py#L204) | 204 | `"                {"` | — |
+| [SRC-EEF2E6447C-L000205](../../api/omarai.py#L205) | 205 | `"                    \"error\": \"خدمة البحث مشغولة حاليًا؛ أعد المحاولة بعد قليل.\","` | — |
+| [SRC-EEF2E6447C-L000206](../../api/omarai.py#L206) | 206 | `"                    \"retry_after_seconds\": 5,"` | — |
+| [SRC-EEF2E6447C-L000207](../../api/omarai.py#L207) | 207 | `"                    \"process_concurrency_limit\": cls.AGENT_CONCURRENCY_LIMIT,"` | — |
+| [SRC-EEF2E6447C-L000208](../../api/omarai.py#L208) | 208 | `"                },"` | — |
+| [SRC-EEF2E6447C-L000209](../../api/omarai.py#L209) | 209 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000210](../../api/omarai.py#L210) | 210 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000211](../../api/omarai.py#L211) | 211 | `"            return self.respond(200, operation())"` | — |
+| [SRC-EEF2E6447C-L000212](../../api/omarai.py#L212) | 212 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000213](../../api/omarai.py#L213) | 213 | `"            cls._agent_semaphore.release()"` | — |
+| [SRC-EEF2E6447C-L000214](../../api/omarai.py#L214) | 214 | `""` | — |
+| [SRC-EEF2E6447C-L000215](../../api/omarai.py#L215) | 215 | `"    def _authorized(self):"` | — |
+| [SRC-EEF2E6447C-L000216](../../api/omarai.py#L216) | 216 | `"        expected = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000217](../../api/omarai.py#L217) | 217 | `"        if not expected:"` | — |
+| [SRC-EEF2E6447C-L000218](../../api/omarai.py#L218) | 218 | `"            return os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() != \"1\""` | — |
+| [SRC-EEF2E6447C-L000219](../../api/omarai.py#L219) | 219 | `"        supplied = self.headers.get(\"Authorization\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000220](../../api/omarai.py#L220) | 220 | `"        if not supplied.startswith(\"Bearer \"):"` | — |
+| [SRC-EEF2E6447C-L000221](../../api/omarai.py#L221) | 221 | `"            return False"` | — |
+| [SRC-EEF2E6447C-L000222](../../api/omarai.py#L222) | 222 | `"        return hmac.compare_digest(supplied[7:].strip(), expected)"` | — |
+| [SRC-EEF2E6447C-L000223](../../api/omarai.py#L223) | 223 | `""` | — |
+| [SRC-EEF2E6447C-L000224](../../api/omarai.py#L224) | 224 | `"    def _allowed_origins(self):"` | — |
+| [SRC-EEF2E6447C-L000225](../../api/omarai.py#L225) | 225 | `"        \"\"\"Return configured browser origins plus this service’s own origin."` | — |
+| [SRC-EEF2E6447C-L000226](../../api/omarai.py#L226) | 226 | `""` | — |
+| [SRC-EEF2E6447C-L000227](../../api/omarai.py#L227) | 227 | `"        OMARAI_ALLOWED_ORIGINS is a comma-separated list of trusted origins"` | — |
+| [SRC-EEF2E6447C-L000228](../../api/omarai.py#L228) | 228 | `"        (scheme + host + optional port; no path and no wildcard)."` | — |
+| [SRC-EEF2E6447C-L000229](../../api/omarai.py#L229) | 229 | `"        \"\"\""` | — |
+| [SRC-EEF2E6447C-L000230](../../api/omarai.py#L230) | 230 | `"        configured = os.getenv(\"OMARAI_ALLOWED_ORIGINS\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000231](../../api/omarai.py#L231) | 231 | `"        origins = {"` | — |
+| [SRC-EEF2E6447C-L000232](../../api/omarai.py#L232) | 232 | `"            item.strip().rstrip(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000233](../../api/omarai.py#L233) | 233 | `"            for item in configured.split(\",\")"` | — |
+| [SRC-EEF2E6447C-L000234](../../api/omarai.py#L234) | 234 | `"            if item.strip()"` | — |
+| [SRC-EEF2E6447C-L000235](../../api/omarai.py#L235) | 235 | `"        }"` | — |
+| [SRC-EEF2E6447C-L000236](../../api/omarai.py#L236) | 236 | `"        if os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\":"` | — |
+| [SRC-EEF2E6447C-L000237](../../api/omarai.py#L237) | 237 | `"            # Host identifies the requested service origin. Do not derive allowed"` | — |
+| [SRC-EEF2E6447C-L000238](../../api/omarai.py#L238) | 238 | `"            # origins from X-Forwarded-Host: direct clients can spoof that header"` | — |
+| [SRC-EEF2E6447C-L000239](../../api/omarai.py#L239) | 239 | `"            # unless the reverse proxy is separately configured to overwrite it."` | — |
+| [SRC-EEF2E6447C-L000240](../../api/omarai.py#L240) | 240 | `"            scheme = self.headers.get(\"X-Forwarded-Proto\", \"https\").split(\",\", 1)[0].strip().lower()"` | — |
+| [SRC-EEF2E6447C-L000241](../../api/omarai.py#L241) | 241 | `"            host = self.headers.get(\"Host\", \"\").split(\",\", 1)[0].strip()"` | — |
+| [SRC-EEF2E6447C-L000242](../../api/omarai.py#L242) | 242 | `"            if host:"` | — |
+| [SRC-EEF2E6447C-L000243](../../api/omarai.py#L243) | 243 | `"                origins.add(f\"https://{host}\".rstrip(\"/\"))"` | — |
+| [SRC-EEF2E6447C-L000244](../../api/omarai.py#L244) | 244 | `"                origins.add(f\"{scheme}://{host}\".rstrip(\"/\"))"` | — |
+| [SRC-EEF2E6447C-L000245](../../api/omarai.py#L245) | 245 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000246](../../api/omarai.py#L246) | 246 | `"            port = self.server.server_port"` | — |
+| [SRC-EEF2E6447C-L000247](../../api/omarai.py#L247) | 247 | `"            origins.update("` | — |
+| [SRC-EEF2E6447C-L000248](../../api/omarai.py#L248) | 248 | `"                {"` | — |
+| [SRC-EEF2E6447C-L000249](../../api/omarai.py#L249) | 249 | `"                    f\"http://127.0.0.1:{port}\","` | — |
+| [SRC-EEF2E6447C-L000250](../../api/omarai.py#L250) | 250 | `"                    f\"http://localhost:{port}\","` | — |
+| [SRC-EEF2E6447C-L000251](../../api/omarai.py#L251) | 251 | `"                    f\"http://[::1]:{port}\","` | — |
+| [SRC-EEF2E6447C-L000252](../../api/omarai.py#L252) | 252 | `"                }"` | — |
+| [SRC-EEF2E6447C-L000253](../../api/omarai.py#L253) | 253 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000254](../../api/omarai.py#L254) | 254 | `"        return origins"` | — |
 | [SRC-EEF2E6447C-L000255](../../api/omarai.py#L255) | 255 | `""` | — |
-| [SRC-EEF2E6447C-L000256](../../api/omarai.py#L256) | 256 | `"    def _rate_limit_ok(self):"` | — |
-| [SRC-EEF2E6447C-L000257](../../api/omarai.py#L257) | 257 | `"        client_ip = self._rate_limit_client_key()"` | — |
-| [SRC-EEF2E6447C-L000258](../../api/omarai.py#L258) | 258 | `"        now = time.monotonic()"` | — |
-| [SRC-EEF2E6447C-L000259](../../api/omarai.py#L259) | 259 | `"        cls = type(self)"` | — |
-| [SRC-EEF2E6447C-L000260](../../api/omarai.py#L260) | 260 | `"        with self._rate_lock:"` | — |
-| [SRC-EEF2E6447C-L000261](../../api/omarai.py#L261) | 261 | `"            # Periodically remove IP buckets whose entire sliding window has expired."` | — |
-| [SRC-EEF2E6447C-L000262](../../api/omarai.py#L262) | 262 | `"            # Without this sweep, a public endpoint could retain one empty deque per"` | — |
-| [SRC-EEF2E6447C-L000263](../../api/omarai.py#L263) | 263 | `"            # distinct client IP forever, even though the rate-limit window is 60 sec."` | — |
-| [SRC-EEF2E6447C-L000264](../../api/omarai.py#L264) | 264 | `"            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:"` | — |
-| [SRC-EEF2E6447C-L000265](../../api/omarai.py#L265) | 265 | `"                cutoff = now - cls.RATE_LIMIT_WINDOW_SECONDS"` | — |
-| [SRC-EEF2E6447C-L000266](../../api/omarai.py#L266) | 266 | `"                for key, timestamps in list(cls._request_times.items()):"` | — |
-| [SRC-EEF2E6447C-L000267](../../api/omarai.py#L267) | 267 | `"                    while timestamps and timestamps[0] <= cutoff:"` | — |
-| [SRC-EEF2E6447C-L000268](../../api/omarai.py#L268) | 268 | `"                        timestamps.popleft()"` | — |
-| [SRC-EEF2E6447C-L000269](../../api/omarai.py#L269) | 269 | `"                    if not timestamps:"` | — |
-| [SRC-EEF2E6447C-L000270](../../api/omarai.py#L270) | 270 | `"                        cls._request_times.pop(key, None)"` | — |
-| [SRC-EEF2E6447C-L000271](../../api/omarai.py#L271) | 271 | `"                cls._rate_last_cleanup = now"` | — |
-| [SRC-EEF2E6447C-L000272](../../api/omarai.py#L272) | 272 | `""` | — |
-| [SRC-EEF2E6447C-L000273](../../api/omarai.py#L273) | 273 | `"            events = cls._request_times[client_ip]"` | — |
-| [SRC-EEF2E6447C-L000274](../../api/omarai.py#L274) | 274 | `"            while events and now - events[0] >= cls.RATE_LIMIT_WINDOW_SECONDS:"` | — |
-| [SRC-EEF2E6447C-L000275](../../api/omarai.py#L275) | 275 | `"                events.popleft()"` | — |
-| [SRC-EEF2E6447C-L000276](../../api/omarai.py#L276) | 276 | `"            if len(events) >= cls.RATE_LIMIT_REQUESTS:"` | — |
-| [SRC-EEF2E6447C-L000277](../../api/omarai.py#L277) | 277 | `"                return False"` | — |
-| [SRC-EEF2E6447C-L000278](../../api/omarai.py#L278) | 278 | `"            events.append(now)"` | — |
-| [SRC-EEF2E6447C-L000279](../../api/omarai.py#L279) | 279 | `"            return True"` | — |
-| [SRC-EEF2E6447C-L000280](../../api/omarai.py#L280) | 280 | `""` | — |
-| [SRC-EEF2E6447C-L000281](../../api/omarai.py#L281) | 281 | `"    def _read_request_body(self) -> bytes \| None:"` | — |
-| [SRC-EEF2E6447C-L000282](../../api/omarai.py#L282) | 282 | `"        \"\"\"Read a bounded body with both idle and absolute wall-clock deadlines.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000283](../../api/omarai.py#L283) | 283 | `"        raw_size = self.headers.get(\"Content-Length\", \"\").strip()"` | — |
-| [SRC-EEF2E6447C-L000284](../../api/omarai.py#L284) | 284 | `"        if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():"` | — |
-| [SRC-EEF2E6447C-L000285](../../api/omarai.py#L285) | 285 | `"            self.respond(400, {\"error\": \"valid Content-Length is required\"})"` | — |
-| [SRC-EEF2E6447C-L000286](../../api/omarai.py#L286) | 286 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000287](../../api/omarai.py#L287) | 287 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000288](../../api/omarai.py#L288) | 288 | `"            size = int(raw_size)"` | — |
-| [SRC-EEF2E6447C-L000289](../../api/omarai.py#L289) | 289 | `"        except ValueError:"` | — |
-| [SRC-EEF2E6447C-L000290](../../api/omarai.py#L290) | 290 | `"            self.respond(400, {\"error\": \"valid Content-Length is required\"})"` | — |
-| [SRC-EEF2E6447C-L000291](../../api/omarai.py#L291) | 291 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000292](../../api/omarai.py#L292) | 292 | `"        if size <= 0:"` | — |
-| [SRC-EEF2E6447C-L000293](../../api/omarai.py#L293) | 293 | `"            self.respond(400, {\"error\": \"request body is required\"})"` | — |
-| [SRC-EEF2E6447C-L000294](../../api/omarai.py#L294) | 294 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000295](../../api/omarai.py#L295) | 295 | `"        if size > MAX_REQUEST_BODY_BYTES:"` | — |
-| [SRC-EEF2E6447C-L000296](../../api/omarai.py#L296) | 296 | `"            self.respond(413, {\"error\": \"request too large\"})"` | — |
-| [SRC-EEF2E6447C-L000297](../../api/omarai.py#L297) | 297 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000298](../../api/omarai.py#L298) | 298 | `""` | — |
-| [SRC-EEF2E6447C-L000299](../../api/omarai.py#L299) | 299 | `"        total_timeout = max("` | — |
-| [SRC-EEF2E6447C-L000300](../../api/omarai.py#L300) | 300 | `"            0.1,"` | — |
-| [SRC-EEF2E6447C-L000301](../../api/omarai.py#L301) | 301 | `"            min("` | — |
-| [SRC-EEF2E6447C-L000302](../../api/omarai.py#L302) | 302 | `"                float(REQUEST_BODY_READ_TIMEOUT_SECONDS),"` | — |
-| [SRC-EEF2E6447C-L000303](../../api/omarai.py#L303) | 303 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
-| [SRC-EEF2E6447C-L000304](../../api/omarai.py#L304) | 304 | `"            ),"` | — |
-| [SRC-EEF2E6447C-L000305](../../api/omarai.py#L305) | 305 | `"        )"` | — |
-| [SRC-EEF2E6447C-L000306](../../api/omarai.py#L306) | 306 | `"        idle_timeout = max("` | — |
-| [SRC-EEF2E6447C-L000307](../../api/omarai.py#L307) | 307 | `"            0.1,"` | — |
-| [SRC-EEF2E6447C-L000308](../../api/omarai.py#L308) | 308 | `"            min("` | — |
-| [SRC-EEF2E6447C-L000309](../../api/omarai.py#L309) | 309 | `"                float(REQUEST_BODY_IDLE_TIMEOUT_SECONDS),"` | — |
-| [SRC-EEF2E6447C-L000310](../../api/omarai.py#L310) | 310 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
-| [SRC-EEF2E6447C-L000311](../../api/omarai.py#L311) | 311 | `"            ),"` | — |
-| [SRC-EEF2E6447C-L000312](../../api/omarai.py#L312) | 312 | `"        )"` | — |
-| [SRC-EEF2E6447C-L000313](../../api/omarai.py#L313) | 313 | `"        deadline = time.monotonic() + total_timeout"` | — |
-| [SRC-EEF2E6447C-L000314](../../api/omarai.py#L314) | 314 | `"        previous_timeout = self.connection.gettimeout()"` | — |
-| [SRC-EEF2E6447C-L000315](../../api/omarai.py#L315) | 315 | `"        body = bytearray()"` | — |
-| [SRC-EEF2E6447C-L000316](../../api/omarai.py#L316) | 316 | `"        timed_out = False"` | — |
-| [SRC-EEF2E6447C-L000317](../../api/omarai.py#L317) | 317 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000318](../../api/omarai.py#L318) | 318 | `"            while len(body) < size:"` | — |
-| [SRC-EEF2E6447C-L000319](../../api/omarai.py#L319) | 319 | `"                remaining = deadline - time.monotonic()"` | — |
-| [SRC-EEF2E6447C-L000320](../../api/omarai.py#L320) | 320 | `"                if remaining <= 0:"` | — |
-| [SRC-EEF2E6447C-L000321](../../api/omarai.py#L321) | 321 | `"                    timed_out = True"` | — |
-| [SRC-EEF2E6447C-L000322](../../api/omarai.py#L322) | 322 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000323](../../api/omarai.py#L323) | 323 | `"                self.connection.settimeout(min(idle_timeout, remaining))"` | — |
-| [SRC-EEF2E6447C-L000324](../../api/omarai.py#L324) | 324 | `"                try:"` | — |
-| [SRC-EEF2E6447C-L000325](../../api/omarai.py#L325) | 325 | `"                    # read1 performs at most one underlying read, letting us re-check"` | — |
-| [SRC-EEF2E6447C-L000326](../../api/omarai.py#L326) | 326 | `"                    # the absolute deadline between body fragments."` | — |
-| [SRC-EEF2E6447C-L000327](../../api/omarai.py#L327) | 327 | `"                    chunk = self.rfile.read1("` | — |
-| [SRC-EEF2E6447C-L000328](../../api/omarai.py#L328) | 328 | `"                        min(size - len(body), REQUEST_BODY_READ_CHUNK_BYTES)"` | — |
-| [SRC-EEF2E6447C-L000329](../../api/omarai.py#L329) | 329 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000256](../../api/omarai.py#L256) | 256 | `"    def _origin_allowed(self, origin):"` | — |
+| [SRC-EEF2E6447C-L000257](../../api/omarai.py#L257) | 257 | `"        return bool(origin) and origin.rstrip(\"/\") in self._allowed_origins()"` | — |
+| [SRC-EEF2E6447C-L000258](../../api/omarai.py#L258) | 258 | `""` | — |
+| [SRC-EEF2E6447C-L000259](../../api/omarai.py#L259) | 259 | `"    def _rate_limit_client_key(self):"` | — |
+| [SRC-EEF2E6447C-L000260](../../api/omarai.py#L260) | 260 | `"        \"\"\"Choose a rate-limit identity without trusting spoofable proxy headers by default."` | — |
+| [SRC-EEF2E6447C-L000261](../../api/omarai.py#L261) | 261 | `""` | — |
+| [SRC-EEF2E6447C-L000262](../../api/omarai.py#L262) | 262 | `"        Set OMARAI_TRUST_PROXY_HEADERS=1 only when the deployment's trusted reverse"` | — |
+| [SRC-EEF2E6447C-L000263](../../api/omarai.py#L263) | 263 | `"        proxy appends the actual client IP as the rightmost X-Forwarded-For value."` | — |
+| [SRC-EEF2E6447C-L000264](../../api/omarai.py#L264) | 264 | `"        \"\"\""` | — |
+| [SRC-EEF2E6447C-L000265](../../api/omarai.py#L265) | 265 | `"        direct_ip = self.client_address[0]"` | — |
+| [SRC-EEF2E6447C-L000266](../../api/omarai.py#L266) | 266 | `"        if os.getenv(\"OMARAI_TRUST_PROXY_HEADERS\", \"\").strip() != \"1\":"` | — |
+| [SRC-EEF2E6447C-L000267](../../api/omarai.py#L267) | 267 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000268](../../api/omarai.py#L268) | 268 | `"        forwarded = self.headers.get(\"X-Forwarded-For\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000269](../../api/omarai.py#L269) | 269 | `"        candidate = forwarded.rsplit(\",\", 1)[-1].strip() if forwarded else \"\""` | — |
+| [SRC-EEF2E6447C-L000270](../../api/omarai.py#L270) | 270 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000271](../../api/omarai.py#L271) | 271 | `"            return str(ipaddress.ip_address(candidate))"` | — |
+| [SRC-EEF2E6447C-L000272](../../api/omarai.py#L272) | 272 | `"        except ValueError:"` | — |
+| [SRC-EEF2E6447C-L000273](../../api/omarai.py#L273) | 273 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000274](../../api/omarai.py#L274) | 274 | `""` | — |
+| [SRC-EEF2E6447C-L000275](../../api/omarai.py#L275) | 275 | `"    def _rate_limit_ok(self):"` | — |
+| [SRC-EEF2E6447C-L000276](../../api/omarai.py#L276) | 276 | `"        client_ip = self._rate_limit_client_key()"` | — |
+| [SRC-EEF2E6447C-L000277](../../api/omarai.py#L277) | 277 | `"        now = time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000278](../../api/omarai.py#L278) | 278 | `"        cls = type(self)"` | — |
+| [SRC-EEF2E6447C-L000279](../../api/omarai.py#L279) | 279 | `"        with self._rate_lock:"` | — |
+| [SRC-EEF2E6447C-L000280](../../api/omarai.py#L280) | 280 | `"            # Periodically remove IP buckets whose entire sliding window has expired."` | — |
+| [SRC-EEF2E6447C-L000281](../../api/omarai.py#L281) | 281 | `"            # Without this sweep, a public endpoint could retain one empty deque per"` | — |
+| [SRC-EEF2E6447C-L000282](../../api/omarai.py#L282) | 282 | `"            # distinct client IP forever, even though the rate-limit window is 60 sec."` | — |
+| [SRC-EEF2E6447C-L000283](../../api/omarai.py#L283) | 283 | `"            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:"` | — |
+| [SRC-EEF2E6447C-L000284](../../api/omarai.py#L284) | 284 | `"                cutoff = now - cls.RATE_LIMIT_WINDOW_SECONDS"` | — |
+| [SRC-EEF2E6447C-L000285](../../api/omarai.py#L285) | 285 | `"                for key, timestamps in list(cls._request_times.items()):"` | — |
+| [SRC-EEF2E6447C-L000286](../../api/omarai.py#L286) | 286 | `"                    while timestamps and timestamps[0] <= cutoff:"` | — |
+| [SRC-EEF2E6447C-L000287](../../api/omarai.py#L287) | 287 | `"                        timestamps.popleft()"` | — |
+| [SRC-EEF2E6447C-L000288](../../api/omarai.py#L288) | 288 | `"                    if not timestamps:"` | — |
+| [SRC-EEF2E6447C-L000289](../../api/omarai.py#L289) | 289 | `"                        cls._request_times.pop(key, None)"` | — |
+| [SRC-EEF2E6447C-L000290](../../api/omarai.py#L290) | 290 | `"                cls._rate_last_cleanup = now"` | — |
+| [SRC-EEF2E6447C-L000291](../../api/omarai.py#L291) | 291 | `""` | — |
+| [SRC-EEF2E6447C-L000292](../../api/omarai.py#L292) | 292 | `"            events = cls._request_times[client_ip]"` | — |
+| [SRC-EEF2E6447C-L000293](../../api/omarai.py#L293) | 293 | `"            while events and now - events[0] >= cls.RATE_LIMIT_WINDOW_SECONDS:"` | — |
+| [SRC-EEF2E6447C-L000294](../../api/omarai.py#L294) | 294 | `"                events.popleft()"` | — |
+| [SRC-EEF2E6447C-L000295](../../api/omarai.py#L295) | 295 | `"            if len(events) >= cls.RATE_LIMIT_REQUESTS:"` | — |
+| [SRC-EEF2E6447C-L000296](../../api/omarai.py#L296) | 296 | `"                return False"` | — |
+| [SRC-EEF2E6447C-L000297](../../api/omarai.py#L297) | 297 | `"            events.append(now)"` | — |
+| [SRC-EEF2E6447C-L000298](../../api/omarai.py#L298) | 298 | `"            return True"` | — |
+| [SRC-EEF2E6447C-L000299](../../api/omarai.py#L299) | 299 | `""` | — |
+| [SRC-EEF2E6447C-L000300](../../api/omarai.py#L300) | 300 | `"    def _read_request_body(self) -> bytes \| None:"` | — |
+| [SRC-EEF2E6447C-L000301](../../api/omarai.py#L301) | 301 | `"        \"\"\"Read a bounded body with both idle and absolute wall-clock deadlines.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000302](../../api/omarai.py#L302) | 302 | `"        raw_size = self.headers.get(\"Content-Length\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000303](../../api/omarai.py#L303) | 303 | `"        if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():"` | — |
+| [SRC-EEF2E6447C-L000304](../../api/omarai.py#L304) | 304 | `"            self.respond(400, {\"error\": \"valid Content-Length is required\"})"` | — |
+| [SRC-EEF2E6447C-L000305](../../api/omarai.py#L305) | 305 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000306](../../api/omarai.py#L306) | 306 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000307](../../api/omarai.py#L307) | 307 | `"            size = int(raw_size)"` | — |
+| [SRC-EEF2E6447C-L000308](../../api/omarai.py#L308) | 308 | `"        except ValueError:"` | — |
+| [SRC-EEF2E6447C-L000309](../../api/omarai.py#L309) | 309 | `"            self.respond(400, {\"error\": \"valid Content-Length is required\"})"` | — |
+| [SRC-EEF2E6447C-L000310](../../api/omarai.py#L310) | 310 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000311](../../api/omarai.py#L311) | 311 | `"        if size <= 0:"` | — |
+| [SRC-EEF2E6447C-L000312](../../api/omarai.py#L312) | 312 | `"            self.respond(400, {\"error\": \"request body is required\"})"` | — |
+| [SRC-EEF2E6447C-L000313](../../api/omarai.py#L313) | 313 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000314](../../api/omarai.py#L314) | 314 | `"        if size > MAX_REQUEST_BODY_BYTES:"` | — |
+| [SRC-EEF2E6447C-L000315](../../api/omarai.py#L315) | 315 | `"            self.respond(413, {\"error\": \"request too large\"})"` | — |
+| [SRC-EEF2E6447C-L000316](../../api/omarai.py#L316) | 316 | `"            return None"` | — |
+| [SRC-EEF2E6447C-L000317](../../api/omarai.py#L317) | 317 | `""` | — |
+| [SRC-EEF2E6447C-L000318](../../api/omarai.py#L318) | 318 | `"        total_timeout = max("` | — |
+| [SRC-EEF2E6447C-L000319](../../api/omarai.py#L319) | 319 | `"            0.1,"` | — |
+| [SRC-EEF2E6447C-L000320](../../api/omarai.py#L320) | 320 | `"            min("` | — |
+| [SRC-EEF2E6447C-L000321](../../api/omarai.py#L321) | 321 | `"                float(REQUEST_BODY_READ_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000322](../../api/omarai.py#L322) | 322 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
+| [SRC-EEF2E6447C-L000323](../../api/omarai.py#L323) | 323 | `"            ),"` | — |
+| [SRC-EEF2E6447C-L000324](../../api/omarai.py#L324) | 324 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000325](../../api/omarai.py#L325) | 325 | `"        idle_timeout = max("` | — |
+| [SRC-EEF2E6447C-L000326](../../api/omarai.py#L326) | 326 | `"            0.1,"` | — |
+| [SRC-EEF2E6447C-L000327](../../api/omarai.py#L327) | 327 | `"            min("` | — |
+| [SRC-EEF2E6447C-L000328](../../api/omarai.py#L328) | 328 | `"                float(REQUEST_BODY_IDLE_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000329](../../api/omarai.py#L329) | 329 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |

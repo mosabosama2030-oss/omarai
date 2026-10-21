@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000687 إلى SRC-FA4E1423C3-L000147
+- النطاق: SRC-3451CC474D-L000667 إلى SRC-FA4E1423C3-L000093
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000667](../../tests/test_api.py#L667) | 667 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
+| [SRC-3451CC474D-L000668](../../tests/test_api.py#L668) | 668 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
+| [SRC-3451CC474D-L000669](../../tests/test_api.py#L669) | 669 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
+| [SRC-3451CC474D-L000670](../../tests/test_api.py#L670) | 670 | `"            \"Access-Control-Request-Headers\": \"authorization,content-type\","` | — |
+| [SRC-3451CC474D-L000671](../../tests/test_api.py#L671) | 671 | `"        },"` | — |
+| [SRC-3451CC474D-L000672](../../tests/test_api.py#L672) | 672 | `"    )"` | — |
+| [SRC-3451CC474D-L000673](../../tests/test_api.py#L673) | 673 | `"    with pytest.raises(HTTPError) as error:"` | — |
+| [SRC-3451CC474D-L000674](../../tests/test_api.py#L674) | 674 | `"        urlopen(request, timeout=3)"` | — |
+| [SRC-3451CC474D-L000675](../../tests/test_api.py#L675) | 675 | `"    assert error.value.code == 403"` | — |
+| [SRC-3451CC474D-L000676](../../tests/test_api.py#L676) | 676 | `""` | — |
+| [SRC-3451CC474D-L000677](../../tests/test_api.py#L677) | 677 | `""` | — |
+| [SRC-3451CC474D-L000678](../../tests/test_api.py#L678) | 678 | `"def test_public_origin_still_allows_the_requested_host(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000679](../../tests/test_api.py#L679) | 679 | `"    \"\"\"Same-service public UI remains compatible when the request Host is trusted.\"\"\""` | — |
+| [SRC-3451CC474D-L000680](../../tests/test_api.py#L680) | 680 | `"    from types import SimpleNamespace"` | — |
+| [SRC-3451CC474D-L000681](../../tests/test_api.py#L681) | 681 | `""` | — |
+| [SRC-3451CC474D-L000682](../../tests/test_api.py#L682) | 682 | `"    from api.omarai import Handler"` | — |
+| [SRC-3451CC474D-L000683](../../tests/test_api.py#L683) | 683 | `""` | — |
+| [SRC-3451CC474D-L000684](../../tests/test_api.py#L684) | 684 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000685](../../tests/test_api.py#L685) | 685 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000686](../../tests/test_api.py#L686) | 686 | `"    handler = SimpleNamespace("` | — |
 | [SRC-3451CC474D-L000687](../../tests/test_api.py#L687) | 687 | `"        headers={"` | — |
 | [SRC-3451CC474D-L000688](../../tests/test_api.py#L688) | 688 | `"            \"Host\": \"omarai.example\","` | — |
 | [SRC-3451CC474D-L000689](../../tests/test_api.py#L689) | 689 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
@@ -55,6 +75,40 @@
 | [SRC-3451CC474D-L000723](../../tests/test_api.py#L723) | 723 | `"    assert api_module._build_sha() == \"a\" * 40"` | — |
 | [SRC-3451CC474D-L000724](../../tests/test_api.py#L724) | 724 | `"    build_sha_file.write_text(\"not-a-git-sha\", encoding=\"ascii\")"` | — |
 | [SRC-3451CC474D-L000725](../../tests/test_api.py#L725) | 725 | `"    assert api_module._build_sha() == \"unknown\""` | — |
+| [SRC-3451CC474D-L000726](../../tests/test_api.py#L726) | 726 | `""` | — |
+| [SRC-3451CC474D-L000727](../../tests/test_api.py#L727) | 727 | `""` | — |
+| [SRC-3451CC474D-L000728](../../tests/test_api.py#L728) | 728 | `""` | — |
+| [SRC-3451CC474D-L000729](../../tests/test_api.py#L729) | 729 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3451CC474D-L000730](../../tests/test_api.py#L730) | 730 | `"    (\"variable\", \"source\"),"` | — |
+| [SRC-3451CC474D-L000731](../../tests/test_api.py#L731) | 731 | `"    ["` | — |
+| [SRC-3451CC474D-L000732](../../tests/test_api.py#L732) | 732 | `"        (\"RAILWAY_GIT_COMMIT_SHA\", \"platform:railway\"),"` | — |
+| [SRC-3451CC474D-L000733](../../tests/test_api.py#L733) | 733 | `"        (\"RENDER_GIT_COMMIT\", \"platform:render\"),"` | — |
+| [SRC-3451CC474D-L000734](../../tests/test_api.py#L734) | 734 | `"    ],"` | — |
+| [SRC-3451CC474D-L000735](../../tests/test_api.py#L735) | 735 | `")"` | — |
+| [SRC-3451CC474D-L000736](../../tests/test_api.py#L736) | 736 | `"def test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable("` | — |
+| [SRC-3451CC474D-L000737](../../tests/test_api.py#L737) | 737 | `"    monkeypatch, tmp_path, variable, source"` | — |
+| [SRC-3451CC474D-L000738](../../tests/test_api.py#L738) | 738 | `"):"` | — |
+| [SRC-3451CC474D-L000739](../../tests/test_api.py#L739) | 739 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000740](../../tests/test_api.py#L740) | 740 | `""` | — |
+| [SRC-3451CC474D-L000741](../../tests/test_api.py#L741) | 741 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
+| [SRC-3451CC474D-L000742](../../tests/test_api.py#L742) | 742 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
+| [SRC-3451CC474D-L000743](../../tests/test_api.py#L743) | 743 | `"    build_sha_file.write_text(\"unknown\", encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000744](../../tests/test_api.py#L744) | 744 | `"    for name, _label in api_module._PLATFORM_BUILD_SHA_ENVIRONMENTS:"` | — |
+| [SRC-3451CC474D-L000745](../../tests/test_api.py#L745) | 745 | `"        monkeypatch.delenv(name, raising=False)"` | — |
+| [SRC-3451CC474D-L000746](../../tests/test_api.py#L746) | 746 | `"    monkeypatch.setenv(variable, \"b\" * 40)"` | — |
+| [SRC-3451CC474D-L000747](../../tests/test_api.py#L747) | 747 | `""` | — |
+| [SRC-3451CC474D-L000748](../../tests/test_api.py#L748) | 748 | `"    assert api_module._build_identity() == (\"b\" * 40, source)"` | — |
+| [SRC-3451CC474D-L000749](../../tests/test_api.py#L749) | 749 | `""` | — |
+| [SRC-3451CC474D-L000750](../../tests/test_api.py#L750) | 750 | `""` | — |
+| [SRC-3451CC474D-L000751](../../tests/test_api.py#L751) | 751 | `"def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L000752](../../tests/test_api.py#L752) | 752 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000753](../../tests/test_api.py#L753) | 753 | `""` | — |
+| [SRC-3451CC474D-L000754](../../tests/test_api.py#L754) | 754 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", tmp_path / \"BUILD_SHA\")"` | — |
+| [SRC-3451CC474D-L000755](../../tests/test_api.py#L755) | 755 | `"    api_module.BUILD_SHA_FILE.write_text(\"unknown\", encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000756](../../tests/test_api.py#L756) | 756 | `"    monkeypatch.setenv(\"RAILWAY_GIT_COMMIT_SHA\", \"not-a-sha\")"` | — |
+| [SRC-3451CC474D-L000757](../../tests/test_api.py#L757) | 757 | `"    monkeypatch.setenv(\"RENDER_GIT_COMMIT\", \"also-not-a-sha\")"` | — |
+| [SRC-3451CC474D-L000758](../../tests/test_api.py#L758) | 758 | `""` | — |
+| [SRC-3451CC474D-L000759](../../tests/test_api.py#L759) | 759 | `"    assert api_module._build_identity() == (\"unknown\", \"unknown\")"` | — |
 ## اختبارات
 
 ### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
@@ -807,57 +861,3 @@
 | [SRC-FA4E1423C3-L000091](../../tests/test_generate_index.py#L91) | 91 | `"    web_dir.mkdir()"` | — |
 | [SRC-FA4E1423C3-L000092](../../tests/test_generate_index.py#L92) | 92 | `"    docs_dir.mkdir()"` | — |
 | [SRC-FA4E1423C3-L000093](../../tests/test_generate_index.py#L93) | 93 | `"    (web_dir / \"agent.html\").write_text("` | — |
-| [SRC-FA4E1423C3-L000094](../../tests/test_generate_index.py#L94) | 94 | `"        '<div id=\"chat-panel\" name=\"question-box\" data-testid=\"send-button\"></div>\\n'"` | — |
-| [SRC-FA4E1423C3-L000095](../../tests/test_generate_index.py#L95) | 95 | `"        \"<style>\\n\""` | — |
-| [SRC-FA4E1423C3-L000096](../../tests/test_generate_index.py#L96) | 96 | `"        \".chat-panel { --accent-color: #fff; }\\n\""` | — |
-| [SRC-FA4E1423C3-L000097](../../tests/test_generate_index.py#L97) | 97 | `"        \"#answer-panel { display: block; }\\n\""` | — |
-| [SRC-FA4E1423C3-L000098](../../tests/test_generate_index.py#L98) | 98 | `"        \"</style>\\n\""` | — |
-| [SRC-FA4E1423C3-L000099](../../tests/test_generate_index.py#L99) | 99 | `"        \"<script>\\n\""` | — |
-| [SRC-FA4E1423C3-L000100](../../tests/test_generate_index.py#L100) | 100 | `"        \"function sendMessage() { return true; }\\n\""` | — |
-| [SRC-FA4E1423C3-L000101](../../tests/test_generate_index.py#L101) | 101 | `"        \"class AgentCore {}\\n\""` | — |
-| [SRC-FA4E1423C3-L000102](../../tests/test_generate_index.py#L102) | 102 | `"        \"const fetchAnswer = async (question) => question;\\n\""` | — |
-| [SRC-FA4E1423C3-L000103](../../tests/test_generate_index.py#L103) | 103 | `"        \"const ACCESS_TOKEN = 'example';\\n\""` | — |
-| [SRC-FA4E1423C3-L000104](../../tests/test_generate_index.py#L104) | 104 | `"        \"</script>\\n\","` | — |
-| [SRC-FA4E1423C3-L000105](../../tests/test_generate_index.py#L105) | 105 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000106](../../tests/test_generate_index.py#L106) | 106 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000107](../../tests/test_generate_index.py#L107) | 107 | `"    (docs_dir / \"guide.md\").write_text("` | — |
-| [SRC-FA4E1423C3-L000108](../../tests/test_generate_index.py#L108) | 108 | `"        \"# User Guide\\n## Troubleshooting\\n\","` | — |
-| [SRC-FA4E1423C3-L000109](../../tests/test_generate_index.py#L109) | 109 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000110](../../tests/test_generate_index.py#L110) | 110 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000111](../../tests/test_generate_index.py#L111) | 111 | `"    (tmp_path / \"settings.yml\").write_text("` | — |
-| [SRC-FA4E1423C3-L000112](../../tests/test_generate_index.py#L112) | 112 | `"        \"OMARAI_ENABLED: true\\nrequest-budget:\\n  max-calls: 3\\n\","` | — |
-| [SRC-FA4E1423C3-L000113](../../tests/test_generate_index.py#L113) | 113 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000114](../../tests/test_generate_index.py#L114) | 114 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000115](../../tests/test_generate_index.py#L115) | 115 | `""` | — |
-| [SRC-FA4E1423C3-L000116](../../tests/test_generate_index.py#L116) | 116 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000117](../../tests/test_generate_index.py#L117) | 117 | `"    symbols = INDEXER.scan_static_symbols(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000118](../../tests/test_generate_index.py#L118) | 118 | `"    names_by_kind = {(symbol.kind, symbol.name) for symbol in symbols}"` | — |
-| [SRC-FA4E1423C3-L000119](../../tests/test_generate_index.py#L119) | 119 | `""` | — |
-| [SRC-FA4E1423C3-L000120](../../tests/test_generate_index.py#L120) | 120 | `"    assert (\"قيمة سمة HTML (id)\", \"chat-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000121](../../tests/test_generate_index.py#L121) | 121 | `"    assert (\"قيمة سمة HTML (name)\", \"question-box\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000122](../../tests/test_generate_index.py#L122) | 122 | `"    assert (\"قيمة سمة HTML (data-testid)\", \"send-button\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000123](../../tests/test_generate_index.py#L123) | 123 | `"    assert (\"دالة JavaScript/TypeScript\", \"sendMessage\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000124](../../tests/test_generate_index.py#L124) | 124 | `"    assert (\"كلاس JavaScript/TypeScript\", \"AgentCore\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000125](../../tests/test_generate_index.py#L125) | 125 | `"    assert (\"دالة JavaScript/TypeScript\", \"fetchAnswer\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000126](../../tests/test_generate_index.py#L126) | 126 | `"    assert (\"متغير JavaScript/TypeScript\", \"ACCESS_TOKEN\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000127](../../tests/test_generate_index.py#L127) | 127 | `"    assert (\"محدد class في CSS\", \"chat-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000128](../../tests/test_generate_index.py#L128) | 128 | `"    assert (\"محدد id في CSS\", \"answer-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000129](../../tests/test_generate_index.py#L129) | 129 | `"    assert (\"متغير CSS مخصص\", \"accent-color\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000130](../../tests/test_generate_index.py#L130) | 130 | `"    assert (\"عنوان Markdown (H1)\", \"User Guide\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000131](../../tests/test_generate_index.py#L131) | 131 | `"    assert (\"عنوان Markdown (H2)\", \"Troubleshooting\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000132](../../tests/test_generate_index.py#L132) | 132 | `"    assert (\"مفتاح إعداد YAML\", \"OMARAI_ENABLED\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000133](../../tests/test_generate_index.py#L133) | 133 | `"    assert (\"اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE\", \"OMARAI_ENABLED\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000134](../../tests/test_generate_index.py#L134) | 134 | `""` | — |
-| [SRC-FA4E1423C3-L000135](../../tests/test_generate_index.py#L135) | 135 | `""` | — |
-| [SRC-FA4E1423C3-L000136](../../tests/test_generate_index.py#L136) | 136 | `"def test_repository_inventory_covers_files_and_excludes_private_runtime_paths("` | — |
-| [SRC-FA4E1423C3-L000137](../../tests/test_generate_index.py#L137) | 137 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000138](../../tests/test_generate_index.py#L138) | 138 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000139](../../tests/test_generate_index.py#L139) | 139 | `"    \"\"\"The file inventory includes docs/config and excludes known local secret/runtime files.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000140](../../tests/test_generate_index.py#L140) | 140 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000141](../../tests/test_generate_index.py#L141) | 141 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000142](../../tests/test_generate_index.py#L142) | 142 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000143](../../tests/test_generate_index.py#L143) | 143 | `"    (docs_dir / \"guide.md\").write_text(\"# Guide\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000144](../../tests/test_generate_index.py#L144) | 144 | `"    (tmp_path / \".env\").write_text(\"OPENROUTER_API_KEY=private-value\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000145](../../tests/test_generate_index.py#L145) | 145 | `"    (tmp_path / \".env.example\").write_text("` | — |
-| [SRC-FA4E1423C3-L000146](../../tests/test_generate_index.py#L146) | 146 | `"        \"OPENROUTER_API_KEY=replace-me\\n\", encoding=\"utf-8\""` | — |
-| [SRC-FA4E1423C3-L000147](../../tests/test_generate_index.py#L147) | 147 | `"    )"` | — |

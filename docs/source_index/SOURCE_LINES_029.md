@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000574 إلى SRC-F725E90B2A-L001373
+- النطاق: SRC-F725E90B2A-L000520 إلى SRC-F725E90B2A-L001319
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000520](../../tests/test_web_agent.py#L520) | 520 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"secret-test\")"` | — |
+| [SRC-F725E90B2A-L000521](../../tests/test_web_agent.py#L521) | 521 | `"    monkeypatch.setenv(\"REDDIT_USER_AGENT\", \"test:omarai:0.1\")"` | — |
+| [SRC-F725E90B2A-L000522](../../tests/test_web_agent.py#L522) | 522 | `""` | — |
+| [SRC-F725E90B2A-L000523](../../tests/test_web_agent.py#L523) | 523 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000524](../../tests/test_web_agent.py#L524) | 524 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L000525](../../tests/test_web_agent.py#L525) | 525 | `""` | — |
+| [SRC-F725E90B2A-L000526](../../tests/test_web_agent.py#L526) | 526 | `"        def __init__(self, payload):"` | — |
+| [SRC-F725E90B2A-L000527](../../tests/test_web_agent.py#L527) | 527 | `"            self.payload = payload"` | — |
+| [SRC-F725E90B2A-L000528](../../tests/test_web_agent.py#L528) | 528 | `""` | — |
+| [SRC-F725E90B2A-L000529](../../tests/test_web_agent.py#L529) | 529 | `"        def json(self):"` | — |
+| [SRC-F725E90B2A-L000530](../../tests/test_web_agent.py#L530) | 530 | `"            return self.payload"` | — |
+| [SRC-F725E90B2A-L000531](../../tests/test_web_agent.py#L531) | 531 | `""` | — |
+| [SRC-F725E90B2A-L000532](../../tests/test_web_agent.py#L532) | 532 | `"        @property"` | — |
+| [SRC-F725E90B2A-L000533](../../tests/test_web_agent.py#L533) | 533 | `"        def content(self):"` | — |
+| [SRC-F725E90B2A-L000534](../../tests/test_web_agent.py#L534) | 534 | `"            import json"` | — |
+| [SRC-F725E90B2A-L000535](../../tests/test_web_agent.py#L535) | 535 | `"            return json.dumps(self.payload).encode()"` | — |
+| [SRC-F725E90B2A-L000536](../../tests/test_web_agent.py#L536) | 536 | `""` | — |
+| [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"    calls = []"` | — |
+| [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `""` | — |
+| [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    def fake_post(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"        calls.append((\"POST\", url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"        return FakeResponse({\"access_token\": \"test-reddit-access-token\"})"` | — |
+| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `""` | — |
+| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"        calls.append((\"GET\", url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"        return FakeResponse({\"data\": {\"children\": [{"` | — |
+| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `"            \"data\": {"` | — |
+| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"                \"title\": \"Electric vehicle owner discussion\","` | — |
+| [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `"                \"permalink\": \"/r/cars/comments/example/post/\","` | — |
+| [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"                \"selftext\": \"Owners discuss battery range.\","` | — |
+| [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"                \"created_utc\": 1791800000,"` | — |
+| [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `"                \"score\": 25,"` | — |
+| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"                \"num_comments\": 8,"` | — |
+| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `"            }"` | — |
+| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `"        }]}})"` | — |
+| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `""` | — |
+| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |
+| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `"        \"electric vehicles\", [\"reddit\"]"` | — |
+| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `"    )"` | — |
+| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"    assert results[0][\"provider\"] == \"reddit_oauth_api\""` | — |
+| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"    assert results[0][\"url\"] == \"https://www.reddit.com/r/cars/comments/example/post/\""` | — |
+| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"    assert \"score=25\" in results[0][\"snippet\"]"` | — |
+| [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `"    assert len([call for call in calls if call[0] == \"POST\"]) == 1"` | — |
+| [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `"    assert any(\"oauth.reddit.com/search\" in call[1] for call in calls if call[0] == \"GET\")"` | — |
+| [SRC-F725E90B2A-L000568](../../tests/test_web_agent.py#L568) | 568 | `"    assert \"test-reddit-access-token\" not in str(results)"` | — |
+| [SRC-F725E90B2A-L000569](../../tests/test_web_agent.py#L569) | 569 | `""` | — |
+| [SRC-F725E90B2A-L000570](../../tests/test_web_agent.py#L570) | 570 | `""` | — |
+| [SRC-F725E90B2A-L000571](../../tests/test_web_agent.py#L571) | 571 | `""` | — |
+| [SRC-F725E90B2A-L000572](../../tests/test_web_agent.py#L572) | 572 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000573](../../tests/test_web_agent.py#L573) | 573 | `"    for name in ("` | — |
 | [SRC-F725E90B2A-L000574](../../tests/test_web_agent.py#L574) | 574 | `"        \"OMARAI_LLM_MODEL\","` | — |
 | [SRC-F725E90B2A-L000575](../../tests/test_web_agent.py#L575) | 575 | `"        \"OMARAI_PLANNER_MODEL\","` | — |
 | [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
@@ -762,57 +816,3 @@
 | [SRC-F725E90B2A-L001317](../../tests/test_web_agent.py#L1317) | 1317 | `"    def fake_completion(messages, **kwargs):"` | — |
 | [SRC-F725E90B2A-L001318](../../tests/test_web_agent.py#L1318) | 1318 | `"        captured[\"messages\"] = messages"` | — |
 | [SRC-F725E90B2A-L001319](../../tests/test_web_agent.py#L1319) | 1319 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>تم تدقيق الإجابة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-F725E90B2A-L001320](../../tests/test_web_agent.py#L1320) | 1320 | `""` | — |
-| [SRC-F725E90B2A-L001321](../../tests/test_web_agent.py#L1321) | 1321 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001322](../../tests/test_web_agent.py#L1322) | 1322 | `"    result = agent._review_answer("` | — |
-| [SRC-F725E90B2A-L001323](../../tests/test_web_agent.py#L1323) | 1323 | `"        question=\"ما الذي يقوله المصدر؟\","` | — |
-| [SRC-F725E90B2A-L001324](../../tests/test_web_agent.py#L1324) | 1324 | `"        answer=\"مسودة إجابة تحتاج التحقق.\","` | — |
-| [SRC-F725E90B2A-L001325](../../tests/test_web_agent.py#L1325) | 1325 | `"        sources=[source],"` | — |
-| [SRC-F725E90B2A-L001326](../../tests/test_web_agent.py#L1326) | 1326 | `"    )"` | — |
-| [SRC-F725E90B2A-L001327](../../tests/test_web_agent.py#L1327) | 1327 | `""` | — |
-| [SRC-F725E90B2A-L001328](../../tests/test_web_agent.py#L1328) | 1328 | `"    messages = captured[\"messages\"]"` | — |
-| [SRC-F725E90B2A-L001329](../../tests/test_web_agent.py#L1329) | 1329 | `"    system_content = \"\\n\".join("` | — |
-| [SRC-F725E90B2A-L001330](../../tests/test_web_agent.py#L1330) | 1330 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
-| [SRC-F725E90B2A-L001331](../../tests/test_web_agent.py#L1331) | 1331 | `"    )"` | — |
-| [SRC-F725E90B2A-L001332](../../tests/test_web_agent.py#L1332) | 1332 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
-| [SRC-F725E90B2A-L001333](../../tests/test_web_agent.py#L1333) | 1333 | `""` | — |
-| [SRC-F725E90B2A-L001334](../../tests/test_web_agent.py#L1334) | 1334 | `"    assert result == \"تم تدقيق الإجابة.\""` | — |
-| [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `"    assert len(user_messages) == 3"` | — |
-| [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001337](../../tests/test_web_agent.py#L1337) | 1337 | `"    assert \"مسودة إجابة تحتاج التحقق.\" in user_messages[1][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001338](../../tests/test_web_agent.py#L1338) | 1338 | `"    assert \"غير موثوقة كتعليمات\" in user_messages[2][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"    assert injected_text not in system_content"` | — |
-| [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `""` | — |
-| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `""` | — |
-| [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L001346](../../tests/test_web_agent.py#L1346) | 1346 | `"    captured = {}"` | — |
-| [SRC-F725E90B2A-L001347](../../tests/test_web_agent.py#L1347) | 1347 | `""` | — |
-| [SRC-F725E90B2A-L001348](../../tests/test_web_agent.py#L1348) | 1348 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-F725E90B2A-L001349](../../tests/test_web_agent.py#L1349) | 1349 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-F725E90B2A-L001350](../../tests/test_web_agent.py#L1350) | 1350 | `"        captured[\"kwargs\"] = kwargs"` | — |
-| [SRC-F725E90B2A-L001351](../../tests/test_web_agent.py#L1351) | 1351 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
-| [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `""` | — |
-| [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
-| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"    )"` | — |
-| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `""` | — |
-| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
-| [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `""` | — |
-| [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
-| [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"    assert result[\"used_language_model\"] is True"` | — |
-| [SRC-F725E90B2A-L001363](../../tests/test_web_agent.py#L1363) | 1363 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001364](../../tests/test_web_agent.py#L1364) | 1364 | `"    assert result[\"sources\"] == []"` | — |
-| [SRC-F725E90B2A-L001365](../../tests/test_web_agent.py#L1365) | 1365 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001366](../../tests/test_web_agent.py#L1366) | 1366 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001367](../../tests/test_web_agent.py#L1367) | 1367 | `""` | — |
-| [SRC-F725E90B2A-L001368](../../tests/test_web_agent.py#L1368) | 1368 | `""` | — |
-| [SRC-F725E90B2A-L001369](../../tests/test_web_agent.py#L1369) | 1369 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001370](../../tests/test_web_agent.py#L1370) | 1370 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001371](../../tests/test_web_agent.py#L1371) | 1371 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L001372](../../tests/test_web_agent.py#L1372) | 1372 | `""` | — |
-| [SRC-F725E90B2A-L001373](../../tests/test_web_agent.py#L1373) | 1373 | `"    monkeypatch.setattr("` | — |

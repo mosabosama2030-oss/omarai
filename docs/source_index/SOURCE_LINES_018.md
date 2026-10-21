@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000501 إلى SRC-69F3587825-L000188
+- النطاق: SRC-0F910493E8-L000481 إلى SRC-69F3587825-L000168
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000481](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L481) | 481 | `"لا توضع أهداف رقمية إلا بعد تحديد مجموعة الاختبارات وطريقة الحساب والبيئة. ولا تحول نتائج الم mocks إلى ادعاء نجاح تكامل حي."` | — |
+| [SRC-0F910493E8-L000482](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L482) | 482 | `""` | — |
+| [SRC-0F910493E8-L000483](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L483) | 483 | `"---"` | — |
+| [SRC-0F910493E8-L000484](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L484) | 484 | `""` | — |
+| [SRC-0F910493E8-L000485](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L485) | 485 | `"# 14. قائمة المراجعة الإلزامية قبل كل تغيير مؤثر"` | — |
+| [SRC-0F910493E8-L000486](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L486) | 486 | `""` | — |
+| [SRC-0F910493E8-L000487](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L487) | 487 | `"على المطور أو الوكيل الذي يعمل على Omarai اتباع الخطوات التالية:"` | — |
+| [SRC-0F910493E8-L000488](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L488) | 488 | `""` | — |
+| [SRC-0F910493E8-L000489](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L489) | 489 | `"1. اقرأ الدستور التأسيسي وهذه الوثيقة والأقسام المرتبطة بها قبل اقتراح تغيير معماري."` | — |
+| [SRC-0F910493E8-L000490](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L490) | 490 | `"2. فحص الفرع وSHA والملفات الفعلية قبل وصف الحالة الحالية."` | — |
+| [SRC-0F910493E8-L000491](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L491) | 491 | `"3. صنّف النتائج إلى VERIFIED / INFERRED / PROPOSED / UNKNOWN."` | — |
+| [SRC-0F910493E8-L000492](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L492) | 492 | `"4. حدد المتطلب أو العيب أو الحاجة التي يبررها الدليل."` | — |
+| [SRC-0F910493E8-L000493](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L493) | 493 | `"5. افحص ما إذا كان السلوك المطلوب موجودًا بالفعل."` | — |
+| [SRC-0F910493E8-L000494](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L494) | 494 | `"6. قدم أصغر تغيير آمن يحافظ على القدرات القائمة."` | — |
+| [SRC-0F910493E8-L000495](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L495) | 495 | `"7. حدد الملفات المتأثرة والملفات التي يجب عدم تغييرها."` | — |
+| [SRC-0F910493E8-L000496](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L496) | 496 | `"8. حدد الاختبارات قبل التنفيذ، بما فيها اختبارات الانحدار والأمن حيث ينطبق."` | — |
+| [SRC-0F910493E8-L000497](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L497) | 497 | `"9. نفذ التغيير في فرع عمل، ولا تدّع نجاح اختبار لم تُعرض نتيجته."` | — |
+| [SRC-0F910493E8-L000498](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L498) | 498 | `"10. راجع diff كاملًا، وحالة الاختبارات، والآثار الجانبية، والتوثيق."` | — |
+| [SRC-0F910493E8-L000499](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L499) | 499 | `"11. سجّل ما بقي UNKNOWN والمخاطر المفتوحة."` | — |
+| [SRC-0F910493E8-L000500](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L500) | 500 | `"12. لا تدمج PR ولا تنشر تغييرًا جوهريًا دون موافقة المدير البشري."` | — |
 | [SRC-0F910493E8-L000501](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L501) | 501 | `""` | — |
 | [SRC-0F910493E8-L000502](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L502) | 502 | `"إذا تعارضت الرغبة في سرعة التنفيذ مع وجود فجوة أمان أو احتمال كسر سلوك قائم، فالأولوية لتصغير التغيير أو عزله أو تأجيله، لا لإخفاء الخطر."` | — |
 | [SRC-0F910493E8-L000503](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L503) | 503 | `""` | — |
@@ -832,23 +852,3 @@
 | [SRC-69F3587825-L000166](../search_code.py#L166) | 166 | `"    max_results: int = 50,"` | — |
 | [SRC-69F3587825-L000167](../search_code.py#L167) | 167 | `"    context: int = 1,"` | — |
 | [SRC-69F3587825-L000168](../search_code.py#L168) | 168 | `") -> list[SearchHit]:"` | — |
-| [SRC-69F3587825-L000169](../search_code.py#L169) | 169 | `"    \"\"\"Return ordered text matches with short context.\"\"\""` | — |
-| [SRC-69F3587825-L000170](../search_code.py#L170) | 170 | `"    if not query:"` | — |
-| [SRC-69F3587825-L000171](../search_code.py#L171) | 171 | `"        raise ValueError(\"استعلام البحث فارغ.\")"` | — |
-| [SRC-69F3587825-L000172](../search_code.py#L172) | 172 | `"    if max_results < 1:"` | — |
-| [SRC-69F3587825-L000173](../search_code.py#L173) | 173 | `"        raise ValueError(\"max_results يجب أن يكون 1 أو أكبر.\")"` | — |
-| [SRC-69F3587825-L000174](../search_code.py#L174) | 174 | `"    if context < 0:"` | — |
-| [SRC-69F3587825-L000175](../search_code.py#L175) | 175 | `"        raise ValueError(\"context لا يمكن أن يكون سالبًا.\")"` | — |
-| [SRC-69F3587825-L000176](../search_code.py#L176) | 176 | `""` | — |
-| [SRC-69F3587825-L000177](../search_code.py#L177) | 177 | `"    flags = 0 if case_sensitive else re.IGNORECASE"` | — |
-| [SRC-69F3587825-L000178](../search_code.py#L178) | 178 | `"    if use_regex:"` | — |
-| [SRC-69F3587825-L000179](../search_code.py#L179) | 179 | `"        pattern = re.compile(query, flags)"` | — |
-| [SRC-69F3587825-L000180](../search_code.py#L180) | 180 | `"    else:"` | — |
-| [SRC-69F3587825-L000181](../search_code.py#L181) | 181 | `"        pattern = re.compile(re.escape(query), flags)"` | — |
-| [SRC-69F3587825-L000182](../search_code.py#L182) | 182 | `""` | — |
-| [SRC-69F3587825-L000183](../search_code.py#L183) | 183 | `"    hits: list[SearchHit] = []"` | — |
-| [SRC-69F3587825-L000184](../search_code.py#L184) | 184 | `"    for path in discover_text_files(root, extensions):"` | — |
-| [SRC-69F3587825-L000185](../search_code.py#L185) | 185 | `"        relative = path.relative_to(root).as_posix()"` | — |
-| [SRC-69F3587825-L000186](../search_code.py#L186) | 186 | `"        try:"` | — |
-| [SRC-69F3587825-L000187](../search_code.py#L187) | 187 | `"            if path.stat().st_size > MAX_SEARCH_FILE_BYTES:"` | — |
-| [SRC-69F3587825-L000188](../search_code.py#L188) | 188 | `"                continue"` | — |
