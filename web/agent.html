@@ -131,7 +131,21 @@ function renderSource(s,index){
  const title=escapeHtml(s.title||("نتيجة ويب "+(index+1)));
  const tags=[];
  tags.push('<span class="tag">'+escapeHtml(s.source_class||"مصدر عام")+'</span>');
- tags.push(s.page_fetched?'<span class="tag read">قُرئت الصفحة</span>':'<span class="tag">مقتطف بحث</span>');
+ const fetchStatus=s.page_fetch_status||(s.page_fetched?"content_extracted":"not_attempted");
+ if(fetchStatus==="partial_extraction")tags.push('<span class="tag read">اُستخرج جزء من النص فقط</span>');
+ else if(fetchStatus==="content_extracted"||s.page_fetched)tags.push('<span class="tag read">قُرئت الصفحة واستُخرج نص</span>');
+ else if(fetchStatus==="no_text_extracted"||fetchStatus==="empty_content")tags.push('<span class="tag">لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة</span>');
+ else if(fetchStatus==="blocked_or_unresolved_host"||fetchStatus==="blocked_connection_target")tags.push('<span class="tag">حُظر العنوان أو تعذّر التحقق الآمن منه</span>');
+ else if(["redirect_failed","redirect_rejected","redirect_limit"].includes(fetchStatus))tags.push('<span class="tag">تعذّر اتباع تحويل الرابط بأمان</span>');
+ else if(fetchStatus==="http_error")tags.push('<span class="tag">الموقع أعاد خطأ HTTP</span>');
+ else if(fetchStatus==="unsupported_content_type")tags.push('<span class="tag">نوع محتوى الصفحة غير مدعوم</span>');
+ else if(fetchStatus==="page_too_large")tags.push('<span class="tag">الصفحة تجاوزت حد الحجم الآمن</span>');
+ else if(fetchStatus==="network_error")tags.push('<span class="tag">تعذّر الاتصال بالصفحة</span>');
+ else if(fetchStatus==="budget_exhausted")tags.push('<span class="tag">توقفت القراءة بسبب حدود الموارد</span>');
+ else if(fetchStatus==="rejected_url")tags.push('<span class="tag">رُفض الرابط لأسباب أمان</span>');
+ else if(fetchStatus==="fetch_failed")tags.push('<span class="tag">تعذّر جلب الصفحة</span>');
+ else if(fetchStatus==="attempted")tags.push('<span class="tag">محاولة جلب الصفحة</span>');
+ else tags.push('<span class="tag">مقتطف بحث — لم تُحاول قراءة الصفحة</span>');
  if(s.platform&&s.platform!=="web")tags.push('<span class="tag social">'+escapeHtml(s.platform)+'</span>');
  if(s.published_at)tags.push('<span class="tag">تاريخ ظاهر: '+escapeHtml(s.published_at)+'</span>');
  const providers=Array.isArray(s.providers)?s.providers.map(escapeHtml):[];
@@ -152,7 +166,6 @@ function renderReport(result){
  const leadResearchIncomplete=!!lead&&lead.status==="research_incomplete";
  const leadSignalCount=lead&&lead.candidate_signal_count!==null&&lead.candidate_signal_count!==undefined&&Number.isFinite(Number(lead.candidate_signal_count))?Number(lead.candidate_signal_count):null;
  const noQualifiedLeads=!!lead&&!leadResearchIncomplete&&leadSignalCount===0;
-
  const scoreLabel=lead?(leadResearchIncomplete?"تعذر حسم البحث عن العملاء":noQualifiedLeads?"لم يُثبت وجود عميل محتمل":"إشارات نية شراء مرشحة"):(researchErrorOutcome?"تعذر تحديد التغطية":(e.coverage_level||"تغطية محدودة"));
  const metrics=lead?[
   [leadSignalCount??"غير محدد","إشارة نصية مرشحة لنية شراء"],
@@ -166,6 +179,49 @@ function renderReport(result){
   [researchErrorOutcome?"غير محدد":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),"محرك/واجهة بحث"]
  ];
  const metricHtml=metrics.map(([v,l])=>'<div class="metric"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join("");
+ const operationalMetrics=[
+  [r.raw_results??"غير محدد","نتيجة خام"],
+  [r.unique_urls??r.unique_sources??sources.length,"رابط فريد"],
+  [r.pages_fetch_attempted??"غير محدد","محاولة جلب صفحة"],
+  [r.pages_content_extracted??r.pages_fetched??"غير محدد","صفحة استُخرج منها نص"],
+  [r.pages_partial_extracted??"غير محدد","صفحة استُخرج جزء من نصها"],
+  [r.pages_extract_failed??"غير محدد","صفحة فشل استخراج نصها"]
+ ];
+ const operationalHtml='<div class="metrics">'+operationalMetrics.map(([v,l])=>'<div class="metric"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join("")+'</div>';
+ const connectors=r.connector_summary&&Array.isArray(r.connector_summary.connectors)?r.connector_summary.connectors:[];
+ const connectorDetails=connectors.length?'<details class="details"><summary>تشخيص الموصلات في هذا الطلب ('+connectors.length+')</summary><div>'+connectors.map(c=>'<article class="source"><strong>'+escapeHtml(c.name||"موصل")+' · '+escapeHtml(c.status||"unknown")+'</strong><p>الإعداد: '+escapeHtml(c.configuration_status||"unknown")+' · تمت المحاولة: '+escapeHtml(c.attempted===true?"نعم":c.attempted===false?"لا":"غير محسوم")+' · متاح في هذا الطلب: '+escapeHtml(c.available_for_this_request===true?"نعم":c.available_for_this_request===false?"لا":"غير محسوم")+' · تم التحقق: '+escapeHtml(c.verified_for_this_request===true?"نعم":c.verified_for_this_request===false?"لا":"غير مختبر/غير محسوم")+' · إخفاق ملاحظ: '+escapeHtml(c.failure_observed===true?"نعم":"لا")+' · نتائج الموصل: '+escapeHtml(c.result_count??"غير محدد")+' · مصادر نهائية منسوبة إليه: '+escapeHtml(c.useful_result_count??"غير محدد")+' · مرفوض: '+escapeHtml(c.rejected_count??"غير محدد")+'</p>'+((Array.isArray(c.queries)&&c.queries.length)?'<p>استعلامات: '+c.queries.map(escapeHtml).join(" · ")+'</p>':"")+((Array.isArray(c.errors)&&c.errors.length)?'<p class="warning">أخطاء: '+c.errors.map(escapeHtml).join(" · ")+'</p>':"")+'</article>').join("")+'</div></details>':"";
+ const integrity=r.answer_integrity&&typeof r.answer_integrity==="object"?r.answer_integrity:null;
+ const integrityNumbers=integrity&&Array.isArray(integrity.potentially_unsupported_numeric_literals)?integrity.potentially_unsupported_numeric_literals:[];
+ const integrityTargets=integrity&&Array.isArray(integrity.target_coverage)?integrity.target_coverage:[];
+ const citationNumericSupport=integrity&&Array.isArray(integrity.citation_numeric_support)?integrity.citation_numeric_support:[];
+ const citedNumberIssues=citationNumericSupport.filter(item=>item&&Array.isArray(item.potentially_unsupported_numeric_literals)&&item.potentially_unsupported_numeric_literals.length);
+ const citedNumberHtml=citedNumberIssues.length?'<p class="warning">وجد الفحص أرقامًا قد لا يسندها المصدر المحدد في الاستشهاد؛ راجع المقتطف أو نص الصفحة الأصلي.</p><ul>'+citedNumberIssues.map(item=>'<li>الجملة '+escapeHtml(item.sentence_number??"غير محدد")+' · الرقم: '+item.potentially_unsupported_numeric_literals.map(escapeHtml).join("، ")+' · الاستشهادات: '+(Array.isArray(item.cited_source_indexes)?item.cited_source_indexes.map(n=>'المصدر '+escapeHtml(n)).join("، "):"غير محددة")+'</li>').join("")+'</ul>':"";
+ const valueDiscrepancies=integrity&&Array.isArray(integrity.potential_value_discrepancies)?integrity.potential_value_discrepancies:[];
+ const valueDimensionLabels={price_or_cost:"السعر/التكلفة",area_or_size:"المساحة/الحجم",duration:"المدة",percentage_or_rate:"النسبة",date_or_year:"التاريخ/السنة"};
+ const valueDiscrepancyHtml=valueDiscrepancies.length?'<p class="warning">رُصدت قيم مختلفة في مصادر متعددة. قد يكون الاختلاف بين منتجات أو فترات أو وحدات مختلفة؛ هذه ليست إثباتًا تلقائيًا لوجود تناقض.</p><ul>'+valueDiscrepancies.map(item=>'<li>'+escapeHtml(valueDimensionLabels[item.dimension]||item.dimension||"قيمة")+' — '+(Array.isArray(item.values)?item.values.map(value=>escapeHtml(value.value)+' ('+(Array.isArray(value.source_indexes)?value.source_indexes.map(n=>'المصدر '+escapeHtml(n)).join("، "):"مصدر غير محدد")+')').join(' مقابل '):"قِيَم تحتاج مراجعة")+'</li>').join("")+'</ul>':"";
+ const citationAlignment=integrity&&Array.isArray(integrity.citation_lexical_alignment)?integrity.citation_lexical_alignment:[];
+ const weakCitationAlignment=citationAlignment.filter(item=>item&&item.status==="weak_lexical_overlap");
+ const citationAlignmentHtml=citationAlignment.length?'<p class="report-note">'+(weakCitationAlignment.length?'لم يظهر تطابق لفظي كافٍ في '+weakCitationAlignment.length+' جملة/جمل مستشهد بها؛ راجع الاستشهادات يدويًا.':'ظهرت إشارات تطابق لفظي لبعض الجمل المستشهد بها، لكنها لا تثبت أن المصدر يسند الادعاء.')+'</p>':"";
+ const integrityScope=integrity?({contains_extracted_page_text_and_or_snippets:"نص صفحات مستخرج مع مقتطفات بحث",search_snippets_only:"مقتطفات بحث فقط — لم يؤكد النظام قراءة نص الصفحات",no_readable_source_text:"لا يتوفر نص مصدر قابل للفحص"}[integrity.source_evidence_scope]||integrity.source_evidence_scope||"غير محدد"):"غير محدد";
+ const taskFulfillmentStatus=r.task_fulfillment_status||result.task_fulfillment_status||"not_machine_assessed_no_explicit_targets_detected";
+ const taskFulfillmentText=({
+  possible_gap_detected:"قد تكون الإجابة أغفلت محورًا من السؤال؛ هذه إشارة لفظية تحتاج مراجعة وليست حكمًا نهائيًا.",
+  lexical_signals_found_not_semantically_verified:"ظهرت إشارات لفظية للمحاور المستخرجة، لكن هذا لا يثبت اكتمال المهمة.",
+  not_assessed_insufficient_evidence:"الأدلة غير كافية؛ لم يتم التحقق من اكتمال المهمة.",
+  not_machine_assessed_no_explicit_targets_detected:"لم تُستخرج محاور صريحة قابلة للفحص؛ اكتمال المهمة لم يُقيّم آليًا."
+ })[taskFulfillmentStatus]||"حالة اكتمال المهمة غير محسومة آليًا.";
+ const taskFulfillmentHtml='<p class="'+(taskFulfillmentStatus==="possible_gap_detected"?"warning":"report-note")+'">حالة تنفيذ المطلوب: '+escapeHtml(taskFulfillmentText)+'</p>';
+ const coverageRepairStatus=r.coverage_repair_status||result.coverage_repair_status||"";
+ const coverageRepairMessages={
+  revised_and_reaudited:"عُدّلت الإجابة بعد رصد محور محتمل النقص ثم خضعت لمراجعة أدلة ثانية؛ تظل المراجعة بمساعدة نموذج وليست تحققًا مستقلًا.",
+  reaudit_budget_exhausted:"انتهت ميزانية النماذج قبل إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.",
+  reaudit_unavailable:"تعذرت إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.",
+  budget_exhausted:"انتهت ميزانية النماذج قبل استكمال محور محتمل النقص.",
+  unavailable:"تعذرت محاولة إصلاح محور محتمل النقص.",
+  no_change_gap_unresolved:"لم تغيّر محاولة الإصلاح الإجابة؛ لا يزال احتمال نقص أحد المحاور قائمًا."
+ };
+ const coverageRepairHtml=coverageRepairMessages[coverageRepairStatus]?'<p class="warning">حالة إصلاح التغطية: '+escapeHtml(coverageRepairMessages[coverageRepairStatus])+'</p>':"";
+ const integrityHtml=integrity?'<details class="details"><summary>فحص آلي أولي لاتساق الإجابة — ليس تحققًا من الحقيقة</summary><p class="report-note">نطاق الأدلة النصية: '+escapeHtml(integrityScope)+'.</p>'+taskFulfillmentHtml+coverageRepairHtml+'<p class="report-note">'+(integrityNumbers.length?'أرقام أو تواريخ تحتاج مراجعة لأنها لم تظهر نصيًا في المواد المتاحة: '+integrityNumbers.map(escapeHtml).join("، ")+'.':'لم يرصد الفحص أرقامًا محددة غائبة عن النصوص التي جمعها. هذا لا يثبت أن كل رقم صحيح أو أن المصدر يدعم الادعاء المرتبط به.')+'</p>'+citedNumberHtml+valueDiscrepancyHtml+citationAlignmentHtml+(integrityTargets.length?'<p class="report-note">إشارات التغطية اللفظية لمحاور السؤال:</p><ul>'+integrityTargets.map(t=>'<li>'+escapeHtml(t.target||"محور")+' — '+escapeHtml(t.status==="lexical_signal_found"?"وُجد تطابق لفظي؛ ليس إثباتًا لاكتمال الإجابة":"قد يكون هذا المحور ناقصًا؛ لم يظهر تطابق لفظي كافٍ")+'</li>').join("")+'</ul>':"")+'<p class="report-note">المنهج: فحص لفظي حتمي محدود. لا يتحقق من معنى الادعاء أو صلة الاستشهاد به أو استقلال المصادر؛ راجع الأدلة الأصلية قبل الاعتماد.</p></details>':"";
  const providerCounts=r.provider_counts&&typeof r.provider_counts==="object"&&!Array.isArray(r.provider_counts)?r.provider_counts:{};
  const providerHtml=Object.entries(providerCounts).map(([p,n])=>'<span class="provider">'+escapeHtml(p)+' · '+escapeHtml(n)+'</span>').join("");
  const notes=Array.isArray(e.warnings)?e.warnings:[];
@@ -179,7 +235,7 @@ function renderReport(result){
       : "الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.")
   : researchErrorOutcome
    ? "تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا."
-   : "تغطية الأدلة: "+scoreLabel+" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.";
+   : "مستوى تغطية البحث: "+scoreLabel+". هذا وصف لاتساع وتنوع الأدلة التي جُمعت، وليس نسبة مئوية أو احتمالًا لصحة الإجابة.";
  const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);
  const attemptText=result&&result.search_attempted===true
   ? (r.search_outcome==="attempted_research_error"
@@ -194,8 +250,8 @@ function renderReport(result){
  const reviewText=r.claim_audit_semantics==='model_assisted_not_independent_fact_check'?'مراجعة الادعاءات تمت بمساعدة نموذج لغوي؛ وهي ليست تحققًا مستقلًا من صحة الحقائق.':'لم يثبت إجراء تحقق مستقل من صحة الحقائق.';
  const diversityText='اختلاف النطاقات المسجلة لا يثبت الاستقلال التحريري؛ فقد تنقل المواقع عن مصدر أصلي واحد.';
  const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class="report-note">'+escapeHtml(n)+'</p>').join("");
- const review=r.second_pass_review==="model_claim_audit_completed"?"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)":r.second_pass_review==="model_claim_audit_unavailable"?"تعذرت مراجعة الادعاءات بمساعدة النموذج":"";
- return '<div class="report-head"><b>ملخص الأدلة وتغطية البحث</b><span class="coverage">'+escapeHtml(scoreLabel)+'</span></div><div class="metrics">'+metricHtml+'</div>'+reportNotes+(providerHtml?'<div class="providers">'+providerHtml+'</div>':"")+(review?'<p class="report-note">'+escapeHtml(review)+'</p>':"")+details;
+ const review=r.second_pass_review==="model_claim_audit_completed"?"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)":r.second_pass_review==="model_claim_audit_completed_before_coverage_repair"?"تمت مراجعة المسودة قبل تعديل التغطية؛ النسخة المعدلة لم تخضع لمراجعة ثانية":r.second_pass_review==="model_claim_audit_unavailable"?"تعذرت مراجعة الادعاءات بمساعدة النموذج":"";
+ return '<div class="report-head"><b>ملخص الأدلة وتغطية البحث</b><span class="coverage">'+escapeHtml(scoreLabel)+'</span></div><div class="metrics">'+metricHtml+'</div>'+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class="providers">'+providerHtml+'</div>':"")+(review?'<p class="report-note">'+escapeHtml(review)+'</p>':"")+details;
 }
 function addMessage(role,text,result,options={}){
  const welcome=$("welcome");if(welcome)welcome.remove();
