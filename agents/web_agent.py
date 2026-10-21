@@ -4217,6 +4217,8 @@ class WebAgent:
                 "url": source["url"],
                 "snippet": source.get("snippet", ""),
                 "page_fetched": bool(source.get("page_fetched")),
+                "page_fetch_status": source.get("page_fetch_status", "unknown"),
+                "page_fetch_error_class": source.get("page_fetch_error_class"),
                 "providers": source.get("providers", []),
                 "queries": source.get("queries", []),
                 "platform": source.get("platform", "web"),
@@ -4350,6 +4352,9 @@ class WebAgent:
                 )
             answer = _fallback_answer(sources, reason)
 
+        coverage_targets = self._question_coverage_targets(question)
+        coverage_repair_status = "not_attempted"
+        coverage_repair_warning: str | None = None
         review_status = "not_run"
         review_warning: str | None = None
         review_budget_exhausted = False
@@ -4369,6 +4374,76 @@ class WebAgent:
                     "كإجابة مؤكدة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد على المسودة."
                 )
                 answer = _fallback_answer(sources, review_warning)
+        if (
+            coverage_targets
+            and review_status == "model_claim_audit_completed"
+            and sources
+            and self.api_key
+        ):
+            initial_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
+            missing_targets = [
+                item["target"] for item in initial_integrity["target_coverage"]
+                if item["status"] == "possibly_missing"
+            ]
+            if not missing_targets:
+                coverage_repair_status = "not_needed_lexical_signals_found"
+            else:
+                coverage_repair_status = "attempted"
+                try:
+                    repaired_answer = self._repair_answer_coverage(
+                        question, answer, sources, missing_targets
+                    )
+                    if repaired_answer.strip() != answer.strip():
+                        try:
+                            reaudit_answer = self._review_answer(
+                                question,
+                                repaired_answer,
+                                sources[:MAX_LLM_CITED_SOURCES],
+                            )
+                            answer = reaudit_answer
+                            coverage_repair_status = "revised_and_reaudited"
+                            review_status = "model_claim_audit_completed"
+                        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
+                            review_status = "model_claim_audit_unavailable"
+                            review_budget_exhausted = isinstance(exc, RequestBudgetExceeded)
+                            coverage_repair_status = (
+                                "reaudit_budget_exhausted"
+                                if review_budget_exhausted
+                                else "reaudit_unavailable"
+                            )
+                            review_warning = (
+                                "استُنفدت ميزانية النماذج قبل إعادة تدقيق الإجابة المعدلة؛ "
+                                "لذلك لن أعرض النص المعدل بوصفه إجابة مكتملة، وأعرض مقتطفات المصادر بدلًا منه."
+                                if review_budget_exhausted
+                                else
+                                "تعذرت إعادة تدقيق الإجابة المعدلة مقابل الأدلة؛ لذلك لن أعرضها بوصفها إجابة مكتملة، "
+                                "وأعرض مقتطفات المصادر بدلًا منها."
+                            )
+                            answer = _fallback_answer(sources, review_warning)
+                    else:
+                        coverage_repair_status = "no_change_gap_unresolved"
+                        coverage_repair_warning = (
+                            "رصد الفحص اللفظي محورًا قد يكون ناقصًا، لكن محاولة الإصلاح لم تغيّر الإجابة؛ "
+                            "تحقق من تغطية هذا المحور يدويًا."
+                        )
+                except RequestBudgetExceeded:
+                    coverage_repair_status = "budget_exhausted"
+                    coverage_repair_warning = (
+                        "استُنفدت ميزانية النماذج قبل محاولة إصلاح محور قد يكون ناقصًا؛ "
+                        "لا تعتبر التغطية مكتملة دون مراجعة المحور المذكور."
+                    )
+                except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                    coverage_repair_status = "unavailable"
+                    coverage_repair_warning = (
+                        "تعذرت محاولة إصلاح محور قد يكون ناقصًا ("
+                        + type(exc).__name__
+                        + ")؛ راجع المحاور المطلوبة قبل اعتماد الإجابة."
+                    )
+        elif coverage_targets and review_status == "model_claim_audit_completed" and not self.api_key:
+            coverage_repair_status = "skipped_no_model_configuration"
+        elif coverage_targets:
+            coverage_repair_status = "skipped_review_unavailable"
+
         if self.server_search_sources:
             answer += "\n\nروابط إضافية من البحث المباشر عبر الويب:"
             for source in self.server_search_sources[:8]:
@@ -4384,7 +4459,6 @@ class WebAgent:
         report["pages_fetched"] = sum(bool(source.get("page_fetched")) for source in sources)
         report["second_pass_review"] = review_status
         report["claim_audit"] = review_status
-        coverage_targets = self._question_coverage_targets(question)
         answer_coverage = {
             "method": "explicit_criteria_heuristic",
             "targets": coverage_targets,
@@ -4399,6 +4473,22 @@ class WebAgent:
             "automatically_graded": False,
         }
         report["answer_coverage"] = answer_coverage
+        report["coverage_repair_status"] = coverage_repair_status
+        answer_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
+        answer_coverage["target_checks"] = answer_integrity["target_coverage"]
+        answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
+        answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
+        task_fulfillment_status = (
+            "possible_gap_detected" if answer_integrity["potentially_missing_target_count"] > 0
+            else "lexical_signals_found_not_semantically_verified" if coverage_targets
+            else "not_machine_assessed_no_explicit_targets_detected"
+        )
+        answer_coverage["task_fulfillment_status"] = task_fulfillment_status
+        report["task_fulfillment_status"] = task_fulfillment_status
+        report["answer_integrity"] = answer_integrity
+        report["connector_summary"] = self._connector_status_summary(
+            list(self._provider_diagnostics), sources
+        )
         report["provider_diagnostics"] = list(self._provider_diagnostics)
         distinct_providers = {
             provider for source in sources for provider in source.get("providers", [])
@@ -4488,6 +4578,7 @@ class WebAgent:
             search_warnings
             + ([llm_warning] if llm_warning else [])
             + ([review_warning] if review_warning else [])
+            + ([coverage_repair_warning] if coverage_repair_warning else [])
             + citation_warnings
             + ([uncited_answer_warning] if uncited_answer_warning else [])
         ))
@@ -4504,6 +4595,14 @@ class WebAgent:
             )
         elif review_warning:
             final_answer_status = "review_failed_with_source_fallback"
+        elif coverage_repair_status == "no_change_gap_unresolved":
+            final_answer_status = "coverage_repair_left_possible_gap"
+        elif coverage_repair_status == "budget_exhausted":
+            final_answer_status = "coverage_repair_budget_exhausted_with_possible_gap"
+        elif coverage_repair_status == "unavailable":
+            final_answer_status = "coverage_repair_unavailable_with_possible_gap"
+        elif coverage_repair_status == "revised_and_reaudited":
+            final_answer_status = "coverage_repaired_and_reaudited"
         elif used_llm:
             final_answer_status = "model_answer_generated"
         else:
@@ -4550,6 +4649,8 @@ class WebAgent:
             "citation_validation": citation_validation,
             "answer_evidence_status": answer_evidence_status,
             "answer_coverage": answer_coverage,
+            "answer_integrity": answer_integrity,
+            "task_fulfillment_status": task_fulfillment_status,
             "used_language_model": used_llm,
             "used_web_search": bool(sources),
             "search_attempted": search_attempted,
