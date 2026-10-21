@@ -868,4 +868,4 @@ def test_dashboard_uses_delegated_status_action_not_inline_onclick():
     )
     assert 'data-action="save-status"' in dashboard
     assert 'onclick="saveStatus' not in dashboard
-    assert 'data-lead-id=\'"+esc(l.id)+\'">' in dashboard
+    assert """data-lead-id="'+esc(l.id)+'">""" in dashboard
