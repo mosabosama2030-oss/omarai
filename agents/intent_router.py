@@ -39,12 +39,20 @@ _AMBIGUOUS_ARABIC = frozenset({
     "ما رايك فيها", "ايه رايك فيها", "هل هي كويسه", "هل هو كويس",
     "هل دي كويسه", "هل ده كويس", "هل هو جيد", "هل هي جيده",
     "اشتريها ولا لا", "اشتريه ولا لا",
+    "فين", "فين هي", "فين هو", "فين مكانها", "فين مكانه",
+    "مكانها فين", "مكانه فين", "موجوده فين", "موجود فين",
+    "فين الاقيها", "فين الاقيه",
+    "هل فيه ضمان", "فيه ضمان", "هل لها ضمان", "هل له ضمان",
+    "هل عليها ضمان", "هل عليه ضمان", "هل يوجد ضمان",
+    "ضمانها ايه", "ضمانه ايه",
 })
 _AMBIGUOUS_ENGLISH = frozenset({
     "how much is it", "how much does it cost", "what is its price",
     "what about it", "what about this", "is it good", "is this good",
     "does it work", "compare them", "compare these", "compare the two",
     "what do you think of it", "should i buy it", "is it worth it",
+    "where is it", "where can i find it", "is there a warranty",
+    "does it have a warranty", "is it covered by warranty",
 })
 _DEEP_TERMS = (
     "بحث عميق", "بحث معمق", "بحث مكثف", "بحث شامل", "بالتفصيل",
@@ -162,6 +170,53 @@ def _needs_clarification(question: str) -> bool:
     )
 
 
+_FOLLOW_UP_MARKERS = (
+    "والسعر", "وسعر", "والاسعار", "طيب ", "طب ", "وماذا", "وكمان",
+    "التكلفه", "والتاريخ", "والمميزات", "والعيوب", "المصدر",
+    "and the price", "what about", "how about", "and also",
+    "how much is it", "what is its price", "where is it",
+)
+
+
+def resolve_followup_query(question: str, history: Any = None) -> str:
+    """Resolve a short contextual follow-up using the latest eligible user turn.
+
+    This is the single source of truth used by both research planning paths. It
+    deliberately refuses to resurrect older topics after a greeting/acknowledgment.
+    The merged query preserves the original user wording and is bounded.
+    """
+    if not isinstance(question, str):
+        return ""
+    query = re.sub(r"\\s+", " ", question).strip()
+    if not query:
+        return ""
+    if len(query) >= 100 or not _has_context(history):
+        return query[:500]
+
+    normalized = _normalize(query)
+    is_follow_up = _needs_clarification(query) or any(
+        _normalize(marker) in normalized for marker in _FOLLOW_UP_MARKERS
+    )
+    if not is_follow_up or not isinstance(history, list):
+        return query[:500]
+
+    previous = next(
+        (
+            re.sub(r"\\s+", " ", item.get("content", "")).strip()
+            for item in reversed(history[-MAX_CONTEXT_TURNS:])
+            if isinstance(item, dict)
+            and item.get("role") == "user"
+            and isinstance(item.get("content"), str)
+            and item.get("content", "").strip()
+        ),
+        "",
+    )
+    if not previous:
+        return query[:500]
+    combined = f"{previous[:300]} — {query[:180]}"
+    return combined[:500]
+
+
 def _is_deep(question: str) -> bool:
     normalized = _normalize(question)
     if any(_normalize(term) in normalized for term in _DEEP_TERMS):
@@ -234,8 +289,18 @@ def route_intent(
     clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
     context_available = _has_context(history)
 
-    # An explicitly selected mode is a user control and takes precedence over
-    # conversational heuristics; it must not silently convert a requested search.
+    # A search mode cannot supply a missing subject. Clarify genuinely elliptical
+    # questions before honoring the UI's explicit research mode.
+    if _needs_clarification(question) and not context_available:
+        return {
+            "route": "CLARIFY",
+            "reason": "missing_referent_and_no_conversation_context",
+            "context_available": False,
+            "needs_clarification": True,
+        }
+
+    # An explicitly selected mode controls research depth when the request itself
+    # is sufficiently specified.
     if clean_mode != "auto":
         route = "WEB_DEEP" if clean_mode == "deep" else "WEB_SIMPLE"
         return {
@@ -286,12 +351,12 @@ def route_intent(
         }
 
     ambiguous = _needs_clarification(question)
-    if ambiguous and not context_available:
+    if ambiguous:
         return {
-            "route": "CLARIFY",
-            "reason": "missing_referent_and_no_conversation_context",
-            "context_available": False,
-            "needs_clarification": True,
+            "route": "WEB_DEEP" if _is_deep(question) else "WEB_SIMPLE",
+            "reason": "ambiguous_followup_with_context",
+            "context_available": True,
+            "needs_clarification": False,
         }
 
     if _is_lead_generation_request(question):
