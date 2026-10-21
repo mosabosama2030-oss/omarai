@@ -694,3 +694,32 @@ def test_public_origin_still_allows_the_requested_host(local_api, monkeypatch):
     assert "https://omarai.example" in allowed
     assert "https://attacker.example" not in allowed
 
+
+
+def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    for path in ("/api/health", "/"):
+        request = Request(local_api + path)
+        with urlopen(request, timeout=3) as response:
+            headers = {name.lower(): value for name, value in response.headers.items()}
+            assert headers["x-content-type-options"] == "nosniff"
+            assert headers["x-frame-options"] == "DENY"
+            assert headers["referrer-policy"] == "strict-origin-when-cross-origin"
+            assert "default-src 'self'" in headers["content-security-policy"]
+            assert "frame-ancestors 'none'" in headers["content-security-policy"]
+            assert "Permissions-Policy" not in headers
+            assert headers["permissions-policy"] == (
+                "camera=(), microphone=(), geolocation=()"
+            )
+
+
+def test_health_exposes_only_validated_build_sha(monkeypatch):
+    from api.omarai import _build_sha
+
+    monkeypatch.delenv("OMARAI_BUILD_SHA", raising=False)
+    assert _build_sha() == "unknown"
+    monkeypatch.setenv("OMARAI_BUILD_SHA", "a" * 40)
+    assert _build_sha() == "a" * 40
+    monkeypatch.setenv("OMARAI_BUILD_SHA", "not-a-git-sha")
+    assert _build_sha() == "unknown"
