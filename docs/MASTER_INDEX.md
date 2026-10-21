@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **586**
 - تعريفات لا ينطبق عليها Docstring: **193**
 - الرموز الساكنة الإضافية: **1422**
-- الأسطر النصية المفهرسة حرفيًا: **25458**
+- الأسطر النصية المفهرسة حرفيًا: **25459**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -80,7 +80,7 @@
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 11544 | 284 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32069 | 870 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32123 | 871 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 9230 | 231 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -2492,7 +2492,7 @@
 | [web/dashboard.html](../web/dashboard.html#L39) | متغير JavaScript/TypeScript | data | 39 | [SRC-A16FA6D4B5-L000039](../web/dashboard.html#L39) |
 | [web/dashboard.html](../web/dashboard.html#L39) | مسار API/واجهة محتمل | /api/leads | 39 | [SRC-A16FA6D4B5-L000039](../web/dashboard.html#L39) |
 | [web/dashboard.html](../web/dashboard.html#L40) | دالة JavaScript/TypeScript | refresh | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
-| [web/dashboard.html](../web/dashboard.html#L40) | قيمة سمة HTML (id) | '+esc(l.id)+'>تحديث الحالة</button></div></article>'}).join( | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
+| [web/dashboard.html](../web/dashboard.html#L40) | قيمة سمة HTML (id) | '+esc(l.id)+' | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
 | [web/dashboard.html](../web/dashboard.html#L40) | قيمة سمة HTML (id) | status-'+esc(l.id)+' | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
 | [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | rows | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |
 | [web/dashboard.html](../web/dashboard.html#L40) | متغير JavaScript/TypeScript | sourceLink | 40 | [SRC-A16FA6D4B5-L000040](../web/dashboard.html#L40) |

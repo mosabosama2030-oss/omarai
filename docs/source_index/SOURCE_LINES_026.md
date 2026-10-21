@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000083 إلى SRC-AAA21D04E8-L000266
+- النطاق: SRC-829A979985-L000082 إلى SRC-AAA21D04E8-L000265
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000082](../../tests/test_generation_acceptance_matrix.py#L82) | 82 | `"    assert agent.generation_diagnostics == ["` | — |
 | [SRC-829A979985-L000083](../../tests/test_generation_acceptance_matrix.py#L83) | 83 | `"        {"` | — |
 | [SRC-829A979985-L000084](../../tests/test_generation_acceptance_matrix.py#L84) | 84 | `"            \"attempt_number\": 1,"` | — |
 | [SRC-829A979985-L000085](../../tests/test_generation_acceptance_matrix.py#L85) | 85 | `"            \"requested_model\": \"primary/model\","` | — |
@@ -824,4 +825,3 @@
 | [SRC-AAA21D04E8-L000263](../../tests/test_generation_capabilities.py#L263) | 263 | `"            \"finish_reason\": \"length\","` | — |
 | [SRC-AAA21D04E8-L000264](../../tests/test_generation_capabilities.py#L264) | 264 | `"        }"` | — |
 | [SRC-AAA21D04E8-L000265](../../tests/test_generation_capabilities.py#L265) | 265 | `"    ]"` | — |
-| [SRC-AAA21D04E8-L000266](../../tests/test_generation_capabilities.py#L266) | 266 | `"    assert result[\"search_report\"][\"research_quality\"] == \"partial\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000442 إلى SRC-6BCB799CEC-L000121
+- النطاق: SRC-3451CC474D-L000442 إلى SRC-6BCB799CEC-L000120
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -428,7 +428,7 @@
 | [SRC-3451CC474D-L000851](../../tests/test_api.py#L851) | 851 | `"            style_blocks += 1"` | — |
 | [SRC-3451CC474D-L000852](../../tests/test_api.py#L852) | 852 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
 | [SRC-3451CC474D-L000853](../../tests/test_api.py#L853) | 853 | `"        for match in re.finditer("` | — |
-| [SRC-3451CC474D-L000854](../../tests/test_api.py#L854) | 854 | `"            r\"\"\"\\\\bstyle\\\\s*=\\\\s*([\"'])(.*?)\\\\1\"\"\","` | — |
+| [SRC-3451CC474D-L000854](../../tests/test_api.py#L854) | 854 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
 | [SRC-3451CC474D-L000855](../../tests/test_api.py#L855) | 855 | `"            document,"` | — |
 | [SRC-3451CC474D-L000856](../../tests/test_api.py#L856) | 856 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
 | [SRC-3451CC474D-L000857](../../tests/test_api.py#L857) | 857 | `"        ):"` | — |
@@ -445,6 +445,7 @@
 | [SRC-3451CC474D-L000868](../../tests/test_api.py#L868) | 868 | `"    )"` | — |
 | [SRC-3451CC474D-L000869](../../tests/test_api.py#L869) | 869 | `"    assert 'data-action=\"save-status\"' in dashboard"` | — |
 | [SRC-3451CC474D-L000870](../../tests/test_api.py#L870) | 870 | `"    assert 'onclick=\"saveStatus' not in dashboard"` | — |
+| [SRC-3451CC474D-L000871](../../tests/test_api.py#L871) | 871 | `"    assert 'data-lead-id=\\'\"+esc(l.id)+\\'\">' in dashboard"` | — |
 ## اختبارات
 
 ### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
@@ -842,4 +843,3 @@
 | [SRC-6BCB799CEC-L000118](../../tests/test_evidence_provenance.py#L118) | 118 | `"            \"providers\": [\"openrouter_web_search\"],"` | — |
 | [SRC-6BCB799CEC-L000119](../../tests/test_evidence_provenance.py#L119) | 119 | `"            \"queries\": [question],"` | — |
 | [SRC-6BCB799CEC-L000120](../../tests/test_evidence_provenance.py#L120) | 120 | `"            \"domain\": \"research.example.net\","` | — |
-| [SRC-6BCB799CEC-L000121](../../tests/test_evidence_provenance.py#L121) | 121 | `"            \"source_class\": \"general\","` | — |
