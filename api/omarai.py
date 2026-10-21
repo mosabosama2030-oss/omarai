@@ -125,17 +125,36 @@ def _configured_agent_concurrency_limit() -> int:
 
 
 BUILD_SHA_FILE = Path(__file__).resolve().parents[1] / "BUILD_SHA"
+_PLATFORM_BUILD_SHA_ENVIRONMENTS = (
+    ("RAILWAY_GIT_COMMIT_SHA", "platform:railway"),
+    ("RENDER_GIT_COMMIT", "platform:render"),
+)
+
+
+def _valid_build_sha(value: str) -> bool:
+    candidate = value.strip().lower()
+    return len(candidate) == 40 and all(char in "0123456789abcdef" for char in candidate)
+
+
+def _build_identity() -> tuple[str, str]:
+    """Prefer immutable image metadata, then documented hosting-provided Git SHAs."""
+    try:
+        baked = BUILD_SHA_FILE.read_text(encoding="ascii").strip().lower()
+    except (OSError, UnicodeError):
+        baked = ""
+    if _valid_build_sha(baked):
+        return baked, "image_baked"
+
+    for environment_name, source in _PLATFORM_BUILD_SHA_ENVIRONMENTS:
+        candidate = os.getenv(environment_name, "").strip().lower()
+        if _valid_build_sha(candidate):
+            return candidate, source
+    return "unknown", "unknown"
 
 
 def _build_sha() -> str:
-    """Read the source revision baked into the image; never trust a runtime env override."""
-    try:
-        candidate = BUILD_SHA_FILE.read_text(encoding="ascii").strip().lower()
-    except (OSError, UnicodeError):
-        return "unknown"
-    if len(candidate) == 40 and all(char in "0123456789abcdef" for char in candidate):
-        return candidate
-    return "unknown"
+    """Return a validated source SHA, or 'unknown' when no trusted build evidence exists."""
+    return _build_identity()[0]
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -395,10 +414,11 @@ class Handler(BaseHTTPRequestHandler):
                     "mode": "web-research",
                     "agent": WebAgent.status(),
                     "build": {
-                        "sha": _build_sha(),
+                        "sha": _build_identity()[0],
                         "sha_status": (
-                            "available" if _build_sha() != "unknown" else "unknown"
+                            "available" if _build_identity()[0] != "unknown" else "unknown"
                         ),
+                        "sha_source": _build_identity()[1],
                     },
                 },
             )
