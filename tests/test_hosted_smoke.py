@@ -172,3 +172,21 @@ def test_smoke_fails_when_agent_returns_no_live_source(hosted_server, monkeypatc
     monkeypatch.setattr(hosted_smoke_test, "request_json", without_sources)
     with pytest.raises(SmokeError, match="usable source URLs"):
         run_smoke(hosted_server, TOKEN, allow_http=True, timeout=5)
+
+
+def test_smoke_rejects_invalid_expected_source_sha(hosted_server):
+    with pytest.raises(SmokeError, match="40-character Git SHA"):
+        run_smoke(
+            hosted_server, TOKEN, allow_http=True, timeout=5, expected_sha="main"
+        )
+
+
+def test_smoke_rejects_deployed_build_sha_mismatch(hosted_server):
+    with pytest.raises(SmokeError, match="does not match the expected Git commit"):
+        run_smoke(
+            hosted_server,
+            TOKEN,
+            allow_http=True,
+            timeout=5,
+            expected_sha="a" * 40,
+        )

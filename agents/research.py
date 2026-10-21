@@ -14,6 +14,8 @@ from urllib.parse import urlparse
 
 import tldextract
 
+from agents.intent_router import resolve_followup_query
+
 MAX_PLAN_QUERIES = 8
 MAX_QUERY_CHARS = 240
 MAX_FUSED_RESULTS = 18
@@ -177,30 +179,11 @@ def mentioned_social_platforms(text: str) -> list[str]:
     return [name for name, aliases in rules if any(alias.casefold() in low for alias in aliases)]
 
 
-def _followup_query(question: str, history: list[dict[str, str]] | None) -> str:
-    q = _compact(question, 500)
-    if not q or len(q) >= 100 or not history:
-        return q
-    follow_markers = (
-        "والسعر", "وسعر", "طب ", "وماذا", "وكمان", "طيب", "المصدر",
-        "التكلفة", "والتاريخ", "والمميزات", "والعيوب",
-        "and the price", "what about", "how about", "and also", "why",
-    )
-    if not any(marker in q.casefold() for marker in follow_markers):
-        return q
-    previous = next(
-        (_compact(item.get("content", ""), 300) for item in reversed(history)
-         if item.get("role") == "user" and item.get("content")),
-        "",
-    )
-    return _compact(previous + " " + q, 500) if previous else q
-
-
 def fallback_plan(
     question: str, history: list[dict[str, str]] | None = None
 ) -> dict[str, Any]:
     """Build a small but varied plan when no model planner is configured or parsing fails."""
-    contextual_question = _followup_query(question, history)
+    contextual_question = resolve_followup_query(question, history)
     direct_urls = extract_urls(question)
     base = _compact(re.sub(r"https?://[^\s<>()]+", " ", contextual_question), 500)
     if not base:

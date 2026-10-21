@@ -2567,3 +2567,171 @@ def test_fetch_page_revalidates_dns_for_each_redirect_destination(monkeypatch):
     # The second host is validated before any connection attempt to it.
     assert len(requests) == 1
 
+
+
+def test_history_search_query_uses_shared_context_resolver():
+    history = [
+        {"role": "user", "content": "سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن السعر."},
+    ]
+    query = WebAgent._history_search_query("هل فيه ضمان؟", history)
+    assert "آيفون 16" in query
+    assert "ضمان" in query
+
+
+def test_history_search_query_does_not_reuse_stale_topic_after_acknowledgment():
+    history = [
+        {"role": "user", "content": "سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن السعر."},
+        {"role": "user", "content": "شكرا"},
+        {"role": "assistant", "content": "العفو."},
+    ]
+    assert WebAgent._history_search_query("فين؟", history) == "فين؟"
+
+
+def test_frontend_exposes_structured_page_fetch_statuses():
+    html_path = Path(__file__).resolve().parents[1] / "web" / "agent.html"
+    html = html_path.read_text(encoding="utf-8")
+    assert "page_fetch_status" in html
+    assert "partial_extraction" in html
+    assert "لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة" in html
+    assert "تشخيص الموصلات في هذا الطلب" in html
+
+
+@pytest.mark.parametrize(
+    "method_name",
+    ["_search_duckduckgo_html", "_search_bing_rss", "_search_news"],
+)
+def test_search_providers_do_not_follow_redirects_automatically(
+    monkeypatch, method_name
+):
+    import httpx
+
+    agent = WebAgent()
+    observed = []
+
+    class RedirectResponse:
+        def __init__(self):
+            self.status_code = 302
+            self.headers = {"location": "http://127.0.0.1:8765/private"}
+            self.text = "redirect"
+            self.content = b"redirect"
+
+    def fake_get(url, **kwargs):
+        observed.append((url, kwargs.get("follow_redirects")))
+        return RedirectResponse()
+
+    monkeypatch.setattr(httpx, "get", fake_get)
+    method = getattr(agent, method_name)
+    with pytest.raises(RuntimeError, match="HTTP 302"):
+        method("redirect regression test")
+
+    assert len(observed) == 1
+    assert observed[0][1] is False
+
+
+
+@pytest.mark.parametrize("mode", ["deep", "latest", "social"])
+def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):
+    """A missing planner model must not erase a mode explicitly selected by the user."""
+    agent = WebAgent()
+    agent.api_key = ""
+    seen = {}
+
+    def collect(research_plan):
+        seen["plan"] = dict(research_plan)
+        sources = [sample_source(0), sample_source(1)]
+        return sources, [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [
+                {"query": query, "results": 1}
+                for query in research_plan["queries"]
+            ],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": len(sources)},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "deterministic_fallback",
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda question, history, sources, search_warning, research_plan=None,
+               search_report=None: "توجد نتائج أولية للمراجعة [المصدر 1].",
+    )
+
+    question = (
+        "ابحث عن شقة في التجمع الخامس بسعر 5000000 جنيه"
+        if mode == "deep" else "الطاقة المتجددة في مصر"
+    )
+    result = agent.answer(question, mode=mode)
+    plan = seen["plan"]
+
+    assert plan["mode"] == mode
+    assert result["research_plan"]["mode"] == mode
+    if mode == "deep":
+        assert plan["depth"] == "deep"
+        assert len(plan["queries"]) >= 3
+        assert any("إعلانات عقارية" in query for query in plan["queries"])
+        assert any("متوسط أسعار السوق للمتر" in query for query in plan["queries"])
+    elif mode == "latest":
+        assert plan["freshness"] == "current"
+        assert any(
+            "latest" in query.lower() or "recent" in query.lower()
+            for query in plan["queries"]
+        )
+    else:
+        assert plan["social_focus"] is True
+        assert any(query.startswith("site:") for query in plan["queries"])
+
+
+def test_web_answer_integrity_is_attached_without_live_network(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent, "_question_coverage_targets", lambda question: ["السعر", "المساحة"]
+    )
+    monkeypatch.setattr(agent, "_answer_with_budget", lambda question, history, mode: {
+        "kind": "web_research",
+        "answer": "السعر 500 جنيه [المصدر 1].",
+        "sources": [{
+            "title": "تفاصيل العرض",
+            "url": "https://example.com/offer",
+            "snippet": "السعر 300 جنيه",
+            "page_fetched": False,
+        }],
+        "research_quality": "partial",
+        "search_report": {},
+        "answer_coverage": {},
+        "used_language_model": True,
+        "used_web_search": True,
+        "warnings": [],
+    })
+
+    result = agent.answer("قارن السعر والمساحة", mode="auto")
+
+    assert result["answer_integrity"]["semantic_verification"] is False
+    assert result["answer_integrity"]["independent_fact_check"] is False
+    assert result["answer_integrity"]["potentially_unsupported_numeric_count"] == 1
+    assert result["answer_integrity"]["potentially_unsupported_numeric_by_citation_count"] == 1
+    assert result["answer_integrity"]["potentially_missing_target_count"] == 1
+    assert result["task_fulfillment_status"] == "possible_gap_detected"
+    assert result["answer_coverage"]["lexical_screen_method"] == (
+        "deterministic_lexical_screen_only_not_semantic_grading"
+    )
+
+
+def test_frontend_labels_answer_integrity_screen_as_non_semantic():
+    html = (
+        Path(__file__).resolve().parents[1] / "web" / "agent.html"
+    ).read_text(encoding="utf-8")
+    assert "فحص لفظي أولي:" in html
+    assert "لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد" in html
+    assert "potentially_unsupported_numeric_by_citation_count" in html
+    assert "potential_value_discrepancy_count" in html

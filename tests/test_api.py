@@ -2,10 +2,12 @@
 from __future__ import annotations
 
 import json
+import re
 import socket
 import threading
 from collections import defaultdict, deque
 from http.server import ThreadingHTTPServer
+from pathlib import Path
 from types import SimpleNamespace
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
@@ -694,3 +696,177 @@ def test_public_origin_still_allows_the_requested_host(local_api, monkeypatch):
     assert "https://omarai.example" in allowed
     assert "https://attacker.example" not in allowed
 
+
+
+def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    for path in ("/api/health", "/"):
+        request = Request(local_api + path)
+        with urlopen(request, timeout=3) as response:
+            headers = {name.lower(): value for name, value in response.headers.items()}
+            assert headers["x-content-type-options"] == "nosniff"
+            assert headers["x-frame-options"] == "DENY"
+            assert headers["referrer-policy"] == "strict-origin-when-cross-origin"
+            assert "default-src 'self'" in headers["content-security-policy"]
+            policy = headers["content-security-policy"]
+            assert "frame-ancestors 'none'" in policy
+            assert "'unsafe-inline'" not in policy
+            assert "'sha256-" in policy
+            assert headers["permissions-policy"] == (
+                "camera=(), microphone=(), geolocation=()"
+            )
+
+
+def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):
+    import api.omarai as api_module
+
+    build_sha_file = tmp_path / "BUILD_SHA"
+    monkeypatch.setattr(api_module, "BUILD_SHA_FILE", build_sha_file)
+    assert api_module._build_sha() == "unknown"
+    build_sha_file.write_text("a" * 40, encoding="ascii")
+    assert api_module._build_sha() == "a" * 40
+    build_sha_file.write_text("not-a-git-sha", encoding="ascii")
+    assert api_module._build_sha() == "unknown"
+
+
+
+@pytest.mark.parametrize(
+    ("variable", "source"),
+    [
+        ("RAILWAY_GIT_COMMIT_SHA", "platform:railway"),
+        ("RENDER_GIT_COMMIT", "platform:render"),
+    ],
+)
+def test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable(
+    monkeypatch, tmp_path, variable, source
+):
+    import api.omarai as api_module
+
+    build_sha_file = tmp_path / "BUILD_SHA"
+    monkeypatch.setattr(api_module, "BUILD_SHA_FILE", build_sha_file)
+    build_sha_file.write_text("unknown", encoding="ascii")
+    for name, _label in api_module._PLATFORM_BUILD_SHA_ENVIRONMENTS:
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv(variable, "b" * 40)
+
+    assert api_module._build_identity() == ("b" * 40, source)
+
+
+def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp_path):
+    import api.omarai as api_module
+
+    monkeypatch.setattr(api_module, "BUILD_SHA_FILE", tmp_path / "BUILD_SHA")
+    api_module.BUILD_SHA_FILE.write_text("unknown", encoding="ascii")
+    monkeypatch.setenv("RAILWAY_GIT_COMMIT_SHA", "not-a-sha")
+    monkeypatch.setenv("RENDER_GIT_COMMIT", "also-not-a-sha")
+
+    assert api_module._build_identity() == ("unknown", "unknown")
+
+
+
+def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):
+    from api.omarai import _lead_store_from_environment
+
+    database_path = tmp_path / "persistent" / "omarai.sqlite3"
+    monkeypatch.setenv("OMARAI_DB_PATH", str(database_path))
+
+    store = _lead_store_from_environment()
+
+    assert store.path == database_path
+    assert database_path.is_file()
+
+
+
+def test_agent_concurrency_slot_released_after_operation_error(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.setattr(Handler, "_request_times", defaultdict(deque))
+    monkeypatch.setattr(Handler, "_rate_last_cleanup", 0.0)
+    monkeypatch.setattr(Handler, "_agent_semaphore", threading.BoundedSemaphore(1))
+    state = {"fail": True}
+
+    def answer_with_one_transient_failure(self, question, history=None, mode="auto"):
+        if state["fail"]:
+            raise RuntimeError("synthetic operation failure")
+        return {
+            "answer": "اختبار ناجح",
+            "question": question,
+            "search_query": question,
+            "search_queries": [],
+            "search_report": {
+                "search_attempted": False,
+                "search_outcome": "not_attempted",
+            },
+            "sources": [],
+            "used_language_model": False,
+            "used_web_search": False,
+            "search_attempted": False,
+            "used_social_search": False,
+            "warnings": [],
+            "kind": "web_fallback",
+        }
+
+    monkeypatch.setattr(WebAgent, "answer", answer_with_one_transient_failure)
+
+    status, payload = request_json(
+        local_api, "/api/agent", method="POST", payload={"question": "الطلب الأول"}
+    )
+    assert status == 500
+    assert payload["error"] == "internal server error"
+
+    state["fail"] = False
+    status, payload = request_json(
+        local_api, "/api/agent", method="POST", payload={"question": "الطلب الثاني"}
+    )
+    assert status == 200
+    assert payload["answer"] == "اختبار ناجح"
+
+
+def test_csp_hashes_match_all_first_party_inline_content_and_attributes():
+    import api.omarai as api_module
+
+    policy = api_module._content_security_policy()
+    assert "'unsafe-inline'" not in policy
+    script_blocks = 0
+    style_blocks = 0
+    style_attributes = 0
+    for html_path in api_module.ROOT.glob("*.html"):
+        document = html_path.read_text(encoding="utf-8")
+        for match in re.finditer(
+            r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            if re.search(r"\bsrc\s*=", match.group("attrs"), re.IGNORECASE):
+                continue
+            script_blocks += 1
+            assert api_module._csp_hash_source(match.group("body")) in policy
+        for match in re.finditer(
+            r"<style\b[^>]*>(?P<body>.*?)</style\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_blocks += 1
+            assert api_module._csp_hash_source(match.group("body")) in policy
+        for match in re.finditer(
+            r"""\bstyle\s*=\s*(["'])(.*?)\1""",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_attributes += 1
+            assert api_module._csp_hash_source(match.group(2).strip()) in policy
+    assert script_blocks >= 2
+    assert style_blocks >= 2
+    assert style_attributes >= 10
+
+
+def test_dashboard_uses_delegated_status_action_not_inline_onclick():
+    dashboard = (Path(__file__).resolve().parents[1] / "web" / "dashboard.html").read_text(
+        encoding="utf-8"
+    )
+    assert 'data-action="save-status"' in dashboard
+    assert 'onclick="saveStatus' not in dashboard
+    assert """data-lead-id="'+esc(l.id)+'">""" in dashboard

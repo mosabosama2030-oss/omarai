@@ -122,3 +122,24 @@ def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():
     plan = fallback_plan("قارن مميزات وعيوب المحرك الكهربائي")
     assert plan["depth"] == "deep"
     assert any("مصادر موثوقة تقارير إحصاءات" in query for query in plan["queries"])
+
+
+def test_fallback_plan_expands_warranty_followup_with_previous_topic():
+    history = [
+        {"role": "user", "content": "سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن معلومات حديثة."},
+    ]
+    plan = fallback_plan("هل فيه ضمان؟", history)
+    assert "آيفون 16" in plan["queries"][0]
+    assert "ضمان" in plan["queries"][0]
+
+
+def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():
+    history = [
+        {"role": "user", "content": "سعر آيفون 16 في مصر"},
+        {"role": "assistant", "content": "سأبحث عن معلومات حديثة."},
+        {"role": "user", "content": "شكرًا"},
+        {"role": "assistant", "content": "العفو."},
+    ]
+    plan = fallback_plan("فين؟", history)
+    assert "آيفون 16" not in plan["queries"][0]

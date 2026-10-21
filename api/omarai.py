@@ -1,13 +1,17 @@
 """HTTP API for Omarai's web-research agent and lead workspace."""
 from __future__ import annotations
 
+import base64
+import hashlib
 import hmac
 import ipaddress
 import json
 import os
+import re
 import threading
 import time
 from collections import defaultdict, deque
+from functools import lru_cache
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import ClassVar
@@ -20,6 +24,77 @@ ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 MAX_REQUEST_BODY_BYTES = 200_000
+
+
+def _csp_hash_source(value: str) -> str:
+    digest = base64.b64encode(hashlib.sha256(value.encode("utf-8")).digest()).decode("ascii")
+    return f"'sha256-{digest}'"
+
+
+@lru_cache(maxsize=1)
+def _content_security_policy() -> str:
+    """Allow only known inline blocks/attributes from the static first-party HTML.
+
+    Hashes deliberately replace unsafe-inline. Updating an inline script/style means its
+    hash changes automatically with the served source. This is not a sanitizer for
+    untrusted HTML; callers must never splice untrusted input into these static files.
+    """
+    script_hashes: set[str] = set()
+    style_hashes: set[str] = set()
+    event_handler_hashes: set[str] = set()
+    style_attribute_hashes: set[str] = set()
+
+    for html_path in sorted(ROOT.glob("*.html")):
+        try:
+            document = html_path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            continue
+
+        for match in re.finditer(
+            r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            if re.search(r"\bsrc\s*=", match.group("attrs"), re.IGNORECASE):
+                continue
+            script_hashes.add(_csp_hash_source(match.group("body")))
+
+        for match in re.finditer(
+            r"<style\b[^>]*>(?P<body>.*?)</style\s*>",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_hashes.add(_csp_hash_source(match.group("body")))
+
+        # This scan intentionally includes style/event attributes embedded in
+        # trusted first-party HTML templates assembled by inline scripts.
+        for match in re.finditer(
+            r"""\bstyle\s*=\s*(["'])(.*?)\1""",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            style_attribute_hashes.add(_csp_hash_source(match.group(2).strip()))
+
+        for match in re.finditer(
+            r"""\bon[a-z]+\s*=\s*(["'])(.*?)\1""",
+            document,
+            re.IGNORECASE | re.DOTALL,
+        ):
+            event_handler_hashes.add(_csp_hash_source(match.group(2).strip()))
+
+    script_sources = ["'self'", *sorted(script_hashes)]
+    style_sources = ["'self'", *sorted(style_hashes)]
+    if event_handler_hashes:
+        script_sources.extend(["'unsafe-hashes'", *sorted(event_handler_hashes)])
+    if style_attribute_hashes:
+        style_sources.extend(["'unsafe-hashes'", *sorted(style_attribute_hashes)])
+
+    return (
+        "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
+        "form-action 'self'; connect-src 'self'; img-src 'self' data:; "
+        f"script-src {' '.join(script_sources)}; "
+        f"style-src {' '.join(style_sources)}; font-src 'self' data:"
+    )
 # Bound request-line + header parsing before application code or body processing.
 REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0
 REQUEST_HEADER_IDLE_TIMEOUT_SECONDS = 2.0
@@ -30,6 +105,12 @@ REQUEST_BODY_IDLE_TIMEOUT_SECONDS = 2.0
 MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0
 REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 
+
+
+def _lead_store_from_environment() -> LeadStore:
+    """Use an operator-configured database path when a persistent volume is available."""
+    configured_path = os.getenv("OMARAI_DB_PATH", "").strip()
+    return LeadStore(configured_path or None)
 
 
 class _DeadlineRequestReader:
@@ -124,6 +205,39 @@ def _configured_agent_concurrency_limit() -> int:
     return max(1, min(configured, 8))
 
 
+BUILD_SHA_FILE = Path(__file__).resolve().parents[1] / "BUILD_SHA"
+_PLATFORM_BUILD_SHA_ENVIRONMENTS = (
+    ("RAILWAY_GIT_COMMIT_SHA", "platform:railway"),
+    ("RENDER_GIT_COMMIT", "platform:render"),
+)
+
+
+def _valid_build_sha(value: str) -> bool:
+    candidate = value.strip().lower()
+    return len(candidate) == 40 and all(char in "0123456789abcdef" for char in candidate)
+
+
+def _build_identity() -> tuple[str, str]:
+    """Prefer immutable image metadata, then documented hosting-provided Git SHAs."""
+    try:
+        baked = BUILD_SHA_FILE.read_text(encoding="ascii").strip().lower()
+    except (OSError, UnicodeError):
+        baked = ""
+    if _valid_build_sha(baked):
+        return baked, "image_baked"
+
+    for environment_name, source in _PLATFORM_BUILD_SHA_ENVIRONMENTS:
+        candidate = os.getenv(environment_name, "").strip().lower()
+        if _valid_build_sha(candidate):
+            return candidate, source
+    return "unknown", "unknown"
+
+
+def _build_sha() -> str:
+    """Return a validated source SHA, or 'unknown' when no trusted build evidence exists."""
+    return _build_identity()[0]
+
+
 class Handler(BaseHTTPRequestHandler):
     def setup(self):
         """Install a reader with a strict deadline for the request line and headers."""
@@ -152,7 +266,7 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             self._request_header_deadline = None
 
-    store = LeadStore()
+    store = _lead_store_from_environment()
     _rate_lock = threading.Lock()
     _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
     _rate_last_cleanup: ClassVar[float] = 0.0
@@ -335,12 +449,20 @@ class Handler(BaseHTTPRequestHandler):
             return None
         return bytes(body)
 
+    def end_headers(self):
+        """Apply defensive browser headers to successful and error responses alike."""
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Frame-Options", "DENY")
+        self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+        self.send_header("Content-Security-Policy", _content_security_policy())
+        super().end_headers()
+
     def respond(self, status, payload, content_type="application/json; charset=utf-8"):
         body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()
         self.send_response(status)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))
-        self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Cache-Control", "no-store")
         origin = self.headers.get("Origin")
         if origin and self._origin_allowed(origin):
@@ -367,6 +489,13 @@ class Handler(BaseHTTPRequestHandler):
                     "app": "Omarai",
                     "mode": "web-research",
                     "agent": WebAgent.status(),
+                    "build": {
+                        "sha": _build_identity()[0],
+                        "sha_status": (
+                            "available" if _build_identity()[0] != "unknown" else "unknown"
+                        ),
+                        "sha_source": _build_identity()[1],
+                    },
                 },
             )
         if parsed.path == "/api/leads":

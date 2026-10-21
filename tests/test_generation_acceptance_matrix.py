@@ -81,8 +81,12 @@ def test_only_normal_stop_is_accepted_as_a_complete_text_answer(
     assert agent.model_usage == []
     assert agent.generation_diagnostics == [
         {
+            "attempt_number": 1,
             "requested_model": "primary/model",
             "attempted_model": "primary/model",
+            "fallback_used": False,
+            "request_started": True,
+            "remote_response_received": True,
             "status": "finish_reason_not_accepted",
             "finish_reason": finish_reason,
         }
@@ -140,7 +144,12 @@ def test_model_fallback_cannot_exceed_request_model_call_budget(monkeypatch):
 
     assert calls == ["primary/model"]
     assert budget.snapshot()["counts"]["model_calls"] == 1
-    assert [item["status"] for item in agent.generation_diagnostics] == ["truncated"]
+    assert [item["status"] for item in agent.generation_diagnostics] == [
+        "truncated",
+        "budget_exhausted",
+    ]
+    assert agent.generation_diagnostics[1]["request_started"] is False
+    assert agent.generation_diagnostics[1]["remote_response_received"] is False
     assert agent.model_usage == []
 
 
@@ -444,6 +453,9 @@ def test_search_failure_is_not_reported_as_no_attempt_or_completed_answer(monkey
     assert result["final_answer_status"] == "insufficient_evidence_no_generation"
     assert result["used_language_model"] is False
     assert result["research_quality"] == "failed"
+    assert result["answer_integrity"]["method"] == "deterministic_lexical_screen_only"
+    assert result["answer_integrity"]["independent_fact_check"] is False
+    assert result["search_report"]["answer_integrity"] == result["answer_integrity"]
 
 
 def test_research_exception_does_not_claim_no_results_or_no_search(monkeypatch):
@@ -487,6 +499,7 @@ def test_research_exception_does_not_claim_no_results_or_no_search(monkeypatch):
 
 def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatch):
     agent = WebAgent()
+    agent.api_key = "test-key"
     question = "قارن بين الخيارات من حيث السعر، المساحة، والبيانات الناقصة"
     sources = [
         source(
@@ -541,8 +554,17 @@ def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatc
     )
     monkeypatch.setattr(agent, "_source_matches_query", lambda query, item: True)
     final_draft = "الخلاصة: يوجد اختلاف في اكتمال البيانات، ولا يمكن حسم المقارنة من المقتطف وحده [المصدر 1]."
+    repaired_answer = (
+        "السعر الإجمالي 100000 جنيه والمساحة 100 متر في المصدر الأول [المصدر 1]. "
+        "الإعلان الثاني يذكر سعرًا دون بيان المساحة، وهذه هي البيانات الناقصة [المصدر 2]."
+    )
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: final_draft)
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(
+        agent,
+        "_repair_answer_coverage",
+        lambda question, answer, sources, missing_targets: repaired_answer,
+    )
 
     result = agent.answer(question)
 
@@ -552,10 +574,18 @@ def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatc
     assert result["search_report"]["search_outcome"] == "attempted_with_usable_sources"
     assert result["search_report"]["pages_fetched"] == 1
     assert result["final_answer_status"] == "model_answer_generated"
+    assert result["coverage_repair_status"] == "revised_and_reaudited"
     assert result["search_report"]["second_pass_review"] == "model_claim_audit_completed"
     assert result["answer_coverage"]["automatically_graded"] is False
     assert result["answer_coverage"]["status"] == "model_review_requested_not_machine_verified"
+    assert "السعر الإجمالي" in result["answer"]
+    assert "البيانات الناقصة" in result["answer"]
     assert result["citation_validation"]["method"] == "numeric_source_index_range_only"
+    assert result["answer_integrity"]["method"] == "deterministic_lexical_screen_only"
+    assert result["answer_integrity"]["semantic_verification"] is False
+    assert result["search_report"]["answer_integrity"] == result["answer_integrity"]
+    assert result["answer_integrity"]["pages_with_extracted_text"] == 1
+    assert result["answer_integrity"]["potentially_missing_target_count"] >= 0
 
 
 @pytest.mark.parametrize(
