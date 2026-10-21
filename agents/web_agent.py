@@ -4245,6 +4245,15 @@ class WebAgent:
                 ),
                 "automatically_graded": False,
             }
+            answer_integrity = audit_answer_integrity(question, reason, sources, coverage_targets)
+            answer_coverage["target_checks"] = answer_integrity["target_coverage"]
+            answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
+            answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
+            task_fulfillment_status = (
+                "not_assessed_insufficient_evidence" if coverage_targets
+                else "not_machine_assessed_no_explicit_targets_detected"
+            )
+            answer_coverage["task_fulfillment_status"] = task_fulfillment_status
             research_failed = search_outcome in _RESEARCH_ERROR_OUTCOMES
             report.update({
                 # When collection failed, an empty local list is not evidence that
@@ -4262,6 +4271,11 @@ class WebAgent:
                 "citation_check": citation_validation["status"],
                 "citation_validation": citation_validation,
                 "answer_coverage": answer_coverage,
+                "answer_integrity": answer_integrity,
+                "task_fulfillment_status": task_fulfillment_status,
+                "connector_summary": report.get("connector_summary") or self._connector_status_summary(
+                    current_research_diagnostics, sources
+                ),
             })
             return {
                 "answer": reason,
@@ -4293,6 +4307,8 @@ class WebAgent:
                 "research_quality": "failed",
                 "citation_validation": citation_validation,
                 "answer_coverage": answer_coverage,
+                "answer_integrity": answer_integrity,
+                "task_fulfillment_status": task_fulfillment_status,
             }
 
         answer = ""
