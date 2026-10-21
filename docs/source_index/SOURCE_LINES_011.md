@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000090 إلى SRC-E599346ABE-L000889
+- النطاق: SRC-E599346ABE-L000084 إلى SRC-E599346ABE-L000883
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000084](../generate_index.py#L84) | 84 | `"    \| JAVASCRIPT_EXTENSIONS"` | — |
+| [SRC-E599346ABE-L000085](../generate_index.py#L85) | 85 | `"    \| CSS_EXTENSIONS"` | — |
+| [SRC-E599346ABE-L000086](../generate_index.py#L86) | 86 | `"    \| CONFIG_EXTENSIONS"` | — |
+| [SRC-E599346ABE-L000087](../generate_index.py#L87) | 87 | `"    \| frozenset({\".html\", \".htm\", \".sh\", \".md\", \".env.example\", \".example\"})"` | — |
+| [SRC-E599346ABE-L000088](../generate_index.py#L88) | 88 | `")"` | — |
+| [SRC-E599346ABE-L000089](../generate_index.py#L89) | 89 | `""` | — |
 | [SRC-E599346ABE-L000090](../generate_index.py#L90) | 90 | `"JS_IDENTIFIER = r\"[A-Za-z_$][A-Za-z0-9_$]*\""` | — |
 | [SRC-E599346ABE-L000091](../generate_index.py#L91) | 91 | `"JS_FUNCTION_RE = re.compile("` | — |
 | [SRC-E599346ABE-L000092](../generate_index.py#L92) | 92 | `"    rf\"\\b(?:async\\s+)?function\\s*\\*?\\s+({JS_IDENTIFIER})\\s*\\(\""` | — |
@@ -810,9 +816,3 @@
 | [SRC-E599346ABE-L000881](../generate_index.py#L881) | 881 | `""` | — |
 | [SRC-E599346ABE-L000882](../generate_index.py#L882) | 882 | `"def _scan_html("` | — |
 | [SRC-E599346ABE-L000883](../generate_index.py#L883) | 883 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000884](../generate_index.py#L884) | 884 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000885](../generate_index.py#L885) | 885 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000886](../generate_index.py#L886) | 886 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000887](../generate_index.py#L887) | 887 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000888](../generate_index.py#L888) | 888 | `"    \"\"\"Extract HTML navigation attributes plus embedded JS and CSS declarations.\"\"\""` | — |
-| [SRC-E599346ABE-L000889](../generate_index.py#L889) | 889 | `"    for match in HTML_ATTRIBUTE_RE.finditer(source):"` | — |

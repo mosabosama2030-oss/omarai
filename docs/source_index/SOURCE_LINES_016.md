@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L001022 إلى SRC-65551FB29F-L000208
+- النطاق: SRC-D17CE3D12F-L001016 إلى SRC-65551FB29F-L000202
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L001016](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1016) | 1016 | `"- [OWASP Top 10 for Large Language Model Applications](https://genai.owasp.org/llm-top-10/)."` | — |
+| [SRC-D17CE3D12F-L001017](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1017) | 1017 | `"- [OWASP AISVS](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` | — |
+| [SRC-D17CE3D12F-L001018](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1018) | 1018 | `""` | — |
+| [SRC-D17CE3D12F-L001019](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1019) | 1019 | `"### قاعدة استخدام المراجع"` | — |
+| [SRC-D17CE3D12F-L001020](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1020) | 1020 | `""` | — |
+| [SRC-D17CE3D12F-L001021](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1021) | 1021 | `"1. المرجع معيار/دليل لتصميم التقييم؛ ليس شهادة اعتماد."` | — |
 | [SRC-D17CE3D12F-L001022](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1022) | 1022 | `"2. عند اختيار بند منه، سجل اسم المرجع وإصداره وتاريخ المراجعة والنطاق الذي ينطبق."` | — |
 | [SRC-D17CE3D12F-L001023](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1023) | 1023 | `"3. لا تُعلن «متوافق مع معيار» إلا بعد تحديد المتطلبات المنطبقة وإجراء تقييم موثق وأدلة تحقق."` | — |
 | [SRC-D17CE3D12F-L001024](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1024) | 1024 | `"4. لا تتبع إصدارًا متغيرًا دون مراجعة أثر التحديث على الضوابط الحالية."` | — |
@@ -846,9 +852,3 @@
 | [SRC-65551FB29F-L000200](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L200) | 200 | `"\| AIE \| تقييم النماذج والجودة \|"` | — |
 | [SRC-65551FB29F-L000201](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L201) | 201 | `"\| TST \| الاختبارات \|"` | — |
 | [SRC-65551FB29F-L000202](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L202) | 202 | `"\| DEV \| تجربة المطور والتطوير الآمن \|"` | — |
-| [SRC-65551FB29F-L000203](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L203) | 203 | `"\| SCM \| سلسلة توريد البرمجيات \|"` | — |
-| [SRC-65551FB29F-L000204](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L204) | 204 | `"\| DPL \| النشر والإصدارات \|"` | — |
-| [SRC-65551FB29F-L000205](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L205) | 205 | `"\| UX \| واجهة المستخدم والوصولية والتدويل \|"` | — |
-| [SRC-65551FB29F-L000206](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L206) | 206 | `"\| FIN \| التكلفة والحصص والاستدامة \|"` | — |
-| [SRC-65551FB29F-L000207](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L207) | 207 | `"\| LEG \| التراخيص والمتطلبات القانونية \|"` | — |
-| [SRC-65551FB29F-L000208](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L208) | 208 | `"\| EXT \| الإضافات والتوافق وقابلية النقل \|"` | — |

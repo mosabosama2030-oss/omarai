@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000127 إلى SRC-90FAA34ADE-L000370
+- النطاق: SRC-4FFD5AFC54-L000121 إلى SRC-90FAA34ADE-L000364
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000121](../../scripts/run_answer_quality_benchmark.py#L121) | 121 | `"    if not path.is_file():"` | — |
+| [SRC-4FFD5AFC54-L000122](../../scripts/run_answer_quality_benchmark.py#L122) | 122 | `"        raise FileNotFoundError(f\"Corpus not found: {path}\")"` | — |
+| [SRC-4FFD5AFC54-L000123](../../scripts/run_answer_quality_benchmark.py#L123) | 123 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-4FFD5AFC54-L000124](../../scripts/run_answer_quality_benchmark.py#L124) | 124 | `"    if not isinstance(data, dict) or not isinstance(data.get(\"cases\"), list):"` | — |
+| [SRC-4FFD5AFC54-L000125](../../scripts/run_answer_quality_benchmark.py#L125) | 125 | `"        raise TypeError(\"Corpus root must be an object with a cases array\")"` | — |
+| [SRC-4FFD5AFC54-L000126](../../scripts/run_answer_quality_benchmark.py#L126) | 126 | `"    if data.get(\"parts\"):"` | — |
 | [SRC-4FFD5AFC54-L000127](../../scripts/run_answer_quality_benchmark.py#L127) | 127 | `"        raise ValueError(\"Incomplete shard index is not accepted; use merged cases[] corpus\")"` | — |
 | [SRC-4FFD5AFC54-L000128](../../scripts/run_answer_quality_benchmark.py#L128) | 128 | `"    return data"` | — |
 | [SRC-4FFD5AFC54-L000129](../../scripts/run_answer_quality_benchmark.py#L129) | 129 | `""` | — |
@@ -828,9 +834,3 @@
 | [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000363](../../tests/fixtures/answer_quality_cases.json#L363) | 363 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000364](../../tests/fixtures/answer_quality_cases.json#L364) | 364 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000365](../../tests/fixtures/answer_quality_cases.json#L365) | 365 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000366](../../tests/fixtures/answer_quality_cases.json#L366) | 366 | `"            \"title\": \"Canada visitor visa checklist\","` | — |
-| [SRC-90FAA34ADE-L000367](../../tests/fixtures/answer_quality_cases.json#L367) | 367 | `"            \"url\": \"https://example-travel.test/canada-visa\","` | — |
-| [SRC-90FAA34ADE-L000368](../../tests/fixtures/answer_quality_cases.json#L368) | 368 | `"            \"snippet\": \"Documents needed for a Canadian visitor visa application.\","` | — |
-| [SRC-90FAA34ADE-L000369](../../tests/fixtures/answer_quality_cases.json#L369) | 369 | `"            \"domain\": \"example-travel.test\","` | — |
-| [SRC-90FAA34ADE-L000370](../../tests/fixtures/answer_quality_cases.json#L370) | 370 | `"            \"provider\": \"fixture_search\","` | — |

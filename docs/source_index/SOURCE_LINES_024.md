@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000620 إلى SRC-FA4E1423C3-L000046
+- النطاق: SRC-3451CC474D-L000614 إلى SRC-FA4E1423C3-L000027
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000614](../../tests/test_api.py#L614) | 614 | `""` | — |
+| [SRC-3451CC474D-L000615](../../tests/test_api.py#L615) | 615 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000616](../../tests/test_api.py#L616) | 616 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000617](../../tests/test_api.py#L617) | 617 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_HEADER_READ_TIMEOUT_SECONDS\", 0.5)"` | — |
+| [SRC-3451CC474D-L000618](../../tests/test_api.py#L618) | 618 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_HEADER_IDLE_TIMEOUT_SECONDS\", 0.35)"` | — |
+| [SRC-3451CC474D-L000619](../../tests/test_api.py#L619) | 619 | `"    host, port = local_api.removeprefix(\"http://\").rsplit(\":\", 1)"` | — |
 | [SRC-3451CC474D-L000620](../../tests/test_api.py#L620) | 620 | `""` | — |
 | [SRC-3451CC474D-L000621](../../tests/test_api.py#L621) | 621 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
 | [SRC-3451CC474D-L000622](../../tests/test_api.py#L622) | 622 | `"        client.settimeout(1.2)"` | — |
@@ -156,6 +162,19 @@
 | [SRC-3451CC474D-L000757](../../tests/test_api.py#L757) | 757 | `"    monkeypatch.setenv(\"RENDER_GIT_COMMIT\", \"also-not-a-sha\")"` | — |
 | [SRC-3451CC474D-L000758](../../tests/test_api.py#L758) | 758 | `""` | — |
 | [SRC-3451CC474D-L000759](../../tests/test_api.py#L759) | 759 | `"    assert api_module._build_identity() == (\"unknown\", \"unknown\")"` | — |
+| [SRC-3451CC474D-L000760](../../tests/test_api.py#L760) | 760 | `""` | — |
+| [SRC-3451CC474D-L000761](../../tests/test_api.py#L761) | 761 | `""` | — |
+| [SRC-3451CC474D-L000762](../../tests/test_api.py#L762) | 762 | `""` | — |
+| [SRC-3451CC474D-L000763](../../tests/test_api.py#L763) | 763 | `"def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L000764](../../tests/test_api.py#L764) | 764 | `"    from api.omarai import _lead_store_from_environment"` | — |
+| [SRC-3451CC474D-L000765](../../tests/test_api.py#L765) | 765 | `""` | — |
+| [SRC-3451CC474D-L000766](../../tests/test_api.py#L766) | 766 | `"    database_path = tmp_path / \"persistent\" / \"omarai.sqlite3\""` | — |
+| [SRC-3451CC474D-L000767](../../tests/test_api.py#L767) | 767 | `"    monkeypatch.setenv(\"OMARAI_DB_PATH\", str(database_path))"` | — |
+| [SRC-3451CC474D-L000768](../../tests/test_api.py#L768) | 768 | `""` | — |
+| [SRC-3451CC474D-L000769](../../tests/test_api.py#L769) | 769 | `"    store = _lead_store_from_environment()"` | — |
+| [SRC-3451CC474D-L000770](../../tests/test_api.py#L770) | 770 | `""` | — |
+| [SRC-3451CC474D-L000771](../../tests/test_api.py#L771) | 771 | `"    assert store.path == database_path"` | — |
+| [SRC-3451CC474D-L000772](../../tests/test_api.py#L772) | 772 | `"    assert database_path.is_file()"` | — |
 ## اختبارات
 
 ### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
@@ -842,22 +861,3 @@
 | [SRC-FA4E1423C3-L000025](../../tests/test_generate_index.py#L25) | 25 | `"    source_dir = tmp_path / \"src\""` | — |
 | [SRC-FA4E1423C3-L000026](../../tests/test_generate_index.py#L26) | 26 | `"    source_dir.mkdir()"` | — |
 | [SRC-FA4E1423C3-L000027](../../tests/test_generate_index.py#L27) | 27 | `"    (source_dir / \"sample.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000028](../../tests/test_generate_index.py#L28) | 28 | `"        'class DocumentedClass:\\n'"` | — |
-| [SRC-FA4E1423C3-L000029](../../tests/test_generate_index.py#L29) | 29 | `"        '    \"\"\"A documented class.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000030](../../tests/test_generate_index.py#L30) | 30 | `"        '    def documented_method(self):\\n'"` | — |
-| [SRC-FA4E1423C3-L000031](../../tests/test_generate_index.py#L31) | 31 | `"        '        \"\"\"Price \| unit.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000032](../../tests/test_generate_index.py#L32) | 32 | `"        '        return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000033](../../tests/test_generate_index.py#L33) | 33 | `"        'class UndocumentedClass:\\n'"` | — |
-| [SRC-FA4E1423C3-L000034](../../tests/test_generate_index.py#L34) | 34 | `"        '    pass\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000035](../../tests/test_generate_index.py#L35) | 35 | `"        'def documented_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000036](../../tests/test_generate_index.py#L36) | 36 | `"        '    \"\"\"A documented function.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000037](../../tests/test_generate_index.py#L37) | 37 | `"        '    return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000038](../../tests/test_generate_index.py#L38) | 38 | `"        'def undocumented_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000039](../../tests/test_generate_index.py#L39) | 39 | `"        '    return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000040](../../tests/test_generate_index.py#L40) | 40 | `"        'async def async_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000041](../../tests/test_generate_index.py#L41) | 41 | `"        '    \"\"\"An asynchronous function.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000042](../../tests/test_generate_index.py#L42) | 42 | `"        '    return None\\n',"` | — |
-| [SRC-FA4E1423C3-L000043](../../tests/test_generate_index.py#L43) | 43 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000044](../../tests/test_generate_index.py#L44) | 44 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000045](../../tests/test_generate_index.py#L45) | 45 | `""` | — |
-| [SRC-FA4E1423C3-L000046](../../tests/test_generate_index.py#L46) | 46 | `"    symbols, files_scanned = INDEXER.scan_repository(tmp_path)"` | — |

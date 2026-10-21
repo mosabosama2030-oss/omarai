@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001171 إلى SRC-1C77C97630-L000087
+- النطاق: SRC-90FAA34ADE-L001165 إلى SRC-1C77C97630-L000081
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001166](../../tests/fixtures/answer_quality_cases.json#L1166) | 1166 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001167](../../tests/fixtures/answer_quality_cases.json#L1167) | 1167 | `"        \"type\": \"env\","` | — |
+| [SRC-90FAA34ADE-L001168](../../tests/fixtures/answer_quality_cases.json#L1168) | 1168 | `"        \"missing\": ["` | — |
+| [SRC-90FAA34ADE-L001169](../../tests/fixtures/answer_quality_cases.json#L1169) | 1169 | `"          \"OPENROUTER_API_KEY\""` | — |
+| [SRC-90FAA34ADE-L001170](../../tests/fixtures/answer_quality_cases.json#L1170) | 1170 | `"        ],"` | — |
 | [SRC-90FAA34ADE-L001171](../../tests/fixtures/answer_quality_cases.json#L1171) | 1171 | `"        \"review_service\": \"disabled\","` | — |
 | [SRC-90FAA34ADE-L001172](../../tests/fixtures/answer_quality_cases.json#L1172) | 1172 | `"        \"answer_model\": \"unavailable\""` | — |
 | [SRC-90FAA34ADE-L001173](../../tests/fixtures/answer_quality_cases.json#L1173) | 1173 | `"      },"` | — |
@@ -846,9 +852,3 @@
 | [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    captured = {}"` | — |
 | [SRC-1C77C97630-L000080](../../tests/test_answer_validation.py#L80) | 80 | `""` | — |
 | [SRC-1C77C97630-L000081](../../tests/test_answer_validation.py#L81) | 81 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-1C77C97630-L000082](../../tests/test_answer_validation.py#L82) | 82 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-1C77C97630-L000083](../../tests/test_answer_validation.py#L83) | 83 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>لا تكفي الأدلة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-1C77C97630-L000084](../../tests/test_answer_validation.py#L84) | 84 | `""` | — |
-| [SRC-1C77C97630-L000085](../../tests/test_answer_validation.py#L85) | 85 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-1C77C97630-L000086](../../tests/test_answer_validation.py#L86) | 86 | `"    answer = agent._review_answer("` | — |
-| [SRC-1C77C97630-L000087](../../tests/test_answer_validation.py#L87) | 87 | `"        \"قارن السعر والمدة\","` | — |

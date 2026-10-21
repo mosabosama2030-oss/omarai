@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000372 إلى SRC-EA6EC52573-L000074
+- النطاق: SRC-829A979985-L000353 إلى SRC-EA6EC52573-L000055
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000353](../../tests/test_generation_acceptance_matrix.py#L353) | 353 | `"            \"platforms\": [],"` | — |
+| [SRC-829A979985-L000354](../../tests/test_generation_acceptance_matrix.py#L354) | 354 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-829A979985-L000355](../../tests/test_generation_acceptance_matrix.py#L355) | 355 | `"        },"` | — |
+| [SRC-829A979985-L000356](../../tests/test_generation_acceptance_matrix.py#L356) | 356 | `"    )"` | — |
+| [SRC-829A979985-L000357](../../tests/test_generation_acceptance_matrix.py#L357) | 357 | `"    monkeypatch.setattr("` | — |
+| [SRC-829A979985-L000358](../../tests/test_generation_acceptance_matrix.py#L358) | 358 | `"        agent,"` | — |
+| [SRC-829A979985-L000359](../../tests/test_generation_acceptance_matrix.py#L359) | 359 | `"        \"_collect_research\","` | — |
+| [SRC-829A979985-L000360](../../tests/test_generation_acceptance_matrix.py#L360) | 360 | `"        lambda plan: ("` | — |
+| [SRC-829A979985-L000361](../../tests/test_generation_acceptance_matrix.py#L361) | 361 | `"            sources,"` | — |
+| [SRC-829A979985-L000362](../../tests/test_generation_acceptance_matrix.py#L362) | 362 | `"            [],"` | — |
+| [SRC-829A979985-L000363](../../tests/test_generation_acceptance_matrix.py#L363) | 363 | `"            {"` | — |
+| [SRC-829A979985-L000364](../../tests/test_generation_acceptance_matrix.py#L364) | 364 | `"                \"queries_planned\": 1,"` | — |
+| [SRC-829A979985-L000365](../../tests/test_generation_acceptance_matrix.py#L365) | 365 | `"                \"queries_attempted\": 1,"` | — |
+| [SRC-829A979985-L000366](../../tests/test_generation_acceptance_matrix.py#L366) | 366 | `"                \"search_attempted\": True,"` | — |
+| [SRC-829A979985-L000367](../../tests/test_generation_acceptance_matrix.py#L367) | 367 | `"                \"search_outcome\": \"attempted_with_usable_sources\","` | — |
+| [SRC-829A979985-L000368](../../tests/test_generation_acceptance_matrix.py#L368) | 368 | `"                \"unique_sources\": 2,"` | — |
+| [SRC-829A979985-L000369](../../tests/test_generation_acceptance_matrix.py#L369) | 369 | `"                \"pages_fetched\": 1,"` | — |
+| [SRC-829A979985-L000370](../../tests/test_generation_acceptance_matrix.py#L370) | 370 | `"                \"providers_used\": [\"duckduckgo_html\", \"bing_rss\"],"` | — |
+| [SRC-829A979985-L000371](../../tests/test_generation_acceptance_matrix.py#L371) | 371 | `"                \"provider_counts\": {\"duckduckgo_html\": 1, \"bing_rss\": 1},"` | — |
 | [SRC-829A979985-L000372](../../tests/test_generation_acceptance_matrix.py#L372) | 372 | `"                \"platform_counts\": {\"web\": 2},"` | — |
 | [SRC-829A979985-L000373](../../tests/test_generation_acceptance_matrix.py#L373) | 373 | `"                \"social_direct_results\": 0,"` | — |
 | [SRC-829A979985-L000374](../../tests/test_generation_acceptance_matrix.py#L374) | 374 | `"                \"provider_diagnostics\": [],"` | — |
@@ -824,22 +843,3 @@
 | [SRC-EA6EC52573-L000053](../../tests/test_intent_router.py#L53) | 53 | `"    decision = route_intent("` | — |
 | [SRC-EA6EC52573-L000054](../../tests/test_intent_router.py#L54) | 54 | `"        \"كيف تستطيع مساعدتي؟\","` | — |
 | [SRC-EA6EC52573-L000055](../../tests/test_intent_router.py#L55) | 55 | `"        capability_question=True,"` | — |
-| [SRC-EA6EC52573-L000056](../../tests/test_intent_router.py#L56) | 56 | `"        requires_web=False,"` | — |
-| [SRC-EA6EC52573-L000057](../../tests/test_intent_router.py#L57) | 57 | `"    )"` | — |
-| [SRC-EA6EC52573-L000058](../../tests/test_intent_router.py#L58) | 58 | `"    assert decision[\"route\"] == \"LOCAL\""` | — |
-| [SRC-EA6EC52573-L000059](../../tests/test_intent_router.py#L59) | 59 | `"    assert decision[\"reason\"] == \"capability_question\""` | — |
-| [SRC-EA6EC52573-L000060](../../tests/test_intent_router.py#L60) | 60 | `""` | — |
-| [SRC-EA6EC52573-L000061](../../tests/test_intent_router.py#L61) | 61 | `""` | — |
-| [SRC-EA6EC52573-L000062](../../tests/test_intent_router.py#L62) | 62 | `"def test_ambiguous_followup_uses_existing_conversation_context() -> None:"` | — |
-| [SRC-EA6EC52573-L000063](../../tests/test_intent_router.py#L63) | 63 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000064](../../tests/test_intent_router.py#L64) | 64 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 في مصر\"},"` | — |
-| [SRC-EA6EC52573-L000065](../../tests/test_intent_router.py#L65) | 65 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن هاتف iPhone 17 في السوق المصري.\"},"` | — |
-| [SRC-EA6EC52573-L000066](../../tests/test_intent_router.py#L66) | 66 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000067](../../tests/test_intent_router.py#L67) | 67 | `"    decision = route_intent(\"كام سعرها؟\", history, requires_web=True)"` | — |
-| [SRC-EA6EC52573-L000068](../../tests/test_intent_router.py#L68) | 68 | `"    assert decision[\"route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-EA6EC52573-L000069](../../tests/test_intent_router.py#L69) | 69 | `"    assert decision[\"context_available\"] is True"` | — |
-| [SRC-EA6EC52573-L000070](../../tests/test_intent_router.py#L70) | 70 | `"    assert decision[\"needs_clarification\"] is False"` | — |
-| [SRC-EA6EC52573-L000071](../../tests/test_intent_router.py#L71) | 71 | `""` | — |
-| [SRC-EA6EC52573-L000072](../../tests/test_intent_router.py#L72) | 72 | `""` | — |
-| [SRC-EA6EC52573-L000073](../../tests/test_intent_router.py#L73) | 73 | `"def test_comparison_followup_requires_context_before_deep_search() -> None:"` | — |
-| [SRC-EA6EC52573-L000074](../../tests/test_intent_router.py#L74) | 74 | `"    assert route_intent(\"قارنهم\")[\"route\"] == \"CLARIFY\""` | — |

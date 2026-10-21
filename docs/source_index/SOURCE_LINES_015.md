@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000222 إلى SRC-D17CE3D12F-L001021
+- النطاق: SRC-D17CE3D12F-L000216 إلى SRC-D17CE3D12F-L001015
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000216](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L216) | 216 | `"8. MUST مراجعة مخاطر إعادة التعرف من البيانات المجمّعة، والاحتفاظ في logs/traces، وإرسال telemetry إلى جهة ثالثة."` | — |
+| [SRC-D17CE3D12F-L000217](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L217) | 217 | `"9. MUST توثيق حدود الحذف من مزود خارجي والنسخ الاحتياطي؛ لا تُقدم وعودًا تتجاوز قدرة Omarai ومزودي الخدمة."` | — |
+| [SRC-D17CE3D12F-L000218](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L218) | 218 | `"10. SHOULD تحديد إجراءات استجابة لطلب الوصول أو التصحيح أو الحذف عندما تكون حقوق مماثلة واجبة التطبيق."` | — |
+| [SRC-D17CE3D12F-L000219](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L219) | 219 | `""` | — |
+| [SRC-D17CE3D12F-L000220](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L220) | 220 | `"---"` | — |
+| [SRC-D17CE3D12F-L000221](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L221) | 221 | `""` | — |
 | [SRC-D17CE3D12F-L000222](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L222) | 222 | `"# القسم الخامس — أمن التطبيق وواجهات API وسلسلة التوريد"` | — |
 | [SRC-D17CE3D12F-L000223](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L223) | 223 | `""` | — |
 | [SRC-D17CE3D12F-L000224](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L224) | 224 | `"## 15. دورة حياة التطوير الآمن (Secure SDLC)"` | — |
@@ -810,9 +816,3 @@
 | [SRC-D17CE3D12F-L001013](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1013) | 1013 | `"- [CISA Secure by Design](https://www.cisa.gov/securebydesign) — جعل الحماية والخيارات الآمنة جزءًا من تصميم المنتج."` | — |
 | [SRC-D17CE3D12F-L001014](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1014) | 1014 | `"- [NIST SSDF Publications](https://csrc.nist.gov/Projects/ssdf/publications) — يجب مراجعة حالة النسخة المنشورة أو المسودة قبل استخدامها كمتطلب رسمي؛ صفحة NIST تعرض حالة تحديثات SSDF."` | — |
 | [SRC-D17CE3D12F-L001015](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1015) | 1015 | `"- [Omarai Requirements Traceability and Maturity Model](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md) — سجل المتطلبات، ومعايير الدليل، ومراجعات التخصصات، وبوابات القبول."` | — |
-| [SRC-D17CE3D12F-L001016](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1016) | 1016 | `"- [OWASP Top 10 for Large Language Model Applications](https://genai.owasp.org/llm-top-10/)."` | — |
-| [SRC-D17CE3D12F-L001017](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1017) | 1017 | `"- [OWASP AISVS](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` | — |
-| [SRC-D17CE3D12F-L001018](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1018) | 1018 | `""` | — |
-| [SRC-D17CE3D12F-L001019](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1019) | 1019 | `"### قاعدة استخدام المراجع"` | — |
-| [SRC-D17CE3D12F-L001020](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1020) | 1020 | `""` | — |
-| [SRC-D17CE3D12F-L001021](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1021) | 1021 | `"1. المرجع معيار/دليل لتصميم التقييم؛ ليس شهادة اعتماد."` | — |

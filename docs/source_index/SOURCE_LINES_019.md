@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000122 إلى SRC-4FFD5AFC54-L000126
+- النطاق: SRC-69F3587825-L000116 إلى SRC-4FFD5AFC54-L000120
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000116](../search_code.py#L116) | 116 | `")"` | — |
+| [SRC-69F3587825-L000117](../search_code.py#L117) | 117 | `"GITHUB_BLOB_BASE = \"https://github.com/mosabosama2030-oss/omarai/blob/main\""` | — |
+| [SRC-69F3587825-L000118](../search_code.py#L118) | 118 | `""` | — |
+| [SRC-69F3587825-L000119](../search_code.py#L119) | 119 | `""` | — |
+| [SRC-69F3587825-L000120](../search_code.py#L120) | 120 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-69F3587825-L000121](../search_code.py#L121) | 121 | `"class SearchHit:"` | — |
 | [SRC-69F3587825-L000122](../search_code.py#L122) | 122 | `"    file: str"` | — |
 | [SRC-69F3587825-L000123](../search_code.py#L123) | 123 | `"    line: int"` | — |
 | [SRC-69F3587825-L000124](../search_code.py#L124) | 124 | `"    text: str"` | — |
@@ -882,9 +888,3 @@
 | [SRC-4FFD5AFC54-L000118](../../scripts/run_answer_quality_benchmark.py#L118) | 118 | `""` | — |
 | [SRC-4FFD5AFC54-L000119](../../scripts/run_answer_quality_benchmark.py#L119) | 119 | `""` | — |
 | [SRC-4FFD5AFC54-L000120](../../scripts/run_answer_quality_benchmark.py#L120) | 120 | `"def load_corpus(path: Path) -> dict:"` | — |
-| [SRC-4FFD5AFC54-L000121](../../scripts/run_answer_quality_benchmark.py#L121) | 121 | `"    if not path.is_file():"` | — |
-| [SRC-4FFD5AFC54-L000122](../../scripts/run_answer_quality_benchmark.py#L122) | 122 | `"        raise FileNotFoundError(f\"Corpus not found: {path}\")"` | — |
-| [SRC-4FFD5AFC54-L000123](../../scripts/run_answer_quality_benchmark.py#L123) | 123 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-4FFD5AFC54-L000124](../../scripts/run_answer_quality_benchmark.py#L124) | 124 | `"    if not isinstance(data, dict) or not isinstance(data.get(\"cases\"), list):"` | — |
-| [SRC-4FFD5AFC54-L000125](../../scripts/run_answer_quality_benchmark.py#L125) | 125 | `"        raise TypeError(\"Corpus root must be an object with a cases array\")"` | — |
-| [SRC-4FFD5AFC54-L000126](../../scripts/run_answer_quality_benchmark.py#L126) | 126 | `"    if data.get(\"parts\"):"` | — |

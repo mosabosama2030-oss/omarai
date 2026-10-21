@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000141 إلى SRC-F725E90B2A-L000408
+- النطاق: SRC-6BF96689A8-L000122 إلى SRC-F725E90B2A-L000389
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000122](../../tests/test_research.py#L122) | 122 | `"    plan = fallback_plan(\"قارن مميزات وعيوب المحرك الكهربائي\")"` | — |
+| [SRC-6BF96689A8-L000123](../../tests/test_research.py#L123) | 123 | `"    assert plan[\"depth\"] == \"deep\""` | — |
+| [SRC-6BF96689A8-L000124](../../tests/test_research.py#L124) | 124 | `"    assert any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
+| [SRC-6BF96689A8-L000125](../../tests/test_research.py#L125) | 125 | `""` | — |
+| [SRC-6BF96689A8-L000126](../../tests/test_research.py#L126) | 126 | `""` | — |
+| [SRC-6BF96689A8-L000127](../../tests/test_research.py#L127) | 127 | `"def test_fallback_plan_expands_warranty_followup_with_previous_topic():"` | — |
+| [SRC-6BF96689A8-L000128](../../tests/test_research.py#L128) | 128 | `"    history = ["` | — |
+| [SRC-6BF96689A8-L000129](../../tests/test_research.py#L129) | 129 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
+| [SRC-6BF96689A8-L000130](../../tests/test_research.py#L130) | 130 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
+| [SRC-6BF96689A8-L000131](../../tests/test_research.py#L131) | 131 | `"    ]"` | — |
+| [SRC-6BF96689A8-L000132](../../tests/test_research.py#L132) | 132 | `"    plan = fallback_plan(\"هل فيه ضمان؟\", history)"` | — |
+| [SRC-6BF96689A8-L000133](../../tests/test_research.py#L133) | 133 | `"    assert \"آيفون 16\" in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000134](../../tests/test_research.py#L134) | 134 | `"    assert \"ضمان\" in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000135](../../tests/test_research.py#L135) | 135 | `""` | — |
+| [SRC-6BF96689A8-L000136](../../tests/test_research.py#L136) | 136 | `""` | — |
+| [SRC-6BF96689A8-L000137](../../tests/test_research.py#L137) | 137 | `"def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():"` | — |
+| [SRC-6BF96689A8-L000138](../../tests/test_research.py#L138) | 138 | `"    history = ["` | — |
+| [SRC-6BF96689A8-L000139](../../tests/test_research.py#L139) | 139 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
+| [SRC-6BF96689A8-L000140](../../tests/test_research.py#L140) | 140 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
 | [SRC-6BF96689A8-L000141](../../tests/test_research.py#L141) | 141 | `"        {\"role\": \"user\", \"content\": \"شكرًا\"},"` | — |
 | [SRC-6BF96689A8-L000142](../../tests/test_research.py#L142) | 142 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
 | [SRC-6BF96689A8-L000143](../../tests/test_research.py#L143) | 143 | `"    ]"` | — |
@@ -833,22 +852,3 @@
 | [SRC-F725E90B2A-L000387](../../tests/test_web_agent.py#L387) | 387 | `""` | — |
 | [SRC-F725E90B2A-L000388](../../tests/test_web_agent.py#L388) | 388 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L000389](../../tests/test_web_agent.py#L389) | 389 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000390](../../tests/test_web_agent.py#L390) | 390 | `""` | — |
-| [SRC-F725E90B2A-L000391](../../tests/test_web_agent.py#L391) | 391 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000392](../../tests/test_web_agent.py#L392) | 392 | `"            return {"` | — |
-| [SRC-F725E90B2A-L000393](../../tests/test_web_agent.py#L393) | 393 | `"                \"data\": [{"` | — |
-| [SRC-F725E90B2A-L000394](../../tests/test_web_agent.py#L394) | 394 | `"                    \"id\": \"1840000000000000000\","` | — |
-| [SRC-F725E90B2A-L000395](../../tests/test_web_agent.py#L395) | 395 | `"                    \"text\": \"تجربة علنية لاستهلاك سيارة كهربائية\","` | — |
-| [SRC-F725E90B2A-L000396](../../tests/test_web_agent.py#L396) | 396 | `"                    \"created_at\": \"2026-10-12T10:00:00Z\","` | — |
-| [SRC-F725E90B2A-L000397](../../tests/test_web_agent.py#L397) | 397 | `"                    \"author_id\": \"u1\","` | — |
-| [SRC-F725E90B2A-L000398](../../tests/test_web_agent.py#L398) | 398 | `"                }],"` | — |
-| [SRC-F725E90B2A-L000399](../../tests/test_web_agent.py#L399) | 399 | `"                \"includes\": {"` | — |
-| [SRC-F725E90B2A-L000400](../../tests/test_web_agent.py#L400) | 400 | `"                    \"users\": [{\"id\": \"u1\", \"username\": \"driver\", \"name\": \"Driver\"}]"` | — |
-| [SRC-F725E90B2A-L000401](../../tests/test_web_agent.py#L401) | 401 | `"                },"` | — |
-| [SRC-F725E90B2A-L000402](../../tests/test_web_agent.py#L402) | 402 | `"            }"` | — |
-| [SRC-F725E90B2A-L000403](../../tests/test_web_agent.py#L403) | 403 | `""` | — |
-| [SRC-F725E90B2A-L000404](../../tests/test_web_agent.py#L404) | 404 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000405](../../tests/test_web_agent.py#L405) | 405 | `""` | — |
-| [SRC-F725E90B2A-L000406](../../tests/test_web_agent.py#L406) | 406 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000407](../../tests/test_web_agent.py#L407) | 407 | `"        calls.append((url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000408](../../tests/test_web_agent.py#L408) | 408 | `"        return FakeResponse()"` | — |

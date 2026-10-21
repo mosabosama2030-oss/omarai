@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000434 إلى SRC-69F3587825-L000121
+- النطاق: SRC-0F910493E8-L000428 إلى SRC-69F3587825-L000115
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000428](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L428) | 428 | `"- تحديد سير العمل للمسارات متعددة الخطوات."` | — |
+| [SRC-0F910493E8-L000429](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L429) | 429 | `"- الحفاظ على المسار المباشر للأسئلة البسيطة."` | — |
+| [SRC-0F910493E8-L000430](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L430) | 430 | `"- إضافة اختبارات لكل مهارة ومسار حرج."` | — |
+| [SRC-0F910493E8-L000431](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L431) | 431 | `"- إعادة تشغيل اختبارات الانحدار."` | — |
+| [SRC-0F910493E8-L000432](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L432) | 432 | `""` | — |
+| [SRC-0F910493E8-L000433](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L433) | 433 | `"**بوابة القبول:** تحسن قابل للقياس أو تنظيم يقلل التكرار دون تراجع في السلوك الحالي."` | — |
 | [SRC-0F910493E8-L000434](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L434) | 434 | `""` | — |
 | [SRC-0F910493E8-L000435](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L435) | 435 | `"## P3 — مواصفات مهام محدودة وتركيب القدرات"` | — |
 | [SRC-0F910493E8-L000436](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L436) | 436 | `""` | — |
@@ -846,9 +852,3 @@
 | [SRC-69F3587825-L000113](../search_code.py#L113) | 113 | `"        \".sh\","` | — |
 | [SRC-69F3587825-L000114](../search_code.py#L114) | 114 | `"        \".example\","` | — |
 | [SRC-69F3587825-L000115](../search_code.py#L115) | 115 | `"    }"` | — |
-| [SRC-69F3587825-L000116](../search_code.py#L116) | 116 | `")"` | — |
-| [SRC-69F3587825-L000117](../search_code.py#L117) | 117 | `"GITHUB_BLOB_BASE = \"https://github.com/mosabosama2030-oss/omarai/blob/main\""` | — |
-| [SRC-69F3587825-L000118](../search_code.py#L118) | 118 | `""` | — |
-| [SRC-69F3587825-L000119](../search_code.py#L119) | 119 | `""` | — |
-| [SRC-69F3587825-L000120](../search_code.py#L120) | 120 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-69F3587825-L000121](../search_code.py#L121) | 121 | `"class SearchHit:"` | — |
