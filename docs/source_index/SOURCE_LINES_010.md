@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000417 إلى SRC-E599346ABE-L000243
+- النطاق: SRC-EEF2E6447C-L000413 إلى SRC-E599346ABE-L000239
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000413](../../api/omarai.py#L413) | 413 | `"                leads = self.store.list(q.get(\"status\", [None])[0], limit)"` | — |
+| [SRC-EEF2E6447C-L000414](../../api/omarai.py#L414) | 414 | `"            except (ValueError, TypeError):"` | — |
+| [SRC-EEF2E6447C-L000415](../../api/omarai.py#L415) | 415 | `"                return self.respond(400, {\"error\": \"invalid status or limit\"})"` | — |
+| [SRC-EEF2E6447C-L000416](../../api/omarai.py#L416) | 416 | `"            return self.respond(200, {\"leads\": leads, \"count\": len(leads)})"` | — |
 | [SRC-EEF2E6447C-L000417](../../api/omarai.py#L417) | 417 | `"        return self.respond(404, {\"error\": \"not found\"})"` | — |
 | [SRC-EEF2E6447C-L000418](../../api/omarai.py#L418) | 418 | `""` | — |
 | [SRC-EEF2E6447C-L000419](../../api/omarai.py#L419) | 419 | `"    def do_POST(self):"` | — |
@@ -884,7 +888,3 @@
 | [SRC-E599346ABE-L000237](../generate_index.py#L237) | 237 | `"        if len(summary) > MAX_DESCRIPTION_LENGTH:"` | — |
 | [SRC-E599346ABE-L000238](../generate_index.py#L238) | 238 | `"            summary = summary[: MAX_DESCRIPTION_LENGTH - 3].rstrip() + \"...\""` | — |
 | [SRC-E599346ABE-L000239](../generate_index.py#L239) | 239 | `"        return summary, True"` | — |
-| [SRC-E599346ABE-L000240](../generate_index.py#L240) | 240 | `""` | — |
-| [SRC-E599346ABE-L000241](../generate_index.py#L241) | 241 | `"    def _record_definition("` | — |
-| [SRC-E599346ABE-L000242](../generate_index.py#L242) | 242 | `"        self,"` | — |
-| [SRC-E599346ABE-L000243](../generate_index.py#L243) | 243 | `"        node: ast.ClassDef \| ast.FunctionDef \| ast.AsyncFunctionDef,"` | — |

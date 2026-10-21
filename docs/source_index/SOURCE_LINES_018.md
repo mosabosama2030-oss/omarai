@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000588 إلى SRC-69F3587825-L000275
+- النطاق: SRC-0F910493E8-L000584 إلى SRC-69F3587825-L000271
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000584](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L584) | 584 | `"- نصوص صفحات الويب والملفات والنتائج والاقتباسات."` | — |
+| [SRC-0F910493E8-L000585](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L585) | 585 | `"- مخرجات النموذج وخططه ووسائط استدعاء الأدوات."` | — |
+| [SRC-0F910493E8-L000586](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L586) | 586 | `"- ذاكرة سابقة جرى حفظها دون تحقق مستقل."` | — |
+| [SRC-0F910493E8-L000587](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L587) | 587 | `"- تكوين أو مهارة أو ملف تعريف قبل اعتماده."` | — |
 | [SRC-0F910493E8-L000588](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L588) | 588 | `"- ردود مزود خارجي ورسائل الخطأ وترويسات HTTP."` | — |
 | [SRC-0F910493E8-L000589](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L589) | 589 | `"- حزم البرامج والأكشنات والملفات المنقولة من سلسلة التوريد قبل التحقق منها."` | — |
 | [SRC-0F910493E8-L000590](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L590) | 590 | `""` | — |
@@ -848,7 +852,3 @@
 | [SRC-69F3587825-L000269](../search_code.py#L269) | 269 | `"            else DEFAULT_EXTENSIONS"` | — |
 | [SRC-69F3587825-L000270](../search_code.py#L270) | 270 | `"        )"` | — |
 | [SRC-69F3587825-L000271](../search_code.py#L271) | 271 | `"        hits = search_repository("` | — |
-| [SRC-69F3587825-L000272](../search_code.py#L272) | 272 | `"            root,"` | — |
-| [SRC-69F3587825-L000273](../search_code.py#L273) | 273 | `"            args.query,"` | — |
-| [SRC-69F3587825-L000274](../search_code.py#L274) | 274 | `"            use_regex=args.regex,"` | — |
-| [SRC-69F3587825-L000275](../search_code.py#L275) | 275 | `"            case_sensitive=args.case_sensitive,"` | — |

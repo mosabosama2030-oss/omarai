@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000276 إلى SRC-4FFD5AFC54-L000280
+- النطاق: SRC-69F3587825-L000272 إلى SRC-4FFD5AFC54-L000276
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000272](../search_code.py#L272) | 272 | `"            root,"` | — |
+| [SRC-69F3587825-L000273](../search_code.py#L273) | 273 | `"            args.query,"` | — |
+| [SRC-69F3587825-L000274](../search_code.py#L274) | 274 | `"            use_regex=args.regex,"` | — |
+| [SRC-69F3587825-L000275](../search_code.py#L275) | 275 | `"            case_sensitive=args.case_sensitive,"` | — |
 | [SRC-69F3587825-L000276](../search_code.py#L276) | 276 | `"            extensions=extensions,"` | — |
 | [SRC-69F3587825-L000277](../search_code.py#L277) | 277 | `"            max_results=max(1, args.max),"` | — |
 | [SRC-69F3587825-L000278](../search_code.py#L278) | 278 | `"            context=max(0, args.context),"` | — |
@@ -884,7 +888,3 @@
 | [SRC-4FFD5AFC54-L000274](../../scripts/run_answer_quality_benchmark.py#L274) | 274 | `"        print(f\"Unsafe base URL; refusing live run: {exc}\", file=sys.stderr)"` | — |
 | [SRC-4FFD5AFC54-L000275](../../scripts/run_answer_quality_benchmark.py#L275) | 275 | `"        return 2"` | — |
 | [SRC-4FFD5AFC54-L000276](../../scripts/run_answer_quality_benchmark.py#L276) | 276 | `"    cases = data[\"cases\"]"` | — |
-| [SRC-4FFD5AFC54-L000277](../../scripts/run_answer_quality_benchmark.py#L277) | 277 | `"    if case_id:"` | — |
-| [SRC-4FFD5AFC54-L000278](../../scripts/run_answer_quality_benchmark.py#L278) | 278 | `"        cases = [c for c in cases if c[\"case_id\"] == case_id]"` | — |
-| [SRC-4FFD5AFC54-L000279](../../scripts/run_answer_quality_benchmark.py#L279) | 279 | `"        if not cases:"` | — |
-| [SRC-4FFD5AFC54-L000280](../../scripts/run_answer_quality_benchmark.py#L280) | 280 | `"            print(f\"Unknown case_id: {case_id}\", file=sys.stderr)"` | — |
