@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000330 إلى SRC-E599346ABE-L000131
+- النطاق: SRC-EEF2E6447C-L000328 إلى SRC-E599346ABE-L000129
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000328](../../api/omarai.py#L328) | 328 | `"                float(REQUEST_BODY_IDLE_TIMEOUT_SECONDS),"` | — |
+| [SRC-EEF2E6447C-L000329](../../api/omarai.py#L329) | 329 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
 | [SRC-EEF2E6447C-L000330](../../api/omarai.py#L330) | 330 | `"            ),"` | — |
 | [SRC-EEF2E6447C-L000331](../../api/omarai.py#L331) | 331 | `"        )"` | — |
 | [SRC-EEF2E6447C-L000332](../../api/omarai.py#L332) | 332 | `"        deadline = time.monotonic() + total_timeout"` | — |
@@ -886,5 +888,3 @@
 | [SRC-E599346ABE-L000127](../generate_index.py#L127) | 127 | `"    \"TODO\","` | — |
 | [SRC-E599346ABE-L000128](../generate_index.py#L128) | 128 | `"    \"FIXME\","` | — |
 | [SRC-E599346ABE-L000129](../generate_index.py#L129) | 129 | `"    \"BUG\","` | — |
-| [SRC-E599346ABE-L000130](../generate_index.py#L130) | 130 | `"    \"HACK\","` | — |
-| [SRC-E599346ABE-L000131](../generate_index.py#L131) | 131 | `"    \"XXX\","` | — |

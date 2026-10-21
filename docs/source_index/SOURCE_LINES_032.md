@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **032**
-- سجلات الأسطر: **121**
-- النطاق: SRC-DE7EABE998-L000317 إلى SRC-A16FA6D4B5-L000044
+- سجلات الأسطر: **154**
+- النطاق: SRC-DE7EABE998-L000284 إلى SRC-A16FA6D4B5-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,39 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" }"` | — |
+| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" const rawSources=result&&Array.isArray(result.sources)?result.sources:[];"` | — |
+| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const usableSources=rawSources.filter(s=>s&&typeof s===\"object\"&&safeSourceUrl(s.url));"` | — |
+| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `" if(usableSources.length){"` | — |
+| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `"  const sources=document.createElement(\"div\");sources.className=\"sources\";"` | — |
+| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `"  sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join(\"\");box.appendChild(sources);"` | — |
+| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `"  const no=document.createElement(\"p\");no.className=\"no-sources\";"` | — |
+| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `"  no.textContent=\"لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.\";"` | — |
+| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  box.appendChild(no);"` | — |
+| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `" }"` | — |
+| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `" $(\"messages\").appendChild(box);box.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `" return box;"` | — |
+| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `"}"` | — |
+| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `"function setBusy(on){busy=on;$(\"send\").disabled=on;$(\"send\").textContent=on?\"يبحث…\":\"ابحث ←\";$(\"question\").disabled=on;document.querySelectorAll(\".mode-btn\").forEach(b=>b.disabled=on);}"` | — |
+| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"async function ask(value){"` | — |
+| [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `" const q=(value??$(\"question\").value).trim();if(!q\|\|busy)return;"` | — |
+| [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `" addMessage(\"user\",q);$(\"question\").value=\"\";setBusy(true);"` | — |
+| [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `" setStatus(\"جارٍ تنفيذ البحث عن السؤال الحالي…\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `" const pending=document.createElement(\"div\");pending.className=\"message assistant\";"` | — |
+| [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" pending.innerHTML='<div class=\"who\">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class=\"bubble\"><div class=\"pending\"><span class=\"spinner\"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';"` | — |
+| [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `" try{"` | — |
+| [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
+| [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `"  const data=await response.json().catch(()=>({}));"` | — |
+| [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `"  if(!response.ok){"` | — |
+| [SRC-DE7EABE998-L000311](../../web/agent.html#L311) | 311 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
+| [SRC-DE7EABE998-L000312](../../web/agent.html#L312) | 312 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
+| [SRC-DE7EABE998-L000313](../../web/agent.html#L313) | 313 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |
+| [SRC-DE7EABE998-L000314](../../web/agent.html#L314) | 314 | `"  }"` | — |
+| [SRC-DE7EABE998-L000315](../../web/agent.html#L315) | 315 | `"  addMessage(\"assistant\",data.answer\|\|\"لم يرجع الخادم نص إجابة.\",data);"` | — |
+| [SRC-DE7EABE998-L000316](../../web/agent.html#L316) | 316 | `"  history.push({role:\"user\",content:q},{role:\"assistant\",content:String(data.answer\|\|\"\")});"` | — |
 | [SRC-DE7EABE998-L000317](../../web/agent.html#L317) | 317 | `"  const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];"` | — |
 | [SRC-DE7EABE998-L000318](../../web/agent.html#L318) | 318 | `"  if(data.kind===\"general_answer\"){"` | — |
 | [SRC-DE7EABE998-L000319](../../web/agent.html#L319) | 319 | `"   setStatus(\"اكتملت إجابة المعرفة العامة دون بحث ويب\",\"ok\");"` | — |
