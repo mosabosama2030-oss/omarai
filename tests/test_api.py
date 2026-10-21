@@ -757,3 +757,16 @@ def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp
     monkeypatch.setenv("RENDER_GIT_COMMIT", "also-not-a-sha")
 
     assert api_module._build_identity() == ("unknown", "unknown")
+
+
+
+def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):
+    from api.omarai import _lead_store_from_environment
+
+    database_path = tmp_path / "persistent" / "omarai.sqlite3"
+    monkeypatch.setenv("OMARAI_DB_PATH", str(database_path))
+
+    store = _lead_store_from_environment()
+
+    assert store.path == database_path
+    assert database_path.is_file()
