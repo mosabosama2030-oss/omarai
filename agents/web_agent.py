@@ -1057,7 +1057,9 @@ class WebAgent:
                 "Accept-Language": "ar,en;q=0.9",
             },
             timeout=self._effective_timeout(9.0),
-            follow_redirects=True,
+            # Search provider redirects are not followed automatically. A 3xx is
+            # reported as a provider failure so the host never fetches an unchecked target.
+            follow_redirects=False,
         )
         if response.status_code != 200:
             raise RuntimeError(f"HTTP {response.status_code}")
