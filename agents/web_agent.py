@@ -2303,6 +2303,11 @@ class WebAgent:
         return sources, list(dict.fromkeys(warnings)), report
 
     @staticmethod
+    def _history_search_query(question: str, history: list[dict[str, str]]) -> str:
+        """Backward-compatible wrapper for the shared follow-up resolver."""
+        return resolve_followup_query(question, history)
+
+    @staticmethod
     def _sanitize_history(history: Any) -> list[dict[str, str]]:
         if not isinstance(history, list):
             return []
