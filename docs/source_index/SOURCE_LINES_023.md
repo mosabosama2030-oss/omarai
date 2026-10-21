@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000135 إلى SRC-3451CC474D-L000666
+- النطاق: SRC-1C77C97630-L000130 إلى SRC-3451CC474D-L000661
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000130](../../tests/test_answer_validation.py#L130) | 130 | `""` | — |
+| [SRC-1C77C97630-L000131](../../tests/test_answer_validation.py#L131) | 131 | `"def test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence():"` | — |
+| [SRC-1C77C97630-L000132](../../tests/test_answer_validation.py#L132) | 132 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000133](../../tests/test_answer_validation.py#L133) | 133 | `"        \"What was reported?\","` | — |
+| [SRC-1C77C97630-L000134](../../tests/test_answer_validation.py#L134) | 134 | `"        \"The reported costs changed [المصدر 1].\","` | — |
 | [SRC-1C77C97630-L000135](../../tests/test_answer_validation.py#L135) | 135 | `"        [{"` | — |
 | [SRC-1C77C97630-L000136](../../tests/test_answer_validation.py#L136) | 136 | `"            \"title\": \"Costs report\","` | — |
 | [SRC-1C77C97630-L000137](../../tests/test_answer_validation.py#L137) | 137 | `"            \"snippet\": \"Reported costs changed in the new report.\","` | — |
@@ -820,8 +825,3 @@
 | [SRC-3451CC474D-L000659](../../tests/test_api.py#L659) | 659 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
 | [SRC-3451CC474D-L000660](../../tests/test_api.py#L660) | 660 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
 | [SRC-3451CC474D-L000661](../../tests/test_api.py#L661) | 661 | `""` | — |
-| [SRC-3451CC474D-L000662](../../tests/test_api.py#L662) | 662 | `"    request = Request("` | — |
-| [SRC-3451CC474D-L000663](../../tests/test_api.py#L663) | 663 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000664](../../tests/test_api.py#L664) | 664 | `"        method=\"OPTIONS\","` | — |
-| [SRC-3451CC474D-L000665](../../tests/test_api.py#L665) | 665 | `"        headers={"` | — |
-| [SRC-3451CC474D-L000666](../../tests/test_api.py#L666) | 666 | `"            \"Origin\": \"https://attacker.example\","` | — |

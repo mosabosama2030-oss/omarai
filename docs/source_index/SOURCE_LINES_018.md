@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000481 إلى SRC-69F3587825-L000168
+- النطاق: SRC-0F910493E8-L000476 إلى SRC-69F3587825-L000163
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000476](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L476) | 476 | `"- زمن التنفيذ والموارد والتكلفة."` | — |
+| [SRC-0F910493E8-L000477](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L477) | 477 | `"- زمن إعداد مهارة أو سير عمل وصيانته."` | — |
+| [SRC-0F910493E8-L000478](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L478) | 478 | `"- مقدار المراجعة البشرية المطلوبة."` | — |
+| [SRC-0F910493E8-L000479](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L479) | 479 | `"- معدل إنشاء تعريفات غير قابلة للتحقق أو غير مفيدة."` | — |
+| [SRC-0F910493E8-L000480](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L480) | 480 | `""` | — |
 | [SRC-0F910493E8-L000481](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L481) | 481 | `"لا توضع أهداف رقمية إلا بعد تحديد مجموعة الاختبارات وطريقة الحساب والبيئة. ولا تحول نتائج الم mocks إلى ادعاء نجاح تكامل حي."` | — |
 | [SRC-0F910493E8-L000482](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L482) | 482 | `""` | — |
 | [SRC-0F910493E8-L000483](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L483) | 483 | `"---"` | — |
@@ -847,8 +852,3 @@
 | [SRC-69F3587825-L000161](../search_code.py#L161) | 161 | `"    query: str,"` | — |
 | [SRC-69F3587825-L000162](../search_code.py#L162) | 162 | `"    *,"` | — |
 | [SRC-69F3587825-L000163](../search_code.py#L163) | 163 | `"    use_regex: bool = False,"` | — |
-| [SRC-69F3587825-L000164](../search_code.py#L164) | 164 | `"    case_sensitive: bool = False,"` | — |
-| [SRC-69F3587825-L000165](../search_code.py#L165) | 165 | `"    extensions: frozenset[str] = DEFAULT_EXTENSIONS,"` | — |
-| [SRC-69F3587825-L000166](../search_code.py#L166) | 166 | `"    max_results: int = 50,"` | — |
-| [SRC-69F3587825-L000167](../search_code.py#L167) | 167 | `"    context: int = 1,"` | — |
-| [SRC-69F3587825-L000168](../search_code.py#L168) | 168 | `") -> list[SearchHit]:"` | — |

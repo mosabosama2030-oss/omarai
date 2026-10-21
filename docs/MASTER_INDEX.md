@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **188**
 - تعريفات Python بلا Docstring: **571**
 - تعريفات لا ينطبق عليها Docstring: **193**
-- الرموز الساكنة الإضافية: **1400**
-- الأسطر النصية المفهرسة حرفيًا: **24916**
+- الرموز الساكنة الإضافية: **1407**
+- الأسطر النصية المفهرسة حرفيًا: **24921**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -48,8 +48,8 @@
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
 | FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 583 | 19 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
-| FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
-| FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
+| FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4915 | 47 | جرد الملف + عناوين Markdown |
+| FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6929 | 63 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 9498 | 94 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5170 | 40 | جرد الملف + عناوين Markdown |
@@ -69,7 +69,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22456 | 185 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22612 | 185 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
@@ -1293,27 +1293,31 @@
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على Railway — دليل عربي | 1 | [SRC-C7C7FA8853-L000001](DEPLOY_RAILWAY_AR.md#L1) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L4) | عنوان Markdown (H2) | المتطلبات | 4 | [SRC-C7C7FA8853-L000004](DEPLOY_RAILWAY_AR.md#L4) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L11) | عنوان Markdown (H2) | النشر | 11 | [SRC-C7C7FA8853-L000011](DEPLOY_RAILWAY_AR.md#L11) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 19 | [SRC-C7C7FA8853-L000019](DEPLOY_RAILWAY_AR.md#L19) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 20 | [SRC-C7C7FA8853-L000020](DEPLOY_RAILWAY_AR.md#L20) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 21 | [SRC-C7C7FA8853-L000021](DEPLOY_RAILWAY_AR.md#L21) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 22 | [SRC-C7C7FA8853-L000022](DEPLOY_RAILWAY_AR.md#L22) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 23 | [SRC-C7C7FA8853-L000023](DEPLOY_RAILWAY_AR.md#L23) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L27) | عنوان Markdown (H2) | الحماية | 27 | [SRC-C7C7FA8853-L000027](DEPLOY_RAILWAY_AR.md#L27) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L35) | عنوان Markdown (H2) | حدود الإنتاج الحالية | 35 | [SRC-C7C7FA8853-L000035](DEPLOY_RAILWAY_AR.md#L35) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L43) | عنوان Markdown (H2) | إعادة النشر | 43 | [SRC-C7C7FA8853-L000043](DEPLOY_RAILWAY_AR.md#L43) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 18 | [SRC-C7C7FA8853-L000018](DEPLOY_RAILWAY_AR.md#L18) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 18 | [SRC-C7C7FA8853-L000018](DEPLOY_RAILWAY_AR.md#L18) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 20 | [SRC-C7C7FA8853-L000020](DEPLOY_RAILWAY_AR.md#L20) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 21 | [SRC-C7C7FA8853-L000021](DEPLOY_RAILWAY_AR.md#L21) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 22 | [SRC-C7C7FA8853-L000022](DEPLOY_RAILWAY_AR.md#L22) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 23 | [SRC-C7C7FA8853-L000023](DEPLOY_RAILWAY_AR.md#L23) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 24 | [SRC-C7C7FA8853-L000024](DEPLOY_RAILWAY_AR.md#L24) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L28) | عنوان Markdown (H2) | الحماية | 28 | [SRC-C7C7FA8853-L000028](DEPLOY_RAILWAY_AR.md#L28) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L36) | عنوان Markdown (H2) | حدود الإنتاج الحالية | 36 | [SRC-C7C7FA8853-L000036](DEPLOY_RAILWAY_AR.md#L36) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L44) | عنوان Markdown (H2) | إعادة النشر | 44 | [SRC-C7C7FA8853-L000044](DEPLOY_RAILWAY_AR.md#L44) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على Render Free — دليل عربي | 1 | [SRC-D57B0BB030-L000001](DEPLOY_RENDER_AR.md#L1) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L4) | عنوان Markdown (H2) | ما الذي أُعدّ في المستودع؟ | 4 | [SRC-D57B0BB030-L000004](DEPLOY_RENDER_AR.md#L4) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 9 | [SRC-D57B0BB030-L000009](DEPLOY_RENDER_AR.md#L9) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 10 | [SRC-D57B0BB030-L000010](DEPLOY_RENDER_AR.md#L10) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L13) | عنوان Markdown (H2) | خطوات النشر | 13 | [SRC-D57B0BB030-L000013](DEPLOY_RENDER_AR.md#L13) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L24) | عنوان Markdown (H2) | توليد رمز الوصول | 24 | [SRC-D57B0BB030-L000024](DEPLOY_RENDER_AR.md#L24) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L34) | عنوان Markdown (H2) | حدود النسخة المجانية | 34 | [SRC-D57B0BB030-L000034](DEPLOY_RENDER_AR.md#L34) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 42 | [SRC-D57B0BB030-L000042](DEPLOY_RENDER_AR.md#L42) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L44) | عنوان Markdown (H2) | اختبار التشغيل الحي | 44 | [SRC-D57B0BB030-L000044](DEPLOY_RENDER_AR.md#L44) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 47 | [SRC-D57B0BB030-L000047](DEPLOY_RENDER_AR.md#L47) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L50) | عنوان Markdown (H2) | إذا فشل النشر | 50 | [SRC-D57B0BB030-L000050](DEPLOY_RENDER_AR.md#L50) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 56 | [SRC-D57B0BB030-L000056](DEPLOY_RENDER_AR.md#L56) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 59 | [SRC-D57B0BB030-L000059](DEPLOY_RENDER_AR.md#L59) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L24) | عنوان Markdown (H2) | ربط النسخة المنشورة بالمصدر | 24 | [SRC-D57B0BB030-L000024](DEPLOY_RENDER_AR.md#L24) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 27 | [SRC-D57B0BB030-L000027](DEPLOY_RENDER_AR.md#L27) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L28) | عنوان Markdown (H2) | توليد رمز الوصول | 28 | [SRC-D57B0BB030-L000028](DEPLOY_RENDER_AR.md#L28) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L38) | عنوان Markdown (H2) | حدود النسخة المجانية | 38 | [SRC-D57B0BB030-L000038](DEPLOY_RENDER_AR.md#L38) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L46) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 46 | [SRC-D57B0BB030-L000046](DEPLOY_RENDER_AR.md#L46) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L48) | عنوان Markdown (H2) | اختبار التشغيل الحي | 48 | [SRC-D57B0BB030-L000048](DEPLOY_RENDER_AR.md#L48) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 51 | [SRC-D57B0BB030-L000051](DEPLOY_RENDER_AR.md#L51) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L54) | عنوان Markdown (H2) | إذا فشل النشر | 54 | [SRC-D57B0BB030-L000054](DEPLOY_RENDER_AR.md#L54) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L60) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 60 | [SRC-D57B0BB030-L000060](DEPLOY_RENDER_AR.md#L60) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 63 | [SRC-D57B0BB030-L000063](DEPLOY_RENDER_AR.md#L63) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على SnapDeploy Free — دليل عربي | 1 | [SRC-51D44BE378-L000001](DEPLOY_SNAPDEPLOY_AR.md#L1) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L4) | عنوان Markdown (H2) | حدود الخطة المجانية — راجعها قبل النشر | 4 | [SRC-51D44BE378-L000004](DEPLOY_SNAPDEPLOY_AR.md#L4) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L15) | عنوان Markdown (H2) | 1. إنشاء الحساب وربط GitHub | 15 | [SRC-51D44BE378-L000015](DEPLOY_SNAPDEPLOY_AR.md#L15) |
@@ -1915,7 +1919,10 @@
 | [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 65 | [SRC-B335630551-L000065](../README.md#L65) |
 | [README.md](../README.md#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 69 | [SRC-B335630551-L000069](../README.md#L69) |
 | [README.md](../README.md#L75) | عنوان Markdown (H2) | Hosted deployment | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 78 | [SRC-B335630551-L000078](../README.md#L78) |
 | [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 78 | [SRC-B335630551-L000078](../README.md#L78) |
+| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 78 | [SRC-B335630551-L000078](../README.md#L78) |
+| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 78 | [SRC-B335630551-L000078](../README.md#L78) |
 | [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 80 | [SRC-B335630551-L000080](../README.md#L80) |
 | [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 80 | [SRC-B335630551-L000080](../README.md#L80) |
 | [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 80 | [SRC-B335630551-L000080](../README.md#L80) |

@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000667 إلى SRC-FA4E1423C3-L000093
+- النطاق: SRC-3451CC474D-L000662 إلى SRC-FA4E1423C3-L000088
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000662](../../tests/test_api.py#L662) | 662 | `"    request = Request("` | — |
+| [SRC-3451CC474D-L000663](../../tests/test_api.py#L663) | 663 | `"        local_api + \"/api/agent\","` | — |
+| [SRC-3451CC474D-L000664](../../tests/test_api.py#L664) | 664 | `"        method=\"OPTIONS\","` | — |
+| [SRC-3451CC474D-L000665](../../tests/test_api.py#L665) | 665 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000666](../../tests/test_api.py#L666) | 666 | `"            \"Origin\": \"https://attacker.example\","` | — |
 | [SRC-3451CC474D-L000667](../../tests/test_api.py#L667) | 667 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
 | [SRC-3451CC474D-L000668](../../tests/test_api.py#L668) | 668 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
 | [SRC-3451CC474D-L000669](../../tests/test_api.py#L669) | 669 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
@@ -856,8 +861,3 @@
 | [SRC-FA4E1423C3-L000086](../../tests/test_generate_index.py#L86) | 86 | `"    tmp_path: Path,"` | — |
 | [SRC-FA4E1423C3-L000087](../../tests/test_generate_index.py#L87) | 87 | `") -> None:"` | — |
 | [SRC-FA4E1423C3-L000088](../../tests/test_generate_index.py#L88) | 88 | `"    \"\"\"Frontend declarations and Markdown headings remain navigable without language parsers.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000089](../../tests/test_generate_index.py#L89) | 89 | `"    web_dir = tmp_path / \"web\""` | — |
-| [SRC-FA4E1423C3-L000090](../../tests/test_generate_index.py#L90) | 90 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000091](../../tests/test_generate_index.py#L91) | 91 | `"    web_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000092](../../tests/test_generate_index.py#L92) | 92 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000093](../../tests/test_generate_index.py#L93) | 93 | `"    (web_dir / \"agent.html\").write_text("` | — |

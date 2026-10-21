@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001320 إلى SRC-F725E90B2A-L002119
+- النطاق: SRC-F725E90B2A-L001315 إلى SRC-F725E90B2A-L002114
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001315](../../tests/test_web_agent.py#L1315) | 1315 | `"    captured = {}"` | — |
+| [SRC-F725E90B2A-L001316](../../tests/test_web_agent.py#L1316) | 1316 | `""` | — |
+| [SRC-F725E90B2A-L001317](../../tests/test_web_agent.py#L1317) | 1317 | `"    def fake_completion(messages, **kwargs):"` | — |
+| [SRC-F725E90B2A-L001318](../../tests/test_web_agent.py#L1318) | 1318 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-F725E90B2A-L001319](../../tests/test_web_agent.py#L1319) | 1319 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>تم تدقيق الإجابة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
 | [SRC-F725E90B2A-L001320](../../tests/test_web_agent.py#L1320) | 1320 | `""` | — |
 | [SRC-F725E90B2A-L001321](../../tests/test_web_agent.py#L1321) | 1321 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
 | [SRC-F725E90B2A-L001322](../../tests/test_web_agent.py#L1322) | 1322 | `"    result = agent._review_answer("` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L002112](../../tests/test_web_agent.py#L2112) | 2112 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
 | [SRC-F725E90B2A-L002113](../../tests/test_web_agent.py#L2113) | 2113 | `"        \"snippet\": \"قارن أسعار الشقق والمساحات وخطط السداد.\","` | — |
 | [SRC-F725E90B2A-L002114](../../tests/test_web_agent.py#L2114) | 2114 | `"        \"page_text\": \"إعلانات شقق للبيع من شركات تطوير عقاري.\","` | — |
-| [SRC-F725E90B2A-L002115](../../tests/test_web_agent.py#L2115) | 2115 | `"        \"queries\": [question],"` | — |
-| [SRC-F725E90B2A-L002116](../../tests/test_web_agent.py#L2116) | 2116 | `"    })"` | — |
-| [SRC-F725E90B2A-L002117](../../tests/test_web_agent.py#L2117) | 2117 | `"    source_b = sample_source(1)"` | — |
-| [SRC-F725E90B2A-L002118](../../tests/test_web_agent.py#L2118) | 2118 | `"    source_b.update({"` | — |
-| [SRC-F725E90B2A-L002119](../../tests/test_web_agent.py#L2119) | 2119 | `"        \"title\": \"مشروعات عقارية في العاصمة الإدارية\","` | — |

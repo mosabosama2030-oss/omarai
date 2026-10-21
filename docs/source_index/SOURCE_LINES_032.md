@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **032**
-- سجلات الأسطر: **116**
-- النطاق: SRC-DE7EABE998-L000322 إلى SRC-A16FA6D4B5-L000044
+- سجلات الأسطر: **121**
+- النطاق: SRC-DE7EABE998-L000317 إلى SRC-A16FA6D4B5-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000317](../../web/agent.html#L317) | 317 | `"  const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];"` | — |
+| [SRC-DE7EABE998-L000318](../../web/agent.html#L318) | 318 | `"  if(data.kind===\"general_answer\"){"` | — |
+| [SRC-DE7EABE998-L000319](../../web/agent.html#L319) | 319 | `"   setStatus(\"اكتملت إجابة المعرفة العامة دون بحث ويب\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000320](../../web/agent.html#L320) | 320 | `"  }else if(data.kind===\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000321](../../web/agent.html#L321) | 321 | `"   setStatus(\"إجابة عن قدرات Omarai وحدوده · لم يُجر بحث حي\",\"ok\");"` | — |
 | [SRC-DE7EABE998-L000322](../../web/agent.html#L322) | 322 | `"  }else if(data.used_web_search===true&&data.used_language_model===true&&sources.length>0){"` | — |
 | [SRC-DE7EABE998-L000323](../../web/agent.html#L323) | 323 | `"   setStatus(\"اكتمل البحث والتحليل · \"+sources.length+\" مصدرًا صالحًا\",\"ok\");"` | — |
 | [SRC-DE7EABE998-L000324](../../web/agent.html#L324) | 324 | `"  }else if(data.used_web_search===true&&sources.length>0){"` | — |

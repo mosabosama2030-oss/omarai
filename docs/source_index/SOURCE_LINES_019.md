@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000169 إلى SRC-4FFD5AFC54-L000173
+- النطاق: SRC-69F3587825-L000164 إلى SRC-4FFD5AFC54-L000168
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000164](../search_code.py#L164) | 164 | `"    case_sensitive: bool = False,"` | — |
+| [SRC-69F3587825-L000165](../search_code.py#L165) | 165 | `"    extensions: frozenset[str] = DEFAULT_EXTENSIONS,"` | — |
+| [SRC-69F3587825-L000166](../search_code.py#L166) | 166 | `"    max_results: int = 50,"` | — |
+| [SRC-69F3587825-L000167](../search_code.py#L167) | 167 | `"    context: int = 1,"` | — |
+| [SRC-69F3587825-L000168](../search_code.py#L168) | 168 | `") -> list[SearchHit]:"` | — |
 | [SRC-69F3587825-L000169](../search_code.py#L169) | 169 | `"    \"\"\"Return ordered text matches with short context.\"\"\""` | — |
 | [SRC-69F3587825-L000170](../search_code.py#L170) | 170 | `"    if not query:"` | — |
 | [SRC-69F3587825-L000171](../search_code.py#L171) | 171 | `"        raise ValueError(\"استعلام البحث فارغ.\")"` | — |
@@ -325,7 +330,7 @@
 | [SRC-B335630551-L000075](../../README.md#L75) | 75 | `""` | — |
 | [SRC-B335630551-L000076](../../README.md#L76) | 76 | `"## Hosted deployment"` | — |
 | [SRC-B335630551-L000077](../../README.md#L77) | 77 | `""` | — |
-| [SRC-B335630551-L000078](../../README.md#L78) | 78 | ``"A Dockerfile and Railway configuration are included for a public hosted instance. Bake the source revision into the image with `docker build --build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`; the API reports that image-baked revision at `/api/health`, and hosted smoke compares it with the checked-out commit. This is **deployment-ready configuration, not proof that a hosted service has already been created**: you must connect your Railway account to this GitHub repository, add secrets in the host dashboard, deploy, and run the live diagnostics."`` | — |
+| [SRC-B335630551-L000078](../../README.md#L78) | 78 | ``"A Dockerfile and Railway configuration are included for a public hosted instance. The API reports the validated source revision at `/api/health`: it prefers image-baked `BUILD_SHA`, then uses the hosting platform's documented Git commit metadata (`RAILWAY_GIT_COMMIT_SHA` or `RENDER_GIT_COMMIT`) when available. For other Docker hosts, pass `--build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`. Hosted smoke compares the reported revision with the checked-out commit. This is **deployment-ready configuration, not proof that a hosted service has already been created**: you must connect your Railway account to this GitHub repository, add secrets in the host dashboard, deploy, and run the live diagnostics."`` | — |
 | [SRC-B335630551-L000079](../../README.md#L79) | 79 | `""` | — |
 | [SRC-B335630551-L000080](../../README.md#L80) | 80 | ``"Before public binding, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `OMARAI_ACCESS_TOKEN` of at least 32 characters. The app refuses public binding without both. Set `OPENROUTER_API_KEY` in the hosting provider's secret variables for natural-language planning and synthesis. If the browser UI is served from a different origin, set `OMARAI_ALLOWED_ORIGINS` to a comma-separated allowlist of trusted origins (scheme + host + optional port, no path and no `*`). The API sends CORS headers only to allowed origins and handles preflight `OPTIONS`; when you open `/` on the same deployed service, the built-in UI uses relative `/api/...` URLs and normally needs no extra origin entry. Public API routes require the bearer token and have a default in-memory limit of 20 requests per minute per client IP. The Arabic UI provides a separate access-token field; it stores only that app token in the browser's local storage, not the provider API key."`` | — |
 | [SRC-B335630551-L000081](../../README.md#L81) | 81 | `""` | — |
@@ -883,8 +888,3 @@
 | [SRC-4FFD5AFC54-L000166](../../scripts/run_answer_quality_benchmark.py#L166) | 166 | `"    if not text:"` | — |
 | [SRC-4FFD5AFC54-L000167](../../scripts/run_answer_quality_benchmark.py#L167) | 167 | `"        return text"` | — |
 | [SRC-4FFD5AFC54-L000168](../../scripts/run_answer_quality_benchmark.py#L168) | 168 | `"    out = text"` | — |
-| [SRC-4FFD5AFC54-L000169](../../scripts/run_answer_quality_benchmark.py#L169) | 169 | `"    for key in ("` | — |
-| [SRC-4FFD5AFC54-L000170](../../scripts/run_answer_quality_benchmark.py#L170) | 170 | `"        \"OPENROUTER_API_KEY\","` | — |
-| [SRC-4FFD5AFC54-L000171](../../scripts/run_answer_quality_benchmark.py#L171) | 171 | `"        \"OMARAI_ACCESS_TOKEN\","` | — |
-| [SRC-4FFD5AFC54-L000172](../../scripts/run_answer_quality_benchmark.py#L172) | 172 | `"        \"OMARAI_LLM_API_KEY\","` | — |
-| [SRC-4FFD5AFC54-L000173](../../scripts/run_answer_quality_benchmark.py#L173) | 173 | `"        \"Authorization\","` | — |
