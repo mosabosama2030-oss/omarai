@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **69**
-- ملفات Python المحللة: **36**
-- تعريفات Python المفهرسة: **874**
-- تعريفات Python موثقة بوجود Docstring: **175**
-- تعريفات Python بلا Docstring: **531**
-- تعريفات لا ينطبق عليها Docstring: **168**
-- الرموز الساكنة الإضافية: **1345**
-- الأسطر النصية المفهرسة حرفيًا: **22979**
+- ملفات المستودع في الجرد: **71**
+- ملفات Python المحللة: **38**
+- تعريفات Python المفهرسة: **900**
+- تعريفات Python موثقة بوجود Docstring: **181**
+- تعريفات Python بلا Docstring: **536**
+- تعريفات لا ينطبق عليها Docstring: **183**
+- الرموز الساكنة الإضافية: **1358**
+- الأسطر النصية المفهرسة حرفيًا: **23368**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -49,9 +49,9 @@
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4531 | 46 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6313 | 59 | جرد الملف + عناوين Markdown |
-| FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 8689 | 88 | جرد الملف + عناوين Markdown |
+| FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 9498 | 94 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
-| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 4540 | 37 | جرد الملف + عناوين Markdown |
+| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5170 | 40 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 8675 | 47 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
@@ -64,10 +64,11 @@
 | FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 12809 | 97 | جرد الملف + عناوين Markdown |
 | FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
+| FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 8904 | 290 | جرد الملف + AST Python |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 21845 | 182 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22456 | 185 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
@@ -93,6 +94,7 @@
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 3540 | 101 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 6023 | 145 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
+| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 3456 | 87 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 100345 | 2589 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 41028 | 337 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -449,6 +451,25 @@
 | [docs/generate_index.py](generate_index.py#L1773) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1773 | [SRC-E599346ABE-L001773](generate_index.py#L1773) |
 | [docs/generate_index.py](generate_index.py#L1802) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1802 | [SRC-E599346ABE-L001802](generate_index.py#L1802) |
 | [docs/generate_index.py](generate_index.py#L1840) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1840 | [SRC-E599346ABE-L001840](generate_index.py#L1840) |
+| [docs/search_code.py](search_code.py#L21) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-69F3587825-L000021](search_code.py#L21) |
+| [docs/search_code.py](search_code.py#L50) | متغير/ثابت Python | SECRET_BASENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 50 | [SRC-69F3587825-L000050](search_code.py#L50) |
+| [docs/search_code.py](search_code.py#L77) | متغير/ثابت Python | SENSITIVE_NAME_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 77 | [SRC-69F3587825-L000077](search_code.py#L77) |
+| [docs/search_code.py](search_code.py#L81) | متغير/ثابت Python | SENSITIVE_CONFIG_SUFFIXES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 81 | [SRC-69F3587825-L000081](search_code.py#L81) |
+| [docs/search_code.py](search_code.py#L84) | متغير/ثابت Python | MAX_SEARCH_FILE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 84 | [SRC-69F3587825-L000084](search_code.py#L84) |
+| [docs/search_code.py](search_code.py#L87) | دالة | _is_sensitive_path | Return whether a local path appears to contain credentials or private runtime data. | موثق | 87 | [SRC-69F3587825-L000087](search_code.py#L87) |
+| [docs/search_code.py](search_code.py#L100) | متغير/ثابت Python | DEFAULT_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 100 | [SRC-69F3587825-L000100](search_code.py#L100) |
+| [docs/search_code.py](search_code.py#L117) | متغير/ثابت Python | GITHUB_BLOB_BASE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 117 | [SRC-69F3587825-L000117](search_code.py#L117) |
+| [docs/search_code.py](search_code.py#L121) | كلاس | SearchHit | لا توجد Docstring. | ناقص | 121 | [SRC-69F3587825-L000121](search_code.py#L121) |
+| [docs/search_code.py](search_code.py#L122) | متغير/ثابت Python | SearchHit.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 122 | [SRC-69F3587825-L000122](search_code.py#L122) |
+| [docs/search_code.py](search_code.py#L123) | متغير/ثابت Python | SearchHit.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 123 | [SRC-69F3587825-L000123](search_code.py#L123) |
+| [docs/search_code.py](search_code.py#L124) | متغير/ثابت Python | SearchHit.text | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 124 | [SRC-69F3587825-L000124](search_code.py#L124) |
+| [docs/search_code.py](search_code.py#L125) | متغير/ثابت Python | SearchHit.context_before | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 125 | [SRC-69F3587825-L000125](search_code.py#L125) |
+| [docs/search_code.py](search_code.py#L126) | متغير/ثابت Python | SearchHit.context_after | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 126 | [SRC-69F3587825-L000126](search_code.py#L126) |
+| [docs/search_code.py](search_code.py#L129) | دالة | SearchHit.link | لا توجد Docstring. | ناقص | 129 | [SRC-69F3587825-L000129](search_code.py#L129) |
+| [docs/search_code.py](search_code.py#L133) | دالة | discover_text_files | لا توجد Docstring. | ناقص | 133 | [SRC-69F3587825-L000133](search_code.py#L133) |
+| [docs/search_code.py](search_code.py#L159) | دالة | search_repository | Return ordered text matches with short context. | موثق | 159 | [SRC-69F3587825-L000159](search_code.py#L159) |
+| [docs/search_code.py](search_code.py#L215) | دالة | format_hits | لا توجد Docstring. | ناقص | 215 | [SRC-69F3587825-L000215](search_code.py#L215) |
+| [docs/search_code.py](search_code.py#L236) | دالة | main | لا توجد Docstring. | ناقص | 236 | [SRC-69F3587825-L000236](search_code.py#L236) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L16) | كلاس | SmokeError | A live acceptance check failed. | موثق | 16 | [SRC-A8360B1B03-L000016](../scripts/hosted_smoke_test.py#L16) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L24) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 24 | [SRC-A8360B1B03-L000024](../scripts/hosted_smoke_test.py#L24) |
@@ -778,6 +799,13 @@
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L176) | دالة | test_evidence_insufficient_empty | لا توجد Docstring. | ناقص | 176 | [SRC-01E35ABC46-L000176](../tests/test_research_guardrails.py#L176) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L182) | دالة | test_evidence_failed_provider | لا توجد Docstring. | ناقص | 182 | [SRC-01E35ABC46-L000182](../tests/test_research_guardrails.py#L182) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L188) | دالة | test_evidence_partial_single_source | لا توجد Docstring. | ناقص | 188 | [SRC-01E35ABC46-L000188](../tests/test_research_guardrails.py#L188) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L17) | دالة | test_search_returns_stable_file_line_and_source_link | Text search returns the exact file and 1-based line without network access. | موثق | 17 | [SRC-2614DCB6FB-L000017](../tests/test_search_code.py#L17) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L31) | دالة | test_search_supports_multiline_context_and_regex | The context argument returns the requested number of adjacent lines. | موثق | 31 | [SRC-2614DCB6FB-L000031](../tests/test_search_code.py#L31) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L45) | دالة | test_search_excludes_common_secret_files_and_runtime_directories | Local searches skip common secret paths and binary/runtime data. | موثق | 45 | [SRC-2614DCB6FB-L000045](../tests/test_search_code.py#L45) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L66) | دالة | test_search_validates_query_limits_and_reports_invalid_regex | Invalid search controls fail clearly instead of silently returning confusing results. | موثق | 66 | [SRC-2614DCB6FB-L000066](../tests/test_search_code.py#L66) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L11) | دالة | test_backup_and_restore_preserve_omarai_leads | لا توجد Docstring. | ناقص | 11 | [SRC-1C0D3D1206-L000011](../tests/test_sqlite_backup_restore.py#L11) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L50) | دالة | test_backup_never_overwrites_an_existing_destination | لا توجد Docstring. | ناقص | 50 | [SRC-1C0D3D1206-L000050](../tests/test_sqlite_backup_restore.py#L50) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L62) | دالة | test_backup_rejects_non_omarai_sqlite_database_without_leaving_destination | لا توجد Docstring. | ناقص | 62 | [SRC-1C0D3D1206-L000062](../tests/test_sqlite_backup_restore.py#L62) |
@@ -1230,17 +1258,19 @@
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على SnapDeploy Free — دليل عربي | 1 | [SRC-51D44BE378-L000001](DEPLOY_SNAPDEPLOY_AR.md#L1) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L4) | عنوان Markdown (H2) | حدود الخطة المجانية — راجعها قبل النشر | 4 | [SRC-51D44BE378-L000004](DEPLOY_SNAPDEPLOY_AR.md#L4) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L15) | عنوان Markdown (H2) | 1. إنشاء الحساب وربط GitHub | 15 | [SRC-51D44BE378-L000015](DEPLOY_SNAPDEPLOY_AR.md#L15) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L24) | عنوان Markdown (H2) | 2. ضبط متغيرات البيئة والأسرار | 24 | [SRC-51D44BE378-L000024](DEPLOY_SNAPDEPLOY_AR.md#L24) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 33 | [SRC-51D44BE378-L000033](DEPLOY_SNAPDEPLOY_AR.md#L33) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 34 | [SRC-51D44BE378-L000034](DEPLOY_SNAPDEPLOY_AR.md#L34) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 35 | [SRC-51D44BE378-L000035](DEPLOY_SNAPDEPLOY_AR.md#L35) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 45 | [SRC-51D44BE378-L000045](DEPLOY_SNAPDEPLOY_AR.md#L45) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L46) | عنوان Markdown (H2) | 3. النشر الأول | 46 | [SRC-51D44BE378-L000046](DEPLOY_SNAPDEPLOY_AR.md#L46) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L54) | عنوان Markdown (H2) | 4. اختبار Omarai من الهاتف | 54 | [SRC-51D44BE378-L000054](DEPLOY_SNAPDEPLOY_AR.md#L54) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L63) | عنوان Markdown (H2) | 5. اختبار القبول الآلي الاختياري | 63 | [SRC-51D44BE378-L000063](DEPLOY_SNAPDEPLOY_AR.md#L63) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L70) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 70 | [SRC-51D44BE378-L000070](DEPLOY_SNAPDEPLOY_AR.md#L70) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L75) | عنوان Markdown (H2) | القيود الحالية التي لا يحلها النشر | 75 | [SRC-51D44BE378-L000075](DEPLOY_SNAPDEPLOY_AR.md#L75) |
-| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L83) | عنوان Markdown (H2) | روابط مرجعية | 83 | [SRC-51D44BE378-L000083](DEPLOY_SNAPDEPLOY_AR.md#L83) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L24) | عنوان Markdown (H2) | ربط نسخة النشر بالمصدر | 24 | [SRC-51D44BE378-L000024](DEPLOY_SNAPDEPLOY_AR.md#L24) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 27 | [SRC-51D44BE378-L000027](DEPLOY_SNAPDEPLOY_AR.md#L27) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L30) | عنوان Markdown (H2) | 2. ضبط متغيرات البيئة والأسرار | 30 | [SRC-51D44BE378-L000030](DEPLOY_SNAPDEPLOY_AR.md#L30) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 39 | [SRC-51D44BE378-L000039](DEPLOY_SNAPDEPLOY_AR.md#L39) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 40 | [SRC-51D44BE378-L000040](DEPLOY_SNAPDEPLOY_AR.md#L40) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 41 | [SRC-51D44BE378-L000041](DEPLOY_SNAPDEPLOY_AR.md#L41) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 51 | [SRC-51D44BE378-L000051](DEPLOY_SNAPDEPLOY_AR.md#L51) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L52) | عنوان Markdown (H2) | 3. النشر الأول | 52 | [SRC-51D44BE378-L000052](DEPLOY_SNAPDEPLOY_AR.md#L52) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L60) | عنوان Markdown (H2) | 4. اختبار Omarai من الهاتف | 60 | [SRC-51D44BE378-L000060](DEPLOY_SNAPDEPLOY_AR.md#L60) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L69) | عنوان Markdown (H2) | 5. اختبار القبول الآلي الاختياري | 69 | [SRC-51D44BE378-L000069](DEPLOY_SNAPDEPLOY_AR.md#L69) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 76 | [SRC-51D44BE378-L000076](DEPLOY_SNAPDEPLOY_AR.md#L76) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L81) | عنوان Markdown (H2) | القيود الحالية التي لا يحلها النشر | 81 | [SRC-51D44BE378-L000081](DEPLOY_SNAPDEPLOY_AR.md#L81) |
+| [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L89) | عنوان Markdown (H2) | روابط مرجعية | 89 | [SRC-51D44BE378-L000089](DEPLOY_SNAPDEPLOY_AR.md#L89) |
 | [docs/generate_index.py](generate_index.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_DIRECTORIES | 22 | [SRC-E599346ABE-L000022](generate_index.py#L22) |
 | [docs/generate_index.py](generate_index.py#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_FILENAMES | 43 | [SRC-E599346ABE-L000043](generate_index.py#L43) |
 | [docs/generate_index.py](generate_index.py#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_SUFFIXES | 53 | [SRC-E599346ABE-L000053](generate_index.py#L53) |
@@ -1297,12 +1327,13 @@
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 12 | [SRC-6E35221BFA-L000012](GO_LIVE_CHECKLIST_AR.md#L12) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 15 | [SRC-6E35221BFA-L000015](GO_LIVE_CHECKLIST_AR.md#L15) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L16) | عنوان Markdown (H2) | اختبار قبول حي | 16 | [SRC-6E35221BFA-L000016](GO_LIVE_CHECKLIST_AR.md#L16) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 19 | [SRC-6E35221BFA-L000019](GO_LIVE_CHECKLIST_AR.md#L19) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L22) | عنوان Markdown (H2) | شروط النجاح | 22 | [SRC-6E35221BFA-L000022](GO_LIVE_CHECKLIST_AR.md#L22) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L30) | عنوان Markdown (H2) | اختبار يدوي على Android | 30 | [SRC-6E35221BFA-L000030](GO_LIVE_CHECKLIST_AR.md#L30) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L34) | عنوان Markdown (H2) | حدود مهمة | 34 | [SRC-6E35221BFA-L000034](GO_LIVE_CHECKLIST_AR.md#L34) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 14 | [SRC-6E35221BFA-L000014](GO_LIVE_CHECKLIST_AR.md#L14) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 17 | [SRC-6E35221BFA-L000017](GO_LIVE_CHECKLIST_AR.md#L17) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | عنوان Markdown (H2) | اختبار قبول حي | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 21 | [SRC-6E35221BFA-L000021](GO_LIVE_CHECKLIST_AR.md#L21) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L24) | عنوان Markdown (H2) | شروط النجاح | 24 | [SRC-6E35221BFA-L000024](GO_LIVE_CHECKLIST_AR.md#L24) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L33) | عنوان Markdown (H2) | اختبار يدوي على Android | 33 | [SRC-6E35221BFA-L000033](GO_LIVE_CHECKLIST_AR.md#L33) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L37) | عنوان Markdown (H2) | حدود مهمة | 37 | [SRC-6E35221BFA-L000037](GO_LIVE_CHECKLIST_AR.md#L37) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدوده | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L7) | عنوان Markdown (H2) | Implemented in the repository | 7 | [SRC-C8EA754D73-L000007](IMPLEMENTATION_SCOPE.md#L7) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L18) | عنوان Markdown (H2) | Explicitly out of scope or not yet proven | 18 | [SRC-C8EA754D73-L000018](IMPLEMENTATION_SCOPE.md#L18) |
@@ -1752,6 +1783,13 @@
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L100) | عنوان Markdown (H3) | البدء بعد الإعداد | 100 | [SRC-D911B73392-L000100](RESEARCH_CONNECTORS_AR.md#L100) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L110) | عنوان Markdown (H2) | 5. اختبار حي للاتصال | 110 | [SRC-D911B73392-L000110](RESEARCH_CONNECTORS_AR.md#L110) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L124) | عنوان Markdown (H2) | 6. قراءة الأدلة والتحقق منها | 124 | [SRC-D911B73392-L000124](RESEARCH_CONNECTORS_AR.md#L124) |
+| [docs/search_code.py](search_code.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_DIRECTORIES | 21 | [SRC-69F3587825-L000021](search_code.py#L21) |
+| [docs/search_code.py](search_code.py#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SECRET_BASENAMES | 50 | [SRC-69F3587825-L000050](search_code.py#L50) |
+| [docs/search_code.py](search_code.py#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_NAME_RE | 77 | [SRC-69F3587825-L000077](search_code.py#L77) |
+| [docs/search_code.py](search_code.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_CONFIG_SUFFIXES | 81 | [SRC-69F3587825-L000081](search_code.py#L81) |
+| [docs/search_code.py](search_code.py#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_SEARCH_FILE_BYTES | 84 | [SRC-69F3587825-L000084](search_code.py#L84) |
+| [docs/search_code.py](search_code.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_EXTENSIONS | 100 | [SRC-69F3587825-L000100](search_code.py#L100) |
+| [docs/search_code.py](search_code.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 117 | [SRC-69F3587825-L000117](search_code.py#L117) |
 | [pyproject.toml](../pyproject.toml#L1) | قسم TOML | build-system | 1 | [SRC-50C86B7ED8-L000001](../pyproject.toml#L1) |
 | [pyproject.toml](../pyproject.toml#L2) | مفتاح إعداد TOML | requires | 2 | [SRC-50C86B7ED8-L000002](../pyproject.toml#L2) |
 | [pyproject.toml](../pyproject.toml#L3) | مفتاح إعداد TOML | build-backend | 3 | [SRC-50C86B7ED8-L000003](../pyproject.toml#L3) |
@@ -1803,48 +1841,49 @@
 | [README.md](../README.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 33 | [SRC-B335630551-L000033](../README.md#L33) |
 | [README.md](../README.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 34 | [SRC-B335630551-L000034](../README.md#L34) |
 | [README.md](../README.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 35 | [SRC-B335630551-L000035](../README.md#L35) |
-| [README.md](../README.md#L50) | عنوان Markdown (H2) | Per-request resource budget | 50 | [SRC-B335630551-L000050](../README.md#L50) |
-| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
-| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
-| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_PAGE_FETCHES | 53 | [SRC-B335630551-L000053](../README.md#L53) |
-| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
-| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 53 | [SRC-B335630551-L000053](../README.md#L53) |
-| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 53 | [SRC-B335630551-L000053](../README.md#L53) |
-| [README.md](../README.md#L57) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 57 | [SRC-B335630551-L000057](../README.md#L57) |
-| [README.md](../README.md#L58) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 58 | [SRC-B335630551-L000058](../README.md#L58) |
-| [README.md](../README.md#L62) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 62 | [SRC-B335630551-L000062](../README.md#L62) |
-| [README.md](../README.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 66 | [SRC-B335630551-L000066](../README.md#L66) |
-| [README.md](../README.md#L72) | عنوان Markdown (H2) | Hosted deployment | 72 | [SRC-B335630551-L000072](../README.md#L72) |
-| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 77 | [SRC-B335630551-L000077](../README.md#L77) |
-| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 77 | [SRC-B335630551-L000077](../README.md#L77) |
-| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 77 | [SRC-B335630551-L000077](../README.md#L77) |
-| [README.md](../README.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 77 | [SRC-B335630551-L000077](../README.md#L77) |
-| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 79 | [SRC-B335630551-L000079](../README.md#L79) |
-| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 79 | [SRC-B335630551-L000079](../README.md#L79) |
-| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 79 | [SRC-B335630551-L000079](../README.md#L79) |
-| [README.md](../README.md#L80) | عنوان Markdown (H2) | Free hosted deployment (SnapDeploy) | 80 | [SRC-B335630551-L000080](../README.md#L80) |
-| [README.md](../README.md#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 83 | [SRC-B335630551-L000083](../README.md#L83) |
-| [README.md](../README.md#L86) | عنوان Markdown (H2) | Free hosted deployment (Render) | 86 | [SRC-B335630551-L000086](../README.md#L86) |
-| [README.md](../README.md#L89) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 89 | [SRC-B335630551-L000089](../README.md#L89) |
-| [README.md](../README.md#L92) | عنوان Markdown (H2) | Run on Android / Termux | 92 | [SRC-B335630551-L000092](../README.md#L92) |
-| [README.md](../README.md#L113) | عنوان Markdown (H3) | Optional configuration | 113 | [SRC-B335630551-L000113](../README.md#L113) |
-| [README.md](../README.md#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 119 | [SRC-B335630551-L000119](../README.md#L119) |
-| [README.md](../README.md#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 120 | [SRC-B335630551-L000120](../README.md#L120) |
-| [README.md](../README.md#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 127 | [SRC-B335630551-L000127](../README.md#L127) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L135) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 135 | [SRC-B335630551-L000135](../README.md#L135) |
-| [README.md](../README.md#L136) | عنوان Markdown (H2) | API | 136 | [SRC-B335630551-L000136](../README.md#L136) |
-| [README.md](../README.md#L157) | عنوان Markdown (H2) | Existing lead workspace | 157 | [SRC-B335630551-L000157](../README.md#L157) |
-| [README.md](../README.md#L175) | عنوان Markdown (H2) | Checks | 175 | [SRC-B335630551-L000175](../README.md#L175) |
+| [README.md](../README.md#L53) | عنوان Markdown (H2) | Per-request resource budget | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 56 | [SRC-B335630551-L000056](../README.md#L56) |
+| [README.md](../README.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 56 | [SRC-B335630551-L000056](../README.md#L56) |
+| [README.md](../README.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_PAGE_FETCHES | 56 | [SRC-B335630551-L000056](../README.md#L56) |
+| [README.md](../README.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 56 | [SRC-B335630551-L000056](../README.md#L56) |
+| [README.md](../README.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 56 | [SRC-B335630551-L000056](../README.md#L56) |
+| [README.md](../README.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 56 | [SRC-B335630551-L000056](../README.md#L56) |
+| [README.md](../README.md#L60) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 60 | [SRC-B335630551-L000060](../README.md#L60) |
+| [README.md](../README.md#L61) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 61 | [SRC-B335630551-L000061](../README.md#L61) |
+| [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 65 | [SRC-B335630551-L000065](../README.md#L65) |
+| [README.md](../README.md#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 69 | [SRC-B335630551-L000069](../README.md#L69) |
+| [README.md](../README.md#L75) | عنوان Markdown (H2) | Hosted deployment | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 78 | [SRC-B335630551-L000078](../README.md#L78) |
+| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 80 | [SRC-B335630551-L000080](../README.md#L80) |
+| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 80 | [SRC-B335630551-L000080](../README.md#L80) |
+| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 80 | [SRC-B335630551-L000080](../README.md#L80) |
+| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 80 | [SRC-B335630551-L000080](../README.md#L80) |
+| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 82 | [SRC-B335630551-L000082](../README.md#L82) |
+| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 82 | [SRC-B335630551-L000082](../README.md#L82) |
+| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 82 | [SRC-B335630551-L000082](../README.md#L82) |
+| [README.md](../README.md#L83) | عنوان Markdown (H2) | Free hosted deployment (SnapDeploy) | 83 | [SRC-B335630551-L000083](../README.md#L83) |
+| [README.md](../README.md#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 86 | [SRC-B335630551-L000086](../README.md#L86) |
+| [README.md](../README.md#L89) | عنوان Markdown (H2) | Free hosted deployment (Render) | 89 | [SRC-B335630551-L000089](../README.md#L89) |
+| [README.md](../README.md#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 92 | [SRC-B335630551-L000092](../README.md#L92) |
+| [README.md](../README.md#L95) | عنوان Markdown (H2) | Run on Android / Termux | 95 | [SRC-B335630551-L000095](../README.md#L95) |
+| [README.md](../README.md#L116) | عنوان Markdown (H3) | Optional configuration | 116 | [SRC-B335630551-L000116](../README.md#L116) |
+| [README.md](../README.md#L122) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 122 | [SRC-B335630551-L000122](../README.md#L122) |
+| [README.md](../README.md#L123) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 123 | [SRC-B335630551-L000123](../README.md#L123) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L138) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 138 | [SRC-B335630551-L000138](../README.md#L138) |
+| [README.md](../README.md#L139) | عنوان Markdown (H2) | API | 139 | [SRC-B335630551-L000139](../README.md#L139) |
+| [README.md](../README.md#L160) | عنوان Markdown (H2) | Existing lead workspace | 160 | [SRC-B335630551-L000160](../README.md#L160) |
+| [README.md](../README.md#L178) | عنوان Markdown (H2) | Checks | 178 | [SRC-B335630551-L000178](../README.md#L178) |
 | [render.yaml](../render.yaml#L1) | مفتاح إعداد YAML | services | 1 | [SRC-A64CF250B4-L000001](../render.yaml#L1) |
 | [render.yaml](../render.yaml#L3) | مفتاح إعداد YAML | name | 3 | [SRC-A64CF250B4-L000003](../render.yaml#L3) |
 | [render.yaml](../render.yaml#L4) | مفتاح إعداد YAML | runtime | 4 | [SRC-A64CF250B4-L000004](../render.yaml#L4) |
@@ -2004,6 +2043,8 @@
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 55 | [SRC-C353AAAC10-L000055](../tests/test_request_budget.py#L55) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L91) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 91 | [SRC-C353AAAC10-L000091](../tests/test_request_budget.py#L91) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 92 | [SRC-C353AAAC10-L000092](../tests/test_request_budget.py#L92) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_PATH | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 129 | [SRC-F725E90B2A-L000129](../tests/test_web_agent.py#L129) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L386) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 386 | [SRC-F725E90B2A-L000386](../tests/test_web_agent.py#L386) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L425) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 425 | [SRC-F725E90B2A-L000425](../tests/test_web_agent.py#L425) |
