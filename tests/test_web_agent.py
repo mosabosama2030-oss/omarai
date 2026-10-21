@@ -2611,10 +2611,11 @@ def test_search_providers_do_not_follow_redirects_automatically(
     observed = []
 
     class RedirectResponse:
-        status_code = 302
-        headers = {"location": "http://127.0.0.1:8765/private"}
-        text = "redirect"
-        content = b"redirect"
+        def __init__(self):
+            self.status_code = 302
+            self.headers = {"location": "http://127.0.0.1:8765/private"}
+            self.text = "redirect"
+            self.content = b"redirect"
 
     def fake_get(url, **kwargs):
         observed.append((url, kwargs.get("follow_redirects")))
