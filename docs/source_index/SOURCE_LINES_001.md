@@ -150,12 +150,12 @@
 | [SRC-1DB27D9318-L000021](../../.github/workflows/tests.yml#L21) | 21 | `"          python-version: ${{ matrix.python-version }}"` | — |
 | [SRC-1DB27D9318-L000022](../../.github/workflows/tests.yml#L22) | 22 | `"      - run: python -m pip install -e \".[dev]\" ruff"` | — |
 | [SRC-1DB27D9318-L000023](../../.github/workflows/tests.yml#L23) | 23 | `"      - run: ruff check agents api cli docs tests"` | — |
-| [SRC-1DB27D9318-L000024](../../.github/workflows/tests.yml#L24) | 24 | `"      # PR tests can start before the separate index-publishing workflow finishes"` | — |
-| [SRC-1DB27D9318-L000025](../../.github/workflows/tests.yml#L25) | 25 | `"      # pushing its generated files. Regenerate within this isolated checkout first,"` | — |
-| [SRC-1DB27D9318-L000026](../../.github/workflows/tests.yml#L26) | 26 | `"      # then verify determinism. The index workflow remains responsible for committing"` | — |
-| [SRC-1DB27D9318-L000027](../../.github/workflows/tests.yml#L27) | 27 | `"      # generated artifacts to the branch; main pushes still check the committed index."` | — |
-| [SRC-1DB27D9318-L000028](../../.github/workflows/tests.yml#L28) | 28 | `"      - name: Synchronize generated indexes in the PR test workspace"` | — |
-| [SRC-1DB27D9318-L000029](../../.github/workflows/tests.yml#L29) | 29 | `"        if: github.event_name == 'pull_request'"` | — |
+| [SRC-1DB27D9318-L000024](../../.github/workflows/tests.yml#L24) | 24 | `"      # Feature/fix branch checks can race the separate index-publishing workflow."` | — |
+| [SRC-1DB27D9318-L000025](../../.github/workflows/tests.yml#L25) | 25 | `"      # Regenerate in the isolated test checkout for every non-main ref, then verify"` | — |
+| [SRC-1DB27D9318-L000026](../../.github/workflows/tests.yml#L26) | 26 | `"      # determinism. The index workflow commits generated artifacts to the branch;"` | — |
+| [SRC-1DB27D9318-L000027](../../.github/workflows/tests.yml#L27) | 27 | `"      # main pushes continue to validate that committed index files are already current."` | — |
+| [SRC-1DB27D9318-L000028](../../.github/workflows/tests.yml#L28) | 28 | `"      - name: Synchronize generated indexes in the non-main test workspace"` | — |
+| [SRC-1DB27D9318-L000029](../../.github/workflows/tests.yml#L29) | 29 | `"        if: github.ref != 'refs/heads/main'"` | — |
 | [SRC-1DB27D9318-L000030](../../.github/workflows/tests.yml#L30) | 30 | `"        run: python docs/generate_index.py"` | — |
 | [SRC-1DB27D9318-L000031](../../.github/workflows/tests.yml#L31) | 31 | `"      - name: Verify generated living indexes against the full repository"` | — |
 | [SRC-1DB27D9318-L000032](../../.github/workflows/tests.yml#L32) | 32 | `"        run: python docs/generate_index.py --check"` | — |
