@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000121 إلى SRC-829A979985-L000081
+- النطاق: SRC-6BCB799CEC-L000120 إلى SRC-829A979985-L000080
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000120](../../tests/test_evidence_provenance.py#L120) | 120 | `"            \"domain\": \"research.example.net\","` | — |
 | [SRC-6BCB799CEC-L000121](../../tests/test_evidence_provenance.py#L121) | 121 | `"            \"source_class\": \"general\","` | — |
 | [SRC-6BCB799CEC-L000122](../../tests/test_evidence_provenance.py#L122) | 122 | `"            \"platform\": \"web\","` | — |
 | [SRC-6BCB799CEC-L000123](../../tests/test_evidence_provenance.py#L123) | 123 | `"            \"published_at\": \"\","` | — |
@@ -842,4 +843,3 @@
 | [SRC-829A979985-L000078](../../tests/test_generation_acceptance_matrix.py#L78) | 78 | `"            model=\"primary/model\","` | — |
 | [SRC-829A979985-L000079](../../tests/test_generation_acceptance_matrix.py#L79) | 79 | `"        )"` | — |
 | [SRC-829A979985-L000080](../../tests/test_generation_acceptance_matrix.py#L80) | 80 | `""` | — |
-| [SRC-829A979985-L000081](../../tests/test_generation_acceptance_matrix.py#L81) | 81 | `"    assert agent.model_usage == []"` | — |
