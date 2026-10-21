@@ -11,7 +11,7 @@
 
 - الملفات في جرد المستودع: **76**
 - الملفات النصية المفهرسة سطرًا بسطر: **76**
-- الأسطر المفهرسة: **25720**
+- الأسطر المفهرسة: **25733**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 - صفحات الأسطر: **33**
 
@@ -47,11 +47,11 @@
 | [SOURCE_LINES_026](source_index/SOURCE_LINES_026.md) | 800 | SRC-FA4E1423C3-L000329 | SRC-AAA21D04E8-L000037 |
 | [SOURCE_LINES_027](source_index/SOURCE_LINES_027.md) | 800 | SRC-AAA21D04E8-L000038 | SRC-62DC597310-L000019 |
 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) | 800 | SRC-62DC597310-L000020 | SRC-2614DCB6FB-L000082 |
-| [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) | 800 | SRC-2614DCB6FB-L000083 | SRC-F725E90B2A-L000657 |
-| [SOURCE_LINES_030](source_index/SOURCE_LINES_030.md) | 800 | SRC-F725E90B2A-L000658 | SRC-F725E90B2A-L001457 |
-| [SOURCE_LINES_031](source_index/SOURCE_LINES_031.md) | 800 | SRC-F725E90B2A-L001458 | SRC-F725E90B2A-L002257 |
-| [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) | 800 | SRC-F725E90B2A-L002258 | SRC-DE7EABE998-L000320 |
-| [SOURCE_LINES_033](source_index/SOURCE_LINES_033.md) | 120 | SRC-DE7EABE998-L000321 | SRC-A16FA6D4B5-L000046 |
+| [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) | 800 | SRC-2614DCB6FB-L000083 | SRC-F725E90B2A-L000644 |
+| [SOURCE_LINES_030](source_index/SOURCE_LINES_030.md) | 800 | SRC-F725E90B2A-L000645 | SRC-F725E90B2A-L001444 |
+| [SOURCE_LINES_031](source_index/SOURCE_LINES_031.md) | 800 | SRC-F725E90B2A-L001445 | SRC-F725E90B2A-L002244 |
+| [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) | 800 | SRC-F725E90B2A-L002245 | SRC-DE7EABE998-L000307 |
+| [SOURCE_LINES_033](source_index/SOURCE_LINES_033.md) | 133 | SRC-DE7EABE998-L000308 | SRC-A16FA6D4B5-L000046 |
 
 ## جرد الملفات والوصول حسب الاسم
 
@@ -88,7 +88,7 @@
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | 146 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | 145 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | 195 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md) |
-| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | 120 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md), [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) |
+| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | 133 | [SOURCE_LINES_028](source_index/SOURCE_LINES_028.md), [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | 105 | [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md) |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | 2737 | [SOURCE_LINES_029](source_index/SOURCE_LINES_029.md), [SOURCE_LINES_030](source_index/SOURCE_LINES_030.md), [SOURCE_LINES_031](source_index/SOURCE_LINES_031.md), [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | 1 | [SOURCE_LINES_001](source_index/SOURCE_LINES_001.md) |

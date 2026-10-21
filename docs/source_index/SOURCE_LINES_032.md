@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002258 إلى SRC-DE7EABE998-L000320
+- النطاق: SRC-F725E90B2A-L002245 إلى SRC-DE7EABE998-L000307
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002245](../../tests/test_web_agent.py#L2245) | 2245 | `"    assert seen[\"json\"][\"count\"] == 6"` | — |
+| [SRC-F725E90B2A-L002246](../../tests/test_web_agent.py#L2246) | 2246 | `"    assert rows[0][\"provider\"] == \"deepseek_search_api\""` | — |
+| [SRC-F725E90B2A-L002247](../../tests/test_web_agent.py#L2247) | 2247 | `"    assert rows[0][\"snippet\"] == \"Looking to buy a flat in the requested area.\""` | — |
+| [SRC-F725E90B2A-L002248](../../tests/test_web_agent.py#L2248) | 2248 | `"    assert rows[0][\"provider_rerank_score\"] == 2.2"` | — |
+| [SRC-F725E90B2A-L002249](../../tests/test_web_agent.py#L2249) | 2249 | `"    assert \"test-secret-key-that-must-not-appear\" not in str(rows)"` | — |
+| [SRC-F725E90B2A-L002250](../../tests/test_web_agent.py#L2250) | 2250 | `""` | — |
+| [SRC-F725E90B2A-L002251](../../tests/test_web_agent.py#L2251) | 2251 | `""` | — |
+| [SRC-F725E90B2A-L002252](../../tests/test_web_agent.py#L2252) | 2252 | `""` | — |
+| [SRC-F725E90B2A-L002253](../../tests/test_web_agent.py#L2253) | 2253 | `"def test_diagnostics_distinguishes_connector_response_without_matches_from_offline(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002254](../../tests/test_web_agent.py#L2254) | 2254 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002255](../../tests/test_web_agent.py#L2255) | 2255 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"OK\")"` | — |
+| [SRC-F725E90B2A-L002256](../../tests/test_web_agent.py#L2256) | 2256 | `""` | — |
+| [SRC-F725E90B2A-L002257](../../tests/test_web_agent.py#L2257) | 2257 | `"    def completed_empty_search(query):"` | — |
 | [SRC-F725E90B2A-L002258](../../tests/test_web_agent.py#L2258) | 2258 | `"        agent._record_provider_diagnostic("` | — |
 | [SRC-F725E90B2A-L002259](../../tests/test_web_agent.py#L2259) | 2259 | `"            \"bing_rss\", query, \"no_results\", result_count=0,"` | — |
 | [SRC-F725E90B2A-L002260](../../tests/test_web_agent.py#L2260) | 2260 | `"            error=\"connector completed but returned no parseable results\","` | — |
@@ -812,16 +825,3 @@
 | [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `" pending.innerHTML='<div class=\"who\">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class=\"bubble\"><div class=\"pending\"><span class=\"spinner\"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';"` | — |
 | [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
 | [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `" try{"` | — |
-| [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
-| [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `"  const data=await response.json().catch(()=>({}));"` | — |
-| [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `"  pending.remove();"` | — |
-| [SRC-DE7EABE998-L000311](../../web/agent.html#L311) | 311 | `"  if(!response.ok){"` | — |
-| [SRC-DE7EABE998-L000312](../../web/agent.html#L312) | 312 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
-| [SRC-DE7EABE998-L000313](../../web/agent.html#L313) | 313 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
-| [SRC-DE7EABE998-L000314](../../web/agent.html#L314) | 314 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |
-| [SRC-DE7EABE998-L000315](../../web/agent.html#L315) | 315 | `"  }"` | — |
-| [SRC-DE7EABE998-L000316](../../web/agent.html#L316) | 316 | `"  addMessage(\"assistant\",data.answer\|\|\"لم يرجع الخادم نص إجابة.\",data);"` | — |
-| [SRC-DE7EABE998-L000317](../../web/agent.html#L317) | 317 | `"  history.push({role:\"user\",content:q},{role:\"assistant\",content:String(data.answer\|\|\"\")});"` | — |
-| [SRC-DE7EABE998-L000318](../../web/agent.html#L318) | 318 | `"  const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];"` | — |
-| [SRC-DE7EABE998-L000319](../../web/agent.html#L319) | 319 | `"  if(data.kind===\"general_answer\"){"` | — |
-| [SRC-DE7EABE998-L000320](../../web/agent.html#L320) | 320 | `"   setStatus(\"اكتملت إجابة المعرفة العامة دون بحث ويب\",\"ok\");"` | — |

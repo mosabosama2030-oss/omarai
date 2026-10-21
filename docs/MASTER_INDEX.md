@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **76**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **975**
+- تعريفات Python المفهرسة: **976**
 - تعريفات Python موثقة بوجود Docstring: **192**
-- تعريفات Python بلا Docstring: **589**
+- تعريفات Python بلا Docstring: **590**
 - تعريفات لا ينطبق عليها Docstring: **194**
 - الرموز الساكنة الإضافية: **1459**
-- الأسطر النصية المفهرسة حرفيًا: **25720**
+- الأسطر النصية المفهرسة حرفيًا: **25733**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -99,7 +99,7 @@
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 6023 | 145 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
-| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4477 | 120 | جرد الملف + AST Python |
+| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 106227 | 2737 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 53774 | 394 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -877,6 +877,7 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L89) | دالة | test_search_links_use_the_requested_revision_not_main | لا توجد Docstring. | ناقص | 89 | [SRC-2614DCB6FB-L000089](../tests/test_search_code.py#L89) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L104) | دالة | test_default_repository_ref_prefers_explicit_environment_override | لا توجد Docstring. | ناقص | 104 | [SRC-2614DCB6FB-L000104](../tests/test_search_code.py#L104) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L113) | دالة | test_default_repository_ref_uses_valid_ci_sha | لا توجد Docstring. | ناقص | 113 | [SRC-2614DCB6FB-L000113](../tests/test_search_code.py#L113) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L121) | دالة | test_cli_uses_explicit_ref_for_source_links | لا توجد Docstring. | ناقص | 121 | [SRC-2614DCB6FB-L000121](../tests/test_search_code.py#L121) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L11) | دالة | test_backup_and_restore_preserve_omarai_leads | لا توجد Docstring. | ناقص | 11 | [SRC-1C0D3D1206-L000011](../tests/test_sqlite_backup_restore.py#L11) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L50) | دالة | test_backup_never_overwrites_an_existing_destination | لا توجد Docstring. | ناقص | 50 | [SRC-1C0D3D1206-L000050](../tests/test_sqlite_backup_restore.py#L50) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L62) | دالة | test_backup_rejects_non_omarai_sqlite_database_without_leaving_destination | لا توجد Docstring. | ناقص | 62 | [SRC-1C0D3D1206-L000062](../tests/test_sqlite_backup_restore.py#L62) |

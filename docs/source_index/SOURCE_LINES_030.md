@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000658 إلى SRC-F725E90B2A-L001457
+- النطاق: SRC-F725E90B2A-L000645 إلى SRC-F725E90B2A-L001444
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000645](../../tests/test_web_agent.py#L645) | 645 | `"    assert result == \"إجابة من النموذج الاحتياطي\""` | — |
+| [SRC-F725E90B2A-L000646](../../tests/test_web_agent.py#L646) | 646 | `"    assert called == [\"broken/primary\", \"openrouter/free\"]"` | — |
+| [SRC-F725E90B2A-L000647](../../tests/test_web_agent.py#L647) | 647 | `"    assert agent.model_usage == [{"` | — |
+| [SRC-F725E90B2A-L000648](../../tests/test_web_agent.py#L648) | 648 | `"        \"requested_model\": \"broken/primary\","` | — |
+| [SRC-F725E90B2A-L000649](../../tests/test_web_agent.py#L649) | 649 | `"        \"used_model\": \"openrouter/free\","` | — |
+| [SRC-F725E90B2A-L000650](../../tests/test_web_agent.py#L650) | 650 | `"        \"fallback_used\": \"true\","` | — |
+| [SRC-F725E90B2A-L000651](../../tests/test_web_agent.py#L651) | 651 | `"    }]"` | — |
+| [SRC-F725E90B2A-L000652](../../tests/test_web_agent.py#L652) | 652 | `""` | — |
+| [SRC-F725E90B2A-L000653](../../tests/test_web_agent.py#L653) | 653 | `""` | — |
+| [SRC-F725E90B2A-L000654](../../tests/test_web_agent.py#L654) | 654 | `""` | — |
+| [SRC-F725E90B2A-L000655](../../tests/test_web_agent.py#L655) | 655 | `""` | — |
+| [SRC-F725E90B2A-L000656](../../tests/test_web_agent.py#L656) | 656 | `"def test_generator_rejects_silent_character_limit_truncation(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000657](../../tests/test_web_agent.py#L657) | 657 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L000658](../../tests/test_web_agent.py#L658) | 658 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"ن\" * 24_001)"` | — |
 | [SRC-F725E90B2A-L000659](../../tests/test_web_agent.py#L659) | 659 | `""` | — |
 | [SRC-F725E90B2A-L000660](../../tests/test_web_agent.py#L660) | 660 | `"    with pytest.raises(RuntimeError, match=\"تجاوزت حد طول النص\"):"` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L001442](../../tests/test_web_agent.py#L1442) | 1442 | `""` | — |
 | [SRC-F725E90B2A-L001443](../../tests/test_web_agent.py#L1443) | 1443 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L001444](../../tests/test_web_agent.py#L1444) | 1444 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L001445](../../tests/test_web_agent.py#L1445) | 1445 | `"        content = rss.encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L001446](../../tests/test_web_agent.py#L1446) | 1446 | `""` | — |
-| [SRC-F725E90B2A-L001447](../../tests/test_web_agent.py#L1447) | 1447 | `"    monkeypatch.setattr(httpx, \"get\", lambda *args, **kwargs: FakeResponse())"` | — |
-| [SRC-F725E90B2A-L001448](../../tests/test_web_agent.py#L1448) | 1448 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001449](../../tests/test_web_agent.py#L1449) | 1449 | `"    results = agent._search_news(\"مصر الرقمية أحدث الأخبار\")"` | — |
-| [SRC-F725E90B2A-L001450](../../tests/test_web_agent.py#L1450) | 1450 | `""` | — |
-| [SRC-F725E90B2A-L001451](../../tests/test_web_agent.py#L1451) | 1451 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L001452](../../tests/test_web_agent.py#L1452) | 1452 | `"    assert results[0][\"url\"].startswith(\"https://news.google.com/\")"` | — |
-| [SRC-F725E90B2A-L001453](../../tests/test_web_agent.py#L1453) | 1453 | `"    assert results[0][\"publisher_name\"] == \"بوابة مصر الرقمية\""` | — |
-| [SRC-F725E90B2A-L001454](../../tests/test_web_agent.py#L1454) | 1454 | `"    assert results[0][\"publisher_url\"] == \"https://digital.gov.eg/\""` | — |
-| [SRC-F725E90B2A-L001455](../../tests/test_web_agent.py#L1455) | 1455 | `"    assert results[0][\"publisher_domain\"] == \"digital.gov.eg\""` | — |
-| [SRC-F725E90B2A-L001456](../../tests/test_web_agent.py#L1456) | 1456 | `""` | — |
-| [SRC-F725E90B2A-L001457](../../tests/test_web_agent.py#L1457) | 1457 | `""` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **033**
-- سجلات الأسطر: **120**
-- النطاق: SRC-DE7EABE998-L000321 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **133**
+- النطاق: SRC-DE7EABE998-L000308 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
+| [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `"  const data=await response.json().catch(()=>({}));"` | — |
+| [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000311](../../web/agent.html#L311) | 311 | `"  if(!response.ok){"` | — |
+| [SRC-DE7EABE998-L000312](../../web/agent.html#L312) | 312 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
+| [SRC-DE7EABE998-L000313](../../web/agent.html#L313) | 313 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
+| [SRC-DE7EABE998-L000314](../../web/agent.html#L314) | 314 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |
+| [SRC-DE7EABE998-L000315](../../web/agent.html#L315) | 315 | `"  }"` | — |
+| [SRC-DE7EABE998-L000316](../../web/agent.html#L316) | 316 | `"  addMessage(\"assistant\",data.answer\|\|\"لم يرجع الخادم نص إجابة.\",data);"` | — |
+| [SRC-DE7EABE998-L000317](../../web/agent.html#L317) | 317 | `"  history.push({role:\"user\",content:q},{role:\"assistant\",content:String(data.answer\|\|\"\")});"` | — |
+| [SRC-DE7EABE998-L000318](../../web/agent.html#L318) | 318 | `"  const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];"` | — |
+| [SRC-DE7EABE998-L000319](../../web/agent.html#L319) | 319 | `"  if(data.kind===\"general_answer\"){"` | — |
+| [SRC-DE7EABE998-L000320](../../web/agent.html#L320) | 320 | `"   setStatus(\"اكتملت إجابة المعرفة العامة دون بحث ويب\",\"ok\");"` | — |
 | [SRC-DE7EABE998-L000321](../../web/agent.html#L321) | 321 | `"  }else if(data.kind===\"capability_answer\"){"` | — |
 | [SRC-DE7EABE998-L000322](../../web/agent.html#L322) | 322 | `"   setStatus(\"إجابة عن قدرات Omarai وحدوده · لم يُجر بحث حي\",\"ok\");"` | — |
 | [SRC-DE7EABE998-L000323](../../web/agent.html#L323) | 323 | `"  }else if(data.used_web_search===true&&data.used_language_model===true&&sources.length>0){"` | — |

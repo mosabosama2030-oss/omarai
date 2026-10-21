@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2614DCB6FB-L000083 إلى SRC-F725E90B2A-L000657
+- النطاق: SRC-2614DCB6FB-L000083 إلى SRC-F725E90B2A-L000644
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -54,6 +54,19 @@
 | [SRC-2614DCB6FB-L000118](../../tests/test_search_code.py#L118) | 118 | `""` | — |
 | [SRC-2614DCB6FB-L000119](../../tests/test_search_code.py#L119) | 119 | `"    assert SEARCH.default_repository_ref(tmp_path) == \"b\" * 40"` | — |
 | [SRC-2614DCB6FB-L000120](../../tests/test_search_code.py#L120) | 120 | `""` | — |
+| [SRC-2614DCB6FB-L000121](../../tests/test_search_code.py#L121) | 121 | `"def test_cli_uses_explicit_ref_for_source_links(tmp_path: Path, capsys) -> None:"` | — |
+| [SRC-2614DCB6FB-L000122](../../tests/test_search_code.py#L122) | 122 | `"    source = tmp_path / \"app.py\""` | — |
+| [SRC-2614DCB6FB-L000123](../../tests/test_search_code.py#L123) | 123 | `"    source.write_text(\"needle = 1\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-2614DCB6FB-L000124](../../tests/test_search_code.py#L124) | 124 | `""` | — |
+| [SRC-2614DCB6FB-L000125](../../tests/test_search_code.py#L125) | 125 | `"    exit_code = SEARCH.main(["` | — |
+| [SRC-2614DCB6FB-L000126](../../tests/test_search_code.py#L126) | 126 | `"        \"needle\", \"--root\", str(tmp_path), \"--ref\", \"fix/cli-review\""` | — |
+| [SRC-2614DCB6FB-L000127](../../tests/test_search_code.py#L127) | 127 | `"    ])"` | — |
+| [SRC-2614DCB6FB-L000128](../../tests/test_search_code.py#L128) | 128 | `""` | — |
+| [SRC-2614DCB6FB-L000129](../../tests/test_search_code.py#L129) | 129 | `"    output = capsys.readouterr().out"` | — |
+| [SRC-2614DCB6FB-L000130](../../tests/test_search_code.py#L130) | 130 | `"    assert exit_code == 0"` | — |
+| [SRC-2614DCB6FB-L000131](../../tests/test_search_code.py#L131) | 131 | `"    assert \"blob/fix/cli-review/app.py#L1\" in output"` | — |
+| [SRC-2614DCB6FB-L000132](../../tests/test_search_code.py#L132) | 132 | `"    assert \"blob/main/app.py#L1\" not in output"` | — |
+| [SRC-2614DCB6FB-L000133](../../tests/test_search_code.py#L133) | 133 | `""` | — |
 ## اختبارات
 
 ### FILE-1C0D3D1206 — [tests/test_sqlite_backup_restore.py](../../tests/test_sqlite_backup_restore.py#L1)
@@ -821,16 +834,3 @@
 | [SRC-F725E90B2A-L000642](../../tests/test_web_agent.py#L642) | 642 | `"        model=\"broken/primary\","` | — |
 | [SRC-F725E90B2A-L000643](../../tests/test_web_agent.py#L643) | 643 | `"    )"` | — |
 | [SRC-F725E90B2A-L000644](../../tests/test_web_agent.py#L644) | 644 | `""` | — |
-| [SRC-F725E90B2A-L000645](../../tests/test_web_agent.py#L645) | 645 | `"    assert result == \"إجابة من النموذج الاحتياطي\""` | — |
-| [SRC-F725E90B2A-L000646](../../tests/test_web_agent.py#L646) | 646 | `"    assert called == [\"broken/primary\", \"openrouter/free\"]"` | — |
-| [SRC-F725E90B2A-L000647](../../tests/test_web_agent.py#L647) | 647 | `"    assert agent.model_usage == [{"` | — |
-| [SRC-F725E90B2A-L000648](../../tests/test_web_agent.py#L648) | 648 | `"        \"requested_model\": \"broken/primary\","` | — |
-| [SRC-F725E90B2A-L000649](../../tests/test_web_agent.py#L649) | 649 | `"        \"used_model\": \"openrouter/free\","` | — |
-| [SRC-F725E90B2A-L000650](../../tests/test_web_agent.py#L650) | 650 | `"        \"fallback_used\": \"true\","` | — |
-| [SRC-F725E90B2A-L000651](../../tests/test_web_agent.py#L651) | 651 | `"    }]"` | — |
-| [SRC-F725E90B2A-L000652](../../tests/test_web_agent.py#L652) | 652 | `""` | — |
-| [SRC-F725E90B2A-L000653](../../tests/test_web_agent.py#L653) | 653 | `""` | — |
-| [SRC-F725E90B2A-L000654](../../tests/test_web_agent.py#L654) | 654 | `""` | — |
-| [SRC-F725E90B2A-L000655](../../tests/test_web_agent.py#L655) | 655 | `""` | — |
-| [SRC-F725E90B2A-L000656](../../tests/test_web_agent.py#L656) | 656 | `"def test_generator_rejects_silent_character_limit_truncation(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000657](../../tests/test_web_agent.py#L657) | 657 | `"    agent = WebAgent()"` | — |
