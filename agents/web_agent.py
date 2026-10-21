@@ -453,15 +453,34 @@ class WebAgent:
         self, provider: str, query: str, status: str, result_count: int = 0,
         rejected_count: int = 0, error: str | None = None,
     ) -> None:
+        def redact(value: Any, limit: int) -> str:
+            safe = _clean_text(str(value or ""), limit)
+            safe = re.sub(
+                r"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*",
+                r"\\1[REDACTED]",
+                safe,
+            )
+            safe = re.sub(
+                r"(?i)\\b(api[_-]?key|access[_-]?token|refresh[_-]?token|token|secret|password)\\s*[:=]\\s*[^\\s,;]+",
+                r"\\1=[REDACTED]",
+                safe,
+            )
+            safe = re.sub(
+                r"(?i)([?&](?:api[_-]?key|access[_-]?token|token|key)=)[^&\\s]+",
+                r"\\1[REDACTED]",
+                safe,
+            )
+            return safe[:limit]
+
         record = {
             "provider": provider,
-            "query": _clean_text(query, 220),
+            "query": redact(query, 220),
             "status": status,
             "result_count": int(result_count),
             "rejected_count": int(rejected_count),
         }
         if error:
-            record["error"] = _clean_text(error, 180)
+            record["error"] = redact(error, 180)
         with self._provider_diagnostics_lock:
             self._provider_diagnostics.append(record)
             # Bound memory when the instance serves many user requests.
@@ -2369,7 +2388,45 @@ class WebAgent:
         for source in sources:
             label = source.get("platform", "web")
             platform_counts[label] = platform_counts.get(label, 0) + 1
+        page_failure_statuses = {
+            "fetch_failed", "no_text_extracted", "rejected_url",
+            "blocked_or_unresolved_host", "blocked_connection_target",
+            "redirect_failed", "redirect_rejected", "redirect_limit",
+            "http_error", "unsupported_content_type", "page_too_large",
+            "network_error", "empty_content", "budget_exhausted",
+        }
+        page_status_values = (
+            "not_attempted", "attempted", "content_extracted", "partial_extraction",
+            "no_text_extracted", "fetch_failed", "rejected_url",
+            "blocked_or_unresolved_host", "blocked_connection_target",
+            "redirect_failed", "redirect_rejected", "redirect_limit",
+            "http_error", "unsupported_content_type", "page_too_large",
+            "network_error", "empty_content", "budget_exhausted",
+        )
+        page_fetch_status_counts = {
+            status: sum(source.get("page_fetch_status") == status for source in fetch_targets)
+            for status in page_status_values
+        }
         report = {
+            "raw_results": raw_results_count,
+            "unique_urls": len({
+                self._normalized_source_url_key(source.get("url"))
+                for source in sources
+                if self._normalized_source_url_key(source.get("url"))
+            }),
+            "pages_content_extracted": fetched_count - sum(
+                source.get("page_fetch_status") == "partial_extraction"
+                for source in fetch_targets
+            ),
+            "pages_partial_extracted": sum(
+                source.get("page_fetch_status") == "partial_extraction"
+                for source in fetch_targets
+            ),
+            "pages_extract_failed": sum(
+                source.get("page_fetch_status") in page_failure_statuses
+                for source in fetch_targets
+            ),
+            "page_fetch_status_counts": page_fetch_status_counts,
             "queries_planned": len(queries),
             "queries_attempted": search_started_queries,
             "query_results": query_counts,
@@ -2387,6 +2444,9 @@ class WebAgent:
             "depth": plan.get("depth", "standard"),
             "planning_method": plan.get("planning_method", "deterministic_fallback"),
             "provider_diagnostics": list(self._provider_diagnostics),
+            "connector_summary": self._connector_status_summary(
+                list(self._provider_diagnostics), sources
+            ),
             "pages_fetch_attempted": len(fetch_targets),
         }
         return sources, list(dict.fromkeys(warnings)), report
@@ -3096,7 +3156,7 @@ class WebAgent:
                     "استشهاد ليرتبط بمصدر يدعم الادعاء تحديدًا. افحص كذلك اكتمال الإجابة مقابل "
                     "جميع المحاور الصريحة في سؤال المستخدم؛ لا تسقط محورًا مطلوبًا بلا توضيح. "
                     "إذا لم يكف الدليل لمحور، فاذكر عدم كفاية الأدلة لذلك المحور تحديدًا. "
-                    "راجع الأرقام والأسعار والمبالغ والنسب والتواريخ والمدد والقياسات في المسودة "
+                    "راجع المبالغ والأسعار والنسب والتواريخ والمدد والقياسات والأرقام الواردة في المسودة "
                     "مقابل المصدر المحدد في كل استشهاد؛ الرقم الموجود في مصدر آخر لا يكفي لتسويغ هذا الاستشهاد. "
                     "عند ظهور قيم مختلفة، اذكرها كاختلاف محتمل يحتاج مطابقة الكيان والفترة والوحدة، "
                     "ولا تفترض أنها تناقض حقيقي. "
