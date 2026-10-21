@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001426 إلى SRC-F725E90B2A-L002225
+- النطاق: SRC-F725E90B2A-L001375 إلى SRC-F725E90B2A-L002174
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001375](../../tests/test_web_agent.py#L1375) | 1375 | `"        lambda plan: pytest.fail(\"Self-description must not call external search\"),"` | — |
+| [SRC-F725E90B2A-L001376](../../tests/test_web_agent.py#L1376) | 1376 | `"    )"` | — |
+| [SRC-F725E90B2A-L001377](../../tests/test_web_agent.py#L1377) | 1377 | `""` | — |
+| [SRC-F725E90B2A-L001378](../../tests/test_web_agent.py#L1378) | 1378 | `"    result = agent.answer(\"كيف تبحث أنت في الإنترنت؟\")"` | — |
+| [SRC-F725E90B2A-L001379](../../tests/test_web_agent.py#L1379) | 1379 | `""` | — |
+| [SRC-F725E90B2A-L001380](../../tests/test_web_agent.py#L1380) | 1380 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
+| [SRC-F725E90B2A-L001381](../../tests/test_web_agent.py#L1381) | 1381 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001382](../../tests/test_web_agent.py#L1382) | 1382 | `"    assert \"DuckDuckGo HTML\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001383](../../tests/test_web_agent.py#L1383) | 1383 | `"    assert \"ليست إثباتًا\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001384](../../tests/test_web_agent.py#L1384) | 1384 | `""` | — |
+| [SRC-F725E90B2A-L001385](../../tests/test_web_agent.py#L1385) | 1385 | `""` | — |
+| [SRC-F725E90B2A-L001386](../../tests/test_web_agent.py#L1386) | 1386 | `"def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001387](../../tests/test_web_agent.py#L1387) | 1387 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001388](../../tests/test_web_agent.py#L1388) | 1388 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001389](../../tests/test_web_agent.py#L1389) | 1389 | `"    source = {"` | — |
+| [SRC-F725E90B2A-L001390](../../tests/test_web_agent.py#L1390) | 1390 | `"        \"title\": \"موقع مصر الرقمية والخدمات الحكومية\","` | — |
+| [SRC-F725E90B2A-L001391](../../tests/test_web_agent.py#L1391) | 1391 | `"        \"url\": \"https://digital.gov.eg/\","` | — |
+| [SRC-F725E90B2A-L001392](../../tests/test_web_agent.py#L1392) | 1392 | `"        \"snippet\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
+| [SRC-F725E90B2A-L001393](../../tests/test_web_agent.py#L1393) | 1393 | `"        \"page_text\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
+| [SRC-F725E90B2A-L001394](../../tests/test_web_agent.py#L1394) | 1394 | `"        \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L001395](../../tests/test_web_agent.py#L1395) | 1395 | `"        \"providers\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001396](../../tests/test_web_agent.py#L1396) | 1396 | `"        \"queries\": [\"ابحث عن موقع مصر الرقمية\"],"` | — |
+| [SRC-F725E90B2A-L001397](../../tests/test_web_agent.py#L1397) | 1397 | `"        \"domain\": \"digital.gov.eg\","` | — |
+| [SRC-F725E90B2A-L001398](../../tests/test_web_agent.py#L1398) | 1398 | `"        \"source_class\": \"government\","` | — |
+| [SRC-F725E90B2A-L001399](../../tests/test_web_agent.py#L1399) | 1399 | `"        \"platform\": \"web\","` | — |
+| [SRC-F725E90B2A-L001400](../../tests/test_web_agent.py#L1400) | 1400 | `"    }"` | — |
+| [SRC-F725E90B2A-L001401](../../tests/test_web_agent.py#L1401) | 1401 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001402](../../tests/test_web_agent.py#L1402) | 1402 | `"        agent, \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L001403](../../tests/test_web_agent.py#L1403) | 1403 | `"        lambda question, history: {"` | — |
+| [SRC-F725E90B2A-L001404](../../tests/test_web_agent.py#L1404) | 1404 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L001405](../../tests/test_web_agent.py#L1405) | 1405 | `"            \"freshness\": \"any\", \"depth\": \"standard\", \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001406](../../tests/test_web_agent.py#L1406) | 1406 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001407](../../tests/test_web_agent.py#L1407) | 1407 | `"        },"` | — |
+| [SRC-F725E90B2A-L001408](../../tests/test_web_agent.py#L1408) | 1408 | `"    )"` | — |
+| [SRC-F725E90B2A-L001409](../../tests/test_web_agent.py#L1409) | 1409 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001410](../../tests/test_web_agent.py#L1410) | 1410 | `"        agent, \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001411](../../tests/test_web_agent.py#L1411) | 1411 | `"        lambda plan: ([source], [], {"` | — |
+| [SRC-F725E90B2A-L001412](../../tests/test_web_agent.py#L1412) | 1412 | `"            \"queries_planned\": 1, \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L001413](../../tests/test_web_agent.py#L1413) | 1413 | `"            \"unique_sources\": 1, \"pages_fetched\": 1,"` | — |
+| [SRC-F725E90B2A-L001414](../../tests/test_web_agent.py#L1414) | 1414 | `"            \"providers_used\": [\"test_provider\"], \"platform_counts\": {\"web\": 1},"` | — |
+| [SRC-F725E90B2A-L001415](../../tests/test_web_agent.py#L1415) | 1415 | `"            \"social_direct_results\": 0, \"depth\": \"standard\", \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001416](../../tests/test_web_agent.py#L1416) | 1416 | `"        }),"` | — |
+| [SRC-F725E90B2A-L001417](../../tests/test_web_agent.py#L1417) | 1417 | `"    )"` | — |
+| [SRC-F725E90B2A-L001418](../../tests/test_web_agent.py#L1418) | 1418 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001419](../../tests/test_web_agent.py#L1419) | 1419 | `"        agent, \"_generate\","` | — |
+| [SRC-F725E90B2A-L001420](../../tests/test_web_agent.py#L1420) | 1420 | `"        lambda *args, **kwargs: \"وجدت نتيجة مرشحة لبوابة مصر الرقمية [المصدر 1].\","` | — |
+| [SRC-F725E90B2A-L001421](../../tests/test_web_agent.py#L1421) | 1421 | `"    )"` | — |
+| [SRC-F725E90B2A-L001422](../../tests/test_web_agent.py#L1422) | 1422 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L001423](../../tests/test_web_agent.py#L1423) | 1423 | `""` | — |
+| [SRC-F725E90B2A-L001424](../../tests/test_web_agent.py#L1424) | 1424 | `"    result = agent.answer(\"ابحث عن موقع مصر الرقمية\")"` | — |
+| [SRC-F725E90B2A-L001425](../../tests/test_web_agent.py#L1425) | 1425 | `""` | — |
 | [SRC-F725E90B2A-L001426](../../tests/test_web_agent.py#L1426) | 1426 | `"    assert result[\"kind\"] == \"web_research\""` | — |
 | [SRC-F725E90B2A-L001427](../../tests/test_web_agent.py#L1427) | 1427 | `"    assert len(result[\"sources\"]) == 1"` | — |
 | [SRC-F725E90B2A-L001428](../../tests/test_web_agent.py#L1428) | 1428 | `"    assert result[\"sources\"][0][\"url\"] == \"https://digital.gov.eg/\""` | — |
@@ -765,54 +816,3 @@
 | [SRC-F725E90B2A-L002172](../../tests/test_web_agent.py#L2172) | 2172 | `"    def collect(research_plan):"` | — |
 | [SRC-F725E90B2A-L002173](../../tests/test_web_agent.py#L2173) | 2173 | `"        seen.update(research_plan)"` | — |
 | [SRC-F725E90B2A-L002174](../../tests/test_web_agent.py#L2174) | 2174 | `"        source = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L002175](../../tests/test_web_agent.py#L2175) | 2175 | `"        source.update({"` | — |
-| [SRC-F725E90B2A-L002176](../../tests/test_web_agent.py#L2176) | 2176 | `"            \"title\": \"مطلوب شقة تمليك في العاصمة الإدارية\","` | — |
-| [SRC-F725E90B2A-L002177](../../tests/test_web_agent.py#L2177) | 2177 | `"            \"snippet\": \"صاحب المنشور يبحث عن شقة للشراء\","` | — |
-| [SRC-F725E90B2A-L002178](../../tests/test_web_agent.py#L2178) | 2178 | `"            \"page_text\": \"مطلوب شقة تمليك في العاصمة الإدارية، أريد الشراء.\","` | — |
-| [SRC-F725E90B2A-L002179](../../tests/test_web_agent.py#L2179) | 2179 | `"            \"queries\": list(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002180](../../tests/test_web_agent.py#L2180) | 2180 | `"        })"` | — |
-| [SRC-F725E90B2A-L002181](../../tests/test_web_agent.py#L2181) | 2181 | `"        return [source], [], {"` | — |
-| [SRC-F725E90B2A-L002182](../../tests/test_web_agent.py#L2182) | 2182 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002183](../../tests/test_web_agent.py#L2183) | 2183 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002184](../../tests/test_web_agent.py#L2184) | 2184 | `"            \"query_results\": [],"` | — |
-| [SRC-F725E90B2A-L002185](../../tests/test_web_agent.py#L2185) | 2185 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-F725E90B2A-L002186](../../tests/test_web_agent.py#L2186) | 2186 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-F725E90B2A-L002187](../../tests/test_web_agent.py#L2187) | 2187 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L002188](../../tests/test_web_agent.py#L2188) | 2188 | `"            \"provider_counts\": {\"test_provider\": 1},"` | — |
-| [SRC-F725E90B2A-L002189](../../tests/test_web_agent.py#L2189) | 2189 | `"            \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L002190](../../tests/test_web_agent.py#L2190) | 2190 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L002191](../../tests/test_web_agent.py#L2191) | 2191 | `"            \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L002192](../../tests/test_web_agent.py#L2192) | 2192 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002193](../../tests/test_web_agent.py#L2193) | 2193 | `"        }"` | — |
-| [SRC-F725E90B2A-L002194](../../tests/test_web_agent.py#L2194) | 2194 | `""` | — |
-| [SRC-F725E90B2A-L002195](../../tests/test_web_agent.py#L2195) | 2195 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda q, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L002196](../../tests/test_web_agent.py#L2196) | 2196 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L002197](../../tests/test_web_agent.py#L2197) | 2197 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"عُثر على إشارة علنية محتملة [المصدر 1].\")"` | — |
-| [SRC-F725E90B2A-L002198](../../tests/test_web_agent.py#L2198) | 2198 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L002199](../../tests/test_web_agent.py#L2199) | 2199 | `""` | — |
-| [SRC-F725E90B2A-L002200](../../tests/test_web_agent.py#L2200) | 2200 | `"    result = agent.answer(\"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر\")"` | — |
-| [SRC-F725E90B2A-L002201](../../tests/test_web_agent.py#L2201) | 2201 | `""` | — |
-| [SRC-F725E90B2A-L002202](../../tests/test_web_agent.py#L2202) | 2202 | `"    assert result[\"intent_route\"] == \"LEAD_GENERATION\""` | — |
-| [SRC-F725E90B2A-L002203](../../tests/test_web_agent.py#L2203) | 2203 | `"    assert seen[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L002204](../../tests/test_web_agent.py#L2204) | 2204 | `"    assert len(seen[\"queries\"]) >= 4"` | — |
-| [SRC-F725E90B2A-L002205](../../tests/test_web_agent.py#L2205) | 2205 | `"    assert any('\"مطلوب شراء\"' in q or '\"مطلوب شقه تمليك\"' in q for q in seen[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L002206](../../tests/test_web_agent.py#L2206) | 2206 | `"    assert result[\"search_report\"][\"lead_generation\"][\"candidate_signal_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002207](../../tests/test_web_agent.py#L2207) | 2207 | `"    assert result[\"sources\"][0][\"lead_qualification\"] == \"public_buyer_intent_signal\""` | — |
-| [SRC-F725E90B2A-L002208](../../tests/test_web_agent.py#L2208) | 2208 | `""` | — |
-| [SRC-F725E90B2A-L002209](../../tests/test_web_agent.py#L2209) | 2209 | `""` | — |
-| [SRC-F725E90B2A-L002210](../../tests/test_web_agent.py#L2210) | 2210 | `"def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002211](../../tests/test_web_agent.py#L2211) | 2211 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L002212](../../tests/test_web_agent.py#L2212) | 2212 | `""` | — |
-| [SRC-F725E90B2A-L002213](../../tests/test_web_agent.py#L2213) | 2213 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"test-secret-key-that-must-not-appear\")"` | — |
-| [SRC-F725E90B2A-L002214](../../tests/test_web_agent.py#L2214) | 2214 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002215](../../tests/test_web_agent.py#L2215) | 2215 | `"    seen = {}"` | — |
-| [SRC-F725E90B2A-L002216](../../tests/test_web_agent.py#L2216) | 2216 | `""` | — |
-| [SRC-F725E90B2A-L002217](../../tests/test_web_agent.py#L2217) | 2217 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L002218](../../tests/test_web_agent.py#L2218) | 2218 | `"        def raise_for_status(self):"` | — |
-| [SRC-F725E90B2A-L002219](../../tests/test_web_agent.py#L2219) | 2219 | `"            return None"` | — |
-| [SRC-F725E90B2A-L002220](../../tests/test_web_agent.py#L2220) | 2220 | `""` | — |
-| [SRC-F725E90B2A-L002221](../../tests/test_web_agent.py#L2221) | 2221 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L002222](../../tests/test_web_agent.py#L2222) | 2222 | `"            return {"` | — |
-| [SRC-F725E90B2A-L002223](../../tests/test_web_agent.py#L2223) | 2223 | `"                \"results\": [{"` | — |
-| [SRC-F725E90B2A-L002224](../../tests/test_web_agent.py#L2224) | 2224 | `"                    \"title\": \"Buyer wanted\","` | — |
-| [SRC-F725E90B2A-L002225](../../tests/test_web_agent.py#L2225) | 2225 | `"                    \"url\": \"https://example.com/buyer\","` | — |

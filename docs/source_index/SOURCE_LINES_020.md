@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000150 إلى SRC-547CAF1FE3-L000114
+- النطاق: SRC-B335630551-L000099 إلى SRC-547CAF1FE3-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000099](../../README.md#L99) | 99 | `""` | — |
+| [SRC-B335630551-L000100](../../README.md#L100) | 100 | ````"```bash"```` | — |
+| [SRC-B335630551-L000101](../../README.md#L101) | 101 | `"python -m pip install -e ."` | — |
+| [SRC-B335630551-L000102](../../README.md#L102) | 102 | ````"```"```` | — |
+| [SRC-B335630551-L000103](../../README.md#L103) | 103 | `""` | — |
+| [SRC-B335630551-L000104](../../README.md#L104) | 104 | ``"The default language-model configuration uses OpenRouter: Nemotron 3 Ultra (free) plans queries, Gemma 4 31B Instruct (free) writes the answer and performs the optional second-pass review, and `openrouter/free` is the fallback if a selected model fails. Create an OpenRouter API key, then enter it without putting the secret into a command-history entry. The model key enables both search planning and generative synthesis; general web search can still run without it, but results will not be turned into a full language-model analysis:"`` | — |
+| [SRC-B335630551-L000105](../../README.md#L105) | 105 | `""` | — |
+| [SRC-B335630551-L000106](../../README.md#L106) | 106 | ````"```bash"```` | — |
+| [SRC-B335630551-L000107](../../README.md#L107) | 107 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000108](../../README.md#L108) | 108 | `"printf '\\n'"` | — |
+| [SRC-B335630551-L000109](../../README.md#L109) | 109 | `"export OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000110](../../README.md#L110) | 110 | `"python -m cli.omarai serve"` | — |
+| [SRC-B335630551-L000111](../../README.md#L111) | 111 | ````"```"```` | — |
+| [SRC-B335630551-L000112](../../README.md#L112) | 112 | `""` | — |
+| [SRC-B335630551-L000113](../../README.md#L113) | 113 | `"Keep this Termux session running and open **http://127.0.0.1:8765** in the phone's browser. The agent chat is the home screen. The existing lead workspace remains available at **http://127.0.0.1:8765/leads**."` | — |
+| [SRC-B335630551-L000114](../../README.md#L114) | 114 | `""` | — |
+| [SRC-B335630551-L000115](../../README.md#L115) | 115 | `"The key is held in the current shell environment and is not written into the repository. Enter it again in a new Termux session. Never commit API keys or paste them into public issues or chat."` | — |
+| [SRC-B335630551-L000116](../../README.md#L116) | 116 | `""` | — |
+| [SRC-B335630551-L000117](../../README.md#L117) | 117 | `"### Optional configuration"` | — |
+| [SRC-B335630551-L000118](../../README.md#L118) | 118 | `""` | — |
+| [SRC-B335630551-L000119](../../README.md#L119) | 119 | `"For additional live web-search indexes, configure either official search API. These keys are optional: the built-in public engines are still attempted, and each API may have its own account, quota, rate limit or cost. Do not assume an API is free or that a configured key is valid until you run the live diagnostics."` | — |
+| [SRC-B335630551-L000120](../../README.md#L120) | 120 | `""` | — |
+| [SRC-B335630551-L000121](../../README.md#L121) | 121 | ````"```bash"```` | — |
+| [SRC-B335630551-L000122](../../README.md#L122) | 122 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-B335630551-L000123](../../README.md#L123) | 123 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-B335630551-L000124](../../README.md#L124) | 124 | ````"```"```` | — |
+| [SRC-B335630551-L000125](../../README.md#L125) | 125 | `""` | — |
+| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |
+| [SRC-B335630551-L000127](../../README.md#L127) | 127 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
+| [SRC-B335630551-L000128](../../README.md#L128) | 128 | `""` | — |
+| [SRC-B335630551-L000129](../../README.md#L129) | 129 | ````"```bash"```` | — |
+| [SRC-B335630551-L000130](../../README.md#L130) | 130 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
+| [SRC-B335630551-L000131](../../README.md#L131) | 131 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
+| [SRC-B335630551-L000132](../../README.md#L132) | 132 | ````"```"```` | — |
+| [SRC-B335630551-L000133](../../README.md#L133) | 133 | `""` | — |
+| [SRC-B335630551-L000134](../../README.md#L134) | 134 | ``"Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. To customize model roles, set `OMARAI_PLANNER_MODEL`, `OMARAI_ANSWER_MODEL`, and/or `OMARAI_REVIEW_MODEL`; `OMARAI_LLM_MODEL` remains a global override for all roles that have no role-specific override. `OMARAI_LLM_FALLBACK_MODEL` changes the default `openrouter/free` fallback. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. Optional social credentials may be configured in the same Termux session before starting the server: `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` (official OAuth access), `X_BEARER_TOKEN`, `YOUTUBE_API_KEY`, `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` + optional `META_GRAPH_VERSION`, and `FACEBOOK_PAGE_ACCESS_TOKEN` + `FACEBOOK_PAGE_IDS` (comma-separated Page IDs that the authorized token can access). Use `read -r -s` to enter secrets privately rather than saving them in shell history. Do not store keys in source files, HTML, commits or chat messages."`` | — |
+| [SRC-B335630551-L000135](../../README.md#L135) | 135 | `""` | — |
+| [SRC-B335630551-L000136](../../README.md#L136) | 136 | `"If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded."` | — |
+| [SRC-B335630551-L000137](../../README.md#L137) | 137 | `""` | — |
+| [SRC-B335630551-L000138](../../README.md#L138) | 138 | `"For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md)."` | — |
+| [SRC-B335630551-L000139](../../README.md#L139) | 139 | `""` | — |
+| [SRC-B335630551-L000140](../../README.md#L140) | 140 | `"## API"` | — |
+| [SRC-B335630551-L000141](../../README.md#L141) | 141 | `""` | — |
+| [SRC-B335630551-L000142](../../README.md#L142) | 142 | ``"- `GET /` — web-research chat"`` | — |
+| [SRC-B335630551-L000143](../../README.md#L143) | 143 | ``"- `GET /leads` — existing lead workspace"`` | — |
+| [SRC-B335630551-L000144](../../README.md#L144) | 144 | ``"- `GET /api/health` — setup and dependency status (never returns the API key)"`` | — |
+| [SRC-B335630551-L000145](../../README.md#L145) | 145 | ``"- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors"`` | — |
+| [SRC-B335630551-L000146](../../README.md#L146) | 146 | ``"- `POST /api/agent` — open-ended question plus optional recent `history`"`` | — |
+| [SRC-B335630551-L000147](../../README.md#L147) | 147 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
+| [SRC-B335630551-L000148](../../README.md#L148) | 148 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
+| [SRC-B335630551-L000149](../../README.md#L149) | 149 | `""` | — |
 | [SRC-B335630551-L000150](../../README.md#L150) | 150 | `"Example request:"` | — |
 | [SRC-B335630551-L000151](../../README.md#L151) | 151 | `""` | — |
 | [SRC-B335630551-L000152](../../README.md#L152) | 152 | ````"```json"```` | — |
@@ -810,54 +861,3 @@
 | [SRC-547CAF1FE3-L000061](../../scripts/sqlite_backup_restore.py#L61) | 61 | `"    requested_destination = Path(destination).expanduser()"` | — |
 | [SRC-547CAF1FE3-L000062](../../scripts/sqlite_backup_restore.py#L62) | 62 | `"    destination_path = requested_destination.resolve(strict=False)"` | — |
 | [SRC-547CAF1FE3-L000063](../../scripts/sqlite_backup_restore.py#L63) | 63 | `""` | — |
-| [SRC-547CAF1FE3-L000064](../../scripts/sqlite_backup_restore.py#L64) | 64 | `"    if not source_path.is_file():"` | — |
-| [SRC-547CAF1FE3-L000065](../../scripts/sqlite_backup_restore.py#L65) | 65 | `"        raise BackupError(\"source must be an existing regular file\")"` | — |
-| [SRC-547CAF1FE3-L000066](../../scripts/sqlite_backup_restore.py#L66) | 66 | `"    if source_path == destination_path:"` | — |
-| [SRC-547CAF1FE3-L000067](../../scripts/sqlite_backup_restore.py#L67) | 67 | `"        raise BackupError(\"source and destination must be different paths\")"` | — |
-| [SRC-547CAF1FE3-L000068](../../scripts/sqlite_backup_restore.py#L68) | 68 | `"    # Check the user-supplied path before resolving it so a dangling symlink is"` | — |
-| [SRC-547CAF1FE3-L000069](../../scripts/sqlite_backup_restore.py#L69) | 69 | `"    # never mistaken for an absent destination and followed to a new target."` | — |
-| [SRC-547CAF1FE3-L000070](../../scripts/sqlite_backup_restore.py#L70) | 70 | `"    if requested_destination.exists() or requested_destination.is_symlink() or destination_path.exists():"` | — |
-| [SRC-547CAF1FE3-L000071](../../scripts/sqlite_backup_restore.py#L71) | 71 | `"        raise FileExistsError(f\"destination already exists: {requested_destination}\")"` | — |
-| [SRC-547CAF1FE3-L000072](../../scripts/sqlite_backup_restore.py#L72) | 72 | `""` | — |
-| [SRC-547CAF1FE3-L000073](../../scripts/sqlite_backup_restore.py#L73) | 73 | `"    # Validate the source before creating anything at the destination."` | — |
-| [SRC-547CAF1FE3-L000074](../../scripts/sqlite_backup_restore.py#L74) | 74 | `"    with closing(_open_read_only(source_path)) as source_db:"` | — |
-| [SRC-547CAF1FE3-L000075](../../scripts/sqlite_backup_restore.py#L75) | 75 | `"        source_count = _validate_omarai_database(source_db)"` | — |
-| [SRC-547CAF1FE3-L000076](../../scripts/sqlite_backup_restore.py#L76) | 76 | `"        _create_destination_exclusively(destination_path)"` | — |
-| [SRC-547CAF1FE3-L000077](../../scripts/sqlite_backup_restore.py#L77) | 77 | `"        try:"` | — |
-| [SRC-547CAF1FE3-L000078](../../scripts/sqlite_backup_restore.py#L78) | 78 | `"            with closing(sqlite3.connect(destination_path, timeout=10)) as destination_db:"` | — |
-| [SRC-547CAF1FE3-L000079](../../scripts/sqlite_backup_restore.py#L79) | 79 | `"                source_db.backup(destination_db)"` | — |
-| [SRC-547CAF1FE3-L000080](../../scripts/sqlite_backup_restore.py#L80) | 80 | `"                destination_db.commit()"` | — |
-| [SRC-547CAF1FE3-L000081](../../scripts/sqlite_backup_restore.py#L81) | 81 | `"                restored_count = _validate_omarai_database(destination_db)"` | — |
-| [SRC-547CAF1FE3-L000082](../../scripts/sqlite_backup_restore.py#L82) | 82 | `"                if restored_count != source_count:"` | — |
-| [SRC-547CAF1FE3-L000083](../../scripts/sqlite_backup_restore.py#L83) | 83 | `"                    raise BackupError("` | — |
-| [SRC-547CAF1FE3-L000084](../../scripts/sqlite_backup_restore.py#L84) | 84 | `"                        \"lead count changed during snapshot: \""` | — |
-| [SRC-547CAF1FE3-L000085](../../scripts/sqlite_backup_restore.py#L85) | 85 | `"                        f\"source={source_count}, destination={restored_count}\""` | — |
-| [SRC-547CAF1FE3-L000086](../../scripts/sqlite_backup_restore.py#L86) | 86 | `"                    )"` | — |
-| [SRC-547CAF1FE3-L000087](../../scripts/sqlite_backup_restore.py#L87) | 87 | `"        except Exception:"` | — |
-| [SRC-547CAF1FE3-L000088](../../scripts/sqlite_backup_restore.py#L88) | 88 | `"            # Remove only the destination created by this operation; never touch source."` | — |
-| [SRC-547CAF1FE3-L000089](../../scripts/sqlite_backup_restore.py#L89) | 89 | `"            try:"` | — |
-| [SRC-547CAF1FE3-L000090](../../scripts/sqlite_backup_restore.py#L90) | 90 | `"                destination_path.unlink(missing_ok=True)"` | — |
-| [SRC-547CAF1FE3-L000091](../../scripts/sqlite_backup_restore.py#L91) | 91 | `"            except OSError:"` | — |
-| [SRC-547CAF1FE3-L000092](../../scripts/sqlite_backup_restore.py#L92) | 92 | `"                pass"` | — |
-| [SRC-547CAF1FE3-L000093](../../scripts/sqlite_backup_restore.py#L93) | 93 | `"            raise"` | — |
-| [SRC-547CAF1FE3-L000094](../../scripts/sqlite_backup_restore.py#L94) | 94 | `""` | — |
-| [SRC-547CAF1FE3-L000095](../../scripts/sqlite_backup_restore.py#L95) | 95 | `"    return {"` | — |
-| [SRC-547CAF1FE3-L000096](../../scripts/sqlite_backup_restore.py#L96) | 96 | `"        \"result\": \"passed\","` | — |
-| [SRC-547CAF1FE3-L000097](../../scripts/sqlite_backup_restore.py#L97) | 97 | `"        \"source\": str(source_path),"` | — |
-| [SRC-547CAF1FE3-L000098](../../scripts/sqlite_backup_restore.py#L98) | 98 | `"        \"destination\": str(destination_path),"` | — |
-| [SRC-547CAF1FE3-L000099](../../scripts/sqlite_backup_restore.py#L99) | 99 | `"        \"integrity_check\": \"ok\","` | — |
-| [SRC-547CAF1FE3-L000100](../../scripts/sqlite_backup_restore.py#L100) | 100 | `"        \"lead_count\": source_count,"` | — |
-| [SRC-547CAF1FE3-L000101](../../scripts/sqlite_backup_restore.py#L101) | 101 | `"        \"overwrite\": False,"` | — |
-| [SRC-547CAF1FE3-L000102](../../scripts/sqlite_backup_restore.py#L102) | 102 | `"    }"` | — |
-| [SRC-547CAF1FE3-L000103](../../scripts/sqlite_backup_restore.py#L103) | 103 | `""` | — |
-| [SRC-547CAF1FE3-L000104](../../scripts/sqlite_backup_restore.py#L104) | 104 | `""` | — |
-| [SRC-547CAF1FE3-L000105](../../scripts/sqlite_backup_restore.py#L105) | 105 | `"def backup_database(source: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
-| [SRC-547CAF1FE3-L000106](../../scripts/sqlite_backup_restore.py#L106) | 106 | `"    \"\"\"Create a consistent SQLite snapshot of a healthy Omarai leads database.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000107](../../scripts/sqlite_backup_restore.py#L107) | 107 | `"    return _copy_verified_database(source, destination)"` | — |
-| [SRC-547CAF1FE3-L000108](../../scripts/sqlite_backup_restore.py#L108) | 108 | `""` | — |
-| [SRC-547CAF1FE3-L000109](../../scripts/sqlite_backup_restore.py#L109) | 109 | `""` | — |
-| [SRC-547CAF1FE3-L000110](../../scripts/sqlite_backup_restore.py#L110) | 110 | `"def restore_database(backup: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
-| [SRC-547CAF1FE3-L000111](../../scripts/sqlite_backup_restore.py#L111) | 111 | `"    \"\"\"Restore a snapshot into a new destination; existing files are never overwritten.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000112](../../scripts/sqlite_backup_restore.py#L112) | 112 | `"    return _copy_verified_database(backup, destination)"` | — |
-| [SRC-547CAF1FE3-L000113](../../scripts/sqlite_backup_restore.py#L113) | 113 | `""` | — |
-| [SRC-547CAF1FE3-L000114](../../scripts/sqlite_backup_restore.py#L114) | 114 | `""` | — |
