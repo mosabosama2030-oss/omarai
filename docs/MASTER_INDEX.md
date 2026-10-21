@@ -14,7 +14,7 @@
 - تعريفات Python موثقة بوجود Docstring: **192**
 - تعريفات Python بلا Docstring: **590**
 - تعريفات لا ينطبق عليها Docstring: **194**
-- الرموز الساكنة الإضافية: **1484**
+- الرموز الساكنة الإضافية: **1485**
 - الأسطر النصية المفهرسة حرفيًا: **25823**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
@@ -60,7 +60,7 @@
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
 | FILE-89BEE4CE47 | وثائق وفهرسة | [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 31265 | 173 | جرد الملف + عناوين Markdown |
 | FILE-855DA3B8BC | وثائق وفهرسة | [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 49883 | 260 | جرد الملف + عناوين Markdown |
-| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 26339 | 131 | جرد الملف + عناوين Markdown |
+| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 25817 | 131 | جرد الملف + عناوين Markdown |
 | FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 64225 | 200 | جرد الملف + عناوين Markdown |
 | FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 76904 | 852 | جرد الملف + عناوين Markdown |
@@ -1716,6 +1716,7 @@
 | [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) | عنوان Markdown (H2) | 9. الخلاصة النهائية | 250 | [SRC-855DA3B8BC-L000250](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | عنوان Markdown (H1) | سجل الإغلاق الهندسي المركزي لمشروع Omarai | 1 | [SRC-62CE5126F9-L000001](OMARAI_REMEDIATION_REGISTER_AR.md#L1) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L8) | عنوان Markdown (H2) | دليل الاختبارات وحالة الرأس الحالي | 8 | [SRC-62CE5126F9-L000008](OMARAI_REMEDIATION_REGISTER_AR.md#L8) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 12 | [SRC-62CE5126F9-L000012](OMARAI_REMEDIATION_REGISTER_AR.md#L12) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L16) | عنوان Markdown (H2) | معاني الحالات | 16 | [SRC-62CE5126F9-L000016](OMARAI_REMEDIATION_REGISTER_AR.md#L16) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 19 | [SRC-62CE5126F9-L000019](OMARAI_REMEDIATION_REGISTER_AR.md#L19) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 21 | [SRC-62CE5126F9-L000021](OMARAI_REMEDIATION_REGISTER_AR.md#L21) |
