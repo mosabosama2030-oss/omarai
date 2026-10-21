@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000364 إلى SRC-90FAA34ADE-L001163
+- النطاق: SRC-90FAA34ADE-L000351 إلى SRC-90FAA34ADE-L001150
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000351](../../tests/fixtures/answer_quality_cases.json#L351) | 351 | `"      \"category\": \"irrelevant_results\","` | — |
+| [SRC-90FAA34ADE-L000352](../../tests/fixtures/answer_quality_cases.json#L352) | 352 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L000353](../../tests/fixtures/answer_quality_cases.json#L353) | 353 | `"      \"question\": \"ما إجراءات تجديد جواز السفر المصري؟\","` | — |
+| [SRC-90FAA34ADE-L000354](../../tests/fixtures/answer_quality_cases.json#L354) | 354 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000355](../../tests/fixtures/answer_quality_cases.json#L355) | 355 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000356](../../tests/fixtures/answer_quality_cases.json#L356) | 356 | `"        \"Rejects or downranks off-topic sources\","` | — |
+| [SRC-90FAA34ADE-L000357](../../tests/fixtures/answer_quality_cases.json#L357) | 357 | `"        \"Abstains or warns if only irrelevant hits remain\""` | — |
+| [SRC-90FAA34ADE-L000358](../../tests/fixtures/answer_quality_cases.json#L358) | 358 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000359](../../tests/fixtures/answer_quality_cases.json#L359) | 359 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000360](../../tests/fixtures/answer_quality_cases.json#L360) | 360 | `"        \"Answers from unrelated travel blog about visas to Canada as if it were passport renewal\""` | — |
+| [SRC-90FAA34ADE-L000361](../../tests/fixtures/answer_quality_cases.json#L361) | 361 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000363](../../tests/fixtures/answer_quality_cases.json#L363) | 363 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000364](../../tests/fixtures/answer_quality_cases.json#L364) | 364 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000365](../../tests/fixtures/answer_quality_cases.json#L365) | 365 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000366](../../tests/fixtures/answer_quality_cases.json#L366) | 366 | `"            \"title\": \"Canada visitor visa checklist\","` | — |
@@ -803,16 +816,3 @@
 | [SRC-90FAA34ADE-L001148](../../tests/fixtures/answer_quality_cases.json#L1148) | 1148 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001149](../../tests/fixtures/answer_quality_cases.json#L1149) | 1149 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L001150](../../tests/fixtures/answer_quality_cases.json#L1150) | 1150 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001151](../../tests/fixtures/answer_quality_cases.json#L1151) | 1151 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001152](../../tests/fixtures/answer_quality_cases.json#L1152) | 1152 | `"      \"case_id\": \"AQ-039\","` | — |
-| [SRC-90FAA34ADE-L001153](../../tests/fixtures/answer_quality_cases.json#L1153) | 1153 | `"      \"category\": \"missing_model_credentials\","` | — |
-| [SRC-90FAA34ADE-L001154](../../tests/fixtures/answer_quality_cases.json#L1154) | 1154 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L001155](../../tests/fixtures/answer_quality_cases.json#L1155) | 1155 | `"      \"question\": \"الموديل الأساسي ومراجع الإجابة مش متاحين بسبب غياب المفاتيح. جاوب المستخدم من غير ما تدّعي إن النماذج اشتغلت.\","` | — |
-| [SRC-90FAA34ADE-L001156](../../tests/fixtures/answer_quality_cases.json#L1156) | 1156 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L001157](../../tests/fixtures/answer_quality_cases.json#L1157) | 1157 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001158](../../tests/fixtures/answer_quality_cases.json#L1158) | 1158 | `"        \"يصرح بتعطل المكون المعتمد على بيانات الاعتماد عند الحاجة\","` | — |
-| [SRC-90FAA34ADE-L001159](../../tests/fixtures/answer_quality_cases.json#L1159) | 1159 | `"        \"يستخدم fallback موثق إن وُجد أو يشرح القيد\","` | — |
-| [SRC-90FAA34ADE-L001160](../../tests/fixtures/answer_quality_cases.json#L1160) | 1160 | `"        \"لا يدّعي أن النموذج أو المراجع نفّذوا الطلب\""` | — |
-| [SRC-90FAA34ADE-L001161](../../tests/fixtures/answer_quality_cases.json#L1161) | 1161 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001162](../../tests/fixtures/answer_quality_cases.json#L1162) | 1162 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001163](../../tests/fixtures/answer_quality_cases.json#L1163) | 1163 | `"        \"يعرض إجابة على أنها مراجعة بنموذج لم يعمل\","` | — |

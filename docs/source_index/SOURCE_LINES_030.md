@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001189 إلى SRC-F725E90B2A-L001988
+- النطاق: SRC-F725E90B2A-L001176 إلى SRC-F725E90B2A-L001975
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001176](../../tests/test_web_agent.py#L1176) | 1176 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001177](../../tests/test_web_agent.py#L1177) | 1177 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001178](../../tests/test_web_agent.py#L1178) | 1178 | `"    }"` | — |
+| [SRC-F725E90B2A-L001179](../../tests/test_web_agent.py#L1179) | 1179 | `"    calls = []"` | — |
+| [SRC-F725E90B2A-L001180](../../tests/test_web_agent.py#L1180) | 1180 | `""` | — |
+| [SRC-F725E90B2A-L001181](../../tests/test_web_agent.py#L1181) | 1181 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L001182](../../tests/test_web_agent.py#L1182) | 1182 | `"        calls.append(dict(research_plan))"` | — |
+| [SRC-F725E90B2A-L001183](../../tests/test_web_agent.py#L1183) | 1183 | `"        sources = [sample_source(0)] if len(calls) == 1 else [sample_source(1)]"` | — |
+| [SRC-F725E90B2A-L001184](../../tests/test_web_agent.py#L1184) | 1184 | `"        return sources, [], {"` | — |
+| [SRC-F725E90B2A-L001185](../../tests/test_web_agent.py#L1185) | 1185 | `"            \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L001186](../../tests/test_web_agent.py#L1186) | 1186 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L001187](../../tests/test_web_agent.py#L1187) | 1187 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": len(sources)}],"` | — |
+| [SRC-F725E90B2A-L001188](../../tests/test_web_agent.py#L1188) | 1188 | `"            \"unique_sources\": len(sources),"` | — |
 | [SRC-F725E90B2A-L001189](../../tests/test_web_agent.py#L1189) | 1189 | `"            \"pages_fetched\": len(sources),"` | — |
 | [SRC-F725E90B2A-L001190](../../tests/test_web_agent.py#L1190) | 1190 | `"            \"providers_used\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L001191](../../tests/test_web_agent.py#L1191) | 1191 | `"            \"platform_counts\": {\"web\": len(sources)},"` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L001973](../../tests/test_web_agent.py#L1973) | 1973 | `""` | — |
 | [SRC-F725E90B2A-L001974](../../tests/test_web_agent.py#L1974) | 1974 | `"    def fail_before_attempt(research_plan):"` | — |
 | [SRC-F725E90B2A-L001975](../../tests/test_web_agent.py#L1975) | 1975 | `"        raise RuntimeError(\"simulated scheduler failure\")"` | — |
-| [SRC-F725E90B2A-L001976](../../tests/test_web_agent.py#L1976) | 1976 | `""` | — |
-| [SRC-F725E90B2A-L001977](../../tests/test_web_agent.py#L1977) | 1977 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001978](../../tests/test_web_agent.py#L1978) | 1978 | `"    monkeypatch.setattr(agent, \"_collect_research\", fail_before_attempt)"` | — |
-| [SRC-F725E90B2A-L001979](../../tests/test_web_agent.py#L1979) | 1979 | `""` | — |
-| [SRC-F725E90B2A-L001980](../../tests/test_web_agent.py#L1980) | 1980 | `"    result = agent.answer(\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\")"` | — |
-| [SRC-F725E90B2A-L001981](../../tests/test_web_agent.py#L1981) | 1981 | `""` | — |
-| [SRC-F725E90B2A-L001982](../../tests/test_web_agent.py#L1982) | 1982 | `"    report = result[\"search_report\"]"` | — |
-| [SRC-F725E90B2A-L001983](../../tests/test_web_agent.py#L1983) | 1983 | `"    assert result[\"search_attempted\"] is None"` | — |
-| [SRC-F725E90B2A-L001984](../../tests/test_web_agent.py#L1984) | 1984 | `"    assert report[\"search_attempted\"] is None"` | — |
-| [SRC-F725E90B2A-L001985](../../tests/test_web_agent.py#L1985) | 1985 | `"    assert report[\"search_outcome\"] == \"unknown_after_research_error\""` | — |
-| [SRC-F725E90B2A-L001986](../../tests/test_web_agent.py#L1986) | 1986 | `"    assert report[\"queries_attempted\"] is None"` | — |
-| [SRC-F725E90B2A-L001987](../../tests/test_web_agent.py#L1987) | 1987 | `"    assert report[\"queries_attempted_known\"] is False"` | — |
-| [SRC-F725E90B2A-L001988](../../tests/test_web_agent.py#L1988) | 1988 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000115 إلى SRC-4FFD5AFC54-L000119
+- النطاق: SRC-69F3587825-L000102 إلى SRC-4FFD5AFC54-L000106
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"        \".py\","` | — |
+| [SRC-69F3587825-L000103](../search_code.py#L103) | 103 | `"        \".md\","` | — |
+| [SRC-69F3587825-L000104](../search_code.py#L104) | 104 | `"        \".html\","` | — |
+| [SRC-69F3587825-L000105](../search_code.py#L105) | 105 | `"        \".htm\","` | — |
+| [SRC-69F3587825-L000106](../search_code.py#L106) | 106 | `"        \".js\","` | — |
+| [SRC-69F3587825-L000107](../search_code.py#L107) | 107 | `"        \".css\","` | — |
+| [SRC-69F3587825-L000108](../search_code.py#L108) | 108 | `"        \".json\","` | — |
+| [SRC-69F3587825-L000109](../search_code.py#L109) | 109 | `"        \".yml\","` | — |
+| [SRC-69F3587825-L000110](../search_code.py#L110) | 110 | `"        \".yaml\","` | — |
+| [SRC-69F3587825-L000111](../search_code.py#L111) | 111 | `"        \".toml\","` | — |
+| [SRC-69F3587825-L000112](../search_code.py#L112) | 112 | `"        \".txt\","` | — |
+| [SRC-69F3587825-L000113](../search_code.py#L113) | 113 | `"        \".sh\","` | — |
+| [SRC-69F3587825-L000114](../search_code.py#L114) | 114 | `"        \".example\","` | — |
 | [SRC-69F3587825-L000115](../search_code.py#L115) | 115 | `"    }"` | — |
 | [SRC-69F3587825-L000116](../search_code.py#L116) | 116 | `")"` | — |
 | [SRC-69F3587825-L000117](../search_code.py#L117) | 117 | `"GITHUB_BLOB_BASE = \"https://github.com/mosabosama2030-oss/omarai/blob/main\""` | — |
@@ -875,16 +888,3 @@
 | [SRC-4FFD5AFC54-L000104](../../scripts/run_answer_quality_benchmark.py#L104) | 104 | `"    \"question\","` | — |
 | [SRC-4FFD5AFC54-L000105](../../scripts/run_answer_quality_benchmark.py#L105) | 105 | `"    \"expected_strategy\","` | — |
 | [SRC-4FFD5AFC54-L000106](../../scripts/run_answer_quality_benchmark.py#L106) | 106 | `"    \"required_behaviors\","` | — |
-| [SRC-4FFD5AFC54-L000107](../../scripts/run_answer_quality_benchmark.py#L107) | 107 | `"    \"forbidden_behaviors\","` | — |
-| [SRC-4FFD5AFC54-L000108](../../scripts/run_answer_quality_benchmark.py#L108) | 108 | `"    \"evidence_fixture\","` | — |
-| [SRC-4FFD5AFC54-L000109](../../scripts/run_answer_quality_benchmark.py#L109) | 109 | `"    \"failure_conditions\","` | — |
-| [SRC-4FFD5AFC54-L000110](../../scripts/run_answer_quality_benchmark.py#L110) | 110 | `"    \"evaluation_mode\","` | — |
-| [SRC-4FFD5AFC54-L000111](../../scripts/run_answer_quality_benchmark.py#L111) | 111 | `"}"` | — |
-| [SRC-4FFD5AFC54-L000112](../../scripts/run_answer_quality_benchmark.py#L112) | 112 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
-| [SRC-4FFD5AFC54-L000113](../../scripts/run_answer_quality_benchmark.py#L113) | 113 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
-| [SRC-4FFD5AFC54-L000114](../../scripts/run_answer_quality_benchmark.py#L114) | 114 | `""` | — |
-| [SRC-4FFD5AFC54-L000115](../../scripts/run_answer_quality_benchmark.py#L115) | 115 | `""` | — |
-| [SRC-4FFD5AFC54-L000116](../../scripts/run_answer_quality_benchmark.py#L116) | 116 | `"def _utc_now() -> str:"` | — |
-| [SRC-4FFD5AFC54-L000117](../../scripts/run_answer_quality_benchmark.py#L117) | 117 | `"    return datetime.now(UTC).isoformat(timespec=\"seconds\")"` | — |
-| [SRC-4FFD5AFC54-L000118](../../scripts/run_answer_quality_benchmark.py#L118) | 118 | `""` | — |
-| [SRC-4FFD5AFC54-L000119](../../scripts/run_answer_quality_benchmark.py#L119) | 119 | `""` | — |

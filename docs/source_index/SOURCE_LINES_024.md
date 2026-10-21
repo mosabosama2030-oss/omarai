@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000613 إلى SRC-FA4E1423C3-L000026
+- النطاق: SRC-3451CC474D-L000600 إلى SRC-FA4E1423C3-L000013
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000600](../../tests/test_api.py#L600) | 600 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L000601](../../tests/test_api.py#L601) | 601 | `"                break"` | — |
+| [SRC-3451CC474D-L000602](../../tests/test_api.py#L602) | 602 | `"            response.extend(chunk)"` | — |
+| [SRC-3451CC474D-L000603](../../tests/test_api.py#L603) | 603 | `""` | — |
+| [SRC-3451CC474D-L000604](../../tests/test_api.py#L604) | 604 | `"    elapsed = time.monotonic() - started"` | — |
+| [SRC-3451CC474D-L000605](../../tests/test_api.py#L605) | 605 | `"    assert response.startswith(b\"HTTP/1.0 408\")"` | — |
+| [SRC-3451CC474D-L000606](../../tests/test_api.py#L606) | 606 | `"    assert b\"request body read timed out\" in response"` | — |
+| [SRC-3451CC474D-L000607](../../tests/test_api.py#L607) | 607 | `"    assert elapsed < 1.5"` | — |
+| [SRC-3451CC474D-L000608](../../tests/test_api.py#L608) | 608 | `""` | — |
+| [SRC-3451CC474D-L000609](../../tests/test_api.py#L609) | 609 | `""` | — |
+| [SRC-3451CC474D-L000610](../../tests/test_api.py#L610) | 610 | `""` | — |
+| [SRC-3451CC474D-L000611](../../tests/test_api.py#L611) | 611 | `"def test_api_absolute_header_deadline_stops_slow_trickle(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000612](../../tests/test_api.py#L612) | 612 | `"    \"\"\"Header bytes arriving before idle timeout must not extend the total deadline.\"\"\""` | — |
 | [SRC-3451CC474D-L000613](../../tests/test_api.py#L613) | 613 | `"    import time"` | — |
 | [SRC-3451CC474D-L000614](../../tests/test_api.py#L614) | 614 | `""` | — |
 | [SRC-3451CC474D-L000615](../../tests/test_api.py#L615) | 615 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
@@ -848,16 +861,3 @@
 | [SRC-FA4E1423C3-L000011](../../tests/test_generate_index.py#L11) | 11 | `"INDEXER_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"generate_index.py\""` | — |
 | [SRC-FA4E1423C3-L000012](../../tests/test_generate_index.py#L12) | 12 | `"INDEXER_SPEC = importlib.util.spec_from_file_location("` | — |
 | [SRC-FA4E1423C3-L000013](../../tests/test_generate_index.py#L13) | 13 | `"    \"omarai_generate_index_for_tests\","` | — |
-| [SRC-FA4E1423C3-L000014](../../tests/test_generate_index.py#L14) | 14 | `"    INDEXER_PATH,"` | — |
-| [SRC-FA4E1423C3-L000015](../../tests/test_generate_index.py#L15) | 15 | `")"` | — |
-| [SRC-FA4E1423C3-L000016](../../tests/test_generate_index.py#L16) | 16 | `"assert INDEXER_SPEC is not None"` | — |
-| [SRC-FA4E1423C3-L000017](../../tests/test_generate_index.py#L17) | 17 | `"assert INDEXER_SPEC.loader is not None"` | — |
-| [SRC-FA4E1423C3-L000018](../../tests/test_generate_index.py#L18) | 18 | `"INDEXER = importlib.util.module_from_spec(INDEXER_SPEC)"` | — |
-| [SRC-FA4E1423C3-L000019](../../tests/test_generate_index.py#L19) | 19 | `"sys.modules[INDEXER_SPEC.name] = INDEXER"` | — |
-| [SRC-FA4E1423C3-L000020](../../tests/test_generate_index.py#L20) | 20 | `"INDEXER_SPEC.loader.exec_module(INDEXER)"` | — |
-| [SRC-FA4E1423C3-L000021](../../tests/test_generate_index.py#L21) | 21 | `""` | — |
-| [SRC-FA4E1423C3-L000022](../../tests/test_generate_index.py#L22) | 22 | `""` | — |
-| [SRC-FA4E1423C3-L000023](../../tests/test_generate_index.py#L23) | 23 | `"def test_indexes_functions_classes_methods_and_docstring_status(tmp_path: Path) -> None:"` | — |
-| [SRC-FA4E1423C3-L000024](../../tests/test_generate_index.py#L24) | 24 | `"    \"\"\"The Python AST index includes qualified names and documentation state.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000025](../../tests/test_generate_index.py#L25) | 25 | `"    source_dir = tmp_path / \"src\""` | — |
-| [SRC-FA4E1423C3-L000026](../../tests/test_generate_index.py#L26) | 26 | `"    source_dir.mkdir()"` | — |

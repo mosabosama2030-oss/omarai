@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000427 إلى SRC-69F3587825-L000114
+- النطاق: SRC-0F910493E8-L000414 إلى SRC-69F3587825-L000101
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000414](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L414) | 414 | `"**بوابة القبول:** حالة أساس وأدلة قابلة لإعادة التحقق، لا مجرد تقرير يصف ما يُفترض أنه موجود."` | — |
+| [SRC-0F910493E8-L000415](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L415) | 415 | `""` | — |
+| [SRC-0F910493E8-L000416](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L416) | 416 | `"## P1 — سلامة العقود والصلاحيات"` | — |
+| [SRC-0F910493E8-L000417](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L417) | 417 | `""` | — |
+| [SRC-0F910493E8-L000418](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L418) | 418 | `"- توحيد عقود الأدوات المطلوبة للتغييرات التالية."` | — |
+| [SRC-0F910493E8-L000419](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L419) | 419 | `"- فحص المدخلات والمخرجات."` | — |
+| [SRC-0F910493E8-L000420](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L420) | 420 | `"- فرض الصلاحيات والميزانيات عند التنفيذ."` | — |
+| [SRC-0F910493E8-L000421](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L421) | 421 | `"- اختبار حالات الرفض والفشل والتزامن بحسب المسار."` | — |
+| [SRC-0F910493E8-L000422](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L422) | 422 | `""` | — |
+| [SRC-0F910493E8-L000423](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L423) | 423 | `"**بوابة القبول:** نتائج فعلية تثبت السلوك في نطاق الاختبارات؛ وتبقى الحدود غير المختبرة UNKNOWN."` | — |
+| [SRC-0F910493E8-L000424](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L424) | 424 | `""` | — |
+| [SRC-0F910493E8-L000425](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L425) | 425 | `"## P2 — المهارات وسير العمل"` | — |
+| [SRC-0F910493E8-L000426](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L426) | 426 | `""` | — |
 | [SRC-0F910493E8-L000427](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L427) | 427 | `"- استخراج مهارات من وظائف موجودة عند وجود تكرار أو حاجة واضحة."` | — |
 | [SRC-0F910493E8-L000428](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L428) | 428 | `"- تحديد سير العمل للمسارات متعددة الخطوات."` | — |
 | [SRC-0F910493E8-L000429](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L429) | 429 | `"- الحفاظ على المسار المباشر للأسئلة البسيطة."` | — |
@@ -839,16 +852,3 @@
 | [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
 | [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
 | [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    {"` | — |
-| [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"        \".py\","` | — |
-| [SRC-69F3587825-L000103](../search_code.py#L103) | 103 | `"        \".md\","` | — |
-| [SRC-69F3587825-L000104](../search_code.py#L104) | 104 | `"        \".html\","` | — |
-| [SRC-69F3587825-L000105](../search_code.py#L105) | 105 | `"        \".htm\","` | — |
-| [SRC-69F3587825-L000106](../search_code.py#L106) | 106 | `"        \".js\","` | — |
-| [SRC-69F3587825-L000107](../search_code.py#L107) | 107 | `"        \".css\","` | — |
-| [SRC-69F3587825-L000108](../search_code.py#L108) | 108 | `"        \".json\","` | — |
-| [SRC-69F3587825-L000109](../search_code.py#L109) | 109 | `"        \".yml\","` | — |
-| [SRC-69F3587825-L000110](../search_code.py#L110) | 110 | `"        \".yaml\","` | — |
-| [SRC-69F3587825-L000111](../search_code.py#L111) | 111 | `"        \".toml\","` | — |
-| [SRC-69F3587825-L000112](../search_code.py#L112) | 112 | `"        \".txt\","` | — |
-| [SRC-69F3587825-L000113](../search_code.py#L113) | 113 | `"        \".sh\","` | — |
-| [SRC-69F3587825-L000114](../search_code.py#L114) | 114 | `"        \".example\","` | — |

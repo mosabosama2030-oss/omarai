@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000081 إلى SRC-3451CC474D-L000612
+- النطاق: SRC-1C77C97630-L000068 إلى SRC-3451CC474D-L000599
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000068](../../tests/test_answer_validation.py#L68) | 68 | `"        \"ما التفاصيل؟\","` | — |
+| [SRC-1C77C97630-L000069](../../tests/test_answer_validation.py#L69) | 69 | `"        \"وجدت مقتطفًا.\","` | — |
+| [SRC-1C77C97630-L000070](../../tests/test_answer_validation.py#L70) | 70 | `"        [{\"title\": \"نتيجة\", \"snippet\": \"مقتطف قصير\", \"page_fetched\": False}],"` | — |
+| [SRC-1C77C97630-L000071](../../tests/test_answer_validation.py#L71) | 71 | `"    )"` | — |
+| [SRC-1C77C97630-L000072](../../tests/test_answer_validation.py#L72) | 72 | `"    assert result[\"source_evidence_scope\"] == \"search_snippets_only\""` | — |
+| [SRC-1C77C97630-L000073](../../tests/test_answer_validation.py#L73) | 73 | `"    assert result[\"pages_with_extracted_text\"] == 0"` | — |
+| [SRC-1C77C97630-L000074](../../tests/test_answer_validation.py#L74) | 74 | `"    assert result[\"sources_with_snippets_only\"] == 1"` | — |
+| [SRC-1C77C97630-L000075](../../tests/test_answer_validation.py#L75) | 75 | `""` | — |
+| [SRC-1C77C97630-L000076](../../tests/test_answer_validation.py#L76) | 76 | `""` | — |
+| [SRC-1C77C97630-L000077](../../tests/test_answer_validation.py#L77) | 77 | `"def test_review_prompt_explicitly_requires_number_and_conflict_audit(monkeypatch):"` | — |
+| [SRC-1C77C97630-L000078](../../tests/test_answer_validation.py#L78) | 78 | `"    agent = WebAgent()"` | — |
+| [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    captured = {}"` | — |
+| [SRC-1C77C97630-L000080](../../tests/test_answer_validation.py#L80) | 80 | `""` | — |
 | [SRC-1C77C97630-L000081](../../tests/test_answer_validation.py#L81) | 81 | `"    def fake_completion(messages, **kwargs):"` | — |
 | [SRC-1C77C97630-L000082](../../tests/test_answer_validation.py#L82) | 82 | `"        captured[\"messages\"] = messages"` | — |
 | [SRC-1C77C97630-L000083](../../tests/test_answer_validation.py#L83) | 83 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>لا تكفي الأدلة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
@@ -812,16 +825,3 @@
 | [SRC-3451CC474D-L000597](../../tests/test_api.py#L597) | 597 | `"                chunk = client.recv(4096)"` | — |
 | [SRC-3451CC474D-L000598](../../tests/test_api.py#L598) | 598 | `"            except TimeoutError:"` | — |
 | [SRC-3451CC474D-L000599](../../tests/test_api.py#L599) | 599 | `"                break"` | — |
-| [SRC-3451CC474D-L000600](../../tests/test_api.py#L600) | 600 | `"            if not chunk:"` | — |
-| [SRC-3451CC474D-L000601](../../tests/test_api.py#L601) | 601 | `"                break"` | — |
-| [SRC-3451CC474D-L000602](../../tests/test_api.py#L602) | 602 | `"            response.extend(chunk)"` | — |
-| [SRC-3451CC474D-L000603](../../tests/test_api.py#L603) | 603 | `""` | — |
-| [SRC-3451CC474D-L000604](../../tests/test_api.py#L604) | 604 | `"    elapsed = time.monotonic() - started"` | — |
-| [SRC-3451CC474D-L000605](../../tests/test_api.py#L605) | 605 | `"    assert response.startswith(b\"HTTP/1.0 408\")"` | — |
-| [SRC-3451CC474D-L000606](../../tests/test_api.py#L606) | 606 | `"    assert b\"request body read timed out\" in response"` | — |
-| [SRC-3451CC474D-L000607](../../tests/test_api.py#L607) | 607 | `"    assert elapsed < 1.5"` | — |
-| [SRC-3451CC474D-L000608](../../tests/test_api.py#L608) | 608 | `""` | — |
-| [SRC-3451CC474D-L000609](../../tests/test_api.py#L609) | 609 | `""` | — |
-| [SRC-3451CC474D-L000610](../../tests/test_api.py#L610) | 610 | `""` | — |
-| [SRC-3451CC474D-L000611](../../tests/test_api.py#L611) | 611 | `"def test_api_absolute_header_deadline_stops_slow_trickle(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000612](../../tests/test_api.py#L612) | 612 | `"    \"\"\"Header bytes arriving before idle timeout must not extend the total deadline.\"\"\""` | — |

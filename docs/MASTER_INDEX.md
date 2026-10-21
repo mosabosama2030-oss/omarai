@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **189**
 - تعريفات Python بلا Docstring: **577**
 - تعريفات لا ينطبق عليها Docstring: **193**
-- الرموز الساكنة الإضافية: **1410**
-- الأسطر النصية المفهرسة حرفيًا: **25079**
+- الرموز الساكنة الإضافية: **1416**
+- الأسطر النصية المفهرسة حرفيًا: **25092**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -48,11 +48,11 @@
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
 | FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 583 | 19 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
-| FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 4915 | 47 | جرد الملف + عناوين Markdown |
-| FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 6929 | 63 | جرد الملف + عناوين Markdown |
+| FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 5664 | 50 | جرد الملف + عناوين Markdown |
+| FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 7599 | 66 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 9498 | 94 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
-| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5302 | 40 | جرد الملف + عناوين Markdown |
+| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 6363 | 47 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 9654 | 53 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
@@ -1309,8 +1309,10 @@
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 23 | [SRC-C7C7FA8853-L000023](DEPLOY_RAILWAY_AR.md#L23) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 24 | [SRC-C7C7FA8853-L000024](DEPLOY_RAILWAY_AR.md#L24) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L28) | عنوان Markdown (H2) | الحماية | 28 | [SRC-C7C7FA8853-L000028](DEPLOY_RAILWAY_AR.md#L28) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L36) | عنوان Markdown (H2) | حدود الإنتاج الحالية | 36 | [SRC-C7C7FA8853-L000036](DEPLOY_RAILWAY_AR.md#L36) |
-| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L44) | عنوان Markdown (H2) | إعادة النشر | 44 | [SRC-C7C7FA8853-L000044](DEPLOY_RAILWAY_AR.md#L44) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L36) | عنوان Markdown (H2) | خيار تخزين SQLite على Volume دائم | 36 | [SRC-C7C7FA8853-L000036](DEPLOY_RAILWAY_AR.md#L36) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 39 | [SRC-C7C7FA8853-L000039](DEPLOY_RAILWAY_AR.md#L39) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L40) | عنوان Markdown (H2) | حدود الإنتاج الحالية | 40 | [SRC-C7C7FA8853-L000040](DEPLOY_RAILWAY_AR.md#L40) |
+| [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L47) | عنوان Markdown (H2) | إعادة النشر | 47 | [SRC-C7C7FA8853-L000047](DEPLOY_RAILWAY_AR.md#L47) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على Render Free — دليل عربي | 1 | [SRC-D57B0BB030-L000001](DEPLOY_RENDER_AR.md#L1) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L4) | عنوان Markdown (H2) | ما الذي أُعدّ في المستودع؟ | 4 | [SRC-D57B0BB030-L000004](DEPLOY_RENDER_AR.md#L4) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 9 | [SRC-D57B0BB030-L000009](DEPLOY_RENDER_AR.md#L9) |
@@ -1319,13 +1321,15 @@
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L24) | عنوان Markdown (H2) | ربط النسخة المنشورة بالمصدر | 24 | [SRC-D57B0BB030-L000024](DEPLOY_RENDER_AR.md#L24) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 27 | [SRC-D57B0BB030-L000027](DEPLOY_RENDER_AR.md#L27) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L28) | عنوان Markdown (H2) | توليد رمز الوصول | 28 | [SRC-D57B0BB030-L000028](DEPLOY_RENDER_AR.md#L28) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L38) | عنوان Markdown (H2) | حدود النسخة المجانية | 38 | [SRC-D57B0BB030-L000038](DEPLOY_RENDER_AR.md#L38) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L46) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 46 | [SRC-D57B0BB030-L000046](DEPLOY_RENDER_AR.md#L46) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L48) | عنوان Markdown (H2) | اختبار التشغيل الحي | 48 | [SRC-D57B0BB030-L000048](DEPLOY_RENDER_AR.md#L48) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 51 | [SRC-D57B0BB030-L000051](DEPLOY_RENDER_AR.md#L51) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L54) | عنوان Markdown (H2) | إذا فشل النشر | 54 | [SRC-D57B0BB030-L000054](DEPLOY_RENDER_AR.md#L54) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L60) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 60 | [SRC-D57B0BB030-L000060](DEPLOY_RENDER_AR.md#L60) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 63 | [SRC-D57B0BB030-L000063](DEPLOY_RENDER_AR.md#L63) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L38) | عنوان Markdown (H2) | مسار قاعدة البيانات عند وجود قرص دائم | 38 | [SRC-D57B0BB030-L000038](DEPLOY_RENDER_AR.md#L38) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 41 | [SRC-D57B0BB030-L000041](DEPLOY_RENDER_AR.md#L41) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L42) | عنوان Markdown (H2) | حدود النسخة المجانية | 42 | [SRC-D57B0BB030-L000042](DEPLOY_RENDER_AR.md#L42) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 49 | [SRC-D57B0BB030-L000049](DEPLOY_RENDER_AR.md#L49) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L51) | عنوان Markdown (H2) | اختبار التشغيل الحي | 51 | [SRC-D57B0BB030-L000051](DEPLOY_RENDER_AR.md#L51) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 54 | [SRC-D57B0BB030-L000054](DEPLOY_RENDER_AR.md#L54) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L57) | عنوان Markdown (H2) | إذا فشل النشر | 57 | [SRC-D57B0BB030-L000057](DEPLOY_RENDER_AR.md#L57) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 63 | [SRC-D57B0BB030-L000063](DEPLOY_RENDER_AR.md#L63) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 66 | [SRC-D57B0BB030-L000066](DEPLOY_RENDER_AR.md#L66) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على SnapDeploy Free — دليل عربي | 1 | [SRC-51D44BE378-L000001](DEPLOY_SNAPDEPLOY_AR.md#L1) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L4) | عنوان Markdown (H2) | حدود الخطة المجانية — راجعها قبل النشر | 4 | [SRC-51D44BE378-L000004](DEPLOY_SNAPDEPLOY_AR.md#L4) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L15) | عنوان Markdown (H2) | 1. إنشاء الحساب وربط GitHub | 15 | [SRC-51D44BE378-L000015](DEPLOY_SNAPDEPLOY_AR.md#L15) |
@@ -1400,11 +1404,13 @@
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 12 | [SRC-6E35221BFA-L000012](GO_LIVE_CHECKLIST_AR.md#L12) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 15 | [SRC-6E35221BFA-L000015](GO_LIVE_CHECKLIST_AR.md#L15) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 17 | [SRC-6E35221BFA-L000017](GO_LIVE_CHECKLIST_AR.md#L17) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | عنوان Markdown (H2) | اختبار قبول حي | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 21 | [SRC-6E35221BFA-L000021](GO_LIVE_CHECKLIST_AR.md#L21) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L24) | عنوان Markdown (H2) | شروط النجاح | 24 | [SRC-6E35221BFA-L000024](GO_LIVE_CHECKLIST_AR.md#L24) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L33) | عنوان Markdown (H2) | اختبار يدوي على Android | 33 | [SRC-6E35221BFA-L000033](GO_LIVE_CHECKLIST_AR.md#L33) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L37) | عنوان Markdown (H2) | حدود مهمة | 37 | [SRC-6E35221BFA-L000037](GO_LIVE_CHECKLIST_AR.md#L37) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | عنوان Markdown (H2) | التخزين الدائم والنسخ الاحتياطي — شرط قبل بيانات العملاء | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 21 | [SRC-6E35221BFA-L000021](GO_LIVE_CHECKLIST_AR.md#L21) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L26) | عنوان Markdown (H2) | اختبار قبول حي | 26 | [SRC-6E35221BFA-L000026](GO_LIVE_CHECKLIST_AR.md#L26) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 28 | [SRC-6E35221BFA-L000028](GO_LIVE_CHECKLIST_AR.md#L28) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L31) | عنوان Markdown (H2) | شروط النجاح | 31 | [SRC-6E35221BFA-L000031](GO_LIVE_CHECKLIST_AR.md#L31) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L40) | عنوان Markdown (H2) | اختبار يدوي على Android | 40 | [SRC-6E35221BFA-L000040](GO_LIVE_CHECKLIST_AR.md#L40) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L44) | عنوان Markdown (H2) | حدود مهمة | 44 | [SRC-6E35221BFA-L000044](GO_LIVE_CHECKLIST_AR.md#L44) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدوده | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L7) | عنوان Markdown (H2) | Current baseline addendum — 2026-10-21 | 7 | [SRC-C8EA754D73-L000007](IMPLEMENTATION_SCOPE.md#L7) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 12 | [SRC-C8EA754D73-L000012](IMPLEMENTATION_SCOPE.md#L12) |

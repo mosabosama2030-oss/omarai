@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000121 إلى SRC-F725E90B2A-L000388
+- النطاق: SRC-6BF96689A8-L000108 إلى SRC-F725E90B2A-L000375
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000108](../../tests/test_research.py#L108) | 108 | `"        },"` | — |
+| [SRC-6BF96689A8-L000109](../../tests/test_research.py#L109) | 109 | `"    ])"` | — |
+| [SRC-6BF96689A8-L000110](../../tests/test_research.py#L110) | 110 | `"    assert report[\"unique_domains\"] == 1"` | — |
+| [SRC-6BF96689A8-L000111](../../tests/test_research.py#L111) | 111 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
+| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `""` | — |
+| [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `""` | — |
+| [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `""` | — |
+| [SRC-6BF96689A8-L000115](../../tests/test_research.py#L115) | 115 | `"def test_standard_fallback_plan_does_not_add_deep_research_query():"` | — |
+| [SRC-6BF96689A8-L000116](../../tests/test_research.py#L116) | 116 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\")"` | — |
+| [SRC-6BF96689A8-L000117](../../tests/test_research.py#L117) | 117 | `"    assert plan[\"depth\"] == \"standard\""` | — |
+| [SRC-6BF96689A8-L000118](../../tests/test_research.py#L118) | 118 | `"    assert not any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
+| [SRC-6BF96689A8-L000119](../../tests/test_research.py#L119) | 119 | `""` | — |
+| [SRC-6BF96689A8-L000120](../../tests/test_research.py#L120) | 120 | `""` | — |
 | [SRC-6BF96689A8-L000121](../../tests/test_research.py#L121) | 121 | `"def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():"` | — |
 | [SRC-6BF96689A8-L000122](../../tests/test_research.py#L122) | 122 | `"    plan = fallback_plan(\"قارن مميزات وعيوب المحرك الكهربائي\")"` | — |
 | [SRC-6BF96689A8-L000123](../../tests/test_research.py#L123) | 123 | `"    assert plan[\"depth\"] == \"deep\""` | — |
@@ -839,16 +852,3 @@
 | [SRC-F725E90B2A-L000373](../../tests/test_web_agent.py#L373) | 373 | `"    })"` | — |
 | [SRC-F725E90B2A-L000374](../../tests/test_web_agent.py#L374) | 374 | `"    assert warnings == []"` | — |
 | [SRC-F725E90B2A-L000375](../../tests/test_web_agent.py#L375) | 375 | `"    assert len(sources) == 1"` | — |
-| [SRC-F725E90B2A-L000376](../../tests/test_web_agent.py#L376) | 376 | `"    assert sources[0][\"url\"] == \"https://example.com/article\""` | — |
-| [SRC-F725E90B2A-L000377](../../tests/test_web_agent.py#L377) | 377 | `"    assert sources[0][\"title\"] == \"User page title\""` | — |
-| [SRC-F725E90B2A-L000378](../../tests/test_web_agent.py#L378) | 378 | `"    assert sources[0][\"page_fetched\"] is True"` | — |
-| [SRC-F725E90B2A-L000379](../../tests/test_web_agent.py#L379) | 379 | `"    assert \"user_supplied_url\" in report[\"providers_used\"]"` | — |
-| [SRC-F725E90B2A-L000380](../../tests/test_web_agent.py#L380) | 380 | `""` | — |
-| [SRC-F725E90B2A-L000381](../../tests/test_web_agent.py#L381) | 381 | `""` | — |
-| [SRC-F725E90B2A-L000382](../../tests/test_web_agent.py#L382) | 382 | `""` | — |
-| [SRC-F725E90B2A-L000383](../../tests/test_web_agent.py#L383) | 383 | `"def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000384](../../tests/test_web_agent.py#L384) | 384 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000385](../../tests/test_web_agent.py#L385) | 385 | `""` | — |
-| [SRC-F725E90B2A-L000386](../../tests/test_web_agent.py#L386) | 386 | `"    monkeypatch.setenv(\"X_BEARER_TOKEN\", \"test-token\")"` | — |
-| [SRC-F725E90B2A-L000387](../../tests/test_web_agent.py#L387) | 387 | `""` | — |
-| [SRC-F725E90B2A-L000388](../../tests/test_web_agent.py#L388) | 388 | `"    class FakeResponse:"` | — |

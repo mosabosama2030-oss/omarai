@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000389 إلى SRC-F725E90B2A-L001188
+- النطاق: SRC-F725E90B2A-L000376 إلى SRC-F725E90B2A-L001175
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000376](../../tests/test_web_agent.py#L376) | 376 | `"    assert sources[0][\"url\"] == \"https://example.com/article\""` | — |
+| [SRC-F725E90B2A-L000377](../../tests/test_web_agent.py#L377) | 377 | `"    assert sources[0][\"title\"] == \"User page title\""` | — |
+| [SRC-F725E90B2A-L000378](../../tests/test_web_agent.py#L378) | 378 | `"    assert sources[0][\"page_fetched\"] is True"` | — |
+| [SRC-F725E90B2A-L000379](../../tests/test_web_agent.py#L379) | 379 | `"    assert \"user_supplied_url\" in report[\"providers_used\"]"` | — |
+| [SRC-F725E90B2A-L000380](../../tests/test_web_agent.py#L380) | 380 | `""` | — |
+| [SRC-F725E90B2A-L000381](../../tests/test_web_agent.py#L381) | 381 | `""` | — |
+| [SRC-F725E90B2A-L000382](../../tests/test_web_agent.py#L382) | 382 | `""` | — |
+| [SRC-F725E90B2A-L000383](../../tests/test_web_agent.py#L383) | 383 | `"def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000384](../../tests/test_web_agent.py#L384) | 384 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L000385](../../tests/test_web_agent.py#L385) | 385 | `""` | — |
+| [SRC-F725E90B2A-L000386](../../tests/test_web_agent.py#L386) | 386 | `"    monkeypatch.setenv(\"X_BEARER_TOKEN\", \"test-token\")"` | — |
+| [SRC-F725E90B2A-L000387](../../tests/test_web_agent.py#L387) | 387 | `""` | — |
+| [SRC-F725E90B2A-L000388](../../tests/test_web_agent.py#L388) | 388 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L000389](../../tests/test_web_agent.py#L389) | 389 | `"        status_code = 200"` | — |
 | [SRC-F725E90B2A-L000390](../../tests/test_web_agent.py#L390) | 390 | `""` | — |
 | [SRC-F725E90B2A-L000391](../../tests/test_web_agent.py#L391) | 391 | `"        def json(self):"` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L001173](../../tests/test_web_agent.py#L1173) | 1173 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001174](../../tests/test_web_agent.py#L1174) | 1174 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L001175](../../tests/test_web_agent.py#L1175) | 1175 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L001176](../../tests/test_web_agent.py#L1176) | 1176 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001177](../../tests/test_web_agent.py#L1177) | 1177 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001178](../../tests/test_web_agent.py#L1178) | 1178 | `"    }"` | — |
-| [SRC-F725E90B2A-L001179](../../tests/test_web_agent.py#L1179) | 1179 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L001180](../../tests/test_web_agent.py#L1180) | 1180 | `""` | — |
-| [SRC-F725E90B2A-L001181](../../tests/test_web_agent.py#L1181) | 1181 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L001182](../../tests/test_web_agent.py#L1182) | 1182 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001183](../../tests/test_web_agent.py#L1183) | 1183 | `"        sources = [sample_source(0)] if len(calls) == 1 else [sample_source(1)]"` | — |
-| [SRC-F725E90B2A-L001184](../../tests/test_web_agent.py#L1184) | 1184 | `"        return sources, [], {"` | — |
-| [SRC-F725E90B2A-L001185](../../tests/test_web_agent.py#L1185) | 1185 | `"            \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L001186](../../tests/test_web_agent.py#L1186) | 1186 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001187](../../tests/test_web_agent.py#L1187) | 1187 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": len(sources)}],"` | — |
-| [SRC-F725E90B2A-L001188](../../tests/test_web_agent.py#L1188) | 1188 | `"            \"unique_sources\": len(sources),"` | — |
