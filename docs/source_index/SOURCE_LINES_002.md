@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000050 إلى SRC-59CF4B7DE8-L000156
+- النطاق: SRC-5587371288-L000052 إلى SRC-59CF4B7DE8-L000158
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-5587371288-L000050](../../agents/intent_router.py#L50) | 50 | `"    \"how much is it\", \"how much does it cost\", \"what is its price\","` | — |
-| [SRC-5587371288-L000051](../../agents/intent_router.py#L51) | 51 | `"    \"what about it\", \"what about this\", \"is it good\", \"is this good\","` | — |
 | [SRC-5587371288-L000052](../../agents/intent_router.py#L52) | 52 | `"    \"does it work\", \"compare them\", \"compare these\", \"compare the two\","` | — |
 | [SRC-5587371288-L000053](../../agents/intent_router.py#L53) | 53 | `"    \"what do you think of it\", \"should i buy it\", \"is it worth it\","` | — |
 | [SRC-5587371288-L000054](../../agents/intent_router.py#L54) | 54 | `"    \"where is it\", \"where can i find it\", \"is there a warranty\","` | — |
@@ -843,3 +841,5 @@
 | [SRC-59CF4B7DE8-L000154](../../agents/research.py#L154) | 154 | `"    )"` | — |
 | [SRC-59CF4B7DE8-L000155](../../agents/research.py#L155) | 155 | `"    return _contains_any(context, _SOCIAL_TERMS)"` | — |
 | [SRC-59CF4B7DE8-L000156](../../agents/research.py#L156) | 156 | `""` | — |
+| [SRC-59CF4B7DE8-L000157](../../agents/research.py#L157) | 157 | `""` | — |
+| [SRC-59CF4B7DE8-L000158](../../agents/research.py#L158) | 158 | `"def detect_freshness(question: str) -> bool:"` | — |

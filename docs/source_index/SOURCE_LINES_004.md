@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000297 إلى SRC-1AE03B9EC3-L001096
+- النطاق: SRC-1AE03B9EC3-L000299 إلى SRC-1AE03B9EC3-L001098
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000297](../../agents/web_agent.py#L297) | 297 | `"        # Pin explicit role models for more consistent behaviour than a random free router."` | — |
-| [SRC-1AE03B9EC3-L000298](../../agents/web_agent.py#L298) | 298 | `"        # OMARAI_LLM_MODEL remains a global override for users who want one model everywhere."` | — |
 | [SRC-1AE03B9EC3-L000299](../../agents/web_agent.py#L299) | 299 | `"        global_model = os.getenv(\"OMARAI_LLM_MODEL\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L000300](../../agents/web_agent.py#L300) | 300 | `"        self.answer_model = os.getenv("` | — |
 | [SRC-1AE03B9EC3-L000301](../../agents/web_agent.py#L301) | 301 | `"            \"OMARAI_ANSWER_MODEL\", global_model or \"google/gemma-4-31b-it:free\""` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L001094](../../agents/web_agent.py#L1094) | 1094 | `""` | — |
 | [SRC-1AE03B9EC3-L001095](../../agents/web_agent.py#L1095) | 1095 | `"    def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:"` | — |
 | [SRC-1AE03B9EC3-L001096](../../agents/web_agent.py#L1096) | 1096 | `"        import xml.etree.ElementTree as ET"` | — |
+| [SRC-1AE03B9EC3-L001097](../../agents/web_agent.py#L1097) | 1097 | `""` | — |
+| [SRC-1AE03B9EC3-L001098](../../agents/web_agent.py#L1098) | 1098 | `"        import httpx"` | — |

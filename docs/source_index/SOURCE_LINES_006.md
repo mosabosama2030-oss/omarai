@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001897 إلى SRC-1AE03B9EC3-L002696
+- النطاق: SRC-1AE03B9EC3-L001899 إلى SRC-1AE03B9EC3-L002698
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001897](../../agents/web_agent.py#L1897) | 1897 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L001898](../../agents/web_agent.py#L1898) | 1898 | `""` | — |
 | [SRC-1AE03B9EC3-L001899](../../agents/web_agent.py#L1899) | 1899 | `"        if \"x\" in platforms and os.getenv(\"X_BEARER_TOKEN\", \"\").strip():"` | — |
 | [SRC-1AE03B9EC3-L001900](../../agents/web_agent.py#L1900) | 1900 | `"            try:"` | — |
 | [SRC-1AE03B9EC3-L001901](../../agents/web_agent.py#L1901) | 1901 | `"                self._reserve_search_call()"` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L002694](../../agents/web_agent.py#L2694) | 2694 | `"                headers={"` | — |
 | [SRC-1AE03B9EC3-L002695](../../agents/web_agent.py#L2695) | 2695 | `"                    \"Authorization\": \"Bearer \" + self.api_key,"` | — |
 | [SRC-1AE03B9EC3-L002696](../../agents/web_agent.py#L2696) | 2696 | `"                    \"Content-Type\": \"application/json\","` | — |
+| [SRC-1AE03B9EC3-L002697](../../agents/web_agent.py#L2697) | 2697 | `"                    \"HTTP-Referer\": \"https://github.com/mosabosama2030-oss/omarai\","` | — |
+| [SRC-1AE03B9EC3-L002698](../../agents/web_agent.py#L2698) | 2698 | `"                    \"X-Title\": \"Omarai Web Agent\","` | — |

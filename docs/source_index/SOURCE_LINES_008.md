@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003497 إلى SRC-1AE03B9EC3-L004296
+- النطاق: SRC-1AE03B9EC3-L003499 إلى SRC-1AE03B9EC3-L004298
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003497](../../agents/web_agent.py#L3497) | 3497 | `"                social_results, social_warnings = self._search_social("` | — |
-| [SRC-1AE03B9EC3-L003498](../../agents/web_agent.py#L3498) | 3498 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
 | [SRC-1AE03B9EC3-L003499](../../agents/web_agent.py#L3499) | 3499 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L003500](../../agents/web_agent.py#L3500) | 3500 | `"                providers: dict[str, int] = {}"` | — |
 | [SRC-1AE03B9EC3-L003501](../../agents/web_agent.py#L3501) | 3501 | `"                for source in social_results:"` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L004294](../../agents/web_agent.py#L4294) | 4294 | `"            for item in current_research_diagnostics"` | — |
 | [SRC-1AE03B9EC3-L004295](../../agents/web_agent.py#L4295) | 4295 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L004296](../../agents/web_agent.py#L4296) | 4296 | `"        raw_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
+| [SRC-1AE03B9EC3-L004297](../../agents/web_agent.py#L4297) | 4297 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L004298](../../agents/web_agent.py#L4298) | 4298 | `"            queries_attempted = ("` | — |

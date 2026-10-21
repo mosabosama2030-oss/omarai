@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **76**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **970**
-- تعريفات Python موثقة بوجود Docstring: **191**
-- تعريفات Python بلا Docstring: **586**
-- تعريفات لا ينطبق عليها Docstring: **193**
-- الرموز الساكنة الإضافية: **1455**
-- الأسطر النصية المفهرسة حرفيًا: **25652**
+- تعريفات Python المفهرسة: **975**
+- تعريفات Python موثقة بوجود Docstring: **192**
+- تعريفات Python بلا Docstring: **589**
+- تعريفات لا ينطبق عليها Docstring: **194**
+- الرموز الساكنة الإضافية: **1459**
+- الأسطر النصية المفهرسة حرفيًا: **25720**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -31,7 +31,7 @@
 | FILE-2F754321D6 | إعدادات وتشغيل | [.dockerignore](../.dockerignore#L1) | بدون امتداد | 103 | 11 | جرد ملف نصي فقط |
 | FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1193 | 26 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1661 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 3986 | 98 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 3935 | 96 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4970 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 10096 | 71 | جرد الملف + عناوين Markdown |
@@ -67,7 +67,7 @@
 | FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 16279 | 119 | جرد الملف + عناوين Markdown |
 | FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
-| FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 8904 | 290 | جرد الملف + AST Python |
+| FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -99,7 +99,7 @@
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 6023 | 145 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
-| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 3456 | 87 | جرد الملف + AST Python |
+| FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4477 | 120 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 106227 | 2737 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 53774 | 394 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -484,25 +484,27 @@
 | [docs/generate_index.py](generate_index.py#L1773) | دالة | write_if_changed | Write atomically only when the generated index differs from the existing file. | موثق | 1773 | [SRC-E599346ABE-L001773](generate_index.py#L1773) |
 | [docs/generate_index.py](generate_index.py#L1802) | دالة | _generate | Create deterministic overview, source-line pages, and all counts without writing. | موثق | 1802 | [SRC-E599346ABE-L001802](generate_index.py#L1802) |
 | [docs/generate_index.py](generate_index.py#L1840) | دالة | main | Generate the living repository index or check that the committed copy is current. | موثق | 1840 | [SRC-E599346ABE-L001840](generate_index.py#L1840) |
-| [docs/search_code.py](search_code.py#L21) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-69F3587825-L000021](search_code.py#L21) |
-| [docs/search_code.py](search_code.py#L50) | متغير/ثابت Python | SECRET_BASENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 50 | [SRC-69F3587825-L000050](search_code.py#L50) |
-| [docs/search_code.py](search_code.py#L77) | متغير/ثابت Python | SENSITIVE_NAME_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 77 | [SRC-69F3587825-L000077](search_code.py#L77) |
-| [docs/search_code.py](search_code.py#L81) | متغير/ثابت Python | SENSITIVE_CONFIG_SUFFIXES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 81 | [SRC-69F3587825-L000081](search_code.py#L81) |
-| [docs/search_code.py](search_code.py#L84) | متغير/ثابت Python | MAX_SEARCH_FILE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 84 | [SRC-69F3587825-L000084](search_code.py#L84) |
-| [docs/search_code.py](search_code.py#L87) | دالة | _is_sensitive_path | Return whether a local path appears to contain credentials or private runtime data. | موثق | 87 | [SRC-69F3587825-L000087](search_code.py#L87) |
-| [docs/search_code.py](search_code.py#L100) | متغير/ثابت Python | DEFAULT_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 100 | [SRC-69F3587825-L000100](search_code.py#L100) |
-| [docs/search_code.py](search_code.py#L117) | متغير/ثابت Python | GITHUB_BLOB_BASE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 117 | [SRC-69F3587825-L000117](search_code.py#L117) |
-| [docs/search_code.py](search_code.py#L121) | كلاس | SearchHit | لا توجد Docstring. | ناقص | 121 | [SRC-69F3587825-L000121](search_code.py#L121) |
-| [docs/search_code.py](search_code.py#L122) | متغير/ثابت Python | SearchHit.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 122 | [SRC-69F3587825-L000122](search_code.py#L122) |
-| [docs/search_code.py](search_code.py#L123) | متغير/ثابت Python | SearchHit.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 123 | [SRC-69F3587825-L000123](search_code.py#L123) |
-| [docs/search_code.py](search_code.py#L124) | متغير/ثابت Python | SearchHit.text | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 124 | [SRC-69F3587825-L000124](search_code.py#L124) |
-| [docs/search_code.py](search_code.py#L125) | متغير/ثابت Python | SearchHit.context_before | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 125 | [SRC-69F3587825-L000125](search_code.py#L125) |
-| [docs/search_code.py](search_code.py#L126) | متغير/ثابت Python | SearchHit.context_after | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 126 | [SRC-69F3587825-L000126](search_code.py#L126) |
-| [docs/search_code.py](search_code.py#L129) | دالة | SearchHit.link | لا توجد Docstring. | ناقص | 129 | [SRC-69F3587825-L000129](search_code.py#L129) |
-| [docs/search_code.py](search_code.py#L133) | دالة | discover_text_files | لا توجد Docstring. | ناقص | 133 | [SRC-69F3587825-L000133](search_code.py#L133) |
-| [docs/search_code.py](search_code.py#L159) | دالة | search_repository | Return ordered text matches with short context. | موثق | 159 | [SRC-69F3587825-L000159](search_code.py#L159) |
-| [docs/search_code.py](search_code.py#L215) | دالة | format_hits | لا توجد Docstring. | ناقص | 215 | [SRC-69F3587825-L000215](search_code.py#L215) |
-| [docs/search_code.py](search_code.py#L236) | دالة | main | لا توجد Docstring. | ناقص | 236 | [SRC-69F3587825-L000236](search_code.py#L236) |
+| [docs/search_code.py](search_code.py#L23) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-69F3587825-L000023](search_code.py#L23) |
+| [docs/search_code.py](search_code.py#L52) | متغير/ثابت Python | SECRET_BASENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 52 | [SRC-69F3587825-L000052](search_code.py#L52) |
+| [docs/search_code.py](search_code.py#L79) | متغير/ثابت Python | SENSITIVE_NAME_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 79 | [SRC-69F3587825-L000079](search_code.py#L79) |
+| [docs/search_code.py](search_code.py#L83) | متغير/ثابت Python | SENSITIVE_CONFIG_SUFFIXES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 83 | [SRC-69F3587825-L000083](search_code.py#L83) |
+| [docs/search_code.py](search_code.py#L86) | متغير/ثابت Python | MAX_SEARCH_FILE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 86 | [SRC-69F3587825-L000086](search_code.py#L86) |
+| [docs/search_code.py](search_code.py#L89) | دالة | _is_sensitive_path | Return whether a local path appears to contain credentials or private runtime data. | موثق | 89 | [SRC-69F3587825-L000089](search_code.py#L89) |
+| [docs/search_code.py](search_code.py#L102) | متغير/ثابت Python | DEFAULT_EXTENSIONS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 102 | [SRC-69F3587825-L000102](search_code.py#L102) |
+| [docs/search_code.py](search_code.py#L119) | متغير/ثابت Python | GITHUB_BLOB_BASE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 119 | [SRC-69F3587825-L000119](search_code.py#L119) |
+| [docs/search_code.py](search_code.py#L122) | دالة | default_repository_ref | Choose an exact revision for source links, with an explicit operator override. | موثق | 122 | [SRC-69F3587825-L000122](search_code.py#L122) |
+| [docs/search_code.py](search_code.py#L146) | كلاس | SearchHit | لا توجد Docstring. | ناقص | 146 | [SRC-69F3587825-L000146](search_code.py#L146) |
+| [docs/search_code.py](search_code.py#L147) | متغير/ثابت Python | SearchHit.file | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 147 | [SRC-69F3587825-L000147](search_code.py#L147) |
+| [docs/search_code.py](search_code.py#L148) | متغير/ثابت Python | SearchHit.line | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 148 | [SRC-69F3587825-L000148](search_code.py#L148) |
+| [docs/search_code.py](search_code.py#L149) | متغير/ثابت Python | SearchHit.text | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 149 | [SRC-69F3587825-L000149](search_code.py#L149) |
+| [docs/search_code.py](search_code.py#L150) | متغير/ثابت Python | SearchHit.context_before | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 150 | [SRC-69F3587825-L000150](search_code.py#L150) |
+| [docs/search_code.py](search_code.py#L151) | متغير/ثابت Python | SearchHit.context_after | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 151 | [SRC-69F3587825-L000151](search_code.py#L151) |
+| [docs/search_code.py](search_code.py#L152) | متغير/ثابت Python | SearchHit.repository_ref | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 152 | [SRC-69F3587825-L000152](search_code.py#L152) |
+| [docs/search_code.py](search_code.py#L155) | دالة | SearchHit.link | لا توجد Docstring. | ناقص | 155 | [SRC-69F3587825-L000155](search_code.py#L155) |
+| [docs/search_code.py](search_code.py#L161) | دالة | discover_text_files | لا توجد Docstring. | ناقص | 161 | [SRC-69F3587825-L000161](search_code.py#L161) |
+| [docs/search_code.py](search_code.py#L187) | دالة | search_repository | Return ordered text matches with short context. | موثق | 187 | [SRC-69F3587825-L000187](search_code.py#L187) |
+| [docs/search_code.py](search_code.py#L245) | دالة | format_hits | لا توجد Docstring. | ناقص | 245 | [SRC-69F3587825-L000245](search_code.py#L245) |
+| [docs/search_code.py](search_code.py#L266) | دالة | main | لا توجد Docstring. | ناقص | 266 | [SRC-69F3587825-L000266](search_code.py#L266) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L16) | كلاس | SmokeError | A live acceptance check failed. | موثق | 16 | [SRC-A8360B1B03-L000016](../scripts/hosted_smoke_test.py#L16) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L24) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 24 | [SRC-A8360B1B03-L000024](../scripts/hosted_smoke_test.py#L24) |
@@ -872,6 +874,9 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L31) | دالة | test_search_supports_multiline_context_and_regex | The context argument returns the requested number of adjacent lines. | موثق | 31 | [SRC-2614DCB6FB-L000031](../tests/test_search_code.py#L31) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L45) | دالة | test_search_excludes_common_secret_files_and_runtime_directories | Local searches skip common secret paths and binary/runtime data. | موثق | 45 | [SRC-2614DCB6FB-L000045](../tests/test_search_code.py#L45) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L66) | دالة | test_search_validates_query_limits_and_reports_invalid_regex | Invalid search controls fail clearly instead of silently returning confusing results. | موثق | 66 | [SRC-2614DCB6FB-L000066](../tests/test_search_code.py#L66) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L89) | دالة | test_search_links_use_the_requested_revision_not_main | لا توجد Docstring. | ناقص | 89 | [SRC-2614DCB6FB-L000089](../tests/test_search_code.py#L89) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L104) | دالة | test_default_repository_ref_prefers_explicit_environment_override | لا توجد Docstring. | ناقص | 104 | [SRC-2614DCB6FB-L000104](../tests/test_search_code.py#L104) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L113) | دالة | test_default_repository_ref_uses_valid_ci_sha | لا توجد Docstring. | ناقص | 113 | [SRC-2614DCB6FB-L000113](../tests/test_search_code.py#L113) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L11) | دالة | test_backup_and_restore_preserve_omarai_leads | لا توجد Docstring. | ناقص | 11 | [SRC-1C0D3D1206-L000011](../tests/test_sqlite_backup_restore.py#L11) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L50) | دالة | test_backup_never_overwrites_an_existing_destination | لا توجد Docstring. | ناقص | 50 | [SRC-1C0D3D1206-L000050](../tests/test_sqlite_backup_restore.py#L50) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L62) | دالة | test_backup_rejects_non_omarai_sqlite_database_without_leaving_destination | لا توجد Docstring. | ناقص | 62 | [SRC-1C0D3D1206-L000062](../tests/test_sqlite_backup_restore.py#L62) |
@@ -1141,14 +1146,14 @@
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L17) | مفتاح إعداد YAML | steps | 17 | [SRC-1DB27D9318-L000017](../.github/workflows/tests.yml#L17) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L20) | مفتاح إعداد YAML | with | 20 | [SRC-1DB27D9318-L000020](../.github/workflows/tests.yml#L20) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L25) | مفتاح إعداد YAML | run | 25 | [SRC-1DB27D9318-L000025](../.github/workflows/tests.yml#L25) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L29) | مفتاح إعداد YAML | container-build | 29 | [SRC-1DB27D9318-L000029](../.github/workflows/tests.yml#L29) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 35 | [SRC-1DB27D9318-L000035](../.github/workflows/tests.yml#L35) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 35 | [SRC-1DB27D9318-L000035](../.github/workflows/tests.yml#L35) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L37) | مفتاح إعداد YAML | shell | 37 | [SRC-1DB27D9318-L000037](../.github/workflows/tests.yml#L37) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 42 | [SRC-1DB27D9318-L000042](../.github/workflows/tests.yml#L42) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 43 | [SRC-1DB27D9318-L000043](../.github/workflows/tests.yml#L43) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L44) | مفتاح إعداد YAML | omarai | 44 | [SRC-1DB27D9318-L000044](../.github/workflows/tests.yml#L44) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L73) | مفتاح إعداد YAML | http | 73 | [SRC-1DB27D9318-L000073](../.github/workflows/tests.yml#L73) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L27) | مفتاح إعداد YAML | container-build | 27 | [SRC-1DB27D9318-L000027](../.github/workflows/tests.yml#L27) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 33 | [SRC-1DB27D9318-L000033](../.github/workflows/tests.yml#L33) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 33 | [SRC-1DB27D9318-L000033](../.github/workflows/tests.yml#L33) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L35) | مفتاح إعداد YAML | shell | 35 | [SRC-1DB27D9318-L000035](../.github/workflows/tests.yml#L35) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 40 | [SRC-1DB27D9318-L000040](../.github/workflows/tests.yml#L40) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 41 | [SRC-1DB27D9318-L000041](../.github/workflows/tests.yml#L41) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L42) | مفتاح إعداد YAML | omarai | 42 | [SRC-1DB27D9318-L000042](../.github/workflows/tests.yml#L42) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L71) | مفتاح إعداد YAML | http | 71 | [SRC-1DB27D9318-L000071](../.github/workflows/tests.yml#L71) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-84F7DE82AF-L000001](../.github/workflows/update_index.yml#L1) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-84F7DE82AF-L000002](../.github/workflows/update_index.yml#L2) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L4) | مفتاح إعداد YAML | push | 4 | [SRC-84F7DE82AF-L000004](../.github/workflows/update_index.yml#L4) |
@@ -1911,13 +1916,15 @@
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L100) | عنوان Markdown (H3) | البدء بعد الإعداد | 100 | [SRC-D911B73392-L000100](RESEARCH_CONNECTORS_AR.md#L100) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L110) | عنوان Markdown (H2) | 5. اختبار حي للاتصال | 110 | [SRC-D911B73392-L000110](RESEARCH_CONNECTORS_AR.md#L110) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L124) | عنوان Markdown (H2) | 6. قراءة الأدلة والتحقق منها | 124 | [SRC-D911B73392-L000124](RESEARCH_CONNECTORS_AR.md#L124) |
-| [docs/search_code.py](search_code.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_DIRECTORIES | 21 | [SRC-69F3587825-L000021](search_code.py#L21) |
-| [docs/search_code.py](search_code.py#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SECRET_BASENAMES | 50 | [SRC-69F3587825-L000050](search_code.py#L50) |
-| [docs/search_code.py](search_code.py#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_NAME_RE | 77 | [SRC-69F3587825-L000077](search_code.py#L77) |
-| [docs/search_code.py](search_code.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_CONFIG_SUFFIXES | 81 | [SRC-69F3587825-L000081](search_code.py#L81) |
-| [docs/search_code.py](search_code.py#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_SEARCH_FILE_BYTES | 84 | [SRC-69F3587825-L000084](search_code.py#L84) |
-| [docs/search_code.py](search_code.py#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_EXTENSIONS | 100 | [SRC-69F3587825-L000100](search_code.py#L100) |
-| [docs/search_code.py](search_code.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 117 | [SRC-69F3587825-L000117](search_code.py#L117) |
+| [docs/search_code.py](search_code.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_DIRECTORIES | 23 | [SRC-69F3587825-L000023](search_code.py#L23) |
+| [docs/search_code.py](search_code.py#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SECRET_BASENAMES | 52 | [SRC-69F3587825-L000052](search_code.py#L52) |
+| [docs/search_code.py](search_code.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_NAME_RE | 79 | [SRC-69F3587825-L000079](search_code.py#L79) |
+| [docs/search_code.py](search_code.py#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_CONFIG_SUFFIXES | 83 | [SRC-69F3587825-L000083](search_code.py#L83) |
+| [docs/search_code.py](search_code.py#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_SEARCH_FILE_BYTES | 86 | [SRC-69F3587825-L000086](search_code.py#L86) |
+| [docs/search_code.py](search_code.py#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_EXTENSIONS | 102 | [SRC-69F3587825-L000102](search_code.py#L102) |
+| [docs/search_code.py](search_code.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 119 | [SRC-69F3587825-L000119](search_code.py#L119) |
+| [docs/search_code.py](search_code.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 124 | [SRC-69F3587825-L000124](search_code.py#L124) |
+| [docs/search_code.py](search_code.py#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 127 | [SRC-69F3587825-L000127](search_code.py#L127) |
 | [pyproject.toml](../pyproject.toml#L1) | قسم TOML | build-system | 1 | [SRC-50C86B7ED8-L000001](../pyproject.toml#L1) |
 | [pyproject.toml](../pyproject.toml#L2) | مفتاح إعداد TOML | requires | 2 | [SRC-50C86B7ED8-L000002](../pyproject.toml#L2) |
 | [pyproject.toml](../pyproject.toml#L3) | مفتاح إعداد TOML | build-backend | 3 | [SRC-50C86B7ED8-L000003](../pyproject.toml#L3) |
@@ -2188,6 +2195,8 @@
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 92 | [SRC-C353AAAC10-L000092](../tests/test_request_budget.py#L92) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_PATH | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 107 | [SRC-2614DCB6FB-L000107](../tests/test_search_code.py#L107) |
+| [tests/test_search_code.py](../tests/test_search_code.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 108 | [SRC-2614DCB6FB-L000108](../tests/test_search_code.py#L108) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 129 | [SRC-F725E90B2A-L000129](../tests/test_web_agent.py#L129) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L386) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 386 | [SRC-F725E90B2A-L000386](../tests/test_web_agent.py#L386) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L425) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 425 | [SRC-F725E90B2A-L000425](../tests/test_web_agent.py#L425) |

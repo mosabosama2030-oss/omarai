@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001097 إلى SRC-1AE03B9EC3-L001896
+- النطاق: SRC-1AE03B9EC3-L001099 إلى SRC-1AE03B9EC3-L001898
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001097](../../agents/web_agent.py#L1097) | 1097 | `""` | — |
-| [SRC-1AE03B9EC3-L001098](../../agents/web_agent.py#L1098) | 1098 | `"        import httpx"` | — |
 | [SRC-1AE03B9EC3-L001099](../../agents/web_agent.py#L1099) | 1099 | `""` | — |
 | [SRC-1AE03B9EC3-L001100](../../agents/web_agent.py#L1100) | 1100 | `"        response = httpx.get("` | — |
 | [SRC-1AE03B9EC3-L001101](../../agents/web_agent.py#L1101) | 1101 | `"            \"https://www.bing.com/search\","` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L001894](../../agents/web_agent.py#L1894) | 1894 | `"            else:"` | — |
 | [SRC-1AE03B9EC3-L001895](../../agents/web_agent.py#L1895) | 1895 | `"                warnings.append("` | — |
 | [SRC-1AE03B9EC3-L001896](../../agents/web_agent.py#L1896) | 1896 | `"                    \"Instagram direct API is not configured; indexed public Instagram pages are still searched.\""` | — |
+| [SRC-1AE03B9EC3-L001897](../../agents/web_agent.py#L1897) | 1897 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001898](../../agents/web_agent.py#L1898) | 1898 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002697 إلى SRC-1AE03B9EC3-L003496
+- النطاق: SRC-1AE03B9EC3-L002699 إلى SRC-1AE03B9EC3-L003498
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L002697](../../agents/web_agent.py#L2697) | 2697 | `"                    \"HTTP-Referer\": \"https://github.com/mosabosama2030-oss/omarai\","` | — |
-| [SRC-1AE03B9EC3-L002698](../../agents/web_agent.py#L2698) | 2698 | `"                    \"X-Title\": \"Omarai Web Agent\","` | — |
 | [SRC-1AE03B9EC3-L002699](../../agents/web_agent.py#L2699) | 2699 | `"                },"` | — |
 | [SRC-1AE03B9EC3-L002700](../../agents/web_agent.py#L2700) | 2700 | `"                method=\"POST\","` | — |
 | [SRC-1AE03B9EC3-L002701](../../agents/web_agent.py#L2701) | 2701 | `"            )"` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L003494](../../agents/web_agent.py#L3494) | 3494 | `"                if is_configured"` | — |
 | [SRC-1AE03B9EC3-L003495](../../agents/web_agent.py#L3495) | 3495 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003496](../../agents/web_agent.py#L3496) | 3496 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L003497](../../agents/web_agent.py#L3497) | 3497 | `"                social_results, social_warnings = self._search_social("` | — |
+| [SRC-1AE03B9EC3-L003498](../../agents/web_agent.py#L3498) | 3498 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |

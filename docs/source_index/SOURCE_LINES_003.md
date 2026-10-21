@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000157 إلى SRC-1AE03B9EC3-L000296
+- النطاق: SRC-59CF4B7DE8-L000159 إلى SRC-1AE03B9EC3-L000298
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-59CF4B7DE8-L000157](../../agents/research.py#L157) | 157 | `""` | — |
-| [SRC-59CF4B7DE8-L000158](../../agents/research.py#L158) | 158 | `"def detect_freshness(question: str) -> bool:"` | — |
 | [SRC-59CF4B7DE8-L000159](../../agents/research.py#L159) | 159 | `"    return _contains_any(question, _FRESH_TERMS)"` | — |
 | [SRC-59CF4B7DE8-L000160](../../agents/research.py#L160) | 160 | `""` | — |
 | [SRC-59CF4B7DE8-L000161](../../agents/research.py#L161) | 161 | `""` | — |
@@ -825,3 +823,5 @@
 | [SRC-1AE03B9EC3-L000294](../../agents/web_agent.py#L294) | 294 | `"        self.base_url = os.getenv("` | — |
 | [SRC-1AE03B9EC3-L000295](../../agents/web_agent.py#L295) | 295 | `"            \"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\""` | — |
 | [SRC-1AE03B9EC3-L000296](../../agents/web_agent.py#L296) | 296 | `"        ).strip().rstrip(\"/\")"` | — |
+| [SRC-1AE03B9EC3-L000297](../../agents/web_agent.py#L297) | 297 | `"        # Pin explicit role models for more consistent behaviour than a random free router."` | — |
+| [SRC-1AE03B9EC3-L000298](../../agents/web_agent.py#L298) | 298 | `"        # OMARAI_LLM_MODEL remains a global override for users who want one model everywhere."` | — |
