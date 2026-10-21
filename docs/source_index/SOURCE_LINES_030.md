@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000579 إلى SRC-F725E90B2A-L001378
+- النطاق: SRC-F725E90B2A-L000571 إلى SRC-F725E90B2A-L001370
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000571](../../tests/test_web_agent.py#L571) | 571 | `""` | — |
+| [SRC-F725E90B2A-L000572](../../tests/test_web_agent.py#L572) | 572 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000573](../../tests/test_web_agent.py#L573) | 573 | `"    for name in ("` | — |
+| [SRC-F725E90B2A-L000574](../../tests/test_web_agent.py#L574) | 574 | `"        \"OMARAI_LLM_MODEL\","` | — |
+| [SRC-F725E90B2A-L000575](../../tests/test_web_agent.py#L575) | 575 | `"        \"OMARAI_PLANNER_MODEL\","` | — |
+| [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
+| [SRC-F725E90B2A-L000577](../../tests/test_web_agent.py#L577) | 577 | `"        \"OMARAI_REVIEW_MODEL\","` | — |
+| [SRC-F725E90B2A-L000578](../../tests/test_web_agent.py#L578) | 578 | `"        \"OMARAI_LLM_FALLBACK_MODEL\","` | — |
 | [SRC-F725E90B2A-L000579](../../tests/test_web_agent.py#L579) | 579 | `"    ):"` | — |
 | [SRC-F725E90B2A-L000580](../../tests/test_web_agent.py#L580) | 580 | `"        monkeypatch.delenv(name, raising=False)"` | — |
 | [SRC-F725E90B2A-L000581](../../tests/test_web_agent.py#L581) | 581 | `""` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L001368](../../tests/test_web_agent.py#L1368) | 1368 | `""` | — |
 | [SRC-F725E90B2A-L001369](../../tests/test_web_agent.py#L1369) | 1369 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001370](../../tests/test_web_agent.py#L1370) | 1370 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001371](../../tests/test_web_agent.py#L1371) | 1371 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L001372](../../tests/test_web_agent.py#L1372) | 1372 | `""` | — |
-| [SRC-F725E90B2A-L001373](../../tests/test_web_agent.py#L1373) | 1373 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001374](../../tests/test_web_agent.py#L1374) | 1374 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001375](../../tests/test_web_agent.py#L1375) | 1375 | `"        lambda plan: pytest.fail(\"Self-description must not call external search\"),"` | — |
-| [SRC-F725E90B2A-L001376](../../tests/test_web_agent.py#L1376) | 1376 | `"    )"` | — |
-| [SRC-F725E90B2A-L001377](../../tests/test_web_agent.py#L1377) | 1377 | `""` | — |
-| [SRC-F725E90B2A-L001378](../../tests/test_web_agent.py#L1378) | 1378 | `"    result = agent.answer(\"كيف تبحث أنت في الإنترنت؟\")"` | — |

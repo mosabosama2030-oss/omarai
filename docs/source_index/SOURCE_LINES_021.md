@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000068 إلى SRC-90FAA34ADE-L000715
+- النطاق: SRC-547CAF1FE3-L000060 إلى SRC-90FAA34ADE-L000707
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000060](../../scripts/sqlite_backup_restore.py#L60) | 60 | `"    source_path = Path(source).expanduser().resolve(strict=True)"` | — |
+| [SRC-547CAF1FE3-L000061](../../scripts/sqlite_backup_restore.py#L61) | 61 | `"    requested_destination = Path(destination).expanduser()"` | — |
+| [SRC-547CAF1FE3-L000062](../../scripts/sqlite_backup_restore.py#L62) | 62 | `"    destination_path = requested_destination.resolve(strict=False)"` | — |
+| [SRC-547CAF1FE3-L000063](../../scripts/sqlite_backup_restore.py#L63) | 63 | `""` | — |
+| [SRC-547CAF1FE3-L000064](../../scripts/sqlite_backup_restore.py#L64) | 64 | `"    if not source_path.is_file():"` | — |
+| [SRC-547CAF1FE3-L000065](../../scripts/sqlite_backup_restore.py#L65) | 65 | `"        raise BackupError(\"source must be an existing regular file\")"` | — |
+| [SRC-547CAF1FE3-L000066](../../scripts/sqlite_backup_restore.py#L66) | 66 | `"    if source_path == destination_path:"` | — |
+| [SRC-547CAF1FE3-L000067](../../scripts/sqlite_backup_restore.py#L67) | 67 | `"        raise BackupError(\"source and destination must be different paths\")"` | — |
 | [SRC-547CAF1FE3-L000068](../../scripts/sqlite_backup_restore.py#L68) | 68 | `"    # Check the user-supplied path before resolving it so a dangling symlink is"` | — |
 | [SRC-547CAF1FE3-L000069](../../scripts/sqlite_backup_restore.py#L69) | 69 | `"    # never mistaken for an absent destination and followed to a new target."` | — |
 | [SRC-547CAF1FE3-L000070](../../scripts/sqlite_backup_restore.py#L70) | 70 | `"    if requested_destination.exists() or requested_destination.is_symlink() or destination_path.exists():"` | — |
@@ -817,11 +825,3 @@
 | [SRC-90FAA34ADE-L000705](../../tests/fixtures/answer_quality_cases.json#L705) | 705 | `"          \"Revenue increased 4% this quarter.\""` | — |
 | [SRC-90FAA34ADE-L000706](../../tests/fixtures/answer_quality_cases.json#L706) | 706 | `"        ]"` | — |
 | [SRC-90FAA34ADE-L000707](../../tests/fixtures/answer_quality_cases.json#L707) | 707 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000708](../../tests/fixtures/answer_quality_cases.json#L708) | 708 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000709](../../tests/fixtures/answer_quality_cases.json#L709) | 709 | `"        \"Repeats 400% as fact\","` | — |
-| [SRC-90FAA34ADE-L000710](../../tests/fixtures/answer_quality_cases.json#L710) | 710 | `"        \"Treats embedded page instruction as authoritative\""` | — |
-| [SRC-90FAA34ADE-L000711](../../tests/fixtures/answer_quality_cases.json#L711) | 711 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000712](../../tests/fixtures/answer_quality_cases.json#L712) | 712 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000713](../../tests/fixtures/answer_quality_cases.json#L713) | 713 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000714](../../tests/fixtures/answer_quality_cases.json#L714) | 714 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000715](../../tests/fixtures/answer_quality_cases.json#L715) | 715 | `"      \"case_id\": \"AQ-025\","` | — |

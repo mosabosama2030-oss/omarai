@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002179 إلى SRC-DE7EABE998-L000241
+- النطاق: SRC-F725E90B2A-L002171 إلى SRC-DE7EABE998-L000233
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002171](../../tests/test_web_agent.py#L2171) | 2171 | `""` | — |
+| [SRC-F725E90B2A-L002172](../../tests/test_web_agent.py#L2172) | 2172 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L002173](../../tests/test_web_agent.py#L2173) | 2173 | `"        seen.update(research_plan)"` | — |
+| [SRC-F725E90B2A-L002174](../../tests/test_web_agent.py#L2174) | 2174 | `"        source = sample_source(0)"` | — |
+| [SRC-F725E90B2A-L002175](../../tests/test_web_agent.py#L2175) | 2175 | `"        source.update({"` | — |
+| [SRC-F725E90B2A-L002176](../../tests/test_web_agent.py#L2176) | 2176 | `"            \"title\": \"مطلوب شقة تمليك في العاصمة الإدارية\","` | — |
+| [SRC-F725E90B2A-L002177](../../tests/test_web_agent.py#L2177) | 2177 | `"            \"snippet\": \"صاحب المنشور يبحث عن شقة للشراء\","` | — |
+| [SRC-F725E90B2A-L002178](../../tests/test_web_agent.py#L2178) | 2178 | `"            \"page_text\": \"مطلوب شقة تمليك في العاصمة الإدارية، أريد الشراء.\","` | — |
 | [SRC-F725E90B2A-L002179](../../tests/test_web_agent.py#L2179) | 2179 | `"            \"queries\": list(research_plan[\"queries\"]),"` | — |
 | [SRC-F725E90B2A-L002180](../../tests/test_web_agent.py#L2180) | 2180 | `"        })"` | — |
 | [SRC-F725E90B2A-L002181](../../tests/test_web_agent.py#L2181) | 2181 | `"        return [source], [], {"` | — |
@@ -817,11 +825,3 @@
 | [SRC-DE7EABE998-L000231](../../web/agent.html#L231) | 231 | `" const coverageText=lead"` | — |
 | [SRC-DE7EABE998-L000232](../../web/agent.html#L232) | 232 | `"  ? (leadResearchIncomplete"` | — |
 | [SRC-DE7EABE998-L000233](../../web/agent.html#L233) | 233 | `"     ? \"تعطل البحث أو لم يكتمل التقرير؛ الأعداد غير المتاحة ليست صفرًا، ولا يمكن استنتاج عدم وجود عملاء.\""` | — |
-| [SRC-DE7EABE998-L000234](../../web/agent.html#L234) | 234 | `"     : noQualifiedLeads"` | — |
-| [SRC-DE7EABE998-L000235](../../web/agent.html#L235) | 235 | `"      ? \"لم تثبت النتائج وجود أي عميل محتمل. عدد صفحات العقارات أو النطاقات ليس عدد المشترين.\""` | — |
-| [SRC-DE7EABE998-L000236](../../web/agent.html#L236) | 236 | `"      : \"الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.\")"` | — |
-| [SRC-DE7EABE998-L000237](../../web/agent.html#L237) | 237 | `"  : researchErrorOutcome"` | — |
-| [SRC-DE7EABE998-L000238](../../web/agent.html#L238) | 238 | `"   ? \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا.\""` | — |
-| [SRC-DE7EABE998-L000239](../../web/agent.html#L239) | 239 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
-| [SRC-DE7EABE998-L000240](../../web/agent.html#L240) | 240 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
-| [SRC-DE7EABE998-L000241](../../web/agent.html#L241) | 241 | `" const attemptText=result&&result.search_attempted===true"` | — |

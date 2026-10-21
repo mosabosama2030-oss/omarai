@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001539 إلى SRC-E73001D9AC-L000111
+- النطاق: SRC-E599346ABE-L001539 إلى SRC-E73001D9AC-L000103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -600,39 +600,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-18ADDFCAF4-L000001](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) | 1 | `"# سجل حالة إغلاق تدقيق Omarai — مؤشر إلى السجل المركزي"` | — |
+| [SRC-18ADDFCAF4-L000001](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) | 1 | `"# حالة إغلاق تدقيق Omarai — 21 أكتوبر 2026"` | — |
 | [SRC-18ADDFCAF4-L000002](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L2) | 2 | `""` | — |
-| [SRC-18ADDFCAF4-L000003](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L3) | 3 | `"**تاريخ اللقطة:** 21 أكتوبر 2026  "` | — |
-| [SRC-18ADDFCAF4-L000004](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L4) | 4 | ``"**خط أساس الدمج:** `main` عند `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`  "`` | — |
-| [SRC-18ADDFCAF4-L000005](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L5) | 5 | `"**طلب المعالجة:** [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76) — مفتوح، غير مدمج.  "` | — |
-| [SRC-18ADDFCAF4-L000006](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L6) | 6 | ``"**السجل التفصيلي الوحيد:** [`OMARAI_REMEDIATION_REGISTER_AR.md`](OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
-| [SRC-18ADDFCAF4-L000007](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L7) | 7 | `""` | — |
-| [SRC-18ADDFCAF4-L000008](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L8) | 8 | `"لا تُكرر قوائم العيوب والتداخلات هنا؛ جميع المعرفات والحالات ومعايير الإغلاق في السجل المركزي."` | — |
-| [SRC-18ADDFCAF4-L000009](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L9) | 9 | `""` | — |
-| [SRC-18ADDFCAF4-L000010](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L10) | 10 | `"## آخر دليل اختبار وحدود الرأس"` | — |
-| [SRC-18ADDFCAF4-L000011](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L11) | 11 | `""` | — |
-| [SRC-18ADDFCAF4-L000012](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L12) | 12 | ``"- آخر تشغيل شامل أخضر قبل تعديل أداة البحث وفحص الفهرس هو [#39651908777](https://github.com/mosabosama2030-oss/omarai/actions/runs/39651908777) على `5a2259ef787d4a4553a503276daf399fa6514f3f`: 380 اختبارًا ناجحًا في كل من Python 3.11 و3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي."`` | — |
-| [SRC-18ADDFCAF4-L000013](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L13) | 13 | ``"- عُدّل `docs/search_code.py` لتوليد روابط مرتبطة بالـSHA/الفرع بدل تثبيتها على `blob/main`، وأضيفت اختبارات لها. كما عُدّل `.github/workflows/tests.yml` لفحص الفهرس الملتزم دون إعادة توليده أولًا."`` | — |
-| [SRC-18ADDFCAF4-L000014](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L14) | 14 | `"- التشغيل [#39652716421](https://github.com/mosabosama2030-oss/omarai/actions/runs/39652716421) كشف فهرسًا قديمًا على لقطة PR merge؛ Ruff نجح، لكن فشل check منع pytest من البدء. بعد ذلك حدّث workflow الفهرسة الملفات المولدة."` | — |
-| [SRC-18ADDFCAF4-L000015](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L15) | 15 | ``"- أحدث رأس شوهد أثناء هذه اللقطة: `1225781d73f1cc10c3e147cd8b8365521d5d215d`. تشغيل [#39652743693](https://github.com/mosabosama2030-oss/omarai/actions/runs/39652743693) عاد بحالة `action_required` بلا jobs، لذلك لا يوجد بعد تشغيل كامل أخضر يثبت تعديلات أداة البحث وCI الجديدة. راجع رأس PR الحي؛ قد تتغير الملفات المولدة آليًا بعد هذه اللقطة."`` | — |
-| [SRC-18ADDFCAF4-L000016](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L16) | 16 | ``"- لا دمج ولا نشر. E3/E4 مُصلحان على `main` بواسطة #75؛ بقية الإصلاحات في مرشح #76 تظل خارج `main` حتى قرار بشري."`` | — |
+| [SRC-18ADDFCAF4-L000003](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L3) | 3 | ``"**خط أساس main:** `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`  "`` | — |
+| [SRC-18ADDFCAF4-L000004](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L4) | 4 | `"**مرشح الإصلاح الموحد:** [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76) — مفتوح للمراجعة البشرية، غير مدمج.  "` | — |
+| [SRC-18ADDFCAF4-L000005](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L5) | 5 | ``"**السجل التفصيلي الوحيد:** [`OMARAI_REMEDIATION_REGISTER_AR.md`](OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
+| [SRC-18ADDFCAF4-L000006](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L6) | 6 | `""` | — |
+| [SRC-18ADDFCAF4-L000007](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L7) | 7 | `"## الإصلاحات البرمجية وما تم التحقق منه"` | — |
+| [SRC-18ADDFCAF4-L000008](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L8) | 8 | `""` | — |
+| [SRC-18ADDFCAF4-L000009](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L9) | 9 | ``"- **E3 — المؤشر الرقمي لتغطية الأدلة:** مُصلح على `main` عبر #75؛ لا يُعرض بوصفه احتمالًا لصحة الإجابة."`` | — |
+| [SRC-18ADDFCAF4-L000010](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L10) | 10 | ``"- **E4 — عمق البحث الاحتياطي:** مُصلح على `main` عبر #75، مع اختبارات القياسي والعميق."`` | — |
+| [SRC-18ADDFCAF4-L000011](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L11) | 11 | `"- **إغلاق النواة في #76:** كشف الغموض وتوحيد أسئلة المتابعة، فحوص محافظة لسلامة الأدلة، تشخيصات موصلات وجلب صفحات، منع تحويلات غير آمنة في موفري البحث المغطّاة، CSP hashes ورؤوس حماية، هوية SHA للبناء، واختيار مسار SQLite."` | — |
+| [SRC-18ADDFCAF4-L000012](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L12) | 12 | ``"- **البحث المحلي والفهرسة:** أضيف `docs/search_code.py` مع دعم `--ref` / `OMARAI_GITHUB_REF` واشتقاق مرجع SHA موثوق عند وجوده، مع اختبارات للروابط والـCLI. كما أُصلح سباق CI والفهرس: اختبارات المراجع غير `main` تولد الفهرس في مساحة الاختبار المؤقتة ثم تتحقق من الاتساق، بينما يبقى تحقق `main` صارمًا على المخرجات الملتزمة."`` | — |
+| [SRC-18ADDFCAF4-L000013](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L13) | 13 | ``"- **أحدث CI كامل ناجح لتغييرات الكود والاختبارات والـworkflow:** الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، تشغيل PR [#39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608): **384 passed على Python 3.11 و384 passed على Python 3.12**، وRuff، ومزامنة/التحقق من الفهرس، وبناء الحاوية وprotected API smoke نجحت. تشغيل push [#39653072071](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653072071) وworkflow الفهرسة [#39653072074](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653072074) نجحا كذلك."`` | — |
+| [SRC-18ADDFCAF4-L000014](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L14) | 14 | ``"- **حد دقة SHA:** آخر رأس PR شوهد قبل تحديث الوثيقة كان `b848f96ab992dd876237f399391f69996151426e`. المقارنة من `f2f1bb3...` إلى ذلك الرأس أظهرت تغييرات في الوثائق وصفحات الفهرس المولّدة فقط؛ لم تتغير ملفات التطبيق أو الاختبارات أو Workflow بعد الالتزام المختبر. قد يضيف مولد الفهرس commits توثيقية لاحقة؛ راجع رأس PR الحي قبل الدمج."`` | — |
+| [SRC-18ADDFCAF4-L000015](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L15) | 15 | `""` | — |
+| [SRC-18ADDFCAF4-L000016](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L16) | 16 | `"## ما لا يُعد مكتملًا رغم نجاح CI"` | — |
 | [SRC-18ADDFCAF4-L000017](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L17) | 17 | `""` | — |
-| [SRC-18ADDFCAF4-L000018](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L18) | 18 | `"## تسوية طلبات الدمج"` | — |
+| [SRC-18ADDFCAF4-L000018](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L18) | 18 | `"هذه الحدود لا يمكن إغلاقها بنتائج Pytest أو Docker وحدها:"` | — |
 | [SRC-18ADDFCAF4-L000019](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L19) | 19 | `""` | — |
-| [SRC-18ADDFCAF4-L000020](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L20) | 20 | `"- #63 و#74 و#72 و#25 و#26 أُغلقت دون دمج مع تعليقات تشرح الاستبدال/التقادم؛ لا تدمج فروعها القديمة."` | — |
-| [SRC-18ADDFCAF4-L000021](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L21) | 21 | `"- #12 أُغلق باعتباره مكررًا من #68."` | — |
-| [SRC-18ADDFCAF4-L000022](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L22) | 22 | `"- #76 هو مرشح الدمج الوحيد المفتوح في آخر فحص."` | — |
-| [SRC-18ADDFCAF4-L000023](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L23) | 23 | `"- #68 يبقى مفتوحًا لتقرير مستقل كامل وقبول التشغيل. ملخص Grok المرسل في المحادثة مصدره المدير البشري، وليس دليلًا على تقرير جديد وصل مباشرة إلى GitHub."` | — |
-| [SRC-18ADDFCAF4-L000024](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L24) | 24 | `"- #11 يبقى مفتوحًا إلى أن يحدث اختبار واجهة يدوي على متصفح/Android، بما يشمل RTL والعرض الضيق والتحميل والفشل والروابط ومنع عرض إجابة قديمة."` | — |
-| [SRC-18ADDFCAF4-L000025](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L25) | 25 | `"- #73 خارطة طريق مستقبلية مقترحة؛ ليست مانعًا من إغلاق الأساس الحالي."` | — |
-| [SRC-18ADDFCAF4-L000026](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L26) | 26 | `""` | — |
-| [SRC-18ADDFCAF4-L000027](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L27) | 27 | `"## اختبارات تتطلب بيئة/موافقة منفصلة"` | — |
-| [SRC-18ADDFCAF4-L000028](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L28) | 28 | `""` | — |
-| [SRC-18ADDFCAF4-L000029](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L29) | 29 | ``"تبقى `NOT_RUN/UNKNOWN`: Hosted smoke على خدمة منشورة؛ إثبات اتصال كل موفر بحث/نموذج؛ تقييم دلالي مرجعي لحالات AQ-001–045؛ Volume دائم مع إثبات البقاء والنسخ الاحتياطي/الاستعادة؛ اختبار حمل؛ red-team مستقل حي. تعدد المستأجرين غير مدعوم عمدًا في النطاق أحادي المشغّل. لا يُدّعى اجتياز أي من هذه البنود بالاستناد إلى Pytest أو Docker وحدهما."`` | — |
+| [SRC-18ADDFCAF4-L000020](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L20) | 20 | `"\| المجال \| الحالة \| معيار الإغلاق \|"` | — |
+| [SRC-18ADDFCAF4-L000021](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L21) | 21 | `"\|---\|---\|---\|"` | — |
+| [SRC-18ADDFCAF4-L000022](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L22) | 22 | ``"\| Hosted smoke إلى خدمة منشورة فعلية ومطابقة SHA \| `NOT_RUN` \| مضيف HTTPS مُعتمد، الأسرار في بيئة آمنة، نجاح health/auth/diagnostics ومطابقة SHA \|"`` | — |
+| [SRC-18ADDFCAF4-L000023](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L23) | 23 | ``"\| موفرو البحث والنموذج الحيون \| `NOT_RUN / UNKNOWN` \| فحص كل موفر مفعّل على البيئة المستهدفة بوقت/تكلفة موثّقين \|"`` | — |
+| [SRC-18ADDFCAF4-L000024](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L24) | 24 | ``"\| التقييم الدلالي لحالات AQ-001–045 \| `PARTIAL / LIVE QUALITY NOT_RUN` \| تنفيذ المعيار على الإجابات الفعلية مع مراجع موثقة ومراجعة بشرية للأحكام \|"`` | — |
+| [SRC-18ADDFCAF4-L000025](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L25) | 25 | ``"\| Volume دائم وSQLite backup/restore على مضيف فعلي \| `NOT_RUN` \| إثبات بقاء السجل بعد إعادة التشغيل/النشر، ثم استعادة نسخة احتياطية ناجحة \|"`` | — |
+| [SRC-18ADDFCAF4-L000026](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L26) | 26 | ``"\| اختبار الحمل والـrate limit الموزع \| `NOT_RUN` \| قياسات قابلة للتكرار، مع زمن الاستجابة والأخطاء والموارد والتزامن \|"`` | — |
+| [SRC-18ADDFCAF4-L000027](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L27) | 27 | ``"\| Prompt-injection red-team مستقل وحي \| `PARTIAL / NOT_RUN` \| مصفوفة هجمات ومراجعة نتائج مستقلة في بيئة مخولة \|"`` | — |
+| [SRC-18ADDFCAF4-L000028](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L28) | 28 | ``"\| تعدد المستأجرين وعزل بياناتهم \| `NOT_REQUIRED للنطاق الحالي؛ BLOCKER للتوسع العام` \| هوية وصلاحيات وملكية سجلات واختبارات عزل قبل خدمة عدة عملاء \|"`` | — |
+| [SRC-18ADDFCAF4-L000029](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L29) | 29 | ``"\| تقرير Grok المستقل الكامل \| `UNKNOWN` \| تقرير فعلي قابل للوصول مرتبط بـSHA وأدلة ونتائج قابلة للمراجعة \|"`` | — |
 | [SRC-18ADDFCAF4-L000030](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L30) | 30 | `""` | — |
-| [SRC-18ADDFCAF4-L000031](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L31) | 31 | `"## قاعدة الإغلاق"` | — |
+| [SRC-18ADDFCAF4-L000031](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L31) | 31 | `"## حالة طلبات الدمج والتكليفات"` | — |
 | [SRC-18ADDFCAF4-L000032](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L32) | 32 | `""` | — |
-| [SRC-18ADDFCAF4-L000033](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L33) | 33 | `"هذه الوثيقة مؤشر إلى السجل المركزي لا شهادة جاهزية إنتاج. لا يُغلق بند بلا دليل مرتبط بـSHA واختبار مناسب، ولا يُدمج #76 تلقائيًا."` | — |
+| [SRC-18ADDFCAF4-L000033](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L33) | 33 | `"- #76 هو PR التغييرات الموحد والوحيد المفتوح وقت آخر فحص."` | — |
+| [SRC-18ADDFCAF4-L000034](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L34) | 34 | ``"- #63 و#74 و#72 و#25 و#26 أُغلقت دون دمج بسبب الاستبدال/التقادم بعد نقل العمل المطلوب إلى مسار أحدث أو التحقق من وجود البديل على `main`. لا تُدمج فروعها القديمة."`` | — |
+| [SRC-18ADDFCAF4-L000035](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L35) | 35 | `"- #12 أُغلق باعتباره مكررًا؛ #68 باقٍ لاستكمال التدقيق المستقل والقبول الحي."` | — |
+| [SRC-18ADDFCAF4-L000036](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L36) | 36 | `"- #11 باقٍ حتى اختبار واجهة يدوي على Android/متصفح، يشمل RTL والعرض الضيق والتحمّل والفشل والروابط ومنع عرض إجابة قديمة."` | — |
+| [SRC-18ADDFCAF4-L000037](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L37) | 37 | `"- #73 خارطة طريق لاحقة وليست جزءًا من بوابة الإصلاح الحالية."` | — |
+| [SRC-18ADDFCAF4-L000038](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L38) | 38 | `""` | — |
+| [SRC-18ADDFCAF4-L000039](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L39) | 39 | `"## القرار الهندسي"` | — |
+| [SRC-18ADDFCAF4-L000040](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L40) | 40 | `""` | — |
+| [SRC-18ADDFCAF4-L000041](../OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L41) | 41 | ``"**النواة والاختبارات الآلية على مرشح #76 مُتحقق منها على الالتزام `f2f1bb3...`، لكن بوابات القبول التشغيلي الحي لم تُغلق.** لا دمج ولا نشر ولا تغيير أسرار/تكلفة تلقائيًا. يستطيع المدير البشري مراجعة #76 وقرار دمجه؛ تظل بنود الاستضافة/التخزين/الحمل والمراجعة المستقلة مفتوحة حتى ظهور دليلها المباشر."`` | — |
 ## وثائق وفهرسة
 
 ### FILE-21D5D044E2 — [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L1)
@@ -853,11 +861,3 @@
 | [SRC-E73001D9AC-L000101](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L101) | 101 | `"16. التصميم وتجربة المستخدم وإمكانية الوصول وRTL."` | — |
 | [SRC-E73001D9AC-L000102](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L102) | 102 | `"17. جودة اللغة العربية والتوطين واتجاهات النصوص."` | — |
 | [SRC-E73001D9AC-L000103](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L103) | 103 | `"18. التكلفة والقيود التشغيلية واستهلاك حصص الخدمات المجانية."` | — |
-| [SRC-E73001D9AC-L000104](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L104) | 104 | `"19. إدارة الحوادث والاستجابة الأمنية والتعافي من الكوارث."` | — |
-| [SRC-E73001D9AC-L000105](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L105) | 105 | `"20. الحوكمة والتوثيق وإدارة التغيير."` | — |
-| [SRC-E73001D9AC-L000106](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L106) | 106 | `""` | — |
-| [SRC-E73001D9AC-L000107](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L107) | 107 | `"### 4.1 قاعدة المراجعة"` | — |
-| [SRC-E73001D9AC-L000108](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L108) | 108 | `""` | — |
-| [SRC-E73001D9AC-L000109](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L109) | 109 | `"- التغييرات الصغيرة منخفضة المخاطر تخضع لاختبارات الوحدة والمراجعة المعتادة."` | — |
-| [SRC-E73001D9AC-L000110](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L110) | 110 | `"- التغييرات التي تمس الإنترنت أو الصلاحيات أو الذاكرة المشتركة أو التخزين أو تنفيذ الأدوات تخضع لمراجعة أمنية واختبارات فشل مناسبة."` | — |
-| [SRC-E73001D9AC-L000111](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L111) | 111 | `"- التغييرات التي تمس المعمارية أو التوسع أو حدود الثقة تخضع لمراجعة معمارية، وتهديدات، وأداء، وتشغيل، وتوثيق قرار."` | — |
