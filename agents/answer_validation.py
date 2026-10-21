@@ -203,9 +203,9 @@ def audit_answer_integrity(
             available_tokens = source_token_sets[source_index - 1]
             overlap = [token for token in claim_tokens if token in available_tokens]
             ratio = len(overlap) / len(claim_tokens) if claim_tokens else 0.0
-            enough_overlap = bool(overlap) and (
-                ratio >= 0.25 if len(claim_tokens) >= 4 else len(overlap) >= 1
-            )
+            # A lexical match is only a weak proxy for relevance, not entailment.
+            # Require both relative coverage and at least two content-token matches.
+            enough_overlap = len(overlap) >= 2 and ratio >= 0.5
             cited_checks.append({
                 "source_index": source_index,
                 "status": "lexical_overlap_signal_found" if enough_overlap else "weak_lexical_overlap",
