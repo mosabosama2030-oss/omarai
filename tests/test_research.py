@@ -109,3 +109,16 @@ def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():
     ])
     assert report["unique_domains"] == 1
     assert report["coverage_level"] == "محدود"
+
+
+
+def test_standard_fallback_plan_does_not_add_deep_research_query():
+    plan = fallback_plan("اشرح طريقة عمل المحرك الكهربائي")
+    assert plan["depth"] == "standard"
+    assert not any("مصادر موثوقة تقارير إحصاءات" in query for query in plan["queries"])
+
+
+def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():
+    plan = fallback_plan("قارن مميزات وعيوب المحرك الكهربائي")
+    assert plan["depth"] == "deep"
+    assert any("مصادر موثوقة تقارير إحصاءات" in query for query in plan["queries"])

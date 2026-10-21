@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000084 إلى SRC-3451CC474D-L000652
+- النطاق: SRC-B3062EB677-L000083 إلى SRC-3451CC474D-L000651
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
 | [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
 | [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
 | [SRC-B3062EB677-L000086](../../tests/test_answer_quality_runner.py#L86) | 86 | `"            \"http://127.0.0.1:9\","` | — |
@@ -824,4 +825,3 @@
 | [SRC-3451CC474D-L000649](../../tests/test_api.py#L649) | 649 | `"                break"` | — |
 | [SRC-3451CC474D-L000650](../../tests/test_api.py#L650) | 650 | `"            response.extend(chunk)"` | — |
 | [SRC-3451CC474D-L000651](../../tests/test_api.py#L651) | 651 | `"        elapsed = time.monotonic() - started"` | — |
-| [SRC-3451CC474D-L000652](../../tests/test_api.py#L652) | 652 | `""` | — |

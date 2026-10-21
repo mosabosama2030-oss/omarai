@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003122 إلى SRC-1AE03B9EC3-L003921
+- النطاق: SRC-1AE03B9EC3-L003121 إلى SRC-1AE03B9EC3-L003920
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003121](../../agents/web_agent.py#L3121) | 3121 | `"            try:"` | — |
 | [SRC-1AE03B9EC3-L003122](../../agents/web_agent.py#L3122) | 3122 | `"                social_results, social_warnings = self._search_social("` | — |
 | [SRC-1AE03B9EC3-L003123](../../agents/web_agent.py#L3123) | 3123 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
 | [SRC-1AE03B9EC3-L003124](../../agents/web_agent.py#L3124) | 3124 | `"                )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003918](../../agents/web_agent.py#L3918) | 3918 | `"                    \"بأن البحث لم يُنفّذ أو أن الإنترنت لم يُعد نتائج. لم أتمكن من تقديم \""` | — |
 | [SRC-1AE03B9EC3-L003919](../../agents/web_agent.py#L3919) | 3919 | `"                    \"إجابة مكتملة؛ أعد المحاولة لاحقًا.\""` | — |
 | [SRC-1AE03B9EC3-L003920](../../agents/web_agent.py#L3920) | 3920 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L003921](../../agents/web_agent.py#L3921) | 3921 | `"            elif search_outcome == \"attempted_research_error\":"` | — |

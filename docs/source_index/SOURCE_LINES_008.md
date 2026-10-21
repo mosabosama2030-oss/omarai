@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003922 إلى SRC-EEF2E6447C-L000428
+- النطاق: SRC-1AE03B9EC3-L003921 إلى SRC-EEF2E6447C-L000427
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003921](../../agents/web_agent.py#L3921) | 3921 | `"            elif search_outcome == \"attempted_research_error\":"` | — |
 | [SRC-1AE03B9EC3-L003922](../../agents/web_agent.py#L3922) | 3922 | `"                reason = ("` | — |
 | [SRC-1AE03B9EC3-L003923](../../agents/web_agent.py#L3923) | 3923 | `"                    \"توجد قرائن تشغيلية على بدء محاولة بحث، لكن مسار البحث فشل قبل إنتاج \""` | — |
 | [SRC-1AE03B9EC3-L003924](../../agents/web_agent.py#L3924) | 3924 | `"                    \"تقرير مكتمل. لا أستطيع تحديد عدد النتائج أو المصادر القابلة للاستخدام، \""` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000425](../../api/omarai.py#L425) | 425 | `"                question = data.get(\"question\", \"\")"` | — |
 | [SRC-EEF2E6447C-L000426](../../api/omarai.py#L426) | 426 | `"                if not isinstance(question, str) or not question.strip():"` | — |
 | [SRC-EEF2E6447C-L000427](../../api/omarai.py#L427) | 427 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
-| [SRC-EEF2E6447C-L000428](../../api/omarai.py#L428) | 428 | `"                agent = WebAgent()"` | — |
