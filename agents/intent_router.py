@@ -187,7 +187,7 @@ def resolve_followup_query(question: str, history: Any = None) -> str:
     """
     if not isinstance(question, str):
         return ""
-    query = re.sub(r"\\s+", " ", question).strip()
+    query = re.sub(r"\s+", " ", question).strip()
     if not query:
         return ""
     if len(query) >= 100 or not _has_context(history):
@@ -202,7 +202,7 @@ def resolve_followup_query(question: str, history: Any = None) -> str:
 
     previous = next(
         (
-            re.sub(r"\\s+", " ", item.get("content", "")).strip()
+            re.sub(r"\s+", " ", item.get("content", "")).strip()
             for item in reversed(history[-MAX_CONTEXT_TURNS:])
             if isinstance(item, dict)
             and item.get("role") == "user"
