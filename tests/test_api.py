@@ -851,7 +851,7 @@ def test_csp_hashes_match_all_first_party_inline_content_and_attributes():
             style_blocks += 1
             assert api_module._csp_hash_source(match.group("body")) in policy
         for match in re.finditer(
-            r"""\\bstyle\\s*=\\s*(["'])(.*?)\\1""",
+            r"""\bstyle\s*=\s*(["'])(.*?)\1""",
             document,
             re.IGNORECASE | re.DOTALL,
         ):
@@ -868,3 +868,4 @@ def test_dashboard_uses_delegated_status_action_not_inline_onclick():
     )
     assert 'data-action="save-status"' in dashboard
     assert 'onclick="saveStatus' not in dashboard
+    assert 'data-lead-id=\'"+esc(l.id)+\'">' in dashboard
