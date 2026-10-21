@@ -2587,3 +2587,12 @@ def test_history_search_query_does_not_reuse_stale_topic_after_acknowledgment():
         {"role": "assistant", "content": "العفو."},
     ]
     assert WebAgent._history_search_query("فين؟", history) == "فين؟"
+
+
+def test_frontend_exposes_structured_page_fetch_statuses():
+    html_path = Path(__file__).resolve().parents[1] / "web" / "agent.html"
+    html = html_path.read_text(encoding="utf-8")
+    assert "page_fetch_status" in html
+    assert "partial_extraction" in html
+    assert "لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة" in html
+    assert "تشخيص الموصلات في هذا الطلب" in html
