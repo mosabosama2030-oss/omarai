@@ -29,7 +29,7 @@ jobs:
       # in this isolated checkout and verify consistency. The publisher separately checks
       # and commits the exact generated outputs to the branch.
       - name: Verify committed indexes on generated-index-only main commits
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
         shell: bash
         run: |
           set -euo pipefail
