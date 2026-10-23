@@ -16,17 +16,45 @@ jobs:
         python-version: ["3.11", "3.12"]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2 # main-commit inspection compares against its first parent
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e ".[dev]" ruff
       - run: ruff check agents api cli docs tests
-      # Feature/fix branch checks can race the separate index-publishing workflow.
-      # Regenerate in the isolated test checkout for every non-main ref, then verify
-      # determinism. The index workflow commits generated artifacts to the branch;
-      # main pushes continue to validate that committed index files are already current.
-      - name: Synchronize generated indexes in the non-main test workspace
-        if: github.ref != 'refs/heads/main'
+      # The index-publishing workflow runs in parallel with tests on main. A merge
+      # containing source/docs changes can therefore reach this job before the publisher
+      # refreshes generated files. Check index-only commits strictly; otherwise regenerate
+      # in this isolated checkout and verify consistency. The publisher separately checks
+      # and commits the exact generated outputs to the branch.
+      - name: Verify committed indexes on generated-index-only main commits
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          changed_files="$(git diff --name-only "${GITHUB_SHA}^1" "${GITHUB_SHA}" | sort -u)"
+          if [[ -z "${changed_files}" ]]; then
+            exit 0
+          fi
+
+          has_non_generated=false
+          while IFS= read -r path; do
+            [[ -z "${path}" ]] && continue
+            case "${path}" in
+              docs/MASTER_INDEX.md|docs/SOURCE_LINES_INDEX.md|docs/INDEX_COVERAGE_AUDIT.md|docs/source_index/*)
+                ;;
+              *)
+                has_non_generated=true
+                break
+                ;;
+            esac
+          done <<< "${changed_files}"
+
+          if [[ "${has_non_generated}" == "false" ]]; then
+            python docs/generate_index.py --check
+          fi
+      - name: Synchronize generated indexes in the isolated test workspace
         run: python docs/generate_index.py
       - name: Verify generated living indexes against the full repository
         run: python docs/generate_index.py --check
