@@ -1,15 +1,22 @@
 # Omarai — نطاق التنفيذ الفعلي وحدوده
 
+## Post-merge verification update — 2026-10-23
+
+The current verified `main` commit after PR #76 is `528a2552c0cda809d6c444713466e0e075c13ed9` ([merge commit](https://github.com/mosabosama2030-oss/omarai/commit/528a2552c0cda809d6c444713466e0e075c13ed9)). GitHub Actions run [#39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) passed 384 tests on Python 3.11 and 384 tests on Python 3.12, Ruff, generated-index synchronization/check, Docker build, and protected API smoke. The tested PR head `3fb0288...` and merge commit have no changed files in the GitHub comparison, so their file trees match.
+
+This CI evidence does **not** establish a live hosted deployment, live search/model provider availability, semantic correctness for all AQ-001–AQ-045 cases, durable storage/backup/restore, production load capacity, a complete live red-team, Android/RTL manual acceptance, or an independent full Grok report. Those remain NOT_RUN/UNKNOWN until their specific evidence is recorded in `docs/OMARAI_REMEDIATION_REGISTER_AR.md`.
+
+
 **Purpose:** Keep this scope note aligned with the source code and operator-visible claims. This document is a scope description, not a certification of compliance or live-provider availability.
 
 **Historical baseline reviewed:** `main` at commit `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81` (2026-10-21, after PR #75). PR #76 has since merged; see the post-merge verification update above.  
 **Evidence labels:** `VERIFIED` means directly confirmed in source or a named automated check; `INFERRED` means a bounded conclusion from source structure; `UNKNOWN` means live or environmental evidence is not available. A source-level capability must not be described as a live integration test.
 
-## Current baseline addendum — 2026-10-21
+## Historical baseline snapshot — 2026-10-21
 
 Historical `main` baseline at the time of the original scope review was `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`; the current verified baseline is `528a2552c0cda809d6c444713466e0e075c13ed9` as documented above. Run 39584599539 remains historical evidence for the earlier revision.
 
-This establishes automated checks against that source revision; it does **not** establish live provider availability, a hosted service, factual correctness of all answers, durable storage on a target host, load capacity, or multi-tenant isolation. The audit-closure branch proposes additional intent routing, evidence diagnostics, page-fetch statuses, response headers, and deployment SHA checks. Those proposed capabilities must remain marked unverified until the PR-head CI passes; hosted acceptance remains `NOT_RUN` until a real target is configured and explicitly tested.
+The successful CI run on the merged PR-head tree establishes the automated checks listed above, but it does **not** establish live provider availability, a hosted service, factual correctness of all answers, durable storage on a target host, load capacity, or multi-tenant isolation. The audit-closure branch is no longer merely proposed: PR #76 is merged and its tested capabilities are on `main`. Hosted acceptance remains `NOT_RUN` until a real target is configured and explicitly tested.
 
 ## Implemented in the repository
 
