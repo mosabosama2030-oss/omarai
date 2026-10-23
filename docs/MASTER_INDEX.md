@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **76**
+- ملفات المستودع في الجرد: **79**
 - ملفات Python المحللة: **41**
 - تعريفات Python المفهرسة: **976**
 - تعريفات Python موثقة بوجود Docstring: **192**
 - تعريفات Python بلا Docstring: **590**
 - تعريفات لا ينطبق عليها Docstring: **194**
-- الرموز الساكنة الإضافية: **1485**
-- الأسطر النصية المفهرسة حرفيًا: **25823**
+- الرموز الساكنة الإضافية: **1544**
+- الأسطر النصية المفهرسة حرفيًا: **25970**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -30,11 +30,12 @@
 |---|---|---|---|---:|---:|---|
 | FILE-2F754321D6 | إعدادات وتشغيل | [.dockerignore](../.dockerignore#L1) | بدون امتداد | 103 | 11 | جرد ملف نصي فقط |
 | FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1193 | 26 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-18813C8694 | وثائق ونصوص | [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L1) | Markdown | 1913 | 33 | جرد الملف + عناوين Markdown |
 | FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1661 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 4437 | 103 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4970 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 4460 | 103 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4993 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
-| FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 10096 | 71 | جرد الملف + عناوين Markdown |
+| FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11574 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 17790 | 376 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 16450 | 391 | جرد الملف + AST Python |
@@ -48,30 +49,32 @@
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
 | FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 583 | 19 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
+| FILE-C4C6C55E1A | وثائق وفهرسة | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 35501 | 191 | جرد الملف + عناوين Markdown |
+| FILE-26428BDA96 | وثائق وفهرسة | [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 50328 | 262 | جرد الملف + عناوين Markdown |
+| FILE-160DC0B3E4 | وثائق وفهرسة | [docs/archive/README.md](archive/README.md#L1) | Markdown | 1021 | 8 | جرد الملف + عناوين Markdown |
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 5664 | 50 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 7599 | 66 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 9498 | 94 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
-| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 7339 | 53 | جرد الملف + عناوين Markdown |
-| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 14552 | 73 | جرد الملف + عناوين Markdown |
-| FILE-18ADDFCAF4 | وثائق وفهرسة | [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) | Markdown | 6218 | 41 | جرد الملف + عناوين Markdown |
+| FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5007 | 48 | جرد الملف + عناوين Markdown |
+| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 5408 | 39 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
-| FILE-89BEE4CE47 | وثائق وفهرسة | [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 31265 | 173 | جرد الملف + عناوين Markdown |
-| FILE-855DA3B8BC | وثائق وفهرسة | [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 49883 | 260 | جرد الملف + عناوين Markdown |
-| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 25817 | 131 | جرد الملف + عناوين Markdown |
-| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 64225 | 200 | جرد الملف + عناوين Markdown |
+| FILE-B2C95EAEE1 | وثائق وفهرسة | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | Markdown | 13316 | 94 | جرد الملف + عناوين Markdown |
+| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 31310 | 160 | جرد الملف + عناوين Markdown |
+| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 59153 | 184 | جرد الملف + عناوين Markdown |
 | FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 76904 | 852 | جرد الملف + عناوين Markdown |
-| FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 20650 | 136 | جرد الملف + عناوين Markdown |
+| FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 22759 | 142 | جرد الملف + عناوين Markdown |
 | FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
+| FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 4756 | 48 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 23402 | 185 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 21824 | 181 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
@@ -1106,6 +1109,13 @@
 | [.env.example](../.env.example#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 18 | [SRC-A3046DA0D1-L000018](../.env.example#L18) |
 | [.env.example](../.env.example#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 24 | [SRC-A3046DA0D1-L000024](../.env.example#L24) |
 | [.env.example](../.env.example#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 26 | [SRC-A3046DA0D1-L000026](../.env.example#L26) |
+| [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L1) | عنوان Markdown (H2) | الهدف والنطاق | 1 | [SRC-18813C8694-L000001](../.github/PULL_REQUEST_TEMPLATE.md#L1) |
+| [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L4) | عنوان Markdown (H2) | الأدلة | 4 | [SRC-18813C8694-L000004](../.github/PULL_REQUEST_TEMPLATE.md#L4) |
+| [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 9 | [SRC-18813C8694-L000009](../.github/PULL_REQUEST_TEMPLATE.md#L9) |
+| [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L11) | عنوان Markdown (H2) | الاختبارات والتحقق | 11 | [SRC-18813C8694-L000011](../.github/PULL_REQUEST_TEMPLATE.md#L11) |
+| [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L17) | عنوان Markdown (H2) | سلامة المستودع والوثائق | 17 | [SRC-18813C8694-L000017](../.github/PULL_REQUEST_TEMPLATE.md#L17) |
+| [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L24) | عنوان Markdown (H2) | المخاطر والأثر | 24 | [SRC-18813C8694-L000024](../.github/PULL_REQUEST_TEMPLATE.md#L24) |
+| [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L31) | عنوان Markdown (H2) | قرار المراجعة | 31 | [SRC-18813C8694-L000031](../.github/PULL_REQUEST_TEMPLATE.md#L31) |
 | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-9F6E30987B-L000001](../.github/workflows/hosted-smoke.yml#L1) |
 | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-9F6E30987B-L000002](../.github/workflows/hosted-smoke.yml#L2) |
 | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L4) | مفتاح إعداد YAML | workflow_dispatch | 4 | [SRC-9F6E30987B-L000004](../.github/workflows/hosted-smoke.yml#L4) |
@@ -1202,6 +1212,14 @@
 | [AGENTS.md](../AGENTS.md#L56) | عنوان Markdown (H2) | Platform-grade readiness | 56 | [SRC-A54FF182C7-L000056](../AGENTS.md#L56) |
 | [AGENTS.md](../AGENTS.md#L63) | عنوان Markdown (H2) | Requirement traceability and expert review | 63 | [SRC-A54FF182C7-L000063](../AGENTS.md#L63) |
 | [AGENTS.md](../AGENTS.md#L69) | عنوان Markdown (H2) | Acceptance principle | 69 | [SRC-A54FF182C7-L000069](../AGENTS.md#L69) |
+| [AGENTS.md](../AGENTS.md#L72) | عنوان Markdown (H2) | Repository hygiene and documentation ownership | 72 | [SRC-A54FF182C7-L000072](../AGENTS.md#L72) |
+| [AGENTS.md](../AGENTS.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 76 | [SRC-A54FF182C7-L000076](../AGENTS.md#L76) |
+| [AGENTS.md](../AGENTS.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 76 | [SRC-A54FF182C7-L000076](../AGENTS.md#L76) |
+| [AGENTS.md](../AGENTS.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 76 | [SRC-A54FF182C7-L000076](../AGENTS.md#L76) |
+| [AGENTS.md](../AGENTS.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 76 | [SRC-A54FF182C7-L000076](../AGENTS.md#L76) |
+| [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONTEXT_TURNS | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
@@ -1318,6 +1336,80 @@
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L106) | عنوان Markdown (H2) | مقارنة نسختين من عمرai (قبل/بعد) | 106 | [SRC-792A9A235D-L000106](ANSWER_QUALITY_BENCHMARK_AR.md#L106) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L116) | عنوان Markdown (H2) | نقاط عمياء معروفة | 116 | [SRC-792A9A235D-L000116](ANSWER_QUALITY_BENCHMARK_AR.md#L116) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L123) | عنوان Markdown (H2) | إضافة حالات لاحقًا | 123 | [SRC-792A9A235D-L000123](ANSWER_QUALITY_BENCHMARK_AR.md#L123) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L2) | عنوان Markdown (H1) | Omarai — تسوية الأدلة بعد دمج الإصلاحات الأولية | 2 | [SRC-C4C6C55E1A-L000002](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L2) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 5 | [SRC-C4C6C55E1A-L000005](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L5) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) | عنوان Markdown (H2) | ملحق زمني: خط الأساس الحالي بعد #75 — 21 أكتوبر 2026 | 14 | [SRC-C4C6C55E1A-L000014](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 21 | [SRC-C4C6C55E1A-L000021](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L21) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L22) | عنوان Markdown (H2) | 1. دلالات الحالة | 22 | [SRC-C4C6C55E1A-L000022](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L22) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L35) | عنوان Markdown (H2) | 2. خط الأساس وسلسلة الأدلة | 35 | [SRC-C4C6C55E1A-L000035](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L35) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L37) | عنوان Markdown (H3) | نسخة المصدر | 37 | [SRC-C4C6C55E1A-L000037](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L37) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) | عنوان Markdown (H3) | تغييرات مدمجة ذات صلة | 41 | [SRC-C4C6C55E1A-L000041](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L51) | عنوان Markdown (H3) | تغييرات وفحوص مفتوحة أو بديلة | 51 | [SRC-C4C6C55E1A-L000051](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L51) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L63) | عنوان Markdown (H2) | 3. تسوية أهم المتطلبات | 63 | [SRC-C4C6C55E1A-L000063](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L63) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L86) | عنوان Markdown (H2) | 4. ماذا أُنجز في مسار التشغيل خلال هذه الجولة؟ | 86 | [SRC-C4C6C55E1A-L000086](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L86) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L88) | عنوان Markdown (H3) | M-01 — قراءة جسم طلب API | 88 | [SRC-C4C6C55E1A-L000088](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L88) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L94) | عنوان Markdown (H3) | M-02 — الميزانية والتزامن | 94 | [SRC-C4C6C55E1A-L000094](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L94) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L100) | عنوان Markdown (H3) | M-03/M-04 — سجل الأدلة والاستثناءات | 100 | [SRC-C4C6C55E1A-L000100](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L100) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L104) | عنوان Markdown (H3) | M-05 — النسخ والاستعادة | 104 | [SRC-C4C6C55E1A-L000104](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L104) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L108) | عنوان Markdown (H3) | M-06 — فصل دليل الاختبارات وقبول التكامل الحي | 108 | [SRC-C4C6C55E1A-L000108](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L108) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L114) | عنوان Markdown (H3) | M-07 — قبول الاستضافة | 114 | [SRC-C4C6C55E1A-L000114](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L114) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L118) | عنوان Markdown (H3) | M-08 — مراجعة نتيجة Grok ومراجعة مصدر مستقلة مبدئية | 118 | [SRC-C4C6C55E1A-L000118](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L118) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L135) | عنوان Markdown (H2) | 5. بوابات الإغلاق | 135 | [SRC-C4C6C55E1A-L000135](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L135) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L146) | عنوان Markdown (H2) | 6. حكم الحالة | 146 | [SRC-C4C6C55E1A-L000146](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L146) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L152) | عنوان Markdown (H2) | تسوية إضافية بعد مرشح الإغلاق الموحد — 21 أكتوبر 2026 | 152 | [SRC-C4C6C55E1A-L000152](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L152) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L164) | عنوان Markdown (H2) | تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026 | 164 | [SRC-C4C6C55E1A-L000164](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L164) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L171) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 171 | [SRC-C4C6C55E1A-L000171](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L171) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L174) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 174 | [SRC-C4C6C55E1A-L000174](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L174) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L177) | عنوان Markdown (H2) | تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026 | 177 | [SRC-C4C6C55E1A-L000177](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L177) |
+| [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L181) | عنوان Markdown (H2) | تحديث ما بعد دمج PR #76 — 21 أكتوبر 2026 | 181 | [SRC-C4C6C55E1A-L000181](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L181) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 1 | [SRC-26428BDA96-L000001](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 1 | [SRC-26428BDA96-L000001](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L2) | عنوان Markdown (H1) | تدقيق Omarai التأسيسي — نتائج P0 من الكود والاختبارات | 2 | [SRC-26428BDA96-L000002](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L2) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 5 | [SRC-26428BDA96-L000005](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L5) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 13 | [SRC-26428BDA96-L000013](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 13 | [SRC-26428BDA96-L000013](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 13 | [SRC-26428BDA96-L000013](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 13 | [SRC-26428BDA96-L000013](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L13) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L16) | عنوان Markdown (H2) | 1. الحكم التنفيذي | 16 | [SRC-26428BDA96-L000016](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L16) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L41) | عنوان Markdown (H2) | 2. الأدلة التي تم فحصها | 41 | [SRC-26428BDA96-L000041](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L41) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L43) | عنوان Markdown (H3) | مرجع النسخة | 43 | [SRC-26428BDA96-L000043](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L43) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L53) | عنوان Markdown (H3) | نتائج CI المثبتة من GitHub Actions | 53 | [SRC-26428BDA96-L000053](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L53) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L67) | عنوان Markdown (H2) | 3. معنى الحالات المستخدمة | 67 | [SRC-26428BDA96-L000067](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L67) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L75) | عنوان Markdown (H2) | 4. أهم نتائج المخاطر — مرتبة حسب أثرها | 75 | [SRC-26428BDA96-L000075](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L75) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L77) | عنوان Markdown (H3) | A-01 — غياب حد عالمي للتوازي وميزانية زمنية موحدة للطلب | 77 | [SRC-26428BDA96-L000077](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L77) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 81 | [SRC-26428BDA96-L000081](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L81) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L86) | عنوان Markdown (H3) | A-02 — لا يوجد عزل بيانات لكل مستخدم/مستأجر | 86 | [SRC-26428BDA96-L000086](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L86) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 90 | [SRC-26428BDA96-L000090](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L90) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L95) | عنوان Markdown (H3) | A-03 — فحص الاستشهادات يثبت رقم المصدر، لا دعم الادعاء بصورة مستقلة | 95 | [SRC-26428BDA96-L000095](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L95) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L102) | عنوان Markdown (H3) | A-04 — تغطية اختبار SSRF أقل من قوة التصميم | 102 | [SRC-26428BDA96-L000102](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L102) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L111) | عنوان Markdown (H3) | A-05 — تهيئة Origin خلف الوكيل العكسي تحتاج تأكيدًا تشغيليًا | 111 | [SRC-26428BDA96-L000111](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L111) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 115 | [SRC-26428BDA96-L000115](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 117 | [SRC-26428BDA96-L000117](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L117) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L118) | عنوان Markdown (H3) | A-06 — رمز Bearer مشترك محفوظ في localStorage | 118 | [SRC-26428BDA96-L000118](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L118) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L125) | عنوان Markdown (H3) | A-07 — استمرارية قاعدة SQLite في بيئة النشر غير مثبتة | 125 | [SRC-26428BDA96-L000125](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L125) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L132) | عنوان Markdown (H2) | 5. سجل نتائج جميع متطلبات P0 (42 متطلبًا) | 132 | [SRC-26428BDA96-L000132](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L132) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) | عنوان Markdown (H2) | 6. ماذا نعدّ مثبتًا حاليًا، وماذا لا نعدّه مثبتًا؟ | 181 | [SRC-26428BDA96-L000181](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L183) | عنوان Markdown (H3) | مثبت ضمن نطاق محدود | 183 | [SRC-26428BDA96-L000183](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L183) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L190) | عنوان Markdown (H3) | استدلالي أو جزئي | 190 | [SRC-26428BDA96-L000190](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L190) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L198) | عنوان Markdown (H3) | غير معلوم أو غير مستوفى في النطاق الأوسع | 198 | [SRC-26428BDA96-L000198](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L198) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) | عنوان Markdown (H2) | 7. خطة إغلاق بالترتيب | 206 | [SRC-26428BDA96-L000206](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L208) | عنوان Markdown (H3) | Gate 1 — قبل توسيع الوصول العام | 208 | [SRC-26428BDA96-L000208](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L208) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L214) | عنوان Markdown (H3) | Gate 2 — تحديد نموذج المستخدمين | 214 | [SRC-26428BDA96-L000214](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L214) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L219) | عنوان Markdown (H3) | Gate 3 — استكمال اختبارات الأمن | 219 | [SRC-26428BDA96-L000219](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L219) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L225) | عنوان Markdown (H3) | Gate 4 — صدق الأدلة | 225 | [SRC-26428BDA96-L000225](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L225) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L231) | عنوان Markdown (H3) | Gate 5 — إثبات النشر والتخزين | 231 | [SRC-26428BDA96-L000231](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L231) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L237) | عنوان Markdown (H2) | 8. متى نسمح بالانتقال للمرحلة التالية؟ | 237 | [SRC-26428BDA96-L000237](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L237) |
+| [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L252) | عنوان Markdown (H2) | 9. الخلاصة النهائية | 252 | [SRC-26428BDA96-L000252](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L252) |
+| [docs/archive/README.md](archive/README.md#L1) | عنوان Markdown (H1) | أرشيف تقارير Omarai | 1 | [SRC-160DC0B3E4-L000001](archive/README.md#L1) |
+| [docs/archive/README.md](archive/README.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_P0_CODING_AUDIT_2026 | 5 | [SRC-160DC0B3E4-L000005](archive/README.md#L5) |
+| [docs/archive/README.md](archive/README.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 6 | [SRC-160DC0B3E4-L000006](archive/README.md#L6) |
+| [docs/archive/README.md](archive/README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 8 | [SRC-160DC0B3E4-L000008](archive/README.md#L8) |
+| [docs/archive/README.md](archive/README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 8 | [SRC-160DC0B3E4-L000008](archive/README.md#L8) |
+| [docs/archive/README.md](archive/README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 8 | [SRC-160DC0B3E4-L000008](archive/README.md#L8) |
+| [docs/archive/README.md](archive/README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 8 | [SRC-160DC0B3E4-L000008](archive/README.md#L8) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على Railway — دليل عربي | 1 | [SRC-C7C7FA8853-L000001](DEPLOY_RAILWAY_AR.md#L1) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L4) | عنوان Markdown (H2) | المتطلبات | 4 | [SRC-C7C7FA8853-L000004](DEPLOY_RAILWAY_AR.md#L4) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L11) | عنوان Markdown (H2) | النشر | 11 | [SRC-C7C7FA8853-L000011](DEPLOY_RAILWAY_AR.md#L11) |
@@ -1414,46 +1506,39 @@
 | [docs/generate_index.py](generate_index.py#L150) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FINDING_MARKER_RE | 150 | [SRC-E599346ABE-L000150](generate_index.py#L150) |
 | [docs/generate_index.py](generate_index.py#L1009) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPPER_SNAKE_CASE | 1009 | [SRC-E599346ABE-L001009](generate_index.py#L1009) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | عنوان Markdown (H1) | قائمة قبول Omarai قبل التشغيل العام | 1 | [SRC-6E35221BFA-L000001](GO_LIVE_CHECKLIST_AR.md#L1) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 5 | [SRC-6E35221BFA-L000005](GO_LIVE_CHECKLIST_AR.md#L5) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 5 | [SRC-6E35221BFA-L000005](GO_LIVE_CHECKLIST_AR.md#L5) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 5 | [SRC-6E35221BFA-L000005](GO_LIVE_CHECKLIST_AR.md#L5) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L6) | عنوان Markdown (H2) | إعداد الاستضافة | 6 | [SRC-6E35221BFA-L000006](GO_LIVE_CHECKLIST_AR.md#L6) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L6) | عنوان Markdown (H2) | 1. اختر مسار استضافة واحدًا | 6 | [SRC-6E35221BFA-L000006](GO_LIVE_CHECKLIST_AR.md#L6) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 9 | [SRC-6E35221BFA-L000009](GO_LIVE_CHECKLIST_AR.md#L9) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 12 | [SRC-6E35221BFA-L000012](GO_LIVE_CHECKLIST_AR.md#L12) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 15 | [SRC-6E35221BFA-L000015](GO_LIVE_CHECKLIST_AR.md#L15) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 17 | [SRC-6E35221BFA-L000017](GO_LIVE_CHECKLIST_AR.md#L17) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | عنوان Markdown (H2) | حد الاستخدام الحالي — مشغّل واحد فقط | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L25) | عنوان Markdown (H2) | التخزين الدائم والنسخ الاحتياطي — شرط قبل بيانات العملاء | 25 | [SRC-6E35221BFA-L000025](GO_LIVE_CHECKLIST_AR.md#L25) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 27 | [SRC-6E35221BFA-L000027](GO_LIVE_CHECKLIST_AR.md#L27) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L32) | عنوان Markdown (H2) | اختبار قبول حي | 32 | [SRC-6E35221BFA-L000032](GO_LIVE_CHECKLIST_AR.md#L32) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 34 | [SRC-6E35221BFA-L000034](GO_LIVE_CHECKLIST_AR.md#L34) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L37) | عنوان Markdown (H2) | شروط النجاح | 37 | [SRC-6E35221BFA-L000037](GO_LIVE_CHECKLIST_AR.md#L37) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L46) | عنوان Markdown (H2) | اختبار يدوي على Android | 46 | [SRC-6E35221BFA-L000046](GO_LIVE_CHECKLIST_AR.md#L46) |
-| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L50) | عنوان Markdown (H2) | حدود مهمة | 50 | [SRC-6E35221BFA-L000050](GO_LIVE_CHECKLIST_AR.md#L50) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدوده | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L7) | عنوان Markdown (H2) | Current baseline addendum — 2026-10-21 | 7 | [SRC-C8EA754D73-L000007](IMPLEMENTATION_SCOPE.md#L7) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 10 | [SRC-6E35221BFA-L000010](GO_LIVE_CHECKLIST_AR.md#L10) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 11 | [SRC-6E35221BFA-L000011](GO_LIVE_CHECKLIST_AR.md#L11) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L14) | عنوان Markdown (H2) | 2. إعداد آمن | 14 | [SRC-6E35221BFA-L000014](GO_LIVE_CHECKLIST_AR.md#L14) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 18 | [SRC-6E35221BFA-L000018](GO_LIVE_CHECKLIST_AR.md#L18) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 19 | [SRC-6E35221BFA-L000019](GO_LIVE_CHECKLIST_AR.md#L19) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 20 | [SRC-6E35221BFA-L000020](GO_LIVE_CHECKLIST_AR.md#L20) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 21 | [SRC-6E35221BFA-L000021](GO_LIVE_CHECKLIST_AR.md#L21) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L22) | عنوان Markdown (H2) | 3. قبول النسخة المنشورة | 22 | [SRC-6E35221BFA-L000022](GO_LIVE_CHECKLIST_AR.md#L22) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 25 | [SRC-6E35221BFA-L000025](GO_LIVE_CHECKLIST_AR.md#L25) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L33) | عنوان Markdown (H2) | 4. تخزين البيانات وحدود الاستخدام | 33 | [SRC-6E35221BFA-L000033](GO_LIVE_CHECKLIST_AR.md#L33) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 38 | [SRC-6E35221BFA-L000038](GO_LIVE_CHECKLIST_AR.md#L38) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L41) | عنوان Markdown (H2) | 5. قبول واجهة الهاتف | 41 | [SRC-6E35221BFA-L000041](GO_LIVE_CHECKLIST_AR.md#L41) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L45) | عنوان Markdown (H2) | حدود الإثبات | 45 | [SRC-6E35221BFA-L000045](GO_LIVE_CHECKLIST_AR.md#L45) |
+| [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 48 | [SRC-6E35221BFA-L000048](GO_LIVE_CHECKLIST_AR.md#L48) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدود الإثبات | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L5) | عنوان Markdown (H2) | الحالة التنفيذية الحالية | 5 | [SRC-C8EA754D73-L000005](IMPLEMENTATION_SCOPE.md#L5) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 12 | [SRC-C8EA754D73-L000012](IMPLEMENTATION_SCOPE.md#L12) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L13) | عنوان Markdown (H2) | Implemented in the repository | 13 | [SRC-C8EA754D73-L000013](IMPLEMENTATION_SCOPE.md#L13) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L24) | عنوان Markdown (H2) | Explicitly out of scope or not yet proven | 24 | [SRC-C8EA754D73-L000024](IMPLEMENTATION_SCOPE.md#L24) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L36) | عنوان Markdown (H2) | Operating assumptions | 36 | [SRC-C8EA754D73-L000036](IMPLEMENTATION_SCOPE.md#L36) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L44) | عنوان Markdown (H2) | Explicit operating boundary — 2026-10-21 | 44 | [SRC-C8EA754D73-L000044](IMPLEMENTATION_SCOPE.md#L44) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L48) | عنوان Markdown (H2) | Recommended next increments | 48 | [SRC-C8EA754D73-L000048](IMPLEMENTATION_SCOPE.md#L48) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L57) | عنوان Markdown (H2) | Latest verification boundary — 2026-10-21 | 57 | [SRC-C8EA754D73-L000057](IMPLEMENTATION_SCOPE.md#L57) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 64 | [SRC-C8EA754D73-L000064](IMPLEMENTATION_SCOPE.md#L64) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L67) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 67 | [SRC-C8EA754D73-L000067](IMPLEMENTATION_SCOPE.md#L67) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 69 | [SRC-C8EA754D73-L000069](IMPLEMENTATION_SCOPE.md#L69) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L70) | عنوان Markdown (H2) | تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026 | 70 | [SRC-C8EA754D73-L000070](IMPLEMENTATION_SCOPE.md#L70) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) | عنوان Markdown (H1) | حالة إغلاق تدقيق Omarai — 21 أكتوبر 2026 | 1 | [SRC-18ADDFCAF4-L000001](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L1) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 5 | [SRC-18ADDFCAF4-L000005](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L5) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L6) | عنوان Markdown (H2) | الإصلاحات البرمجية وما تم التحقق منه | 6 | [SRC-18ADDFCAF4-L000006](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L6) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 12 | [SRC-18ADDFCAF4-L000012](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L12) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L15) | عنوان Markdown (H2) | ما لا يُعد مكتملًا رغم نجاح CI | 15 | [SRC-18ADDFCAF4-L000015](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L15) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 22 | [SRC-18ADDFCAF4-L000022](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L22) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_REQUIRED | 28 | [SRC-18ADDFCAF4-L000028](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L28) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L30) | عنوان Markdown (H2) | حالة طلبات الدمج والتكليفات | 30 | [SRC-18ADDFCAF4-L000030](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L30) |
-| [docs/OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L38) | عنوان Markdown (H2) | القرار الهندسي | 38 | [SRC-18ADDFCAF4-L000038](OMARAI_AUDIT_CLOSURE_STATUS_2026-10-21_AR.md#L38) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 14 | [SRC-C8EA754D73-L000014](IMPLEMENTATION_SCOPE.md#L14) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L15) | عنوان Markdown (H2) | أدلة الاختبار وحدودها | 15 | [SRC-C8EA754D73-L000015](IMPLEMENTATION_SCOPE.md#L15) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 20 | [SRC-C8EA754D73-L000020](IMPLEMENTATION_SCOPE.md#L20) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L21) | عنوان Markdown (H2) | غير مثبت أو خارج النطاق الحالي | 21 | [SRC-C8EA754D73-L000021](IMPLEMENTATION_SCOPE.md#L21) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L31) | عنوان Markdown (H2) | مصادر الحقيقة حسب الغرض | 31 | [SRC-C8EA754D73-L000031](IMPLEMENTATION_SCOPE.md#L31) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 34 | [SRC-C8EA754D73-L000034](IMPLEMENTATION_SCOPE.md#L34) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 35 | [SRC-C8EA754D73-L000035](IMPLEMENTATION_SCOPE.md#L35) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L36) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 36 | [SRC-C8EA754D73-L000036](IMPLEMENTATION_SCOPE.md#L36) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل الاستثناءات والقرارات المؤجلة | 1 | [SRC-21D5D044E2-L000001](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) | عنوان Markdown (H2) | 1. الغرض وقواعد الاستخدام | 8 | [SRC-21D5D044E2-L000008](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) | عنوان Markdown (H2) | 2. سجل الاستثناءات المعتمدة | 22 | [SRC-21D5D044E2-L000022](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) |
@@ -1653,112 +1738,67 @@
 | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1008) | عنوان Markdown (H2) | الذكاء الاصطناعي وتقييم المخاطر | 1008 | [SRC-D17CE3D12F-L001008](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1008) |
 | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1018) | عنوان Markdown (H3) | قاعدة استخدام المراجع | 1018 | [SRC-D17CE3D12F-L001018](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1018) |
 | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1028) | عنوان Markdown (H1) | الخلاصة الحاكمة | 1028 | [SRC-D17CE3D12F-L001028](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1028) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | عنوان Markdown (H1) | Omarai — تسوية الأدلة بعد دمج الإصلاحات الأولية | 1 | [SRC-89BEE4CE47-L000001](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L7) | عنوان Markdown (H2) | ملحق زمني: خط الأساس الحالي بعد #75 — 21 أكتوبر 2026 | 7 | [SRC-89BEE4CE47-L000007](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L7) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 14 | [SRC-89BEE4CE47-L000014](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L15) | عنوان Markdown (H2) | 1. دلالات الحالة | 15 | [SRC-89BEE4CE47-L000015](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L15) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L28) | عنوان Markdown (H2) | 2. خط الأساس وسلسلة الأدلة | 28 | [SRC-89BEE4CE47-L000028](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L28) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L30) | عنوان Markdown (H3) | نسخة المصدر | 30 | [SRC-89BEE4CE47-L000030](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L30) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) | عنوان Markdown (H3) | تغييرات مدمجة ذات صلة | 34 | [SRC-89BEE4CE47-L000034](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L44) | عنوان Markdown (H3) | تغييرات وفحوص مفتوحة أو بديلة | 44 | [SRC-89BEE4CE47-L000044](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L44) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L56) | عنوان Markdown (H2) | 3. تسوية أهم المتطلبات | 56 | [SRC-89BEE4CE47-L000056](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L56) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) | عنوان Markdown (H2) | 4. ماذا أُنجز في مسار التشغيل خلال هذه الجولة؟ | 79 | [SRC-89BEE4CE47-L000079](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L81) | عنوان Markdown (H3) | M-01 — قراءة جسم طلب API | 81 | [SRC-89BEE4CE47-L000081](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L81) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L87) | عنوان Markdown (H3) | M-02 — الميزانية والتزامن | 87 | [SRC-89BEE4CE47-L000087](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L87) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L93) | عنوان Markdown (H3) | M-03/M-04 — سجل الأدلة والاستثناءات | 93 | [SRC-89BEE4CE47-L000093](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L93) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L97) | عنوان Markdown (H3) | M-05 — النسخ والاستعادة | 97 | [SRC-89BEE4CE47-L000097](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L97) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L101) | عنوان Markdown (H3) | M-06 — فصل دليل الاختبارات وقبول التكامل الحي | 101 | [SRC-89BEE4CE47-L000101](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L101) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L107) | عنوان Markdown (H3) | M-07 — قبول الاستضافة | 107 | [SRC-89BEE4CE47-L000107](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L107) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L111) | عنوان Markdown (H3) | M-08 — مراجعة نتيجة Grok ومراجعة مصدر مستقلة مبدئية | 111 | [SRC-89BEE4CE47-L000111](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L111) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L128) | عنوان Markdown (H2) | 5. بوابات الإغلاق | 128 | [SRC-89BEE4CE47-L000128](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L128) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L139) | عنوان Markdown (H2) | 6. حكم الحالة | 139 | [SRC-89BEE4CE47-L000139](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L139) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L145) | عنوان Markdown (H2) | تسوية إضافية بعد مرشح الإغلاق الموحد — 21 أكتوبر 2026 | 145 | [SRC-89BEE4CE47-L000145](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L145) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L157) | عنوان Markdown (H2) | تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026 | 157 | [SRC-89BEE4CE47-L000157](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L157) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L164) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 164 | [SRC-89BEE4CE47-L000164](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L164) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L167) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 167 | [SRC-89BEE4CE47-L000167](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L167) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L169) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 169 | [SRC-89BEE4CE47-L000169](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L169) |
-| [docs/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L170) | عنوان Markdown (H2) | تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026 | 170 | [SRC-89BEE4CE47-L000170](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L170) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | عنوان Markdown (H1) | تدقيق Omarai التأسيسي — نتائج P0 من الكود والاختبارات | 1 | [SRC-855DA3B8BC-L000001](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 3 | [SRC-855DA3B8BC-L000003](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L3) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 11 | [SRC-855DA3B8BC-L000011](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L14) | عنوان Markdown (H2) | 1. الحكم التنفيذي | 14 | [SRC-855DA3B8BC-L000014](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L14) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L39) | عنوان Markdown (H2) | 2. الأدلة التي تم فحصها | 39 | [SRC-855DA3B8BC-L000039](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L39) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L41) | عنوان Markdown (H3) | مرجع النسخة | 41 | [SRC-855DA3B8BC-L000041](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L41) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L51) | عنوان Markdown (H3) | نتائج CI المثبتة من GitHub Actions | 51 | [SRC-855DA3B8BC-L000051](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L51) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) | عنوان Markdown (H2) | 3. معنى الحالات المستخدمة | 65 | [SRC-855DA3B8BC-L000065](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L73) | عنوان Markdown (H2) | 4. أهم نتائج المخاطر — مرتبة حسب أثرها | 73 | [SRC-855DA3B8BC-L000073](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L73) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L75) | عنوان Markdown (H3) | A-01 — غياب حد عالمي للتوازي وميزانية زمنية موحدة للطلب | 75 | [SRC-855DA3B8BC-L000075](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L75) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 79 | [SRC-855DA3B8BC-L000079](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L79) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L84) | عنوان Markdown (H3) | A-02 — لا يوجد عزل بيانات لكل مستخدم/مستأجر | 84 | [SRC-855DA3B8BC-L000084](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L84) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 88 | [SRC-855DA3B8BC-L000088](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L88) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L93) | عنوان Markdown (H3) | A-03 — فحص الاستشهادات يثبت رقم المصدر، لا دعم الادعاء بصورة مستقلة | 93 | [SRC-855DA3B8BC-L000093](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L93) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L100) | عنوان Markdown (H3) | A-04 — تغطية اختبار SSRF أقل من قوة التصميم | 100 | [SRC-855DA3B8BC-L000100](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L100) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L109) | عنوان Markdown (H3) | A-05 — تهيئة Origin خلف الوكيل العكسي تحتاج تأكيدًا تشغيليًا | 109 | [SRC-855DA3B8BC-L000109](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L109) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 113 | [SRC-855DA3B8BC-L000113](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 115 | [SRC-855DA3B8BC-L000115](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) | عنوان Markdown (H3) | A-06 — رمز Bearer مشترك محفوظ في localStorage | 116 | [SRC-855DA3B8BC-L000116](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L123) | عنوان Markdown (H3) | A-07 — استمرارية قاعدة SQLite في بيئة النشر غير مثبتة | 123 | [SRC-855DA3B8BC-L000123](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L123) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L130) | عنوان Markdown (H2) | 5. سجل نتائج جميع متطلبات P0 (42 متطلبًا) | 130 | [SRC-855DA3B8BC-L000130](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L130) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L179) | عنوان Markdown (H2) | 6. ماذا نعدّ مثبتًا حاليًا، وماذا لا نعدّه مثبتًا؟ | 179 | [SRC-855DA3B8BC-L000179](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L179) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) | عنوان Markdown (H3) | مثبت ضمن نطاق محدود | 181 | [SRC-855DA3B8BC-L000181](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L188) | عنوان Markdown (H3) | استدلالي أو جزئي | 188 | [SRC-855DA3B8BC-L000188](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L188) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L196) | عنوان Markdown (H3) | غير معلوم أو غير مستوفى في النطاق الأوسع | 196 | [SRC-855DA3B8BC-L000196](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L196) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) | عنوان Markdown (H2) | 7. خطة إغلاق بالترتيب | 204 | [SRC-855DA3B8BC-L000204](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) | عنوان Markdown (H3) | Gate 1 — قبل توسيع الوصول العام | 206 | [SRC-855DA3B8BC-L000206](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) | عنوان Markdown (H3) | Gate 2 — تحديد نموذج المستخدمين | 212 | [SRC-855DA3B8BC-L000212](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L217) | عنوان Markdown (H3) | Gate 3 — استكمال اختبارات الأمن | 217 | [SRC-855DA3B8BC-L000217](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L217) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L223) | عنوان Markdown (H3) | Gate 4 — صدق الأدلة | 223 | [SRC-855DA3B8BC-L000223](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L223) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L229) | عنوان Markdown (H3) | Gate 5 — إثبات النشر والتخزين | 229 | [SRC-855DA3B8BC-L000229](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L229) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L235) | عنوان Markdown (H2) | 8. متى نسمح بالانتقال للمرحلة التالية؟ | 235 | [SRC-855DA3B8BC-L000235](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L235) |
-| [docs/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) | عنوان Markdown (H2) | 9. الخلاصة النهائية | 250 | [SRC-855DA3B8BC-L000250](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | عنوان Markdown (H1) | Omarai — تقرير التحقق الهندسي بعد دمج PR #76 | 1 | [SRC-B2C95EAEE1-L000001](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L2) | عنوان Markdown (H2) | ملحق تحقق إضافي — 23 أكتوبر 2026 | 2 | [SRC-B2C95EAEE1-L000002](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L2) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 7 | [SRC-B2C95EAEE1-L000007](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L7) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L18) | عنوان Markdown (H2) | 1. الحكم التنفيذي | 18 | [SRC-B2C95EAEE1-L000018](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L18) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L26) | عنوان Markdown (H2) | 2. خط أساس التحقق | 26 | [SRC-B2C95EAEE1-L000026](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L26) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 39 | [SRC-B2C95EAEE1-L000039](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L39) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L42) | عنوان Markdown (H2) | 3. التغييرات التي أصبح وجودها على المسار المدمج مدعومًا بالأدلة | 42 | [SRC-B2C95EAEE1-L000042](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L42) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 52 | [SRC-B2C95EAEE1-L000052](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L52) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L56) | عنوان Markdown (H2) | 4. المخاطر والبوابات التي لم تُغلق | 56 | [SRC-B2C95EAEE1-L000056](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L56) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L71) | عنوان Markdown (H2) | 5. الإجراءات التالية — مرتبة حسب الأولوية | 71 | [SRC-B2C95EAEE1-L000071](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L71) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L79) | عنوان Markdown (H2) | 6. سياسة الإغلاق | 79 | [SRC-B2C95EAEE1-L000079](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L79) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 82 | [SRC-B2C95EAEE1-L000082](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L82) |
+| [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L86) | عنوان Markdown (H2) | الروابط المرجعية | 86 | [SRC-B2C95EAEE1-L000086](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L86) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | عنوان Markdown (H1) | سجل الإغلاق الهندسي المركزي لمشروع Omarai | 1 | [SRC-62CE5126F9-L000001](OMARAI_REMEDIATION_REGISTER_AR.md#L1) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L8) | عنوان Markdown (H2) | دليل الاختبارات وحالة الرأس الحالي | 8 | [SRC-62CE5126F9-L000008](OMARAI_REMEDIATION_REGISTER_AR.md#L8) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 12 | [SRC-62CE5126F9-L000012](OMARAI_REMEDIATION_REGISTER_AR.md#L12) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L16) | عنوان Markdown (H2) | معاني الحالات | 16 | [SRC-62CE5126F9-L000016](OMARAI_REMEDIATION_REGISTER_AR.md#L16) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 19 | [SRC-62CE5126F9-L000019](OMARAI_REMEDIATION_REGISTER_AR.md#L19) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 21 | [SRC-62CE5126F9-L000021](OMARAI_REMEDIATION_REGISTER_AR.md#L21) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_REQUIRED | 24 | [SRC-62CE5126F9-L000024](OMARAI_REMEDIATION_REGISTER_AR.md#L24) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L25) | عنوان Markdown (H2) | A. سجل الأخطاء والجذور | 25 | [SRC-62CE5126F9-L000025](OMARAI_REMEDIATION_REGISTER_AR.md#L25) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L38) | عنوان Markdown (H2) | B. العيوب الأمنية والتشغيلية | 38 | [SRC-62CE5126F9-L000038](OMARAI_REMEDIATION_REGISTER_AR.md#L38) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOCUMENTED_IN | 47 | [SRC-62CE5126F9-L000047](OMARAI_REMEDIATION_REGISTER_AR.md#L47) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 49 | [SRC-62CE5126F9-L000049](OMARAI_REMEDIATION_REGISTER_AR.md#L49) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L53) | عنوان Markdown (H2) | C. فجوات الاختبار والجودة | 53 | [SRC-62CE5126F9-L000053](OMARAI_REMEDIATION_REGISTER_AR.md#L53) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L66) | عنوان Markdown (H2) | D. التداخلات والفروع | 66 | [SRC-62CE5126F9-L000066](OMARAI_REMEDIATION_REGISTER_AR.md#L66) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLOSED_AS_SUPERSEDED | 71 | [SRC-62CE5126F9-L000071](OMARAI_REMEDIATION_REGISTER_AR.md#L71) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_PROCESS | 76 | [SRC-62CE5126F9-L000076](OMARAI_REMEDIATION_REGISTER_AR.md#L76) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L78) | عنوان Markdown (H2) | E. الوثائق والمكونات غير الضرورية | 78 | [SRC-62CE5126F9-L000078](OMARAI_REMEDIATION_REGISTER_AR.md#L78) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 83 | [SRC-62CE5126F9-L000083](OMARAI_REMEDIATION_REGISTER_AR.md#L83) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPDATED_IN | 83 | [SRC-62CE5126F9-L000083](OMARAI_REMEDIATION_REGISTER_AR.md#L83) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L87) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 87 | [SRC-62CE5126F9-L000087](OMARAI_REMEDIATION_REGISTER_AR.md#L87) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 88 | [SRC-62CE5126F9-L000088](OMARAI_REMEDIATION_REGISTER_AR.md#L88) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L91) | عنوان Markdown (H2) | E1. حالة واجهة الاستخدام المستقلة | 91 | [SRC-62CE5126F9-L000091](OMARAI_REMEDIATION_REGISTER_AR.md#L91) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L97) | عنوان Markdown (H2) | F. ملخص بوابات الإغلاق | 97 | [SRC-62CE5126F9-L000097](OMARAI_REMEDIATION_REGISTER_AR.md#L97) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L99) | عنوان Markdown (H3) | مغلق ومختبر على main | 99 | [SRC-62CE5126F9-L000099](OMARAI_REMEDIATION_REGISTER_AR.md#L99) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L104) | عنوان Markdown (H3) | منفذ ومختبر في مرشح #76 | 104 | [SRC-62CE5126F9-L000104](OMARAI_REMEDIATION_REGISTER_AR.md#L104) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L115) | عنوان Markdown (H3) | ما يتطلب بيئة فعلية ولا يمكن إغلاقه من الكود وحده | 115 | [SRC-62CE5126F9-L000115](OMARAI_REMEDIATION_REGISTER_AR.md#L115) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L126) | عنوان Markdown (H2) | G. قاعدة عدم الإغلاق الشكلي | 126 | [SRC-62CE5126F9-L000126](OMARAI_REMEDIATION_REGISTER_AR.md#L126) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 5 | [SRC-62CE5126F9-L000005](OMARAI_REMEDIATION_REGISTER_AR.md#L5) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 10 | [SRC-62CE5126F9-L000010](OMARAI_REMEDIATION_REGISTER_AR.md#L10) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L11) | عنوان Markdown (H2) | الحالة المرجعية الحالية — 23 أكتوبر 2026 | 11 | [SRC-62CE5126F9-L000011](OMARAI_REMEDIATION_REGISTER_AR.md#L11) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 17 | [SRC-62CE5126F9-L000017](OMARAI_REMEDIATION_REGISTER_AR.md#L17) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L27) | عنوان Markdown (H2) | دليل الاختبارات وحالة رأس PR — لقطة تاريخية قبل الدمج | 27 | [SRC-62CE5126F9-L000027](OMARAI_REMEDIATION_REGISTER_AR.md#L27) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 31 | [SRC-62CE5126F9-L000031](OMARAI_REMEDIATION_REGISTER_AR.md#L31) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L35) | عنوان Markdown (H2) | معاني الحالات | 35 | [SRC-62CE5126F9-L000035](OMARAI_REMEDIATION_REGISTER_AR.md#L35) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 38 | [SRC-62CE5126F9-L000038](OMARAI_REMEDIATION_REGISTER_AR.md#L38) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_REQUIRED | 43 | [SRC-62CE5126F9-L000043](OMARAI_REMEDIATION_REGISTER_AR.md#L43) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L44) | عنوان Markdown (H2) | A. سجل الأخطاء والجذور | 44 | [SRC-62CE5126F9-L000044](OMARAI_REMEDIATION_REGISTER_AR.md#L44) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L57) | عنوان Markdown (H2) | B. العيوب الأمنية والتشغيلية | 57 | [SRC-62CE5126F9-L000057](OMARAI_REMEDIATION_REGISTER_AR.md#L57) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOCUMENTED_IN | 66 | [SRC-62CE5126F9-L000066](OMARAI_REMEDIATION_REGISTER_AR.md#L66) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 68 | [SRC-62CE5126F9-L000068](OMARAI_REMEDIATION_REGISTER_AR.md#L68) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L72) | عنوان Markdown (H2) | C. فجوات الاختبار والجودة | 72 | [SRC-62CE5126F9-L000072](OMARAI_REMEDIATION_REGISTER_AR.md#L72) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L85) | عنوان Markdown (H2) | D. التداخلات والفروع | 85 | [SRC-62CE5126F9-L000085](OMARAI_REMEDIATION_REGISTER_AR.md#L85) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLOSED_AS_SUPERSEDED | 90 | [SRC-62CE5126F9-L000090](OMARAI_REMEDIATION_REGISTER_AR.md#L90) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_PROCESS | 95 | [SRC-62CE5126F9-L000095](OMARAI_REMEDIATION_REGISTER_AR.md#L95) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L97) | عنوان Markdown (H3) | سجل مختصر لحالة طلبات الدمج ذات الصلة — 23 أكتوبر 2026 | 97 | [SRC-62CE5126F9-L000097](OMARAI_REMEDIATION_REGISTER_AR.md#L97) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L107) | عنوان Markdown (H2) | E. الوثائق والمكونات غير الضرورية | 107 | [SRC-62CE5126F9-L000107](OMARAI_REMEDIATION_REGISTER_AR.md#L107) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 112 | [SRC-62CE5126F9-L000112](OMARAI_REMEDIATION_REGISTER_AR.md#L112) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L113) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPDATED_IN | 113 | [SRC-62CE5126F9-L000113](OMARAI_REMEDIATION_REGISTER_AR.md#L113) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 116 | [SRC-62CE5126F9-L000116](OMARAI_REMEDIATION_REGISTER_AR.md#L116) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 117 | [SRC-62CE5126F9-L000117](OMARAI_REMEDIATION_REGISTER_AR.md#L117) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L120) | عنوان Markdown (H2) | E1. حالة واجهة الاستخدام المستقلة | 120 | [SRC-62CE5126F9-L000120](OMARAI_REMEDIATION_REGISTER_AR.md#L120) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L126) | عنوان Markdown (H2) | F. ملخص بوابات الإغلاق | 126 | [SRC-62CE5126F9-L000126](OMARAI_REMEDIATION_REGISTER_AR.md#L126) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L128) | عنوان Markdown (H3) | مغلق ومختبر على main | 128 | [SRC-62CE5126F9-L000128](OMARAI_REMEDIATION_REGISTER_AR.md#L128) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L133) | عنوان Markdown (H3) | مدمج ومختبر آليًا عبر PR #76 | 133 | [SRC-62CE5126F9-L000133](OMARAI_REMEDIATION_REGISTER_AR.md#L133) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L144) | عنوان Markdown (H3) | ما يتطلب بيئة فعلية ولا يمكن إغلاقه من الكود وحده | 144 | [SRC-62CE5126F9-L000144](OMARAI_REMEDIATION_REGISTER_AR.md#L144) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L155) | عنوان Markdown (H2) | G. قاعدة عدم الإغلاق الشكلي | 155 | [SRC-62CE5126F9-L000155](OMARAI_REMEDIATION_REGISTER_AR.md#L155) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L160) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_SMOKE | 160 | [SRC-62CE5126F9-L000160](OMARAI_REMEDIATION_REGISTER_AR.md#L160) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات الأساسية الأولي | 1 | [SRC-B9C3015420-L000001](OMARAI_REQUIREMENTS_REGISTER.md#L1) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 6 | [SRC-B9C3015420-L000006](OMARAI_REQUIREMENTS_REGISTER.md#L6) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L8) | عنوان Markdown (H2) | طريقة القراءة | 8 | [SRC-B9C3015420-L000008](OMARAI_REQUIREMENTS_REGISTER.md#L8) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_P0_CODING_AUDIT_2026 | 22 | [SRC-B9C3015420-L000022](OMARAI_REQUIREMENTS_REGISTER.md#L22) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 24 | [SRC-B9C3015420-L000024](OMARAI_REQUIREMENTS_REGISTER.md#L24) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 59 | [SRC-B9C3015420-L000059](OMARAI_REQUIREMENTS_REGISTER.md#L59) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 59 | [SRC-B9C3015420-L000059](OMARAI_REQUIREMENTS_REGISTER.md#L59) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 63 | [SRC-B9C3015420-L000063](OMARAI_REQUIREMENTS_REGISTER.md#L63) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L93) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 93 | [SRC-B9C3015420-L000093](OMARAI_REQUIREMENTS_REGISTER.md#L93) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L117) | عنوان Markdown (H2) | متطلبات معمارية إضافية: القدرات والمهارات وسير العمل والوكلاء | 117 | [SRC-B9C3015420-L000117](OMARAI_REQUIREMENTS_REGISTER.md#L117) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L133) | عنوان Markdown (H2) | متطلبات الأمن السيبراني الإضافية لمعمارية المهارات وسير العمل والوكلاء | 133 | [SRC-B9C3015420-L000133](OMARAI_REQUIREMENTS_REGISTER.md#L133) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L155) | عنوان Markdown (H2) | كيفية استخدام هذا السجل في التنفيذ | 155 | [SRC-B9C3015420-L000155](OMARAI_REQUIREMENTS_REGISTER.md#L155) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L165) | عنوان Markdown (H2) | الحالة بعد تسوية الأدلة | 165 | [SRC-B9C3015420-L000165](OMARAI_REQUIREMENTS_REGISTER.md#L165) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L174) | عنوان Markdown (H2) | ملحق خط الأساس الحالي — 2026-10-21 | 174 | [SRC-B9C3015420-L000174](OMARAI_REQUIREMENTS_REGISTER.md#L174) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L184) | عنوان Markdown (H2) | تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026 | 184 | [SRC-B9C3015420-L000184](OMARAI_REQUIREMENTS_REGISTER.md#L184) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L191) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 191 | [SRC-B9C3015420-L000191](OMARAI_REQUIREMENTS_REGISTER.md#L191) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L194) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 194 | [SRC-B9C3015420-L000194](OMARAI_REQUIREMENTS_REGISTER.md#L194) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L196) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 196 | [SRC-B9C3015420-L000196](OMARAI_REQUIREMENTS_REGISTER.md#L196) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L197) | عنوان Markdown (H2) | تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026 | 197 | [SRC-B9C3015420-L000197](OMARAI_REQUIREMENTS_REGISTER.md#L197) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L174) | عنوان Markdown (H2) | الحالة المرجعية الحالية بعد دمج PR #76 — 23 أكتوبر 2026 | 174 | [SRC-B9C3015420-L000174](OMARAI_REQUIREMENTS_REGISTER.md#L174) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L179) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 179 | [SRC-B9C3015420-L000179](OMARAI_REQUIREMENTS_REGISTER.md#L179) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات والتتبع والنضج وبوابات الاعتماد | 1 | [SRC-65551FB29F-L000001](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
@@ -1890,27 +1930,53 @@
 | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L829) | عنوان Markdown (H2) | 17.18 الأمن كدورة حياة، لا كقائمة نهائية | 829 | [SRC-0F910493E8-L000829](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L829) |
 | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L845) | عنوان Markdown (H2) | الخلاصة الحاكمة | 845 | [SRC-0F910493E8-L000845](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L845) |
 | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | عنوان Markdown (H1) | Omarai — مصفوفة أدلة الاختبار: محلي، Mock، حاوية، وتكامل حي | 1 | [SRC-61B24BEFCC-L000001](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L7) | عنوان Markdown (H2) | ملحق تحديث خط الأساس — 21 أكتوبر 2026 | 7 | [SRC-61B24BEFCC-L000007](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L7) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L15) | عنوان Markdown (H2) | 1. أنواع الدليل | 15 | [SRC-61B24BEFCC-L000015](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L15) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L27) | عنوان Markdown (H2) | 2. تصنيف الموجود في المستودع | 27 | [SRC-61B24BEFCC-L000027](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L27) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L36) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 36 | [SRC-61B24BEFCC-L000036](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L36) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 39 | [SRC-61B24BEFCC-L000039](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L39) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 39 | [SRC-61B24BEFCC-L000039](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L39) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L40) | عنوان Markdown (H2) | 3. أمثلة تشغيل CI الحديثة وحدود الاستدلال | 40 | [SRC-61B24BEFCC-L000040](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L40) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L58) | عنوان Markdown (H2) | 4. ما الذي لا يزال NOT_RUN / UNKNOWN؟ | 58 | [SRC-61B24BEFCC-L000058](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L58) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 59 | [SRC-61B24BEFCC-L000059](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L59) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L70) | عنوان Markdown (H2) | 5. طريقة تشغيل قبول حي — بعد الموافقة فقط | 70 | [SRC-61B24BEFCC-L000070](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L70) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L91) | عنوان Markdown (H2) | 6. شروط قبول نتيجة أي اختبار | 91 | [SRC-61B24BEFCC-L000091](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L91) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L106) | عنوان Markdown (H2) | ملحق مصفوفة الدليل بعد مرشح الإغلاق — 21 أكتوبر 2026 | 106 | [SRC-61B24BEFCC-L000106](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L106) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L120) | عنوان Markdown (H2) | تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026 | 120 | [SRC-61B24BEFCC-L000120](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L120) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 127 | [SRC-61B24BEFCC-L000127](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L127) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 130 | [SRC-61B24BEFCC-L000130](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L130) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L132) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 132 | [SRC-61B24BEFCC-L000132](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L132) |
-| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L133) | عنوان Markdown (H2) | تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026 | 133 | [SRC-61B24BEFCC-L000133](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L133) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 3 | [SRC-61B24BEFCC-L000003](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L3) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 3 | [SRC-61B24BEFCC-L000003](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L3) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L9) | عنوان Markdown (H2) | ملحق تحديث خط الأساس — 21 أكتوبر 2026 | 9 | [SRC-61B24BEFCC-L000009](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L9) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L17) | عنوان Markdown (H2) | ملاحظة بشأن سجل CI التاريخي | 17 | [SRC-61B24BEFCC-L000017](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L17) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 20 | [SRC-61B24BEFCC-L000020](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L20) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L21) | عنوان Markdown (H2) | 1. أنواع الدليل | 21 | [SRC-61B24BEFCC-L000021](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L21) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L33) | عنوان Markdown (H2) | 2. تصنيف الموجود في المستودع | 33 | [SRC-61B24BEFCC-L000033](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L33) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 42 | [SRC-61B24BEFCC-L000042](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L42) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 45 | [SRC-61B24BEFCC-L000045](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L45) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 45 | [SRC-61B24BEFCC-L000045](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L45) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L46) | عنوان Markdown (H2) | 3. أمثلة تشغيل CI الحديثة وحدود الاستدلال | 46 | [SRC-61B24BEFCC-L000046](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L46) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L64) | عنوان Markdown (H2) | 4. ما الذي لا يزال NOT_RUN / UNKNOWN؟ | 64 | [SRC-61B24BEFCC-L000064](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L64) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 65 | [SRC-61B24BEFCC-L000065](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L65) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L76) | عنوان Markdown (H2) | 5. طريقة تشغيل قبول حي — بعد الموافقة فقط | 76 | [SRC-61B24BEFCC-L000076](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L76) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L97) | عنوان Markdown (H2) | 6. شروط قبول نتيجة أي اختبار | 97 | [SRC-61B24BEFCC-L000097](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L97) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L112) | عنوان Markdown (H2) | ملحق مصفوفة الدليل قبل الدمج — لقطة 21 أكتوبر 2026 | 112 | [SRC-61B24BEFCC-L000112](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L112) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L126) | عنوان Markdown (H2) | تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026 | 126 | [SRC-61B24BEFCC-L000126](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L126) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L133) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 133 | [SRC-61B24BEFCC-L000133](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L133) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L136) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 136 | [SRC-61B24BEFCC-L000136](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L136) |
+| [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L139) | عنوان Markdown (H2) | تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026 | 139 | [SRC-61B24BEFCC-L000139](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L139) |
 | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | عنوان Markdown (H1) | دليل تشغيل Omarai | 1 | [SRC-B6BD2CE1A8-L000001](OPERATIONS_AR.md#L1) |
 | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L2) | عنوان Markdown (H2) | التشغيل | 2 | [SRC-B6BD2CE1A8-L000002](OPERATIONS_AR.md#L2) |
 | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L9) | عنوان Markdown (H2) | سير العمل | 9 | [SRC-B6BD2CE1A8-L000009](OPERATIONS_AR.md#L9) |
 | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L19) | عنوان Markdown (H2) | قواعد مهمة | 19 | [SRC-B6BD2CE1A8-L000019](OPERATIONS_AR.md#L19) |
+| [docs/README.md](README.md#L1) | عنوان Markdown (H1) | دليل وثائق Omarai | 1 | [SRC-0B5CA119D2-L000001](README.md#L1) |
+| [docs/README.md](README.md#L4) | عنوان Markdown (H2) | ابدأ من هنا | 4 | [SRC-0B5CA119D2-L000004](README.md#L4) |
+| [docs/README.md](README.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 10 | [SRC-0B5CA119D2-L000010](README.md#L10) |
+| [docs/README.md](README.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 11 | [SRC-0B5CA119D2-L000011](README.md#L11) |
+| [docs/README.md](README.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 12 | [SRC-0B5CA119D2-L000012](README.md#L12) |
+| [docs/README.md](README.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 13 | [SRC-0B5CA119D2-L000013](README.md#L13) |
+| [docs/README.md](README.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 14 | [SRC-0B5CA119D2-L000014](README.md#L14) |
+| [docs/README.md](README.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 15 | [SRC-0B5CA119D2-L000015](README.md#L15) |
+| [docs/README.md](README.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPERATIONS_AR | 16 | [SRC-0B5CA119D2-L000016](README.md#L16) |
+| [docs/README.md](README.md#L17) | عنوان Markdown (H2) | معمارية ومتطلبات التأسيس | 17 | [SRC-0B5CA119D2-L000017](README.md#L17) |
+| [docs/README.md](README.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 20 | [SRC-0B5CA119D2-L000020](README.md#L20) |
+| [docs/README.md](README.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 21 | [SRC-0B5CA119D2-L000021](README.md#L21) |
+| [docs/README.md](README.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 22 | [SRC-0B5CA119D2-L000022](README.md#L22) |
+| [docs/README.md](README.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 23 | [SRC-0B5CA119D2-L000023](README.md#L23) |
+| [docs/README.md](README.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 24 | [SRC-0B5CA119D2-L000024](README.md#L24) |
+| [docs/README.md](README.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 25 | [SRC-0B5CA119D2-L000025](README.md#L25) |
+| [docs/README.md](README.md#L26) | عنوان Markdown (H2) | أدوات وفهرسة المستودع | 26 | [SRC-0B5CA119D2-L000026](README.md#L26) |
+| [docs/README.md](README.md#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 29 | [SRC-0B5CA119D2-L000029](README.md#L29) |
+| [docs/README.md](README.md#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 30 | [SRC-0B5CA119D2-L000030](README.md#L30) |
+| [docs/README.md](README.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 31 | [SRC-0B5CA119D2-L000031](README.md#L31) |
+| [docs/README.md](README.md#L41) | عنوان Markdown (H2) | سياسة تنظيم الوثائق | 41 | [SRC-0B5CA119D2-L000041](README.md#L41) |
+| [docs/README.md](README.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 47 | [SRC-0B5CA119D2-L000047](README.md#L47) |
+| [docs/README.md](README.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 47 | [SRC-0B5CA119D2-L000047](README.md#L47) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | عنوان Markdown (H1) | دليل البحث المتقدم والموصلات الاجتماعية — Omarai | 1 | [SRC-D911B73392-L000001](RESEARCH_CONNECTORS_AR.md#L1) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L4) | عنوان Markdown (H2) | 1. كيف يجري Omarai البحث؟ | 4 | [SRC-D911B73392-L000004](RESEARCH_CONNECTORS_AR.md#L4) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L16) | عنوان Markdown (H2) | 2.1 واجهات بحث ويب اختيارية | 16 | [SRC-D911B73392-L000016](RESEARCH_CONNECTORS_AR.md#L16) |
@@ -2014,42 +2080,38 @@
 | [README.md](../README.md#L61) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 61 | [SRC-B335630551-L000061](../README.md#L61) |
 | [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 65 | [SRC-B335630551-L000065](../README.md#L65) |
 | [README.md](../README.md#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 69 | [SRC-B335630551-L000069](../README.md#L69) |
-| [README.md](../README.md#L75) | عنوان Markdown (H2) | Hosted deployment | 75 | [SRC-B335630551-L000075](../README.md#L75) |
-| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 78 | [SRC-B335630551-L000078](../README.md#L78) |
-| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 78 | [SRC-B335630551-L000078](../README.md#L78) |
-| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 78 | [SRC-B335630551-L000078](../README.md#L78) |
-| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 78 | [SRC-B335630551-L000078](../README.md#L78) |
-| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 80 | [SRC-B335630551-L000080](../README.md#L80) |
-| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 80 | [SRC-B335630551-L000080](../README.md#L80) |
-| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 80 | [SRC-B335630551-L000080](../README.md#L80) |
-| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 80 | [SRC-B335630551-L000080](../README.md#L80) |
-| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 82 | [SRC-B335630551-L000082](../README.md#L82) |
-| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 82 | [SRC-B335630551-L000082](../README.md#L82) |
-| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 82 | [SRC-B335630551-L000082](../README.md#L82) |
-| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 82 | [SRC-B335630551-L000082](../README.md#L82) |
-| [README.md](../README.md#L83) | عنوان Markdown (H2) | Free hosted deployment (SnapDeploy) | 83 | [SRC-B335630551-L000083](../README.md#L83) |
-| [README.md](../README.md#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 86 | [SRC-B335630551-L000086](../README.md#L86) |
-| [README.md](../README.md#L89) | عنوان Markdown (H2) | Free hosted deployment (Render) | 89 | [SRC-B335630551-L000089](../README.md#L89) |
-| [README.md](../README.md#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 92 | [SRC-B335630551-L000092](../README.md#L92) |
-| [README.md](../README.md#L95) | عنوان Markdown (H2) | Run on Android / Termux | 95 | [SRC-B335630551-L000095](../README.md#L95) |
-| [README.md](../README.md#L116) | عنوان Markdown (H3) | Optional configuration | 116 | [SRC-B335630551-L000116](../README.md#L116) |
-| [README.md](../README.md#L122) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 122 | [SRC-B335630551-L000122](../README.md#L122) |
-| [README.md](../README.md#L123) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 123 | [SRC-B335630551-L000123](../README.md#L123) |
-| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 130 | [SRC-B335630551-L000130](../README.md#L130) |
-| [README.md](../README.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 131 | [SRC-B335630551-L000131](../README.md#L131) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 134 | [SRC-B335630551-L000134](../README.md#L134) |
-| [README.md](../README.md#L138) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 138 | [SRC-B335630551-L000138](../README.md#L138) |
-| [README.md](../README.md#L139) | عنوان Markdown (H2) | API | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L160) | عنوان Markdown (H2) | Existing lead workspace | 160 | [SRC-B335630551-L000160](../README.md#L160) |
-| [README.md](../README.md#L178) | عنوان Markdown (H2) | Checks | 178 | [SRC-B335630551-L000178](../README.md#L178) |
+| [README.md](../README.md#L75) | عنوان Markdown (H2) | Hosting and live acceptance | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 80 | [SRC-B335630551-L000080](../README.md#L80) |
+| [README.md](../README.md#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 81 | [SRC-B335630551-L000081](../README.md#L81) |
+| [README.md](../README.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 82 | [SRC-B335630551-L000082](../README.md#L82) |
+| [README.md](../README.md#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 84 | [SRC-B335630551-L000084](../README.md#L84) |
+| [README.md](../README.md#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 84 | [SRC-B335630551-L000084](../README.md#L84) |
+| [README.md](../README.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 88 | [SRC-B335630551-L000088](../README.md#L88) |
+| [README.md](../README.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 88 | [SRC-B335630551-L000088](../README.md#L88) |
+| [README.md](../README.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 88 | [SRC-B335630551-L000088](../README.md#L88) |
+| [README.md](../README.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 88 | [SRC-B335630551-L000088](../README.md#L88) |
+| [README.md](../README.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 88 | [SRC-B335630551-L000088](../README.md#L88) |
+| [README.md](../README.md#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 90 | [SRC-B335630551-L000090](../README.md#L90) |
+| [README.md](../README.md#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 90 | [SRC-B335630551-L000090](../README.md#L90) |
+| [README.md](../README.md#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 90 | [SRC-B335630551-L000090](../README.md#L90) |
+| [README.md](../README.md#L91) | عنوان Markdown (H2) | Run on Android / Termux | 91 | [SRC-B335630551-L000091](../README.md#L91) |
+| [README.md](../README.md#L112) | عنوان Markdown (H3) | Optional configuration | 112 | [SRC-B335630551-L000112](../README.md#L112) |
+| [README.md](../README.md#L118) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 118 | [SRC-B335630551-L000118](../README.md#L118) |
+| [README.md](../README.md#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 119 | [SRC-B335630551-L000119](../README.md#L119) |
+| [README.md](../README.md#L126) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 126 | [SRC-B335630551-L000126](../README.md#L126) |
+| [README.md](../README.md#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 127 | [SRC-B335630551-L000127](../README.md#L127) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 130 | [SRC-B335630551-L000130](../README.md#L130) |
+| [README.md](../README.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 134 | [SRC-B335630551-L000134](../README.md#L134) |
+| [README.md](../README.md#L135) | عنوان Markdown (H2) | API | 135 | [SRC-B335630551-L000135](../README.md#L135) |
+| [README.md](../README.md#L156) | عنوان Markdown (H2) | Existing lead workspace | 156 | [SRC-B335630551-L000156](../README.md#L156) |
+| [README.md](../README.md#L174) | عنوان Markdown (H2) | Checks | 174 | [SRC-B335630551-L000174](../README.md#L174) |
 | [render.yaml](../render.yaml#L1) | مفتاح إعداد YAML | services | 1 | [SRC-A64CF250B4-L000001](../render.yaml#L1) |
 | [render.yaml](../render.yaml#L3) | مفتاح إعداد YAML | name | 3 | [SRC-A64CF250B4-L000003](../render.yaml#L3) |
 | [render.yaml](../render.yaml#L4) | مفتاح إعداد YAML | runtime | 4 | [SRC-A64CF250B4-L000004](../render.yaml#L4) |

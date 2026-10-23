@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-5587371288-L000044
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-5587371288-L000002
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -62,6 +62,48 @@
 | [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
 | [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
 | [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
+## وثائق ونصوص
+
+### FILE-18813C8694 — [.github/PULL_REQUEST_TEMPLATE.md](../../.github/PULL_REQUEST_TEMPLATE.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-18813C8694-L000001](../../.github/PULL_REQUEST_TEMPLATE.md#L1) | 1 | `"## الهدف والنطاق"` | — |
+| [SRC-18813C8694-L000002](../../.github/PULL_REQUEST_TEMPLATE.md#L2) | 2 | `"- ما المشكلة المحددة؟ وما السبب الجذري؟"` | — |
+| [SRC-18813C8694-L000003](../../.github/PULL_REQUEST_TEMPLATE.md#L3) | 3 | `"- ما الذي تغيّر، وما الذي تعمّدنا عدم تغييره؟"` | — |
+| [SRC-18813C8694-L000004](../../.github/PULL_REQUEST_TEMPLATE.md#L4) | 4 | `""` | — |
+| [SRC-18813C8694-L000005](../../.github/PULL_REQUEST_TEMPLATE.md#L5) | 5 | `"## الأدلة"` | — |
+| [SRC-18813C8694-L000006](../../.github/PULL_REQUEST_TEMPLATE.md#L6) | 6 | ``"- [ ] الفرع مبني على أحدث `main` ولا يحتوي تغييرات غير مرتبطة."`` | — |
+| [SRC-18813C8694-L000007](../../.github/PULL_REQUEST_TEMPLATE.md#L7) | 7 | `"- [ ] ذُكر SHA الذي تمت مراجعته."` | — |
+| [SRC-18813C8694-L000008](../../.github/PULL_REQUEST_TEMPLATE.md#L8) | 8 | `"- [ ] أُرفقت أو رُبطت الاختبارات الفعلية ونتائج CI."` | — |
+| [SRC-18813C8694-L000009](../../.github/PULL_REQUEST_TEMPLATE.md#L9) | 9 | ``"- [ ] كل اختبار لم يُنفذ موصوف صراحةً بأنه `NOT_RUN`."`` | — |
+| [SRC-18813C8694-L000010](../../.github/PULL_REQUEST_TEMPLATE.md#L10) | 10 | `"- [ ] لا يدّعي الوصف أن اختبار وحدة يثبت تكاملًا حيًا أو دقة دلالية شاملة."` | — |
+| [SRC-18813C8694-L000011](../../.github/PULL_REQUEST_TEMPLATE.md#L11) | 11 | `""` | — |
+| [SRC-18813C8694-L000012](../../.github/PULL_REQUEST_TEMPLATE.md#L12) | 12 | `"## الاختبارات والتحقق"` | — |
+| [SRC-18813C8694-L000013](../../.github/PULL_REQUEST_TEMPLATE.md#L13) | 13 | `"- الأمر/Workflow:"` | — |
+| [SRC-18813C8694-L000014](../../.github/PULL_REQUEST_TEMPLATE.md#L14) | 14 | `"- النتيجة الفعلية:"` | — |
+| [SRC-18813C8694-L000015](../../.github/PULL_REQUEST_TEMPLATE.md#L15) | 15 | `"- إصدار Python / البيئة:"` | — |
+| [SRC-18813C8694-L000016](../../.github/PULL_REQUEST_TEMPLATE.md#L16) | 16 | `"- حدود الدليل:"` | — |
+| [SRC-18813C8694-L000017](../../.github/PULL_REQUEST_TEMPLATE.md#L17) | 17 | `""` | — |
+| [SRC-18813C8694-L000018](../../.github/PULL_REQUEST_TEMPLATE.md#L18) | 18 | `"## سلامة المستودع والوثائق"` | — |
+| [SRC-18813C8694-L000019](../../.github/PULL_REQUEST_TEMPLATE.md#L19) | 19 | `"- [ ] فُحص وجود حل/وثيقة/اختبار/PR متداخل قبل إضافة بديل."` | — |
+| [SRC-18813C8694-L000020](../../.github/PULL_REQUEST_TEMPLATE.md#L20) | 20 | `"- [ ] حُدّثت الوثيقة المرجعية بدل إنشاء مصدر حقيقة موازٍ."` | — |
+| [SRC-18813C8694-L000021](../../.github/PULL_REQUEST_TEMPLATE.md#L21) | 21 | ``"- [ ] إذا تغيرت ملفات مؤهلة للفهرسة، شُغّل `python docs/generate_index.py` و`python docs/generate_index.py --check`، وفُحص diff المولد."`` | — |
+| [SRC-18813C8694-L000022](../../.github/PULL_REQUEST_TEMPLATE.md#L22) | 22 | `"- [ ] لم تُعدّل مخرجات الفهرسة يدويًا."` | — |
+| [SRC-18813C8694-L000023](../../.github/PULL_REQUEST_TEMPLATE.md#L23) | 23 | `"- [ ] الروابط والمسارات داخل الوثائق تعمل، واللقطات التاريخية موسومة كتاريخية."` | — |
+| [SRC-18813C8694-L000024](../../.github/PULL_REQUEST_TEMPLATE.md#L24) | 24 | `""` | — |
+| [SRC-18813C8694-L000025](../../.github/PULL_REQUEST_TEMPLATE.md#L25) | 25 | `"## المخاطر والأثر"` | — |
+| [SRC-18813C8694-L000026](../../.github/PULL_REQUEST_TEMPLATE.md#L26) | 26 | `"- سلوك التطبيق / API:"` | — |
+| [SRC-18813C8694-L000027](../../.github/PULL_REQUEST_TEMPLATE.md#L27) | 27 | `"- الأمن / الخصوصية / البيانات:"` | — |
+| [SRC-18813C8694-L000028](../../.github/PULL_REQUEST_TEMPLATE.md#L28) | 28 | `"- التوافق والترحيلات:"` | — |
+| [SRC-18813C8694-L000029](../../.github/PULL_REQUEST_TEMPLATE.md#L29) | 29 | `"- الأداء / التكلفة:"` | — |
+| [SRC-18813C8694-L000030](../../.github/PULL_REQUEST_TEMPLATE.md#L30) | 30 | ``"- التشغيل أو الاستضافة أو الأسرار: `NONE` ما لم يُذكر خلاف ذلك صراحةً."`` | — |
+| [SRC-18813C8694-L000031](../../.github/PULL_REQUEST_TEMPLATE.md#L31) | 31 | `""` | — |
+| [SRC-18813C8694-L000032](../../.github/PULL_REQUEST_TEMPLATE.md#L32) | 32 | `"## قرار المراجعة"` | — |
+| [SRC-18813C8694-L000033](../../.github/PULL_REQUEST_TEMPLATE.md#L33) | 33 | `"- [ ] لا دمج أو نشر أو استهلاك خدمة خارجية مكلفة دون موافقة بشرية صريحة."` | — |
 ## CI وأتمتة
 
 ### FILE-9F6E30987B — [.github/workflows/hosted-smoke.yml](../../.github/workflows/hosted-smoke.yml#L1)
@@ -130,7 +172,7 @@
 | [SRC-1DB27D9318-L000001](../../.github/workflows/tests.yml#L1) | 1 | `"name: Omarai tests"` | — |
 | [SRC-1DB27D9318-L000002](../../.github/workflows/tests.yml#L2) | 2 | `"on:"` | — |
 | [SRC-1DB27D9318-L000003](../../.github/workflows/tests.yml#L3) | 3 | `"  push:"` | — |
-| [SRC-1DB27D9318-L000004](../../.github/workflows/tests.yml#L4) | 4 | `"    branches: [\"main\", \"feat/**\", \"fix/**\", \"feature/**\"]"` | — |
+| [SRC-1DB27D9318-L000004](../../.github/workflows/tests.yml#L4) | 4 | `"    branches: [\"main\", \"feat/**\", \"fix/**\", \"feature/**\", \"chore/**\", \"docs/**\"]"` | — |
 | [SRC-1DB27D9318-L000005](../../.github/workflows/tests.yml#L5) | 5 | `"  pull_request:"` | — |
 | [SRC-1DB27D9318-L000006](../../.github/workflows/tests.yml#L6) | 6 | `"    branches: [\"main\"]"` | — |
 | [SRC-1DB27D9318-L000007](../../.github/workflows/tests.yml#L7) | 7 | `"  workflow_dispatch:"` | — |
@@ -243,7 +285,7 @@
 | [SRC-84F7DE82AF-L000002](../../.github/workflows/update_index.yml#L2) | 2 | `""` | — |
 | [SRC-84F7DE82AF-L000003](../../.github/workflows/update_index.yml#L3) | 3 | `"on:"` | — |
 | [SRC-84F7DE82AF-L000004](../../.github/workflows/update_index.yml#L4) | 4 | `"  push:"` | — |
-| [SRC-84F7DE82AF-L000005](../../.github/workflows/update_index.yml#L5) | 5 | `"    branches: [\"main\", \"feat/**\", \"fix/**\", \"feature/**\"]"` | — |
+| [SRC-84F7DE82AF-L000005](../../.github/workflows/update_index.yml#L5) | 5 | `"    branches: [\"main\", \"feat/**\", \"fix/**\", \"feature/**\", \"chore/**\", \"docs/**\"]"` | — |
 | [SRC-84F7DE82AF-L000006](../../.github/workflows/update_index.yml#L6) | 6 | `"    paths-ignore:"` | — |
 | [SRC-84F7DE82AF-L000007](../../.github/workflows/update_index.yml#L7) | 7 | `"      - \"docs/MASTER_INDEX.md\""` | — |
 | [SRC-84F7DE82AF-L000008](../../.github/workflows/update_index.yml#L8) | 8 | `"      - \"docs/SOURCE_LINES_INDEX.md\""` | — |
@@ -449,6 +491,15 @@
 | [SRC-A54FF182C7-L000069](../../AGENTS.md#L69) | 69 | `""` | — |
 | [SRC-A54FF182C7-L000070](../../AGENTS.md#L70) | 70 | `"## Acceptance principle"` | — |
 | [SRC-A54FF182C7-L000071](../../AGENTS.md#L71) | 71 | `"A capability is not complete because it appears in a plan, comment, prompt, or documentation. It is complete only to the extent supported by the implementation, relevant tests, observed output, and explicitly stated limitations."` | — |
+| [SRC-A54FF182C7-L000072](../../AGENTS.md#L72) | 72 | `""` | — |
+| [SRC-A54FF182C7-L000073](../../AGENTS.md#L73) | 73 | `""` | — |
+| [SRC-A54FF182C7-L000074](../../AGENTS.md#L74) | 74 | `"## Repository hygiene and documentation ownership"` | — |
+| [SRC-A54FF182C7-L000075](../../AGENTS.md#L75) | 75 | ``"- Use [`docs/README.md`](docs/README.md) as the navigation map. Before adding a document, search for an existing owner of the same concern; update the canonical file instead of creating a parallel status or checklist."`` | — |
+| [SRC-A54FF182C7-L000076](../../AGENTS.md#L76) | 76 | ``"- Keep one current source of truth per concern: implementation boundaries in `docs/IMPLEMENTATION_SCOPE.md`; issue/finding IDs in `docs/OMARAI_REMEDIATION_REGISTER_AR.md`; current post-merge evidence in `docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md`; test categories and limitations in `docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md`."`` | — |
+| [SRC-A54FF182C7-L000077](../../AGENTS.md#L77) | 77 | ``"- Historical audit snapshots belong under `docs/archive/`. Mark their baseline SHA/date and link to current guidance; never silently rewrite old test evidence to look current."`` | — |
+| [SRC-A54FF182C7-L000078](../../AGENTS.md#L78) | 78 | `"- Do not keep a second live-status document with a different PR state or baseline SHA. Read current PR/branch state from GitHub; avoid hard-coding the state of an open PR in durable docs."` | — |
+| [SRC-A54FF182C7-L000079](../../AGENTS.md#L79) | 79 | ``"- Never hand-edit generated files under `docs/source_index/`, `docs/MASTER_INDEX.md`, `docs/SOURCE_LINES_INDEX.md`, or `docs/INDEX_COVERAGE_AUDIT.md`. Run `python docs/generate_index.py` and `python docs/generate_index.py --check`; inspect the generated diff."`` | — |
+| [SRC-A54FF182C7-L000080](../../AGENTS.md#L80) | 80 | ``"- Each PR should have one purpose, be based on current `main`, link the root cause to exact changes/tests, state checks that were not run, and avoid unrelated generated or historical changes. Do not merge or deploy without human director approval."`` | — |
 ## الوكيل والمنطق
 
 ### FILE-E120A62E2E — [agents/__init__.py](../../agents/__init__.py#L1)
@@ -855,45 +906,3 @@
 |---|---:|---|---|
 | [SRC-5587371288-L000001](../../agents/intent_router.py#L1) | 1 | `"\"\"\"Small deterministic intent routing for Omarai's answer engine."` | — |
 | [SRC-5587371288-L000002](../../agents/intent_router.py#L2) | 2 | `""` | — |
-| [SRC-5587371288-L000003](../../agents/intent_router.py#L3) | 3 | `"This module chooses a strategy; it does not search, call a model, or claim that"` | — |
-| [SRC-5587371288-L000004](../../agents/intent_router.py#L4) | 4 | `"an answer is factually verified. Keep the rules explicit and unit-testable."` | — |
-| [SRC-5587371288-L000005](../../agents/intent_router.py#L5) | 5 | `"\"\"\""` | — |
-| [SRC-5587371288-L000006](../../agents/intent_router.py#L6) | 6 | `"from __future__ import annotations"` | — |
-| [SRC-5587371288-L000007](../../agents/intent_router.py#L7) | 7 | `""` | — |
-| [SRC-5587371288-L000008](../../agents/intent_router.py#L8) | 8 | `"import re"` | — |
-| [SRC-5587371288-L000009](../../agents/intent_router.py#L9) | 9 | `"import unicodedata"` | — |
-| [SRC-5587371288-L000010](../../agents/intent_router.py#L10) | 10 | `"from typing import Any"` | — |
-| [SRC-5587371288-L000011](../../agents/intent_router.py#L11) | 11 | `""` | — |
-| [SRC-5587371288-L000012](../../agents/intent_router.py#L12) | 12 | `"MAX_CONTEXT_TURNS = 8"` | — |
-| [SRC-5587371288-L000013](../../agents/intent_router.py#L13) | 13 | `""` | — |
-| [SRC-5587371288-L000014](../../agents/intent_router.py#L14) | 14 | `"ROUTES = frozenset({"` | — |
-| [SRC-5587371288-L000015](../../agents/intent_router.py#L15) | 15 | `"    \"LOCAL\", \"MODEL_ONLY\", \"CLARIFY\", \"WEB_SIMPLE\", \"WEB_DEEP\","` | — |
-| [SRC-5587371288-L000016](../../agents/intent_router.py#L16) | 16 | `"    \"LEAD_GENERATION\","` | — |
-| [SRC-5587371288-L000017](../../agents/intent_router.py#L17) | 17 | `"})"` | — |
-| [SRC-5587371288-L000018](../../agents/intent_router.py#L18) | 18 | `""` | — |
-| [SRC-5587371288-L000019](../../agents/intent_router.py#L19) | 19 | `"_ARABIC_DIACRITICS = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
-| [SRC-5587371288-L000020](../../agents/intent_router.py#L20) | 20 | `"_PUNCTUATION = re.compile(r\"[؟?!.،,؛;:()\\[\\]{}\\\"'«»]+\")"` | — |
-| [SRC-5587371288-L000021](../../agents/intent_router.py#L21) | 21 | `"_SPACE = re.compile(r\"\\s+\")"` | — |
-| [SRC-5587371288-L000022](../../agents/intent_router.py#L22) | 22 | `""` | — |
-| [SRC-5587371288-L000023](../../agents/intent_router.py#L23) | 23 | `"_SMALLTALK = frozenset({"` | — |
-| [SRC-5587371288-L000024](../../agents/intent_router.py#L24) | 24 | `"    \"hi\", \"hello\", \"hey\", \"hello there\", \"hi there\","` | — |
-| [SRC-5587371288-L000025](../../agents/intent_router.py#L25) | 25 | `"    \"thanks\", \"thank you\", \"thanks that helps\", \"thank you that helps\","` | — |
-| [SRC-5587371288-L000026](../../agents/intent_router.py#L26) | 26 | `"    \"got it\", \"okay thanks\", \"ok thanks\", \"how are you\", \"how are you doing\","` | — |
-| [SRC-5587371288-L000027](../../agents/intent_router.py#L27) | 27 | `"    \"hello how are you\", \"hi how are you\","` | — |
-| [SRC-5587371288-L000028](../../agents/intent_router.py#L28) | 28 | `"    \"ازيك\", \"ازيك عامل ايه\", \"ازيك عامل ايه النهارده\", \"عامل ايه\", \"عامله ايه\", \"اهلا\", \"مرحبا\","` | — |
-| [SRC-5587371288-L000029](../../agents/intent_router.py#L29) | 29 | `"    \"السلام عليكم\", \"السلام عليكم ورحمه الله وبركاته\","` | — |
-| [SRC-5587371288-L000030](../../agents/intent_router.py#L30) | 30 | `"    \"صباح الخير\", \"مساء الخير\", \"شكرا\", \"شكرا لك\", \"متشكر\", \"متشكره\","` | — |
-| [SRC-5587371288-L000031](../../agents/intent_router.py#L31) | 31 | `"    \"تمام شكرا\", \"تمام\", \"حسنا\", \"العفو\","` | — |
-| [SRC-5587371288-L000032](../../agents/intent_router.py#L32) | 32 | `"})"` | — |
-| [SRC-5587371288-L000033](../../agents/intent_router.py#L33) | 33 | `""` | — |
-| [SRC-5587371288-L000034](../../agents/intent_router.py#L34) | 34 | `"# Elliptical questions whose subject normally must be recovered from dialogue."` | — |
-| [SRC-5587371288-L000035](../../agents/intent_router.py#L35) | 35 | `"_AMBIGUOUS_ARABIC = frozenset({"` | — |
-| [SRC-5587371288-L000036](../../agents/intent_router.py#L36) | 36 | `"    \"كام سعرها\", \"كم سعرها\", \"بكام سعرها\", \"سعرها كام\", \"سعرها بكام\","` | — |
-| [SRC-5587371288-L000037](../../agents/intent_router.py#L37) | 37 | `"    \"كام تمنها\", \"كم تمنها\", \"بكام دي\", \"بكام ده\", \"سعره كام\", \"كام سعره\","` | — |
-| [SRC-5587371288-L000038](../../agents/intent_router.py#L38) | 38 | `"    \"كم سعره\", \"قارنهم\", \"قارنهملي\", \"قارن بينهم\", \"قارن بينهما\","` | — |
-| [SRC-5587371288-L000039](../../agents/intent_router.py#L39) | 39 | `"    \"ما رايك فيها\", \"ايه رايك فيها\", \"هل هي كويسه\", \"هل هو كويس\","` | — |
-| [SRC-5587371288-L000040](../../agents/intent_router.py#L40) | 40 | `"    \"هل دي كويسه\", \"هل ده كويس\", \"هل هو جيد\", \"هل هي جيده\","` | — |
-| [SRC-5587371288-L000041](../../agents/intent_router.py#L41) | 41 | `"    \"اشتريها ولا لا\", \"اشتريه ولا لا\","` | — |
-| [SRC-5587371288-L000042](../../agents/intent_router.py#L42) | 42 | `"    \"فين\", \"فين هي\", \"فين هو\", \"فين مكانها\", \"فين مكانه\","` | — |
-| [SRC-5587371288-L000043](../../agents/intent_router.py#L43) | 43 | `"    \"مكانها فين\", \"مكانه فين\", \"موجوده فين\", \"موجود فين\","` | — |
-| [SRC-5587371288-L000044](../../agents/intent_router.py#L44) | 44 | `"    \"فين الاقيها\", \"فين الاقيه\","` | — |

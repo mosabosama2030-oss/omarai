@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001892 إلى SRC-1AE03B9EC3-L002691
+- النطاق: SRC-1AE03B9EC3-L001850 إلى SRC-1AE03B9EC3-L002649
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,48 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001850](../../agents/web_agent.py#L1850) | 1850 | `"                                \"user_id\": ig_user_id,"` | — |
+| [SRC-1AE03B9EC3-L001851](../../agents/web_agent.py#L1851) | 1851 | `"                                \"fields\": \"id,caption,media_type,permalink,timestamp,like_count,comments_count\","` | — |
+| [SRC-1AE03B9EC3-L001852](../../agents/web_agent.py#L1852) | 1852 | `"                                \"limit\": 20,"` | — |
+| [SRC-1AE03B9EC3-L001853](../../agents/web_agent.py#L1853) | 1853 | `"                                \"access_token\": ig_token,"` | — |
+| [SRC-1AE03B9EC3-L001854](../../agents/web_agent.py#L1854) | 1854 | `"                            },"` | — |
+| [SRC-1AE03B9EC3-L001855](../../agents/web_agent.py#L1855) | 1855 | `"                            headers=headers,"` | — |
+| [SRC-1AE03B9EC3-L001856](../../agents/web_agent.py#L1856) | 1856 | `"                            timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L001857](../../agents/web_agent.py#L1857) | 1857 | `"                            follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L001858](../../agents/web_agent.py#L1858) | 1858 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L001859](../../agents/web_agent.py#L1859) | 1859 | `"                        if media_response.status_code != 200:"` | — |
+| [SRC-1AE03B9EC3-L001860](../../agents/web_agent.py#L1860) | 1860 | `"                            warnings.append("` | — |
+| [SRC-1AE03B9EC3-L001861](../../agents/web_agent.py#L1861) | 1861 | `"                                \"Instagram public hashtag media unavailable \""` | — |
+| [SRC-1AE03B9EC3-L001862](../../agents/web_agent.py#L1862) | 1862 | `"                                f\"(HTTP {media_response.status_code}).\""` | — |
+| [SRC-1AE03B9EC3-L001863](../../agents/web_agent.py#L1863) | 1863 | `"                            )"` | — |
+| [SRC-1AE03B9EC3-L001864](../../agents/web_agent.py#L1864) | 1864 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L001865](../../agents/web_agent.py#L1865) | 1865 | `"                        items = media_response.json().get(\"data\", [])"` | — |
+| [SRC-1AE03B9EC3-L001866](../../agents/web_agent.py#L1866) | 1866 | `"                        for item in items:"` | — |
+| [SRC-1AE03B9EC3-L001867](../../agents/web_agent.py#L1867) | 1867 | `"                            url = _public_http_url(item.get(\"permalink\", \"\"))"` | — |
+| [SRC-1AE03B9EC3-L001868](../../agents/web_agent.py#L1868) | 1868 | `"                            if not url:"` | — |
+| [SRC-1AE03B9EC3-L001869](../../agents/web_agent.py#L1869) | 1869 | `"                                continue"` | — |
+| [SRC-1AE03B9EC3-L001870](../../agents/web_agent.py#L1870) | 1870 | `"                            metrics = []"` | — |
+| [SRC-1AE03B9EC3-L001871](../../agents/web_agent.py#L1871) | 1871 | `"                            if item.get(\"like_count\") is not None:"` | — |
+| [SRC-1AE03B9EC3-L001872](../../agents/web_agent.py#L1872) | 1872 | `"                                metrics.append(\"likes=\" + str(item[\"like_count\"]))"` | — |
+| [SRC-1AE03B9EC3-L001873](../../agents/web_agent.py#L1873) | 1873 | `"                            if item.get(\"comments_count\") is not None:"` | — |
+| [SRC-1AE03B9EC3-L001874](../../agents/web_agent.py#L1874) | 1874 | `"                                metrics.append(\"comments=\" + str(item[\"comments_count\"]))"` | — |
+| [SRC-1AE03B9EC3-L001875](../../agents/web_agent.py#L1875) | 1875 | `"                            caption = _clean_text(item.get(\"caption\") or \"\", 1200)"` | — |
+| [SRC-1AE03B9EC3-L001876](../../agents/web_agent.py#L1876) | 1876 | `"                            if metrics:"` | — |
+| [SRC-1AE03B9EC3-L001877](../../agents/web_agent.py#L1877) | 1877 | `"                                caption = (caption + \" \| \" if caption else \"\") + \", \".join(metrics)"` | — |
+| [SRC-1AE03B9EC3-L001878](../../agents/web_agent.py#L1878) | 1878 | `"                            results.append({"` | — |
+| [SRC-1AE03B9EC3-L001879](../../agents/web_agent.py#L1879) | 1879 | `"                                \"title\": \"Instagram public hashtag: #\" + hashtag,"` | — |
+| [SRC-1AE03B9EC3-L001880](../../agents/web_agent.py#L1880) | 1880 | `"                                \"url\": url,"` | — |
+| [SRC-1AE03B9EC3-L001881](../../agents/web_agent.py#L1881) | 1881 | `"                                \"snippet\": caption,"` | — |
+| [SRC-1AE03B9EC3-L001882](../../agents/web_agent.py#L1882) | 1882 | `"                                \"page_text\": \"\","` | — |
+| [SRC-1AE03B9EC3-L001883](../../agents/web_agent.py#L1883) | 1883 | `"                                \"page_fetched\": False,"` | — |
+| [SRC-1AE03B9EC3-L001884](../../agents/web_agent.py#L1884) | 1884 | `"                                \"provider\": \"instagram_graph_api\","` | — |
+| [SRC-1AE03B9EC3-L001885](../../agents/web_agent.py#L1885) | 1885 | `"                                \"provider_rank\": len(["` | — |
+| [SRC-1AE03B9EC3-L001886](../../agents/web_agent.py#L1886) | 1886 | `"                                    row for row in results"` | — |
+| [SRC-1AE03B9EC3-L001887](../../agents/web_agent.py#L1887) | 1887 | `"                                    if row.get(\"provider\") == \"instagram_graph_api\""` | — |
+| [SRC-1AE03B9EC3-L001888](../../agents/web_agent.py#L1888) | 1888 | `"                                ]) + 1,"` | — |
+| [SRC-1AE03B9EC3-L001889](../../agents/web_agent.py#L1889) | 1889 | `"                                \"search_query\": query,"` | — |
+| [SRC-1AE03B9EC3-L001890](../../agents/web_agent.py#L1890) | 1890 | `"                                \"published_at\": _clean_text(item.get(\"timestamp\") or \"\", 100),"` | — |
+| [SRC-1AE03B9EC3-L001891](../../agents/web_agent.py#L1891) | 1891 | `"                            })"` | — |
 | [SRC-1AE03B9EC3-L001892](../../agents/web_agent.py#L1892) | 1892 | `"                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
 | [SRC-1AE03B9EC3-L001893](../../agents/web_agent.py#L1893) | 1893 | `"                        warnings.append(\"Instagram Graph API search failed for a requested hashtag.\")"` | — |
 | [SRC-1AE03B9EC3-L001894](../../agents/web_agent.py#L1894) | 1894 | `"            else:"` | — |
@@ -774,45 +816,3 @@
 | [SRC-1AE03B9EC3-L002647](../../agents/web_agent.py#L2647) | 2647 | `"            if budget is not None:"` | — |
 | [SRC-1AE03B9EC3-L002648](../../agents/web_agent.py#L2648) | 2648 | `"                try:"` | — |
 | [SRC-1AE03B9EC3-L002649](../../agents/web_agent.py#L2649) | 2649 | `"                    budget.reserve(\"model_calls\")"` | — |
-| [SRC-1AE03B9EC3-L002650](../../agents/web_agent.py#L2650) | 2650 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
-| [SRC-1AE03B9EC3-L002651](../../agents/web_agent.py#L2651) | 2651 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
-| [SRC-1AE03B9EC3-L002652](../../agents/web_agent.py#L2652) | 2652 | `"                        # The model may still answer, but the optional server-side search"` | — |
-| [SRC-1AE03B9EC3-L002653](../../agents/web_agent.py#L2653) | 2653 | `"                        # tool is disabled when its separate budget is unavailable."` | — |
-| [SRC-1AE03B9EC3-L002654](../../agents/web_agent.py#L2654) | 2654 | `"                        use_web_search = False"` | — |
-| [SRC-1AE03B9EC3-L002655](../../agents/web_agent.py#L2655) | 2655 | `"                    elif use_web_search:"` | — |
-| [SRC-1AE03B9EC3-L002656](../../agents/web_agent.py#L2656) | 2656 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |
-| [SRC-1AE03B9EC3-L002657](../../agents/web_agent.py#L2657) | 2657 | `"                        budget.reserve(\"tool_calls\", amount=3)"` | — |
-| [SRC-1AE03B9EC3-L002658](../../agents/web_agent.py#L2658) | 2658 | `"                except RequestBudgetExceeded as exc:"` | — |
-| [SRC-1AE03B9EC3-L002659](../../agents/web_agent.py#L2659) | 2659 | `"                    self._record_generation_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L002660](../../agents/web_agent.py#L2660) | 2660 | `"                        requested_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L002661](../../agents/web_agent.py#L2661) | 2661 | `"                        attempted_model=candidate_model,"` | — |
-| [SRC-1AE03B9EC3-L002662](../../agents/web_agent.py#L2662) | 2662 | `"                        status=\"budget_exhausted\","` | — |
-| [SRC-1AE03B9EC3-L002663](../../agents/web_agent.py#L2663) | 2663 | `"                        error_class=type(exc).__name__,"` | — |
-| [SRC-1AE03B9EC3-L002664](../../agents/web_agent.py#L2664) | 2664 | `"                        request_started=False,"` | — |
-| [SRC-1AE03B9EC3-L002665](../../agents/web_agent.py#L2665) | 2665 | `"                        remote_response_received=False,"` | — |
-| [SRC-1AE03B9EC3-L002666](../../agents/web_agent.py#L2666) | 2666 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L002667](../../agents/web_agent.py#L2667) | 2667 | `"                    raise"` | — |
-| [SRC-1AE03B9EC3-L002668](../../agents/web_agent.py#L2668) | 2668 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L002669](../../agents/web_agent.py#L2669) | 2669 | `"                request_timeout = timeout or self.timeout"` | — |
-| [SRC-1AE03B9EC3-L002670](../../agents/web_agent.py#L2670) | 2670 | `"            request_payload: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L002671](../../agents/web_agent.py#L2671) | 2671 | `"                \"model\": candidate_model,"` | — |
-| [SRC-1AE03B9EC3-L002672](../../agents/web_agent.py#L2672) | 2672 | `"                \"messages\": messages,"` | — |
-| [SRC-1AE03B9EC3-L002673](../../agents/web_agent.py#L2673) | 2673 | `"                \"temperature\": temperature,"` | — |
-| [SRC-1AE03B9EC3-L002674](../../agents/web_agent.py#L2674) | 2674 | `"                \"max_tokens\": max(100, min(int(max_tokens), 3000)),"` | — |
-| [SRC-1AE03B9EC3-L002675](../../agents/web_agent.py#L2675) | 2675 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L002676](../../agents/web_agent.py#L2676) | 2676 | `"            if use_web_search:"` | — |
-| [SRC-1AE03B9EC3-L002677](../../agents/web_agent.py#L2677) | 2677 | `"                # OpenRouter executes these searches server-side and returns URL citations."` | — |
-| [SRC-1AE03B9EC3-L002678](../../agents/web_agent.py#L2678) | 2678 | `"                # This is opt-in because provider search incurs usage charges."` | — |
-| [SRC-1AE03B9EC3-L002679](../../agents/web_agent.py#L2679) | 2679 | `"                request_payload[\"tools\"] = [{"` | — |
-| [SRC-1AE03B9EC3-L002680](../../agents/web_agent.py#L2680) | 2680 | `"                    \"type\": \"openrouter:web_search\","` | — |
-| [SRC-1AE03B9EC3-L002681](../../agents/web_agent.py#L2681) | 2681 | `"                    \"parameters\": {"` | — |
-| [SRC-1AE03B9EC3-L002682](../../agents/web_agent.py#L2682) | 2682 | `"                        \"engine\": \"auto\","` | — |
-| [SRC-1AE03B9EC3-L002683](../../agents/web_agent.py#L2683) | 2683 | `"                        \"max_results\": 5,"` | — |
-| [SRC-1AE03B9EC3-L002684](../../agents/web_agent.py#L2684) | 2684 | `"                        \"max_total_results\": 12,"` | — |
-| [SRC-1AE03B9EC3-L002685](../../agents/web_agent.py#L2685) | 2685 | `"                        \"max_uses\": 3,"` | — |
-| [SRC-1AE03B9EC3-L002686](../../agents/web_agent.py#L2686) | 2686 | `"                        \"search_context_size\": \"medium\","` | — |
-| [SRC-1AE03B9EC3-L002687](../../agents/web_agent.py#L2687) | 2687 | `"                    },"` | — |
-| [SRC-1AE03B9EC3-L002688](../../agents/web_agent.py#L2688) | 2688 | `"                }]"` | — |
-| [SRC-1AE03B9EC3-L002689](../../agents/web_agent.py#L2689) | 2689 | `"                request_payload[\"max_tool_calls\"] = 5"` | — |
-| [SRC-1AE03B9EC3-L002690](../../agents/web_agent.py#L2690) | 2690 | `"            payload = json.dumps(request_payload, ensure_ascii=False).encode(\"utf-8\")"` | — |
-| [SRC-1AE03B9EC3-L002691](../../agents/web_agent.py#L2691) | 2691 | `"            request = urllib.request.Request("` | — |
