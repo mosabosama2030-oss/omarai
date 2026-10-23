@@ -1,3 +1,5 @@
+> **سجل تدقيق تاريخي مؤرشف:** يرتبط هذا التقرير بالـSHA والتاريخ المثبتين داخله؛ لا يُستخدم وحده للحكم على `main` الحالي أو حالات PR الحية. ارجع إلى [نطاق التنفيذ الحالي](../IMPLEMENTATION_SCOPE.md) و[سجل المعالجة المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md) للحالة الراهنة.
+
 # تدقيق Omarai التأسيسي — نتائج P0 من الكود والاختبارات
 
 > **تنبيه تاريخي:** هذا التقرير لقطة تدقيق مرتبطة بالنسخة `08319cce3652c332e414f691a71cc153dfbfd92e`، قبل دمج PR #44–#47. لا يُستخدم وحده للحكم على `main` الحالي. اقرأ معه [تسوية الأدلة التشغيلية بعد الدمج](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md)، وهي المرجع لتغييرات الموارد والاستشهادات وحالة PR #48 وطلبات التحقق المفتوحة.
@@ -8,7 +10,7 @@
 **نسخة المصدر المدققة:** 08319cce3652c332e414f691a71cc153dfbfd92e  
 **نسخة التطبيق السابقة لدمج وثائق المتطلبات:** 3cad5031de3dfdea6977d2428bc00d1e8bfd1303  
 **نطاق التقرير:** متطلبات P0 في سجل Omarai التأسيسي، مع تركيز على سلامة السلوك، وصلاحيات الأدوات، وحدود الموارد، وأمان البحث، وصحة الاستشهادات، وعزل المستخدمين.  
-**الوثائق الحاكمة:** [سجل المتطلبات](OMARAI_REQUIREMENTS_REGISTER.md)، [الدستور الهندسي](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md)، [خط الأساس الهندسي الموسع](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md)، [نموذج التتبع والنضج](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md).
+**الوثائق الحاكمة:** [سجل المتطلبات](../OMARAI_REQUIREMENTS_REGISTER.md)، [الدستور الهندسي](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md)، [خط الأساس الهندسي الموسع](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md)، [نموذج التتبع والنضج](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md).
 
 ---
 

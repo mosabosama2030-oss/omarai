@@ -1,7 +1,7 @@
 name: Omarai tests
 on:
   push:
-    branches: ["main", "feat/**", "fix/**", "feature/**"]
+    branches: ["main", "feat/**", "fix/**", "feature/**", "chore/**", "docs/**"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:

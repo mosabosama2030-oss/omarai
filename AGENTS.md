@@ -69,3 +69,12 @@ These rules apply to every AI agent, human contributor, code change, test report
 
 ## Acceptance principle
 A capability is not complete because it appears in a plan, comment, prompt, or documentation. It is complete only to the extent supported by the implementation, relevant tests, observed output, and explicitly stated limitations.
+
+
+## Repository hygiene and documentation ownership
+- Use [`docs/README.md`](docs/README.md) as the navigation map. Before adding a document, search for an existing owner of the same concern; update the canonical file instead of creating a parallel status or checklist.
+- Keep one current source of truth per concern: implementation boundaries in `docs/IMPLEMENTATION_SCOPE.md`; issue/finding IDs in `docs/OMARAI_REMEDIATION_REGISTER_AR.md`; current post-merge evidence in `docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md`; test categories and limitations in `docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md`.
+- Historical audit snapshots belong under `docs/archive/`. Mark their baseline SHA/date and link to current guidance; never silently rewrite old test evidence to look current.
+- Do not keep a second live-status document with a different PR state or baseline SHA. Read current PR/branch state from GitHub; avoid hard-coding the state of an open PR in durable docs.
+- Never hand-edit generated files under `docs/source_index/`, `docs/MASTER_INDEX.md`, `docs/SOURCE_LINES_INDEX.md`, or `docs/INDEX_COVERAGE_AUDIT.md`. Run `python docs/generate_index.py` and `python docs/generate_index.py --check`; inspect the generated diff.
+- Each PR should have one purpose, be based on current `main`, link the root cause to exact changes/tests, state checks that were not run, and avoid unrelated generated or historical changes. Do not merge or deploy without human director approval.

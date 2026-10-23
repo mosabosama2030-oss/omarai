@@ -2,7 +2,7 @@ name: Update Omarai complete source and symbol indexes
 
 on:
   push:
-    branches: ["main", "feat/**", "fix/**", "feature/**"]
+    branches: ["main", "feat/**", "fix/**", "feature/**", "chore/**", "docs/**"]
     paths-ignore:
       - "docs/MASTER_INDEX.md"
       - "docs/SOURCE_LINES_INDEX.md"
