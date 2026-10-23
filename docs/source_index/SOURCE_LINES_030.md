@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000345 إلى SRC-F725E90B2A-L001144
+- النطاق: SRC-F725E90B2A-L000314 إلى SRC-F725E90B2A-L001113
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000314](../../tests/test_web_agent.py#L314) | 314 | `"    assert \"[المصدر 1]\" in answer"` | — |
+| [SRC-F725E90B2A-L000315](../../tests/test_web_agent.py#L315) | 315 | `"    assert \"[المصدر 11]\" not in answer"` | — |
+| [SRC-F725E90B2A-L000316](../../tests/test_web_agent.py#L316) | 316 | `"    assert len(warnings) == 1"` | — |
+| [SRC-F725E90B2A-L000317](../../tests/test_web_agent.py#L317) | 317 | `""` | — |
+| [SRC-F725E90B2A-L000318](../../tests/test_web_agent.py#L318) | 318 | `""` | — |
+| [SRC-F725E90B2A-L000319](../../tests/test_web_agent.py#L319) | 319 | `"def test_citation_metadata_limits_claim_to_index_range_validation():"` | — |
+| [SRC-F725E90B2A-L000320](../../tests/test_web_agent.py#L320) | 320 | `"    metadata = WebAgent._citation_validation_metadata("` | — |
+| [SRC-F725E90B2A-L000321](../../tests/test_web_agent.py#L321) | 321 | `"        \"النتيجة المدعومة مبدئيًا [المصدر 1].\","` | — |
+| [SRC-F725E90B2A-L000322](../../tests/test_web_agent.py#L322) | 322 | `"        1,"` | — |
+| [SRC-F725E90B2A-L000323](../../tests/test_web_agent.py#L323) | 323 | `"        [],"` | — |
+| [SRC-F725E90B2A-L000324](../../tests/test_web_agent.py#L324) | 324 | `"        \"model_claim_audit_completed\","` | — |
+| [SRC-F725E90B2A-L000325](../../tests/test_web_agent.py#L325) | 325 | `"    )"` | — |
+| [SRC-F725E90B2A-L000326](../../tests/test_web_agent.py#L326) | 326 | `"    assert metadata == {"` | — |
+| [SRC-F725E90B2A-L000327](../../tests/test_web_agent.py#L327) | 327 | `"        \"method\": \"numeric_source_index_range_only\","` | — |
+| [SRC-F725E90B2A-L000328](../../tests/test_web_agent.py#L328) | 328 | `"        \"status\": \"index_range_check_passed\","` | — |
+| [SRC-F725E90B2A-L000329](../../tests/test_web_agent.py#L329) | 329 | `"        \"valid_citation_count\": 1,"` | — |
+| [SRC-F725E90B2A-L000330](../../tests/test_web_agent.py#L330) | 330 | `"        \"invalid_references_removed\": 0,"` | — |
+| [SRC-F725E90B2A-L000331](../../tests/test_web_agent.py#L331) | 331 | `"        \"max_citable_source_index\": 1,"` | — |
+| [SRC-F725E90B2A-L000332](../../tests/test_web_agent.py#L332) | 332 | `"        \"claim_support\": \"model_review_not_independent_fact_check\","` | — |
+| [SRC-F725E90B2A-L000333](../../tests/test_web_agent.py#L333) | 333 | `"    }"` | — |
+| [SRC-F725E90B2A-L000334](../../tests/test_web_agent.py#L334) | 334 | `""` | — |
+| [SRC-F725E90B2A-L000335](../../tests/test_web_agent.py#L335) | 335 | `""` | — |
+| [SRC-F725E90B2A-L000336](../../tests/test_web_agent.py#L336) | 336 | `"def test_citation_metadata_reports_invalid_reference_repair():"` | — |
+| [SRC-F725E90B2A-L000337](../../tests/test_web_agent.py#L337) | 337 | `"    cleaned, warnings = WebAgent._remove_invalid_citations("` | — |
+| [SRC-F725E90B2A-L000338](../../tests/test_web_agent.py#L338) | 338 | `"        \"صحيح [المصدر 1] وخاطئ [المصدر 9].\", 1"` | — |
+| [SRC-F725E90B2A-L000339](../../tests/test_web_agent.py#L339) | 339 | `"    )"` | — |
+| [SRC-F725E90B2A-L000340](../../tests/test_web_agent.py#L340) | 340 | `"    metadata = WebAgent._citation_validation_metadata("` | — |
+| [SRC-F725E90B2A-L000341](../../tests/test_web_agent.py#L341) | 341 | `"        cleaned, 1, warnings, \"not_run\""` | — |
+| [SRC-F725E90B2A-L000342](../../tests/test_web_agent.py#L342) | 342 | `"    )"` | — |
+| [SRC-F725E90B2A-L000343](../../tests/test_web_agent.py#L343) | 343 | `"    assert metadata[\"status\"] == \"invalid_index_references_removed\""` | — |
+| [SRC-F725E90B2A-L000344](../../tests/test_web_agent.py#L344) | 344 | `"    assert metadata[\"valid_citation_count\"] == 1"` | — |
 | [SRC-F725E90B2A-L000345](../../tests/test_web_agent.py#L345) | 345 | `"    assert metadata[\"invalid_references_removed\"] == 1"` | — |
 | [SRC-F725E90B2A-L000346](../../tests/test_web_agent.py#L346) | 346 | `"    assert metadata[\"claim_support\"] == \"not_verified\""` | — |
 | [SRC-F725E90B2A-L000347](../../tests/test_web_agent.py#L347) | 347 | `""` | — |
@@ -785,34 +816,3 @@
 | [SRC-F725E90B2A-L001111](../../tests/test_web_agent.py#L1111) | 1111 | `"            \"Final answer: إجابة نهائية مزعومة\""` | — |
 | [SRC-F725E90B2A-L001112](../../tests/test_web_agent.py#L1112) | 1112 | `"        ),"` | — |
 | [SRC-F725E90B2A-L001113](../../tests/test_web_agent.py#L1113) | 1113 | `"    )"` | — |
-| [SRC-F725E90B2A-L001114](../../tests/test_web_agent.py#L1114) | 1114 | `""` | — |
-| [SRC-F725E90B2A-L001115](../../tests/test_web_agent.py#L1115) | 1115 | `"    result = agent.answer(\"قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية\")"` | — |
-| [SRC-F725E90B2A-L001116](../../tests/test_web_agent.py#L1116) | 1116 | `""` | — |
-| [SRC-F725E90B2A-L001117](../../tests/test_web_agent.py#L1117) | 1117 | `"    assert result[\"search_report\"][\"second_pass_review\"] == \"model_claim_audit_unavailable\""` | — |
-| [SRC-F725E90B2A-L001118](../../tests/test_web_agent.py#L1118) | 1118 | `"    assert result[\"final_answer_status\"] == \"review_failed_with_source_fallback\""` | — |
-| [SRC-F725E90B2A-L001119](../../tests/test_web_agent.py#L1119) | 1119 | `"    assert \"Audit Report\" not in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001120](../../tests/test_web_agent.py#L1120) | 1120 | `"    assert \"ملاحظة داخلية سرية\" not in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001121](../../tests/test_web_agent.py#L1121) | 1121 | `"    assert \"إجابة نهائية مزعومة\" not in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001122](../../tests/test_web_agent.py#L1122) | 1122 | `""` | — |
-| [SRC-F725E90B2A-L001123](../../tests/test_web_agent.py#L1123) | 1123 | `""` | — |
-| [SRC-F725E90B2A-L001124](../../tests/test_web_agent.py#L1124) | 1124 | `"def test_sibling_subdomains_do_not_satisfy_independent_evidence_gate(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001125](../../tests/test_web_agent.py#L1125) | 1125 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001126](../../tests/test_web_agent.py#L1126) | 1126 | `"    first = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L001127](../../tests/test_web_agent.py#L1127) | 1127 | `"    first[\"url\"] = \"https://news.example.com/research\""` | — |
-| [SRC-F725E90B2A-L001128](../../tests/test_web_agent.py#L1128) | 1128 | `"    first[\"domain\"] = \"news.example.com\""` | — |
-| [SRC-F725E90B2A-L001129](../../tests/test_web_agent.py#L1129) | 1129 | `"    second = sample_source(1)"` | — |
-| [SRC-F725E90B2A-L001130](../../tests/test_web_agent.py#L1130) | 1130 | `"    second[\"url\"] = \"https://offers.example.com/research\""` | — |
-| [SRC-F725E90B2A-L001131](../../tests/test_web_agent.py#L1131) | 1131 | `"    second[\"domain\"] = \"offers.example.com\""` | — |
-| [SRC-F725E90B2A-L001132](../../tests/test_web_agent.py#L1132) | 1132 | `""` | — |
-| [SRC-F725E90B2A-L001133](../../tests/test_web_agent.py#L1133) | 1133 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001134](../../tests/test_web_agent.py#L1134) | 1134 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L001135](../../tests/test_web_agent.py#L1135) | 1135 | `"        \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001136](../../tests/test_web_agent.py#L1136) | 1136 | `"        lambda plan: ("` | — |
-| [SRC-F725E90B2A-L001137](../../tests/test_web_agent.py#L1137) | 1137 | `"            [first, second],"` | — |
-| [SRC-F725E90B2A-L001138](../../tests/test_web_agent.py#L1138) | 1138 | `"            [],"` | — |
-| [SRC-F725E90B2A-L001139](../../tests/test_web_agent.py#L1139) | 1139 | `"            {"` | — |
-| [SRC-F725E90B2A-L001140](../../tests/test_web_agent.py#L1140) | 1140 | `"                \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L001141](../../tests/test_web_agent.py#L1141) | 1141 | `"                \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001142](../../tests/test_web_agent.py#L1142) | 1142 | `"                \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 2}],"` | — |
-| [SRC-F725E90B2A-L001143](../../tests/test_web_agent.py#L1143) | 1143 | `"                \"unique_sources\": 2,"` | — |
-| [SRC-F725E90B2A-L001144](../../tests/test_web_agent.py#L1144) | 1144 | `"                \"pages_fetched\": 2,"` | — |

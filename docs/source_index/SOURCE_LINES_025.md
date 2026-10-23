@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000715 إلى SRC-FA4E1423C3-L000028
+- النطاق: SRC-3451CC474D-L000684 إلى SRC-8455F405B6-L000055
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000684](../../tests/test_api.py#L684) | 684 | `"    from api.omarai import Handler"` | — |
+| [SRC-3451CC474D-L000685](../../tests/test_api.py#L685) | 685 | `""` | — |
+| [SRC-3451CC474D-L000686](../../tests/test_api.py#L686) | 686 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000687](../../tests/test_api.py#L687) | 687 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000688](../../tests/test_api.py#L688) | 688 | `"    handler = SimpleNamespace("` | — |
+| [SRC-3451CC474D-L000689](../../tests/test_api.py#L689) | 689 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000690](../../tests/test_api.py#L690) | 690 | `"            \"Host\": \"omarai.example\","` | — |
+| [SRC-3451CC474D-L000691](../../tests/test_api.py#L691) | 691 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
+| [SRC-3451CC474D-L000692](../../tests/test_api.py#L692) | 692 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
+| [SRC-3451CC474D-L000693](../../tests/test_api.py#L693) | 693 | `"        }"` | — |
+| [SRC-3451CC474D-L000694](../../tests/test_api.py#L694) | 694 | `"    )"` | — |
+| [SRC-3451CC474D-L000695](../../tests/test_api.py#L695) | 695 | `"    allowed = Handler._allowed_origins(handler)"` | — |
+| [SRC-3451CC474D-L000696](../../tests/test_api.py#L696) | 696 | `"    assert \"https://omarai.example\" in allowed"` | — |
+| [SRC-3451CC474D-L000697](../../tests/test_api.py#L697) | 697 | `"    assert \"https://attacker.example\" not in allowed"` | — |
+| [SRC-3451CC474D-L000698](../../tests/test_api.py#L698) | 698 | `""` | — |
+| [SRC-3451CC474D-L000699](../../tests/test_api.py#L699) | 699 | `""` | — |
+| [SRC-3451CC474D-L000700](../../tests/test_api.py#L700) | 700 | `""` | — |
+| [SRC-3451CC474D-L000701](../../tests/test_api.py#L701) | 701 | `"def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000702](../../tests/test_api.py#L702) | 702 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000703](../../tests/test_api.py#L703) | 703 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000704](../../tests/test_api.py#L704) | 704 | `"    for path in (\"/api/health\", \"/\"):"` | — |
+| [SRC-3451CC474D-L000705](../../tests/test_api.py#L705) | 705 | `"        request = Request(local_api + path)"` | — |
+| [SRC-3451CC474D-L000706](../../tests/test_api.py#L706) | 706 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000707](../../tests/test_api.py#L707) | 707 | `"            headers = {name.lower(): value for name, value in response.headers.items()}"` | — |
+| [SRC-3451CC474D-L000708](../../tests/test_api.py#L708) | 708 | `"            assert headers[\"x-content-type-options\"] == \"nosniff\""` | — |
+| [SRC-3451CC474D-L000709](../../tests/test_api.py#L709) | 709 | `"            assert headers[\"x-frame-options\"] == \"DENY\""` | — |
+| [SRC-3451CC474D-L000710](../../tests/test_api.py#L710) | 710 | `"            assert headers[\"referrer-policy\"] == \"strict-origin-when-cross-origin\""` | — |
+| [SRC-3451CC474D-L000711](../../tests/test_api.py#L711) | 711 | `"            assert \"default-src 'self'\" in headers[\"content-security-policy\"]"` | — |
+| [SRC-3451CC474D-L000712](../../tests/test_api.py#L712) | 712 | `"            policy = headers[\"content-security-policy\"]"` | — |
+| [SRC-3451CC474D-L000713](../../tests/test_api.py#L713) | 713 | `"            assert \"frame-ancestors 'none'\" in policy"` | — |
+| [SRC-3451CC474D-L000714](../../tests/test_api.py#L714) | 714 | `"            assert \"'unsafe-inline'\" not in policy"` | — |
 | [SRC-3451CC474D-L000715](../../tests/test_api.py#L715) | 715 | `"            assert \"'sha256-\" in policy"` | — |
 | [SRC-3451CC474D-L000716](../../tests/test_api.py#L716) | 716 | `"            assert headers[\"permissions-policy\"] == ("` | — |
 | [SRC-3451CC474D-L000717](../../tests/test_api.py#L717) | 717 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
@@ -821,43 +852,3 @@
 | [SRC-8455F405B6-L000053](../../tests/test_evidence_signals.py#L53) | 53 | `"        2026, 10, 10, 9, 0, tzinfo=UTC"` | — |
 | [SRC-8455F405B6-L000054](../../tests/test_evidence_signals.py#L54) | 54 | `"    )"` | — |
 | [SRC-8455F405B6-L000055](../../tests/test_evidence_signals.py#L55) | 55 | `"    assert _parse_publication_date(\"2 days ago\", now) == datetime("` | — |
-| [SRC-8455F405B6-L000056](../../tests/test_evidence_signals.py#L56) | 56 | `"        2026, 10, 10, 12, 0, tzinfo=UTC"` | — |
-| [SRC-8455F405B6-L000057](../../tests/test_evidence_signals.py#L57) | 57 | `"    )"` | — |
-| [SRC-8455F405B6-L000058](../../tests/test_evidence_signals.py#L58) | 58 | `"    assert _parse_publication_date(\"date not supplied\", now) is None"` | — |
-## اختبارات
-
-### FILE-FA4E1423C3 — [tests/test_generate_index.py](../../tests/test_generate_index.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-FA4E1423C3-L000001](../../tests/test_generate_index.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-FA4E1423C3-L000002](../../tests/test_generate_index.py#L2) | 2 | `""` | — |
-| [SRC-FA4E1423C3-L000003](../../tests/test_generate_index.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-FA4E1423C3-L000004](../../tests/test_generate_index.py#L4) | 4 | `"from dataclasses import replace"` | — |
-| [SRC-FA4E1423C3-L000005](../../tests/test_generate_index.py#L5) | 5 | `"import sys"` | — |
-| [SRC-FA4E1423C3-L000006](../../tests/test_generate_index.py#L6) | 6 | `"from pathlib import Path"` | — |
-| [SRC-FA4E1423C3-L000007](../../tests/test_generate_index.py#L7) | 7 | `""` | — |
-| [SRC-FA4E1423C3-L000008](../../tests/test_generate_index.py#L8) | 8 | `"import pytest"` | — |
-| [SRC-FA4E1423C3-L000009](../../tests/test_generate_index.py#L9) | 9 | `""` | — |
-| [SRC-FA4E1423C3-L000010](../../tests/test_generate_index.py#L10) | 10 | `""` | — |
-| [SRC-FA4E1423C3-L000011](../../tests/test_generate_index.py#L11) | 11 | `"INDEXER_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"generate_index.py\""` | — |
-| [SRC-FA4E1423C3-L000012](../../tests/test_generate_index.py#L12) | 12 | `"INDEXER_SPEC = importlib.util.spec_from_file_location("` | — |
-| [SRC-FA4E1423C3-L000013](../../tests/test_generate_index.py#L13) | 13 | `"    \"omarai_generate_index_for_tests\","` | — |
-| [SRC-FA4E1423C3-L000014](../../tests/test_generate_index.py#L14) | 14 | `"    INDEXER_PATH,"` | — |
-| [SRC-FA4E1423C3-L000015](../../tests/test_generate_index.py#L15) | 15 | `")"` | — |
-| [SRC-FA4E1423C3-L000016](../../tests/test_generate_index.py#L16) | 16 | `"assert INDEXER_SPEC is not None"` | — |
-| [SRC-FA4E1423C3-L000017](../../tests/test_generate_index.py#L17) | 17 | `"assert INDEXER_SPEC.loader is not None"` | — |
-| [SRC-FA4E1423C3-L000018](../../tests/test_generate_index.py#L18) | 18 | `"INDEXER = importlib.util.module_from_spec(INDEXER_SPEC)"` | — |
-| [SRC-FA4E1423C3-L000019](../../tests/test_generate_index.py#L19) | 19 | `"sys.modules[INDEXER_SPEC.name] = INDEXER"` | — |
-| [SRC-FA4E1423C3-L000020](../../tests/test_generate_index.py#L20) | 20 | `"INDEXER_SPEC.loader.exec_module(INDEXER)"` | — |
-| [SRC-FA4E1423C3-L000021](../../tests/test_generate_index.py#L21) | 21 | `""` | — |
-| [SRC-FA4E1423C3-L000022](../../tests/test_generate_index.py#L22) | 22 | `""` | — |
-| [SRC-FA4E1423C3-L000023](../../tests/test_generate_index.py#L23) | 23 | `"def test_indexes_functions_classes_methods_and_docstring_status(tmp_path: Path) -> None:"` | — |
-| [SRC-FA4E1423C3-L000024](../../tests/test_generate_index.py#L24) | 24 | `"    \"\"\"The Python AST index includes qualified names and documentation state.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000025](../../tests/test_generate_index.py#L25) | 25 | `"    source_dir = tmp_path / \"src\""` | — |
-| [SRC-FA4E1423C3-L000026](../../tests/test_generate_index.py#L26) | 26 | `"    source_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000027](../../tests/test_generate_index.py#L27) | 27 | `"    (source_dir / \"sample.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000028](../../tests/test_generate_index.py#L28) | 28 | `"        'class DocumentedClass:\\n'"` | — |

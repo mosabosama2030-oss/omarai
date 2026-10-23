@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001282 إلى SRC-1C77C97630-L000198
+- النطاق: SRC-90FAA34ADE-L001251 إلى SRC-1C77C97630-L000167
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001251](../../tests/fixtures/answer_quality_cases.json#L1251) | 1251 | `"        \"يعرض تاريخ المصدر بوضوح عند الاستشهاد به\""` | — |
+| [SRC-90FAA34ADE-L001252](../../tests/fixtures/answer_quality_cases.json#L1252) | 1252 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001253](../../tests/fixtures/answer_quality_cases.json#L1253) | 1253 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001254](../../tests/fixtures/answer_quality_cases.json#L1254) | 1254 | `"        \"يعتمد على شروط 2020 كأنها حالية بلا تنبيه\","` | — |
+| [SRC-90FAA34ADE-L001255](../../tests/fixtures/answer_quality_cases.json#L1255) | 1255 | `"        \"يختلق تحديثًا أحدث\""` | — |
+| [SRC-90FAA34ADE-L001256](../../tests/fixtures/answer_quality_cases.json#L1256) | 1256 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001257](../../tests/fixtures/answer_quality_cases.json#L1257) | 1257 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001258](../../tests/fixtures/answer_quality_cases.json#L1258) | 1258 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001259](../../tests/fixtures/answer_quality_cases.json#L1259) | 1259 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001260](../../tests/fixtures/answer_quality_cases.json#L1260) | 1260 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001261](../../tests/fixtures/answer_quality_cases.json#L1261) | 1261 | `"            \"title\": \"Service registration guide\","` | — |
+| [SRC-90FAA34ADE-L001262](../../tests/fixtures/answer_quality_cases.json#L1262) | 1262 | `"            \"url\": \"https://service.example.test/register-2020\","` | — |
+| [SRC-90FAA34ADE-L001263](../../tests/fixtures/answer_quality_cases.json#L1263) | 1263 | `"            \"snippet\": \"Registration terms updated in 2020.\","` | — |
+| [SRC-90FAA34ADE-L001264](../../tests/fixtures/answer_quality_cases.json#L1264) | 1264 | `"            \"published_at\": \"2020-01-10\","` | — |
+| [SRC-90FAA34ADE-L001265](../../tests/fixtures/answer_quality_cases.json#L1265) | 1265 | `"            \"domain\": \"service.example.test\","` | — |
+| [SRC-90FAA34ADE-L001266](../../tests/fixtures/answer_quality_cases.json#L1266) | 1266 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001267](../../tests/fixtures/answer_quality_cases.json#L1267) | 1267 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001268](../../tests/fixtures/answer_quality_cases.json#L1268) | 1268 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L001269](../../tests/fixtures/answer_quality_cases.json#L1269) | 1269 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001270](../../tests/fixtures/answer_quality_cases.json#L1270) | 1270 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001271](../../tests/fixtures/answer_quality_cases.json#L1271) | 1271 | `"        \"ادعاء أن الشروط حالية من مصدر 2020 فقط\","` | — |
+| [SRC-90FAA34ADE-L001272](../../tests/fixtures/answer_quality_cases.json#L1272) | 1272 | `"        \"غياب التحذير من قدم المصدر\""` | — |
+| [SRC-90FAA34ADE-L001273](../../tests/fixtures/answer_quality_cases.json#L1273) | 1273 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001274](../../tests/fixtures/answer_quality_cases.json#L1274) | 1274 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001276](../../tests/fixtures/answer_quality_cases.json#L1276) | 1276 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001277](../../tests/fixtures/answer_quality_cases.json#L1277) | 1277 | `"      \"case_id\": \"AQ-043\","` | — |
+| [SRC-90FAA34ADE-L001278](../../tests/fixtures/answer_quality_cases.json#L1278) | 1278 | `"      \"category\": \"ambiguous_clarify\","` | — |
+| [SRC-90FAA34ADE-L001279](../../tests/fixtures/answer_quality_cases.json#L1279) | 1279 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001280](../../tests/fixtures/answer_quality_cases.json#L1280) | 1280 | `"      \"question\": \"Can you check it for me and tell me if it is safe?\","` | — |
+| [SRC-90FAA34ADE-L001281](../../tests/fixtures/answer_quality_cases.json#L1281) | 1281 | `"      \"expected_strategy\": \"clarify\","` | — |
 | [SRC-90FAA34ADE-L001282](../../tests/fixtures/answer_quality_cases.json#L1282) | 1282 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001283](../../tests/fixtures/answer_quality_cases.json#L1283) | 1283 | `"        \"Asks what 'it' refers to and what safety dimension matters\","` | — |
 | [SRC-90FAA34ADE-L001284](../../tests/fixtures/answer_quality_cases.json#L1284) | 1284 | `"        \"Avoids a definitive assessment before context is supplied\","` | — |
@@ -821,34 +852,3 @@
 | [SRC-1C77C97630-L000165](../../tests/test_answer_validation.py#L165) | 165 | `"    assert repaired == \"تم توضيح السعر والمساحة [المصدر 1].\""` | — |
 | [SRC-1C77C97630-L000166](../../tests/test_answer_validation.py#L166) | 166 | `"    assert \"المساحة\" in captured[\"messages\"][2][\"content\"]"` | — |
 | [SRC-1C77C97630-L000167](../../tests/test_answer_validation.py#L167) | 167 | `"    assert \"السعر مذكور والمساحة غير مذكورة\" in captured[\"messages\"][4][\"content\"]"` | — |
-| [SRC-1C77C97630-L000168](../../tests/test_answer_validation.py#L168) | 168 | `"    assert \"مقتطف بحث\" in captured[\"messages\"][4][\"content\"]"` | — |
-| [SRC-1C77C97630-L000169](../../tests/test_answer_validation.py#L169) | 169 | `""` | — |
-| [SRC-1C77C97630-L000170](../../tests/test_answer_validation.py#L170) | 170 | `""` | — |
-| [SRC-1C77C97630-L000171](../../tests/test_answer_validation.py#L171) | 171 | `"def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatch):"` | — |
-| [SRC-1C77C97630-L000172](../../tests/test_answer_validation.py#L172) | 172 | `"    agent = WebAgent()"` | — |
-| [SRC-1C77C97630-L000173](../../tests/test_answer_validation.py#L173) | 173 | `"    monkeypatch.setattr("` | — |
-| [SRC-1C77C97630-L000174](../../tests/test_answer_validation.py#L174) | 174 | `"        agent,"` | — |
-| [SRC-1C77C97630-L000175](../../tests/test_answer_validation.py#L175) | 175 | `"        \"_request_completion\","` | — |
-| [SRC-1C77C97630-L000176](../../tests/test_answer_validation.py#L176) | 176 | `"        lambda *args, **kwargs: ("` | — |
-| [SRC-1C77C97630-L000177](../../tests/test_answer_validation.py#L177) | 177 | `"            \"<<<OMARAI_COVERAGE_REPAIR>>>إجابة<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000178](../../tests/test_answer_validation.py#L178) | 178 | `"            \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000179](../../tests/test_answer_validation.py#L179) | 179 | `"        ),"` | — |
-| [SRC-1C77C97630-L000180](../../tests/test_answer_validation.py#L180) | 180 | `"    )"` | — |
-| [SRC-1C77C97630-L000181](../../tests/test_answer_validation.py#L181) | 181 | `"    with pytest.raises(RuntimeError, match=\"إصلاح تغطية آمن\"):"` | — |
-| [SRC-1C77C97630-L000182](../../tests/test_answer_validation.py#L182) | 182 | `"        agent._repair_answer_coverage("` | — |
-| [SRC-1C77C97630-L000183](../../tests/test_answer_validation.py#L183) | 183 | `"            \"قارن السعر\","` | — |
-| [SRC-1C77C97630-L000184](../../tests/test_answer_validation.py#L184) | 184 | `"            \"مسودة\","` | — |
-| [SRC-1C77C97630-L000185](../../tests/test_answer_validation.py#L185) | 185 | `"            [{\"title\": \"مصدر\", \"url\": \"https://example.com\", \"snippet\": \"السعر 100 جنيه\"}],"` | — |
-| [SRC-1C77C97630-L000186](../../tests/test_answer_validation.py#L186) | 186 | `"            [\"السعر\"],"` | — |
-| [SRC-1C77C97630-L000187](../../tests/test_answer_validation.py#L187) | 187 | `"        )"` | — |
-| [SRC-1C77C97630-L000188](../../tests/test_answer_validation.py#L188) | 188 | `""` | — |
-| [SRC-1C77C97630-L000189](../../tests/test_answer_validation.py#L189) | 189 | `""` | — |
-| [SRC-1C77C97630-L000190](../../tests/test_answer_validation.py#L190) | 190 | `"def test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source():"` | — |
-| [SRC-1C77C97630-L000191](../../tests/test_answer_validation.py#L191) | 191 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000192](../../tests/test_answer_validation.py#L192) | 192 | `"        \"قارن أسعار المنتجين\","` | — |
-| [SRC-1C77C97630-L000193](../../tests/test_answer_validation.py#L193) | 193 | `"        \"سعر المنتج الأول 500 جنيه [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000194](../../tests/test_answer_validation.py#L194) | 194 | `"        ["` | — |
-| [SRC-1C77C97630-L000195](../../tests/test_answer_validation.py#L195) | 195 | `"            {"` | — |
-| [SRC-1C77C97630-L000196](../../tests/test_answer_validation.py#L196) | 196 | `"                \"title\": \"سعر المنتج الأول\","` | — |
-| [SRC-1C77C97630-L000197](../../tests/test_answer_validation.py#L197) | 197 | `"                \"snippet\": \"سعر المنتج الأول 300 جنيه\","` | — |
-| [SRC-1C77C97630-L000198](../../tests/test_answer_validation.py#L198) | 198 | `"                \"page_fetched\": False,"` | — |

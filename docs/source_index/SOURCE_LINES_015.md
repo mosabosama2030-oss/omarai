@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000420 إلى SRC-D17CE3D12F-L000316
+- النطاق: SRC-E73001D9AC-L000419 إلى SRC-D17CE3D12F-L000315
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000419](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L419) | 419 | `"التدرج الموصى به:"` | — |
 | [SRC-E73001D9AC-L000420](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L420) | 420 | `"1. كود منظم وحدود واضحة واختبارات تزامن."` | — |
 | [SRC-E73001D9AC-L000421](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L421) | 421 | `"2. ضبط موارد العملية الواحدة والمراقبة."` | — |
 | [SRC-E73001D9AC-L000422](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L422) | 422 | `"3. عزل موصلات البطء عن المسارات السريعة."` | — |
@@ -824,4 +825,3 @@
 | [SRC-D17CE3D12F-L000313](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L313) | 313 | `"4. MUST ربط مسار الطلب بمعرّف تتبع عبر المكونات عند إمكان ذلك، دون استخدام المعرّف لإدخال معلومات شخصية حساسة."` | — |
 | [SRC-D17CE3D12F-L000314](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L314) | 314 | `"5. MUST أن تكون التنبيهات قابلة للتصرف ومرتبطة بأثر المستخدم أو خطر حقيقي، لا بكل حدث عابر."` | — |
 | [SRC-D17CE3D12F-L000315](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L315) | 315 | `"6. SHOULD تقليل التنبيهات المكررة وضبط الحساسية ومراجعة التنبيهات الكاذبة."` | — |
-| [SRC-D17CE3D12F-L000316](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L316) | 316 | `"7. MUST تحديد حدود للاحتفاظ بالـ logs/traces وحجمها وكاردينالية المقاييس وتكلفتها."` | — |

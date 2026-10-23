@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000317 إلى SRC-B2C95EAEE1-L000081
+- النطاق: SRC-D17CE3D12F-L000316 إلى SRC-B2C95EAEE1-L000080
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000316](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L316) | 316 | `"7. MUST تحديد حدود للاحتفاظ بالـ logs/traces وحجمها وكاردينالية المقاييس وتكلفتها."` | — |
 | [SRC-D17CE3D12F-L000317](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L317) | 317 | `"8. MUST حجب أو تنقيح الأسرار والبيانات الشخصية من السجلات والتتبعات ورسائل الخطأ."` | — |
 | [SRC-D17CE3D12F-L000318](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L318) | 318 | `"9. SHOULD تضمين مؤشرات تجربة المستخدم، مثل نجاح المسار وزمن الإنجاز وفشل المصادر، وليس CPU وحده."` | — |
 | [SRC-D17CE3D12F-L000319](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L319) | 319 | `"10. MUST توثيق ما تستطيع لوحة القياس إثباته وما لا تستطيع إثباته."` | — |
@@ -744,84 +745,83 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-B2C95EAEE1-L000001](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | 1 | `"# Omarai — تقرير التحقق الهندسي بعد دمج PR #76"` | — |
+| [SRC-B2C95EAEE1-L000001](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | 1 | `"# Omarai — تقرير التحقق الهندسي بعد دمج PR #81"` | — |
 | [SRC-B2C95EAEE1-L000002](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L2) | 2 | `""` | — |
-| [SRC-B2C95EAEE1-L000003](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L3) | 3 | `"## الحالة بعد دمج PR #79 — تحديث 23 أكتوبر 2026"` | — |
+| [SRC-B2C95EAEE1-L000003](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L3) | 3 | `"## جلسة 1 — تثبيت خط الأساس بعد الدمج (23 أكتوبر 2026)"` | — |
 | [SRC-B2C95EAEE1-L000004](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L4) | 4 | `""` | — |
-| [SRC-B2C95EAEE1-L000005](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L5) | 5 | ``"- **حالة PR #79:** مدمج. Commit الدمج: [`8bae5065800619662454c3454bf084919a082765`](https://github.com/mosabosama2030-oss/omarai/commit/8bae5065800619662454c3454bf084919a082765)."`` | — |
-| [SRC-B2C95EAEE1-L000006](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L6) | 6 | ``"- **رأس `main` الحالي الذي فُحص:** `2eb2de320ba451eb85f87d340d6905077edbe2ec`. هذا commit لاحق من workflow الفهرسة، والفرق بينه وبين commit الدمج يحتوي ملفات الفهرسة المولدة فقط."`` | — |
-| [SRC-B2C95EAEE1-L000007](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L7) | 7 | ``"- **أثر PR #79 على التطبيق الحي:** لم تتغير ملفات التطبيق `agents/`, `api/`, `web/` أو اختبارات التطبيق. التغييرات في الوثائق، وقالب PR، وضبط نطاق تشغيل workflow، والأرشيف، ومخرجات الفهرسة. لذلك لا توجد تغييرات تشغيلية في منطق البحث أو موصلاته نتيجة #79."`` | — |
-| [SRC-B2C95EAEE1-L000008](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L8) | 8 | `"- **CI على رأس PR قبل الدمج:** [run #39934809446](https://github.com/mosabosama2030-oss/omarai/actions/runs/39934809446) نجح: 384 اختبارًا على Python 3.11 و384 على Python 3.12، وRuff، والتحقق من الفهرس في مساحة الاختبار، وبناء الحاوية واختبار API المحمي."` | — |
-| [SRC-B2C95EAEE1-L000009](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L9) | 9 | ``"- **CI على commit الدمج:** [run #39949934192](https://github.com/mosabosama2030-oss/omarai/actions/runs/39949934192) فشل في خطوة `python docs/generate_index.py --check` فقط على Python 3.11 و3.12 لأن `docs/MASTER_INDEX.md` لم يُحدَّث بعد في لقطة الدمج. نجح Ruff قبلها ونجحت وظيفة بناء الحاوية وAPI smoke. لم تصل وظيفتا Pytest إلى تشغيل الاختبارات في هذا التشغيل بسبب توقفهما عند فحص الفهرس."`` | — |
-| [SRC-B2C95EAEE1-L000010](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L10) | 10 | ``"- **تحديث الفهرس:** [run #39949934189](https://github.com/mosabosama2030-oss/omarai/actions/runs/39949934189) نجح وأنتج commit `2eb2de320ba451eb85f87d340d6905077edbe2ec` الذي غيّر مخرجات الفهرسة المولدة فقط. لم أعثر على تشغيل اختبارات جديد مربوط مباشرة بهذا SHA؛ push الذي يصدر من `GITHUB_TOKEN` لا يطلق workflow push آخر تلقائيًا."`` | — |
-| [SRC-B2C95EAEE1-L000011](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L11) | 11 | ``"- **السبب الجذري:** workflow الاختبارات وworkflow الفهرسة يعملان بالتوازي؛ لذلك قد يفحص اختبار `main` ملفات فهرسة قديمة قبل أن يحدّثها الناشر في commit منفصل. هذه مشكلة في ترتيب بوابات CI وليست دليلًا على عطل في البحث الحي."`` | — |
-| [SRC-B2C95EAEE1-L000012](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L12) | 12 | `"- **الإصلاح المقترح:** [PR #81](https://github.com/mosabosama2030-oss/omarai/pull/81) يجعل فحص commit المخصص للفهرسة صارمًا، ويعيد توليد الفهرس في مساحة الاختبار عند وجود تغييرات مصدر/وثائق قبل التحقق. PR #81 مفتوح وغير مدمج حتى الآن."` | — |
-| [SRC-B2C95EAEE1-L000013](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L13) | 13 | ``"- **حدود التشغيل:** اختبارات الاستضافة الحية، وتوافر البحث/النموذج في خدمة منشورة، والدقة الدلالية الشاملة، وديمومة SQLite والاستعادة، والحمل، والاختبار اليدوي للواجهة ما زالت `NOT_RUN/UNKNOWN`."`` | — |
-| [SRC-B2C95EAEE1-L000014](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L14) | 14 | `""` | — |
-| [SRC-B2C95EAEE1-L000015](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L15) | 15 | `""` | — |
-| [SRC-B2C95EAEE1-L000016](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L16) | 16 | `"**الحالة:** مراجعة بعد الدمج — أدلة جزئية موثقة؛ لا تمثل شهادة جاهزية إنتاجية.  "` | — |
-| [SRC-B2C95EAEE1-L000017](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L17) | 17 | `"**PR #76:** [fix(foundation): close audit findings and verify evidence/runtime identity](https://github.com/mosabosama2030-oss/omarai/pull/76) — **MERGED**.  "` | — |
-| [SRC-B2C95EAEE1-L000018](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L18) | 18 | `"**وقت الدمج المعلن من GitHub:** 2026-10-21 19:19:54 UTC.  "` | — |
-| [SRC-B2C95EAEE1-L000019](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L19) | 19 | ``"**التزام الدمج:** [`528a2552c0cda809d6c444713466e0e075c13ed9`](https://github.com/mosabosama2030-oss/omarai/commit/528a2552c0cda809d6c444713466e0e075c13ed9).  "`` | — |
-| [SRC-B2C95EAEE1-L000020](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L20) | 20 | ``"**رأس PR الذي اجتاز CI:** [`3fb02880aec9ec231d973e0b3668308d1379ee89`](https://github.com/mosabosama2030-oss/omarai/commit/3fb02880aec9ec231d973e0b3668308d1379ee89)."`` | — |
-| [SRC-B2C95EAEE1-L000021](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L21) | 21 | `""` | — |
-| [SRC-B2C95EAEE1-L000022](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L22) | 22 | `"## 1. الحكم التنفيذي"` | — |
-| [SRC-B2C95EAEE1-L000023](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L23) | 23 | `""` | — |
-| [SRC-B2C95EAEE1-L000024](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L24) | 24 | `"تم دمج الإصلاحات المجمعة في #76. تشغيل CI الأحدث الذي تمكنت من فحص وظائفه هو [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) على رأس PR، وجميع الوظائف الثلاث فيه **SUCCESS**: الاختبارات على Python 3.11 وPython 3.12 وبناء الحاوية واختبار API المحمي. ظهر في السجل **384 اختبارًا ناجحًا على كل إصدار Python**، ونجح Ruff وفحص الفهرس وبناء الحاوية واختبار API الأساسي."` | — |
-| [SRC-B2C95EAEE1-L000025](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L25) | 25 | `""` | — |
-| [SRC-B2C95EAEE1-L000026](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L26) | 26 | ``"**حدّ مهم:** هذه نتيجة CI مرتبطة برأس PR قبل الدمج، وليست بحد ذاتها إثباتًا أن workflow مستقلًا اكتمل على التزام الدمج `528a255...`. استعلام حالة الالتزام الذي أتيح لي لم يُرجع عناصر status، وأداة جلب التشغيلات المتاحة هنا تعرض تشغيلات PR فقط. لذلك حالة تحقق CI على التزام `main` بعد الدمج مصنفة **NOT_CONFIRMED**، وليست PASS ولا FAIL. يجب تسجيل رابط تشغيل push/post-merge المرتبط بالـSHA نفسه، إن وجد، أو إجراء تحقق غير مدفوع من `main` وفق آلية المستودع."`` | — |
-| [SRC-B2C95EAEE1-L000027](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L27) | 27 | `""` | — |
-| [SRC-B2C95EAEE1-L000028](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L28) | 28 | `"نجاح CI لا يثبت تشغيل نسخة منشورة، أو الاتصال الحي بكل مزود، أو صحة كل إجابة، أو دوام قاعدة البيانات، أو أداء الإنتاج."` | — |
-| [SRC-B2C95EAEE1-L000029](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L29) | 29 | `""` | — |
-| [SRC-B2C95EAEE1-L000030](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L30) | 30 | `"## 2. خط أساس التحقق"` | — |
-| [SRC-B2C95EAEE1-L000031](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L31) | 31 | `""` | — |
-| [SRC-B2C95EAEE1-L000032](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L32) | 32 | `"\| البند \| الحالة \| الدليل أو الحد \|"` | — |
-| [SRC-B2C95EAEE1-L000033](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L33) | 33 | `"\|---\|---\|---\|"` | — |
-| [SRC-B2C95EAEE1-L000034](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L34) | 34 | ``"\| دمج PR #76 \| **VERIFIED** \| حالة PR هي closed/merged؛ merge commit هو `528a2552c0cda809d6c444713466e0e075c13ed9`. \|"`` | — |
-| [SRC-B2C95EAEE1-L000035](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L35) | 35 | ``"\| رأس PR قبل الدمج \| **VERIFIED** \| `3fb02880aec9ec231d973e0b3668308d1379ee89`. \|"`` | — |
-| [SRC-B2C95EAEE1-L000036](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L36) | 36 | ``"\| CI على رأس PR \| **PASS** \| [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040): `test (3.11)`, `test (3.12)`, `container-build` كلها SUCCESS. \|"`` | — |
-| [SRC-B2C95EAEE1-L000037](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L37) | 37 | `"\| Pytest على رأس PR \| **PASS** \| 384 passed على Python 3.11 و384 passed على Python 3.12، وفق سجلات المهام. \|"` | — |
-| [SRC-B2C95EAEE1-L000038](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L38) | 38 | ``"\| Ruff \| **PASS** \| خطوة `ruff check agents api cli docs tests` ناجحة في كلا مهمتي الاختبار. \|"`` | — |
-| [SRC-B2C95EAEE1-L000039](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L39) | 39 | `"\| الفهرس المولّد \| **PASS** \| مزامنة الفهرس في مساحة الاختبار المؤقتة والتحقق منه نجحا في كلا مهمتي الاختبار. \|"` | — |
-| [SRC-B2C95EAEE1-L000040](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L40) | 40 | ``"\| بناء الحاوية وAPI smoke \| **PASS** \| بناء الحاوية وبدء الخدمة واختبار الصحة والمسارات المحمية نجحت في وظيفة `container-build`. هذا اختبار CI محلي داخل الحاوية، وليس استضافة حية. \|"`` | — |
-| [SRC-B2C95EAEE1-L000041](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L41) | 41 | ``"\| CI على merge SHA في `main` \| **NOT_CONFIRMED** \| لم أحصل على دليل مباشر قابل للفحص لتشغيل push مكتمل على `528a255...`. لا أستنتج الفشل من غياب الدليل. \|"`` | — |
-| [SRC-B2C95EAEE1-L000042](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L42) | 42 | `"\| Hosted smoke \| **NOT_RUN** \| لم تُقدَّم هنا قاعدة HTTPS معتمدة وتكوين أسرار آمن؛ الاختبار الحي قد يستهلك موارد مزود النموذج/البحث. \|"` | — |
-| [SRC-B2C95EAEE1-L000043](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L43) | 43 | `"\| اختبار واجهة Android/RTL يدوي \| **NOT_RUN** \| لا توجد لقطات أو قائمة قبول منفذة مرفقة. \|"` | — |
-| [SRC-B2C95EAEE1-L000044](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L44) | 44 | ``"\| مراجعة Grok مستقلة على SHA الجديد \| **UNKNOWN / PENDING** \| يوجد Issue #68، لكن لم أتحقق من تقرير مستقل جديد يراجع `528a255...`. \|"`` | — |
-| [SRC-B2C95EAEE1-L000045](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L45) | 45 | `""` | — |
-| [SRC-B2C95EAEE1-L000046](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L46) | 46 | `"## 3. التغييرات التي أصبح وجودها على المسار المدمج مدعومًا بالأدلة"` | — |
-| [SRC-B2C95EAEE1-L000047](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L47) | 47 | `""` | — |
-| [SRC-B2C95EAEE1-L000048](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L48) | 48 | `"يشمل PR #76، وفق التغيير المدمج وفحوص CI:"` | — |
-| [SRC-B2C95EAEE1-L000049](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L49) | 49 | `""` | — |
-| [SRC-B2C95EAEE1-L000050](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L50) | 50 | `"- توحيد التعامل مع السؤال الغامض والمتابعات، مع توجيه الأسئلة القصيرة إلى الاستيضاح عند غياب مرجع صالح."` | — |
-| [SRC-B2C95EAEE1-L000051](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L51) | 51 | `"- عدم إظهار تغطية المصادر كمقياس رقمي يوحي باحتمال صحة الإجابة؛ إصلاح العمق القياسي/العميق من #75 ظل قائمًا."` | — |
-| [SRC-B2C95EAEE1-L000052](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L52) | 52 | `"- فحوص لفظية محافظة لسلامة الأدلة مع التصريح بأن الاستلزام الدلالي والتحقق المستقل من الحقيقة **غير مثبتين**."` | — |
-| [SRC-B2C95EAEE1-L000053](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L53) | 53 | `"- تحسين حالات تشخيص جلب الصفحات والموصلات، واختبارات منع التحويل التلقائي لبعض مزودي البحث المغطّين."` | — |
-| [SRC-B2C95EAEE1-L000054](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L54) | 54 | ``"- رؤوس أمان للمتصفح وسياسة CSP مع اختبارات تمنع عودة `unsafe-inline` إلى السياسة المختبرة."`` | — |
-| [SRC-B2C95EAEE1-L000055](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L55) | 55 | ``"- تضمين هوية البناء في الحاوية وإتاحتها عبر `/api/health`، ودعم `OMARAI_DB_PATH` لاختيار مسار SQLite."`` | — |
-| [SRC-B2C95EAEE1-L000056](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L56) | 56 | ``"- أداة بحث محلي في المصدر وروابط مرجعية قابلة للضبط، وإصلاح سباق فحص الفهرس في CI للفروع غير `main`."`` | — |
-| [SRC-B2C95EAEE1-L000057](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L57) | 57 | `""` | — |
-| [SRC-B2C95EAEE1-L000058](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L58) | 58 | `"هذه أدلة على وجود المسارات البرمجية واجتياز الاختبارات المحددة؛ ليست ضمانًا أمنيًا شاملًا أو شهادة صحة معرفية."` | — |
-| [SRC-B2C95EAEE1-L000059](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L59) | 59 | `""` | — |
-| [SRC-B2C95EAEE1-L000060](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L60) | 60 | `"## 4. المخاطر والبوابات التي لم تُغلق"` | — |
-| [SRC-B2C95EAEE1-L000061](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L61) | 61 | `""` | — |
-| [SRC-B2C95EAEE1-L000062](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L62) | 62 | `"\| الأولوية \| المعرف \| المجال \| الحالة الحالية \| معيار الإغلاق المطلوب \|"` | — |
-| [SRC-B2C95EAEE1-L000063](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L63) | 63 | `"\|---\|---\|---\|---\|---\|"` | — |
-| [SRC-B2C95EAEE1-L000064](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L64) | 64 | ``"\| P0 \| POST-001 \| CI على SHA الدمج \| **NOT_CONFIRMED** \| رابط تشغيل مكتمل على `528a255...` أو تحقق لاحق واضح على SHA أحدث في `main` مع نفس التغييرات. \|"`` | — |
-| [SRC-B2C95EAEE1-L000065](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L65) | 65 | ``"\| P1 \| POST-002 \| تحديث توثيق الحالة بعد الدمج \| **OPEN — توثيقي** \| إزالة أي عبارة حالية توحي أن #76 ما زال مفتوحًا أو أن تغييرات الفرع لم تدخل `main`؛ الحفاظ على اللقطات القديمة بوصفها تاريخية. \|"`` | — |
-| [SRC-B2C95EAEE1-L000066](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L66) | 66 | `"\| P1 \| POST-003 \| UI Android وRTL \| **NOT_RUN** — [Issue #11](https://github.com/mosabosama2030-oss/omarai/issues/11) \| اختبار يدوي للحالات: تحميل/نجاح/جزئي/فشل/إعادة المحاولة، مصادر حقيقية، RTL وعرض ضيق، ومنع عرض نتيجة قديمة. \|"` | — |
-| [SRC-B2C95EAEE1-L000067](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L67) | 67 | ``"\| P1 \| POST-004 \| مراجعة أمنية مستقلة \| **PENDING** — [Issue #68](https://github.com/mosabosama2030-oss/omarai/issues/68) \| تقرير فعلي مرتبط بـ`528a255...` أو SHA أحدث، يحتوي ملفات/أسطر ونتائج إعادة إنتاج واختبارات وحدود ما لم يُختبر. \|"`` | — |
-| [SRC-B2C95EAEE1-L000068](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L68) | 68 | `"\| P1 \| POST-005 \| مزودو البحث والنموذج الحيون \| **NOT_RUN / UNKNOWN** \| اختبار مستقل لكل مزود مفعّل في بيئة مخولة، مع تسجيل وقت الاستجابة والفشل والتكلفة المحتملة دون كشف الأسرار. \|"` | — |
-| [SRC-B2C95EAEE1-L000069](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L69) | 69 | `"\| P1 \| POST-006 \| دقة AQ-001–AQ-045 دلاليًا \| **PARTIAL / LIVE NOT_RUN** \| تشغيل مجموعة مرجعية على إجابات فعلية، مع مرجع متوقع ومراجعة بشرية. وجود corpus أو اجتياز pytest لا يثبت صحة إجابات النموذج. \|"` | — |
-| [SRC-B2C95EAEE1-L000070](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L70) | 70 | ``"\| P1 \| POST-007 \| استمرار SQLite والنسخ الاحتياطي والاستعادة \| **NOT_RUN** \| إثبات بقاء البيانات عبر إعادة التشغيل/النشر على المضيف الحقيقي، ثم نجاح استعادة نسخة احتياطية. `OMARAI_DB_PATH` لا ينشئ Volume ولا Backup بذاته. \|"`` | — |
-| [SRC-B2C95EAEE1-L000071](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L71) | 71 | `"\| P1 \| POST-008 \| Prompt injection واختبار أمني حي \| **PARTIAL / NOT_RUN** \| مصفوفة هجمات مسموح بها، إعادة إنتاج، وفحوص سلبية على البيئة المخصصة، دون توصيل بيانات سرية غير لازمة. \|"` | — |
-| [SRC-B2C95EAEE1-L000072](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L72) | 72 | `"\| P1 \| POST-009 \| الحمل والتزامن وحدود المعدل الموزعة \| **NOT_RUN** \| قياسات متكررة لزمن الاستجابة والأخطاء والموارد والتزامن؛ الحدود العملية الحالية محلية للعملية ولا تثبت السعة الإنتاجية. \|"` | — |
-| [SRC-B2C95EAEE1-L000073](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L73) | 73 | `"\| P0 للتوسع متعدد العملاء \| POST-010 \| الهوية وعزل بيانات المستأجرين \| **BLOCKER للتوسع** \| لا تستخدم Omarai كخدمة عامة متعددة العملاء أو لحفظ سجلات عملاء سرية قبل تنفيذ واختبار الهوية والتفويض والعزل والتخزين الدائم. \|"` | — |
-| [SRC-B2C95EAEE1-L000074](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L74) | 74 | `""` | — |
-| [SRC-B2C95EAEE1-L000075](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L75) | 75 | `"## 5. الإجراءات التالية — مرتبة حسب الأولوية"` | — |
-| [SRC-B2C95EAEE1-L000076](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L76) | 76 | `""` | — |
-| [SRC-B2C95EAEE1-L000077](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L77) | 77 | ``"1. **P0 — إثبات CI على `main`:** التأكد من تشغيل workflow على merge commit أو SHA حالي لاحق من `main`. لا حاجة لاختبار مدفوع لهذا البند."`` | — |
-| [SRC-B2C95EAEE1-L000078](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L78) | 78 | `"2. **P1 — توحيد السجلات:** تحديث سجل الإغلاق المركزي ومصفوفة الأدلة ونطاق التنفيذ لتُظهر أن #76 مدمج؛ وتحديد أن أي ادعاء أقدم هو لقطة تاريخية."` | — |
-| [SRC-B2C95EAEE1-L000079](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L79) | 79 | ``"3. **P1 — مراجعة مستقلة:** طلب مراجعة Grok على SHA الحالي، لا على خط الأساس السابق `d46a546...`. يبقى الإغلاق معتمدًا على وجود التقرير وأدلته لا على مجرد إرسال الطلب."`` | — |
-| [SRC-B2C95EAEE1-L000080](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L80) | 80 | `"4. **P1 — قبول الواجهة:** تنفيذ قائمة Issue #11 يدويًا على جهاز/متصفح حقيقي وتسجيل النتائج."` | — |
-| [SRC-B2C95EAEE1-L000081](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L81) | 81 | `"5. **P1 — قبول التشغيل الحي:** لا يبدأ hosted smoke أو أي تشخيص يمكن أن يستهلك حصة/أموالًا إلا بعد اعتماد المضيف وإعداد الأسرار الآمن وموافقة بشرية واضحة على التنفيذ."` | — |
+| [SRC-B2C95EAEE1-L000005](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L5) | 5 | `"### الحالة المرجعية"` | — |
+| [SRC-B2C95EAEE1-L000006](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L6) | 6 | `""` | — |
+| [SRC-B2C95EAEE1-L000007](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L7) | 7 | ``"- **حالة PR #81:** `MERGED=true`. رابط PR: [#81](https://github.com/mosabosama2030-oss/omarai/pull/81)."`` | — |
+| [SRC-B2C95EAEE1-L000008](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L8) | 8 | ``"- **Commit الدمج:** [`9f6674abf8679a0630d95b269b54a7ef8629c3bf`](https://github.com/mosabosama2030-oss/omarai/commit/9f6674abf8679a0630d95b269b54a7ef8629c3bf)."`` | — |
+| [SRC-B2C95EAEE1-L000009](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L9) | 9 | ``"- **رأس `main` الذي قارنته GitHub مع المرجع الحالي:** [`00a3ede039922c0c24097e89f653e6d3c984435d`](https://github.com/mosabosama2030-oss/omarai/commit/00a3ede039922c0c24097e89f653e6d3c984435d). المقارنة بين `main` وهذا SHA أعادت `identical` (`ahead_by=0`, `behind_by=0`)."`` | — |
+| [SRC-B2C95EAEE1-L000010](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L10) | 10 | ``"- **طبيعة الرأس الحالي:** `00a3ede...` تحديث للفهرس المولد بعد دمج #81؛ ليس تغييرًا في منطق البحث."`` | — |
+| [SRC-B2C95EAEE1-L000011](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L11) | 11 | `""` | — |
+| [SRC-B2C95EAEE1-L000012](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L12) | 12 | `"### نتائج الاختبار التي أمكن إثباتها"` | — |
+| [SRC-B2C95EAEE1-L000013](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L13) | 13 | `""` | — |
+| [SRC-B2C95EAEE1-L000014](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L14) | 14 | `"- [تشغيل CI #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) على رأس PR #81 السابق للدمج نجح في الوظائف الثلاث."` | — |
+| [SRC-B2C95EAEE1-L000015](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L15) | 15 | `"- Python 3.11: **384 passed**؛ Python 3.12: **384 passed**."` | — |
+| [SRC-B2C95EAEE1-L000016](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L16) | 16 | `"- Ruff ناجح؛ اختبارات تصنيف ملفات الفهرس ناجحة؛ توليد الفهرس والتحقق منه ناجحان؛ بناء الحاوية واختبار API المحمي ناجحان."` | — |
+| [SRC-B2C95EAEE1-L000017](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L17) | 17 | `"- PR #81 يعالج السباق السابق بين اختبار main وناشر الفهرس: عند تغييرات المصدر/الوثائق يعيد الاختبار توليد الفهرس في مساحة معزولة؛ وعند تغييرات مخرجات الفهرس وحدها يبقى الفحص الصارم قائمًا."` | — |
+| [SRC-B2C95EAEE1-L000018](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L18) | 18 | `""` | — |
+| [SRC-B2C95EAEE1-L000019](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L19) | 19 | `"### حالة التحقق على الرأس النهائي"` | — |
+| [SRC-B2C95EAEE1-L000020](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L20) | 20 | `""` | — |
+| [SRC-B2C95EAEE1-L000021](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L21) | 21 | ``"- **Push CI مباشر على `00a3ede...`: `NOT_CONFIRMED` في هذه المراجعة.** موصل GitHub المتاح يعيد هنا تشغيلات CI المرتبطة بطلبات الدمج ولا يتيح إثبات تشغيلات push النهائية المطلوبة بصورة مباشرة. لا يعني هذا فشلًا ولا نجاحًا؛ يجب فتح GitHub Actions والتحقق من التشغيل المرتبط بـ`main` وSHA الحالي."`` | — |
+| [SRC-B2C95EAEE1-L000022](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L22) | 22 | ``"- فهرس `main` موجود عند SHA `00a3ede...`، لكن نجاح تشغيل CI على رأس PR قبل الدمج ليس بديلًا عن فحص التشغيل بعد الدمج."`` | — |
+| [SRC-B2C95EAEE1-L000023](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L23) | 23 | `"- لا يوجد من هذا الفحص إثبات لاتصال موفري البحث والنموذج الحيين، أو جودة الإجابات الدلالية في الاستضافة، أو ثبات قاعدة البيانات والاستعادة على المضيف، أو أداء الحمل، أو قبول Android/RTL."` | — |
+| [SRC-B2C95EAEE1-L000024](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L24) | 24 | `""` | — |
+| [SRC-B2C95EAEE1-L000025](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L25) | 25 | `"### حكم الجلسة 1"` | — |
+| [SRC-B2C95EAEE1-L000026](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L26) | 26 | `""` | — |
+| [SRC-B2C95EAEE1-L000027](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L27) | 27 | `"**PARTIAL — اكتمل تحديد الرأس المرجعي، وثبت دمج #81، وثبت نجاح CI قبل الدمج، وصُححت الوثائق على فرع مراجعة.** لا تُغلق الجلسة بالكامل حتى:"` | — |
+| [SRC-B2C95EAEE1-L000028](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L28) | 28 | ``"1. التحقق من تشغيل CI ناجح مرتبط بـSHA الحالي `00a3ede...` على `main`؛ أو تشغيل/إعادة تشغيل workflow المعتمد على ذلك الرأس إذا لم يوجد تشغيل صالح."`` | — |
+| [SRC-B2C95EAEE1-L000029](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L29) | 29 | `"2. دمج PR توحيد الوثائق الذي يصحح حالات #81 القديمة في النطاق والسجل والتقرير."` | — |
+| [SRC-B2C95EAEE1-L000030](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L30) | 30 | `""` | — |
+| [SRC-B2C95EAEE1-L000031](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L31) | 31 | `"هذا التقرير لا يعلن جاهزية الإنتاج أو الإطلاق العام. المراحل التالية تبدأ بعد إغلاق الجلسة 1 بالأدلة."` | — |
+| [SRC-B2C95EAEE1-L000032](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L32) | 32 | `""` | — |
+| [SRC-B2C95EAEE1-L000033](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L33) | 33 | `"---"` | — |
+| [SRC-B2C95EAEE1-L000034](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L34) | 34 | `""` | — |
+| [SRC-B2C95EAEE1-L000035](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L35) | 35 | `"## سجل تاريخي — التحقق من PR #76 (لا يمثل رأس main الحالي)"` | — |
+| [SRC-B2C95EAEE1-L000036](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L36) | 36 | `""` | — |
+| [SRC-B2C95EAEE1-L000037](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L37) | 37 | `"**الحالة:** مراجعة بعد الدمج — أدلة جزئية موثقة؛ لا تمثل شهادة جاهزية إنتاجية.  "` | — |
+| [SRC-B2C95EAEE1-L000038](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L38) | 38 | `"**PR #76:** [fix(foundation): close audit findings and verify evidence/runtime identity](https://github.com/mosabosama2030-oss/omarai/pull/76) — **MERGED**.  "` | — |
+| [SRC-B2C95EAEE1-L000039](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L39) | 39 | `"**وقت الدمج المعلن من GitHub:** 2026-10-21 19:19:54 UTC.  "` | — |
+| [SRC-B2C95EAEE1-L000040](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L40) | 40 | ``"**التزام الدمج:** [`528a2552c0cda809d6c444713466e0e075c13ed9`](https://github.com/mosabosama2030-oss/omarai/commit/528a2552c0cda809d6c444713466e0e075c13ed9).  "`` | — |
+| [SRC-B2C95EAEE1-L000041](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L41) | 41 | ``"**رأس PR الذي اجتاز CI:** [`3fb02880aec9ec231d973e0b3668308d1379ee89`](https://github.com/mosabosama2030-oss/omarai/commit/3fb02880aec9ec231d973e0b3668308d1379ee89)."`` | — |
+| [SRC-B2C95EAEE1-L000042](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L42) | 42 | `""` | — |
+| [SRC-B2C95EAEE1-L000043](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L43) | 43 | `"## 1. الحكم التنفيذي"` | — |
+| [SRC-B2C95EAEE1-L000044](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L44) | 44 | `""` | — |
+| [SRC-B2C95EAEE1-L000045](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L45) | 45 | `"تم دمج الإصلاحات المجمعة في #76. تشغيل CI الأحدث الذي تمكنت من فحص وظائفه هو [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) على رأس PR، وجميع الوظائف الثلاث فيه **SUCCESS**: الاختبارات على Python 3.11 وPython 3.12 وبناء الحاوية واختبار API المحمي. ظهر في السجل **384 اختبارًا ناجحًا على كل إصدار Python**، ونجح Ruff وفحص الفهرس وبناء الحاوية واختبار API الأساسي."` | — |
+| [SRC-B2C95EAEE1-L000046](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L46) | 46 | `""` | — |
+| [SRC-B2C95EAEE1-L000047](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L47) | 47 | ``"**حدّ مهم:** هذه نتيجة CI مرتبطة برأس PR قبل الدمج، وليست بحد ذاتها إثباتًا أن workflow مستقلًا اكتمل على التزام الدمج `528a255...`. استعلام حالة الالتزام الذي أتيح لي لم يُرجع عناصر status، وأداة جلب التشغيلات المتاحة هنا تعرض تشغيلات PR فقط. لذلك حالة تحقق CI على التزام `main` بعد الدمج مصنفة **NOT_CONFIRMED**، وليست PASS ولا FAIL. يجب تسجيل رابط تشغيل push/post-merge المرتبط بالـSHA نفسه، إن وجد، أو إجراء تحقق غير مدفوع من `main` وفق آلية المستودع."`` | — |
+| [SRC-B2C95EAEE1-L000048](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L48) | 48 | `""` | — |
+| [SRC-B2C95EAEE1-L000049](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L49) | 49 | `"نجاح CI لا يثبت تشغيل نسخة منشورة، أو الاتصال الحي بكل مزود، أو صحة كل إجابة، أو دوام قاعدة البيانات، أو أداء الإنتاج."` | — |
+| [SRC-B2C95EAEE1-L000050](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L50) | 50 | `""` | — |
+| [SRC-B2C95EAEE1-L000051](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L51) | 51 | `"## 2. خط أساس التحقق"` | — |
+| [SRC-B2C95EAEE1-L000052](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L52) | 52 | `""` | — |
+| [SRC-B2C95EAEE1-L000053](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L53) | 53 | `"\| البند \| الحالة \| الدليل أو الحد \|"` | — |
+| [SRC-B2C95EAEE1-L000054](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L54) | 54 | `"\|---\|---\|---\|"` | — |
+| [SRC-B2C95EAEE1-L000055](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L55) | 55 | ``"\| دمج PR #76 \| **VERIFIED** \| حالة PR هي closed/merged؛ merge commit هو `528a2552c0cda809d6c444713466e0e075c13ed9`. \|"`` | — |
+| [SRC-B2C95EAEE1-L000056](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L56) | 56 | ``"\| رأس PR قبل الدمج \| **VERIFIED** \| `3fb02880aec9ec231d973e0b3668308d1379ee89`. \|"`` | — |
+| [SRC-B2C95EAEE1-L000057](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L57) | 57 | ``"\| CI على رأس PR \| **PASS** \| [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040): `test (3.11)`, `test (3.12)`, `container-build` كلها SUCCESS. \|"`` | — |
+| [SRC-B2C95EAEE1-L000058](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L58) | 58 | `"\| Pytest على رأس PR \| **PASS** \| 384 passed على Python 3.11 و384 passed على Python 3.12، وفق سجلات المهام. \|"` | — |
+| [SRC-B2C95EAEE1-L000059](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L59) | 59 | ``"\| Ruff \| **PASS** \| خطوة `ruff check agents api cli docs tests` ناجحة في كلا مهمتي الاختبار. \|"`` | — |
+| [SRC-B2C95EAEE1-L000060](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L60) | 60 | `"\| الفهرس المولّد \| **PASS** \| مزامنة الفهرس في مساحة الاختبار المؤقتة والتحقق منه نجحا في كلا مهمتي الاختبار. \|"` | — |
+| [SRC-B2C95EAEE1-L000061](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L61) | 61 | ``"\| بناء الحاوية وAPI smoke \| **PASS** \| بناء الحاوية وبدء الخدمة واختبار الصحة والمسارات المحمية نجحت في وظيفة `container-build`. هذا اختبار CI محلي داخل الحاوية، وليس استضافة حية. \|"`` | — |
+| [SRC-B2C95EAEE1-L000062](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L62) | 62 | ``"\| CI على merge SHA في `main` \| **NOT_CONFIRMED** \| لم أحصل على دليل مباشر قابل للفحص لتشغيل push مكتمل على `528a255...`. لا أستنتج الفشل من غياب الدليل. \|"`` | — |
+| [SRC-B2C95EAEE1-L000063](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L63) | 63 | `"\| Hosted smoke \| **NOT_RUN** \| لم تُقدَّم هنا قاعدة HTTPS معتمدة وتكوين أسرار آمن؛ الاختبار الحي قد يستهلك موارد مزود النموذج/البحث. \|"` | — |
+| [SRC-B2C95EAEE1-L000064](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L64) | 64 | `"\| اختبار واجهة Android/RTL يدوي \| **NOT_RUN** \| لا توجد لقطات أو قائمة قبول منفذة مرفقة. \|"` | — |
+| [SRC-B2C95EAEE1-L000065](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L65) | 65 | ``"\| مراجعة Grok مستقلة على SHA الجديد \| **UNKNOWN / PENDING** \| يوجد Issue #68، لكن لم أتحقق من تقرير مستقل جديد يراجع `528a255...`. \|"`` | — |
+| [SRC-B2C95EAEE1-L000066](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L66) | 66 | `""` | — |
+| [SRC-B2C95EAEE1-L000067](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L67) | 67 | `"## 3. التغييرات التي أصبح وجودها على المسار المدمج مدعومًا بالأدلة"` | — |
+| [SRC-B2C95EAEE1-L000068](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L68) | 68 | `""` | — |
+| [SRC-B2C95EAEE1-L000069](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L69) | 69 | `"يشمل PR #76، وفق التغيير المدمج وفحوص CI:"` | — |
+| [SRC-B2C95EAEE1-L000070](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L70) | 70 | `""` | — |
+| [SRC-B2C95EAEE1-L000071](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L71) | 71 | `"- توحيد التعامل مع السؤال الغامض والمتابعات، مع توجيه الأسئلة القصيرة إلى الاستيضاح عند غياب مرجع صالح."` | — |
+| [SRC-B2C95EAEE1-L000072](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L72) | 72 | `"- عدم إظهار تغطية المصادر كمقياس رقمي يوحي باحتمال صحة الإجابة؛ إصلاح العمق القياسي/العميق من #75 ظل قائمًا."` | — |
+| [SRC-B2C95EAEE1-L000073](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L73) | 73 | `"- فحوص لفظية محافظة لسلامة الأدلة مع التصريح بأن الاستلزام الدلالي والتحقق المستقل من الحقيقة **غير مثبتين**."` | — |
+| [SRC-B2C95EAEE1-L000074](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L74) | 74 | `"- تحسين حالات تشخيص جلب الصفحات والموصلات، واختبارات منع التحويل التلقائي لبعض مزودي البحث المغطّين."` | — |
+| [SRC-B2C95EAEE1-L000075](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L75) | 75 | ``"- رؤوس أمان للمتصفح وسياسة CSP مع اختبارات تمنع عودة `unsafe-inline` إلى السياسة المختبرة."`` | — |
+| [SRC-B2C95EAEE1-L000076](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L76) | 76 | ``"- تضمين هوية البناء في الحاوية وإتاحتها عبر `/api/health`، ودعم `OMARAI_DB_PATH` لاختيار مسار SQLite."`` | — |
+| [SRC-B2C95EAEE1-L000077](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L77) | 77 | ``"- أداة بحث محلي في المصدر وروابط مرجعية قابلة للضبط، وإصلاح سباق فحص الفهرس في CI للفروع غير `main`."`` | — |
+| [SRC-B2C95EAEE1-L000078](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L78) | 78 | `""` | — |
+| [SRC-B2C95EAEE1-L000079](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L79) | 79 | `"هذه أدلة على وجود المسارات البرمجية واجتياز الاختبارات المحددة؛ ليست ضمانًا أمنيًا شاملًا أو شهادة صحة معرفية."` | — |
+| [SRC-B2C95EAEE1-L000080](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L80) | 80 | `""` | — |

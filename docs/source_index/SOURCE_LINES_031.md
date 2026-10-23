@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001145 إلى SRC-F725E90B2A-L001944
+- النطاق: SRC-F725E90B2A-L001114 إلى SRC-F725E90B2A-L001913
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001114](../../tests/test_web_agent.py#L1114) | 1114 | `""` | — |
+| [SRC-F725E90B2A-L001115](../../tests/test_web_agent.py#L1115) | 1115 | `"    result = agent.answer(\"قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية\")"` | — |
+| [SRC-F725E90B2A-L001116](../../tests/test_web_agent.py#L1116) | 1116 | `""` | — |
+| [SRC-F725E90B2A-L001117](../../tests/test_web_agent.py#L1117) | 1117 | `"    assert result[\"search_report\"][\"second_pass_review\"] == \"model_claim_audit_unavailable\""` | — |
+| [SRC-F725E90B2A-L001118](../../tests/test_web_agent.py#L1118) | 1118 | `"    assert result[\"final_answer_status\"] == \"review_failed_with_source_fallback\""` | — |
+| [SRC-F725E90B2A-L001119](../../tests/test_web_agent.py#L1119) | 1119 | `"    assert \"Audit Report\" not in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001120](../../tests/test_web_agent.py#L1120) | 1120 | `"    assert \"ملاحظة داخلية سرية\" not in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001121](../../tests/test_web_agent.py#L1121) | 1121 | `"    assert \"إجابة نهائية مزعومة\" not in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001122](../../tests/test_web_agent.py#L1122) | 1122 | `""` | — |
+| [SRC-F725E90B2A-L001123](../../tests/test_web_agent.py#L1123) | 1123 | `""` | — |
+| [SRC-F725E90B2A-L001124](../../tests/test_web_agent.py#L1124) | 1124 | `"def test_sibling_subdomains_do_not_satisfy_independent_evidence_gate(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001125](../../tests/test_web_agent.py#L1125) | 1125 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001126](../../tests/test_web_agent.py#L1126) | 1126 | `"    first = sample_source(0)"` | — |
+| [SRC-F725E90B2A-L001127](../../tests/test_web_agent.py#L1127) | 1127 | `"    first[\"url\"] = \"https://news.example.com/research\""` | — |
+| [SRC-F725E90B2A-L001128](../../tests/test_web_agent.py#L1128) | 1128 | `"    first[\"domain\"] = \"news.example.com\""` | — |
+| [SRC-F725E90B2A-L001129](../../tests/test_web_agent.py#L1129) | 1129 | `"    second = sample_source(1)"` | — |
+| [SRC-F725E90B2A-L001130](../../tests/test_web_agent.py#L1130) | 1130 | `"    second[\"url\"] = \"https://offers.example.com/research\""` | — |
+| [SRC-F725E90B2A-L001131](../../tests/test_web_agent.py#L1131) | 1131 | `"    second[\"domain\"] = \"offers.example.com\""` | — |
+| [SRC-F725E90B2A-L001132](../../tests/test_web_agent.py#L1132) | 1132 | `""` | — |
+| [SRC-F725E90B2A-L001133](../../tests/test_web_agent.py#L1133) | 1133 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001134](../../tests/test_web_agent.py#L1134) | 1134 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L001135](../../tests/test_web_agent.py#L1135) | 1135 | `"        \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001136](../../tests/test_web_agent.py#L1136) | 1136 | `"        lambda plan: ("` | — |
+| [SRC-F725E90B2A-L001137](../../tests/test_web_agent.py#L1137) | 1137 | `"            [first, second],"` | — |
+| [SRC-F725E90B2A-L001138](../../tests/test_web_agent.py#L1138) | 1138 | `"            [],"` | — |
+| [SRC-F725E90B2A-L001139](../../tests/test_web_agent.py#L1139) | 1139 | `"            {"` | — |
+| [SRC-F725E90B2A-L001140](../../tests/test_web_agent.py#L1140) | 1140 | `"                \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L001141](../../tests/test_web_agent.py#L1141) | 1141 | `"                \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L001142](../../tests/test_web_agent.py#L1142) | 1142 | `"                \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 2}],"` | — |
+| [SRC-F725E90B2A-L001143](../../tests/test_web_agent.py#L1143) | 1143 | `"                \"unique_sources\": 2,"` | — |
+| [SRC-F725E90B2A-L001144](../../tests/test_web_agent.py#L1144) | 1144 | `"                \"pages_fetched\": 2,"` | — |
 | [SRC-F725E90B2A-L001145](../../tests/test_web_agent.py#L1145) | 1145 | `"                \"providers_used\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L001146](../../tests/test_web_agent.py#L1146) | 1146 | `"                \"platform_counts\": {\"web\": 2},"` | — |
 | [SRC-F725E90B2A-L001147](../../tests/test_web_agent.py#L1147) | 1147 | `"                \"social_direct_results\": 0,"` | — |
@@ -785,34 +816,3 @@
 | [SRC-F725E90B2A-L001911](../../tests/test_web_agent.py#L1911) | 1911 | `"        agent._review_answer(\"ما مضمون الصفحة؟\", \"مسودة\", [source])"` | — |
 | [SRC-F725E90B2A-L001912](../../tests/test_web_agent.py#L1912) | 1912 | `""` | — |
 | [SRC-F725E90B2A-L001913](../../tests/test_web_agent.py#L1913) | 1913 | `""` | — |
-| [SRC-F725E90B2A-L001914](../../tests/test_web_agent.py#L1914) | 1914 | `"def test_frontend_review_status_matches_api_contract():"` | — |
-| [SRC-F725E90B2A-L001915](../../tests/test_web_agent.py#L1915) | 1915 | `"    html = (Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\").read_text(encoding=\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L001916](../../tests/test_web_agent.py#L1916) | 1916 | `"    assert 'r.second_pass_review===\"model_claim_audit_completed\"' in html"` | — |
-| [SRC-F725E90B2A-L001917](../../tests/test_web_agent.py#L1917) | 1917 | `"    assert 'r.second_pass_review===\"model_claim_audit_unavailable\"' in html"` | — |
-| [SRC-F725E90B2A-L001918](../../tests/test_web_agent.py#L1918) | 1918 | `"    assert 'r.second_pass_review===\"model_second_pass_completed\"' not in html"` | — |
-| [SRC-F725E90B2A-L001919](../../tests/test_web_agent.py#L1919) | 1919 | `"    assert 'r.second_pass_review===\"model_second_pass_unavailable\"' not in html"` | — |
-| [SRC-F725E90B2A-L001920](../../tests/test_web_agent.py#L1920) | 1920 | `""` | — |
-| [SRC-F725E90B2A-L001921](../../tests/test_web_agent.py#L1921) | 1921 | `""` | — |
-| [SRC-F725E90B2A-L001922](../../tests/test_web_agent.py#L1922) | 1922 | `""` | — |
-| [SRC-F725E90B2A-L001923](../../tests/test_web_agent.py#L1923) | 1923 | `"def test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001924](../../tests/test_web_agent.py#L1924) | 1924 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001925](../../tests/test_web_agent.py#L1925) | 1925 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L001926](../../tests/test_web_agent.py#L1926) | 1926 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |
-| [SRC-F725E90B2A-L001927](../../tests/test_web_agent.py#L1927) | 1927 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L001928](../../tests/test_web_agent.py#L1928) | 1928 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L001929](../../tests/test_web_agent.py#L1929) | 1929 | `"        \"freshness\": \"current\","` | — |
-| [SRC-F725E90B2A-L001930](../../tests/test_web_agent.py#L1930) | 1930 | `"        \"depth\": \"deep\","` | — |
-| [SRC-F725E90B2A-L001931](../../tests/test_web_agent.py#L1931) | 1931 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001932](../../tests/test_web_agent.py#L1932) | 1932 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001933](../../tests/test_web_agent.py#L1933) | 1933 | `"    }"` | — |
-| [SRC-F725E90B2A-L001934](../../tests/test_web_agent.py#L1934) | 1934 | `""` | — |
-| [SRC-F725E90B2A-L001935](../../tests/test_web_agent.py#L1935) | 1935 | `"    def failed_after_provider_result(research_plan):"` | — |
-| [SRC-F725E90B2A-L001936](../../tests/test_web_agent.py#L1936) | 1936 | `"        # A completed provider result-processing state confirms that a search"` | — |
-| [SRC-F725E90B2A-L001937](../../tests/test_web_agent.py#L1937) | 1937 | `"        # connector returned; the collector then fails during downstream processing."` | — |
-| [SRC-F725E90B2A-L001938](../../tests/test_web_agent.py#L1938) | 1938 | `"        agent._record_provider_diagnostic("` | — |
-| [SRC-F725E90B2A-L001939](../../tests/test_web_agent.py#L1939) | 1939 | `"            \"duckduckgo_html\","` | — |
-| [SRC-F725E90B2A-L001940](../../tests/test_web_agent.py#L1940) | 1940 | `"            research_plan[\"queries\"][0],"` | — |
-| [SRC-F725E90B2A-L001941](../../tests/test_web_agent.py#L1941) | 1941 | `"            \"ok\","` | — |
-| [SRC-F725E90B2A-L001942](../../tests/test_web_agent.py#L1942) | 1942 | `"            result_count=1,"` | — |
-| [SRC-F725E90B2A-L001943](../../tests/test_web_agent.py#L1943) | 1943 | `"        )"` | — |
-| [SRC-F725E90B2A-L001944](../../tests/test_web_agent.py#L1944) | 1944 | `"        raise RuntimeError(\"simulated post-search pipeline failure\")"` | — |

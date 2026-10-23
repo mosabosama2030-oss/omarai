@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000123 إلى SRC-F725E90B2A-L000344
+- النطاق: SRC-6BF96689A8-L000092 إلى SRC-F725E90B2A-L000313
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
+| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |
+| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"https://www.example.com/path\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `""` | — |
+| [SRC-6BF96689A8-L000096](../../tests/test_research.py#L96) | 96 | `""` | — |
+| [SRC-6BF96689A8-L000097](../../tests/test_research.py#L97) | 97 | `"def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():"` | — |
+| [SRC-6BF96689A8-L000098](../../tests/test_research.py#L98) | 98 | `"    report = evidence_signal_report(["` | — |
+| [SRC-6BF96689A8-L000099](../../tests/test_research.py#L99) | 99 | `"        {"` | — |
+| [SRC-6BF96689A8-L000100](../../tests/test_research.py#L100) | 100 | `"            \"url\": \"https://news.example.com/story\","` | — |
+| [SRC-6BF96689A8-L000101](../../tests/test_research.py#L101) | 101 | `"            \"domain\": \"news.example.com\","` | — |
+| [SRC-6BF96689A8-L000102](../../tests/test_research.py#L102) | 102 | `"            \"providers\": [\"search_a\"],"` | — |
+| [SRC-6BF96689A8-L000103](../../tests/test_research.py#L103) | 103 | `"        },"` | — |
+| [SRC-6BF96689A8-L000104](../../tests/test_research.py#L104) | 104 | `"        {"` | — |
+| [SRC-6BF96689A8-L000105](../../tests/test_research.py#L105) | 105 | `"            \"url\": \"https://offers.example.com/second-story\","` | — |
+| [SRC-6BF96689A8-L000106](../../tests/test_research.py#L106) | 106 | `"            \"domain\": \"offers.example.com\","` | — |
+| [SRC-6BF96689A8-L000107](../../tests/test_research.py#L107) | 107 | `"            \"providers\": [\"search_b\"],"` | — |
+| [SRC-6BF96689A8-L000108](../../tests/test_research.py#L108) | 108 | `"        },"` | — |
+| [SRC-6BF96689A8-L000109](../../tests/test_research.py#L109) | 109 | `"    ])"` | — |
+| [SRC-6BF96689A8-L000110](../../tests/test_research.py#L110) | 110 | `"    assert report[\"unique_domains\"] == 1"` | — |
+| [SRC-6BF96689A8-L000111](../../tests/test_research.py#L111) | 111 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
+| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `""` | — |
+| [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `""` | — |
+| [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `""` | — |
+| [SRC-6BF96689A8-L000115](../../tests/test_research.py#L115) | 115 | `"def test_standard_fallback_plan_does_not_add_deep_research_query():"` | — |
+| [SRC-6BF96689A8-L000116](../../tests/test_research.py#L116) | 116 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\")"` | — |
+| [SRC-6BF96689A8-L000117](../../tests/test_research.py#L117) | 117 | `"    assert plan[\"depth\"] == \"standard\""` | — |
+| [SRC-6BF96689A8-L000118](../../tests/test_research.py#L118) | 118 | `"    assert not any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
+| [SRC-6BF96689A8-L000119](../../tests/test_research.py#L119) | 119 | `""` | — |
+| [SRC-6BF96689A8-L000120](../../tests/test_research.py#L120) | 120 | `""` | — |
+| [SRC-6BF96689A8-L000121](../../tests/test_research.py#L121) | 121 | `"def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():"` | — |
+| [SRC-6BF96689A8-L000122](../../tests/test_research.py#L122) | 122 | `"    plan = fallback_plan(\"قارن مميزات وعيوب المحرك الكهربائي\")"` | — |
 | [SRC-6BF96689A8-L000123](../../tests/test_research.py#L123) | 123 | `"    assert plan[\"depth\"] == \"deep\""` | — |
 | [SRC-6BF96689A8-L000124](../../tests/test_research.py#L124) | 124 | `"    assert any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
 | [SRC-6BF96689A8-L000125](../../tests/test_research.py#L125) | 125 | `""` | — |
@@ -821,34 +852,3 @@
 | [SRC-F725E90B2A-L000311](../../tests/test_web_agent.py#L311) | 311 | `"    answer, warnings = WebAgent._remove_invalid_citations("` | — |
 | [SRC-F725E90B2A-L000312](../../tests/test_web_agent.py#L312) | 312 | `"        \"النتيجة [المصدر 1] وادعاء آخر [المصدر 11].\", 1"` | — |
 | [SRC-F725E90B2A-L000313](../../tests/test_web_agent.py#L313) | 313 | `"    )"` | — |
-| [SRC-F725E90B2A-L000314](../../tests/test_web_agent.py#L314) | 314 | `"    assert \"[المصدر 1]\" in answer"` | — |
-| [SRC-F725E90B2A-L000315](../../tests/test_web_agent.py#L315) | 315 | `"    assert \"[المصدر 11]\" not in answer"` | — |
-| [SRC-F725E90B2A-L000316](../../tests/test_web_agent.py#L316) | 316 | `"    assert len(warnings) == 1"` | — |
-| [SRC-F725E90B2A-L000317](../../tests/test_web_agent.py#L317) | 317 | `""` | — |
-| [SRC-F725E90B2A-L000318](../../tests/test_web_agent.py#L318) | 318 | `""` | — |
-| [SRC-F725E90B2A-L000319](../../tests/test_web_agent.py#L319) | 319 | `"def test_citation_metadata_limits_claim_to_index_range_validation():"` | — |
-| [SRC-F725E90B2A-L000320](../../tests/test_web_agent.py#L320) | 320 | `"    metadata = WebAgent._citation_validation_metadata("` | — |
-| [SRC-F725E90B2A-L000321](../../tests/test_web_agent.py#L321) | 321 | `"        \"النتيجة المدعومة مبدئيًا [المصدر 1].\","` | — |
-| [SRC-F725E90B2A-L000322](../../tests/test_web_agent.py#L322) | 322 | `"        1,"` | — |
-| [SRC-F725E90B2A-L000323](../../tests/test_web_agent.py#L323) | 323 | `"        [],"` | — |
-| [SRC-F725E90B2A-L000324](../../tests/test_web_agent.py#L324) | 324 | `"        \"model_claim_audit_completed\","` | — |
-| [SRC-F725E90B2A-L000325](../../tests/test_web_agent.py#L325) | 325 | `"    )"` | — |
-| [SRC-F725E90B2A-L000326](../../tests/test_web_agent.py#L326) | 326 | `"    assert metadata == {"` | — |
-| [SRC-F725E90B2A-L000327](../../tests/test_web_agent.py#L327) | 327 | `"        \"method\": \"numeric_source_index_range_only\","` | — |
-| [SRC-F725E90B2A-L000328](../../tests/test_web_agent.py#L328) | 328 | `"        \"status\": \"index_range_check_passed\","` | — |
-| [SRC-F725E90B2A-L000329](../../tests/test_web_agent.py#L329) | 329 | `"        \"valid_citation_count\": 1,"` | — |
-| [SRC-F725E90B2A-L000330](../../tests/test_web_agent.py#L330) | 330 | `"        \"invalid_references_removed\": 0,"` | — |
-| [SRC-F725E90B2A-L000331](../../tests/test_web_agent.py#L331) | 331 | `"        \"max_citable_source_index\": 1,"` | — |
-| [SRC-F725E90B2A-L000332](../../tests/test_web_agent.py#L332) | 332 | `"        \"claim_support\": \"model_review_not_independent_fact_check\","` | — |
-| [SRC-F725E90B2A-L000333](../../tests/test_web_agent.py#L333) | 333 | `"    }"` | — |
-| [SRC-F725E90B2A-L000334](../../tests/test_web_agent.py#L334) | 334 | `""` | — |
-| [SRC-F725E90B2A-L000335](../../tests/test_web_agent.py#L335) | 335 | `""` | — |
-| [SRC-F725E90B2A-L000336](../../tests/test_web_agent.py#L336) | 336 | `"def test_citation_metadata_reports_invalid_reference_repair():"` | — |
-| [SRC-F725E90B2A-L000337](../../tests/test_web_agent.py#L337) | 337 | `"    cleaned, warnings = WebAgent._remove_invalid_citations("` | — |
-| [SRC-F725E90B2A-L000338](../../tests/test_web_agent.py#L338) | 338 | `"        \"صحيح [المصدر 1] وخاطئ [المصدر 9].\", 1"` | — |
-| [SRC-F725E90B2A-L000339](../../tests/test_web_agent.py#L339) | 339 | `"    )"` | — |
-| [SRC-F725E90B2A-L000340](../../tests/test_web_agent.py#L340) | 340 | `"    metadata = WebAgent._citation_validation_metadata("` | — |
-| [SRC-F725E90B2A-L000341](../../tests/test_web_agent.py#L341) | 341 | `"        cleaned, 1, warnings, \"not_run\""` | — |
-| [SRC-F725E90B2A-L000342](../../tests/test_web_agent.py#L342) | 342 | `"    )"` | — |
-| [SRC-F725E90B2A-L000343](../../tests/test_web_agent.py#L343) | 343 | `"    assert metadata[\"status\"] == \"invalid_index_references_removed\""` | — |
-| [SRC-F725E90B2A-L000344](../../tests/test_web_agent.py#L344) | 344 | `"    assert metadata[\"valid_citation_count\"] == 1"` | — |

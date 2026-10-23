@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001945 إلى SRC-DE7EABE998-L000007
+- النطاق: SRC-F725E90B2A-L001914 إلى SRC-F725E90B2A-L002713
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001914](../../tests/test_web_agent.py#L1914) | 1914 | `"def test_frontend_review_status_matches_api_contract():"` | — |
+| [SRC-F725E90B2A-L001915](../../tests/test_web_agent.py#L1915) | 1915 | `"    html = (Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\").read_text(encoding=\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L001916](../../tests/test_web_agent.py#L1916) | 1916 | `"    assert 'r.second_pass_review===\"model_claim_audit_completed\"' in html"` | — |
+| [SRC-F725E90B2A-L001917](../../tests/test_web_agent.py#L1917) | 1917 | `"    assert 'r.second_pass_review===\"model_claim_audit_unavailable\"' in html"` | — |
+| [SRC-F725E90B2A-L001918](../../tests/test_web_agent.py#L1918) | 1918 | `"    assert 'r.second_pass_review===\"model_second_pass_completed\"' not in html"` | — |
+| [SRC-F725E90B2A-L001919](../../tests/test_web_agent.py#L1919) | 1919 | `"    assert 'r.second_pass_review===\"model_second_pass_unavailable\"' not in html"` | — |
+| [SRC-F725E90B2A-L001920](../../tests/test_web_agent.py#L1920) | 1920 | `""` | — |
+| [SRC-F725E90B2A-L001921](../../tests/test_web_agent.py#L1921) | 1921 | `""` | — |
+| [SRC-F725E90B2A-L001922](../../tests/test_web_agent.py#L1922) | 1922 | `""` | — |
+| [SRC-F725E90B2A-L001923](../../tests/test_web_agent.py#L1923) | 1923 | `"def test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001924](../../tests/test_web_agent.py#L1924) | 1924 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001925](../../tests/test_web_agent.py#L1925) | 1925 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L001926](../../tests/test_web_agent.py#L1926) | 1926 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |
+| [SRC-F725E90B2A-L001927](../../tests/test_web_agent.py#L1927) | 1927 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L001928](../../tests/test_web_agent.py#L1928) | 1928 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L001929](../../tests/test_web_agent.py#L1929) | 1929 | `"        \"freshness\": \"current\","` | — |
+| [SRC-F725E90B2A-L001930](../../tests/test_web_agent.py#L1930) | 1930 | `"        \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L001931](../../tests/test_web_agent.py#L1931) | 1931 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001932](../../tests/test_web_agent.py#L1932) | 1932 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001933](../../tests/test_web_agent.py#L1933) | 1933 | `"    }"` | — |
+| [SRC-F725E90B2A-L001934](../../tests/test_web_agent.py#L1934) | 1934 | `""` | — |
+| [SRC-F725E90B2A-L001935](../../tests/test_web_agent.py#L1935) | 1935 | `"    def failed_after_provider_result(research_plan):"` | — |
+| [SRC-F725E90B2A-L001936](../../tests/test_web_agent.py#L1936) | 1936 | `"        # A completed provider result-processing state confirms that a search"` | — |
+| [SRC-F725E90B2A-L001937](../../tests/test_web_agent.py#L1937) | 1937 | `"        # connector returned; the collector then fails during downstream processing."` | — |
+| [SRC-F725E90B2A-L001938](../../tests/test_web_agent.py#L1938) | 1938 | `"        agent._record_provider_diagnostic("` | — |
+| [SRC-F725E90B2A-L001939](../../tests/test_web_agent.py#L1939) | 1939 | `"            \"duckduckgo_html\","` | — |
+| [SRC-F725E90B2A-L001940](../../tests/test_web_agent.py#L1940) | 1940 | `"            research_plan[\"queries\"][0],"` | — |
+| [SRC-F725E90B2A-L001941](../../tests/test_web_agent.py#L1941) | 1941 | `"            \"ok\","` | — |
+| [SRC-F725E90B2A-L001942](../../tests/test_web_agent.py#L1942) | 1942 | `"            result_count=1,"` | — |
+| [SRC-F725E90B2A-L001943](../../tests/test_web_agent.py#L1943) | 1943 | `"        )"` | — |
+| [SRC-F725E90B2A-L001944](../../tests/test_web_agent.py#L1944) | 1944 | `"        raise RuntimeError(\"simulated post-search pipeline failure\")"` | — |
 | [SRC-F725E90B2A-L001945](../../tests/test_web_agent.py#L1945) | 1945 | `""` | — |
 | [SRC-F725E90B2A-L001946](../../tests/test_web_agent.py#L1946) | 1946 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
 | [SRC-F725E90B2A-L001947](../../tests/test_web_agent.py#L1947) | 1947 | `"    monkeypatch.setattr(agent, \"_collect_research\", failed_after_provider_result)"` | — |
@@ -785,43 +816,3 @@
 | [SRC-F725E90B2A-L002711](../../tests/test_web_agent.py#L2711) | 2711 | `"        \"answer_coverage\": {},"` | — |
 | [SRC-F725E90B2A-L002712](../../tests/test_web_agent.py#L2712) | 2712 | `"        \"used_language_model\": True,"` | — |
 | [SRC-F725E90B2A-L002713](../../tests/test_web_agent.py#L2713) | 2713 | `"        \"used_web_search\": True,"` | — |
-| [SRC-F725E90B2A-L002714](../../tests/test_web_agent.py#L2714) | 2714 | `"        \"warnings\": [],"` | — |
-| [SRC-F725E90B2A-L002715](../../tests/test_web_agent.py#L2715) | 2715 | `"    })"` | — |
-| [SRC-F725E90B2A-L002716](../../tests/test_web_agent.py#L2716) | 2716 | `""` | — |
-| [SRC-F725E90B2A-L002717](../../tests/test_web_agent.py#L2717) | 2717 | `"    result = agent.answer(\"قارن السعر والمساحة\", mode=\"auto\")"` | — |
-| [SRC-F725E90B2A-L002718](../../tests/test_web_agent.py#L2718) | 2718 | `""` | — |
-| [SRC-F725E90B2A-L002719](../../tests/test_web_agent.py#L2719) | 2719 | `"    assert result[\"answer_integrity\"][\"semantic_verification\"] is False"` | — |
-| [SRC-F725E90B2A-L002720](../../tests/test_web_agent.py#L2720) | 2720 | `"    assert result[\"answer_integrity\"][\"independent_fact_check\"] is False"` | — |
-| [SRC-F725E90B2A-L002721](../../tests/test_web_agent.py#L2721) | 2721 | `"    assert result[\"answer_integrity\"][\"potentially_unsupported_numeric_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002722](../../tests/test_web_agent.py#L2722) | 2722 | `"    assert result[\"answer_integrity\"][\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002723](../../tests/test_web_agent.py#L2723) | 2723 | `"    assert result[\"answer_integrity\"][\"potentially_missing_target_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002724](../../tests/test_web_agent.py#L2724) | 2724 | `"    assert result[\"task_fulfillment_status\"] == \"possible_gap_detected\""` | — |
-| [SRC-F725E90B2A-L002725](../../tests/test_web_agent.py#L2725) | 2725 | `"    assert result[\"answer_coverage\"][\"lexical_screen_method\"] == ("` | — |
-| [SRC-F725E90B2A-L002726](../../tests/test_web_agent.py#L2726) | 2726 | `"        \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
-| [SRC-F725E90B2A-L002727](../../tests/test_web_agent.py#L2727) | 2727 | `"    )"` | — |
-| [SRC-F725E90B2A-L002728](../../tests/test_web_agent.py#L2728) | 2728 | `""` | — |
-| [SRC-F725E90B2A-L002729](../../tests/test_web_agent.py#L2729) | 2729 | `""` | — |
-| [SRC-F725E90B2A-L002730](../../tests/test_web_agent.py#L2730) | 2730 | `"def test_frontend_labels_answer_integrity_screen_as_non_semantic():"` | — |
-| [SRC-F725E90B2A-L002731](../../tests/test_web_agent.py#L2731) | 2731 | `"    html = ("` | — |
-| [SRC-F725E90B2A-L002732](../../tests/test_web_agent.py#L2732) | 2732 | `"        Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
-| [SRC-F725E90B2A-L002733](../../tests/test_web_agent.py#L2733) | 2733 | `"    ).read_text(encoding=\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L002734](../../tests/test_web_agent.py#L2734) | 2734 | `"    assert \"فحص لفظي أولي:\" in html"` | — |
-| [SRC-F725E90B2A-L002735](../../tests/test_web_agent.py#L2735) | 2735 | `"    assert \"لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد\" in html"` | — |
-| [SRC-F725E90B2A-L002736](../../tests/test_web_agent.py#L2736) | 2736 | `"    assert \"potentially_unsupported_numeric_by_citation_count\" in html"` | — |
-| [SRC-F725E90B2A-L002737](../../tests/test_web_agent.py#L2737) | 2737 | `"    assert \"potential_value_discrepancy_count\" in html"` | — |
-## واجهة الويب
-
-### FILE-DE7EABE998 — [web/agent.html](../../web/agent.html#L1)
-
-- النوع: **HTML**
-- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-DE7EABE998-L000001](../../web/agent.html#L1) | 1 | `"<!doctype html>"` | — |
-| [SRC-DE7EABE998-L000002](../../web/agent.html#L2) | 2 | `"<html lang=\"ar\" dir=\"rtl\">"` | — |
-| [SRC-DE7EABE998-L000003](../../web/agent.html#L3) | 3 | `"<head>"` | — |
-| [SRC-DE7EABE998-L000004](../../web/agent.html#L4) | 4 | `"<meta charset=\"utf-8\">"` | — |
-| [SRC-DE7EABE998-L000005](../../web/agent.html#L5) | 5 | `"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">"` | — |
-| [SRC-DE7EABE998-L000006](../../web/agent.html#L6) | 6 | `"<meta name=\"theme-color\" content=\"#0a1220\">"` | — |
-| [SRC-DE7EABE998-L000007](../../web/agent.html#L7) | 7 | `"<title>Omarai \| وكيل البحث والتحليل</title>"` | — |
