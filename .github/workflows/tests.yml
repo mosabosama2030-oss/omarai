@@ -16,17 +16,71 @@ jobs:
         python-version: ["3.11", "3.12"]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2 # main-commit inspection compares against its first parent
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e ".[dev]" ruff
       - run: ruff check agents api cli docs tests
-      # Feature/fix branch checks can race the separate index-publishing workflow.
-      # Regenerate in the isolated test checkout for every non-main ref, then verify
-      # determinism. The index workflow commits generated artifacts to the branch;
-      # main pushes continue to validate that committed index files are already current.
-      - name: Synchronize generated indexes in the non-main test workspace
-        if: github.ref != 'refs/heads/main'
+      # The index-publishing workflow runs in parallel with tests on main. A merge
+      # containing source/docs changes can therefore reach this job before the publisher
+      # refreshes generated files. Check index-only commits strictly; otherwise regenerate
+      # in this isolated checkout and verify consistency. The publisher separately checks
+      # and commits the exact generated outputs to the branch.
+      - name: Verify committed indexes on generated-index-only commits
+        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          is_generated_index_path() {
+            case "$1" in
+              docs/MASTER_INDEX.md|docs/SOURCE_LINES_INDEX.md|docs/INDEX_COVERAGE_AUDIT.md|docs/source_index/*)
+                return 0
+                ;;
+              *)
+                return 1
+                ;;
+            esac
+          }
+
+          # Return success when the list contains at least one non-generated path.
+          has_non_generated_file() {
+            local path
+            while IFS= read -r path; do
+              [[ -z "$path" ]] && continue
+              if ! is_generated_index_path "$path"; then
+                return 0
+              fi
+            done <<< "$1"
+            return 1
+          }
+
+          # Exercise both classifications on every eligible run, even when the PR
+          # itself also changes source/docs and therefore cannot take the strict path.
+          if has_non_generated_file $'docs/MASTER_INDEX.md\ndocs/source_index/SOURCE_LINES_001.md'; then
+            echo "Generated-only file classification failed."
+            exit 1
+          fi
+          if ! has_non_generated_file $'docs/MASTER_INDEX.md\nREADME.md'; then
+            echo "Mixed generated/source file classification failed."
+            exit 1
+          fi
+          if ! has_non_generated_file "agents/web_agent.py"; then
+            echo "Source-only file classification failed."
+            exit 1
+          fi
+
+          changed_files="$(git diff --name-only "${GITHUB_SHA}^1" "${GITHUB_SHA}" | sort -u)"
+          if [[ -z "${changed_files}" ]]; then
+            exit 0
+          fi
+
+          if ! has_non_generated_file "${changed_files}"; then
+            python docs/generate_index.py --check
+          fi
+      - name: Synchronize generated indexes in the isolated test workspace
         run: python docs/generate_index.py
       - name: Verify generated living indexes against the full repository
         run: python docs/generate_index.py --check
