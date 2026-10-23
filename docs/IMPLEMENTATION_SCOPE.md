@@ -7,7 +7,7 @@
 
 ## Baseline history and post-merge correction — 2026-10-21
 
-The original baseline section below records `main` at `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`, after PR #75, when the audit-closure changes had not yet merged. PR #76 has now merged into `main` via `528a2552c0cda809d6c444713466e0e075c13ed9`. The latest PR-head CI inspected after that merge is [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040), with 384 passing tests on both Python 3.11 and 3.12, successful Ruff/index checks, and a successful production-container/API smoke job.
+The original baseline section below records `main` at `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`, after PR #75, when the audit-closure changes had not yet merged. PR #76 has now merged into `main` via `528a2552c0cda809d6c444713466e0e075c13ed9`. The latest PR-head CI inspected after that merge is [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040), with 384 passing tests on both Python 3.11 and 3.12, successful Ruff/index checks, and a successful production-container/API smoke job. GitHub comparison of the tested PR head `3fb0288...` to merge commit `528a255...` reports zero changed files, so the file trees match.
 
 **CI on the merge SHA itself remains `NOT_CONFIRMED` in this review.** This update does not establish live provider availability, a hosted service, factual correctness of all answers, durable storage on a target host, load capacity, or multi-tenant isolation. Full evidence and remaining acceptance gates are in [the post-merge verification report](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md).
 
