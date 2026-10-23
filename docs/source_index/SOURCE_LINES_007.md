@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002650 إلى SRC-1AE03B9EC3-L003449
+- النطاق: SRC-1AE03B9EC3-L002596 إلى SRC-1AE03B9EC3-L003395
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002596](../../agents/web_agent.py#L2596) | 2596 | `"        self._generation_attempt_sequence = getattr(self, \"_generation_attempt_sequence\", 0) + 1"` | — |
+| [SRC-1AE03B9EC3-L002597](../../agents/web_agent.py#L2597) | 2597 | `"        record: dict[str, Any] = {"` | — |
+| [SRC-1AE03B9EC3-L002598](../../agents/web_agent.py#L2598) | 2598 | `"            \"attempt_number\": self._generation_attempt_sequence,"` | — |
+| [SRC-1AE03B9EC3-L002599](../../agents/web_agent.py#L2599) | 2599 | `"            \"requested_model\": str(requested_model)[:160],"` | — |
+| [SRC-1AE03B9EC3-L002600](../../agents/web_agent.py#L2600) | 2600 | `"            \"attempted_model\": str(attempted_model)[:160],"` | — |
+| [SRC-1AE03B9EC3-L002601](../../agents/web_agent.py#L2601) | 2601 | `"            \"fallback_used\": str(attempted_model) != str(requested_model),"` | — |
+| [SRC-1AE03B9EC3-L002602](../../agents/web_agent.py#L2602) | 2602 | `"            \"request_started\": bool(request_started),"` | — |
+| [SRC-1AE03B9EC3-L002603](../../agents/web_agent.py#L2603) | 2603 | `"            \"status\": str(status)[:48],"` | — |
+| [SRC-1AE03B9EC3-L002604](../../agents/web_agent.py#L2604) | 2604 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002605](../../agents/web_agent.py#L2605) | 2605 | `"        if remote_response_received is None and isinstance(finish_reason, str) and finish_reason.strip():"` | — |
+| [SRC-1AE03B9EC3-L002606](../../agents/web_agent.py#L2606) | 2606 | `"            # A concrete finish_reason can only be observed after a provider response was received."` | — |
+| [SRC-1AE03B9EC3-L002607](../../agents/web_agent.py#L2607) | 2607 | `"            remote_response_received = True"` | — |
+| [SRC-1AE03B9EC3-L002608](../../agents/web_agent.py#L2608) | 2608 | `"        if remote_response_received is not None:"` | — |
+| [SRC-1AE03B9EC3-L002609](../../agents/web_agent.py#L2609) | 2609 | `"            record[\"remote_response_received\"] = bool(remote_response_received)"` | — |
+| [SRC-1AE03B9EC3-L002610](../../agents/web_agent.py#L2610) | 2610 | `"        if isinstance(finish_reason, str) and finish_reason.strip():"` | — |
+| [SRC-1AE03B9EC3-L002611](../../agents/web_agent.py#L2611) | 2611 | `"            record[\"finish_reason\"] = finish_reason.strip()[:48]"` | — |
+| [SRC-1AE03B9EC3-L002612](../../agents/web_agent.py#L2612) | 2612 | `"        if isinstance(error_class, str) and error_class:"` | — |
+| [SRC-1AE03B9EC3-L002613](../../agents/web_agent.py#L2613) | 2613 | `"            record[\"error_class\"] = error_class[:80]"` | — |
+| [SRC-1AE03B9EC3-L002614](../../agents/web_agent.py#L2614) | 2614 | `"        self.generation_diagnostics.append(record)"` | — |
+| [SRC-1AE03B9EC3-L002615](../../agents/web_agent.py#L2615) | 2615 | `"        self.generation_diagnostics = self.generation_diagnostics[-12:]"` | — |
+| [SRC-1AE03B9EC3-L002616](../../agents/web_agent.py#L2616) | 2616 | `""` | — |
+| [SRC-1AE03B9EC3-L002617](../../agents/web_agent.py#L2617) | 2617 | `"    def _request_completion("` | — |
+| [SRC-1AE03B9EC3-L002618](../../agents/web_agent.py#L2618) | 2618 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L002619](../../agents/web_agent.py#L2619) | 2619 | `"        messages: list[dict[str, str]],"` | — |
+| [SRC-1AE03B9EC3-L002620](../../agents/web_agent.py#L2620) | 2620 | `"        max_tokens: int = 1400,"` | — |
+| [SRC-1AE03B9EC3-L002621](../../agents/web_agent.py#L2621) | 2621 | `"        temperature: float = 0.2,"` | — |
+| [SRC-1AE03B9EC3-L002622](../../agents/web_agent.py#L2622) | 2622 | `"        timeout: int \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L002623](../../agents/web_agent.py#L2623) | 2623 | `"        model: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L002624](../../agents/web_agent.py#L2624) | 2624 | `"        enable_web_search: bool = False,"` | — |
+| [SRC-1AE03B9EC3-L002625](../../agents/web_agent.py#L2625) | 2625 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L002626](../../agents/web_agent.py#L2626) | 2626 | `"        \"\"\"Call an OpenAI-compatible API with bounded fallback and optional live server search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L002627](../../agents/web_agent.py#L2627) | 2627 | `"        requested_model = (model or self.answer_model).strip()"` | — |
+| [SRC-1AE03B9EC3-L002628](../../agents/web_agent.py#L2628) | 2628 | `"        if not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L002629](../../agents/web_agent.py#L2629) | 2629 | `"            self._record_generation_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L002630](../../agents/web_agent.py#L2630) | 2630 | `"                requested_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L002631](../../agents/web_agent.py#L2631) | 2631 | `"                attempted_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L002632](../../agents/web_agent.py#L2632) | 2632 | `"                status=\"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L002633](../../agents/web_agent.py#L2633) | 2633 | `"                error_class=\"MissingAPIKey\","` | — |
+| [SRC-1AE03B9EC3-L002634](../../agents/web_agent.py#L2634) | 2634 | `"                request_started=False,"` | — |
+| [SRC-1AE03B9EC3-L002635](../../agents/web_agent.py#L2635) | 2635 | `"                remote_response_received=False,"` | — |
+| [SRC-1AE03B9EC3-L002636](../../agents/web_agent.py#L2636) | 2636 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002637](../../agents/web_agent.py#L2637) | 2637 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |
+| [SRC-1AE03B9EC3-L002638](../../agents/web_agent.py#L2638) | 2638 | `""` | — |
+| [SRC-1AE03B9EC3-L002639](../../agents/web_agent.py#L2639) | 2639 | `"        model_candidates = [requested_model]"` | — |
+| [SRC-1AE03B9EC3-L002640](../../agents/web_agent.py#L2640) | 2640 | `"        if self.fallback_model and self.fallback_model not in model_candidates:"` | — |
+| [SRC-1AE03B9EC3-L002641](../../agents/web_agent.py#L2641) | 2641 | `"            model_candidates.append(self.fallback_model)"` | — |
+| [SRC-1AE03B9EC3-L002642](../../agents/web_agent.py#L2642) | 2642 | `""` | — |
+| [SRC-1AE03B9EC3-L002643](../../agents/web_agent.py#L2643) | 2643 | `"        last_error: RuntimeError \| None = None"` | — |
+| [SRC-1AE03B9EC3-L002644](../../agents/web_agent.py#L2644) | 2644 | `"        for candidate_model in model_candidates:"` | — |
+| [SRC-1AE03B9EC3-L002645](../../agents/web_agent.py#L2645) | 2645 | `"            budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L002646](../../agents/web_agent.py#L2646) | 2646 | `"            use_web_search = enable_web_search and self.openrouter_web_search_enabled"` | — |
+| [SRC-1AE03B9EC3-L002647](../../agents/web_agent.py#L2647) | 2647 | `"            if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L002648](../../agents/web_agent.py#L2648) | 2648 | `"                try:"` | — |
+| [SRC-1AE03B9EC3-L002649](../../agents/web_agent.py#L2649) | 2649 | `"                    budget.reserve(\"model_calls\")"` | — |
 | [SRC-1AE03B9EC3-L002650](../../agents/web_agent.py#L2650) | 2650 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
 | [SRC-1AE03B9EC3-L002651](../../agents/web_agent.py#L2651) | 2651 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
 | [SRC-1AE03B9EC3-L002652](../../agents/web_agent.py#L2652) | 2652 | `"                        # The model may still answer, but the optional server-side search"` | — |
@@ -762,57 +816,3 @@
 | [SRC-1AE03B9EC3-L003393](../../agents/web_agent.py#L3393) | 3393 | `"            confirmed_connector_attempts = sum("` | — |
 | [SRC-1AE03B9EC3-L003394](../../agents/web_agent.py#L3394) | 3394 | `"                1 for item in self._provider_diagnostics"` | — |
 | [SRC-1AE03B9EC3-L003395](../../agents/web_agent.py#L3395) | 3395 | `"                if item.get(\"status\") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
-| [SRC-1AE03B9EC3-L003396](../../agents/web_agent.py#L3396) | 3396 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003397](../../agents/web_agent.py#L3397) | 3397 | `"            provider_failure_count = sum("` | — |
-| [SRC-1AE03B9EC3-L003398](../../agents/web_agent.py#L3398) | 3398 | `"                1 for item in self._provider_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L003399](../../agents/web_agent.py#L3399) | 3399 | `"                if item.get(\"status\") in {\"failed\", \"timeout\"}"` | — |
-| [SRC-1AE03B9EC3-L003400](../../agents/web_agent.py#L3400) | 3400 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003401](../../agents/web_agent.py#L3401) | 3401 | `"        if probe_result_list:"` | — |
-| [SRC-1AE03B9EC3-L003402](../../agents/web_agent.py#L3402) | 3402 | `"            web_status = \"passed\""` | — |
-| [SRC-1AE03B9EC3-L003403](../../agents/web_agent.py#L3403) | 3403 | `"            web_note = ("` | — |
-| [SRC-1AE03B9EC3-L003404](../../agents/web_agent.py#L3404) | 3404 | `"                \"A public search connector returned a usable result. This confirms a successful \""` | — |
-| [SRC-1AE03B9EC3-L003405](../../agents/web_agent.py#L3405) | 3405 | `"                \"probe, not general reachability or answer quality.\""` | — |
-| [SRC-1AE03B9EC3-L003406](../../agents/web_agent.py#L3406) | 3406 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003407](../../agents/web_agent.py#L3407) | 3407 | `"        elif completed_connector_responses:"` | — |
-| [SRC-1AE03B9EC3-L003408](../../agents/web_agent.py#L3408) | 3408 | `"            web_status = \"degraded\""` | — |
-| [SRC-1AE03B9EC3-L003409](../../agents/web_agent.py#L3409) | 3409 | `"            web_note = ("` | — |
-| [SRC-1AE03B9EC3-L003410](../../agents/web_agent.py#L3410) | 3410 | `"                \"At least one connector completed a request, but no usable results were returned. \""` | — |
-| [SRC-1AE03B9EC3-L003411](../../agents/web_agent.py#L3411) | 3411 | `"                \"This differs from a confirmed connection failure.\""` | — |
-| [SRC-1AE03B9EC3-L003412](../../agents/web_agent.py#L3412) | 3412 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003413](../../agents/web_agent.py#L3413) | 3413 | `"        elif probe_errors or provider_failure_count:"` | — |
-| [SRC-1AE03B9EC3-L003414](../../agents/web_agent.py#L3414) | 3414 | `"            web_status = \"failed\""` | — |
-| [SRC-1AE03B9EC3-L003415](../../agents/web_agent.py#L3415) | 3415 | `"            web_note = \"All probes failed before any completed connector response or usable result was confirmed.\""` | — |
-| [SRC-1AE03B9EC3-L003416](../../agents/web_agent.py#L3416) | 3416 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L003417](../../agents/web_agent.py#L3417) | 3417 | `"            web_status = \"degraded\""` | — |
-| [SRC-1AE03B9EC3-L003418](../../agents/web_agent.py#L3418) | 3418 | `"            web_note = ("` | — |
-| [SRC-1AE03B9EC3-L003419](../../agents/web_agent.py#L3419) | 3419 | `"                \"No usable matches were returned and connector completion could not be confirmed; \""` | — |
-| [SRC-1AE03B9EC3-L003420](../../agents/web_agent.py#L3420) | 3420 | `"                \"this is inconclusive, not proof that all search services are offline.\""` | — |
-| [SRC-1AE03B9EC3-L003421](../../agents/web_agent.py#L3421) | 3421 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003422](../../agents/web_agent.py#L3422) | 3422 | `"        report[\"checks\"][\"web_search\"] = {"` | — |
-| [SRC-1AE03B9EC3-L003423](../../agents/web_agent.py#L3423) | 3423 | `"            \"status\": web_status,"` | — |
-| [SRC-1AE03B9EC3-L003424](../../agents/web_agent.py#L3424) | 3424 | `"            \"result_count\": len(probe_result_list),"` | — |
-| [SRC-1AE03B9EC3-L003425](../../agents/web_agent.py#L3425) | 3425 | `"            \"provider_counts\": providers,"` | — |
-| [SRC-1AE03B9EC3-L003426](../../agents/web_agent.py#L3426) | 3426 | `"            \"probe_count\": probes_attempted,"` | — |
-| [SRC-1AE03B9EC3-L003427](../../agents/web_agent.py#L3427) | 3427 | `"            \"completed_connector_responses\": completed_connector_responses,"` | — |
-| [SRC-1AE03B9EC3-L003428](../../agents/web_agent.py#L3428) | 3428 | `"            \"confirmed_connector_attempts\": confirmed_connector_attempts,"` | — |
-| [SRC-1AE03B9EC3-L003429](../../agents/web_agent.py#L3429) | 3429 | `"            \"note\": _clean_text(web_note, 400),"` | — |
-| [SRC-1AE03B9EC3-L003430](../../agents/web_agent.py#L3430) | 3430 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L003431](../../agents/web_agent.py#L3431) | 3431 | `""` | — |
-| [SRC-1AE03B9EC3-L003432](../../agents/web_agent.py#L3432) | 3432 | `"        # Do not send a provider request unless a model check was explicitly requested."` | — |
-| [SRC-1AE03B9EC3-L003433](../../agents/web_agent.py#L3433) | 3433 | `"        if not test_model:"` | — |
-| [SRC-1AE03B9EC3-L003434](../../agents/web_agent.py#L3434) | 3434 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
-| [SRC-1AE03B9EC3-L003435](../../agents/web_agent.py#L3435) | 3435 | `"                \"status\": \"skipped\","` | — |
-| [SRC-1AE03B9EC3-L003436](../../agents/web_agent.py#L3436) | 3436 | `"                \"note\": \"Model request was not requested.\","` | — |
-| [SRC-1AE03B9EC3-L003437](../../agents/web_agent.py#L3437) | 3437 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L003438](../../agents/web_agent.py#L3438) | 3438 | `"        elif not self.api_key:"` | — |
-| [SRC-1AE03B9EC3-L003439](../../agents/web_agent.py#L3439) | 3439 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
-| [SRC-1AE03B9EC3-L003440](../../agents/web_agent.py#L3440) | 3440 | `"                \"status\": \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L003441](../../agents/web_agent.py#L3441) | 3441 | `"                \"note\": \"No language-model key is configured in this server session.\","` | — |
-| [SRC-1AE03B9EC3-L003442](../../agents/web_agent.py#L3442) | 3442 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L003443](../../agents/web_agent.py#L3443) | 3443 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L003444](../../agents/web_agent.py#L3444) | 3444 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L003445](../../agents/web_agent.py#L3445) | 3445 | `"                probe = self._request_completion("` | — |
-| [SRC-1AE03B9EC3-L003446](../../agents/web_agent.py#L3446) | 3446 | `"                    ["` | — |
-| [SRC-1AE03B9EC3-L003447](../../agents/web_agent.py#L3447) | 3447 | `"                        {"` | — |
-| [SRC-1AE03B9EC3-L003448](../../agents/web_agent.py#L3448) | 3448 | `"                            \"role\": \"system\","` | — |
-| [SRC-1AE03B9EC3-L003449](../../agents/web_agent.py#L3449) | 3449 | `"                            \"content\": \"Reply with the exact text OK and nothing else.\","` | — |

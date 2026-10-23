@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-5587371288-L000002
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000324
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -187,91 +187,145 @@
 | [SRC-1DB27D9318-L000016](../../.github/workflows/tests.yml#L16) | 16 | `"        python-version: [\"3.11\", \"3.12\"]"` | — |
 | [SRC-1DB27D9318-L000017](../../.github/workflows/tests.yml#L17) | 17 | `"    steps:"` | — |
 | [SRC-1DB27D9318-L000018](../../.github/workflows/tests.yml#L18) | 18 | `"      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
-| [SRC-1DB27D9318-L000019](../../.github/workflows/tests.yml#L19) | 19 | `"      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0"` | — |
-| [SRC-1DB27D9318-L000020](../../.github/workflows/tests.yml#L20) | 20 | `"        with:"` | — |
-| [SRC-1DB27D9318-L000021](../../.github/workflows/tests.yml#L21) | 21 | `"          python-version: ${{ matrix.python-version }}"` | — |
-| [SRC-1DB27D9318-L000022](../../.github/workflows/tests.yml#L22) | 22 | `"      - run: python -m pip install -e \".[dev]\" ruff"` | — |
-| [SRC-1DB27D9318-L000023](../../.github/workflows/tests.yml#L23) | 23 | `"      - run: ruff check agents api cli docs tests"` | — |
-| [SRC-1DB27D9318-L000024](../../.github/workflows/tests.yml#L24) | 24 | `"      # Feature/fix branch checks can race the separate index-publishing workflow."` | — |
-| [SRC-1DB27D9318-L000025](../../.github/workflows/tests.yml#L25) | 25 | `"      # Regenerate in the isolated test checkout for every non-main ref, then verify"` | — |
-| [SRC-1DB27D9318-L000026](../../.github/workflows/tests.yml#L26) | 26 | `"      # determinism. The index workflow commits generated artifacts to the branch;"` | — |
-| [SRC-1DB27D9318-L000027](../../.github/workflows/tests.yml#L27) | 27 | `"      # main pushes continue to validate that committed index files are already current."` | — |
-| [SRC-1DB27D9318-L000028](../../.github/workflows/tests.yml#L28) | 28 | `"      - name: Synchronize generated indexes in the non-main test workspace"` | — |
-| [SRC-1DB27D9318-L000029](../../.github/workflows/tests.yml#L29) | 29 | `"        if: github.ref != 'refs/heads/main'"` | — |
-| [SRC-1DB27D9318-L000030](../../.github/workflows/tests.yml#L30) | 30 | `"        run: python docs/generate_index.py"` | — |
-| [SRC-1DB27D9318-L000031](../../.github/workflows/tests.yml#L31) | 31 | `"      - name: Verify generated living indexes against the full repository"` | — |
-| [SRC-1DB27D9318-L000032](../../.github/workflows/tests.yml#L32) | 32 | `"        run: python docs/generate_index.py --check"` | — |
-| [SRC-1DB27D9318-L000033](../../.github/workflows/tests.yml#L33) | 33 | `"      - run: python -m pytest -q"` | — |
-| [SRC-1DB27D9318-L000034](../../.github/workflows/tests.yml#L34) | 34 | `""` | — |
-| [SRC-1DB27D9318-L000035](../../.github/workflows/tests.yml#L35) | 35 | `"  container-build:"` | — |
-| [SRC-1DB27D9318-L000036](../../.github/workflows/tests.yml#L36) | 36 | `"    runs-on: ubuntu-latest"` | — |
-| [SRC-1DB27D9318-L000037](../../.github/workflows/tests.yml#L37) | 37 | `"    steps:"` | — |
-| [SRC-1DB27D9318-L000038](../../.github/workflows/tests.yml#L38) | 38 | `"      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
-| [SRC-1DB27D9318-L000039](../../.github/workflows/tests.yml#L39) | 39 | `"      - name: Build production container"` | — |
-| [SRC-1DB27D9318-L000040](../../.github/workflows/tests.yml#L40) | 40 | `"        run: docker build --build-arg OMARAI_BUILD_SHA=\"${GITHUB_SHA}\" --tag omarai:ci ."` | — |
-| [SRC-1DB27D9318-L000041](../../.github/workflows/tests.yml#L41) | 41 | `"      - name: Start container and smoke-test protected API"` | — |
-| [SRC-1DB27D9318-L000042](../../.github/workflows/tests.yml#L42) | 42 | `"        shell: bash"` | — |
-| [SRC-1DB27D9318-L000043](../../.github/workflows/tests.yml#L43) | 43 | `"        run: \|"` | — |
-| [SRC-1DB27D9318-L000044](../../.github/workflows/tests.yml#L44) | 44 | `"          set -euo pipefail"` | — |
-| [SRC-1DB27D9318-L000045](../../.github/workflows/tests.yml#L45) | 45 | `"          docker run --detach --rm --name omarai-ci \\"` | — |
-| [SRC-1DB27D9318-L000046](../../.github/workflows/tests.yml#L46) | 46 | `"            --publish 127.0.0.1:18765:8000 \\"` | — |
-| [SRC-1DB27D9318-L000047](../../.github/workflows/tests.yml#L47) | 47 | `"            --env OMARAI_PUBLIC_DEPLOYMENT=1 \\"` | — |
-| [SRC-1DB27D9318-L000048](../../.github/workflows/tests.yml#L48) | 48 | `"            --env OMARAI_ACCESS_TOKEN=ci-only-test-token-not-for-production-123456 \\"` | — |
-| [SRC-1DB27D9318-L000049](../../.github/workflows/tests.yml#L49) | 49 | `"            omarai:ci"` | — |
-| [SRC-1DB27D9318-L000050](../../.github/workflows/tests.yml#L50) | 50 | `"          cleanup() { docker stop omarai-ci >/dev/null 2>&1 \|\| true; }"` | — |
-| [SRC-1DB27D9318-L000051](../../.github/workflows/tests.yml#L51) | 51 | `"          trap cleanup EXIT"` | — |
-| [SRC-1DB27D9318-L000052](../../.github/workflows/tests.yml#L52) | 52 | `""` | — |
-| [SRC-1DB27D9318-L000053](../../.github/workflows/tests.yml#L53) | 53 | `"          healthy=false"` | — |
-| [SRC-1DB27D9318-L000054](../../.github/workflows/tests.yml#L54) | 54 | `"          for _ in $(seq 1 30); do"` | — |
-| [SRC-1DB27D9318-L000055](../../.github/workflows/tests.yml#L55) | 55 | `"            if curl --silent --fail http://127.0.0.1:18765/api/health \\"` | — |
-| [SRC-1DB27D9318-L000056](../../.github/workflows/tests.yml#L56) | 56 | `"              --output /tmp/omarai-health.json; then"` | — |
-| [SRC-1DB27D9318-L000057](../../.github/workflows/tests.yml#L57) | 57 | `"              healthy=true"` | — |
-| [SRC-1DB27D9318-L000058](../../.github/workflows/tests.yml#L58) | 58 | `"              break"` | — |
-| [SRC-1DB27D9318-L000059](../../.github/workflows/tests.yml#L59) | 59 | `"            fi"` | — |
-| [SRC-1DB27D9318-L000060](../../.github/workflows/tests.yml#L60) | 60 | `"            sleep 1"` | — |
-| [SRC-1DB27D9318-L000061](../../.github/workflows/tests.yml#L61) | 61 | `"          done"` | — |
-| [SRC-1DB27D9318-L000062](../../.github/workflows/tests.yml#L62) | 62 | `"          if [[ \"$healthy\" != \"true\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000063](../../.github/workflows/tests.yml#L63) | 63 | `"            docker logs omarai-ci"` | — |
+| [SRC-1DB27D9318-L000019](../../.github/workflows/tests.yml#L19) | 19 | `"        with:"` | — |
+| [SRC-1DB27D9318-L000020](../../.github/workflows/tests.yml#L20) | 20 | `"          fetch-depth: 2 # main-commit inspection compares against its first parent"` | — |
+| [SRC-1DB27D9318-L000021](../../.github/workflows/tests.yml#L21) | 21 | `"      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0"` | — |
+| [SRC-1DB27D9318-L000022](../../.github/workflows/tests.yml#L22) | 22 | `"        with:"` | — |
+| [SRC-1DB27D9318-L000023](../../.github/workflows/tests.yml#L23) | 23 | `"          python-version: ${{ matrix.python-version }}"` | — |
+| [SRC-1DB27D9318-L000024](../../.github/workflows/tests.yml#L24) | 24 | `"      - run: python -m pip install -e \".[dev]\" ruff"` | — |
+| [SRC-1DB27D9318-L000025](../../.github/workflows/tests.yml#L25) | 25 | `"      - run: ruff check agents api cli docs tests"` | — |
+| [SRC-1DB27D9318-L000026](../../.github/workflows/tests.yml#L26) | 26 | `"      # The index-publishing workflow runs in parallel with tests on main. A merge"` | — |
+| [SRC-1DB27D9318-L000027](../../.github/workflows/tests.yml#L27) | 27 | `"      # containing source/docs changes can therefore reach this job before the publisher"` | — |
+| [SRC-1DB27D9318-L000028](../../.github/workflows/tests.yml#L28) | 28 | `"      # refreshes generated files. Check index-only commits strictly; otherwise regenerate"` | — |
+| [SRC-1DB27D9318-L000029](../../.github/workflows/tests.yml#L29) | 29 | `"      # in this isolated checkout and verify consistency. The publisher separately checks"` | — |
+| [SRC-1DB27D9318-L000030](../../.github/workflows/tests.yml#L30) | 30 | `"      # and commits the exact generated outputs to the branch."` | — |
+| [SRC-1DB27D9318-L000031](../../.github/workflows/tests.yml#L31) | 31 | `"      - name: Verify committed indexes on generated-index-only commits"` | — |
+| [SRC-1DB27D9318-L000032](../../.github/workflows/tests.yml#L32) | 32 | `"        if: github.ref == 'refs/heads/main' \|\| github.event_name == 'pull_request'"` | — |
+| [SRC-1DB27D9318-L000033](../../.github/workflows/tests.yml#L33) | 33 | `"        shell: bash"` | — |
+| [SRC-1DB27D9318-L000034](../../.github/workflows/tests.yml#L34) | 34 | `"        run: \|"` | — |
+| [SRC-1DB27D9318-L000035](../../.github/workflows/tests.yml#L35) | 35 | `"          set -euo pipefail"` | — |
+| [SRC-1DB27D9318-L000036](../../.github/workflows/tests.yml#L36) | 36 | `""` | — |
+| [SRC-1DB27D9318-L000037](../../.github/workflows/tests.yml#L37) | 37 | `"          is_generated_index_path() {"` | — |
+| [SRC-1DB27D9318-L000038](../../.github/workflows/tests.yml#L38) | 38 | `"            case \"$1\" in"` | — |
+| [SRC-1DB27D9318-L000039](../../.github/workflows/tests.yml#L39) | 39 | `"              docs/MASTER_INDEX.md\|docs/SOURCE_LINES_INDEX.md\|docs/INDEX_COVERAGE_AUDIT.md\|docs/source_index/*)"` | — |
+| [SRC-1DB27D9318-L000040](../../.github/workflows/tests.yml#L40) | 40 | `"                return 0"` | — |
+| [SRC-1DB27D9318-L000041](../../.github/workflows/tests.yml#L41) | 41 | `"                ;;"` | — |
+| [SRC-1DB27D9318-L000042](../../.github/workflows/tests.yml#L42) | 42 | `"              *)"` | — |
+| [SRC-1DB27D9318-L000043](../../.github/workflows/tests.yml#L43) | 43 | `"                return 1"` | — |
+| [SRC-1DB27D9318-L000044](../../.github/workflows/tests.yml#L44) | 44 | `"                ;;"` | — |
+| [SRC-1DB27D9318-L000045](../../.github/workflows/tests.yml#L45) | 45 | `"            esac"` | — |
+| [SRC-1DB27D9318-L000046](../../.github/workflows/tests.yml#L46) | 46 | `"          }"` | — |
+| [SRC-1DB27D9318-L000047](../../.github/workflows/tests.yml#L47) | 47 | `""` | — |
+| [SRC-1DB27D9318-L000048](../../.github/workflows/tests.yml#L48) | 48 | `"          # Return success when the list contains at least one non-generated path."` | — |
+| [SRC-1DB27D9318-L000049](../../.github/workflows/tests.yml#L49) | 49 | `"          has_non_generated_file() {"` | — |
+| [SRC-1DB27D9318-L000050](../../.github/workflows/tests.yml#L50) | 50 | `"            local path"` | — |
+| [SRC-1DB27D9318-L000051](../../.github/workflows/tests.yml#L51) | 51 | `"            while IFS= read -r path; do"` | — |
+| [SRC-1DB27D9318-L000052](../../.github/workflows/tests.yml#L52) | 52 | `"              [[ -z \"$path\" ]] && continue"` | — |
+| [SRC-1DB27D9318-L000053](../../.github/workflows/tests.yml#L53) | 53 | `"              if ! is_generated_index_path \"$path\"; then"` | — |
+| [SRC-1DB27D9318-L000054](../../.github/workflows/tests.yml#L54) | 54 | `"                return 0"` | — |
+| [SRC-1DB27D9318-L000055](../../.github/workflows/tests.yml#L55) | 55 | `"              fi"` | — |
+| [SRC-1DB27D9318-L000056](../../.github/workflows/tests.yml#L56) | 56 | `"            done <<< \"$1\""` | — |
+| [SRC-1DB27D9318-L000057](../../.github/workflows/tests.yml#L57) | 57 | `"            return 1"` | — |
+| [SRC-1DB27D9318-L000058](../../.github/workflows/tests.yml#L58) | 58 | `"          }"` | — |
+| [SRC-1DB27D9318-L000059](../../.github/workflows/tests.yml#L59) | 59 | `""` | — |
+| [SRC-1DB27D9318-L000060](../../.github/workflows/tests.yml#L60) | 60 | `"          # Exercise both classifications on every eligible run, even when the PR"` | — |
+| [SRC-1DB27D9318-L000061](../../.github/workflows/tests.yml#L61) | 61 | `"          # itself also changes source/docs and therefore cannot take the strict path."` | — |
+| [SRC-1DB27D9318-L000062](../../.github/workflows/tests.yml#L62) | 62 | `"          if has_non_generated_file $'docs/MASTER_INDEX.md\\ndocs/source_index/SOURCE_LINES_001.md'; then"` | — |
+| [SRC-1DB27D9318-L000063](../../.github/workflows/tests.yml#L63) | 63 | `"            echo \"Generated-only file classification failed.\""` | — |
 | [SRC-1DB27D9318-L000064](../../.github/workflows/tests.yml#L64) | 64 | `"            exit 1"` | — |
 | [SRC-1DB27D9318-L000065](../../.github/workflows/tests.yml#L65) | 65 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000066](../../.github/workflows/tests.yml#L66) | 66 | `"          python -c 'import json, os; d=json.load(open(\"/tmp/omarai-health.json\", encoding=\"utf-8\")); assert d[\"ok\"] is True; assert d[\"build\"][\"sha\"] == os.environ[\"GITHUB_SHA\"].lower()'"` | — |
-| [SRC-1DB27D9318-L000067](../../.github/workflows/tests.yml#L67) | 67 | `""` | — |
-| [SRC-1DB27D9318-L000068](../../.github/workflows/tests.yml#L68) | 68 | `"          status=\"$(curl --silent --output /tmp/omarai-unauth.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000069](../../.github/workflows/tests.yml#L69) | 69 | `"            --header \"Content-Type: application/json\" \\"` | — |
-| [SRC-1DB27D9318-L000070](../../.github/workflows/tests.yml#L70) | 70 | `"            --data '{\"question\":\"smoke\"}' http://127.0.0.1:18765/api/agent)\""` | — |
-| [SRC-1DB27D9318-L000071](../../.github/workflows/tests.yml#L71) | 71 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000072](../../.github/workflows/tests.yml#L72) | 72 | `"            cat /tmp/omarai-unauth.json"` | — |
-| [SRC-1DB27D9318-L000073](../../.github/workflows/tests.yml#L73) | 73 | `"            echo \"Unauthenticated /api/agent should return HTTP 401, got $status.\""` | — |
-| [SRC-1DB27D9318-L000074](../../.github/workflows/tests.yml#L74) | 74 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000075](../../.github/workflows/tests.yml#L75) | 75 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000076](../../.github/workflows/tests.yml#L76) | 76 | `""` | — |
-| [SRC-1DB27D9318-L000077](../../.github/workflows/tests.yml#L77) | 77 | `"          status=\"$(curl --silent --output /tmp/omarai-leads.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000078](../../.github/workflows/tests.yml#L78) | 78 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
-| [SRC-1DB27D9318-L000079](../../.github/workflows/tests.yml#L79) | 79 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000080](../../.github/workflows/tests.yml#L80) | 80 | `"            cat /tmp/omarai-leads.json"` | — |
-| [SRC-1DB27D9318-L000081](../../.github/workflows/tests.yml#L81) | 81 | `"            echo \"Unauthenticated /api/leads should return HTTP 401, got $status.\""` | — |
-| [SRC-1DB27D9318-L000082](../../.github/workflows/tests.yml#L82) | 82 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000083](../../.github/workflows/tests.yml#L83) | 83 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000084](../../.github/workflows/tests.yml#L84) | 84 | `""` | — |
-| [SRC-1DB27D9318-L000085](../../.github/workflows/tests.yml#L85) | 85 | `"          status=\"$(curl --silent --output /tmp/omarai-leads-auth.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000086](../../.github/workflows/tests.yml#L86) | 86 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
-| [SRC-1DB27D9318-L000087](../../.github/workflows/tests.yml#L87) | 87 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
-| [SRC-1DB27D9318-L000088](../../.github/workflows/tests.yml#L88) | 88 | `"          if [[ \"$status\" != \"200\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000089](../../.github/workflows/tests.yml#L89) | 89 | `"            cat /tmp/omarai-leads-auth.json"` | — |
-| [SRC-1DB27D9318-L000090](../../.github/workflows/tests.yml#L90) | 90 | `"            echo \"Authenticated /api/leads should return HTTP 200, got $status.\""` | — |
-| [SRC-1DB27D9318-L000091](../../.github/workflows/tests.yml#L91) | 91 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000092](../../.github/workflows/tests.yml#L92) | 92 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000093](../../.github/workflows/tests.yml#L93) | 93 | `""` | — |
-| [SRC-1DB27D9318-L000094](../../.github/workflows/tests.yml#L94) | 94 | `"          status=\"$(curl --silent --output /tmp/omarai-analysis.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000095](../../.github/workflows/tests.yml#L95) | 95 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
-| [SRC-1DB27D9318-L000096](../../.github/workflows/tests.yml#L96) | 96 | `"            --header \"Content-Type: application/json\" \\"` | — |
-| [SRC-1DB27D9318-L000097](../../.github/workflows/tests.yml#L97) | 97 | `"            --data '{\"text\":\"بدور على شقة\",\"product_terms\":[\"شقة\"]}' \\"` | — |
-| [SRC-1DB27D9318-L000098](../../.github/workflows/tests.yml#L98) | 98 | `"            http://127.0.0.1:18765/api/analyze)\""` | — |
-| [SRC-1DB27D9318-L000099](../../.github/workflows/tests.yml#L99) | 99 | `"          if [[ \"$status\" != \"200\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000100](../../.github/workflows/tests.yml#L100) | 100 | `"            cat /tmp/omarai-analysis.json"` | — |
-| [SRC-1DB27D9318-L000101](../../.github/workflows/tests.yml#L101) | 101 | `"            echo \"Authenticated /api/analyze should return HTTP 200, got $status.\""` | — |
-| [SRC-1DB27D9318-L000102](../../.github/workflows/tests.yml#L102) | 102 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000103](../../.github/workflows/tests.yml#L103) | 103 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000066](../../.github/workflows/tests.yml#L66) | 66 | `"          if ! has_non_generated_file $'docs/MASTER_INDEX.md\\nREADME.md'; then"` | — |
+| [SRC-1DB27D9318-L000067](../../.github/workflows/tests.yml#L67) | 67 | `"            echo \"Mixed generated/source file classification failed.\""` | — |
+| [SRC-1DB27D9318-L000068](../../.github/workflows/tests.yml#L68) | 68 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000069](../../.github/workflows/tests.yml#L69) | 69 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000070](../../.github/workflows/tests.yml#L70) | 70 | `"          if ! has_non_generated_file \"agents/web_agent.py\"; then"` | — |
+| [SRC-1DB27D9318-L000071](../../.github/workflows/tests.yml#L71) | 71 | `"            echo \"Source-only file classification failed.\""` | — |
+| [SRC-1DB27D9318-L000072](../../.github/workflows/tests.yml#L72) | 72 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000073](../../.github/workflows/tests.yml#L73) | 73 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000074](../../.github/workflows/tests.yml#L74) | 74 | `""` | — |
+| [SRC-1DB27D9318-L000075](../../.github/workflows/tests.yml#L75) | 75 | `"          changed_files=\"$(git diff --name-only \"${GITHUB_SHA}^1\" \"${GITHUB_SHA}\" \| sort -u)\""` | — |
+| [SRC-1DB27D9318-L000076](../../.github/workflows/tests.yml#L76) | 76 | `"          if [[ -z \"${changed_files}\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000077](../../.github/workflows/tests.yml#L77) | 77 | `"            exit 0"` | — |
+| [SRC-1DB27D9318-L000078](../../.github/workflows/tests.yml#L78) | 78 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000079](../../.github/workflows/tests.yml#L79) | 79 | `""` | — |
+| [SRC-1DB27D9318-L000080](../../.github/workflows/tests.yml#L80) | 80 | `"          if ! has_non_generated_file \"${changed_files}\"; then"` | — |
+| [SRC-1DB27D9318-L000081](../../.github/workflows/tests.yml#L81) | 81 | `"            python docs/generate_index.py --check"` | — |
+| [SRC-1DB27D9318-L000082](../../.github/workflows/tests.yml#L82) | 82 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000083](../../.github/workflows/tests.yml#L83) | 83 | `"      - name: Synchronize generated indexes in the isolated test workspace"` | — |
+| [SRC-1DB27D9318-L000084](../../.github/workflows/tests.yml#L84) | 84 | `"        run: python docs/generate_index.py"` | — |
+| [SRC-1DB27D9318-L000085](../../.github/workflows/tests.yml#L85) | 85 | `"      - name: Verify generated living indexes against the full repository"` | — |
+| [SRC-1DB27D9318-L000086](../../.github/workflows/tests.yml#L86) | 86 | `"        run: python docs/generate_index.py --check"` | — |
+| [SRC-1DB27D9318-L000087](../../.github/workflows/tests.yml#L87) | 87 | `"      - run: python -m pytest -q"` | — |
+| [SRC-1DB27D9318-L000088](../../.github/workflows/tests.yml#L88) | 88 | `""` | — |
+| [SRC-1DB27D9318-L000089](../../.github/workflows/tests.yml#L89) | 89 | `"  container-build:"` | — |
+| [SRC-1DB27D9318-L000090](../../.github/workflows/tests.yml#L90) | 90 | `"    runs-on: ubuntu-latest"` | — |
+| [SRC-1DB27D9318-L000091](../../.github/workflows/tests.yml#L91) | 91 | `"    steps:"` | — |
+| [SRC-1DB27D9318-L000092](../../.github/workflows/tests.yml#L92) | 92 | `"      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
+| [SRC-1DB27D9318-L000093](../../.github/workflows/tests.yml#L93) | 93 | `"      - name: Build production container"` | — |
+| [SRC-1DB27D9318-L000094](../../.github/workflows/tests.yml#L94) | 94 | `"        run: docker build --build-arg OMARAI_BUILD_SHA=\"${GITHUB_SHA}\" --tag omarai:ci ."` | — |
+| [SRC-1DB27D9318-L000095](../../.github/workflows/tests.yml#L95) | 95 | `"      - name: Start container and smoke-test protected API"` | — |
+| [SRC-1DB27D9318-L000096](../../.github/workflows/tests.yml#L96) | 96 | `"        shell: bash"` | — |
+| [SRC-1DB27D9318-L000097](../../.github/workflows/tests.yml#L97) | 97 | `"        run: \|"` | — |
+| [SRC-1DB27D9318-L000098](../../.github/workflows/tests.yml#L98) | 98 | `"          set -euo pipefail"` | — |
+| [SRC-1DB27D9318-L000099](../../.github/workflows/tests.yml#L99) | 99 | `"          docker run --detach --rm --name omarai-ci \\"` | — |
+| [SRC-1DB27D9318-L000100](../../.github/workflows/tests.yml#L100) | 100 | `"            --publish 127.0.0.1:18765:8000 \\"` | — |
+| [SRC-1DB27D9318-L000101](../../.github/workflows/tests.yml#L101) | 101 | `"            --env OMARAI_PUBLIC_DEPLOYMENT=1 \\"` | — |
+| [SRC-1DB27D9318-L000102](../../.github/workflows/tests.yml#L102) | 102 | `"            --env OMARAI_ACCESS_TOKEN=ci-only-test-token-not-for-production-123456 \\"` | — |
+| [SRC-1DB27D9318-L000103](../../.github/workflows/tests.yml#L103) | 103 | `"            omarai:ci"` | — |
+| [SRC-1DB27D9318-L000104](../../.github/workflows/tests.yml#L104) | 104 | `"          cleanup() { docker stop omarai-ci >/dev/null 2>&1 \|\| true; }"` | — |
+| [SRC-1DB27D9318-L000105](../../.github/workflows/tests.yml#L105) | 105 | `"          trap cleanup EXIT"` | — |
+| [SRC-1DB27D9318-L000106](../../.github/workflows/tests.yml#L106) | 106 | `""` | — |
+| [SRC-1DB27D9318-L000107](../../.github/workflows/tests.yml#L107) | 107 | `"          healthy=false"` | — |
+| [SRC-1DB27D9318-L000108](../../.github/workflows/tests.yml#L108) | 108 | `"          for _ in $(seq 1 30); do"` | — |
+| [SRC-1DB27D9318-L000109](../../.github/workflows/tests.yml#L109) | 109 | `"            if curl --silent --fail http://127.0.0.1:18765/api/health \\"` | — |
+| [SRC-1DB27D9318-L000110](../../.github/workflows/tests.yml#L110) | 110 | `"              --output /tmp/omarai-health.json; then"` | — |
+| [SRC-1DB27D9318-L000111](../../.github/workflows/tests.yml#L111) | 111 | `"              healthy=true"` | — |
+| [SRC-1DB27D9318-L000112](../../.github/workflows/tests.yml#L112) | 112 | `"              break"` | — |
+| [SRC-1DB27D9318-L000113](../../.github/workflows/tests.yml#L113) | 113 | `"            fi"` | — |
+| [SRC-1DB27D9318-L000114](../../.github/workflows/tests.yml#L114) | 114 | `"            sleep 1"` | — |
+| [SRC-1DB27D9318-L000115](../../.github/workflows/tests.yml#L115) | 115 | `"          done"` | — |
+| [SRC-1DB27D9318-L000116](../../.github/workflows/tests.yml#L116) | 116 | `"          if [[ \"$healthy\" != \"true\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000117](../../.github/workflows/tests.yml#L117) | 117 | `"            docker logs omarai-ci"` | — |
+| [SRC-1DB27D9318-L000118](../../.github/workflows/tests.yml#L118) | 118 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000119](../../.github/workflows/tests.yml#L119) | 119 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000120](../../.github/workflows/tests.yml#L120) | 120 | `"          python -c 'import json, os; d=json.load(open(\"/tmp/omarai-health.json\", encoding=\"utf-8\")); assert d[\"ok\"] is True; assert d[\"build\"][\"sha\"] == os.environ[\"GITHUB_SHA\"].lower()'"` | — |
+| [SRC-1DB27D9318-L000121](../../.github/workflows/tests.yml#L121) | 121 | `""` | — |
+| [SRC-1DB27D9318-L000122](../../.github/workflows/tests.yml#L122) | 122 | `"          status=\"$(curl --silent --output /tmp/omarai-unauth.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000123](../../.github/workflows/tests.yml#L123) | 123 | `"            --header \"Content-Type: application/json\" \\"` | — |
+| [SRC-1DB27D9318-L000124](../../.github/workflows/tests.yml#L124) | 124 | `"            --data '{\"question\":\"smoke\"}' http://127.0.0.1:18765/api/agent)\""` | — |
+| [SRC-1DB27D9318-L000125](../../.github/workflows/tests.yml#L125) | 125 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000126](../../.github/workflows/tests.yml#L126) | 126 | `"            cat /tmp/omarai-unauth.json"` | — |
+| [SRC-1DB27D9318-L000127](../../.github/workflows/tests.yml#L127) | 127 | `"            echo \"Unauthenticated /api/agent should return HTTP 401, got $status.\""` | — |
+| [SRC-1DB27D9318-L000128](../../.github/workflows/tests.yml#L128) | 128 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000129](../../.github/workflows/tests.yml#L129) | 129 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000130](../../.github/workflows/tests.yml#L130) | 130 | `""` | — |
+| [SRC-1DB27D9318-L000131](../../.github/workflows/tests.yml#L131) | 131 | `"          status=\"$(curl --silent --output /tmp/omarai-leads.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000132](../../.github/workflows/tests.yml#L132) | 132 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
+| [SRC-1DB27D9318-L000133](../../.github/workflows/tests.yml#L133) | 133 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000134](../../.github/workflows/tests.yml#L134) | 134 | `"            cat /tmp/omarai-leads.json"` | — |
+| [SRC-1DB27D9318-L000135](../../.github/workflows/tests.yml#L135) | 135 | `"            echo \"Unauthenticated /api/leads should return HTTP 401, got $status.\""` | — |
+| [SRC-1DB27D9318-L000136](../../.github/workflows/tests.yml#L136) | 136 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000137](../../.github/workflows/tests.yml#L137) | 137 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000138](../../.github/workflows/tests.yml#L138) | 138 | `""` | — |
+| [SRC-1DB27D9318-L000139](../../.github/workflows/tests.yml#L139) | 139 | `"          status=\"$(curl --silent --output /tmp/omarai-leads-auth.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000140](../../.github/workflows/tests.yml#L140) | 140 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
+| [SRC-1DB27D9318-L000141](../../.github/workflows/tests.yml#L141) | 141 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
+| [SRC-1DB27D9318-L000142](../../.github/workflows/tests.yml#L142) | 142 | `"          if [[ \"$status\" != \"200\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000143](../../.github/workflows/tests.yml#L143) | 143 | `"            cat /tmp/omarai-leads-auth.json"` | — |
+| [SRC-1DB27D9318-L000144](../../.github/workflows/tests.yml#L144) | 144 | `"            echo \"Authenticated /api/leads should return HTTP 200, got $status.\""` | — |
+| [SRC-1DB27D9318-L000145](../../.github/workflows/tests.yml#L145) | 145 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000146](../../.github/workflows/tests.yml#L146) | 146 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000147](../../.github/workflows/tests.yml#L147) | 147 | `""` | — |
+| [SRC-1DB27D9318-L000148](../../.github/workflows/tests.yml#L148) | 148 | `"          status=\"$(curl --silent --output /tmp/omarai-analysis.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000149](../../.github/workflows/tests.yml#L149) | 149 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
+| [SRC-1DB27D9318-L000150](../../.github/workflows/tests.yml#L150) | 150 | `"            --header \"Content-Type: application/json\" \\"` | — |
+| [SRC-1DB27D9318-L000151](../../.github/workflows/tests.yml#L151) | 151 | `"            --data '{\"text\":\"بدور على شقة\",\"product_terms\":[\"شقة\"]}' \\"` | — |
+| [SRC-1DB27D9318-L000152](../../.github/workflows/tests.yml#L152) | 152 | `"            http://127.0.0.1:18765/api/analyze)\""` | — |
+| [SRC-1DB27D9318-L000153](../../.github/workflows/tests.yml#L153) | 153 | `"          if [[ \"$status\" != \"200\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000154](../../.github/workflows/tests.yml#L154) | 154 | `"            cat /tmp/omarai-analysis.json"` | — |
+| [SRC-1DB27D9318-L000155](../../.github/workflows/tests.yml#L155) | 155 | `"            echo \"Authenticated /api/analyze should return HTTP 200, got $status.\""` | — |
+| [SRC-1DB27D9318-L000156](../../.github/workflows/tests.yml#L156) | 156 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000157](../../.github/workflows/tests.yml#L157) | 157 | `"          fi"` | — |
 ## CI وأتمتة
 
 ### FILE-84F7DE82AF — [.github/workflows/update_index.yml](../../.github/workflows/update_index.yml#L1)
@@ -843,66 +897,3 @@
 | [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"    citation_count = len(re.findall(r\"\\[(?:المصدر\|source)\\s+\\d+\\]\", answer_text, re.IGNORECASE))"` | — |
 | [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"    if extracted_page_count:"` | — |
 | [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"        source_scope = \"contains_extracted_page_text_and_or_snippets\""` | — |
-| [SRC-138992B1FC-L000325](../../agents/answer_validation.py#L325) | 325 | `"    elif snippet_count:"` | — |
-| [SRC-138992B1FC-L000326](../../agents/answer_validation.py#L326) | 326 | `"        source_scope = \"search_snippets_only\""` | — |
-| [SRC-138992B1FC-L000327](../../agents/answer_validation.py#L327) | 327 | `"    else:"` | — |
-| [SRC-138992B1FC-L000328](../../agents/answer_validation.py#L328) | 328 | `"        source_scope = \"no_readable_source_text\""` | — |
-| [SRC-138992B1FC-L000329](../../agents/answer_validation.py#L329) | 329 | `""` | — |
-| [SRC-138992B1FC-L000330](../../agents/answer_validation.py#L330) | 330 | `"    if not source_texts:"` | — |
-| [SRC-138992B1FC-L000331](../../agents/answer_validation.py#L331) | 331 | `"        numeric_status = \"not_assessable_no_readable_source_text\""` | — |
-| [SRC-138992B1FC-L000332](../../agents/answer_validation.py#L332) | 332 | `"    elif unsupported_numbers:"` | — |
-| [SRC-138992B1FC-L000333](../../agents/answer_validation.py#L333) | 333 | `"        numeric_status = \"potentially_unsupported_numeric_literals\""` | — |
-| [SRC-138992B1FC-L000334](../../agents/answer_validation.py#L334) | 334 | `"    elif answer_number_literals:"` | — |
-| [SRC-138992B1FC-L000335](../../agents/answer_validation.py#L335) | 335 | `"        numeric_status = \"all_checked_numeric_literals_appear_in_source_text\""` | — |
-| [SRC-138992B1FC-L000336](../../agents/answer_validation.py#L336) | 336 | `"    else:"` | — |
-| [SRC-138992B1FC-L000337](../../agents/answer_validation.py#L337) | 337 | `"        numeric_status = \"no_specific_numeric_literals_checked\""` | — |
-| [SRC-138992B1FC-L000338](../../agents/answer_validation.py#L338) | 338 | `""` | — |
-| [SRC-138992B1FC-L000339](../../agents/answer_validation.py#L339) | 339 | `"    return {"` | — |
-| [SRC-138992B1FC-L000340](../../agents/answer_validation.py#L340) | 340 | `"        \"method\": \"deterministic_lexical_screen_only\","` | — |
-| [SRC-138992B1FC-L000341](../../agents/answer_validation.py#L341) | 341 | `"        \"semantic_verification\": False,"` | — |
-| [SRC-138992B1FC-L000342](../../agents/answer_validation.py#L342) | 342 | `"        \"independent_fact_check\": False,"` | — |
-| [SRC-138992B1FC-L000343](../../agents/answer_validation.py#L343) | 343 | `"        \"answer_nonempty\": bool(answer_text.strip()),"` | — |
-| [SRC-138992B1FC-L000344](../../agents/answer_validation.py#L344) | 344 | `"        \"source_count\": len(safe_sources),"` | — |
-| [SRC-138992B1FC-L000345](../../agents/answer_validation.py#L345) | 345 | `"        \"source_evidence_scope\": source_scope,"` | — |
-| [SRC-138992B1FC-L000346](../../agents/answer_validation.py#L346) | 346 | `"        \"pages_with_extracted_text\": extracted_page_count,"` | — |
-| [SRC-138992B1FC-L000347](../../agents/answer_validation.py#L347) | 347 | `"        \"sources_with_snippets_only\": snippet_count,"` | — |
-| [SRC-138992B1FC-L000348](../../agents/answer_validation.py#L348) | 348 | `"        \"citation_marker_count\": citation_count,"` | — |
-| [SRC-138992B1FC-L000349](../../agents/answer_validation.py#L349) | 349 | `"        \"citation_entailment\": \"not_checked\","` | — |
-| [SRC-138992B1FC-L000350](../../agents/answer_validation.py#L350) | 350 | `"        \"citation_lexical_alignment_method\": \"content_word_overlap_heuristic_not_entailment\","` | — |
-| [SRC-138992B1FC-L000351](../../agents/answer_validation.py#L351) | 351 | `"        \"citation_lexical_alignment\": citation_alignment[:30],"` | — |
-| [SRC-138992B1FC-L000352](../../agents/answer_validation.py#L352) | 352 | `"        \"weak_citation_alignment_count\": weak_citation_alignment_count,"` | — |
-| [SRC-138992B1FC-L000353](../../agents/answer_validation.py#L353) | 353 | `"        \"citation_numeric_support\": citation_numeric_support[:30],"` | — |
-| [SRC-138992B1FC-L000354](../../agents/answer_validation.py#L354) | 354 | `"        \"potentially_unsupported_numeric_by_citation_count\": sum("` | — |
-| [SRC-138992B1FC-L000355](../../agents/answer_validation.py#L355) | 355 | `"            len(item[\"potentially_unsupported_numeric_literals\"])"` | — |
-| [SRC-138992B1FC-L000356](../../agents/answer_validation.py#L356) | 356 | `"            for item in citation_numeric_support"` | — |
-| [SRC-138992B1FC-L000357](../../agents/answer_validation.py#L357) | 357 | `"        ),"` | — |
-| [SRC-138992B1FC-L000358](../../agents/answer_validation.py#L358) | 358 | `"        \"potential_value_discrepancies\": potential_value_discrepancies[:8],"` | — |
-| [SRC-138992B1FC-L000359](../../agents/answer_validation.py#L359) | 359 | `"        \"potential_value_discrepancy_count\": len(potential_value_discrepancies),"` | — |
-| [SRC-138992B1FC-L000360](../../agents/answer_validation.py#L360) | 360 | `"        \"numeric_check_status\": numeric_status,"` | — |
-| [SRC-138992B1FC-L000361](../../agents/answer_validation.py#L361) | 361 | `"        \"checked_numeric_literals\": sorted(answer_number_literals)[:40],"` | — |
-| [SRC-138992B1FC-L000362](../../agents/answer_validation.py#L362) | 362 | `"        \"potentially_unsupported_numeric_literals\": unsupported_numbers[:40],"` | — |
-| [SRC-138992B1FC-L000363](../../agents/answer_validation.py#L363) | 363 | `"        \"potentially_unsupported_numeric_count\": len(unsupported_numbers),"` | — |
-| [SRC-138992B1FC-L000364](../../agents/answer_validation.py#L364) | 364 | `"        \"target_coverage\": target_checks,"` | — |
-| [SRC-138992B1FC-L000365](../../agents/answer_validation.py#L365) | 365 | `"        \"potentially_missing_target_count\": sum("` | — |
-| [SRC-138992B1FC-L000366](../../agents/answer_validation.py#L366) | 366 | `"            item[\"status\"] == \"possibly_missing\" for item in target_checks"` | — |
-| [SRC-138992B1FC-L000367](../../agents/answer_validation.py#L367) | 367 | `"        ),"` | — |
-| [SRC-138992B1FC-L000368](../../agents/answer_validation.py#L368) | 368 | `"        \"limitations\": ["` | — |
-| [SRC-138992B1FC-L000369](../../agents/answer_validation.py#L369) | 369 | `"            \"Token overlap does not prove that an answer fulfills the intended task.\","` | — |
-| [SRC-138992B1FC-L000370](../../agents/answer_validation.py#L370) | 370 | `"            \"A number appearing in any source does not prove that the source supports the claim.\","` | — |
-| [SRC-138992B1FC-L000371](../../agents/answer_validation.py#L371) | 371 | `"            \"Citation token overlap can be coincidental and does not establish that the source entails the claim.\","` | — |
-| [SRC-138992B1FC-L000372](../../agents/answer_validation.py#L372) | 372 | `"            \"Value-discrepancy flags may reflect different products, periods, or units; they are not automatic contradiction findings.\","` | — |
-| [SRC-138992B1FC-L000373](../../agents/answer_validation.py#L373) | 373 | `"            \"Contradictory sources and citation-to-claim entailment require claim-level review.\","` | — |
-| [SRC-138992B1FC-L000374](../../agents/answer_validation.py#L374) | 374 | `"            \"Search snippets may be partial; extracted page text is still not independent verification.\","` | — |
-| [SRC-138992B1FC-L000375](../../agents/answer_validation.py#L375) | 375 | `"        ],"` | — |
-| [SRC-138992B1FC-L000376](../../agents/answer_validation.py#L376) | 376 | `"    }"` | — |
-## الوكيل والمنطق
-
-### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-5587371288-L000001](../../agents/intent_router.py#L1) | 1 | `"\"\"\"Small deterministic intent routing for Omarai's answer engine."` | — |
-| [SRC-5587371288-L000002](../../agents/intent_router.py#L2) | 2 | `""` | — |

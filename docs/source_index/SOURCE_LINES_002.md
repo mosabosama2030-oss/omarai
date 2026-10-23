@@ -4,9 +4,70 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000003 إلى SRC-59CF4B7DE8-L000109
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-59CF4B7DE8-L000055
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-138992B1FC — [agents/answer_validation.py](../../agents/answer_validation.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-138992B1FC-L000325](../../agents/answer_validation.py#L325) | 325 | `"    elif snippet_count:"` | — |
+| [SRC-138992B1FC-L000326](../../agents/answer_validation.py#L326) | 326 | `"        source_scope = \"search_snippets_only\""` | — |
+| [SRC-138992B1FC-L000327](../../agents/answer_validation.py#L327) | 327 | `"    else:"` | — |
+| [SRC-138992B1FC-L000328](../../agents/answer_validation.py#L328) | 328 | `"        source_scope = \"no_readable_source_text\""` | — |
+| [SRC-138992B1FC-L000329](../../agents/answer_validation.py#L329) | 329 | `""` | — |
+| [SRC-138992B1FC-L000330](../../agents/answer_validation.py#L330) | 330 | `"    if not source_texts:"` | — |
+| [SRC-138992B1FC-L000331](../../agents/answer_validation.py#L331) | 331 | `"        numeric_status = \"not_assessable_no_readable_source_text\""` | — |
+| [SRC-138992B1FC-L000332](../../agents/answer_validation.py#L332) | 332 | `"    elif unsupported_numbers:"` | — |
+| [SRC-138992B1FC-L000333](../../agents/answer_validation.py#L333) | 333 | `"        numeric_status = \"potentially_unsupported_numeric_literals\""` | — |
+| [SRC-138992B1FC-L000334](../../agents/answer_validation.py#L334) | 334 | `"    elif answer_number_literals:"` | — |
+| [SRC-138992B1FC-L000335](../../agents/answer_validation.py#L335) | 335 | `"        numeric_status = \"all_checked_numeric_literals_appear_in_source_text\""` | — |
+| [SRC-138992B1FC-L000336](../../agents/answer_validation.py#L336) | 336 | `"    else:"` | — |
+| [SRC-138992B1FC-L000337](../../agents/answer_validation.py#L337) | 337 | `"        numeric_status = \"no_specific_numeric_literals_checked\""` | — |
+| [SRC-138992B1FC-L000338](../../agents/answer_validation.py#L338) | 338 | `""` | — |
+| [SRC-138992B1FC-L000339](../../agents/answer_validation.py#L339) | 339 | `"    return {"` | — |
+| [SRC-138992B1FC-L000340](../../agents/answer_validation.py#L340) | 340 | `"        \"method\": \"deterministic_lexical_screen_only\","` | — |
+| [SRC-138992B1FC-L000341](../../agents/answer_validation.py#L341) | 341 | `"        \"semantic_verification\": False,"` | — |
+| [SRC-138992B1FC-L000342](../../agents/answer_validation.py#L342) | 342 | `"        \"independent_fact_check\": False,"` | — |
+| [SRC-138992B1FC-L000343](../../agents/answer_validation.py#L343) | 343 | `"        \"answer_nonempty\": bool(answer_text.strip()),"` | — |
+| [SRC-138992B1FC-L000344](../../agents/answer_validation.py#L344) | 344 | `"        \"source_count\": len(safe_sources),"` | — |
+| [SRC-138992B1FC-L000345](../../agents/answer_validation.py#L345) | 345 | `"        \"source_evidence_scope\": source_scope,"` | — |
+| [SRC-138992B1FC-L000346](../../agents/answer_validation.py#L346) | 346 | `"        \"pages_with_extracted_text\": extracted_page_count,"` | — |
+| [SRC-138992B1FC-L000347](../../agents/answer_validation.py#L347) | 347 | `"        \"sources_with_snippets_only\": snippet_count,"` | — |
+| [SRC-138992B1FC-L000348](../../agents/answer_validation.py#L348) | 348 | `"        \"citation_marker_count\": citation_count,"` | — |
+| [SRC-138992B1FC-L000349](../../agents/answer_validation.py#L349) | 349 | `"        \"citation_entailment\": \"not_checked\","` | — |
+| [SRC-138992B1FC-L000350](../../agents/answer_validation.py#L350) | 350 | `"        \"citation_lexical_alignment_method\": \"content_word_overlap_heuristic_not_entailment\","` | — |
+| [SRC-138992B1FC-L000351](../../agents/answer_validation.py#L351) | 351 | `"        \"citation_lexical_alignment\": citation_alignment[:30],"` | — |
+| [SRC-138992B1FC-L000352](../../agents/answer_validation.py#L352) | 352 | `"        \"weak_citation_alignment_count\": weak_citation_alignment_count,"` | — |
+| [SRC-138992B1FC-L000353](../../agents/answer_validation.py#L353) | 353 | `"        \"citation_numeric_support\": citation_numeric_support[:30],"` | — |
+| [SRC-138992B1FC-L000354](../../agents/answer_validation.py#L354) | 354 | `"        \"potentially_unsupported_numeric_by_citation_count\": sum("` | — |
+| [SRC-138992B1FC-L000355](../../agents/answer_validation.py#L355) | 355 | `"            len(item[\"potentially_unsupported_numeric_literals\"])"` | — |
+| [SRC-138992B1FC-L000356](../../agents/answer_validation.py#L356) | 356 | `"            for item in citation_numeric_support"` | — |
+| [SRC-138992B1FC-L000357](../../agents/answer_validation.py#L357) | 357 | `"        ),"` | — |
+| [SRC-138992B1FC-L000358](../../agents/answer_validation.py#L358) | 358 | `"        \"potential_value_discrepancies\": potential_value_discrepancies[:8],"` | — |
+| [SRC-138992B1FC-L000359](../../agents/answer_validation.py#L359) | 359 | `"        \"potential_value_discrepancy_count\": len(potential_value_discrepancies),"` | — |
+| [SRC-138992B1FC-L000360](../../agents/answer_validation.py#L360) | 360 | `"        \"numeric_check_status\": numeric_status,"` | — |
+| [SRC-138992B1FC-L000361](../../agents/answer_validation.py#L361) | 361 | `"        \"checked_numeric_literals\": sorted(answer_number_literals)[:40],"` | — |
+| [SRC-138992B1FC-L000362](../../agents/answer_validation.py#L362) | 362 | `"        \"potentially_unsupported_numeric_literals\": unsupported_numbers[:40],"` | — |
+| [SRC-138992B1FC-L000363](../../agents/answer_validation.py#L363) | 363 | `"        \"potentially_unsupported_numeric_count\": len(unsupported_numbers),"` | — |
+| [SRC-138992B1FC-L000364](../../agents/answer_validation.py#L364) | 364 | `"        \"target_coverage\": target_checks,"` | — |
+| [SRC-138992B1FC-L000365](../../agents/answer_validation.py#L365) | 365 | `"        \"potentially_missing_target_count\": sum("` | — |
+| [SRC-138992B1FC-L000366](../../agents/answer_validation.py#L366) | 366 | `"            item[\"status\"] == \"possibly_missing\" for item in target_checks"` | — |
+| [SRC-138992B1FC-L000367](../../agents/answer_validation.py#L367) | 367 | `"        ),"` | — |
+| [SRC-138992B1FC-L000368](../../agents/answer_validation.py#L368) | 368 | `"        \"limitations\": ["` | — |
+| [SRC-138992B1FC-L000369](../../agents/answer_validation.py#L369) | 369 | `"            \"Token overlap does not prove that an answer fulfills the intended task.\","` | — |
+| [SRC-138992B1FC-L000370](../../agents/answer_validation.py#L370) | 370 | `"            \"A number appearing in any source does not prove that the source supports the claim.\","` | — |
+| [SRC-138992B1FC-L000371](../../agents/answer_validation.py#L371) | 371 | `"            \"Citation token overlap can be coincidental and does not establish that the source entails the claim.\","` | — |
+| [SRC-138992B1FC-L000372](../../agents/answer_validation.py#L372) | 372 | `"            \"Value-discrepancy flags may reflect different products, periods, or units; they are not automatic contradiction findings.\","` | — |
+| [SRC-138992B1FC-L000373](../../agents/answer_validation.py#L373) | 373 | `"            \"Contradictory sources and citation-to-claim entailment require claim-level review.\","` | — |
+| [SRC-138992B1FC-L000374](../../agents/answer_validation.py#L374) | 374 | `"            \"Search snippets may be partial; extracted page text is still not independent verification.\","` | — |
+| [SRC-138992B1FC-L000375](../../agents/answer_validation.py#L375) | 375 | `"        ],"` | — |
+| [SRC-138992B1FC-L000376](../../agents/answer_validation.py#L376) | 376 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
@@ -16,6 +77,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000001](../../agents/intent_router.py#L1) | 1 | `"\"\"\"Small deterministic intent routing for Omarai's answer engine."` | — |
+| [SRC-5587371288-L000002](../../agents/intent_router.py#L2) | 2 | `""` | — |
 | [SRC-5587371288-L000003](../../agents/intent_router.py#L3) | 3 | `"This module chooses a strategy; it does not search, call a model, or claim that"` | — |
 | [SRC-5587371288-L000004](../../agents/intent_router.py#L4) | 4 | `"an answer is factually verified. Keep the rules explicit and unit-testable."` | — |
 | [SRC-5587371288-L000005](../../agents/intent_router.py#L5) | 5 | `"\"\"\""` | — |
@@ -789,57 +852,3 @@
 | [SRC-59CF4B7DE8-L000053](../../agents/research.py#L53) | 53 | `"    except UnicodeError:"` | — |
 | [SRC-59CF4B7DE8-L000054](../../agents/research.py#L54) | 54 | `"        return host"` | — |
 | [SRC-59CF4B7DE8-L000055](../../agents/research.py#L55) | 55 | `"    extracted = _DOMAIN_EXTRACTOR(host)"` | — |
-| [SRC-59CF4B7DE8-L000056](../../agents/research.py#L56) | 56 | `"    return (extracted.top_domain_under_public_suffix or host).lower()"` | — |
-| [SRC-59CF4B7DE8-L000057](../../agents/research.py#L57) | 57 | `""` | — |
-| [SRC-59CF4B7DE8-L000058](../../agents/research.py#L58) | 58 | `"SOCIAL_DOMAINS = {"` | — |
-| [SRC-59CF4B7DE8-L000059](../../agents/research.py#L59) | 59 | `"    \"reddit\": \"reddit.com\","` | — |
-| [SRC-59CF4B7DE8-L000060](../../agents/research.py#L60) | 60 | `"    \"youtube\": \"youtube.com\","` | — |
-| [SRC-59CF4B7DE8-L000061](../../agents/research.py#L61) | 61 | `"    \"facebook\": \"facebook.com\","` | — |
-| [SRC-59CF4B7DE8-L000062](../../agents/research.py#L62) | 62 | `"    \"instagram\": \"instagram.com\","` | — |
-| [SRC-59CF4B7DE8-L000063](../../agents/research.py#L63) | 63 | `"    \"x\": \"x.com\","` | — |
-| [SRC-59CF4B7DE8-L000064](../../agents/research.py#L64) | 64 | `"    \"twitter\": \"twitter.com\","` | — |
-| [SRC-59CF4B7DE8-L000065](../../agents/research.py#L65) | 65 | `"    \"tiktok\": \"tiktok.com\","` | — |
-| [SRC-59CF4B7DE8-L000066](../../agents/research.py#L66) | 66 | `"    \"linkedin\": \"linkedin.com\","` | — |
-| [SRC-59CF4B7DE8-L000067](../../agents/research.py#L67) | 67 | `"    \"threads\": \"threads.net\","` | — |
-| [SRC-59CF4B7DE8-L000068](../../agents/research.py#L68) | 68 | `"    \"bluesky\": \"bsky.app\","` | — |
-| [SRC-59CF4B7DE8-L000069](../../agents/research.py#L69) | 69 | `"}"` | — |
-| [SRC-59CF4B7DE8-L000070](../../agents/research.py#L70) | 70 | `""` | — |
-| [SRC-59CF4B7DE8-L000071](../../agents/research.py#L71) | 71 | `"_SOCIAL_TERMS = ("` | — |
-| [SRC-59CF4B7DE8-L000072](../../agents/research.py#L72) | 72 | `"    \"social media\", \"social network\", \"social posts\", \"social pages\", \"public social\", \"public posts\","` | — |
-| [SRC-59CF4B7DE8-L000073](../../agents/research.py#L73) | 73 | `"    \"facebook\", \"instagram\", \"reddit\", \"youtube\", \"twitter\", \"x.com\","` | — |
-| [SRC-59CF4B7DE8-L000074](../../agents/research.py#L74) | 74 | `"    \"tiktok\", \"linkedin\", \"threads\", \"bluesky\","` | — |
-| [SRC-59CF4B7DE8-L000075](../../agents/research.py#L75) | 75 | `"    \"سوشيال\", \"التواصل الاجتماعي\", \"مواقع التواصل\", \"صفحات التواصل\","` | — |
-| [SRC-59CF4B7DE8-L000076](../../agents/research.py#L76) | 76 | `"    \"منشورات\", \"تعليقات الناس\", \"آراء الناس\", \"تجارب المستخدمين\","` | — |
-| [SRC-59CF4B7DE8-L000077](../../agents/research.py#L77) | 77 | `"    \"تجارب العملاء\", \"اراء العملاء\", \"آراء العملاء\", \"رأي الناس\","` | — |
-| [SRC-59CF4B7DE8-L000078](../../agents/research.py#L78) | 78 | `"    \"كلام الناس\", \"الناس بتقول\", \"مراجعات العملاء\", \"تعليقات العملاء\","` | — |
-| [SRC-59CF4B7DE8-L000079](../../agents/research.py#L79) | 79 | `"    \"بوستات\", \"فيدوهات\", \"فيديوهات\", \"ريلز\", \"تويتر\", \"فيسبوك\","` | — |
-| [SRC-59CF4B7DE8-L000080](../../agents/research.py#L80) | 80 | `"    \"انستجرام\", \"إنستجرام\", \"تيك توك\", \"لينكدان\", \"لينكدإن\","` | — |
-| [SRC-59CF4B7DE8-L000081](../../agents/research.py#L81) | 81 | `"    \"مصادر العملاء\", \"عملاء محتملين\", \"العملاء المحتملين\","` | — |
-| [SRC-59CF4B7DE8-L000082](../../agents/research.py#L82) | 82 | `")"` | — |
-| [SRC-59CF4B7DE8-L000083](../../agents/research.py#L83) | 83 | `""` | — |
-| [SRC-59CF4B7DE8-L000084](../../agents/research.py#L84) | 84 | `"_FRESH_TERMS = ("` | — |
-| [SRC-59CF4B7DE8-L000085](../../agents/research.py#L85) | 85 | `"    \"latest\", \"current\", \"today\", \"this week\", \"recent\", \"breaking\", \"news\","` | — |
-| [SRC-59CF4B7DE8-L000086](../../agents/research.py#L86) | 86 | `"    \"now\", \"2026\", \"latest price\", \"market price\", \"updated\","` | — |
-| [SRC-59CF4B7DE8-L000087](../../agents/research.py#L87) | 87 | `"    \"آخر\", \"اخر\", \"احدث\", \"أحدث\", \"حاليا\", \"حالياً\", \"الآن\", \"دلوقتي\", \"النهارده\", \"مؤخرًا\", \"مؤخرا\", \"اليوم\", \"هذا الاسبوع\","` | — |
-| [SRC-59CF4B7DE8-L000088](../../agents/research.py#L88) | 88 | `"    \"هذا الأسبوع\", \"آخر الأخبار\", \"اخر الاخبار\", \"مستجدات\", \"حديث\","` | — |
-| [SRC-59CF4B7DE8-L000089](../../agents/research.py#L89) | 89 | `"    \"سعر اليوم\", \"الاسعار الحالية\", \"الأسعار الحالية\", \"جديد\","` | — |
-| [SRC-59CF4B7DE8-L000090](../../agents/research.py#L90) | 90 | `")"` | — |
-| [SRC-59CF4B7DE8-L000091](../../agents/research.py#L91) | 91 | `""` | — |
-| [SRC-59CF4B7DE8-L000092](../../agents/research.py#L92) | 92 | `"_DEEP_TERMS = ("` | — |
-| [SRC-59CF4B7DE8-L000093](../../agents/research.py#L93) | 93 | `"    \"deep research\", \"in-depth\", \"comprehensive\", \"exhaustive\", \"compare\","` | — |
-| [SRC-59CF4B7DE8-L000094](../../agents/research.py#L94) | 94 | `"    \"comparison\", \"pros and cons\", \"investigate\", \"evidence\", \"sources\","` | — |
-| [SRC-59CF4B7DE8-L000095](../../agents/research.py#L95) | 95 | `"    \"بحث عميق\", \"بحث معمق\", \"بحث مكثف\", \"بحث شامل\", \"بالتفصيل\", \"قارن\","` | — |
-| [SRC-59CF4B7DE8-L000096](../../agents/research.py#L96) | 96 | `"    \"مقارنة\", \"استقصاء\", \"تحقق\", \"تأكد\", \"مصادر\", \"أدلة\", \"ادلة\","` | — |
-| [SRC-59CF4B7DE8-L000097](../../agents/research.py#L97) | 97 | `"    \"كل الجوانب\", \"بحث واسع\", \"متكامل\","` | — |
-| [SRC-59CF4B7DE8-L000098](../../agents/research.py#L98) | 98 | `")"` | — |
-| [SRC-59CF4B7DE8-L000099](../../agents/research.py#L99) | 99 | `""` | — |
-| [SRC-59CF4B7DE8-L000100](../../agents/research.py#L100) | 100 | `""` | — |
-| [SRC-59CF4B7DE8-L000101](../../agents/research.py#L101) | 101 | `"def extract_urls(text: str) -> list[str]:"` | — |
-| [SRC-59CF4B7DE8-L000102](../../agents/research.py#L102) | 102 | `"    \"\"\"Extract explicit HTTP(S) URLs without trying to interpret their content as instructions.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000103](../../agents/research.py#L103) | 103 | `"    candidates = re.findall(r\"https?://[^\\s<>()]+\", text or \"\", flags=re.IGNORECASE)"` | — |
-| [SRC-59CF4B7DE8-L000104](../../agents/research.py#L104) | 104 | `"    cleaned: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000105](../../agents/research.py#L105) | 105 | `"    for value in candidates:"` | — |
-| [SRC-59CF4B7DE8-L000106](../../agents/research.py#L106) | 106 | `"        url = value.rstrip(\".,;!?،؛:)\\\"'»\")"` | — |
-| [SRC-59CF4B7DE8-L000107](../../agents/research.py#L107) | 107 | `"        if url and url not in cleaned:"` | — |
-| [SRC-59CF4B7DE8-L000108](../../agents/research.py#L108) | 108 | `"            cleaned.append(url[:2048])"` | — |
-| [SRC-59CF4B7DE8-L000109](../../agents/research.py#L109) | 109 | `"        if len(cleaned) >= 5:"` | — |
