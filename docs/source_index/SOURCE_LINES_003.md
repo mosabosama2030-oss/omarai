@@ -734,11 +734,11 @@
 | [SRC-1AE03B9EC3-L000102](../../agents/web_agent.py#L102) | 102 | `"    \"التطورات\": {\"developments\", \"updates\"},"` | — |
 | [SRC-1AE03B9EC3-L000103](../../agents/web_agent.py#L103) | 103 | `"    \"تطورات\": {\"developments\", \"updates\"},"` | — |
 | [SRC-1AE03B9EC3-L000104](../../agents/web_agent.py#L104) | 104 | `"    \"احدث\": {\"latest\", \"recent\"},"` | — |
-| [SRC-1AE03B9EC3-L000105](../../agents/web_agent.py#L105) | 105 | `"    \"وكلاء\": {\"agents\"},"` | — |
-| [SRC-1AE03B9EC3-L000106](../../agents/web_agent.py#L106) | 106 | `"    \"وكيل\": {\"agent\"},"` | — |
-| [SRC-1AE03B9EC3-L000107](../../agents/web_agent.py#L107) | 107 | `"    \"الذكاء\": {\"intelligence\"},"` | — |
-| [SRC-1AE03B9EC3-L000108](../../agents/web_agent.py#L108) | 108 | `"    \"الاصطناعي\": {\"artificial\"},"` | — |
-| [SRC-1AE03B9EC3-L000109](../../agents/web_agent.py#L109) | 109 | `"    \"اصطناعي\": {\"artificial\"},"` | — |
+| [SRC-1AE03B9EC3-L000105](../../agents/web_agent.py#L105) | 105 | `"    \"وكلاء\": {\"agents\", \"agent\"},"` | — |
+| [SRC-1AE03B9EC3-L000106](../../agents/web_agent.py#L106) | 106 | `"    \"وكيل\": {\"agent\", \"agents\"},"` | — |
+| [SRC-1AE03B9EC3-L000107](../../agents/web_agent.py#L107) | 107 | `"    \"الذكاء\": {\"intelligence\", \"ai\"},"` | — |
+| [SRC-1AE03B9EC3-L000108](../../agents/web_agent.py#L108) | 108 | `"    \"اصطناعي\": {\"artificial\"},"` | — |
+| [SRC-1AE03B9EC3-L000109](../../agents/web_agent.py#L109) | 109 | `"    \"الاصطناعي\": {\"artificial\", \"ai\"},"` | — |
 | [SRC-1AE03B9EC3-L000110](../../agents/web_agent.py#L110) | 110 | `"    \"اخبار\": {\"news\"},"` | — |
 | [SRC-1AE03B9EC3-L000111](../../agents/web_agent.py#L111) | 111 | `"    \"الاخبار\": {\"news\"},"` | — |
 | [SRC-1AE03B9EC3-L000112](../../agents/web_agent.py#L112) | 112 | `"    \"تجارب\": {\"experiences\", \"reviews\"},"` | — |
