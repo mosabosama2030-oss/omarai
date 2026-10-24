@@ -185,9 +185,9 @@ def _search_tokens(value: str) -> set[str]:
 def _relevance_ratio(query: str, evidence: str) -> float:
     """Score source evidence against the query's subject, not its output instructions."""
     query_text = _normalize_search_query(query).casefold()
-    query_text = re.sub(r"(?i)\\bsite\\s*:\\s*\\S+", " ", query_text)
+    query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     query_tokens = {
-        token for token in re.findall(r"[a-z0-9]+|[\\u0600-\\u06FF]+", query_text)
+        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
         if token not in _SEARCH_STOPWORDS
         and token not in _RELEVANCE_INSTRUCTION_STOPWORDS
         and len(token) >= 2
