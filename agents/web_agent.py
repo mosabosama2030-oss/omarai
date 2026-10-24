@@ -76,10 +76,10 @@ _SEARCH_STOPWORDS = frozenset({
     "حقائق", "الحقائق", "استنتاجات", "الاستنتاجات", "تواريخ", "تاريخ",
     "الاخبار", "اخبار", "تعرض", "معلومات", "قديمه", "جديده",
     "باعتبارها", "اعتبارا", "الايام", "ايام", "السبعه", "الماضيه",
-    "خلال", "الايام", "ايام", "السبعه", "الماضيه", "احدث", "اخر",
+    "خلال", "احدث", "اخر",
     "مؤخرا", "اليوم", "الايجابيه", "السلبيه", "النتائج", "نتائج", "كافيه",
     "تمثيل", "عموما", "العامه", "حول", "المنشورات", "منشورات",
-    "المتاحه", "متاحه", "اذا", "لتمثيل", "متعدده", "اهم",
+    "المتاحه", "متاحه", "اذا", "لتمثيل", "متعدده", "اهم", "لا",
 })
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
@@ -156,7 +156,11 @@ def _search_tokens(value: str) -> set[str]:
         # Strip a prefixed Arabic conjunction only when it is followed by the
         # definite article (e.g. "والتكلفة"), not from lexical words such as "وكلاء".
         token = raw_token[1:] if (
-            raw_token.startswith(("و", "ف")) and raw_token[1:].startswith("ال")
+            raw_token.startswith(("و", "ف"))
+            and (
+                raw_token[1:] in _SEARCH_STOPWORDS
+                or raw_token[1:].startswith("ال")
+            )
         ) else raw_token
         if token in _SEARCH_STOPWORDS or len(token) < 2:
             continue
