@@ -67,6 +67,28 @@ _SEARCH_STOPWORDS = frozenset({
     "news", "official", "sources", "source", "reports", "report", "analysis",
     "site", "com", "org", "net", "www",
 })
+_RELEVANCE_META_STOPWORDS = frozenset(
+    _normalize_search_query(token).casefold()
+    for token in (
+        # Citation/format instructions, not the subject of the user's question.
+        "اذكر", "ذكر", "المصدر", "مصدر", "مصادر", "رابط", "روابط", "مباشر",
+        "موثوق", "موثوقة", "موثوقه", "أجب", "اجب", "بالعربية", "عربية",
+        "بإيجاز", "بايجاز", "باختصار", "باستخدام", "استخدم", "اعرض",
+        "وضح", "بيّن", "بين", "ميّز", "ميز", "قارن", "مقارنة", "حلل", "تحليل",
+        "أهم", "اهم", "تواجه", "الحقائق", "حقائق", "الاستنتاجات", "استنتاجات",
+        "الأخبار", "الاخبار", "تواريخ", "تاريخ", "النتائج", "نتائج", "كافية",
+        "تمثيل", "عمومًا", "عموما", "العامة", "المتاحة", "اجمع", "اعرضها",
+        "اذكرها", "ايجابية", "إيجابية", "سلبية", "السلبيه", "الايجابيه",
+        "قديمة", "قديم", "خلال", "الأيام", "الايام", "السبعة", "سبعة",
+        "الماضية", "الماضيه", "الأسبوع", "الاسبوع", "آخر", "اخر", "أحدث",
+        "احدث", "الآن", "الان", "اليوم", "last", "past", "seven", "days",
+        "week", "latest", "recent", "today", "now", "sources", "source",
+        "links", "link", "direct", "cite", "citations", "reliable",
+        "trustworthy", "briefly", "brief", "mention", "list", "show",
+        "explain", "distinguish", "facts", "inferences", "please", "use",
+        "provide", "current", "new", "multiple",
+    )
+)
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
     "المصري": {"egyptian", "egypt"}, "مركزي": {"central"},
@@ -87,6 +109,47 @@ _SEARCH_SYNONYMS = {
     "شقة": {"apartment", "flat"}, "شقق": {"apartments", "flats"},
     "عميل": {"customer", "buyer"}, "عملاء": {"customers", "buyers"},
     "شراء": {"buy", "purchase"}, "مشتري": {"buyer"},
+    # Common Arabic topics that often appear in English search-result snippets.
+    "سيارة": {"car", "vehicle", "automobile"},
+    "السيارة": {"car", "vehicle", "automobile"},
+    "سيارات": {"cars", "vehicles", "automobiles"},
+    "السيارات": {"cars", "vehicles", "automobiles"},
+    "كهربائي": {"electric", "electrical"},
+    "كهربائية": {"electric", "electrical"},
+    "الكهربائية": {"electric", "electrical"},
+    "تكلفة": {"cost", "price"},
+    "التكلفة": {"cost", "price"},
+    "تكاليف": {"costs", "expenses"},
+    "التحدي": {"challenge"},
+    "التحديات": {"challenges"},
+    "تحديات": {"challenges"},
+    "البنية": {"infrastructure"},
+    "التحتية": {"infrastructure"},
+    "شحن": {"charge", "charging"},
+    "الشحن": {"charge", "charging"},
+    "التطور": {"development", "update"},
+    "التطورات": {"developments", "updates"},
+    "تطورات": {"developments", "updates"},
+    "وكيل": {"agent"},
+    "الوكيل": {"agent"},
+    "وكلاء": {"agents", "agent"},
+    "الذكاء": {"ai", "intelligence"},
+    "ذكاء": {"ai", "intelligence"},
+    "الاصطناعي": {"ai", "artificial", "intelligence"},
+    "اصطناعي": {"ai", "artificial"},
+    "رأي": {"opinion", "view"},
+    "الرأي": {"opinion", "view"},
+    "آراء": {"opinions", "views"},
+    "الآراء": {"opinions", "views"},
+    "تجربة": {"experience"},
+    "تجارب": {"experiences"},
+    "المستخدم": {"user"},
+    "المستخدمين": {"users"},
+    "إيجابي": {"positive"},
+    "إيجابية": {"positive"},
+    "السلبية": {"negative"},
+    "سلبي": {"negative"},
+    "سلبية": {"negative"},
 }
 _CALENDAR_MONTHS = (
     "يناير", "فبراير", "مارس", "ابريل", "أبريل", "مايو", "يونيو",
@@ -146,10 +209,12 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     query_tokens = {
         token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS and len(token) >= 2
+        if token not in _SEARCH_STOPWORDS
+        and token not in _RELEVANCE_META_STOPWORDS
+        and len(token) >= 2
     }
     if not query_tokens:
-        return 1.0
+        return 0.0
     expanded_evidence = _search_tokens(evidence)
     matched = sum(
         1 for token in query_tokens
@@ -452,6 +517,8 @@ class WebAgent:
     def _record_provider_diagnostic(
         self, provider: str, query: str, status: str, result_count: int = 0,
         rejected_count: int = 0, error: str | None = None,
+        candidate_count: int | None = None,
+        rejection_reasons: dict[str, int] | None = None,
     ) -> None:
         def redact(value: Any, limit: int) -> str:
             safe = _clean_text(str(value or ""), limit)
@@ -476,9 +543,22 @@ class WebAgent:
             "provider": provider,
             "query": redact(query, 220),
             "status": status,
-            "result_count": int(result_count),
-            "rejected_count": int(rejected_count),
+            # result_count is the number accepted by the common URL/domain/relevance gate.
+            "result_count": max(0, int(result_count)),
+            "candidate_count": max(
+                0,
+                int(candidate_count) if candidate_count is not None
+                else int(result_count) + int(rejected_count),
+            ),
+            "rejected_count": max(0, int(rejected_count)),
         }
+        clean_reasons = {
+            _clean_text(str(key), 60): max(0, int(value))
+            for key, value in (rejection_reasons or {}).items()
+            if _clean_text(str(key), 60) and int(value) > 0
+        }
+        if clean_reasons:
+            record["rejection_reasons"] = clean_reasons
         if error:
             record["error"] = redact(error, 180)
         with self._provider_diagnostics_lock:
@@ -1272,23 +1352,34 @@ class WebAgent:
                     raise TypeError("connector returned a non-list result")
                 accepted: list[dict[str, Any]] = []
                 rejected = 0
+                rejection_reasons: dict[str, int] = {}
                 for item in raw:
+                    reason: str | None = None
+                    normalized_item: dict[str, Any] | None = None
                     if not isinstance(item, dict):
+                        reason = "not_a_result_object"
+                    else:
+                        safe_url = _public_http_url(item.get("url", ""))
+                        if not safe_url:
+                            reason = "invalid_or_unsafe_url"
+                        elif _blocked_source_url(safe_url):
+                            reason = "blocked_source_domain"
+                        else:
+                            normalized_item = dict(item)
+                            normalized_item["url"] = safe_url
+                            normalized_item.setdefault("provider", name)
+                            normalized_item.setdefault("search_query", search_query)
+                            evidence = " ".join(
+                                str(normalized_item.get(k) or "") for k in ("title", "snippet")
+                            )
+                            if _relevance_ratio(search_query, evidence) < 0.20:
+                                reason = "low_topical_relevance"
+                    if reason:
                         rejected += 1
+                        rejection_reasons[reason] = rejection_reasons.get(reason, 0) + 1
                         continue
-                    safe_url = _public_http_url(item.get("url", ""))
-                    if not safe_url or _blocked_source_url(safe_url):
-                        rejected += 1
-                        continue
-                    normalized_item = dict(item)
-                    normalized_item["url"] = safe_url
-                    normalized_item.setdefault("provider", name)
-                    normalized_item.setdefault("search_query", search_query)
-                    evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
-                    if _relevance_ratio(search_query, evidence) < 0.20:
-                        rejected += 1
-                        continue
-                    accepted.append(normalized_item)
+                    if normalized_item is not None:
+                        accepted.append(normalized_item)
                 if accepted:
                     status = "ok"
                     error = None
@@ -1299,7 +1390,8 @@ class WebAgent:
                     status = "no_results"
                     error = "connector returned no parseable results"
                 self._record_provider_diagnostic(
-                    name, search_query, status, len(accepted), rejected, error
+                    name, search_query, status, len(accepted), rejected, error,
+                    candidate_count=len(raw), rejection_reasons=rejection_reasons,
                 )
                 return accepted
             except RequestBudgetExceeded as exc:
@@ -1312,7 +1404,18 @@ class WebAgent:
                 )
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
                 detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
-                self._record_provider_diagnostic(name, search_query, "failed", error=detail)
+                http_status = re.search(r"\bHTTP (\d{3})\b", str(exc))
+                if http_status:
+                    code = int(http_status.group(1))
+                    failure_status = (
+                        "rate_limited" if code == 429
+                        else "unauthorized" if code in {401, 403}
+                        else "invalid_response" if code == 202
+                        else "http_error"
+                    )
+                else:
+                    failure_status = "failed"
+                self._record_provider_diagnostic(name, search_query, failure_status, error=detail)
             return []
 
         async def run_all() -> list[list[dict[str, Any]]]:
@@ -1478,9 +1581,6 @@ class WebAgent:
             }
             url = _public_http_url(fields.get("link", ""))
             if not url or _blocked_source_url(url):
-                continue
-            evidence = " ".join((fields.get("title", ""), fields.get("description", "")))
-            if _relevance_ratio(query, evidence) < 0.20:
                 continue
             source_node = next(
                 (child for child in item if child.tag.rsplit("}", 1)[-1] == "source"),
@@ -2501,7 +2601,7 @@ class WebAgent:
         priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
                     "disabled": 4, "not_configured": 5, "budget_exhausted": 6,
                     "unknown": 6, "rate_limited": 7, "unauthorized": 8, "http_error": 9,
-                    "timeout": 10, "failed": 11, "error": 11}
+                    "invalid_response": 9, "timeout": 10, "failed": 11, "error": 11}
         confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | {
             "http_error", "unauthorized", "rate_limited", "invalid_response"
         }
@@ -2529,17 +2629,23 @@ class WebAgent:
             else:
                 attempted = False
             successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
-            error_response_statuses = set(statuses) & {"http_error", "unauthorized", "rate_limited"}
+            error_response_statuses = set(statuses) & {
+                "http_error", "unauthorized", "rate_limited", "invalid_response"
+            }
             uncertain_failure_statuses = set(statuses) & {"timeout", "failed", "error", "unknown", "inconclusive"}
+            response_received = bool(successful_statuses or error_response_statuses)
+            quality_filter_exhausted = "filtered_all" in statuses
+            source_usable = bool("ok" in statuses or useful.get(name, 0))
             failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
             available: bool | None = (
                 True if successful_statuses or useful.get(name, 0)
                 else False if error_response_statuses or not ready or "disabled" in statuses or "budget_exhausted" in statuses
                 else None
             )
+            # This describes filter acceptance, not independent factual verification.
             verified: bool | None = (
-                True if successful_statuses or useful.get(name, 0)
-                else False if error_response_statuses
+                True if source_usable
+                else False if "filtered_all" in statuses or "no_results" in statuses or error_response_statuses
                 else None
             )
             implementation_status = (
@@ -2551,19 +2657,41 @@ class WebAgent:
             errors = list(dict.fromkeys(redact(row.get("error")) for row in attempts if row.get("error")))[:3]
             result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
             rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
+            candidate_count = sum(
+                max(0, int(row.get("candidate_count", int(row.get("result_count", 0) or 0) + int(row.get("rejected_count", 0) or 0)) or 0))
+                for row in attempts
+            )
+            rejection_reason_totals: dict[str, int] = {}
+            for row in attempts:
+                reasons = row.get("rejection_reasons", {})
+                if not isinstance(reasons, dict):
+                    continue
+                for reason, count in reasons.items():
+                    key = _clean_text(str(reason), 60)
+                    try:
+                        value = max(0, int(count))
+                    except (TypeError, ValueError):
+                        continue
+                    if key and value:
+                        rejection_reason_totals[key] = rejection_reason_totals.get(key, 0) + value
             connectors.append({
                 "name": name, "in_codebase": name in config or bool(attempts),
                 "implementation_status": implementation_status,
                 "configured": bool(ready), "configuration_status": config_status,
                 "attempted": attempted, "available_for_this_request": available,
-                "verified_for_this_request": verified, "failure_observed": failure_observed,
+                "response_received": response_received,
+                "verified_for_this_request": verified, "source_usable": source_usable,
+                "quality_filter_exhausted": quality_filter_exhausted,
+                "failure_observed": failure_observed,
                 "status": status, "observed_statuses": list(dict.fromkeys(statuses))[:6],
-                "result_count": result_count, "useful_result_count": useful.get(name, 0),
-                "rejected_count": rejected_count, "queries": queries, "errors": errors,
+                "candidate_count": candidate_count, "result_count": result_count,
+                "useful_result_count": useful.get(name, 0), "rejected_count": rejected_count,
+                "rejection_reasons": rejection_reason_totals,
+                "queries": queries, "errors": errors,
             })
         return {
             "scope": "this_request_only",
-            "semantics": "result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.",
+            "semantics": "candidate_count counts adapter-normalized candidates before the common URL/domain/relevance filter; result_count counts accepted candidates after that filter; useful_result_count counts final fused source records attributed to a connector; none proves factual accuracy or editorial independence.",
             "attempted_count": sum(bool(item["attempted"]) for item in connectors),
             "failed_count": sum(item["status"] in {"failed", "error", "timeout", "http_error", "unauthorized", "rate_limited"} for item in connectors),
             "connectors": connectors[:24],
