@@ -66,6 +66,19 @@ _SEARCH_STOPWORDS = frozenset({
     "where", "compare", "comparison", "please", "show", "find", "latest",
     "news", "official", "sources", "source", "reports", "report", "analysis",
     "site", "com", "org", "net", "www",
+    # Search-result relevance should measure subject matter, not instructions
+    # about how the answer must be formatted or cited.
+    "اذكر", "اذكروا", "مصدر", "المصدر", "مصادر", "المصادر",
+    "موثوق", "موثوقه", "رابط", "روابط", "مباشر", "مباشره",
+    "اجب", "العربيه", "بالعربيه", "بايجاز", "ايجاز",
+    "باختصار", "اختصار", "استخدم", "استخدموا", "ميز", "حلل",
+    "اجمع", "اعرض", "وضح", "توضح", "تواجه", "قارن", "مقارنه",
+    "حقائق", "الحقائق", "استنتاجات", "الاستنتاجات", "تواريخ", "تاريخ",
+    "الاخبار", "اخبار", "تعرض", "معلومات", "قديمه", "جديده",
+    "باعتبارها", "اعتبارا", "الايام", "ايام", "السبعه", "الماضيه",
+    "خلال", "الايجابيه", "السلبيه", "النتائج", "نتائج", "كافيه",
+    "تمثيل", "عموما", "العامه", "حول", "المنشورات", "منشورات",
+    "المتاحه", "متاحه", "اذا", "لتمثيل", "متعدده", "اهم",
 })
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
@@ -87,6 +100,20 @@ _SEARCH_SYNONYMS = {
     "شقة": {"apartment", "flat"}, "شقق": {"apartments", "flats"},
     "عميل": {"customer", "buyer"}, "عملاء": {"customers", "buyers"},
     "شراء": {"buy", "purchase"}, "مشتري": {"buyer"},
+    # Common Arabic/English equivalents needed when public results are English.
+    "سياره": {"car", "vehicle", "automobile"},
+    "سيارات": {"cars", "vehicles", "automobiles"},
+    "كهربائي": {"electric"}, "كهربائيه": {"electric"},
+    "تكلفه": {"cost", "costs", "price"}, "تكاليف": {"cost", "costs"},
+    "بنيه": {"infrastructure"}, "تحتيه": {"infrastructure"},
+    "شحن": {"charging", "charge"},
+    "ذكاء": {"intelligence", "ai"}, "الذكاء": {"intelligence", "ai"},
+    "اصطناعي": {"artificial"}, "الاصطناعي": {"artificial"},
+    "وكيل": {"agent"}, "وكلاء": {"agents"},
+    "تطور": {"development"}, "تطورات": {"developments", "development"},
+    "تجربه": {"experience"}, "تجارب": {"experiences", "reviews"},
+    "راي": {"opinion"}, "اراء": {"opinions", "reviews"},
+    "مستخدم": {"user"}, "مستخدمين": {"users"},
 }
 _CALENDAR_MONTHS = (
     "يناير", "فبراير", "مارس", "ابريل", "أبريل", "مايو", "يونيو",
@@ -123,7 +150,12 @@ def _search_tokens(value: str) -> set[str]:
     value = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", value)
     tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
     result: set[str] = set()
-    for token in tokens:
+    for raw_token in tokens:
+        # Strip a prefixed Arabic conjunction only when it is followed by the
+        # definite article (e.g. "والتكلفة"), not from lexical words such as "وكلاء".
+        token = raw_token[1:] if (
+            raw_token.startswith(("و", "ف")) and raw_token[1:].startswith("ال")
+        ) else raw_token
         if token in _SEARCH_STOPWORDS or len(token) < 2:
             continue
         forms = {token}
@@ -144,10 +176,15 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     """Fraction of meaningful query concepts present in a candidate's title/snippet."""
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
-    query_tokens = {
-        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS and len(token) >= 2
-    }
+    query_tokens: set[str] = set()
+    for raw_token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text):
+        # Keep the relevance denominator focused on subject concepts. Ignore a
+        # leading conjunction only when the remainder begins with the article.
+        token = raw_token[1:] if (
+            raw_token.startswith(("و", "ف")) and raw_token[1:].startswith("ال")
+        ) else raw_token
+        if token not in _SEARCH_STOPWORDS and len(token) >= 2:
+            query_tokens.add(token)
     if not query_tokens:
         return 1.0
     expanded_evidence = _search_tokens(evidence)
@@ -452,6 +489,7 @@ class WebAgent:
     def _record_provider_diagnostic(
         self, provider: str, query: str, status: str, result_count: int = 0,
         rejected_count: int = 0, error: str | None = None,
+        rejection_counts: dict[str, int] | None = None,
     ) -> None:
         def redact(value: Any, limit: int) -> str:
             safe = _clean_text(str(value or ""), limit)
@@ -481,6 +519,11 @@ class WebAgent:
         }
         if error:
             record["error"] = redact(error, 180)
+        if rejection_counts:
+            record["rejection_counts"] = {
+                _clean_text(name, 60): max(0, int(count))
+                for name, count in rejection_counts.items()
+            }
         with self._provider_diagnostics_lock:
             self._provider_diagnostics.append(record)
             # Bound memory when the instance serves many user requests.
@@ -1272,13 +1315,25 @@ class WebAgent:
                     raise TypeError("connector returned a non-list result")
                 accepted: list[dict[str, Any]] = []
                 rejected = 0
+                rejection_counts = {
+                    "malformed_candidate": 0,
+                    "invalid_or_non_public_url": 0,
+                    "blocked_source_domain": 0,
+                    "below_relevance_threshold": 0,
+                }
                 for item in raw:
                     if not isinstance(item, dict):
                         rejected += 1
+                        rejection_counts["malformed_candidate"] += 1
                         continue
                     safe_url = _public_http_url(item.get("url", ""))
-                    if not safe_url or _blocked_source_url(safe_url):
+                    if not safe_url:
                         rejected += 1
+                        rejection_counts["invalid_or_non_public_url"] += 1
+                        continue
+                    if _blocked_source_url(safe_url):
+                        rejected += 1
+                        rejection_counts["blocked_source_domain"] += 1
                         continue
                     normalized_item = dict(item)
                     normalized_item["url"] = safe_url
@@ -1287,6 +1342,7 @@ class WebAgent:
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
                     if _relevance_ratio(search_query, evidence) < 0.20:
                         rejected += 1
+                        rejection_counts["below_relevance_threshold"] += 1
                         continue
                     accepted.append(normalized_item)
                 if accepted:
@@ -1299,7 +1355,8 @@ class WebAgent:
                     status = "no_results"
                     error = "connector returned no parseable results"
                 self._record_provider_diagnostic(
-                    name, search_query, status, len(accepted), rejected, error
+                    name, search_query, status, len(accepted), rejected, error,
+                    rejection_counts=rejection_counts,
                 )
                 return accepted
             except RequestBudgetExceeded as exc:
