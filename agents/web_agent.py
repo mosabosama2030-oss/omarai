@@ -66,6 +66,18 @@ _SEARCH_STOPWORDS = frozenset({
     "where", "compare", "comparison", "please", "show", "find", "latest",
     "news", "official", "sources", "source", "reports", "report", "analysis",
     "site", "com", "org", "net", "www",
+    # Request/formatting terms should not dilute the topical evidence match.
+    "اذكر", "اجب", "أجب", "مصدر", "مصادر", "المصدر", "المصادر", "مصدرا",
+    "موثوق", "موثوقا", "رابط", "روابط", "مباشر", "مباشرا", "بالعربية",
+    "بالعربيه", "بايجاز", "باختصار", "استخدم", "استخدموا", "اذكروا",
+    "تواريخ", "تاريخ", "الاخبار", "الأخبار", "معلومات", "تعرض", "قديمه",
+    "جديده", "باعتبارها", "الايام", "الأيام", "السبعه", "السبعة",
+    "الماضيه", "الماضية", "اجمع", "اعرض", "وضح", "النتائج", "كافيه",
+    "كافية", "تمثيل", "عموما", "عمومًا", "العامة", "متاحه", "المتاحه",
+    "facts", "fact", "inference", "inferences", "dates", "date",
+    "information", "outdated", "old", "new", "include", "mention",
+    "citations", "citation", "links", "link", "url", "briefly", "brief",
+    "answer", "reliable", "trustworthy", "provide", "use", "using",
 })
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
@@ -87,6 +99,19 @@ _SEARCH_SYNONYMS = {
     "شقة": {"apartment", "flat"}, "شقق": {"apartments", "flats"},
     "عميل": {"customer", "buyer"}, "عملاء": {"customers", "buyers"},
     "شراء": {"buy", "purchase"}, "مشتري": {"buyer"},
+    # Common bilingual topic terms observed in long Arabic research prompts.
+    "سيارة": {"car", "vehicle", "automobile"},
+    "سيارات": {"cars", "vehicles", "automobiles"},
+    "مركبة": {"vehicle", "car"}, "مركبات": {"vehicles", "cars"},
+    "كهربائي": {"electric", "electrical"}, "كهربائية": {"electric", "electrical"},
+    "تكلفة": {"cost", "price", "expense"}, "بنية": {"infrastructure"},
+    "شحن": {"charging", "charge"}, "تحديات": {"challenges", "issues"},
+    "تطور": {"development", "update"}, "تطورات": {"developments", "updates"},
+    "وكيل": {"agent"}, "وكلاء": {"agents"},
+    "ذكاء": {"intelligence", "ai"}, "اصطناعي": {"artificial", "ai"},
+    "تجربة": {"experience", "review"}, "تجارب": {"experiences", "reviews"},
+    "اراء": {"opinions", "reviews"}, "مستخدم": {"user"}, "مستخدمين": {"users"},
+    "ايجابيه": {"positive"}, "سلبيه": {"negative"},
 }
 _CALENDAR_MONTHS = (
     "يناير", "فبراير", "مارس", "ابريل", "أبريل", "مايو", "يونيو",
@@ -107,6 +132,12 @@ def _normalize_search_query(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+# Stopwords must use the same normalization as incoming tokens (notably Arabic ة/ى).
+_NORMALIZED_SEARCH_STOPWORDS = frozenset(
+    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS
+)
+
+
 # Normalize synonym keys and values by the same rules as search text. This avoids
 # Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching.
 _NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}
@@ -124,7 +155,7 @@ def _search_tokens(value: str) -> set[str]:
     tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
     result: set[str] = set()
     for token in tokens:
-        if token in _SEARCH_STOPWORDS or len(token) < 2:
+        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:
             continue
         forms = {token}
         if token.startswith("ال") and len(token) > 4:
@@ -146,7 +177,7 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     query_tokens = {
         token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS and len(token) >= 2
+        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2
     }
     if not query_tokens:
         return 1.0
@@ -1272,13 +1303,25 @@ class WebAgent:
                     raise TypeError("connector returned a non-list result")
                 accepted: list[dict[str, Any]] = []
                 rejected = 0
+                rejection_counts = {
+                    "invalid_result": 0,
+                    "unsafe_url": 0,
+                    "blocked_domain": 0,
+                    "low_relevance": 0,
+                }
                 for item in raw:
                     if not isinstance(item, dict):
                         rejected += 1
+                        rejection_counts["invalid_result"] += 1
                         continue
                     safe_url = _public_http_url(item.get("url", ""))
-                    if not safe_url or _blocked_source_url(safe_url):
+                    if not safe_url:
                         rejected += 1
+                        rejection_counts["unsafe_url"] += 1
+                        continue
+                    if _blocked_source_url(safe_url):
+                        rejected += 1
+                        rejection_counts["blocked_domain"] += 1
                         continue
                     normalized_item = dict(item)
                     normalized_item["url"] = safe_url
@@ -1287,6 +1330,7 @@ class WebAgent:
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
                     if _relevance_ratio(search_query, evidence) < 0.20:
                         rejected += 1
+                        rejection_counts["low_relevance"] += 1
                         continue
                     accepted.append(normalized_item)
                 if accepted:
@@ -1294,7 +1338,8 @@ class WebAgent:
                     error = None
                 elif raw:
                     status = "filtered_all"
-                    error = "all candidates failed URL/domain/relevance checks"
+                    detail = ", ".join(f"{key}={count}" for key, count in rejection_counts.items())
+                    error = f"all candidates failed URL/domain/relevance checks ({detail})"
                 else:
                     status = "no_results"
                     error = "connector returned no parseable results"
@@ -2888,9 +2933,9 @@ class WebAgent:
             for month in _CALENDAR_MONTHS:
                 if month.casefold() not in user_query_norm:
                     cleaned_query = re.sub(
-                        rf"(?i)(?<!\\w){re.escape(month)}(?!\\w)", " ", cleaned_query
+                        rf"(?i)(?<!\w){re.escape(month)}(?!\w)", " ", cleaned_query
                     )
-            cleaned_query = re.sub(r"\\s+", " ", cleaned_query).strip()
+            cleaned_query = re.sub(r"\s+", " ", cleaned_query).strip()
             if cleaned_query:
                 cleaned_queries.append(cleaned_query)
         if not cleaned_queries or _relevance_ratio(question, cleaned_queries[0]) < 0.20:
