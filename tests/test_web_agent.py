@@ -2735,3 +2735,105 @@ def test_frontend_labels_answer_integrity_screen_as_non_semantic():
     assert "لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد" in html
     assert "potentially_unsupported_numeric_by_citation_count" in html
     assert "potential_value_discrepancy_count" in html
+
+
+def test_relevance_ignores_answer_format_instructions_for_long_arabic_queries():
+    capital_query = "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+    assert _relevance_ratio(capital_query, "Cairo is the capital of Egypt.") >= 0.20
+
+    deep_query = (
+        "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة "
+        "والبنية التحتية والشحن. استخدم مصادر متعددة، وميّز بين الحقائق والاستنتاجات، "
+        "واذكر روابط المصادر."
+    )
+    relevant_ev_result = (
+        "Electric vehicle charging infrastructure and costs in Egypt: "
+        "challenges and comparison."
+    )
+    assert _relevance_ratio(deep_query, relevant_ev_result) >= 0.20
+
+    latest_query = (
+        "ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ "
+        "اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة."
+    )
+    relevant_ai_result = "Recent developments in artificial intelligence agents."
+    assert _relevance_ratio(latest_query, relevant_ai_result) >= 0.20
+
+    social_query = (
+        "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء "
+        "الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضّح إذا كانت "
+        "النتائج غير كافية لتمثيل آراء المستخدمين عمومًا."
+    )
+    relevant_social_result = (
+        "Electric vehicle owners in Egypt share positive and negative reviews "
+        "and charging experiences."
+    )
+    assert _relevance_ratio(social_query, relevant_social_result) >= 0.20
+
+
+def test_search_filter_diagnostics_explain_each_rejection_reason(monkeypatch):
+    agent = WebAgent()
+    candidates = [
+        {
+            "title": "Unsafe scheme",
+            "url": "file:///etc/passwd",
+            "snippet": "Capital of Egypt",
+        },
+        {
+            "title": "Translation redirect",
+            "url": "https://translate.google.com/?q=capital",
+            "snippet": "Capital of Egypt",
+        },
+        {
+            "title": "Football scores",
+            "url": "https://example.net/sports",
+            "snippet": "Football scores and league results.",
+        },
+        {
+            "title": "Egypt capital city",
+            "url": "https://example.org/egypt-capital",
+            "snippet": "Cairo is the capital city of Egypt.",
+        },
+    ]
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: candidates)
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: candidates)
+
+    results = agent._search_web("ما عاصمة مصر؟")
+    # The two providers return the same canonical URL; final results are deduplicated.
+    assert len(results) == 1
+
+    for provider in ("duckduckgo_html", "bing_rss"):
+        diagnostic = next(
+            row for row in agent._provider_diagnostics if row["provider"] == provider
+        )
+        assert diagnostic["status"] == "ok"
+        assert diagnostic["result_count"] == 1
+        assert diagnostic["rejected_count"] == 3
+        assert diagnostic["rejection_counts"] == {
+            "malformed_candidate": 0,
+            "invalid_or_non_public_url": 1,
+            "blocked_source_domain": 1,
+            "below_relevance_threshold": 1,
+        }
+
+
+def test_arabic_question_mark_does_not_hide_last_relevance_token():
+    query = "ما آخر المعلومات؟"
+    assert _relevance_ratio(
+        query,
+        "آخر المعلومات عن التقنية ومعلومات حديثة إضافية.",
+    ) >= 0.20
+    # Keeping a real topic token prevents the all-stopwords path from accepting
+    # unrelated material merely because punctuation made the query unparseable.
+    assert _relevance_ratio(
+        query,
+        "Football league results and match highlights.",
+    ) < 0.20
+
+
+def test_relevance_still_rejects_unrelated_results_for_long_arabic_queries():
+    query = (
+        "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة "
+        "والبنية التحتية والشحن. استخدم مصادر متعددة، واذكر روابط المصادر."
+    )
+    assert _relevance_ratio(query, "Football league results and match highlights.") < 0.20
