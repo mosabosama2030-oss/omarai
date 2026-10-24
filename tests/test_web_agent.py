@@ -2772,7 +2772,8 @@ def test_filtered_all_diagnostic_reports_rejection_reasons(monkeypatch):
     monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
     monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: irrelevant)
 
-    assert agent._search_web("ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر") == []
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web("ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر")
     diagnostic = next(
         row for row in agent._provider_diagnostics
         if row.get("provider") == "bing_rss" and row.get("status") == "filtered_all"
@@ -2797,4 +2798,4 @@ def test_planner_month_cleanup_uses_word_boundaries_and_collapses_whitespace(mon
     assert len(plan["queries"]) == 1
     assert "January" not in plan["queries"][0]
     assert "  " not in plan["queries"][0]
-    assert plan["queries"][0] == "مصر الرقمية website"
+    assert plan["queries"][0] == "مصر الرقميه website"
