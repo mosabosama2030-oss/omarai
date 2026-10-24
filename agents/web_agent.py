@@ -67,28 +67,7 @@ _SEARCH_STOPWORDS = frozenset({
     "news", "official", "sources", "source", "reports", "report", "analysis",
     "site", "com", "org", "net", "www",
 })
-_RELEVANCE_META_STOPWORDS = frozenset(
-    _normalize_search_query(token).casefold()
-    for token in (
-        # Citation/format instructions, not the subject of the user's question.
-        "اذكر", "ذكر", "المصدر", "مصدر", "مصادر", "رابط", "روابط", "مباشر",
-        "موثوق", "موثوقة", "موثوقه", "أجب", "اجب", "بالعربية", "عربية",
-        "بإيجاز", "بايجاز", "باختصار", "باستخدام", "استخدم", "اعرض",
-        "وضح", "بيّن", "بين", "ميّز", "ميز", "قارن", "مقارنة", "حلل", "تحليل",
-        "أهم", "اهم", "تواجه", "الحقائق", "حقائق", "الاستنتاجات", "استنتاجات",
-        "الأخبار", "الاخبار", "تواريخ", "تاريخ", "النتائج", "نتائج", "كافية",
-        "تمثيل", "عمومًا", "عموما", "العامة", "المتاحة", "اجمع", "اعرضها",
-        "اذكرها", "ايجابية", "إيجابية", "سلبية", "السلبيه", "الايجابيه",
-        "قديمة", "قديم", "خلال", "الأيام", "الايام", "السبعة", "سبعة",
-        "الماضية", "الماضيه", "الأسبوع", "الاسبوع", "آخر", "اخر", "أحدث",
-        "احدث", "الآن", "الان", "اليوم", "last", "past", "seven", "days",
-        "week", "latest", "recent", "today", "now", "sources", "source",
-        "links", "link", "direct", "cite", "citations", "reliable",
-        "trustworthy", "briefly", "brief", "mention", "list", "show",
-        "explain", "distinguish", "facts", "inferences", "please", "use",
-        "provide", "current", "new", "multiple",
-    )
-)
+
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
     "المصري": {"egyptian", "egypt"}, "مركزي": {"central"},
@@ -169,6 +148,29 @@ def _normalize_search_query(value: str) -> str:
     value = _ARABIC_DIACRITICS_RE.sub("", value).translate(_ARABIC_SEARCH_TRANSLATION)
     return re.sub(r"\s+", " ", value).strip()
 
+
+_RELEVANCE_META_STOPWORDS = frozenset(
+    _normalize_search_query(token).casefold()
+    for token in (
+        # Citation/format instructions, not the subject of the user's question.
+        "اذكر", "ذكر", "المصدر", "مصدر", "مصادر", "رابط", "روابط", "مباشر",
+        "موثوق", "موثوقة", "موثوقه", "أجب", "اجب", "بالعربية", "عربية",
+        "بإيجاز", "بايجاز", "باختصار", "باستخدام", "استخدم", "اعرض",
+        "وضح", "بيّن", "بين", "ميّز", "ميز", "قارن", "مقارنة", "حلل", "تحليل",
+        "أهم", "اهم", "تواجه", "الحقائق", "حقائق", "الاستنتاجات", "استنتاجات",
+        "الأخبار", "الاخبار", "تواريخ", "تاريخ", "النتائج", "نتائج", "كافية",
+        "تمثيل", "عمومًا", "عموما", "العامة", "المتاحة", "اجمع", "اعرضها",
+        "اذكرها", "ايجابية", "إيجابية", "سلبية", "السلبيه", "الايجابيه",
+        "قديمة", "قديم", "خلال", "الأيام", "الايام", "السبعة", "سبعة",
+        "الماضية", "الماضيه", "الأسبوع", "الاسبوع", "آخر", "اخر", "أحدث",
+        "احدث", "الآن", "الان", "اليوم", "last", "past", "seven", "days",
+        "week", "latest", "recent", "today", "now", "sources", "source",
+        "links", "link", "direct", "cite", "citations", "reliable",
+        "trustworthy", "briefly", "brief", "mention", "list", "show",
+        "explain", "distinguish", "facts", "inferences", "please", "use",
+        "provide", "current", "new", "multiple",
+    )
+)
 
 # Normalize synonym keys and values by the same rules as search text. This avoids
 # Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching.
