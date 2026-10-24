@@ -186,7 +186,7 @@ def _search_tokens(value: str) -> set[str]:
     """Tokenize Arabic/English text and expand a small bilingual vocabulary."""
     value = _normalize_search_query(value).casefold()
     value = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", value)
-    tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
+    tokens = re.findall(r"[a-z0-9]+|[\u0621-\u063A\u0641-\u064A]+", value)
     result: set[str] = set()
     for token in tokens:
         if token in _SEARCH_STOPWORDS or len(token) < 2:
@@ -210,7 +210,7 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     query_tokens = {
-        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
+        token for token in re.findall(r"[a-z0-9]+|[\u0621-\u063A\u0641-\u064A]+", query_text)
         if token not in _SEARCH_STOPWORDS
         and token not in _RELEVANCE_META_STOPWORDS
         and len(token) >= 2
