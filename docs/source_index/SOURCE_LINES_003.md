@@ -817,9 +817,9 @@
 | [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"def _relevance_ratio(query: str, evidence: str) -> float:"` | — |
 | [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    \"\"\"Score source evidence against the query's subject, not its output instructions.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `"    query_text = re.sub(r\"(?i)\\\\bsite\\\\s*:\\\\s*\\\\S+\", \" \", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `"    query_tokens = {"` | — |
-| [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\\\u0600-\\\\u06FF]+\", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `"        if token not in _SEARCH_STOPWORDS"` | — |
 | [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `"        and token not in _RELEVANCE_INSTRUCTION_STOPWORDS"` | — |
 | [SRC-1AE03B9EC3-L000193](../../agents/web_agent.py#L193) | 193 | `"        and len(token) >= 2"` | — |
