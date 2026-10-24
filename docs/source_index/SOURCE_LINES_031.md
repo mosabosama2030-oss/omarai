@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001055 إلى SRC-F725E90B2A-L001854
+- النطاق: SRC-F725E90B2A-L001051 إلى SRC-F725E90B2A-L001850
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001051](../../tests/test_web_agent.py#L1051) | 1051 | `""` | — |
+| [SRC-F725E90B2A-L001052](../../tests/test_web_agent.py#L1052) | 1052 | `"    for provider in (\"duckduckgo_html\", \"bing_rss\"):"` | — |
+| [SRC-F725E90B2A-L001053](../../tests/test_web_agent.py#L1053) | 1053 | `"        diagnostic = next("` | — |
+| [SRC-F725E90B2A-L001054](../../tests/test_web_agent.py#L1054) | 1054 | `"            row for row in agent._provider_diagnostics if row[\"provider\"] == provider"` | — |
 | [SRC-F725E90B2A-L001055](../../tests/test_web_agent.py#L1055) | 1055 | `"        )"` | — |
 | [SRC-F725E90B2A-L001056](../../tests/test_web_agent.py#L1056) | 1056 | `"        assert diagnostic[\"status\"] == \"ok\""` | — |
 | [SRC-F725E90B2A-L001057](../../tests/test_web_agent.py#L1057) | 1057 | `"        assert diagnostic[\"result_count\"] == 1"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001848](../../tests/test_web_agent.py#L1848) | 1848 | `"            \"evidence_signals\": {},"` | — |
 | [SRC-F725E90B2A-L001849](../../tests/test_web_agent.py#L1849) | 1849 | `"        }"` | — |
 | [SRC-F725E90B2A-L001850](../../tests/test_web_agent.py#L1850) | 1850 | `""` | — |
-| [SRC-F725E90B2A-L001851](../../tests/test_web_agent.py#L1851) | 1851 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001852](../../tests/test_web_agent.py#L1852) | 1852 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L001853](../../tests/test_web_agent.py#L1853) | 1853 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001854](../../tests/test_web_agent.py#L1854) | 1854 | `"        agent,"` | — |
