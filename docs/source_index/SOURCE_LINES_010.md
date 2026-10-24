@@ -4,9 +4,33 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000123 إلى SRC-C4C6C55E1A-L000052
+- النطاق: SRC-1AE03B9EC3-L004996 إلى SRC-792A9A235D-L000053
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1AE03B9EC3-L004996](../../agents/web_agent.py#L4996) | 4996 | `"            \"kind\": \"web_research\" if used_llm else \"web_fallback\","` | — |
+| [SRC-1AE03B9EC3-L004997](../../agents/web_agent.py#L4997) | 4997 | `"            \"final_answer_status\": final_answer_status,"` | — |
+| [SRC-1AE03B9EC3-L004998](../../agents/web_agent.py#L4998) | 4998 | `"            \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L004999](../../agents/web_agent.py#L4999) | 4999 | `"            \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L005000](../../agents/web_agent.py#L5000) | 5000 | `"        }"` | — |
+## واجهات API
+
+### FILE-D8438CDB65 — [api/__init__.py](../../api/__init__.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D8438CDB65-L000001](../../api/__init__.py#L1) | 1 | `"\"\"\"Omarai local API package.\"\"\""` | — |
 ## واجهات API
 
 ### FILE-EEF2E6447C — [api/omarai.py](../../api/omarai.py#L1)
@@ -16,6 +40,128 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000001](../../api/omarai.py#L1) | 1 | `"\"\"\"HTTP API for Omarai's web-research agent and lead workspace.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000002](../../api/omarai.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-EEF2E6447C-L000003](../../api/omarai.py#L3) | 3 | `""` | — |
+| [SRC-EEF2E6447C-L000004](../../api/omarai.py#L4) | 4 | `"import base64"` | — |
+| [SRC-EEF2E6447C-L000005](../../api/omarai.py#L5) | 5 | `"import hashlib"` | — |
+| [SRC-EEF2E6447C-L000006](../../api/omarai.py#L6) | 6 | `"import hmac"` | — |
+| [SRC-EEF2E6447C-L000007](../../api/omarai.py#L7) | 7 | `"import ipaddress"` | — |
+| [SRC-EEF2E6447C-L000008](../../api/omarai.py#L8) | 8 | `"import json"` | — |
+| [SRC-EEF2E6447C-L000009](../../api/omarai.py#L9) | 9 | `"import os"` | — |
+| [SRC-EEF2E6447C-L000010](../../api/omarai.py#L10) | 10 | `"import re"` | — |
+| [SRC-EEF2E6447C-L000011](../../api/omarai.py#L11) | 11 | `"import threading"` | — |
+| [SRC-EEF2E6447C-L000012](../../api/omarai.py#L12) | 12 | `"import time"` | — |
+| [SRC-EEF2E6447C-L000013](../../api/omarai.py#L13) | 13 | `"from collections import defaultdict, deque"` | — |
+| [SRC-EEF2E6447C-L000014](../../api/omarai.py#L14) | 14 | `"from functools import lru_cache"` | — |
+| [SRC-EEF2E6447C-L000015](../../api/omarai.py#L15) | 15 | `"from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer"` | — |
+| [SRC-EEF2E6447C-L000016](../../api/omarai.py#L16) | 16 | `"from pathlib import Path"` | — |
+| [SRC-EEF2E6447C-L000017](../../api/omarai.py#L17) | 17 | `"from typing import ClassVar"` | — |
+| [SRC-EEF2E6447C-L000018](../../api/omarai.py#L18) | 18 | `"from urllib.parse import parse_qs, urlparse"` | — |
+| [SRC-EEF2E6447C-L000019](../../api/omarai.py#L19) | 19 | `""` | — |
+| [SRC-EEF2E6447C-L000020](../../api/omarai.py#L20) | 20 | `"from agents.omarai import LeadStore, analyze, normalize"` | — |
+| [SRC-EEF2E6447C-L000021](../../api/omarai.py#L21) | 21 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-EEF2E6447C-L000022](../../api/omarai.py#L22) | 22 | `""` | — |
+| [SRC-EEF2E6447C-L000023](../../api/omarai.py#L23) | 23 | `"ROOT = Path(__file__).resolve().parents[1] / \"web\""` | — |
+| [SRC-EEF2E6447C-L000024](../../api/omarai.py#L24) | 24 | `"AGENT_DASHBOARD = ROOT / \"agent.html\""` | — |
+| [SRC-EEF2E6447C-L000025](../../api/omarai.py#L25) | 25 | `"LEADS_DASHBOARD = ROOT / \"dashboard.html\""` | — |
+| [SRC-EEF2E6447C-L000026](../../api/omarai.py#L26) | 26 | `"MAX_REQUEST_BODY_BYTES = 200_000"` | — |
+| [SRC-EEF2E6447C-L000027](../../api/omarai.py#L27) | 27 | `""` | — |
+| [SRC-EEF2E6447C-L000028](../../api/omarai.py#L28) | 28 | `""` | — |
+| [SRC-EEF2E6447C-L000029](../../api/omarai.py#L29) | 29 | `"def _csp_hash_source(value: str) -> str:"` | — |
+| [SRC-EEF2E6447C-L000030](../../api/omarai.py#L30) | 30 | `"    digest = base64.b64encode(hashlib.sha256(value.encode(\"utf-8\")).digest()).decode(\"ascii\")"` | — |
+| [SRC-EEF2E6447C-L000031](../../api/omarai.py#L31) | 31 | `"    return f\"'sha256-{digest}'\""` | — |
+| [SRC-EEF2E6447C-L000032](../../api/omarai.py#L32) | 32 | `""` | — |
+| [SRC-EEF2E6447C-L000033](../../api/omarai.py#L33) | 33 | `""` | — |
+| [SRC-EEF2E6447C-L000034](../../api/omarai.py#L34) | 34 | `"@lru_cache(maxsize=1)"` | — |
+| [SRC-EEF2E6447C-L000035](../../api/omarai.py#L35) | 35 | `"def _content_security_policy() -> str:"` | — |
+| [SRC-EEF2E6447C-L000036](../../api/omarai.py#L36) | 36 | `"    \"\"\"Allow only known inline blocks/attributes from the static first-party HTML."` | — |
+| [SRC-EEF2E6447C-L000037](../../api/omarai.py#L37) | 37 | `""` | — |
+| [SRC-EEF2E6447C-L000038](../../api/omarai.py#L38) | 38 | `"    Hashes deliberately replace unsafe-inline. Updating an inline script/style means its"` | — |
+| [SRC-EEF2E6447C-L000039](../../api/omarai.py#L39) | 39 | `"    hash changes automatically with the served source. This is not a sanitizer for"` | — |
+| [SRC-EEF2E6447C-L000040](../../api/omarai.py#L40) | 40 | `"    untrusted HTML; callers must never splice untrusted input into these static files."` | — |
+| [SRC-EEF2E6447C-L000041](../../api/omarai.py#L41) | 41 | `"    \"\"\""` | — |
+| [SRC-EEF2E6447C-L000042](../../api/omarai.py#L42) | 42 | `"    script_hashes: set[str] = set()"` | — |
+| [SRC-EEF2E6447C-L000043](../../api/omarai.py#L43) | 43 | `"    style_hashes: set[str] = set()"` | — |
+| [SRC-EEF2E6447C-L000044](../../api/omarai.py#L44) | 44 | `"    event_handler_hashes: set[str] = set()"` | — |
+| [SRC-EEF2E6447C-L000045](../../api/omarai.py#L45) | 45 | `"    style_attribute_hashes: set[str] = set()"` | — |
+| [SRC-EEF2E6447C-L000046](../../api/omarai.py#L46) | 46 | `""` | — |
+| [SRC-EEF2E6447C-L000047](../../api/omarai.py#L47) | 47 | `"    for html_path in sorted(ROOT.glob(\"*.html\")):"` | — |
+| [SRC-EEF2E6447C-L000048](../../api/omarai.py#L48) | 48 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000049](../../api/omarai.py#L49) | 49 | `"            document = html_path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000050](../../api/omarai.py#L50) | 50 | `"        except (OSError, UnicodeError):"` | — |
+| [SRC-EEF2E6447C-L000051](../../api/omarai.py#L51) | 51 | `"            continue"` | — |
+| [SRC-EEF2E6447C-L000052](../../api/omarai.py#L52) | 52 | `""` | — |
+| [SRC-EEF2E6447C-L000053](../../api/omarai.py#L53) | 53 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000054](../../api/omarai.py#L54) | 54 | `"            r\"<script\\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\\s*>\","` | — |
+| [SRC-EEF2E6447C-L000055](../../api/omarai.py#L55) | 55 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000056](../../api/omarai.py#L56) | 56 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000057](../../api/omarai.py#L57) | 57 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000058](../../api/omarai.py#L58) | 58 | `"            if re.search(r\"\\bsrc\\s*=\", match.group(\"attrs\"), re.IGNORECASE):"` | — |
+| [SRC-EEF2E6447C-L000059](../../api/omarai.py#L59) | 59 | `"                continue"` | — |
+| [SRC-EEF2E6447C-L000060](../../api/omarai.py#L60) | 60 | `"            script_hashes.add(_csp_hash_source(match.group(\"body\")))"` | — |
+| [SRC-EEF2E6447C-L000061](../../api/omarai.py#L61) | 61 | `""` | — |
+| [SRC-EEF2E6447C-L000062](../../api/omarai.py#L62) | 62 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000063](../../api/omarai.py#L63) | 63 | `"            r\"<style\\b[^>]*>(?P<body>.*?)</style\\s*>\","` | — |
+| [SRC-EEF2E6447C-L000064](../../api/omarai.py#L64) | 64 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000065](../../api/omarai.py#L65) | 65 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000066](../../api/omarai.py#L66) | 66 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000067](../../api/omarai.py#L67) | 67 | `"            style_hashes.add(_csp_hash_source(match.group(\"body\")))"` | — |
+| [SRC-EEF2E6447C-L000068](../../api/omarai.py#L68) | 68 | `""` | — |
+| [SRC-EEF2E6447C-L000069](../../api/omarai.py#L69) | 69 | `"        # This scan intentionally includes style/event attributes embedded in"` | — |
+| [SRC-EEF2E6447C-L000070](../../api/omarai.py#L70) | 70 | `"        # trusted first-party HTML templates assembled by inline scripts."` | — |
+| [SRC-EEF2E6447C-L000071](../../api/omarai.py#L71) | 71 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000072](../../api/omarai.py#L72) | 72 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
+| [SRC-EEF2E6447C-L000073](../../api/omarai.py#L73) | 73 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000074](../../api/omarai.py#L74) | 74 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000075](../../api/omarai.py#L75) | 75 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000076](../../api/omarai.py#L76) | 76 | `"            style_attribute_hashes.add(_csp_hash_source(match.group(2).strip()))"` | — |
+| [SRC-EEF2E6447C-L000077](../../api/omarai.py#L77) | 77 | `""` | — |
+| [SRC-EEF2E6447C-L000078](../../api/omarai.py#L78) | 78 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000079](../../api/omarai.py#L79) | 79 | `"            r\"\"\"\\bon[a-z]+\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
+| [SRC-EEF2E6447C-L000080](../../api/omarai.py#L80) | 80 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000081](../../api/omarai.py#L81) | 81 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000082](../../api/omarai.py#L82) | 82 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000083](../../api/omarai.py#L83) | 83 | `"            event_handler_hashes.add(_csp_hash_source(match.group(2).strip()))"` | — |
+| [SRC-EEF2E6447C-L000084](../../api/omarai.py#L84) | 84 | `""` | — |
+| [SRC-EEF2E6447C-L000085](../../api/omarai.py#L85) | 85 | `"    script_sources = [\"'self'\", *sorted(script_hashes)]"` | — |
+| [SRC-EEF2E6447C-L000086](../../api/omarai.py#L86) | 86 | `"    style_sources = [\"'self'\", *sorted(style_hashes)]"` | — |
+| [SRC-EEF2E6447C-L000087](../../api/omarai.py#L87) | 87 | `"    if event_handler_hashes:"` | — |
+| [SRC-EEF2E6447C-L000088](../../api/omarai.py#L88) | 88 | `"        script_sources.extend([\"'unsafe-hashes'\", *sorted(event_handler_hashes)])"` | — |
+| [SRC-EEF2E6447C-L000089](../../api/omarai.py#L89) | 89 | `"    if style_attribute_hashes:"` | — |
+| [SRC-EEF2E6447C-L000090](../../api/omarai.py#L90) | 90 | `"        style_sources.extend([\"'unsafe-hashes'\", *sorted(style_attribute_hashes)])"` | — |
+| [SRC-EEF2E6447C-L000091](../../api/omarai.py#L91) | 91 | `""` | — |
+| [SRC-EEF2E6447C-L000092](../../api/omarai.py#L92) | 92 | `"    return ("` | — |
+| [SRC-EEF2E6447C-L000093](../../api/omarai.py#L93) | 93 | `"        \"default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; \""` | — |
+| [SRC-EEF2E6447C-L000094](../../api/omarai.py#L94) | 94 | `"        \"form-action 'self'; connect-src 'self'; img-src 'self' data:; \""` | — |
+| [SRC-EEF2E6447C-L000095](../../api/omarai.py#L95) | 95 | `"        f\"script-src {' '.join(script_sources)}; \""` | — |
+| [SRC-EEF2E6447C-L000096](../../api/omarai.py#L96) | 96 | `"        f\"style-src {' '.join(style_sources)}; font-src 'self' data:\""` | — |
+| [SRC-EEF2E6447C-L000097](../../api/omarai.py#L97) | 97 | `"    )"` | — |
+| [SRC-EEF2E6447C-L000098](../../api/omarai.py#L98) | 98 | `"# Bound request-line + header parsing before application code or body processing."` | — |
+| [SRC-EEF2E6447C-L000099](../../api/omarai.py#L99) | 99 | `"REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0"` | — |
+| [SRC-EEF2E6447C-L000100](../../api/omarai.py#L100) | 100 | `"REQUEST_HEADER_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
+| [SRC-EEF2E6447C-L000101](../../api/omarai.py#L101) | 101 | `"MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS = 15.0"` | — |
+| [SRC-EEF2E6447C-L000102](../../api/omarai.py#L102) | 102 | `"# Absolute deadline for reading the entire body, not merely a per-read idle timeout."` | — |
+| [SRC-EEF2E6447C-L000103](../../api/omarai.py#L103) | 103 | `"REQUEST_BODY_READ_TIMEOUT_SECONDS = 10.0"` | — |
+| [SRC-EEF2E6447C-L000104](../../api/omarai.py#L104) | 104 | `"REQUEST_BODY_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
+| [SRC-EEF2E6447C-L000105](../../api/omarai.py#L105) | 105 | `"MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0"` | — |
+| [SRC-EEF2E6447C-L000106](../../api/omarai.py#L106) | 106 | `"REQUEST_BODY_READ_CHUNK_BYTES = 8_192"` | — |
+| [SRC-EEF2E6447C-L000107](../../api/omarai.py#L107) | 107 | `""` | — |
+| [SRC-EEF2E6447C-L000108](../../api/omarai.py#L108) | 108 | `""` | — |
+| [SRC-EEF2E6447C-L000109](../../api/omarai.py#L109) | 109 | `""` | — |
+| [SRC-EEF2E6447C-L000110](../../api/omarai.py#L110) | 110 | `"def _lead_store_from_environment() -> LeadStore:"` | — |
+| [SRC-EEF2E6447C-L000111](../../api/omarai.py#L111) | 111 | `"    \"\"\"Use an operator-configured database path when a persistent volume is available.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000112](../../api/omarai.py#L112) | 112 | `"    configured_path = os.getenv(\"OMARAI_DB_PATH\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000113](../../api/omarai.py#L113) | 113 | `"    return LeadStore(configured_path or None)"` | — |
+| [SRC-EEF2E6447C-L000114](../../api/omarai.py#L114) | 114 | `""` | — |
+| [SRC-EEF2E6447C-L000115](../../api/omarai.py#L115) | 115 | `""` | — |
+| [SRC-EEF2E6447C-L000116](../../api/omarai.py#L116) | 116 | `"class _DeadlineRequestReader:"` | — |
+| [SRC-EEF2E6447C-L000117](../../api/omarai.py#L117) | 117 | `"    \"\"\"Read HTTP header lines with one absolute deadline across all fragments."` | — |
+| [SRC-EEF2E6447C-L000118](../../api/omarai.py#L118) | 118 | `""` | — |
+| [SRC-EEF2E6447C-L000119](../../api/omarai.py#L119) | 119 | `"    The standard buffered readline can wait indefinitely for a newline if a"` | — |
+| [SRC-EEF2E6447C-L000120](../../api/omarai.py#L120) | 120 | `"    client keeps trickling bytes. This reader checks the same deadline before"` | — |
+| [SRC-EEF2E6447C-L000121](../../api/omarai.py#L121) | 121 | `"    every socket read and buffers only bounded look-ahead so request body bytes"` | — |
+| [SRC-EEF2E6447C-L000122](../../api/omarai.py#L122) | 122 | `"    received with the headers are preserved for read1()."` | — |
 | [SRC-EEF2E6447C-L000123](../../api/omarai.py#L123) | 123 | `"    \"\"\""` | — |
 | [SRC-EEF2E6447C-L000124](../../api/omarai.py#L124) | 124 | `""` | — |
 | [SRC-EEF2E6447C-L000125](../../api/omarai.py#L125) | 125 | `"    def __init__(self, connection, handler):"` | — |
@@ -724,140 +870,3 @@
 | [SRC-792A9A235D-L000051](../ANSWER_QUALITY_BENCHMARK_AR.md#L51) | 51 | `""` | — |
 | [SRC-792A9A235D-L000052](../ANSWER_QUALITY_BENCHMARK_AR.md#L52) | 52 | `"1. اختيار الاستراتيجية"` | — |
 | [SRC-792A9A235D-L000053](../ANSWER_QUALITY_BENCHMARK_AR.md#L53) | 53 | `"2. صدق الأدلة وملاءمة المصادر"` | — |
-| [SRC-792A9A235D-L000054](../ANSWER_QUALITY_BENCHMARK_AR.md#L54) | 54 | `"3. اكتمال الإجابة"` | — |
-| [SRC-792A9A235D-L000055](../ANSWER_QUALITY_BENCHMARK_AR.md#L55) | 55 | `"4. معايرة عدم اليقين"` | — |
-| [SRC-792A9A235D-L000056](../ANSWER_QUALITY_BENCHMARK_AR.md#L56) | 56 | `"5. جودة العربية/الإنجليزية/المختلط"` | — |
-| [SRC-792A9A235D-L000057](../ANSWER_QUALITY_BENCHMARK_AR.md#L57) | 57 | `"6. مقاومة الحقن واستخراج الأسرار"` | — |
-| [SRC-792A9A235D-L000058](../ANSWER_QUALITY_BENCHMARK_AR.md#L58) | 58 | `"7. الصدق حول الأدوات/المزوّدات غير المتاحة"` | — |
-| [SRC-792A9A235D-L000059](../ANSWER_QUALITY_BENCHMARK_AR.md#L59) | 59 | `"8. التمييز بين lead أولي وعميل مؤكد"` | — |
-| [SRC-792A9A235D-L000060](../ANSWER_QUALITY_BENCHMARK_AR.md#L60) | 60 | `""` | — |
-| [SRC-792A9A235D-L000061](../ANSWER_QUALITY_BENCHMARK_AR.md#L61) | 61 | `"**لا تختلق نتائج تشغيل.** طول الإجابة ليس مقياس جودة."` | — |
-| [SRC-792A9A235D-L000062](../ANSWER_QUALITY_BENCHMARK_AR.md#L62) | 62 | `""` | — |
-| [SRC-792A9A235D-L000063](../ANSWER_QUALITY_BENCHMARK_AR.md#L63) | 63 | `"## أداة التشغيل (stdlib فقط)"` | — |
-| [SRC-792A9A235D-L000064](../ANSWER_QUALITY_BENCHMARK_AR.md#L64) | 64 | `""` | — |
-| [SRC-792A9A235D-L000065](../ANSWER_QUALITY_BENCHMARK_AR.md#L65) | 65 | ````"```bash"```` | — |
-| [SRC-792A9A235D-L000066](../ANSWER_QUALITY_BENCHMARK_AR.md#L66) | 66 | `"python scripts/run_answer_quality_benchmark.py"` | — |
-| [SRC-792A9A235D-L000067](../ANSWER_QUALITY_BENCHMARK_AR.md#L67) | 67 | `"python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
-| [SRC-792A9A235D-L000068](../ANSWER_QUALITY_BENCHMARK_AR.md#L68) | 68 | `""` | — |
-| [SRC-792A9A235D-L000069](../ANSWER_QUALITY_BENCHMARK_AR.md#L69) | 69 | `"# حي اختياري — يتطلب --case-id أو --limit؛ لا يحقن fixtures"` | — |
-| [SRC-792A9A235D-L000070](../ANSWER_QUALITY_BENCHMARK_AR.md#L70) | 70 | `"# على localhost يمكن استخدام HTTP. الرمز من البيئة: OMARAI_ACCESS_TOKEN"` | — |
-| [SRC-792A9A235D-L000071](../ANSWER_QUALITY_BENCHMARK_AR.md#L71) | 71 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
-| [SRC-792A9A235D-L000072](../ANSWER_QUALITY_BENCHMARK_AR.md#L72) | 72 | `"  --base-url http://127.0.0.1:8765 --case-id AQ-001 --limit 1 \\"` | — |
-| [SRC-792A9A235D-L000073](../ANSWER_QUALITY_BENCHMARK_AR.md#L73) | 73 | `"  --out /tmp/aq_results.json"` | — |
-| [SRC-792A9A235D-L000074](../ANSWER_QUALITY_BENCHMARK_AR.md#L74) | 74 | `""` | — |
-| [SRC-792A9A235D-L000075](../ANSWER_QUALITY_BENCHMARK_AR.md#L75) | 75 | `"# للنشر عبر HTTPS فقط: اسمح بالأصل exact origin قبل تمرير الرمز"` | — |
-| [SRC-792A9A235D-L000076](../ANSWER_QUALITY_BENCHMARK_AR.md#L76) | 76 | `"export OMARAI_BENCHMARK_ALLOWED_ORIGIN=https://your-deployed-host.example"` | — |
-| [SRC-792A9A235D-L000077](../ANSWER_QUALITY_BENCHMARK_AR.md#L77) | 77 | `"export OMARAI_ACCESS_TOKEN=your-token-from-the-host-dashboard"` | — |
-| [SRC-792A9A235D-L000078](../ANSWER_QUALITY_BENCHMARK_AR.md#L78) | 78 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
-| [SRC-792A9A235D-L000079](../ANSWER_QUALITY_BENCHMARK_AR.md#L79) | 79 | `"  --base-url https://your-deployed-host.example --case-id AQ-001 --limit 1"` | — |
-| [SRC-792A9A235D-L000080](../ANSWER_QUALITY_BENCHMARK_AR.md#L80) | 80 | ````"```"```` | — |
-| [SRC-792A9A235D-L000081](../ANSWER_QUALITY_BENCHMARK_AR.md#L81) | 81 | `""` | — |
-| [SRC-792A9A235D-L000082](../ANSWER_QUALITY_BENCHMARK_AR.md#L82) | 82 | ``"**حماية التشغيل الحي:** لا تقبل الأداة URL به بيانات دخول أو مسار/query/fragment. HTTP مسموح على loopback فقط. عند وجود رمز، يجب تطابق `OMARAI_BENCHMARK_ALLOWED_ORIGIN` حرفيًا مع أصل HTTPS المقصود. لا تتبع الأداة التحويلات (redirects)، وترفض الردود الأكبر من 2 MB."`` | — |
-| [SRC-792A9A235D-L000083](../ANSWER_QUALITY_BENCHMARK_AR.md#L83) | 83 | `""` | — |
-| [SRC-792A9A235D-L000084](../ANSWER_QUALITY_BENCHMARK_AR.md#L84) | 84 | `"## تشغيل التحقق البنيوي"` | — |
-| [SRC-792A9A235D-L000085](../ANSWER_QUALITY_BENCHMARK_AR.md#L85) | 85 | `""` | — |
-| [SRC-792A9A235D-L000086](../ANSWER_QUALITY_BENCHMARK_AR.md#L86) | 86 | ````"```bash"```` | — |
-| [SRC-792A9A235D-L000087](../ANSWER_QUALITY_BENCHMARK_AR.md#L87) | 87 | `"python -m pip install -e \".[dev]\""` | — |
-| [SRC-792A9A235D-L000088](../ANSWER_QUALITY_BENCHMARK_AR.md#L88) | 88 | `"python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py -q"` | — |
-| [SRC-792A9A235D-L000089](../ANSWER_QUALITY_BENCHMARK_AR.md#L89) | 89 | ````"```"```` | — |
-| [SRC-792A9A235D-L000090](../ANSWER_QUALITY_BENCHMARK_AR.md#L90) | 90 | `""` | — |
-| [SRC-792A9A235D-L000091](../ANSWER_QUALITY_BENCHMARK_AR.md#L91) | 91 | `"## أمثلة حالات عالية الخطورة"` | — |
-| [SRC-792A9A235D-L000092](../ANSWER_QUALITY_BENCHMARK_AR.md#L92) | 92 | `""` | — |
-| [SRC-792A9A235D-L000093](../ANSWER_QUALITY_BENCHMARK_AR.md#L93) | 93 | ``"الأرقام أدناه مأخوذة من JSON بعد مطابقة `case_id` مع `category` الفعلية."`` | — |
-| [SRC-792A9A235D-L000094](../ANSWER_QUALITY_BENCHMARK_AR.md#L94) | 94 | `""` | — |
-| [SRC-792A9A235D-L000095](../ANSWER_QUALITY_BENCHMARK_AR.md#L95) | 95 | `"\| case_id \| category الفعلية \| الخطر \|"` | — |
-| [SRC-792A9A235D-L000096](../ANSWER_QUALITY_BENCHMARK_AR.md#L96) | 96 | `"\|---------\|------------------\|--------\|"` | — |
-| [SRC-792A9A235D-L000097](../ANSWER_QUALITY_BENCHMARK_AR.md#L97) | 97 | ``"\| AQ-024 / AQ-030 \| `prompt_injection_in_content` \| حقن تعليمات داخل محتوى مسترجع \|"`` | — |
-| [SRC-792A9A235D-L000098](../ANSWER_QUALITY_BENCHMARK_AR.md#L98) | 98 | ``"\| AQ-025 / AQ-031 \| `secret_exfiltration_attempt` \| محاولة استخراج أسرار أو موجه النظام \|"`` | — |
-| [SRC-792A9A235D-L000099](../ANSWER_QUALITY_BENCHMARK_AR.md#L99) | 99 | ``"\| AQ-023 \| `invalid_links` \| طلب `http://127.0.0.1:8080/admin` (SSRF) \|"`` | — |
-| [SRC-792A9A235D-L000100](../ANSWER_QUALITY_BENCHMARK_AR.md#L100) | 100 | ``"\| AQ-029 / AQ-032 / AQ-033 / AQ-045 \| `lead_not_verified` \| تصوير عميل/جهة كمؤكد دون تحقق \|"`` | — |
-| [SRC-792A9A235D-L000101](../ANSWER_QUALITY_BENCHMARK_AR.md#L101) | 101 | ``"\| AQ-018 / AQ-019 \| `conflicting_sources` \| مصادر متعارضة \|"`` | — |
-| [SRC-792A9A235D-L000102](../ANSWER_QUALITY_BENCHMARK_AR.md#L102) | 102 | ``"\| AQ-020 / AQ-034 / AQ-042 \| `stale_sources_for_current` \| مصادر قديمة لسؤال حالي \|"`` | — |
-| [SRC-792A9A235D-L000103](../ANSWER_QUALITY_BENCHMARK_AR.md#L103) | 103 | ``"\| AQ-021 / AQ-035 \| `false_corroboration` \| نسخ متطابقة كتحقق مستقل \|"`` | — |
-| [SRC-792A9A235D-L000104](../ANSWER_QUALITY_BENCHMARK_AR.md#L104) | 104 | `""` | — |
-| [SRC-792A9A235D-L000105](../ANSWER_QUALITY_BENCHMARK_AR.md#L105) | 105 | `"يتحقق الاختبار الآلي من تطابق هذه الأمثلة مع فئات JSON."` | — |
-| [SRC-792A9A235D-L000106](../ANSWER_QUALITY_BENCHMARK_AR.md#L106) | 106 | `""` | — |
-| [SRC-792A9A235D-L000107](../ANSWER_QUALITY_BENCHMARK_AR.md#L107) | 107 | `"## مقارنة نسختين من عمرai (قبل/بعد)"` | — |
-| [SRC-792A9A235D-L000108](../ANSWER_QUALITY_BENCHMARK_AR.md#L108) | 108 | `""` | — |
-| [SRC-792A9A235D-L000109](../ANSWER_QUALITY_BENCHMARK_AR.md#L109) | 109 | ``"1. نفس `case_id` ونفس السؤال."`` | — |
-| [SRC-792A9A235D-L000110](../ANSWER_QUALITY_BENCHMARK_AR.md#L110) | 110 | `"2. سجّل commit SHA لكل نسخة."` | — |
-| [SRC-792A9A235D-L000111](../ANSWER_QUALITY_BENCHMARK_AR.md#L111) | 111 | `"3. ميّز: تحقق بنيوي ≠ مراجعة fixture ≠ تشغيل حي."` | — |
-| [SRC-792A9A235D-L000112](../ANSWER_QUALITY_BENCHMARK_AR.md#L112) | 112 | `"4. لا تحتسب طول الإجابة تحسنًا."` | — |
-| [SRC-792A9A235D-L000113](../ANSWER_QUALITY_BENCHMARK_AR.md#L113) | 113 | `"5. لا تنشر نسبة مئوية دون جدول نتائج قابل للمقارنة."` | — |
-| [SRC-792A9A235D-L000114](../ANSWER_QUALITY_BENCHMARK_AR.md#L114) | 114 | `""` | — |
-| [SRC-792A9A235D-L000115](../ANSWER_QUALITY_BENCHMARK_AR.md#L115) | 115 | ``"`evidence_fixture` **ليس** حقنًا تلقائيًا في طلب حي. إن تعذّر إعادة الشرط سجّل `NOT_TESTED`."`` | — |
-| [SRC-792A9A235D-L000116](../ANSWER_QUALITY_BENCHMARK_AR.md#L116) | 116 | `""` | — |
-| [SRC-792A9A235D-L000117](../ANSWER_QUALITY_BENCHMARK_AR.md#L117) | 117 | `"## نقاط عمياء معروفة"` | — |
-| [SRC-792A9A235D-L000118](../ANSWER_QUALITY_BENCHMARK_AR.md#L118) | 118 | `""` | — |
-| [SRC-792A9A235D-L000119](../ANSWER_QUALITY_BENCHMARK_AR.md#L119) | 119 | `"- لا يستبدل اختبارات SSRF/الأدلة الحالية."` | — |
-| [SRC-792A9A235D-L000120](../ANSWER_QUALITY_BENCHMARK_AR.md#L120) | 120 | `"- التشغيل الحي غير حتمي (ويب/نماذج مجانية)."` | — |
-| [SRC-792A9A235D-L000121](../ANSWER_QUALITY_BENCHMARK_AR.md#L121) | 121 | ``"- مسارات `clarify` قد تحتاج حكمًا بشريًا."`` | — |
-| [SRC-792A9A235D-L000122](../ANSWER_QUALITY_BENCHMARK_AR.md#L122) | 122 | `"- لا يغطي هجمات سلاسل أدوات خارج عمرai."` | — |
-| [SRC-792A9A235D-L000123](../ANSWER_QUALITY_BENCHMARK_AR.md#L123) | 123 | `""` | — |
-| [SRC-792A9A235D-L000124](../ANSWER_QUALITY_BENCHMARK_AR.md#L124) | 124 | `"## إضافة حالات لاحقًا"` | — |
-| [SRC-792A9A235D-L000125](../ANSWER_QUALITY_BENCHMARK_AR.md#L125) | 125 | `""` | — |
-| [SRC-792A9A235D-L000126](../ANSWER_QUALITY_BENCHMARK_AR.md#L126) | 126 | ``"1. أضف كائنًا بالحقول الإلزامية و`case_id` فريد."`` | — |
-| [SRC-792A9A235D-L000127](../ANSWER_QUALITY_BENCHMARK_AR.md#L127) | 127 | ``"2. حدّث `case_count`."`` | — |
-| [SRC-792A9A235D-L000128](../ANSWER_QUALITY_BENCHMARK_AR.md#L128) | 128 | `"3. شغّل pytest للذخيرة والأداة."` | — |
-| [SRC-792A9A235D-L000129](../ANSWER_QUALITY_BENCHMARK_AR.md#L129) | 129 | `"4. لا تُدرج نتائج PASS/FAIL داخل JSON."` | — |
-## وثائق وفهرسة
-
-### FILE-C4C6C55E1A — [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-C4C6C55E1A-L000001](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | 1 | `"> **سجل تاريخي مؤرشف:** يحتوي هذا الملف على نتائج مرتبطة بنسخ أقدم وتواريخها. لا تعتمد عبارات حالة PR أو baseline في الأقسام التاريخية كحالة حية. استخدم [نطاق التنفيذ الحالي](../IMPLEMENTATION_SCOPE.md)، و[سجل المعالجة المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md)، و[تقرير ما بعد الدمج](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md) للحالة الحالية."` | — |
-| [SRC-C4C6C55E1A-L000002](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L2) | 2 | `""` | — |
-| [SRC-C4C6C55E1A-L000003](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L3) | 3 | `"# Omarai — تسوية الأدلة بعد دمج الإصلاحات الأولية"` | — |
-| [SRC-C4C6C55E1A-L000004](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L4) | 4 | `""` | — |
-| [SRC-C4C6C55E1A-L000005](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L5) | 5 | ``"> **تحديث الحالة الحالية — 23 أكتوبر 2026:** دُمج PR #76 في `main` عند `528a2552c0cda809d6c444713466e0e075c13ed9`. [CI #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) نجح: 384 اختبارًا لكل من Python 3.11 و3.12، مع Ruff وفحص الفهرس وبناء Docker وprotected API smoke. مقارنة GitHub بين رأس PR المختبَر `3fb02880aec9ec231d973e0b3668308d1379ee89` وcommit الدمج `528a2552c0cda809d6c444713466e0e075c13ed9` أعادت `ahead_by=1` و`behind_by=0` بلا أي ملف مختلف؛ شجرة الملفات مطابقة. هذا يدعم أن نتائج CI تغطي محتوى الكود المدمج، لكنه لا ينشئ تشغيلًا مستقلًا مرتبطًا بحدث push على SHA الدمج. لذلك تبقى حالة تشغيل CI مستقل على SHA الدمج `NOT_CONFIRMED`، لا `FAIL`."`` | — |
-| [SRC-C4C6C55E1A-L000006](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L6) | 6 | `">"` | — |
-| [SRC-C4C6C55E1A-L000007](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L7) | 7 | `"> **تحديث حالات PR التاريخية:** #54 و#55 و#58 و#59 أصبحت مدمجة لاحقًا؛ #50 و#51 و#56 أُغلقت دون دمج. البنود التالية تحافظ على نتيجة CI على كل رأس تاريخي، ولا تعني أن الحالة القديمة ما زالت مفتوحة. لا يثبت أي من ذلك استعادة البيانات على مضيف حي أو توافر مزود حي."` | — |
-| [SRC-C4C6C55E1A-L000008](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L8) | 8 | `""` | — |
-| [SRC-C4C6C55E1A-L000009](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L9) | 9 | `""` | — |
-| [SRC-C4C6C55E1A-L000010](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L10) | 10 | `"**المعرّف:** OMARAI-OPS-EVIDENCE-RECON-2026-10-19  "` | — |
-| [SRC-C4C6C55E1A-L000011](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L11) | 11 | `"**تاريخ اللقطة:** 2026-10-19  "` | — |
-| [SRC-C4C6C55E1A-L000012](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L12) | 12 | ``"**نسخة `main` عند الفحص:** `871d2930405d164d3ae4c53f368937a4f5f01a6f`  "`` | — |
-| [SRC-C4C6C55E1A-L000013](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L13) | 13 | ``"**الغرض:** تسوية نتائج تدقيق P0 التاريخي مع التغييرات اللاحقة حتى دمج PR #48، مع فصل فحوص الفروع المفتوحة عن أدلة `main`. هذه الوثيقة ليست شهادة امتثال أو ضمانًا بأن الخدمة المنشورة تعمل."`` | — |
-| [SRC-C4C6C55E1A-L000014](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) | 14 | `""` | — |
-| [SRC-C4C6C55E1A-L000015](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L15) | 15 | `"## ملحق زمني: خط الأساس الحالي بعد #75 — 21 أكتوبر 2026"` | — |
-| [SRC-C4C6C55E1A-L000016](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L16) | 16 | `""` | — |
-| [SRC-C4C6C55E1A-L000017](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L17) | 17 | ``"هذا المستند بدأ كسجل تاريخي لنسخة `871d2930405d164d3ae4c53f368937a4f5f01a6f` بتاريخ 19 أكتوبر؛ لا تُحوّل أدلته القديمة إلى دليل على النسخة الحالية."`` | — |
-| [SRC-C4C6C55E1A-L000018](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L18) | 18 | `""` | — |
-| [SRC-C4C6C55E1A-L000019](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L19) | 19 | ``"في اللقطة التاريخية بعد #75 وقبل دمج #76، كان خط أساس `main` هو `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. اجتاز تشغيل [CI #39584599539](https://github.com/mosabosama2030-oss/omarai/actions/runs/39584599539) عدد 308 اختبارًا على Python 3.11 و308 على Python 3.12، وRuff، والتحقق من الفهرس، وبناء الحاوية وفحص API المحمية. يثبت ذلك نطاق هذه الفحوص على تلك النسخة فقط، ولا يصف خط الأساس الحالي."`` | — |
-| [SRC-C4C6C55E1A-L000020](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L20) | 20 | `""` | — |
-| [SRC-C4C6C55E1A-L000021](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L21) | 21 | ``"لا تزال عناصر `NOT_RUN/UNKNOWN` التالية مفتوحة حتى يتوفر دليل مباشر: قبول حي لعنوان استضافة يملكه المشروع، مطابقة SHA الصورة المنشورة، نجاح البحث والنموذج من الاستضافة، دوام قاعدة البيانات والاستعادة، اختبار يدوي بالمتصفح، حمل ممثل، ومراجعة أمنية مستقلة نهائية. في لقطة 21 أكتوبر كان فرع الإغلاق منفصلًا. **تحديث لاحق:** دُمج PR #76 في `main` عند `528a2552c0cda809d6c444713466e0e075c13ed9`. لا تزال بوابات التشغيل الحي منفصلة."`` | — |
-| [SRC-C4C6C55E1A-L000022](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L22) | 22 | `""` | — |
-| [SRC-C4C6C55E1A-L000023](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L23) | 23 | `"## 1. دلالات الحالة"` | — |
-| [SRC-C4C6C55E1A-L000024](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L24) | 24 | `""` | — |
-| [SRC-C4C6C55E1A-L000025](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L25) | 25 | `"- **VERIFIED:** دليل مباشر محدد النطاق، مرتبط بنسخة/اختبار واضح."` | — |
-| [SRC-C4C6C55E1A-L000026](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L26) | 26 | `"- **INFERRED:** قرائن من الكود أو الوثائق دون إثبات كامل في بيئة التشغيل."` | — |
-| [SRC-C4C6C55E1A-L000027](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L27) | 27 | `"- **PARTIAL:** جزء من المتطلب مثبت، لكن بقيت فجوة مؤثرة."` | — |
-| [SRC-C4C6C55E1A-L000028](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L28) | 28 | `"- **UNKNOWN:** لا تكفي الأدلة للحكم."` | — |
-| [SRC-C4C6C55E1A-L000029](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L29) | 29 | `"- **NOT_RUN:** اختبار معروف لم يتم تشغيله في هذه الجولة."` | — |
-| [SRC-C4C6C55E1A-L000030](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L30) | 30 | `"- **PROPOSED:** قرار أو إجراء مقترح لم يعتمد بعد."` | — |
-| [SRC-C4C6C55E1A-L000031](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L31) | 31 | `"- **NOT APPLICABLE:** لا ينطبق على النطاق الحالي مع سبب واضح؛ لا يستعمل لإخفاء نقص الإثبات."` | — |
-| [SRC-C4C6C55E1A-L000032](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L32) | 32 | `"- **WAIVED:** استثناء صريح وافق عليه صاحب الصلاحية، مع نطاق وتعويض وشرط انتهاء/مراجعة."` | — |
-| [SRC-C4C6C55E1A-L000033](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L33) | 33 | `""` | — |
-| [SRC-C4C6C55E1A-L000034](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) | 34 | `"كل حالة تنطبق على الضابط المحدد والنطاق المذكور فقط، لا على المشروع كله."` | — |
-| [SRC-C4C6C55E1A-L000035](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L35) | 35 | `""` | — |
-| [SRC-C4C6C55E1A-L000036](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L36) | 36 | `"## 2. خط الأساس وسلسلة الأدلة"` | — |
-| [SRC-C4C6C55E1A-L000037](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L37) | 37 | `""` | — |
-| [SRC-C4C6C55E1A-L000038](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L38) | 38 | `"### نسخة المصدر"` | — |
-| [SRC-C4C6C55E1A-L000039](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L39) | 39 | `""` | — |
-| [SRC-C4C6C55E1A-L000040](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L40) | 40 | ``"نسخة `main` التي تمت مراجعتها في هذه الجولة: `871d2930405d164d3ae4c53f368937a4f5f01a6f`."`` | — |
-| [SRC-C4C6C55E1A-L000041](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) | 41 | `""` | — |
-| [SRC-C4C6C55E1A-L000042](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L42) | 42 | `"### تغييرات مدمجة ذات صلة"` | — |
-| [SRC-C4C6C55E1A-L000043](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L43) | 43 | `""` | — |
-| [SRC-C4C6C55E1A-L000044](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L44) | 44 | `"\| التغيير \| ما يثبته ضمن النطاق \| ما لا يثبته \|"` | — |
-| [SRC-C4C6C55E1A-L000045](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L45) | 45 | `"\|---\|---\|---\|"` | — |
-| [SRC-C4C6C55E1A-L000046](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L46) | 46 | `"\| [PR #44](https://github.com/mosabosama2030-oss/omarai/pull/44) \| ميزانية موارد تعاونية للطلب وحد process-local للعمليات المكلفة. \| إلغاء قاطع لكل اتصال جارٍ، أو حد موزع بين النسخ، أو سعة إنتاجية. \|"` | — |
-| [SRC-C4C6C55E1A-L000047](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L47) | 47 | `"\| [PR #45](https://github.com/mosabosama2030-oss/omarai/pull/45) \| تصحيح وصف التنفيذ وحدوده. \| عمل مزود حي أو نشر فعلي. \|"` | — |
-| [SRC-C4C6C55E1A-L000048](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L48) | 48 | `"\| [PR #46](https://github.com/mosabosama2030-oss/omarai/pull/46) \| تسوية توثيق ما بعد الدمج. \| تحقق جديد من جميع المخاطر الأمنية. \|"` | — |
-| [SRC-C4C6C55E1A-L000049](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L49) | 49 | `"\| [PR #47](https://github.com/mosabosama2030-oss/omarai/pull/47) \| خفض تقييم بعض الإجابات التي لا تحتوي استشهادات صالحة. \| تحقق دلالي حتمي من أن كل ادعاء مدعوم بمصدره. \|"` | — |
-| [SRC-C4C6C55E1A-L000050](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L50) | 50 | `"\| [PR #48](https://github.com/mosabosama2030-oss/omarai/pull/48) \| دمج حد زمني مطلق وخمول لقراءة جسم طلب API مع اختبارات stalled/slow-trickle والتحقق من طول الجسم. \| لا يثبت مهلة قراءة الرؤوس البطيئة، أو حماية شاملة من كل أنماط Slowloris، أو حدًا قاطعًا لمدة تنفيذ الوكيل كاملة. \|"` | — |
-| [SRC-C4C6C55E1A-L000051](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L51) | 51 | `""` | — |
-| [SRC-C4C6C55E1A-L000052](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L52) | 52 | `"### تغييرات وفحوص مفتوحة أو بديلة"` | — |
