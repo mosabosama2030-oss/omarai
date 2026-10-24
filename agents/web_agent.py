@@ -171,6 +171,9 @@ def _search_tokens(value: str) -> set[str]:
     """Tokenize Arabic/English text and expand a small bilingual vocabulary."""
     value = _normalize_search_query(value).casefold()
     value = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", value)
+    # Arabic punctuation (e.g. ؟، ؛) falls inside U+0600..U+06FF; remove
+    # punctuation before tokenizing so it cannot become part of a word token.
+    value = re.sub(r"[^\w\s]", " ", value, flags=re.UNICODE)
     tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
     result: set[str] = set()
     for raw_token in tokens:
@@ -204,6 +207,9 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     """Score source evidence against the query's subject, not its output instructions."""
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
+    # Do not let Arabic punctuation be absorbed into the last token. This matters
+    # for short topical follow-ups where answer-format terms are intentionally excluded.
+    query_text = re.sub(r"[^\w\s]", " ", query_text, flags=re.UNICODE)
     query_tokens: set[str] = set()
     for raw_token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text):
         # Normalize common Arabic conjunctions so "واذكر" is treated like "اذكر".
