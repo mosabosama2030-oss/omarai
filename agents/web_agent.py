@@ -67,8 +67,50 @@ _SEARCH_STOPWORDS = frozenset({
     "news", "official", "sources", "source", "reports", "report", "analysis",
     "site", "com", "org", "net", "www",
 })
+# Remove presentation instructions from lexical relevance scoring. These words may
+# be important to the requested answer format, but usually do not appear in source
+# titles/snippets and must not dilute the score for the actual subject.
+_RELEVANCE_INSTRUCTION_STOPWORDS = frozenset({
+    "اذكر", "المصدر", "المصادر", "مصدر", "مصادر", "رابط", "روابط",
+    "موثوق", "موثوقه", "مباشر", "مباشره", "اجب", "بالعربيه", "العربيه",
+    "بايجاز", "باختصار", "استخدم", "متعدد", "متعدده", "ميز", "اعرض",
+    "وضح", "الحقائق", "حقائق", "الاستنتاجات", "استنتاجات",
+    "المنشورات", "متاحه", "المتاحه", "عموم", "عموما", "باعتبارها",
+    "تمثل", "كافيه", "كاف", "تواريخ", "تاريخ",
+})
+
 _SEARCH_SYNONYMS = {
-    "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
+    "استراليا": {"australia"},
+    "التحديات": {"challenges", "challenge"},
+    "تحديات": {"challenges", "challenge"},
+    "السيارات": {"cars", "car", "vehicles", "vehicle"},
+    "سيارة": {"car", "vehicle"},
+    "سيارات": {"cars", "vehicles"},
+    "الكهربائية": {"electric", "electrical"},
+    "كهربائية": {"electric", "electrical"},
+    "التكلفة": {"cost", "costs"},
+    "تكلفة": {"cost", "costs"},
+    "البنية": {"infrastructure"},
+    "التحتية": {"infrastructure"},
+    "الشحن": {"charging", "charge"},
+    "شحن": {"charging", "charge"},
+    "التطورات": {"developments", "updates"},
+    "تطورات": {"developments", "updates"},
+    "احدث": {"latest", "recent"},
+    "وكلاء": {"agents"},
+    "وكيل": {"agent"},
+    "الذكاء": {"intelligence"},
+    "الاصطناعي": {"artificial"},
+    "اصطناعي": {"artificial"},
+    "اخبار": {"news"},
+    "الاخبار": {"news"},
+    "تجارب": {"experiences", "reviews"},
+    "المستخدمين": {"users"},
+    "الايجابيه": {"positive"},
+    "السلبيه": {"negative"},
+    "مراجعات": {"reviews"},
+    "الايام": {"days"},
+    "السبعه": {"seven"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
     "المصري": {"egyptian", "egypt"}, "مركزي": {"central"},
     "المركزي": {"central"}, "بنك": {"bank"}, "البنك": {"bank"},
     "قرار": {"decision"}, "قرارات": {"decision", "decisions"},
@@ -141,12 +183,14 @@ def _search_tokens(value: str) -> set[str]:
 
 
 def _relevance_ratio(query: str, evidence: str) -> float:
-    """Fraction of meaningful query concepts present in a candidate's title/snippet."""
+    """Score source evidence against the query's subject, not its output instructions."""
     query_text = _normalize_search_query(query).casefold()
-    query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
+    query_text = re.sub(r"(?i)\\bsite\\s*:\\s*\\S+", " ", query_text)
     query_tokens = {
-        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS and len(token) >= 2
+        token for token in re.findall(r"[a-z0-9]+|[\\u0600-\\u06FF]+", query_text)
+        if token not in _SEARCH_STOPWORDS
+        and token not in _RELEVANCE_INSTRUCTION_STOPWORDS
+        and len(token) >= 2
     }
     if not query_tokens:
         return 1.0
