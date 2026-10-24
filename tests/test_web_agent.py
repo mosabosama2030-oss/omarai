@@ -2817,6 +2817,13 @@ def test_search_filter_diagnostics_explain_each_rejection_reason(monkeypatch):
         }
 
 
+def test_arabic_question_mark_does_not_hide_last_relevance_token():
+    assert _relevance_ratio(
+        "ما آخر المعلومات؟",
+        "آخر المعلومات عن التقنية ومعلومات حديثة إضافية.",
+    ) >= 0.20
+
+
 def test_relevance_still_rejects_unrelated_results_for_long_arabic_queries():
     query = (
         "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة "
