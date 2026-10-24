@@ -2735,3 +2735,66 @@ def test_frontend_labels_answer_integrity_screen_as_non_semantic():
     assert "لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد" in html
     assert "potentially_unsupported_numeric_by_citation_count" in html
     assert "potential_value_discrepancy_count" in html
+
+
+def test_relevance_filter_ignores_formatting_terms_and_matches_long_arabic_prompts():
+    # Citation, date and formatting instructions must not dilute topical matching.
+    cases = [
+        (
+            "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.",
+            "Capital city of Egypt and Egypt's official capital",
+        ),
+        (
+            "حلّل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميّز بين الحقائق والاستنتاجات، واذكر روابط المصادر.",
+            "Electric vehicle adoption in Egypt faces cost challenges and limited charging infrastructure.",
+        ),
+        (
+            "ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.",
+            "Recent developments in AI agents and artificial intelligence tools announced this week.",
+        ),
+        (
+            "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضّح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.",
+            "Egyptian electric vehicle owners share experiences, reviews, opinions and charging-cost concerns.",
+        ),
+    ]
+    for question, evidence in cases:
+        assert _relevance_ratio(question, evidence) >= 0.20, question
+
+
+def test_filtered_all_diagnostic_reports_rejection_reasons(monkeypatch):
+    agent = WebAgent()
+    irrelevant = [{
+        "title": "Football match scores",
+        "url": "https://example.com/sports",
+        "snippet": "Latest league results and match highlights",
+        "provider": "bing_rss",
+    }]
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: irrelevant)
+
+    assert agent._search_web("ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر") == []
+    diagnostic = next(
+        row for row in agent._provider_diagnostics
+        if row.get("provider") == "bing_rss" and row.get("status") == "filtered_all"
+    )
+    assert "low_relevance=1" in diagnostic.get("error", "")
+    assert "unsafe_url=0" in diagnostic.get("error", "")
+
+
+def test_planner_month_cleanup_uses_word_boundaries_and_collapses_whitespace(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(
+        agent,
+        "_request_completion",
+        lambda *args, **kwargs: (
+            '{"queries":["مصر الرقمية January  website"],"social_focus":false,'
+            '"freshness":"any","depth":"standard","platforms":[]}'
+        ),
+    )
+
+    plan = agent._plan_search("ابحث عن مصر الرقمية", [])
+    assert len(plan["queries"]) == 1
+    assert "January" not in plan["queries"][0]
+    assert "  " not in plan["queries"][0]
+    assert plan["queries"][0] == "مصر الرقمية website"
