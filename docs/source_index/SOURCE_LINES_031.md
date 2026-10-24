@@ -128,7 +128,7 @@
 | [SRC-F725E90B2A-L001010](../../tests/test_web_agent.py#L1010) | 1010 | `"    diagnostics = agent._provider_diagnostics"` | — |
 | [SRC-F725E90B2A-L001011](../../tests/test_web_agent.py#L1011) | 1011 | `"    assert any("` | — |
 | [SRC-F725E90B2A-L001012](../../tests/test_web_agent.py#L1012) | 1012 | `"        row[\"provider\"] == \"duckduckgo_html\""` | — |
-| [SRC-F725E90B2A-L001013](../../tests/test_web_agent.py#L1013) | 1013 | `"        and row[\"status\"] == \"failed\""` | — |
+| [SRC-F725E90B2A-L001013](../../tests/test_web_agent.py#L1013) | 1013 | `"        and row[\"status\"] == \"http_error\""` | — |
 | [SRC-F725E90B2A-L001014](../../tests/test_web_agent.py#L1014) | 1014 | `"        and \"HTTP 503\" in row.get(\"error\", \"\")"` | — |
 | [SRC-F725E90B2A-L001015](../../tests/test_web_agent.py#L1015) | 1015 | `"        for row in diagnostics"` | — |
 | [SRC-F725E90B2A-L001016](../../tests/test_web_agent.py#L1016) | 1016 | `"    )"` | — |

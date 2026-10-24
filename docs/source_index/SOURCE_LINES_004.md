@@ -33,7 +33,7 @@
 | [SRC-1AE03B9EC3-L000210](../../agents/web_agent.py#L210) | 210 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
 | [SRC-1AE03B9EC3-L000211](../../agents/web_agent.py#L211) | 211 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000212](../../agents/web_agent.py#L212) | 212 | `"    query_tokens = {"` | — |
-| [SRC-1AE03B9EC3-L000213](../../agents/web_agent.py#L213) | 213 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000213](../../agents/web_agent.py#L213) | 213 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0621-\\u063A\\u0641-\\u064A]+\", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000214](../../agents/web_agent.py#L214) | 214 | `"        if token not in _SEARCH_STOPWORDS"` | — |
 | [SRC-1AE03B9EC3-L000215](../../agents/web_agent.py#L215) | 215 | `"        and token not in _RELEVANCE_META_STOPWORDS"` | — |
 | [SRC-1AE03B9EC3-L000216](../../agents/web_agent.py#L216) | 216 | `"        and len(token) >= 2"` | — |

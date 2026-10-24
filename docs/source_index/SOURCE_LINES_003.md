@@ -818,7 +818,7 @@
 | [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    \"\"\"Tokenize Arabic/English text and expand a small bilingual vocabulary.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `"    value = _normalize_search_query(value).casefold()"` | — |
 | [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `"    value = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", value)"` | — |
-| [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", value)"` | — |
+| [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0621-\\u063A\\u0641-\\u064A]+\", value)"` | — |
 | [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"    result: set[str] = set()"` | — |
 | [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `"    for token in tokens:"` | — |
 | [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `"        if token in _SEARCH_STOPWORDS or len(token) < 2:"` | — |
