@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000111 إلى SRC-3451CC474D-L000626
+- النطاق: SRC-1C77C97630-L000109 إلى SRC-3451CC474D-L000624
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000109](../../tests/test_answer_validation.py#L109) | 109 | `"        \"published_at\": \"\","` | — |
+| [SRC-1C77C97630-L000110](../../tests/test_answer_validation.py#L110) | 110 | `"    }"` | — |
 | [SRC-1C77C97630-L000111](../../tests/test_answer_validation.py#L111) | 111 | `"    good = audit_answer_integrity("` | — |
 | [SRC-1C77C97630-L000112](../../tests/test_answer_validation.py#L112) | 112 | `"        \"What changed?\","` | — |
 | [SRC-1C77C97630-L000113](../../tests/test_answer_validation.py#L113) | 113 | `"        \"Renewable energy storage costs decreased [source 1].\","` | — |
@@ -823,5 +825,3 @@
 | [SRC-3451CC474D-L000622](../../tests/test_api.py#L622) | 622 | `""` | — |
 | [SRC-3451CC474D-L000623](../../tests/test_api.py#L623) | 623 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
 | [SRC-3451CC474D-L000624](../../tests/test_api.py#L624) | 624 | `"        client.settimeout(1.2)"` | — |
-| [SRC-3451CC474D-L000625](../../tests/test_api.py#L625) | 625 | `"        started = time.monotonic()"` | — |
-| [SRC-3451CC474D-L000626](../../tests/test_api.py#L626) | 626 | `"        client.sendall("` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001057 إلى SRC-F725E90B2A-L001856
+- النطاق: SRC-F725E90B2A-L001055 إلى SRC-F725E90B2A-L001854
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001055](../../tests/test_web_agent.py#L1055) | 1055 | `"            },"` | — |
+| [SRC-F725E90B2A-L001056](../../tests/test_web_agent.py#L1056) | 1056 | `"        ),"` | — |
 | [SRC-F725E90B2A-L001057](../../tests/test_web_agent.py#L1057) | 1057 | `"    )"` | — |
 | [SRC-F725E90B2A-L001058](../../tests/test_web_agent.py#L1058) | 1058 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"ملخص محتوى الصفحة [المصدر 1].\")"` | — |
 | [SRC-F725E90B2A-L001059](../../tests/test_web_agent.py#L1059) | 1059 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001852](../../tests/test_web_agent.py#L1852) | 1852 | `"def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001853](../../tests/test_web_agent.py#L1853) | 1853 | `"    import json"` | — |
 | [SRC-F725E90B2A-L001854](../../tests/test_web_agent.py#L1854) | 1854 | `""` | — |
-| [SRC-F725E90B2A-L001855](../../tests/test_web_agent.py#L1855) | 1855 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001856](../../tests/test_web_agent.py#L1856) | 1856 | `"    agent.api_key = \"test-key\""` | — |

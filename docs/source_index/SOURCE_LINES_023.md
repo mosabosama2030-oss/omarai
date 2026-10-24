@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001194 إلى SRC-1C77C97630-L000110
+- النطاق: SRC-90FAA34ADE-L001192 إلى SRC-1C77C97630-L000108
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001192](../../tests/fixtures/answer_quality_cases.json#L1192) | 1192 | `"        \"Confirms today's rate based only on the cropped screenshot\","` | — |
+| [SRC-90FAA34ADE-L001193](../../tests/fixtures/answer_quality_cases.json#L1193) | 1193 | `"        \"Invents source metadata\""` | — |
 | [SRC-90FAA34ADE-L001194](../../tests/fixtures/answer_quality_cases.json#L1194) | 1194 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001195](../../tests/fixtures/answer_quality_cases.json#L1195) | 1195 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L001196](../../tests/fixtures/answer_quality_cases.json#L1196) | 1196 | `"        \"type\": \"controlled_search\","` | — |
@@ -850,5 +852,3 @@
 | [SRC-1C77C97630-L000106](../../tests/test_answer_validation.py#L106) | 106 | `"        \"snippet\": \"completely unrelated snippet about fruit\","` | — |
 | [SRC-1C77C97630-L000107](../../tests/test_answer_validation.py#L107) | 107 | `"        \"page_text\": \"Renewable energy storage costs decreased during the reporting period.\","` | — |
 | [SRC-1C77C97630-L000108](../../tests/test_answer_validation.py#L108) | 108 | `"        \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000109](../../tests/test_answer_validation.py#L109) | 109 | `"        \"published_at\": \"\","` | — |
-| [SRC-1C77C97630-L000110](../../tests/test_answer_validation.py#L110) | 110 | `"    }"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000066 إلى SRC-792A9A235D-L000124
+- النطاق: SRC-EEF2E6447C-L000064 إلى SRC-792A9A235D-L000122
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000064](../../api/omarai.py#L64) | 64 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000065](../../api/omarai.py#L65) | 65 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
 | [SRC-EEF2E6447C-L000066](../../api/omarai.py#L66) | 66 | `"        ):"` | — |
 | [SRC-EEF2E6447C-L000067](../../api/omarai.py#L67) | 67 | `"            style_hashes.add(_csp_hash_source(match.group(\"body\")))"` | — |
 | [SRC-EEF2E6447C-L000068](../../api/omarai.py#L68) | 68 | `""` | — |
@@ -850,5 +852,3 @@
 | [SRC-792A9A235D-L000120](../ANSWER_QUALITY_BENCHMARK_AR.md#L120) | 120 | `"- التشغيل الحي غير حتمي (ويب/نماذج مجانية)."` | — |
 | [SRC-792A9A235D-L000121](../ANSWER_QUALITY_BENCHMARK_AR.md#L121) | 121 | ``"- مسارات `clarify` قد تحتاج حكمًا بشريًا."`` | — |
 | [SRC-792A9A235D-L000122](../ANSWER_QUALITY_BENCHMARK_AR.md#L122) | 122 | `"- لا يغطي هجمات سلاسل أدوات خارج عمرai."` | — |
-| [SRC-792A9A235D-L000123](../ANSWER_QUALITY_BENCHMARK_AR.md#L123) | 123 | `""` | — |
-| [SRC-792A9A235D-L000124](../ANSWER_QUALITY_BENCHMARK_AR.md#L124) | 124 | `"## إضافة حالات لاحقًا"` | — |

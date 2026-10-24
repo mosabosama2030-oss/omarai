@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000257 إلى SRC-F725E90B2A-L001056
+- النطاق: SRC-F725E90B2A-L000255 إلى SRC-F725E90B2A-L001054
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000255](../../tests/test_web_agent.py#L255) | 255 | `"                        \"author\": {\"handle\": \"driver.bsky.social\", \"displayName\": \"Driver\"},"` | — |
+| [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `"                    }"` | — |
 | [SRC-F725E90B2A-L000257](../../tests/test_web_agent.py#L257) | 257 | `"                }]"` | — |
 | [SRC-F725E90B2A-L000258](../../tests/test_web_agent.py#L258) | 258 | `"            })"` | — |
 | [SRC-F725E90B2A-L000259](../../tests/test_web_agent.py#L259) | 259 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001052](../../tests/test_web_agent.py#L1052) | 1052 | `"                \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L001053](../../tests/test_web_agent.py#L1053) | 1053 | `"                \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L001054](../../tests/test_web_agent.py#L1054) | 1054 | `"                \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001055](../../tests/test_web_agent.py#L1055) | 1055 | `"            },"` | — |
-| [SRC-F725E90B2A-L001056](../../tests/test_web_agent.py#L1056) | 1056 | `"        ),"` | — |
