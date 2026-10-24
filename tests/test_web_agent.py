@@ -2759,6 +2759,62 @@ def test_relevance_ignores_answer_format_instructions_for_long_arabic_queries():
     relevant_ai_result = "Recent developments in artificial intelligence agents."
     assert _relevance_ratio(latest_query, relevant_ai_result) >= 0.20
 
+    social_query = (
+        "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء "
+        "الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضّح إذا كانت "
+        "النتائج غير كافية لتمثيل آراء المستخدمين عمومًا."
+    )
+    relevant_social_result = (
+        "Electric vehicle owners in Egypt share positive and negative reviews "
+        "and charging experiences."
+    )
+    assert _relevance_ratio(social_query, relevant_social_result) >= 0.20
+
+
+def test_search_filter_diagnostics_explain_each_rejection_reason(monkeypatch):
+    agent = WebAgent()
+    candidates = [
+        {
+            "title": "Unsafe scheme",
+            "url": "file:///etc/passwd",
+            "snippet": "Capital of Egypt",
+        },
+        {
+            "title": "Translation redirect",
+            "url": "https://translate.google.com/?q=capital",
+            "snippet": "Capital of Egypt",
+        },
+        {
+            "title": "Football scores",
+            "url": "https://example.net/sports",
+            "snippet": "Football scores and league results.",
+        },
+        {
+            "title": "Egypt capital city",
+            "url": "https://example.org/egypt-capital",
+            "snippet": "Cairo is the capital city of Egypt.",
+        },
+    ]
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: candidates)
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: candidates)
+
+    results = agent._search_web("ما عاصمة مصر؟")
+    assert len(results) == 2  # one valid result from each independent provider
+
+    for provider in ("duckduckgo_html", "bing_rss"):
+        diagnostic = next(
+            row for row in agent._provider_diagnostics if row["provider"] == provider
+        )
+        assert diagnostic["status"] == "ok"
+        assert diagnostic["result_count"] == 1
+        assert diagnostic["rejected_count"] == 3
+        assert diagnostic["rejection_counts"] == {
+            "malformed_candidate": 0,
+            "invalid_or_non_public_url": 1,
+            "blocked_source_domain": 1,
+            "below_relevance_threshold": 1,
+        }
+
 
 def test_relevance_still_rejects_unrelated_results_for_long_arabic_queries():
     query = (
