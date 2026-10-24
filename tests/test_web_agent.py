@@ -2735,3 +2735,34 @@ def test_frontend_labels_answer_integrity_screen_as_non_semantic():
     assert "لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد" in html
     assert "potentially_unsupported_numeric_by_citation_count" in html
     assert "potential_value_discrepancy_count" in html
+
+
+def test_relevance_ignores_answer_format_instructions_for_long_arabic_queries():
+    capital_query = "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+    assert _relevance_ratio(capital_query, "Cairo is the capital of Egypt.") >= 0.20
+
+    deep_query = (
+        "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة "
+        "والبنية التحتية والشحن. استخدم مصادر متعددة، وميّز بين الحقائق والاستنتاجات، "
+        "واذكر روابط المصادر."
+    )
+    relevant_ev_result = (
+        "Electric vehicle charging infrastructure and costs in Egypt: "
+        "challenges and comparison."
+    )
+    assert _relevance_ratio(deep_query, relevant_ev_result) >= 0.20
+
+    latest_query = (
+        "ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ "
+        "اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة."
+    )
+    relevant_ai_result = "Recent developments in artificial intelligence agents."
+    assert _relevance_ratio(latest_query, relevant_ai_result) >= 0.20
+
+
+def test_relevance_still_rejects_unrelated_results_for_long_arabic_queries():
+    query = (
+        "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة "
+        "والبنية التحتية والشحن. استخدم مصادر متعددة، واذكر روابط المصادر."
+    )
+    assert _relevance_ratio(query, "Football league results and match highlights.") < 0.20
