@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **79**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **979**
+- تعريفات Python المفهرسة: **980**
 - تعريفات Python موثقة بوجود Docstring: **192**
-- تعريفات Python بلا Docstring: **592**
+- تعريفات Python بلا Docstring: **593**
 - تعريفات لا ينطبق عليها Docstring: **195**
 - الرموز الساكنة الإضافية: **1555**
-- الأسطر النصية المفهرسة حرفيًا: **26188**
+- الأسطر النصية المفهرسة حرفيًا: **26244**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -104,7 +104,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 108072 | 2768 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 110379 | 2824 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 53774 | 394 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -1092,7 +1092,8 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2695) | دالة | test_web_answer_integrity_is_attached_without_live_network | لا توجد Docstring. | ناقص | 2695 | [SRC-F725E90B2A-L002695](../tests/test_web_agent.py#L2695) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2730) | دالة | test_frontend_labels_answer_integrity_screen_as_non_semantic | لا توجد Docstring. | ناقص | 2730 | [SRC-F725E90B2A-L002730](../tests/test_web_agent.py#L2730) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2740) | دالة | test_relevance_ignores_answer_format_instructions_for_long_arabic_queries | لا توجد Docstring. | ناقص | 2740 | [SRC-F725E90B2A-L002740](../tests/test_web_agent.py#L2740) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2763) | دالة | test_relevance_still_rejects_unrelated_results_for_long_arabic_queries | لا توجد Docstring. | ناقص | 2763 | [SRC-F725E90B2A-L002763](../tests/test_web_agent.py#L2763) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2774) | دالة | test_search_filter_diagnostics_explain_each_rejection_reason | لا توجد Docstring. | ناقص | 2774 | [SRC-F725E90B2A-L002774](../tests/test_web_agent.py#L2774) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2819) | دالة | test_relevance_still_rejects_unrelated_results_for_long_arabic_queries | لا توجد Docstring. | ناقص | 2819 | [SRC-F725E90B2A-L002819](../tests/test_web_agent.py#L2819) |
 
 ## الرموز الساكنة الإضافية
 
