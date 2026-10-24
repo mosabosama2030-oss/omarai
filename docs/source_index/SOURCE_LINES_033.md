@@ -3,7 +3,7 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **033**
-- سجلات الأسطر: **644**
+- سجلات الأسطر: **645**
 - النطاق: SRC-F725E90B2A-L002621 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
@@ -197,29 +197,30 @@
 | [SRC-F725E90B2A-L002799](../../tests/test_web_agent.py#L2799) | 2799 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _query: candidates)"` | — |
 | [SRC-F725E90B2A-L002800](../../tests/test_web_agent.py#L2800) | 2800 | `""` | — |
 | [SRC-F725E90B2A-L002801](../../tests/test_web_agent.py#L2801) | 2801 | `"    results = agent._search_web(\"ما عاصمة مصر؟\")"` | — |
-| [SRC-F725E90B2A-L002802](../../tests/test_web_agent.py#L2802) | 2802 | `"    assert len(results) == 2  # one valid result from each independent provider"` | — |
-| [SRC-F725E90B2A-L002803](../../tests/test_web_agent.py#L2803) | 2803 | `""` | — |
-| [SRC-F725E90B2A-L002804](../../tests/test_web_agent.py#L2804) | 2804 | `"    for provider in (\"duckduckgo_html\", \"bing_rss\"):"` | — |
-| [SRC-F725E90B2A-L002805](../../tests/test_web_agent.py#L2805) | 2805 | `"        diagnostic = next("` | — |
-| [SRC-F725E90B2A-L002806](../../tests/test_web_agent.py#L2806) | 2806 | `"            row for row in agent._provider_diagnostics if row[\"provider\"] == provider"` | — |
-| [SRC-F725E90B2A-L002807](../../tests/test_web_agent.py#L2807) | 2807 | `"        )"` | — |
-| [SRC-F725E90B2A-L002808](../../tests/test_web_agent.py#L2808) | 2808 | `"        assert diagnostic[\"status\"] == \"ok\""` | — |
-| [SRC-F725E90B2A-L002809](../../tests/test_web_agent.py#L2809) | 2809 | `"        assert diagnostic[\"result_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002810](../../tests/test_web_agent.py#L2810) | 2810 | `"        assert diagnostic[\"rejected_count\"] == 3"` | — |
-| [SRC-F725E90B2A-L002811](../../tests/test_web_agent.py#L2811) | 2811 | `"        assert diagnostic[\"rejection_counts\"] == {"` | — |
-| [SRC-F725E90B2A-L002812](../../tests/test_web_agent.py#L2812) | 2812 | `"            \"malformed_candidate\": 0,"` | — |
-| [SRC-F725E90B2A-L002813](../../tests/test_web_agent.py#L2813) | 2813 | `"            \"invalid_or_non_public_url\": 1,"` | — |
-| [SRC-F725E90B2A-L002814](../../tests/test_web_agent.py#L2814) | 2814 | `"            \"blocked_source_domain\": 1,"` | — |
-| [SRC-F725E90B2A-L002815](../../tests/test_web_agent.py#L2815) | 2815 | `"            \"below_relevance_threshold\": 1,"` | — |
-| [SRC-F725E90B2A-L002816](../../tests/test_web_agent.py#L2816) | 2816 | `"        }"` | — |
-| [SRC-F725E90B2A-L002817](../../tests/test_web_agent.py#L2817) | 2817 | `""` | — |
+| [SRC-F725E90B2A-L002802](../../tests/test_web_agent.py#L2802) | 2802 | `"    # The two providers return the same canonical URL; final results are deduplicated."` | — |
+| [SRC-F725E90B2A-L002803](../../tests/test_web_agent.py#L2803) | 2803 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L002804](../../tests/test_web_agent.py#L2804) | 2804 | `""` | — |
+| [SRC-F725E90B2A-L002805](../../tests/test_web_agent.py#L2805) | 2805 | `"    for provider in (\"duckduckgo_html\", \"bing_rss\"):"` | — |
+| [SRC-F725E90B2A-L002806](../../tests/test_web_agent.py#L2806) | 2806 | `"        diagnostic = next("` | — |
+| [SRC-F725E90B2A-L002807](../../tests/test_web_agent.py#L2807) | 2807 | `"            row for row in agent._provider_diagnostics if row[\"provider\"] == provider"` | — |
+| [SRC-F725E90B2A-L002808](../../tests/test_web_agent.py#L2808) | 2808 | `"        )"` | — |
+| [SRC-F725E90B2A-L002809](../../tests/test_web_agent.py#L2809) | 2809 | `"        assert diagnostic[\"status\"] == \"ok\""` | — |
+| [SRC-F725E90B2A-L002810](../../tests/test_web_agent.py#L2810) | 2810 | `"        assert diagnostic[\"result_count\"] == 1"` | — |
+| [SRC-F725E90B2A-L002811](../../tests/test_web_agent.py#L2811) | 2811 | `"        assert diagnostic[\"rejected_count\"] == 3"` | — |
+| [SRC-F725E90B2A-L002812](../../tests/test_web_agent.py#L2812) | 2812 | `"        assert diagnostic[\"rejection_counts\"] == {"` | — |
+| [SRC-F725E90B2A-L002813](../../tests/test_web_agent.py#L2813) | 2813 | `"            \"malformed_candidate\": 0,"` | — |
+| [SRC-F725E90B2A-L002814](../../tests/test_web_agent.py#L2814) | 2814 | `"            \"invalid_or_non_public_url\": 1,"` | — |
+| [SRC-F725E90B2A-L002815](../../tests/test_web_agent.py#L2815) | 2815 | `"            \"blocked_source_domain\": 1,"` | — |
+| [SRC-F725E90B2A-L002816](../../tests/test_web_agent.py#L2816) | 2816 | `"            \"below_relevance_threshold\": 1,"` | — |
+| [SRC-F725E90B2A-L002817](../../tests/test_web_agent.py#L2817) | 2817 | `"        }"` | — |
 | [SRC-F725E90B2A-L002818](../../tests/test_web_agent.py#L2818) | 2818 | `""` | — |
-| [SRC-F725E90B2A-L002819](../../tests/test_web_agent.py#L2819) | 2819 | `"def test_relevance_still_rejects_unrelated_results_for_long_arabic_queries():"` | — |
-| [SRC-F725E90B2A-L002820](../../tests/test_web_agent.py#L2820) | 2820 | `"    query = ("` | — |
-| [SRC-F725E90B2A-L002821](../../tests/test_web_agent.py#L2821) | 2821 | `"        \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة \""` | — |
-| [SRC-F725E90B2A-L002822](../../tests/test_web_agent.py#L2822) | 2822 | `"        \"والبنية التحتية والشحن. استخدم مصادر متعددة، واذكر روابط المصادر.\""` | — |
-| [SRC-F725E90B2A-L002823](../../tests/test_web_agent.py#L2823) | 2823 | `"    )"` | — |
-| [SRC-F725E90B2A-L002824](../../tests/test_web_agent.py#L2824) | 2824 | `"    assert _relevance_ratio(query, \"Football league results and match highlights.\") < 0.20"` | — |
+| [SRC-F725E90B2A-L002819](../../tests/test_web_agent.py#L2819) | 2819 | `""` | — |
+| [SRC-F725E90B2A-L002820](../../tests/test_web_agent.py#L2820) | 2820 | `"def test_relevance_still_rejects_unrelated_results_for_long_arabic_queries():"` | — |
+| [SRC-F725E90B2A-L002821](../../tests/test_web_agent.py#L2821) | 2821 | `"    query = ("` | — |
+| [SRC-F725E90B2A-L002822](../../tests/test_web_agent.py#L2822) | 2822 | `"        \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة \""` | — |
+| [SRC-F725E90B2A-L002823](../../tests/test_web_agent.py#L2823) | 2823 | `"        \"والبنية التحتية والشحن. استخدم مصادر متعددة، واذكر روابط المصادر.\""` | — |
+| [SRC-F725E90B2A-L002824](../../tests/test_web_agent.py#L2824) | 2824 | `"    )"` | — |
+| [SRC-F725E90B2A-L002825](../../tests/test_web_agent.py#L2825) | 2825 | `"    assert _relevance_ratio(query, \"Football league results and match highlights.\") < 0.20"` | — |
 ## واجهة الويب
 
 ### FILE-DE7EABE998 — [web/agent.html](../../web/agent.html#L1)
