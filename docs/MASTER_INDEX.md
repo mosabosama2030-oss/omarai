@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **594**
 - تعريفات لا ينطبق عليها Docstring: **195**
 - الرموز الساكنة الإضافية: **1555**
-- الأسطر النصية المفهرسة حرفيًا: **26258**
+- الأسطر النصية المفهرسة حرفيًا: **26265**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -42,7 +42,7 @@
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 27751 | 660 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 260594 | 4971 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 260544 | 4971 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
@@ -104,7 +104,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 110671 | 2832 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 110963 | 2839 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 53774 | 394 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -1094,7 +1094,7 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2740) | دالة | test_relevance_ignores_answer_format_instructions_for_long_arabic_queries | لا توجد Docstring. | ناقص | 2740 | [SRC-F725E90B2A-L002740](../tests/test_web_agent.py#L2740) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2774) | دالة | test_search_filter_diagnostics_explain_each_rejection_reason | لا توجد Docstring. | ناقص | 2774 | [SRC-F725E90B2A-L002774](../tests/test_web_agent.py#L2774) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2820) | دالة | test_arabic_question_mark_does_not_hide_last_relevance_token | لا توجد Docstring. | ناقص | 2820 | [SRC-F725E90B2A-L002820](../tests/test_web_agent.py#L2820) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2827) | دالة | test_relevance_still_rejects_unrelated_results_for_long_arabic_queries | لا توجد Docstring. | ناقص | 2827 | [SRC-F725E90B2A-L002827](../tests/test_web_agent.py#L2827) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2834) | دالة | test_relevance_still_rejects_unrelated_results_for_long_arabic_queries | لا توجد Docstring. | ناقص | 2834 | [SRC-F725E90B2A-L002834](../tests/test_web_agent.py#L2834) |
 
 ## الرموز الساكنة الإضافية
 
