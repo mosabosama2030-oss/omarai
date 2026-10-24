@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000030 إلى SRC-792A9A235D-L000088
+- النطاق: SRC-EEF2E6447C-L000024 إلى SRC-792A9A235D-L000082
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000024](../../api/omarai.py#L24) | 24 | `"AGENT_DASHBOARD = ROOT / \"agent.html\""` | — |
+| [SRC-EEF2E6447C-L000025](../../api/omarai.py#L25) | 25 | `"LEADS_DASHBOARD = ROOT / \"dashboard.html\""` | — |
+| [SRC-EEF2E6447C-L000026](../../api/omarai.py#L26) | 26 | `"MAX_REQUEST_BODY_BYTES = 200_000"` | — |
+| [SRC-EEF2E6447C-L000027](../../api/omarai.py#L27) | 27 | `""` | — |
+| [SRC-EEF2E6447C-L000028](../../api/omarai.py#L28) | 28 | `""` | — |
+| [SRC-EEF2E6447C-L000029](../../api/omarai.py#L29) | 29 | `"def _csp_hash_source(value: str) -> str:"` | — |
 | [SRC-EEF2E6447C-L000030](../../api/omarai.py#L30) | 30 | `"    digest = base64.b64encode(hashlib.sha256(value.encode(\"utf-8\")).digest()).decode(\"ascii\")"` | — |
 | [SRC-EEF2E6447C-L000031](../../api/omarai.py#L31) | 31 | `"    return f\"'sha256-{digest}'\""` | — |
 | [SRC-EEF2E6447C-L000032](../../api/omarai.py#L32) | 32 | `""` | — |
@@ -846,9 +852,3 @@
 | [SRC-792A9A235D-L000080](../ANSWER_QUALITY_BENCHMARK_AR.md#L80) | 80 | ````"```"```` | — |
 | [SRC-792A9A235D-L000081](../ANSWER_QUALITY_BENCHMARK_AR.md#L81) | 81 | `""` | — |
 | [SRC-792A9A235D-L000082](../ANSWER_QUALITY_BENCHMARK_AR.md#L82) | 82 | ``"**حماية التشغيل الحي:** لا تقبل الأداة URL به بيانات دخول أو مسار/query/fragment. HTTP مسموح على loopback فقط. عند وجود رمز، يجب تطابق `OMARAI_BENCHMARK_ALLOWED_ORIGIN` حرفيًا مع أصل HTTPS المقصود. لا تتبع الأداة التحويلات (redirects)، وترفض الردود الأكبر من 2 MB."`` | — |
-| [SRC-792A9A235D-L000083](../ANSWER_QUALITY_BENCHMARK_AR.md#L83) | 83 | `""` | — |
-| [SRC-792A9A235D-L000084](../ANSWER_QUALITY_BENCHMARK_AR.md#L84) | 84 | `"## تشغيل التحقق البنيوي"` | — |
-| [SRC-792A9A235D-L000085](../ANSWER_QUALITY_BENCHMARK_AR.md#L85) | 85 | `""` | — |
-| [SRC-792A9A235D-L000086](../ANSWER_QUALITY_BENCHMARK_AR.md#L86) | 86 | ````"```bash"```` | — |
-| [SRC-792A9A235D-L000087](../ANSWER_QUALITY_BENCHMARK_AR.md#L87) | 87 | `"python -m pip install -e \".[dev]\""` | — |
-| [SRC-792A9A235D-L000088](../ANSWER_QUALITY_BENCHMARK_AR.md#L88) | 88 | `"python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py -q"` | — |

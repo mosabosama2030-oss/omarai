@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001021 إلى SRC-F725E90B2A-L001820
+- النطاق: SRC-F725E90B2A-L001015 إلى SRC-F725E90B2A-L001814
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001015](../../tests/test_web_agent.py#L1015) | 1015 | `"        for row in diagnostics"` | — |
+| [SRC-F725E90B2A-L001016](../../tests/test_web_agent.py#L1016) | 1016 | `"    )"` | — |
+| [SRC-F725E90B2A-L001017](../../tests/test_web_agent.py#L1017) | 1017 | `"    assert any("` | — |
+| [SRC-F725E90B2A-L001018](../../tests/test_web_agent.py#L1018) | 1018 | `"        row[\"provider\"] == \"bing_rss\" and row[\"status\"] == \"ok\""` | — |
+| [SRC-F725E90B2A-L001019](../../tests/test_web_agent.py#L1019) | 1019 | `"        for row in diagnostics"` | — |
+| [SRC-F725E90B2A-L001020](../../tests/test_web_agent.py#L1020) | 1020 | `"    )"` | — |
 | [SRC-F725E90B2A-L001021](../../tests/test_web_agent.py#L1021) | 1021 | `""` | — |
 | [SRC-F725E90B2A-L001022](../../tests/test_web_agent.py#L1022) | 1022 | `""` | — |
 | [SRC-F725E90B2A-L001023](../../tests/test_web_agent.py#L1023) | 1023 | `"def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001812](../../tests/test_web_agent.py#L1812) | 1812 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L001813](../../tests/test_web_agent.py#L1813) | 1813 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001814](../../tests/test_web_agent.py#L1814) | 1814 | `"    }"` | — |
-| [SRC-F725E90B2A-L001815](../../tests/test_web_agent.py#L1815) | 1815 | `""` | — |
-| [SRC-F725E90B2A-L001816](../../tests/test_web_agent.py#L1816) | 1816 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001817](../../tests/test_web_agent.py#L1817) | 1817 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001818](../../tests/test_web_agent.py#L1818) | 1818 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L001819](../../tests/test_web_agent.py#L1819) | 1819 | `"        \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001820](../../tests/test_web_agent.py#L1820) | 1820 | `"        lambda research_plan: ("` | — |
