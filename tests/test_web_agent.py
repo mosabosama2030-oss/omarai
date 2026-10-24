@@ -1010,7 +1010,7 @@ def test_search_provider_failure_isolated_and_logged(monkeypatch):
     diagnostics = agent._provider_diagnostics
     assert any(
         row["provider"] == "duckduckgo_html"
-        and row["status"] == "failed"
+        and row["status"] == "http_error"
         and "HTTP 503" in row.get("error", "")
         for row in diagnostics
     )
