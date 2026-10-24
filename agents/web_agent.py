@@ -71,12 +71,17 @@ _SEARCH_STOPWORDS = frozenset({
 # be important to the requested answer format, but usually do not appear in source
 # titles/snippets and must not dilute the score for the actual subject.
 _RELEVANCE_INSTRUCTION_STOPWORDS = frozenset({
-    "اذكر", "المصدر", "المصادر", "مصدر", "مصادر", "رابط", "روابط",
-    "موثوق", "موثوقه", "مباشر", "مباشره", "اجب", "بالعربيه", "العربيه",
-    "بايجاز", "باختصار", "استخدم", "متعدد", "متعدده", "ميز", "اعرض",
+    "اذكر", "اذكروا", "المصدر", "المصادر", "مصدر", "مصادر", "مصدرا",
+    "رابط", "روابط", "رابطا", "موثوق", "موثوقه", "موثوقا",
+    "مباشر", "مباشره", "مباشرا", "اجب", "بالعربيه", "العربيه",
+    "بايجاز", "ايجاز", "باختصار", "اختصار", "استخدم", "استخدموا",
+    "متعدد", "متعدده", "ميز", "اعرض", "اجمع", "حلل", "قارن", "تواجه",
     "وضح", "الحقائق", "حقائق", "الاستنتاجات", "استنتاجات",
-    "المنشورات", "متاحه", "المتاحه", "عموم", "عموما", "باعتبارها",
-    "تمثل", "كافيه", "كاف", "تواريخ", "تاريخ",
+    "المنشورات", "منشورات", "متاحه", "المتاحه", "حول", "عموم", "عموما",
+    "باعتبارها", "اعتبارا", "تمثل", "لتمثيل", "كافيه", "كاف", "تواريخ", "تاريخ",
+    "الاخبار", "اخبار", "احدث", "اخر", "خلال", "الايام", "ايام", "السبعه", "الماضيه",
+    "معلومات", "تعرض", "قديمه", "جديده", "النتائج", "نتائج", "غير",
+    "الايجابيه", "السلبيه", "العامه", "اذا", "متاحه", "اهم", "متعدده", "لا",
 })
 
 _SEARCH_SYNONYMS = {
@@ -110,7 +115,10 @@ _SEARCH_SYNONYMS = {
     "السلبيه": {"negative"},
     "مراجعات": {"reviews"},
     "الايام": {"days"},
-    "السبعه": {"seven"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
+    "السبعه": {"seven"},
+    "اراء": {"opinions", "reviews"}, "راي": {"opinion"},
+    "تجربه": {"experience"}, "مستخدم": {"user"},
+    "تكاليف": {"cost", "costs"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
     "المصري": {"egyptian", "egypt"}, "مركزي": {"central"},
     "المركزي": {"central"}, "بنك": {"bank"}, "البنك": {"bank"},
     "قرار": {"decision"}, "قرارات": {"decision", "decisions"},
@@ -165,7 +173,17 @@ def _search_tokens(value: str) -> set[str]:
     value = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", value)
     tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
     result: set[str] = set()
-    for token in tokens:
+    for raw_token in tokens:
+        # Remove a prefixed conjunction only when followed by the definite article
+        # or a known stop term; preserve lexical words such as "وكلاء".
+        token = raw_token[1:] if (
+            raw_token.startswith(("و", "ف"))
+            and (
+                raw_token[1:].startswith("ال")
+                or raw_token[1:] in _SEARCH_STOPWORDS
+                or raw_token[1:] in _RELEVANCE_INSTRUCTION_STOPWORDS
+            )
+        ) else raw_token
         if token in _SEARCH_STOPWORDS or len(token) < 2:
             continue
         forms = {token}
@@ -186,12 +204,23 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     """Score source evidence against the query's subject, not its output instructions."""
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
-    query_tokens = {
-        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS
-        and token not in _RELEVANCE_INSTRUCTION_STOPWORDS
-        and len(token) >= 2
-    }
+    query_tokens: set[str] = set()
+    for raw_token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text):
+        # Normalize common Arabic conjunctions so "واذكر" is treated like "اذكر".
+        token = raw_token[1:] if (
+            raw_token.startswith(("و", "ف"))
+            and (
+                raw_token[1:].startswith("ال")
+                or raw_token[1:] in _SEARCH_STOPWORDS
+                or raw_token[1:] in _RELEVANCE_INSTRUCTION_STOPWORDS
+            )
+        ) else raw_token
+        if (
+            token not in _SEARCH_STOPWORDS
+            and token not in _RELEVANCE_INSTRUCTION_STOPWORDS
+            and len(token) >= 2
+        ):
+            query_tokens.add(token)
     if not query_tokens:
         return 1.0
     expanded_evidence = _search_tokens(evidence)
@@ -496,6 +525,7 @@ class WebAgent:
     def _record_provider_diagnostic(
         self, provider: str, query: str, status: str, result_count: int = 0,
         rejected_count: int = 0, error: str | None = None,
+        rejection_counts: dict[str, int] | None = None,
     ) -> None:
         def redact(value: Any, limit: int) -> str:
             safe = _clean_text(str(value or ""), limit)
@@ -525,6 +555,11 @@ class WebAgent:
         }
         if error:
             record["error"] = redact(error, 180)
+        if rejection_counts:
+            record["rejection_counts"] = {
+                _clean_text(name, 60): max(0, int(count))
+                for name, count in rejection_counts.items()
+            }
         with self._provider_diagnostics_lock:
             self._provider_diagnostics.append(record)
             # Bound memory when the instance serves many user requests.
@@ -1316,13 +1351,25 @@ class WebAgent:
                     raise TypeError("connector returned a non-list result")
                 accepted: list[dict[str, Any]] = []
                 rejected = 0
+                rejection_counts = {
+                    "malformed_candidate": 0,
+                    "invalid_or_non_public_url": 0,
+                    "blocked_source_domain": 0,
+                    "below_relevance_threshold": 0,
+                }
                 for item in raw:
                     if not isinstance(item, dict):
                         rejected += 1
+                        rejection_counts["malformed_candidate"] += 1
                         continue
                     safe_url = _public_http_url(item.get("url", ""))
-                    if not safe_url or _blocked_source_url(safe_url):
+                    if not safe_url:
                         rejected += 1
+                        rejection_counts["invalid_or_non_public_url"] += 1
+                        continue
+                    if _blocked_source_url(safe_url):
+                        rejected += 1
+                        rejection_counts["blocked_source_domain"] += 1
                         continue
                     normalized_item = dict(item)
                     normalized_item["url"] = safe_url
@@ -1331,6 +1378,7 @@ class WebAgent:
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
                     if _relevance_ratio(search_query, evidence) < 0.20:
                         rejected += 1
+                        rejection_counts["below_relevance_threshold"] += 1
                         continue
                     accepted.append(normalized_item)
                 if accepted:
@@ -1343,7 +1391,8 @@ class WebAgent:
                     status = "no_results"
                     error = "connector returned no parseable results"
                 self._record_provider_diagnostic(
-                    name, search_query, status, len(accepted), rejected, error
+                    name, search_query, status, len(accepted), rejected, error,
+                    rejection_counts=rejection_counts,
                 )
                 return accepted
             except RequestBudgetExceeded as exc:
