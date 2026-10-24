@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000054 إلى SRC-E599346ABE-L000853
+- النطاق: SRC-E599346ABE-L000052 إلى SRC-E599346ABE-L000851
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000052](../generate_index.py#L52) | 52 | `")"` | — |
+| [SRC-E599346ABE-L000053](../generate_index.py#L53) | 53 | `"EXCLUDED_SUFFIXES = frozenset("` | — |
 | [SRC-E599346ABE-L000054](../generate_index.py#L54) | 54 | `"    {"` | — |
 | [SRC-E599346ABE-L000055](../generate_index.py#L55) | 55 | `"        \".pyc\","` | — |
 | [SRC-E599346ABE-L000056](../generate_index.py#L56) | 56 | `"        \".pyo\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-E599346ABE-L000849](../generate_index.py#L849) | 849 | `"            line,"` | — |
 | [SRC-E599346ABE-L000850](../generate_index.py#L850) | 850 | `"        )"` | — |
 | [SRC-E599346ABE-L000851](../generate_index.py#L851) | 851 | `""` | — |
-| [SRC-E599346ABE-L000852](../generate_index.py#L852) | 852 | `""` | — |
-| [SRC-E599346ABE-L000853](../generate_index.py#L853) | 853 | `"def _scan_css("` | — |
