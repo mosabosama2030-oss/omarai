@@ -2818,10 +2818,17 @@ def test_search_filter_diagnostics_explain_each_rejection_reason(monkeypatch):
 
 
 def test_arabic_question_mark_does_not_hide_last_relevance_token():
+    query = "ما آخر المعلومات؟"
     assert _relevance_ratio(
-        "ما آخر المعلومات؟",
+        query,
         "آخر المعلومات عن التقنية ومعلومات حديثة إضافية.",
     ) >= 0.20
+    # Keeping a real topic token prevents the all-stopwords path from accepting
+    # unrelated material merely because punctuation made the query unparseable.
+    assert _relevance_ratio(
+        query,
+        "Football league results and match highlights.",
+    ) < 0.20
 
 
 def test_relevance_still_rejects_unrelated_results_for_long_arabic_queries():
