@@ -2799,7 +2799,8 @@ def test_search_filter_diagnostics_explain_each_rejection_reason(monkeypatch):
     monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: candidates)
 
     results = agent._search_web("ما عاصمة مصر؟")
-    assert len(results) == 2  # one valid result from each independent provider
+    # The two providers return the same canonical URL; final results are deduplicated.
+    assert len(results) == 1
 
     for provider in ("duckduckgo_html", "bing_rss"):
         diagnostic = next(
