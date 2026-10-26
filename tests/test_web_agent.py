@@ -3094,8 +3094,9 @@ def test_server_search_sources_are_scored_against_compact_question(monkeypatch):
     monkeypatch.setattr(agent, "_generate", generate)
     monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
 
-    def capture_relevance(query, _text):
-        source_queries.append(query)
+    def capture_relevance(query, text):
+        if "تجارب السيارات الكهربائية المستعملة" in text:
+            source_queries.append(query)
         return 0.25
 
     monkeypatch.setattr("agents.web_agent._relevance_ratio", capture_relevance)
