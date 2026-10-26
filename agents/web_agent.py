@@ -2307,10 +2307,16 @@ class WebAgent:
                 f"{base_query} recent developments case studies analysis",
             ]
             existing = {item.casefold() for item in queries}
-            expansion_queries = [
-                item[:500] for item in candidates
-                if item.casefold() not in existing
-            ][:max(0, MAX_PLAN_QUERIES - len(queries))]
+            expansion_queries = []
+            seen_expansions = set(existing)
+            for candidate in candidates:
+                compacted = compact_search_query(candidate)
+                key = compacted.casefold()
+                if compacted and key not in seen_expansions:
+                    expansion_queries.append(compacted)
+                    seen_expansions.add(key)
+                if len(expansion_queries) >= max(0, MAX_PLAN_QUERIES - len(queries)):
+                    break
             if expansion_queries:
                 with ThreadPoolExecutor(
                     max_workers=min(MAX_RESEARCH_WORKERS, len(expansion_queries))
@@ -4039,6 +4045,11 @@ class WebAgent:
                     allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
+        plan["queries"] = list(dict.fromkeys(
+            compact_search_query(query)
+            for query in plan.get("queries", [])
+            if isinstance(query, str) and query.strip() and compact_search_query(query)
+        ))[:MAX_PLAN_QUERIES]
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
         report: dict[str, Any] = {}
@@ -4288,13 +4299,15 @@ class WebAgent:
                     if plan.get("freshness") == "current"
                     else "official primary source data"
                 )
-                repair_query = f"{base_query} {suffix}"[:500].strip()
+                repair_query = compact_search_query(f"{base_query} {suffix}")
                 known_queries = {
                     _normalize_search_query(item).casefold()
                     for item in original_queries
                 }
                 if _normalize_search_query(repair_query).casefold() in known_queries:
-                    repair_query = f"{base_query} independent corroborating evidence"[:500].strip()
+                    repair_query = compact_search_query(
+                        f"{base_query} independent corroborating evidence"
+                    )
                 if _normalize_search_query(repair_query).casefold() not in known_queries:
                     initial_source_count = len(sources)
                     initial_domain_count = len(independent_domains)
