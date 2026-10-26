@@ -2804,3 +2804,9 @@ def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degrada
     }
     assert statuses["duckduckgo_html"] == "http_error"
     assert statuses["bing_rss"] == "rate_limited"
+
+
+
+def test_relevance_filter_rejects_instruction_only_queries_without_topic_terms():
+    query = "اذكر مصادر موثوقة، روابط مباشرة، باختصار"
+    assert _relevance_ratio(query, "Football results and unrelated match reports") == 0.0
