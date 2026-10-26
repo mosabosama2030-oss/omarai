@@ -1358,7 +1358,7 @@ class WebAgent:
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
                 detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
                 status = "failed"
-                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b, str(exc))
+                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
                 if status_match:
                     status_code = int(status_match.group(1))
                     if status_code == 429:
