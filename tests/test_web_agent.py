@@ -3136,14 +3136,17 @@ def test_server_search_sources_use_compact_question_and_topic_plan(
 
 
 @pytest.mark.parametrize(
-    "planner_query",
+    ("mode", "planner_query"),
     [
-        "اذكر مصادر موثوقة، روابط مباشرة، باختصار",
-        "site:reddit.com",
+        ("auto", "اذكر مصادر موثوقة، روابط مباشرة، باختصار"),
+        ("auto", "site:reddit.com"),
+        ("latest", "اذكر مصادر موثوقة، روابط مباشرة، باختصار"),
+        ("deep", "site:reddit.com"),
+        ("social", "اذكر مصادر موثوقة، روابط مباشرة، باختصار"),
     ],
 )
-def test_auto_deep_does_not_create_generic_queries_without_topic(
-    monkeypatch, planner_query
+def test_modes_do_not_create_generic_queries_without_topic(
+    monkeypatch, mode, planner_query
 ):
     agent = WebAgent()
     instruction_only = "اذكر مصادر موثوقة، روابط مباشرة، باختصار"
@@ -3185,8 +3188,67 @@ def test_auto_deep_does_not_create_generic_queries_without_topic(
 
     monkeypatch.setattr(agent, "_collect_research", collect)
 
-    agent.answer(instruction_only, mode="auto")
+    agent.answer(instruction_only, mode=mode)
 
     assert observed_plans
     assert observed_plans[0]["queries"] == []
     assert observed_plans[0]["direct_urls"] == [direct_url]
+
+
+def test_auto_navigation_strips_arabic_search_verb_without_regex_regression(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "ابحث عن الموقع الرسمي لشركة النور"
+    observed_plans = []
+
+    monkeypatch.setattr(
+        "agents.web_agent.route_intent",
+        lambda *args, **kwargs: {"route": "WEB_SIMPLE", "reason": "test"},
+    )
+    monkeypatch.setattr(
+        "agents.web_agent.compact_search_query",
+        lambda value: value.strip() if isinstance(value, str) else "",
+    )
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda _question, _history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        "agents.web_agent.fallback_plan",
+        lambda *args, **kwargs: {"queries": [question]},
+    )
+
+    def collect(research_plan):
+        observed_plans.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 0,
+            "query_results": [],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "لم أعثر على مصدر.")
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+
+    agent.answer(question, mode="auto")
+
+    assert observed_plans
+    assert observed_plans[0]["queries"]
+    assert all(not query.startswith("ابحث عن") for query in observed_plans[0]["queries"])
+    assert "الموقع الرسمي لشركة النور" in observed_plans[0]["queries"][0]
