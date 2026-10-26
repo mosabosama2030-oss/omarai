@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000645 إلى SRC-D57B0BB030-L000063
+- النطاق: SRC-EEF2E6447C-L000613 إلى SRC-D57B0BB030-L000031
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,38 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000613](../../api/omarai.py#L613) | 613 | `"        self.send_header(\"Access-Control-Max-Age\", \"600\")"` | — |
+| [SRC-EEF2E6447C-L000614](../../api/omarai.py#L614) | 614 | `"        self.send_header(\"Content-Length\", \"0\")"` | — |
+| [SRC-EEF2E6447C-L000615](../../api/omarai.py#L615) | 615 | `"        self.end_headers()"` | — |
+| [SRC-EEF2E6447C-L000616](../../api/omarai.py#L616) | 616 | `""` | — |
+| [SRC-EEF2E6447C-L000617](../../api/omarai.py#L617) | 617 | `"    def log_message(self, *args):"` | — |
+| [SRC-EEF2E6447C-L000618](../../api/omarai.py#L618) | 618 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000619](../../api/omarai.py#L619) | 619 | `""` | — |
+| [SRC-EEF2E6447C-L000620](../../api/omarai.py#L620) | 620 | `""` | — |
+| [SRC-EEF2E6447C-L000621](../../api/omarai.py#L621) | 621 | `"def answer_question(question, store):"` | — |
+| [SRC-EEF2E6447C-L000622](../../api/omarai.py#L622) | 622 | `"    \"\"\"Answer common operational questions from local records using explicit rules.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000623](../../api/omarai.py#L623) | 623 | `"    normalized = normalize(question)"` | — |
+| [SRC-EEF2E6447C-L000624](../../api/omarai.py#L624) | 624 | `"    leads = store.list(limit=500)"` | — |
+| [SRC-EEF2E6447C-L000625](../../api/omarai.py#L625) | 625 | `"    active = [lead for lead in leads if lead[\"status\"] not in {\"rejected\", \"converted\"}]"` | — |
+| [SRC-EEF2E6447C-L000626](../../api/omarai.py#L626) | 626 | `"    if any(term in normalized for term in (\"افضل عميل\", \"احسن عميل\", \"افضل اشارة\", \"احسن اشارة\", \"اشارة اراجعها\", \"مين افضل\", \"مين اتابع\", \"اتابع مين\", \"اهم عميل\")):"` | — |
+| [SRC-EEF2E6447C-L000627](../../api/omarai.py#L627) | 627 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000628](../../api/omarai.py#L628) | 628 | `"            return {\"answer\": \"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.\", \"kind\": \"no_data\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000629](../../api/omarai.py#L629) | 629 | `"        lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000630](../../api/omarai.py#L630) | 630 | `"        assessment = lead[\"assessment\"]"` | — |
+| [SRC-EEF2E6447C-L000631](../../api/omarai.py#L631) | 631 | `"        answer = \"الأولوية المقترحة للمراجعة هي الإشارة \" + lead[\"id\"][:8] + \" بدرجة قواعد \" + str(assessment[\"score\"]) + \"/100. السبب: \" + assessment[\"summary\"] + \" المصدر: \" + lead[\"source_url\"] + \". هذه أولوية مراجعة وليست تأكيدًا أن صاحبه سيشتري.\""` | — |
+| [SRC-EEF2E6447C-L000632](../../api/omarai.py#L632) | 632 | `"        return {\"answer\": answer, \"kind\": \"lead_recommendation\", \"lead_id\": lead[\"id\"]}"` | — |
+| [SRC-EEF2E6447C-L000633](../../api/omarai.py#L633) | 633 | `"    if any(term in normalized for term in (\"كام عميل\", \"كم عميل\", \"عدد العملاء\", \"عدد الاشارات\", \"الاحصائيات\", \"احصائيات\")):"` | — |
+| [SRC-EEF2E6447C-L000634](../../api/omarai.py#L634) | 634 | `"        keys = (\"new\", \"qualified\", \"contacted\", \"converted\", \"needs_review\", \"rejected\")"` | — |
+| [SRC-EEF2E6447C-L000635](../../api/omarai.py#L635) | 635 | `"        by_status = {key: sum(lead[\"status\"] == key for lead in leads) for key in keys}"` | — |
+| [SRC-EEF2E6447C-L000636](../../api/omarai.py#L636) | 636 | `"        high = sum(lead[\"assessment\"][\"label\"] == \"high_intent\" for lead in leads)"` | — |
+| [SRC-EEF2E6447C-L000637](../../api/omarai.py#L637) | 637 | `"        answer = \"في السجل المحلي \" + str(len(leads)) + \" إشارة، منها \" + str(high) + \" بإشارة قوية نسبيًا وفق القواعد. الحالات: جديد \" + str(by_status[\"new\"]) + \"، مؤهل \" + str(by_status[\"qualified\"]) + \"، تم التواصل \" + str(by_status[\"contacted\"]) + \"، تم البيع \" + str(by_status[\"converted\"]) + \"، تحتاج مراجعة \" + str(by_status[\"needs_review\"]) + \"، مرفوض \" + str(by_status[\"rejected\"]) + \".\""` | — |
+| [SRC-EEF2E6447C-L000638](../../api/omarai.py#L638) | 638 | `"        return {\"answer\": answer, \"kind\": \"local_statistics\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000639](../../api/omarai.py#L639) | 639 | `"    if any(term in normalized for term in (\"ليه الدرجه\", \"سبب الدرجه\", \"طريقة التقييم\", \"بتقيم ازاي\", \"معيار التقييم\")):"` | — |
+| [SRC-EEF2E6447C-L000640](../../api/omarai.py#L640) | 640 | `"        latest = max(leads, key=lambda item: item[\"updated_at\"], default=None)"` | — |
+| [SRC-EEF2E6447C-L000641](../../api/omarai.py#L641) | 641 | `"        if latest:"` | — |
+| [SRC-EEF2E6447C-L000642](../../api/omarai.py#L642) | 642 | `"            signals = \"، \".join(signal[\"phrase\"] for signal in latest[\"assessment\"][\"matched_signals\"]) or \"لم تُطابق عبارات معروفة\""` | — |
+| [SRC-EEF2E6447C-L000643](../../api/omarai.py#L643) | 643 | `"            answer = \"الإشارة الأحدث درجتها \" + str(latest[\"assessment\"][\"score\"]) + \"/100 لأن القواعد طابقت: \" + signals + \". الدرجة ليست احتمالًا إحصائيًا ولا تثبت نية الكاتب.\""` | — |
+| [SRC-EEF2E6447C-L000644](../../api/omarai.py#L644) | 644 | `"        else:"` | — |
 | [SRC-EEF2E6447C-L000645](../../api/omarai.py#L645) | 645 | `"            answer = \"أحسب الدرجة بقواعد واضحة: تعبير الشراء، خطوة تجارية تالية، السعر أو الميزانية، وسياق المنتج والمكان. كل فئة تحتسب مرة واحدة فقط.\""` | — |
 | [SRC-EEF2E6447C-L000646](../../api/omarai.py#L646) | 646 | `"        return {\"answer\": answer, \"kind\": \"scoring_explanation\", \"lead_id\": latest[\"id\"] if latest else None}"` | — |
 | [SRC-EEF2E6447C-L000647](../../api/omarai.py#L647) | 647 | `"    if any(term in normalized for term in (\"اكتب رساله\", \"اكتب رسالة\", \"رساله تواصل\", \"رسالة تواصل\", \"ابعتله\", \"اتواصل ازاي\")):"` | — |
@@ -865,35 +897,3 @@
 | [SRC-D57B0BB030-L000029](../DEPLOY_RENDER_AR.md#L29) | 29 | `"## توليد رمز الوصول"` | — |
 | [SRC-D57B0BB030-L000030](../DEPLOY_RENDER_AR.md#L30) | 30 | `""` | — |
 | [SRC-D57B0BB030-L000031](../DEPLOY_RENDER_AR.md#L31) | 31 | `"ولّد رمزًا مستقلًا قويًا على جهازك، باستخدام Python:"` | — |
-| [SRC-D57B0BB030-L000032](../DEPLOY_RENDER_AR.md#L32) | 32 | `""` | — |
-| [SRC-D57B0BB030-L000033](../DEPLOY_RENDER_AR.md#L33) | 33 | ````"```bash"```` | — |
-| [SRC-D57B0BB030-L000034](../DEPLOY_RENDER_AR.md#L34) | 34 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
-| [SRC-D57B0BB030-L000035](../DEPLOY_RENDER_AR.md#L35) | 35 | ````"```"```` | — |
-| [SRC-D57B0BB030-L000036](../DEPLOY_RENDER_AR.md#L36) | 36 | `""` | — |
-| [SRC-D57B0BB030-L000037](../DEPLOY_RENDER_AR.md#L37) | 37 | ``"انسخ القيمة إلى حقل `OMARAI_ACCESS_TOKEN` في إعدادات Render. لا تستخدم مفتاح OpenRouter نفسه كرمز وصول للتطبيق."`` | — |
-| [SRC-D57B0BB030-L000038](../DEPLOY_RENDER_AR.md#L38) | 38 | `""` | — |
-| [SRC-D57B0BB030-L000039](../DEPLOY_RENDER_AR.md#L39) | 39 | `"## مسار قاعدة البيانات عند وجود قرص دائم"` | — |
-| [SRC-D57B0BB030-L000040](../DEPLOY_RENDER_AR.md#L40) | 40 | `""` | — |
-| [SRC-D57B0BB030-L000041](../DEPLOY_RENDER_AR.md#L41) | 41 | ``"الخطة المجانية ذات الملفات المؤقتة لا تحقق التخزين الدائم. إذا اخترت خطة/إعدادًا يدعم قرصًا دائمًا، اربطه بمسار مثل `/data` واضبط `OMARAI_DB_PATH=/data/omarai.sqlite3`. اختبر بقاء سجل بعد إعادة التشغيل وإعادة النشر، ثم اختبر النسخ الاحتياطي والاستعادة. لا تغيّر الخطة أو تضف تكلفة قبل قرار بشري واضح. متغير المسار وحده لا ينشئ قرصًا ولا يثبت الدوام."`` | — |
-| [SRC-D57B0BB030-L000042](../DEPLOY_RENDER_AR.md#L42) | 42 | `"## حدود النسخة المجانية"` | — |
-| [SRC-D57B0BB030-L000043](../DEPLOY_RENDER_AR.md#L43) | 43 | `""` | — |
-| [SRC-D57B0BB030-L000044](../DEPLOY_RENDER_AR.md#L44) | 44 | `"- قد يوقف Render خدمة الويب المجانية بعد 15 دقيقة من عدم وجود زيارات؛ أول زيارة تالية قد تحتاج نحو دقيقة لبدء الخدمة."` | — |
-| [SRC-D57B0BB030-L000045](../DEPLOY_RENDER_AR.md#L45) | 45 | `"- الملفات المحلية مؤقتة. SQLite وسجل العملاء قد تضيع بياناتهما عند إعادة التشغيل أو إعادة النشر أو إيقاف الخدمة مؤقتًا. لا تحفظ بيانات مهمة أو شخصية في لوحة العملاء المستضافة."` | — |
-| [SRC-D57B0BB030-L000046](../DEPLOY_RENDER_AR.md#L46) | 46 | `"- تمنح الخطة 750 ساعة تشغيل مجانية شهريًا لكل مساحة عمل، وتُوقف الخدمات المجانية إذا نفدت الساعات."` | — |
-| [SRC-D57B0BB030-L000047](../DEPLOY_RENDER_AR.md#L47) | 47 | `"- توجد حدود شهرية لحركة البيانات الخارجة ودقائق بناء النشر. إذا لم تُضف وسيلة دفع، قد تُعلَّق الخدمات عند تجاوز حدود الاستخدام المجاني؛ وإذا أضفت وسيلة دفع فقد تنطبق رسوم على الاستهلاك الزائد، لذا راقب Usage/Billing."` | — |
-| [SRC-D57B0BB030-L000048](../DEPLOY_RENDER_AR.md#L48) | 48 | `"- الخدمة المجانية مناسبة للتجربة والاختبار الشخصي، وليست استضافة إنتاج مضمونة. لا يوجد ضمان توافر دائم."` | — |
-| [SRC-D57B0BB030-L000049](../DEPLOY_RENDER_AR.md#L49) | 49 | ``"- تكاليف مزود النموذج وأدوات البحث منفصلة عن خطة الاستضافة. قد تكون بعض النماذج المجانية محدودة أو غير متاحة في وقت معين. لا تفعّل `OMARAI_OPENROUTER_WEB_SEARCH=1` قبل مراجعة التكلفة والموافقة عليها."`` | — |
-| [SRC-D57B0BB030-L000050](../DEPLOY_RENDER_AR.md#L50) | 50 | `"- الأسئلة ومقتطفات صفحات الويب قد تُرسل إلى مزود النموذج الخارجي. لا ترسل أسرارًا أو بيانات عملاء سرية."` | — |
-| [SRC-D57B0BB030-L000051](../DEPLOY_RENDER_AR.md#L51) | 51 | `""` | — |
-| [SRC-D57B0BB030-L000052](../DEPLOY_RENDER_AR.md#L52) | 52 | `"## اختبار التشغيل الحي"` | — |
-| [SRC-D57B0BB030-L000053](../DEPLOY_RENDER_AR.md#L53) | 53 | `""` | — |
-| [SRC-D57B0BB030-L000054](../DEPLOY_RENDER_AR.md#L54) | 54 | ``"ملف قبول التشغيل `scripts/hosted_smoke_test.py` متاح على الفرع الذي أُعدّت فيه هذه الحزمة. بعد دمجه في `main`، أضف GitHub Actions secrets باسم `OMARAI_ACCESS_TOKEN` (نفس رمز الخدمة) و`OMARAI_BASE_URL` (أصل HTTPS للخدمة فقط)، ثم شغّل workflow اليدوي `Omarai hosted acceptance smoke`. يستخدم الاختبار العنوان المحفوظ في إعدادات المستودع لتجنب إرسال رمز الوصول إلى عنوان حرّ. الاختبار ينفذ اتصالات بحث ونموذج فعلية وقد يستهلك استخدامًا من حساب المزود."`` | — |
-| [SRC-D57B0BB030-L000055](../DEPLOY_RENDER_AR.md#L55) | 55 | `""` | — |
-| [SRC-D57B0BB030-L000056](../DEPLOY_RENDER_AR.md#L56) | 56 | `"إذا لم تدمج حزمة الاختبار بعد، استخدم زر الاختبار الحي المدمج في واجهة Omarai، ثم أجرِ فحص HTTP 401 دون رمز وصول، وتجربة سؤال عربي ومراجعة المصادر."` | — |
-| [SRC-D57B0BB030-L000057](../DEPLOY_RENDER_AR.md#L57) | 57 | `""` | — |
-| [SRC-D57B0BB030-L000058](../DEPLOY_RENDER_AR.md#L58) | 58 | `"## إذا فشل النشر"` | — |
-| [SRC-D57B0BB030-L000059](../DEPLOY_RENDER_AR.md#L59) | 59 | `""` | — |
-| [SRC-D57B0BB030-L000060](../DEPLOY_RENDER_AR.md#L60) | 60 | `"- افتح Logs على Render، ولا تنشر أي قيمة سرية في Issue عام."` | — |
-| [SRC-D57B0BB030-L000061](../DEPLOY_RENDER_AR.md#L61) | 61 | ``"- تحقق أن الخادم يستمع على الواجهة العامة والمنفذ الذي توفره بيئة الاستضافة؛ يستخدم Dockerfile الحالي متغير `PORT`."`` | — |
-| [SRC-D57B0BB030-L000062](../DEPLOY_RENDER_AR.md#L62) | 62 | ``"- إذا كانت الخدمة تبدأ ثم تفشل فحص الصحة، راجع أن `/api/health` يعيد HTTP 200."`` | — |
-| [SRC-D57B0BB030-L000063](../DEPLOY_RENDER_AR.md#L63) | 63 | ``"- تحقق أن `OMARAI_PUBLIC_DEPLOYMENT=1` ورمز الوصول مضبوطين، وأن الرمز 32 حرفًا على الأقل."`` | — |

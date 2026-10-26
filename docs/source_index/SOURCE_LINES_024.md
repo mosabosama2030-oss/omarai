@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000084 إلى SRC-3451CC474D-L000368
+- النطاق: SRC-B3062EB677-L000052 إلى SRC-3451CC474D-L000336
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,38 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000052](../../tests/test_answer_quality_runner.py#L52) | 52 | `"    assert any(\"case_count\" in p for p in problems)"` | — |
+| [SRC-B3062EB677-L000053](../../tests/test_answer_quality_runner.py#L53) | 53 | `""` | — |
+| [SRC-B3062EB677-L000054](../../tests/test_answer_quality_runner.py#L54) | 54 | `""` | — |
+| [SRC-B3062EB677-L000055](../../tests/test_answer_quality_runner.py#L55) | 55 | `"def test_validate_detects_missing_required_field(tmp_path):"` | — |
+| [SRC-B3062EB677-L000056](../../tests/test_answer_quality_runner.py#L56) | 56 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000057](../../tests/test_answer_quality_runner.py#L57) | 57 | `"    data = json.loads(CORPUS.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-B3062EB677-L000058](../../tests/test_answer_quality_runner.py#L58) | 58 | `"    data[\"cases\"] = [dict(data[\"cases\"][0])]"` | — |
+| [SRC-B3062EB677-L000059](../../tests/test_answer_quality_runner.py#L59) | 59 | `"    del data[\"cases\"][0][\"question\"]"` | — |
+| [SRC-B3062EB677-L000060](../../tests/test_answer_quality_runner.py#L60) | 60 | `"    data[\"case_count\"] = 1"` | — |
+| [SRC-B3062EB677-L000061](../../tests/test_answer_quality_runner.py#L61) | 61 | `"    bad = tmp_path / \"bad2.json\""` | — |
+| [SRC-B3062EB677-L000062](../../tests/test_answer_quality_runner.py#L62) | 62 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |
+| [SRC-B3062EB677-L000063](../../tests/test_answer_quality_runner.py#L63) | 63 | `"    problems = mod.validate_corpus(mod.load_corpus(bad))"` | — |
+| [SRC-B3062EB677-L000064](../../tests/test_answer_quality_runner.py#L64) | 64 | `"    assert problems"` | — |
+| [SRC-B3062EB677-L000065](../../tests/test_answer_quality_runner.py#L65) | 65 | `""` | — |
+| [SRC-B3062EB677-L000066](../../tests/test_answer_quality_runner.py#L66) | 66 | `""` | — |
+| [SRC-B3062EB677-L000067](../../tests/test_answer_quality_runner.py#L67) | 67 | `"def test_live_refuses_unbounded_without_limit_or_case_id(capsys):"` | — |
+| [SRC-B3062EB677-L000068](../../tests/test_answer_quality_runner.py#L68) | 68 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000069](../../tests/test_answer_quality_runner.py#L69) | 69 | `"    rc = mod.main([\"--mode\", \"live\", \"--corpus\", str(CORPUS)])"` | — |
+| [SRC-B3062EB677-L000070](../../tests/test_answer_quality_runner.py#L70) | 70 | `"    assert rc == 2"` | — |
+| [SRC-B3062EB677-L000071](../../tests/test_answer_quality_runner.py#L71) | 71 | `"    err = capsys.readouterr().err"` | — |
+| [SRC-B3062EB677-L000072](../../tests/test_answer_quality_runner.py#L72) | 72 | `"    assert \"Refusing unbounded\" in err"` | — |
+| [SRC-B3062EB677-L000073](../../tests/test_answer_quality_runner.py#L73) | 73 | `""` | — |
+| [SRC-B3062EB677-L000074](../../tests/test_answer_quality_runner.py#L74) | 74 | `""` | — |
+| [SRC-B3062EB677-L000075](../../tests/test_answer_quality_runner.py#L75) | 75 | `"def test_live_unknown_case_id(capsys):"` | — |
+| [SRC-B3062EB677-L000076](../../tests/test_answer_quality_runner.py#L76) | 76 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000077](../../tests/test_answer_quality_runner.py#L77) | 77 | `"    rc = mod.main("` | — |
+| [SRC-B3062EB677-L000078](../../tests/test_answer_quality_runner.py#L78) | 78 | `"        ["` | — |
+| [SRC-B3062EB677-L000079](../../tests/test_answer_quality_runner.py#L79) | 79 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000080](../../tests/test_answer_quality_runner.py#L80) | 80 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000081](../../tests/test_answer_quality_runner.py#L81) | 81 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
+| [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
 | [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
 | [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
 | [SRC-B3062EB677-L000086](../../tests/test_answer_quality_runner.py#L86) | 86 | `"            \"http://127.0.0.1:9\","` | — |
@@ -802,35 +834,3 @@
 | [SRC-3451CC474D-L000334](../../tests/test_api.py#L334) | 334 | `"        Handler._request_times.clear()"` | — |
 | [SRC-3451CC474D-L000335](../../tests/test_api.py#L335) | 335 | `"    request = Request("` | — |
 | [SRC-3451CC474D-L000336](../../tests/test_api.py#L336) | 336 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000337](../../tests/test_api.py#L337) | 337 | `"        data=b\"invalid-json-body\","` | — |
-| [SRC-3451CC474D-L000338](../../tests/test_api.py#L338) | 338 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000339](../../tests/test_api.py#L339) | 339 | `"        headers={\"Content-Type\": \"application/json\"},"` | — |
-| [SRC-3451CC474D-L000340](../../tests/test_api.py#L340) | 340 | `"    )"` | — |
-| [SRC-3451CC474D-L000341](../../tests/test_api.py#L341) | 341 | `"    try:"` | — |
-| [SRC-3451CC474D-L000342](../../tests/test_api.py#L342) | 342 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000343](../../tests/test_api.py#L343) | 343 | `"            first_status = response.status"` | — |
-| [SRC-3451CC474D-L000344](../../tests/test_api.py#L344) | 344 | `"    except HTTPError as error:"` | — |
-| [SRC-3451CC474D-L000345](../../tests/test_api.py#L345) | 345 | `"        first_status = error.code"` | — |
-| [SRC-3451CC474D-L000346](../../tests/test_api.py#L346) | 346 | `"    assert first_status == 401"` | — |
-| [SRC-3451CC474D-L000347](../../tests/test_api.py#L347) | 347 | `""` | — |
-| [SRC-3451CC474D-L000348](../../tests/test_api.py#L348) | 348 | `"    try:"` | — |
-| [SRC-3451CC474D-L000349](../../tests/test_api.py#L349) | 349 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000350](../../tests/test_api.py#L350) | 350 | `"            second_status = response.status"` | — |
-| [SRC-3451CC474D-L000351](../../tests/test_api.py#L351) | 351 | `"    except HTTPError as error:"` | — |
-| [SRC-3451CC474D-L000352](../../tests/test_api.py#L352) | 352 | `"        second_status = error.code"` | — |
-| [SRC-3451CC474D-L000353](../../tests/test_api.py#L353) | 353 | `"    assert second_status == 429"` | — |
-| [SRC-3451CC474D-L000354](../../tests/test_api.py#L354) | 354 | `""` | — |
-| [SRC-3451CC474D-L000355](../../tests/test_api.py#L355) | 355 | `""` | — |
-| [SRC-3451CC474D-L000356](../../tests/test_api.py#L356) | 356 | `"def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000357](../../tests/test_api.py#L357) | 357 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000358](../../tests/test_api.py#L358) | 358 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"x\" * 48)"` | — |
-| [SRC-3451CC474D-L000359](../../tests/test_api.py#L359) | 359 | `""` | — |
-| [SRC-3451CC474D-L000360](../../tests/test_api.py#L360) | 360 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000361](../../tests/test_api.py#L361) | 361 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"test\"}"` | — |
-| [SRC-3451CC474D-L000362](../../tests/test_api.py#L362) | 362 | `"    )"` | — |
-| [SRC-3451CC474D-L000363](../../tests/test_api.py#L363) | 363 | `"    assert status == 401"` | — |
-| [SRC-3451CC474D-L000364](../../tests/test_api.py#L364) | 364 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000365](../../tests/test_api.py#L365) | 365 | `""` | — |
-| [SRC-3451CC474D-L000366](../../tests/test_api.py#L366) | 366 | `"    status, error = request_json(local_api, \"/api/leads\")"` | — |
-| [SRC-3451CC474D-L000367](../../tests/test_api.py#L367) | 367 | `"    assert status == 401"` | — |
-| [SRC-3451CC474D-L000368](../../tests/test_api.py#L368) | 368 | `""` | — |

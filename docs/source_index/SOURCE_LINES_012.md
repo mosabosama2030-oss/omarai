@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D57B0BB030-L000064 إلى SRC-E599346ABE-L000703
+- النطاق: SRC-D57B0BB030-L000032 إلى SRC-E599346ABE-L000671
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,38 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D57B0BB030-L000032](../DEPLOY_RENDER_AR.md#L32) | 32 | `""` | — |
+| [SRC-D57B0BB030-L000033](../DEPLOY_RENDER_AR.md#L33) | 33 | ````"```bash"```` | — |
+| [SRC-D57B0BB030-L000034](../DEPLOY_RENDER_AR.md#L34) | 34 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
+| [SRC-D57B0BB030-L000035](../DEPLOY_RENDER_AR.md#L35) | 35 | ````"```"```` | — |
+| [SRC-D57B0BB030-L000036](../DEPLOY_RENDER_AR.md#L36) | 36 | `""` | — |
+| [SRC-D57B0BB030-L000037](../DEPLOY_RENDER_AR.md#L37) | 37 | ``"انسخ القيمة إلى حقل `OMARAI_ACCESS_TOKEN` في إعدادات Render. لا تستخدم مفتاح OpenRouter نفسه كرمز وصول للتطبيق."`` | — |
+| [SRC-D57B0BB030-L000038](../DEPLOY_RENDER_AR.md#L38) | 38 | `""` | — |
+| [SRC-D57B0BB030-L000039](../DEPLOY_RENDER_AR.md#L39) | 39 | `"## مسار قاعدة البيانات عند وجود قرص دائم"` | — |
+| [SRC-D57B0BB030-L000040](../DEPLOY_RENDER_AR.md#L40) | 40 | `""` | — |
+| [SRC-D57B0BB030-L000041](../DEPLOY_RENDER_AR.md#L41) | 41 | ``"الخطة المجانية ذات الملفات المؤقتة لا تحقق التخزين الدائم. إذا اخترت خطة/إعدادًا يدعم قرصًا دائمًا، اربطه بمسار مثل `/data` واضبط `OMARAI_DB_PATH=/data/omarai.sqlite3`. اختبر بقاء سجل بعد إعادة التشغيل وإعادة النشر، ثم اختبر النسخ الاحتياطي والاستعادة. لا تغيّر الخطة أو تضف تكلفة قبل قرار بشري واضح. متغير المسار وحده لا ينشئ قرصًا ولا يثبت الدوام."`` | — |
+| [SRC-D57B0BB030-L000042](../DEPLOY_RENDER_AR.md#L42) | 42 | `"## حدود النسخة المجانية"` | — |
+| [SRC-D57B0BB030-L000043](../DEPLOY_RENDER_AR.md#L43) | 43 | `""` | — |
+| [SRC-D57B0BB030-L000044](../DEPLOY_RENDER_AR.md#L44) | 44 | `"- قد يوقف Render خدمة الويب المجانية بعد 15 دقيقة من عدم وجود زيارات؛ أول زيارة تالية قد تحتاج نحو دقيقة لبدء الخدمة."` | — |
+| [SRC-D57B0BB030-L000045](../DEPLOY_RENDER_AR.md#L45) | 45 | `"- الملفات المحلية مؤقتة. SQLite وسجل العملاء قد تضيع بياناتهما عند إعادة التشغيل أو إعادة النشر أو إيقاف الخدمة مؤقتًا. لا تحفظ بيانات مهمة أو شخصية في لوحة العملاء المستضافة."` | — |
+| [SRC-D57B0BB030-L000046](../DEPLOY_RENDER_AR.md#L46) | 46 | `"- تمنح الخطة 750 ساعة تشغيل مجانية شهريًا لكل مساحة عمل، وتُوقف الخدمات المجانية إذا نفدت الساعات."` | — |
+| [SRC-D57B0BB030-L000047](../DEPLOY_RENDER_AR.md#L47) | 47 | `"- توجد حدود شهرية لحركة البيانات الخارجة ودقائق بناء النشر. إذا لم تُضف وسيلة دفع، قد تُعلَّق الخدمات عند تجاوز حدود الاستخدام المجاني؛ وإذا أضفت وسيلة دفع فقد تنطبق رسوم على الاستهلاك الزائد، لذا راقب Usage/Billing."` | — |
+| [SRC-D57B0BB030-L000048](../DEPLOY_RENDER_AR.md#L48) | 48 | `"- الخدمة المجانية مناسبة للتجربة والاختبار الشخصي، وليست استضافة إنتاج مضمونة. لا يوجد ضمان توافر دائم."` | — |
+| [SRC-D57B0BB030-L000049](../DEPLOY_RENDER_AR.md#L49) | 49 | ``"- تكاليف مزود النموذج وأدوات البحث منفصلة عن خطة الاستضافة. قد تكون بعض النماذج المجانية محدودة أو غير متاحة في وقت معين. لا تفعّل `OMARAI_OPENROUTER_WEB_SEARCH=1` قبل مراجعة التكلفة والموافقة عليها."`` | — |
+| [SRC-D57B0BB030-L000050](../DEPLOY_RENDER_AR.md#L50) | 50 | `"- الأسئلة ومقتطفات صفحات الويب قد تُرسل إلى مزود النموذج الخارجي. لا ترسل أسرارًا أو بيانات عملاء سرية."` | — |
+| [SRC-D57B0BB030-L000051](../DEPLOY_RENDER_AR.md#L51) | 51 | `""` | — |
+| [SRC-D57B0BB030-L000052](../DEPLOY_RENDER_AR.md#L52) | 52 | `"## اختبار التشغيل الحي"` | — |
+| [SRC-D57B0BB030-L000053](../DEPLOY_RENDER_AR.md#L53) | 53 | `""` | — |
+| [SRC-D57B0BB030-L000054](../DEPLOY_RENDER_AR.md#L54) | 54 | ``"ملف قبول التشغيل `scripts/hosted_smoke_test.py` متاح على الفرع الذي أُعدّت فيه هذه الحزمة. بعد دمجه في `main`، أضف GitHub Actions secrets باسم `OMARAI_ACCESS_TOKEN` (نفس رمز الخدمة) و`OMARAI_BASE_URL` (أصل HTTPS للخدمة فقط)، ثم شغّل workflow اليدوي `Omarai hosted acceptance smoke`. يستخدم الاختبار العنوان المحفوظ في إعدادات المستودع لتجنب إرسال رمز الوصول إلى عنوان حرّ. الاختبار ينفذ اتصالات بحث ونموذج فعلية وقد يستهلك استخدامًا من حساب المزود."`` | — |
+| [SRC-D57B0BB030-L000055](../DEPLOY_RENDER_AR.md#L55) | 55 | `""` | — |
+| [SRC-D57B0BB030-L000056](../DEPLOY_RENDER_AR.md#L56) | 56 | `"إذا لم تدمج حزمة الاختبار بعد، استخدم زر الاختبار الحي المدمج في واجهة Omarai، ثم أجرِ فحص HTTP 401 دون رمز وصول، وتجربة سؤال عربي ومراجعة المصادر."` | — |
+| [SRC-D57B0BB030-L000057](../DEPLOY_RENDER_AR.md#L57) | 57 | `""` | — |
+| [SRC-D57B0BB030-L000058](../DEPLOY_RENDER_AR.md#L58) | 58 | `"## إذا فشل النشر"` | — |
+| [SRC-D57B0BB030-L000059](../DEPLOY_RENDER_AR.md#L59) | 59 | `""` | — |
+| [SRC-D57B0BB030-L000060](../DEPLOY_RENDER_AR.md#L60) | 60 | `"- افتح Logs على Render، ولا تنشر أي قيمة سرية في Issue عام."` | — |
+| [SRC-D57B0BB030-L000061](../DEPLOY_RENDER_AR.md#L61) | 61 | ``"- تحقق أن الخادم يستمع على الواجهة العامة والمنفذ الذي توفره بيئة الاستضافة؛ يستخدم Dockerfile الحالي متغير `PORT`."`` | — |
+| [SRC-D57B0BB030-L000062](../DEPLOY_RENDER_AR.md#L62) | 62 | ``"- إذا كانت الخدمة تبدأ ثم تفشل فحص الصحة، راجع أن `/api/health` يعيد HTTP 200."`` | — |
+| [SRC-D57B0BB030-L000063](../DEPLOY_RENDER_AR.md#L63) | 63 | ``"- تحقق أن `OMARAI_PUBLIC_DEPLOYMENT=1` ورمز الوصول مضبوطين، وأن الرمز 32 حرفًا على الأقل."`` | — |
 | [SRC-D57B0BB030-L000064](../DEPLOY_RENDER_AR.md#L64) | 64 | `"- إذا فشل النموذج، تحقق من صحة مفتاح المزود وحدوده. وإذا فشل البحث فقط، قد تكون محركات البحث العامة حظرت الطلب أو لم ترجع نتائج قابلة للتحليل."` | — |
 | [SRC-D57B0BB030-L000065](../DEPLOY_RENDER_AR.md#L65) | 65 | `""` | — |
 | [SRC-D57B0BB030-L000066](../DEPLOY_RENDER_AR.md#L66) | 66 | `"راجع كذلك [دليل القبول العام](GO_LIVE_CHECKLIST_AR.md) قبل اعتماد النسخة."` | — |
@@ -802,35 +834,3 @@
 | [SRC-E599346ABE-L000669](../generate_index.py#L669) | 669 | `"            failures.append(f\"{source_line.file}: رقم سطر غير صالح {source_line.line}\")"` | — |
 | [SRC-E599346ABE-L000670](../generate_index.py#L670) | 670 | `"            continue"` | — |
 | [SRC-E599346ABE-L000671](../generate_index.py#L671) | 671 | `""` | — |
-| [SRC-E599346ABE-L000672](../generate_index.py#L672) | 672 | `"        expected_contents = expected_lines_by_file.get(source_line.file, [])"` | — |
-| [SRC-E599346ABE-L000673](../generate_index.py#L673) | 673 | `"        if ("` | — |
-| [SRC-E599346ABE-L000674](../generate_index.py#L674) | 674 | `"            source_line.line <= len(expected_contents)"` | — |
-| [SRC-E599346ABE-L000675](../generate_index.py#L675) | 675 | `"            and source_line.content != expected_contents[source_line.line - 1]"` | — |
-| [SRC-E599346ABE-L000676](../generate_index.py#L676) | 676 | `"        ):"` | — |
-| [SRC-E599346ABE-L000677](../generate_index.py#L677) | 677 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000678](../generate_index.py#L678) | 678 | `"                f\"{source_line.file}:{source_line.line}: نص السطر لا يطابق المصدر\""` | — |
-| [SRC-E599346ABE-L000679](../generate_index.py#L679) | 679 | `"            )"` | — |
-| [SRC-E599346ABE-L000680](../generate_index.py#L680) | 680 | `""` | — |
-| [SRC-E599346ABE-L000681](../generate_index.py#L681) | 681 | `"        expected_line_id = _source_line_id(source_line.file, source_line.line)"` | — |
-| [SRC-E599346ABE-L000682](../generate_index.py#L682) | 682 | `"        if source_line.line_id != expected_line_id:"` | — |
-| [SRC-E599346ABE-L000683](../generate_index.py#L683) | 683 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000684](../generate_index.py#L684) | 684 | `"                f\"{source_line.file}:{source_line.line}: كود SRC لا يطابق المسار ورقم السطر\""` | — |
-| [SRC-E599346ABE-L000685](../generate_index.py#L685) | 685 | `"            )"` | — |
-| [SRC-E599346ABE-L000686](../generate_index.py#L686) | 686 | `"        if source_line.file_id != _stable_file_id(source_line.file):"` | — |
-| [SRC-E599346ABE-L000687](../generate_index.py#L687) | 687 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000688](../generate_index.py#L688) | 688 | `"                f\"{source_line.file}:{source_line.line}: كود FILE لا يطابق مسار الملف\""` | — |
-| [SRC-E599346ABE-L000689](../generate_index.py#L689) | 689 | `"            )"` | — |
-| [SRC-E599346ABE-L000690](../generate_index.py#L690) | 690 | `"        if source_line.file_id != expected_item.file_id:"` | — |
-| [SRC-E599346ABE-L000691](../generate_index.py#L691) | 691 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000692](../generate_index.py#L692) | 692 | `"                f\"{source_line.file}:{source_line.line}: معرّف الملف لا يطابق الجرد\""` | — |
-| [SRC-E599346ABE-L000693](../generate_index.py#L693) | 693 | `"            )"` | — |
-| [SRC-E599346ABE-L000694](../generate_index.py#L694) | 694 | `"        if source_line.category != expected_item.category:"` | — |
-| [SRC-E599346ABE-L000695](../generate_index.py#L695) | 695 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000696](../generate_index.py#L696) | 696 | `"                f\"{source_line.file}:{source_line.line}: تصنيف السطر لا يطابق الجرد\""` | — |
-| [SRC-E599346ABE-L000697](../generate_index.py#L697) | 697 | `"            )"` | — |
-| [SRC-E599346ABE-L000698](../generate_index.py#L698) | 698 | `"        if source_line.line_id in seen_ids:"` | — |
-| [SRC-E599346ABE-L000699](../generate_index.py#L699) | 699 | `"            failures.append(f\"{source_line.file}:{source_line.line}: معرّف SRC مكرر\")"` | — |
-| [SRC-E599346ABE-L000700](../generate_index.py#L700) | 700 | `"        seen_ids.add(source_line.line_id)"` | — |
-| [SRC-E599346ABE-L000701](../generate_index.py#L701) | 701 | `""` | — |
-| [SRC-E599346ABE-L000702](../generate_index.py#L702) | 702 | `"    for file, item in eligible_files.items():"` | — |
-| [SRC-E599346ABE-L000703](../generate_index.py#L703) | 703 | `"        actual = sorted(actual_lines[file])"` | — |

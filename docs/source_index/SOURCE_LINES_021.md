@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000122 إلى SRC-90FAA34ADE-L000135
+- النطاق: SRC-A8360B1B03-L000090 إلى SRC-90FAA34ADE-L000103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,38 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000090](../../scripts/hosted_smoke_test.py#L90) | 90 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
+| [SRC-A8360B1B03-L000091](../../scripts/hosted_smoke_test.py#L91) | 91 | `"        path = urllib.parse.urlsplit(url).path"` | — |
+| [SRC-A8360B1B03-L000092](../../scripts/hosted_smoke_test.py#L92) | 92 | `"        raise SmokeError(f\"Network request failed at {path}; check the service and network.\") from exc"` | — |
+| [SRC-A8360B1B03-L000093](../../scripts/hosted_smoke_test.py#L93) | 93 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000094](../../scripts/hosted_smoke_test.py#L94) | 94 | `"        result = json.loads(body.decode(\"utf-8\"))"` | — |
+| [SRC-A8360B1B03-L000095](../../scripts/hosted_smoke_test.py#L95) | 95 | `"    except (UnicodeDecodeError, json.JSONDecodeError):"` | — |
+| [SRC-A8360B1B03-L000096](../../scripts/hosted_smoke_test.py#L96) | 96 | `"        result = None"` | — |
+| [SRC-A8360B1B03-L000097](../../scripts/hosted_smoke_test.py#L97) | 97 | `"    return status, result if isinstance(result, dict) else None"` | — |
+| [SRC-A8360B1B03-L000098](../../scripts/hosted_smoke_test.py#L98) | 98 | `""` | — |
+| [SRC-A8360B1B03-L000099](../../scripts/hosted_smoke_test.py#L99) | 99 | `""` | — |
+| [SRC-A8360B1B03-L000100](../../scripts/hosted_smoke_test.py#L100) | 100 | `"def run_smoke("` | — |
+| [SRC-A8360B1B03-L000101](../../scripts/hosted_smoke_test.py#L101) | 101 | `"    origin: str,"` | — |
+| [SRC-A8360B1B03-L000102](../../scripts/hosted_smoke_test.py#L102) | 102 | `"    token: str,"` | — |
+| [SRC-A8360B1B03-L000103](../../scripts/hosted_smoke_test.py#L103) | 103 | `"    *,"` | — |
+| [SRC-A8360B1B03-L000104](../../scripts/hosted_smoke_test.py#L104) | 104 | `"    timeout: float = 90,"` | — |
+| [SRC-A8360B1B03-L000105](../../scripts/hosted_smoke_test.py#L105) | 105 | `"    allow_http: bool = False,"` | — |
+| [SRC-A8360B1B03-L000106](../../scripts/hosted_smoke_test.py#L106) | 106 | `"    expected_sha: str \| None = None,"` | — |
+| [SRC-A8360B1B03-L000107](../../scripts/hosted_smoke_test.py#L107) | 107 | `") -> dict[str, Any]:"` | — |
+| [SRC-A8360B1B03-L000108](../../scripts/hosted_smoke_test.py#L108) | 108 | `"    origin = normalize_origin(origin, allow_http)"` | — |
+| [SRC-A8360B1B03-L000109](../../scripts/hosted_smoke_test.py#L109) | 109 | `"    if expected_sha is not None and not re.fullmatch(r\"[0-9a-fA-F]{40}\", expected_sha.strip()):"` | — |
+| [SRC-A8360B1B03-L000110](../../scripts/hosted_smoke_test.py#L110) | 110 | `"        raise SmokeError(\"The expected source revision must be a full 40-character Git SHA.\")"` | — |
+| [SRC-A8360B1B03-L000111](../../scripts/hosted_smoke_test.py#L111) | 111 | `"    if len(token.strip()) < 32:"` | — |
+| [SRC-A8360B1B03-L000112](../../scripts/hosted_smoke_test.py#L112) | 112 | `"        raise SmokeError(\"OMARAI_ACCESS_TOKEN is missing or shorter than 32 characters.\")"` | — |
+| [SRC-A8360B1B03-L000113](../../scripts/hosted_smoke_test.py#L113) | 113 | `""` | — |
+| [SRC-A8360B1B03-L000114](../../scripts/hosted_smoke_test.py#L114) | 114 | `"    status, health = request_json(f\"{origin}/api/health\", timeout=min(timeout, 20))"` | — |
+| [SRC-A8360B1B03-L000115](../../scripts/hosted_smoke_test.py#L115) | 115 | `"    if status != 200 or not health or health.get(\"ok\") is not True:"` | — |
+| [SRC-A8360B1B03-L000116](../../scripts/hosted_smoke_test.py#L116) | 116 | `"        raise SmokeError(f\"Health check failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000117](../../scripts/hosted_smoke_test.py#L117) | 117 | `"    checks: dict[str, Any] = {\"health\": \"passed\"}"` | — |
+| [SRC-A8360B1B03-L000118](../../scripts/hosted_smoke_test.py#L118) | 118 | `""` | — |
+| [SRC-A8360B1B03-L000119](../../scripts/hosted_smoke_test.py#L119) | 119 | `"    build = health.get(\"build\")"` | — |
+| [SRC-A8360B1B03-L000120](../../scripts/hosted_smoke_test.py#L120) | 120 | `"    reported_sha = build.get(\"sha\") if isinstance(build, dict) else None"` | — |
+| [SRC-A8360B1B03-L000121](../../scripts/hosted_smoke_test.py#L121) | 121 | `"    if expected_sha is not None:"` | — |
 | [SRC-A8360B1B03-L000122](../../scripts/hosted_smoke_test.py#L122) | 122 | `"        expected = expected_sha.strip().lower()"` | — |
 | [SRC-A8360B1B03-L000123](../../scripts/hosted_smoke_test.py#L123) | 123 | `"        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:"` | — |
 | [SRC-A8360B1B03-L000124](../../scripts/hosted_smoke_test.py#L124) | 124 | `"            raise SmokeError("` | — |
@@ -811,35 +843,3 @@
 | [SRC-90FAA34ADE-L000101](../../tests/fixtures/answer_quality_cases.json#L101) | 101 | `"        \"Claims live experimental measurement from the web\","` | — |
 | [SRC-90FAA34ADE-L000102](../../tests/fixtures/answer_quality_cases.json#L102) | 102 | `"        \"Presents speculative pseudoscience as fact\""` | — |
 | [SRC-90FAA34ADE-L000103](../../tests/fixtures/answer_quality_cases.json#L103) | 103 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000104](../../tests/fixtures/answer_quality_cases.json#L104) | 104 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000105](../../tests/fixtures/answer_quality_cases.json#L105) | 105 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000106](../../tests/fixtures/answer_quality_cases.json#L106) | 106 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000107](../../tests/fixtures/answer_quality_cases.json#L107) | 107 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000108](../../tests/fixtures/answer_quality_cases.json#L108) | 108 | `"        \"Answer is empty or off-topic\""` | — |
-| [SRC-90FAA34ADE-L000109](../../tests/fixtures/answer_quality_cases.json#L109) | 109 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000110](../../tests/fixtures/answer_quality_cases.json#L110) | 110 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000111](../../tests/fixtures/answer_quality_cases.json#L111) | 111 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000112](../../tests/fixtures/answer_quality_cases.json#L112) | 112 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000113](../../tests/fixtures/answer_quality_cases.json#L113) | 113 | `"      \"case_id\": \"AQ-005\","` | — |
-| [SRC-90FAA34ADE-L000114](../../tests/fixtures/answer_quality_cases.json#L114) | 114 | `"      \"category\": \"omarai_capabilities\","` | — |
-| [SRC-90FAA34ADE-L000115](../../tests/fixtures/answer_quality_cases.json#L115) | 115 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000116](../../tests/fixtures/answer_quality_cases.json#L116) | 116 | `"      \"question\": \"ازاي تقدر تساعدني؟ ايه اللي تقدر تعمله؟\","` | — |
-| [SRC-90FAA34ADE-L000117](../../tests/fixtures/answer_quality_cases.json#L117) | 117 | `"      \"expected_strategy\": \"local\","` | — |
-| [SRC-90FAA34ADE-L000118](../../tests/fixtures/answer_quality_cases.json#L118) | 118 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000119](../../tests/fixtures/answer_quality_cases.json#L119) | 119 | `"        \"Describes web research / Q&A capabilities honestly\","` | — |
-| [SRC-90FAA34ADE-L000120](../../tests/fixtures/answer_quality_cases.json#L120) | 120 | `"        \"May mention lead workspace as local tool\","` | — |
-| [SRC-90FAA34ADE-L000121](../../tests/fixtures/answer_quality_cases.json#L121) | 121 | `"        \"Does not claim to be a foundation model trained from scratch\""` | — |
-| [SRC-90FAA34ADE-L000122](../../tests/fixtures/answer_quality_cases.json#L122) | 122 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000123](../../tests/fixtures/answer_quality_cases.json#L123) | 123 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000124](../../tests/fixtures/answer_quality_cases.json#L124) | 124 | `"        \"Claims access to private user accounts without credentials\","` | — |
-| [SRC-90FAA34ADE-L000125](../../tests/fixtures/answer_quality_cases.json#L125) | 125 | `"        \"Claims guaranteed truth of every answer\","` | — |
-| [SRC-90FAA34ADE-L000126](../../tests/fixtures/answer_quality_cases.json#L126) | 126 | `"        \"Claims it can send messages to people automatically\""` | — |
-| [SRC-90FAA34ADE-L000127](../../tests/fixtures/answer_quality_cases.json#L127) | 127 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000128](../../tests/fixtures/answer_quality_cases.json#L128) | 128 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000129](../../tests/fixtures/answer_quality_cases.json#L129) | 129 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000130](../../tests/fixtures/answer_quality_cases.json#L130) | 130 | `"        \"notes\": \"Local capability router in WebAgent._is_self_question\""` | — |
-| [SRC-90FAA34ADE-L000131](../../tests/fixtures/answer_quality_cases.json#L131) | 131 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000132](../../tests/fixtures/answer_quality_cases.json#L132) | 132 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000133](../../tests/fixtures/answer_quality_cases.json#L133) | 133 | `"        \"used_web_search is true for pure capability question\""` | — |
-| [SRC-90FAA34ADE-L000134](../../tests/fixtures/answer_quality_cases.json#L134) | 134 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000135](../../tests/fixtures/answer_quality_cases.json#L135) | 135 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
