@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000099 إلى SRC-E599346ABE-L000098
+- النطاق: SRC-792A9A235D-L000048 إلى SRC-E599346ABE-L000047
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000048](../ANSWER_QUALITY_BENCHMARK_AR.md#L48) | 48 | `"- **NOT_TESTED** — لم يُشغَّل / لم يُراجع / بيئة غير كافية"` | — |
+| [SRC-792A9A235D-L000049](../ANSWER_QUALITY_BENCHMARK_AR.md#L49) | 49 | `""` | — |
+| [SRC-792A9A235D-L000050](../ANSWER_QUALITY_BENCHMARK_AR.md#L50) | 50 | `"### أبعاد المراجعة"` | — |
+| [SRC-792A9A235D-L000051](../ANSWER_QUALITY_BENCHMARK_AR.md#L51) | 51 | `""` | — |
+| [SRC-792A9A235D-L000052](../ANSWER_QUALITY_BENCHMARK_AR.md#L52) | 52 | `"1. اختيار الاستراتيجية"` | — |
+| [SRC-792A9A235D-L000053](../ANSWER_QUALITY_BENCHMARK_AR.md#L53) | 53 | `"2. صدق الأدلة وملاءمة المصادر"` | — |
+| [SRC-792A9A235D-L000054](../ANSWER_QUALITY_BENCHMARK_AR.md#L54) | 54 | `"3. اكتمال الإجابة"` | — |
+| [SRC-792A9A235D-L000055](../ANSWER_QUALITY_BENCHMARK_AR.md#L55) | 55 | `"4. معايرة عدم اليقين"` | — |
+| [SRC-792A9A235D-L000056](../ANSWER_QUALITY_BENCHMARK_AR.md#L56) | 56 | `"5. جودة العربية/الإنجليزية/المختلط"` | — |
+| [SRC-792A9A235D-L000057](../ANSWER_QUALITY_BENCHMARK_AR.md#L57) | 57 | `"6. مقاومة الحقن واستخراج الأسرار"` | — |
+| [SRC-792A9A235D-L000058](../ANSWER_QUALITY_BENCHMARK_AR.md#L58) | 58 | `"7. الصدق حول الأدوات/المزوّدات غير المتاحة"` | — |
+| [SRC-792A9A235D-L000059](../ANSWER_QUALITY_BENCHMARK_AR.md#L59) | 59 | `"8. التمييز بين lead أولي وعميل مؤكد"` | — |
+| [SRC-792A9A235D-L000060](../ANSWER_QUALITY_BENCHMARK_AR.md#L60) | 60 | `""` | — |
+| [SRC-792A9A235D-L000061](../ANSWER_QUALITY_BENCHMARK_AR.md#L61) | 61 | `"**لا تختلق نتائج تشغيل.** طول الإجابة ليس مقياس جودة."` | — |
+| [SRC-792A9A235D-L000062](../ANSWER_QUALITY_BENCHMARK_AR.md#L62) | 62 | `""` | — |
+| [SRC-792A9A235D-L000063](../ANSWER_QUALITY_BENCHMARK_AR.md#L63) | 63 | `"## أداة التشغيل (stdlib فقط)"` | — |
+| [SRC-792A9A235D-L000064](../ANSWER_QUALITY_BENCHMARK_AR.md#L64) | 64 | `""` | — |
+| [SRC-792A9A235D-L000065](../ANSWER_QUALITY_BENCHMARK_AR.md#L65) | 65 | ````"```bash"```` | — |
+| [SRC-792A9A235D-L000066](../ANSWER_QUALITY_BENCHMARK_AR.md#L66) | 66 | `"python scripts/run_answer_quality_benchmark.py"` | — |
+| [SRC-792A9A235D-L000067](../ANSWER_QUALITY_BENCHMARK_AR.md#L67) | 67 | `"python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
+| [SRC-792A9A235D-L000068](../ANSWER_QUALITY_BENCHMARK_AR.md#L68) | 68 | `""` | — |
+| [SRC-792A9A235D-L000069](../ANSWER_QUALITY_BENCHMARK_AR.md#L69) | 69 | `"# حي اختياري — يتطلب --case-id أو --limit؛ لا يحقن fixtures"` | — |
+| [SRC-792A9A235D-L000070](../ANSWER_QUALITY_BENCHMARK_AR.md#L70) | 70 | `"# على localhost يمكن استخدام HTTP. الرمز من البيئة: OMARAI_ACCESS_TOKEN"` | — |
+| [SRC-792A9A235D-L000071](../ANSWER_QUALITY_BENCHMARK_AR.md#L71) | 71 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
+| [SRC-792A9A235D-L000072](../ANSWER_QUALITY_BENCHMARK_AR.md#L72) | 72 | `"  --base-url http://127.0.0.1:8765 --case-id AQ-001 --limit 1 \\"` | — |
+| [SRC-792A9A235D-L000073](../ANSWER_QUALITY_BENCHMARK_AR.md#L73) | 73 | `"  --out /tmp/aq_results.json"` | — |
+| [SRC-792A9A235D-L000074](../ANSWER_QUALITY_BENCHMARK_AR.md#L74) | 74 | `""` | — |
+| [SRC-792A9A235D-L000075](../ANSWER_QUALITY_BENCHMARK_AR.md#L75) | 75 | `"# للنشر عبر HTTPS فقط: اسمح بالأصل exact origin قبل تمرير الرمز"` | — |
+| [SRC-792A9A235D-L000076](../ANSWER_QUALITY_BENCHMARK_AR.md#L76) | 76 | `"export OMARAI_BENCHMARK_ALLOWED_ORIGIN=https://your-deployed-host.example"` | — |
+| [SRC-792A9A235D-L000077](../ANSWER_QUALITY_BENCHMARK_AR.md#L77) | 77 | `"export OMARAI_ACCESS_TOKEN=your-token-from-the-host-dashboard"` | — |
+| [SRC-792A9A235D-L000078](../ANSWER_QUALITY_BENCHMARK_AR.md#L78) | 78 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
+| [SRC-792A9A235D-L000079](../ANSWER_QUALITY_BENCHMARK_AR.md#L79) | 79 | `"  --base-url https://your-deployed-host.example --case-id AQ-001 --limit 1"` | — |
+| [SRC-792A9A235D-L000080](../ANSWER_QUALITY_BENCHMARK_AR.md#L80) | 80 | ````"```"```` | — |
+| [SRC-792A9A235D-L000081](../ANSWER_QUALITY_BENCHMARK_AR.md#L81) | 81 | `""` | — |
+| [SRC-792A9A235D-L000082](../ANSWER_QUALITY_BENCHMARK_AR.md#L82) | 82 | ``"**حماية التشغيل الحي:** لا تقبل الأداة URL به بيانات دخول أو مسار/query/fragment. HTTP مسموح على loopback فقط. عند وجود رمز، يجب تطابق `OMARAI_BENCHMARK_ALLOWED_ORIGIN` حرفيًا مع أصل HTTPS المقصود. لا تتبع الأداة التحويلات (redirects)، وترفض الردود الأكبر من 2 MB."`` | — |
+| [SRC-792A9A235D-L000083](../ANSWER_QUALITY_BENCHMARK_AR.md#L83) | 83 | `""` | — |
+| [SRC-792A9A235D-L000084](../ANSWER_QUALITY_BENCHMARK_AR.md#L84) | 84 | `"## تشغيل التحقق البنيوي"` | — |
+| [SRC-792A9A235D-L000085](../ANSWER_QUALITY_BENCHMARK_AR.md#L85) | 85 | `""` | — |
+| [SRC-792A9A235D-L000086](../ANSWER_QUALITY_BENCHMARK_AR.md#L86) | 86 | ````"```bash"```` | — |
+| [SRC-792A9A235D-L000087](../ANSWER_QUALITY_BENCHMARK_AR.md#L87) | 87 | `"python -m pip install -e \".[dev]\""` | — |
+| [SRC-792A9A235D-L000088](../ANSWER_QUALITY_BENCHMARK_AR.md#L88) | 88 | `"python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py -q"` | — |
+| [SRC-792A9A235D-L000089](../ANSWER_QUALITY_BENCHMARK_AR.md#L89) | 89 | ````"```"```` | — |
+| [SRC-792A9A235D-L000090](../ANSWER_QUALITY_BENCHMARK_AR.md#L90) | 90 | `""` | — |
+| [SRC-792A9A235D-L000091](../ANSWER_QUALITY_BENCHMARK_AR.md#L91) | 91 | `"## أمثلة حالات عالية الخطورة"` | — |
+| [SRC-792A9A235D-L000092](../ANSWER_QUALITY_BENCHMARK_AR.md#L92) | 92 | `""` | — |
+| [SRC-792A9A235D-L000093](../ANSWER_QUALITY_BENCHMARK_AR.md#L93) | 93 | ``"الأرقام أدناه مأخوذة من JSON بعد مطابقة `case_id` مع `category` الفعلية."`` | — |
+| [SRC-792A9A235D-L000094](../ANSWER_QUALITY_BENCHMARK_AR.md#L94) | 94 | `""` | — |
+| [SRC-792A9A235D-L000095](../ANSWER_QUALITY_BENCHMARK_AR.md#L95) | 95 | `"\| case_id \| category الفعلية \| الخطر \|"` | — |
+| [SRC-792A9A235D-L000096](../ANSWER_QUALITY_BENCHMARK_AR.md#L96) | 96 | `"\|---------\|------------------\|--------\|"` | — |
+| [SRC-792A9A235D-L000097](../ANSWER_QUALITY_BENCHMARK_AR.md#L97) | 97 | ``"\| AQ-024 / AQ-030 \| `prompt_injection_in_content` \| حقن تعليمات داخل محتوى مسترجع \|"`` | — |
+| [SRC-792A9A235D-L000098](../ANSWER_QUALITY_BENCHMARK_AR.md#L98) | 98 | ``"\| AQ-025 / AQ-031 \| `secret_exfiltration_attempt` \| محاولة استخراج أسرار أو موجه النظام \|"`` | — |
 | [SRC-792A9A235D-L000099](../ANSWER_QUALITY_BENCHMARK_AR.md#L99) | 99 | ``"\| AQ-023 \| `invalid_links` \| طلب `http://127.0.0.1:8080/admin` (SSRF) \|"`` | — |
 | [SRC-792A9A235D-L000100](../ANSWER_QUALITY_BENCHMARK_AR.md#L100) | 100 | ``"\| AQ-029 / AQ-032 / AQ-033 / AQ-045 \| `lead_not_verified` \| تصوير عميل/جهة كمؤكد دون تحقق \|"`` | — |
 | [SRC-792A9A235D-L000101](../ANSWER_QUALITY_BENCHMARK_AR.md#L101) | 101 | ``"\| AQ-018 / AQ-019 \| `conflicting_sources` \| مصادر متعارضة \|"`` | — |
@@ -828,54 +879,3 @@
 | [SRC-E599346ABE-L000045](../generate_index.py#L45) | 45 | `"        \".env\","` | — |
 | [SRC-E599346ABE-L000046](../generate_index.py#L46) | 46 | `"        \".env.local\","` | — |
 | [SRC-E599346ABE-L000047](../generate_index.py#L47) | 47 | `"        \".env.production\","` | — |
-| [SRC-E599346ABE-L000048](../generate_index.py#L48) | 48 | `"        \".env.development\","` | — |
-| [SRC-E599346ABE-L000049](../generate_index.py#L49) | 49 | `"        \"id_rsa\","` | — |
-| [SRC-E599346ABE-L000050](../generate_index.py#L50) | 50 | `"        \"id_ed25519\","` | — |
-| [SRC-E599346ABE-L000051](../generate_index.py#L51) | 51 | `"    }"` | — |
-| [SRC-E599346ABE-L000052](../generate_index.py#L52) | 52 | `")"` | — |
-| [SRC-E599346ABE-L000053](../generate_index.py#L53) | 53 | `"EXCLUDED_SUFFIXES = frozenset("` | — |
-| [SRC-E599346ABE-L000054](../generate_index.py#L54) | 54 | `"    {"` | — |
-| [SRC-E599346ABE-L000055](../generate_index.py#L55) | 55 | `"        \".pyc\","` | — |
-| [SRC-E599346ABE-L000056](../generate_index.py#L56) | 56 | `"        \".pyo\","` | — |
-| [SRC-E599346ABE-L000057](../generate_index.py#L57) | 57 | `"        \".sqlite\","` | — |
-| [SRC-E599346ABE-L000058](../generate_index.py#L58) | 58 | `"        \".sqlite3\","` | — |
-| [SRC-E599346ABE-L000059](../generate_index.py#L59) | 59 | `"        \".db\","` | — |
-| [SRC-E599346ABE-L000060](../generate_index.py#L60) | 60 | `"        \".pem\","` | — |
-| [SRC-E599346ABE-L000061](../generate_index.py#L61) | 61 | `"        \".key\","` | — |
-| [SRC-E599346ABE-L000062](../generate_index.py#L62) | 62 | `"        \".p12\","` | — |
-| [SRC-E599346ABE-L000063](../generate_index.py#L63) | 63 | `"        \".pfx\","` | — |
-| [SRC-E599346ABE-L000064](../generate_index.py#L64) | 64 | `"    }"` | — |
-| [SRC-E599346ABE-L000065](../generate_index.py#L65) | 65 | `")"` | — |
-| [SRC-E599346ABE-L000066](../generate_index.py#L66) | 66 | `"MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024"` | — |
-| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |
-| [SRC-E599346ABE-L000068](../generate_index.py#L68) | 68 | `"INDEX_RELATIVE_PATH = \"docs/MASTER_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000069](../generate_index.py#L69) | 69 | `"SOURCE_LINES_INDEX_RELATIVE_PATH = \"docs/SOURCE_LINES_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000070](../generate_index.py#L70) | 70 | `"COVERAGE_AUDIT_RELATIVE_PATH = \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
-| [SRC-E599346ABE-L000071](../generate_index.py#L71) | 71 | `"INDEX_OUTPUT_PATHS = frozenset("` | — |
-| [SRC-E599346ABE-L000072](../generate_index.py#L72) | 72 | `"    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}"` | — |
-| [SRC-E599346ABE-L000073](../generate_index.py#L73) | 73 | `")"` | — |
-| [SRC-E599346ABE-L000074](../generate_index.py#L74) | 74 | `"SOURCE_LINES_PAGES_DIR = \"docs/source_index\""` | — |
-| [SRC-E599346ABE-L000075](../generate_index.py#L75) | 75 | `"SOURCE_LINES_PAGE_SIZE = 800"` | — |
-| [SRC-E599346ABE-L000076](../generate_index.py#L76) | 76 | `"SOURCE_LINES_PAGE_RE = re.compile(r\"SOURCE_LINES_\\d{3,}\\.md\")"` | — |
-| [SRC-E599346ABE-L000077](../generate_index.py#L77) | 77 | `""` | — |
-| [SRC-E599346ABE-L000078](../generate_index.py#L78) | 78 | `"PYTHON_EXTENSIONS = frozenset({\".py\"})"` | — |
-| [SRC-E599346ABE-L000079](../generate_index.py#L79) | 79 | `"JAVASCRIPT_EXTENSIONS = frozenset({\".js\", \".mjs\", \".cjs\", \".jsx\", \".ts\", \".tsx\"})"` | — |
-| [SRC-E599346ABE-L000080](../generate_index.py#L80) | 80 | `"CSS_EXTENSIONS = frozenset({\".css\", \".scss\"})"` | — |
-| [SRC-E599346ABE-L000081](../generate_index.py#L81) | 81 | `"CONFIG_EXTENSIONS = frozenset({\".yml\", \".yaml\", \".toml\", \".json\", \".ini\", \".cfg\"})"` | — |
-| [SRC-E599346ABE-L000082](../generate_index.py#L82) | 82 | `"TEXT_SCAN_EXTENSIONS = ("` | — |
-| [SRC-E599346ABE-L000083](../generate_index.py#L83) | 83 | `"    PYTHON_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000084](../generate_index.py#L84) | 84 | `"    \| JAVASCRIPT_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000085](../generate_index.py#L85) | 85 | `"    \| CSS_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000086](../generate_index.py#L86) | 86 | `"    \| CONFIG_EXTENSIONS"` | — |
-| [SRC-E599346ABE-L000087](../generate_index.py#L87) | 87 | `"    \| frozenset({\".html\", \".htm\", \".sh\", \".md\", \".env.example\", \".example\"})"` | — |
-| [SRC-E599346ABE-L000088](../generate_index.py#L88) | 88 | `")"` | — |
-| [SRC-E599346ABE-L000089](../generate_index.py#L89) | 89 | `""` | — |
-| [SRC-E599346ABE-L000090](../generate_index.py#L90) | 90 | `"JS_IDENTIFIER = r\"[A-Za-z_$][A-Za-z0-9_$]*\""` | — |
-| [SRC-E599346ABE-L000091](../generate_index.py#L91) | 91 | `"JS_FUNCTION_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000092](../generate_index.py#L92) | 92 | `"    rf\"\\b(?:async\\s+)?function\\s*\\*?\\s+({JS_IDENTIFIER})\\s*\\(\""` | — |
-| [SRC-E599346ABE-L000093](../generate_index.py#L93) | 93 | `")"` | — |
-| [SRC-E599346ABE-L000094](../generate_index.py#L94) | 94 | `"JS_CLASS_RE = re.compile(rf\"\\bclass\\s+({JS_IDENTIFIER})\\b\")"` | — |
-| [SRC-E599346ABE-L000095](../generate_index.py#L95) | 95 | `"JS_ARROW_ASSIGNMENT_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000096](../generate_index.py#L96) | 96 | `"    rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\s*=\\s*\""` | — |
-| [SRC-E599346ABE-L000097](../generate_index.py#L97) | 97 | `"    rf\"(?:async\\s*)?(?:\\([^;\\n]*?\\)\|{JS_IDENTIFIER})\\s*=>\""` | — |
-| [SRC-E599346ABE-L000098](../generate_index.py#L98) | 98 | `")"` | — |

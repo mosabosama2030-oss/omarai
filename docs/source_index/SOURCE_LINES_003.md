@@ -682,146 +682,146 @@
 | [SRC-1AE03B9EC3-L000050](../../agents/web_agent.py#L50) | 50 | `"# A generic \"failed\" or timeout diagnostic may occur before a network request is sent."` | — |
 | [SRC-1AE03B9EC3-L000051](../../agents/web_agent.py#L51) | 51 | `"_SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({\"ok\", \"no_results\", \"filtered_all\"})"` | — |
 | [SRC-1AE03B9EC3-L000052](../../agents/web_agent.py#L52) | 52 | `"_RESEARCH_ERROR_OUTCOMES = frozenset({\"attempted_research_error\", \"unknown_after_research_error\"})"` | — |
-| [SRC-1AE03B9EC3-L000053](../../agents/web_agent.py#L53) | 53 | `""` | — |
-| [SRC-1AE03B9EC3-L000054](../../agents/web_agent.py#L54) | 54 | `""` | — |
-| [SRC-1AE03B9EC3-L000055](../../agents/web_agent.py#L55) | 55 | `"_ARABIC_SEARCH_TRANSLATION = str.maketrans({"` | — |
-| [SRC-1AE03B9EC3-L000056](../../agents/web_agent.py#L56) | 56 | `"    \"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ٱ\": \"ا\", \"ى\": \"ي\","` | — |
-| [SRC-1AE03B9EC3-L000057](../../agents/web_agent.py#L57) | 57 | `"    \"ؤ\": \"و\", \"ئ\": \"ي\", \"ة\": \"ه\", \"ـ\": \"\","` | — |
-| [SRC-1AE03B9EC3-L000058](../../agents/web_agent.py#L58) | 58 | `"})"` | — |
-| [SRC-1AE03B9EC3-L000059](../../agents/web_agent.py#L59) | 59 | `"_ARABIC_DIACRITICS_RE = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
-| [SRC-1AE03B9EC3-L000060](../../agents/web_agent.py#L60) | 60 | `"_SEARCH_STOPWORDS = frozenset({"` | — |
-| [SRC-1AE03B9EC3-L000061](../../agents/web_agent.py#L61) | 61 | `"    \"ما\", \"ماذا\", \"من\", \"في\", \"على\", \"عن\", \"الى\", \"إلى\", \"و\", \"او\", \"أو\","` | — |
-| [SRC-1AE03B9EC3-L000062](../../agents/web_agent.py#L62) | 62 | `"    \"هل\", \"هو\", \"هي\", \"هذا\", \"هذه\", \"ذلك\", \"تلك\", \"التي\", \"الذي\", \"مع\","` | — |
-| [SRC-1AE03B9EC3-L000063](../../agents/web_agent.py#L63) | 63 | `"    \"بين\", \"كيف\", \"لماذا\", \"كم\", \"كان\", \"كانت\", \"يكون\", \"تكون\", \"لي\","` | — |
-| [SRC-1AE03B9EC3-L000064](../../agents/web_agent.py#L64) | 64 | `"    \"the\", \"a\", \"an\", \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\","` | — |
-| [SRC-1AE03B9EC3-L000065](../../agents/web_agent.py#L65) | 65 | `"    \"is\", \"are\", \"was\", \"were\", \"what\", \"which\", \"who\", \"how\", \"why\", \"when\","` | — |
-| [SRC-1AE03B9EC3-L000066](../../agents/web_agent.py#L66) | 66 | `"    \"where\", \"compare\", \"comparison\", \"please\", \"show\", \"find\", \"latest\","` | — |
-| [SRC-1AE03B9EC3-L000067](../../agents/web_agent.py#L67) | 67 | `"    \"news\", \"official\", \"sources\", \"source\", \"reports\", \"report\", \"analysis\","` | — |
-| [SRC-1AE03B9EC3-L000068](../../agents/web_agent.py#L68) | 68 | `"    \"site\", \"com\", \"org\", \"net\", \"www\","` | — |
-| [SRC-1AE03B9EC3-L000069](../../agents/web_agent.py#L69) | 69 | `"    # Arabic request/format words are not useful topic concepts for matching search snippets."` | — |
-| [SRC-1AE03B9EC3-L000070](../../agents/web_agent.py#L70) | 70 | `"    \"اذكر\", \"مصدر\", \"مصادر\", \"موثوق\", \"موثوقة\", \"رابط\", \"روابط\", \"مباشر\","` | — |
-| [SRC-1AE03B9EC3-L000071](../../agents/web_agent.py#L71) | 71 | `"    \"مباشرة\", \"اجب\", \"بالعربية\", \"العربية\", \"بايجاز\", \"بالايجاز\", \"ايجاز\","` | — |
-| [SRC-1AE03B9EC3-L000072](../../agents/web_agent.py#L72) | 72 | `"    \"باختصار\", \"اختصار\", \"استخدم\", \"اعرض\", \"وضح\", \"حلل\", \"قارن\", \"متعددة\","` | — |
-| [SRC-1AE03B9EC3-L000073](../../agents/web_agent.py#L73) | 73 | `"    \"اهم\", \"الحقائق\", \"حقائق\", \"استنتاج\", \"استنتاجات\", \"الاستنتاجات\","` | — |
-| [SRC-1AE03B9EC3-L000074](../../agents/web_agent.py#L74) | 74 | `"    \"تواريخ\", \"تاريخ\", \"الاخبار\", \"اخبار\", \"المصادر\", \"معلومات\", \"قديمة\","` | — |
-| [SRC-1AE03B9EC3-L000075](../../agents/web_agent.py#L75) | 75 | `"    \"قديمه\", \"جديدة\", \"جديده\", \"خلال\", \"الايام\", \"ايام\", \"السبعة\", \"سبعة\","` | — |
-| [SRC-1AE03B9EC3-L000076](../../agents/web_agent.py#L76) | 76 | `"    \"الماضية\", \"ماضية\", \"الاسبوع\", \"حاليا\", \"الان\", \"احدث\", \"ولا\","` | — |
-| [SRC-1AE03B9EC3-L000077](../../agents/web_agent.py#L77) | 77 | `"    \"تعرض\", \"باعتبارها\","` | — |
-| [SRC-1AE03B9EC3-L000078](../../agents/web_agent.py#L78) | 78 | `"})"` | — |
-| [SRC-1AE03B9EC3-L000079](../../agents/web_agent.py#L79) | 79 | `"_SEARCH_SYNONYMS = {"` | — |
-| [SRC-1AE03B9EC3-L000080](../../agents/web_agent.py#L80) | 80 | `"    \"استراليا\": {\"australia\"}, \"عاصمة\": {\"capital\"}, \"مصر\": {\"egypt\"},"` | — |
-| [SRC-1AE03B9EC3-L000081](../../agents/web_agent.py#L81) | 81 | `"    \"المصري\": {\"egyptian\", \"egypt\"}, \"مركزي\": {\"central\"},"` | — |
-| [SRC-1AE03B9EC3-L000082](../../agents/web_agent.py#L82) | 82 | `"    \"المركزي\": {\"central\"}, \"بنك\": {\"bank\"}, \"البنك\": {\"bank\"},"` | — |
-| [SRC-1AE03B9EC3-L000083](../../agents/web_agent.py#L83) | 83 | `"    \"قرار\": {\"decision\"}, \"قرارات\": {\"decision\", \"decisions\"},"` | — |
-| [SRC-1AE03B9EC3-L000084](../../agents/web_agent.py#L84) | 84 | `"    \"سعر\": {\"price\"}, \"اسعار\": {\"prices\"}, \"استضافة\": {\"hosting\"},"` | — |
-| [SRC-1AE03B9EC3-L000085](../../agents/web_agent.py#L85) | 85 | `"    \"شركة\": {\"company\"}, \"شركه\": {\"company\"}, \"ناشئة\": {\"startup\"},"` | — |
-| [SRC-1AE03B9EC3-L000086](../../agents/web_agent.py#L86) | 86 | `"    \"صعيد\": {\"upper\"}, \"مقارنة\": {\"compare\", \"comparison\"},"` | — |
-| [SRC-1AE03B9EC3-L000087](../../agents/web_agent.py#L87) | 87 | `"    \"تقنية\": {\"technology\"}, \"تقنيات\": {\"technology\"},"` | — |
-| [SRC-1AE03B9EC3-L000088](../../agents/web_agent.py#L88) | 88 | `"    \"ميكروسوفت\": {\"microsoft\"}, \"مايكروسوفت\": {\"microsoft\"},"` | — |
-| [SRC-1AE03B9EC3-L000089](../../agents/web_agent.py#L89) | 89 | `"    \"microsoft\": {\"ميكروسوفت\", \"مايكروسوفت\"},"` | — |
-| [SRC-1AE03B9EC3-L000090](../../agents/web_agent.py#L90) | 90 | `"    \"جمهورية\": {\"republic\"}, \"republic\": {\"جمهورية\"},"` | — |
-| [SRC-1AE03B9EC3-L000091](../../agents/web_agent.py#L91) | 91 | `"    \"الرقمية\": {\"digital\"}, \"رقمية\": {\"digital\"},"` | — |
-| [SRC-1AE03B9EC3-L000092](../../agents/web_agent.py#L92) | 92 | `"    \"الرقميه\": {\"digital\"}, \"رقميه\": {\"digital\"},"` | — |
-| [SRC-1AE03B9EC3-L000093](../../agents/web_agent.py#L93) | 93 | `"    \"موقع\": {\"website\", \"portal\"}, \"مواقع\": {\"websites\", \"portals\"},"` | — |
-| [SRC-1AE03B9EC3-L000094](../../agents/web_agent.py#L94) | 94 | `"    \"التجمع\": {\"settlement\"}, \"تجمع\": {\"settlement\"},"` | — |
-| [SRC-1AE03B9EC3-L000095](../../agents/web_agent.py#L95) | 95 | `"    \"الخامس\": {\"fifth\", \"5th\"}, \"خامس\": {\"fifth\", \"5th\"},"` | — |
-| [SRC-1AE03B9EC3-L000096](../../agents/web_agent.py#L96) | 96 | `"    \"شقة\": {\"apartment\", \"flat\"}, \"شقق\": {\"apartments\", \"flats\"},"` | — |
-| [SRC-1AE03B9EC3-L000097](../../agents/web_agent.py#L97) | 97 | `"    \"عميل\": {\"customer\", \"buyer\"}, \"عملاء\": {\"customers\", \"buyers\"},"` | — |
-| [SRC-1AE03B9EC3-L000098](../../agents/web_agent.py#L98) | 98 | `"    \"شراء\": {\"buy\", \"purchase\"}, \"مشتري\": {\"buyer\"},"` | — |
-| [SRC-1AE03B9EC3-L000099](../../agents/web_agent.py#L99) | 99 | `"    # Small, explicit Arabic-English topic vocabulary; this helps Arabic prompts"` | — |
-| [SRC-1AE03B9EC3-L000100](../../agents/web_agent.py#L100) | 100 | `"    # match English-indexed results without relaxing URL or destination safety."` | — |
-| [SRC-1AE03B9EC3-L000101](../../agents/web_agent.py#L101) | 101 | `"    \"سيارة\": {\"car\", \"vehicle\"}, \"السيارة\": {\"car\", \"vehicle\"},"` | — |
-| [SRC-1AE03B9EC3-L000102](../../agents/web_agent.py#L102) | 102 | `"    \"سيارات\": {\"cars\", \"vehicles\"}, \"السيارات\": {\"cars\", \"vehicles\"},"` | — |
-| [SRC-1AE03B9EC3-L000103](../../agents/web_agent.py#L103) | 103 | `"    \"كهربائي\": {\"electric\"}, \"كهربائية\": {\"electric\"},"` | — |
-| [SRC-1AE03B9EC3-L000104](../../agents/web_agent.py#L104) | 104 | `"    \"الكهربائي\": {\"electric\"}, \"الكهربائية\": {\"electric\"},"` | — |
-| [SRC-1AE03B9EC3-L000105](../../agents/web_agent.py#L105) | 105 | `"    \"شحن\": {\"charging\", \"charge\"}, \"الشحن\": {\"charging\", \"charge\"},"` | — |
-| [SRC-1AE03B9EC3-L000106](../../agents/web_agent.py#L106) | 106 | `"    \"شاحن\": {\"charger\"}, \"بطارية\": {\"battery\"}, \"بطاريات\": {\"batteries\"},"` | — |
-| [SRC-1AE03B9EC3-L000107](../../agents/web_agent.py#L107) | 107 | `"    \"تكلفة\": {\"cost\", \"costs\"}, \"التكلفة\": {\"cost\", \"costs\"},"` | — |
-| [SRC-1AE03B9EC3-L000108](../../agents/web_agent.py#L108) | 108 | `"    \"البنية\": {\"infrastructure\"}, \"التحتية\": {\"infrastructure\"},"` | — |
-| [SRC-1AE03B9EC3-L000109](../../agents/web_agent.py#L109) | 109 | `"    \"تحدي\": {\"challenge\"}, \"تحديات\": {\"challenges\"}, \"التحديات\": {\"challenges\"},"` | — |
-| [SRC-1AE03B9EC3-L000110](../../agents/web_agent.py#L110) | 110 | `"    \"وكيل\": {\"agent\"}, \"الوكيل\": {\"agent\"},"` | — |
-| [SRC-1AE03B9EC3-L000111](../../agents/web_agent.py#L111) | 111 | `"    \"وكلاء\": {\"agents\"}, \"الوكلاء\": {\"agents\"},"` | — |
-| [SRC-1AE03B9EC3-L000112](../../agents/web_agent.py#L112) | 112 | `"    \"ذكاء\": {\"intelligence\", \"ai\"}, \"الذكاء\": {\"intelligence\", \"ai\"},"` | — |
-| [SRC-1AE03B9EC3-L000113](../../agents/web_agent.py#L113) | 113 | `"    \"اصطناعي\": {\"artificial\", \"ai\"}, \"الاصطناعي\": {\"artificial\", \"ai\"},"` | — |
-| [SRC-1AE03B9EC3-L000114](../../agents/web_agent.py#L114) | 114 | `"    \"تطور\": {\"development\", \"advance\"}, \"تطورات\": {\"developments\", \"advances\", \"updates\", \"latest\"},"` | — |
-| [SRC-1AE03B9EC3-L000115](../../agents/web_agent.py#L115) | 115 | `"    \"التطورات\": {\"developments\", \"advances\", \"updates\", \"latest\"},"` | — |
-| [SRC-1AE03B9EC3-L000116](../../agents/web_agent.py#L116) | 116 | `"    \"اراء\": {\"opinions\", \"views\"}, \"تجربة\": {\"experience\"}, \"تجارب\": {\"experiences\", \"reviews\"},"` | — |
-| [SRC-1AE03B9EC3-L000117](../../agents/web_agent.py#L117) | 117 | `"    \"مستخدم\": {\"user\"}, \"المستخدم\": {\"user\"}, \"مستخدمين\": {\"users\"},"` | — |
-| [SRC-1AE03B9EC3-L000118](../../agents/web_agent.py#L118) | 118 | `"    \"المستخدمين\": {\"users\"}, \"مالكون\": {\"owners\"}, \"المالكون\": {\"owners\"},"` | — |
-| [SRC-1AE03B9EC3-L000119](../../agents/web_agent.py#L119) | 119 | `"}"` | — |
-| [SRC-1AE03B9EC3-L000120](../../agents/web_agent.py#L120) | 120 | `"_CALENDAR_MONTHS = ("` | — |
-| [SRC-1AE03B9EC3-L000121](../../agents/web_agent.py#L121) | 121 | `"    \"يناير\", \"فبراير\", \"مارس\", \"ابريل\", \"أبريل\", \"مايو\", \"يونيو\","` | — |
-| [SRC-1AE03B9EC3-L000122](../../agents/web_agent.py#L122) | 122 | `"    \"يوليو\", \"اغسطس\", \"أغسطس\", \"سبتمبر\", \"اكتوبر\", \"أكتوبر\","` | — |
-| [SRC-1AE03B9EC3-L000123](../../agents/web_agent.py#L123) | 123 | `"    \"نوفمبر\", \"ديسمبر\", \"january\", \"february\", \"march\", \"april\","` | — |
-| [SRC-1AE03B9EC3-L000124](../../agents/web_agent.py#L124) | 124 | `"    \"may\", \"june\", \"july\", \"august\", \"september\", \"october\","` | — |
-| [SRC-1AE03B9EC3-L000125](../../agents/web_agent.py#L125) | 125 | `"    \"november\", \"december\","` | — |
-| [SRC-1AE03B9EC3-L000126](../../agents/web_agent.py#L126) | 126 | `")"` | — |
-| [SRC-1AE03B9EC3-L000127](../../agents/web_agent.py#L127) | 127 | `"_BLOCKED_SOURCE_DOMAINS = frozenset({"` | — |
-| [SRC-1AE03B9EC3-L000128](../../agents/web_agent.py#L128) | 128 | `"    \"translate.google.com\", \"translate.googleusercontent.com\","` | — |
-| [SRC-1AE03B9EC3-L000129](../../agents/web_agent.py#L129) | 129 | `"})"` | — |
-| [SRC-1AE03B9EC3-L000130](../../agents/web_agent.py#L130) | 130 | `""` | — |
-| [SRC-1AE03B9EC3-L000131](../../agents/web_agent.py#L131) | 131 | `""` | — |
-| [SRC-1AE03B9EC3-L000132](../../agents/web_agent.py#L132) | 132 | `"def _normalize_search_query(value: str) -> str:"` | — |
-| [SRC-1AE03B9EC3-L000133](../../agents/web_agent.py#L133) | 133 | `"    \"\"\"Normalize Arabic letters/diacritics while preserving search operators and dates.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000134](../../agents/web_agent.py#L134) | 134 | `"    value = unicodedata.normalize(\"NFKC\", value or \"\")"` | — |
-| [SRC-1AE03B9EC3-L000135](../../agents/web_agent.py#L135) | 135 | `"    value = _ARABIC_DIACRITICS_RE.sub(\"\", value).translate(_ARABIC_SEARCH_TRANSLATION)"` | — |
-| [SRC-1AE03B9EC3-L000136](../../agents/web_agent.py#L136) | 136 | `"    return re.sub(r\"\\s+\", \" \", value).strip()"` | — |
+| [SRC-1AE03B9EC3-L000053](../../agents/web_agent.py#L53) | 53 | `"_PROVIDER_REJECTION_REASONS = ("` | — |
+| [SRC-1AE03B9EC3-L000054](../../agents/web_agent.py#L54) | 54 | `"    \"malformed_candidate\","` | — |
+| [SRC-1AE03B9EC3-L000055](../../agents/web_agent.py#L55) | 55 | `"    \"invalid_url_or_unsafe_target\","` | — |
+| [SRC-1AE03B9EC3-L000056](../../agents/web_agent.py#L56) | 56 | `"    \"blocked_domain\","` | — |
+| [SRC-1AE03B9EC3-L000057](../../agents/web_agent.py#L57) | 57 | `"    \"relevance_below_threshold\","` | — |
+| [SRC-1AE03B9EC3-L000058](../../agents/web_agent.py#L58) | 58 | `")"` | — |
+| [SRC-1AE03B9EC3-L000059](../../agents/web_agent.py#L59) | 59 | `""` | — |
+| [SRC-1AE03B9EC3-L000060](../../agents/web_agent.py#L60) | 60 | `""` | — |
+| [SRC-1AE03B9EC3-L000061](../../agents/web_agent.py#L61) | 61 | `"_ARABIC_SEARCH_TRANSLATION = str.maketrans({"` | — |
+| [SRC-1AE03B9EC3-L000062](../../agents/web_agent.py#L62) | 62 | `"    \"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ٱ\": \"ا\", \"ى\": \"ي\","` | — |
+| [SRC-1AE03B9EC3-L000063](../../agents/web_agent.py#L63) | 63 | `"    \"ؤ\": \"و\", \"ئ\": \"ي\", \"ة\": \"ه\", \"ـ\": \"\","` | — |
+| [SRC-1AE03B9EC3-L000064](../../agents/web_agent.py#L64) | 64 | `"})"` | — |
+| [SRC-1AE03B9EC3-L000065](../../agents/web_agent.py#L65) | 65 | `"_ARABIC_DIACRITICS_RE = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
+| [SRC-1AE03B9EC3-L000066](../../agents/web_agent.py#L66) | 66 | `"_SEARCH_STOPWORDS = frozenset({"` | — |
+| [SRC-1AE03B9EC3-L000067](../../agents/web_agent.py#L67) | 67 | `"    \"ما\", \"ماذا\", \"من\", \"في\", \"على\", \"عن\", \"الى\", \"إلى\", \"و\", \"او\", \"أو\","` | — |
+| [SRC-1AE03B9EC3-L000068](../../agents/web_agent.py#L68) | 68 | `"    \"هل\", \"هو\", \"هي\", \"هذا\", \"هذه\", \"ذلك\", \"تلك\", \"التي\", \"الذي\", \"مع\","` | — |
+| [SRC-1AE03B9EC3-L000069](../../agents/web_agent.py#L69) | 69 | `"    \"بين\", \"كيف\", \"لماذا\", \"كم\", \"كان\", \"كانت\", \"يكون\", \"تكون\", \"لي\","` | — |
+| [SRC-1AE03B9EC3-L000070](../../agents/web_agent.py#L70) | 70 | `"    \"the\", \"a\", \"an\", \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\","` | — |
+| [SRC-1AE03B9EC3-L000071](../../agents/web_agent.py#L71) | 71 | `"    \"is\", \"are\", \"was\", \"were\", \"what\", \"which\", \"who\", \"how\", \"why\", \"when\","` | — |
+| [SRC-1AE03B9EC3-L000072](../../agents/web_agent.py#L72) | 72 | `"    \"where\", \"compare\", \"comparison\", \"please\", \"show\", \"find\", \"latest\","` | — |
+| [SRC-1AE03B9EC3-L000073](../../agents/web_agent.py#L73) | 73 | `"    \"news\", \"official\", \"sources\", \"source\", \"reports\", \"report\", \"analysis\","` | — |
+| [SRC-1AE03B9EC3-L000074](../../agents/web_agent.py#L74) | 74 | `"    \"site\", \"com\", \"org\", \"net\", \"www\","` | — |
+| [SRC-1AE03B9EC3-L000075](../../agents/web_agent.py#L75) | 75 | `"    # Arabic request/format words are not useful topic concepts for matching search snippets."` | — |
+| [SRC-1AE03B9EC3-L000076](../../agents/web_agent.py#L76) | 76 | `"    \"اذكر\", \"مصدر\", \"مصادر\", \"موثوق\", \"موثوقة\", \"رابط\", \"روابط\", \"مباشر\","` | — |
+| [SRC-1AE03B9EC3-L000077](../../agents/web_agent.py#L77) | 77 | `"    \"مباشرة\", \"اجب\", \"بالعربية\", \"العربية\", \"بايجاز\", \"بالايجاز\", \"ايجاز\","` | — |
+| [SRC-1AE03B9EC3-L000078](../../agents/web_agent.py#L78) | 78 | `"    \"باختصار\", \"اختصار\", \"استخدم\", \"اعرض\", \"وضح\", \"حلل\", \"قارن\", \"متعددة\","` | — |
+| [SRC-1AE03B9EC3-L000079](../../agents/web_agent.py#L79) | 79 | `"    \"اهم\", \"الحقائق\", \"حقائق\", \"استنتاج\", \"استنتاجات\", \"الاستنتاجات\","` | — |
+| [SRC-1AE03B9EC3-L000080](../../agents/web_agent.py#L80) | 80 | `"    \"تواريخ\", \"تاريخ\", \"الاخبار\", \"اخبار\", \"المصادر\", \"معلومات\", \"قديمة\","` | — |
+| [SRC-1AE03B9EC3-L000081](../../agents/web_agent.py#L81) | 81 | `"    \"قديمه\", \"جديدة\", \"جديده\", \"خلال\", \"الايام\", \"ايام\", \"السبعة\", \"سبعة\","` | — |
+| [SRC-1AE03B9EC3-L000082](../../agents/web_agent.py#L82) | 82 | `"    \"الماضية\", \"ماضية\", \"الاسبوع\", \"حاليا\", \"الان\", \"احدث\", \"ولا\","` | — |
+| [SRC-1AE03B9EC3-L000083](../../agents/web_agent.py#L83) | 83 | `"    \"تعرض\", \"باعتبارها\","` | — |
+| [SRC-1AE03B9EC3-L000084](../../agents/web_agent.py#L84) | 84 | `"})"` | — |
+| [SRC-1AE03B9EC3-L000085](../../agents/web_agent.py#L85) | 85 | `"_SEARCH_SYNONYMS = {"` | — |
+| [SRC-1AE03B9EC3-L000086](../../agents/web_agent.py#L86) | 86 | `"    \"استراليا\": {\"australia\"}, \"عاصمة\": {\"capital\"}, \"مصر\": {\"egypt\"},"` | — |
+| [SRC-1AE03B9EC3-L000087](../../agents/web_agent.py#L87) | 87 | `"    \"المصري\": {\"egyptian\", \"egypt\"}, \"مركزي\": {\"central\"},"` | — |
+| [SRC-1AE03B9EC3-L000088](../../agents/web_agent.py#L88) | 88 | `"    \"المركزي\": {\"central\"}, \"بنك\": {\"bank\"}, \"البنك\": {\"bank\"},"` | — |
+| [SRC-1AE03B9EC3-L000089](../../agents/web_agent.py#L89) | 89 | `"    \"قرار\": {\"decision\"}, \"قرارات\": {\"decision\", \"decisions\"},"` | — |
+| [SRC-1AE03B9EC3-L000090](../../agents/web_agent.py#L90) | 90 | `"    \"سعر\": {\"price\"}, \"اسعار\": {\"prices\"}, \"استضافة\": {\"hosting\"},"` | — |
+| [SRC-1AE03B9EC3-L000091](../../agents/web_agent.py#L91) | 91 | `"    \"شركة\": {\"company\"}, \"شركه\": {\"company\"}, \"ناشئة\": {\"startup\"},"` | — |
+| [SRC-1AE03B9EC3-L000092](../../agents/web_agent.py#L92) | 92 | `"    \"صعيد\": {\"upper\"}, \"مقارنة\": {\"compare\", \"comparison\"},"` | — |
+| [SRC-1AE03B9EC3-L000093](../../agents/web_agent.py#L93) | 93 | `"    \"تقنية\": {\"technology\"}, \"تقنيات\": {\"technology\"},"` | — |
+| [SRC-1AE03B9EC3-L000094](../../agents/web_agent.py#L94) | 94 | `"    \"ميكروسوفت\": {\"microsoft\"}, \"مايكروسوفت\": {\"microsoft\"},"` | — |
+| [SRC-1AE03B9EC3-L000095](../../agents/web_agent.py#L95) | 95 | `"    \"microsoft\": {\"ميكروسوفت\", \"مايكروسوفت\"},"` | — |
+| [SRC-1AE03B9EC3-L000096](../../agents/web_agent.py#L96) | 96 | `"    \"جمهورية\": {\"republic\"}, \"republic\": {\"جمهورية\"},"` | — |
+| [SRC-1AE03B9EC3-L000097](../../agents/web_agent.py#L97) | 97 | `"    \"الرقمية\": {\"digital\"}, \"رقمية\": {\"digital\"},"` | — |
+| [SRC-1AE03B9EC3-L000098](../../agents/web_agent.py#L98) | 98 | `"    \"الرقميه\": {\"digital\"}, \"رقميه\": {\"digital\"},"` | — |
+| [SRC-1AE03B9EC3-L000099](../../agents/web_agent.py#L99) | 99 | `"    \"موقع\": {\"website\", \"portal\"}, \"مواقع\": {\"websites\", \"portals\"},"` | — |
+| [SRC-1AE03B9EC3-L000100](../../agents/web_agent.py#L100) | 100 | `"    \"التجمع\": {\"settlement\"}, \"تجمع\": {\"settlement\"},"` | — |
+| [SRC-1AE03B9EC3-L000101](../../agents/web_agent.py#L101) | 101 | `"    \"الخامس\": {\"fifth\", \"5th\"}, \"خامس\": {\"fifth\", \"5th\"},"` | — |
+| [SRC-1AE03B9EC3-L000102](../../agents/web_agent.py#L102) | 102 | `"    \"شقة\": {\"apartment\", \"flat\"}, \"شقق\": {\"apartments\", \"flats\"},"` | — |
+| [SRC-1AE03B9EC3-L000103](../../agents/web_agent.py#L103) | 103 | `"    \"عميل\": {\"customer\", \"buyer\"}, \"عملاء\": {\"customers\", \"buyers\"},"` | — |
+| [SRC-1AE03B9EC3-L000104](../../agents/web_agent.py#L104) | 104 | `"    \"شراء\": {\"buy\", \"purchase\"}, \"مشتري\": {\"buyer\"},"` | — |
+| [SRC-1AE03B9EC3-L000105](../../agents/web_agent.py#L105) | 105 | `"    # Small, explicit Arabic-English topic vocabulary; this helps Arabic prompts"` | — |
+| [SRC-1AE03B9EC3-L000106](../../agents/web_agent.py#L106) | 106 | `"    # match English-indexed results without relaxing URL or destination safety."` | — |
+| [SRC-1AE03B9EC3-L000107](../../agents/web_agent.py#L107) | 107 | `"    \"سيارة\": {\"car\", \"vehicle\"}, \"السيارة\": {\"car\", \"vehicle\"},"` | — |
+| [SRC-1AE03B9EC3-L000108](../../agents/web_agent.py#L108) | 108 | `"    \"سيارات\": {\"cars\", \"vehicles\"}, \"السيارات\": {\"cars\", \"vehicles\"},"` | — |
+| [SRC-1AE03B9EC3-L000109](../../agents/web_agent.py#L109) | 109 | `"    \"كهربائي\": {\"electric\"}, \"كهربائية\": {\"electric\"},"` | — |
+| [SRC-1AE03B9EC3-L000110](../../agents/web_agent.py#L110) | 110 | `"    \"الكهربائي\": {\"electric\"}, \"الكهربائية\": {\"electric\"},"` | — |
+| [SRC-1AE03B9EC3-L000111](../../agents/web_agent.py#L111) | 111 | `"    \"شحن\": {\"charging\", \"charge\"}, \"الشحن\": {\"charging\", \"charge\"},"` | — |
+| [SRC-1AE03B9EC3-L000112](../../agents/web_agent.py#L112) | 112 | `"    \"شاحن\": {\"charger\"}, \"بطارية\": {\"battery\"}, \"بطاريات\": {\"batteries\"},"` | — |
+| [SRC-1AE03B9EC3-L000113](../../agents/web_agent.py#L113) | 113 | `"    \"تكلفة\": {\"cost\", \"costs\"}, \"التكلفة\": {\"cost\", \"costs\"},"` | — |
+| [SRC-1AE03B9EC3-L000114](../../agents/web_agent.py#L114) | 114 | `"    \"البنية\": {\"infrastructure\"}, \"التحتية\": {\"infrastructure\"},"` | — |
+| [SRC-1AE03B9EC3-L000115](../../agents/web_agent.py#L115) | 115 | `"    \"تحدي\": {\"challenge\"}, \"تحديات\": {\"challenges\"}, \"التحديات\": {\"challenges\"},"` | — |
+| [SRC-1AE03B9EC3-L000116](../../agents/web_agent.py#L116) | 116 | `"    \"وكيل\": {\"agent\"}, \"الوكيل\": {\"agent\"},"` | — |
+| [SRC-1AE03B9EC3-L000117](../../agents/web_agent.py#L117) | 117 | `"    \"وكلاء\": {\"agents\"}, \"الوكلاء\": {\"agents\"},"` | — |
+| [SRC-1AE03B9EC3-L000118](../../agents/web_agent.py#L118) | 118 | `"    \"ذكاء\": {\"intelligence\", \"ai\"}, \"الذكاء\": {\"intelligence\", \"ai\"},"` | — |
+| [SRC-1AE03B9EC3-L000119](../../agents/web_agent.py#L119) | 119 | `"    \"اصطناعي\": {\"artificial\", \"ai\"}, \"الاصطناعي\": {\"artificial\", \"ai\"},"` | — |
+| [SRC-1AE03B9EC3-L000120](../../agents/web_agent.py#L120) | 120 | `"    \"تطور\": {\"development\", \"advance\"}, \"تطورات\": {\"developments\", \"advances\", \"updates\", \"latest\"},"` | — |
+| [SRC-1AE03B9EC3-L000121](../../agents/web_agent.py#L121) | 121 | `"    \"التطورات\": {\"developments\", \"advances\", \"updates\", \"latest\"},"` | — |
+| [SRC-1AE03B9EC3-L000122](../../agents/web_agent.py#L122) | 122 | `"    \"اراء\": {\"opinions\", \"views\"}, \"تجربة\": {\"experience\"}, \"تجارب\": {\"experiences\", \"reviews\"},"` | — |
+| [SRC-1AE03B9EC3-L000123](../../agents/web_agent.py#L123) | 123 | `"    \"مستخدم\": {\"user\"}, \"المستخدم\": {\"user\"}, \"مستخدمين\": {\"users\"},"` | — |
+| [SRC-1AE03B9EC3-L000124](../../agents/web_agent.py#L124) | 124 | `"    \"المستخدمين\": {\"users\"}, \"مالكون\": {\"owners\"}, \"المالكون\": {\"owners\"},"` | — |
+| [SRC-1AE03B9EC3-L000125](../../agents/web_agent.py#L125) | 125 | `"}"` | — |
+| [SRC-1AE03B9EC3-L000126](../../agents/web_agent.py#L126) | 126 | `"_CALENDAR_MONTHS = ("` | — |
+| [SRC-1AE03B9EC3-L000127](../../agents/web_agent.py#L127) | 127 | `"    \"يناير\", \"فبراير\", \"مارس\", \"ابريل\", \"أبريل\", \"مايو\", \"يونيو\","` | — |
+| [SRC-1AE03B9EC3-L000128](../../agents/web_agent.py#L128) | 128 | `"    \"يوليو\", \"اغسطس\", \"أغسطس\", \"سبتمبر\", \"اكتوبر\", \"أكتوبر\","` | — |
+| [SRC-1AE03B9EC3-L000129](../../agents/web_agent.py#L129) | 129 | `"    \"نوفمبر\", \"ديسمبر\", \"january\", \"february\", \"march\", \"april\","` | — |
+| [SRC-1AE03B9EC3-L000130](../../agents/web_agent.py#L130) | 130 | `"    \"may\", \"june\", \"july\", \"august\", \"september\", \"october\","` | — |
+| [SRC-1AE03B9EC3-L000131](../../agents/web_agent.py#L131) | 131 | `"    \"november\", \"december\","` | — |
+| [SRC-1AE03B9EC3-L000132](../../agents/web_agent.py#L132) | 132 | `")"` | — |
+| [SRC-1AE03B9EC3-L000133](../../agents/web_agent.py#L133) | 133 | `"_BLOCKED_SOURCE_DOMAINS = frozenset({"` | — |
+| [SRC-1AE03B9EC3-L000134](../../agents/web_agent.py#L134) | 134 | `"    \"translate.google.com\", \"translate.googleusercontent.com\","` | — |
+| [SRC-1AE03B9EC3-L000135](../../agents/web_agent.py#L135) | 135 | `"})"` | — |
+| [SRC-1AE03B9EC3-L000136](../../agents/web_agent.py#L136) | 136 | `""` | — |
 | [SRC-1AE03B9EC3-L000137](../../agents/web_agent.py#L137) | 137 | `""` | — |
-| [SRC-1AE03B9EC3-L000138](../../agents/web_agent.py#L138) | 138 | `""` | — |
-| [SRC-1AE03B9EC3-L000139](../../agents/web_agent.py#L139) | 139 | `"# Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)"` | — |
-| [SRC-1AE03B9EC3-L000140](../../agents/web_agent.py#L140) | 140 | `"# can leave request-format wording in the token set and distort relevance scores."` | — |
-| [SRC-1AE03B9EC3-L000141](../../agents/web_agent.py#L141) | 141 | `"_NORMALIZED_SEARCH_STOPWORDS = frozenset("` | — |
-| [SRC-1AE03B9EC3-L000142](../../agents/web_agent.py#L142) | 142 | `"    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS"` | — |
-| [SRC-1AE03B9EC3-L000143](../../agents/web_agent.py#L143) | 143 | `")"` | — |
+| [SRC-1AE03B9EC3-L000138](../../agents/web_agent.py#L138) | 138 | `"def _normalize_search_query(value: str) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000139](../../agents/web_agent.py#L139) | 139 | `"    \"\"\"Normalize Arabic letters/diacritics while preserving search operators and dates.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000140](../../agents/web_agent.py#L140) | 140 | `"    value = unicodedata.normalize(\"NFKC\", value or \"\")"` | — |
+| [SRC-1AE03B9EC3-L000141](../../agents/web_agent.py#L141) | 141 | `"    value = _ARABIC_DIACRITICS_RE.sub(\"\", value).translate(_ARABIC_SEARCH_TRANSLATION)"` | — |
+| [SRC-1AE03B9EC3-L000142](../../agents/web_agent.py#L142) | 142 | `"    return re.sub(r\"\\s+\", \" \", value).strip()"` | — |
+| [SRC-1AE03B9EC3-L000143](../../agents/web_agent.py#L143) | 143 | `""` | — |
 | [SRC-1AE03B9EC3-L000144](../../agents/web_agent.py#L144) | 144 | `""` | — |
-| [SRC-1AE03B9EC3-L000145](../../agents/web_agent.py#L145) | 145 | `""` | — |
-| [SRC-1AE03B9EC3-L000146](../../agents/web_agent.py#L146) | 146 | `"# Normalize synonym keys and values by the same rules as search text. This avoids"` | — |
-| [SRC-1AE03B9EC3-L000147](../../agents/web_agent.py#L147) | 147 | `"# Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching."` | — |
-| [SRC-1AE03B9EC3-L000148](../../agents/web_agent.py#L148) | 148 | `"_NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}"` | — |
-| [SRC-1AE03B9EC3-L000149](../../agents/web_agent.py#L149) | 149 | `"for _synonym_key, _synonym_values in _SEARCH_SYNONYMS.items():"` | — |
-| [SRC-1AE03B9EC3-L000150](../../agents/web_agent.py#L150) | 150 | `"    _normalized_key = _normalize_search_query(_synonym_key).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000151](../../agents/web_agent.py#L151) | 151 | `"    _NORMALIZED_SEARCH_SYNONYMS.setdefault(_normalized_key, set()).update("` | — |
-| [SRC-1AE03B9EC3-L000152](../../agents/web_agent.py#L152) | 152 | `"        _normalize_search_query(value).casefold() for value in _synonym_values"` | — |
-| [SRC-1AE03B9EC3-L000153](../../agents/web_agent.py#L153) | 153 | `"    )"` | — |
-| [SRC-1AE03B9EC3-L000154](../../agents/web_agent.py#L154) | 154 | `""` | — |
-| [SRC-1AE03B9EC3-L000155](../../agents/web_agent.py#L155) | 155 | `""` | — |
-| [SRC-1AE03B9EC3-L000156](../../agents/web_agent.py#L156) | 156 | `"def _search_tokens(value: str) -> set[str]:"` | — |
-| [SRC-1AE03B9EC3-L000157](../../agents/web_agent.py#L157) | 157 | `"    \"\"\"Tokenize Arabic/English text and expand a small bilingual vocabulary.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000158](../../agents/web_agent.py#L158) | 158 | `"    value = _normalize_search_query(value).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000159](../../agents/web_agent.py#L159) | 159 | `"    value = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", value)"` | — |
-| [SRC-1AE03B9EC3-L000160](../../agents/web_agent.py#L160) | 160 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0620-\\u064A\\u066E-\\u06D3]+\", value)"` | — |
-| [SRC-1AE03B9EC3-L000161](../../agents/web_agent.py#L161) | 161 | `"    result: set[str] = set()"` | — |
-| [SRC-1AE03B9EC3-L000162](../../agents/web_agent.py#L162) | 162 | `"    for token in tokens:"` | — |
-| [SRC-1AE03B9EC3-L000163](../../agents/web_agent.py#L163) | 163 | `"        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:"` | — |
-| [SRC-1AE03B9EC3-L000164](../../agents/web_agent.py#L164) | 164 | `"            continue"` | — |
-| [SRC-1AE03B9EC3-L000165](../../agents/web_agent.py#L165) | 165 | `"        forms = {token}"` | — |
-| [SRC-1AE03B9EC3-L000166](../../agents/web_agent.py#L166) | 166 | `"        if token.startswith(\"ال\") and len(token) > 4:"` | — |
-| [SRC-1AE03B9EC3-L000167](../../agents/web_agent.py#L167) | 167 | `"            forms.add(token[2:])"` | — |
-| [SRC-1AE03B9EC3-L000168](../../agents/web_agent.py#L168) | 168 | `"        forms.update(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()))"` | — |
-| [SRC-1AE03B9EC3-L000169](../../agents/web_agent.py#L169) | 169 | `"        # Reverse-map common English equivalents so Arabic and English results can match."` | — |
-| [SRC-1AE03B9EC3-L000170](../../agents/web_agent.py#L170) | 170 | `"        for arabic, english in _NORMALIZED_SEARCH_SYNONYMS.items():"` | — |
-| [SRC-1AE03B9EC3-L000171](../../agents/web_agent.py#L171) | 171 | `"            if token in english:"` | — |
-| [SRC-1AE03B9EC3-L000172](../../agents/web_agent.py#L172) | 172 | `"                forms.add(arabic)"` | — |
-| [SRC-1AE03B9EC3-L000173](../../agents/web_agent.py#L173) | 173 | `"                if arabic.startswith(\"ال\") and len(arabic) > 4:"` | — |
-| [SRC-1AE03B9EC3-L000174](../../agents/web_agent.py#L174) | 174 | `"                    forms.add(arabic[2:])"` | — |
-| [SRC-1AE03B9EC3-L000175](../../agents/web_agent.py#L175) | 175 | `"        result.update(forms)"` | — |
-| [SRC-1AE03B9EC3-L000176](../../agents/web_agent.py#L176) | 176 | `"    return result"` | — |
-| [SRC-1AE03B9EC3-L000177](../../agents/web_agent.py#L177) | 177 | `""` | — |
-| [SRC-1AE03B9EC3-L000178](../../agents/web_agent.py#L178) | 178 | `""` | — |
-| [SRC-1AE03B9EC3-L000179](../../agents/web_agent.py#L179) | 179 | `"def _relevance_query_tokens(query: str) -> set[str]:"` | — |
-| [SRC-1AE03B9EC3-L000180](../../agents/web_agent.py#L180) | 180 | `"    \"\"\"Return meaningful query concepts, excluding request-format boilerplate.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000181](../../agents/web_agent.py#L181) | 181 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000182](../../agents/web_agent.py#L182) | 182 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
-| [SRC-1AE03B9EC3-L000183](../../agents/web_agent.py#L183) | 183 | `"    return {"` | — |
-| [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0620-\\u064A\\u066E-\\u06D3]+\", query_text)"` | — |
-| [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2"` | — |
-| [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    }"` | — |
-| [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `""` | — |
-| [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `""` | — |
-| [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `"def _minimum_relevance_ratio(_query: str) -> float:"` | — |
-| [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"    \"\"\"Keep the established 20% relevance floor after query normalization and token cleanup.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `"    return 0.20"` | — |
-| [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `""` | — |
+| [SRC-1AE03B9EC3-L000145](../../agents/web_agent.py#L145) | 145 | `"# Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)"` | — |
+| [SRC-1AE03B9EC3-L000146](../../agents/web_agent.py#L146) | 146 | `"# can leave request-format wording in the token set and distort relevance scores."` | — |
+| [SRC-1AE03B9EC3-L000147](../../agents/web_agent.py#L147) | 147 | `"_NORMALIZED_SEARCH_STOPWORDS = frozenset("` | — |
+| [SRC-1AE03B9EC3-L000148](../../agents/web_agent.py#L148) | 148 | `"    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS"` | — |
+| [SRC-1AE03B9EC3-L000149](../../agents/web_agent.py#L149) | 149 | `")"` | — |
+| [SRC-1AE03B9EC3-L000150](../../agents/web_agent.py#L150) | 150 | `""` | — |
+| [SRC-1AE03B9EC3-L000151](../../agents/web_agent.py#L151) | 151 | `""` | — |
+| [SRC-1AE03B9EC3-L000152](../../agents/web_agent.py#L152) | 152 | `"# Normalize synonym keys and values by the same rules as search text. This avoids"` | — |
+| [SRC-1AE03B9EC3-L000153](../../agents/web_agent.py#L153) | 153 | `"# Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching."` | — |
+| [SRC-1AE03B9EC3-L000154](../../agents/web_agent.py#L154) | 154 | `"_NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}"` | — |
+| [SRC-1AE03B9EC3-L000155](../../agents/web_agent.py#L155) | 155 | `"for _synonym_key, _synonym_values in _SEARCH_SYNONYMS.items():"` | — |
+| [SRC-1AE03B9EC3-L000156](../../agents/web_agent.py#L156) | 156 | `"    _normalized_key = _normalize_search_query(_synonym_key).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000157](../../agents/web_agent.py#L157) | 157 | `"    _NORMALIZED_SEARCH_SYNONYMS.setdefault(_normalized_key, set()).update("` | — |
+| [SRC-1AE03B9EC3-L000158](../../agents/web_agent.py#L158) | 158 | `"        _normalize_search_query(value).casefold() for value in _synonym_values"` | — |
+| [SRC-1AE03B9EC3-L000159](../../agents/web_agent.py#L159) | 159 | `"    )"` | — |
+| [SRC-1AE03B9EC3-L000160](../../agents/web_agent.py#L160) | 160 | `""` | — |
+| [SRC-1AE03B9EC3-L000161](../../agents/web_agent.py#L161) | 161 | `""` | — |
+| [SRC-1AE03B9EC3-L000162](../../agents/web_agent.py#L162) | 162 | `"def _search_tokens(value: str) -> set[str]:"` | — |
+| [SRC-1AE03B9EC3-L000163](../../agents/web_agent.py#L163) | 163 | `"    \"\"\"Tokenize Arabic/English text and expand a small bilingual vocabulary.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000164](../../agents/web_agent.py#L164) | 164 | `"    value = _normalize_search_query(value).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000165](../../agents/web_agent.py#L165) | 165 | `"    value = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", value)"` | — |
+| [SRC-1AE03B9EC3-L000166](../../agents/web_agent.py#L166) | 166 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0620-\\u064A\\u066E-\\u06D3]+\", value)"` | — |
+| [SRC-1AE03B9EC3-L000167](../../agents/web_agent.py#L167) | 167 | `"    result: set[str] = set()"` | — |
+| [SRC-1AE03B9EC3-L000168](../../agents/web_agent.py#L168) | 168 | `"    for token in tokens:"` | — |
+| [SRC-1AE03B9EC3-L000169](../../agents/web_agent.py#L169) | 169 | `"        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:"` | — |
+| [SRC-1AE03B9EC3-L000170](../../agents/web_agent.py#L170) | 170 | `"            continue"` | — |
+| [SRC-1AE03B9EC3-L000171](../../agents/web_agent.py#L171) | 171 | `"        forms = {token}"` | — |
+| [SRC-1AE03B9EC3-L000172](../../agents/web_agent.py#L172) | 172 | `"        if token.startswith(\"ال\") and len(token) > 4:"` | — |
+| [SRC-1AE03B9EC3-L000173](../../agents/web_agent.py#L173) | 173 | `"            forms.add(token[2:])"` | — |
+| [SRC-1AE03B9EC3-L000174](../../agents/web_agent.py#L174) | 174 | `"        forms.update(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()))"` | — |
+| [SRC-1AE03B9EC3-L000175](../../agents/web_agent.py#L175) | 175 | `"        # Reverse-map common English equivalents so Arabic and English results can match."` | — |
+| [SRC-1AE03B9EC3-L000176](../../agents/web_agent.py#L176) | 176 | `"        for arabic, english in _NORMALIZED_SEARCH_SYNONYMS.items():"` | — |
+| [SRC-1AE03B9EC3-L000177](../../agents/web_agent.py#L177) | 177 | `"            if token in english:"` | — |
+| [SRC-1AE03B9EC3-L000178](../../agents/web_agent.py#L178) | 178 | `"                forms.add(arabic)"` | — |
+| [SRC-1AE03B9EC3-L000179](../../agents/web_agent.py#L179) | 179 | `"                if arabic.startswith(\"ال\") and len(arabic) > 4:"` | — |
+| [SRC-1AE03B9EC3-L000180](../../agents/web_agent.py#L180) | 180 | `"                    forms.add(arabic[2:])"` | — |
+| [SRC-1AE03B9EC3-L000181](../../agents/web_agent.py#L181) | 181 | `"        result.update(forms)"` | — |
+| [SRC-1AE03B9EC3-L000182](../../agents/web_agent.py#L182) | 182 | `"    return result"` | — |
+| [SRC-1AE03B9EC3-L000183](../../agents/web_agent.py#L183) | 183 | `""` | — |
+| [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `""` | — |
+| [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"def _relevance_query_tokens(query: str) -> set[str]:"` | — |
+| [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    \"\"\"Return meaningful query concepts, excluding request-format boilerplate.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `"    return {"` | — |
+| [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0620-\\u064A\\u066E-\\u06D3]+\", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `"        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2"` | — |
+| [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `"    }"` | — |
 | [SRC-1AE03B9EC3-L000193](../../agents/web_agent.py#L193) | 193 | `""` | — |
-| [SRC-1AE03B9EC3-L000194](../../agents/web_agent.py#L194) | 194 | `"def _relevance_ratio(query: str, evidence: str) -> float:"` | — |
-| [SRC-1AE03B9EC3-L000195](../../agents/web_agent.py#L195) | 195 | `"    \"\"\"Fraction of meaningful query concepts present in a candidate's title/snippet.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000194](../../agents/web_agent.py#L194) | 194 | `""` | — |
+| [SRC-1AE03B9EC3-L000195](../../agents/web_agent.py#L195) | 195 | `"def _minimum_relevance_ratio(_query: str) -> float:"` | — |

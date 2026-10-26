@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000099 إلى SRC-E599346ABE-L000898
+- النطاق: SRC-E599346ABE-L000048 إلى SRC-E599346ABE-L000847
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000048](../generate_index.py#L48) | 48 | `"        \".env.development\","` | — |
+| [SRC-E599346ABE-L000049](../generate_index.py#L49) | 49 | `"        \"id_rsa\","` | — |
+| [SRC-E599346ABE-L000050](../generate_index.py#L50) | 50 | `"        \"id_ed25519\","` | — |
+| [SRC-E599346ABE-L000051](../generate_index.py#L51) | 51 | `"    }"` | — |
+| [SRC-E599346ABE-L000052](../generate_index.py#L52) | 52 | `")"` | — |
+| [SRC-E599346ABE-L000053](../generate_index.py#L53) | 53 | `"EXCLUDED_SUFFIXES = frozenset("` | — |
+| [SRC-E599346ABE-L000054](../generate_index.py#L54) | 54 | `"    {"` | — |
+| [SRC-E599346ABE-L000055](../generate_index.py#L55) | 55 | `"        \".pyc\","` | — |
+| [SRC-E599346ABE-L000056](../generate_index.py#L56) | 56 | `"        \".pyo\","` | — |
+| [SRC-E599346ABE-L000057](../generate_index.py#L57) | 57 | `"        \".sqlite\","` | — |
+| [SRC-E599346ABE-L000058](../generate_index.py#L58) | 58 | `"        \".sqlite3\","` | — |
+| [SRC-E599346ABE-L000059](../generate_index.py#L59) | 59 | `"        \".db\","` | — |
+| [SRC-E599346ABE-L000060](../generate_index.py#L60) | 60 | `"        \".pem\","` | — |
+| [SRC-E599346ABE-L000061](../generate_index.py#L61) | 61 | `"        \".key\","` | — |
+| [SRC-E599346ABE-L000062](../generate_index.py#L62) | 62 | `"        \".p12\","` | — |
+| [SRC-E599346ABE-L000063](../generate_index.py#L63) | 63 | `"        \".pfx\","` | — |
+| [SRC-E599346ABE-L000064](../generate_index.py#L64) | 64 | `"    }"` | — |
+| [SRC-E599346ABE-L000065](../generate_index.py#L65) | 65 | `")"` | — |
+| [SRC-E599346ABE-L000066](../generate_index.py#L66) | 66 | `"MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024"` | — |
+| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |
+| [SRC-E599346ABE-L000068](../generate_index.py#L68) | 68 | `"INDEX_RELATIVE_PATH = \"docs/MASTER_INDEX.md\""` | — |
+| [SRC-E599346ABE-L000069](../generate_index.py#L69) | 69 | `"SOURCE_LINES_INDEX_RELATIVE_PATH = \"docs/SOURCE_LINES_INDEX.md\""` | — |
+| [SRC-E599346ABE-L000070](../generate_index.py#L70) | 70 | `"COVERAGE_AUDIT_RELATIVE_PATH = \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
+| [SRC-E599346ABE-L000071](../generate_index.py#L71) | 71 | `"INDEX_OUTPUT_PATHS = frozenset("` | — |
+| [SRC-E599346ABE-L000072](../generate_index.py#L72) | 72 | `"    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}"` | — |
+| [SRC-E599346ABE-L000073](../generate_index.py#L73) | 73 | `")"` | — |
+| [SRC-E599346ABE-L000074](../generate_index.py#L74) | 74 | `"SOURCE_LINES_PAGES_DIR = \"docs/source_index\""` | — |
+| [SRC-E599346ABE-L000075](../generate_index.py#L75) | 75 | `"SOURCE_LINES_PAGE_SIZE = 800"` | — |
+| [SRC-E599346ABE-L000076](../generate_index.py#L76) | 76 | `"SOURCE_LINES_PAGE_RE = re.compile(r\"SOURCE_LINES_\\d{3,}\\.md\")"` | — |
+| [SRC-E599346ABE-L000077](../generate_index.py#L77) | 77 | `""` | — |
+| [SRC-E599346ABE-L000078](../generate_index.py#L78) | 78 | `"PYTHON_EXTENSIONS = frozenset({\".py\"})"` | — |
+| [SRC-E599346ABE-L000079](../generate_index.py#L79) | 79 | `"JAVASCRIPT_EXTENSIONS = frozenset({\".js\", \".mjs\", \".cjs\", \".jsx\", \".ts\", \".tsx\"})"` | — |
+| [SRC-E599346ABE-L000080](../generate_index.py#L80) | 80 | `"CSS_EXTENSIONS = frozenset({\".css\", \".scss\"})"` | — |
+| [SRC-E599346ABE-L000081](../generate_index.py#L81) | 81 | `"CONFIG_EXTENSIONS = frozenset({\".yml\", \".yaml\", \".toml\", \".json\", \".ini\", \".cfg\"})"` | — |
+| [SRC-E599346ABE-L000082](../generate_index.py#L82) | 82 | `"TEXT_SCAN_EXTENSIONS = ("` | — |
+| [SRC-E599346ABE-L000083](../generate_index.py#L83) | 83 | `"    PYTHON_EXTENSIONS"` | — |
+| [SRC-E599346ABE-L000084](../generate_index.py#L84) | 84 | `"    \| JAVASCRIPT_EXTENSIONS"` | — |
+| [SRC-E599346ABE-L000085](../generate_index.py#L85) | 85 | `"    \| CSS_EXTENSIONS"` | — |
+| [SRC-E599346ABE-L000086](../generate_index.py#L86) | 86 | `"    \| CONFIG_EXTENSIONS"` | — |
+| [SRC-E599346ABE-L000087](../generate_index.py#L87) | 87 | `"    \| frozenset({\".html\", \".htm\", \".sh\", \".md\", \".env.example\", \".example\"})"` | — |
+| [SRC-E599346ABE-L000088](../generate_index.py#L88) | 88 | `")"` | — |
+| [SRC-E599346ABE-L000089](../generate_index.py#L89) | 89 | `""` | — |
+| [SRC-E599346ABE-L000090](../generate_index.py#L90) | 90 | `"JS_IDENTIFIER = r\"[A-Za-z_$][A-Za-z0-9_$]*\""` | — |
+| [SRC-E599346ABE-L000091](../generate_index.py#L91) | 91 | `"JS_FUNCTION_RE = re.compile("` | — |
+| [SRC-E599346ABE-L000092](../generate_index.py#L92) | 92 | `"    rf\"\\b(?:async\\s+)?function\\s*\\*?\\s+({JS_IDENTIFIER})\\s*\\(\""` | — |
+| [SRC-E599346ABE-L000093](../generate_index.py#L93) | 93 | `")"` | — |
+| [SRC-E599346ABE-L000094](../generate_index.py#L94) | 94 | `"JS_CLASS_RE = re.compile(rf\"\\bclass\\s+({JS_IDENTIFIER})\\b\")"` | — |
+| [SRC-E599346ABE-L000095](../generate_index.py#L95) | 95 | `"JS_ARROW_ASSIGNMENT_RE = re.compile("` | — |
+| [SRC-E599346ABE-L000096](../generate_index.py#L96) | 96 | `"    rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\s*=\\s*\""` | — |
+| [SRC-E599346ABE-L000097](../generate_index.py#L97) | 97 | `"    rf\"(?:async\\s*)?(?:\\([^;\\n]*?\\)\|{JS_IDENTIFIER})\\s*=>\""` | — |
+| [SRC-E599346ABE-L000098](../generate_index.py#L98) | 98 | `")"` | — |
 | [SRC-E599346ABE-L000099](../generate_index.py#L99) | 99 | `"JS_FUNCTION_ASSIGNMENT_RE = re.compile("` | — |
 | [SRC-E599346ABE-L000100](../generate_index.py#L100) | 100 | `"    rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\s*=\\s*(?:async\\s*)?function\\b\""` | — |
 | [SRC-E599346ABE-L000101](../generate_index.py#L101) | 101 | `")"` | — |
@@ -765,54 +816,3 @@
 | [SRC-E599346ABE-L000845](../generate_index.py#L845) | 845 | `"            seen,"` | — |
 | [SRC-E599346ABE-L000846](../generate_index.py#L846) | 846 | `"            relative_file,"` | — |
 | [SRC-E599346ABE-L000847](../generate_index.py#L847) | 847 | `"            name,"` | — |
-| [SRC-E599346ABE-L000848](../generate_index.py#L848) | 848 | `"            \"متغير JavaScript/TypeScript\","` | — |
-| [SRC-E599346ABE-L000849](../generate_index.py#L849) | 849 | `"            line,"` | — |
-| [SRC-E599346ABE-L000850](../generate_index.py#L850) | 850 | `"        )"` | — |
-| [SRC-E599346ABE-L000851](../generate_index.py#L851) | 851 | `""` | — |
-| [SRC-E599346ABE-L000852](../generate_index.py#L852) | 852 | `""` | — |
-| [SRC-E599346ABE-L000853](../generate_index.py#L853) | 853 | `"def _scan_css("` | — |
-| [SRC-E599346ABE-L000854](../generate_index.py#L854) | 854 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000855](../generate_index.py#L855) | 855 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000856](../generate_index.py#L856) | 856 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000857](../generate_index.py#L857) | 857 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000858](../generate_index.py#L858) | 858 | `"    base_line: int = 1,"` | — |
-| [SRC-E599346ABE-L000859](../generate_index.py#L859) | 859 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000860](../generate_index.py#L860) | 860 | `"    \"\"\"Extract CSS class/id selectors and custom properties; this is not a full CSS parser.\"\"\""` | — |
-| [SRC-E599346ABE-L000861](../generate_index.py#L861) | 861 | `"    cleaned = CSS_COMMENT_RE.sub("` | — |
-| [SRC-E599346ABE-L000862](../generate_index.py#L862) | 862 | `"        lambda match: \"\".join(\"\\n\" if char == \"\\n\" else \" \" for char in match.group(0)),"` | — |
-| [SRC-E599346ABE-L000863](../generate_index.py#L863) | 863 | `"        source,"` | — |
-| [SRC-E599346ABE-L000864](../generate_index.py#L864) | 864 | `"    )"` | — |
-| [SRC-E599346ABE-L000865](../generate_index.py#L865) | 865 | `"    patterns = ("` | — |
-| [SRC-E599346ABE-L000866](../generate_index.py#L866) | 866 | `"        (CSS_CUSTOM_PROPERTY_RE, \"متغير CSS مخصص\"),"` | — |
-| [SRC-E599346ABE-L000867](../generate_index.py#L867) | 867 | `"        (CSS_CLASS_RE, \"محدد class في CSS\"),"` | — |
-| [SRC-E599346ABE-L000868](../generate_index.py#L868) | 868 | `"        (CSS_ID_RE, \"محدد id في CSS\"),"` | — |
-| [SRC-E599346ABE-L000869](../generate_index.py#L869) | 869 | `"    )"` | — |
-| [SRC-E599346ABE-L000870](../generate_index.py#L870) | 870 | `"    for pattern, kind in patterns:"` | — |
-| [SRC-E599346ABE-L000871](../generate_index.py#L871) | 871 | `"        for match in pattern.finditer(cleaned):"` | — |
-| [SRC-E599346ABE-L000872](../generate_index.py#L872) | 872 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000873](../generate_index.py#L873) | 873 | `"                markers,"` | — |
-| [SRC-E599346ABE-L000874](../generate_index.py#L874) | 874 | `"                seen,"` | — |
-| [SRC-E599346ABE-L000875](../generate_index.py#L875) | 875 | `"                relative_file,"` | — |
-| [SRC-E599346ABE-L000876](../generate_index.py#L876) | 876 | `"                match.group(1),"` | — |
-| [SRC-E599346ABE-L000877](../generate_index.py#L877) | 877 | `"                kind,"` | — |
-| [SRC-E599346ABE-L000878](../generate_index.py#L878) | 878 | `"                _line_at(cleaned, match.start(), base_line),"` | — |
-| [SRC-E599346ABE-L000879](../generate_index.py#L879) | 879 | `"            )"` | — |
-| [SRC-E599346ABE-L000880](../generate_index.py#L880) | 880 | `""` | — |
-| [SRC-E599346ABE-L000881](../generate_index.py#L881) | 881 | `""` | — |
-| [SRC-E599346ABE-L000882](../generate_index.py#L882) | 882 | `"def _scan_html("` | — |
-| [SRC-E599346ABE-L000883](../generate_index.py#L883) | 883 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000884](../generate_index.py#L884) | 884 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000885](../generate_index.py#L885) | 885 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000886](../generate_index.py#L886) | 886 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000887](../generate_index.py#L887) | 887 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000888](../generate_index.py#L888) | 888 | `"    \"\"\"Extract HTML navigation attributes plus embedded JS and CSS declarations.\"\"\""` | — |
-| [SRC-E599346ABE-L000889](../generate_index.py#L889) | 889 | `"    for match in HTML_ATTRIBUTE_RE.finditer(source):"` | — |
-| [SRC-E599346ABE-L000890](../generate_index.py#L890) | 890 | `"        attribute = match.group(1).lower()"` | — |
-| [SRC-E599346ABE-L000891](../generate_index.py#L891) | 891 | `"        raw_value = match.group(3).strip()"` | — |
-| [SRC-E599346ABE-L000892](../generate_index.py#L892) | 892 | `"        for value in raw_value.split() if attribute == \"data-testid\" else [raw_value]:"` | — |
-| [SRC-E599346ABE-L000893](../generate_index.py#L893) | 893 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000894](../generate_index.py#L894) | 894 | `"                markers,"` | — |
-| [SRC-E599346ABE-L000895](../generate_index.py#L895) | 895 | `"                seen,"` | — |
-| [SRC-E599346ABE-L000896](../generate_index.py#L896) | 896 | `"                relative_file,"` | — |
-| [SRC-E599346ABE-L000897](../generate_index.py#L897) | 897 | `"                value,"` | — |
-| [SRC-E599346ABE-L000898](../generate_index.py#L898) | 898 | `"                f\"قيمة سمة HTML ({attribute})\","` | — |

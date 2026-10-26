@@ -241,7 +241,13 @@ def test_connector_summary_separates_raw_candidates_from_filtered_results():
             "result_count": 6,
             "accepted_count": 0,
             "rejected_count": 6,
-            "error": "all candidates failed relevance checks",
+            "rejection_counts": {
+                "malformed_candidate": 0,
+                "invalid_url_or_unsafe_target": 2,
+                "blocked_domain": 1,
+                "relevance_below_threshold": 3,
+            },
+            "error": "all candidates rejected; invalid_url_or_unsafe_target=2, blocked_domain=1, relevance_below_threshold=3",
         }],
         [],
     )
@@ -250,6 +256,49 @@ def test_connector_summary_separates_raw_candidates_from_filtered_results():
     assert bing["result_count"] == 6
     assert bing["accepted_count"] == 0
     assert bing["rejected_count"] == 6
+    assert bing["rejection_counts_observed"] is True
+    assert bing["rejection_counts"] == {
+        "malformed_candidate": 0,
+        "invalid_url_or_unsafe_target": 2,
+        "blocked_domain": 1,
+        "relevance_below_threshold": 3,
+    }
+    assert sum(bing["rejection_counts"].values()) == bing["rejected_count"]
     assert bing["candidate_rejection_observed"] is True
     assert bing["available_for_this_request"] is True
     assert bing["verified_for_this_request"] is True
+
+
+def test_connector_summary_does_not_present_partial_legacy_rejection_counts_as_complete():
+    agent = WebAgent()
+    summary = agent._connector_status_summary(
+        [
+            {
+                "provider": "bing_rss",
+                "query": "first query",
+                "status": "filtered_all",
+                "result_count": 3,
+                "accepted_count": 0,
+                "rejected_count": 3,
+            },
+            {
+                "provider": "bing_rss",
+                "query": "second query",
+                "status": "filtered_all",
+                "result_count": 2,
+                "accepted_count": 0,
+                "rejected_count": 2,
+                "rejection_counts": {
+                    "malformed_candidate": 0,
+                    "invalid_url_or_unsafe_target": 0,
+                    "blocked_domain": 0,
+                    "relevance_below_threshold": 2,
+                },
+            },
+        ],
+        [],
+    )
+    bing = next(item for item in summary["connectors"] if item["name"] == "bing_rss")
+    assert bing["rejected_count"] == 5
+    assert bing["rejection_counts_observed"] is False
+    assert bing["rejection_counts"] is None
