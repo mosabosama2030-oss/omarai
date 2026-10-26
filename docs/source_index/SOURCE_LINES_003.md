@@ -246,7 +246,7 @@
 | [SRC-59CF4B7DE8-L000283](../../agents/research.py#L283) | 283 | `"    contextual_question = resolve_followup_query(question, history)"` | — |
 | [SRC-59CF4B7DE8-L000284](../../agents/research.py#L284) | 284 | `"    direct_urls = extract_urls(question)"` | — |
 | [SRC-59CF4B7DE8-L000285](../../agents/research.py#L285) | 285 | `"    base = compact_search_query(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000286](../../agents/research.py#L286) | 286 | `"    if not base:"` | — |
+| [SRC-59CF4B7DE8-L000286](../../agents/research.py#L286) | 286 | `"    if not base and direct_urls:"` | — |
 | [SRC-59CF4B7DE8-L000287](../../agents/research.py#L287) | 287 | `"        base = \"اقرأ محتوى الصفحة\" if re.search(r\"[\\u0600-\\u06FF]\", question) else \"read the linked page\""` | — |
 | [SRC-59CF4B7DE8-L000288](../../agents/research.py#L288) | 288 | `"    social_focus = detect_social_focus(question, history)"` | — |
 | [SRC-59CF4B7DE8-L000289](../../agents/research.py#L289) | 289 | `"    fresh = detect_freshness(question)"` | — |
@@ -255,14 +255,14 @@
 | [SRC-59CF4B7DE8-L000292](../../agents/research.py#L292) | 292 | `"    platforms = mentioned_social_platforms(question + \" \" + \" \".join("` | — |
 | [SRC-59CF4B7DE8-L000293](../../agents/research.py#L293) | 293 | `"        item.get(\"content\", \"\") for item in (history or [])[-4:]"` | — |
 | [SRC-59CF4B7DE8-L000294](../../agents/research.py#L294) | 294 | `"    ))"` | — |
-| [SRC-59CF4B7DE8-L000295](../../agents/research.py#L295) | 295 | `"    queries: list[str] = [base]"` | — |
+| [SRC-59CF4B7DE8-L000295](../../agents/research.py#L295) | 295 | `"    queries: list[str] = [base] if base else []"` | — |
 | [SRC-59CF4B7DE8-L000296](../../agents/research.py#L296) | 296 | `""` | — |
 | [SRC-59CF4B7DE8-L000297](../../agents/research.py#L297) | 297 | `"    if fresh and base:"` | — |
 | [SRC-59CF4B7DE8-L000298](../../agents/research.py#L298) | 298 | `"        queries.append(compact_search_query(base + \" أحدث مستجدات آخر الأخبار\"))"` | — |
-| [SRC-59CF4B7DE8-L000299](../../agents/research.py#L299) | 299 | `"    if _contains_any(question, (\"قارن\", \"مقارنة\", \"compare\", \"versus\", \"vs\", \"الفرق بين\")):"` | — |
+| [SRC-59CF4B7DE8-L000299](../../agents/research.py#L299) | 299 | `"    if base and _contains_any(question, (\"قارن\", \"مقارنة\", \"compare\", \"versus\", \"vs\", \"الفرق بين\")):"` | — |
 | [SRC-59CF4B7DE8-L000300](../../agents/research.py#L300) | 300 | `"        queries.append(compact_search_query(base + \" مقارنة مراجعات مميزات عيوب\"))"` | — |
 | [SRC-59CF4B7DE8-L000301](../../agents/research.py#L301) | 301 | `""` | — |
-| [SRC-59CF4B7DE8-L000302](../../agents/research.py#L302) | 302 | `"    if social_focus:"` | — |
+| [SRC-59CF4B7DE8-L000302](../../agents/research.py#L302) | 302 | `"    if social_focus and base:"` | — |
 | [SRC-59CF4B7DE8-L000303](../../agents/research.py#L303) | 303 | `"        selected = platforms or [\"facebook\", \"instagram\", \"reddit\"]"` | — |
 | [SRC-59CF4B7DE8-L000304](../../agents/research.py#L304) | 304 | `"        for platform in selected[:3]:"` | — |
 | [SRC-59CF4B7DE8-L000305](../../agents/research.py#L305) | 305 | `"            domain = SOCIAL_DOMAINS[platform]"` | — |
@@ -270,7 +270,7 @@
 | [SRC-59CF4B7DE8-L000307](../../agents/research.py#L307) | 307 | `"            if site_query not in queries:"` | — |
 | [SRC-59CF4B7DE8-L000308](../../agents/research.py#L308) | 308 | `"                queries.append(site_query)"` | — |
 | [SRC-59CF4B7DE8-L000309](../../agents/research.py#L309) | 309 | `""` | — |
-| [SRC-59CF4B7DE8-L000310](../../agents/research.py#L310) | 310 | `"    if deep and not social_focus and len(queries) < MAX_PLAN_QUERIES:"` | — |
+| [SRC-59CF4B7DE8-L000310](../../agents/research.py#L310) | 310 | `"    if deep and base and not social_focus and len(queries) < MAX_PLAN_QUERIES:"` | — |
 | [SRC-59CF4B7DE8-L000311](../../agents/research.py#L311) | 311 | `"        queries.append(compact_search_query(base + \" مصادر موثوقة تقارير إحصاءات\"))"` | — |
 | [SRC-59CF4B7DE8-L000312](../../agents/research.py#L312) | 312 | `""` | — |
 | [SRC-59CF4B7DE8-L000313](../../agents/research.py#L313) | 313 | `"    unique: list[str] = []"` | — |
@@ -285,7 +285,7 @@
 | [SRC-59CF4B7DE8-L000322](../../agents/research.py#L322) | 322 | `"            break"` | — |
 | [SRC-59CF4B7DE8-L000323](../../agents/research.py#L323) | 323 | `""` | — |
 | [SRC-59CF4B7DE8-L000324](../../agents/research.py#L324) | 324 | `"    return {"` | — |
-| [SRC-59CF4B7DE8-L000325](../../agents/research.py#L325) | 325 | `"        \"queries\": unique or [base],"` | — |
+| [SRC-59CF4B7DE8-L000325](../../agents/research.py#L325) | 325 | `"        \"queries\": unique or ([base] if base else []),"` | — |
 | [SRC-59CF4B7DE8-L000326](../../agents/research.py#L326) | 326 | `"        \"direct_urls\": direct_urls,"` | — |
 | [SRC-59CF4B7DE8-L000327](../../agents/research.py#L327) | 327 | `"        \"social_focus\": social_focus,"` | — |
 | [SRC-59CF4B7DE8-L000328](../../agents/research.py#L328) | 328 | `"        \"freshness\": \"current\" if fresh else \"any\","` | — |
