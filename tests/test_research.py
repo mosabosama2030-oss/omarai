@@ -209,3 +209,20 @@ def test_compact_search_query_bounds_length_without_leaving_partial_tail_word():
     )
     assert len(query) <= 42
     assert not query.endswith("infrastructur")
+
+
+def test_compact_search_query_preserves_subject_when_prompt_starts_with_action_verb():
+    query = compact_search_query(
+        "وضح أهمية السيارات الكهربائية في مصر. ما تأثير الشحن على المدى الطويل؟ اذكر مصادر موثوقة."
+    )
+    assert "السيارات الكهربائية في مصر" in query
+    assert "الشحن على المدى الطويل" in query
+    assert "مصادر موثوقة" not in query
+
+    query = compact_search_query(
+        "اذكر أبرز السيارات الكهربائية في مصر. قارن بين أسعارها."
+    )
+    assert "السيارات الكهربائية في مصر" in query
+    assert "أسعارها" in query
+    assert "اذكر أبرز" not in query
+
