@@ -125,7 +125,7 @@ _SEARCH_TOPIC_PRESERVING_META_PREFIX_RE = re.compile(
 )
 
 _SEARCH_META_START_RE = re.compile(
-    r"^(?:و?استخدم|و?استعمل|و?ميّز|و?ميز|و?اجب|و?أجب|و?لا تعرض|و?لا تقدم|"
+    r"^(?:و?استخدم|و?استعمل|و?اجب|و?أجب|و?لا تعرض|و?لا تقدم|"
     r"please cite|cite|provide links|mention sources|use multiple sources|"
     r"don't present|do not present)\b",
     re.IGNORECASE,
@@ -145,6 +145,11 @@ _SEARCH_UNCERTAINTY_META_START_RE = re.compile(
     r".*(?:لتمثيل|تمثيل).*(?:اراء\s+المستخدمين|المستخدمين)\b",
     re.IGNORECASE,
 )
+
+_SEARCH_FACTS_INFERENCE_META_ONLY_RE = re.compile(
+    r"^و?(?:ميّز|ميز)\s+بين\s+الحقائق\s+والاستنتاجات\s*[.!؟؛،,]*$",
+    re.IGNORECASE,
+)
 _SEARCH_META_TAIL_RE = re.compile(
     r"\s*[,،؛;]\s*(?:و\s*)?(?:استخدم|استعمل|ميّز|ميز|اجب|أجب|لا تعرض|لا تقدم|"
     r"please cite|cite|provide links|mention sources|use multiple sources|"
@@ -153,7 +158,7 @@ _SEARCH_META_TAIL_RE = re.compile(
     re.IGNORECASE,
 )
 _SEARCH_LEADING_ACTION_RE = re.compile(
-    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|استكشف|استقصِ|اعرض|و?وضح|و?وضّح|و?اذكر(?:ي|وا)?|"
+    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|استكشف|استقصِ|و?ميّز|و?ميز|اعرض|و?وضح|و?وضّح|و?اذكر(?:ي|وا)?|"
     r"analyze|analyse|compare|investigate|collect|gather|review|summarize|"
     r"(?:ابحث|بحث|دورلي|دور|اعثر)(?:\s+(?:عن|على))?)\s+",
     re.IGNORECASE,
@@ -180,6 +185,7 @@ def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
         if (
             _SEARCH_CITATION_META_START_RE.search(normalized_segment)
             or _SEARCH_UNCERTAINTY_META_START_RE.search(normalized_segment)
+            or _SEARCH_FACTS_INFERENCE_META_ONLY_RE.search(normalized_segment)
         ):
             continue
         if _SEARCH_META_START_RE.search(normalized_segment):
