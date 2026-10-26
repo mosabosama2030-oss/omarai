@@ -804,9 +804,9 @@
 | [SRC-1AE03B9EC3-L000172](../../agents/web_agent.py#L172) | 172 | `"def _relevance_query_tokens(query: str) -> set[str]:"` | — |
 | [SRC-1AE03B9EC3-L000173](../../agents/web_agent.py#L173) | 173 | `"    \"\"\"Return meaningful query concepts, excluding request-format boilerplate.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000174](../../agents/web_agent.py#L174) | 174 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000175](../../agents/web_agent.py#L175) | 175 | `"    query_text = re.sub(r\"(?i)\\\\bsite\\\\s*:\\\\s*\\\\S+\", \" \", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000175](../../agents/web_agent.py#L175) | 175 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000176](../../agents/web_agent.py#L176) | 176 | `"    return {"` | — |
-| [SRC-1AE03B9EC3-L000177](../../agents/web_agent.py#L177) | 177 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\\\u0600-\\\\u06FF]+\", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000177](../../agents/web_agent.py#L177) | 177 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000178](../../agents/web_agent.py#L178) | 178 | `"        if token not in _SEARCH_STOPWORDS and len(token) >= 2"` | — |
 | [SRC-1AE03B9EC3-L000179](../../agents/web_agent.py#L179) | 179 | `"    }"` | — |
 | [SRC-1AE03B9EC3-L000180](../../agents/web_agent.py#L180) | 180 | `""` | — |

@@ -381,7 +381,7 @@
 | [SRC-1AE03B9EC3-L001358](../../agents/web_agent.py#L1358) | 1358 | `"            except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets"` | — |
 | [SRC-1AE03B9EC3-L001359](../../agents/web_agent.py#L1359) | 1359 | `"                detail = f\"{type(exc).__name__}: {exc}\" if isinstance(exc, RuntimeError) else type(exc).__name__"` | — |
 | [SRC-1AE03B9EC3-L001360](../../agents/web_agent.py#L1360) | 1360 | `"                status = \"failed\""` | — |
-| [SRC-1AE03B9EC3-L001361](../../agents/web_agent.py#L1361) | 1361 | `"                status_match = re.search(r\"(?i)\\\\bHTTP\\\\s+(\\\\d{3})\\\\b\", str(exc))"` | — |
+| [SRC-1AE03B9EC3-L001361](../../agents/web_agent.py#L1361) | 1361 | `"                status_match = re.search(r\"(?i)\\bHTTP\\s+(\\d{3})\\b\", str(exc))"` | — |
 | [SRC-1AE03B9EC3-L001362](../../agents/web_agent.py#L1362) | 1362 | `"                if status_match:"` | — |
 | [SRC-1AE03B9EC3-L001363](../../agents/web_agent.py#L1363) | 1363 | `"                    status_code = int(status_match.group(1))"` | — |
 | [SRC-1AE03B9EC3-L001364](../../agents/web_agent.py#L1364) | 1364 | `"                    if status_code == 429:"` | — |
