@@ -27,6 +27,7 @@ from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
+    compact_search_query,
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
@@ -183,7 +184,10 @@ def _search_tokens(value: str) -> set[str]:
 
 
 def _relevance_query_tokens(query: str) -> set[str]:
-    """Return meaningful query concepts, excluding request-format boilerplate."""
+    """Return topic concepts after removing answer-format instructions."""
+    query = compact_search_query(query)
+    if not query:
+        return set()
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     return {
@@ -201,7 +205,8 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     """Fraction of meaningful query concepts present in a candidate's title/snippet."""
     query_tokens = _relevance_query_tokens(query)
     if not query_tokens:
-        return 1.0
+        # Relevance cannot be established from an instruction-only query.
+        return 0.0
     expanded_evidence = _search_tokens(evidence)
     matched = sum(
         1 for token in query_tokens
