@@ -27,6 +27,7 @@ from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
+    compact_search_query,
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
@@ -3957,6 +3958,22 @@ class WebAgent:
             ):
                 allowed_public_platforms.append("instagram")
             plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
+
+        # Final query gate: apply the same subject compaction and length budget after
+        # every mode-specific expansion, so no branch can send a full answer prompt.
+        normalized_queries: list[str] = []
+        seen_query_keys: set[str] = set()
+        for raw_query in plan.get("queries", []):
+            if not isinstance(raw_query, str):
+                continue
+            compacted_query = compact_search_query(raw_query)
+            query_key = compacted_query.casefold()
+            if compacted_query and query_key not in seen_query_keys:
+                normalized_queries.append(compacted_query)
+                seen_query_keys.add(query_key)
+            if len(normalized_queries) >= MAX_PLAN_QUERIES:
+                break
+        plan["queries"] = normalized_queries or [compact_search_query(question)]
 
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
