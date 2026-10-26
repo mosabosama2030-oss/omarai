@@ -322,3 +322,9 @@ def test_collect_research_skips_provider_calls_without_topic_or_direct_url(monke
     assert report["queries_planned"] == 0
     assert report["queries_attempted"] == 0
     assert any("لم تُستدعَ محركات البحث" in warning for warning in warnings)
+
+
+def test_fallback_plan_keeps_direct_url_without_generic_keyword_query():
+    plan = fallback_plan("https://example.com/research")
+    assert plan["direct_urls"] == ["https://example.com/research"]
+    assert plan["queries"] == []
