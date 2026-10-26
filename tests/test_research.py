@@ -260,3 +260,14 @@ def test_compact_search_query_preserves_topic_after_source_quality_lead_in():
         assert query
         for term in required_terms:
             assert term in query, f"lost topic term {term!r}: {query!r}"
+
+
+def test_compact_search_query_preserves_topic_after_distinguish_action():
+    query = compact_search_query("ميّز بين السيارات الكهربائية وسيارات البنزين في مصر")
+    assert "السيارات الكهربائية" in query
+    assert "سيارات البنزين" in query
+    assert "مصر" in query
+
+
+def test_compact_search_query_discards_standalone_fact_vs_inference_instruction():
+    assert compact_search_query("ميّز بين الحقائق والاستنتاجات.") == ""
