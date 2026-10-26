@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **626**
 - تعريفات لا ينطبق عليها Docstring: **203**
 - الرموز الساكنة الإضافية: **1564**
-- الأسطر النصية المفهرسة حرفيًا: **27061**
+- الأسطر النصية المفهرسة حرفيًا: **27083**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -104,7 +104,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 121267 | 3109 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 121879 | 3131 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 54981 | 397 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -1135,9 +1135,9 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2962) | دالة | test_plan_search_compacts_followup_query_before_fallback | لا توجد Docstring. | ناقص | 2962 | [SRC-F725E90B2A-L002962](../tests/test_web_agent.py#L2962) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2987) | دالة | test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query | لا توجد Docstring. | ناقص | 2987 | [SRC-F725E90B2A-L002987](../tests/test_web_agent.py#L2987) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3019) | دالة | test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query.collect | لا توجد Docstring. | ناقص | 3019 | [SRC-F725E90B2A-L003019](../tests/test_web_agent.py#L3019) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3047) | دالة | test_server_search_sources_are_scored_against_compact_question | لا توجد Docstring. | ناقص | 3047 | [SRC-F725E90B2A-L003047](../tests/test_web_agent.py#L3047) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3080) | دالة | test_server_search_sources_are_scored_against_compact_question.generate | لا توجد Docstring. | ناقص | 3080 | [SRC-F725E90B2A-L003080](../tests/test_web_agent.py#L3080) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3100) | دالة | test_server_search_sources_are_scored_against_compact_question.capture_relevance | لا توجد Docstring. | ناقص | 3100 | [SRC-F725E90B2A-L003100](../tests/test_web_agent.py#L3100) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3061) | دالة | test_server_search_sources_use_compact_question_and_topic_plan | لا توجد Docstring. | ناقص | 3061 | [SRC-F725E90B2A-L003061](../tests/test_web_agent.py#L3061) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3096) | دالة | test_server_search_sources_use_compact_question_and_topic_plan.generate | لا توجد Docstring. | ناقص | 3096 | [SRC-F725E90B2A-L003096](../tests/test_web_agent.py#L3096) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3116) | دالة | test_server_search_sources_use_compact_question_and_topic_plan.capture_relevance | لا توجد Docstring. | ناقص | 3116 | [SRC-F725E90B2A-L003116](../tests/test_web_agent.py#L3116) |
 
 ## الرموز الساكنة الإضافية
 
