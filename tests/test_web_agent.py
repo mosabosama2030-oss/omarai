@@ -2735,3 +2735,70 @@ def test_frontend_labels_answer_integrity_screen_as_non_semantic():
     assert "لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد" in html
     assert "potentially_unsupported_numeric_by_citation_count" in html
     assert "potential_value_discrepancy_count" in html
+
+
+def test_search_web_keeps_arabic_topic_matches_in_english_indexed_results(monkeypatch):
+    cases = [
+        (
+            "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.",
+            "Egypt's capital is Cairo",
+            "The capital city of Egypt is Cairo.",
+        ),
+        (
+            "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.",
+            "Electric vehicles in Egypt: charging infrastructure and costs",
+            "Electric cars face high costs and limited charging infrastructure in Egypt.",
+        ),
+        (
+            "ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.",
+            "Recent developments in AI agents",
+            "New AI agent tools and launches this week.",
+        ),
+        (
+            "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة.",
+            "Reddit users share electric car experiences in Egypt",
+            "Owners discuss electric vehicles, charging and daily use.",
+        ),
+    ]
+    for index, (query, title, snippet) in enumerate(cases):
+        agent = WebAgent()
+        row = {
+            "title": title,
+            "url": f"https://example.com/case-{index}",
+            "snippet": snippet,
+            "provider": "fake_provider",
+            "provider_rank": 1,
+            "search_query": query,
+        }
+        monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _q, row=row: [dict(row)])
+        monkeypatch.setattr(agent, "_search_bing_rss", lambda _q, row=row: [dict(row)])
+        results = agent._search_web(query)
+        assert results, f"Search candidates were all filtered for case {index}"
+        diagnostic = next(
+            item for item in agent._provider_diagnostics if item.get("provider") == "duckduckgo_html"
+        )
+        assert diagnostic["accepted_count"] == 1
+        assert diagnostic["result_count"] == 1
+
+
+def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation(monkeypatch):
+    agent = WebAgent()
+
+    def http_202(_query):
+        raise RuntimeError("HTTP 202")
+
+    def http_429(_query):
+        raise RuntimeError("HTTP 429")
+
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", http_202)
+    monkeypatch.setattr(agent, "_search_bing_rss", http_429)
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web("renewable energy storage policy")
+
+    statuses = {
+        item["provider"]: item["status"]
+        for item in agent._provider_diagnostics
+        if item["provider"] in {"duckduckgo_html", "bing_rss"}
+    }
+    assert statuses["duckduckgo_html"] == "http_error"
+    assert statuses["bing_rss"] == "rate_limited"
