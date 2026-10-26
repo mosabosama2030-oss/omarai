@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000475 إلى SRC-F725E90B2A-L001274
+- النطاق: SRC-F725E90B2A-L000471 إلى SRC-F725E90B2A-L001270
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000471](../../tests/test_web_agent.py#L471) | 471 | `"    monkeypatch.delenv(\"INSTAGRAM_USER_ID\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000472](../../tests/test_web_agent.py#L472) | 472 | `"    monkeypatch.delenv(\"INSTAGRAM_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000473](../../tests/test_web_agent.py#L473) | 473 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000474](../../tests/test_web_agent.py#L474) | 474 | `"        \"تجارب عامة على Instagram\", [\"instagram\"]"` | — |
 | [SRC-F725E90B2A-L000475](../../tests/test_web_agent.py#L475) | 475 | `"    )"` | — |
 | [SRC-F725E90B2A-L000476](../../tests/test_web_agent.py#L476) | 476 | `"    assert results == []"` | — |
 | [SRC-F725E90B2A-L000477](../../tests/test_web_agent.py#L477) | 477 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001268](../../tests/test_web_agent.py#L1268) | 1268 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect_only_one_source)"` | — |
 | [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001270](../../tests/test_web_agent.py#L1270) | 1270 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"        lambda *args, **kwargs: pytest.fail(\"LLM must not answer without two independent domains\"),"` | — |
-| [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"    )"` | — |
-| [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `"    result = agent.answer(\"ما آخر أخبار هذه التقنية اليوم؟\")"` | — |
-| [SRC-F725E90B2A-L001274](../../tests/test_web_agent.py#L1274) | 1274 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |

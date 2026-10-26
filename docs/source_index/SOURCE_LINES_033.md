@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002075 إلى SRC-F725E90B2A-L002874
+- النطاق: SRC-F725E90B2A-L002071 إلى SRC-F725E90B2A-L002870
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002071](../../tests/test_web_agent.py#L2071) | 2071 | `"    def search(query):"` | — |
+| [SRC-F725E90B2A-L002072](../../tests/test_web_agent.py#L2072) | 2072 | `"        calls.append(query)"` | — |
+| [SRC-F725E90B2A-L002073](../../tests/test_web_agent.py#L2073) | 2073 | `"        if len(calls) == 1:"` | — |
+| [SRC-F725E90B2A-L002074](../../tests/test_web_agent.py#L2074) | 2074 | `"            return []"` | — |
 | [SRC-F725E90B2A-L002075](../../tests/test_web_agent.py#L2075) | 2075 | `"        return ["` | — |
 | [SRC-F725E90B2A-L002076](../../tests/test_web_agent.py#L2076) | 2076 | `"            {"` | — |
 | [SRC-F725E90B2A-L002077](../../tests/test_web_agent.py#L2077) | 2077 | `"                \"provider\": \"bing_rss\","` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002868](../../tests/test_web_agent.py#L2868) | 2868 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L002869](../../tests/test_web_agent.py#L2869) | 2869 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L002870](../../tests/test_web_agent.py#L2870) | 2870 | `""` | — |
-| [SRC-F725E90B2A-L002871](../../tests/test_web_agent.py#L2871) | 2871 | `"    def redirect_response(query):"` | — |
-| [SRC-F725E90B2A-L002872](../../tests/test_web_agent.py#L2872) | 2872 | `"        calls.append((\"duckduckgo_html\", query))"` | — |
-| [SRC-F725E90B2A-L002873](../../tests/test_web_agent.py#L2873) | 2873 | `"        raise RuntimeError(\"HTTP 302\")"` | — |
-| [SRC-F725E90B2A-L002874](../../tests/test_web_agent.py#L2874) | 2874 | `""` | — |
