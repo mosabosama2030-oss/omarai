@@ -84,7 +84,7 @@
 | [SRC-59CF4B7DE8-L000121](../../agents/research.py#L121) | 121 | `"_SEARCH_META_START_RE = re.compile("` | — |
 | [SRC-59CF4B7DE8-L000122](../../agents/research.py#L122) | 122 | `"    r\"^(?:و?اذكر(?:ي\|وا)?\|و?استخدم\|و?استعمل\|و?ميّز\|و?ميز\|و?وضح\|و?وضّح\|\""` | — |
 | [SRC-59CF4B7DE8-L000123](../../agents/research.py#L123) | 123 | `"    r\"و?اجب\|و?أجب\|لا تعرض\|لا تقدم\|لا تقدّم\|please cite\|cite\|provide links\|\""` | — |
-| [SRC-59CF4B7DE8-L000124](../../agents/research.py#L124) | 124 | `"    r\"mention sources\|use multiple sources\|don't present\|do not present)\\\\b\","` | — |
+| [SRC-59CF4B7DE8-L000124](../../agents/research.py#L124) | 124 | `"    r\"mention sources\|use multiple sources\|و?لا تعرض\|و?لا تقدم\|don't present\|do not present)\\\\b\","` | — |
 | [SRC-59CF4B7DE8-L000125](../../agents/research.py#L125) | 125 | `"    re.IGNORECASE,"` | — |
 | [SRC-59CF4B7DE8-L000126](../../agents/research.py#L126) | 126 | `")"` | — |
 | [SRC-59CF4B7DE8-L000127](../../agents/research.py#L127) | 127 | `"_SEARCH_META_TAIL_RE = re.compile("` | — |
@@ -94,7 +94,7 @@
 | [SRC-59CF4B7DE8-L000131](../../agents/research.py#L131) | 131 | `"    re.IGNORECASE,"` | — |
 | [SRC-59CF4B7DE8-L000132](../../agents/research.py#L132) | 132 | `")"` | — |
 | [SRC-59CF4B7DE8-L000133](../../agents/research.py#L133) | 133 | `"_SEARCH_LEADING_ACTION_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000134](../../agents/research.py#L134) | 134 | `"    r\"^(?:حلّل\|حلل\|اجمع\|قارن\|ناقش\|ابحث\|استكشف\|استقصِ\|analyze\|analyse\|compare\|\""` | — |
+| [SRC-59CF4B7DE8-L000134](../../agents/research.py#L134) | 134 | `"    r\"^(?:حلّل\|حلل\|اجمع\|قارن\|ناقش\|ابحث\|استكشف\|استقصِ\|اعرض\|analyze\|analyse\|compare\|\""` | — |
 | [SRC-59CF4B7DE8-L000135](../../agents/research.py#L135) | 135 | `"    r\"investigate\|collect\|gather\|review\|summarize)\\\\s+\","` | — |
 | [SRC-59CF4B7DE8-L000136](../../agents/research.py#L136) | 136 | `"    re.IGNORECASE,"` | — |
 | [SRC-59CF4B7DE8-L000137](../../agents/research.py#L137) | 137 | `")"` | — |
