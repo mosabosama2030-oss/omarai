@@ -66,6 +66,15 @@ _SEARCH_STOPWORDS = frozenset({
     "where", "compare", "comparison", "please", "show", "find", "latest",
     "news", "official", "sources", "source", "reports", "report", "analysis",
     "site", "com", "org", "net", "www",
+    # Arabic request/format words are not useful topic concepts for matching search snippets.
+    "اذكر", "مصدر", "مصادر", "موثوق", "موثوقة", "رابط", "روابط", "مباشر",
+    "مباشرة", "اجب", "بالعربية", "العربية", "بايجاز", "بالايجاز", "ايجاز",
+    "باختصار", "اختصار", "استخدم", "اعرض", "وضح", "حلل", "قارن", "متعددة",
+    "اهم", "الحقائق", "حقائق", "استنتاج", "استنتاجات", "الاستنتاجات",
+    "تواريخ", "تاريخ", "الاخبار", "اخبار", "المصادر", "معلومات", "قديمة",
+    "قديمه", "جديدة", "جديده", "خلال", "الايام", "ايام", "السبعة", "سبعة",
+    "الماضية", "ماضية", "الاسبوع", "حاليا", "الان", "احدث", "ولا",
+    "تعرض", "باعتبارها",
 })
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
@@ -87,6 +96,26 @@ _SEARCH_SYNONYMS = {
     "شقة": {"apartment", "flat"}, "شقق": {"apartments", "flats"},
     "عميل": {"customer", "buyer"}, "عملاء": {"customers", "buyers"},
     "شراء": {"buy", "purchase"}, "مشتري": {"buyer"},
+    # Small, explicit Arabic-English topic vocabulary; this helps Arabic prompts
+    # match English-indexed results without relaxing URL or destination safety.
+    "سيارة": {"car", "vehicle"}, "السيارة": {"car", "vehicle"},
+    "سيارات": {"cars", "vehicles"}, "السيارات": {"cars", "vehicles"},
+    "كهربائي": {"electric"}, "كهربائية": {"electric"},
+    "الكهربائي": {"electric"}, "الكهربائية": {"electric"},
+    "شحن": {"charging", "charge"}, "الشحن": {"charging", "charge"},
+    "شاحن": {"charger"}, "بطارية": {"battery"}, "بطاريات": {"batteries"},
+    "تكلفة": {"cost", "costs"}, "التكلفة": {"cost", "costs"},
+    "البنية": {"infrastructure"}, "التحتية": {"infrastructure"},
+    "تحدي": {"challenge"}, "تحديات": {"challenges"}, "التحديات": {"challenges"},
+    "وكيل": {"agent"}, "الوكيل": {"agent"},
+    "وكلاء": {"agents"}, "الوكلاء": {"agents"},
+    "ذكاء": {"intelligence", "ai"}, "الذكاء": {"intelligence", "ai"},
+    "اصطناعي": {"artificial", "ai"}, "الاصطناعي": {"artificial", "ai"},
+    "تطور": {"development", "advance"}, "تطورات": {"developments", "advances", "updates", "latest"},
+    "التطورات": {"developments", "advances", "updates", "latest"},
+    "اراء": {"opinions", "views"}, "تجربة": {"experience"}, "تجارب": {"experiences", "reviews"},
+    "مستخدم": {"user"}, "المستخدم": {"user"}, "مستخدمين": {"users"},
+    "المستخدمين": {"users"}, "مالكون": {"owners"}, "المالكون": {"owners"},
 }
 _CALENDAR_MONTHS = (
     "يناير", "فبراير", "مارس", "ابريل", "أبريل", "مايو", "يونيو",
@@ -107,6 +136,13 @@ def _normalize_search_query(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+# Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)
+# can leave request-format wording in the token set and distort relevance scores.
+_NORMALIZED_SEARCH_STOPWORDS = frozenset(
+    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS
+)
+
+
 # Normalize synonym keys and values by the same rules as search text. This avoids
 # Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching.
 _NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}
@@ -121,10 +157,10 @@ def _search_tokens(value: str) -> set[str]:
     """Tokenize Arabic/English text and expand a small bilingual vocabulary."""
     value = _normalize_search_query(value).casefold()
     value = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", value)
-    tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
+    tokens = re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", value)
     result: set[str] = set()
     for token in tokens:
-        if token in _SEARCH_STOPWORDS or len(token) < 2:
+        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:
             continue
         forms = {token}
         if token.startswith("ال") and len(token) > 4:
@@ -140,14 +176,24 @@ def _search_tokens(value: str) -> set[str]:
     return result
 
 
-def _relevance_ratio(query: str, evidence: str) -> float:
-    """Fraction of meaningful query concepts present in a candidate's title/snippet."""
+def _relevance_query_tokens(query: str) -> set[str]:
+    """Return meaningful query concepts, excluding request-format boilerplate."""
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
-    query_tokens = {
-        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS and len(token) >= 2
+    return {
+        token for token in re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", query_text)
+        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2
     }
+
+
+def _minimum_relevance_ratio(_query: str) -> float:
+    """Keep the established 20% relevance floor after query normalization and token cleanup."""
+    return 0.20
+
+
+def _relevance_ratio(query: str, evidence: str) -> float:
+    """Fraction of meaningful query concepts present in a candidate's title/snippet."""
+    query_tokens = _relevance_query_tokens(query)
     if not query_tokens:
         return 1.0
     expanded_evidence = _search_tokens(evidence)
@@ -158,11 +204,11 @@ def _relevance_ratio(query: str, evidence: str) -> float:
         or bool(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()) & expanded_evidence)
     )
     ratio = matched / len(query_tokens)
-    # A single generic overlap is not enough for a longer query.
+    # On longer questions, two matching topic concepts are required; request wording
+    # should not silently raise that floor to three or four concepts.
     if len(query_tokens) >= 4 and matched < 2:
         return 0.0
     return ratio
-
 
 def _blocked_source_url(url: str) -> bool:
     try:
@@ -452,6 +498,7 @@ class WebAgent:
     def _record_provider_diagnostic(
         self, provider: str, query: str, status: str, result_count: int = 0,
         rejected_count: int = 0, error: str | None = None,
+        accepted_count: int | None = None,
     ) -> None:
         def redact(value: Any, limit: int) -> str:
             safe = _clean_text(str(value or ""), limit)
@@ -477,6 +524,7 @@ class WebAgent:
             "query": redact(query, 220),
             "status": status,
             "result_count": int(result_count),
+            "accepted_count": int(result_count if accepted_count is None else accepted_count),
             "rejected_count": int(rejected_count),
         }
         if error:
@@ -1285,7 +1333,7 @@ class WebAgent:
                     normalized_item.setdefault("provider", name)
                     normalized_item.setdefault("search_query", search_query)
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
-                    if _relevance_ratio(search_query, evidence) < 0.20:
+                    if _relevance_ratio(search_query, evidence) < _minimum_relevance_ratio(search_query):
                         rejected += 1
                         continue
                     accepted.append(normalized_item)
@@ -1299,7 +1347,8 @@ class WebAgent:
                     status = "no_results"
                     error = "connector returned no parseable results"
                 self._record_provider_diagnostic(
-                    name, search_query, status, len(accepted), rejected, error
+                    name, search_query, status, len(raw), rejected, error,
+                    accepted_count=len(accepted),
                 )
                 return accepted
             except RequestBudgetExceeded as exc:
@@ -1312,7 +1361,18 @@ class WebAgent:
                 )
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
                 detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
-                self._record_provider_diagnostic(name, search_query, "failed", error=detail)
+                status = "failed"
+                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
+                if status_match:
+                    status_code = int(status_match.group(1))
+                    if status_code == 429:
+                        status = "rate_limited"
+                    elif status_code in {401, 403}:
+                        status = "unauthorized"
+                    elif status_code == 202 or 300 <= status_code < 600:
+                        # Do not bypass anti-bot/challenge responses; mark the provider degraded.
+                        status = "http_error"
+                self._record_provider_diagnostic(name, search_query, status, error=detail)
             return []
 
         async def run_all() -> list[list[dict[str, Any]]]:
@@ -2413,8 +2473,24 @@ class WebAgent:
             status: sum(source.get("page_fetch_status") == status for source in fetch_targets)
             for status in page_status_values
         }
+        provider_diagnostics = list(self._provider_diagnostics)
+        provider_candidates_received = sum(
+            max(0, int(row.get("result_count", 0) or 0))
+            for row in provider_diagnostics if isinstance(row, dict)
+        )
+        provider_candidates_accepted = sum(
+            max(0, int(row.get("accepted_count", 0) or 0))
+            for row in provider_diagnostics if isinstance(row, dict)
+        )
+        provider_candidates_rejected = sum(
+            max(0, int(row.get("rejected_count", 0) or 0))
+            for row in provider_diagnostics if isinstance(row, dict)
+        )
         report = {
             "raw_results": raw_results_count,
+            "provider_candidates_received": provider_candidates_received,
+            "provider_candidates_accepted": provider_candidates_accepted,
+            "provider_candidates_rejected": provider_candidates_rejected,
             "unique_urls": len({
                 self._normalized_source_url_key(source.get("url"))
                 for source in sources
@@ -2446,9 +2522,9 @@ class WebAgent:
             "evidence_signals": evidence_signal_report(sources, plan.get("freshness", "any")),
             "depth": plan.get("depth", "standard"),
             "planning_method": plan.get("planning_method", "deterministic_fallback"),
-            "provider_diagnostics": list(self._provider_diagnostics),
+            "provider_diagnostics": provider_diagnostics,
             "connector_summary": self._connector_status_summary(
-                list(self._provider_diagnostics), sources
+                provider_diagnostics, sources
             ),
             "pages_fetch_attempted": len(fetch_targets),
         }
@@ -2550,15 +2626,22 @@ class WebAgent:
             queries = list(dict.fromkeys(_clean_text(row.get("query", ""), 180) for row in attempts if row.get("query")))[:3]
             errors = list(dict.fromkeys(redact(row.get("error")) for row in attempts if row.get("error")))[:3]
             result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
+            accepted_count = sum(
+                max(0, int(row.get("accepted_count", row.get("result_count", 0)) or 0))
+                for row in attempts
+            )
             rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
+            candidate_rejection_observed = "filtered_all" in statuses or rejected_count > 0
             connectors.append({
                 "name": name, "in_codebase": name in config or bool(attempts),
                 "implementation_status": implementation_status,
                 "configured": bool(ready), "configuration_status": config_status,
                 "attempted": attempted, "available_for_this_request": available,
                 "verified_for_this_request": verified, "failure_observed": failure_observed,
+                "candidate_rejection_observed": candidate_rejection_observed,
                 "status": status, "observed_statuses": list(dict.fromkeys(statuses))[:6],
-                "result_count": result_count, "useful_result_count": useful.get(name, 0),
+                "result_count": result_count, "accepted_count": accepted_count,
+                "useful_result_count": useful.get(name, 0),
                 "rejected_count": rejected_count, "queries": queries, "errors": errors,
             })
         return {
