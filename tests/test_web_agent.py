@@ -2875,5 +2875,5 @@ def test_search_web_classifies_http_302_as_degraded_without_following_provider_r
         if item.get("provider") == "duckduckgo_html"
     )
     assert diagnostic["status"] == "http_error"
-    assert diagnostic["error"] == "HTTP 302"
+    assert diagnostic["error"] == "RuntimeError: HTTP 302"
     assert sum(provider == "duckduckgo_html" for provider, _query in calls) == 1
