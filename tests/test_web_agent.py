@@ -2877,3 +2877,12 @@ def test_search_web_classifies_http_302_as_degraded_without_following_provider_r
     assert diagnostic["status"] == "http_error"
     assert diagnostic["error"] == "RuntimeError: HTTP 302"
     assert sum(provider == "duckduckgo_html" for provider, _query in calls) == 1
+
+
+def test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries():
+    question = "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+    assert _relevance_ratio(question, "عاصمة مصر القاهرة") >= 0.20
+    assert _relevance_ratio(
+        "اذكر مصادر موثوقة، روابط مباشرة، باختصار",
+        "Football results and unrelated match reports",
+    ) == 0.0
