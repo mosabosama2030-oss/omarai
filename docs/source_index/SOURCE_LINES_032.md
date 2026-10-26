@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001361 إلى SRC-F725E90B2A-L002160
+- النطاق: SRC-F725E90B2A-L001355 إلى SRC-F725E90B2A-L002154
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"        agent, \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
+| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"    )"` | — |
+| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `""` | — |
+| [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
 | [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `""` | — |
 | [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
 | [SRC-F725E90B2A-L001363](../../tests/test_web_agent.py#L1363) | 1363 | `"    assert result[\"used_language_model\"] is True"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L002152](../../tests/test_web_agent.py#L2152) | 2152 | `"    assert result[\"intent_route\"] == \"LEAD_GENERATION\""` | — |
 | [SRC-F725E90B2A-L002153](../../tests/test_web_agent.py#L2153) | 2153 | `"    assert result[\"kind\"] == \"lead_discovery_no_qualified_candidates\""` | — |
 | [SRC-F725E90B2A-L002154](../../tests/test_web_agent.py#L2154) | 2154 | `"    assert result[\"search_report\"][\"lead_generation\"][\"candidate_signal_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L002155](../../tests/test_web_agent.py#L2155) | 2155 | `"    assert result[\"search_report\"][\"lead_generation\"][\"related_results_reviewed\"] == 2"` | — |
-| [SRC-F725E90B2A-L002156](../../tests/test_web_agent.py#L2156) | 2156 | `"    assert \"لم أعتبر إعلانات البيع\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L002157](../../tests/test_web_agent.py#L2157) | 2157 | `"    assert all(s[\"lead_qualification\"] == \"related_result_not_lead\" for s in result[\"sources\"])"` | — |
-| [SRC-F725E90B2A-L002158](../../tests/test_web_agent.py#L2158) | 2158 | `""` | — |
-| [SRC-F725E90B2A-L002159](../../tests/test_web_agent.py#L2159) | 2159 | `""` | — |
-| [SRC-F725E90B2A-L002160](../../tests/test_web_agent.py#L2160) | 2160 | `"def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):"` | — |

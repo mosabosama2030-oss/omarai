@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000561 إلى SRC-F725E90B2A-L001360
+- النطاق: SRC-F725E90B2A-L000555 إلى SRC-F725E90B2A-L001354
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"        }]}})"` | — |
+| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `""` | — |
+| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |
+| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `"        \"electric vehicles\", [\"reddit\"]"` | — |
 | [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"    )"` | — |
 | [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"    assert len(results) == 1"` | — |
 | [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"    assert warnings == []"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
 | [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `""` | — |
 | [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
-| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"    )"` | — |
-| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `""` | — |
-| [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
