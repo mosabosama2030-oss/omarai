@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000828 إلى SRC-F725E90B2A-L001627
+- النطاق: SRC-F725E90B2A-L000792 إلى SRC-F725E90B2A-L001591
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,42 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000792](../../tests/test_web_agent.py#L792) | 792 | `"        model=\"broken/primary\","` | — |
+| [SRC-F725E90B2A-L000793](../../tests/test_web_agent.py#L793) | 793 | `"    )"` | — |
+| [SRC-F725E90B2A-L000794](../../tests/test_web_agent.py#L794) | 794 | `""` | — |
+| [SRC-F725E90B2A-L000795](../../tests/test_web_agent.py#L795) | 795 | `"    assert result == \"fallback answer\""` | — |
+| [SRC-F725E90B2A-L000796](../../tests/test_web_agent.py#L796) | 796 | `"    assert called == [\"broken/primary\", \"fallback/model\"]"` | — |
+| [SRC-F725E90B2A-L000797](../../tests/test_web_agent.py#L797) | 797 | `""` | — |
+| [SRC-F725E90B2A-L000798](../../tests/test_web_agent.py#L798) | 798 | `""` | — |
+| [SRC-F725E90B2A-L000799](../../tests/test_web_agent.py#L799) | 799 | `"def test_health_status_reports_models_without_credentials(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000800](../../tests/test_web_agent.py#L800) | 800 | `"    monkeypatch.delenv(\"OPENROUTER_API_KEY\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000801](../../tests/test_web_agent.py#L801) | 801 | `"    monkeypatch.delenv(\"OMARAI_LLM_API_KEY\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000802](../../tests/test_web_agent.py#L802) | 802 | `"    status = WebAgent.status()"` | — |
+| [SRC-F725E90B2A-L000803](../../tests/test_web_agent.py#L803) | 803 | `"    assert status[\"planner_model\"] == \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
+| [SRC-F725E90B2A-L000804](../../tests/test_web_agent.py#L804) | 804 | `"    assert status[\"answer_model\"] == \"google/gemma-4-31b-it:free\""` | — |
+| [SRC-F725E90B2A-L000805](../../tests/test_web_agent.py#L805) | 805 | `"    assert status[\"fallback_model\"] == \"openrouter/free\""` | — |
+| [SRC-F725E90B2A-L000806](../../tests/test_web_agent.py#L806) | 806 | `"    assert status[\"language_model_configured\"] is False"` | — |
+| [SRC-F725E90B2A-L000807](../../tests/test_web_agent.py#L807) | 807 | `"    assert status[\"verification_scope\"][\"kind\"] == \"configuration_snapshot\""` | — |
+| [SRC-F725E90B2A-L000808](../../tests/test_web_agent.py#L808) | 808 | `"    assert status[\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
+| [SRC-F725E90B2A-L000809](../../tests/test_web_agent.py#L809) | 809 | `"    assert status[\"verification_scope\"][\"language_model_configured_means\"] == ("` | — |
+| [SRC-F725E90B2A-L000810](../../tests/test_web_agent.py#L810) | 810 | `"        \"credential_present_not_successful_completion\""` | — |
+| [SRC-F725E90B2A-L000811](../../tests/test_web_agent.py#L811) | 811 | `"    )"` | — |
+| [SRC-F725E90B2A-L000812](../../tests/test_web_agent.py#L812) | 812 | `"    assert status[\"verification_scope\"][\"live_diagnostics_endpoint\"] == \"POST /api/diagnostics\""` | — |
+| [SRC-F725E90B2A-L000813](../../tests/test_web_agent.py#L813) | 813 | `"    assert \"api_key\" not in status"` | — |
+| [SRC-F725E90B2A-L000814](../../tests/test_web_agent.py#L814) | 814 | `""` | — |
+| [SRC-F725E90B2A-L000815](../../tests/test_web_agent.py#L815) | 815 | `""` | — |
+| [SRC-F725E90B2A-L000816](../../tests/test_web_agent.py#L816) | 816 | `""` | — |
+| [SRC-F725E90B2A-L000817](../../tests/test_web_agent.py#L817) | 817 | `"def test_health_status_exposes_external_model_privacy_notice_without_secrets(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000818](../../tests/test_web_agent.py#L818) | 818 | `"    monkeypatch.delenv(\"OPENROUTER_API_KEY\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000819](../../tests/test_web_agent.py#L819) | 819 | `"    monkeypatch.delenv(\"OMARAI_LLM_API_KEY\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000820](../../tests/test_web_agent.py#L820) | 820 | `"    status = WebAgent.status()"` | — |
+| [SRC-F725E90B2A-L000821](../../tests/test_web_agent.py#L821) | 821 | `"    notice = status[\"external_model_privacy_notice\"]"` | — |
+| [SRC-F725E90B2A-L000822](../../tests/test_web_agent.py#L822) | 822 | `"    assert \"external model provider\" in notice"` | — |
+| [SRC-F725E90B2A-L000823](../../tests/test_web_agent.py#L823) | 823 | `"    assert \"personal/confidential customer data\" in notice"` | — |
+| [SRC-F725E90B2A-L000824](../../tests/test_web_agent.py#L824) | 824 | `"    assert \"api_key\" not in status"` | — |
+| [SRC-F725E90B2A-L000825](../../tests/test_web_agent.py#L825) | 825 | `"    assert \"OPENROUTER_API_KEY\" not in str(status)"` | — |
+| [SRC-F725E90B2A-L000826](../../tests/test_web_agent.py#L826) | 826 | `""` | — |
+| [SRC-F725E90B2A-L000827](../../tests/test_web_agent.py#L827) | 827 | `""` | — |
 | [SRC-F725E90B2A-L000828](../../tests/test_web_agent.py#L828) | 828 | `""` | — |
 | [SRC-F725E90B2A-L000829](../../tests/test_web_agent.py#L829) | 829 | `"def test_diagnostics_runs_real_search_and_can_skip_paid_or_rate_limited_model_calls(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000830](../../tests/test_web_agent.py#L830) | 830 | `"    agent = WebAgent()"` | — |
@@ -780,39 +816,3 @@
 | [SRC-F725E90B2A-L001589](../../tests/test_web_agent.py#L1589) | 1589 | `""` | — |
 | [SRC-F725E90B2A-L001590](../../tests/test_web_agent.py#L1590) | 1590 | `"    def collect(research_plan):"` | — |
 | [SRC-F725E90B2A-L001591](../../tests/test_web_agent.py#L1591) | 1591 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001592](../../tests/test_web_agent.py#L1592) | 1592 | `"        source = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L001593](../../tests/test_web_agent.py#L1593) | 1593 | `"        if len(calls) > 1:"` | — |
-| [SRC-F725E90B2A-L001594](../../tests/test_web_agent.py#L1594) | 1594 | `"            source[\"url\"] = \"https://EXAMPLE.com/research/?utm_source=test#details\""` | — |
-| [SRC-F725E90B2A-L001595](../../tests/test_web_agent.py#L1595) | 1595 | `"            source[\"providers\"] = [\"second_provider\"]"` | — |
-| [SRC-F725E90B2A-L001596](../../tests/test_web_agent.py#L1596) | 1596 | `"            source[\"page_fetched\"] = False"` | — |
-| [SRC-F725E90B2A-L001597](../../tests/test_web_agent.py#L1597) | 1597 | `"        return [source], [], {"` | — |
-| [SRC-F725E90B2A-L001598](../../tests/test_web_agent.py#L1598) | 1598 | `"            \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L001599](../../tests/test_web_agent.py#L1599) | 1599 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001600](../../tests/test_web_agent.py#L1600) | 1600 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": 1}],"` | — |
-| [SRC-F725E90B2A-L001601](../../tests/test_web_agent.py#L1601) | 1601 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-F725E90B2A-L001602](../../tests/test_web_agent.py#L1602) | 1602 | `"            \"pages_fetched\": 1 if len(calls) == 1 else 0,"` | — |
-| [SRC-F725E90B2A-L001603](../../tests/test_web_agent.py#L1603) | 1603 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001604](../../tests/test_web_agent.py#L1604) | 1604 | `"            \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L001605](../../tests/test_web_agent.py#L1605) | 1605 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001606](../../tests/test_web_agent.py#L1606) | 1606 | `"            \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L001607](../../tests/test_web_agent.py#L1607) | 1607 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001608](../../tests/test_web_agent.py#L1608) | 1608 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L001609](../../tests/test_web_agent.py#L1609) | 1609 | `"        }"` | — |
-| [SRC-F725E90B2A-L001610](../../tests/test_web_agent.py#L1610) | 1610 | `""` | — |
-| [SRC-F725E90B2A-L001611](../../tests/test_web_agent.py#L1611) | 1611 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001612](../../tests/test_web_agent.py#L1612) | 1612 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L001613](../../tests/test_web_agent.py#L1613) | 1613 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
-| [SRC-F725E90B2A-L001614](../../tests/test_web_agent.py#L1614) | 1614 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001615](../../tests/test_web_agent.py#L1615) | 1615 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001616](../../tests/test_web_agent.py#L1616) | 1616 | `"        lambda *args, **kwargs: pytest.fail(\"Duplicate URL must not satisfy corroboration\"),"` | — |
-| [SRC-F725E90B2A-L001617](../../tests/test_web_agent.py#L1617) | 1617 | `"    )"` | — |
-| [SRC-F725E90B2A-L001618](../../tests/test_web_agent.py#L1618) | 1618 | `""` | — |
-| [SRC-F725E90B2A-L001619](../../tests/test_web_agent.py#L1619) | 1619 | `"    result = agent.answer(\"ما آخر معلومات عن شركة ألفا اليوم؟\")"` | — |
-| [SRC-F725E90B2A-L001620](../../tests/test_web_agent.py#L1620) | 1620 | `""` | — |
-| [SRC-F725E90B2A-L001621](../../tests/test_web_agent.py#L1621) | 1621 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L001622](../../tests/test_web_agent.py#L1622) | 1622 | `"    repair = result[\"search_report\"][\"evidence_repair\"]"` | — |
-| [SRC-F725E90B2A-L001623](../../tests/test_web_agent.py#L1623) | 1623 | `"    assert repair[\"attempted\"] is True"` | — |
-| [SRC-F725E90B2A-L001624](../../tests/test_web_agent.py#L1624) | 1624 | `"    assert repair[\"new_sources_added\"] == 0"` | — |
-| [SRC-F725E90B2A-L001625](../../tests/test_web_agent.py#L1625) | 1625 | `"    assert repair[\"recovered\"] is False"` | — |
-| [SRC-F725E90B2A-L001626](../../tests/test_web_agent.py#L1626) | 1626 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
-| [SRC-F725E90B2A-L001627](../../tests/test_web_agent.py#L1627) | 1627 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |

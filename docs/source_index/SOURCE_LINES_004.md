@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000141 إلى SRC-1AE03B9EC3-L000940
+- النطاق: SRC-1AE03B9EC3-L000122 إلى SRC-1AE03B9EC3-L000921
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000122](../../agents/web_agent.py#L122) | 122 | `"    \"يوليو\", \"اغسطس\", \"أغسطس\", \"سبتمبر\", \"اكتوبر\", \"أكتوبر\","` | — |
+| [SRC-1AE03B9EC3-L000123](../../agents/web_agent.py#L123) | 123 | `"    \"نوفمبر\", \"ديسمبر\", \"january\", \"february\", \"march\", \"april\","` | — |
+| [SRC-1AE03B9EC3-L000124](../../agents/web_agent.py#L124) | 124 | `"    \"may\", \"june\", \"july\", \"august\", \"september\", \"october\","` | — |
+| [SRC-1AE03B9EC3-L000125](../../agents/web_agent.py#L125) | 125 | `"    \"november\", \"december\","` | — |
+| [SRC-1AE03B9EC3-L000126](../../agents/web_agent.py#L126) | 126 | `")"` | — |
+| [SRC-1AE03B9EC3-L000127](../../agents/web_agent.py#L127) | 127 | `"_BLOCKED_SOURCE_DOMAINS = frozenset({"` | — |
+| [SRC-1AE03B9EC3-L000128](../../agents/web_agent.py#L128) | 128 | `"    \"translate.google.com\", \"translate.googleusercontent.com\","` | — |
+| [SRC-1AE03B9EC3-L000129](../../agents/web_agent.py#L129) | 129 | `"})"` | — |
+| [SRC-1AE03B9EC3-L000130](../../agents/web_agent.py#L130) | 130 | `""` | — |
+| [SRC-1AE03B9EC3-L000131](../../agents/web_agent.py#L131) | 131 | `""` | — |
+| [SRC-1AE03B9EC3-L000132](../../agents/web_agent.py#L132) | 132 | `"def _normalize_search_query(value: str) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000133](../../agents/web_agent.py#L133) | 133 | `"    \"\"\"Normalize Arabic letters/diacritics while preserving search operators and dates.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000134](../../agents/web_agent.py#L134) | 134 | `"    value = unicodedata.normalize(\"NFKC\", value or \"\")"` | — |
+| [SRC-1AE03B9EC3-L000135](../../agents/web_agent.py#L135) | 135 | `"    value = _ARABIC_DIACRITICS_RE.sub(\"\", value).translate(_ARABIC_SEARCH_TRANSLATION)"` | — |
+| [SRC-1AE03B9EC3-L000136](../../agents/web_agent.py#L136) | 136 | `"    return re.sub(r\"\\s+\", \" \", value).strip()"` | — |
+| [SRC-1AE03B9EC3-L000137](../../agents/web_agent.py#L137) | 137 | `""` | — |
+| [SRC-1AE03B9EC3-L000138](../../agents/web_agent.py#L138) | 138 | `""` | — |
+| [SRC-1AE03B9EC3-L000139](../../agents/web_agent.py#L139) | 139 | `"# Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)"` | — |
+| [SRC-1AE03B9EC3-L000140](../../agents/web_agent.py#L140) | 140 | `"# can leave request-format wording in the token set and distort relevance scores."` | — |
 | [SRC-1AE03B9EC3-L000141](../../agents/web_agent.py#L141) | 141 | `"_NORMALIZED_SEARCH_STOPWORDS = frozenset("` | — |
 | [SRC-1AE03B9EC3-L000142](../../agents/web_agent.py#L142) | 142 | `"    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS"` | — |
 | [SRC-1AE03B9EC3-L000143](../../agents/web_agent.py#L143) | 143 | `")"` | — |
@@ -797,22 +816,3 @@
 | [SRC-1AE03B9EC3-L000919](../../agents/web_agent.py#L919) | 919 | `"                \"configuration_status\": ("` | — |
 | [SRC-1AE03B9EC3-L000920](../../agents/web_agent.py#L920) | 920 | `"                    \"configured\" if status.get(\"deepseek_search_api_configured\")"` | — |
 | [SRC-1AE03B9EC3-L000921](../../agents/web_agent.py#L921) | 921 | `"                    else \"not_configured\""` | — |
-| [SRC-1AE03B9EC3-L000922](../../agents/web_agent.py#L922) | 922 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L000923](../../agents/web_agent.py#L923) | 923 | `"                \"runtime_status\": not_tested if status.get(\"deepseek_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L000924](../../agents/web_agent.py#L924) | 924 | `"                else \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L000925](../../agents/web_agent.py#L925) | 925 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L000926](../../agents/web_agent.py#L926) | 926 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L000927](../../agents/web_agent.py#L927) | 927 | `"                \"name\": \"brave_search_api\","` | — |
-| [SRC-1AE03B9EC3-L000928](../../agents/web_agent.py#L928) | 928 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L000929](../../agents/web_agent.py#L929) | 929 | `"                \"configuration_status\": ("` | — |
-| [SRC-1AE03B9EC3-L000930](../../agents/web_agent.py#L930) | 930 | `"                    \"configured\" if status.get(\"brave_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L000931](../../agents/web_agent.py#L931) | 931 | `"                    else \"not_configured\""` | — |
-| [SRC-1AE03B9EC3-L000932](../../agents/web_agent.py#L932) | 932 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L000933](../../agents/web_agent.py#L933) | 933 | `"                \"runtime_status\": not_tested if status.get(\"brave_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L000934](../../agents/web_agent.py#L934) | 934 | `"                else \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L000935](../../agents/web_agent.py#L935) | 935 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L000936](../../agents/web_agent.py#L936) | 936 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L000937](../../agents/web_agent.py#L937) | 937 | `"                \"name\": \"tavily_search_api\","` | — |
-| [SRC-1AE03B9EC3-L000938](../../agents/web_agent.py#L938) | 938 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L000939](../../agents/web_agent.py#L939) | 939 | `"                \"configuration_status\": ("` | — |
-| [SRC-1AE03B9EC3-L000940](../../agents/web_agent.py#L940) | 940 | `"                    \"configured\" if status.get(\"tavily_search_api_configured\")"` | — |

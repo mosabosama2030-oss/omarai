@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003341 إلى SRC-1AE03B9EC3-L004140
+- النطاق: SRC-1AE03B9EC3-L003322 إلى SRC-1AE03B9EC3-L004121
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003322](../../agents/web_agent.py#L3322) | 3322 | `"                    \"قائمة محاور مستخرجة آليًا من السؤال للمراجعة النهائية، وقد لا تلتقط المعنى كله:\\n\""` | — |
+| [SRC-1AE03B9EC3-L003323](../../agents/web_agent.py#L3323) | 3323 | `"                    + \"\\n\".join(f\"- {target}\" for target in coverage_targets)"` | — |
+| [SRC-1AE03B9EC3-L003324](../../agents/web_agent.py#L3324) | 3324 | `"                    + \"\\nتأكد أن المسودة تجيب عن كل محور أو تصرّح بنقص الأدلة له.\""` | — |
+| [SRC-1AE03B9EC3-L003325](../../agents/web_agent.py#L3325) | 3325 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003326](../../agents/web_agent.py#L3326) | 3326 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L003327](../../agents/web_agent.py#L3327) | 3327 | `"        raw_review = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L003328](../../agents/web_agent.py#L3328) | 3328 | `"            messages,"` | — |
+| [SRC-1AE03B9EC3-L003329](../../agents/web_agent.py#L3329) | 3329 | `"            max_tokens=1700,"` | — |
+| [SRC-1AE03B9EC3-L003330](../../agents/web_agent.py#L3330) | 3330 | `"            temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L003331](../../agents/web_agent.py#L3331) | 3331 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
+| [SRC-1AE03B9EC3-L003332](../../agents/web_agent.py#L3332) | 3332 | `"            model=self.review_model,"` | — |
+| [SRC-1AE03B9EC3-L003333](../../agents/web_agent.py#L3333) | 3333 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003334](../../agents/web_agent.py#L3334) | 3334 | `"        start_marker = \"<<<OMARAI_FINAL_ANSWER>>>\""` | — |
+| [SRC-1AE03B9EC3-L003335](../../agents/web_agent.py#L3335) | 3335 | `"        end_marker = \"<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
+| [SRC-1AE03B9EC3-L003336](../../agents/web_agent.py#L3336) | 3336 | `"        final_answer = re.fullmatch("` | — |
+| [SRC-1AE03B9EC3-L003337](../../agents/web_agent.py#L3337) | 3337 | `"            r\"\\s*<<<OMARAI_FINAL_ANSWER>>>\\s*(.*?)\\s*<<<END_OMARAI_FINAL_ANSWER>>>\\s*\","` | — |
+| [SRC-1AE03B9EC3-L003338](../../agents/web_agent.py#L3338) | 3338 | `"            raw_review,"` | — |
+| [SRC-1AE03B9EC3-L003339](../../agents/web_agent.py#L3339) | 3339 | `"            flags=re.DOTALL,"` | — |
+| [SRC-1AE03B9EC3-L003340](../../agents/web_agent.py#L3340) | 3340 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003341](../../agents/web_agent.py#L3341) | 3341 | `"        if ("` | — |
 | [SRC-1AE03B9EC3-L003342](../../agents/web_agent.py#L3342) | 3342 | `"            raw_review.count(start_marker) != 1"` | — |
 | [SRC-1AE03B9EC3-L003343](../../agents/web_agent.py#L3343) | 3343 | `"            or raw_review.count(end_marker) != 1"` | — |
@@ -797,22 +816,3 @@
 | [SRC-1AE03B9EC3-L004119](../../agents/web_agent.py#L4119) | 4119 | `"                    \"publisher_url\": source.get(\"publisher_url\", \"\"),"` | — |
 | [SRC-1AE03B9EC3-L004120](../../agents/web_agent.py#L4120) | 4120 | `"                    \"rank_score\": round(float(source.get(\"rank_score\", 0)), 6),"` | — |
 | [SRC-1AE03B9EC3-L004121](../../agents/web_agent.py#L4121) | 4121 | `"                    \"lead_qualification\": \"related_result_not_lead\","` | — |
-| [SRC-1AE03B9EC3-L004122](../../agents/web_agent.py#L4122) | 4122 | `"                } for source in sources]"` | — |
-| [SRC-1AE03B9EC3-L004123](../../agents/web_agent.py#L4123) | 4123 | `"                return {"` | — |
-| [SRC-1AE03B9EC3-L004124](../../agents/web_agent.py#L4124) | 4124 | `"                    \"answer\": lead_answer,"` | — |
-| [SRC-1AE03B9EC3-L004125](../../agents/web_agent.py#L4125) | 4125 | `"                    \"question\": question,"` | — |
-| [SRC-1AE03B9EC3-L004126](../../agents/web_agent.py#L4126) | 4126 | `"                    \"search_query\": (plan.get(\"queries\") or [question])[0],"` | — |
-| [SRC-1AE03B9EC3-L004127](../../agents/web_agent.py#L4127) | 4127 | `"                    \"search_queries\": plan.get(\"queries\", []),"` | — |
-| [SRC-1AE03B9EC3-L004128](../../agents/web_agent.py#L4128) | 4128 | `"                    \"research_plan\": {"` | — |
-| [SRC-1AE03B9EC3-L004129](../../agents/web_agent.py#L4129) | 4129 | `"                        \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-1AE03B9EC3-L004130](../../agents/web_agent.py#L4130) | 4130 | `"                        \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
-| [SRC-1AE03B9EC3-L004131](../../agents/web_agent.py#L4131) | 4131 | `"                        \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
-| [SRC-1AE03B9EC3-L004132](../../agents/web_agent.py#L4132) | 4132 | `"                        \"platforms\": plan.get(\"platforms\", []),"` | — |
-| [SRC-1AE03B9EC3-L004133](../../agents/web_agent.py#L4133) | 4133 | `"                        \"mode\": clean_mode,"` | — |
-| [SRC-1AE03B9EC3-L004134](../../agents/web_agent.py#L4134) | 4134 | `"                        \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
-| [SRC-1AE03B9EC3-L004135](../../agents/web_agent.py#L4135) | 4135 | `"                        \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L004136](../../agents/web_agent.py#L4136) | 4136 | `"                        \"intent_route\": intent_route,"` | — |
-| [SRC-1AE03B9EC3-L004137](../../agents/web_agent.py#L4137) | 4137 | `"                        \"intent_route_reason\": intent_reason,"` | — |
-| [SRC-1AE03B9EC3-L004138](../../agents/web_agent.py#L4138) | 4138 | `"                    },"` | — |
-| [SRC-1AE03B9EC3-L004139](../../agents/web_agent.py#L4139) | 4139 | `"                    \"search_report\": report,"` | — |
-| [SRC-1AE03B9EC3-L004140](../../agents/web_agent.py#L4140) | 4140 | `"                    \"sources\": public_related_sources,"` | — |

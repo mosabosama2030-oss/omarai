@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001055 إلى SRC-B3062EB677-L000202
+- النطاق: SRC-90FAA34ADE-L001036 إلى SRC-B3062EB677-L000183
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001036](../../tests/fixtures/answer_quality_cases.json#L1036) | 1036 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001037](../../tests/fixtures/answer_quality_cases.json#L1037) | 1037 | `"            \"domain\": \"blog-a.example.test\","` | — |
+| [SRC-90FAA34ADE-L001038](../../tests/fixtures/answer_quality_cases.json#L1038) | 1038 | `"            \"provider\": \"fixture_a\""` | — |
+| [SRC-90FAA34ADE-L001039](../../tests/fixtures/answer_quality_cases.json#L1039) | 1039 | `"          },"` | — |
+| [SRC-90FAA34ADE-L001040](../../tests/fixtures/answer_quality_cases.json#L1040) | 1040 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001041](../../tests/fixtures/answer_quality_cases.json#L1041) | 1041 | `"            \"title\": \"Blog B\","` | — |
+| [SRC-90FAA34ADE-L001042](../../tests/fixtures/answer_quality_cases.json#L1042) | 1042 | `"            \"url\": \"https://blog-b.example.test/stop\","` | — |
+| [SRC-90FAA34ADE-L001043](../../tests/fixtures/answer_quality_cases.json#L1043) | 1043 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001044](../../tests/fixtures/answer_quality_cases.json#L1044) | 1044 | `"            \"domain\": \"blog-b.example.test\","` | — |
+| [SRC-90FAA34ADE-L001045](../../tests/fixtures/answer_quality_cases.json#L1045) | 1045 | `"            \"provider\": \"fixture_b\""` | — |
+| [SRC-90FAA34ADE-L001046](../../tests/fixtures/answer_quality_cases.json#L1046) | 1046 | `"          },"` | — |
+| [SRC-90FAA34ADE-L001047](../../tests/fixtures/answer_quality_cases.json#L1047) | 1047 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001048](../../tests/fixtures/answer_quality_cases.json#L1048) | 1048 | `"            \"title\": \"Community page C\","` | — |
+| [SRC-90FAA34ADE-L001049](../../tests/fixtures/answer_quality_cases.json#L1049) | 1049 | `"            \"url\": \"https://community.example.test/stop\","` | — |
+| [SRC-90FAA34ADE-L001050](../../tests/fixtures/answer_quality_cases.json#L1050) | 1050 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001051](../../tests/fixtures/answer_quality_cases.json#L1051) | 1051 | `"            \"domain\": \"community.example.test\","` | — |
+| [SRC-90FAA34ADE-L001052](../../tests/fixtures/answer_quality_cases.json#L1052) | 1052 | `"            \"provider\": \"fixture_c\""` | — |
+| [SRC-90FAA34ADE-L001053](../../tests/fixtures/answer_quality_cases.json#L1053) | 1053 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001054](../../tests/fixtures/answer_quality_cases.json#L1054) | 1054 | `"        ],"` | — |
 | [SRC-90FAA34ADE-L001055](../../tests/fixtures/answer_quality_cases.json#L1055) | 1055 | `"        \"notes\": \"كل النتائج تشير إلى نفس المنشور غير الموثق\""` | — |
 | [SRC-90FAA34ADE-L001056](../../tests/fixtures/answer_quality_cases.json#L1056) | 1056 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001057](../../tests/fixtures/answer_quality_cases.json#L1057) | 1057 | `"      \"failure_conditions\": ["` | — |
@@ -824,22 +843,3 @@
 | [SRC-B3062EB677-L000181](../../tests/test_answer_quality_runner.py#L181) | 181 | `"    assert handler.redirect_request("` | — |
 | [SRC-B3062EB677-L000182](../../tests/test_answer_quality_runner.py#L182) | 182 | `"        req=None,"` | — |
 | [SRC-B3062EB677-L000183](../../tests/test_answer_quality_runner.py#L183) | 183 | `"        fp=None,"` | — |
-| [SRC-B3062EB677-L000184](../../tests/test_answer_quality_runner.py#L184) | 184 | `"        code=302,"` | — |
-| [SRC-B3062EB677-L000185](../../tests/test_answer_quality_runner.py#L185) | 185 | `"        msg=\"Found\","` | — |
-| [SRC-B3062EB677-L000186](../../tests/test_answer_quality_runner.py#L186) | 186 | `"        headers={},"` | — |
-| [SRC-B3062EB677-L000187](../../tests/test_answer_quality_runner.py#L187) | 187 | `"        newurl=\"https://attacker.example/collect\","` | — |
-| [SRC-B3062EB677-L000188](../../tests/test_answer_quality_runner.py#L188) | 188 | `"    ) is None"` | — |
-| [SRC-B3062EB677-L000189](../../tests/test_answer_quality_runner.py#L189) | 189 | `""` | — |
-| [SRC-B3062EB677-L000190](../../tests/test_answer_quality_runner.py#L190) | 190 | `""` | — |
-| [SRC-B3062EB677-L000191](../../tests/test_answer_quality_runner.py#L191) | 191 | `"def test_live_rejects_unapproved_remote_url_before_network(monkeypatch, capsys):"` | — |
-| [SRC-B3062EB677-L000192](../../tests/test_answer_quality_runner.py#L192) | 192 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000193](../../tests/test_answer_quality_runner.py#L193) | 193 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"a-test-token\")"` | — |
-| [SRC-B3062EB677-L000194](../../tests/test_answer_quality_runner.py#L194) | 194 | `"    monkeypatch.delenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", raising=False)"` | — |
-| [SRC-B3062EB677-L000195](../../tests/test_answer_quality_runner.py#L195) | 195 | `"    rc = mod.run_live("` | — |
-| [SRC-B3062EB677-L000196](../../tests/test_answer_quality_runner.py#L196) | 196 | `"        CORPUS,"` | — |
-| [SRC-B3062EB677-L000197](../../tests/test_answer_quality_runner.py#L197) | 197 | `"        \"https://not-allowlisted.example\","` | — |
-| [SRC-B3062EB677-L000198](../../tests/test_answer_quality_runner.py#L198) | 198 | `"        \"AQ-001\","` | — |
-| [SRC-B3062EB677-L000199](../../tests/test_answer_quality_runner.py#L199) | 199 | `"        1,"` | — |
-| [SRC-B3062EB677-L000200](../../tests/test_answer_quality_runner.py#L200) | 200 | `"        1.0,"` | — |
-| [SRC-B3062EB677-L000201](../../tests/test_answer_quality_runner.py#L201) | 201 | `"        0.0,"` | — |
-| [SRC-B3062EB677-L000202](../../tests/test_answer_quality_runner.py#L202) | 202 | `"        None,"` | — |

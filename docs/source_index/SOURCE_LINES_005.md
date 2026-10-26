@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000941 إلى SRC-1AE03B9EC3-L001740
+- النطاق: SRC-1AE03B9EC3-L000922 إلى SRC-1AE03B9EC3-L001721
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000922](../../agents/web_agent.py#L922) | 922 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L000923](../../agents/web_agent.py#L923) | 923 | `"                \"runtime_status\": not_tested if status.get(\"deepseek_search_api_configured\")"` | — |
+| [SRC-1AE03B9EC3-L000924](../../agents/web_agent.py#L924) | 924 | `"                else \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L000925](../../agents/web_agent.py#L925) | 925 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L000926](../../agents/web_agent.py#L926) | 926 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L000927](../../agents/web_agent.py#L927) | 927 | `"                \"name\": \"brave_search_api\","` | — |
+| [SRC-1AE03B9EC3-L000928](../../agents/web_agent.py#L928) | 928 | `"                \"implemented\": True,"` | — |
+| [SRC-1AE03B9EC3-L000929](../../agents/web_agent.py#L929) | 929 | `"                \"configuration_status\": ("` | — |
+| [SRC-1AE03B9EC3-L000930](../../agents/web_agent.py#L930) | 930 | `"                    \"configured\" if status.get(\"brave_search_api_configured\")"` | — |
+| [SRC-1AE03B9EC3-L000931](../../agents/web_agent.py#L931) | 931 | `"                    else \"not_configured\""` | — |
+| [SRC-1AE03B9EC3-L000932](../../agents/web_agent.py#L932) | 932 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L000933](../../agents/web_agent.py#L933) | 933 | `"                \"runtime_status\": not_tested if status.get(\"brave_search_api_configured\")"` | — |
+| [SRC-1AE03B9EC3-L000934](../../agents/web_agent.py#L934) | 934 | `"                else \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L000935](../../agents/web_agent.py#L935) | 935 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L000936](../../agents/web_agent.py#L936) | 936 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L000937](../../agents/web_agent.py#L937) | 937 | `"                \"name\": \"tavily_search_api\","` | — |
+| [SRC-1AE03B9EC3-L000938](../../agents/web_agent.py#L938) | 938 | `"                \"implemented\": True,"` | — |
+| [SRC-1AE03B9EC3-L000939](../../agents/web_agent.py#L939) | 939 | `"                \"configuration_status\": ("` | — |
+| [SRC-1AE03B9EC3-L000940](../../agents/web_agent.py#L940) | 940 | `"                    \"configured\" if status.get(\"tavily_search_api_configured\")"` | — |
 | [SRC-1AE03B9EC3-L000941](../../agents/web_agent.py#L941) | 941 | `"                    else \"not_configured\""` | — |
 | [SRC-1AE03B9EC3-L000942](../../agents/web_agent.py#L942) | 942 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L000943](../../agents/web_agent.py#L943) | 943 | `"                \"runtime_status\": not_tested if status.get(\"tavily_search_api_configured\")"` | — |
@@ -797,22 +816,3 @@
 | [SRC-1AE03B9EC3-L001719](../../agents/web_agent.py#L1719) | 1719 | `"                            ]) + 1,"` | — |
 | [SRC-1AE03B9EC3-L001720](../../agents/web_agent.py#L1720) | 1720 | `"                            \"search_query\": query,"` | — |
 | [SRC-1AE03B9EC3-L001721](../../agents/web_agent.py#L1721) | 1721 | `"                            \"published_at\": _clean_text(fields.get(\"pubDate\", \"\"), 100),"` | — |
-| [SRC-1AE03B9EC3-L001722](../../agents/web_agent.py#L1722) | 1722 | `"                        })"` | — |
-| [SRC-1AE03B9EC3-L001723](../../agents/web_agent.py#L1723) | 1723 | `"                        if sum(row.get(\"provider\") == \"reddit_public_rss\" for row in results) >= 8:"` | — |
-| [SRC-1AE03B9EC3-L001724](../../agents/web_agent.py#L1724) | 1724 | `"                            break"` | — |
-| [SRC-1AE03B9EC3-L001725](../../agents/web_agent.py#L1725) | 1725 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L001726](../../agents/web_agent.py#L1726) | 1726 | `"                    warnings.append(f\"Reddit public RSS unavailable (HTTP {response.status_code})\")"` | — |
-| [SRC-1AE03B9EC3-L001727](../../agents/web_agent.py#L1727) | 1727 | `"            except (httpx.HTTPError, OSError, ValueError, ET.ParseError):"` | — |
-| [SRC-1AE03B9EC3-L001728](../../agents/web_agent.py#L1728) | 1728 | `"                warnings.append(\"Reddit public RSS unavailable for this request\")"` | — |
-| [SRC-1AE03B9EC3-L001729](../../agents/web_agent.py#L1729) | 1729 | `""` | — |
-| [SRC-1AE03B9EC3-L001730](../../agents/web_agent.py#L1730) | 1730 | `"        if \"bluesky\" in platforms:"` | — |
-| [SRC-1AE03B9EC3-L001731](../../agents/web_agent.py#L1731) | 1731 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L001732](../../agents/web_agent.py#L1732) | 1732 | `"                self._reserve_search_call()"` | — |
-| [SRC-1AE03B9EC3-L001733](../../agents/web_agent.py#L1733) | 1733 | `"                response = httpx.get("` | — |
-| [SRC-1AE03B9EC3-L001734](../../agents/web_agent.py#L1734) | 1734 | `"                    \"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts\","` | — |
-| [SRC-1AE03B9EC3-L001735](../../agents/web_agent.py#L1735) | 1735 | `"                    params={\"q\": query, \"limit\": 10},"` | — |
-| [SRC-1AE03B9EC3-L001736](../../agents/web_agent.py#L1736) | 1736 | `"                    headers=headers,"` | — |
-| [SRC-1AE03B9EC3-L001737](../../agents/web_agent.py#L1737) | 1737 | `"                    timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L001738](../../agents/web_agent.py#L1738) | 1738 | `"                    follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001739](../../agents/web_agent.py#L1739) | 1739 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L001740](../../agents/web_agent.py#L1740) | 1740 | `"                if response.status_code == 200:"` | — |

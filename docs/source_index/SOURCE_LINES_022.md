@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000255 إلى SRC-90FAA34ADE-L001054
+- النطاق: SRC-90FAA34ADE-L000236 إلى SRC-90FAA34ADE-L001035
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000236](../../tests/fixtures/answer_quality_cases.json#L236) | 236 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000237](../../tests/fixtures/answer_quality_cases.json#L237) | 237 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000238](../../tests/fixtures/answer_quality_cases.json#L238) | 238 | `"        \"One or more subquestions ignored with no acknowledgment\""` | — |
+| [SRC-90FAA34ADE-L000239](../../tests/fixtures/answer_quality_cases.json#L239) | 239 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000240](../../tests/fixtures/answer_quality_cases.json#L240) | 240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000241](../../tests/fixtures/answer_quality_cases.json#L241) | 241 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000242](../../tests/fixtures/answer_quality_cases.json#L242) | 242 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000243](../../tests/fixtures/answer_quality_cases.json#L243) | 243 | `"      \"case_id\": \"AQ-010\","` | — |
+| [SRC-90FAA34ADE-L000244](../../tests/fixtures/answer_quality_cases.json#L244) | 244 | `"      \"category\": \"multi_subquestions\","` | — |
+| [SRC-90FAA34ADE-L000245](../../tests/fixtures/answer_quality_cases.json#L245) | 245 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L000246](../../tests/fixtures/answer_quality_cases.json#L246) | 246 | `"      \"question\": \"Compare public EV incentives in Egypt vs UAE briefly, and list one official source for each if available.\","` | — |
+| [SRC-90FAA34ADE-L000247](../../tests/fixtures/answer_quality_cases.json#L247) | 247 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000248](../../tests/fixtures/answer_quality_cases.json#L248) | 248 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000249](../../tests/fixtures/answer_quality_cases.json#L249) | 249 | `"        \"Compares both countries or states missing side\","` | — |
+| [SRC-90FAA34ADE-L000250](../../tests/fixtures/answer_quality_cases.json#L250) | 250 | `"        \"Separates sources by jurisdiction when present\""` | — |
+| [SRC-90FAA34ADE-L000251](../../tests/fixtures/answer_quality_cases.json#L251) | 251 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000252](../../tests/fixtures/answer_quality_cases.json#L252) | 252 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000253](../../tests/fixtures/answer_quality_cases.json#L253) | 253 | `"        \"Merges both countries into one unsupported claim\","` | — |
+| [SRC-90FAA34ADE-L000254](../../tests/fixtures/answer_quality_cases.json#L254) | 254 | `"        \"Invented official ministry URLs\""` | — |
 | [SRC-90FAA34ADE-L000255](../../tests/fixtures/answer_quality_cases.json#L255) | 255 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000256](../../tests/fixtures/answer_quality_cases.json#L256) | 256 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000257](../../tests/fixtures/answer_quality_cases.json#L257) | 257 | `"        \"type\": \"controlled_search\""` | — |
@@ -797,22 +816,3 @@
 | [SRC-90FAA34ADE-L001033](../../tests/fixtures/answer_quality_cases.json#L1033) | 1033 | `"          {"` | — |
 | [SRC-90FAA34ADE-L001034](../../tests/fixtures/answer_quality_cases.json#L1034) | 1034 | `"            \"title\": \"Blog A\","` | — |
 | [SRC-90FAA34ADE-L001035](../../tests/fixtures/answer_quality_cases.json#L1035) | 1035 | `"            \"url\": \"https://blog-a.example.test/stop\","` | — |
-| [SRC-90FAA34ADE-L001036](../../tests/fixtures/answer_quality_cases.json#L1036) | 1036 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
-| [SRC-90FAA34ADE-L001037](../../tests/fixtures/answer_quality_cases.json#L1037) | 1037 | `"            \"domain\": \"blog-a.example.test\","` | — |
-| [SRC-90FAA34ADE-L001038](../../tests/fixtures/answer_quality_cases.json#L1038) | 1038 | `"            \"provider\": \"fixture_a\""` | — |
-| [SRC-90FAA34ADE-L001039](../../tests/fixtures/answer_quality_cases.json#L1039) | 1039 | `"          },"` | — |
-| [SRC-90FAA34ADE-L001040](../../tests/fixtures/answer_quality_cases.json#L1040) | 1040 | `"          {"` | — |
-| [SRC-90FAA34ADE-L001041](../../tests/fixtures/answer_quality_cases.json#L1041) | 1041 | `"            \"title\": \"Blog B\","` | — |
-| [SRC-90FAA34ADE-L001042](../../tests/fixtures/answer_quality_cases.json#L1042) | 1042 | `"            \"url\": \"https://blog-b.example.test/stop\","` | — |
-| [SRC-90FAA34ADE-L001043](../../tests/fixtures/answer_quality_cases.json#L1043) | 1043 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
-| [SRC-90FAA34ADE-L001044](../../tests/fixtures/answer_quality_cases.json#L1044) | 1044 | `"            \"domain\": \"blog-b.example.test\","` | — |
-| [SRC-90FAA34ADE-L001045](../../tests/fixtures/answer_quality_cases.json#L1045) | 1045 | `"            \"provider\": \"fixture_b\""` | — |
-| [SRC-90FAA34ADE-L001046](../../tests/fixtures/answer_quality_cases.json#L1046) | 1046 | `"          },"` | — |
-| [SRC-90FAA34ADE-L001047](../../tests/fixtures/answer_quality_cases.json#L1047) | 1047 | `"          {"` | — |
-| [SRC-90FAA34ADE-L001048](../../tests/fixtures/answer_quality_cases.json#L1048) | 1048 | `"            \"title\": \"Community page C\","` | — |
-| [SRC-90FAA34ADE-L001049](../../tests/fixtures/answer_quality_cases.json#L1049) | 1049 | `"            \"url\": \"https://community.example.test/stop\","` | — |
-| [SRC-90FAA34ADE-L001050](../../tests/fixtures/answer_quality_cases.json#L1050) | 1050 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
-| [SRC-90FAA34ADE-L001051](../../tests/fixtures/answer_quality_cases.json#L1051) | 1051 | `"            \"domain\": \"community.example.test\","` | — |
-| [SRC-90FAA34ADE-L001052](../../tests/fixtures/answer_quality_cases.json#L1052) | 1052 | `"            \"provider\": \"fixture_c\""` | — |
-| [SRC-90FAA34ADE-L001053](../../tests/fixtures/answer_quality_cases.json#L1053) | 1053 | `"          }"` | — |
-| [SRC-90FAA34ADE-L001054](../../tests/fixtures/answer_quality_cases.json#L1054) | 1054 | `"        ],"` | — |

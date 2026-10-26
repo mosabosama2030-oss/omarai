@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002541 إلى SRC-1AE03B9EC3-L003340
+- النطاق: SRC-1AE03B9EC3-L002522 إلى SRC-1AE03B9EC3-L003321
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002522](../../agents/web_agent.py#L2522) | 2522 | `"            \"expansion_queries\": expansion_queries,"` | — |
+| [SRC-1AE03B9EC3-L002523](../../agents/web_agent.py#L2523) | 2523 | `"            \"evidence_signals\": evidence_signal_report(sources, plan.get(\"freshness\", \"any\")),"` | — |
+| [SRC-1AE03B9EC3-L002524](../../agents/web_agent.py#L2524) | 2524 | `"            \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-1AE03B9EC3-L002525](../../agents/web_agent.py#L2525) | 2525 | `"            \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
+| [SRC-1AE03B9EC3-L002526](../../agents/web_agent.py#L2526) | 2526 | `"            \"provider_diagnostics\": provider_diagnostics,"` | — |
+| [SRC-1AE03B9EC3-L002527](../../agents/web_agent.py#L2527) | 2527 | `"            \"connector_summary\": self._connector_status_summary("` | — |
+| [SRC-1AE03B9EC3-L002528](../../agents/web_agent.py#L2528) | 2528 | `"                provider_diagnostics, sources"` | — |
+| [SRC-1AE03B9EC3-L002529](../../agents/web_agent.py#L2529) | 2529 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L002530](../../agents/web_agent.py#L2530) | 2530 | `"            \"pages_fetch_attempted\": len(fetch_targets),"` | — |
+| [SRC-1AE03B9EC3-L002531](../../agents/web_agent.py#L2531) | 2531 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002532](../../agents/web_agent.py#L2532) | 2532 | `"        return sources, list(dict.fromkeys(warnings)), report"` | — |
+| [SRC-1AE03B9EC3-L002533](../../agents/web_agent.py#L2533) | 2533 | `""` | — |
+| [SRC-1AE03B9EC3-L002534](../../agents/web_agent.py#L2534) | 2534 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L002535](../../agents/web_agent.py#L2535) | 2535 | `"    def _history_search_query(question: str, history: list[dict[str, str]]) -> str:"` | — |
+| [SRC-1AE03B9EC3-L002536](../../agents/web_agent.py#L2536) | 2536 | `"        \"\"\"Backward-compatible wrapper for the shared follow-up resolver.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L002537](../../agents/web_agent.py#L2537) | 2537 | `"        return resolve_followup_query(question, history)"` | — |
+| [SRC-1AE03B9EC3-L002538](../../agents/web_agent.py#L2538) | 2538 | `""` | — |
+| [SRC-1AE03B9EC3-L002539](../../agents/web_agent.py#L2539) | 2539 | `"    def _connector_status_summary(self, diagnostics: list[dict[str, Any]] \| None,"` | — |
+| [SRC-1AE03B9EC3-L002540](../../agents/web_agent.py#L2540) | 2540 | `"                                  sources: list[dict[str, Any]] \| None = None) -> dict[str, Any]:"` | — |
 | [SRC-1AE03B9EC3-L002541](../../agents/web_agent.py#L2541) | 2541 | `"        \"\"\"Summarize this request's connector states without exposing credentials.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L002542](../../agents/web_agent.py#L2542) | 2542 | `"        optional = {"` | — |
 | [SRC-1AE03B9EC3-L002543](../../agents/web_agent.py#L2543) | 2543 | `"            \"deepseek_search_api\": (\"DEEPSEEK_SEARCH_API_KEY\",), \"brave_search_api\": (\"BRAVE_SEARCH_API_KEY\",),"` | — |
@@ -797,22 +816,3 @@
 | [SRC-1AE03B9EC3-L003319](../../agents/web_agent.py#L3319) | 3319 | `"            messages.insert(2, {"` | — |
 | [SRC-1AE03B9EC3-L003320](../../agents/web_agent.py#L3320) | 3320 | `"                \"role\": \"user\","` | — |
 | [SRC-1AE03B9EC3-L003321](../../agents/web_agent.py#L3321) | 3321 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003322](../../agents/web_agent.py#L3322) | 3322 | `"                    \"قائمة محاور مستخرجة آليًا من السؤال للمراجعة النهائية، وقد لا تلتقط المعنى كله:\\n\""` | — |
-| [SRC-1AE03B9EC3-L003323](../../agents/web_agent.py#L3323) | 3323 | `"                    + \"\\n\".join(f\"- {target}\" for target in coverage_targets)"` | — |
-| [SRC-1AE03B9EC3-L003324](../../agents/web_agent.py#L3324) | 3324 | `"                    + \"\\nتأكد أن المسودة تجيب عن كل محور أو تصرّح بنقص الأدلة له.\""` | — |
-| [SRC-1AE03B9EC3-L003325](../../agents/web_agent.py#L3325) | 3325 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L003326](../../agents/web_agent.py#L3326) | 3326 | `"            })"` | — |
-| [SRC-1AE03B9EC3-L003327](../../agents/web_agent.py#L3327) | 3327 | `"        raw_review = self._request_completion("` | — |
-| [SRC-1AE03B9EC3-L003328](../../agents/web_agent.py#L3328) | 3328 | `"            messages,"` | — |
-| [SRC-1AE03B9EC3-L003329](../../agents/web_agent.py#L3329) | 3329 | `"            max_tokens=1700,"` | — |
-| [SRC-1AE03B9EC3-L003330](../../agents/web_agent.py#L3330) | 3330 | `"            temperature=0.0,"` | — |
-| [SRC-1AE03B9EC3-L003331](../../agents/web_agent.py#L3331) | 3331 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
-| [SRC-1AE03B9EC3-L003332](../../agents/web_agent.py#L3332) | 3332 | `"            model=self.review_model,"` | — |
-| [SRC-1AE03B9EC3-L003333](../../agents/web_agent.py#L3333) | 3333 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003334](../../agents/web_agent.py#L3334) | 3334 | `"        start_marker = \"<<<OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-1AE03B9EC3-L003335](../../agents/web_agent.py#L3335) | 3335 | `"        end_marker = \"<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-1AE03B9EC3-L003336](../../agents/web_agent.py#L3336) | 3336 | `"        final_answer = re.fullmatch("` | — |
-| [SRC-1AE03B9EC3-L003337](../../agents/web_agent.py#L3337) | 3337 | `"            r\"\\s*<<<OMARAI_FINAL_ANSWER>>>\\s*(.*?)\\s*<<<END_OMARAI_FINAL_ANSWER>>>\\s*\","` | — |
-| [SRC-1AE03B9EC3-L003338](../../agents/web_agent.py#L3338) | 3338 | `"            raw_review,"` | — |
-| [SRC-1AE03B9EC3-L003339](../../agents/web_agent.py#L3339) | 3339 | `"            flags=re.DOTALL,"` | — |
-| [SRC-1AE03B9EC3-L003340](../../agents/web_agent.py#L3340) | 3340 | `"        )"` | — |

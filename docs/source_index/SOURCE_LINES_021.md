@@ -4,9 +4,27 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000011 إلى SRC-90FAA34ADE-L000254
+- النطاق: SRC-A8360B1B03-L000222 إلى SRC-90FAA34ADE-L000235
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## ملفات أخرى
+
+### FILE-A8360B1B03 — [scripts/hosted_smoke_test.py](../../scripts/hosted_smoke_test.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"    except SmokeError as exc:"` | — |
+| [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `"        print(json.dumps({\"result\": \"failed\", \"error\": str(exc)}, ensure_ascii=False, indent=2))"` | — |
+| [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"        return 1"` | — |
+| [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
+| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"    return 0"` | — |
+| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `""` | — |
+| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `""` | — |
+| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"    sys.exit(main())"` | — |
 ## ملفات أخرى
 
 ### FILE-4FFD5AFC54 — [scripts/run_answer_quality_benchmark.py](../../scripts/run_answer_quality_benchmark.py#L1)
@@ -16,6 +34,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000001](../../scripts/run_answer_quality_benchmark.py#L1) | 1 | `"\"\"\"Offline / optional live runner for OMARAI-REDTEAM-001 answer-quality cases."` | — |
+| [SRC-4FFD5AFC54-L000002](../../scripts/run_answer_quality_benchmark.py#L2) | 2 | `""` | — |
+| [SRC-4FFD5AFC54-L000003](../../scripts/run_answer_quality_benchmark.py#L3) | 3 | `"Modes"` | — |
+| [SRC-4FFD5AFC54-L000004](../../scripts/run_answer_quality_benchmark.py#L4) | 4 | `"-----"` | — |
+| [SRC-4FFD5AFC54-L000005](../../scripts/run_answer_quality_benchmark.py#L5) | 5 | `"validate (default)"` | — |
+| [SRC-4FFD5AFC54-L000006](../../scripts/run_answer_quality_benchmark.py#L6) | 6 | `"    Load and structurally validate the corpus. No network."` | — |
+| [SRC-4FFD5AFC54-L000007](../../scripts/run_answer_quality_benchmark.py#L7) | 7 | `""` | — |
+| [SRC-4FFD5AFC54-L000008](../../scripts/run_answer_quality_benchmark.py#L8) | 8 | `"live (explicit opt-in)"` | — |
+| [SRC-4FFD5AFC54-L000009](../../scripts/run_answer_quality_benchmark.py#L9) | 9 | `"    POST selected cases to an existing Omarai HTTP API (/api/agent)."` | — |
+| [SRC-4FFD5AFC54-L000010](../../scripts/run_answer_quality_benchmark.py#L10) | 10 | `"    Does NOT inject JSON evidence fixtures into the server."` | — |
 | [SRC-4FFD5AFC54-L000011](../../scripts/run_answer_quality_benchmark.py#L11) | 11 | `"    Does NOT auto-grade PASS/FAIL for answer quality; records NOT_TESTED"` | — |
 | [SRC-4FFD5AFC54-L000012](../../scripts/run_answer_quality_benchmark.py#L12) | 12 | `"    unless a transport/auth error makes the run unusable."` | — |
 | [SRC-4FFD5AFC54-L000013](../../scripts/run_answer_quality_benchmark.py#L13) | 13 | `""` | — |
@@ -815,22 +843,3 @@
 | [SRC-90FAA34ADE-L000233](../../tests/fixtures/answer_quality_cases.json#L233) | 233 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000234](../../tests/fixtures/answer_quality_cases.json#L234) | 234 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000235](../../tests/fixtures/answer_quality_cases.json#L235) | 235 | `"        \"notes\": \"Reviewer checks completeness across three asks\""` | — |
-| [SRC-90FAA34ADE-L000236](../../tests/fixtures/answer_quality_cases.json#L236) | 236 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000237](../../tests/fixtures/answer_quality_cases.json#L237) | 237 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000238](../../tests/fixtures/answer_quality_cases.json#L238) | 238 | `"        \"One or more subquestions ignored with no acknowledgment\""` | — |
-| [SRC-90FAA34ADE-L000239](../../tests/fixtures/answer_quality_cases.json#L239) | 239 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000240](../../tests/fixtures/answer_quality_cases.json#L240) | 240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000241](../../tests/fixtures/answer_quality_cases.json#L241) | 241 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000242](../../tests/fixtures/answer_quality_cases.json#L242) | 242 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000243](../../tests/fixtures/answer_quality_cases.json#L243) | 243 | `"      \"case_id\": \"AQ-010\","` | — |
-| [SRC-90FAA34ADE-L000244](../../tests/fixtures/answer_quality_cases.json#L244) | 244 | `"      \"category\": \"multi_subquestions\","` | — |
-| [SRC-90FAA34ADE-L000245](../../tests/fixtures/answer_quality_cases.json#L245) | 245 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L000246](../../tests/fixtures/answer_quality_cases.json#L246) | 246 | `"      \"question\": \"Compare public EV incentives in Egypt vs UAE briefly, and list one official source for each if available.\","` | — |
-| [SRC-90FAA34ADE-L000247](../../tests/fixtures/answer_quality_cases.json#L247) | 247 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000248](../../tests/fixtures/answer_quality_cases.json#L248) | 248 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000249](../../tests/fixtures/answer_quality_cases.json#L249) | 249 | `"        \"Compares both countries or states missing side\","` | — |
-| [SRC-90FAA34ADE-L000250](../../tests/fixtures/answer_quality_cases.json#L250) | 250 | `"        \"Separates sources by jurisdiction when present\""` | — |
-| [SRC-90FAA34ADE-L000251](../../tests/fixtures/answer_quality_cases.json#L251) | 251 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000252](../../tests/fixtures/answer_quality_cases.json#L252) | 252 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000253](../../tests/fixtures/answer_quality_cases.json#L253) | 253 | `"        \"Merges both countries into one unsupported claim\","` | — |
-| [SRC-90FAA34ADE-L000254](../../tests/fixtures/answer_quality_cases.json#L254) | 254 | `"        \"Invented official ministry URLs\""` | — |

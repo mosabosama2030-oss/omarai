@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004941 إلى SRC-792A9A235D-L000042
+- النطاق: SRC-1AE03B9EC3-L004922 إلى SRC-792A9A235D-L000023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004922](../../agents/web_agent.py#L4922) | 4922 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L004923](../../agents/web_agent.py#L4923) | 4923 | `"            \"answer\": answer,"` | — |
+| [SRC-1AE03B9EC3-L004924](../../agents/web_agent.py#L4924) | 4924 | `"            \"question\": question,"` | — |
+| [SRC-1AE03B9EC3-L004925](../../agents/web_agent.py#L4925) | 4925 | `"            \"search_query\": plan.get(\"queries\", [question])[0],"` | — |
+| [SRC-1AE03B9EC3-L004926](../../agents/web_agent.py#L4926) | 4926 | `"            \"search_queries\": plan.get(\"queries\", []),"` | — |
+| [SRC-1AE03B9EC3-L004927](../../agents/web_agent.py#L4927) | 4927 | `"            \"research_plan\": {"` | — |
+| [SRC-1AE03B9EC3-L004928](../../agents/web_agent.py#L4928) | 4928 | `"                \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-1AE03B9EC3-L004929](../../agents/web_agent.py#L4929) | 4929 | `"                \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
+| [SRC-1AE03B9EC3-L004930](../../agents/web_agent.py#L4930) | 4930 | `"                \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
+| [SRC-1AE03B9EC3-L004931](../../agents/web_agent.py#L4931) | 4931 | `"                \"platforms\": plan.get(\"platforms\", []),"` | — |
+| [SRC-1AE03B9EC3-L004932](../../agents/web_agent.py#L4932) | 4932 | `"                \"mode\": clean_mode,"` | — |
+| [SRC-1AE03B9EC3-L004933](../../agents/web_agent.py#L4933) | 4933 | `"                \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
+| [SRC-1AE03B9EC3-L004934](../../agents/web_agent.py#L4934) | 4934 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
+| [SRC-1AE03B9EC3-L004935](../../agents/web_agent.py#L4935) | 4935 | `"                \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L004936](../../agents/web_agent.py#L4936) | 4936 | `"                \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L004937](../../agents/web_agent.py#L4937) | 4937 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L004938](../../agents/web_agent.py#L4938) | 4938 | `"            \"search_report\": report,"` | — |
+| [SRC-1AE03B9EC3-L004939](../../agents/web_agent.py#L4939) | 4939 | `"            \"sources\": public_sources,"` | — |
+| [SRC-1AE03B9EC3-L004940](../../agents/web_agent.py#L4940) | 4940 | `"            \"research_quality\": research_quality,"` | — |
 | [SRC-1AE03B9EC3-L004941](../../agents/web_agent.py#L4941) | 4941 | `"            \"citation_validation\": citation_validation,"` | — |
 | [SRC-1AE03B9EC3-L004942](../../agents/web_agent.py#L4942) | 4942 | `"            \"answer_evidence_status\": answer_evidence_status,"` | — |
 | [SRC-1AE03B9EC3-L004943](../../agents/web_agent.py#L4943) | 4943 | `"            \"answer_coverage\": answer_coverage,"` | — |
@@ -851,22 +870,3 @@
 | [SRC-792A9A235D-L000021](../ANSWER_QUALITY_BENCHMARK_AR.md#L21) | 21 | ``"\| `docs/ANSWER_QUALITY_BENCHMARK_AR.md` \| بروتوكول التقييم والتسجيل (هذا الملف) \|"`` | — |
 | [SRC-792A9A235D-L000022](../ANSWER_QUALITY_BENCHMARK_AR.md#L22) | 22 | `""` | — |
 | [SRC-792A9A235D-L000023](../ANSWER_QUALITY_BENCHMARK_AR.md#L23) | 23 | ``"## الاستراتيجيات المسموحة في الحقل `expected_strategy`"`` | — |
-| [SRC-792A9A235D-L000024](../ANSWER_QUALITY_BENCHMARK_AR.md#L24) | 24 | `""` | — |
-| [SRC-792A9A235D-L000025](../ANSWER_QUALITY_BENCHMARK_AR.md#L25) | 25 | `"مستمدة من سلوك المستودع الفعلي (موجّه القدرات المحلي، البحث، التوضيح):"` | — |
-| [SRC-792A9A235D-L000026](../ANSWER_QUALITY_BENCHMARK_AR.md#L26) | 26 | `""` | — |
-| [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `"\| القيمة \| المعنى العملي \|"` | — |
-| [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"\|--------\|----------------\|"` | — |
-| [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
-| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
-| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
-| [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
-| [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | `""` | — |
-| [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
-| [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | `""` | — |
-| [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `"\| الوضع \| متى يُستخدم \|"` | — |
-| [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | `"\|--------\|-------------\|"` | — |
-| [SRC-792A9A235D-L000038](../ANSWER_QUALITY_BENCHMARK_AR.md#L38) | 38 | ``"\| `deterministic_structure` \| إشارات هيكلية (مثل عدم استدعاء البحث، رفض localhost، عدم تسريب أسرار) \|"`` | — |
-| [SRC-792A9A235D-L000039](../ANSWER_QUALITY_BENCHMARK_AR.md#L39) | 39 | ``"\| `fixture_assisted` \| مراجع يطبّق سيناريو `evidence_fixture` (ليس حقنًا تلقائيًا في طلب حي) \|"`` | — |
-| [SRC-792A9A235D-L000040](../ANSWER_QUALITY_BENCHMARK_AR.md#L40) | 40 | ``"\| `human_judgment` \| حكم بشري على الاكتمال/اللغة/جودة عدم اليقين \|"`` | — |
-| [SRC-792A9A235D-L000041](../ANSWER_QUALITY_BENCHMARK_AR.md#L41) | 41 | `""` | — |
-| [SRC-792A9A235D-L000042](../ANSWER_QUALITY_BENCHMARK_AR.md#L42) | 42 | `"## بروتوكول تسجيل النتيجة"` | — |

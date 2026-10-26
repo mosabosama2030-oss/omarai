@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001741 إلى SRC-1AE03B9EC3-L002540
+- النطاق: SRC-1AE03B9EC3-L001722 إلى SRC-1AE03B9EC3-L002521
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001722](../../agents/web_agent.py#L1722) | 1722 | `"                        })"` | — |
+| [SRC-1AE03B9EC3-L001723](../../agents/web_agent.py#L1723) | 1723 | `"                        if sum(row.get(\"provider\") == \"reddit_public_rss\" for row in results) >= 8:"` | — |
+| [SRC-1AE03B9EC3-L001724](../../agents/web_agent.py#L1724) | 1724 | `"                            break"` | — |
+| [SRC-1AE03B9EC3-L001725](../../agents/web_agent.py#L1725) | 1725 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L001726](../../agents/web_agent.py#L1726) | 1726 | `"                    warnings.append(f\"Reddit public RSS unavailable (HTTP {response.status_code})\")"` | — |
+| [SRC-1AE03B9EC3-L001727](../../agents/web_agent.py#L1727) | 1727 | `"            except (httpx.HTTPError, OSError, ValueError, ET.ParseError):"` | — |
+| [SRC-1AE03B9EC3-L001728](../../agents/web_agent.py#L1728) | 1728 | `"                warnings.append(\"Reddit public RSS unavailable for this request\")"` | — |
+| [SRC-1AE03B9EC3-L001729](../../agents/web_agent.py#L1729) | 1729 | `""` | — |
+| [SRC-1AE03B9EC3-L001730](../../agents/web_agent.py#L1730) | 1730 | `"        if \"bluesky\" in platforms:"` | — |
+| [SRC-1AE03B9EC3-L001731](../../agents/web_agent.py#L1731) | 1731 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L001732](../../agents/web_agent.py#L1732) | 1732 | `"                self._reserve_search_call()"` | — |
+| [SRC-1AE03B9EC3-L001733](../../agents/web_agent.py#L1733) | 1733 | `"                response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L001734](../../agents/web_agent.py#L1734) | 1734 | `"                    \"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts\","` | — |
+| [SRC-1AE03B9EC3-L001735](../../agents/web_agent.py#L1735) | 1735 | `"                    params={\"q\": query, \"limit\": 10},"` | — |
+| [SRC-1AE03B9EC3-L001736](../../agents/web_agent.py#L1736) | 1736 | `"                    headers=headers,"` | — |
+| [SRC-1AE03B9EC3-L001737](../../agents/web_agent.py#L1737) | 1737 | `"                    timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L001738](../../agents/web_agent.py#L1738) | 1738 | `"                    follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L001739](../../agents/web_agent.py#L1739) | 1739 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001740](../../agents/web_agent.py#L1740) | 1740 | `"                if response.status_code == 200:"` | — |
 | [SRC-1AE03B9EC3-L001741](../../agents/web_agent.py#L1741) | 1741 | `"                    data = response.json()"` | — |
 | [SRC-1AE03B9EC3-L001742](../../agents/web_agent.py#L1742) | 1742 | `"                    for item in data.get(\"posts\", []):"` | — |
 | [SRC-1AE03B9EC3-L001743](../../agents/web_agent.py#L1743) | 1743 | `"                        post = item.get(\"post\", {})"` | — |
@@ -797,22 +816,3 @@
 | [SRC-1AE03B9EC3-L002519](../../agents/web_agent.py#L2519) | 2519 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L002520](../../agents/web_agent.py#L2520) | 2520 | `"            \"platform_counts\": platform_counts,"` | — |
 | [SRC-1AE03B9EC3-L002521](../../agents/web_agent.py#L2521) | 2521 | `"            \"social_direct_results\": len(social_results),"` | — |
-| [SRC-1AE03B9EC3-L002522](../../agents/web_agent.py#L2522) | 2522 | `"            \"expansion_queries\": expansion_queries,"` | — |
-| [SRC-1AE03B9EC3-L002523](../../agents/web_agent.py#L2523) | 2523 | `"            \"evidence_signals\": evidence_signal_report(sources, plan.get(\"freshness\", \"any\")),"` | — |
-| [SRC-1AE03B9EC3-L002524](../../agents/web_agent.py#L2524) | 2524 | `"            \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-1AE03B9EC3-L002525](../../agents/web_agent.py#L2525) | 2525 | `"            \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L002526](../../agents/web_agent.py#L2526) | 2526 | `"            \"provider_diagnostics\": provider_diagnostics,"` | — |
-| [SRC-1AE03B9EC3-L002527](../../agents/web_agent.py#L2527) | 2527 | `"            \"connector_summary\": self._connector_status_summary("` | — |
-| [SRC-1AE03B9EC3-L002528](../../agents/web_agent.py#L2528) | 2528 | `"                provider_diagnostics, sources"` | — |
-| [SRC-1AE03B9EC3-L002529](../../agents/web_agent.py#L2529) | 2529 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L002530](../../agents/web_agent.py#L2530) | 2530 | `"            \"pages_fetch_attempted\": len(fetch_targets),"` | — |
-| [SRC-1AE03B9EC3-L002531](../../agents/web_agent.py#L2531) | 2531 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002532](../../agents/web_agent.py#L2532) | 2532 | `"        return sources, list(dict.fromkeys(warnings)), report"` | — |
-| [SRC-1AE03B9EC3-L002533](../../agents/web_agent.py#L2533) | 2533 | `""` | — |
-| [SRC-1AE03B9EC3-L002534](../../agents/web_agent.py#L2534) | 2534 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L002535](../../agents/web_agent.py#L2535) | 2535 | `"    def _history_search_query(question: str, history: list[dict[str, str]]) -> str:"` | — |
-| [SRC-1AE03B9EC3-L002536](../../agents/web_agent.py#L2536) | 2536 | `"        \"\"\"Backward-compatible wrapper for the shared follow-up resolver.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L002537](../../agents/web_agent.py#L2537) | 2537 | `"        return resolve_followup_query(question, history)"` | — |
-| [SRC-1AE03B9EC3-L002538](../../agents/web_agent.py#L2538) | 2538 | `""` | — |
-| [SRC-1AE03B9EC3-L002539](../../agents/web_agent.py#L2539) | 2539 | `"    def _connector_status_summary(self, diagnostics: list[dict[str, Any]] \| None,"` | — |
-| [SRC-1AE03B9EC3-L002540](../../agents/web_agent.py#L2540) | 2540 | `"                                  sources: list[dict[str, Any]] \| None = None) -> dict[str, Any]:"` | — |
