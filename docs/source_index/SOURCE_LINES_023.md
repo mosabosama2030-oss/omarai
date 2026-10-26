@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000859 إلى SRC-B3062EB677-L000006
+- النطاق: SRC-90FAA34ADE-L000835 إلى SRC-4CCB1F172B-L000212
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,30 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000835](../../tests/fixtures/answer_quality_cases.json#L835) | 835 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000836](../../tests/fixtures/answer_quality_cases.json#L836) | 836 | `"        \"يسميها فرصة أولية أو lead غير متحقق\","` | — |
+| [SRC-90FAA34ADE-L000837](../../tests/fixtures/answer_quality_cases.json#L837) | 837 | `"        \"يفصل البيانات المنقولة من الإعلان عن البيانات التي تم التحقق منها\","` | — |
+| [SRC-90FAA34ADE-L000838](../../tests/fixtures/answer_quality_cases.json#L838) | 838 | `"        \"يقترح خطوات تحقق عملية مثل تأكيد الملكية والتواصل المصرح به\""` | — |
+| [SRC-90FAA34ADE-L000839](../../tests/fixtures/answer_quality_cases.json#L839) | 839 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000840](../../tests/fixtures/answer_quality_cases.json#L840) | 840 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000841](../../tests/fixtures/answer_quality_cases.json#L841) | 841 | `"        \"يؤكد الملكية أو توافر الشقة من الإعلان وحده\","` | — |
+| [SRC-90FAA34ADE-L000842](../../tests/fixtures/answer_quality_cases.json#L842) | 842 | `"        \"يصف المعلن بأنه مشتري أو عميل مؤهل دون دليل\""` | — |
+| [SRC-90FAA34ADE-L000843](../../tests/fixtures/answer_quality_cases.json#L843) | 843 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000844](../../tests/fixtures/answer_quality_cases.json#L844) | 844 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000845](../../tests/fixtures/answer_quality_cases.json#L845) | 845 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000846](../../tests/fixtures/answer_quality_cases.json#L846) | 846 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000847](../../tests/fixtures/answer_quality_cases.json#L847) | 847 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000848](../../tests/fixtures/answer_quality_cases.json#L848) | 848 | `"            \"title\": \"Apartment listing\","` | — |
+| [SRC-90FAA34ADE-L000849](../../tests/fixtures/answer_quality_cases.json#L849) | 849 | `"            \"url\": \"https://listings.example.test/unit-55\","` | — |
+| [SRC-90FAA34ADE-L000850](../../tests/fixtures/answer_quality_cases.json#L850) | 850 | `"            \"snippet\": \"Apartment for sale in New Cairo. Contact through the listing platform.\","` | — |
+| [SRC-90FAA34ADE-L000851](../../tests/fixtures/answer_quality_cases.json#L851) | 851 | `"            \"domain\": \"listings.example.test\","` | — |
+| [SRC-90FAA34ADE-L000852](../../tests/fixtures/answer_quality_cases.json#L852) | 852 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000853](../../tests/fixtures/answer_quality_cases.json#L853) | 853 | `"            \"verification_status\": \"unverified\""` | — |
+| [SRC-90FAA34ADE-L000854](../../tests/fixtures/answer_quality_cases.json#L854) | 854 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000855](../../tests/fixtures/answer_quality_cases.json#L855) | 855 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000856](../../tests/fixtures/answer_quality_cases.json#L856) | 856 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000857](../../tests/fixtures/answer_quality_cases.json#L857) | 857 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000858](../../tests/fixtures/answer_quality_cases.json#L858) | 858 | `"        \"التصريح بأن الملكية أو التوافر verified من مصدر الإعلان وحده\","` | — |
 | [SRC-90FAA34ADE-L000859](../../tests/fixtures/answer_quality_cases.json#L859) | 859 | `"        \"تسجيل نية شراء مؤكدة دون دليل\""` | — |
 | [SRC-90FAA34ADE-L000860](../../tests/fixtures/answer_quality_cases.json#L860) | 860 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000861](../../tests/fixtures/answer_quality_cases.json#L861) | 861 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
@@ -810,36 +834,3 @@
 | [SRC-4CCB1F172B-L000210](../../tests/test_answer_quality_corpus.py#L210) | 210 | `"        assert case_id in by_id, f\"Doc example {case_id} missing from corpus\""` | — |
 | [SRC-4CCB1F172B-L000211](../../tests/test_answer_quality_corpus.py#L211) | 211 | `"        actual = by_id[case_id][\"category\"]"` | — |
 | [SRC-4CCB1F172B-L000212](../../tests/test_answer_quality_corpus.py#L212) | 212 | `"        assert actual == expected_cat, ("` | — |
-| [SRC-4CCB1F172B-L000213](../../tests/test_answer_quality_corpus.py#L213) | 213 | `"            f\"Doc/example mismatch: {case_id} is category={actual!r}, \""` | — |
-| [SRC-4CCB1F172B-L000214](../../tests/test_answer_quality_corpus.py#L214) | 214 | `"            f\"expected {expected_cat!r}\""` | — |
-| [SRC-4CCB1F172B-L000215](../../tests/test_answer_quality_corpus.py#L215) | 215 | `"        )"` | — |
-| [SRC-4CCB1F172B-L000216](../../tests/test_answer_quality_corpus.py#L216) | 216 | `""` | — |
-| [SRC-4CCB1F172B-L000217](../../tests/test_answer_quality_corpus.py#L217) | 217 | `""` | — |
-| [SRC-4CCB1F172B-L000218](../../tests/test_answer_quality_corpus.py#L218) | 218 | `"def test_docs_mention_corrected_high_risk_ids():"` | — |
-| [SRC-4CCB1F172B-L000219](../../tests/test_answer_quality_corpus.py#L219) | 219 | `"    assert DOCS_PATH.is_file()"` | — |
-| [SRC-4CCB1F172B-L000220](../../tests/test_answer_quality_corpus.py#L220) | 220 | `"    text = DOCS_PATH.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-4CCB1F172B-L000221](../../tests/test_answer_quality_corpus.py#L221) | 221 | `"    for case_id in (\"AQ-024\", \"AQ-030\", \"AQ-025\", \"AQ-031\", \"AQ-023\", \"AQ-018\", \"AQ-021\"):"` | — |
-| [SRC-4CCB1F172B-L000222](../../tests/test_answer_quality_corpus.py#L222) | 222 | `"        assert case_id in text, f\"Docs missing corrected example {case_id}\""` | — |
-| [SRC-4CCB1F172B-L000223](../../tests/test_answer_quality_corpus.py#L223) | 223 | `""` | — |
-| [SRC-4CCB1F172B-L000224](../../tests/test_answer_quality_corpus.py#L224) | 224 | `""` | — |
-| [SRC-4CCB1F172B-L000225](../../tests/test_answer_quality_corpus.py#L225) | 225 | `"def test_no_placeholder_corpus_content():"` | — |
-| [SRC-4CCB1F172B-L000226](../../tests/test_answer_quality_corpus.py#L226) | 226 | `"    raw = CORPUS_PATH.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-4CCB1F172B-L000227](../../tests/test_answer_quality_corpus.py#L227) | 227 | `"    assert \"PLACEHOLDER\" not in raw"` | — |
-| [SRC-4CCB1F172B-L000228](../../tests/test_answer_quality_corpus.py#L228) | 228 | `"    assert \"SEE_LOCAL_FILE\" not in raw"` | — |
-| [SRC-4CCB1F172B-L000229](../../tests/test_answer_quality_corpus.py#L229) | 229 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000230](../../tests/test_answer_quality_corpus.py#L230) | 230 | `"    assert len(data[\"cases\"]) == data[\"case_count\"] == 45"` | — |
-## اختبارات
-
-### FILE-B3062EB677 — [tests/test_answer_quality_runner.py](../../tests/test_answer_quality_runner.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B3062EB677-L000001](../../tests/test_answer_quality_runner.py#L1) | 1 | `"\"\"\"Offline tests for scripts/run_answer_quality_benchmark.py (no network).\"\"\""` | — |
-| [SRC-B3062EB677-L000002](../../tests/test_answer_quality_runner.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-B3062EB677-L000003](../../tests/test_answer_quality_runner.py#L3) | 3 | `""` | — |
-| [SRC-B3062EB677-L000004](../../tests/test_answer_quality_runner.py#L4) | 4 | `"import importlib.util"` | — |
-| [SRC-B3062EB677-L000005](../../tests/test_answer_quality_runner.py#L5) | 5 | `"import json"` | — |
-| [SRC-B3062EB677-L000006](../../tests/test_answer_quality_runner.py#L6) | 6 | `"import sys"` | — |
