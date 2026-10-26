@@ -117,6 +117,61 @@ def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
     return re.sub(r"\s+", " ", value).strip()[:limit]
 
 
+_SEARCH_META_START_RE = re.compile(
+    r"^(?:و?اذكر(?:ي|وا)?|و?استخدم|و?استعمل|و?ميّز|و?ميز|و?وضح|و?وضّح|"
+    r"و?اجب|و?أجب|و?لا تعرض|و?لا تقدم|please cite|cite|provide links|"
+    r"mention sources|use multiple sources|don't present|do not present)\b",
+    re.IGNORECASE,
+)
+_SEARCH_META_TAIL_RE = re.compile(
+    r"\s*[,،؛;]\s*(?:و\s*)?(?:اذكر|اذكري|استخدم|استعمل|ميّز|ميز|وضح|وضّح|"
+    r"اجب|أجب|لا تعرض|لا تقدم|please cite|cite|provide links|mention sources|"
+    r"use multiple sources|don't present|do not present)\b.*$",
+    re.IGNORECASE,
+)
+_SEARCH_LEADING_ACTION_RE = re.compile(
+    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|استكشف|استقصِ|اعرض|analyze|analyse|compare|"
+    r"investigate|collect|gather|review|summarize|"
+    r"(?:ابحث|بحث|دورلي|دور|اعثر)(?:\s+(?:عن|على))?)\s+",
+    re.IGNORECASE,
+)
+
+
+def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
+    """Reduce a full request to the topic-bearing query; preserve safety checks elsewhere."""
+    if not isinstance(value, str):
+        return ""
+    cleaned = re.sub(r"https?://[^\s<>()]+", " ", value, flags=re.IGNORECASE)
+    # Split question/sentence boundaries without splitting operators such as site:reddit.com.
+    segments = re.split(
+        r"(?<=[!?؟؛;])\s+|(?<=\.)\s+(?=[A-Z\u0600-\u06FF])",
+        cleaned,
+    )
+    useful: list[str] = []
+    for segment in segments:
+        segment = segment.strip()
+        if not segment:
+            continue
+        normalized_segment = _normalize_arabic(segment).casefold()
+        if _SEARCH_META_START_RE.search(normalized_segment):
+            continue
+        segment = _SEARCH_META_TAIL_RE.sub("", segment).strip()
+        segment = _SEARCH_LEADING_ACTION_RE.sub("", segment).strip()
+        if segment:
+            useful.append(segment)
+    result = re.sub(r"\s+", " ", " ".join(useful)).strip(" \t\r\n,،;؛")
+    if not result:
+        result = re.sub(r"\s+", " ", cleaned).strip()
+    try:
+        max_chars = max(2, min(int(limit), MAX_QUERY_CHARS))
+    except (TypeError, ValueError, OverflowError):
+        max_chars = MAX_QUERY_CHARS
+    if len(result) > max_chars:
+        shortened = result[:max_chars]
+        result = shortened.rsplit(" ", 1)[0] if " " in shortened else shortened
+    return result
+
+
 _ARABIC_RE = re.compile(r"[؀-ۿ]")
 
 
@@ -185,7 +240,7 @@ def fallback_plan(
     """Build a small but varied plan when no model planner is configured or parsing fails."""
     contextual_question = resolve_followup_query(question, history)
     direct_urls = extract_urls(question)
-    base = _compact(re.sub(r"https?://[^\s<>()]+", " ", contextual_question), 500)
+    base = compact_search_query(contextual_question)
     if not base:
         base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
     social_focus = detect_social_focus(question, history)
@@ -198,20 +253,20 @@ def fallback_plan(
     queries: list[str] = [base]
 
     if fresh and base:
-        queries.append(_compact(base + " أحدث مستجدات آخر الأخبار", 500))
+        queries.append(compact_search_query(base + " أحدث مستجدات آخر الأخبار"))
     if _contains_any(question, ("قارن", "مقارنة", "compare", "versus", "vs", "الفرق بين")):
-        queries.append(_compact(base + " مقارنة مراجعات مميزات عيوب", 500))
+        queries.append(compact_search_query(base + " مقارنة مراجعات مميزات عيوب"))
 
     if social_focus:
         selected = platforms or ["facebook", "instagram", "reddit"]
         for platform in selected[:3]:
             domain = SOCIAL_DOMAINS[platform]
-            site_query = _compact(f"site:{domain} {base}", 500)
+            site_query = compact_search_query(f"site:{domain} {base}")
             if site_query not in queries:
                 queries.append(site_query)
 
     if deep and not social_focus and len(queries) < MAX_PLAN_QUERIES:
-        queries.append(_compact(base + " مصادر موثوقة تقارير إحصاءات", 500))
+        queries.append(compact_search_query(base + " مصادر موثوقة تقارير إحصاءات"))
 
     unique: list[str] = []
     seen: set[str] = set()
@@ -247,7 +302,7 @@ def validate_plan(
     queries: list[str] = []
     seen: set[str] = set()
     for item in raw_queries:
-        query = _compact(item, 500)
+        query = compact_search_query(item)
         # Never accept prompt-like multi-line payloads as search-query instructions.
         query = query.replace("\n", " ").replace("\r", " ")
         if len(query) < 2:
