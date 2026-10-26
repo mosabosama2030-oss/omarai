@@ -118,20 +118,35 @@ def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
 
 
 _SEARCH_META_START_RE = re.compile(
-    r"^(?:و?اذكر(?:ي|وا)?|و?استخدم|و?استعمل|و?ميّز|و?ميز|و?وضح|و?وضّح|"
-    r"و?اجب|و?أجب|و?لا تعرض|و?لا تقدم|please cite|cite|provide links|"
-    r"mention sources|use multiple sources|don't present|do not present)\b",
+    r"^(?:و?استخدم|و?استعمل|و?ميّز|و?ميز|و?اجب|و?أجب|و?لا تعرض|و?لا تقدم|"
+    r"please cite|cite|provide links|mention sources|use multiple sources|"
+    r"don't present|do not present)\b",
+    re.IGNORECASE,
+)
+# Treat "اذكر" as an action unless its object is clearly citation/format metadata.
+# This preserves topic-bearing prompts such as "اذكر أبرز السيارات الكهربائية...".
+_SEARCH_CITATION_META_START_RE = re.compile(
+    r"^(?:و?اذكر(?:ي|وا)?|mention|cite|provide)\s+"
+    r"(?:مصادر?|المصادر|مصدر|روابط?|رابط|تواريخ?|تاريخ|الاخبار|الأخبار|"
+    r"the original posts|links|sources|dates)\b",
+    re.IGNORECASE,
+)
+# This is a response-quality instruction, not a topic query.
+_SEARCH_UNCERTAINTY_META_START_RE = re.compile(
+    r"^و?وضّ?ح\s+اذا\s+كانت\s+النتائج\s+غير\s+كافيه\b"
+    r".*(?:لتمثيل|تمثيل).*(?:اراء\s+المستخدمين|المستخدمين)\b",
     re.IGNORECASE,
 )
 _SEARCH_META_TAIL_RE = re.compile(
-    r"\s*[,،؛;]\s*(?:و\s*)?(?:اذكر|اذكري|استخدم|استعمل|ميّز|ميز|وضح|وضّح|"
-    r"اجب|أجب|لا تعرض|لا تقدم|please cite|cite|provide links|mention sources|"
-    r"use multiple sources|don't present|do not present)\b.*$",
+    r"\s*[,،؛;]\s*(?:و\s*)?(?:استخدم|استعمل|ميّز|ميز|اجب|أجب|لا تعرض|لا تقدم|"
+    r"please cite|cite|provide links|mention sources|use multiple sources|"
+    r"don't present|do not present|"
+    r"اذكر(?:ي|وا)?\s+(?:مصادر?|المصادر|مصدر|روابط?|رابط|تواريخ?|تاريخ|الاخبار|الأخبار))\b.*$",
     re.IGNORECASE,
 )
 _SEARCH_LEADING_ACTION_RE = re.compile(
-    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|استكشف|استقصِ|اعرض|analyze|analyse|compare|"
-    r"investigate|collect|gather|review|summarize|"
+    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|استكشف|استقصِ|اعرض|و?وضح|و?وضّح|و?اذكر(?:ي|وا)?|"
+    r"analyze|analyse|compare|investigate|collect|gather|review|summarize|"
     r"(?:ابحث|بحث|دورلي|دور|اعثر)(?:\s+(?:عن|على))?)\s+",
     re.IGNORECASE,
 )
@@ -153,7 +168,11 @@ def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
         if not segment:
             continue
         normalized_segment = _normalize_arabic(segment).casefold()
-        if _SEARCH_META_START_RE.search(normalized_segment):
+        if (
+            _SEARCH_META_START_RE.search(normalized_segment)
+            or _SEARCH_CITATION_META_START_RE.search(normalized_segment)
+            or _SEARCH_UNCERTAINTY_META_START_RE.search(normalized_segment)
+        ):
             continue
         segment = _SEARCH_META_TAIL_RE.sub("", segment).strip()
         segment = _SEARCH_LEADING_ACTION_RE.sub("", segment).strip()
