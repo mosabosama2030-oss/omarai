@@ -3052,22 +3052,41 @@ class WebAgent:
             cleaned_query = re.sub(r"\\s+", " ", cleaned_query).strip()
             if cleaned_query:
                 cleaned_queries.append(cleaned_query)
-        if not cleaned_queries or _relevance_ratio(question, cleaned_queries[0]) < 0.20:
-            cleaned_queries = list(fallback.get("queries", []))
+        fallback_queries = []
+        for fallback_query in fallback.get("queries", []):
+            if not isinstance(fallback_query, str):
+                continue
+            compacted_fallback = compact_search_query(fallback_query)
+            if compacted_fallback and _relevance_query_tokens(compacted_fallback):
+                fallback_queries.append(compacted_fallback)
+        compact_question = compact_search_query(question)
+        if (
+            not cleaned_queries
+            or not compact_question
+            or _relevance_ratio(compact_question, cleaned_queries[0]) < 0.20
+        ):
+            cleaned_queries = fallback_queries
+        else:
+            cleaned_queries = [
+                compact_search_query(item)
+                for item in cleaned_queries
+                if compact_search_query(item) and _relevance_query_tokens(compact_search_query(item))
+            ]
         plan["queries"] = list(dict.fromkeys(cleaned_queries))[:MAX_PLAN_QUERIES]
         if plan.get("freshness") == "current" and not any(
             detect_word in _normalize_search_query(item).casefold()
             for item in plan["queries"]
             for detect_word in ("latest", "recent", "news", "احدث", "أحدث", "مستجدات", "اخبار", "الأخبار")
-        ):
+        ) and plan["queries"]:
             fresh_query = next(
-                (item for item in fallback.get("queries", []) if item not in plan["queries"]),
-                question + " أحدث الأخبار والمستجدات",
+                (item for item in fallback_queries if item not in plan["queries"]),
+                compact_search_query(plan["queries"][0] + " أحدث الأخبار والمستجدات"),
             )
-            if len(plan["queries"]) < MAX_PLAN_QUERIES:
-                plan["queries"].append(fresh_query[:500])
-            elif plan["queries"]:
-                plan["queries"][-1] = fresh_query[:500]
+            if fresh_query and _relevance_query_tokens(fresh_query):
+                if len(plan["queries"]) < MAX_PLAN_QUERIES:
+                    plan["queries"].append(fresh_query[:240])
+                elif plan["queries"]:
+                    plan["queries"][-1] = fresh_query[:240]
 
         # Do not let a planner accidentally drop explicit social-media/freshness intent.
         plan["social_focus"] = bool(plan.get("social_focus") or fallback.get("social_focus"))
@@ -4346,15 +4365,20 @@ class WebAgent:
                     else "official primary source data"
                 )
                 repair_query = compact_search_query(f"{base_query} {suffix}")
+                if not repair_query or not _relevance_query_tokens(repair_query):
+                    evidence_repair["reason"] = "no_topic_query_available"
+                    repair_query = ""
                 known_queries = {
                     _normalize_search_query(item).casefold()
                     for item in original_queries
                 }
-                if _normalize_search_query(repair_query).casefold() in known_queries:
+                if repair_query and _normalize_search_query(repair_query).casefold() in known_queries:
                     repair_query = compact_search_query(
                         f"{base_query} independent corroborating evidence"
                     )
-                if _normalize_search_query(repair_query).casefold() not in known_queries:
+                if repair_query and _relevance_query_tokens(repair_query) and (
+                    _normalize_search_query(repair_query).casefold() not in known_queries
+                ):
                     initial_source_count = len(sources)
                     initial_domain_count = len(independent_domains)
                     evidence_repair["attempted"] = True
