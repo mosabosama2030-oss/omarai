@@ -2974,6 +2974,10 @@ class WebAgent:
     ) -> dict[str, Any]:
         """Ask the language model how to search, then validate its proposal deterministically."""
         fallback = fallback_plan(question, history)
+        # Do not ask the planner to invent a generic query when there is no topic.
+        # Explicit URLs remain usable through the direct-page-fetch path.
+        if not fallback.get("queries"):
+            return fallback
         search_question = self._history_search_query(question, history)
         if search_question != question:
             compact_context_query = compact_search_query(search_question)
