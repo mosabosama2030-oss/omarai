@@ -194,7 +194,7 @@ def test_fallback_plan_compacts_four_representative_arabic_tasks_before_expansio
 
 def test_compact_search_query_preserves_site_operator_and_discards_separate_citation_instruction():
     query = compact_search_query(
-        'site:reddit.com "electric car reviews Egypt". Cite the original posts and provide links.'
+        'site:reddit.com electric car reviews Egypt. Cite the original posts and provide links.'
     )
     assert query.startswith("site:reddit.com")
     assert "electric car reviews Egypt" in query
