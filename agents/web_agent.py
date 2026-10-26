@@ -199,9 +199,9 @@ def _relevance_query_tokens(query: str) -> set[str]:
     if not query:
         return set()
     query_text = _normalize_search_query(query).casefold()
-    query_text = re.sub(r"(?i)\\bsite\\s*:\\s*\\S+", " ", query_text)
+    query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     return {
-        token for token in re.findall(r"[a-z0-9]+|[\\u0620-\\u064A\\u066E-\\u06D3]+", query_text)
+        token for token in re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", query_text)
         if (
             token not in _NORMALIZED_SEARCH_STOPWORDS
             and token not in _GENERIC_QUERY_MODIFIER_TOKENS
