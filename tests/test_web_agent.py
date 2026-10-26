@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+from agents.research import compact_search_query
 from agents.web_agent import (
     WebAgent,
     _normalize_search_query,
@@ -2877,3 +2878,94 @@ def test_search_web_classifies_http_302_as_degraded_without_following_provider_r
     assert diagnostic["status"] == "http_error"
     assert diagnostic["error"] == "RuntimeError: HTTP 302"
     assert sum(provider == "duckduckgo_html" for provider, _query in calls) == 1
+
+
+def test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries():
+    question = "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+    assert _relevance_ratio(question, "عاصمة مصر القاهرة") >= 0.20
+    assert _relevance_ratio(
+        "اذكر مصادر موثوقة، روابط مباشرة، باختصار",
+        "Football results and unrelated match reports",
+    ) == 0.0
+
+
+def test_search_web_compacts_request_before_provider_dispatch(monkeypatch):
+    agent = WebAgent()
+    seen = []
+
+    def capture(query):
+        seen.append(query)
+        return []
+
+    for env_name in (
+        "DEEPSEEK_SEARCH_API_KEY",
+        "BRAVE_SEARCH_API_KEY",
+        "TAVILY_API_KEY",
+    ):
+        monkeypatch.delenv(env_name, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", capture)
+    monkeypatch.setattr(agent, "_search_bing_rss", capture)
+
+    raw_question = (
+        "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+    )
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web(raw_question)
+
+    expected = _normalize_search_query(compact_search_query(raw_question))
+    assert seen
+    assert set(seen) == {expected}
+    assert len(expected) <= 240
+    assert "رابط مباشر" not in " ".join(seen)
+
+
+def test_search_web_does_not_dispatch_instruction_only_query(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent, "_search_duckduckgo_html",
+        lambda query: pytest.fail(f"provider should not receive {query!r}"),
+    )
+    monkeypatch.setattr(
+        agent, "_search_bing_rss",
+        lambda query: pytest.fail(f"provider should not receive {query!r}"),
+    )
+    results = agent._search_web("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
+    assert results == []
+
+
+def test_plan_search_does_not_call_planner_without_a_topic(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(
+        agent, "_request_completion",
+        lambda *args, **kwargs: pytest.fail("planner should not run without a topic"),
+    )
+    plan = agent._plan_search(
+        "استخدم مصادر متعددة، واذكر روابط المصادر",
+        [],
+    )
+    assert plan["queries"] == []
+
+
+def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = ""
+    history = [
+        {
+            "role": "user",
+            "content": (
+                "قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، "
+                "واذكر روابط المصادر وأجب بإيجاز."
+            ),
+        },
+        {"role": "assistant", "content": "سأبحث عن مقارنة موثقة."},
+    ]
+    plan = agent._plan_search("وطب الأسعار الحالية؟", history)
+
+    assert plan["queries"]
+    assert all(len(query) <= 240 for query in plan["queries"])
+    assert any("السيارات الكهربائية" in query for query in plan["queries"])
+    assert all(
+        "روابط المصادر" not in query and "أجب بإيجاز" not in query
+        for query in plan["queries"]
+    )

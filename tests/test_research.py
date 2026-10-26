@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from agents.research import (
+    compact_search_query,
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
@@ -143,3 +144,186 @@ def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():
     ]
     plan = fallback_plan("فين؟", history)
     assert "آيفون 16" not in plan["queries"][0]
+
+
+def test_compact_search_query_keeps_subject_and_removes_answer_format_instructions():
+    cases = [
+        (
+            "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.",
+            ("عاصمة مصر",),
+            ("اذكر مصدرًا موثوقًا", "رابط مباشر", "بالعربية بإيجاز"),
+        ),
+        (
+            "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.",
+            ("السيارات الكهربائية", "مصر", "التكلفة", "البنية التحتية", "الشحن"),
+            ("استخدم مصادر متعددة", "الحقائق والاستنتاجات", "روابط المصادر"),
+        ),
+        (
+            "ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.",
+            ("وكلاء الذكاء الاصطناعي", "الأيام السبعة الماضية"),
+            ("تواريخ الأخبار", "روابط المصادر", "معلومات قديمة"),
+        ),
+        (
+            "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.",
+            ("آراء وتجارب المستخدمين", "السيارات الكهربائية في مصر", "الإيجابية والسلبية"),
+            ("روابط المنشورات", "النتائج غير كافية", "تمثيل آراء المستخدمين عمومًا"),
+        ),
+    ]
+    for question, required_terms, removed_terms in cases:
+        query = compact_search_query(question)
+        assert 2 <= len(query) <= 240
+        for term in required_terms:
+            assert term in query, f"topic term was lost: {term!r} in {query!r}"
+        for term in removed_terms:
+            assert term not in query, f"format instruction remains: {term!r} in {query!r}"
+
+
+def test_fallback_plan_compacts_four_representative_arabic_tasks_before_expansion():
+    questions = [
+        "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.",
+        "حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.",
+        "ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.",
+        "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.",
+    ]
+    for question in questions:
+        plan = fallback_plan(question)
+        assert plan["queries"]
+        assert all(2 <= len(query) <= 240 for query in plan["queries"])
+
+
+def test_compact_search_query_preserves_site_operator_and_discards_separate_citation_instruction():
+    query = compact_search_query(
+        'site:reddit.com electric car reviews Egypt. Cite the original posts and provide links.'
+    )
+    assert query.startswith("site:reddit.com")
+    assert "electric car reviews Egypt" in query
+    assert "Cite the original posts" not in query
+    assert len(query) <= 240
+
+
+def test_compact_search_query_bounds_length_without_leaving_partial_tail_word():
+    query = compact_search_query(
+        "Electric vehicles in Egypt charging infrastructure costs and ownership experiences",
+        limit=42,
+    )
+    assert len(query) <= 42
+    assert not query.endswith("infrastructur")
+
+
+def test_compact_search_query_preserves_subject_when_prompt_starts_with_action_verb():
+    query = compact_search_query(
+        "وضح أهمية السيارات الكهربائية في مصر. ما تأثير الشحن على المدى الطويل؟ اذكر مصادر موثوقة."
+    )
+    assert "السيارات الكهربائية في مصر" in query
+    assert "الشحن على المدى الطويل" in query
+    assert "مصادر موثوقة" not in query
+
+    query = compact_search_query(
+        "اذكر أبرز السيارات الكهربائية في مصر. قارن بين أسعارها."
+    )
+    assert "السيارات الكهربائية في مصر" in query
+    assert "أسعارها" in query
+    assert "اذكر أبرز" not in query
+
+
+
+def test_compact_search_query_returns_empty_for_instruction_only_request():
+    query = compact_search_query("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
+    assert query == ""
+
+
+def test_compact_search_query_removes_diacritic_uncertainty_instruction():
+    question = (
+        "اجمع آراء العملاء عن السيارات الكهربائية. "
+        "وَضِّحْ إِذَا كَانَتِ النَّتَائِجُ غَيْرَ كَافِيَةٍ "
+        "لِتَمْثِيلِ آراء المستخدمين عمومًا."
+    )
+    query = compact_search_query(question)
+    assert "السيارات الكهربائية" in query
+    assert "النتائج" not in query
+    assert "تمثيل آراء المستخدمين" not in query
+
+
+def test_compact_search_query_preserves_topic_after_source_quality_lead_in():
+    cases = (
+        (
+            "استخدم مصادر متعددة للبحث عن السيارات الكهربائية في مصر",
+            ("السيارات الكهربائية", "مصر"),
+        ),
+        (
+            "Use multiple sources to research electric vehicle charging in Egypt",
+            ("electric vehicle charging", "Egypt"),
+        ),
+    )
+    for question, required_terms in cases:
+        query = compact_search_query(question)
+        assert query
+        for term in required_terms:
+            assert term in query, f"lost topic term {term!r}: {query!r}"
+
+
+def test_compact_search_query_preserves_topic_after_distinguish_action():
+    query = compact_search_query("ميّز بين السيارات الكهربائية وسيارات البنزين في مصر")
+    assert "السيارات الكهربائية" in query
+    assert "سيارات البنزين" in query
+    assert "مصر" in query
+
+
+def test_compact_search_query_discards_standalone_fact_vs_inference_instruction():
+    assert compact_search_query("ميّز بين الحقائق والاستنتاجات.") == ""
+
+
+def test_fallback_plan_does_not_invent_query_for_instruction_only_prompt():
+    plan = fallback_plan("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
+    assert plan["queries"] == []
+
+
+def test_collect_research_compacts_queries_before_provider_calls(monkeypatch):
+    from agents.web_agent import WebAgent
+
+    agent = WebAgent()
+    seen = []
+    monkeypatch.setattr(agent, "_search_web", lambda query: seen.append(query) or [])
+    sources, _warnings, report = agent._collect_research({
+        "queries": [
+            "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+        ],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+    })
+
+    assert sources == []
+    assert seen == ["ما عاصمة مصر؟"]
+    assert report["queries_planned"] == 1
+    assert report["queries_attempted"] == 1
+
+
+def test_collect_research_skips_provider_calls_without_topic_or_direct_url(monkeypatch):
+    from agents.web_agent import WebAgent
+
+    agent = WebAgent()
+    seen = []
+    monkeypatch.setattr(agent, "_search_web", lambda query: seen.append(query) or [])
+    sources, warnings, report = agent._collect_research({
+        "queries": ["اذكر مصادر موثوقة، روابط مباشرة، باختصار"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+    })
+
+    assert sources == []
+    assert report["queries_planned"] == 0
+    assert report["queries_attempted"] == 0
+    assert seen == []
+    assert any("لم تُستدعَ محركات البحث" in warning for warning in warnings)
+
+
+def test_fallback_plan_keeps_direct_url_without_generic_keyword_query():
+    plan = fallback_plan("https://example.com/research")
+    assert plan["direct_urls"] == ["https://example.com/research"]
+    assert plan["queries"] == []

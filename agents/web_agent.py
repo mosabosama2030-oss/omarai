@@ -27,6 +27,7 @@ from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
+    compact_search_query,
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
@@ -183,7 +184,10 @@ def _search_tokens(value: str) -> set[str]:
 
 
 def _relevance_query_tokens(query: str) -> set[str]:
-    """Return meaningful query concepts, excluding request-format boilerplate."""
+    """Return topic concepts after removing answer-format instructions."""
+    query = compact_search_query(query)
+    if not query:
+        return set()
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     return {
@@ -201,7 +205,8 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     """Fraction of meaningful query concepts present in a candidate's title/snippet."""
     query_tokens = _relevance_query_tokens(query)
     if not query_tokens:
-        return 1.0
+        # Relevance cannot be established from an instruction-only query.
+        return 0.0
     expanded_evidence = _search_tokens(evidence)
     matched = sum(
         1 for token in query_tokens
@@ -1284,6 +1289,9 @@ class WebAgent:
         """Run configured search connectors concurrently with isolated failures and relevance checks."""
         from agents.research import detect_freshness
 
+        query = compact_search_query(query)
+        if not query:
+            return []
         search_query = _normalize_search_query(query)
         budget = getattr(self, "_request_budget", None)
         if budget is not None:
@@ -1604,6 +1612,9 @@ class WebAgent:
         self, query: str, platforms: list[str]
     ) -> tuple[list[dict[str, Any]], list[str]]:
         """Search public social content through exposed public endpoints only."""
+        query = compact_search_query(query)
+        if not query:
+            return [], ["لم يبدأ البحث الاجتماعي لعدم وجود كلمات موضوعية قابلة للبحث."]
         try:
             import xml.etree.ElementTree as ET
 
@@ -2237,37 +2248,39 @@ class WebAgent:
         self, plan: dict[str, Any]
     ) -> tuple[list[dict[str, Any]], list[str], dict[str, Any]]:
         """Run independent query searches concurrently, fuse evidence, then fetch top pages."""
-        queries = [
-            str(query)[:500]
+        queries = list(dict.fromkeys(
+            compact_search_query(query)
             for query in plan.get("queries", [])[:MAX_PLAN_QUERIES]
             if isinstance(query, str) and query.strip()
-        ]
-        if not queries:
-            queries = ["Omarai web research"]
+        ))
+        queries = [query for query in queries if query]
         warnings: list[str] = []
+        if not queries and not plan.get("direct_urls"):
+            warnings.append("لم يُنشأ استعلام موضوعي قابل للبحث؛ لم تُستدعَ محركات البحث.")
         batches: list[dict[str, Any]] = []
         query_counts: list[dict[str, Any]] = []
         search_started_queries = 0
 
-        with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:
-            futures = {pool.submit(self._search_web, query): query for query in queries}
-            for future in as_completed(futures):
-                query = futures[future]
-                search_started_queries += 1
-                try:
-                    results = future.result()
-                except (RuntimeError, AgentDependencyError, ValueError) as exc:
-                    warnings.append(f"تعذر بحث الاستعلام «{query[:70]}»: {exc}")
-                    query_counts.append({"query": query, "results": 0})
-                    continue
-                query_counts.append({"query": query, "results": len(results)})
-                grouped: dict[str, list[dict[str, Any]]] = {}
-                for source in results:
-                    provider = str(source.get("provider") or "web_search")
-                    grouped.setdefault(provider, []).append(source)
-                for provider, items in grouped.items():
-                    items.sort(key=lambda item: int(item.get("provider_rank", 999)))
-                    batches.append({"query": query, "provider": provider, "results": items})
+        if queries:
+            with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:
+                futures = {pool.submit(self._search_web, query): query for query in queries}
+                for future in as_completed(futures):
+                    query = futures[future]
+                    search_started_queries += 1
+                    try:
+                        results = future.result()
+                    except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                        warnings.append(f"تعذر بحث الاستعلام «{query[:70]}»: {exc}")
+                        query_counts.append({"query": query, "results": 0})
+                        continue
+                    query_counts.append({"query": query, "results": len(results)})
+                    grouped: dict[str, list[dict[str, Any]]] = {}
+                    for source in results:
+                        provider = str(source.get("provider") or "web_search")
+                        grouped.setdefault(provider, []).append(source)
+                    for provider, items in grouped.items():
+                        items.sort(key=lambda item: int(item.get("provider_rank", 999)))
+                        batches.append({"query": query, "provider": provider, "results": items})
 
         # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches
         # when initial coverage is thin. This uses observed source/domain/provider coverage,
@@ -2287,17 +2300,23 @@ class WebAgent:
         )
         expansion_queries: list[str] = []
         if needs_expansion and len(queries) < MAX_PLAN_QUERIES and queries:
-            base_query = queries[0]
+            base_query = (queries[0] if queries else "")
             candidates = [
                 f"{base_query} official sources data reports",
                 f"{base_query} limitations risks criticism alternatives",
                 f"{base_query} recent developments case studies analysis",
             ]
             existing = {item.casefold() for item in queries}
-            expansion_queries = [
-                item[:500] for item in candidates
-                if item.casefold() not in existing
-            ][:max(0, MAX_PLAN_QUERIES - len(queries))]
+            expansion_queries = []
+            seen_expansions = set(existing)
+            for candidate in candidates:
+                compacted = compact_search_query(candidate)
+                key = compacted.casefold()
+                if compacted and key not in seen_expansions:
+                    expansion_queries.append(compacted)
+                    seen_expansions.add(key)
+                if len(expansion_queries) >= max(0, MAX_PLAN_QUERIES - len(queries)):
+                    break
             if expansion_queries:
                 with ThreadPoolExecutor(
                     max_workers=min(MAX_RESEARCH_WORKERS, len(expansion_queries))
@@ -2336,7 +2355,7 @@ class WebAgent:
         # A social-focused task uses public social endpoints in parallel with indexed
         # public pages. No login, private profile, session cookie or anti-bot bypass.
         social_results: list[dict[str, Any]] = []
-        if plan.get("social_focus"):
+        if plan.get("social_focus") and queries:
             requested_platforms = plan.get("platforms") or []
             if requested_platforms:
                 platforms = list(dict.fromkeys(requested_platforms))
@@ -2360,14 +2379,14 @@ class WebAgent:
                     name for name, ready in optional_connectors.items()
                     if ready and name not in platforms
                 )
-            social_results, social_warnings = self._search_social(queries[0], platforms)
+            social_results, social_warnings = self._search_social((queries[0] if queries else ""), platforms)
             warnings.extend(social_warnings)
             social_groups: dict[str, list[dict[str, Any]]] = {}
             for source in social_results:
                 social_groups.setdefault(str(source.get("provider") or "social"), []).append(source)
             for provider, items in social_groups.items():
                 items.sort(key=lambda item: int(item.get("provider_rank", 999)))
-                batches.append({"query": queries[0], "provider": provider, "results": items})
+                batches.append({"query": (queries[0] if queries else ""), "provider": provider, "results": items})
 
         # Explicit URLs are first-class inputs: fetch the page the user actually asked about
         # instead of relying on a search engine to rediscover it. URL and DNS checks still apply.
@@ -2378,7 +2397,7 @@ class WebAgent:
                 direct_urls.append(safe_url)
         for direct_url in direct_urls:
             batches.append({
-                "query": queries[0],
+                "query": (queries[0] if queries else ""),
                 "provider": "user_supplied_url",
                 "results": [{
                     "title": "رابط قدمه المستخدم للتحليل",
@@ -2388,7 +2407,7 @@ class WebAgent:
                     "page_fetched": False,
                     "provider": "user_supplied_url",
                     "provider_rank": 1,
-                    "search_query": queries[0],
+                    "search_query": (queries[0] if queries else ""),
                     "published_at": "",
                 }],
             })
@@ -2961,13 +2980,19 @@ class WebAgent:
     ) -> dict[str, Any]:
         """Ask the language model how to search, then validate its proposal deterministically."""
         fallback = fallback_plan(question, history)
+        # Do not ask the planner to invent a generic query when there is no topic.
+        # Explicit URLs remain usable through the direct-page-fetch path.
+        if not fallback.get("queries"):
+            return fallback
         search_question = self._history_search_query(question, history)
         if search_question != question:
-            existing_queries = fallback.get("queries", [])
-            fallback["queries"] = [search_question] + [
-                query for query in existing_queries
-                if query != search_question
-            ][: max(0, MAX_PLAN_QUERIES - 1)]
+            compact_context_query = compact_search_query(search_question)
+            if compact_context_query:
+                existing_queries = fallback.get("queries", [])
+                fallback["queries"] = [compact_context_query] + [
+                    query for query in existing_queries
+                    if query != compact_context_query
+                ][: max(0, MAX_PLAN_QUERIES - 1)]
         if not self.api_key:
             return fallback
         platform_names = ", ".join(SOCIAL_DOMAINS)
@@ -3056,13 +3081,17 @@ class WebAgent:
         # Add real platform-targeted searches alongside broad queries when social evidence matters.
         if plan["social_focus"]:
             targets = plan["platforms"] or ["facebook", "instagram", "reddit"]
-            base_query = fallback["queries"][0]
-            query_list = list(plan["queries"])
+            fallback_queries = fallback.get("queries", [])
+            plan_queries = plan.get("queries", [])
+            base_query = (fallback_queries or plan_queries or [""])[0]
+            query_list = list(plan_queries)
             for platform in targets[:2]:
                 domain = SOCIAL_DOMAINS.get(platform)
-                if not domain:
+                if not domain or not base_query:
                     continue
-                targeted = f"site:{domain} {base_query}"[:500]
+                targeted = compact_search_query(f"site:{domain} {base_query}")
+                if not targeted:
+                    continue
                 if any(domain in query for query in query_list):
                     continue
                 if len(query_list) < MAX_PLAN_QUERIES:
@@ -3876,135 +3905,151 @@ class WebAgent:
         plan["mode"] = clean_mode
         plan["intent_route"] = intent_route
         plan["intent_route_reason"] = intent_reason
-        if clean_mode == "auto" and intent_route == "WEB_DEEP":
-            plan["depth"] = "deep"
-        if clean_mode == "auto":
-            normalized_question = _normalize_search_query(question).casefold()
-            deep_terms = (
-                "بحث عميق", "بحث معمق", "بحث شامل", "بالتفصيل", "قارن", "مقارنة",
-                "تحقق", "استقصاء", "deep research", "comprehensive", "in-depth", "compare",
-            )
-            explicit_deep = intent_route == "WEB_DEEP" or any(
-                term in normalized_question for term in deep_terms
-            )
-            if not explicit_deep:
-                # The planner may overclassify short lookups as deep research. Preserve
-                # the user's actual intent first and cap routine searches to three queries.
-                fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
-                model_queries = plan.get("queries") or []
-                if self._is_navigation_request(question):
-                    subject = re.sub(
-                        r"^(?:ابحث|بحث|دور|اعثر)\s+(?:عن|على)?\s*",
-                        "",
-                        str(fallback_queries[0]),
-                    ).strip() or question
-                    plan_queries = [
-                        subject,
-                        subject + " الموقع الرسمي",
-                        subject + " official website",
-                    ]
-                else:
-                    plan_queries = [fallback_queries[0]] + model_queries
-                plan["queries"] = list(dict.fromkeys(
-                    query.strip() for query in plan_queries if isinstance(query, str) and query.strip()
-                ))[:3]
-                plan["depth"] = "standard"
-        base_query = (plan.get("queries") or [question])[0]
-        if clean_mode == "auto" and intent_route == "WEB_DEEP":
-            deep_candidates = [
-                f"{base_query} official sources evidence",
-                f"{base_query} risks limitations alternatives",
-                f"{base_query} recent data reviews comparison",
-            ]
-            normalized_question = _normalize_search_query(question).casefold()
-            property_terms = (
-                "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
-                "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
-            )
-            if self._is_listing_discovery(question) and any(
-                term in normalized_question for term in property_terms
-            ):
-                deep_candidates.extend([
-                    f"{base_query} إعلانات عقارية ومواقع العقارات",
-                    f"{base_query} متوسط أسعار السوق للمتر",
-                    f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
-                ])
-            plan["queries"] = list(dict.fromkeys(
-                (plan.get("queries") or [])[:5] + deep_candidates
-            ))[:MAX_PLAN_QUERIES]
-            base_query = (plan.get("queries") or [question])[0]
-        # Explicit user-selected modes are control inputs. They do not bypass source
-        # validation and never permit private-source access.
+        # Preserve the requested mode in diagnostics even when no usable query exists.
         if clean_mode == "deep":
             plan["depth"] = "deep"
-            candidates = [
-                f"{base_query} official sources data reports",
-                f"{base_query} risks limitations alternatives",
-                f"{base_query} case studies recent analysis",
-            ]
-            normalized_question = _normalize_search_query(question).casefold()
-            property_terms = (
-                "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
-                "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
-            )
-            if self._is_listing_discovery(question) and any(
-                term in normalized_question for term in property_terms
-            ):
-                candidates.extend([
-                    f"{base_query} إعلانات عقارية ومواقع العقارات",
-                    f"{base_query} متوسط أسعار السوق للمتر",
-                    f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
-                ])
-            # Keep query budget for evidence-gap searches if first-round coverage is weak.
-            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:3] + candidates))[
-                :MAX_PLAN_QUERIES
-            ]
         elif clean_mode == "latest":
             plan["freshness"] = "current"
-            candidates = [
-                f"{base_query} latest news updates {dt.datetime.now().year}",
-                f"{base_query} recent official announcement",
-            ]
-            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:6] + candidates))[
-                :MAX_PLAN_QUERIES
-            ]
         elif clean_mode == "social":
             plan["social_focus"] = True
             if not plan.get("platforms"):
                 plan["platforms"] = ["reddit", "bluesky", "youtube"]
-            from agents.research import SOCIAL_DOMAINS
-            candidates = [
-                f"site:{SOCIAL_DOMAINS[name]} {base_query}"
-                for name in plan["platforms"][:3]
-                if name in SOCIAL_DOMAINS
-            ]
-            plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:5] + candidates))[
-                :MAX_PLAN_QUERIES
-            ]
-        if intent_route == "LEAD_GENERATION" and clean_mode == "auto":
-            # Prospect discovery needs buyer-intent queries and public social signals,
-            # not just broad pages advertising the requested product.
-            plan["queries"] = self._lead_generation_queries(question, plan.get("queries", []))
-            plan["depth"] = "standard"
-            plan["freshness"] = "current"
-            plan["social_focus"] = True
-            allowed_public_platforms = ["reddit", "bluesky"]
-            if (
-                os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
-                and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
-            ):
-                allowed_public_platforms.append("facebook")
-            if os.getenv("X_BEARER_TOKEN", "").strip():
-                allowed_public_platforms.append("x")
-            if os.getenv("YOUTUBE_API_KEY", "").strip():
-                allowed_public_platforms.append("youtube")
-            if (
-                os.getenv("INSTAGRAM_USER_ID", "").strip()
-                and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
-            ):
-                allowed_public_platforms.append("instagram")
-            plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
+        if plan.get("queries"):
+            if clean_mode == "auto" and intent_route == "WEB_DEEP":
+                plan["depth"] = "deep"
+            if clean_mode == "auto":
+                normalized_question = _normalize_search_query(question).casefold()
+                deep_terms = (
+                    "بحث عميق", "بحث معمق", "بحث شامل", "بالتفصيل", "قارن", "مقارنة",
+                    "تحقق", "استقصاء", "deep research", "comprehensive", "in-depth", "compare",
+                )
+                explicit_deep = intent_route == "WEB_DEEP" or any(
+                    term in normalized_question for term in deep_terms
+                )
+                if not explicit_deep:
+                    # The planner may overclassify short lookups as deep research. Preserve
+                    # the user's actual intent first and cap routine searches to three queries.
+                    fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
+                    model_queries = plan.get("queries") or []
+                    if self._is_navigation_request(question):
+                        subject = re.sub(
+                            r"^(?:ابحث|بحث|دور|اعثر)\s+(?:عن|على)?\s*",
+                            "",
+                            str(fallback_queries[0]),
+                        ).strip() or question
+                        plan_queries = [
+                            subject,
+                            subject + " الموقع الرسمي",
+                            subject + " official website",
+                        ]
+                    else:
+                        plan_queries = [fallback_queries[0]] + model_queries
+                    plan["queries"] = list(dict.fromkeys(
+                        query.strip() for query in plan_queries if isinstance(query, str) and query.strip()
+                    ))[:3]
+                    plan["depth"] = "standard"
+            base_query = (plan.get("queries") or [question])[0]
+            if clean_mode == "auto" and intent_route == "WEB_DEEP":
+                deep_candidates = [
+                    f"{base_query} official sources evidence",
+                    f"{base_query} risks limitations alternatives",
+                    f"{base_query} recent data reviews comparison",
+                ]
+                normalized_question = _normalize_search_query(question).casefold()
+                property_terms = (
+                    "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
+                    "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
+                )
+                if self._is_listing_discovery(question) and any(
+                    term in normalized_question for term in property_terms
+                ):
+                    deep_candidates.extend([
+                        f"{base_query} إعلانات عقارية ومواقع العقارات",
+                        f"{base_query} متوسط أسعار السوق للمتر",
+                        f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
+                    ])
+                plan["queries"] = list(dict.fromkeys(
+                    (plan.get("queries") or [])[:5] + deep_candidates
+                ))[:MAX_PLAN_QUERIES]
+                base_query = (plan.get("queries") or [question])[0]
+            # Explicit user-selected modes are control inputs. They do not bypass source
+            # validation and never permit private-source access.
+            if clean_mode == "deep":
+                plan["depth"] = "deep"
+                candidates = [
+                    f"{base_query} official sources data reports",
+                    f"{base_query} risks limitations alternatives",
+                    f"{base_query} case studies recent analysis",
+                ]
+                normalized_question = _normalize_search_query(question).casefold()
+                property_terms = (
+                    "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
+                    "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
+                )
+                if self._is_listing_discovery(question) and any(
+                    term in normalized_question for term in property_terms
+                ):
+                    candidates.extend([
+                        f"{base_query} إعلانات عقارية ومواقع العقارات",
+                        f"{base_query} متوسط أسعار السوق للمتر",
+                        f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
+                    ])
+                # Keep query budget for evidence-gap searches if first-round coverage is weak.
+                plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:3] + candidates))[
+                    :MAX_PLAN_QUERIES
+                ]
+            elif clean_mode == "latest":
+                plan["freshness"] = "current"
+                candidates = [
+                    f"{base_query} latest news updates {dt.datetime.now().year}",
+                    f"{base_query} recent official announcement",
+                ]
+                plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:6] + candidates))[
+                    :MAX_PLAN_QUERIES
+                ]
+            elif clean_mode == "social":
+                plan["social_focus"] = True
+                if not plan.get("platforms"):
+                    plan["platforms"] = ["reddit", "bluesky", "youtube"]
+                from agents.research import SOCIAL_DOMAINS
+                candidates = [
+                    f"site:{SOCIAL_DOMAINS[name]} {base_query}"
+                    for name in plan["platforms"][:3]
+                    if name in SOCIAL_DOMAINS
+                ]
+                plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:5] + candidates))[
+                    :MAX_PLAN_QUERIES
+                ]
+            if intent_route == "LEAD_GENERATION" and clean_mode == "auto":
+                # Prospect discovery needs buyer-intent queries and public social signals,
+                # not just broad pages advertising the requested product.
+                plan["queries"] = self._lead_generation_queries(question, plan.get("queries", []))
+                plan["depth"] = "standard"
+                plan["freshness"] = "current"
+                plan["social_focus"] = True
+                allowed_public_platforms = ["reddit", "bluesky"]
+                if (
+                    os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                    and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+                ):
+                    allowed_public_platforms.append("facebook")
+                if os.getenv("X_BEARER_TOKEN", "").strip():
+                    allowed_public_platforms.append("x")
+                if os.getenv("YOUTUBE_API_KEY", "").strip():
+                    allowed_public_platforms.append("youtube")
+                if (
+                    os.getenv("INSTAGRAM_USER_ID", "").strip()
+                    and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+                ):
+                    allowed_public_platforms.append("instagram")
+                plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
+
+        plan["queries"] = list(dict.fromkeys(
+            compact_search_query(query)
+            for query in plan.get("queries", [])
+            if isinstance(query, str) and query.strip() and compact_search_query(query)
+        ))[:MAX_PLAN_QUERIES]
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
         report: dict[str, Any] = {}
@@ -4233,7 +4278,9 @@ class WebAgent:
             "max_extra_queries": 1,
             "reason": "initial_evidence_gate_satisfied" if not needs_corroboration else "not_attempted",
         }
-        if needs_corroboration:
+        if needs_corroboration and not plan.get("queries"):
+            evidence_repair["reason"] = "no_topic_query_available"
+        elif needs_corroboration:
             if task_specific_partial_evidence:
                 evidence_repair["reason"] = "task_specific_partial_evidence"
             elif plan.get("social_focus"):
@@ -4252,13 +4299,15 @@ class WebAgent:
                     if plan.get("freshness") == "current"
                     else "official primary source data"
                 )
-                repair_query = f"{base_query} {suffix}"[:500].strip()
+                repair_query = compact_search_query(f"{base_query} {suffix}")
                 known_queries = {
                     _normalize_search_query(item).casefold()
                     for item in original_queries
                 }
                 if _normalize_search_query(repair_query).casefold() in known_queries:
-                    repair_query = f"{base_query} independent corroborating evidence"[:500].strip()
+                    repair_query = compact_search_query(
+                        f"{base_query} independent corroborating evidence"
+                    )
                 if _normalize_search_query(repair_query).casefold() not in known_queries:
                     initial_source_count = len(sources)
                     initial_domain_count = len(independent_domains)
