@@ -136,6 +136,13 @@ def _normalize_search_query(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+# Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)
+# can leave request-format wording in the token set and distort relevance scores.
+_NORMALIZED_SEARCH_STOPWORDS = frozenset(
+    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS
+)
+
+
 # Normalize synonym keys and values by the same rules as search text. This avoids
 # Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching.
 _NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}
@@ -153,7 +160,7 @@ def _search_tokens(value: str) -> set[str]:
     tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
     result: set[str] = set()
     for token in tokens:
-        if token in _SEARCH_STOPWORDS or len(token) < 2:
+        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:
             continue
         forms = {token}
         if token.startswith("ال") and len(token) > 4:
@@ -175,7 +182,7 @@ def _relevance_query_tokens(query: str) -> set[str]:
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     return {
         token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS and len(token) >= 2
+        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2
     }
 
 
