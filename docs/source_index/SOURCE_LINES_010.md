@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004922 إلى SRC-9C97DF51AC-L000028
+- النطاق: SRC-1AE03B9EC3-L004921 إلى SRC-9C97DF51AC-L000027
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004921](../../agents/web_agent.py#L4921) | 4921 | `"        report[\"insufficient_evidence\"] = False"` | — |
 | [SRC-1AE03B9EC3-L004922](../../agents/web_agent.py#L4922) | 4922 | `"        report[\"valid_citation_range\"] = [1, max_citable_sources] if max_citable_sources else []"` | — |
 | [SRC-1AE03B9EC3-L004923](../../agents/web_agent.py#L4923) | 4923 | `"        report[\"citation_count\"] = citation_validation[\"valid_citation_count\"]"` | — |
 | [SRC-1AE03B9EC3-L004924](../../agents/web_agent.py#L4924) | 4924 | `"        report[\"citation_check\"] = citation_validation[\"status\"]"` | — |
@@ -851,4 +852,3 @@
 | [SRC-9C97DF51AC-L000025](../../cli/omarai.py#L25) | 25 | `"    p.add_argument(\"--file\",required=True)"` | — |
 | [SRC-9C97DF51AC-L000026](../../cli/omarai.py#L26) | 26 | `"    args=parser.parse_args()"` | — |
 | [SRC-9C97DF51AC-L000027](../../cli/omarai.py#L27) | 27 | `"    if args.command==\"analyze\":"` | — |
-| [SRC-9C97DF51AC-L000028](../../cli/omarai.py#L28) | 28 | `"        result=analyze(args.text,[x.strip() for x in args.product.split(\",\") if x.strip()],[x.strip() for x in args.location.split(\",\") if x.strip()])"` | — |

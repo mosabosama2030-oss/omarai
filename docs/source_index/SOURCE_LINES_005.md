@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000922 إلى SRC-1AE03B9EC3-L001721
+- النطاق: SRC-1AE03B9EC3-L000921 إلى SRC-1AE03B9EC3-L001720
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000921](../../agents/web_agent.py#L921) | 921 | `"                \"runtime_status\": not_tested,"` | — |
 | [SRC-1AE03B9EC3-L000922](../../agents/web_agent.py#L922) | 922 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L000923](../../agents/web_agent.py#L923) | 923 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L000924](../../agents/web_agent.py#L924) | 924 | `"                \"name\": \"bing_rss\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001718](../../agents/web_agent.py#L1718) | 1718 | `"                    \"https://www.reddit.com/search.rss\","` | — |
 | [SRC-1AE03B9EC3-L001719](../../agents/web_agent.py#L1719) | 1719 | `"                    params={\"q\": query, \"sort\": \"relevance\", \"t\": \"all\", \"limit\": \"8\"},"` | — |
 | [SRC-1AE03B9EC3-L001720](../../agents/web_agent.py#L1720) | 1720 | `"                    headers=headers,"` | — |
-| [SRC-1AE03B9EC3-L001721](../../agents/web_agent.py#L1721) | 1721 | `"                    timeout=self._effective_timeout(9.0),"` | — |

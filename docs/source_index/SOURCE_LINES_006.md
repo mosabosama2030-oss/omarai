@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001722 إلى SRC-1AE03B9EC3-L002521
+- النطاق: SRC-1AE03B9EC3-L001721 إلى SRC-1AE03B9EC3-L002520
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001721](../../agents/web_agent.py#L1721) | 1721 | `"                    timeout=self._effective_timeout(9.0),"` | — |
 | [SRC-1AE03B9EC3-L001722](../../agents/web_agent.py#L1722) | 1722 | `"                    follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L001723](../../agents/web_agent.py#L1723) | 1723 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L001724](../../agents/web_agent.py#L1724) | 1724 | `"                if response.status_code == 200:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002518](../../agents/web_agent.py#L2518) | 2518 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
 | [SRC-1AE03B9EC3-L002519](../../agents/web_agent.py#L2519) | 2519 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L002520](../../agents/web_agent.py#L2520) | 2520 | `"        report = {"` | — |
-| [SRC-1AE03B9EC3-L002521](../../agents/web_agent.py#L2521) | 2521 | `"            \"raw_results\": raw_results_count,"` | — |

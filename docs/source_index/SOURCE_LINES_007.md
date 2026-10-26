@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002522 إلى SRC-1AE03B9EC3-L003321
+- النطاق: SRC-1AE03B9EC3-L002521 إلى SRC-1AE03B9EC3-L003320
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002521](../../agents/web_agent.py#L2521) | 2521 | `"            \"raw_results\": raw_results_count,"` | — |
 | [SRC-1AE03B9EC3-L002522](../../agents/web_agent.py#L2522) | 2522 | `"            \"provider_candidates_received\": provider_candidates_received,"` | — |
 | [SRC-1AE03B9EC3-L002523](../../agents/web_agent.py#L2523) | 2523 | `"            \"provider_candidates_accepted\": provider_candidates_accepted,"` | — |
 | [SRC-1AE03B9EC3-L002524](../../agents/web_agent.py#L2524) | 2524 | `"            \"provider_candidates_rejected\": provider_candidates_rejected,"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003318](../../agents/web_agent.py#L3318) | 3318 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003319](../../agents/web_agent.py#L3319) | 3319 | `"            source_blocks.append("` | — |
 | [SRC-1AE03B9EC3-L003320](../../agents/web_agent.py#L3320) | 3320 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003321](../../agents/web_agent.py#L3321) | 3321 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
