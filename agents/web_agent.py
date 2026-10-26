@@ -157,7 +157,7 @@ def _search_tokens(value: str) -> set[str]:
     """Tokenize Arabic/English text and expand a small bilingual vocabulary."""
     value = _normalize_search_query(value).casefold()
     value = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", value)
-    tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
+    tokens = re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", value)
     result: set[str] = set()
     for token in tokens:
         if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:
@@ -181,7 +181,7 @@ def _relevance_query_tokens(query: str) -> set[str]:
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     return {
-        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
+        token for token in re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", query_text)
         if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2
     }
 
