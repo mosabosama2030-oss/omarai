@@ -3118,6 +3118,8 @@ def test_server_search_sources_use_compact_question_and_topic_plan(
     def capture_relevance(query, text):
         if "تجارب السيارات الكهربائية المستعملة" in text:
             source_queries.append(query)
+            if planned_query and query != compact_search_query(topic_query):
+                return 0.0
         return 0.25
 
     monkeypatch.setattr("agents.web_agent._relevance_ratio", capture_relevance)
@@ -3135,10 +3137,7 @@ def test_server_search_sources_use_compact_question_and_topic_plan(
 
 def test_auto_deep_does_not_create_generic_queries_from_instruction_only_prompt(monkeypatch):
     agent = WebAgent()
-    instruction_only = (
-        "اذكر مصادر موثوقة وروابط مباشرة، وأجب بإيجاز، "
-        "ونفذ بحثًا شاملًا."
-    )
+    instruction_only = "اذكر مصادر موثوقة، روابط مباشرة، باختصار"
     direct_url = "https://example.com/report"
     observed_plans = []
 
