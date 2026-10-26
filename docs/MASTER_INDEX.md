@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **620**
 - تعريفات لا ينطبق عليها Docstring: **203**
 - الرموز الساكنة الإضافية: **1563**
-- الأسطر النصية المفهرسة حرفيًا: **26868**
+- الأسطر النصية المفهرسة حرفيًا: **26872**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -104,7 +104,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 115856 | 2967 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 116074 | 2971 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 54981 | 397 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -1129,9 +1129,9 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2883) | دالة | test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries | لا توجد Docstring. | ناقص | 2883 | [SRC-F725E90B2A-L002883](../tests/test_web_agent.py#L2883) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2892) | دالة | test_search_web_compacts_request_before_provider_dispatch | لا توجد Docstring. | ناقص | 2892 | [SRC-F725E90B2A-L002892](../tests/test_web_agent.py#L2892) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2896) | دالة | test_search_web_compacts_request_before_provider_dispatch.capture | لا توجد Docstring. | ناقص | 2896 | [SRC-F725E90B2A-L002896](../tests/test_web_agent.py#L2896) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2921) | دالة | test_search_web_does_not_dispatch_instruction_only_query | لا توجد Docstring. | ناقص | 2921 | [SRC-F725E90B2A-L002921](../tests/test_web_agent.py#L2921) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2935) | دالة | test_plan_search_does_not_call_planner_without_a_topic | لا توجد Docstring. | ناقص | 2935 | [SRC-F725E90B2A-L002935](../tests/test_web_agent.py#L2935) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2949) | دالة | test_plan_search_compacts_followup_query_before_fallback | لا توجد Docstring. | ناقص | 2949 | [SRC-F725E90B2A-L002949](../tests/test_web_agent.py#L2949) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2922) | دالة | test_search_web_does_not_dispatch_instruction_only_query | لا توجد Docstring. | ناقص | 2922 | [SRC-F725E90B2A-L002922](../tests/test_web_agent.py#L2922) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2936) | دالة | test_plan_search_does_not_call_planner_without_a_topic | لا توجد Docstring. | ناقص | 2936 | [SRC-F725E90B2A-L002936](../tests/test_web_agent.py#L2936) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2950) | دالة | test_plan_search_compacts_followup_query_before_fallback | لا توجد Docstring. | ناقص | 2950 | [SRC-F725E90B2A-L002950](../tests/test_web_agent.py#L2950) |
 
 ## الرموز الساكنة الإضافية
 
