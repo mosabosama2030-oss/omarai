@@ -2909,7 +2909,8 @@ def test_search_web_compacts_request_before_provider_dispatch(monkeypatch):
     raw_question = (
         "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
     )
-    agent._search_web(raw_question)
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web(raw_question)
 
     expected = _normalize_search_query(compact_search_query(raw_question))
     assert seen
@@ -2949,14 +2950,17 @@ def test_plan_search_does_not_call_planner_without_a_topic(monkeypatch):
 def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):
     agent = WebAgent()
     agent.api_key = ""
-    history = [{
-        "role": "user",
-        "content": (
-            "قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، "
-            "واذكر روابط المصادر وأجب بإيجاز."
-        ),
-    }]
-    plan = agent._plan_search("وهل البطارية مكلفة؟", history)
+    history = [
+        {
+            "role": "user",
+            "content": (
+                "قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، "
+                "واذكر روابط المصادر وأجب بإيجاز."
+            ),
+        },
+        {"role": "assistant", "content": "سأبحث عن مقارنة موثقة."},
+    ]
+    plan = agent._plan_search("وطب الأسعار الحالية؟", history)
 
     assert plan["queries"]
     assert all(len(query) <= 240 for query in plan["queries"])
