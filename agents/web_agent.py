@@ -4736,16 +4736,29 @@ class WebAgent:
             used_llm = True
             if self.server_search_sources:
                 existing_urls = {item.get("url") for item in sources}
-                relevance_query = compact_search_query(question)
+                relevance_queries = []
+                planned_queries = plan.get("queries", [])
+                if not isinstance(planned_queries, list):
+                    planned_queries = []
+                for candidate_query in [question, *planned_queries]:
+                    if not isinstance(candidate_query, str):
+                        continue
+                    compacted_query = compact_search_query(candidate_query)
+                    if compacted_query and compacted_query not in relevance_queries:
+                        relevance_queries.append(compacted_query)
                 for item in self.server_search_sources:
+                    source_text = " ".join((
+                        item.get("title", ""),
+                        item.get("snippet", ""),
+                    ))
                     if (
-                        relevance_query
+                        relevance_queries
                         and item["url"] not in existing_urls
                         and not _blocked_source_url(item["url"])
-                        and _relevance_ratio(
-                            relevance_query,
-                            " ".join((item.get("title", ""), item.get("snippet", ""))),
-                        ) >= 0.20
+                        and any(
+                            _relevance_ratio(candidate_query, source_text) >= 0.20
+                            for candidate_query in relevance_queries
+                        )
                     ):
                         sources.append(item)
                         existing_urls.add(item["url"])
