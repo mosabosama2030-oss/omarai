@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000947 إلى SRC-1AE03B9EC3-L001746
+- النطاق: SRC-1AE03B9EC3-L000946 إلى SRC-1AE03B9EC3-L001745
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000946](../../agents/web_agent.py#L946) | 946 | `"                \"name\": \"deepseek_search_api\","` | — |
 | [SRC-1AE03B9EC3-L000947](../../agents/web_agent.py#L947) | 947 | `"                \"implemented\": True,"` | — |
 | [SRC-1AE03B9EC3-L000948](../../agents/web_agent.py#L948) | 948 | `"                \"configuration_status\": ("` | — |
 | [SRC-1AE03B9EC3-L000949](../../agents/web_agent.py#L949) | 949 | `"                    \"configured\" if status.get(\"deepseek_search_api_configured\")"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001743](../../agents/web_agent.py#L1743) | 1743 | `"                    warnings.append(f\"Reddit public RSS unavailable (HTTP {response.status_code})\")"` | — |
 | [SRC-1AE03B9EC3-L001744](../../agents/web_agent.py#L1744) | 1744 | `"            except (httpx.HTTPError, OSError, ValueError, ET.ParseError):"` | — |
 | [SRC-1AE03B9EC3-L001745](../../agents/web_agent.py#L1745) | 1745 | `"                warnings.append(\"Reddit public RSS unavailable for this request\")"` | — |
-| [SRC-1AE03B9EC3-L001746](../../agents/web_agent.py#L1746) | 1746 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001747 إلى SRC-1AE03B9EC3-L002546
+- النطاق: SRC-1AE03B9EC3-L001746 إلى SRC-1AE03B9EC3-L002545
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001746](../../agents/web_agent.py#L1746) | 1746 | `""` | — |
 | [SRC-1AE03B9EC3-L001747](../../agents/web_agent.py#L1747) | 1747 | `"        if \"bluesky\" in platforms:"` | — |
 | [SRC-1AE03B9EC3-L001748](../../agents/web_agent.py#L1748) | 1748 | `"            try:"` | — |
 | [SRC-1AE03B9EC3-L001749](../../agents/web_agent.py#L1749) | 1749 | `"                self._reserve_search_call()"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002543](../../agents/web_agent.py#L2543) | 2543 | `"        optional = {"` | — |
 | [SRC-1AE03B9EC3-L002544](../../agents/web_agent.py#L2544) | 2544 | `"            \"deepseek_search_api\": (\"DEEPSEEK_SEARCH_API_KEY\",), \"brave_search_api\": (\"BRAVE_SEARCH_API_KEY\",),"` | — |
 | [SRC-1AE03B9EC3-L002545](../../agents/web_agent.py#L2545) | 2545 | `"            \"tavily_search_api\": (\"TAVILY_API_KEY\",), \"reddit_oauth_api\": (\"REDDIT_CLIENT_ID\", \"REDDIT_CLIENT_SECRET\"),"` | — |
-| [SRC-1AE03B9EC3-L002546](../../agents/web_agent.py#L2546) | 2546 | `"            \"facebook_pages_api\": (\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"FACEBOOK_PAGE_IDS\"),"` | — |

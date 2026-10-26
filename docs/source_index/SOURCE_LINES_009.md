@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004147 إلى SRC-1AE03B9EC3-L004946
+- النطاق: SRC-1AE03B9EC3-L004146 إلى SRC-1AE03B9EC3-L004945
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004146](../../agents/web_agent.py#L4146) | 4146 | `"                    \"search_attempted\": report.get("` | — |
 | [SRC-1AE03B9EC3-L004147](../../agents/web_agent.py#L4147) | 4147 | `"                        \"search_attempted\","` | — |
 | [SRC-1AE03B9EC3-L004148](../../agents/web_agent.py#L4148) | 4148 | `"                        bool(report.get(\"queries_attempted\", 0)),"` | — |
 | [SRC-1AE03B9EC3-L004149](../../agents/web_agent.py#L4149) | 4149 | `"                    ),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004943](../../agents/web_agent.py#L4943) | 4943 | `"            \"research_quality\": research_quality,"` | — |
 | [SRC-1AE03B9EC3-L004944](../../agents/web_agent.py#L4944) | 4944 | `"            \"citation_validation\": citation_validation,"` | — |
 | [SRC-1AE03B9EC3-L004945](../../agents/web_agent.py#L4945) | 4945 | `"            \"answer_evidence_status\": answer_evidence_status,"` | — |
-| [SRC-1AE03B9EC3-L004946](../../agents/web_agent.py#L4946) | 4946 | `"            \"answer_coverage\": answer_coverage,"` | — |

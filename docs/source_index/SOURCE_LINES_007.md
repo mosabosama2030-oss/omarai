@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002547 إلى SRC-1AE03B9EC3-L003346
+- النطاق: SRC-1AE03B9EC3-L002546 إلى SRC-1AE03B9EC3-L003345
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002546](../../agents/web_agent.py#L2546) | 2546 | `"            \"facebook_pages_api\": (\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"FACEBOOK_PAGE_IDS\"),"` | — |
 | [SRC-1AE03B9EC3-L002547](../../agents/web_agent.py#L2547) | 2547 | `"            \"instagram_graph_api\": (\"INSTAGRAM_USER_ID\", \"INSTAGRAM_ACCESS_TOKEN\"),"` | — |
 | [SRC-1AE03B9EC3-L002548](../../agents/web_agent.py#L2548) | 2548 | `"            \"x_official_api\": (\"X_BEARER_TOKEN\",), \"youtube_data_api\": (\"YOUTUBE_API_KEY\",),"` | — |
 | [SRC-1AE03B9EC3-L002549](../../agents/web_agent.py#L2549) | 2549 | `"        }"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003343](../../agents/web_agent.py#L3343) | 3343 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003344](../../agents/web_agent.py#L3344) | 3344 | `"        if ("` | — |
 | [SRC-1AE03B9EC3-L003345](../../agents/web_agent.py#L3345) | 3345 | `"            raw_review.count(start_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003346](../../agents/web_agent.py#L3346) | 3346 | `"            or raw_review.count(end_marker) != 1"` | — |

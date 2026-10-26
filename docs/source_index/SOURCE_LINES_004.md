@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000147 إلى SRC-1AE03B9EC3-L000946
+- النطاق: SRC-1AE03B9EC3-L000146 إلى SRC-1AE03B9EC3-L000945
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000146](../../agents/web_agent.py#L146) | 146 | `"})"` | — |
 | [SRC-1AE03B9EC3-L000147](../../agents/web_agent.py#L147) | 147 | `""` | — |
 | [SRC-1AE03B9EC3-L000148](../../agents/web_agent.py#L148) | 148 | `""` | — |
 | [SRC-1AE03B9EC3-L000149](../../agents/web_agent.py#L149) | 149 | `"def _normalize_search_query(value: str) -> str:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L000943](../../agents/web_agent.py#L943) | 943 | `"                \"runtime_status\": not_tested,"` | — |
 | [SRC-1AE03B9EC3-L000944](../../agents/web_agent.py#L944) | 944 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L000945](../../agents/web_agent.py#L945) | 945 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L000946](../../agents/web_agent.py#L946) | 946 | `"                \"name\": \"deepseek_search_api\","` | — |

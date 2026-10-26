@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003347 إلى SRC-1AE03B9EC3-L004146
+- النطاق: SRC-1AE03B9EC3-L003346 إلى SRC-1AE03B9EC3-L004145
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003346](../../agents/web_agent.py#L3346) | 3346 | `"            or raw_review.count(end_marker) != 1"` | — |
 | [SRC-1AE03B9EC3-L003347](../../agents/web_agent.py#L3347) | 3347 | `"            or final_answer is None"` | — |
 | [SRC-1AE03B9EC3-L003348](../../agents/web_agent.py#L3348) | 3348 | `"            or not final_answer.group(1).strip()"` | — |
 | [SRC-1AE03B9EC3-L003349](../../agents/web_agent.py#L3349) | 3349 | `"            or len(final_answer.group(1)) > 24_000"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004143](../../agents/web_agent.py#L4143) | 4143 | `"                    \"sources\": public_related_sources,"` | — |
 | [SRC-1AE03B9EC3-L004144](../../agents/web_agent.py#L4144) | 4144 | `"                    \"used_language_model\": False,"` | — |
 | [SRC-1AE03B9EC3-L004145](../../agents/web_agent.py#L4145) | 4145 | `"                    \"used_web_search\": bool(sources),"` | — |
-| [SRC-1AE03B9EC3-L004146](../../agents/web_agent.py#L4146) | 4146 | `"                    \"search_attempted\": report.get("` | — |
