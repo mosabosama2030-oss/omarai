@@ -126,10 +126,10 @@ _SEARCH_META_START_RE = re.compile(
 # Treat "اذكر" as an action unless its object is clearly citation/format metadata.
 # This preserves topic-bearing prompts such as "اذكر أبرز السيارات الكهربائية...".
 _SEARCH_CITATION_META_START_RE = re.compile(
-    r"^(?:و?اذكر(?:ي|وا)?|mention|cite|provide)\\s+"
-    r"(?:المصادر|مصادر|المصدر|مصدر(?:[\\u064B-\\u065F]*ا?[\\u064B-\\u065F]*)?|"
+    r"^(?:و?اذكر(?:ي|وا)?|mention|cite|provide)\s+"
+    r"(?:المصادر|مصادر|المصدر|مصدر(?:[ًٌٍ]ا?|ا[ًٌٍ]?)?|"
     r"روابط?|رابط|تواريخ?|تاريخ|الاخبار|الأخبار|"
-    r"the original posts|links|sources|dates)(?=\\s|$|[،,])",
+    r"the original posts|links|sources|dates)(?=\s|$|[،,])",
     re.IGNORECASE,
 )
 # This is a response-quality instruction, not a topic query.
