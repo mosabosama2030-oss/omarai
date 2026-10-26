@@ -16,20 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L002596](../../agents/web_agent.py#L2596) | 2596 | `"            usable_results: bool \| None = ("` | — |
-| [SRC-1AE03B9EC3-L002597](../../agents/web_agent.py#L2597) | 2597 | `"                True if result_count > 0 or useful.get(name, 0) > 0"` | — |
-| [SRC-1AE03B9EC3-L002598](../../agents/web_agent.py#L2598) | 2598 | `"                else False if successful_statuses"` | — |
-| [SRC-1AE03B9EC3-L002599](../../agents/web_agent.py#L2599) | 2599 | `"                else None"` | — |
-| [SRC-1AE03B9EC3-L002600](../../agents/web_agent.py#L2600) | 2600 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002601](../../agents/web_agent.py#L2601) | 2601 | `"            implementation_status = ("` | — |
-| [SRC-1AE03B9EC3-L002602](../../agents/web_agent.py#L2602) | 2602 | `"                \"implemented_in_code\" if name in config"` | — |
-| [SRC-1AE03B9EC3-L002603](../../agents/web_agent.py#L2603) | 2603 | `"                else \"observed_runtime_path\" if attempts or useful.get(name, 0)"` | — |
-| [SRC-1AE03B9EC3-L002604](../../agents/web_agent.py#L2604) | 2604 | `"                else \"unknown\""` | — |
-| [SRC-1AE03B9EC3-L002605](../../agents/web_agent.py#L2605) | 2605 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002606](../../agents/web_agent.py#L2606) | 2606 | `"            queries = list(dict.fromkeys(_clean_text(row.get(\"query\", \"\"), 180) for row in attempts if row.get(\"query\")))[:3]"` | — |
-| [SRC-1AE03B9EC3-L002607](../../agents/web_agent.py#L2607) | 2607 | `"            errors = list(dict.fromkeys(redact(row.get(\"error\")) for row in attempts if row.get(\"error\")))[:3]"` | — |
-| [SRC-1AE03B9EC3-L002608](../../agents/web_agent.py#L2608) | 2608 | `"            result_count = sum(max(0, int(row.get(\"result_count\", 0) or 0)) for row in attempts)"` | — |
-| [SRC-1AE03B9EC3-L002609](../../agents/web_agent.py#L2609) | 2609 | `"            rejected_count = sum(max(0, int(row.get(\"rejected_count\", 0) or 0)) for row in attempts)"` | — |
+| [SRC-1AE03B9EC3-L002596](../../agents/web_agent.py#L2596) | 2596 | `"                else None"` | — |
+| [SRC-1AE03B9EC3-L002597](../../agents/web_agent.py#L2597) | 2597 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002598](../../agents/web_agent.py#L2598) | 2598 | `"            usable_results: bool \| None = ("` | — |
+| [SRC-1AE03B9EC3-L002599](../../agents/web_agent.py#L2599) | 2599 | `"                True if result_count > 0 or useful.get(name, 0) > 0"` | — |
+| [SRC-1AE03B9EC3-L002600](../../agents/web_agent.py#L2600) | 2600 | `"                else False if successful_statuses"` | — |
+| [SRC-1AE03B9EC3-L002601](../../agents/web_agent.py#L2601) | 2601 | `"                else None"` | — |
+| [SRC-1AE03B9EC3-L002602](../../agents/web_agent.py#L2602) | 2602 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002603](../../agents/web_agent.py#L2603) | 2603 | `"            implementation_status = ("` | — |
+| [SRC-1AE03B9EC3-L002604](../../agents/web_agent.py#L2604) | 2604 | `"                \"implemented_in_code\" if name in config"` | — |
+| [SRC-1AE03B9EC3-L002605](../../agents/web_agent.py#L2605) | 2605 | `"                else \"observed_runtime_path\" if attempts or useful.get(name, 0)"` | — |
+| [SRC-1AE03B9EC3-L002606](../../agents/web_agent.py#L2606) | 2606 | `"                else \"unknown\""` | — |
+| [SRC-1AE03B9EC3-L002607](../../agents/web_agent.py#L2607) | 2607 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002608](../../agents/web_agent.py#L2608) | 2608 | `"            queries = list(dict.fromkeys(_clean_text(row.get(\"query\", \"\"), 180) for row in attempts if row.get(\"query\")))[:3]"` | — |
+| [SRC-1AE03B9EC3-L002609](../../agents/web_agent.py#L2609) | 2609 | `"            errors = list(dict.fromkeys(redact(row.get(\"error\")) for row in attempts if row.get(\"error\")))[:3]"` | — |
 | [SRC-1AE03B9EC3-L002610](../../agents/web_agent.py#L2610) | 2610 | `"            connectors.append({"` | — |
 | [SRC-1AE03B9EC3-L002611](../../agents/web_agent.py#L2611) | 2611 | `"                \"name\": name, \"in_codebase\": name in config or bool(attempts),"` | — |
 | [SRC-1AE03B9EC3-L002612](../../agents/web_agent.py#L2612) | 2612 | `"                \"implementation_status\": implementation_status,"` | — |

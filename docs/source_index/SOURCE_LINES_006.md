@@ -806,13 +806,13 @@
 | [SRC-1AE03B9EC3-L002583](../../agents/web_agent.py#L2583) | 2583 | `"            error_response_statuses = set(statuses) & {\"http_error\", \"unauthorized\", \"rate_limited\"}"` | — |
 | [SRC-1AE03B9EC3-L002584](../../agents/web_agent.py#L2584) | 2584 | `"            uncertain_failure_statuses = set(statuses) & {\"timeout\", \"failed\", \"error\", \"unknown\", \"inconclusive\"}"` | — |
 | [SRC-1AE03B9EC3-L002585](../../agents/web_agent.py#L2585) | 2585 | `"            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or \"budget_exhausted\" in statuses)"` | — |
-| [SRC-1AE03B9EC3-L002586](../../agents/web_agent.py#L2586) | 2586 | `"            available: bool \| None = ("` | — |
-| [SRC-1AE03B9EC3-L002587](../../agents/web_agent.py#L2587) | 2587 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
-| [SRC-1AE03B9EC3-L002588](../../agents/web_agent.py#L2588) | 2588 | `"                else False if error_response_statuses or not ready or \"disabled\" in statuses or \"budget_exhausted\" in statuses"` | — |
-| [SRC-1AE03B9EC3-L002589](../../agents/web_agent.py#L2589) | 2589 | `"                else None"` | — |
-| [SRC-1AE03B9EC3-L002590](../../agents/web_agent.py#L2590) | 2590 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002591](../../agents/web_agent.py#L2591) | 2591 | `"            verified: bool \| None = ("` | — |
-| [SRC-1AE03B9EC3-L002592](../../agents/web_agent.py#L2592) | 2592 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
-| [SRC-1AE03B9EC3-L002593](../../agents/web_agent.py#L2593) | 2593 | `"                else False if error_response_statuses"` | — |
-| [SRC-1AE03B9EC3-L002594](../../agents/web_agent.py#L2594) | 2594 | `"                else None"` | — |
-| [SRC-1AE03B9EC3-L002595](../../agents/web_agent.py#L2595) | 2595 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002586](../../agents/web_agent.py#L2586) | 2586 | `"            result_count = sum(max(0, int(row.get(\"result_count\", 0) or 0)) for row in attempts)"` | — |
+| [SRC-1AE03B9EC3-L002587](../../agents/web_agent.py#L2587) | 2587 | `"            rejected_count = sum(max(0, int(row.get(\"rejected_count\", 0) or 0)) for row in attempts)"` | — |
+| [SRC-1AE03B9EC3-L002588](../../agents/web_agent.py#L2588) | 2588 | `"            available: bool \| None = ("` | — |
+| [SRC-1AE03B9EC3-L002589](../../agents/web_agent.py#L2589) | 2589 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
+| [SRC-1AE03B9EC3-L002590](../../agents/web_agent.py#L2590) | 2590 | `"                else False if error_response_statuses or not ready or \"disabled\" in statuses or \"budget_exhausted\" in statuses"` | — |
+| [SRC-1AE03B9EC3-L002591](../../agents/web_agent.py#L2591) | 2591 | `"                else None"` | — |
+| [SRC-1AE03B9EC3-L002592](../../agents/web_agent.py#L2592) | 2592 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002593](../../agents/web_agent.py#L2593) | 2593 | `"            verified: bool \| None = ("` | — |
+| [SRC-1AE03B9EC3-L002594](../../agents/web_agent.py#L2594) | 2594 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
+| [SRC-1AE03B9EC3-L002595](../../agents/web_agent.py#L2595) | 2595 | `"                else False if error_response_statuses"` | — |
