@@ -3930,21 +3930,39 @@ class WebAgent:
                 if not explicit_deep:
                     # The planner may overclassify short lookups as deep research. Preserve
                     # the user's actual intent first and cap routine searches to three queries.
-                    fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
-                    model_queries = plan.get("queries") or []
+                    fallback_queries = [
+                        compact_search_query(query)
+                        for query in fallback_plan(question, clean_history).get("queries", [])
+                        if isinstance(query, str)
+                    ]
+                    fallback_queries = [query for query in fallback_queries if query]
+                    model_queries = [
+                        compact_search_query(query)
+                        for query in (plan.get("queries") or [])
+                        if isinstance(query, str)
+                    ]
+                    model_queries = [query for query in model_queries if query]
                     if self._is_navigation_request(question):
+                        navigation_seed = (
+                            fallback_queries[0] if fallback_queries
+                            else model_queries[0] if model_queries
+                            else ""
+                        )
                         subject = re.sub(
-                            r"^(?:ابحث|بحث|دور|اعثر)\s+(?:عن|على)?\s*",
+                            r"^(?:ابحث|بحث|دور|اعثر)\\s+(?:عن|على)?\\s*",
                             "",
-                            str(fallback_queries[0]),
-                        ).strip() or question
-                        plan_queries = [
-                            subject,
-                            subject + " الموقع الرسمي",
-                            subject + " official website",
-                        ]
+                            navigation_seed,
+                        ).strip()
+                        plan_queries = (
+                            [
+                                subject,
+                                subject + " الموقع الرسمي",
+                                subject + " official website",
+                            ]
+                            if subject else []
+                        )
                     else:
-                        plan_queries = [fallback_queries[0]] + model_queries
+                        plan_queries = (fallback_queries[:1] or model_queries[:1]) + model_queries
                     plan["queries"] = list(dict.fromkeys(
                         query.strip() for query in plan_queries if isinstance(query, str) and query.strip()
                     ))[:3]
@@ -4351,7 +4369,18 @@ class WebAgent:
                         source_key = self._normalized_source_url_key(source.get("url"))
                         if source_key:
                             source_indexes.setdefault(source_key, source_index)
-                    relevant_queries = list(dict.fromkeys([question] + original_queries))
+                    relevant_queries = list(dict.fromkeys(
+                        query
+                        for query in (
+                            compact_search_query(question),
+                            *(
+                                compact_search_query(candidate)
+                                for candidate in original_queries
+                                if isinstance(candidate, str)
+                            ),
+                        )
+                        if query
+                    ))
                     for source in repair_sources:
                         if not isinstance(source, dict):
                             continue
@@ -4704,12 +4733,15 @@ class WebAgent:
             used_llm = True
             if self.server_search_sources:
                 existing_urls = {item.get("url") for item in sources}
+                relevance_query = compact_search_query(question)
                 for item in self.server_search_sources:
                     if (
-                        item["url"] not in existing_urls
+                        relevance_query
+                        and item["url"] not in existing_urls
                         and not _blocked_source_url(item["url"])
                         and _relevance_ratio(
-                            question, " ".join((item.get("title", ""), item.get("snippet", "")))
+                            relevance_query,
+                            " ".join((item.get("title", ""), item.get("snippet", ""))),
                         ) >= 0.20
                     ):
                         sources.append(item)
