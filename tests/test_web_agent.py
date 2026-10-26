@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+from agents.research import compact_search_query
 from agents.web_agent import (
     WebAgent,
     _normalize_search_query,
@@ -2910,10 +2911,7 @@ def test_search_web_compacts_request_before_provider_dispatch(monkeypatch):
     )
     agent._search_web(raw_question)
 
-    expected = _normalize_search_query(
-        __import__("agents.research", fromlist=["compact_search_query"])
-        .compact_search_query(raw_question)
-    )
+    expected = _normalize_search_query(compact_search_query(raw_question))
     assert seen
     assert set(seen) == {expected}
     assert len(expected) <= 240
