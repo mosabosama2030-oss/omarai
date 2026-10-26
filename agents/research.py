@@ -283,7 +283,7 @@ def fallback_plan(
     contextual_question = resolve_followup_query(question, history)
     direct_urls = extract_urls(question)
     base = compact_search_query(contextual_question)
-    if not base:
+    if not base and direct_urls:
         base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
     social_focus = detect_social_focus(question, history)
     fresh = detect_freshness(question)
@@ -292,14 +292,14 @@ def fallback_plan(
     platforms = mentioned_social_platforms(question + " " + " ".join(
         item.get("content", "") for item in (history or [])[-4:]
     ))
-    queries: list[str] = [base]
+    queries: list[str] = [base] if base else []
 
     if fresh and base:
         queries.append(compact_search_query(base + " أحدث مستجدات آخر الأخبار"))
-    if _contains_any(question, ("قارن", "مقارنة", "compare", "versus", "vs", "الفرق بين")):
+    if base and _contains_any(question, ("قارن", "مقارنة", "compare", "versus", "vs", "الفرق بين")):
         queries.append(compact_search_query(base + " مقارنة مراجعات مميزات عيوب"))
 
-    if social_focus:
+    if social_focus and base:
         selected = platforms or ["facebook", "instagram", "reddit"]
         for platform in selected[:3]:
             domain = SOCIAL_DOMAINS[platform]
@@ -307,7 +307,7 @@ def fallback_plan(
             if site_query not in queries:
                 queries.append(site_query)
 
-    if deep and not social_focus and len(queries) < MAX_PLAN_QUERIES:
+    if deep and base and not social_focus and len(queries) < MAX_PLAN_QUERIES:
         queries.append(compact_search_query(base + " مصادر موثوقة تقارير إحصاءات"))
 
     unique: list[str] = []
@@ -322,7 +322,7 @@ def fallback_plan(
             break
 
     return {
-        "queries": unique or [base],
+        "queries": unique or ([base] if base else []),
         "direct_urls": direct_urls,
         "social_focus": social_focus,
         "freshness": "current" if fresh else "any",
