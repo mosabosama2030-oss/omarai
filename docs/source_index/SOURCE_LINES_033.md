@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002092 إلى SRC-F725E90B2A-L002891
+- النطاق: SRC-F725E90B2A-L002079 إلى SRC-F725E90B2A-L002878
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002079](../../tests/test_web_agent.py#L2079) | 2079 | `"                \"url\": \"https://openai.com/\","` | — |
+| [SRC-F725E90B2A-L002080](../../tests/test_web_agent.py#L2080) | 2080 | `"                \"snippet\": \"Official website and products\","` | — |
+| [SRC-F725E90B2A-L002081](../../tests/test_web_agent.py#L2081) | 2081 | `"            }"` | — |
+| [SRC-F725E90B2A-L002082](../../tests/test_web_agent.py#L2082) | 2082 | `"        ]"` | — |
+| [SRC-F725E90B2A-L002083](../../tests/test_web_agent.py#L2083) | 2083 | `""` | — |
+| [SRC-F725E90B2A-L002084](../../tests/test_web_agent.py#L2084) | 2084 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
+| [SRC-F725E90B2A-L002085](../../tests/test_web_agent.py#L2085) | 2085 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"OK\")"` | — |
+| [SRC-F725E90B2A-L002086](../../tests/test_web_agent.py#L2086) | 2086 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L002087](../../tests/test_web_agent.py#L2087) | 2087 | `""` | — |
+| [SRC-F725E90B2A-L002088](../../tests/test_web_agent.py#L2088) | 2088 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
+| [SRC-F725E90B2A-L002089](../../tests/test_web_agent.py#L2089) | 2089 | `""` | — |
+| [SRC-F725E90B2A-L002090](../../tests/test_web_agent.py#L2090) | 2090 | `"    assert len(calls) == 2"` | — |
+| [SRC-F725E90B2A-L002091](../../tests/test_web_agent.py#L2091) | 2091 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"passed\""` | — |
 | [SRC-F725E90B2A-L002092](../../tests/test_web_agent.py#L2092) | 2092 | `"    assert report[\"checks\"][\"web_search\"][\"probe_count\"] == 2"` | — |
 | [SRC-F725E90B2A-L002093](../../tests/test_web_agent.py#L2093) | 2093 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 1"` | — |
 | [SRC-F725E90B2A-L002094](../../tests/test_web_agent.py#L2094) | 2094 | `""` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L002876](../../tests/test_web_agent.py#L2876) | 2876 | `"        calls.append((\"bing_rss\", query))"` | — |
 | [SRC-F725E90B2A-L002877](../../tests/test_web_agent.py#L2877) | 2877 | `"        return []"` | — |
 | [SRC-F725E90B2A-L002878](../../tests/test_web_agent.py#L2878) | 2878 | `""` | — |
-| [SRC-F725E90B2A-L002879](../../tests/test_web_agent.py#L2879) | 2879 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", redirect_response)"` | — |
-| [SRC-F725E90B2A-L002880](../../tests/test_web_agent.py#L2880) | 2880 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", no_results)"` | — |
-| [SRC-F725E90B2A-L002881](../../tests/test_web_agent.py#L2881) | 2881 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _q: [])"` | — |
-| [SRC-F725E90B2A-L002882](../../tests/test_web_agent.py#L2882) | 2882 | `""` | — |
-| [SRC-F725E90B2A-L002883](../../tests/test_web_agent.py#L2883) | 2883 | `"    with pytest.raises(RuntimeError, match=\"لم تُرجع موصلات البحث\"):"` | — |
-| [SRC-F725E90B2A-L002884](../../tests/test_web_agent.py#L2884) | 2884 | `"        agent._search_web(\"renewable energy storage\")"` | — |
-| [SRC-F725E90B2A-L002885](../../tests/test_web_agent.py#L2885) | 2885 | `""` | — |
-| [SRC-F725E90B2A-L002886](../../tests/test_web_agent.py#L2886) | 2886 | `"    diagnostic = next("` | — |
-| [SRC-F725E90B2A-L002887](../../tests/test_web_agent.py#L2887) | 2887 | `"        item for item in agent._provider_diagnostics"` | — |
-| [SRC-F725E90B2A-L002888](../../tests/test_web_agent.py#L2888) | 2888 | `"        if item.get(\"provider\") == \"duckduckgo_html\""` | — |
-| [SRC-F725E90B2A-L002889](../../tests/test_web_agent.py#L2889) | 2889 | `"    )"` | — |
-| [SRC-F725E90B2A-L002890](../../tests/test_web_agent.py#L2890) | 2890 | `"    assert diagnostic[\"status\"] == \"http_error\""` | — |
-| [SRC-F725E90B2A-L002891](../../tests/test_web_agent.py#L2891) | 2891 | `"    assert diagnostic[\"error\"] == \"RuntimeError: HTTP 302\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000072 إلى SRC-90FAA34ADE-L000085
+- النطاق: SRC-A8360B1B03-L000059 إلى SRC-90FAA34ADE-L000072
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000059](../../scripts/hosted_smoke_test.py#L59) | 59 | `"    ):"` | — |
+| [SRC-A8360B1B03-L000060](../../scripts/hosted_smoke_test.py#L60) | 60 | `"        raise SmokeError(\"Hosted tests require HTTPS; plain HTTP is allowed only for local tests.\")"` | — |
+| [SRC-A8360B1B03-L000061](../../scripts/hosted_smoke_test.py#L61) | 61 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000062](../../scripts/hosted_smoke_test.py#L62) | 62 | `"        port = parsed.port"` | — |
+| [SRC-A8360B1B03-L000063](../../scripts/hosted_smoke_test.py#L63) | 63 | `"    except ValueError as exc:"` | — |
+| [SRC-A8360B1B03-L000064](../../scripts/hosted_smoke_test.py#L64) | 64 | `"        raise SmokeError(\"Invalid port in base URL.\") from exc"` | — |
+| [SRC-A8360B1B03-L000065](../../scripts/hosted_smoke_test.py#L65) | 65 | `"    host = parsed.hostname"` | — |
+| [SRC-A8360B1B03-L000066](../../scripts/hosted_smoke_test.py#L66) | 66 | `"    if \":\" in host and not host.startswith(\"[\"):"` | — |
+| [SRC-A8360B1B03-L000067](../../scripts/hosted_smoke_test.py#L67) | 67 | `"        host = f\"[{host}]\""` | — |
+| [SRC-A8360B1B03-L000068](../../scripts/hosted_smoke_test.py#L68) | 68 | `"    if port:"` | — |
+| [SRC-A8360B1B03-L000069](../../scripts/hosted_smoke_test.py#L69) | 69 | `"        host += f\":{port}\""` | — |
+| [SRC-A8360B1B03-L000070](../../scripts/hosted_smoke_test.py#L70) | 70 | `"    return f\"{parsed.scheme}://{host}\""` | — |
+| [SRC-A8360B1B03-L000071](../../scripts/hosted_smoke_test.py#L71) | 71 | `""` | — |
 | [SRC-A8360B1B03-L000072](../../scripts/hosted_smoke_test.py#L72) | 72 | `""` | — |
 | [SRC-A8360B1B03-L000073](../../scripts/hosted_smoke_test.py#L73) | 73 | `"def request_json(url: str, *, token: str = \"\", payload: dict[str, Any] \| None = None,"` | — |
 | [SRC-A8360B1B03-L000074](../../scripts/hosted_smoke_test.py#L74) | 74 | `"                 timeout: float = 90) -> tuple[int, dict[str, Any] \| None]:"` | — |
@@ -830,16 +843,3 @@
 | [SRC-90FAA34ADE-L000070](../../tests/fixtures/answer_quality_cases.json#L70) | 70 | `"      \"language\": \"ar-MSA\","` | — |
 | [SRC-90FAA34ADE-L000071](../../tests/fixtures/answer_quality_cases.json#L71) | 71 | `"      \"question\": \"ما عاصمة مصر؟\","` | — |
 | [SRC-90FAA34ADE-L000072](../../tests/fixtures/answer_quality_cases.json#L72) | 72 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000073](../../tests/fixtures/answer_quality_cases.json#L73) | 73 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000074](../../tests/fixtures/answer_quality_cases.json#L74) | 74 | `"        \"States Cairo/القاهرة\","` | — |
-| [SRC-90FAA34ADE-L000075](../../tests/fixtures/answer_quality_cases.json#L75) | 75 | `"        \"Does not require live web search\""` | — |
-| [SRC-90FAA34ADE-L000076](../../tests/fixtures/answer_quality_cases.json#L76) | 76 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000077](../../tests/fixtures/answer_quality_cases.json#L77) | 77 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000078](../../tests/fixtures/answer_quality_cases.json#L78) | 78 | `"        \"Claims uncertainty about Egypt's capital\","` | — |
-| [SRC-90FAA34ADE-L000079](../../tests/fixtures/answer_quality_cases.json#L79) | 79 | `"        \"Invented alternative capitals\""` | — |
-| [SRC-90FAA34ADE-L000080](../../tests/fixtures/answer_quality_cases.json#L80) | 80 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000081](../../tests/fixtures/answer_quality_cases.json#L81) | 81 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000082](../../tests/fixtures/answer_quality_cases.json#L82) | 82 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000083](../../tests/fixtures/answer_quality_cases.json#L83) | 83 | `"        \"notes\": \"Stable geographic fact\""` | — |
-| [SRC-90FAA34ADE-L000084](../../tests/fixtures/answer_quality_cases.json#L84) | 84 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000085](../../tests/fixtures/answer_quality_cases.json#L85) | 85 | `"      \"failure_conditions\": ["` | — |

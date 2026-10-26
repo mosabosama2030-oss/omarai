@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000125 إلى SRC-F725E90B2A-L000491
+- النطاق: SRC-01E35ABC46-L000112 إلى SRC-F725E90B2A-L000478
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000112](../../tests/test_research_guardrails.py#L112) | 112 | `"    }"` | — |
+| [SRC-01E35ABC46-L000113](../../tests/test_research_guardrails.py#L113) | 113 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000114](../../tests/test_research_guardrails.py#L114) | 114 | `"    assert rel[\"accepted\"] is True"` | — |
+| [SRC-01E35ABC46-L000115](../../tests/test_research_guardrails.py#L115) | 115 | `"    assert rel[\"reason\"] in {\"accepted\", \"kept_official_despite_low_overlap\"}"` | — |
+| [SRC-01E35ABC46-L000116](../../tests/test_research_guardrails.py#L116) | 116 | `""` | — |
+| [SRC-01E35ABC46-L000117](../../tests/test_research_guardrails.py#L117) | 117 | `""` | — |
+| [SRC-01E35ABC46-L000118](../../tests/test_research_guardrails.py#L118) | 118 | `"def test_filter_deduplicates():"` | — |
+| [SRC-01E35ABC46-L000119](../../tests/test_research_guardrails.py#L119) | 119 | `"    sources = ["` | — |
+| [SRC-01E35ABC46-L000120](../../tests/test_research_guardrails.py#L120) | 120 | `"        {"` | — |
+| [SRC-01E35ABC46-L000121](../../tests/test_research_guardrails.py#L121) | 121 | `"            \"title\": \"Same Article Title\","` | — |
+| [SRC-01E35ABC46-L000122](../../tests/test_research_guardrails.py#L122) | 122 | `"            \"url\": \"https://a.example/1\","` | — |
+| [SRC-01E35ABC46-L000123](../../tests/test_research_guardrails.py#L123) | 123 | `"            \"snippet\": \"electric vehicles Egypt market\","` | — |
+| [SRC-01E35ABC46-L000124](../../tests/test_research_guardrails.py#L124) | 124 | `"            \"domain\": \"a.example\","` | — |
 | [SRC-01E35ABC46-L000125](../../tests/test_research_guardrails.py#L125) | 125 | `"            \"source_class\": \"general\","` | — |
 | [SRC-01E35ABC46-L000126](../../tests/test_research_guardrails.py#L126) | 126 | `"            \"providers\": [\"ddg\"],"` | — |
 | [SRC-01E35ABC46-L000127](../../tests/test_research_guardrails.py#L127) | 127 | `"        },"` | — |
@@ -830,16 +843,3 @@
 | [SRC-F725E90B2A-L000476](../../tests/test_web_agent.py#L476) | 476 | `"    assert results == []"` | — |
 | [SRC-F725E90B2A-L000477](../../tests/test_web_agent.py#L477) | 477 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
 | [SRC-F725E90B2A-L000478](../../tests/test_web_agent.py#L478) | 478 | `""` | — |
-| [SRC-F725E90B2A-L000479](../../tests/test_web_agent.py#L479) | 479 | `""` | — |
-| [SRC-F725E90B2A-L000480](../../tests/test_web_agent.py#L480) | 480 | `"def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000481](../../tests/test_web_agent.py#L481) | 481 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000482](../../tests/test_web_agent.py#L482) | 482 | `""` | — |
-| [SRC-F725E90B2A-L000483](../../tests/test_web_agent.py#L483) | 483 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"test-page-token\")"` | — |
-| [SRC-F725E90B2A-L000484](../../tests/test_web_agent.py#L484) | 484 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_IDS\", \"page-1,page-2\")"` | — |
-| [SRC-F725E90B2A-L000485](../../tests/test_web_agent.py#L485) | 485 | `""` | — |
-| [SRC-F725E90B2A-L000486](../../tests/test_web_agent.py#L486) | 486 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000487](../../tests/test_web_agent.py#L487) | 487 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000488](../../tests/test_web_agent.py#L488) | 488 | `""` | — |
-| [SRC-F725E90B2A-L000489](../../tests/test_web_agent.py#L489) | 489 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000490](../../tests/test_web_agent.py#L490) | 490 | `"            return {\"data\": [{"` | — |
-| [SRC-F725E90B2A-L000491](../../tests/test_web_agent.py#L491) | 491 | `"                \"message\": \"Electric car owners looking for charging advice\","` | — |

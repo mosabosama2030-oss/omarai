@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA61479D59-L000247 إلى SRC-FA4E1423C3-L000359
+- النطاق: SRC-DA61479D59-L000234 إلى SRC-FA4E1423C3-L000346
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA61479D59-L000234](../../tests/test_connector_summary_counters.py#L234) | 234 | `"def test_connector_summary_separates_raw_candidates_from_filtered_results():"` | — |
+| [SRC-DA61479D59-L000235](../../tests/test_connector_summary_counters.py#L235) | 235 | `"    agent = WebAgent()"` | — |
+| [SRC-DA61479D59-L000236](../../tests/test_connector_summary_counters.py#L236) | 236 | `"    summary = agent._connector_status_summary("` | — |
+| [SRC-DA61479D59-L000237](../../tests/test_connector_summary_counters.py#L237) | 237 | `"        [{"` | — |
+| [SRC-DA61479D59-L000238](../../tests/test_connector_summary_counters.py#L238) | 238 | `"            \"provider\": \"bing_rss\","` | — |
+| [SRC-DA61479D59-L000239](../../tests/test_connector_summary_counters.py#L239) | 239 | `"            \"query\": \"Arabic question with source instructions\","` | — |
+| [SRC-DA61479D59-L000240](../../tests/test_connector_summary_counters.py#L240) | 240 | `"            \"status\": \"filtered_all\","` | — |
+| [SRC-DA61479D59-L000241](../../tests/test_connector_summary_counters.py#L241) | 241 | `"            \"result_count\": 6,"` | — |
+| [SRC-DA61479D59-L000242](../../tests/test_connector_summary_counters.py#L242) | 242 | `"            \"accepted_count\": 0,"` | — |
+| [SRC-DA61479D59-L000243](../../tests/test_connector_summary_counters.py#L243) | 243 | `"            \"rejected_count\": 6,"` | — |
+| [SRC-DA61479D59-L000244](../../tests/test_connector_summary_counters.py#L244) | 244 | `"            \"rejection_counts\": {"` | — |
+| [SRC-DA61479D59-L000245](../../tests/test_connector_summary_counters.py#L245) | 245 | `"                \"malformed_candidate\": 0,"` | — |
+| [SRC-DA61479D59-L000246](../../tests/test_connector_summary_counters.py#L246) | 246 | `"                \"invalid_url_or_unsafe_target\": 2,"` | — |
 | [SRC-DA61479D59-L000247](../../tests/test_connector_summary_counters.py#L247) | 247 | `"                \"blocked_domain\": 1,"` | — |
 | [SRC-DA61479D59-L000248](../../tests/test_connector_summary_counters.py#L248) | 248 | `"                \"relevance_below_threshold\": 3,"` | — |
 | [SRC-DA61479D59-L000249](../../tests/test_connector_summary_counters.py#L249) | 249 | `"            },"` | — |
@@ -839,16 +852,3 @@
 | [SRC-FA4E1423C3-L000344](../../tests/test_generate_index.py#L344) | 344 | `"    coverage_path.write_text(\"stale coverage audit\", encoding=\"utf-8\")"` | — |
 | [SRC-FA4E1423C3-L000345](../../tests/test_generate_index.py#L345) | 345 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
 | [SRC-FA4E1423C3-L000346](../../tests/test_generate_index.py#L346) | 346 | `"    assert coverage_path.read_text(encoding=\"utf-8\") == \"stale coverage audit\""` | — |
-| [SRC-FA4E1423C3-L000347](../../tests/test_generate_index.py#L347) | 347 | `"    assert \"فهرس تغطية الفهرسة قديم\" in capsys.readouterr().err"` | — |
-| [SRC-FA4E1423C3-L000348](../../tests/test_generate_index.py#L348) | 348 | `""` | — |
-| [SRC-FA4E1423C3-L000349](../../tests/test_generate_index.py#L349) | 349 | `""` | — |
-| [SRC-FA4E1423C3-L000350](../../tests/test_generate_index.py#L350) | 350 | `""` | — |
-| [SRC-FA4E1423C3-L000351](../../tests/test_generate_index.py#L351) | 351 | `"def test_source_line_coverage_validator_rejects_missing_or_duplicate_lines(tmp_path: Path) -> None:"` | — |
-| [SRC-FA4E1423C3-L000352](../../tests/test_generate_index.py#L352) | 352 | `"    \"\"\"A gap or duplicate in line IDs prevents the generator from claiming full coverage.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000353](../../tests/test_generate_index.py#L353) | 353 | `"    source_file = tmp_path / \"src.py\""` | — |
-| [SRC-FA4E1423C3-L000354](../../tests/test_generate_index.py#L354) | 354 | `"    source_file.write_text(\"FIRST = 1\\nSECOND = 2\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000355](../../tests/test_generate_index.py#L355) | 355 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000356](../../tests/test_generate_index.py#L356) | 356 | `"    lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000357](../../tests/test_generate_index.py#L357) | 357 | `""` | — |
-| [SRC-FA4E1423C3-L000358](../../tests/test_generate_index.py#L358) | 358 | `"    INDEXER.validate_source_line_coverage(tmp_path, inventory, lines)"` | — |
-| [SRC-FA4E1423C3-L000359](../../tests/test_generate_index.py#L359) | 359 | `"    with pytest.raises(INDEXER.IndexGenerationError, match=\"اكتمال فهرسة السطور\"):"` | — |

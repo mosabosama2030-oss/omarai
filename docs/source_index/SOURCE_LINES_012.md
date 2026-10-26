@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D57B0BB030-L000016 إلى SRC-E599346ABE-L000655
+- النطاق: SRC-D57B0BB030-L000003 إلى SRC-E599346ABE-L000642
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D57B0BB030-L000003](../DEPLOY_RENDER_AR.md#L3) | 3 | `"هذا الخيار يستخدم خدمة ويب مجانية بمواصفات محدودة لتجربة Omarai والتحقق منه. ليس ضمانًا لتشغيل دائم أو مناسبًا لبيانات العملاء المهمة."` | — |
+| [SRC-D57B0BB030-L000004](../DEPLOY_RENDER_AR.md#L4) | 4 | `""` | — |
+| [SRC-D57B0BB030-L000005](../DEPLOY_RENDER_AR.md#L5) | 5 | `"## ما الذي أُعدّ في المستودع؟"` | — |
+| [SRC-D57B0BB030-L000006](../DEPLOY_RENDER_AR.md#L6) | 6 | `""` | — |
+| [SRC-D57B0BB030-L000007](../DEPLOY_RENDER_AR.md#L7) | 7 | ``"يوجد ملف `render.yaml` في جذر المشروع لإنشاء خدمة ويب تستخدم Dockerfile الحالي، وتعمل في منطقة Frankfurt، وتستخدم `/api/health` لفحص السلامة. عند إنشاء الخدمة سيطلب Render إدخال قيمتي الأسرار بدل حفظهما داخل المستودع:"`` | — |
+| [SRC-D57B0BB030-L000008](../DEPLOY_RENDER_AR.md#L8) | 8 | `""` | — |
+| [SRC-D57B0BB030-L000009](../DEPLOY_RENDER_AR.md#L9) | 9 | ``"- `OMARAI_ACCESS_TOKEN`: رمز وصول عشوائي، لا يقل عن 32 حرفًا."`` | — |
+| [SRC-D57B0BB030-L000010](../DEPLOY_RENDER_AR.md#L10) | 10 | ``"- `OPENROUTER_API_KEY`: مفتاح مزود النموذج الذي تملكه."`` | — |
+| [SRC-D57B0BB030-L000011](../DEPLOY_RENDER_AR.md#L11) | 11 | `""` | — |
+| [SRC-D57B0BB030-L000012](../DEPLOY_RENDER_AR.md#L12) | 12 | `"لا تضع القيم السرية في GitHub أو هذا الملف أو الدردشة."` | — |
+| [SRC-D57B0BB030-L000013](../DEPLOY_RENDER_AR.md#L13) | 13 | `""` | — |
+| [SRC-D57B0BB030-L000014](../DEPLOY_RENDER_AR.md#L14) | 14 | `"## خطوات النشر"` | — |
+| [SRC-D57B0BB030-L000015](../DEPLOY_RENDER_AR.md#L15) | 15 | `""` | — |
 | [SRC-D57B0BB030-L000016](../DEPLOY_RENDER_AR.md#L16) | 16 | `"1. سجّل الدخول إلى Render وافتح Dashboard."` | — |
 | [SRC-D57B0BB030-L000017](../DEPLOY_RENDER_AR.md#L17) | 17 | ``"2. اختر إنشاء **Blueprint** جديد واربط حساب GitHub بالمستودع `mosabosama2030-oss/omarai`."`` | — |
 | [SRC-D57B0BB030-L000018](../DEPLOY_RENDER_AR.md#L18) | 18 | ``"3. اختر الفرع `main`، ودع Render يقرأ ملف `render.yaml` الموجود في جذر المستودع."`` | — |
@@ -821,16 +834,3 @@
 | [SRC-E599346ABE-L000640](../generate_index.py#L640) | 640 | `""` | — |
 | [SRC-E599346ABE-L000641](../generate_index.py#L641) | 641 | `"    # Re-read every eligible source independently to detect races or corrupted line records."` | — |
 | [SRC-E599346ABE-L000642](../generate_index.py#L642) | 642 | `"    for file, item in eligible_files.items():"` | — |
-| [SRC-E599346ABE-L000643](../generate_index.py#L643) | 643 | `"        source = _read_text_bounded(root / file)"` | — |
-| [SRC-E599346ABE-L000644](../generate_index.py#L644) | 644 | `"        if source is None:"` | — |
-| [SRC-E599346ABE-L000645](../generate_index.py#L645) | 645 | `"            failures.append(f\"{file}: تعذرت إعادة قراءة ملف مؤهل للتحقق\")"` | — |
-| [SRC-E599346ABE-L000646](../generate_index.py#L646) | 646 | `"            expected_lines_by_file[file] = []"` | — |
-| [SRC-E599346ABE-L000647](../generate_index.py#L647) | 647 | `"            continue"` | — |
-| [SRC-E599346ABE-L000648](../generate_index.py#L648) | 648 | `"        expected_contents = source.splitlines()"` | — |
-| [SRC-E599346ABE-L000649](../generate_index.py#L649) | 649 | `"        expected_lines_by_file[file] = expected_contents"` | — |
-| [SRC-E599346ABE-L000650](../generate_index.py#L650) | 650 | `"        if len(expected_contents) != item.line_count:"` | — |
-| [SRC-E599346ABE-L000651](../generate_index.py#L651) | 651 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000652](../generate_index.py#L652) | 652 | `"                f\"{file}: تغير عدد الأسطر بعد إعداد الجرد \""` | — |
-| [SRC-E599346ABE-L000653](../generate_index.py#L653) | 653 | `"                f\"(الجرد {item.line_count}، الحالي {len(expected_contents)})\""` | — |
-| [SRC-E599346ABE-L000654](../generate_index.py#L654) | 654 | `"            )"` | — |
-| [SRC-E599346ABE-L000655](../generate_index.py#L655) | 655 | `""` | — |

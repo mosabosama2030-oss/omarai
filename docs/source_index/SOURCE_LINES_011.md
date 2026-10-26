@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000597 إلى SRC-D57B0BB030-L000015
+- النطاق: SRC-EEF2E6447C-L000584 إلى SRC-D57B0BB030-L000002
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000584](../../api/omarai.py#L584) | 584 | `"                lead, created = self.store.add("` | — |
+| [SRC-EEF2E6447C-L000585](../../api/omarai.py#L585) | 585 | `"                    data.get(\"text\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000586](../../api/omarai.py#L586) | 586 | `"                    data.get(\"source_url\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000587](../../api/omarai.py#L587) | 587 | `"                    data.get(\"platform\", \"manual\"),"` | — |
+| [SRC-EEF2E6447C-L000588](../../api/omarai.py#L588) | 588 | `"                    data.get(\"observed_at\"),"` | — |
+| [SRC-EEF2E6447C-L000589](../../api/omarai.py#L589) | 589 | `"                    data.get(\"note\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000590](../../api/omarai.py#L590) | 590 | `"                    data.get(\"product_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000591](../../api/omarai.py#L591) | 591 | `"                    data.get(\"location_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000592](../../api/omarai.py#L592) | 592 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000593](../../api/omarai.py#L593) | 593 | `"                return self.respond(201 if created else 200, {\"lead\": lead, \"created\": created})"` | — |
+| [SRC-EEF2E6447C-L000594](../../api/omarai.py#L594) | 594 | `"            route = path.split(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000595](../../api/omarai.py#L595) | 595 | `"            if len(route) == 5 and route[1:3] == [\"api\", \"leads\"] and route[4] == \"status\":"` | — |
+| [SRC-EEF2E6447C-L000596](../../api/omarai.py#L596) | 596 | `"                lead = self.store.update_status(route[3], data.get(\"status\", \"new\"))"` | — |
 | [SRC-EEF2E6447C-L000597](../../api/omarai.py#L597) | 597 | `"                return self.respond(200, {\"lead\": lead}) if lead else self.respond(404, {\"error\": \"lead not found\"})"` | — |
 | [SRC-EEF2E6447C-L000598](../../api/omarai.py#L598) | 598 | `"            return self.respond(404, {\"error\": \"not found\"})"` | — |
 | [SRC-EEF2E6447C-L000599](../../api/omarai.py#L599) | 599 | `"        except (ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
@@ -884,16 +897,3 @@
 |---|---:|---|---|
 | [SRC-D57B0BB030-L000001](../DEPLOY_RENDER_AR.md#L1) | 1 | `"# نشر Omarai على Render Free — دليل عربي"` | — |
 | [SRC-D57B0BB030-L000002](../DEPLOY_RENDER_AR.md#L2) | 2 | `""` | — |
-| [SRC-D57B0BB030-L000003](../DEPLOY_RENDER_AR.md#L3) | 3 | `"هذا الخيار يستخدم خدمة ويب مجانية بمواصفات محدودة لتجربة Omarai والتحقق منه. ليس ضمانًا لتشغيل دائم أو مناسبًا لبيانات العملاء المهمة."` | — |
-| [SRC-D57B0BB030-L000004](../DEPLOY_RENDER_AR.md#L4) | 4 | `""` | — |
-| [SRC-D57B0BB030-L000005](../DEPLOY_RENDER_AR.md#L5) | 5 | `"## ما الذي أُعدّ في المستودع؟"` | — |
-| [SRC-D57B0BB030-L000006](../DEPLOY_RENDER_AR.md#L6) | 6 | `""` | — |
-| [SRC-D57B0BB030-L000007](../DEPLOY_RENDER_AR.md#L7) | 7 | ``"يوجد ملف `render.yaml` في جذر المشروع لإنشاء خدمة ويب تستخدم Dockerfile الحالي، وتعمل في منطقة Frankfurt، وتستخدم `/api/health` لفحص السلامة. عند إنشاء الخدمة سيطلب Render إدخال قيمتي الأسرار بدل حفظهما داخل المستودع:"`` | — |
-| [SRC-D57B0BB030-L000008](../DEPLOY_RENDER_AR.md#L8) | 8 | `""` | — |
-| [SRC-D57B0BB030-L000009](../DEPLOY_RENDER_AR.md#L9) | 9 | ``"- `OMARAI_ACCESS_TOKEN`: رمز وصول عشوائي، لا يقل عن 32 حرفًا."`` | — |
-| [SRC-D57B0BB030-L000010](../DEPLOY_RENDER_AR.md#L10) | 10 | ``"- `OPENROUTER_API_KEY`: مفتاح مزود النموذج الذي تملكه."`` | — |
-| [SRC-D57B0BB030-L000011](../DEPLOY_RENDER_AR.md#L11) | 11 | `""` | — |
-| [SRC-D57B0BB030-L000012](../DEPLOY_RENDER_AR.md#L12) | 12 | `"لا تضع القيم السرية في GitHub أو هذا الملف أو الدردشة."` | — |
-| [SRC-D57B0BB030-L000013](../DEPLOY_RENDER_AR.md#L13) | 13 | `""` | — |
-| [SRC-D57B0BB030-L000014](../DEPLOY_RENDER_AR.md#L14) | 14 | `"## خطوات النشر"` | — |
-| [SRC-D57B0BB030-L000015](../DEPLOY_RENDER_AR.md#L15) | 15 | `""` | — |
