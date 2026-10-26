@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **034**
-- سجلات الأسطر: **58**
-- النطاق: SRC-DE7EABE998-L000386 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **219**
+- النطاق: SRC-DE7EABE998-L000225 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,167 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000225](../../web/agent.html#L225) | 225 | `"  no_change_gap_unresolved:\"لم تغيّر محاولة الإصلاح الإجابة؛ لا يزال احتمال نقص أحد المحاور قائمًا.\""` | — |
+| [SRC-DE7EABE998-L000226](../../web/agent.html#L226) | 226 | `" };"` | — |
+| [SRC-DE7EABE998-L000227](../../web/agent.html#L227) | 227 | `" const coverageRepairHtml=coverageRepairMessages[coverageRepairStatus]?'<p class=\"warning\">حالة إصلاح التغطية: '+escapeHtml(coverageRepairMessages[coverageRepairStatus])+'</p>':\"\";"` | — |
+| [SRC-DE7EABE998-L000228](../../web/agent.html#L228) | 228 | `" const integrityHtml=integrity?'<details class=\"details\"><summary>فحص لفظي أولي: اتساق الإجابة مع الأدلة — ليس تحققًا من الحقيقة</summary><p class=\"report-note\">لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد. نطاق الأدلة النصية: '+escapeHtml(integrityScope)+'.</p>'+integritySummary+taskFulfillmentHtml+coverageRepairHtml+'<p class=\"report-note\">'+(integrityNumbers.length?'أرقام أو تواريخ تحتاج مراجعة لأنها لم تظهر نصيًا في المواد المتاحة: '+integrityNumbers.map(escapeHtml).join(\"، \")+'.':'لم يرصد الفحص أرقامًا محددة غائبة عن النصوص التي جمعها. هذا لا يثبت أن كل رقم صحيح أو أن المصدر يدعم الادعاء المرتبط به.')+'</p>'+citedNumberHtml+valueDiscrepancyHtml+citationAlignmentHtml+(integrityTargets.length?'<p class=\"report-note\">إشارات التغطية اللفظية لمحاور السؤال:</p><ul>'+integrityTargets.map(t=>'<li>'+escapeHtml(t.target\|\|\"محور\")+' — '+escapeHtml(t.status===\"lexical_signal_found\"?\"وُجد تطابق لفظي؛ ليس إثباتًا لاكتمال الإجابة\":\"قد يكون هذا المحور ناقصًا؛ لم يظهر تطابق لفظي كافٍ\")+'</li>').join(\"\")+'</ul>':\"\")+'<p class=\"report-note\">المنهج: فحص لفظي حتمي محدود. لا يتحقق من معنى الادعاء أو صلة الاستشهاد به أو استقلال المصادر؛ راجع الأدلة الأصلية قبل الاعتماد.</p></details>':\"\";"` | — |
+| [SRC-DE7EABE998-L000229](../../web/agent.html#L229) | 229 | `" const providerCounts=r.provider_counts&&typeof r.provider_counts===\"object\"&&!Array.isArray(r.provider_counts)?r.provider_counts:{};"` | — |
+| [SRC-DE7EABE998-L000230](../../web/agent.html#L230) | 230 | `" const providerHtml=Object.entries(providerCounts).map(([p,n])=>'<span class=\"provider\">'+escapeHtml(p)+' · '+escapeHtml(n)+'</span>').join(\"\");"` | — |
+| [SRC-DE7EABE998-L000231](../../web/agent.html#L231) | 231 | `" const notes=Array.isArray(e.warnings)?e.warnings:[];"` | — |
+| [SRC-DE7EABE998-L000232](../../web/agent.html#L232) | 232 | `" const queryList=Array.isArray(result.search_queries)?result.search_queries:[];"` | — |
+| [SRC-DE7EABE998-L000233](../../web/agent.html#L233) | 233 | `" const details=queryList.length?'<details class=\"details\"><summary>زوايا البحث المستخدمة ('+queryList.length+')</summary><ol>'+queryList.map(q=>'<li>'+escapeHtml(q)+'</li>').join(\"\")+'</ol></details>':\"\";"` | — |
+| [SRC-DE7EABE998-L000234](../../web/agent.html#L234) | 234 | `" const coverageText=lead"` | — |
+| [SRC-DE7EABE998-L000235](../../web/agent.html#L235) | 235 | `"  ? (leadResearchIncomplete"` | — |
+| [SRC-DE7EABE998-L000236](../../web/agent.html#L236) | 236 | `"     ? \"تعطل البحث أو لم يكتمل التقرير؛ الأعداد غير المتاحة ليست صفرًا، ولا يمكن استنتاج عدم وجود عملاء.\""` | — |
+| [SRC-DE7EABE998-L000237](../../web/agent.html#L237) | 237 | `"     : noQualifiedLeads"` | — |
+| [SRC-DE7EABE998-L000238](../../web/agent.html#L238) | 238 | `"      ? \"لم تثبت النتائج وجود أي عميل محتمل. عدد صفحات العقارات أو النطاقات ليس عدد المشترين.\""` | — |
+| [SRC-DE7EABE998-L000239](../../web/agent.html#L239) | 239 | `"      : \"الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.\")"` | — |
+| [SRC-DE7EABE998-L000240](../../web/agent.html#L240) | 240 | `"  : researchErrorOutcome"` | — |
+| [SRC-DE7EABE998-L000241](../../web/agent.html#L241) | 241 | `"   ? \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا.\""` | — |
+| [SRC-DE7EABE998-L000242](../../web/agent.html#L242) | 242 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
+| [SRC-DE7EABE998-L000243](../../web/agent.html#L243) | 243 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
+| [SRC-DE7EABE998-L000244](../../web/agent.html#L244) | 244 | `" const attemptText=result&&result.search_attempted===true"` | — |
+| [SRC-DE7EABE998-L000245](../../web/agent.html#L245) | 245 | `"  ? (r.search_outcome===\"attempted_research_error\""` | — |
+| [SRC-DE7EABE998-L000246](../../web/agent.html#L246) | 246 | `"     ? \"بدأت محاولة البحث، لكن تعطل مسار تجميع الأدلة قبل اكتمال التقرير؛ لم يمكن تحديد عدد المصادر القابلة للاستخدام.\""` | — |
+| [SRC-DE7EABE998-L000247](../../web/agent.html#L247) | 247 | `"     : \"تمت محاولة البحث في الويب. عدد المصادر القابلة للاستخدام بعد التصفية: \"+(usableSourceCount??\"غير محدد\")+\".\")"` | — |
+| [SRC-DE7EABE998-L000248](../../web/agent.html#L248) | 248 | `"  : result&&result.search_attempted===false"` | — |
+| [SRC-DE7EABE998-L000249](../../web/agent.html#L249) | 249 | `"   ? \"لم تُنفّذ محاولة بحث ويب في هذه الجولة.\""` | — |
+| [SRC-DE7EABE998-L000250](../../web/agent.html#L250) | 250 | `"   : r.search_outcome===\"unknown_after_research_error\""` | — |
+| [SRC-DE7EABE998-L000251](../../web/agent.html#L251) | 251 | `"    ? \"تعطل مسار البحث، ولم يمكن تأكيد ما إذا كانت محاولة البحث قد بدأت أو كم مصدرًا كان قابلًا للاستخدام.\""` | — |
+| [SRC-DE7EABE998-L000252](../../web/agent.html#L252) | 252 | `"    : \"حالة محاولة البحث غير موضحة في الاستجابة.\";"` | — |
+| [SRC-DE7EABE998-L000253](../../web/agent.html#L253) | 253 | `" const qualityText='تصنيف جودة البحث يصف تغطية العملية والأدلة المتاحة، ولا يمثل احتمال صحة الوقائع.';"` | — |
+| [SRC-DE7EABE998-L000254](../../web/agent.html#L254) | 254 | `" const reviewText=r.claim_audit_semantics==='model_assisted_not_independent_fact_check'?'مراجعة الادعاءات تمت بمساعدة نموذج لغوي؛ وهي ليست تحققًا مستقلًا من صحة الحقائق.':'لم يثبت إجراء تحقق مستقل من صحة الحقائق.';"` | — |
+| [SRC-DE7EABE998-L000255](../../web/agent.html#L255) | 255 | `" const diversityText='اختلاف النطاقات المسجلة لا يثبت الاستقلال التحريري؛ فقد تنقل المواقع عن مصدر أصلي واحد.';"` | — |
+| [SRC-DE7EABE998-L000256](../../web/agent.html#L256) | 256 | `" const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class=\"report-note\">'+escapeHtml(n)+'</p>').join(\"\");"` | — |
+| [SRC-DE7EABE998-L000257](../../web/agent.html#L257) | 257 | `" const review=r.second_pass_review===\"model_claim_audit_completed\"?\"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)\":r.second_pass_review===\"model_claim_audit_completed_before_coverage_repair\"?\"تمت مراجعة المسودة قبل تعديل التغطية؛ النسخة المعدلة لم تخضع لمراجعة ثانية\":r.second_pass_review===\"model_claim_audit_unavailable\"?\"تعذرت مراجعة الادعاءات بمساعدة النموذج\":\"\";"` | — |
+| [SRC-DE7EABE998-L000258](../../web/agent.html#L258) | 258 | `" return '<div class=\"report-head\"><b>ملخص الأدلة وتغطية البحث</b><span class=\"coverage\">'+escapeHtml(scoreLabel)+'</span></div><div class=\"metrics\">'+metricHtml+'</div>'+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class=\"providers\">'+providerHtml+'</div>':\"\")+(review?'<p class=\"report-note\">'+escapeHtml(review)+'</p>':\"\")+details;"` | — |
+| [SRC-DE7EABE998-L000259](../../web/agent.html#L259) | 259 | `"}"` | — |
+| [SRC-DE7EABE998-L000260](../../web/agent.html#L260) | 260 | `"function addMessage(role,text,result,options={}){"` | — |
+| [SRC-DE7EABE998-L000261](../../web/agent.html#L261) | 261 | `" const welcome=$(\"welcome\");if(welcome)welcome.remove();"` | — |
+| [SRC-DE7EABE998-L000262](../../web/agent.html#L262) | 262 | `" const box=document.createElement(\"div\");box.className=\"message \"+(role===\"user\"?\"user\":\"assistant\");"` | — |
+| [SRC-DE7EABE998-L000263](../../web/agent.html#L263) | 263 | `" const who=document.createElement(\"div\");who.className=\"who\";"` | — |
+| [SRC-DE7EABE998-L000264](../../web/agent.html#L264) | 264 | `" who.textContent=role===\"user\"?\"أنت\":(result&&result.used_language_model?\"Omarai · بحث وتحليل توليدي\":\"Omarai · إجابة جزئية أو احتياطية\");"` | — |
+| [SRC-DE7EABE998-L000265](../../web/agent.html#L265) | 265 | `" box.appendChild(who);"` | — |
+| [SRC-DE7EABE998-L000266](../../web/agent.html#L266) | 266 | `" const linkedQuestion=(options&&options.question)\|\|(result&&result.question);"` | — |
+| [SRC-DE7EABE998-L000267](../../web/agent.html#L267) | 267 | `" if(role===\"assistant\"&&linkedQuestion){"` | — |
+| [SRC-DE7EABE998-L000268](../../web/agent.html#L268) | 268 | `"  const context=document.createElement(\"div\");context.className=\"message-context\";"` | — |
+| [SRC-DE7EABE998-L000269](../../web/agent.html#L269) | 269 | `"  context.textContent=\"ردًا على السؤال: \"+linkedQuestion;box.appendChild(context);"` | — |
+| [SRC-DE7EABE998-L000270](../../web/agent.html#L270) | 270 | `" }"` | — |
+| [SRC-DE7EABE998-L000271](../../web/agent.html#L271) | 271 | `" const bubble=document.createElement(\"div\");bubble.className=\"bubble\";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);"` | — |
+| [SRC-DE7EABE998-L000272](../../web/agent.html#L272) | 272 | `" if(result&&result.used_web_search!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000273](../../web/agent.html#L273) | 273 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
+| [SRC-DE7EABE998-L000274](../../web/agent.html#L274) | 274 | `"  notice.textContent=result.search_attempted===true?\"نُفذت محاولة بحث، لكن لم يؤكد النظام توفر مصادر قابلة للاستخدام؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.\":result.search_attempted===false?\"لم تُنفذ محاولة بحث ويب في هذه الجولة؛ لا تعتبر الإجابة نتيجة بحث حي.\":\"لم يؤكد النظام نجاح البحث الحي في هذه الجولة؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.\";"` | — |
+| [SRC-DE7EABE998-L000275](../../web/agent.html#L275) | 275 | `"  box.appendChild(notice);"` | — |
+| [SRC-DE7EABE998-L000276](../../web/agent.html#L276) | 276 | `" }"` | — |
+| [SRC-DE7EABE998-L000277](../../web/agent.html#L277) | 277 | `" if(result&&result.used_language_model!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000278](../../web/agent.html#L278) | 278 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
+| [SRC-DE7EABE998-L000279](../../web/agent.html#L279) | 279 | `"  notice.textContent=\"لم تُستخدم استجابة مؤكدة من النموذج اللغوي؛ قد تكون الإجابة مقتطفات أو ردًا احتياطيًا وليست تحليلًا توليديًا كاملًا.\";"` | — |
+| [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `"  box.appendChild(notice);"` | — |
+| [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `" }"` | — |
+| [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `" if(result&&result.search_report){"` | — |
+| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `"  const report=document.createElement(\"section\");report.className=\"report\";report.innerHTML=renderReport(result);box.appendChild(report);"` | — |
+| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" }"` | — |
+| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" if(result&&Array.isArray(result.warnings)&&result.warnings.length){"` | — |
+| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `"  const warning=document.createElement(\"div\");warning.className=\"warning\";"` | — |
+| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `"  warning.textContent=result.warnings.join(\" \");box.appendChild(warning);"` | — |
+| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `" }"` | — |
+| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `" const rawSources=result&&Array.isArray(result.sources)?result.sources:[];"` | — |
+| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `" const usableSources=rawSources.filter(s=>s&&typeof s===\"object\"&&safeSourceUrl(s.url));"` | — |
+| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `" if(usableSources.length){"` | — |
+| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `"  const sources=document.createElement(\"div\");sources.className=\"sources\";"` | — |
+| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join(\"\");box.appendChild(sources);"` | — |
+| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `"  const no=document.createElement(\"p\");no.className=\"no-sources\";"` | — |
+| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `"  no.textContent=\"لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.\";"` | — |
+| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `"  box.appendChild(no);"` | — |
+| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `" }"` | — |
+| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `" $(\"messages\").appendChild(box);box.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `" return box;"` | — |
+| [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `"}"` | — |
+| [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `"function setBusy(on){busy=on;$(\"send\").disabled=on;$(\"send\").textContent=on?\"يبحث…\":\"ابحث ←\";$(\"question\").disabled=on;document.querySelectorAll(\".mode-btn\").forEach(b=>b.disabled=on);}"` | — |
+| [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `"async function ask(value){"` | — |
+| [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" const q=(value??$(\"question\").value).trim();if(!q\|\|busy)return;"` | — |
+| [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `" addMessage(\"user\",q);$(\"question\").value=\"\";setBusy(true);"` | — |
+| [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `" setStatus(\"جارٍ تنفيذ البحث عن السؤال الحالي…\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `" const pending=document.createElement(\"div\");pending.className=\"message assistant\";"` | — |
+| [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `" pending.innerHTML='<div class=\"who\">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class=\"bubble\"><div class=\"pending\"><span class=\"spinner\"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';"` | — |
+| [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `" try{"` | — |
+| [SRC-DE7EABE998-L000311](../../web/agent.html#L311) | 311 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
+| [SRC-DE7EABE998-L000312](../../web/agent.html#L312) | 312 | `"  const data=await response.json().catch(()=>({}));"` | — |
+| [SRC-DE7EABE998-L000313](../../web/agent.html#L313) | 313 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000314](../../web/agent.html#L314) | 314 | `"  if(!response.ok){"` | — |
+| [SRC-DE7EABE998-L000315](../../web/agent.html#L315) | 315 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
+| [SRC-DE7EABE998-L000316](../../web/agent.html#L316) | 316 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
+| [SRC-DE7EABE998-L000317](../../web/agent.html#L317) | 317 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |
+| [SRC-DE7EABE998-L000318](../../web/agent.html#L318) | 318 | `"  }"` | — |
+| [SRC-DE7EABE998-L000319](../../web/agent.html#L319) | 319 | `"  addMessage(\"assistant\",data.answer\|\|\"لم يرجع الخادم نص إجابة.\",data);"` | — |
+| [SRC-DE7EABE998-L000320](../../web/agent.html#L320) | 320 | `"  history.push({role:\"user\",content:q},{role:\"assistant\",content:String(data.answer\|\|\"\")});"` | — |
+| [SRC-DE7EABE998-L000321](../../web/agent.html#L321) | 321 | `"  const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];"` | — |
+| [SRC-DE7EABE998-L000322](../../web/agent.html#L322) | 322 | `"  if(data.kind===\"general_answer\"){"` | — |
+| [SRC-DE7EABE998-L000323](../../web/agent.html#L323) | 323 | `"   setStatus(\"اكتملت إجابة المعرفة العامة دون بحث ويب\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000324](../../web/agent.html#L324) | 324 | `"  }else if(data.kind===\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000325](../../web/agent.html#L325) | 325 | `"   setStatus(\"إجابة عن قدرات Omarai وحدوده · لم يُجر بحث حي\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000326](../../web/agent.html#L326) | 326 | `"  }else if(data.used_web_search===true&&data.used_language_model===true&&sources.length>0){"` | — |
+| [SRC-DE7EABE998-L000327](../../web/agent.html#L327) | 327 | `"   setStatus(\"اكتمل البحث والتحليل · \"+sources.length+\" مصدرًا صالحًا\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000328](../../web/agent.html#L328) | 328 | `"  }else if(data.used_web_search===true&&sources.length>0){"` | — |
+| [SRC-DE7EABE998-L000329](../../web/agent.html#L329) | 329 | `"   setStatus(\"البحث أعاد مصادر، لكن التحليل غير مكتمل\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000330](../../web/agent.html#L330) | 330 | `"  }else{"` | — |
+| [SRC-DE7EABE998-L000331](../../web/agent.html#L331) | 331 | `"   setStatus(\"نتيجة جزئية: لا يوجد بحث حي مؤكد مع مصادر كافية\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000332](../../web/agent.html#L332) | 332 | `"  }"` | — |
+| [SRC-DE7EABE998-L000333](../../web/agent.html#L333) | 333 | `" }catch(error){"` | — |
+| [SRC-DE7EABE998-L000334](../../web/agent.html#L334) | 334 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000335](../../web/agent.html#L335) | 335 | `"  const safeMessage=error&&error.message?error.message:\"تعذر إكمال الطلب.\";"` | — |
+| [SRC-DE7EABE998-L000336](../../web/agent.html#L336) | 336 | `"  const box=addMessage(\"assistant\",safeMessage,null,{question:q});"` | — |
+| [SRC-DE7EABE998-L000337](../../web/agent.html#L337) | 337 | `"  const actions=document.createElement(\"div\");actions.className=\"retry-row\";"` | — |
+| [SRC-DE7EABE998-L000338](../../web/agent.html#L338) | 338 | `"  const retry=document.createElement(\"button\");retry.type=\"button\";retry.className=\"retry-button\";"` | — |
+| [SRC-DE7EABE998-L000339](../../web/agent.html#L339) | 339 | `"  retry.textContent=\"إعادة محاولة هذا السؤال\";"` | — |
+| [SRC-DE7EABE998-L000340](../../web/agent.html#L340) | 340 | `"  retry.addEventListener(\"click\",()=>ask(q));actions.appendChild(retry);box.appendChild(actions);"` | — |
+| [SRC-DE7EABE998-L000341](../../web/agent.html#L341) | 341 | `"  setStatus(\"لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000342](../../web/agent.html#L342) | 342 | `" }finally{"` | — |
+| [SRC-DE7EABE998-L000343](../../web/agent.html#L343) | 343 | `"  setBusy(false);$(\"question\").focus();"` | — |
+| [SRC-DE7EABE998-L000344](../../web/agent.html#L344) | 344 | `" }"` | — |
+| [SRC-DE7EABE998-L000345](../../web/agent.html#L345) | 345 | `"}"` | — |
+| [SRC-DE7EABE998-L000346](../../web/agent.html#L346) | 346 | `"async function runDiagnostics(){"` | — |
+| [SRC-DE7EABE998-L000347](../../web/agent.html#L347) | 347 | `" const button=$(\"runDiagnostics\"),output=$(\"diagnosticsResult\");if(button.disabled)return;"` | — |
+| [SRC-DE7EABE998-L000348](../../web/agent.html#L348) | 348 | `" button.disabled=true;button.textContent=\"جارٍ الاختبار الحقيقي…\";output.textContent=\"يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.\";"` | — |
+| [SRC-DE7EABE998-L000349](../../web/agent.html#L349) | 349 | `" try{"` | — |
+| [SRC-DE7EABE998-L000350](../../web/agent.html#L350) | 350 | `"  const response=await fetch(\"/api/diagnostics\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$(\"diagSocial\").checked})});"` | — |
+| [SRC-DE7EABE998-L000351](../../web/agent.html#L351) | 351 | `"  const data=await response.json();if(!response.ok)throw Error(data.error\|\|\"فشل طلب الاختبار\");"` | — |
+| [SRC-DE7EABE998-L000352](../../web/agent.html#L352) | 352 | `"  const labels={passed:\"نجح فعليًا\",degraded:\"جزئي أو بلا نتائج كافية\",failed:\"فشل\",skipped:\"لم يُختبر\",not_configured:\"غير مضبوط\"};"` | — |
+| [SRC-DE7EABE998-L000353](../../web/agent.html#L353) | 353 | `"  const lines=[\"النتيجة: \"+(labels[data.overall_status]\|\|data.overall_status)];"` | — |
+| [SRC-DE7EABE998-L000354](../../web/agent.html#L354) | 354 | `"  for(const [key,label] of [[\"web_search\",\"بحث الإنترنت\"],[\"language_model\",\"النموذج اللغوي\"],[\"social_search\",\"المصادر الاجتماعية\"]]){"` | — |
+| [SRC-DE7EABE998-L000355](../../web/agent.html#L355) | 355 | `"   const item=(data.checks\|\|{})[key];if(!item)continue;"` | — |
+| [SRC-DE7EABE998-L000356](../../web/agent.html#L356) | 356 | `"   lines.push(label+\": \"+(labels[item.status]\|\|item.status)+(item.result_count!==undefined?\" · \"+item.result_count+\" نتيجة\":\"\"));"` | — |
+| [SRC-DE7EABE998-L000357](../../web/agent.html#L357) | 357 | `"   if(item.provider_counts&&Object.keys(item.provider_counts).length)lines.push(\"المصادر التي أعادت نتائج: \"+Object.entries(item.provider_counts).map(([p,n])=>p+\" (\"+n+\")\").join(\"، \"));"` | — |
+| [SRC-DE7EABE998-L000358](../../web/agent.html#L358) | 358 | `"   if(item.note)lines.push(item.note);"` | — |
+| [SRC-DE7EABE998-L000359](../../web/agent.html#L359) | 359 | `"   if(item.warnings&&item.warnings.length)lines.push(item.warnings.join(\"؛ \"));"` | — |
+| [SRC-DE7EABE998-L000360](../../web/agent.html#L360) | 360 | `"  }"` | — |
+| [SRC-DE7EABE998-L000361](../../web/agent.html#L361) | 361 | `"  if(data.model_usage&&data.model_usage.length)lines.push(\"النموذج المستخدم: \"+data.model_usage.map(x=>x.used_model).join(\"، \"));"` | — |
+| [SRC-DE7EABE998-L000362](../../web/agent.html#L362) | 362 | `"  if(data.elapsed_ms!==undefined)lines.push(\"مدة الاختبار: \"+(data.elapsed_ms/1000).toFixed(1)+\" ثانية\");"` | — |
+| [SRC-DE7EABE998-L000363](../../web/agent.html#L363) | 363 | `"  output.textContent=lines.join(\"\\n\");setStatus(data.overall_status===\"passed\"?\"نجح الاختبار الحي\":data.overall_status===\"failed\"?\"فشل الاختبار الحي\":\"نتيجة الاختبار جزئية\",data.overall_status===\"passed\"?\"ok\":data.overall_status===\"failed\"?\"bad\":\"warn\");"` | — |
+| [SRC-DE7EABE998-L000364](../../web/agent.html#L364) | 364 | `" }catch(e){output.textContent=\"تعذّر الاختبار الحي: \"+(e&&e.message?e.message:\"خطأ غير معروف\");setStatus(\"فشل الاختبار الحي\",\"bad\");}"` | — |
+| [SRC-DE7EABE998-L000365](../../web/agent.html#L365) | 365 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
+| [SRC-DE7EABE998-L000366](../../web/agent.html#L366) | 366 | `"}"` | — |
+| [SRC-DE7EABE998-L000367](../../web/agent.html#L367) | 367 | `"async function checkHealth(){"` | — |
+| [SRC-DE7EABE998-L000368](../../web/agent.html#L368) | 368 | `" try{"` | — |
+| [SRC-DE7EABE998-L000369](../../web/agent.html#L369) | 369 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
+| [SRC-DE7EABE998-L000370](../../web/agent.html#L370) | 370 | `"  const configured=[];"` | — |
+| [SRC-DE7EABE998-L000371](../../web/agent.html#L371) | 371 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
+| [SRC-DE7EABE998-L000372](../../web/agent.html#L372) | 372 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |
+| [SRC-DE7EABE998-L000373](../../web/agent.html#L373) | 373 | `"  if(a.reddit_oauth_configured)configured.push(\"Reddit OAuth\");"` | — |
+| [SRC-DE7EABE998-L000374](../../web/agent.html#L374) | 374 | `"  if(a.facebook_pages_api_configured)configured.push(\"Facebook Pages\");"` | — |
+| [SRC-DE7EABE998-L000375](../../web/agent.html#L375) | 375 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |
+| [SRC-DE7EABE998-L000376](../../web/agent.html#L376) | 376 | `"  if(a.x_api_configured)configured.push(\"X API\");"` | — |
+| [SRC-DE7EABE998-L000377](../../web/agent.html#L377) | 377 | `"  if(a.youtube_api_configured)configured.push(\"YouTube API\");"` | — |
+| [SRC-DE7EABE998-L000378](../../web/agent.html#L378) | 378 | `"  const model=!!a.language_model_configured, search=!!a.web_search_ready;"` | — |
+| [SRC-DE7EABE998-L000379](../../web/agent.html#L379) | 379 | `"  $(\"setupStatus\").textContent=(search?\"حزم البحث مثبتة. \":\"حزم البحث تحتاج تثبيتًا. \")+(model?\"مفتاح نموذج اللغة موجود في جلسة الخادم. \":\"النموذج التوليدي غير مضبوط بعد. \")+\"لم يتم تأكيد اتصال الإنترنت من هذه الشاشة وحدها؛ شغّل الاختبار الحي. لا تظهر هنا مفاتيح الخدمات أو قيمها.\";"` | — |
+| [SRC-DE7EABE998-L000380](../../web/agent.html#L380) | 380 | `"  $(\"providerSetup\").innerHTML=configured.length?'<span class=\"config-label\">موصلات مفاتيحها مضبوطة: '+configured.map(escapeHtml).join(\" · \")+'</span>':'<p>لم تُضبط مفاتيح API البحثية الإضافية؛ يظل Omarai قادرًا على تجربة محركات البحث العامة المتاحة.</p>';"` | — |
+| [SRC-DE7EABE998-L000381](../../web/agent.html#L381) | 381 | `"  setStatus(\"الإعداد ظاهر · يلزم اختبار حي\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000382](../../web/agent.html#L382) | 382 | `" }catch(e){setStatus(\"تعذر فحص الإعداد\",\"bad\");$(\"setupStatus\").textContent=\"تعذر الاتصال بخادم Omarai المحلي. تأكد أن الخادم يعمل في Termux.\";}"` | — |
+| [SRC-DE7EABE998-L000383](../../web/agent.html#L383) | 383 | `"}"` | — |
+| [SRC-DE7EABE998-L000384](../../web/agent.html#L384) | 384 | `"document.querySelectorAll(\".mode-btn\").forEach(button=>button.addEventListener(\"click\",()=>{"` | — |
+| [SRC-DE7EABE998-L000385](../../web/agent.html#L385) | 385 | `" activeMode=button.dataset.mode;"` | — |
 | [SRC-DE7EABE998-L000386](../../web/agent.html#L386) | 386 | `" document.querySelectorAll(\".mode-btn\").forEach(other=>{const active=other===button;other.classList.toggle(\"active\",active);other.setAttribute(\"aria-pressed\",String(active));});"` | — |
 | [SRC-DE7EABE998-L000387](../../web/agent.html#L387) | 387 | `"}));"` | — |
 | [SRC-DE7EABE998-L000388](../../web/agent.html#L388) | 388 | `"$(\"send\").addEventListener(\"click\",()=>ask());"` | — |
