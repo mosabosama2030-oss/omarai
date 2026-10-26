@@ -3905,6 +3905,19 @@ class WebAgent:
         plan["mode"] = clean_mode
         plan["intent_route"] = intent_route
         plan["intent_route_reason"] = intent_reason
+        # Normalize planner output before depth/mode expansion so a raw instruction-only
+        # prompt cannot seed synthetic generic queries when the topic is empty.
+        raw_plan_queries = plan.get("queries") or []
+        if not isinstance(raw_plan_queries, list):
+            raw_plan_queries = []
+        normalized_plan_queries = []
+        for raw_query in raw_plan_queries:
+            if not isinstance(raw_query, str) or not raw_query.strip():
+                continue
+            compacted_query = compact_search_query(raw_query)
+            if compacted_query and compacted_query not in normalized_plan_queries:
+                normalized_plan_queries.append(compacted_query)
+        plan["queries"] = normalized_plan_queries[:MAX_PLAN_QUERIES]
         # Preserve the requested mode in diagnostics even when no usable query exists.
         if clean_mode == "deep":
             plan["depth"] = "deep"
@@ -3970,8 +3983,8 @@ class WebAgent:
                         query.strip() for query in plan_queries if isinstance(query, str) and query.strip()
                     ))[:3]
                     plan["depth"] = "standard"
-            base_query = (plan.get("queries") or [question])[0]
-            if clean_mode == "auto" and intent_route == "WEB_DEEP":
+            base_query = (plan.get("queries") or [""])[0]
+            if clean_mode == "auto" and intent_route == "WEB_DEEP" and base_query:
                 deep_candidates = [
                     f"{base_query} official sources evidence",
                     f"{base_query} risks limitations alternatives",
@@ -3993,7 +4006,7 @@ class WebAgent:
                 plan["queries"] = list(dict.fromkeys(
                     (plan.get("queries") or [])[:5] + deep_candidates
                 ))[:MAX_PLAN_QUERIES]
-                base_query = (plan.get("queries") or [question])[0]
+                base_query = (plan.get("queries") or [""])[0]
             # Explicit user-selected modes are control inputs. They do not bypass source
             # validation and never permit private-source access.
             if clean_mode == "deep":
