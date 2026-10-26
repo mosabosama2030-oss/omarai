@@ -2983,7 +2983,10 @@ def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):
     )
 
 
-def test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query(monkeypatch):
+@pytest.mark.parametrize("fallback_queries", [[], None])
+def test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query(
+    monkeypatch, fallback_queries
+):
     agent = WebAgent()
     agent.api_key = "test-key"
     question = (
@@ -3010,7 +3013,7 @@ def test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query(mon
     )
     monkeypatch.setattr(
         "agents.web_agent.fallback_plan",
-        lambda *args, **kwargs: {"queries": []},
+        lambda *args, **kwargs: {"queries": fallback_queries},
     )
 
     def collect(research_plan):
