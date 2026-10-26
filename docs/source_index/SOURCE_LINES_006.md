@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001721 إلى SRC-1AE03B9EC3-L002520
+- النطاق: SRC-1AE03B9EC3-L001720 إلى SRC-1AE03B9EC3-L002519
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001720](../../agents/web_agent.py#L1720) | 1720 | `"                    headers=headers,"` | — |
 | [SRC-1AE03B9EC3-L001721](../../agents/web_agent.py#L1721) | 1721 | `"                    timeout=self._effective_timeout(9.0),"` | — |
 | [SRC-1AE03B9EC3-L001722](../../agents/web_agent.py#L1722) | 1722 | `"                    follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L001723](../../agents/web_agent.py#L1723) | 1723 | `"                )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002517](../../agents/web_agent.py#L2517) | 2517 | `"            max(0, int(row.get(\"rejected_count\", 0) or 0))"` | — |
 | [SRC-1AE03B9EC3-L002518](../../agents/web_agent.py#L2518) | 2518 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
 | [SRC-1AE03B9EC3-L002519](../../agents/web_agent.py#L2519) | 2519 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L002520](../../agents/web_agent.py#L2520) | 2520 | `"        report = {"` | — |

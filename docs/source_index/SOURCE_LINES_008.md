@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003321 إلى SRC-1AE03B9EC3-L004120
+- النطاق: SRC-1AE03B9EC3-L003320 إلى SRC-1AE03B9EC3-L004119
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003320](../../agents/web_agent.py#L3320) | 3320 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003321](../../agents/web_agent.py#L3321) | 3321 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003322](../../agents/web_agent.py#L3322) | 3322 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
 | [SRC-1AE03B9EC3-L003323](../../agents/web_agent.py#L3323) | 3323 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004117](../../agents/web_agent.py#L4117) | 4117 | `"                and report.get(\"search_outcome\") in _RESEARCH_ERROR_OUTCOMES"` | — |
 | [SRC-1AE03B9EC3-L004118](../../agents/web_agent.py#L4118) | 4118 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004119](../../agents/web_agent.py#L4119) | 4119 | `"            report[\"lead_generation\"] = {"` | — |
-| [SRC-1AE03B9EC3-L004120](../../agents/web_agent.py#L4120) | 4120 | `"                \"status\": ("` | — |

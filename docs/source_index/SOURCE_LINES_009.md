@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004121 إلى SRC-1AE03B9EC3-L004920
+- النطاق: SRC-1AE03B9EC3-L004120 إلى SRC-1AE03B9EC3-L004919
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004120](../../agents/web_agent.py#L4120) | 4120 | `"                \"status\": ("` | — |
 | [SRC-1AE03B9EC3-L004121](../../agents/web_agent.py#L4121) | 4121 | `"                    \"research_incomplete\" if lead_research_incomplete"` | — |
 | [SRC-1AE03B9EC3-L004122](../../agents/web_agent.py#L4122) | 4122 | `"                    else \"candidate_signals_found\" if lead_evidence_sources"` | — |
 | [SRC-1AE03B9EC3-L004123](../../agents/web_agent.py#L4123) | 4123 | `"                    else \"no_qualified_candidates_found\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004917](../../agents/web_agent.py#L4917) | 4917 | `"            \"model_assisted_not_independent_fact_check\""` | — |
 | [SRC-1AE03B9EC3-L004918](../../agents/web_agent.py#L4918) | 4918 | `"            if review_status == \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L004919](../../agents/web_agent.py#L4919) | 4919 | `"            else \"not_verified\""` | — |
-| [SRC-1AE03B9EC3-L004920](../../agents/web_agent.py#L4920) | 4920 | `"        )"` | — |
