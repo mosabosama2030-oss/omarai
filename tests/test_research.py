@@ -271,3 +271,54 @@ def test_compact_search_query_preserves_topic_after_distinguish_action():
 
 def test_compact_search_query_discards_standalone_fact_vs_inference_instruction():
     assert compact_search_query("ميّز بين الحقائق والاستنتاجات.") == ""
+
+
+def test_fallback_plan_does_not_invent_query_for_instruction_only_prompt():
+    plan = fallback_plan("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
+    assert plan["queries"] == []
+
+
+def test_collect_research_compacts_queries_before_provider_calls(monkeypatch):
+    from agents.web_agent import WebAgent
+
+    agent = WebAgent()
+    seen = []
+    monkeypatch.setattr(agent, "_search_web", lambda query: seen.append(query) or [])
+    sources, _warnings, report = agent._collect_research({
+        "queries": [
+            "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+        ],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+    })
+
+    assert sources == []
+    assert seen == ["ما عاصمة مصر؟"]
+    assert report["queries_planned"] == 1
+    assert report["queries_attempted"] == 1
+
+
+def test_collect_research_skips_provider_calls_without_topic_or_direct_url(monkeypatch):
+    from agents.web_agent import WebAgent
+
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent, "_search_web",
+        lambda query: pytest.fail(f"search provider should not receive {query!r}"),
+    )
+    sources, warnings, report = agent._collect_research({
+        "queries": ["اذكر مصادر موثوقة، روابط مباشرة، باختصار"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+    })
+
+    assert sources == []
+    assert report["queries_planned"] == 0
+    assert report["queries_attempted"] == 0
+    assert any("لم تُستدعَ محركات البحث" in warning for warning in warnings)
