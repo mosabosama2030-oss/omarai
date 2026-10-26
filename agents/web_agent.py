@@ -3915,7 +3915,11 @@ class WebAgent:
             if not isinstance(raw_query, str) or not raw_query.strip():
                 continue
             compacted_query = compact_search_query(raw_query)
-            if compacted_query and compacted_query not in normalized_plan_queries:
+            if (
+                compacted_query
+                and _relevance_query_tokens(compacted_query)
+                and compacted_query not in normalized_plan_queries
+            ):
                 normalized_plan_queries.append(compacted_query)
         plan["queries"] = normalized_plan_queries[:MAX_PLAN_QUERIES]
         # Preserve the requested mode in diagnostics even when no usable query exists.
