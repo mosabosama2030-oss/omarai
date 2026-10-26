@@ -397,7 +397,7 @@
 | [SRC-1AE03B9EC3-L001374](../../agents/web_agent.py#L1374) | 1374 | `"                    error = \"connector returned no parseable results\""` | — |
 | [SRC-1AE03B9EC3-L001375](../../agents/web_agent.py#L1375) | 1375 | `"                self._record_provider_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L001376](../../agents/web_agent.py#L1376) | 1376 | `"                    name, search_query, status, len(raw), rejected, error,"` | — |
-| [SRC-1AE03B9EC3-L001377](../../agents/web_agent.py#L1377) | 1377 | `"                    accepted_count=len(accepted), rejection_counts=rejection_counts,"` | — |
+| [SRC-1AE03B9EC3-L001377](../../agents/web_agent.py#L1377) | 1377 | `"                    accepted_count=len(accepted), rejection_counts=rejection_counts if raw else None,"` | — |
 | [SRC-1AE03B9EC3-L001378](../../agents/web_agent.py#L1378) | 1378 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L001379](../../agents/web_agent.py#L1379) | 1379 | `"                return accepted"` | — |
 | [SRC-1AE03B9EC3-L001380](../../agents/web_agent.py#L1380) | 1380 | `"            except RequestBudgetExceeded as exc:"` | — |
