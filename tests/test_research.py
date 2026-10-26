@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from agents.research import (
+    compact_search_query,
     evidence_signal_report,
     fallback_plan,
     fuse_ranked_results,
@@ -143,3 +144,44 @@ def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():
     ]
     plan = fallback_plan("فين؟", history)
     assert "آيفون 16" not in plan["queries"][0]
+
+def test_fallback_plan_compacts_arabic_questions_before_expansion():
+    capital = fallback_plan(
+        "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+    )
+    assert "عاصمة" in capital["queries"][0]
+    assert "مصر" in capital["queries"][0]
+    assert "اذكر مصدرًا" not in capital["queries"][0]
+    assert "بإيجاز" not in capital["queries"][0]
+    assert len(capital["queries"][0]) <= 240
+
+    ev = fallback_plan(
+        "حلّل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين "
+        "التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميّز بين "
+        "الحقائق والاستنتاجات، واذكر روابط المصادر."
+    )
+    assert "السيارات الكهربائية" in ev["queries"][0]
+    assert "الشحن" in ev["queries"][0]
+    assert "استخدم مصادر متعددة" not in ev["queries"][0]
+    assert all(len(query) <= 240 for query in ev["queries"])
+
+
+def test_compact_search_query_preserves_site_operator_and_social_sentiment():
+    question = (
+        "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. "
+        "اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. "
+        "وضّح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا."
+    )
+    query = compact_search_query(question)
+    assert "السيارات الكهربائية" in query
+    assert "مصر" in query
+    assert "الإيجابية والسلبية" in query
+    assert "وضّح إذا" not in query
+    assert len(query) <= 240
+
+    social_query = compact_search_query(
+        'site:reddit.com "electric car reviews Egypt" cite the original posts'
+    )
+    assert social_query.startswith("site:reddit.com")
+    assert "electric car reviews Egypt" in social_query
+    assert len(social_query) <= 240
