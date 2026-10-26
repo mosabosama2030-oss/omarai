@@ -4,9 +4,45 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C4C6C55E1A-L000053 إلى SRC-E599346ABE-L000181
+- النطاق: SRC-792A9A235D-L000103 إلى SRC-E599346ABE-L000102
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-792A9A235D-L000103](../ANSWER_QUALITY_BENCHMARK_AR.md#L103) | 103 | ``"\| AQ-021 / AQ-035 \| `false_corroboration` \| نسخ متطابقة كتحقق مستقل \|"`` | — |
+| [SRC-792A9A235D-L000104](../ANSWER_QUALITY_BENCHMARK_AR.md#L104) | 104 | `""` | — |
+| [SRC-792A9A235D-L000105](../ANSWER_QUALITY_BENCHMARK_AR.md#L105) | 105 | `"يتحقق الاختبار الآلي من تطابق هذه الأمثلة مع فئات JSON."` | — |
+| [SRC-792A9A235D-L000106](../ANSWER_QUALITY_BENCHMARK_AR.md#L106) | 106 | `""` | — |
+| [SRC-792A9A235D-L000107](../ANSWER_QUALITY_BENCHMARK_AR.md#L107) | 107 | `"## مقارنة نسختين من عمرai (قبل/بعد)"` | — |
+| [SRC-792A9A235D-L000108](../ANSWER_QUALITY_BENCHMARK_AR.md#L108) | 108 | `""` | — |
+| [SRC-792A9A235D-L000109](../ANSWER_QUALITY_BENCHMARK_AR.md#L109) | 109 | ``"1. نفس `case_id` ونفس السؤال."`` | — |
+| [SRC-792A9A235D-L000110](../ANSWER_QUALITY_BENCHMARK_AR.md#L110) | 110 | `"2. سجّل commit SHA لكل نسخة."` | — |
+| [SRC-792A9A235D-L000111](../ANSWER_QUALITY_BENCHMARK_AR.md#L111) | 111 | `"3. ميّز: تحقق بنيوي ≠ مراجعة fixture ≠ تشغيل حي."` | — |
+| [SRC-792A9A235D-L000112](../ANSWER_QUALITY_BENCHMARK_AR.md#L112) | 112 | `"4. لا تحتسب طول الإجابة تحسنًا."` | — |
+| [SRC-792A9A235D-L000113](../ANSWER_QUALITY_BENCHMARK_AR.md#L113) | 113 | `"5. لا تنشر نسبة مئوية دون جدول نتائج قابل للمقارنة."` | — |
+| [SRC-792A9A235D-L000114](../ANSWER_QUALITY_BENCHMARK_AR.md#L114) | 114 | `""` | — |
+| [SRC-792A9A235D-L000115](../ANSWER_QUALITY_BENCHMARK_AR.md#L115) | 115 | ``"`evidence_fixture` **ليس** حقنًا تلقائيًا في طلب حي. إن تعذّر إعادة الشرط سجّل `NOT_TESTED`."`` | — |
+| [SRC-792A9A235D-L000116](../ANSWER_QUALITY_BENCHMARK_AR.md#L116) | 116 | `""` | — |
+| [SRC-792A9A235D-L000117](../ANSWER_QUALITY_BENCHMARK_AR.md#L117) | 117 | `"## نقاط عمياء معروفة"` | — |
+| [SRC-792A9A235D-L000118](../ANSWER_QUALITY_BENCHMARK_AR.md#L118) | 118 | `""` | — |
+| [SRC-792A9A235D-L000119](../ANSWER_QUALITY_BENCHMARK_AR.md#L119) | 119 | `"- لا يستبدل اختبارات SSRF/الأدلة الحالية."` | — |
+| [SRC-792A9A235D-L000120](../ANSWER_QUALITY_BENCHMARK_AR.md#L120) | 120 | `"- التشغيل الحي غير حتمي (ويب/نماذج مجانية)."` | — |
+| [SRC-792A9A235D-L000121](../ANSWER_QUALITY_BENCHMARK_AR.md#L121) | 121 | ``"- مسارات `clarify` قد تحتاج حكمًا بشريًا."`` | — |
+| [SRC-792A9A235D-L000122](../ANSWER_QUALITY_BENCHMARK_AR.md#L122) | 122 | `"- لا يغطي هجمات سلاسل أدوات خارج عمرai."` | — |
+| [SRC-792A9A235D-L000123](../ANSWER_QUALITY_BENCHMARK_AR.md#L123) | 123 | `""` | — |
+| [SRC-792A9A235D-L000124](../ANSWER_QUALITY_BENCHMARK_AR.md#L124) | 124 | `"## إضافة حالات لاحقًا"` | — |
+| [SRC-792A9A235D-L000125](../ANSWER_QUALITY_BENCHMARK_AR.md#L125) | 125 | `""` | — |
+| [SRC-792A9A235D-L000126](../ANSWER_QUALITY_BENCHMARK_AR.md#L126) | 126 | ``"1. أضف كائنًا بالحقول الإلزامية و`case_id` فريد."`` | — |
+| [SRC-792A9A235D-L000127](../ANSWER_QUALITY_BENCHMARK_AR.md#L127) | 127 | ``"2. حدّث `case_count`."`` | — |
+| [SRC-792A9A235D-L000128](../ANSWER_QUALITY_BENCHMARK_AR.md#L128) | 128 | `"3. شغّل pytest للذخيرة والأداة."` | — |
+| [SRC-792A9A235D-L000129](../ANSWER_QUALITY_BENCHMARK_AR.md#L129) | 129 | `"4. لا تُدرج نتائج PASS/FAIL داخل JSON."` | — |
 ## وثائق وفهرسة
 
 ### FILE-C4C6C55E1A — [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1)
@@ -16,6 +52,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C4C6C55E1A-L000001](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | 1 | `"> **سجل تاريخي مؤرشف:** يحتوي هذا الملف على نتائج مرتبطة بنسخ أقدم وتواريخها. لا تعتمد عبارات حالة PR أو baseline في الأقسام التاريخية كحالة حية. استخدم [نطاق التنفيذ الحالي](../IMPLEMENTATION_SCOPE.md)، و[سجل المعالجة المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md)، و[تقرير ما بعد الدمج](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md) للحالة الحالية."` | — |
+| [SRC-C4C6C55E1A-L000002](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L2) | 2 | `""` | — |
+| [SRC-C4C6C55E1A-L000003](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L3) | 3 | `"# Omarai — تسوية الأدلة بعد دمج الإصلاحات الأولية"` | — |
+| [SRC-C4C6C55E1A-L000004](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L4) | 4 | `""` | — |
+| [SRC-C4C6C55E1A-L000005](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L5) | 5 | ``"> **تحديث الحالة الحالية — 23 أكتوبر 2026:** دُمج PR #76 في `main` عند `528a2552c0cda809d6c444713466e0e075c13ed9`. [CI #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) نجح: 384 اختبارًا لكل من Python 3.11 و3.12، مع Ruff وفحص الفهرس وبناء Docker وprotected API smoke. مقارنة GitHub بين رأس PR المختبَر `3fb02880aec9ec231d973e0b3668308d1379ee89` وcommit الدمج `528a2552c0cda809d6c444713466e0e075c13ed9` أعادت `ahead_by=1` و`behind_by=0` بلا أي ملف مختلف؛ شجرة الملفات مطابقة. هذا يدعم أن نتائج CI تغطي محتوى الكود المدمج، لكنه لا ينشئ تشغيلًا مستقلًا مرتبطًا بحدث push على SHA الدمج. لذلك تبقى حالة تشغيل CI مستقل على SHA الدمج `NOT_CONFIRMED`، لا `FAIL`."`` | — |
+| [SRC-C4C6C55E1A-L000006](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L6) | 6 | `">"` | — |
+| [SRC-C4C6C55E1A-L000007](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L7) | 7 | `"> **تحديث حالات PR التاريخية:** #54 و#55 و#58 و#59 أصبحت مدمجة لاحقًا؛ #50 و#51 و#56 أُغلقت دون دمج. البنود التالية تحافظ على نتيجة CI على كل رأس تاريخي، ولا تعني أن الحالة القديمة ما زالت مفتوحة. لا يثبت أي من ذلك استعادة البيانات على مضيف حي أو توافر مزود حي."` | — |
+| [SRC-C4C6C55E1A-L000008](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L8) | 8 | `""` | — |
+| [SRC-C4C6C55E1A-L000009](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L9) | 9 | `""` | — |
+| [SRC-C4C6C55E1A-L000010](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L10) | 10 | `"**المعرّف:** OMARAI-OPS-EVIDENCE-RECON-2026-10-19  "` | — |
+| [SRC-C4C6C55E1A-L000011](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L11) | 11 | `"**تاريخ اللقطة:** 2026-10-19  "` | — |
+| [SRC-C4C6C55E1A-L000012](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L12) | 12 | ``"**نسخة `main` عند الفحص:** `871d2930405d164d3ae4c53f368937a4f5f01a6f`  "`` | — |
+| [SRC-C4C6C55E1A-L000013](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L13) | 13 | ``"**الغرض:** تسوية نتائج تدقيق P0 التاريخي مع التغييرات اللاحقة حتى دمج PR #48، مع فصل فحوص الفروع المفتوحة عن أدلة `main`. هذه الوثيقة ليست شهادة امتثال أو ضمانًا بأن الخدمة المنشورة تعمل."`` | — |
+| [SRC-C4C6C55E1A-L000014](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L14) | 14 | `""` | — |
+| [SRC-C4C6C55E1A-L000015](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L15) | 15 | `"## ملحق زمني: خط الأساس الحالي بعد #75 — 21 أكتوبر 2026"` | — |
+| [SRC-C4C6C55E1A-L000016](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L16) | 16 | `""` | — |
+| [SRC-C4C6C55E1A-L000017](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L17) | 17 | ``"هذا المستند بدأ كسجل تاريخي لنسخة `871d2930405d164d3ae4c53f368937a4f5f01a6f` بتاريخ 19 أكتوبر؛ لا تُحوّل أدلته القديمة إلى دليل على النسخة الحالية."`` | — |
+| [SRC-C4C6C55E1A-L000018](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L18) | 18 | `""` | — |
+| [SRC-C4C6C55E1A-L000019](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L19) | 19 | ``"في اللقطة التاريخية بعد #75 وقبل دمج #76، كان خط أساس `main` هو `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. اجتاز تشغيل [CI #39584599539](https://github.com/mosabosama2030-oss/omarai/actions/runs/39584599539) عدد 308 اختبارًا على Python 3.11 و308 على Python 3.12، وRuff، والتحقق من الفهرس، وبناء الحاوية وفحص API المحمية. يثبت ذلك نطاق هذه الفحوص على تلك النسخة فقط، ولا يصف خط الأساس الحالي."`` | — |
+| [SRC-C4C6C55E1A-L000020](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L20) | 20 | `""` | — |
+| [SRC-C4C6C55E1A-L000021](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L21) | 21 | ``"لا تزال عناصر `NOT_RUN/UNKNOWN` التالية مفتوحة حتى يتوفر دليل مباشر: قبول حي لعنوان استضافة يملكه المشروع، مطابقة SHA الصورة المنشورة، نجاح البحث والنموذج من الاستضافة، دوام قاعدة البيانات والاستعادة، اختبار يدوي بالمتصفح، حمل ممثل، ومراجعة أمنية مستقلة نهائية. في لقطة 21 أكتوبر كان فرع الإغلاق منفصلًا. **تحديث لاحق:** دُمج PR #76 في `main` عند `528a2552c0cda809d6c444713466e0e075c13ed9`. لا تزال بوابات التشغيل الحي منفصلة."`` | — |
+| [SRC-C4C6C55E1A-L000022](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L22) | 22 | `""` | — |
+| [SRC-C4C6C55E1A-L000023](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L23) | 23 | `"## 1. دلالات الحالة"` | — |
+| [SRC-C4C6C55E1A-L000024](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L24) | 24 | `""` | — |
+| [SRC-C4C6C55E1A-L000025](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L25) | 25 | `"- **VERIFIED:** دليل مباشر محدد النطاق، مرتبط بنسخة/اختبار واضح."` | — |
+| [SRC-C4C6C55E1A-L000026](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L26) | 26 | `"- **INFERRED:** قرائن من الكود أو الوثائق دون إثبات كامل في بيئة التشغيل."` | — |
+| [SRC-C4C6C55E1A-L000027](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L27) | 27 | `"- **PARTIAL:** جزء من المتطلب مثبت، لكن بقيت فجوة مؤثرة."` | — |
+| [SRC-C4C6C55E1A-L000028](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L28) | 28 | `"- **UNKNOWN:** لا تكفي الأدلة للحكم."` | — |
+| [SRC-C4C6C55E1A-L000029](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L29) | 29 | `"- **NOT_RUN:** اختبار معروف لم يتم تشغيله في هذه الجولة."` | — |
+| [SRC-C4C6C55E1A-L000030](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L30) | 30 | `"- **PROPOSED:** قرار أو إجراء مقترح لم يعتمد بعد."` | — |
+| [SRC-C4C6C55E1A-L000031](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L31) | 31 | `"- **NOT APPLICABLE:** لا ينطبق على النطاق الحالي مع سبب واضح؛ لا يستعمل لإخفاء نقص الإثبات."` | — |
+| [SRC-C4C6C55E1A-L000032](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L32) | 32 | `"- **WAIVED:** استثناء صريح وافق عليه صاحب الصلاحية، مع نطاق وتعويض وشرط انتهاء/مراجعة."` | — |
+| [SRC-C4C6C55E1A-L000033](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L33) | 33 | `""` | — |
+| [SRC-C4C6C55E1A-L000034](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) | 34 | `"كل حالة تنطبق على الضابط المحدد والنطاق المذكور فقط، لا على المشروع كله."` | — |
+| [SRC-C4C6C55E1A-L000035](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L35) | 35 | `""` | — |
+| [SRC-C4C6C55E1A-L000036](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L36) | 36 | `"## 2. خط الأساس وسلسلة الأدلة"` | — |
+| [SRC-C4C6C55E1A-L000037](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L37) | 37 | `""` | — |
+| [SRC-C4C6C55E1A-L000038](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L38) | 38 | `"### نسخة المصدر"` | — |
+| [SRC-C4C6C55E1A-L000039](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L39) | 39 | `""` | — |
+| [SRC-C4C6C55E1A-L000040](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L40) | 40 | ``"نسخة `main` التي تمت مراجعتها في هذه الجولة: `871d2930405d164d3ae4c53f368937a4f5f01a6f`."`` | — |
+| [SRC-C4C6C55E1A-L000041](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) | 41 | `""` | — |
+| [SRC-C4C6C55E1A-L000042](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L42) | 42 | `"### تغييرات مدمجة ذات صلة"` | — |
+| [SRC-C4C6C55E1A-L000043](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L43) | 43 | `""` | — |
+| [SRC-C4C6C55E1A-L000044](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L44) | 44 | `"\| التغيير \| ما يثبته ضمن النطاق \| ما لا يثبته \|"` | — |
+| [SRC-C4C6C55E1A-L000045](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L45) | 45 | `"\|---\|---\|---\|"` | — |
+| [SRC-C4C6C55E1A-L000046](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L46) | 46 | `"\| [PR #44](https://github.com/mosabosama2030-oss/omarai/pull/44) \| ميزانية موارد تعاونية للطلب وحد process-local للعمليات المكلفة. \| إلغاء قاطع لكل اتصال جارٍ، أو حد موزع بين النسخ، أو سعة إنتاجية. \|"` | — |
+| [SRC-C4C6C55E1A-L000047](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L47) | 47 | `"\| [PR #45](https://github.com/mosabosama2030-oss/omarai/pull/45) \| تصحيح وصف التنفيذ وحدوده. \| عمل مزود حي أو نشر فعلي. \|"` | — |
+| [SRC-C4C6C55E1A-L000048](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L48) | 48 | `"\| [PR #46](https://github.com/mosabosama2030-oss/omarai/pull/46) \| تسوية توثيق ما بعد الدمج. \| تحقق جديد من جميع المخاطر الأمنية. \|"` | — |
+| [SRC-C4C6C55E1A-L000049](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L49) | 49 | `"\| [PR #47](https://github.com/mosabosama2030-oss/omarai/pull/47) \| خفض تقييم بعض الإجابات التي لا تحتوي استشهادات صالحة. \| تحقق دلالي حتمي من أن كل ادعاء مدعوم بمصدره. \|"` | — |
+| [SRC-C4C6C55E1A-L000050](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L50) | 50 | `"\| [PR #48](https://github.com/mosabosama2030-oss/omarai/pull/48) \| دمج حد زمني مطلق وخمول لقراءة جسم طلب API مع اختبارات stalled/slow-trickle والتحقق من طول الجسم. \| لا يثبت مهلة قراءة الرؤوس البطيئة، أو حماية شاملة من كل أنماط Slowloris، أو حدًا قاطعًا لمدة تنفيذ الوكيل كاملة. \|"` | — |
+| [SRC-C4C6C55E1A-L000051](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L51) | 51 | `""` | — |
+| [SRC-C4C6C55E1A-L000052](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L52) | 52 | `"### تغييرات وفحوص مفتوحة أو بديلة"` | — |
 | [SRC-C4C6C55E1A-L000053](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L53) | 53 | `""` | — |
 | [SRC-C4C6C55E1A-L000054](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L54) | 54 | ``"- **PR #49:** أُغلق دون دمج لتجنب تكرار الاختبارات. انتقل المسار أولًا إلى #52 ثم إلى PR #56 المبني على `main` الحالي بعد أن أصبح فرع #52 غير قابل للدمج بسبب انجراف الفرع. لا أثر لـPR #49 أو #52 على `main`."`` | — |
 | [SRC-C4C6C55E1A-L000055](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L55) | 55 | ``"- **PR #50:** أُغلق دون دمج لأنه اعتمد على لقطة أقدم من `main`. اختُبرت النسخة الحالية من أداة SQLite في PR #58 المبني على `main` الحالي، ونجح CI [39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) على HEAD `59027f44388730d34c7bd7164450abdba2f9fd0a`: Ruff، و244 اختبارًا على Python 3.11 و244 على Python 3.12، وبناء الحاوية وفحص API المحمية. **حالة لاحقة:** دُمج PR #58 في `main` عند `58dec8f7f1ef4166ce1c02d56ad2a1f861ae3aa5`. تشغيل CI المذكور دليل تاريخي على رأسه فقط، ولا يثبت الاستعادة على مضيف فعلي."`` | — |
@@ -791,82 +879,3 @@
 | [SRC-E599346ABE-L000100](../generate_index.py#L100) | 100 | `"    rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\s*=\\s*(?:async\\s*)?function\\b\""` | — |
 | [SRC-E599346ABE-L000101](../generate_index.py#L101) | 101 | `")"` | — |
 | [SRC-E599346ABE-L000102](../generate_index.py#L102) | 102 | `"JS_VARIABLE_RE = re.compile(rf\"\\b(?:const\|let\|var)\\s+({JS_IDENTIFIER})\\b\")"` | — |
-| [SRC-E599346ABE-L000103](../generate_index.py#L103) | 103 | `"HTML_ATTRIBUTE_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000104](../generate_index.py#L104) | 104 | `"    r\"\"\"\\b(id\|name\|data-testid)\\s*=\\s*([\"'])(.*?)\\2\"\"\","` | — |
-| [SRC-E599346ABE-L000105](../generate_index.py#L105) | 105 | `"    flags=re.IGNORECASE \| re.DOTALL,"` | — |
-| [SRC-E599346ABE-L000106](../generate_index.py#L106) | 106 | `")"` | — |
-| [SRC-E599346ABE-L000107](../generate_index.py#L107) | 107 | `"HTML_SCRIPT_RE = re.compile(r\"<script\\b[^>]*>(.*?)</script\\s*>\", re.IGNORECASE \| re.DOTALL)"` | — |
-| [SRC-E599346ABE-L000108](../generate_index.py#L108) | 108 | `"HTML_STYLE_RE = re.compile(r\"<style\\b[^>]*>(.*?)</style\\s*>\", re.IGNORECASE \| re.DOTALL)"` | — |
-| [SRC-E599346ABE-L000109](../generate_index.py#L109) | 109 | `"CSS_COMMENT_RE = re.compile(r\"/\\*.*?\\*/\", re.DOTALL)"` | — |
-| [SRC-E599346ABE-L000110](../generate_index.py#L110) | 110 | `"CSS_CUSTOM_PROPERTY_RE = re.compile(r\"--([A-Za-z_][A-Za-z0-9_-]*)\\s*:\")"` | — |
-| [SRC-E599346ABE-L000111](../generate_index.py#L111) | 111 | `"CSS_CLASS_RE = re.compile(r\"(?<![\\w.-])\\.([A-Za-z_][A-Za-z0-9_-]*)\")"` | — |
-| [SRC-E599346ABE-L000112](../generate_index.py#L112) | 112 | `"CSS_ID_RE = re.compile(r\"(?<![\\w.#])#([A-Za-z_][A-Za-z0-9_-]*)\")"` | — |
-| [SRC-E599346ABE-L000113](../generate_index.py#L113) | 113 | `"SHELL_FUNCTION_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000114](../generate_index.py#L114) | 114 | `"    r\"^\\s*(?:function\\s+)?([A-Za-z_][A-Za-z0-9_]*)\\s*\\(\\s*\\)\\s*\\{?\","` | — |
-| [SRC-E599346ABE-L000115](../generate_index.py#L115) | 115 | `"    re.MULTILINE,"` | — |
-| [SRC-E599346ABE-L000116](../generate_index.py#L116) | 116 | `")"` | — |
-| [SRC-E599346ABE-L000117](../generate_index.py#L117) | 117 | `"MARKDOWN_HEADING_RE = re.compile(r\"^\\s{0,3}(#{1,6})\\s+(.+?)\\s*#*\\s*$\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000118](../generate_index.py#L118) | 118 | `"YAML_KEY_RE = re.compile(r\"^\\s*([A-Za-z_][A-Za-z0-9_.-]*)\\s*:\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000119](../generate_index.py#L119) | 119 | `"TOML_KEY_RE = re.compile(r\"^\\s*([A-Za-z0-9_.-]+)\\s*=\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000120](../generate_index.py#L120) | 120 | `"TOML_SECTION_RE = re.compile(r\"^\\s*\\[([^\\]]+)\\]\\s*$\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000121](../generate_index.py#L121) | 121 | `"JSON_KEY_RE = re.compile(r'\"([^\"]+)\"\\s*:')"` | — |
-| [SRC-E599346ABE-L000122](../generate_index.py#L122) | 122 | `"INI_SECTION_RE = re.compile(r\"^\\s*\\[([^\\]]+)\\]\\s*$\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000123](../generate_index.py#L123) | 123 | `"INI_KEY_RE = re.compile(r\"^\\s*([A-Za-z0-9_.-]+)\\s*=\", re.MULTILINE)"` | — |
-| [SRC-E599346ABE-L000124](../generate_index.py#L124) | 124 | `"UPPER_SNAKE_RE = re.compile(r\"\\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\\b\")"` | — |
-| [SRC-E599346ABE-L000125](../generate_index.py#L125) | 125 | `"API_PATH_RE = re.compile(r\"\"\"[\"'](/(?:api\|leads)(?:/[A-Za-z0-9_{}./-]+)*)[\"']\"\"\")"` | — |
-| [SRC-E599346ABE-L000126](../generate_index.py#L126) | 126 | `"FINDING_MARKER_NAMES = ("` | — |
-| [SRC-E599346ABE-L000127](../generate_index.py#L127) | 127 | `"    \"TODO\","` | — |
-| [SRC-E599346ABE-L000128](../generate_index.py#L128) | 128 | `"    \"FIXME\","` | — |
-| [SRC-E599346ABE-L000129](../generate_index.py#L129) | 129 | `"    \"BUG\","` | — |
-| [SRC-E599346ABE-L000130](../generate_index.py#L130) | 130 | `"    \"HACK\","` | — |
-| [SRC-E599346ABE-L000131](../generate_index.py#L131) | 131 | `"    \"XXX\","` | — |
-| [SRC-E599346ABE-L000132](../generate_index.py#L132) | 132 | `"    \"REVIEW\","` | — |
-| [SRC-E599346ABE-L000133](../generate_index.py#L133) | 133 | `"    \"SECURITY\","` | — |
-| [SRC-E599346ABE-L000134](../generate_index.py#L134) | 134 | `"    \"DEPRECATED\","` | — |
-| [SRC-E599346ABE-L000135](../generate_index.py#L135) | 135 | `"    \"ISSUE\","` | — |
-| [SRC-E599346ABE-L000136](../generate_index.py#L136) | 136 | `"    \"DEFECT\","` | — |
-| [SRC-E599346ABE-L000137](../generate_index.py#L137) | 137 | `"    \"REGRESSION\","` | — |
-| [SRC-E599346ABE-L000138](../generate_index.py#L138) | 138 | `"    \"RISK\","` | — |
-| [SRC-E599346ABE-L000139](../generate_index.py#L139) | 139 | `"    \"GAP\","` | — |
-| [SRC-E599346ABE-L000140](../generate_index.py#L140) | 140 | `"    \"ERROR\","` | — |
-| [SRC-E599346ABE-L000141](../generate_index.py#L141) | 141 | `"    \"WARNING\","` | — |
-| [SRC-E599346ABE-L000142](../generate_index.py#L142) | 142 | `"    \"PERF\","` | — |
-| [SRC-E599346ABE-L000143](../generate_index.py#L143) | 143 | `"    \"PRIVACY\","` | — |
-| [SRC-E599346ABE-L000144](../generate_index.py#L144) | 144 | `"    \"DATA_LOSS\","` | — |
-| [SRC-E599346ABE-L000145](../generate_index.py#L145) | 145 | `"    \"ACCESSIBILITY\","` | — |
-| [SRC-E599346ABE-L000146](../generate_index.py#L146) | 146 | `")"` | — |
-| [SRC-E599346ABE-L000147](../generate_index.py#L147) | 147 | `"_FINDING_MARKER_ALTERNATION = \"\|\".join("` | — |
-| [SRC-E599346ABE-L000148](../generate_index.py#L148) | 148 | `"    sorted(FINDING_MARKER_NAMES, key=len, reverse=True)"` | — |
-| [SRC-E599346ABE-L000149](../generate_index.py#L149) | 149 | `")"` | — |
-| [SRC-E599346ABE-L000150](../generate_index.py#L150) | 150 | `"FINDING_MARKER_RE = re.compile("` | — |
-| [SRC-E599346ABE-L000151](../generate_index.py#L151) | 151 | `"    rf\"(?:^\|[;\|]\\s*)\\s*({_FINDING_MARKER_ALTERNATION})\\s*:\\s*(.*?)\""` | — |
-| [SRC-E599346ABE-L000152](../generate_index.py#L152) | 152 | `"    rf\"(?=(?:[;\|]\\s*)(?:{_FINDING_MARKER_ALTERNATION})\\s*:\|$)\""` | — |
-| [SRC-E599346ABE-L000153](../generate_index.py#L153) | 153 | `")"` | — |
-| [SRC-E599346ABE-L000154](../generate_index.py#L154) | 154 | `""` | — |
-| [SRC-E599346ABE-L000155](../generate_index.py#L155) | 155 | `""` | — |
-| [SRC-E599346ABE-L000156](../generate_index.py#L156) | 156 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000157](../generate_index.py#L157) | 157 | `"class IndexedSymbol:"` | — |
-| [SRC-E599346ABE-L000158](../generate_index.py#L158) | 158 | `"    \"\"\"Represent a Python definition or module/class assignment.\"\"\""` | — |
-| [SRC-E599346ABE-L000159](../generate_index.py#L159) | 159 | `""` | — |
-| [SRC-E599346ABE-L000160](../generate_index.py#L160) | 160 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000161](../generate_index.py#L161) | 161 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000162](../generate_index.py#L162) | 162 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000163](../generate_index.py#L163) | 163 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000164](../generate_index.py#L164) | 164 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000165](../generate_index.py#L165) | 165 | `"    documented: bool \| None"` | — |
-| [SRC-E599346ABE-L000166](../generate_index.py#L166) | 166 | `""` | — |
-| [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `""` | — |
-| [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000169](../generate_index.py#L169) | 169 | `"class IndexedFile:"` | — |
-| [SRC-E599346ABE-L000170](../generate_index.py#L170) | 170 | `"    \"\"\"Represent a repository file with stable identifiers and navigation metadata.\"\"\""` | — |
-| [SRC-E599346ABE-L000171](../generate_index.py#L171) | 171 | `""` | — |
-| [SRC-E599346ABE-L000172](../generate_index.py#L172) | 172 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000173](../generate_index.py#L173) | 173 | `"    file_type: str"` | — |
-| [SRC-E599346ABE-L000174](../generate_index.py#L174) | 174 | `"    size_bytes: int"` | — |
-| [SRC-E599346ABE-L000175](../generate_index.py#L175) | 175 | `"    line_count: int \| None"` | — |
-| [SRC-E599346ABE-L000176](../generate_index.py#L176) | 176 | `"    indexing_scope: str"` | — |
-| [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
-| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
-| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
