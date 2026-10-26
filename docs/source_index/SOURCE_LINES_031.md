@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000556 إلى SRC-F725E90B2A-L001355
+- النطاق: SRC-F725E90B2A-L000543 إلى SRC-F725E90B2A-L001342
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `""` | — |
+| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"        calls.append((\"GET\", url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `"        return FakeResponse({\"data\": {\"children\": [{"` | — |
+| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"            \"data\": {"` | — |
+| [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `"                \"title\": \"Electric vehicle owner discussion\","` | — |
+| [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"                \"permalink\": \"/r/cars/comments/example/post/\","` | — |
+| [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"                \"selftext\": \"Owners discuss battery range.\","` | — |
+| [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `"                \"created_utc\": 1791800000,"` | — |
+| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"                \"score\": 25,"` | — |
+| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `"                \"num_comments\": 8,"` | — |
+| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `"            }"` | — |
+| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"        }]}})"` | — |
 | [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `""` | — |
 | [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |
 | [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"    assert injected_text not in system_content"` | — |
 | [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `""` | — |
-| [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `""` | — |
-| [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001346](../../tests/test_web_agent.py#L1346) | 1346 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L001347](../../tests/test_web_agent.py#L1347) | 1347 | `"    captured = {}"` | — |
-| [SRC-F725E90B2A-L001348](../../tests/test_web_agent.py#L1348) | 1348 | `""` | — |
-| [SRC-F725E90B2A-L001349](../../tests/test_web_agent.py#L1349) | 1349 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-F725E90B2A-L001350](../../tests/test_web_agent.py#L1350) | 1350 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-F725E90B2A-L001351](../../tests/test_web_agent.py#L1351) | 1351 | `"        captured[\"kwargs\"] = kwargs"` | — |
-| [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
-| [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `""` | — |
-| [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"    monkeypatch.setattr("` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000136 إلى SRC-90FAA34ADE-L000149
+- النطاق: SRC-A8360B1B03-L000123 إلى SRC-90FAA34ADE-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000123](../../scripts/hosted_smoke_test.py#L123) | 123 | `"        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:"` | — |
+| [SRC-A8360B1B03-L000124](../../scripts/hosted_smoke_test.py#L124) | 124 | `"            raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000125](../../scripts/hosted_smoke_test.py#L125) | 125 | `"                \"The deployed service SHA does not match the expected Git commit. \""` | — |
+| [SRC-A8360B1B03-L000126](../../scripts/hosted_smoke_test.py#L126) | 126 | `"                \"Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, \""` | — |
+| [SRC-A8360B1B03-L000127](../../scripts/hosted_smoke_test.py#L127) | 127 | `"                \"then rebuild and redeploy.\""` | — |
+| [SRC-A8360B1B03-L000128](../../scripts/hosted_smoke_test.py#L128) | 128 | `"            )"` | — |
+| [SRC-A8360B1B03-L000129](../../scripts/hosted_smoke_test.py#L129) | 129 | `"        checks[\"build_identity\"] = {"` | — |
+| [SRC-A8360B1B03-L000130](../../scripts/hosted_smoke_test.py#L130) | 130 | `"            \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000131](../../scripts/hosted_smoke_test.py#L131) | 131 | `"            \"expected_sha\": expected,"` | — |
+| [SRC-A8360B1B03-L000132](../../scripts/hosted_smoke_test.py#L132) | 132 | `"            \"reported_sha\": reported_sha.lower(),"` | — |
+| [SRC-A8360B1B03-L000133](../../scripts/hosted_smoke_test.py#L133) | 133 | `"        }"` | — |
+| [SRC-A8360B1B03-L000134](../../scripts/hosted_smoke_test.py#L134) | 134 | `"    else:"` | — |
+| [SRC-A8360B1B03-L000135](../../scripts/hosted_smoke_test.py#L135) | 135 | `"        checks[\"build_identity\"] = {"` | — |
 | [SRC-A8360B1B03-L000136](../../scripts/hosted_smoke_test.py#L136) | 136 | `"            \"status\": \"not_checked\","` | — |
 | [SRC-A8360B1B03-L000137](../../scripts/hosted_smoke_test.py#L137) | 137 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
 | [SRC-A8360B1B03-L000138](../../scripts/hosted_smoke_test.py#L138) | 138 | `"        }"` | — |
@@ -830,16 +843,3 @@
 | [SRC-90FAA34ADE-L000134](../../tests/fixtures/answer_quality_cases.json#L134) | 134 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000135](../../tests/fixtures/answer_quality_cases.json#L135) | 135 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
 | [SRC-90FAA34ADE-L000136](../../tests/fixtures/answer_quality_cases.json#L136) | 136 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000137](../../tests/fixtures/answer_quality_cases.json#L137) | 137 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000138](../../tests/fixtures/answer_quality_cases.json#L138) | 138 | `"      \"case_id\": \"AQ-006\","` | — |
-| [SRC-90FAA34ADE-L000139](../../tests/fixtures/answer_quality_cases.json#L139) | 139 | `"      \"category\": \"omarai_capabilities\","` | — |
-| [SRC-90FAA34ADE-L000140](../../tests/fixtures/answer_quality_cases.json#L140) | 140 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000141](../../tests/fixtures/answer_quality_cases.json#L141) | 141 | `"      \"question\": \"How do you search the web and which engines can you use?\","` | — |
-| [SRC-90FAA34ADE-L000142](../../tests/fixtures/answer_quality_cases.json#L142) | 142 | `"      \"expected_strategy\": \"local\","` | — |
-| [SRC-90FAA34ADE-L000143](../../tests/fixtures/answer_quality_cases.json#L143) | 143 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000144](../../tests/fixtures/answer_quality_cases.json#L144) | 144 | `"        \"Mentions public search sources without inventing paid access as always-on\","` | — |
-| [SRC-90FAA34ADE-L000145](../../tests/fixtures/answer_quality_cases.json#L145) | 145 | `"        \"Does not expose API keys\""` | — |
-| [SRC-90FAA34ADE-L000146](../../tests/fixtures/answer_quality_cases.json#L146) | 146 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000147](../../tests/fixtures/answer_quality_cases.json#L147) | 147 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000148](../../tests/fixtures/answer_quality_cases.json#L148) | 148 | `"        \"Prints OPENROUTER_API_KEY or OMARAI_ACCESS_TOKEN\","` | — |
-| [SRC-90FAA34ADE-L000149](../../tests/fixtures/answer_quality_cases.json#L149) | 149 | `"        \"Claims unrestricted access to logged-in social feeds\""` | — |

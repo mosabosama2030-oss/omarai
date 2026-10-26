@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001356 إلى SRC-F725E90B2A-L002155
+- النطاق: SRC-F725E90B2A-L001343 إلى SRC-F725E90B2A-L002142
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `""` | — |
+| [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001346](../../tests/test_web_agent.py#L1346) | 1346 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001347](../../tests/test_web_agent.py#L1347) | 1347 | `"    captured = {}"` | — |
+| [SRC-F725E90B2A-L001348](../../tests/test_web_agent.py#L1348) | 1348 | `""` | — |
+| [SRC-F725E90B2A-L001349](../../tests/test_web_agent.py#L1349) | 1349 | `"    def fake_completion(messages, **kwargs):"` | — |
+| [SRC-F725E90B2A-L001350](../../tests/test_web_agent.py#L1350) | 1350 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-F725E90B2A-L001351](../../tests/test_web_agent.py#L1351) | 1351 | `"        captured[\"kwargs\"] = kwargs"` | — |
+| [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
+| [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `""` | — |
+| [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"        agent, \"_collect_research\","` | — |
 | [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
 | [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"    )"` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L002140](../../tests/test_web_agent.py#L2140) | 2140 | `"            \"providers_used\": [\"test_provider\"], \"provider_counts\": {\"test_provider\": 2},"` | — |
 | [SRC-F725E90B2A-L002141](../../tests/test_web_agent.py#L2141) | 2141 | `"            \"platform_counts\": {\"web\": 2}, \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L002142](../../tests/test_web_agent.py#L2142) | 2142 | `"            \"depth\": \"standard\", \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002143](../../tests/test_web_agent.py#L2143) | 2143 | `"        }"` | — |
-| [SRC-F725E90B2A-L002144](../../tests/test_web_agent.py#L2144) | 2144 | `"    ))"` | — |
-| [SRC-F725E90B2A-L002145](../../tests/test_web_agent.py#L2145) | 2145 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L002146](../../tests/test_web_agent.py#L2146) | 2146 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L002147](../../tests/test_web_agent.py#L2147) | 2147 | `"        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError(\"must not synthesize false leads\")),"` | — |
-| [SRC-F725E90B2A-L002148](../../tests/test_web_agent.py#L2148) | 2148 | `"    )"` | — |
-| [SRC-F725E90B2A-L002149](../../tests/test_web_agent.py#L2149) | 2149 | `""` | — |
-| [SRC-F725E90B2A-L002150](../../tests/test_web_agent.py#L2150) | 2150 | `"    result = agent.answer(question)"` | — |
-| [SRC-F725E90B2A-L002151](../../tests/test_web_agent.py#L2151) | 2151 | `""` | — |
-| [SRC-F725E90B2A-L002152](../../tests/test_web_agent.py#L2152) | 2152 | `"    assert result[\"intent_route\"] == \"LEAD_GENERATION\""` | — |
-| [SRC-F725E90B2A-L002153](../../tests/test_web_agent.py#L2153) | 2153 | `"    assert result[\"kind\"] == \"lead_discovery_no_qualified_candidates\""` | — |
-| [SRC-F725E90B2A-L002154](../../tests/test_web_agent.py#L2154) | 2154 | `"    assert result[\"search_report\"][\"lead_generation\"][\"candidate_signal_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L002155](../../tests/test_web_agent.py#L2155) | 2155 | `"    assert result[\"search_report\"][\"lead_generation\"][\"related_results_reviewed\"] == 2"` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **034**
-- سجلات الأسطر: **455**
-- النطاق: SRC-F725E90B2A-L002956 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **468**
+- النطاق: SRC-F725E90B2A-L002943 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002943](../../tests/test_web_agent.py#L2943) | 2943 | `"        \"استخدم مصادر متعددة، واذكر روابط المصادر\","` | — |
+| [SRC-F725E90B2A-L002944](../../tests/test_web_agent.py#L2944) | 2944 | `"        [],"` | — |
+| [SRC-F725E90B2A-L002945](../../tests/test_web_agent.py#L2945) | 2945 | `"    )"` | — |
+| [SRC-F725E90B2A-L002946](../../tests/test_web_agent.py#L2946) | 2946 | `"    assert plan[\"queries\"] == []"` | — |
+| [SRC-F725E90B2A-L002947](../../tests/test_web_agent.py#L2947) | 2947 | `""` | — |
+| [SRC-F725E90B2A-L002948](../../tests/test_web_agent.py#L2948) | 2948 | `""` | — |
+| [SRC-F725E90B2A-L002949](../../tests/test_web_agent.py#L2949) | 2949 | `"def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002950](../../tests/test_web_agent.py#L2950) | 2950 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002951](../../tests/test_web_agent.py#L2951) | 2951 | `"    agent.api_key = \"\""` | — |
+| [SRC-F725E90B2A-L002952](../../tests/test_web_agent.py#L2952) | 2952 | `"    history = [{"` | — |
+| [SRC-F725E90B2A-L002953](../../tests/test_web_agent.py#L2953) | 2953 | `"        \"role\": \"user\","` | — |
+| [SRC-F725E90B2A-L002954](../../tests/test_web_agent.py#L2954) | 2954 | `"        \"content\": ("` | — |
+| [SRC-F725E90B2A-L002955](../../tests/test_web_agent.py#L2955) | 2955 | `"            \"قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، \""` | — |
 | [SRC-F725E90B2A-L002956](../../tests/test_web_agent.py#L2956) | 2956 | `"            \"واذكر روابط المصادر وأجب بإيجاز.\""` | — |
 | [SRC-F725E90B2A-L002957](../../tests/test_web_agent.py#L2957) | 2957 | `"        ),"` | — |
 | [SRC-F725E90B2A-L002958](../../tests/test_web_agent.py#L2958) | 2958 | `"    }]"` | — |

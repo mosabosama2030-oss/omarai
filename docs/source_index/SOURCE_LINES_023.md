@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000950 إلى SRC-B3062EB677-L000097
+- النطاق: SRC-90FAA34ADE-L000937 إلى SRC-B3062EB677-L000084
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000937](../../tests/fixtures/answer_quality_cases.json#L937) | 937 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000938](../../tests/fixtures/answer_quality_cases.json#L938) | 938 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000939](../../tests/fixtures/answer_quality_cases.json#L939) | 939 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000940](../../tests/fixtures/answer_quality_cases.json#L940) | 940 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000941](../../tests/fixtures/answer_quality_cases.json#L941) | 941 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000942](../../tests/fixtures/answer_quality_cases.json#L942) | 942 | `"            \"title\": \"Bakery directory listing\","` | — |
+| [SRC-90FAA34ADE-L000943](../../tests/fixtures/answer_quality_cases.json#L943) | 943 | `"            \"url\": \"https://directory.example.test/bakery\","` | — |
+| [SRC-90FAA34ADE-L000944](../../tests/fixtures/answer_quality_cases.json#L944) | 944 | `"            \"snippet\": \"Bakery in Cairo; phone number shown; last updated not stated.\","` | — |
+| [SRC-90FAA34ADE-L000945](../../tests/fixtures/answer_quality_cases.json#L945) | 945 | `"            \"domain\": \"directory.example.test\","` | — |
+| [SRC-90FAA34ADE-L000946](../../tests/fixtures/answer_quality_cases.json#L946) | 946 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L000947](../../tests/fixtures/answer_quality_cases.json#L947) | 947 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000948](../../tests/fixtures/answer_quality_cases.json#L948) | 948 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000949](../../tests/fixtures/answer_quality_cases.json#L949) | 949 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000950](../../tests/fixtures/answer_quality_cases.json#L950) | 950 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000951](../../tests/fixtures/answer_quality_cases.json#L951) | 951 | `"        \"Verified status granted without independent verification\","` | — |
 | [SRC-90FAA34ADE-L000952](../../tests/fixtures/answer_quality_cases.json#L952) | 952 | `"        \"Buying intent recorded as confirmed with no evidence\""` | — |
@@ -830,16 +843,3 @@
 | [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
 | [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
 | [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
-| [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
-| [SRC-B3062EB677-L000086](../../tests/test_answer_quality_runner.py#L86) | 86 | `"            \"http://127.0.0.1:9\","` | — |
-| [SRC-B3062EB677-L000087](../../tests/test_answer_quality_runner.py#L87) | 87 | `"        ]"` | — |
-| [SRC-B3062EB677-L000088](../../tests/test_answer_quality_runner.py#L88) | 88 | `"    )"` | — |
-| [SRC-B3062EB677-L000089](../../tests/test_answer_quality_runner.py#L89) | 89 | `"    assert rc == 2"` | — |
-| [SRC-B3062EB677-L000090](../../tests/test_answer_quality_runner.py#L90) | 90 | `""` | — |
-| [SRC-B3062EB677-L000091](../../tests/test_answer_quality_runner.py#L91) | 91 | `""` | — |
-| [SRC-B3062EB677-L000092](../../tests/test_answer_quality_runner.py#L92) | 92 | `"def test_redact_secrets_strips_token_value(monkeypatch):"` | — |
-| [SRC-B3062EB677-L000093](../../tests/test_answer_quality_runner.py#L93) | 93 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000094](../../tests/test_answer_quality_runner.py#L94) | 94 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"super-secret-token-value-xyz\")"` | — |
-| [SRC-B3062EB677-L000095](../../tests/test_answer_quality_runner.py#L95) | 95 | `"    text = \"token=super-secret-token-value-xyz and OPENROUTER_API_KEY\""` | — |
-| [SRC-B3062EB677-L000096](../../tests/test_answer_quality_runner.py#L96) | 96 | `"    out = mod.redact_secrets(text)"` | — |
-| [SRC-B3062EB677-L000097](../../tests/test_answer_quality_runner.py#L97) | 97 | `"    assert \"super-secret-token-value-xyz\" not in out"` | — |
