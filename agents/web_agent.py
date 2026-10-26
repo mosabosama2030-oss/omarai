@@ -195,7 +195,8 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     """Fraction of meaningful query concepts present in a candidate's title/snippet."""
     query_tokens = _relevance_query_tokens(query)
     if not query_tokens:
-        return 1.0
+        # No topic terms means relevance cannot be established; do not accept arbitrary evidence.
+        return 0.0
     expanded_evidence = _search_tokens(evidence)
     matched = sum(
         1 for token in query_tokens
