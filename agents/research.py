@@ -120,19 +120,19 @@ def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
 
 _SEARCH_META_START_RE = re.compile(
     r"^(?:و?اذكر(?:ي|وا)?|و?استخدم|و?استعمل|و?ميّز|و?ميز|و?وضح|و?وضّح|"
-    r"و?اجب|و?أجب|لا تعرض|لا تقدم|لا تقدّم|please cite|cite|provide links|"
-    r"mention sources|use multiple sources|و?لا تعرض|و?لا تقدم|don't present|do not present)\\b",
+    r"و?اجب|و?أجب|و?لا تعرض|و?لا تقدم|please cite|cite|provide links|"
+    r"mention sources|use multiple sources|don't present|do not present)\b",
     re.IGNORECASE,
 )
 _SEARCH_META_TAIL_RE = re.compile(
-    r"\\s*[,،؛;]\\s*(?:و\\s*)?(?:اذكر|اذكري|استخدم|استعمل|ميّز|ميز|وضح|وضّح|"
+    r"\s*[,،؛;]\s*(?:و\s*)?(?:اذكر|اذكري|استخدم|استعمل|ميّز|ميز|وضح|وضّح|"
     r"اجب|أجب|لا تعرض|لا تقدم|please cite|cite|provide links|mention sources|"
-    r"use multiple sources|don't present|do not present)\\b.*$",
+    r"use multiple sources|don't present|do not present)\b.*$",
     re.IGNORECASE,
 )
 _SEARCH_LEADING_ACTION_RE = re.compile(
     r"^(?:حلّل|حلل|اجمع|قارن|ناقش|ابحث|استكشف|استقصِ|اعرض|analyze|analyse|compare|"
-    r"investigate|collect|gather|review|summarize)\\s+",
+    r"investigate|collect|gather|review|summarize)\s+",
     re.IGNORECASE,
 )
 
@@ -141,11 +141,11 @@ def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
     """Turn a full question into a concise search query without answer-format instructions."""
     if not isinstance(value, str):
         return ""
-    cleaned = re.sub(r"https?://[^\\s<>()]+", " ", value, flags=re.IGNORECASE)
+    cleaned = re.sub(r"https?://[^\s<>()]+", " ", value, flags=re.IGNORECASE)
     # Split Arabic question/sentence boundaries and normal English sentences, but
     # do not split the dot inside search operators such as site:reddit.com.
     segments = re.split(
-        r"(?<=[!?؟؛;])\\s+|(?<=\\.)\\s+(?=[A-Z\\u0600-\\u06FF])",
+        r"(?<=[!?؟؛;])\s+|(?<=\.)\s+(?=[A-Z\u0600-\u06FF])",
         cleaned,
     )
     useful: list[str] = []
@@ -156,15 +156,16 @@ def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
         normalized_segment = _normalize_arabic(segment).casefold()
         if _SEARCH_META_START_RE.search(normalized_segment):
             continue
+        # Keep the subject in clauses such as "show positive and negative opinions",
+        # but remove answer-format-only tails that are irrelevant to retrieval.
         segment = _SEARCH_META_TAIL_RE.sub("", segment).strip()
         segment = _SEARCH_LEADING_ACTION_RE.sub("", segment).strip()
         if segment:
             useful.append(segment)
-    result = re.sub(r"\\s+", " ", " ".join(useful)).strip(" \\t\\r\\n,،;؛")
+    result = re.sub(r"\s+", " ", " ".join(useful)).strip(" \t\r\n,،;؛")
     if not result:
-        result = re.sub(r"\\s+", " ", cleaned).strip()
+        result = re.sub(r"\s+", " ", cleaned).strip()
     return result[:max(2, min(int(limit), MAX_QUERY_CHARS))]
-
 
 _ARABIC_RE = re.compile(r"[؀-ۿ]")
 
