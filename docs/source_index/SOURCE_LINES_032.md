@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001592 إلى SRC-F725E90B2A-L002391
+- النطاق: SRC-F725E90B2A-L001590 إلى SRC-F725E90B2A-L002389
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001590](../../tests/test_web_agent.py#L1590) | 1590 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L001591](../../tests/test_web_agent.py#L1591) | 1591 | `"        calls.append(dict(research_plan))"` | — |
 | [SRC-F725E90B2A-L001592](../../tests/test_web_agent.py#L1592) | 1592 | `"        source = sample_source(0)"` | — |
 | [SRC-F725E90B2A-L001593](../../tests/test_web_agent.py#L1593) | 1593 | `"        if len(calls) > 1:"` | — |
 | [SRC-F725E90B2A-L001594](../../tests/test_web_agent.py#L1594) | 1594 | `"            source[\"url\"] = \"https://EXAMPLE.com/research/?utm_source=test#details\""` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002387](../../tests/test_web_agent.py#L2387) | 2387 | `"                \"domain\": domain,"` | — |
 | [SRC-F725E90B2A-L002388](../../tests/test_web_agent.py#L2388) | 2388 | `"                \"providers\": [provider],"` | — |
 | [SRC-F725E90B2A-L002389](../../tests/test_web_agent.py#L2389) | 2389 | `"                \"queries\": [\"قارن بالتفصيل بين طرق إدارة الميزانية\"],"` | — |
-| [SRC-F725E90B2A-L002390](../../tests/test_web_agent.py#L2390) | 2390 | `"                \"page_fetched\": True,"` | — |
-| [SRC-F725E90B2A-L002391](../../tests/test_web_agent.py#L2391) | 2391 | `"                \"page_text\": f\"نص مصدر الاختبار رقم {index + 1}.\","` | — |

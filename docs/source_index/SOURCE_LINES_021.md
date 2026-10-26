@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000222 إلى SRC-90FAA34ADE-L000235
+- النطاق: SRC-A8360B1B03-L000220 إلى SRC-90FAA34ADE-L000233
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000220](../../scripts/hosted_smoke_test.py#L220) | 220 | `"            expected_sha=args.expected_sha or None,"` | — |
+| [SRC-A8360B1B03-L000221](../../scripts/hosted_smoke_test.py#L221) | 221 | `"        )"` | — |
 | [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"    except SmokeError as exc:"` | — |
 | [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `"        print(json.dumps({\"result\": \"failed\", \"error\": str(exc)}, ensure_ascii=False, indent=2))"` | — |
 | [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"        return 1"` | — |
@@ -841,5 +843,3 @@
 | [SRC-90FAA34ADE-L000231](../../tests/fixtures/answer_quality_cases.json#L231) | 231 | `"        \"Gives legal advice as absolute without disclaimer\""` | — |
 | [SRC-90FAA34ADE-L000232](../../tests/fixtures/answer_quality_cases.json#L232) | 232 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000233](../../tests/fixtures/answer_quality_cases.json#L233) | 233 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000234](../../tests/fixtures/answer_quality_cases.json#L234) | 234 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000235](../../tests/fixtures/answer_quality_cases.json#L235) | 235 | `"        \"notes\": \"Reviewer checks completeness across three asks\""` | — |

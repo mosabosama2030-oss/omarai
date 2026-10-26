@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000958 إلى SRC-65551FB29F-L000191
+- النطاق: SRC-D17CE3D12F-L000958 إلى SRC-65551FB29F-L000189
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -433,32 +433,34 @@
 | [SRC-62CE5126F9-L000201](../OMARAI_REMEDIATION_REGISTER_AR.md#L201) | 201 | `"- **PR #89:** [fix(search): compact Arabic queries before provider search](https://github.com/mosabosama2030-oss/omarai/pull/89)، حالته مفتوح ومسودة؛ ليس مدمجًا ولا منشورًا."` | — |
 | [SRC-62CE5126F9-L000202](../OMARAI_REMEDIATION_REGISTER_AR.md#L202) | 202 | `"- السبب المتبقي: بعد إصلاح المطابقة في #88، كان مخطط البحث لا يزال قادرًا على إرسال نص السؤال الكامل وتعليمات صياغة الإجابة إلى محركات البحث، ثم إضافة توسعات إلى النص نفسه."` | — |
 | [SRC-62CE5126F9-L000203](../OMARAI_REMEDIATION_REGISTER_AR.md#L203) | 203 | `"- يضيف #89 تقصير الاستعلام الموضوعي قبل البحث مع الإبقاء على المعنى، والفترة الزمنية، وعامل site:، ويضيف اختبارات للأسئلة الأربعة. كما يمنع قبول مرشحين عندما لا تبقى أي مفاهيم موضوعية في السؤال؛ كانت دالة الصلة تعيد 1.0 في تلك الحالة، ما قد يقبل دليلًا غير مرتبط."` | — |
-| [SRC-62CE5126F9-L000204](../OMARAI_REMEDIATION_REGISTER_AR.md#L204) | 204 | `"- اجتازت نسخة الكود/الاختبارات f6179d9f31f0070798a1196c997b09e7fb3ce47b تشغيل [#40283749679](https://github.com/mosabosama2030-oss/omarai/actions/runs/40283749679) بوظائف Python 3.11 و3.12 وبناء الحاوية. تغيّر رأس PR بعد ذلك بملفات فهرسة مولّدة فقط، ويجب اعتماد نتيجة CI الأحدث المرتبطة بالرأس الحالي قبل اعتبار بوابة PR ناجحة بالكامل."` | — |
-| [SRC-62CE5126F9-L000205](../OMARAI_REMEDIATION_REGISTER_AR.md#L205) | 205 | `"- **الحالة:** PARTIAL / AUTOMATED_TESTS_PASS_ON_SOURCE_SHA / HOSTED_RETEST_NOT_RUN. لا دمج ولا نشر تلقائيًا."` | — |
-| [SRC-62CE5126F9-L000206](../OMARAI_REMEDIATION_REGISTER_AR.md#L206) | 206 | `""` | — |
-| [SRC-62CE5126F9-L000207](../OMARAI_REMEDIATION_REGISTER_AR.md#L207) | 207 | `"### I.3 بوابة الاستضافة الحية"` | — |
+| [SRC-62CE5126F9-L000204](../OMARAI_REMEDIATION_REGISTER_AR.md#L204) | 204 | ``"- **تحديث مراجعة 26 أكتوبر — معالجة عيب سياق الاستعلام:** أثناء مراجعة مسودة #89 ظهر أن حذف الجملة كاملة عند بدئها بـ«وضح» أو «اذكر» قد يزيل موضوع السؤال إذا بقيت جملة لاحقة منفصلة. عُدّل المنقّح ليزيل فعل الطلب فقط عندما يتبعه موضوع، وليحذف تعليمات الاستشهاد/التنسيق الواضحة بصورة منفصلة؛ أضيف اختبار انحدار لهذه الحالة في `tests/test_research.py`."`` | — |
+| [SRC-62CE5126F9-L000205](../OMARAI_REMEDIATION_REGISTER_AR.md#L205) | 205 | ``"- **SHA الكود والاختبارات:** `82f6a21a72a3fbe103769c37cb96aee1f4d61cf3`. التشغيل [#40285973596](https://github.com/mosabosama2030-oss/omarai/actions/runs/40285973596) نجح على Python 3.11 و3.12، وأظهر كل منهما **393 passed**؛ نجح Ruff وبناء الحاوية وفحص API المحمي."`` | — |
+| [SRC-62CE5126F9-L000206](../OMARAI_REMEDIATION_REGISTER_AR.md#L206) | 206 | ``"- **رأس PR الحالي وقت التوثيق:** `b56e19dc7c5602269d2a3e507903d5abbf144e3c)، ويختلف عن SHA الاختبار بملفات الفهرسة المولّدة فقط. محاولة CI على رأس التوليد الأحدث انتهت `action_required` من دون وظائف فحص؛ لذلك أسجل نجاح الكود/الاختبارات على SHA المصدر، ولا أدّعي تشغيلًا ناجحًا مستقلًا على رأس الفهرسة الحالي."`` | — |
+| [SRC-62CE5126F9-L000207](../OMARAI_REMEDIATION_REGISTER_AR.md#L207) | 207 | `"- لا توجد مراجعة مستقلة مسجلة بعد، والاختبار الحي على الاستضافة **NOT_RUN**؛ لذلك تبقى الحالة **PARTIAL / CI_PASSED_ON_SOURCE_SHA / INDEPENDENT_REVIEW_PENDING / HOSTED_RETEST_NOT_RUN**. لا دمج ولا نشر تلقائيًا."` | — |
 | [SRC-62CE5126F9-L000208](../OMARAI_REMEDIATION_REGISTER_AR.md#L208) | 208 | `""` | — |
-| [SRC-62CE5126F9-L000209](../OMARAI_REMEDIATION_REGISTER_AR.md#L209) | 209 | `"- أحدث تشغيل Hosted Smoke متاح في هذه المراجعة هو [#40061671808](https://github.com/mosabosama2030-oss/omarai/actions/runs/40061671808)، وانتهى قبل الوصول إلى التطبيق: أظهر السجل أن OMARAI_ACCESS_TOKEN وOMARAI_BASE_URL كانا فارغين في بيئة GitHub Actions. لذلك هذا التشغيل لا يثبت فشل التطبيق ولا نجاحه."` | — |
-| [SRC-62CE5126F9-L000210](../OMARAI_REMEDIATION_REGISTER_AR.md#L210) | 210 | `"- يلزم ضبط السرّين من إعدادات مستودع GitHub، دون نشر قيمهما في المحادثة: OMARAI_BASE_URL يجب أن يكون أصل HTTPS فقط بلا مسار أو query، وOMARAI_ACCESS_TOKEN هو رمز الوصول الموجود لدى المدير. لا تطلب الرمز أو تلصقه في Issue أو PR أو محادثة."` | — |
-| [SRC-62CE5126F9-L000211](../OMARAI_REMEDIATION_REGISTER_AR.md#L211) | 211 | `"- بعد ضبط السرّين، يلزم نشر/تأكيد نشر النسخة المطلوبة على SnapDeploy، ثم تشغيل Omarai hosted acceptance smoke. يتطلب الاختبار أن يطابق /api/health معرّف البناء SHA المتوقع، وأن ينجح اختبار البحث الحقيقي واختبار النموذج وطلب وكيل يعيد مصدرًا قابلًا للاستخدام. إذا ظل SHA البناء unknown أو اختلف عن main فتعالج هوية البناء في إعداد Docker/deployment؛ لا تعطل فحص المطابقة."` | — |
-| [SRC-62CE5126F9-L000212](../OMARAI_REMEDIATION_REGISTER_AR.md#L212) | 212 | `"- لم أتمكن من التحقق من استجابة المضيف الحالي من بيئة التنفيذ هنا؛ حالة المضيف الحالي لذلك UNKNOWN / NOT_VERIFIED، وليست PASS أو FAIL."` | — |
-| [SRC-62CE5126F9-L000213](../OMARAI_REMEDIATION_REGISTER_AR.md#L213) | 213 | `"- **الحالة:** HOSTED_SMOKE_NOT_RUN_SUCCESSFULLY / HUMAN_ACTION_REQUIRED."` | — |
-| [SRC-62CE5126F9-L000214](../OMARAI_REMEDIATION_REGISTER_AR.md#L214) | 214 | `""` | — |
-| [SRC-62CE5126F9-L000215](../OMARAI_REMEDIATION_REGISTER_AR.md#L215) | 215 | `"### I.4 فروع متداخلة مفتوحة"` | — |
+| [SRC-62CE5126F9-L000209](../OMARAI_REMEDIATION_REGISTER_AR.md#L209) | 209 | `"### I.3 بوابة الاستضافة الحية"` | — |
+| [SRC-62CE5126F9-L000210](../OMARAI_REMEDIATION_REGISTER_AR.md#L210) | 210 | `""` | — |
+| [SRC-62CE5126F9-L000211](../OMARAI_REMEDIATION_REGISTER_AR.md#L211) | 211 | `"- أحدث تشغيل Hosted Smoke متاح في هذه المراجعة هو [#40061671808](https://github.com/mosabosama2030-oss/omarai/actions/runs/40061671808)، وانتهى قبل الوصول إلى التطبيق: أظهر السجل أن OMARAI_ACCESS_TOKEN وOMARAI_BASE_URL كانا فارغين في بيئة GitHub Actions. لذلك هذا التشغيل لا يثبت فشل التطبيق ولا نجاحه."` | — |
+| [SRC-62CE5126F9-L000212](../OMARAI_REMEDIATION_REGISTER_AR.md#L212) | 212 | `"- يلزم ضبط السرّين من إعدادات مستودع GitHub، دون نشر قيمهما في المحادثة: OMARAI_BASE_URL يجب أن يكون أصل HTTPS فقط بلا مسار أو query، وOMARAI_ACCESS_TOKEN هو رمز الوصول الموجود لدى المدير. لا تطلب الرمز أو تلصقه في Issue أو PR أو محادثة."` | — |
+| [SRC-62CE5126F9-L000213](../OMARAI_REMEDIATION_REGISTER_AR.md#L213) | 213 | `"- بعد ضبط السرّين، يلزم نشر/تأكيد نشر النسخة المطلوبة على SnapDeploy، ثم تشغيل Omarai hosted acceptance smoke. يتطلب الاختبار أن يطابق /api/health معرّف البناء SHA المتوقع، وأن ينجح اختبار البحث الحقيقي واختبار النموذج وطلب وكيل يعيد مصدرًا قابلًا للاستخدام. إذا ظل SHA البناء unknown أو اختلف عن main فتعالج هوية البناء في إعداد Docker/deployment؛ لا تعطل فحص المطابقة."` | — |
+| [SRC-62CE5126F9-L000214](../OMARAI_REMEDIATION_REGISTER_AR.md#L214) | 214 | `"- لم أتمكن من التحقق من استجابة المضيف الحالي من بيئة التنفيذ هنا؛ حالة المضيف الحالي لذلك UNKNOWN / NOT_VERIFIED، وليست PASS أو FAIL."` | — |
+| [SRC-62CE5126F9-L000215](../OMARAI_REMEDIATION_REGISTER_AR.md#L215) | 215 | `"- **الحالة:** HOSTED_SMOKE_NOT_RUN_SUCCESSFULLY / HUMAN_ACTION_REQUIRED."` | — |
 | [SRC-62CE5126F9-L000216](../OMARAI_REMEDIATION_REGISTER_AR.md#L216) | 216 | `""` | — |
-| [SRC-62CE5126F9-L000217](../OMARAI_REMEDIATION_REGISTER_AR.md#L217) | 217 | ``"- كانت PRs #83 و#84 و#86 و#87 مفتوحة ومتباعدة عن main عند بدء هذه المراجعة؛ أُضيفت تعليقات إحلال ثم أُغلقت جميعًا في 26 أكتوبر 2026، بحالة `CLOSED / MERGED=false`."`` | — |
-| [SRC-62CE5126F9-L000218](../OMARAI_REMEDIATION_REGISTER_AR.md#L218) | 218 | `"- PR #88 هو الإصلاح المدمج. الوظيفة الفريدة من #87 المتعلقة بتقصير الاستعلامات، واختبارات الرفض الآمن للاستعلام بلا موضوع، جُمعت في #89 على أساس main الحالي؛ لم يُدمج أي فرع قديم."` | — |
-| [SRC-62CE5126F9-L000219](../OMARAI_REMEDIATION_REGISTER_AR.md#L219) | 219 | ``"- حالة تنظيف التكرار: `CLOSED_AS_SUPERSEDED` للفروع #83/#84/#86/#87. بقي PR #89 مسودة المراجعة الحالية؛ لا تُعدّ إغلاق الفروع القديمة دليلًا على نجاح البحث الحي."`` | — |
-| [SRC-62CE5126F9-L000220](../OMARAI_REMEDIATION_REGISTER_AR.md#L220) | 220 | `""` | — |
-| [SRC-62CE5126F9-L000221](../OMARAI_REMEDIATION_REGISTER_AR.md#L221) | 221 | `"### I.5 الحالة الحاكمة للمسائل الثلاث"` | — |
+| [SRC-62CE5126F9-L000217](../OMARAI_REMEDIATION_REGISTER_AR.md#L217) | 217 | `"### I.4 فروع متداخلة مفتوحة"` | — |
+| [SRC-62CE5126F9-L000218](../OMARAI_REMEDIATION_REGISTER_AR.md#L218) | 218 | `""` | — |
+| [SRC-62CE5126F9-L000219](../OMARAI_REMEDIATION_REGISTER_AR.md#L219) | 219 | ``"- كانت PRs #83 و#84 و#86 و#87 مفتوحة ومتباعدة عن main عند بدء هذه المراجعة؛ أُضيفت تعليقات إحلال ثم أُغلقت جميعًا في 26 أكتوبر 2026، بحالة `CLOSED / MERGED=false`."`` | — |
+| [SRC-62CE5126F9-L000220](../OMARAI_REMEDIATION_REGISTER_AR.md#L220) | 220 | `"- PR #88 هو الإصلاح المدمج. الوظيفة الفريدة من #87 المتعلقة بتقصير الاستعلامات، واختبارات الرفض الآمن للاستعلام بلا موضوع، جُمعت في #89 على أساس main الحالي؛ لم يُدمج أي فرع قديم."` | — |
+| [SRC-62CE5126F9-L000221](../OMARAI_REMEDIATION_REGISTER_AR.md#L221) | 221 | ``"- حالة تنظيف التكرار: `CLOSED_AS_SUPERSEDED` للفروع #83/#84/#86/#87. بقي PR #89 مسودة المراجعة الحالية؛ لا تُعدّ إغلاق الفروع القديمة دليلًا على نجاح البحث الحي."`` | — |
 | [SRC-62CE5126F9-L000222](../OMARAI_REMEDIATION_REGISTER_AR.md#L222) | 222 | `""` | — |
-| [SRC-62CE5126F9-L000223](../OMARAI_REMEDIATION_REGISTER_AR.md#L223) | 223 | `"\| المعرّف \| الكود \| CI \| اختبار الاستضافة الحي \| الحالة الكلية \|"` | — |
-| [SRC-62CE5126F9-L000224](../OMARAI_REMEDIATION_REGISTER_AR.md#L224) | 224 | `"\|---\|---\|---\|---\|---\|"` | — |
-| [SRC-62CE5126F9-L000225](../OMARAI_REMEDIATION_REGISTER_AR.md#L225) | 225 | `"\| OMR-LIVE-001 — رفض كل مصادر البحث \| تصحيح المطابقة والعدادات مدمج في #88؛ تقصير الاستعلام في #89 قيد المراجعة \| ناجح على #88 وناجح على SHA المصدر/الاختبار في #89؛ راجع تشغيل الرأس الحالي \| NOT_RUN \| PARTIAL \|"` | — |
-| [SRC-62CE5126F9-L000226](../OMARAI_REMEDIATION_REGISTER_AR.md#L226) | 226 | `"\| OMR-LIVE-002 — تدهور موصلات DDG/Reddit/News \| حالات الموصلات مصنفة؛ لا يُتجاوز الحجب أو تحديد المعدل \| اختبارات ثابتة ناجحة \| NOT_RUN بعد الدمج \| PARTIAL \|"` | — |
-| [SRC-62CE5126F9-L000227](../OMARAI_REMEDIATION_REGISTER_AR.md#L227) | 227 | `"\| OMR-LIVE-003 — تضليل عدادات المرشحين \| العدادات المنفصلة مدمجة في #88 \| CI على SHA الدمج ناجح \| القيم الحية بعد النشر غير متحققة \| PARTIAL \|"` | — |
-| [SRC-62CE5126F9-L000228](../OMARAI_REMEDIATION_REGISTER_AR.md#L228) | 228 | `""` | — |
-| [SRC-62CE5126F9-L000229](../OMARAI_REMEDIATION_REGISTER_AR.md#L229) | 229 | `"**قاعدة الإغلاق:** لا تُعتبر المسألة مغلقة إلا بعد نجاح رأس PR الحالي، ومراجعة مستقلة، ونشر معتمد، ونجاح Hosted Smoke، ثم إعادة الأسئلة الأربعة وحفظ مصادرها وعداداتها الجديدة. الامتناع عن اختلاق مصادر يبقى صحيحًا عند غياب الأدلة؛ لكن استمرار رجوع صفر مصادر في جميع الاختبارات يبقي وظيفة البحث غير مغلقة."` | — |
+| [SRC-62CE5126F9-L000223](../OMARAI_REMEDIATION_REGISTER_AR.md#L223) | 223 | `"### I.5 الحالة الحاكمة للمسائل الثلاث"` | — |
+| [SRC-62CE5126F9-L000224](../OMARAI_REMEDIATION_REGISTER_AR.md#L224) | 224 | `""` | — |
+| [SRC-62CE5126F9-L000225](../OMARAI_REMEDIATION_REGISTER_AR.md#L225) | 225 | `"\| المعرّف \| الكود \| CI \| اختبار الاستضافة الحي \| الحالة الكلية \|"` | — |
+| [SRC-62CE5126F9-L000226](../OMARAI_REMEDIATION_REGISTER_AR.md#L226) | 226 | `"\|---\|---\|---\|---\|---\|"` | — |
+| [SRC-62CE5126F9-L000227](../OMARAI_REMEDIATION_REGISTER_AR.md#L227) | 227 | `"\| OMR-LIVE-001 — رفض كل مصادر البحث \| تصحيح المطابقة والعدادات مدمج في #88؛ تقصير الاستعلام في #89 قيد المراجعة \| ناجح على #88 وناجح على SHA المصدر/الاختبار في #89؛ راجع تشغيل الرأس الحالي \| NOT_RUN \| PARTIAL \|"` | — |
+| [SRC-62CE5126F9-L000228](../OMARAI_REMEDIATION_REGISTER_AR.md#L228) | 228 | `"\| OMR-LIVE-002 — تدهور موصلات DDG/Reddit/News \| حالات الموصلات مصنفة؛ لا يُتجاوز الحجب أو تحديد المعدل \| اختبارات ثابتة ناجحة \| NOT_RUN بعد الدمج \| PARTIAL \|"` | — |
+| [SRC-62CE5126F9-L000229](../OMARAI_REMEDIATION_REGISTER_AR.md#L229) | 229 | `"\| OMR-LIVE-003 — تضليل عدادات المرشحين \| العدادات المنفصلة مدمجة في #88 \| CI على SHA الدمج ناجح \| القيم الحية بعد النشر غير متحققة \| PARTIAL \|"` | — |
+| [SRC-62CE5126F9-L000230](../OMARAI_REMEDIATION_REGISTER_AR.md#L230) | 230 | `""` | — |
+| [SRC-62CE5126F9-L000231](../OMARAI_REMEDIATION_REGISTER_AR.md#L231) | 231 | `"**قاعدة الإغلاق:** لا تُعتبر المسألة مغلقة إلا بعد نجاح رأس PR الحالي، ومراجعة مستقلة، ونشر معتمد، ونجاح Hosted Smoke، ثم إعادة الأسئلة الأربعة وحفظ مصادرها وعداداتها الجديدة. الامتناع عن اختلاق مصادر يبقى صحيحًا عند غياب الأدلة؛ لكن استمرار رجوع صفر مصادر في جميع الاختبارات يبقي وظيفة البحث غير مغلقة."` | — |
 ## وثائق وفهرسة
 
 ### FILE-B9C3015420 — [docs/OMARAI_REQUIREMENTS_REGISTER.md](../OMARAI_REQUIREMENTS_REGISTER.md#L1)
@@ -850,5 +852,3 @@
 | [SRC-65551FB29F-L000187](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L187) | 187 | `"\| PRD \| المنتج وسلوك المستخدم \|"` | — |
 | [SRC-65551FB29F-L000188](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L188) | 188 | `"\| ARC \| المعمارية والحدود والاعتماديات \|"` | — |
 | [SRC-65551FB29F-L000189](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L189) | 189 | `"\| API \| العقود وواجهات التكامل \|"` | — |
-| [SRC-65551FB29F-L000190](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L190) | 190 | `"\| IDN \| الهوية والصلاحيات والجلسات \|"` | — |
-| [SRC-65551FB29F-L000191](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L191) | 191 | `"\| SEC \| الأمن العام وأمن التطبيق والشبكات \|"` | — |

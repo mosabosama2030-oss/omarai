@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000792 إلى SRC-F725E90B2A-L001591
+- النطاق: SRC-F725E90B2A-L000790 إلى SRC-F725E90B2A-L001589
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000790](../../tests/test_web_agent.py#L790) | 790 | `"    result = agent._request_completion("` | — |
+| [SRC-F725E90B2A-L000791](../../tests/test_web_agent.py#L791) | 791 | `"        [{\"role\": \"user\", \"content\": \"test\"}],"` | — |
 | [SRC-F725E90B2A-L000792](../../tests/test_web_agent.py#L792) | 792 | `"        model=\"broken/primary\","` | — |
 | [SRC-F725E90B2A-L000793](../../tests/test_web_agent.py#L793) | 793 | `"    )"` | — |
 | [SRC-F725E90B2A-L000794](../../tests/test_web_agent.py#L794) | 794 | `""` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001587](../../tests/test_web_agent.py#L1587) | 1587 | `"    }"` | — |
 | [SRC-F725E90B2A-L001588](../../tests/test_web_agent.py#L1588) | 1588 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001589](../../tests/test_web_agent.py#L1589) | 1589 | `""` | — |
-| [SRC-F725E90B2A-L001590](../../tests/test_web_agent.py#L1590) | 1590 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L001591](../../tests/test_web_agent.py#L1591) | 1591 | `"        calls.append(dict(research_plan))"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001036 إلى SRC-B3062EB677-L000183
+- النطاق: SRC-90FAA34ADE-L001034 إلى SRC-B3062EB677-L000181
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001034](../../tests/fixtures/answer_quality_cases.json#L1034) | 1034 | `"            \"title\": \"Blog A\","` | — |
+| [SRC-90FAA34ADE-L001035](../../tests/fixtures/answer_quality_cases.json#L1035) | 1035 | `"            \"url\": \"https://blog-a.example.test/stop\","` | — |
 | [SRC-90FAA34ADE-L001036](../../tests/fixtures/answer_quality_cases.json#L1036) | 1036 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
 | [SRC-90FAA34ADE-L001037](../../tests/fixtures/answer_quality_cases.json#L1037) | 1037 | `"            \"domain\": \"blog-a.example.test\","` | — |
 | [SRC-90FAA34ADE-L001038](../../tests/fixtures/answer_quality_cases.json#L1038) | 1038 | `"            \"provider\": \"fixture_a\""` | — |
@@ -841,5 +843,3 @@
 | [SRC-B3062EB677-L000179](../../tests/test_answer_quality_runner.py#L179) | 179 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000180](../../tests/test_answer_quality_runner.py#L180) | 180 | `"    handler = mod._NoRedirectHandler()"` | — |
 | [SRC-B3062EB677-L000181](../../tests/test_answer_quality_runner.py#L181) | 181 | `"    assert handler.redirect_request("` | — |
-| [SRC-B3062EB677-L000182](../../tests/test_answer_quality_runner.py#L182) | 182 | `"        req=None,"` | — |
-| [SRC-B3062EB677-L000183](../../tests/test_answer_quality_runner.py#L183) | 183 | `"        fp=None,"` | — |

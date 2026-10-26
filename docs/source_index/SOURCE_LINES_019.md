@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000417 إلى SRC-69F3587825-L000019
+- النطاق: SRC-0F910493E8-L000415 إلى SRC-69F3587825-L000017
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000415](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L415) | 415 | `""` | — |
+| [SRC-0F910493E8-L000416](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L416) | 416 | `"## P1 — سلامة العقود والصلاحيات"` | — |
 | [SRC-0F910493E8-L000417](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L417) | 417 | `""` | — |
 | [SRC-0F910493E8-L000418](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L418) | 418 | `"- توحيد عقود الأدوات المطلوبة للتغييرات التالية."` | — |
 | [SRC-0F910493E8-L000419](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L419) | 419 | `"- فحص المدخلات والمخرجات."` | — |
@@ -859,5 +861,3 @@
 | [SRC-69F3587825-L000015](../search_code.py#L15) | 15 | `"import subprocess"` | — |
 | [SRC-69F3587825-L000016](../search_code.py#L16) | 16 | `"import sys"` | — |
 | [SRC-69F3587825-L000017](../search_code.py#L17) | 17 | `"from collections.abc import Sequence"` | — |
-| [SRC-69F3587825-L000018](../search_code.py#L18) | 18 | `"from dataclasses import dataclass"` | — |
-| [SRC-69F3587825-L000019](../search_code.py#L19) | 19 | `"from pathlib import Path"` | — |

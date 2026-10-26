@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000236 إلى SRC-90FAA34ADE-L001035
+- النطاق: SRC-90FAA34ADE-L000234 إلى SRC-90FAA34ADE-L001033
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000234](../../tests/fixtures/answer_quality_cases.json#L234) | 234 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000235](../../tests/fixtures/answer_quality_cases.json#L235) | 235 | `"        \"notes\": \"Reviewer checks completeness across three asks\""` | — |
 | [SRC-90FAA34ADE-L000236](../../tests/fixtures/answer_quality_cases.json#L236) | 236 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000237](../../tests/fixtures/answer_quality_cases.json#L237) | 237 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000238](../../tests/fixtures/answer_quality_cases.json#L238) | 238 | `"        \"One or more subquestions ignored with no acknowledgment\""` | — |
@@ -814,5 +816,3 @@
 | [SRC-90FAA34ADE-L001031](../../tests/fixtures/answer_quality_cases.json#L1031) | 1031 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L001032](../../tests/fixtures/answer_quality_cases.json#L1032) | 1032 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L001033](../../tests/fixtures/answer_quality_cases.json#L1033) | 1033 | `"          {"` | — |
-| [SRC-90FAA34ADE-L001034](../../tests/fixtures/answer_quality_cases.json#L1034) | 1034 | `"            \"title\": \"Blog A\","` | — |
-| [SRC-90FAA34ADE-L001035](../../tests/fixtures/answer_quality_cases.json#L1035) | 1035 | `"            \"url\": \"https://blog-a.example.test/stop\","` | — |

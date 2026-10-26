@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002392 إلى SRC-DE7EABE998-L000379
+- النطاق: SRC-F725E90B2A-L002390 إلى SRC-DE7EABE998-L000377
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002390](../../tests/test_web_agent.py#L2390) | 2390 | `"                \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L002391](../../tests/test_web_agent.py#L2391) | 2391 | `"                \"page_text\": f\"نص مصدر الاختبار رقم {index + 1}.\","` | — |
 | [SRC-F725E90B2A-L002392](../../tests/test_web_agent.py#L2392) | 2392 | `"            }"` | — |
 | [SRC-F725E90B2A-L002393](../../tests/test_web_agent.py#L2393) | 2393 | `"        )"` | — |
 | [SRC-F725E90B2A-L002394](../../tests/test_web_agent.py#L2394) | 2394 | `"        sources.append(source)"` | — |
@@ -823,5 +825,3 @@
 | [SRC-DE7EABE998-L000375](../../web/agent.html#L375) | 375 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |
 | [SRC-DE7EABE998-L000376](../../web/agent.html#L376) | 376 | `"  if(a.x_api_configured)configured.push(\"X API\");"` | — |
 | [SRC-DE7EABE998-L000377](../../web/agent.html#L377) | 377 | `"  if(a.youtube_api_configured)configured.push(\"YouTube API\");"` | — |
-| [SRC-DE7EABE998-L000378](../../web/agent.html#L378) | 378 | `"  const model=!!a.language_model_configured, search=!!a.web_search_ready;"` | — |
-| [SRC-DE7EABE998-L000379](../../web/agent.html#L379) | 379 | `"  $(\"setupStatus\").textContent=(search?\"حزم البحث مثبتة. \":\"حزم البحث تحتاج تثبيتًا. \")+(model?\"مفتاح نموذج اللغة موجود في جلسة الخادم. \":\"النموذج التوليدي غير مضبوط بعد. \")+\"لم يتم تأكيد اتصال الإنترنت من هذه الشاشة وحدها؛ شغّل الاختبار الحي. لا تظهر هنا مفاتيح الخدمات أو قيمها.\";"` | — |
