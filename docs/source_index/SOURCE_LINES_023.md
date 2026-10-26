@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001100 إلى SRC-1C77C97630-L000016
+- النطاق: SRC-90FAA34ADE-L001056 إلى SRC-B3062EB677-L000203
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,50 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001056](../../tests/fixtures/answer_quality_cases.json#L1056) | 1056 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001057](../../tests/fixtures/answer_quality_cases.json#L1057) | 1057 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001058](../../tests/fixtures/answer_quality_cases.json#L1058) | 1058 | `"        \"تأكيد التوقف نهائيًا من هذه النتائج فقط\","` | — |
+| [SRC-90FAA34ADE-L001059](../../tests/fixtures/answer_quality_cases.json#L1059) | 1059 | `"        \"وصف النتائج بأنها مصادر مستقلة مؤكدة\""` | — |
+| [SRC-90FAA34ADE-L001060](../../tests/fixtures/answer_quality_cases.json#L1060) | 1060 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001061](../../tests/fixtures/answer_quality_cases.json#L1061) | 1061 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001062](../../tests/fixtures/answer_quality_cases.json#L1062) | 1062 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001063](../../tests/fixtures/answer_quality_cases.json#L1063) | 1063 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001064](../../tests/fixtures/answer_quality_cases.json#L1064) | 1064 | `"      \"case_id\": \"AQ-036\","` | — |
+| [SRC-90FAA34ADE-L001065](../../tests/fixtures/answer_quality_cases.json#L1065) | 1065 | `"      \"category\": \"unsupported_claim\","` | — |
+| [SRC-90FAA34ADE-L001066](../../tests/fixtures/answer_quality_cases.json#L1066) | 1066 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001067](../../tests/fixtures/answer_quality_cases.json#L1067) | 1067 | `"      \"question\": \"The product page says “battery included.” Does that prove the device lasts 18 hours on a charge?\","` | — |
+| [SRC-90FAA34ADE-L001068](../../tests/fixtures/answer_quality_cases.json#L1068) | 1068 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001069](../../tests/fixtures/answer_quality_cases.json#L1069) | 1069 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001070](../../tests/fixtures/answer_quality_cases.json#L1070) | 1070 | `"        \"States the page supports only that a battery is included\","` | — |
+| [SRC-90FAA34ADE-L001071](../../tests/fixtures/answer_quality_cases.json#L1071) | 1071 | `"        \"Separates battery presence from battery-life duration\","` | — |
+| [SRC-90FAA34ADE-L001072](../../tests/fixtures/answer_quality_cases.json#L1072) | 1072 | `"        \"Requests a specification or credible test for the 18-hour claim\""` | — |
+| [SRC-90FAA34ADE-L001073](../../tests/fixtures/answer_quality_cases.json#L1073) | 1073 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001074](../../tests/fixtures/answer_quality_cases.json#L1074) | 1074 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001075](../../tests/fixtures/answer_quality_cases.json#L1075) | 1075 | `"        \"Claims 18-hour battery life from a page that never mentions duration\","` | — |
+| [SRC-90FAA34ADE-L001076](../../tests/fixtures/answer_quality_cases.json#L1076) | 1076 | `"        \"Invents a specification sheet\""` | — |
+| [SRC-90FAA34ADE-L001077](../../tests/fixtures/answer_quality_cases.json#L1077) | 1077 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001078](../../tests/fixtures/answer_quality_cases.json#L1078) | 1078 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001079](../../tests/fixtures/answer_quality_cases.json#L1079) | 1079 | `"        \"type\": \"controlled_page\","` | — |
+| [SRC-90FAA34ADE-L001080](../../tests/fixtures/answer_quality_cases.json#L1080) | 1080 | `"        \"url\": \"https://product.example.test/spec\","` | — |
+| [SRC-90FAA34ADE-L001081](../../tests/fixtures/answer_quality_cases.json#L1081) | 1081 | `"        \"body\": \"Package includes: device, cable, and battery. No runtime figure is listed.\""` | — |
+| [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001084](../../tests/fixtures/answer_quality_cases.json#L1084) | 1084 | `"        \"States 18 hours as supported by this page\","` | — |
+| [SRC-90FAA34ADE-L001085](../../tests/fixtures/answer_quality_cases.json#L1085) | 1085 | `"        \"Attributes a nonexistent runtime specification to the source\""` | — |
+| [SRC-90FAA34ADE-L001086](../../tests/fixtures/answer_quality_cases.json#L1086) | 1086 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001087](../../tests/fixtures/answer_quality_cases.json#L1087) | 1087 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001088](../../tests/fixtures/answer_quality_cases.json#L1088) | 1088 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001089](../../tests/fixtures/answer_quality_cases.json#L1089) | 1089 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001090](../../tests/fixtures/answer_quality_cases.json#L1090) | 1090 | `"      \"case_id\": \"AQ-037\","` | — |
+| [SRC-90FAA34ADE-L001091](../../tests/fixtures/answer_quality_cases.json#L1091) | 1091 | `"      \"category\": \"invalid_links\","` | — |
+| [SRC-90FAA34ADE-L001092](../../tests/fixtures/answer_quality_cases.json#L1092) | 1092 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L001093](../../tests/fixtures/answer_quality_cases.json#L1093) | 1093 | `"      \"question\": \"The result gives this link: javascript:alert(1). Check whether it can be used as a trustworthy source.\","` | — |
+| [SRC-90FAA34ADE-L001094](../../tests/fixtures/answer_quality_cases.json#L1094) | 1094 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001095](../../tests/fixtures/answer_quality_cases.json#L1095) | 1095 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001096](../../tests/fixtures/answer_quality_cases.json#L1096) | 1096 | `"        \"Rejects non-HTTP(S) script URLs as evidence links\","` | — |
+| [SRC-90FAA34ADE-L001097](../../tests/fixtures/answer_quality_cases.json#L1097) | 1097 | `"        \"Does not execute or open JavaScript URLs\","` | — |
+| [SRC-90FAA34ADE-L001098](../../tests/fixtures/answer_quality_cases.json#L1098) | 1098 | `"        \"Explains that the link is invalid for a public source citation\""` | — |
+| [SRC-90FAA34ADE-L001099](../../tests/fixtures/answer_quality_cases.json#L1099) | 1099 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001100](../../tests/fixtures/answer_quality_cases.json#L1100) | 1100 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001101](../../tests/fixtures/answer_quality_cases.json#L1101) | 1101 | `"        \"Executes the URL\","` | — |
 | [SRC-90FAA34ADE-L001102](../../tests/fixtures/answer_quality_cases.json#L1102) | 1102 | `"        \"Renders or endorses it as a safe source\""` | — |
@@ -799,56 +843,3 @@
 | [SRC-B3062EB677-L000201](../../tests/test_answer_quality_runner.py#L201) | 201 | `"        0.0,"` | — |
 | [SRC-B3062EB677-L000202](../../tests/test_answer_quality_runner.py#L202) | 202 | `"        None,"` | — |
 | [SRC-B3062EB677-L000203](../../tests/test_answer_quality_runner.py#L203) | 203 | `"    )"` | — |
-| [SRC-B3062EB677-L000204](../../tests/test_answer_quality_runner.py#L204) | 204 | `"    assert rc == 2"` | — |
-| [SRC-B3062EB677-L000205](../../tests/test_answer_quality_runner.py#L205) | 205 | `"    assert \"Unsafe base URL\" in capsys.readouterr().err"` | — |
-| [SRC-B3062EB677-L000206](../../tests/test_answer_quality_runner.py#L206) | 206 | `""` | — |
-| [SRC-B3062EB677-L000207](../../tests/test_answer_quality_runner.py#L207) | 207 | `""` | — |
-| [SRC-B3062EB677-L000208](../../tests/test_answer_quality_runner.py#L208) | 208 | `"def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):"` | — |
-| [SRC-B3062EB677-L000209](../../tests/test_answer_quality_runner.py#L209) | 209 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000210](../../tests/test_answer_quality_runner.py#L210) | 210 | `""` | — |
-| [SRC-B3062EB677-L000211](../../tests/test_answer_quality_runner.py#L211) | 211 | `"    def fake_post(base_url, question, timeout, token):"` | — |
-| [SRC-B3062EB677-L000212](../../tests/test_answer_quality_runner.py#L212) | 212 | `"        return 0, {\"error\": \"URLError\", \"detail\": \"connection refused\"}"` | — |
-| [SRC-B3062EB677-L000213](../../tests/test_answer_quality_runner.py#L213) | 213 | `""` | — |
-| [SRC-B3062EB677-L000214](../../tests/test_answer_quality_runner.py#L214) | 214 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
-| [SRC-B3062EB677-L000215](../../tests/test_answer_quality_runner.py#L215) | 215 | `"    out = tmp_path / \"results.json\""` | — |
-| [SRC-B3062EB677-L000216](../../tests/test_answer_quality_runner.py#L216) | 216 | `"    rc = mod.main("` | — |
-| [SRC-B3062EB677-L000217](../../tests/test_answer_quality_runner.py#L217) | 217 | `"        ["` | — |
-| [SRC-B3062EB677-L000218](../../tests/test_answer_quality_runner.py#L218) | 218 | `"            \"--mode\","` | — |
-| [SRC-B3062EB677-L000219](../../tests/test_answer_quality_runner.py#L219) | 219 | `"            \"live\","` | — |
-| [SRC-B3062EB677-L000220](../../tests/test_answer_quality_runner.py#L220) | 220 | `"            \"--corpus\","` | — |
-| [SRC-B3062EB677-L000221](../../tests/test_answer_quality_runner.py#L221) | 221 | `"            str(CORPUS),"` | — |
-| [SRC-B3062EB677-L000222](../../tests/test_answer_quality_runner.py#L222) | 222 | `"            \"--case-id\","` | — |
-| [SRC-B3062EB677-L000223](../../tests/test_answer_quality_runner.py#L223) | 223 | `"            \"AQ-001\","` | — |
-| [SRC-B3062EB677-L000224](../../tests/test_answer_quality_runner.py#L224) | 224 | `"            \"--out\","` | — |
-| [SRC-B3062EB677-L000225](../../tests/test_answer_quality_runner.py#L225) | 225 | `"            str(out),"` | — |
-| [SRC-B3062EB677-L000226](../../tests/test_answer_quality_runner.py#L226) | 226 | `"        ]"` | — |
-| [SRC-B3062EB677-L000227](../../tests/test_answer_quality_runner.py#L227) | 227 | `"    )"` | — |
-| [SRC-B3062EB677-L000228](../../tests/test_answer_quality_runner.py#L228) | 228 | `"    assert rc == 0"` | — |
-| [SRC-B3062EB677-L000229](../../tests/test_answer_quality_runner.py#L229) | 229 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-B3062EB677-L000230](../../tests/test_answer_quality_runner.py#L230) | 230 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
-| [SRC-B3062EB677-L000231](../../tests/test_answer_quality_runner.py#L231) | 231 | `"    assert payload[\"results\"][0][\"transport_ok\"] is False"` | — |
-## اختبارات
-
-### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
-| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |
-| [SRC-1C77C97630-L000005](../../tests/test_answer_validation.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-1C77C97630-L000006](../../tests/test_answer_validation.py#L6) | 6 | `""` | — |
-| [SRC-1C77C97630-L000007](../../tests/test_answer_validation.py#L7) | 7 | `"from agents.answer_validation import audit_answer_integrity"` | — |
-| [SRC-1C77C97630-L000008](../../tests/test_answer_validation.py#L8) | 8 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-1C77C97630-L000009](../../tests/test_answer_validation.py#L9) | 9 | `""` | — |
-| [SRC-1C77C97630-L000010](../../tests/test_answer_validation.py#L10) | 10 | `""` | — |
-| [SRC-1C77C97630-L000011](../../tests/test_answer_validation.py#L11) | 11 | `"def test_numeric_screen_accepts_arabic_digits_and_thousands_formatting():"` | — |
-| [SRC-1C77C97630-L000012](../../tests/test_answer_validation.py#L12) | 12 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000013](../../tests/test_answer_validation.py#L13) | 13 | `"        \"ما السعر المذكور في 2025؟\","` | — |
-| [SRC-1C77C97630-L000014](../../tests/test_answer_validation.py#L14) | 14 | `"        \"السعر ١٠٠٬٠٠٠ جنيه في 2025 [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000015](../../tests/test_answer_validation.py#L15) | 15 | `"        [{"` | — |
-| [SRC-1C77C97630-L000016](../../tests/test_answer_validation.py#L16) | 16 | `"            \"title\": \"تفاصيل السعر\","` | — |
