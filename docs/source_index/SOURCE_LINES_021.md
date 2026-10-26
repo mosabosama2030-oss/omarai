@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000149 إلى SRC-90FAA34ADE-L000162
+- النطاق: SRC-A8360B1B03-L000136 إلى SRC-90FAA34ADE-L000149
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000136](../../scripts/hosted_smoke_test.py#L136) | 136 | `"            \"status\": \"not_checked\","` | — |
+| [SRC-A8360B1B03-L000137](../../scripts/hosted_smoke_test.py#L137) | 137 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
+| [SRC-A8360B1B03-L000138](../../scripts/hosted_smoke_test.py#L138) | 138 | `"        }"` | — |
+| [SRC-A8360B1B03-L000139](../../scripts/hosted_smoke_test.py#L139) | 139 | `""` | — |
+| [SRC-A8360B1B03-L000140](../../scripts/hosted_smoke_test.py#L140) | 140 | `"    status, _ = request_json("` | — |
+| [SRC-A8360B1B03-L000141](../../scripts/hosted_smoke_test.py#L141) | 141 | `"        f\"{origin}/api/agent\", payload={\"question\": \"اختبار رفض الوصول غير المصرح به\"},"` | — |
+| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"        timeout=min(timeout, 20),"` | — |
+| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    )"` | — |
+| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `"    if status != 401:"` | — |
+| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `"        raise SmokeError(f\"Unauthenticated POST /api/agent should return 401, received {status}.\")"` | — |
+| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"    checks[\"authentication\"] = \"passed\""` | — |
+| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `""` | — |
+| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
 | [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    status, diagnostics = request_json("` | — |
 | [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
 | [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"        payload={\"test_model\": True, \"test_social\": False}, timeout=timeout,"` | — |
@@ -830,16 +843,3 @@
 | [SRC-90FAA34ADE-L000147](../../tests/fixtures/answer_quality_cases.json#L147) | 147 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000148](../../tests/fixtures/answer_quality_cases.json#L148) | 148 | `"        \"Prints OPENROUTER_API_KEY or OMARAI_ACCESS_TOKEN\","` | — |
 | [SRC-90FAA34ADE-L000149](../../tests/fixtures/answer_quality_cases.json#L149) | 149 | `"        \"Claims unrestricted access to logged-in social feeds\""` | — |
-| [SRC-90FAA34ADE-L000150](../../tests/fixtures/answer_quality_cases.json#L150) | 150 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000151](../../tests/fixtures/answer_quality_cases.json#L151) | 151 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000152](../../tests/fixtures/answer_quality_cases.json#L152) | 152 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000153](../../tests/fixtures/answer_quality_cases.json#L153) | 153 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000154](../../tests/fixtures/answer_quality_cases.json#L154) | 154 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000155](../../tests/fixtures/answer_quality_cases.json#L155) | 155 | `"        \"Response contains env secret values\""` | — |
-| [SRC-90FAA34ADE-L000156](../../tests/fixtures/answer_quality_cases.json#L156) | 156 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000157](../../tests/fixtures/answer_quality_cases.json#L157) | 157 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000158](../../tests/fixtures/answer_quality_cases.json#L158) | 158 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000159](../../tests/fixtures/answer_quality_cases.json#L159) | 159 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000160](../../tests/fixtures/answer_quality_cases.json#L160) | 160 | `"      \"case_id\": \"AQ-007\","` | — |
-| [SRC-90FAA34ADE-L000161](../../tests/fixtures/answer_quality_cases.json#L161) | 161 | `"      \"category\": \"current_information\","` | — |
-| [SRC-90FAA34ADE-L000162](../../tests/fixtures/answer_quality_cases.json#L162) | 162 | `"      \"language\": \"ar-MSA\","` | — |

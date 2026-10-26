@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001374 إلى SRC-F725E90B2A-L002173
+- النطاق: SRC-F725E90B2A-L001361 إلى SRC-F725E90B2A-L002160
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
+| [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"    assert result[\"used_language_model\"] is True"` | — |
+| [SRC-F725E90B2A-L001363](../../tests/test_web_agent.py#L1363) | 1363 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001364](../../tests/test_web_agent.py#L1364) | 1364 | `"    assert result[\"sources\"] == []"` | — |
+| [SRC-F725E90B2A-L001365](../../tests/test_web_agent.py#L1365) | 1365 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001366](../../tests/test_web_agent.py#L1366) | 1366 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001367](../../tests/test_web_agent.py#L1367) | 1367 | `""` | — |
+| [SRC-F725E90B2A-L001368](../../tests/test_web_agent.py#L1368) | 1368 | `""` | — |
+| [SRC-F725E90B2A-L001369](../../tests/test_web_agent.py#L1369) | 1369 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001370](../../tests/test_web_agent.py#L1370) | 1370 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001371](../../tests/test_web_agent.py#L1371) | 1371 | `"    agent.api_key = \"\""` | — |
+| [SRC-F725E90B2A-L001372](../../tests/test_web_agent.py#L1372) | 1372 | `""` | — |
+| [SRC-F725E90B2A-L001373](../../tests/test_web_agent.py#L1373) | 1373 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001374](../../tests/test_web_agent.py#L1374) | 1374 | `"        agent, \"_collect_research\","` | — |
 | [SRC-F725E90B2A-L001375](../../tests/test_web_agent.py#L1375) | 1375 | `"        lambda plan: pytest.fail(\"Self-description must not call external search\"),"` | — |
 | [SRC-F725E90B2A-L001376](../../tests/test_web_agent.py#L1376) | 1376 | `"    )"` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L002158](../../tests/test_web_agent.py#L2158) | 2158 | `""` | — |
 | [SRC-F725E90B2A-L002159](../../tests/test_web_agent.py#L2159) | 2159 | `"def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L002160](../../tests/test_web_agent.py#L2160) | 2160 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002161](../../tests/test_web_agent.py#L2161) | 2161 | `"    seen = {}"` | — |
-| [SRC-F725E90B2A-L002162](../../tests/test_web_agent.py#L2162) | 2162 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L002163](../../tests/test_web_agent.py#L2163) | 2163 | `"        \"queries\": [\"generic apartment listings\"],"` | — |
-| [SRC-F725E90B2A-L002164](../../tests/test_web_agent.py#L2164) | 2164 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L002165](../../tests/test_web_agent.py#L2165) | 2165 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L002166](../../tests/test_web_agent.py#L2166) | 2166 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L002167](../../tests/test_web_agent.py#L2167) | 2167 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L002168](../../tests/test_web_agent.py#L2168) | 2168 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002169](../../tests/test_web_agent.py#L2169) | 2169 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002170](../../tests/test_web_agent.py#L2170) | 2170 | `"    }"` | — |
-| [SRC-F725E90B2A-L002171](../../tests/test_web_agent.py#L2171) | 2171 | `""` | — |
-| [SRC-F725E90B2A-L002172](../../tests/test_web_agent.py#L2172) | 2172 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L002173](../../tests/test_web_agent.py#L2173) | 2173 | `"        seen.update(research_plan)"` | — |

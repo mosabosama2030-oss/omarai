@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000963 إلى SRC-B3062EB677-L000110
+- النطاق: SRC-90FAA34ADE-L000950 إلى SRC-B3062EB677-L000097
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000950](../../tests/fixtures/answer_quality_cases.json#L950) | 950 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000951](../../tests/fixtures/answer_quality_cases.json#L951) | 951 | `"        \"Verified status granted without independent verification\","` | — |
+| [SRC-90FAA34ADE-L000952](../../tests/fixtures/answer_quality_cases.json#L952) | 952 | `"        \"Buying intent recorded as confirmed with no evidence\""` | — |
+| [SRC-90FAA34ADE-L000953](../../tests/fixtures/answer_quality_cases.json#L953) | 953 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000954](../../tests/fixtures/answer_quality_cases.json#L954) | 954 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000955](../../tests/fixtures/answer_quality_cases.json#L955) | 955 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000956](../../tests/fixtures/answer_quality_cases.json#L956) | 956 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000957](../../tests/fixtures/answer_quality_cases.json#L957) | 957 | `"      \"case_id\": \"AQ-033\","` | — |
+| [SRC-90FAA34ADE-L000958](../../tests/fixtures/answer_quality_cases.json#L958) | 958 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000959](../../tests/fixtures/answer_quality_cases.json#L959) | 959 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L000960](../../tests/fixtures/answer_quality_cases.json#L960) | 960 | `"      \"question\": \"وجدت موقع شركة خدمات، لكن صفحة التواصل فيها بريد عام فقط. هل أكتب أن مدير المشتريات وافق على العرض؟\","` | — |
+| [SRC-90FAA34ADE-L000961](../../tests/fixtures/answer_quality_cases.json#L961) | 961 | `"      \"expected_strategy\": \"local\","` | — |
+| [SRC-90FAA34ADE-L000962](../../tests/fixtures/answer_quality_cases.json#L962) | 962 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000963](../../tests/fixtures/answer_quality_cases.json#L963) | 963 | `"        \"يرفض استنتاج موافقة أو منصب شخص من مجرد صفحة التواصل\","` | — |
 | [SRC-90FAA34ADE-L000964](../../tests/fixtures/answer_quality_cases.json#L964) | 964 | `"        \"يسجل البريد العام كمعلومة منشورة غير مؤكدة عند الاقتضاء\","` | — |
 | [SRC-90FAA34ADE-L000965](../../tests/fixtures/answer_quality_cases.json#L965) | 965 | `"        \"يقترح التواصل المهني الشفاف دون انتحال أو ادعاء موافقة\""` | — |
@@ -830,16 +843,3 @@
 | [SRC-B3062EB677-L000095](../../tests/test_answer_quality_runner.py#L95) | 95 | `"    text = \"token=super-secret-token-value-xyz and OPENROUTER_API_KEY\""` | — |
 | [SRC-B3062EB677-L000096](../../tests/test_answer_quality_runner.py#L96) | 96 | `"    out = mod.redact_secrets(text)"` | — |
 | [SRC-B3062EB677-L000097](../../tests/test_answer_quality_runner.py#L97) | 97 | `"    assert \"super-secret-token-value-xyz\" not in out"` | — |
-| [SRC-B3062EB677-L000098](../../tests/test_answer_quality_runner.py#L98) | 98 | `"    assert \"REDACTED\" in out"` | — |
-| [SRC-B3062EB677-L000099](../../tests/test_answer_quality_runner.py#L99) | 99 | `""` | — |
-| [SRC-B3062EB677-L000100](../../tests/test_answer_quality_runner.py#L100) | 100 | `""` | — |
-| [SRC-B3062EB677-L000101](../../tests/test_answer_quality_runner.py#L101) | 101 | `"def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):"` | — |
-| [SRC-B3062EB677-L000102](../../tests/test_answer_quality_runner.py#L102) | 102 | `"    \"\"\"Even on HTTP 200, quality status stays NOT_TESTED (no keyword auto-PASS).\"\"\""` | — |
-| [SRC-B3062EB677-L000103](../../tests/test_answer_quality_runner.py#L103) | 103 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000104](../../tests/test_answer_quality_runner.py#L104) | 104 | `""` | — |
-| [SRC-B3062EB677-L000105](../../tests/test_answer_quality_runner.py#L105) | 105 | `"    def fake_post(base_url, question, timeout, token):"` | — |
-| [SRC-B3062EB677-L000106](../../tests/test_answer_quality_runner.py#L106) | 106 | `"        return 200, {"` | — |
-| [SRC-B3062EB677-L000107](../../tests/test_answer_quality_runner.py#L107) | 107 | `"            \"answer\": \"hello used_web_search should not force PASS\","` | — |
-| [SRC-B3062EB677-L000108](../../tests/test_answer_quality_runner.py#L108) | 108 | `"            \"used_web_search\": False,"` | — |
-| [SRC-B3062EB677-L000109](../../tests/test_answer_quality_runner.py#L109) | 109 | `"            \"used_language_model\": True,"` | — |
-| [SRC-B3062EB677-L000110](../../tests/test_answer_quality_runner.py#L110) | 110 | `"            \"sources\": [],"` | — |

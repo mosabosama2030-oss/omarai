@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000163 إلى SRC-90FAA34ADE-L000962
+- النطاق: SRC-90FAA34ADE-L000150 إلى SRC-90FAA34ADE-L000949
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000150](../../tests/fixtures/answer_quality_cases.json#L150) | 150 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000151](../../tests/fixtures/answer_quality_cases.json#L151) | 151 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000152](../../tests/fixtures/answer_quality_cases.json#L152) | 152 | `"        \"type\": \"none\""` | — |
+| [SRC-90FAA34ADE-L000153](../../tests/fixtures/answer_quality_cases.json#L153) | 153 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000154](../../tests/fixtures/answer_quality_cases.json#L154) | 154 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000155](../../tests/fixtures/answer_quality_cases.json#L155) | 155 | `"        \"Response contains env secret values\""` | — |
+| [SRC-90FAA34ADE-L000156](../../tests/fixtures/answer_quality_cases.json#L156) | 156 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000157](../../tests/fixtures/answer_quality_cases.json#L157) | 157 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
+| [SRC-90FAA34ADE-L000158](../../tests/fixtures/answer_quality_cases.json#L158) | 158 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000159](../../tests/fixtures/answer_quality_cases.json#L159) | 159 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000160](../../tests/fixtures/answer_quality_cases.json#L160) | 160 | `"      \"case_id\": \"AQ-007\","` | — |
+| [SRC-90FAA34ADE-L000161](../../tests/fixtures/answer_quality_cases.json#L161) | 161 | `"      \"category\": \"current_information\","` | — |
+| [SRC-90FAA34ADE-L000162](../../tests/fixtures/answer_quality_cases.json#L162) | 162 | `"      \"language\": \"ar-MSA\","` | — |
 | [SRC-90FAA34ADE-L000163](../../tests/fixtures/answer_quality_cases.json#L163) | 163 | `"      \"question\": \"ما آخر سعر تقريبي للذهب اليوم في السوق العالمية؟\","` | — |
 | [SRC-90FAA34ADE-L000164](../../tests/fixtures/answer_quality_cases.json#L164) | 164 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000165](../../tests/fixtures/answer_quality_cases.json#L165) | 165 | `"      \"required_behaviors\": ["` | — |
@@ -803,16 +816,3 @@
 | [SRC-90FAA34ADE-L000947](../../tests/fixtures/answer_quality_cases.json#L947) | 947 | `"          }"` | — |
 | [SRC-90FAA34ADE-L000948](../../tests/fixtures/answer_quality_cases.json#L948) | 948 | `"        ]"` | — |
 | [SRC-90FAA34ADE-L000949](../../tests/fixtures/answer_quality_cases.json#L949) | 949 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000950](../../tests/fixtures/answer_quality_cases.json#L950) | 950 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000951](../../tests/fixtures/answer_quality_cases.json#L951) | 951 | `"        \"Verified status granted without independent verification\","` | — |
-| [SRC-90FAA34ADE-L000952](../../tests/fixtures/answer_quality_cases.json#L952) | 952 | `"        \"Buying intent recorded as confirmed with no evidence\""` | — |
-| [SRC-90FAA34ADE-L000953](../../tests/fixtures/answer_quality_cases.json#L953) | 953 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000954](../../tests/fixtures/answer_quality_cases.json#L954) | 954 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000955](../../tests/fixtures/answer_quality_cases.json#L955) | 955 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000956](../../tests/fixtures/answer_quality_cases.json#L956) | 956 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000957](../../tests/fixtures/answer_quality_cases.json#L957) | 957 | `"      \"case_id\": \"AQ-033\","` | — |
-| [SRC-90FAA34ADE-L000958](../../tests/fixtures/answer_quality_cases.json#L958) | 958 | `"      \"category\": \"lead_not_verified\","` | — |
-| [SRC-90FAA34ADE-L000959](../../tests/fixtures/answer_quality_cases.json#L959) | 959 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000960](../../tests/fixtures/answer_quality_cases.json#L960) | 960 | `"      \"question\": \"وجدت موقع شركة خدمات، لكن صفحة التواصل فيها بريد عام فقط. هل أكتب أن مدير المشتريات وافق على العرض؟\","` | — |
-| [SRC-90FAA34ADE-L000961](../../tests/fixtures/answer_quality_cases.json#L961) | 961 | `"      \"expected_strategy\": \"local\","` | — |
-| [SRC-90FAA34ADE-L000962](../../tests/fixtures/answer_quality_cases.json#L962) | 962 | `"      \"required_behaviors\": ["` | — |
