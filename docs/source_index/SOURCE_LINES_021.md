@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000187 إلى SRC-90FAA34ADE-L000200
+- النطاق: SRC-A8360B1B03-L000172 إلى SRC-90FAA34ADE-L000185
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            \"history\": [], \"mode\": \"auto\","` | — |
+| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        },"` | — |
+| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"    )"` | — |
+| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"    if status != 200 or not answer:"` | — |
+| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"    sources = answer.get(\"sources\")"` | — |
+| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    usable = ["` | — |
+| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        item for item in sources if isinstance(item, dict)"` | — |
+| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"        and isinstance(item.get(\"url\"), str)"` | — |
+| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
+| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
+| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"    ] if isinstance(sources, list) else []"` | — |
+| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
+| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        raise SmokeError(\"Agent request did not return a live web search with usable source URLs.\")"` | — |
+| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
 | [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"        raise SmokeError(\"Agent request did not confirm that a language model was used.\")"` | — |
 | [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"    report = answer.get(\"search_report\")"` | — |
 | [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"    checks[\"agent_request\"] = {"` | — |
@@ -828,18 +843,3 @@
 | [SRC-90FAA34ADE-L000183](../../tests/fixtures/answer_quality_cases.json#L183) | 183 | `"            \"provider\": \"fixture_search\""` | — |
 | [SRC-90FAA34ADE-L000184](../../tests/fixtures/answer_quality_cases.json#L184) | 184 | `"          }"` | — |
 | [SRC-90FAA34ADE-L000185](../../tests/fixtures/answer_quality_cases.json#L185) | 185 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000186](../../tests/fixtures/answer_quality_cases.json#L186) | 186 | `"        \"notes\": \"When running live, require freshness-aware retrieval; fixture is for offline review of expected behaviors\""` | — |
-| [SRC-90FAA34ADE-L000187](../../tests/fixtures/answer_quality_cases.json#L187) | 187 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000188](../../tests/fixtures/answer_quality_cases.json#L188) | 188 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000189](../../tests/fixtures/answer_quality_cases.json#L189) | 189 | `"        \"Numeric price asserted with zero sources\","` | — |
-| [SRC-90FAA34ADE-L000190](../../tests/fixtures/answer_quality_cases.json#L190) | 190 | `"        \"evidence_status insufficient but answer is assertive\""` | — |
-| [SRC-90FAA34ADE-L000191](../../tests/fixtures/answer_quality_cases.json#L191) | 191 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000192](../../tests/fixtures/answer_quality_cases.json#L192) | 192 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000193](../../tests/fixtures/answer_quality_cases.json#L193) | 193 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000194](../../tests/fixtures/answer_quality_cases.json#L194) | 194 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000195](../../tests/fixtures/answer_quality_cases.json#L195) | 195 | `"      \"case_id\": \"AQ-008\","` | — |
-| [SRC-90FAA34ADE-L000196](../../tests/fixtures/answer_quality_cases.json#L196) | 196 | `"      \"category\": \"current_information\","` | — |
-| [SRC-90FAA34ADE-L000197](../../tests/fixtures/answer_quality_cases.json#L197) | 197 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000198](../../tests/fixtures/answer_quality_cases.json#L198) | 198 | `"      \"question\": \"What are the latest public headlines about Egyptian electricity supply today?\","` | — |
-| [SRC-90FAA34ADE-L000199](../../tests/fixtures/answer_quality_cases.json#L199) | 199 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000200](../../tests/fixtures/answer_quality_cases.json#L200) | 200 | `"      \"required_behaviors\": ["` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001720 إلى SRC-1AE03B9EC3-L002519
+- النطاق: SRC-1AE03B9EC3-L001705 إلى SRC-1AE03B9EC3-L002504
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001705](../../agents/web_agent.py#L1705) | 1705 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L001706](../../agents/web_agent.py#L1706) | 1706 | `"                    warnings.append("` | — |
+| [SRC-1AE03B9EC3-L001707](../../agents/web_agent.py#L1707) | 1707 | `"                        f\"Reddit OAuth authentication unavailable (HTTP {token_response.status_code}).\""` | — |
+| [SRC-1AE03B9EC3-L001708](../../agents/web_agent.py#L1708) | 1708 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L001709](../../agents/web_agent.py#L1709) | 1709 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L001710](../../agents/web_agent.py#L1710) | 1710 | `"                warnings.append(\"Reddit OAuth search failed for this request.\")"` | — |
+| [SRC-1AE03B9EC3-L001711](../../agents/web_agent.py#L1711) | 1711 | `""` | — |
+| [SRC-1AE03B9EC3-L001712](../../agents/web_agent.py#L1712) | 1712 | `"        if \"reddit\" in platforms and not any("` | — |
+| [SRC-1AE03B9EC3-L001713](../../agents/web_agent.py#L1713) | 1713 | `"            row.get(\"provider\") == \"reddit_oauth_api\" for row in results"` | — |
+| [SRC-1AE03B9EC3-L001714](../../agents/web_agent.py#L1714) | 1714 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L001715](../../agents/web_agent.py#L1715) | 1715 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L001716](../../agents/web_agent.py#L1716) | 1716 | `"                self._reserve_search_call()"` | — |
+| [SRC-1AE03B9EC3-L001717](../../agents/web_agent.py#L1717) | 1717 | `"                response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L001718](../../agents/web_agent.py#L1718) | 1718 | `"                    \"https://www.reddit.com/search.rss\","` | — |
+| [SRC-1AE03B9EC3-L001719](../../agents/web_agent.py#L1719) | 1719 | `"                    params={\"q\": query, \"sort\": \"relevance\", \"t\": \"all\", \"limit\": \"8\"},"` | — |
 | [SRC-1AE03B9EC3-L001720](../../agents/web_agent.py#L1720) | 1720 | `"                    headers=headers,"` | — |
 | [SRC-1AE03B9EC3-L001721](../../agents/web_agent.py#L1721) | 1721 | `"                    timeout=self._effective_timeout(9.0),"` | — |
 | [SRC-1AE03B9EC3-L001722](../../agents/web_agent.py#L1722) | 1722 | `"                    follow_redirects=False,"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L002502](../../agents/web_agent.py#L2502) | 2502 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L002503](../../agents/web_agent.py#L2503) | 2503 | `"        page_fetch_status_counts = {"` | — |
 | [SRC-1AE03B9EC3-L002504](../../agents/web_agent.py#L2504) | 2504 | `"            status: sum(source.get(\"page_fetch_status\") == status for source in fetch_targets)"` | — |
-| [SRC-1AE03B9EC3-L002505](../../agents/web_agent.py#L2505) | 2505 | `"            for status in page_status_values"` | — |
-| [SRC-1AE03B9EC3-L002506](../../agents/web_agent.py#L2506) | 2506 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002507](../../agents/web_agent.py#L2507) | 2507 | `"        provider_diagnostics = list(self._provider_diagnostics)"` | — |
-| [SRC-1AE03B9EC3-L002508](../../agents/web_agent.py#L2508) | 2508 | `"        provider_candidates_received = sum("` | — |
-| [SRC-1AE03B9EC3-L002509](../../agents/web_agent.py#L2509) | 2509 | `"            max(0, int(row.get(\"result_count\", 0) or 0))"` | — |
-| [SRC-1AE03B9EC3-L002510](../../agents/web_agent.py#L2510) | 2510 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
-| [SRC-1AE03B9EC3-L002511](../../agents/web_agent.py#L2511) | 2511 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L002512](../../agents/web_agent.py#L2512) | 2512 | `"        provider_candidates_accepted = sum("` | — |
-| [SRC-1AE03B9EC3-L002513](../../agents/web_agent.py#L2513) | 2513 | `"            max(0, int(row.get(\"accepted_count\", 0) or 0))"` | — |
-| [SRC-1AE03B9EC3-L002514](../../agents/web_agent.py#L2514) | 2514 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
-| [SRC-1AE03B9EC3-L002515](../../agents/web_agent.py#L2515) | 2515 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L002516](../../agents/web_agent.py#L2516) | 2516 | `"        provider_candidates_rejected = sum("` | — |
-| [SRC-1AE03B9EC3-L002517](../../agents/web_agent.py#L2517) | 2517 | `"            max(0, int(row.get(\"rejected_count\", 0) or 0))"` | — |
-| [SRC-1AE03B9EC3-L002518](../../agents/web_agent.py#L2518) | 2518 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
-| [SRC-1AE03B9EC3-L002519](../../agents/web_agent.py#L2519) | 2519 | `"        )"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000920 إلى SRC-1AE03B9EC3-L001719
+- النطاق: SRC-1AE03B9EC3-L000905 إلى SRC-1AE03B9EC3-L001704
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000905](../../agents/web_agent.py#L905) | 905 | `"                \"وأكمل معاك من غير ما أخمّن.\""` | — |
+| [SRC-1AE03B9EC3-L000906](../../agents/web_agent.py#L906) | 906 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000907](../../agents/web_agent.py#L907) | 907 | `"        result = self._local_answer_result(question, answer, \"clarification_needed\")"` | — |
+| [SRC-1AE03B9EC3-L000908](../../agents/web_agent.py#L908) | 908 | `"        return self._annotate_intent_route("` | — |
+| [SRC-1AE03B9EC3-L000909](../../agents/web_agent.py#L909) | 909 | `"            result, \"CLARIFY\", str(decision.get(\"reason\", \"missing_referent\")), mode"` | — |
+| [SRC-1AE03B9EC3-L000910](../../agents/web_agent.py#L910) | 910 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000911](../../agents/web_agent.py#L911) | 911 | `""` | — |
+| [SRC-1AE03B9EC3-L000912](../../agents/web_agent.py#L912) | 912 | `"    def _capability_status_snapshot(self) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L000913](../../agents/web_agent.py#L913) | 913 | `"        \"\"\"Describe configured capabilities without claiming a live health check.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000914](../../agents/web_agent.py#L914) | 914 | `"        status = self.status()"` | — |
+| [SRC-1AE03B9EC3-L000915](../../agents/web_agent.py#L915) | 915 | `"        not_tested = \"not_tested_in_this_response\""` | — |
+| [SRC-1AE03B9EC3-L000916](../../agents/web_agent.py#L916) | 916 | `"        providers = ["` | — |
+| [SRC-1AE03B9EC3-L000917](../../agents/web_agent.py#L917) | 917 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L000918](../../agents/web_agent.py#L918) | 918 | `"                \"name\": \"duckduckgo_html\","` | — |
+| [SRC-1AE03B9EC3-L000919](../../agents/web_agent.py#L919) | 919 | `"                \"implemented\": True,"` | — |
 | [SRC-1AE03B9EC3-L000920](../../agents/web_agent.py#L920) | 920 | `"                \"configuration_status\": \"built_in_no_api_key\","` | — |
 | [SRC-1AE03B9EC3-L000921](../../agents/web_agent.py#L921) | 921 | `"                \"runtime_status\": not_tested,"` | — |
 | [SRC-1AE03B9EC3-L000922](../../agents/web_agent.py#L922) | 922 | `"            },"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L001702](../../agents/web_agent.py#L1702) | 1702 | `"                            )"` | — |
 | [SRC-1AE03B9EC3-L001703](../../agents/web_agent.py#L1703) | 1703 | `"                    else:"` | — |
 | [SRC-1AE03B9EC3-L001704](../../agents/web_agent.py#L1704) | 1704 | `"                        warnings.append(\"Reddit OAuth did not return an access token.\")"` | — |
-| [SRC-1AE03B9EC3-L001705](../../agents/web_agent.py#L1705) | 1705 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L001706](../../agents/web_agent.py#L1706) | 1706 | `"                    warnings.append("` | — |
-| [SRC-1AE03B9EC3-L001707](../../agents/web_agent.py#L1707) | 1707 | `"                        f\"Reddit OAuth authentication unavailable (HTTP {token_response.status_code}).\""` | — |
-| [SRC-1AE03B9EC3-L001708](../../agents/web_agent.py#L1708) | 1708 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L001709](../../agents/web_agent.py#L1709) | 1709 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
-| [SRC-1AE03B9EC3-L001710](../../agents/web_agent.py#L1710) | 1710 | `"                warnings.append(\"Reddit OAuth search failed for this request.\")"` | — |
-| [SRC-1AE03B9EC3-L001711](../../agents/web_agent.py#L1711) | 1711 | `""` | — |
-| [SRC-1AE03B9EC3-L001712](../../agents/web_agent.py#L1712) | 1712 | `"        if \"reddit\" in platforms and not any("` | — |
-| [SRC-1AE03B9EC3-L001713](../../agents/web_agent.py#L1713) | 1713 | `"            row.get(\"provider\") == \"reddit_oauth_api\" for row in results"` | — |
-| [SRC-1AE03B9EC3-L001714](../../agents/web_agent.py#L1714) | 1714 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L001715](../../agents/web_agent.py#L1715) | 1715 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L001716](../../agents/web_agent.py#L1716) | 1716 | `"                self._reserve_search_call()"` | — |
-| [SRC-1AE03B9EC3-L001717](../../agents/web_agent.py#L1717) | 1717 | `"                response = httpx.get("` | — |
-| [SRC-1AE03B9EC3-L001718](../../agents/web_agent.py#L1718) | 1718 | `"                    \"https://www.reddit.com/search.rss\","` | — |
-| [SRC-1AE03B9EC3-L001719](../../agents/web_agent.py#L1719) | 1719 | `"                    params={\"q\": query, \"sort\": \"relevance\", \"t\": \"all\", \"limit\": \"8\"},"` | — |

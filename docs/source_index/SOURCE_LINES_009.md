@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004120 إلى SRC-1AE03B9EC3-L004919
+- النطاق: SRC-1AE03B9EC3-L004105 إلى SRC-1AE03B9EC3-L004904
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004105](../../agents/web_agent.py#L4105) | 4105 | `"        if lead_request:"` | — |
+| [SRC-1AE03B9EC3-L004106](../../agents/web_agent.py#L4106) | 4106 | `"            related_lead_results_count = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L004107](../../agents/web_agent.py#L4107) | 4107 | `"            for source in sources:"` | — |
+| [SRC-1AE03B9EC3-L004108](../../agents/web_agent.py#L4108) | 4108 | `"                signal = self._lead_intent_evidence(source)"` | — |
+| [SRC-1AE03B9EC3-L004109](../../agents/web_agent.py#L4109) | 4109 | `"                if signal:"` | — |
+| [SRC-1AE03B9EC3-L004110](../../agents/web_agent.py#L4110) | 4110 | `"                    source[\"lead_qualification\"] = \"public_buyer_intent_signal\""` | — |
+| [SRC-1AE03B9EC3-L004111](../../agents/web_agent.py#L4111) | 4111 | `"                    source[\"lead_intent_evidence\"] = signal"` | — |
+| [SRC-1AE03B9EC3-L004112](../../agents/web_agent.py#L4112) | 4112 | `"                    lead_evidence_sources.append(source)"` | — |
+| [SRC-1AE03B9EC3-L004113](../../agents/web_agent.py#L4113) | 4113 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L004114](../../agents/web_agent.py#L4114) | 4114 | `"                    source[\"lead_qualification\"] = \"related_result_not_lead\""` | — |
+| [SRC-1AE03B9EC3-L004115](../../agents/web_agent.py#L4115) | 4115 | `"            lead_research_incomplete = ("` | — |
+| [SRC-1AE03B9EC3-L004116](../../agents/web_agent.py#L4116) | 4116 | `"                not sources"` | — |
+| [SRC-1AE03B9EC3-L004117](../../agents/web_agent.py#L4117) | 4117 | `"                and report.get(\"search_outcome\") in _RESEARCH_ERROR_OUTCOMES"` | — |
+| [SRC-1AE03B9EC3-L004118](../../agents/web_agent.py#L4118) | 4118 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004119](../../agents/web_agent.py#L4119) | 4119 | `"            report[\"lead_generation\"] = {"` | — |
 | [SRC-1AE03B9EC3-L004120](../../agents/web_agent.py#L4120) | 4120 | `"                \"status\": ("` | — |
 | [SRC-1AE03B9EC3-L004121](../../agents/web_agent.py#L4121) | 4121 | `"                    \"research_incomplete\" if lead_research_incomplete"` | — |
 | [SRC-1AE03B9EC3-L004122](../../agents/web_agent.py#L4122) | 4122 | `"                    else \"candidate_signals_found\" if lead_evidence_sources"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L004902](../../agents/web_agent.py#L4902) | 4902 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L004903](../../agents/web_agent.py#L4903) | 4903 | `"        report[\"usable_sources_after_filtering\"] = len(sources)"` | — |
 | [SRC-1AE03B9EC3-L004904](../../agents/web_agent.py#L4904) | 4904 | `"        report[\"research_quality\"] = research_quality"` | — |
-| [SRC-1AE03B9EC3-L004905](../../agents/web_agent.py#L4905) | 4905 | `"        report[\"research_quality_semantics\"] = \"process_coverage_not_factual_probability\""` | — |
-| [SRC-1AE03B9EC3-L004906](../../agents/web_agent.py#L4906) | 4906 | `"        report[\"answer_evidence_status\"] = answer_evidence_status"` | — |
-| [SRC-1AE03B9EC3-L004907](../../agents/web_agent.py#L4907) | 4907 | `"        report[\"distinct_registrable_domains\"] = len(distinct_domains)"` | — |
-| [SRC-1AE03B9EC3-L004908](../../agents/web_agent.py#L4908) | 4908 | `"        report[\"independent_sources\"] = len(distinct_domains)  # Legacy alias; not editorial independence."` | — |
-| [SRC-1AE03B9EC3-L004909](../../agents/web_agent.py#L4909) | 4909 | `"        report[\"independent_sources_field_semantics\"] = ("` | — |
-| [SRC-1AE03B9EC3-L004910](../../agents/web_agent.py#L4910) | 4910 | `"            \"legacy_compatibility_alias_for_distinct_registrable_domain_count\""` | — |
-| [SRC-1AE03B9EC3-L004911](../../agents/web_agent.py#L4911) | 4911 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004912](../../agents/web_agent.py#L4912) | 4912 | `"        report[\"source_diversity_semantics\"] = ("` | — |
-| [SRC-1AE03B9EC3-L004913](../../agents/web_agent.py#L4913) | 4913 | `"            \"distinct_registrable_domains_not_editorial_independence\""` | — |
-| [SRC-1AE03B9EC3-L004914](../../agents/web_agent.py#L4914) | 4914 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004915](../../agents/web_agent.py#L4915) | 4915 | `"        report[\"editorial_independence_status\"] = \"not_assessed\""` | — |
-| [SRC-1AE03B9EC3-L004916](../../agents/web_agent.py#L4916) | 4916 | `"        report[\"claim_audit_semantics\"] = ("` | — |
-| [SRC-1AE03B9EC3-L004917](../../agents/web_agent.py#L4917) | 4917 | `"            \"model_assisted_not_independent_fact_check\""` | — |
-| [SRC-1AE03B9EC3-L004918](../../agents/web_agent.py#L4918) | 4918 | `"            if review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L004919](../../agents/web_agent.py#L4919) | 4919 | `"            else \"not_verified\""` | — |

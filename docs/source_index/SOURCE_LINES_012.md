@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000061 إلى SRC-E599346ABE-L000766
+- النطاق: SRC-51D44BE378-L000046 إلى SRC-E599346ABE-L000751
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000046](../DEPLOY_SNAPDEPLOY_AR.md#L46) | 46 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
+| [SRC-51D44BE378-L000047](../DEPLOY_SNAPDEPLOY_AR.md#L47) | 47 | ````"```"```` | — |
+| [SRC-51D44BE378-L000048](../DEPLOY_SNAPDEPLOY_AR.md#L48) | 48 | `""` | — |
+| [SRC-51D44BE378-L000049](../DEPLOY_SNAPDEPLOY_AR.md#L49) | 49 | `"لا ترسل الرمز أو مفتاح OpenRouter إلى ChatGPT أو DeepSeek، ولا تضعهما في GitHub أو ملف README أو لقطات شاشة. لا تستخدم مفتاح OpenRouter نفسه رمزًا لدخول التطبيق."` | — |
+| [SRC-51D44BE378-L000050](../DEPLOY_SNAPDEPLOY_AR.md#L50) | 50 | `""` | — |
+| [SRC-51D44BE378-L000051](../DEPLOY_SNAPDEPLOY_AR.md#L51) | 51 | ``"اترك `OMARAI_OPENROUTER_WEB_SEARCH` غير مضبوط؛ تفعيله خيار إضافي يمكن أن يستهلك رصيدًا. استخدام النماذج المجانية قد يظل خاضعًا لحصص ومعدلات توفر المزود، وقد تتغير النماذج المتاحة. راجع التسعير وحدود المفتاح لدى OpenRouter ولا توافق على موارد أو استخدام مدفوع."`` | — |
+| [SRC-51D44BE378-L000052](../DEPLOY_SNAPDEPLOY_AR.md#L52) | 52 | `""` | — |
+| [SRC-51D44BE378-L000053](../DEPLOY_SNAPDEPLOY_AR.md#L53) | 53 | `"## 3. النشر الأول"` | — |
+| [SRC-51D44BE378-L000054](../DEPLOY_SNAPDEPLOY_AR.md#L54) | 54 | `""` | — |
+| [SRC-51D44BE378-L000055](../DEPLOY_SNAPDEPLOY_AR.md#L55) | 55 | `"1. راجع اختيار المستودع والفرع والمتغيرات مرة أخيرة."` | — |
+| [SRC-51D44BE378-L000056](../DEPLOY_SNAPDEPLOY_AR.md#L56) | 56 | `"2. اضغط **Deploy** مرة واحدة وانتظر نتيجة البناء والتشغيل."` | — |
+| [SRC-51D44BE378-L000057](../DEPLOY_SNAPDEPLOY_AR.md#L57) | 57 | `"3. إذا فشل البناء، افتح سجل البناء واقرأ أول خطأ حقيقي قبل إعادة المحاولة؛ المحاولات الفاشلة قد تُحتسب ضمن حد النشر اليومي."` | — |
+| [SRC-51D44BE378-L000058](../DEPLOY_SNAPDEPLOY_AR.md#L58) | 58 | `"4. افتح عنوان HTTPS الذي أعطته المنصة. قد تكون أول زيارة بعد السكون صفحة استيقاظ أو تحتاج إلى الانتظار قرابة دقيقة."` | — |
+| [SRC-51D44BE378-L000059](../DEPLOY_SNAPDEPLOY_AR.md#L59) | 59 | ``"5. افتح `https://عنوان-خدمتك/api/health`. النجاح المبدئي هو استجابة HTTP 200 ومحتوى JSON يحتوي على `\"ok\": true`. نجاح الصحة وحده لا يثبت أن البحث والنموذج يعملان."`` | — |
+| [SRC-51D44BE378-L000060](../DEPLOY_SNAPDEPLOY_AR.md#L60) | 60 | `""` | — |
 | [SRC-51D44BE378-L000061](../DEPLOY_SNAPDEPLOY_AR.md#L61) | 61 | `"## 4. اختبار Omarai من الهاتف"` | — |
 | [SRC-51D44BE378-L000062](../DEPLOY_SNAPDEPLOY_AR.md#L62) | 62 | `""` | — |
 | [SRC-51D44BE378-L000063](../DEPLOY_SNAPDEPLOY_AR.md#L63) | 63 | `"1. افتح الصفحة الرئيسية للرابط المستضاف."` | — |
@@ -810,18 +825,3 @@
 | [SRC-E599346ABE-L000749](../generate_index.py#L749) | 749 | `"        visitor.visit(syntax_tree)"` | — |
 | [SRC-E599346ABE-L000750](../generate_index.py#L750) | 750 | `"        all_symbols.extend(visitor.symbols)"` | — |
 | [SRC-E599346ABE-L000751](../generate_index.py#L751) | 751 | `""` | — |
-| [SRC-E599346ABE-L000752](../generate_index.py#L752) | 752 | `"    if failures:"` | — |
-| [SRC-E599346ABE-L000753](../generate_index.py#L753) | 753 | `"        detail = \"\\n\".join(f\"- {failure}\" for failure in failures)"` | — |
-| [SRC-E599346ABE-L000754](../generate_index.py#L754) | 754 | `"        raise IndexGenerationError("` | — |
-| [SRC-E599346ABE-L000755](../generate_index.py#L755) | 755 | `"            \"تعذر إنشاء فهرس Python كامل؛ لم يُكتب MASTER_INDEX.md. \""` | — |
-| [SRC-E599346ABE-L000756](../generate_index.py#L756) | 756 | `"            \"أصلح الملفات التالية ثم أعد التشغيل:\\n\" + detail"` | — |
-| [SRC-E599346ABE-L000757](../generate_index.py#L757) | 757 | `"        )"` | — |
-| [SRC-E599346ABE-L000758](../generate_index.py#L758) | 758 | `""` | — |
-| [SRC-E599346ABE-L000759](../generate_index.py#L759) | 759 | `"    all_symbols.sort("` | — |
-| [SRC-E599346ABE-L000760](../generate_index.py#L760) | 760 | `"        key=lambda symbol: ("` | — |
-| [SRC-E599346ABE-L000761](../generate_index.py#L761) | 761 | `"            symbol.file.casefold(),"` | — |
-| [SRC-E599346ABE-L000762](../generate_index.py#L762) | 762 | `"            symbol.line,"` | — |
-| [SRC-E599346ABE-L000763](../generate_index.py#L763) | 763 | `"            symbol.name.casefold(),"` | — |
-| [SRC-E599346ABE-L000764](../generate_index.py#L764) | 764 | `"            symbol.kind,"` | — |
-| [SRC-E599346ABE-L000765](../generate_index.py#L765) | 765 | `"        )"` | — |
-| [SRC-E599346ABE-L000766](../generate_index.py#L766) | 766 | `"    )"` | — |

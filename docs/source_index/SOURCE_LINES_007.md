@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002520 إلى SRC-1AE03B9EC3-L003319
+- النطاق: SRC-1AE03B9EC3-L002505 إلى SRC-1AE03B9EC3-L003304
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002505](../../agents/web_agent.py#L2505) | 2505 | `"            for status in page_status_values"` | — |
+| [SRC-1AE03B9EC3-L002506](../../agents/web_agent.py#L2506) | 2506 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002507](../../agents/web_agent.py#L2507) | 2507 | `"        provider_diagnostics = list(self._provider_diagnostics)"` | — |
+| [SRC-1AE03B9EC3-L002508](../../agents/web_agent.py#L2508) | 2508 | `"        provider_candidates_received = sum("` | — |
+| [SRC-1AE03B9EC3-L002509](../../agents/web_agent.py#L2509) | 2509 | `"            max(0, int(row.get(\"result_count\", 0) or 0))"` | — |
+| [SRC-1AE03B9EC3-L002510](../../agents/web_agent.py#L2510) | 2510 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
+| [SRC-1AE03B9EC3-L002511](../../agents/web_agent.py#L2511) | 2511 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L002512](../../agents/web_agent.py#L2512) | 2512 | `"        provider_candidates_accepted = sum("` | — |
+| [SRC-1AE03B9EC3-L002513](../../agents/web_agent.py#L2513) | 2513 | `"            max(0, int(row.get(\"accepted_count\", 0) or 0))"` | — |
+| [SRC-1AE03B9EC3-L002514](../../agents/web_agent.py#L2514) | 2514 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
+| [SRC-1AE03B9EC3-L002515](../../agents/web_agent.py#L2515) | 2515 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L002516](../../agents/web_agent.py#L2516) | 2516 | `"        provider_candidates_rejected = sum("` | — |
+| [SRC-1AE03B9EC3-L002517](../../agents/web_agent.py#L2517) | 2517 | `"            max(0, int(row.get(\"rejected_count\", 0) or 0))"` | — |
+| [SRC-1AE03B9EC3-L002518](../../agents/web_agent.py#L2518) | 2518 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
+| [SRC-1AE03B9EC3-L002519](../../agents/web_agent.py#L2519) | 2519 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L002520](../../agents/web_agent.py#L2520) | 2520 | `"        report = {"` | — |
 | [SRC-1AE03B9EC3-L002521](../../agents/web_agent.py#L2521) | 2521 | `"            \"raw_results\": raw_results_count,"` | — |
 | [SRC-1AE03B9EC3-L002522](../../agents/web_agent.py#L2522) | 2522 | `"            \"provider_candidates_received\": provider_candidates_received,"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L003302](../../agents/web_agent.py#L3302) | 3302 | `"            or len(repaired.group(1)) > 24_000"` | — |
 | [SRC-1AE03B9EC3-L003303](../../agents/web_agent.py#L3303) | 3303 | `"        ):"` | — |
 | [SRC-1AE03B9EC3-L003304](../../agents/web_agent.py#L3304) | 3304 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
-| [SRC-1AE03B9EC3-L003305](../../agents/web_agent.py#L3305) | 3305 | `"        return repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003306](../../agents/web_agent.py#L3306) | 3306 | `""` | — |
-| [SRC-1AE03B9EC3-L003307](../../agents/web_agent.py#L3307) | 3307 | `"    def _review_answer("` | — |
-| [SRC-1AE03B9EC3-L003308](../../agents/web_agent.py#L3308) | 3308 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003309](../../agents/web_agent.py#L3309) | 3309 | `"        question: str,"` | — |
-| [SRC-1AE03B9EC3-L003310](../../agents/web_agent.py#L3310) | 3310 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L003311](../../agents/web_agent.py#L3311) | 3311 | `"        sources: list[dict[str, Any]],"` | — |
-| [SRC-1AE03B9EC3-L003312](../../agents/web_agent.py#L3312) | 3312 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003313](../../agents/web_agent.py#L3313) | 3313 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003314](../../agents/web_agent.py#L3314) | 3314 | `"        source_blocks: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003315](../../agents/web_agent.py#L3315) | 3315 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
-| [SRC-1AE03B9EC3-L003316](../../agents/web_agent.py#L3316) | 3316 | `"            evidence = _clean_text("` | — |
-| [SRC-1AE03B9EC3-L003317](../../agents/web_agent.py#L3317) | 3317 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
-| [SRC-1AE03B9EC3-L003318](../../agents/web_agent.py#L3318) | 3318 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003319](../../agents/web_agent.py#L3319) | 3319 | `"            source_blocks.append("` | — |

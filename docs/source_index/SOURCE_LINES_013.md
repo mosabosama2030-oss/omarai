@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000767 إلى SRC-E599346ABE-L001566
+- النطاق: SRC-E599346ABE-L000752 إلى SRC-E599346ABE-L001551
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000752](../generate_index.py#L752) | 752 | `"    if failures:"` | — |
+| [SRC-E599346ABE-L000753](../generate_index.py#L753) | 753 | `"        detail = \"\\n\".join(f\"- {failure}\" for failure in failures)"` | — |
+| [SRC-E599346ABE-L000754](../generate_index.py#L754) | 754 | `"        raise IndexGenerationError("` | — |
+| [SRC-E599346ABE-L000755](../generate_index.py#L755) | 755 | `"            \"تعذر إنشاء فهرس Python كامل؛ لم يُكتب MASTER_INDEX.md. \""` | — |
+| [SRC-E599346ABE-L000756](../generate_index.py#L756) | 756 | `"            \"أصلح الملفات التالية ثم أعد التشغيل:\\n\" + detail"` | — |
+| [SRC-E599346ABE-L000757](../generate_index.py#L757) | 757 | `"        )"` | — |
+| [SRC-E599346ABE-L000758](../generate_index.py#L758) | 758 | `""` | — |
+| [SRC-E599346ABE-L000759](../generate_index.py#L759) | 759 | `"    all_symbols.sort("` | — |
+| [SRC-E599346ABE-L000760](../generate_index.py#L760) | 760 | `"        key=lambda symbol: ("` | — |
+| [SRC-E599346ABE-L000761](../generate_index.py#L761) | 761 | `"            symbol.file.casefold(),"` | — |
+| [SRC-E599346ABE-L000762](../generate_index.py#L762) | 762 | `"            symbol.line,"` | — |
+| [SRC-E599346ABE-L000763](../generate_index.py#L763) | 763 | `"            symbol.name.casefold(),"` | — |
+| [SRC-E599346ABE-L000764](../generate_index.py#L764) | 764 | `"            symbol.kind,"` | — |
+| [SRC-E599346ABE-L000765](../generate_index.py#L765) | 765 | `"        )"` | — |
+| [SRC-E599346ABE-L000766](../generate_index.py#L766) | 766 | `"    )"` | — |
 | [SRC-E599346ABE-L000767](../generate_index.py#L767) | 767 | `"    return all_symbols, len(python_files)"` | — |
 | [SRC-E599346ABE-L000768](../generate_index.py#L768) | 768 | `""` | — |
 | [SRC-E599346ABE-L000769](../generate_index.py#L769) | 769 | `""` | — |
@@ -801,18 +816,3 @@
 | [SRC-E599346ABE-L001549](../generate_index.py#L1549) | 1549 | `"            \"يحتوي هذا السجل أسماء المسارات وأسباب الاستثناء فقط، ولا يقرأ محتوى الأسرار أو قواعد البيانات أو المجلدات المستبعدة.\","` | — |
 | [SRC-E599346ABE-L001550](../generate_index.py#L1550) | 1550 | `"            \"\","` | — |
 | [SRC-E599346ABE-L001551](../generate_index.py#L1551) | 1551 | `"            \"\| المسار المستبعد \| السبب \|\","` | — |
-| [SRC-E599346ABE-L001552](../generate_index.py#L1552) | 1552 | `"            \"\|---\|---\|\","` | — |
-| [SRC-E599346ABE-L001553](../generate_index.py#L1553) | 1553 | `"        ]"` | — |
-| [SRC-E599346ABE-L001554](../generate_index.py#L1554) | 1554 | `"    )"` | — |
-| [SRC-E599346ABE-L001555](../generate_index.py#L1555) | 1555 | `"    if excluded_paths:"` | — |
-| [SRC-E599346ABE-L001556](../generate_index.py#L1556) | 1556 | `"        for excluded_path, reason in excluded_paths:"` | — |
-| [SRC-E599346ABE-L001557](../generate_index.py#L1557) | 1557 | `"            lines.append(f\"\| {_markdown_code_span(excluded_path)} \| {_markdown_cell(reason)} \|\")"` | — |
-| [SRC-E599346ABE-L001558](../generate_index.py#L1558) | 1558 | `"    else:"` | — |
-| [SRC-E599346ABE-L001559](../generate_index.py#L1559) | 1559 | `"        lines.append(\"\| — \| لا توجد مسارات مستبعدة مكتشفة. \|\")"` | — |
-| [SRC-E599346ABE-L001560](../generate_index.py#L1560) | 1560 | `""` | — |
-| [SRC-E599346ABE-L001561](../generate_index.py#L1561) | 1561 | `"    lines.extend("` | — |
-| [SRC-E599346ABE-L001562](../generate_index.py#L1562) | 1562 | `"        ["` | — |
-| [SRC-E599346ABE-L001563](../generate_index.py#L1563) | 1563 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001564](../generate_index.py#L1564) | 1564 | `"            \"## ما تعنيه النتيجة وما لا تعنيه\","` | — |
-| [SRC-E599346ABE-L001565](../generate_index.py#L1565) | 1565 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001566](../generate_index.py#L1566) | 1566 | `"            \"- التغطية بنسبة 100% تعني أن كل سطر منطقي في كل ملف نصي مؤهل وقابل للقراءة ضمن حد الحجم له سجل SRC فريد ورقم سطر مطابق.\","` | — |

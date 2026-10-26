@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000120 إلى SRC-1AE03B9EC3-L000919
+- النطاق: SRC-1AE03B9EC3-L000105 إلى SRC-1AE03B9EC3-L000904
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000105](../../agents/web_agent.py#L105) | 105 | `"    \"شراء\": {\"buy\", \"purchase\"}, \"مشتري\": {\"buyer\"},"` | — |
+| [SRC-1AE03B9EC3-L000106](../../agents/web_agent.py#L106) | 106 | `"    # Small, explicit Arabic-English topic vocabulary; this helps Arabic prompts"` | — |
+| [SRC-1AE03B9EC3-L000107](../../agents/web_agent.py#L107) | 107 | `"    # match English-indexed results without relaxing URL or destination safety."` | — |
+| [SRC-1AE03B9EC3-L000108](../../agents/web_agent.py#L108) | 108 | `"    \"سيارة\": {\"car\", \"vehicle\"}, \"السيارة\": {\"car\", \"vehicle\"},"` | — |
+| [SRC-1AE03B9EC3-L000109](../../agents/web_agent.py#L109) | 109 | `"    \"سيارات\": {\"cars\", \"vehicles\"}, \"السيارات\": {\"cars\", \"vehicles\"},"` | — |
+| [SRC-1AE03B9EC3-L000110](../../agents/web_agent.py#L110) | 110 | `"    \"كهربائي\": {\"electric\"}, \"كهربائية\": {\"electric\"},"` | — |
+| [SRC-1AE03B9EC3-L000111](../../agents/web_agent.py#L111) | 111 | `"    \"الكهربائي\": {\"electric\"}, \"الكهربائية\": {\"electric\"},"` | — |
+| [SRC-1AE03B9EC3-L000112](../../agents/web_agent.py#L112) | 112 | `"    \"شحن\": {\"charging\", \"charge\"}, \"الشحن\": {\"charging\", \"charge\"},"` | — |
+| [SRC-1AE03B9EC3-L000113](../../agents/web_agent.py#L113) | 113 | `"    \"شاحن\": {\"charger\"}, \"بطارية\": {\"battery\"}, \"بطاريات\": {\"batteries\"},"` | — |
+| [SRC-1AE03B9EC3-L000114](../../agents/web_agent.py#L114) | 114 | `"    \"تكلفة\": {\"cost\", \"costs\"}, \"التكلفة\": {\"cost\", \"costs\"},"` | — |
+| [SRC-1AE03B9EC3-L000115](../../agents/web_agent.py#L115) | 115 | `"    \"البنية\": {\"infrastructure\"}, \"التحتية\": {\"infrastructure\"},"` | — |
+| [SRC-1AE03B9EC3-L000116](../../agents/web_agent.py#L116) | 116 | `"    \"تحدي\": {\"challenge\"}, \"تحديات\": {\"challenges\"}, \"التحديات\": {\"challenges\"},"` | — |
+| [SRC-1AE03B9EC3-L000117](../../agents/web_agent.py#L117) | 117 | `"    \"وكيل\": {\"agent\"}, \"الوكيل\": {\"agent\"},"` | — |
+| [SRC-1AE03B9EC3-L000118](../../agents/web_agent.py#L118) | 118 | `"    \"وكلاء\": {\"agents\"}, \"الوكلاء\": {\"agents\"},"` | — |
+| [SRC-1AE03B9EC3-L000119](../../agents/web_agent.py#L119) | 119 | `"    \"ذكاء\": {\"intelligence\", \"ai\"}, \"الذكاء\": {\"intelligence\", \"ai\"},"` | — |
 | [SRC-1AE03B9EC3-L000120](../../agents/web_agent.py#L120) | 120 | `"    \"اصطناعي\": {\"artificial\", \"ai\"}, \"الاصطناعي\": {\"artificial\", \"ai\"},"` | — |
 | [SRC-1AE03B9EC3-L000121](../../agents/web_agent.py#L121) | 121 | `"    \"تطور\": {\"development\", \"advance\"}, \"تطورات\": {\"developments\", \"advances\", \"updates\", \"latest\"},"` | — |
 | [SRC-1AE03B9EC3-L000122](../../agents/web_agent.py#L122) | 122 | `"    \"التطورات\": {\"developments\", \"advances\", \"updates\", \"latest\"},"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L000902](../../agents/web_agent.py#L902) | 902 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L000903](../../agents/web_agent.py#L903) | 903 | `"            answer = ("` | — |
 | [SRC-1AE03B9EC3-L000904](../../agents/web_agent.py#L904) | 904 | `"                \"تقصد إيه تحديدًا؟ اكتب اسم الشيء أو المنتج المقصود، أو ابعت الرابط، \""` | — |
-| [SRC-1AE03B9EC3-L000905](../../agents/web_agent.py#L905) | 905 | `"                \"وأكمل معاك من غير ما أخمّن.\""` | — |
-| [SRC-1AE03B9EC3-L000906](../../agents/web_agent.py#L906) | 906 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L000907](../../agents/web_agent.py#L907) | 907 | `"        result = self._local_answer_result(question, answer, \"clarification_needed\")"` | — |
-| [SRC-1AE03B9EC3-L000908](../../agents/web_agent.py#L908) | 908 | `"        return self._annotate_intent_route("` | — |
-| [SRC-1AE03B9EC3-L000909](../../agents/web_agent.py#L909) | 909 | `"            result, \"CLARIFY\", str(decision.get(\"reason\", \"missing_referent\")), mode"` | — |
-| [SRC-1AE03B9EC3-L000910](../../agents/web_agent.py#L910) | 910 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000911](../../agents/web_agent.py#L911) | 911 | `""` | — |
-| [SRC-1AE03B9EC3-L000912](../../agents/web_agent.py#L912) | 912 | `"    def _capability_status_snapshot(self) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L000913](../../agents/web_agent.py#L913) | 913 | `"        \"\"\"Describe configured capabilities without claiming a live health check.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000914](../../agents/web_agent.py#L914) | 914 | `"        status = self.status()"` | — |
-| [SRC-1AE03B9EC3-L000915](../../agents/web_agent.py#L915) | 915 | `"        not_tested = \"not_tested_in_this_response\""` | — |
-| [SRC-1AE03B9EC3-L000916](../../agents/web_agent.py#L916) | 916 | `"        providers = ["` | — |
-| [SRC-1AE03B9EC3-L000917](../../agents/web_agent.py#L917) | 917 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L000918](../../agents/web_agent.py#L918) | 918 | `"                \"name\": \"duckduckgo_html\","` | — |
-| [SRC-1AE03B9EC3-L000919](../../agents/web_agent.py#L919) | 919 | `"                \"implemented\": True,"` | — |
