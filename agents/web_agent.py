@@ -2583,6 +2583,8 @@ class WebAgent:
             error_response_statuses = set(statuses) & {"http_error", "unauthorized", "rate_limited"}
             uncertain_failure_statuses = set(statuses) & {"timeout", "failed", "error", "unknown", "inconclusive"}
             failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
+            result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
+            rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
             available: bool | None = (
                 True if successful_statuses or useful.get(name, 0)
                 else False if error_response_statuses or not ready or "disabled" in statuses or "budget_exhausted" in statuses
@@ -2605,8 +2607,6 @@ class WebAgent:
             )
             queries = list(dict.fromkeys(_clean_text(row.get("query", ""), 180) for row in attempts if row.get("query")))[:3]
             errors = list(dict.fromkeys(redact(row.get("error")) for row in attempts if row.get("error")))[:3]
-            result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
-            rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
             connectors.append({
                 "name": name, "in_codebase": name in config or bool(attempts),
                 "implementation_status": implementation_status,
