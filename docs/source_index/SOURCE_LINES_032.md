@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001267 إلى SRC-F725E90B2A-L002066
+- النطاق: SRC-F725E90B2A-L001266 إلى SRC-F725E90B2A-L002065
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001266](../../tests/test_web_agent.py#L1266) | 1266 | `"        }"` | — |
 | [SRC-F725E90B2A-L001267](../../tests/test_web_agent.py#L1267) | 1267 | `""` | — |
 | [SRC-F725E90B2A-L001268](../../tests/test_web_agent.py#L1268) | 1268 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect_only_one_source)"` | — |
 | [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"    monkeypatch.setattr("` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002063](../../tests/test_web_agent.py#L2063) | 2063 | `"    assert report[\"unique_sources\"] is None"` | — |
 | [SRC-F725E90B2A-L002064](../../tests/test_web_agent.py#L2064) | 2064 | `""` | — |
 | [SRC-F725E90B2A-L002065](../../tests/test_web_agent.py#L2065) | 2065 | `""` | — |
-| [SRC-F725E90B2A-L002066](../../tests/test_web_agent.py#L2066) | 2066 | `""` | — |

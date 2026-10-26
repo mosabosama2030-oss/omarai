@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000861 إلى SRC-B3062EB677-L000008
+- النطاق: SRC-90FAA34ADE-L000860 إلى SRC-B3062EB677-L000007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000860](../../tests/fixtures/answer_quality_cases.json#L860) | 860 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000861](../../tests/fixtures/answer_quality_cases.json#L861) | 861 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L000862](../../tests/fixtures/answer_quality_cases.json#L862) | 862 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000863](../../tests/fixtures/answer_quality_cases.json#L863) | 863 | `"    {"` | — |
@@ -842,4 +843,3 @@
 | [SRC-B3062EB677-L000005](../../tests/test_answer_quality_runner.py#L5) | 5 | `"import json"` | — |
 | [SRC-B3062EB677-L000006](../../tests/test_answer_quality_runner.py#L6) | 6 | `"import sys"` | — |
 | [SRC-B3062EB677-L000007](../../tests/test_answer_quality_runner.py#L7) | 7 | `"from pathlib import Path"` | — |
-| [SRC-B3062EB677-L000008](../../tests/test_answer_quality_runner.py#L8) | 8 | `""` | — |
