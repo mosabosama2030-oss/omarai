@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **79**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1009**
+- تعريفات Python المفهرسة: **1015**
 - تعريفات Python موثقة بوجود Docstring: **195**
-- تعريفات Python بلا Docstring: **611**
+- تعريفات Python بلا Docstring: **617**
 - تعريفات لا ينطبق عليها Docstring: **203**
-- الرموز الساكنة الإضافية: **1561**
-- الأسطر النصية المفهرسة حرفيًا: **26705**
+- الرموز الساكنة الإضافية: **1563**
+- الأسطر النصية المفهرسة حرفيًا: **26802**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -100,11 +100,11 @@
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
-| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 13615 | 273 | جرد الملف + AST Python |
+| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 15434 | 324 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 113118 | 2888 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 114639 | 2934 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 54981 | 397 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -878,6 +878,9 @@
 | [tests/test_research.py](../tests/test_research.py#L247) | دالة | test_compact_search_query_preserves_topic_after_source_quality_lead_in | لا توجد Docstring. | ناقص | 247 | [SRC-6BF96689A8-L000247](../tests/test_research.py#L247) |
 | [tests/test_research.py](../tests/test_research.py#L265) | دالة | test_compact_search_query_preserves_topic_after_distinguish_action | لا توجد Docstring. | ناقص | 265 | [SRC-6BF96689A8-L000265](../tests/test_research.py#L265) |
 | [tests/test_research.py](../tests/test_research.py#L272) | دالة | test_compact_search_query_discards_standalone_fact_vs_inference_instruction | لا توجد Docstring. | ناقص | 272 | [SRC-6BF96689A8-L000272](../tests/test_research.py#L272) |
+| [tests/test_research.py](../tests/test_research.py#L276) | دالة | test_fallback_plan_does_not_invent_query_for_instruction_only_prompt | لا توجد Docstring. | ناقص | 276 | [SRC-6BF96689A8-L000276](../tests/test_research.py#L276) |
+| [tests/test_research.py](../tests/test_research.py#L281) | دالة | test_collect_research_compacts_queries_before_provider_calls | لا توجد Docstring. | ناقص | 281 | [SRC-6BF96689A8-L000281](../tests/test_research.py#L281) |
+| [tests/test_research.py](../tests/test_research.py#L304) | دالة | test_collect_research_skips_provider_calls_without_topic_or_direct_url | لا توجد Docstring. | ناقص | 304 | [SRC-6BF96689A8-L000304](../tests/test_research.py#L304) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L15) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 | [SRC-01E35ABC46-L000015](../tests/test_research_guardrails.py#L15) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L21) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 | [SRC-01E35ABC46-L000021](../tests/test_research_guardrails.py#L21) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L27) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 | [SRC-01E35ABC46-L000027](../tests/test_research_guardrails.py#L27) |
@@ -1123,6 +1126,9 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2858) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.redirect_response | لا توجد Docstring. | ناقص | 2858 | [SRC-F725E90B2A-L002858](../tests/test_web_agent.py#L2858) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2862) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.no_results | لا توجد Docstring. | ناقص | 2862 | [SRC-F725E90B2A-L002862](../tests/test_web_agent.py#L2862) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2882) | دالة | test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries | لا توجد Docstring. | ناقص | 2882 | [SRC-F725E90B2A-L002882](../tests/test_web_agent.py#L2882) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2891) | دالة | test_search_web_compacts_request_before_provider_dispatch | لا توجد Docstring. | ناقص | 2891 | [SRC-F725E90B2A-L002891](../tests/test_web_agent.py#L2891) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2895) | دالة | test_search_web_compacts_request_before_provider_dispatch.capture | لا توجد Docstring. | ناقص | 2895 | [SRC-F725E90B2A-L002895](../tests/test_web_agent.py#L2895) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2923) | دالة | test_search_web_does_not_dispatch_instruction_only_query | لا توجد Docstring. | ناقص | 2923 | [SRC-F725E90B2A-L002923](../tests/test_web_agent.py#L2923) |
 
 ## الرموز الساكنة الإضافية
 
@@ -2362,6 +2368,8 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2450) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 2450 | [SRC-F725E90B2A-L002450](../tests/test_web_agent.py#L2450) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2450) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IPPROTO_TCP | 2450 | [SRC-F725E90B2A-L002450](../tests/test_web_agent.py#L2450) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2450) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 2450 | [SRC-F725E90B2A-L002450](../tests/test_web_agent.py#L2450) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2901) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 2901 | [SRC-F725E90B2A-L002901](../tests/test_web_agent.py#L2901) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2902) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 2902 | [SRC-F725E90B2A-L002902](../tests/test_web_agent.py#L2902) |
 | [web/agent.html](../web/agent.html#L5) | قيمة سمة HTML (name) | viewport | 5 | [SRC-DE7EABE998-L000005](../web/agent.html#L5) |
 | [web/agent.html](../web/agent.html#L6) | قيمة سمة HTML (name) | theme-color | 6 | [SRC-DE7EABE998-L000006](../web/agent.html#L6) |
 | [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | amber | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
