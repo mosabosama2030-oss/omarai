@@ -3930,9 +3930,12 @@ class WebAgent:
                 if not explicit_deep:
                     # The planner may overclassify short lookups as deep research. Preserve
                     # the user's actual intent first and cap routine searches to three queries.
+                    fallback_plan_queries = (
+                        fallback_plan(question, clean_history).get("queries") or []
+                    )
                     fallback_queries = [
                         compact_search_query(query)
-                        for query in fallback_plan(question, clean_history).get("queries", [])
+                        for query in fallback_plan_queries
                         if isinstance(query, str)
                     ]
                     fallback_queries = [query for query in fallback_queries if query]
