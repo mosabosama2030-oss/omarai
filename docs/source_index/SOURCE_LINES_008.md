@@ -667,7 +667,7 @@
 | [SRC-1AE03B9EC3-L003949](../../agents/web_agent.py#L3949) | 3949 | `"                            else \"\""` | — |
 | [SRC-1AE03B9EC3-L003950](../../agents/web_agent.py#L3950) | 3950 | `"                        )"` | — |
 | [SRC-1AE03B9EC3-L003951](../../agents/web_agent.py#L3951) | 3951 | `"                        subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L003952](../../agents/web_agent.py#L3952) | 3952 | `"                            r\"^(?:ابحث\|بحث\|دور\|اعثر)\\\\s+(?:عن\|على)?\\\\s*\","` | — |
+| [SRC-1AE03B9EC3-L003952](../../agents/web_agent.py#L3952) | 3952 | `"                            r\"^(?:ابحث\|بحث\|دور\|اعثر)\\s+(?:عن\|على)?\\s*\","` | — |
 | [SRC-1AE03B9EC3-L003953](../../agents/web_agent.py#L3953) | 3953 | `"                            \"\","` | — |
 | [SRC-1AE03B9EC3-L003954](../../agents/web_agent.py#L3954) | 3954 | `"                            navigation_seed,"` | — |
 | [SRC-1AE03B9EC3-L003955](../../agents/web_agent.py#L3955) | 3955 | `"                        ).strip()"` | — |

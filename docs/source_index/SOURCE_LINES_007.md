@@ -567,7 +567,7 @@
 | [SRC-1AE03B9EC3-L003049](../../agents/web_agent.py#L3049) | 3049 | `"                    cleaned_query = re.sub("` | — |
 | [SRC-1AE03B9EC3-L003050](../../agents/web_agent.py#L3050) | 3050 | `"                        rf\"(?i)(?<!\\\\w){re.escape(month)}(?!\\\\w)\", \" \", cleaned_query"` | — |
 | [SRC-1AE03B9EC3-L003051](../../agents/web_agent.py#L3051) | 3051 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L003052](../../agents/web_agent.py#L3052) | 3052 | `"            cleaned_query = re.sub(r\"\\\\s+\", \" \", cleaned_query).strip()"` | — |
+| [SRC-1AE03B9EC3-L003052](../../agents/web_agent.py#L3052) | 3052 | `"            cleaned_query = re.sub(r\"\\s+\", \" \", cleaned_query).strip()"` | — |
 | [SRC-1AE03B9EC3-L003053](../../agents/web_agent.py#L3053) | 3053 | `"            if cleaned_query:"` | — |
 | [SRC-1AE03B9EC3-L003054](../../agents/web_agent.py#L3054) | 3054 | `"                cleaned_queries.append(cleaned_query)"` | — |
 | [SRC-1AE03B9EC3-L003055](../../agents/web_agent.py#L3055) | 3055 | `"        if not cleaned_queries or _relevance_ratio(question, cleaned_queries[0]) < 0.20:"` | — |
