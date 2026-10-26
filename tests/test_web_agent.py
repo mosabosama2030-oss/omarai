@@ -3131,3 +3131,54 @@ def test_server_search_sources_use_compact_question_and_topic_plan(
         ) if query
     ))
     assert source_queries == expected_queries
+
+
+def test_auto_deep_does_not_create_generic_queries_from_instruction_only_prompt(monkeypatch):
+    agent = WebAgent()
+    instruction_only = (
+        "اذكر مصادر موثوقة وروابط مباشرة، وأجب بإيجاز، "
+        "ونفذ بحثًا شاملًا."
+    )
+    direct_url = "https://example.com/report"
+    observed_plans = []
+
+    monkeypatch.setattr(
+        "agents.web_agent.route_intent",
+        lambda *args, **kwargs: {"route": "WEB_DEEP", "reason": "test"},
+    )
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda _question, _history: {
+            "queries": [instruction_only],
+            "direct_urls": [direct_url],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+
+    def collect(research_plan):
+        observed_plans.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 0,
+            "query_results": [],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+
+    agent.answer(instruction_only, mode="auto")
+
+    assert observed_plans
+    assert observed_plans[0]["queries"] == []
+    assert observed_plans[0]["direct_urls"] == [direct_url]
