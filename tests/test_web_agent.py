@@ -2804,3 +2804,76 @@ def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degrada
     }
     assert statuses["duckduckgo_html"] == "http_error"
     assert statuses["bing_rss"] == "rate_limited"
+
+
+def test_search_web_records_distinct_candidate_rejection_reasons(monkeypatch):
+    agent = WebAgent()
+    query = "renewable energy storage"
+    candidates = [
+        "malformed candidate",
+        {
+            "title": "Unsafe scheme",
+            "url": "javascript:alert(1)",
+            "snippet": "Renewable energy storage report",
+        },
+        {
+            "title": "Translated mirror",
+            "url": "https://translate.google.com/translate?u=https%3A%2F%2Fexample.com",
+            "snippet": "Renewable energy storage",
+        },
+        {
+            "title": "Gardening tips",
+            "url": "https://example.com/gardening",
+            "snippet": "Gardening flowers and house plants",
+        },
+    ]
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _q: [dict(x) if isinstance(x, dict) else x for x in candidates])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _q: [dict(x) if isinstance(x, dict) else x for x in candidates])
+    monkeypatch.setattr(agent, "_search_news", lambda _q: [])
+
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web(query)
+
+    diagnostic = next(
+        item for item in agent._provider_diagnostics
+        if item.get("provider") == "duckduckgo_html"
+    )
+    assert diagnostic["status"] == "filtered_all"
+    assert diagnostic["result_count"] == 4
+    assert diagnostic["accepted_count"] == 0
+    assert diagnostic["rejected_count"] == 4
+    assert diagnostic["rejection_counts"] == {
+        "malformed_candidate": 1,
+        "invalid_url_or_unsafe_target": 1,
+        "blocked_domain": 1,
+        "relevance_below_threshold": 1,
+    }
+    assert sum(diagnostic["rejection_counts"].values()) == diagnostic["rejected_count"]
+
+
+def test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect(monkeypatch):
+    agent = WebAgent()
+    calls = []
+
+    def redirect_response(query):
+        calls.append(("duckduckgo_html", query))
+        raise RuntimeError("HTTP 302")
+
+    def no_results(query):
+        calls.append(("bing_rss", query))
+        return []
+
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", redirect_response)
+    monkeypatch.setattr(agent, "_search_bing_rss", no_results)
+    monkeypatch.setattr(agent, "_search_news", lambda _q: [])
+
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web("renewable energy storage")
+
+    diagnostic = next(
+        item for item in agent._provider_diagnostics
+        if item.get("provider") == "duckduckgo_html"
+    )
+    assert diagnostic["status"] == "http_error"
+    assert diagnostic["error"] == "HTTP 302"
+    assert sum(provider == "duckduckgo_html" for provider, _query in calls) == 1
