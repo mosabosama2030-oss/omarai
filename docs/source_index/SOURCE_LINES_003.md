@@ -89,10 +89,10 @@
 | [SRC-59CF4B7DE8-L000126](../../agents/research.py#L126) | 126 | `"# Treat \"اذكر\" as an action unless its object is clearly citation/format metadata."` | — |
 | [SRC-59CF4B7DE8-L000127](../../agents/research.py#L127) | 127 | `"# This preserves topic-bearing prompts such as \"اذكر أبرز السيارات الكهربائية...\"."` | — |
 | [SRC-59CF4B7DE8-L000128](../../agents/research.py#L128) | 128 | `"_SEARCH_CITATION_META_START_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000129](../../agents/research.py#L129) | 129 | `"    r\"^(?:و?اذكر(?:ي\|وا)?\|mention\|cite\|provide)\\\\s+\""` | — |
-| [SRC-59CF4B7DE8-L000130](../../agents/research.py#L130) | 130 | `"    r\"(?:المصادر\|مصادر\|المصدر\|مصدر(?:[\\\\u064B-\\\\u065F]*ا?[\\\\u064B-\\\\u065F]*)?\|\""` | — |
+| [SRC-59CF4B7DE8-L000129](../../agents/research.py#L129) | 129 | `"    r\"^(?:و?اذكر(?:ي\|وا)?\|mention\|cite\|provide)\\s+\""` | — |
+| [SRC-59CF4B7DE8-L000130](../../agents/research.py#L130) | 130 | `"    r\"(?:المصادر\|مصادر\|المصدر\|مصدر(?:[ًٌٍ]ا?\|ا[ًٌٍ]?)?\|\""` | — |
 | [SRC-59CF4B7DE8-L000131](../../agents/research.py#L131) | 131 | `"    r\"روابط?\|رابط\|تواريخ?\|تاريخ\|الاخبار\|الأخبار\|\""` | — |
-| [SRC-59CF4B7DE8-L000132](../../agents/research.py#L132) | 132 | `"    r\"the original posts\|links\|sources\|dates)(?=\\\\s\|$\|[،,])\","` | — |
+| [SRC-59CF4B7DE8-L000132](../../agents/research.py#L132) | 132 | `"    r\"the original posts\|links\|sources\|dates)(?=\\s\|$\|[،,])\","` | — |
 | [SRC-59CF4B7DE8-L000133](../../agents/research.py#L133) | 133 | `"    re.IGNORECASE,"` | — |
 | [SRC-59CF4B7DE8-L000134](../../agents/research.py#L134) | 134 | `")"` | — |
 | [SRC-59CF4B7DE8-L000135](../../agents/research.py#L135) | 135 | `"# This is a response-quality instruction, not a topic query."` | — |
