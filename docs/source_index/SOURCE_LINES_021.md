@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000171 إلى SRC-90FAA34ADE-L000184
+- النطاق: SRC-A8360B1B03-L000165 إلى SRC-90FAA34ADE-L000178
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"    }"` | — |
+| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    checks[\"language_model\"] = {\"status\": \"passed\", \"response_received\": True}"` | — |
+| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `""` | — |
+| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"    status, answer = request_json("` | — |
+| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"        payload={"` | — |
 | [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"            \"question\": \"اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر.\","` | — |
 | [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            \"history\": [], \"mode\": \"auto\","` | — |
 | [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        },"` | — |
@@ -837,9 +843,3 @@
 | [SRC-90FAA34ADE-L000176](../../tests/fixtures/answer_quality_cases.json#L176) | 176 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000177](../../tests/fixtures/answer_quality_cases.json#L177) | 177 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000178](../../tests/fixtures/answer_quality_cases.json#L178) | 178 | `"            \"title\": \"Gold spot price update\","` | — |
-| [SRC-90FAA34ADE-L000179](../../tests/fixtures/answer_quality_cases.json#L179) | 179 | `"            \"url\": \"https://example-market.test/gold/2026-10-18\","` | — |
-| [SRC-90FAA34ADE-L000180](../../tests/fixtures/answer_quality_cases.json#L180) | 180 | `"            \"snippet\": \"Gold traded near 2650 USD/oz in the latest session.\","` | — |
-| [SRC-90FAA34ADE-L000181](../../tests/fixtures/answer_quality_cases.json#L181) | 181 | `"            \"published_at\": \"2026-10-18\","` | — |
-| [SRC-90FAA34ADE-L000182](../../tests/fixtures/answer_quality_cases.json#L182) | 182 | `"            \"domain\": \"example-market.test\","` | — |
-| [SRC-90FAA34ADE-L000183](../../tests/fixtures/answer_quality_cases.json#L183) | 183 | `"            \"provider\": \"fixture_search\""` | — |
-| [SRC-90FAA34ADE-L000184](../../tests/fixtures/answer_quality_cases.json#L184) | 184 | `"          }"` | — |

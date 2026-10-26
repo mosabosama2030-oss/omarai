@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002505 إلى SRC-1AE03B9EC3-L003304
+- النطاق: SRC-1AE03B9EC3-L002499 إلى SRC-1AE03B9EC3-L003298
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002499](../../agents/web_agent.py#L2499) | 2499 | `"            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\","` | — |
+| [SRC-1AE03B9EC3-L002500](../../agents/web_agent.py#L2500) | 2500 | `"            \"http_error\", \"unsupported_content_type\", \"page_too_large\","` | — |
+| [SRC-1AE03B9EC3-L002501](../../agents/web_agent.py#L2501) | 2501 | `"            \"network_error\", \"empty_content\", \"budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L002502](../../agents/web_agent.py#L2502) | 2502 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L002503](../../agents/web_agent.py#L2503) | 2503 | `"        page_fetch_status_counts = {"` | — |
+| [SRC-1AE03B9EC3-L002504](../../agents/web_agent.py#L2504) | 2504 | `"            status: sum(source.get(\"page_fetch_status\") == status for source in fetch_targets)"` | — |
 | [SRC-1AE03B9EC3-L002505](../../agents/web_agent.py#L2505) | 2505 | `"            for status in page_status_values"` | — |
 | [SRC-1AE03B9EC3-L002506](../../agents/web_agent.py#L2506) | 2506 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L002507](../../agents/web_agent.py#L2507) | 2507 | `"        provider_diagnostics = list(self._provider_diagnostics)"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L003296](../../agents/web_agent.py#L3296) | 3296 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003297](../../agents/web_agent.py#L3297) | 3297 | `"        if ("` | — |
 | [SRC-1AE03B9EC3-L003298](../../agents/web_agent.py#L3298) | 3298 | `"            raw.count(start_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003299](../../agents/web_agent.py#L3299) | 3299 | `"            or raw.count(end_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003300](../../agents/web_agent.py#L3300) | 3300 | `"            or repaired is None"` | — |
-| [SRC-1AE03B9EC3-L003301](../../agents/web_agent.py#L3301) | 3301 | `"            or not repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003302](../../agents/web_agent.py#L3302) | 3302 | `"            or len(repaired.group(1)) > 24_000"` | — |
-| [SRC-1AE03B9EC3-L003303](../../agents/web_agent.py#L3303) | 3303 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L003304](../../agents/web_agent.py#L3304) | 3304 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |

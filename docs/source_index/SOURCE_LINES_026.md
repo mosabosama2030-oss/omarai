@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000023 إلى SRC-FA4E1423C3-L000458
+- النطاق: SRC-6BCB799CEC-L000017 إلى SRC-FA4E1423C3-L000452
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000017](../../tests/test_evidence_provenance.py#L17) | 17 | `"    \"\"\"An empty extraction must not set page_fetched through the real collector.\"\"\""` | — |
+| [SRC-6BCB799CEC-L000018](../../tests/test_evidence_provenance.py#L18) | 18 | `"    agent = WebAgent()"` | — |
+| [SRC-6BCB799CEC-L000019](../../tests/test_evidence_provenance.py#L19) | 19 | `""` | — |
+| [SRC-6BCB799CEC-L000020](../../tests/test_evidence_provenance.py#L20) | 20 | `"    def search(query):"` | — |
+| [SRC-6BCB799CEC-L000021](../../tests/test_evidence_provenance.py#L21) | 21 | `"        return [{"` | — |
+| [SRC-6BCB799CEC-L000022](../../tests/test_evidence_provenance.py#L22) | 22 | `"            \"title\": \"عنوان فقط\","` | — |
 | [SRC-6BCB799CEC-L000023](../../tests/test_evidence_provenance.py#L23) | 23 | `"            \"url\": \"https://example.com/unread\","` | — |
 | [SRC-6BCB799CEC-L000024](../../tests/test_evidence_provenance.py#L24) | 24 | `"            \"snippet\": \"مقتطف محرك بحث\","` | — |
 | [SRC-6BCB799CEC-L000025](../../tests/test_evidence_provenance.py#L25) | 25 | `"            \"provider\": \"duckduckgo_html\","` | — |
@@ -828,9 +834,3 @@
 | [SRC-FA4E1423C3-L000450](../../tests/test_generate_index.py#L450) | 450 | ````"        \"```text\\n\""```` | — |
 | [SRC-FA4E1423C3-L000451](../../tests/test_generate_index.py#L451) | 451 | `"        \"# BUG: this sample should be ignored\\n\""` | — |
 | [SRC-FA4E1423C3-L000452](../../tests/test_generate_index.py#L452) | 452 | ````"        \"```\\n\""```` | — |
-| [SRC-FA4E1423C3-L000453](../../tests/test_generate_index.py#L453) | 453 | `"        \"- DEFECT: this explicitly documented defect should be indexed\\n\","` | — |
-| [SRC-FA4E1423C3-L000454](../../tests/test_generate_index.py#L454) | 454 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000455](../../tests/test_generate_index.py#L455) | 455 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000456](../../tests/test_generate_index.py#L456) | 456 | `""` | — |
-| [SRC-FA4E1423C3-L000457](../../tests/test_generate_index.py#L457) | 457 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000458](../../tests/test_generate_index.py#L458) | 458 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |

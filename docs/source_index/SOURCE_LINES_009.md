@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004105 إلى SRC-1AE03B9EC3-L004904
+- النطاق: SRC-1AE03B9EC3-L004099 إلى SRC-1AE03B9EC3-L004898
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004099](../../agents/web_agent.py#L4099) | 4099 | `"        # as uncorroborated instead of refusing a lone result as if it were no result."` | — |
+| [SRC-1AE03B9EC3-L004100](../../agents/web_agent.py#L4100) | 4100 | `"        navigation_request = self._is_navigation_request(question)"` | — |
+| [SRC-1AE03B9EC3-L004101](../../agents/web_agent.py#L4101) | 4101 | `"        lead_request = intent_route == \"LEAD_GENERATION\" or self._is_lead_search(question)"` | — |
+| [SRC-1AE03B9EC3-L004102](../../agents/web_agent.py#L4102) | 4102 | `"        listing_request = self._is_listing_discovery(question)"` | — |
+| [SRC-1AE03B9EC3-L004103](../../agents/web_agent.py#L4103) | 4103 | `"        lead_evidence_sources: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L004104](../../agents/web_agent.py#L4104) | 4104 | `"        related_lead_results_count = 0"` | — |
 | [SRC-1AE03B9EC3-L004105](../../agents/web_agent.py#L4105) | 4105 | `"        if lead_request:"` | — |
 | [SRC-1AE03B9EC3-L004106](../../agents/web_agent.py#L4106) | 4106 | `"            related_lead_results_count = len(sources)"` | — |
 | [SRC-1AE03B9EC3-L004107](../../agents/web_agent.py#L4107) | 4107 | `"            for source in sources:"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L004896](../../agents/web_agent.py#L4896) | 4896 | `"        search_attempted = search_attempted or bool(self.server_search_sources)"` | — |
 | [SRC-1AE03B9EC3-L004897](../../agents/web_agent.py#L4897) | 4897 | `"        report[\"search_attempted\"] = search_attempted"` | — |
 | [SRC-1AE03B9EC3-L004898](../../agents/web_agent.py#L4898) | 4898 | `"        report[\"search_outcome\"] = ("` | — |
-| [SRC-1AE03B9EC3-L004899](../../agents/web_agent.py#L4899) | 4899 | `"            \"attempted_with_usable_sources\" if search_attempted and sources"` | — |
-| [SRC-1AE03B9EC3-L004900](../../agents/web_agent.py#L4900) | 4900 | `"            else \"attempted_no_usable_sources\" if search_attempted"` | — |
-| [SRC-1AE03B9EC3-L004901](../../agents/web_agent.py#L4901) | 4901 | `"            else \"not_attempted\""` | — |
-| [SRC-1AE03B9EC3-L004902](../../agents/web_agent.py#L4902) | 4902 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004903](../../agents/web_agent.py#L4903) | 4903 | `"        report[\"usable_sources_after_filtering\"] = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L004904](../../agents/web_agent.py#L4904) | 4904 | `"        report[\"research_quality\"] = research_quality"` | — |

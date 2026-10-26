@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000046 إلى SRC-E599346ABE-L000751
+- النطاق: SRC-51D44BE378-L000040 إلى SRC-E599346ABE-L000745
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000040](../DEPLOY_SNAPDEPLOY_AR.md#L40) | 40 | ``"\| `OMARAI_ACCESS_TOKEN` \| رمز وصول عشوائي خاص بك، طوله 32 حرفًا على الأقل \|"`` | — |
+| [SRC-51D44BE378-L000041](../DEPLOY_SNAPDEPLOY_AR.md#L41) | 41 | ``"\| `OPENROUTER_API_KEY` \| مفتاح OpenRouter الخاص بك لتوليد الإجابات والتحليل \|"`` | — |
+| [SRC-51D44BE378-L000042](../DEPLOY_SNAPDEPLOY_AR.md#L42) | 42 | `""` | — |
+| [SRC-51D44BE378-L000043](../DEPLOY_SNAPDEPLOY_AR.md#L43) | 43 | `"أنشئ رمز الوصول في Termux محليًا باستخدام Python، ثم انسخه مباشرة إلى خانة السر في SnapDeploy:"` | — |
+| [SRC-51D44BE378-L000044](../DEPLOY_SNAPDEPLOY_AR.md#L44) | 44 | `""` | — |
+| [SRC-51D44BE378-L000045](../DEPLOY_SNAPDEPLOY_AR.md#L45) | 45 | ````"```bash"```` | — |
 | [SRC-51D44BE378-L000046](../DEPLOY_SNAPDEPLOY_AR.md#L46) | 46 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
 | [SRC-51D44BE378-L000047](../DEPLOY_SNAPDEPLOY_AR.md#L47) | 47 | ````"```"```` | — |
 | [SRC-51D44BE378-L000048](../DEPLOY_SNAPDEPLOY_AR.md#L48) | 48 | `""` | — |
@@ -819,9 +825,3 @@
 | [SRC-E599346ABE-L000743](../generate_index.py#L743) | 743 | `"            continue"` | — |
 | [SRC-E599346ABE-L000744](../generate_index.py#L744) | 744 | `"        except (OSError, UnicodeError, LookupError, tokenize.TokenError) as exc:"` | — |
 | [SRC-E599346ABE-L000745](../generate_index.py#L745) | 745 | `"            failures.append(f\"{relative_file}: {type(exc).__name__}: {exc}\")"` | — |
-| [SRC-E599346ABE-L000746](../generate_index.py#L746) | 746 | `"            continue"` | — |
-| [SRC-E599346ABE-L000747](../generate_index.py#L747) | 747 | `""` | — |
-| [SRC-E599346ABE-L000748](../generate_index.py#L748) | 748 | `"        visitor = SymbolVisitor(relative_file)"` | — |
-| [SRC-E599346ABE-L000749](../generate_index.py#L749) | 749 | `"        visitor.visit(syntax_tree)"` | — |
-| [SRC-E599346ABE-L000750](../generate_index.py#L750) | 750 | `"        all_symbols.extend(visitor.symbols)"` | — |
-| [SRC-E599346ABE-L000751](../generate_index.py#L751) | 751 | `""` | — |

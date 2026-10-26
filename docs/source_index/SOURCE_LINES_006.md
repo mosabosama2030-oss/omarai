@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001705 إلى SRC-1AE03B9EC3-L002504
+- النطاق: SRC-1AE03B9EC3-L001699 إلى SRC-1AE03B9EC3-L002498
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001699](../../agents/web_agent.py#L1699) | 1699 | `"                        else:"` | — |
+| [SRC-1AE03B9EC3-L001700](../../agents/web_agent.py#L1700) | 1700 | `"                            warnings.append("` | — |
+| [SRC-1AE03B9EC3-L001701](../../agents/web_agent.py#L1701) | 1701 | `"                                f\"Reddit OAuth search unavailable (HTTP {search_response.status_code}).\""` | — |
+| [SRC-1AE03B9EC3-L001702](../../agents/web_agent.py#L1702) | 1702 | `"                            )"` | — |
+| [SRC-1AE03B9EC3-L001703](../../agents/web_agent.py#L1703) | 1703 | `"                    else:"` | — |
+| [SRC-1AE03B9EC3-L001704](../../agents/web_agent.py#L1704) | 1704 | `"                        warnings.append(\"Reddit OAuth did not return an access token.\")"` | — |
 | [SRC-1AE03B9EC3-L001705](../../agents/web_agent.py#L1705) | 1705 | `"                else:"` | — |
 | [SRC-1AE03B9EC3-L001706](../../agents/web_agent.py#L1706) | 1706 | `"                    warnings.append("` | — |
 | [SRC-1AE03B9EC3-L001707](../../agents/web_agent.py#L1707) | 1707 | `"                        f\"Reddit OAuth authentication unavailable (HTTP {token_response.status_code}).\""` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L002496](../../agents/web_agent.py#L2496) | 2496 | `"            \"not_attempted\", \"attempted\", \"content_extracted\", \"partial_extraction\","` | — |
 | [SRC-1AE03B9EC3-L002497](../../agents/web_agent.py#L2497) | 2497 | `"            \"no_text_extracted\", \"fetch_failed\", \"rejected_url\","` | — |
 | [SRC-1AE03B9EC3-L002498](../../agents/web_agent.py#L2498) | 2498 | `"            \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
-| [SRC-1AE03B9EC3-L002499](../../agents/web_agent.py#L2499) | 2499 | `"            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\","` | — |
-| [SRC-1AE03B9EC3-L002500](../../agents/web_agent.py#L2500) | 2500 | `"            \"http_error\", \"unsupported_content_type\", \"page_too_large\","` | — |
-| [SRC-1AE03B9EC3-L002501](../../agents/web_agent.py#L2501) | 2501 | `"            \"network_error\", \"empty_content\", \"budget_exhausted\","` | — |
-| [SRC-1AE03B9EC3-L002502](../../agents/web_agent.py#L2502) | 2502 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L002503](../../agents/web_agent.py#L2503) | 2503 | `"        page_fetch_status_counts = {"` | — |
-| [SRC-1AE03B9EC3-L002504](../../agents/web_agent.py#L2504) | 2504 | `"            status: sum(source.get(\"page_fetch_status\") == status for source in fetch_targets)"` | — |

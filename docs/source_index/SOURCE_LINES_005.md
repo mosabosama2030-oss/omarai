@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000905 إلى SRC-1AE03B9EC3-L001704
+- النطاق: SRC-1AE03B9EC3-L000899 إلى SRC-1AE03B9EC3-L001698
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000899](../../agents/web_agent.py#L899) | 899 | `"                \"What are you referring to? Please name the item or share its link, \""` | — |
+| [SRC-1AE03B9EC3-L000900](../../agents/web_agent.py#L900) | 900 | `"                \"and I'll continue without guessing.\""` | — |
+| [SRC-1AE03B9EC3-L000901](../../agents/web_agent.py#L901) | 901 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000902](../../agents/web_agent.py#L902) | 902 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L000903](../../agents/web_agent.py#L903) | 903 | `"            answer = ("` | — |
+| [SRC-1AE03B9EC3-L000904](../../agents/web_agent.py#L904) | 904 | `"                \"تقصد إيه تحديدًا؟ اكتب اسم الشيء أو المنتج المقصود، أو ابعت الرابط، \""` | — |
 | [SRC-1AE03B9EC3-L000905](../../agents/web_agent.py#L905) | 905 | `"                \"وأكمل معاك من غير ما أخمّن.\""` | — |
 | [SRC-1AE03B9EC3-L000906](../../agents/web_agent.py#L906) | 906 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000907](../../agents/web_agent.py#L907) | 907 | `"        result = self._local_answer_result(question, answer, \"clarification_needed\")"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L001696](../../agents/web_agent.py#L1696) | 1696 | `"                                    \"search_query\": query,"` | — |
 | [SRC-1AE03B9EC3-L001697](../../agents/web_agent.py#L1697) | 1697 | `"                                    \"published_at\": _clean_text(str(post.get(\"created_utc\") or \"\"), 100),"` | — |
 | [SRC-1AE03B9EC3-L001698](../../agents/web_agent.py#L1698) | 1698 | `"                                })"` | — |
-| [SRC-1AE03B9EC3-L001699](../../agents/web_agent.py#L1699) | 1699 | `"                        else:"` | — |
-| [SRC-1AE03B9EC3-L001700](../../agents/web_agent.py#L1700) | 1700 | `"                            warnings.append("` | — |
-| [SRC-1AE03B9EC3-L001701](../../agents/web_agent.py#L1701) | 1701 | `"                                f\"Reddit OAuth search unavailable (HTTP {search_response.status_code}).\""` | — |
-| [SRC-1AE03B9EC3-L001702](../../agents/web_agent.py#L1702) | 1702 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L001703](../../agents/web_agent.py#L1703) | 1703 | `"                    else:"` | — |
-| [SRC-1AE03B9EC3-L001704](../../agents/web_agent.py#L1704) | 1704 | `"                        warnings.append(\"Reddit OAuth did not return an access token.\")"` | — |

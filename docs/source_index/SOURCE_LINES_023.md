@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000985 إلى SRC-B3062EB677-L000132
+- النطاق: SRC-90FAA34ADE-L000979 إلى SRC-B3062EB677-L000126
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000979](../../tests/fixtures/answer_quality_cases.json#L979) | 979 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000980](../../tests/fixtures/answer_quality_cases.json#L980) | 980 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000981](../../tests/fixtures/answer_quality_cases.json#L981) | 981 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000982](../../tests/fixtures/answer_quality_cases.json#L982) | 982 | `"      \"case_id\": \"AQ-034\","` | — |
+| [SRC-90FAA34ADE-L000983](../../tests/fixtures/answer_quality_cases.json#L983) | 983 | `"      \"category\": \"stale_sources_for_current\","` | — |
+| [SRC-90FAA34ADE-L000984](../../tests/fixtures/answer_quality_cases.json#L984) | 984 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000985](../../tests/fixtures/answer_quality_cases.json#L985) | 985 | `"      \"question\": \"What are the current 2026 visa requirements? The only provided page is dated 2021.\","` | — |
 | [SRC-90FAA34ADE-L000986](../../tests/fixtures/answer_quality_cases.json#L986) | 986 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000987](../../tests/fixtures/answer_quality_cases.json#L987) | 987 | `"      \"required_behaviors\": ["` | — |
@@ -837,9 +843,3 @@
 | [SRC-B3062EB677-L000124](../../tests/test_answer_quality_runner.py#L124) | 124 | `"            \"1\","` | — |
 | [SRC-B3062EB677-L000125](../../tests/test_answer_quality_runner.py#L125) | 125 | `"            \"--out\","` | — |
 | [SRC-B3062EB677-L000126](../../tests/test_answer_quality_runner.py#L126) | 126 | `"            str(out),"` | — |
-| [SRC-B3062EB677-L000127](../../tests/test_answer_quality_runner.py#L127) | 127 | `"        ]"` | — |
-| [SRC-B3062EB677-L000128](../../tests/test_answer_quality_runner.py#L128) | 128 | `"    )"` | — |
-| [SRC-B3062EB677-L000129](../../tests/test_answer_quality_runner.py#L129) | 129 | `"    assert rc == 0"` | — |
-| [SRC-B3062EB677-L000130](../../tests/test_answer_quality_runner.py#L130) | 130 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-B3062EB677-L000131](../../tests/test_answer_quality_runner.py#L131) | 131 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
-| [SRC-B3062EB677-L000132](../../tests/test_answer_quality_runner.py#L132) | 132 | `"    assert payload[\"results\"][0][\"evidence_fixture_injected\"] is False"` | — |

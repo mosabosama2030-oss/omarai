@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000752 إلى SRC-E599346ABE-L001551
+- النطاق: SRC-E599346ABE-L000746 إلى SRC-E599346ABE-L001545
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000746](../generate_index.py#L746) | 746 | `"            continue"` | — |
+| [SRC-E599346ABE-L000747](../generate_index.py#L747) | 747 | `""` | — |
+| [SRC-E599346ABE-L000748](../generate_index.py#L748) | 748 | `"        visitor = SymbolVisitor(relative_file)"` | — |
+| [SRC-E599346ABE-L000749](../generate_index.py#L749) | 749 | `"        visitor.visit(syntax_tree)"` | — |
+| [SRC-E599346ABE-L000750](../generate_index.py#L750) | 750 | `"        all_symbols.extend(visitor.symbols)"` | — |
+| [SRC-E599346ABE-L000751](../generate_index.py#L751) | 751 | `""` | — |
 | [SRC-E599346ABE-L000752](../generate_index.py#L752) | 752 | `"    if failures:"` | — |
 | [SRC-E599346ABE-L000753](../generate_index.py#L753) | 753 | `"        detail = \"\\n\".join(f\"- {failure}\" for failure in failures)"` | — |
 | [SRC-E599346ABE-L000754](../generate_index.py#L754) | 754 | `"        raise IndexGenerationError("` | — |
@@ -810,9 +816,3 @@
 | [SRC-E599346ABE-L001543](../generate_index.py#L1543) | 1543 | `""` | — |
 | [SRC-E599346ABE-L001544](../generate_index.py#L1544) | 1544 | `"    lines.extend("` | — |
 | [SRC-E599346ABE-L001545](../generate_index.py#L1545) | 1545 | `"        ["` | — |
-| [SRC-E599346ABE-L001546](../generate_index.py#L1546) | 1546 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001547](../generate_index.py#L1547) | 1547 | `"            \"## المسارات المستبعدة عمدًا\","` | — |
-| [SRC-E599346ABE-L001548](../generate_index.py#L1548) | 1548 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001549](../generate_index.py#L1549) | 1549 | `"            \"يحتوي هذا السجل أسماء المسارات وأسباب الاستثناء فقط، ولا يقرأ محتوى الأسرار أو قواعد البيانات أو المجلدات المستبعدة.\","` | — |
-| [SRC-E599346ABE-L001550](../generate_index.py#L1550) | 1550 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001551](../generate_index.py#L1551) | 1551 | `"            \"\| المسار المستبعد \| السبب \|\","` | — |

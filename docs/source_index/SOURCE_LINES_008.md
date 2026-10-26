@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003305 إلى SRC-1AE03B9EC3-L004104
+- النطاق: SRC-1AE03B9EC3-L003299 إلى SRC-1AE03B9EC3-L004098
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003299](../../agents/web_agent.py#L3299) | 3299 | `"            or raw.count(end_marker) != 1"` | — |
+| [SRC-1AE03B9EC3-L003300](../../agents/web_agent.py#L3300) | 3300 | `"            or repaired is None"` | — |
+| [SRC-1AE03B9EC3-L003301](../../agents/web_agent.py#L3301) | 3301 | `"            or not repaired.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L003302](../../agents/web_agent.py#L3302) | 3302 | `"            or len(repaired.group(1)) > 24_000"` | — |
+| [SRC-1AE03B9EC3-L003303](../../agents/web_agent.py#L3303) | 3303 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L003304](../../agents/web_agent.py#L3304) | 3304 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
 | [SRC-1AE03B9EC3-L003305](../../agents/web_agent.py#L3305) | 3305 | `"        return repaired.group(1).strip()"` | — |
 | [SRC-1AE03B9EC3-L003306](../../agents/web_agent.py#L3306) | 3306 | `""` | — |
 | [SRC-1AE03B9EC3-L003307](../../agents/web_agent.py#L3307) | 3307 | `"    def _review_answer("` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L004096](../../agents/web_agent.py#L4096) | 4096 | `"            search_warning = \"؛ \".join(search_warnings)"` | — |
 | [SRC-1AE03B9EC3-L004097](../../agents/web_agent.py#L4097) | 4097 | `"        # Link-finding and lead-discovery are actionable discovery tasks, not broad"` | — |
 | [SRC-1AE03B9EC3-L004098](../../agents/web_agent.py#L4098) | 4098 | `"        # fact-checking. Keep useful candidates visible while explicitly labelling them"` | — |
-| [SRC-1AE03B9EC3-L004099](../../agents/web_agent.py#L4099) | 4099 | `"        # as uncorroborated instead of refusing a lone result as if it were no result."` | — |
-| [SRC-1AE03B9EC3-L004100](../../agents/web_agent.py#L4100) | 4100 | `"        navigation_request = self._is_navigation_request(question)"` | — |
-| [SRC-1AE03B9EC3-L004101](../../agents/web_agent.py#L4101) | 4101 | `"        lead_request = intent_route == \"LEAD_GENERATION\" or self._is_lead_search(question)"` | — |
-| [SRC-1AE03B9EC3-L004102](../../agents/web_agent.py#L4102) | 4102 | `"        listing_request = self._is_listing_discovery(question)"` | — |
-| [SRC-1AE03B9EC3-L004103](../../agents/web_agent.py#L4103) | 4103 | `"        lead_evidence_sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L004104](../../agents/web_agent.py#L4104) | 4104 | `"        related_lead_results_count = 0"` | — |

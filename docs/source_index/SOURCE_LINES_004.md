@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000105 إلى SRC-1AE03B9EC3-L000904
+- النطاق: SRC-1AE03B9EC3-L000099 إلى SRC-1AE03B9EC3-L000898
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000099](../../agents/web_agent.py#L99) | 99 | `"    \"الرقميه\": {\"digital\"}, \"رقميه\": {\"digital\"},"` | — |
+| [SRC-1AE03B9EC3-L000100](../../agents/web_agent.py#L100) | 100 | `"    \"موقع\": {\"website\", \"portal\"}, \"مواقع\": {\"websites\", \"portals\"},"` | — |
+| [SRC-1AE03B9EC3-L000101](../../agents/web_agent.py#L101) | 101 | `"    \"التجمع\": {\"settlement\"}, \"تجمع\": {\"settlement\"},"` | — |
+| [SRC-1AE03B9EC3-L000102](../../agents/web_agent.py#L102) | 102 | `"    \"الخامس\": {\"fifth\", \"5th\"}, \"خامس\": {\"fifth\", \"5th\"},"` | — |
+| [SRC-1AE03B9EC3-L000103](../../agents/web_agent.py#L103) | 103 | `"    \"شقة\": {\"apartment\", \"flat\"}, \"شقق\": {\"apartments\", \"flats\"},"` | — |
+| [SRC-1AE03B9EC3-L000104](../../agents/web_agent.py#L104) | 104 | `"    \"عميل\": {\"customer\", \"buyer\"}, \"عملاء\": {\"customers\", \"buyers\"},"` | — |
 | [SRC-1AE03B9EC3-L000105](../../agents/web_agent.py#L105) | 105 | `"    \"شراء\": {\"buy\", \"purchase\"}, \"مشتري\": {\"buyer\"},"` | — |
 | [SRC-1AE03B9EC3-L000106](../../agents/web_agent.py#L106) | 106 | `"    # Small, explicit Arabic-English topic vocabulary; this helps Arabic prompts"` | — |
 | [SRC-1AE03B9EC3-L000107](../../agents/web_agent.py#L107) | 107 | `"    # match English-indexed results without relaxing URL or destination safety."` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L000896](../../agents/web_agent.py#L896) | 896 | `"        \"\"\"Ask for a missing referent without calling the model or search providers.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000897](../../agents/web_agent.py#L897) | 897 | `"        if re.search(r\"[a-z]\", question.casefold()):"` | — |
 | [SRC-1AE03B9EC3-L000898](../../agents/web_agent.py#L898) | 898 | `"            answer = ("` | — |
-| [SRC-1AE03B9EC3-L000899](../../agents/web_agent.py#L899) | 899 | `"                \"What are you referring to? Please name the item or share its link, \""` | — |
-| [SRC-1AE03B9EC3-L000900](../../agents/web_agent.py#L900) | 900 | `"                \"and I'll continue without guessing.\""` | — |
-| [SRC-1AE03B9EC3-L000901](../../agents/web_agent.py#L901) | 901 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L000902](../../agents/web_agent.py#L902) | 902 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L000903](../../agents/web_agent.py#L903) | 903 | `"            answer = ("` | — |
-| [SRC-1AE03B9EC3-L000904](../../agents/web_agent.py#L904) | 904 | `"                \"تقصد إيه تحديدًا؟ اكتب اسم الشيء أو المنتج المقصود، أو ابعت الرابط، \""` | — |
