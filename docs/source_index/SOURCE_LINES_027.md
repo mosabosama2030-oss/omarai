@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000411 إلى SRC-AAA21D04E8-L000119
+- النطاق: SRC-FA4E1423C3-L000410 إلى SRC-AAA21D04E8-L000118
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000410](../../tests/test_generate_index.py#L410) | 410 | `"    assert len(findings) == 3"` | — |
 | [SRC-FA4E1423C3-L000411](../../tests/test_generate_index.py#L411) | 411 | `"    assert {item.marker for item in findings} == {\"BUG\", \"FIXME\"}"` | — |
 | [SRC-FA4E1423C3-L000412](../../tests/test_generate_index.py#L412) | 412 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
 | [SRC-FA4E1423C3-L000413](../../tests/test_generate_index.py#L413) | 413 | `"    bug_ids = [item.finding_id for item in findings if item.marker == \"BUG\"]"` | — |
@@ -833,4 +834,3 @@
 | [SRC-AAA21D04E8-L000116](../../tests/test_generation_capabilities.py#L116) | 116 | `""` | — |
 | [SRC-AAA21D04E8-L000117](../../tests/test_generation_capabilities.py#L117) | 117 | `""` | — |
 | [SRC-AAA21D04E8-L000118](../../tests/test_generation_capabilities.py#L118) | 118 | `"def test_capability_question_distinguishes_configuration_from_live_health(monkeypatch):"` | — |
-| [SRC-AAA21D04E8-L000119](../../tests/test_generation_capabilities.py#L119) | 119 | `"    agent = WebAgent()"` | — |

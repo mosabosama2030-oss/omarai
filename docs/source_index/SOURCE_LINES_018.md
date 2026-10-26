@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000093 إلى SRC-0F910493E8-L000317
+- النطاق: SRC-65551FB29F-L000092 إلى SRC-0F910493E8-L000316
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000092](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L92) | 92 | `"## 4. المبدأ"` | — |
 | [SRC-65551FB29F-L000093](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L93) | 93 | `""` | — |
 | [SRC-65551FB29F-L000094](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L94) | 94 | `"الطبقات التالية **حدود مسؤولية منطقية** وليست أمرًا بإنشاء 36 خدمة منفصلة أو 36 ملفًا. يمكن تنفيذ عدة طبقات داخل التطبيق نفسه، بشرط وضوح المسؤولية والاعتماديات والعقود. لا تُفصل الطبقة إلى خدمة مستقلة إلا عند وجود دليل على حاجة التوسع أو العزل أو دورة النشر."` | — |
 | [SRC-65551FB29F-L000095](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L95) | 95 | `""` | — |
@@ -824,4 +825,3 @@
 | [SRC-0F910493E8-L000314](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L314) | 314 | `"لا تُبنى ذاكرة طويلة الأمد لمجرد أن النظام أصبح قادرًا على إنشاء ملفات تعريف. يجب أن تحدد الحاجة أولًا، مع تقليل البيانات وفترة احتفاظ وحذف وموافقة مناسبة."` | — |
 | [SRC-0F910493E8-L000315](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L315) | 315 | `""` | — |
 | [SRC-0F910493E8-L000316](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L316) | 316 | `"---"` | — |
-| [SRC-0F910493E8-L000317](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L317) | 317 | `""` | — |

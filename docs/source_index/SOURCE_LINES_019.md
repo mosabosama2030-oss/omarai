@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000318 إلى SRC-D911B73392-L000050
+- النطاق: SRC-0F910493E8-L000317 إلى SRC-D911B73392-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000317](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L317) | 317 | `""` | — |
 | [SRC-0F910493E8-L000318](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L318) | 318 | `"# 8. الأدلة والتحقق وجودة الإجابات"` | — |
 | [SRC-0F910493E8-L000319](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L319) | 319 | `""` | — |
 | [SRC-0F910493E8-L000320](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L320) | 320 | `"يمثل Evidence Ledger أو سجل الأدلة، حيثما ينطبق، العلاقة بين الادعاء والمصدر والنص المسترجع ووقت الرصد وحالة الجلب."` | — |
@@ -851,4 +852,3 @@
 | [SRC-D911B73392-L000047](../RESEARCH_CONNECTORS_AR.md#L47) | 47 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
 | [SRC-D911B73392-L000048](../RESEARCH_CONNECTORS_AR.md#L48) | 48 | `"printf '\\n'"` | — |
 | [SRC-D911B73392-L000049](../RESEARCH_CONNECTORS_AR.md#L49) | 49 | `"export OPENROUTER_API_KEY"` | — |
-| [SRC-D911B73392-L000050](../RESEARCH_CONNECTORS_AR.md#L50) | 50 | ````"```"```` | — |

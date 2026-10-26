@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000370 إلى SRC-DA61479D59-L000297
+- النطاق: SRC-3451CC474D-L000369 إلى SRC-DA61479D59-L000296
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000369](../../tests/test_api.py#L369) | 369 | `"    headers = {\"Authorization\": \"Bearer \" + \"x\" * 48}"` | — |
 | [SRC-3451CC474D-L000370](../../tests/test_api.py#L370) | 370 | `"    status, result = request_json("` | — |
 | [SRC-3451CC474D-L000371](../../tests/test_api.py#L371) | 371 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"بدور على شقة\"}, headers=headers"` | — |
 | [SRC-3451CC474D-L000372](../../tests/test_api.py#L372) | 372 | `"    )"` | — |
@@ -824,4 +825,3 @@
 | [SRC-DA61479D59-L000294](../../tests/test_connector_summary_counters.py#L294) | 294 | `"                    \"blocked_domain\": 0,"` | — |
 | [SRC-DA61479D59-L000295](../../tests/test_connector_summary_counters.py#L295) | 295 | `"                    \"relevance_below_threshold\": 2,"` | — |
 | [SRC-DA61479D59-L000296](../../tests/test_connector_summary_counters.py#L296) | 296 | `"                },"` | — |
-| [SRC-DA61479D59-L000297](../../tests/test_connector_summary_counters.py#L297) | 297 | `"            },"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000176 إلى SRC-F725E90B2A-L000542
+- النطاق: SRC-01E35ABC46-L000175 إلى SRC-F725E90B2A-L000541
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000175](../../tests/test_research_guardrails.py#L175) | 175 | `""` | — |
 | [SRC-01E35ABC46-L000176](../../tests/test_research_guardrails.py#L176) | 176 | `"def test_evidence_insufficient_empty():"` | — |
 | [SRC-01E35ABC46-L000177](../../tests/test_research_guardrails.py#L177) | 177 | `"    decision = decide_evidence_status([], search_attempted=True)"` | — |
 | [SRC-01E35ABC46-L000178](../../tests/test_research_guardrails.py#L178) | 178 | `"    assert decision[\"evidence_status\"] == \"insufficient\""` | — |
@@ -842,4 +843,3 @@
 | [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `""` | — |
 | [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"    def fake_post(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"        calls.append((\"POST\", url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"        return FakeResponse({\"access_token\": \"test-reddit-access-token\"})"` | — |

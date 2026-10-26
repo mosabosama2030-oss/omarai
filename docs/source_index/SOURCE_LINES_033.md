@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002143 إلى SRC-F725E90B2A-L002942
+- النطاق: SRC-F725E90B2A-L002142 إلى SRC-F725E90B2A-L002941
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002142](../../tests/test_web_agent.py#L2142) | 2142 | `"            \"depth\": \"standard\", \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L002143](../../tests/test_web_agent.py#L2143) | 2143 | `"        }"` | — |
 | [SRC-F725E90B2A-L002144](../../tests/test_web_agent.py#L2144) | 2144 | `"    ))"` | — |
 | [SRC-F725E90B2A-L002145](../../tests/test_web_agent.py#L2145) | 2145 | `"    monkeypatch.setattr("` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002939](../../tests/test_web_agent.py#L2939) | 2939 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L002940](../../tests/test_web_agent.py#L2940) | 2940 | `"        agent, \"_request_completion\","` | — |
 | [SRC-F725E90B2A-L002941](../../tests/test_web_agent.py#L2941) | 2941 | `"        lambda *args, **kwargs: pytest.fail(\"planner should not run without a topic\"),"` | — |
-| [SRC-F725E90B2A-L002942](../../tests/test_web_agent.py#L2942) | 2942 | `"    )"` | — |

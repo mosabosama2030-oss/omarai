@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000123 إلى SRC-90FAA34ADE-L000136
+- النطاق: SRC-A8360B1B03-L000122 إلى SRC-90FAA34ADE-L000135
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000122](../../scripts/hosted_smoke_test.py#L122) | 122 | `"        expected = expected_sha.strip().lower()"` | — |
 | [SRC-A8360B1B03-L000123](../../scripts/hosted_smoke_test.py#L123) | 123 | `"        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:"` | — |
 | [SRC-A8360B1B03-L000124](../../scripts/hosted_smoke_test.py#L124) | 124 | `"            raise SmokeError("` | — |
 | [SRC-A8360B1B03-L000125](../../scripts/hosted_smoke_test.py#L125) | 125 | `"                \"The deployed service SHA does not match the expected Git commit. \""` | — |
@@ -842,4 +843,3 @@
 | [SRC-90FAA34ADE-L000133](../../tests/fixtures/answer_quality_cases.json#L133) | 133 | `"        \"used_web_search is true for pure capability question\""` | — |
 | [SRC-90FAA34ADE-L000134](../../tests/fixtures/answer_quality_cases.json#L134) | 134 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000135](../../tests/fixtures/answer_quality_cases.json#L135) | 135 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000136](../../tests/fixtures/answer_quality_cases.json#L136) | 136 | `"    },"` | — |

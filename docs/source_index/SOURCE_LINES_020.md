@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D911B73392-L000051 إلى SRC-A8360B1B03-L000122
+- النطاق: SRC-D911B73392-L000050 إلى SRC-A8360B1B03-L000121
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D911B73392-L000050](../RESEARCH_CONNECTORS_AR.md#L50) | 50 | ````"```"```` | — |
 | [SRC-D911B73392-L000051](../RESEARCH_CONNECTORS_AR.md#L51) | 51 | `""` | — |
 | [SRC-D911B73392-L000052](../RESEARCH_CONNECTORS_AR.md#L52) | 52 | ``"يمكن تغيير موفر النموذج المتوافق مع OpenAI عبر `OMARAI_LLM_BASE_URL`. اضبط `OMARAI_PLANNER_MODEL` و`OMARAI_ANSWER_MODEL` و`OMARAI_REVIEW_MODEL` لتغيير الأدوار كلٌ على حدة، أو `OMARAI_LLM_MODEL` لتطبيق نموذج واحد على الأدوار التي لم تُحدد لها قيمة منفصلة، و`OMARAI_LLM_FALLBACK_MODEL` لتغيير النموذج الاحتياطي. توافر النماذج المجانية وحدودها يتغير؛ لذلك لا يفترض التطبيق أن النموذج مجاني دائمًا أو أن الطلب سينجح كل مرة."`` | — |
 | [SRC-D911B73392-L000053](../RESEARCH_CONNECTORS_AR.md#L53) | 53 | `""` | — |
@@ -887,4 +888,3 @@
 | [SRC-A8360B1B03-L000119](../../scripts/hosted_smoke_test.py#L119) | 119 | `"    build = health.get(\"build\")"` | — |
 | [SRC-A8360B1B03-L000120](../../scripts/hosted_smoke_test.py#L120) | 120 | `"    reported_sha = build.get(\"sha\") if isinstance(build, dict) else None"` | — |
 | [SRC-A8360B1B03-L000121](../../scripts/hosted_smoke_test.py#L121) | 121 | `"    if expected_sha is not None:"` | — |
-| [SRC-A8360B1B03-L000122](../../scripts/hosted_smoke_test.py#L122) | 122 | `"        expected = expected_sha.strip().lower()"` | — |

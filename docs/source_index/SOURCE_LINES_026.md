@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA61479D59-L000298 إلى SRC-FA4E1423C3-L000410
+- النطاق: SRC-DA61479D59-L000297 إلى SRC-FA4E1423C3-L000409
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA61479D59-L000297](../../tests/test_connector_summary_counters.py#L297) | 297 | `"            },"` | — |
 | [SRC-DA61479D59-L000298](../../tests/test_connector_summary_counters.py#L298) | 298 | `"        ],"` | — |
 | [SRC-DA61479D59-L000299](../../tests/test_connector_summary_counters.py#L299) | 299 | `"        [],"` | — |
 | [SRC-DA61479D59-L000300](../../tests/test_connector_summary_counters.py#L300) | 300 | `"    )"` | — |
@@ -851,4 +852,3 @@
 | [SRC-FA4E1423C3-L000407](../../tests/test_generate_index.py#L407) | 407 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
 | [SRC-FA4E1423C3-L000408](../../tests/test_generate_index.py#L408) | 408 | `"    pages, _ = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |
 | [SRC-FA4E1423C3-L000409](../../tests/test_generate_index.py#L409) | 409 | `""` | — |
-| [SRC-FA4E1423C3-L000410](../../tests/test_generate_index.py#L410) | 410 | `"    assert len(findings) == 3"` | — |

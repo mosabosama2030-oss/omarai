@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000937 إلى SRC-B3062EB677-L000084
+- النطاق: SRC-90FAA34ADE-L000936 إلى SRC-B3062EB677-L000083
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000936](../../tests/fixtures/answer_quality_cases.json#L936) | 936 | `"        \"Infers purchase intent solely from business category\""` | — |
 | [SRC-90FAA34ADE-L000937](../../tests/fixtures/answer_quality_cases.json#L937) | 937 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000938](../../tests/fixtures/answer_quality_cases.json#L938) | 938 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000939](../../tests/fixtures/answer_quality_cases.json#L939) | 939 | `"        \"type\": \"controlled_search\","` | — |
@@ -842,4 +843,3 @@
 | [SRC-B3062EB677-L000081](../../tests/test_answer_quality_runner.py#L81) | 81 | `"            \"--corpus\","` | — |
 | [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
 | [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
-| [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |

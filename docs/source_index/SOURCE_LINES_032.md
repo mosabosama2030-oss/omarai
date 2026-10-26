@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001343 إلى SRC-F725E90B2A-L002142
+- النطاق: SRC-F725E90B2A-L001342 إلى SRC-F725E90B2A-L002141
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `""` | — |
 | [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `""` | — |
 | [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"    agent = WebAgent()"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002139](../../tests/test_web_agent.py#L2139) | 2139 | `"            \"unique_sources\": 2, \"pages_fetched\": 2,"` | — |
 | [SRC-F725E90B2A-L002140](../../tests/test_web_agent.py#L2140) | 2140 | `"            \"providers_used\": [\"test_provider\"], \"provider_counts\": {\"test_provider\": 2},"` | — |
 | [SRC-F725E90B2A-L002141](../../tests/test_web_agent.py#L2141) | 2141 | `"            \"platform_counts\": {\"web\": 2}, \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L002142](../../tests/test_web_agent.py#L2142) | 2142 | `"            \"depth\": \"standard\", \"planning_method\": \"test\","` | — |

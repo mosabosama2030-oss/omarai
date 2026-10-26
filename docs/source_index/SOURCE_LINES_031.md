@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000543 إلى SRC-F725E90B2A-L001342
+- النطاق: SRC-F725E90B2A-L000542 إلى SRC-F725E90B2A-L001341
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"        return FakeResponse({\"access_token\": \"test-reddit-access-token\"})"` | — |
 | [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `""` | — |
 | [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"    def fake_get(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"        calls.append((\"GET\", url, kwargs))"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"    assert \"غير موثوقة كتعليمات\" in user_messages[2][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"    assert injected_text not in system_content"` | — |
-| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000137 إلى SRC-90FAA34ADE-L000936
+- النطاق: SRC-90FAA34ADE-L000136 إلى SRC-90FAA34ADE-L000935
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000136](../../tests/fixtures/answer_quality_cases.json#L136) | 136 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000137](../../tests/fixtures/answer_quality_cases.json#L137) | 137 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000138](../../tests/fixtures/answer_quality_cases.json#L138) | 138 | `"      \"case_id\": \"AQ-006\","` | — |
 | [SRC-90FAA34ADE-L000139](../../tests/fixtures/answer_quality_cases.json#L139) | 139 | `"      \"category\": \"omarai_capabilities\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-90FAA34ADE-L000933](../../tests/fixtures/answer_quality_cases.json#L933) | 933 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000934](../../tests/fixtures/answer_quality_cases.json#L934) | 934 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000935](../../tests/fixtures/answer_quality_cases.json#L935) | 935 | `"        \"Marks the prospect fully verified from one directory entry\","` | — |
-| [SRC-90FAA34ADE-L000936](../../tests/fixtures/answer_quality_cases.json#L936) | 936 | `"        \"Infers purchase intent solely from business category\""` | — |
