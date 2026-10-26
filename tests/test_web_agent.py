@@ -2772,6 +2772,8 @@ def test_search_web_keeps_arabic_topic_matches_in_english_indexed_results(monkey
         }
         monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _q, row=row: [dict(row)])
         monkeypatch.setattr(agent, "_search_bing_rss", lambda _q, row=row: [dict(row)])
+        # Current-news questions normally add Google News RSS; keep this unit test deterministic.
+        monkeypatch.setattr(agent, "_search_news", lambda _q: [])
         results = agent._search_web(query)
         assert results, f"Search candidates were all filtered for case {index}"
         diagnostic = next(
