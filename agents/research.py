@@ -121,7 +121,7 @@ def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
 _SEARCH_META_START_RE = re.compile(
     r"^(?:و?اذكر(?:ي|وا)?|و?استخدم|و?استعمل|و?ميّز|و?ميز|و?وضح|و?وضّح|"
     r"و?اجب|و?أجب|لا تعرض|لا تقدم|لا تقدّم|please cite|cite|provide links|"
-    r"mention sources|use multiple sources|don't present|do not present)\\b",
+    r"mention sources|use multiple sources|و?لا تعرض|و?لا تقدم|don't present|do not present)\\b",
     re.IGNORECASE,
 )
 _SEARCH_META_TAIL_RE = re.compile(
@@ -131,7 +131,7 @@ _SEARCH_META_TAIL_RE = re.compile(
     re.IGNORECASE,
 )
 _SEARCH_LEADING_ACTION_RE = re.compile(
-    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|ابحث|استكشف|استقصِ|analyze|analyse|compare|"
+    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|ابحث|استكشف|استقصِ|اعرض|analyze|analyse|compare|"
     r"investigate|collect|gather|review|summarize)\\s+",
     re.IGNORECASE,
 )
