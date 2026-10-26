@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000039 إلى SRC-FA4E1423C3-L000474
+- النطاق: SRC-6BCB799CEC-L000034 إلى SRC-FA4E1423C3-L000469
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000034](../../tests/test_evidence_provenance.py#L34) | 34 | `"    monkeypatch.setattr(agent, \"_fetch_page\", lambda url: (\"\", \"\"))"` | — |
+| [SRC-6BCB799CEC-L000035](../../tests/test_evidence_provenance.py#L35) | 35 | `""` | — |
+| [SRC-6BCB799CEC-L000036](../../tests/test_evidence_provenance.py#L36) | 36 | `"    sources, warnings, report = agent._collect_research({"` | — |
+| [SRC-6BCB799CEC-L000037](../../tests/test_evidence_provenance.py#L37) | 37 | `"        \"queries\": [\"سؤال دون قراءة صفحة\"],"` | — |
+| [SRC-6BCB799CEC-L000038](../../tests/test_evidence_provenance.py#L38) | 38 | `"        \"direct_urls\": [],"` | — |
 | [SRC-6BCB799CEC-L000039](../../tests/test_evidence_provenance.py#L39) | 39 | `"        \"social_focus\": False,"` | — |
 | [SRC-6BCB799CEC-L000040](../../tests/test_evidence_provenance.py#L40) | 40 | `"        \"freshness\": \"any\","` | — |
 | [SRC-6BCB799CEC-L000041](../../tests/test_evidence_provenance.py#L41) | 41 | `"        \"depth\": \"standard\","` | — |
@@ -829,8 +834,3 @@
 | [SRC-FA4E1423C3-L000467](../../tests/test_generate_index.py#L467) | 467 | `"    assert any(path == \"app.js\" and marker == \"FIXME\" for path, marker, _ in summarized)"` | — |
 | [SRC-FA4E1423C3-L000468](../../tests/test_generate_index.py#L468) | 468 | `"    assert any(path == \"app.js\" and marker == \"SECURITY\" for path, marker, _ in summarized)"` | — |
 | [SRC-FA4E1423C3-L000469](../../tests/test_generate_index.py#L469) | 469 | `"    assert any(path == \"styles.css\" and marker == \"GAP\" for path, marker, _ in summarized)"` | — |
-| [SRC-FA4E1423C3-L000470](../../tests/test_generate_index.py#L470) | 470 | `"    assert any(path == \"page.html\" and marker == \"REVIEW\" for path, marker, _ in summarized)"` | — |
-| [SRC-FA4E1423C3-L000471](../../tests/test_generate_index.py#L471) | 471 | `"    assert any(path == \"guide.md\" and marker == \"DEFECT\" for path, marker, _ in summarized)"` | — |
-| [SRC-FA4E1423C3-L000472](../../tests/test_generate_index.py#L472) | 472 | `"    assert not any(\"risk-management\" in desc.lower() for _, _, desc in summarized)"` | — |
-| [SRC-FA4E1423C3-L000473](../../tests/test_generate_index.py#L473) | 473 | `"    assert not any(\"ordinary error variable\" in desc for _, _, desc in summarized)"` | — |
-| [SRC-FA4E1423C3-L000474](../../tests/test_generate_index.py#L474) | 474 | `"    assert not any(\"inside a string\" in desc for _, _, desc in summarized)"` | — |

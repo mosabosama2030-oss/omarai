@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000475 إلى SRC-AAA21D04E8-L000183
+- النطاق: SRC-FA4E1423C3-L000470 إلى SRC-AAA21D04E8-L000178
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000470](../../tests/test_generate_index.py#L470) | 470 | `"    assert any(path == \"page.html\" and marker == \"REVIEW\" for path, marker, _ in summarized)"` | — |
+| [SRC-FA4E1423C3-L000471](../../tests/test_generate_index.py#L471) | 471 | `"    assert any(path == \"guide.md\" and marker == \"DEFECT\" for path, marker, _ in summarized)"` | — |
+| [SRC-FA4E1423C3-L000472](../../tests/test_generate_index.py#L472) | 472 | `"    assert not any(\"risk-management\" in desc.lower() for _, _, desc in summarized)"` | — |
+| [SRC-FA4E1423C3-L000473](../../tests/test_generate_index.py#L473) | 473 | `"    assert not any(\"ordinary error variable\" in desc for _, _, desc in summarized)"` | — |
+| [SRC-FA4E1423C3-L000474](../../tests/test_generate_index.py#L474) | 474 | `"    assert not any(\"inside a string\" in desc for _, _, desc in summarized)"` | — |
 | [SRC-FA4E1423C3-L000475](../../tests/test_generate_index.py#L475) | 475 | `"    assert not any(\"sample should be ignored\" in desc for _, _, desc in summarized)"` | — |
 ## اختبارات
 
@@ -829,8 +834,3 @@
 | [SRC-AAA21D04E8-L000176](../../tests/test_generation_capabilities.py#L176) | 176 | `"            \"providers\": [\"duckduckgo_html\"],"` | — |
 | [SRC-AAA21D04E8-L000177](../../tests/test_generation_capabilities.py#L177) | 177 | `"            \"queries\": [question],"` | — |
 | [SRC-AAA21D04E8-L000178](../../tests/test_generation_capabilities.py#L178) | 178 | `"            \"domain\": \"example.com\","` | — |
-| [SRC-AAA21D04E8-L000179](../../tests/test_generation_capabilities.py#L179) | 179 | `"            \"source_class\": \"general\","` | — |
-| [SRC-AAA21D04E8-L000180](../../tests/test_generation_capabilities.py#L180) | 180 | `"            \"platform\": \"web\","` | — |
-| [SRC-AAA21D04E8-L000181](../../tests/test_generation_capabilities.py#L181) | 181 | `"            \"published_at\": \"\","` | — |
-| [SRC-AAA21D04E8-L000182](../../tests/test_generation_capabilities.py#L182) | 182 | `"            \"rank_score\": 0.9,"` | — |
-| [SRC-AAA21D04E8-L000183](../../tests/test_generation_capabilities.py#L183) | 183 | `"        },"` | — |
