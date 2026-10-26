@@ -168,7 +168,8 @@ def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
         segment = segment.strip()
         if not segment:
             continue
-        normalized_segment = _normalize_arabic(segment).casefold()
+        normalized_segment = re.sub(r"[\\u064B-\\u065F\\u0670]", "", segment)
+        normalized_segment = _normalize_arabic(normalized_segment).casefold()
         if (
             _SEARCH_META_START_RE.search(normalized_segment)
             or _SEARCH_CITATION_META_START_RE.search(normalized_segment)
