@@ -2612,6 +2612,7 @@ class WebAgent:
             failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
             result_count = sum(max(0, int(row.get("result_count", 0) or 0)) for row in attempts)
             rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
+            candidate_count = result_count + rejected_count
             available: bool | None = (
                 True if successful_statuses or useful.get(name, 0)
                 else False if error_response_statuses or not ready or "disabled" in statuses or "budget_exhausted" in statuses
@@ -2643,6 +2644,7 @@ class WebAgent:
                 "usable_results_for_this_request": usable_results,
                 "failure_observed": failure_observed,
                 "status": status, "observed_statuses": list(dict.fromkeys(statuses))[:6],
+                "candidate_count": candidate_count,
                 "result_count": result_count, "useful_result_count": useful.get(name, 0),
                 "rejected_count": rejected_count, "queries": queries, "errors": errors,
             })
