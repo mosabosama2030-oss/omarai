@@ -305,10 +305,8 @@ def test_collect_research_skips_provider_calls_without_topic_or_direct_url(monke
     from agents.web_agent import WebAgent
 
     agent = WebAgent()
-    monkeypatch.setattr(
-        agent, "_search_web",
-        lambda query: pytest.fail(f"search provider should not receive {query!r}"),
-    )
+    seen = []
+    monkeypatch.setattr(agent, "_search_web", lambda query: seen.append(query) or [])
     sources, warnings, report = agent._collect_research({
         "queries": ["اذكر مصادر موثوقة، روابط مباشرة، باختصار"],
         "direct_urls": [],
@@ -321,6 +319,7 @@ def test_collect_research_skips_provider_calls_without_topic_or_direct_url(monke
     assert sources == []
     assert report["queries_planned"] == 0
     assert report["queries_attempted"] == 0
+    assert seen == []
     assert any("لم تُستدعَ محركات البحث" in warning for warning in warnings)
 
 
