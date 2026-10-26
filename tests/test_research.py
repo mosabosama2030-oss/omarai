@@ -242,3 +242,21 @@ def test_compact_search_query_removes_diacritic_uncertainty_instruction():
     assert "السيارات الكهربائية" in query
     assert "النتائج" not in query
     assert "تمثيل آراء المستخدمين" not in query
+
+
+def test_compact_search_query_preserves_topic_after_source_quality_lead_in():
+    cases = (
+        (
+            "استخدم مصادر متعددة للبحث عن السيارات الكهربائية في مصر",
+            ("السيارات الكهربائية", "مصر"),
+        ),
+        (
+            "Use multiple sources to research electric vehicle charging in Egypt",
+            ("electric vehicle charging", "Egypt"),
+        ),
+    )
+    for question, required_terms in cases:
+        query = compact_search_query(question)
+        assert query
+        for term in required_terms:
+            assert term in query, f"lost topic term {term!r}: {query!r}"
