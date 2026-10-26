@@ -66,6 +66,7 @@ def test_connector_summary_distinguishes_completed_filtering_from_usable_results
     assert bing["available_for_this_request"] is True
     assert bing["verified_for_this_request"] is True
     assert bing["usable_results_for_this_request"] is False
+    assert bing["candidate_count"] == 6
     assert bing["result_count"] == 0
     assert bing["rejected_count"] == 6
 
