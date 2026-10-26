@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **79**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1005**
+- تعريفات Python المفهرسة: **1006**
 - تعريفات Python موثقة بوجود Docstring: **195**
-- تعريفات Python بلا Docstring: **608**
+- تعريفات Python بلا Docstring: **609**
 - تعريفات لا ينطبق عليها Docstring: **202**
 - الرموز الساكنة الإضافية: **1561**
-- الأسطر النصية المفهرسة حرفيًا: **26655**
+- الأسطر النصية المفهرسة حرفيًا: **26673**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -41,7 +41,7 @@
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 16450 | 391 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
-| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32106 | 751 | جرد الملف + AST Python |
+| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32110 | 751 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 263568 | 5011 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -100,7 +100,7 @@
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
-| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 12405 | 244 | جرد الملف + AST Python |
+| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 13085 | 262 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -874,6 +874,7 @@
 | [tests/test_research.py](../tests/test_research.py#L213) | دالة | test_compact_search_query_preserves_subject_when_prompt_starts_with_action_verb | لا توجد Docstring. | ناقص | 213 | [SRC-6BF96689A8-L000213](../tests/test_research.py#L213) |
 | [tests/test_research.py](../tests/test_research.py#L230) | دالة | test_compact_search_query_returns_empty_for_instruction_only_request | لا توجد Docstring. | ناقص | 230 | [SRC-6BF96689A8-L000230](../tests/test_research.py#L230) |
 | [tests/test_research.py](../tests/test_research.py#L235) | دالة | test_compact_search_query_removes_diacritic_uncertainty_instruction | لا توجد Docstring. | ناقص | 235 | [SRC-6BF96689A8-L000235](../tests/test_research.py#L235) |
+| [tests/test_research.py](../tests/test_research.py#L247) | دالة | test_compact_search_query_preserves_topic_after_source_quality_lead_in | لا توجد Docstring. | ناقص | 247 | [SRC-6BF96689A8-L000247](../tests/test_research.py#L247) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L15) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 | [SRC-01E35ABC46-L000015](../tests/test_research_guardrails.py#L15) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L21) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 | [SRC-01E35ABC46-L000021](../tests/test_research_guardrails.py#L21) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L27) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 | [SRC-01E35ABC46-L000027](../tests/test_research_guardrails.py#L27) |

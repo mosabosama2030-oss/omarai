@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001477 إلى SRC-F725E90B2A-L002276
+- النطاق: SRC-F725E90B2A-L001459 إلى SRC-F725E90B2A-L002258
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001459](../../tests/test_web_agent.py#L1459) | 1459 | `"    assert _relevance_ratio(\"ابحث عن ميكروسوفت\", \"Microsoft official company website\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001460](../../tests/test_web_agent.py#L1460) | 1460 | `"    assert _relevance_ratio(\"موقع مصر الرقمية\", \"Egypt Digital portal for government services\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001461](../../tests/test_web_agent.py#L1461) | 1461 | `"    assert _relevance_ratio(\"ابحث عن شقة للايجار\", \"Apartment listing available for rent\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001462](../../tests/test_web_agent.py#L1462) | 1462 | `"    assert _relevance_ratio(\"مقارنة بين الشركات الناشئة\", \"Comparison of startup companies\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001463](../../tests/test_web_agent.py#L1463) | 1463 | `""` | — |
+| [SRC-F725E90B2A-L001464](../../tests/test_web_agent.py#L1464) | 1464 | `""` | — |
+| [SRC-F725E90B2A-L001465](../../tests/test_web_agent.py#L1465) | 1465 | `"def test_routine_lookup_ignores_planner_overclassification(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001466](../../tests/test_web_agent.py#L1466) | 1466 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    observed = {}"` | — |
+| [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `"    sources = []"` | — |
+| [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    for domain in (\"example.com\", \"example.net\"):"` | — |
+| [SRC-F725E90B2A-L001471](../../tests/test_web_agent.py#L1471) | 1471 | `"        sources.append({"` | — |
+| [SRC-F725E90B2A-L001472](../../tests/test_web_agent.py#L1472) | 1472 | `"            \"title\": \"موقع مصر الرقمية الرسمي والخدمات الحكومية\","` | — |
+| [SRC-F725E90B2A-L001473](../../tests/test_web_agent.py#L1473) | 1473 | `"            \"url\": f\"https://{domain}/digital-egypt\","` | — |
+| [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"            \"snippet\": \"معلومات عن موقع مصر الرقمية والخدمات الحكومية.\","` | — |
+| [SRC-F725E90B2A-L001475](../../tests/test_web_agent.py#L1475) | 1475 | `"            \"page_text\": \"معلومات عن موقع مصر الرقمية والخدمات الحكومية.\","` | — |
+| [SRC-F725E90B2A-L001476](../../tests/test_web_agent.py#L1476) | 1476 | `"            \"page_fetched\": True,"` | — |
 | [SRC-F725E90B2A-L001477](../../tests/test_web_agent.py#L1477) | 1477 | `"            \"providers\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L001478](../../tests/test_web_agent.py#L1478) | 1478 | `"            \"queries\": [],"` | — |
 | [SRC-F725E90B2A-L001479](../../tests/test_web_agent.py#L1479) | 1479 | `"            \"domain\": domain,"` | — |
@@ -798,21 +816,3 @@
 | [SRC-F725E90B2A-L002256](../../tests/test_web_agent.py#L2256) | 2256 | `""` | — |
 | [SRC-F725E90B2A-L002257](../../tests/test_web_agent.py#L2257) | 2257 | `"    def completed_empty_search(query):"` | — |
 | [SRC-F725E90B2A-L002258](../../tests/test_web_agent.py#L2258) | 2258 | `"        agent._record_provider_diagnostic("` | — |
-| [SRC-F725E90B2A-L002259](../../tests/test_web_agent.py#L2259) | 2259 | `"            \"bing_rss\", query, \"no_results\", result_count=0,"` | — |
-| [SRC-F725E90B2A-L002260](../../tests/test_web_agent.py#L2260) | 2260 | `"            error=\"connector completed but returned no parseable results\","` | — |
-| [SRC-F725E90B2A-L002261](../../tests/test_web_agent.py#L2261) | 2261 | `"        )"` | — |
-| [SRC-F725E90B2A-L002262](../../tests/test_web_agent.py#L2262) | 2262 | `"        raise RuntimeError(\"no usable search matches\")"` | — |
-| [SRC-F725E90B2A-L002263](../../tests/test_web_agent.py#L2263) | 2263 | `""` | — |
-| [SRC-F725E90B2A-L002264](../../tests/test_web_agent.py#L2264) | 2264 | `"    monkeypatch.setattr(agent, \"_search_web\", completed_empty_search)"` | — |
-| [SRC-F725E90B2A-L002265](../../tests/test_web_agent.py#L2265) | 2265 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
-| [SRC-F725E90B2A-L002266](../../tests/test_web_agent.py#L2266) | 2266 | `""` | — |
-| [SRC-F725E90B2A-L002267](../../tests/test_web_agent.py#L2267) | 2267 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"degraded\""` | — |
-| [SRC-F725E90B2A-L002268](../../tests/test_web_agent.py#L2268) | 2268 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L002269](../../tests/test_web_agent.py#L2269) | 2269 | `"    assert report[\"checks\"][\"web_search\"][\"completed_connector_responses\"] >= 1"` | — |
-| [SRC-F725E90B2A-L002270](../../tests/test_web_agent.py#L2270) | 2270 | `"    assert \"completed a request\" in report[\"checks\"][\"web_search\"][\"note\"]"` | — |
-| [SRC-F725E90B2A-L002271](../../tests/test_web_agent.py#L2271) | 2271 | `""` | — |
-| [SRC-F725E90B2A-L002272](../../tests/test_web_agent.py#L2272) | 2272 | `""` | — |
-| [SRC-F725E90B2A-L002273](../../tests/test_web_agent.py#L2273) | 2273 | `"def test_deepseek_search_request_budget_defaults_to_one_and_is_bounded(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002274](../../tests/test_web_agent.py#L2274) | 2274 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"test-secret-key\")"` | — |
-| [SRC-F725E90B2A-L002275](../../tests/test_web_agent.py#L2275) | 2275 | `"    monkeypatch.delenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", raising=False)"` | — |
-| [SRC-F725E90B2A-L002276](../../tests/test_web_agent.py#L2276) | 2276 | `"    agent = WebAgent()"` | — |

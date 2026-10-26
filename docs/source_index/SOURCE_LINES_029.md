@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-44CDA52D01-L000070 إلى SRC-2614DCB6FB-L000114
+- النطاق: SRC-44CDA52D01-L000070 إلى SRC-2614DCB6FB-L000096
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -534,6 +534,24 @@
 | [SRC-6BF96689A8-L000242](../../tests/test_research.py#L242) | 242 | `"    assert \"السيارات الكهربائية\" in query"` | — |
 | [SRC-6BF96689A8-L000243](../../tests/test_research.py#L243) | 243 | `"    assert \"النتائج\" not in query"` | — |
 | [SRC-6BF96689A8-L000244](../../tests/test_research.py#L244) | 244 | `"    assert \"تمثيل آراء المستخدمين\" not in query"` | — |
+| [SRC-6BF96689A8-L000245](../../tests/test_research.py#L245) | 245 | `""` | — |
+| [SRC-6BF96689A8-L000246](../../tests/test_research.py#L246) | 246 | `""` | — |
+| [SRC-6BF96689A8-L000247](../../tests/test_research.py#L247) | 247 | `"def test_compact_search_query_preserves_topic_after_source_quality_lead_in():"` | — |
+| [SRC-6BF96689A8-L000248](../../tests/test_research.py#L248) | 248 | `"    cases = ("` | — |
+| [SRC-6BF96689A8-L000249](../../tests/test_research.py#L249) | 249 | `"        ("` | — |
+| [SRC-6BF96689A8-L000250](../../tests/test_research.py#L250) | 250 | `"            \"استخدم مصادر متعددة للبحث عن السيارات الكهربائية في مصر\","` | — |
+| [SRC-6BF96689A8-L000251](../../tests/test_research.py#L251) | 251 | `"            (\"السيارات الكهربائية\", \"مصر\"),"` | — |
+| [SRC-6BF96689A8-L000252](../../tests/test_research.py#L252) | 252 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000253](../../tests/test_research.py#L253) | 253 | `"        ("` | — |
+| [SRC-6BF96689A8-L000254](../../tests/test_research.py#L254) | 254 | `"            \"Use multiple sources to research electric vehicle charging in Egypt\","` | — |
+| [SRC-6BF96689A8-L000255](../../tests/test_research.py#L255) | 255 | `"            (\"electric vehicle charging\", \"Egypt\"),"` | — |
+| [SRC-6BF96689A8-L000256](../../tests/test_research.py#L256) | 256 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000257](../../tests/test_research.py#L257) | 257 | `"    )"` | — |
+| [SRC-6BF96689A8-L000258](../../tests/test_research.py#L258) | 258 | `"    for question, required_terms in cases:"` | — |
+| [SRC-6BF96689A8-L000259](../../tests/test_research.py#L259) | 259 | `"        query = compact_search_query(question)"` | — |
+| [SRC-6BF96689A8-L000260](../../tests/test_research.py#L260) | 260 | `"        assert query"` | — |
+| [SRC-6BF96689A8-L000261](../../tests/test_research.py#L261) | 261 | `"        for term in required_terms:"` | — |
+| [SRC-6BF96689A8-L000262](../../tests/test_research.py#L262) | 262 | `"            assert term in query, f\"lost topic term {term!r}: {query!r}\""` | — |
 ## اختبارات
 
 ### FILE-01E35ABC46 — [tests/test_research_guardrails.py](../../tests/test_research_guardrails.py#L1)
@@ -843,21 +861,3 @@
 | [SRC-2614DCB6FB-L000094](../../tests/test_search_code.py#L94) | 94 | `"        tmp_path, \"needle\", repository_ref=\"fix/review-branch\""` | — |
 | [SRC-2614DCB6FB-L000095](../../tests/test_search_code.py#L95) | 95 | `"    )"` | — |
 | [SRC-2614DCB6FB-L000096](../../tests/test_search_code.py#L96) | 96 | `""` | — |
-| [SRC-2614DCB6FB-L000097](../../tests/test_search_code.py#L97) | 97 | `"    assert len(hits) == 1"` | — |
-| [SRC-2614DCB6FB-L000098](../../tests/test_search_code.py#L98) | 98 | `"    assert hits[0].link == ("` | — |
-| [SRC-2614DCB6FB-L000099](../../tests/test_search_code.py#L99) | 99 | `"        \"https://github.com/mosabosama2030-oss/omarai/\""` | — |
-| [SRC-2614DCB6FB-L000100](../../tests/test_search_code.py#L100) | 100 | `"        \"blob/fix/review-branch/app.py#L1\""` | — |
-| [SRC-2614DCB6FB-L000101](../../tests/test_search_code.py#L101) | 101 | `"    )"` | — |
-| [SRC-2614DCB6FB-L000102](../../tests/test_search_code.py#L102) | 102 | `""` | — |
-| [SRC-2614DCB6FB-L000103](../../tests/test_search_code.py#L103) | 103 | `""` | — |
-| [SRC-2614DCB6FB-L000104](../../tests/test_search_code.py#L104) | 104 | `"def test_default_repository_ref_prefers_explicit_environment_override("` | — |
-| [SRC-2614DCB6FB-L000105](../../tests/test_search_code.py#L105) | 105 | `"    monkeypatch, tmp_path: Path"` | — |
-| [SRC-2614DCB6FB-L000106](../../tests/test_search_code.py#L106) | 106 | `") -> None:"` | — |
-| [SRC-2614DCB6FB-L000107](../../tests/test_search_code.py#L107) | 107 | `"    monkeypatch.setenv(\"OMARAI_GITHUB_REF\", \"feature/current-review\")"` | — |
-| [SRC-2614DCB6FB-L000108](../../tests/test_search_code.py#L108) | 108 | `"    monkeypatch.setenv(\"GITHUB_SHA\", \"a\" * 40)"` | — |
-| [SRC-2614DCB6FB-L000109](../../tests/test_search_code.py#L109) | 109 | `""` | — |
-| [SRC-2614DCB6FB-L000110](../../tests/test_search_code.py#L110) | 110 | `"    assert SEARCH.default_repository_ref(tmp_path) == \"feature/current-review\""` | — |
-| [SRC-2614DCB6FB-L000111](../../tests/test_search_code.py#L111) | 111 | `""` | — |
-| [SRC-2614DCB6FB-L000112](../../tests/test_search_code.py#L112) | 112 | `""` | — |
-| [SRC-2614DCB6FB-L000113](../../tests/test_search_code.py#L113) | 113 | `"def test_default_repository_ref_uses_valid_ci_sha("` | — |
-| [SRC-2614DCB6FB-L000114](../../tests/test_search_code.py#L114) | 114 | `"    monkeypatch, tmp_path: Path"` | — |

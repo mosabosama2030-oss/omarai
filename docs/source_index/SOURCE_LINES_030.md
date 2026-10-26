@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2614DCB6FB-L000115 إلى SRC-F725E90B2A-L000676
+- النطاق: SRC-2614DCB6FB-L000097 إلى SRC-F725E90B2A-L000658
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2614DCB6FB-L000097](../../tests/test_search_code.py#L97) | 97 | `"    assert len(hits) == 1"` | — |
+| [SRC-2614DCB6FB-L000098](../../tests/test_search_code.py#L98) | 98 | `"    assert hits[0].link == ("` | — |
+| [SRC-2614DCB6FB-L000099](../../tests/test_search_code.py#L99) | 99 | `"        \"https://github.com/mosabosama2030-oss/omarai/\""` | — |
+| [SRC-2614DCB6FB-L000100](../../tests/test_search_code.py#L100) | 100 | `"        \"blob/fix/review-branch/app.py#L1\""` | — |
+| [SRC-2614DCB6FB-L000101](../../tests/test_search_code.py#L101) | 101 | `"    )"` | — |
+| [SRC-2614DCB6FB-L000102](../../tests/test_search_code.py#L102) | 102 | `""` | — |
+| [SRC-2614DCB6FB-L000103](../../tests/test_search_code.py#L103) | 103 | `""` | — |
+| [SRC-2614DCB6FB-L000104](../../tests/test_search_code.py#L104) | 104 | `"def test_default_repository_ref_prefers_explicit_environment_override("` | — |
+| [SRC-2614DCB6FB-L000105](../../tests/test_search_code.py#L105) | 105 | `"    monkeypatch, tmp_path: Path"` | — |
+| [SRC-2614DCB6FB-L000106](../../tests/test_search_code.py#L106) | 106 | `") -> None:"` | — |
+| [SRC-2614DCB6FB-L000107](../../tests/test_search_code.py#L107) | 107 | `"    monkeypatch.setenv(\"OMARAI_GITHUB_REF\", \"feature/current-review\")"` | — |
+| [SRC-2614DCB6FB-L000108](../../tests/test_search_code.py#L108) | 108 | `"    monkeypatch.setenv(\"GITHUB_SHA\", \"a\" * 40)"` | — |
+| [SRC-2614DCB6FB-L000109](../../tests/test_search_code.py#L109) | 109 | `""` | — |
+| [SRC-2614DCB6FB-L000110](../../tests/test_search_code.py#L110) | 110 | `"    assert SEARCH.default_repository_ref(tmp_path) == \"feature/current-review\""` | — |
+| [SRC-2614DCB6FB-L000111](../../tests/test_search_code.py#L111) | 111 | `""` | — |
+| [SRC-2614DCB6FB-L000112](../../tests/test_search_code.py#L112) | 112 | `""` | — |
+| [SRC-2614DCB6FB-L000113](../../tests/test_search_code.py#L113) | 113 | `"def test_default_repository_ref_uses_valid_ci_sha("` | — |
+| [SRC-2614DCB6FB-L000114](../../tests/test_search_code.py#L114) | 114 | `"    monkeypatch, tmp_path: Path"` | — |
 | [SRC-2614DCB6FB-L000115](../../tests/test_search_code.py#L115) | 115 | `") -> None:"` | — |
 | [SRC-2614DCB6FB-L000116](../../tests/test_search_code.py#L116) | 116 | `"    monkeypatch.delenv(\"OMARAI_GITHUB_REF\", raising=False)"` | — |
 | [SRC-2614DCB6FB-L000117](../../tests/test_search_code.py#L117) | 117 | `"    monkeypatch.setenv(\"GITHUB_SHA\", \"B\" * 40)"` | — |
@@ -816,21 +834,3 @@
 | [SRC-F725E90B2A-L000656](../../tests/test_web_agent.py#L656) | 656 | `"def test_generator_rejects_silent_character_limit_truncation(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000657](../../tests/test_web_agent.py#L657) | 657 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L000658](../../tests/test_web_agent.py#L658) | 658 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"ن\" * 24_001)"` | — |
-| [SRC-F725E90B2A-L000659](../../tests/test_web_agent.py#L659) | 659 | `""` | — |
-| [SRC-F725E90B2A-L000660](../../tests/test_web_agent.py#L660) | 660 | `"    with pytest.raises(RuntimeError, match=\"تجاوزت حد طول النص\"):"` | — |
-| [SRC-F725E90B2A-L000661](../../tests/test_web_agent.py#L661) | 661 | `"        agent._generate("` | — |
-| [SRC-F725E90B2A-L000662](../../tests/test_web_agent.py#L662) | 662 | `"            question=\"لخص هذا المصدر\","` | — |
-| [SRC-F725E90B2A-L000663](../../tests/test_web_agent.py#L663) | 663 | `"            history=[],"` | — |
-| [SRC-F725E90B2A-L000664](../../tests/test_web_agent.py#L664) | 664 | `"            sources=[sample_source(0), sample_source(1)],"` | — |
-| [SRC-F725E90B2A-L000665](../../tests/test_web_agent.py#L665) | 665 | `"            search_warning=None,"` | — |
-| [SRC-F725E90B2A-L000666](../../tests/test_web_agent.py#L666) | 666 | `"            research_plan={\"depth\": \"standard\", \"queries\": [\"لخص هذا المصدر\"]},"` | — |
-| [SRC-F725E90B2A-L000667](../../tests/test_web_agent.py#L667) | 667 | `"            search_report={},"` | — |
-| [SRC-F725E90B2A-L000668](../../tests/test_web_agent.py#L668) | 668 | `"        )"` | — |
-| [SRC-F725E90B2A-L000669](../../tests/test_web_agent.py#L669) | 669 | `""` | — |
-| [SRC-F725E90B2A-L000670](../../tests/test_web_agent.py#L670) | 670 | `""` | — |
-| [SRC-F725E90B2A-L000671](../../tests/test_web_agent.py#L671) | 671 | `"def test_completion_discards_truncated_primary_and_uses_complete_fallback(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000672](../../tests/test_web_agent.py#L672) | 672 | `"    import json"` | — |
-| [SRC-F725E90B2A-L000673](../../tests/test_web_agent.py#L673) | 673 | `""` | — |
-| [SRC-F725E90B2A-L000674](../../tests/test_web_agent.py#L674) | 674 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000675](../../tests/test_web_agent.py#L675) | 675 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L000676](../../tests/test_web_agent.py#L676) | 676 | `"    agent.fallback_model = \"openrouter/free\""` | — |
