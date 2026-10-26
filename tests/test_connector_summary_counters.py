@@ -229,3 +229,27 @@ def test_raw_provider_diagnostics_redact_credentials_from_queries_and_errors():
     for secret in ("query-secret", "bearer-secret", "access-secret", "url-secret"):
         assert secret not in diagnostic_json
     assert "[REDACTED]" in diagnostic_json
+
+
+def test_connector_summary_separates_raw_candidates_from_filtered_results():
+    agent = WebAgent()
+    summary = agent._connector_status_summary(
+        [{
+            "provider": "bing_rss",
+            "query": "Arabic question with source instructions",
+            "status": "filtered_all",
+            "result_count": 6,
+            "accepted_count": 0,
+            "rejected_count": 6,
+            "error": "all candidates failed relevance checks",
+        }],
+        [],
+    )
+    bing = next(item for item in summary["connectors"] if item["name"] == "bing_rss")
+    assert bing["attempted"] is True
+    assert bing["result_count"] == 6
+    assert bing["accepted_count"] == 0
+    assert bing["rejected_count"] == 6
+    assert bing["candidate_rejection_observed"] is True
+    assert bing["available_for_this_request"] is True
+    assert bing["verified_for_this_request"] is True
