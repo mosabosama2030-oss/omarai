@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000160 إلى SRC-6BF96689A8-L000033
+- النطاق: SRC-1A176AD4F0-L000160 إلى SRC-C353AAAC10-L000109
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -496,6 +496,85 @@
 | [SRC-62DC597310-L000081](../../tests/test_live_search_connectors.py#L81) | 81 | `"    assert \"tavily-secret\" not in str(status)"` | — |
 ## اختبارات
 
+### FILE-188F068481 — [tests/test_live_search_relevance_regressions.py](../../tests/test_live_search_relevance_regressions.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-188F068481-L000001](../../tests/test_live_search_relevance_regressions.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-188F068481-L000002](../../tests/test_live_search_relevance_regressions.py#L2) | 2 | `""` | — |
+| [SRC-188F068481-L000003](../../tests/test_live_search_relevance_regressions.py#L3) | 3 | `"import pytest"` | — |
+| [SRC-188F068481-L000004](../../tests/test_live_search_relevance_regressions.py#L4) | 4 | `""` | — |
+| [SRC-188F068481-L000005](../../tests/test_live_search_relevance_regressions.py#L5) | 5 | `"from agents.web_agent import WebAgent, _relevance_ratio"` | — |
+| [SRC-188F068481-L000006](../../tests/test_live_search_relevance_regressions.py#L6) | 6 | `""` | — |
+| [SRC-188F068481-L000007](../../tests/test_live_search_relevance_regressions.py#L7) | 7 | `""` | — |
+| [SRC-188F068481-L000008](../../tests/test_live_search_relevance_regressions.py#L8) | 8 | `"@pytest.mark.parametrize("` | — |
+| [SRC-188F068481-L000009](../../tests/test_live_search_relevance_regressions.py#L9) | 9 | `"    (\"question\", \"evidence\"),"` | — |
+| [SRC-188F068481-L000010](../../tests/test_live_search_relevance_regressions.py#L10) | 10 | `"    ["` | — |
+| [SRC-188F068481-L000011](../../tests/test_live_search_relevance_regressions.py#L11) | 11 | `"        ("` | — |
+| [SRC-188F068481-L000012](../../tests/test_live_search_relevance_regressions.py#L12) | 12 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
+| [SRC-188F068481-L000013](../../tests/test_live_search_relevance_regressions.py#L13) | 13 | `"            \"Cairo is the capital city of Egypt.\","` | — |
+| [SRC-188F068481-L000014](../../tests/test_live_search_relevance_regressions.py#L14) | 14 | `"        ),"` | — |
+| [SRC-188F068481-L000015](../../tests/test_live_search_relevance_regressions.py#L15) | 15 | `"        ("` | — |
+| [SRC-188F068481-L000016](../../tests/test_live_search_relevance_regressions.py#L16) | 16 | `"            \"حلّل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميّز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
+| [SRC-188F068481-L000017](../../tests/test_live_search_relevance_regressions.py#L17) | 17 | `"            \"Electric vehicles in Egypt face challenges around charging infrastructure, upfront costs, and driving range.\","` | — |
+| [SRC-188F068481-L000018](../../tests/test_live_search_relevance_regressions.py#L18) | 18 | `"        ),"` | — |
+| [SRC-188F068481-L000019](../../tests/test_live_search_relevance_regressions.py#L19) | 19 | `"        ("` | — |
+| [SRC-188F068481-L000020](../../tests/test_live_search_relevance_regressions.py#L20) | 20 | `"            \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
+| [SRC-188F068481-L000021](../../tests/test_live_search_relevance_regressions.py#L21) | 21 | `"            \"Recent developments in AI agents include tool use, planning, and more autonomous workflows.\","` | — |
+| [SRC-188F068481-L000022](../../tests/test_live_search_relevance_regressions.py#L22) | 22 | `"        ),"` | — |
+| [SRC-188F068481-L000023](../../tests/test_live_search_relevance_regressions.py#L23) | 23 | `"        ("` | — |
+| [SRC-188F068481-L000024](../../tests/test_live_search_relevance_regressions.py#L24) | 24 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضّح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
+| [SRC-188F068481-L000025](../../tests/test_live_search_relevance_regressions.py#L25) | 25 | `"            \"Egyptian electric-car users share experiences about charging access, ownership costs, and public charging infrastructure.\","` | — |
+| [SRC-188F068481-L000026](../../tests/test_live_search_relevance_regressions.py#L26) | 26 | `"        ),"` | — |
+| [SRC-188F068481-L000027](../../tests/test_live_search_relevance_regressions.py#L27) | 27 | `"    ],"` | — |
+| [SRC-188F068481-L000028](../../tests/test_live_search_relevance_regressions.py#L28) | 28 | `")"` | — |
+| [SRC-188F068481-L000029](../../tests/test_live_search_relevance_regressions.py#L29) | 29 | `"def test_long_arabic_requests_match_relevant_english_search_results(question, evidence):"` | — |
+| [SRC-188F068481-L000030](../../tests/test_live_search_relevance_regressions.py#L30) | 30 | `"    # The output language/citation instructions must not outweigh the subject terms."` | — |
+| [SRC-188F068481-L000031](../../tests/test_live_search_relevance_regressions.py#L31) | 31 | `"    assert _relevance_ratio(question, evidence) >= 0.20"` | — |
+| [SRC-188F068481-L000032](../../tests/test_live_search_relevance_regressions.py#L32) | 32 | `""` | — |
+| [SRC-188F068481-L000033](../../tests/test_live_search_relevance_regressions.py#L33) | 33 | `""` | — |
+| [SRC-188F068481-L000034](../../tests/test_live_search_relevance_regressions.py#L34) | 34 | `"def test_unrelated_search_result_remains_below_relevance_threshold():"` | — |
+| [SRC-188F068481-L000035](../../tests/test_live_search_relevance_regressions.py#L35) | 35 | `"    question = ("` | — |
+| [SRC-188F068481-L000036](../../tests/test_live_search_relevance_regressions.py#L36) | 36 | `"        \"حلّل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين \""` | — |
+| [SRC-188F068481-L000037](../../tests/test_live_search_relevance_regressions.py#L37) | 37 | `"        \"التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة.\""` | — |
+| [SRC-188F068481-L000038](../../tests/test_live_search_relevance_regressions.py#L38) | 38 | `"    )"` | — |
+| [SRC-188F068481-L000039](../../tests/test_live_search_relevance_regressions.py#L39) | 39 | `"    evidence = \"Latest football league table, match scores, and player transfers.\""` | — |
+| [SRC-188F068481-L000040](../../tests/test_live_search_relevance_regressions.py#L40) | 40 | `"    assert _relevance_ratio(question, evidence) < 0.20"` | — |
+| [SRC-188F068481-L000041](../../tests/test_live_search_relevance_regressions.py#L41) | 41 | `""` | — |
+| [SRC-188F068481-L000042](../../tests/test_live_search_relevance_regressions.py#L42) | 42 | `""` | — |
+| [SRC-188F068481-L000043](../../tests/test_live_search_relevance_regressions.py#L43) | 43 | `"def test_generic_instruction_only_query_does_not_accept_arbitrary_evidence():"` | — |
+| [SRC-188F068481-L000044](../../tests/test_live_search_relevance_regressions.py#L44) | 44 | `"    assert _relevance_ratio(\"اذكر روابط المصادر وأجب بإيجاز\", \"Football match scores\") == 0.0"` | — |
+| [SRC-188F068481-L000045](../../tests/test_live_search_relevance_regressions.py#L45) | 45 | `""` | — |
+| [SRC-188F068481-L000046](../../tests/test_live_search_relevance_regressions.py#L46) | 46 | `""` | — |
+| [SRC-188F068481-L000047](../../tests/test_live_search_relevance_regressions.py#L47) | 47 | `"def test_connector_summary_distinguishes_completed_filtering_from_usable_results():"` | — |
+| [SRC-188F068481-L000048](../../tests/test_live_search_relevance_regressions.py#L48) | 48 | `"    agent = WebAgent()"` | — |
+| [SRC-188F068481-L000049](../../tests/test_live_search_relevance_regressions.py#L49) | 49 | `"    summary = agent._connector_status_summary("` | — |
+| [SRC-188F068481-L000050](../../tests/test_live_search_relevance_regressions.py#L50) | 50 | `"        ["` | — |
+| [SRC-188F068481-L000051](../../tests/test_live_search_relevance_regressions.py#L51) | 51 | `"            {"` | — |
+| [SRC-188F068481-L000052](../../tests/test_live_search_relevance_regressions.py#L52) | 52 | `"                \"provider\": \"bing_rss\","` | — |
+| [SRC-188F068481-L000053](../../tests/test_live_search_relevance_regressions.py#L53) | 53 | `"                \"query\": \"اختبار بحث\","` | — |
+| [SRC-188F068481-L000054](../../tests/test_live_search_relevance_regressions.py#L54) | 54 | `"                \"status\": \"filtered_all\","` | — |
+| [SRC-188F068481-L000055](../../tests/test_live_search_relevance_regressions.py#L55) | 55 | `"                \"result_count\": 0,"` | — |
+| [SRC-188F068481-L000056](../../tests/test_live_search_relevance_regressions.py#L56) | 56 | `"                \"rejected_count\": 6,"` | — |
+| [SRC-188F068481-L000057](../../tests/test_live_search_relevance_regressions.py#L57) | 57 | `"                \"error\": \"all candidates failed URL/domain/relevance checks\","` | — |
+| [SRC-188F068481-L000058](../../tests/test_live_search_relevance_regressions.py#L58) | 58 | `"            }"` | — |
+| [SRC-188F068481-L000059](../../tests/test_live_search_relevance_regressions.py#L59) | 59 | `"        ],"` | — |
+| [SRC-188F068481-L000060](../../tests/test_live_search_relevance_regressions.py#L60) | 60 | `"        [],"` | — |
+| [SRC-188F068481-L000061](../../tests/test_live_search_relevance_regressions.py#L61) | 61 | `"    )"` | — |
+| [SRC-188F068481-L000062](../../tests/test_live_search_relevance_regressions.py#L62) | 62 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
+| [SRC-188F068481-L000063](../../tests/test_live_search_relevance_regressions.py#L63) | 63 | `""` | — |
+| [SRC-188F068481-L000064](../../tests/test_live_search_relevance_regressions.py#L64) | 64 | `"    # A provider response was processed, but it supplied no usable evidence."` | — |
+| [SRC-188F068481-L000065](../../tests/test_live_search_relevance_regressions.py#L65) | 65 | `"    assert bing[\"attempted\"] is True"` | — |
+| [SRC-188F068481-L000066](../../tests/test_live_search_relevance_regressions.py#L66) | 66 | `"    assert bing[\"available_for_this_request\"] is True"` | — |
+| [SRC-188F068481-L000067](../../tests/test_live_search_relevance_regressions.py#L67) | 67 | `"    assert bing[\"verified_for_this_request\"] is True"` | — |
+| [SRC-188F068481-L000068](../../tests/test_live_search_relevance_regressions.py#L68) | 68 | `"    assert bing[\"usable_results_for_this_request\"] is False"` | — |
+| [SRC-188F068481-L000069](../../tests/test_live_search_relevance_regressions.py#L69) | 69 | `"    assert bing[\"result_count\"] == 0"` | — |
+| [SRC-188F068481-L000070](../../tests/test_live_search_relevance_regressions.py#L70) | 70 | `"    assert bing[\"rejected_count\"] == 6"` | — |
+## اختبارات
+
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
 
 - النوع: **Python**
@@ -800,82 +879,3 @@
 | [SRC-C353AAAC10-L000107](../../tests/test_request_budget.py#L107) | 107 | `"        (\"search_queries\", 8),"` | — |
 | [SRC-C353AAAC10-L000108](../../tests/test_request_budget.py#L108) | 108 | `"        (\"search_calls\", 32),"` | — |
 | [SRC-C353AAAC10-L000109](../../tests/test_request_budget.py#L109) | 109 | `"        (\"model_calls\", 8),"` | — |
-| [SRC-C353AAAC10-L000110](../../tests/test_request_budget.py#L110) | 110 | `"        (\"page_fetches\", 8),"` | — |
-| [SRC-C353AAAC10-L000111](../../tests/test_request_budget.py#L111) | 111 | `"        (\"tool_calls\", 3),"` | — |
-| [SRC-C353AAAC10-L000112](../../tests/test_request_budget.py#L112) | 112 | `"    ],"` | — |
-| [SRC-C353AAAC10-L000113](../../tests/test_request_budget.py#L113) | 113 | `")"` | — |
-| [SRC-C353AAAC10-L000114](../../tests/test_request_budget.py#L114) | 114 | `"def test_each_resource_counter_stops_at_its_limit(resource, limit):"` | — |
-| [SRC-C353AAAC10-L000115](../../tests/test_request_budget.py#L115) | 115 | `"    budget = RequestBudget(timeout_seconds=10, limits={resource: limit})"` | — |
-| [SRC-C353AAAC10-L000116](../../tests/test_request_budget.py#L116) | 116 | `""` | — |
-| [SRC-C353AAAC10-L000117](../../tests/test_request_budget.py#L117) | 117 | `"    for expected_count in range(1, limit + 1):"` | — |
-| [SRC-C353AAAC10-L000118](../../tests/test_request_budget.py#L118) | 118 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000119](../../tests/test_request_budget.py#L119) | 119 | `"        snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000120](../../tests/test_request_budget.py#L120) | 120 | `"        assert snapshot[\"counts\"][resource] == expected_count"` | — |
-| [SRC-C353AAAC10-L000121](../../tests/test_request_budget.py#L121) | 121 | `"        assert snapshot[\"counts\"][resource] <= snapshot[\"limits\"][resource]"` | — |
-| [SRC-C353AAAC10-L000122](../../tests/test_request_budget.py#L122) | 122 | `""` | — |
-| [SRC-C353AAAC10-L000123](../../tests/test_request_budget.py#L123) | 123 | `"    with pytest.raises(RequestBudgetExceeded, match=resource):"` | — |
-| [SRC-C353AAAC10-L000124](../../tests/test_request_budget.py#L124) | 124 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000125](../../tests/test_request_budget.py#L125) | 125 | `""` | — |
-| [SRC-C353AAAC10-L000126](../../tests/test_request_budget.py#L126) | 126 | `"    snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000127](../../tests/test_request_budget.py#L127) | 127 | `"    assert snapshot[\"counts\"][resource] == limit"` | — |
-| [SRC-C353AAAC10-L000128](../../tests/test_request_budget.py#L128) | 128 | `"    assert resource in snapshot[\"exhausted_reasons\"]"` | — |
-| [SRC-C353AAAC10-L000129](../../tests/test_request_budget.py#L129) | 129 | `""` | — |
-| [SRC-C353AAAC10-L000130](../../tests/test_request_budget.py#L130) | 130 | `""` | — |
-| [SRC-C353AAAC10-L000131](../../tests/test_request_budget.py#L131) | 131 | `"@pytest.mark.parametrize("` | — |
-| [SRC-C353AAAC10-L000132](../../tests/test_request_budget.py#L132) | 132 | `"    \"resource\","` | — |
-| [SRC-C353AAAC10-L000133](../../tests/test_request_budget.py#L133) | 133 | `"    [\"search_queries\", \"search_calls\", \"model_calls\", \"page_fetches\", \"tool_calls\"],"` | — |
-| [SRC-C353AAAC10-L000134](../../tests/test_request_budget.py#L134) | 134 | `")"` | — |
-| [SRC-C353AAAC10-L000135](../../tests/test_request_budget.py#L135) | 135 | `"def test_disabled_resource_never_starts_work(resource):"` | — |
-| [SRC-C353AAAC10-L000136](../../tests/test_request_budget.py#L136) | 136 | `"    budget = RequestBudget(timeout_seconds=10, limits={resource: 0})"` | — |
-| [SRC-C353AAAC10-L000137](../../tests/test_request_budget.py#L137) | 137 | `""` | — |
-| [SRC-C353AAAC10-L000138](../../tests/test_request_budget.py#L138) | 138 | `"    assert budget.remaining_units(resource) == 0"` | — |
-| [SRC-C353AAAC10-L000139](../../tests/test_request_budget.py#L139) | 139 | `"    with pytest.raises(RequestBudgetExceeded, match=resource):"` | — |
-| [SRC-C353AAAC10-L000140](../../tests/test_request_budget.py#L140) | 140 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000141](../../tests/test_request_budget.py#L141) | 141 | `""` | — |
-| [SRC-C353AAAC10-L000142](../../tests/test_request_budget.py#L142) | 142 | `"    snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000143](../../tests/test_request_budget.py#L143) | 143 | `"    assert snapshot[\"counts\"][resource] == 0"` | — |
-| [SRC-C353AAAC10-L000144](../../tests/test_request_budget.py#L144) | 144 | `"    assert snapshot[\"limits\"][resource] == 0"` | — |
-| [SRC-C353AAAC10-L000145](../../tests/test_request_budget.py#L145) | 145 | `"    assert resource in snapshot[\"disabled_resources\"]"` | — |
-| [SRC-C353AAAC10-L000146](../../tests/test_request_budget.py#L146) | 146 | `"    assert resource in snapshot[\"exhausted_reasons\"]"` | — |
-## اختبارات
-
-### FILE-6BF96689A8 — [tests/test_research.py](../../tests/test_research.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6BF96689A8-L000001](../../tests/test_research.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-6BF96689A8-L000002](../../tests/test_research.py#L2) | 2 | `""` | — |
-| [SRC-6BF96689A8-L000003](../../tests/test_research.py#L3) | 3 | `"from agents.research import ("` | — |
-| [SRC-6BF96689A8-L000004](../../tests/test_research.py#L4) | 4 | `"    evidence_signal_report,"` | — |
-| [SRC-6BF96689A8-L000005](../../tests/test_research.py#L5) | 5 | `"    fallback_plan,"` | — |
-| [SRC-6BF96689A8-L000006](../../tests/test_research.py#L6) | 6 | `"    fuse_ranked_results,"` | — |
-| [SRC-6BF96689A8-L000007](../../tests/test_research.py#L7) | 7 | `"    registrable_domain,"` | — |
-| [SRC-6BF96689A8-L000008](../../tests/test_research.py#L8) | 8 | `"    validate_plan,"` | — |
-| [SRC-6BF96689A8-L000009](../../tests/test_research.py#L9) | 9 | `")"` | — |
-| [SRC-6BF96689A8-L000010](../../tests/test_research.py#L10) | 10 | `""` | — |
-| [SRC-6BF96689A8-L000011](../../tests/test_research.py#L11) | 11 | `""` | — |
-| [SRC-6BF96689A8-L000012](../../tests/test_research.py#L12) | 12 | `"def test_social_question_gets_platform_targeted_queries():"` | — |
-| [SRC-6BF96689A8-L000013](../../tests/test_research.py#L13) | 13 | `"    plan = fallback_plan(\"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\")"` | — |
-| [SRC-6BF96689A8-L000014](../../tests/test_research.py#L14) | 14 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-6BF96689A8-L000015](../../tests/test_research.py#L15) | 15 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-6BF96689A8-L000016](../../tests/test_research.py#L16) | 16 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000017](../../tests/test_research.py#L17) | 17 | `"    assert len(plan[\"queries\"]) <= 8"` | — |
-| [SRC-6BF96689A8-L000018](../../tests/test_research.py#L18) | 18 | `""` | — |
-| [SRC-6BF96689A8-L000019](../../tests/test_research.py#L19) | 19 | `""` | — |
-| [SRC-6BF96689A8-L000020](../../tests/test_research.py#L20) | 20 | `"def test_follow_up_query_keeps_prior_topic():"` | — |
-| [SRC-6BF96689A8-L000021](../../tests/test_research.py#L21) | 21 | `"    history = [{\"role\": \"user\", \"content\": \"قارن سوق السيارات الكهربائية في مصر\"}]"` | — |
-| [SRC-6BF96689A8-L000022](../../tests/test_research.py#L22) | 22 | `"    plan = fallback_plan(\"وطب الأسعار الحالية؟\", history)"` | — |
-| [SRC-6BF96689A8-L000023](../../tests/test_research.py#L23) | 23 | `"    assert \"السيارات الكهربائية\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000024](../../tests/test_research.py#L24) | 24 | `"    assert plan[\"freshness\"] == \"current\""` | — |
-| [SRC-6BF96689A8-L000025](../../tests/test_research.py#L25) | 25 | `""` | — |
-| [SRC-6BF96689A8-L000026](../../tests/test_research.py#L26) | 26 | `""` | — |
-| [SRC-6BF96689A8-L000027](../../tests/test_research.py#L27) | 27 | `"def test_plan_validation_caps_queries_and_rejects_non_string_values():"` | — |
-| [SRC-6BF96689A8-L000028](../../tests/test_research.py#L28) | 28 | `"    candidate = {"` | — |
-| [SRC-6BF96689A8-L000029](../../tests/test_research.py#L29) | 29 | `"        \"queries\": [\"بحث أ\", \"بحث ب\", None, \"بحث ج\", \"بحث د\", \"بحث هـ\", \"بحث سادس\", \"بحث سابع\", \"بحث ثامن\", \"بحث تاسع\"],"` | — |
-| [SRC-6BF96689A8-L000030](../../tests/test_research.py#L30) | 30 | `"        \"social_focus\": True,"` | — |
-| [SRC-6BF96689A8-L000031](../../tests/test_research.py#L31) | 31 | `"        \"freshness\": \"current\","` | — |
-| [SRC-6BF96689A8-L000032](../../tests/test_research.py#L32) | 32 | `"        \"depth\": \"deep\","` | — |
-| [SRC-6BF96689A8-L000033](../../tests/test_research.py#L33) | 33 | `"        \"platforms\": [\"reddit\", \"unknown\"],"` | — |
