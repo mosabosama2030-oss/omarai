@@ -3044,12 +3044,28 @@ def test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query(
     assert observed_plans[0]["queries"][0] == compact_search_query(question)
 
 
-def test_server_search_sources_are_scored_against_compact_question(monkeypatch):
+@pytest.mark.parametrize(
+    ("question", "planned_query"),
+    [
+        (
+            "ما عيوب السيارات الكهربائية المستعملة في مصر؟ "
+            "اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز.",
+            None,
+        ),
+        (
+            "كام سعرها؟ اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز.",
+            "أسعار السيارات الكهربائية المستعملة في مصر",
+        ),
+    ],
+)
+def test_server_search_sources_use_compact_question_and_topic_plan(
+    monkeypatch, question, planned_query
+):
     agent = WebAgent()
     agent.api_key = "test-key"
-    question = "ما عيوب السيارات الكهربائية المستعملة في مصر؟ اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز."
+    topic_query = planned_query or compact_search_query(question)
     plan = {
-        "queries": [compact_search_query(question)],
+        "queries": [topic_query],
         "direct_urls": [],
         "social_focus": False,
         "freshness": "any",
@@ -3106,4 +3122,10 @@ def test_server_search_sources_are_scored_against_compact_question(monkeypatch):
 
     agent.answer(question)
 
-    assert source_queries == [compact_search_query(question)]
+    expected_queries = list(dict.fromkeys(
+        query for query in (
+            compact_search_query(question),
+            compact_search_query(topic_query),
+        ) if query
+    ))
+    assert source_queries == expected_queries
