@@ -3135,7 +3135,16 @@ def test_server_search_sources_use_compact_question_and_topic_plan(
     assert source_queries == expected_queries
 
 
-def test_auto_deep_does_not_create_generic_queries_from_instruction_only_prompt(monkeypatch):
+@pytest.mark.parametrize(
+    "planner_query",
+    [
+        "اذكر مصادر موثوقة، روابط مباشرة، باختصار",
+        "site:reddit.com",
+    ],
+)
+def test_auto_deep_does_not_create_generic_queries_without_topic(
+    monkeypatch, planner_query
+):
     agent = WebAgent()
     instruction_only = "اذكر مصادر موثوقة، روابط مباشرة، باختصار"
     direct_url = "https://example.com/report"
@@ -3148,7 +3157,7 @@ def test_auto_deep_does_not_create_generic_queries_from_instruction_only_prompt(
     monkeypatch.setattr(
         agent, "_plan_search",
         lambda _question, _history: {
-            "queries": [instruction_only],
+            "queries": [planner_query],
             "direct_urls": [direct_url],
             "social_focus": False,
             "freshness": "any",
