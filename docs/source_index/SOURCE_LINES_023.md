@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000835 إلى SRC-4CCB1F172B-L000212
+- النطاق: SRC-90FAA34ADE-L000817 إلى SRC-4CCB1F172B-L000194
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000817](../../tests/fixtures/answer_quality_cases.json#L817) | 817 | `"        \"يجيب عن نقطة واحدة ويصف الإجابة بأنها كاملة\""` | — |
+| [SRC-90FAA34ADE-L000818](../../tests/fixtures/answer_quality_cases.json#L818) | 818 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000819](../../tests/fixtures/answer_quality_cases.json#L819) | 819 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000820](../../tests/fixtures/answer_quality_cases.json#L820) | 820 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L000821](../../tests/fixtures/answer_quality_cases.json#L821) | 821 | `"        \"notes\": \"الموضوع نفسه غير محدد؛ الاختبار يقيس طلب التوضيح وحفظ قائمة المتطلبات\""` | — |
+| [SRC-90FAA34ADE-L000822](../../tests/fixtures/answer_quality_cases.json#L822) | 822 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000823](../../tests/fixtures/answer_quality_cases.json#L823) | 823 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000824](../../tests/fixtures/answer_quality_cases.json#L824) | 824 | `"        \"عدم طلب تحديد الموضوع\","` | — |
+| [SRC-90FAA34ADE-L000825](../../tests/fixtures/answer_quality_cases.json#L825) | 825 | `"        \"تجاهل أي عنصر من العناصر الأربع بعد توضيح الموضوع\""` | — |
+| [SRC-90FAA34ADE-L000826](../../tests/fixtures/answer_quality_cases.json#L826) | 826 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000827](../../tests/fixtures/answer_quality_cases.json#L827) | 827 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000828](../../tests/fixtures/answer_quality_cases.json#L828) | 828 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000829](../../tests/fixtures/answer_quality_cases.json#L829) | 829 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000830](../../tests/fixtures/answer_quality_cases.json#L830) | 830 | `"      \"case_id\": \"AQ-029\","` | — |
+| [SRC-90FAA34ADE-L000831](../../tests/fixtures/answer_quality_cases.json#L831) | 831 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000832](../../tests/fixtures/answer_quality_cases.json#L832) | 832 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000833](../../tests/fixtures/answer_quality_cases.json#L833) | 833 | `"      \"question\": \"لقيت إعلان شقة في التجمع على صفحة عامة. اكتب لي ملخص lead أولي، من غير ما تعتبر الإعلان متحقق أو المعلن عميل جاهز.\","` | — |
+| [SRC-90FAA34ADE-L000834](../../tests/fixtures/answer_quality_cases.json#L834) | 834 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000835](../../tests/fixtures/answer_quality_cases.json#L835) | 835 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000836](../../tests/fixtures/answer_quality_cases.json#L836) | 836 | `"        \"يسميها فرصة أولية أو lead غير متحقق\","` | — |
 | [SRC-90FAA34ADE-L000837](../../tests/fixtures/answer_quality_cases.json#L837) | 837 | `"        \"يفصل البيانات المنقولة من الإعلان عن البيانات التي تم التحقق منها\","` | — |
@@ -816,21 +834,3 @@
 | [SRC-4CCB1F172B-L000192](../../tests/test_answer_quality_corpus.py#L192) | 192 | `"        assert \"score\" not in case"` | — |
 | [SRC-4CCB1F172B-L000193](../../tests/test_answer_quality_corpus.py#L193) | 193 | `"        assert case.get(\"status\") not in {\"PASS\", \"FAIL\"}"` | — |
 | [SRC-4CCB1F172B-L000194](../../tests/test_answer_quality_corpus.py#L194) | 194 | `""` | — |
-| [SRC-4CCB1F172B-L000195](../../tests/test_answer_quality_corpus.py#L195) | 195 | `""` | — |
-| [SRC-4CCB1F172B-L000196](../../tests/test_answer_quality_corpus.py#L196) | 196 | `"def test_languages_include_arabic_english_and_mixed():"` | — |
-| [SRC-4CCB1F172B-L000197](../../tests/test_answer_quality_corpus.py#L197) | 197 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000198](../../tests/test_answer_quality_corpus.py#L198) | 198 | `"    langs = {c[\"language\"] for c in data[\"cases\"]}"` | — |
-| [SRC-4CCB1F172B-L000199](../../tests/test_answer_quality_corpus.py#L199) | 199 | `"    assert any(x.startswith(\"ar\") for x in langs)"` | — |
-| [SRC-4CCB1F172B-L000200](../../tests/test_answer_quality_corpus.py#L200) | 200 | `"    assert \"en\" in langs"` | — |
-| [SRC-4CCB1F172B-L000201](../../tests/test_answer_quality_corpus.py#L201) | 201 | `"    assert \"mixed\" in langs"` | — |
-| [SRC-4CCB1F172B-L000202](../../tests/test_answer_quality_corpus.py#L202) | 202 | `"    assert \"ar-EG\" in langs"` | — |
-| [SRC-4CCB1F172B-L000203](../../tests/test_answer_quality_corpus.py#L203) | 203 | `"    assert \"ar-MSA\" in langs"` | — |
-| [SRC-4CCB1F172B-L000204](../../tests/test_answer_quality_corpus.py#L204) | 204 | `""` | — |
-| [SRC-4CCB1F172B-L000205](../../tests/test_answer_quality_corpus.py#L205) | 205 | `""` | — |
-| [SRC-4CCB1F172B-L000206](../../tests/test_answer_quality_corpus.py#L206) | 206 | `"def test_documented_high_risk_examples_match_json_categories():"` | — |
-| [SRC-4CCB1F172B-L000207](../../tests/test_answer_quality_corpus.py#L207) | 207 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000208](../../tests/test_answer_quality_corpus.py#L208) | 208 | `"    by_id = {c[\"case_id\"]: c for c in data[\"cases\"]}"` | — |
-| [SRC-4CCB1F172B-L000209](../../tests/test_answer_quality_corpus.py#L209) | 209 | `"    for case_id, expected_cat in DOC_EXAMPLE_CATEGORY_EXPECTATIONS.items():"` | — |
-| [SRC-4CCB1F172B-L000210](../../tests/test_answer_quality_corpus.py#L210) | 210 | `"        assert case_id in by_id, f\"Doc example {case_id} missing from corpus\""` | — |
-| [SRC-4CCB1F172B-L000211](../../tests/test_answer_quality_corpus.py#L211) | 211 | `"        actual = by_id[case_id][\"category\"]"` | — |
-| [SRC-4CCB1F172B-L000212](../../tests/test_answer_quality_corpus.py#L212) | 212 | `"        assert actual == expected_cat, ("` | — |

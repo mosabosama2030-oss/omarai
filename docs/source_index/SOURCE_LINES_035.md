@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **035**
-- سجلات الأسطر: **57**
-- النطاق: SRC-DE7EABE998-L000387 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **75**
+- النطاق: SRC-DE7EABE998-L000369 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000369](../../web/agent.html#L369) | 369 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
+| [SRC-DE7EABE998-L000370](../../web/agent.html#L370) | 370 | `"  const configured=[];"` | — |
+| [SRC-DE7EABE998-L000371](../../web/agent.html#L371) | 371 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
+| [SRC-DE7EABE998-L000372](../../web/agent.html#L372) | 372 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |
+| [SRC-DE7EABE998-L000373](../../web/agent.html#L373) | 373 | `"  if(a.reddit_oauth_configured)configured.push(\"Reddit OAuth\");"` | — |
+| [SRC-DE7EABE998-L000374](../../web/agent.html#L374) | 374 | `"  if(a.facebook_pages_api_configured)configured.push(\"Facebook Pages\");"` | — |
+| [SRC-DE7EABE998-L000375](../../web/agent.html#L375) | 375 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |
+| [SRC-DE7EABE998-L000376](../../web/agent.html#L376) | 376 | `"  if(a.x_api_configured)configured.push(\"X API\");"` | — |
+| [SRC-DE7EABE998-L000377](../../web/agent.html#L377) | 377 | `"  if(a.youtube_api_configured)configured.push(\"YouTube API\");"` | — |
+| [SRC-DE7EABE998-L000378](../../web/agent.html#L378) | 378 | `"  const model=!!a.language_model_configured, search=!!a.web_search_ready;"` | — |
+| [SRC-DE7EABE998-L000379](../../web/agent.html#L379) | 379 | `"  $(\"setupStatus\").textContent=(search?\"حزم البحث مثبتة. \":\"حزم البحث تحتاج تثبيتًا. \")+(model?\"مفتاح نموذج اللغة موجود في جلسة الخادم. \":\"النموذج التوليدي غير مضبوط بعد. \")+\"لم يتم تأكيد اتصال الإنترنت من هذه الشاشة وحدها؛ شغّل الاختبار الحي. لا تظهر هنا مفاتيح الخدمات أو قيمها.\";"` | — |
+| [SRC-DE7EABE998-L000380](../../web/agent.html#L380) | 380 | `"  $(\"providerSetup\").innerHTML=configured.length?'<span class=\"config-label\">موصلات مفاتيحها مضبوطة: '+configured.map(escapeHtml).join(\" · \")+'</span>':'<p>لم تُضبط مفاتيح API البحثية الإضافية؛ يظل Omarai قادرًا على تجربة محركات البحث العامة المتاحة.</p>';"` | — |
+| [SRC-DE7EABE998-L000381](../../web/agent.html#L381) | 381 | `"  setStatus(\"الإعداد ظاهر · يلزم اختبار حي\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000382](../../web/agent.html#L382) | 382 | `" }catch(e){setStatus(\"تعذر فحص الإعداد\",\"bad\");$(\"setupStatus\").textContent=\"تعذر الاتصال بخادم Omarai المحلي. تأكد أن الخادم يعمل في Termux.\";}"` | — |
+| [SRC-DE7EABE998-L000383](../../web/agent.html#L383) | 383 | `"}"` | — |
+| [SRC-DE7EABE998-L000384](../../web/agent.html#L384) | 384 | `"document.querySelectorAll(\".mode-btn\").forEach(button=>button.addEventListener(\"click\",()=>{"` | — |
+| [SRC-DE7EABE998-L000385](../../web/agent.html#L385) | 385 | `" activeMode=button.dataset.mode;"` | — |
+| [SRC-DE7EABE998-L000386](../../web/agent.html#L386) | 386 | `" document.querySelectorAll(\".mode-btn\").forEach(other=>{const active=other===button;other.classList.toggle(\"active\",active);other.setAttribute(\"aria-pressed\",String(active));});"` | — |
 | [SRC-DE7EABE998-L000387](../../web/agent.html#L387) | 387 | `"}));"` | — |
 | [SRC-DE7EABE998-L000388](../../web/agent.html#L388) | 388 | `"$(\"send\").addEventListener(\"click\",()=>ask());"` | — |
 | [SRC-DE7EABE998-L000389](../../web/agent.html#L389) | 389 | `"$(\"question\").addEventListener(\"keydown\",e=>{if(e.key===\"Enter\"&&!e.shiftKey){e.preventDefault();ask();}});"` | — |

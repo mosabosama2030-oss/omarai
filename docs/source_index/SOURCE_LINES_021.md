@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000021 إلى SRC-90FAA34ADE-L000034
+- النطاق: SRC-A8360B1B03-L000003 إلى SRC-90FAA34ADE-L000016
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000003](../../scripts/hosted_smoke_test.py#L3) | 3 | `"from __future__ import annotations"` | — |
+| [SRC-A8360B1B03-L000004](../../scripts/hosted_smoke_test.py#L4) | 4 | `""` | — |
+| [SRC-A8360B1B03-L000005](../../scripts/hosted_smoke_test.py#L5) | 5 | `"import argparse"` | — |
+| [SRC-A8360B1B03-L000006](../../scripts/hosted_smoke_test.py#L6) | 6 | `"import json"` | — |
+| [SRC-A8360B1B03-L000007](../../scripts/hosted_smoke_test.py#L7) | 7 | `"import os"` | — |
+| [SRC-A8360B1B03-L000008](../../scripts/hosted_smoke_test.py#L8) | 8 | `"import re"` | — |
+| [SRC-A8360B1B03-L000009](../../scripts/hosted_smoke_test.py#L9) | 9 | `"import sys"` | — |
+| [SRC-A8360B1B03-L000010](../../scripts/hosted_smoke_test.py#L10) | 10 | `"import urllib.error"` | — |
+| [SRC-A8360B1B03-L000011](../../scripts/hosted_smoke_test.py#L11) | 11 | `"import urllib.parse"` | — |
+| [SRC-A8360B1B03-L000012](../../scripts/hosted_smoke_test.py#L12) | 12 | `"import urllib.request"` | — |
+| [SRC-A8360B1B03-L000013](../../scripts/hosted_smoke_test.py#L13) | 13 | `"from typing import Any"` | — |
+| [SRC-A8360B1B03-L000014](../../scripts/hosted_smoke_test.py#L14) | 14 | `""` | — |
+| [SRC-A8360B1B03-L000015](../../scripts/hosted_smoke_test.py#L15) | 15 | `""` | — |
+| [SRC-A8360B1B03-L000016](../../scripts/hosted_smoke_test.py#L16) | 16 | `"class SmokeError(RuntimeError):"` | — |
+| [SRC-A8360B1B03-L000017](../../scripts/hosted_smoke_test.py#L17) | 17 | `"    \"\"\"A live acceptance check failed.\"\"\""` | — |
+| [SRC-A8360B1B03-L000018](../../scripts/hosted_smoke_test.py#L18) | 18 | `""` | — |
+| [SRC-A8360B1B03-L000019](../../scripts/hosted_smoke_test.py#L19) | 19 | `""` | — |
+| [SRC-A8360B1B03-L000020](../../scripts/hosted_smoke_test.py#L20) | 20 | `"class _SameOriginRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
 | [SRC-A8360B1B03-L000021](../../scripts/hosted_smoke_test.py#L21) | 21 | `"    \"\"\"Never forward a bearer token to a different origin during an HTTP redirect.\"\"\""` | — |
 | [SRC-A8360B1B03-L000022](../../scripts/hosted_smoke_test.py#L22) | 22 | `""` | — |
 | [SRC-A8360B1B03-L000023](../../scripts/hosted_smoke_test.py#L23) | 23 | `"    @staticmethod"` | — |
@@ -825,21 +843,3 @@
 | [SRC-90FAA34ADE-L000014](../../tests/fixtures/answer_quality_cases.json#L14) | 14 | `"    \"fixture_assisted\","` | — |
 | [SRC-90FAA34ADE-L000015](../../tests/fixtures/answer_quality_cases.json#L15) | 15 | `"    \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000016](../../tests/fixtures/answer_quality_cases.json#L16) | 16 | `"  ],"` | — |
-| [SRC-90FAA34ADE-L000017](../../tests/fixtures/answer_quality_cases.json#L17) | 17 | `"  \"case_count\": 45,"` | — |
-| [SRC-90FAA34ADE-L000018](../../tests/fixtures/answer_quality_cases.json#L18) | 18 | `"  \"cases\": ["` | — |
-| [SRC-90FAA34ADE-L000019](../../tests/fixtures/answer_quality_cases.json#L19) | 19 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000020](../../tests/fixtures/answer_quality_cases.json#L20) | 20 | `"      \"case_id\": \"AQ-001\","` | — |
-| [SRC-90FAA34ADE-L000021](../../tests/fixtures/answer_quality_cases.json#L21) | 21 | `"      \"category\": \"simple_conversational\","` | — |
-| [SRC-90FAA34ADE-L000022](../../tests/fixtures/answer_quality_cases.json#L22) | 22 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000023](../../tests/fixtures/answer_quality_cases.json#L23) | 23 | `"      \"question\": \"ازيك؟ عامل ايه النهاردة؟\","` | — |
-| [SRC-90FAA34ADE-L000024](../../tests/fixtures/answer_quality_cases.json#L24) | 24 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000025](../../tests/fixtures/answer_quality_cases.json#L25) | 25 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000026](../../tests/fixtures/answer_quality_cases.json#L26) | 26 | `"        \"Responds in Arabic in a brief friendly way\","` | — |
-| [SRC-90FAA34ADE-L000027](../../tests/fixtures/answer_quality_cases.json#L27) | 27 | `"        \"Does not invent current events or weather\","` | — |
-| [SRC-90FAA34ADE-L000028](../../tests/fixtures/answer_quality_cases.json#L28) | 28 | `"        \"Does not claim to have searched the web\""` | — |
-| [SRC-90FAA34ADE-L000029](../../tests/fixtures/answer_quality_cases.json#L29) | 29 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000030](../../tests/fixtures/answer_quality_cases.json#L30) | 30 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000031](../../tests/fixtures/answer_quality_cases.json#L31) | 31 | `"        \"Fabricates a web search report\","` | — |
-| [SRC-90FAA34ADE-L000032](../../tests/fixtures/answer_quality_cases.json#L32) | 32 | `"        \"Returns source links for a pure greeting\","` | — |
-| [SRC-90FAA34ADE-L000033](../../tests/fixtures/answer_quality_cases.json#L33) | 33 | `"        \"Answers in English only when the user wrote Egyptian Arabic\""` | — |
-| [SRC-90FAA34ADE-L000034](../../tests/fixtures/answer_quality_cases.json#L34) | 34 | `"      ],"` | — |

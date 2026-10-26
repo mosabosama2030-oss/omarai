@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001241 إلى SRC-F725E90B2A-L002040
+- النطاق: SRC-F725E90B2A-L001223 إلى SRC-F725E90B2A-L002022
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001223](../../tests/test_web_agent.py#L1223) | 1223 | `"    assert len(calls[1][\"queries\"]) == 1"` | — |
+| [SRC-F725E90B2A-L001224](../../tests/test_web_agent.py#L1224) | 1224 | `"    assert calls[1][\"depth\"] == \"standard\""` | — |
+| [SRC-F725E90B2A-L001225](../../tests/test_web_agent.py#L1225) | 1225 | `"    assert calls[1][\"social_focus\"] is False"` | — |
+| [SRC-F725E90B2A-L001226](../../tests/test_web_agent.py#L1226) | 1226 | `"    assert calls[1][\"direct_urls\"] == []"` | — |
+| [SRC-F725E90B2A-L001227](../../tests/test_web_agent.py#L1227) | 1227 | `"    repair = result[\"search_report\"][\"evidence_repair\"]"` | — |
+| [SRC-F725E90B2A-L001228](../../tests/test_web_agent.py#L1228) | 1228 | `"    assert repair[\"attempted\"] is True"` | — |
+| [SRC-F725E90B2A-L001229](../../tests/test_web_agent.py#L1229) | 1229 | `"    assert repair[\"attempted_query_count\"] == 1"` | — |
+| [SRC-F725E90B2A-L001230](../../tests/test_web_agent.py#L1230) | 1230 | `"    assert repair[\"new_sources_added\"] == 1"` | — |
+| [SRC-F725E90B2A-L001231](../../tests/test_web_agent.py#L1231) | 1231 | `"    assert repair[\"recovered\"] is True"` | — |
+| [SRC-F725E90B2A-L001232](../../tests/test_web_agent.py#L1232) | 1232 | `"    assert repair[\"reason\"] == \"evidence_gate_recovered\""` | — |
+| [SRC-F725E90B2A-L001233](../../tests/test_web_agent.py#L1233) | 1233 | `"    assert repair[\"query\"] in result[\"search_queries\"]"` | — |
+| [SRC-F725E90B2A-L001234](../../tests/test_web_agent.py#L1234) | 1234 | `"    assert result[\"kind\"] in {\"web_research\", \"web_fallback\"}"` | — |
+| [SRC-F725E90B2A-L001235](../../tests/test_web_agent.py#L1235) | 1235 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
+| [SRC-F725E90B2A-L001236](../../tests/test_web_agent.py#L1236) | 1236 | `""` | — |
+| [SRC-F725E90B2A-L001237](../../tests/test_web_agent.py#L1237) | 1237 | `""` | — |
+| [SRC-F725E90B2A-L001238](../../tests/test_web_agent.py#L1238) | 1238 | `"def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001239](../../tests/test_web_agent.py#L1239) | 1239 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001240](../../tests/test_web_agent.py#L1240) | 1240 | `"    plan = {"` | — |
 | [SRC-F725E90B2A-L001241](../../tests/test_web_agent.py#L1241) | 1241 | `"        \"queries\": [\"معلومات عن هذه التقنية\"],"` | — |
 | [SRC-F725E90B2A-L001242](../../tests/test_web_agent.py#L1242) | 1242 | `"        \"direct_urls\": [],"` | — |
 | [SRC-F725E90B2A-L001243](../../tests/test_web_agent.py#L1243) | 1243 | `"        \"social_focus\": False,"` | — |
@@ -798,21 +816,3 @@
 | [SRC-F725E90B2A-L002020](../../tests/test_web_agent.py#L2020) | 2020 | `"    assert '[\"attempted_research_error\",\"unknown_after_research_error\"].includes(r.search_outcome)' in html"` | — |
 | [SRC-F725E90B2A-L002021](../../tests/test_web_agent.py#L2021) | 2021 | `"    assert \"لم يمكن تحديد عدد المصادر القابلة للاستخدام\" in html"` | — |
 | [SRC-F725E90B2A-L002022](../../tests/test_web_agent.py#L2022) | 2022 | `"    assert \"غير محدد\" in html"` | — |
-| [SRC-F725E90B2A-L002023](../../tests/test_web_agent.py#L2023) | 2023 | `"    assert 'const score=(researchErrorOutcome\|\|lead)?null:Number(e.coverage_score\|\|0)' not in html"` | — |
-| [SRC-F725E90B2A-L002024](../../tests/test_web_agent.py#L2024) | 2024 | `"    assert \"مؤشر تغطية البحث:\" not in html"` | — |
-| [SRC-F725E90B2A-L002025](../../tests/test_web_agent.py#L2025) | 2025 | `"    assert '\"تغطية الأدلة: \"+scoreLabel' in html"` | — |
-| [SRC-F725E90B2A-L002026](../../tests/test_web_agent.py#L2026) | 2026 | `"    assert \"يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة\" in html"` | — |
-| [SRC-F725E90B2A-L002027](../../tests/test_web_agent.py#L2027) | 2027 | `"    assert \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل\" in html"` | — |
-| [SRC-F725E90B2A-L002028](../../tests/test_web_agent.py#L2028) | 2028 | `""` | — |
-| [SRC-F725E90B2A-L002029](../../tests/test_web_agent.py#L2029) | 2029 | `""` | — |
-| [SRC-F725E90B2A-L002030](../../tests/test_web_agent.py#L2030) | 2030 | `"def test_generic_provider_failure_does_not_claim_search_attempt_as_confirmed(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002031](../../tests/test_web_agent.py#L2031) | 2031 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002032](../../tests/test_web_agent.py#L2032) | 2032 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L002033](../../tests/test_web_agent.py#L2033) | 2033 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |
-| [SRC-F725E90B2A-L002034](../../tests/test_web_agent.py#L2034) | 2034 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L002035](../../tests/test_web_agent.py#L2035) | 2035 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L002036](../../tests/test_web_agent.py#L2036) | 2036 | `"        \"freshness\": \"current\","` | — |
-| [SRC-F725E90B2A-L002037](../../tests/test_web_agent.py#L2037) | 2037 | `"        \"depth\": \"deep\","` | — |
-| [SRC-F725E90B2A-L002038](../../tests/test_web_agent.py#L2038) | 2038 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002039](../../tests/test_web_agent.py#L2039) | 2039 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002040](../../tests/test_web_agent.py#L2040) | 2040 | `"    }"` | — |
