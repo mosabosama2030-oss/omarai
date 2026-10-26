@@ -118,8 +118,8 @@ def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
 
 
 _SEARCH_TOPIC_PRESERVING_META_PREFIX_RE = re.compile(
-    r"^(?:و?استخدم|و?استعمل)\s+مصادر?\s+متعددة\s+"
-    r"(?:للبحث\s+عن|للعثور\s+على|لإيجاد|عن|حول|بشأن|"
+    r"^(?:(?:و?استخدم|و?استعمل)\s+مصادر?\s+متعددة\s+"
+    r"(?:للبحث\s+عن|للعثور\s+على|لإيجاد|عن|حول|بشأن)|"
     r"use\s+multiple\s+sources\s+to\s+(?:research|find|investigate))\s+",
     re.IGNORECASE,
 )
