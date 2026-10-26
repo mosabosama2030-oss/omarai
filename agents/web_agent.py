@@ -4331,7 +4331,11 @@ class WebAgent:
                     for item in plan.get("queries", [])
                     if isinstance(item, str) and item.strip()
                 ]
-                base_query = original_queries[0] if original_queries else question
+                base_query = (
+                    original_queries[0]
+                    if original_queries
+                    else compact_search_query(question)
+                )
                 suffix = (
                     "latest official primary source"
                     if plan.get("freshness") == "current"
