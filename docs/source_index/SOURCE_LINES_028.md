@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000131 إلى SRC-C353AAAC10-L000058
+- النطاق: SRC-1A176AD4F0-L000131 إلى SRC-B106ADC5EF-L000086
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -624,6 +624,64 @@
 | [SRC-188F068481-L000090](../../tests/test_live_search_relevance_regressions.py#L90) | 90 | `")"` | — |
 | [SRC-188F068481-L000091](../../tests/test_live_search_relevance_regressions.py#L91) | 91 | `"def test_core_bilingual_topic_synonyms_are_matched(question, evidence):"` | — |
 | [SRC-188F068481-L000092](../../tests/test_live_search_relevance_regressions.py#L92) | 92 | `"    assert _relevance_ratio(question, evidence) >= 0.20"` | — |
+| [SRC-188F068481-L000093](../../tests/test_live_search_relevance_regressions.py#L93) | 93 | `""` | — |
+| [SRC-188F068481-L000094](../../tests/test_live_search_relevance_regressions.py#L94) | 94 | `"@pytest.mark.parametrize("` | — |
+| [SRC-188F068481-L000095](../../tests/test_live_search_relevance_regressions.py#L95) | 95 | `"    (\"question\", \"title\", \"snippet\"),"` | — |
+| [SRC-188F068481-L000096](../../tests/test_live_search_relevance_regressions.py#L96) | 96 | `"    ["` | — |
+| [SRC-188F068481-L000097](../../tests/test_live_search_relevance_regressions.py#L97) | 97 | `"        ("` | — |
+| [SRC-188F068481-L000098](../../tests/test_live_search_relevance_regressions.py#L98) | 98 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
+| [SRC-188F068481-L000099](../../tests/test_live_search_relevance_regressions.py#L99) | 99 | `"            \"Cairo is the capital of Egypt\","` | — |
+| [SRC-188F068481-L000100](../../tests/test_live_search_relevance_regressions.py#L100) | 100 | `"            \"Cairo is the capital city of Egypt.\","` | — |
+| [SRC-188F068481-L000101](../../tests/test_live_search_relevance_regressions.py#L101) | 101 | `"        ),"` | — |
+| [SRC-188F068481-L000102](../../tests/test_live_search_relevance_regressions.py#L102) | 102 | `"        ("` | — |
+| [SRC-188F068481-L000103](../../tests/test_live_search_relevance_regressions.py#L103) | 103 | `"            \"حلّل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميّز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
+| [SRC-188F068481-L000104](../../tests/test_live_search_relevance_regressions.py#L104) | 104 | `"            \"Electric vehicles in Egypt: charging and cost\","` | — |
+| [SRC-188F068481-L000105](../../tests/test_live_search_relevance_regressions.py#L105) | 105 | `"            \"Electric vehicles in Egypt face charging infrastructure challenges and higher ownership costs.\","` | — |
+| [SRC-188F068481-L000106](../../tests/test_live_search_relevance_regressions.py#L106) | 106 | `"        ),"` | — |
+| [SRC-188F068481-L000107](../../tests/test_live_search_relevance_regressions.py#L107) | 107 | `"        ("` | — |
+| [SRC-188F068481-L000108](../../tests/test_live_search_relevance_regressions.py#L108) | 108 | `"            \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
+| [SRC-188F068481-L000109](../../tests/test_live_search_relevance_regressions.py#L109) | 109 | `"            \"Recent developments in AI agents\","` | — |
+| [SRC-188F068481-L000110](../../tests/test_live_search_relevance_regressions.py#L110) | 110 | `"            \"Recent developments in AI agents include planning, tool use, and autonomous workflows.\","` | — |
+| [SRC-188F068481-L000111](../../tests/test_live_search_relevance_regressions.py#L111) | 111 | `"        ),"` | — |
+| [SRC-188F068481-L000112](../../tests/test_live_search_relevance_regressions.py#L112) | 112 | `"        ("` | — |
+| [SRC-188F068481-L000113](../../tests/test_live_search_relevance_regressions.py#L113) | 113 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضّح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
+| [SRC-188F068481-L000114](../../tests/test_live_search_relevance_regressions.py#L114) | 114 | `"            \"Egyptian electric-car user experiences\","` | — |
+| [SRC-188F068481-L000115](../../tests/test_live_search_relevance_regressions.py#L115) | 115 | `"            \"Egyptian electric-car users share experiences about charging access, ownership costs, and public charging infrastructure.\","` | — |
+| [SRC-188F068481-L000116](../../tests/test_live_search_relevance_regressions.py#L116) | 116 | `"        ),"` | — |
+| [SRC-188F068481-L000117](../../tests/test_live_search_relevance_regressions.py#L117) | 117 | `"    ],"` | — |
+| [SRC-188F068481-L000118](../../tests/test_live_search_relevance_regressions.py#L118) | 118 | `")"` | — |
+| [SRC-188F068481-L000119](../../tests/test_live_search_relevance_regressions.py#L119) | 119 | `"def test_search_pipeline_accepts_relevant_english_bing_candidates_for_arabic_questions("` | — |
+| [SRC-188F068481-L000120](../../tests/test_live_search_relevance_regressions.py#L120) | 120 | `"    monkeypatch, question, title, snippet"` | — |
+| [SRC-188F068481-L000121](../../tests/test_live_search_relevance_regressions.py#L121) | 121 | `"):"` | — |
+| [SRC-188F068481-L000122](../../tests/test_live_search_relevance_regressions.py#L122) | 122 | `"    # Deterministic integration coverage: no external network, paid API, or secret."` | — |
+| [SRC-188F068481-L000123](../../tests/test_live_search_relevance_regressions.py#L123) | 123 | `"    agent = WebAgent()"` | — |
+| [SRC-188F068481-L000124](../../tests/test_live_search_relevance_regressions.py#L124) | 124 | `"    for key in (\"DEEPSEEK_SEARCH_API_KEY\", \"BRAVE_SEARCH_API_KEY\", \"TAVILY_API_KEY\"):"` | — |
+| [SRC-188F068481-L000125](../../tests/test_live_search_relevance_regressions.py#L125) | 125 | `"        monkeypatch.delenv(key, raising=False)"` | — |
+| [SRC-188F068481-L000126](../../tests/test_live_search_relevance_regressions.py#L126) | 126 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _query: [])"` | — |
+| [SRC-188F068481-L000127](../../tests/test_live_search_relevance_regressions.py#L127) | 127 | `"    monkeypatch.setattr("` | — |
+| [SRC-188F068481-L000128](../../tests/test_live_search_relevance_regressions.py#L128) | 128 | `"        agent,"` | — |
+| [SRC-188F068481-L000129](../../tests/test_live_search_relevance_regressions.py#L129) | 129 | `"        \"_search_bing_rss\","` | — |
+| [SRC-188F068481-L000130](../../tests/test_live_search_relevance_regressions.py#L130) | 130 | `"        lambda query: [{"` | — |
+| [SRC-188F068481-L000131](../../tests/test_live_search_relevance_regressions.py#L131) | 131 | `"            \"title\": title,"` | — |
+| [SRC-188F068481-L000132](../../tests/test_live_search_relevance_regressions.py#L132) | 132 | `"            \"url\": \"https://example.org/research\","` | — |
+| [SRC-188F068481-L000133](../../tests/test_live_search_relevance_regressions.py#L133) | 133 | `"            \"snippet\": snippet,"` | — |
+| [SRC-188F068481-L000134](../../tests/test_live_search_relevance_regressions.py#L134) | 134 | `"            \"provider\": \"bing_rss\","` | — |
+| [SRC-188F068481-L000135](../../tests/test_live_search_relevance_regressions.py#L135) | 135 | `"            \"search_query\": query,"` | — |
+| [SRC-188F068481-L000136](../../tests/test_live_search_relevance_regressions.py#L136) | 136 | `"        }],"` | — |
+| [SRC-188F068481-L000137](../../tests/test_live_search_relevance_regressions.py#L137) | 137 | `"    )"` | — |
+| [SRC-188F068481-L000138](../../tests/test_live_search_relevance_regressions.py#L138) | 138 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _query: [])"` | — |
+| [SRC-188F068481-L000139](../../tests/test_live_search_relevance_regressions.py#L139) | 139 | `""` | — |
+| [SRC-188F068481-L000140](../../tests/test_live_search_relevance_regressions.py#L140) | 140 | `"    sources = agent._search_web(question)"` | — |
+| [SRC-188F068481-L000141](../../tests/test_live_search_relevance_regressions.py#L141) | 141 | `""` | — |
+| [SRC-188F068481-L000142](../../tests/test_live_search_relevance_regressions.py#L142) | 142 | `"    assert len(sources) == 1"` | — |
+| [SRC-188F068481-L000143](../../tests/test_live_search_relevance_regressions.py#L143) | 143 | `"    assert sources[0][\"provider\"] == \"bing_rss\""` | — |
+| [SRC-188F068481-L000144](../../tests/test_live_search_relevance_regressions.py#L144) | 144 | `"    assert sources[0][\"url\"] == \"https://example.org/research\""` | — |
+| [SRC-188F068481-L000145](../../tests/test_live_search_relevance_regressions.py#L145) | 145 | `"    summary = agent._connector_status_summary(agent._provider_diagnostics, sources)"` | — |
+| [SRC-188F068481-L000146](../../tests/test_live_search_relevance_regressions.py#L146) | 146 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
+| [SRC-188F068481-L000147](../../tests/test_live_search_relevance_regressions.py#L147) | 147 | `"    assert bing[\"usable_results_for_this_request\"] is True"` | — |
+| [SRC-188F068481-L000148](../../tests/test_live_search_relevance_regressions.py#L148) | 148 | `"    assert bing[\"candidate_count\"] == 1"` | — |
+| [SRC-188F068481-L000149](../../tests/test_live_search_relevance_regressions.py#L149) | 149 | `"    assert bing[\"result_count\"] == 1"` | — |
+| [SRC-188F068481-L000150](../../tests/test_live_search_relevance_regressions.py#L150) | 150 | `"    assert bing[\"rejected_count\"] == 0"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -812,70 +870,3 @@
 | [SRC-B106ADC5EF-L000084](../../tests/test_proxy_origin.py#L84) | 84 | `"        {key: value for key, value in headers.items() if key != \"Authorization\"},"` | — |
 | [SRC-B106ADC5EF-L000085](../../tests/test_proxy_origin.py#L85) | 85 | `"    ) == 403"` | — |
 | [SRC-B106ADC5EF-L000086](../../tests/test_proxy_origin.py#L86) | 86 | `""` | — |
-## اختبارات
-
-### FILE-C353AAAC10 — [tests/test_request_budget.py](../../tests/test_request_budget.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-C353AAAC10-L000001](../../tests/test_request_budget.py#L1) | 1 | `"\"\"\"Unit tests for Omarai's per-request resource budget.\"\"\""` | — |
-| [SRC-C353AAAC10-L000002](../../tests/test_request_budget.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-C353AAAC10-L000003](../../tests/test_request_budget.py#L3) | 3 | `""` | — |
-| [SRC-C353AAAC10-L000004](../../tests/test_request_budget.py#L4) | 4 | `"import pytest"` | — |
-| [SRC-C353AAAC10-L000005](../../tests/test_request_budget.py#L5) | 5 | `""` | — |
-| [SRC-C353AAAC10-L000006](../../tests/test_request_budget.py#L6) | 6 | `"from agents.request_budget import RequestBudget, RequestBudgetExceeded"` | — |
-| [SRC-C353AAAC10-L000007](../../tests/test_request_budget.py#L7) | 7 | `""` | — |
-| [SRC-C353AAAC10-L000008](../../tests/test_request_budget.py#L8) | 8 | `""` | — |
-| [SRC-C353AAAC10-L000009](../../tests/test_request_budget.py#L9) | 9 | `"class FakeClock:"` | — |
-| [SRC-C353AAAC10-L000010](../../tests/test_request_budget.py#L10) | 10 | `"    def __init__(self, value: float = 100.0) -> None:"` | — |
-| [SRC-C353AAAC10-L000011](../../tests/test_request_budget.py#L11) | 11 | `"        self.value = value"` | — |
-| [SRC-C353AAAC10-L000012](../../tests/test_request_budget.py#L12) | 12 | `""` | — |
-| [SRC-C353AAAC10-L000013](../../tests/test_request_budget.py#L13) | 13 | `"    def __call__(self) -> float:"` | — |
-| [SRC-C353AAAC10-L000014](../../tests/test_request_budget.py#L14) | 14 | `"        return self.value"` | — |
-| [SRC-C353AAAC10-L000015](../../tests/test_request_budget.py#L15) | 15 | `""` | — |
-| [SRC-C353AAAC10-L000016](../../tests/test_request_budget.py#L16) | 16 | `""` | — |
-| [SRC-C353AAAC10-L000017](../../tests/test_request_budget.py#L17) | 17 | `"def test_resource_reservations_are_bounded_and_thread_safe_in_snapshot():"` | — |
-| [SRC-C353AAAC10-L000018](../../tests/test_request_budget.py#L18) | 18 | `"    clock = FakeClock()"` | — |
-| [SRC-C353AAAC10-L000019](../../tests/test_request_budget.py#L19) | 19 | `"    budget = RequestBudget("` | — |
-| [SRC-C353AAAC10-L000020](../../tests/test_request_budget.py#L20) | 20 | `"        timeout_seconds=10,"` | — |
-| [SRC-C353AAAC10-L000021](../../tests/test_request_budget.py#L21) | 21 | `"        limits={\"search_calls\": 1},"` | — |
-| [SRC-C353AAAC10-L000022](../../tests/test_request_budget.py#L22) | 22 | `"        clock=clock,"` | — |
-| [SRC-C353AAAC10-L000023](../../tests/test_request_budget.py#L23) | 23 | `"    )"` | — |
-| [SRC-C353AAAC10-L000024](../../tests/test_request_budget.py#L24) | 24 | `""` | — |
-| [SRC-C353AAAC10-L000025](../../tests/test_request_budget.py#L25) | 25 | `"    budget.reserve(\"search_calls\")"` | — |
-| [SRC-C353AAAC10-L000026](../../tests/test_request_budget.py#L26) | 26 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_calls\"):"` | — |
-| [SRC-C353AAAC10-L000027](../../tests/test_request_budget.py#L27) | 27 | `"        budget.reserve(\"search_calls\")"` | — |
-| [SRC-C353AAAC10-L000028](../../tests/test_request_budget.py#L28) | 28 | `""` | — |
-| [SRC-C353AAAC10-L000029](../../tests/test_request_budget.py#L29) | 29 | `"    snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000030](../../tests/test_request_budget.py#L30) | 30 | `"    assert snapshot[\"counts\"][\"search_calls\"] == 1"` | — |
-| [SRC-C353AAAC10-L000031](../../tests/test_request_budget.py#L31) | 31 | `"    assert snapshot[\"limits\"][\"search_calls\"] == 1"` | — |
-| [SRC-C353AAAC10-L000032](../../tests/test_request_budget.py#L32) | 32 | `"    assert snapshot[\"deadline_exceeded\"] is False"` | — |
-| [SRC-C353AAAC10-L000033](../../tests/test_request_budget.py#L33) | 33 | `""` | — |
-| [SRC-C353AAAC10-L000034](../../tests/test_request_budget.py#L34) | 34 | `""` | — |
-| [SRC-C353AAAC10-L000035](../../tests/test_request_budget.py#L35) | 35 | `"def test_deadline_blocks_new_work_and_caps_outbound_timeout():"` | — |
-| [SRC-C353AAAC10-L000036](../../tests/test_request_budget.py#L36) | 36 | `"    clock = FakeClock()"` | — |
-| [SRC-C353AAAC10-L000037](../../tests/test_request_budget.py#L37) | 37 | `"    budget = RequestBudget(timeout_seconds=10, clock=clock)"` | — |
-| [SRC-C353AAAC10-L000038](../../tests/test_request_budget.py#L38) | 38 | `""` | — |
-| [SRC-C353AAAC10-L000039](../../tests/test_request_budget.py#L39) | 39 | `"    clock.value += 7"` | — |
-| [SRC-C353AAAC10-L000040](../../tests/test_request_budget.py#L40) | 40 | `"    assert budget.timeout_for(30) == pytest.approx(3)"` | — |
-| [SRC-C353AAAC10-L000041](../../tests/test_request_budget.py#L41) | 41 | `"    assert budget.timeout_for(1) == pytest.approx(1)"` | — |
-| [SRC-C353AAAC10-L000042](../../tests/test_request_budget.py#L42) | 42 | `""` | — |
-| [SRC-C353AAAC10-L000043](../../tests/test_request_budget.py#L43) | 43 | `"    clock.value += 4"` | — |
-| [SRC-C353AAAC10-L000044](../../tests/test_request_budget.py#L44) | 44 | `"    assert budget.remaining_seconds() == 0"` | — |
-| [SRC-C353AAAC10-L000045](../../tests/test_request_budget.py#L45) | 45 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
-| [SRC-C353AAAC10-L000046](../../tests/test_request_budget.py#L46) | 46 | `"        budget.reserve(\"model_calls\")"` | — |
-| [SRC-C353AAAC10-L000047](../../tests/test_request_budget.py#L47) | 47 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
-| [SRC-C353AAAC10-L000048](../../tests/test_request_budget.py#L48) | 48 | `"        budget.timeout_for(3)"` | — |
-| [SRC-C353AAAC10-L000049](../../tests/test_request_budget.py#L49) | 49 | `""` | — |
-| [SRC-C353AAAC10-L000050](../../tests/test_request_budget.py#L50) | 50 | `""` | — |
-| [SRC-C353AAAC10-L000051](../../tests/test_request_budget.py#L51) | 51 | `"def test_environment_overrides_are_clamped(monkeypatch):"` | — |
-| [SRC-C353AAAC10-L000052](../../tests/test_request_budget.py#L52) | 52 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_BUDGET_SECONDS\", \"999\")"` | — |
-| [SRC-C353AAAC10-L000053](../../tests/test_request_budget.py#L53) | 53 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_SEARCH_CALLS\", \"999\")"` | — |
-| [SRC-C353AAAC10-L000054](../../tests/test_request_budget.py#L54) | 54 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_MODEL_CALLS\", \"-1\")"` | — |
-| [SRC-C353AAAC10-L000055](../../tests/test_request_budget.py#L55) | 55 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_TOOL_CALLS\", \"-1\")"` | — |
-| [SRC-C353AAAC10-L000056](../../tests/test_request_budget.py#L56) | 56 | `""` | — |
-| [SRC-C353AAAC10-L000057](../../tests/test_request_budget.py#L57) | 57 | `"    snapshot = RequestBudget.from_environment().snapshot()"` | — |
-| [SRC-C353AAAC10-L000058](../../tests/test_request_budget.py#L58) | 58 | `""` | — |

@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **80**
 - ملفات Python المحللة: **42**
-- تعريفات Python المفهرسة: **985**
+- تعريفات Python المفهرسة: **986**
 - تعريفات Python موثقة بوجود Docstring: **192**
-- تعريفات Python بلا Docstring: **595**
+- تعريفات Python بلا Docstring: **596**
 - تعريفات لا ينطبق عليها Docstring: **198**
-- الرموز الساكنة الإضافية: **1555**
-- الأسطر النصية المفهرسة حرفيًا: **26243**
+- الرموز الساكنة الإضافية: **1558**
+- الأسطر النصية المفهرسة حرفيًا: **26301**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -97,7 +97,7 @@
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 7301 | 177 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 6391 | 160 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
-| FILE-188F068481 | اختبارات | [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L1) | Python | 4583 | 92 | جرد الملف + AST Python |
+| FILE-188F068481 | اختبارات | [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L1) | Python | 7847 | 150 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
@@ -824,6 +824,7 @@
 | [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L43) | دالة | test_generic_instruction_only_query_does_not_accept_arbitrary_evidence | لا توجد Docstring. | ناقص | 43 | [SRC-188F068481-L000043](../tests/test_live_search_relevance_regressions.py#L43) |
 | [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L47) | دالة | test_connector_summary_distinguishes_completed_filtering_from_usable_results | لا توجد Docstring. | ناقص | 47 | [SRC-188F068481-L000047](../tests/test_live_search_relevance_regressions.py#L47) |
 | [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L91) | دالة | test_core_bilingual_topic_synonyms_are_matched | لا توجد Docstring. | ناقص | 91 | [SRC-188F068481-L000091](../tests/test_live_search_relevance_regressions.py#L91) |
+| [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L119) | دالة | test_search_pipeline_accepts_relevant_english_bing_candidates_for_arabic_questions | لا توجد Docstring. | ناقص | 119 | [SRC-188F068481-L000119](../tests/test_live_search_relevance_regressions.py#L119) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L8) | دالة | test_arabic_normalization | لا توجد Docstring. | ناقص | 8 | [SRC-44CDA52D01-L000008](../tests/test_omarai.py#L8) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L11) | دالة | test_high_intent_with_next_step | لا توجد Docstring. | ناقص | 11 | [SRC-44CDA52D01-L000011](../tests/test_omarai.py#L11) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L16) | دالة | test_non_buyer_override | لا توجد Docstring. | ناقص | 16 | [SRC-44CDA52D01-L000016](../tests/test_omarai.py#L16) |
@@ -2290,6 +2291,9 @@
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 151 | [SRC-4397BC2CD2-L000151](../tests/test_intent_router_integration.py#L151) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 21 | [SRC-62DC597310-L000021](../tests/test_live_search_connectors.py#L21) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 49 | [SRC-62DC597310-L000049](../tests/test_live_search_connectors.py#L49) |
+| [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 124 | [SRC-188F068481-L000124](../tests/test_live_search_relevance_regressions.py#L124) |
+| [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 124 | [SRC-188F068481-L000124](../tests/test_live_search_relevance_regressions.py#L124) |
+| [tests/test_live_search_relevance_regressions.py](../tests/test_live_search_relevance_regressions.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 124 | [SRC-188F068481-L000124](../tests/test_live_search_relevance_regressions.py#L124) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_NAME | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 15 | [SRC-B106ADC5EF-L000015](../tests/test_proxy_origin.py#L15) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 16 | [SRC-B106ADC5EF-L000016](../tests/test_proxy_origin.py#L16) |

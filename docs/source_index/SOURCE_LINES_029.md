@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C353AAAC10-L000059 إلى SRC-F725E90B2A-L000134
+- النطاق: SRC-C353AAAC10-L000001 إلى SRC-F725E90B2A-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,64 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C353AAAC10-L000001](../../tests/test_request_budget.py#L1) | 1 | `"\"\"\"Unit tests for Omarai's per-request resource budget.\"\"\""` | — |
+| [SRC-C353AAAC10-L000002](../../tests/test_request_budget.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-C353AAAC10-L000003](../../tests/test_request_budget.py#L3) | 3 | `""` | — |
+| [SRC-C353AAAC10-L000004](../../tests/test_request_budget.py#L4) | 4 | `"import pytest"` | — |
+| [SRC-C353AAAC10-L000005](../../tests/test_request_budget.py#L5) | 5 | `""` | — |
+| [SRC-C353AAAC10-L000006](../../tests/test_request_budget.py#L6) | 6 | `"from agents.request_budget import RequestBudget, RequestBudgetExceeded"` | — |
+| [SRC-C353AAAC10-L000007](../../tests/test_request_budget.py#L7) | 7 | `""` | — |
+| [SRC-C353AAAC10-L000008](../../tests/test_request_budget.py#L8) | 8 | `""` | — |
+| [SRC-C353AAAC10-L000009](../../tests/test_request_budget.py#L9) | 9 | `"class FakeClock:"` | — |
+| [SRC-C353AAAC10-L000010](../../tests/test_request_budget.py#L10) | 10 | `"    def __init__(self, value: float = 100.0) -> None:"` | — |
+| [SRC-C353AAAC10-L000011](../../tests/test_request_budget.py#L11) | 11 | `"        self.value = value"` | — |
+| [SRC-C353AAAC10-L000012](../../tests/test_request_budget.py#L12) | 12 | `""` | — |
+| [SRC-C353AAAC10-L000013](../../tests/test_request_budget.py#L13) | 13 | `"    def __call__(self) -> float:"` | — |
+| [SRC-C353AAAC10-L000014](../../tests/test_request_budget.py#L14) | 14 | `"        return self.value"` | — |
+| [SRC-C353AAAC10-L000015](../../tests/test_request_budget.py#L15) | 15 | `""` | — |
+| [SRC-C353AAAC10-L000016](../../tests/test_request_budget.py#L16) | 16 | `""` | — |
+| [SRC-C353AAAC10-L000017](../../tests/test_request_budget.py#L17) | 17 | `"def test_resource_reservations_are_bounded_and_thread_safe_in_snapshot():"` | — |
+| [SRC-C353AAAC10-L000018](../../tests/test_request_budget.py#L18) | 18 | `"    clock = FakeClock()"` | — |
+| [SRC-C353AAAC10-L000019](../../tests/test_request_budget.py#L19) | 19 | `"    budget = RequestBudget("` | — |
+| [SRC-C353AAAC10-L000020](../../tests/test_request_budget.py#L20) | 20 | `"        timeout_seconds=10,"` | — |
+| [SRC-C353AAAC10-L000021](../../tests/test_request_budget.py#L21) | 21 | `"        limits={\"search_calls\": 1},"` | — |
+| [SRC-C353AAAC10-L000022](../../tests/test_request_budget.py#L22) | 22 | `"        clock=clock,"` | — |
+| [SRC-C353AAAC10-L000023](../../tests/test_request_budget.py#L23) | 23 | `"    )"` | — |
+| [SRC-C353AAAC10-L000024](../../tests/test_request_budget.py#L24) | 24 | `""` | — |
+| [SRC-C353AAAC10-L000025](../../tests/test_request_budget.py#L25) | 25 | `"    budget.reserve(\"search_calls\")"` | — |
+| [SRC-C353AAAC10-L000026](../../tests/test_request_budget.py#L26) | 26 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_calls\"):"` | — |
+| [SRC-C353AAAC10-L000027](../../tests/test_request_budget.py#L27) | 27 | `"        budget.reserve(\"search_calls\")"` | — |
+| [SRC-C353AAAC10-L000028](../../tests/test_request_budget.py#L28) | 28 | `""` | — |
+| [SRC-C353AAAC10-L000029](../../tests/test_request_budget.py#L29) | 29 | `"    snapshot = budget.snapshot()"` | — |
+| [SRC-C353AAAC10-L000030](../../tests/test_request_budget.py#L30) | 30 | `"    assert snapshot[\"counts\"][\"search_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000031](../../tests/test_request_budget.py#L31) | 31 | `"    assert snapshot[\"limits\"][\"search_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000032](../../tests/test_request_budget.py#L32) | 32 | `"    assert snapshot[\"deadline_exceeded\"] is False"` | — |
+| [SRC-C353AAAC10-L000033](../../tests/test_request_budget.py#L33) | 33 | `""` | — |
+| [SRC-C353AAAC10-L000034](../../tests/test_request_budget.py#L34) | 34 | `""` | — |
+| [SRC-C353AAAC10-L000035](../../tests/test_request_budget.py#L35) | 35 | `"def test_deadline_blocks_new_work_and_caps_outbound_timeout():"` | — |
+| [SRC-C353AAAC10-L000036](../../tests/test_request_budget.py#L36) | 36 | `"    clock = FakeClock()"` | — |
+| [SRC-C353AAAC10-L000037](../../tests/test_request_budget.py#L37) | 37 | `"    budget = RequestBudget(timeout_seconds=10, clock=clock)"` | — |
+| [SRC-C353AAAC10-L000038](../../tests/test_request_budget.py#L38) | 38 | `""` | — |
+| [SRC-C353AAAC10-L000039](../../tests/test_request_budget.py#L39) | 39 | `"    clock.value += 7"` | — |
+| [SRC-C353AAAC10-L000040](../../tests/test_request_budget.py#L40) | 40 | `"    assert budget.timeout_for(30) == pytest.approx(3)"` | — |
+| [SRC-C353AAAC10-L000041](../../tests/test_request_budget.py#L41) | 41 | `"    assert budget.timeout_for(1) == pytest.approx(1)"` | — |
+| [SRC-C353AAAC10-L000042](../../tests/test_request_budget.py#L42) | 42 | `""` | — |
+| [SRC-C353AAAC10-L000043](../../tests/test_request_budget.py#L43) | 43 | `"    clock.value += 4"` | — |
+| [SRC-C353AAAC10-L000044](../../tests/test_request_budget.py#L44) | 44 | `"    assert budget.remaining_seconds() == 0"` | — |
+| [SRC-C353AAAC10-L000045](../../tests/test_request_budget.py#L45) | 45 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
+| [SRC-C353AAAC10-L000046](../../tests/test_request_budget.py#L46) | 46 | `"        budget.reserve(\"model_calls\")"` | — |
+| [SRC-C353AAAC10-L000047](../../tests/test_request_budget.py#L47) | 47 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
+| [SRC-C353AAAC10-L000048](../../tests/test_request_budget.py#L48) | 48 | `"        budget.timeout_for(3)"` | — |
+| [SRC-C353AAAC10-L000049](../../tests/test_request_budget.py#L49) | 49 | `""` | — |
+| [SRC-C353AAAC10-L000050](../../tests/test_request_budget.py#L50) | 50 | `""` | — |
+| [SRC-C353AAAC10-L000051](../../tests/test_request_budget.py#L51) | 51 | `"def test_environment_overrides_are_clamped(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000052](../../tests/test_request_budget.py#L52) | 52 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_BUDGET_SECONDS\", \"999\")"` | — |
+| [SRC-C353AAAC10-L000053](../../tests/test_request_budget.py#L53) | 53 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_SEARCH_CALLS\", \"999\")"` | — |
+| [SRC-C353AAAC10-L000054](../../tests/test_request_budget.py#L54) | 54 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_MODEL_CALLS\", \"-1\")"` | — |
+| [SRC-C353AAAC10-L000055](../../tests/test_request_budget.py#L55) | 55 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_TOOL_CALLS\", \"-1\")"` | — |
+| [SRC-C353AAAC10-L000056](../../tests/test_request_budget.py#L56) | 56 | `""` | — |
+| [SRC-C353AAAC10-L000057](../../tests/test_request_budget.py#L57) | 57 | `"    snapshot = RequestBudget.from_environment().snapshot()"` | — |
+| [SRC-C353AAAC10-L000058](../../tests/test_request_budget.py#L58) | 58 | `""` | — |
 | [SRC-C353AAAC10-L000059](../../tests/test_request_budget.py#L59) | 59 | `"    assert snapshot[\"timeout_seconds\"] == 120"` | — |
 | [SRC-C353AAAC10-L000060](../../tests/test_request_budget.py#L60) | 60 | `"    assert snapshot[\"limits\"][\"search_calls\"] == 40"` | — |
 | [SRC-C353AAAC10-L000061](../../tests/test_request_budget.py#L61) | 61 | `"    assert snapshot[\"limits\"][\"model_calls\"] == 1"` | — |
@@ -803,61 +861,3 @@
 | [SRC-F725E90B2A-L000074](../../tests/test_web_agent.py#L74) | 74 | `"        history=[{\"role\": \"user\", \"content\": \"ما هي التقنية؟\"}],"` | — |
 | [SRC-F725E90B2A-L000075](../../tests/test_web_agent.py#L75) | 75 | `"    )"` | — |
 | [SRC-F725E90B2A-L000076](../../tests/test_web_agent.py#L76) | 76 | `""` | — |
-| [SRC-F725E90B2A-L000077](../../tests/test_web_agent.py#L77) | 77 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-F725E90B2A-L000078](../../tests/test_web_agent.py#L78) | 78 | `"    assert result[\"search_attempted\"] is True"` | — |
-| [SRC-F725E90B2A-L000079](../../tests/test_web_agent.py#L79) | 79 | `"    assert result[\"search_report\"][\"search_attempted\"] is True"` | — |
-| [SRC-F725E90B2A-L000080](../../tests/test_web_agent.py#L80) | 80 | `"    assert result[\"search_report\"][\"search_outcome\"] == \"attempted_with_usable_sources\""` | — |
-| [SRC-F725E90B2A-L000081](../../tests/test_web_agent.py#L81) | 81 | `"    assert result[\"search_report\"][\"research_quality_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000082](../../tests/test_web_agent.py#L82) | 82 | `"        \"process_coverage_not_factual_probability\""` | — |
-| [SRC-F725E90B2A-L000083](../../tests/test_web_agent.py#L83) | 83 | `"    )"` | — |
-| [SRC-F725E90B2A-L000084](../../tests/test_web_agent.py#L84) | 84 | `"    assert result[\"search_report\"][\"claim_audit_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000085](../../tests/test_web_agent.py#L85) | 85 | `"        \"model_assisted_not_independent_fact_check\""` | — |
-| [SRC-F725E90B2A-L000086](../../tests/test_web_agent.py#L86) | 86 | `"    )"` | — |
-| [SRC-F725E90B2A-L000087](../../tests/test_web_agent.py#L87) | 87 | `"    assert result[\"search_report\"][\"distinct_registrable_domains\"] == 2"` | — |
-| [SRC-F725E90B2A-L000088](../../tests/test_web_agent.py#L88) | 88 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
-| [SRC-F725E90B2A-L000089](../../tests/test_web_agent.py#L89) | 89 | `"    assert result[\"search_report\"][\"independent_sources_field_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000090](../../tests/test_web_agent.py#L90) | 90 | `"        \"legacy_compatibility_alias_for_distinct_registrable_domain_count\""` | — |
-| [SRC-F725E90B2A-L000091](../../tests/test_web_agent.py#L91) | 91 | `"    )"` | — |
-| [SRC-F725E90B2A-L000092](../../tests/test_web_agent.py#L92) | 92 | `"    assert any(\"تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري\" in warning"` | — |
-| [SRC-F725E90B2A-L000093](../../tests/test_web_agent.py#L93) | 93 | `"               for warning in result[\"warnings\"])"` | — |
-| [SRC-F725E90B2A-L000094](../../tests/test_web_agent.py#L94) | 94 | `"    assert result[\"used_language_model\"] is True"` | — |
-| [SRC-F725E90B2A-L000095](../../tests/test_web_agent.py#L95) | 95 | `"    assert result[\"sources\"][0][\"url\"] == \"https://example.com/research\""` | — |
-| [SRC-F725E90B2A-L000096](../../tests/test_web_agent.py#L96) | 96 | `"    assert \"[المصدر 1]\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L000097](../../tests/test_web_agent.py#L97) | 97 | `"    assert seen[\"question\"] == \"قارن هذه التقنية\""` | — |
-| [SRC-F725E90B2A-L000098](../../tests/test_web_agent.py#L98) | 98 | `"    assert seen[\"history\"] == [{\"role\": \"user\", \"content\": \"ما هي التقنية؟\"}]"` | — |
-| [SRC-F725E90B2A-L000099](../../tests/test_web_agent.py#L99) | 99 | `""` | — |
-| [SRC-F725E90B2A-L000100](../../tests/test_web_agent.py#L100) | 100 | `""` | — |
-| [SRC-F725E90B2A-L000101](../../tests/test_web_agent.py#L101) | 101 | `"def test_agent_returns_search_snippets_if_model_not_configured(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000102](../../tests/test_web_agent.py#L102) | 102 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000103](../../tests/test_web_agent.py#L103) | 103 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L000104](../../tests/test_web_agent.py#L104) | 104 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000105](../../tests/test_web_agent.py#L105) | 105 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L000106](../../tests/test_web_agent.py#L106) | 106 | `"        \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L000107](../../tests/test_web_agent.py#L107) | 107 | `"        lambda plan: ("` | — |
-| [SRC-F725E90B2A-L000108](../../tests/test_web_agent.py#L108) | 108 | `"            [sample_source(0), sample_source(1)],"` | — |
-| [SRC-F725E90B2A-L000109](../../tests/test_web_agent.py#L109) | 109 | `"            [],"` | — |
-| [SRC-F725E90B2A-L000110](../../tests/test_web_agent.py#L110) | 110 | `"            {"` | — |
-| [SRC-F725E90B2A-L000111](../../tests/test_web_agent.py#L111) | 111 | `"                \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L000112](../../tests/test_web_agent.py#L112) | 112 | `"                \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L000113](../../tests/test_web_agent.py#L113) | 113 | `"                \"query_results\": [],"` | — |
-| [SRC-F725E90B2A-L000114](../../tests/test_web_agent.py#L114) | 114 | `"                \"unique_sources\": 2,"` | — |
-| [SRC-F725E90B2A-L000115](../../tests/test_web_agent.py#L115) | 115 | `"                \"pages_fetched\": 2,"` | — |
-| [SRC-F725E90B2A-L000116](../../tests/test_web_agent.py#L116) | 116 | `"                \"providers_used\": [\"test\"],"` | — |
-| [SRC-F725E90B2A-L000117](../../tests/test_web_agent.py#L117) | 117 | `"                \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L000118](../../tests/test_web_agent.py#L118) | 118 | `"                \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L000119](../../tests/test_web_agent.py#L119) | 119 | `"                \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L000120](../../tests/test_web_agent.py#L120) | 120 | `"                \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L000121](../../tests/test_web_agent.py#L121) | 121 | `"            },"` | — |
-| [SRC-F725E90B2A-L000122](../../tests/test_web_agent.py#L122) | 122 | `"        ),"` | — |
-| [SRC-F725E90B2A-L000123](../../tests/test_web_agent.py#L123) | 123 | `"    )"` | — |
-| [SRC-F725E90B2A-L000124](../../tests/test_web_agent.py#L124) | 124 | `""` | — |
-| [SRC-F725E90B2A-L000125](../../tests/test_web_agent.py#L125) | 125 | `"    result = agent.answer(\"ما الذي يقوله المصدر؟\")"` | — |
-| [SRC-F725E90B2A-L000126](../../tests/test_web_agent.py#L126) | 126 | `""` | — |
-| [SRC-F725E90B2A-L000127](../../tests/test_web_agent.py#L127) | 127 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-F725E90B2A-L000128](../../tests/test_web_agent.py#L128) | 128 | `"    assert result[\"used_language_model\"] is False"` | — |
-| [SRC-F725E90B2A-L000129](../../tests/test_web_agent.py#L129) | 129 | `"    assert \"OPENROUTER_API_KEY\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L000130](../../tests/test_web_agent.py#L130) | 130 | `"    assert result[\"sources\"][0][\"page_fetched\"] is True"` | — |
-| [SRC-F725E90B2A-L000131](../../tests/test_web_agent.py#L131) | 131 | `""` | — |
-| [SRC-F725E90B2A-L000132](../../tests/test_web_agent.py#L132) | 132 | `""` | — |
-| [SRC-F725E90B2A-L000133](../../tests/test_web_agent.py#L133) | 133 | `"def test_agent_rejects_empty_or_oversized_question():"` | — |
-| [SRC-F725E90B2A-L000134](../../tests/test_web_agent.py#L134) | 134 | `"    agent = WebAgent()"` | — |
