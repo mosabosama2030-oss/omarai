@@ -67,6 +67,29 @@ _SEARCH_STOPWORDS = frozenset({
     "news", "official", "sources", "source", "reports", "report", "analysis",
     "site", "com", "org", "net", "www",
 })
+# Ignore generic request/presentation wording when scoring a result against a query.
+# These are query-only stopwords: topic words remain eligible for relevance scoring.
+_QUERY_TASK_STOPWORDS = frozenset({
+    "اذكر", "اذكري", "واذكر", "اذكروا", "استخدم", "واستخدم", "استخدمي", "استعمل",
+    "اعرض", "واعرض", "اعرضي", "اجمع", "اجب", "واجب", "جاوب", "وضح", "ووضح",
+    "حلل", "قارن", "وقارن", "ميز", "وميز", "اهم",
+    "مصدر", "مصادر", "المصدر", "المصادر", "رابط", "روابط",
+    "مباشر", "مباشره", "موثوق", "موثوقه", "بالعربيه", "بالعربي",
+    "بايجاز", "باختصار", "ايجاز", "حقائق", "الحقائق", "والحقائق",
+    "استنتاج", "استنتاجات", "والاستنتاجات", "متعدده", "متعدد",
+    "تواجه", "حول", "خلال", "الايام", "ايام", "السبعه", "سبعه",
+    "الماضيه", "السابقه", "تواريخ", "التواريخ", "تاريخ",
+    "اخبار", "الاخبار", "احدث", "قديمه", "جديده", "معلومات",
+    "باعتبارها", "تعرض", "لتمثيل", "عموما", "النتائج", "نتائج",
+    "كافيه", "ايجابيه", "الايجابيه", "سلبيه", "السلبيه", "المتاحه",
+    "عامه", "العامه",
+    "cite", "citation", "citations", "link", "links", "direct",
+    "brief", "briefly", "answer", "provide", "mention", "present",
+    "use", "multiple", "fact", "facts", "conclusion", "conclusions",
+    "date", "dates", "day", "days", "past", "represent", "representative",
+    "generally", "available", "information", "old", "new", "positive", "negative",
+    "latest", "current", "recent", "today",
+})
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
     "المصري": {"egyptian", "egypt"}, "مركزي": {"central"},
@@ -87,6 +110,29 @@ _SEARCH_SYNONYMS = {
     "شقة": {"apartment", "flat"}, "شقق": {"apartments", "flats"},
     "عميل": {"customer", "buyer"}, "عملاء": {"customers", "buyers"},
     "شراء": {"buy", "purchase"}, "مشتري": {"buyer"},
+    # Common bilingual concepts exercised by live search acceptance tests.
+    "سيارة": {"car", "vehicle", "automobile"},
+    "سيارات": {"cars", "vehicles", "automobiles"},
+    "السيارات": {"cars", "vehicles", "automobiles"},
+    "كهربائية": {"electric", "electrical", "ev"},
+    "الكهربائية": {"electric", "electrical", "ev"},
+    "شحن": {"charging", "charge", "chargers"},
+    "الشحن": {"charging", "charge", "chargers"},
+    "تكلفة": {"cost", "costs"},
+    "التكلفة": {"cost", "costs"},
+    "تحديات": {"challenges", "issues"},
+    "التحديات": {"challenges", "issues"},
+    "البنية": {"infrastructure"},
+    "التحتية": {"infrastructure"},
+    "وكيل": {"agent"},
+    "وكلاء": {"agents", "agent"},
+    "الذكاء": {"intelligence", "ai"},
+    "الاصطناعي": {"artificial", "ai"},
+    "التطورات": {"developments", "advances"},
+    "اراء": {"opinions", "reviews"},
+    "تجارب": {"experiences", "reviews"},
+    "مستخدمين": {"users", "user"},
+    "المستخدمين": {"users", "user"},
 }
 _CALENDAR_MONTHS = (
     "يناير", "فبراير", "مارس", "ابريل", "أبريل", "مايو", "يونيو",
@@ -146,10 +192,15 @@ def _relevance_ratio(query: str, evidence: str) -> float:
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     query_tokens = {
         token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
-        if token not in _SEARCH_STOPWORDS and len(token) >= 2
+        if (
+            token not in _SEARCH_STOPWORDS
+            and token not in _QUERY_TASK_STOPWORDS
+            and len(token) >= 2
+        )
     }
+    # An empty/generic query must not make every candidate appear relevant.
     if not query_tokens:
-        return 1.0
+        return 0.0
     expanded_evidence = _search_tokens(evidence)
     matched = sum(
         1 for token in query_tokens
@@ -2542,6 +2593,11 @@ class WebAgent:
                 else False if error_response_statuses
                 else None
             )
+            usable_results: bool | None = (
+                True if result_count > 0 or useful.get(name, 0) > 0
+                else False if successful_statuses
+                else None
+            )
             implementation_status = (
                 "implemented_in_code" if name in config
                 else "observed_runtime_path" if attempts or useful.get(name, 0)
@@ -2556,7 +2612,9 @@ class WebAgent:
                 "implementation_status": implementation_status,
                 "configured": bool(ready), "configuration_status": config_status,
                 "attempted": attempted, "available_for_this_request": available,
-                "verified_for_this_request": verified, "failure_observed": failure_observed,
+                "verified_for_this_request": verified,
+                "usable_results_for_this_request": usable_results,
+                "failure_observed": failure_observed,
                 "status": status, "observed_statuses": list(dict.fromkeys(statuses))[:6],
                 "result_count": result_count, "useful_result_count": useful.get(name, 0),
                 "rejected_count": rejected_count, "queries": queries, "errors": errors,
