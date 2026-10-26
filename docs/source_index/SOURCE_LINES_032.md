@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001310 إلى SRC-F725E90B2A-L002109
+- النطاق: SRC-F725E90B2A-L001308 إلى SRC-F725E90B2A-L002107
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001308](../../tests/test_web_agent.py#L1308) | 1308 | `"    messages = captured[\"messages\"]"` | — |
+| [SRC-F725E90B2A-L001309](../../tests/test_web_agent.py#L1309) | 1309 | `"    system_content = \"\\n\".join("` | — |
 | [SRC-F725E90B2A-L001310](../../tests/test_web_agent.py#L1310) | 1310 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
 | [SRC-F725E90B2A-L001311](../../tests/test_web_agent.py#L1311) | 1311 | `"    )"` | — |
 | [SRC-F725E90B2A-L001312](../../tests/test_web_agent.py#L1312) | 1312 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002105](../../tests/test_web_agent.py#L2105) | 2105 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
 | [SRC-F725E90B2A-L002106](../../tests/test_web_agent.py#L2106) | 2106 | `"        \"snippet\": \"أفضل شقق للبيع بالتقسيط\","` | — |
 | [SRC-F725E90B2A-L002107](../../tests/test_web_agent.py#L2107) | 2107 | `"        \"page_text\": \"إعلانات وحدات سكنية للبيع بمساحات مختلفة.\","` | — |
-| [SRC-F725E90B2A-L002108](../../tests/test_web_agent.py#L2108) | 2108 | `"    }"` | — |
-| [SRC-F725E90B2A-L002109](../../tests/test_web_agent.py#L2109) | 2109 | `"    buyer_post = {"` | — |

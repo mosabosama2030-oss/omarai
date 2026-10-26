@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002110 إلى SRC-F725E90B2A-L002909
+- النطاق: SRC-F725E90B2A-L002108 إلى SRC-F725E90B2A-L002907
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002108](../../tests/test_web_agent.py#L2108) | 2108 | `"    }"` | — |
+| [SRC-F725E90B2A-L002109](../../tests/test_web_agent.py#L2109) | 2109 | `"    buyer_post = {"` | — |
 | [SRC-F725E90B2A-L002110](../../tests/test_web_agent.py#L2110) | 2110 | `"        \"title\": \"بدور على شقة تمليك في العاصمة الإدارية\","` | — |
 | [SRC-F725E90B2A-L002111](../../tests/test_web_agent.py#L2111) | 2111 | `"        \"snippet\": \"مطلوب شقة تمليك في العاصمة الإدارية.\","` | — |
 | [SRC-F725E90B2A-L002112](../../tests/test_web_agent.py#L2112) | 2112 | `"        \"page_text\": \"أنا بدور على شقة تمليك في العاصمة الإدارية وعايز أشتري خلال شهر.\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002905](../../tests/test_web_agent.py#L2905) | 2905 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L002906](../../tests/test_web_agent.py#L2906) | 2906 | `"    seen = []"` | — |
 | [SRC-F725E90B2A-L002907](../../tests/test_web_agent.py#L2907) | 2907 | `""` | — |
-| [SRC-F725E90B2A-L002908](../../tests/test_web_agent.py#L2908) | 2908 | `"    def capture(query):"` | — |
-| [SRC-F725E90B2A-L002909](../../tests/test_web_agent.py#L2909) | 2909 | `"        seen.append(query)"` | — |

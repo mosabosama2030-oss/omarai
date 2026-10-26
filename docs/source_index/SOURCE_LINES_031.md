@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000510 إلى SRC-F725E90B2A-L001309
+- النطاق: SRC-F725E90B2A-L000508 إلى SRC-F725E90B2A-L001307
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000508](../../tests/test_web_agent.py#L508) | 508 | `"    )"` | — |
+| [SRC-F725E90B2A-L000509](../../tests/test_web_agent.py#L509) | 509 | `"    assert len(results) == 2  # one matching post for each explicitly configured page"` | — |
 | [SRC-F725E90B2A-L000510](../../tests/test_web_agent.py#L510) | 510 | `"    assert warnings == []"` | — |
 | [SRC-F725E90B2A-L000511](../../tests/test_web_agent.py#L511) | 511 | `"    assert all(item[\"provider\"] == \"facebook_pages_api\" for item in results)"` | — |
 | [SRC-F725E90B2A-L000512](../../tests/test_web_agent.py#L512) | 512 | `"    assert all(\"Electric car owners\" in item[\"snippet\"] for item in results)"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001305](../../tests/test_web_agent.py#L1305) | 1305 | `"        search_report={},"` | — |
 | [SRC-F725E90B2A-L001306](../../tests/test_web_agent.py#L1306) | 1306 | `"    )"` | — |
 | [SRC-F725E90B2A-L001307](../../tests/test_web_agent.py#L1307) | 1307 | `""` | — |
-| [SRC-F725E90B2A-L001308](../../tests/test_web_agent.py#L1308) | 1308 | `"    messages = captured[\"messages\"]"` | — |
-| [SRC-F725E90B2A-L001309](../../tests/test_web_agent.py#L1309) | 1309 | `"    system_content = \"\\n\".join("` | — |

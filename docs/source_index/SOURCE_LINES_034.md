@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **034**
-- سجلات الأسطر: **640**
-- النطاق: SRC-F725E90B2A-L002910 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **642**
+- النطاق: SRC-F725E90B2A-L002908 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002908](../../tests/test_web_agent.py#L2908) | 2908 | `"    def capture(query):"` | — |
+| [SRC-F725E90B2A-L002909](../../tests/test_web_agent.py#L2909) | 2909 | `"        seen.append(query)"` | — |
 | [SRC-F725E90B2A-L002910](../../tests/test_web_agent.py#L2910) | 2910 | `"        return []"` | — |
 | [SRC-F725E90B2A-L002911](../../tests/test_web_agent.py#L2911) | 2911 | `""` | — |
 | [SRC-F725E90B2A-L002912](../../tests/test_web_agent.py#L2912) | 2912 | `"    for env_name in ("` | — |
