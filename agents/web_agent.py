@@ -83,6 +83,16 @@ _SEARCH_STOPWORDS = frozenset({
     "الماضية", "ماضية", "الاسبوع", "حاليا", "الان", "احدث", "ولا",
     "تعرض", "باعتبارها",
 })
+# Search-expansion modifiers are useful after a real topic, but must not stand in
+# for a topic if a future planner/expansion path loses its subject.
+_GENERIC_QUERY_MODIFIER_TOKENS = frozenset({
+    "risk", "risks", "limitation", "limitations", "alternative", "alternatives",
+    "recent", "data", "review", "reviews", "comparison", "compare", "official",
+    "primary", "source", "sources", "evidence", "report", "reports", "case", "cases",
+    "study", "studies", "analysis", "latest", "news", "update", "updates",
+    "announcement", "announcements", "comprehensive", "research", "statistic",
+    "statistics", "trend", "trends",
+})
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
     "المصري": {"egyptian", "egypt"}, "مركزي": {"central"},
@@ -184,15 +194,19 @@ def _search_tokens(value: str) -> set[str]:
 
 
 def _relevance_query_tokens(query: str) -> set[str]:
-    """Return topic concepts after removing answer-format instructions."""
+    """Return topic concepts after removing answer-format and query-expansion wording."""
     query = compact_search_query(query)
     if not query:
         return set()
     query_text = _normalize_search_query(query).casefold()
-    query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
+    query_text = re.sub(r"(?i)\\bsite\\s*:\\s*\\S+", " ", query_text)
     return {
-        token for token in re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", query_text)
-        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2
+        token for token in re.findall(r"[a-z0-9]+|[\\u0620-\\u064A\\u066E-\\u06D3]+", query_text)
+        if (
+            token not in _NORMALIZED_SEARCH_STOPWORDS
+            and token not in _GENERIC_QUERY_MODIFIER_TOKENS
+            and len(token) >= 2
+        )
     }
 
 
@@ -4102,11 +4116,15 @@ class WebAgent:
                     allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
-        plan["queries"] = list(dict.fromkeys(
-            compact_search_query(query)
-            for query in plan.get("queries", [])
-            if isinstance(query, str) and query.strip() and compact_search_query(query)
-        ))[:MAX_PLAN_QUERIES]
+        final_topic_queries = []
+        for raw_query in plan.get("queries", []):
+            if not isinstance(raw_query, str) or not raw_query.strip():
+                continue
+            compacted_query = compact_search_query(raw_query)
+            if compacted_query and _relevance_query_tokens(compacted_query):
+                final_topic_queries.append(compacted_query)
+        plan["queries"] = list(dict.fromkeys(final_topic_queries))[:MAX_PLAN_QUERIES]
+
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
         report: dict[str, Any] = {}
