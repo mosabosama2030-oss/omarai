@@ -3049,7 +3049,7 @@ class WebAgent:
                     cleaned_query = re.sub(
                         rf"(?i)(?<!\\w){re.escape(month)}(?!\\w)", " ", cleaned_query
                     )
-            cleaned_query = re.sub(r"\\s+", " ", cleaned_query).strip()
+            cleaned_query = re.sub(r"\s+", " ", cleaned_query).strip()
             if cleaned_query:
                 cleaned_queries.append(cleaned_query)
         if not cleaned_queries or _relevance_ratio(question, cleaned_queries[0]) < 0.20:
@@ -3949,7 +3949,7 @@ class WebAgent:
                             else ""
                         )
                         subject = re.sub(
-                            r"^(?:ابحث|بحث|دور|اعثر)\\s+(?:عن|على)?\\s*",
+                            r"^(?:ابحث|بحث|دور|اعثر)\s+(?:عن|على)?\s*",
                             "",
                             navigation_seed,
                         ).strip()
