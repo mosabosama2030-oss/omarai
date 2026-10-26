@@ -117,9 +117,9 @@
 | [SRC-1AE03B9EC3-L000199](../../agents/web_agent.py#L199) | 199 | `"    if not query:"` | — |
 | [SRC-1AE03B9EC3-L000200](../../agents/web_agent.py#L200) | 200 | `"        return set()"` | — |
 | [SRC-1AE03B9EC3-L000201](../../agents/web_agent.py#L201) | 201 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000202](../../agents/web_agent.py#L202) | 202 | `"    query_text = re.sub(r\"(?i)\\\\bsite\\\\s*:\\\\s*\\\\S+\", \" \", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000202](../../agents/web_agent.py#L202) | 202 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000203](../../agents/web_agent.py#L203) | 203 | `"    return {"` | — |
-| [SRC-1AE03B9EC3-L000204](../../agents/web_agent.py#L204) | 204 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\\\u0620-\\\\u064A\\\\u066E-\\\\u06D3]+\", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000204](../../agents/web_agent.py#L204) | 204 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0620-\\u064A\\u066E-\\u06D3]+\", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000205](../../agents/web_agent.py#L205) | 205 | `"        if ("` | — |
 | [SRC-1AE03B9EC3-L000206](../../agents/web_agent.py#L206) | 206 | `"            token not in _NORMALIZED_SEARCH_STOPWORDS"` | — |
 | [SRC-1AE03B9EC3-L000207](../../agents/web_agent.py#L207) | 207 | `"            and token not in _GENERIC_QUERY_MODIFIER_TOKENS"` | — |
