@@ -90,3 +90,61 @@ def test_connector_summary_distinguishes_completed_filtering_from_usable_results
 )
 def test_core_bilingual_topic_synonyms_are_matched(question, evidence):
     assert _relevance_ratio(question, evidence) >= 0.20
+
+@pytest.mark.parametrize(
+    ("question", "title", "snippet"),
+    [
+        (
+            "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.",
+            "Cairo is the capital of Egypt",
+            "Cairo is the capital city of Egypt.",
+        ),
+        (
+            "حلّل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميّز بين الحقائق والاستنتاجات، واذكر روابط المصادر.",
+            "Electric vehicles in Egypt: charging and cost",
+            "Electric vehicles in Egypt face charging infrastructure challenges and higher ownership costs.",
+        ),
+        (
+            "ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.",
+            "Recent developments in AI agents",
+            "Recent developments in AI agents include planning, tool use, and autonomous workflows.",
+        ),
+        (
+            "اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضّح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.",
+            "Egyptian electric-car user experiences",
+            "Egyptian electric-car users share experiences about charging access, ownership costs, and public charging infrastructure.",
+        ),
+    ],
+)
+def test_search_pipeline_accepts_relevant_english_bing_candidates_for_arabic_questions(
+    monkeypatch, question, title, snippet
+):
+    # Deterministic integration coverage: no external network, paid API, or secret.
+    agent = WebAgent()
+    for key in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
+        monkeypatch.delenv(key, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
+    monkeypatch.setattr(
+        agent,
+        "_search_bing_rss",
+        lambda query: [{
+            "title": title,
+            "url": "https://example.org/research",
+            "snippet": snippet,
+            "provider": "bing_rss",
+            "search_query": query,
+        }],
+    )
+    monkeypatch.setattr(agent, "_search_news", lambda _query: [])
+
+    sources = agent._search_web(question)
+
+    assert len(sources) == 1
+    assert sources[0]["provider"] == "bing_rss"
+    assert sources[0]["url"] == "https://example.org/research"
+    summary = agent._connector_status_summary(agent._provider_diagnostics, sources)
+    bing = next(item for item in summary["connectors"] if item["name"] == "bing_rss")
+    assert bing["usable_results_for_this_request"] is True
+    assert bing["candidate_count"] == 1
+    assert bing["result_count"] == 1
+    assert bing["rejected_count"] == 0
