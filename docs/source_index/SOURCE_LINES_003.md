@@ -706,14 +706,14 @@
 | [SRC-1AE03B9EC3-L000074](../../agents/web_agent.py#L74) | 74 | `"    \"اعرض\", \"واعرض\", \"اعرضي\", \"اجمع\", \"اجب\", \"واجب\", \"جاوب\", \"وضح\", \"ووضح\","` | — |
 | [SRC-1AE03B9EC3-L000075](../../agents/web_agent.py#L75) | 75 | `"    \"حلل\", \"قارن\", \"وقارن\", \"ميز\", \"وميز\", \"اهم\","` | — |
 | [SRC-1AE03B9EC3-L000076](../../agents/web_agent.py#L76) | 76 | `"    \"مصدر\", \"مصادر\", \"المصدر\", \"المصادر\", \"رابط\", \"روابط\","` | — |
-| [SRC-1AE03B9EC3-L000077](../../agents/web_agent.py#L77) | 77 | `"    \"مباشر\", \"مباشره\", \"موثوق\", \"موثوقه\", \"بالعربيه\", \"بالعربي\","` | — |
+| [SRC-1AE03B9EC3-L000077](../../agents/web_agent.py#L77) | 77 | `"    \"مباشر\", \"مباشره\", \"مباشرا\", \"موثوق\", \"موثوقه\", \"موثوقا\", \"مصدرا\", \"رابطا\", \"بالعربيه\", \"بالعربي\","` | — |
 | [SRC-1AE03B9EC3-L000078](../../agents/web_agent.py#L78) | 78 | `"    \"بايجاز\", \"باختصار\", \"ايجاز\", \"حقائق\", \"الحقائق\", \"والحقائق\","` | — |
 | [SRC-1AE03B9EC3-L000079](../../agents/web_agent.py#L79) | 79 | `"    \"استنتاج\", \"استنتاجات\", \"والاستنتاجات\", \"متعدده\", \"متعدد\","` | — |
 | [SRC-1AE03B9EC3-L000080](../../agents/web_agent.py#L80) | 80 | `"    \"تواجه\", \"حول\", \"خلال\", \"الايام\", \"ايام\", \"السبعه\", \"سبعه\","` | — |
 | [SRC-1AE03B9EC3-L000081](../../agents/web_agent.py#L81) | 81 | `"    \"الماضيه\", \"السابقه\", \"تواريخ\", \"التواريخ\", \"تاريخ\","` | — |
 | [SRC-1AE03B9EC3-L000082](../../agents/web_agent.py#L82) | 82 | `"    \"اخبار\", \"الاخبار\", \"احدث\", \"قديمه\", \"جديده\", \"معلومات\","` | — |
 | [SRC-1AE03B9EC3-L000083](../../agents/web_agent.py#L83) | 83 | `"    \"باعتبارها\", \"تعرض\", \"لتمثيل\", \"عموما\", \"النتائج\", \"نتائج\","` | — |
-| [SRC-1AE03B9EC3-L000084](../../agents/web_agent.py#L84) | 84 | `"    \"كافيه\", \"ايجابيه\", \"الايجابيه\", \"سلبيه\", \"السلبيه\", \"المتاحه\","` | — |
+| [SRC-1AE03B9EC3-L000084](../../agents/web_agent.py#L84) | 84 | `"    \"كافيه\", \"ايجابيه\", \"الايجابيه\", \"سلبيه\", \"السلبيه\", \"المتاحه\", \"غير\", \"اذا\", \"المنشورات\","` | — |
 | [SRC-1AE03B9EC3-L000085](../../agents/web_agent.py#L85) | 85 | `"    \"عامه\", \"العامه\","` | — |
 | [SRC-1AE03B9EC3-L000086](../../agents/web_agent.py#L86) | 86 | `"    \"cite\", \"citation\", \"citations\", \"link\", \"links\", \"direct\","` | — |
 | [SRC-1AE03B9EC3-L000087](../../agents/web_agent.py#L87) | 87 | `"    \"brief\", \"briefly\", \"answer\", \"provide\", \"mention\", \"present\","` | — |
@@ -744,8 +744,8 @@
 | [SRC-1AE03B9EC3-L000112](../../agents/web_agent.py#L112) | 112 | `"    \"شراء\": {\"buy\", \"purchase\"}, \"مشتري\": {\"buyer\"},"` | — |
 | [SRC-1AE03B9EC3-L000113](../../agents/web_agent.py#L113) | 113 | `"    # Common bilingual concepts exercised by live search acceptance tests."` | — |
 | [SRC-1AE03B9EC3-L000114](../../agents/web_agent.py#L114) | 114 | `"    \"سيارة\": {\"car\", \"vehicle\", \"automobile\"},"` | — |
-| [SRC-1AE03B9EC3-L000115](../../agents/web_agent.py#L115) | 115 | `"    \"سيارات\": {\"cars\", \"vehicles\", \"automobiles\"},"` | — |
-| [SRC-1AE03B9EC3-L000116](../../agents/web_agent.py#L116) | 116 | `"    \"السيارات\": {\"cars\", \"vehicles\", \"automobiles\"},"` | — |
+| [SRC-1AE03B9EC3-L000115](../../agents/web_agent.py#L115) | 115 | `"    \"سيارات\": {\"cars\", \"car\", \"vehicles\", \"vehicle\", \"automobiles\", \"automobile\"},"` | — |
+| [SRC-1AE03B9EC3-L000116](../../agents/web_agent.py#L116) | 116 | `"    \"السيارات\": {\"cars\", \"car\", \"vehicles\", \"vehicle\", \"automobiles\", \"automobile\"},"` | — |
 | [SRC-1AE03B9EC3-L000117](../../agents/web_agent.py#L117) | 117 | `"    \"كهربائية\": {\"electric\", \"electrical\", \"ev\"},"` | — |
 | [SRC-1AE03B9EC3-L000118](../../agents/web_agent.py#L118) | 118 | `"    \"الكهربائية\": {\"electric\", \"electrical\", \"ev\"},"` | — |
 | [SRC-1AE03B9EC3-L000119](../../agents/web_agent.py#L119) | 119 | `"    \"شحن\": {\"charging\", \"charge\", \"chargers\"},"` | — |
@@ -785,43 +785,43 @@
 | [SRC-1AE03B9EC3-L000153](../../agents/web_agent.py#L153) | 153 | `"    return re.sub(r\"\\s+\", \" \", value).strip()"` | — |
 | [SRC-1AE03B9EC3-L000154](../../agents/web_agent.py#L154) | 154 | `""` | — |
 | [SRC-1AE03B9EC3-L000155](../../agents/web_agent.py#L155) | 155 | `""` | — |
-| [SRC-1AE03B9EC3-L000156](../../agents/web_agent.py#L156) | 156 | `"# Normalize synonym keys and values by the same rules as search text. This avoids"` | — |
-| [SRC-1AE03B9EC3-L000157](../../agents/web_agent.py#L157) | 157 | `"# Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching."` | — |
-| [SRC-1AE03B9EC3-L000158](../../agents/web_agent.py#L158) | 158 | `"_NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}"` | — |
-| [SRC-1AE03B9EC3-L000159](../../agents/web_agent.py#L159) | 159 | `"for _synonym_key, _synonym_values in _SEARCH_SYNONYMS.items():"` | — |
-| [SRC-1AE03B9EC3-L000160](../../agents/web_agent.py#L160) | 160 | `"    _normalized_key = _normalize_search_query(_synonym_key).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000161](../../agents/web_agent.py#L161) | 161 | `"    _NORMALIZED_SEARCH_SYNONYMS.setdefault(_normalized_key, set()).update("` | — |
-| [SRC-1AE03B9EC3-L000162](../../agents/web_agent.py#L162) | 162 | `"        _normalize_search_query(value).casefold() for value in _synonym_values"` | — |
-| [SRC-1AE03B9EC3-L000163](../../agents/web_agent.py#L163) | 163 | `"    )"` | — |
-| [SRC-1AE03B9EC3-L000164](../../agents/web_agent.py#L164) | 164 | `""` | — |
+| [SRC-1AE03B9EC3-L000156](../../agents/web_agent.py#L156) | 156 | `"# Arabic punctuation lives inside the broad Unicode Arabic block used by the tokenizer."` | — |
+| [SRC-1AE03B9EC3-L000157](../../agents/web_agent.py#L157) | 157 | `"# Replace punctuation with spaces before extracting tokens so \"مصر؟\" matches \"مصر\"."` | — |
+| [SRC-1AE03B9EC3-L000158](../../agents/web_agent.py#L158) | 158 | `"_ARABIC_PUNCTUATION_RE = re.compile(r\"[\\u060C\\u061B\\u061F\\u06D4]\")"` | — |
+| [SRC-1AE03B9EC3-L000159](../../agents/web_agent.py#L159) | 159 | `"_NORMALIZED_SEARCH_STOPWORDS = frozenset("` | — |
+| [SRC-1AE03B9EC3-L000160](../../agents/web_agent.py#L160) | 160 | `"    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS"` | — |
+| [SRC-1AE03B9EC3-L000161](../../agents/web_agent.py#L161) | 161 | `")"` | — |
+| [SRC-1AE03B9EC3-L000162](../../agents/web_agent.py#L162) | 162 | `"_NORMALIZED_QUERY_TASK_STOPWORDS = frozenset("` | — |
+| [SRC-1AE03B9EC3-L000163](../../agents/web_agent.py#L163) | 163 | `"    _normalize_search_query(word).casefold() for word in _QUERY_TASK_STOPWORDS"` | — |
+| [SRC-1AE03B9EC3-L000164](../../agents/web_agent.py#L164) | 164 | `")"` | — |
 | [SRC-1AE03B9EC3-L000165](../../agents/web_agent.py#L165) | 165 | `""` | — |
-| [SRC-1AE03B9EC3-L000166](../../agents/web_agent.py#L166) | 166 | `"def _search_tokens(value: str) -> set[str]:"` | — |
-| [SRC-1AE03B9EC3-L000167](../../agents/web_agent.py#L167) | 167 | `"    \"\"\"Tokenize Arabic/English text and expand a small bilingual vocabulary.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000168](../../agents/web_agent.py#L168) | 168 | `"    value = _normalize_search_query(value).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000169](../../agents/web_agent.py#L169) | 169 | `"    value = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", value)"` | — |
-| [SRC-1AE03B9EC3-L000170](../../agents/web_agent.py#L170) | 170 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", value)"` | — |
-| [SRC-1AE03B9EC3-L000171](../../agents/web_agent.py#L171) | 171 | `"    result: set[str] = set()"` | — |
-| [SRC-1AE03B9EC3-L000172](../../agents/web_agent.py#L172) | 172 | `"    for token in tokens:"` | — |
-| [SRC-1AE03B9EC3-L000173](../../agents/web_agent.py#L173) | 173 | `"        if token in _SEARCH_STOPWORDS or len(token) < 2:"` | — |
-| [SRC-1AE03B9EC3-L000174](../../agents/web_agent.py#L174) | 174 | `"            continue"` | — |
-| [SRC-1AE03B9EC3-L000175](../../agents/web_agent.py#L175) | 175 | `"        forms = {token}"` | — |
-| [SRC-1AE03B9EC3-L000176](../../agents/web_agent.py#L176) | 176 | `"        if token.startswith(\"ال\") and len(token) > 4:"` | — |
-| [SRC-1AE03B9EC3-L000177](../../agents/web_agent.py#L177) | 177 | `"            forms.add(token[2:])"` | — |
-| [SRC-1AE03B9EC3-L000178](../../agents/web_agent.py#L178) | 178 | `"        forms.update(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()))"` | — |
-| [SRC-1AE03B9EC3-L000179](../../agents/web_agent.py#L179) | 179 | `"        # Reverse-map common English equivalents so Arabic and English results can match."` | — |
-| [SRC-1AE03B9EC3-L000180](../../agents/web_agent.py#L180) | 180 | `"        for arabic, english in _NORMALIZED_SEARCH_SYNONYMS.items():"` | — |
-| [SRC-1AE03B9EC3-L000181](../../agents/web_agent.py#L181) | 181 | `"            if token in english:"` | — |
-| [SRC-1AE03B9EC3-L000182](../../agents/web_agent.py#L182) | 182 | `"                forms.add(arabic)"` | — |
-| [SRC-1AE03B9EC3-L000183](../../agents/web_agent.py#L183) | 183 | `"                if arabic.startswith(\"ال\") and len(arabic) > 4:"` | — |
-| [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `"                    forms.add(arabic[2:])"` | — |
-| [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"        result.update(forms)"` | — |
-| [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    return result"` | — |
-| [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `""` | — |
-| [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `""` | — |
-| [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `"def _relevance_ratio(query: str, evidence: str) -> float:"` | — |
-| [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"    \"\"\"Fraction of meaningful query concepts present in a candidate's title/snippet.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
-| [SRC-1AE03B9EC3-L000193](../../agents/web_agent.py#L193) | 193 | `"    query_tokens = {"` | — |
-| [SRC-1AE03B9EC3-L000194](../../agents/web_agent.py#L194) | 194 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", query_text)"` | — |
-| [SRC-1AE03B9EC3-L000195](../../agents/web_agent.py#L195) | 195 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L000166](../../agents/web_agent.py#L166) | 166 | `"# Normalize synonym keys and values by the same rules as search text. This avoids"` | — |
+| [SRC-1AE03B9EC3-L000167](../../agents/web_agent.py#L167) | 167 | `"# Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching."` | — |
+| [SRC-1AE03B9EC3-L000168](../../agents/web_agent.py#L168) | 168 | `"_NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}"` | — |
+| [SRC-1AE03B9EC3-L000169](../../agents/web_agent.py#L169) | 169 | `"for _synonym_key, _synonym_values in _SEARCH_SYNONYMS.items():"` | — |
+| [SRC-1AE03B9EC3-L000170](../../agents/web_agent.py#L170) | 170 | `"    _normalized_key = _normalize_search_query(_synonym_key).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000171](../../agents/web_agent.py#L171) | 171 | `"    _NORMALIZED_SEARCH_SYNONYMS.setdefault(_normalized_key, set()).update("` | — |
+| [SRC-1AE03B9EC3-L000172](../../agents/web_agent.py#L172) | 172 | `"        _normalize_search_query(value).casefold() for value in _synonym_values"` | — |
+| [SRC-1AE03B9EC3-L000173](../../agents/web_agent.py#L173) | 173 | `"    )"` | — |
+| [SRC-1AE03B9EC3-L000174](../../agents/web_agent.py#L174) | 174 | `""` | — |
+| [SRC-1AE03B9EC3-L000175](../../agents/web_agent.py#L175) | 175 | `""` | — |
+| [SRC-1AE03B9EC3-L000176](../../agents/web_agent.py#L176) | 176 | `"def _search_tokens(value: str) -> set[str]:"` | — |
+| [SRC-1AE03B9EC3-L000177](../../agents/web_agent.py#L177) | 177 | `"    \"\"\"Tokenize Arabic/English text and expand a small bilingual vocabulary.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000178](../../agents/web_agent.py#L178) | 178 | `"    value = _normalize_search_query(value).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000179](../../agents/web_agent.py#L179) | 179 | `"    value = _ARABIC_PUNCTUATION_RE.sub(\" \", value)"` | — |
+| [SRC-1AE03B9EC3-L000180](../../agents/web_agent.py#L180) | 180 | `"    value = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", value)"` | — |
+| [SRC-1AE03B9EC3-L000181](../../agents/web_agent.py#L181) | 181 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", value)"` | — |
+| [SRC-1AE03B9EC3-L000182](../../agents/web_agent.py#L182) | 182 | `"    result: set[str] = set()"` | — |
+| [SRC-1AE03B9EC3-L000183](../../agents/web_agent.py#L183) | 183 | `"    for token in tokens:"` | — |
+| [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `"        # Strip a leading conjunction only when the remainder is known vocabulary."` | — |
+| [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"        if token.startswith(\"و\") and len(token) > 3 and ("` | — |
+| [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"            token[1:] in _NORMALIZED_SEARCH_SYNONYMS"` | — |
+| [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `"            or token[1:] in _NORMALIZED_SEARCH_STOPWORDS"` | — |
+| [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `"            token = token[1:]"` | — |
+| [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:"` | — |
+| [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `"            continue"` | — |
+| [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `"        forms = {token}"` | — |
+| [SRC-1AE03B9EC3-L000193](../../agents/web_agent.py#L193) | 193 | `"        if token.startswith(\"ال\") and len(token) > 4:"` | — |
+| [SRC-1AE03B9EC3-L000194](../../agents/web_agent.py#L194) | 194 | `"            forms.add(token[2:])"` | — |
+| [SRC-1AE03B9EC3-L000195](../../agents/web_agent.py#L195) | 195 | `"        forms.update(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()))"` | — |
