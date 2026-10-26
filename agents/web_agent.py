@@ -1289,6 +1289,9 @@ class WebAgent:
         """Run configured search connectors concurrently with isolated failures and relevance checks."""
         from agents.research import detect_freshness
 
+        query = compact_search_query(query)
+        if not query:
+            return []
         search_query = _normalize_search_query(query)
         budget = getattr(self, "_request_budget", None)
         if budget is not None:
@@ -1609,6 +1612,9 @@ class WebAgent:
         self, query: str, platforms: list[str]
     ) -> tuple[list[dict[str, Any]], list[str]]:
         """Search public social content through exposed public endpoints only."""
+        query = compact_search_query(query)
+        if not query:
+            return [], ["لم يبدأ البحث الاجتماعي لعدم وجود كلمات موضوعية قابلة للبحث."]
         try:
             import xml.etree.ElementTree as ET
 
@@ -2242,37 +2248,39 @@ class WebAgent:
         self, plan: dict[str, Any]
     ) -> tuple[list[dict[str, Any]], list[str], dict[str, Any]]:
         """Run independent query searches concurrently, fuse evidence, then fetch top pages."""
-        queries = [
-            str(query)[:500]
+        queries = list(dict.fromkeys(
+            compact_search_query(query)
             for query in plan.get("queries", [])[:MAX_PLAN_QUERIES]
             if isinstance(query, str) and query.strip()
-        ]
-        if not queries:
-            queries = ["Omarai web research"]
+        ))
+        queries = [query for query in queries if query]
         warnings: list[str] = []
+        if not queries and not plan.get("direct_urls"):
+            warnings.append("لم يُنشأ استعلام موضوعي قابل للبحث؛ لم تُستدعَ محركات البحث.")
         batches: list[dict[str, Any]] = []
         query_counts: list[dict[str, Any]] = []
         search_started_queries = 0
 
-        with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:
-            futures = {pool.submit(self._search_web, query): query for query in queries}
-            for future in as_completed(futures):
-                query = futures[future]
-                search_started_queries += 1
-                try:
-                    results = future.result()
-                except (RuntimeError, AgentDependencyError, ValueError) as exc:
-                    warnings.append(f"تعذر بحث الاستعلام «{query[:70]}»: {exc}")
-                    query_counts.append({"query": query, "results": 0})
-                    continue
-                query_counts.append({"query": query, "results": len(results)})
-                grouped: dict[str, list[dict[str, Any]]] = {}
-                for source in results:
-                    provider = str(source.get("provider") or "web_search")
-                    grouped.setdefault(provider, []).append(source)
-                for provider, items in grouped.items():
-                    items.sort(key=lambda item: int(item.get("provider_rank", 999)))
-                    batches.append({"query": query, "provider": provider, "results": items})
+        if queries:
+            with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:
+                futures = {pool.submit(self._search_web, query): query for query in queries}
+                for future in as_completed(futures):
+                    query = futures[future]
+                    search_started_queries += 1
+                    try:
+                        results = future.result()
+                    except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                        warnings.append(f"تعذر بحث الاستعلام «{query[:70]}»: {exc}")
+                        query_counts.append({"query": query, "results": 0})
+                        continue
+                    query_counts.append({"query": query, "results": len(results)})
+                    grouped: dict[str, list[dict[str, Any]]] = {}
+                    for source in results:
+                        provider = str(source.get("provider") or "web_search")
+                        grouped.setdefault(provider, []).append(source)
+                    for provider, items in grouped.items():
+                        items.sort(key=lambda item: int(item.get("provider_rank", 999)))
+                        batches.append({"query": query, "provider": provider, "results": items})
 
         # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches
         # when initial coverage is thin. This uses observed source/domain/provider coverage,
@@ -2292,7 +2300,7 @@ class WebAgent:
         )
         expansion_queries: list[str] = []
         if needs_expansion and len(queries) < MAX_PLAN_QUERIES and queries:
-            base_query = queries[0]
+            base_query = (queries[0] if queries else "")
             candidates = [
                 f"{base_query} official sources data reports",
                 f"{base_query} limitations risks criticism alternatives",
@@ -2341,7 +2349,7 @@ class WebAgent:
         # A social-focused task uses public social endpoints in parallel with indexed
         # public pages. No login, private profile, session cookie or anti-bot bypass.
         social_results: list[dict[str, Any]] = []
-        if plan.get("social_focus"):
+        if plan.get("social_focus") and queries:
             requested_platforms = plan.get("platforms") or []
             if requested_platforms:
                 platforms = list(dict.fromkeys(requested_platforms))
@@ -2365,14 +2373,14 @@ class WebAgent:
                     name for name, ready in optional_connectors.items()
                     if ready and name not in platforms
                 )
-            social_results, social_warnings = self._search_social(queries[0], platforms)
+            social_results, social_warnings = self._search_social((queries[0] if queries else ""), platforms)
             warnings.extend(social_warnings)
             social_groups: dict[str, list[dict[str, Any]]] = {}
             for source in social_results:
                 social_groups.setdefault(str(source.get("provider") or "social"), []).append(source)
             for provider, items in social_groups.items():
                 items.sort(key=lambda item: int(item.get("provider_rank", 999)))
-                batches.append({"query": queries[0], "provider": provider, "results": items})
+                batches.append({"query": (queries[0] if queries else ""), "provider": provider, "results": items})
 
         # Explicit URLs are first-class inputs: fetch the page the user actually asked about
         # instead of relying on a search engine to rediscover it. URL and DNS checks still apply.
@@ -2383,7 +2391,7 @@ class WebAgent:
                 direct_urls.append(safe_url)
         for direct_url in direct_urls:
             batches.append({
-                "query": queries[0],
+                "query": (queries[0] if queries else ""),
                 "provider": "user_supplied_url",
                 "results": [{
                     "title": "رابط قدمه المستخدم للتحليل",
@@ -2393,7 +2401,7 @@ class WebAgent:
                     "page_fetched": False,
                     "provider": "user_supplied_url",
                     "provider_rank": 1,
-                    "search_query": queries[0],
+                    "search_query": (queries[0] if queries else ""),
                     "published_at": "",
                 }],
             })
@@ -2968,11 +2976,13 @@ class WebAgent:
         fallback = fallback_plan(question, history)
         search_question = self._history_search_query(question, history)
         if search_question != question:
-            existing_queries = fallback.get("queries", [])
-            fallback["queries"] = [search_question] + [
-                query for query in existing_queries
-                if query != search_question
-            ][: max(0, MAX_PLAN_QUERIES - 1)]
+            compact_context_query = compact_search_query(search_question)
+            if compact_context_query:
+                existing_queries = fallback.get("queries", [])
+                fallback["queries"] = [compact_context_query] + [
+                    query for query in existing_queries
+                    if query != compact_context_query
+                ][: max(0, MAX_PLAN_QUERIES - 1)]
         if not self.api_key:
             return fallback
         platform_names = ", ".join(SOCIAL_DOMAINS)
@@ -3061,13 +3071,17 @@ class WebAgent:
         # Add real platform-targeted searches alongside broad queries when social evidence matters.
         if plan["social_focus"]:
             targets = plan["platforms"] or ["facebook", "instagram", "reddit"]
-            base_query = fallback["queries"][0]
-            query_list = list(plan["queries"])
+            fallback_queries = fallback.get("queries", [])
+            plan_queries = plan.get("queries", [])
+            base_query = (fallback_queries or plan_queries or [""])[0]
+            query_list = list(plan_queries)
             for platform in targets[:2]:
                 domain = SOCIAL_DOMAINS.get(platform)
-                if not domain:
+                if not domain or not base_query:
                     continue
-                targeted = f"site:{domain} {base_query}"[:500]
+                targeted = compact_search_query(f"site:{domain} {base_query}")
+                if not targeted:
+                    continue
                 if any(domain in query for query in query_list):
                     continue
                 if len(query_list) < MAX_PLAN_QUERIES:
