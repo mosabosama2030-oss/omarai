@@ -2886,3 +2886,49 @@ def test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries()
         "اذكر مصادر موثوقة، روابط مباشرة، باختصار",
         "Football results and unrelated match reports",
     ) == 0.0
+
+
+def test_search_web_compacts_request_before_provider_dispatch(monkeypatch):
+    agent = WebAgent()
+    seen = []
+
+    def capture(query):
+        seen.append(query)
+        return []
+
+    for env_name in (
+        "DEEPSEEK_SEARCH_API_KEY",
+        "BRAVE_SEARCH_API_KEY",
+        "TAVILY_API_KEY",
+    ):
+        monkeypatch.delenv(env_name, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", capture)
+    monkeypatch.setattr(agent, "_search_bing_rss", capture)
+
+    raw_question = (
+        "ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز."
+    )
+    agent._search_web(raw_question)
+
+    expected = _normalize_search_query(
+        __import__("agents.research", fromlist=["compact_search_query"])
+        .compact_search_query(raw_question)
+    )
+    assert seen
+    assert set(seen) == {expected}
+    assert len(expected) <= 240
+    assert "رابط مباشر" not in " ".join(seen)
+
+
+def test_search_web_does_not_dispatch_instruction_only_query(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent, "_search_duckduckgo_html",
+        lambda query: pytest.fail(f"provider should not receive {query!r}"),
+    )
+    monkeypatch.setattr(
+        agent, "_search_bing_rss",
+        lambda query: pytest.fail(f"provider should not receive {query!r}"),
+    )
+    results = agent._search_web("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
+    assert results == []
