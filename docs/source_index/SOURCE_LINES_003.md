@@ -789,7 +789,7 @@
 | [SRC-1AE03B9EC3-L000157](../../agents/web_agent.py#L157) | 157 | `"    \"\"\"Tokenize Arabic/English text and expand a small bilingual vocabulary.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000158](../../agents/web_agent.py#L158) | 158 | `"    value = _normalize_search_query(value).casefold()"` | — |
 | [SRC-1AE03B9EC3-L000159](../../agents/web_agent.py#L159) | 159 | `"    value = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", value)"` | — |
-| [SRC-1AE03B9EC3-L000160](../../agents/web_agent.py#L160) | 160 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", value)"` | — |
+| [SRC-1AE03B9EC3-L000160](../../agents/web_agent.py#L160) | 160 | `"    tokens = re.findall(r\"[a-z0-9]+\|[\\u0620-\\u064A\\u066E-\\u06D3]+\", value)"` | — |
 | [SRC-1AE03B9EC3-L000161](../../agents/web_agent.py#L161) | 161 | `"    result: set[str] = set()"` | — |
 | [SRC-1AE03B9EC3-L000162](../../agents/web_agent.py#L162) | 162 | `"    for token in tokens:"` | — |
 | [SRC-1AE03B9EC3-L000163](../../agents/web_agent.py#L163) | 163 | `"        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:"` | — |
@@ -813,7 +813,7 @@
 | [SRC-1AE03B9EC3-L000181](../../agents/web_agent.py#L181) | 181 | `"    query_text = _normalize_search_query(query).casefold()"` | — |
 | [SRC-1AE03B9EC3-L000182](../../agents/web_agent.py#L182) | 182 | `"    query_text = re.sub(r\"(?i)\\bsite\\s*:\\s*\\S+\", \" \", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000183](../../agents/web_agent.py#L183) | 183 | `"    return {"` | — |
-| [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", query_text)"` | — |
+| [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `"        token for token in re.findall(r\"[a-z0-9]+\|[\\u0620-\\u064A\\u066E-\\u06D3]+\", query_text)"` | — |
 | [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2"` | — |
 | [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    }"` | — |
 | [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `""` | — |
