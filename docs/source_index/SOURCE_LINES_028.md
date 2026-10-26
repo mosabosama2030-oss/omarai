@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000131 إلى SRC-C353AAAC10-L000059
+- النطاق: SRC-1A176AD4F0-L000131 إلى SRC-C353AAAC10-L000058
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -600,29 +600,30 @@
 | [SRC-188F068481-L000066](../../tests/test_live_search_relevance_regressions.py#L66) | 66 | `"    assert bing[\"available_for_this_request\"] is True"` | — |
 | [SRC-188F068481-L000067](../../tests/test_live_search_relevance_regressions.py#L67) | 67 | `"    assert bing[\"verified_for_this_request\"] is True"` | — |
 | [SRC-188F068481-L000068](../../tests/test_live_search_relevance_regressions.py#L68) | 68 | `"    assert bing[\"usable_results_for_this_request\"] is False"` | — |
-| [SRC-188F068481-L000069](../../tests/test_live_search_relevance_regressions.py#L69) | 69 | `"    assert bing[\"result_count\"] == 0"` | — |
-| [SRC-188F068481-L000070](../../tests/test_live_search_relevance_regressions.py#L70) | 70 | `"    assert bing[\"rejected_count\"] == 6"` | — |
-| [SRC-188F068481-L000071](../../tests/test_live_search_relevance_regressions.py#L71) | 71 | `""` | — |
+| [SRC-188F068481-L000069](../../tests/test_live_search_relevance_regressions.py#L69) | 69 | `"    assert bing[\"candidate_count\"] == 6"` | — |
+| [SRC-188F068481-L000070](../../tests/test_live_search_relevance_regressions.py#L70) | 70 | `"    assert bing[\"result_count\"] == 0"` | — |
+| [SRC-188F068481-L000071](../../tests/test_live_search_relevance_regressions.py#L71) | 71 | `"    assert bing[\"rejected_count\"] == 6"` | — |
 | [SRC-188F068481-L000072](../../tests/test_live_search_relevance_regressions.py#L72) | 72 | `""` | — |
-| [SRC-188F068481-L000073](../../tests/test_live_search_relevance_regressions.py#L73) | 73 | `"@pytest.mark.parametrize("` | — |
-| [SRC-188F068481-L000074](../../tests/test_live_search_relevance_regressions.py#L74) | 74 | `"    (\"question\", \"evidence\"),"` | — |
-| [SRC-188F068481-L000075](../../tests/test_live_search_relevance_regressions.py#L75) | 75 | `"    ["` | — |
-| [SRC-188F068481-L000076](../../tests/test_live_search_relevance_regressions.py#L76) | 76 | `"        ("` | — |
-| [SRC-188F068481-L000077](../../tests/test_live_search_relevance_regressions.py#L77) | 77 | `"            \"السيارات الكهربائية والشحن والتكلفة والبنية التحتية في مصر\","` | — |
-| [SRC-188F068481-L000078](../../tests/test_live_search_relevance_regressions.py#L78) | 78 | `"            \"Electric vehicles in Egypt need charging infrastructure and affect ownership costs.\","` | — |
-| [SRC-188F068481-L000079](../../tests/test_live_search_relevance_regressions.py#L79) | 79 | `"        ),"` | — |
-| [SRC-188F068481-L000080](../../tests/test_live_search_relevance_regressions.py#L80) | 80 | `"        ("` | — |
-| [SRC-188F068481-L000081](../../tests/test_live_search_relevance_regressions.py#L81) | 81 | `"            \"وكلاء الذكاء الاصطناعي والتطورات الجديدة\","` | — |
-| [SRC-188F068481-L000082](../../tests/test_live_search_relevance_regressions.py#L82) | 82 | `"            \"Recent developments in AI agents include planning and tool use.\","` | — |
-| [SRC-188F068481-L000083](../../tests/test_live_search_relevance_regressions.py#L83) | 83 | `"        ),"` | — |
-| [SRC-188F068481-L000084](../../tests/test_live_search_relevance_regressions.py#L84) | 84 | `"        ("` | — |
-| [SRC-188F068481-L000085](../../tests/test_live_search_relevance_regressions.py#L85) | 85 | `"            \"اراء وتجارب المستخدمين للسيارات الكهربائية في مصر\","` | — |
-| [SRC-188F068481-L000086](../../tests/test_live_search_relevance_regressions.py#L86) | 86 | `"            \"Reviews from electric car users in Egypt discuss charging and ownership.\","` | — |
-| [SRC-188F068481-L000087](../../tests/test_live_search_relevance_regressions.py#L87) | 87 | `"        ),"` | — |
-| [SRC-188F068481-L000088](../../tests/test_live_search_relevance_regressions.py#L88) | 88 | `"    ],"` | — |
-| [SRC-188F068481-L000089](../../tests/test_live_search_relevance_regressions.py#L89) | 89 | `")"` | — |
-| [SRC-188F068481-L000090](../../tests/test_live_search_relevance_regressions.py#L90) | 90 | `"def test_core_bilingual_topic_synonyms_are_matched(question, evidence):"` | — |
-| [SRC-188F068481-L000091](../../tests/test_live_search_relevance_regressions.py#L91) | 91 | `"    assert _relevance_ratio(question, evidence) >= 0.20"` | — |
+| [SRC-188F068481-L000073](../../tests/test_live_search_relevance_regressions.py#L73) | 73 | `""` | — |
+| [SRC-188F068481-L000074](../../tests/test_live_search_relevance_regressions.py#L74) | 74 | `"@pytest.mark.parametrize("` | — |
+| [SRC-188F068481-L000075](../../tests/test_live_search_relevance_regressions.py#L75) | 75 | `"    (\"question\", \"evidence\"),"` | — |
+| [SRC-188F068481-L000076](../../tests/test_live_search_relevance_regressions.py#L76) | 76 | `"    ["` | — |
+| [SRC-188F068481-L000077](../../tests/test_live_search_relevance_regressions.py#L77) | 77 | `"        ("` | — |
+| [SRC-188F068481-L000078](../../tests/test_live_search_relevance_regressions.py#L78) | 78 | `"            \"السيارات الكهربائية والشحن والتكلفة والبنية التحتية في مصر\","` | — |
+| [SRC-188F068481-L000079](../../tests/test_live_search_relevance_regressions.py#L79) | 79 | `"            \"Electric vehicles in Egypt need charging infrastructure and affect ownership costs.\","` | — |
+| [SRC-188F068481-L000080](../../tests/test_live_search_relevance_regressions.py#L80) | 80 | `"        ),"` | — |
+| [SRC-188F068481-L000081](../../tests/test_live_search_relevance_regressions.py#L81) | 81 | `"        ("` | — |
+| [SRC-188F068481-L000082](../../tests/test_live_search_relevance_regressions.py#L82) | 82 | `"            \"وكلاء الذكاء الاصطناعي والتطورات الجديدة\","` | — |
+| [SRC-188F068481-L000083](../../tests/test_live_search_relevance_regressions.py#L83) | 83 | `"            \"Recent developments in AI agents include planning and tool use.\","` | — |
+| [SRC-188F068481-L000084](../../tests/test_live_search_relevance_regressions.py#L84) | 84 | `"        ),"` | — |
+| [SRC-188F068481-L000085](../../tests/test_live_search_relevance_regressions.py#L85) | 85 | `"        ("` | — |
+| [SRC-188F068481-L000086](../../tests/test_live_search_relevance_regressions.py#L86) | 86 | `"            \"اراء وتجارب المستخدمين للسيارات الكهربائية في مصر\","` | — |
+| [SRC-188F068481-L000087](../../tests/test_live_search_relevance_regressions.py#L87) | 87 | `"            \"Reviews from electric car users in Egypt discuss charging and ownership.\","` | — |
+| [SRC-188F068481-L000088](../../tests/test_live_search_relevance_regressions.py#L88) | 88 | `"        ),"` | — |
+| [SRC-188F068481-L000089](../../tests/test_live_search_relevance_regressions.py#L89) | 89 | `"    ],"` | — |
+| [SRC-188F068481-L000090](../../tests/test_live_search_relevance_regressions.py#L90) | 90 | `")"` | — |
+| [SRC-188F068481-L000091](../../tests/test_live_search_relevance_regressions.py#L91) | 91 | `"def test_core_bilingual_topic_synonyms_are_matched(question, evidence):"` | — |
+| [SRC-188F068481-L000092](../../tests/test_live_search_relevance_regressions.py#L92) | 92 | `"    assert _relevance_ratio(question, evidence) >= 0.20"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -878,4 +879,3 @@
 | [SRC-C353AAAC10-L000056](../../tests/test_request_budget.py#L56) | 56 | `""` | — |
 | [SRC-C353AAAC10-L000057](../../tests/test_request_budget.py#L57) | 57 | `"    snapshot = RequestBudget.from_environment().snapshot()"` | — |
 | [SRC-C353AAAC10-L000058](../../tests/test_request_budget.py#L58) | 58 | `""` | — |
-| [SRC-C353AAAC10-L000059](../../tests/test_request_budget.py#L59) | 59 | `"    assert snapshot[\"timeout_seconds\"] == 120"` | — |
