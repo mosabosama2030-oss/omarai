@@ -355,7 +355,7 @@
 | [SRC-F725E90B2A-L002875](../../tests/test_web_agent.py#L2875) | 2875 | `"        if item.get(\"provider\") == \"duckduckgo_html\""` | — |
 | [SRC-F725E90B2A-L002876](../../tests/test_web_agent.py#L2876) | 2876 | `"    )"` | — |
 | [SRC-F725E90B2A-L002877](../../tests/test_web_agent.py#L2877) | 2877 | `"    assert diagnostic[\"status\"] == \"http_error\""` | — |
-| [SRC-F725E90B2A-L002878](../../tests/test_web_agent.py#L2878) | 2878 | `"    assert diagnostic[\"error\"] == \"HTTP 302\""` | — |
+| [SRC-F725E90B2A-L002878](../../tests/test_web_agent.py#L2878) | 2878 | `"    assert diagnostic[\"error\"] == \"RuntimeError: HTTP 302\""` | — |
 | [SRC-F725E90B2A-L002879](../../tests/test_web_agent.py#L2879) | 2879 | `"    assert sum(provider == \"duckduckgo_html\" for provider, _query in calls) == 1"` | — |
 ## واجهة الويب
 
