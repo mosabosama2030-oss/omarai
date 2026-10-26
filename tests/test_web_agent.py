@@ -1100,11 +1100,7 @@ def test_answer_hides_unwrapped_internal_review_report(monkeypatch):
 
     monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
     monkeypatch.setattr(agent, "_collect_research", collect)
-    def capture_source_match_query(query, source):
-        matched_queries.append(query)
-        return True
-
-    monkeypatch.setattr(agent, "_source_matches_query", capture_source_match_query)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
     monkeypatch.setattr(
         agent, "_generate", lambda *args, **kwargs: "إجابة مبدئية [المصدر 1]."
     )
@@ -1207,7 +1203,12 @@ def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(m
 
     monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
     monkeypatch.setattr(agent, "_collect_research", collect)
-    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+
+    def capture_source_match_query(query, source):
+        matched_queries.append(query)
+        return True
+
+    monkeypatch.setattr(agent, "_source_matches_query", capture_source_match_query)
     monkeypatch.setattr(
         agent, "_generate",
         lambda *args, **kwargs: "توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].",
