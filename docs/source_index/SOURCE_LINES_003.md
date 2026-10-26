@@ -81,9 +81,9 @@
 | [SRC-59CF4B7DE8-L000118](../../agents/research.py#L118) | 118 | `""` | — |
 | [SRC-59CF4B7DE8-L000119](../../agents/research.py#L119) | 119 | `""` | — |
 | [SRC-59CF4B7DE8-L000120](../../agents/research.py#L120) | 120 | `"_SEARCH_TOPIC_PRESERVING_META_PREFIX_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000121](../../agents/research.py#L121) | 121 | `"    r\"^(?:و?استخدم\|و?استعمل)\\\\s+مصادر?\\\\s+متعددة\\\\s+\""` | — |
-| [SRC-59CF4B7DE8-L000122](../../agents/research.py#L122) | 122 | `"    r\"(?:للبحث\\\\s+عن\|للعثور\\\\s+على\|لإيجاد\|عن\|حول\|بشأن\|\""` | — |
-| [SRC-59CF4B7DE8-L000123](../../agents/research.py#L123) | 123 | `"    r\"use\\\\s+multiple\\\\s+sources\\\\s+to\\\\s+(?:research\|find\|investigate))\\\\s+\","` | — |
+| [SRC-59CF4B7DE8-L000121](../../agents/research.py#L121) | 121 | `"    r\"^(?:و?استخدم\|و?استعمل)\\s+مصادر?\\s+متعددة\\s+\""` | — |
+| [SRC-59CF4B7DE8-L000122](../../agents/research.py#L122) | 122 | `"    r\"(?:للبحث\\s+عن\|للعثور\\s+على\|لإيجاد\|عن\|حول\|بشأن\|\""` | — |
+| [SRC-59CF4B7DE8-L000123](../../agents/research.py#L123) | 123 | `"    r\"use\\s+multiple\\s+sources\\s+to\\s+(?:research\|find\|investigate))\\s+\","` | — |
 | [SRC-59CF4B7DE8-L000124](../../agents/research.py#L124) | 124 | `"    re.IGNORECASE,"` | — |
 | [SRC-59CF4B7DE8-L000125](../../agents/research.py#L125) | 125 | `")"` | — |
 | [SRC-59CF4B7DE8-L000126](../../agents/research.py#L126) | 126 | `""` | — |
