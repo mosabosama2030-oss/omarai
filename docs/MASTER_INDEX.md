@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **620**
 - تعريفات لا ينطبق عليها Docstring: **203**
 - الرموز الساكنة الإضافية: **1563**
-- الأسطر النصية المفهرسة حرفيًا: **26856**
+- الأسطر النصية المفهرسة حرفيًا: **26855**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -100,7 +100,7 @@
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
-| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 15666 | 330 | جرد الملف + AST Python |
+| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 15643 | 329 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -881,7 +881,7 @@
 | [tests/test_research.py](../tests/test_research.py#L276) | دالة | test_fallback_plan_does_not_invent_query_for_instruction_only_prompt | لا توجد Docstring. | ناقص | 276 | [SRC-6BF96689A8-L000276](../tests/test_research.py#L276) |
 | [tests/test_research.py](../tests/test_research.py#L281) | دالة | test_collect_research_compacts_queries_before_provider_calls | لا توجد Docstring. | ناقص | 281 | [SRC-6BF96689A8-L000281](../tests/test_research.py#L281) |
 | [tests/test_research.py](../tests/test_research.py#L304) | دالة | test_collect_research_skips_provider_calls_without_topic_or_direct_url | لا توجد Docstring. | ناقص | 304 | [SRC-6BF96689A8-L000304](../tests/test_research.py#L304) |
-| [tests/test_research.py](../tests/test_research.py#L327) | دالة | test_fallback_plan_keeps_direct_url_without_generic_keyword_query | لا توجد Docstring. | ناقص | 327 | [SRC-6BF96689A8-L000327](../tests/test_research.py#L327) |
+| [tests/test_research.py](../tests/test_research.py#L326) | دالة | test_fallback_plan_keeps_direct_url_without_generic_keyword_query | لا توجد Docstring. | ناقص | 326 | [SRC-6BF96689A8-L000326](../tests/test_research.py#L326) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L15) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 | [SRC-01E35ABC46-L000015](../tests/test_research_guardrails.py#L15) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L21) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 | [SRC-01E35ABC46-L000021](../tests/test_research_guardrails.py#L21) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L27) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 | [SRC-01E35ABC46-L000027](../tests/test_research_guardrails.py#L27) |

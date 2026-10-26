@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002155 إلى SRC-F725E90B2A-L002954
+- النطاق: SRC-F725E90B2A-L002156 إلى SRC-F725E90B2A-L002955
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002155](../../tests/test_web_agent.py#L2155) | 2155 | `"    assert result[\"search_report\"][\"lead_generation\"][\"related_results_reviewed\"] == 2"` | — |
 | [SRC-F725E90B2A-L002156](../../tests/test_web_agent.py#L2156) | 2156 | `"    assert \"لم أعتبر إعلانات البيع\" in result[\"answer\"]"` | — |
 | [SRC-F725E90B2A-L002157](../../tests/test_web_agent.py#L2157) | 2157 | `"    assert all(s[\"lead_qualification\"] == \"related_result_not_lead\" for s in result[\"sources\"])"` | — |
 | [SRC-F725E90B2A-L002158](../../tests/test_web_agent.py#L2158) | 2158 | `""` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L002952](../../tests/test_web_agent.py#L2952) | 2952 | `"    history = [{"` | — |
 | [SRC-F725E90B2A-L002953](../../tests/test_web_agent.py#L2953) | 2953 | `"        \"role\": \"user\","` | — |
 | [SRC-F725E90B2A-L002954](../../tests/test_web_agent.py#L2954) | 2954 | `"        \"content\": ("` | — |
+| [SRC-F725E90B2A-L002955](../../tests/test_web_agent.py#L2955) | 2955 | `"            \"قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، \""` | — |

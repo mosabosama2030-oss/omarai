@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001355 إلى SRC-F725E90B2A-L002154
+- النطاق: SRC-F725E90B2A-L001356 إلى SRC-F725E90B2A-L002155
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"        agent, \"_collect_research\","` | — |
 | [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
 | [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"    )"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L002152](../../tests/test_web_agent.py#L2152) | 2152 | `"    assert result[\"intent_route\"] == \"LEAD_GENERATION\""` | — |
 | [SRC-F725E90B2A-L002153](../../tests/test_web_agent.py#L2153) | 2153 | `"    assert result[\"kind\"] == \"lead_discovery_no_qualified_candidates\""` | — |
 | [SRC-F725E90B2A-L002154](../../tests/test_web_agent.py#L2154) | 2154 | `"    assert result[\"search_report\"][\"lead_generation\"][\"candidate_signal_count\"] == 0"` | — |
+| [SRC-F725E90B2A-L002155](../../tests/test_web_agent.py#L2155) | 2155 | `"    assert result[\"search_report\"][\"lead_generation\"][\"related_results_reviewed\"] == 2"` | — |
