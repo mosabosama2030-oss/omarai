@@ -186,11 +186,8 @@ def _relevance_query_tokens(query: str) -> set[str]:
     }
 
 
-def _minimum_relevance_ratio(query: str) -> float:
-    """Keep a two-concept floor without punishing longer natural-language instructions."""
-    token_count = len(_relevance_query_tokens(query))
-    if token_count >= 4:
-        return min(0.20, 2.0 / token_count)
+def _minimum_relevance_ratio(_query: str) -> float:
+    """Keep the established 20% relevance floor after query normalization and token cleanup."""
     return 0.20
 
 
