@@ -50,6 +50,12 @@ LLM_TIMEOUT_SECONDS = 35
 # A generic "failed" or timeout diagnostic may occur before a network request is sent.
 _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({"ok", "no_results", "filtered_all"})
 _RESEARCH_ERROR_OUTCOMES = frozenset({"attempted_research_error", "unknown_after_research_error"})
+_PROVIDER_REJECTION_REASONS = (
+    "malformed_candidate",
+    "invalid_url_or_unsafe_target",
+    "blocked_domain",
+    "relevance_below_threshold",
+)
 
 
 _ARABIC_SEARCH_TRANSLATION = str.maketrans({
@@ -499,6 +505,7 @@ class WebAgent:
         self, provider: str, query: str, status: str, result_count: int = 0,
         rejected_count: int = 0, error: str | None = None,
         accepted_count: int | None = None,
+        rejection_counts: dict[str, int] | None = None,
     ) -> None:
         def redact(value: Any, limit: int) -> str:
             safe = _clean_text(str(value or ""), limit)
@@ -527,6 +534,14 @@ class WebAgent:
             "accepted_count": int(result_count if accepted_count is None else accepted_count),
             "rejected_count": int(rejected_count),
         }
+        if isinstance(rejection_counts, dict):
+            safe_counts: dict[str, int] = {}
+            for reason in _PROVIDER_REJECTION_REASONS:
+                try:
+                    safe_counts[reason] = max(0, int(rejection_counts.get(reason, 0) or 0))
+                except (TypeError, ValueError, OverflowError):
+                    safe_counts[reason] = 0
+            record["rejection_counts"] = safe_counts
         if error:
             record["error"] = redact(error, 180)
         with self._provider_diagnostics_lock:
@@ -1320,13 +1335,20 @@ class WebAgent:
                     raise TypeError("connector returned a non-list result")
                 accepted: list[dict[str, Any]] = []
                 rejected = 0
+                rejection_counts = {reason: 0 for reason in _PROVIDER_REJECTION_REASONS}
                 for item in raw:
                     if not isinstance(item, dict):
                         rejected += 1
+                        rejection_counts["malformed_candidate"] += 1
                         continue
                     safe_url = _public_http_url(item.get("url", ""))
-                    if not safe_url or _blocked_source_url(safe_url):
+                    if not safe_url:
                         rejected += 1
+                        rejection_counts["invalid_url_or_unsafe_target"] += 1
+                        continue
+                    if _blocked_source_url(safe_url):
+                        rejected += 1
+                        rejection_counts["blocked_domain"] += 1
                         continue
                     normalized_item = dict(item)
                     normalized_item["url"] = safe_url
@@ -1335,6 +1357,7 @@ class WebAgent:
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
                     if _relevance_ratio(search_query, evidence) < _minimum_relevance_ratio(search_query):
                         rejected += 1
+                        rejection_counts["relevance_below_threshold"] += 1
                         continue
                     accepted.append(normalized_item)
                 if accepted:
@@ -1342,13 +1365,16 @@ class WebAgent:
                     error = None
                 elif raw:
                     status = "filtered_all"
-                    error = "all candidates failed URL/domain/relevance checks"
+                    details = ", ".join(
+                        f"{reason}={count}" for reason, count in rejection_counts.items() if count
+                    ) or "no reason counters recorded"
+                    error = f"all candidates rejected; {details}"
                 else:
                     status = "no_results"
                     error = "connector returned no parseable results"
                 self._record_provider_diagnostic(
                     name, search_query, status, len(raw), rejected, error,
-                    accepted_count=len(accepted),
+                    accepted_count=len(accepted), rejection_counts=rejection_counts,
                 )
                 return accepted
             except RequestBudgetExceeded as exc:
@@ -2631,6 +2657,18 @@ class WebAgent:
                 for row in attempts
             )
             rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
+            rejection_count_totals = {reason: 0 for reason in _PROVIDER_REJECTION_REASONS}
+            rejection_counts_observed = False
+            for row in attempts:
+                row_counts = row.get("rejection_counts")
+                if not isinstance(row_counts, dict):
+                    continue
+                rejection_counts_observed = True
+                for reason in _PROVIDER_REJECTION_REASONS:
+                    try:
+                        rejection_count_totals[reason] += max(0, int(row_counts.get(reason, 0) or 0))
+                    except (TypeError, ValueError, OverflowError):
+                        continue
             candidate_rejection_observed = "filtered_all" in statuses or rejected_count > 0
             connectors.append({
                 "name": name, "in_codebase": name in config or bool(attempts),
@@ -2642,7 +2680,10 @@ class WebAgent:
                 "status": status, "observed_statuses": list(dict.fromkeys(statuses))[:6],
                 "result_count": result_count, "accepted_count": accepted_count,
                 "useful_result_count": useful.get(name, 0),
-                "rejected_count": rejected_count, "queries": queries, "errors": errors,
+                "rejected_count": rejected_count,
+                "rejection_counts_observed": rejection_counts_observed,
+                "rejection_counts": rejection_count_totals if rejection_counts_observed else None,
+                "queries": queries, "errors": errors,
             })
         return {
             "scope": "this_request_only",
