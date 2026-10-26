@@ -171,17 +171,20 @@ function renderReport(result){
   [leadSignalCount??"غير محدد","إشارة نصية مرشحة لنية شراء"],
   [lead.related_results_reviewed??"غير محدد","نتيجة تمت مراجعتها"],
   [r.pages_fetched??(leadResearchIncomplete?"غير محدد":0),"صفحة قُرئت"],
-  [leadResearchIncomplete?"غير محدد":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),"محرك/واجهة بحث"]
+  [leadResearchIncomplete?"غير محدد":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),"واجهة أسهمت بمصدر صالح"]
  ]:[
   [researchErrorOutcome?(r.unique_sources??"غير محدد"):(r.unique_sources??sources.length),"مصدرًا فريدًا"],
   [researchErrorOutcome?"غير محدد":(e.unique_domains??"—"),"نطاقًا مختلفًا"],
   [researchErrorOutcome?(r.pages_fetched??"غير محدد"):(r.pages_fetched??e.pages_read??0),"صفحة قُرئت"],
-  [researchErrorOutcome?"غير محدد":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),"محرك/واجهة بحث"]
+  [researchErrorOutcome?"غير محدد":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),"واجهة أسهمت بمصدر صالح"]
  ];
  const metricHtml=metrics.map(([v,l])=>'<div class="metric"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join("");
  const operationalMetrics=[
-  [r.raw_results??"غير محدد","نتيجة خام"],
-  [r.unique_urls??r.unique_sources??sources.length,"رابط فريد"],
+  [r.provider_candidates_received??"غير محدد","مرشح أعاده محرك البحث قبل التصفية (قد يتكرر)"],
+  [r.provider_candidates_accepted??"غير محدد","مرشح اجتاز فحص الموصل قبل الدمج"],
+  [r.provider_candidates_rejected??"غير محدد","مرشح رُفض بفحص الرابط أو الصلة"],
+  [r.raw_results??"غير محدد","نتيجة جُمعت قبل دمج التكرارات"],
+  [r.unique_urls??r.unique_sources??sources.length,"رابط فريد بعد الدمج"],
   [r.pages_fetch_attempted??"غير محدد","محاولة جلب صفحة"],
   [r.pages_content_extracted??r.pages_fetched??"غير محدد","صفحة استُخرج منها نص"],
   [r.pages_partial_extracted??"غير محدد","صفحة استُخرج جزء من نصها"],
@@ -189,7 +192,7 @@ function renderReport(result){
  ];
  const operationalHtml='<div class="metrics">'+operationalMetrics.map(([v,l])=>'<div class="metric"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join("")+'</div>';
  const connectors=r.connector_summary&&Array.isArray(r.connector_summary.connectors)?r.connector_summary.connectors:[];
- const connectorDetails=connectors.length?'<details class="details"><summary>تشخيص الموصلات في هذا الطلب ('+connectors.length+')</summary><div>'+connectors.map(c=>'<article class="source"><strong>'+escapeHtml(c.name||"موصل")+' · '+escapeHtml(c.status||"unknown")+'</strong><p>الإعداد: '+escapeHtml(c.configuration_status||"unknown")+' · تمت المحاولة: '+escapeHtml(c.attempted===true?"نعم":c.attempted===false?"لا":"غير محسوم")+' · متاح في هذا الطلب: '+escapeHtml(c.available_for_this_request===true?"نعم":c.available_for_this_request===false?"لا":"غير محسوم")+' · تم التحقق: '+escapeHtml(c.verified_for_this_request===true?"نعم":c.verified_for_this_request===false?"لا":"غير مختبر/غير محسوم")+' · إخفاق ملاحظ: '+escapeHtml(c.failure_observed===true?"نعم":"لا")+' · نتائج الموصل: '+escapeHtml(c.result_count??"غير محدد")+' · مصادر نهائية منسوبة إليه: '+escapeHtml(c.useful_result_count??"غير محدد")+' · مرفوض: '+escapeHtml(c.rejected_count??"غير محدد")+'</p>'+((Array.isArray(c.queries)&&c.queries.length)?'<p>استعلامات: '+c.queries.map(escapeHtml).join(" · ")+'</p>':"")+((Array.isArray(c.errors)&&c.errors.length)?'<p class="warning">أخطاء: '+c.errors.map(escapeHtml).join(" · ")+'</p>':"")+'</article>').join("")+'</div></details>':"";
+ const connectorDetails=connectors.length?'<details class="details"><summary>تشخيص الموصلات في هذا الطلب ('+connectors.length+')</summary><div>'+connectors.map(c=>'<article class="source"><strong>'+escapeHtml(c.name||"موصل")+' · '+escapeHtml(c.status||"unknown")+'</strong><p>الإعداد: '+escapeHtml(c.configuration_status||"unknown")+' · تمت المحاولة: '+escapeHtml(c.attempted===true?"نعم":c.attempted===false?"لا":"غير محسوم")+' · متاح في هذا الطلب: '+escapeHtml(c.available_for_this_request===true?"نعم":c.available_for_this_request===false?"لا":"غير محسوم")+' · استجابة المعالجة مؤكدة: '+escapeHtml(c.verified_for_this_request===true?"نعم":c.verified_for_this_request===false?"لا":"غير مختبر/غير محسوم")+' · إخفاق ملاحظ: '+escapeHtml(c.failure_observed===true?"نعم":"لا")+' · مرشحون أوليون من الموصل: '+escapeHtml(c.result_count??"غير محدد")+' · اجتازوا فحص الموصل: '+escapeHtml(c.accepted_count??"غير محدد")+' · مصادر نهائية منسوبة إليه: '+escapeHtml(c.useful_result_count??"غير محدد")+' · مرفوض: '+escapeHtml(c.rejected_count??"غير محدد")+' · كل المرشحين رُفضوا: '+escapeHtml(c.candidate_rejection_observed===true?"نعم":c.candidate_rejection_observed===false?"لا":"غير محسوم")+'</p>'+((Array.isArray(c.queries)&&c.queries.length)?'<p>استعلامات: '+c.queries.map(escapeHtml).join(" · ")+'</p>':"")+((Array.isArray(c.errors)&&c.errors.length)?'<p class="warning">أخطاء: '+c.errors.map(escapeHtml).join(" · ")+'</p>':"")+'</article>').join("")+'</div></details>':"";
  const integrity=r.answer_integrity&&typeof r.answer_integrity==="object"?r.answer_integrity:null;
  const integrityNumbers=integrity&&Array.isArray(integrity.potentially_unsupported_numeric_literals)?integrity.potentially_unsupported_numeric_literals:[];
  const integrityTargets=integrity&&Array.isArray(integrity.target_coverage)?integrity.target_coverage:[];
