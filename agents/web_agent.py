@@ -4135,7 +4135,11 @@ class WebAgent:
             if "user_supplied_url" in source.get("providers", []):
                 filtered_sources.append(source)
                 continue
-            candidate_queries = source.get("queries") or plan.get("queries") or [question]
+            candidate_queries = (
+                source.get("queries")
+                or plan.get("queries")
+                or [compact_search_query(question)]
+            )
             if any(self._source_matches_query(str(q), source) for q in candidate_queries):
                 filtered_sources.append(source)
         sources = filtered_sources
@@ -4252,7 +4256,7 @@ class WebAgent:
                 return {
                     "answer": lead_answer,
                     "question": question,
-                    "search_query": (plan.get("queries") or [question])[0],
+                    "search_query": (plan.get("queries") or [""])[0],
                     "search_queries": plan.get("queries", []),
                     "research_plan": {
                         "depth": plan.get("depth", "standard"),
@@ -4702,7 +4706,7 @@ class WebAgent:
             return {
                 "answer": reason,
                 "question": question,
-                "search_query": plan.get("queries", [question])[0],
+                "search_query": (plan.get("queries") or [""])[0],
                 "search_queries": plan.get("queries", []),
                 "research_plan": {
                     "depth": plan.get("depth", "standard"),
@@ -5082,7 +5086,7 @@ class WebAgent:
         return {
             "answer": answer,
             "question": question,
-            "search_query": plan.get("queries", [question])[0],
+            "search_query": (plan.get("queries") or [""])[0],
             "search_queries": plan.get("queries", []),
             "research_plan": {
                 "depth": plan.get("depth", "standard"),
