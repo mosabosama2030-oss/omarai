@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002023 إلى SRC-F725E90B2A-L002822
+- النطاق: SRC-F725E90B2A-L002025 إلى SRC-F725E90B2A-L002824
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002023](../../tests/test_web_agent.py#L2023) | 2023 | `"    assert \"غير محدد\" in html"` | — |
-| [SRC-F725E90B2A-L002024](../../tests/test_web_agent.py#L2024) | 2024 | `"    assert 'const score=(researchErrorOutcome\|\|lead)?null:Number(e.coverage_score\|\|0)' not in html"` | — |
 | [SRC-F725E90B2A-L002025](../../tests/test_web_agent.py#L2025) | 2025 | `"    assert \"مؤشر تغطية البحث:\" not in html"` | — |
 | [SRC-F725E90B2A-L002026](../../tests/test_web_agent.py#L2026) | 2026 | `"    assert '\"تغطية الأدلة: \"+scoreLabel' in html"` | — |
 | [SRC-F725E90B2A-L002027](../../tests/test_web_agent.py#L2027) | 2027 | `"    assert \"يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة\" in html"` | — |
@@ -816,3 +814,5 @@
 | [SRC-F725E90B2A-L002820](../../tests/test_web_agent.py#L2820) | 2820 | `"    assert statuses[\"bing_rss\"] == \"rate_limited\""` | — |
 | [SRC-F725E90B2A-L002821](../../tests/test_web_agent.py#L2821) | 2821 | `""` | — |
 | [SRC-F725E90B2A-L002822](../../tests/test_web_agent.py#L2822) | 2822 | `""` | — |
+| [SRC-F725E90B2A-L002823](../../tests/test_web_agent.py#L2823) | 2823 | `"def test_search_web_records_distinct_candidate_rejection_reasons(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002824](../../tests/test_web_agent.py#L2824) | 2824 | `"    agent = WebAgent()"` | — |
