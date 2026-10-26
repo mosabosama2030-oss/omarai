@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002079 إلى SRC-F725E90B2A-L002878
+- النطاق: SRC-F725E90B2A-L002075 إلى SRC-F725E90B2A-L002874
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002075](../../tests/test_web_agent.py#L2075) | 2075 | `"        return ["` | — |
+| [SRC-F725E90B2A-L002076](../../tests/test_web_agent.py#L2076) | 2076 | `"            {"` | — |
+| [SRC-F725E90B2A-L002077](../../tests/test_web_agent.py#L2077) | 2077 | `"                \"provider\": \"bing_rss\","` | — |
+| [SRC-F725E90B2A-L002078](../../tests/test_web_agent.py#L2078) | 2078 | `"                \"title\": \"OpenAI official website\","` | — |
 | [SRC-F725E90B2A-L002079](../../tests/test_web_agent.py#L2079) | 2079 | `"                \"url\": \"https://openai.com/\","` | — |
 | [SRC-F725E90B2A-L002080](../../tests/test_web_agent.py#L2080) | 2080 | `"                \"snippet\": \"Official website and products\","` | — |
 | [SRC-F725E90B2A-L002081](../../tests/test_web_agent.py#L2081) | 2081 | `"            }"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002872](../../tests/test_web_agent.py#L2872) | 2872 | `"        calls.append((\"duckduckgo_html\", query))"` | — |
 | [SRC-F725E90B2A-L002873](../../tests/test_web_agent.py#L2873) | 2873 | `"        raise RuntimeError(\"HTTP 302\")"` | — |
 | [SRC-F725E90B2A-L002874](../../tests/test_web_agent.py#L2874) | 2874 | `""` | — |
-| [SRC-F725E90B2A-L002875](../../tests/test_web_agent.py#L2875) | 2875 | `"    def no_results(query):"` | — |
-| [SRC-F725E90B2A-L002876](../../tests/test_web_agent.py#L2876) | 2876 | `"        calls.append((\"bing_rss\", query))"` | — |
-| [SRC-F725E90B2A-L002877](../../tests/test_web_agent.py#L2877) | 2877 | `"        return []"` | — |
-| [SRC-F725E90B2A-L002878](../../tests/test_web_agent.py#L2878) | 2878 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000479 إلى SRC-F725E90B2A-L001278
+- النطاق: SRC-F725E90B2A-L000475 إلى SRC-F725E90B2A-L001274
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000475](../../tests/test_web_agent.py#L475) | 475 | `"    )"` | — |
+| [SRC-F725E90B2A-L000476](../../tests/test_web_agent.py#L476) | 476 | `"    assert results == []"` | — |
+| [SRC-F725E90B2A-L000477](../../tests/test_web_agent.py#L477) | 477 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
+| [SRC-F725E90B2A-L000478](../../tests/test_web_agent.py#L478) | 478 | `""` | — |
 | [SRC-F725E90B2A-L000479](../../tests/test_web_agent.py#L479) | 479 | `""` | — |
 | [SRC-F725E90B2A-L000480](../../tests/test_web_agent.py#L480) | 480 | `"def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000481](../../tests/test_web_agent.py#L481) | 481 | `"    import httpx"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"    )"` | — |
 | [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `"    result = agent.answer(\"ما آخر أخبار هذه التقنية اليوم؟\")"` | — |
 | [SRC-F725E90B2A-L001274](../../tests/test_web_agent.py#L1274) | 1274 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
-| [SRC-F725E90B2A-L001275](../../tests/test_web_agent.py#L1275) | 1275 | `"    assert result[\"research_quality\"] == \"failed\""` | — |
-| [SRC-F725E90B2A-L001276](../../tests/test_web_agent.py#L1276) | 1276 | `"    assert \"لم أجد معلومات موثوقة كافية\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001277](../../tests/test_web_agent.py#L1277) | 1277 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
-| [SRC-F725E90B2A-L001278](../../tests/test_web_agent.py#L1278) | 1278 | `""` | — |

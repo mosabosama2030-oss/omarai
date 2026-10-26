@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001279 إلى SRC-F725E90B2A-L002078
+- النطاق: SRC-F725E90B2A-L001275 إلى SRC-F725E90B2A-L002074
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001275](../../tests/test_web_agent.py#L1275) | 1275 | `"    assert result[\"research_quality\"] == \"failed\""` | — |
+| [SRC-F725E90B2A-L001276](../../tests/test_web_agent.py#L1276) | 1276 | `"    assert \"لم أجد معلومات موثوقة كافية\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001277](../../tests/test_web_agent.py#L1277) | 1277 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
+| [SRC-F725E90B2A-L001278](../../tests/test_web_agent.py#L1278) | 1278 | `""` | — |
 | [SRC-F725E90B2A-L001279](../../tests/test_web_agent.py#L1279) | 1279 | `"    assert len(calls) == 2"` | — |
 | [SRC-F725E90B2A-L001280](../../tests/test_web_agent.py#L1280) | 1280 | `"    repair = result[\"search_report\"][\"evidence_repair\"]"` | — |
 | [SRC-F725E90B2A-L001281](../../tests/test_web_agent.py#L1281) | 1281 | `"    assert repair[\"attempted\"] is True"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002072](../../tests/test_web_agent.py#L2072) | 2072 | `"        calls.append(query)"` | — |
 | [SRC-F725E90B2A-L002073](../../tests/test_web_agent.py#L2073) | 2073 | `"        if len(calls) == 1:"` | — |
 | [SRC-F725E90B2A-L002074](../../tests/test_web_agent.py#L2074) | 2074 | `"            return []"` | — |
-| [SRC-F725E90B2A-L002075](../../tests/test_web_agent.py#L2075) | 2075 | `"        return ["` | — |
-| [SRC-F725E90B2A-L002076](../../tests/test_web_agent.py#L2076) | 2076 | `"            {"` | — |
-| [SRC-F725E90B2A-L002077](../../tests/test_web_agent.py#L2077) | 2077 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-F725E90B2A-L002078](../../tests/test_web_agent.py#L2078) | 2078 | `"                \"title\": \"OpenAI official website\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000059 إلى SRC-90FAA34ADE-L000072
+- النطاق: SRC-A8360B1B03-L000055 إلى SRC-90FAA34ADE-L000068
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000055](../../scripts/hosted_smoke_test.py#L55) | 55 | `"    if parsed.path not in {\"\", \"/\"}:"` | — |
+| [SRC-A8360B1B03-L000056](../../scripts/hosted_smoke_test.py#L56) | 56 | `"        raise SmokeError(\"The base URL must be an origin only; do not add /api or another path.\")"` | — |
+| [SRC-A8360B1B03-L000057](../../scripts/hosted_smoke_test.py#L57) | 57 | `"    if parsed.scheme != \"https\" and not ("` | — |
+| [SRC-A8360B1B03-L000058](../../scripts/hosted_smoke_test.py#L58) | 58 | `"        allow_http and parsed.hostname.lower() in {\"localhost\", \"127.0.0.1\", \"::1\"}"` | — |
 | [SRC-A8360B1B03-L000059](../../scripts/hosted_smoke_test.py#L59) | 59 | `"    ):"` | — |
 | [SRC-A8360B1B03-L000060](../../scripts/hosted_smoke_test.py#L60) | 60 | `"        raise SmokeError(\"Hosted tests require HTTPS; plain HTTP is allowed only for local tests.\")"` | — |
 | [SRC-A8360B1B03-L000061](../../scripts/hosted_smoke_test.py#L61) | 61 | `"    try:"` | — |
@@ -839,7 +843,3 @@
 | [SRC-90FAA34ADE-L000066](../../tests/fixtures/answer_quality_cases.json#L66) | 66 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000067](../../tests/fixtures/answer_quality_cases.json#L67) | 67 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000068](../../tests/fixtures/answer_quality_cases.json#L68) | 68 | `"      \"case_id\": \"AQ-003\","` | — |
-| [SRC-90FAA34ADE-L000069](../../tests/fixtures/answer_quality_cases.json#L69) | 69 | `"      \"category\": \"general_knowledge\","` | — |
-| [SRC-90FAA34ADE-L000070](../../tests/fixtures/answer_quality_cases.json#L70) | 70 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000071](../../tests/fixtures/answer_quality_cases.json#L71) | 71 | `"      \"question\": \"ما عاصمة مصر؟\","` | — |
-| [SRC-90FAA34ADE-L000072](../../tests/fixtures/answer_quality_cases.json#L72) | 72 | `"      \"expected_strategy\": \"model_no_search\","` | — |

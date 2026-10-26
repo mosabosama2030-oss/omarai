@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **034**
-- سجلات الأسطر: **749**
-- النطاق: SRC-F725E90B2A-L002879 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **753**
+- النطاق: SRC-F725E90B2A-L002875 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002875](../../tests/test_web_agent.py#L2875) | 2875 | `"    def no_results(query):"` | — |
+| [SRC-F725E90B2A-L002876](../../tests/test_web_agent.py#L2876) | 2876 | `"        calls.append((\"bing_rss\", query))"` | — |
+| [SRC-F725E90B2A-L002877](../../tests/test_web_agent.py#L2877) | 2877 | `"        return []"` | — |
+| [SRC-F725E90B2A-L002878](../../tests/test_web_agent.py#L2878) | 2878 | `""` | — |
 | [SRC-F725E90B2A-L002879](../../tests/test_web_agent.py#L2879) | 2879 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", redirect_response)"` | — |
 | [SRC-F725E90B2A-L002880](../../tests/test_web_agent.py#L2880) | 2880 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", no_results)"` | — |
 | [SRC-F725E90B2A-L002881](../../tests/test_web_agent.py#L2881) | 2881 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _q: [])"` | — |
