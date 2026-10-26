@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001786 إلى SRC-F725E90B2A-L002585
+- النطاق: SRC-F725E90B2A-L001765 إلى SRC-F725E90B2A-L002564
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001765](../../tests/test_web_agent.py#L1765) | 1765 | `"            \"pages_fetched\": 0,"` | — |
+| [SRC-F725E90B2A-L001766](../../tests/test_web_agent.py#L1766) | 1766 | `"            \"providers_used\": [],"` | — |
+| [SRC-F725E90B2A-L001767](../../tests/test_web_agent.py#L1767) | 1767 | `"            \"provider_counts\": {},"` | — |
+| [SRC-F725E90B2A-L001768](../../tests/test_web_agent.py#L1768) | 1768 | `"            \"platform_counts\": {},"` | — |
+| [SRC-F725E90B2A-L001769](../../tests/test_web_agent.py#L1769) | 1769 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L001770](../../tests/test_web_agent.py#L1770) | 1770 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-F725E90B2A-L001771](../../tests/test_web_agent.py#L1771) | 1771 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001772](../../tests/test_web_agent.py#L1772) | 1772 | `"            \"evidence_signals\": {},"` | — |
+| [SRC-F725E90B2A-L001773](../../tests/test_web_agent.py#L1773) | 1773 | `"        }"` | — |
+| [SRC-F725E90B2A-L001774](../../tests/test_web_agent.py#L1774) | 1774 | `""` | — |
+| [SRC-F725E90B2A-L001775](../../tests/test_web_agent.py#L1775) | 1775 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L001776](../../tests/test_web_agent.py#L1776) | 1776 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-F725E90B2A-L001777](../../tests/test_web_agent.py#L1777) | 1777 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001778](../../tests/test_web_agent.py#L1778) | 1778 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L001779](../../tests/test_web_agent.py#L1779) | 1779 | `"        \"_generate\","` | — |
+| [SRC-F725E90B2A-L001780](../../tests/test_web_agent.py#L1780) | 1780 | `"        lambda *args, **kwargs: pytest.fail(\"The model must not answer without usable evidence\"),"` | — |
+| [SRC-F725E90B2A-L001781](../../tests/test_web_agent.py#L1781) | 1781 | `"    )"` | — |
+| [SRC-F725E90B2A-L001782](../../tests/test_web_agent.py#L1782) | 1782 | `""` | — |
+| [SRC-F725E90B2A-L001783](../../tests/test_web_agent.py#L1783) | 1783 | `"    result = agent.answer(\"ما آخر تطورات الطاقة المتجددة اليوم؟\")"` | — |
+| [SRC-F725E90B2A-L001784](../../tests/test_web_agent.py#L1784) | 1784 | `""` | — |
+| [SRC-F725E90B2A-L001785](../../tests/test_web_agent.py#L1785) | 1785 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
 | [SRC-F725E90B2A-L001786](../../tests/test_web_agent.py#L1786) | 1786 | `"    assert result[\"search_attempted\"] is True"` | — |
 | [SRC-F725E90B2A-L001787](../../tests/test_web_agent.py#L1787) | 1787 | `"    assert result[\"used_web_search\"] is False"` | — |
 | [SRC-F725E90B2A-L001788](../../tests/test_web_agent.py#L1788) | 1788 | `"    assert result[\"sources\"] == []"` | — |
@@ -795,24 +816,3 @@
 | [SRC-F725E90B2A-L002562](../../tests/test_web_agent.py#L2562) | 2562 | `""` | — |
 | [SRC-F725E90B2A-L002563](../../tests/test_web_agent.py#L2563) | 2563 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
 | [SRC-F725E90B2A-L002564](../../tests/test_web_agent.py#L2564) | 2564 | `""` | — |
-| [SRC-F725E90B2A-L002565](../../tests/test_web_agent.py#L2565) | 2565 | `"    assert web_agent.WebAgent()._fetch_page(\"https://first.example/article\") == (\"\", \"\")"` | — |
-| [SRC-F725E90B2A-L002566](../../tests/test_web_agent.py#L2566) | 2566 | `"    assert resolved_hosts == [\"first.example\", \"second.example\"]"` | — |
-| [SRC-F725E90B2A-L002567](../../tests/test_web_agent.py#L2567) | 2567 | `"    # The second host is validated before any connection attempt to it."` | — |
-| [SRC-F725E90B2A-L002568](../../tests/test_web_agent.py#L2568) | 2568 | `"    assert len(requests) == 1"` | — |
-| [SRC-F725E90B2A-L002569](../../tests/test_web_agent.py#L2569) | 2569 | `""` | — |
-| [SRC-F725E90B2A-L002570](../../tests/test_web_agent.py#L2570) | 2570 | `""` | — |
-| [SRC-F725E90B2A-L002571](../../tests/test_web_agent.py#L2571) | 2571 | `""` | — |
-| [SRC-F725E90B2A-L002572](../../tests/test_web_agent.py#L2572) | 2572 | `"def test_history_search_query_uses_shared_context_resolver():"` | — |
-| [SRC-F725E90B2A-L002573](../../tests/test_web_agent.py#L2573) | 2573 | `"    history = ["` | — |
-| [SRC-F725E90B2A-L002574](../../tests/test_web_agent.py#L2574) | 2574 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
-| [SRC-F725E90B2A-L002575](../../tests/test_web_agent.py#L2575) | 2575 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن السعر.\"},"` | — |
-| [SRC-F725E90B2A-L002576](../../tests/test_web_agent.py#L2576) | 2576 | `"    ]"` | — |
-| [SRC-F725E90B2A-L002577](../../tests/test_web_agent.py#L2577) | 2577 | `"    query = WebAgent._history_search_query(\"هل فيه ضمان؟\", history)"` | — |
-| [SRC-F725E90B2A-L002578](../../tests/test_web_agent.py#L2578) | 2578 | `"    assert \"آيفون 16\" in query"` | — |
-| [SRC-F725E90B2A-L002579](../../tests/test_web_agent.py#L2579) | 2579 | `"    assert \"ضمان\" in query"` | — |
-| [SRC-F725E90B2A-L002580](../../tests/test_web_agent.py#L2580) | 2580 | `""` | — |
-| [SRC-F725E90B2A-L002581](../../tests/test_web_agent.py#L2581) | 2581 | `""` | — |
-| [SRC-F725E90B2A-L002582](../../tests/test_web_agent.py#L2582) | 2582 | `"def test_history_search_query_does_not_reuse_stale_topic_after_acknowledgment():"` | — |
-| [SRC-F725E90B2A-L002583](../../tests/test_web_agent.py#L2583) | 2583 | `"    history = ["` | — |
-| [SRC-F725E90B2A-L002584](../../tests/test_web_agent.py#L2584) | 2584 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
-| [SRC-F725E90B2A-L002585](../../tests/test_web_agent.py#L2585) | 2585 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن السعر.\"},"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000160 إلى SRC-C353AAAC10-L000109
+- النطاق: SRC-1A176AD4F0-L000160 إلى SRC-C353AAAC10-L000088
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -573,6 +573,27 @@
 | [SRC-188F068481-L000068](../../tests/test_live_search_relevance_regressions.py#L68) | 68 | `"    assert bing[\"usable_results_for_this_request\"] is False"` | — |
 | [SRC-188F068481-L000069](../../tests/test_live_search_relevance_regressions.py#L69) | 69 | `"    assert bing[\"result_count\"] == 0"` | — |
 | [SRC-188F068481-L000070](../../tests/test_live_search_relevance_regressions.py#L70) | 70 | `"    assert bing[\"rejected_count\"] == 6"` | — |
+| [SRC-188F068481-L000071](../../tests/test_live_search_relevance_regressions.py#L71) | 71 | `""` | — |
+| [SRC-188F068481-L000072](../../tests/test_live_search_relevance_regressions.py#L72) | 72 | `""` | — |
+| [SRC-188F068481-L000073](../../tests/test_live_search_relevance_regressions.py#L73) | 73 | `"@pytest.mark.parametrize("` | — |
+| [SRC-188F068481-L000074](../../tests/test_live_search_relevance_regressions.py#L74) | 74 | `"    (\"question\", \"evidence\"),"` | — |
+| [SRC-188F068481-L000075](../../tests/test_live_search_relevance_regressions.py#L75) | 75 | `"    ["` | — |
+| [SRC-188F068481-L000076](../../tests/test_live_search_relevance_regressions.py#L76) | 76 | `"        ("` | — |
+| [SRC-188F068481-L000077](../../tests/test_live_search_relevance_regressions.py#L77) | 77 | `"            \"السيارات الكهربائية والشحن والتكلفة والبنية التحتية في مصر\","` | — |
+| [SRC-188F068481-L000078](../../tests/test_live_search_relevance_regressions.py#L78) | 78 | `"            \"Electric vehicles in Egypt need charging infrastructure and affect ownership costs.\","` | — |
+| [SRC-188F068481-L000079](../../tests/test_live_search_relevance_regressions.py#L79) | 79 | `"        ),"` | — |
+| [SRC-188F068481-L000080](../../tests/test_live_search_relevance_regressions.py#L80) | 80 | `"        ("` | — |
+| [SRC-188F068481-L000081](../../tests/test_live_search_relevance_regressions.py#L81) | 81 | `"            \"وكلاء الذكاء الاصطناعي والتطورات الجديدة\","` | — |
+| [SRC-188F068481-L000082](../../tests/test_live_search_relevance_regressions.py#L82) | 82 | `"            \"Recent developments in AI agents include planning and tool use.\","` | — |
+| [SRC-188F068481-L000083](../../tests/test_live_search_relevance_regressions.py#L83) | 83 | `"        ),"` | — |
+| [SRC-188F068481-L000084](../../tests/test_live_search_relevance_regressions.py#L84) | 84 | `"        ("` | — |
+| [SRC-188F068481-L000085](../../tests/test_live_search_relevance_regressions.py#L85) | 85 | `"            \"اراء وتجارب المستخدمين للسيارات الكهربائية في مصر\","` | — |
+| [SRC-188F068481-L000086](../../tests/test_live_search_relevance_regressions.py#L86) | 86 | `"            \"Reviews from electric car users in Egypt discuss charging and ownership.\","` | — |
+| [SRC-188F068481-L000087](../../tests/test_live_search_relevance_regressions.py#L87) | 87 | `"        ),"` | — |
+| [SRC-188F068481-L000088](../../tests/test_live_search_relevance_regressions.py#L88) | 88 | `"    ],"` | — |
+| [SRC-188F068481-L000089](../../tests/test_live_search_relevance_regressions.py#L89) | 89 | `")"` | — |
+| [SRC-188F068481-L000090](../../tests/test_live_search_relevance_regressions.py#L90) | 90 | `"def test_core_bilingual_topic_synonyms_are_matched(question, evidence):"` | — |
+| [SRC-188F068481-L000091](../../tests/test_live_search_relevance_regressions.py#L91) | 91 | `"    assert _relevance_ratio(question, evidence) >= 0.20"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -858,24 +879,3 @@
 | [SRC-C353AAAC10-L000086](../../tests/test_request_budget.py#L86) | 86 | `""` | — |
 | [SRC-C353AAAC10-L000087](../../tests/test_request_budget.py#L87) | 87 | `""` | — |
 | [SRC-C353AAAC10-L000088](../../tests/test_request_budget.py#L88) | 88 | `"def test_social_provider_reserves_budget_before_network_io(monkeypatch):"` | — |
-| [SRC-C353AAAC10-L000089](../../tests/test_request_budget.py#L89) | 89 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-C353AAAC10-L000090](../../tests/test_request_budget.py#L90) | 90 | `""` | — |
-| [SRC-C353AAAC10-L000091](../../tests/test_request_budget.py#L91) | 91 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"test-client\")"` | — |
-| [SRC-C353AAAC10-L000092](../../tests/test_request_budget.py#L92) | 92 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"test-secret\")"` | — |
-| [SRC-C353AAAC10-L000093](../../tests/test_request_budget.py#L93) | 93 | `"    agent = WebAgent()"` | — |
-| [SRC-C353AAAC10-L000094](../../tests/test_request_budget.py#L94) | 94 | `"    agent._request_budget = RequestBudget(limits={\"search_calls\": 0})"` | — |
-| [SRC-C353AAAC10-L000095](../../tests/test_request_budget.py#L95) | 95 | `""` | — |
-| [SRC-C353AAAC10-L000096](../../tests/test_request_budget.py#L96) | 96 | `"    monkeypatch.setattr("` | — |
-| [SRC-C353AAAC10-L000097](../../tests/test_request_budget.py#L97) | 97 | `"        \"httpx.post\","` | — |
-| [SRC-C353AAAC10-L000098](../../tests/test_request_budget.py#L98) | 98 | `"        lambda *args, **kwargs: pytest.fail(\"social HTTP request must not start\"),"` | — |
-| [SRC-C353AAAC10-L000099](../../tests/test_request_budget.py#L99) | 99 | `"    )"` | — |
-| [SRC-C353AAAC10-L000100](../../tests/test_request_budget.py#L100) | 100 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_calls\"):"` | — |
-| [SRC-C353AAAC10-L000101](../../tests/test_request_budget.py#L101) | 101 | `"        agent._search_social(\"budget test\", [\"reddit\"])"` | — |
-| [SRC-C353AAAC10-L000102](../../tests/test_request_budget.py#L102) | 102 | `""` | — |
-| [SRC-C353AAAC10-L000103](../../tests/test_request_budget.py#L103) | 103 | `""` | — |
-| [SRC-C353AAAC10-L000104](../../tests/test_request_budget.py#L104) | 104 | `"@pytest.mark.parametrize("` | — |
-| [SRC-C353AAAC10-L000105](../../tests/test_request_budget.py#L105) | 105 | `"    (\"resource\", \"limit\"),"` | — |
-| [SRC-C353AAAC10-L000106](../../tests/test_request_budget.py#L106) | 106 | `"    ["` | — |
-| [SRC-C353AAAC10-L000107](../../tests/test_request_budget.py#L107) | 107 | `"        (\"search_queries\", 8),"` | — |
-| [SRC-C353AAAC10-L000108](../../tests/test_request_budget.py#L108) | 108 | `"        (\"search_calls\", 32),"` | — |
-| [SRC-C353AAAC10-L000109](../../tests/test_request_budget.py#L109) | 109 | `"        (\"model_calls\", 8),"` | — |

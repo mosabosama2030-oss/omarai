@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000186 إلى SRC-F725E90B2A-L000985
+- النطاق: SRC-F725E90B2A-L000165 إلى SRC-F725E90B2A-L000964
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000165](../../tests/test_web_agent.py#L165) | 165 | `"        <a class=\"result__a\" href=\"https://example.com/first\">صفحة أولى</a>"` | — |
+| [SRC-F725E90B2A-L000166](../../tests/test_web_agent.py#L166) | 166 | `"        <a class=\"result__snippet\">سؤال بحث تجريبي مقتطف أول</a>"` | — |
+| [SRC-F725E90B2A-L000167](../../tests/test_web_agent.py#L167) | 167 | `"      </div>"` | — |
+| [SRC-F725E90B2A-L000168](../../tests/test_web_agent.py#L168) | 168 | `"    </body></html>"` | — |
+| [SRC-F725E90B2A-L000169](../../tests/test_web_agent.py#L169) | 169 | `"    \"\"\""` | — |
+| [SRC-F725E90B2A-L000170](../../tests/test_web_agent.py#L170) | 170 | `"    rss = \"\"\""` | — |
+| [SRC-F725E90B2A-L000171](../../tests/test_web_agent.py#L171) | 171 | `"    <rss><channel><item>"` | — |
+| [SRC-F725E90B2A-L000172](../../tests/test_web_agent.py#L172) | 172 | `"      <title>صفحة ثانية</title>"` | — |
+| [SRC-F725E90B2A-L000173](../../tests/test_web_agent.py#L173) | 173 | `"      <link>https://example.net/second</link>"` | — |
+| [SRC-F725E90B2A-L000174](../../tests/test_web_agent.py#L174) | 174 | `"      <description>سؤال بحث تجريبي مقتطف ثاني</description>"` | — |
+| [SRC-F725E90B2A-L000175](../../tests/test_web_agent.py#L175) | 175 | `"    </item></channel></rss>"` | — |
+| [SRC-F725E90B2A-L000176](../../tests/test_web_agent.py#L176) | 176 | `"    \"\"\""` | — |
+| [SRC-F725E90B2A-L000177](../../tests/test_web_agent.py#L177) | 177 | `""` | — |
+| [SRC-F725E90B2A-L000178](../../tests/test_web_agent.py#L178) | 178 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000179](../../tests/test_web_agent.py#L179) | 179 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L000180](../../tests/test_web_agent.py#L180) | 180 | `""` | — |
+| [SRC-F725E90B2A-L000181](../../tests/test_web_agent.py#L181) | 181 | `"        def __init__(self, text):"` | — |
+| [SRC-F725E90B2A-L000182](../../tests/test_web_agent.py#L182) | 182 | `"            self.text = text"` | — |
+| [SRC-F725E90B2A-L000183](../../tests/test_web_agent.py#L183) | 183 | `"            self.content = text.encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000184](../../tests/test_web_agent.py#L184) | 184 | `""` | — |
+| [SRC-F725E90B2A-L000185](../../tests/test_web_agent.py#L185) | 185 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L000186](../../tests/test_web_agent.py#L186) | 186 | `""` | — |
 | [SRC-F725E90B2A-L000187](../../tests/test_web_agent.py#L187) | 187 | `"    def fake_get(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L000188](../../tests/test_web_agent.py#L188) | 188 | `"        calls.append(url)"` | — |
@@ -795,24 +816,3 @@
 | [SRC-F725E90B2A-L000962](../../tests/test_web_agent.py#L962) | 962 | `""` | — |
 | [SRC-F725E90B2A-L000963](../../tests/test_web_agent.py#L963) | 963 | `""` | — |
 | [SRC-F725E90B2A-L000964](../../tests/test_web_agent.py#L964) | 964 | `"def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000965](../../tests/test_web_agent.py#L965) | 965 | `"    monkeypatch.delenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000966](../../tests/test_web_agent.py#L966) | 966 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000967](../../tests/test_web_agent.py#L967) | 967 | `"    assert agent.openrouter_web_search_enabled is False"` | — |
-| [SRC-F725E90B2A-L000968](../../tests/test_web_agent.py#L968) | 968 | `""` | — |
-| [SRC-F725E90B2A-L000969](../../tests/test_web_agent.py#L969) | 969 | `""` | — |
-| [SRC-F725E90B2A-L000970](../../tests/test_web_agent.py#L970) | 970 | `""` | — |
-| [SRC-F725E90B2A-L000971](../../tests/test_web_agent.py#L971) | 971 | `"def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():"` | — |
-| [SRC-F725E90B2A-L000972](../../tests/test_web_agent.py#L972) | 972 | `"    normalized = _normalize_search_query(\"إِنَّ أَسْعَارَ أُسْتُرَالِيَا\")"` | — |
-| [SRC-F725E90B2A-L000973](../../tests/test_web_agent.py#L973) | 973 | `"    assert \"إ\" not in normalized"` | — |
-| [SRC-F725E90B2A-L000974](../../tests/test_web_agent.py#L974) | 974 | `"    assert \"أ\" not in normalized"` | — |
-| [SRC-F725E90B2A-L000975](../../tests/test_web_agent.py#L975) | 975 | `"    assert \"ا\" in normalized"` | — |
-| [SRC-F725E90B2A-L000976](../../tests/test_web_agent.py#L976) | 976 | `"    assert normalized == \"ان اسعار استراليا\""` | — |
-| [SRC-F725E90B2A-L000977](../../tests/test_web_agent.py#L977) | 977 | `""` | — |
-| [SRC-F725E90B2A-L000978](../../tests/test_web_agent.py#L978) | 978 | `""` | — |
-| [SRC-F725E90B2A-L000979](../../tests/test_web_agent.py#L979) | 979 | `"def test_relevance_filter_rejects_translation_and_sports_noise():"` | — |
-| [SRC-F725E90B2A-L000980](../../tests/test_web_agent.py#L980) | 980 | `"    query = \"قارن Railway و Render لاستضافة Python\""` | — |
-| [SRC-F725E90B2A-L000981](../../tests/test_web_agent.py#L981) | 981 | `"    assert _relevance_ratio(query, \"Google Translate: error in translation\") < 0.20"` | — |
-| [SRC-F725E90B2A-L000982](../../tests/test_web_agent.py#L982) | 982 | `"    assert _relevance_ratio("` | — |
-| [SRC-F725E90B2A-L000983](../../tests/test_web_agent.py#L983) | 983 | `"        \"أول شركة ناشئة في صعيد مصر عام 2019\","` | — |
-| [SRC-F725E90B2A-L000984](../../tests/test_web_agent.py#L984) | 984 | `"        \"نتائج مباراة كرة القدم وأهداف الدوري المصري اليوم\","` | — |
-| [SRC-F725E90B2A-L000985](../../tests/test_web_agent.py#L985) | 985 | `"    ) < 0.20"` | — |
