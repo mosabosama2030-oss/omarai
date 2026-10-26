@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001699 إلى SRC-1AE03B9EC3-L002498
+- النطاق: SRC-1AE03B9EC3-L001701 إلى SRC-1AE03B9EC3-L002500
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001699](../../agents/web_agent.py#L1699) | 1699 | `"                                    \"page_fetched\": False,"` | — |
-| [SRC-1AE03B9EC3-L001700](../../agents/web_agent.py#L1700) | 1700 | `"                                    \"provider\": \"reddit_oauth_api\","` | — |
 | [SRC-1AE03B9EC3-L001701](../../agents/web_agent.py#L1701) | 1701 | `"                                    \"provider_rank\": rank,"` | — |
 | [SRC-1AE03B9EC3-L001702](../../agents/web_agent.py#L1702) | 1702 | `"                                    \"search_query\": query,"` | — |
 | [SRC-1AE03B9EC3-L001703](../../agents/web_agent.py#L1703) | 1703 | `"                                    \"published_at\": _clean_text(str(post.get(\"created_utc\") or \"\"), 100),"` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L002496](../../agents/web_agent.py#L2496) | 2496 | `"        page_failure_statuses = {"` | — |
 | [SRC-1AE03B9EC3-L002497](../../agents/web_agent.py#L2497) | 2497 | `"            \"fetch_failed\", \"no_text_extracted\", \"rejected_url\","` | — |
 | [SRC-1AE03B9EC3-L002498](../../agents/web_agent.py#L2498) | 2498 | `"            \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
+| [SRC-1AE03B9EC3-L002499](../../agents/web_agent.py#L2499) | 2499 | `"            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\","` | — |
+| [SRC-1AE03B9EC3-L002500](../../agents/web_agent.py#L2500) | 2500 | `"            \"http_error\", \"unsupported_content_type\", \"page_too_large\","` | — |

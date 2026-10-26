@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000899 إلى SRC-1AE03B9EC3-L001698
+- النطاق: SRC-1AE03B9EC3-L000901 إلى SRC-1AE03B9EC3-L001700
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000899](../../agents/web_agent.py#L899) | 899 | `"                \"What are you referring to? Please name the item or share its link, \""` | — |
-| [SRC-1AE03B9EC3-L000900](../../agents/web_agent.py#L900) | 900 | `"                \"and I'll continue without guessing.\""` | — |
 | [SRC-1AE03B9EC3-L000901](../../agents/web_agent.py#L901) | 901 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000902](../../agents/web_agent.py#L902) | 902 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L000903](../../agents/web_agent.py#L903) | 903 | `"            answer = ("` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L001696](../../agents/web_agent.py#L1696) | 1696 | `"                                    \"url\": url,"` | — |
 | [SRC-1AE03B9EC3-L001697](../../agents/web_agent.py#L1697) | 1697 | `"                                    \"snippet\": snippet,"` | — |
 | [SRC-1AE03B9EC3-L001698](../../agents/web_agent.py#L1698) | 1698 | `"                                    \"page_text\": \"\","` | — |
+| [SRC-1AE03B9EC3-L001699](../../agents/web_agent.py#L1699) | 1699 | `"                                    \"page_fetched\": False,"` | — |
+| [SRC-1AE03B9EC3-L001700](../../agents/web_agent.py#L1700) | 1700 | `"                                    \"provider\": \"reddit_oauth_api\","` | — |
