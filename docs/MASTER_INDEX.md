@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **80**
 - ملفات Python المحللة: **42**
-- تعريفات Python المفهرسة: **990**
+- تعريفات Python المفهرسة: **992**
 - تعريفات Python موثقة بوجود Docstring: **193**
-- تعريفات Python بلا Docstring: **596**
+- تعريفات Python بلا Docstring: **598**
 - تعريفات لا ينطبق عليها Docstring: **201**
 - الرموز الساكنة الإضافية: **1558**
-- الأسطر النصية المفهرسة حرفيًا: **26350**
+- الأسطر النصية المفهرسة حرفيًا: **26392**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -101,7 +101,7 @@
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
-| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 6023 | 145 | جرد الملف + AST Python |
+| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 8227 | 187 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -857,18 +857,20 @@
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L88) | دالة | test_social_provider_reserves_budget_before_network_io | لا توجد Docstring. | ناقص | 88 | [SRC-C353AAAC10-L000088](../tests/test_request_budget.py#L88) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L114) | دالة | test_each_resource_counter_stops_at_its_limit | لا توجد Docstring. | ناقص | 114 | [SRC-C353AAAC10-L000114](../tests/test_request_budget.py#L114) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L135) | دالة | test_disabled_resource_never_starts_work | لا توجد Docstring. | ناقص | 135 | [SRC-C353AAAC10-L000135](../tests/test_request_budget.py#L135) |
-| [tests/test_research.py](../tests/test_research.py#L12) | دالة | test_social_question_gets_platform_targeted_queries | لا توجد Docstring. | ناقص | 12 | [SRC-6BF96689A8-L000012](../tests/test_research.py#L12) |
-| [tests/test_research.py](../tests/test_research.py#L20) | دالة | test_follow_up_query_keeps_prior_topic | لا توجد Docstring. | ناقص | 20 | [SRC-6BF96689A8-L000020](../tests/test_research.py#L20) |
-| [tests/test_research.py](../tests/test_research.py#L27) | دالة | test_plan_validation_caps_queries_and_rejects_non_string_values | لا توجد Docstring. | ناقص | 27 | [SRC-6BF96689A8-L000027](../tests/test_research.py#L27) |
-| [tests/test_research.py](../tests/test_research.py#L42) | دالة | test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates | لا توجد Docstring. | ناقص | 42 | [SRC-6BF96689A8-L000042](../tests/test_research.py#L42) |
-| [tests/test_research.py](../tests/test_research.py#L72) | دالة | test_source_classification_distinguishes_social_and_government | لا توجد Docstring. | ناقص | 72 | [SRC-6BF96689A8-L000072](../tests/test_research.py#L72) |
-| [tests/test_research.py](../tests/test_research.py#L79) | دالة | test_explicit_page_urls_are_extracted_and_not_left_in_search_terms | لا توجد Docstring. | ناقص | 79 | [SRC-6BF96689A8-L000079](../tests/test_research.py#L79) |
-| [tests/test_research.py](../tests/test_research.py#L88) | دالة | test_registrable_domain_groups_subdomains_and_respects_public_suffixes | لا توجد Docstring. | ناقص | 88 | [SRC-6BF96689A8-L000088](../tests/test_research.py#L88) |
-| [tests/test_research.py](../tests/test_research.py#L97) | دالة | test_evidence_coverage_does_not_count_sibling_subdomains_as_independent | لا توجد Docstring. | ناقص | 97 | [SRC-6BF96689A8-L000097](../tests/test_research.py#L97) |
-| [tests/test_research.py](../tests/test_research.py#L115) | دالة | test_standard_fallback_plan_does_not_add_deep_research_query | لا توجد Docstring. | ناقص | 115 | [SRC-6BF96689A8-L000115](../tests/test_research.py#L115) |
-| [tests/test_research.py](../tests/test_research.py#L121) | دالة | test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison | لا توجد Docstring. | ناقص | 121 | [SRC-6BF96689A8-L000121](../tests/test_research.py#L121) |
-| [tests/test_research.py](../tests/test_research.py#L127) | دالة | test_fallback_plan_expands_warranty_followup_with_previous_topic | لا توجد Docstring. | ناقص | 127 | [SRC-6BF96689A8-L000127](../tests/test_research.py#L127) |
-| [tests/test_research.py](../tests/test_research.py#L137) | دالة | test_fallback_plan_does_not_reuse_topic_after_acknowledgment | لا توجد Docstring. | ناقص | 137 | [SRC-6BF96689A8-L000137](../tests/test_research.py#L137) |
+| [tests/test_research.py](../tests/test_research.py#L13) | دالة | test_social_question_gets_platform_targeted_queries | لا توجد Docstring. | ناقص | 13 | [SRC-6BF96689A8-L000013](../tests/test_research.py#L13) |
+| [tests/test_research.py](../tests/test_research.py#L21) | دالة | test_follow_up_query_keeps_prior_topic | لا توجد Docstring. | ناقص | 21 | [SRC-6BF96689A8-L000021](../tests/test_research.py#L21) |
+| [tests/test_research.py](../tests/test_research.py#L28) | دالة | test_plan_validation_caps_queries_and_rejects_non_string_values | لا توجد Docstring. | ناقص | 28 | [SRC-6BF96689A8-L000028](../tests/test_research.py#L28) |
+| [tests/test_research.py](../tests/test_research.py#L43) | دالة | test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates | لا توجد Docstring. | ناقص | 43 | [SRC-6BF96689A8-L000043](../tests/test_research.py#L43) |
+| [tests/test_research.py](../tests/test_research.py#L73) | دالة | test_source_classification_distinguishes_social_and_government | لا توجد Docstring. | ناقص | 73 | [SRC-6BF96689A8-L000073](../tests/test_research.py#L73) |
+| [tests/test_research.py](../tests/test_research.py#L80) | دالة | test_explicit_page_urls_are_extracted_and_not_left_in_search_terms | لا توجد Docstring. | ناقص | 80 | [SRC-6BF96689A8-L000080](../tests/test_research.py#L80) |
+| [tests/test_research.py](../tests/test_research.py#L89) | دالة | test_registrable_domain_groups_subdomains_and_respects_public_suffixes | لا توجد Docstring. | ناقص | 89 | [SRC-6BF96689A8-L000089](../tests/test_research.py#L89) |
+| [tests/test_research.py](../tests/test_research.py#L98) | دالة | test_evidence_coverage_does_not_count_sibling_subdomains_as_independent | لا توجد Docstring. | ناقص | 98 | [SRC-6BF96689A8-L000098](../tests/test_research.py#L98) |
+| [tests/test_research.py](../tests/test_research.py#L116) | دالة | test_standard_fallback_plan_does_not_add_deep_research_query | لا توجد Docstring. | ناقص | 116 | [SRC-6BF96689A8-L000116](../tests/test_research.py#L116) |
+| [tests/test_research.py](../tests/test_research.py#L122) | دالة | test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison | لا توجد Docstring. | ناقص | 122 | [SRC-6BF96689A8-L000122](../tests/test_research.py#L122) |
+| [tests/test_research.py](../tests/test_research.py#L128) | دالة | test_fallback_plan_expands_warranty_followup_with_previous_topic | لا توجد Docstring. | ناقص | 128 | [SRC-6BF96689A8-L000128](../tests/test_research.py#L128) |
+| [tests/test_research.py](../tests/test_research.py#L138) | دالة | test_fallback_plan_does_not_reuse_topic_after_acknowledgment | لا توجد Docstring. | ناقص | 138 | [SRC-6BF96689A8-L000138](../tests/test_research.py#L138) |
+| [tests/test_research.py](../tests/test_research.py#L148) | دالة | test_fallback_plan_compacts_arabic_questions_before_expansion | لا توجد Docstring. | ناقص | 148 | [SRC-6BF96689A8-L000148](../tests/test_research.py#L148) |
+| [tests/test_research.py](../tests/test_research.py#L169) | دالة | test_compact_search_query_preserves_site_operator_and_social_sentiment | لا توجد Docstring. | ناقص | 169 | [SRC-6BF96689A8-L000169](../tests/test_research.py#L169) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L15) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 | [SRC-01E35ABC46-L000015](../tests/test_research_guardrails.py#L15) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L21) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 | [SRC-01E35ABC46-L000021](../tests/test_research_guardrails.py#L21) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L27) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 | [SRC-01E35ABC46-L000027](../tests/test_research_guardrails.py#L27) |
