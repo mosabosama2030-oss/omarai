@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **595**
 - تعريفات لا ينطبق عليها Docstring: **194**
 - الرموز الساكنة الإضافية: **1558**
-- الأسطر النصية المفهرسة حرفيًا: **26250**
+- الأسطر النصية المفهرسة حرفيًا: **26252**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -104,7 +104,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 109655 | 2804 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 109819 | 2806 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 54528 | 397 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -1094,9 +1094,9 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2695) | دالة | test_web_answer_integrity_is_attached_without_live_network | لا توجد Docstring. | ناقص | 2695 | [SRC-F725E90B2A-L002695](../tests/test_web_agent.py#L2695) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2730) | دالة | test_frontend_labels_answer_integrity_screen_as_non_semantic | لا توجد Docstring. | ناقص | 2730 | [SRC-F725E90B2A-L002730](../tests/test_web_agent.py#L2730) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2740) | دالة | test_search_web_keeps_arabic_topic_matches_in_english_indexed_results | لا توجد Docstring. | ناقص | 2740 | [SRC-F725E90B2A-L002740](../tests/test_web_agent.py#L2740) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2784) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation | لا توجد Docstring. | ناقص | 2784 | [SRC-F725E90B2A-L002784](../tests/test_web_agent.py#L2784) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2787) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_202 | لا توجد Docstring. | ناقص | 2787 | [SRC-F725E90B2A-L002787](../tests/test_web_agent.py#L2787) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2790) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_429 | لا توجد Docstring. | ناقص | 2790 | [SRC-F725E90B2A-L002790](../tests/test_web_agent.py#L2790) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2786) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation | لا توجد Docstring. | ناقص | 2786 | [SRC-F725E90B2A-L002786](../tests/test_web_agent.py#L2786) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2789) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_202 | لا توجد Docstring. | ناقص | 2789 | [SRC-F725E90B2A-L002789](../tests/test_web_agent.py#L2789) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2792) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_429 | لا توجد Docstring. | ناقص | 2792 | [SRC-F725E90B2A-L002792](../tests/test_web_agent.py#L2792) |
 
 ## الرموز الساكنة الإضافية
 
