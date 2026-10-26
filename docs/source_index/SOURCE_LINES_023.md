@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000819 إلى SRC-4CCB1F172B-L000196
+- النطاق: SRC-90FAA34ADE-L000817 إلى SRC-4CCB1F172B-L000194
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000817](../../tests/fixtures/answer_quality_cases.json#L817) | 817 | `"        \"يجيب عن نقطة واحدة ويصف الإجابة بأنها كاملة\""` | — |
+| [SRC-90FAA34ADE-L000818](../../tests/fixtures/answer_quality_cases.json#L818) | 818 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000819](../../tests/fixtures/answer_quality_cases.json#L819) | 819 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000820](../../tests/fixtures/answer_quality_cases.json#L820) | 820 | `"        \"type\": \"none\","` | — |
 | [SRC-90FAA34ADE-L000821](../../tests/fixtures/answer_quality_cases.json#L821) | 821 | `"        \"notes\": \"الموضوع نفسه غير محدد؛ الاختبار يقيس طلب التوضيح وحفظ قائمة المتطلبات\""` | — |
@@ -832,5 +834,3 @@
 | [SRC-4CCB1F172B-L000192](../../tests/test_answer_quality_corpus.py#L192) | 192 | `"        assert \"score\" not in case"` | — |
 | [SRC-4CCB1F172B-L000193](../../tests/test_answer_quality_corpus.py#L193) | 193 | `"        assert case.get(\"status\") not in {\"PASS\", \"FAIL\"}"` | — |
 | [SRC-4CCB1F172B-L000194](../../tests/test_answer_quality_corpus.py#L194) | 194 | `""` | — |
-| [SRC-4CCB1F172B-L000195](../../tests/test_answer_quality_corpus.py#L195) | 195 | `""` | — |
-| [SRC-4CCB1F172B-L000196](../../tests/test_answer_quality_corpus.py#L196) | 196 | `"def test_languages_include_arabic_english_and_mixed():"` | — |

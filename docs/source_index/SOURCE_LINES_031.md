@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000425 إلى SRC-F725E90B2A-L001224
+- النطاق: SRC-F725E90B2A-L000423 إلى SRC-F725E90B2A-L001222
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000423](../../tests/test_web_agent.py#L423) | 423 | `""` | — |
+| [SRC-F725E90B2A-L000424](../../tests/test_web_agent.py#L424) | 424 | `"def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000425](../../tests/test_web_agent.py#L425) | 425 | `"    import httpx"` | — |
 | [SRC-F725E90B2A-L000426](../../tests/test_web_agent.py#L426) | 426 | `""` | — |
 | [SRC-F725E90B2A-L000427](../../tests/test_web_agent.py#L427) | 427 | `"    monkeypatch.setenv(\"INSTAGRAM_USER_ID\", \"ig-user-123\")"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001220](../../tests/test_web_agent.py#L1220) | 1220 | `""` | — |
 | [SRC-F725E90B2A-L001221](../../tests/test_web_agent.py#L1221) | 1221 | `"    assert len(calls) == 2"` | — |
 | [SRC-F725E90B2A-L001222](../../tests/test_web_agent.py#L1222) | 1222 | `"    assert question not in matched_queries"` | — |
-| [SRC-F725E90B2A-L001223](../../tests/test_web_agent.py#L1223) | 1223 | `"    assert compact_search_query(question) in matched_queries"` | — |
-| [SRC-F725E90B2A-L001224](../../tests/test_web_agent.py#L1224) | 1224 | `"    assert len(calls[1][\"queries\"]) == 1"` | — |
