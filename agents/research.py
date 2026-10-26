@@ -131,8 +131,9 @@ _SEARCH_META_TAIL_RE = re.compile(
     re.IGNORECASE,
 )
 _SEARCH_LEADING_ACTION_RE = re.compile(
-    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|ابحث|استكشف|استقصِ|اعرض|analyze|analyse|compare|"
-    r"investigate|collect|gather|review|summarize)\s+",
+    r"^(?:حلّل|حلل|اجمع|قارن|ناقش|استكشف|استقصِ|اعرض|analyze|analyse|compare|"
+    r"investigate|collect|gather|review|summarize|"
+    r"(?:ابحث|بحث|دورلي|دور|اعثر)(?:\s+(?:عن|على))?)\s+",
     re.IGNORECASE,
 )
 
