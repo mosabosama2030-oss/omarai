@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000508 إلى SRC-F725E90B2A-L001307
+- النطاق: SRC-F725E90B2A-L000505 إلى SRC-F725E90B2A-L001304
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000505](../../tests/test_web_agent.py#L505) | 505 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000506](../../tests/test_web_agent.py#L506) | 506 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000507](../../tests/test_web_agent.py#L507) | 507 | `"        \"electric car\", [\"facebook\"]"` | — |
 | [SRC-F725E90B2A-L000508](../../tests/test_web_agent.py#L508) | 508 | `"    )"` | — |
 | [SRC-F725E90B2A-L000509](../../tests/test_web_agent.py#L509) | 509 | `"    assert len(results) == 2  # one matching post for each explicitly configured page"` | — |
 | [SRC-F725E90B2A-L000510](../../tests/test_web_agent.py#L510) | 510 | `"    assert warnings == []"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L001302](../../tests/test_web_agent.py#L1302) | 1302 | `"        sources=[source],"` | — |
 | [SRC-F725E90B2A-L001303](../../tests/test_web_agent.py#L1303) | 1303 | `"        search_warning=None,"` | — |
 | [SRC-F725E90B2A-L001304](../../tests/test_web_agent.py#L1304) | 1304 | `"        research_plan={\"depth\": \"standard\", \"queries\": [\"ما الذي يقوله المصدر؟\"]},"` | — |
-| [SRC-F725E90B2A-L001305](../../tests/test_web_agent.py#L1305) | 1305 | `"        search_report={},"` | — |
-| [SRC-F725E90B2A-L001306](../../tests/test_web_agent.py#L1306) | 1306 | `"    )"` | — |
-| [SRC-F725E90B2A-L001307](../../tests/test_web_agent.py#L1307) | 1307 | `""` | — |
