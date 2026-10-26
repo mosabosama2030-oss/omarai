@@ -9,6 +9,7 @@ from agents.web_agent import (
     WebAgent,
     _normalize_search_query,
     _public_http_url,
+    _relevance_query_tokens,
     _relevance_ratio,
 )
 
@@ -2899,6 +2900,12 @@ def test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries()
         "اذكر مصادر موثوقة، روابط مباشرة، باختصار",
         "Football results and unrelated match reports",
     ) == 0.0
+
+
+def test_relevance_query_tokens_reject_site_only_and_modifier_only_queries():
+    assert _relevance_query_tokens("site:reddit.com") == set()
+    assert _relevance_query_tokens("risks limitations alternatives") == set()
+    assert _relevance_query_tokens("السيارات الكهربائية المستعملة في مصر")
 
 
 def test_search_web_compacts_request_before_provider_dispatch(monkeypatch):
