@@ -1374,7 +1374,7 @@ class WebAgent:
                     error = "connector returned no parseable results"
                 self._record_provider_diagnostic(
                     name, search_query, status, len(raw), rejected, error,
-                    accepted_count=len(accepted), rejection_counts=rejection_counts,
+                    accepted_count=len(accepted), rejection_counts=rejection_counts if raw else None,
                 )
                 return accepted
             except RequestBudgetExceeded as exc:
