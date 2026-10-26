@@ -230,3 +230,15 @@ def test_compact_search_query_preserves_subject_when_prompt_starts_with_action_v
 def test_compact_search_query_returns_empty_for_instruction_only_request():
     query = compact_search_query("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
     assert query == ""
+
+
+def test_compact_search_query_removes_diacritic_uncertainty_instruction():
+    question = (
+        "اجمع آراء العملاء عن السيارات الكهربائية. "
+        "وَضِّحْ إِذَا كَانَتِ النَّتَائِجُ غَيْرَ كَافِيَةٍ "
+        "لِتَمْثِيلِ آراء المستخدمين عمومًا."
+    )
+    query = compact_search_query(question)
+    assert "السيارات الكهربائية" in query
+    assert "النتائج" not in query
+    assert "تمثيل آراء المستخدمين" not in query
