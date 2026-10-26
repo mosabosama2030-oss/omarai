@@ -68,3 +68,24 @@ def test_connector_summary_distinguishes_completed_filtering_from_usable_results
     assert bing["usable_results_for_this_request"] is False
     assert bing["result_count"] == 0
     assert bing["rejected_count"] == 6
+
+
+@pytest.mark.parametrize(
+    ("question", "evidence"),
+    [
+        (
+            "السيارات الكهربائية والشحن والتكلفة والبنية التحتية في مصر",
+            "Electric vehicles in Egypt need charging infrastructure and affect ownership costs.",
+        ),
+        (
+            "وكلاء الذكاء الاصطناعي والتطورات الجديدة",
+            "Recent developments in AI agents include planning and tool use.",
+        ),
+        (
+            "اراء وتجارب المستخدمين للسيارات الكهربائية في مصر",
+            "Reviews from electric car users in Egypt discuss charging and ownership.",
+        ),
+    ],
+)
+def test_core_bilingual_topic_synonyms_are_matched(question, evidence):
+    assert _relevance_ratio(question, evidence) >= 0.20
