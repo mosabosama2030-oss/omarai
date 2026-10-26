@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000099 إلى SRC-F725E90B2A-L000465
+- النطاق: SRC-01E35ABC46-L000098 إلى SRC-F725E90B2A-L000464
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000098](../../tests/test_research_guardrails.py#L98) | 98 | `"        \"providers\": [\"bing\"],"` | — |
 | [SRC-01E35ABC46-L000099](../../tests/test_research_guardrails.py#L99) | 99 | `"    }"` | — |
 | [SRC-01E35ABC46-L000100](../../tests/test_research_guardrails.py#L100) | 100 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
 | [SRC-01E35ABC46-L000101](../../tests/test_research_guardrails.py#L101) | 101 | `"    assert rel[\"accepted\"] is False"` | — |
@@ -842,4 +843,3 @@
 | [SRC-F725E90B2A-L000462](../../tests/test_web_agent.py#L462) | 462 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
 | [SRC-F725E90B2A-L000463](../../tests/test_web_agent.py#L463) | 463 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
 | [SRC-F725E90B2A-L000464](../../tests/test_web_agent.py#L464) | 464 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
-| [SRC-F725E90B2A-L000465](../../tests/test_web_agent.py#L465) | 465 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |

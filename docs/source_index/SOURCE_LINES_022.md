@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000060 إلى SRC-90FAA34ADE-L000859
+- النطاق: SRC-90FAA34ADE-L000059 إلى SRC-90FAA34ADE-L000858
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000059](../../tests/fixtures/answer_quality_cases.json#L59) | 59 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000060](../../tests/fixtures/answer_quality_cases.json#L60) | 60 | `"        \"type\": \"none\""` | — |
 | [SRC-90FAA34ADE-L000061](../../tests/fixtures/answer_quality_cases.json#L61) | 61 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000062](../../tests/fixtures/answer_quality_cases.json#L62) | 62 | `"      \"failure_conditions\": ["` | — |
@@ -815,4 +816,3 @@
 | [SRC-90FAA34ADE-L000856](../../tests/fixtures/answer_quality_cases.json#L856) | 856 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000857](../../tests/fixtures/answer_quality_cases.json#L857) | 857 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000858](../../tests/fixtures/answer_quality_cases.json#L858) | 858 | `"        \"التصريح بأن الملكية أو التوافر verified من مصدر الإعلان وحده\","` | — |
-| [SRC-90FAA34ADE-L000859](../../tests/fixtures/answer_quality_cases.json#L859) | 859 | `"        \"تسجيل نية شراء مؤكدة دون دليل\""` | — |

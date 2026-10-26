@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **034**
-- سجلات الأسطر: **770**
-- النطاق: SRC-F725E90B2A-L002866 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **771**
+- النطاق: SRC-F725E90B2A-L002865 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002865](../../tests/test_web_agent.py#L2865) | 2865 | `""` | — |
 | [SRC-F725E90B2A-L002866](../../tests/test_web_agent.py#L2866) | 2866 | `""` | — |
 | [SRC-F725E90B2A-L002867](../../tests/test_web_agent.py#L2867) | 2867 | `"def test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L002868](../../tests/test_web_agent.py#L2868) | 2868 | `"    agent = WebAgent()"` | — |

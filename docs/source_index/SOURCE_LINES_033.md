@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002066 إلى SRC-F725E90B2A-L002865
+- النطاق: SRC-F725E90B2A-L002065 إلى SRC-F725E90B2A-L002864
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002065](../../tests/test_web_agent.py#L2065) | 2065 | `""` | — |
 | [SRC-F725E90B2A-L002066](../../tests/test_web_agent.py#L2066) | 2066 | `""` | — |
 | [SRC-F725E90B2A-L002067](../../tests/test_web_agent.py#L2067) | 2067 | `"def test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L002068](../../tests/test_web_agent.py#L2068) | 2068 | `"    agent = WebAgent()"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002862](../../tests/test_web_agent.py#L2862) | 2862 | `"        \"relevance_below_threshold\": 1,"` | — |
 | [SRC-F725E90B2A-L002863](../../tests/test_web_agent.py#L2863) | 2863 | `"    }"` | — |
 | [SRC-F725E90B2A-L002864](../../tests/test_web_agent.py#L2864) | 2864 | `"    assert sum(diagnostic[\"rejection_counts\"].values()) == diagnostic[\"rejected_count\"]"` | — |
-| [SRC-F725E90B2A-L002865](../../tests/test_web_agent.py#L2865) | 2865 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000466 إلى SRC-F725E90B2A-L001265
+- النطاق: SRC-F725E90B2A-L000465 إلى SRC-F725E90B2A-L001264
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000465](../../tests/test_web_agent.py#L465) | 465 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
 | [SRC-F725E90B2A-L000466](../../tests/test_web_agent.py#L466) | 466 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
 | [SRC-F725E90B2A-L000467](../../tests/test_web_agent.py#L467) | 467 | `"    assert \"test-ig-token\" not in str(results)"` | — |
 | [SRC-F725E90B2A-L000468](../../tests/test_web_agent.py#L468) | 468 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001262](../../tests/test_web_agent.py#L1262) | 1262 | `"            \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L001263](../../tests/test_web_agent.py#L1263) | 1263 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-F725E90B2A-L001264](../../tests/test_web_agent.py#L1264) | 1264 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001265](../../tests/test_web_agent.py#L1265) | 1265 | `"            \"evidence_signals\": {},"` | — |
