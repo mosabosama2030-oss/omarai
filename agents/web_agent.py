@@ -74,14 +74,14 @@ _QUERY_TASK_STOPWORDS = frozenset({
     "اعرض", "واعرض", "اعرضي", "اجمع", "اجب", "واجب", "جاوب", "وضح", "ووضح",
     "حلل", "قارن", "وقارن", "ميز", "وميز", "اهم",
     "مصدر", "مصادر", "المصدر", "المصادر", "رابط", "روابط",
-    "مباشر", "مباشره", "موثوق", "موثوقه", "بالعربيه", "بالعربي",
+    "مباشر", "مباشره", "مباشرا", "موثوق", "موثوقه", "موثوقا", "مصدرا", "رابطا", "بالعربيه", "بالعربي",
     "بايجاز", "باختصار", "ايجاز", "حقائق", "الحقائق", "والحقائق",
     "استنتاج", "استنتاجات", "والاستنتاجات", "متعدده", "متعدد",
     "تواجه", "حول", "خلال", "الايام", "ايام", "السبعه", "سبعه",
     "الماضيه", "السابقه", "تواريخ", "التواريخ", "تاريخ",
     "اخبار", "الاخبار", "احدث", "قديمه", "جديده", "معلومات",
     "باعتبارها", "تعرض", "لتمثيل", "عموما", "النتائج", "نتائج",
-    "كافيه", "ايجابيه", "الايجابيه", "سلبيه", "السلبيه", "المتاحه",
+    "كافيه", "ايجابيه", "الايجابيه", "سلبيه", "السلبيه", "المتاحه", "غير", "اذا", "المنشورات",
     "عامه", "العامه",
     "cite", "citation", "citations", "link", "links", "direct",
     "brief", "briefly", "answer", "provide", "mention", "present",
@@ -112,8 +112,8 @@ _SEARCH_SYNONYMS = {
     "شراء": {"buy", "purchase"}, "مشتري": {"buyer"},
     # Common bilingual concepts exercised by live search acceptance tests.
     "سيارة": {"car", "vehicle", "automobile"},
-    "سيارات": {"cars", "vehicles", "automobiles"},
-    "السيارات": {"cars", "vehicles", "automobiles"},
+    "سيارات": {"cars", "car", "vehicles", "vehicle", "automobiles", "automobile"},
+    "السيارات": {"cars", "car", "vehicles", "vehicle", "automobiles", "automobile"},
     "كهربائية": {"electric", "electrical", "ev"},
     "الكهربائية": {"electric", "electrical", "ev"},
     "شحن": {"charging", "charge", "chargers"},
@@ -153,6 +153,16 @@ def _normalize_search_query(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+# Arabic punctuation lives inside the broad Unicode Arabic block used by the tokenizer.
+# Replace punctuation with spaces before extracting tokens so "مصر؟" matches "مصر".
+_ARABIC_PUNCTUATION_RE = re.compile(r"[\u060C\u061B\u061F\u06D4]")
+_NORMALIZED_SEARCH_STOPWORDS = frozenset(
+    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS
+)
+_NORMALIZED_QUERY_TASK_STOPWORDS = frozenset(
+    _normalize_search_query(word).casefold() for word in _QUERY_TASK_STOPWORDS
+)
+
 # Normalize synonym keys and values by the same rules as search text. This avoids
 # Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching.
 _NORMALIZED_SEARCH_SYNONYMS: dict[str, set[str]] = {}
@@ -166,11 +176,18 @@ for _synonym_key, _synonym_values in _SEARCH_SYNONYMS.items():
 def _search_tokens(value: str) -> set[str]:
     """Tokenize Arabic/English text and expand a small bilingual vocabulary."""
     value = _normalize_search_query(value).casefold()
+    value = _ARABIC_PUNCTUATION_RE.sub(" ", value)
     value = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", value)
     tokens = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", value)
     result: set[str] = set()
     for token in tokens:
-        if token in _SEARCH_STOPWORDS or len(token) < 2:
+        # Strip a leading conjunction only when the remainder is known vocabulary.
+        if token.startswith("و") and len(token) > 3 and (
+            token[1:] in _NORMALIZED_SEARCH_SYNONYMS
+            or token[1:] in _NORMALIZED_SEARCH_STOPWORDS
+        ):
+            token = token[1:]
+        if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:
             continue
         forms = {token}
         if token.startswith("ال") and len(token) > 4:
@@ -189,15 +206,25 @@ def _search_tokens(value: str) -> set[str]:
 def _relevance_ratio(query: str, evidence: str) -> float:
     """Fraction of meaningful query concepts present in a candidate's title/snippet."""
     query_text = _normalize_search_query(query).casefold()
+    query_text = _ARABIC_PUNCTUATION_RE.sub(" ", query_text)
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
-    query_tokens = {
-        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
+    query_tokens: set[str] = set()
+    for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text):
+        # Recognize attached Arabic conjunctions (e.g. "والشحن", "وتجارب")
+        # only when the remaining form is in our known vocabulary.
+        if token.startswith("و") and len(token) > 3 and (
+            token[1:] in _NORMALIZED_SEARCH_SYNONYMS
+            or token[1:] in _NORMALIZED_SEARCH_STOPWORDS
+            or token[1:] in _NORMALIZED_QUERY_TASK_STOPWORDS
+        ):
+            token = token[1:]
         if (
-            token not in _SEARCH_STOPWORDS
-            and token not in _QUERY_TASK_STOPWORDS
-            and len(token) >= 2
-        )
-    }
+            token in _NORMALIZED_SEARCH_STOPWORDS
+            or token in _NORMALIZED_QUERY_TASK_STOPWORDS
+            or len(token) < 2
+        ):
+            continue
+        query_tokens.add(token)
     # An empty/generic query must not make every candidate appear relevant.
     if not query_tokens:
         return 0.0
