@@ -2930,3 +2930,38 @@ def test_search_web_does_not_dispatch_instruction_only_query(monkeypatch):
     )
     results = agent._search_web("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
     assert results == []
+
+
+def test_plan_search_does_not_call_planner_without_a_topic(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(
+        agent, "_request_completion",
+        lambda *args, **kwargs: pytest.fail("planner should not run without a topic"),
+    )
+    plan = agent._plan_search(
+        "استخدم مصادر متعددة، واذكر روابط المصادر",
+        [],
+    )
+    assert plan["queries"] == []
+
+
+def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = ""
+    history = [{
+        "role": "user",
+        "content": (
+            "قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، "
+            "واذكر روابط المصادر وأجب بإيجاز."
+        ),
+    }]
+    plan = agent._plan_search("وهل البطارية مكلفة؟", history)
+
+    assert plan["queries"]
+    assert all(len(query) <= 240 for query in plan["queries"])
+    assert any("السيارات الكهربائية" in query for query in plan["queries"])
+    assert all(
+        "روابط المصادر" not in query and "أجب بإيجاز" not in query
+        for query in plan["queries"]
+    )
