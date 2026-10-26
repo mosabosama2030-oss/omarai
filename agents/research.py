@@ -283,8 +283,6 @@ def fallback_plan(
     contextual_question = resolve_followup_query(question, history)
     direct_urls = extract_urls(question)
     base = compact_search_query(contextual_question)
-    if not base and direct_urls:
-        base = "اقرأ محتوى الصفحة" if re.search(r"[\u0600-\u06FF]", question) else "read the linked page"
     social_focus = detect_social_focus(question, history)
     fresh = detect_freshness(question)
     detected_depth = detect_depth(question)
