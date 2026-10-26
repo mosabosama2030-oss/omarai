@@ -63,6 +63,7 @@ def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatc
 
     assert seen["plan"]["depth"] == "deep"
     assert len(seen["plan"]["queries"]) > 1
+    assert all(len(query) <= 240 for query in seen["plan"]["queries"])
     assert result["research_plan"]["mode"] == "deep"
     assert "evidence_signals" in result["search_report"]
     assert result["search_report"]["evidence_repair"]["attempted"] is False
