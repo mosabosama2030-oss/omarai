@@ -172,9 +172,9 @@ def _search_tokens(value: str) -> set[str]:
 def _relevance_query_tokens(query: str) -> set[str]:
     """Return meaningful query concepts, excluding request-format boilerplate."""
     query_text = _normalize_search_query(query).casefold()
-    query_text = re.sub(r"(?i)\\bsite\\s*:\\s*\\S+", " ", query_text)
+    query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     return {
-        token for token in re.findall(r"[a-z0-9]+|[\\u0600-\\u06FF]+", query_text)
+        token for token in re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", query_text)
         if token not in _SEARCH_STOPWORDS and len(token) >= 2
     }
 
@@ -1358,7 +1358,7 @@ class WebAgent:
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
                 detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
                 status = "failed"
-                status_match = re.search(r"(?i)\\bHTTP\\s+(\\d{3})\\b", str(exc))
+                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b, str(exc))
                 if status_match:
                     status_code = int(status_match.group(1))
                     if status_code == 429:
