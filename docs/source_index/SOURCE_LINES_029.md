@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C353AAAC10-L000077 إلى SRC-F725E90B2A-L000152
+- النطاق: SRC-C353AAAC10-L000063 إلى SRC-F725E90B2A-L000138
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C353AAAC10-L000063](../../tests/test_request_budget.py#L63) | 63 | `""` | — |
+| [SRC-C353AAAC10-L000064](../../tests/test_request_budget.py#L64) | 64 | `""` | — |
+| [SRC-C353AAAC10-L000065](../../tests/test_request_budget.py#L65) | 65 | `"def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000066](../../tests/test_request_budget.py#L66) | 66 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-C353AAAC10-L000067](../../tests/test_request_budget.py#L67) | 67 | `""` | — |
+| [SRC-C353AAAC10-L000068](../../tests/test_request_budget.py#L68) | 68 | `"    agent = WebAgent()"` | — |
+| [SRC-C353AAAC10-L000069](../../tests/test_request_budget.py#L69) | 69 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-C353AAAC10-L000070](../../tests/test_request_budget.py#L70) | 70 | `""` | — |
+| [SRC-C353AAAC10-L000071](../../tests/test_request_budget.py#L71) | 71 | `"    agent._request_budget = RequestBudget(limits={\"search_queries\": 0})"` | — |
+| [SRC-C353AAAC10-L000072](../../tests/test_request_budget.py#L72) | 72 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_queries\"):"` | — |
+| [SRC-C353AAAC10-L000073](../../tests/test_request_budget.py#L73) | 73 | `"        agent._search_web(\"budget test\")"` | — |
+| [SRC-C353AAAC10-L000074](../../tests/test_request_budget.py#L74) | 74 | `""` | — |
+| [SRC-C353AAAC10-L000075](../../tests/test_request_budget.py#L75) | 75 | `"    agent._request_budget = RequestBudget(limits={\"model_calls\": 0})"` | — |
+| [SRC-C353AAAC10-L000076](../../tests/test_request_budget.py#L76) | 76 | `"    monkeypatch.setattr("` | — |
 | [SRC-C353AAAC10-L000077](../../tests/test_request_budget.py#L77) | 77 | `"        \"agents.web_agent.urllib.request.urlopen\","` | — |
 | [SRC-C353AAAC10-L000078](../../tests/test_request_budget.py#L78) | 78 | `"        lambda *args, **kwargs: pytest.fail(\"model HTTP request must not start\"),"` | — |
 | [SRC-C353AAAC10-L000079](../../tests/test_request_budget.py#L79) | 79 | `"    )"` | — |
@@ -847,17 +861,3 @@
 | [SRC-F725E90B2A-L000136](../../tests/test_web_agent.py#L136) | 136 | `"        agent.answer(\"   \")"` | — |
 | [SRC-F725E90B2A-L000137](../../tests/test_web_agent.py#L137) | 137 | `"    with pytest.raises(ValueError):"` | — |
 | [SRC-F725E90B2A-L000138](../../tests/test_web_agent.py#L138) | 138 | `"        agent.answer(\"س\" * 4001)"` | — |
-| [SRC-F725E90B2A-L000139](../../tests/test_web_agent.py#L139) | 139 | `""` | — |
-| [SRC-F725E90B2A-L000140](../../tests/test_web_agent.py#L140) | 140 | `""` | — |
-| [SRC-F725E90B2A-L000141](../../tests/test_web_agent.py#L141) | 141 | `"def test_history_search_query_expands_short_follow_up():"` | — |
-| [SRC-F725E90B2A-L000142](../../tests/test_web_agent.py#L142) | 142 | `"    history = [{\"role\": \"user\", \"content\": \"قارن أسعار السيارات الكهربائية في مصر\"}]"` | — |
-| [SRC-F725E90B2A-L000143](../../tests/test_web_agent.py#L143) | 143 | `"    query = WebAgent._history_search_query(\"والسعر؟\", history)"` | — |
-| [SRC-F725E90B2A-L000144](../../tests/test_web_agent.py#L144) | 144 | `"    assert \"السيارات الكهربائية\" in query"` | — |
-| [SRC-F725E90B2A-L000145](../../tests/test_web_agent.py#L145) | 145 | `"    assert \"والسعر؟\" in query"` | — |
-| [SRC-F725E90B2A-L000146](../../tests/test_web_agent.py#L146) | 146 | `""` | — |
-| [SRC-F725E90B2A-L000147](../../tests/test_web_agent.py#L147) | 147 | `""` | — |
-| [SRC-F725E90B2A-L000148](../../tests/test_web_agent.py#L148) | 148 | `"def test_public_url_filter_rejects_local_and_credential_urls():"` | — |
-| [SRC-F725E90B2A-L000149](../../tests/test_web_agent.py#L149) | 149 | `"    assert _public_http_url(\"http://127.0.0.1/admin\") is None"` | — |
-| [SRC-F725E90B2A-L000150](../../tests/test_web_agent.py#L150) | 150 | `"    assert _public_http_url(\"http://localhost:8000/\") is None"` | — |
-| [SRC-F725E90B2A-L000151](../../tests/test_web_agent.py#L151) | 151 | `"    assert _public_http_url(\"https://user:pass@example.com/private\") is None"` | — |
-| [SRC-F725E90B2A-L000152](../../tests/test_web_agent.py#L152) | 152 | `"    assert _public_http_url(\"file:///etc/passwd\") is None"` | — |

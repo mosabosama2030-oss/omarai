@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **79**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **985**
+- تعريفات Python المفهرسة: **989**
 - تعريفات Python موثقة بوجود Docstring: **194**
-- تعريفات Python بلا Docstring: **595**
+- تعريفات Python بلا Docstring: **599**
 - تعريفات لا ينطبق عليها Docstring: **196**
 - الرموز الساكنة الإضافية: **1557**
-- الأسطر النصية المفهرسة حرفيًا: **26297**
+- الأسطر النصية المفهرسة حرفيًا: **26384**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -86,7 +86,7 @@
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 11544 | 284 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
-| FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 10120 | 255 | جرد الملف + AST Python |
+| FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 10733 | 269 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
@@ -104,8 +104,8 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 109823 | 2806 | جرد الملف + AST Python |
-| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 54528 | 397 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 112607 | 2879 | جرد الملف + AST Python |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 54981 | 397 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
@@ -1099,6 +1099,10 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2786) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation | لا توجد Docstring. | ناقص | 2786 | [SRC-F725E90B2A-L002786](../tests/test_web_agent.py#L2786) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2789) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_202 | لا توجد Docstring. | ناقص | 2789 | [SRC-F725E90B2A-L002789](../tests/test_web_agent.py#L2789) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2792) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_429 | لا توجد Docstring. | ناقص | 2792 | [SRC-F725E90B2A-L002792](../tests/test_web_agent.py#L2792) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2809) | دالة | test_search_web_records_distinct_candidate_rejection_reasons | لا توجد Docstring. | ناقص | 2809 | [SRC-F725E90B2A-L002809](../tests/test_web_agent.py#L2809) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2854) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect | لا توجد Docstring. | ناقص | 2854 | [SRC-F725E90B2A-L002854](../tests/test_web_agent.py#L2854) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2858) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.redirect_response | لا توجد Docstring. | ناقص | 2858 | [SRC-F725E90B2A-L002858](../tests/test_web_agent.py#L2858) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2862) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.no_results | لا توجد Docstring. | ناقص | 2862 | [SRC-F725E90B2A-L002862](../tests/test_web_agent.py#L2862) |
 
 ## الرموز الساكنة الإضافية
 

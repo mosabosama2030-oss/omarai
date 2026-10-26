@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000201 إلى SRC-829A979985-L000161
+- النطاق: SRC-6BCB799CEC-L000187 إلى SRC-829A979985-L000147
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000187](../../tests/test_evidence_provenance.py#L187) | 187 | `"            self.headers = {\"content-type\": \"text/plain; charset=utf-8\"}"` | — |
+| [SRC-6BCB799CEC-L000188](../../tests/test_evidence_provenance.py#L188) | 188 | `""` | — |
+| [SRC-6BCB799CEC-L000189](../../tests/test_evidence_provenance.py#L189) | 189 | `"        def iter_bytes(self):"` | — |
+| [SRC-6BCB799CEC-L000190](../../tests/test_evidence_provenance.py#L190) | 190 | `"            yield \"نص عام\".encode()"` | — |
+| [SRC-6BCB799CEC-L000191](../../tests/test_evidence_provenance.py#L191) | 191 | `""` | — |
+| [SRC-6BCB799CEC-L000192](../../tests/test_evidence_provenance.py#L192) | 192 | `"        def __enter__(self):"` | — |
+| [SRC-6BCB799CEC-L000193](../../tests/test_evidence_provenance.py#L193) | 193 | `"            return self"` | — |
+| [SRC-6BCB799CEC-L000194](../../tests/test_evidence_provenance.py#L194) | 194 | `""` | — |
+| [SRC-6BCB799CEC-L000195](../../tests/test_evidence_provenance.py#L195) | 195 | `"        def __exit__(self, *args):"` | — |
+| [SRC-6BCB799CEC-L000196](../../tests/test_evidence_provenance.py#L196) | 196 | `"            return False"` | — |
+| [SRC-6BCB799CEC-L000197](../../tests/test_evidence_provenance.py#L197) | 197 | `""` | — |
+| [SRC-6BCB799CEC-L000198](../../tests/test_evidence_provenance.py#L198) | 198 | `"    class FakeClient:"` | — |
+| [SRC-6BCB799CEC-L000199](../../tests/test_evidence_provenance.py#L199) | 199 | `"        def __init__(self, *args, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000200](../../tests/test_evidence_provenance.py#L200) | 200 | `"            assert kwargs.get(\"verify\") is True"` | — |
 | [SRC-6BCB799CEC-L000201](../../tests/test_evidence_provenance.py#L201) | 201 | `"            assert kwargs.get(\"follow_redirects\") is False"` | — |
 | [SRC-6BCB799CEC-L000202](../../tests/test_evidence_provenance.py#L202) | 202 | `"            # Do not allow HTTP_PROXY/HTTPS_PROXY to bypass the pinned IP."` | — |
 | [SRC-6BCB799CEC-L000203](../../tests/test_evidence_provenance.py#L203) | 203 | `"            assert kwargs.get(\"trust_env\") is False"` | — |
@@ -829,17 +843,3 @@
 | [SRC-829A979985-L000145](../../tests/test_generation_acceptance_matrix.py#L145) | 145 | `"    assert calls == [\"primary/model\"]"` | — |
 | [SRC-829A979985-L000146](../../tests/test_generation_acceptance_matrix.py#L146) | 146 | `"    assert budget.snapshot()[\"counts\"][\"model_calls\"] == 1"` | — |
 | [SRC-829A979985-L000147](../../tests/test_generation_acceptance_matrix.py#L147) | 147 | `"    assert [item[\"status\"] for item in agent.generation_diagnostics] == ["` | — |
-| [SRC-829A979985-L000148](../../tests/test_generation_acceptance_matrix.py#L148) | 148 | `"        \"truncated\","` | — |
-| [SRC-829A979985-L000149](../../tests/test_generation_acceptance_matrix.py#L149) | 149 | `"        \"budget_exhausted\","` | — |
-| [SRC-829A979985-L000150](../../tests/test_generation_acceptance_matrix.py#L150) | 150 | `"    ]"` | — |
-| [SRC-829A979985-L000151](../../tests/test_generation_acceptance_matrix.py#L151) | 151 | `"    assert agent.generation_diagnostics[1][\"request_started\"] is False"` | — |
-| [SRC-829A979985-L000152](../../tests/test_generation_acceptance_matrix.py#L152) | 152 | `"    assert agent.generation_diagnostics[1][\"remote_response_received\"] is False"` | — |
-| [SRC-829A979985-L000153](../../tests/test_generation_acceptance_matrix.py#L153) | 153 | `"    assert agent.model_usage == []"` | — |
-| [SRC-829A979985-L000154](../../tests/test_generation_acceptance_matrix.py#L154) | 154 | `""` | — |
-| [SRC-829A979985-L000155](../../tests/test_generation_acceptance_matrix.py#L155) | 155 | `""` | — |
-| [SRC-829A979985-L000156](../../tests/test_generation_acceptance_matrix.py#L156) | 156 | `"def test_capability_snapshot_separates_configuration_from_live_health(monkeypatch):"` | — |
-| [SRC-829A979985-L000157](../../tests/test_generation_acceptance_matrix.py#L157) | 157 | `"    agent = WebAgent()"` | — |
-| [SRC-829A979985-L000158](../../tests/test_generation_acceptance_matrix.py#L158) | 158 | `"    monkeypatch.setattr("` | — |
-| [SRC-829A979985-L000159](../../tests/test_generation_acceptance_matrix.py#L159) | 159 | `"        agent,"` | — |
-| [SRC-829A979985-L000160](../../tests/test_generation_acceptance_matrix.py#L160) | 160 | `"        \"status\","` | — |
-| [SRC-829A979985-L000161](../../tests/test_generation_acceptance_matrix.py#L161) | 161 | `"        lambda: {"` | — |

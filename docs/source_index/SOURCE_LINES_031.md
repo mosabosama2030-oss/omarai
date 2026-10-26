@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000953 إلى SRC-F725E90B2A-L001752
+- النطاق: SRC-F725E90B2A-L000939 إلى SRC-F725E90B2A-L001738
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000939](../../tests/test_web_agent.py#L939) | 939 | `"                    },"` | — |
+| [SRC-F725E90B2A-L000940](../../tests/test_web_agent.py#L940) | 940 | `"                    \"finish_reason\": \"stop\","` | — |
+| [SRC-F725E90B2A-L000941](../../tests/test_web_agent.py#L941) | 941 | `"                }]"` | — |
+| [SRC-F725E90B2A-L000942](../../tests/test_web_agent.py#L942) | 942 | `"            }).encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000943](../../tests/test_web_agent.py#L943) | 943 | `""` | — |
+| [SRC-F725E90B2A-L000944](../../tests/test_web_agent.py#L944) | 944 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-F725E90B2A-L000945](../../tests/test_web_agent.py#L945) | 945 | `"        seen[\"payload\"] = json.loads(request.data.decode(\"utf-8\"))"` | — |
+| [SRC-F725E90B2A-L000946](../../tests/test_web_agent.py#L946) | 946 | `"        return FakeResponse()"` | — |
+| [SRC-F725E90B2A-L000947](../../tests/test_web_agent.py#L947) | 947 | `""` | — |
+| [SRC-F725E90B2A-L000948](../../tests/test_web_agent.py#L948) | 948 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
+| [SRC-F725E90B2A-L000949](../../tests/test_web_agent.py#L949) | 949 | `"    result = agent._request_completion("` | — |
+| [SRC-F725E90B2A-L000950](../../tests/test_web_agent.py#L950) | 950 | `"        [{\"role\": \"user\", \"content\": \"ابحث عن أحدث تقرير\"}],"` | — |
+| [SRC-F725E90B2A-L000951](../../tests/test_web_agent.py#L951) | 951 | `"        model=\"example/model\","` | — |
+| [SRC-F725E90B2A-L000952](../../tests/test_web_agent.py#L952) | 952 | `"        enable_web_search=True,"` | — |
 | [SRC-F725E90B2A-L000953](../../tests/test_web_agent.py#L953) | 953 | `"    )"` | — |
 | [SRC-F725E90B2A-L000954](../../tests/test_web_agent.py#L954) | 954 | `""` | — |
 | [SRC-F725E90B2A-L000955](../../tests/test_web_agent.py#L955) | 955 | `"    assert result == \"تحليل مستند إلى بحث حي.\""` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L001736](../../tests/test_web_agent.py#L1736) | 1736 | `"    system_content = \"\\n\".join(m[\"content\"] for m in captured[\"messages\"] if m[\"role\"] == \"system\")"` | — |
 | [SRC-F725E90B2A-L001737](../../tests/test_web_agent.py#L1737) | 1737 | `"    user_content = \"\\n\".join(m[\"content\"] for m in captured[\"messages\"] if m[\"role\"] == \"user\")"` | — |
 | [SRC-F725E90B2A-L001738](../../tests/test_web_agent.py#L1738) | 1738 | `"    assert result == \"تمت مراجعة المسودة.\""` | — |
-| [SRC-F725E90B2A-L001739](../../tests/test_web_agent.py#L1739) | 1739 | `"    assert \"اكتمال الإجابة مقابل\" in system_content"` | — |
-| [SRC-F725E90B2A-L001740](../../tests/test_web_agent.py#L1740) | 1740 | `"    assert \"الاعتمادية\" in user_content"` | — |
-| [SRC-F725E90B2A-L001741](../../tests/test_web_agent.py#L1741) | 1741 | `"    assert \"قائمة محاور مستخرجة آليًا\" in user_content"` | — |
-| [SRC-F725E90B2A-L001742](../../tests/test_web_agent.py#L1742) | 1742 | `""` | — |
-| [SRC-F725E90B2A-L001743](../../tests/test_web_agent.py#L1743) | 1743 | `""` | — |
-| [SRC-F725E90B2A-L001744](../../tests/test_web_agent.py#L1744) | 1744 | `"def test_search_attempt_is_reported_when_no_sources_survive(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001745](../../tests/test_web_agent.py#L1745) | 1745 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001746](../../tests/test_web_agent.py#L1746) | 1746 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L001747](../../tests/test_web_agent.py#L1747) | 1747 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L001748](../../tests/test_web_agent.py#L1748) | 1748 | `"        \"queries\": [\"ما آخر تطورات الطاقة المتجددة اليوم؟\"],"` | — |
-| [SRC-F725E90B2A-L001749](../../tests/test_web_agent.py#L1749) | 1749 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L001750](../../tests/test_web_agent.py#L1750) | 1750 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L001751](../../tests/test_web_agent.py#L1751) | 1751 | `"        \"freshness\": \"today\","` | — |
-| [SRC-F725E90B2A-L001752](../../tests/test_web_agent.py#L1752) | 1752 | `"        \"depth\": \"deep\","` | — |
