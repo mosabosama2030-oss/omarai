@@ -83,6 +83,16 @@ _SEARCH_STOPWORDS = frozenset({
     "الماضية", "ماضية", "الاسبوع", "حاليا", "الان", "احدث", "ولا",
     "تعرض", "باعتبارها",
 })
+# Search-expansion modifiers are useful after a real topic, but must not stand in
+# for a topic if a future planner/expansion path loses its subject.
+_GENERIC_QUERY_MODIFIER_TOKENS = frozenset({
+    "risk", "risks", "limitation", "limitations", "alternative", "alternatives",
+    "recent", "data", "review", "reviews", "comparison", "compare", "official",
+    "primary", "source", "sources", "evidence", "report", "reports", "case", "cases",
+    "study", "studies", "analysis", "latest", "news", "update", "updates",
+    "announcement", "announcements", "comprehensive", "research", "statistic",
+    "statistics", "trend", "trends",
+})
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
     "المصري": {"egyptian", "egypt"}, "مركزي": {"central"},
@@ -184,7 +194,7 @@ def _search_tokens(value: str) -> set[str]:
 
 
 def _relevance_query_tokens(query: str) -> set[str]:
-    """Return topic concepts after removing answer-format instructions."""
+    """Return topic concepts after removing answer-format and query-expansion wording."""
     query = compact_search_query(query)
     if not query:
         return set()
@@ -192,7 +202,11 @@ def _relevance_query_tokens(query: str) -> set[str]:
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
     return {
         token for token in re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", query_text)
-        if token not in _NORMALIZED_SEARCH_STOPWORDS and len(token) >= 2
+        if (
+            token not in _NORMALIZED_SEARCH_STOPWORDS
+            and token not in _GENERIC_QUERY_MODIFIER_TOKENS
+            and len(token) >= 2
+        )
     }
 
 
@@ -3052,22 +3066,41 @@ class WebAgent:
             cleaned_query = re.sub(r"\\s+", " ", cleaned_query).strip()
             if cleaned_query:
                 cleaned_queries.append(cleaned_query)
-        if not cleaned_queries or _relevance_ratio(question, cleaned_queries[0]) < 0.20:
-            cleaned_queries = list(fallback.get("queries", []))
+        fallback_queries = []
+        for fallback_query in fallback.get("queries", []):
+            if not isinstance(fallback_query, str):
+                continue
+            compacted_fallback = compact_search_query(fallback_query)
+            if compacted_fallback and _relevance_query_tokens(compacted_fallback):
+                fallback_queries.append(compacted_fallback)
+        compact_question = compact_search_query(question)
+        if (
+            not cleaned_queries
+            or not compact_question
+            or _relevance_ratio(compact_question, cleaned_queries[0]) < 0.20
+        ):
+            cleaned_queries = fallback_queries
+        else:
+            cleaned_queries = [
+                compact_search_query(item)
+                for item in cleaned_queries
+                if compact_search_query(item) and _relevance_query_tokens(compact_search_query(item))
+            ]
         plan["queries"] = list(dict.fromkeys(cleaned_queries))[:MAX_PLAN_QUERIES]
         if plan.get("freshness") == "current" and not any(
             detect_word in _normalize_search_query(item).casefold()
             for item in plan["queries"]
             for detect_word in ("latest", "recent", "news", "احدث", "أحدث", "مستجدات", "اخبار", "الأخبار")
-        ):
+        ) and plan["queries"]:
             fresh_query = next(
-                (item for item in fallback.get("queries", []) if item not in plan["queries"]),
-                question + " أحدث الأخبار والمستجدات",
+                (item for item in fallback_queries if item not in plan["queries"]),
+                compact_search_query(plan["queries"][0] + " أحدث الأخبار والمستجدات"),
             )
-            if len(plan["queries"]) < MAX_PLAN_QUERIES:
-                plan["queries"].append(fresh_query[:500])
-            elif plan["queries"]:
-                plan["queries"][-1] = fresh_query[:500]
+            if fresh_query and _relevance_query_tokens(fresh_query):
+                if len(plan["queries"]) < MAX_PLAN_QUERIES:
+                    plan["queries"].append(fresh_query[:240])
+                elif plan["queries"]:
+                    plan["queries"][-1] = fresh_query[:240]
 
         # Do not let a planner accidentally drop explicit social-media/freshness intent.
         plan["social_focus"] = bool(plan.get("social_focus") or fallback.get("social_focus"))
@@ -3905,6 +3938,23 @@ class WebAgent:
         plan["mode"] = clean_mode
         plan["intent_route"] = intent_route
         plan["intent_route_reason"] = intent_reason
+        # Normalize planner output before depth/mode expansion so a raw instruction-only
+        # prompt cannot seed synthetic generic queries when the topic is empty.
+        raw_plan_queries = plan.get("queries") or []
+        if not isinstance(raw_plan_queries, list):
+            raw_plan_queries = []
+        normalized_plan_queries = []
+        for raw_query in raw_plan_queries:
+            if not isinstance(raw_query, str) or not raw_query.strip():
+                continue
+            compacted_query = compact_search_query(raw_query)
+            if (
+                compacted_query
+                and _relevance_query_tokens(compacted_query)
+                and compacted_query not in normalized_plan_queries
+            ):
+                normalized_plan_queries.append(compacted_query)
+        plan["queries"] = normalized_plan_queries[:MAX_PLAN_QUERIES]
         # Preserve the requested mode in diagnostics even when no usable query exists.
         if clean_mode == "deep":
             plan["depth"] = "deep"
@@ -3930,27 +3980,48 @@ class WebAgent:
                 if not explicit_deep:
                     # The planner may overclassify short lookups as deep research. Preserve
                     # the user's actual intent first and cap routine searches to three queries.
-                    fallback_queries = fallback_plan(question, clean_history).get("queries") or [question]
-                    model_queries = plan.get("queries") or []
+                    fallback_plan_queries = (
+                        fallback_plan(question, clean_history).get("queries") or []
+                    )
+                    fallback_queries = [
+                        compact_search_query(query)
+                        for query in fallback_plan_queries
+                        if isinstance(query, str)
+                    ]
+                    fallback_queries = [query for query in fallback_queries if query]
+                    model_queries = [
+                        compact_search_query(query)
+                        for query in (plan.get("queries") or [])
+                        if isinstance(query, str)
+                    ]
+                    model_queries = [query for query in model_queries if query]
                     if self._is_navigation_request(question):
+                        navigation_seed = (
+                            fallback_queries[0] if fallback_queries
+                            else model_queries[0] if model_queries
+                            else ""
+                        )
                         subject = re.sub(
                             r"^(?:ابحث|بحث|دور|اعثر)\s+(?:عن|على)?\s*",
                             "",
-                            str(fallback_queries[0]),
-                        ).strip() or question
-                        plan_queries = [
-                            subject,
-                            subject + " الموقع الرسمي",
-                            subject + " official website",
-                        ]
+                            navigation_seed,
+                        ).strip()
+                        plan_queries = (
+                            [
+                                subject,
+                                subject + " الموقع الرسمي",
+                                subject + " official website",
+                            ]
+                            if subject else []
+                        )
                     else:
-                        plan_queries = [fallback_queries[0]] + model_queries
+                        plan_queries = (fallback_queries[:1] or model_queries[:1]) + model_queries
                     plan["queries"] = list(dict.fromkeys(
                         query.strip() for query in plan_queries if isinstance(query, str) and query.strip()
                     ))[:3]
                     plan["depth"] = "standard"
-            base_query = (plan.get("queries") or [question])[0]
-            if clean_mode == "auto" and intent_route == "WEB_DEEP":
+            base_query = (plan.get("queries") or [""])[0]
+            if clean_mode == "auto" and intent_route == "WEB_DEEP" and base_query:
                 deep_candidates = [
                     f"{base_query} official sources evidence",
                     f"{base_query} risks limitations alternatives",
@@ -3972,7 +4043,7 @@ class WebAgent:
                 plan["queries"] = list(dict.fromkeys(
                     (plan.get("queries") or [])[:5] + deep_candidates
                 ))[:MAX_PLAN_QUERIES]
-                base_query = (plan.get("queries") or [question])[0]
+                base_query = (plan.get("queries") or [""])[0]
             # Explicit user-selected modes are control inputs. They do not bypass source
             # validation and never permit private-source access.
             if clean_mode == "deep":
@@ -4045,11 +4116,15 @@ class WebAgent:
                     allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
-        plan["queries"] = list(dict.fromkeys(
-            compact_search_query(query)
-            for query in plan.get("queries", [])
-            if isinstance(query, str) and query.strip() and compact_search_query(query)
-        ))[:MAX_PLAN_QUERIES]
+        final_topic_queries = []
+        for raw_query in plan.get("queries", []):
+            if not isinstance(raw_query, str) or not raw_query.strip():
+                continue
+            compacted_query = compact_search_query(raw_query)
+            if compacted_query and _relevance_query_tokens(compacted_query):
+                final_topic_queries.append(compacted_query)
+        plan["queries"] = list(dict.fromkeys(final_topic_queries))[:MAX_PLAN_QUERIES]
+
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
         report: dict[str, Any] = {}
@@ -4101,7 +4176,11 @@ class WebAgent:
             if "user_supplied_url" in source.get("providers", []):
                 filtered_sources.append(source)
                 continue
-            candidate_queries = source.get("queries") or plan.get("queries") or [question]
+            candidate_queries = (
+                source.get("queries")
+                or plan.get("queries")
+                or [compact_search_query(question)]
+            )
             if any(self._source_matches_query(str(q), source) for q in candidate_queries):
                 filtered_sources.append(source)
         sources = filtered_sources
@@ -4218,7 +4297,7 @@ class WebAgent:
                 return {
                     "answer": lead_answer,
                     "question": question,
-                    "search_query": (plan.get("queries") or [question])[0],
+                    "search_query": (plan.get("queries") or [""])[0],
                     "search_queries": plan.get("queries", []),
                     "research_plan": {
                         "depth": plan.get("depth", "standard"),
@@ -4293,22 +4372,31 @@ class WebAgent:
                     for item in plan.get("queries", [])
                     if isinstance(item, str) and item.strip()
                 ]
-                base_query = original_queries[0] if original_queries else question
+                base_query = (
+                    original_queries[0]
+                    if original_queries
+                    else compact_search_query(question)
+                )
                 suffix = (
                     "latest official primary source"
                     if plan.get("freshness") == "current"
                     else "official primary source data"
                 )
                 repair_query = compact_search_query(f"{base_query} {suffix}")
+                if not repair_query or not _relevance_query_tokens(repair_query):
+                    evidence_repair["reason"] = "no_topic_query_available"
+                    repair_query = ""
                 known_queries = {
                     _normalize_search_query(item).casefold()
                     for item in original_queries
                 }
-                if _normalize_search_query(repair_query).casefold() in known_queries:
+                if repair_query and _normalize_search_query(repair_query).casefold() in known_queries:
                     repair_query = compact_search_query(
                         f"{base_query} independent corroborating evidence"
                     )
-                if _normalize_search_query(repair_query).casefold() not in known_queries:
+                if repair_query and _relevance_query_tokens(repair_query) and (
+                    _normalize_search_query(repair_query).casefold() not in known_queries
+                ):
                     initial_source_count = len(sources)
                     initial_domain_count = len(independent_domains)
                     evidence_repair["attempted"] = True
@@ -4351,7 +4439,18 @@ class WebAgent:
                         source_key = self._normalized_source_url_key(source.get("url"))
                         if source_key:
                             source_indexes.setdefault(source_key, source_index)
-                    relevant_queries = list(dict.fromkeys([question] + original_queries))
+                    relevant_queries = list(dict.fromkeys(
+                        query
+                        for query in (
+                            compact_search_query(question),
+                            *(
+                                compact_search_query(candidate)
+                                for candidate in original_queries
+                                if isinstance(candidate, str)
+                            ),
+                        )
+                        if query
+                    ))
                     for source in repair_sources:
                         if not isinstance(source, dict):
                             continue
@@ -4657,7 +4756,7 @@ class WebAgent:
             return {
                 "answer": reason,
                 "question": question,
-                "search_query": plan.get("queries", [question])[0],
+                "search_query": (plan.get("queries") or [""])[0],
                 "search_queries": plan.get("queries", []),
                 "research_plan": {
                     "depth": plan.get("depth", "standard"),
@@ -4704,13 +4803,29 @@ class WebAgent:
             used_llm = True
             if self.server_search_sources:
                 existing_urls = {item.get("url") for item in sources}
+                relevance_queries = []
+                planned_queries = plan.get("queries", [])
+                if not isinstance(planned_queries, list):
+                    planned_queries = []
+                for candidate_query in [question, *planned_queries]:
+                    if not isinstance(candidate_query, str):
+                        continue
+                    compacted_query = compact_search_query(candidate_query)
+                    if compacted_query and compacted_query not in relevance_queries:
+                        relevance_queries.append(compacted_query)
                 for item in self.server_search_sources:
+                    source_text = " ".join((
+                        item.get("title", ""),
+                        item.get("snippet", ""),
+                    ))
                     if (
-                        item["url"] not in existing_urls
+                        relevance_queries
+                        and item["url"] not in existing_urls
                         and not _blocked_source_url(item["url"])
-                        and _relevance_ratio(
-                            question, " ".join((item.get("title", ""), item.get("snippet", "")))
-                        ) >= 0.20
+                        and any(
+                            _relevance_ratio(candidate_query, source_text) >= 0.20
+                            for candidate_query in relevance_queries
+                        )
                     ):
                         sources.append(item)
                         existing_urls.add(item["url"])
@@ -5021,7 +5136,7 @@ class WebAgent:
         return {
             "answer": answer,
             "question": question,
-            "search_query": plan.get("queries", [question])[0],
+            "search_query": (plan.get("queries") or [""])[0],
             "search_queries": plan.get("queries", []),
             "research_plan": {
                 "depth": plan.get("depth", "standard"),

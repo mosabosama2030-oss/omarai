@@ -9,6 +9,7 @@ from agents.web_agent import (
     WebAgent,
     _normalize_search_query,
     _public_http_url,
+    _relevance_query_tokens,
     _relevance_ratio,
 )
 
@@ -1178,6 +1179,11 @@ def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(m
         "planning_method": "test",
     }
     calls = []
+    matched_queries = []
+    question = (
+        "ما أحدث معلومات شركة ألفا التقنية اليوم؟ "
+        "اذكر مصادر موثوقة، وروابط مباشرة، وأجب بإيجاز."
+    )
 
     def collect(research_plan):
         calls.append(dict(research_plan))
@@ -1198,16 +1204,23 @@ def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(m
 
     monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
     monkeypatch.setattr(agent, "_collect_research", collect)
-    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+
+    def capture_source_match_query(query, source):
+        matched_queries.append(query)
+        return True
+
+    monkeypatch.setattr(agent, "_source_matches_query", capture_source_match_query)
     monkeypatch.setattr(
         agent, "_generate",
         lambda *args, **kwargs: "توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].",
     )
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
 
-    result = agent.answer("ما أحدث معلومات شركة ألفا التقنية اليوم؟")
+    result = agent.answer(question)
 
     assert len(calls) == 2
+    assert question not in matched_queries
+    assert compact_search_query(question) in matched_queries
     assert len(calls[1]["queries"]) == 1
     assert calls[1]["depth"] == "standard"
     assert calls[1]["social_focus"] is False
@@ -2889,6 +2902,12 @@ def test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries()
     ) == 0.0
 
 
+def test_relevance_query_tokens_reject_site_only_and_modifier_only_queries():
+    assert _relevance_query_tokens("site:reddit.com") == set()
+    assert _relevance_query_tokens("risks limitations alternatives") == set()
+    assert _relevance_query_tokens("السيارات الكهربائية المستعملة في مصر")
+
+
 def test_search_web_compacts_request_before_provider_dispatch(monkeypatch):
     agent = WebAgent()
     seen = []
@@ -2969,3 +2988,274 @@ def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):
         "روابط المصادر" not in query and "أجب بإيجاز" not in query
         for query in plan["queries"]
     )
+
+
+@pytest.mark.parametrize("fallback_queries", [[], None])
+def test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query(
+    monkeypatch, fallback_queries
+):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = (
+        "ما عيوب السيارات الكهربائية المستعملة في مصر؟ "
+        "اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز."
+    )
+    observed_plans = []
+
+    monkeypatch.setattr(
+        "agents.web_agent.route_intent",
+        lambda *args, **kwargs: {"route": "WEB_SIMPLE", "reason": "test"},
+    )
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda _question, _history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        "agents.web_agent.fallback_plan",
+        lambda *args, **kwargs: {"queries": fallback_queries},
+    )
+
+    def collect(research_plan):
+        observed_plans.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 0,
+            "query_results": [],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "لا تتوفر مصادر كافية.")
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+
+    agent.answer(question, mode="auto")
+
+    assert observed_plans
+    assert question not in observed_plans[0]["queries"]
+    assert observed_plans[0]["queries"]
+    assert observed_plans[0]["queries"][0] == compact_search_query(question)
+
+
+@pytest.mark.parametrize(
+    ("question", "planned_query"),
+    [
+        (
+            (
+                "ما عيوب السيارات الكهربائية المستعملة في مصر؟ "
+                "اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز."
+            ),
+            None,
+        ),
+        (
+            "كام سعرها؟ اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز.",
+            "أسعار السيارات الكهربائية المستعملة في مصر",
+        ),
+    ],
+)
+def test_server_search_sources_use_compact_question_and_topic_plan(
+    monkeypatch, question, planned_query
+):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    topic_query = planned_query or compact_search_query(question)
+    plan = {
+        "queries": [topic_query],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    source_queries = []
+
+    monkeypatch.setattr(agent, "_plan_search", lambda _question, _history: dict(plan))
+    monkeypatch.setattr(
+        agent, "_collect_research",
+        lambda research_plan: ([sample_source(0), sample_source(1)], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [],
+            "unique_sources": 2,
+            "pages_fetched": 2,
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": 2},
+            "social_direct_results": 0,
+            "depth": "standard",
+            "planning_method": "test",
+            "evidence_signals": {},
+        }),
+    )
+
+    def generate(*args, **kwargs):
+        agent.server_search_sources = [{
+            "title": "تجارب السيارات الكهربائية المستعملة",
+            "url": "https://example.org/ev-used-cars",
+            "snippet": "تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر",
+            "page_text": "تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر",
+            "page_fetched": False,
+            "provider": "openrouter_web_search",
+            "providers": ["openrouter_web_search"],
+            "queries": [],
+            "domain": "example.org",
+            "source_class": "general",
+            "platform": "web",
+            "published_at": "",
+        }]
+        return "إجابة مبدئية [المصدر 1]."
+
+    monkeypatch.setattr(agent, "_generate", generate)
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+
+    def capture_relevance(query, text):
+        if "تجارب السيارات الكهربائية المستعملة" in text:
+            source_queries.append(query)
+            if planned_query and query != compact_search_query(topic_query):
+                return 0.0
+        return 0.25
+
+    monkeypatch.setattr("agents.web_agent._relevance_ratio", capture_relevance)
+
+    agent.answer(question)
+
+    expected_queries = list(dict.fromkeys(
+        query for query in (
+            compact_search_query(question),
+            compact_search_query(topic_query),
+        ) if query
+    ))
+    assert source_queries == expected_queries
+
+
+@pytest.mark.parametrize(
+    ("mode", "planner_query"),
+    [
+        ("auto", "اذكر مصادر موثوقة، روابط مباشرة، باختصار"),
+        ("auto", "site:reddit.com"),
+        ("latest", "اذكر مصادر موثوقة، روابط مباشرة، باختصار"),
+        ("deep", "site:reddit.com"),
+        ("social", "اذكر مصادر موثوقة، روابط مباشرة، باختصار"),
+    ],
+)
+def test_modes_do_not_create_generic_queries_without_topic(
+    monkeypatch, mode, planner_query
+):
+    agent = WebAgent()
+    instruction_only = "اذكر مصادر موثوقة، روابط مباشرة، باختصار"
+    direct_url = "https://example.com/report"
+    observed_plans = []
+
+    monkeypatch.setattr(
+        "agents.web_agent.route_intent",
+        lambda *args, **kwargs: {"route": "WEB_DEEP", "reason": "test"},
+    )
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda _question, _history: {
+            "queries": [planner_query],
+            "direct_urls": [direct_url],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+
+    def collect(research_plan):
+        observed_plans.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 0,
+            "query_results": [],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+
+    agent.answer(instruction_only, mode=mode)
+
+    assert observed_plans
+    assert observed_plans[0]["queries"] == []
+    assert observed_plans[0]["direct_urls"] == [direct_url]
+
+
+def test_auto_navigation_strips_arabic_search_verb_without_regex_regression(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "ابحث عن الموقع الرسمي لشركة النور"
+    observed_plans = []
+
+    monkeypatch.setattr(
+        "agents.web_agent.route_intent",
+        lambda *args, **kwargs: {"route": "WEB_SIMPLE", "reason": "test"},
+    )
+    monkeypatch.setattr(
+        "agents.web_agent.compact_search_query",
+        lambda value: value.strip() if isinstance(value, str) else "",
+    )
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda _question, _history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        "agents.web_agent.fallback_plan",
+        lambda *args, **kwargs: {"queries": [question]},
+    )
+
+    def collect(research_plan):
+        observed_plans.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 0,
+            "query_results": [],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "لم أعثر على مصدر.")
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+
+    agent.answer(question, mode="auto")
+
+    assert observed_plans
+    assert observed_plans[0]["queries"]
+    assert all(not query.startswith("ابحث عن") for query in observed_plans[0]["queries"])
+    assert "الموقع الرسمي لشركة النور" in observed_plans[0]["queries"][0]
