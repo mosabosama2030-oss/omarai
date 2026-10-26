@@ -131,7 +131,7 @@
 | [SRC-59CF4B7DE8-L000168](../../agents/research.py#L168) | 168 | `"        segment = segment.strip()"` | — |
 | [SRC-59CF4B7DE8-L000169](../../agents/research.py#L169) | 169 | `"        if not segment:"` | — |
 | [SRC-59CF4B7DE8-L000170](../../agents/research.py#L170) | 170 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000171](../../agents/research.py#L171) | 171 | `"        normalized_segment = re.sub(r\"[\\\\u064B-\\\\u065F\\\\u0670]\", \"\", segment)"` | — |
+| [SRC-59CF4B7DE8-L000171](../../agents/research.py#L171) | 171 | `"        normalized_segment = re.sub(r\"[\\u064B-\\u065F\\u0670]\", \"\", segment)"` | — |
 | [SRC-59CF4B7DE8-L000172](../../agents/research.py#L172) | 172 | `"        normalized_segment = _normalize_arabic(normalized_segment).casefold()"` | — |
 | [SRC-59CF4B7DE8-L000173](../../agents/research.py#L173) | 173 | `"        if ("` | — |
 | [SRC-59CF4B7DE8-L000174](../../agents/research.py#L174) | 174 | `"            _SEARCH_META_START_RE.search(normalized_segment)"` | — |
