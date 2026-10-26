@@ -2658,17 +2658,27 @@ class WebAgent:
             )
             rejected_count = sum(max(0, int(row.get("rejected_count", 0) or 0)) for row in attempts)
             rejection_count_totals = {reason: 0 for reason in _PROVIDER_REJECTION_REASONS}
-            rejection_counts_observed = False
+            rejection_counts_seen = False
+            rejection_counts_complete = True
             for row in attempts:
                 row_counts = row.get("rejection_counts")
                 if not isinstance(row_counts, dict):
+                    # Legacy/incomplete records with actual rejections prevent claiming
+                    # that an aggregate breakdown covers every rejected candidate.
+                    if max(0, int(row.get("rejected_count", 0) or 0)) > 0:
+                        rejection_counts_complete = False
                     continue
-                rejection_counts_observed = True
+                rejection_counts_seen = True
                 for reason in _PROVIDER_REJECTION_REASONS:
                     try:
                         rejection_count_totals[reason] += max(0, int(row_counts.get(reason, 0) or 0))
                     except (TypeError, ValueError, OverflowError):
                         continue
+            rejection_counts_observed = (
+                rejection_counts_seen
+                and rejection_counts_complete
+                and sum(rejection_count_totals.values()) == rejected_count
+            )
             candidate_rejection_observed = "filtered_all" in statuses or rejected_count > 0
             connectors.append({
                 "name": name, "in_codebase": name in config or bool(attempts),
