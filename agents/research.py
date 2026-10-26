@@ -117,6 +117,13 @@ def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
     return re.sub(r"\s+", " ", value).strip()[:limit]
 
 
+_SEARCH_TOPIC_PRESERVING_META_PREFIX_RE = re.compile(
+    r"^(?:و?استخدم|و?استعمل)\\s+مصادر?\\s+متعددة\\s+"
+    r"(?:للبحث\\s+عن|للعثور\\s+على|لإيجاد|عن|حول|بشأن|"
+    r"use\\s+multiple\\s+sources\\s+to\\s+(?:research|find|investigate))\\s+",
+    re.IGNORECASE,
+)
+
 _SEARCH_META_START_RE = re.compile(
     r"^(?:و?استخدم|و?استعمل|و?ميّز|و?ميز|و?اجب|و?أجب|و?لا تعرض|و?لا تقدم|"
     r"please cite|cite|provide links|mention sources|use multiple sources|"
@@ -171,11 +178,19 @@ def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:
         normalized_segment = re.sub(r"[\u064B-\u065F\u0670]", "", segment)
         normalized_segment = _normalize_arabic(normalized_segment).casefold()
         if (
-            _SEARCH_META_START_RE.search(normalized_segment)
-            or _SEARCH_CITATION_META_START_RE.search(normalized_segment)
+            _SEARCH_CITATION_META_START_RE.search(normalized_segment)
             or _SEARCH_UNCERTAINTY_META_START_RE.search(normalized_segment)
         ):
             continue
+        if _SEARCH_META_START_RE.search(normalized_segment):
+            # Keep a concrete topic when a "use multiple sources" directive
+            # introduces the subject, but discard standalone formatting clauses.
+            preserved = _SEARCH_TOPIC_PRESERVING_META_PREFIX_RE.sub("", segment, count=1).strip()
+            if not preserved:
+                continue
+            if preserved == segment:
+                continue
+            segment = preserved
         segment = _SEARCH_META_TAIL_RE.sub("", segment).strip()
         segment = _SEARCH_LEADING_ACTION_RE.sub("", segment).strip()
         if segment:
