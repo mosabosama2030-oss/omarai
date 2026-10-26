@@ -1100,7 +1100,11 @@ def test_answer_hides_unwrapped_internal_review_report(monkeypatch):
 
     monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
     monkeypatch.setattr(agent, "_collect_research", collect)
-    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    def capture_source_match_query(query, source):
+        matched_queries.append(query)
+        return True
+
+    monkeypatch.setattr(agent, "_source_matches_query", capture_source_match_query)
     monkeypatch.setattr(
         agent, "_generate", lambda *args, **kwargs: "إجابة مبدئية [المصدر 1]."
     )
@@ -1178,6 +1182,11 @@ def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(m
         "planning_method": "test",
     }
     calls = []
+    matched_queries = []
+    question = (
+        "ما أحدث معلومات شركة ألفا التقنية اليوم؟ "
+        "اذكر مصادر موثوقة، وروابط مباشرة، وأجب بإيجاز."
+    )
 
     def collect(research_plan):
         calls.append(dict(research_plan))
@@ -1205,9 +1214,11 @@ def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(m
     )
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
 
-    result = agent.answer("ما أحدث معلومات شركة ألفا التقنية اليوم؟")
+    result = agent.answer(question)
 
     assert len(calls) == 2
+    assert question not in matched_queries
+    assert compact_search_query(question) in matched_queries
     assert len(calls[1]["queries"]) == 1
     assert calls[1]["depth"] == "standard"
     assert calls[1]["social_focus"] is False
@@ -2969,3 +2980,125 @@ def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):
         "روابط المصادر" not in query and "أجب بإيجاز" not in query
         for query in plan["queries"]
     )
+
+
+def test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = (
+        "ما عيوب السيارات الكهربائية المستعملة في مصر؟ "
+        "اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز."
+    )
+    observed_plans = []
+
+    monkeypatch.setattr(
+        "agents.web_agent.route_intent",
+        lambda *args, **kwargs: {"route": "WEB_SIMPLE", "reason": "test"},
+    )
+    monkeypatch.setattr(
+        agent, "_plan_search",
+        lambda _question, _history: {
+            "queries": [question],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+        },
+    )
+    monkeypatch.setattr(
+        "agents.web_agent.fallback_plan",
+        lambda *args, **kwargs: {"queries": []},
+    )
+
+    def collect(research_plan):
+        observed_plans.append(dict(research_plan))
+        return [], [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 0,
+            "query_results": [],
+            "unique_sources": 0,
+            "pages_fetched": 0,
+            "providers_used": [],
+            "platform_counts": {},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "test",
+            "evidence_signals": {},
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "لا تتوفر مصادر كافية.")
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+
+    agent.answer(question, mode="auto")
+
+    assert observed_plans
+    assert question not in observed_plans[0]["queries"]
+    assert observed_plans[0]["queries"]
+    assert observed_plans[0]["queries"][0] == compact_search_query(question)
+
+
+def test_server_search_sources_are_scored_against_compact_question(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "ما عيوب السيارات الكهربائية المستعملة في مصر؟ اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز."
+    plan = {
+        "queries": [compact_search_query(question)],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    source_queries = []
+
+    monkeypatch.setattr(agent, "_plan_search", lambda _question, _history: dict(plan))
+    monkeypatch.setattr(
+        agent, "_collect_research",
+        lambda research_plan: ([sample_source(0), sample_source(1)], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [],
+            "unique_sources": 2,
+            "pages_fetched": 2,
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": 2},
+            "social_direct_results": 0,
+            "depth": "standard",
+            "planning_method": "test",
+            "evidence_signals": {},
+        }),
+    )
+
+    def generate(*args, **kwargs):
+        agent.server_search_sources = [{
+            "title": "تجارب السيارات الكهربائية المستعملة",
+            "url": "https://example.org/ev-used-cars",
+            "snippet": "تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر",
+            "page_text": "تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر",
+            "page_fetched": False,
+            "provider": "openrouter_web_search",
+            "providers": ["openrouter_web_search"],
+            "queries": [],
+            "domain": "example.org",
+            "source_class": "general",
+            "platform": "web",
+            "published_at": "",
+        }]
+        return "إجابة مبدئية [المصدر 1]."
+
+    monkeypatch.setattr(agent, "_generate", generate)
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+
+    def capture_relevance(query, _text):
+        source_queries.append(query)
+        return 0.25
+
+    monkeypatch.setattr("agents.web_agent._relevance_ratio", capture_relevance)
+
+    agent.answer(question)
+
+    assert source_queries == [compact_search_query(question)]
