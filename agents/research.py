@@ -260,6 +260,85 @@ def detect_depth(question: str) -> str:
     return "deep" if _contains_any(question, _DEEP_TERMS) else "standard"
 
 
+def extract_question_coverage_targets(question: str) -> list[str]:
+    """Extract explicit multi-part requirements; this is a heuristic, not semantic parsing."""
+    if not isinstance(question, str) or not question.strip():
+        return []
+    text = question.strip()[:4000]
+    marker = re.compile(
+        r"(?:من\s+حيث|من\s+ناحية|من\s+الناحية|فيما\s+يتعلق\s+ب|فيما\s+يخص|"
+        r"من\s+منظور|in\s+terms\s+of|with\s+respect\s+to|"
+        r"from\s+the\s+perspective\s+of|based\s+on\s+the\s+following\s+criteria)"
+        r"\s*(.+?)(?=[؟?!.؛;\n]|$)",
+        flags=re.IGNORECASE,
+    )
+    match = marker.search(text)
+    if match:
+        raw = match.group(1)
+        raw = re.split(
+            r"(?:،|,|؛|;)\s*(?:و?اذكر|و?وضح|بيّن|اشرح|and\s+(?:explain|note|discuss))\b",
+            raw,
+            maxsplit=1,
+            flags=re.IGNORECASE,
+        )[0]
+        pieces = re.split(
+            r"\s*(?:،|,|؛|;|/)\s*|"
+            r"\s+\band\b\s+|\s+\bas well as\b\s+|"
+            r"\s+و(?=ال|[ء-ي])",
+            raw,
+            flags=re.IGNORECASE,
+        )
+    else:
+        question_parts = [
+            part.strip(" \t\r\n-•")
+            for part in re.split(r"[؟?]+", text)
+            if len(part.strip(" \t\r\n-•")) >= 4
+        ]
+        pieces = question_parts if len(question_parts) > 1 else []
+
+    targets: list[str] = []
+    seen: set[str] = set()
+    for piece in pieces:
+        target = re.sub(r"^[\s:،,؛;/.!?\-–—]+|[\s:،,؛;/.!?\-–—]+$", "", piece).strip()
+        target = re.sub(r"^(?:و\s*)", "", target).strip()
+        if len(target) < 2:
+            continue
+        if len(target) > 120:
+            target = target[:120].rsplit(" ", 1)[0].strip()
+        key = _normalize_arabic(compact_search_query(target)).casefold()
+        if key and key not in seen:
+            seen.add(key)
+            targets.append(target)
+        if len(targets) >= MAX_PLAN_QUERIES:
+            break
+    return targets
+
+
+def build_requirement_queries(
+    base_query: str, targets: list[str] | None = None
+) -> list[dict[str, str]]:
+    """Create one bounded search query per explicit requirement."""
+    if not base_query or not targets:
+        return []
+    output: list[dict[str, str]] = []
+    for target in targets[:MAX_PLAN_QUERIES]:
+        if not isinstance(target, str) or not target.strip():
+            continue
+        clean_target = target.strip()[:120]
+        prefix_limit = max(
+            80,
+            MAX_QUERY_CHARS - min(len(clean_target), MAX_QUERY_CHARS - 80) - 1,
+        )
+        prefix = compact_search_query(base_query, limit=prefix_limit)
+        query = compact_search_query(
+            f"{prefix} {clean_target}", limit=MAX_QUERY_CHARS
+        )
+        if query:
+            output.append({"target": clean_target, "query": query})
+    return output
+
+
+
 def mentioned_social_platforms(text: str) -> list[str]:
     rules = (
         ("reddit", ("reddit", "ريديت")),
@@ -283,6 +362,8 @@ def fallback_plan(
     contextual_question = resolve_followup_query(question, history)
     direct_urls = extract_urls(question)
     base = compact_search_query(contextual_question)
+    coverage_targets = extract_question_coverage_targets(question)
+    requirement_queries = build_requirement_queries(base, coverage_targets)
     social_focus = detect_social_focus(question, history)
     fresh = detect_freshness(question)
     detected_depth = detect_depth(question)
@@ -308,6 +389,19 @@ def fallback_plan(
     if deep and base and not social_focus and len(queries) < MAX_PLAN_QUERIES:
         queries.append(compact_search_query(base + " مصادر موثوقة تقارير إحصاءات"))
 
+    if requirement_queries:
+        optional_queries = list(queries)
+        if len(requirement_queries) >= MAX_PLAN_QUERIES:
+            priority_queries = [item["query"] for item in requirement_queries]
+        else:
+            priority_queries = ([base] if base else []) + [
+                item["query"] for item in requirement_queries
+            ]
+        priority_seen = {item.casefold() for item in priority_queries}
+        queries = priority_queries + [
+            item for item in optional_queries if item.casefold() not in priority_seen
+        ]
+
     unique: list[str] = []
     seen: set[str] = set()
     for query in queries:
@@ -321,6 +415,8 @@ def fallback_plan(
 
     return {
         "queries": unique or ([base] if base else []),
+        "coverage_targets": coverage_targets,
+        "requirement_queries": requirement_queries,
         "direct_urls": direct_urls,
         "social_focus": social_focus,
         "freshness": "current" if fresh else "any",
@@ -355,12 +451,24 @@ def validate_plan(
     if not queries:
         return fallback
     base = fallback_plan(question, history)
+    coverage_targets = list(base.get("coverage_targets") or [])
+    requirement_queries = list(base.get("requirement_queries") or [])
+    if requirement_queries:
+        required_prefix: list[str] = []
+        if len(requirement_queries) < MAX_PLAN_QUERIES and base.get("queries"):
+            required_prefix.append(base["queries"][0])
+        required_prefix.extend(
+            item["query"] for item in requirement_queries if item.get("query")
+        )
+        queries = list(dict.fromkeys(required_prefix + queries))[:MAX_PLAN_QUERIES]
     platforms = candidate.get("platforms")
     if not isinstance(platforms, list):
         platforms = base["platforms"]
     safe_platforms = [p for p in platforms if isinstance(p, str) and p in SOCIAL_DOMAINS]
     return {
         "queries": queries,
+        "coverage_targets": coverage_targets,
+        "requirement_queries": requirement_queries,
         "direct_urls": fallback["direct_urls"],
         "social_focus": bool(candidate.get("social_focus", base["social_focus"])),
         "freshness": "current" if candidate.get("freshness") == "current" else base["freshness"],
