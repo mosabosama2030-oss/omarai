@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004007 إلى SRC-1AE03B9EC3-L004806
+- النطاق: SRC-1AE03B9EC3-L004006 إلى SRC-1AE03B9EC3-L004805
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004006](../../agents/web_agent.py#L4006) | 4006 | `"                        compact_search_query(query)"` | — |
 | [SRC-1AE03B9EC3-L004007](../../agents/web_agent.py#L4007) | 4007 | `"                        for query in (plan.get(\"queries\") or [])"` | — |
 | [SRC-1AE03B9EC3-L004008](../../agents/web_agent.py#L4008) | 4008 | `"                        if isinstance(query, str)"` | — |
 | [SRC-1AE03B9EC3-L004009](../../agents/web_agent.py#L4009) | 4009 | `"                    ]"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004803](../../agents/web_agent.py#L4803) | 4803 | `"                \"used_social_search\": bool(report.get(\"social_direct_results\", 0)),"` | — |
 | [SRC-1AE03B9EC3-L004804](../../agents/web_agent.py#L4804) | 4804 | `"                \"warnings\": list(dict.fromkeys(search_warnings + [reason])),"` | — |
 | [SRC-1AE03B9EC3-L004805](../../agents/web_agent.py#L4805) | 4805 | `"                \"kind\": \"insufficient_evidence\","` | — |
-| [SRC-1AE03B9EC3-L004806](../../agents/web_agent.py#L4806) | 4806 | `"                \"final_answer_status\": \"insufficient_evidence_no_generation\","` | — |

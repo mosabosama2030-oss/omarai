@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000807 إلى SRC-1AE03B9EC3-L001606
+- النطاق: SRC-1AE03B9EC3-L000806 إلى SRC-1AE03B9EC3-L001605
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000806](../../agents/web_agent.py#L806) | 806 | `"            targeted = ["` | — |
 | [SRC-1AE03B9EC3-L000807](../../agents/web_agent.py#L807) | 807 | `"                f'\"مطلوب شراء\" {subject}',"` | — |
 | [SRC-1AE03B9EC3-L000808](../../agents/web_agent.py#L808) | 808 | `"                f'\"مطلوب شقه تمليك\" {subject}',"` | — |
 | [SRC-1AE03B9EC3-L000809](../../agents/web_agent.py#L809) | 809 | `"                f'\"بدور على\" {subject} تمليك',"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001603](../../agents/web_agent.py#L1603) | 1603 | `"            # Keep every parseable, safe candidate here. _search_web applies the"` | — |
 | [SRC-1AE03B9EC3-L001604](../../agents/web_agent.py#L1604) | 1604 | `"            # shared relevance filter and records accepted/rejected counters."` | — |
 | [SRC-1AE03B9EC3-L001605](../../agents/web_agent.py#L1605) | 1605 | `"            # Filtering again in this adapter mislabels a valid feed as no results."` | — |
-| [SRC-1AE03B9EC3-L001606](../../agents/web_agent.py#L1606) | 1606 | `"            source_node = next("` | — |

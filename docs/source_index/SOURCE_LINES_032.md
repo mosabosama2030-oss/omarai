@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000815 إلى SRC-F725E90B2A-L001614
+- النطاق: SRC-F725E90B2A-L000814 إلى SRC-F725E90B2A-L001613
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000814](../../tests/test_web_agent.py#L814) | 814 | `"        def read(self, limit):"` | — |
 | [SRC-F725E90B2A-L000815](../../tests/test_web_agent.py#L815) | 815 | `"            return json.dumps({"` | — |
 | [SRC-F725E90B2A-L000816](../../tests/test_web_agent.py#L816) | 816 | `"                \"choices\": [{"` | — |
 | [SRC-F725E90B2A-L000817](../../tests/test_web_agent.py#L817) | 817 | `"                    \"message\": {\"content\": \"نص مبتور\"},"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001611](../../tests/test_web_agent.py#L1611) | 1611 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001612](../../tests/test_web_agent.py#L1612) | 1612 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001613](../../tests/test_web_agent.py#L1613) | 1613 | `"    observed = {}"` | — |
-| [SRC-F725E90B2A-L001614](../../tests/test_web_agent.py#L1614) | 1614 | `"    sources = []"` | — |

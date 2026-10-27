@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001615 إلى SRC-F725E90B2A-L002414
+- النطاق: SRC-F725E90B2A-L001614 إلى SRC-F725E90B2A-L002413
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001614](../../tests/test_web_agent.py#L1614) | 1614 | `"    sources = []"` | — |
 | [SRC-F725E90B2A-L001615](../../tests/test_web_agent.py#L1615) | 1615 | `"    for domain in (\"example.com\", \"example.net\"):"` | — |
 | [SRC-F725E90B2A-L001616](../../tests/test_web_agent.py#L1616) | 1616 | `"        sources.append({"` | — |
 | [SRC-F725E90B2A-L001617](../../tests/test_web_agent.py#L1617) | 1617 | `"            \"title\": \"موقع مصر الرقمية الرسمي والخدمات الحكومية\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002411](../../tests/test_web_agent.py#L2411) | 2411 | `""` | — |
 | [SRC-F725E90B2A-L002412](../../tests/test_web_agent.py#L2412) | 2412 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"degraded\""` | — |
 | [SRC-F725E90B2A-L002413](../../tests/test_web_agent.py#L2413) | 2413 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L002414](../../tests/test_web_agent.py#L2414) | 2414 | `"    assert report[\"checks\"][\"web_search\"][\"completed_connector_responses\"] >= 1"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000414 إلى SRC-E599346ABE-L001213
+- النطاق: SRC-E599346ABE-L000413 إلى SRC-E599346ABE-L001212
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000413](../generate_index.py#L413) | 413 | `"                text = source_stream.read()"` | — |
 | [SRC-E599346ABE-L000414](../generate_index.py#L414) | 414 | `"        else:"` | — |
 | [SRC-E599346ABE-L000415](../generate_index.py#L415) | 415 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
 | [SRC-E599346ABE-L000416](../generate_index.py#L416) | 416 | `"        if \"\\x00\" in text:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L001210](../generate_index.py#L1210) | 1210 | `"    return comments"` | — |
 | [SRC-E599346ABE-L001211](../generate_index.py#L1211) | 1211 | `""` | — |
 | [SRC-E599346ABE-L001212](../generate_index.py#L1212) | 1212 | `""` | — |
-| [SRC-E599346ABE-L001213](../generate_index.py#L1213) | 1213 | `"def _finding_comments_by_file(relative_file: str, source: str) -> dict[int, list[str]]:"` | — |
