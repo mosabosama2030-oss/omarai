@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **81**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1041**
-- تعريفات Python موثقة بوجود Docstring: **200**
-- تعريفات Python بلا Docstring: **637**
-- تعريفات لا ينطبق عليها Docstring: **204**
+- تعريفات Python المفهرسة: **1045**
+- تعريفات Python موثقة بوجود Docstring: **202**
+- تعريفات Python بلا Docstring: **638**
+- تعريفات لا ينطبق عليها Docstring: **205**
 - الرموز الساكنة الإضافية: **1611**
-- الأسطر النصية المفهرسة حرفيًا: **27780**
+- الأسطر النصية المفهرسة حرفيًا: **27928**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -37,7 +37,7 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
-| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 17790 | 376 | جرد الملف + AST Python |
+| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 24414 | 524 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 16450 | 391 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
@@ -130,7 +130,11 @@
 | [agents/answer_validation.py](../agents/answer_validation.py#L71) | دالة | _canonical_number | لا توجد Docstring. | ناقص | 71 | [SRC-138992B1FC-L000071](../agents/answer_validation.py#L71) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L79) | متغير/ثابت Python | _VALUE_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 79 | [SRC-138992B1FC-L000079](../agents/answer_validation.py#L79) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L106) | دالة | _numeric_values_with_cues | Extract number/dimension pairs as review signals, not as semantic claims. | موثق | 106 | [SRC-138992B1FC-L000106](../agents/answer_validation.py#L106) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L119) | دالة | audit_answer_integrity | Return bounded lexical checks; never label them as semantic fact verification. | موثق | 119 | [SRC-138992B1FC-L000119](../agents/answer_validation.py#L119) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L120) | متغير/ثابت Python | _REQUIREMENT_ALIAS_GROUPS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 120 | [SRC-138992B1FC-L000120](../agents/answer_validation.py#L120) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L131) | دالة | _alias_token_groups | لا توجد Docstring. | ناقص | 131 | [SRC-138992B1FC-L000131](../agents/answer_validation.py#L131) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L141) | دالة | _matched_target_terms | Match target terms conservatively, with a small explicit Arabic/English alias list. | موثق | 141 | [SRC-138992B1FC-L000141](../agents/answer_validation.py#L141) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L152) | دالة | build_requirement_evidence_ledger | Link requirements to query provenance and lexical source candidates, never to truth. | موثق | 152 | [SRC-138992B1FC-L000152](../agents/answer_validation.py#L152) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L253) | دالة | audit_answer_integrity | Return bounded lexical checks; never label them as semantic fact verification. | موثق | 253 | [SRC-138992B1FC-L000253](../agents/answer_validation.py#L253) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | متغير/ثابت Python | MAX_CONTEXT_TURNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L14) | متغير/ثابت Python | ROUTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-5587371288-L000014](../agents/intent_router.py#L14) |
 | [agents/intent_router.py](../agents/intent_router.py#L19) | متغير/ثابت Python | _ARABIC_DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-5587371288-L000019](../agents/intent_router.py#L19) |

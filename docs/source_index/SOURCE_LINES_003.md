@@ -4,9 +4,111 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000056 إلى SRC-59CF4B7DE8-L000855
+- النطاق: SRC-FDEEAFDFCA-L000050 إلى SRC-59CF4B7DE8-L000707
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-FDEEAFDFCA — [agents/request_budget.py](../../agents/request_budget.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000050](../../agents/request_budget.py#L50) | 50 | `"        self._clock = clock"` | — |
+| [SRC-FDEEAFDFCA-L000051](../../agents/request_budget.py#L51) | 51 | `"        bounded_timeout = max(10, min(int(timeout_seconds), MAX_TIMEOUT_SECONDS))"` | — |
+| [SRC-FDEEAFDFCA-L000052](../../agents/request_budget.py#L52) | 52 | `"        self.started_at = clock()"` | — |
+| [SRC-FDEEAFDFCA-L000053](../../agents/request_budget.py#L53) | 53 | `"        self.deadline = self.started_at + bounded_timeout"` | — |
+| [SRC-FDEEAFDFCA-L000054](../../agents/request_budget.py#L54) | 54 | `"        self._limits = {"` | — |
+| [SRC-FDEEAFDFCA-L000055](../../agents/request_budget.py#L55) | 55 | `"            key: max(0, min(int(value), RESOURCE_LIMITS[key][1]))"` | — |
+| [SRC-FDEEAFDFCA-L000056](../../agents/request_budget.py#L56) | 56 | `"            for key, (default, _maximum) in RESOURCE_LIMITS.items()"` | — |
+| [SRC-FDEEAFDFCA-L000057](../../agents/request_budget.py#L57) | 57 | `"            for value in [limits[key] if limits and key in limits else default]"` | — |
+| [SRC-FDEEAFDFCA-L000058](../../agents/request_budget.py#L58) | 58 | `"        }"` | — |
+| [SRC-FDEEAFDFCA-L000059](../../agents/request_budget.py#L59) | 59 | `"        self._counts = {key: 0 for key in self._limits}"` | — |
+| [SRC-FDEEAFDFCA-L000060](../../agents/request_budget.py#L60) | 60 | `"        self._exhausted_reasons: set[str] = set()"` | — |
+| [SRC-FDEEAFDFCA-L000061](../../agents/request_budget.py#L61) | 61 | `"        self._lock = threading.Lock()"` | — |
+| [SRC-FDEEAFDFCA-L000062](../../agents/request_budget.py#L62) | 62 | `""` | — |
+| [SRC-FDEEAFDFCA-L000063](../../agents/request_budget.py#L63) | 63 | `"    @classmethod"` | — |
+| [SRC-FDEEAFDFCA-L000064](../../agents/request_budget.py#L64) | 64 | `"    def from_environment(cls) -> RequestBudget:"` | — |
+| [SRC-FDEEAFDFCA-L000065](../../agents/request_budget.py#L65) | 65 | `"        timeout = _bounded_env_int("` | — |
+| [SRC-FDEEAFDFCA-L000066](../../agents/request_budget.py#L66) | 66 | `"            \"OMARAI_REQUEST_BUDGET_SECONDS\","` | — |
+| [SRC-FDEEAFDFCA-L000067](../../agents/request_budget.py#L67) | 67 | `"            DEFAULT_TIMEOUT_SECONDS,"` | — |
+| [SRC-FDEEAFDFCA-L000068](../../agents/request_budget.py#L68) | 68 | `"            10,"` | — |
+| [SRC-FDEEAFDFCA-L000069](../../agents/request_budget.py#L69) | 69 | `"            MAX_TIMEOUT_SECONDS,"` | — |
+| [SRC-FDEEAFDFCA-L000070](../../agents/request_budget.py#L70) | 70 | `"        )"` | — |
+| [SRC-FDEEAFDFCA-L000071](../../agents/request_budget.py#L71) | 71 | `"        limits = {"` | — |
+| [SRC-FDEEAFDFCA-L000072](../../agents/request_budget.py#L72) | 72 | `"            key: _bounded_env_int("` | — |
+| [SRC-FDEEAFDFCA-L000073](../../agents/request_budget.py#L73) | 73 | `"                f\"OMARAI_REQUEST_MAX_{key.upper()}\","` | — |
+| [SRC-FDEEAFDFCA-L000074](../../agents/request_budget.py#L74) | 74 | `"                defaults[0],"` | — |
+| [SRC-FDEEAFDFCA-L000075](../../agents/request_budget.py#L75) | 75 | `"                0 if key == \"tool_calls\" else 1,"` | — |
+| [SRC-FDEEAFDFCA-L000076](../../agents/request_budget.py#L76) | 76 | `"                defaults[1],"` | — |
+| [SRC-FDEEAFDFCA-L000077](../../agents/request_budget.py#L77) | 77 | `"            )"` | — |
+| [SRC-FDEEAFDFCA-L000078](../../agents/request_budget.py#L78) | 78 | `"            for key, defaults in RESOURCE_LIMITS.items()"` | — |
+| [SRC-FDEEAFDFCA-L000079](../../agents/request_budget.py#L79) | 79 | `"        }"` | — |
+| [SRC-FDEEAFDFCA-L000080](../../agents/request_budget.py#L80) | 80 | `"        return cls(timeout_seconds=timeout, limits=limits)"` | — |
+| [SRC-FDEEAFDFCA-L000081](../../agents/request_budget.py#L81) | 81 | `""` | — |
+| [SRC-FDEEAFDFCA-L000082](../../agents/request_budget.py#L82) | 82 | `"    def remaining_seconds(self) -> float:"` | — |
+| [SRC-FDEEAFDFCA-L000083](../../agents/request_budget.py#L83) | 83 | `"        return max(0.0, self.deadline - self._clock())"` | — |
+| [SRC-FDEEAFDFCA-L000084](../../agents/request_budget.py#L84) | 84 | `""` | — |
+| [SRC-FDEEAFDFCA-L000085](../../agents/request_budget.py#L85) | 85 | `"    def timeout_for(self, configured_seconds: float) -> float:"` | — |
+| [SRC-FDEEAFDFCA-L000086](../../agents/request_budget.py#L86) | 86 | `"        \"\"\"Cap one outbound timeout to time remaining; raise instead of starting at zero.\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000087](../../agents/request_budget.py#L87) | 87 | `"        remaining = self.remaining_seconds()"` | — |
+| [SRC-FDEEAFDFCA-L000088](../../agents/request_budget.py#L88) | 88 | `"        if remaining <= 0:"` | — |
+| [SRC-FDEEAFDFCA-L000089](../../agents/request_budget.py#L89) | 89 | `"            with self._lock:"` | — |
+| [SRC-FDEEAFDFCA-L000090](../../agents/request_budget.py#L90) | 90 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
+| [SRC-FDEEAFDFCA-L000091](../../agents/request_budget.py#L91) | 91 | `"            raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
+| [SRC-FDEEAFDFCA-L000092](../../agents/request_budget.py#L92) | 92 | `"        return min(float(configured_seconds), remaining)"` | — |
+| [SRC-FDEEAFDFCA-L000093](../../agents/request_budget.py#L93) | 93 | `""` | — |
+| [SRC-FDEEAFDFCA-L000094](../../agents/request_budget.py#L94) | 94 | `"    def remaining_units(self, resource: str) -> int:"` | — |
+| [SRC-FDEEAFDFCA-L000095](../../agents/request_budget.py#L95) | 95 | `"        \"\"\"Return unused units for a resource; zero means disabled, exhausted, or expired.\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000096](../../agents/request_budget.py#L96) | 96 | `"        if resource not in self._limits:"` | — |
+| [SRC-FDEEAFDFCA-L000097](../../agents/request_budget.py#L97) | 97 | `"            raise ValueError(f\"unknown request-budget resource: {resource}\")"` | — |
+| [SRC-FDEEAFDFCA-L000098](../../agents/request_budget.py#L98) | 98 | `"        if self.remaining_seconds() <= 0:"` | — |
+| [SRC-FDEEAFDFCA-L000099](../../agents/request_budget.py#L99) | 99 | `"            return 0"` | — |
+| [SRC-FDEEAFDFCA-L000100](../../agents/request_budget.py#L100) | 100 | `"        with self._lock:"` | — |
+| [SRC-FDEEAFDFCA-L000101](../../agents/request_budget.py#L101) | 101 | `"            return max(0, self._limits[resource] - self._counts[resource])"` | — |
+| [SRC-FDEEAFDFCA-L000102](../../agents/request_budget.py#L102) | 102 | `""` | — |
+| [SRC-FDEEAFDFCA-L000103](../../agents/request_budget.py#L103) | 103 | `"    def reserve(self, resource: str, amount: int = 1) -> None:"` | — |
+| [SRC-FDEEAFDFCA-L000104](../../agents/request_budget.py#L104) | 104 | `"        \"\"\"Atomically reserve resource units before initiating external work.\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000105](../../agents/request_budget.py#L105) | 105 | `"        if resource not in self._limits:"` | — |
+| [SRC-FDEEAFDFCA-L000106](../../agents/request_budget.py#L106) | 106 | `"            raise ValueError(f\"unknown request-budget resource: {resource}\")"` | — |
+| [SRC-FDEEAFDFCA-L000107](../../agents/request_budget.py#L107) | 107 | `"        if amount < 1:"` | — |
+| [SRC-FDEEAFDFCA-L000108](../../agents/request_budget.py#L108) | 108 | `"            raise ValueError(\"reservation amount must be positive\")"` | — |
+| [SRC-FDEEAFDFCA-L000109](../../agents/request_budget.py#L109) | 109 | `"        with self._lock:"` | — |
+| [SRC-FDEEAFDFCA-L000110](../../agents/request_budget.py#L110) | 110 | `"            if self.remaining_seconds() <= 0:"` | — |
+| [SRC-FDEEAFDFCA-L000111](../../agents/request_budget.py#L111) | 111 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
+| [SRC-FDEEAFDFCA-L000112](../../agents/request_budget.py#L112) | 112 | `"                raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
+| [SRC-FDEEAFDFCA-L000113](../../agents/request_budget.py#L113) | 113 | `"            limit = self._limits[resource]"` | — |
+| [SRC-FDEEAFDFCA-L000114](../../agents/request_budget.py#L114) | 114 | `"            if self._counts[resource] + amount > limit:"` | — |
+| [SRC-FDEEAFDFCA-L000115](../../agents/request_budget.py#L115) | 115 | `"                self._exhausted_reasons.add(resource)"` | — |
+| [SRC-FDEEAFDFCA-L000116](../../agents/request_budget.py#L116) | 116 | `"                raise RequestBudgetExceeded("` | — |
+| [SRC-FDEEAFDFCA-L000117](../../agents/request_budget.py#L117) | 117 | `"                    f\"تم بلوغ حد موارد الطلب: {resource}.\""` | — |
+| [SRC-FDEEAFDFCA-L000118](../../agents/request_budget.py#L118) | 118 | `"                )"` | — |
+| [SRC-FDEEAFDFCA-L000119](../../agents/request_budget.py#L119) | 119 | `"            self._counts[resource] += amount"` | — |
+| [SRC-FDEEAFDFCA-L000120](../../agents/request_budget.py#L120) | 120 | `""` | — |
+| [SRC-FDEEAFDFCA-L000121](../../agents/request_budget.py#L121) | 121 | `"    def snapshot(self) -> dict[str, Any]:"` | — |
+| [SRC-FDEEAFDFCA-L000122](../../agents/request_budget.py#L122) | 122 | `"        with self._lock:"` | — |
+| [SRC-FDEEAFDFCA-L000123](../../agents/request_budget.py#L123) | 123 | `"            counts = dict(self._counts)"` | — |
+| [SRC-FDEEAFDFCA-L000124](../../agents/request_budget.py#L124) | 124 | `"            limits = dict(self._limits)"` | — |
+| [SRC-FDEEAFDFCA-L000125](../../agents/request_budget.py#L125) | 125 | `"            exhausted_reasons = sorted(self._exhausted_reasons)"` | — |
+| [SRC-FDEEAFDFCA-L000126](../../agents/request_budget.py#L126) | 126 | `"        remaining = self.remaining_seconds()"` | — |
+| [SRC-FDEEAFDFCA-L000127](../../agents/request_budget.py#L127) | 127 | `"        return {"` | — |
+| [SRC-FDEEAFDFCA-L000128](../../agents/request_budget.py#L128) | 128 | `"            \"policy\": \"cooperative_per_request_budget\","` | — |
+| [SRC-FDEEAFDFCA-L000129](../../agents/request_budget.py#L129) | 129 | `"            \"timeout_seconds\": round(self.deadline - self.started_at, 3),"` | — |
+| [SRC-FDEEAFDFCA-L000130](../../agents/request_budget.py#L130) | 130 | `"            \"elapsed_seconds\": round(max(0.0, self._clock() - self.started_at), 3),"` | — |
+| [SRC-FDEEAFDFCA-L000131](../../agents/request_budget.py#L131) | 131 | `"            \"remaining_seconds\": round(remaining, 3),"` | — |
+| [SRC-FDEEAFDFCA-L000132](../../agents/request_budget.py#L132) | 132 | `"            \"deadline_exceeded\": remaining <= 0,"` | — |
+| [SRC-FDEEAFDFCA-L000133](../../agents/request_budget.py#L133) | 133 | `"            \"budget_exhausted\": bool(exhausted_reasons) or remaining <= 0,"` | — |
+| [SRC-FDEEAFDFCA-L000134](../../agents/request_budget.py#L134) | 134 | `"            \"exhausted_reasons\": exhausted_reasons,"` | — |
+| [SRC-FDEEAFDFCA-L000135](../../agents/request_budget.py#L135) | 135 | `"            \"counts\": counts,"` | — |
+| [SRC-FDEEAFDFCA-L000136](../../agents/request_budget.py#L136) | 136 | `"            \"limits\": limits,"` | — |
+| [SRC-FDEEAFDFCA-L000137](../../agents/request_budget.py#L137) | 137 | `"            \"resources_at_limit\": ["` | — |
+| [SRC-FDEEAFDFCA-L000138](../../agents/request_budget.py#L138) | 138 | `"                key for key, limit in limits.items() if limit > 0 and counts[key] >= limit"` | — |
+| [SRC-FDEEAFDFCA-L000139](../../agents/request_budget.py#L139) | 139 | `"            ],"` | — |
+| [SRC-FDEEAFDFCA-L000140](../../agents/request_budget.py#L140) | 140 | `"            \"disabled_resources\": [key for key, limit in limits.items() if limit == 0],"` | — |
+| [SRC-FDEEAFDFCA-L000141](../../agents/request_budget.py#L141) | 141 | `"            \"hard_cancellation_guaranteed\": False,"` | — |
+| [SRC-FDEEAFDFCA-L000142](../../agents/request_budget.py#L142) | 142 | `"        }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-59CF4B7DE8 — [agents/research.py](../../agents/research.py#L1)
@@ -16,6 +118,61 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000001](../../agents/research.py#L1) | 1 | `"\"\"\"Research planning, domain targeting, and multi-query source ranking."` | — |
+| [SRC-59CF4B7DE8-L000002](../../agents/research.py#L2) | 2 | `""` | — |
+| [SRC-59CF4B7DE8-L000003](../../agents/research.py#L3) | 3 | `"This module is deterministic by design: the language model may propose a plan,"` | — |
+| [SRC-59CF4B7DE8-L000004](../../agents/research.py#L4) | 4 | `"but all queries, result counts and source records are validated before use."` | — |
+| [SRC-59CF4B7DE8-L000005](../../agents/research.py#L5) | 5 | `"\"\"\""` | — |
+| [SRC-59CF4B7DE8-L000006](../../agents/research.py#L6) | 6 | `"from __future__ import annotations"` | — |
+| [SRC-59CF4B7DE8-L000007](../../agents/research.py#L7) | 7 | `""` | — |
+| [SRC-59CF4B7DE8-L000008](../../agents/research.py#L8) | 8 | `"import ipaddress"` | — |
+| [SRC-59CF4B7DE8-L000009](../../agents/research.py#L9) | 9 | `"import re"` | — |
+| [SRC-59CF4B7DE8-L000010](../../agents/research.py#L10) | 10 | `"from datetime import UTC, datetime, timedelta"` | — |
+| [SRC-59CF4B7DE8-L000011](../../agents/research.py#L11) | 11 | `"from email.utils import parsedate_to_datetime"` | — |
+| [SRC-59CF4B7DE8-L000012](../../agents/research.py#L12) | 12 | `"from typing import Any"` | — |
+| [SRC-59CF4B7DE8-L000013](../../agents/research.py#L13) | 13 | `"from urllib.parse import urlparse"` | — |
+| [SRC-59CF4B7DE8-L000014](../../agents/research.py#L14) | 14 | `""` | — |
+| [SRC-59CF4B7DE8-L000015](../../agents/research.py#L15) | 15 | `"import tldextract"` | — |
+| [SRC-59CF4B7DE8-L000016](../../agents/research.py#L16) | 16 | `""` | — |
+| [SRC-59CF4B7DE8-L000017](../../agents/research.py#L17) | 17 | `"from agents.intent_router import resolve_followup_query"` | — |
+| [SRC-59CF4B7DE8-L000018](../../agents/research.py#L18) | 18 | `""` | — |
+| [SRC-59CF4B7DE8-L000019](../../agents/research.py#L19) | 19 | `"MAX_PLAN_QUERIES = 8"` | — |
+| [SRC-59CF4B7DE8-L000020](../../agents/research.py#L20) | 20 | `"MAX_QUERY_CHARS = 240"` | — |
+| [SRC-59CF4B7DE8-L000021](../../agents/research.py#L21) | 21 | `"MAX_FUSED_RESULTS = 18"` | — |
+| [SRC-59CF4B7DE8-L000022](../../agents/research.py#L22) | 22 | `""` | — |
+| [SRC-59CF4B7DE8-L000023](../../agents/research.py#L23) | 23 | `""` | — |
+| [SRC-59CF4B7DE8-L000024](../../agents/research.py#L24) | 24 | `"# Use the Public Suffix List snapshot bundled with tldextract; never fetch it at"` | — |
+| [SRC-59CF4B7DE8-L000025](../../agents/research.py#L25) | 25 | `"# runtime. Including private suffixes keeps tenant-hosted sites (e.g. github.io)"` | — |
+| [SRC-59CF4B7DE8-L000026](../../agents/research.py#L26) | 26 | `"# separate, while subdomains belonging to one registrable site share one identity."` | — |
+| [SRC-59CF4B7DE8-L000027](../../agents/research.py#L27) | 27 | `"_DOMAIN_EXTRACTOR = tldextract.TLDExtract("` | — |
+| [SRC-59CF4B7DE8-L000028](../../agents/research.py#L28) | 28 | `"    suffix_list_urls=(),"` | — |
+| [SRC-59CF4B7DE8-L000029](../../agents/research.py#L29) | 29 | `"    include_psl_private_domains=True,"` | — |
+| [SRC-59CF4B7DE8-L000030](../../agents/research.py#L30) | 30 | `")"` | — |
+| [SRC-59CF4B7DE8-L000031](../../agents/research.py#L31) | 31 | `""` | — |
+| [SRC-59CF4B7DE8-L000032](../../agents/research.py#L32) | 32 | `""` | — |
+| [SRC-59CF4B7DE8-L000033](../../agents/research.py#L33) | 33 | `"def registrable_domain(value: Any) -> str:"` | — |
+| [SRC-59CF4B7DE8-L000034](../../agents/research.py#L34) | 34 | `"    \"\"\"Return a normalized registrable domain (or normalized IP/unknown hostname)."` | — |
+| [SRC-59CF4B7DE8-L000035](../../agents/research.py#L35) | 35 | `""` | — |
+| [SRC-59CF4B7DE8-L000036](../../agents/research.py#L36) | 36 | `"    This is a conservative source-diversity key, not proof that two publishers"` | — |
+| [SRC-59CF4B7DE8-L000037](../../agents/research.py#L37) | 37 | `"    are editorially independent. It prevents sibling subdomains from being"` | — |
+| [SRC-59CF4B7DE8-L000038](../../agents/research.py#L38) | 38 | `"    counted as separate domains in the evidence coverage threshold."` | — |
+| [SRC-59CF4B7DE8-L000039](../../agents/research.py#L39) | 39 | `"    \"\"\""` | — |
+| [SRC-59CF4B7DE8-L000040](../../agents/research.py#L40) | 40 | `"    candidate = str(value or \"\").strip()"` | — |
+| [SRC-59CF4B7DE8-L000041](../../agents/research.py#L41) | 41 | `"    if not candidate:"` | — |
+| [SRC-59CF4B7DE8-L000042](../../agents/research.py#L42) | 42 | `"        return \"\""` | — |
+| [SRC-59CF4B7DE8-L000043](../../agents/research.py#L43) | 43 | `"    parsed = urlparse(candidate if \"://\" in candidate else \"//\" + candidate)"` | — |
+| [SRC-59CF4B7DE8-L000044](../../agents/research.py#L44) | 44 | `"    host = (parsed.hostname or \"\").rstrip(\".\").lower()"` | — |
+| [SRC-59CF4B7DE8-L000045](../../agents/research.py#L45) | 45 | `"    if not host:"` | — |
+| [SRC-59CF4B7DE8-L000046](../../agents/research.py#L46) | 46 | `"        return \"\""` | — |
+| [SRC-59CF4B7DE8-L000047](../../agents/research.py#L47) | 47 | `"    try:"` | — |
+| [SRC-59CF4B7DE8-L000048](../../agents/research.py#L48) | 48 | `"        return str(ipaddress.ip_address(host))"` | — |
+| [SRC-59CF4B7DE8-L000049](../../agents/research.py#L49) | 49 | `"    except ValueError:"` | — |
+| [SRC-59CF4B7DE8-L000050](../../agents/research.py#L50) | 50 | `"        pass"` | — |
+| [SRC-59CF4B7DE8-L000051](../../agents/research.py#L51) | 51 | `"    try:"` | — |
+| [SRC-59CF4B7DE8-L000052](../../agents/research.py#L52) | 52 | `"        host = host.encode(\"idna\").decode(\"ascii\").lower()"` | — |
+| [SRC-59CF4B7DE8-L000053](../../agents/research.py#L53) | 53 | `"    except UnicodeError:"` | — |
+| [SRC-59CF4B7DE8-L000054](../../agents/research.py#L54) | 54 | `"        return host"` | — |
+| [SRC-59CF4B7DE8-L000055](../../agents/research.py#L55) | 55 | `"    extracted = _DOMAIN_EXTRACTOR(host)"` | — |
 | [SRC-59CF4B7DE8-L000056](../../agents/research.py#L56) | 56 | `"    return (extracted.top_domain_under_public_suffix or host).lower()"` | — |
 | [SRC-59CF4B7DE8-L000057](../../agents/research.py#L57) | 57 | `""` | — |
 | [SRC-59CF4B7DE8-L000058](../../agents/research.py#L58) | 58 | `"SOCIAL_DOMAINS = {"` | — |
@@ -668,151 +825,3 @@
 | [SRC-59CF4B7DE8-L000705](../../agents/research.py#L705) | 705 | `"        warnings.append(\"تمت قراءة أقل من صفحتين مباشرة؛ بعض الأدلة مقتطفات من محركات البحث فقط.\")"` | — |
 | [SRC-59CF4B7DE8-L000706](../../agents/research.py#L706) | 706 | `"    if freshness == \"current\":"` | — |
 | [SRC-59CF4B7DE8-L000707](../../agents/research.py#L707) | 707 | `"        if not dates:"` | — |
-| [SRC-59CF4B7DE8-L000708](../../agents/research.py#L708) | 708 | `"            warnings.append(\"لا تتوفر تواريخ نشر قابلة للتحليل؛ حداثة النتائج غير مؤكدة.\")"` | — |
-| [SRC-59CF4B7DE8-L000709](../../agents/research.py#L709) | 709 | `"        elif recent_count == 0:"` | — |
-| [SRC-59CF4B7DE8-L000710](../../agents/research.py#L710) | 710 | `"            warnings.append(f\"لم يُعثر على مصدر مؤرخ خلال آخر {recent_days} يومًا ضمن التواريخ القابلة للتحليل.\")"` | — |
-| [SRC-59CF4B7DE8-L000711](../../agents/research.py#L711) | 711 | `"    if future_dates:"` | — |
-| [SRC-59CF4B7DE8-L000712](../../agents/research.py#L712) | 712 | `"        warnings.append(\"توجد تواريخ مستقبلية غير متوقعة؛ يجب مراجعتها يدويًا.\")"` | — |
-| [SRC-59CF4B7DE8-L000713](../../agents/research.py#L713) | 713 | `"    if social_count and primary_count == 0:"` | — |
-| [SRC-59CF4B7DE8-L000714](../../agents/research.py#L714) | 714 | `"        warnings.append(\"المصادر اجتماعية فقط دون مصدر رسمي/أكاديمي؛ تعامل معها كآراء أو إشارات لا كحقائق مثبتة.\")"` | — |
-| [SRC-59CF4B7DE8-L000715](../../agents/research.py#L715) | 715 | `"    return {"` | — |
-| [SRC-59CF4B7DE8-L000716](../../agents/research.py#L716) | 716 | `"        \"unique_sources\": unique_sources,"` | — |
-| [SRC-59CF4B7DE8-L000717](../../agents/research.py#L717) | 717 | `"        \"unique_domains\": len(domains),"` | — |
-| [SRC-59CF4B7DE8-L000718](../../agents/research.py#L718) | 718 | `"        \"providers_count\": len(providers),"` | — |
-| [SRC-59CF4B7DE8-L000719](../../agents/research.py#L719) | 719 | `"        \"providers\": sorted(providers),"` | — |
-| [SRC-59CF4B7DE8-L000720](../../agents/research.py#L720) | 720 | `"        \"pages_read\": pages_read,"` | — |
-| [SRC-59CF4B7DE8-L000721](../../agents/research.py#L721) | 721 | `"        \"primary_sources\": primary_count,"` | — |
-| [SRC-59CF4B7DE8-L000722](../../agents/research.py#L722) | 722 | `"        \"news_sources\": news_count,"` | — |
-| [SRC-59CF4B7DE8-L000723](../../agents/research.py#L723) | 723 | `"        \"social_sources\": social_count,"` | — |
-| [SRC-59CF4B7DE8-L000724](../../agents/research.py#L724) | 724 | `"        \"dated_sources\": len(dates),"` | — |
-| [SRC-59CF4B7DE8-L000725](../../agents/research.py#L725) | 725 | `"        \"recent_sources\": recent_count,"` | — |
-| [SRC-59CF4B7DE8-L000726](../../agents/research.py#L726) | 726 | `"        \"undated_sources\": max(0, unique_sources - len(dates)),"` | — |
-| [SRC-59CF4B7DE8-L000727](../../agents/research.py#L727) | 727 | `"        \"date_coverage_percent\": round(100 * len(dates) / unique_sources) if unique_sources else 0,"` | — |
-| [SRC-59CF4B7DE8-L000728](../../agents/research.py#L728) | 728 | `"        \"coverage_score\": coverage_score,"` | — |
-| [SRC-59CF4B7DE8-L000729](../../agents/research.py#L729) | 729 | `"        \"coverage_level\": coverage_level,"` | — |
-| [SRC-59CF4B7DE8-L000730](../../agents/research.py#L730) | 730 | `"        \"score_meaning\": \"مؤشر تغطية وتنوع الأدلة، وليس احتمال صحة الإجابة.\","` | — |
-| [SRC-59CF4B7DE8-L000731](../../agents/research.py#L731) | 731 | `"        \"warnings\": warnings,"` | — |
-| [SRC-59CF4B7DE8-L000732](../../agents/research.py#L732) | 732 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000733](../../agents/research.py#L733) | 733 | `""` | — |
-| [SRC-59CF4B7DE8-L000734](../../agents/research.py#L734) | 734 | `""` | — |
-| [SRC-59CF4B7DE8-L000735](../../agents/research.py#L735) | 735 | `""` | — |
-| [SRC-59CF4B7DE8-L000736](../../agents/research.py#L736) | 736 | `"# ---------------------------------------------------------------------------"` | — |
-| [SRC-59CF4B7DE8-L000737](../../agents/research.py#L737) | 737 | `"# Evidence-aware helpers"` | — |
-| [SRC-59CF4B7DE8-L000738](../../agents/research.py#L738) | 738 | `"# ---------------------------------------------------------------------------"` | — |
-| [SRC-59CF4B7DE8-L000739](../../agents/research.py#L739) | 739 | `""` | — |
-| [SRC-59CF4B7DE8-L000740](../../agents/research.py#L740) | 740 | `"_RELEVANCE_STOPWORDS = {"` | — |
-| [SRC-59CF4B7DE8-L000741](../../agents/research.py#L741) | 741 | `"    \"the\", \"a\", \"an\", \"of\", \"in\", \"on\", \"at\", \"to\", \"for\","` | — |
-| [SRC-59CF4B7DE8-L000742](../../agents/research.py#L742) | 742 | `"    \"is\", \"are\", \"was\", \"were\", \"be\", \"been\", \"being\","` | — |
-| [SRC-59CF4B7DE8-L000743](../../agents/research.py#L743) | 743 | `"    \"and\", \"or\", \"but\", \"not\", \"with\", \"without\","` | — |
-| [SRC-59CF4B7DE8-L000744](../../agents/research.py#L744) | 744 | `"    \"this\", \"that\", \"these\", \"those\", \"it\", \"its\","` | — |
-| [SRC-59CF4B7DE8-L000745](../../agents/research.py#L745) | 745 | `"}"` | — |
-| [SRC-59CF4B7DE8-L000746](../../agents/research.py#L746) | 746 | `""` | — |
-| [SRC-59CF4B7DE8-L000747](../../agents/research.py#L747) | 747 | `"_OFFICIAL_CLASSES = {\"government\", \"education\", \"official\"}"` | — |
-| [SRC-59CF4B7DE8-L000748](../../agents/research.py#L748) | 748 | `""` | — |
-| [SRC-59CF4B7DE8-L000749](../../agents/research.py#L749) | 749 | `""` | — |
-| [SRC-59CF4B7DE8-L000750](../../agents/research.py#L750) | 750 | `"def _tokenize(text: str) -> set:"` | — |
-| [SRC-59CF4B7DE8-L000751](../../agents/research.py#L751) | 751 | `"    if not text:"` | — |
-| [SRC-59CF4B7DE8-L000752](../../agents/research.py#L752) | 752 | `"        return set()"` | — |
-| [SRC-59CF4B7DE8-L000753](../../agents/research.py#L753) | 753 | `"    norm = _normalize_arabic(text.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000754](../../agents/research.py#L754) | 754 | `"    tokens = re.findall(r\"\\w+\", norm, flags=re.UNICODE)"` | — |
-| [SRC-59CF4B7DE8-L000755](../../agents/research.py#L755) | 755 | `"    return {t for t in tokens if len(t) >= 3 and t not in _RELEVANCE_STOPWORDS}"` | — |
-| [SRC-59CF4B7DE8-L000756](../../agents/research.py#L756) | 756 | `""` | — |
-| [SRC-59CF4B7DE8-L000757](../../agents/research.py#L757) | 757 | `""` | — |
-| [SRC-59CF4B7DE8-L000758](../../agents/research.py#L758) | 758 | `"def source_relevance_score(src, query: str) -> dict:"` | — |
-| [SRC-59CF4B7DE8-L000759](../../agents/research.py#L759) | 759 | `"    if not isinstance(src, dict):"` | — |
-| [SRC-59CF4B7DE8-L000760](../../agents/research.py#L760) | 760 | `"        return {\"accepted\": False, \"score\": 0, \"reason\": \"malformed\"}"` | — |
-| [SRC-59CF4B7DE8-L000761](../../agents/research.py#L761) | 761 | `""` | — |
-| [SRC-59CF4B7DE8-L000762](../../agents/research.py#L762) | 762 | `"    title = str(src.get(\"title\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000763](../../agents/research.py#L763) | 763 | `"    snippet = str(src.get(\"snippet\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000764](../../agents/research.py#L764) | 764 | `"    page_text = str(src.get(\"page_text\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000765](../../agents/research.py#L765) | 765 | `"    source_class = str(src.get(\"source_class\") or \"general\").lower()"` | — |
-| [SRC-59CF4B7DE8-L000766](../../agents/research.py#L766) | 766 | `""` | — |
-| [SRC-59CF4B7DE8-L000767](../../agents/research.py#L767) | 767 | `"    q_tokens = _tokenize(query)"` | — |
-| [SRC-59CF4B7DE8-L000768](../../agents/research.py#L768) | 768 | `"    if not q_tokens:"` | — |
-| [SRC-59CF4B7DE8-L000769](../../agents/research.py#L769) | 769 | `"        return {\"accepted\": False, \"score\": 0, \"reason\": \"no_query_tokens\"}"` | — |
-| [SRC-59CF4B7DE8-L000770](../../agents/research.py#L770) | 770 | `""` | — |
-| [SRC-59CF4B7DE8-L000771](../../agents/research.py#L771) | 771 | `"    t_tokens = _tokenize(title)"` | — |
-| [SRC-59CF4B7DE8-L000772](../../agents/research.py#L772) | 772 | `"    s_tokens = _tokenize(snippet)"` | — |
-| [SRC-59CF4B7DE8-L000773](../../agents/research.py#L773) | 773 | `"    p_tokens = _tokenize(page_text[:3000])"` | — |
-| [SRC-59CF4B7DE8-L000774](../../agents/research.py#L774) | 774 | `""` | — |
-| [SRC-59CF4B7DE8-L000775](../../agents/research.py#L775) | 775 | `"    title_ratio = len(q_tokens & t_tokens) / max(len(q_tokens), 1)"` | — |
-| [SRC-59CF4B7DE8-L000776](../../agents/research.py#L776) | 776 | `"    snippet_ratio = len(q_tokens & s_tokens) / max(len(q_tokens), 1)"` | — |
-| [SRC-59CF4B7DE8-L000777](../../agents/research.py#L777) | 777 | `"    page_ratio = len(q_tokens & p_tokens) / max(len(q_tokens), 1)"` | — |
-| [SRC-59CF4B7DE8-L000778](../../agents/research.py#L778) | 778 | `""` | — |
-| [SRC-59CF4B7DE8-L000779](../../agents/research.py#L779) | 779 | `"    score = int(title_ratio * 15 + snippet_ratio * 20 + page_ratio * 5)"` | — |
-| [SRC-59CF4B7DE8-L000780](../../agents/research.py#L780) | 780 | `""` | — |
-| [SRC-59CF4B7DE8-L000781](../../agents/research.py#L781) | 781 | `"    if source_class in _OFFICIAL_CLASSES:"` | — |
-| [SRC-59CF4B7DE8-L000782](../../agents/research.py#L782) | 782 | `"        if score >= 5:"` | — |
-| [SRC-59CF4B7DE8-L000783](../../agents/research.py#L783) | 783 | `"            return {\"accepted\": True, \"score\": score, \"reason\": \"accepted\"}"` | — |
-| [SRC-59CF4B7DE8-L000784](../../agents/research.py#L784) | 784 | `"        return {\"accepted\": True, \"score\": score,"` | — |
-| [SRC-59CF4B7DE8-L000785](../../agents/research.py#L785) | 785 | `"                \"reason\": \"kept_official_despite_low_overlap\"}"` | — |
-| [SRC-59CF4B7DE8-L000786](../../agents/research.py#L786) | 786 | `""` | — |
-| [SRC-59CF4B7DE8-L000787](../../agents/research.py#L787) | 787 | `"    if score >= 18:"` | — |
-| [SRC-59CF4B7DE8-L000788](../../agents/research.py#L788) | 788 | `"        return {\"accepted\": True, \"score\": score, \"reason\": \"accepted\"}"` | — |
-| [SRC-59CF4B7DE8-L000789](../../agents/research.py#L789) | 789 | `"    return {\"accepted\": False, \"score\": score, \"reason\": \"low_overlap\"}"` | — |
-| [SRC-59CF4B7DE8-L000790](../../agents/research.py#L790) | 790 | `""` | — |
-| [SRC-59CF4B7DE8-L000791](../../agents/research.py#L791) | 791 | `""` | — |
-| [SRC-59CF4B7DE8-L000792](../../agents/research.py#L792) | 792 | `"def filter_relevant_sources(sources, query: str, extra_queries=None):"` | — |
-| [SRC-59CF4B7DE8-L000793](../../agents/research.py#L793) | 793 | `"    kept = []"` | — |
-| [SRC-59CF4B7DE8-L000794](../../agents/research.py#L794) | 794 | `"    diag = []"` | — |
-| [SRC-59CF4B7DE8-L000795](../../agents/research.py#L795) | 795 | `"    seen_urls = set()"` | — |
-| [SRC-59CF4B7DE8-L000796](../../agents/research.py#L796) | 796 | `"    seen_titles = set()"` | — |
-| [SRC-59CF4B7DE8-L000797](../../agents/research.py#L797) | 797 | `"    combined = \" \".join([query] + list(extra_queries or []))"` | — |
-| [SRC-59CF4B7DE8-L000798](../../agents/research.py#L798) | 798 | `""` | — |
-| [SRC-59CF4B7DE8-L000799](../../agents/research.py#L799) | 799 | `"    for src in sources or []:"` | — |
-| [SRC-59CF4B7DE8-L000800](../../agents/research.py#L800) | 800 | `"        if not isinstance(src, dict):"` | — |
-| [SRC-59CF4B7DE8-L000801](../../agents/research.py#L801) | 801 | `"            diag.append({\"reason\": \"malformed\", \"url\": \"\"})"` | — |
-| [SRC-59CF4B7DE8-L000802](../../agents/research.py#L802) | 802 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000803](../../agents/research.py#L803) | 803 | `"        url = str(src.get(\"url\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000804](../../agents/research.py#L804) | 804 | `"        domain = str(src.get(\"domain\") or \"\").lower()"` | — |
-| [SRC-59CF4B7DE8-L000805](../../agents/research.py#L805) | 805 | `"        title = str(src.get(\"title\") or \"\").strip()"` | — |
-| [SRC-59CF4B7DE8-L000806](../../agents/research.py#L806) | 806 | `"        url_key = url.rstrip(\"/\").lower()"` | — |
-| [SRC-59CF4B7DE8-L000807](../../agents/research.py#L807) | 807 | `"        title_key = title.lower() + \"\|\" + domain"` | — |
-| [SRC-59CF4B7DE8-L000808](../../agents/research.py#L808) | 808 | `""` | — |
-| [SRC-59CF4B7DE8-L000809](../../agents/research.py#L809) | 809 | `"        if url_key and url_key in seen_urls:"` | — |
-| [SRC-59CF4B7DE8-L000810](../../agents/research.py#L810) | 810 | `"            diag.append({\"reason\": \"duplicate_url\", \"url\": url})"` | — |
-| [SRC-59CF4B7DE8-L000811](../../agents/research.py#L811) | 811 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000812](../../agents/research.py#L812) | 812 | `"        if title and title_key in seen_titles:"` | — |
-| [SRC-59CF4B7DE8-L000813](../../agents/research.py#L813) | 813 | `"            diag.append({\"reason\": \"duplicate_title_domain\", \"url\": url})"` | — |
-| [SRC-59CF4B7DE8-L000814](../../agents/research.py#L814) | 814 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000815](../../agents/research.py#L815) | 815 | `""` | — |
-| [SRC-59CF4B7DE8-L000816](../../agents/research.py#L816) | 816 | `"        rel = source_relevance_score(src, combined)"` | — |
-| [SRC-59CF4B7DE8-L000817](../../agents/research.py#L817) | 817 | `"        if not rel[\"accepted\"]:"` | — |
-| [SRC-59CF4B7DE8-L000818](../../agents/research.py#L818) | 818 | `"            diag.append({\"reason\": rel[\"reason\"], \"url\": url, \"score\": rel[\"score\"]})"` | — |
-| [SRC-59CF4B7DE8-L000819](../../agents/research.py#L819) | 819 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000820](../../agents/research.py#L820) | 820 | `""` | — |
-| [SRC-59CF4B7DE8-L000821](../../agents/research.py#L821) | 821 | `"        kept.append(src)"` | — |
-| [SRC-59CF4B7DE8-L000822](../../agents/research.py#L822) | 822 | `"        if url_key:"` | — |
-| [SRC-59CF4B7DE8-L000823](../../agents/research.py#L823) | 823 | `"            seen_urls.add(url_key)"` | — |
-| [SRC-59CF4B7DE8-L000824](../../agents/research.py#L824) | 824 | `"        if title:"` | — |
-| [SRC-59CF4B7DE8-L000825](../../agents/research.py#L825) | 825 | `"            seen_titles.add(title_key)"` | — |
-| [SRC-59CF4B7DE8-L000826](../../agents/research.py#L826) | 826 | `"    return kept, diag"` | — |
-| [SRC-59CF4B7DE8-L000827](../../agents/research.py#L827) | 827 | `""` | — |
-| [SRC-59CF4B7DE8-L000828](../../agents/research.py#L828) | 828 | `""` | — |
-| [SRC-59CF4B7DE8-L000829](../../agents/research.py#L829) | 829 | `"def decide_evidence_status(sources, pages_read: int = 0,"` | — |
-| [SRC-59CF4B7DE8-L000830](../../agents/research.py#L830) | 830 | `"                           provider_failures: int = 0,"` | — |
-| [SRC-59CF4B7DE8-L000831](../../agents/research.py#L831) | 831 | `"                           search_attempted: bool = True) -> dict:"` | — |
-| [SRC-59CF4B7DE8-L000832](../../agents/research.py#L832) | 832 | `"    if not search_attempted:"` | — |
-| [SRC-59CF4B7DE8-L000833](../../agents/research.py#L833) | 833 | `"        return {\"evidence_status\": \"failed\", \"should_abstain\": True}"` | — |
-| [SRC-59CF4B7DE8-L000834](../../agents/research.py#L834) | 834 | `""` | — |
-| [SRC-59CF4B7DE8-L000835](../../agents/research.py#L835) | 835 | `"    domains = set()"` | — |
-| [SRC-59CF4B7DE8-L000836](../../agents/research.py#L836) | 836 | `"    has_official = False"` | — |
-| [SRC-59CF4B7DE8-L000837](../../agents/research.py#L837) | 837 | `"    for s in sources or []:"` | — |
-| [SRC-59CF4B7DE8-L000838](../../agents/research.py#L838) | 838 | `"        if not isinstance(s, dict):"` | — |
-| [SRC-59CF4B7DE8-L000839](../../agents/research.py#L839) | 839 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000840](../../agents/research.py#L840) | 840 | `"        d = str(s.get(\"domain\") or \"\").lower()"` | — |
-| [SRC-59CF4B7DE8-L000841](../../agents/research.py#L841) | 841 | `"        if not d:"` | — |
-| [SRC-59CF4B7DE8-L000842](../../agents/research.py#L842) | 842 | `"            url = str(s.get(\"url\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000843](../../agents/research.py#L843) | 843 | `"            if url:"` | — |
-| [SRC-59CF4B7DE8-L000844](../../agents/research.py#L844) | 844 | `"                try:"` | — |
-| [SRC-59CF4B7DE8-L000845](../../agents/research.py#L845) | 845 | `"                    from urllib.parse import urlparse"` | — |
-| [SRC-59CF4B7DE8-L000846](../../agents/research.py#L846) | 846 | `"                    d = urlparse(url).netloc.lower()"` | — |
-| [SRC-59CF4B7DE8-L000847](../../agents/research.py#L847) | 847 | `"                except Exception:"` | — |
-| [SRC-59CF4B7DE8-L000848](../../agents/research.py#L848) | 848 | `"                    d = \"\""` | — |
-| [SRC-59CF4B7DE8-L000849](../../agents/research.py#L849) | 849 | `"        if d:"` | — |
-| [SRC-59CF4B7DE8-L000850](../../agents/research.py#L850) | 850 | `"            domains.add(d)"` | — |
-| [SRC-59CF4B7DE8-L000851](../../agents/research.py#L851) | 851 | `"        if str(s.get(\"source_class\") or \"\").lower() in _OFFICIAL_CLASSES:"` | — |
-| [SRC-59CF4B7DE8-L000852](../../agents/research.py#L852) | 852 | `"            has_official = True"` | — |
-| [SRC-59CF4B7DE8-L000853](../../agents/research.py#L853) | 853 | `""` | — |
-| [SRC-59CF4B7DE8-L000854](../../agents/research.py#L854) | 854 | `"    if not sources:"` | — |
-| [SRC-59CF4B7DE8-L000855](../../agents/research.py#L855) | 855 | `"        if provider_failures > 0:"` | — |
