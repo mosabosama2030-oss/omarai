@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000310 إلى SRC-F725E90B2A-L000347
+- النطاق: SRC-6BF96689A8-L000309 إلى SRC-F725E90B2A-L000346
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000309](../../tests/test_research.py#L309) | 309 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: seen.append(query) or [])"` | — |
 | [SRC-6BF96689A8-L000310](../../tests/test_research.py#L310) | 310 | `"    sources, warnings, report = agent._collect_research({"` | — |
 | [SRC-6BF96689A8-L000311](../../tests/test_research.py#L311) | 311 | `"        \"queries\": [\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\"],"` | — |
 | [SRC-6BF96689A8-L000312](../../tests/test_research.py#L312) | 312 | `"        \"direct_urls\": [],"` | — |
@@ -851,4 +852,3 @@
 | [SRC-F725E90B2A-L000344](../../tests/test_web_agent.py#L344) | 344 | `"        \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L000345](../../tests/test_web_agent.py#L345) | 345 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L000346](../../tests/test_web_agent.py#L346) | 346 | `"    })"` | — |
-| [SRC-F725E90B2A-L000347](../../tests/test_web_agent.py#L347) | 347 | `""` | — |

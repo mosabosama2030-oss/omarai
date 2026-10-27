@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001948 إلى SRC-F725E90B2A-L002747
+- النطاق: SRC-F725E90B2A-L001947 إلى SRC-F725E90B2A-L002746
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001947](../../tests/test_web_agent.py#L1947) | 1947 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001948](../../tests/test_web_agent.py#L1948) | 1948 | `"    agent.fallback_model = \"fallback/model\""` | — |
 | [SRC-F725E90B2A-L001949](../../tests/test_web_agent.py#L1949) | 1949 | `"    called = []"` | — |
 | [SRC-F725E90B2A-L001950](../../tests/test_web_agent.py#L1950) | 1950 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002744](../../tests/test_web_agent.py#L2744) | 2744 | `"            \"providers_used\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L002745](../../tests/test_web_agent.py#L2745) | 2745 | `"            \"platform_counts\": {\"web\": len(sources)},"` | — |
 | [SRC-F725E90B2A-L002746](../../tests/test_web_agent.py#L2746) | 2746 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L002747](../../tests/test_web_agent.py#L2747) | 2747 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |

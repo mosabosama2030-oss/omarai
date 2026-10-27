@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-61B24BEFCC-L000073 إلى SRC-B335630551-L000126
+- النطاق: SRC-61B24BEFCC-L000072 إلى SRC-B335630551-L000125
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-61B24BEFCC-L000072](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L72) | 72 | `"- **NOT_RUN:** لم تُثبت استعادة نسخة SQLite على مضيف الاستضافة المستهدف."` | — |
 | [SRC-61B24BEFCC-L000073](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L73) | 73 | `"- **UNKNOWN:** صلاحية مفاتيح موفري البحث/النموذج وقيود حساباتهم الفعلية، ما لم يثبتها اختبار حي منفصل."` | — |
 | [SRC-61B24BEFCC-L000074](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L74) | 74 | ``"- **UNKNOWN:** ربط SHA الموجود في `main` بالـartifact الفعلي لخدمة عامة، ما لم تتوفر بيانات نشر قابلة للفحص."`` | — |
 | [SRC-61B24BEFCC-L000075](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L75) | 75 | `"- **UNKNOWN:** سلوك الوكيل العكسي الحقيقي وTLS وCORS وإعداد التخزين لكل مضيف بعينه."` | — |
@@ -887,4 +888,3 @@
 | [SRC-B335630551-L000123](../../README.md#L123) | 123 | `""` | — |
 | [SRC-B335630551-L000124](../../README.md#L124) | 124 | `""` | — |
 | [SRC-B335630551-L000125](../../README.md#L125) | 125 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
-| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |

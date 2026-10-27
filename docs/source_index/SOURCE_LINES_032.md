@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001148 إلى SRC-F725E90B2A-L001947
+- النطاق: SRC-F725E90B2A-L001147 إلى SRC-F725E90B2A-L001946
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001147](../../tests/test_web_agent.py#L1147) | 1147 | `""` | — |
 | [SRC-F725E90B2A-L001148](../../tests/test_web_agent.py#L1148) | 1148 | `""` | — |
 | [SRC-F725E90B2A-L001149](../../tests/test_web_agent.py#L1149) | 1149 | `""` | — |
 | [SRC-F725E90B2A-L001150](../../tests/test_web_agent.py#L1150) | 1150 | `"def test_answer_hides_unwrapped_internal_review_report(monkeypatch):"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001944](../../tests/test_web_agent.py#L1944) | 1944 | `"    import json"` | — |
 | [SRC-F725E90B2A-L001945](../../tests/test_web_agent.py#L1945) | 1945 | `""` | — |
 | [SRC-F725E90B2A-L001946](../../tests/test_web_agent.py#L1946) | 1946 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001947](../../tests/test_web_agent.py#L1947) | 1947 | `"    agent.api_key = \"test-key\""` | — |

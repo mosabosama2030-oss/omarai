@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000216 إلى SRC-829A979985-L000540
+- النطاق: SRC-FA4E1423C3-L000215 إلى SRC-829A979985-L000539
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000215](../../tests/test_generate_index.py#L215) | 215 | `") -> None:"` | — |
 | [SRC-FA4E1423C3-L000216](../../tests/test_generate_index.py#L216) | 216 | `"    \"\"\"An unchanged scan produces identical Markdown and avoids an unnecessary write.\"\"\""` | — |
 | [SRC-FA4E1423C3-L000217](../../tests/test_generate_index.py#L217) | 217 | `"    (tmp_path / \"app.py\").write_text("` | — |
 | [SRC-FA4E1423C3-L000218](../../tests/test_generate_index.py#L218) | 218 | `"        'def entry():\\n    \"\"\"Entry point.\"\"\"\\n', encoding=\"utf-8\""` | — |
@@ -824,4 +825,3 @@
 | [SRC-829A979985-L000537](../../tests/test_generation_acceptance_matrix.py#L537) | 537 | `"            sources,"` | — |
 | [SRC-829A979985-L000538](../../tests/test_generation_acceptance_matrix.py#L538) | 538 | `"            [],"` | — |
 | [SRC-829A979985-L000539](../../tests/test_generation_acceptance_matrix.py#L539) | 539 | `"            {"` | — |
-| [SRC-829A979985-L000540](../../tests/test_generation_acceptance_matrix.py#L540) | 540 | `"                \"queries_planned\": 1,"` | — |

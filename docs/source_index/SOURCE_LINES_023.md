@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000742 إلى SRC-4CCB1F172B-L000119
+- النطاق: SRC-90FAA34ADE-L000741 إلى SRC-4CCB1F172B-L000118
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000741](../../tests/fixtures/answer_quality_cases.json#L741) | 741 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000742](../../tests/fixtures/answer_quality_cases.json#L742) | 742 | `"      \"case_id\": \"AQ-026\","` | — |
 | [SRC-90FAA34ADE-L000743](../../tests/fixtures/answer_quality_cases.json#L743) | 743 | `"      \"category\": \"missing_model_credentials\","` | — |
 | [SRC-90FAA34ADE-L000744](../../tests/fixtures/answer_quality_cases.json#L744) | 744 | `"      \"language\": \"mixed\","` | — |
@@ -833,4 +834,3 @@
 | [SRC-4CCB1F172B-L000116](../../tests/test_answer_quality_corpus.py#L116) | 116 | `"        assert isinstance(case[\"category\"], str) and case[\"category\"].strip()"` | — |
 | [SRC-4CCB1F172B-L000117](../../tests/test_answer_quality_corpus.py#L117) | 117 | `"        assert isinstance(case[\"language\"], str) and case[\"language\"].strip()"` | — |
 | [SRC-4CCB1F172B-L000118](../../tests/test_answer_quality_corpus.py#L118) | 118 | `"        assert isinstance(case[\"question\"], str) and len(case[\"question\"].strip()) >= 2"` | — |
-| [SRC-4CCB1F172B-L000119](../../tests/test_answer_quality_corpus.py#L119) | 119 | `"        assert case[\"expected_strategy\"] in ALLOWED_STRATEGIES"` | — |

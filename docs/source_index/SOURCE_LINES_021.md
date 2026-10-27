@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000127 إلى SRC-547CAF1FE3-L000093
+- النطاق: SRC-B335630551-L000126 إلى SRC-547CAF1FE3-L000092
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |
 | [SRC-B335630551-L000127](../../README.md#L127) | 127 | ````"```bash"```` | — |
 | [SRC-B335630551-L000128](../../README.md#L128) | 128 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
 | [SRC-B335630551-L000129](../../README.md#L129) | 129 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
@@ -860,4 +861,3 @@
 | [SRC-547CAF1FE3-L000090](../../scripts/sqlite_backup_restore.py#L90) | 90 | `"                destination_path.unlink(missing_ok=True)"` | — |
 | [SRC-547CAF1FE3-L000091](../../scripts/sqlite_backup_restore.py#L91) | 91 | `"            except OSError:"` | — |
 | [SRC-547CAF1FE3-L000092](../../scripts/sqlite_backup_restore.py#L92) | 92 | `"                pass"` | — |
-| [SRC-547CAF1FE3-L000093](../../scripts/sqlite_backup_restore.py#L93) | 93 | `"            raise"` | — |

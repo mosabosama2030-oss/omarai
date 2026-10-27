@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000094 إلى SRC-90FAA34ADE-L000741
+- النطاق: SRC-547CAF1FE3-L000093 إلى SRC-90FAA34ADE-L000740
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000093](../../scripts/sqlite_backup_restore.py#L93) | 93 | `"            raise"` | — |
 | [SRC-547CAF1FE3-L000094](../../scripts/sqlite_backup_restore.py#L94) | 94 | `""` | — |
 | [SRC-547CAF1FE3-L000095](../../scripts/sqlite_backup_restore.py#L95) | 95 | `"    return {"` | — |
 | [SRC-547CAF1FE3-L000096](../../scripts/sqlite_backup_restore.py#L96) | 96 | `"        \"result\": \"passed\","` | — |
@@ -824,4 +825,3 @@
 | [SRC-90FAA34ADE-L000738](../../tests/fixtures/answer_quality_cases.json#L738) | 738 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000739](../../tests/fixtures/answer_quality_cases.json#L739) | 739 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
 | [SRC-90FAA34ADE-L000740](../../tests/fixtures/answer_quality_cases.json#L740) | 740 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000741](../../tests/fixtures/answer_quality_cases.json#L741) | 741 | `"    {"` | — |

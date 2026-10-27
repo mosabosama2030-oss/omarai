@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000348 إلى SRC-F725E90B2A-L001147
+- النطاق: SRC-F725E90B2A-L000347 إلى SRC-F725E90B2A-L001146
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000347](../../tests/test_web_agent.py#L347) | 347 | `""` | — |
 | [SRC-F725E90B2A-L000348](../../tests/test_web_agent.py#L348) | 348 | `"    assert len(sources) == 2"` | — |
 | [SRC-F725E90B2A-L000349](../../tests/test_web_agent.py#L349) | 349 | `"    assert report[\"pages_fetched\"] == 2"` | — |
 | [SRC-F725E90B2A-L000350](../../tests/test_web_agent.py#L350) | 350 | `"    assert report[\"queries_planned\"] == 2"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001144](../../tests/test_web_agent.py#L1144) | 1144 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
 | [SRC-F725E90B2A-L001145](../../tests/test_web_agent.py#L1145) | 1145 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
 | [SRC-F725E90B2A-L001146](../../tests/test_web_agent.py#L1146) | 1146 | `"    assert any(\"لم يتم تأكيد محتواه\" in warning for warning in result[\"warnings\"])"` | — |
-| [SRC-F725E90B2A-L001147](../../tests/test_web_agent.py#L1147) | 1147 | `""` | — |
