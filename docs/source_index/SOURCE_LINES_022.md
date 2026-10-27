@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000021 إلى SRC-90FAA34ADE-L000820
+- النطاق: SRC-90FAA34ADE-L000008 إلى SRC-90FAA34ADE-L000807
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000008](../../tests/fixtures/answer_quality_cases.json#L8) | 8 | `"    \"model_no_search\","` | — |
+| [SRC-90FAA34ADE-L000009](../../tests/fixtures/answer_quality_cases.json#L9) | 9 | `"    \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000010](../../tests/fixtures/answer_quality_cases.json#L10) | 10 | `"    \"clarify\""` | — |
+| [SRC-90FAA34ADE-L000011](../../tests/fixtures/answer_quality_cases.json#L11) | 11 | `"  ],"` | — |
+| [SRC-90FAA34ADE-L000012](../../tests/fixtures/answer_quality_cases.json#L12) | 12 | `"  \"allowed_evaluation_modes\": ["` | — |
+| [SRC-90FAA34ADE-L000013](../../tests/fixtures/answer_quality_cases.json#L13) | 13 | `"    \"deterministic_structure\","` | — |
+| [SRC-90FAA34ADE-L000014](../../tests/fixtures/answer_quality_cases.json#L14) | 14 | `"    \"fixture_assisted\","` | — |
+| [SRC-90FAA34ADE-L000015](../../tests/fixtures/answer_quality_cases.json#L15) | 15 | `"    \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000016](../../tests/fixtures/answer_quality_cases.json#L16) | 16 | `"  ],"` | — |
+| [SRC-90FAA34ADE-L000017](../../tests/fixtures/answer_quality_cases.json#L17) | 17 | `"  \"case_count\": 45,"` | — |
+| [SRC-90FAA34ADE-L000018](../../tests/fixtures/answer_quality_cases.json#L18) | 18 | `"  \"cases\": ["` | — |
+| [SRC-90FAA34ADE-L000019](../../tests/fixtures/answer_quality_cases.json#L19) | 19 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000020](../../tests/fixtures/answer_quality_cases.json#L20) | 20 | `"      \"case_id\": \"AQ-001\","` | — |
 | [SRC-90FAA34ADE-L000021](../../tests/fixtures/answer_quality_cases.json#L21) | 21 | `"      \"category\": \"simple_conversational\","` | — |
 | [SRC-90FAA34ADE-L000022](../../tests/fixtures/answer_quality_cases.json#L22) | 22 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000023](../../tests/fixtures/answer_quality_cases.json#L23) | 23 | `"      \"question\": \"ازيك؟ عامل ايه النهاردة؟\","` | — |
@@ -803,16 +816,3 @@
 | [SRC-90FAA34ADE-L000805](../../tests/fixtures/answer_quality_cases.json#L805) | 805 | `"      \"case_id\": \"AQ-028\","` | — |
 | [SRC-90FAA34ADE-L000806](../../tests/fixtures/answer_quality_cases.json#L806) | 806 | `"      \"category\": \"incomplete_answer\","` | — |
 | [SRC-90FAA34ADE-L000807](../../tests/fixtures/answer_quality_cases.json#L807) | 807 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000808](../../tests/fixtures/answer_quality_cases.json#L808) | 808 | `"      \"question\": \"رد على الأربع نقاط دول كل واحدة لوحدها: التكلفة، مدة التنفيذ، المخاطر، وإزاي أتحقق من المصدر.\","` | — |
-| [SRC-90FAA34ADE-L000809](../../tests/fixtures/answer_quality_cases.json#L809) | 809 | `"      \"expected_strategy\": \"clarify\","` | — |
-| [SRC-90FAA34ADE-L000810](../../tests/fixtures/answer_quality_cases.json#L810) | 810 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000811](../../tests/fixtures/answer_quality_cases.json#L811) | 811 | `"        \"يسأل عن المشروع أو الخدمة المقصودة قبل تقديم أرقام\","` | — |
-| [SRC-90FAA34ADE-L000812](../../tests/fixtures/answer_quality_cases.json#L812) | 812 | `"        \"يبيّن أن العناصر الأربعة ستُجاب منفصلة بعد تحديد الموضوع\","` | — |
-| [SRC-90FAA34ADE-L000813](../../tests/fixtures/answer_quality_cases.json#L813) | 813 | `"        \"لا يتجاهل أي عنصر من العناصر الأربعة\""` | — |
-| [SRC-90FAA34ADE-L000814](../../tests/fixtures/answer_quality_cases.json#L814) | 814 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000815](../../tests/fixtures/answer_quality_cases.json#L815) | 815 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000816](../../tests/fixtures/answer_quality_cases.json#L816) | 816 | `"        \"يخترع تكلفة ومدة دون معرفة الخدمة\","` | — |
-| [SRC-90FAA34ADE-L000817](../../tests/fixtures/answer_quality_cases.json#L817) | 817 | `"        \"يجيب عن نقطة واحدة ويصف الإجابة بأنها كاملة\""` | — |
-| [SRC-90FAA34ADE-L000818](../../tests/fixtures/answer_quality_cases.json#L818) | 818 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000819](../../tests/fixtures/answer_quality_cases.json#L819) | 819 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000820](../../tests/fixtures/answer_quality_cases.json#L820) | 820 | `"        \"type\": \"none\","` | — |

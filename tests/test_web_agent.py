@@ -2706,6 +2706,58 @@ def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):
         assert any(query.startswith("site:") for query in plan["queries"])
 
 
+def test_latest_mode_preserves_official_website_navigation_intent(monkeypatch):
+    """Latest mode must not replace an official-site lookup with generic news queries."""
+    agent = WebAgent()
+    agent.api_key = ""
+    seen = {}
+
+    def collect(research_plan):
+        seen["plan"] = dict(research_plan)
+        sources = [sample_source(0), sample_source(1)]
+        return sources, [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [
+                {"query": query, "results": 1}
+                for query in research_plan["queries"]
+            ],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["test_provider"],
+            "platform_counts": {"web": len(sources)},
+            "social_direct_results": 0,
+            "depth": research_plan.get("depth", "standard"),
+            "planning_method": "deterministic_fallback",
+        }
+
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda question, history, sources, search_warning, research_plan=None,
+               search_report=None: "وجدت مرشحًا للموقع الرسمي [المصدر 1].",
+    )
+
+    question = (
+        "ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية، "
+        "واعرض رابط المصدر وتاريخ الصفحة إن توفر"
+    )
+    result = agent.answer(question, mode="latest")
+    plan = seen["plan"]
+
+    assert plan["mode"] == "latest"
+    assert result["research_plan"]["mode"] == "latest"
+    assert any(
+        "الموقع الرسمي" in query or "official website" in query.lower()
+        for query in plan["queries"]
+    )
+    assert not any("latest news updates" in query.lower() for query in plan["queries"])
+    assert not any("recent official announcement" in query.lower() for query in plan["queries"])
+
+
 def test_web_answer_integrity_is_attached_without_live_network(monkeypatch):
     agent = WebAgent()
     monkeypatch.setattr(
