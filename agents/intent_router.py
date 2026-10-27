@@ -252,9 +252,7 @@ def _is_clarification_answer(question: str, history: Any) -> bool:
     if not query or len(query) >= 100 or _needs_clarification(query) or _is_smalltalk(query):
         return False
     # A self-contained live request should not be mistaken for a slot-fill.
-    if _has_live_signal(query) or re.search(r"https?://", query, re.IGNORECASE):
-        return False
-    return True
+    return not (_has_live_signal(query) or re.search(r"https?://", query, re.IGNORECASE))
 
 
 def _is_contextual_followup(question: str) -> bool:
@@ -267,13 +265,13 @@ def _is_contextual_followup(question: str) -> bool:
     if _needs_clarification(question):
         return True
     # Pronouns and deictic references are strong signals only in a short turn.
-    if re.fullmatch(
-        r"(?:و)?(?:هي|هو|دي|ده|دول|هما|ذلك|تلك|عليها|عليه|فيها|فيه|لها|له|"
-        r"سعرها|سعره|مكانها|مكانه|ضمانها|ضمانه|بطاريتها|كاميرتها|مميزاتها|عيوبها)",
-        normalized,
-    ):
-        return True
-    return False
+    return bool(
+        re.fullmatch(
+            r"(?:و)?(?:هي|هو|دي|ده|دول|هما|ذلك|تلك|عليها|عليه|فيها|فيه|لها|له|"
+            r"سعرها|سعره|مكانها|مكانه|ضمانها|ضمانه|بطاريتها|كاميرتها|مميزاتها|عيوبها)",
+            normalized,
+        )
+    )
 
 
 def resolve_followup_query(question: str, history: Any = None) -> str:
