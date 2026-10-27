@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000834 إلى SRC-F725E90B2A-L001633
+- النطاق: SRC-F725E90B2A-L000830 إلى SRC-F725E90B2A-L001629
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000830](../../tests/test_web_agent.py#L830) | 830 | `"            model=\"broken/primary\","` | — |
+| [SRC-F725E90B2A-L000831](../../tests/test_web_agent.py#L831) | 831 | `"        )"` | — |
+| [SRC-F725E90B2A-L000832](../../tests/test_web_agent.py#L832) | 832 | `""` | — |
+| [SRC-F725E90B2A-L000833](../../tests/test_web_agent.py#L833) | 833 | `"    assert called == [\"broken/primary\", \"fallback/model\"]"` | — |
 | [SRC-F725E90B2A-L000834](../../tests/test_web_agent.py#L834) | 834 | `"    assert agent.model_usage == []"` | — |
 | [SRC-F725E90B2A-L000835](../../tests/test_web_agent.py#L835) | 835 | `""` | — |
 | [SRC-F725E90B2A-L000836](../../tests/test_web_agent.py#L836) | 836 | `""` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001627](../../tests/test_web_agent.py#L1627) | 1627 | `"        })"` | — |
 | [SRC-F725E90B2A-L001628](../../tests/test_web_agent.py#L1628) | 1628 | `""` | — |
 | [SRC-F725E90B2A-L001629](../../tests/test_web_agent.py#L1629) | 1629 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001630](../../tests/test_web_agent.py#L1630) | 1630 | `"        agent, \"_plan_search\","` | — |
-| [SRC-F725E90B2A-L001631](../../tests/test_web_agent.py#L1631) | 1631 | `"        lambda question, history: {"` | — |
-| [SRC-F725E90B2A-L001632](../../tests/test_web_agent.py#L1632) | 1632 | `"            \"queries\": [f\"query {i}\" for i in range(8)],"` | — |
-| [SRC-F725E90B2A-L001633](../../tests/test_web_agent.py#L1633) | 1633 | `"            \"direct_urls\": [], \"social_focus\": False, \"freshness\": \"any\","` | — |

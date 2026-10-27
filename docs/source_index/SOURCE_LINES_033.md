@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001634 إلى SRC-F725E90B2A-L002433
+- النطاق: SRC-F725E90B2A-L001630 إلى SRC-F725E90B2A-L002429
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001630](../../tests/test_web_agent.py#L1630) | 1630 | `"        agent, \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L001631](../../tests/test_web_agent.py#L1631) | 1631 | `"        lambda question, history: {"` | — |
+| [SRC-F725E90B2A-L001632](../../tests/test_web_agent.py#L1632) | 1632 | `"            \"queries\": [f\"query {i}\" for i in range(8)],"` | — |
+| [SRC-F725E90B2A-L001633](../../tests/test_web_agent.py#L1633) | 1633 | `"            \"direct_urls\": [], \"social_focus\": False, \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L001634](../../tests/test_web_agent.py#L1634) | 1634 | `"            \"depth\": \"deep\", \"platforms\": [], \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001635](../../tests/test_web_agent.py#L1635) | 1635 | `"        },"` | — |
 | [SRC-F725E90B2A-L001636](../../tests/test_web_agent.py#L1636) | 1636 | `"    )"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002427](../../tests/test_web_agent.py#L2427) | 2427 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
 | [SRC-F725E90B2A-L002428](../../tests/test_web_agent.py#L2428) | 2428 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
 | [SRC-F725E90B2A-L002429](../../tests/test_web_agent.py#L2429) | 2429 | `"    assert other_agent._reserve_deepseek_search_request() is False"` | — |
-| [SRC-F725E90B2A-L002430](../../tests/test_web_agent.py#L2430) | 2430 | `""` | — |
-| [SRC-F725E90B2A-L002431](../../tests/test_web_agent.py#L2431) | 2431 | `""` | — |
-| [SRC-F725E90B2A-L002432](../../tests/test_web_agent.py#L2432) | 2432 | `""` | — |
-| [SRC-F725E90B2A-L002433](../../tests/test_web_agent.py#L2433) | 2433 | `"def test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure(monkeypatch):"` | — |
