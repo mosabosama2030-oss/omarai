@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C4C6C55E1A-L000120 إلى SRC-E599346ABE-L000235
+- النطاق: SRC-C4C6C55E1A-L000053 إلى SRC-E599346ABE-L000168
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,73 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C4C6C55E1A-L000053](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L53) | 53 | `""` | — |
+| [SRC-C4C6C55E1A-L000054](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L54) | 54 | ``"- **PR #49:** أُغلق دون دمج لتجنب تكرار الاختبارات. انتقل المسار أولًا إلى #52 ثم إلى PR #56 المبني على `main` الحالي بعد أن أصبح فرع #52 غير قابل للدمج بسبب انجراف الفرع. لا أثر لـPR #49 أو #52 على `main`."`` | — |
+| [SRC-C4C6C55E1A-L000055](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L55) | 55 | ``"- **PR #50:** أُغلق دون دمج لأنه اعتمد على لقطة أقدم من `main`. اختُبرت النسخة الحالية من أداة SQLite في PR #58 المبني على `main` الحالي، ونجح CI [39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) على HEAD `59027f44388730d34c7bd7164450abdba2f9fd0a`: Ruff، و244 اختبارًا على Python 3.11 و244 على Python 3.12، وبناء الحاوية وفحص API المحمية. **حالة لاحقة:** دُمج PR #58 في `main` عند `58dec8f7f1ef4166ce1c02d56ad2a1f861ae3aa5`. تشغيل CI المذكور دليل تاريخي على رأسه فقط، ولا يثبت الاستعادة على مضيف فعلي."`` | — |
+| [SRC-C4C6C55E1A-L000056](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L56) | 56 | ``"- **PR #51:** أُغلق دون دمج واستُبدل بـPR #57 المبني على `main` الحالي. CI الأحدث للمصفوفة [39223782361](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223782361) نجح على HEAD `f0af91c06bffdddcc3a25184754969e86d9e7f86`: Ruff و249 اختبارًا على Python 3.11 و249 على Python 3.12 وبناء الحاوية وفحص API المحمية؛ لا يثبت ذلك قبولًا حيًا."`` | — |
+| [SRC-C4C6C55E1A-L000057](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L57) | 57 | ``"- **PR #52:** أُغلق دون دمج لأنه اعتمد على لقطة أقدم من `main` وأصبح غير قابل للدمج بعد تغييرات `tests/test_api.py`. CI [39220318275](https://github.com/mosabosama2030-oss/omarai/actions/runs/39220318275) يثبت الرأس القديم فقط ولا يثبت اختبارات الموارد الموسعة الحالية. استُبدل بفرع PR #56 المبني على `main` الحالي."`` | — |
+| [SRC-C4C6C55E1A-L000058](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L58) | 58 | ``"- **PR #54:** توسيع مصفوفة اختبارات SSRF لفئات IPv4/IPv6 غير العامة — دُمج لاحقًا في `main` عند `a5ce1923a658357e38789bc2f6c576fb46ba5305`. CI run [39221649040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39221649040) نجح على HEAD `c602de0d039283119236807b075953b4bcf6e89a`: Ruff و249 اختبارًا على Python 3.11 و249 على Python 3.12، وبناء الحاوية وفحص API المحمية. الاختبار حتمي بمحاكاة DNS ولا يجري اتصالًا حيًا."`` | — |
+| [SRC-C4C6C55E1A-L000059](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L59) | 59 | ``"- **PR #55:** إصلاح مقترح لقراءة سطر الطلب والرؤوس بموعد نهائي مطلق واختبار slow-trickle محلي. CI الأحدث [39224020934](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224020934) نجح على HEAD `4604a83d760b7fe913e1a75cdec04a102c33b0d6`: Ruff، و239 اختبارًا على Python 3.11 و239 على Python 3.12، وبناء الحاوية وفحص API المحمية. يشمل الاختبار التحقق من إغلاق الطلب البطيء قبل إرسال استجابة. دُمج PR #55 لاحقًا في `main` عند `85c67f2c6e327fc51d417884cd9c17e14f4959c6`; الاختبار محلي ولا يثبت أداء الاستضافة الحية."`` | — |
+| [SRC-C4C6C55E1A-L000060](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L60) | 60 | ``"- **PR #56:** مسار M-02 الحالي، مبني على `main` عند `871d2930405d164d3ae4c53f368937a4f5f01a6f`: اختبار حد وتوقف لكل مورد (5 موارد)، وموارد معطلة، وتحرير semaphore، و100 محاولة حجز متزامنة. CI [39223310566](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223310566) نجح على HEAD `0ca1b14aa1dd63bdc48a8ca73f698f7f6bc83416`: Ruff و249 اختبارًا على Python 3.11 و249 على Python 3.12 وبناء الحاوية وفحص API المحمية. هذه أدلة وحدات/تكامل محلية فقط."`` | — |
+| [SRC-C4C6C55E1A-L000061](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L61) | 61 | ``"- **PR #59:** اقتراح لتثبيت GitHub Actions على commit SHAs كاملة بدل وسوم major متغيرة. CI [39225038734](https://github.com/mosabosama2030-oss/omarai/actions/runs/39225038734) نجح على HEAD `2b8c3de983f09ea1a7c4ca73d4c1a09a54ab987a`: Ruff و238 اختبارًا على Python 3.11 و238 على Python 3.12 وبناء الحاوية وفحص API المحمية. دُمج PR #59 لاحقًا في `main` عند `61246000c49deec70b9dc6e3535efe70069ccad1`. فحص workflow الحالي يؤكد تثبيت checkout وsetup-python على SHA كاملة؛ هذا لا يثبت خلو مصادر الأكشنات من الثغرات."`` | — |
+| [SRC-C4C6C55E1A-L000062](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L62) | 62 | ``"- **PR #43:** أُغلق دون دمج بعد استبداله بـPR #57، الذي يعيد تقديم الوثائق على أساس `main` الحالي؛ يظل التقرير الأولي عند `08319cce3652c332e414f691a71cc153dfbfd92e` لقطة تاريخية فقط."`` | — |
+| [SRC-C4C6C55E1A-L000063](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L63) | 63 | `""` | — |
+| [SRC-C4C6C55E1A-L000064](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L64) | 64 | `"## 3. تسوية أهم المتطلبات"` | — |
+| [SRC-C4C6C55E1A-L000065](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L65) | 65 | `""` | — |
+| [SRC-C4C6C55E1A-L000066](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L66) | 66 | `"\| المعرف \| الحالة الحالية في نطاق اللقطة \| الدليل والحدود \|"` | — |
+| [SRC-C4C6C55E1A-L000067](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L67) | 67 | `"\|---\|---\|---\|"` | — |
+| [SRC-C4C6C55E1A-L000068](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L68) | 68 | ``"\| `API-001` \| PARTIAL — تحسن مدمج مع فجوات متبقية \| `main` عند `871d2930405d164d3ae4c53f368937a4f5f01a6f` يتضمن PR #48: فحص Content-Length وحجم الجسم والحد الكلي ومهلة الخمول، مع اختبار stalled/slow-trickle. لا يثبت هذا مهلة قراءة الرؤوس البطيئة أو حماية شاملة من جميع هجمات Slowloris، ولا حدًا زمنيًا قاطعًا لتنفيذ الوكيل كاملًا. \|"`` | — |
+| [SRC-C4C6C55E1A-L000069](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L69) | 69 | ``"\| `REL-001` \| PARTIAL \| PR #44 يضيف ميزانية تعاونية تحد من العمل الجديد وتضبط مهلات العمليات الخارجية. لا توجد ضمانة hard cancellation، ولا يثبت ذلك كل مسارات التشخيص أو التشغيل الحي. \|"`` | — |
+| [SRC-C4C6C55E1A-L000070](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L70) | 70 | ``"\| `PER-002` \| PARTIAL \| الحد process-local للعمليات المكلفة موجود، لكنه لا يحد جميع خيوط HTTP بصورة عالمية ولا يثبت أداءً على حمل ممثل. \|"`` | — |
+| [SRC-C4C6C55E1A-L000071](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L71) | 71 | ``"\| `PER-003` \| VERIFIED ضمن اختبار ميزانية الوحدات \| حدود البحث/النموذج/الصفحات/الأدوات وميزانية الوقت موجودة في الكود ومغطاة باختبارات الميزانية. هذا لا يثبت سقف تكلفة مالية شاملًا أو سعة إنتاجية أو إلغاء اتصال جارٍ. \|"`` | — |
+| [SRC-C4C6C55E1A-L000072](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L72) | 72 | ``"\| `AIG-002` \| PARTIAL \| تخطيط البحث وعدد من الموارد محدود، والميزانية التعاونية توقف بدء أعمال جديدة عند نفاد الحد. الاختبارات العدائية لكل مسارات الإنهاك ليست مكتملة. \|"`` | — |
+| [SRC-C4C6C55E1A-L000073](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L73) | 73 | ``"\| `FIN-001` \| PARTIAL \| حدود لكل طلب وتحديد معدل وتزامن محلي؛ لا توجد ميزانية إنفاق عالمية مضمونة عبر عدة نسخ/مزودين. \|"`` | — |
+| [SRC-C4C6C55E1A-L000074](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L74) | 74 | ``"\| `EVD-001` \| PARTIAL \| فحص رقم الاستشهاد ومراجعة بمساعدة النموذج لا يثبتان دعم كل claim-source pair بصورة مستقلة. \|"`` | — |
+| [SRC-C4C6C55E1A-L000075](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L75) | 75 | ``"\| `SEC-001` \| INFERRED / UNKNOWN لتاريخ Git \| القراءة من متغيرات البيئة لا تثبت خلو تاريخ الالتزامات الكامل أو إعدادات الإنتاج من الأسرار. لم يُنجز هنا فحص شامل لتاريخ Git أو بيئة إنتاج حقيقية. \|"`` | — |
+| [SRC-C4C6C55E1A-L000076](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L76) | 76 | ``"\| `SEC-002` \| PARTIAL \| توجد حماية SSRF في الكود، لكن تغطية DNS المختلط وIPv6 والتحويل إلى عنوان محظور وسباق DNS تحتاج تدقيقًا عدائيًا مستقلًا. \|"`` | — |
+| [SRC-C4C6C55E1A-L000077](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L77) | 77 | ``"\| `SEC-003` و`AIE-003` \| PARTIAL \| توجد معالجة لمحتوى صفحات الويب بوصفه غير موثوق واختبارات لفصل الرسائل؛ مجموعة red-team الكاملة لكل المصادر والمسارات غير مثبتة. \|"`` | — |
+| [SRC-C4C6C55E1A-L000078](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L78) | 78 | ``"\| `UX-004` \| INFERRED \| توجد آليات escaping والتحقق من الروابط؛ اختبار XSS شامل على واجهة فعلية لم يُثبت في هذه اللقطة. \|"`` | — |
+| [SRC-C4C6C55E1A-L000079](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L79) | 79 | ``"\| `IDN-001` و`IDN-003` \| النطاق الحالي مشغّل واحد؛ تعدد المستخدمين غير مطبق \| رمز Bearer مشترك ومخزن leads مشترك. لا يدعم هذا عزل مستأجرين أو تفويضًا لكل سجل. \|"`` | — |
+| [SRC-C4C6C55E1A-L000080](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L80) | 80 | ``"\| `PRI-002` و`AIG-005` \| INFERRED / PARTIAL \| يرسل مسار النموذج السؤال وبعض السجل والمقتطفات إلى مزود خارجي حسب الإعداد. جرد تدفق بيانات حي شامل لكل الموصلات وشروط الاحتفاظ لم يُنجز هنا. \|"`` | — |
+| [SRC-C4C6C55E1A-L000081](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L81) | 81 | ``"\| `REL-005` و`EXT-002` \| UNKNOWN \| لم تُثبت استعادة SQLite على مضيف فعلي، ولا دوام التخزين بعد إعادة إنشاء الحاوية. \|"`` | — |
+| [SRC-C4C6C55E1A-L000082](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L82) | 82 | ``"\| `SRH-001` و`TST-005` \| UNKNOWN للتكامل الحي الشامل \| وجود موصل أو نجاح Mock لا يثبت اتصالًا حيًا بكل مزود. لم يتم تشغيل قبول حي شامل في هذه الجولة. \|"`` | — |
+| [SRC-C4C6C55E1A-L000083](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L83) | 83 | ``"\| `DPL-001` و`DPL-004` \| UNKNOWN للنشر الفعلي \| بناء Docker واختبار الحاوية على CI لا يثبتان وجود خدمة عامة أو تطابقها مع SHA منشور. \|"`` | — |
+| [SRC-C4C6C55E1A-L000084](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L84) | 84 | ``"\| `PER-004` و`REL-006` \| UNKNOWN \| لا يوجد تقرير حمل ممثل أو خط أساس SLO قابل للاعتماد في نطاق الأدلة الحالية. \|"`` | — |
+| [SRC-C4C6C55E1A-L000085](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L85) | 85 | ``"\| `GOV-003` \| UNKNOWN — قرار بشري مطلوب \| لا يوجد سجل استثناءات معتمد مثبت ضمن هذه اللقطة. غياب سجل بالمستودع لا يثبت عدم وجود قرار خارجي. \|"`` | — |
+| [SRC-C4C6C55E1A-L000086](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L86) | 86 | `""` | — |
+| [SRC-C4C6C55E1A-L000087](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L87) | 87 | `"## 4. ماذا أُنجز في مسار التشغيل خلال هذه الجولة؟"` | — |
+| [SRC-C4C6C55E1A-L000088](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L88) | 88 | `""` | — |
+| [SRC-C4C6C55E1A-L000089](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L89) | 89 | `"### M-01 — قراءة جسم طلب API"` | — |
+| [SRC-C4C6C55E1A-L000090](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L90) | 90 | `""` | — |
+| [SRC-C4C6C55E1A-L000091](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L91) | 91 | ``"**التنفيذ:** دُمج PR #48 وأصبح حد الجسم الزمني مطبقًا في `main` عند SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`. CI [39215710124](https://github.com/mosabosama2030-oss/omarai/actions/runs/39215710124) نجح على HEAD الخاص بالـPR: Ruff، و238 اختبارًا على Python 3.11 و238 على Python 3.12، وبناء الحاوية وفحص API المحمية."`` | — |
+| [SRC-C4C6C55E1A-L000092](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L92) | 92 | `""` | — |
+| [SRC-C4C6C55E1A-L000093](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L93) | 93 | ``"**الحالة:** الإصلاح المدمج يغطي طول الجسم وtimeout الخمول والمهلة الكلية وslow-trickle ضمن الاختبارات المضافة. CI الأحدث الخاص بـPR #55 [39224020934](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224020934) نجح على رأسه الحالي `4604a83d760b7fe913e1a75cdec04a102c33b0d6`: Ruff، و239 اختبارًا على Python 3.11 و239 على Python 3.12، وبناء الحاوية وفحص API المحمية. دُمج PR #55 لاحقًا في `main` عند `85c67f2c6e327fc51d417884cd9c17e14f4959c6`; تظل الاختبارات المحلية غير كافية لإثبات حماية شاملة من كل أنماط Slowloris. يظل `API-001` جزئيًا حتى يُراجع التغيير ويُدمج بتفويض بشري، ولا يدعي أي من هذه الاختبارات حماية شاملة من كل هجمات Slowloris أو حدًا قاطعًا لتنفيذ الوكيل كاملًا."`` | — |
+| [SRC-C4C6C55E1A-L000094](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L94) | 94 | `""` | — |
+| [SRC-C4C6C55E1A-L000095](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L95) | 95 | `"### M-02 — الميزانية والتزامن"` | — |
+| [SRC-C4C6C55E1A-L000096](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L96) | 96 | `""` | — |
+| [SRC-C4C6C55E1A-L000097](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L97) | 97 | ``"أُغلق PR #49 لأنه مكرر، وأُغلق PR #52 لأن فرعه انجرف عن `main`. PR #56 هو سطح المراجعة الحالي المبني مباشرة على `main` عند SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`. أضاف/يجمع: 100 محاولة حجز مقابل سقف 5، وحدود/تجاوز وموارد معطلة لكل من الموارد الخمسة، واختبار تحرير semaphore بعد استثناء غير متوقع."`` | — |
+| [SRC-C4C6C55E1A-L000098](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L98) | 98 | `""` | — |
+| [SRC-C4C6C55E1A-L000099](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L99) | 99 | ``"**الحالة:** CI run [39223310566](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223310566) نجح على الرأس `0ca1b14aa1dd63bdc48a8ca73f698f7f6bc83416`: Ruff و249 اختبارًا على Python 3.11 و249 على Python 3.12 وبناء الحاوية وفحص API المحمية. لا يزال الدليل وحدات/تكامل محليًا، وليس اختبار حمل أو ضمانًا موزعًا أو hard cancellation."`` | — |
+| [SRC-C4C6C55E1A-L000100](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L100) | 100 | `""` | — |
+| [SRC-C4C6C55E1A-L000101](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L101) | 101 | `"### M-03/M-04 — سجل الأدلة والاستثناءات"` | — |
+| [SRC-C4C6C55E1A-L000102](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L102) | 102 | `""` | — |
+| [SRC-C4C6C55E1A-L000103](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L103) | 103 | `"تحديث سجل المتطلبات وقائمة الاستثناءات مخصصان لهذا التغيير التوثيقي. ستظل الاستثناءات المقترحة غير معتمدة حتى يوافق مدير المشروع صراحة على كل قرار مطلوب. لا يعد وجود سجل دليلًا على قبول أي خطر."` | — |
+| [SRC-C4C6C55E1A-L000104](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L104) | 104 | `""` | — |
+| [SRC-C4C6C55E1A-L000105](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L105) | 105 | `"### M-05 — النسخ والاستعادة"` | — |
+| [SRC-C4C6C55E1A-L000106](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L106) | 106 | `""` | — |
+| [SRC-C4C6C55E1A-L000107](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L107) | 107 | ``"دُمج PR #58 لاحقًا في `main` عند `58dec8f7f1ef4166ce1c02d56ad2a1f861ae3aa5`، وأصبحت أداة النسخ/الاستعادة المحلية جزءًا من المستودع. تشغيل CI [39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) على HEAD `59027f44388730d34c7bd7164450abdba2f9fd0a` دليل تاريخي لاختبارات round-trip والرفض الآمن؛ دوام التخزين والاستعادة على مضيف فعلي أو نسخة خارج المضيف يبقى UNKNOWN/NOT_RUN."`` | — |
+| [SRC-C4C6C55E1A-L000108](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L108) | 108 | `""` | — |
+| [SRC-C4C6C55E1A-L000109](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L109) | 109 | `"### M-06 — فصل دليل الاختبارات وقبول التكامل الحي"` | — |
+| [SRC-C4C6C55E1A-L000110](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L110) | 110 | `""` | — |
+| [SRC-C4C6C55E1A-L000111](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L111) | 111 | ``"أُغلق PR #51 دون دمج. CI [39216670939](https://github.com/mosabosama2030-oss/omarai/actions/runs/39216670939) على HEAD `9d1b64a982cf50f9558a4b58c3799fd4c96bd9ec` دليل تاريخي فقط. أُضيفت مصفوفة أدلة محدثة لاحقًا في `main` ضمن توثيق #76."`` | — |
+| [SRC-C4C6C55E1A-L000112](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L112) | 112 | `""` | — |
+| [SRC-C4C6C55E1A-L000113](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L113) | 113 | `"**الاختبار الحي لموفرين على استضافة محددة: NOT_RUN.** لم يُنفذ فحص حي شامل لكل موفري البحث والنموذج. إجراءات القبول الحية قد تستهلك رصيد مزود خارجي؛ لا تُشغّل دون تفويض مناسب وتحديد البيئة والهدف."` | — |
+| [SRC-C4C6C55E1A-L000114](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L114) | 114 | `""` | — |
+| [SRC-C4C6C55E1A-L000115](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L115) | 115 | `"### M-07 — قبول الاستضافة"` | — |
+| [SRC-C4C6C55E1A-L000116](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L116) | 116 | `""` | — |
+| [SRC-C4C6C55E1A-L000117](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L117) | 117 | `"**UNKNOWN / NOT_RUN.** لا يوجد في هذه اللقطة دليل مرتبط بعنوان خدمة مستضافة وSHA منشور يمكن التحقق منه. لا يُنشأ حساب أو تُمنح صلاحية GitHub أو تُنشر الخدمة ضمن هذا التقرير."` | — |
+| [SRC-C4C6C55E1A-L000118](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L118) | 118 | `""` | — |
+| [SRC-C4C6C55E1A-L000119](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L119) | 119 | `"### M-08 — مراجعة نتيجة Grok ومراجعة مصدر مستقلة مبدئية"` | — |
 | [SRC-C4C6C55E1A-L000120](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L120) | 120 | `""` | — |
 | [SRC-C4C6C55E1A-L000121](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L121) | 121 | `"**حالة مراجعة Grok: PENDING INPUT.** لم تتوفر نتيجة تدقيق Grok النهائية أو PRs الأمنية الناتجة عنه ضمن هذه اللقطة. لا يجوز اعتبار هذه المراجعة المصدرية بديلًا عن مدقق مستقل، ولا يمكن إعلان مراجعة Grok مكتملة دون تقريره الفعلي."` | — |
 | [SRC-C4C6C55E1A-L000122](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L122) | 122 | `""` | — |
@@ -803,70 +870,3 @@
 | [SRC-E599346ABE-L000166](../generate_index.py#L166) | 166 | `""` | — |
 | [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `""` | — |
 | [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000169](../generate_index.py#L169) | 169 | `"class IndexedFile:"` | — |
-| [SRC-E599346ABE-L000170](../generate_index.py#L170) | 170 | `"    \"\"\"Represent a repository file with stable identifiers and navigation metadata.\"\"\""` | — |
-| [SRC-E599346ABE-L000171](../generate_index.py#L171) | 171 | `""` | — |
-| [SRC-E599346ABE-L000172](../generate_index.py#L172) | 172 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000173](../generate_index.py#L173) | 173 | `"    file_type: str"` | — |
-| [SRC-E599346ABE-L000174](../generate_index.py#L174) | 174 | `"    size_bytes: int"` | — |
-| [SRC-E599346ABE-L000175](../generate_index.py#L175) | 175 | `"    line_count: int \| None"` | — |
-| [SRC-E599346ABE-L000176](../generate_index.py#L176) | 176 | `"    indexing_scope: str"` | — |
-| [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
-| [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
-| [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"class IndexedMarker:"` | — |
-| [SRC-E599346ABE-L000183](../generate_index.py#L183) | 183 | `"    \"\"\"Represent a statically discovered symbol outside the Python AST index.\"\"\""` | — |
-| [SRC-E599346ABE-L000184](../generate_index.py#L184) | 184 | `""` | — |
-| [SRC-E599346ABE-L000185](../generate_index.py#L185) | 185 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000186](../generate_index.py#L186) | 186 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000187](../generate_index.py#L187) | 187 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000188](../generate_index.py#L188) | 188 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000189](../generate_index.py#L189) | 189 | `""` | — |
-| [SRC-E599346ABE-L000190](../generate_index.py#L190) | 190 | `""` | — |
-| [SRC-E599346ABE-L000191](../generate_index.py#L191) | 191 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000192](../generate_index.py#L192) | 192 | `"class IndexedLine:"` | — |
-| [SRC-E599346ABE-L000193](../generate_index.py#L193) | 193 | `"    \"\"\"Represent one exact logical line from an eligible readable repository text file.\"\"\""` | — |
-| [SRC-E599346ABE-L000194](../generate_index.py#L194) | 194 | `""` | — |
-| [SRC-E599346ABE-L000195](../generate_index.py#L195) | 195 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000196](../generate_index.py#L196) | 196 | `"    file_id: str"` | — |
-| [SRC-E599346ABE-L000197](../generate_index.py#L197) | 197 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000198](../generate_index.py#L198) | 198 | `"    category: str"` | — |
-| [SRC-E599346ABE-L000199](../generate_index.py#L199) | 199 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000200](../generate_index.py#L200) | 200 | `"    content: str"` | — |
-| [SRC-E599346ABE-L000201](../generate_index.py#L201) | 201 | `""` | — |
-| [SRC-E599346ABE-L000202](../generate_index.py#L202) | 202 | `""` | — |
-| [SRC-E599346ABE-L000203](../generate_index.py#L203) | 203 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000204](../generate_index.py#L204) | 204 | `"class IndexedFinding:"` | — |
-| [SRC-E599346ABE-L000205](../generate_index.py#L205) | 205 | `"    \"\"\"Represent a source annotation that explicitly requests attention.\"\"\""` | — |
-| [SRC-E599346ABE-L000206](../generate_index.py#L206) | 206 | `""` | — |
-| [SRC-E599346ABE-L000207](../generate_index.py#L207) | 207 | `"    finding_id: str"` | — |
-| [SRC-E599346ABE-L000208](../generate_index.py#L208) | 208 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000209](../generate_index.py#L209) | 209 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000210](../generate_index.py#L210) | 210 | `"    marker: str"` | — |
-| [SRC-E599346ABE-L000211](../generate_index.py#L211) | 211 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000212](../generate_index.py#L212) | 212 | `""` | — |
-| [SRC-E599346ABE-L000213](../generate_index.py#L213) | 213 | `""` | — |
-| [SRC-E599346ABE-L000214](../generate_index.py#L214) | 214 | `"class IndexGenerationError(RuntimeError):"` | — |
-| [SRC-E599346ABE-L000215](../generate_index.py#L215) | 215 | `"    \"\"\"Signal that a complete Python AST index could not be generated.\"\"\""` | — |
-| [SRC-E599346ABE-L000216](../generate_index.py#L216) | 216 | `""` | — |
-| [SRC-E599346ABE-L000217](../generate_index.py#L217) | 217 | `""` | — |
-| [SRC-E599346ABE-L000218](../generate_index.py#L218) | 218 | `"class SymbolVisitor(ast.NodeVisitor):"` | — |
-| [SRC-E599346ABE-L000219](../generate_index.py#L219) | 219 | `"    \"\"\"Collect Python classes, functions, methods and module/class assignments.\"\"\""` | — |
-| [SRC-E599346ABE-L000220](../generate_index.py#L220) | 220 | `""` | — |
-| [SRC-E599346ABE-L000221](../generate_index.py#L221) | 221 | `"    def __init__(self, relative_file: str) -> None:"` | — |
-| [SRC-E599346ABE-L000222](../generate_index.py#L222) | 222 | `"        \"\"\"Initialize the visitor for one repository-relative Python file.\"\"\""` | — |
-| [SRC-E599346ABE-L000223](../generate_index.py#L223) | 223 | `"        self.relative_file = relative_file"` | — |
-| [SRC-E599346ABE-L000224](../generate_index.py#L224) | 224 | `"        self.symbols: list[IndexedSymbol] = []"` | — |
-| [SRC-E599346ABE-L000225](../generate_index.py#L225) | 225 | `"        self.scope: list[str] = []"` | — |
-| [SRC-E599346ABE-L000226](../generate_index.py#L226) | 226 | `"        self.function_depth = 0"` | — |
-| [SRC-E599346ABE-L000227](../generate_index.py#L227) | 227 | `""` | — |
-| [SRC-E599346ABE-L000228](../generate_index.py#L228) | 228 | `"    @staticmethod"` | — |
-| [SRC-E599346ABE-L000229](../generate_index.py#L229) | 229 | `"    def _description(node: ast.AST) -> tuple[str, bool]:"` | — |
-| [SRC-E599346ABE-L000230](../generate_index.py#L230) | 230 | `"        \"\"\"Return a compact first-paragraph summary and its documentation state.\"\"\""` | — |
-| [SRC-E599346ABE-L000231](../generate_index.py#L231) | 231 | `"        docstring = ast.get_docstring(node, clean=True)"` | — |
-| [SRC-E599346ABE-L000232](../generate_index.py#L232) | 232 | `"        if not docstring or not docstring.strip():"` | — |
-| [SRC-E599346ABE-L000233](../generate_index.py#L233) | 233 | `"            return \"لا توجد Docstring.\", False"` | — |
-| [SRC-E599346ABE-L000234](../generate_index.py#L234) | 234 | `""` | — |
-| [SRC-E599346ABE-L000235](../generate_index.py#L235) | 235 | `"        first_paragraph = docstring.strip().split(\"\\n\\n\", maxsplit=1)[0]"` | — |
