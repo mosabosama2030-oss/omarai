@@ -88,6 +88,26 @@ def test_criterion_coverage_distinguishes_answer_mentions_from_source_evidence()
     assert result["independent_fact_check"] is False
 
 
+def test_arabic_criterion_can_match_common_english_source_terms():
+    result = audit_answer_integrity(
+        "قارن من حيث السعر والمساحة",
+        "السعر مذكور، لكن المساحة غير متاحة في الأدلة.",
+        [{
+            "title": "Product listing",
+            "snippet": "Price: 100 EGP. Size: 80 sqm.",
+            "page_fetched": False,
+        }],
+        ["السعر", "المساحة"],
+    )
+    checks = {item["target"]: item for item in result["target_coverage"]}
+    assert checks["السعر"]["source_evidence_status"] == "source_lexical_signal_found"
+    assert checks["المساحة"]["source_evidence_status"] == "source_lexical_signal_found"
+    assert result["source_evidence_gap_count"] == 0
+    # Cross-language lexical matching remains a retrieval hint, not entailment.
+    assert result["semantic_verification"] is False
+    assert result["independent_fact_check"] is False
+
+
 def test_source_scope_does_not_confuse_snippet_with_fetched_page():
     result = audit_answer_integrity(
         "ما التفاصيل؟",
