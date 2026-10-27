@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **79**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1030**
-- تعريفات Python موثقة بوجود Docstring: **195**
-- تعريفات Python بلا Docstring: **631**
+- تعريفات Python المفهرسة: **1032**
+- تعريفات Python موثقة بوجود Docstring: **196**
+- تعريفات Python بلا Docstring: **632**
 - تعريفات لا ينطبق عليها Docstring: **204**
 - الرموز الساكنة الإضافية: **1565**
-- الأسطر النصية المفهرسة حرفيًا: **27278**
+- الأسطر النصية المفهرسة حرفيًا: **27343**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -42,7 +42,7 @@
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32286 | 755 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 272022 | 5170 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 272789 | 5183 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
@@ -104,7 +104,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 126573 | 3261 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 128826 | 3313 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 54981 | 397 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
@@ -1118,32 +1118,34 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2634) | دالة | test_search_providers_do_not_follow_redirects_automatically.fake_get | لا توجد Docstring. | ناقص | 2634 | [SRC-F725E90B2A-L002634](../tests/test_web_agent.py#L2634) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2649) | دالة | test_explicit_modes_survive_deterministic_planning | A missing planner model must not erase a mode explicitly selected by the user. | موثق | 2649 | [SRC-F725E90B2A-L002649](../tests/test_web_agent.py#L2649) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2655) | دالة | test_explicit_modes_survive_deterministic_planning.collect | لا توجد Docstring. | ناقص | 2655 | [SRC-F725E90B2A-L002655](../tests/test_web_agent.py#L2655) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2709) | دالة | test_web_answer_integrity_is_attached_without_live_network | لا توجد Docstring. | ناقص | 2709 | [SRC-F725E90B2A-L002709](../tests/test_web_agent.py#L2709) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2744) | دالة | test_frontend_labels_answer_integrity_screen_as_non_semantic | لا توجد Docstring. | ناقص | 2744 | [SRC-F725E90B2A-L002744](../tests/test_web_agent.py#L2744) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2754) | دالة | test_search_web_keeps_arabic_topic_matches_in_english_indexed_results | لا توجد Docstring. | ناقص | 2754 | [SRC-F725E90B2A-L002754](../tests/test_web_agent.py#L2754) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2800) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation | لا توجد Docstring. | ناقص | 2800 | [SRC-F725E90B2A-L002800](../tests/test_web_agent.py#L2800) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2803) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_202 | لا توجد Docstring. | ناقص | 2803 | [SRC-F725E90B2A-L002803](../tests/test_web_agent.py#L2803) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2806) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_429 | لا توجد Docstring. | ناقص | 2806 | [SRC-F725E90B2A-L002806](../tests/test_web_agent.py#L2806) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2823) | دالة | test_search_web_records_distinct_candidate_rejection_reasons | لا توجد Docstring. | ناقص | 2823 | [SRC-F725E90B2A-L002823](../tests/test_web_agent.py#L2823) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2868) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect | لا توجد Docstring. | ناقص | 2868 | [SRC-F725E90B2A-L002868](../tests/test_web_agent.py#L2868) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2872) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.redirect_response | لا توجد Docstring. | ناقص | 2872 | [SRC-F725E90B2A-L002872](../tests/test_web_agent.py#L2872) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2876) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.no_results | لا توجد Docstring. | ناقص | 2876 | [SRC-F725E90B2A-L002876](../tests/test_web_agent.py#L2876) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2896) | دالة | test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries | لا توجد Docstring. | ناقص | 2896 | [SRC-F725E90B2A-L002896](../tests/test_web_agent.py#L2896) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2905) | دالة | test_relevance_query_tokens_reject_site_only_and_modifier_only_queries | لا توجد Docstring. | ناقص | 2905 | [SRC-F725E90B2A-L002905](../tests/test_web_agent.py#L2905) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2911) | دالة | test_search_web_compacts_request_before_provider_dispatch | لا توجد Docstring. | ناقص | 2911 | [SRC-F725E90B2A-L002911](../tests/test_web_agent.py#L2911) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2915) | دالة | test_search_web_compacts_request_before_provider_dispatch.capture | لا توجد Docstring. | ناقص | 2915 | [SRC-F725E90B2A-L002915](../tests/test_web_agent.py#L2915) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2941) | دالة | test_search_web_does_not_dispatch_instruction_only_query | لا توجد Docstring. | ناقص | 2941 | [SRC-F725E90B2A-L002941](../tests/test_web_agent.py#L2941) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2955) | دالة | test_plan_search_does_not_call_planner_without_a_topic | لا توجد Docstring. | ناقص | 2955 | [SRC-F725E90B2A-L002955](../tests/test_web_agent.py#L2955) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2969) | دالة | test_plan_search_compacts_followup_query_before_fallback | لا توجد Docstring. | ناقص | 2969 | [SRC-F725E90B2A-L002969](../tests/test_web_agent.py#L2969) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2994) | دالة | test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query | لا توجد Docstring. | ناقص | 2994 | [SRC-F725E90B2A-L002994](../tests/test_web_agent.py#L2994) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3026) | دالة | test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query.collect | لا توجد Docstring. | ناقص | 3026 | [SRC-F725E90B2A-L003026](../tests/test_web_agent.py#L3026) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3070) | دالة | test_server_search_sources_use_compact_question_and_topic_plan | لا توجد Docstring. | ناقص | 3070 | [SRC-F725E90B2A-L003070](../tests/test_web_agent.py#L3070) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3105) | دالة | test_server_search_sources_use_compact_question_and_topic_plan.generate | لا توجد Docstring. | ناقص | 3105 | [SRC-F725E90B2A-L003105](../tests/test_web_agent.py#L3105) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3125) | دالة | test_server_search_sources_use_compact_question_and_topic_plan.capture_relevance | لا توجد Docstring. | ناقص | 3125 | [SRC-F725E90B2A-L003125](../tests/test_web_agent.py#L3125) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3155) | دالة | test_modes_do_not_create_generic_queries_without_topic | لا توجد Docstring. | ناقص | 3155 | [SRC-F725E90B2A-L003155](../tests/test_web_agent.py#L3155) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3180) | دالة | test_modes_do_not_create_generic_queries_without_topic.collect | لا توجد Docstring. | ناقص | 3180 | [SRC-F725E90B2A-L003180](../tests/test_web_agent.py#L3180) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3205) | دالة | test_auto_navigation_strips_arabic_search_verb_without_regex_regression | لا توجد Docstring. | ناقص | 3205 | [SRC-F725E90B2A-L003205](../tests/test_web_agent.py#L3205) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3236) | دالة | test_auto_navigation_strips_arabic_search_verb_without_regex_regression.collect | لا توجد Docstring. | ناقص | 3236 | [SRC-F725E90B2A-L003236](../tests/test_web_agent.py#L3236) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2709) | دالة | test_latest_mode_preserves_official_website_navigation_intent | Latest mode must not replace an official-site lookup with generic news queries. | موثق | 2709 | [SRC-F725E90B2A-L002709](../tests/test_web_agent.py#L2709) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2715) | دالة | test_latest_mode_preserves_official_website_navigation_intent.collect | لا توجد Docstring. | ناقص | 2715 | [SRC-F725E90B2A-L002715](../tests/test_web_agent.py#L2715) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2761) | دالة | test_web_answer_integrity_is_attached_without_live_network | لا توجد Docstring. | ناقص | 2761 | [SRC-F725E90B2A-L002761](../tests/test_web_agent.py#L2761) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2796) | دالة | test_frontend_labels_answer_integrity_screen_as_non_semantic | لا توجد Docstring. | ناقص | 2796 | [SRC-F725E90B2A-L002796](../tests/test_web_agent.py#L2796) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2806) | دالة | test_search_web_keeps_arabic_topic_matches_in_english_indexed_results | لا توجد Docstring. | ناقص | 2806 | [SRC-F725E90B2A-L002806](../tests/test_web_agent.py#L2806) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2852) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation | لا توجد Docstring. | ناقص | 2852 | [SRC-F725E90B2A-L002852](../tests/test_web_agent.py#L2852) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2855) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_202 | لا توجد Docstring. | ناقص | 2855 | [SRC-F725E90B2A-L002855](../tests/test_web_agent.py#L2855) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2858) | دالة | test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation.http_429 | لا توجد Docstring. | ناقص | 2858 | [SRC-F725E90B2A-L002858](../tests/test_web_agent.py#L2858) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2875) | دالة | test_search_web_records_distinct_candidate_rejection_reasons | لا توجد Docstring. | ناقص | 2875 | [SRC-F725E90B2A-L002875](../tests/test_web_agent.py#L2875) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2920) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect | لا توجد Docstring. | ناقص | 2920 | [SRC-F725E90B2A-L002920](../tests/test_web_agent.py#L2920) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2924) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.redirect_response | لا توجد Docstring. | ناقص | 2924 | [SRC-F725E90B2A-L002924](../tests/test_web_agent.py#L2924) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2928) | دالة | test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect.no_results | لا توجد Docstring. | ناقص | 2928 | [SRC-F725E90B2A-L002928](../tests/test_web_agent.py#L2928) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2948) | دالة | test_relevance_filter_compacts_prompt_and_rejects_instruction_only_queries | لا توجد Docstring. | ناقص | 2948 | [SRC-F725E90B2A-L002948](../tests/test_web_agent.py#L2948) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2957) | دالة | test_relevance_query_tokens_reject_site_only_and_modifier_only_queries | لا توجد Docstring. | ناقص | 2957 | [SRC-F725E90B2A-L002957](../tests/test_web_agent.py#L2957) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2963) | دالة | test_search_web_compacts_request_before_provider_dispatch | لا توجد Docstring. | ناقص | 2963 | [SRC-F725E90B2A-L002963](../tests/test_web_agent.py#L2963) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2967) | دالة | test_search_web_compacts_request_before_provider_dispatch.capture | لا توجد Docstring. | ناقص | 2967 | [SRC-F725E90B2A-L002967](../tests/test_web_agent.py#L2967) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2993) | دالة | test_search_web_does_not_dispatch_instruction_only_query | لا توجد Docstring. | ناقص | 2993 | [SRC-F725E90B2A-L002993](../tests/test_web_agent.py#L2993) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3007) | دالة | test_plan_search_does_not_call_planner_without_a_topic | لا توجد Docstring. | ناقص | 3007 | [SRC-F725E90B2A-L003007](../tests/test_web_agent.py#L3007) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3021) | دالة | test_plan_search_compacts_followup_query_before_fallback | لا توجد Docstring. | ناقص | 3021 | [SRC-F725E90B2A-L003021](../tests/test_web_agent.py#L3021) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3046) | دالة | test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query | لا توجد Docstring. | ناقص | 3046 | [SRC-F725E90B2A-L003046](../tests/test_web_agent.py#L3046) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3078) | دالة | test_auto_mode_does_not_reinsert_raw_question_when_fallback_has_no_query.collect | لا توجد Docstring. | ناقص | 3078 | [SRC-F725E90B2A-L003078](../tests/test_web_agent.py#L3078) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3122) | دالة | test_server_search_sources_use_compact_question_and_topic_plan | لا توجد Docstring. | ناقص | 3122 | [SRC-F725E90B2A-L003122](../tests/test_web_agent.py#L3122) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3157) | دالة | test_server_search_sources_use_compact_question_and_topic_plan.generate | لا توجد Docstring. | ناقص | 3157 | [SRC-F725E90B2A-L003157](../tests/test_web_agent.py#L3157) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3177) | دالة | test_server_search_sources_use_compact_question_and_topic_plan.capture_relevance | لا توجد Docstring. | ناقص | 3177 | [SRC-F725E90B2A-L003177](../tests/test_web_agent.py#L3177) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3207) | دالة | test_modes_do_not_create_generic_queries_without_topic | لا توجد Docstring. | ناقص | 3207 | [SRC-F725E90B2A-L003207](../tests/test_web_agent.py#L3207) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3232) | دالة | test_modes_do_not_create_generic_queries_without_topic.collect | لا توجد Docstring. | ناقص | 3232 | [SRC-F725E90B2A-L003232](../tests/test_web_agent.py#L3232) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3257) | دالة | test_auto_navigation_strips_arabic_search_verb_without_regex_regression | لا توجد Docstring. | ناقص | 3257 | [SRC-F725E90B2A-L003257](../tests/test_web_agent.py#L3257) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3288) | دالة | test_auto_navigation_strips_arabic_search_verb_without_regex_regression.collect | لا توجد Docstring. | ناقص | 3288 | [SRC-F725E90B2A-L003288](../tests/test_web_agent.py#L3288) |
 
 ## الرموز الساكنة الإضافية
 
@@ -2383,10 +2385,10 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2464) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 2464 | [SRC-F725E90B2A-L002464](../tests/test_web_agent.py#L2464) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2464) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IPPROTO_TCP | 2464 | [SRC-F725E90B2A-L002464](../tests/test_web_agent.py#L2464) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L2464) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 2464 | [SRC-F725E90B2A-L002464](../tests/test_web_agent.py#L2464) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2921) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 2921 | [SRC-F725E90B2A-L002921](../tests/test_web_agent.py#L2921) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L2922) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 2922 | [SRC-F725E90B2A-L002922](../tests/test_web_agent.py#L2922) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3007) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 3007 | [SRC-F725E90B2A-L003007](../tests/test_web_agent.py#L3007) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3165) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 3165 | [SRC-F725E90B2A-L003165](../tests/test_web_agent.py#L3165) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2973) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 2973 | [SRC-F725E90B2A-L002973](../tests/test_web_agent.py#L2973) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L2974) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 2974 | [SRC-F725E90B2A-L002974](../tests/test_web_agent.py#L2974) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3059) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 3059 | [SRC-F725E90B2A-L003059](../tests/test_web_agent.py#L3059) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3217) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 3217 | [SRC-F725E90B2A-L003217](../tests/test_web_agent.py#L3217) |
 | [web/agent.html](../web/agent.html#L5) | قيمة سمة HTML (name) | viewport | 5 | [SRC-DE7EABE998-L000005](../web/agent.html#L5) |
 | [web/agent.html](../web/agent.html#L6) | قيمة سمة HTML (name) | theme-color | 6 | [SRC-DE7EABE998-L000006](../web/agent.html#L6) |
 | [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | amber | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
