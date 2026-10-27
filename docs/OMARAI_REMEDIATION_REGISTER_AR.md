@@ -2,10 +2,12 @@
 
 ## تحديث تنفيذي — 27 أكتوبر 2026: إصلاح مسار هوية البناء على SnapDeploy
 
-- **OMR-LIVE-005 — ROOT CAUSE IDENTIFIED / FIX IN PR:** كان Dockerfile يخبز قيمة `OMARAI_BUILD_SHA`، وقيمته الافتراضية `unknown`. توثيق SnapDeploy الحالي يوضح أن متغيرات البيئة غير العامة لا تُمرّر إلى بناء Docker، بل تُتاح وقت التشغيل فقط؛ لذلك لم يكن اسم المتغير السابق كافيًا لتعبئة `BUILD_SHA` عند بناء الخدمة من المستودع.
-- **الإصلاح المقترح في هذا الفرع:** إضافة `PUBLIC_OMARAI_BUILD_SHA` كبديل غير سري والتحقق من SHA ذي 40 خانة قبل خبزه. جرى تعديل فحص بناء الحاوية في CI ليستخدم المسار العام نفسه ثم يختبر أن `GET /api/health` يعيد SHA المطابق، بدل الاعتماد على مسار وسيط البناء القديم فقط.
-- **حدود الإغلاق:** يتطلب إغلاق هذا البند نجاح CI على SHA هذا التغيير، ثم تعيين `PUBLIC_OMARAI_BUILD_SHA` إلى SHA الإصدار المقصود في SnapDeploy وإعادة بنائه، ثم إثبات تطابق `build.sha`. لم تتغير إعدادات المضيف في هذا التغيير، ولم تُستخدم أسرار أو بيانات اعتماد.
-- **مرجع المنصة:** [SnapDeploy deployment guide](https://snapdeploy.dev/docs/deployment) و[environment variables](https://snapdeploy.dev/docs/environment-variables).
+- **OMR-LIVE-005 — FIXED_AND_TESTED (الكود وCI) / HOST_CONFIGURATION_PENDING:** تأكد السبب الجذري من توثيق SnapDeploy: المتغيرات غير العامة متاحة وقت التشغيل فقط، ولا تمررها المنصة إلى بناء Docker كوسائط بناء. كانت الصورة تكتب `unknown` لأن Dockerfile كان يعتمد على `OMARAI_BUILD_SHA` وحده.
+- **PR #98 — MERGED:** دمج الإصلاح في `main` عند `d9a8f83796547591d651c41ff657475bcec9b0ab`. أضاف Dockerfile دعم `PUBLIC_OMARAI_BUILD_SHA` (بيانات إصدار علنية غير سرية) مع التحقق من SHA كامل، مع الإبقاء على وسيط البناء التقليدي؛ وتم تحديث CI لاختبار المسار نفسه.
+- **الاختبار الآلي:** نجح PR CI على SHA `9b97dfe9d7a996349c374134fb2ae1ebcfdcf5fa` في [#40471611641](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471611641)، ونجح CI بعد الدمج على SHA `d9a8f83796547591d651c41ff657475bcec9b0ab` في [#40471732289](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732289)، كما نجح توليد الفهرس [#40471732508](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732508). تشمل الفحوص Python 3.11 و3.12 وRuff وبناء الحاوية وAPI smoke المحمي.
+- **ما لم يُغلق:** فحص `/api/health` بعد الدمج ما زال يعيد `build.sha=unknown`؛ هذا متوقع ما لم يُضبط متغير البناء العام في الخدمة ثم تعاد عملية البناء. يلزم تحديد SHA النهائي بعد آخر تغييرات على `main`، وتعيين `PUBLIC_OMARAI_BUILD_SHA` إلى تلك القيمة في SnapDeploy ثم التأكد من أن `build.sha` يطابقها بالضبط. لا تضع أي رمز أو مفتاح API في هذا المتغير.
+- **قبول البحث الحي:** ما زال `PARTIAL / BLOCKED` لأن جلسة المتصفح الاختبارية لا تتشارك التخزين المحلي مع متصفح المستخدم؛ يجب حفظ رمز الوصول داخل ملف المتصفح الاختباري من خلال صفحة الإعداد بنفسه، دون إرساله في المحادثة. لم ينجح أي طلب بحث حي في هذه الجلسة بعد.
+- **مراجع المنصة:** [SnapDeploy deployment guide](https://snapdeploy.dev/docs/deployment) و[environment variables](https://snapdeploy.dev/docs/environment-variables). لا يثبت نجاح CI اتصال موفري البحث أو صحة الإجابات الحية.
 
 ## تحديث تنفيذي — 27 أكتوبر 2026، بعد دمج PR #95 وإعادة فحص الاستضافة
 
