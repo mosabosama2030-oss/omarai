@@ -47,7 +47,7 @@
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
-| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 619 | 20 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 889 | 20 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
 | FILE-C4C6C55E1A | وثائق وفهرسة | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 35501 | 191 | جرد الملف + عناوين Markdown |
 | FILE-26428BDA96 | وثائق وفهرسة | [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 50328 | 262 | جرد الملف + عناوين Markdown |

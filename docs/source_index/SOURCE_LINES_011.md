@@ -265,7 +265,7 @@
 | [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
 | [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
 | [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
-| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"from pathlib import Path; import api.omarai; Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text('${OMARAI_BUILD_SHA}\\\\n', encoding='ascii')\""` | — |
+| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
 | [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
 | [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
 | [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
