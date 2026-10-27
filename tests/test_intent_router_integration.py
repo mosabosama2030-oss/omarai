@@ -152,6 +152,13 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
     assert result["research_plan"]["intent_route"] == "WEB_DEEP"
     assert result["research_plan"]["depth"] == "deep"
     assert len(seen["plan"]["queries"]) > 1
+    # Each requested criterion gets a distinct search angle before generic deep
+    # modifiers consume the bounded query budget.
+    planned_queries = " ".join(seen["plan"]["queries"]).casefold()
+    assert "السعر" in planned_queries
+    assert "البطارية" in planned_queries
+    assert "الكاميرا" in planned_queries
+    assert len(seen["plan"]["queries"]) <= 8
     assert result["used_web_search"] is True
     coverage = result["answer_coverage"]
     assert coverage["method"] == "explicit_criteria_heuristic"
