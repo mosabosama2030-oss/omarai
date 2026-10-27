@@ -90,25 +90,8 @@ def _is_smalltalk(question: str) -> bool:
 
 
 def _has_context(history: Any) -> bool:
-    """Check whether the latest user turn can plausibly anchor a short follow-up.
-
-    Do not resurrect an older topic after the user's most recent turn was only
-    an acknowledgment; stale context is a common source of wrong referents.
-    """
-    if not isinstance(history, list):
-        return False
-    for item in reversed(history[-MAX_CONTEXT_TURNS:]):
-        if not isinstance(item, dict) or item.get("role") != "user":
-            continue
-        content = item.get("content")
-        if not isinstance(content, str):
-            continue
-        normalized = _normalize(content)
-        if not normalized or _is_smalltalk(normalized):
-            return False
-        meaningful = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", normalized)
-        return len(meaningful) >= 2 and len(normalized) >= 8
-    return False
+    """Return true only when history has a usable topic anchor, not a bare follow-up."""
+    return bool(_latest_context_anchor(history))
 
 
 def _has_live_signal(question: str) -> bool:
@@ -156,65 +139,166 @@ def _is_lead_generation_request(question: str) -> bool:
     )
 
 
+_FOLLOWUP_LEAD_IN_RE = re.compile(
+    r"^(?:(?:طيب|طب|تمام|well|okay|ok|so)\s+)+",
+    re.IGNORECASE,
+)
+
+_FOLLOWUP_ASPECT_FRAGMENTS = frozenset({
+    "السعر", "سعرها كام", "سعره كام", "سعرها", "سعره", "والسعر", "وسعرها",
+    "الاسعار", "والاسعار", "التكلفه", "والتكلفه", "الضمان", "والضمان",
+    "ضمانها", "ضمانه", "البطاريه", "والبطاريه", "الكاميرا", "والكاميرا",
+    "المميزات", "والمميزات", "العيوب", "والعيوب", "المكان", "والمكان",
+    "المصدر", "والمصدر", "الرابط", "والرابط", "التاريخ", "والتاريخ",
+    "المراجعات", "والمراجعات", "الاراء", "والاراء", "and the price",
+    "and the warranty", "what about the warranty", "what about the price",
+    "its price", "the warranty", "the location", "the pros", "the cons",
+})
+
+
+def _strip_followup_leadin(value: str) -> str:
+    return _FOLLOWUP_LEAD_IN_RE.sub("", value).strip()
+
+
 def _needs_clarification(question: str) -> bool:
-    normalized = _normalize(question)
-    if (
-        normalized in {_normalize(item) for item in _AMBIGUOUS_ARABIC}
-        or normalized in {_normalize(item) for item in _AMBIGUOUS_ENGLISH}
-    ):
+    normalized = _strip_followup_leadin(_normalize(question))
+    ambiguous = {_normalize(item) for item in _AMBIGUOUS_ARABIC}
+    ambiguous.update(_normalize(item) for item in _AMBIGUOUS_ENGLISH)
+    if normalized in ambiguous or normalized in _FOLLOWUP_ASPECT_FRAGMENTS:
         return True
-    # Common inflected forms missed by exact phrase matching.
+    # Common inflected forms and short property-only follow-ups.
     return bool(
         re.fullmatch(r"(?:كام|كم|بكام)\s+(?:سعر|ثمن)\s*(?:ها|ه|هم)", normalized)
         or re.fullmatch(r"(?:قارن|قارنلي)\s+(?:بينهم|بينهما|دول|دي|دولتين)", normalized)
+        or re.fullmatch(r"(?:و)?(?:السعر|الاسعار|التكلفه|الضمان|المميزات|العيوب|البطاريه|الكاميرا|المكان|المصدر|الرابط|التاريخ)", normalized)
     )
 
 
-_FOLLOW_UP_MARKERS = (
-    "والسعر", "وسعر", "والاسعار", "طيب ", "طب ", "وماذا", "وكمان",
-    "التكلفه", "والتاريخ", "والمميزات", "والعيوب", "المصدر",
-    "and the price", "what about", "how about", "and also",
-    "how much is it", "what is its price", "where is it",
-)
+def _is_clarification_message(content: Any) -> bool:
+    if not isinstance(content, str):
+        return False
+    normalized = _normalize(content)
+    return any(marker in normalized for marker in (
+        "تقصد ايه تحديدا", "اكتب اسم الشيء", "ابعت الرابط",
+        "what are you referring to", "please name the item",
+        "share its link", "clarify what you mean",
+    ))
+
+
+def _latest_context_anchor(history: Any) -> str:
+    """Find the latest substantive user topic, skipping ellipsis follow-ups only.
+
+    A recent acknowledgment is a hard boundary: never search past it for stale topics.
+    Short entity replies can anchor context when the assistant explicitly asked for one.
+    """
+    if not isinstance(history, list):
+        return ""
+    bounded = history[-MAX_CONTEXT_TURNS:]
+    for index in range(len(bounded) - 1, -1, -1):
+        item = bounded[index]
+        if not isinstance(item, dict) or item.get("role") != "user":
+            continue
+        content = item.get("content")
+        if not isinstance(content, str):
+            continue
+        normalized = _normalize(content)
+        if not normalized or _is_smalltalk(normalized):
+            return ""
+        if _needs_clarification(content):
+            continue
+        meaningful = re.findall(r"[a-z0-9]+|[\u0600-\u06FF]+", normalized)
+        if len(meaningful) >= 2 and len(normalized) >= 8:
+            return re.sub(r"\s+", " ", content).strip()[:300]
+        if index > 0:
+            previous = bounded[index - 1]
+            if isinstance(previous, dict) and previous.get("role") == "assistant" and _is_clarification_message(previous.get("content")):
+                return re.sub(r"\s+", " ", content).strip()[:120]
+        return ""
+    return ""
+
+
+def _pending_clarification_query(history: Any) -> str:
+    """Return the unresolved elliptical question immediately awaiting a user slot-fill."""
+    if not isinstance(history, list) or not history:
+        return ""
+    last_index = len(history) - 1
+    while last_index >= 0 and not (
+        isinstance(history[last_index], dict)
+        and isinstance(history[last_index].get("content"), str)
+        and history[last_index].get("content", "").strip()
+    ):
+        last_index -= 1
+    if last_index < 0 or history[last_index].get("role") != "assistant":
+        return ""
+    if not _is_clarification_message(history[last_index].get("content")):
+        return ""
+    for index in range(last_index - 1, -1, -1):
+        item = history[index]
+        if isinstance(item, dict) and item.get("role") == "user":
+            content = item.get("content")
+            if not isinstance(content, str) or not _needs_clarification(content):
+                return ""
+            if _latest_context_anchor(history[:index]):
+                return ""
+            return content.strip()[:180]
+    return ""
+
+
+def _is_clarification_answer(question: str, history: Any) -> bool:
+    """Recognize a concise answer to Omarai's immediately preceding clarification."""
+    if not _pending_clarification_query(history) or not isinstance(question, str):
+        return False
+    query = question.strip()
+    if not query or len(query) >= 100 or _needs_clarification(query) or _is_smalltalk(query):
+        return False
+    # A self-contained live request should not be mistaken for a slot-fill.
+    if _has_live_signal(query) or re.search(r"https?://", query, re.IGNORECASE):
+        return False
+    return True
+
+
+def _is_contextual_followup(question: str) -> bool:
+    """Detect short referent-dependent follow-ups without treating every 'okay' as one."""
+    if not isinstance(question, str) or len(question.strip()) >= 100:
+        return False
+    if re.search(r"https?://", question, re.IGNORECASE):
+        return False
+    normalized = _strip_followup_leadin(_normalize(question))
+    if _needs_clarification(question):
+        return True
+    # Pronouns and deictic references are strong signals only in a short turn.
+    if re.fullmatch(
+        r"(?:و)?(?:هي|هو|دي|ده|دول|هما|ذلك|تلك|عليها|عليه|فيها|فيه|لها|له|"
+        r"سعرها|سعره|مكانها|مكانه|ضمانها|ضمانه|بطاريتها|كاميرتها|مميزاتها|عيوبها)",
+        normalized,
+    ):
+        return True
+    return False
 
 
 def resolve_followup_query(question: str, history: Any = None) -> str:
-    """Resolve a short contextual follow-up using the latest eligible user turn.
+    """Resolve a short contextual follow-up against the nearest substantive topic.
 
-    This is the single source of truth used by both research planning paths. It
-    deliberately refuses to resurrect older topics after a greeting/acknowledgment.
-    The merged query preserves the original user wording and is bounded.
+    Repeated follow-ups retain the original topic. An answer to an explicit
+    clarification is joined to the pending question. New standalone questions are
+    never merged merely because they start with 'طيب' or 'طب'.
     """
     if not isinstance(question, str):
         return ""
     query = re.sub(r"\s+", " ", question).strip()
     if not query:
         return ""
-    if len(query) >= 100 or not _has_context(history):
+    pending = _pending_clarification_query(history)
+    if pending and _is_clarification_answer(query, history):
+        return f"{pending[:220]} — {query[:180]}"[:500]
+    if len(query) >= 100 or not isinstance(history, list):
         return query[:500]
-
-    normalized = _normalize(query)
-    is_follow_up = _needs_clarification(query) or any(
-        _normalize(marker) in normalized for marker in _FOLLOW_UP_MARKERS
-    )
-    if not is_follow_up or not isinstance(history, list):
+    if not _is_contextual_followup(query):
         return query[:500]
-
-    previous = next(
-        (
-            re.sub(r"\s+", " ", item.get("content", "")).strip()
-            for item in reversed(history[-MAX_CONTEXT_TURNS:])
-            if isinstance(item, dict)
-            and item.get("role") == "user"
-            and isinstance(item.get("content"), str)
-            and item.get("content", "").strip()
-        ),
-        "",
-    )
+    previous = _latest_context_anchor(history)
     if not previous:
         return query[:500]
-    combined = f"{previous[:300]} — {query[:180]}"
-    return combined[:500]
+    return f"{previous[:300]} — {query[:180]}"[:500]
 
 
 def _is_deep(question: str) -> bool:
@@ -287,6 +371,17 @@ def route_intent(
 ) -> dict[str, Any]:
     """Return a deterministic route and auditable reason for a user question."""
     clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
+
+    # If the assistant just asked for a missing referent, bind the user's concise
+    # reply to that pending question instead of answering the entity name in isolation.
+    if _is_clarification_answer(question, history):
+        return {
+            "route": "WEB_DEEP" if clean_mode == "deep" else "WEB_SIMPLE",
+            "reason": "answer_to_pending_clarification",
+            "context_available": True,
+            "needs_clarification": False,
+        }
+
     context_available = _has_context(history)
 
     # A search mode cannot supply a missing subject. Clarify genuinely elliptical
@@ -350,7 +445,7 @@ def route_intent(
             "needs_clarification": True,
         }
 
-    ambiguous = _needs_clarification(question)
+    ambiguous = _is_contextual_followup(question) or _needs_clarification(question)
     if ambiguous:
         return {
             "route": "WEB_DEEP" if _is_deep(question) else "WEB_SIMPLE",
