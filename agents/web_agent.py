@@ -192,14 +192,15 @@ def _search_tokens(value: str) -> set[str]:
     for token in tokens:
         if token in _NORMALIZED_SEARCH_STOPWORDS or len(token) < 2:
             continue
-        forms = {token}
-        if token.startswith("ال") and len(token) > 4:
-            forms.add(token[2:])
-        forms.update(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()))
+        forms = _arabic_query_token_forms(token)
+        raw_forms = set(forms)
+        for form in raw_forms:
+            forms.update(_NORMALIZED_SEARCH_SYNONYMS.get(form, set()))
         # Reverse-map common English equivalents so Arabic and English results can match.
         for arabic, english in _NORMALIZED_SEARCH_SYNONYMS.items():
-            if token in english:
+            if raw_forms.intersection(english):
                 forms.add(arabic)
+                forms.update(english)
                 if arabic.startswith("ال") and len(arabic) > 4:
                     forms.add(arabic[2:])
         result.update(forms)
