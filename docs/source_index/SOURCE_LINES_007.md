@@ -172,9 +172,9 @@
 | [SRC-1AE03B9EC3-L002398](../../agents/web_agent.py#L2398) | 2398 | `"        if isinstance(requirement_queries, list) and requirement_queries:"` | — |
 | [SRC-1AE03B9EC3-L002399](../../agents/web_agent.py#L2399) | 2399 | `"            globally_fused = sources"` | — |
 | [SRC-1AE03B9EC3-L002400](../../agents/web_agent.py#L2400) | 2400 | `"            globally_fused_by_url = {"` | — |
-| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"                _normalized_source_url_key(item.get(\"url\", \"\")): item"` | — |
+| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"                self._normalized_source_url_key(item.get(\"url\", \"\")): item"` | — |
 | [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"                for item in globally_fused"` | — |
-| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"                if _normalized_source_url_key(item.get(\"url\", \"\"))"` | — |
+| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"                if self._normalized_source_url_key(item.get(\"url\", \"\"))"` | — |
 | [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"            pinned_by_url: dict[str, dict[str, Any]] = {}"` | — |
 | [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"            pinned_sources: list[dict[str, Any]] = []"` | — |
@@ -220,7 +220,7 @@
 | [SRC-1AE03B9EC3-L002446](../../agents/web_agent.py#L2446) | 2446 | `"                    )"` | — |
 | [SRC-1AE03B9EC3-L002447](../../agents/web_agent.py#L2447) | 2447 | `"                if not candidate:"` | — |
 | [SRC-1AE03B9EC3-L002448](../../agents/web_agent.py#L2448) | 2448 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L002449](../../agents/web_agent.py#L2449) | 2449 | `"                source_key = _normalized_source_url_key(candidate.get(\"url\", \"\"))"` | — |
+| [SRC-1AE03B9EC3-L002449](../../agents/web_agent.py#L2449) | 2449 | `"                source_key = self._normalized_source_url_key(candidate.get(\"url\", \"\"))"` | — |
 | [SRC-1AE03B9EC3-L002450](../../agents/web_agent.py#L2450) | 2450 | `"                if not source_key:"` | — |
 | [SRC-1AE03B9EC3-L002451](../../agents/web_agent.py#L2451) | 2451 | `"                    continue"` | — |
 | [SRC-1AE03B9EC3-L002452](../../agents/web_agent.py#L2452) | 2452 | `"                selected = ("` | — |
@@ -239,7 +239,7 @@
 | [SRC-1AE03B9EC3-L002465](../../agents/web_agent.py#L2465) | 2465 | `"                pinned_sources"` | — |
 | [SRC-1AE03B9EC3-L002466](../../agents/web_agent.py#L2466) | 2466 | `"                + ["` | — |
 | [SRC-1AE03B9EC3-L002467](../../agents/web_agent.py#L2467) | 2467 | `"                    item for item in globally_fused"` | — |
-| [SRC-1AE03B9EC3-L002468](../../agents/web_agent.py#L2468) | 2468 | `"                    if _normalized_source_url_key(item.get(\"url\", \"\")) not in pinned_keys"` | — |
+| [SRC-1AE03B9EC3-L002468](../../agents/web_agent.py#L2468) | 2468 | `"                    if self._normalized_source_url_key(item.get(\"url\", \"\")) not in pinned_keys"` | — |
 | [SRC-1AE03B9EC3-L002469](../../agents/web_agent.py#L2469) | 2469 | `"                ]"` | — |
 | [SRC-1AE03B9EC3-L002470](../../agents/web_agent.py#L2470) | 2470 | `"            )[:MAX_SEARCH_RESULTS]"` | — |
 | [SRC-1AE03B9EC3-L002471](../../agents/web_agent.py#L2471) | 2471 | `""` | — |
