@@ -223,6 +223,35 @@ def _relevance_query_tokens(query: str) -> set[str]:
     }
 
 
+def _arabic_query_token_forms(token: str) -> set[str]:
+    """Return conservative Arabic clitic/article variants for matching search evidence.
+
+    This is a matching aid only; it never changes the submitted query or URL policy.
+    It handles common attached forms such as للشركات/والشركات/بالشركات without
+    applying broad stemming that could make unrelated Arabic words match.
+    """
+    if not re.search(r"[\u0620-\u06D3]", token):
+        return {token}
+    forms = {token}
+    compound_prefixes = ("وال", "بال", "كال", "فال", "ولل", "وبال", "فبال", "لل")
+    for prefix in compound_prefixes:
+        if token.startswith(prefix) and len(token) - len(prefix) >= 3:
+            stem = token[len(prefix):]
+            forms.add(stem)
+            if stem.startswith("ال") and len(stem) > 4:
+                forms.add(stem[2:])
+    if token.startswith("ال") and len(token) > 4:
+        forms.add(token[2:])
+    for prefix in ("و", "ف", "ب", "ك", "ل"):
+        if token.startswith(prefix) and len(token) - len(prefix) >= 4:
+            stem = token[1:]
+            forms.add(stem)
+            if stem.startswith("ال") and len(stem) > 4:
+                forms.add(stem[2:])
+            break
+    return forms
+
+
 def _minimum_relevance_ratio(_query: str) -> float:
     """Keep the established 20% relevance floor after query normalization and token cleanup."""
     return 0.20
@@ -235,12 +264,18 @@ def _relevance_ratio(query: str, evidence: str) -> float:
         # Relevance cannot be established from an instruction-only query.
         return 0.0
     expanded_evidence = _search_tokens(evidence)
-    matched = sum(
-        1 for token in query_tokens
-        if token in expanded_evidence
-        or (token.startswith("ال") and token[2:] in expanded_evidence)
-        or bool(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()) & expanded_evidence)
-    )
+
+    def concept_found(token: str) -> bool:
+        for form in _arabic_query_token_forms(token):
+            if (
+                form in expanded_evidence
+                or (form.startswith("ال") and form[2:] in expanded_evidence)
+                or bool(_NORMALIZED_SEARCH_SYNONYMS.get(form, set()) & expanded_evidence)
+            ):
+                return True
+        return False
+
+    matched = sum(1 for token in query_tokens if concept_found(token))
     ratio = matched / len(query_tokens)
     # On longer questions, two matching topic concepts are required; request wording
     # should not silently raise that floor to three or four concepts.
