@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000227 إلى SRC-829A979985-L000187
+- النطاق: SRC-6BCB799CEC-L000200 إلى SRC-829A979985-L000160
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000200](../../tests/test_evidence_provenance.py#L200) | 200 | `"            assert kwargs.get(\"verify\") is True"` | — |
+| [SRC-6BCB799CEC-L000201](../../tests/test_evidence_provenance.py#L201) | 201 | `"            assert kwargs.get(\"follow_redirects\") is False"` | — |
+| [SRC-6BCB799CEC-L000202](../../tests/test_evidence_provenance.py#L202) | 202 | `"            # Do not allow HTTP_PROXY/HTTPS_PROXY to bypass the pinned IP."` | — |
+| [SRC-6BCB799CEC-L000203](../../tests/test_evidence_provenance.py#L203) | 203 | `"            assert kwargs.get(\"trust_env\") is False"` | — |
+| [SRC-6BCB799CEC-L000204](../../tests/test_evidence_provenance.py#L204) | 204 | `""` | — |
+| [SRC-6BCB799CEC-L000205](../../tests/test_evidence_provenance.py#L205) | 205 | `"        def __enter__(self):"` | — |
+| [SRC-6BCB799CEC-L000206](../../tests/test_evidence_provenance.py#L206) | 206 | `"            return self"` | — |
+| [SRC-6BCB799CEC-L000207](../../tests/test_evidence_provenance.py#L207) | 207 | `""` | — |
+| [SRC-6BCB799CEC-L000208](../../tests/test_evidence_provenance.py#L208) | 208 | `"        def __exit__(self, *args):"` | — |
+| [SRC-6BCB799CEC-L000209](../../tests/test_evidence_provenance.py#L209) | 209 | `"            return False"` | — |
+| [SRC-6BCB799CEC-L000210](../../tests/test_evidence_provenance.py#L210) | 210 | `""` | — |
+| [SRC-6BCB799CEC-L000211](../../tests/test_evidence_provenance.py#L211) | 211 | `"        def stream(self, method, url, headers=None, extensions=None):"` | — |
+| [SRC-6BCB799CEC-L000212](../../tests/test_evidence_provenance.py#L212) | 212 | `"            seen[\"method\"] = method"` | — |
+| [SRC-6BCB799CEC-L000213](../../tests/test_evidence_provenance.py#L213) | 213 | `"            seen[\"url\"] = url"` | — |
+| [SRC-6BCB799CEC-L000214](../../tests/test_evidence_provenance.py#L214) | 214 | `"            seen[\"headers\"] = headers"` | — |
+| [SRC-6BCB799CEC-L000215](../../tests/test_evidence_provenance.py#L215) | 215 | `"            seen[\"extensions\"] = extensions"` | — |
+| [SRC-6BCB799CEC-L000216](../../tests/test_evidence_provenance.py#L216) | 216 | `"            return FakeResponse()"` | — |
+| [SRC-6BCB799CEC-L000217](../../tests/test_evidence_provenance.py#L217) | 217 | `""` | — |
+| [SRC-6BCB799CEC-L000218](../../tests/test_evidence_provenance.py#L218) | 218 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
+| [SRC-6BCB799CEC-L000219](../../tests/test_evidence_provenance.py#L219) | 219 | `"    monkeypatch.setattr(\"httpx.Client\", FakeClient)"` | — |
+| [SRC-6BCB799CEC-L000220](../../tests/test_evidence_provenance.py#L220) | 220 | `"    title, text = WebAgent()._fetch_page(\"https://example.com/article\")"` | — |
+| [SRC-6BCB799CEC-L000221](../../tests/test_evidence_provenance.py#L221) | 221 | `"    assert title == \"\""` | — |
+| [SRC-6BCB799CEC-L000222](../../tests/test_evidence_provenance.py#L222) | 222 | `"    assert \"نص عام\" in text"` | — |
+| [SRC-6BCB799CEC-L000223](../../tests/test_evidence_provenance.py#L223) | 223 | `"    assert seen[\"url\"].startswith(\"https://1.1.1.1/\")"` | — |
+| [SRC-6BCB799CEC-L000224](../../tests/test_evidence_provenance.py#L224) | 224 | `"    assert seen[\"headers\"][\"Host\"] == \"example.com\""` | — |
+| [SRC-6BCB799CEC-L000225](../../tests/test_evidence_provenance.py#L225) | 225 | `"    assert seen[\"extensions\"][\"sni_hostname\"] == \"example.com\""` | — |
+| [SRC-6BCB799CEC-L000226](../../tests/test_evidence_provenance.py#L226) | 226 | `""` | — |
 | [SRC-6BCB799CEC-L000227](../../tests/test_evidence_provenance.py#L227) | 227 | `"def test_mixed_public_and_private_dns_answers_block_page_fetch(monkeypatch):"` | — |
 | [SRC-6BCB799CEC-L000228](../../tests/test_evidence_provenance.py#L228) | 228 | `"    \"\"\"A hostname is rejected when even one DNS answer is non-global.\"\"\""` | — |
 | [SRC-6BCB799CEC-L000229](../../tests/test_evidence_provenance.py#L229) | 229 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
@@ -816,30 +843,3 @@
 | [SRC-829A979985-L000158](../../tests/test_generation_acceptance_matrix.py#L158) | 158 | `"    monkeypatch.setattr("` | — |
 | [SRC-829A979985-L000159](../../tests/test_generation_acceptance_matrix.py#L159) | 159 | `"        agent,"` | — |
 | [SRC-829A979985-L000160](../../tests/test_generation_acceptance_matrix.py#L160) | 160 | `"        \"status\","` | — |
-| [SRC-829A979985-L000161](../../tests/test_generation_acceptance_matrix.py#L161) | 161 | `"        lambda: {"` | — |
-| [SRC-829A979985-L000162](../../tests/test_generation_acceptance_matrix.py#L162) | 162 | `"            \"web_search_ready\": True,"` | — |
-| [SRC-829A979985-L000163](../../tests/test_generation_acceptance_matrix.py#L163) | 163 | `"            \"language_model_configured\": True,"` | — |
-| [SRC-829A979985-L000164](../../tests/test_generation_acceptance_matrix.py#L164) | 164 | `"            \"deepseek_search_api_configured\": True,"` | — |
-| [SRC-829A979985-L000165](../../tests/test_generation_acceptance_matrix.py#L165) | 165 | `"            \"brave_search_api_configured\": True,"` | — |
-| [SRC-829A979985-L000166](../../tests/test_generation_acceptance_matrix.py#L166) | 166 | `"            \"tavily_search_api_configured\": False,"` | — |
-| [SRC-829A979985-L000167](../../tests/test_generation_acceptance_matrix.py#L167) | 167 | `"            \"openrouter_web_search_enabled\": False,"` | — |
-| [SRC-829A979985-L000168](../../tests/test_generation_acceptance_matrix.py#L168) | 168 | `"        },"` | — |
-| [SRC-829A979985-L000169](../../tests/test_generation_acceptance_matrix.py#L169) | 169 | `"    )"` | — |
-| [SRC-829A979985-L000170](../../tests/test_generation_acceptance_matrix.py#L170) | 170 | `""` | — |
-| [SRC-829A979985-L000171](../../tests/test_generation_acceptance_matrix.py#L171) | 171 | `"    snapshot = agent._capability_status_snapshot()"` | — |
-| [SRC-829A979985-L000172](../../tests/test_generation_acceptance_matrix.py#L172) | 172 | `"    providers = {item[\"name\"]: item for item in snapshot[\"web_search\"][\"providers\"]}"` | — |
-| [SRC-829A979985-L000173](../../tests/test_generation_acceptance_matrix.py#L173) | 173 | `""` | — |
-| [SRC-829A979985-L000174](../../tests/test_generation_acceptance_matrix.py#L174) | 174 | `"    assert snapshot[\"web_search\"][\"implemented\"] is True"` | — |
-| [SRC-829A979985-L000175](../../tests/test_generation_acceptance_matrix.py#L175) | 175 | `"    assert snapshot[\"web_search\"][\"local_dependencies_ready\"] is True"` | — |
-| [SRC-829A979985-L000176](../../tests/test_generation_acceptance_matrix.py#L176) | 176 | `"    assert snapshot[\"web_search\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
-| [SRC-829A979985-L000177](../../tests/test_generation_acceptance_matrix.py#L177) | 177 | `"    assert providers[\"duckduckgo_html\"][\"configuration_status\"] == \"built_in_no_api_key\""` | — |
-| [SRC-829A979985-L000178](../../tests/test_generation_acceptance_matrix.py#L178) | 178 | `"    assert providers[\"duckduckgo_html\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
-| [SRC-829A979985-L000179](../../tests/test_generation_acceptance_matrix.py#L179) | 179 | `"    assert providers[\"deepseek_search_api\"][\"configuration_status\"] == \"configured\""` | — |
-| [SRC-829A979985-L000180](../../tests/test_generation_acceptance_matrix.py#L180) | 180 | `"    assert providers[\"deepseek_search_api\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
-| [SRC-829A979985-L000181](../../tests/test_generation_acceptance_matrix.py#L181) | 181 | `"    assert providers[\"brave_search_api\"][\"configuration_status\"] == \"configured\""` | — |
-| [SRC-829A979985-L000182](../../tests/test_generation_acceptance_matrix.py#L182) | 182 | `"    assert providers[\"brave_search_api\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
-| [SRC-829A979985-L000183](../../tests/test_generation_acceptance_matrix.py#L183) | 183 | `"    assert providers[\"tavily_search_api\"][\"configuration_status\"] == \"not_configured\""` | — |
-| [SRC-829A979985-L000184](../../tests/test_generation_acceptance_matrix.py#L184) | 184 | `"    assert providers[\"tavily_search_api\"][\"runtime_status\"] == \"not_configured\""` | — |
-| [SRC-829A979985-L000185](../../tests/test_generation_acceptance_matrix.py#L185) | 185 | `"    assert providers[\"openrouter_web_search\"][\"configuration_status\"] == \"disabled\""` | — |
-| [SRC-829A979985-L000186](../../tests/test_generation_acceptance_matrix.py#L186) | 186 | `"    assert providers[\"openrouter_web_search\"][\"runtime_status\"] == \"disabled\""` | — |
-| [SRC-829A979985-L000187](../../tests/test_generation_acceptance_matrix.py#L187) | 187 | `""` | — |

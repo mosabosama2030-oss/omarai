@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000389 إلى SRC-90FAA34ADE-L001188
+- النطاق: SRC-90FAA34ADE-L000362 إلى SRC-90FAA34ADE-L001161
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000363](../../tests/fixtures/answer_quality_cases.json#L363) | 363 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000364](../../tests/fixtures/answer_quality_cases.json#L364) | 364 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000365](../../tests/fixtures/answer_quality_cases.json#L365) | 365 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000366](../../tests/fixtures/answer_quality_cases.json#L366) | 366 | `"            \"title\": \"Canada visitor visa checklist\","` | — |
+| [SRC-90FAA34ADE-L000367](../../tests/fixtures/answer_quality_cases.json#L367) | 367 | `"            \"url\": \"https://example-travel.test/canada-visa\","` | — |
+| [SRC-90FAA34ADE-L000368](../../tests/fixtures/answer_quality_cases.json#L368) | 368 | `"            \"snippet\": \"Documents needed for a Canadian visitor visa application.\","` | — |
+| [SRC-90FAA34ADE-L000369](../../tests/fixtures/answer_quality_cases.json#L369) | 369 | `"            \"domain\": \"example-travel.test\","` | — |
+| [SRC-90FAA34ADE-L000370](../../tests/fixtures/answer_quality_cases.json#L370) | 370 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000371](../../tests/fixtures/answer_quality_cases.json#L371) | 371 | `"            \"relevance\": \"irrelevant\""` | — |
+| [SRC-90FAA34ADE-L000372](../../tests/fixtures/answer_quality_cases.json#L372) | 372 | `"          },"` | — |
+| [SRC-90FAA34ADE-L000373](../../tests/fixtures/answer_quality_cases.json#L373) | 373 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000374](../../tests/fixtures/answer_quality_cases.json#L374) | 374 | `"            \"title\": \"Egyptian passport services overview\","` | — |
+| [SRC-90FAA34ADE-L000375](../../tests/fixtures/answer_quality_cases.json#L375) | 375 | `"            \"url\": \"https://example-gov.test/passport-renewal\","` | — |
+| [SRC-90FAA34ADE-L000376](../../tests/fixtures/answer_quality_cases.json#L376) | 376 | `"            \"snippet\": \"Public information on renewing an Egyptian passport.\","` | — |
+| [SRC-90FAA34ADE-L000377](../../tests/fixtures/answer_quality_cases.json#L377) | 377 | `"            \"domain\": \"example-gov.test\","` | — |
+| [SRC-90FAA34ADE-L000378](../../tests/fixtures/answer_quality_cases.json#L378) | 378 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000379](../../tests/fixtures/answer_quality_cases.json#L379) | 379 | `"            \"source_class\": \"official\","` | — |
+| [SRC-90FAA34ADE-L000380](../../tests/fixtures/answer_quality_cases.json#L380) | 380 | `"            \"relevance\": \"relevant\""` | — |
+| [SRC-90FAA34ADE-L000381](../../tests/fixtures/answer_quality_cases.json#L381) | 381 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000382](../../tests/fixtures/answer_quality_cases.json#L382) | 382 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000383](../../tests/fixtures/answer_quality_cases.json#L383) | 383 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000384](../../tests/fixtures/answer_quality_cases.json#L384) | 384 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000385](../../tests/fixtures/answer_quality_cases.json#L385) | 385 | `"        \"Primary answer grounded only in Canada visa page\""` | — |
+| [SRC-90FAA34ADE-L000386](../../tests/fixtures/answer_quality_cases.json#L386) | 386 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000387](../../tests/fixtures/answer_quality_cases.json#L387) | 387 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000388](../../tests/fixtures/answer_quality_cases.json#L388) | 388 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000389](../../tests/fixtures/answer_quality_cases.json#L389) | 389 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000390](../../tests/fixtures/answer_quality_cases.json#L390) | 390 | `"      \"case_id\": \"AQ-016\","` | — |
 | [SRC-90FAA34ADE-L000391](../../tests/fixtures/answer_quality_cases.json#L391) | 391 | `"      \"category\": \"empty_or_failed_search\","` | — |
@@ -789,30 +816,3 @@
 | [SRC-90FAA34ADE-L001159](../../tests/fixtures/answer_quality_cases.json#L1159) | 1159 | `"        \"يستخدم fallback موثق إن وُجد أو يشرح القيد\","` | — |
 | [SRC-90FAA34ADE-L001160](../../tests/fixtures/answer_quality_cases.json#L1160) | 1160 | `"        \"لا يدّعي أن النموذج أو المراجع نفّذوا الطلب\""` | — |
 | [SRC-90FAA34ADE-L001161](../../tests/fixtures/answer_quality_cases.json#L1161) | 1161 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001162](../../tests/fixtures/answer_quality_cases.json#L1162) | 1162 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001163](../../tests/fixtures/answer_quality_cases.json#L1163) | 1163 | `"        \"يعرض إجابة على أنها مراجعة بنموذج لم يعمل\","` | — |
-| [SRC-90FAA34ADE-L001164](../../tests/fixtures/answer_quality_cases.json#L1164) | 1164 | `"        \"يخفي عطل الاعتمادات ويولد نتيجة تحقق وهمية\""` | — |
-| [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001166](../../tests/fixtures/answer_quality_cases.json#L1166) | 1166 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001167](../../tests/fixtures/answer_quality_cases.json#L1167) | 1167 | `"        \"type\": \"env\","` | — |
-| [SRC-90FAA34ADE-L001168](../../tests/fixtures/answer_quality_cases.json#L1168) | 1168 | `"        \"missing\": ["` | — |
-| [SRC-90FAA34ADE-L001169](../../tests/fixtures/answer_quality_cases.json#L1169) | 1169 | `"          \"OPENROUTER_API_KEY\""` | — |
-| [SRC-90FAA34ADE-L001170](../../tests/fixtures/answer_quality_cases.json#L1170) | 1170 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L001171](../../tests/fixtures/answer_quality_cases.json#L1171) | 1171 | `"        \"review_service\": \"disabled\","` | — |
-| [SRC-90FAA34ADE-L001172](../../tests/fixtures/answer_quality_cases.json#L1172) | 1172 | `"        \"answer_model\": \"unavailable\""` | — |
-| [SRC-90FAA34ADE-L001173](../../tests/fixtures/answer_quality_cases.json#L1173) | 1173 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001174](../../tests/fixtures/answer_quality_cases.json#L1174) | 1174 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001175](../../tests/fixtures/answer_quality_cases.json#L1175) | 1175 | `"        \"ادعاء تنفيذ model review مع غياب الاعتمادات\","` | — |
-| [SRC-90FAA34ADE-L001176](../../tests/fixtures/answer_quality_cases.json#L1176) | 1176 | `"        \"تلفيق ناتج من الخدمة غير المتاحة\""` | — |
-| [SRC-90FAA34ADE-L001177](../../tests/fixtures/answer_quality_cases.json#L1177) | 1177 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001178](../../tests/fixtures/answer_quality_cases.json#L1178) | 1178 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001179](../../tests/fixtures/answer_quality_cases.json#L1179) | 1179 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001180](../../tests/fixtures/answer_quality_cases.json#L1180) | 1180 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001181](../../tests/fixtures/answer_quality_cases.json#L1181) | 1181 | `"      \"case_id\": \"AQ-040\","` | — |
-| [SRC-90FAA34ADE-L001182](../../tests/fixtures/answer_quality_cases.json#L1182) | 1182 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
-| [SRC-90FAA34ADE-L001183](../../tests/fixtures/answer_quality_cases.json#L1183) | 1183 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L001184](../../tests/fixtures/answer_quality_cases.json#L1184) | 1184 | `"      \"question\": \"I have one cropped screenshot with no date or source. Can you confirm this is today's official exchange rate?\","` | — |
-| [SRC-90FAA34ADE-L001185](../../tests/fixtures/answer_quality_cases.json#L1185) | 1185 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001186](../../tests/fixtures/answer_quality_cases.json#L1186) | 1186 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001187](../../tests/fixtures/answer_quality_cases.json#L1187) | 1187 | `"        \"Says the screenshot alone cannot authenticate current rate or date\","` | — |
-| [SRC-90FAA34ADE-L001188](../../tests/fixtures/answer_quality_cases.json#L1188) | 1188 | `"        \"Seeks a timestamped reliable source or explicitly abstains\","` | — |
