@@ -4053,8 +4053,21 @@ class WebAgent:
                         f"{base_query} متوسط أسعار السوق للمتر",
                         f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
                     ])
+                # Close the planning loop: give every explicit user criterion its own
+                # query before generic "deep research" queries consume the fixed budget.
+                # This is a retrieval heuristic, not a guarantee that evidence exists.
+                criterion_queries = [
+                    compact_search_query(f"{base_query} {target} official data specifications")
+                    for target in self._question_coverage_targets(question)
+                ]
+                criterion_queries = [
+                    query for query in criterion_queries
+                    if query and _relevance_query_tokens(query)
+                ]
                 plan["queries"] = list(dict.fromkeys(
-                    (plan.get("queries") or [])[:5] + deep_candidates
+                    (plan.get("queries") or [])[:2]
+                    + criterion_queries
+                    + deep_candidates
                 ))[:MAX_PLAN_QUERIES]
                 base_query = (plan.get("queries") or [""])[0]
             # Explicit user-selected modes are control inputs. They do not bypass source
@@ -4079,10 +4092,22 @@ class WebAgent:
                         f"{base_query} متوسط أسعار السوق للمتر",
                         f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
                     ])
-                # Keep query budget for evidence-gap searches if first-round coverage is weak.
-                plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:3] + candidates))[
-                    :MAX_PLAN_QUERIES
+                # Explicit deep mode follows the same criterion-first budget allocation
+                # as automatic deep mode, so generic modifiers cannot crowd out requested
+                # dimensions such as price, battery, camera, privacy, or reliability.
+                criterion_queries = [
+                    compact_search_query(f"{base_query} {target} official data specifications")
+                    for target in self._question_coverage_targets(question)
                 ]
+                criterion_queries = [
+                    query for query in criterion_queries
+                    if query and _relevance_query_tokens(query)
+                ]
+                # Keep the subject plus one planner query, then criterion-specific
+                # queries, and only then generic exploration queries.
+                plan["queries"] = list(dict.fromkeys(
+                    (plan.get("queries") or [])[:2] + criterion_queries + candidates
+                ))[:MAX_PLAN_QUERIES]
             elif clean_mode == "latest":
                 plan["freshness"] = "current"
                 if self._is_navigation_request(question):
