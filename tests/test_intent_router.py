@@ -175,3 +175,89 @@ def test_followup_resolver_bounds_output_and_handles_malformed_history() -> None
     history = [{"role": "user", "content": "س" * 4000}]
     assert len(resolve_followup_query("والسعر؟", history)) <= 500
     assert resolve_followup_query("فين؟", {"role": "user", "content": "topic"}) == "فين؟"
+
+def test_prefixed_elliptical_followup_is_clarified_without_topic():
+    for question in ("طب هل فيه ضمان؟", "طيب كام سعرها؟", "والضمان؟", "والسعر؟"):
+        decision = route_intent(question)
+        assert decision["route"] == "CLARIFY", question
+
+
+def test_prefixed_elliptical_followup_uses_topic_when_available():
+    history = [
+        {"role": "user", "content": "عايز أعرف سعر iPhone 16 في مصر"},
+        {"role": "assistant", "content": "نتحدث عن iPhone 16 في مصر."},
+    ]
+    for question in ("طب هل فيه ضمان؟", "طيب كام سعرها؟", "والضمان؟"):
+        decision = route_intent(question, history, requires_web=True)
+        assert decision["route"] == "WEB_SIMPLE", question
+        resolved = resolve_followup_query(question, history)
+        assert "iPhone 16" in resolved
+        assert "مصر" in resolved
+
+
+def test_new_question_starting_with_tayyib_does_not_inherit_old_topic():
+    history = [
+        {"role": "user", "content": "ما سعر iPhone 16 في مصر؟"},
+        {"role": "assistant", "content": "هذه بعض معلومات السعر."},
+    ]
+    question = "طيب اشرح الذكاء الاصطناعي في المدارس"
+    assert resolve_followup_query(question, history) == question
+    decision = route_intent(question, history)
+    assert decision["route"] == "MODEL_ONLY"
+
+
+def test_chained_followups_keep_the_last_substantive_topic():
+    history = [
+        {"role": "user", "content": "ما سعر iPhone 16 في مصر؟"},
+        {"role": "assistant", "content": "السعر يختلف حسب المتجر."},
+        {"role": "user", "content": "والضمان؟"},
+        {"role": "assistant", "content": "سأوضح الضمان."},
+    ]
+    resolved = resolve_followup_query("والبطارية؟", history)
+    assert "iPhone 16" in resolved
+    assert "البطارية" in resolved
+
+
+def test_answer_to_clarification_restores_original_intent():
+    history = [
+        {"role": "user", "content": "كام سعرها؟"},
+        {
+            "role": "assistant",
+            "content": "تقصد إيه تحديدًا؟ اكتب اسم الشيء أو المنتج المقصود، أو ابعت الرابط، وأكمل معاك من غير ما أخمّن.",
+        },
+    ]
+    decision = route_intent("iPhone 16", history)
+    assert decision["route"] == "WEB_SIMPLE"
+    assert decision["reason"] == "answer_to_pending_clarification"
+    resolved = resolve_followup_query("iPhone 16", history)
+    assert "سعرها" in resolved
+    assert "iPhone 16" in resolved
+
+
+def test_topic_detection_does_not_inherit_old_social_or_depth_intent():
+    from agents.research import fallback_plan
+
+    history = [
+        {"role": "user", "content": "اجمع آراء مستخدمي السيارات الكهربائية على Reddit"},
+        {"role": "assistant", "content": "هذه النتائج."},
+    ]
+    plan = fallback_plan("اشرح طريقة عمل المحرك الكهربائي", history)
+    assert plan["social_focus"] is False
+    assert plan["platforms"] == []
+    assert plan["depth"] == "standard"
+
+
+
+def test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode():
+    question = (
+        "ما أهم استخدامات الذكاء الاصطناعي في الشركات الصغيرة؟ "
+        "اذكر أمثلة ومصادر موثوقة."
+    )
+    decision = route_intent(question, mode="auto")
+    assert decision["route"] == "WEB_SIMPLE"
+    assert decision["reason"] == "explicit_evidence_request"
+
+
+def test_stable_question_without_source_request_remains_model_only():
+    decision = route_intent("اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف")
+    assert decision["route"] == "MODEL_ONLY"
