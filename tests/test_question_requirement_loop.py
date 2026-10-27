@@ -105,6 +105,72 @@ def test_requirement_evidence_ledger_distinguishes_candidate_from_query_only_res
     assert all(item["source_entailment_verified"] is False for item in ledger)
 
 
+
+def test_research_keeps_a_relevant_source_for_each_criterion_before_page_fetch(monkeypatch) -> None:
+    agent = WebAgent()
+    targets = ["price", "battery", "camera", "warranty"]
+    requirement_queries = [
+        {"target": target, "query": f"sample product {target}"}
+        for target in targets
+    ]
+    plan = {
+        "queries": [item["query"] for item in requirement_queries],
+        "coverage_targets": targets,
+        "requirement_queries": requirement_queries,
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    query_index = {
+        item["query"].casefold(): index
+        for index, item in enumerate(requirement_queries)
+    }
+
+    def fake_search(query: str):
+        index = query_index[query.casefold()]
+        rows = []
+        for rank in range(1, 7):
+            title = (
+                f"{targets[index]} detailed evidence"
+                if rank == 6
+                else f"Generic product listing {index}-{rank}"
+            )
+            rows.append({
+                "title": title,
+                "url": f"https://s{index}-r{rank}.example.com/item",
+                "snippet": title if rank == 6 else "General product listing with no criterion detail.",
+                "provider": "test_search",
+                "provider_rank": rank,
+                "domain": f"s{index}-r{rank}.example.com",
+            })
+        return rows
+
+    def fake_fetch(url: str):
+        hostname = url.split("://", 1)[1].split("/", 1)[0]
+        index = int(hostname.split("-r", 1)[0][1:])
+        target = targets[index]
+        return f"{target} page", f"{target} evidence and detailed specifications."
+
+    monkeypatch.setattr(agent, "_search_web", fake_search)
+    monkeypatch.setattr(agent, "_fetch_page", fake_fetch)
+
+    sources, warnings, report = agent._collect_research(plan)
+
+    assert len(sources) <= 18
+    for item in requirement_queries:
+        matched = [
+            source for source in sources
+            if item["query"] in source.get("queries", [])
+        ]
+        assert matched, f"criterion query lost from final source pool: {item['target']}"
+        assert any(item["target"] in source["title"] for source in matched[:2])
+    assert report["queries_planned"] == 4
+    assert report["queries_attempted"] == 4
+
+
 def test_answer_integrity_exposes_requirement_evidence_separately_from_word_overlap() -> None:
     plan = fallback_plan(QUESTION)
     price_query = next(item["query"] for item in plan["requirement_queries"] if item["target"] == "السعر")
