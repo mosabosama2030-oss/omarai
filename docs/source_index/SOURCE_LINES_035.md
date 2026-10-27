@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **035**
-- سجلات الأسطر: **740**
-- النطاق: SRC-F725E90B2A-L003165 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **748**
+- النطاق: SRC-F725E90B2A-L003157 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003157](../../tests/test_web_agent.py#L3157) | 3157 | `"        {"` | — |
+| [SRC-F725E90B2A-L003158](../../tests/test_web_agent.py#L3158) | 3158 | `"            \"role\": \"user\","` | — |
+| [SRC-F725E90B2A-L003159](../../tests/test_web_agent.py#L3159) | 3159 | `"            \"content\": ("` | — |
+| [SRC-F725E90B2A-L003160](../../tests/test_web_agent.py#L3160) | 3160 | `"                \"قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، \""` | — |
+| [SRC-F725E90B2A-L003161](../../tests/test_web_agent.py#L3161) | 3161 | `"                \"واذكر روابط المصادر وأجب بإيجاز.\""` | — |
+| [SRC-F725E90B2A-L003162](../../tests/test_web_agent.py#L3162) | 3162 | `"            ),"` | — |
+| [SRC-F725E90B2A-L003163](../../tests/test_web_agent.py#L3163) | 3163 | `"        },"` | — |
+| [SRC-F725E90B2A-L003164](../../tests/test_web_agent.py#L3164) | 3164 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن مقارنة موثقة.\"},"` | — |
 | [SRC-F725E90B2A-L003165](../../tests/test_web_agent.py#L3165) | 3165 | `"    ]"` | — |
 | [SRC-F725E90B2A-L003166](../../tests/test_web_agent.py#L3166) | 3166 | `"    plan = agent._plan_search(\"وطب الأسعار الحالية؟\", history)"` | — |
 | [SRC-F725E90B2A-L003167](../../tests/test_web_agent.py#L3167) | 3167 | `""` | — |

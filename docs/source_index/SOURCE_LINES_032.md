@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000765 إلى SRC-F725E90B2A-L001564
+- النطاق: SRC-F725E90B2A-L000757 إلى SRC-F725E90B2A-L001556
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000757](../../tests/test_web_agent.py#L757) | 757 | `"    called = []"` | — |
+| [SRC-F725E90B2A-L000758](../../tests/test_web_agent.py#L758) | 758 | `""` | — |
+| [SRC-F725E90B2A-L000759](../../tests/test_web_agent.py#L759) | 759 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000760](../../tests/test_web_agent.py#L760) | 760 | `"        def __init__(self, content, finish_reason):"` | — |
+| [SRC-F725E90B2A-L000761](../../tests/test_web_agent.py#L761) | 761 | `"            self.body = json.dumps({"` | — |
+| [SRC-F725E90B2A-L000762](../../tests/test_web_agent.py#L762) | 762 | `"                \"choices\": [{"` | — |
+| [SRC-F725E90B2A-L000763](../../tests/test_web_agent.py#L763) | 763 | `"                    \"message\": {\"content\": content},"` | — |
+| [SRC-F725E90B2A-L000764](../../tests/test_web_agent.py#L764) | 764 | `"                    \"finish_reason\": finish_reason,"` | — |
 | [SRC-F725E90B2A-L000765](../../tests/test_web_agent.py#L765) | 765 | `"                }]"` | — |
 | [SRC-F725E90B2A-L000766](../../tests/test_web_agent.py#L766) | 766 | `"            }).encode(\"utf-8\")"` | — |
 | [SRC-F725E90B2A-L000767](../../tests/test_web_agent.py#L767) | 767 | `""` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L001554](../../tests/test_web_agent.py#L1554) | 1554 | `""` | — |
 | [SRC-F725E90B2A-L001555](../../tests/test_web_agent.py#L1555) | 1555 | `"    assert len(results) == 1"` | — |
 | [SRC-F725E90B2A-L001556](../../tests/test_web_agent.py#L1556) | 1556 | `"    assert results[0][\"title\"] == \"أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال\""` | — |
-| [SRC-F725E90B2A-L001557](../../tests/test_web_agent.py#L1557) | 1557 | `"    diagnostic = next("` | — |
-| [SRC-F725E90B2A-L001558](../../tests/test_web_agent.py#L1558) | 1558 | `"        row for row in agent._provider_diagnostics"` | — |
-| [SRC-F725E90B2A-L001559](../../tests/test_web_agent.py#L1559) | 1559 | `"        if row[\"provider\"] == \"google_news_rss\""` | — |
-| [SRC-F725E90B2A-L001560](../../tests/test_web_agent.py#L1560) | 1560 | `"    )"` | — |
-| [SRC-F725E90B2A-L001561](../../tests/test_web_agent.py#L1561) | 1561 | `"    assert diagnostic[\"status\"] == \"ok\""` | — |
-| [SRC-F725E90B2A-L001562](../../tests/test_web_agent.py#L1562) | 1562 | `"    assert diagnostic[\"result_count\"] == 2"` | — |
-| [SRC-F725E90B2A-L001563](../../tests/test_web_agent.py#L1563) | 1563 | `"    assert diagnostic[\"accepted_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L001564](../../tests/test_web_agent.py#L1564) | 1564 | `"    assert diagnostic[\"rejected_count\"] == 1"` | — |

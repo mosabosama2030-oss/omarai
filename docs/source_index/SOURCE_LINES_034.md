@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002365 إلى SRC-F725E90B2A-L003164
+- النطاق: SRC-F725E90B2A-L002357 إلى SRC-F725E90B2A-L003156
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002357](../../tests/test_web_agent.py#L2357) | 2357 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L002358](../../tests/test_web_agent.py#L2358) | 2358 | `""` | — |
+| [SRC-F725E90B2A-L002359](../../tests/test_web_agent.py#L2359) | 2359 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"test-secret-key-that-must-not-appear\")"` | — |
+| [SRC-F725E90B2A-L002360](../../tests/test_web_agent.py#L2360) | 2360 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002361](../../tests/test_web_agent.py#L2361) | 2361 | `"    seen = {}"` | — |
+| [SRC-F725E90B2A-L002362](../../tests/test_web_agent.py#L2362) | 2362 | `""` | — |
+| [SRC-F725E90B2A-L002363](../../tests/test_web_agent.py#L2363) | 2363 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L002364](../../tests/test_web_agent.py#L2364) | 2364 | `"        def raise_for_status(self):"` | — |
 | [SRC-F725E90B2A-L002365](../../tests/test_web_agent.py#L2365) | 2365 | `"            return None"` | — |
 | [SRC-F725E90B2A-L002366](../../tests/test_web_agent.py#L2366) | 2366 | `""` | — |
 | [SRC-F725E90B2A-L002367](../../tests/test_web_agent.py#L2367) | 2367 | `"        def json(self):"` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L003154](../../tests/test_web_agent.py#L3154) | 3154 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L003155](../../tests/test_web_agent.py#L3155) | 3155 | `"    agent.api_key = \"\""` | — |
 | [SRC-F725E90B2A-L003156](../../tests/test_web_agent.py#L3156) | 3156 | `"    history = ["` | — |
-| [SRC-F725E90B2A-L003157](../../tests/test_web_agent.py#L3157) | 3157 | `"        {"` | — |
-| [SRC-F725E90B2A-L003158](../../tests/test_web_agent.py#L3158) | 3158 | `"            \"role\": \"user\","` | — |
-| [SRC-F725E90B2A-L003159](../../tests/test_web_agent.py#L3159) | 3159 | `"            \"content\": ("` | — |
-| [SRC-F725E90B2A-L003160](../../tests/test_web_agent.py#L3160) | 3160 | `"                \"قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، \""` | — |
-| [SRC-F725E90B2A-L003161](../../tests/test_web_agent.py#L3161) | 3161 | `"                \"واذكر روابط المصادر وأجب بإيجاز.\""` | — |
-| [SRC-F725E90B2A-L003162](../../tests/test_web_agent.py#L3162) | 3162 | `"            ),"` | — |
-| [SRC-F725E90B2A-L003163](../../tests/test_web_agent.py#L3163) | 3163 | `"        },"` | — |
-| [SRC-F725E90B2A-L003164](../../tests/test_web_agent.py#L3164) | 3164 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن مقارنة موثقة.\"},"` | — |
