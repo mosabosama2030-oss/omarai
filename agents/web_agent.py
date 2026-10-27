@@ -22,7 +22,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 from agents.intent_router import resolve_followup_query, route_intent
-from agents.answer_validation import audit_answer_integrity
+from agents.answer_validation import audit_answer_integrity, build_requirement_evidence_ledger
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.research import (
     MAX_PLAN_QUERIES,
@@ -32,6 +32,7 @@ from agents.research import (
     fallback_plan,
     fuse_ranked_results,
     registrable_domain,
+    extract_question_coverage_targets,
     validate_plan,
 )
 
@@ -621,60 +622,8 @@ class WebAgent:
 
     @staticmethod
     def _question_coverage_targets(question: str) -> list[str]:
-        """Extract explicit multi-part answer requirements conservatively; this is not semantic grading."""
-        if not isinstance(question, str) or not question.strip():
-            return []
-        text = question.strip()[:MAX_QUESTION_CHARS]
-        marker = re.compile(
-            r"(?:من\s+حيث|من\s+ناحية|من\s+الناحية|فيما\s+يتعلق\s+ب|فيما\s+يخص|"
-            r"من\s+منظور|in\s+terms\s+of|with\s+respect\s+to|"
-            r"from\s+the\s+perspective\s+of|based\s+on\s+the\s+following\s+criteria)"
-            r"\s*(.+?)(?=[؟?!.؛;\n]|$)",
-            flags=re.IGNORECASE,
-        )
-        match = marker.search(text)
-        if match:
-            raw = match.group(1)
-            # Keep explicit criteria separate from trailing meta-requests such as
-            # "explain what cannot be verified" rather than turning them into a criterion.
-            raw = re.split(
-                r"(?:،|,|؛|;)\s*(?:و?اذكر|و?وضح|بيّن|اشرح|and\s+(?:explain|note|discuss))\b",
-                raw,
-                maxsplit=1,
-                flags=re.IGNORECASE,
-            )[0]
-            pieces = re.split(
-                r"\s*(?:،|,|؛|;|/)\s*|"
-                r"\s+\band\b\s+|\s+\bas well as\b\s+|"
-                r"\s+و(?=ال|[ء-ي])",
-                raw,
-                flags=re.IGNORECASE,
-            )
-        else:
-            # If the user explicitly asks separate questions, preserve each clause.
-            question_parts = [
-                part.strip(" \t\r\n-•")
-                for part in re.split(r"[؟?]+", text)
-                if len(part.strip(" \t\r\n-•")) >= 4
-            ]
-            pieces = question_parts if len(question_parts) > 1 else []
-
-        targets: list[str] = []
-        seen: set[str] = set()
-        for piece in pieces:
-            target = re.sub(r"^[\s:،,؛;/.!?\-–—]+|[\s:،,؛;/.!?\-–—]+$", "", piece).strip()
-            target = re.sub(r"^(?:و\s*)", "", target).strip()
-            if len(target) < 2:
-                continue
-            if len(target) > 120:
-                target = target[:120].rsplit(" ", 1)[0].strip()
-            key = _normalize_search_query(target).casefold()
-            if key and key not in seen:
-                seen.add(key)
-                targets.append(target)
-            if len(targets) >= 8:
-                break
-        return targets
+        """Compatibility wrapper for the shared deterministic requirement extractor."""
+        return extract_question_coverage_targets(question)
 
     @staticmethod
     def _is_current_search_status_question(question: str) -> bool:
@@ -3046,6 +2995,8 @@ class WebAgent:
                     {
                         "question": search_question[:MAX_QUESTION_CHARS],
                         "recent_history": history[-4:],
+                        "required_criteria": fallback.get("coverage_targets", []),
+                        "required_requirement_queries": fallback.get("requirement_queries", []),
                     },
                     ensure_ascii=False,
                 ),
@@ -3145,6 +3096,20 @@ class WebAgent:
                 elif len(query_list) > 1:
                     query_list[-1] = targeted
             plan["queries"] = list(dict.fromkeys(query_list))[:MAX_PLAN_QUERIES]
+        plan["coverage_targets"] = list(fallback.get("coverage_targets") or [])
+        plan["requirement_queries"] = list(fallback.get("requirement_queries") or [])
+        if plan["requirement_queries"]:
+            required_prefix: list[str] = []
+            if len(plan["requirement_queries"]) < MAX_PLAN_QUERIES:
+                fallback_queries = fallback.get("queries", [])
+                if fallback_queries:
+                    required_prefix.append(fallback_queries[0])
+            required_prefix.extend(
+                item["query"] for item in plan["requirement_queries"] if item.get("query")
+            )
+            plan["queries"] = list(dict.fromkeys(
+                required_prefix + list(plan.get("queries") or [])
+            ))[:MAX_PLAN_QUERIES]
         return plan
 
     def _generate(
