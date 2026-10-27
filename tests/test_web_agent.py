@@ -3459,3 +3459,10 @@ def test_search_evidence_matching_keeps_distinct_concepts_as_the_ratio_denominat
     weak = "AI tools for personal photo editing"
     assert _relevance_ratio(query, on_topic) > _relevance_ratio(query, weak)
     assert _relevance_ratio(query, weak) < _minimum_relevance_ratio(query)
+
+
+
+def test_bilingual_relevance_matches_english_queries_to_arabic_source_text():
+    query = "AI use cases for small businesses in Egypt"
+    evidence = "استخدامات الذكاء الاصطناعي للشركات الصغيرة في مصر"
+    assert _relevance_ratio(query, evidence) >= 0.80
