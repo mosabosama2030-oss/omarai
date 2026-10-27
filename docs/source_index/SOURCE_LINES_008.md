@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003261 إلى SRC-1AE03B9EC3-L004060
+- النطاق: SRC-1AE03B9EC3-L003251 إلى SRC-1AE03B9EC3-L004050
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003251](../../agents/web_agent.py#L3251) | 3251 | `"                    \"إذا لم تظهر إشارة صريحة، قل بوضوح إنه لم يتم العثور على عميل محتمل مؤهل؛ \""` | — |
+| [SRC-1AE03B9EC3-L003252](../../agents/web_agent.py#L3252) | 3252 | `"                    \"لا تستنتج نية الشراء من مجرد عرض سلعة للبيع.\""` | — |
+| [SRC-1AE03B9EC3-L003253](../../agents/web_agent.py#L3253) | 3253 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003254](../../agents/web_agent.py#L3254) | 3254 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L003255](../../agents/web_agent.py#L3255) | 3255 | `"        messages.append({"` | — |
+| [SRC-1AE03B9EC3-L003256](../../agents/web_agent.py#L3256) | 3256 | `"            \"role\": \"user\","` | — |
+| [SRC-1AE03B9EC3-L003257](../../agents/web_agent.py#L3257) | 3257 | `"            \"content\": \"سؤال المستخدم الأصلي:\\n\" + question,"` | — |
+| [SRC-1AE03B9EC3-L003258](../../agents/web_agent.py#L3258) | 3258 | `"        })"` | — |
+| [SRC-1AE03B9EC3-L003259](../../agents/web_agent.py#L3259) | 3259 | `"        coverage_targets = self._question_coverage_targets(question)"` | — |
+| [SRC-1AE03B9EC3-L003260](../../agents/web_agent.py#L3260) | 3260 | `"        if coverage_targets:"` | — |
 | [SRC-1AE03B9EC3-L003261](../../agents/web_agent.py#L3261) | 3261 | `"            messages.append({"` | — |
 | [SRC-1AE03B9EC3-L003262](../../agents/web_agent.py#L3262) | 3262 | `"                \"role\": \"user\","` | — |
 | [SRC-1AE03B9EC3-L003263](../../agents/web_agent.py#L3263) | 3263 | `"                \"content\": ("` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L004048](../../agents/web_agent.py#L4048) | 4048 | `"                property_terms = ("` | — |
 | [SRC-1AE03B9EC3-L004049](../../agents/web_agent.py#L4049) | 4049 | `"                    \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\","` | — |
 | [SRC-1AE03B9EC3-L004050](../../agents/web_agent.py#L4050) | 4050 | `"                    \"apartment\", \"apartments\", \"flat\", \"real estate\", \"property\", \"house\", \"villa\","` | — |
-| [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"                if self._is_listing_discovery(question) and any("` | — |
-| [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"                    term in normalized_question for term in property_terms"` | — |
-| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"                ):"` | — |
-| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"                    deep_candidates.extend(["` | — |
-| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"                        f\"{base_query} إعلانات عقارية ومواقع العقارات\","` | — |
-| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"                        f\"{base_query} متوسط أسعار السوق للمتر\","` | — |
-| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                        f\"{base_query} مواصفات الوحدات والمساحات وطرق السداد\","` | — |
-| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                    ])"` | — |
-| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                # Close the planning loop: give every explicit user criterion its own"` | — |

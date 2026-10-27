@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004061 إلى SRC-1AE03B9EC3-L004860
+- النطاق: SRC-1AE03B9EC3-L004051 إلى SRC-1AE03B9EC3-L004850
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"                if self._is_listing_discovery(question) and any("` | — |
+| [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"                    term in normalized_question for term in property_terms"` | — |
+| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"                ):"` | — |
+| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"                    deep_candidates.extend(["` | — |
+| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"                        f\"{base_query} إعلانات عقارية ومواقع العقارات\","` | — |
+| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"                        f\"{base_query} متوسط أسعار السوق للمتر\","` | — |
+| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                        f\"{base_query} مواصفات الوحدات والمساحات وطرق السداد\","` | — |
+| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                    ])"` | — |
+| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                # Close the planning loop: give every explicit user criterion its own"` | — |
 | [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                # query before generic \"deep research\" queries consume the fixed budget."` | — |
 | [SRC-1AE03B9EC3-L004062](../../agents/web_agent.py#L4062) | 4062 | `"                # This is a retrieval heuristic, not a guarantee that evidence exists."` | — |
 | [SRC-1AE03B9EC3-L004063](../../agents/web_agent.py#L4063) | 4063 | `"                criterion_queries = ["` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L004848](../../agents/web_agent.py#L4848) | 4848 | `"        llm_warning: str \| None = None"` | — |
 | [SRC-1AE03B9EC3-L004849](../../agents/web_agent.py#L4849) | 4849 | `"        generation_budget_exhausted = False"` | — |
 | [SRC-1AE03B9EC3-L004850](../../agents/web_agent.py#L4850) | 4850 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L004851](../../agents/web_agent.py#L4851) | 4851 | `"            answer = self._generate("` | — |
-| [SRC-1AE03B9EC3-L004852](../../agents/web_agent.py#L4852) | 4852 | `"                question,"` | — |
-| [SRC-1AE03B9EC3-L004853](../../agents/web_agent.py#L4853) | 4853 | `"                clean_history,"` | — |
-| [SRC-1AE03B9EC3-L004854](../../agents/web_agent.py#L4854) | 4854 | `"                sources,"` | — |
-| [SRC-1AE03B9EC3-L004855](../../agents/web_agent.py#L4855) | 4855 | `"                search_warning,"` | — |
-| [SRC-1AE03B9EC3-L004856](../../agents/web_agent.py#L4856) | 4856 | `"                research_plan=plan,"` | — |
-| [SRC-1AE03B9EC3-L004857](../../agents/web_agent.py#L4857) | 4857 | `"                search_report=report,"` | — |
-| [SRC-1AE03B9EC3-L004858](../../agents/web_agent.py#L4858) | 4858 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004859](../../agents/web_agent.py#L4859) | 4859 | `"            used_llm = True"` | — |
-| [SRC-1AE03B9EC3-L004860](../../agents/web_agent.py#L4860) | 4860 | `"            if self.server_search_sources:"` | — |
