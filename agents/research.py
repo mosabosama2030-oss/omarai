@@ -411,12 +411,14 @@ def classify_source(url: str) -> dict[str, str]:
     elif host.endswith((".edu", ".ac.uk", ".edu.eg")):
         trust = "academic"
     elif host == "news.google.com" or any(
-        name in host
+        host == name or host.endswith("." + name)
         for name in (
             "reuters.com", "apnews.com", "bbc.com", "bbc.co.uk",
             "ft.com", "nytimes.com", "theguardian.com",
         )
     ):
+        # Match publisher host boundaries; lookalike domains must not inherit a
+        # news label merely because their hostname contains a trusted brand string.
         trust = "news"
     elif platform != "web":
         trust = "social"
