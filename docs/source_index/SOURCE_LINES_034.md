@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002059 إلى SRC-F725E90B2A-L002858
+- النطاق: SRC-F725E90B2A-L002057 إلى SRC-F725E90B2A-L002856
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002057](../../tests/test_web_agent.py#L2057) | 2057 | `""` | — |
+| [SRC-F725E90B2A-L002058](../../tests/test_web_agent.py#L2058) | 2058 | `""` | — |
 | [SRC-F725E90B2A-L002059](../../tests/test_web_agent.py#L2059) | 2059 | `"def test_frontend_review_status_matches_api_contract():"` | — |
 | [SRC-F725E90B2A-L002060](../../tests/test_web_agent.py#L2060) | 2060 | `"    html = (Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\").read_text(encoding=\"utf-8\")"` | — |
 | [SRC-F725E90B2A-L002061](../../tests/test_web_agent.py#L2061) | 2061 | `"    assert 'r.second_pass_review===\"model_claim_audit_completed\"' in html"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002854](../../tests/test_web_agent.py#L2854) | 2854 | `"                for query in research_plan[\"queries\"]"` | — |
 | [SRC-F725E90B2A-L002855](../../tests/test_web_agent.py#L2855) | 2855 | `"            ],"` | — |
 | [SRC-F725E90B2A-L002856](../../tests/test_web_agent.py#L2856) | 2856 | `"            \"unique_sources\": len(sources),"` | — |
-| [SRC-F725E90B2A-L002857](../../tests/test_web_agent.py#L2857) | 2857 | `"            \"pages_fetched\": len(sources),"` | — |
-| [SRC-F725E90B2A-L002858](../../tests/test_web_agent.py#L2858) | 2858 | `"            \"providers_used\": [\"test_provider\"],"` | — |
