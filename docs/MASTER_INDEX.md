@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **81**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1039**
-- تعريفات Python موثقة بوجود Docstring: **198**
+- تعريفات Python المفهرسة: **1041**
+- تعريفات Python موثقة بوجود Docstring: **200**
 - تعريفات Python بلا Docstring: **637**
 - تعريفات لا ينطبق عليها Docstring: **204**
 - الرموز الساكنة الإضافية: **1611**
-- الأسطر النصية المفهرسة حرفيًا: **27672**
+- الأسطر النصية المفهرسة حرفيًا: **27780**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -41,7 +41,7 @@
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 16450 | 391 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
-| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32286 | 755 | جرد الملف + AST Python |
+| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 36629 | 863 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 273808 | 5196 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -209,20 +209,22 @@
 | [agents/research.py](../agents/research.py#L248) | دالة | detect_social_focus | لا توجد Docstring. | ناقص | 248 | [SRC-59CF4B7DE8-L000248](../agents/research.py#L248) |
 | [agents/research.py](../agents/research.py#L255) | دالة | detect_freshness | لا توجد Docstring. | ناقص | 255 | [SRC-59CF4B7DE8-L000255](../agents/research.py#L255) |
 | [agents/research.py](../agents/research.py#L259) | دالة | detect_depth | لا توجد Docstring. | ناقص | 259 | [SRC-59CF4B7DE8-L000259](../agents/research.py#L259) |
-| [agents/research.py](../agents/research.py#L263) | دالة | mentioned_social_platforms | لا توجد Docstring. | ناقص | 263 | [SRC-59CF4B7DE8-L000263](../agents/research.py#L263) |
-| [agents/research.py](../agents/research.py#L279) | دالة | fallback_plan | Build a small but varied plan when no model planner is configured or parsing fails. | موثق | 279 | [SRC-59CF4B7DE8-L000279](../agents/research.py#L279) |
-| [agents/research.py](../agents/research.py#L333) | دالة | validate_plan | لا توجد Docstring. | ناقص | 333 | [SRC-59CF4B7DE8-L000333](../agents/research.py#L333) |
-| [agents/research.py](../agents/research.py#L373) | دالة | _canonical_result_url | لا توجد Docstring. | ناقص | 373 | [SRC-59CF4B7DE8-L000373](../agents/research.py#L373) |
-| [agents/research.py](../agents/research.py#L392) | دالة | classify_source | لا توجد Docstring. | ناقص | 392 | [SRC-59CF4B7DE8-L000392](../agents/research.py#L392) |
-| [agents/research.py](../agents/research.py#L425) | دالة | fuse_ranked_results | Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs. | موثق | 425 | [SRC-59CF4B7DE8-L000425](../agents/research.py#L425) |
-| [agents/research.py](../agents/research.py#L494) | دالة | _parse_publication_date | Parse common search/RSS publication dates without guessing missing dates. | موثق | 494 | [SRC-59CF4B7DE8-L000494](../agents/research.py#L494) |
-| [agents/research.py](../agents/research.py#L536) | دالة | evidence_signal_report | Summarize research coverage; signals describe evidence coverage, not factual truth. | موثق | 536 | [SRC-59CF4B7DE8-L000536](../agents/research.py#L536) |
-| [agents/research.py](../agents/research.py#L632) | متغير/ثابت Python | _RELEVANCE_STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 632 | [SRC-59CF4B7DE8-L000632](../agents/research.py#L632) |
-| [agents/research.py](../agents/research.py#L639) | متغير/ثابت Python | _OFFICIAL_CLASSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 639 | [SRC-59CF4B7DE8-L000639](../agents/research.py#L639) |
-| [agents/research.py](../agents/research.py#L642) | دالة | _tokenize | لا توجد Docstring. | ناقص | 642 | [SRC-59CF4B7DE8-L000642](../agents/research.py#L642) |
-| [agents/research.py](../agents/research.py#L650) | دالة | source_relevance_score | لا توجد Docstring. | ناقص | 650 | [SRC-59CF4B7DE8-L000650](../agents/research.py#L650) |
-| [agents/research.py](../agents/research.py#L684) | دالة | filter_relevant_sources | لا توجد Docstring. | ناقص | 684 | [SRC-59CF4B7DE8-L000684](../agents/research.py#L684) |
-| [agents/research.py](../agents/research.py#L721) | دالة | decide_evidence_status | لا توجد Docstring. | ناقص | 721 | [SRC-59CF4B7DE8-L000721](../agents/research.py#L721) |
+| [agents/research.py](../agents/research.py#L263) | دالة | extract_question_coverage_targets | Extract explicit multi-part requirements; this is a heuristic, not semantic parsing. | موثق | 263 | [SRC-59CF4B7DE8-L000263](../agents/research.py#L263) |
+| [agents/research.py](../agents/research.py#L317) | دالة | build_requirement_queries | Create one bounded search query per explicit requirement. | موثق | 317 | [SRC-59CF4B7DE8-L000317](../agents/research.py#L317) |
+| [agents/research.py](../agents/research.py#L342) | دالة | mentioned_social_platforms | لا توجد Docstring. | ناقص | 342 | [SRC-59CF4B7DE8-L000342](../agents/research.py#L342) |
+| [agents/research.py](../agents/research.py#L358) | دالة | fallback_plan | Build a small but varied plan when no model planner is configured or parsing fails. | موثق | 358 | [SRC-59CF4B7DE8-L000358](../agents/research.py#L358) |
+| [agents/research.py](../agents/research.py#L429) | دالة | validate_plan | لا توجد Docstring. | ناقص | 429 | [SRC-59CF4B7DE8-L000429](../agents/research.py#L429) |
+| [agents/research.py](../agents/research.py#L481) | دالة | _canonical_result_url | لا توجد Docstring. | ناقص | 481 | [SRC-59CF4B7DE8-L000481](../agents/research.py#L481) |
+| [agents/research.py](../agents/research.py#L500) | دالة | classify_source | لا توجد Docstring. | ناقص | 500 | [SRC-59CF4B7DE8-L000500](../agents/research.py#L500) |
+| [agents/research.py](../agents/research.py#L533) | دالة | fuse_ranked_results | Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs. | موثق | 533 | [SRC-59CF4B7DE8-L000533](../agents/research.py#L533) |
+| [agents/research.py](../agents/research.py#L602) | دالة | _parse_publication_date | Parse common search/RSS publication dates without guessing missing dates. | موثق | 602 | [SRC-59CF4B7DE8-L000602](../agents/research.py#L602) |
+| [agents/research.py](../agents/research.py#L644) | دالة | evidence_signal_report | Summarize research coverage; signals describe evidence coverage, not factual truth. | موثق | 644 | [SRC-59CF4B7DE8-L000644](../agents/research.py#L644) |
+| [agents/research.py](../agents/research.py#L740) | متغير/ثابت Python | _RELEVANCE_STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 740 | [SRC-59CF4B7DE8-L000740](../agents/research.py#L740) |
+| [agents/research.py](../agents/research.py#L747) | متغير/ثابت Python | _OFFICIAL_CLASSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 747 | [SRC-59CF4B7DE8-L000747](../agents/research.py#L747) |
+| [agents/research.py](../agents/research.py#L750) | دالة | _tokenize | لا توجد Docstring. | ناقص | 750 | [SRC-59CF4B7DE8-L000750](../agents/research.py#L750) |
+| [agents/research.py](../agents/research.py#L758) | دالة | source_relevance_score | لا توجد Docstring. | ناقص | 758 | [SRC-59CF4B7DE8-L000758](../agents/research.py#L758) |
+| [agents/research.py](../agents/research.py#L792) | دالة | filter_relevant_sources | لا توجد Docstring. | ناقص | 792 | [SRC-59CF4B7DE8-L000792](../agents/research.py#L792) |
+| [agents/research.py](../agents/research.py#L829) | دالة | decide_evidence_status | لا توجد Docstring. | ناقص | 829 | [SRC-59CF4B7DE8-L000829](../agents/research.py#L829) |
 | [agents/web_agent.py](../agents/web_agent.py#L38) | متغير/ثابت Python | MAX_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 38 | [SRC-1AE03B9EC3-L000038](../agents/web_agent.py#L38) |
 | [agents/web_agent.py](../agents/web_agent.py#L39) | متغير/ثابت Python | MAX_HISTORY_ITEMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 39 | [SRC-1AE03B9EC3-L000039](../agents/web_agent.py#L39) |
 | [agents/web_agent.py](../agents/web_agent.py#L40) | متغير/ثابت Python | MAX_HISTORY_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 40 | [SRC-1AE03B9EC3-L000040](../agents/web_agent.py#L40) |
