@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from agents.research import (
+    classify_source,
     compact_search_query,
     evidence_signal_report,
     fallback_plan,
@@ -351,3 +352,11 @@ def test_followup_plan_does_not_inherit_unrelated_social_intent():
     plan = fallback_plan("اشرح طريقة عمل المحرك الكهربائي", history)
     assert plan["social_focus"] is False
     assert plan["platforms"] == []
+
+
+
+def test_source_classification_does_not_trust_lookalike_news_domains():
+    assert classify_source("https://www.reuters.com/world/article")["source_class"] == "news"
+    lookalike = classify_source("https://reuters.com.attacker.example/article")
+    assert lookalike["source_class"] == "general"
+    assert lookalike["domain"] == "reuters.com.attacker.example"
