@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **035**
-- سجلات الأسطر: **780**
-- النطاق: SRC-F725E90B2A-L003108 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **796**
+- النطاق: SRC-F725E90B2A-L003092 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003092](../../tests/test_web_agent.py#L3092) | 3092 | `""` | — |
+| [SRC-F725E90B2A-L003093](../../tests/test_web_agent.py#L3093) | 3093 | `""` | — |
+| [SRC-F725E90B2A-L003094](../../tests/test_web_agent.py#L3094) | 3094 | `"def test_search_web_compacts_request_before_provider_dispatch(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003095](../../tests/test_web_agent.py#L3095) | 3095 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003096](../../tests/test_web_agent.py#L3096) | 3096 | `"    seen = []"` | — |
+| [SRC-F725E90B2A-L003097](../../tests/test_web_agent.py#L3097) | 3097 | `""` | — |
+| [SRC-F725E90B2A-L003098](../../tests/test_web_agent.py#L3098) | 3098 | `"    def capture(query):"` | — |
+| [SRC-F725E90B2A-L003099](../../tests/test_web_agent.py#L3099) | 3099 | `"        seen.append(query)"` | — |
+| [SRC-F725E90B2A-L003100](../../tests/test_web_agent.py#L3100) | 3100 | `"        return []"` | — |
+| [SRC-F725E90B2A-L003101](../../tests/test_web_agent.py#L3101) | 3101 | `""` | — |
+| [SRC-F725E90B2A-L003102](../../tests/test_web_agent.py#L3102) | 3102 | `"    for env_name in ("` | — |
+| [SRC-F725E90B2A-L003103](../../tests/test_web_agent.py#L3103) | 3103 | `"        \"DEEPSEEK_SEARCH_API_KEY\","` | — |
+| [SRC-F725E90B2A-L003104](../../tests/test_web_agent.py#L3104) | 3104 | `"        \"BRAVE_SEARCH_API_KEY\","` | — |
+| [SRC-F725E90B2A-L003105](../../tests/test_web_agent.py#L3105) | 3105 | `"        \"TAVILY_API_KEY\","` | — |
+| [SRC-F725E90B2A-L003106](../../tests/test_web_agent.py#L3106) | 3106 | `"    ):"` | — |
+| [SRC-F725E90B2A-L003107](../../tests/test_web_agent.py#L3107) | 3107 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
 | [SRC-F725E90B2A-L003108](../../tests/test_web_agent.py#L3108) | 3108 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", capture)"` | — |
 | [SRC-F725E90B2A-L003109](../../tests/test_web_agent.py#L3109) | 3109 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", capture)"` | — |
 | [SRC-F725E90B2A-L003110](../../tests/test_web_agent.py#L3110) | 3110 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000069 إلى SRC-E599346ABE-L000299
+- النطاق: SRC-26428BDA96-L000053 إلى SRC-E599346ABE-L000283
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000053](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L53) | 53 | `""` | — |
+| [SRC-26428BDA96-L000054](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L54) | 54 | `"### نتائج CI المثبتة من GitHub Actions"` | — |
+| [SRC-26428BDA96-L000055](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L55) | 55 | `"\| الفحص \| النتيجة المسجلة \| ما تثبته النتيجة وما لا تثبته \|"` | — |
+| [SRC-26428BDA96-L000056](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L56) | 56 | `"\|---\|---\|---\|"` | — |
+| [SRC-26428BDA96-L000057](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L57) | 57 | `"\| Python 3.11 — Ruff \| PASS \| اجتاز فحص الصياغة/النمط المحدد، وليس فحصًا أمنيًا شاملًا \|"` | — |
+| [SRC-26428BDA96-L000058](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L58) | 58 | `"\| Python 3.11 — pytest \| PASS \| اجتازت مجموعة الاختبارات الحالية على بيئة CI \|"` | — |
+| [SRC-26428BDA96-L000059](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L59) | 59 | `"\| Python 3.12 — Ruff \| PASS \| اجتاز فحص الصياغة/النمط المحدد \|"` | — |
+| [SRC-26428BDA96-L000060](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L60) | 60 | `"\| Python 3.12 — pytest \| PASS \| اجتازت مجموعة الاختبارات الحالية على بيئة CI \|"` | — |
+| [SRC-26428BDA96-L000061](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L61) | 61 | `"\| Docker build \| PASS \| أمكن بناء الصورة على CI \|"` | — |
+| [SRC-26428BDA96-L000062](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L62) | 62 | `"\| Smoke test للحاوية \| PASS \| استجابت health، ورُفضت طلبات غير مصادق عليها، وقُبلت طلبات مصادق عليها المحددة في السكربت \|"` | — |
+| [SRC-26428BDA96-L000063](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L63) | 63 | `""` | — |
+| [SRC-26428BDA96-L000064](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L64) | 64 | `"روابط تشغيل CI: [Python 3.11](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864363)، [Python 3.12](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864528)، [Docker + protected API smoke test](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864488)."` | — |
+| [SRC-26428BDA96-L000065](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) | 65 | `""` | — |
+| [SRC-26428BDA96-L000066](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L66) | 66 | `"**حدود التحقق:** لم أشغّل الاختبارات محليًا داخل بيئة مستنسخة في هذه الجولة؛ استند تأكيد نجاح الاختبارات إلى نتائج CI الفعلية أعلاه. لم أنفذ اختبار اختراق حيًا، أو اختبار حمل، أو استدعاءً فعليًا بمفاتيح المستخدم لمزودي البحث/النماذج، أو اختبارًا على نشر Render الفعلي. لا تتضمن هذه النتيجة ادعاء بأن تلك الاختبارات حدثت."` | — |
+| [SRC-26428BDA96-L000067](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L67) | 67 | `""` | — |
+| [SRC-26428BDA96-L000068](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L68) | 68 | `"## 3. معنى الحالات المستخدمة"` | — |
 | [SRC-26428BDA96-L000069](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L69) | 69 | `""` | — |
 | [SRC-26428BDA96-L000070](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L70) | 70 | `"- **VERIFIED — ضمن نطاق محدد:** توجد شواهد مباشرة من الكود و/أو اختبار تلقائي يثبت السلوك المحدد فقط؛ لا يعني ضمانًا شاملًا."` | — |
 | [SRC-26428BDA96-L000071](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L71) | 71 | `"- **INFERRED — موجود جزئيًا/استدلالي:** توجد آلية واضحة في الكود، لكن لم يُثبت كل سلوكها باختبار مباشر أو بيئة حية."` | — |
@@ -854,19 +870,3 @@
 | [SRC-E599346ABE-L000281](../generate_index.py#L281) | 281 | `"            for target in node.targets:"` | — |
 | [SRC-E599346ABE-L000282](../generate_index.py#L282) | 282 | `"                self._record_assignment_target(target, node.lineno)"` | — |
 | [SRC-E599346ABE-L000283](../generate_index.py#L283) | 283 | `"        self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000284](../generate_index.py#L284) | 284 | `""` | — |
-| [SRC-E599346ABE-L000285](../generate_index.py#L285) | 285 | `"    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:"` | — |
-| [SRC-E599346ABE-L000286](../generate_index.py#L286) | 286 | `"        \"\"\"Index annotated module/class assignments without counting local variables.\"\"\""` | — |
-| [SRC-E599346ABE-L000287](../generate_index.py#L287) | 287 | `"        if self.function_depth == 0:"` | — |
-| [SRC-E599346ABE-L000288](../generate_index.py#L288) | 288 | `"            self._record_assignment_target(node.target, node.lineno)"` | — |
-| [SRC-E599346ABE-L000289](../generate_index.py#L289) | 289 | `"        self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000290](../generate_index.py#L290) | 290 | `""` | — |
-| [SRC-E599346ABE-L000291](../generate_index.py#L291) | 291 | `"    def visit_ClassDef(self, node: ast.ClassDef) -> None:"` | — |
-| [SRC-E599346ABE-L000292](../generate_index.py#L292) | 292 | `"        \"\"\"Record a class and recursively inspect its body.\"\"\""` | — |
-| [SRC-E599346ABE-L000293](../generate_index.py#L293) | 293 | `"        self._record_definition(node, \"كلاس\")"` | — |
-| [SRC-E599346ABE-L000294](../generate_index.py#L294) | 294 | `"        self.scope.append(node.name)"` | — |
-| [SRC-E599346ABE-L000295](../generate_index.py#L295) | 295 | `"        try:"` | — |
-| [SRC-E599346ABE-L000296](../generate_index.py#L296) | 296 | `"            self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000297](../generate_index.py#L297) | 297 | `"        finally:"` | — |
-| [SRC-E599346ABE-L000298](../generate_index.py#L298) | 298 | `"            self.scope.pop()"` | — |
-| [SRC-E599346ABE-L000299](../generate_index.py#L299) | 299 | `""` | — |

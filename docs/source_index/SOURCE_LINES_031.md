@@ -4,9 +4,22 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000013 إلى SRC-F725E90B2A-L000707
+- النطاق: SRC-2614DCB6FB-L000130 إلى SRC-F725E90B2A-L000691
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-2614DCB6FB — [tests/test_search_code.py](../../tests/test_search_code.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-2614DCB6FB-L000130](../../tests/test_search_code.py#L130) | 130 | `"    assert exit_code == 0"` | — |
+| [SRC-2614DCB6FB-L000131](../../tests/test_search_code.py#L131) | 131 | `"    assert \"blob/fix/cli-review/app.py#L1\" in output"` | — |
+| [SRC-2614DCB6FB-L000132](../../tests/test_search_code.py#L132) | 132 | `"    assert \"blob/main/app.py#L1\" not in output"` | — |
+| [SRC-2614DCB6FB-L000133](../../tests/test_search_code.py#L133) | 133 | `""` | — |
 ## اختبارات
 
 ### FILE-1C0D3D1206 — [tests/test_sqlite_backup_restore.py](../../tests/test_sqlite_backup_restore.py#L1)
@@ -16,6 +29,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000001](../../tests/test_sqlite_backup_restore.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-1C0D3D1206-L000002](../../tests/test_sqlite_backup_restore.py#L2) | 2 | `""` | — |
+| [SRC-1C0D3D1206-L000003](../../tests/test_sqlite_backup_restore.py#L3) | 3 | `"import sqlite3"` | — |
+| [SRC-1C0D3D1206-L000004](../../tests/test_sqlite_backup_restore.py#L4) | 4 | `""` | — |
+| [SRC-1C0D3D1206-L000005](../../tests/test_sqlite_backup_restore.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-1C0D3D1206-L000006](../../tests/test_sqlite_backup_restore.py#L6) | 6 | `""` | — |
+| [SRC-1C0D3D1206-L000007](../../tests/test_sqlite_backup_restore.py#L7) | 7 | `"from agents.omarai import LeadStore"` | — |
+| [SRC-1C0D3D1206-L000008](../../tests/test_sqlite_backup_restore.py#L8) | 8 | `"from scripts.sqlite_backup_restore import BackupError, backup_database, restore_database"` | — |
+| [SRC-1C0D3D1206-L000009](../../tests/test_sqlite_backup_restore.py#L9) | 9 | `""` | — |
+| [SRC-1C0D3D1206-L000010](../../tests/test_sqlite_backup_restore.py#L10) | 10 | `""` | — |
+| [SRC-1C0D3D1206-L000011](../../tests/test_sqlite_backup_restore.py#L11) | 11 | `"def test_backup_and_restore_preserve_omarai_leads(tmp_path):"` | — |
+| [SRC-1C0D3D1206-L000012](../../tests/test_sqlite_backup_restore.py#L12) | 12 | `"    source_path = tmp_path / \"live.sqlite3\""` | — |
 | [SRC-1C0D3D1206-L000013](../../tests/test_sqlite_backup_restore.py#L13) | 13 | `"    source = LeadStore(source_path)"` | — |
 | [SRC-1C0D3D1206-L000014](../../tests/test_sqlite_backup_restore.py#L14) | 14 | `"    first, created_first = source.add("` | — |
 | [SRC-1C0D3D1206-L000015](../../tests/test_sqlite_backup_restore.py#L15) | 15 | `"        \"بدور على شقة في التجمع وممكن معاينة\","` | — |
@@ -809,19 +834,3 @@
 | [SRC-F725E90B2A-L000689](../../tests/test_web_agent.py#L689) | 689 | `""` | — |
 | [SRC-F725E90B2A-L000690](../../tests/test_web_agent.py#L690) | 690 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L000691](../../tests/test_web_agent.py#L691) | 691 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L000692](../../tests/test_web_agent.py#L692) | 692 | `"            return self"` | — |
-| [SRC-F725E90B2A-L000693](../../tests/test_web_agent.py#L693) | 693 | `""` | — |
-| [SRC-F725E90B2A-L000694](../../tests/test_web_agent.py#L694) | 694 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-F725E90B2A-L000695](../../tests/test_web_agent.py#L695) | 695 | `"            return False"` | — |
-| [SRC-F725E90B2A-L000696](../../tests/test_web_agent.py#L696) | 696 | `""` | — |
-| [SRC-F725E90B2A-L000697](../../tests/test_web_agent.py#L697) | 697 | `"        def read(self, limit):"` | — |
-| [SRC-F725E90B2A-L000698](../../tests/test_web_agent.py#L698) | 698 | `"            return json.dumps({"` | — |
-| [SRC-F725E90B2A-L000699](../../tests/test_web_agent.py#L699) | 699 | `"                \"choices\": [{"` | — |
-| [SRC-F725E90B2A-L000700](../../tests/test_web_agent.py#L700) | 700 | `"                    \"message\": {\"content\": \"إجابة من النموذج الاحتياطي\"},"` | — |
-| [SRC-F725E90B2A-L000701](../../tests/test_web_agent.py#L701) | 701 | `"                    \"finish_reason\": \"stop\","` | — |
-| [SRC-F725E90B2A-L000702](../../tests/test_web_agent.py#L702) | 702 | `"                }]"` | — |
-| [SRC-F725E90B2A-L000703](../../tests/test_web_agent.py#L703) | 703 | `"            }).encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L000704](../../tests/test_web_agent.py#L704) | 704 | `""` | — |
-| [SRC-F725E90B2A-L000705](../../tests/test_web_agent.py#L705) | 705 | `"    def fake_urlopen(request, timeout):"` | — |
-| [SRC-F725E90B2A-L000706](../../tests/test_web_agent.py#L706) | 706 | `"        payload = json.loads(request.data.decode(\"utf-8\"))"` | — |
-| [SRC-F725E90B2A-L000707](../../tests/test_web_agent.py#L707) | 707 | `"        called.append(payload[\"model\"])"` | — |

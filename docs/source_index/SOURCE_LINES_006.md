@@ -679,140 +679,140 @@
 | [SRC-1AE03B9EC3-L002275](../../agents/web_agent.py#L2275) | 2275 | `"        self, plan: dict[str, Any]"` | — |
 | [SRC-1AE03B9EC3-L002276](../../agents/web_agent.py#L2276) | 2276 | `"    ) -> tuple[list[dict[str, Any]], list[str], dict[str, Any]]:"` | — |
 | [SRC-1AE03B9EC3-L002277](../../agents/web_agent.py#L2277) | 2277 | `"        \"\"\"Run independent query searches concurrently, fuse evidence, then fetch top pages.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L002278](../../agents/web_agent.py#L2278) | 2278 | `"        queries = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L002279](../../agents/web_agent.py#L2279) | 2279 | `"            compact_search_query(query)"` | — |
-| [SRC-1AE03B9EC3-L002280](../../agents/web_agent.py#L2280) | 2280 | `"            for query in plan.get(\"queries\", [])[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L002281](../../agents/web_agent.py#L2281) | 2281 | `"            if isinstance(query, str) and query.strip()"` | — |
-| [SRC-1AE03B9EC3-L002282](../../agents/web_agent.py#L2282) | 2282 | `"        ))"` | — |
-| [SRC-1AE03B9EC3-L002283](../../agents/web_agent.py#L2283) | 2283 | `"        queries = [query for query in queries if query]"` | — |
-| [SRC-1AE03B9EC3-L002284](../../agents/web_agent.py#L2284) | 2284 | `"        warnings: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L002285](../../agents/web_agent.py#L2285) | 2285 | `"        if not queries and not plan.get(\"direct_urls\"):"` | — |
-| [SRC-1AE03B9EC3-L002286](../../agents/web_agent.py#L2286) | 2286 | `"            warnings.append(\"لم يُنشأ استعلام موضوعي قابل للبحث؛ لم تُستدعَ محركات البحث.\")"` | — |
-| [SRC-1AE03B9EC3-L002287](../../agents/web_agent.py#L2287) | 2287 | `"        batches: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L002288](../../agents/web_agent.py#L2288) | 2288 | `"        query_counts: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L002289](../../agents/web_agent.py#L2289) | 2289 | `"        search_started_queries = 0"` | — |
-| [SRC-1AE03B9EC3-L002290](../../agents/web_agent.py#L2290) | 2290 | `""` | — |
-| [SRC-1AE03B9EC3-L002291](../../agents/web_agent.py#L2291) | 2291 | `"        if queries:"` | — |
-| [SRC-1AE03B9EC3-L002292](../../agents/web_agent.py#L2292) | 2292 | `"            with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:"` | — |
-| [SRC-1AE03B9EC3-L002293](../../agents/web_agent.py#L2293) | 2293 | `"                futures = {pool.submit(self._search_web, query): query for query in queries}"` | — |
-| [SRC-1AE03B9EC3-L002294](../../agents/web_agent.py#L2294) | 2294 | `"                for future in as_completed(futures):"` | — |
-| [SRC-1AE03B9EC3-L002295](../../agents/web_agent.py#L2295) | 2295 | `"                    query = futures[future]"` | — |
-| [SRC-1AE03B9EC3-L002296](../../agents/web_agent.py#L2296) | 2296 | `"                    search_started_queries += 1"` | — |
-| [SRC-1AE03B9EC3-L002297](../../agents/web_agent.py#L2297) | 2297 | `"                    try:"` | — |
-| [SRC-1AE03B9EC3-L002298](../../agents/web_agent.py#L2298) | 2298 | `"                        results = future.result()"` | — |
-| [SRC-1AE03B9EC3-L002299](../../agents/web_agent.py#L2299) | 2299 | `"                    except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L002300](../../agents/web_agent.py#L2300) | 2300 | `"                        warnings.append(f\"تعذر بحث الاستعلام «{query[:70]}»: {exc}\")"` | — |
-| [SRC-1AE03B9EC3-L002301](../../agents/web_agent.py#L2301) | 2301 | `"                        query_counts.append({\"query\": query, \"results\": 0})"` | — |
-| [SRC-1AE03B9EC3-L002302](../../agents/web_agent.py#L2302) | 2302 | `"                        continue"` | — |
-| [SRC-1AE03B9EC3-L002303](../../agents/web_agent.py#L2303) | 2303 | `"                    query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
-| [SRC-1AE03B9EC3-L002304](../../agents/web_agent.py#L2304) | 2304 | `"                    grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
-| [SRC-1AE03B9EC3-L002305](../../agents/web_agent.py#L2305) | 2305 | `"                    for source in results:"` | — |
-| [SRC-1AE03B9EC3-L002306](../../agents/web_agent.py#L2306) | 2306 | `"                        provider = str(source.get(\"provider\") or \"web_search\")"` | — |
-| [SRC-1AE03B9EC3-L002307](../../agents/web_agent.py#L2307) | 2307 | `"                        grouped.setdefault(provider, []).append(source)"` | — |
-| [SRC-1AE03B9EC3-L002308](../../agents/web_agent.py#L2308) | 2308 | `"                    for provider, items in grouped.items():"` | — |
-| [SRC-1AE03B9EC3-L002309](../../agents/web_agent.py#L2309) | 2309 | `"                        items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
-| [SRC-1AE03B9EC3-L002310](../../agents/web_agent.py#L2310) | 2310 | `"                        batches.append({\"query\": query, \"provider\": provider, \"results\": items})"` | — |
-| [SRC-1AE03B9EC3-L002311](../../agents/web_agent.py#L2311) | 2311 | `""` | — |
-| [SRC-1AE03B9EC3-L002312](../../agents/web_agent.py#L2312) | 2312 | `"        # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches"` | — |
-| [SRC-1AE03B9EC3-L002313](../../agents/web_agent.py#L2313) | 2313 | `"        # when initial coverage is thin. This uses observed source/domain/provider coverage,"` | — |
-| [SRC-1AE03B9EC3-L002314](../../agents/web_agent.py#L2314) | 2314 | `"        # not the language model's subjective claim that it has enough evidence."` | — |
-| [SRC-1AE03B9EC3-L002315](../../agents/web_agent.py#L2315) | 2315 | `"        preliminary = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)"` | — |
-| [SRC-1AE03B9EC3-L002316](../../agents/web_agent.py#L2316) | 2316 | `"        preliminary_domains = {"` | — |
-| [SRC-1AE03B9EC3-L002317](../../agents/web_agent.py#L2317) | 2317 | `"            registrable_domain(item.get(\"domain\") or urllib.parse.urlparse(item.get(\"url\", \"\")).hostname)"` | — |
-| [SRC-1AE03B9EC3-L002318](../../agents/web_agent.py#L2318) | 2318 | `"            for item in preliminary"` | — |
-| [SRC-1AE03B9EC3-L002319](../../agents/web_agent.py#L2319) | 2319 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002320](../../agents/web_agent.py#L2320) | 2320 | `"        preliminary_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L002321](../../agents/web_agent.py#L2321) | 2321 | `"        preliminary_providers = {"` | — |
-| [SRC-1AE03B9EC3-L002322](../../agents/web_agent.py#L2322) | 2322 | `"            provider for item in preliminary for provider in item.get(\"providers\", [])"` | — |
-| [SRC-1AE03B9EC3-L002323](../../agents/web_agent.py#L2323) | 2323 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002324](../../agents/web_agent.py#L2324) | 2324 | `"        needs_expansion = ("` | — |
-| [SRC-1AE03B9EC3-L002325](../../agents/web_agent.py#L2325) | 2325 | `"            plan.get(\"depth\") == \"deep\""` | — |
-| [SRC-1AE03B9EC3-L002326](../../agents/web_agent.py#L2326) | 2326 | `"            and (len(preliminary) < 8 or len(preliminary_domains) < 5 or len(preliminary_providers) < 2)"` | — |
-| [SRC-1AE03B9EC3-L002327](../../agents/web_agent.py#L2327) | 2327 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L002328](../../agents/web_agent.py#L2328) | 2328 | `"        expansion_queries: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L002329](../../agents/web_agent.py#L2329) | 2329 | `"        if needs_expansion and len(queries) < MAX_PLAN_QUERIES and queries:"` | — |
-| [SRC-1AE03B9EC3-L002330](../../agents/web_agent.py#L2330) | 2330 | `"            base_query = (queries[0] if queries else \"\")"` | — |
-| [SRC-1AE03B9EC3-L002331](../../agents/web_agent.py#L2331) | 2331 | `"            candidates = ["` | — |
-| [SRC-1AE03B9EC3-L002332](../../agents/web_agent.py#L2332) | 2332 | `"                f\"{base_query} official sources data reports\","` | — |
-| [SRC-1AE03B9EC3-L002333](../../agents/web_agent.py#L2333) | 2333 | `"                f\"{base_query} limitations risks criticism alternatives\","` | — |
-| [SRC-1AE03B9EC3-L002334](../../agents/web_agent.py#L2334) | 2334 | `"                f\"{base_query} recent developments case studies analysis\","` | — |
-| [SRC-1AE03B9EC3-L002335](../../agents/web_agent.py#L2335) | 2335 | `"            ]"` | — |
-| [SRC-1AE03B9EC3-L002336](../../agents/web_agent.py#L2336) | 2336 | `"            existing = {item.casefold() for item in queries}"` | — |
-| [SRC-1AE03B9EC3-L002337](../../agents/web_agent.py#L2337) | 2337 | `"            expansion_queries = []"` | — |
-| [SRC-1AE03B9EC3-L002338](../../agents/web_agent.py#L2338) | 2338 | `"            seen_expansions = set(existing)"` | — |
-| [SRC-1AE03B9EC3-L002339](../../agents/web_agent.py#L2339) | 2339 | `"            for candidate in candidates:"` | — |
-| [SRC-1AE03B9EC3-L002340](../../agents/web_agent.py#L2340) | 2340 | `"                compacted = compact_search_query(candidate)"` | — |
-| [SRC-1AE03B9EC3-L002341](../../agents/web_agent.py#L2341) | 2341 | `"                key = compacted.casefold()"` | — |
-| [SRC-1AE03B9EC3-L002342](../../agents/web_agent.py#L2342) | 2342 | `"                if compacted and key not in seen_expansions:"` | — |
-| [SRC-1AE03B9EC3-L002343](../../agents/web_agent.py#L2343) | 2343 | `"                    expansion_queries.append(compacted)"` | — |
-| [SRC-1AE03B9EC3-L002344](../../agents/web_agent.py#L2344) | 2344 | `"                    seen_expansions.add(key)"` | — |
-| [SRC-1AE03B9EC3-L002345](../../agents/web_agent.py#L2345) | 2345 | `"                if len(expansion_queries) >= max(0, MAX_PLAN_QUERIES - len(queries)):"` | — |
-| [SRC-1AE03B9EC3-L002346](../../agents/web_agent.py#L2346) | 2346 | `"                    break"` | — |
-| [SRC-1AE03B9EC3-L002347](../../agents/web_agent.py#L2347) | 2347 | `"            if expansion_queries:"` | — |
-| [SRC-1AE03B9EC3-L002348](../../agents/web_agent.py#L2348) | 2348 | `"                with ThreadPoolExecutor("` | — |
-| [SRC-1AE03B9EC3-L002349](../../agents/web_agent.py#L2349) | 2349 | `"                    max_workers=min(MAX_RESEARCH_WORKERS, len(expansion_queries))"` | — |
-| [SRC-1AE03B9EC3-L002350](../../agents/web_agent.py#L2350) | 2350 | `"                ) as pool:"` | — |
-| [SRC-1AE03B9EC3-L002351](../../agents/web_agent.py#L2351) | 2351 | `"                    futures = {"` | — |
-| [SRC-1AE03B9EC3-L002352](../../agents/web_agent.py#L2352) | 2352 | `"                        pool.submit(self._search_web, query): query"` | — |
-| [SRC-1AE03B9EC3-L002353](../../agents/web_agent.py#L2353) | 2353 | `"                        for query in expansion_queries"` | — |
-| [SRC-1AE03B9EC3-L002354](../../agents/web_agent.py#L2354) | 2354 | `"                    }"` | — |
-| [SRC-1AE03B9EC3-L002355](../../agents/web_agent.py#L2355) | 2355 | `"                    for future in as_completed(futures):"` | — |
-| [SRC-1AE03B9EC3-L002356](../../agents/web_agent.py#L2356) | 2356 | `"                        query = futures[future]"` | — |
-| [SRC-1AE03B9EC3-L002357](../../agents/web_agent.py#L2357) | 2357 | `"                        search_started_queries += 1"` | — |
-| [SRC-1AE03B9EC3-L002358](../../agents/web_agent.py#L2358) | 2358 | `"                        try:"` | — |
-| [SRC-1AE03B9EC3-L002359](../../agents/web_agent.py#L2359) | 2359 | `"                            results = future.result()"` | — |
-| [SRC-1AE03B9EC3-L002360](../../agents/web_agent.py#L2360) | 2360 | `"                        except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L002361](../../agents/web_agent.py#L2361) | 2361 | `"                            warnings.append("` | — |
-| [SRC-1AE03B9EC3-L002362](../../agents/web_agent.py#L2362) | 2362 | `"                                f\"تعذر بحث زاوية إضافية «{query[:70]}»: {exc}\""` | — |
-| [SRC-1AE03B9EC3-L002363](../../agents/web_agent.py#L2363) | 2363 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L002364](../../agents/web_agent.py#L2364) | 2364 | `"                            query_counts.append({\"query\": query, \"results\": 0})"` | — |
-| [SRC-1AE03B9EC3-L002365](../../agents/web_agent.py#L2365) | 2365 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L002366](../../agents/web_agent.py#L2366) | 2366 | `"                        query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
-| [SRC-1AE03B9EC3-L002367](../../agents/web_agent.py#L2367) | 2367 | `"                        grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
-| [SRC-1AE03B9EC3-L002368](../../agents/web_agent.py#L2368) | 2368 | `"                        for source in results:"` | — |
-| [SRC-1AE03B9EC3-L002369](../../agents/web_agent.py#L2369) | 2369 | `"                            grouped.setdefault("` | — |
-| [SRC-1AE03B9EC3-L002370](../../agents/web_agent.py#L2370) | 2370 | `"                                str(source.get(\"provider\") or \"web_search\"), []"` | — |
-| [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"                            ).append(source)"` | — |
-| [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"                        for provider, items in grouped.items():"` | — |
-| [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"                            items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
-| [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"                            batches.append({"` | — |
-| [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"                                \"query\": query, \"provider\": provider, \"results\": items"` | — |
-| [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"                            })"` | — |
-| [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"                queries.extend(expansion_queries)"` | — |
-| [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `"                plan[\"queries\"] = list(queries)"` | — |
-| [SRC-1AE03B9EC3-L002379](../../agents/web_agent.py#L2379) | 2379 | `""` | — |
-| [SRC-1AE03B9EC3-L002380](../../agents/web_agent.py#L2380) | 2380 | `"        # Google News RSS is included concurrently by _search_web for freshness-bearing queries."` | — |
-| [SRC-1AE03B9EC3-L002381](../../agents/web_agent.py#L2381) | 2381 | `""` | — |
-| [SRC-1AE03B9EC3-L002382](../../agents/web_agent.py#L2382) | 2382 | `"        # A social-focused task uses public social endpoints in parallel with indexed"` | — |
-| [SRC-1AE03B9EC3-L002383](../../agents/web_agent.py#L2383) | 2383 | `"        # public pages. No login, private profile, session cookie or anti-bot bypass."` | — |
-| [SRC-1AE03B9EC3-L002384](../../agents/web_agent.py#L2384) | 2384 | `"        social_results: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L002385](../../agents/web_agent.py#L2385) | 2385 | `"        if plan.get(\"social_focus\") and queries:"` | — |
-| [SRC-1AE03B9EC3-L002386](../../agents/web_agent.py#L2386) | 2386 | `"            requested_platforms = plan.get(\"platforms\") or []"` | — |
-| [SRC-1AE03B9EC3-L002387](../../agents/web_agent.py#L2387) | 2387 | `"            if requested_platforms:"` | — |
-| [SRC-1AE03B9EC3-L002388](../../agents/web_agent.py#L2388) | 2388 | `"                platforms = list(dict.fromkeys(requested_platforms))"` | — |
-| [SRC-1AE03B9EC3-L002389](../../agents/web_agent.py#L2389) | 2389 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L002390](../../agents/web_agent.py#L2390) | 2390 | `"                # Broad social research: always try no-key public sources, and add"` | — |
-| [SRC-1AE03B9EC3-L002391](../../agents/web_agent.py#L2391) | 2391 | `"                # official platform connectors only when they are configured."` | — |
-| [SRC-1AE03B9EC3-L002392](../../agents/web_agent.py#L2392) | 2392 | `"                platforms = [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-1AE03B9EC3-L002393](../../agents/web_agent.py#L2393) | 2393 | `"                optional_connectors = {"` | — |
-| [SRC-1AE03B9EC3-L002394](../../agents/web_agent.py#L2394) | 2394 | `"                    \"facebook\": bool("` | — |
-| [SRC-1AE03B9EC3-L002395](../../agents/web_agent.py#L2395) | 2395 | `"                        os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002396](../../agents/web_agent.py#L2396) | 2396 | `"                        and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002397](../../agents/web_agent.py#L2397) | 2397 | `"                    ),"` | — |
-| [SRC-1AE03B9EC3-L002398](../../agents/web_agent.py#L2398) | 2398 | `"                    \"instagram\": bool("` | — |
-| [SRC-1AE03B9EC3-L002399](../../agents/web_agent.py#L2399) | 2399 | `"                        os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002400](../../agents/web_agent.py#L2400) | 2400 | `"                        and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"                    ),"` | — |
-| [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"                    \"x\": bool(os.getenv(\"X_BEARER_TOKEN\", \"\").strip()),"` | — |
-| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"                    \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
-| [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"                platforms.extend("` | — |
-| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"                    name for name, ready in optional_connectors.items()"` | — |
-| [SRC-1AE03B9EC3-L002407](../../agents/web_agent.py#L2407) | 2407 | `"                    if ready and name not in platforms"` | — |
-| [SRC-1AE03B9EC3-L002408](../../agents/web_agent.py#L2408) | 2408 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"            social_results, social_warnings = self._search_social((queries[0] if queries else \"\"), platforms)"` | — |
-| [SRC-1AE03B9EC3-L002410](../../agents/web_agent.py#L2410) | 2410 | `"            warnings.extend(social_warnings)"` | — |
-| [SRC-1AE03B9EC3-L002411](../../agents/web_agent.py#L2411) | 2411 | `"            social_groups: dict[str, list[dict[str, Any]]] = {}"` | — |
-| [SRC-1AE03B9EC3-L002412](../../agents/web_agent.py#L2412) | 2412 | `"            for source in social_results:"` | — |
-| [SRC-1AE03B9EC3-L002413](../../agents/web_agent.py#L2413) | 2413 | `"                social_groups.setdefault(str(source.get(\"provider\") or \"social\"), []).append(source)"` | — |
-| [SRC-1AE03B9EC3-L002414](../../agents/web_agent.py#L2414) | 2414 | `"            for provider, items in social_groups.items():"` | — |
+| [SRC-1AE03B9EC3-L002278](../../agents/web_agent.py#L2278) | 2278 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002279](../../agents/web_agent.py#L2279) | 2279 | `"            query_limit = int(plan.get(\"query_limit\", MAX_PLAN_QUERIES))"` | — |
+| [SRC-1AE03B9EC3-L002280](../../agents/web_agent.py#L2280) | 2280 | `"        except (TypeError, ValueError, OverflowError):"` | — |
+| [SRC-1AE03B9EC3-L002281](../../agents/web_agent.py#L2281) | 2281 | `"            query_limit = MAX_PLAN_QUERIES"` | — |
+| [SRC-1AE03B9EC3-L002282](../../agents/web_agent.py#L2282) | 2282 | `"        query_limit = max(1, min(query_limit, MAX_PLAN_QUERIES))"` | — |
+| [SRC-1AE03B9EC3-L002283](../../agents/web_agent.py#L2283) | 2283 | `"        queries = list(dict.fromkeys("` | — |
+| [SRC-1AE03B9EC3-L002284](../../agents/web_agent.py#L2284) | 2284 | `"            compact_search_query(query)"` | — |
+| [SRC-1AE03B9EC3-L002285](../../agents/web_agent.py#L2285) | 2285 | `"            for query in plan.get(\"queries\", [])[:query_limit]"` | — |
+| [SRC-1AE03B9EC3-L002286](../../agents/web_agent.py#L2286) | 2286 | `"            if isinstance(query, str) and query.strip()"` | — |
+| [SRC-1AE03B9EC3-L002287](../../agents/web_agent.py#L2287) | 2287 | `"        ))"` | — |
+| [SRC-1AE03B9EC3-L002288](../../agents/web_agent.py#L2288) | 2288 | `"        queries = [query for query in queries if query]"` | — |
+| [SRC-1AE03B9EC3-L002289](../../agents/web_agent.py#L2289) | 2289 | `"        warnings: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L002290](../../agents/web_agent.py#L2290) | 2290 | `"        if not queries and not plan.get(\"direct_urls\"):"` | — |
+| [SRC-1AE03B9EC3-L002291](../../agents/web_agent.py#L2291) | 2291 | `"            warnings.append(\"لم يُنشأ استعلام موضوعي قابل للبحث؛ لم تُستدعَ محركات البحث.\")"` | — |
+| [SRC-1AE03B9EC3-L002292](../../agents/web_agent.py#L2292) | 2292 | `"        batches: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L002293](../../agents/web_agent.py#L2293) | 2293 | `"        query_counts: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L002294](../../agents/web_agent.py#L2294) | 2294 | `"        search_started_queries = 0"` | — |
+| [SRC-1AE03B9EC3-L002295](../../agents/web_agent.py#L2295) | 2295 | `""` | — |
+| [SRC-1AE03B9EC3-L002296](../../agents/web_agent.py#L2296) | 2296 | `"        if queries:"` | — |
+| [SRC-1AE03B9EC3-L002297](../../agents/web_agent.py#L2297) | 2297 | `"            with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:"` | — |
+| [SRC-1AE03B9EC3-L002298](../../agents/web_agent.py#L2298) | 2298 | `"                futures = {pool.submit(self._search_web, query): query for query in queries}"` | — |
+| [SRC-1AE03B9EC3-L002299](../../agents/web_agent.py#L2299) | 2299 | `"                for future in as_completed(futures):"` | — |
+| [SRC-1AE03B9EC3-L002300](../../agents/web_agent.py#L2300) | 2300 | `"                    query = futures[future]"` | — |
+| [SRC-1AE03B9EC3-L002301](../../agents/web_agent.py#L2301) | 2301 | `"                    search_started_queries += 1"` | — |
+| [SRC-1AE03B9EC3-L002302](../../agents/web_agent.py#L2302) | 2302 | `"                    try:"` | — |
+| [SRC-1AE03B9EC3-L002303](../../agents/web_agent.py#L2303) | 2303 | `"                        results = future.result()"` | — |
+| [SRC-1AE03B9EC3-L002304](../../agents/web_agent.py#L2304) | 2304 | `"                    except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L002305](../../agents/web_agent.py#L2305) | 2305 | `"                        warnings.append(f\"تعذر بحث الاستعلام «{query[:70]}»: {exc}\")"` | — |
+| [SRC-1AE03B9EC3-L002306](../../agents/web_agent.py#L2306) | 2306 | `"                        query_counts.append({\"query\": query, \"results\": 0})"` | — |
+| [SRC-1AE03B9EC3-L002307](../../agents/web_agent.py#L2307) | 2307 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L002308](../../agents/web_agent.py#L2308) | 2308 | `"                    query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
+| [SRC-1AE03B9EC3-L002309](../../agents/web_agent.py#L2309) | 2309 | `"                    grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
+| [SRC-1AE03B9EC3-L002310](../../agents/web_agent.py#L2310) | 2310 | `"                    for source in results:"` | — |
+| [SRC-1AE03B9EC3-L002311](../../agents/web_agent.py#L2311) | 2311 | `"                        provider = str(source.get(\"provider\") or \"web_search\")"` | — |
+| [SRC-1AE03B9EC3-L002312](../../agents/web_agent.py#L2312) | 2312 | `"                        grouped.setdefault(provider, []).append(source)"` | — |
+| [SRC-1AE03B9EC3-L002313](../../agents/web_agent.py#L2313) | 2313 | `"                    for provider, items in grouped.items():"` | — |
+| [SRC-1AE03B9EC3-L002314](../../agents/web_agent.py#L2314) | 2314 | `"                        items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
+| [SRC-1AE03B9EC3-L002315](../../agents/web_agent.py#L2315) | 2315 | `"                        batches.append({\"query\": query, \"provider\": provider, \"results\": items})"` | — |
+| [SRC-1AE03B9EC3-L002316](../../agents/web_agent.py#L2316) | 2316 | `""` | — |
+| [SRC-1AE03B9EC3-L002317](../../agents/web_agent.py#L2317) | 2317 | `"        # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches"` | — |
+| [SRC-1AE03B9EC3-L002318](../../agents/web_agent.py#L2318) | 2318 | `"        # when initial coverage is thin. This uses observed source/domain/provider coverage,"` | — |
+| [SRC-1AE03B9EC3-L002319](../../agents/web_agent.py#L2319) | 2319 | `"        # not the language model's subjective claim that it has enough evidence."` | — |
+| [SRC-1AE03B9EC3-L002320](../../agents/web_agent.py#L2320) | 2320 | `"        preliminary = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)"` | — |
+| [SRC-1AE03B9EC3-L002321](../../agents/web_agent.py#L2321) | 2321 | `"        preliminary_domains = {"` | — |
+| [SRC-1AE03B9EC3-L002322](../../agents/web_agent.py#L2322) | 2322 | `"            registrable_domain(item.get(\"domain\") or urllib.parse.urlparse(item.get(\"url\", \"\")).hostname)"` | — |
+| [SRC-1AE03B9EC3-L002323](../../agents/web_agent.py#L2323) | 2323 | `"            for item in preliminary"` | — |
+| [SRC-1AE03B9EC3-L002324](../../agents/web_agent.py#L2324) | 2324 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002325](../../agents/web_agent.py#L2325) | 2325 | `"        preliminary_domains.discard(\"\")"` | — |
+| [SRC-1AE03B9EC3-L002326](../../agents/web_agent.py#L2326) | 2326 | `"        preliminary_providers = {"` | — |
+| [SRC-1AE03B9EC3-L002327](../../agents/web_agent.py#L2327) | 2327 | `"            provider for item in preliminary for provider in item.get(\"providers\", [])"` | — |
+| [SRC-1AE03B9EC3-L002328](../../agents/web_agent.py#L2328) | 2328 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002329](../../agents/web_agent.py#L2329) | 2329 | `"        needs_expansion = ("` | — |
+| [SRC-1AE03B9EC3-L002330](../../agents/web_agent.py#L2330) | 2330 | `"            plan.get(\"depth\") == \"deep\""` | — |
+| [SRC-1AE03B9EC3-L002331](../../agents/web_agent.py#L2331) | 2331 | `"            and (len(preliminary) < 8 or len(preliminary_domains) < 5 or len(preliminary_providers) < 2)"` | — |
+| [SRC-1AE03B9EC3-L002332](../../agents/web_agent.py#L2332) | 2332 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L002333](../../agents/web_agent.py#L2333) | 2333 | `"        expansion_queries: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L002334](../../agents/web_agent.py#L2334) | 2334 | `"        if needs_expansion and len(queries) < query_limit and queries:"` | — |
+| [SRC-1AE03B9EC3-L002335](../../agents/web_agent.py#L2335) | 2335 | `"            base_query = (queries[0] if queries else \"\")"` | — |
+| [SRC-1AE03B9EC3-L002336](../../agents/web_agent.py#L2336) | 2336 | `"            candidates = ["` | — |
+| [SRC-1AE03B9EC3-L002337](../../agents/web_agent.py#L2337) | 2337 | `"                f\"{base_query} official sources data reports\","` | — |
+| [SRC-1AE03B9EC3-L002338](../../agents/web_agent.py#L2338) | 2338 | `"                f\"{base_query} limitations risks criticism alternatives\","` | — |
+| [SRC-1AE03B9EC3-L002339](../../agents/web_agent.py#L2339) | 2339 | `"                f\"{base_query} recent developments case studies analysis\","` | — |
+| [SRC-1AE03B9EC3-L002340](../../agents/web_agent.py#L2340) | 2340 | `"            ]"` | — |
+| [SRC-1AE03B9EC3-L002341](../../agents/web_agent.py#L2341) | 2341 | `"            existing = {item.casefold() for item in queries}"` | — |
+| [SRC-1AE03B9EC3-L002342](../../agents/web_agent.py#L2342) | 2342 | `"            expansion_queries = []"` | — |
+| [SRC-1AE03B9EC3-L002343](../../agents/web_agent.py#L2343) | 2343 | `"            seen_expansions = set(existing)"` | — |
+| [SRC-1AE03B9EC3-L002344](../../agents/web_agent.py#L2344) | 2344 | `"            for candidate in candidates:"` | — |
+| [SRC-1AE03B9EC3-L002345](../../agents/web_agent.py#L2345) | 2345 | `"                compacted = compact_search_query(candidate)"` | — |
+| [SRC-1AE03B9EC3-L002346](../../agents/web_agent.py#L2346) | 2346 | `"                key = compacted.casefold()"` | — |
+| [SRC-1AE03B9EC3-L002347](../../agents/web_agent.py#L2347) | 2347 | `"                if compacted and key not in seen_expansions:"` | — |
+| [SRC-1AE03B9EC3-L002348](../../agents/web_agent.py#L2348) | 2348 | `"                    expansion_queries.append(compacted)"` | — |
+| [SRC-1AE03B9EC3-L002349](../../agents/web_agent.py#L2349) | 2349 | `"                    seen_expansions.add(key)"` | — |
+| [SRC-1AE03B9EC3-L002350](../../agents/web_agent.py#L2350) | 2350 | `"                if len(expansion_queries) >= max(0, query_limit - len(queries)):"` | — |
+| [SRC-1AE03B9EC3-L002351](../../agents/web_agent.py#L2351) | 2351 | `"                    break"` | — |
+| [SRC-1AE03B9EC3-L002352](../../agents/web_agent.py#L2352) | 2352 | `"            if expansion_queries:"` | — |
+| [SRC-1AE03B9EC3-L002353](../../agents/web_agent.py#L2353) | 2353 | `"                with ThreadPoolExecutor("` | — |
+| [SRC-1AE03B9EC3-L002354](../../agents/web_agent.py#L2354) | 2354 | `"                    max_workers=min(MAX_RESEARCH_WORKERS, len(expansion_queries))"` | — |
+| [SRC-1AE03B9EC3-L002355](../../agents/web_agent.py#L2355) | 2355 | `"                ) as pool:"` | — |
+| [SRC-1AE03B9EC3-L002356](../../agents/web_agent.py#L2356) | 2356 | `"                    futures = {"` | — |
+| [SRC-1AE03B9EC3-L002357](../../agents/web_agent.py#L2357) | 2357 | `"                        pool.submit(self._search_web, query): query"` | — |
+| [SRC-1AE03B9EC3-L002358](../../agents/web_agent.py#L2358) | 2358 | `"                        for query in expansion_queries"` | — |
+| [SRC-1AE03B9EC3-L002359](../../agents/web_agent.py#L2359) | 2359 | `"                    }"` | — |
+| [SRC-1AE03B9EC3-L002360](../../agents/web_agent.py#L2360) | 2360 | `"                    for future in as_completed(futures):"` | — |
+| [SRC-1AE03B9EC3-L002361](../../agents/web_agent.py#L2361) | 2361 | `"                        query = futures[future]"` | — |
+| [SRC-1AE03B9EC3-L002362](../../agents/web_agent.py#L2362) | 2362 | `"                        search_started_queries += 1"` | — |
+| [SRC-1AE03B9EC3-L002363](../../agents/web_agent.py#L2363) | 2363 | `"                        try:"` | — |
+| [SRC-1AE03B9EC3-L002364](../../agents/web_agent.py#L2364) | 2364 | `"                            results = future.result()"` | — |
+| [SRC-1AE03B9EC3-L002365](../../agents/web_agent.py#L2365) | 2365 | `"                        except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L002366](../../agents/web_agent.py#L2366) | 2366 | `"                            warnings.append("` | — |
+| [SRC-1AE03B9EC3-L002367](../../agents/web_agent.py#L2367) | 2367 | `"                                f\"تعذر بحث زاوية إضافية «{query[:70]}»: {exc}\""` | — |
+| [SRC-1AE03B9EC3-L002368](../../agents/web_agent.py#L2368) | 2368 | `"                            )"` | — |
+| [SRC-1AE03B9EC3-L002369](../../agents/web_agent.py#L2369) | 2369 | `"                            query_counts.append({\"query\": query, \"results\": 0})"` | — |
+| [SRC-1AE03B9EC3-L002370](../../agents/web_agent.py#L2370) | 2370 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"                        query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
+| [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"                        grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
+| [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"                        for source in results:"` | — |
+| [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"                            grouped.setdefault("` | — |
+| [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"                                str(source.get(\"provider\") or \"web_search\"), []"` | — |
+| [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"                            ).append(source)"` | — |
+| [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"                        for provider, items in grouped.items():"` | — |
+| [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `"                            items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
+| [SRC-1AE03B9EC3-L002379](../../agents/web_agent.py#L2379) | 2379 | `"                            batches.append({"` | — |
+| [SRC-1AE03B9EC3-L002380](../../agents/web_agent.py#L2380) | 2380 | `"                                \"query\": query, \"provider\": provider, \"results\": items"` | — |
+| [SRC-1AE03B9EC3-L002381](../../agents/web_agent.py#L2381) | 2381 | `"                            })"` | — |
+| [SRC-1AE03B9EC3-L002382](../../agents/web_agent.py#L2382) | 2382 | `"                queries.extend(expansion_queries)"` | — |
+| [SRC-1AE03B9EC3-L002383](../../agents/web_agent.py#L2383) | 2383 | `"                plan[\"queries\"] = list(queries)"` | — |
+| [SRC-1AE03B9EC3-L002384](../../agents/web_agent.py#L2384) | 2384 | `""` | — |
+| [SRC-1AE03B9EC3-L002385](../../agents/web_agent.py#L2385) | 2385 | `"        # Google News RSS is included concurrently by _search_web for freshness-bearing queries."` | — |
+| [SRC-1AE03B9EC3-L002386](../../agents/web_agent.py#L2386) | 2386 | `""` | — |
+| [SRC-1AE03B9EC3-L002387](../../agents/web_agent.py#L2387) | 2387 | `"        # A social-focused task uses public social endpoints in parallel with indexed"` | — |
+| [SRC-1AE03B9EC3-L002388](../../agents/web_agent.py#L2388) | 2388 | `"        # public pages. No login, private profile, session cookie or anti-bot bypass."` | — |
+| [SRC-1AE03B9EC3-L002389](../../agents/web_agent.py#L2389) | 2389 | `"        social_results: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L002390](../../agents/web_agent.py#L2390) | 2390 | `"        if plan.get(\"social_focus\") and queries:"` | — |
+| [SRC-1AE03B9EC3-L002391](../../agents/web_agent.py#L2391) | 2391 | `"            requested_platforms = plan.get(\"platforms\") or []"` | — |
+| [SRC-1AE03B9EC3-L002392](../../agents/web_agent.py#L2392) | 2392 | `"            if requested_platforms:"` | — |
+| [SRC-1AE03B9EC3-L002393](../../agents/web_agent.py#L2393) | 2393 | `"                platforms = list(dict.fromkeys(requested_platforms))"` | — |
+| [SRC-1AE03B9EC3-L002394](../../agents/web_agent.py#L2394) | 2394 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L002395](../../agents/web_agent.py#L2395) | 2395 | `"                # Broad social research: always try no-key public sources, and add"` | — |
+| [SRC-1AE03B9EC3-L002396](../../agents/web_agent.py#L2396) | 2396 | `"                # official platform connectors only when they are configured."` | — |
+| [SRC-1AE03B9EC3-L002397](../../agents/web_agent.py#L2397) | 2397 | `"                platforms = [\"reddit\", \"bluesky\"]"` | — |
+| [SRC-1AE03B9EC3-L002398](../../agents/web_agent.py#L2398) | 2398 | `"                optional_connectors = {"` | — |
+| [SRC-1AE03B9EC3-L002399](../../agents/web_agent.py#L2399) | 2399 | `"                    \"facebook\": bool("` | — |
+| [SRC-1AE03B9EC3-L002400](../../agents/web_agent.py#L2400) | 2400 | `"                        os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"                        and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"                    ),"` | — |
+| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"                    \"instagram\": bool("` | — |
+| [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"                        os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"                        and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"                    ),"` | — |
+| [SRC-1AE03B9EC3-L002407](../../agents/web_agent.py#L2407) | 2407 | `"                    \"x\": bool(os.getenv(\"X_BEARER_TOKEN\", \"\").strip()),"` | — |
+| [SRC-1AE03B9EC3-L002408](../../agents/web_agent.py#L2408) | 2408 | `"                    \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
+| [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L002410](../../agents/web_agent.py#L2410) | 2410 | `"                platforms.extend("` | — |
+| [SRC-1AE03B9EC3-L002411](../../agents/web_agent.py#L2411) | 2411 | `"                    name for name, ready in optional_connectors.items()"` | — |
+| [SRC-1AE03B9EC3-L002412](../../agents/web_agent.py#L2412) | 2412 | `"                    if ready and name not in platforms"` | — |
+| [SRC-1AE03B9EC3-L002413](../../agents/web_agent.py#L2413) | 2413 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002414](../../agents/web_agent.py#L2414) | 2414 | `"            social_results, social_warnings = self._search_social((queries[0] if queries else \"\"), platforms)"` | — |

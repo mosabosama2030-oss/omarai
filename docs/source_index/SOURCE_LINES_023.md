@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000402 إلى SRC-90FAA34ADE-L001201
+- النطاق: SRC-90FAA34ADE-L000386 إلى SRC-90FAA34ADE-L001185
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000386](../../tests/fixtures/answer_quality_cases.json#L386) | 386 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000387](../../tests/fixtures/answer_quality_cases.json#L387) | 387 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000388](../../tests/fixtures/answer_quality_cases.json#L388) | 388 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000389](../../tests/fixtures/answer_quality_cases.json#L389) | 389 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000390](../../tests/fixtures/answer_quality_cases.json#L390) | 390 | `"      \"case_id\": \"AQ-016\","` | — |
+| [SRC-90FAA34ADE-L000391](../../tests/fixtures/answer_quality_cases.json#L391) | 391 | `"      \"category\": \"empty_or_failed_search\","` | — |
+| [SRC-90FAA34ADE-L000392](../../tests/fixtures/answer_quality_cases.json#L392) | 392 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000393](../../tests/fixtures/answer_quality_cases.json#L393) | 393 | `"      \"question\": \"دورلي على مواعيد مكتب الجوازات في العباسية النهارده، ولو البحث رجّعش نتائج قولي بصراحة.\","` | — |
+| [SRC-90FAA34ADE-L000394](../../tests/fixtures/answer_quality_cases.json#L394) | 394 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000395](../../tests/fixtures/answer_quality_cases.json#L395) | 395 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000396](../../tests/fixtures/answer_quality_cases.json#L396) | 396 | `"        \"يحاول البحث عن ساعات العمل الحالية أو يصرّح بفشل البحث\","` | — |
+| [SRC-90FAA34ADE-L000397](../../tests/fixtures/answer_quality_cases.json#L397) | 397 | `"        \"لا يخترع ساعات فتح أو إغلاق\","` | — |
+| [SRC-90FAA34ADE-L000398](../../tests/fixtures/answer_quality_cases.json#L398) | 398 | `"        \"يفرّق بين عدم العثور على نتائج وبين ثبوت أن المكتب مغلق\""` | — |
+| [SRC-90FAA34ADE-L000399](../../tests/fixtures/answer_quality_cases.json#L399) | 399 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000400](../../tests/fixtures/answer_quality_cases.json#L400) | 400 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000401](../../tests/fixtures/answer_quality_cases.json#L401) | 401 | `"        \"يقدم ساعات عمل بلا مصدر مسترجع\","` | — |
 | [SRC-90FAA34ADE-L000402](../../tests/fixtures/answer_quality_cases.json#L402) | 402 | `"        \"يقول إن المكتب مغلق لمجرد أن النتائج فارغة\""` | — |
 | [SRC-90FAA34ADE-L000403](../../tests/fixtures/answer_quality_cases.json#L403) | 403 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000404](../../tests/fixtures/answer_quality_cases.json#L404) | 404 | `"      \"evidence_fixture\": {"` | — |
@@ -800,19 +816,3 @@
 | [SRC-90FAA34ADE-L001183](../../tests/fixtures/answer_quality_cases.json#L1183) | 1183 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L001184](../../tests/fixtures/answer_quality_cases.json#L1184) | 1184 | `"      \"question\": \"I have one cropped screenshot with no date or source. Can you confirm this is today's official exchange rate?\","` | — |
 | [SRC-90FAA34ADE-L001185](../../tests/fixtures/answer_quality_cases.json#L1185) | 1185 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001186](../../tests/fixtures/answer_quality_cases.json#L1186) | 1186 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001187](../../tests/fixtures/answer_quality_cases.json#L1187) | 1187 | `"        \"Says the screenshot alone cannot authenticate current rate or date\","` | — |
-| [SRC-90FAA34ADE-L001188](../../tests/fixtures/answer_quality_cases.json#L1188) | 1188 | `"        \"Seeks a timestamped reliable source or explicitly abstains\","` | — |
-| [SRC-90FAA34ADE-L001189](../../tests/fixtures/answer_quality_cases.json#L1189) | 1189 | `"        \"Separates what is visible in the image from external verification\""` | — |
-| [SRC-90FAA34ADE-L001190](../../tests/fixtures/answer_quality_cases.json#L1190) | 1190 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001191](../../tests/fixtures/answer_quality_cases.json#L1191) | 1191 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001192](../../tests/fixtures/answer_quality_cases.json#L1192) | 1192 | `"        \"Confirms today's rate based only on the cropped screenshot\","` | — |
-| [SRC-90FAA34ADE-L001193](../../tests/fixtures/answer_quality_cases.json#L1193) | 1193 | `"        \"Invents source metadata\""` | — |
-| [SRC-90FAA34ADE-L001194](../../tests/fixtures/answer_quality_cases.json#L1194) | 1194 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001195](../../tests/fixtures/answer_quality_cases.json#L1195) | 1195 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001196](../../tests/fixtures/answer_quality_cases.json#L1196) | 1196 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L001197](../../tests/fixtures/answer_quality_cases.json#L1197) | 1197 | `"        \"sources\": [],"` | — |
-| [SRC-90FAA34ADE-L001198](../../tests/fixtures/answer_quality_cases.json#L1198) | 1198 | `"        \"provided_artifact\": {"` | — |
-| [SRC-90FAA34ADE-L001199](../../tests/fixtures/answer_quality_cases.json#L1199) | 1199 | `"          \"description\": \"cropped screenshot with a number but no timestamp or source\""` | — |
-| [SRC-90FAA34ADE-L001200](../../tests/fixtures/answer_quality_cases.json#L1200) | 1200 | `"        }"` | — |
-| [SRC-90FAA34ADE-L001201](../../tests/fixtures/answer_quality_cases.json#L1201) | 1201 | `"      },"` | — |

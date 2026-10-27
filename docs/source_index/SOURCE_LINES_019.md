@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000360 إلى SRC-0F910493E8-L000584
+- النطاق: SRC-65551FB29F-L000344 إلى SRC-0F910493E8-L000568
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000344](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L344) | 344 | `"4. اختبارات النجاح والفشل والحواف."` | — |
+| [SRC-65551FB29F-L000345](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L345) | 345 | `"5. سجل أخطاء مفيد دون تسريب."` | — |
+| [SRC-65551FB29F-L000346](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L346) | 346 | `"6. لا توجد أسرار أو تغييرات غير مطلوبة ضمن الـ diff."` | — |
+| [SRC-65551FB29F-L000347](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L347) | 347 | `"7. توثيق الحالة الحقيقية وما بقي مؤجلًا."` | — |
+| [SRC-65551FB29F-L000348](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L348) | 348 | `""` | — |
+| [SRC-65551FB29F-L000349](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L349) | 349 | `"## 17. بوابة D: التحقق"` | — |
+| [SRC-65551FB29F-L000350](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L350) | 350 | `""` | — |
+| [SRC-65551FB29F-L000351](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L351) | 351 | `"قبل قبول التغيير:"` | — |
+| [SRC-65551FB29F-L000352](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L352) | 352 | `"1. قراءة الـ diff النهائي كاملًا."` | — |
+| [SRC-65551FB29F-L000353](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L353) | 353 | `"2. تنفيذ الاختبارات الملائمة على النسخة الصحيحة."` | — |
+| [SRC-65551FB29F-L000354](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L354) | 354 | `"3. إعادة فحص حالات الانحدار والرفض والصلاحيات والفشل."` | — |
+| [SRC-65551FB29F-L000355](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L355) | 355 | `"4. تسجيل أوامر ونتائج وبيئة التشغيل."` | — |
+| [SRC-65551FB29F-L000356](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L356) | 356 | `"5. التأكد من أن الاختبارات لم تعتمد كلها على mocks عند ادعاء تكامل حي."` | — |
+| [SRC-65551FB29F-L000357](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L357) | 357 | `"6. التحقق من الروابط والمخططات والترحيلات والوثائق المحدثة."` | — |
+| [SRC-65551FB29F-L000358](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L358) | 358 | `"7. إبقاء كل اختبار غير منفذ موسومًا بوضوح."` | — |
+| [SRC-65551FB29F-L000359](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L359) | 359 | `""` | — |
 | [SRC-65551FB29F-L000360](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L360) | 360 | `"## 18. بوابة E: الإصدار"` | — |
 | [SRC-65551FB29F-L000361](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L361) | 361 | `""` | — |
 | [SRC-65551FB29F-L000362](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L362) | 362 | `"قبل الإصدار/النشر:"` | — |
@@ -809,19 +825,3 @@
 | [SRC-0F910493E8-L000566](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L566) | 566 | `"يُحدّث جرد الأصول قبل توسيع النظام أو كشف مسار جديد. يشمل على الأقل:"` | — |
 | [SRC-0F910493E8-L000567](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L567) | 567 | `"1. مفاتيح النموذج والبحث وأسرار الخدمات ورموز الوصول."` | — |
 | [SRC-0F910493E8-L000568](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L568) | 568 | `"2. أسئلة المستخدمين وسجل المحادثات والمدخلات والملفات."` | — |
-| [SRC-0F910493E8-L000569](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L569) | 569 | `"3. بيانات العملاء أو السجلات المحلية، إن كانت موجودة في النشر المعني."` | — |
-| [SRC-0F910493E8-L000570](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L570) | 570 | `"4. محتوى البحث ومقاطع الأدلة ومصادرها وبياناتها الوصفية."` | — |
-| [SRC-0F910493E8-L000571](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L571) | 571 | `"5. ملفات التكوين والمهارات وسير العمل وملفات تعريف الوكلاء."` | — |
-| [SRC-0F910493E8-L000572](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L572) | 572 | `"6. سياسات الصلاحيات وحدود الموارد وآليات الاعتماد."` | — |
-| [SRC-0F910493E8-L000573](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L573) | 573 | `"7. مستودع GitHub، ورموز CI/CD، وأصول البناء والنشر."` | — |
-| [SRC-0F910493E8-L000574](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L574) | 574 | `"8. سجلات الأحداث والتشخيصات والنسخ الاحتياطية."` | — |
-| [SRC-0F910493E8-L000575](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L575) | 575 | `"9. توافر الخدمة والحصص والتكلفة وسمعة النطاق."` | — |
-| [SRC-0F910493E8-L000576](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L576) | 576 | `"10. سلامة الإجابات وعدم تغيير معناها أو مصادرها بسبب مهاجم أو خطأ تكوين."` | — |
-| [SRC-0F910493E8-L000577](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L577) | 577 | `""` | — |
-| [SRC-0F910493E8-L000578](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L578) | 578 | `"يجب تحديد مالك كل فئة، وسبب جمعها، وأماكن تخزينها، والجهات الخارجية التي قد تتلقاها، ومدة الاحتفاظ، ومن يستطيع قراءتها أو تعديلها أو حذفها."` | — |
-| [SRC-0F910493E8-L000579](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L579) | 579 | `""` | — |
-| [SRC-0F910493E8-L000580](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L580) | 580 | `"## 17.4 حدود الثقة ونموذج التهديد الإلزامي"` | — |
-| [SRC-0F910493E8-L000581](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L581) | 581 | `""` | — |
-| [SRC-0F910493E8-L000582](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L582) | 582 | `"تُعامل العناصر التالية بوصفها غير موثوقة افتراضيًا:"` | — |
-| [SRC-0F910493E8-L000583](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L583) | 583 | `"- إدخال المستخدم وأي تاريخ محادثة قادم من عميل."` | — |
-| [SRC-0F910493E8-L000584](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L584) | 584 | `"- نصوص صفحات الويب والملفات والنتائج والاقتباسات."` | — |
