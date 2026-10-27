@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000392 إلى SRC-90FAA34ADE-L000635
+- النطاق: SRC-4FFD5AFC54-L000379 إلى SRC-90FAA34ADE-L000622
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000379](../../scripts/run_answer_quality_benchmark.py#L379) | 379 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Write live results JSON\")"` | — |
+| [SRC-4FFD5AFC54-L000380](../../scripts/run_answer_quality_benchmark.py#L380) | 380 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-4FFD5AFC54-L000381](../../scripts/run_answer_quality_benchmark.py#L381) | 381 | `""` | — |
+| [SRC-4FFD5AFC54-L000382](../../scripts/run_answer_quality_benchmark.py#L382) | 382 | `"    if args.mode == \"validate\":"` | — |
+| [SRC-4FFD5AFC54-L000383](../../scripts/run_answer_quality_benchmark.py#L383) | 383 | `"        return run_validate(args.corpus, args.summary)"` | — |
+| [SRC-4FFD5AFC54-L000384](../../scripts/run_answer_quality_benchmark.py#L384) | 384 | `"    if args.mode == \"live\":"` | — |
+| [SRC-4FFD5AFC54-L000385](../../scripts/run_answer_quality_benchmark.py#L385) | 385 | `"        if not args.case_id and args.limit <= 0:"` | — |
+| [SRC-4FFD5AFC54-L000386](../../scripts/run_answer_quality_benchmark.py#L386) | 386 | `"            print("` | — |
+| [SRC-4FFD5AFC54-L000387](../../scripts/run_answer_quality_benchmark.py#L387) | 387 | `"                \"Refusing unbounded live run. Pass --case-id and/or --limit > 0.\","` | — |
+| [SRC-4FFD5AFC54-L000388](../../scripts/run_answer_quality_benchmark.py#L388) | 388 | `"                file=sys.stderr,"` | — |
+| [SRC-4FFD5AFC54-L000389](../../scripts/run_answer_quality_benchmark.py#L389) | 389 | `"            )"` | — |
+| [SRC-4FFD5AFC54-L000390](../../scripts/run_answer_quality_benchmark.py#L390) | 390 | `"            return 2"` | — |
+| [SRC-4FFD5AFC54-L000391](../../scripts/run_answer_quality_benchmark.py#L391) | 391 | `"        return run_live("` | — |
 | [SRC-4FFD5AFC54-L000392](../../scripts/run_answer_quality_benchmark.py#L392) | 392 | `"            args.corpus,"` | — |
 | [SRC-4FFD5AFC54-L000393](../../scripts/run_answer_quality_benchmark.py#L393) | 393 | `"            args.base_url,"` | — |
 | [SRC-4FFD5AFC54-L000394](../../scripts/run_answer_quality_benchmark.py#L394) | 394 | `"            args.case_id,"` | — |
@@ -821,16 +834,3 @@
 | [SRC-90FAA34ADE-L000620](../../tests/fixtures/answer_quality_cases.json#L620) | 620 | `"        \"يحسب المواقع الثلاثة تأكيدًا مستقلًا بلا تحفظ\","` | — |
 | [SRC-90FAA34ADE-L000621](../../tests/fixtures/answer_quality_cases.json#L621) | 621 | `"        \"يقول إن الخبر تحقق بثلاثة مصادر مستقلة\""` | — |
 | [SRC-90FAA34ADE-L000622](../../tests/fixtures/answer_quality_cases.json#L622) | 622 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000623](../../tests/fixtures/answer_quality_cases.json#L623) | 623 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000624](../../tests/fixtures/answer_quality_cases.json#L624) | 624 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000625](../../tests/fixtures/answer_quality_cases.json#L625) | 625 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000626](../../tests/fixtures/answer_quality_cases.json#L626) | 626 | `"      \"case_id\": \"AQ-022\","` | — |
-| [SRC-90FAA34ADE-L000627](../../tests/fixtures/answer_quality_cases.json#L627) | 627 | `"      \"category\": \"unsupported_claim\","` | — |
-| [SRC-90FAA34ADE-L000628](../../tests/fixtures/answer_quality_cases.json#L628) | 628 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000629](../../tests/fixtures/answer_quality_cases.json#L629) | 629 | `"      \"question\": \"المصدر المرفق يذكر أن المتجر يفتح الساعة التاسعة فقط. هل هذا يثبت أنه يعمل طوال اليوم؟\","` | — |
-| [SRC-90FAA34ADE-L000630](../../tests/fixtures/answer_quality_cases.json#L630) | 630 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000631](../../tests/fixtures/answer_quality_cases.json#L631) | 631 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000632](../../tests/fixtures/answer_quality_cases.json#L632) | 632 | `"        \"يقول إن المقتطف لا يثبت استمرار العمل طوال اليوم\","` | — |
-| [SRC-90FAA34ADE-L000633](../../tests/fixtures/answer_quality_cases.json#L633) | 633 | `"        \"يميّز بوضوح بين المعلومة المذكورة والاستنتاج غير المدعوم\","` | — |
-| [SRC-90FAA34ADE-L000634](../../tests/fixtures/answer_quality_cases.json#L634) | 634 | `"        \"يطلب مصدر ساعات عمل كامل أو يذكر أن المعلومة غير كافية\""` | — |
-| [SRC-90FAA34ADE-L000635](../../tests/fixtures/answer_quality_cases.json#L635) | 635 | `"      ],"` | — |
