@@ -126,6 +126,19 @@ _SEARCH_SYNONYMS = {
     "تحدي": {"challenge"}, "تحديات": {"challenges"}, "التحديات": {"challenges"},
     "وكيل": {"agent"}, "الوكيل": {"agent"},
     "وكلاء": {"agents"}, "الوكلاء": {"agents"},
+    # Bilingual vocabulary for AI use-case searches. Keep the relevance floor
+    # unchanged; expand only concepts that commonly appear in Arabic news titles.
+    "استخدام": {"use", "usage", "application", "applications"},
+    "استخدامات": {"use", "usage", "application", "applications"},
+    "استعمال": {"use", "usage", "application"},
+    "استعمالات": {"use", "usage", "applications"},
+    "حالة": {"case"}, "حالات": {"cases", "case"},
+    "اعمال": {"business", "businesses", "work"},
+    "الاعمال": {"business", "businesses", "work"},
+    "للاعمال": {"business", "businesses", "work"},
+    "شركات": {"company", "companies", "business", "businesses"},
+    "الشركات": {"company", "companies", "business", "businesses"},
+    "صغير": {"small"}, "صغيرة": {"small"}, "الصغير": {"small"}, "الصغيرة": {"small"},
     "ذكاء": {"intelligence", "ai"}, "الذكاء": {"intelligence", "ai"},
     "اصطناعي": {"artificial", "ai"}, "الاصطناعي": {"artificial", "ai"},
     "تطور": {"development", "advance"}, "تطورات": {"developments", "advances", "updates", "latest"},
@@ -1587,9 +1600,9 @@ class WebAgent:
             url = _public_http_url(fields.get("link", ""))
             if not url or _blocked_source_url(url):
                 continue
-            evidence = " ".join((fields.get("title", ""), fields.get("description", "")))
-            if _relevance_ratio(query, evidence) < 0.20:
-                continue
+            # Keep every parseable, safe candidate here. _search_web applies the
+            # shared relevance filter and records accepted/rejected counters.
+            # Filtering again in this adapter mislabels a valid feed as no results.
             source_node = next(
                 (child for child in item if child.tag.rsplit("}", 1)[-1] == "source"),
                 None,
