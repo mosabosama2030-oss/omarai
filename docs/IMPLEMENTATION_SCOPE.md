@@ -1,6 +1,6 @@
 ## تحديث الحالة الحالية — 27 أكتوبر 2026
 
-**أحدث رأس main مرصود وقت التحديث:** `db6860885dc01c596512e0f0dfabac2fd6c312e6` (تحديث فهرسة مولّد). إصلاح Dockerfile لهوية البناء مدمج في #98 عند `d9a8f83796547591d651c41ff657475bcec9b0ab`، ونجح CI بعد الدمج [#40471732289](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732289). نجح تحديث الفهرس [#40471732508](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732508).
+**أحدث رأس main مرصود وقت التحديث:** `cb1488498329a542888f5f5d096c16f92a84ae4e` (تحديث فهرسة مولّد). إصلاح Dockerfile لهوية البناء مدمج في #98 عند `d9a8f83796547591d651c41ff657475bcec9b0ab`، ونجح CI بعد الدمج [#40471732289](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732289). نجح تحديث الفهرس [#40471732508](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732508).
 
 - **القبول الحي:** أعاد فحص المتصفح [run af7ebb42-e032-4321-8454-a3628432f53d](https://agent.tinyfish.ai/runs/af7ebb42-e032-4321-8454-a3628432f53d) أن حقل رمز الوصول داخل ملف الاختبار فارغ؛ لذلك فشل طلب عاصمة مصر عند المصادقة ولم تُنتج مصادر. هذا لا يثبت أن الرمز المحفوظ في متصفح المستخدم خاطئ؛ التخزين منفصل.
 - **هوية الصورة المنشورة:** `GET /api/health` يعيد `ok=true` لكن `build.sha=unknown`، و`live_network_checks_performed=false`. متغير `PUBLIC_OMARAI_BUILD_SHA` في إعداد SnapDeploy وإعادة البناء والتحقق من التطابق ما زالت مطلوبة.
