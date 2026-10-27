@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001284 إلى SRC-F725E90B2A-L002083
+- النطاق: SRC-F725E90B2A-L001272 إلى SRC-F725E90B2A-L002071
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"            \"unique_sources\": len(sources),"` | — |
+| [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `"            \"pages_fetched\": len(sources),"` | — |
+| [SRC-F725E90B2A-L001274](../../tests/test_web_agent.py#L1274) | 1274 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001275](../../tests/test_web_agent.py#L1275) | 1275 | `"            \"platform_counts\": {\"web\": len(sources)},"` | — |
+| [SRC-F725E90B2A-L001276](../../tests/test_web_agent.py#L1276) | 1276 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L001277](../../tests/test_web_agent.py#L1277) | 1277 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-F725E90B2A-L001278](../../tests/test_web_agent.py#L1278) | 1278 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001279](../../tests/test_web_agent.py#L1279) | 1279 | `"            \"evidence_signals\": {},"` | — |
+| [SRC-F725E90B2A-L001280](../../tests/test_web_agent.py#L1280) | 1280 | `"        }"` | — |
+| [SRC-F725E90B2A-L001281](../../tests/test_web_agent.py#L1281) | 1281 | `""` | — |
+| [SRC-F725E90B2A-L001282](../../tests/test_web_agent.py#L1282) | 1282 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L001283](../../tests/test_web_agent.py#L1283) | 1283 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
 | [SRC-F725E90B2A-L001284](../../tests/test_web_agent.py#L1284) | 1284 | `""` | — |
 | [SRC-F725E90B2A-L001285](../../tests/test_web_agent.py#L1285) | 1285 | `"    def capture_source_match_query(query, source):"` | — |
 | [SRC-F725E90B2A-L001286](../../tests/test_web_agent.py#L1286) | 1286 | `"        matched_queries.append(query)"` | — |
@@ -804,15 +816,3 @@
 | [SRC-F725E90B2A-L002069](../../tests/test_web_agent.py#L2069) | 2069 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L002070](../../tests/test_web_agent.py#L2070) | 2070 | `"    plan = {"` | — |
 | [SRC-F725E90B2A-L002071](../../tests/test_web_agent.py#L2071) | 2071 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |
-| [SRC-F725E90B2A-L002072](../../tests/test_web_agent.py#L2072) | 2072 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L002073](../../tests/test_web_agent.py#L2073) | 2073 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L002074](../../tests/test_web_agent.py#L2074) | 2074 | `"        \"freshness\": \"current\","` | — |
-| [SRC-F725E90B2A-L002075](../../tests/test_web_agent.py#L2075) | 2075 | `"        \"depth\": \"deep\","` | — |
-| [SRC-F725E90B2A-L002076](../../tests/test_web_agent.py#L2076) | 2076 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002077](../../tests/test_web_agent.py#L2077) | 2077 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002078](../../tests/test_web_agent.py#L2078) | 2078 | `"    }"` | — |
-| [SRC-F725E90B2A-L002079](../../tests/test_web_agent.py#L2079) | 2079 | `""` | — |
-| [SRC-F725E90B2A-L002080](../../tests/test_web_agent.py#L2080) | 2080 | `"    def failed_after_provider_result(research_plan):"` | — |
-| [SRC-F725E90B2A-L002081](../../tests/test_web_agent.py#L2081) | 2081 | `"        # A completed provider result-processing state confirms that a search"` | — |
-| [SRC-F725E90B2A-L002082](../../tests/test_web_agent.py#L2082) | 2082 | `"        # connector returned; the collector then fails during downstream processing."` | — |
-| [SRC-F725E90B2A-L002083](../../tests/test_web_agent.py#L2083) | 2083 | `"        agent._record_provider_diagnostic("` | — |

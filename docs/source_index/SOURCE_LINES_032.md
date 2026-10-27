@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000484 إلى SRC-F725E90B2A-L001283
+- النطاق: SRC-F725E90B2A-L000472 إلى SRC-F725E90B2A-L001271
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000472](../../tests/test_web_agent.py#L472) | 472 | `"                \"data\": [{"` | — |
+| [SRC-F725E90B2A-L000473](../../tests/test_web_agent.py#L473) | 473 | `"                    \"id\": \"1840000000000000000\","` | — |
+| [SRC-F725E90B2A-L000474](../../tests/test_web_agent.py#L474) | 474 | `"                    \"text\": \"تجربة علنية لاستهلاك سيارة كهربائية\","` | — |
+| [SRC-F725E90B2A-L000475](../../tests/test_web_agent.py#L475) | 475 | `"                    \"created_at\": \"2026-10-12T10:00:00Z\","` | — |
+| [SRC-F725E90B2A-L000476](../../tests/test_web_agent.py#L476) | 476 | `"                    \"author_id\": \"u1\","` | — |
+| [SRC-F725E90B2A-L000477](../../tests/test_web_agent.py#L477) | 477 | `"                }],"` | — |
+| [SRC-F725E90B2A-L000478](../../tests/test_web_agent.py#L478) | 478 | `"                \"includes\": {"` | — |
+| [SRC-F725E90B2A-L000479](../../tests/test_web_agent.py#L479) | 479 | `"                    \"users\": [{\"id\": \"u1\", \"username\": \"driver\", \"name\": \"Driver\"}]"` | — |
+| [SRC-F725E90B2A-L000480](../../tests/test_web_agent.py#L480) | 480 | `"                },"` | — |
+| [SRC-F725E90B2A-L000481](../../tests/test_web_agent.py#L481) | 481 | `"            }"` | — |
+| [SRC-F725E90B2A-L000482](../../tests/test_web_agent.py#L482) | 482 | `""` | — |
+| [SRC-F725E90B2A-L000483](../../tests/test_web_agent.py#L483) | 483 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L000484](../../tests/test_web_agent.py#L484) | 484 | `""` | — |
 | [SRC-F725E90B2A-L000485](../../tests/test_web_agent.py#L485) | 485 | `"    def fake_get(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L000486](../../tests/test_web_agent.py#L486) | 486 | `"        calls.append((url, kwargs))"` | — |
@@ -804,15 +816,3 @@
 | [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"            \"queries_planned\": 1,"` | — |
 | [SRC-F725E90B2A-L001270](../../tests/test_web_agent.py#L1270) | 1270 | `"            \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": len(sources)}],"` | — |
-| [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"            \"unique_sources\": len(sources),"` | — |
-| [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `"            \"pages_fetched\": len(sources),"` | — |
-| [SRC-F725E90B2A-L001274](../../tests/test_web_agent.py#L1274) | 1274 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001275](../../tests/test_web_agent.py#L1275) | 1275 | `"            \"platform_counts\": {\"web\": len(sources)},"` | — |
-| [SRC-F725E90B2A-L001276](../../tests/test_web_agent.py#L1276) | 1276 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001277](../../tests/test_web_agent.py#L1277) | 1277 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-F725E90B2A-L001278](../../tests/test_web_agent.py#L1278) | 1278 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001279](../../tests/test_web_agent.py#L1279) | 1279 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L001280](../../tests/test_web_agent.py#L1280) | 1280 | `"        }"` | — |
-| [SRC-F725E90B2A-L001281](../../tests/test_web_agent.py#L1281) | 1281 | `""` | — |
-| [SRC-F725E90B2A-L001282](../../tests/test_web_agent.py#L1282) | 1282 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001283](../../tests/test_web_agent.py#L1283) | 1283 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |

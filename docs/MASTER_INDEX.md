@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **642**
 - تعريفات لا ينطبق عليها Docstring: **205**
 - الرموز الساكنة الإضافية: **1626**
-- الأسطر النصية المفهرسة حرفيًا: **28204**
+- الأسطر النصية المفهرسة حرفيًا: **28216**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -98,7 +98,7 @@
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 7301 | 177 | جرد الملف + AST Python |
-| FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 8801 | 215 | جرد الملف + AST Python |
+| FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 9629 | 227 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
@@ -828,9 +828,9 @@
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L115) | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles | لا توجد Docstring. | ناقص | 115 | [SRC-4397BC2CD2-L000115](../tests/test_intent_router_integration.py#L115) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L121) | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles.plan | لا توجد Docstring. | ناقص | 121 | [SRC-4397BC2CD2-L000121](../tests/test_intent_router_integration.py#L121) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L132) | دالة | test_multi_part_comparison_forces_deep_plan_and_multiple_angles.collect | لا توجد Docstring. | ناقص | 132 | [SRC-4397BC2CD2-L000132](../tests/test_intent_router_integration.py#L132) |
-| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L173) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget | لا توجد Docstring. | ناقص | 173 | [SRC-4397BC2CD2-L000173](../tests/test_intent_router_integration.py#L173) |
-| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L182) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.plan | لا توجد Docstring. | ناقص | 182 | [SRC-4397BC2CD2-L000182](../tests/test_intent_router_integration.py#L182) |
-| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L193) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.collect | لا توجد Docstring. | ناقص | 193 | [SRC-4397BC2CD2-L000193](../tests/test_intent_router_integration.py#L193) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L181) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget | لا توجد Docstring. | ناقص | 181 | [SRC-4397BC2CD2-L000181](../tests/test_intent_router_integration.py#L181) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L190) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.plan | لا توجد Docstring. | ناقص | 190 | [SRC-4397BC2CD2-L000190](../tests/test_intent_router_integration.py#L190) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L201) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.collect | لا توجد Docstring. | ناقص | 201 | [SRC-4397BC2CD2-L000201](../tests/test_intent_router_integration.py#L201) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L8) | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 8 | [SRC-62DC597310-L000008](../tests/test_live_search_connectors.py#L8) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L9) | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 9 | [SRC-62DC597310-L000009](../tests/test_live_search_connectors.py#L9) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L13) | دالة | FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 13 | [SRC-62DC597310-L000013](../tests/test_live_search_connectors.py#L13) |
@@ -2418,7 +2418,7 @@
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 19 | [SRC-EA6EC52573-L000019](../tests/test_intent_router.py#L19) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 32 | [SRC-EA6EC52573-L000032](../tests/test_intent_router.py#L32) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 107 | [SRC-4397BC2CD2-L000107](../tests/test_intent_router_integration.py#L107) |
-| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 151 | [SRC-4397BC2CD2-L000151](../tests/test_intent_router_integration.py#L151) |
+| [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L152) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 152 | [SRC-4397BC2CD2-L000152](../tests/test_intent_router_integration.py#L152) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 21 | [SRC-62DC597310-L000021](../tests/test_live_search_connectors.py#L21) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 49 | [SRC-62DC597310-L000049](../tests/test_live_search_connectors.py#L49) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_NAME | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
