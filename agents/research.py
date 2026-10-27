@@ -283,13 +283,14 @@ def fallback_plan(
     contextual_question = resolve_followup_query(question, history)
     direct_urls = extract_urls(question)
     base = compact_search_query(contextual_question)
-    social_focus = detect_social_focus(question, history)
-    fresh = detect_freshness(question)
-    detected_depth = detect_depth(question)
+    # Inspect only the current query after safe context resolution. Pulling arbitrary
+    # recent history into every plan caused unrelated new questions to inherit an old
+    # social-platform/freshness/depth intent.
+    social_focus = detect_social_focus(contextual_question)
+    fresh = detect_freshness(contextual_question)
+    detected_depth = detect_depth(contextual_question)
     deep = detected_depth == "deep"
-    platforms = mentioned_social_platforms(question + " " + " ".join(
-        item.get("content", "") for item in (history or [])[-4:]
-    ))
+    platforms = mentioned_social_platforms(contextual_question)
     queries: list[str] = [base] if base else []
 
     if fresh and base:
