@@ -2411,27 +2411,39 @@ class WebAgent:
                 if not target_query:
                     continue
                 query_key = re.sub(r"\s+", " ", target_query).strip().casefold()
-                candidate = next(
-                    (
-                        item for item in globally_fused
-                        if query_key in {
-                            re.sub(r"\s+", " ", str(value)).strip().casefold()
-                            for value in item.get("queries", [])
-                        }
-                    ),
-                    None,
+                criterion_batches = [
+                    batch for batch in batches
+                    if re.sub(
+                        r"\s+", " ", str(batch.get("query") or "")
+                    ).strip().casefold() == query_key
+                ]
+                criterion_candidates = fuse_ranked_results(
+                    criterion_batches, limit=MAX_SEARCH_RESULTS
                 )
-                if candidate is None:
-                    criterion_batches = [
-                        batch for batch in batches
-                        if re.sub(
-                            r"\s+", " ", str(batch.get("query") or "")
-                        ).strip().casefold() == query_key
-                    ]
-                    criterion_candidates = fuse_ranked_results(
-                        criterion_batches, limit=MAX_SEARCH_RESULTS
+                candidate = None
+                if criterion_candidates:
+                    criterion_ledger = build_requirement_evidence_ledger(
+                        [str(requirement.get("target") or "")],
+                        criterion_candidates,
+                        [requirement],
                     )
-                    candidate = criterion_candidates[0] if criterion_candidates else None
+                    candidate_indexes = (
+                        criterion_ledger[0].get("candidate_source_indexes", [])
+                        if criterion_ledger else []
+                    )
+                    if candidate_indexes:
+                        candidate = criterion_candidates[int(candidate_indexes[0]) - 1]
+                if candidate is None:
+                    candidate = next(
+                        (
+                            item for item in globally_fused
+                            if query_key in {
+                                re.sub(r"\s+", " ", str(value)).strip().casefold()
+                                for value in item.get("queries", [])
+                            }
+                        ),
+                        criterion_candidates[0] if criterion_candidates else None,
+                    )
                 if not candidate:
                     continue
                 source_key = _normalized_source_url_key(candidate.get("url", ""))
