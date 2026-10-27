@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001946 إلى SRC-F725E90B2A-L002745
+- النطاق: SRC-F725E90B2A-L001925 إلى SRC-F725E90B2A-L002724
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001925](../../tests/test_web_agent.py#L1925) | 1925 | `"                \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001926](../../tests/test_web_agent.py#L1926) | 1926 | `"                \"evidence_signals\": {},"` | — |
+| [SRC-F725E90B2A-L001927](../../tests/test_web_agent.py#L1927) | 1927 | `"            },"` | — |
+| [SRC-F725E90B2A-L001928](../../tests/test_web_agent.py#L1928) | 1928 | `"        ),"` | — |
+| [SRC-F725E90B2A-L001929](../../tests/test_web_agent.py#L1929) | 1929 | `"    )"` | — |
+| [SRC-F725E90B2A-L001930](../../tests/test_web_agent.py#L1930) | 1930 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-F725E90B2A-L001931](../../tests/test_web_agent.py#L1931) | 1931 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"الإجابة [المصدر 1].\")"` | — |
+| [SRC-F725E90B2A-L001932](../../tests/test_web_agent.py#L1932) | 1932 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L001933](../../tests/test_web_agent.py#L1933) | 1933 | `""` | — |
+| [SRC-F725E90B2A-L001934](../../tests/test_web_agent.py#L1934) | 1934 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
+| [SRC-F725E90B2A-L001935](../../tests/test_web_agent.py#L1935) | 1935 | `""` | — |
+| [SRC-F725E90B2A-L001936](../../tests/test_web_agent.py#L1936) | 1936 | `"    assert result[\"kind\"] in {\"web_research\", \"web_fallback\"}"` | — |
+| [SRC-F725E90B2A-L001937](../../tests/test_web_agent.py#L1937) | 1937 | `"    assert result[\"search_report\"][\"unique_sources\"] == 3"` | — |
+| [SRC-F725E90B2A-L001938](../../tests/test_web_agent.py#L1938) | 1938 | `"    assert result[\"search_report\"][\"distinct_registrable_domains\"] == 2"` | — |
+| [SRC-F725E90B2A-L001939](../../tests/test_web_agent.py#L1939) | 1939 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
+| [SRC-F725E90B2A-L001940](../../tests/test_web_agent.py#L1940) | 1940 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
+| [SRC-F725E90B2A-L001941](../../tests/test_web_agent.py#L1941) | 1941 | `""` | — |
+| [SRC-F725E90B2A-L001942](../../tests/test_web_agent.py#L1942) | 1942 | `""` | — |
+| [SRC-F725E90B2A-L001943](../../tests/test_web_agent.py#L1943) | 1943 | `"def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001944](../../tests/test_web_agent.py#L1944) | 1944 | `"    import json"` | — |
+| [SRC-F725E90B2A-L001945](../../tests/test_web_agent.py#L1945) | 1945 | `""` | — |
 | [SRC-F725E90B2A-L001946](../../tests/test_web_agent.py#L1946) | 1946 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001947](../../tests/test_web_agent.py#L1947) | 1947 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001948](../../tests/test_web_agent.py#L1948) | 1948 | `"    agent.fallback_model = \"fallback/model\""` | — |
@@ -795,24 +816,3 @@
 | [SRC-F725E90B2A-L002722](../../tests/test_web_agent.py#L2722) | 2722 | `""` | — |
 | [SRC-F725E90B2A-L002723](../../tests/test_web_agent.py#L2723) | 2723 | `""` | — |
 | [SRC-F725E90B2A-L002724](../../tests/test_web_agent.py#L2724) | 2724 | `""` | — |
-| [SRC-F725E90B2A-L002725](../../tests/test_web_agent.py#L2725) | 2725 | `"@pytest.mark.parametrize(\"mode\", [\"deep\", \"latest\", \"social\"])"` | — |
-| [SRC-F725E90B2A-L002726](../../tests/test_web_agent.py#L2726) | 2726 | `"def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):"` | — |
-| [SRC-F725E90B2A-L002727](../../tests/test_web_agent.py#L2727) | 2727 | `"    \"\"\"A missing planner model must not erase a mode explicitly selected by the user.\"\"\""` | — |
-| [SRC-F725E90B2A-L002728](../../tests/test_web_agent.py#L2728) | 2728 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002729](../../tests/test_web_agent.py#L2729) | 2729 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L002730](../../tests/test_web_agent.py#L2730) | 2730 | `"    seen = {}"` | — |
-| [SRC-F725E90B2A-L002731](../../tests/test_web_agent.py#L2731) | 2731 | `""` | — |
-| [SRC-F725E90B2A-L002732](../../tests/test_web_agent.py#L2732) | 2732 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L002733](../../tests/test_web_agent.py#L2733) | 2733 | `"        seen[\"plan\"] = dict(research_plan)"` | — |
-| [SRC-F725E90B2A-L002734](../../tests/test_web_agent.py#L2734) | 2734 | `"        sources = [sample_source(0), sample_source(1)]"` | — |
-| [SRC-F725E90B2A-L002735](../../tests/test_web_agent.py#L2735) | 2735 | `"        return sources, [], {"` | — |
-| [SRC-F725E90B2A-L002736](../../tests/test_web_agent.py#L2736) | 2736 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002737](../../tests/test_web_agent.py#L2737) | 2737 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002738](../../tests/test_web_agent.py#L2738) | 2738 | `"            \"query_results\": ["` | — |
-| [SRC-F725E90B2A-L002739](../../tests/test_web_agent.py#L2739) | 2739 | `"                {\"query\": query, \"results\": 1}"` | — |
-| [SRC-F725E90B2A-L002740](../../tests/test_web_agent.py#L2740) | 2740 | `"                for query in research_plan[\"queries\"]"` | — |
-| [SRC-F725E90B2A-L002741](../../tests/test_web_agent.py#L2741) | 2741 | `"            ],"` | — |
-| [SRC-F725E90B2A-L002742](../../tests/test_web_agent.py#L2742) | 2742 | `"            \"unique_sources\": len(sources),"` | — |
-| [SRC-F725E90B2A-L002743](../../tests/test_web_agent.py#L2743) | 2743 | `"            \"pages_fetched\": len(sources),"` | — |
-| [SRC-F725E90B2A-L002744](../../tests/test_web_agent.py#L2744) | 2744 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L002745](../../tests/test_web_agent.py#L2745) | 2745 | `"            \"platform_counts\": {\"web\": len(sources)},"` | — |

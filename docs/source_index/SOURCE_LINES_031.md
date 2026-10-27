@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000346 إلى SRC-F725E90B2A-L001145
+- النطاق: SRC-F725E90B2A-L000325 إلى SRC-F725E90B2A-L001124
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000325](../../tests/test_web_agent.py#L325) | 325 | `"                \"queries\": [query],"` | — |
+| [SRC-F725E90B2A-L000326](../../tests/test_web_agent.py#L326) | 326 | `"            },"` | — |
+| [SRC-F725E90B2A-L000327](../../tests/test_web_agent.py#L327) | 327 | `"            {"` | — |
+| [SRC-F725E90B2A-L000328](../../tests/test_web_agent.py#L328) | 328 | `"                **sample_source(1),"` | — |
+| [SRC-F725E90B2A-L000329](../../tests/test_web_agent.py#L329) | 329 | `"                \"provider\": \"test_provider\","` | — |
+| [SRC-F725E90B2A-L000330](../../tests/test_web_agent.py#L330) | 330 | `"                \"provider_rank\": 2,"` | — |
+| [SRC-F725E90B2A-L000331](../../tests/test_web_agent.py#L331) | 331 | `"                \"search_query\": query,"` | — |
+| [SRC-F725E90B2A-L000332](../../tests/test_web_agent.py#L332) | 332 | `"                \"queries\": [query],"` | — |
+| [SRC-F725E90B2A-L000333](../../tests/test_web_agent.py#L333) | 333 | `"            },"` | — |
+| [SRC-F725E90B2A-L000334](../../tests/test_web_agent.py#L334) | 334 | `"        ]"` | — |
+| [SRC-F725E90B2A-L000335](../../tests/test_web_agent.py#L335) | 335 | `""` | — |
+| [SRC-F725E90B2A-L000336](../../tests/test_web_agent.py#L336) | 336 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
+| [SRC-F725E90B2A-L000337](../../tests/test_web_agent.py#L337) | 337 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L000338](../../tests/test_web_agent.py#L338) | 338 | `"        agent, \"_fetch_page\", lambda url: (\"Read title\", \"Extracted public page text\")"` | — |
+| [SRC-F725E90B2A-L000339](../../tests/test_web_agent.py#L339) | 339 | `"    )"` | — |
+| [SRC-F725E90B2A-L000340](../../tests/test_web_agent.py#L340) | 340 | `"    sources, warnings, report = agent._collect_research({"` | — |
+| [SRC-F725E90B2A-L000341](../../tests/test_web_agent.py#L341) | 341 | `"        \"queries\": [\"query over budget\", \"query success\"],"` | — |
+| [SRC-F725E90B2A-L000342](../../tests/test_web_agent.py#L342) | 342 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L000343](../../tests/test_web_agent.py#L343) | 343 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L000344](../../tests/test_web_agent.py#L344) | 344 | `"        \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L000345](../../tests/test_web_agent.py#L345) | 345 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L000346](../../tests/test_web_agent.py#L346) | 346 | `"    })"` | — |
 | [SRC-F725E90B2A-L000347](../../tests/test_web_agent.py#L347) | 347 | `""` | — |
 | [SRC-F725E90B2A-L000348](../../tests/test_web_agent.py#L348) | 348 | `"    assert len(sources) == 2"` | — |
@@ -795,24 +816,3 @@
 | [SRC-F725E90B2A-L001122](../../tests/test_web_agent.py#L1122) | 1122 | `"        lambda research_plan: ("` | — |
 | [SRC-F725E90B2A-L001123](../../tests/test_web_agent.py#L1123) | 1123 | `"            [source], [], {"` | — |
 | [SRC-F725E90B2A-L001124](../../tests/test_web_agent.py#L1124) | 1124 | `"                \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L001125](../../tests/test_web_agent.py#L1125) | 1125 | `"                \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001126](../../tests/test_web_agent.py#L1126) | 1126 | `"                \"query_results\": [],"` | — |
-| [SRC-F725E90B2A-L001127](../../tests/test_web_agent.py#L1127) | 1127 | `"                \"unique_sources\": 1,"` | — |
-| [SRC-F725E90B2A-L001128](../../tests/test_web_agent.py#L1128) | 1128 | `"                \"pages_fetched\": 1,"` | — |
-| [SRC-F725E90B2A-L001129](../../tests/test_web_agent.py#L1129) | 1129 | `"                \"providers_used\": [\"user_supplied_url\"],"` | — |
-| [SRC-F725E90B2A-L001130](../../tests/test_web_agent.py#L1130) | 1130 | `"                \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L001131](../../tests/test_web_agent.py#L1131) | 1131 | `"                \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001132](../../tests/test_web_agent.py#L1132) | 1132 | `"                \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L001133](../../tests/test_web_agent.py#L1133) | 1133 | `"                \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001134](../../tests/test_web_agent.py#L1134) | 1134 | `"            },"` | — |
-| [SRC-F725E90B2A-L001135](../../tests/test_web_agent.py#L1135) | 1135 | `"        ),"` | — |
-| [SRC-F725E90B2A-L001136](../../tests/test_web_agent.py#L1136) | 1136 | `"    )"` | — |
-| [SRC-F725E90B2A-L001137](../../tests/test_web_agent.py#L1137) | 1137 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"ملخص محتوى الصفحة [المصدر 1].\")"` | — |
-| [SRC-F725E90B2A-L001138](../../tests/test_web_agent.py#L1138) | 1138 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L001139](../../tests/test_web_agent.py#L1139) | 1139 | `""` | — |
-| [SRC-F725E90B2A-L001140](../../tests/test_web_agent.py#L1140) | 1140 | `"    result = agent.answer(\"لخص الصفحة https://example.com/research\")"` | — |
-| [SRC-F725E90B2A-L001141](../../tests/test_web_agent.py#L1141) | 1141 | `""` | — |
-| [SRC-F725E90B2A-L001142](../../tests/test_web_agent.py#L1142) | 1142 | `"    assert result[\"kind\"] != \"insufficient_evidence\""` | — |
-| [SRC-F725E90B2A-L001143](../../tests/test_web_agent.py#L1143) | 1143 | `"    assert result[\"answer\"] == \"ملخص محتوى الصفحة [المصدر 1].\""` | — |
-| [SRC-F725E90B2A-L001144](../../tests/test_web_agent.py#L1144) | 1144 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
-| [SRC-F725E90B2A-L001145](../../tests/test_web_agent.py#L1145) | 1145 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
