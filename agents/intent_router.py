@@ -300,6 +300,21 @@ def resolve_followup_query(question: str, history: Any = None) -> str:
     return f"{previous[:300]} — {query[:180]}"[:500]
 
 
+def _has_explicit_source_request(question: str) -> bool:
+    """Recognize explicit requests for evidence/citations that require web-backed retrieval."""
+    normalized = _normalize(question)
+    markers = (
+        "اذكر مصادر", "اذكر المصدر", "مصادر موثوقة", "مصدر موثوق",
+        "مصادر رسمية", "مصادر حديثة", "مع مصادر", "مع المصادر",
+        "بالمصادر", "روابط المصادر", "ارفق المصادر", "أرفق المصادر",
+        "استشهد بمصادر", "وثق الاجابة", "وثق الإجابة", "المراجع",
+        "with sources", "cite sources", "trusted sources", "reliable sources",
+        "official sources", "include references", "with citations",
+        "source-backed", "cite your sources",
+    )
+    return any(_normalize(marker) in normalized for marker in markers)
+
+
 def _is_deep(question: str) -> bool:
     normalized = _normalize(question)
     if any(_normalize(term) in normalized for term in _DEEP_TERMS):
@@ -469,10 +484,14 @@ def route_intent(
             "needs_clarification": False,
         }
 
-    if requires_web or _has_live_signal(question):
+    if requires_web or _has_live_signal(question) or _has_explicit_source_request(question):
         return {
             "route": "WEB_SIMPLE",
-            "reason": "freshness_or_explicit_research_signal",
+            "reason": (
+                "explicit_evidence_request"
+                if _has_explicit_source_request(question)
+                else "freshness_or_explicit_research_signal"
+            ),
             "context_available": context_available,
             "needs_clarification": False,
         }
