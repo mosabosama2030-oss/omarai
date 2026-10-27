@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000815 إلى SRC-1AE03B9EC3-L001614
+- النطاق: SRC-1AE03B9EC3-L000818 إلى SRC-1AE03B9EC3-L001617
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000815](../../agents/web_agent.py#L815) | 815 | `"            targeted = ["` | — |
-| [SRC-1AE03B9EC3-L000816](../../agents/web_agent.py#L816) | 816 | `"                f'\"looking to buy\" {subject}',"` | — |
-| [SRC-1AE03B9EC3-L000817](../../agents/web_agent.py#L817) | 817 | `"                f'\"want to purchase\" {subject}',"` | — |
 | [SRC-1AE03B9EC3-L000818](../../agents/web_agent.py#L818) | 818 | `"                f'site:linkedin.com/posts \"{subject}\" (\"looking to buy\" OR \"purchase\")',"` | — |
 | [SRC-1AE03B9EC3-L000819](../../agents/web_agent.py#L819) | 819 | `"                f'site:facebook.com/groups \"{subject}\" (\"looking for\" OR \"want to buy\")',"` | — |
 | [SRC-1AE03B9EC3-L000820](../../agents/web_agent.py#L820) | 820 | `"            ]"` | — |
@@ -816,3 +813,6 @@
 | [SRC-1AE03B9EC3-L001612](../../agents/web_agent.py#L1612) | 1612 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001613](../../agents/web_agent.py#L1613) | 1613 | `"            publisher_name = _clean_text("` | — |
 | [SRC-1AE03B9EC3-L001614](../../agents/web_agent.py#L1614) | 1614 | `"                source_node.text if source_node is not None else \"\", 200"` | — |
+| [SRC-1AE03B9EC3-L001615](../../agents/web_agent.py#L1615) | 1615 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001616](../../agents/web_agent.py#L1616) | 1616 | `"            publisher_domain = ("` | — |
+| [SRC-1AE03B9EC3-L001617](../../agents/web_agent.py#L1617) | 1617 | `"                (urllib.parse.urlparse(publisher_url).hostname or \"\").lower()"` | — |

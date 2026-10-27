@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004815 إلى SRC-EEF2E6447C-L000146
+- النطاق: SRC-1AE03B9EC3-L004818 إلى SRC-EEF2E6447C-L000149
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L004815](../../agents/web_agent.py#L4815) | 4815 | `"            answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L004816](../../agents/web_agent.py#L4816) | 4816 | `"            research_failed = search_outcome in _RESEARCH_ERROR_OUTCOMES"` | — |
-| [SRC-1AE03B9EC3-L004817](../../agents/web_agent.py#L4817) | 4817 | `"            report.update({"` | — |
 | [SRC-1AE03B9EC3-L004818](../../agents/web_agent.py#L4818) | 4818 | `"                # When collection failed, an empty local list is not evidence that"` | — |
 | [SRC-1AE03B9EC3-L004819](../../agents/web_agent.py#L4819) | 4819 | `"                # the remote search returned zero sources; preserve unknown counts."` | — |
 | [SRC-1AE03B9EC3-L004820](../../agents/web_agent.py#L4820) | 4820 | `"                \"unique_sources\": None if research_failed else len(sources),"` | — |
@@ -834,3 +831,6 @@
 | [SRC-EEF2E6447C-L000144](../../api/omarai.py#L144) | 144 | `""` | — |
 | [SRC-EEF2E6447C-L000145](../../api/omarai.py#L145) | 145 | `"                newline_index = self._buffer.find(b\"\\n\")"` | — |
 | [SRC-EEF2E6447C-L000146](../../api/omarai.py#L146) | 146 | `"                if newline_index >= 0:"` | — |
+| [SRC-EEF2E6447C-L000147](../../api/omarai.py#L147) | 147 | `"                    take = min(newline_index + 1, max_bytes - len(line))"` | — |
+| [SRC-EEF2E6447C-L000148](../../api/omarai.py#L148) | 148 | `"                    line.extend(self._buffer[:take])"` | — |
+| [SRC-EEF2E6447C-L000149](../../api/omarai.py#L149) | 149 | `"                    del self._buffer[:take]"` | — |

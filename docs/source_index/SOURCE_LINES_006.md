@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001615 إلى SRC-1AE03B9EC3-L002414
+- النطاق: SRC-1AE03B9EC3-L001618 إلى SRC-1AE03B9EC3-L002417
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001615](../../agents/web_agent.py#L1615) | 1615 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001616](../../agents/web_agent.py#L1616) | 1616 | `"            publisher_domain = ("` | — |
-| [SRC-1AE03B9EC3-L001617](../../agents/web_agent.py#L1617) | 1617 | `"                (urllib.parse.urlparse(publisher_url).hostname or \"\").lower()"` | — |
 | [SRC-1AE03B9EC3-L001618](../../agents/web_agent.py#L1618) | 1618 | `"                if publisher_url else \"\""` | — |
 | [SRC-1AE03B9EC3-L001619](../../agents/web_agent.py#L1619) | 1619 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001620](../../agents/web_agent.py#L1620) | 1620 | `"            results.append({"` | — |
@@ -816,3 +813,6 @@
 | [SRC-1AE03B9EC3-L002412](../../agents/web_agent.py#L2412) | 2412 | `"                    if ready and name not in platforms"` | — |
 | [SRC-1AE03B9EC3-L002413](../../agents/web_agent.py#L2413) | 2413 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L002414](../../agents/web_agent.py#L2414) | 2414 | `"            social_results, social_warnings = self._search_social((queries[0] if queries else \"\"), platforms)"` | — |
+| [SRC-1AE03B9EC3-L002415](../../agents/web_agent.py#L2415) | 2415 | `"            warnings.extend(social_warnings)"` | — |
+| [SRC-1AE03B9EC3-L002416](../../agents/web_agent.py#L2416) | 2416 | `"            social_groups: dict[str, list[dict[str, Any]]] = {}"` | — |
+| [SRC-1AE03B9EC3-L002417](../../agents/web_agent.py#L2417) | 2417 | `"            for source in social_results:"` | — |
