@@ -3828,6 +3828,7 @@ class WebAgent:
                 coverage["potentially_missing_target_count"] = (
                     answer_integrity["potentially_missing_target_count"]
                 )
+                coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
                 coverage["lexical_screen_method"] = (
                     "deterministic_lexical_screen_only_not_semantic_grading"
                 )
@@ -3840,7 +3841,10 @@ class WebAgent:
                         if coverage_targets
                         else "not_machine_assessed_no_explicit_targets_detected"
                     )
-                elif answer_integrity["potentially_missing_target_count"] > 0:
+                elif (
+                    answer_integrity["potentially_missing_target_count"] > 0
+                    or answer_integrity["source_evidence_gap_count"] > 0
+                ):
                     fulfillment_status = "possible_gap_detected"
                 elif coverage_targets:
                     fulfillment_status = "lexical_signals_found_not_semantically_verified"
@@ -4775,6 +4779,7 @@ class WebAgent:
             answer_integrity = audit_answer_integrity(question, reason, sources, coverage_targets)
             answer_coverage["target_checks"] = answer_integrity["target_coverage"]
             answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
+            answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
             answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
             task_fulfillment_status = (
                 "not_assessed_insufficient_evidence" if coverage_targets
@@ -5036,9 +5041,14 @@ class WebAgent:
         answer_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
         answer_coverage["target_checks"] = answer_integrity["target_coverage"]
         answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
+        answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
         answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
         task_fulfillment_status = (
-            "possible_gap_detected" if answer_integrity["potentially_missing_target_count"] > 0
+            "possible_gap_detected"
+            if (
+                answer_integrity["potentially_missing_target_count"] > 0
+                or answer_integrity["source_evidence_gap_count"] > 0
+            )
             else "lexical_signals_found_not_semantically_verified" if coverage_targets
             else "not_machine_assessed_no_explicit_targets_detected"
         )
