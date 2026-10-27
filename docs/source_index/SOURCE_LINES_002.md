@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-FDEEAFDFCA-L000135
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-FDEEAFDFCA-L000111
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,120 +16,144 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-138992B1FC-L000325](../../agents/answer_validation.py#L325) | 325 | `"        target_tokens = list(dict.fromkeys(_criterion_tokens(target)))"` | — |
-| [SRC-138992B1FC-L000326](../../agents/answer_validation.py#L326) | 326 | `"        overlap = [token for token in target_tokens if token in answer_tokens]"` | — |
-| [SRC-138992B1FC-L000327](../../agents/answer_validation.py#L327) | 327 | `"        ratio = len(overlap) / len(target_tokens) if target_tokens else 0.0"` | — |
-| [SRC-138992B1FC-L000328](../../agents/answer_validation.py#L328) | 328 | `"        likely_covered = bool(overlap) and ("` | — |
-| [SRC-138992B1FC-L000329](../../agents/answer_validation.py#L329) | 329 | `"            ratio >= 0.5 if len(target_tokens) > 1 else True"` | — |
-| [SRC-138992B1FC-L000330](../../agents/answer_validation.py#L330) | 330 | `"        )"` | — |
-| [SRC-138992B1FC-L000331](../../agents/answer_validation.py#L331) | 331 | `""` | — |
-| [SRC-138992B1FC-L000332](../../agents/answer_validation.py#L332) | 332 | `"        # Track criterion-level source signals separately from answer wording."` | — |
-| [SRC-138992B1FC-L000333](../../agents/answer_validation.py#L333) | 333 | `"        # A term appearing in a source is not proof that the source supports a claim;"` | — |
-| [SRC-138992B1FC-L000334](../../agents/answer_validation.py#L334) | 334 | `"        # this is a bounded retrieval/evidence diagnostic only."` | — |
-| [SRC-138992B1FC-L000335](../../agents/answer_validation.py#L335) | 335 | `"        source_checks: list[dict[str, Any]] = []"` | — |
-| [SRC-138992B1FC-L000336](../../agents/answer_validation.py#L336) | 336 | `"        for source_index, source in enumerate(safe_sources[:40], 1):"` | — |
-| [SRC-138992B1FC-L000337](../../agents/answer_validation.py#L337) | 337 | `"            page_text = str(source.get(\"page_text\") or \"\")"` | — |
-| [SRC-138992B1FC-L000338](../../agents/answer_validation.py#L338) | 338 | `"            snippet = str(source.get(\"snippet\") or \"\")"` | — |
-| [SRC-138992B1FC-L000339](../../agents/answer_validation.py#L339) | 339 | `"            title = str(source.get(\"title\") or \"\")"` | — |
-| [SRC-138992B1FC-L000340](../../agents/answer_validation.py#L340) | 340 | `"            if bool(source.get(\"page_fetched\")) and page_text.strip():"` | — |
-| [SRC-138992B1FC-L000341](../../agents/answer_validation.py#L341) | 341 | `"                selected_text, basis = page_text, \"extracted_page_text\""` | — |
-| [SRC-138992B1FC-L000342](../../agents/answer_validation.py#L342) | 342 | `"            elif snippet.strip():"` | — |
-| [SRC-138992B1FC-L000343](../../agents/answer_validation.py#L343) | 343 | `"                selected_text, basis = snippet, \"search_snippet\""` | — |
-| [SRC-138992B1FC-L000344](../../agents/answer_validation.py#L344) | 344 | `"            elif title.strip():"` | — |
-| [SRC-138992B1FC-L000345](../../agents/answer_validation.py#L345) | 345 | `"                selected_text, basis = title, \"title_only\""` | — |
-| [SRC-138992B1FC-L000346](../../agents/answer_validation.py#L346) | 346 | `"            else:"` | — |
-| [SRC-138992B1FC-L000347](../../agents/answer_validation.py#L347) | 347 | `"                continue"` | — |
-| [SRC-138992B1FC-L000348](../../agents/answer_validation.py#L348) | 348 | `"            source_tokens = set(_criterion_tokens(selected_text[:16000]))"` | — |
-| [SRC-138992B1FC-L000349](../../agents/answer_validation.py#L349) | 349 | `"            source_match_tokens = set().union(*("` | — |
-| [SRC-138992B1FC-L000350](../../agents/answer_validation.py#L350) | 350 | `"                _criterion_token_variants(token) for token in source_tokens"` | — |
-| [SRC-138992B1FC-L000351](../../agents/answer_validation.py#L351) | 351 | `"            )) if source_tokens else set()"` | — |
-| [SRC-138992B1FC-L000352](../../agents/answer_validation.py#L352) | 352 | `"            source_overlap = ["` | — |
-| [SRC-138992B1FC-L000353](../../agents/answer_validation.py#L353) | 353 | `"                token for token in target_tokens"` | — |
-| [SRC-138992B1FC-L000354](../../agents/answer_validation.py#L354) | 354 | `"                if _criterion_token_variants(token) & source_match_tokens"` | — |
-| [SRC-138992B1FC-L000355](../../agents/answer_validation.py#L355) | 355 | `"            ]"` | — |
-| [SRC-138992B1FC-L000356](../../agents/answer_validation.py#L356) | 356 | `"            source_ratio = len(source_overlap) / len(target_tokens) if target_tokens else 0.0"` | — |
-| [SRC-138992B1FC-L000357](../../agents/answer_validation.py#L357) | 357 | `"            source_signal = bool(source_overlap) and ("` | — |
-| [SRC-138992B1FC-L000358](../../agents/answer_validation.py#L358) | 358 | `"                source_ratio >= 0.5 if len(target_tokens) > 1 else True"` | — |
-| [SRC-138992B1FC-L000359](../../agents/answer_validation.py#L359) | 359 | `"            )"` | — |
-| [SRC-138992B1FC-L000360](../../agents/answer_validation.py#L360) | 360 | `"            if source_signal:"` | — |
-| [SRC-138992B1FC-L000361](../../agents/answer_validation.py#L361) | 361 | `"                source_checks.append({"` | — |
-| [SRC-138992B1FC-L000362](../../agents/answer_validation.py#L362) | 362 | `"                    \"source_index\": source_index,"` | — |
-| [SRC-138992B1FC-L000363](../../agents/answer_validation.py#L363) | 363 | `"                    \"status\": \"lexical_signal_found\","` | — |
-| [SRC-138992B1FC-L000364](../../agents/answer_validation.py#L364) | 364 | `"                    \"evidence_basis\": basis,"` | — |
-| [SRC-138992B1FC-L000365](../../agents/answer_validation.py#L365) | 365 | `"                    \"matched_terms\": source_overlap[:8],"` | — |
-| [SRC-138992B1FC-L000366](../../agents/answer_validation.py#L366) | 366 | `"                    \"token_overlap_ratio\": round(source_ratio, 3),"` | — |
-| [SRC-138992B1FC-L000367](../../agents/answer_validation.py#L367) | 367 | `"                })"` | — |
-| [SRC-138992B1FC-L000368](../../agents/answer_validation.py#L368) | 368 | `"        if not source_checks:"` | — |
-| [SRC-138992B1FC-L000369](../../agents/answer_validation.py#L369) | 369 | `"            source_evidence_gap_count += 1"` | — |
-| [SRC-138992B1FC-L000370](../../agents/answer_validation.py#L370) | 370 | `"        target_checks.append({"` | — |
-| [SRC-138992B1FC-L000371](../../agents/answer_validation.py#L371) | 371 | `"            \"target\": str(target)[:120],"` | — |
-| [SRC-138992B1FC-L000372](../../agents/answer_validation.py#L372) | 372 | `"            \"status\": \"lexical_signal_found\" if likely_covered else \"possibly_missing\","` | — |
-| [SRC-138992B1FC-L000373](../../agents/answer_validation.py#L373) | 373 | `"            \"matched_terms\": overlap[:12],"` | — |
-| [SRC-138992B1FC-L000374](../../agents/answer_validation.py#L374) | 374 | `"            \"missing_terms\": [token for token in target_tokens if token not in answer_tokens][:12],"` | — |
-| [SRC-138992B1FC-L000375](../../agents/answer_validation.py#L375) | 375 | `"            \"token_overlap_ratio\": round(ratio, 3),"` | — |
-| [SRC-138992B1FC-L000376](../../agents/answer_validation.py#L376) | 376 | `"            \"source_evidence_status\": ("` | — |
-| [SRC-138992B1FC-L000377](../../agents/answer_validation.py#L377) | 377 | `"                \"source_lexical_signal_found\" if source_checks else \"no_source_lexical_signal\""` | — |
-| [SRC-138992B1FC-L000378](../../agents/answer_validation.py#L378) | 378 | `"            ),"` | — |
-| [SRC-138992B1FC-L000379](../../agents/answer_validation.py#L379) | 379 | `"            \"source_evidence_checks\": source_checks[:12],"` | — |
-| [SRC-138992B1FC-L000380](../../agents/answer_validation.py#L380) | 380 | `"        })"` | — |
-| [SRC-138992B1FC-L000381](../../agents/answer_validation.py#L381) | 381 | `""` | — |
-| [SRC-138992B1FC-L000382](../../agents/answer_validation.py#L382) | 382 | `"    citation_count = len(re.findall(r\"\\[(?:المصدر\|source)\\s+\\d+\\]\", answer_text, re.IGNORECASE))"` | — |
-| [SRC-138992B1FC-L000383](../../agents/answer_validation.py#L383) | 383 | `"    if extracted_page_count:"` | — |
-| [SRC-138992B1FC-L000384](../../agents/answer_validation.py#L384) | 384 | `"        source_scope = \"contains_extracted_page_text_and_or_snippets\""` | — |
-| [SRC-138992B1FC-L000385](../../agents/answer_validation.py#L385) | 385 | `"    elif snippet_count:"` | — |
-| [SRC-138992B1FC-L000386](../../agents/answer_validation.py#L386) | 386 | `"        source_scope = \"search_snippets_only\""` | — |
-| [SRC-138992B1FC-L000387](../../agents/answer_validation.py#L387) | 387 | `"    else:"` | — |
-| [SRC-138992B1FC-L000388](../../agents/answer_validation.py#L388) | 388 | `"        source_scope = \"no_readable_source_text\""` | — |
-| [SRC-138992B1FC-L000389](../../agents/answer_validation.py#L389) | 389 | `""` | — |
-| [SRC-138992B1FC-L000390](../../agents/answer_validation.py#L390) | 390 | `"    if not source_texts:"` | — |
-| [SRC-138992B1FC-L000391](../../agents/answer_validation.py#L391) | 391 | `"        numeric_status = \"not_assessable_no_readable_source_text\""` | — |
-| [SRC-138992B1FC-L000392](../../agents/answer_validation.py#L392) | 392 | `"    elif unsupported_numbers:"` | — |
-| [SRC-138992B1FC-L000393](../../agents/answer_validation.py#L393) | 393 | `"        numeric_status = \"potentially_unsupported_numeric_literals\""` | — |
-| [SRC-138992B1FC-L000394](../../agents/answer_validation.py#L394) | 394 | `"    elif answer_number_literals:"` | — |
-| [SRC-138992B1FC-L000395](../../agents/answer_validation.py#L395) | 395 | `"        numeric_status = \"all_checked_numeric_literals_appear_in_source_text\""` | — |
-| [SRC-138992B1FC-L000396](../../agents/answer_validation.py#L396) | 396 | `"    else:"` | — |
-| [SRC-138992B1FC-L000397](../../agents/answer_validation.py#L397) | 397 | `"        numeric_status = \"no_specific_numeric_literals_checked\""` | — |
-| [SRC-138992B1FC-L000398](../../agents/answer_validation.py#L398) | 398 | `""` | — |
-| [SRC-138992B1FC-L000399](../../agents/answer_validation.py#L399) | 399 | `"    return {"` | — |
-| [SRC-138992B1FC-L000400](../../agents/answer_validation.py#L400) | 400 | `"        \"method\": \"deterministic_lexical_screen_only\","` | — |
-| [SRC-138992B1FC-L000401](../../agents/answer_validation.py#L401) | 401 | `"        \"semantic_verification\": False,"` | — |
-| [SRC-138992B1FC-L000402](../../agents/answer_validation.py#L402) | 402 | `"        \"independent_fact_check\": False,"` | — |
-| [SRC-138992B1FC-L000403](../../agents/answer_validation.py#L403) | 403 | `"        \"answer_nonempty\": bool(answer_text.strip()),"` | — |
-| [SRC-138992B1FC-L000404](../../agents/answer_validation.py#L404) | 404 | `"        \"source_count\": len(safe_sources),"` | — |
-| [SRC-138992B1FC-L000405](../../agents/answer_validation.py#L405) | 405 | `"        \"source_evidence_scope\": source_scope,"` | — |
-| [SRC-138992B1FC-L000406](../../agents/answer_validation.py#L406) | 406 | `"        \"pages_with_extracted_text\": extracted_page_count,"` | — |
-| [SRC-138992B1FC-L000407](../../agents/answer_validation.py#L407) | 407 | `"        \"sources_with_snippets_only\": snippet_count,"` | — |
-| [SRC-138992B1FC-L000408](../../agents/answer_validation.py#L408) | 408 | `"        \"citation_marker_count\": citation_count,"` | — |
-| [SRC-138992B1FC-L000409](../../agents/answer_validation.py#L409) | 409 | `"        \"citation_entailment\": \"not_checked\","` | — |
-| [SRC-138992B1FC-L000410](../../agents/answer_validation.py#L410) | 410 | `"        \"citation_lexical_alignment_method\": \"content_word_overlap_heuristic_not_entailment\","` | — |
-| [SRC-138992B1FC-L000411](../../agents/answer_validation.py#L411) | 411 | `"        \"citation_lexical_alignment\": citation_alignment[:30],"` | — |
-| [SRC-138992B1FC-L000412](../../agents/answer_validation.py#L412) | 412 | `"        \"weak_citation_alignment_count\": weak_citation_alignment_count,"` | — |
-| [SRC-138992B1FC-L000413](../../agents/answer_validation.py#L413) | 413 | `"        \"citation_numeric_support\": citation_numeric_support[:30],"` | — |
-| [SRC-138992B1FC-L000414](../../agents/answer_validation.py#L414) | 414 | `"        \"potentially_unsupported_numeric_by_citation_count\": sum("` | — |
-| [SRC-138992B1FC-L000415](../../agents/answer_validation.py#L415) | 415 | `"            len(item[\"potentially_unsupported_numeric_literals\"])"` | — |
-| [SRC-138992B1FC-L000416](../../agents/answer_validation.py#L416) | 416 | `"            for item in citation_numeric_support"` | — |
-| [SRC-138992B1FC-L000417](../../agents/answer_validation.py#L417) | 417 | `"        ),"` | — |
-| [SRC-138992B1FC-L000418](../../agents/answer_validation.py#L418) | 418 | `"        \"potential_value_discrepancies\": potential_value_discrepancies[:8],"` | — |
-| [SRC-138992B1FC-L000419](../../agents/answer_validation.py#L419) | 419 | `"        \"potential_value_discrepancy_count\": len(potential_value_discrepancies),"` | — |
-| [SRC-138992B1FC-L000420](../../agents/answer_validation.py#L420) | 420 | `"        \"numeric_check_status\": numeric_status,"` | — |
-| [SRC-138992B1FC-L000421](../../agents/answer_validation.py#L421) | 421 | `"        \"checked_numeric_literals\": sorted(answer_number_literals)[:40],"` | — |
-| [SRC-138992B1FC-L000422](../../agents/answer_validation.py#L422) | 422 | `"        \"potentially_unsupported_numeric_literals\": unsupported_numbers[:40],"` | — |
-| [SRC-138992B1FC-L000423](../../agents/answer_validation.py#L423) | 423 | `"        \"potentially_unsupported_numeric_count\": len(unsupported_numbers),"` | — |
-| [SRC-138992B1FC-L000424](../../agents/answer_validation.py#L424) | 424 | `"        \"target_coverage\": target_checks,"` | — |
-| [SRC-138992B1FC-L000425](../../agents/answer_validation.py#L425) | 425 | `"        \"potentially_missing_target_count\": sum("` | — |
-| [SRC-138992B1FC-L000426](../../agents/answer_validation.py#L426) | 426 | `"            item[\"status\"] == \"possibly_missing\" for item in target_checks"` | — |
-| [SRC-138992B1FC-L000427](../../agents/answer_validation.py#L427) | 427 | `"        ),"` | — |
-| [SRC-138992B1FC-L000428](../../agents/answer_validation.py#L428) | 428 | `"        \"source_evidence_gap_count\": source_evidence_gap_count,"` | — |
-| [SRC-138992B1FC-L000429](../../agents/answer_validation.py#L429) | 429 | `"        \"source_evidence_assessment\": \"criterion_level_lexical_signals_not_claim_support_or_entailment\","` | — |
-| [SRC-138992B1FC-L000430](../../agents/answer_validation.py#L430) | 430 | `"        \"limitations\": ["` | — |
-| [SRC-138992B1FC-L000431](../../agents/answer_validation.py#L431) | 431 | `"            \"Token overlap does not prove that an answer fulfills the intended task.\","` | — |
-| [SRC-138992B1FC-L000432](../../agents/answer_validation.py#L432) | 432 | `"            \"A number appearing in any source does not prove that the source supports the claim.\","` | — |
-| [SRC-138992B1FC-L000433](../../agents/answer_validation.py#L433) | 433 | `"            \"Citation token overlap can be coincidental and does not establish that the source entails the claim.\","` | — |
-| [SRC-138992B1FC-L000434](../../agents/answer_validation.py#L434) | 434 | `"            \"Value-discrepancy flags may reflect different products, periods, or units; they are not automatic contradiction findings.\","` | — |
-| [SRC-138992B1FC-L000435](../../agents/answer_validation.py#L435) | 435 | `"            \"Contradictory sources and citation-to-claim entailment require claim-level review.\","` | — |
-| [SRC-138992B1FC-L000436](../../agents/answer_validation.py#L436) | 436 | `"            \"Search snippets may be partial; extracted page text is still not independent verification.\","` | — |
-| [SRC-138992B1FC-L000437](../../agents/answer_validation.py#L437) | 437 | `"        ],"` | — |
-| [SRC-138992B1FC-L000438](../../agents/answer_validation.py#L438) | 438 | `"    }"` | — |
+| [SRC-138992B1FC-L000325](../../agents/answer_validation.py#L325) | 325 | `"        unique_values = list(dict.fromkeys(entry[\"value\"] for entry in entries))"` | — |
+| [SRC-138992B1FC-L000326](../../agents/answer_validation.py#L326) | 326 | `"        source_indexes = sorted({entry[\"source_index\"] for entry in entries})"` | — |
+| [SRC-138992B1FC-L000327](../../agents/answer_validation.py#L327) | 327 | `"        if len(unique_values) < 2 or len(source_indexes) < 2:"` | — |
+| [SRC-138992B1FC-L000328](../../agents/answer_validation.py#L328) | 328 | `"            continue"` | — |
+| [SRC-138992B1FC-L000329](../../agents/answer_validation.py#L329) | 329 | `"        by_value = []"` | — |
+| [SRC-138992B1FC-L000330](../../agents/answer_validation.py#L330) | 330 | `"        for value in unique_values[:8]:"` | — |
+| [SRC-138992B1FC-L000331](../../agents/answer_validation.py#L331) | 331 | `"            supporting_indexes = sorted({"` | — |
+| [SRC-138992B1FC-L000332](../../agents/answer_validation.py#L332) | 332 | `"                entry[\"source_index\"] for entry in entries if entry[\"value\"] == value"` | — |
+| [SRC-138992B1FC-L000333](../../agents/answer_validation.py#L333) | 333 | `"            })"` | — |
+| [SRC-138992B1FC-L000334](../../agents/answer_validation.py#L334) | 334 | `"            by_value.append({\"value\": value, \"source_indexes\": supporting_indexes[:8]})"` | — |
+| [SRC-138992B1FC-L000335](../../agents/answer_validation.py#L335) | 335 | `"        potential_value_discrepancies.append({"` | — |
+| [SRC-138992B1FC-L000336](../../agents/answer_validation.py#L336) | 336 | `"            \"dimension\": dimension,"` | — |
+| [SRC-138992B1FC-L000337](../../agents/answer_validation.py#L337) | 337 | `"            \"values\": by_value,"` | — |
+| [SRC-138992B1FC-L000338](../../agents/answer_validation.py#L338) | 338 | `"            \"source_indexes\": source_indexes[:12],"` | — |
+| [SRC-138992B1FC-L000339](../../agents/answer_validation.py#L339) | 339 | `"            \"status\": \"potential_variation_or_conflict_requires_entity_review\","` | — |
+| [SRC-138992B1FC-L000340](../../agents/answer_validation.py#L340) | 340 | `"        })"` | — |
+| [SRC-138992B1FC-L000341](../../agents/answer_validation.py#L341) | 341 | `""` | — |
+| [SRC-138992B1FC-L000342](../../agents/answer_validation.py#L342) | 342 | `"    weak_citation_alignment_count = sum("` | — |
+| [SRC-138992B1FC-L000343](../../agents/answer_validation.py#L343) | 343 | `"        item[\"status\"] == \"weak_lexical_overlap\""` | — |
+| [SRC-138992B1FC-L000344](../../agents/answer_validation.py#L344) | 344 | `"        for item in citation_alignment"` | — |
+| [SRC-138992B1FC-L000345](../../agents/answer_validation.py#L345) | 345 | `"    )"` | — |
+| [SRC-138992B1FC-L000346](../../agents/answer_validation.py#L346) | 346 | `"    target_checks: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000347](../../agents/answer_validation.py#L347) | 347 | `"    source_evidence_gap_count = 0"` | — |
+| [SRC-138992B1FC-L000348](../../agents/answer_validation.py#L348) | 348 | `"    for target in (coverage_targets or [])[:8]:"` | — |
+| [SRC-138992B1FC-L000349](../../agents/answer_validation.py#L349) | 349 | `"        target_tokens = list(dict.fromkeys(_criterion_tokens(target)))"` | — |
+| [SRC-138992B1FC-L000350](../../agents/answer_validation.py#L350) | 350 | `"        overlap = [token for token in target_tokens if token in answer_tokens]"` | — |
+| [SRC-138992B1FC-L000351](../../agents/answer_validation.py#L351) | 351 | `"        ratio = len(overlap) / len(target_tokens) if target_tokens else 0.0"` | — |
+| [SRC-138992B1FC-L000352](../../agents/answer_validation.py#L352) | 352 | `"        likely_covered = bool(overlap) and ("` | — |
+| [SRC-138992B1FC-L000353](../../agents/answer_validation.py#L353) | 353 | `"            ratio >= 0.5 if len(target_tokens) > 1 else True"` | — |
+| [SRC-138992B1FC-L000354](../../agents/answer_validation.py#L354) | 354 | `"        )"` | — |
+| [SRC-138992B1FC-L000355](../../agents/answer_validation.py#L355) | 355 | `""` | — |
+| [SRC-138992B1FC-L000356](../../agents/answer_validation.py#L356) | 356 | `"        # Track criterion-level source signals separately from answer wording."` | — |
+| [SRC-138992B1FC-L000357](../../agents/answer_validation.py#L357) | 357 | `"        # A term appearing in a source is not proof that the source supports a claim;"` | — |
+| [SRC-138992B1FC-L000358](../../agents/answer_validation.py#L358) | 358 | `"        # this is a bounded retrieval/evidence diagnostic only."` | — |
+| [SRC-138992B1FC-L000359](../../agents/answer_validation.py#L359) | 359 | `"        source_checks: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000360](../../agents/answer_validation.py#L360) | 360 | `"        for source_index, source in enumerate(safe_sources[:40], 1):"` | — |
+| [SRC-138992B1FC-L000361](../../agents/answer_validation.py#L361) | 361 | `"            page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-138992B1FC-L000362](../../agents/answer_validation.py#L362) | 362 | `"            snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-138992B1FC-L000363](../../agents/answer_validation.py#L363) | 363 | `"            title = str(source.get(\"title\") or \"\")"` | — |
+| [SRC-138992B1FC-L000364](../../agents/answer_validation.py#L364) | 364 | `"            if bool(source.get(\"page_fetched\")) and page_text.strip():"` | — |
+| [SRC-138992B1FC-L000365](../../agents/answer_validation.py#L365) | 365 | `"                selected_text, basis = page_text, \"extracted_page_text\""` | — |
+| [SRC-138992B1FC-L000366](../../agents/answer_validation.py#L366) | 366 | `"            elif snippet.strip():"` | — |
+| [SRC-138992B1FC-L000367](../../agents/answer_validation.py#L367) | 367 | `"                selected_text, basis = snippet, \"search_snippet\""` | — |
+| [SRC-138992B1FC-L000368](../../agents/answer_validation.py#L368) | 368 | `"            elif title.strip():"` | — |
+| [SRC-138992B1FC-L000369](../../agents/answer_validation.py#L369) | 369 | `"                selected_text, basis = title, \"title_only\""` | — |
+| [SRC-138992B1FC-L000370](../../agents/answer_validation.py#L370) | 370 | `"            else:"` | — |
+| [SRC-138992B1FC-L000371](../../agents/answer_validation.py#L371) | 371 | `"                continue"` | — |
+| [SRC-138992B1FC-L000372](../../agents/answer_validation.py#L372) | 372 | `"            source_tokens = set(_criterion_tokens(selected_text[:16000]))"` | — |
+| [SRC-138992B1FC-L000373](../../agents/answer_validation.py#L373) | 373 | `"            source_match_tokens = set().union(*("` | — |
+| [SRC-138992B1FC-L000374](../../agents/answer_validation.py#L374) | 374 | `"                _criterion_token_variants(token) for token in source_tokens"` | — |
+| [SRC-138992B1FC-L000375](../../agents/answer_validation.py#L375) | 375 | `"            )) if source_tokens else set()"` | — |
+| [SRC-138992B1FC-L000376](../../agents/answer_validation.py#L376) | 376 | `"            source_overlap = ["` | — |
+| [SRC-138992B1FC-L000377](../../agents/answer_validation.py#L377) | 377 | `"                token for token in target_tokens"` | — |
+| [SRC-138992B1FC-L000378](../../agents/answer_validation.py#L378) | 378 | `"                if _criterion_token_variants(token) & source_match_tokens"` | — |
+| [SRC-138992B1FC-L000379](../../agents/answer_validation.py#L379) | 379 | `"            ]"` | — |
+| [SRC-138992B1FC-L000380](../../agents/answer_validation.py#L380) | 380 | `"            source_ratio = len(source_overlap) / len(target_tokens) if target_tokens else 0.0"` | — |
+| [SRC-138992B1FC-L000381](../../agents/answer_validation.py#L381) | 381 | `"            source_signal = bool(source_overlap) and ("` | — |
+| [SRC-138992B1FC-L000382](../../agents/answer_validation.py#L382) | 382 | `"                source_ratio >= 0.5 if len(target_tokens) > 1 else True"` | — |
+| [SRC-138992B1FC-L000383](../../agents/answer_validation.py#L383) | 383 | `"            )"` | — |
+| [SRC-138992B1FC-L000384](../../agents/answer_validation.py#L384) | 384 | `"            if source_signal:"` | — |
+| [SRC-138992B1FC-L000385](../../agents/answer_validation.py#L385) | 385 | `"                source_checks.append({"` | — |
+| [SRC-138992B1FC-L000386](../../agents/answer_validation.py#L386) | 386 | `"                    \"source_index\": source_index,"` | — |
+| [SRC-138992B1FC-L000387](../../agents/answer_validation.py#L387) | 387 | `"                    \"status\": \"lexical_signal_found\","` | — |
+| [SRC-138992B1FC-L000388](../../agents/answer_validation.py#L388) | 388 | `"                    \"evidence_basis\": basis,"` | — |
+| [SRC-138992B1FC-L000389](../../agents/answer_validation.py#L389) | 389 | `"                    \"matched_terms\": source_overlap[:8],"` | — |
+| [SRC-138992B1FC-L000390](../../agents/answer_validation.py#L390) | 390 | `"                    \"token_overlap_ratio\": round(source_ratio, 3),"` | — |
+| [SRC-138992B1FC-L000391](../../agents/answer_validation.py#L391) | 391 | `"                })"` | — |
+| [SRC-138992B1FC-L000392](../../agents/answer_validation.py#L392) | 392 | `"        if not source_checks:"` | — |
+| [SRC-138992B1FC-L000393](../../agents/answer_validation.py#L393) | 393 | `"            source_evidence_gap_count += 1"` | — |
+| [SRC-138992B1FC-L000394](../../agents/answer_validation.py#L394) | 394 | `"        target_checks.append({"` | — |
+| [SRC-138992B1FC-L000395](../../agents/answer_validation.py#L395) | 395 | `"            \"target\": str(target)[:120],"` | — |
+| [SRC-138992B1FC-L000396](../../agents/answer_validation.py#L396) | 396 | `"            \"status\": \"lexical_signal_found\" if likely_covered else \"possibly_missing\","` | — |
+| [SRC-138992B1FC-L000397](../../agents/answer_validation.py#L397) | 397 | `"            \"matched_terms\": overlap[:12],"` | — |
+| [SRC-138992B1FC-L000398](../../agents/answer_validation.py#L398) | 398 | `"            \"missing_terms\": [token for token in target_tokens if token not in answer_tokens][:12],"` | — |
+| [SRC-138992B1FC-L000399](../../agents/answer_validation.py#L399) | 399 | `"            \"token_overlap_ratio\": round(ratio, 3),"` | — |
+| [SRC-138992B1FC-L000400](../../agents/answer_validation.py#L400) | 400 | `"            \"source_evidence_status\": ("` | — |
+| [SRC-138992B1FC-L000401](../../agents/answer_validation.py#L401) | 401 | `"                \"source_lexical_signal_found\" if source_checks else \"no_source_lexical_signal\""` | — |
+| [SRC-138992B1FC-L000402](../../agents/answer_validation.py#L402) | 402 | `"            ),"` | — |
+| [SRC-138992B1FC-L000403](../../agents/answer_validation.py#L403) | 403 | `"            \"source_evidence_checks\": source_checks[:12],"` | — |
+| [SRC-138992B1FC-L000404](../../agents/answer_validation.py#L404) | 404 | `"        })"` | — |
+| [SRC-138992B1FC-L000405](../../agents/answer_validation.py#L405) | 405 | `""` | — |
+| [SRC-138992B1FC-L000406](../../agents/answer_validation.py#L406) | 406 | `"    citation_count = len(re.findall(r\"\\[(?:المصدر\|source)\\s+\\d+\\]\", answer_text, re.IGNORECASE))"` | — |
+| [SRC-138992B1FC-L000407](../../agents/answer_validation.py#L407) | 407 | `"    if extracted_page_count:"` | — |
+| [SRC-138992B1FC-L000408](../../agents/answer_validation.py#L408) | 408 | `"        source_scope = \"contains_extracted_page_text_and_or_snippets\""` | — |
+| [SRC-138992B1FC-L000409](../../agents/answer_validation.py#L409) | 409 | `"    elif snippet_count:"` | — |
+| [SRC-138992B1FC-L000410](../../agents/answer_validation.py#L410) | 410 | `"        source_scope = \"search_snippets_only\""` | — |
+| [SRC-138992B1FC-L000411](../../agents/answer_validation.py#L411) | 411 | `"    else:"` | — |
+| [SRC-138992B1FC-L000412](../../agents/answer_validation.py#L412) | 412 | `"        source_scope = \"no_readable_source_text\""` | — |
+| [SRC-138992B1FC-L000413](../../agents/answer_validation.py#L413) | 413 | `""` | — |
+| [SRC-138992B1FC-L000414](../../agents/answer_validation.py#L414) | 414 | `"    if not source_texts:"` | — |
+| [SRC-138992B1FC-L000415](../../agents/answer_validation.py#L415) | 415 | `"        numeric_status = \"not_assessable_no_readable_source_text\""` | — |
+| [SRC-138992B1FC-L000416](../../agents/answer_validation.py#L416) | 416 | `"    elif unsupported_numbers:"` | — |
+| [SRC-138992B1FC-L000417](../../agents/answer_validation.py#L417) | 417 | `"        numeric_status = \"potentially_unsupported_numeric_literals\""` | — |
+| [SRC-138992B1FC-L000418](../../agents/answer_validation.py#L418) | 418 | `"    elif answer_number_literals:"` | — |
+| [SRC-138992B1FC-L000419](../../agents/answer_validation.py#L419) | 419 | `"        numeric_status = \"all_checked_numeric_literals_appear_in_source_text\""` | — |
+| [SRC-138992B1FC-L000420](../../agents/answer_validation.py#L420) | 420 | `"    else:"` | — |
+| [SRC-138992B1FC-L000421](../../agents/answer_validation.py#L421) | 421 | `"        numeric_status = \"no_specific_numeric_literals_checked\""` | — |
+| [SRC-138992B1FC-L000422](../../agents/answer_validation.py#L422) | 422 | `""` | — |
+| [SRC-138992B1FC-L000423](../../agents/answer_validation.py#L423) | 423 | `"    return {"` | — |
+| [SRC-138992B1FC-L000424](../../agents/answer_validation.py#L424) | 424 | `"        \"method\": \"deterministic_lexical_screen_only\","` | — |
+| [SRC-138992B1FC-L000425](../../agents/answer_validation.py#L425) | 425 | `"        \"semantic_verification\": False,"` | — |
+| [SRC-138992B1FC-L000426](../../agents/answer_validation.py#L426) | 426 | `"        \"independent_fact_check\": False,"` | — |
+| [SRC-138992B1FC-L000427](../../agents/answer_validation.py#L427) | 427 | `"        \"answer_nonempty\": bool(answer_text.strip()),"` | — |
+| [SRC-138992B1FC-L000428](../../agents/answer_validation.py#L428) | 428 | `"        \"source_count\": len(safe_sources),"` | — |
+| [SRC-138992B1FC-L000429](../../agents/answer_validation.py#L429) | 429 | `"        \"source_evidence_scope\": source_scope,"` | — |
+| [SRC-138992B1FC-L000430](../../agents/answer_validation.py#L430) | 430 | `"        \"pages_with_extracted_text\": extracted_page_count,"` | — |
+| [SRC-138992B1FC-L000431](../../agents/answer_validation.py#L431) | 431 | `"        \"sources_with_snippets_only\": snippet_count,"` | — |
+| [SRC-138992B1FC-L000432](../../agents/answer_validation.py#L432) | 432 | `"        \"citation_marker_count\": citation_count,"` | — |
+| [SRC-138992B1FC-L000433](../../agents/answer_validation.py#L433) | 433 | `"        \"citation_entailment\": \"not_checked\","` | — |
+| [SRC-138992B1FC-L000434](../../agents/answer_validation.py#L434) | 434 | `"        \"citation_lexical_alignment_method\": \"content_word_overlap_heuristic_not_entailment\","` | — |
+| [SRC-138992B1FC-L000435](../../agents/answer_validation.py#L435) | 435 | `"        \"citation_lexical_alignment\": citation_alignment[:30],"` | — |
+| [SRC-138992B1FC-L000436](../../agents/answer_validation.py#L436) | 436 | `"        \"weak_citation_alignment_count\": weak_citation_alignment_count,"` | — |
+| [SRC-138992B1FC-L000437](../../agents/answer_validation.py#L437) | 437 | `"        \"citation_numeric_support\": citation_numeric_support[:30],"` | — |
+| [SRC-138992B1FC-L000438](../../agents/answer_validation.py#L438) | 438 | `"        \"potentially_unsupported_numeric_by_citation_count\": sum("` | — |
+| [SRC-138992B1FC-L000439](../../agents/answer_validation.py#L439) | 439 | `"            len(item[\"potentially_unsupported_numeric_literals\"])"` | — |
+| [SRC-138992B1FC-L000440](../../agents/answer_validation.py#L440) | 440 | `"            for item in citation_numeric_support"` | — |
+| [SRC-138992B1FC-L000441](../../agents/answer_validation.py#L441) | 441 | `"        ),"` | — |
+| [SRC-138992B1FC-L000442](../../agents/answer_validation.py#L442) | 442 | `"        \"potential_value_discrepancies\": potential_value_discrepancies[:8],"` | — |
+| [SRC-138992B1FC-L000443](../../agents/answer_validation.py#L443) | 443 | `"        \"potential_value_discrepancy_count\": len(potential_value_discrepancies),"` | — |
+| [SRC-138992B1FC-L000444](../../agents/answer_validation.py#L444) | 444 | `"        \"numeric_check_status\": numeric_status,"` | — |
+| [SRC-138992B1FC-L000445](../../agents/answer_validation.py#L445) | 445 | `"        \"checked_numeric_literals\": sorted(answer_number_literals)[:40],"` | — |
+| [SRC-138992B1FC-L000446](../../agents/answer_validation.py#L446) | 446 | `"        \"potentially_unsupported_numeric_literals\": unsupported_numbers[:40],"` | — |
+| [SRC-138992B1FC-L000447](../../agents/answer_validation.py#L447) | 447 | `"        \"potentially_unsupported_numeric_count\": len(unsupported_numbers),"` | — |
+| [SRC-138992B1FC-L000448](../../agents/answer_validation.py#L448) | 448 | `"        \"target_coverage\": target_checks,"` | — |
+| [SRC-138992B1FC-L000449](../../agents/answer_validation.py#L449) | 449 | `"        \"potentially_missing_target_count\": sum("` | — |
+| [SRC-138992B1FC-L000450](../../agents/answer_validation.py#L450) | 450 | `"            item[\"status\"] == \"possibly_missing\" for item in target_checks"` | — |
+| [SRC-138992B1FC-L000451](../../agents/answer_validation.py#L451) | 451 | `"        ),"` | — |
+| [SRC-138992B1FC-L000452](../../agents/answer_validation.py#L452) | 452 | `"        \"source_evidence_gap_count\": source_evidence_gap_count,"` | — |
+| [SRC-138992B1FC-L000453](../../agents/answer_validation.py#L453) | 453 | `"        \"source_evidence_assessment\": \"criterion_level_lexical_signals_not_claim_support_or_entailment\","` | — |
+| [SRC-138992B1FC-L000454](../../agents/answer_validation.py#L454) | 454 | `"        \"limitations\": ["` | — |
+| [SRC-138992B1FC-L000455](../../agents/answer_validation.py#L455) | 455 | `"            \"Token overlap does not prove that an answer fulfills the intended task.\","` | — |
+| [SRC-138992B1FC-L000456](../../agents/answer_validation.py#L456) | 456 | `"            \"A number appearing in any source does not prove that the source supports the claim.\","` | — |
+| [SRC-138992B1FC-L000457](../../agents/answer_validation.py#L457) | 457 | `"            \"Citation token overlap can be coincidental and does not establish that the source entails the claim.\","` | — |
+| [SRC-138992B1FC-L000458](../../agents/answer_validation.py#L458) | 458 | `"            \"Value-discrepancy flags may reflect different products, periods, or units; they are not automatic contradiction findings.\","` | — |
+| [SRC-138992B1FC-L000459](../../agents/answer_validation.py#L459) | 459 | `"            \"Contradictory sources and citation-to-claim entailment require claim-level review.\","` | — |
+| [SRC-138992B1FC-L000460](../../agents/answer_validation.py#L460) | 460 | `"            \"Search snippets may be partial; extracted page text is still not independent verification.\","` | — |
+| [SRC-138992B1FC-L000461](../../agents/answer_validation.py#L461) | 461 | `"        ],"` | — |
+| [SRC-138992B1FC-L000462](../../agents/answer_validation.py#L462) | 462 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
@@ -819,27 +843,3 @@
 | [SRC-FDEEAFDFCA-L000109](../../agents/request_budget.py#L109) | 109 | `"        with self._lock:"` | — |
 | [SRC-FDEEAFDFCA-L000110](../../agents/request_budget.py#L110) | 110 | `"            if self.remaining_seconds() <= 0:"` | — |
 | [SRC-FDEEAFDFCA-L000111](../../agents/request_budget.py#L111) | 111 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
-| [SRC-FDEEAFDFCA-L000112](../../agents/request_budget.py#L112) | 112 | `"                raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
-| [SRC-FDEEAFDFCA-L000113](../../agents/request_budget.py#L113) | 113 | `"            limit = self._limits[resource]"` | — |
-| [SRC-FDEEAFDFCA-L000114](../../agents/request_budget.py#L114) | 114 | `"            if self._counts[resource] + amount > limit:"` | — |
-| [SRC-FDEEAFDFCA-L000115](../../agents/request_budget.py#L115) | 115 | `"                self._exhausted_reasons.add(resource)"` | — |
-| [SRC-FDEEAFDFCA-L000116](../../agents/request_budget.py#L116) | 116 | `"                raise RequestBudgetExceeded("` | — |
-| [SRC-FDEEAFDFCA-L000117](../../agents/request_budget.py#L117) | 117 | `"                    f\"تم بلوغ حد موارد الطلب: {resource}.\""` | — |
-| [SRC-FDEEAFDFCA-L000118](../../agents/request_budget.py#L118) | 118 | `"                )"` | — |
-| [SRC-FDEEAFDFCA-L000119](../../agents/request_budget.py#L119) | 119 | `"            self._counts[resource] += amount"` | — |
-| [SRC-FDEEAFDFCA-L000120](../../agents/request_budget.py#L120) | 120 | `""` | — |
-| [SRC-FDEEAFDFCA-L000121](../../agents/request_budget.py#L121) | 121 | `"    def snapshot(self) -> dict[str, Any]:"` | — |
-| [SRC-FDEEAFDFCA-L000122](../../agents/request_budget.py#L122) | 122 | `"        with self._lock:"` | — |
-| [SRC-FDEEAFDFCA-L000123](../../agents/request_budget.py#L123) | 123 | `"            counts = dict(self._counts)"` | — |
-| [SRC-FDEEAFDFCA-L000124](../../agents/request_budget.py#L124) | 124 | `"            limits = dict(self._limits)"` | — |
-| [SRC-FDEEAFDFCA-L000125](../../agents/request_budget.py#L125) | 125 | `"            exhausted_reasons = sorted(self._exhausted_reasons)"` | — |
-| [SRC-FDEEAFDFCA-L000126](../../agents/request_budget.py#L126) | 126 | `"        remaining = self.remaining_seconds()"` | — |
-| [SRC-FDEEAFDFCA-L000127](../../agents/request_budget.py#L127) | 127 | `"        return {"` | — |
-| [SRC-FDEEAFDFCA-L000128](../../agents/request_budget.py#L128) | 128 | `"            \"policy\": \"cooperative_per_request_budget\","` | — |
-| [SRC-FDEEAFDFCA-L000129](../../agents/request_budget.py#L129) | 129 | `"            \"timeout_seconds\": round(self.deadline - self.started_at, 3),"` | — |
-| [SRC-FDEEAFDFCA-L000130](../../agents/request_budget.py#L130) | 130 | `"            \"elapsed_seconds\": round(max(0.0, self._clock() - self.started_at), 3),"` | — |
-| [SRC-FDEEAFDFCA-L000131](../../agents/request_budget.py#L131) | 131 | `"            \"remaining_seconds\": round(remaining, 3),"` | — |
-| [SRC-FDEEAFDFCA-L000132](../../agents/request_budget.py#L132) | 132 | `"            \"deadline_exceeded\": remaining <= 0,"` | — |
-| [SRC-FDEEAFDFCA-L000133](../../agents/request_budget.py#L133) | 133 | `"            \"budget_exhausted\": bool(exhausted_reasons) or remaining <= 0,"` | — |
-| [SRC-FDEEAFDFCA-L000134](../../agents/request_budget.py#L134) | 134 | `"            \"exhausted_reasons\": exhausted_reasons,"` | — |
-| [SRC-FDEEAFDFCA-L000135](../../agents/request_budget.py#L135) | 135 | `"            \"counts\": counts,"` | — |
