@@ -5173,7 +5173,18 @@ class WebAgent:
                 item["target"] for item in initial_integrity["target_coverage"]
                 if item["status"] == "possibly_missing"
             ]
-            if not missing_targets:
+            remaining_source_gap_targets = [
+                item["target"] for item in initial_integrity["target_coverage"]
+                if item.get("source_evidence_status") == "no_source_lexical_signal"
+            ]
+            if not missing_targets and remaining_source_gap_targets:
+                coverage_repair_status = "source_evidence_gap_unresolved"
+                if not coverage_repair_warning:
+                    coverage_repair_warning = (
+                        "ذُكرت المحاور في الإجابة، لكن لم تظهر لها إشارات لفظية في المصادر؛ "
+                        "ذكر المحور لا يُعد دليلًا، لذلك تظل المهمة غير مكتملة."
+                    )
+            elif not missing_targets:
                 coverage_repair_status = "not_needed_lexical_signals_found"
             else:
                 coverage_repair_status = "attempted"
