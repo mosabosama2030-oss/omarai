@@ -213,6 +213,14 @@ def _relevance_query_tokens(query: str) -> set[str]:
         return set()
     query_text = _normalize_search_query(query).casefold()
     query_text = re.sub(r"(?i)\bsite\s*:\s*\S+", " ", query_text)
+    # Treat the Arabic multiword phrase "الذكاء الاصطناعي" as one concept;
+    # otherwise the single English token "AI" can falsely satisfy both words.
+    query_text = re.sub(
+        r"(?<![a-z0-9\u0620-\u06D3])(?:ال)?ذكاء\s+(?:ال)?اصطناعي(?![a-z0-9\u0620-\u06D3])",
+        " ai ",
+        query_text,
+    )
+    query_text = re.sub(r"(?i)\bartificial\s+intelligence\b", " ai ", query_text)
     return {
         token for token in re.findall(r"[a-z0-9]+|[\u0620-\u064A\u066E-\u06D3]+", query_text)
         if (
