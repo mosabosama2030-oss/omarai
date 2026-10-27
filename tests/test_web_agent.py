@@ -8,6 +8,7 @@ from agents.research import compact_search_query
 from agents.request_budget import RequestBudgetExceeded
 from agents.web_agent import (
     WebAgent,
+    _minimum_relevance_ratio,
     _normalize_search_query,
     _public_http_url,
     _relevance_query_tokens,
@@ -3442,3 +3443,19 @@ def test_auto_navigation_strips_arabic_search_verb_without_regex_regression(monk
     assert observed_plans[0]["queries"]
     assert all(not query.startswith("ابحث عن") for query in observed_plans[0]["queries"])
     assert "الموقع الرسمي لشركة النور" in observed_plans[0]["queries"][0]
+
+
+
+def test_bilingual_relevance_handles_arabic_attached_clitics_without_lowering_floor():
+    query = "أهم استخدامات الذكاء الاصطناعي للشركات الصغيرة؟"
+    evidence = "AI use cases for small businesses"
+    assert _minimum_relevance_ratio(query) == 0.20
+    assert _relevance_ratio(query, evidence) >= 0.80
+
+
+def test_search_evidence_matching_keeps_distinct_concepts_as_the_ratio_denominator():
+    query = "استخدامات الذكاء الاصطناعي للشركات الصغيرة"
+    on_topic = "AI use cases for small businesses"
+    weak = "AI tools for personal photo editing"
+    assert _relevance_ratio(query, on_topic) > _relevance_ratio(query, weak)
+    assert _relevance_ratio(query, weak) < _minimum_relevance_ratio(query)
