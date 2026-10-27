@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000243 إلى SRC-1A176AD4F0-L000137
+- النطاق: SRC-829A979985-L000242 إلى SRC-1A176AD4F0-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000242](../../tests/test_generation_acceptance_matrix.py#L242) | 242 | `""` | — |
 | [SRC-829A979985-L000243](../../tests/test_generation_acceptance_matrix.py#L243) | 243 | `"def test_generation_budget_exhaustion_preserves_partial_sources(monkeypatch):"` | — |
 | [SRC-829A979985-L000244](../../tests/test_generation_acceptance_matrix.py#L244) | 244 | `"    agent = WebAgent()"` | — |
 | [SRC-829A979985-L000245](../../tests/test_generation_acceptance_matrix.py#L245) | 245 | `"    agent.api_key = \"test-key\""` | — |
@@ -833,4 +834,3 @@
 | [SRC-1A176AD4F0-L000134](../../tests/test_hosted_smoke.py#L134) | 134 | `"        f\"http://127.0.0.1:{destination.server_port}/capture\""` | — |
 | [SRC-1A176AD4F0-L000135](../../tests/test_hosted_smoke.py#L135) | 135 | `"    )"` | — |
 | [SRC-1A176AD4F0-L000136](../../tests/test_hosted_smoke.py#L136) | 136 | `"    destination_thread.start()"` | — |
-| [SRC-1A176AD4F0-L000137](../../tests/test_hosted_smoke.py#L137) | 137 | `"    source_thread.start()"` | — |

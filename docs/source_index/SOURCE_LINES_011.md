@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000352 إلى SRC-26428BDA96-L000048
+- النطاق: SRC-EEF2E6447C-L000351 إلى SRC-26428BDA96-L000047
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000351](../../api/omarai.py#L351) | 351 | `"        try:"` | — |
 | [SRC-EEF2E6447C-L000352](../../api/omarai.py#L352) | 352 | `"            return str(ipaddress.ip_address(candidate))"` | — |
 | [SRC-EEF2E6447C-L000353](../../api/omarai.py#L353) | 353 | `"        except ValueError:"` | — |
 | [SRC-EEF2E6447C-L000354](../../api/omarai.py#L354) | 354 | `"            return direct_ip"` | — |
@@ -878,4 +879,3 @@
 | [SRC-26428BDA96-L000045](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L45) | 45 | `"- main: 08319cce3652c332e414f691a71cc153dfbfd92e"` | — |
 | [SRC-26428BDA96-L000046](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L46) | 46 | `"- كود الوكيل: agents/web_agent.py، 3854 سطرًا عند النسخة المدققة."` | — |
 | [SRC-26428BDA96-L000047](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L47) | 47 | `"- API: api/omarai.py، 329 سطرًا."` | — |
-| [SRC-26428BDA96-L000048](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L48) | 48 | `"- التحليل/التخزين: agents/omarai.py وagents/research.py."` | — |

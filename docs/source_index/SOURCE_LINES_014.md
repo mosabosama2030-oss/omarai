@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001156 إلى SRC-E599346ABE-L001955
+- النطاق: SRC-E599346ABE-L001155 إلى SRC-E599346ABE-L001954
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001155](../generate_index.py#L1155) | 1155 | `"            quote = None"` | — |
 | [SRC-E599346ABE-L001156](../generate_index.py#L1156) | 1156 | `""` | — |
 | [SRC-E599346ABE-L001157](../generate_index.py#L1157) | 1157 | `"    return comments"` | — |
 | [SRC-E599346ABE-L001158](../generate_index.py#L1158) | 1158 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L001952](../generate_index.py#L1952) | 1952 | `"        return 1"` | — |
 | [SRC-E599346ABE-L001953](../generate_index.py#L1953) | 1953 | `""` | — |
 | [SRC-E599346ABE-L001954](../generate_index.py#L1954) | 1954 | `"    if arguments.check:"` | — |
-| [SRC-E599346ABE-L001955](../generate_index.py#L1955) | 1955 | `"        action = \"الفهرس محدث والتحقق ناجح\""` | — |

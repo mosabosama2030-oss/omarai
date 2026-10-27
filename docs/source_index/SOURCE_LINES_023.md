@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000444 إلى SRC-90FAA34ADE-L001243
+- النطاق: SRC-90FAA34ADE-L000443 إلى SRC-90FAA34ADE-L001242
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000443](../../tests/fixtures/answer_quality_cases.json#L443) | 443 | `"            \"error\": \"503\""` | — |
 | [SRC-90FAA34ADE-L000444](../../tests/fixtures/answer_quality_cases.json#L444) | 444 | `"          }"` | — |
 | [SRC-90FAA34ADE-L000445](../../tests/fixtures/answer_quality_cases.json#L445) | 445 | `"        ],"` | — |
 | [SRC-90FAA34ADE-L000446](../../tests/fixtures/answer_quality_cases.json#L446) | 446 | `"        \"sources\": [],"` | — |
@@ -815,4 +816,3 @@
 | [SRC-90FAA34ADE-L001240](../../tests/fixtures/answer_quality_cases.json#L1240) | 1240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L001241](../../tests/fixtures/answer_quality_cases.json#L1241) | 1241 | `"    },"` | — |
 | [SRC-90FAA34ADE-L001242](../../tests/fixtures/answer_quality_cases.json#L1242) | 1242 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |

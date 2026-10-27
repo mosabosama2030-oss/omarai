@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002345 إلى SRC-F725E90B2A-L003144
+- النطاق: SRC-F725E90B2A-L002344 إلى SRC-F725E90B2A-L003143
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002344](../../tests/test_web_agent.py#L2344) | 2344 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
 | [SRC-F725E90B2A-L002345](../../tests/test_web_agent.py#L2345) | 2345 | `""` | — |
 | [SRC-F725E90B2A-L002346](../../tests/test_web_agent.py#L2346) | 2346 | `"    result = agent.answer(\"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر\")"` | — |
 | [SRC-F725E90B2A-L002347](../../tests/test_web_agent.py#L2347) | 2347 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003141](../../tests/test_web_agent.py#L3141) | 3141 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L003142](../../tests/test_web_agent.py#L3142) | 3142 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L003143](../../tests/test_web_agent.py#L3143) | 3143 | `"        agent, \"_request_completion\","` | — |
-| [SRC-F725E90B2A-L003144](../../tests/test_web_agent.py#L3144) | 3144 | `"        lambda *args, **kwargs: pytest.fail(\"planner should not run without a topic\"),"` | — |

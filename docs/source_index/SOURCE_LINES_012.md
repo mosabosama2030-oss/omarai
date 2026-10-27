@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000049 إلى SRC-E599346ABE-L000355
+- النطاق: SRC-26428BDA96-L000048 إلى SRC-E599346ABE-L000354
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000048](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L48) | 48 | `"- التحليل/التخزين: agents/omarai.py وagents/research.py."` | — |
 | [SRC-26428BDA96-L000049](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L49) | 49 | `"- الواجهات: web/agent.html وweb/dashboard.html."` | — |
 | [SRC-26428BDA96-L000050](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L50) | 50 | `"- اختبارات ذات صلة: tests/test_web_agent.py، tests/test_api.py، tests/test_omarai.py، tests/test_hosted_smoke.py، tests/test_proxy_origin.py، tests/test_intent_router.py، tests/test_answer_quality_runner.py."` | — |
 | [SRC-26428BDA96-L000051](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L51) | 51 | `"- CI: .github/workflows/tests.yml."` | — |
@@ -860,4 +861,3 @@
 | [SRC-E599346ABE-L000352](../generate_index.py#L352) | 352 | `"    if normalized.startswith(\"cli/\"):"` | — |
 | [SRC-E599346ABE-L000353](../generate_index.py#L353) | 353 | `"        return \"واجهة سطر الأوامر\""` | — |
 | [SRC-E599346ABE-L000354](../generate_index.py#L354) | 354 | `"    if normalized.startswith(\"docs/\"):"` | — |
-| [SRC-E599346ABE-L000355](../generate_index.py#L355) | 355 | `"        return \"وثائق وفهرسة\""` | — |

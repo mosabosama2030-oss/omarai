@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000063 إلى SRC-65551FB29F-L000401
+- النطاق: SRC-62CE5126F9-L000062 إلى SRC-65551FB29F-L000400
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000062](../OMARAI_REMEDIATION_REGISTER_AR.md#L62) | 62 | ``"- **UNKNOWN:** هل رمز الوصول مفقود أم غير مطابق، وما السبب الجذري الدقيق؛ الرسالة المرئية وحدها لا تكفي. أُجري `GET /api/health` للقراءة فقط وأعاد `ok=true`، لكن `build.sha=unknown` و`sha_status=unknown`، و`live_network_checks_performed=false`. يوضح الرد أن `web_search_ready` يعني أن الاعتماديات قابلة للاستيراد لا أن موفّر البحث متصل، وأن `language_model_configured` يعني وجود بيانات اعتماد لا أن الطلب اكتمل بنجاح. لم يُثبت تطابق البناء المستضاف مع SHA الدمج."`` | — |
 | [SRC-62CE5126F9-L000063](../OMARAI_REMEDIATION_REGISTER_AR.md#L63) | 63 | `"- **لم يحدث:** لا إدخال/كشف لأسرار، ولا تغيير لإعدادات الاستضافة، ولا نشر، ولا طلب ثانٍ إلى موفر بحث/نموذج."` | — |
 | [SRC-62CE5126F9-L000064](../OMARAI_REMEDIATION_REGISTER_AR.md#L64) | 64 | `""` | — |
 | [SRC-62CE5126F9-L000065](../OMARAI_REMEDIATION_REGISTER_AR.md#L65) | 65 | `"### إجراء الإغلاق التالي"` | — |
@@ -833,4 +834,3 @@
 | [SRC-65551FB29F-L000398](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L398) | 398 | `"لا يجوز في هذه المرحلة الادعاء أن Omarai يحقق المصفوفة كاملة."` | — |
 | [SRC-65551FB29F-L000399](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L399) | 399 | `""` | — |
 | [SRC-65551FB29F-L000400](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L400) | 400 | `"## 21. المرحلة 1: السلامة والحقيقة والحدود"` | — |
-| [SRC-65551FB29F-L000401](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L401) | 401 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000161 إلى SRC-3451CC474D-L000676
+- النطاق: SRC-1C77C97630-L000160 إلى SRC-3451CC474D-L000675
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000160](../../tests/test_answer_validation.py#L160) | 160 | `"            \"page_fetched\": False,"` | — |
 | [SRC-1C77C97630-L000161](../../tests/test_answer_validation.py#L161) | 161 | `"            \"snippet\": \"السعر مذكور والمساحة غير مذكورة\","` | — |
 | [SRC-1C77C97630-L000162](../../tests/test_answer_validation.py#L162) | 162 | `"        }],"` | — |
 | [SRC-1C77C97630-L000163](../../tests/test_answer_validation.py#L163) | 163 | `"        [\"المساحة\"],"` | — |
@@ -824,4 +825,3 @@
 | [SRC-3451CC474D-L000673](../../tests/test_api.py#L673) | 673 | `"        },"` | — |
 | [SRC-3451CC474D-L000674](../../tests/test_api.py#L674) | 674 | `"    )"` | — |
 | [SRC-3451CC474D-L000675](../../tests/test_api.py#L675) | 675 | `"    with pytest.raises(HTTPError) as error:"` | — |
-| [SRC-3451CC474D-L000676](../../tests/test_api.py#L676) | 676 | `"        urlopen(request, timeout=3)"` | — |

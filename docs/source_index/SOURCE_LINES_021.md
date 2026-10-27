@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000230 إلى SRC-4FFD5AFC54-L000199
+- النطاق: SRC-69F3587825-L000229 إلى SRC-4FFD5AFC54-L000198
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000229](../search_code.py#L229) | 229 | `"                )"` | — |
 | [SRC-69F3587825-L000230](../search_code.py#L230) | 230 | `"                hits.append("` | — |
 | [SRC-69F3587825-L000231](../search_code.py#L231) | 231 | `"                    SearchHit("` | — |
 | [SRC-69F3587825-L000232](../search_code.py#L232) | 232 | `"                        file=relative,"` | — |
@@ -887,4 +888,3 @@
 | [SRC-4FFD5AFC54-L000196](../../scripts/run_answer_quality_benchmark.py#L196) | 196 | `"    headers = {\"Content-Type\": \"application/json\", \"Content-Length\": str(len(body))}"` | — |
 | [SRC-4FFD5AFC54-L000197](../../scripts/run_answer_quality_benchmark.py#L197) | 197 | `"    if token:"` | — |
 | [SRC-4FFD5AFC54-L000198](../../scripts/run_answer_quality_benchmark.py#L198) | 198 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
-| [SRC-4FFD5AFC54-L000199](../../scripts/run_answer_quality_benchmark.py#L199) | 199 | `"    req = urllib.request.Request(url, data=body, headers=headers, method=\"POST\")"` | — |

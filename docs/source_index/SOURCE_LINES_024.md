@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001244 إلى SRC-1C77C97630-L000160
+- النطاق: SRC-90FAA34ADE-L001243 إلى SRC-1C77C97630-L000159
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |
 | [SRC-90FAA34ADE-L001244](../../tests/fixtures/answer_quality_cases.json#L1244) | 1244 | `"      \"category\": \"stale_sources_for_current\","` | — |
 | [SRC-90FAA34ADE-L001245](../../tests/fixtures/answer_quality_cases.json#L1245) | 1245 | `"      \"language\": \"mixed\","` | — |
 | [SRC-90FAA34ADE-L001246](../../tests/fixtures/answer_quality_cases.json#L1246) | 1246 | `"      \"question\": \"عايز القواعد الحالية للتسجيل في خدمة حكومية في مصر؛ result timestamp بتاع صفحة الشروط هو 2020 بس.\","` | — |
@@ -851,4 +852,3 @@
 | [SRC-1C77C97630-L000157](../../tests/test_answer_validation.py#L157) | 157 | `"        [{"` | — |
 | [SRC-1C77C97630-L000158](../../tests/test_answer_validation.py#L158) | 158 | `"            \"title\": \"إعلان\","` | — |
 | [SRC-1C77C97630-L000159](../../tests/test_answer_validation.py#L159) | 159 | `"            \"url\": \"https://example.com/listing\","` | — |
-| [SRC-1C77C97630-L000160](../../tests/test_answer_validation.py#L160) | 160 | `"            \"page_fetched\": False,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000356 إلى SRC-E599346ABE-L001155
+- النطاق: SRC-E599346ABE-L000355 إلى SRC-E599346ABE-L001154
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000355](../generate_index.py#L355) | 355 | `"        return \"وثائق وفهرسة\""` | — |
 | [SRC-E599346ABE-L000356](../generate_index.py#L356) | 356 | `"    if normalized.startswith((\"web/\", \"static/\", \"templates/\")) or suffix in {"` | — |
 | [SRC-E599346ABE-L000357](../generate_index.py#L357) | 357 | `"        \".html\", \".htm\", \".css\", \".scss\", \".js\", \".mjs\", \".cjs\", \".jsx\", \".ts\", \".tsx\","` | — |
 | [SRC-E599346ABE-L000358](../generate_index.py#L358) | 358 | `"        \".vue\", \".svelte\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L001152](../generate_index.py#L1152) | 1152 | `"            i += 1"` | — |
 | [SRC-E599346ABE-L001153](../generate_index.py#L1153) | 1153 | `""` | — |
 | [SRC-E599346ABE-L001154](../generate_index.py#L1154) | 1154 | `"        if quote in (\"'\", '\"') and not line.rstrip(\"\\r\\n\").endswith(\"\\\\\"):"` | — |
-| [SRC-E599346ABE-L001155](../generate_index.py#L1155) | 1155 | `"            quote = None"` | — |

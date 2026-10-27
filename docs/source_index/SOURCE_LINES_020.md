@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000627 إلى SRC-69F3587825-L000229
+- النطاق: SRC-0F910493E8-L000626 إلى SRC-69F3587825-L000228
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000626](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L626) | 626 | `"2. تحقق من تسجيل الأداة وإصدارها وحالة إتاحتها."` | — |
 | [SRC-0F910493E8-L000627](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L627) | 627 | `"3. تحقق من صلاحية العملية على موردها المحدد."` | — |
 | [SRC-0F910493E8-L000628](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L628) | 628 | `"4. تحقق من صحة المخطط والأنواع والقيم والأحجام."` | — |
 | [SRC-0F910493E8-L000629](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L629) | 629 | `"5. تحقق من الميزانية والوقت والتزامن والحد الأقصى للخطوات."` | — |
@@ -860,4 +861,3 @@
 | [SRC-69F3587825-L000226](../search_code.py#L226) | 226 | `"                    \"\\n\".join(lines[index + 1 : min(len(lines), index + 1 + context)])"` | — |
 | [SRC-69F3587825-L000227](../search_code.py#L227) | 227 | `"                    if context"` | — |
 | [SRC-69F3587825-L000228](../search_code.py#L228) | 228 | `"                    else \"\""` | — |
-| [SRC-69F3587825-L000229](../search_code.py#L229) | 229 | `"                )"` | — |

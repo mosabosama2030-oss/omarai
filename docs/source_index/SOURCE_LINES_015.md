@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001956 إلى SRC-E73001D9AC-L000592
+- النطاق: SRC-E599346ABE-L001955 إلى SRC-E73001D9AC-L000591
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001955](../generate_index.py#L1955) | 1955 | `"        action = \"الفهرس محدث والتحقق ناجح\""` | — |
 | [SRC-E599346ABE-L001956](../generate_index.py#L1956) | 1956 | `"    else:"` | — |
 | [SRC-E599346ABE-L001957](../generate_index.py#L1957) | 1957 | `"        action = \"تم تحديث\" if changed else \"الفهرس محدث بالفعل\""` | — |
 | [SRC-E599346ABE-L001958](../generate_index.py#L1958) | 1958 | `"    print("` | — |
@@ -851,4 +852,3 @@
 | [SRC-E73001D9AC-L000589](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L589) | 589 | `"**المرحلة A — جرد مثبت للحالة الحالية**"` | — |
 | [SRC-E73001D9AC-L000590](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L590) | 590 | `"- تسجيل HEAD والفرع وبيئة التشغيل واعتماديات المشروع."` | — |
 | [SRC-E73001D9AC-L000591](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L591) | 591 | `"- رسم دورة الطلب الحقيقية من API حتى البحث والنموذج والإجابة."` | — |
-| [SRC-E73001D9AC-L000592](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L592) | 592 | `"- فهرسة نقاط الاتصال الخارجية والأدوات والبيانات الحساسة."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000677 إلى SRC-6BCB799CEC-L000281
+- النطاق: SRC-3451CC474D-L000676 إلى SRC-6BCB799CEC-L000280
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000676](../../tests/test_api.py#L676) | 676 | `"        urlopen(request, timeout=3)"` | — |
 | [SRC-3451CC474D-L000677](../../tests/test_api.py#L677) | 677 | `"    assert error.value.code == 403"` | — |
 | [SRC-3451CC474D-L000678](../../tests/test_api.py#L678) | 678 | `""` | — |
 | [SRC-3451CC474D-L000679](../../tests/test_api.py#L679) | 679 | `""` | — |
@@ -842,4 +843,3 @@
 | [SRC-6BCB799CEC-L000278](../../tests/test_evidence_provenance.py#L278) | 278 | `"    assert resolutions == [\"example.com\"]"` | — |
 | [SRC-6BCB799CEC-L000279](../../tests/test_evidence_provenance.py#L279) | 279 | `""` | — |
 | [SRC-6BCB799CEC-L000280](../../tests/test_evidence_provenance.py#L280) | 280 | `""` | — |
-| [SRC-6BCB799CEC-L000281](../../tests/test_evidence_provenance.py#L281) | 281 | `""` | — |

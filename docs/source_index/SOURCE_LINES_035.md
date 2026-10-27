@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **035**
-- سجلات الأسطر: **760**
-- النطاق: SRC-F725E90B2A-L003145 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **768**
+- النطاق: SRC-F725E90B2A-L003144 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003144](../../tests/test_web_agent.py#L3144) | 3144 | `"        lambda *args, **kwargs: pytest.fail(\"planner should not run without a topic\"),"` | — |
 | [SRC-F725E90B2A-L003145](../../tests/test_web_agent.py#L3145) | 3145 | `"    )"` | — |
 | [SRC-F725E90B2A-L003146](../../tests/test_web_agent.py#L3146) | 3146 | `"    plan = agent._plan_search("` | — |
 | [SRC-F725E90B2A-L003147](../../tests/test_web_agent.py#L3147) | 3147 | `"        \"استخدم مصادر متعددة، واذكر روابط المصادر\","` | — |
@@ -333,6 +334,13 @@
 | [SRC-F725E90B2A-L003459](../../tests/test_web_agent.py#L3459) | 3459 | `"    weak = \"AI tools for personal photo editing\""` | — |
 | [SRC-F725E90B2A-L003460](../../tests/test_web_agent.py#L3460) | 3460 | `"    assert _relevance_ratio(query, on_topic) > _relevance_ratio(query, weak)"` | — |
 | [SRC-F725E90B2A-L003461](../../tests/test_web_agent.py#L3461) | 3461 | `"    assert _relevance_ratio(query, weak) < _minimum_relevance_ratio(query)"` | — |
+| [SRC-F725E90B2A-L003462](../../tests/test_web_agent.py#L3462) | 3462 | `""` | — |
+| [SRC-F725E90B2A-L003463](../../tests/test_web_agent.py#L3463) | 3463 | `""` | — |
+| [SRC-F725E90B2A-L003464](../../tests/test_web_agent.py#L3464) | 3464 | `""` | — |
+| [SRC-F725E90B2A-L003465](../../tests/test_web_agent.py#L3465) | 3465 | `"def test_bilingual_relevance_matches_english_queries_to_arabic_source_text():"` | — |
+| [SRC-F725E90B2A-L003466](../../tests/test_web_agent.py#L3466) | 3466 | `"    query = \"AI use cases for small businesses in Egypt\""` | — |
+| [SRC-F725E90B2A-L003467](../../tests/test_web_agent.py#L3467) | 3467 | `"    evidence = \"استخدامات الذكاء الاصطناعي للشركات الصغيرة في مصر\""` | — |
+| [SRC-F725E90B2A-L003468](../../tests/test_web_agent.py#L3468) | 3468 | `"    assert _relevance_ratio(query, evidence) >= 0.80"` | — |
 ## واجهة الويب
 
 ### FILE-DE7EABE998 — [web/agent.html](../../web/agent.html#L1)

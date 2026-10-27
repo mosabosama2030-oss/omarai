@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000593 إلى SRC-D17CE3D12F-L000489
+- النطاق: SRC-E73001D9AC-L000592 إلى SRC-D17CE3D12F-L000488
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000592](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L592) | 592 | `"- فهرسة نقاط الاتصال الخارجية والأدوات والبيانات الحساسة."` | — |
 | [SRC-E73001D9AC-L000593](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L593) | 593 | `"- قراءة الاختبارات وتشغيلها وتسجيل النتائج؛ لا افتراض نجاحها."` | — |
 | [SRC-E73001D9AC-L000594](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L594) | 594 | `"- تقرير فجوات يوسم كل نتيجة VERIFIED أو INFERRED أو PROPOSED أو UNKNOWN."` | — |
 | [SRC-E73001D9AC-L000595](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L595) | 595 | `""` | — |
@@ -824,4 +825,3 @@
 | [SRC-D17CE3D12F-L000486](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L486) | 486 | `"## 33. جودة القياس والاختبار"` | — |
 | [SRC-D17CE3D12F-L000487](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L487) | 487 | `""` | — |
 | [SRC-D17CE3D12F-L000488](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L488) | 488 | `"1. MUST الإبلاغ عن عدد الاختبارات المنفذة والناجحة والفاشلة والمتخطاة، مع ذكر سبب التخطي."` | — |
-| [SRC-D17CE3D12F-L000489](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L489) | 489 | `"2. MUST عدم إخفاء تحذير أو فشل أو flaky test إذا كان يؤثر في الاستنتاج."` | — |

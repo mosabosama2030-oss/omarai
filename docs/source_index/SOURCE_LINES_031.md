@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000050 إلى SRC-F725E90B2A-L000744
+- النطاق: SRC-1C0D3D1206-L000049 إلى SRC-F725E90B2A-L000743
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000049](../../tests/test_sqlite_backup_restore.py#L49) | 49 | `""` | — |
 | [SRC-1C0D3D1206-L000050](../../tests/test_sqlite_backup_restore.py#L50) | 50 | `"def test_backup_never_overwrites_an_existing_destination(tmp_path):"` | — |
 | [SRC-1C0D3D1206-L000051](../../tests/test_sqlite_backup_restore.py#L51) | 51 | `"    source_path = tmp_path / \"source.sqlite3\""` | — |
 | [SRC-1C0D3D1206-L000052](../../tests/test_sqlite_backup_restore.py#L52) | 52 | `"    LeadStore(source_path)"` | — |
@@ -824,4 +825,3 @@
 | [SRC-F725E90B2A-L000741](../../tests/test_web_agent.py#L741) | 741 | `"        agent._generate("` | — |
 | [SRC-F725E90B2A-L000742](../../tests/test_web_agent.py#L742) | 742 | `"            question=\"لخص هذا المصدر\","` | — |
 | [SRC-F725E90B2A-L000743](../../tests/test_web_agent.py#L743) | 743 | `"            history=[],"` | — |
-| [SRC-F725E90B2A-L000744](../../tests/test_web_agent.py#L744) | 744 | `"            sources=[sample_source(0), sample_source(1)],"` | — |

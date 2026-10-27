@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000490 إلى SRC-62CE5126F9-L000062
+- النطاق: SRC-D17CE3D12F-L000489 إلى SRC-62CE5126F9-L000061
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000489](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L489) | 489 | `"2. MUST عدم إخفاء تحذير أو فشل أو flaky test إذا كان يؤثر في الاستنتاج."` | — |
 | [SRC-D17CE3D12F-L000490](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L490) | 490 | `"3. SHOULD قياس تغطية الاختبارات للمسارات الحرجة لا chasing رقم تغطية مجرد."` | — |
 | [SRC-D17CE3D12F-L000491](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L491) | 491 | `"4. MUST حفظ بيانات/عينات صناعية لا تكشف بيانات المستخدم الحقيقية."` | — |
 | [SRC-D17CE3D12F-L000492](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L492) | 492 | `"5. SHOULD استخدام حراس جودة في CI للملفات ذات المخاطر، مع تبرير الاستثناءات."` | — |
@@ -842,4 +843,3 @@
 | [SRC-62CE5126F9-L000059](../OMARAI_REMEDIATION_REGISTER_AR.md#L59) | 59 | `"### نتيجة القبول الحي المحدود"` | — |
 | [SRC-62CE5126F9-L000060](../OMARAI_REMEDIATION_REGISTER_AR.md#L60) | 60 | `"- **VERIFIED:** بعد إخراج الخدمة من الخمول، حمّلت الصفحة الرئيسية واجهة Omarai وحقل السؤال."` | — |
 | [SRC-62CE5126F9-L000061](../OMARAI_REMEDIATION_REGISTER_AR.md#L61) | 61 | ``"- **FAILED — hosted query:** كان الوضع المختار `deep`; السؤال `ما عاصمة مصر؟` انتهى برسالة التطبيق: «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف»."`` | — |
-| [SRC-62CE5126F9-L000062](../OMARAI_REMEDIATION_REGISTER_AR.md#L62) | 62 | ``"- **UNKNOWN:** هل رمز الوصول مفقود أم غير مطابق، وما السبب الجذري الدقيق؛ الرسالة المرئية وحدها لا تكفي. أُجري `GET /api/health` للقراءة فقط وأعاد `ok=true`، لكن `build.sha=unknown` و`sha_status=unknown`، و`live_network_checks_performed=false`. يوضح الرد أن `web_search_ready` يعني أن الاعتماديات قابلة للاستيراد لا أن موفّر البحث متصل، وأن `language_model_configured` يعني وجود بيانات اعتماد لا أن الطلب اكتمل بنجاح. لم يُثبت تطابق البناء المستضاف مع SHA الدمج."`` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000745 إلى SRC-F725E90B2A-L001544
+- النطاق: SRC-F725E90B2A-L000744 إلى SRC-F725E90B2A-L001543
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000744](../../tests/test_web_agent.py#L744) | 744 | `"            sources=[sample_source(0), sample_source(1)],"` | — |
 | [SRC-F725E90B2A-L000745](../../tests/test_web_agent.py#L745) | 745 | `"            search_warning=None,"` | — |
 | [SRC-F725E90B2A-L000746](../../tests/test_web_agent.py#L746) | 746 | `"            research_plan={\"depth\": \"standard\", \"queries\": [\"لخص هذا المصدر\"]},"` | — |
 | [SRC-F725E90B2A-L000747](../../tests/test_web_agent.py#L747) | 747 | `"            search_report={},"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"    </item>"` | — |
 | [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"    </channel></rss>\"\"\""` | — |
 | [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `""` | — |
-| [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"    class FakeResponse:"` | — |
