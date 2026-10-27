@@ -165,3 +165,7 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
     assert coverage["targets"] == ["السعر", "البطارية", "الكاميرا"]
     assert coverage["status"] == "model_review_requested_not_machine_verified"
     assert coverage["automatically_graded"] is False
+    # The mocked sources do not contain battery/camera evidence. The task must
+    # remain visibly incomplete even if the planner generated multiple queries.
+    assert coverage["source_evidence_gap_count"] == 3
+    assert result["task_fulfillment_status"] == "possible_gap_detected"
