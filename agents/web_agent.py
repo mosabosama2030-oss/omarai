@@ -2275,9 +2275,14 @@ class WebAgent:
         self, plan: dict[str, Any]
     ) -> tuple[list[dict[str, Any]], list[str], dict[str, Any]]:
         """Run independent query searches concurrently, fuse evidence, then fetch top pages."""
+        try:
+            query_limit = int(plan.get("query_limit", MAX_PLAN_QUERIES))
+        except (TypeError, ValueError, OverflowError):
+            query_limit = MAX_PLAN_QUERIES
+        query_limit = max(1, min(query_limit, MAX_PLAN_QUERIES))
         queries = list(dict.fromkeys(
             compact_search_query(query)
-            for query in plan.get("queries", [])[:MAX_PLAN_QUERIES]
+            for query in plan.get("queries", [])[:query_limit]
             if isinstance(query, str) and query.strip()
         ))
         queries = [query for query in queries if query]
@@ -2326,7 +2331,7 @@ class WebAgent:
             and (len(preliminary) < 8 or len(preliminary_domains) < 5 or len(preliminary_providers) < 2)
         )
         expansion_queries: list[str] = []
-        if needs_expansion and len(queries) < MAX_PLAN_QUERIES and queries:
+        if needs_expansion and len(queries) < query_limit and queries:
             base_query = (queries[0] if queries else "")
             candidates = [
                 f"{base_query} official sources data reports",
@@ -2342,7 +2347,7 @@ class WebAgent:
                 if compacted and key not in seen_expansions:
                     expansion_queries.append(compacted)
                     seen_expansions.add(key)
-                if len(expansion_queries) >= max(0, MAX_PLAN_QUERIES - len(queries)):
+                if len(expansion_queries) >= max(0, query_limit - len(queries)):
                     break
             if expansion_queries:
                 with ThreadPoolExecutor(
@@ -4189,7 +4194,18 @@ class WebAgent:
             compacted_query = compact_search_query(raw_query)
             if compacted_query and _relevance_query_tokens(compacted_query):
                 final_topic_queries.append(compacted_query)
-        plan["queries"] = list(dict.fromkeys(final_topic_queries))[:MAX_PLAN_QUERIES]
+        coverage_targets_for_budget = self._question_coverage_targets(question)
+        # Reserve one bounded search slot for a post-review criterion-evidence gap.
+        # Keep all explicit criterion queries when there are many dimensions; the
+        # reserve applies only to ordinary compound tasks with up to six targets.
+        reserve_coverage_gap_query = (
+            2 <= len(coverage_targets_for_budget) <= 6
+            and plan.get("depth") == "deep"
+        )
+        query_limit = MAX_PLAN_QUERIES - 1 if reserve_coverage_gap_query else MAX_PLAN_QUERIES
+        plan["coverage_gap_repair_slot_reserved"] = reserve_coverage_gap_query
+        plan["query_limit"] = query_limit
+        plan["queries"] = list(dict.fromkeys(final_topic_queries))[:query_limit]
 
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
