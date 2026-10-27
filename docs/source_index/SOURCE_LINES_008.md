@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003204 إلى SRC-1AE03B9EC3-L004003
+- النطاق: SRC-1AE03B9EC3-L003185 إلى SRC-1AE03B9EC3-L003984
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003185](../../agents/web_agent.py#L3185) | 3185 | `"            targets = plan[\"platforms\"] or [\"facebook\", \"instagram\", \"reddit\"]"` | — |
+| [SRC-1AE03B9EC3-L003186](../../agents/web_agent.py#L3186) | 3186 | `"            fallback_queries = fallback.get(\"queries\", [])"` | — |
+| [SRC-1AE03B9EC3-L003187](../../agents/web_agent.py#L3187) | 3187 | `"            plan_queries = plan.get(\"queries\", [])"` | — |
+| [SRC-1AE03B9EC3-L003188](../../agents/web_agent.py#L3188) | 3188 | `"            base_query = (fallback_queries or plan_queries or [\"\"])[0]"` | — |
+| [SRC-1AE03B9EC3-L003189](../../agents/web_agent.py#L3189) | 3189 | `"            query_list = list(plan_queries)"` | — |
+| [SRC-1AE03B9EC3-L003190](../../agents/web_agent.py#L3190) | 3190 | `"            for platform in targets[:2]:"` | — |
+| [SRC-1AE03B9EC3-L003191](../../agents/web_agent.py#L3191) | 3191 | `"                domain = SOCIAL_DOMAINS.get(platform)"` | — |
+| [SRC-1AE03B9EC3-L003192](../../agents/web_agent.py#L3192) | 3192 | `"                if not domain or not base_query:"` | — |
+| [SRC-1AE03B9EC3-L003193](../../agents/web_agent.py#L3193) | 3193 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L003194](../../agents/web_agent.py#L3194) | 3194 | `"                targeted = compact_search_query(f\"site:{domain} {base_query}\")"` | — |
+| [SRC-1AE03B9EC3-L003195](../../agents/web_agent.py#L3195) | 3195 | `"                if not targeted:"` | — |
+| [SRC-1AE03B9EC3-L003196](../../agents/web_agent.py#L3196) | 3196 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L003197](../../agents/web_agent.py#L3197) | 3197 | `"                if any(domain in query for query in query_list):"` | — |
+| [SRC-1AE03B9EC3-L003198](../../agents/web_agent.py#L3198) | 3198 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L003199](../../agents/web_agent.py#L3199) | 3199 | `"                if len(query_list) < MAX_PLAN_QUERIES:"` | — |
+| [SRC-1AE03B9EC3-L003200](../../agents/web_agent.py#L3200) | 3200 | `"                    query_list.append(targeted)"` | — |
+| [SRC-1AE03B9EC3-L003201](../../agents/web_agent.py#L3201) | 3201 | `"                elif len(query_list) > 1:"` | — |
+| [SRC-1AE03B9EC3-L003202](../../agents/web_agent.py#L3202) | 3202 | `"                    query_list[-1] = targeted"` | — |
+| [SRC-1AE03B9EC3-L003203](../../agents/web_agent.py#L3203) | 3203 | `"            plan[\"queries\"] = list(dict.fromkeys(query_list))[:MAX_PLAN_QUERIES]"` | — |
 | [SRC-1AE03B9EC3-L003204](../../agents/web_agent.py#L3204) | 3204 | `"        return plan"` | — |
 | [SRC-1AE03B9EC3-L003205](../../agents/web_agent.py#L3205) | 3205 | `""` | — |
 | [SRC-1AE03B9EC3-L003206](../../agents/web_agent.py#L3206) | 3206 | `"    def _generate("` | — |
@@ -797,22 +816,3 @@
 | [SRC-1AE03B9EC3-L003982](../../agents/web_agent.py#L3982) | 3982 | `"            if self._is_self_question(question):"` | — |
 | [SRC-1AE03B9EC3-L003983](../../agents/web_agent.py#L3983) | 3983 | `"                local_result = self._self_description_answer(question)"` | — |
 | [SRC-1AE03B9EC3-L003984](../../agents/web_agent.py#L3984) | 3984 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L003985](../../agents/web_agent.py#L3985) | 3985 | `"                local_result = self._local_answer_result("` | — |
-| [SRC-1AE03B9EC3-L003986](../../agents/web_agent.py#L3986) | 3986 | `"                    question, self._local_conversation_reply(question), \"local_conversation\""` | — |
-| [SRC-1AE03B9EC3-L003987](../../agents/web_agent.py#L3987) | 3987 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L003988](../../agents/web_agent.py#L3988) | 3988 | `"            return self._annotate_intent_route("` | — |
-| [SRC-1AE03B9EC3-L003989](../../agents/web_agent.py#L3989) | 3989 | `"                local_result, intent_route, intent_reason, clean_mode"` | — |
-| [SRC-1AE03B9EC3-L003990](../../agents/web_agent.py#L3990) | 3990 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003991](../../agents/web_agent.py#L3991) | 3991 | `""` | — |
-| [SRC-1AE03B9EC3-L003992](../../agents/web_agent.py#L3992) | 3992 | `"        if intent_route == \"CLARIFY\":"` | — |
-| [SRC-1AE03B9EC3-L003993](../../agents/web_agent.py#L3993) | 3993 | `"            return self._clarification_result(question, clean_mode, decision)"` | — |
-| [SRC-1AE03B9EC3-L003994](../../agents/web_agent.py#L3994) | 3994 | `""` | — |
-| [SRC-1AE03B9EC3-L003995](../../agents/web_agent.py#L3995) | 3995 | `"        if intent_route == \"MODEL_ONLY\":"` | — |
-| [SRC-1AE03B9EC3-L003996](../../agents/web_agent.py#L3996) | 3996 | `"            general_answer = self._answer_without_search(question, clean_history)"` | — |
-| [SRC-1AE03B9EC3-L003997](../../agents/web_agent.py#L3997) | 3997 | `"            if general_answer is not None:"` | — |
-| [SRC-1AE03B9EC3-L003998](../../agents/web_agent.py#L3998) | 3998 | `"                return self._annotate_intent_route("` | — |
-| [SRC-1AE03B9EC3-L003999](../../agents/web_agent.py#L3999) | 3999 | `"                    general_answer, intent_route, intent_reason, clean_mode"` | — |
-| [SRC-1AE03B9EC3-L004000](../../agents/web_agent.py#L4000) | 4000 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004001](../../agents/web_agent.py#L4001) | 4001 | `"            # Preserve the existing degraded-mode behavior when generation is unavailable:"` | — |
-| [SRC-1AE03B9EC3-L004002](../../agents/web_agent.py#L4002) | 4002 | `"            # run the current web pipeline rather than fabricate a model-only answer."` | — |
-| [SRC-1AE03B9EC3-L004003](../../agents/web_agent.py#L4003) | 4003 | `"            intent_route = \"WEB_SIMPLE\""` | — |

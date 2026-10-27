@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002404 إلى SRC-1AE03B9EC3-L003203
+- النطاق: SRC-1AE03B9EC3-L002385 إلى SRC-1AE03B9EC3-L003184
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002385](../../agents/web_agent.py#L2385) | 2385 | `"        if needs_expansion and len(queries) < MAX_PLAN_QUERIES and queries:"` | — |
+| [SRC-1AE03B9EC3-L002386](../../agents/web_agent.py#L2386) | 2386 | `"            base_query = (queries[0] if queries else \"\")"` | — |
+| [SRC-1AE03B9EC3-L002387](../../agents/web_agent.py#L2387) | 2387 | `"            candidates = ["` | — |
+| [SRC-1AE03B9EC3-L002388](../../agents/web_agent.py#L2388) | 2388 | `"                f\"{base_query} official sources data reports\","` | — |
+| [SRC-1AE03B9EC3-L002389](../../agents/web_agent.py#L2389) | 2389 | `"                f\"{base_query} limitations risks criticism alternatives\","` | — |
+| [SRC-1AE03B9EC3-L002390](../../agents/web_agent.py#L2390) | 2390 | `"                f\"{base_query} recent developments case studies analysis\","` | — |
+| [SRC-1AE03B9EC3-L002391](../../agents/web_agent.py#L2391) | 2391 | `"            ]"` | — |
+| [SRC-1AE03B9EC3-L002392](../../agents/web_agent.py#L2392) | 2392 | `"            existing = {item.casefold() for item in queries}"` | — |
+| [SRC-1AE03B9EC3-L002393](../../agents/web_agent.py#L2393) | 2393 | `"            expansion_queries = []"` | — |
+| [SRC-1AE03B9EC3-L002394](../../agents/web_agent.py#L2394) | 2394 | `"            seen_expansions = set(existing)"` | — |
+| [SRC-1AE03B9EC3-L002395](../../agents/web_agent.py#L2395) | 2395 | `"            for candidate in candidates:"` | — |
+| [SRC-1AE03B9EC3-L002396](../../agents/web_agent.py#L2396) | 2396 | `"                compacted = compact_search_query(candidate)"` | — |
+| [SRC-1AE03B9EC3-L002397](../../agents/web_agent.py#L2397) | 2397 | `"                key = compacted.casefold()"` | — |
+| [SRC-1AE03B9EC3-L002398](../../agents/web_agent.py#L2398) | 2398 | `"                if compacted and key not in seen_expansions:"` | — |
+| [SRC-1AE03B9EC3-L002399](../../agents/web_agent.py#L2399) | 2399 | `"                    expansion_queries.append(compacted)"` | — |
+| [SRC-1AE03B9EC3-L002400](../../agents/web_agent.py#L2400) | 2400 | `"                    seen_expansions.add(key)"` | — |
+| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"                if len(expansion_queries) >= max(0, MAX_PLAN_QUERIES - len(queries)):"` | — |
+| [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"                    break"` | — |
+| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"            if expansion_queries:"` | — |
 | [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"                with ThreadPoolExecutor("` | — |
 | [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"                    max_workers=min(MAX_RESEARCH_WORKERS, len(expansion_queries))"` | — |
 | [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"                ) as pool:"` | — |
@@ -797,22 +816,3 @@
 | [SRC-1AE03B9EC3-L003182](../../agents/web_agent.py#L3182) | 3182 | `""` | — |
 | [SRC-1AE03B9EC3-L003183](../../agents/web_agent.py#L3183) | 3183 | `"        # Add real platform-targeted searches alongside broad queries when social evidence matters."` | — |
 | [SRC-1AE03B9EC3-L003184](../../agents/web_agent.py#L3184) | 3184 | `"        if plan[\"social_focus\"]:"` | — |
-| [SRC-1AE03B9EC3-L003185](../../agents/web_agent.py#L3185) | 3185 | `"            targets = plan[\"platforms\"] or [\"facebook\", \"instagram\", \"reddit\"]"` | — |
-| [SRC-1AE03B9EC3-L003186](../../agents/web_agent.py#L3186) | 3186 | `"            fallback_queries = fallback.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L003187](../../agents/web_agent.py#L3187) | 3187 | `"            plan_queries = plan.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L003188](../../agents/web_agent.py#L3188) | 3188 | `"            base_query = (fallback_queries or plan_queries or [\"\"])[0]"` | — |
-| [SRC-1AE03B9EC3-L003189](../../agents/web_agent.py#L3189) | 3189 | `"            query_list = list(plan_queries)"` | — |
-| [SRC-1AE03B9EC3-L003190](../../agents/web_agent.py#L3190) | 3190 | `"            for platform in targets[:2]:"` | — |
-| [SRC-1AE03B9EC3-L003191](../../agents/web_agent.py#L3191) | 3191 | `"                domain = SOCIAL_DOMAINS.get(platform)"` | — |
-| [SRC-1AE03B9EC3-L003192](../../agents/web_agent.py#L3192) | 3192 | `"                if not domain or not base_query:"` | — |
-| [SRC-1AE03B9EC3-L003193](../../agents/web_agent.py#L3193) | 3193 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L003194](../../agents/web_agent.py#L3194) | 3194 | `"                targeted = compact_search_query(f\"site:{domain} {base_query}\")"` | — |
-| [SRC-1AE03B9EC3-L003195](../../agents/web_agent.py#L3195) | 3195 | `"                if not targeted:"` | — |
-| [SRC-1AE03B9EC3-L003196](../../agents/web_agent.py#L3196) | 3196 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L003197](../../agents/web_agent.py#L3197) | 3197 | `"                if any(domain in query for query in query_list):"` | — |
-| [SRC-1AE03B9EC3-L003198](../../agents/web_agent.py#L3198) | 3198 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L003199](../../agents/web_agent.py#L3199) | 3199 | `"                if len(query_list) < MAX_PLAN_QUERIES:"` | — |
-| [SRC-1AE03B9EC3-L003200](../../agents/web_agent.py#L3200) | 3200 | `"                    query_list.append(targeted)"` | — |
-| [SRC-1AE03B9EC3-L003201](../../agents/web_agent.py#L3201) | 3201 | `"                elif len(query_list) > 1:"` | — |
-| [SRC-1AE03B9EC3-L003202](../../agents/web_agent.py#L3202) | 3202 | `"                    query_list[-1] = targeted"` | — |
-| [SRC-1AE03B9EC3-L003203](../../agents/web_agent.py#L3203) | 3203 | `"            plan[\"queries\"] = list(dict.fromkeys(query_list))[:MAX_PLAN_QUERIES]"` | — |

@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **81**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1060**
-- تعريفات Python موثقة بوجود Docstring: **203**
-- تعريفات Python بلا Docstring: **652**
+- تعريفات Python المفهرسة: **1063**
+- تعريفات Python موثقة بوجود Docstring: **204**
+- تعريفات Python بلا Docstring: **654**
 - تعريفات لا ينطبق عليها Docstring: **205**
 - الرموز الساكنة الإضافية: **1612**
-- الأسطر النصية المفهرسة حرفيًا: **27968**
+- الأسطر النصية المفهرسة حرفيًا: **28005**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -38,7 +38,7 @@
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 17790 | 376 | جرد الملف + AST Python |
-| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 21401 | 485 | جرد الملف + AST Python |
+| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 22483 | 504 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32643 | 758 | جرد الملف + AST Python |
@@ -64,7 +64,7 @@
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
 | FILE-E1EAC11EFE | وثائق وفهرسة | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L1) | Markdown | 14423 | 74 | جرد الملف + عناوين Markdown |
 | FILE-B2C95EAEE1 | وثائق وفهرسة | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | Markdown | 15555 | 118 | جرد الملف + عناوين Markdown |
-| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 59240 | 277 | جرد الملف + عناوين Markdown |
+| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 59652 | 279 | جرد الملف + عناوين Markdown |
 | FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 59153 | 184 | جرد الملف + عناوين Markdown |
 | FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 76904 | 852 | جرد الملف + عناوين Markdown |
@@ -96,7 +96,7 @@
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23470 | 616 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
-| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 10485 | 249 | جرد الملف + AST Python |
+| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 11168 | 265 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 6391 | 160 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
@@ -156,10 +156,11 @@
 | [agents/intent_router.py](../agents/intent_router.py#L248) | دالة | _is_clarification_answer | Recognize a concise answer to Omarai's immediately preceding clarification. | موثق | 248 | [SRC-5587371288-L000248](../agents/intent_router.py#L248) |
 | [agents/intent_router.py](../agents/intent_router.py#L259) | دالة | _is_contextual_followup | Detect short referent-dependent follow-ups without treating every 'okay' as one. | موثق | 259 | [SRC-5587371288-L000259](../agents/intent_router.py#L259) |
 | [agents/intent_router.py](../agents/intent_router.py#L278) | دالة | resolve_followup_query | Resolve a short contextual follow-up against the nearest substantive topic. | موثق | 278 | [SRC-5587371288-L000278](../agents/intent_router.py#L278) |
-| [agents/intent_router.py](../agents/intent_router.py#L303) | دالة | _is_deep | لا توجد Docstring. | ناقص | 303 | [SRC-5587371288-L000303](../agents/intent_router.py#L303) |
-| [agents/intent_router.py](../agents/intent_router.py#L320) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 320 | [SRC-5587371288-L000320](../agents/intent_router.py#L320) |
-| [agents/intent_router.py](../agents/intent_router.py#L337) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 337 | [SRC-5587371288-L000337](../agents/intent_router.py#L337) |
-| [agents/intent_router.py](../agents/intent_router.py#L363) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 363 | [SRC-5587371288-L000363](../agents/intent_router.py#L363) |
+| [agents/intent_router.py](../agents/intent_router.py#L303) | دالة | _has_explicit_source_request | Recognize explicit requests for evidence/citations that require web-backed retrieval. | موثق | 303 | [SRC-5587371288-L000303](../agents/intent_router.py#L303) |
+| [agents/intent_router.py](../agents/intent_router.py#L318) | دالة | _is_deep | لا توجد Docstring. | ناقص | 318 | [SRC-5587371288-L000318](../agents/intent_router.py#L318) |
+| [agents/intent_router.py](../agents/intent_router.py#L335) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 335 | [SRC-5587371288-L000335](../agents/intent_router.py#L335) |
+| [agents/intent_router.py](../agents/intent_router.py#L352) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 352 | [SRC-5587371288-L000352](../agents/intent_router.py#L352) |
+| [agents/intent_router.py](../agents/intent_router.py#L378) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 378 | [SRC-5587371288-L000378](../agents/intent_router.py#L378) |
 | [agents/omarai.py](../agents/omarai.py#L14) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-C9CF9B54F8-L000014](../agents/omarai.py#L14) |
 | [agents/omarai.py](../agents/omarai.py#L15) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-C9CF9B54F8-L000015](../agents/omarai.py#L15) |
 | [agents/omarai.py](../agents/omarai.py#L16) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-C9CF9B54F8-L000016](../agents/omarai.py#L16) |
@@ -826,6 +827,8 @@
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L211) | دالة | test_chained_followups_keep_the_last_substantive_topic | لا توجد Docstring. | ناقص | 211 | [SRC-EA6EC52573-L000211](../tests/test_intent_router.py#L211) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L223) | دالة | test_answer_to_clarification_restores_original_intent | لا توجد Docstring. | ناقص | 223 | [SRC-EA6EC52573-L000223](../tests/test_intent_router.py#L223) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L239) | دالة | test_topic_detection_does_not_inherit_old_social_or_depth_intent | لا توجد Docstring. | ناقص | 239 | [SRC-EA6EC52573-L000239](../tests/test_intent_router.py#L239) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L253) | دالة | test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode | لا توجد Docstring. | ناقص | 253 | [SRC-EA6EC52573-L000253](../tests/test_intent_router.py#L253) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L263) | دالة | test_stable_question_without_source_request_remains_model_only | لا توجد Docstring. | ناقص | 263 | [SRC-EA6EC52573-L000263](../tests/test_intent_router.py#L263) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L9) | دالة | _evidence | لا توجد Docstring. | ناقص | 9 | [SRC-4397BC2CD2-L000009](../tests/test_intent_router_integration.py#L9) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L26) | دالة | _report | لا توجد Docstring. | ناقص | 26 | [SRC-4397BC2CD2-L000026](../tests/test_intent_router_integration.py#L26) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L43) | دالة | test_greeting_is_local_without_model_or_search | لا توجد Docstring. | ناقص | 43 | [SRC-4397BC2CD2-L000043](../tests/test_intent_router_integration.py#L43) |
@@ -1881,55 +1884,55 @@
 | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L110) | عنوان Markdown (H2) | الروابط المرجعية | 110 | [SRC-B2C95EAEE1-L000110](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L110) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | عنوان Markdown (H1) | سجل الإغلاق الهندسي المركزي لمشروع Omarai | 1 | [SRC-62CE5126F9-L000001](OMARAI_REMEDIATION_REGISTER_AR.md#L1) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L2) | عنوان Markdown (H2) | إصلاح فهم السياق والمتابعة وتخطيط البحث — 27 أكتوبر 2026 | 2 | [SRC-62CE5126F9-L000002](OMARAI_REMEDIATION_REGISTER_AR.md#L2) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L16) | عنوان Markdown (H2) | تحديث تشخيص البحث المعمّق — 27 أكتوبر 2026 | 16 | [SRC-62CE5126F9-L000016](OMARAI_REMEDIATION_REGISTER_AR.md#L16) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 19 | [SRC-62CE5126F9-L000019](OMARAI_REMEDIATION_REGISTER_AR.md#L19) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_RETEST_PENDING | 19 | [SRC-62CE5126F9-L000019](OMARAI_REMEDIATION_REGISTER_AR.md#L19) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L29) | عنوان Markdown (H2) | تحديث قبول الاستضافة — 27 أكتوبر 2026، تشغيل متصفح محفوظ | 29 | [SRC-62CE5126F9-L000029](OMARAI_REMEDIATION_REGISTER_AR.md#L29) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L36) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOST_CONFIGURATION_PENDING | 36 | [SRC-62CE5126F9-L000036](OMARAI_REMEDIATION_REGISTER_AR.md#L36) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L36) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 36 | [SRC-62CE5126F9-L000036](OMARAI_REMEDIATION_REGISTER_AR.md#L36) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L41) | عنوان Markdown (H2) | تحديث تنفيذي — 27 أكتوبر 2026: إصلاح مسار هوية البناء على SnapDeploy | 41 | [SRC-62CE5126F9-L000041](OMARAI_REMEDIATION_REGISTER_AR.md#L41) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 44 | [SRC-62CE5126F9-L000044](OMARAI_REMEDIATION_REGISTER_AR.md#L44) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L50) | عنوان Markdown (H2) | تحديث تنفيذي — 27 أكتوبر 2026، بعد دمج PR #95 وإعادة فحص الاستضافة | 50 | [SRC-62CE5126F9-L000050](OMARAI_REMEDIATION_REGISTER_AR.md#L50) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L52) | عنوان Markdown (H3) | الحالة المثبتة بعد الإغلاق | 52 | [SRC-62CE5126F9-L000052](OMARAI_REMEDIATION_REGISTER_AR.md#L52) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L58) | عنوان Markdown (H3) | نتيجة القبول الحي المحدود | 58 | [SRC-62CE5126F9-L000058](OMARAI_REMEDIATION_REGISTER_AR.md#L58) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L64) | عنوان Markdown (H3) | إجراء الإغلاق التالي | 64 | [SRC-62CE5126F9-L000064](OMARAI_REMEDIATION_REGISTER_AR.md#L64) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L69) | عنوان Markdown (H2) | تحديث تنفيذي — 26 أكتوبر 2026، بعد دمج PR #92 والتحقق من CI | 69 | [SRC-62CE5126F9-L000069](OMARAI_REMEDIATION_REGISTER_AR.md#L69) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L71) | عنوان Markdown (H3) | خط الأساس والحالة المثبتة | 71 | [SRC-62CE5126F9-L000071](OMARAI_REMEDIATION_REGISTER_AR.md#L71) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L77) | عنوان Markdown (H3) | نتائج المعالجة | 77 | [SRC-62CE5126F9-L000077](OMARAI_REMEDIATION_REGISTER_AR.md#L77) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L84) | عنوان Markdown (H3) | حدود الدليل والبوابات المفتوحة | 84 | [SRC-62CE5126F9-L000084](OMARAI_REMEDIATION_REGISTER_AR.md#L84) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L87) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 87 | [SRC-62CE5126F9-L000087](OMARAI_REMEDIATION_REGISTER_AR.md#L87) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L92) | عنوان Markdown (H2) | الحالة المرجعية بعد الجلسة 1 — 23 أكتوبر 2026 | 92 | [SRC-62CE5126F9-L000092](OMARAI_REMEDIATION_REGISTER_AR.md#L92) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 99 | [SRC-62CE5126F9-L000099](OMARAI_REMEDIATION_REGISTER_AR.md#L99) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L110) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 110 | [SRC-62CE5126F9-L000110](OMARAI_REMEDIATION_REGISTER_AR.md#L110) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L111) | عنوان Markdown (H2) | الحالة المرجعية بعد PR #81 — 23 أكتوبر 2026 | 111 | [SRC-62CE5126F9-L000111](OMARAI_REMEDIATION_REGISTER_AR.md#L111) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L129) | عنوان Markdown (H2) | دليل الاختبارات وحالة رأس PR — لقطة تاريخية قبل الدمج | 129 | [SRC-62CE5126F9-L000129](OMARAI_REMEDIATION_REGISTER_AR.md#L129) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L133) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 133 | [SRC-62CE5126F9-L000133](OMARAI_REMEDIATION_REGISTER_AR.md#L133) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L137) | عنوان Markdown (H2) | معاني الحالات | 137 | [SRC-62CE5126F9-L000137](OMARAI_REMEDIATION_REGISTER_AR.md#L137) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L145) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_REQUIRED | 145 | [SRC-62CE5126F9-L000145](OMARAI_REMEDIATION_REGISTER_AR.md#L145) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L146) | عنوان Markdown (H2) | A. سجل الأخطاء والجذور | 146 | [SRC-62CE5126F9-L000146](OMARAI_REMEDIATION_REGISTER_AR.md#L146) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L159) | عنوان Markdown (H2) | B. العيوب الأمنية والتشغيلية | 159 | [SRC-62CE5126F9-L000159](OMARAI_REMEDIATION_REGISTER_AR.md#L159) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L168) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOCUMENTED_IN | 168 | [SRC-62CE5126F9-L000168](OMARAI_REMEDIATION_REGISTER_AR.md#L168) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L170) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 170 | [SRC-62CE5126F9-L000170](OMARAI_REMEDIATION_REGISTER_AR.md#L170) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L174) | عنوان Markdown (H2) | C. فجوات الاختبار والجودة | 174 | [SRC-62CE5126F9-L000174](OMARAI_REMEDIATION_REGISTER_AR.md#L174) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L188) | عنوان Markdown (H2) | D. التداخلات والفروع | 188 | [SRC-62CE5126F9-L000188](OMARAI_REMEDIATION_REGISTER_AR.md#L188) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L193) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLOSED_AS_SUPERSEDED | 193 | [SRC-62CE5126F9-L000193](OMARAI_REMEDIATION_REGISTER_AR.md#L193) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L198) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_PROCESS | 198 | [SRC-62CE5126F9-L000198](OMARAI_REMEDIATION_REGISTER_AR.md#L198) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L200) | عنوان Markdown (H3) | سجل مختصر لحالة طلبات الدمج ذات الصلة — 23 أكتوبر 2026 | 200 | [SRC-62CE5126F9-L000200](OMARAI_REMEDIATION_REGISTER_AR.md#L200) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L210) | عنوان Markdown (H2) | E. الوثائق والمكونات غير الضرورية | 210 | [SRC-62CE5126F9-L000210](OMARAI_REMEDIATION_REGISTER_AR.md#L210) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L215) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 215 | [SRC-62CE5126F9-L000215](OMARAI_REMEDIATION_REGISTER_AR.md#L215) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L216) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPDATED_IN | 216 | [SRC-62CE5126F9-L000216](OMARAI_REMEDIATION_REGISTER_AR.md#L216) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L219) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 219 | [SRC-62CE5126F9-L000219](OMARAI_REMEDIATION_REGISTER_AR.md#L219) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L220) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 220 | [SRC-62CE5126F9-L000220](OMARAI_REMEDIATION_REGISTER_AR.md#L220) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L223) | عنوان Markdown (H2) | E1. حالة واجهة الاستخدام المستقلة | 223 | [SRC-62CE5126F9-L000223](OMARAI_REMEDIATION_REGISTER_AR.md#L223) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L229) | عنوان Markdown (H2) | F. ملخص بوابات الإغلاق | 229 | [SRC-62CE5126F9-L000229](OMARAI_REMEDIATION_REGISTER_AR.md#L229) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L231) | عنوان Markdown (H3) | مغلق ومختبر على main | 231 | [SRC-62CE5126F9-L000231](OMARAI_REMEDIATION_REGISTER_AR.md#L231) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L236) | عنوان Markdown (H3) | مدمج ومختبر آليًا عبر PR #76 | 236 | [SRC-62CE5126F9-L000236](OMARAI_REMEDIATION_REGISTER_AR.md#L236) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L247) | عنوان Markdown (H3) | ما يتطلب بيئة فعلية ولا يمكن إغلاقه من الكود وحده | 247 | [SRC-62CE5126F9-L000247](OMARAI_REMEDIATION_REGISTER_AR.md#L247) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L258) | عنوان Markdown (H2) | G. قاعدة عدم الإغلاق الشكلي | 258 | [SRC-62CE5126F9-L000258](OMARAI_REMEDIATION_REGISTER_AR.md#L258) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L263) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_SMOKE | 263 | [SRC-62CE5126F9-L000263](OMARAI_REMEDIATION_REGISTER_AR.md#L263) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L264) | عنوان Markdown (H2) | H. نتائج اختبار البحث الحي — 26 أكتوبر 2026 | 264 | [SRC-62CE5126F9-L000264](OMARAI_REMEDIATION_REGISTER_AR.md#L264) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L270) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_RETEST_NOT_RUN | 270 | [SRC-62CE5126F9-L000270](OMARAI_REMEDIATION_REGISTER_AR.md#L270) |
-| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L273) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_TEST_FAILED | 273 | [SRC-62CE5126F9-L000273](OMARAI_REMEDIATION_REGISTER_AR.md#L273) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L18) | عنوان Markdown (H2) | تحديث تشخيص البحث المعمّق — 27 أكتوبر 2026 | 18 | [SRC-62CE5126F9-L000018](OMARAI_REMEDIATION_REGISTER_AR.md#L18) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 21 | [SRC-62CE5126F9-L000021](OMARAI_REMEDIATION_REGISTER_AR.md#L21) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_RETEST_PENDING | 21 | [SRC-62CE5126F9-L000021](OMARAI_REMEDIATION_REGISTER_AR.md#L21) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L31) | عنوان Markdown (H2) | تحديث قبول الاستضافة — 27 أكتوبر 2026، تشغيل متصفح محفوظ | 31 | [SRC-62CE5126F9-L000031](OMARAI_REMEDIATION_REGISTER_AR.md#L31) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOST_CONFIGURATION_PENDING | 38 | [SRC-62CE5126F9-L000038](OMARAI_REMEDIATION_REGISTER_AR.md#L38) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 38 | [SRC-62CE5126F9-L000038](OMARAI_REMEDIATION_REGISTER_AR.md#L38) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L43) | عنوان Markdown (H2) | تحديث تنفيذي — 27 أكتوبر 2026: إصلاح مسار هوية البناء على SnapDeploy | 43 | [SRC-62CE5126F9-L000043](OMARAI_REMEDIATION_REGISTER_AR.md#L43) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L46) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 46 | [SRC-62CE5126F9-L000046](OMARAI_REMEDIATION_REGISTER_AR.md#L46) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L52) | عنوان Markdown (H2) | تحديث تنفيذي — 27 أكتوبر 2026، بعد دمج PR #95 وإعادة فحص الاستضافة | 52 | [SRC-62CE5126F9-L000052](OMARAI_REMEDIATION_REGISTER_AR.md#L52) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L54) | عنوان Markdown (H3) | الحالة المثبتة بعد الإغلاق | 54 | [SRC-62CE5126F9-L000054](OMARAI_REMEDIATION_REGISTER_AR.md#L54) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L60) | عنوان Markdown (H3) | نتيجة القبول الحي المحدود | 60 | [SRC-62CE5126F9-L000060](OMARAI_REMEDIATION_REGISTER_AR.md#L60) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L66) | عنوان Markdown (H3) | إجراء الإغلاق التالي | 66 | [SRC-62CE5126F9-L000066](OMARAI_REMEDIATION_REGISTER_AR.md#L66) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L71) | عنوان Markdown (H2) | تحديث تنفيذي — 26 أكتوبر 2026، بعد دمج PR #92 والتحقق من CI | 71 | [SRC-62CE5126F9-L000071](OMARAI_REMEDIATION_REGISTER_AR.md#L71) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L73) | عنوان Markdown (H3) | خط الأساس والحالة المثبتة | 73 | [SRC-62CE5126F9-L000073](OMARAI_REMEDIATION_REGISTER_AR.md#L73) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L79) | عنوان Markdown (H3) | نتائج المعالجة | 79 | [SRC-62CE5126F9-L000079](OMARAI_REMEDIATION_REGISTER_AR.md#L79) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L86) | عنوان Markdown (H3) | حدود الدليل والبوابات المفتوحة | 86 | [SRC-62CE5126F9-L000086](OMARAI_REMEDIATION_REGISTER_AR.md#L86) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L89) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 89 | [SRC-62CE5126F9-L000089](OMARAI_REMEDIATION_REGISTER_AR.md#L89) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L94) | عنوان Markdown (H2) | الحالة المرجعية بعد الجلسة 1 — 23 أكتوبر 2026 | 94 | [SRC-62CE5126F9-L000094](OMARAI_REMEDIATION_REGISTER_AR.md#L94) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 101 | [SRC-62CE5126F9-L000101](OMARAI_REMEDIATION_REGISTER_AR.md#L101) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 112 | [SRC-62CE5126F9-L000112](OMARAI_REMEDIATION_REGISTER_AR.md#L112) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L113) | عنوان Markdown (H2) | الحالة المرجعية بعد PR #81 — 23 أكتوبر 2026 | 113 | [SRC-62CE5126F9-L000113](OMARAI_REMEDIATION_REGISTER_AR.md#L113) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L131) | عنوان Markdown (H2) | دليل الاختبارات وحالة رأس PR — لقطة تاريخية قبل الدمج | 131 | [SRC-62CE5126F9-L000131](OMARAI_REMEDIATION_REGISTER_AR.md#L131) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L135) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 135 | [SRC-62CE5126F9-L000135](OMARAI_REMEDIATION_REGISTER_AR.md#L135) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L139) | عنوان Markdown (H2) | معاني الحالات | 139 | [SRC-62CE5126F9-L000139](OMARAI_REMEDIATION_REGISTER_AR.md#L139) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L147) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_REQUIRED | 147 | [SRC-62CE5126F9-L000147](OMARAI_REMEDIATION_REGISTER_AR.md#L147) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L148) | عنوان Markdown (H2) | A. سجل الأخطاء والجذور | 148 | [SRC-62CE5126F9-L000148](OMARAI_REMEDIATION_REGISTER_AR.md#L148) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L161) | عنوان Markdown (H2) | B. العيوب الأمنية والتشغيلية | 161 | [SRC-62CE5126F9-L000161](OMARAI_REMEDIATION_REGISTER_AR.md#L161) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L170) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOCUMENTED_IN | 170 | [SRC-62CE5126F9-L000170](OMARAI_REMEDIATION_REGISTER_AR.md#L170) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L172) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 172 | [SRC-62CE5126F9-L000172](OMARAI_REMEDIATION_REGISTER_AR.md#L172) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L176) | عنوان Markdown (H2) | C. فجوات الاختبار والجودة | 176 | [SRC-62CE5126F9-L000176](OMARAI_REMEDIATION_REGISTER_AR.md#L176) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L190) | عنوان Markdown (H2) | D. التداخلات والفروع | 190 | [SRC-62CE5126F9-L000190](OMARAI_REMEDIATION_REGISTER_AR.md#L190) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L195) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLOSED_AS_SUPERSEDED | 195 | [SRC-62CE5126F9-L000195](OMARAI_REMEDIATION_REGISTER_AR.md#L195) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L200) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_PROCESS | 200 | [SRC-62CE5126F9-L000200](OMARAI_REMEDIATION_REGISTER_AR.md#L200) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L202) | عنوان Markdown (H3) | سجل مختصر لحالة طلبات الدمج ذات الصلة — 23 أكتوبر 2026 | 202 | [SRC-62CE5126F9-L000202](OMARAI_REMEDIATION_REGISTER_AR.md#L202) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L212) | عنوان Markdown (H2) | E. الوثائق والمكونات غير الضرورية | 212 | [SRC-62CE5126F9-L000212](OMARAI_REMEDIATION_REGISTER_AR.md#L212) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L217) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 217 | [SRC-62CE5126F9-L000217](OMARAI_REMEDIATION_REGISTER_AR.md#L217) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L218) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | UPDATED_IN | 218 | [SRC-62CE5126F9-L000218](OMARAI_REMEDIATION_REGISTER_AR.md#L218) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L221) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 221 | [SRC-62CE5126F9-L000221](OMARAI_REMEDIATION_REGISTER_AR.md#L221) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L222) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 222 | [SRC-62CE5126F9-L000222](OMARAI_REMEDIATION_REGISTER_AR.md#L222) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L225) | عنوان Markdown (H2) | E1. حالة واجهة الاستخدام المستقلة | 225 | [SRC-62CE5126F9-L000225](OMARAI_REMEDIATION_REGISTER_AR.md#L225) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L231) | عنوان Markdown (H2) | F. ملخص بوابات الإغلاق | 231 | [SRC-62CE5126F9-L000231](OMARAI_REMEDIATION_REGISTER_AR.md#L231) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L233) | عنوان Markdown (H3) | مغلق ومختبر على main | 233 | [SRC-62CE5126F9-L000233](OMARAI_REMEDIATION_REGISTER_AR.md#L233) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L238) | عنوان Markdown (H3) | مدمج ومختبر آليًا عبر PR #76 | 238 | [SRC-62CE5126F9-L000238](OMARAI_REMEDIATION_REGISTER_AR.md#L238) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L249) | عنوان Markdown (H3) | ما يتطلب بيئة فعلية ولا يمكن إغلاقه من الكود وحده | 249 | [SRC-62CE5126F9-L000249](OMARAI_REMEDIATION_REGISTER_AR.md#L249) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L260) | عنوان Markdown (H2) | G. قاعدة عدم الإغلاق الشكلي | 260 | [SRC-62CE5126F9-L000260](OMARAI_REMEDIATION_REGISTER_AR.md#L260) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L265) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_SMOKE | 265 | [SRC-62CE5126F9-L000265](OMARAI_REMEDIATION_REGISTER_AR.md#L265) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L266) | عنوان Markdown (H2) | H. نتائج اختبار البحث الحي — 26 أكتوبر 2026 | 266 | [SRC-62CE5126F9-L000266](OMARAI_REMEDIATION_REGISTER_AR.md#L266) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L272) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_RETEST_NOT_RUN | 272 | [SRC-62CE5126F9-L000272](OMARAI_REMEDIATION_REGISTER_AR.md#L272) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L275) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_TEST_FAILED | 275 | [SRC-62CE5126F9-L000275](OMARAI_REMEDIATION_REGISTER_AR.md#L275) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات الأساسية الأولي | 1 | [SRC-B9C3015420-L000001](OMARAI_REQUIREMENTS_REGISTER.md#L1) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 6 | [SRC-B9C3015420-L000006](OMARAI_REQUIREMENTS_REGISTER.md#L6) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
