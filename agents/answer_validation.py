@@ -47,6 +47,48 @@ def _tokens(value: Any, *, drop_stopwords: bool = False) -> list[str]:
     return tokens
 
 
+def _criterion_tokens(value: Any) -> list[str]:
+    """Return criterion terms without discarding their original surface forms."""
+    tokens = _tokens(value, drop_stopwords=True)
+    return tokens or _tokens(value)
+
+
+_CRITERION_ALIASES = {
+    "سعر": ("price", "cost", "pricing", "fee", "amount"),
+    "تكلفه": ("price", "cost", "expense", "fee"),
+    "بطاريه": ("battery", "capacity", "duration", "battery life"),
+    "كاميرا": ("camera", "photography", "image quality", "photo"),
+    "خصوصيه": ("privacy", "confidentiality", "data protection"),
+    "اعتماديه": ("reliability", "uptime", "dependability"),
+    "دعم": ("support", "service", "helpdesk", "customer service"),
+    "مساحه": ("area", "size", "space", "sqm"),
+    "اداء": ("performance", "speed", "throughput"),
+    "امان": ("safety", "security", "protection"),
+    "جوده": ("quality", "build quality"),
+    "صيانه": ("maintenance", "repair", "servicing"),
+    "مميزات": ("features", "benefits", "advantages"),
+    "عيوب": ("drawbacks", "disadvantages", "limitations", "cons"),
+    "ضمان": ("warranty", "guarantee"),
+    "توفر": ("availability", "in stock"),
+    "سرعه": ("speed", "latency"),
+    "ذاكره": ("memory", "ram", "storage"),
+}
+
+
+def _criterion_token_variants(token: str) -> set[str]:
+    """Return conservative Arabic article and common cross-language criterion variants."""
+    variants = {token}
+    is_arabic = bool(token) and all("ء" <= char <= "ي" for char in token)
+    base = token[2:] if is_arabic and token.startswith("ال") and len(token) > 4 else token
+    if is_arabic:
+        variants.add(base)
+        if len(base) >= 3:
+            variants.add("ال" + base)
+        for alias in _CRITERION_ALIASES.get(base, ()):
+            variants.update(_tokens(alias, drop_stopwords=True))
+    return variants
+
+
 def _numeric_literals(value: Any, *, question: str = "") -> set[str]:
     """Extract explicit numeric literals, ignoring citation indices and unqualified single digits."""
     text = _normalize(_CITATION.sub(" ", str(value or "")))
@@ -149,7 +191,7 @@ def audit_answer_integrity(
     answer_text = str(answer or "")[:24000]
     answer_number_literals = _numeric_literals(answer_text, question=question)
     unsupported_numbers = sorted(answer_number_literals - source_number_literals)
-    answer_tokens = set(_tokens(_CITATION.sub(" ", answer_text), drop_stopwords=True))
+    answer_tokens = set(_criterion_tokens(_CITATION.sub(" ", answer_text)))
 
     # Align citation-bearing sentences only by lexical overlap with the exact cited
     # source index. This is an audit hint, not an entailment or truth check.
@@ -302,21 +344,60 @@ def audit_answer_integrity(
         for item in citation_alignment
     )
     target_checks: list[dict[str, Any]] = []
+    source_evidence_gap_count = 0
     for target in (coverage_targets or [])[:8]:
-        target_tokens = list(dict.fromkeys(_tokens(target, drop_stopwords=True)))
-        if not target_tokens:
-            target_tokens = list(dict.fromkeys(_tokens(target)))
+        target_tokens = list(dict.fromkeys(_criterion_tokens(target)))
         overlap = [token for token in target_tokens if token in answer_tokens]
         ratio = len(overlap) / len(target_tokens) if target_tokens else 0.0
         likely_covered = bool(overlap) and (
             ratio >= 0.5 if len(target_tokens) > 1 else True
         )
+
+        # Track criterion-level source signals separately from answer wording.
+        # A term appearing in a source is not proof that the source supports a claim;
+        # this is a bounded retrieval/evidence diagnostic only.
+        source_checks: list[dict[str, Any]] = []
+        for source_index, source in enumerate(safe_sources[:40], 1):
+            page_text = str(source.get("page_text") or "")
+            snippet = str(source.get("snippet") or "")
+            title = str(source.get("title") or "")
+            if bool(source.get("page_fetched")) and page_text.strip():
+                selected_text, basis = page_text, "extracted_page_text"
+            elif snippet.strip():
+                selected_text, basis = snippet, "search_snippet"
+            elif title.strip():
+                selected_text, basis = title, "title_only"
+            else:
+                continue
+            source_tokens = set(_tokens(selected_text[:16000], drop_stopwords=True))
+            source_overlap = [
+                token for token in target_tokens
+                if _criterion_token_variants(token) & source_tokens
+            ]
+            source_ratio = len(source_overlap) / len(target_tokens) if target_tokens else 0.0
+            source_signal = bool(source_overlap) and (
+                source_ratio >= 0.5 if len(target_tokens) > 1 else True
+            )
+            if source_signal:
+                source_checks.append({
+                    "source_index": source_index,
+                    "status": "lexical_signal_found",
+                    "evidence_basis": basis,
+                    "matched_terms": source_overlap[:8],
+                    "token_overlap_ratio": round(source_ratio, 3),
+                })
+        if not source_checks:
+            source_evidence_gap_count += 1
         target_checks.append({
             "target": str(target)[:120],
             "status": "lexical_signal_found" if likely_covered else "possibly_missing",
             "matched_terms": overlap[:12],
             "missing_terms": [token for token in target_tokens if token not in answer_tokens][:12],
             "token_overlap_ratio": round(ratio, 3),
+            "source_evidence_status": (
+                "source_lexical_signal_found" if source_checks else "no_source_lexical_signal"
+            ),
+            "source_evidence_checks": source_checks[:12],
         })
 
     citation_count = len(re.findall(r"\[(?:المصدر|source)\s+\d+\]", answer_text, re.IGNORECASE))
@@ -365,6 +446,8 @@ def audit_answer_integrity(
         "potentially_missing_target_count": sum(
             item["status"] == "possibly_missing" for item in target_checks
         ),
+        "source_evidence_gap_count": source_evidence_gap_count,
+        "source_evidence_assessment": "criterion_level_lexical_signals_not_claim_support_or_entailment",
         "limitations": [
             "Token overlap does not prove that an answer fulfills the intended task.",
             "A number appearing in any source does not prove that the source supports the claim.",

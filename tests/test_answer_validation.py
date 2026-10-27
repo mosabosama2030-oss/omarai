@@ -63,6 +63,51 @@ def test_task_coverage_screen_flags_a_potentially_missing_target_without_claimin
     assert result["independent_fact_check"] is False
 
 
+def test_criterion_coverage_distinguishes_answer_mentions_from_source_evidence():
+    result = audit_answer_integrity(
+        "قارن من حيث السعر والمساحة",
+        "السعر واضح، أما المساحة فلا تتوفر بيانات عنها.",
+        [{
+            "title": "سعر الهاتف",
+            "snippet": "سعر الهاتف 100 جنيه",
+            "page_fetched": False,
+        }],
+        ["السعر", "المساحة"],
+    )
+    checks = {item["target"]: item for item in result["target_coverage"]}
+
+    # Both dimensions are mentioned in the answer, but only price has a source signal.
+    assert checks["السعر"]["status"] == "lexical_signal_found"
+    assert checks["السعر"]["source_evidence_status"] == "source_lexical_signal_found"
+    assert checks["المساحة"]["status"] == "lexical_signal_found"
+    assert checks["المساحة"]["source_evidence_status"] == "no_source_lexical_signal"
+    assert result["source_evidence_gap_count"] == 1
+    assert result["source_evidence_assessment"] == (
+        "criterion_level_lexical_signals_not_claim_support_or_entailment"
+    )
+    assert result["independent_fact_check"] is False
+
+
+def test_arabic_criterion_can_match_common_english_source_terms():
+    result = audit_answer_integrity(
+        "قارن من حيث السعر والمساحة",
+        "السعر مذكور، لكن المساحة غير متاحة في الأدلة.",
+        [{
+            "title": "Product listing",
+            "snippet": "Price: 100 EGP. Size: 80 sqm.",
+            "page_fetched": False,
+        }],
+        ["السعر", "المساحة"],
+    )
+    checks = {item["target"]: item for item in result["target_coverage"]}
+    assert checks["السعر"]["source_evidence_status"] == "source_lexical_signal_found"
+    assert checks["المساحة"]["source_evidence_status"] == "source_lexical_signal_found"
+    assert result["source_evidence_gap_count"] == 0
+    # Cross-language lexical matching remains a retrieval hint, not entailment.
+    assert result["semantic_verification"] is False
+    assert result["independent_fact_check"] is False
+
+
 def test_source_scope_does_not_confuse_snippet_with_fetched_page():
     result = audit_answer_integrity(
         "ما التفاصيل؟",

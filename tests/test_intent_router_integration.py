@@ -115,7 +115,7 @@ def test_contextual_price_followup_searches_with_previous_subject(monkeypatch) -
 def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch) -> None:
     agent = WebAgent()
     agent.api_key = "test-key"
-    seen: dict = {}
+    seen: dict = {"plans": []}
     history = []
 
     def plan(question, prior_history):
@@ -130,7 +130,7 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
         }
 
     def collect(research_plan):
-        seen["plan"] = dict(research_plan)
+        seen["plans"].append(dict(research_plan))
         sources = [
             _evidence("example.com", research_plan["queries"]),
             _evidence("example.net", research_plan["queries"]),
@@ -142,6 +142,7 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
     monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "مقارنة أولية [المصدر 1].")
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(agent, "_repair_answer_coverage", lambda _q, answer, _s, _m: answer)
 
     result = agent.answer(
         "قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية والكاميرا",
@@ -151,10 +152,79 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
     assert result["intent_route"] == "WEB_DEEP"
     assert result["research_plan"]["intent_route"] == "WEB_DEEP"
     assert result["research_plan"]["depth"] == "deep"
-    assert len(seen["plan"]["queries"]) > 1
+    initial_plan = seen["plans"][0]
+    assert len(initial_plan["queries"]) > 1
+    assert initial_plan["coverage_gap_repair_slot_reserved"] is True
+    assert initial_plan["query_limit"] == 7
+    # Each requested criterion gets a distinct search angle before generic deep
+    # modifiers consume the bounded query budget.
+    planned_queries = " ".join(initial_plan["queries"]).casefold()
+    assert "السعر" in planned_queries
+    assert "البطارية" in planned_queries
+    assert "الكاميرا" in planned_queries
+    assert len(initial_plan["queries"]) <= 7
     assert result["used_web_search"] is True
     coverage = result["answer_coverage"]
     assert coverage["method"] == "explicit_criteria_heuristic"
     assert coverage["targets"] == ["السعر", "البطارية", "الكاميرا"]
     assert coverage["status"] == "model_review_requested_not_machine_verified"
     assert coverage["automatically_graded"] is False
+    # The mocked sources do not contain battery/camera evidence. The task must
+    # remain visibly incomplete even if the planner generated multiple queries.
+    assert coverage["source_evidence_gap_count"] == 2
+    assert result["task_fulfillment_status"] == "possible_gap_detected"
+    assert len(seen["plans"]) == 2
+    assert "البطارية" in " ".join(seen["plans"][1]["queries"])
+    assert result["search_report"]["criterion_gap_research"]["attempted"] is True
+    assert result["search_report"]["criterion_gap_research"]["status"] == "search_completed_no_new_criterion_evidence"
+
+def test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget(monkeypatch) -> None:
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    seen: dict = {"plans": []}
+    question = (
+        "قارن بين خدمات من حيث السعر، الخصوصية، الاعتمادية، الدعم، "
+        "الأمان، السرعة، الجودة، والتوفر"
+    )
+
+    def plan(_question, _history):
+        return {
+            "queries": ["مقارنة الخدمات"],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test_single_query",
+        }
+
+    def collect(research_plan):
+        seen["plans"].append(dict(research_plan))
+        sources = [
+            _evidence("example.com", research_plan["queries"]),
+            _evidence("example.net", research_plan["queries"]),
+        ]
+        return sources, [], _report(research_plan, sources)
+
+    monkeypatch.setattr(agent, "_plan_search", plan)
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda _query, _source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "مقارنة أولية [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+    monkeypatch.setattr(agent, "_repair_answer_coverage", lambda _q, answer, _s, _m: answer)
+
+    agent.answer(question, history=[])
+
+    # All eight explicit criteria consume the bounded initial query allowance;
+    # the system must not launch an unbudgeted ninth query for coverage repair.
+    assert len(seen["plans"]) == 1
+    targets = WebAgent._question_coverage_targets(question)
+    assert len(targets) == 8
+    initial_plan = seen["plans"][0]
+    queries = initial_plan["queries"]
+    assert initial_plan["coverage_gap_repair_slot_reserved"] is False
+    assert initial_plan["query_limit"] == 8
+    assert len(queries) == 8
+    for target in targets:
+        assert any(target in query for query in queries), f"Missing criterion query for {target!r}"
+

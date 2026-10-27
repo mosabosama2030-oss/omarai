@@ -2275,9 +2275,14 @@ class WebAgent:
         self, plan: dict[str, Any]
     ) -> tuple[list[dict[str, Any]], list[str], dict[str, Any]]:
         """Run independent query searches concurrently, fuse evidence, then fetch top pages."""
+        try:
+            query_limit = int(plan.get("query_limit", MAX_PLAN_QUERIES))
+        except (TypeError, ValueError, OverflowError):
+            query_limit = MAX_PLAN_QUERIES
+        query_limit = max(1, min(query_limit, MAX_PLAN_QUERIES))
         queries = list(dict.fromkeys(
             compact_search_query(query)
-            for query in plan.get("queries", [])[:MAX_PLAN_QUERIES]
+            for query in plan.get("queries", [])[:query_limit]
             if isinstance(query, str) and query.strip()
         ))
         queries = [query for query in queries if query]
@@ -2326,7 +2331,7 @@ class WebAgent:
             and (len(preliminary) < 8 or len(preliminary_domains) < 5 or len(preliminary_providers) < 2)
         )
         expansion_queries: list[str] = []
-        if needs_expansion and len(queries) < MAX_PLAN_QUERIES and queries:
+        if needs_expansion and len(queries) < query_limit and queries:
             base_query = (queries[0] if queries else "")
             candidates = [
                 f"{base_query} official sources data reports",
@@ -2342,7 +2347,7 @@ class WebAgent:
                 if compacted and key not in seen_expansions:
                     expansion_queries.append(compacted)
                     seen_expansions.add(key)
-                if len(expansion_queries) >= max(0, MAX_PLAN_QUERIES - len(queries)):
+                if len(expansion_queries) >= max(0, query_limit - len(queries)):
                     break
             if expansion_queries:
                 with ThreadPoolExecutor(
@@ -3828,6 +3833,7 @@ class WebAgent:
                 coverage["potentially_missing_target_count"] = (
                     answer_integrity["potentially_missing_target_count"]
                 )
+                coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
                 coverage["lexical_screen_method"] = (
                     "deterministic_lexical_screen_only_not_semantic_grading"
                 )
@@ -3840,7 +3846,10 @@ class WebAgent:
                         if coverage_targets
                         else "not_machine_assessed_no_explicit_targets_detected"
                     )
-                elif answer_integrity["potentially_missing_target_count"] > 0:
+                elif (
+                    answer_integrity["potentially_missing_target_count"] > 0
+                    or answer_integrity["source_evidence_gap_count"] > 0
+                ):
                     fulfillment_status = "possible_gap_detected"
                 elif coverage_targets:
                     fulfillment_status = "lexical_signals_found_not_semantically_verified"
@@ -4053,9 +4062,28 @@ class WebAgent:
                         f"{base_query} متوسط أسعار السوق للمتر",
                         f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
                     ])
-                plan["queries"] = list(dict.fromkeys(
-                    (plan.get("queries") or [])[:5] + deep_candidates
-                ))[:MAX_PLAN_QUERIES]
+                # Close the planning loop: give every explicit user criterion its own
+                # query before generic "deep research" queries consume the fixed budget.
+                # This is a retrieval heuristic, not a guarantee that evidence exists.
+                criterion_queries = [
+                    compact_search_query(f"{base_query} {target} official data specifications")
+                    for target in self._question_coverage_targets(question)
+                ]
+                criterion_queries = [
+                    query for query in criterion_queries
+                    if query and _relevance_query_tokens(query)
+                ]
+                original_queries = [
+                    query for query in (plan.get("queries") or [])
+                    if isinstance(query, str) and query.strip()
+                ]
+                # Each criterion query already contains the base subject. When the
+                # question has many criteria, spend the full bounded budget on those
+                # queries rather than silently dropping later criteria for a base query.
+                prioritized_queries = criterion_queries[:MAX_PLAN_QUERIES]
+                if len(prioritized_queries) < MAX_PLAN_QUERIES:
+                    prioritized_queries += original_queries[:1] + deep_candidates
+                plan["queries"] = list(dict.fromkeys(prioritized_queries))[:MAX_PLAN_QUERIES]
                 base_query = (plan.get("queries") or [""])[0]
             # Explicit user-selected modes are control inputs. They do not bypass source
             # validation and never permit private-source access.
@@ -4079,10 +4107,27 @@ class WebAgent:
                         f"{base_query} متوسط أسعار السوق للمتر",
                         f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
                     ])
-                # Keep query budget for evidence-gap searches if first-round coverage is weak.
-                plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:3] + candidates))[
-                    :MAX_PLAN_QUERIES
+                # Explicit deep mode follows the same criterion-first budget allocation
+                # as automatic deep mode, so generic modifiers cannot crowd out requested
+                # dimensions such as price, battery, camera, privacy, or reliability.
+                criterion_queries = [
+                    compact_search_query(f"{base_query} {target} official data specifications")
+                    for target in self._question_coverage_targets(question)
                 ]
+                criterion_queries = [
+                    query for query in criterion_queries
+                    if query and _relevance_query_tokens(query)
+                ]
+                # Criterion queries include the subject and take priority; retain a
+                # planner query and generic exploration only when budget remains.
+                original_queries = [
+                    query for query in (plan.get("queries") or [])
+                    if isinstance(query, str) and query.strip()
+                ]
+                prioritized_queries = criterion_queries[:MAX_PLAN_QUERIES]
+                if len(prioritized_queries) < MAX_PLAN_QUERIES:
+                    prioritized_queries += original_queries[:1] + candidates
+                plan["queries"] = list(dict.fromkeys(prioritized_queries))[:MAX_PLAN_QUERIES]
             elif clean_mode == "latest":
                 plan["freshness"] = "current"
                 if self._is_navigation_request(question):
@@ -4149,7 +4194,18 @@ class WebAgent:
             compacted_query = compact_search_query(raw_query)
             if compacted_query and _relevance_query_tokens(compacted_query):
                 final_topic_queries.append(compacted_query)
-        plan["queries"] = list(dict.fromkeys(final_topic_queries))[:MAX_PLAN_QUERIES]
+        coverage_targets_for_budget = self._question_coverage_targets(question)
+        # Reserve one bounded search slot for a post-review criterion-evidence gap.
+        # Keep all explicit criterion queries when there are many dimensions; the
+        # reserve applies only to ordinary compound tasks with up to six targets.
+        reserve_coverage_gap_query = (
+            2 <= len(coverage_targets_for_budget) <= 6
+            and plan.get("depth") == "deep"
+        )
+        query_limit = MAX_PLAN_QUERIES - 1 if reserve_coverage_gap_query else MAX_PLAN_QUERIES
+        plan["coverage_gap_repair_slot_reserved"] = reserve_coverage_gap_query
+        plan["query_limit"] = query_limit
+        plan["queries"] = list(dict.fromkeys(final_topic_queries))[:query_limit]
 
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
@@ -4750,6 +4806,7 @@ class WebAgent:
             answer_integrity = audit_answer_integrity(question, reason, sources, coverage_targets)
             answer_coverage["target_checks"] = answer_integrity["target_coverage"]
             answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
+            answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
             answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
             task_fulfillment_status = (
                 "not_assessed_insufficient_evidence" if coverage_targets
@@ -4908,6 +4965,204 @@ class WebAgent:
                     "كإجابة مؤكدة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد على المسودة."
                 )
                 answer = _fallback_answer(sources, review_warning)
+        criterion_gap_research: dict[str, Any] = {
+            "attempted": False,
+            "status": "not_needed",
+            "targets": [],
+            "new_sources_added": 0,
+            "evidence_sources_enriched": 0,
+        }
+        # Close the loop from an answer-stage gap back to the source layer. A criterion
+        # that appears in the draft but has no source signal triggers one bounded query
+        # when the reserved request-budget slot remains available.
+        if (
+            coverage_targets
+            and review_status == "model_claim_audit_completed"
+            and sources
+            and self.api_key
+        ):
+            presearch_integrity = audit_answer_integrity(
+                question, answer, sources, coverage_targets
+            )
+            source_gap_targets = [
+                item["target"]
+                for item in presearch_integrity["target_coverage"]
+                if item.get("source_evidence_status") == "no_source_lexical_signal"
+            ][:3]
+            if source_gap_targets:
+                criterion_gap_research["targets"] = source_gap_targets
+                budget = getattr(self, "_request_budget", None)
+                if not plan.get("coverage_gap_repair_slot_reserved"):
+                    criterion_gap_research["status"] = "skipped_no_reserved_search_slot"
+                    coverage_repair_warning = (
+                        "رُصدت محاور بلا إشارة لفظية في المصادر، لكن لم تُحجز ميزانية "
+                        "استعلام إضافي لهذه المهمة؛ لذلك ستظل المحاور غير المحسومة ظاهرة."
+                    )
+                elif budget is None:
+                    criterion_gap_research["status"] = "skipped_no_request_budget"
+                elif budget.remaining_units("search_queries") < 1:
+                    criterion_gap_research["status"] = "skipped_search_budget_exhausted"
+                    coverage_repair_warning = (
+                        "رُصدت محاور بلا إشارة لفظية في المصادر، لكن ميزانية البحث لم تترك "
+                        "استعلامًا إضافيًا للتحقق منها؛ لذلك لا تُعدّ الإجابة مكتملة."
+                    )
+                else:
+                    fallback_queries = fallback_plan(question, clean_history).get("queries", [])
+                    topic_query = compact_search_query(
+                        fallback_queries[0] if fallback_queries else question
+                    ) or compact_search_query(question)
+                    gap_query = compact_search_query(
+                        f"{topic_query} {' '.join(source_gap_targets)} official specific evidence data"
+                    )
+                    known_query_keys = {
+                        _normalize_search_query(item).casefold()
+                        for item in plan.get("queries", [])
+                        if isinstance(item, str) and item.strip()
+                    }
+                    if not gap_query or not _relevance_query_tokens(gap_query):
+                        criterion_gap_research["status"] = "skipped_no_valid_query"
+                    elif _normalize_search_query(gap_query).casefold() in known_query_keys:
+                        criterion_gap_research["status"] = "skipped_query_not_distinct"
+                    else:
+                        criterion_gap_research.update({
+                            "attempted": True,
+                            "status": "searching_for_missing_criterion_evidence",
+                            "query": gap_query,
+                        })
+                        gap_plan = dict(plan)
+                        gap_plan.update({
+                            "queries": [gap_query],
+                            "query_limit": 1,
+                            "depth": "standard",
+                            "social_focus": False,
+                            "platforms": [],
+                            "direct_urls": [],
+                        })
+                        try:
+                            gap_sources, gap_warnings, gap_report = self._collect_research(gap_plan)
+                        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded, ValueError) as exc:
+                            gap_sources, gap_warnings = [], []
+                            gap_report = {
+                                "queries_planned": 1,
+                                "queries_attempted": None,
+                                "queries_attempted_known": False,
+                                "search_attempted": None,
+                                "search_outcome": "unknown_after_research_error",
+                                "query_results": [],
+                            }
+                            criterion_gap_research["status"] = "search_failed"
+                            criterion_gap_research["error_class"] = type(exc).__name__
+                        search_warnings.extend(
+                            item for item in gap_warnings if isinstance(item, str)
+                        )
+                        source_indexes: dict[str, int] = {}
+                        for source_index, source in enumerate(sources):
+                            source_key = self._normalized_source_url_key(source.get("url"))
+                            if source_key:
+                                source_indexes.setdefault(source_key, source_index)
+                        evidence_updated = False
+                        for candidate in gap_sources:
+                            if not isinstance(candidate, dict):
+                                continue
+                            if not self._source_matches_query(gap_query, candidate):
+                                continue
+                            source_key = self._normalized_source_url_key(candidate.get("url"))
+                            if not source_key:
+                                continue
+                            existing_index = source_indexes.get(source_key)
+                            if existing_index is None:
+                                source_indexes[source_key] = len(sources)
+                                sources.append(candidate)
+                                criterion_gap_research["new_sources_added"] += 1
+                                evidence_updated = True
+                                continue
+                            existing_source = sources[existing_index]
+                            merged = dict(existing_source)
+                            source_enriched = False
+                            for text_key in ("title", "snippet", "page_text"):
+                                old_text = str(merged.get(text_key) or "")
+                                new_text = str(candidate.get(text_key) or "")
+                                if len(new_text) > len(old_text):
+                                    merged[text_key] = candidate[text_key]
+                                    source_enriched = True
+                            if candidate.get("page_fetched") and not existing_source.get("page_fetched"):
+                                merged["page_fetched"] = True
+                                source_enriched = True
+                            if source_enriched:
+                                evidence_updated = True
+                                criterion_gap_research["evidence_sources_enriched"] += 1
+                            merged["providers"] = list(dict.fromkeys(
+                                list(existing_source.get("providers", []))
+                                + list(candidate.get("providers", []))
+                            ))
+                            merged["queries"] = list(dict.fromkeys(
+                                list(existing_source.get("queries", []))
+                                + list(candidate.get("queries", []))
+                                + [gap_query]
+                            ))
+                            sources[existing_index] = merged
+                        criterion_gap_research["source_count_after"] = len(sources)
+                        plan["queries"] = list(dict.fromkeys(
+                            list(plan.get("queries", [])) + [gap_query]
+                        ))[:MAX_PLAN_QUERIES]
+                        report["criterion_gap_research"] = dict(criterion_gap_research)
+                        try:
+                            report["queries_planned"] = max(
+                                0, int(report.get("queries_planned", 0) or 0)
+                            ) + max(0, int(gap_report.get("queries_planned", 1) or 0))
+                        except (TypeError, ValueError, OverflowError):
+                            report["queries_planned"] = None
+                        previous_attempts = report.get("queries_attempted")
+                        extra_attempts = gap_report.get("queries_attempted")
+                        if isinstance(previous_attempts, int) and isinstance(extra_attempts, int):
+                            report["queries_attempted"] = max(0, previous_attempts) + max(0, extra_attempts)
+                            report["queries_attempted_known"] = True
+                        else:
+                            report["queries_attempted"] = None
+                            report["queries_attempted_known"] = False
+                        old_query_results = report.get("query_results")
+                        new_query_results = gap_report.get("query_results")
+                        report["query_results"] = (
+                            (old_query_results if isinstance(old_query_results, list) else [])
+                            + (new_query_results if isinstance(new_query_results, list) else [])
+                        )
+                        if evidence_updated:
+                            sources.sort(
+                                key=lambda item: float(item.get("rank_score", 0) or 0),
+                                reverse=True,
+                            )
+                            try:
+                                revised_draft = self._generate(
+                                    question,
+                                    clean_history,
+                                    sources,
+                                    search_warning,
+                                    research_plan=plan,
+                                    search_report=report,
+                                )
+                                revised_answer = self._review_answer(
+                                    question, revised_draft, sources[:MAX_LLM_CITED_SOURCES]
+                                )
+                                answer = revised_answer
+                                review_status = "model_claim_audit_completed"
+                                criterion_gap_research["status"] = "evidence_added_and_answer_regenerated"
+                            except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
+                                criterion_gap_research["status"] = "evidence_added_but_regeneration_unavailable"
+                                criterion_gap_research["regeneration_error_class"] = type(exc).__name__
+                                coverage_repair_warning = (
+                                    "وصلت أدلة إضافية لمحور مطلوب، لكن تعذرت إعادة توليد الإجابة "
+                                    "وتدقيقها ضمن الميزانية؛ راجع هذا المحور قبل اعتماد الإجابة."
+                                )
+                        elif criterion_gap_research.get("status") != "search_failed":
+                            criterion_gap_research["status"] = "search_completed_no_new_criterion_evidence"
+                            coverage_repair_warning = (
+                                "أُجري بحث إضافي لمحاور ناقصة، لكنه لم يضف نص مصدر يمكن تمييزه "
+                                "كدليل جديد؛ ستظل هذه المحاور غير محسومة."
+                            )
+                        criterion_gap_research["source_count_after"] = len(sources)
+                        report["criterion_gap_research"] = dict(criterion_gap_research)
+
+        report["criterion_gap_research"] = dict(criterion_gap_research)
         if (
             coverage_targets
             and review_status == "model_claim_audit_completed"
@@ -4919,7 +5174,18 @@ class WebAgent:
                 item["target"] for item in initial_integrity["target_coverage"]
                 if item["status"] == "possibly_missing"
             ]
-            if not missing_targets:
+            remaining_source_gap_targets = [
+                item["target"] for item in initial_integrity["target_coverage"]
+                if item.get("source_evidence_status") == "no_source_lexical_signal"
+            ]
+            if not missing_targets and remaining_source_gap_targets:
+                coverage_repair_status = "source_evidence_gap_unresolved"
+                if not coverage_repair_warning:
+                    coverage_repair_warning = (
+                        "ذُكرت المحاور في الإجابة، لكن لم تظهر لها إشارات لفظية في المصادر؛ "
+                        "ذكر المحور لا يُعد دليلًا، لذلك تظل المهمة غير مكتملة."
+                    )
+            elif not missing_targets:
                 coverage_repair_status = "not_needed_lexical_signals_found"
             else:
                 coverage_repair_status = "attempted"
@@ -5011,9 +5277,14 @@ class WebAgent:
         answer_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
         answer_coverage["target_checks"] = answer_integrity["target_coverage"]
         answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
+        answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
         answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
         task_fulfillment_status = (
-            "possible_gap_detected" if answer_integrity["potentially_missing_target_count"] > 0
+            "possible_gap_detected"
+            if (
+                answer_integrity["potentially_missing_target_count"] > 0
+                or answer_integrity["source_evidence_gap_count"] > 0
+            )
             else "lexical_signals_found_not_semantically_verified" if coverage_targets
             else "not_machine_assessed_no_explicit_targets_detected"
         )
