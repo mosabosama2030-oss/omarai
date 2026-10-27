@@ -5162,6 +5162,7 @@ class WebAgent:
                         criterion_gap_research["source_count_after"] = len(sources)
                         report["criterion_gap_research"] = dict(criterion_gap_research)
 
+        report["criterion_gap_research"] = dict(criterion_gap_research)
         if (
             coverage_targets
             and review_status == "model_claim_audit_completed"
