@@ -1,6 +1,6 @@
 # Omarai — قائمة تسليم القبول والإغلاق
 
-**تاريخ اللقطة:** 27 أكتوبر 2026  
+**تاريخ اللقطة:** 27 أكتوبر 2026 (بعد فحص `/api/health` وإغلاق PR #95)  
 **الغرض:** قائمة موحدة لتسريع الإغلاق مع عدم تحويل الاختبارات الجزئية إلى ادعاء جاهزية.  
 **سجل العيوب التفصيلي:** [OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md)  
 **الفهرسة المولدة:** لا تُعدّل ملفات `MASTER_INDEX.md` أو `SOURCE_LINES_INDEX.md` يدويًا؛ مصدرها `docs/generate_index.py`.
