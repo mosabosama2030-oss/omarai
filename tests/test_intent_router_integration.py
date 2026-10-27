@@ -215,6 +215,9 @@ def test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget(mon
 
     agent.answer(question, history=[])
 
+    # All eight explicit criteria consume the bounded initial query allowance;
+    # the system must not launch an unbudgeted ninth query for coverage repair.
+    assert len(seen["plans"]) == 1
     targets = WebAgent._question_coverage_targets(question)
     assert len(targets) == 8
     initial_plan = seen["plans"][0]
