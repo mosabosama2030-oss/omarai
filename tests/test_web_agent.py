@@ -1520,6 +1520,50 @@ def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):
     assert any("نتيجة مرشحة" in warning for warning in result["warnings"])
 
 
+def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeypatch):
+    import httpx
+
+    rss = """<rss><channel>
+    <item>
+      <title>أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال</title>
+      <link>https://news.google.com/rss/articles/relevant</link>
+      <description>أمثلة على استخدام الذكاء الاصطناعي في الأعمال</description>
+      <source url="https://www.ibm.com/">IBM</source>
+      <pubDate>Tue, 27 Oct 2026 10:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>نتائج بطولة كرة القدم اليوم</title>
+      <link>https://news.google.com/rss/articles/irrelevant</link>
+      <description>تقرير عن الدوري ونتائج المباراة</description>
+      <source url="https://example.org/">Example News</source>
+      <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>
+    </item>
+    </channel></rss>"""
+
+    class FakeResponse:
+        status_code = 200
+        content = rss.encode("utf-8")
+
+    agent = WebAgent()
+    monkeypatch.setattr(httpx, "get", lambda *args, **kwargs: FakeResponse())
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
+
+    results = agent._search_web("AI use cases for small businesses latest news")
+
+    assert len(results) == 1
+    assert results[0]["title"] == "أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال"
+    diagnostic = next(
+        row for row in agent._provider_diagnostics
+        if row["provider"] == "google_news_rss"
+    )
+    assert diagnostic["status"] == "ok"
+    assert diagnostic["result_count"] == 2
+    assert diagnostic["accepted_count"] == 1
+    assert diagnostic["rejected_count"] == 1
+    assert diagnostic["rejection_counts"]["relevance_below_threshold"] == 1
+
+
 def test_google_news_preserves_publisher_identity(monkeypatch):
     import httpx
 
@@ -1551,6 +1595,16 @@ def test_relevance_matching_handles_arabic_names_with_english_results():
     assert _relevance_ratio("موقع مصر الرقمية", "Egypt Digital portal for government services") >= 0.20
     assert _relevance_ratio("ابحث عن شقة للايجار", "Apartment listing available for rent") >= 0.20
     assert _relevance_ratio("مقارنة بين الشركات الناشئة", "Comparison of startup companies") >= 0.20
+
+def test_relevance_matching_handles_english_ai_use_cases_with_arabic_results():
+    assert _relevance_ratio(
+        "AI use cases for small businesses",
+        "أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال",
+    ) >= 0.20
+    assert _relevance_ratio(
+        "استخدامات الذكاء الاصطناعي في الشركات الصغيرة",
+        "AI use cases for small businesses",
+    ) >= 0.20
 
 
 def test_routine_lookup_ignores_planner_overclassification(monkeypatch):
