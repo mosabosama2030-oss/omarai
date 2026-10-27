@@ -247,3 +247,19 @@ def test_topic_detection_does_not_inherit_old_social_or_depth_intent():
     assert plan["social_focus"] is False
     assert plan["platforms"] == []
     assert plan["depth"] == "standard"
+
+
+
+def test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode():
+    question = (
+        "ما أهم استخدامات الذكاء الاصطناعي في الشركات الصغيرة؟ "
+        "اذكر أمثلة ومصادر موثوقة."
+    )
+    decision = route_intent(question, mode="auto")
+    assert decision["route"] == "WEB_SIMPLE"
+    assert decision["reason"] == "explicit_evidence_request"
+
+
+def test_stable_question_without_source_request_remains_model_only():
+    decision = route_intent("اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف")
+    assert decision["route"] == "MODEL_ONLY"
