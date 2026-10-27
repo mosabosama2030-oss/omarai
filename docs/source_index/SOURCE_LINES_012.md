@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C4C6C55E1A-L000038 إلى SRC-E599346ABE-L000066
+- النطاق: SRC-C4C6C55E1A-L000038 إلى SRC-E599346ABE-L000067
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -541,19 +541,18 @@
 | [SRC-914817100D-L000072](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L72) | 72 | `"## الحالة الصادقة — آخر تحقق 27 أكتوبر 2026"` | — |
 | [SRC-914817100D-L000073](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L73) | 73 | `""` | — |
 | [SRC-914817100D-L000074](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L74) | 74 | `"- **FIXED_IN_BRANCH:** استعلامات مخصصة للمعايير الصريحة؛ حجز استعلام إضافي محدود في الأسئلة المركبة المعتادة؛ بحث فجوة الأدلة بعد مراجعة المسودة؛ إعادة توليد ومراجعة عند ورود دليل جديد؛ مؤشرات مصدر لكل محور؛ مطابقة لفظية عربية/إنجليزية محافظة؛ وعرض نتيجة بحث الفجوة في الواجهة."` | — |
-| [SRC-914817100D-L000075](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L75) | 75 | ``"- **CI — PASS على كود الإصلاح:** تشغيل GitHub Actions [#40515548226](https://github.com/mosabosama2030-oss/omarai/actions/runs/40515548226) على commit `1ec5f48a26de8fa535ebdd591f883a0fa7f0b0c4`: نجح Ruff، وفحص/توليد الفهرس، و**428 اختبارًا على Python 3.11 و428 اختبارًا على Python 3.12**، وبناء الحاوية واختبار API المحمي."`` | — |
-| [SRC-914817100D-L000076](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L76) | 76 | ``"- **رأس الفرع الحالي:** `b439146d458a7420dcfb7f08c72ffba88c5ab4fd`. المقارنة مع commit الكود المختبَر تبين أن التغيير اللاحق اقتصر على ملفات الفهرس المولّدة: `docs/INDEX_COVERAGE_AUDIT.md` و`docs/MASTER_INDEX.md` و`docs/SOURCE_LINES_INDEX.md` و`docs/source_index/*`. تشغيل Actions اللاحق `#40515575531` على رأس الفهرسة بحالة `action_required` ولم يُنتج وظائف اختبار؛ لذا لم يثبت CI على commit الفهرسة الأخير نفسه. تقرير الفهرس المولّد في الرأس الحالي يسجل **82/82 ملفًا و28,245 سجل سطر وتغطية حسابية 100% PASS**."`` | — |
+| [SRC-914817100D-L000075](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L75) | 75 | ``"- **CI — PASS على رأس الكود الذي تم التحقق منه:** تشغيل GitHub Actions [#40516576478](https://github.com/mosabosama2030-oss/omarai/actions/runs/40516576478) على commit `88226f8767664d9e4163aa11c49e4d424e5e25a6`: نجح Ruff، والتحقق من الفهارس المولدة، و**428 اختبارًا على Python 3.11 و428 اختبارًا على Python 3.12**، وبناء الحاوية واختبار API المحمي."`` | — |
+| [SRC-914817100D-L000076](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L76) | 76 | `"- **الفهرس:** سجل التدقيق المولّد على الفرع يعرض **82/82 ملفًا و28,244 سجل سطر وتغطية حسابية 100% PASS**. هذا تحقق من اكتمال الفهرسة الحسابية للملفات المؤهلة فقط، وليس تحققًا من جودة الكود أو خلوه من العيوب."` | — |
 | [SRC-914817100D-L000077](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L77) | 77 | `"- **HOSTED_ACCEPTANCE — PARTIAL / NOT RUN:** لم يُنشر هذا الفرع ولم يُختبر على الاستضافة الحية؛ لا يوجد هنا عنوان استضافة صحيح تم التحقق منه، ولا يجوز استنتاج نجاح حي من CI."` | — |
 | [SRC-914817100D-L000078](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L78) | 78 | `"- **SEMANTIC_COMPLETENESS — NOT VERIFIED:** فحص الكلمات ومطابقة المرادفات إشارات استدلالية فقط؛ لا يثبتان أن المصدر يسند الادعاء أو أن كل مطلب أُجيب عنه دلاليًا."` | — |
-| [SRC-914817100D-L000079](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L79) | 79 | `"- **MERGE/DEPLOY — NOT DONE:** لم يُدمج PR ولم يُنشر أي إصدار. القرار النهائي لك."` | — |
+| [SRC-914817100D-L000079](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L79) | 79 | `"- **MERGE/DEPLOY — NOT DONE:** PR #107 ما زال مفتوحًا وغير مدمج؛ حالته الحالية جاهزة للمراجعة. لم أدمج الفرع ولم أنشر أي إصدار. القرار النهائي لك."` | — |
 | [SRC-914817100D-L000080](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L80) | 80 | `""` | — |
-| [SRC-914817100D-L000081](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L81) | 81 | `""` | — |
-| [SRC-914817100D-L000082](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L82) | 82 | `"## المراجع"` | — |
-| [SRC-914817100D-L000083](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L83) | 83 | `""` | — |
-| [SRC-914817100D-L000084](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L84) | 84 | ``"- `agents/web_agent.py`"`` | — |
-| [SRC-914817100D-L000085](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L85) | 85 | ``"- `agents/answer_validation.py`"`` | — |
-| [SRC-914817100D-L000086](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L86) | 86 | ``"- `tests/test_intent_router_integration.py`"`` | — |
-| [SRC-914817100D-L000087](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L87) | 87 | ``"- `tests/test_answer_validation.py`"`` | — |
+| [SRC-914817100D-L000081](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L81) | 81 | `"## المراجع"` | — |
+| [SRC-914817100D-L000082](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L82) | 82 | `""` | — |
+| [SRC-914817100D-L000083](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L83) | 83 | ``"- `agents/web_agent.py`"`` | — |
+| [SRC-914817100D-L000084](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L84) | 84 | ``"- `agents/answer_validation.py`"`` | — |
+| [SRC-914817100D-L000085](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L85) | 85 | ``"- `tests/test_intent_router_integration.py`"`` | — |
+| [SRC-914817100D-L000086](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L86) | 86 | ``"- `tests/test_answer_validation.py`"`` | — |
 ## وثائق وفهرسة
 
 ### FILE-C7C7FA8853 — [docs/DEPLOY_RAILWAY_AR.md](../DEPLOY_RAILWAY_AR.md#L1)
@@ -879,3 +878,4 @@
 | [SRC-E599346ABE-L000064](../generate_index.py#L64) | 64 | `"    }"` | — |
 | [SRC-E599346ABE-L000065](../generate_index.py#L65) | 65 | `")"` | — |
 | [SRC-E599346ABE-L000066](../generate_index.py#L66) | 66 | `"MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024"` | — |
+| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |

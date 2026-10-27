@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000117 إلى SRC-3451CC474D-L000356
+- النطاق: SRC-B3062EB677-L000118 إلى SRC-3451CC474D-L000357
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-B3062EB677-L000117](../../tests/test_answer_quality_runner.py#L117) | 117 | `"            \"--mode\","` | — |
 | [SRC-B3062EB677-L000118](../../tests/test_answer_quality_runner.py#L118) | 118 | `"            \"live\","` | — |
 | [SRC-B3062EB677-L000119](../../tests/test_answer_quality_runner.py#L119) | 119 | `"            \"--corpus\","` | — |
 | [SRC-B3062EB677-L000120](../../tests/test_answer_quality_runner.py#L120) | 120 | `"            str(CORPUS),"` | — |
@@ -834,3 +833,4 @@
 | [SRC-3451CC474D-L000354](../../tests/test_api.py#L354) | 354 | `""` | — |
 | [SRC-3451CC474D-L000355](../../tests/test_api.py#L355) | 355 | `""` | — |
 | [SRC-3451CC474D-L000356](../../tests/test_api.py#L356) | 356 | `"def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000357](../../tests/test_api.py#L357) | 357 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |

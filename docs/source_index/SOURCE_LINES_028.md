@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000398 إلى SRC-AAA21D04E8-L000106
+- النطاق: SRC-FA4E1423C3-L000399 إلى SRC-AAA21D04E8-L000107
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-FA4E1423C3-L000398](../../tests/test_generate_index.py#L398) | 398 | `"    \"\"\"Different and repeated review tags on a single line must not overwrite each other.\"\"\""` | — |
 | [SRC-FA4E1423C3-L000399](../../tests/test_generate_index.py#L399) | 399 | `"    source_file = tmp_path / \"module.py\""` | — |
 | [SRC-FA4E1423C3-L000400](../../tests/test_generate_index.py#L400) | 400 | `"    source_file.write_text("` | — |
 | [SRC-FA4E1423C3-L000401](../../tests/test_generate_index.py#L401) | 401 | `"        \"# BUG: first defect; FIXME: repair it; BUG: second defect\\n\","` | — |
@@ -834,3 +833,4 @@
 | [SRC-AAA21D04E8-L000104](../../tests/test_generation_capabilities.py#L104) | 104 | `""` | — |
 | [SRC-AAA21D04E8-L000105](../../tests/test_generation_capabilities.py#L105) | 105 | `"    assert calls == [\"primary/model\"]"` | — |
 | [SRC-AAA21D04E8-L000106](../../tests/test_generation_capabilities.py#L106) | 106 | `"    assert agent.model_usage == []"` | — |
+| [SRC-AAA21D04E8-L000107](../../tests/test_generation_capabilities.py#L107) | 107 | `"    assert agent.generation_diagnostics == [{"` | — |

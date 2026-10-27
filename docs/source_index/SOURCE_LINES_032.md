@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000460 إلى SRC-F725E90B2A-L001259
+- النطاق: SRC-F725E90B2A-L000461 إلى SRC-F725E90B2A-L001260
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000460](../../tests/test_web_agent.py#L460) | 460 | `""` | — |
 | [SRC-F725E90B2A-L000461](../../tests/test_web_agent.py#L461) | 461 | `""` | — |
 | [SRC-F725E90B2A-L000462](../../tests/test_web_agent.py#L462) | 462 | `"def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000463](../../tests/test_web_agent.py#L463) | 463 | `"    import httpx"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L001257](../../tests/test_web_agent.py#L1257) | 1257 | `"    }"` | — |
 | [SRC-F725E90B2A-L001258](../../tests/test_web_agent.py#L1258) | 1258 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001259](../../tests/test_web_agent.py#L1259) | 1259 | `"    matched_queries = []"` | — |
+| [SRC-F725E90B2A-L001260](../../tests/test_web_agent.py#L1260) | 1260 | `"    question = ("` | — |

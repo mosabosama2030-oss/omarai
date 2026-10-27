@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000067 إلى SRC-E599346ABE-L000866
+- النطاق: SRC-E599346ABE-L000068 إلى SRC-E599346ABE-L000867
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |
 | [SRC-E599346ABE-L000068](../generate_index.py#L68) | 68 | `"INDEX_RELATIVE_PATH = \"docs/MASTER_INDEX.md\""` | — |
 | [SRC-E599346ABE-L000069](../generate_index.py#L69) | 69 | `"SOURCE_LINES_INDEX_RELATIVE_PATH = \"docs/SOURCE_LINES_INDEX.md\""` | — |
 | [SRC-E599346ABE-L000070](../generate_index.py#L70) | 70 | `"COVERAGE_AUDIT_RELATIVE_PATH = \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
@@ -816,3 +815,4 @@
 | [SRC-E599346ABE-L000864](../generate_index.py#L864) | 864 | `"    )"` | — |
 | [SRC-E599346ABE-L000865](../generate_index.py#L865) | 865 | `"    patterns = ("` | — |
 | [SRC-E599346ABE-L000866](../generate_index.py#L866) | 866 | `"        (CSS_CUSTOM_PROPERTY_RE, \"متغير CSS مخصص\"),"` | — |
+| [SRC-E599346ABE-L000867](../generate_index.py#L867) | 867 | `"        (CSS_CLASS_RE, \"محدد class في CSS\"),"` | — |

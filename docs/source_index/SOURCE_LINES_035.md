@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002860 إلى SRC-DE7EABE998-L000215
+- النطاق: SRC-F725E90B2A-L002861 إلى SRC-DE7EABE998-L000216
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002860](../../tests/test_web_agent.py#L2860) | 2860 | `"            \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L002861](../../tests/test_web_agent.py#L2861) | 2861 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-F725E90B2A-L002862](../../tests/test_web_agent.py#L2862) | 2862 | `"            \"planning_method\": \"deterministic_fallback\","` | — |
 | [SRC-F725E90B2A-L002863](../../tests/test_web_agent.py#L2863) | 2863 | `"        }"` | — |
@@ -825,3 +824,4 @@
 | [SRC-DE7EABE998-L000213](../../web/agent.html#L213) | 213 | `"  lexical_signals_found_not_semantically_verified:\"ظهرت إشارات لفظية للمحاور المستخرجة، لكن هذا لا يثبت اكتمال المهمة.\","` | — |
 | [SRC-DE7EABE998-L000214](../../web/agent.html#L214) | 214 | `"  not_assessed_insufficient_evidence:\"الأدلة غير كافية؛ لم يتم التحقق من اكتمال المهمة.\","` | — |
 | [SRC-DE7EABE998-L000215](../../web/agent.html#L215) | 215 | `"  not_machine_assessed_no_explicit_targets_detected:\"لم تُستخرج محاور صريحة قابلة للفحص؛ اكتمال المهمة لم يُقيّم آليًا.\""` | — |
+| [SRC-DE7EABE998-L000216](../../web/agent.html#L216) | 216 | `" })[taskFulfillmentStatus]\|\|\"حالة اكتمال المهمة غير محسومة آليًا.\";"` | — |

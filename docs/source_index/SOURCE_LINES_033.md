@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001260 إلى SRC-F725E90B2A-L002059
+- النطاق: SRC-F725E90B2A-L001261 إلى SRC-F725E90B2A-L002060
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001260](../../tests/test_web_agent.py#L1260) | 1260 | `"    question = ("` | — |
 | [SRC-F725E90B2A-L001261](../../tests/test_web_agent.py#L1261) | 1261 | `"        \"ما أحدث معلومات شركة ألفا التقنية اليوم؟ \""` | — |
 | [SRC-F725E90B2A-L001262](../../tests/test_web_agent.py#L1262) | 1262 | `"        \"اذكر مصادر موثوقة، وروابط مباشرة، وأجب بإيجاز.\""` | — |
 | [SRC-F725E90B2A-L001263](../../tests/test_web_agent.py#L1263) | 1263 | `"    )"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L002057](../../tests/test_web_agent.py#L2057) | 2057 | `""` | — |
 | [SRC-F725E90B2A-L002058](../../tests/test_web_agent.py#L2058) | 2058 | `""` | — |
 | [SRC-F725E90B2A-L002059](../../tests/test_web_agent.py#L2059) | 2059 | `"def test_frontend_review_status_matches_api_contract():"` | — |
+| [SRC-F725E90B2A-L002060](../../tests/test_web_agent.py#L2060) | 2060 | `"    html = (Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\").read_text(encoding=\"utf-8\")"` | — |

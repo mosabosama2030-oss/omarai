@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000127 إلى SRC-0F910493E8-L000351
+- النطاق: SRC-65551FB29F-L000128 إلى SRC-0F910493E8-L000352
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-65551FB29F-L000127](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L127) | 127 | `"\| L27 — الكاش \| تقليل التكرار والكمون \| صلاحية وخصوصية وإبطال \|"` | — |
 | [SRC-65551FB29F-L000128](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L128) | 128 | `"\| L28 — المراقبة والتدقيق \| logs/metrics/traces ومؤشرات العمل \| تنقيح البيانات والربط \|"` | — |
 | [SRC-65551FB29F-L000129](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L129) | 129 | `"\| L29 — إدارة الأسرار والتشفير \| المفاتيح والرموز وقنوات الثقة \| أقل صلاحية وتدوير \|"` | — |
 | [SRC-65551FB29F-L000130](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L130) | 130 | `"\| L30 — إدارة التكوين \| متغيرات البيئة والإعدادات \| safe defaults وفشل واضح \|"` | — |
@@ -825,3 +824,4 @@
 | [SRC-0F910493E8-L000349](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L349) | 349 | `"ويجب أن يثبت تقييمه فائدته مقارنة بكتابة التكوين يدويًا، بما يشمل جودة المخرجات، ووقت المراجعة، وحالات الرفض، والكلفة، وعدم تراجع الأمان."` | — |
 | [SRC-0F910493E8-L000350](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L350) | 350 | `""` | — |
 | [SRC-0F910493E8-L000351](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L351) | 351 | `"## 9.1 توليد الكود التنفيذي"` | — |
+| [SRC-0F910493E8-L000352](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L352) | 352 | `""` | — |

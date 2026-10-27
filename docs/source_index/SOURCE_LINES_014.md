@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000867 إلى SRC-E599346ABE-L001666
+- النطاق: SRC-E599346ABE-L000868 إلى SRC-E599346ABE-L001667
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000867](../generate_index.py#L867) | 867 | `"        (CSS_CLASS_RE, \"محدد class في CSS\"),"` | — |
 | [SRC-E599346ABE-L000868](../generate_index.py#L868) | 868 | `"        (CSS_ID_RE, \"محدد id في CSS\"),"` | — |
 | [SRC-E599346ABE-L000869](../generate_index.py#L869) | 869 | `"    )"` | — |
 | [SRC-E599346ABE-L000870](../generate_index.py#L870) | 870 | `"    for pattern, kind in patterns:"` | — |
@@ -816,3 +815,4 @@
 | [SRC-E599346ABE-L001664](../generate_index.py#L1664) | 1664 | `"    if not symbols:"` | — |
 | [SRC-E599346ABE-L001665](../generate_index.py#L1665) | 1665 | `"        lines.append(\"\| — \| — \| — \| لا توجد تعريفات Python في الملفات المؤهلة. \| — \| — \| — \|\")"` | — |
 | [SRC-E599346ABE-L001666](../generate_index.py#L1666) | 1666 | `"    else:"` | — |
+| [SRC-E599346ABE-L001667](../generate_index.py#L1667) | 1667 | `"        for symbol in symbols:"` | — |

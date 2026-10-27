@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000155 إلى SRC-90FAA34ADE-L000168
+- النطاق: SRC-A8360B1B03-L000156 إلى SRC-90FAA34ADE-L000169
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
 | [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
 | [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    model = parts.get(\"language_model\", {}) if isinstance(parts, dict) else {}"` | — |
 | [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    if not isinstance(web, dict) or web.get(\"status\") != \"passed\":"` | — |
@@ -843,3 +842,4 @@
 | [SRC-90FAA34ADE-L000166](../../tests/fixtures/answer_quality_cases.json#L166) | 166 | `"        \"Attempts web research or clearly states inability\","` | — |
 | [SRC-90FAA34ADE-L000167](../../tests/fixtures/answer_quality_cases.json#L167) | 167 | `"        \"Attaches sources if a price is stated\","` | — |
 | [SRC-90FAA34ADE-L000168](../../tests/fixtures/answer_quality_cases.json#L168) | 168 | `"        \"Treats price as time-sensitive\""` | — |
+| [SRC-90FAA34ADE-L000169](../../tests/fixtures/answer_quality_cases.json#L169) | 169 | `"      ],"` | — |

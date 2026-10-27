@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D911B73392-L000085 إلى SRC-A8360B1B03-L000154
+- النطاق: SRC-D911B73392-L000086 إلى SRC-A8360B1B03-L000155
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D911B73392-L000085](../RESEARCH_CONNECTORS_AR.md#L85) | 85 | ````"```bash"```` | — |
 | [SRC-D911B73392-L000086](../RESEARCH_CONNECTORS_AR.md#L86) | 86 | `"read -r -s -p \"Facebook Page access token: \" FACEBOOK_PAGE_ACCESS_TOKEN; printf '\\n'; export FACEBOOK_PAGE_ACCESS_TOKEN"` | — |
 | [SRC-D911B73392-L000087](../RESEARCH_CONNECTORS_AR.md#L87) | 87 | `"read -r -p \"Authorized Page IDs, comma-separated: \" FACEBOOK_PAGE_IDS; export FACEBOOK_PAGE_IDS"` | — |
 | [SRC-D911B73392-L000088](../RESEARCH_CONNECTORS_AR.md#L88) | 88 | ````"```"```` | — |
@@ -888,3 +887,4 @@
 | [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"    )"` | — |
 | [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    if status != 200 or not diagnostics:"` | — |
 | [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |

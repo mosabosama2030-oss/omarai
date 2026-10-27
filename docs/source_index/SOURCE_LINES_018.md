@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L001001 إلى SRC-65551FB29F-L000126
+- النطاق: SRC-D17CE3D12F-L001002 إلى SRC-65551FB29F-L000127
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D17CE3D12F-L001001](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1001) | 1001 | `"- [SLSA — Supply-chain Levels for Software Artifacts](https://slsa.dev/)."` | — |
 | [SRC-D17CE3D12F-L001002](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1002) | 1002 | `"- [GitHub — Secure use of Actions](https://docs.github.com/en/actions/reference/security/secure-use)."` | — |
 | [SRC-D17CE3D12F-L001003](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1003) | 1003 | `""` | — |
 | [SRC-D17CE3D12F-L001004](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1004) | 1004 | `"## الرصد والوصولية والتكلفة"` | — |
@@ -861,3 +860,4 @@
 | [SRC-65551FB29F-L000124](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L124) | 124 | `"\| L24 — الذاكرة \| سياق المحادثة والتفضيلات المسموحة \| نطاق مستخدم واحتفاظ واضح \|"` | — |
 | [SRC-65551FB29F-L000125](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L125) | 125 | `"\| L25 — تخزين الحالة \| الديمومة والترحيل والاستعادة \| migrations وintegrity \|"` | — |
 | [SRC-65551FB29F-L000126](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L126) | 126 | `"\| L26 — المهام غير المتزامنة \| jobs/workers/queues عند الحاجة \| idempotency وإعادة تشغيل آمنة \|"` | — |
+| [SRC-65551FB29F-L000127](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L127) | 127 | `"\| L27 — الكاش \| تقليل التكرار والكمون \| صلاحية وخصوصية وإبطال \|"` | — |

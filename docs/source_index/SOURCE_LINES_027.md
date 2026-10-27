@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA61479D59-L000285 إلى SRC-FA4E1423C3-L000397
+- النطاق: SRC-DA61479D59-L000286 إلى SRC-FA4E1423C3-L000398
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-DA61479D59-L000285](../../tests/test_connector_summary_counters.py#L285) | 285 | `"                \"provider\": \"bing_rss\","` | — |
 | [SRC-DA61479D59-L000286](../../tests/test_connector_summary_counters.py#L286) | 286 | `"                \"query\": \"second query\","` | — |
 | [SRC-DA61479D59-L000287](../../tests/test_connector_summary_counters.py#L287) | 287 | `"                \"status\": \"filtered_all\","` | — |
 | [SRC-DA61479D59-L000288](../../tests/test_connector_summary_counters.py#L288) | 288 | `"                \"result_count\": 2,"` | — |
@@ -852,3 +851,4 @@
 | [SRC-FA4E1423C3-L000395](../../tests/test_generate_index.py#L395) | 395 | `"def test_multiple_review_markers_on_one_line_each_get_a_unique_finding_code("` | — |
 | [SRC-FA4E1423C3-L000396](../../tests/test_generate_index.py#L396) | 396 | `"    tmp_path: Path,"` | — |
 | [SRC-FA4E1423C3-L000397](../../tests/test_generate_index.py#L397) | 397 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000398](../../tests/test_generate_index.py#L398) | 398 | `"    \"\"\"Different and repeated review tags on a single line must not overwrite each other.\"\"\""` | — |

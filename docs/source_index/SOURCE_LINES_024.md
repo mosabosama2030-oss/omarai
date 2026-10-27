@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000969 إلى SRC-B3062EB677-L000116
+- النطاق: SRC-90FAA34ADE-L000970 إلى SRC-B3062EB677-L000117
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-90FAA34ADE-L000969](../../tests/fixtures/answer_quality_cases.json#L969) | 969 | `"        \"يكتب أن العرض مقبول دون رد موثق\""` | — |
 | [SRC-90FAA34ADE-L000970](../../tests/fixtures/answer_quality_cases.json#L970) | 970 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000971](../../tests/fixtures/answer_quality_cases.json#L971) | 971 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000972](../../tests/fixtures/answer_quality_cases.json#L972) | 972 | `"        \"type\": \"none\","` | — |
@@ -843,3 +842,4 @@
 | [SRC-B3062EB677-L000114](../../tests/test_answer_quality_runner.py#L114) | 114 | `"    out = tmp_path / \"results.json\""` | — |
 | [SRC-B3062EB677-L000115](../../tests/test_answer_quality_runner.py#L115) | 115 | `"    rc = mod.main("` | — |
 | [SRC-B3062EB677-L000116](../../tests/test_answer_quality_runner.py#L116) | 116 | `"        ["` | — |
+| [SRC-B3062EB677-L000117](../../tests/test_answer_quality_runner.py#L117) | 117 | `"            \"--mode\","` | — |

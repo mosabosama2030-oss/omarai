@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000357 إلى SRC-DA61479D59-L000284
+- النطاق: SRC-3451CC474D-L000358 إلى SRC-DA61479D59-L000285
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000357](../../tests/test_api.py#L357) | 357 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
 | [SRC-3451CC474D-L000358](../../tests/test_api.py#L358) | 358 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"x\" * 48)"` | — |
 | [SRC-3451CC474D-L000359](../../tests/test_api.py#L359) | 359 | `""` | — |
 | [SRC-3451CC474D-L000360](../../tests/test_api.py#L360) | 360 | `"    status, error = request_json("` | — |
@@ -825,3 +824,4 @@
 | [SRC-DA61479D59-L000282](../../tests/test_connector_summary_counters.py#L282) | 282 | `"                \"rejected_count\": 3,"` | — |
 | [SRC-DA61479D59-L000283](../../tests/test_connector_summary_counters.py#L283) | 283 | `"            },"` | — |
 | [SRC-DA61479D59-L000284](../../tests/test_connector_summary_counters.py#L284) | 284 | `"            {"` | — |
+| [SRC-DA61479D59-L000285](../../tests/test_connector_summary_counters.py#L285) | 285 | `"                \"provider\": \"bing_rss\","` | — |

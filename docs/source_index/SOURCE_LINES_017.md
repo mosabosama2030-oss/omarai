@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000201 إلى SRC-D17CE3D12F-L001000
+- النطاق: SRC-D17CE3D12F-L000202 إلى SRC-D17CE3D12F-L001001
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D17CE3D12F-L000201](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L201) | 201 | `"5. SHOULD توفير حصص وتحديد معدل لكل مستأجر، مع منع أن يستنزف عميل الموارد المشتركة كلها."` | — |
 | [SRC-D17CE3D12F-L000202](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L202) | 202 | `"6. MUST تحديد تصدير البيانات والحذف ومشاركة البيانات داخل المؤسسة وصلاحيات الأدوار."` | — |
 | [SRC-D17CE3D12F-L000203](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L203) | 203 | `"7. MUST تحديد ما إذا كانت البيانات مشتركة منطقيًا أو معزولة ماديًا، وشرح المخاطر ومقايضات التكلفة."` | — |
 | [SRC-D17CE3D12F-L000204](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L204) | 204 | `"8. MUST منع إدخال بيانات مستأجر في ذاكرة مشتركة أو prompt أو retrieval index دون سياسة عزل واختبارات."` | — |
@@ -816,3 +815,4 @@
 | [SRC-D17CE3D12F-L000998](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L998) | 998 | `"- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/)."` | — |
 | [SRC-D17CE3D12F-L000999](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L999) | 999 | `"- [OWASP GenAI Security Project](https://genai.owasp.org/)."` | — |
 | [SRC-D17CE3D12F-L001000](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | 1000 | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` | — |
+| [SRC-D17CE3D12F-L001001](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1001) | 1001 | `"- [SLSA — Supply-chain Levels for Software Artifacts](https://slsa.dev/)."` | — |

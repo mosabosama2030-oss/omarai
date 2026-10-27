@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000352 إلى SRC-D911B73392-L000084
+- النطاق: SRC-0F910493E8-L000353 إلى SRC-D911B73392-L000085
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-0F910493E8-L000352](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L352) | 352 | `""` | — |
 | [SRC-0F910493E8-L000353](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L353) | 353 | `"هذه مرحلة مستقبلية مستقلة واختيارية. لا تُفتح إلا إذا:"` | — |
 | [SRC-0F910493E8-L000354](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L354) | 354 | `"- ثبت أن مجموعة الأدوات والمهارات الحالية لا تغطي حاجة حقيقية متكررة."` | — |
 | [SRC-0F910493E8-L000355](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L355) | 355 | `"- وُجدت بيئة عزل ملائمة واختُبرت حدودها."` | — |
@@ -852,3 +851,4 @@
 | [SRC-D911B73392-L000082](../RESEARCH_CONNECTORS_AR.md#L82) | 82 | `""` | — |
 | [SRC-D911B73392-L000083](../RESEARCH_CONNECTORS_AR.md#L83) | 83 | `"حدّد الصفحات التي لديك وصول مصرح بها. لا تضع رمزًا عامًا أو تحاول استخدام رمز لا يملك صلاحية الوصول للصفحة:"` | — |
 | [SRC-D911B73392-L000084](../RESEARCH_CONNECTORS_AR.md#L84) | 84 | `""` | — |
+| [SRC-D911B73392-L000085](../RESEARCH_CONNECTORS_AR.md#L85) | 85 | ````"```bash"```` | — |

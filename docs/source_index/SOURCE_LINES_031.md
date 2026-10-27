@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000093 إلى SRC-F725E90B2A-L000459
+- النطاق: SRC-01E35ABC46-L000094 إلى SRC-F725E90B2A-L000460
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-01E35ABC46-L000093](../../tests/test_research_guardrails.py#L93) | 93 | `"        \"title\": \"Best pasta recipes\","` | — |
 | [SRC-01E35ABC46-L000094](../../tests/test_research_guardrails.py#L94) | 94 | `"        \"url\": \"https://cooking.example/pasta\","` | — |
 | [SRC-01E35ABC46-L000095](../../tests/test_research_guardrails.py#L95) | 95 | `"        \"snippet\": \"How to make carbonara at home with eggs and cheese.\","` | — |
 | [SRC-01E35ABC46-L000096](../../tests/test_research_guardrails.py#L96) | 96 | `"        \"domain\": \"cooking.example\","` | — |
@@ -843,3 +842,4 @@
 | [SRC-F725E90B2A-L000457](../../tests/test_web_agent.py#L457) | 457 | `"    assert sources[0][\"page_fetched\"] is True"` | — |
 | [SRC-F725E90B2A-L000458](../../tests/test_web_agent.py#L458) | 458 | `"    assert \"user_supplied_url\" in report[\"providers_used\"]"` | — |
 | [SRC-F725E90B2A-L000459](../../tests/test_web_agent.py#L459) | 459 | `""` | — |
+| [SRC-F725E90B2A-L000460](../../tests/test_web_agent.py#L460) | 460 | `""` | — |
