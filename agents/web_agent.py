@@ -4739,7 +4739,9 @@ class WebAgent:
                 ),
                 "automatically_graded": False,
             }
-            answer_integrity = audit_answer_integrity(question, reason, sources, coverage_targets)
+            answer_integrity = audit_answer_integrity(
+                question, reason, sources, coverage_targets, plan.get("requirement_queries")
+            )
             answer_coverage["target_checks"] = answer_integrity["target_coverage"]
             answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
             answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
@@ -4906,7 +4908,9 @@ class WebAgent:
             and sources
             and self.api_key
         ):
-            initial_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
+            initial_integrity = audit_answer_integrity(
+                question, answer, sources, coverage_targets, plan.get("requirement_queries")
+            )
             missing_targets = [
                 item["target"] for item in initial_integrity["target_coverage"]
                 if item["status"] == "possibly_missing"
@@ -4927,7 +4931,18 @@ class WebAgent:
                                 sources[:MAX_LLM_CITED_SOURCES],
                             )
                             answer = reaudit_answer
-                            coverage_repair_status = "revised_and_reaudited"
+                            reaudit_integrity = audit_answer_integrity(
+                                question, answer, sources, coverage_targets,
+                                plan.get("requirement_queries"),
+                            )
+                            if reaudit_integrity["potentially_missing_target_count"] > 0:
+                                coverage_repair_status = "revised_and_reaudited_remaining_gaps"
+                                coverage_repair_warning = (
+                                    "خضعت الإجابة المعدلة لمراجعة ثانية، لكن الفحص اللفظي ما زال يرصد محورًا محتمل النقص؛ "
+                                    "لا تعتبر المهمة مكتملة دون مراجعة هذا المحور والأدلة الأصلية."
+                                )
+                            else:
+                                coverage_repair_status = "revised_and_reaudited"
                             review_status = "model_claim_audit_completed"
                         except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
                             review_status = "model_claim_audit_unavailable"
@@ -5000,18 +5015,27 @@ class WebAgent:
         }
         report["answer_coverage"] = answer_coverage
         report["coverage_repair_status"] = coverage_repair_status
-        answer_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
+        report["coverage_repair_warning"] = coverage_repair_warning
+        answer_integrity = audit_answer_integrity(
+            question, answer, sources, coverage_targets, plan.get("requirement_queries")
+        )
         answer_coverage["target_checks"] = answer_integrity["target_coverage"]
         answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
         answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
+        requirements_without_candidates = int(
+            answer_integrity.get("requirements_without_candidate_evidence_count", 0) or 0
+        )
         task_fulfillment_status = (
             "possible_gap_detected" if answer_integrity["potentially_missing_target_count"] > 0
+            else "candidate_evidence_gaps_or_linkage_unknown"
+            if coverage_targets and requirements_without_candidates > 0
             else "lexical_signals_found_not_semantically_verified" if coverage_targets
             else "not_machine_assessed_no_explicit_targets_detected"
         )
         answer_coverage["task_fulfillment_status"] = task_fulfillment_status
         report["task_fulfillment_status"] = task_fulfillment_status
         report["answer_integrity"] = answer_integrity
+        report["requirement_evidence"] = answer_integrity.get("requirement_evidence", [])
         report["connector_summary"] = self._connector_status_summary(
             list(self._provider_diagnostics), sources
         )
