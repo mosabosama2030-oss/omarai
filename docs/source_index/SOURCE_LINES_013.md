@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000521 إلى SRC-E599346ABE-L001320
+- النطاق: SRC-E599346ABE-L000508 إلى SRC-E599346ABE-L001307
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000508](../generate_index.py#L508) | 508 | `""` | — |
+| [SRC-E599346ABE-L000509](../generate_index.py#L509) | 509 | `""` | — |
+| [SRC-E599346ABE-L000510](../generate_index.py#L510) | 510 | `"def _tracked_paths_or_none(root: Path) -> set[str] \| None:"` | — |
+| [SRC-E599346ABE-L000511](../generate_index.py#L511) | 511 | `"    \"\"\"Return tracked repository paths, or None when the root is not a Git checkout.\"\"\""` | — |
+| [SRC-E599346ABE-L000512](../generate_index.py#L512) | 512 | `"    try:"` | — |
+| [SRC-E599346ABE-L000513](../generate_index.py#L513) | 513 | `"        result = subprocess.run("` | — |
+| [SRC-E599346ABE-L000514](../generate_index.py#L514) | 514 | `"            [\"git\", \"-C\", str(root), \"ls-files\", \"-z\"],"` | — |
+| [SRC-E599346ABE-L000515](../generate_index.py#L515) | 515 | `"            check=True,"` | — |
+| [SRC-E599346ABE-L000516](../generate_index.py#L516) | 516 | `"            capture_output=True,"` | — |
+| [SRC-E599346ABE-L000517](../generate_index.py#L517) | 517 | `"        )"` | — |
+| [SRC-E599346ABE-L000518](../generate_index.py#L518) | 518 | `"    except (OSError, subprocess.SubprocessError):"` | — |
+| [SRC-E599346ABE-L000519](../generate_index.py#L519) | 519 | `"        return None"` | — |
+| [SRC-E599346ABE-L000520](../generate_index.py#L520) | 520 | `"    try:"` | — |
 | [SRC-E599346ABE-L000521](../generate_index.py#L521) | 521 | `"        return {"` | — |
 | [SRC-E599346ABE-L000522](../generate_index.py#L522) | 522 | `"            path"` | — |
 | [SRC-E599346ABE-L000523](../generate_index.py#L523) | 523 | `"            for path in result.stdout.decode(\"utf-8\").split(\"\\x00\")"` | — |
@@ -803,16 +816,3 @@
 | [SRC-E599346ABE-L001305](../generate_index.py#L1305) | 1305 | `"    tick = chr(96)"` | — |
 | [SRC-E599346ABE-L001306](../generate_index.py#L1306) | 1306 | `"    longest = max("` | — |
 | [SRC-E599346ABE-L001307](../generate_index.py#L1307) | 1307 | `"        (len(match.group(0)) for match in re.finditer(r\"\\u0060+\", value)),"` | — |
-| [SRC-E599346ABE-L001308](../generate_index.py#L1308) | 1308 | `"        default=0,"` | — |
-| [SRC-E599346ABE-L001309](../generate_index.py#L1309) | 1309 | `"    )"` | — |
-| [SRC-E599346ABE-L001310](../generate_index.py#L1310) | 1310 | `"    fence = tick * (longest + 1)"` | — |
-| [SRC-E599346ABE-L001311](../generate_index.py#L1311) | 1311 | `"    content = f\" {value} \" if value.startswith(tick) or value.endswith(tick) else value"` | — |
-| [SRC-E599346ABE-L001312](../generate_index.py#L1312) | 1312 | `"    return f\"{fence}{content}{fence}\""` | — |
-| [SRC-E599346ABE-L001313](../generate_index.py#L1313) | 1313 | `""` | — |
-| [SRC-E599346ABE-L001314](../generate_index.py#L1314) | 1314 | `""` | — |
-| [SRC-E599346ABE-L001315](../generate_index.py#L1315) | 1315 | `"def render_source_line_pages("` | — |
-| [SRC-E599346ABE-L001316](../generate_index.py#L1316) | 1316 | `"    source_lines: list[IndexedLine],"` | — |
-| [SRC-E599346ABE-L001317](../generate_index.py#L1317) | 1317 | `"    inventory: list[IndexedFile],"` | — |
-| [SRC-E599346ABE-L001318](../generate_index.py#L1318) | 1318 | `"    findings: list[IndexedFinding],"` | — |
-| [SRC-E599346ABE-L001319](../generate_index.py#L1319) | 1319 | `") -> tuple[dict[str, str], dict[str, list[str]]]:"` | — |
-| [SRC-E599346ABE-L001320](../generate_index.py#L1320) | 1320 | `"    \"\"\"Split line-level records into deterministic small pages and map each file to its pages.\"\"\""` | — |

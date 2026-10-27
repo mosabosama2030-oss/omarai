@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000214 إلى SRC-E599346ABE-L000520
+- النطاق: SRC-26428BDA96-L000201 إلى SRC-E599346ABE-L000507
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000201](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L201) | 201 | `"2. حد توازي عام وdeadline موحد: لا تظهر لهما آلية كافية في الكود الحالي."` | — |
+| [SRC-26428BDA96-L000202](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L202) | 202 | `"3. استمرارية البيانات على الاستضافة الفعلية والنسخ الاحتياطي والاستعادة."` | — |
+| [SRC-26428BDA96-L000203](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L203) | 203 | `"4. قواعد حساب GitHub/الاستضافة التي تفرض الموافقة البشرية عمليًا."` | — |
+| [SRC-26428BDA96-L000204](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) | 204 | `"5. سلامة الاتصال الحي بمفاتيحك ومزوديك من بيئة النشر الحالية."` | — |
+| [SRC-26428BDA96-L000205](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L205) | 205 | `"6. نتائج load test أو اختبار اختراق حي أو مراجعة قانونية/امتثال."` | — |
+| [SRC-26428BDA96-L000206](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) | 206 | `""` | — |
+| [SRC-26428BDA96-L000207](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L207) | 207 | `"## 7. خطة إغلاق بالترتيب"` | — |
+| [SRC-26428BDA96-L000208](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L208) | 208 | `""` | — |
+| [SRC-26428BDA96-L000209](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L209) | 209 | `"### Gate 1 — قبل توسيع الوصول العام"` | — |
+| [SRC-26428BDA96-L000210](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L210) | 210 | `"1. إضافة global semaphore/queue محدودة لطلبات الوكيل و/أو عمليات البحث والنماذج، مع رفض ازدحام واضح."` | — |
+| [SRC-26428BDA96-L000211](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L211) | 211 | `"2. تطبيق deadline موحد يمرر الوقت المتبقي إلى البحث وجلب الصفحة وكل استدعاء نموذج، ويمنع بدء مراحل لا يمكن إكمالها ضمن الميزانية."` | — |
+| [SRC-26428BDA96-L000212](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) | 212 | `"3. وضع حدود صريحة للتوازي وعدد صفحات fetch وإجمالي model calls لكل طلب ونمط؛ توثيق سقف التكلفة والقياس."` | — |
+| [SRC-26428BDA96-L000213](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L213) | 213 | `"4. اختبار سوء استخدام عبر طلبات متزامنة وموفر متأخر/معلق، وتأكيد أن عدد الخيوط والمهام لا يرتفع بلا سقف."` | — |
 | [SRC-26428BDA96-L000214](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L214) | 214 | `""` | — |
 | [SRC-26428BDA96-L000215](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L215) | 215 | `"### Gate 2 — تحديد نموذج المستخدمين"` | — |
 | [SRC-26428BDA96-L000216](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L216) | 216 | `"1. تسجيل قرار منتج صريح: هل Omarai حاليًا تطبيق خاص بمشغّل واحد أم خدمة متعددة المستخدمين؟"` | — |
@@ -848,16 +861,3 @@
 | [SRC-E599346ABE-L000505](../generate_index.py#L505) | 505 | `"            )"` | — |
 | [SRC-E599346ABE-L000506](../generate_index.py#L506) | 506 | `"        )"` | — |
 | [SRC-E599346ABE-L000507](../generate_index.py#L507) | 507 | `"    return inventory"` | — |
-| [SRC-E599346ABE-L000508](../generate_index.py#L508) | 508 | `""` | — |
-| [SRC-E599346ABE-L000509](../generate_index.py#L509) | 509 | `""` | — |
-| [SRC-E599346ABE-L000510](../generate_index.py#L510) | 510 | `"def _tracked_paths_or_none(root: Path) -> set[str] \| None:"` | — |
-| [SRC-E599346ABE-L000511](../generate_index.py#L511) | 511 | `"    \"\"\"Return tracked repository paths, or None when the root is not a Git checkout.\"\"\""` | — |
-| [SRC-E599346ABE-L000512](../generate_index.py#L512) | 512 | `"    try:"` | — |
-| [SRC-E599346ABE-L000513](../generate_index.py#L513) | 513 | `"        result = subprocess.run("` | — |
-| [SRC-E599346ABE-L000514](../generate_index.py#L514) | 514 | `"            [\"git\", \"-C\", str(root), \"ls-files\", \"-z\"],"` | — |
-| [SRC-E599346ABE-L000515](../generate_index.py#L515) | 515 | `"            check=True,"` | — |
-| [SRC-E599346ABE-L000516](../generate_index.py#L516) | 516 | `"            capture_output=True,"` | — |
-| [SRC-E599346ABE-L000517](../generate_index.py#L517) | 517 | `"        )"` | — |
-| [SRC-E599346ABE-L000518](../generate_index.py#L518) | 518 | `"    except (OSError, subprocess.SubprocessError):"` | — |
-| [SRC-E599346ABE-L000519](../generate_index.py#L519) | 519 | `"        return None"` | — |
-| [SRC-E599346ABE-L000520](../generate_index.py#L520) | 520 | `"    try:"` | — |

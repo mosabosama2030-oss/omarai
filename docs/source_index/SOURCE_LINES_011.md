@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000517 إلى SRC-26428BDA96-L000213
+- النطاق: SRC-EEF2E6447C-L000504 إلى SRC-26428BDA96-L000200
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000504](../../api/omarai.py#L504) | 504 | `"            if not self._authorized():"` | — |
+| [SRC-EEF2E6447C-L000505](../../api/omarai.py#L505) | 505 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول الخاص بالتطبيق.\"})"` | — |
+| [SRC-EEF2E6447C-L000506](../../api/omarai.py#L506) | 506 | `"            q = parse_qs(parsed.query)"` | — |
+| [SRC-EEF2E6447C-L000507](../../api/omarai.py#L507) | 507 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000508](../../api/omarai.py#L508) | 508 | `"                limit = max(1, min(int(q.get(\"limit\", [\"100\"])[0]), 500))"` | — |
+| [SRC-EEF2E6447C-L000509](../../api/omarai.py#L509) | 509 | `"                leads = self.store.list(q.get(\"status\", [None])[0], limit)"` | — |
+| [SRC-EEF2E6447C-L000510](../../api/omarai.py#L510) | 510 | `"            except (ValueError, TypeError):"` | — |
+| [SRC-EEF2E6447C-L000511](../../api/omarai.py#L511) | 511 | `"                return self.respond(400, {\"error\": \"invalid status or limit\"})"` | — |
+| [SRC-EEF2E6447C-L000512](../../api/omarai.py#L512) | 512 | `"            return self.respond(200, {\"leads\": leads, \"count\": len(leads)})"` | — |
+| [SRC-EEF2E6447C-L000513](../../api/omarai.py#L513) | 513 | `"        return self.respond(404, {\"error\": \"not found\"})"` | — |
+| [SRC-EEF2E6447C-L000514](../../api/omarai.py#L514) | 514 | `""` | — |
+| [SRC-EEF2E6447C-L000515](../../api/omarai.py#L515) | 515 | `"    def do_POST(self):"` | — |
+| [SRC-EEF2E6447C-L000516](../../api/omarai.py#L516) | 516 | `"        try:"` | — |
 | [SRC-EEF2E6447C-L000517](../../api/omarai.py#L517) | 517 | `"            # Count API attempts before origin/content-type/body validation so invalid"` | — |
 | [SRC-EEF2E6447C-L000518](../../api/omarai.py#L518) | 518 | `"            # credentials and malformed requests cannot bypass per-client throttling."` | — |
 | [SRC-EEF2E6447C-L000519](../../api/omarai.py#L519) | 519 | `"            path = urlparse(self.path).path"` | — |
@@ -866,16 +879,3 @@
 | [SRC-26428BDA96-L000198](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L198) | 198 | `""` | — |
 | [SRC-26428BDA96-L000199](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L199) | 199 | `"### غير معلوم أو غير مستوفى في النطاق الأوسع"` | — |
 | [SRC-26428BDA96-L000200](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L200) | 200 | `"1. فصل سجلات المستخدمين: غير متاح في نموذج رمز مشترك/مخزن مشترك."` | — |
-| [SRC-26428BDA96-L000201](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L201) | 201 | `"2. حد توازي عام وdeadline موحد: لا تظهر لهما آلية كافية في الكود الحالي."` | — |
-| [SRC-26428BDA96-L000202](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L202) | 202 | `"3. استمرارية البيانات على الاستضافة الفعلية والنسخ الاحتياطي والاستعادة."` | — |
-| [SRC-26428BDA96-L000203](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L203) | 203 | `"4. قواعد حساب GitHub/الاستضافة التي تفرض الموافقة البشرية عمليًا."` | — |
-| [SRC-26428BDA96-L000204](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) | 204 | `"5. سلامة الاتصال الحي بمفاتيحك ومزوديك من بيئة النشر الحالية."` | — |
-| [SRC-26428BDA96-L000205](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L205) | 205 | `"6. نتائج load test أو اختبار اختراق حي أو مراجعة قانونية/امتثال."` | — |
-| [SRC-26428BDA96-L000206](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) | 206 | `""` | — |
-| [SRC-26428BDA96-L000207](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L207) | 207 | `"## 7. خطة إغلاق بالترتيب"` | — |
-| [SRC-26428BDA96-L000208](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L208) | 208 | `""` | — |
-| [SRC-26428BDA96-L000209](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L209) | 209 | `"### Gate 1 — قبل توسيع الوصول العام"` | — |
-| [SRC-26428BDA96-L000210](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L210) | 210 | `"1. إضافة global semaphore/queue محدودة لطلبات الوكيل و/أو عمليات البحث والنماذج، مع رفض ازدحام واضح."` | — |
-| [SRC-26428BDA96-L000211](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L211) | 211 | `"2. تطبيق deadline موحد يمرر الوقت المتبقي إلى البحث وجلب الصفحة وكل استدعاء نموذج، ويمنع بدء مراحل لا يمكن إكمالها ضمن الميزانية."` | — |
-| [SRC-26428BDA96-L000212](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) | 212 | `"3. وضع حدود صريحة للتوازي وعدد صفحات fetch وإجمالي model calls لكل طلب ونمط؛ توثيق سقف التكلفة والقياس."` | — |
-| [SRC-26428BDA96-L000213](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L213) | 213 | `"4. اختبار سوء استخدام عبر طلبات متزامنة وموفر متأخر/معلق، وتأكيد أن عدد الخيوط والمهام لا يرتفع بلا سقف."` | — |
