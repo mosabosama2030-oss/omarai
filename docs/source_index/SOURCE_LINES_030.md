@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000204 إلى SRC-F725E90B2A-L000241
+- النطاق: SRC-6BF96689A8-L000178 إلى SRC-F725E90B2A-L000215
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000178](../../tests/test_research.py#L178) | 178 | `"            assert term not in query, f\"format instruction remains: {term!r} in {query!r}\""` | — |
+| [SRC-6BF96689A8-L000179](../../tests/test_research.py#L179) | 179 | `""` | — |
+| [SRC-6BF96689A8-L000180](../../tests/test_research.py#L180) | 180 | `""` | — |
+| [SRC-6BF96689A8-L000181](../../tests/test_research.py#L181) | 181 | `"def test_fallback_plan_compacts_four_representative_arabic_tasks_before_expansion():"` | — |
+| [SRC-6BF96689A8-L000182](../../tests/test_research.py#L182) | 182 | `"    questions = ["` | — |
+| [SRC-6BF96689A8-L000183](../../tests/test_research.py#L183) | 183 | `"        \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
+| [SRC-6BF96689A8-L000184](../../tests/test_research.py#L184) | 184 | `"        \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
+| [SRC-6BF96689A8-L000185](../../tests/test_research.py#L185) | 185 | `"        \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
+| [SRC-6BF96689A8-L000186](../../tests/test_research.py#L186) | 186 | `"        \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
+| [SRC-6BF96689A8-L000187](../../tests/test_research.py#L187) | 187 | `"    ]"` | — |
+| [SRC-6BF96689A8-L000188](../../tests/test_research.py#L188) | 188 | `"    for question in questions:"` | — |
+| [SRC-6BF96689A8-L000189](../../tests/test_research.py#L189) | 189 | `"        plan = fallback_plan(question)"` | — |
+| [SRC-6BF96689A8-L000190](../../tests/test_research.py#L190) | 190 | `"        assert plan[\"queries\"]"` | — |
+| [SRC-6BF96689A8-L000191](../../tests/test_research.py#L191) | 191 | `"        assert all(2 <= len(query) <= 240 for query in plan[\"queries\"])"` | — |
+| [SRC-6BF96689A8-L000192](../../tests/test_research.py#L192) | 192 | `""` | — |
+| [SRC-6BF96689A8-L000193](../../tests/test_research.py#L193) | 193 | `""` | — |
+| [SRC-6BF96689A8-L000194](../../tests/test_research.py#L194) | 194 | `"def test_compact_search_query_preserves_site_operator_and_discards_separate_citation_instruction():"` | — |
+| [SRC-6BF96689A8-L000195](../../tests/test_research.py#L195) | 195 | `"    query = compact_search_query("` | — |
+| [SRC-6BF96689A8-L000196](../../tests/test_research.py#L196) | 196 | `"        'site:reddit.com electric car reviews Egypt. Cite the original posts and provide links.'"` | — |
+| [SRC-6BF96689A8-L000197](../../tests/test_research.py#L197) | 197 | `"    )"` | — |
+| [SRC-6BF96689A8-L000198](../../tests/test_research.py#L198) | 198 | `"    assert query.startswith(\"site:reddit.com\")"` | — |
+| [SRC-6BF96689A8-L000199](../../tests/test_research.py#L199) | 199 | `"    assert \"electric car reviews Egypt\" in query"` | — |
+| [SRC-6BF96689A8-L000200](../../tests/test_research.py#L200) | 200 | `"    assert \"Cite the original posts\" not in query"` | — |
+| [SRC-6BF96689A8-L000201](../../tests/test_research.py#L201) | 201 | `"    assert len(query) <= 240"` | — |
+| [SRC-6BF96689A8-L000202](../../tests/test_research.py#L202) | 202 | `""` | — |
+| [SRC-6BF96689A8-L000203](../../tests/test_research.py#L203) | 203 | `""` | — |
 | [SRC-6BF96689A8-L000204](../../tests/test_research.py#L204) | 204 | `"def test_compact_search_query_bounds_length_without_leaving_partial_tail_word():"` | — |
 | [SRC-6BF96689A8-L000205](../../tests/test_research.py#L205) | 205 | `"    query = compact_search_query("` | — |
 | [SRC-6BF96689A8-L000206](../../tests/test_research.py#L206) | 206 | `"        \"Electric vehicles in Egypt charging infrastructure costs and ownership experiences\","` | — |
@@ -826,29 +852,3 @@
 | [SRC-F725E90B2A-L000213](../../tests/test_web_agent.py#L213) | 213 | `"            '{\"queries\":[\"مراجعات السيارات الكهربائية\"],\"social_focus\":true,'"` | — |
 | [SRC-F725E90B2A-L000214](../../tests/test_web_agent.py#L214) | 214 | `"            '\"freshness\":\"any\",\"depth\":\"deep\",\"platforms\":[\"reddit\"]}'"` | — |
 | [SRC-F725E90B2A-L000215](../../tests/test_web_agent.py#L215) | 215 | `"        ),"` | — |
-| [SRC-F725E90B2A-L000216](../../tests/test_web_agent.py#L216) | 216 | `"    )"` | — |
-| [SRC-F725E90B2A-L000217](../../tests/test_web_agent.py#L217) | 217 | `"    plan = agent._plan_search("` | — |
-| [SRC-F725E90B2A-L000218](../../tests/test_web_agent.py#L218) | 218 | `"        \"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\","` | — |
-| [SRC-F725E90B2A-L000219](../../tests/test_web_agent.py#L219) | 219 | `"        [],"` | — |
-| [SRC-F725E90B2A-L000220](../../tests/test_web_agent.py#L220) | 220 | `"    )"` | — |
-| [SRC-F725E90B2A-L000221](../../tests/test_web_agent.py#L221) | 221 | `"    assert plan[\"planning_method\"] == \"language_model\""` | — |
-| [SRC-F725E90B2A-L000222](../../tests/test_web_agent.py#L222) | 222 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L000223](../../tests/test_web_agent.py#L223) | 223 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-F725E90B2A-L000224](../../tests/test_web_agent.py#L224) | 224 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L000225](../../tests/test_web_agent.py#L225) | 225 | `""` | — |
-| [SRC-F725E90B2A-L000226](../../tests/test_web_agent.py#L226) | 226 | `""` | — |
-| [SRC-F725E90B2A-L000227](../../tests/test_web_agent.py#L227) | 227 | `"def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000228](../../tests/test_web_agent.py#L228) | 228 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000229](../../tests/test_web_agent.py#L229) | 229 | `""` | — |
-| [SRC-F725E90B2A-L000230](../../tests/test_web_agent.py#L230) | 230 | `"    reddit_xml = \"\"\"<rss><channel><item>"` | — |
-| [SRC-F725E90B2A-L000231](../../tests/test_web_agent.py#L231) | 231 | `"      <title>تجربة سيارة كهربائية</title>"` | — |
-| [SRC-F725E90B2A-L000232](../../tests/test_web_agent.py#L232) | 232 | `"      <link>https://www.reddit.com/r/cars/comments/abc123/test/</link>"` | — |
-| [SRC-F725E90B2A-L000233](../../tests/test_web_agent.py#L233) | 233 | `"      <description>استهلاك البطارية في الحر</description>"` | — |
-| [SRC-F725E90B2A-L000234](../../tests/test_web_agent.py#L234) | 234 | `"      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>"` | — |
-| [SRC-F725E90B2A-L000235](../../tests/test_web_agent.py#L235) | 235 | `"    </item></channel></rss>\"\"\""` | — |
-| [SRC-F725E90B2A-L000236](../../tests/test_web_agent.py#L236) | 236 | `""` | — |
-| [SRC-F725E90B2A-L000237](../../tests/test_web_agent.py#L237) | 237 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000238](../../tests/test_web_agent.py#L238) | 238 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000239](../../tests/test_web_agent.py#L239) | 239 | `""` | — |
-| [SRC-F725E90B2A-L000240](../../tests/test_web_agent.py#L240) | 240 | `"        def __init__(self, text=\"\", data=None):"` | — |
-| [SRC-F725E90B2A-L000241](../../tests/test_web_agent.py#L241) | 241 | `"            self.text = text"` | — |
