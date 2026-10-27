@@ -222,10 +222,26 @@ function renderReport(result){
   reaudit_unavailable:"تعذرت إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.",
   budget_exhausted:"انتهت ميزانية النماذج قبل استكمال محور محتمل النقص.",
   unavailable:"تعذرت محاولة إصلاح محور محتمل النقص.",
-  no_change_gap_unresolved:"لم تغيّر محاولة الإصلاح الإجابة؛ لا يزال احتمال نقص أحد المحاور قائمًا."
+  no_change_gap_unresolved:"لم تغيّر محاولة الإصلاح الإجابة؛ لا يزال احتمال نقص أحد المحاور قائمًا.",
+  source_evidence_gap_unresolved:"ذُكرت المحاور في الإجابة، لكن لم تظهر لها إشارات لفظية في المصادر؛ تظل غير محسومة."
  };
  const coverageRepairHtml=coverageRepairMessages[coverageRepairStatus]?'<p class="warning">حالة إصلاح التغطية: '+escapeHtml(coverageRepairMessages[coverageRepairStatus])+'</p>':"";
- const integrityHtml=integrity?'<details class="details"><summary>فحص لفظي أولي: اتساق الإجابة مع الأدلة — ليس تحققًا من الحقيقة</summary><p class="report-note">لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد. نطاق الأدلة النصية: '+escapeHtml(integrityScope)+'.</p>'+integritySummary+taskFulfillmentHtml+coverageRepairHtml+'<p class="report-note">'+(integrityNumbers.length?'أرقام أو تواريخ تحتاج مراجعة لأنها لم تظهر نصيًا في المواد المتاحة: '+integrityNumbers.map(escapeHtml).join("، ")+'.':'لم يرصد الفحص أرقامًا محددة غائبة عن النصوص التي جمعها. هذا لا يثبت أن كل رقم صحيح أو أن المصدر يدعم الادعاء المرتبط به.')+'</p>'+citedNumberHtml+valueDiscrepancyHtml+citationAlignmentHtml+(integrityTargets.length?'<p class="report-note">إشارات التغطية اللفظية لمحاور السؤال:</p><ul>'+integrityTargets.map(t=>'<li>'+escapeHtml(t.target||"محور")+' — '+escapeHtml(t.status==="lexical_signal_found"?"وُجد تطابق لفظي في الإجابة؛ ليس إثباتًا لاكتمالها":"قد يكون هذا المحور ناقصًا؛ لم يظهر تطابق لفظي كافٍ في الإجابة")+' · '+escapeHtml(t.source_evidence_status==="source_lexical_signal_found"?"توجد إشارة لفظية في المصادر":"لا توجد إشارة لفظية في المصادر")+(Array.isArray(t.source_evidence_checks)&&t.source_evidence_checks.length?' ('+t.source_evidence_checks.map(item=>'المصدر '+escapeHtml(item.source_index)).join('، ')+')':'')+'</li>').join("")+'</ul>':"")+'<p class="report-note">المنهج: فحص لفظي حتمي محدود. لا يتحقق من معنى الادعاء أو صلة الاستشهاد به أو استقلال المصادر؛ راجع الأدلة الأصلية قبل الاعتماد.</p></details>':"";
+ const criterionGapResearch=r.criterion_gap_research||(result.search_report&&result.search_report.criterion_gap_research)||{};
+ const criterionGapResearchStatus=criterionGapResearch.status||"";
+ const criterionGapResearchMessages={
+  not_needed:"لم يرصد الفحص فجوة مصدر تستدعي بحثًا إضافيًا.",
+  evidence_added_and_answer_regenerated:"أضاف البحث الإضافي نص مصدر جديدًا؛ ثم أُعيد توليد الإجابة ومراجعتها.",
+  search_completed_no_new_criterion_evidence:"أُجري بحث إضافي للمحاور الناقصة، لكنه لم يضف نص مصدر جديدًا يمكن تمييزه.",
+  skipped_no_reserved_search_slot:"لم يُخصّص استعلام إضافي لهذه المهمة؛ ظلت المحاور بلا إشارة مصدر غير محسومة.",
+  skipped_search_budget_exhausted:"انتهت ميزانية البحث قبل إعادة البحث عن المحاور الناقصة؛ لا تُعدّ التغطية مكتملة.",
+  search_failed:"تعذر إكمال البحث الإضافي عن الأدلة المفقودة.",
+  skipped_no_request_budget:"تعذر فحص ميزانية البحث؛ لم يُنفذ بحث إضافي.",
+  skipped_query_not_distinct:"لم يُنفذ بحث إضافي لأن الاستعلام المقترح لم يكن مختلفًا بما يكفي.",
+  skipped_no_valid_query:"لم يتوفر استعلام إضافي صالح للمحاور الناقصة.",
+  evidence_added_but_regeneration_unavailable:"وصل نص مصدر إضافي، لكن تعذرت إعادة توليد الإجابة ومراجعتها؛ يلزم التحقق من المحاور يدويًا."
+ };
+ const criterionGapResearchHtml=criterionGapResearchMessages[criterionGapResearchStatus]?'<p class="'+(criterionGapResearchStatus==="evidence_added_and_answer_regenerated"?"report-note":"warning")+'">بحث فجوة الأدلة: '+escapeHtml(criterionGapResearchMessages[criterionGapResearchStatus])+'</p>':"";
+ const integrityHtml=integrity?'<details class="details"><summary>فحص لفظي أولي: اتساق الإجابة مع الأدلة — ليس تحققًا من الحقيقة</summary><p class="report-note">لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد. نطاق الأدلة النصية: '+escapeHtml(integrityScope)+'.</p>'+integritySummary+taskFulfillmentHtml+coverageRepairHtml+criterionGapResearchHtml+'<p class="report-note">'+(integrityNumbers.length?'أرقام أو تواريخ تحتاج مراجعة لأنها لم تظهر نصيًا في المواد المتاحة: '+integrityNumbers.map(escapeHtml).join("، ")+'.':'لم يرصد الفحص أرقامًا محددة غائبة عن النصوص التي جمعها. هذا لا يثبت أن كل رقم صحيح أو أن المصدر يدعم الادعاء المرتبط به.')+'</p>'+citedNumberHtml+valueDiscrepancyHtml+citationAlignmentHtml+(integrityTargets.length?'<p class="report-note">إشارات التغطية اللفظية لمحاور السؤال:</p><ul>'+integrityTargets.map(t=>'<li>'+escapeHtml(t.target||"محور")+' — '+escapeHtml(t.status==="lexical_signal_found"?"وُجد تطابق لفظي في الإجابة؛ ليس إثباتًا لاكتمالها":"قد يكون هذا المحور ناقصًا؛ لم يظهر تطابق لفظي كافٍ في الإجابة")+' · '+escapeHtml(t.source_evidence_status==="source_lexical_signal_found"?"توجد إشارة لفظية في المصادر":"لا توجد إشارة لفظية في المصادر")+(Array.isArray(t.source_evidence_checks)&&t.source_evidence_checks.length?' ('+t.source_evidence_checks.map(item=>'المصدر '+escapeHtml(item.source_index)).join('، ')+')':'')+'</li>').join("")+'</ul>':"")+'<p class="report-note">المنهج: فحص لفظي حتمي محدود. لا يتحقق من معنى الادعاء أو صلة الاستشهاد به أو استقلال المصادر؛ راجع الأدلة الأصلية قبل الاعتماد.</p></details>':"";
  const providerCounts=r.provider_counts&&typeof r.provider_counts==="object"&&!Array.isArray(r.provider_counts)?r.provider_counts:{};
  const providerHtml=Object.entries(providerCounts).map(([p,n])=>'<span class="provider">'+escapeHtml(p)+' · '+escapeHtml(n)+'</span>').join("");
  const notes=Array.isArray(e.warnings)?e.warnings:[];
