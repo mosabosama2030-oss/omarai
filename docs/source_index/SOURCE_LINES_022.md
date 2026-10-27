@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000004 إلى SRC-90FAA34ADE-L000651
+- النطاق: SRC-547CAF1FE3-L000003 إلى SRC-90FAA34ADE-L000650
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000003](../../scripts/sqlite_backup_restore.py#L3) | 3 | `"from __future__ import annotations"` | — |
 | [SRC-547CAF1FE3-L000004](../../scripts/sqlite_backup_restore.py#L4) | 4 | `""` | — |
 | [SRC-547CAF1FE3-L000005](../../scripts/sqlite_backup_restore.py#L5) | 5 | `"import argparse"` | — |
 | [SRC-547CAF1FE3-L000006](../../scripts/sqlite_backup_restore.py#L6) | 6 | `"from contextlib import closing"` | — |
@@ -824,4 +825,3 @@
 | [SRC-90FAA34ADE-L000648](../../tests/fixtures/answer_quality_cases.json#L648) | 648 | `"            \"provider\": \"fixture_search\""` | — |
 | [SRC-90FAA34ADE-L000649](../../tests/fixtures/answer_quality_cases.json#L649) | 649 | `"          }"` | — |
 | [SRC-90FAA34ADE-L000650](../../tests/fixtures/answer_quality_cases.json#L650) | 650 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000651](../../tests/fixtures/answer_quality_cases.json#L651) | 651 | `"      },"` | — |

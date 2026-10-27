@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000652 إلى SRC-4CCB1F172B-L000029
+- النطاق: SRC-90FAA34ADE-L000651 إلى SRC-4CCB1F172B-L000028
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000651](../../tests/fixtures/answer_quality_cases.json#L651) | 651 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000652](../../tests/fixtures/answer_quality_cases.json#L652) | 652 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000653](../../tests/fixtures/answer_quality_cases.json#L653) | 653 | `"        \"ادعاء أن المتجر يعمل طوال اليوم\","` | — |
 | [SRC-90FAA34ADE-L000654](../../tests/fixtures/answer_quality_cases.json#L654) | 654 | `"        \"نسبة معلومة غير موجودة في المقتطف إلى المصدر\""` | — |
@@ -833,4 +834,3 @@
 | [SRC-4CCB1F172B-L000026](../../tests/test_answer_quality_corpus.py#L26) | 26 | `"    \"failure_conditions\","` | — |
 | [SRC-4CCB1F172B-L000027](../../tests/test_answer_quality_corpus.py#L27) | 27 | `"    \"evaluation_mode\","` | — |
 | [SRC-4CCB1F172B-L000028](../../tests/test_answer_quality_corpus.py#L28) | 28 | `"}"` | — |
-| [SRC-4CCB1F172B-L000029](../../tests/test_answer_quality_corpus.py#L29) | 29 | `""` | — |

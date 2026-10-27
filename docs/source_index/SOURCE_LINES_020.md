@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000849 إلى SRC-B335630551-L000036
+- النطاق: SRC-0F910493E8-L000848 إلى SRC-B335630551-L000035
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000848](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L848) | 848 | `"**ابنِ قدرات موثوقة قبل أن تبني مصنعًا لإنشاء القدرات.**"` | — |
 | [SRC-0F910493E8-L000849](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L849) | 849 | `""` | — |
 | [SRC-0F910493E8-L000850](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L850) | 850 | `"نواة Omarai ومسارات البحث والأدوات والأدلة الحالية هي نقطة البداية التي يجب تدقيقها والحفاظ على المفيد منها. تتطور المنظومة بإضافة عقود واضحة ومهارات وسير عمل قابلة للاختبار، ثم مواصفات وتركيب ديناميكي محدود عند الحاجة. يأتي إنشاء الوكلاء بعد ذلك، وتوليد الكود التنفيذي قرار مستقبلي مستقل."` | — |
 | [SRC-0F910493E8-L000851](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L851) | 851 | `""` | — |
@@ -34,7 +35,7 @@
 | [SRC-61B24BEFCC-L000003](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L3) | 3 | `"\| الفحص \| النتيجة المرصودة \| التصنيف \| حدود الدليل / الإجراء \|"` | — |
 | [SRC-61B24BEFCC-L000004](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L4) | 4 | `"\|---\|---\|---\|---\|"` | — |
 | [SRC-61B24BEFCC-L000005](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L5) | 5 | ``"\| CI بعد دمج إصلاح هوية البناء #98 \| [#40471732289](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732289) نجح على `d9a8f83796547591d651c41ff657475bcec9b0ab`. \| `FIXED_AND_TESTED` للكود والاختبارات المرتبطة \| لا يثبت نشر هذا الإصدار على SnapDeploy أو اتصال موفري البحث خارجيًا. \|"`` | — |
-| [SRC-61B24BEFCC-L000006](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L6) | 6 | ``"\| توليد الفهرس بعد #98 \| [#40471732508](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732508) نجح. أحدث رأس main مرصود: `db6860885dc01c596512e0f0dfabac2fd6c312e6`. \| `FIXED_AND_TESTED` للفهرسة \| فحص توثيقي/مولّد، لا اختبار تشغيل حي. \|"`` | — |
+| [SRC-61B24BEFCC-L000006](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L6) | 6 | ``"\| توليد الفهرس بعد #98 \| [#40471732508](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732508) نجح. أحدث رأس main مرصود: `cb1488498329a542888f5f5d096c16f92a84ae4e`. \| `FIXED_AND_TESTED` للفهرسة \| فحص توثيقي/مولّد، لا اختبار تشغيل حي. \|"`` | — |
 | [SRC-61B24BEFCC-L000007](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L7) | 7 | ``"\| صفحة الاستضافة عبر المتصفح \| الصفحة الرئيسية فتحت؛ ملف الاختبار لا يحتوي رمز وصول. [تفاصيل التشغيل](https://agent.tinyfish.ai/runs/af7ebb42-e032-4321-8454-a3628432f53d). \| `PARTIAL` \| إثبات وصول للواجهة فقط؛ طلب البحث فشل عند المصادقة. \|"`` | — |
 | [SRC-61B24BEFCC-L000008](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L8) | 8 | ``"\| سؤال `ما عاصمة مصر؟` \| الرسالة: «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف». لم تُرجع إجابة أو روابط مصادر. \| `FAILED/BLOCKED` \| الحقل في ملف الاختبار فارغ؛ لا يمكن استنتاج أن الرمز المخزن في متصفح المستخدم خاطئ. يلزم أن يحفظ المستخدم الرمز داخل ملف الاختبار بنفسه. \|"`` | — |
 | [SRC-61B24BEFCC-L000009](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L9) | 9 | ``"\| `GET /api/health` \| `ok=true`، لكن `build.sha=unknown` و`sha_status=unknown` و`sha_source=unknown`؛ `live_network_checks_performed=false`. \| `PARTIAL` \| يلزم ضبط `PUBLIC_OMARAI_BUILD_SHA` في SnapDeploy إلى SHA الكامل للإصدار المقصود وإعادة البناء، ثم إعادة التحقق من المطابقة. \|"`` | — |
@@ -896,4 +897,3 @@
 | [SRC-B335630551-L000033](../../README.md#L33) | 33 | `"Omarai maintains a categorized master index and a paginated, line-by-line source index:"` | — |
 | [SRC-B335630551-L000034](../../README.md#L34) | 34 | `""` | — |
 | [SRC-B335630551-L000035](../../README.md#L35) | 35 | ``"- [MASTER INDEX](docs/MASTER_INDEX.md): file inventory with stable file IDs, Python AST definitions, static frontend/configuration symbols, and explicitly marked TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED/ISSUE/DEFECT/REGRESSION/RISK/GAP/ERROR/WARNING/PERF/PRIVACY/DATA_LOSS/ACCESSIBILITY entries. Each review marker has an `FND-...` code and a link to the exact source line."`` | — |
-| [SRC-B335630551-L000036](../../README.md#L36) | 36 | `"- [SOURCE LINES INDEX](docs/SOURCE_LINES_INDEX.md): search-friendly directory of files, page links, per-file line counts, and links to each source line."` | — |

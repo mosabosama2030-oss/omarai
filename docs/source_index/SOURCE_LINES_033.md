@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001858 إلى SRC-F725E90B2A-L002657
+- النطاق: SRC-F725E90B2A-L001857 إلى SRC-F725E90B2A-L002656
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001857](../../tests/test_web_agent.py#L1857) | 1857 | `"            \"providers_used\": [],"` | — |
 | [SRC-F725E90B2A-L001858](../../tests/test_web_agent.py#L1858) | 1858 | `"            \"provider_counts\": {},"` | — |
 | [SRC-F725E90B2A-L001859](../../tests/test_web_agent.py#L1859) | 1859 | `"            \"platform_counts\": {},"` | — |
 | [SRC-F725E90B2A-L001860](../../tests/test_web_agent.py#L1860) | 1860 | `"            \"social_direct_results\": 0,"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002654](../../tests/test_web_agent.py#L2654) | 2654 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
 | [SRC-F725E90B2A-L002655](../../tests/test_web_agent.py#L2655) | 2655 | `""` | — |
 | [SRC-F725E90B2A-L002656](../../tests/test_web_agent.py#L2656) | 2656 | `"    assert web_agent.WebAgent()._fetch_page(\"https://first.example/article\") == (\"\", \"\")"` | — |
-| [SRC-F725E90B2A-L002657](../../tests/test_web_agent.py#L2657) | 2657 | `"    assert resolved_hosts == [\"first.example\", \"second.example\"]"` | — |
