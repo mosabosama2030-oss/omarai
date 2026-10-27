@@ -47,6 +47,18 @@ def _tokens(value: Any, *, drop_stopwords: bool = False) -> list[str]:
     return tokens
 
 
+def _criterion_tokens(value: Any) -> list[str]:
+    """Normalize criterion terms conservatively, including the Arabic definite article."""
+    tokens = _tokens(value, drop_stopwords=True)
+    if not tokens:
+        tokens = _tokens(value)
+    return [
+        token[2:] if re.fullmatch(r"[\\u0621-\\u064A]+", token) and token.startswith("ال") and len(token) > 4
+        else token
+        for token in tokens
+    ]
+
+
 def _numeric_literals(value: Any, *, question: str = "") -> set[str]:
     """Extract explicit numeric literals, ignoring citation indices and unqualified single digits."""
     text = _normalize(_CITATION.sub(" ", str(value or "")))
@@ -149,7 +161,7 @@ def audit_answer_integrity(
     answer_text = str(answer or "")[:24000]
     answer_number_literals = _numeric_literals(answer_text, question=question)
     unsupported_numbers = sorted(answer_number_literals - source_number_literals)
-    answer_tokens = set(_tokens(_CITATION.sub(" ", answer_text), drop_stopwords=True))
+    answer_tokens = set(_criterion_tokens(_CITATION.sub(" ", answer_text)))
 
     # Align citation-bearing sentences only by lexical overlap with the exact cited
     # source index. This is an audit hint, not an entailment or truth check.
@@ -304,9 +316,7 @@ def audit_answer_integrity(
     target_checks: list[dict[str, Any]] = []
     source_evidence_gap_count = 0
     for target in (coverage_targets or [])[:8]:
-        target_tokens = list(dict.fromkeys(_tokens(target, drop_stopwords=True)))
-        if not target_tokens:
-            target_tokens = list(dict.fromkeys(_tokens(target)))
+        target_tokens = list(dict.fromkeys(_criterion_tokens(target)))
         overlap = [token for token in target_tokens if token in answer_tokens]
         ratio = len(overlap) / len(target_tokens) if target_tokens else 0.0
         likely_covered = bool(overlap) and (
@@ -329,7 +339,7 @@ def audit_answer_integrity(
                 selected_text, basis = title, "title_only"
             else:
                 continue
-            source_tokens = set(_tokens(selected_text[:16000], drop_stopwords=True))
+            source_tokens = set(_criterion_tokens(selected_text[:16000]))
             source_overlap = [token for token in target_tokens if token in source_tokens]
             source_ratio = len(source_overlap) / len(target_tokens) if target_tokens else 0.0
             source_signal = bool(source_overlap) and (
