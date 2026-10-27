@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002143 إلى SRC-F725E90B2A-L002942
+- النطاق: SRC-F725E90B2A-L002131 إلى SRC-F725E90B2A-L002930
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002131](../../tests/test_web_agent.py#L2131) | 2131 | `"    assert report[\"queries_attempted\"] is None"` | — |
+| [SRC-F725E90B2A-L002132](../../tests/test_web_agent.py#L2132) | 2132 | `"    assert report[\"queries_attempted_known\"] is False"` | — |
+| [SRC-F725E90B2A-L002133](../../tests/test_web_agent.py#L2133) | 2133 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |
+| [SRC-F725E90B2A-L002134](../../tests/test_web_agent.py#L2134) | 2134 | `""` | — |
+| [SRC-F725E90B2A-L002135](../../tests/test_web_agent.py#L2135) | 2135 | `""` | — |
+| [SRC-F725E90B2A-L002136](../../tests/test_web_agent.py#L2136) | 2136 | `"def test_general_answer_does_not_silently_slice_overlong_model_output(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002137](../../tests/test_web_agent.py#L2137) | 2137 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002138](../../tests/test_web_agent.py#L2138) | 2138 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L002139](../../tests/test_web_agent.py#L2139) | 2139 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L002140](../../tests/test_web_agent.py#L2140) | 2140 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L002141](../../tests/test_web_agent.py#L2141) | 2141 | `"        \"_request_completion\","` | — |
+| [SRC-F725E90B2A-L002142](../../tests/test_web_agent.py#L2142) | 2142 | `"        lambda *args, **kwargs: \"ن\" * 24_001,"` | — |
 | [SRC-F725E90B2A-L002143](../../tests/test_web_agent.py#L2143) | 2143 | `"    )"` | — |
 | [SRC-F725E90B2A-L002144](../../tests/test_web_agent.py#L2144) | 2144 | `""` | — |
 | [SRC-F725E90B2A-L002145](../../tests/test_web_agent.py#L2145) | 2145 | `"    result = agent._answer_without_search(\"اشرح مفهومًا عامًا\", [])"` | — |
@@ -804,15 +816,3 @@
 | [SRC-F725E90B2A-L002928](../../tests/test_web_agent.py#L2928) | 2928 | `"    html = ("` | — |
 | [SRC-F725E90B2A-L002929](../../tests/test_web_agent.py#L2929) | 2929 | `"        Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
 | [SRC-F725E90B2A-L002930](../../tests/test_web_agent.py#L2930) | 2930 | `"    ).read_text(encoding=\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L002931](../../tests/test_web_agent.py#L2931) | 2931 | `"    assert \"فحص لفظي أولي:\" in html"` | — |
-| [SRC-F725E90B2A-L002932](../../tests/test_web_agent.py#L2932) | 2932 | `"    assert \"لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد\" in html"` | — |
-| [SRC-F725E90B2A-L002933](../../tests/test_web_agent.py#L2933) | 2933 | `"    assert \"potentially_unsupported_numeric_by_citation_count\" in html"` | — |
-| [SRC-F725E90B2A-L002934](../../tests/test_web_agent.py#L2934) | 2934 | `"    assert \"potential_value_discrepancy_count\" in html"` | — |
-| [SRC-F725E90B2A-L002935](../../tests/test_web_agent.py#L2935) | 2935 | `""` | — |
-| [SRC-F725E90B2A-L002936](../../tests/test_web_agent.py#L2936) | 2936 | `""` | — |
-| [SRC-F725E90B2A-L002937](../../tests/test_web_agent.py#L2937) | 2937 | `"def test_search_web_keeps_arabic_topic_matches_in_english_indexed_results(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002938](../../tests/test_web_agent.py#L2938) | 2938 | `"    cases = ["` | — |
-| [SRC-F725E90B2A-L002939](../../tests/test_web_agent.py#L2939) | 2939 | `"        ("` | — |
-| [SRC-F725E90B2A-L002940](../../tests/test_web_agent.py#L2940) | 2940 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
-| [SRC-F725E90B2A-L002941](../../tests/test_web_agent.py#L2941) | 2941 | `"            \"Egypt's capital is Cairo\","` | — |
-| [SRC-F725E90B2A-L002942](../../tests/test_web_agent.py#L2942) | 2942 | `"            \"The capital city of Egypt is Cairo.\","` | — |

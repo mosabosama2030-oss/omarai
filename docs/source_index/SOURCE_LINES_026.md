@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000504 إلى SRC-6BCB799CEC-L000108
+- النطاق: SRC-3451CC474D-L000492 إلى SRC-6BCB799CEC-L000096
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000492](../../tests/test_api.py#L492) | 492 | `"    assert not worker.is_alive()"` | — |
+| [SRC-3451CC474D-L000493](../../tests/test_api.py#L493) | 493 | `"    assert first_result[\"response\"][0] == 200"` | — |
+| [SRC-3451CC474D-L000494](../../tests/test_api.py#L494) | 494 | `""` | — |
+| [SRC-3451CC474D-L000495](../../tests/test_api.py#L495) | 495 | `""` | — |
+| [SRC-3451CC474D-L000496](../../tests/test_api.py#L496) | 496 | `"def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):"` | — |
+| [SRC-3451CC474D-L000497](../../tests/test_api.py#L497) | 497 | `"    from api.omarai import _configured_agent_concurrency_limit"` | — |
+| [SRC-3451CC474D-L000498](../../tests/test_api.py#L498) | 498 | `""` | — |
+| [SRC-3451CC474D-L000499](../../tests/test_api.py#L499) | 499 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"99\")"` | — |
+| [SRC-3451CC474D-L000500](../../tests/test_api.py#L500) | 500 | `"    assert _configured_agent_concurrency_limit() == 8"` | — |
+| [SRC-3451CC474D-L000501](../../tests/test_api.py#L501) | 501 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"invalid\")"` | — |
+| [SRC-3451CC474D-L000502](../../tests/test_api.py#L502) | 502 | `"    assert _configured_agent_concurrency_limit() == 4"` | — |
+| [SRC-3451CC474D-L000503](../../tests/test_api.py#L503) | 503 | `""` | — |
 | [SRC-3451CC474D-L000504](../../tests/test_api.py#L504) | 504 | `""` | — |
 | [SRC-3451CC474D-L000505](../../tests/test_api.py#L505) | 505 | `"def test_api_rejects_oversized_request_body(local_api):"` | — |
 | [SRC-3451CC474D-L000506](../../tests/test_api.py#L506) | 506 | `"    status, payload = request_json("` | — |
@@ -831,15 +843,3 @@
 | [SRC-6BCB799CEC-L000094](../../tests/test_evidence_provenance.py#L94) | 94 | `"        return sources, [], {"` | — |
 | [SRC-6BCB799CEC-L000095](../../tests/test_evidence_provenance.py#L95) | 95 | `"            \"queries_planned\": 1,"` | — |
 | [SRC-6BCB799CEC-L000096](../../tests/test_evidence_provenance.py#L96) | 96 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-6BCB799CEC-L000097](../../tests/test_evidence_provenance.py#L97) | 97 | `"            \"query_results\": [{\"query\": question, \"results\": 2}],"` | — |
-| [SRC-6BCB799CEC-L000098](../../tests/test_evidence_provenance.py#L98) | 98 | `"            \"unique_sources\": 2,"` | — |
-| [SRC-6BCB799CEC-L000099](../../tests/test_evidence_provenance.py#L99) | 99 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-6BCB799CEC-L000100](../../tests/test_evidence_provenance.py#L100) | 100 | `"            \"providers_used\": [\"bing_rss\", \"duckduckgo_html\"],"` | — |
-| [SRC-6BCB799CEC-L000101](../../tests/test_evidence_provenance.py#L101) | 101 | `"            \"provider_counts\": {\"bing_rss\": 1, \"duckduckgo_html\": 1},"` | — |
-| [SRC-6BCB799CEC-L000102](../../tests/test_evidence_provenance.py#L102) | 102 | `"            \"platform_counts\": {\"web\": 2},"` | — |
-| [SRC-6BCB799CEC-L000103](../../tests/test_evidence_provenance.py#L103) | 103 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-6BCB799CEC-L000104](../../tests/test_evidence_provenance.py#L104) | 104 | `"            \"expansion_queries\": [],"` | — |
-| [SRC-6BCB799CEC-L000105](../../tests/test_evidence_provenance.py#L105) | 105 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-6BCB799CEC-L000106](../../tests/test_evidence_provenance.py#L106) | 106 | `"            \"depth\": \"standard\","` | — |
-| [SRC-6BCB799CEC-L000107](../../tests/test_evidence_provenance.py#L107) | 107 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-6BCB799CEC-L000108](../../tests/test_evidence_provenance.py#L108) | 108 | `"        }"` | — |

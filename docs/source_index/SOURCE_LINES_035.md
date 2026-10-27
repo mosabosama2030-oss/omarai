@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002943 إلى SRC-DE7EABE998-L000298
+- النطاق: SRC-F725E90B2A-L002931 إلى SRC-DE7EABE998-L000286
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002931](../../tests/test_web_agent.py#L2931) | 2931 | `"    assert \"فحص لفظي أولي:\" in html"` | — |
+| [SRC-F725E90B2A-L002932](../../tests/test_web_agent.py#L2932) | 2932 | `"    assert \"لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد\" in html"` | — |
+| [SRC-F725E90B2A-L002933](../../tests/test_web_agent.py#L2933) | 2933 | `"    assert \"potentially_unsupported_numeric_by_citation_count\" in html"` | — |
+| [SRC-F725E90B2A-L002934](../../tests/test_web_agent.py#L2934) | 2934 | `"    assert \"potential_value_discrepancy_count\" in html"` | — |
+| [SRC-F725E90B2A-L002935](../../tests/test_web_agent.py#L2935) | 2935 | `""` | — |
+| [SRC-F725E90B2A-L002936](../../tests/test_web_agent.py#L2936) | 2936 | `""` | — |
+| [SRC-F725E90B2A-L002937](../../tests/test_web_agent.py#L2937) | 2937 | `"def test_search_web_keeps_arabic_topic_matches_in_english_indexed_results(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002938](../../tests/test_web_agent.py#L2938) | 2938 | `"    cases = ["` | — |
+| [SRC-F725E90B2A-L002939](../../tests/test_web_agent.py#L2939) | 2939 | `"        ("` | — |
+| [SRC-F725E90B2A-L002940](../../tests/test_web_agent.py#L2940) | 2940 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
+| [SRC-F725E90B2A-L002941](../../tests/test_web_agent.py#L2941) | 2941 | `"            \"Egypt's capital is Cairo\","` | — |
+| [SRC-F725E90B2A-L002942](../../tests/test_web_agent.py#L2942) | 2942 | `"            \"The capital city of Egypt is Cairo.\","` | — |
 | [SRC-F725E90B2A-L002943](../../tests/test_web_agent.py#L2943) | 2943 | `"        ),"` | — |
 | [SRC-F725E90B2A-L002944](../../tests/test_web_agent.py#L2944) | 2944 | `"        ("` | — |
 | [SRC-F725E90B2A-L002945](../../tests/test_web_agent.py#L2945) | 2945 | `"            \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
@@ -813,15 +825,3 @@
 | [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `"  box.appendChild(notice);"` | — |
 | [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" }"` | — |
 | [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" if(result&&result.search_report){"` | — |
-| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `"  const report=document.createElement(\"section\");report.className=\"report\";report.innerHTML=renderReport(result);box.appendChild(report);"` | — |
-| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `" }"` | — |
-| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `" if(result&&Array.isArray(result.warnings)&&result.warnings.length){"` | — |
-| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `"  const warning=document.createElement(\"div\");warning.className=\"warning\";"` | — |
-| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `"  warning.textContent=result.warnings.join(\" \");box.appendChild(warning);"` | — |
-| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `" }"` | — |
-| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `" const rawSources=result&&Array.isArray(result.sources)?result.sources:[];"` | — |
-| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `" const usableSources=rawSources.filter(s=>s&&typeof s===\"object\"&&safeSourceUrl(s.url));"` | — |
-| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `" if(usableSources.length){"` | — |
-| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `"  const sources=document.createElement(\"div\");sources.className=\"sources\";"` | — |
-| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `"  sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join(\"\");box.appendChild(sources);"` | — |
-| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |

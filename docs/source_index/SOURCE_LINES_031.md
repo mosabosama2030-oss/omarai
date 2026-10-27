@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000176 إلى SRC-F725E90B2A-L000542
+- النطاق: SRC-01E35ABC46-L000164 إلى SRC-F725E90B2A-L000530
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000164](../../tests/test_research_guardrails.py#L164) | 164 | `"def test_evidence_adequate():"` | — |
+| [SRC-01E35ABC46-L000165](../../tests/test_research_guardrails.py#L165) | 165 | `"    sources = ["` | — |
+| [SRC-01E35ABC46-L000166](../../tests/test_research_guardrails.py#L166) | 166 | `"        {\"url\": f\"https://a{i}.example/p\", \"domain\": f\"a{i}.example\","` | — |
+| [SRC-01E35ABC46-L000167](../../tests/test_research_guardrails.py#L167) | 167 | `"         \"snippet\": \"content\", \"page_fetched\": True, \"source_class\": \"general\"}"` | — |
+| [SRC-01E35ABC46-L000168](../../tests/test_research_guardrails.py#L168) | 168 | `"        for i in range(4)"` | — |
+| [SRC-01E35ABC46-L000169](../../tests/test_research_guardrails.py#L169) | 169 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000170](../../tests/test_research_guardrails.py#L170) | 170 | `"    sources[0][\"source_class\"] = \"government\""` | — |
+| [SRC-01E35ABC46-L000171](../../tests/test_research_guardrails.py#L171) | 171 | `"    decision = decide_evidence_status(sources, pages_read=2)"` | — |
+| [SRC-01E35ABC46-L000172](../../tests/test_research_guardrails.py#L172) | 172 | `"    assert decision[\"evidence_status\"] == \"adequate\""` | — |
+| [SRC-01E35ABC46-L000173](../../tests/test_research_guardrails.py#L173) | 173 | `"    assert decision[\"should_abstain\"] is False"` | — |
+| [SRC-01E35ABC46-L000174](../../tests/test_research_guardrails.py#L174) | 174 | `""` | — |
+| [SRC-01E35ABC46-L000175](../../tests/test_research_guardrails.py#L175) | 175 | `""` | — |
 | [SRC-01E35ABC46-L000176](../../tests/test_research_guardrails.py#L176) | 176 | `"def test_evidence_insufficient_empty():"` | — |
 | [SRC-01E35ABC46-L000177](../../tests/test_research_guardrails.py#L177) | 177 | `"    decision = decide_evidence_status([], search_attempted=True)"` | — |
 | [SRC-01E35ABC46-L000178](../../tests/test_research_guardrails.py#L178) | 178 | `"    assert decision[\"evidence_status\"] == \"insufficient\""` | — |
@@ -831,15 +843,3 @@
 | [SRC-F725E90B2A-L000528](../../tests/test_web_agent.py#L528) | 528 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
 | [SRC-F725E90B2A-L000529](../../tests/test_web_agent.py#L529) | 529 | `"                \"like_count\": 17,"` | — |
 | [SRC-F725E90B2A-L000530](../../tests/test_web_agent.py#L530) | 530 | `"                \"comments_count\": 4,"` | — |
-| [SRC-F725E90B2A-L000531](../../tests/test_web_agent.py#L531) | 531 | `"            }]})"` | — |
-| [SRC-F725E90B2A-L000532](../../tests/test_web_agent.py#L532) | 532 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
-| [SRC-F725E90B2A-L000533](../../tests/test_web_agent.py#L533) | 533 | `""` | — |
-| [SRC-F725E90B2A-L000534](../../tests/test_web_agent.py#L534) | 534 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000535](../../tests/test_web_agent.py#L535) | 535 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000536](../../tests/test_web_agent.py#L536) | 536 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"    )"` | — |
-| [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
-| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
-| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |

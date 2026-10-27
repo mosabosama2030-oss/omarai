@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000027 إلى SRC-90FAA34ADE-L000270
+- النطاق: SRC-4FFD5AFC54-L000015 إلى SRC-90FAA34ADE-L000258
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000015](../../scripts/run_answer_quality_benchmark.py#L15) | 15 | `""` | — |
+| [SRC-4FFD5AFC54-L000016](../../scripts/run_answer_quality_benchmark.py#L16) | 16 | `"Examples"` | — |
+| [SRC-4FFD5AFC54-L000017](../../scripts/run_answer_quality_benchmark.py#L17) | 17 | `"--------"` | — |
+| [SRC-4FFD5AFC54-L000018](../../scripts/run_answer_quality_benchmark.py#L18) | 18 | `"  python scripts/run_answer_quality_benchmark.py"` | — |
+| [SRC-4FFD5AFC54-L000019](../../scripts/run_answer_quality_benchmark.py#L19) | 19 | `"  python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
+| [SRC-4FFD5AFC54-L000020](../../scripts/run_answer_quality_benchmark.py#L20) | 20 | `"  python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 \\\\"` | — |
+| [SRC-4FFD5AFC54-L000021](../../scripts/run_answer_quality_benchmark.py#L21) | 21 | `"      --case-id AQ-001 --limit 1 --out /tmp/aq_results.json"` | — |
+| [SRC-4FFD5AFC54-L000022](../../scripts/run_answer_quality_benchmark.py#L22) | 22 | `"\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000023](../../scripts/run_answer_quality_benchmark.py#L23) | 23 | `"from __future__ import annotations"` | — |
+| [SRC-4FFD5AFC54-L000024](../../scripts/run_answer_quality_benchmark.py#L24) | 24 | `""` | — |
+| [SRC-4FFD5AFC54-L000025](../../scripts/run_answer_quality_benchmark.py#L25) | 25 | `"import argparse"` | — |
+| [SRC-4FFD5AFC54-L000026](../../scripts/run_answer_quality_benchmark.py#L26) | 26 | `"import ipaddress"` | — |
 | [SRC-4FFD5AFC54-L000027](../../scripts/run_answer_quality_benchmark.py#L27) | 27 | `"import json"` | — |
 | [SRC-4FFD5AFC54-L000028](../../scripts/run_answer_quality_benchmark.py#L28) | 28 | `"import os"` | — |
 | [SRC-4FFD5AFC54-L000029](../../scripts/run_answer_quality_benchmark.py#L29) | 29 | `"import sys"` | — |
@@ -822,15 +834,3 @@
 | [SRC-90FAA34ADE-L000256](../../tests/fixtures/answer_quality_cases.json#L256) | 256 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000257](../../tests/fixtures/answer_quality_cases.json#L257) | 257 | `"        \"type\": \"controlled_search\""` | — |
 | [SRC-90FAA34ADE-L000258](../../tests/fixtures/answer_quality_cases.json#L258) | 258 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000259](../../tests/fixtures/answer_quality_cases.json#L259) | 259 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000260](../../tests/fixtures/answer_quality_cases.json#L260) | 260 | `"        \"Claims official sources that were not retrieved\""` | — |
-| [SRC-90FAA34ADE-L000261](../../tests/fixtures/answer_quality_cases.json#L261) | 261 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000262](../../tests/fixtures/answer_quality_cases.json#L262) | 262 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000263](../../tests/fixtures/answer_quality_cases.json#L263) | 263 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000264](../../tests/fixtures/answer_quality_cases.json#L264) | 264 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000265](../../tests/fixtures/answer_quality_cases.json#L265) | 265 | `"      \"case_id\": \"AQ-011\","` | — |
-| [SRC-90FAA34ADE-L000266](../../tests/fixtures/answer_quality_cases.json#L266) | 266 | `"      \"category\": \"ambiguous_clarify\","` | — |
-| [SRC-90FAA34ADE-L000267](../../tests/fixtures/answer_quality_cases.json#L267) | 267 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000268](../../tests/fixtures/answer_quality_cases.json#L268) | 268 | `"      \"question\": \"كام سعرها؟\","` | — |
-| [SRC-90FAA34ADE-L000269](../../tests/fixtures/answer_quality_cases.json#L269) | 269 | `"      \"expected_strategy\": \"clarify\","` | — |
-| [SRC-90FAA34ADE-L000270](../../tests/fixtures/answer_quality_cases.json#L270) | 270 | `"      \"required_behaviors\": ["` | — |

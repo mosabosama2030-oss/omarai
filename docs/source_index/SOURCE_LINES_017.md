@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000303 إلى SRC-E1EAC11EFE-L000067
+- النطاق: SRC-D17CE3D12F-L000291 إلى SRC-E1EAC11EFE-L000055
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000291](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L291) | 291 | `"10. MUST عدم الدمج أو النشر للإنتاج من وكيل آلي دون تفويض صريح من مدير المشروع."` | — |
+| [SRC-D17CE3D12F-L000292](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L292) | 292 | `"11. SHOULD استخدام إصدارات واضحة وchangelog للتغييرات ذات الأثر على المستخدم أو الواجهات أو البيانات."` | — |
+| [SRC-D17CE3D12F-L000293](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L293) | 293 | `"12. MUST معرفة commit الذي اختُبر والذي نُشر؛ لا يساوي نجاح CI على فرع آخر دليلًا على النسخة المنشورة."` | — |
+| [SRC-D17CE3D12F-L000294](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L294) | 294 | `""` | — |
+| [SRC-D17CE3D12F-L000295](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L295) | 295 | `"## 20. النسخ الاحتياطي والتعافي من الكوارث"` | — |
+| [SRC-D17CE3D12F-L000296](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L296) | 296 | `""` | — |
+| [SRC-D17CE3D12F-L000297](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L297) | 297 | `"1. MUST تصنيف البيانات التي يمكن إعادة بنائها مقابل البيانات التي لا يمكن تعويضها."` | — |
+| [SRC-D17CE3D12F-L000298](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L298) | 298 | `"2. MUST تحديد RPO (الحد المقبول لفقد البيانات) وRTO (زمن الاستعادة المستهدف) بصورة واقعية للبيانات والخدمات المهمة، أو التصريح بأنها UNKNOWN في غياب القياس."` | — |
+| [SRC-D17CE3D12F-L000299](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L299) | 299 | `"3. MUST اختبار الاستعادة فعليًا للبيانات المهمة؛ وجود ملف نسخة احتياطية غير كافٍ."` | — |
+| [SRC-D17CE3D12F-L000300](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L300) | 300 | `"4. SHOULD حفظ النسخ المهمة بعيدًا عن صلاحيات التطبيق التشغيلية نفسها عندما تسمح الإمكانات، لحمايتها من حذف أو اختراق واحد."` | — |
+| [SRC-D17CE3D12F-L000301](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L301) | 301 | `"5. MUST حماية النسخ الاحتياطية من الوصول غير المصرح به، وتحديد التشفير وفترة الاحتفاظ والإزالة."` | — |
+| [SRC-D17CE3D12F-L000302](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L302) | 302 | `"6. SHOULD إجراء تمارين استعادة أو failover عند تغير بنية التخزين أو الاستضافة أو طريقة النشر."` | — |
 | [SRC-D17CE3D12F-L000303](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L303) | 303 | `"7. MUST تحديد ما لا يمكن استعادته إذا انقطع موفر مجاني أو حُذف حساب الاستضافة، وخطة نقل واقعية لتجنب الارتباط غير المدروس."` | — |
 | [SRC-D17CE3D12F-L000304](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L304) | 304 | `"8. MUST توثيق خطوات إعادة إنشاء البيئة والأسرار من المصدر المعتمد دون وضع الأسرار في المستودع."` | — |
 | [SRC-D17CE3D12F-L000305](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L305) | 305 | `"9. SHOULD اختبار استعادة إعدادات وبيانات المستخدم وسجلات التدقيق حسب أهمية كل فئة."` | — |
@@ -813,15 +825,3 @@
 | [SRC-E1EAC11EFE-L000053](../OMARAI_HANDOFF_CHECKLIST_AR.md#L53) | 53 | `"\| B9 — التوثيق والفهرس \| مصدر واحد لسجل العيوب، مخرجات الفهرس مولدة من البرنامج النصي، وعدم تكرار سجلات إصلاح متعارضة \| يُفحص في CI \|"` | — |
 | [SRC-E1EAC11EFE-L000054](../OMARAI_HANDOFF_CHECKLIST_AR.md#L54) | 54 | `""` | — |
 | [SRC-E1EAC11EFE-L000055](../OMARAI_HANDOFF_CHECKLIST_AR.md#L55) | 55 | `"## الاختبارات العملية بعد الموافقة على النشر"` | — |
-| [SRC-E1EAC11EFE-L000056](../OMARAI_HANDOFF_CHECKLIST_AR.md#L56) | 56 | `""` | — |
-| [SRC-E1EAC11EFE-L000057](../OMARAI_HANDOFF_CHECKLIST_AR.md#L57) | 57 | `"نفّذ على المضيف المعتمد فقط وبعد اختيار SHA المراد تسليمه:"` | — |
-| [SRC-E1EAC11EFE-L000058](../OMARAI_HANDOFF_CHECKLIST_AR.md#L58) | 58 | `""` | — |
-| [SRC-E1EAC11EFE-L000059](../OMARAI_HANDOFF_CHECKLIST_AR.md#L59) | 59 | ``"1. **سؤال بسيط:** `ما عاصمة مصر؟` — يسجل ما إذا كانت إجابة المعرفة العامة أو إجابة البحث، ولا يخلط بينهما."`` | — |
-| [SRC-E1EAC11EFE-L000060](../OMARAI_HANDOFF_CHECKLIST_AR.md#L60) | 60 | ``"2. **بحث ملاحي حديث:** `ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية` مع اختيار «الأحدث الآن» — يجب أن يكون الرابط من الموقع الرسمي نفسه، لا مجرد خبر صحفي عن الوزارة."`` | — |
-| [SRC-E1EAC11EFE-L000061](../OMARAI_HANDOFF_CHECKLIST_AR.md#L61) | 61 | `"3. **بحث معمّق:** سؤال محدد يتطلب عدة مصادر مختلفة — سجل عدد الاستعلامات التي جرى تشغيلها، عدد النتائج المقبولة والمرفوضة، الصفحات التي قُرئ نصها، وسبب أي استنفاد للميزانية."` | — |
-| [SRC-E1EAC11EFE-L000062](../OMARAI_HANDOFF_CHECKLIST_AR.md#L62) | 62 | `"4. **طلب حديث مستقل:** خبر رسمي أو قرار حديث ذو تاريخ معلوم — لا يُقبل المقتطف وحده كقراءة صفحة، ويجب عرض تاريخ النشر عندما يكون متاحًا."` | — |
-| [SRC-E1EAC11EFE-L000063](../OMARAI_HANDOFF_CHECKLIST_AR.md#L63) | 63 | `""` | — |
-| [SRC-E1EAC11EFE-L000064](../OMARAI_HANDOFF_CHECKLIST_AR.md#L64) | 64 | ``"احفظ نسخة من الاستجابة المهيكلة لكل تجربة، بما فيها `search_report` و`request_budget` و`warnings` و`sources`. احذف أو احجب أي سؤال خاص أو رمز أو بيانات لا يحتاجها سجل القبول."`` | — |
-| [SRC-E1EAC11EFE-L000065](../OMARAI_HANDOFF_CHECKLIST_AR.md#L65) | 65 | `""` | — |
-| [SRC-E1EAC11EFE-L000066](../OMARAI_HANDOFF_CHECKLIST_AR.md#L66) | 66 | `"## المطلوب لاستكمال القبول"` | — |
-| [SRC-E1EAC11EFE-L000067](../OMARAI_HANDOFF_CHECKLIST_AR.md#L67) | 67 | `""` | — |

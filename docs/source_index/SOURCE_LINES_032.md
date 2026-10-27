@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000543 إلى SRC-F725E90B2A-L001342
+- النطاق: SRC-F725E90B2A-L000531 إلى SRC-F725E90B2A-L001330
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000531](../../tests/test_web_agent.py#L531) | 531 | `"            }]})"` | — |
+| [SRC-F725E90B2A-L000532](../../tests/test_web_agent.py#L532) | 532 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
+| [SRC-F725E90B2A-L000533](../../tests/test_web_agent.py#L533) | 533 | `""` | — |
+| [SRC-F725E90B2A-L000534](../../tests/test_web_agent.py#L534) | 534 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000535](../../tests/test_web_agent.py#L535) | 535 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000536](../../tests/test_web_agent.py#L536) | 536 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
+| [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"    )"` | — |
+| [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
+| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
+| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
 | [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
 | [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
 | [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"    assert \"test-ig-token\" not in str(results)"` | — |
@@ -804,15 +816,3 @@
 | [SRC-F725E90B2A-L001328](../../tests/test_web_agent.py#L1328) | 1328 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001329](../../tests/test_web_agent.py#L1329) | 1329 | `""` | — |
 | [SRC-F725E90B2A-L001330](../../tests/test_web_agent.py#L1330) | 1330 | `"    def collect_only_one_source(research_plan):"` | — |
-| [SRC-F725E90B2A-L001331](../../tests/test_web_agent.py#L1331) | 1331 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001332](../../tests/test_web_agent.py#L1332) | 1332 | `"        return [sample_source(0)], [], {"` | — |
-| [SRC-F725E90B2A-L001333](../../tests/test_web_agent.py#L1333) | 1333 | `"            \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L001334](../../tests/test_web_agent.py#L1334) | 1334 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `"            \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 1}],"` | — |
-| [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-F725E90B2A-L001337](../../tests/test_web_agent.py#L1337) | 1337 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-F725E90B2A-L001338](../../tests/test_web_agent.py#L1338) | 1338 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"            \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `"            \"planning_method\": \"test\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001071 إلى SRC-B3062EB677-L000218
+- النطاق: SRC-90FAA34ADE-L001059 إلى SRC-B3062EB677-L000206
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001059](../../tests/fixtures/answer_quality_cases.json#L1059) | 1059 | `"        \"وصف النتائج بأنها مصادر مستقلة مؤكدة\""` | — |
+| [SRC-90FAA34ADE-L001060](../../tests/fixtures/answer_quality_cases.json#L1060) | 1060 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001061](../../tests/fixtures/answer_quality_cases.json#L1061) | 1061 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001062](../../tests/fixtures/answer_quality_cases.json#L1062) | 1062 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001063](../../tests/fixtures/answer_quality_cases.json#L1063) | 1063 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001064](../../tests/fixtures/answer_quality_cases.json#L1064) | 1064 | `"      \"case_id\": \"AQ-036\","` | — |
+| [SRC-90FAA34ADE-L001065](../../tests/fixtures/answer_quality_cases.json#L1065) | 1065 | `"      \"category\": \"unsupported_claim\","` | — |
+| [SRC-90FAA34ADE-L001066](../../tests/fixtures/answer_quality_cases.json#L1066) | 1066 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001067](../../tests/fixtures/answer_quality_cases.json#L1067) | 1067 | `"      \"question\": \"The product page says “battery included.” Does that prove the device lasts 18 hours on a charge?\","` | — |
+| [SRC-90FAA34ADE-L001068](../../tests/fixtures/answer_quality_cases.json#L1068) | 1068 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001069](../../tests/fixtures/answer_quality_cases.json#L1069) | 1069 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001070](../../tests/fixtures/answer_quality_cases.json#L1070) | 1070 | `"        \"States the page supports only that a battery is included\","` | — |
 | [SRC-90FAA34ADE-L001071](../../tests/fixtures/answer_quality_cases.json#L1071) | 1071 | `"        \"Separates battery presence from battery-life duration\","` | — |
 | [SRC-90FAA34ADE-L001072](../../tests/fixtures/answer_quality_cases.json#L1072) | 1072 | `"        \"Requests a specification or credible test for the 18-hour claim\""` | — |
 | [SRC-90FAA34ADE-L001073](../../tests/fixtures/answer_quality_cases.json#L1073) | 1073 | `"      ],"` | — |
@@ -831,15 +843,3 @@
 | [SRC-B3062EB677-L000204](../../tests/test_answer_quality_runner.py#L204) | 204 | `"    assert rc == 2"` | — |
 | [SRC-B3062EB677-L000205](../../tests/test_answer_quality_runner.py#L205) | 205 | `"    assert \"Unsafe base URL\" in capsys.readouterr().err"` | — |
 | [SRC-B3062EB677-L000206](../../tests/test_answer_quality_runner.py#L206) | 206 | `""` | — |
-| [SRC-B3062EB677-L000207](../../tests/test_answer_quality_runner.py#L207) | 207 | `""` | — |
-| [SRC-B3062EB677-L000208](../../tests/test_answer_quality_runner.py#L208) | 208 | `"def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):"` | — |
-| [SRC-B3062EB677-L000209](../../tests/test_answer_quality_runner.py#L209) | 209 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000210](../../tests/test_answer_quality_runner.py#L210) | 210 | `""` | — |
-| [SRC-B3062EB677-L000211](../../tests/test_answer_quality_runner.py#L211) | 211 | `"    def fake_post(base_url, question, timeout, token):"` | — |
-| [SRC-B3062EB677-L000212](../../tests/test_answer_quality_runner.py#L212) | 212 | `"        return 0, {\"error\": \"URLError\", \"detail\": \"connection refused\"}"` | — |
-| [SRC-B3062EB677-L000213](../../tests/test_answer_quality_runner.py#L213) | 213 | `""` | — |
-| [SRC-B3062EB677-L000214](../../tests/test_answer_quality_runner.py#L214) | 214 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
-| [SRC-B3062EB677-L000215](../../tests/test_answer_quality_runner.py#L215) | 215 | `"    out = tmp_path / \"results.json\""` | — |
-| [SRC-B3062EB677-L000216](../../tests/test_answer_quality_runner.py#L216) | 216 | `"    rc = mod.main("` | — |
-| [SRC-B3062EB677-L000217](../../tests/test_answer_quality_runner.py#L217) | 217 | `"        ["` | — |
-| [SRC-B3062EB677-L000218](../../tests/test_answer_quality_runner.py#L218) | 218 | `"            \"--mode\","` | — |

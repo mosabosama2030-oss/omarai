@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001343 إلى SRC-F725E90B2A-L002142
+- النطاق: SRC-F725E90B2A-L001331 إلى SRC-F725E90B2A-L002130
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001331](../../tests/test_web_agent.py#L1331) | 1331 | `"        calls.append(dict(research_plan))"` | — |
+| [SRC-F725E90B2A-L001332](../../tests/test_web_agent.py#L1332) | 1332 | `"        return [sample_source(0)], [], {"` | — |
+| [SRC-F725E90B2A-L001333](../../tests/test_web_agent.py#L1333) | 1333 | `"            \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L001334](../../tests/test_web_agent.py#L1334) | 1334 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `"            \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 1}],"` | — |
+| [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-F725E90B2A-L001337](../../tests/test_web_agent.py#L1337) | 1337 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-F725E90B2A-L001338](../../tests/test_web_agent.py#L1338) | 1338 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"            \"platform_counts\": {\"web\": 1},"` | — |
+| [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `"            \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `"            \"evidence_signals\": {},"` | — |
 | [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"        }"` | — |
 | [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `""` | — |
@@ -804,15 +816,3 @@
 | [SRC-F725E90B2A-L002128](../../tests/test_web_agent.py#L2128) | 2128 | `"    assert result[\"search_attempted\"] is None"` | — |
 | [SRC-F725E90B2A-L002129](../../tests/test_web_agent.py#L2129) | 2129 | `"    assert report[\"search_attempted\"] is None"` | — |
 | [SRC-F725E90B2A-L002130](../../tests/test_web_agent.py#L2130) | 2130 | `"    assert report[\"search_outcome\"] == \"unknown_after_research_error\""` | — |
-| [SRC-F725E90B2A-L002131](../../tests/test_web_agent.py#L2131) | 2131 | `"    assert report[\"queries_attempted\"] is None"` | — |
-| [SRC-F725E90B2A-L002132](../../tests/test_web_agent.py#L2132) | 2132 | `"    assert report[\"queries_attempted_known\"] is False"` | — |
-| [SRC-F725E90B2A-L002133](../../tests/test_web_agent.py#L2133) | 2133 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |
-| [SRC-F725E90B2A-L002134](../../tests/test_web_agent.py#L2134) | 2134 | `""` | — |
-| [SRC-F725E90B2A-L002135](../../tests/test_web_agent.py#L2135) | 2135 | `""` | — |
-| [SRC-F725E90B2A-L002136](../../tests/test_web_agent.py#L2136) | 2136 | `"def test_general_answer_does_not_silently_slice_overlong_model_output(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002137](../../tests/test_web_agent.py#L2137) | 2137 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002138](../../tests/test_web_agent.py#L2138) | 2138 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L002139](../../tests/test_web_agent.py#L2139) | 2139 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L002140](../../tests/test_web_agent.py#L2140) | 2140 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L002141](../../tests/test_web_agent.py#L2141) | 2141 | `"        \"_request_completion\","` | — |
-| [SRC-F725E90B2A-L002142](../../tests/test_web_agent.py#L2142) | 2142 | `"        lambda *args, **kwargs: \"ن\" * 24_001,"` | — |

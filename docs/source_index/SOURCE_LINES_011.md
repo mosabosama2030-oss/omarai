@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000165 إلى SRC-C4C6C55E1A-L000052
+- النطاق: SRC-EEF2E6447C-L000153 إلى SRC-C4C6C55E1A-L000040
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000153](../../api/omarai.py#L153) | 153 | `"                    take = min(len(self._buffer), max_bytes - len(line))"` | — |
+| [SRC-EEF2E6447C-L000154](../../api/omarai.py#L154) | 154 | `"                    line.extend(self._buffer[:take])"` | — |
+| [SRC-EEF2E6447C-L000155](../../api/omarai.py#L155) | 155 | `"                    del self._buffer[:take]"` | — |
+| [SRC-EEF2E6447C-L000156](../../api/omarai.py#L156) | 156 | `"                    if len(line) >= max_bytes:"` | — |
+| [SRC-EEF2E6447C-L000157](../../api/omarai.py#L157) | 157 | `"                        break"` | — |
+| [SRC-EEF2E6447C-L000158](../../api/omarai.py#L158) | 158 | `""` | — |
+| [SRC-EEF2E6447C-L000159](../../api/omarai.py#L159) | 159 | `"                remaining = deadline - time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000160](../../api/omarai.py#L160) | 160 | `"                if remaining <= 0:"` | — |
+| [SRC-EEF2E6447C-L000161](../../api/omarai.py#L161) | 161 | `"                    raise TimeoutError(\"absolute request-header deadline exceeded\")"` | — |
+| [SRC-EEF2E6447C-L000162](../../api/omarai.py#L162) | 162 | `"                idle_timeout = max("` | — |
+| [SRC-EEF2E6447C-L000163](../../api/omarai.py#L163) | 163 | `"                    0.1,"` | — |
+| [SRC-EEF2E6447C-L000164](../../api/omarai.py#L164) | 164 | `"                    min("` | — |
 | [SRC-EEF2E6447C-L000165](../../api/omarai.py#L165) | 165 | `"                        float(REQUEST_HEADER_IDLE_TIMEOUT_SECONDS),"` | — |
 | [SRC-EEF2E6447C-L000166](../../api/omarai.py#L166) | 166 | `"                        MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,"` | — |
 | [SRC-EEF2E6447C-L000167](../../api/omarai.py#L167) | 167 | `"                    ),"` | — |
@@ -858,15 +870,3 @@
 | [SRC-C4C6C55E1A-L000038](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L38) | 38 | `"### نسخة المصدر"` | — |
 | [SRC-C4C6C55E1A-L000039](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L39) | 39 | `""` | — |
 | [SRC-C4C6C55E1A-L000040](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L40) | 40 | ``"نسخة `main` التي تمت مراجعتها في هذه الجولة: `871d2930405d164d3ae4c53f368937a4f5f01a6f`."`` | — |
-| [SRC-C4C6C55E1A-L000041](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) | 41 | `""` | — |
-| [SRC-C4C6C55E1A-L000042](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L42) | 42 | `"### تغييرات مدمجة ذات صلة"` | — |
-| [SRC-C4C6C55E1A-L000043](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L43) | 43 | `""` | — |
-| [SRC-C4C6C55E1A-L000044](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L44) | 44 | `"\| التغيير \| ما يثبته ضمن النطاق \| ما لا يثبته \|"` | — |
-| [SRC-C4C6C55E1A-L000045](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L45) | 45 | `"\|---\|---\|---\|"` | — |
-| [SRC-C4C6C55E1A-L000046](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L46) | 46 | `"\| [PR #44](https://github.com/mosabosama2030-oss/omarai/pull/44) \| ميزانية موارد تعاونية للطلب وحد process-local للعمليات المكلفة. \| إلغاء قاطع لكل اتصال جارٍ، أو حد موزع بين النسخ، أو سعة إنتاجية. \|"` | — |
-| [SRC-C4C6C55E1A-L000047](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L47) | 47 | `"\| [PR #45](https://github.com/mosabosama2030-oss/omarai/pull/45) \| تصحيح وصف التنفيذ وحدوده. \| عمل مزود حي أو نشر فعلي. \|"` | — |
-| [SRC-C4C6C55E1A-L000048](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L48) | 48 | `"\| [PR #46](https://github.com/mosabosama2030-oss/omarai/pull/46) \| تسوية توثيق ما بعد الدمج. \| تحقق جديد من جميع المخاطر الأمنية. \|"` | — |
-| [SRC-C4C6C55E1A-L000049](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L49) | 49 | `"\| [PR #47](https://github.com/mosabosama2030-oss/omarai/pull/47) \| خفض تقييم بعض الإجابات التي لا تحتوي استشهادات صالحة. \| تحقق دلالي حتمي من أن كل ادعاء مدعوم بمصدره. \|"` | — |
-| [SRC-C4C6C55E1A-L000050](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L50) | 50 | `"\| [PR #48](https://github.com/mosabosama2030-oss/omarai/pull/48) \| دمج حد زمني مطلق وخمول لقراءة جسم طلب API مع اختبارات stalled/slow-trickle والتحقق من طول الجسم. \| لا يثبت مهلة قراءة الرؤوس البطيئة، أو حماية شاملة من كل أنماط Slowloris، أو حدًا قاطعًا لمدة تنفيذ الوكيل كاملة. \|"` | — |
-| [SRC-C4C6C55E1A-L000051](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L51) | 51 | `""` | — |
-| [SRC-C4C6C55E1A-L000052](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L52) | 52 | `"### تغييرات وفحوص مفتوحة أو بديلة"` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **036**
-- سجلات الأسطر: **149**
-- النطاق: SRC-DE7EABE998-L000299 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **161**
+- النطاق: SRC-DE7EABE998-L000287 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `"  const report=document.createElement(\"section\");report.className=\"report\";report.innerHTML=renderReport(result);box.appendChild(report);"` | — |
+| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `" }"` | — |
+| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `" if(result&&Array.isArray(result.warnings)&&result.warnings.length){"` | — |
+| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `"  const warning=document.createElement(\"div\");warning.className=\"warning\";"` | — |
+| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `"  warning.textContent=result.warnings.join(\" \");box.appendChild(warning);"` | — |
+| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `" }"` | — |
+| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `" const rawSources=result&&Array.isArray(result.sources)?result.sources:[];"` | — |
+| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `" const usableSources=rawSources.filter(s=>s&&typeof s===\"object\"&&safeSourceUrl(s.url));"` | — |
+| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `" if(usableSources.length){"` | — |
+| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `"  const sources=document.createElement(\"div\");sources.className=\"sources\";"` | — |
+| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `"  sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join(\"\");box.appendChild(sources);"` | — |
+| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
 | [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"  const no=document.createElement(\"p\");no.className=\"no-sources\";"` | — |
 | [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `"  no.textContent=\"لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.\";"` | — |
 | [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `"  box.appendChild(no);"` | — |

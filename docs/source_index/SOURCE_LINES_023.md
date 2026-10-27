@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000271 إلى SRC-90FAA34ADE-L001070
+- النطاق: SRC-90FAA34ADE-L000259 إلى SRC-90FAA34ADE-L001058
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000259](../../tests/fixtures/answer_quality_cases.json#L259) | 259 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000260](../../tests/fixtures/answer_quality_cases.json#L260) | 260 | `"        \"Claims official sources that were not retrieved\""` | — |
+| [SRC-90FAA34ADE-L000261](../../tests/fixtures/answer_quality_cases.json#L261) | 261 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000262](../../tests/fixtures/answer_quality_cases.json#L262) | 262 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000263](../../tests/fixtures/answer_quality_cases.json#L263) | 263 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000264](../../tests/fixtures/answer_quality_cases.json#L264) | 264 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000265](../../tests/fixtures/answer_quality_cases.json#L265) | 265 | `"      \"case_id\": \"AQ-011\","` | — |
+| [SRC-90FAA34ADE-L000266](../../tests/fixtures/answer_quality_cases.json#L266) | 266 | `"      \"category\": \"ambiguous_clarify\","` | — |
+| [SRC-90FAA34ADE-L000267](../../tests/fixtures/answer_quality_cases.json#L267) | 267 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000268](../../tests/fixtures/answer_quality_cases.json#L268) | 268 | `"      \"question\": \"كام سعرها؟\","` | — |
+| [SRC-90FAA34ADE-L000269](../../tests/fixtures/answer_quality_cases.json#L269) | 269 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L000270](../../tests/fixtures/answer_quality_cases.json#L270) | 270 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000271](../../tests/fixtures/answer_quality_cases.json#L271) | 271 | `"        \"Asks what product/service/location is meant\","` | — |
 | [SRC-90FAA34ADE-L000272](../../tests/fixtures/answer_quality_cases.json#L272) | 272 | `"        \"Does not invent a price\""` | — |
 | [SRC-90FAA34ADE-L000273](../../tests/fixtures/answer_quality_cases.json#L273) | 273 | `"      ],"` | — |
@@ -804,15 +816,3 @@
 | [SRC-90FAA34ADE-L001056](../../tests/fixtures/answer_quality_cases.json#L1056) | 1056 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001057](../../tests/fixtures/answer_quality_cases.json#L1057) | 1057 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L001058](../../tests/fixtures/answer_quality_cases.json#L1058) | 1058 | `"        \"تأكيد التوقف نهائيًا من هذه النتائج فقط\","` | — |
-| [SRC-90FAA34ADE-L001059](../../tests/fixtures/answer_quality_cases.json#L1059) | 1059 | `"        \"وصف النتائج بأنها مصادر مستقلة مؤكدة\""` | — |
-| [SRC-90FAA34ADE-L001060](../../tests/fixtures/answer_quality_cases.json#L1060) | 1060 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001061](../../tests/fixtures/answer_quality_cases.json#L1061) | 1061 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001062](../../tests/fixtures/answer_quality_cases.json#L1062) | 1062 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001063](../../tests/fixtures/answer_quality_cases.json#L1063) | 1063 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001064](../../tests/fixtures/answer_quality_cases.json#L1064) | 1064 | `"      \"case_id\": \"AQ-036\","` | — |
-| [SRC-90FAA34ADE-L001065](../../tests/fixtures/answer_quality_cases.json#L1065) | 1065 | `"      \"category\": \"unsupported_claim\","` | — |
-| [SRC-90FAA34ADE-L001066](../../tests/fixtures/answer_quality_cases.json#L1066) | 1066 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L001067](../../tests/fixtures/answer_quality_cases.json#L1067) | 1067 | `"      \"question\": \"The product page says “battery included.” Does that prove the device lasts 18 hours on a charge?\","` | — |
-| [SRC-90FAA34ADE-L001068](../../tests/fixtures/answer_quality_cases.json#L1068) | 1068 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001069](../../tests/fixtures/answer_quality_cases.json#L1069) | 1069 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001070](../../tests/fixtures/answer_quality_cases.json#L1070) | 1070 | `"        \"States the page supports only that a battery is included\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000070 إلى SRC-AAA21D04E8-L000253
+- النطاق: SRC-829A979985-L000058 إلى SRC-AAA21D04E8-L000241
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000058](../../tests/test_generation_acceptance_matrix.py#L58) | 58 | `""` | — |
+| [SRC-829A979985-L000059](../../tests/test_generation_acceptance_matrix.py#L59) | 59 | `"@pytest.mark.parametrize("` | — |
+| [SRC-829A979985-L000060](../../tests/test_generation_acceptance_matrix.py#L60) | 60 | `"    \"finish_reason\","` | — |
+| [SRC-829A979985-L000061](../../tests/test_generation_acceptance_matrix.py#L61) | 61 | `"    [\"tool_calls\", \"function_call\", \"error\", \"abort\", \"cancelled\", \"vendor_specific_done\"],"` | — |
+| [SRC-829A979985-L000062](../../tests/test_generation_acceptance_matrix.py#L62) | 62 | `")"` | — |
+| [SRC-829A979985-L000063](../../tests/test_generation_acceptance_matrix.py#L63) | 63 | `"def test_only_normal_stop_is_accepted_as_a_complete_text_answer("` | — |
+| [SRC-829A979985-L000064](../../tests/test_generation_acceptance_matrix.py#L64) | 64 | `"    monkeypatch, finish_reason"` | — |
+| [SRC-829A979985-L000065](../../tests/test_generation_acceptance_matrix.py#L65) | 65 | `"):"` | — |
+| [SRC-829A979985-L000066](../../tests/test_generation_acceptance_matrix.py#L66) | 66 | `"    agent = WebAgent()"` | — |
+| [SRC-829A979985-L000067](../../tests/test_generation_acceptance_matrix.py#L67) | 67 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-829A979985-L000068](../../tests/test_generation_acceptance_matrix.py#L68) | 68 | `"    agent.fallback_model = \"\""` | — |
+| [SRC-829A979985-L000069](../../tests/test_generation_acceptance_matrix.py#L69) | 69 | `"    partial_text = \"نص لا يجب قبوله كإجابة نهائية\""` | — |
 | [SRC-829A979985-L000070](../../tests/test_generation_acceptance_matrix.py#L70) | 70 | `"    monkeypatch.setattr("` | — |
 | [SRC-829A979985-L000071](../../tests/test_generation_acceptance_matrix.py#L71) | 71 | `"        \"agents.web_agent.urllib.request.urlopen\","` | — |
 | [SRC-829A979985-L000072](../../tests/test_generation_acceptance_matrix.py#L72) | 72 | `"        lambda request, timeout: FakeCompletionResponse(partial_text, finish_reason),"` | — |
@@ -813,15 +825,3 @@
 | [SRC-AAA21D04E8-L000239](../../tests/test_generation_capabilities.py#L239) | 239 | `"            status=\"truncated\","` | — |
 | [SRC-AAA21D04E8-L000240](../../tests/test_generation_capabilities.py#L240) | 240 | `"            finish_reason=\"length\","` | — |
 | [SRC-AAA21D04E8-L000241](../../tests/test_generation_capabilities.py#L241) | 241 | `"        )"` | — |
-| [SRC-AAA21D04E8-L000242](../../tests/test_generation_capabilities.py#L242) | 242 | `"        raise RuntimeError(\"اختبار: فشل التوليد بعد انتهاء حد الرموز\")"` | — |
-| [SRC-AAA21D04E8-L000243](../../tests/test_generation_capabilities.py#L243) | 243 | `""` | — |
-| [SRC-AAA21D04E8-L000244](../../tests/test_generation_capabilities.py#L244) | 244 | `"    monkeypatch.setattr(agent, \"_generate\", failed_generate)"` | — |
-| [SRC-AAA21D04E8-L000245](../../tests/test_generation_capabilities.py#L245) | 245 | `""` | — |
-| [SRC-AAA21D04E8-L000246](../../tests/test_generation_capabilities.py#L246) | 246 | `"    result = agent.answer(question)"` | — |
-| [SRC-AAA21D04E8-L000247](../../tests/test_generation_capabilities.py#L247) | 247 | `""` | — |
-| [SRC-AAA21D04E8-L000248](../../tests/test_generation_capabilities.py#L248) | 248 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-AAA21D04E8-L000249](../../tests/test_generation_capabilities.py#L249) | 249 | `"    assert result[\"used_language_model\"] is False"` | — |
-| [SRC-AAA21D04E8-L000250](../../tests/test_generation_capabilities.py#L250) | 250 | `"    assert result[\"final_answer_status\"] == \"generation_failed_with_source_fallback\""` | — |
-| [SRC-AAA21D04E8-L000251](../../tests/test_generation_capabilities.py#L251) | 251 | `"    assert len(result[\"sources\"]) == 2"` | — |
-| [SRC-AAA21D04E8-L000252](../../tests/test_generation_capabilities.py#L252) | 252 | `"    assert \"تعذر توليد إجابة تحليلية\" in result[\"answer\"]"` | — |
-| [SRC-AAA21D04E8-L000253](../../tests/test_generation_capabilities.py#L253) | 253 | `"    assert \"مقتطف تجريبي من المصدر الأول\" in result[\"answer\"]"` | — |

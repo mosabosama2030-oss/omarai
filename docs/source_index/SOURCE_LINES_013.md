@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000169 إلى SRC-E599346ABE-L000968
+- النطاق: SRC-E599346ABE-L000157 إلى SRC-E599346ABE-L000956
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000157](../generate_index.py#L157) | 157 | `"class IndexedSymbol:"` | — |
+| [SRC-E599346ABE-L000158](../generate_index.py#L158) | 158 | `"    \"\"\"Represent a Python definition or module/class assignment.\"\"\""` | — |
+| [SRC-E599346ABE-L000159](../generate_index.py#L159) | 159 | `""` | — |
+| [SRC-E599346ABE-L000160](../generate_index.py#L160) | 160 | `"    file: str"` | — |
+| [SRC-E599346ABE-L000161](../generate_index.py#L161) | 161 | `"    name: str"` | — |
+| [SRC-E599346ABE-L000162](../generate_index.py#L162) | 162 | `"    kind: str"` | — |
+| [SRC-E599346ABE-L000163](../generate_index.py#L163) | 163 | `"    line: int"` | — |
+| [SRC-E599346ABE-L000164](../generate_index.py#L164) | 164 | `"    description: str"` | — |
+| [SRC-E599346ABE-L000165](../generate_index.py#L165) | 165 | `"    documented: bool \| None"` | — |
+| [SRC-E599346ABE-L000166](../generate_index.py#L166) | 166 | `""` | — |
+| [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `""` | — |
+| [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"@dataclass(frozen=True, slots=True)"` | — |
 | [SRC-E599346ABE-L000169](../generate_index.py#L169) | 169 | `"class IndexedFile:"` | — |
 | [SRC-E599346ABE-L000170](../generate_index.py#L170) | 170 | `"    \"\"\"Represent a repository file with stable identifiers and navigation metadata.\"\"\""` | — |
 | [SRC-E599346ABE-L000171](../generate_index.py#L171) | 171 | `""` | — |
@@ -804,15 +816,3 @@
 | [SRC-E599346ABE-L000954](../generate_index.py#L954) | 954 | `"        suffix = path.suffix.lower()"` | — |
 | [SRC-E599346ABE-L000955](../generate_index.py#L955) | 955 | `"        file_name = path.name.lower()"` | — |
 | [SRC-E599346ABE-L000956](../generate_index.py#L956) | 956 | `"        is_example_env = file_name == \".env.example\""` | — |
-| [SRC-E599346ABE-L000957](../generate_index.py#L957) | 957 | `"        if suffix not in TEXT_SCAN_EXTENSIONS and not is_example_env and file_name not in {"` | — |
-| [SRC-E599346ABE-L000958](../generate_index.py#L958) | 958 | `"            \"dockerfile\","` | — |
-| [SRC-E599346ABE-L000959](../generate_index.py#L959) | 959 | `"            \"makefile\","` | — |
-| [SRC-E599346ABE-L000960](../generate_index.py#L960) | 960 | `"            \"procfile\","` | — |
-| [SRC-E599346ABE-L000961](../generate_index.py#L961) | 961 | `"        }:"` | — |
-| [SRC-E599346ABE-L000962](../generate_index.py#L962) | 962 | `"            continue"` | — |
-| [SRC-E599346ABE-L000963](../generate_index.py#L963) | 963 | `""` | — |
-| [SRC-E599346ABE-L000964](../generate_index.py#L964) | 964 | `"        source = _read_text_bounded(path)"` | — |
-| [SRC-E599346ABE-L000965](../generate_index.py#L965) | 965 | `"        if source is None:"` | — |
-| [SRC-E599346ABE-L000966](../generate_index.py#L966) | 966 | `"            continue"` | — |
-| [SRC-E599346ABE-L000967](../generate_index.py#L967) | 967 | `""` | — |
-| [SRC-E599346ABE-L000968](../generate_index.py#L968) | 968 | `"        if suffix in JAVASCRIPT_EXTENSIONS:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C4C6C55E1A-L000053 إلى SRC-E599346ABE-L000168
+- النطاق: SRC-C4C6C55E1A-L000041 إلى SRC-E599346ABE-L000156
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C4C6C55E1A-L000041](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) | 41 | `""` | — |
+| [SRC-C4C6C55E1A-L000042](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L42) | 42 | `"### تغييرات مدمجة ذات صلة"` | — |
+| [SRC-C4C6C55E1A-L000043](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L43) | 43 | `""` | — |
+| [SRC-C4C6C55E1A-L000044](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L44) | 44 | `"\| التغيير \| ما يثبته ضمن النطاق \| ما لا يثبته \|"` | — |
+| [SRC-C4C6C55E1A-L000045](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L45) | 45 | `"\|---\|---\|---\|"` | — |
+| [SRC-C4C6C55E1A-L000046](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L46) | 46 | `"\| [PR #44](https://github.com/mosabosama2030-oss/omarai/pull/44) \| ميزانية موارد تعاونية للطلب وحد process-local للعمليات المكلفة. \| إلغاء قاطع لكل اتصال جارٍ، أو حد موزع بين النسخ، أو سعة إنتاجية. \|"` | — |
+| [SRC-C4C6C55E1A-L000047](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L47) | 47 | `"\| [PR #45](https://github.com/mosabosama2030-oss/omarai/pull/45) \| تصحيح وصف التنفيذ وحدوده. \| عمل مزود حي أو نشر فعلي. \|"` | — |
+| [SRC-C4C6C55E1A-L000048](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L48) | 48 | `"\| [PR #46](https://github.com/mosabosama2030-oss/omarai/pull/46) \| تسوية توثيق ما بعد الدمج. \| تحقق جديد من جميع المخاطر الأمنية. \|"` | — |
+| [SRC-C4C6C55E1A-L000049](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L49) | 49 | `"\| [PR #47](https://github.com/mosabosama2030-oss/omarai/pull/47) \| خفض تقييم بعض الإجابات التي لا تحتوي استشهادات صالحة. \| تحقق دلالي حتمي من أن كل ادعاء مدعوم بمصدره. \|"` | — |
+| [SRC-C4C6C55E1A-L000050](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L50) | 50 | `"\| [PR #48](https://github.com/mosabosama2030-oss/omarai/pull/48) \| دمج حد زمني مطلق وخمول لقراءة جسم طلب API مع اختبارات stalled/slow-trickle والتحقق من طول الجسم. \| لا يثبت مهلة قراءة الرؤوس البطيئة، أو حماية شاملة من كل أنماط Slowloris، أو حدًا قاطعًا لمدة تنفيذ الوكيل كاملة. \|"` | — |
+| [SRC-C4C6C55E1A-L000051](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L51) | 51 | `""` | — |
+| [SRC-C4C6C55E1A-L000052](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L52) | 52 | `"### تغييرات وفحوص مفتوحة أو بديلة"` | — |
 | [SRC-C4C6C55E1A-L000053](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L53) | 53 | `""` | — |
 | [SRC-C4C6C55E1A-L000054](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L54) | 54 | ``"- **PR #49:** أُغلق دون دمج لتجنب تكرار الاختبارات. انتقل المسار أولًا إلى #52 ثم إلى PR #56 المبني على `main` الحالي بعد أن أصبح فرع #52 غير قابل للدمج بسبب انجراف الفرع. لا أثر لـPR #49 أو #52 على `main`."`` | — |
 | [SRC-C4C6C55E1A-L000055](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L55) | 55 | ``"- **PR #50:** أُغلق دون دمج لأنه اعتمد على لقطة أقدم من `main`. اختُبرت النسخة الحالية من أداة SQLite في PR #58 المبني على `main` الحالي، ونجح CI [39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) على HEAD `59027f44388730d34c7bd7164450abdba2f9fd0a`: Ruff، و244 اختبارًا على Python 3.11 و244 على Python 3.12، وبناء الحاوية وفحص API المحمية. **حالة لاحقة:** دُمج PR #58 في `main` عند `58dec8f7f1ef4166ce1c02d56ad2a1f861ae3aa5`. تشغيل CI المذكور دليل تاريخي على رأسه فقط، ولا يثبت الاستعادة على مضيف فعلي."`` | — |
@@ -858,15 +870,3 @@
 | [SRC-E599346ABE-L000154](../generate_index.py#L154) | 154 | `""` | — |
 | [SRC-E599346ABE-L000155](../generate_index.py#L155) | 155 | `""` | — |
 | [SRC-E599346ABE-L000156](../generate_index.py#L156) | 156 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-E599346ABE-L000157](../generate_index.py#L157) | 157 | `"class IndexedSymbol:"` | — |
-| [SRC-E599346ABE-L000158](../generate_index.py#L158) | 158 | `"    \"\"\"Represent a Python definition or module/class assignment.\"\"\""` | — |
-| [SRC-E599346ABE-L000159](../generate_index.py#L159) | 159 | `""` | — |
-| [SRC-E599346ABE-L000160](../generate_index.py#L160) | 160 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000161](../generate_index.py#L161) | 161 | `"    name: str"` | — |
-| [SRC-E599346ABE-L000162](../generate_index.py#L162) | 162 | `"    kind: str"` | — |
-| [SRC-E599346ABE-L000163](../generate_index.py#L163) | 163 | `"    line: int"` | — |
-| [SRC-E599346ABE-L000164](../generate_index.py#L164) | 164 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000165](../generate_index.py#L165) | 165 | `"    documented: bool \| None"` | — |
-| [SRC-E599346ABE-L000166](../generate_index.py#L166) | 166 | `""` | — |
-| [SRC-E599346ABE-L000167](../generate_index.py#L167) | 167 | `""` | — |
-| [SRC-E599346ABE-L000168](../generate_index.py#L168) | 168 | `"@dataclass(frozen=True, slots=True)"` | — |
