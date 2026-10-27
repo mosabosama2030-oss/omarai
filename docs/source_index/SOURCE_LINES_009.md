@@ -81,8 +81,8 @@
 | [SRC-1AE03B9EC3-L004113](../../agents/web_agent.py#L4113) | 4113 | `"                    query for query in criterion_queries"` | — |
 | [SRC-1AE03B9EC3-L004114](../../agents/web_agent.py#L4114) | 4114 | `"                    if query and _relevance_query_tokens(query)"` | — |
 | [SRC-1AE03B9EC3-L004115](../../agents/web_agent.py#L4115) | 4115 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004116](../../agents/web_agent.py#L4116) | 4116 | `"                # Keep the subject plus one planner query, then criterion-specific"` | — |
-| [SRC-1AE03B9EC3-L004117](../../agents/web_agent.py#L4117) | 4117 | `"                # queries, and only then generic exploration queries."` | — |
+| [SRC-1AE03B9EC3-L004116](../../agents/web_agent.py#L4116) | 4116 | `"                # Criterion queries include the subject and take priority; retain a"` | — |
+| [SRC-1AE03B9EC3-L004117](../../agents/web_agent.py#L4117) | 4117 | `"                # planner query and generic exploration only when budget remains."` | — |
 | [SRC-1AE03B9EC3-L004118](../../agents/web_agent.py#L4118) | 4118 | `"                original_queries = ["` | — |
 | [SRC-1AE03B9EC3-L004119](../../agents/web_agent.py#L4119) | 4119 | `"                    query for query in (plan.get(\"queries\") or [])"` | — |
 | [SRC-1AE03B9EC3-L004120](../../agents/web_agent.py#L4120) | 4120 | `"                    if isinstance(query, str) and query.strip()"` | — |
