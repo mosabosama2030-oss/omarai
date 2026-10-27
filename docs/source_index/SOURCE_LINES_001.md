@@ -628,7 +628,7 @@
 | [SRC-138992B1FC-L000053](../../agents/answer_validation.py#L53) | 53 | `"    if not tokens:"` | — |
 | [SRC-138992B1FC-L000054](../../agents/answer_validation.py#L54) | 54 | `"        tokens = _tokens(value)"` | — |
 | [SRC-138992B1FC-L000055](../../agents/answer_validation.py#L55) | 55 | `"    return ["` | — |
-| [SRC-138992B1FC-L000056](../../agents/answer_validation.py#L56) | 56 | `"        token[2:] if re.fullmatch(r\"[\\\\u0621-\\\\u064A]+\", token) and token.startswith(\"ال\") and len(token) > 4"` | — |
+| [SRC-138992B1FC-L000056](../../agents/answer_validation.py#L56) | 56 | `"        token[2:] if token.startswith(\"ال\") and len(token) > 4 and all(\"ء\" <= char <= \"ي\" for char in token)"` | — |
 | [SRC-138992B1FC-L000057](../../agents/answer_validation.py#L57) | 57 | `"        else token"` | — |
 | [SRC-138992B1FC-L000058](../../agents/answer_validation.py#L58) | 58 | `"        for token in tokens"` | — |
 | [SRC-138992B1FC-L000059](../../agents/answer_validation.py#L59) | 59 | `"    ]"` | — |
