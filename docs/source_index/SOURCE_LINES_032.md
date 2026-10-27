@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000472 إلى SRC-F725E90B2A-L001271
+- النطاق: SRC-F725E90B2A-L000471 إلى SRC-F725E90B2A-L001270
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000471](../../tests/test_web_agent.py#L471) | 471 | `"            return {"` | — |
 | [SRC-F725E90B2A-L000472](../../tests/test_web_agent.py#L472) | 472 | `"                \"data\": [{"` | — |
 | [SRC-F725E90B2A-L000473](../../tests/test_web_agent.py#L473) | 473 | `"                    \"id\": \"1840000000000000000\","` | — |
 | [SRC-F725E90B2A-L000474](../../tests/test_web_agent.py#L474) | 474 | `"                    \"text\": \"تجربة علنية لاستهلاك سيارة كهربائية\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001268](../../tests/test_web_agent.py#L1268) | 1268 | `"        return sources, [], {"` | — |
 | [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"            \"queries_planned\": 1,"` | — |
 | [SRC-F725E90B2A-L001270](../../tests/test_web_agent.py#L1270) | 1270 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": len(sources)}],"` | — |
