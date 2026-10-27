@@ -4992,7 +4992,13 @@ class WebAgent:
             if source_gap_targets:
                 criterion_gap_research["targets"] = source_gap_targets
                 budget = getattr(self, "_request_budget", None)
-                if budget is None:
+                if not plan.get("coverage_gap_repair_slot_reserved"):
+                    criterion_gap_research["status"] = "skipped_no_reserved_search_slot"
+                    coverage_repair_warning = (
+                        "رُصدت محاور بلا إشارة لفظية في المصادر، لكن لم تُحجز ميزانية "
+                        "استعلام إضافي لهذه المهمة؛ لذلك ستظل المحاور غير المحسومة ظاهرة."
+                    )
+                elif budget is None:
                     criterion_gap_research["status"] = "skipped_no_request_budget"
                 elif budget.remaining_units("search_queries") < 1:
                     criterion_gap_research["status"] = "skipped_search_budget_exhausted"
@@ -5072,15 +5078,19 @@ class WebAgent:
                                 continue
                             existing_source = sources[existing_index]
                             merged = dict(existing_source)
+                            source_enriched = False
                             for text_key in ("title", "snippet", "page_text"):
                                 old_text = str(merged.get(text_key) or "")
                                 new_text = str(candidate.get(text_key) or "")
                                 if len(new_text) > len(old_text):
                                     merged[text_key] = candidate[text_key]
-                                    evidence_updated = True
+                                    source_enriched = True
                             if candidate.get("page_fetched") and not existing_source.get("page_fetched"):
                                 merged["page_fetched"] = True
+                                source_enriched = True
+                            if source_enriched:
                                 evidence_updated = True
+                                criterion_gap_research["evidence_sources_enriched"] += 1
                             merged["providers"] = list(dict.fromkeys(
                                 list(existing_source.get("providers", []))
                                 + list(candidate.get("providers", []))
@@ -5091,8 +5101,6 @@ class WebAgent:
                                 + [gap_query]
                             ))
                             sources[existing_index] = merged
-                            if evidence_updated:
-                                criterion_gap_research["evidence_sources_enriched"] += 1
                         criterion_gap_research["source_count_after"] = len(sources)
                         plan["queries"] = list(dict.fromkeys(
                             list(plan.get("queries", [])) + [gap_query]
