@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 
 from agents.research import compact_search_query
+from agents.request_budget import RequestBudgetExceeded
 from agents.web_agent import (
     WebAgent,
     _normalize_search_query,
@@ -306,6 +307,82 @@ def test_research_collection_fuses_multiple_queries_and_reports_provenance(monke
     assert report["pages_fetched"] == 3
     assert "ddg" in report["providers_used"]
     assert "bing" in report["providers_used"]
+
+
+def test_research_collection_preserves_results_when_query_budget_is_exhausted(monkeypatch):
+    """A budget-limited query must not erase evidence returned by other queries."""
+    agent = WebAgent()
+
+    def search(query):
+        if query == "query over budget":
+            raise RequestBudgetExceeded("تم بلوغ حد موارد الطلب: search_queries.")
+        return [
+            {
+                **sample_source(0),
+                "provider": "test_provider",
+                "provider_rank": 1,
+                "search_query": query,
+                "queries": [query],
+            },
+            {
+                **sample_source(1),
+                "provider": "test_provider",
+                "provider_rank": 2,
+                "search_query": query,
+                "queries": [query],
+            },
+        ]
+
+    monkeypatch.setattr(agent, "_search_web", search)
+    monkeypatch.setattr(
+        agent, "_fetch_page", lambda url: ("Read title", "Extracted public page text")
+    )
+    sources, warnings, report = agent._collect_research({
+        "queries": ["query over budget", "query success"],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "planning_method": "test",
+    })
+
+    assert len(sources) == 2
+    assert report["pages_fetched"] == 2
+    assert report["queries_planned"] == 2
+    assert any("search_queries" in warning for warning in warnings)
+
+
+def test_deep_expansion_budget_error_keeps_initial_evidence(monkeypatch):
+    """A failed deep-search expansion must leave its already collected source usable."""
+    agent = WebAgent()
+
+    def search(query):
+        if query == "deep topic":
+            return [{
+                **sample_source(0),
+                "provider": "test_provider",
+                "provider_rank": 1,
+                "search_query": query,
+                "queries": [query],
+            }]
+        raise RequestBudgetExceeded("تم بلوغ حد موارد الطلب: search_queries.")
+
+    monkeypatch.setattr(agent, "_search_web", search)
+    monkeypatch.setattr(
+        agent, "_fetch_page", lambda url: ("Read title", "Extracted public page text")
+    )
+    sources, warnings, report = agent._collect_research({
+        "queries": ["deep topic"],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "deep",
+        "planning_method": "test",
+    })
+
+    assert len(sources) == 1
+    assert sources[0]["page_fetched"] is True
+    assert report["pages_fetched"] == 1
+    assert report["expansion_queries"]
+    assert any("search_queries" in warning for warning in warnings)
 
 
 
