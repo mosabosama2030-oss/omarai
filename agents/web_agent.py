@@ -2398,9 +2398,9 @@ class WebAgent:
         if isinstance(requirement_queries, list) and requirement_queries:
             globally_fused = sources
             globally_fused_by_url = {
-                _normalized_source_url_key(item.get("url", "")): item
+                self._normalized_source_url_key(item.get("url", "")): item
                 for item in globally_fused
-                if _normalized_source_url_key(item.get("url", ""))
+                if self._normalized_source_url_key(item.get("url", ""))
             }
             pinned_by_url: dict[str, dict[str, Any]] = {}
             pinned_sources: list[dict[str, Any]] = []
@@ -2446,7 +2446,7 @@ class WebAgent:
                     )
                 if not candidate:
                     continue
-                source_key = _normalized_source_url_key(candidate.get("url", ""))
+                source_key = self._normalized_source_url_key(candidate.get("url", ""))
                 if not source_key:
                     continue
                 selected = (
@@ -2465,7 +2465,7 @@ class WebAgent:
                 pinned_sources
                 + [
                     item for item in globally_fused
-                    if _normalized_source_url_key(item.get("url", "")) not in pinned_keys
+                    if self._normalized_source_url_key(item.get("url", "")) not in pinned_keys
                 ]
             )[:MAX_SEARCH_RESULTS]
 
