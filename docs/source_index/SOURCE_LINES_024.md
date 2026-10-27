@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001260 إلى SRC-1C77C97630-L000176
+- النطاق: SRC-90FAA34ADE-L001259 إلى SRC-1C77C97630-L000175
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001259](../../tests/fixtures/answer_quality_cases.json#L1259) | 1259 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L001260](../../tests/fixtures/answer_quality_cases.json#L1260) | 1260 | `"          {"` | — |
 | [SRC-90FAA34ADE-L001261](../../tests/fixtures/answer_quality_cases.json#L1261) | 1261 | `"            \"title\": \"Service registration guide\","` | — |
 | [SRC-90FAA34ADE-L001262](../../tests/fixtures/answer_quality_cases.json#L1262) | 1262 | `"            \"url\": \"https://service.example.test/register-2020\","` | — |
@@ -851,4 +852,3 @@
 | [SRC-1C77C97630-L000173](../../tests/test_answer_validation.py#L173) | 173 | `""` | — |
 | [SRC-1C77C97630-L000174](../../tests/test_answer_validation.py#L174) | 174 | `"    def fake_completion(messages, **kwargs):"` | — |
 | [SRC-1C77C97630-L000175](../../tests/test_answer_validation.py#L175) | 175 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-1C77C97630-L000176](../../tests/test_answer_validation.py#L176) | 176 | `"        return \"<<<OMARAI_COVERAGE_REPAIR>>>تم توضيح السعر والمساحة [المصدر 1].<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |

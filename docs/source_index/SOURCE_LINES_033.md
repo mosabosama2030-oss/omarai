@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001630 إلى SRC-F725E90B2A-L002429
+- النطاق: SRC-F725E90B2A-L001629 إلى SRC-F725E90B2A-L002428
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001629](../../tests/test_web_agent.py#L1629) | 1629 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001630](../../tests/test_web_agent.py#L1630) | 1630 | `"        agent, \"_plan_search\","` | — |
 | [SRC-F725E90B2A-L001631](../../tests/test_web_agent.py#L1631) | 1631 | `"        lambda question, history: {"` | — |
 | [SRC-F725E90B2A-L001632](../../tests/test_web_agent.py#L1632) | 1632 | `"            \"queries\": [f\"query {i}\" for i in range(8)],"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002426](../../tests/test_web_agent.py#L2426) | 2426 | `"    other_agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L002427](../../tests/test_web_agent.py#L2427) | 2427 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
 | [SRC-F725E90B2A-L002428](../../tests/test_web_agent.py#L2428) | 2428 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
-| [SRC-F725E90B2A-L002429](../../tests/test_web_agent.py#L2429) | 2429 | `"    assert other_agent._reserve_deepseek_search_request() is False"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000830 إلى SRC-F725E90B2A-L001629
+- النطاق: SRC-F725E90B2A-L000829 إلى SRC-F725E90B2A-L001628
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000829](../../tests/test_web_agent.py#L829) | 829 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
 | [SRC-F725E90B2A-L000830](../../tests/test_web_agent.py#L830) | 830 | `"            model=\"broken/primary\","` | — |
 | [SRC-F725E90B2A-L000831](../../tests/test_web_agent.py#L831) | 831 | `"        )"` | — |
 | [SRC-F725E90B2A-L000832](../../tests/test_web_agent.py#L832) | 832 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001626](../../tests/test_web_agent.py#L1626) | 1626 | `"            \"platform\": \"web\","` | — |
 | [SRC-F725E90B2A-L001627](../../tests/test_web_agent.py#L1627) | 1627 | `"        })"` | — |
 | [SRC-F725E90B2A-L001628](../../tests/test_web_agent.py#L1628) | 1628 | `""` | — |
-| [SRC-F725E90B2A-L001629](../../tests/test_web_agent.py#L1629) | 1629 | `"    monkeypatch.setattr("` | — |

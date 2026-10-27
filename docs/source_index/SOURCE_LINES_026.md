@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000668 إلى SRC-6BCB799CEC-L000272
+- النطاق: SRC-3451CC474D-L000667 إلى SRC-6BCB799CEC-L000271
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000667](../../tests/test_api.py#L667) | 667 | `"        headers={"` | — |
 | [SRC-3451CC474D-L000668](../../tests/test_api.py#L668) | 668 | `"            \"Origin\": \"https://attacker.example\","` | — |
 | [SRC-3451CC474D-L000669](../../tests/test_api.py#L669) | 669 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
 | [SRC-3451CC474D-L000670](../../tests/test_api.py#L670) | 670 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
@@ -842,4 +843,3 @@
 | [SRC-6BCB799CEC-L000269](../../tests/test_evidence_provenance.py#L269) | 269 | `"        def stream(self, method, url, **kwargs):"` | — |
 | [SRC-6BCB799CEC-L000270](../../tests/test_evidence_provenance.py#L270) | 270 | `"            connections.append(url)"` | — |
 | [SRC-6BCB799CEC-L000271](../../tests/test_evidence_provenance.py#L271) | 271 | `"            return FakeResponse()"` | — |
-| [SRC-6BCB799CEC-L000272](../../tests/test_evidence_provenance.py#L272) | 272 | `""` | — |

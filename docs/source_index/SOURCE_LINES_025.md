@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000177 إلى SRC-3451CC474D-L000667
+- النطاق: SRC-1C77C97630-L000176 إلى SRC-3451CC474D-L000666
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000176](../../tests/test_answer_validation.py#L176) | 176 | `"        return \"<<<OMARAI_COVERAGE_REPAIR>>>تم توضيح السعر والمساحة [المصدر 1].<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
 | [SRC-1C77C97630-L000177](../../tests/test_answer_validation.py#L177) | 177 | `""` | — |
 | [SRC-1C77C97630-L000178](../../tests/test_answer_validation.py#L178) | 178 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
 | [SRC-1C77C97630-L000179](../../tests/test_answer_validation.py#L179) | 179 | `"    repaired = agent._repair_answer_coverage("` | — |
@@ -824,4 +825,3 @@
 | [SRC-3451CC474D-L000664](../../tests/test_api.py#L664) | 664 | `"    request = Request("` | — |
 | [SRC-3451CC474D-L000665](../../tests/test_api.py#L665) | 665 | `"        local_api + \"/api/agent\","` | — |
 | [SRC-3451CC474D-L000666](../../tests/test_api.py#L666) | 666 | `"        method=\"OPTIONS\","` | — |
-| [SRC-3451CC474D-L000667](../../tests/test_api.py#L667) | 667 | `"        headers={"` | — |

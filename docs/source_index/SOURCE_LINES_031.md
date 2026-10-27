@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000030 إلى SRC-F725E90B2A-L000829
+- النطاق: SRC-F725E90B2A-L000029 إلى SRC-F725E90B2A-L000828
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000029](../../tests/test_web_agent.py#L29) | 29 | `"        \"source_class\": \"general\","` | — |
 | [SRC-F725E90B2A-L000030](../../tests/test_web_agent.py#L30) | 30 | `"        \"platform\": \"web\","` | — |
 | [SRC-F725E90B2A-L000031](../../tests/test_web_agent.py#L31) | 31 | `"    }"` | — |
 | [SRC-F725E90B2A-L000032](../../tests/test_web_agent.py#L32) | 32 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L000826](../../tests/test_web_agent.py#L826) | 826 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
 | [SRC-F725E90B2A-L000827](../../tests/test_web_agent.py#L827) | 827 | `"    with pytest.raises(RuntimeError, match=\"مبتورة\"):"` | — |
 | [SRC-F725E90B2A-L000828](../../tests/test_web_agent.py#L828) | 828 | `"        agent._request_completion("` | — |
-| [SRC-F725E90B2A-L000829](../../tests/test_web_agent.py#L829) | 829 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
