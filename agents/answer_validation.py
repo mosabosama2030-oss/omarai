@@ -53,7 +53,7 @@ def _criterion_tokens(value: Any) -> list[str]:
     if not tokens:
         tokens = _tokens(value)
     return [
-        token[2:] if re.fullmatch(r"[\\u0621-\\u064A]+", token) and token.startswith("ال") and len(token) > 4
+        token[2:] if token.startswith("ال") and len(token) > 4 and all("ء" <= char <= "ي" for char in token)
         else token
         for token in tokens
     ]
