@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **036**
-- سجلات الأسطر: **185**
-- النطاق: SRC-DE7EABE998-L000259 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **204**
+- النطاق: SRC-DE7EABE998-L000240 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000240](../../web/agent.html#L240) | 240 | `"  : researchErrorOutcome"` | — |
+| [SRC-DE7EABE998-L000241](../../web/agent.html#L241) | 241 | `"   ? \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا.\""` | — |
+| [SRC-DE7EABE998-L000242](../../web/agent.html#L242) | 242 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
+| [SRC-DE7EABE998-L000243](../../web/agent.html#L243) | 243 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
+| [SRC-DE7EABE998-L000244](../../web/agent.html#L244) | 244 | `" const attemptText=result&&result.search_attempted===true"` | — |
+| [SRC-DE7EABE998-L000245](../../web/agent.html#L245) | 245 | `"  ? (r.search_outcome===\"attempted_research_error\""` | — |
+| [SRC-DE7EABE998-L000246](../../web/agent.html#L246) | 246 | `"     ? \"بدأت محاولة البحث، لكن تعطل مسار تجميع الأدلة قبل اكتمال التقرير؛ لم يمكن تحديد عدد المصادر القابلة للاستخدام.\""` | — |
+| [SRC-DE7EABE998-L000247](../../web/agent.html#L247) | 247 | `"     : \"تمت محاولة البحث في الويب. عدد المصادر القابلة للاستخدام بعد التصفية: \"+(usableSourceCount??\"غير محدد\")+\".\")"` | — |
+| [SRC-DE7EABE998-L000248](../../web/agent.html#L248) | 248 | `"  : result&&result.search_attempted===false"` | — |
+| [SRC-DE7EABE998-L000249](../../web/agent.html#L249) | 249 | `"   ? \"لم تُنفّذ محاولة بحث ويب في هذه الجولة.\""` | — |
+| [SRC-DE7EABE998-L000250](../../web/agent.html#L250) | 250 | `"   : r.search_outcome===\"unknown_after_research_error\""` | — |
+| [SRC-DE7EABE998-L000251](../../web/agent.html#L251) | 251 | `"    ? \"تعطل مسار البحث، ولم يمكن تأكيد ما إذا كانت محاولة البحث قد بدأت أو كم مصدرًا كان قابلًا للاستخدام.\""` | — |
+| [SRC-DE7EABE998-L000252](../../web/agent.html#L252) | 252 | `"    : \"حالة محاولة البحث غير موضحة في الاستجابة.\";"` | — |
+| [SRC-DE7EABE998-L000253](../../web/agent.html#L253) | 253 | `" const qualityText='تصنيف جودة البحث يصف تغطية العملية والأدلة المتاحة، ولا يمثل احتمال صحة الوقائع.';"` | — |
+| [SRC-DE7EABE998-L000254](../../web/agent.html#L254) | 254 | `" const reviewText=r.claim_audit_semantics==='model_assisted_not_independent_fact_check'?'مراجعة الادعاءات تمت بمساعدة نموذج لغوي؛ وهي ليست تحققًا مستقلًا من صحة الحقائق.':'لم يثبت إجراء تحقق مستقل من صحة الحقائق.';"` | — |
+| [SRC-DE7EABE998-L000255](../../web/agent.html#L255) | 255 | `" const diversityText='اختلاف النطاقات المسجلة لا يثبت الاستقلال التحريري؛ فقد تنقل المواقع عن مصدر أصلي واحد.';"` | — |
+| [SRC-DE7EABE998-L000256](../../web/agent.html#L256) | 256 | `" const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class=\"report-note\">'+escapeHtml(n)+'</p>').join(\"\");"` | — |
+| [SRC-DE7EABE998-L000257](../../web/agent.html#L257) | 257 | `" const review=r.second_pass_review===\"model_claim_audit_completed\"?\"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)\":r.second_pass_review===\"model_claim_audit_completed_before_coverage_repair\"?\"تمت مراجعة المسودة قبل تعديل التغطية؛ النسخة المعدلة لم تخضع لمراجعة ثانية\":r.second_pass_review===\"model_claim_audit_unavailable\"?\"تعذرت مراجعة الادعاءات بمساعدة النموذج\":\"\";"` | — |
+| [SRC-DE7EABE998-L000258](../../web/agent.html#L258) | 258 | `" return '<div class=\"report-head\"><b>ملخص الأدلة وتغطية البحث</b><span class=\"coverage\">'+escapeHtml(scoreLabel)+'</span></div><div class=\"metrics\">'+metricHtml+'</div>'+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class=\"providers\">'+providerHtml+'</div>':\"\")+(review?'<p class=\"report-note\">'+escapeHtml(review)+'</p>':\"\")+details;"` | — |
 | [SRC-DE7EABE998-L000259](../../web/agent.html#L259) | 259 | `"}"` | — |
 | [SRC-DE7EABE998-L000260](../../web/agent.html#L260) | 260 | `"function addMessage(role,text,result,options={}){"` | — |
 | [SRC-DE7EABE998-L000261](../../web/agent.html#L261) | 261 | `" const welcome=$(\"welcome\");if(welcome)welcome.remove();"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000997 إلى SRC-B3062EB677-L000144
+- النطاق: SRC-90FAA34ADE-L000978 إلى SRC-B3062EB677-L000125
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000978](../../tests/fixtures/answer_quality_cases.json#L978) | 978 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000979](../../tests/fixtures/answer_quality_cases.json#L979) | 979 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000980](../../tests/fixtures/answer_quality_cases.json#L980) | 980 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000981](../../tests/fixtures/answer_quality_cases.json#L981) | 981 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000982](../../tests/fixtures/answer_quality_cases.json#L982) | 982 | `"      \"case_id\": \"AQ-034\","` | — |
+| [SRC-90FAA34ADE-L000983](../../tests/fixtures/answer_quality_cases.json#L983) | 983 | `"      \"category\": \"stale_sources_for_current\","` | — |
+| [SRC-90FAA34ADE-L000984](../../tests/fixtures/answer_quality_cases.json#L984) | 984 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L000985](../../tests/fixtures/answer_quality_cases.json#L985) | 985 | `"      \"question\": \"What are the current 2026 visa requirements? The only provided page is dated 2021.\","` | — |
+| [SRC-90FAA34ADE-L000986](../../tests/fixtures/answer_quality_cases.json#L986) | 986 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000987](../../tests/fixtures/answer_quality_cases.json#L987) | 987 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000988](../../tests/fixtures/answer_quality_cases.json#L988) | 988 | `"        \"Flags the five-year-old page as potentially stale\","` | — |
+| [SRC-90FAA34ADE-L000989](../../tests/fixtures/answer_quality_cases.json#L989) | 989 | `"        \"Seeks current official guidance or states it cannot verify present rules\","` | — |
+| [SRC-90FAA34ADE-L000990](../../tests/fixtures/answer_quality_cases.json#L990) | 990 | `"        \"Does not provide old requirements as current facts\""` | — |
+| [SRC-90FAA34ADE-L000991](../../tests/fixtures/answer_quality_cases.json#L991) | 991 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000992](../../tests/fixtures/answer_quality_cases.json#L992) | 992 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000993](../../tests/fixtures/answer_quality_cases.json#L993) | 993 | `"        \"Presents 2021 rules as current without qualification\","` | — |
+| [SRC-90FAA34ADE-L000994](../../tests/fixtures/answer_quality_cases.json#L994) | 994 | `"        \"Invents a newer official source\""` | — |
+| [SRC-90FAA34ADE-L000995](../../tests/fixtures/answer_quality_cases.json#L995) | 995 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000996](../../tests/fixtures/answer_quality_cases.json#L996) | 996 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000997](../../tests/fixtures/answer_quality_cases.json#L997) | 997 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000998](../../tests/fixtures/answer_quality_cases.json#L998) | 998 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000999](../../tests/fixtures/answer_quality_cases.json#L999) | 999 | `"          {"` | — |
@@ -824,22 +843,3 @@
 | [SRC-B3062EB677-L000123](../../tests/test_answer_quality_runner.py#L123) | 123 | `"            \"--limit\","` | — |
 | [SRC-B3062EB677-L000124](../../tests/test_answer_quality_runner.py#L124) | 124 | `"            \"1\","` | — |
 | [SRC-B3062EB677-L000125](../../tests/test_answer_quality_runner.py#L125) | 125 | `"            \"--out\","` | — |
-| [SRC-B3062EB677-L000126](../../tests/test_answer_quality_runner.py#L126) | 126 | `"            str(out),"` | — |
-| [SRC-B3062EB677-L000127](../../tests/test_answer_quality_runner.py#L127) | 127 | `"        ]"` | — |
-| [SRC-B3062EB677-L000128](../../tests/test_answer_quality_runner.py#L128) | 128 | `"    )"` | — |
-| [SRC-B3062EB677-L000129](../../tests/test_answer_quality_runner.py#L129) | 129 | `"    assert rc == 0"` | — |
-| [SRC-B3062EB677-L000130](../../tests/test_answer_quality_runner.py#L130) | 130 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-B3062EB677-L000131](../../tests/test_answer_quality_runner.py#L131) | 131 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
-| [SRC-B3062EB677-L000132](../../tests/test_answer_quality_runner.py#L132) | 132 | `"    assert payload[\"results\"][0][\"evidence_fixture_injected\"] is False"` | — |
-| [SRC-B3062EB677-L000133](../../tests/test_answer_quality_runner.py#L133) | 133 | `"    assert payload[\"results\"][0][\"transport_ok\"] is True"` | — |
-| [SRC-B3062EB677-L000134](../../tests/test_answer_quality_runner.py#L134) | 134 | `""` | — |
-| [SRC-B3062EB677-L000135](../../tests/test_answer_quality_runner.py#L135) | 135 | `""` | — |
-| [SRC-B3062EB677-L000136](../../tests/test_answer_quality_runner.py#L136) | 136 | `"def test_validate_base_url_rejects_non_loopback_http():"` | — |
-| [SRC-B3062EB677-L000137](../../tests/test_answer_quality_runner.py#L137) | 137 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000138](../../tests/test_answer_quality_runner.py#L138) | 138 | `"    with pytest.raises(ValueError, match=\"Plain HTTP\"):"` | — |
-| [SRC-B3062EB677-L000139](../../tests/test_answer_quality_runner.py#L139) | 139 | `"        mod.validate_base_url(\"http://research.example\")"` | — |
-| [SRC-B3062EB677-L000140](../../tests/test_answer_quality_runner.py#L140) | 140 | `""` | — |
-| [SRC-B3062EB677-L000141](../../tests/test_answer_quality_runner.py#L141) | 141 | `""` | — |
-| [SRC-B3062EB677-L000142](../../tests/test_answer_quality_runner.py#L142) | 142 | `"@pytest.mark.parametrize("` | — |
-| [SRC-B3062EB677-L000143](../../tests/test_answer_quality_runner.py#L143) | 143 | `"    \"url\","` | — |
-| [SRC-B3062EB677-L000144](../../tests/test_answer_quality_runner.py#L144) | 144 | `"    ["` | — |

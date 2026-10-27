@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000503 إلى SRC-F725E90B2A-L001302
+- النطاق: SRC-F725E90B2A-L000484 إلى SRC-F725E90B2A-L001283
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000484](../../tests/test_web_agent.py#L484) | 484 | `""` | — |
+| [SRC-F725E90B2A-L000485](../../tests/test_web_agent.py#L485) | 485 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000486](../../tests/test_web_agent.py#L486) | 486 | `"        calls.append((url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000487](../../tests/test_web_agent.py#L487) | 487 | `"        return FakeResponse()"` | — |
+| [SRC-F725E90B2A-L000488](../../tests/test_web_agent.py#L488) | 488 | `""` | — |
+| [SRC-F725E90B2A-L000489](../../tests/test_web_agent.py#L489) | 489 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000490](../../tests/test_web_agent.py#L490) | 490 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000491](../../tests/test_web_agent.py#L491) | 491 | `"        \"سيارة كهربائية\", [\"x\"]"` | — |
+| [SRC-F725E90B2A-L000492](../../tests/test_web_agent.py#L492) | 492 | `"    )"` | — |
+| [SRC-F725E90B2A-L000493](../../tests/test_web_agent.py#L493) | 493 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000494](../../tests/test_web_agent.py#L494) | 494 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000495](../../tests/test_web_agent.py#L495) | 495 | `"    assert results[0][\"provider\"] == \"x_official_api\""` | — |
+| [SRC-F725E90B2A-L000496](../../tests/test_web_agent.py#L496) | 496 | `"    assert results[0][\"url\"] == \"https://x.com/driver/status/1840000000000000000\""` | — |
+| [SRC-F725E90B2A-L000497](../../tests/test_web_agent.py#L497) | 497 | `"    assert calls[0][1][\"headers\"][\"Authorization\"] == \"Bearer test-token\""` | — |
+| [SRC-F725E90B2A-L000498](../../tests/test_web_agent.py#L498) | 498 | `""` | — |
+| [SRC-F725E90B2A-L000499](../../tests/test_web_agent.py#L499) | 499 | `""` | — |
+| [SRC-F725E90B2A-L000500](../../tests/test_web_agent.py#L500) | 500 | `""` | — |
+| [SRC-F725E90B2A-L000501](../../tests/test_web_agent.py#L501) | 501 | `"def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000502](../../tests/test_web_agent.py#L502) | 502 | `"    import httpx"` | — |
 | [SRC-F725E90B2A-L000503](../../tests/test_web_agent.py#L503) | 503 | `""` | — |
 | [SRC-F725E90B2A-L000504](../../tests/test_web_agent.py#L504) | 504 | `"    monkeypatch.setenv(\"INSTAGRAM_USER_ID\", \"ig-user-123\")"` | — |
 | [SRC-F725E90B2A-L000505](../../tests/test_web_agent.py#L505) | 505 | `"    monkeypatch.setenv(\"INSTAGRAM_ACCESS_TOKEN\", \"test-ig-token\")"` | — |
@@ -797,22 +816,3 @@
 | [SRC-F725E90B2A-L001281](../../tests/test_web_agent.py#L1281) | 1281 | `""` | — |
 | [SRC-F725E90B2A-L001282](../../tests/test_web_agent.py#L1282) | 1282 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
 | [SRC-F725E90B2A-L001283](../../tests/test_web_agent.py#L1283) | 1283 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L001284](../../tests/test_web_agent.py#L1284) | 1284 | `""` | — |
-| [SRC-F725E90B2A-L001285](../../tests/test_web_agent.py#L1285) | 1285 | `"    def capture_source_match_query(query, source):"` | — |
-| [SRC-F725E90B2A-L001286](../../tests/test_web_agent.py#L1286) | 1286 | `"        matched_queries.append(query)"` | — |
-| [SRC-F725E90B2A-L001287](../../tests/test_web_agent.py#L1287) | 1287 | `"        return True"` | — |
-| [SRC-F725E90B2A-L001288](../../tests/test_web_agent.py#L1288) | 1288 | `""` | — |
-| [SRC-F725E90B2A-L001289](../../tests/test_web_agent.py#L1289) | 1289 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", capture_source_match_query)"` | — |
-| [SRC-F725E90B2A-L001290](../../tests/test_web_agent.py#L1290) | 1290 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001291](../../tests/test_web_agent.py#L1291) | 1291 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001292](../../tests/test_web_agent.py#L1292) | 1292 | `"        lambda *args, **kwargs: \"توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].\","` | — |
-| [SRC-F725E90B2A-L001293](../../tests/test_web_agent.py#L1293) | 1293 | `"    )"` | — |
-| [SRC-F725E90B2A-L001294](../../tests/test_web_agent.py#L1294) | 1294 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L001295](../../tests/test_web_agent.py#L1295) | 1295 | `""` | — |
-| [SRC-F725E90B2A-L001296](../../tests/test_web_agent.py#L1296) | 1296 | `"    result = agent.answer(question)"` | — |
-| [SRC-F725E90B2A-L001297](../../tests/test_web_agent.py#L1297) | 1297 | `""` | — |
-| [SRC-F725E90B2A-L001298](../../tests/test_web_agent.py#L1298) | 1298 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L001299](../../tests/test_web_agent.py#L1299) | 1299 | `"    assert question not in matched_queries"` | — |
-| [SRC-F725E90B2A-L001300](../../tests/test_web_agent.py#L1300) | 1300 | `"    assert compact_search_query(question) in matched_queries"` | — |
-| [SRC-F725E90B2A-L001301](../../tests/test_web_agent.py#L1301) | 1301 | `"    assert len(calls[1][\"queries\"]) == 1"` | — |
-| [SRC-F725E90B2A-L001302](../../tests/test_web_agent.py#L1302) | 1302 | `"    assert calls[1][\"depth\"] == \"standard\""` | — |
