@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001605 إلى SRC-1AE03B9EC3-L002404
+- النطاق: SRC-1AE03B9EC3-L001607 إلى SRC-1AE03B9EC3-L002406
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001605](../../agents/web_agent.py#L1605) | 1605 | `"            # Filtering again in this adapter mislabels a valid feed as no results."` | — |
-| [SRC-1AE03B9EC3-L001606](../../agents/web_agent.py#L1606) | 1606 | `"            source_node = next("` | — |
 | [SRC-1AE03B9EC3-L001607](../../agents/web_agent.py#L1607) | 1607 | `"                (child for child in item if child.tag.rsplit(\"}\", 1)[-1] == \"source\"),"` | — |
 | [SRC-1AE03B9EC3-L001608](../../agents/web_agent.py#L1608) | 1608 | `"                None,"` | — |
 | [SRC-1AE03B9EC3-L001609](../../agents/web_agent.py#L1609) | 1609 | `"            )"` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"                    \"x\": bool(os.getenv(\"X_BEARER_TOKEN\", \"\").strip()),"` | — |
 | [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"                    \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
 | [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"                platforms.extend("` | — |
+| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"                    name for name, ready in optional_connectors.items()"` | — |

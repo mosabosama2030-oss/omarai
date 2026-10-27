@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004805 إلى SRC-EEF2E6447C-L000407
+- النطاق: SRC-1AE03B9EC3-L004807 إلى SRC-EEF2E6447C-L000409
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L004805](../../agents/web_agent.py#L4805) | 4805 | `"                \"kind\": \"insufficient_evidence\","` | — |
-| [SRC-1AE03B9EC3-L004806](../../agents/web_agent.py#L4806) | 4806 | `"                \"final_answer_status\": \"insufficient_evidence_no_generation\","` | — |
 | [SRC-1AE03B9EC3-L004807](../../agents/web_agent.py#L4807) | 4807 | `"                \"intent_route\": intent_route,"` | — |
 | [SRC-1AE03B9EC3-L004808](../../agents/web_agent.py#L4808) | 4808 | `"                \"intent_route_reason\": intent_reason,"` | — |
 | [SRC-1AE03B9EC3-L004809](../../agents/web_agent.py#L4809) | 4809 | `"                \"research_quality\": \"failed\","` | — |
@@ -834,3 +832,5 @@
 | [SRC-EEF2E6447C-L000405](../../api/omarai.py#L405) | 405 | `"        )"` | — |
 | [SRC-EEF2E6447C-L000406](../../api/omarai.py#L406) | 406 | `"        idle_timeout = max("` | — |
 | [SRC-EEF2E6447C-L000407](../../api/omarai.py#L407) | 407 | `"            0.1,"` | — |
+| [SRC-EEF2E6447C-L000408](../../api/omarai.py#L408) | 408 | `"            min("` | — |
+| [SRC-EEF2E6447C-L000409](../../api/omarai.py#L409) | 409 | `"                float(REQUEST_BODY_IDLE_TIMEOUT_SECONDS),"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000005 إلى SRC-1AE03B9EC3-L000804
+- النطاق: SRC-1AE03B9EC3-L000007 إلى SRC-1AE03B9EC3-L000806
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000005](../../agents/web_agent.py#L5) | 5 | `"API credentials are read only from environment variables and are never returned."` | — |
-| [SRC-1AE03B9EC3-L000006](../../agents/web_agent.py#L6) | 6 | `"\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000007](../../agents/web_agent.py#L7) | 7 | `"from __future__ import annotations"` | — |
 | [SRC-1AE03B9EC3-L000008](../../agents/web_agent.py#L8) | 8 | `""` | — |
 | [SRC-1AE03B9EC3-L000009](../../agents/web_agent.py#L9) | 9 | `"import asyncio"` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L000802](../../agents/web_agent.py#L802) | 802 | `"        if len(_search_tokens(subject)) < 2:"` | — |
 | [SRC-1AE03B9EC3-L000803](../../agents/web_agent.py#L803) | 803 | `"            subject = _normalize_search_query(question).strip()"` | — |
 | [SRC-1AE03B9EC3-L000804](../../agents/web_agent.py#L804) | 804 | `"        arabic = bool(re.search(r\"[\\u0600-\\u06FF]\", question))"` | — |
+| [SRC-1AE03B9EC3-L000805](../../agents/web_agent.py#L805) | 805 | `"        if arabic:"` | — |
+| [SRC-1AE03B9EC3-L000806](../../agents/web_agent.py#L806) | 806 | `"            targeted = ["` | — |

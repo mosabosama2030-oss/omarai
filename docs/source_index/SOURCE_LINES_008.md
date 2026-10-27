@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003205 إلى SRC-1AE03B9EC3-L004004
+- النطاق: SRC-1AE03B9EC3-L003207 إلى SRC-1AE03B9EC3-L004006
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003205](../../agents/web_agent.py#L3205) | 3205 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003206](../../agents/web_agent.py#L3206) | 3206 | `"        messages: list[dict[str, str]] = ["` | — |
 | [SRC-1AE03B9EC3-L003207](../../agents/web_agent.py#L3207) | 3207 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L003208](../../agents/web_agent.py#L3208) | 3208 | `"                \"role\": \"system\","` | — |
 | [SRC-1AE03B9EC3-L003209](../../agents/web_agent.py#L3209) | 3209 | `"                \"content\": ("` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L004002](../../agents/web_agent.py#L4002) | 4002 | `"                        if isinstance(query, str)"` | — |
 | [SRC-1AE03B9EC3-L004003](../../agents/web_agent.py#L4003) | 4003 | `"                    ]"` | — |
 | [SRC-1AE03B9EC3-L004004](../../agents/web_agent.py#L4004) | 4004 | `"                    fallback_queries = [query for query in fallback_queries if query]"` | — |
+| [SRC-1AE03B9EC3-L004005](../../agents/web_agent.py#L4005) | 4005 | `"                    model_queries = ["` | — |
+| [SRC-1AE03B9EC3-L004006](../../agents/web_agent.py#L4006) | 4006 | `"                        compact_search_query(query)"` | — |

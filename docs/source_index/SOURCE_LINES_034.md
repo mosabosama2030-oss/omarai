@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002413 إلى SRC-F725E90B2A-L003212
+- النطاق: SRC-F725E90B2A-L002415 إلى SRC-F725E90B2A-L003214
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002413](../../tests/test_web_agent.py#L2413) | 2413 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L002414](../../tests/test_web_agent.py#L2414) | 2414 | `"    assert report[\"checks\"][\"web_search\"][\"completed_connector_responses\"] >= 1"` | — |
 | [SRC-F725E90B2A-L002415](../../tests/test_web_agent.py#L2415) | 2415 | `"    assert \"completed a request\" in report[\"checks\"][\"web_search\"][\"note\"]"` | — |
 | [SRC-F725E90B2A-L002416](../../tests/test_web_agent.py#L2416) | 2416 | `""` | — |
 | [SRC-F725E90B2A-L002417](../../tests/test_web_agent.py#L2417) | 2417 | `""` | — |
@@ -816,3 +814,5 @@
 | [SRC-F725E90B2A-L003210](../../tests/test_web_agent.py#L3210) | 3210 | `"        observed_plans.append(dict(research_plan))"` | — |
 | [SRC-F725E90B2A-L003211](../../tests/test_web_agent.py#L3211) | 3211 | `"        return [], [], {"` | — |
 | [SRC-F725E90B2A-L003212](../../tests/test_web_agent.py#L3212) | 3212 | `"            \"queries_planned\": len(research_plan.get(\"queries\", [])),"` | — |
+| [SRC-F725E90B2A-L003213](../../tests/test_web_agent.py#L3213) | 3213 | `"            \"queries_attempted\": 0,"` | — |
+| [SRC-F725E90B2A-L003214](../../tests/test_web_agent.py#L3214) | 3214 | `"            \"query_results\": [],"` | — |

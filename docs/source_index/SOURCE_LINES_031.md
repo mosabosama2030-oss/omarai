@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000013 إلى SRC-F725E90B2A-L000812
+- النطاق: SRC-F725E90B2A-L000015 إلى SRC-F725E90B2A-L000814
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000013](../../tests/test_web_agent.py#L13) | 13 | `"    _relevance_query_tokens,"` | — |
-| [SRC-F725E90B2A-L000014](../../tests/test_web_agent.py#L14) | 14 | `"    _relevance_ratio,"` | — |
 | [SRC-F725E90B2A-L000015](../../tests/test_web_agent.py#L15) | 15 | `")"` | — |
 | [SRC-F725E90B2A-L000016](../../tests/test_web_agent.py#L16) | 16 | `""` | — |
 | [SRC-F725E90B2A-L000017](../../tests/test_web_agent.py#L17) | 17 | `""` | — |
@@ -816,3 +814,5 @@
 | [SRC-F725E90B2A-L000810](../../tests/test_web_agent.py#L810) | 810 | `""` | — |
 | [SRC-F725E90B2A-L000811](../../tests/test_web_agent.py#L811) | 811 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
 | [SRC-F725E90B2A-L000812](../../tests/test_web_agent.py#L812) | 812 | `"            return False"` | — |
+| [SRC-F725E90B2A-L000813](../../tests/test_web_agent.py#L813) | 813 | `""` | — |
+| [SRC-F725E90B2A-L000814](../../tests/test_web_agent.py#L814) | 814 | `"        def read(self, limit):"` | — |

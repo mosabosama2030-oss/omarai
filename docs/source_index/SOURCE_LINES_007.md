@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002405 إلى SRC-1AE03B9EC3-L003204
+- النطاق: SRC-1AE03B9EC3-L002407 إلى SRC-1AE03B9EC3-L003206
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"                platforms.extend("` | — |
-| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"                    name for name, ready in optional_connectors.items()"` | — |
 | [SRC-1AE03B9EC3-L002407](../../agents/web_agent.py#L2407) | 2407 | `"                    if ready and name not in platforms"` | — |
 | [SRC-1AE03B9EC3-L002408](../../agents/web_agent.py#L2408) | 2408 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"            social_results, social_warnings = self._search_social((queries[0] if queries else \"\"), platforms)"` | — |
@@ -816,3 +814,5 @@
 | [SRC-1AE03B9EC3-L003202](../../agents/web_agent.py#L3202) | 3202 | `"                \"warnings\": search_warning or \"\","` | — |
 | [SRC-1AE03B9EC3-L003203](../../agents/web_agent.py#L3203) | 3203 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L003204](../../agents/web_agent.py#L3204) | 3204 | `"            ensure_ascii=False,"` | — |
+| [SRC-1AE03B9EC3-L003205](../../agents/web_agent.py#L3205) | 3205 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003206](../../agents/web_agent.py#L3206) | 3206 | `"        messages: list[dict[str, str]] = ["` | — |
