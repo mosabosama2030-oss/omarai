@@ -169,3 +169,47 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
     # remain visibly incomplete even if the planner generated multiple queries.
     assert coverage["source_evidence_gap_count"] == 3
     assert result["task_fulfillment_status"] == "possible_gap_detected"
+
+def test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget(monkeypatch) -> None:
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    seen: dict = {}
+    question = (
+        "قارن بين خدمات من حيث السعر، الخصوصية، الاعتمادية، الدعم، "
+        "الأمان، السرعة، الجودة، والتوفر"
+    )
+
+    def plan(_question, _history):
+        return {
+            "queries": ["مقارنة الخدمات"],
+            "direct_urls": [],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test_single_query",
+        }
+
+    def collect(research_plan):
+        seen["plan"] = dict(research_plan)
+        sources = [
+            _evidence("example.com", research_plan["queries"]),
+            _evidence("example.net", research_plan["queries"]),
+        ]
+        return sources, [], _report(research_plan, sources)
+
+    monkeypatch.setattr(agent, "_plan_search", plan)
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda _query, _source: True)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "مقارنة أولية [المصدر 1].")
+    monkeypatch.setattr(agent, "_review_answer", lambda _question, answer, _sources: answer)
+
+    agent.answer(question, history=[])
+
+    targets = WebAgent._question_coverage_targets(question)
+    assert len(targets) == 8
+    queries = seen["plan"]["queries"]
+    assert len(queries) == 8
+    for target in targets:
+        assert any(target in query for query in queries), f"Missing criterion query for {target!r}"
+
