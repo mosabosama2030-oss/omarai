@@ -3122,7 +3122,19 @@ class WebAgent:
         search_report: dict[str, Any] | None = None,
     ) -> str:
         plan = research_plan or {}
-        report = search_report or {}
+        report = search_report if isinstance(search_report, dict) else {}
+        coverage_targets = plan.get("coverage_targets")
+        if not isinstance(coverage_targets, list):
+            coverage_targets = self._question_coverage_targets(question)
+        requirement_queries = plan.get("requirement_queries")
+        if not isinstance(requirement_queries, list):
+            requirement_queries = []
+        requirement_evidence = build_requirement_evidence_ledger(
+            coverage_targets, sources, requirement_queries
+        )
+        report["coverage_targets"] = coverage_targets
+        report["requirement_queries"] = requirement_queries
+        report["requirement_evidence"] = requirement_evidence
         source_blocks: list[str] = []
         for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):
             evidence = (
@@ -3163,6 +3175,9 @@ class WebAgent:
                     "providers_used": report.get("providers_used", []),
                     "platform_counts": report.get("platform_counts", {}),
                     "evidence_signals": report.get("evidence_signals", {}),
+                    "coverage_targets": coverage_targets,
+                    "requirement_queries": requirement_queries,
+                    "requirement_evidence": requirement_evidence,
                 },
                 "warnings": search_warning or "",
             },
@@ -3189,7 +3204,10 @@ class WebAgent:
                     "الإخراج: ابدأ بإجابة واضحة ومباشرة بلغة المستخدم. عند البحث العميق، نظّم "
                     "النتيجة في: الخلاصة، النتائج والأدلة، اختلافات/فجوات، درجة الثقة وأسبابها، "
                     "وما يستحق التحقق التالي. لا تطل إذا كان السؤال بسيطًا. لا تكشف سلسلة التفكير "
-                    "الداخلية؛ قدم خلاصة أسباب وأدلة يمكن مراجعتها."
+                    "الداخلية؛ قدم خلاصة أسباب وأدلة يمكن مراجعتها. في السؤال المركب، " 
+                    "تعامل مع كل محور كشرط مستقل: استخدم الاستعلام المخصص وسجل الأدلة المرفق، وأجب عن كل " 
+                    "محور بدليل ملائم أو اذكر صراحة أن الأدلة غير كافية له. لا تعتبر ورود كلمة المحور في الإجابة " 
+                    "أو الاستعلام دليلًا على صحة المعلومة. لا تملأ فجوات الأدلة بمعلومات عامة أو تخمينات."
                 ),
             }
         ]
@@ -3412,6 +3430,15 @@ class WebAgent:
                     "قائمة محاور مستخرجة آليًا من السؤال للمراجعة النهائية، وقد لا تلتقط المعنى كله:\n"
                     + "\n".join(f"- {target}" for target in coverage_targets)
                     + "\nتأكد أن المسودة تجيب عن كل محور أو تصرّح بنقص الأدلة له."
+                ),
+            })
+            requirement_evidence = build_requirement_evidence_ledger(coverage_targets, sources)
+            messages.insert(3, {
+                "role": "user",
+                "content": (
+                    "سجل فرز الأدلة التالي إشارة لفظية فقط وليس تحققًا من المعنى أو الحقيقة. "
+                    "استخدمه لتحديد المحاور التي يجب إعلان نقص أدلتها؛ لا تعتبر أي تطابق إثباتًا.\n"
+                    + json.dumps(requirement_evidence, ensure_ascii=False)
                 ),
             })
         raw_review = self._request_completion(
