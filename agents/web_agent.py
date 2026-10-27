@@ -4113,8 +4113,8 @@ class WebAgent:
                     query for query in criterion_queries
                     if query and _relevance_query_tokens(query)
                 ]
-                # Keep the subject plus one planner query, then criterion-specific
-                # queries, and only then generic exploration queries.
+                # Criterion queries include the subject and take priority; retain a
+                # planner query and generic exploration only when budget remains.
                 original_queries = [
                     query for query in (plan.get("queries") or [])
                     if isinstance(query, str) and query.strip()
