@@ -281,6 +281,18 @@ def _relevance_ratio(query: str, evidence: str) -> float:
                 or bool(_NORMALIZED_SEARCH_SYNONYMS.get(form, set()) & expanded_evidence)
             ):
                 return True
+            # Also match an English query term through the Arabic concept that
+            # expands the evidence token. Synonym vocabulary is directional in its
+            # storage, but evidence matching must work in both language directions.
+            if any(
+                form in aliases
+                and (
+                    arabic in expanded_evidence
+                    or (arabic.startswith("ال") and arabic[2:] in expanded_evidence)
+                )
+                for arabic, aliases in _NORMALIZED_SEARCH_SYNONYMS.items()
+            ):
+                return True
         return False
 
     matched = sum(1 for token in query_tokens if concept_found(token))
