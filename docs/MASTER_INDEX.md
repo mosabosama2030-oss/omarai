@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **82**
 - ملفات Python المحللة: **42**
-- تعريفات Python المفهرسة: **1052**
+- تعريفات Python المفهرسة: **1055**
 - تعريفات Python موثقة بوجود Docstring: **202**
-- تعريفات Python بلا Docstring: **644**
+- تعريفات Python بلا Docstring: **647**
 - تعريفات لا ينطبق عليها Docstring: **206**
 - الرموز الساكنة الإضافية: **1617**
-- الأسطر النصية المفهرسة حرفيًا: **28161**
+- الأسطر النصية المفهرسة حرفيًا: **28227**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -101,7 +101,7 @@
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
-| FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 5534 | 134 | جرد الملف + AST Python |
+| FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 7931 | 200 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 15643 | 329 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
@@ -862,7 +862,10 @@
 | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L31) | دالة | test_validated_model_plan_cannot_drop_mandatory_criterion_queries | لا توجد Docstring. | ناقص | 31 | [SRC-3D0DE98F65-L000031](../tests/test_question_requirement_loop.py#L31) |
 | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L49) | دالة | test_model_planner_cannot_replace_every_criterion_with_one_generic_query | لا توجد Docstring. | ناقص | 49 | [SRC-3D0DE98F65-L000049](../tests/test_question_requirement_loop.py#L49) |
 | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L73) | دالة | test_requirement_evidence_ledger_distinguishes_candidate_from_query_only_result | لا توجد Docstring. | ناقص | 73 | [SRC-3D0DE98F65-L000073](../tests/test_question_requirement_loop.py#L73) |
-| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L108) | دالة | test_answer_integrity_exposes_requirement_evidence_separately_from_word_overlap | لا توجد Docstring. | ناقص | 108 | [SRC-3D0DE98F65-L000108](../tests/test_question_requirement_loop.py#L108) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L109) | دالة | test_research_keeps_a_relevant_source_for_each_criterion_before_page_fetch | لا توجد Docstring. | ناقص | 109 | [SRC-3D0DE98F65-L000109](../tests/test_question_requirement_loop.py#L109) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L132) | دالة | test_research_keeps_a_relevant_source_for_each_criterion_before_page_fetch.fake_search | لا توجد Docstring. | ناقص | 132 | [SRC-3D0DE98F65-L000132](../tests/test_question_requirement_loop.py#L132) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L151) | دالة | test_research_keeps_a_relevant_source_for_each_criterion_before_page_fetch.fake_fetch | لا توجد Docstring. | ناقص | 151 | [SRC-3D0DE98F65-L000151](../tests/test_question_requirement_loop.py#L151) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L174) | دالة | test_answer_integrity_exposes_requirement_evidence_separately_from_word_overlap | لا توجد Docstring. | ناقص | 174 | [SRC-3D0DE98F65-L000174](../tests/test_question_requirement_loop.py#L174) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L9) | كلاس | FakeClock | لا توجد Docstring. | ناقص | 9 | [SRC-C353AAAC10-L000009](../tests/test_request_budget.py#L9) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L10) | دالة | FakeClock.__init__ | لا توجد Docstring. | ناقص | 10 | [SRC-C353AAAC10-L000010](../tests/test_request_budget.py#L10) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L13) | دالة | FakeClock.__call__ | لا توجد Docstring. | ناقص | 13 | [SRC-C353AAAC10-L000013](../tests/test_request_budget.py#L13) |

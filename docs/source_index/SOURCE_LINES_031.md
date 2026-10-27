@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000164 إلى SRC-F725E90B2A-L000530
+- النطاق: SRC-01E35ABC46-L000098 إلى SRC-F725E90B2A-L000464
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,72 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000098](../../tests/test_research_guardrails.py#L98) | 98 | `"        \"providers\": [\"bing\"],"` | — |
+| [SRC-01E35ABC46-L000099](../../tests/test_research_guardrails.py#L99) | 99 | `"    }"` | — |
+| [SRC-01E35ABC46-L000100](../../tests/test_research_guardrails.py#L100) | 100 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000101](../../tests/test_research_guardrails.py#L101) | 101 | `"    assert rel[\"accepted\"] is False"` | — |
+| [SRC-01E35ABC46-L000102](../../tests/test_research_guardrails.py#L102) | 102 | `""` | — |
+| [SRC-01E35ABC46-L000103](../../tests/test_research_guardrails.py#L103) | 103 | `""` | — |
+| [SRC-01E35ABC46-L000104](../../tests/test_research_guardrails.py#L104) | 104 | `"def test_relevance_keeps_official_despite_wording():"` | — |
+| [SRC-01E35ABC46-L000105](../../tests/test_research_guardrails.py#L105) | 105 | `"    src = {"` | — |
+| [SRC-01E35ABC46-L000106](../../tests/test_research_guardrails.py#L106) | 106 | `"        \"title\": \"Official statistical bulletin Q1\","` | — |
+| [SRC-01E35ABC46-L000107](../../tests/test_research_guardrails.py#L107) | 107 | `"        \"url\": \"https://www.capmas.gov.eg/bulletin\","` | — |
+| [SRC-01E35ABC46-L000108](../../tests/test_research_guardrails.py#L108) | 108 | `"        \"snippet\": \"National statistics release.\","` | — |
+| [SRC-01E35ABC46-L000109](../../tests/test_research_guardrails.py#L109) | 109 | `"        \"domain\": \"capmas.gov.eg\","` | — |
+| [SRC-01E35ABC46-L000110](../../tests/test_research_guardrails.py#L110) | 110 | `"        \"source_class\": \"government\","` | — |
+| [SRC-01E35ABC46-L000111](../../tests/test_research_guardrails.py#L111) | 111 | `"        \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000112](../../tests/test_research_guardrails.py#L112) | 112 | `"    }"` | — |
+| [SRC-01E35ABC46-L000113](../../tests/test_research_guardrails.py#L113) | 113 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000114](../../tests/test_research_guardrails.py#L114) | 114 | `"    assert rel[\"accepted\"] is True"` | — |
+| [SRC-01E35ABC46-L000115](../../tests/test_research_guardrails.py#L115) | 115 | `"    assert rel[\"reason\"] in {\"accepted\", \"kept_official_despite_low_overlap\"}"` | — |
+| [SRC-01E35ABC46-L000116](../../tests/test_research_guardrails.py#L116) | 116 | `""` | — |
+| [SRC-01E35ABC46-L000117](../../tests/test_research_guardrails.py#L117) | 117 | `""` | — |
+| [SRC-01E35ABC46-L000118](../../tests/test_research_guardrails.py#L118) | 118 | `"def test_filter_deduplicates():"` | — |
+| [SRC-01E35ABC46-L000119](../../tests/test_research_guardrails.py#L119) | 119 | `"    sources = ["` | — |
+| [SRC-01E35ABC46-L000120](../../tests/test_research_guardrails.py#L120) | 120 | `"        {"` | — |
+| [SRC-01E35ABC46-L000121](../../tests/test_research_guardrails.py#L121) | 121 | `"            \"title\": \"Same Article Title\","` | — |
+| [SRC-01E35ABC46-L000122](../../tests/test_research_guardrails.py#L122) | 122 | `"            \"url\": \"https://a.example/1\","` | — |
+| [SRC-01E35ABC46-L000123](../../tests/test_research_guardrails.py#L123) | 123 | `"            \"snippet\": \"electric vehicles Egypt market\","` | — |
+| [SRC-01E35ABC46-L000124](../../tests/test_research_guardrails.py#L124) | 124 | `"            \"domain\": \"a.example\","` | — |
+| [SRC-01E35ABC46-L000125](../../tests/test_research_guardrails.py#L125) | 125 | `"            \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000126](../../tests/test_research_guardrails.py#L126) | 126 | `"            \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000127](../../tests/test_research_guardrails.py#L127) | 127 | `"        },"` | — |
+| [SRC-01E35ABC46-L000128](../../tests/test_research_guardrails.py#L128) | 128 | `"        {"` | — |
+| [SRC-01E35ABC46-L000129](../../tests/test_research_guardrails.py#L129) | 129 | `"            \"title\": \"Same Article Title\","` | — |
+| [SRC-01E35ABC46-L000130](../../tests/test_research_guardrails.py#L130) | 130 | `"            \"url\": \"https://a.example/1?utm=x\","` | — |
+| [SRC-01E35ABC46-L000131](../../tests/test_research_guardrails.py#L131) | 131 | `"            \"snippet\": \"electric vehicles Egypt market again\","` | — |
+| [SRC-01E35ABC46-L000132](../../tests/test_research_guardrails.py#L132) | 132 | `"            \"domain\": \"a.example\","` | — |
+| [SRC-01E35ABC46-L000133](../../tests/test_research_guardrails.py#L133) | 133 | `"            \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000134](../../tests/test_research_guardrails.py#L134) | 134 | `"            \"providers\": [\"bing\"],"` | — |
+| [SRC-01E35ABC46-L000135](../../tests/test_research_guardrails.py#L135) | 135 | `"        },"` | — |
+| [SRC-01E35ABC46-L000136](../../tests/test_research_guardrails.py#L136) | 136 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000137](../../tests/test_research_guardrails.py#L137) | 137 | `"    kept, diag = filter_relevant_sources("` | — |
+| [SRC-01E35ABC46-L000138](../../tests/test_research_guardrails.py#L138) | 138 | `"        sources, \"electric vehicles Egypt\", [\"electric vehicles Egypt\"]"` | — |
+| [SRC-01E35ABC46-L000139](../../tests/test_research_guardrails.py#L139) | 139 | `"    )"` | — |
+| [SRC-01E35ABC46-L000140](../../tests/test_research_guardrails.py#L140) | 140 | `"    assert len(kept) == 1"` | — |
+| [SRC-01E35ABC46-L000141](../../tests/test_research_guardrails.py#L141) | 141 | `"    assert any(d[\"reason\"] == \"duplicate_title_domain\" for d in diag)"` | — |
+| [SRC-01E35ABC46-L000142](../../tests/test_research_guardrails.py#L142) | 142 | `""` | — |
+| [SRC-01E35ABC46-L000143](../../tests/test_research_guardrails.py#L143) | 143 | `""` | — |
+| [SRC-01E35ABC46-L000144](../../tests/test_research_guardrails.py#L144) | 144 | `"def test_filter_empty_and_failed_extract():"` | — |
+| [SRC-01E35ABC46-L000145](../../tests/test_research_guardrails.py#L145) | 145 | `"    kept, diag = filter_relevant_sources([], \"anything\")"` | — |
+| [SRC-01E35ABC46-L000146](../../tests/test_research_guardrails.py#L146) | 146 | `"    assert kept == []"` | — |
+| [SRC-01E35ABC46-L000147](../../tests/test_research_guardrails.py#L147) | 147 | `"    assert diag == []"` | — |
+| [SRC-01E35ABC46-L000148](../../tests/test_research_guardrails.py#L148) | 148 | `"    src = {"` | — |
+| [SRC-01E35ABC46-L000149](../../tests/test_research_guardrails.py#L149) | 149 | `"        \"title\": \"\","` | — |
+| [SRC-01E35ABC46-L000150](../../tests/test_research_guardrails.py#L150) | 150 | `"        \"url\": \"https://example.com/x\","` | — |
+| [SRC-01E35ABC46-L000151](../../tests/test_research_guardrails.py#L151) | 151 | `"        \"snippet\": \"\","` | — |
+| [SRC-01E35ABC46-L000152](../../tests/test_research_guardrails.py#L152) | 152 | `"        \"page_text\": \"\","` | — |
+| [SRC-01E35ABC46-L000153](../../tests/test_research_guardrails.py#L153) | 153 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-01E35ABC46-L000154](../../tests/test_research_guardrails.py#L154) | 154 | `"        \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000155](../../tests/test_research_guardrails.py#L155) | 155 | `"        \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000156](../../tests/test_research_guardrails.py#L156) | 156 | `"    }"` | — |
+| [SRC-01E35ABC46-L000157](../../tests/test_research_guardrails.py#L157) | 157 | `"    _kept2, diag2 = filter_relevant_sources([src], \"unrelated pasta recipes\")"` | — |
+| [SRC-01E35ABC46-L000158](../../tests/test_research_guardrails.py#L158) | 158 | `"    # May reject for low overlap"` | — |
+| [SRC-01E35ABC46-L000159](../../tests/test_research_guardrails.py#L159) | 159 | `"    assert isinstance(diag2, list)"` | — |
+| [SRC-01E35ABC46-L000160](../../tests/test_research_guardrails.py#L160) | 160 | `""` | — |
+| [SRC-01E35ABC46-L000161](../../tests/test_research_guardrails.py#L161) | 161 | `""` | — |
+| [SRC-01E35ABC46-L000162](../../tests/test_research_guardrails.py#L162) | 162 | `"# --- evidence status --------------------------------------------------------"` | — |
+| [SRC-01E35ABC46-L000163](../../tests/test_research_guardrails.py#L163) | 163 | `""` | — |
 | [SRC-01E35ABC46-L000164](../../tests/test_research_guardrails.py#L164) | 164 | `"def test_evidence_adequate():"` | — |
 | [SRC-01E35ABC46-L000165](../../tests/test_research_guardrails.py#L165) | 165 | `"    sources = ["` | — |
 | [SRC-01E35ABC46-L000166](../../tests/test_research_guardrails.py#L166) | 166 | `"        {\"url\": f\"https://a{i}.example/p\", \"domain\": f\"a{i}.example\","` | — |
@@ -777,69 +843,3 @@
 | [SRC-F725E90B2A-L000462](../../tests/test_web_agent.py#L462) | 462 | `"def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000463](../../tests/test_web_agent.py#L463) | 463 | `"    import httpx"` | — |
 | [SRC-F725E90B2A-L000464](../../tests/test_web_agent.py#L464) | 464 | `""` | — |
-| [SRC-F725E90B2A-L000465](../../tests/test_web_agent.py#L465) | 465 | `"    monkeypatch.setenv(\"X_BEARER_TOKEN\", \"test-token\")"` | — |
-| [SRC-F725E90B2A-L000466](../../tests/test_web_agent.py#L466) | 466 | `""` | — |
-| [SRC-F725E90B2A-L000467](../../tests/test_web_agent.py#L467) | 467 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000468](../../tests/test_web_agent.py#L468) | 468 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000469](../../tests/test_web_agent.py#L469) | 469 | `""` | — |
-| [SRC-F725E90B2A-L000470](../../tests/test_web_agent.py#L470) | 470 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000471](../../tests/test_web_agent.py#L471) | 471 | `"            return {"` | — |
-| [SRC-F725E90B2A-L000472](../../tests/test_web_agent.py#L472) | 472 | `"                \"data\": [{"` | — |
-| [SRC-F725E90B2A-L000473](../../tests/test_web_agent.py#L473) | 473 | `"                    \"id\": \"1840000000000000000\","` | — |
-| [SRC-F725E90B2A-L000474](../../tests/test_web_agent.py#L474) | 474 | `"                    \"text\": \"تجربة علنية لاستهلاك سيارة كهربائية\","` | — |
-| [SRC-F725E90B2A-L000475](../../tests/test_web_agent.py#L475) | 475 | `"                    \"created_at\": \"2026-10-12T10:00:00Z\","` | — |
-| [SRC-F725E90B2A-L000476](../../tests/test_web_agent.py#L476) | 476 | `"                    \"author_id\": \"u1\","` | — |
-| [SRC-F725E90B2A-L000477](../../tests/test_web_agent.py#L477) | 477 | `"                }],"` | — |
-| [SRC-F725E90B2A-L000478](../../tests/test_web_agent.py#L478) | 478 | `"                \"includes\": {"` | — |
-| [SRC-F725E90B2A-L000479](../../tests/test_web_agent.py#L479) | 479 | `"                    \"users\": [{\"id\": \"u1\", \"username\": \"driver\", \"name\": \"Driver\"}]"` | — |
-| [SRC-F725E90B2A-L000480](../../tests/test_web_agent.py#L480) | 480 | `"                },"` | — |
-| [SRC-F725E90B2A-L000481](../../tests/test_web_agent.py#L481) | 481 | `"            }"` | — |
-| [SRC-F725E90B2A-L000482](../../tests/test_web_agent.py#L482) | 482 | `""` | — |
-| [SRC-F725E90B2A-L000483](../../tests/test_web_agent.py#L483) | 483 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000484](../../tests/test_web_agent.py#L484) | 484 | `""` | — |
-| [SRC-F725E90B2A-L000485](../../tests/test_web_agent.py#L485) | 485 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000486](../../tests/test_web_agent.py#L486) | 486 | `"        calls.append((url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000487](../../tests/test_web_agent.py#L487) | 487 | `"        return FakeResponse()"` | — |
-| [SRC-F725E90B2A-L000488](../../tests/test_web_agent.py#L488) | 488 | `""` | — |
-| [SRC-F725E90B2A-L000489](../../tests/test_web_agent.py#L489) | 489 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000490](../../tests/test_web_agent.py#L490) | 490 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000491](../../tests/test_web_agent.py#L491) | 491 | `"        \"سيارة كهربائية\", [\"x\"]"` | — |
-| [SRC-F725E90B2A-L000492](../../tests/test_web_agent.py#L492) | 492 | `"    )"` | — |
-| [SRC-F725E90B2A-L000493](../../tests/test_web_agent.py#L493) | 493 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000494](../../tests/test_web_agent.py#L494) | 494 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L000495](../../tests/test_web_agent.py#L495) | 495 | `"    assert results[0][\"provider\"] == \"x_official_api\""` | — |
-| [SRC-F725E90B2A-L000496](../../tests/test_web_agent.py#L496) | 496 | `"    assert results[0][\"url\"] == \"https://x.com/driver/status/1840000000000000000\""` | — |
-| [SRC-F725E90B2A-L000497](../../tests/test_web_agent.py#L497) | 497 | `"    assert calls[0][1][\"headers\"][\"Authorization\"] == \"Bearer test-token\""` | — |
-| [SRC-F725E90B2A-L000498](../../tests/test_web_agent.py#L498) | 498 | `""` | — |
-| [SRC-F725E90B2A-L000499](../../tests/test_web_agent.py#L499) | 499 | `""` | — |
-| [SRC-F725E90B2A-L000500](../../tests/test_web_agent.py#L500) | 500 | `""` | — |
-| [SRC-F725E90B2A-L000501](../../tests/test_web_agent.py#L501) | 501 | `"def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000502](../../tests/test_web_agent.py#L502) | 502 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000503](../../tests/test_web_agent.py#L503) | 503 | `""` | — |
-| [SRC-F725E90B2A-L000504](../../tests/test_web_agent.py#L504) | 504 | `"    monkeypatch.setenv(\"INSTAGRAM_USER_ID\", \"ig-user-123\")"` | — |
-| [SRC-F725E90B2A-L000505](../../tests/test_web_agent.py#L505) | 505 | `"    monkeypatch.setenv(\"INSTAGRAM_ACCESS_TOKEN\", \"test-ig-token\")"` | — |
-| [SRC-F725E90B2A-L000506](../../tests/test_web_agent.py#L506) | 506 | `"    monkeypatch.setenv(\"META_GRAPH_VERSION\", \"v25.0\")"` | — |
-| [SRC-F725E90B2A-L000507](../../tests/test_web_agent.py#L507) | 507 | `""` | — |
-| [SRC-F725E90B2A-L000508](../../tests/test_web_agent.py#L508) | 508 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000509](../../tests/test_web_agent.py#L509) | 509 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000510](../../tests/test_web_agent.py#L510) | 510 | `""` | — |
-| [SRC-F725E90B2A-L000511](../../tests/test_web_agent.py#L511) | 511 | `"        def __init__(self, payload):"` | — |
-| [SRC-F725E90B2A-L000512](../../tests/test_web_agent.py#L512) | 512 | `"            self.payload = payload"` | — |
-| [SRC-F725E90B2A-L000513](../../tests/test_web_agent.py#L513) | 513 | `""` | — |
-| [SRC-F725E90B2A-L000514](../../tests/test_web_agent.py#L514) | 514 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000515](../../tests/test_web_agent.py#L515) | 515 | `"            return self.payload"` | — |
-| [SRC-F725E90B2A-L000516](../../tests/test_web_agent.py#L516) | 516 | `""` | — |
-| [SRC-F725E90B2A-L000517](../../tests/test_web_agent.py#L517) | 517 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000518](../../tests/test_web_agent.py#L518) | 518 | `""` | — |
-| [SRC-F725E90B2A-L000519](../../tests/test_web_agent.py#L519) | 519 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000520](../../tests/test_web_agent.py#L520) | 520 | `"        calls.append((url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000521](../../tests/test_web_agent.py#L521) | 521 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |
-| [SRC-F725E90B2A-L000522](../../tests/test_web_agent.py#L522) | 522 | `"            return FakeResponse({\"data\": [{\"id\": \"tag-7\", \"name\": \"cars\"}]})"` | — |
-| [SRC-F725E90B2A-L000523](../../tests/test_web_agent.py#L523) | 523 | `"        if url.endswith(\"/tag-7/recent_media\"):"` | — |
-| [SRC-F725E90B2A-L000524](../../tests/test_web_agent.py#L524) | 524 | `"            return FakeResponse({\"data\": [{"` | — |
-| [SRC-F725E90B2A-L000525](../../tests/test_web_agent.py#L525) | 525 | `"                \"permalink\": \"https://www.instagram.com/p/ABC123/\","` | — |
-| [SRC-F725E90B2A-L000526](../../tests/test_web_agent.py#L526) | 526 | `"                \"caption\": \"Owner shared an electric car review\","` | — |
-| [SRC-F725E90B2A-L000527](../../tests/test_web_agent.py#L527) | 527 | `"                \"media_type\": \"IMAGE\","` | — |
-| [SRC-F725E90B2A-L000528](../../tests/test_web_agent.py#L528) | 528 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
-| [SRC-F725E90B2A-L000529](../../tests/test_web_agent.py#L529) | 529 | `"                \"like_count\": 17,"` | — |
-| [SRC-F725E90B2A-L000530](../../tests/test_web_agent.py#L530) | 530 | `"                \"comments_count\": 4,"` | — |
