@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001905 إلى SRC-F725E90B2A-L002704
+- النطاق: SRC-F725E90B2A-L001895 إلى SRC-F725E90B2A-L002694
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001895](../../tests/test_web_agent.py#L1895) | 1895 | `"    third = sample_source(1)"` | — |
+| [SRC-F725E90B2A-L001896](../../tests/test_web_agent.py#L1896) | 1896 | `"    sources = [first, second, third]"` | — |
+| [SRC-F725E90B2A-L001897](../../tests/test_web_agent.py#L1897) | 1897 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L001898](../../tests/test_web_agent.py#L1898) | 1898 | `"        \"queries\": [\"قارن هذه التقنية\"],"` | — |
+| [SRC-F725E90B2A-L001899](../../tests/test_web_agent.py#L1899) | 1899 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L001900](../../tests/test_web_agent.py#L1900) | 1900 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L001901](../../tests/test_web_agent.py#L1901) | 1901 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L001902](../../tests/test_web_agent.py#L1902) | 1902 | `"        \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L001903](../../tests/test_web_agent.py#L1903) | 1903 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001904](../../tests/test_web_agent.py#L1904) | 1904 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001905](../../tests/test_web_agent.py#L1905) | 1905 | `"    }"` | — |
 | [SRC-F725E90B2A-L001906](../../tests/test_web_agent.py#L1906) | 1906 | `""` | — |
 | [SRC-F725E90B2A-L001907](../../tests/test_web_agent.py#L1907) | 1907 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
@@ -806,13 +816,3 @@
 | [SRC-F725E90B2A-L002692](../../tests/test_web_agent.py#L2692) | 2692 | `"@pytest.mark.parametrize("` | — |
 | [SRC-F725E90B2A-L002693](../../tests/test_web_agent.py#L2693) | 2693 | `"    \"method_name\","` | — |
 | [SRC-F725E90B2A-L002694](../../tests/test_web_agent.py#L2694) | 2694 | `"    [\"_search_duckduckgo_html\", \"_search_bing_rss\", \"_search_news\"],"` | — |
-| [SRC-F725E90B2A-L002695](../../tests/test_web_agent.py#L2695) | 2695 | `")"` | — |
-| [SRC-F725E90B2A-L002696](../../tests/test_web_agent.py#L2696) | 2696 | `"def test_search_providers_do_not_follow_redirects_automatically("` | — |
-| [SRC-F725E90B2A-L002697](../../tests/test_web_agent.py#L2697) | 2697 | `"    monkeypatch, method_name"` | — |
-| [SRC-F725E90B2A-L002698](../../tests/test_web_agent.py#L2698) | 2698 | `"):"` | — |
-| [SRC-F725E90B2A-L002699](../../tests/test_web_agent.py#L2699) | 2699 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L002700](../../tests/test_web_agent.py#L2700) | 2700 | `""` | — |
-| [SRC-F725E90B2A-L002701](../../tests/test_web_agent.py#L2701) | 2701 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002702](../../tests/test_web_agent.py#L2702) | 2702 | `"    observed = []"` | — |
-| [SRC-F725E90B2A-L002703](../../tests/test_web_agent.py#L2703) | 2703 | `""` | — |
-| [SRC-F725E90B2A-L002704](../../tests/test_web_agent.py#L2704) | 2704 | `"    class RedirectResponse:"` | — |
