@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000901 إلى SRC-1AE03B9EC3-L001700
+- النطاق: SRC-1AE03B9EC3-L000861 إلى SRC-1AE03B9EC3-L001660
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000861](../../agents/web_agent.py#L861) | 861 | `"            \"news\", \"price\", \"for sale\", \"for rent\", \"real estate\", \"job opening\","` | — |
+| [SRC-1AE03B9EC3-L000862](../../agents/web_agent.py#L862) | 862 | `"            \"appointment\", \"reservation\", \"weather\", \"stock price\", \"exchange rate\","` | — |
+| [SRC-1AE03B9EC3-L000863](../../agents/web_agent.py#L863) | 863 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000864](../../agents/web_agent.py#L864) | 864 | `"        return any(term in value for term in dynamic_terms) or bool("` | — |
+| [SRC-1AE03B9EC3-L000865](../../agents/web_agent.py#L865) | 865 | `"            re.search(r\"https?://\", question, flags=re.IGNORECASE)"` | — |
+| [SRC-1AE03B9EC3-L000866](../../agents/web_agent.py#L866) | 866 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000867](../../agents/web_agent.py#L867) | 867 | `""` | — |
+| [SRC-1AE03B9EC3-L000868](../../agents/web_agent.py#L868) | 868 | `"    def _local_answer_result(self, question: str, answer: str, kind: str) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L000869](../../agents/web_agent.py#L869) | 869 | `"        \"\"\"Build a consistently shaped answer for non-research conversational requests.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000870](../../agents/web_agent.py#L870) | 870 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L000871](../../agents/web_agent.py#L871) | 871 | `"            \"answer\": answer,"` | — |
+| [SRC-1AE03B9EC3-L000872](../../agents/web_agent.py#L872) | 872 | `"            \"question\": question,"` | — |
+| [SRC-1AE03B9EC3-L000873](../../agents/web_agent.py#L873) | 873 | `"            \"search_query\": question,"` | — |
+| [SRC-1AE03B9EC3-L000874](../../agents/web_agent.py#L874) | 874 | `"            \"search_queries\": [],"` | — |
+| [SRC-1AE03B9EC3-L000875](../../agents/web_agent.py#L875) | 875 | `"            \"research_plan\": {"` | — |
+| [SRC-1AE03B9EC3-L000876](../../agents/web_agent.py#L876) | 876 | `"                \"mode\": \"auto\","` | — |
+| [SRC-1AE03B9EC3-L000877](../../agents/web_agent.py#L877) | 877 | `"                \"planning_method\": \"local_capability_router\","` | — |
+| [SRC-1AE03B9EC3-L000878](../../agents/web_agent.py#L878) | 878 | `"                \"web_search_skipped\": True,"` | — |
+| [SRC-1AE03B9EC3-L000879](../../agents/web_agent.py#L879) | 879 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L000880](../../agents/web_agent.py#L880) | 880 | `"            \"sources\": [],"` | — |
+| [SRC-1AE03B9EC3-L000881](../../agents/web_agent.py#L881) | 881 | `"            \"used_language_model\": False,"` | — |
+| [SRC-1AE03B9EC3-L000882](../../agents/web_agent.py#L882) | 882 | `"            \"used_web_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L000883](../../agents/web_agent.py#L883) | 883 | `"            \"search_attempted\": False,"` | — |
+| [SRC-1AE03B9EC3-L000884](../../agents/web_agent.py#L884) | 884 | `"            \"used_social_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L000885](../../agents/web_agent.py#L885) | 885 | `"            \"warnings\": [],"` | — |
+| [SRC-1AE03B9EC3-L000886](../../agents/web_agent.py#L886) | 886 | `"            \"kind\": kind,"` | — |
+| [SRC-1AE03B9EC3-L000887](../../agents/web_agent.py#L887) | 887 | `"            \"research_quality\": \"not_applicable\","` | — |
+| [SRC-1AE03B9EC3-L000888](../../agents/web_agent.py#L888) | 888 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L000889](../../agents/web_agent.py#L889) | 889 | `""` | — |
+| [SRC-1AE03B9EC3-L000890](../../agents/web_agent.py#L890) | 890 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000891](../../agents/web_agent.py#L891) | 891 | `"    def _local_conversation_reply(question: str) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000892](../../agents/web_agent.py#L892) | 892 | `"        \"\"\"Return a short greeting/acknowledgment without a model or web request.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000893](../../agents/web_agent.py#L893) | 893 | `"        value = _normalize_search_query(question).casefold().strip(\" \\t\\r\\n؟?!.,،؛;\")"` | — |
+| [SRC-1AE03B9EC3-L000894](../../agents/web_agent.py#L894) | 894 | `"        if \"السلام عليكم\" in value:"` | — |
+| [SRC-1AE03B9EC3-L000895](../../agents/web_agent.py#L895) | 895 | `"            return \"وعليكم السلام ورحمة الله وبركاته. أنا معاك؛ أقدر أساعدك في إيه؟\""` | — |
+| [SRC-1AE03B9EC3-L000896](../../agents/web_agent.py#L896) | 896 | `"        if any(term in value for term in (\"شكرا\", \"متشكر\", \"متشكره\", \"العفو\")):"` | — |
+| [SRC-1AE03B9EC3-L000897](../../agents/web_agent.py#L897) | 897 | `"            return \"العفو، تحت أمرك.\""` | — |
+| [SRC-1AE03B9EC3-L000898](../../agents/web_agent.py#L898) | 898 | `"        if re.search(r\"[a-z]\", value):"` | — |
+| [SRC-1AE03B9EC3-L000899](../../agents/web_agent.py#L899) | 899 | `"            if any(term in value for term in (\"thanks\", \"thank you\", \"got it\")):"` | — |
+| [SRC-1AE03B9EC3-L000900](../../agents/web_agent.py#L900) | 900 | `"                return \"You're welcome—glad it helped.\""` | — |
 | [SRC-1AE03B9EC3-L000901](../../agents/web_agent.py#L901) | 901 | `"            return \"Hi! I'm here and ready to help. What would you like to work on?\""` | — |
 | [SRC-1AE03B9EC3-L000902](../../agents/web_agent.py#L902) | 902 | `"        return \"أهلًا! أنا معاك. أقدر أساعدك في إيه؟\""` | — |
 | [SRC-1AE03B9EC3-L000903](../../agents/web_agent.py#L903) | 903 | `""` | — |
@@ -776,43 +816,3 @@
 | [SRC-1AE03B9EC3-L001658](../../agents/web_agent.py#L1658) | 1658 | `"            \"User-Agent\": \"OmaraiResearchBot/1.0 (public-content search; no login)\","` | — |
 | [SRC-1AE03B9EC3-L001659](../../agents/web_agent.py#L1659) | 1659 | `"            \"Accept-Language\": \"ar,en;q=0.9\","` | — |
 | [SRC-1AE03B9EC3-L001660](../../agents/web_agent.py#L1660) | 1660 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L001661](../../agents/web_agent.py#L1661) | 1661 | `""` | — |
-| [SRC-1AE03B9EC3-L001662](../../agents/web_agent.py#L1662) | 1662 | `"        reddit_client_id = os.getenv(\"REDDIT_CLIENT_ID\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001663](../../agents/web_agent.py#L1663) | 1663 | `"        reddit_client_secret = os.getenv(\"REDDIT_CLIENT_SECRET\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001664](../../agents/web_agent.py#L1664) | 1664 | `"        reddit_user_agent = os.getenv("` | — |
-| [SRC-1AE03B9EC3-L001665](../../agents/web_agent.py#L1665) | 1665 | `"            \"REDDIT_USER_AGENT\","` | — |
-| [SRC-1AE03B9EC3-L001666](../../agents/web_agent.py#L1666) | 1666 | `"            \"web:omarai-research-agent:v0.3 (public-content research)\","` | — |
-| [SRC-1AE03B9EC3-L001667](../../agents/web_agent.py#L1667) | 1667 | `"        ).strip()"` | — |
-| [SRC-1AE03B9EC3-L001668](../../agents/web_agent.py#L1668) | 1668 | `"        if \"reddit\" in platforms and reddit_client_id and reddit_client_secret:"` | — |
-| [SRC-1AE03B9EC3-L001669](../../agents/web_agent.py#L1669) | 1669 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L001670](../../agents/web_agent.py#L1670) | 1670 | `"                self._reserve_search_call()"` | — |
-| [SRC-1AE03B9EC3-L001671](../../agents/web_agent.py#L1671) | 1671 | `"                token_response = httpx.post("` | — |
-| [SRC-1AE03B9EC3-L001672](../../agents/web_agent.py#L1672) | 1672 | `"                    \"https://www.reddit.com/api/v1/access_token\","` | — |
-| [SRC-1AE03B9EC3-L001673](../../agents/web_agent.py#L1673) | 1673 | `"                    data={\"grant_type\": \"client_credentials\"},"` | — |
-| [SRC-1AE03B9EC3-L001674](../../agents/web_agent.py#L1674) | 1674 | `"                    auth=(reddit_client_id, reddit_client_secret),"` | — |
-| [SRC-1AE03B9EC3-L001675](../../agents/web_agent.py#L1675) | 1675 | `"                    headers={\"User-Agent\": reddit_user_agent},"` | — |
-| [SRC-1AE03B9EC3-L001676](../../agents/web_agent.py#L1676) | 1676 | `"                    timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L001677](../../agents/web_agent.py#L1677) | 1677 | `"                    follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001678](../../agents/web_agent.py#L1678) | 1678 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L001679](../../agents/web_agent.py#L1679) | 1679 | `"                if token_response.status_code == 200:"` | — |
-| [SRC-1AE03B9EC3-L001680](../../agents/web_agent.py#L1680) | 1680 | `"                    access_token = token_response.json().get(\"access_token\", \"\")"` | — |
-| [SRC-1AE03B9EC3-L001681](../../agents/web_agent.py#L1681) | 1681 | `"                    if access_token:"` | — |
-| [SRC-1AE03B9EC3-L001682](../../agents/web_agent.py#L1682) | 1682 | `"                        self._reserve_search_call()"` | — |
-| [SRC-1AE03B9EC3-L001683](../../agents/web_agent.py#L1683) | 1683 | `"                        search_response = httpx.get("` | — |
-| [SRC-1AE03B9EC3-L001684](../../agents/web_agent.py#L1684) | 1684 | `"                            \"https://oauth.reddit.com/search\","` | — |
-| [SRC-1AE03B9EC3-L001685](../../agents/web_agent.py#L1685) | 1685 | `"                            params={"` | — |
-| [SRC-1AE03B9EC3-L001686](../../agents/web_agent.py#L1686) | 1686 | `"                                \"q\": query,"` | — |
-| [SRC-1AE03B9EC3-L001687](../../agents/web_agent.py#L1687) | 1687 | `"                                \"sort\": \"relevance\","` | — |
-| [SRC-1AE03B9EC3-L001688](../../agents/web_agent.py#L1688) | 1688 | `"                                \"t\": \"all\","` | — |
-| [SRC-1AE03B9EC3-L001689](../../agents/web_agent.py#L1689) | 1689 | `"                                \"limit\": 10,"` | — |
-| [SRC-1AE03B9EC3-L001690](../../agents/web_agent.py#L1690) | 1690 | `"                                \"type\": \"link\","` | — |
-| [SRC-1AE03B9EC3-L001691](../../agents/web_agent.py#L1691) | 1691 | `"                            },"` | — |
-| [SRC-1AE03B9EC3-L001692](../../agents/web_agent.py#L1692) | 1692 | `"                            headers={"` | — |
-| [SRC-1AE03B9EC3-L001693](../../agents/web_agent.py#L1693) | 1693 | `"                                **headers,"` | — |
-| [SRC-1AE03B9EC3-L001694](../../agents/web_agent.py#L1694) | 1694 | `"                                \"User-Agent\": reddit_user_agent,"` | — |
-| [SRC-1AE03B9EC3-L001695](../../agents/web_agent.py#L1695) | 1695 | `"                                \"Authorization\": \"Bearer \" + access_token,"` | — |
-| [SRC-1AE03B9EC3-L001696](../../agents/web_agent.py#L1696) | 1696 | `"                            },"` | — |
-| [SRC-1AE03B9EC3-L001697](../../agents/web_agent.py#L1697) | 1697 | `"                            timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L001698](../../agents/web_agent.py#L1698) | 1698 | `"                            follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001699](../../agents/web_agent.py#L1699) | 1699 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L001700](../../agents/web_agent.py#L1700) | 1700 | `"                        if search_response.status_code == 200:"` | — |

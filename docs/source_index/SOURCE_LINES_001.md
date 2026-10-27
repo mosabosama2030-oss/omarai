@@ -877,23 +877,23 @@
 | [SRC-138992B1FC-L000302](../../agents/answer_validation.py#L302) | 302 | `"        for item in citation_alignment"` | — |
 | [SRC-138992B1FC-L000303](../../agents/answer_validation.py#L303) | 303 | `"    )"` | — |
 | [SRC-138992B1FC-L000304](../../agents/answer_validation.py#L304) | 304 | `"    target_checks: list[dict[str, Any]] = []"` | — |
-| [SRC-138992B1FC-L000305](../../agents/answer_validation.py#L305) | 305 | `"    for target in (coverage_targets or [])[:8]:"` | — |
-| [SRC-138992B1FC-L000306](../../agents/answer_validation.py#L306) | 306 | `"        target_tokens = list(dict.fromkeys(_tokens(target, drop_stopwords=True)))"` | — |
-| [SRC-138992B1FC-L000307](../../agents/answer_validation.py#L307) | 307 | `"        if not target_tokens:"` | — |
-| [SRC-138992B1FC-L000308](../../agents/answer_validation.py#L308) | 308 | `"            target_tokens = list(dict.fromkeys(_tokens(target)))"` | — |
-| [SRC-138992B1FC-L000309](../../agents/answer_validation.py#L309) | 309 | `"        overlap = [token for token in target_tokens if token in answer_tokens]"` | — |
-| [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"        ratio = len(overlap) / len(target_tokens) if target_tokens else 0.0"` | — |
-| [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"        likely_covered = bool(overlap) and ("` | — |
-| [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"            ratio >= 0.5 if len(target_tokens) > 1 else True"` | — |
-| [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"        )"` | — |
-| [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"        target_checks.append({"` | — |
-| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `"            \"target\": str(target)[:120],"` | — |
-| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `"            \"status\": \"lexical_signal_found\" if likely_covered else \"possibly_missing\","` | — |
-| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `"            \"matched_terms\": overlap[:12],"` | — |
-| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"            \"missing_terms\": [token for token in target_tokens if token not in answer_tokens][:12],"` | — |
-| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"            \"token_overlap_ratio\": round(ratio, 3),"` | — |
-| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"        })"` | — |
-| [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `""` | — |
-| [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"    citation_count = len(re.findall(r\"\\[(?:المصدر\|source)\\s+\\d+\\]\", answer_text, re.IGNORECASE))"` | — |
-| [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"    if extracted_page_count:"` | — |
-| [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"        source_scope = \"contains_extracted_page_text_and_or_snippets\""` | — |
+| [SRC-138992B1FC-L000305](../../agents/answer_validation.py#L305) | 305 | `"    source_evidence_gap_count = 0"` | — |
+| [SRC-138992B1FC-L000306](../../agents/answer_validation.py#L306) | 306 | `"    for target in (coverage_targets or [])[:8]:"` | — |
+| [SRC-138992B1FC-L000307](../../agents/answer_validation.py#L307) | 307 | `"        target_tokens = list(dict.fromkeys(_tokens(target, drop_stopwords=True)))"` | — |
+| [SRC-138992B1FC-L000308](../../agents/answer_validation.py#L308) | 308 | `"        if not target_tokens:"` | — |
+| [SRC-138992B1FC-L000309](../../agents/answer_validation.py#L309) | 309 | `"            target_tokens = list(dict.fromkeys(_tokens(target)))"` | — |
+| [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"        overlap = [token for token in target_tokens if token in answer_tokens]"` | — |
+| [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"        ratio = len(overlap) / len(target_tokens) if target_tokens else 0.0"` | — |
+| [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"        likely_covered = bool(overlap) and ("` | — |
+| [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"            ratio >= 0.5 if len(target_tokens) > 1 else True"` | — |
+| [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"        )"` | — |
+| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `""` | — |
+| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `"        # Track criterion-level source signals separately from answer wording."` | — |
+| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `"        # A term appearing in a source is not proof that the source supports a claim;"` | — |
+| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"        # this is a bounded retrieval/evidence diagnostic only."` | — |
+| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"        source_checks: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"        for source_index, source in enumerate(safe_sources[:40], 1):"` | — |
+| [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `"            page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"            snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"            title = str(source.get(\"title\") or \"\")"` | — |
+| [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"            if bool(source.get(\"page_fetched\")) and page_text.strip():"` | — |

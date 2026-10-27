@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000818 إلى SRC-FA4E1423C3-L000058
+- النطاق: SRC-3451CC474D-L000778 إلى SRC-FA4E1423C3-L000018
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000778](../../tests/test_api.py#L778) | 778 | `""` | — |
+| [SRC-3451CC474D-L000779](../../tests/test_api.py#L779) | 779 | `""` | — |
+| [SRC-3451CC474D-L000780](../../tests/test_api.py#L780) | 780 | `""` | — |
+| [SRC-3451CC474D-L000781](../../tests/test_api.py#L781) | 781 | `"def test_agent_concurrency_slot_released_after_operation_error(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000782](../../tests/test_api.py#L782) | 782 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-3451CC474D-L000783](../../tests/test_api.py#L783) | 783 | `""` | — |
+| [SRC-3451CC474D-L000784](../../tests/test_api.py#L784) | 784 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000785](../../tests/test_api.py#L785) | 785 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000786](../../tests/test_api.py#L786) | 786 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
+| [SRC-3451CC474D-L000787](../../tests/test_api.py#L787) | 787 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
+| [SRC-3451CC474D-L000788](../../tests/test_api.py#L788) | 788 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
+| [SRC-3451CC474D-L000789](../../tests/test_api.py#L789) | 789 | `"    state = {\"fail\": True}"` | — |
+| [SRC-3451CC474D-L000790](../../tests/test_api.py#L790) | 790 | `""` | — |
+| [SRC-3451CC474D-L000791](../../tests/test_api.py#L791) | 791 | `"    def answer_with_one_transient_failure(self, question, history=None, mode=\"auto\"):"` | — |
+| [SRC-3451CC474D-L000792](../../tests/test_api.py#L792) | 792 | `"        if state[\"fail\"]:"` | — |
+| [SRC-3451CC474D-L000793](../../tests/test_api.py#L793) | 793 | `"            raise RuntimeError(\"synthetic operation failure\")"` | — |
+| [SRC-3451CC474D-L000794](../../tests/test_api.py#L794) | 794 | `"        return {"` | — |
+| [SRC-3451CC474D-L000795](../../tests/test_api.py#L795) | 795 | `"            \"answer\": \"اختبار ناجح\","` | — |
+| [SRC-3451CC474D-L000796](../../tests/test_api.py#L796) | 796 | `"            \"question\": question,"` | — |
+| [SRC-3451CC474D-L000797](../../tests/test_api.py#L797) | 797 | `"            \"search_query\": question,"` | — |
+| [SRC-3451CC474D-L000798](../../tests/test_api.py#L798) | 798 | `"            \"search_queries\": [],"` | — |
+| [SRC-3451CC474D-L000799](../../tests/test_api.py#L799) | 799 | `"            \"search_report\": {"` | — |
+| [SRC-3451CC474D-L000800](../../tests/test_api.py#L800) | 800 | `"                \"search_attempted\": False,"` | — |
+| [SRC-3451CC474D-L000801](../../tests/test_api.py#L801) | 801 | `"                \"search_outcome\": \"not_attempted\","` | — |
+| [SRC-3451CC474D-L000802](../../tests/test_api.py#L802) | 802 | `"            },"` | — |
+| [SRC-3451CC474D-L000803](../../tests/test_api.py#L803) | 803 | `"            \"sources\": [],"` | — |
+| [SRC-3451CC474D-L000804](../../tests/test_api.py#L804) | 804 | `"            \"used_language_model\": False,"` | — |
+| [SRC-3451CC474D-L000805](../../tests/test_api.py#L805) | 805 | `"            \"used_web_search\": False,"` | — |
+| [SRC-3451CC474D-L000806](../../tests/test_api.py#L806) | 806 | `"            \"search_attempted\": False,"` | — |
+| [SRC-3451CC474D-L000807](../../tests/test_api.py#L807) | 807 | `"            \"used_social_search\": False,"` | — |
+| [SRC-3451CC474D-L000808](../../tests/test_api.py#L808) | 808 | `"            \"warnings\": [],"` | — |
+| [SRC-3451CC474D-L000809](../../tests/test_api.py#L809) | 809 | `"            \"kind\": \"web_fallback\","` | — |
+| [SRC-3451CC474D-L000810](../../tests/test_api.py#L810) | 810 | `"        }"` | — |
+| [SRC-3451CC474D-L000811](../../tests/test_api.py#L811) | 811 | `""` | — |
+| [SRC-3451CC474D-L000812](../../tests/test_api.py#L812) | 812 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
+| [SRC-3451CC474D-L000813](../../tests/test_api.py#L813) | 813 | `""` | — |
+| [SRC-3451CC474D-L000814](../../tests/test_api.py#L814) | 814 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000815](../../tests/test_api.py#L815) | 815 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |
+| [SRC-3451CC474D-L000816](../../tests/test_api.py#L816) | 816 | `"    )"` | — |
+| [SRC-3451CC474D-L000817](../../tests/test_api.py#L817) | 817 | `"    assert status == 500"` | — |
 | [SRC-3451CC474D-L000818](../../tests/test_api.py#L818) | 818 | `"    assert payload[\"error\"] == \"internal server error\""` | — |
 | [SRC-3451CC474D-L000819](../../tests/test_api.py#L819) | 819 | `""` | — |
 | [SRC-3451CC474D-L000820](../../tests/test_api.py#L820) | 820 | `"    state[\"fail\"] = False"` | — |
@@ -821,43 +861,3 @@
 | [SRC-FA4E1423C3-L000016](../../tests/test_generate_index.py#L16) | 16 | `"assert INDEXER_SPEC is not None"` | — |
 | [SRC-FA4E1423C3-L000017](../../tests/test_generate_index.py#L17) | 17 | `"assert INDEXER_SPEC.loader is not None"` | — |
 | [SRC-FA4E1423C3-L000018](../../tests/test_generate_index.py#L18) | 18 | `"INDEXER = importlib.util.module_from_spec(INDEXER_SPEC)"` | — |
-| [SRC-FA4E1423C3-L000019](../../tests/test_generate_index.py#L19) | 19 | `"sys.modules[INDEXER_SPEC.name] = INDEXER"` | — |
-| [SRC-FA4E1423C3-L000020](../../tests/test_generate_index.py#L20) | 20 | `"INDEXER_SPEC.loader.exec_module(INDEXER)"` | — |
-| [SRC-FA4E1423C3-L000021](../../tests/test_generate_index.py#L21) | 21 | `""` | — |
-| [SRC-FA4E1423C3-L000022](../../tests/test_generate_index.py#L22) | 22 | `""` | — |
-| [SRC-FA4E1423C3-L000023](../../tests/test_generate_index.py#L23) | 23 | `"def test_indexes_functions_classes_methods_and_docstring_status(tmp_path: Path) -> None:"` | — |
-| [SRC-FA4E1423C3-L000024](../../tests/test_generate_index.py#L24) | 24 | `"    \"\"\"The Python AST index includes qualified names and documentation state.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000025](../../tests/test_generate_index.py#L25) | 25 | `"    source_dir = tmp_path / \"src\""` | — |
-| [SRC-FA4E1423C3-L000026](../../tests/test_generate_index.py#L26) | 26 | `"    source_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000027](../../tests/test_generate_index.py#L27) | 27 | `"    (source_dir / \"sample.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000028](../../tests/test_generate_index.py#L28) | 28 | `"        'class DocumentedClass:\\n'"` | — |
-| [SRC-FA4E1423C3-L000029](../../tests/test_generate_index.py#L29) | 29 | `"        '    \"\"\"A documented class.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000030](../../tests/test_generate_index.py#L30) | 30 | `"        '    def documented_method(self):\\n'"` | — |
-| [SRC-FA4E1423C3-L000031](../../tests/test_generate_index.py#L31) | 31 | `"        '        \"\"\"Price \| unit.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000032](../../tests/test_generate_index.py#L32) | 32 | `"        '        return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000033](../../tests/test_generate_index.py#L33) | 33 | `"        'class UndocumentedClass:\\n'"` | — |
-| [SRC-FA4E1423C3-L000034](../../tests/test_generate_index.py#L34) | 34 | `"        '    pass\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000035](../../tests/test_generate_index.py#L35) | 35 | `"        'def documented_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000036](../../tests/test_generate_index.py#L36) | 36 | `"        '    \"\"\"A documented function.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000037](../../tests/test_generate_index.py#L37) | 37 | `"        '    return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000038](../../tests/test_generate_index.py#L38) | 38 | `"        'def undocumented_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000039](../../tests/test_generate_index.py#L39) | 39 | `"        '    return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000040](../../tests/test_generate_index.py#L40) | 40 | `"        'async def async_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000041](../../tests/test_generate_index.py#L41) | 41 | `"        '    \"\"\"An asynchronous function.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000042](../../tests/test_generate_index.py#L42) | 42 | `"        '    return None\\n',"` | — |
-| [SRC-FA4E1423C3-L000043](../../tests/test_generate_index.py#L43) | 43 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000044](../../tests/test_generate_index.py#L44) | 44 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000045](../../tests/test_generate_index.py#L45) | 45 | `""` | — |
-| [SRC-FA4E1423C3-L000046](../../tests/test_generate_index.py#L46) | 46 | `"    symbols, files_scanned = INDEXER.scan_repository(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000047](../../tests/test_generate_index.py#L47) | 47 | `"    by_name = {symbol.name: symbol for symbol in symbols}"` | — |
-| [SRC-FA4E1423C3-L000048](../../tests/test_generate_index.py#L48) | 48 | `"    markdown = INDEXER.render_markdown(symbols, files_scanned)"` | — |
-| [SRC-FA4E1423C3-L000049](../../tests/test_generate_index.py#L49) | 49 | `""` | — |
-| [SRC-FA4E1423C3-L000050](../../tests/test_generate_index.py#L50) | 50 | `"    assert files_scanned == 1"` | — |
-| [SRC-FA4E1423C3-L000051](../../tests/test_generate_index.py#L51) | 51 | `"    assert by_name[\"DocumentedClass\"].documented is True"` | — |
-| [SRC-FA4E1423C3-L000052](../../tests/test_generate_index.py#L52) | 52 | `"    assert by_name[\"DocumentedClass.documented_method\"].documented is True"` | — |
-| [SRC-FA4E1423C3-L000053](../../tests/test_generate_index.py#L53) | 53 | `"    assert by_name[\"UndocumentedClass\"].documented is False"` | — |
-| [SRC-FA4E1423C3-L000054](../../tests/test_generate_index.py#L54) | 54 | `"    assert by_name[\"documented_function\"].documented is True"` | — |
-| [SRC-FA4E1423C3-L000055](../../tests/test_generate_index.py#L55) | 55 | `"    assert by_name[\"undocumented_function\"].documented is False"` | — |
-| [SRC-FA4E1423C3-L000056](../../tests/test_generate_index.py#L56) | 56 | `"    assert by_name[\"async_function\"].kind == \"دالة غير متزامنة\""` | — |
-| [SRC-FA4E1423C3-L000057](../../tests/test_generate_index.py#L57) | 57 | `"    assert \"Price \\\\\| unit.\" in markdown"` | — |
-| [SRC-FA4E1423C3-L000058](../../tests/test_generate_index.py#L58) | 58 | `"    assert \"\| موثق \|\" in markdown"` | — |

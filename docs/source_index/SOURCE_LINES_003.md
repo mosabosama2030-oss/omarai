@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000056 إلى SRC-1AE03B9EC3-L000100
+- النطاق: SRC-59CF4B7DE8-L000016 إلى SRC-1AE03B9EC3-L000060
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000016](../../agents/research.py#L16) | 16 | `""` | — |
+| [SRC-59CF4B7DE8-L000017](../../agents/research.py#L17) | 17 | `"from agents.intent_router import resolve_followup_query"` | — |
+| [SRC-59CF4B7DE8-L000018](../../agents/research.py#L18) | 18 | `""` | — |
+| [SRC-59CF4B7DE8-L000019](../../agents/research.py#L19) | 19 | `"MAX_PLAN_QUERIES = 8"` | — |
+| [SRC-59CF4B7DE8-L000020](../../agents/research.py#L20) | 20 | `"MAX_QUERY_CHARS = 240"` | — |
+| [SRC-59CF4B7DE8-L000021](../../agents/research.py#L21) | 21 | `"MAX_FUSED_RESULTS = 18"` | — |
+| [SRC-59CF4B7DE8-L000022](../../agents/research.py#L22) | 22 | `""` | — |
+| [SRC-59CF4B7DE8-L000023](../../agents/research.py#L23) | 23 | `""` | — |
+| [SRC-59CF4B7DE8-L000024](../../agents/research.py#L24) | 24 | `"# Use the Public Suffix List snapshot bundled with tldextract; never fetch it at"` | — |
+| [SRC-59CF4B7DE8-L000025](../../agents/research.py#L25) | 25 | `"# runtime. Including private suffixes keeps tenant-hosted sites (e.g. github.io)"` | — |
+| [SRC-59CF4B7DE8-L000026](../../agents/research.py#L26) | 26 | `"# separate, while subdomains belonging to one registrable site share one identity."` | — |
+| [SRC-59CF4B7DE8-L000027](../../agents/research.py#L27) | 27 | `"_DOMAIN_EXTRACTOR = tldextract.TLDExtract("` | — |
+| [SRC-59CF4B7DE8-L000028](../../agents/research.py#L28) | 28 | `"    suffix_list_urls=(),"` | — |
+| [SRC-59CF4B7DE8-L000029](../../agents/research.py#L29) | 29 | `"    include_psl_private_domains=True,"` | — |
+| [SRC-59CF4B7DE8-L000030](../../agents/research.py#L30) | 30 | `")"` | — |
+| [SRC-59CF4B7DE8-L000031](../../agents/research.py#L31) | 31 | `""` | — |
+| [SRC-59CF4B7DE8-L000032](../../agents/research.py#L32) | 32 | `""` | — |
+| [SRC-59CF4B7DE8-L000033](../../agents/research.py#L33) | 33 | `"def registrable_domain(value: Any) -> str:"` | — |
+| [SRC-59CF4B7DE8-L000034](../../agents/research.py#L34) | 34 | `"    \"\"\"Return a normalized registrable domain (or normalized IP/unknown hostname)."` | — |
+| [SRC-59CF4B7DE8-L000035](../../agents/research.py#L35) | 35 | `""` | — |
+| [SRC-59CF4B7DE8-L000036](../../agents/research.py#L36) | 36 | `"    This is a conservative source-diversity key, not proof that two publishers"` | — |
+| [SRC-59CF4B7DE8-L000037](../../agents/research.py#L37) | 37 | `"    are editorially independent. It prevents sibling subdomains from being"` | — |
+| [SRC-59CF4B7DE8-L000038](../../agents/research.py#L38) | 38 | `"    counted as separate domains in the evidence coverage threshold."` | — |
+| [SRC-59CF4B7DE8-L000039](../../agents/research.py#L39) | 39 | `"    \"\"\""` | — |
+| [SRC-59CF4B7DE8-L000040](../../agents/research.py#L40) | 40 | `"    candidate = str(value or \"\").strip()"` | — |
+| [SRC-59CF4B7DE8-L000041](../../agents/research.py#L41) | 41 | `"    if not candidate:"` | — |
+| [SRC-59CF4B7DE8-L000042](../../agents/research.py#L42) | 42 | `"        return \"\""` | — |
+| [SRC-59CF4B7DE8-L000043](../../agents/research.py#L43) | 43 | `"    parsed = urlparse(candidate if \"://\" in candidate else \"//\" + candidate)"` | — |
+| [SRC-59CF4B7DE8-L000044](../../agents/research.py#L44) | 44 | `"    host = (parsed.hostname or \"\").rstrip(\".\").lower()"` | — |
+| [SRC-59CF4B7DE8-L000045](../../agents/research.py#L45) | 45 | `"    if not host:"` | — |
+| [SRC-59CF4B7DE8-L000046](../../agents/research.py#L46) | 46 | `"        return \"\""` | — |
+| [SRC-59CF4B7DE8-L000047](../../agents/research.py#L47) | 47 | `"    try:"` | — |
+| [SRC-59CF4B7DE8-L000048](../../agents/research.py#L48) | 48 | `"        return str(ipaddress.ip_address(host))"` | — |
+| [SRC-59CF4B7DE8-L000049](../../agents/research.py#L49) | 49 | `"    except ValueError:"` | — |
+| [SRC-59CF4B7DE8-L000050](../../agents/research.py#L50) | 50 | `"        pass"` | — |
+| [SRC-59CF4B7DE8-L000051](../../agents/research.py#L51) | 51 | `"    try:"` | — |
+| [SRC-59CF4B7DE8-L000052](../../agents/research.py#L52) | 52 | `"        host = host.encode(\"idna\").decode(\"ascii\").lower()"` | — |
+| [SRC-59CF4B7DE8-L000053](../../agents/research.py#L53) | 53 | `"    except UnicodeError:"` | — |
+| [SRC-59CF4B7DE8-L000054](../../agents/research.py#L54) | 54 | `"        return host"` | — |
+| [SRC-59CF4B7DE8-L000055](../../agents/research.py#L55) | 55 | `"    extracted = _DOMAIN_EXTRACTOR(host)"` | — |
 | [SRC-59CF4B7DE8-L000056](../../agents/research.py#L56) | 56 | `"    return (extracted.top_domain_under_public_suffix or host).lower()"` | — |
 | [SRC-59CF4B7DE8-L000057](../../agents/research.py#L57) | 57 | `""` | — |
 | [SRC-59CF4B7DE8-L000058](../../agents/research.py#L58) | 58 | `"SOCIAL_DOMAINS = {"` | — |
@@ -785,43 +825,3 @@
 | [SRC-1AE03B9EC3-L000058](../../agents/web_agent.py#L58) | 58 | `"    \"relevance_below_threshold\","` | — |
 | [SRC-1AE03B9EC3-L000059](../../agents/web_agent.py#L59) | 59 | `")"` | — |
 | [SRC-1AE03B9EC3-L000060](../../agents/web_agent.py#L60) | 60 | `""` | — |
-| [SRC-1AE03B9EC3-L000061](../../agents/web_agent.py#L61) | 61 | `""` | — |
-| [SRC-1AE03B9EC3-L000062](../../agents/web_agent.py#L62) | 62 | `"_ARABIC_SEARCH_TRANSLATION = str.maketrans({"` | — |
-| [SRC-1AE03B9EC3-L000063](../../agents/web_agent.py#L63) | 63 | `"    \"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ٱ\": \"ا\", \"ى\": \"ي\","` | — |
-| [SRC-1AE03B9EC3-L000064](../../agents/web_agent.py#L64) | 64 | `"    \"ؤ\": \"و\", \"ئ\": \"ي\", \"ة\": \"ه\", \"ـ\": \"\","` | — |
-| [SRC-1AE03B9EC3-L000065](../../agents/web_agent.py#L65) | 65 | `"})"` | — |
-| [SRC-1AE03B9EC3-L000066](../../agents/web_agent.py#L66) | 66 | `"_ARABIC_DIACRITICS_RE = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
-| [SRC-1AE03B9EC3-L000067](../../agents/web_agent.py#L67) | 67 | `"_SEARCH_STOPWORDS = frozenset({"` | — |
-| [SRC-1AE03B9EC3-L000068](../../agents/web_agent.py#L68) | 68 | `"    \"ما\", \"ماذا\", \"من\", \"في\", \"على\", \"عن\", \"الى\", \"إلى\", \"و\", \"او\", \"أو\","` | — |
-| [SRC-1AE03B9EC3-L000069](../../agents/web_agent.py#L69) | 69 | `"    \"هل\", \"هو\", \"هي\", \"هذا\", \"هذه\", \"ذلك\", \"تلك\", \"التي\", \"الذي\", \"مع\","` | — |
-| [SRC-1AE03B9EC3-L000070](../../agents/web_agent.py#L70) | 70 | `"    \"بين\", \"كيف\", \"لماذا\", \"كم\", \"كان\", \"كانت\", \"يكون\", \"تكون\", \"لي\","` | — |
-| [SRC-1AE03B9EC3-L000071](../../agents/web_agent.py#L71) | 71 | `"    \"the\", \"a\", \"an\", \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\","` | — |
-| [SRC-1AE03B9EC3-L000072](../../agents/web_agent.py#L72) | 72 | `"    \"is\", \"are\", \"was\", \"were\", \"what\", \"which\", \"who\", \"how\", \"why\", \"when\","` | — |
-| [SRC-1AE03B9EC3-L000073](../../agents/web_agent.py#L73) | 73 | `"    \"where\", \"compare\", \"comparison\", \"please\", \"show\", \"find\", \"latest\","` | — |
-| [SRC-1AE03B9EC3-L000074](../../agents/web_agent.py#L74) | 74 | `"    \"news\", \"official\", \"sources\", \"source\", \"reports\", \"report\", \"analysis\","` | — |
-| [SRC-1AE03B9EC3-L000075](../../agents/web_agent.py#L75) | 75 | `"    \"site\", \"com\", \"org\", \"net\", \"www\","` | — |
-| [SRC-1AE03B9EC3-L000076](../../agents/web_agent.py#L76) | 76 | `"    # Arabic request/format words are not useful topic concepts for matching search snippets."` | — |
-| [SRC-1AE03B9EC3-L000077](../../agents/web_agent.py#L77) | 77 | `"    \"اذكر\", \"مصدر\", \"مصادر\", \"موثوق\", \"موثوقة\", \"رابط\", \"روابط\", \"مباشر\","` | — |
-| [SRC-1AE03B9EC3-L000078](../../agents/web_agent.py#L78) | 78 | `"    \"مباشرة\", \"اجب\", \"بالعربية\", \"العربية\", \"بايجاز\", \"بالايجاز\", \"ايجاز\","` | — |
-| [SRC-1AE03B9EC3-L000079](../../agents/web_agent.py#L79) | 79 | `"    \"باختصار\", \"اختصار\", \"استخدم\", \"اعرض\", \"وضح\", \"حلل\", \"قارن\", \"متعددة\","` | — |
-| [SRC-1AE03B9EC3-L000080](../../agents/web_agent.py#L80) | 80 | `"    \"اهم\", \"الحقائق\", \"حقائق\", \"استنتاج\", \"استنتاجات\", \"الاستنتاجات\","` | — |
-| [SRC-1AE03B9EC3-L000081](../../agents/web_agent.py#L81) | 81 | `"    \"تواريخ\", \"تاريخ\", \"الاخبار\", \"اخبار\", \"المصادر\", \"معلومات\", \"قديمة\","` | — |
-| [SRC-1AE03B9EC3-L000082](../../agents/web_agent.py#L82) | 82 | `"    \"قديمه\", \"جديدة\", \"جديده\", \"خلال\", \"الايام\", \"ايام\", \"السبعة\", \"سبعة\","` | — |
-| [SRC-1AE03B9EC3-L000083](../../agents/web_agent.py#L83) | 83 | `"    \"الماضية\", \"ماضية\", \"الاسبوع\", \"حاليا\", \"الان\", \"احدث\", \"ولا\","` | — |
-| [SRC-1AE03B9EC3-L000084](../../agents/web_agent.py#L84) | 84 | `"    \"تعرض\", \"باعتبارها\","` | — |
-| [SRC-1AE03B9EC3-L000085](../../agents/web_agent.py#L85) | 85 | `"})"` | — |
-| [SRC-1AE03B9EC3-L000086](../../agents/web_agent.py#L86) | 86 | `"# Search-expansion modifiers are useful after a real topic, but must not stand in"` | — |
-| [SRC-1AE03B9EC3-L000087](../../agents/web_agent.py#L87) | 87 | `"# for a topic if a future planner/expansion path loses its subject."` | — |
-| [SRC-1AE03B9EC3-L000088](../../agents/web_agent.py#L88) | 88 | `"_GENERIC_QUERY_MODIFIER_TOKENS = frozenset({"` | — |
-| [SRC-1AE03B9EC3-L000089](../../agents/web_agent.py#L89) | 89 | `"    \"risk\", \"risks\", \"limitation\", \"limitations\", \"alternative\", \"alternatives\","` | — |
-| [SRC-1AE03B9EC3-L000090](../../agents/web_agent.py#L90) | 90 | `"    \"recent\", \"data\", \"review\", \"reviews\", \"comparison\", \"compare\", \"official\","` | — |
-| [SRC-1AE03B9EC3-L000091](../../agents/web_agent.py#L91) | 91 | `"    \"primary\", \"source\", \"sources\", \"evidence\", \"report\", \"reports\", \"case\", \"cases\","` | — |
-| [SRC-1AE03B9EC3-L000092](../../agents/web_agent.py#L92) | 92 | `"    \"study\", \"studies\", \"analysis\", \"latest\", \"news\", \"update\", \"updates\","` | — |
-| [SRC-1AE03B9EC3-L000093](../../agents/web_agent.py#L93) | 93 | `"    \"announcement\", \"announcements\", \"comprehensive\", \"research\", \"statistic\","` | — |
-| [SRC-1AE03B9EC3-L000094](../../agents/web_agent.py#L94) | 94 | `"    \"statistics\", \"trend\", \"trends\","` | — |
-| [SRC-1AE03B9EC3-L000095](../../agents/web_agent.py#L95) | 95 | `"})"` | — |
-| [SRC-1AE03B9EC3-L000096](../../agents/web_agent.py#L96) | 96 | `"_SEARCH_SYNONYMS = {"` | — |
-| [SRC-1AE03B9EC3-L000097](../../agents/web_agent.py#L97) | 97 | `"    \"استراليا\": {\"australia\"}, \"عاصمة\": {\"capital\"}, \"مصر\": {\"egypt\"},"` | — |
-| [SRC-1AE03B9EC3-L000098](../../agents/web_agent.py#L98) | 98 | `"    \"المصري\": {\"egyptian\", \"egypt\"}, \"مركزي\": {\"central\"},"` | — |
-| [SRC-1AE03B9EC3-L000099](../../agents/web_agent.py#L99) | 99 | `"    \"المركزي\": {\"central\"}, \"بنك\": {\"bank\"}, \"البنك\": {\"bank\"},"` | — |
-| [SRC-1AE03B9EC3-L000100](../../agents/web_agent.py#L100) | 100 | `"    \"قرار\": {\"decision\"}, \"قرارات\": {\"decision\", \"decisions\"},"` | — |

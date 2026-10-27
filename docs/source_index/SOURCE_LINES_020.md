@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000768 إلى SRC-50C86B7ED8-L000022
+- النطاق: SRC-0F910493E8-L000728 إلى SRC-C693279643-L000003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000728](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L728) | 728 | `"- ربط الاختبار والإصدار والartifact بالـ commit الذي أنتجه، وحفظ سجل قابل للتحقق."` | — |
+| [SRC-0F910493E8-L000729](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L729) | 729 | `"- استخدام SBOM وتوقيع artifacts/provenance عندما تسمح البيئة وتبرر المخاطر ذلك."` | — |
+| [SRC-0F910493E8-L000730](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L730) | 730 | `"- فصل بيئة الاختبار عن أسرار الإنتاج والبيانات الحقيقية."` | — |
+| [SRC-0F910493E8-L000731](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L731) | 731 | `"- لا يُدمج PR أو ينشر الإنتاج إلا بتفويض المدير البشري وفق سياسة المشروع."` | — |
+| [SRC-0F910493E8-L000732](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L732) | 732 | `""` | — |
+| [SRC-0F910493E8-L000733](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L733) | 733 | `"لا يعني عدم توافر أداة فحص مدفوعة تجاهل الخطر؛ يمكن استخدام فحوص مجانية أو يدوية مناسبة، مع بيان نطاقها وحدودها."` | — |
+| [SRC-0F910493E8-L000734](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L734) | 734 | `""` | — |
+| [SRC-0F910493E8-L000735](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L735) | 735 | `"## 17.13 عزل الكود المولد — عند دراسة هذه القدرة مستقبلًا فقط"` | — |
+| [SRC-0F910493E8-L000736](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L736) | 736 | `""` | — |
+| [SRC-0F910493E8-L000737](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L737) | 737 | `"**الوضع الافتراضي: لا يوجد تشغيل لكود تنفيذي يولده النموذج.**"` | — |
+| [SRC-0F910493E8-L000738](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L738) | 738 | `""` | — |
+| [SRC-0F910493E8-L000739](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L739) | 739 | `"إذا وافق المدير البشري مستقبلًا على تجربة محددة لتوليد الكود، فلا تعمل على خادم التطبيق الأساسي مباشرة. يجب أن يستخدم التنفيذ بيئة عزل مناسبة للخطر (مثل VM أو microVM أو sandbox مكافئ مثبت الحدود)، وبالحد الأدنى:"` | — |
+| [SRC-0F910493E8-L000740](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L740) | 740 | `"- مستخدم غير متميز؛ لا root ولا امتيازات إدارية."` | — |
+| [SRC-0F910493E8-L000741](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L741) | 741 | `"- نظام ملفات مؤقت ومحدود، وقراءة فقط للصورة الأساسية، دون mount لأسرار المضيف أو ملفات المستخدم غير اللازمة."` | — |
+| [SRC-0F910493E8-L000742](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L742) | 742 | `"- شبكة مغلقة افتراضيًا؛ أي خروج شبكي عبر proxy/allowlist وموافقة واضحة."` | — |
+| [SRC-0F910493E8-L000743](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L743) | 743 | `"- عدم تمرير مفاتيح النموذج أو استضافة التطبيق إلى العملية المولدة."` | — |
+| [SRC-0F910493E8-L000744](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L744) | 744 | `"- تحديد CPU والذاكرة وحجم الملف والمدة وعدد العمليات والتزامن."` | — |
+| [SRC-0F910493E8-L000745](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L745) | 745 | `"- عزل namespaces/cgroups/seccomp/AppArmor أو ضوابط مكافئة بحسب النظام، واختبار فعاليتها لا الاكتفاء بأسمائها."` | — |
+| [SRC-0F910493E8-L000746](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L746) | 746 | `"- تثبيت الاعتماديات المسموحة وعدم تثبيت أي package عشوائي من شبكة عامة في مسار موثوق."` | — |
+| [SRC-0F910493E8-L000747](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L747) | 747 | `"- عدم السماح بالوصول إلى Docker socket أو أجهزة المضيف أو ملفات الأسرار."` | — |
+| [SRC-0F910493E8-L000748](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L748) | 748 | `"- بيئة مؤقتة تنظف بعد التنفيذ، مع حفظ أثر الاختبار المنقح فقط."` | — |
+| [SRC-0F910493E8-L000749](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L749) | 749 | `"- اختبارات هروب وتصعيد صلاحيات وقراءة ملفات واتصال غير مصرح به واستنزاف موارد."` | — |
+| [SRC-0F910493E8-L000750](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L750) | 750 | `"- اختبار مستقل عن اختبارات الكود التي أنشأها النموذج."` | — |
+| [SRC-0F910493E8-L000751](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L751) | 751 | `"- مراجعة بشرية وموافقة نشر وتوقيع/تحديد إصدار وخطة rollback."` | — |
+| [SRC-0F910493E8-L000752](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L752) | 752 | `""` | — |
+| [SRC-0F910493E8-L000753](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L753) | 753 | `"إذا تعذّر إثبات حد العزل في منصة مجانية أو بيئة الهاتف/Termux، لا نفعّل تشغيل الكود المولد هناك. لا يغير وصف البيئة بأنها sandbox هذا الحكم."` | — |
+| [SRC-0F910493E8-L000754](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L754) | 754 | `""` | — |
+| [SRC-0F910493E8-L000755](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L755) | 755 | `"## 17.14 حدود الموارد ومقاومة الإساءة"` | — |
+| [SRC-0F910493E8-L000756](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L756) | 756 | `""` | — |
+| [SRC-0F910493E8-L000757](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L757) | 757 | `"- كل طلب له deadline وميزانية للوقت والخطوات واستدعاءات الأدوات والنماذج والصفحات والحجم."` | — |
+| [SRC-0F910493E8-L000758](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L758) | 758 | `"- لكل موصل حدود مستقلة للمهلة والتزامن وعدد النتائج وحجم الاستجابة."` | — |
+| [SRC-0F910493E8-L000759](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L759) | 759 | `"- إعادة المحاولة محدودة، مع منع تكرار الأثر الخارجي وتطبيق idempotency عندما يلزم."` | — |
+| [SRC-0F910493E8-L000760](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L760) | 760 | `"- حدود المعدل تراعي هوية المستخدم والمسار المكلف؛ لا تعتمد على header غير موثوق أو عنوان IP يمكن تزويره عند وجود proxy."` | — |
+| [SRC-0F910493E8-L000761](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L761) | 761 | `"- تستخدم semaphores/backpressure أو رفض مؤقت عند بلوغ حد التزامن."` | — |
+| [SRC-0F910493E8-L000762](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L762) | 762 | `"- عند تعطل المزود، لا تستمر حلقة مفتوحة ولا يتحول الفشل إلى نجاح ظاهري."` | — |
+| [SRC-0F910493E8-L000763](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L763) | 763 | `"- إذا وجدت APIs مدفوعة، تستخدم حدود إنفاق/حصص وتنبيهات وقاطع تعطيل حيث تسمح الخدمة؛ الميزانية الداخلية لكل طلب لا تثبت وحدها وجود سقف مالي شامل."` | — |
+| [SRC-0F910493E8-L000764](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L764) | 764 | `"- اختبر استنفاد الميزانية والانتهاء أثناء الاتصال والفشل الجزئي وإطلاق طلبات متزامنة. لا تُدَّعى قدرة على الإلغاء الفوري إذا كانت المكتبة تنهي الاتصال بتأخير تعاوني."` | — |
+| [SRC-0F910493E8-L000765](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L765) | 765 | `""` | — |
+| [SRC-0F910493E8-L000766](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L766) | 766 | `"## 17.15 السجلات، المراقبة، كشف الحوادث والتعافي"` | — |
+| [SRC-0F910493E8-L000767](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L767) | 767 | `""` | — |
 | [SRC-0F910493E8-L000768](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L768) | 768 | `"- سجل من قام بالفعل، وما القدرة التي طُلبت، وقرار السياسة، وحالة الأداة، ومعرف المهمة، ونتيجة مختصرة منقحة."` | — |
 | [SRC-0F910493E8-L000769](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L769) | 769 | `"- لا تسجل API keys أو cookies أو Authorization headers أو أسرار النموذج أو بيانات خاصة لا حاجة إليها."` | — |
 | [SRC-0F910493E8-L000770](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L770) | 770 | `"- قيد الوصول إلى السجلات، وحدد مدة الاحتفاظ والحذف ومراجعة الوصول."` | — |
@@ -830,52 +870,3 @@
 | [SRC-C693279643-L000001](../../LICENSE#L1) | 1 | `"MIT License"` | — |
 | [SRC-C693279643-L000002](../../LICENSE#L2) | 2 | `""` | — |
 | [SRC-C693279643-L000003](../../LICENSE#L3) | 3 | `"Copyright (c) 2026 Omarai contributors"` | — |
-| [SRC-C693279643-L000004](../../LICENSE#L4) | 4 | `""` | — |
-| [SRC-C693279643-L000005](../../LICENSE#L5) | 5 | `"Permission is hereby granted, free of charge, to any person obtaining a copy"` | — |
-| [SRC-C693279643-L000006](../../LICENSE#L6) | 6 | `"of this software and associated documentation files (the \"Software\"), to deal"` | — |
-| [SRC-C693279643-L000007](../../LICENSE#L7) | 7 | `"in the Software without restriction, including without limitation the rights"` | — |
-| [SRC-C693279643-L000008](../../LICENSE#L8) | 8 | `"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell"` | — |
-| [SRC-C693279643-L000009](../../LICENSE#L9) | 9 | `"copies of the Software, and to permit persons to whom the Software is"` | — |
-| [SRC-C693279643-L000010](../../LICENSE#L10) | 10 | `"furnished to do so, subject to the following conditions:"` | — |
-| [SRC-C693279643-L000011](../../LICENSE#L11) | 11 | `""` | — |
-| [SRC-C693279643-L000012](../../LICENSE#L12) | 12 | `"The above copyright notice and this permission notice shall be included in all"` | — |
-| [SRC-C693279643-L000013](../../LICENSE#L13) | 13 | `"copies or substantial portions of the Software."` | — |
-| [SRC-C693279643-L000014](../../LICENSE#L14) | 14 | `""` | — |
-| [SRC-C693279643-L000015](../../LICENSE#L15) | 15 | `"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR"` | — |
-| [SRC-C693279643-L000016](../../LICENSE#L16) | 16 | `"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,"` | — |
-| [SRC-C693279643-L000017](../../LICENSE#L17) | 17 | `"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE"` | — |
-| [SRC-C693279643-L000018](../../LICENSE#L18) | 18 | `"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"` | — |
-| [SRC-C693279643-L000019](../../LICENSE#L19) | 19 | `"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,"` | — |
-| [SRC-C693279643-L000020](../../LICENSE#L20) | 20 | `"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE"` | — |
-| [SRC-C693279643-L000021](../../LICENSE#L21) | 21 | `"SOFTWARE."` | — |
-## إعدادات وتشغيل
-
-### FILE-50C86B7ED8 — [pyproject.toml](../../pyproject.toml#L1)
-
-- النوع: **TOML**
-- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-50C86B7ED8-L000001](../../pyproject.toml#L1) | 1 | `"[build-system]"` | — |
-| [SRC-50C86B7ED8-L000002](../../pyproject.toml#L2) | 2 | `"requires = [\"setuptools>=68\"]"` | — |
-| [SRC-50C86B7ED8-L000003](../../pyproject.toml#L3) | 3 | `"build-backend = \"setuptools.build_meta\""` | — |
-| [SRC-50C86B7ED8-L000004](../../pyproject.toml#L4) | 4 | `""` | — |
-| [SRC-50C86B7ED8-L000005](../../pyproject.toml#L5) | 5 | `"[project]"` | — |
-| [SRC-50C86B7ED8-L000006](../../pyproject.toml#L6) | 6 | `"name = \"omarai-agent\""` | — |
-| [SRC-50C86B7ED8-L000007](../../pyproject.toml#L7) | 7 | `"version = \"0.2.0\""` | — |
-| [SRC-50C86B7ED8-L000008](../../pyproject.toml#L8) | 8 | `"description = \"Arabic-first web research and generative Q&A agent with lead workspace\""` | — |
-| [SRC-50C86B7ED8-L000009](../../pyproject.toml#L9) | 9 | `"readme = \"README.md\""` | — |
-| [SRC-50C86B7ED8-L000010](../../pyproject.toml#L10) | 10 | `"requires-python = \">=3.11\""` | — |
-| [SRC-50C86B7ED8-L000011](../../pyproject.toml#L11) | 11 | `"license = { text = \"MIT\" }"` | — |
-| [SRC-50C86B7ED8-L000012](../../pyproject.toml#L12) | 12 | `"dependencies = ["` | — |
-| [SRC-50C86B7ED8-L000013](../../pyproject.toml#L13) | 13 | `"  \"beautifulsoup4>=4.12,<5\","` | — |
-| [SRC-50C86B7ED8-L000014](../../pyproject.toml#L14) | 14 | `"  \"httpx>=0.27,<1\","` | — |
-| [SRC-50C86B7ED8-L000015](../../pyproject.toml#L15) | 15 | `"  \"tldextract>=5.3,<6\","` | — |
-| [SRC-50C86B7ED8-L000016](../../pyproject.toml#L16) | 16 | `"]"` | — |
-| [SRC-50C86B7ED8-L000017](../../pyproject.toml#L17) | 17 | `""` | — |
-| [SRC-50C86B7ED8-L000018](../../pyproject.toml#L18) | 18 | `"[project.optional-dependencies]"` | — |
-| [SRC-50C86B7ED8-L000019](../../pyproject.toml#L19) | 19 | `"dev = [\"pytest>=8.0\", \"ruff>=0.5\"]"` | — |
-| [SRC-50C86B7ED8-L000020](../../pyproject.toml#L20) | 20 | `""` | — |
-| [SRC-50C86B7ED8-L000021](../../pyproject.toml#L21) | 21 | `"[tool.pytest.ini_options]"` | — |
-| [SRC-50C86B7ED8-L000022](../../pyproject.toml#L22) | 22 | `"testpaths = [\"tests\"]"` | — |

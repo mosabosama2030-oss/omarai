@@ -4,9 +4,26 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-CAC5F305FE-L000033 إلى SRC-3451CC474D-L000017
+- النطاق: SRC-90FAA34ADE-L001345 إلى SRC-1C77C97630-L000261
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-90FAA34ADE — [tests/fixtures/answer_quality_cases.json](../../tests/fixtures/answer_quality_cases.json#L1)
+
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-90FAA34ADE-L001345](../../tests/fixtures/answer_quality_cases.json#L1345) | 1345 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001346](../../tests/fixtures/answer_quality_cases.json#L1346) | 1346 | `"        \"تسجيل نية شراء مؤكدة بلا دليل\","` | — |
+| [SRC-90FAA34ADE-L001347](../../tests/fixtures/answer_quality_cases.json#L1347) | 1347 | `"        \"ادعاء إجراء تواصل لم يحدث\""` | — |
+| [SRC-90FAA34ADE-L001348](../../tests/fixtures/answer_quality_cases.json#L1348) | 1348 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001349](../../tests/fixtures/answer_quality_cases.json#L1349) | 1349 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001350](../../tests/fixtures/answer_quality_cases.json#L1350) | 1350 | `"    }"` | — |
+| [SRC-90FAA34ADE-L001351](../../tests/fixtures/answer_quality_cases.json#L1351) | 1351 | `"  ]"` | — |
+| [SRC-90FAA34ADE-L001352](../../tests/fixtures/answer_quality_cases.json#L1352) | 1352 | `"}"` | — |
 ## اختبارات
 
 ### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
@@ -16,6 +33,38 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-CAC5F305FE-L000001](../../tests/test_agent_modes.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-CAC5F305FE-L000002](../../tests/test_agent_modes.py#L2) | 2 | `""` | — |
+| [SRC-CAC5F305FE-L000003](../../tests/test_agent_modes.py#L3) | 3 | `"from agents.research import evidence_signal_report"` | — |
+| [SRC-CAC5F305FE-L000004](../../tests/test_agent_modes.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-CAC5F305FE-L000005](../../tests/test_agent_modes.py#L5) | 5 | `""` | — |
+| [SRC-CAC5F305FE-L000006](../../tests/test_agent_modes.py#L6) | 6 | `""` | — |
+| [SRC-CAC5F305FE-L000007](../../tests/test_agent_modes.py#L7) | 7 | `"def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatch):"` | — |
+| [SRC-CAC5F305FE-L000008](../../tests/test_agent_modes.py#L8) | 8 | `"    agent = WebAgent()"` | — |
+| [SRC-CAC5F305FE-L000009](../../tests/test_agent_modes.py#L9) | 9 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-CAC5F305FE-L000010](../../tests/test_agent_modes.py#L10) | 10 | `"    seen = {}"` | — |
+| [SRC-CAC5F305FE-L000011](../../tests/test_agent_modes.py#L11) | 11 | `""` | — |
+| [SRC-CAC5F305FE-L000012](../../tests/test_agent_modes.py#L12) | 12 | `"    def plan(question, history):"` | — |
+| [SRC-CAC5F305FE-L000013](../../tests/test_agent_modes.py#L13) | 13 | `"        return {"` | — |
+| [SRC-CAC5F305FE-L000014](../../tests/test_agent_modes.py#L14) | 14 | `"            \"queries\": [\"topic summary\"],"` | — |
+| [SRC-CAC5F305FE-L000015](../../tests/test_agent_modes.py#L15) | 15 | `"            \"direct_urls\": [],"` | — |
+| [SRC-CAC5F305FE-L000016](../../tests/test_agent_modes.py#L16) | 16 | `"            \"social_focus\": False,"` | — |
+| [SRC-CAC5F305FE-L000017](../../tests/test_agent_modes.py#L17) | 17 | `"            \"freshness\": \"any\","` | — |
+| [SRC-CAC5F305FE-L000018](../../tests/test_agent_modes.py#L18) | 18 | `"            \"depth\": \"standard\","` | — |
+| [SRC-CAC5F305FE-L000019](../../tests/test_agent_modes.py#L19) | 19 | `"            \"platforms\": [],"` | — |
+| [SRC-CAC5F305FE-L000020](../../tests/test_agent_modes.py#L20) | 20 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-CAC5F305FE-L000021](../../tests/test_agent_modes.py#L21) | 21 | `"        }"` | — |
+| [SRC-CAC5F305FE-L000022](../../tests/test_agent_modes.py#L22) | 22 | `""` | — |
+| [SRC-CAC5F305FE-L000023](../../tests/test_agent_modes.py#L23) | 23 | `"    source = {"` | — |
+| [SRC-CAC5F305FE-L000024](../../tests/test_agent_modes.py#L24) | 24 | `"        \"title\": \"A public report\","` | — |
+| [SRC-CAC5F305FE-L000025](../../tests/test_agent_modes.py#L25) | 25 | `"        \"url\": \"https://example.org/report\","` | — |
+| [SRC-CAC5F305FE-L000026](../../tests/test_agent_modes.py#L26) | 26 | `"        \"snippet\": \"Evidence snippet\","` | — |
+| [SRC-CAC5F305FE-L000027](../../tests/test_agent_modes.py#L27) | 27 | `"        \"page_text\": \"Fetched text\","` | — |
+| [SRC-CAC5F305FE-L000028](../../tests/test_agent_modes.py#L28) | 28 | `"        \"page_fetched\": True,"` | — |
+| [SRC-CAC5F305FE-L000029](../../tests/test_agent_modes.py#L29) | 29 | `"        \"provider\": \"test_search\","` | — |
+| [SRC-CAC5F305FE-L000030](../../tests/test_agent_modes.py#L30) | 30 | `"        \"providers\": [\"test_search\"],"` | — |
+| [SRC-CAC5F305FE-L000031](../../tests/test_agent_modes.py#L31) | 31 | `"        \"queries\": [\"topic summary\"],"` | — |
+| [SRC-CAC5F305FE-L000032](../../tests/test_agent_modes.py#L32) | 32 | `"        \"domain\": \"example.org\","` | — |
 | [SRC-CAC5F305FE-L000033](../../tests/test_agent_modes.py#L33) | 33 | `"        \"source_class\": \"general\","` | — |
 | [SRC-CAC5F305FE-L000034](../../tests/test_agent_modes.py#L34) | 34 | `"        \"platform\": \"web\","` | — |
 | [SRC-CAC5F305FE-L000035](../../tests/test_agent_modes.py#L35) | 35 | `"        \"published_at\": \"2026-10-10\","` | — |
@@ -803,52 +852,3 @@
 | [SRC-1C77C97630-L000259](../../tests/test_answer_validation.py#L259) | 259 | `""` | — |
 | [SRC-1C77C97630-L000260](../../tests/test_answer_validation.py#L260) | 260 | `""` | — |
 | [SRC-1C77C97630-L000261](../../tests/test_answer_validation.py#L261) | 261 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |
-| [SRC-1C77C97630-L000262](../../tests/test_answer_validation.py#L262) | 262 | `"    html_path = Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
-| [SRC-1C77C97630-L000263](../../tests/test_answer_validation.py#L263) | 263 | `"    html = html_path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-1C77C97630-L000264](../../tests/test_answer_validation.py#L264) | 264 | `""` | — |
-| [SRC-1C77C97630-L000265](../../tests/test_answer_validation.py#L265) | 265 | `"    assert \"citation_numeric_support\" in html"` | — |
-| [SRC-1C77C97630-L000266](../../tests/test_answer_validation.py#L266) | 266 | `"    assert \"potential_value_discrepancies\" in html"` | — |
-| [SRC-1C77C97630-L000267](../../tests/test_answer_validation.py#L267) | 267 | `"    assert \"هذه ليست إثباتًا تلقائيًا لوجود تناقض\" in html"` | — |
-| [SRC-1C77C97630-L000268](../../tests/test_answer_validation.py#L268) | 268 | `"    assert \"ليس تحققًا من الحقيقة\" in html"` | — |
-| [SRC-1C77C97630-L000269](../../tests/test_answer_validation.py#L269) | 269 | `""` | — |
-| [SRC-1C77C97630-L000270](../../tests/test_answer_validation.py#L270) | 270 | `""` | — |
-| [SRC-1C77C97630-L000271](../../tests/test_answer_validation.py#L271) | 271 | `"def test_single_coincidental_token_does_not_count_as_citation_support():"` | — |
-| [SRC-1C77C97630-L000272](../../tests/test_answer_validation.py#L272) | 272 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000273](../../tests/test_answer_validation.py#L273) | 273 | `"        \"What is the device quality?\","` | — |
-| [SRC-1C77C97630-L000274](../../tests/test_answer_validation.py#L274) | 274 | `"        \"Apple is a premium and exceptionally reliable device [source 1].\","` | — |
-| [SRC-1C77C97630-L000275](../../tests/test_answer_validation.py#L275) | 275 | `"        [{"` | — |
-| [SRC-1C77C97630-L000276](../../tests/test_answer_validation.py#L276) | 276 | `"            \"title\": \"Apple catalog\","` | — |
-| [SRC-1C77C97630-L000277](../../tests/test_answer_validation.py#L277) | 277 | `"            \"snippet\": \"Apple product listing\","` | — |
-| [SRC-1C77C97630-L000278](../../tests/test_answer_validation.py#L278) | 278 | `"            \"page_text\": \"Apple products are listed with model identifiers and availability.\","` | — |
-| [SRC-1C77C97630-L000279](../../tests/test_answer_validation.py#L279) | 279 | `"            \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000280](../../tests/test_answer_validation.py#L280) | 280 | `"        }],"` | — |
-| [SRC-1C77C97630-L000281](../../tests/test_answer_validation.py#L281) | 281 | `"    )"` | — |
-| [SRC-1C77C97630-L000282](../../tests/test_answer_validation.py#L282) | 282 | `"    assert result[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
-| [SRC-1C77C97630-L000283](../../tests/test_answer_validation.py#L283) | 283 | `"    assert result[\"weak_citation_alignment_count\"] == 1"` | — |
-| [SRC-1C77C97630-L000284](../../tests/test_answer_validation.py#L284) | 284 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
-## اختبارات
-
-### FILE-3451CC474D — [tests/test_api.py](../../tests/test_api.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-3451CC474D-L000001](../../tests/test_api.py#L1) | 1 | `"\"\"\"HTTP integration tests for Omarai local API and assistant endpoints.\"\"\""` | — |
-| [SRC-3451CC474D-L000002](../../tests/test_api.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-3451CC474D-L000003](../../tests/test_api.py#L3) | 3 | `""` | — |
-| [SRC-3451CC474D-L000004](../../tests/test_api.py#L4) | 4 | `"import json"` | — |
-| [SRC-3451CC474D-L000005](../../tests/test_api.py#L5) | 5 | `"import re"` | — |
-| [SRC-3451CC474D-L000006](../../tests/test_api.py#L6) | 6 | `"import socket"` | — |
-| [SRC-3451CC474D-L000007](../../tests/test_api.py#L7) | 7 | `"import threading"` | — |
-| [SRC-3451CC474D-L000008](../../tests/test_api.py#L8) | 8 | `"from collections import defaultdict, deque"` | — |
-| [SRC-3451CC474D-L000009](../../tests/test_api.py#L9) | 9 | `"from http.server import ThreadingHTTPServer"` | — |
-| [SRC-3451CC474D-L000010](../../tests/test_api.py#L10) | 10 | `"from pathlib import Path"` | — |
-| [SRC-3451CC474D-L000011](../../tests/test_api.py#L11) | 11 | `"from types import SimpleNamespace"` | — |
-| [SRC-3451CC474D-L000012](../../tests/test_api.py#L12) | 12 | `"from urllib.error import HTTPError"` | — |
-| [SRC-3451CC474D-L000013](../../tests/test_api.py#L13) | 13 | `"from urllib.request import Request, urlopen"` | — |
-| [SRC-3451CC474D-L000014](../../tests/test_api.py#L14) | 14 | `""` | — |
-| [SRC-3451CC474D-L000015](../../tests/test_api.py#L15) | 15 | `"import pytest"` | — |
-| [SRC-3451CC474D-L000016](../../tests/test_api.py#L16) | 16 | `""` | — |
-| [SRC-3451CC474D-L000017](../../tests/test_api.py#L17) | 17 | `"from agents.omarai import LeadStore"` | — |

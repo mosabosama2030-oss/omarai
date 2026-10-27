@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004101 إلى SRC-1AE03B9EC3-L004900
+- النطاق: SRC-1AE03B9EC3-L004061 إلى SRC-1AE03B9EC3-L004860
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                    for target in self._question_coverage_targets(question)"` | — |
+| [SRC-1AE03B9EC3-L004062](../../agents/web_agent.py#L4062) | 4062 | `"                ]"` | — |
+| [SRC-1AE03B9EC3-L004063](../../agents/web_agent.py#L4063) | 4063 | `"                criterion_queries = ["` | — |
+| [SRC-1AE03B9EC3-L004064](../../agents/web_agent.py#L4064) | 4064 | `"                    query for query in criterion_queries"` | — |
+| [SRC-1AE03B9EC3-L004065](../../agents/web_agent.py#L4065) | 4065 | `"                    if query and _relevance_query_tokens(query)"` | — |
+| [SRC-1AE03B9EC3-L004066](../../agents/web_agent.py#L4066) | 4066 | `"                ]"` | — |
+| [SRC-1AE03B9EC3-L004067](../../agents/web_agent.py#L4067) | 4067 | `"                plan[\"queries\"] = list(dict.fromkeys("` | — |
+| [SRC-1AE03B9EC3-L004068](../../agents/web_agent.py#L4068) | 4068 | `"                    (plan.get(\"queries\") or [])[:2]"` | — |
+| [SRC-1AE03B9EC3-L004069](../../agents/web_agent.py#L4069) | 4069 | `"                    + criterion_queries"` | — |
+| [SRC-1AE03B9EC3-L004070](../../agents/web_agent.py#L4070) | 4070 | `"                    + deep_candidates"` | — |
+| [SRC-1AE03B9EC3-L004071](../../agents/web_agent.py#L4071) | 4071 | `"                ))[:MAX_PLAN_QUERIES]"` | — |
+| [SRC-1AE03B9EC3-L004072](../../agents/web_agent.py#L4072) | 4072 | `"                base_query = (plan.get(\"queries\") or [\"\"])[0]"` | — |
+| [SRC-1AE03B9EC3-L004073](../../agents/web_agent.py#L4073) | 4073 | `"            # Explicit user-selected modes are control inputs. They do not bypass source"` | — |
+| [SRC-1AE03B9EC3-L004074](../../agents/web_agent.py#L4074) | 4074 | `"            # validation and never permit private-source access."` | — |
+| [SRC-1AE03B9EC3-L004075](../../agents/web_agent.py#L4075) | 4075 | `"            if clean_mode == \"deep\":"` | — |
+| [SRC-1AE03B9EC3-L004076](../../agents/web_agent.py#L4076) | 4076 | `"                plan[\"depth\"] = \"deep\""` | — |
+| [SRC-1AE03B9EC3-L004077](../../agents/web_agent.py#L4077) | 4077 | `"                candidates = ["` | — |
+| [SRC-1AE03B9EC3-L004078](../../agents/web_agent.py#L4078) | 4078 | `"                    f\"{base_query} official sources data reports\","` | — |
+| [SRC-1AE03B9EC3-L004079](../../agents/web_agent.py#L4079) | 4079 | `"                    f\"{base_query} risks limitations alternatives\","` | — |
+| [SRC-1AE03B9EC3-L004080](../../agents/web_agent.py#L4080) | 4080 | `"                    f\"{base_query} case studies recent analysis\","` | — |
+| [SRC-1AE03B9EC3-L004081](../../agents/web_agent.py#L4081) | 4081 | `"                ]"` | — |
+| [SRC-1AE03B9EC3-L004082](../../agents/web_agent.py#L4082) | 4082 | `"                normalized_question = _normalize_search_query(question).casefold()"` | — |
+| [SRC-1AE03B9EC3-L004083](../../agents/web_agent.py#L4083) | 4083 | `"                property_terms = ("` | — |
+| [SRC-1AE03B9EC3-L004084](../../agents/web_agent.py#L4084) | 4084 | `"                    \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\","` | — |
+| [SRC-1AE03B9EC3-L004085](../../agents/web_agent.py#L4085) | 4085 | `"                    \"apartment\", \"apartments\", \"flat\", \"real estate\", \"property\", \"house\", \"villa\","` | — |
+| [SRC-1AE03B9EC3-L004086](../../agents/web_agent.py#L4086) | 4086 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004087](../../agents/web_agent.py#L4087) | 4087 | `"                if self._is_listing_discovery(question) and any("` | — |
+| [SRC-1AE03B9EC3-L004088](../../agents/web_agent.py#L4088) | 4088 | `"                    term in normalized_question for term in property_terms"` | — |
+| [SRC-1AE03B9EC3-L004089](../../agents/web_agent.py#L4089) | 4089 | `"                ):"` | — |
+| [SRC-1AE03B9EC3-L004090](../../agents/web_agent.py#L4090) | 4090 | `"                    candidates.extend(["` | — |
+| [SRC-1AE03B9EC3-L004091](../../agents/web_agent.py#L4091) | 4091 | `"                        f\"{base_query} إعلانات عقارية ومواقع العقارات\","` | — |
+| [SRC-1AE03B9EC3-L004092](../../agents/web_agent.py#L4092) | 4092 | `"                        f\"{base_query} متوسط أسعار السوق للمتر\","` | — |
+| [SRC-1AE03B9EC3-L004093](../../agents/web_agent.py#L4093) | 4093 | `"                        f\"{base_query} مواصفات الوحدات والمساحات وطرق السداد\","` | — |
+| [SRC-1AE03B9EC3-L004094](../../agents/web_agent.py#L4094) | 4094 | `"                    ])"` | — |
+| [SRC-1AE03B9EC3-L004095](../../agents/web_agent.py#L4095) | 4095 | `"                # Explicit deep mode follows the same criterion-first budget allocation"` | — |
+| [SRC-1AE03B9EC3-L004096](../../agents/web_agent.py#L4096) | 4096 | `"                # as automatic deep mode, so generic modifiers cannot crowd out requested"` | — |
+| [SRC-1AE03B9EC3-L004097](../../agents/web_agent.py#L4097) | 4097 | `"                # dimensions such as price, battery, camera, privacy, or reliability."` | — |
+| [SRC-1AE03B9EC3-L004098](../../agents/web_agent.py#L4098) | 4098 | `"                criterion_queries = ["` | — |
+| [SRC-1AE03B9EC3-L004099](../../agents/web_agent.py#L4099) | 4099 | `"                    compact_search_query(f\"{base_query} {target} official data specifications\")"` | — |
+| [SRC-1AE03B9EC3-L004100](../../agents/web_agent.py#L4100) | 4100 | `"                    for target in self._question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L004101](../../agents/web_agent.py#L4101) | 4101 | `"                ]"` | — |
 | [SRC-1AE03B9EC3-L004102](../../agents/web_agent.py#L4102) | 4102 | `"                criterion_queries = ["` | — |
 | [SRC-1AE03B9EC3-L004103](../../agents/web_agent.py#L4103) | 4103 | `"                    query for query in criterion_queries"` | — |
@@ -776,43 +816,3 @@
 | [SRC-1AE03B9EC3-L004858](../../agents/web_agent.py#L4858) | 4858 | `"                planned_queries = plan.get(\"queries\", [])"` | — |
 | [SRC-1AE03B9EC3-L004859](../../agents/web_agent.py#L4859) | 4859 | `"                if not isinstance(planned_queries, list):"` | — |
 | [SRC-1AE03B9EC3-L004860](../../agents/web_agent.py#L4860) | 4860 | `"                    planned_queries = []"` | — |
-| [SRC-1AE03B9EC3-L004861](../../agents/web_agent.py#L4861) | 4861 | `"                for candidate_query in [question, *planned_queries]:"` | — |
-| [SRC-1AE03B9EC3-L004862](../../agents/web_agent.py#L4862) | 4862 | `"                    if not isinstance(candidate_query, str):"` | — |
-| [SRC-1AE03B9EC3-L004863](../../agents/web_agent.py#L4863) | 4863 | `"                        continue"` | — |
-| [SRC-1AE03B9EC3-L004864](../../agents/web_agent.py#L4864) | 4864 | `"                    compacted_query = compact_search_query(candidate_query)"` | — |
-| [SRC-1AE03B9EC3-L004865](../../agents/web_agent.py#L4865) | 4865 | `"                    if compacted_query and compacted_query not in relevance_queries:"` | — |
-| [SRC-1AE03B9EC3-L004866](../../agents/web_agent.py#L4866) | 4866 | `"                        relevance_queries.append(compacted_query)"` | — |
-| [SRC-1AE03B9EC3-L004867](../../agents/web_agent.py#L4867) | 4867 | `"                for item in self.server_search_sources:"` | — |
-| [SRC-1AE03B9EC3-L004868](../../agents/web_agent.py#L4868) | 4868 | `"                    source_text = \" \".join(("` | — |
-| [SRC-1AE03B9EC3-L004869](../../agents/web_agent.py#L4869) | 4869 | `"                        item.get(\"title\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L004870](../../agents/web_agent.py#L4870) | 4870 | `"                        item.get(\"snippet\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L004871](../../agents/web_agent.py#L4871) | 4871 | `"                    ))"` | — |
-| [SRC-1AE03B9EC3-L004872](../../agents/web_agent.py#L4872) | 4872 | `"                    if ("` | — |
-| [SRC-1AE03B9EC3-L004873](../../agents/web_agent.py#L4873) | 4873 | `"                        relevance_queries"` | — |
-| [SRC-1AE03B9EC3-L004874](../../agents/web_agent.py#L4874) | 4874 | `"                        and item[\"url\"] not in existing_urls"` | — |
-| [SRC-1AE03B9EC3-L004875](../../agents/web_agent.py#L4875) | 4875 | `"                        and not _blocked_source_url(item[\"url\"])"` | — |
-| [SRC-1AE03B9EC3-L004876](../../agents/web_agent.py#L4876) | 4876 | `"                        and any("` | — |
-| [SRC-1AE03B9EC3-L004877](../../agents/web_agent.py#L4877) | 4877 | `"                            _relevance_ratio(candidate_query, source_text) >= 0.20"` | — |
-| [SRC-1AE03B9EC3-L004878](../../agents/web_agent.py#L4878) | 4878 | `"                            for candidate_query in relevance_queries"` | — |
-| [SRC-1AE03B9EC3-L004879](../../agents/web_agent.py#L4879) | 4879 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L004880](../../agents/web_agent.py#L4880) | 4880 | `"                    ):"` | — |
-| [SRC-1AE03B9EC3-L004881](../../agents/web_agent.py#L4881) | 4881 | `"                        sources.append(item)"` | — |
-| [SRC-1AE03B9EC3-L004882](../../agents/web_agent.py#L4882) | 4882 | `"                        existing_urls.add(item[\"url\"])"` | — |
-| [SRC-1AE03B9EC3-L004883](../../agents/web_agent.py#L4883) | 4883 | `"                report[\"unique_sources\"] = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L004884](../../agents/web_agent.py#L4884) | 4884 | `"                provider_counts = dict(report.get(\"provider_counts\", {}))"` | — |
-| [SRC-1AE03B9EC3-L004885](../../agents/web_agent.py#L4885) | 4885 | `"                provider_counts[\"openrouter_web_search\"] = len(self.server_search_sources)"` | — |
-| [SRC-1AE03B9EC3-L004886](../../agents/web_agent.py#L4886) | 4886 | `"                report[\"provider_counts\"] = provider_counts"` | — |
-| [SRC-1AE03B9EC3-L004887](../../agents/web_agent.py#L4887) | 4887 | `"                providers_used = list(report.get(\"providers_used\", []))"` | — |
-| [SRC-1AE03B9EC3-L004888](../../agents/web_agent.py#L4888) | 4888 | `"                if \"openrouter_web_search\" not in providers_used:"` | — |
-| [SRC-1AE03B9EC3-L004889](../../agents/web_agent.py#L4889) | 4889 | `"                    providers_used.append(\"openrouter_web_search\")"` | — |
-| [SRC-1AE03B9EC3-L004890](../../agents/web_agent.py#L4890) | 4890 | `"                report[\"providers_used\"] = providers_used"` | — |
-| [SRC-1AE03B9EC3-L004891](../../agents/web_agent.py#L4891) | 4891 | `"                report[\"evidence_signals\"] = evidence_signal_report("` | — |
-| [SRC-1AE03B9EC3-L004892](../../agents/web_agent.py#L4892) | 4892 | `"                    sources, plan.get(\"freshness\", \"any\")"` | — |
-| [SRC-1AE03B9EC3-L004893](../../agents/web_agent.py#L4893) | 4893 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004894](../../agents/web_agent.py#L4894) | 4894 | `"        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:"` | — |
-| [SRC-1AE03B9EC3-L004895](../../agents/web_agent.py#L4895) | 4895 | `"            llm_warning = str(exc)"` | — |
-| [SRC-1AE03B9EC3-L004896](../../agents/web_agent.py#L4896) | 4896 | `"            generation_budget_exhausted = isinstance(exc, RequestBudgetExceeded)"` | — |
-| [SRC-1AE03B9EC3-L004897](../../agents/web_agent.py#L4897) | 4897 | `"            if generation_budget_exhausted:"` | — |
-| [SRC-1AE03B9EC3-L004898](../../agents/web_agent.py#L4898) | 4898 | `"                reason = ("` | — |
-| [SRC-1AE03B9EC3-L004899](../../agents/web_agent.py#L4899) | 4899 | `"                    \"استُنفدت ميزانية محاولات النماذج قبل اكتمال الإجابة التحليلية. \""` | — |
-| [SRC-1AE03B9EC3-L004900](../../agents/web_agent.py#L4900) | 4900 | `"                    \"أعرض مقتطفات المصادر المتاحة فقط، ولا أعتبر المهمة مكتملة.\""` | — |
