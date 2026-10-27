@@ -656,199 +656,199 @@
 | [SRC-1C77C97630-L000063](../../tests/test_answer_validation.py#L63) | 63 | `"    assert result[\"independent_fact_check\"] is False"` | — |
 | [SRC-1C77C97630-L000064](../../tests/test_answer_validation.py#L64) | 64 | `""` | — |
 | [SRC-1C77C97630-L000065](../../tests/test_answer_validation.py#L65) | 65 | `""` | — |
-| [SRC-1C77C97630-L000066](../../tests/test_answer_validation.py#L66) | 66 | `"def test_source_scope_does_not_confuse_snippet_with_fetched_page():"` | — |
+| [SRC-1C77C97630-L000066](../../tests/test_answer_validation.py#L66) | 66 | `"def test_criterion_coverage_distinguishes_answer_mentions_from_source_evidence():"` | — |
 | [SRC-1C77C97630-L000067](../../tests/test_answer_validation.py#L67) | 67 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000068](../../tests/test_answer_validation.py#L68) | 68 | `"        \"ما التفاصيل؟\","` | — |
-| [SRC-1C77C97630-L000069](../../tests/test_answer_validation.py#L69) | 69 | `"        \"وجدت مقتطفًا.\","` | — |
-| [SRC-1C77C97630-L000070](../../tests/test_answer_validation.py#L70) | 70 | `"        [{\"title\": \"نتيجة\", \"snippet\": \"مقتطف قصير\", \"page_fetched\": False}],"` | — |
-| [SRC-1C77C97630-L000071](../../tests/test_answer_validation.py#L71) | 71 | `"    )"` | — |
-| [SRC-1C77C97630-L000072](../../tests/test_answer_validation.py#L72) | 72 | `"    assert result[\"source_evidence_scope\"] == \"search_snippets_only\""` | — |
-| [SRC-1C77C97630-L000073](../../tests/test_answer_validation.py#L73) | 73 | `"    assert result[\"pages_with_extracted_text\"] == 0"` | — |
-| [SRC-1C77C97630-L000074](../../tests/test_answer_validation.py#L74) | 74 | `"    assert result[\"sources_with_snippets_only\"] == 1"` | — |
-| [SRC-1C77C97630-L000075](../../tests/test_answer_validation.py#L75) | 75 | `""` | — |
-| [SRC-1C77C97630-L000076](../../tests/test_answer_validation.py#L76) | 76 | `""` | — |
-| [SRC-1C77C97630-L000077](../../tests/test_answer_validation.py#L77) | 77 | `"def test_review_prompt_explicitly_requires_number_and_conflict_audit(monkeypatch):"` | — |
-| [SRC-1C77C97630-L000078](../../tests/test_answer_validation.py#L78) | 78 | `"    agent = WebAgent()"` | — |
-| [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    captured = {}"` | — |
-| [SRC-1C77C97630-L000080](../../tests/test_answer_validation.py#L80) | 80 | `""` | — |
-| [SRC-1C77C97630-L000081](../../tests/test_answer_validation.py#L81) | 81 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-1C77C97630-L000082](../../tests/test_answer_validation.py#L82) | 82 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-1C77C97630-L000083](../../tests/test_answer_validation.py#L83) | 83 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>لا تكفي الأدلة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-1C77C97630-L000084](../../tests/test_answer_validation.py#L84) | 84 | `""` | — |
-| [SRC-1C77C97630-L000085](../../tests/test_answer_validation.py#L85) | 85 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-1C77C97630-L000086](../../tests/test_answer_validation.py#L86) | 86 | `"    answer = agent._review_answer("` | — |
-| [SRC-1C77C97630-L000087](../../tests/test_answer_validation.py#L87) | 87 | `"        \"قارن السعر والمدة\","` | — |
-| [SRC-1C77C97630-L000088](../../tests/test_answer_validation.py#L88) | 88 | `"        \"السعر 100 جنيه [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000089](../../tests/test_answer_validation.py#L89) | 89 | `"        [{"` | — |
-| [SRC-1C77C97630-L000090](../../tests/test_answer_validation.py#L90) | 90 | `"            \"title\": \"مصدر\","` | — |
-| [SRC-1C77C97630-L000091](../../tests/test_answer_validation.py#L91) | 91 | `"            \"url\": \"https://example.com/item\","` | — |
-| [SRC-1C77C97630-L000092](../../tests/test_answer_validation.py#L92) | 92 | `"            \"page_text\": \"السعر 90 جنيه، والمدة 5 أيام.\","` | — |
-| [SRC-1C77C97630-L000093](../../tests/test_answer_validation.py#L93) | 93 | `"            \"snippet\": \"السعر 90 جنيه\","` | — |
-| [SRC-1C77C97630-L000094](../../tests/test_answer_validation.py#L94) | 94 | `"            \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000095](../../tests/test_answer_validation.py#L95) | 95 | `"        }],"` | — |
+| [SRC-1C77C97630-L000068](../../tests/test_answer_validation.py#L68) | 68 | `"        \"قارن من حيث السعر والمساحة\","` | — |
+| [SRC-1C77C97630-L000069](../../tests/test_answer_validation.py#L69) | 69 | `"        \"السعر واضح، أما المساحة فلا تتوفر بيانات عنها.\","` | — |
+| [SRC-1C77C97630-L000070](../../tests/test_answer_validation.py#L70) | 70 | `"        [{"` | — |
+| [SRC-1C77C97630-L000071](../../tests/test_answer_validation.py#L71) | 71 | `"            \"title\": \"سعر الهاتف\","` | — |
+| [SRC-1C77C97630-L000072](../../tests/test_answer_validation.py#L72) | 72 | `"            \"snippet\": \"سعر الهاتف 100 جنيه\","` | — |
+| [SRC-1C77C97630-L000073](../../tests/test_answer_validation.py#L73) | 73 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000074](../../tests/test_answer_validation.py#L74) | 74 | `"        }],"` | — |
+| [SRC-1C77C97630-L000075](../../tests/test_answer_validation.py#L75) | 75 | `"        [\"السعر\", \"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000076](../../tests/test_answer_validation.py#L76) | 76 | `"    )"` | — |
+| [SRC-1C77C97630-L000077](../../tests/test_answer_validation.py#L77) | 77 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
+| [SRC-1C77C97630-L000078](../../tests/test_answer_validation.py#L78) | 78 | `""` | — |
+| [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    # Both dimensions are mentioned in the answer, but only price has a source signal."` | — |
+| [SRC-1C77C97630-L000080](../../tests/test_answer_validation.py#L80) | 80 | `"    assert checks[\"السعر\"][\"status\"] == \"lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000081](../../tests/test_answer_validation.py#L81) | 81 | `"    assert checks[\"السعر\"][\"source_evidence_status\"] == \"source_lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000082](../../tests/test_answer_validation.py#L82) | 82 | `"    assert checks[\"المساحة\"][\"status\"] == \"lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000083](../../tests/test_answer_validation.py#L83) | 83 | `"    assert checks[\"المساحة\"][\"source_evidence_status\"] == \"no_source_lexical_signal\""` | — |
+| [SRC-1C77C97630-L000084](../../tests/test_answer_validation.py#L84) | 84 | `"    assert result[\"source_evidence_gap_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000085](../../tests/test_answer_validation.py#L85) | 85 | `"    assert result[\"source_evidence_assessment\"] == ("` | — |
+| [SRC-1C77C97630-L000086](../../tests/test_answer_validation.py#L86) | 86 | `"        \"criterion_level_lexical_signals_not_claim_support_or_entailment\""` | — |
+| [SRC-1C77C97630-L000087](../../tests/test_answer_validation.py#L87) | 87 | `"    )"` | — |
+| [SRC-1C77C97630-L000088](../../tests/test_answer_validation.py#L88) | 88 | `"    assert result[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000089](../../tests/test_answer_validation.py#L89) | 89 | `""` | — |
+| [SRC-1C77C97630-L000090](../../tests/test_answer_validation.py#L90) | 90 | `""` | — |
+| [SRC-1C77C97630-L000091](../../tests/test_answer_validation.py#L91) | 91 | `"def test_source_scope_does_not_confuse_snippet_with_fetched_page():"` | — |
+| [SRC-1C77C97630-L000092](../../tests/test_answer_validation.py#L92) | 92 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000093](../../tests/test_answer_validation.py#L93) | 93 | `"        \"ما التفاصيل؟\","` | — |
+| [SRC-1C77C97630-L000094](../../tests/test_answer_validation.py#L94) | 94 | `"        \"وجدت مقتطفًا.\","` | — |
+| [SRC-1C77C97630-L000095](../../tests/test_answer_validation.py#L95) | 95 | `"        [{\"title\": \"نتيجة\", \"snippet\": \"مقتطف قصير\", \"page_fetched\": False}],"` | — |
 | [SRC-1C77C97630-L000096](../../tests/test_answer_validation.py#L96) | 96 | `"    )"` | — |
-| [SRC-1C77C97630-L000097](../../tests/test_answer_validation.py#L97) | 97 | `"    prompt = captured[\"messages\"][0][\"content\"]"` | — |
-| [SRC-1C77C97630-L000098](../../tests/test_answer_validation.py#L98) | 98 | `"    assert answer == \"لا تكفي الأدلة.\""` | — |
-| [SRC-1C77C97630-L000099](../../tests/test_answer_validation.py#L99) | 99 | `"    assert \"المبالغ والأسعار والنسب والتواريخ والمدد والقياسات\" in prompt"` | — |
-| [SRC-1C77C97630-L000100](../../tests/test_answer_validation.py#L100) | 100 | `"    assert \"قيمًا متعارضة\" in prompt"` | — |
+| [SRC-1C77C97630-L000097](../../tests/test_answer_validation.py#L97) | 97 | `"    assert result[\"source_evidence_scope\"] == \"search_snippets_only\""` | — |
+| [SRC-1C77C97630-L000098](../../tests/test_answer_validation.py#L98) | 98 | `"    assert result[\"pages_with_extracted_text\"] == 0"` | — |
+| [SRC-1C77C97630-L000099](../../tests/test_answer_validation.py#L99) | 99 | `"    assert result[\"sources_with_snippets_only\"] == 1"` | — |
+| [SRC-1C77C97630-L000100](../../tests/test_answer_validation.py#L100) | 100 | `""` | — |
 | [SRC-1C77C97630-L000101](../../tests/test_answer_validation.py#L101) | 101 | `""` | — |
-| [SRC-1C77C97630-L000102](../../tests/test_answer_validation.py#L102) | 102 | `""` | — |
-| [SRC-1C77C97630-L000103](../../tests/test_answer_validation.py#L103) | 103 | `"def test_citation_alignment_uses_fetched_page_text_and_flags_weak_overlap():"` | — |
-| [SRC-1C77C97630-L000104](../../tests/test_answer_validation.py#L104) | 104 | `"    page_source = {"` | — |
-| [SRC-1C77C97630-L000105](../../tests/test_answer_validation.py#L105) | 105 | `"        \"title\": \"Report\","` | — |
-| [SRC-1C77C97630-L000106](../../tests/test_answer_validation.py#L106) | 106 | `"        \"snippet\": \"completely unrelated snippet about fruit\","` | — |
-| [SRC-1C77C97630-L000107](../../tests/test_answer_validation.py#L107) | 107 | `"        \"page_text\": \"Renewable energy storage costs decreased during the reporting period.\","` | — |
-| [SRC-1C77C97630-L000108](../../tests/test_answer_validation.py#L108) | 108 | `"        \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000109](../../tests/test_answer_validation.py#L109) | 109 | `"        \"published_at\": \"\","` | — |
-| [SRC-1C77C97630-L000110](../../tests/test_answer_validation.py#L110) | 110 | `"    }"` | — |
-| [SRC-1C77C97630-L000111](../../tests/test_answer_validation.py#L111) | 111 | `"    good = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000112](../../tests/test_answer_validation.py#L112) | 112 | `"        \"What changed?\","` | — |
-| [SRC-1C77C97630-L000113](../../tests/test_answer_validation.py#L113) | 113 | `"        \"Renewable energy storage costs decreased [source 1].\","` | — |
-| [SRC-1C77C97630-L000114](../../tests/test_answer_validation.py#L114) | 114 | `"        [page_source],"` | — |
-| [SRC-1C77C97630-L000115](../../tests/test_answer_validation.py#L115) | 115 | `"    )"` | — |
-| [SRC-1C77C97630-L000116](../../tests/test_answer_validation.py#L116) | 116 | `"    assert good[\"citation_lexical_alignment_method\"] == \"content_word_overlap_heuristic_not_entailment\""` | — |
-| [SRC-1C77C97630-L000117](../../tests/test_answer_validation.py#L117) | 117 | `"    assert good[\"citation_lexical_alignment\"][0][\"status\"] == \"lexical_overlap_signal_found\""` | — |
-| [SRC-1C77C97630-L000118](../../tests/test_answer_validation.py#L118) | 118 | `"    assert good[\"citation_lexical_alignment\"][0][\"citations\"][0][\"evidence_basis\"] == \"extracted_page_text\""` | — |
-| [SRC-1C77C97630-L000119](../../tests/test_answer_validation.py#L119) | 119 | `"    assert good[\"citation_entailment\"] == \"not_checked\""` | — |
-| [SRC-1C77C97630-L000120](../../tests/test_answer_validation.py#L120) | 120 | `""` | — |
-| [SRC-1C77C97630-L000121](../../tests/test_answer_validation.py#L121) | 121 | `"    weak = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000122](../../tests/test_answer_validation.py#L122) | 122 | `"        \"What happened?\","` | — |
-| [SRC-1C77C97630-L000123](../../tests/test_answer_validation.py#L123) | 123 | `"        \"Mango harvest volume rose sharply [source 1].\","` | — |
-| [SRC-1C77C97630-L000124](../../tests/test_answer_validation.py#L124) | 124 | `"        [page_source],"` | — |
-| [SRC-1C77C97630-L000125](../../tests/test_answer_validation.py#L125) | 125 | `"    )"` | — |
-| [SRC-1C77C97630-L000126](../../tests/test_answer_validation.py#L126) | 126 | `"    assert weak[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
-| [SRC-1C77C97630-L000127](../../tests/test_answer_validation.py#L127) | 127 | `"    assert weak[\"weak_citation_alignment_count\"] == 1"` | — |
-| [SRC-1C77C97630-L000128](../../tests/test_answer_validation.py#L128) | 128 | `"    assert weak[\"independent_fact_check\"] is False"` | — |
-| [SRC-1C77C97630-L000129](../../tests/test_answer_validation.py#L129) | 129 | `""` | — |
-| [SRC-1C77C97630-L000130](../../tests/test_answer_validation.py#L130) | 130 | `""` | — |
-| [SRC-1C77C97630-L000131](../../tests/test_answer_validation.py#L131) | 131 | `"def test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence():"` | — |
-| [SRC-1C77C97630-L000132](../../tests/test_answer_validation.py#L132) | 132 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000133](../../tests/test_answer_validation.py#L133) | 133 | `"        \"What was reported?\","` | — |
-| [SRC-1C77C97630-L000134](../../tests/test_answer_validation.py#L134) | 134 | `"        \"The reported costs changed [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000135](../../tests/test_answer_validation.py#L135) | 135 | `"        [{"` | — |
-| [SRC-1C77C97630-L000136](../../tests/test_answer_validation.py#L136) | 136 | `"            \"title\": \"Costs report\","` | — |
-| [SRC-1C77C97630-L000137](../../tests/test_answer_validation.py#L137) | 137 | `"            \"snippet\": \"Reported costs changed in the new report.\","` | — |
-| [SRC-1C77C97630-L000138](../../tests/test_answer_validation.py#L138) | 138 | `"            \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000139](../../tests/test_answer_validation.py#L139) | 139 | `"        }],"` | — |
+| [SRC-1C77C97630-L000102](../../tests/test_answer_validation.py#L102) | 102 | `"def test_review_prompt_explicitly_requires_number_and_conflict_audit(monkeypatch):"` | — |
+| [SRC-1C77C97630-L000103](../../tests/test_answer_validation.py#L103) | 103 | `"    agent = WebAgent()"` | — |
+| [SRC-1C77C97630-L000104](../../tests/test_answer_validation.py#L104) | 104 | `"    captured = {}"` | — |
+| [SRC-1C77C97630-L000105](../../tests/test_answer_validation.py#L105) | 105 | `""` | — |
+| [SRC-1C77C97630-L000106](../../tests/test_answer_validation.py#L106) | 106 | `"    def fake_completion(messages, **kwargs):"` | — |
+| [SRC-1C77C97630-L000107](../../tests/test_answer_validation.py#L107) | 107 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-1C77C97630-L000108](../../tests/test_answer_validation.py#L108) | 108 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>لا تكفي الأدلة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
+| [SRC-1C77C97630-L000109](../../tests/test_answer_validation.py#L109) | 109 | `""` | — |
+| [SRC-1C77C97630-L000110](../../tests/test_answer_validation.py#L110) | 110 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-1C77C97630-L000111](../../tests/test_answer_validation.py#L111) | 111 | `"    answer = agent._review_answer("` | — |
+| [SRC-1C77C97630-L000112](../../tests/test_answer_validation.py#L112) | 112 | `"        \"قارن السعر والمدة\","` | — |
+| [SRC-1C77C97630-L000113](../../tests/test_answer_validation.py#L113) | 113 | `"        \"السعر 100 جنيه [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000114](../../tests/test_answer_validation.py#L114) | 114 | `"        [{"` | — |
+| [SRC-1C77C97630-L000115](../../tests/test_answer_validation.py#L115) | 115 | `"            \"title\": \"مصدر\","` | — |
+| [SRC-1C77C97630-L000116](../../tests/test_answer_validation.py#L116) | 116 | `"            \"url\": \"https://example.com/item\","` | — |
+| [SRC-1C77C97630-L000117](../../tests/test_answer_validation.py#L117) | 117 | `"            \"page_text\": \"السعر 90 جنيه، والمدة 5 أيام.\","` | — |
+| [SRC-1C77C97630-L000118](../../tests/test_answer_validation.py#L118) | 118 | `"            \"snippet\": \"السعر 90 جنيه\","` | — |
+| [SRC-1C77C97630-L000119](../../tests/test_answer_validation.py#L119) | 119 | `"            \"page_fetched\": True,"` | — |
+| [SRC-1C77C97630-L000120](../../tests/test_answer_validation.py#L120) | 120 | `"        }],"` | — |
+| [SRC-1C77C97630-L000121](../../tests/test_answer_validation.py#L121) | 121 | `"    )"` | — |
+| [SRC-1C77C97630-L000122](../../tests/test_answer_validation.py#L122) | 122 | `"    prompt = captured[\"messages\"][0][\"content\"]"` | — |
+| [SRC-1C77C97630-L000123](../../tests/test_answer_validation.py#L123) | 123 | `"    assert answer == \"لا تكفي الأدلة.\""` | — |
+| [SRC-1C77C97630-L000124](../../tests/test_answer_validation.py#L124) | 124 | `"    assert \"المبالغ والأسعار والنسب والتواريخ والمدد والقياسات\" in prompt"` | — |
+| [SRC-1C77C97630-L000125](../../tests/test_answer_validation.py#L125) | 125 | `"    assert \"قيمًا متعارضة\" in prompt"` | — |
+| [SRC-1C77C97630-L000126](../../tests/test_answer_validation.py#L126) | 126 | `""` | — |
+| [SRC-1C77C97630-L000127](../../tests/test_answer_validation.py#L127) | 127 | `""` | — |
+| [SRC-1C77C97630-L000128](../../tests/test_answer_validation.py#L128) | 128 | `"def test_citation_alignment_uses_fetched_page_text_and_flags_weak_overlap():"` | — |
+| [SRC-1C77C97630-L000129](../../tests/test_answer_validation.py#L129) | 129 | `"    page_source = {"` | — |
+| [SRC-1C77C97630-L000130](../../tests/test_answer_validation.py#L130) | 130 | `"        \"title\": \"Report\","` | — |
+| [SRC-1C77C97630-L000131](../../tests/test_answer_validation.py#L131) | 131 | `"        \"snippet\": \"completely unrelated snippet about fruit\","` | — |
+| [SRC-1C77C97630-L000132](../../tests/test_answer_validation.py#L132) | 132 | `"        \"page_text\": \"Renewable energy storage costs decreased during the reporting period.\","` | — |
+| [SRC-1C77C97630-L000133](../../tests/test_answer_validation.py#L133) | 133 | `"        \"page_fetched\": True,"` | — |
+| [SRC-1C77C97630-L000134](../../tests/test_answer_validation.py#L134) | 134 | `"        \"published_at\": \"\","` | — |
+| [SRC-1C77C97630-L000135](../../tests/test_answer_validation.py#L135) | 135 | `"    }"` | — |
+| [SRC-1C77C97630-L000136](../../tests/test_answer_validation.py#L136) | 136 | `"    good = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000137](../../tests/test_answer_validation.py#L137) | 137 | `"        \"What changed?\","` | — |
+| [SRC-1C77C97630-L000138](../../tests/test_answer_validation.py#L138) | 138 | `"        \"Renewable energy storage costs decreased [source 1].\","` | — |
+| [SRC-1C77C97630-L000139](../../tests/test_answer_validation.py#L139) | 139 | `"        [page_source],"` | — |
 | [SRC-1C77C97630-L000140](../../tests/test_answer_validation.py#L140) | 140 | `"    )"` | — |
-| [SRC-1C77C97630-L000141](../../tests/test_answer_validation.py#L141) | 141 | `"    assert result[\"citation_lexical_alignment\"][0][\"citations\"][0][\"evidence_basis\"] == \"search_snippet\""` | — |
-| [SRC-1C77C97630-L000142](../../tests/test_answer_validation.py#L142) | 142 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
-| [SRC-1C77C97630-L000143](../../tests/test_answer_validation.py#L143) | 143 | `""` | — |
-| [SRC-1C77C97630-L000144](../../tests/test_answer_validation.py#L144) | 144 | `""` | — |
-| [SRC-1C77C97630-L000145](../../tests/test_answer_validation.py#L145) | 145 | `"def test_bounded_coverage_repair_parses_one_delimited_answer_and_supplies_evidence(monkeypatch):"` | — |
-| [SRC-1C77C97630-L000146](../../tests/test_answer_validation.py#L146) | 146 | `"    agent = WebAgent()"` | — |
-| [SRC-1C77C97630-L000147](../../tests/test_answer_validation.py#L147) | 147 | `"    captured = {}"` | — |
-| [SRC-1C77C97630-L000148](../../tests/test_answer_validation.py#L148) | 148 | `""` | — |
-| [SRC-1C77C97630-L000149](../../tests/test_answer_validation.py#L149) | 149 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-1C77C97630-L000150](../../tests/test_answer_validation.py#L150) | 150 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-1C77C97630-L000151](../../tests/test_answer_validation.py#L151) | 151 | `"        return \"<<<OMARAI_COVERAGE_REPAIR>>>تم توضيح السعر والمساحة [المصدر 1].<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000152](../../tests/test_answer_validation.py#L152) | 152 | `""` | — |
-| [SRC-1C77C97630-L000153](../../tests/test_answer_validation.py#L153) | 153 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-1C77C97630-L000154](../../tests/test_answer_validation.py#L154) | 154 | `"    repaired = agent._repair_answer_coverage("` | — |
-| [SRC-1C77C97630-L000155](../../tests/test_answer_validation.py#L155) | 155 | `"        \"قارن السعر والمساحة\","` | — |
-| [SRC-1C77C97630-L000156](../../tests/test_answer_validation.py#L156) | 156 | `"        \"الإجابة الأولية.\","` | — |
-| [SRC-1C77C97630-L000157](../../tests/test_answer_validation.py#L157) | 157 | `"        [{"` | — |
-| [SRC-1C77C97630-L000158](../../tests/test_answer_validation.py#L158) | 158 | `"            \"title\": \"إعلان\","` | — |
-| [SRC-1C77C97630-L000159](../../tests/test_answer_validation.py#L159) | 159 | `"            \"url\": \"https://example.com/listing\","` | — |
-| [SRC-1C77C97630-L000160](../../tests/test_answer_validation.py#L160) | 160 | `"            \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000161](../../tests/test_answer_validation.py#L161) | 161 | `"            \"snippet\": \"السعر مذكور والمساحة غير مذكورة\","` | — |
-| [SRC-1C77C97630-L000162](../../tests/test_answer_validation.py#L162) | 162 | `"        }],"` | — |
-| [SRC-1C77C97630-L000163](../../tests/test_answer_validation.py#L163) | 163 | `"        [\"المساحة\"],"` | — |
-| [SRC-1C77C97630-L000164](../../tests/test_answer_validation.py#L164) | 164 | `"    )"` | — |
-| [SRC-1C77C97630-L000165](../../tests/test_answer_validation.py#L165) | 165 | `"    assert repaired == \"تم توضيح السعر والمساحة [المصدر 1].\""` | — |
-| [SRC-1C77C97630-L000166](../../tests/test_answer_validation.py#L166) | 166 | `"    assert \"المساحة\" in captured[\"messages\"][2][\"content\"]"` | — |
-| [SRC-1C77C97630-L000167](../../tests/test_answer_validation.py#L167) | 167 | `"    assert \"السعر مذكور والمساحة غير مذكورة\" in captured[\"messages\"][4][\"content\"]"` | — |
-| [SRC-1C77C97630-L000168](../../tests/test_answer_validation.py#L168) | 168 | `"    assert \"مقتطف بحث\" in captured[\"messages\"][4][\"content\"]"` | — |
+| [SRC-1C77C97630-L000141](../../tests/test_answer_validation.py#L141) | 141 | `"    assert good[\"citation_lexical_alignment_method\"] == \"content_word_overlap_heuristic_not_entailment\""` | — |
+| [SRC-1C77C97630-L000142](../../tests/test_answer_validation.py#L142) | 142 | `"    assert good[\"citation_lexical_alignment\"][0][\"status\"] == \"lexical_overlap_signal_found\""` | — |
+| [SRC-1C77C97630-L000143](../../tests/test_answer_validation.py#L143) | 143 | `"    assert good[\"citation_lexical_alignment\"][0][\"citations\"][0][\"evidence_basis\"] == \"extracted_page_text\""` | — |
+| [SRC-1C77C97630-L000144](../../tests/test_answer_validation.py#L144) | 144 | `"    assert good[\"citation_entailment\"] == \"not_checked\""` | — |
+| [SRC-1C77C97630-L000145](../../tests/test_answer_validation.py#L145) | 145 | `""` | — |
+| [SRC-1C77C97630-L000146](../../tests/test_answer_validation.py#L146) | 146 | `"    weak = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000147](../../tests/test_answer_validation.py#L147) | 147 | `"        \"What happened?\","` | — |
+| [SRC-1C77C97630-L000148](../../tests/test_answer_validation.py#L148) | 148 | `"        \"Mango harvest volume rose sharply [source 1].\","` | — |
+| [SRC-1C77C97630-L000149](../../tests/test_answer_validation.py#L149) | 149 | `"        [page_source],"` | — |
+| [SRC-1C77C97630-L000150](../../tests/test_answer_validation.py#L150) | 150 | `"    )"` | — |
+| [SRC-1C77C97630-L000151](../../tests/test_answer_validation.py#L151) | 151 | `"    assert weak[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
+| [SRC-1C77C97630-L000152](../../tests/test_answer_validation.py#L152) | 152 | `"    assert weak[\"weak_citation_alignment_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000153](../../tests/test_answer_validation.py#L153) | 153 | `"    assert weak[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000154](../../tests/test_answer_validation.py#L154) | 154 | `""` | — |
+| [SRC-1C77C97630-L000155](../../tests/test_answer_validation.py#L155) | 155 | `""` | — |
+| [SRC-1C77C97630-L000156](../../tests/test_answer_validation.py#L156) | 156 | `"def test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence():"` | — |
+| [SRC-1C77C97630-L000157](../../tests/test_answer_validation.py#L157) | 157 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000158](../../tests/test_answer_validation.py#L158) | 158 | `"        \"What was reported?\","` | — |
+| [SRC-1C77C97630-L000159](../../tests/test_answer_validation.py#L159) | 159 | `"        \"The reported costs changed [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000160](../../tests/test_answer_validation.py#L160) | 160 | `"        [{"` | — |
+| [SRC-1C77C97630-L000161](../../tests/test_answer_validation.py#L161) | 161 | `"            \"title\": \"Costs report\","` | — |
+| [SRC-1C77C97630-L000162](../../tests/test_answer_validation.py#L162) | 162 | `"            \"snippet\": \"Reported costs changed in the new report.\","` | — |
+| [SRC-1C77C97630-L000163](../../tests/test_answer_validation.py#L163) | 163 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000164](../../tests/test_answer_validation.py#L164) | 164 | `"        }],"` | — |
+| [SRC-1C77C97630-L000165](../../tests/test_answer_validation.py#L165) | 165 | `"    )"` | — |
+| [SRC-1C77C97630-L000166](../../tests/test_answer_validation.py#L166) | 166 | `"    assert result[\"citation_lexical_alignment\"][0][\"citations\"][0][\"evidence_basis\"] == \"search_snippet\""` | — |
+| [SRC-1C77C97630-L000167](../../tests/test_answer_validation.py#L167) | 167 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
+| [SRC-1C77C97630-L000168](../../tests/test_answer_validation.py#L168) | 168 | `""` | — |
 | [SRC-1C77C97630-L000169](../../tests/test_answer_validation.py#L169) | 169 | `""` | — |
-| [SRC-1C77C97630-L000170](../../tests/test_answer_validation.py#L170) | 170 | `""` | — |
-| [SRC-1C77C97630-L000171](../../tests/test_answer_validation.py#L171) | 171 | `"def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatch):"` | — |
-| [SRC-1C77C97630-L000172](../../tests/test_answer_validation.py#L172) | 172 | `"    agent = WebAgent()"` | — |
-| [SRC-1C77C97630-L000173](../../tests/test_answer_validation.py#L173) | 173 | `"    monkeypatch.setattr("` | — |
-| [SRC-1C77C97630-L000174](../../tests/test_answer_validation.py#L174) | 174 | `"        agent,"` | — |
-| [SRC-1C77C97630-L000175](../../tests/test_answer_validation.py#L175) | 175 | `"        \"_request_completion\","` | — |
-| [SRC-1C77C97630-L000176](../../tests/test_answer_validation.py#L176) | 176 | `"        lambda *args, **kwargs: ("` | — |
-| [SRC-1C77C97630-L000177](../../tests/test_answer_validation.py#L177) | 177 | `"            \"<<<OMARAI_COVERAGE_REPAIR>>>إجابة<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000178](../../tests/test_answer_validation.py#L178) | 178 | `"            \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000179](../../tests/test_answer_validation.py#L179) | 179 | `"        ),"` | — |
-| [SRC-1C77C97630-L000180](../../tests/test_answer_validation.py#L180) | 180 | `"    )"` | — |
-| [SRC-1C77C97630-L000181](../../tests/test_answer_validation.py#L181) | 181 | `"    with pytest.raises(RuntimeError, match=\"إصلاح تغطية آمن\"):"` | — |
-| [SRC-1C77C97630-L000182](../../tests/test_answer_validation.py#L182) | 182 | `"        agent._repair_answer_coverage("` | — |
-| [SRC-1C77C97630-L000183](../../tests/test_answer_validation.py#L183) | 183 | `"            \"قارن السعر\","` | — |
-| [SRC-1C77C97630-L000184](../../tests/test_answer_validation.py#L184) | 184 | `"            \"مسودة\","` | — |
-| [SRC-1C77C97630-L000185](../../tests/test_answer_validation.py#L185) | 185 | `"            [{\"title\": \"مصدر\", \"url\": \"https://example.com\", \"snippet\": \"السعر 100 جنيه\"}],"` | — |
-| [SRC-1C77C97630-L000186](../../tests/test_answer_validation.py#L186) | 186 | `"            [\"السعر\"],"` | — |
-| [SRC-1C77C97630-L000187](../../tests/test_answer_validation.py#L187) | 187 | `"        )"` | — |
-| [SRC-1C77C97630-L000188](../../tests/test_answer_validation.py#L188) | 188 | `""` | — |
-| [SRC-1C77C97630-L000189](../../tests/test_answer_validation.py#L189) | 189 | `""` | — |
-| [SRC-1C77C97630-L000190](../../tests/test_answer_validation.py#L190) | 190 | `"def test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source():"` | — |
-| [SRC-1C77C97630-L000191](../../tests/test_answer_validation.py#L191) | 191 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000192](../../tests/test_answer_validation.py#L192) | 192 | `"        \"قارن أسعار المنتجين\","` | — |
-| [SRC-1C77C97630-L000193](../../tests/test_answer_validation.py#L193) | 193 | `"        \"سعر المنتج الأول 500 جنيه [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000194](../../tests/test_answer_validation.py#L194) | 194 | `"        ["` | — |
-| [SRC-1C77C97630-L000195](../../tests/test_answer_validation.py#L195) | 195 | `"            {"` | — |
-| [SRC-1C77C97630-L000196](../../tests/test_answer_validation.py#L196) | 196 | `"                \"title\": \"سعر المنتج الأول\","` | — |
-| [SRC-1C77C97630-L000197](../../tests/test_answer_validation.py#L197) | 197 | `"                \"snippet\": \"سعر المنتج الأول 300 جنيه\","` | — |
-| [SRC-1C77C97630-L000198](../../tests/test_answer_validation.py#L198) | 198 | `"                \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000199](../../tests/test_answer_validation.py#L199) | 199 | `"            },"` | — |
-| [SRC-1C77C97630-L000200](../../tests/test_answer_validation.py#L200) | 200 | `"            {"` | — |
-| [SRC-1C77C97630-L000201](../../tests/test_answer_validation.py#L201) | 201 | `"                \"title\": \"سعر المنتج الثاني\","` | — |
-| [SRC-1C77C97630-L000202](../../tests/test_answer_validation.py#L202) | 202 | `"                \"snippet\": \"سعر المنتج الثاني 500 جنيه\","` | — |
-| [SRC-1C77C97630-L000203](../../tests/test_answer_validation.py#L203) | 203 | `"                \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000204](../../tests/test_answer_validation.py#L204) | 204 | `"            },"` | — |
-| [SRC-1C77C97630-L000205](../../tests/test_answer_validation.py#L205) | 205 | `"        ],"` | — |
-| [SRC-1C77C97630-L000206](../../tests/test_answer_validation.py#L206) | 206 | `"    )"` | — |
-| [SRC-1C77C97630-L000207](../../tests/test_answer_validation.py#L207) | 207 | `""` | — |
-| [SRC-1C77C97630-L000208](../../tests/test_answer_validation.py#L208) | 208 | `"    assert result[\"potentially_unsupported_numeric_literals\"] == []"` | — |
-| [SRC-1C77C97630-L000209](../../tests/test_answer_validation.py#L209) | 209 | `"    assert result[\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |
-| [SRC-1C77C97630-L000210](../../tests/test_answer_validation.py#L210) | 210 | `"    cited_check = result[\"citation_numeric_support\"][0]"` | — |
-| [SRC-1C77C97630-L000211](../../tests/test_answer_validation.py#L211) | 211 | `"    assert cited_check[\"cited_source_indexes\"] == [1]"` | — |
-| [SRC-1C77C97630-L000212](../../tests/test_answer_validation.py#L212) | 212 | `"    assert cited_check[\"potentially_unsupported_numeric_literals\"] == [\"500\"]"` | — |
-| [SRC-1C77C97630-L000213](../../tests/test_answer_validation.py#L213) | 213 | `"    assert cited_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
+| [SRC-1C77C97630-L000170](../../tests/test_answer_validation.py#L170) | 170 | `"def test_bounded_coverage_repair_parses_one_delimited_answer_and_supplies_evidence(monkeypatch):"` | — |
+| [SRC-1C77C97630-L000171](../../tests/test_answer_validation.py#L171) | 171 | `"    agent = WebAgent()"` | — |
+| [SRC-1C77C97630-L000172](../../tests/test_answer_validation.py#L172) | 172 | `"    captured = {}"` | — |
+| [SRC-1C77C97630-L000173](../../tests/test_answer_validation.py#L173) | 173 | `""` | — |
+| [SRC-1C77C97630-L000174](../../tests/test_answer_validation.py#L174) | 174 | `"    def fake_completion(messages, **kwargs):"` | — |
+| [SRC-1C77C97630-L000175](../../tests/test_answer_validation.py#L175) | 175 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-1C77C97630-L000176](../../tests/test_answer_validation.py#L176) | 176 | `"        return \"<<<OMARAI_COVERAGE_REPAIR>>>تم توضيح السعر والمساحة [المصدر 1].<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000177](../../tests/test_answer_validation.py#L177) | 177 | `""` | — |
+| [SRC-1C77C97630-L000178](../../tests/test_answer_validation.py#L178) | 178 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-1C77C97630-L000179](../../tests/test_answer_validation.py#L179) | 179 | `"    repaired = agent._repair_answer_coverage("` | — |
+| [SRC-1C77C97630-L000180](../../tests/test_answer_validation.py#L180) | 180 | `"        \"قارن السعر والمساحة\","` | — |
+| [SRC-1C77C97630-L000181](../../tests/test_answer_validation.py#L181) | 181 | `"        \"الإجابة الأولية.\","` | — |
+| [SRC-1C77C97630-L000182](../../tests/test_answer_validation.py#L182) | 182 | `"        [{"` | — |
+| [SRC-1C77C97630-L000183](../../tests/test_answer_validation.py#L183) | 183 | `"            \"title\": \"إعلان\","` | — |
+| [SRC-1C77C97630-L000184](../../tests/test_answer_validation.py#L184) | 184 | `"            \"url\": \"https://example.com/listing\","` | — |
+| [SRC-1C77C97630-L000185](../../tests/test_answer_validation.py#L185) | 185 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000186](../../tests/test_answer_validation.py#L186) | 186 | `"            \"snippet\": \"السعر مذكور والمساحة غير مذكورة\","` | — |
+| [SRC-1C77C97630-L000187](../../tests/test_answer_validation.py#L187) | 187 | `"        }],"` | — |
+| [SRC-1C77C97630-L000188](../../tests/test_answer_validation.py#L188) | 188 | `"        [\"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000189](../../tests/test_answer_validation.py#L189) | 189 | `"    )"` | — |
+| [SRC-1C77C97630-L000190](../../tests/test_answer_validation.py#L190) | 190 | `"    assert repaired == \"تم توضيح السعر والمساحة [المصدر 1].\""` | — |
+| [SRC-1C77C97630-L000191](../../tests/test_answer_validation.py#L191) | 191 | `"    assert \"المساحة\" in captured[\"messages\"][2][\"content\"]"` | — |
+| [SRC-1C77C97630-L000192](../../tests/test_answer_validation.py#L192) | 192 | `"    assert \"السعر مذكور والمساحة غير مذكورة\" in captured[\"messages\"][4][\"content\"]"` | — |
+| [SRC-1C77C97630-L000193](../../tests/test_answer_validation.py#L193) | 193 | `"    assert \"مقتطف بحث\" in captured[\"messages\"][4][\"content\"]"` | — |
+| [SRC-1C77C97630-L000194](../../tests/test_answer_validation.py#L194) | 194 | `""` | — |
+| [SRC-1C77C97630-L000195](../../tests/test_answer_validation.py#L195) | 195 | `""` | — |
+| [SRC-1C77C97630-L000196](../../tests/test_answer_validation.py#L196) | 196 | `"def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatch):"` | — |
+| [SRC-1C77C97630-L000197](../../tests/test_answer_validation.py#L197) | 197 | `"    agent = WebAgent()"` | — |
+| [SRC-1C77C97630-L000198](../../tests/test_answer_validation.py#L198) | 198 | `"    monkeypatch.setattr("` | — |
+| [SRC-1C77C97630-L000199](../../tests/test_answer_validation.py#L199) | 199 | `"        agent,"` | — |
+| [SRC-1C77C97630-L000200](../../tests/test_answer_validation.py#L200) | 200 | `"        \"_request_completion\","` | — |
+| [SRC-1C77C97630-L000201](../../tests/test_answer_validation.py#L201) | 201 | `"        lambda *args, **kwargs: ("` | — |
+| [SRC-1C77C97630-L000202](../../tests/test_answer_validation.py#L202) | 202 | `"            \"<<<OMARAI_COVERAGE_REPAIR>>>إجابة<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000203](../../tests/test_answer_validation.py#L203) | 203 | `"            \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000204](../../tests/test_answer_validation.py#L204) | 204 | `"        ),"` | — |
+| [SRC-1C77C97630-L000205](../../tests/test_answer_validation.py#L205) | 205 | `"    )"` | — |
+| [SRC-1C77C97630-L000206](../../tests/test_answer_validation.py#L206) | 206 | `"    with pytest.raises(RuntimeError, match=\"إصلاح تغطية آمن\"):"` | — |
+| [SRC-1C77C97630-L000207](../../tests/test_answer_validation.py#L207) | 207 | `"        agent._repair_answer_coverage("` | — |
+| [SRC-1C77C97630-L000208](../../tests/test_answer_validation.py#L208) | 208 | `"            \"قارن السعر\","` | — |
+| [SRC-1C77C97630-L000209](../../tests/test_answer_validation.py#L209) | 209 | `"            \"مسودة\","` | — |
+| [SRC-1C77C97630-L000210](../../tests/test_answer_validation.py#L210) | 210 | `"            [{\"title\": \"مصدر\", \"url\": \"https://example.com\", \"snippet\": \"السعر 100 جنيه\"}],"` | — |
+| [SRC-1C77C97630-L000211](../../tests/test_answer_validation.py#L211) | 211 | `"            [\"السعر\"],"` | — |
+| [SRC-1C77C97630-L000212](../../tests/test_answer_validation.py#L212) | 212 | `"        )"` | — |
+| [SRC-1C77C97630-L000213](../../tests/test_answer_validation.py#L213) | 213 | `""` | — |
 | [SRC-1C77C97630-L000214](../../tests/test_answer_validation.py#L214) | 214 | `""` | — |
-| [SRC-1C77C97630-L000215](../../tests/test_answer_validation.py#L215) | 215 | `""` | — |
-| [SRC-1C77C97630-L000216](../../tests/test_answer_validation.py#L216) | 216 | `"def test_different_price_values_are_flagged_for_review_not_called_contradictions():"` | — |
-| [SRC-1C77C97630-L000217](../../tests/test_answer_validation.py#L217) | 217 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000218](../../tests/test_answer_validation.py#L218) | 218 | `"        \"قارن العروض\","` | — |
-| [SRC-1C77C97630-L000219](../../tests/test_answer_validation.py#L219) | 219 | `"        \"العرض الأول أرخص من الثاني [المصدر 1] [المصدر 2].\","` | — |
-| [SRC-1C77C97630-L000220](../../tests/test_answer_validation.py#L220) | 220 | `"        ["` | — |
-| [SRC-1C77C97630-L000221](../../tests/test_answer_validation.py#L221) | 221 | `"            {"` | — |
-| [SRC-1C77C97630-L000222](../../tests/test_answer_validation.py#L222) | 222 | `"                \"title\": \"شقة القاهرة\","` | — |
-| [SRC-1C77C97630-L000223](../../tests/test_answer_validation.py#L223) | 223 | `"                \"snippet\": \"السعر 100000 جنيه\","` | — |
-| [SRC-1C77C97630-L000224](../../tests/test_answer_validation.py#L224) | 224 | `"                \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000225](../../tests/test_answer_validation.py#L225) | 225 | `"            },"` | — |
-| [SRC-1C77C97630-L000226](../../tests/test_answer_validation.py#L226) | 226 | `"            {"` | — |
-| [SRC-1C77C97630-L000227](../../tests/test_answer_validation.py#L227) | 227 | `"                \"title\": \"شقة القاهرة\","` | — |
-| [SRC-1C77C97630-L000228](../../tests/test_answer_validation.py#L228) | 228 | `"                \"snippet\": \"السعر 120000 جنيه\","` | — |
-| [SRC-1C77C97630-L000229](../../tests/test_answer_validation.py#L229) | 229 | `"                \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000230](../../tests/test_answer_validation.py#L230) | 230 | `"            },"` | — |
-| [SRC-1C77C97630-L000231](../../tests/test_answer_validation.py#L231) | 231 | `"        ],"` | — |
-| [SRC-1C77C97630-L000232](../../tests/test_answer_validation.py#L232) | 232 | `"    )"` | — |
-| [SRC-1C77C97630-L000233](../../tests/test_answer_validation.py#L233) | 233 | `""` | — |
-| [SRC-1C77C97630-L000234](../../tests/test_answer_validation.py#L234) | 234 | `"    price = next("` | — |
-| [SRC-1C77C97630-L000235](../../tests/test_answer_validation.py#L235) | 235 | `"        item for item in result[\"potential_value_discrepancies\"]"` | — |
-| [SRC-1C77C97630-L000236](../../tests/test_answer_validation.py#L236) | 236 | `"        if item[\"dimension\"] == \"price_or_cost\""` | — |
-| [SRC-1C77C97630-L000237](../../tests/test_answer_validation.py#L237) | 237 | `"    )"` | — |
-| [SRC-1C77C97630-L000238](../../tests/test_answer_validation.py#L238) | 238 | `"    assert {item[\"value\"] for item in price[\"values\"]} == {\"100000\", \"120000\"}"` | — |
-| [SRC-1C77C97630-L000239](../../tests/test_answer_validation.py#L239) | 239 | `"    assert price[\"status\"] == \"potential_variation_or_conflict_requires_entity_review\""` | — |
-| [SRC-1C77C97630-L000240](../../tests/test_answer_validation.py#L240) | 240 | `"    assert \"contradiction\" not in price[\"status\"]"` | — |
-| [SRC-1C77C97630-L000241](../../tests/test_answer_validation.py#L241) | 241 | `"    assert result[\"independent_fact_check\"] is False"` | — |
-| [SRC-1C77C97630-L000242](../../tests/test_answer_validation.py#L242) | 242 | `""` | — |
-| [SRC-1C77C97630-L000243](../../tests/test_answer_validation.py#L243) | 243 | `""` | — |
-| [SRC-1C77C97630-L000244](../../tests/test_answer_validation.py#L244) | 244 | `"def test_date_in_answer_missing_from_its_cited_source_is_flagged():"` | — |
-| [SRC-1C77C97630-L000245](../../tests/test_answer_validation.py#L245) | 245 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000246](../../tests/test_answer_validation.py#L246) | 246 | `"        \"ما تاريخ التقرير؟\","` | — |
-| [SRC-1C77C97630-L000247](../../tests/test_answer_validation.py#L247) | 247 | `"        \"صدر التقرير في 2026 [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000248](../../tests/test_answer_validation.py#L248) | 248 | `"        [{"` | — |
-| [SRC-1C77C97630-L000249](../../tests/test_answer_validation.py#L249) | 249 | `"            \"title\": \"تقرير سابق\","` | — |
-| [SRC-1C77C97630-L000250](../../tests/test_answer_validation.py#L250) | 250 | `"            \"snippet\": \"تقرير منشور في 2024.\","` | — |
-| [SRC-1C77C97630-L000251](../../tests/test_answer_validation.py#L251) | 251 | `"            \"published_at\": \"2024\","` | — |
-| [SRC-1C77C97630-L000252](../../tests/test_answer_validation.py#L252) | 252 | `"            \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000253](../../tests/test_answer_validation.py#L253) | 253 | `"        }],"` | — |
-| [SRC-1C77C97630-L000254](../../tests/test_answer_validation.py#L254) | 254 | `"    )"` | — |
-| [SRC-1C77C97630-L000255](../../tests/test_answer_validation.py#L255) | 255 | `""` | — |
-| [SRC-1C77C97630-L000256](../../tests/test_answer_validation.py#L256) | 256 | `"    numeric_check = result[\"citation_numeric_support\"][0]"` | — |
-| [SRC-1C77C97630-L000257](../../tests/test_answer_validation.py#L257) | 257 | `"    assert numeric_check[\"potentially_unsupported_numeric_literals\"] == [\"2026\"]"` | — |
-| [SRC-1C77C97630-L000258](../../tests/test_answer_validation.py#L258) | 258 | `"    assert numeric_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
-| [SRC-1C77C97630-L000259](../../tests/test_answer_validation.py#L259) | 259 | `""` | — |
-| [SRC-1C77C97630-L000260](../../tests/test_answer_validation.py#L260) | 260 | `""` | — |
-| [SRC-1C77C97630-L000261](../../tests/test_answer_validation.py#L261) | 261 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |
+| [SRC-1C77C97630-L000215](../../tests/test_answer_validation.py#L215) | 215 | `"def test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source():"` | — |
+| [SRC-1C77C97630-L000216](../../tests/test_answer_validation.py#L216) | 216 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000217](../../tests/test_answer_validation.py#L217) | 217 | `"        \"قارن أسعار المنتجين\","` | — |
+| [SRC-1C77C97630-L000218](../../tests/test_answer_validation.py#L218) | 218 | `"        \"سعر المنتج الأول 500 جنيه [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000219](../../tests/test_answer_validation.py#L219) | 219 | `"        ["` | — |
+| [SRC-1C77C97630-L000220](../../tests/test_answer_validation.py#L220) | 220 | `"            {"` | — |
+| [SRC-1C77C97630-L000221](../../tests/test_answer_validation.py#L221) | 221 | `"                \"title\": \"سعر المنتج الأول\","` | — |
+| [SRC-1C77C97630-L000222](../../tests/test_answer_validation.py#L222) | 222 | `"                \"snippet\": \"سعر المنتج الأول 300 جنيه\","` | — |
+| [SRC-1C77C97630-L000223](../../tests/test_answer_validation.py#L223) | 223 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000224](../../tests/test_answer_validation.py#L224) | 224 | `"            },"` | — |
+| [SRC-1C77C97630-L000225](../../tests/test_answer_validation.py#L225) | 225 | `"            {"` | — |
+| [SRC-1C77C97630-L000226](../../tests/test_answer_validation.py#L226) | 226 | `"                \"title\": \"سعر المنتج الثاني\","` | — |
+| [SRC-1C77C97630-L000227](../../tests/test_answer_validation.py#L227) | 227 | `"                \"snippet\": \"سعر المنتج الثاني 500 جنيه\","` | — |
+| [SRC-1C77C97630-L000228](../../tests/test_answer_validation.py#L228) | 228 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000229](../../tests/test_answer_validation.py#L229) | 229 | `"            },"` | — |
+| [SRC-1C77C97630-L000230](../../tests/test_answer_validation.py#L230) | 230 | `"        ],"` | — |
+| [SRC-1C77C97630-L000231](../../tests/test_answer_validation.py#L231) | 231 | `"    )"` | — |
+| [SRC-1C77C97630-L000232](../../tests/test_answer_validation.py#L232) | 232 | `""` | — |
+| [SRC-1C77C97630-L000233](../../tests/test_answer_validation.py#L233) | 233 | `"    assert result[\"potentially_unsupported_numeric_literals\"] == []"` | — |
+| [SRC-1C77C97630-L000234](../../tests/test_answer_validation.py#L234) | 234 | `"    assert result[\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000235](../../tests/test_answer_validation.py#L235) | 235 | `"    cited_check = result[\"citation_numeric_support\"][0]"` | — |
+| [SRC-1C77C97630-L000236](../../tests/test_answer_validation.py#L236) | 236 | `"    assert cited_check[\"cited_source_indexes\"] == [1]"` | — |
+| [SRC-1C77C97630-L000237](../../tests/test_answer_validation.py#L237) | 237 | `"    assert cited_check[\"potentially_unsupported_numeric_literals\"] == [\"500\"]"` | — |
+| [SRC-1C77C97630-L000238](../../tests/test_answer_validation.py#L238) | 238 | `"    assert cited_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
+| [SRC-1C77C97630-L000239](../../tests/test_answer_validation.py#L239) | 239 | `""` | — |
+| [SRC-1C77C97630-L000240](../../tests/test_answer_validation.py#L240) | 240 | `""` | — |
+| [SRC-1C77C97630-L000241](../../tests/test_answer_validation.py#L241) | 241 | `"def test_different_price_values_are_flagged_for_review_not_called_contradictions():"` | — |
+| [SRC-1C77C97630-L000242](../../tests/test_answer_validation.py#L242) | 242 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000243](../../tests/test_answer_validation.py#L243) | 243 | `"        \"قارن العروض\","` | — |
+| [SRC-1C77C97630-L000244](../../tests/test_answer_validation.py#L244) | 244 | `"        \"العرض الأول أرخص من الثاني [المصدر 1] [المصدر 2].\","` | — |
+| [SRC-1C77C97630-L000245](../../tests/test_answer_validation.py#L245) | 245 | `"        ["` | — |
+| [SRC-1C77C97630-L000246](../../tests/test_answer_validation.py#L246) | 246 | `"            {"` | — |
+| [SRC-1C77C97630-L000247](../../tests/test_answer_validation.py#L247) | 247 | `"                \"title\": \"شقة القاهرة\","` | — |
+| [SRC-1C77C97630-L000248](../../tests/test_answer_validation.py#L248) | 248 | `"                \"snippet\": \"السعر 100000 جنيه\","` | — |
+| [SRC-1C77C97630-L000249](../../tests/test_answer_validation.py#L249) | 249 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000250](../../tests/test_answer_validation.py#L250) | 250 | `"            },"` | — |
+| [SRC-1C77C97630-L000251](../../tests/test_answer_validation.py#L251) | 251 | `"            {"` | — |
+| [SRC-1C77C97630-L000252](../../tests/test_answer_validation.py#L252) | 252 | `"                \"title\": \"شقة القاهرة\","` | — |
+| [SRC-1C77C97630-L000253](../../tests/test_answer_validation.py#L253) | 253 | `"                \"snippet\": \"السعر 120000 جنيه\","` | — |
+| [SRC-1C77C97630-L000254](../../tests/test_answer_validation.py#L254) | 254 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000255](../../tests/test_answer_validation.py#L255) | 255 | `"            },"` | — |
+| [SRC-1C77C97630-L000256](../../tests/test_answer_validation.py#L256) | 256 | `"        ],"` | — |
+| [SRC-1C77C97630-L000257](../../tests/test_answer_validation.py#L257) | 257 | `"    )"` | — |
+| [SRC-1C77C97630-L000258](../../tests/test_answer_validation.py#L258) | 258 | `""` | — |
+| [SRC-1C77C97630-L000259](../../tests/test_answer_validation.py#L259) | 259 | `"    price = next("` | — |
+| [SRC-1C77C97630-L000260](../../tests/test_answer_validation.py#L260) | 260 | `"        item for item in result[\"potential_value_discrepancies\"]"` | — |
+| [SRC-1C77C97630-L000261](../../tests/test_answer_validation.py#L261) | 261 | `"        if item[\"dimension\"] == \"price_or_cost\""` | — |

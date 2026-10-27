@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **035**
-- سجلات الأسطر: **544**
-- النطاق: SRC-F725E90B2A-L003344 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **569**
+- النطاق: SRC-F725E90B2A-L003319 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003319](../../tests/test_web_agent.py#L3319) | 3319 | `"    expected_queries = list(dict.fromkeys("` | — |
+| [SRC-F725E90B2A-L003320](../../tests/test_web_agent.py#L3320) | 3320 | `"        query for query in ("` | — |
+| [SRC-F725E90B2A-L003321](../../tests/test_web_agent.py#L3321) | 3321 | `"            compact_search_query(question),"` | — |
+| [SRC-F725E90B2A-L003322](../../tests/test_web_agent.py#L3322) | 3322 | `"            compact_search_query(topic_query),"` | — |
+| [SRC-F725E90B2A-L003323](../../tests/test_web_agent.py#L3323) | 3323 | `"        ) if query"` | — |
+| [SRC-F725E90B2A-L003324](../../tests/test_web_agent.py#L3324) | 3324 | `"    ))"` | — |
+| [SRC-F725E90B2A-L003325](../../tests/test_web_agent.py#L3325) | 3325 | `"    assert source_queries == expected_queries"` | — |
+| [SRC-F725E90B2A-L003326](../../tests/test_web_agent.py#L3326) | 3326 | `""` | — |
+| [SRC-F725E90B2A-L003327](../../tests/test_web_agent.py#L3327) | 3327 | `""` | — |
+| [SRC-F725E90B2A-L003328](../../tests/test_web_agent.py#L3328) | 3328 | `"@pytest.mark.parametrize("` | — |
+| [SRC-F725E90B2A-L003329](../../tests/test_web_agent.py#L3329) | 3329 | `"    (\"mode\", \"planner_query\"),"` | — |
+| [SRC-F725E90B2A-L003330](../../tests/test_web_agent.py#L3330) | 3330 | `"    ["` | — |
+| [SRC-F725E90B2A-L003331](../../tests/test_web_agent.py#L3331) | 3331 | `"        (\"auto\", \"اذكر مصادر موثوقة، روابط مباشرة، باختصار\"),"` | — |
+| [SRC-F725E90B2A-L003332](../../tests/test_web_agent.py#L3332) | 3332 | `"        (\"auto\", \"site:reddit.com\"),"` | — |
+| [SRC-F725E90B2A-L003333](../../tests/test_web_agent.py#L3333) | 3333 | `"        (\"latest\", \"اذكر مصادر موثوقة، روابط مباشرة، باختصار\"),"` | — |
+| [SRC-F725E90B2A-L003334](../../tests/test_web_agent.py#L3334) | 3334 | `"        (\"deep\", \"site:reddit.com\"),"` | — |
+| [SRC-F725E90B2A-L003335](../../tests/test_web_agent.py#L3335) | 3335 | `"        (\"social\", \"اذكر مصادر موثوقة، روابط مباشرة، باختصار\"),"` | — |
+| [SRC-F725E90B2A-L003336](../../tests/test_web_agent.py#L3336) | 3336 | `"    ],"` | — |
+| [SRC-F725E90B2A-L003337](../../tests/test_web_agent.py#L3337) | 3337 | `")"` | — |
+| [SRC-F725E90B2A-L003338](../../tests/test_web_agent.py#L3338) | 3338 | `"def test_modes_do_not_create_generic_queries_without_topic("` | — |
+| [SRC-F725E90B2A-L003339](../../tests/test_web_agent.py#L3339) | 3339 | `"    monkeypatch, mode, planner_query"` | — |
+| [SRC-F725E90B2A-L003340](../../tests/test_web_agent.py#L3340) | 3340 | `"):"` | — |
+| [SRC-F725E90B2A-L003341](../../tests/test_web_agent.py#L3341) | 3341 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003342](../../tests/test_web_agent.py#L3342) | 3342 | `"    instruction_only = \"اذكر مصادر موثوقة، روابط مباشرة، باختصار\""` | — |
+| [SRC-F725E90B2A-L003343](../../tests/test_web_agent.py#L3343) | 3343 | `"    direct_url = \"https://example.com/report\""` | — |
 | [SRC-F725E90B2A-L003344](../../tests/test_web_agent.py#L3344) | 3344 | `"    observed_plans = []"` | — |
 | [SRC-F725E90B2A-L003345](../../tests/test_web_agent.py#L3345) | 3345 | `""` | — |
 | [SRC-F725E90B2A-L003346](../../tests/test_web_agent.py#L3346) | 3346 | `"    monkeypatch.setattr("` | — |

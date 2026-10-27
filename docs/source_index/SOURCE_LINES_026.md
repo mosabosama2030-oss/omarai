@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000778 إلى SRC-FA4E1423C3-L000018
+- النطاق: SRC-3451CC474D-L000753 إلى SRC-8455F405B6-L000051
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000753](../../tests/test_api.py#L753) | 753 | `"    assert api_module._build_identity() == (\"b\" * 40, source)"` | — |
+| [SRC-3451CC474D-L000754](../../tests/test_api.py#L754) | 754 | `""` | — |
+| [SRC-3451CC474D-L000755](../../tests/test_api.py#L755) | 755 | `""` | — |
+| [SRC-3451CC474D-L000756](../../tests/test_api.py#L756) | 756 | `"def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L000757](../../tests/test_api.py#L757) | 757 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000758](../../tests/test_api.py#L758) | 758 | `""` | — |
+| [SRC-3451CC474D-L000759](../../tests/test_api.py#L759) | 759 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", tmp_path / \"BUILD_SHA\")"` | — |
+| [SRC-3451CC474D-L000760](../../tests/test_api.py#L760) | 760 | `"    api_module.BUILD_SHA_FILE.write_text(\"unknown\", encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000761](../../tests/test_api.py#L761) | 761 | `"    monkeypatch.setenv(\"RAILWAY_GIT_COMMIT_SHA\", \"not-a-sha\")"` | — |
+| [SRC-3451CC474D-L000762](../../tests/test_api.py#L762) | 762 | `"    monkeypatch.setenv(\"RENDER_GIT_COMMIT\", \"also-not-a-sha\")"` | — |
+| [SRC-3451CC474D-L000763](../../tests/test_api.py#L763) | 763 | `""` | — |
+| [SRC-3451CC474D-L000764](../../tests/test_api.py#L764) | 764 | `"    assert api_module._build_identity() == (\"unknown\", \"unknown\")"` | — |
+| [SRC-3451CC474D-L000765](../../tests/test_api.py#L765) | 765 | `""` | — |
+| [SRC-3451CC474D-L000766](../../tests/test_api.py#L766) | 766 | `""` | — |
+| [SRC-3451CC474D-L000767](../../tests/test_api.py#L767) | 767 | `""` | — |
+| [SRC-3451CC474D-L000768](../../tests/test_api.py#L768) | 768 | `"def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L000769](../../tests/test_api.py#L769) | 769 | `"    from api.omarai import _lead_store_from_environment"` | — |
+| [SRC-3451CC474D-L000770](../../tests/test_api.py#L770) | 770 | `""` | — |
+| [SRC-3451CC474D-L000771](../../tests/test_api.py#L771) | 771 | `"    database_path = tmp_path / \"persistent\" / \"omarai.sqlite3\""` | — |
+| [SRC-3451CC474D-L000772](../../tests/test_api.py#L772) | 772 | `"    monkeypatch.setenv(\"OMARAI_DB_PATH\", str(database_path))"` | — |
+| [SRC-3451CC474D-L000773](../../tests/test_api.py#L773) | 773 | `""` | — |
+| [SRC-3451CC474D-L000774](../../tests/test_api.py#L774) | 774 | `"    store = _lead_store_from_environment()"` | — |
+| [SRC-3451CC474D-L000775](../../tests/test_api.py#L775) | 775 | `""` | — |
+| [SRC-3451CC474D-L000776](../../tests/test_api.py#L776) | 776 | `"    assert store.path == database_path"` | — |
+| [SRC-3451CC474D-L000777](../../tests/test_api.py#L777) | 777 | `"    assert database_path.is_file()"` | — |
 | [SRC-3451CC474D-L000778](../../tests/test_api.py#L778) | 778 | `""` | — |
 | [SRC-3451CC474D-L000779](../../tests/test_api.py#L779) | 779 | `""` | — |
 | [SRC-3451CC474D-L000780](../../tests/test_api.py#L780) | 780 | `""` | — |
@@ -827,37 +852,3 @@
 | [SRC-8455F405B6-L000049](../../tests/test_evidence_signals.py#L49) | 49 | `""` | — |
 | [SRC-8455F405B6-L000050](../../tests/test_evidence_signals.py#L50) | 50 | `"def test_publication_date_parser_handles_iso_rfc822_and_relative_dates():"` | — |
 | [SRC-8455F405B6-L000051](../../tests/test_evidence_signals.py#L51) | 51 | `"    now = datetime(2026, 10, 12, 12, 0, tzinfo=UTC)"` | — |
-| [SRC-8455F405B6-L000052](../../tests/test_evidence_signals.py#L52) | 52 | `"    assert _parse_publication_date(\"2026-10-10T09:00:00Z\", now) == datetime("` | — |
-| [SRC-8455F405B6-L000053](../../tests/test_evidence_signals.py#L53) | 53 | `"        2026, 10, 10, 9, 0, tzinfo=UTC"` | — |
-| [SRC-8455F405B6-L000054](../../tests/test_evidence_signals.py#L54) | 54 | `"    )"` | — |
-| [SRC-8455F405B6-L000055](../../tests/test_evidence_signals.py#L55) | 55 | `"    assert _parse_publication_date(\"2 days ago\", now) == datetime("` | — |
-| [SRC-8455F405B6-L000056](../../tests/test_evidence_signals.py#L56) | 56 | `"        2026, 10, 10, 12, 0, tzinfo=UTC"` | — |
-| [SRC-8455F405B6-L000057](../../tests/test_evidence_signals.py#L57) | 57 | `"    )"` | — |
-| [SRC-8455F405B6-L000058](../../tests/test_evidence_signals.py#L58) | 58 | `"    assert _parse_publication_date(\"date not supplied\", now) is None"` | — |
-## اختبارات
-
-### FILE-FA4E1423C3 — [tests/test_generate_index.py](../../tests/test_generate_index.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-FA4E1423C3-L000001](../../tests/test_generate_index.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-FA4E1423C3-L000002](../../tests/test_generate_index.py#L2) | 2 | `""` | — |
-| [SRC-FA4E1423C3-L000003](../../tests/test_generate_index.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-FA4E1423C3-L000004](../../tests/test_generate_index.py#L4) | 4 | `"from dataclasses import replace"` | — |
-| [SRC-FA4E1423C3-L000005](../../tests/test_generate_index.py#L5) | 5 | `"import sys"` | — |
-| [SRC-FA4E1423C3-L000006](../../tests/test_generate_index.py#L6) | 6 | `"from pathlib import Path"` | — |
-| [SRC-FA4E1423C3-L000007](../../tests/test_generate_index.py#L7) | 7 | `""` | — |
-| [SRC-FA4E1423C3-L000008](../../tests/test_generate_index.py#L8) | 8 | `"import pytest"` | — |
-| [SRC-FA4E1423C3-L000009](../../tests/test_generate_index.py#L9) | 9 | `""` | — |
-| [SRC-FA4E1423C3-L000010](../../tests/test_generate_index.py#L10) | 10 | `""` | — |
-| [SRC-FA4E1423C3-L000011](../../tests/test_generate_index.py#L11) | 11 | `"INDEXER_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"generate_index.py\""` | — |
-| [SRC-FA4E1423C3-L000012](../../tests/test_generate_index.py#L12) | 12 | `"INDEXER_SPEC = importlib.util.spec_from_file_location("` | — |
-| [SRC-FA4E1423C3-L000013](../../tests/test_generate_index.py#L13) | 13 | `"    \"omarai_generate_index_for_tests\","` | — |
-| [SRC-FA4E1423C3-L000014](../../tests/test_generate_index.py#L14) | 14 | `"    INDEXER_PATH,"` | — |
-| [SRC-FA4E1423C3-L000015](../../tests/test_generate_index.py#L15) | 15 | `")"` | — |
-| [SRC-FA4E1423C3-L000016](../../tests/test_generate_index.py#L16) | 16 | `"assert INDEXER_SPEC is not None"` | — |
-| [SRC-FA4E1423C3-L000017](../../tests/test_generate_index.py#L17) | 17 | `"assert INDEXER_SPEC.loader is not None"` | — |
-| [SRC-FA4E1423C3-L000018](../../tests/test_generate_index.py#L18) | 18 | `"INDEXER = importlib.util.module_from_spec(INDEXER_SPEC)"` | — |

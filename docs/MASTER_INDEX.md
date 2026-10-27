@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **81**
 - ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1039**
+- تعريفات Python المفهرسة: **1040**
 - تعريفات Python موثقة بوجود Docstring: **198**
-- تعريفات Python بلا Docstring: **637**
+- تعريفات Python بلا Docstring: **638**
 - تعريفات لا ينطبق عليها Docstring: **204**
 - الرموز الساكنة الإضافية: **1611**
-- الأسطر النصية المفهرسة حرفيًا: **27744**
+- الأسطر النصية المفهرسة حرفيًا: **27769**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -86,7 +86,7 @@
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
-| FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 11544 | 284 | جرد الملف + AST Python |
+| FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 12753 | 309 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
@@ -607,19 +607,20 @@
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L11) | دالة | test_numeric_screen_accepts_arabic_digits_and_thousands_formatting | لا توجد Docstring. | ناقص | 11 | [SRC-1C77C97630-L000011](../tests/test_answer_validation.py#L11) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L31) | دالة | test_numeric_screen_flags_number_absent_from_available_evidence | لا توجد Docstring. | ناقص | 31 | [SRC-1C77C97630-L000031](../tests/test_answer_validation.py#L31) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L47) | دالة | test_task_coverage_screen_flags_a_potentially_missing_target_without_claiming_failure | لا توجد Docstring. | ناقص | 47 | [SRC-1C77C97630-L000047](../tests/test_answer_validation.py#L47) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L66) | دالة | test_source_scope_does_not_confuse_snippet_with_fetched_page | لا توجد Docstring. | ناقص | 66 | [SRC-1C77C97630-L000066](../tests/test_answer_validation.py#L66) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L77) | دالة | test_review_prompt_explicitly_requires_number_and_conflict_audit | لا توجد Docstring. | ناقص | 77 | [SRC-1C77C97630-L000077](../tests/test_answer_validation.py#L77) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L81) | دالة | test_review_prompt_explicitly_requires_number_and_conflict_audit.fake_completion | لا توجد Docstring. | ناقص | 81 | [SRC-1C77C97630-L000081](../tests/test_answer_validation.py#L81) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L103) | دالة | test_citation_alignment_uses_fetched_page_text_and_flags_weak_overlap | لا توجد Docstring. | ناقص | 103 | [SRC-1C77C97630-L000103](../tests/test_answer_validation.py#L103) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L131) | دالة | test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence | لا توجد Docstring. | ناقص | 131 | [SRC-1C77C97630-L000131](../tests/test_answer_validation.py#L131) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L145) | دالة | test_bounded_coverage_repair_parses_one_delimited_answer_and_supplies_evidence | لا توجد Docstring. | ناقص | 145 | [SRC-1C77C97630-L000145](../tests/test_answer_validation.py#L145) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L149) | دالة | test_bounded_coverage_repair_parses_one_delimited_answer_and_supplies_evidence.fake_completion | لا توجد Docstring. | ناقص | 149 | [SRC-1C77C97630-L000149](../tests/test_answer_validation.py#L149) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L171) | دالة | test_bounded_coverage_repair_rejects_missing_or_duplicate_markers | لا توجد Docstring. | ناقص | 171 | [SRC-1C77C97630-L000171](../tests/test_answer_validation.py#L171) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L190) | دالة | test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source | لا توجد Docstring. | ناقص | 190 | [SRC-1C77C97630-L000190](../tests/test_answer_validation.py#L190) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L216) | دالة | test_different_price_values_are_flagged_for_review_not_called_contradictions | لا توجد Docstring. | ناقص | 216 | [SRC-1C77C97630-L000216](../tests/test_answer_validation.py#L216) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L244) | دالة | test_date_in_answer_missing_from_its_cited_source_is_flagged | لا توجد Docstring. | ناقص | 244 | [SRC-1C77C97630-L000244](../tests/test_answer_validation.py#L244) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L261) | دالة | test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies | لا توجد Docstring. | ناقص | 261 | [SRC-1C77C97630-L000261](../tests/test_answer_validation.py#L261) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L271) | دالة | test_single_coincidental_token_does_not_count_as_citation_support | لا توجد Docstring. | ناقص | 271 | [SRC-1C77C97630-L000271](../tests/test_answer_validation.py#L271) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L66) | دالة | test_criterion_coverage_distinguishes_answer_mentions_from_source_evidence | لا توجد Docstring. | ناقص | 66 | [SRC-1C77C97630-L000066](../tests/test_answer_validation.py#L66) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L91) | دالة | test_source_scope_does_not_confuse_snippet_with_fetched_page | لا توجد Docstring. | ناقص | 91 | [SRC-1C77C97630-L000091](../tests/test_answer_validation.py#L91) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L102) | دالة | test_review_prompt_explicitly_requires_number_and_conflict_audit | لا توجد Docstring. | ناقص | 102 | [SRC-1C77C97630-L000102](../tests/test_answer_validation.py#L102) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L106) | دالة | test_review_prompt_explicitly_requires_number_and_conflict_audit.fake_completion | لا توجد Docstring. | ناقص | 106 | [SRC-1C77C97630-L000106](../tests/test_answer_validation.py#L106) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L128) | دالة | test_citation_alignment_uses_fetched_page_text_and_flags_weak_overlap | لا توجد Docstring. | ناقص | 128 | [SRC-1C77C97630-L000128](../tests/test_answer_validation.py#L128) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L156) | دالة | test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence | لا توجد Docstring. | ناقص | 156 | [SRC-1C77C97630-L000156](../tests/test_answer_validation.py#L156) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L170) | دالة | test_bounded_coverage_repair_parses_one_delimited_answer_and_supplies_evidence | لا توجد Docstring. | ناقص | 170 | [SRC-1C77C97630-L000170](../tests/test_answer_validation.py#L170) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L174) | دالة | test_bounded_coverage_repair_parses_one_delimited_answer_and_supplies_evidence.fake_completion | لا توجد Docstring. | ناقص | 174 | [SRC-1C77C97630-L000174](../tests/test_answer_validation.py#L174) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L196) | دالة | test_bounded_coverage_repair_rejects_missing_or_duplicate_markers | لا توجد Docstring. | ناقص | 196 | [SRC-1C77C97630-L000196](../tests/test_answer_validation.py#L196) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L215) | دالة | test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source | لا توجد Docstring. | ناقص | 215 | [SRC-1C77C97630-L000215](../tests/test_answer_validation.py#L215) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L241) | دالة | test_different_price_values_are_flagged_for_review_not_called_contradictions | لا توجد Docstring. | ناقص | 241 | [SRC-1C77C97630-L000241](../tests/test_answer_validation.py#L241) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L269) | دالة | test_date_in_answer_missing_from_its_cited_source_is_flagged | لا توجد Docstring. | ناقص | 269 | [SRC-1C77C97630-L000269](../tests/test_answer_validation.py#L269) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L286) | دالة | test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies | لا توجد Docstring. | ناقص | 286 | [SRC-1C77C97630-L000286](../tests/test_answer_validation.py#L286) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L296) | دالة | test_single_coincidental_token_does_not_count_as_citation_support | لا توجد Docstring. | ناقص | 296 | [SRC-1C77C97630-L000296](../tests/test_answer_validation.py#L296) |
 | [tests/test_api.py](../tests/test_api.py#L22) | دالة | local_api | Run the real handler on an ephemeral loopback port with an isolated database. | موثق | 22 | [SRC-3451CC474D-L000022](../tests/test_api.py#L22) |
 | [tests/test_api.py](../tests/test_api.py#L38) | دالة | request_json | لا توجد Docstring. | ناقص | 38 | [SRC-3451CC474D-L000038](../tests/test_api.py#L38) |
 | [tests/test_api.py](../tests/test_api.py#L51) | دالة | test_api_health_analyze_save_duplicate_list_and_status | لا توجد Docstring. | ناقص | 51 | [SRC-3451CC474D-L000051](../tests/test_api.py#L51) |
@@ -2330,10 +2331,10 @@
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 94 | [SRC-B3062EB677-L000094](../tests/test_answer_quality_runner.py#L94) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 95 | [SRC-B3062EB677-L000095](../tests/test_answer_quality_runner.py#L95) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L159) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 159 | [SRC-B3062EB677-L000159](../tests/test_answer_quality_runner.py#L159) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 83 | [SRC-1C77C97630-L000083](../tests/test_answer_validation.py#L83) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L83) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 83 | [SRC-1C77C97630-L000083](../tests/test_answer_validation.py#L83) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 151 | [SRC-1C77C97630-L000151](../tests/test_answer_validation.py#L151) |
-| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_COVERAGE_REPAIR | 151 | [SRC-1C77C97630-L000151](../tests/test_answer_validation.py#L151) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 108 | [SRC-1C77C97630-L000108](../tests/test_answer_validation.py#L108) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 108 | [SRC-1C77C97630-L000108](../tests/test_answer_validation.py#L108) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L176) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 176 | [SRC-1C77C97630-L000176](../tests/test_answer_validation.py#L176) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L176) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_COVERAGE_REPAIR | 176 | [SRC-1C77C97630-L000176](../tests/test_answer_validation.py#L176) |
 | [tests/test_api.py](../tests/test_api.py#L52) | مسار API/واجهة محتمل | /api/health | 52 | [SRC-3451CC474D-L000052](../tests/test_api.py#L52) |
 | [tests/test_api.py](../tests/test_api.py#L62) | مسار API/واجهة محتمل | /api/analyze | 62 | [SRC-3451CC474D-L000062](../tests/test_api.py#L62) |
 | [tests/test_api.py](../tests/test_api.py#L79) | مسار API/واجهة محتمل | /api/leads | 79 | [SRC-3451CC474D-L000079](../tests/test_api.py#L79) |

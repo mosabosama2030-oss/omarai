@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000262 إلى SRC-3451CC474D-L000777
+- النطاق: SRC-1C77C97630-L000262 إلى SRC-3451CC474D-L000752
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,29 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1C77C97630-L000262](../../tests/test_answer_validation.py#L262) | 262 | `"    html_path = Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
-| [SRC-1C77C97630-L000263](../../tests/test_answer_validation.py#L263) | 263 | `"    html = html_path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-1C77C97630-L000264](../../tests/test_answer_validation.py#L264) | 264 | `""` | — |
-| [SRC-1C77C97630-L000265](../../tests/test_answer_validation.py#L265) | 265 | `"    assert \"citation_numeric_support\" in html"` | — |
-| [SRC-1C77C97630-L000266](../../tests/test_answer_validation.py#L266) | 266 | `"    assert \"potential_value_discrepancies\" in html"` | — |
-| [SRC-1C77C97630-L000267](../../tests/test_answer_validation.py#L267) | 267 | `"    assert \"هذه ليست إثباتًا تلقائيًا لوجود تناقض\" in html"` | — |
-| [SRC-1C77C97630-L000268](../../tests/test_answer_validation.py#L268) | 268 | `"    assert \"ليس تحققًا من الحقيقة\" in html"` | — |
-| [SRC-1C77C97630-L000269](../../tests/test_answer_validation.py#L269) | 269 | `""` | — |
-| [SRC-1C77C97630-L000270](../../tests/test_answer_validation.py#L270) | 270 | `""` | — |
-| [SRC-1C77C97630-L000271](../../tests/test_answer_validation.py#L271) | 271 | `"def test_single_coincidental_token_does_not_count_as_citation_support():"` | — |
-| [SRC-1C77C97630-L000272](../../tests/test_answer_validation.py#L272) | 272 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000273](../../tests/test_answer_validation.py#L273) | 273 | `"        \"What is the device quality?\","` | — |
-| [SRC-1C77C97630-L000274](../../tests/test_answer_validation.py#L274) | 274 | `"        \"Apple is a premium and exceptionally reliable device [source 1].\","` | — |
-| [SRC-1C77C97630-L000275](../../tests/test_answer_validation.py#L275) | 275 | `"        [{"` | — |
-| [SRC-1C77C97630-L000276](../../tests/test_answer_validation.py#L276) | 276 | `"            \"title\": \"Apple catalog\","` | — |
-| [SRC-1C77C97630-L000277](../../tests/test_answer_validation.py#L277) | 277 | `"            \"snippet\": \"Apple product listing\","` | — |
-| [SRC-1C77C97630-L000278](../../tests/test_answer_validation.py#L278) | 278 | `"            \"page_text\": \"Apple products are listed with model identifiers and availability.\","` | — |
-| [SRC-1C77C97630-L000279](../../tests/test_answer_validation.py#L279) | 279 | `"            \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000280](../../tests/test_answer_validation.py#L280) | 280 | `"        }],"` | — |
-| [SRC-1C77C97630-L000281](../../tests/test_answer_validation.py#L281) | 281 | `"    )"` | — |
-| [SRC-1C77C97630-L000282](../../tests/test_answer_validation.py#L282) | 282 | `"    assert result[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
-| [SRC-1C77C97630-L000283](../../tests/test_answer_validation.py#L283) | 283 | `"    assert result[\"weak_citation_alignment_count\"] == 1"` | — |
-| [SRC-1C77C97630-L000284](../../tests/test_answer_validation.py#L284) | 284 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
+| [SRC-1C77C97630-L000262](../../tests/test_answer_validation.py#L262) | 262 | `"    )"` | — |
+| [SRC-1C77C97630-L000263](../../tests/test_answer_validation.py#L263) | 263 | `"    assert {item[\"value\"] for item in price[\"values\"]} == {\"100000\", \"120000\"}"` | — |
+| [SRC-1C77C97630-L000264](../../tests/test_answer_validation.py#L264) | 264 | `"    assert price[\"status\"] == \"potential_variation_or_conflict_requires_entity_review\""` | — |
+| [SRC-1C77C97630-L000265](../../tests/test_answer_validation.py#L265) | 265 | `"    assert \"contradiction\" not in price[\"status\"]"` | — |
+| [SRC-1C77C97630-L000266](../../tests/test_answer_validation.py#L266) | 266 | `"    assert result[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000267](../../tests/test_answer_validation.py#L267) | 267 | `""` | — |
+| [SRC-1C77C97630-L000268](../../tests/test_answer_validation.py#L268) | 268 | `""` | — |
+| [SRC-1C77C97630-L000269](../../tests/test_answer_validation.py#L269) | 269 | `"def test_date_in_answer_missing_from_its_cited_source_is_flagged():"` | — |
+| [SRC-1C77C97630-L000270](../../tests/test_answer_validation.py#L270) | 270 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000271](../../tests/test_answer_validation.py#L271) | 271 | `"        \"ما تاريخ التقرير؟\","` | — |
+| [SRC-1C77C97630-L000272](../../tests/test_answer_validation.py#L272) | 272 | `"        \"صدر التقرير في 2026 [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000273](../../tests/test_answer_validation.py#L273) | 273 | `"        [{"` | — |
+| [SRC-1C77C97630-L000274](../../tests/test_answer_validation.py#L274) | 274 | `"            \"title\": \"تقرير سابق\","` | — |
+| [SRC-1C77C97630-L000275](../../tests/test_answer_validation.py#L275) | 275 | `"            \"snippet\": \"تقرير منشور في 2024.\","` | — |
+| [SRC-1C77C97630-L000276](../../tests/test_answer_validation.py#L276) | 276 | `"            \"published_at\": \"2024\","` | — |
+| [SRC-1C77C97630-L000277](../../tests/test_answer_validation.py#L277) | 277 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000278](../../tests/test_answer_validation.py#L278) | 278 | `"        }],"` | — |
+| [SRC-1C77C97630-L000279](../../tests/test_answer_validation.py#L279) | 279 | `"    )"` | — |
+| [SRC-1C77C97630-L000280](../../tests/test_answer_validation.py#L280) | 280 | `""` | — |
+| [SRC-1C77C97630-L000281](../../tests/test_answer_validation.py#L281) | 281 | `"    numeric_check = result[\"citation_numeric_support\"][0]"` | — |
+| [SRC-1C77C97630-L000282](../../tests/test_answer_validation.py#L282) | 282 | `"    assert numeric_check[\"potentially_unsupported_numeric_literals\"] == [\"2026\"]"` | — |
+| [SRC-1C77C97630-L000283](../../tests/test_answer_validation.py#L283) | 283 | `"    assert numeric_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
+| [SRC-1C77C97630-L000284](../../tests/test_answer_validation.py#L284) | 284 | `""` | — |
+| [SRC-1C77C97630-L000285](../../tests/test_answer_validation.py#L285) | 285 | `""` | — |
+| [SRC-1C77C97630-L000286](../../tests/test_answer_validation.py#L286) | 286 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |
+| [SRC-1C77C97630-L000287](../../tests/test_answer_validation.py#L287) | 287 | `"    html_path = Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
+| [SRC-1C77C97630-L000288](../../tests/test_answer_validation.py#L288) | 288 | `"    html = html_path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-1C77C97630-L000289](../../tests/test_answer_validation.py#L289) | 289 | `""` | — |
+| [SRC-1C77C97630-L000290](../../tests/test_answer_validation.py#L290) | 290 | `"    assert \"citation_numeric_support\" in html"` | — |
+| [SRC-1C77C97630-L000291](../../tests/test_answer_validation.py#L291) | 291 | `"    assert \"potential_value_discrepancies\" in html"` | — |
+| [SRC-1C77C97630-L000292](../../tests/test_answer_validation.py#L292) | 292 | `"    assert \"هذه ليست إثباتًا تلقائيًا لوجود تناقض\" in html"` | — |
+| [SRC-1C77C97630-L000293](../../tests/test_answer_validation.py#L293) | 293 | `"    assert \"ليس تحققًا من الحقيقة\" in html"` | — |
+| [SRC-1C77C97630-L000294](../../tests/test_answer_validation.py#L294) | 294 | `""` | — |
+| [SRC-1C77C97630-L000295](../../tests/test_answer_validation.py#L295) | 295 | `""` | — |
+| [SRC-1C77C97630-L000296](../../tests/test_answer_validation.py#L296) | 296 | `"def test_single_coincidental_token_does_not_count_as_citation_support():"` | — |
+| [SRC-1C77C97630-L000297](../../tests/test_answer_validation.py#L297) | 297 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000298](../../tests/test_answer_validation.py#L298) | 298 | `"        \"What is the device quality?\","` | — |
+| [SRC-1C77C97630-L000299](../../tests/test_answer_validation.py#L299) | 299 | `"        \"Apple is a premium and exceptionally reliable device [source 1].\","` | — |
+| [SRC-1C77C97630-L000300](../../tests/test_answer_validation.py#L300) | 300 | `"        [{"` | — |
+| [SRC-1C77C97630-L000301](../../tests/test_answer_validation.py#L301) | 301 | `"            \"title\": \"Apple catalog\","` | — |
+| [SRC-1C77C97630-L000302](../../tests/test_answer_validation.py#L302) | 302 | `"            \"snippet\": \"Apple product listing\","` | — |
+| [SRC-1C77C97630-L000303](../../tests/test_answer_validation.py#L303) | 303 | `"            \"page_text\": \"Apple products are listed with model identifiers and availability.\","` | — |
+| [SRC-1C77C97630-L000304](../../tests/test_answer_validation.py#L304) | 304 | `"            \"page_fetched\": True,"` | — |
+| [SRC-1C77C97630-L000305](../../tests/test_answer_validation.py#L305) | 305 | `"        }],"` | — |
+| [SRC-1C77C97630-L000306](../../tests/test_answer_validation.py#L306) | 306 | `"    )"` | — |
+| [SRC-1C77C97630-L000307](../../tests/test_answer_validation.py#L307) | 307 | `"    assert result[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
+| [SRC-1C77C97630-L000308](../../tests/test_answer_validation.py#L308) | 308 | `"    assert result[\"weak_citation_alignment_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000309](../../tests/test_answer_validation.py#L309) | 309 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
 ## اختبارات
 
 ### FILE-3451CC474D — [tests/test_api.py](../../tests/test_api.py#L1)
@@ -800,28 +825,3 @@
 | [SRC-3451CC474D-L000750](../../tests/test_api.py#L750) | 750 | `"        monkeypatch.delenv(name, raising=False)"` | — |
 | [SRC-3451CC474D-L000751](../../tests/test_api.py#L751) | 751 | `"    monkeypatch.setenv(variable, \"b\" * 40)"` | — |
 | [SRC-3451CC474D-L000752](../../tests/test_api.py#L752) | 752 | `""` | — |
-| [SRC-3451CC474D-L000753](../../tests/test_api.py#L753) | 753 | `"    assert api_module._build_identity() == (\"b\" * 40, source)"` | — |
-| [SRC-3451CC474D-L000754](../../tests/test_api.py#L754) | 754 | `""` | — |
-| [SRC-3451CC474D-L000755](../../tests/test_api.py#L755) | 755 | `""` | — |
-| [SRC-3451CC474D-L000756](../../tests/test_api.py#L756) | 756 | `"def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp_path):"` | — |
-| [SRC-3451CC474D-L000757](../../tests/test_api.py#L757) | 757 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000758](../../tests/test_api.py#L758) | 758 | `""` | — |
-| [SRC-3451CC474D-L000759](../../tests/test_api.py#L759) | 759 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", tmp_path / \"BUILD_SHA\")"` | — |
-| [SRC-3451CC474D-L000760](../../tests/test_api.py#L760) | 760 | `"    api_module.BUILD_SHA_FILE.write_text(\"unknown\", encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000761](../../tests/test_api.py#L761) | 761 | `"    monkeypatch.setenv(\"RAILWAY_GIT_COMMIT_SHA\", \"not-a-sha\")"` | — |
-| [SRC-3451CC474D-L000762](../../tests/test_api.py#L762) | 762 | `"    monkeypatch.setenv(\"RENDER_GIT_COMMIT\", \"also-not-a-sha\")"` | — |
-| [SRC-3451CC474D-L000763](../../tests/test_api.py#L763) | 763 | `""` | — |
-| [SRC-3451CC474D-L000764](../../tests/test_api.py#L764) | 764 | `"    assert api_module._build_identity() == (\"unknown\", \"unknown\")"` | — |
-| [SRC-3451CC474D-L000765](../../tests/test_api.py#L765) | 765 | `""` | — |
-| [SRC-3451CC474D-L000766](../../tests/test_api.py#L766) | 766 | `""` | — |
-| [SRC-3451CC474D-L000767](../../tests/test_api.py#L767) | 767 | `""` | — |
-| [SRC-3451CC474D-L000768](../../tests/test_api.py#L768) | 768 | `"def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):"` | — |
-| [SRC-3451CC474D-L000769](../../tests/test_api.py#L769) | 769 | `"    from api.omarai import _lead_store_from_environment"` | — |
-| [SRC-3451CC474D-L000770](../../tests/test_api.py#L770) | 770 | `""` | — |
-| [SRC-3451CC474D-L000771](../../tests/test_api.py#L771) | 771 | `"    database_path = tmp_path / \"persistent\" / \"omarai.sqlite3\""` | — |
-| [SRC-3451CC474D-L000772](../../tests/test_api.py#L772) | 772 | `"    monkeypatch.setenv(\"OMARAI_DB_PATH\", str(database_path))"` | — |
-| [SRC-3451CC474D-L000773](../../tests/test_api.py#L773) | 773 | `""` | — |
-| [SRC-3451CC474D-L000774](../../tests/test_api.py#L774) | 774 | `"    store = _lead_store_from_environment()"` | — |
-| [SRC-3451CC474D-L000775](../../tests/test_api.py#L775) | 775 | `""` | — |
-| [SRC-3451CC474D-L000776](../../tests/test_api.py#L776) | 776 | `"    assert store.path == database_path"` | — |
-| [SRC-3451CC474D-L000777](../../tests/test_api.py#L777) | 777 | `"    assert database_path.is_file()"` | — |
