@@ -53,15 +53,39 @@ def _criterion_tokens(value: Any) -> list[str]:
     return tokens or _tokens(value)
 
 
+_CRITERION_ALIASES = {
+    "سعر": ("price", "cost", "pricing", "fee", "amount"),
+    "تكلفه": ("price", "cost", "expense", "fee"),
+    "بطاريه": ("battery", "capacity", "duration", "battery life"),
+    "كاميرا": ("camera", "photography", "image quality", "photo"),
+    "خصوصيه": ("privacy", "confidentiality", "data protection"),
+    "اعتماديه": ("reliability", "uptime", "dependability"),
+    "دعم": ("support", "service", "helpdesk", "customer service"),
+    "مساحه": ("area", "size", "space", "sqm"),
+    "اداء": ("performance", "speed", "throughput"),
+    "امان": ("safety", "security", "protection"),
+    "جوده": ("quality", "build quality"),
+    "صيانه": ("maintenance", "repair", "servicing"),
+    "مميزات": ("features", "benefits", "advantages"),
+    "عيوب": ("drawbacks", "disadvantages", "limitations", "cons"),
+    "ضمان": ("warranty", "guarantee"),
+    "توفر": ("availability", "in stock"),
+    "سرعه": ("speed", "latency"),
+    "ذاكره": ("memory", "ram", "storage"),
+}
+
+
 def _criterion_token_variants(token: str) -> set[str]:
-    """Return conservative variants for Arabic words with/without the definite article."""
+    """Return conservative Arabic article and common cross-language criterion variants."""
     variants = {token}
-    if not all("ء" <= char <= "ي" for char in token):
-        return variants
-    if token.startswith("ال") and len(token) > 4:
-        variants.add(token[2:])
-    elif len(token) >= 3:
-        variants.add("ال" + token)
+    is_arabic = bool(token) and all("ء" <= char <= "ي" for char in token)
+    base = token[2:] if is_arabic and token.startswith("ال") and len(token) > 4 else token
+    if is_arabic:
+        variants.add(base)
+        if len(base) >= 3:
+            variants.add("ال" + base)
+        for alias in _CRITERION_ALIASES.get(base, ()):
+            variants.update(_tokens(alias, drop_stopwords=True))
     return variants
 
 
