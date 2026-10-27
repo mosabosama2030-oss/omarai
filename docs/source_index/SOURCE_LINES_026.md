@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA61479D59-L000102 إلى SRC-FA4E1423C3-L000214
+- النطاق: SRC-DA61479D59-L000101 إلى SRC-FA4E1423C3-L000213
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA61479D59-L000101](../../tests/test_connector_summary_counters.py#L101) | 101 | `"    sources, warnings, report = agent._collect_research({"` | — |
 | [SRC-DA61479D59-L000102](../../tests/test_connector_summary_counters.py#L102) | 102 | `"        \"queries\": [query],"` | — |
 | [SRC-DA61479D59-L000103](../../tests/test_connector_summary_counters.py#L103) | 103 | `"        \"direct_urls\": [],"` | — |
 | [SRC-DA61479D59-L000104](../../tests/test_connector_summary_counters.py#L104) | 104 | `"        \"social_focus\": False,"` | — |
@@ -851,4 +852,3 @@
 | [SRC-FA4E1423C3-L000211](../../tests/test_generate_index.py#L211) | 211 | `""` | — |
 | [SRC-FA4E1423C3-L000212](../../tests/test_generate_index.py#L212) | 212 | `""` | — |
 | [SRC-FA4E1423C3-L000213](../../tests/test_generate_index.py#L213) | 213 | `"def test_repeated_generation_is_deterministic_and_does_not_rewrite_unchanged_index("` | — |
-| [SRC-FA4E1423C3-L000214](../../tests/test_generate_index.py#L214) | 214 | `"    tmp_path: Path,"` | — |

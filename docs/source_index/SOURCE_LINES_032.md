@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001147 إلى SRC-F725E90B2A-L001946
+- النطاق: SRC-F725E90B2A-L001146 إلى SRC-F725E90B2A-L001945
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001146](../../tests/test_web_agent.py#L1146) | 1146 | `"    assert any(\"لم يتم تأكيد محتواه\" in warning for warning in result[\"warnings\"])"` | — |
 | [SRC-F725E90B2A-L001147](../../tests/test_web_agent.py#L1147) | 1147 | `""` | — |
 | [SRC-F725E90B2A-L001148](../../tests/test_web_agent.py#L1148) | 1148 | `""` | — |
 | [SRC-F725E90B2A-L001149](../../tests/test_web_agent.py#L1149) | 1149 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001943](../../tests/test_web_agent.py#L1943) | 1943 | `"def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001944](../../tests/test_web_agent.py#L1944) | 1944 | `"    import json"` | — |
 | [SRC-F725E90B2A-L001945](../../tests/test_web_agent.py#L1945) | 1945 | `""` | — |
-| [SRC-F725E90B2A-L001946](../../tests/test_web_agent.py#L1946) | 1946 | `"    agent = WebAgent()"` | — |
