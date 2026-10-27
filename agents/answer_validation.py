@@ -302,6 +302,7 @@ def audit_answer_integrity(
         for item in citation_alignment
     )
     target_checks: list[dict[str, Any]] = []
+    source_evidence_gap_count = 0
     for target in (coverage_targets or [])[:8]:
         target_tokens = list(dict.fromkeys(_tokens(target, drop_stopwords=True)))
         if not target_tokens:
@@ -311,12 +312,49 @@ def audit_answer_integrity(
         likely_covered = bool(overlap) and (
             ratio >= 0.5 if len(target_tokens) > 1 else True
         )
+
+        # Track criterion-level source signals separately from answer wording.
+        # A term appearing in a source is not proof that the source supports a claim;
+        # this is a bounded retrieval/evidence diagnostic only.
+        source_checks: list[dict[str, Any]] = []
+        for source_index, source in enumerate(safe_sources[:40], 1):
+            page_text = str(source.get("page_text") or "")
+            snippet = str(source.get("snippet") or "")
+            title = str(source.get("title") or "")
+            if bool(source.get("page_fetched")) and page_text.strip():
+                selected_text, basis = page_text, "extracted_page_text"
+            elif snippet.strip():
+                selected_text, basis = snippet, "search_snippet"
+            elif title.strip():
+                selected_text, basis = title, "title_only"
+            else:
+                continue
+            source_tokens = set(_tokens(selected_text[:16000], drop_stopwords=True))
+            source_overlap = [token for token in target_tokens if token in source_tokens]
+            source_ratio = len(source_overlap) / len(target_tokens) if target_tokens else 0.0
+            source_signal = bool(source_overlap) and (
+                source_ratio >= 0.5 if len(target_tokens) > 1 else True
+            )
+            if source_signal:
+                source_checks.append({
+                    "source_index": source_index,
+                    "status": "lexical_signal_found",
+                    "evidence_basis": basis,
+                    "matched_terms": source_overlap[:8],
+                    "token_overlap_ratio": round(source_ratio, 3),
+                })
+        if not source_checks:
+            source_evidence_gap_count += 1
         target_checks.append({
             "target": str(target)[:120],
             "status": "lexical_signal_found" if likely_covered else "possibly_missing",
             "matched_terms": overlap[:12],
             "missing_terms": [token for token in target_tokens if token not in answer_tokens][:12],
             "token_overlap_ratio": round(ratio, 3),
+            "source_evidence_status": (
+                "source_lexical_signal_found" if source_checks else "no_source_lexical_signal"
+            ),
+            "source_evidence_checks": source_checks[:12],
         })
 
     citation_count = len(re.findall(r"\[(?:المصدر|source)\s+\d+\]", answer_text, re.IGNORECASE))
@@ -365,6 +403,8 @@ def audit_answer_integrity(
         "potentially_missing_target_count": sum(
             item["status"] == "possibly_missing" for item in target_checks
         ),
+        "source_evidence_gap_count": source_evidence_gap_count,
+        "source_evidence_assessment": "criterion_level_lexical_signals_not_claim_support_or_entailment",
         "limitations": [
             "Token overlap does not prove that an answer fulfills the intended task.",
             "A number appearing in any source does not prove that the source supports the claim.",
