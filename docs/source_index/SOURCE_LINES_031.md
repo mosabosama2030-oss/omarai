@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000104 إلى SRC-F725E90B2A-L000470
+- النطاق: SRC-01E35ABC46-L000092 إلى SRC-F725E90B2A-L000458
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000092](../../tests/test_research_guardrails.py#L92) | 92 | `"    src = {"` | — |
+| [SRC-01E35ABC46-L000093](../../tests/test_research_guardrails.py#L93) | 93 | `"        \"title\": \"Best pasta recipes\","` | — |
+| [SRC-01E35ABC46-L000094](../../tests/test_research_guardrails.py#L94) | 94 | `"        \"url\": \"https://cooking.example/pasta\","` | — |
+| [SRC-01E35ABC46-L000095](../../tests/test_research_guardrails.py#L95) | 95 | `"        \"snippet\": \"How to make carbonara at home with eggs and cheese.\","` | — |
+| [SRC-01E35ABC46-L000096](../../tests/test_research_guardrails.py#L96) | 96 | `"        \"domain\": \"cooking.example\","` | — |
+| [SRC-01E35ABC46-L000097](../../tests/test_research_guardrails.py#L97) | 97 | `"        \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000098](../../tests/test_research_guardrails.py#L98) | 98 | `"        \"providers\": [\"bing\"],"` | — |
+| [SRC-01E35ABC46-L000099](../../tests/test_research_guardrails.py#L99) | 99 | `"    }"` | — |
+| [SRC-01E35ABC46-L000100](../../tests/test_research_guardrails.py#L100) | 100 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000101](../../tests/test_research_guardrails.py#L101) | 101 | `"    assert rel[\"accepted\"] is False"` | — |
+| [SRC-01E35ABC46-L000102](../../tests/test_research_guardrails.py#L102) | 102 | `""` | — |
+| [SRC-01E35ABC46-L000103](../../tests/test_research_guardrails.py#L103) | 103 | `""` | — |
 | [SRC-01E35ABC46-L000104](../../tests/test_research_guardrails.py#L104) | 104 | `"def test_relevance_keeps_official_despite_wording():"` | — |
 | [SRC-01E35ABC46-L000105](../../tests/test_research_guardrails.py#L105) | 105 | `"    src = {"` | — |
 | [SRC-01E35ABC46-L000106](../../tests/test_research_guardrails.py#L106) | 106 | `"        \"title\": \"Official statistical bulletin Q1\","` | — |
@@ -831,15 +843,3 @@
 | [SRC-F725E90B2A-L000456](../../tests/test_web_agent.py#L456) | 456 | `"    assert sources[0][\"title\"] == \"User page title\""` | — |
 | [SRC-F725E90B2A-L000457](../../tests/test_web_agent.py#L457) | 457 | `"    assert sources[0][\"page_fetched\"] is True"` | — |
 | [SRC-F725E90B2A-L000458](../../tests/test_web_agent.py#L458) | 458 | `"    assert \"user_supplied_url\" in report[\"providers_used\"]"` | — |
-| [SRC-F725E90B2A-L000459](../../tests/test_web_agent.py#L459) | 459 | `""` | — |
-| [SRC-F725E90B2A-L000460](../../tests/test_web_agent.py#L460) | 460 | `""` | — |
-| [SRC-F725E90B2A-L000461](../../tests/test_web_agent.py#L461) | 461 | `""` | — |
-| [SRC-F725E90B2A-L000462](../../tests/test_web_agent.py#L462) | 462 | `"def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000463](../../tests/test_web_agent.py#L463) | 463 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000464](../../tests/test_web_agent.py#L464) | 464 | `""` | — |
-| [SRC-F725E90B2A-L000465](../../tests/test_web_agent.py#L465) | 465 | `"    monkeypatch.setenv(\"X_BEARER_TOKEN\", \"test-token\")"` | — |
-| [SRC-F725E90B2A-L000466](../../tests/test_web_agent.py#L466) | 466 | `""` | — |
-| [SRC-F725E90B2A-L000467](../../tests/test_web_agent.py#L467) | 467 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000468](../../tests/test_web_agent.py#L468) | 468 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000469](../../tests/test_web_agent.py#L469) | 469 | `""` | — |
-| [SRC-F725E90B2A-L000470](../../tests/test_web_agent.py#L470) | 470 | `"        def json(self):"` | — |

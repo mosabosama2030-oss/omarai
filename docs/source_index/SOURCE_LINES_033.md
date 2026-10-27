@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001271 إلى SRC-F725E90B2A-L002070
+- النطاق: SRC-F725E90B2A-L001259 إلى SRC-F725E90B2A-L002058
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001259](../../tests/test_web_agent.py#L1259) | 1259 | `"    matched_queries = []"` | — |
+| [SRC-F725E90B2A-L001260](../../tests/test_web_agent.py#L1260) | 1260 | `"    question = ("` | — |
+| [SRC-F725E90B2A-L001261](../../tests/test_web_agent.py#L1261) | 1261 | `"        \"ما أحدث معلومات شركة ألفا التقنية اليوم؟ \""` | — |
+| [SRC-F725E90B2A-L001262](../../tests/test_web_agent.py#L1262) | 1262 | `"        \"اذكر مصادر موثوقة، وروابط مباشرة، وأجب بإيجاز.\""` | — |
+| [SRC-F725E90B2A-L001263](../../tests/test_web_agent.py#L1263) | 1263 | `"    )"` | — |
+| [SRC-F725E90B2A-L001264](../../tests/test_web_agent.py#L1264) | 1264 | `""` | — |
+| [SRC-F725E90B2A-L001265](../../tests/test_web_agent.py#L1265) | 1265 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L001266](../../tests/test_web_agent.py#L1266) | 1266 | `"        calls.append(dict(research_plan))"` | — |
+| [SRC-F725E90B2A-L001267](../../tests/test_web_agent.py#L1267) | 1267 | `"        sources = [sample_source(0)] if len(calls) == 1 else [sample_source(1)]"` | — |
+| [SRC-F725E90B2A-L001268](../../tests/test_web_agent.py#L1268) | 1268 | `"        return sources, [], {"` | — |
+| [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"            \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L001270](../../tests/test_web_agent.py#L1270) | 1270 | `"            \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": len(sources)}],"` | — |
 | [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"            \"unique_sources\": len(sources),"` | — |
 | [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `"            \"pages_fetched\": len(sources),"` | — |
@@ -804,15 +816,3 @@
 | [SRC-F725E90B2A-L002056](../../tests/test_web_agent.py#L2056) | 2056 | `"        agent._review_answer(\"ما مضمون الصفحة؟\", \"مسودة\", [source])"` | — |
 | [SRC-F725E90B2A-L002057](../../tests/test_web_agent.py#L2057) | 2057 | `""` | — |
 | [SRC-F725E90B2A-L002058](../../tests/test_web_agent.py#L2058) | 2058 | `""` | — |
-| [SRC-F725E90B2A-L002059](../../tests/test_web_agent.py#L2059) | 2059 | `"def test_frontend_review_status_matches_api_contract():"` | — |
-| [SRC-F725E90B2A-L002060](../../tests/test_web_agent.py#L2060) | 2060 | `"    html = (Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\").read_text(encoding=\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L002061](../../tests/test_web_agent.py#L2061) | 2061 | `"    assert 'r.second_pass_review===\"model_claim_audit_completed\"' in html"` | — |
-| [SRC-F725E90B2A-L002062](../../tests/test_web_agent.py#L2062) | 2062 | `"    assert 'r.second_pass_review===\"model_claim_audit_unavailable\"' in html"` | — |
-| [SRC-F725E90B2A-L002063](../../tests/test_web_agent.py#L2063) | 2063 | `"    assert 'r.second_pass_review===\"model_second_pass_completed\"' not in html"` | — |
-| [SRC-F725E90B2A-L002064](../../tests/test_web_agent.py#L2064) | 2064 | `"    assert 'r.second_pass_review===\"model_second_pass_unavailable\"' not in html"` | — |
-| [SRC-F725E90B2A-L002065](../../tests/test_web_agent.py#L2065) | 2065 | `""` | — |
-| [SRC-F725E90B2A-L002066](../../tests/test_web_agent.py#L2066) | 2066 | `""` | — |
-| [SRC-F725E90B2A-L002067](../../tests/test_web_agent.py#L2067) | 2067 | `""` | — |
-| [SRC-F725E90B2A-L002068](../../tests/test_web_agent.py#L2068) | 2068 | `"def test_research_error_preserves_confirmed_search_attempt_without_fabricating_counts(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002069](../../tests/test_web_agent.py#L2069) | 2069 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002070](../../tests/test_web_agent.py#L2070) | 2070 | `"    plan = {"` | — |

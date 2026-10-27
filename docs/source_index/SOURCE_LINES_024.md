@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000977 إلى SRC-B3062EB677-L000124
+- النطاق: SRC-90FAA34ADE-L000968 إلى SRC-B3062EB677-L000115
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000968](../../tests/fixtures/answer_quality_cases.json#L968) | 968 | `"        \"اختلاق اسم مدير المشتريات\","` | — |
+| [SRC-90FAA34ADE-L000969](../../tests/fixtures/answer_quality_cases.json#L969) | 969 | `"        \"يكتب أن العرض مقبول دون رد موثق\""` | — |
+| [SRC-90FAA34ADE-L000970](../../tests/fixtures/answer_quality_cases.json#L970) | 970 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000971](../../tests/fixtures/answer_quality_cases.json#L971) | 971 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000972](../../tests/fixtures/answer_quality_cases.json#L972) | 972 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L000973](../../tests/fixtures/answer_quality_cases.json#L973) | 973 | `"        \"notes\": \"السياق يقدّم بريدًا عامًا فقط ولا يحتوي على رد من ممثل الشركة\""` | — |
+| [SRC-90FAA34ADE-L000974](../../tests/fixtures/answer_quality_cases.json#L974) | 974 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000975](../../tests/fixtures/answer_quality_cases.json#L975) | 975 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000976](../../tests/fixtures/answer_quality_cases.json#L976) | 976 | `"        \"تأكيد موافقة غير موجودة\","` | — |
 | [SRC-90FAA34ADE-L000977](../../tests/fixtures/answer_quality_cases.json#L977) | 977 | `"        \"اختلاق هوية أو منصب شخص\""` | — |
 | [SRC-90FAA34ADE-L000978](../../tests/fixtures/answer_quality_cases.json#L978) | 978 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000979](../../tests/fixtures/answer_quality_cases.json#L979) | 979 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
@@ -834,12 +843,3 @@
 | [SRC-B3062EB677-L000113](../../tests/test_answer_quality_runner.py#L113) | 113 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
 | [SRC-B3062EB677-L000114](../../tests/test_answer_quality_runner.py#L114) | 114 | `"    out = tmp_path / \"results.json\""` | — |
 | [SRC-B3062EB677-L000115](../../tests/test_answer_quality_runner.py#L115) | 115 | `"    rc = mod.main("` | — |
-| [SRC-B3062EB677-L000116](../../tests/test_answer_quality_runner.py#L116) | 116 | `"        ["` | — |
-| [SRC-B3062EB677-L000117](../../tests/test_answer_quality_runner.py#L117) | 117 | `"            \"--mode\","` | — |
-| [SRC-B3062EB677-L000118](../../tests/test_answer_quality_runner.py#L118) | 118 | `"            \"live\","` | — |
-| [SRC-B3062EB677-L000119](../../tests/test_answer_quality_runner.py#L119) | 119 | `"            \"--corpus\","` | — |
-| [SRC-B3062EB677-L000120](../../tests/test_answer_quality_runner.py#L120) | 120 | `"            str(CORPUS),"` | — |
-| [SRC-B3062EB677-L000121](../../tests/test_answer_quality_runner.py#L121) | 121 | `"            \"--case-id\","` | — |
-| [SRC-B3062EB677-L000122](../../tests/test_answer_quality_runner.py#L122) | 122 | `"            \"AQ-001\","` | — |
-| [SRC-B3062EB677-L000123](../../tests/test_answer_quality_runner.py#L123) | 123 | `"            \"--limit\","` | — |
-| [SRC-B3062EB677-L000124](../../tests/test_answer_quality_runner.py#L124) | 124 | `"            \"1\","` | — |

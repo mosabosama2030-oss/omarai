@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000360 إلى SRC-D911B73392-L000092
+- النطاق: SRC-0F910493E8-L000351 إلى SRC-D911B73392-L000083
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000351](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L351) | 351 | `"## 9.1 توليد الكود التنفيذي"` | — |
+| [SRC-0F910493E8-L000352](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L352) | 352 | `""` | — |
+| [SRC-0F910493E8-L000353](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L353) | 353 | `"هذه مرحلة مستقبلية مستقلة واختيارية. لا تُفتح إلا إذا:"` | — |
+| [SRC-0F910493E8-L000354](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L354) | 354 | `"- ثبت أن مجموعة الأدوات والمهارات الحالية لا تغطي حاجة حقيقية متكررة."` | — |
+| [SRC-0F910493E8-L000355](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L355) | 355 | `"- وُجدت بيئة عزل ملائمة واختُبرت حدودها."` | — |
+| [SRC-0F910493E8-L000356](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L356) | 356 | `"- كانت الصلاحيات والشبكة والملفات والأسرار والموارد محدودة."` | — |
+| [SRC-0F910493E8-L000357](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L357) | 357 | `"- توفرت اختبارات مستقلة عن الاختبارات التي أنشأها النموذج."` | — |
+| [SRC-0F910493E8-L000358](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L358) | 358 | `"- تمت مراجعة بشرية وأُنشئت خطة تعطيل وتراجع."` | — |
+| [SRC-0F910493E8-L000359](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L359) | 359 | `"- تمت الموافقة على المخاطر المتبقية."` | — |
 | [SRC-0F910493E8-L000360](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L360) | 360 | `""` | — |
 | [SRC-0F910493E8-L000361](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L361) | 361 | `"نجاح الاختبارات الوظيفية وحده ليس إذنًا للنشر."` | — |
 | [SRC-0F910493E8-L000362](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L362) | 362 | `""` | — |
@@ -843,12 +852,3 @@
 | [SRC-D911B73392-L000081](../RESEARCH_CONNECTORS_AR.md#L81) | 81 | `"### Facebook Pages — صفحات محددة فقط"` | — |
 | [SRC-D911B73392-L000082](../RESEARCH_CONNECTORS_AR.md#L82) | 82 | `""` | — |
 | [SRC-D911B73392-L000083](../RESEARCH_CONNECTORS_AR.md#L83) | 83 | `"حدّد الصفحات التي لديك وصول مصرح بها. لا تضع رمزًا عامًا أو تحاول استخدام رمز لا يملك صلاحية الوصول للصفحة:"` | — |
-| [SRC-D911B73392-L000084](../RESEARCH_CONNECTORS_AR.md#L84) | 84 | `""` | — |
-| [SRC-D911B73392-L000085](../RESEARCH_CONNECTORS_AR.md#L85) | 85 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000086](../RESEARCH_CONNECTORS_AR.md#L86) | 86 | `"read -r -s -p \"Facebook Page access token: \" FACEBOOK_PAGE_ACCESS_TOKEN; printf '\\n'; export FACEBOOK_PAGE_ACCESS_TOKEN"` | — |
-| [SRC-D911B73392-L000087](../RESEARCH_CONNECTORS_AR.md#L87) | 87 | `"read -r -p \"Authorized Page IDs, comma-separated: \" FACEBOOK_PAGE_IDS; export FACEBOOK_PAGE_IDS"` | — |
-| [SRC-D911B73392-L000088](../RESEARCH_CONNECTORS_AR.md#L88) | 88 | ````"```"```` | — |
-| [SRC-D911B73392-L000089](../RESEARCH_CONNECTORS_AR.md#L89) | 89 | `""` | — |
-| [SRC-D911B73392-L000090](../RESEARCH_CONNECTORS_AR.md#L90) | 90 | `"يقرأ الموصل أحدث منشورات الصفحات المحددة وعينة محدودة من التعليقات العامة التي تسمح بها الصلاحيات. قد تفشل قراءة المنشورات أو التعليقات إذا كانت صلاحيات التطبيق لا تسمح بها."` | — |
-| [SRC-D911B73392-L000091](../RESEARCH_CONNECTORS_AR.md#L91) | 91 | `""` | — |
-| [SRC-D911B73392-L000092](../RESEARCH_CONNECTORS_AR.md#L92) | 92 | `"### X وYouTube"` | — |

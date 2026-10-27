@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000163 إلى SRC-90FAA34ADE-L000176
+- النطاق: SRC-A8360B1B03-L000154 إلى SRC-90FAA34ADE-L000167
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
+| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
+| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    model = parts.get(\"language_model\", {}) if isinstance(parts, dict) else {}"` | — |
+| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    if not isinstance(web, dict) or web.get(\"status\") != \"passed\":"` | — |
+| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"        raise SmokeError(\"The real web-search connectivity test did not pass.\")"` | — |
+| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"    if not isinstance(model, dict) or model.get(\"status\") != \"passed\":"` | — |
+| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        raise SmokeError(\"The configured language model did not pass a real completion test.\")"` | — |
+| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `"    checks[\"live_search\"] = {"` | — |
 | [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"        \"status\": \"passed\", \"result_count\": web.get(\"result_count\", 0),"` | — |
 | [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        \"provider_counts\": web.get(\"provider_counts\", {}),"` | — |
 | [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"    }"` | — |
@@ -834,12 +843,3 @@
 | [SRC-90FAA34ADE-L000165](../../tests/fixtures/answer_quality_cases.json#L165) | 165 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000166](../../tests/fixtures/answer_quality_cases.json#L166) | 166 | `"        \"Attempts web research or clearly states inability\","` | — |
 | [SRC-90FAA34ADE-L000167](../../tests/fixtures/answer_quality_cases.json#L167) | 167 | `"        \"Attaches sources if a price is stated\","` | — |
-| [SRC-90FAA34ADE-L000168](../../tests/fixtures/answer_quality_cases.json#L168) | 168 | `"        \"Treats price as time-sensitive\""` | — |
-| [SRC-90FAA34ADE-L000169](../../tests/fixtures/answer_quality_cases.json#L169) | 169 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000170](../../tests/fixtures/answer_quality_cases.json#L170) | 170 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000171](../../tests/fixtures/answer_quality_cases.json#L171) | 171 | `"        \"States an exact live price with no sources\","` | — |
-| [SRC-90FAA34ADE-L000172](../../tests/fixtures/answer_quality_cases.json#L172) | 172 | `"        \"Uses only a years-old snippet without warning\""` | — |
-| [SRC-90FAA34ADE-L000173](../../tests/fixtures/answer_quality_cases.json#L173) | 173 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000174](../../tests/fixtures/answer_quality_cases.json#L174) | 174 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000175](../../tests/fixtures/answer_quality_cases.json#L175) | 175 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000176](../../tests/fixtures/answer_quality_cases.json#L176) | 176 | `"        \"sources\": ["` | — |
