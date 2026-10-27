@@ -2283,7 +2283,7 @@ class WebAgent:
                     search_started_queries += 1
                     try:
                         results = future.result()
-                    except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                    except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:
                         warnings.append(f"تعذر بحث الاستعلام «{query[:70]}»: {exc}")
                         query_counts.append({"query": query, "results": 0})
                         continue
@@ -2344,7 +2344,7 @@ class WebAgent:
                         search_started_queries += 1
                         try:
                             results = future.result()
-                        except (RuntimeError, AgentDependencyError, ValueError) as exc:
+                        except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:
                             warnings.append(
                                 f"تعذر بحث زاوية إضافية «{query[:70]}»: {exc}"
                             )
