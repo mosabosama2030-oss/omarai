@@ -48,15 +48,21 @@ def _tokens(value: Any, *, drop_stopwords: bool = False) -> list[str]:
 
 
 def _criterion_tokens(value: Any) -> list[str]:
-    """Normalize criterion terms conservatively, including the Arabic definite article."""
+    """Return criterion terms without discarding their original surface forms."""
     tokens = _tokens(value, drop_stopwords=True)
-    if not tokens:
-        tokens = _tokens(value)
-    return [
-        token[2:] if token.startswith("ال") and len(token) > 4 and all("ء" <= char <= "ي" for char in token)
-        else token
-        for token in tokens
-    ]
+    return tokens or _tokens(value)
+
+
+def _criterion_token_variants(token: str) -> set[str]:
+    """Return conservative variants for Arabic words with/without the definite article."""
+    variants = {token}
+    if not all("ء" <= char <= "ي" for char in token):
+        return variants
+    if token.startswith("ال") and len(token) > 4:
+        variants.add(token[2:])
+    elif len(token) >= 3:
+        variants.add("ال" + token)
+    return variants
 
 
 def _numeric_literals(value: Any, *, question: str = "") -> set[str]:
@@ -340,7 +346,13 @@ def audit_answer_integrity(
             else:
                 continue
             source_tokens = set(_criterion_tokens(selected_text[:16000]))
-            source_overlap = [token for token in target_tokens if token in source_tokens]
+            source_match_tokens = set().union(*(
+                _criterion_token_variants(token) for token in source_tokens
+            )) if source_tokens else set()
+            source_overlap = [
+                token for token in target_tokens
+                if _criterion_token_variants(token) & source_match_tokens
+            ]
             source_ratio = len(source_overlap) / len(target_tokens) if target_tokens else 0.0
             source_signal = bool(source_overlap) and (
                 source_ratio >= 0.5 if len(target_tokens) > 1 else True
