@@ -157,7 +157,7 @@ def test_research_keeps_a_relevant_source_for_each_criterion_before_page_fetch(m
     monkeypatch.setattr(agent, "_search_web", fake_search)
     monkeypatch.setattr(agent, "_fetch_page", fake_fetch)
 
-    sources, warnings, report = agent._collect_research(plan)
+    sources, _warnings, report = agent._collect_research(plan)
 
     assert len(sources) <= 18
     for item in requirement_queries:
