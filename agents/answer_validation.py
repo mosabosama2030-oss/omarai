@@ -369,13 +369,10 @@ def audit_answer_integrity(
                 selected_text, basis = title, "title_only"
             else:
                 continue
-            source_tokens = set(_criterion_tokens(selected_text[:16000]))
-            source_match_tokens = set().union(*(
-                _criterion_token_variants(token) for token in source_tokens
-            )) if source_tokens else set()
+            source_tokens = set(_tokens(selected_text[:16000], drop_stopwords=True))
             source_overlap = [
                 token for token in target_tokens
-                if _criterion_token_variants(token) & source_match_tokens
+                if _criterion_token_variants(token) & source_tokens
             ]
             source_ratio = len(source_overlap) / len(target_tokens) if target_tokens else 0.0
             source_signal = bool(source_overlap) and (
