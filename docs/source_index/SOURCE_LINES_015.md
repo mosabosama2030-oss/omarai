@@ -4,9 +4,81 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C8EA754D73-L000022 إلى SRC-E73001D9AC-L000679
+- النطاق: SRC-E599346ABE-L001968 إلى SRC-E73001D9AC-L000604
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-E599346ABE — [docs/generate_index.py](../generate_index.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-E599346ABE-L001968](../generate_index.py#L1968) | 1968 | `"    )"` | — |
+| [SRC-E599346ABE-L001969](../generate_index.py#L1969) | 1969 | `"    return 0"` | — |
+| [SRC-E599346ABE-L001970](../generate_index.py#L1970) | 1970 | `""` | — |
+| [SRC-E599346ABE-L001971](../generate_index.py#L1971) | 1971 | `""` | — |
+| [SRC-E599346ABE-L001972](../generate_index.py#L1972) | 1972 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-E599346ABE-L001973](../generate_index.py#L1973) | 1973 | `"    raise SystemExit(main())"` | — |
+## وثائق وفهرسة
+
+### FILE-6E35221BFA — [docs/GO_LIVE_CHECKLIST_AR.md](../GO_LIVE_CHECKLIST_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-6E35221BFA-L000001](../GO_LIVE_CHECKLIST_AR.md#L1) | 1 | `"# قائمة قبول Omarai قبل التشغيل العام"` | — |
+| [SRC-6E35221BFA-L000002](../GO_LIVE_CHECKLIST_AR.md#L2) | 2 | `""` | — |
+| [SRC-6E35221BFA-L000003](../GO_LIVE_CHECKLIST_AR.md#L3) | 3 | `"تفصل هذه القائمة بين نجاح البناء وبين إثبات أن الوكيل يعمل على عنوان استضافة فعلي. استخدام الملف لا يعني وجود خدمة منشورة."` | — |
+| [SRC-6E35221BFA-L000004](../GO_LIVE_CHECKLIST_AR.md#L4) | 4 | `""` | — |
+| [SRC-6E35221BFA-L000005](../GO_LIVE_CHECKLIST_AR.md#L5) | 5 | `"مصادر الحالة الحالية: [نطاق التنفيذ](IMPLEMENTATION_SCOPE.md)، [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)، و[مصفوفة أدلة الاختبار](OMARAI_TEST_EVIDENCE_MATRIX_AR.md)."` | — |
+| [SRC-6E35221BFA-L000006](../GO_LIVE_CHECKLIST_AR.md#L6) | 6 | `""` | — |
+| [SRC-6E35221BFA-L000007](../GO_LIVE_CHECKLIST_AR.md#L7) | 7 | `"## 1. اختر مسار استضافة واحدًا"` | — |
+| [SRC-6E35221BFA-L000008](../GO_LIVE_CHECKLIST_AR.md#L8) | 8 | `""` | — |
+| [SRC-6E35221BFA-L000009](../GO_LIVE_CHECKLIST_AR.md#L9) | 9 | ``"- [Railway](DEPLOY_RAILWAY_AR.md) — دليل إعداد `railway.json`."`` | — |
+| [SRC-6E35221BFA-L000010](../GO_LIVE_CHECKLIST_AR.md#L10) | 10 | `"- [SnapDeploy](DEPLOY_SNAPDEPLOY_AR.md) — مسار عرض/اختبار مجاني؛ تحقق من الحدود الحالية ولا تعتمد على التخزين لبيانات دائمة."` | — |
+| [SRC-6E35221BFA-L000011](../GO_LIVE_CHECKLIST_AR.md#L11) | 11 | `"- [Render](DEPLOY_RENDER_AR.md) — بديل اختياري عند توافر الحساب والخدمة."` | — |
+| [SRC-6E35221BFA-L000012](../GO_LIVE_CHECKLIST_AR.md#L12) | 12 | `""` | — |
+| [SRC-6E35221BFA-L000013](../GO_LIVE_CHECKLIST_AR.md#L13) | 13 | ``"لا تخلط إعدادات مزودين مختلفين. وجود `Dockerfile` أو ملف Blueprint لا يثبت أن الخدمة أُنشئت أو تعمل."`` | — |
+| [SRC-6E35221BFA-L000014](../GO_LIVE_CHECKLIST_AR.md#L14) | 14 | `""` | — |
+| [SRC-6E35221BFA-L000015](../GO_LIVE_CHECKLIST_AR.md#L15) | 15 | `"## 2. إعداد آمن"` | — |
+| [SRC-6E35221BFA-L000016](../GO_LIVE_CHECKLIST_AR.md#L16) | 16 | `""` | — |
+| [SRC-6E35221BFA-L000017](../GO_LIVE_CHECKLIST_AR.md#L17) | 17 | ``"1. اربط المستودع `mosabosama2030-oss/omarai` والفرع `main` بمزود الاستضافة المختار وفق دليله."`` | — |
+| [SRC-6E35221BFA-L000018](../GO_LIVE_CHECKLIST_AR.md#L18) | 18 | ``"2. اضبط الأسرار في لوحة المزود فقط: `OMARAI_PUBLIC_DEPLOYMENT=1`، ورمز عشوائي `OMARAI_ACCESS_TOKEN` بطول 32 حرفًا على الأقل، ومفتاح النموذج `OPENROUTER_API_KEY` أو `OMARAI_LLM_API_KEY`."`` | — |
+| [SRC-6E35221BFA-L000019](../GO_LIVE_CHECKLIST_AR.md#L19) | 19 | ``"3. لا تفعّل `OMARAI_OPENROUTER_WEB_SEARCH` قبل مراجعة تكلفته والموافقة عليه."`` | — |
+| [SRC-6E35221BFA-L000020](../GO_LIVE_CHECKLIST_AR.md#L20) | 20 | ``"4. استخدم نطاق HTTPS تملكه أو تتحكم فيه. لا تضف نطاقًا إلى `OMARAI_ALLOWED_ORIGINS` إلا إذا كان موثوقًا وتحتاجه فعلًا."`` | — |
+| [SRC-6E35221BFA-L000021](../GO_LIVE_CHECKLIST_AR.md#L21) | 21 | ``"5. في مضيف Docker يسمح بوسيط بناء مباشر، مرّر `--build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`. على SnapDeploy، اضبط متغير البيئة غير السري `PUBLIC_OMARAI_BUILD_SHA` على SHA الكامل لالتزام الإصدار قبل إعادة البناء؛ المنصة تمرر متغيرات `PUBLIC_*` إلى بناء Docker. لا تستخدمه لأي سر، ولا تعتبر هوية البناء مثبتة إذا كانت `build.sha` تساوي `unknown`."`` | — |
+| [SRC-6E35221BFA-L000022](../GO_LIVE_CHECKLIST_AR.md#L22) | 22 | `""` | — |
+| [SRC-6E35221BFA-L000023](../GO_LIVE_CHECKLIST_AR.md#L23) | 23 | `"## 3. قبول النسخة المنشورة"` | — |
+| [SRC-6E35221BFA-L000024](../GO_LIVE_CHECKLIST_AR.md#L24) | 24 | `""` | — |
+| [SRC-6E35221BFA-L000025](../GO_LIVE_CHECKLIST_AR.md#L25) | 25 | ``"شغّل [Hosted acceptance smoke workflow](../.github/workflows/hosted-smoke.yml) يدويًا بعد ضبط أسرار GitHub Actions `OMARAI_ACCESS_TOKEN` و`OMARAI_BASE_URL` بقيم معتمدة. يجب أن يكون `OMARAI_BASE_URL` أصل HTTPS للخدمة دون مسار. يرسل الاختبار طلبات فعلية إلى البحث والنموذج وقد يستهلك حصة أو تكلفة؛ **لا تشغله قبل الموافقة البشرية على المضيف والتكلفة**."`` | — |
+| [SRC-6E35221BFA-L000026](../GO_LIVE_CHECKLIST_AR.md#L26) | 26 | `""` | — |
+| [SRC-6E35221BFA-L000027](../GO_LIVE_CHECKLIST_AR.md#L27) | 27 | `"معايير القبول:"` | — |
+| [SRC-6E35221BFA-L000028](../GO_LIVE_CHECKLIST_AR.md#L28) | 28 | ``"- `/api/health` يعيد HTTP 200؛ و`build.sha` يطابق SHA الكامل المستهدف."`` | — |
+| [SRC-6E35221BFA-L000029](../GO_LIVE_CHECKLIST_AR.md#L29) | 29 | ``"- طلب `POST /api/agent` دون رمز يرجع HTTP 401."`` | — |
+| [SRC-6E35221BFA-L000030](../GO_LIVE_CHECKLIST_AR.md#L30) | 30 | `"- التشخيص الحي يثبت اتصال البحث واستجابة النموذج للموفرين المطلوب اختبارهم."` | — |
+| [SRC-6E35221BFA-L000031](../GO_LIVE_CHECKLIST_AR.md#L31) | 31 | `"- السؤال التجريبي يعيد إجابة ومصادر، وتُراجع الإجابة مقابل مصادرها يدويًا."` | — |
+| [SRC-6E35221BFA-L000032](../GO_LIVE_CHECKLIST_AR.md#L32) | 32 | `"- لا يظهر رمز وصول أو مفتاح API في التقرير أو السجلات."` | — |
+| [SRC-6E35221BFA-L000033](../GO_LIVE_CHECKLIST_AR.md#L33) | 33 | `""` | — |
+| [SRC-6E35221BFA-L000034](../GO_LIVE_CHECKLIST_AR.md#L34) | 34 | `"## 4. تخزين البيانات وحدود الاستخدام"` | — |
+| [SRC-6E35221BFA-L000035](../GO_LIVE_CHECKLIST_AR.md#L35) | 35 | `""` | — |
+| [SRC-6E35221BFA-L000036](../GO_LIVE_CHECKLIST_AR.md#L36) | 36 | `"- الرمز الحالي مشترك للتطبيق كله، وليس هوية لكل عميل. لا تعرض النسخة كخدمة متعددة المستأجرين ولا تخزن بيانات سرية لعملاء مختلفين."` | — |
+| [SRC-6E35221BFA-L000037](../GO_LIVE_CHECKLIST_AR.md#L37) | 37 | `"- حدود التزامن ومعدل الطلبات محلية داخل العملية؛ لم تثبت سعة إنتاجية أو حدود موزعة."` | — |
+| [SRC-6E35221BFA-L000038](../GO_LIVE_CHECKLIST_AR.md#L38) | 38 | ``"- إذا كان المضيف يوفر Volume دائمًا، اربطه فعليًا واضبط `OMARAI_DB_PATH` لمسار داخل Volume مثل `/data/omarai.sqlite3`."`` | — |
+| [SRC-6E35221BFA-L000039](../GO_LIVE_CHECKLIST_AR.md#L39) | 39 | `"- أنشئ نسخة احتياطية خارج قرص الخدمة واستعدها إلى قاعدة اختبار منفصلة. أعد تشغيل/نشر الخدمة وأثبت بقاء سجل تجريبي قبل الاعتماد على التخزين."` | — |
+| [SRC-6E35221BFA-L000040](../GO_LIVE_CHECKLIST_AR.md#L40) | 40 | `"- إذا لم ينجح اختبار الديمومة والاستعادة، استخدم بيانات اصطناعية قابلة للفقد فقط."` | — |
+| [SRC-6E35221BFA-L000041](../GO_LIVE_CHECKLIST_AR.md#L41) | 41 | `""` | — |
+| [SRC-6E35221BFA-L000042](../GO_LIVE_CHECKLIST_AR.md#L42) | 42 | `"## 5. قبول واجهة الهاتف"` | — |
+| [SRC-6E35221BFA-L000043](../GO_LIVE_CHECKLIST_AR.md#L43) | 43 | `""` | — |
+| [SRC-6E35221BFA-L000044](../GO_LIVE_CHECKLIST_AR.md#L44) | 44 | `"بعد نجاح الفحص الآلي، اختبر يدويًا على Android ومتصفح ضيق العرض: RTL، والتحميل، والنجاح، والفشل، وإعادة المحاولة، وفتح المصادر، والرفض برمز خاطئ، وعدم بقاء إجابة قديمة بعد خطأ. لا تستخدم بيانات عملاء حقيقية في الاختبار."` | — |
+| [SRC-6E35221BFA-L000045](../GO_LIVE_CHECKLIST_AR.md#L45) | 45 | `""` | — |
+| [SRC-6E35221BFA-L000046](../GO_LIVE_CHECKLIST_AR.md#L46) | 46 | `"## حدود الإثبات"` | — |
+| [SRC-6E35221BFA-L000047](../GO_LIVE_CHECKLIST_AR.md#L47) | 47 | `""` | — |
+| [SRC-6E35221BFA-L000048](../GO_LIVE_CHECKLIST_AR.md#L48) | 48 | ``"نجاح Pytest أو Ruff أو بناء Docker لا يثبت عمل المضيف، أو توافر كل موفر خارجي، أو صحة كل إجابة، أو استمرار SQLite، أو سعة التحمل. سجّل كل فحص غير منفذ بوصفه `NOT_RUN` أو `UNKNOWN` ولا تعلن قبول النشر قبل توفر دليله المباشر."`` | — |
 ## وثائق وفهرسة
 
 ### FILE-C8EA754D73 — [docs/IMPLEMENTATION_SCOPE.md](../IMPLEMENTATION_SCOPE.md#L1)
@@ -16,6 +88,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C8EA754D73-L000001](../IMPLEMENTATION_SCOPE.md#L1) | 1 | `"# Omarai — نطاق التنفيذ الفعلي وحدود الإثبات"` | — |
+| [SRC-C8EA754D73-L000002](../IMPLEMENTATION_SCOPE.md#L2) | 2 | `""` | — |
+| [SRC-C8EA754D73-L000003](../IMPLEMENTATION_SCOPE.md#L3) | 3 | ``"**الرأس المرجعي لـ `main` الذي تحققنا منه:** `00a3ede039922c0c24097e89f653e6d3c984435d`؛ commit فهرسة مولد بعد دمج PR #81 في `9f6674abf8679a0630d95b269b54a7ef8629c3bf`.  "`` | — |
+| [SRC-C8EA754D73-L000004](../IMPLEMENTATION_SCOPE.md#L4) | 4 | `"**حالة PR #81:** مدمج. غيّر إعدادات اختبارات CI وثلاث وثائق؛ لم يغيّر منطق البحث أو موصلاته.  "` | — |
+| [SRC-C8EA754D73-L000005](../IMPLEMENTATION_SCOPE.md#L5) | 5 | ``"**حدّ التحقق:** تشغيل CI على رأس PR قبل الدمج [#39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) نجح؛ لم أتمكن من إثبات تشغيل push مستقل على رأس `main` الحالي من بيانات التشغيل التي يعيدها موصل GitHub المتاح. هذا `NOT_CONFIRMED` وليس دليل فشل.  "`` | — |
+| [SRC-C8EA754D73-L000006](../IMPLEMENTATION_SCOPE.md#L6) | 6 | `"**حدود الوثيقة:** تصف الشفرة الحالية وما تثبته الأدلة؛ ليست شهادة امتثال أو تأكيدًا على وجود خدمة مستضافة."` | — |
+| [SRC-C8EA754D73-L000007](../IMPLEMENTATION_SCOPE.md#L7) | 7 | `""` | — |
+| [SRC-C8EA754D73-L000008](../IMPLEMENTATION_SCOPE.md#L8) | 8 | `"## الحالة التنفيذية الحالية"` | — |
+| [SRC-C8EA754D73-L000009](../IMPLEMENTATION_SCOPE.md#L9) | 9 | `""` | — |
+| [SRC-C8EA754D73-L000010](../IMPLEMENTATION_SCOPE.md#L10) | 10 | `"- **التوجيه والمتابعة — VERIFIED ضمن الاختبارات الآلية:** كشف الأسئلة المرجعية الغامضة وتوحيد حل المتابعة وحدود السياق."` | — |
+| [SRC-C8EA754D73-L000011](../IMPLEMENTATION_SCOPE.md#L11) | 11 | ``"- **عرض الأدلة وعمق البحث — VERIFIED ضمن الاختبارات الآلية:** لا تُعرض تغطية الأدلة على أنها احتمال صحة؛ واختيار العمق يقارن قيمة `deep` صراحةً."`` | — |
+| [SRC-C8EA754D73-L000012](../IMPLEMENTATION_SCOPE.md#L12) | 12 | `"- **سلامة البحث وجلب الصفحات — VERIFIED ضمن الاختبارات المحددة:** حالات جلب مهيكلة، وتشخيصات موصلات، وحدود واضحة لفشل الجلب، ومنع التحويل التلقائي في الموصلات المغطاة بالاختبارات."` | — |
+| [SRC-C8EA754D73-L000013](../IMPLEMENTATION_SCOPE.md#L13) | 13 | `"- **حماية API والمتصفح — VERIFIED ضمن الاختبارات المحددة:** رؤوس حماية وسياسة CSP واختبارات انحدار؛ هذا لا يغني عن تدقيق أمني شامل أو red-team مستقل."` | — |
+| [SRC-C8EA754D73-L000014](../IMPLEMENTATION_SCOPE.md#L14) | 14 | ``"- **هوية البناء — CODE PATH TESTED:** صورة Docker تتيح SHA للبناء ويعرضه `/api/health`، ويقارن Hosted smoke SHA المتوقع بالمعلن. الاختبار الحي ضد خدمة مستضافة **NOT_RUN**."`` | — |
+| [SRC-C8EA754D73-L000015](../IMPLEMENTATION_SCOPE.md#L15) | 15 | ``"- **الفهرسة والبحث المحلي — VERIFIED ضمن اختبارات المولد والبحث:** `docs/generate_index.py` يبني جرد الملفات والرموز وصفحات الأسطر؛ `docs/search_code.py` يتيح البحث محليًا دون API."`` | — |
+| [SRC-C8EA754D73-L000016](../IMPLEMENTATION_SCOPE.md#L16) | 16 | ``"- **مسار SQLite — VERIFIED في الكود والاختبارات المحلية:** `OMARAI_DB_PATH` يحدد المسار؛ لا ينشئ Volume ولا يثبت استمرار البيانات لدى مزود استضافة."`` | — |
+| [SRC-C8EA754D73-L000017](../IMPLEMENTATION_SCOPE.md#L17) | 17 | `""` | — |
+| [SRC-C8EA754D73-L000018](../IMPLEMENTATION_SCOPE.md#L18) | 18 | `"## أدلة الاختبار وحدودها"` | — |
+| [SRC-C8EA754D73-L000019](../IMPLEMENTATION_SCOPE.md#L19) | 19 | `""` | — |
+| [SRC-C8EA754D73-L000020](../IMPLEMENTATION_SCOPE.md#L20) | 20 | `"- **CI على رأس PR #81 قبل الدمج:** [run #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) نجح بالكامل: 384 اختبارًا على Python 3.11 و384 على Python 3.12، وRuff، وتصنيف مسارات الفهرسة، وتوليد الفهرس والتحقق منه، وبناء الحاوية واختبار API المحمي."` | — |
+| [SRC-C8EA754D73-L000021](../IMPLEMENTATION_SCOPE.md#L21) | 21 | ``"- **دمج PR #81:** الالتزام `9f6674abf8679a0630d95b269b54a7ef8629c3bf`. رأس `main` الذي تحققنا من مطابقته هو `00a3ede039922c0c24097e89f653e6d3c984435d`؛ المقارنة بين `main` وهذا الالتزام أعادت `identical`."`` | — |
 | [SRC-C8EA754D73-L000022](../IMPLEMENTATION_SCOPE.md#L22) | 22 | `"- **الإصلاح:** سباق الفهرس عولج في [PR #81](https://github.com/mosabosama2030-oss/omarai/pull/81): يختبر CI تصنيف المسارات، ويعيد توليد الفهرس في مساحة اختبار معزولة للتغييرات المختلطة، مع الإبقاء على الفحص الصارم عند تغييرات الفهرسة وحدها."` | — |
 | [SRC-C8EA754D73-L000023](../IMPLEMENTATION_SCOPE.md#L23) | 23 | ``"- **CI على رأس main النهائي:** `NOT_CONFIRMED` في هذه المراجعة؛ نتيجة #39955767221 تخص رأس PR قبل الدمج، وواجهة التشغيل المتاحة هنا لا تكشف تشغيلات push على نحو يسمح بتأكيد تشغيل مستقل على `00a3ede...`. هذا ليس دليل فشل؛ يلزم فحص GitHub Actions مباشرة."`` | — |
 | [SRC-C8EA754D73-L000024](../IMPLEMENTATION_SCOPE.md#L24) | 24 | ``"- اختبارات الاستضافة والموصلات الحية وجودة الإجابات الدلالية والنسخ/الاستعادة والحمل تبقى `NOT_RUN/UNKNOWN` حتى وجود أدلة مباشرة."`` | — |
@@ -759,78 +852,3 @@
 | [SRC-E73001D9AC-L000602](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L602) | 602 | `"- اختبارات regression لكل عيب يُصلح."` | — |
 | [SRC-E73001D9AC-L000603](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L603) | 603 | `""` | — |
 | [SRC-E73001D9AC-L000604](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L604) | 604 | `"**المرحلة C — مقاومة التعطل**"` | — |
-| [SRC-E73001D9AC-L000605](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L605) | 605 | `"- timeouts وcancellation وretry محدود وcircuit breaker."` | — |
-| [SRC-E73001D9AC-L000606](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L606) | 606 | `"- حدود التزامن والضغط والطوابير عند الحاجة."` | — |
-| [SRC-E73001D9AC-L000607](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L607) | 607 | `"- سلوك واضح للموفر المتعطل."` | — |
-| [SRC-E73001D9AC-L000608](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L608) | 608 | `"- اختبارات failure injection وإعادة التشغيل."` | — |
-| [SRC-E73001D9AC-L000609](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L609) | 609 | `""` | — |
-| [SRC-E73001D9AC-L000610](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L610) | 610 | `"**المرحلة D — القياس والأداء**"` | — |
-| [SRC-E73001D9AC-L000611](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L611) | 611 | `"- إنشاء خط أساس لزمن الاستجابة والموارد وجودة النتائج."` | — |
-| [SRC-E73001D9AC-L000612](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L612) | 612 | `"- إزالة التكرار وتحسين الاستعلامات والمسارات."` | — |
-| [SRC-E73001D9AC-L000613](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L613) | 613 | `"- اختبارات التزامن والحمل تحت البيئة المتاحة."` | — |
-| [SRC-E73001D9AC-L000614](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L614) | 614 | `"- اعتماد حدود سعة واقعية موثقة."` | — |
-| [SRC-E73001D9AC-L000615](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L615) | 615 | `""` | — |
-| [SRC-E73001D9AC-L000616](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L616) | 616 | `"**المرحلة E — صلابة المعرفة**"` | — |
-| [SRC-E73001D9AC-L000617](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L617) | 617 | `"- قياس إسناد الادعاءات للمصادر."` | — |
-| [SRC-E73001D9AC-L000618](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L618) | 618 | `"- اختبارات التواريخ والتعارض والروابط الميتة وحقن التعليمات."` | — |
-| [SRC-E73001D9AC-L000619](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L619) | 619 | `"- سياسة واضحة لعدم اليقين والإجابات الجزئية."` | — |
-| [SRC-E73001D9AC-L000620](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L620) | 620 | `"- مجموعة regression عربية ثابتة."` | — |
-| [SRC-E73001D9AC-L000621](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L621) | 621 | `""` | — |
-| [SRC-E73001D9AC-L000622](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L622) | 622 | `"**المرحلة F — الاستعداد التشغيلي**"` | — |
-| [SRC-E73001D9AC-L000623](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L623) | 623 | `"- مراقبة وتنبيهات وسجلات منقحة."` | — |
-| [SRC-E73001D9AC-L000624](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L624) | 624 | `"- نسخ احتياطي واستعادة عند الحاجة."` | — |
-| [SRC-E73001D9AC-L000625](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L625) | 625 | `"- خطة rollback وحوادث."` | — |
-| [SRC-E73001D9AC-L000626](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L626) | 626 | `"- مستند نشر يوضح الأسرار والبيئة والفحوص والقيود."` | — |
-| [SRC-E73001D9AC-L000627](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L627) | 627 | `""` | — |
-| [SRC-E73001D9AC-L000628](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L628) | 628 | `"**المرحلة G — التوسع**"` | — |
-| [SRC-E73001D9AC-L000629](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L629) | 629 | `"- الانتقال من عملية واحدة إلى عمال أو طوابير أو نسخ أفقية فقط عندما تثبت القياسات الحاجة والجدوى."` | — |
-| [SRC-E73001D9AC-L000630](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L630) | 630 | `"- ترحيل التخزين عند بلوغ حدود الأداء أو التوافر الموثقة."` | — |
-| [SRC-E73001D9AC-L000631](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L631) | 631 | `"- إعادة اختبارات السعة والأمن بعد كل تغير معماري مؤثر."` | — |
-| [SRC-E73001D9AC-L000632](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L632) | 632 | `""` | — |
-| [SRC-E73001D9AC-L000633](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L633) | 633 | `"كل مرحلة لها معايير دخول وخروج وأدلة، ولا تُعد منجزة بمجرد كتابة خطة لها."` | — |
-| [SRC-E73001D9AC-L000634](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L634) | 634 | `""` | — |
-| [SRC-E73001D9AC-L000635](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L635) | 635 | `"---"` | — |
-| [SRC-E73001D9AC-L000636](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L636) | 636 | `""` | — |
-| [SRC-E73001D9AC-L000637](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L637) | 637 | `""` | — |
-| [SRC-E73001D9AC-L000638](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L638) | 638 | `"### ترتيب توسيع القدرات والمهارات والوكلاء"` | — |
-| [SRC-E73001D9AC-L000639](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L639) | 639 | `""` | — |
-| [SRC-E73001D9AC-L000640](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L640) | 640 | `"المراحل A–G أعلاه تغطي الجرد والحماية والاعتمادية والقياس والمعرفة والاستعداد التشغيلي والتوسع. وداخل هذه المراحل، يكون ترتيب بناء قدرات الذكاء الاصطناعي هو: (1) إثبات الحالة والاختبارات، (2) عقود الأدوات وفرض الصلاحيات، (3) المهارات وسير العمل، (4) مواصفات المهام والتركيب المحدود من العناصر المعتمدة، (5) تقييم الحاجة إلى Meta-Agent يولد مسودات فقط، (6) دراسة توليد الكود كقرار مستقبلي اختياري. هذا ترتيب متخصص يكمّل المراحل ولا يلغيها أو يستبدل متطلبات الأمن والتشغيل."` | — |
-| [SRC-E73001D9AC-L000641](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L641) | 641 | `""` | — |
-| [SRC-E73001D9AC-L000642](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L642) | 642 | `"**بوابة التوسع:** لا ننتقل إلى إنشاء الوكلاء لمجرد انتهاء المرحلة السابقة؛ يلزم دليل على حاجة لا تغطيها المهارات وسير العمل بصورة مناسبة، ومقارنة مفيدة في الجودة والكلفة والصيانة والمخاطر. لا يثبت نجاح الاختبارات التي كتبها النموذج لنفسه أمان التنفيذ، ولا تُفعل قدرة جديدة دون مراجعة مستقلة مناسبة وموافقة بشرية عند اللزوم."` | — |
-| [SRC-E73001D9AC-L000643](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L643) | 643 | `""` | — |
-| [SRC-E73001D9AC-L000644](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L644) | 644 | `"التفصيل المرجعي وبوابات قبول كل مرحلة وارد في [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md)."` | — |
-| [SRC-E73001D9AC-L000645](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L645) | 645 | `""` | — |
-| [SRC-E73001D9AC-L000646](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L646) | 646 | `"---"` | — |
-| [SRC-E73001D9AC-L000647](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) | 647 | `""` | — |
-| [SRC-E73001D9AC-L000648](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L648) | 648 | `"# الجزء العاشر — معمارية التوسع والتطوير المستمر"` | — |
-| [SRC-E73001D9AC-L000649](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L649) | 649 | `""` | — |
-| [SRC-E73001D9AC-L000650](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L650) | 650 | `"هذا الجزء متطلب تأسيسي مستقل. الغرض ليس توقع كل ميزة مستقبلية، بل بناء نظام يمكنه استيعاب التغيير بأقل كلفة ومخاطر ممكنة، مع الحفاظ على التوافق والأمان والموثوقية."` | — |
-| [SRC-E73001D9AC-L000651](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L651) | 651 | `""` | — |
-| [SRC-E73001D9AC-L000652](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L652) | 652 | `"## 19. النتيجة المعمارية المستهدفة"` | — |
-| [SRC-E73001D9AC-L000653](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L653) | 653 | `""` | — |
-| [SRC-E73001D9AC-L000654](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L654) | 654 | `"يجب أن تسمح معمارية Omarai، وفق الأدلة والموارد المتاحة، بما يلي:"` | — |
-| [SRC-E73001D9AC-L000655](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L655) | 655 | `""` | — |
-| [SRC-E73001D9AC-L000656](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L656) | 656 | `"- إضافة قدرات وخدمات ووكلاء وأدوات ومصادر بيانات دون إعادة كتابة النواة بالكامل."` | — |
-| [SRC-E73001D9AC-L000657](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L657) | 657 | `"- رفع السعة تدريجيًا عبر تحسين المكونات، ثم زيادة الموارد، ثم إضافة عمليات أو نسخ خدمة، ثم فصل مكونات محددة عند ثبوت الحاجة."` | — |
-| [SRC-E73001D9AC-L000658](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L658) | 658 | `"- تبديل موفر بحث أو نموذج أو تخزين من خلال واجهات وعقود معرفة، دون انتشار تفاصيل المورد في منطق الأعمال."` | — |
-| [SRC-E73001D9AC-L000659](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L659) | 659 | `"- إصدار تغييرات للنواة والواجهة وواجهات API ومخططات البيانات بطريقة قابلة للاختبار والتراجع."` | — |
-| [SRC-E73001D9AC-L000660](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L660) | 660 | `"- اختبار كل مكوّن في عزلة نسبية، واختبار الرحلات الكاملة للتأكد من التوافق."` | — |
-| [SRC-E73001D9AC-L000661](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L661) | 661 | `"- ترحيل البيانات القديمة والحفاظ على سلامتها، وعدم افتراض إمكانية مسح التخزين وإعادة إنشائه في بيئة الإنتاج."` | — |
-| [SRC-E73001D9AC-L000662](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L662) | 662 | `"- الحفاظ على صلاحيات واضحة وحدود ثقة عند إضافة الأدوات أو الوكلاء أو العمال."` | — |
-| [SRC-E73001D9AC-L000663](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L663) | 663 | `"- اكتشاف التعقيد المعماري والاعتماديات الدائرية وتراكم الديون التقنية قبل أن تعيق التطوير."` | — |
-| [SRC-E73001D9AC-L000664](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L664) | 664 | `""` | — |
-| [SRC-E73001D9AC-L000665](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L665) | 665 | `"**مبدأ التصميم:** نخطط لقابلية التوسع والتغيير، ونؤجل التعقيد غير الضروري. قابلية التوسع ليست مرادفًا للخدمات المصغّرة، ولا يتطلب التطوير طويل الأمد تحويل كل وحدة برمجية إلى خدمة مستقلة."` | — |
-| [SRC-E73001D9AC-L000666](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L666) | 666 | `""` | — |
-| [SRC-E73001D9AC-L000667](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L667) | 667 | `"يُفهم التوسع في القدرات وفق التسلسل الحاكم: أدوات ذات عقود وصلاحيات ← مهارات قابلة لإعادة الاستخدام ← سير عمل قابل للاختبار ← تركيب مهام محدود ← وكلاء عند ثبوت الحاجة. لا يلزم إنشاء وكيل أو خدمة مستقلة لكل اختصاص. انظر [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md) للتعاريف وبوابات الانتقال."` | — |
-| [SRC-E73001D9AC-L000668](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L668) | 668 | `""` | — |
-| [SRC-E73001D9AC-L000669](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L669) | 669 | `"## 20. نمط البداية: Modular Monolith بحدود واضحة"` | — |
-| [SRC-E73001D9AC-L000670](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L670) | 670 | `""` | — |
-| [SRC-E73001D9AC-L000671](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L671) | 671 | `"**الاختيار الافتراضي المقترح:** تطبيق منظم من نوع Modular Monolith عندما يناسب حجم المشروع وبيئة الاستضافة. يعني ذلك إمكان تشغيل التطبيق كوحدة نشر واحدة، مع فصل الوحدات منطقيًا ومنع تشابك مسؤولياتها."` | — |
-| [SRC-E73001D9AC-L000672](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L672) | 672 | `""` | — |
-| [SRC-E73001D9AC-L000673](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L673) | 673 | `"يجب أن تكون لكل وحدة:"` | — |
-| [SRC-E73001D9AC-L000674](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L674) | 674 | `"- مسؤولية محددة ومحدودات ملكية واضحة."` | — |
-| [SRC-E73001D9AC-L000675](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L675) | 675 | `"- واجهة عامة صغيرة ومعلومة؛ وتظل تفاصيل التنفيذ داخل الوحدة."` | — |
-| [SRC-E73001D9AC-L000676](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L676) | 676 | `"- مدخلات ومخرجات قابلة للتحقق بعقود محددة."` | — |
-| [SRC-E73001D9AC-L000677](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L677) | 677 | `"- اختبارات وحدة وعقود تغطي واجهاتها."` | — |
-| [SRC-E73001D9AC-L000678](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L678) | 678 | `"- ملكية واضحة للبيانات التي تنشئها أو تعدلها."` | — |
-| [SRC-E73001D9AC-L000679](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L679) | 679 | `"- حدود صلاحيات وموارد مناسبة لطبيعة عملها."` | — |

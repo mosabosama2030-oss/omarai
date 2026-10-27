@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000577 إلى SRC-62CE5126F9-L000149
+- النطاق: SRC-D17CE3D12F-L000502 إلى SRC-62CE5126F9-L000074
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,81 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000502](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L502) | 502 | `"2. SHOULD أن تراجع التغييرات من زاوية التصميم والتعقيد والصحة والأمن والأداء والاختبارات والقابلية للصيانة، وفق مخاطرها."` | — |
+| [SRC-D17CE3D12F-L000503](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L503) | 503 | `"3. MUST مراجعة كامل diff بعد تحرير الملفات آليًا، والتحقق من عدم ضياع أجزاء سابقة أو تغيير تنسيق/سلوك غير مقصود."` | — |
+| [SRC-D17CE3D12F-L000504](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L504) | 504 | `"4. MUST ألا يحرر أكثر من منفذ/وكيل الملف نفسه بالتوازي دون تنسيق وتحديث على النسخة الأحدث."` | — |
+| [SRC-D17CE3D12F-L000505](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L505) | 505 | `"5. MUST ألا يُقبل تقرير «تم الإصلاح» بدون تحديد الملفات والاختبارات والنتيجة."` | — |
+| [SRC-D17CE3D12F-L000506](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L506) | 506 | `"6. SHOULD استخدام قوالب موحدة لطلبات التغيير وإصلاح العيوب ومراجعة الأمن."` | — |
+| [SRC-D17CE3D12F-L000507](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L507) | 507 | `"7. MUST الحفاظ على حق مدير المشروع في قرارات الدمج والنشر والمخاطر المقبولة؛ الأدوات والوكلاء يقترحون وينفذون ضمن الصلاحيات ولا ينتزعون سلطة الاعتماد."` | — |
+| [SRC-D17CE3D12F-L000508](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L508) | 508 | `"8. MUST ألا ينشئ الوكيل اختبارات تافهة تمر دائمًا لتغطية بند شكلي؛ يجب أن تفشل عند كسر السلوك المقصود."` | — |
+| [SRC-D17CE3D12F-L000509](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L509) | 509 | `"9. SHOULD توثيق الافتراضات غير المثبتة بدل بناء طبقات فوقها."` | — |
+| [SRC-D17CE3D12F-L000510](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L510) | 510 | `"10. MUST عدم اعتبار موافقة نموذج آخر أو تقرير ذاتي مراجعة مستقلة كافية للقرارات الحساسة."` | — |
+| [SRC-D17CE3D12F-L000511](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L511) | 511 | `""` | — |
+| [SRC-D17CE3D12F-L000512](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L512) | 512 | `"---"` | — |
+| [SRC-D17CE3D12F-L000513](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L513) | 513 | `""` | — |
+| [SRC-D17CE3D12F-L000514](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L514) | 514 | `"# القسم الحادي عشر — التكلفة والاستدامة والاعتماد على الأطراف"` | — |
+| [SRC-D17CE3D12F-L000515](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L515) | 515 | `""` | — |
+| [SRC-D17CE3D12F-L000516](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L516) | 516 | `"## 35. هندسة التكلفة (FinOps)"` | — |
+| [SRC-D17CE3D12F-L000517](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L517) | 517 | `""` | — |
+| [SRC-D17CE3D12F-L000518](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L518) | 518 | `"1. MUST أن تظل التكلفة المرصودة أو المقدرة لكل طلب ومهمة ضمن حدود محددة عندما تستخدم موارد مدفوعة أو حصصًا محدودة."` | — |
+| [SRC-D17CE3D12F-L000519](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L519) | 519 | `"2. MUST تحديد حدود الاستخدام المجاني لكل موفر إن توفرت معلومات موثوقة، مع عدم اعتبار «مجاني الآن» ضمانًا للاستمرار."` | — |
+| [SRC-D17CE3D12F-L000520](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L520) | 520 | `"3. SHOULD تتبع عدد نداءات النموذج والبحث والصفحات المستخرجة وطول السياق وزمن التنفيذ والكلفة النقدية أو البديلة."` | — |
+| [SRC-D17CE3D12F-L000521](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L521) | 521 | `"4. MUST توفير حد إيقاف أو تخفيف عند استهلاك الحصة أو بلوغ الميزانية، حتى لا تؤدي حلقة وكيل إلى نفاد الرصيد."` | — |
+| [SRC-D17CE3D12F-L000522](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L522) | 522 | `"5. SHOULD استخدام تكلفة الوحدة (cost per successful task) بدل النظر إلى التكلفة الإجمالية فقط."` | — |
+| [SRC-D17CE3D12F-L000523](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L523) | 523 | `"6. MUST توثيق الاعتماد على مزود واحد وخطة الحد الأدنى لاستعادة الخدمة إذا أغلق الحساب أو غيّر الحصص."` | — |
+| [SRC-D17CE3D12F-L000524](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L524) | 524 | `"7. SHOULD مقارنة كلفة التشغيل والكلفة الذهنية للصيانة قبل اعتماد تقنية جديدة."` | — |
+| [SRC-D17CE3D12F-L000525](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L525) | 525 | `"8. MUST ألا نستخدم بنية أعلى كلفة أو تعقيدًا دون قيمة مقاسة أو خطر تستوجبه."` | — |
+| [SRC-D17CE3D12F-L000526](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L526) | 526 | `"9. SHOULD مراقبة الموارد الخاملة والتخزين المتضخم والـ logs والـ caches التي لا تنتهي صلاحيتها."` | — |
+| [SRC-D17CE3D12F-L000527](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L527) | 527 | `"10. MUST التمييز بين التكلفة النقدية وتكلفة وقت المطور والمخاطر التشغيلية."` | — |
+| [SRC-D17CE3D12F-L000528](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L528) | 528 | `""` | — |
+| [SRC-D17CE3D12F-L000529](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L529) | 529 | `"## 36. الاستدامة وكفاءة الموارد"` | — |
+| [SRC-D17CE3D12F-L000530](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L530) | 530 | `""` | — |
+| [SRC-D17CE3D12F-L000531](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L531) | 531 | `"1. SHOULD تقليل العمل المكرر والتحميل غير الضروري والطلبات التي لا تضيف قيمة، بما يخفض الكلفة واستهلاك الموارد."` | — |
+| [SRC-D17CE3D12F-L000532](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L532) | 532 | `"2. SHOULD اختيار أحجام موارد مناسبة بدل الإفراط في تخصيصها أو جعلها قريبة من حد الانهيار."` | — |
+| [SRC-D17CE3D12F-L000533](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L533) | 533 | `"3. MUST عدم التضحية بالأمان أو سلامة النتيجة من أجل تخفيض تكلفة صغير."` | — |
+| [SRC-D17CE3D12F-L000534](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L534) | 534 | `"4. SHOULD قياس الأثر عندما يصبح استهلاك الموارد مهمًا، بدل إطلاق ادعاءات بيئية غير مقاسة."` | — |
+| [SRC-D17CE3D12F-L000535](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L535) | 535 | `"5. MUST تصميم حدود الموارد كجزء من الأمان والموثوقية، لا باعتبارها تحسينًا ماليًا فقط."` | — |
+| [SRC-D17CE3D12F-L000536](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L536) | 536 | `""` | — |
+| [SRC-D17CE3D12F-L000537](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L537) | 537 | `"## 37. الاعتمادية على الموردين وقابلية النقل"` | — |
+| [SRC-D17CE3D12F-L000538](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L538) | 538 | `""` | — |
+| [SRC-D17CE3D12F-L000539](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L539) | 539 | `"1. MUST تسجيل كل خدمة خارجية حرجة، وما البيانات التي ترسل إليها، وحدود حصتها، وشروطها المؤثرة، وطريقة كشف تعطلها."` | — |
+| [SRC-D17CE3D12F-L000540](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L540) | 540 | `"2. SHOULD عزل تفاصيل الموفر في adapter لتسهيل التبديل، مع الاعتراف بأن التكافؤ بين النماذج/المصادر غير مضمون."` | — |
+| [SRC-D17CE3D12F-L000541](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L541) | 541 | `"3. MUST تحديد ما الذي يستمر في العمل عند فقد كل موفر: الواجهة، والأسئلة غير المعتمدة على البحث، ونتائج cache المناسبة، ورسالة الفشل."` | — |
+| [SRC-D17CE3D12F-L000542](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L542) | 542 | `"4. SHOULD الاحتفاظ بخطة تصدير للبيانات الأساسية ونقلها من الاستضافة/المخزن، وفق الإمكانات الفعلية."` | — |
+| [SRC-D17CE3D12F-L000543](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L543) | 543 | `"5. MUST عدم الاعتماد على ميزة مجانية حساسة دون خطة بديلة أو التصريح بأن الخدمة قد تتوقف عند انتهاء الحصة."` | — |
+| [SRC-D17CE3D12F-L000544](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L544) | 544 | `"6. MUST عدم نقل أسرار أو بيانات خاصة إلى موفر احتياطي دون السماح بذلك بنفس سياسة الخصوصية والأمن."` | — |
+| [SRC-D17CE3D12F-L000545](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L545) | 545 | `"7. SHOULD اختبار fallbacks فعليًا بصورة دورية، لا افتراض أنها تعمل لأنها مذكورة في الإعداد."` | — |
+| [SRC-D17CE3D12F-L000546](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L546) | 546 | `""` | — |
+| [SRC-D17CE3D12F-L000547](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L547) | 547 | `"---"` | — |
+| [SRC-D17CE3D12F-L000548](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L548) | 548 | `""` | — |
+| [SRC-D17CE3D12F-L000549](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L549) | 549 | `"# القسم الثاني عشر — تجربة المنتج والنمو القابل للقياس"` | — |
+| [SRC-D17CE3D12F-L000550](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L550) | 550 | `""` | — |
+| [SRC-D17CE3D12F-L000551](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L551) | 551 | `"## 38. ملاحظات المستخدم والتحليلات والتجارب"` | — |
+| [SRC-D17CE3D12F-L000552](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L552) | 552 | `""` | — |
+| [SRC-D17CE3D12F-L000553](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L553) | 553 | `"1. SHOULD جمع أقل قدر من telemetry المنتج اللازم لفهم نجاح المسارات والأخطاء، مع احترام الخصوصية."` | — |
+| [SRC-D17CE3D12F-L000554](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L554) | 554 | `"2. MUST تعريف معنى كل مقياس (مثل «إجابة ناجحة» أو «بحث مكتمل») ومنع تغيير معناه بصمت."` | — |
+| [SRC-D17CE3D12F-L000555](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L555) | 555 | `"3. SHOULD الفصل بين البيانات التشغيلية المطلوبة لتصحيح الأعطال والتحليلات المطلوبة لتحسين المنتج."` | — |
+| [SRC-D17CE3D12F-L000556](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L556) | 556 | `"4. MUST تجنب إدخال نص السؤال أو الإجابة كاملة في التحليلات الافتراضية ما لم توجد ضرورة وسياسة واضحة."` | — |
+| [SRC-D17CE3D12F-L000557](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L557) | 557 | `"5. SHOULD دعم feedback بسيط ومحدد، مع ربطه بإصدار وسياق تقني مناسب عندما لا يكشف بيانات خاصة."` | — |
+| [SRC-D17CE3D12F-L000558](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L558) | 558 | `"6. MUST عدم اعتبار تفاعل المستخدم أو طول الإجابة أو إعجابًا واحدًا دليلًا منفردًا على صحة الإجابة."` | — |
+| [SRC-D17CE3D12F-L000559](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L559) | 559 | `"7. SHOULD اختبار التغييرات الخطرة عبر إطلاق محدود أو feature flag عند توفر المنصة."` | — |
+| [SRC-D17CE3D12F-L000560](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L560) | 560 | `"8. MUST وضع معايير إيقاف للتجربة إذا تدهورت الجودة أو الأمن أو معدل الأخطاء أو الكلفة."` | — |
+| [SRC-D17CE3D12F-L000561](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L561) | 561 | `"9. SHOULD التمييز بين المقاييس الكمية والتعليقات النوعية، والتحقق من تحيز العينة."` | — |
+| [SRC-D17CE3D12F-L000562](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L562) | 562 | `"10. MUST ألا تجمع تجارب المنتج بيانات حساسة بلا أساس أو تُفعّل تتبعًا خفيًا للمستخدم."` | — |
+| [SRC-D17CE3D12F-L000563](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L563) | 563 | `""` | — |
+| [SRC-D17CE3D12F-L000564](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L564) | 564 | `"## 39. توثيق المنتج والتشغيل والتغيير"` | — |
+| [SRC-D17CE3D12F-L000565](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L565) | 565 | `""` | — |
+| [SRC-D17CE3D12F-L000566](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L566) | 566 | `"1. MUST إبقاء README ومخططات المعمارية وملفات الإعداد متوافقة مع السلوك المثبت."` | — |
+| [SRC-D17CE3D12F-L000567](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L567) | 567 | `"2. SHOULD وجود runbook مختصر لكل عطل معروف أو مهمة تشغيل مهمة."` | — |
+| [SRC-D17CE3D12F-L000568](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L568) | 568 | `"3. MUST توثيق المتطلبات البيئية والأوامر الدقيقة لتثبيت واختبار وتشغيل التطبيق."` | — |
+| [SRC-D17CE3D12F-L000569](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L569) | 569 | `"4. SHOULD الاحتفاظ بقاموس للمصطلحات والمقاييس وعقود البيانات المهمة."` | — |
+| [SRC-D17CE3D12F-L000570](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L570) | 570 | `"5. MUST توثيق خطوات التراجع وعواقب ترحيل البيانات التي لا يمكن عكسها تلقائيًا."` | — |
+| [SRC-D17CE3D12F-L000571](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L571) | 571 | `"6. SHOULD توثيق مسارات تصعيد المشكلة وحدود ما يستطيع النظام إثباته بنفسه."` | — |
+| [SRC-D17CE3D12F-L000572](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L572) | 572 | `"7. MUST التعامل مع المستندات ككود قابل للمراجعة؛ تُراجع الروابط والأسماء والإصدارات بعد التغيير."` | — |
+| [SRC-D17CE3D12F-L000573](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L573) | 573 | `"8. MUST إزالة الإرشادات القديمة المتعارضة أو وسمها بأنها تاريخية وغير صالحة للتنفيذ."` | — |
+| [SRC-D17CE3D12F-L000574](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L574) | 574 | `"9. SHOULD وجود سجل معروف للقيود والديون التقنية والمخاطر، مع مالك أو أولوية أو موعد مراجعة."` | — |
+| [SRC-D17CE3D12F-L000575](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L575) | 575 | `"10. MUST عدم استعمال التوثيق لإعلان قدرات لم تثبتها الاختبارات."` | — |
+| [SRC-D17CE3D12F-L000576](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L576) | 576 | `""` | — |
 | [SRC-D17CE3D12F-L000577](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L577) | 577 | `"---"` | — |
 | [SRC-D17CE3D12F-L000578](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L578) | 578 | `""` | — |
 | [SRC-D17CE3D12F-L000579](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L579) | 579 | `"# القسم الثالث عشر — النضج والأولويات ومعايير القبول"` | — |
@@ -768,78 +843,3 @@
 | [SRC-62CE5126F9-L000072](../OMARAI_REMEDIATION_REGISTER_AR.md#L72) | 72 | ``"- **CI — FIXED_AND_TESTED:** التشغيل بعد الدمج [#40395465598](https://github.com/mosabosama2030-oss/omarai/actions/runs/40395465598) ناجح على التزام الدمج `f5605a5072548e2de076a0527a4bcb0cc98381b4`. تفاصيل وظائف Python 3.11 و3.12 وcontainer-build نجحت في تشغيل PR [#40384693139](https://github.com/mosabosama2030-oss/omarai/actions/runs/40384693139)."`` | — |
 | [SRC-62CE5126F9-L000073](../OMARAI_REMEDIATION_REGISTER_AR.md#L73) | 73 | `"- **Hosted live smoke للأسئلة الأربعة التمثيلية على موفّرات البحث الحقيقية: NOT_RUN.** نجاح API smoke داخل الحاوية لا يثبت توافر موفّرات البحث الخارجية أو جودة الإجابات الحية."` | — |
 | [SRC-62CE5126F9-L000074](../OMARAI_REMEDIATION_REGISTER_AR.md#L74) | 74 | `"- **توافر موفّرات البحث الحية وجودة النتائج وحداثة الأخبار: PARTIAL / UNKNOWN** إلى أن يسجل اختبار حيّ معتمد نتائج فعلية."` | — |
-| [SRC-62CE5126F9-L000075](../OMARAI_REMEDIATION_REGISTER_AR.md#L75) | 75 | `"- **لا نشر أو تغيير إعدادات المضيف أو أسرار أو إنفاق** ضمن هذا العمل. أي اختبار حي يتطلب تحديد المضيف المعتمد وموافقة المدير البشري."` | — |
-| [SRC-62CE5126F9-L000076](../OMARAI_REMEDIATION_REGISTER_AR.md#L76) | 76 | `""` | — |
-| [SRC-62CE5126F9-L000077](../OMARAI_REMEDIATION_REGISTER_AR.md#L77) | 77 | `"---"` | — |
-| [SRC-62CE5126F9-L000078](../OMARAI_REMEDIATION_REGISTER_AR.md#L78) | 78 | `""` | — |
-| [SRC-62CE5126F9-L000079](../OMARAI_REMEDIATION_REGISTER_AR.md#L79) | 79 | `""` | — |
-| [SRC-62CE5126F9-L000080](../OMARAI_REMEDIATION_REGISTER_AR.md#L80) | 80 | `"## الحالة المرجعية بعد الجلسة 1 — 23 أكتوبر 2026"` | — |
-| [SRC-62CE5126F9-L000081](../OMARAI_REMEDIATION_REGISTER_AR.md#L81) | 81 | `""` | — |
-| [SRC-62CE5126F9-L000082](../OMARAI_REMEDIATION_REGISTER_AR.md#L82) | 82 | ``"- رأس `main` الذي تم التحقق من مطابقته: `00a3ede039922c0c24097e89f653e6d3c984435d`؛ والالتزام `9f6674abf8679a0630d95b269b54a7ef8629c3bf` هو دمج PR #81."`` | — |
-| [SRC-62CE5126F9-L000083](../OMARAI_REMEDIATION_REGISTER_AR.md#L83) | 83 | `"- PR #81 **MERGED**، وأصلح سباق الفهرسة في CI؛ لا تغييرات في منطق البحث أو الموصلات."` | — |
-| [SRC-62CE5126F9-L000084](../OMARAI_REMEDIATION_REGISTER_AR.md#L84) | 84 | `"- [CI #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) على رأس PR قبل الدمج نجح: 384 اختبارًا على Python 3.11 و384 على Python 3.12، مع نجاح Ruff وتصنيف مسارات الفهرسة وتوليدها وفحصها وبناء الحاوية وAPI smoke."` | — |
-| [SRC-62CE5126F9-L000085](../OMARAI_REMEDIATION_REGISTER_AR.md#L85) | 85 | ``"- **CI على رأس `main` النهائي: NOT_CONFIRMED** ضمن بيانات التشغيل التي أمكن الوصول إليها هنا؛ لا يجوز تحويل ذلك إلى FAIL أو PASS. يلزم التحقق المباشر من GitHub Actions على `00a3ede...`."`` | — |
-| [SRC-62CE5126F9-L000086](../OMARAI_REMEDIATION_REGISTER_AR.md#L86) | 86 | `"- تبقى استضافة البحث الحي، جودة الإجابات الدلالية، الاختبارات الأمنية المستقلة، دوام البيانات والاستعادة، والحمل أمورًا غير مثبتة حتى تنفيذ اختبارات بيئاتها."` | — |
-| [SRC-62CE5126F9-L000087](../OMARAI_REMEDIATION_REGISTER_AR.md#L87) | 87 | `""` | — |
-| [SRC-62CE5126F9-L000088](../OMARAI_REMEDIATION_REGISTER_AR.md#L88) | 88 | `""` | — |
-| [SRC-62CE5126F9-L000089](../OMARAI_REMEDIATION_REGISTER_AR.md#L89) | 89 | `"> **تدقيق إضافي — 23 أكتوبر 2026:** أُعيد فحص تشغيل [CI #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040)، وجميع وظائفه الثلاث ناجحة مع 384 اختبارًا لكل من Python 3.11 و3.12، ونجاح Ruff والفهرس وبناء Docker وAPI smoke."` | — |
-| [SRC-62CE5126F9-L000090](../OMARAI_REMEDIATION_REGISTER_AR.md#L90) | 90 | `">"` | — |
-| [SRC-62CE5126F9-L000091](../OMARAI_REMEDIATION_REGISTER_AR.md#L91) | 91 | ``"> مقارنة GitHub بين رأس PR المختبَر `3fb02880aec9ec231d973e0b3668308d1379ee89` وcommit الدمج `528a2552c0cda809d6c444713466e0e075c13ed9` أعادت `ahead_by=1` و`behind_by=0` بلا أي ملف مختلف؛ شجرة الملفات مطابقة. هذا يدعم أن نتائج CI تغطي محتوى الكود المدمج، لكنه لا ينشئ تشغيلًا مستقلًا مرتبطًا بحدث push على SHA الدمج. لذلك تبقى حالة تشغيل CI مستقل على SHA الدمج `NOT_CONFIRMED`، لا `FAIL`."`` | — |
-| [SRC-62CE5126F9-L000092](../OMARAI_REMEDIATION_REGISTER_AR.md#L92) | 92 | `">"` | — |
-| [SRC-62CE5126F9-L000093](../OMARAI_REMEDIATION_REGISTER_AR.md#L93) | 93 | ``"> لا يزال `NOT_CONFIRMED` يعني أنه لم يُثبت تشغيل منفصل على حدث `push` مرتبط مباشرة بـSHA الدمج؛ ولا يعني فشل الاختبارات. أما الشجرة البرمجية نفسها فقد ثبت تطابقها مع الرأس الذي اجتاز CI."`` | — |
-| [SRC-62CE5126F9-L000094](../OMARAI_REMEDIATION_REGISTER_AR.md#L94) | 94 | `""` | — |
-| [SRC-62CE5126F9-L000095](../OMARAI_REMEDIATION_REGISTER_AR.md#L95) | 95 | `""` | — |
-| [SRC-62CE5126F9-L000096](../OMARAI_REMEDIATION_REGISTER_AR.md#L96) | 96 | ``"> **ملحق ما بعد الدمج — 21 أكتوبر 2026:** دُمج PR #76 في `main` عبر الالتزام `528a2552c0cda809d6c444713466e0e075c13ed9`. أحدث دليل CI متاح على رأس PR قبل الدمج هو [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040): 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية وAPI smoke ناجحة. تحقق CI على SHA الدمج نفسه **NOT_CONFIRMED** في هذه المراجعة؛ التفاصيل والقيود في [تقرير التحقق بعد الدمج](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md). المعلومات القديمة أدناه تصف لقطات عند إعدادها ولا تتقدم على هذا الملحق."`` | — |
-| [SRC-62CE5126F9-L000097](../OMARAI_REMEDIATION_REGISTER_AR.md#L97) | 97 | `""` | — |
-| [SRC-62CE5126F9-L000098](../OMARAI_REMEDIATION_REGISTER_AR.md#L98) | 98 | `""` | — |
-| [SRC-62CE5126F9-L000099](../OMARAI_REMEDIATION_REGISTER_AR.md#L99) | 99 | `"## الحالة المرجعية بعد PR #81 — 23 أكتوبر 2026"` | — |
-| [SRC-62CE5126F9-L000100](../OMARAI_REMEDIATION_REGISTER_AR.md#L100) | 100 | `""` | — |
-| [SRC-62CE5126F9-L000101](../OMARAI_REMEDIATION_REGISTER_AR.md#L101) | 101 | ``"- **رأس `main`:** `00a3ede039922c0c24097e89f653e6d3c984435d`, وهو تحديث فهرسة مولّد بعد دمج PR #81 بالالتزام `9f6674abf8679a0630d95b269b54a7ef8629c3bf`."`` | — |
-| [SRC-62CE5126F9-L000102](../OMARAI_REMEDIATION_REGISTER_AR.md#L102) | 102 | ``"- **منطق التطبيق:** لا يغير #81 منطق البحث أو موصلاته؛ تغييره في `.github/workflows/tests.yml` والوثائق."`` | — |
-| [SRC-62CE5126F9-L000103](../OMARAI_REMEDIATION_REGISTER_AR.md#L103) | 103 | `"- **حادث OMR-CI-002:** [run #39949934192](https://github.com/mosabosama2030-oss/omarai/actions/runs/39949934192) وثّق فشل فحص الفهرس بعد #79؛ عولج السبب في #81."` | — |
-| [SRC-62CE5126F9-L000104](../OMARAI_REMEDIATION_REGISTER_AR.md#L104) | 104 | `"- **دليل الإصلاح قبل الدمج:** [run #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) نجح على رأس PR #81: 384 اختبارًا على Python 3.11 و384 على Python 3.12، وRuff والفهرسة والحاوية/API smoke."` | — |
-| [SRC-62CE5126F9-L000105](../OMARAI_REMEDIATION_REGISTER_AR.md#L105) | 105 | ``"- **تشغيل CI مباشر على رأس main النهائي:** `NOT_CONFIRMED` في هذه المراجعة. لا يعد ذلك فشلًا؛ يلزم التحقق من GitHub Actions للحدث/الالتزام النهائي."`` | — |
-| [SRC-62CE5126F9-L000106](../OMARAI_REMEDIATION_REGISTER_AR.md#L106) | 106 | ``"- **بوابات التشغيل المفتوحة:** موفرو البحث/النموذج الأحياء، جودة الإجابات الدلالية، دوام SQLite والنسخ/الاستعادة على مضيف، اختبار الحمل، قبول Android/RTL، والتقرير الأمني المستقل؛ تبقى `NOT_RUN/UNKNOWN` حتى وجود الدليل المباشر."`` | — |
-| [SRC-62CE5126F9-L000107](../OMARAI_REMEDIATION_REGISTER_AR.md#L107) | 107 | `"- **حوكمة PRs:** الحالة الزمنية لطلبات الدمج تؤخذ من GitHub؛ #81 مدمج، والفروع القديمة المغلقة لا تُدمج من جديد."` | — |
-| [SRC-62CE5126F9-L000108](../OMARAI_REMEDIATION_REGISTER_AR.md#L108) | 108 | `""` | — |
-| [SRC-62CE5126F9-L000109](../OMARAI_REMEDIATION_REGISTER_AR.md#L109) | 109 | `""` | — |
-| [SRC-62CE5126F9-L000110](../OMARAI_REMEDIATION_REGISTER_AR.md#L110) | 110 | `"**المعرّف:** OMARAI-REMEDIATION-REGISTER-001  "` | — |
-| [SRC-62CE5126F9-L000111](../OMARAI_REMEDIATION_REGISTER_AR.md#L111) | 111 | `"**بيانات اللقطة الأصلية:** 21 أكتوبر 2026، قبل دمج PR #76.  "` | — |
-| [SRC-62CE5126F9-L000112](../OMARAI_REMEDIATION_REGISTER_AR.md#L112) | 112 | ``"**خط أساس `main` في اللقطة الأصلية:** `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`.  "`` | — |
-| [SRC-62CE5126F9-L000113](../OMARAI_REMEDIATION_REGISTER_AR.md#L113) | 113 | ``"**فرع الإصلاح الأصلي:** `fix/audit-closure-current-main-2026-10-21`؛ لا يصف هذا السطر الفرع الحالي.  "`` | — |
-| [SRC-62CE5126F9-L000114](../OMARAI_REMEDIATION_REGISTER_AR.md#L114) | 114 | ``"**آخر التزام كامل اجتاز CI:** `463f4a472728b7561f48988bc489b564ad22e1d7`؛ [run #39654530305](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654530305). **رأس PR عند إعداد هذه اللقطة:** `faba1502d08da6cb6c64ba6ef05e9cb29e20ab1c`؛ المقارنة من الالتزام المختبَر إلى الرأس الحالي تُظهر commit فهرسة مولّدًا فقط. لا توجد تغييرات لاحقة في التطبيق أو الاختبارات أو Workflow. يُراجع رأس PR الحي قبل القرار."`` | — |
-| [SRC-62CE5126F9-L000115](../OMARAI_REMEDIATION_REGISTER_AR.md#L115) | 115 | `""` | — |
-| [SRC-62CE5126F9-L000116](../OMARAI_REMEDIATION_REGISTER_AR.md#L116) | 116 | `"## دليل الاختبارات وحالة رأس PR — لقطة تاريخية قبل الدمج"` | — |
-| [SRC-62CE5126F9-L000117](../OMARAI_REMEDIATION_REGISTER_AR.md#L117) | 117 | `""` | — |
-| [SRC-62CE5126F9-L000118](../OMARAI_REMEDIATION_REGISTER_AR.md#L118) | 118 | ``"- **تشغيل PR الأخضر المفحوص وقتها (قبل الدمج):** [#39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) على رأس PR `3fb02880aec9ec231d973e0b3668308d1379ee89`: **384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12**، وRuff، ومزامنة/فحص الفهرس، وبناء الحاوية واختبار API المحمي ناجحة. هذا التشغيل يسبق الدمج؛ لا يثبت وحده وجود تشغيل push منفصل على `528a255...`."`` | — |
-| [SRC-62CE5126F9-L000119](../OMARAI_REMEDIATION_REGISTER_AR.md#L119) | 119 | ``"- تحقق تشغيل الحاوية في الوظيفة نفسها من أن `GET /api/health` يعلن SHA البناء المخبوز المطابق لـ`GITHUB_SHA`، وأن المسارات المحمية ترفض الطلبات بلا رمز."`` | — |
-| [SRC-62CE5126F9-L000120](../OMARAI_REMEDIATION_REGISTER_AR.md#L120) | 120 | ``"- **إصلاح سباق الفهرسة:** `tests.yml` يعيد توليد مخرجات الفهرس داخل مساحة الاختبار المؤقتة للمراجع غير `main` ثم يتحقق من الاتساق؛ يبقى تحقق `main` صارمًا على الملفات الملتزمة. CI اختبر ذلك بنجاح."`` | — |
-| [SRC-62CE5126F9-L000121](../OMARAI_REMEDIATION_REGISTER_AR.md#L121) | 121 | ``"- **حدّ الدليل التاريخي:** رأس PR عند كتابة اللقطة الأصلية كان `faba1502d08da6cb6c64ba6ef05e9cb29e20ab1c`؛ ثم وصل الرأس إلى `3fb02880aec9ec231d973e0b3668308d1379ee89` واجتاز run #39654908040، وبعدها دُمج عبر `528a255...`. لا تُعمّم نتيجة CI على الاستضافة الحية أو على كل إجابة معرفية؛ وضع CI بعد الدمج موضح في الملحق أعلاه."`` | — |
-| [SRC-62CE5126F9-L000122](../OMARAI_REMEDIATION_REGISTER_AR.md#L122) | 122 | `"- التشغيل المستضاف الحقيقي، وعمل الموصلات الحية، والدوام/النسخ الاحتياطي والاستعادة، والحمل، والاختبار الأحمر المستقل تبقى خارج نطاق دليل CI."` | — |
-| [SRC-62CE5126F9-L000123](../OMARAI_REMEDIATION_REGISTER_AR.md#L123) | 123 | `""` | — |
-| [SRC-62CE5126F9-L000124](../OMARAI_REMEDIATION_REGISTER_AR.md#L124) | 124 | `"## معاني الحالات"` | — |
-| [SRC-62CE5126F9-L000125](../OMARAI_REMEDIATION_REGISTER_AR.md#L125) | 125 | `""` | — |
-| [SRC-62CE5126F9-L000126](../OMARAI_REMEDIATION_REGISTER_AR.md#L126) | 126 | `"- **FIXED_AND_TESTED:** الإصلاح موجود في الالتزام المذكور ونجحت اختبارات مرتبطة به على الالتزام نفسه."` | — |
-| [SRC-62CE5126F9-L000127](../OMARAI_REMEDIATION_REGISTER_AR.md#L127) | 127 | `"- **PARTIAL:** يوجد تنفيذ أو اختبار أو تحديث جزئي، لكن شرط الإغلاق لم يكتمل."` | — |
-| [SRC-62CE5126F9-L000128](../OMARAI_REMEDIATION_REGISTER_AR.md#L128) | 128 | `"- **NOT_RUN:** الاختبار المطلوب لم يُنفذ."` | — |
-| [SRC-62CE5126F9-L000129](../OMARAI_REMEDIATION_REGISTER_AR.md#L129) | 129 | `"- **UNKNOWN:** لا توجد أدلة كافية للحكم."` | — |
-| [SRC-62CE5126F9-L000130](../OMARAI_REMEDIATION_REGISTER_AR.md#L130) | 130 | `"- **PROPOSED:** فكرة أو تحسين لم يُنفذ."` | — |
-| [SRC-62CE5126F9-L000131](../OMARAI_REMEDIATION_REGISTER_AR.md#L131) | 131 | `"- **NOT_REQUIRED:** ثبت عدم الحاجة إلى الوظيفة في النطاق الحالي مع توثيق السبب."` | — |
-| [SRC-62CE5126F9-L000132](../OMARAI_REMEDIATION_REGISTER_AR.md#L132) | 132 | `""` | — |
-| [SRC-62CE5126F9-L000133](../OMARAI_REMEDIATION_REGISTER_AR.md#L133) | 133 | `"## A. سجل الأخطاء والجذور"` | — |
-| [SRC-62CE5126F9-L000134](../OMARAI_REMEDIATION_REGISTER_AR.md#L134) | 134 | `""` | — |
-| [SRC-62CE5126F9-L000135](../OMARAI_REMEDIATION_REGISTER_AR.md#L135) | 135 | `"\| المعرّف \| الأصل \| الخطورة \| السبب الجذري \| موضع العمل \| الحالة الحالية والدليل \| معيار الإغلاق \|"` | — |
-| [SRC-62CE5126F9-L000136](../OMARAI_REMEDIATION_REGISTER_AR.md#L136) | 136 | `"\|---\|---\|---:\|---\|---\|---\|---\|"` | — |
-| [SRC-62CE5126F9-L000137](../OMARAI_REMEDIATION_REGISTER_AR.md#L137) | 137 | ``"\| OMR-E-001 \| Grok E1؛ تدقيق النواة \| P1 \| الأسئلة المرجعية القصيرة كانت تفتقر لقواعد غموض موحدة \| `agents/intent_router.py`, `agents/web_agent.py`, `tests/test_intent_router.py` \| **FIXED_AND_TESTED على رأس #76 `f2f1bb3...`** — اختبارات حالات غامضة وبدون/مع سياق ضمن 384 اختبارًا ناجحًا في كلا إصدارَي Python \| يبقى السؤال المنفرد بلا مرجع CLARIFY؛ ومع السياق الصحيح يوجه للبحث؛ ولا يُسترجع موضوع قديم بعد الشكر \|"`` | — |
-| [SRC-62CE5126F9-L000138](../OMARAI_REMEDIATION_REGISTER_AR.md#L138) | 138 | ``"\| OMR-E-002 \| Grok E2 \| P1 \| منطق المتابعة كان موزعًا وقد يسترجع موضوعًا سابقًا غير صالح \| `agents/intent_router.py`, `agents/research.py`, `agents/web_agent.py` واختباراتها \| **FIXED_AND_TESTED على رأس #76 `f2f1bb3...`** — حل متابعة موحد وحدود طول/سياق واختبارات \| سعر/ضمان/مقارنة مع سياق؛ وCLARIFY عند غياب المرجع؛ ورفض السياق القديم \|"`` | — |
-| [SRC-62CE5126F9-L000139](../OMARAI_REMEDIATION_REGISTER_AR.md#L139) | 139 | ``"\| OMR-E-003 \| Grok E3 \| P1 \| عرض تغطية الأدلة كدرجة رقمية يمكن فهمها خطأً كاحتمال صحة \| `web/agent.html`, `agents/web_agent.py` \| **FIXED_AND_TESTED ON MAIN** — #75 مدمج في `main` \| بقاء الوصف نوعيًا وعدم عودة مؤشر /100 \|"`` | — |
-| [SRC-62CE5126F9-L000140](../OMARAI_REMEDIATION_REGISTER_AR.md#L140) | 140 | ``"\| OMR-E-004 \| Grok E4 \| P1 \| استخدام نص `deep/standard` كقيمة منطقية يجعل كلاهما truthy \| `agents/research.py`, `tests/test_research.py` \| **FIXED_AND_TESTED ON MAIN** — #75 مدمج واختبارات المستوى القياسي والعميق \| لا يستدعي السؤال القياسي زاوية عميقة بلا داعٍ \|"`` | — |
-| [SRC-62CE5126F9-L000141](../OMARAI_REMEDIATION_REGISTER_AR.md#L141) | 141 | ``"\| OMR-E-005 \| Grok E5 \| P1 \| إعداد الحاوية وحده لا يربط الخدمة المنشورة بالالتزام الفعلي \| `Dockerfile`, `api/omarai.py`, `scripts/hosted_smoke_test.py`, workflow \| **CODE PATH TESTED; HOSTED NOT_RUN** — SHA مخبوز في صورة Docker ومقارن في hosted smoke؛ لا توجد خدمة فعلية اختُبرت \| نجاح hosted smoke على خدمة معتمدة ومطابقة SHA الفعلي \|"`` | — |
-| [SRC-62CE5126F9-L000142](../OMARAI_REMEDIATION_REGISTER_AR.md#L142) | 142 | ``"\| OMR-E-006 \| تقرير التدقيق الموحد \| P1 \| تطابق لفظي أو رابط لا يثبت أن المصدر يستلزم الادعاء دلاليًا \| `agents/answer_validation.py`, `agents/web_agent.py`, tests \| **PARTIAL / CODE TESTED** — إشارة لفظية أكثر تحفظًا واختبارات regression؛ يصرح النظام أن entailment لم يُفحص \| تقييم دلالي مستقل للحالات المرجعية؛ لا يُعرض الفحص اللفظي كتحقق حقيقة \|"`` | — |
-| [SRC-62CE5126F9-L000143](../OMARAI_REMEDIATION_REGISTER_AR.md#L143) | 143 | ``"\| OMR-E-007 \| تقرير التدقيق الموحد \| P1 \| العدادات قد تخلط النتائج ومحاولات الجلب والنص المستخرج والفشل \| `agents/web_agent.py`, `tests/test_connector_summary_counters.py` \| **FIXED_AND_TESTED على رأس #76 `f2f1bb3...`** — حالات الجلب وتشخيصات الموصلات تختبرها CI \| حالات العدادات والفشل الجزئي ممثلة في اختبارات؛ نجاح الموفر الحي يظل اختبارًا منفصلًا \|"`` | — |
-| [SRC-62CE5126F9-L000144](../OMARAI_REMEDIATION_REGISTER_AR.md#L144) | 144 | ``"\| OMR-E-008 \| تقرير التدقيق الموحد \| P1 \| موفرو البحث قد يتبعون تحويلات غير آمنة \| `agents/web_agent.py`, `tests/test_web_agent.py` \| **FIXED_AND_TESTED على رأس #76 `f2f1bb3...`** — تعطيل auto-redirect لموفري DuckDuckGo/Bing/Google News واختبارات redirect \| رفض الوجهات غير العامة في كل hop؛ لا يُعمم هذا على موفر لم تختبره الاختبارات \|"`` | — |
-| [SRC-62CE5126F9-L000145](../OMARAI_REMEDIATION_REGISTER_AR.md#L145) | 145 | `""` | — |
-| [SRC-62CE5126F9-L000146](../OMARAI_REMEDIATION_REGISTER_AR.md#L146) | 146 | `"## B. العيوب الأمنية والتشغيلية"` | — |
-| [SRC-62CE5126F9-L000147](../OMARAI_REMEDIATION_REGISTER_AR.md#L147) | 147 | `""` | — |
-| [SRC-62CE5126F9-L000148](../OMARAI_REMEDIATION_REGISTER_AR.md#L148) | 148 | `"\| المعرّف \| الأصل \| الخطورة \| السبب/الأثر \| الحالة \| معيار الإغلاق \|"` | — |
-| [SRC-62CE5126F9-L000149](../OMARAI_REMEDIATION_REGISTER_AR.md#L149) | 149 | `"\|---\|---\|---:\|---\|---\|---\|"` | — |

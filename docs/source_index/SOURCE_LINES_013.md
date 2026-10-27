@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000443 إلى SRC-E599346ABE-L001242
+- النطاق: SRC-E599346ABE-L000368 إلى SRC-E599346ABE-L001167
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,81 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000368](../generate_index.py#L368) | 368 | `"        return \"وثائق ونصوص\""` | — |
+| [SRC-E599346ABE-L000369](../generate_index.py#L369) | 369 | `"    return \"ملفات أخرى\""` | — |
+| [SRC-E599346ABE-L000370](../generate_index.py#L370) | 370 | `""` | — |
+| [SRC-E599346ABE-L000371](../generate_index.py#L371) | 371 | `""` | — |
+| [SRC-E599346ABE-L000372](../generate_index.py#L372) | 372 | `"def discover_repository_files(root: Path) -> list[Path]:"` | — |
+| [SRC-E599346ABE-L000373](../generate_index.py#L373) | 373 | `"    \"\"\"Return the stable file inventory, excluding the generated index and runtime data.\"\"\""` | — |
+| [SRC-E599346ABE-L000374](../generate_index.py#L374) | 374 | `"    discovered: list[Path] = []"` | — |
+| [SRC-E599346ABE-L000375](../generate_index.py#L375) | 375 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
+| [SRC-E599346ABE-L000376](../generate_index.py#L376) | 376 | `"        root,"` | — |
+| [SRC-E599346ABE-L000377](../generate_index.py#L377) | 377 | `"        topdown=True,"` | — |
+| [SRC-E599346ABE-L000378](../generate_index.py#L378) | 378 | `"        followlinks=False,"` | — |
+| [SRC-E599346ABE-L000379](../generate_index.py#L379) | 379 | `"    ):"` | — |
+| [SRC-E599346ABE-L000380](../generate_index.py#L380) | 380 | `"        directory_names[:] = sorted("` | — |
+| [SRC-E599346ABE-L000381](../generate_index.py#L381) | 381 | `"            name"` | — |
+| [SRC-E599346ABE-L000382](../generate_index.py#L382) | 382 | `"            for name in directory_names"` | — |
+| [SRC-E599346ABE-L000383](../generate_index.py#L383) | 383 | `"            if name not in EXCLUDED_DIRECTORIES"` | — |
+| [SRC-E599346ABE-L000384](../generate_index.py#L384) | 384 | `"            and not name.lower().endswith((\".egg-info\", \".dist-info\"))"` | — |
+| [SRC-E599346ABE-L000385](../generate_index.py#L385) | 385 | `"            and not (Path(current_directory) / name).is_symlink()"` | — |
+| [SRC-E599346ABE-L000386](../generate_index.py#L386) | 386 | `"        )"` | — |
+| [SRC-E599346ABE-L000387](../generate_index.py#L387) | 387 | `"        for file_name in sorted(file_names):"` | — |
+| [SRC-E599346ABE-L000388](../generate_index.py#L388) | 388 | `"            candidate = Path(current_directory) / file_name"` | — |
+| [SRC-E599346ABE-L000389](../generate_index.py#L389) | 389 | `"            if candidate.is_symlink() or _is_sensitive_or_runtime_path(candidate):"` | — |
+| [SRC-E599346ABE-L000390](../generate_index.py#L390) | 390 | `"                continue"` | — |
+| [SRC-E599346ABE-L000391](../generate_index.py#L391) | 391 | `"            relative_file = candidate.relative_to(root).as_posix()"` | — |
+| [SRC-E599346ABE-L000392](../generate_index.py#L392) | 392 | `"            if ("` | — |
+| [SRC-E599346ABE-L000393](../generate_index.py#L393) | 393 | `"                relative_file in INDEX_OUTPUT_PATHS"` | — |
+| [SRC-E599346ABE-L000394](../generate_index.py#L394) | 394 | `"                or relative_file.startswith(SOURCE_LINES_PAGES_DIR + \"/\")"` | — |
+| [SRC-E599346ABE-L000395](../generate_index.py#L395) | 395 | `"            ):"` | — |
+| [SRC-E599346ABE-L000396](../generate_index.py#L396) | 396 | `"                # Exclude generated index outputs to prevent self-indexing loops."` | — |
+| [SRC-E599346ABE-L000397](../generate_index.py#L397) | 397 | `"                continue"` | — |
+| [SRC-E599346ABE-L000398](../generate_index.py#L398) | 398 | `"            discovered.append(candidate)"` | — |
+| [SRC-E599346ABE-L000399](../generate_index.py#L399) | 399 | `""` | — |
+| [SRC-E599346ABE-L000400](../generate_index.py#L400) | 400 | `"    return sorted("` | — |
+| [SRC-E599346ABE-L000401](../generate_index.py#L401) | 401 | `"        discovered,"` | — |
+| [SRC-E599346ABE-L000402](../generate_index.py#L402) | 402 | `"        key=lambda path: path.relative_to(root).as_posix().casefold(),"` | — |
+| [SRC-E599346ABE-L000403](../generate_index.py#L403) | 403 | `"    )"` | — |
+| [SRC-E599346ABE-L000404](../generate_index.py#L404) | 404 | `""` | — |
+| [SRC-E599346ABE-L000405](../generate_index.py#L405) | 405 | `""` | — |
+| [SRC-E599346ABE-L000406](../generate_index.py#L406) | 406 | `"def _read_text_bounded(path: Path) -> str \| None:"` | — |
+| [SRC-E599346ABE-L000407](../generate_index.py#L407) | 407 | `"    \"\"\"Read supported UTF-8 text files only when they are within the scan-size bound.\"\"\""` | — |
+| [SRC-E599346ABE-L000408](../generate_index.py#L408) | 408 | `"    try:"` | — |
+| [SRC-E599346ABE-L000409](../generate_index.py#L409) | 409 | `"        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:"` | — |
+| [SRC-E599346ABE-L000410](../generate_index.py#L410) | 410 | `"            return None"` | — |
+| [SRC-E599346ABE-L000411](../generate_index.py#L411) | 411 | `"        if path.suffix.lower() == \".py\":"` | — |
+| [SRC-E599346ABE-L000412](../generate_index.py#L412) | 412 | `"            with tokenize.open(str(path)) as source_stream:"` | — |
+| [SRC-E599346ABE-L000413](../generate_index.py#L413) | 413 | `"                text = source_stream.read()"` | — |
+| [SRC-E599346ABE-L000414](../generate_index.py#L414) | 414 | `"        else:"` | — |
+| [SRC-E599346ABE-L000415](../generate_index.py#L415) | 415 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-E599346ABE-L000416](../generate_index.py#L416) | 416 | `"        if \"\\x00\" in text:"` | — |
+| [SRC-E599346ABE-L000417](../generate_index.py#L417) | 417 | `"            return None"` | — |
+| [SRC-E599346ABE-L000418](../generate_index.py#L418) | 418 | `"        return text"` | — |
+| [SRC-E599346ABE-L000419](../generate_index.py#L419) | 419 | `"    except (OSError, UnicodeError, LookupError, tokenize.TokenError):"` | — |
+| [SRC-E599346ABE-L000420](../generate_index.py#L420) | 420 | `"        return None"` | — |
+| [SRC-E599346ABE-L000421](../generate_index.py#L421) | 421 | `""` | — |
+| [SRC-E599346ABE-L000422](../generate_index.py#L422) | 422 | `""` | — |
+| [SRC-E599346ABE-L000423](../generate_index.py#L423) | 423 | `"def _count_lines(text: str) -> int:"` | — |
+| [SRC-E599346ABE-L000424](../generate_index.py#L424) | 424 | `"    \"\"\"Count source lines without adding an extra line for a trailing newline.\"\"\""` | — |
+| [SRC-E599346ABE-L000425](../generate_index.py#L425) | 425 | `"    if not text:"` | — |
+| [SRC-E599346ABE-L000426](../generate_index.py#L426) | 426 | `"        return 0"` | — |
+| [SRC-E599346ABE-L000427](../generate_index.py#L427) | 427 | `"    return text.count(\"\\n\") + (not text.endswith(\"\\n\"))"` | — |
+| [SRC-E599346ABE-L000428](../generate_index.py#L428) | 428 | `""` | — |
+| [SRC-E599346ABE-L000429](../generate_index.py#L429) | 429 | `""` | — |
+| [SRC-E599346ABE-L000430](../generate_index.py#L430) | 430 | `"def _file_type(path: Path) -> str:"` | — |
+| [SRC-E599346ABE-L000431](../generate_index.py#L431) | 431 | `"    \"\"\"Return a readable file type based on a known filename or extension.\"\"\""` | — |
+| [SRC-E599346ABE-L000432](../generate_index.py#L432) | 432 | `"    name = path.name.lower()"` | — |
+| [SRC-E599346ABE-L000433](../generate_index.py#L433) | 433 | `"    if name in {\"dockerfile\", \"makefile\", \"procfile\"}:"` | — |
+| [SRC-E599346ABE-L000434](../generate_index.py#L434) | 434 | `"        return name.capitalize()"` | — |
+| [SRC-E599346ABE-L000435](../generate_index.py#L435) | 435 | `"    suffix = path.suffix.lower()"` | — |
+| [SRC-E599346ABE-L000436](../generate_index.py#L436) | 436 | `"    labels = {"` | — |
+| [SRC-E599346ABE-L000437](../generate_index.py#L437) | 437 | `"        \".py\": \"Python\","` | — |
+| [SRC-E599346ABE-L000438](../generate_index.py#L438) | 438 | `"        \".html\": \"HTML\","` | — |
+| [SRC-E599346ABE-L000439](../generate_index.py#L439) | 439 | `"        \".htm\": \"HTML\","` | — |
+| [SRC-E599346ABE-L000440](../generate_index.py#L440) | 440 | `"        \".js\": \"JavaScript\","` | — |
+| [SRC-E599346ABE-L000441](../generate_index.py#L441) | 441 | `"        \".mjs\": \"JavaScript module\","` | — |
+| [SRC-E599346ABE-L000442](../generate_index.py#L442) | 442 | `"        \".cjs\": \"CommonJS\","` | — |
 | [SRC-E599346ABE-L000443](../generate_index.py#L443) | 443 | `"        \".jsx\": \"React JSX\","` | — |
 | [SRC-E599346ABE-L000444](../generate_index.py#L444) | 444 | `"        \".ts\": \"TypeScript\","` | — |
 | [SRC-E599346ABE-L000445](../generate_index.py#L445) | 445 | `"        \".tsx\": \"TypeScript JSX\","` | — |
@@ -741,78 +816,3 @@
 | [SRC-E599346ABE-L001165](../generate_index.py#L1165) | 1165 | `"        for match in pattern.finditer(source):"` | — |
 | [SRC-E599346ABE-L001166](../generate_index.py#L1166) | 1166 | `"            for position in range(match.start(), match.end()):"` | — |
 | [SRC-E599346ABE-L001167](../generate_index.py#L1167) | 1167 | `"                if masked_chars[position] != \"\\\\n\":"` | — |
-| [SRC-E599346ABE-L001168](../generate_index.py#L1168) | 1168 | `"                    masked_chars[position] = \" \""` | — |
-| [SRC-E599346ABE-L001169](../generate_index.py#L1169) | 1169 | `"    masked_source = \"\".join(masked_chars)"` | — |
-| [SRC-E599346ABE-L001170](../generate_index.py#L1170) | 1170 | `"    comment_re = re.compile(r\"<!--(.*?)-->\", re.DOTALL)"` | — |
-| [SRC-E599346ABE-L001171](../generate_index.py#L1171) | 1171 | `"    for match in comment_re.finditer(masked_source):"` | — |
-| [SRC-E599346ABE-L001172](../generate_index.py#L1172) | 1172 | `"        starting_line = _line_at(source, match.start(1))"` | — |
-| [SRC-E599346ABE-L001173](../generate_index.py#L1173) | 1173 | `"        _append_comment_text("` | — |
-| [SRC-E599346ABE-L001174](../generate_index.py#L1174) | 1174 | `"            comments,"` | — |
-| [SRC-E599346ABE-L001175](../generate_index.py#L1175) | 1175 | `"            starting_line,"` | — |
-| [SRC-E599346ABE-L001176](../generate_index.py#L1176) | 1176 | `"            source[match.start(1):match.end(1)],"` | — |
-| [SRC-E599346ABE-L001177](../generate_index.py#L1177) | 1177 | `"        )"` | — |
-| [SRC-E599346ABE-L001178](../generate_index.py#L1178) | 1178 | `"    return comments"` | — |
-| [SRC-E599346ABE-L001179](../generate_index.py#L1179) | 1179 | `""` | — |
-| [SRC-E599346ABE-L001180](../generate_index.py#L1180) | 1180 | `""` | — |
-| [SRC-E599346ABE-L001181](../generate_index.py#L1181) | 1181 | `"def _markdown_annotation_map(source: str) -> dict[int, list[str]]:"` | — |
-| [SRC-E599346ABE-L001182](../generate_index.py#L1182) | 1182 | `"    \"\"\"Accept explicit annotations at the start of Markdown prose, skipping fenced code.\"\"\""` | — |
-| [SRC-E599346ABE-L001183](../generate_index.py#L1183) | 1183 | `"    comments: dict[int, list[str]] = {}"` | — |
-| [SRC-E599346ABE-L001184](../generate_index.py#L1184) | 1184 | `"    in_fence = False"` | — |
-| [SRC-E599346ABE-L001185](../generate_index.py#L1185) | 1185 | `"    fence_character = \"\""` | — |
-| [SRC-E599346ABE-L001186](../generate_index.py#L1186) | 1186 | `"    fence_width = 0"` | — |
-| [SRC-E599346ABE-L001187](../generate_index.py#L1187) | 1187 | `"    marker_start_re = re.compile("` | — |
-| [SRC-E599346ABE-L001188](../generate_index.py#L1188) | 1188 | `"        rf\"^\\s*(?:(?:[-*+]\|>)\\s*)?({_FINDING_MARKER_ALTERNATION})\\s*:\\s*(.*)$\""` | — |
-| [SRC-E599346ABE-L001189](../generate_index.py#L1189) | 1189 | `"    )"` | — |
-| [SRC-E599346ABE-L001190](../generate_index.py#L1190) | 1190 | `"    for line_number, line in enumerate(source.splitlines(), start=1):"` | — |
-| [SRC-E599346ABE-L001191](../generate_index.py#L1191) | 1191 | `"        fence_match = re.match(r\"^\\s*(~{3,})\", line) or re.match("` | — |
-| [SRC-E599346ABE-L001192](../generate_index.py#L1192) | 1192 | `"            r\"^\\s*(\" + re.escape(chr(96)) + \"{3,})\", line"` | — |
-| [SRC-E599346ABE-L001193](../generate_index.py#L1193) | 1193 | `"        )"` | — |
-| [SRC-E599346ABE-L001194](../generate_index.py#L1194) | 1194 | `"        if fence_match:"` | — |
-| [SRC-E599346ABE-L001195](../generate_index.py#L1195) | 1195 | `"            fence = fence_match.group(1)"` | — |
-| [SRC-E599346ABE-L001196](../generate_index.py#L1196) | 1196 | `"            if not in_fence:"` | — |
-| [SRC-E599346ABE-L001197](../generate_index.py#L1197) | 1197 | `"                in_fence = True"` | — |
-| [SRC-E599346ABE-L001198](../generate_index.py#L1198) | 1198 | `"                fence_character = fence[0]"` | — |
-| [SRC-E599346ABE-L001199](../generate_index.py#L1199) | 1199 | `"                fence_width = len(fence)"` | — |
-| [SRC-E599346ABE-L001200](../generate_index.py#L1200) | 1200 | `"            elif fence[0] == fence_character and len(fence) >= fence_width:"` | — |
-| [SRC-E599346ABE-L001201](../generate_index.py#L1201) | 1201 | `"                in_fence = False"` | — |
-| [SRC-E599346ABE-L001202](../generate_index.py#L1202) | 1202 | `"            continue"` | — |
-| [SRC-E599346ABE-L001203](../generate_index.py#L1203) | 1203 | `"        if in_fence:"` | — |
-| [SRC-E599346ABE-L001204](../generate_index.py#L1204) | 1204 | `"            continue"` | — |
-| [SRC-E599346ABE-L001205](../generate_index.py#L1205) | 1205 | `"        match = marker_start_re.match(line)"` | — |
-| [SRC-E599346ABE-L001206](../generate_index.py#L1206) | 1206 | `"        if match:"` | — |
-| [SRC-E599346ABE-L001207](../generate_index.py#L1207) | 1207 | `"            comments.setdefault(line_number, []).append("` | — |
-| [SRC-E599346ABE-L001208](../generate_index.py#L1208) | 1208 | `"                f\"{match.group(1)}: {match.group(2)}\""` | — |
-| [SRC-E599346ABE-L001209](../generate_index.py#L1209) | 1209 | `"            )"` | — |
-| [SRC-E599346ABE-L001210](../generate_index.py#L1210) | 1210 | `"    return comments"` | — |
-| [SRC-E599346ABE-L001211](../generate_index.py#L1211) | 1211 | `""` | — |
-| [SRC-E599346ABE-L001212](../generate_index.py#L1212) | 1212 | `""` | — |
-| [SRC-E599346ABE-L001213](../generate_index.py#L1213) | 1213 | `"def _finding_comments_by_file(relative_file: str, source: str) -> dict[int, list[str]]:"` | — |
-| [SRC-E599346ABE-L001214](../generate_index.py#L1214) | 1214 | `"    \"\"\"Extract intended comment/prose annotations by file type, not arbitrary tokens.\"\"\""` | — |
-| [SRC-E599346ABE-L001215](../generate_index.py#L1215) | 1215 | `"    path = Path(relative_file)"` | — |
-| [SRC-E599346ABE-L001216](../generate_index.py#L1216) | 1216 | `"    suffix = path.suffix.lower()"` | — |
-| [SRC-E599346ABE-L001217](../generate_index.py#L1217) | 1217 | `"    name = path.name.lower()"` | — |
-| [SRC-E599346ABE-L001218](../generate_index.py#L1218) | 1218 | `"    if suffix == \".py\":"` | — |
-| [SRC-E599346ABE-L001219](../generate_index.py#L1219) | 1219 | `"        return _python_comment_map(source)"` | — |
-| [SRC-E599346ABE-L001220](../generate_index.py#L1220) | 1220 | `"    if suffix in JAVASCRIPT_EXTENSIONS \| CSS_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L001221](../generate_index.py#L1221) | 1221 | `"        return _c_style_comment_map(source, hash_comments=suffix == \".scss\")"` | — |
-| [SRC-E599346ABE-L001222](../generate_index.py#L1222) | 1222 | `"    if suffix in {\".html\", \".htm\"}:"` | — |
-| [SRC-E599346ABE-L001223](../generate_index.py#L1223) | 1223 | `"        comments = _html_comment_map(source)"` | — |
-| [SRC-E599346ABE-L001224](../generate_index.py#L1224) | 1224 | `"        for pattern in (HTML_SCRIPT_RE, HTML_STYLE_RE):"` | — |
-| [SRC-E599346ABE-L001225](../generate_index.py#L1225) | 1225 | `"            for match in pattern.finditer(source):"` | — |
-| [SRC-E599346ABE-L001226](../generate_index.py#L1226) | 1226 | `"                embedded = match.group(1)"` | — |
-| [SRC-E599346ABE-L001227](../generate_index.py#L1227) | 1227 | `"                local_comments = _c_style_comment_map(embedded)"` | — |
-| [SRC-E599346ABE-L001228](../generate_index.py#L1228) | 1228 | `"                base_line = _line_at(source, match.start(1))"` | — |
-| [SRC-E599346ABE-L001229](../generate_index.py#L1229) | 1229 | `"                for local_line, fragments in local_comments.items():"` | — |
-| [SRC-E599346ABE-L001230](../generate_index.py#L1230) | 1230 | `"                    for fragment in fragments:"` | — |
-| [SRC-E599346ABE-L001231](../generate_index.py#L1231) | 1231 | `"                        comments.setdefault(base_line + local_line - 1, []).append(fragment)"` | — |
-| [SRC-E599346ABE-L001232](../generate_index.py#L1232) | 1232 | `"        return comments"` | — |
-| [SRC-E599346ABE-L001233](../generate_index.py#L1233) | 1233 | `"    if suffix in {\".md\", \".rst\"}:"` | — |
-| [SRC-E599346ABE-L001234](../generate_index.py#L1234) | 1234 | `"        return _markdown_annotation_map(source)"` | — |
-| [SRC-E599346ABE-L001235](../generate_index.py#L1235) | 1235 | `"    if suffix in {\".yml\", \".yaml\", \".toml\", \".ini\", \".cfg\", \".sh\"} or name in {"` | — |
-| [SRC-E599346ABE-L001236](../generate_index.py#L1236) | 1236 | `"        \"dockerfile\","` | — |
-| [SRC-E599346ABE-L001237](../generate_index.py#L1237) | 1237 | `"        \"makefile\","` | — |
-| [SRC-E599346ABE-L001238](../generate_index.py#L1238) | 1238 | `"        \"procfile\","` | — |
-| [SRC-E599346ABE-L001239](../generate_index.py#L1239) | 1239 | `"    }:"` | — |
-| [SRC-E599346ABE-L001240](../generate_index.py#L1240) | 1240 | `"        return _c_style_comment_map(source, hash_comments=True)"` | — |
-| [SRC-E599346ABE-L001241](../generate_index.py#L1241) | 1241 | `"    if suffix == \".txt\":"` | — |
-| [SRC-E599346ABE-L001242](../generate_index.py#L1242) | 1242 | `"        return _markdown_annotation_map(source)"` | — |

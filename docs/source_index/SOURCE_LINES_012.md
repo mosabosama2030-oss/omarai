@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000136 إلى SRC-E599346ABE-L000442
+- النطاق: SRC-26428BDA96-L000136 إلى SRC-E599346ABE-L000367
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -160,6 +160,90 @@
 | [SRC-160DC0B3E4-L000006](../archive/README.md#L6) | 6 | `"- [تسوية الأدلة التشغيلية المؤرخة 19 أكتوبر 2026](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md): تسلسل تاريخي لنتائج الاختبارات والفروع السابقة."` | — |
 | [SRC-160DC0B3E4-L000007](../archive/README.md#L7) | 7 | `""` | — |
 | [SRC-160DC0B3E4-L000008](../archive/README.md#L8) | 8 | `"للحالة الحالية ابدأ من [نطاق التنفيذ](../IMPLEMENTATION_SCOPE.md)، و[سجل المعالجة المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md)، و[تقرير التحقق بعد الدمج](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md)، و[مصفوفة أدلة الاختبار](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md)."` | — |
+## وثائق وفهرسة
+
+### FILE-914817100D — [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-914817100D-L000001](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1) | 1 | `"# إصلاح حلقة الإجابة المركبة في Omarai — 27 أكتوبر 2026"` | — |
+| [SRC-914817100D-L000002](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L2) | 2 | `""` | — |
+| [SRC-914817100D-L000003](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L3) | 3 | `"## الغرض"` | — |
+| [SRC-914817100D-L000004](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L4) | 4 | `""` | — |
+| [SRC-914817100D-L000005](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L5) | 5 | `"إغلاق الفجوة بين محاور السؤال المركب، وخطة البحث، والأدلة التي جُمعت، والإجابة النهائية. هذا التغيير لا يدّعي إثبات صحة المعنى آليًا؛ فهو يحسّن تخصيص البحث ويعرض إشارات الأدلة لكل محور، مع الإبقاء على الفصل بين الإشارة اللفظية والتحقق الدلالي."` | — |
+| [SRC-914817100D-L000006](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L6) | 6 | `""` | — |
+| [SRC-914817100D-L000007](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L7) | 7 | `"## خط الأساس الذي تمت مراجعته"` | — |
+| [SRC-914817100D-L000008](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L8) | 8 | `""` | — |
+| [SRC-914817100D-L000009](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L9) | 9 | ``"- الفرع المرجعي: `main`"`` | — |
+| [SRC-914817100D-L000010](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L10) | 10 | ``"- Commit المرجع الذي تمت مراجعته: `aa42c52c5c98a7788de91269e3d8b51542483a6b` (دمج PR #104)."`` | — |
+| [SRC-914817100D-L000011](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L11) | 11 | `"- نقطة الضعف المؤكدة في الاختبار السابق: اختبار المقارنة المركبة كان يتحقق من أن الخطة عميقة وتحتوي أكثر من استعلام، وأن محاور السعر والبطارية والكاميرا استُخرجت، لكنه كان يقبل إجابة اختبارية قصيرة «مقارنة أولية [المصدر 1]» مع توثيق صريح بأن التغطية لم تُقيّم آليًا. لذلك لم يكن الاختبار يثبت أن كل محور حصل على بحث مخصص أو أن لكل محور إشارة مصدر."` | — |
+| [SRC-914817100D-L000012](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L12) | 12 | `"- توجد بالفعل مراجعة للنموذج ومحاولة إصلاح تغطية محدودة وفحص استشهادات. لا ينبغي إعادة بناء هذه الأجزاء أو وصفها بأنها غير موجودة؛ التغيير يعالج الفجوة المحددة في تخصيص الاستعلامات وتشخيص الأدلة لكل محور."` | — |
+| [SRC-914817100D-L000013](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L13) | 13 | `""` | — |
+| [SRC-914817100D-L000014](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L14) | 14 | `"## التغييرات في هذا الفرع"` | — |
+| [SRC-914817100D-L000015](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L15) | 15 | `""` | — |
+| [SRC-914817100D-L000016](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L16) | 16 | `"### 1. استعلامات مخصصة لكل معيار"` | — |
+| [SRC-914817100D-L000017](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L17) | 17 | `""` | — |
+| [SRC-914817100D-L000018](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L18) | 18 | ``"في البحث العميق التلقائي والبحث العميق المحدد من المستخدم، أصبحت المعايير الصريحة المستخرجة من السؤال تحصل على استعلامات مستقلة قبل الاستعلامات العامة مثل «المخاطر والقيود» أو «التحليل الحديث». تُحفظ مساحة للموضوع الأصلي واستعلام تخطيط واحد، ثم المعايير، ثم الاستعلامات العامة ضمن حد `MAX_PLAN_QUERIES`."`` | — |
+| [SRC-914817100D-L000019](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L19) | 19 | `""` | — |
+| [SRC-914817100D-L000020](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L20) | 20 | `"هذا تحسين في توزيع ميزانية البحث، وليس ضمانًا بأن المصادر ستحتوي على المعلومات المطلوبة. لا تُرفع الحدود ولا يُلغى التحقق من صلة النتائج."` | — |
+| [SRC-914817100D-L000021](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L21) | 21 | `""` | — |
+| [SRC-914817100D-L000022](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L22) | 22 | `"### 2. إشارة مصدر مستقلة لكل معيار"` | — |
+| [SRC-914817100D-L000023](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L23) | 23 | `""` | — |
+| [SRC-914817100D-L000024](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L24) | 24 | ``"يضيف `audit_answer_integrity` لكل معيار:"`` | — |
+| [SRC-914817100D-L000025](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L25) | 25 | `"- حالة الإشارة اللفظية في الإجابة."` | — |
+| [SRC-914817100D-L000026](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L26) | 26 | `"- حالة الإشارة اللفظية في نصوص المصادر."` | — |
+| [SRC-914817100D-L000027](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L27) | 27 | `"- أرقام المصادر التي ظهرت فيها الإشارة، ونوع النص المستخدم: نص صفحة مستخرجة أو مقتطف بحث أو عنوان."` | — |
+| [SRC-914817100D-L000028](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L28) | 28 | ``"- `source_evidence_gap_count` وعدد الفجوات على مستوى المصادر."`` | — |
+| [SRC-914817100D-L000029](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L29) | 29 | `""` | — |
+| [SRC-914817100D-L000030](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L30) | 30 | `"إذا ذكرت الإجابة محورًا دون وجود إشارة لفظية له في المصادر، فسيظهر ذلك كفجوة أدلة حتى لو ورد اسم المحور في الإجابة. هذا فحص استدلالي لفظي محدود؛ لا يثبت أن المصدر يدعم الادعاء ولا يثبت الاستلزام أو الحقيقة."` | — |
+| [SRC-914817100D-L000031](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L31) | 31 | `""` | — |
+| [SRC-914817100D-L000032](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L32) | 32 | `"### 3. اختبارات تراجعية"` | — |
+| [SRC-914817100D-L000033](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L33) | 33 | `""` | — |
+| [SRC-914817100D-L000034](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L34) | 34 | `"- توسيع اختبار المقارنة العربية المركبة للتحقق من وجود استعلامات تتضمن السعر والبطارية والكاميرا مع بقاء عدد الاستعلامات ضمن الحد."` | — |
+| [SRC-914817100D-L000035](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L35) | 35 | `"- إضافة اختبار يثبت أن ذكر «المساحة» في الإجابة لا يُحسب دليلًا من المصدر عندما لا يحتوي المصدر على إشارة للمساحة."` | — |
+| [SRC-914817100D-L000036](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L36) | 36 | `"- الإبقاء على التسميات الصريحة بأن الفحوص اللفظية ليست تحققًا دلاليًا أو تدقيقًا مستقلًا للحقيقة."` | — |
+| [SRC-914817100D-L000037](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L37) | 37 | `""` | — |
+| [SRC-914817100D-L000038](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L38) | 38 | `"## دورة الإجابة المستهدفة"` | — |
+| [SRC-914817100D-L000039](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L39) | 39 | `""` | — |
+| [SRC-914817100D-L000040](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L40) | 40 | `"1. استخراج معايير السؤال المحددة دون تحويل تعليمات الأسلوب إلى معايير موضوعية."` | — |
+| [SRC-914817100D-L000041](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L41) | 41 | `"2. إعداد استعلام مستقل لكل معيار ضمن ميزانية محدودة."` | — |
+| [SRC-914817100D-L000042](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L42) | 42 | `"3. جمع النتائج ورفض النتائج غير ذات الصلة وفق المرشحات الحالية."` | — |
+| [SRC-914817100D-L000043](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L43) | 43 | `"4. تسجيل إشارة المصدر لكل معيار منفصلة عن مجرد ذكره في الإجابة."` | — |
+| [SRC-914817100D-L000044](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L44) | 44 | `"5. توليد الإجابة ومراجعتها مقابل النصوص المتاحة."` | — |
+| [SRC-914817100D-L000045](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L45) | 45 | `"6. إعادة فحص المعايير والاستشهادات والأرقام، وإظهار الفجوات بدل إعلان الاكتمال بلا دليل."` | — |
+| [SRC-914817100D-L000046](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L46) | 46 | `"7. إذا بقيت الفجوة، فالإجابة الصحيحة هي التصريح بأن المعلومة غير متاحة/غير محسومة، لا اختلاقها."` | — |
+| [SRC-914817100D-L000047](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L47) | 47 | `""` | — |
+| [SRC-914817100D-L000048](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L48) | 48 | `"## بوابة القبول"` | — |
+| [SRC-914817100D-L000049](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L49) | 49 | `""` | — |
+| [SRC-914817100D-L000050](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L50) | 50 | `"\| البند \| دليل القبول المطلوب \|"` | — |
+| [SRC-914817100D-L000051](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L51) | 51 | `"\|---\|---\|"` | — |
+| [SRC-914817100D-L000052](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L52) | 52 | `"\| حفظ المحاور \| كل معيار صريح محفوظ في تقرير التغطية \|"` | — |
+| [SRC-914817100D-L000053](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L53) | 53 | `"\| بحث لكل معيار \| استعلام منفصل لكل معيار ضمن حد الاستعلامات \|"` | — |
+| [SRC-914817100D-L000054](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L54) | 54 | `"\| أدلة لكل معيار \| إشارة مصدر مستقلة عن وجود الكلمات في الإجابة \|"` | — |
+| [SRC-914817100D-L000055](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L55) | 55 | `"\| صدق الحالة \| لا تتحول الإشارة اللفظية إلى ادعاء تحقق دلالي \|"` | — |
+| [SRC-914817100D-L000056](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L56) | 56 | `"\| الاستشهادات \| لا تُقبل مؤشرات مصدر خارج نطاق المصادر المرسلة للنموذج \|"` | — |
+| [SRC-914817100D-L000057](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L57) | 57 | `"\| فجوات الأدلة \| تظهر المحاور التي لا توجد لها إشارات مصدر \|"` | — |
+| [SRC-914817100D-L000058](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L58) | 58 | `"\| الموارد \| حدود الاستعلامات والصفحات والميزانية تبقى نافذة \|"` | — |
+| [SRC-914817100D-L000059](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L59) | 59 | `"\| عدم التراجع \| الاختبارات الحالية واختبارات القبول الجديدة تنجح على CI \|"` | — |
+| [SRC-914817100D-L000060](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L60) | 60 | `"\| الاستضافة \| إعادة اختبار حي على عنوان الاستضافة الصحيح ونسخة البناء الفعلية بعد موافقة منفصلة \|"` | — |
+| [SRC-914817100D-L000061](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L61) | 61 | `""` | — |
+| [SRC-914817100D-L000062](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L62) | 62 | `"## الحالة الصادقة"` | — |
+| [SRC-914817100D-L000063](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L63) | 63 | `""` | — |
+| [SRC-914817100D-L000064](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L64) | 64 | `"- **FIXED_IN_BRANCH:** إضافة استعلامات حسب المعايير في مساري البحث العميق، وإضافة تقرير إشارات المصادر لكل معيار، واختبارات تراجعية."` | — |
+| [SRC-914817100D-L000065](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L65) | 65 | `"- **CI:** لا تُعلن ناجحة حتى يظهر تشغيل GitHub Actions ناجحًا على رأس هذا الفرع."` | — |
+| [SRC-914817100D-L000066](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L66) | 66 | `"- **HOSTED_ACCEPTANCE:** لم يُنفّذ في هذا التغيير؛ لا يوجد في هذا التقرير عنوان استضافة تم التحقق منه ولا دليل على نشر هذا الفرع."` | — |
+| [SRC-914817100D-L000067](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L67) | 67 | `"- **SEMANTIC_COMPLETENESS:** لا يزال غير مثبت آليًا. تظل إشارات الكلمات أدوات تشخيص، وليست شهادة أن كل مطلب أُجيب عنه بدقة."` | — |
+| [SRC-914817100D-L000068](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L68) | 68 | `"- **MERGE/DEPLOY:** يحتاجان إلى موافقة المستخدم؛ لا يُنفذان ضمن هذا الإصلاح."` | — |
+| [SRC-914817100D-L000069](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L69) | 69 | `""` | — |
+| [SRC-914817100D-L000070](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L70) | 70 | `"## المراجع"` | — |
+| [SRC-914817100D-L000071](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L71) | 71 | `""` | — |
+| [SRC-914817100D-L000072](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L72) | 72 | ``"- `agents/web_agent.py`"`` | — |
+| [SRC-914817100D-L000073](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L73) | 73 | ``"- `agents/answer_validation.py`"`` | — |
+| [SRC-914817100D-L000074](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L74) | 74 | ``"- `tests/test_intent_router_integration.py`"`` | — |
+| [SRC-914817100D-L000075](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L75) | 75 | ``"- `tests/test_answer_validation.py`"`` | — |
 ## وثائق وفهرسة
 
 ### FILE-C7C7FA8853 — [docs/DEPLOY_RAILWAY_AR.md](../DEPLOY_RAILWAY_AR.md#L1)
@@ -786,78 +870,3 @@
 | [SRC-E599346ABE-L000365](../generate_index.py#L365) | 365 | `"    } or suffix in {\".yml\", \".yaml\", \".toml\", \".ini\", \".cfg\", \".json\", \".jsonl\", \".xml\"}:"` | — |
 | [SRC-E599346ABE-L000366](../generate_index.py#L366) | 366 | `"        return \"إعدادات وتشغيل\""` | — |
 | [SRC-E599346ABE-L000367](../generate_index.py#L367) | 367 | `"    if suffix in {\".md\", \".rst\", \".txt\"}:"` | — |
-| [SRC-E599346ABE-L000368](../generate_index.py#L368) | 368 | `"        return \"وثائق ونصوص\""` | — |
-| [SRC-E599346ABE-L000369](../generate_index.py#L369) | 369 | `"    return \"ملفات أخرى\""` | — |
-| [SRC-E599346ABE-L000370](../generate_index.py#L370) | 370 | `""` | — |
-| [SRC-E599346ABE-L000371](../generate_index.py#L371) | 371 | `""` | — |
-| [SRC-E599346ABE-L000372](../generate_index.py#L372) | 372 | `"def discover_repository_files(root: Path) -> list[Path]:"` | — |
-| [SRC-E599346ABE-L000373](../generate_index.py#L373) | 373 | `"    \"\"\"Return the stable file inventory, excluding the generated index and runtime data.\"\"\""` | — |
-| [SRC-E599346ABE-L000374](../generate_index.py#L374) | 374 | `"    discovered: list[Path] = []"` | — |
-| [SRC-E599346ABE-L000375](../generate_index.py#L375) | 375 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
-| [SRC-E599346ABE-L000376](../generate_index.py#L376) | 376 | `"        root,"` | — |
-| [SRC-E599346ABE-L000377](../generate_index.py#L377) | 377 | `"        topdown=True,"` | — |
-| [SRC-E599346ABE-L000378](../generate_index.py#L378) | 378 | `"        followlinks=False,"` | — |
-| [SRC-E599346ABE-L000379](../generate_index.py#L379) | 379 | `"    ):"` | — |
-| [SRC-E599346ABE-L000380](../generate_index.py#L380) | 380 | `"        directory_names[:] = sorted("` | — |
-| [SRC-E599346ABE-L000381](../generate_index.py#L381) | 381 | `"            name"` | — |
-| [SRC-E599346ABE-L000382](../generate_index.py#L382) | 382 | `"            for name in directory_names"` | — |
-| [SRC-E599346ABE-L000383](../generate_index.py#L383) | 383 | `"            if name not in EXCLUDED_DIRECTORIES"` | — |
-| [SRC-E599346ABE-L000384](../generate_index.py#L384) | 384 | `"            and not name.lower().endswith((\".egg-info\", \".dist-info\"))"` | — |
-| [SRC-E599346ABE-L000385](../generate_index.py#L385) | 385 | `"            and not (Path(current_directory) / name).is_symlink()"` | — |
-| [SRC-E599346ABE-L000386](../generate_index.py#L386) | 386 | `"        )"` | — |
-| [SRC-E599346ABE-L000387](../generate_index.py#L387) | 387 | `"        for file_name in sorted(file_names):"` | — |
-| [SRC-E599346ABE-L000388](../generate_index.py#L388) | 388 | `"            candidate = Path(current_directory) / file_name"` | — |
-| [SRC-E599346ABE-L000389](../generate_index.py#L389) | 389 | `"            if candidate.is_symlink() or _is_sensitive_or_runtime_path(candidate):"` | — |
-| [SRC-E599346ABE-L000390](../generate_index.py#L390) | 390 | `"                continue"` | — |
-| [SRC-E599346ABE-L000391](../generate_index.py#L391) | 391 | `"            relative_file = candidate.relative_to(root).as_posix()"` | — |
-| [SRC-E599346ABE-L000392](../generate_index.py#L392) | 392 | `"            if ("` | — |
-| [SRC-E599346ABE-L000393](../generate_index.py#L393) | 393 | `"                relative_file in INDEX_OUTPUT_PATHS"` | — |
-| [SRC-E599346ABE-L000394](../generate_index.py#L394) | 394 | `"                or relative_file.startswith(SOURCE_LINES_PAGES_DIR + \"/\")"` | — |
-| [SRC-E599346ABE-L000395](../generate_index.py#L395) | 395 | `"            ):"` | — |
-| [SRC-E599346ABE-L000396](../generate_index.py#L396) | 396 | `"                # Exclude generated index outputs to prevent self-indexing loops."` | — |
-| [SRC-E599346ABE-L000397](../generate_index.py#L397) | 397 | `"                continue"` | — |
-| [SRC-E599346ABE-L000398](../generate_index.py#L398) | 398 | `"            discovered.append(candidate)"` | — |
-| [SRC-E599346ABE-L000399](../generate_index.py#L399) | 399 | `""` | — |
-| [SRC-E599346ABE-L000400](../generate_index.py#L400) | 400 | `"    return sorted("` | — |
-| [SRC-E599346ABE-L000401](../generate_index.py#L401) | 401 | `"        discovered,"` | — |
-| [SRC-E599346ABE-L000402](../generate_index.py#L402) | 402 | `"        key=lambda path: path.relative_to(root).as_posix().casefold(),"` | — |
-| [SRC-E599346ABE-L000403](../generate_index.py#L403) | 403 | `"    )"` | — |
-| [SRC-E599346ABE-L000404](../generate_index.py#L404) | 404 | `""` | — |
-| [SRC-E599346ABE-L000405](../generate_index.py#L405) | 405 | `""` | — |
-| [SRC-E599346ABE-L000406](../generate_index.py#L406) | 406 | `"def _read_text_bounded(path: Path) -> str \| None:"` | — |
-| [SRC-E599346ABE-L000407](../generate_index.py#L407) | 407 | `"    \"\"\"Read supported UTF-8 text files only when they are within the scan-size bound.\"\"\""` | — |
-| [SRC-E599346ABE-L000408](../generate_index.py#L408) | 408 | `"    try:"` | — |
-| [SRC-E599346ABE-L000409](../generate_index.py#L409) | 409 | `"        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:"` | — |
-| [SRC-E599346ABE-L000410](../generate_index.py#L410) | 410 | `"            return None"` | — |
-| [SRC-E599346ABE-L000411](../generate_index.py#L411) | 411 | `"        if path.suffix.lower() == \".py\":"` | — |
-| [SRC-E599346ABE-L000412](../generate_index.py#L412) | 412 | `"            with tokenize.open(str(path)) as source_stream:"` | — |
-| [SRC-E599346ABE-L000413](../generate_index.py#L413) | 413 | `"                text = source_stream.read()"` | — |
-| [SRC-E599346ABE-L000414](../generate_index.py#L414) | 414 | `"        else:"` | — |
-| [SRC-E599346ABE-L000415](../generate_index.py#L415) | 415 | `"            text = path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-E599346ABE-L000416](../generate_index.py#L416) | 416 | `"        if \"\\x00\" in text:"` | — |
-| [SRC-E599346ABE-L000417](../generate_index.py#L417) | 417 | `"            return None"` | — |
-| [SRC-E599346ABE-L000418](../generate_index.py#L418) | 418 | `"        return text"` | — |
-| [SRC-E599346ABE-L000419](../generate_index.py#L419) | 419 | `"    except (OSError, UnicodeError, LookupError, tokenize.TokenError):"` | — |
-| [SRC-E599346ABE-L000420](../generate_index.py#L420) | 420 | `"        return None"` | — |
-| [SRC-E599346ABE-L000421](../generate_index.py#L421) | 421 | `""` | — |
-| [SRC-E599346ABE-L000422](../generate_index.py#L422) | 422 | `""` | — |
-| [SRC-E599346ABE-L000423](../generate_index.py#L423) | 423 | `"def _count_lines(text: str) -> int:"` | — |
-| [SRC-E599346ABE-L000424](../generate_index.py#L424) | 424 | `"    \"\"\"Count source lines without adding an extra line for a trailing newline.\"\"\""` | — |
-| [SRC-E599346ABE-L000425](../generate_index.py#L425) | 425 | `"    if not text:"` | — |
-| [SRC-E599346ABE-L000426](../generate_index.py#L426) | 426 | `"        return 0"` | — |
-| [SRC-E599346ABE-L000427](../generate_index.py#L427) | 427 | `"    return text.count(\"\\n\") + (not text.endswith(\"\\n\"))"` | — |
-| [SRC-E599346ABE-L000428](../generate_index.py#L428) | 428 | `""` | — |
-| [SRC-E599346ABE-L000429](../generate_index.py#L429) | 429 | `""` | — |
-| [SRC-E599346ABE-L000430](../generate_index.py#L430) | 430 | `"def _file_type(path: Path) -> str:"` | — |
-| [SRC-E599346ABE-L000431](../generate_index.py#L431) | 431 | `"    \"\"\"Return a readable file type based on a known filename or extension.\"\"\""` | — |
-| [SRC-E599346ABE-L000432](../generate_index.py#L432) | 432 | `"    name = path.name.lower()"` | — |
-| [SRC-E599346ABE-L000433](../generate_index.py#L433) | 433 | `"    if name in {\"dockerfile\", \"makefile\", \"procfile\"}:"` | — |
-| [SRC-E599346ABE-L000434](../generate_index.py#L434) | 434 | `"        return name.capitalize()"` | — |
-| [SRC-E599346ABE-L000435](../generate_index.py#L435) | 435 | `"    suffix = path.suffix.lower()"` | — |
-| [SRC-E599346ABE-L000436](../generate_index.py#L436) | 436 | `"    labels = {"` | — |
-| [SRC-E599346ABE-L000437](../generate_index.py#L437) | 437 | `"        \".py\": \"Python\","` | — |
-| [SRC-E599346ABE-L000438](../generate_index.py#L438) | 438 | `"        \".html\": \"HTML\","` | — |
-| [SRC-E599346ABE-L000439](../generate_index.py#L439) | 439 | `"        \".htm\": \"HTML\","` | — |
-| [SRC-E599346ABE-L000440](../generate_index.py#L440) | 440 | `"        \".js\": \"JavaScript\","` | — |
-| [SRC-E599346ABE-L000441](../generate_index.py#L441) | 441 | `"        \".mjs\": \"JavaScript module\","` | — |
-| [SRC-E599346ABE-L000442](../generate_index.py#L442) | 442 | `"        \".cjs\": \"CommonJS\","` | — |

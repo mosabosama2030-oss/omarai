@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002519 إلى SRC-F725E90B2A-L003318
+- النطاق: SRC-F725E90B2A-L002444 إلى SRC-F725E90B2A-L003243
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,81 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002444](../../tests/test_web_agent.py#L2444) | 2444 | `""` | — |
+| [SRC-F725E90B2A-L002445](../../tests/test_web_agent.py#L2445) | 2445 | `"    check = report[\"checks\"][\"web_search\"]"` | — |
+| [SRC-F725E90B2A-L002446](../../tests/test_web_agent.py#L2446) | 2446 | `"    assert check[\"status\"] == \"degraded\""` | — |
+| [SRC-F725E90B2A-L002447](../../tests/test_web_agent.py#L2447) | 2447 | `"    assert check[\"result_count\"] == 0"` | — |
+| [SRC-F725E90B2A-L002448](../../tests/test_web_agent.py#L2448) | 2448 | `"    assert check[\"completed_connector_responses\"] >= 1"` | — |
+| [SRC-F725E90B2A-L002449](../../tests/test_web_agent.py#L2449) | 2449 | `"    assert \"completed a request\" in check[\"note\"]"` | — |
+| [SRC-F725E90B2A-L002450](../../tests/test_web_agent.py#L2450) | 2450 | `"    assert \"old_provider\" not in str(check)"` | — |
+| [SRC-F725E90B2A-L002451](../../tests/test_web_agent.py#L2451) | 2451 | `""` | — |
+| [SRC-F725E90B2A-L002452](../../tests/test_web_agent.py#L2452) | 2452 | `""` | — |
+| [SRC-F725E90B2A-L002453](../../tests/test_web_agent.py#L2453) | 2453 | `"def test_buyer_intent_phrase_inside_negated_text_is_not_a_lead_signal():"` | — |
+| [SRC-F725E90B2A-L002454](../../tests/test_web_agent.py#L2454) | 2454 | `"    source = {"` | — |
+| [SRC-F725E90B2A-L002455](../../tests/test_web_agent.py#L2455) | 2455 | `"        \"title\": \"Buyer discussion\","` | — |
+| [SRC-F725E90B2A-L002456](../../tests/test_web_agent.py#L2456) | 2456 | `"        \"snippet\": \"I am not looking to buy an apartment this year.\","` | — |
+| [SRC-F725E90B2A-L002457](../../tests/test_web_agent.py#L2457) | 2457 | `"        \"page_text\": \"I am not looking to buy an apartment this year.\","` | — |
+| [SRC-F725E90B2A-L002458](../../tests/test_web_agent.py#L2458) | 2458 | `"    }"` | — |
+| [SRC-F725E90B2A-L002459](../../tests/test_web_agent.py#L2459) | 2459 | `"    assert WebAgent._lead_intent_evidence(source) is None"` | — |
+| [SRC-F725E90B2A-L002460](../../tests/test_web_agent.py#L2460) | 2460 | `""` | — |
+| [SRC-F725E90B2A-L002461](../../tests/test_web_agent.py#L2461) | 2461 | `""` | — |
+| [SRC-F725E90B2A-L002462](../../tests/test_web_agent.py#L2462) | 2462 | `""` | — |
+| [SRC-F725E90B2A-L002463](../../tests/test_web_agent.py#L2463) | 2463 | `"def test_lead_generation_preserves_unknown_state_when_research_throws(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002464](../../tests/test_web_agent.py#L2464) | 2464 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002465](../../tests/test_web_agent.py#L2465) | 2465 | `"    question = \"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر\""` | — |
+| [SRC-F725E90B2A-L002466](../../tests/test_web_agent.py#L2466) | 2466 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L002467](../../tests/test_web_agent.py#L2467) | 2467 | `"        \"queries\": [question],"` | — |
+| [SRC-F725E90B2A-L002468](../../tests/test_web_agent.py#L2468) | 2468 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L002469](../../tests/test_web_agent.py#L2469) | 2469 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L002470](../../tests/test_web_agent.py#L2470) | 2470 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L002471](../../tests/test_web_agent.py#L2471) | 2471 | `"        \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L002472](../../tests/test_web_agent.py#L2472) | 2472 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L002473](../../tests/test_web_agent.py#L2473) | 2473 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L002474](../../tests/test_web_agent.py#L2474) | 2474 | `"    }"` | — |
+| [SRC-F725E90B2A-L002475](../../tests/test_web_agent.py#L2475) | 2475 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda q, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L002476](../../tests/test_web_agent.py#L2476) | 2476 | `""` | — |
+| [SRC-F725E90B2A-L002477](../../tests/test_web_agent.py#L2477) | 2477 | `"    def fail_research(research_plan):"` | — |
+| [SRC-F725E90B2A-L002478](../../tests/test_web_agent.py#L2478) | 2478 | `"        raise RuntimeError(\"mocked interrupted research\")"` | — |
+| [SRC-F725E90B2A-L002479](../../tests/test_web_agent.py#L2479) | 2479 | `""` | — |
+| [SRC-F725E90B2A-L002480](../../tests/test_web_agent.py#L2480) | 2480 | `"    monkeypatch.setattr(agent, \"_collect_research\", fail_research)"` | — |
+| [SRC-F725E90B2A-L002481](../../tests/test_web_agent.py#L2481) | 2481 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L002482](../../tests/test_web_agent.py#L2482) | 2482 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L002483](../../tests/test_web_agent.py#L2483) | 2483 | `"        \"_generate\","` | — |
+| [SRC-F725E90B2A-L002484](../../tests/test_web_agent.py#L2484) | 2484 | `"        lambda *args, **kwargs: (_ for _ in ()).throw("` | — |
+| [SRC-F725E90B2A-L002485](../../tests/test_web_agent.py#L2485) | 2485 | `"            AssertionError(\"must not generate a lead from an incomplete search\")"` | — |
+| [SRC-F725E90B2A-L002486](../../tests/test_web_agent.py#L2486) | 2486 | `"        ),"` | — |
+| [SRC-F725E90B2A-L002487](../../tests/test_web_agent.py#L2487) | 2487 | `"    )"` | — |
+| [SRC-F725E90B2A-L002488](../../tests/test_web_agent.py#L2488) | 2488 | `""` | — |
+| [SRC-F725E90B2A-L002489](../../tests/test_web_agent.py#L2489) | 2489 | `"    result = agent.answer(question)"` | — |
+| [SRC-F725E90B2A-L002490](../../tests/test_web_agent.py#L2490) | 2490 | `"    lead = result[\"search_report\"][\"lead_generation\"]"` | — |
+| [SRC-F725E90B2A-L002491](../../tests/test_web_agent.py#L2491) | 2491 | `""` | — |
+| [SRC-F725E90B2A-L002492](../../tests/test_web_agent.py#L2492) | 2492 | `"    assert lead[\"status\"] == \"research_incomplete\""` | — |
+| [SRC-F725E90B2A-L002493](../../tests/test_web_agent.py#L2493) | 2493 | `"    assert lead[\"candidate_signal_count\"] is None"` | — |
+| [SRC-F725E90B2A-L002494](../../tests/test_web_agent.py#L2494) | 2494 | `"    assert lead[\"related_results_reviewed\"] is None"` | — |
+| [SRC-F725E90B2A-L002495](../../tests/test_web_agent.py#L2495) | 2495 | `"    assert result[\"search_report\"][\"usable_sources_after_filtering\"] is None"` | — |
+| [SRC-F725E90B2A-L002496](../../tests/test_web_agent.py#L2496) | 2496 | `"    assert result[\"search_report\"][\"evidence_signals\"] is None"` | — |
+| [SRC-F725E90B2A-L002497](../../tests/test_web_agent.py#L2497) | 2497 | `"    assert \"لم أستطع تحديد\" in result[\"answer\"] or \"تعطل مسار البحث\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L002498](../../tests/test_web_agent.py#L2498) | 2498 | `""` | — |
+| [SRC-F725E90B2A-L002499](../../tests/test_web_agent.py#L2499) | 2499 | `""` | — |
+| [SRC-F725E90B2A-L002500](../../tests/test_web_agent.py#L2500) | 2500 | `""` | — |
+| [SRC-F725E90B2A-L002501](../../tests/test_web_agent.py#L2501) | 2501 | `"def test_local_answer_exposes_request_budget_without_claiming_live_search():"` | — |
+| [SRC-F725E90B2A-L002502](../../tests/test_web_agent.py#L2502) | 2502 | `"    result = WebAgent().answer(\"مرحبا\")"` | — |
+| [SRC-F725E90B2A-L002503](../../tests/test_web_agent.py#L2503) | 2503 | `""` | — |
+| [SRC-F725E90B2A-L002504](../../tests/test_web_agent.py#L2504) | 2504 | `"    budget = result[\"request_budget\"]"` | — |
+| [SRC-F725E90B2A-L002505](../../tests/test_web_agent.py#L2505) | 2505 | `"    assert budget[\"policy\"] == \"cooperative_per_request_budget\""` | — |
+| [SRC-F725E90B2A-L002506](../../tests/test_web_agent.py#L2506) | 2506 | `"    assert budget[\"counts\"][\"search_queries\"] == 0"` | — |
+| [SRC-F725E90B2A-L002507](../../tests/test_web_agent.py#L2507) | 2507 | `"    assert budget[\"counts\"][\"model_calls\"] == 0"` | — |
+| [SRC-F725E90B2A-L002508](../../tests/test_web_agent.py#L2508) | 2508 | `"    assert budget[\"hard_cancellation_guaranteed\"] is False"` | — |
+| [SRC-F725E90B2A-L002509](../../tests/test_web_agent.py#L2509) | 2509 | `""` | — |
+| [SRC-F725E90B2A-L002510](../../tests/test_web_agent.py#L2510) | 2510 | `""` | — |
+| [SRC-F725E90B2A-L002511](../../tests/test_web_agent.py#L2511) | 2511 | `"@pytest.mark.parametrize("` | — |
+| [SRC-F725E90B2A-L002512](../../tests/test_web_agent.py#L2512) | 2512 | `"    \"draft_answer\","` | — |
+| [SRC-F725E90B2A-L002513](../../tests/test_web_agent.py#L2513) | 2513 | `"    ["` | — |
+| [SRC-F725E90B2A-L002514](../../tests/test_web_agent.py#L2514) | 2514 | `"        \"وفق المقارنة، الخيار الأول أفضل من الثاني.\","` | — |
+| [SRC-F725E90B2A-L002515](../../tests/test_web_agent.py#L2515) | 2515 | `"        \"وفق المقارنة، الخيار الأول أفضل من الثاني [المصدر 99].\","` | — |
+| [SRC-F725E90B2A-L002516](../../tests/test_web_agent.py#L2516) | 2516 | `"    ],"` | — |
+| [SRC-F725E90B2A-L002517](../../tests/test_web_agent.py#L2517) | 2517 | `")"` | — |
+| [SRC-F725E90B2A-L002518](../../tests/test_web_agent.py#L2518) | 2518 | `"def test_reviewed_answer_without_valid_citations_cannot_be_rated_good("` | — |
 | [SRC-F725E90B2A-L002519](../../tests/test_web_agent.py#L2519) | 2519 | `"    monkeypatch, draft_answer"` | — |
 | [SRC-F725E90B2A-L002520](../../tests/test_web_agent.py#L2520) | 2520 | `"):"` | — |
 | [SRC-F725E90B2A-L002521](../../tests/test_web_agent.py#L2521) | 2521 | `"    agent = WebAgent()"` | — |
@@ -741,78 +816,3 @@
 | [SRC-F725E90B2A-L003241](../../tests/test_web_agent.py#L3241) | 3241 | `"            ("` | — |
 | [SRC-F725E90B2A-L003242](../../tests/test_web_agent.py#L3242) | 3242 | `"                \"ما عيوب السيارات الكهربائية المستعملة في مصر؟ \""` | — |
 | [SRC-F725E90B2A-L003243](../../tests/test_web_agent.py#L3243) | 3243 | `"                \"اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز.\""` | — |
-| [SRC-F725E90B2A-L003244](../../tests/test_web_agent.py#L3244) | 3244 | `"            ),"` | — |
-| [SRC-F725E90B2A-L003245](../../tests/test_web_agent.py#L3245) | 3245 | `"            None,"` | — |
-| [SRC-F725E90B2A-L003246](../../tests/test_web_agent.py#L3246) | 3246 | `"        ),"` | — |
-| [SRC-F725E90B2A-L003247](../../tests/test_web_agent.py#L3247) | 3247 | `"        ("` | — |
-| [SRC-F725E90B2A-L003248](../../tests/test_web_agent.py#L3248) | 3248 | `"            \"كام سعرها؟ اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز.\","` | — |
-| [SRC-F725E90B2A-L003249](../../tests/test_web_agent.py#L3249) | 3249 | `"            \"أسعار السيارات الكهربائية المستعملة في مصر\","` | — |
-| [SRC-F725E90B2A-L003250](../../tests/test_web_agent.py#L3250) | 3250 | `"        ),"` | — |
-| [SRC-F725E90B2A-L003251](../../tests/test_web_agent.py#L3251) | 3251 | `"    ],"` | — |
-| [SRC-F725E90B2A-L003252](../../tests/test_web_agent.py#L3252) | 3252 | `")"` | — |
-| [SRC-F725E90B2A-L003253](../../tests/test_web_agent.py#L3253) | 3253 | `"def test_server_search_sources_use_compact_question_and_topic_plan("` | — |
-| [SRC-F725E90B2A-L003254](../../tests/test_web_agent.py#L3254) | 3254 | `"    monkeypatch, question, planned_query"` | — |
-| [SRC-F725E90B2A-L003255](../../tests/test_web_agent.py#L3255) | 3255 | `"):"` | — |
-| [SRC-F725E90B2A-L003256](../../tests/test_web_agent.py#L3256) | 3256 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L003257](../../tests/test_web_agent.py#L3257) | 3257 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L003258](../../tests/test_web_agent.py#L3258) | 3258 | `"    topic_query = planned_query or compact_search_query(question)"` | — |
-| [SRC-F725E90B2A-L003259](../../tests/test_web_agent.py#L3259) | 3259 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L003260](../../tests/test_web_agent.py#L3260) | 3260 | `"        \"queries\": [topic_query],"` | — |
-| [SRC-F725E90B2A-L003261](../../tests/test_web_agent.py#L3261) | 3261 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L003262](../../tests/test_web_agent.py#L3262) | 3262 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L003263](../../tests/test_web_agent.py#L3263) | 3263 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L003264](../../tests/test_web_agent.py#L3264) | 3264 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L003265](../../tests/test_web_agent.py#L3265) | 3265 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L003266](../../tests/test_web_agent.py#L3266) | 3266 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L003267](../../tests/test_web_agent.py#L3267) | 3267 | `"    }"` | — |
-| [SRC-F725E90B2A-L003268](../../tests/test_web_agent.py#L3268) | 3268 | `"    source_queries = []"` | — |
-| [SRC-F725E90B2A-L003269](../../tests/test_web_agent.py#L3269) | 3269 | `""` | — |
-| [SRC-F725E90B2A-L003270](../../tests/test_web_agent.py#L3270) | 3270 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda _question, _history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L003271](../../tests/test_web_agent.py#L3271) | 3271 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L003272](../../tests/test_web_agent.py#L3272) | 3272 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L003273](../../tests/test_web_agent.py#L3273) | 3273 | `"        lambda research_plan: ([sample_source(0), sample_source(1)], [], {"` | — |
-| [SRC-F725E90B2A-L003274](../../tests/test_web_agent.py#L3274) | 3274 | `"            \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L003275](../../tests/test_web_agent.py#L3275) | 3275 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L003276](../../tests/test_web_agent.py#L3276) | 3276 | `"            \"query_results\": [],"` | — |
-| [SRC-F725E90B2A-L003277](../../tests/test_web_agent.py#L3277) | 3277 | `"            \"unique_sources\": 2,"` | — |
-| [SRC-F725E90B2A-L003278](../../tests/test_web_agent.py#L3278) | 3278 | `"            \"pages_fetched\": 2,"` | — |
-| [SRC-F725E90B2A-L003279](../../tests/test_web_agent.py#L3279) | 3279 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L003280](../../tests/test_web_agent.py#L3280) | 3280 | `"            \"platform_counts\": {\"web\": 2},"` | — |
-| [SRC-F725E90B2A-L003281](../../tests/test_web_agent.py#L3281) | 3281 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L003282](../../tests/test_web_agent.py#L3282) | 3282 | `"            \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L003283](../../tests/test_web_agent.py#L3283) | 3283 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L003284](../../tests/test_web_agent.py#L3284) | 3284 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L003285](../../tests/test_web_agent.py#L3285) | 3285 | `"        }),"` | — |
-| [SRC-F725E90B2A-L003286](../../tests/test_web_agent.py#L3286) | 3286 | `"    )"` | — |
-| [SRC-F725E90B2A-L003287](../../tests/test_web_agent.py#L3287) | 3287 | `""` | — |
-| [SRC-F725E90B2A-L003288](../../tests/test_web_agent.py#L3288) | 3288 | `"    def generate(*args, **kwargs):"` | — |
-| [SRC-F725E90B2A-L003289](../../tests/test_web_agent.py#L3289) | 3289 | `"        agent.server_search_sources = [{"` | — |
-| [SRC-F725E90B2A-L003290](../../tests/test_web_agent.py#L3290) | 3290 | `"            \"title\": \"تجارب السيارات الكهربائية المستعملة\","` | — |
-| [SRC-F725E90B2A-L003291](../../tests/test_web_agent.py#L3291) | 3291 | `"            \"url\": \"https://example.org/ev-used-cars\","` | — |
-| [SRC-F725E90B2A-L003292](../../tests/test_web_agent.py#L3292) | 3292 | `"            \"snippet\": \"تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر\","` | — |
-| [SRC-F725E90B2A-L003293](../../tests/test_web_agent.py#L3293) | 3293 | `"            \"page_text\": \"تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر\","` | — |
-| [SRC-F725E90B2A-L003294](../../tests/test_web_agent.py#L3294) | 3294 | `"            \"page_fetched\": False,"` | — |
-| [SRC-F725E90B2A-L003295](../../tests/test_web_agent.py#L3295) | 3295 | `"            \"provider\": \"openrouter_web_search\","` | — |
-| [SRC-F725E90B2A-L003296](../../tests/test_web_agent.py#L3296) | 3296 | `"            \"providers\": [\"openrouter_web_search\"],"` | — |
-| [SRC-F725E90B2A-L003297](../../tests/test_web_agent.py#L3297) | 3297 | `"            \"queries\": [],"` | — |
-| [SRC-F725E90B2A-L003298](../../tests/test_web_agent.py#L3298) | 3298 | `"            \"domain\": \"example.org\","` | — |
-| [SRC-F725E90B2A-L003299](../../tests/test_web_agent.py#L3299) | 3299 | `"            \"source_class\": \"general\","` | — |
-| [SRC-F725E90B2A-L003300](../../tests/test_web_agent.py#L3300) | 3300 | `"            \"platform\": \"web\","` | — |
-| [SRC-F725E90B2A-L003301](../../tests/test_web_agent.py#L3301) | 3301 | `"            \"published_at\": \"\","` | — |
-| [SRC-F725E90B2A-L003302](../../tests/test_web_agent.py#L3302) | 3302 | `"        }]"` | — |
-| [SRC-F725E90B2A-L003303](../../tests/test_web_agent.py#L3303) | 3303 | `"        return \"إجابة مبدئية [المصدر 1].\""` | — |
-| [SRC-F725E90B2A-L003304](../../tests/test_web_agent.py#L3304) | 3304 | `""` | — |
-| [SRC-F725E90B2A-L003305](../../tests/test_web_agent.py#L3305) | 3305 | `"    monkeypatch.setattr(agent, \"_generate\", generate)"` | — |
-| [SRC-F725E90B2A-L003306](../../tests/test_web_agent.py#L3306) | 3306 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda _question, answer, _sources: answer)"` | — |
-| [SRC-F725E90B2A-L003307](../../tests/test_web_agent.py#L3307) | 3307 | `""` | — |
-| [SRC-F725E90B2A-L003308](../../tests/test_web_agent.py#L3308) | 3308 | `"    def capture_relevance(query, text):"` | — |
-| [SRC-F725E90B2A-L003309](../../tests/test_web_agent.py#L3309) | 3309 | `"        if \"تجارب السيارات الكهربائية المستعملة\" in text:"` | — |
-| [SRC-F725E90B2A-L003310](../../tests/test_web_agent.py#L3310) | 3310 | `"            source_queries.append(query)"` | — |
-| [SRC-F725E90B2A-L003311](../../tests/test_web_agent.py#L3311) | 3311 | `"            if planned_query and query != compact_search_query(topic_query):"` | — |
-| [SRC-F725E90B2A-L003312](../../tests/test_web_agent.py#L3312) | 3312 | `"                return 0.0"` | — |
-| [SRC-F725E90B2A-L003313](../../tests/test_web_agent.py#L3313) | 3313 | `"        return 0.25"` | — |
-| [SRC-F725E90B2A-L003314](../../tests/test_web_agent.py#L3314) | 3314 | `""` | — |
-| [SRC-F725E90B2A-L003315](../../tests/test_web_agent.py#L3315) | 3315 | `"    monkeypatch.setattr(\"agents.web_agent._relevance_ratio\", capture_relevance)"` | — |
-| [SRC-F725E90B2A-L003316](../../tests/test_web_agent.py#L3316) | 3316 | `""` | — |
-| [SRC-F725E90B2A-L003317](../../tests/test_web_agent.py#L3317) | 3317 | `"    agent.answer(question)"` | — |
-| [SRC-F725E90B2A-L003318](../../tests/test_web_agent.py#L3318) | 3318 | `""` | — |

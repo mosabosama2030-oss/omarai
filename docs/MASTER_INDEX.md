@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **81**
+- ملفات المستودع في الجرد: **82**
 - ملفات Python المحللة: **41**
 - تعريفات Python المفهرسة: **1040**
 - تعريفات Python موثقة بوجود Docstring: **198**
 - تعريفات Python بلا Docstring: **638**
 - تعريفات لا ينطبق عليها Docstring: **204**
-- الرموز الساكنة الإضافية: **1611**
-- الأسطر النصية المفهرسة حرفيًا: **27769**
+- الرموز الساكنة الإضافية: **1626**
+- الأسطر النصية المفهرسة حرفيًا: **27844**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -53,6 +53,7 @@
 | FILE-C4C6C55E1A | وثائق وفهرسة | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 35501 | 191 | جرد الملف + عناوين Markdown |
 | FILE-26428BDA96 | وثائق وفهرسة | [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 50328 | 262 | جرد الملف + عناوين Markdown |
 | FILE-160DC0B3E4 | وثائق وفهرسة | [docs/archive/README.md](archive/README.md#L1) | Markdown | 1021 | 8 | جرد الملف + عناوين Markdown |
+| FILE-914817100D | وثائق وفهرسة | [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1) | Markdown | 7398 | 75 | جرد الملف + عناوين Markdown |
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 5664 | 50 | جرد الملف + عناوين Markdown |
 | FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 7599 | 66 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 10804 | 107 | جرد الملف + عناوين Markdown |
@@ -1493,6 +1494,21 @@
 | [docs/archive/README.md](archive/README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 8 | [SRC-160DC0B3E4-L000008](archive/README.md#L8) |
 | [docs/archive/README.md](archive/README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 8 | [SRC-160DC0B3E4-L000008](archive/README.md#L8) |
 | [docs/archive/README.md](archive/README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 8 | [SRC-160DC0B3E4-L000008](archive/README.md#L8) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1) | عنوان Markdown (H1) | إصلاح حلقة الإجابة المركبة في Omarai — 27 أكتوبر 2026 | 1 | [SRC-914817100D-L000001](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L2) | عنوان Markdown (H2) | الغرض | 2 | [SRC-914817100D-L000002](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L2) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L6) | عنوان Markdown (H2) | خط الأساس الذي تمت مراجعته | 6 | [SRC-914817100D-L000006](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L6) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L13) | عنوان Markdown (H2) | التغييرات في هذا الفرع | 13 | [SRC-914817100D-L000013](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L13) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L15) | عنوان Markdown (H3) | 1. استعلامات مخصصة لكل معيار | 15 | [SRC-914817100D-L000015](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L15) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 18 | [SRC-914817100D-L000018](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L18) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L21) | عنوان Markdown (H3) | 2. إشارة مصدر مستقلة لكل معيار | 21 | [SRC-914817100D-L000021](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L21) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L31) | عنوان Markdown (H3) | 3. اختبارات تراجعية | 31 | [SRC-914817100D-L000031](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L31) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L37) | عنوان Markdown (H2) | دورة الإجابة المستهدفة | 37 | [SRC-914817100D-L000037](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L37) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L47) | عنوان Markdown (H2) | بوابة القبول | 47 | [SRC-914817100D-L000047](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L47) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L61) | عنوان Markdown (H2) | الحالة الصادقة | 61 | [SRC-914817100D-L000061](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L61) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_IN_BRANCH | 64 | [SRC-914817100D-L000064](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L64) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOSTED_ACCEPTANCE | 66 | [SRC-914817100D-L000066](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L66) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L67) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEMANTIC_COMPLETENESS | 67 | [SRC-914817100D-L000067](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L67) |
+| [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L69) | عنوان Markdown (H2) | المراجع | 69 | [SRC-914817100D-L000069](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L69) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على Railway — دليل عربي | 1 | [SRC-C7C7FA8853-L000001](DEPLOY_RAILWAY_AR.md#L1) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L4) | عنوان Markdown (H2) | المتطلبات | 4 | [SRC-C7C7FA8853-L000004](DEPLOY_RAILWAY_AR.md#L4) |
 | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L11) | عنوان Markdown (H2) | النشر | 11 | [SRC-C7C7FA8853-L000011](DEPLOY_RAILWAY_AR.md#L11) |
