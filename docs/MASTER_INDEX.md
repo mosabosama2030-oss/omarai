@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **81**
-- ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1045**
+- ملفات المستودع في الجرد: **82**
+- ملفات Python المحللة: **42**
+- تعريفات Python المفهرسة: **1052**
 - تعريفات Python موثقة بوجود Docstring: **202**
-- تعريفات Python بلا Docstring: **638**
-- تعريفات لا ينطبق عليها Docstring: **205**
-- الرموز الساكنة الإضافية: **1616**
-- الأسطر النصية المفهرسة حرفيًا: **27947**
+- تعريفات Python بلا Docstring: **644**
+- تعريفات لا ينطبق عليها Docstring: **206**
+- الرموز الساكنة الإضافية: **1617**
+- الأسطر النصية المفهرسة حرفيًا: **28081**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -101,6 +101,7 @@
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
+| FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 5534 | 134 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 15643 | 329 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
@@ -855,6 +856,13 @@
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L62) | دالة | test_a_foreign_site_is_still_refused | لا توجد Docstring. | ناقص | 62 | [SRC-B106ADC5EF-L000062](../tests/test_proxy_origin.py#L62) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L67) | دالة | test_configured_origin_still_works_without_any_proxy_headers | لا توجد Docstring. | ناقص | 67 | [SRC-B106ADC5EF-L000067](../tests/test_proxy_origin.py#L67) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L72) | دالة | test_spoofed_forwarded_host_cannot_add_an_unapproved_origin | A client-supplied X-Forwarded-Host must not expand the CORS allowlist. | موثق | 72 | [SRC-B106ADC5EF-L000072](../tests/test_proxy_origin.py#L72) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L15) | متغير/ثابت Python | QUESTION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-3D0DE98F65-L000015](../tests/test_question_requirement_loop.py#L15) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L18) | دالة | test_compound_question_extracts_each_explicit_criterion | لا توجد Docstring. | ناقص | 18 | [SRC-3D0DE98F65-L000018](../tests/test_question_requirement_loop.py#L18) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L22) | دالة | test_fallback_plan_assigns_a_bounded_query_to_every_criterion | لا توجد Docstring. | ناقص | 22 | [SRC-3D0DE98F65-L000022](../tests/test_question_requirement_loop.py#L22) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L31) | دالة | test_validated_model_plan_cannot_drop_mandatory_criterion_queries | لا توجد Docstring. | ناقص | 31 | [SRC-3D0DE98F65-L000031](../tests/test_question_requirement_loop.py#L31) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L49) | دالة | test_model_planner_cannot_replace_every_criterion_with_one_generic_query | لا توجد Docstring. | ناقص | 49 | [SRC-3D0DE98F65-L000049](../tests/test_question_requirement_loop.py#L49) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L73) | دالة | test_requirement_evidence_ledger_distinguishes_candidate_from_query_only_result | لا توجد Docstring. | ناقص | 73 | [SRC-3D0DE98F65-L000073](../tests/test_question_requirement_loop.py#L73) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L108) | دالة | test_answer_integrity_exposes_requirement_evidence_separately_from_word_overlap | لا توجد Docstring. | ناقص | 108 | [SRC-3D0DE98F65-L000108](../tests/test_question_requirement_loop.py#L108) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L9) | كلاس | FakeClock | لا توجد Docstring. | ناقص | 9 | [SRC-C353AAAC10-L000009](../tests/test_request_budget.py#L9) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L10) | دالة | FakeClock.__init__ | لا توجد Docstring. | ناقص | 10 | [SRC-C353AAAC10-L000010](../tests/test_request_budget.py#L10) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L13) | دالة | FakeClock.__call__ | لا توجد Docstring. | ناقص | 13 | [SRC-C353AAAC10-L000013](../tests/test_request_budget.py#L13) |
@@ -2410,6 +2418,7 @@
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 20 | [SRC-B106ADC5EF-L000020](../tests/test_proxy_origin.py#L20) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L35) | مسار API/واجهة محتمل | /api/ask | 35 | [SRC-B106ADC5EF-L000035](../tests/test_proxy_origin.py#L35) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_SHAPES | 47 | [SRC-B106ADC5EF-L000047](../tests/test_proxy_origin.py#L47) |
+| [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 7 | [SRC-3D0DE98F65-L000007](../tests/test_question_requirement_loop.py#L7) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 52 | [SRC-C353AAAC10-L000052](../tests/test_request_budget.py#L52) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 53 | [SRC-C353AAAC10-L000053](../tests/test_request_budget.py#L53) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 54 | [SRC-C353AAAC10-L000054](../tests/test_request_budget.py#L54) |
