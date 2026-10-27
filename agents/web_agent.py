@@ -4068,11 +4068,17 @@ class WebAgent:
                     query for query in criterion_queries
                     if query and _relevance_query_tokens(query)
                 ]
-                plan["queries"] = list(dict.fromkeys(
-                    (plan.get("queries") or [])[:2]
-                    + criterion_queries
-                    + deep_candidates
-                ))[:MAX_PLAN_QUERIES]
+                original_queries = [
+                    query for query in (plan.get("queries") or [])
+                    if isinstance(query, str) and query.strip()
+                ]
+                # Each criterion query already contains the base subject. When the
+                # question has many criteria, spend the full bounded budget on those
+                # queries rather than silently dropping later criteria for a base query.
+                prioritized_queries = criterion_queries[:MAX_PLAN_QUERIES]
+                if len(prioritized_queries) < MAX_PLAN_QUERIES:
+                    prioritized_queries += original_queries[:1] + deep_candidates
+                plan["queries"] = list(dict.fromkeys(prioritized_queries))[:MAX_PLAN_QUERIES]
                 base_query = (plan.get("queries") or [""])[0]
             # Explicit user-selected modes are control inputs. They do not bypass source
             # validation and never permit private-source access.
@@ -4109,9 +4115,14 @@ class WebAgent:
                 ]
                 # Keep the subject plus one planner query, then criterion-specific
                 # queries, and only then generic exploration queries.
-                plan["queries"] = list(dict.fromkeys(
-                    (plan.get("queries") or [])[:2] + criterion_queries + candidates
-                ))[:MAX_PLAN_QUERIES]
+                original_queries = [
+                    query for query in (plan.get("queries") or [])
+                    if isinstance(query, str) and query.strip()
+                ]
+                prioritized_queries = criterion_queries[:MAX_PLAN_QUERIES]
+                if len(prioritized_queries) < MAX_PLAN_QUERIES:
+                    prioritized_queries += original_queries[:1] + candidates
+                plan["queries"] = list(dict.fromkeys(prioritized_queries))[:MAX_PLAN_QUERIES]
             elif clean_mode == "latest":
                 plan["freshness"] = "current"
                 if self._is_navigation_request(question):
