@@ -2390,6 +2390,73 @@ class WebAgent:
 
         raw_results_count = sum(len(batch.get("results", [])) for batch in batches if isinstance(batch, dict) and isinstance(batch.get("results", []), list))
         sources = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)
+
+        # Keep at least one returned source per explicit criterion query in the
+        # bounded source set sent to synthesis. Global fusion can otherwise crowd
+        # lower-ranked criterion results out before the model can inspect them.
+        requirement_queries = plan.get("requirement_queries", [])
+        if isinstance(requirement_queries, list) and requirement_queries:
+            globally_fused = sources
+            globally_fused_by_url = {
+                _normalized_source_url_key(item.get("url", "")): item
+                for item in globally_fused
+                if _normalized_source_url_key(item.get("url", ""))
+            }
+            pinned_by_url: dict[str, dict[str, Any]] = {}
+            pinned_sources: list[dict[str, Any]] = []
+            for requirement in requirement_queries[:MAX_PLAN_QUERIES]:
+                if not isinstance(requirement, dict):
+                    continue
+                target_query = compact_search_query(str(requirement.get("query") or ""))
+                if not target_query:
+                    continue
+                query_key = re.sub(r"\s+", " ", target_query).strip().casefold()
+                candidate = next(
+                    (
+                        item for item in globally_fused
+                        if query_key in {
+                            re.sub(r"\s+", " ", str(value)).strip().casefold()
+                            for value in item.get("queries", [])
+                        }
+                    ),
+                    None,
+                )
+                if candidate is None:
+                    criterion_batches = [
+                        batch for batch in batches
+                        if re.sub(
+                            r"\s+", " ", str(batch.get("query") or "")
+                        ).strip().casefold() == query_key
+                    ]
+                    criterion_candidates = fuse_ranked_results(
+                        criterion_batches, limit=MAX_SEARCH_RESULTS
+                    )
+                    candidate = criterion_candidates[0] if criterion_candidates else None
+                if not candidate:
+                    continue
+                source_key = _normalized_source_url_key(candidate.get("url", ""))
+                if not source_key:
+                    continue
+                selected = (
+                    pinned_by_url.get(source_key)
+                    or globally_fused_by_url.get(source_key)
+                    or candidate
+                )
+                if source_key not in pinned_by_url:
+                    pinned_by_url[source_key] = selected
+                    pinned_sources.append(selected)
+                selected_queries = selected.setdefault("queries", [])
+                if target_query not in selected_queries:
+                    selected_queries.append(target_query)
+            pinned_keys = set(pinned_by_url)
+            sources = (
+                pinned_sources
+                + [
+                    item for item in globally_fused
+                    if _normalized_source_url_key(item.get("url", "")) not in pinned_keys
+                ]
+            )[:MAX_SEARCH_RESULTS]
+
         for source in sources:
             source.setdefault("page_fetch_status", "not_attempted")
         # Fetch page text only for the best few public URLs; do it concurrently with strict bounds.
