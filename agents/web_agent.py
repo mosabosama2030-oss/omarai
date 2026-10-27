@@ -4072,13 +4072,26 @@ class WebAgent:
                 ]
             elif clean_mode == "latest":
                 plan["freshness"] = "current"
-                candidates = [
-                    f"{base_query} latest news updates {dt.datetime.now().year}",
-                    f"{base_query} recent official announcement",
-                ]
-                plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:6] + candidates))[
-                    :MAX_PLAN_QUERIES
-                ]
+                if self._is_navigation_request(question):
+                    # Preserve link-finding intent in the latest mode. Appending broad
+                    # news modifiers here can turn "find the official website" into
+                    # a news-search task and hide the destination the user requested.
+                    candidates = [
+                        base_query,
+                        f"{base_query} الموقع الرسمي",
+                        f"{base_query} official website",
+                    ]
+                    plan["queries"] = list(dict.fromkeys(
+                        candidates + (plan.get("queries") or [])[:MAX_PLAN_QUERIES]
+                    ))[:MAX_PLAN_QUERIES]
+                else:
+                    candidates = [
+                        f"{base_query} latest news updates {dt.datetime.now().year}",
+                        f"{base_query} recent official announcement",
+                    ]
+                    plan["queries"] = list(dict.fromkeys(
+                        (plan.get("queries") or [])[:6] + candidates
+                    ))[:MAX_PLAN_QUERIES]
             elif clean_mode == "social":
                 plan["social_focus"] = True
                 if not plan.get("platforms"):
