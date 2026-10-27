@@ -213,10 +213,11 @@ function renderReport(result){
  const taskFulfillmentText=({
   possible_gap_detected:"قد تكون الإجابة أغفلت محورًا من السؤال؛ هذه إشارة لفظية تحتاج مراجعة وليست حكمًا نهائيًا.",
   lexical_signals_found_not_semantically_verified:"ظهرت إشارات لفظية للمحاور المستخرجة، لكن هذا لا يثبت اكتمال المهمة.",
+  candidate_evidence_gaps_or_linkage_unknown:"لا توجد إشارات نصية كافية لبعض المحاور أو تعذر ربط نتائج البحث بها؛ راجع الاستعلامات والمصادر قبل اعتماد الإجابة.",
   not_assessed_insufficient_evidence:"الأدلة غير كافية؛ لم يتم التحقق من اكتمال المهمة.",
   not_machine_assessed_no_explicit_targets_detected:"لم تُستخرج محاور صريحة قابلة للفحص؛ اكتمال المهمة لم يُقيّم آليًا."
  })[taskFulfillmentStatus]||"حالة اكتمال المهمة غير محسومة آليًا.";
- const taskFulfillmentHtml='<p class="'+(taskFulfillmentStatus==="possible_gap_detected"?"warning":"report-note")+'">حالة تنفيذ المطلوب: '+escapeHtml(taskFulfillmentText)+'</p>';
+ const taskFulfillmentHtml='<p class="'+(["possible_gap_detected","candidate_evidence_gaps_or_linkage_unknown"].includes(taskFulfillmentStatus)?"warning":"report-note")+'">حالة تنفيذ المطلوب: '+escapeHtml(taskFulfillmentText)+'</p>';
  const coverageRepairStatus=r.coverage_repair_status||result.coverage_repair_status||"";
  const coverageRepairMessages={
   revised_and_reaudited:"عُدّلت الإجابة بعد رصد محور محتمل النقص ثم خضعت لمراجعة أدلة ثانية؛ تظل المراجعة بمساعدة نموذج وليست تحققًا مستقلًا.",
