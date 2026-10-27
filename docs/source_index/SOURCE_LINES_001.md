@@ -262,7 +262,7 @@
 | [SRC-1DB27D9318-L000091](../../.github/workflows/tests.yml#L91) | 91 | `"    steps:"` | — |
 | [SRC-1DB27D9318-L000092](../../.github/workflows/tests.yml#L92) | 92 | `"      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
 | [SRC-1DB27D9318-L000093](../../.github/workflows/tests.yml#L93) | 93 | `"      - name: Build production container"` | — |
-| [SRC-1DB27D9318-L000094](../../.github/workflows/tests.yml#L94) | 94 | `"        run: docker build --build-arg OMARAI_BUILD_SHA=\"${GITHUB_SHA}\" --tag omarai:ci ."` | — |
+| [SRC-1DB27D9318-L000094](../../.github/workflows/tests.yml#L94) | 94 | `"        run: docker build --build-arg PUBLIC_OMARAI_BUILD_SHA=\"${GITHUB_SHA}\" --tag omarai:ci ."` | — |
 | [SRC-1DB27D9318-L000095](../../.github/workflows/tests.yml#L95) | 95 | `"      - name: Start container and smoke-test protected API"` | — |
 | [SRC-1DB27D9318-L000096](../../.github/workflows/tests.yml#L96) | 96 | `"        shell: bash"` | — |
 | [SRC-1DB27D9318-L000097](../../.github/workflows/tests.yml#L97) | 97 | `"        run: \|"` | — |
