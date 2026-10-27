@@ -327,3 +327,27 @@ def test_fallback_plan_keeps_direct_url_without_generic_keyword_query():
     plan = fallback_plan("https://example.com/research")
     assert plan["direct_urls"] == ["https://example.com/research"]
     assert plan["queries"] == []
+
+
+
+def test_followup_plan_keeps_topic_across_chained_turns():
+    history = [
+        {"role": "user", "content": "ما سعر iPhone 16 في مصر؟"},
+        {"role": "assistant", "content": "السعر يختلف حسب المتجر."},
+        {"role": "user", "content": "والضمان؟"},
+        {"role": "assistant", "content": "سأوضح الضمان."},
+    ]
+    plan = fallback_plan("والبطارية؟", history)
+    assert plan["queries"]
+    assert "iPhone 16" in plan["queries"][0]
+    assert "البطارية" in plan["queries"][0]
+
+
+def test_followup_plan_does_not_inherit_unrelated_social_intent():
+    history = [
+        {"role": "user", "content": "اجمع آراء مستخدمي السيارات الكهربائية على Reddit"},
+        {"role": "assistant", "content": "هذه النتائج."},
+    ]
+    plan = fallback_plan("اشرح طريقة عمل المحرك الكهربائي", history)
+    assert plan["social_focus"] is False
+    assert plan["platforms"] == []
