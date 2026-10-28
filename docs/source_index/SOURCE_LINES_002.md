@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000431
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000430
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -382,18 +382,19 @@
 | [SRC-2D53795445-L000220](../../agents/dialogue_state.py#L220) | 220 | `"    )"` | — |
 | [SRC-2D53795445-L000221](../../agents/dialogue_state.py#L221) | 221 | `"    reference = re.search("` | — |
 | [SRC-2D53795445-L000222](../../agents/dialogue_state.py#L222) | 222 | `"        r\"\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
-| [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"        r\"he\|she\|هو\|هي\|ده\|دي\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
-| [SRC-2D53795445-L000224](../../agents/dialogue_state.py#L224) | 224 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
-| [SRC-2D53795445-L000225](../../agents/dialogue_state.py#L225) | 225 | `"        current,"` | — |
-| [SRC-2D53795445-L000226](../../agents/dialogue_state.py#L226) | 226 | `"    )"` | — |
-| [SRC-2D53795445-L000227](../../agents/dialogue_state.py#L227) | 227 | `"    fragment = re.fullmatch("` | — |
-| [SRC-2D53795445-L000228](../../agents/dialogue_state.py#L228) | 228 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
-| [SRC-2D53795445-L000229](../../agents/dialogue_state.py#L229) | 229 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
-| [SRC-2D53795445-L000230](../../agents/dialogue_state.py#L230) | 230 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
-| [SRC-2D53795445-L000231](../../agents/dialogue_state.py#L231) | 231 | `"        r\"[؟?\\s]*\","` | — |
-| [SRC-2D53795445-L000232](../../agents/dialogue_state.py#L232) | 232 | `"        current,"` | — |
-| [SRC-2D53795445-L000233](../../agents/dialogue_state.py#L233) | 233 | `"    )"` | — |
-| [SRC-2D53795445-L000234](../../agents/dialogue_state.py#L234) | 234 | `"    return bool(lead_in or reference or fragment)"` | — |
+| [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"        r\"he\|she\|هو\|هي\|هذا\|هذه\|هذان\|هاتان\|هؤلاء\|ذلك\|تلك\|اللذان\|اللتان\|\""` | — |
+| [SRC-2D53795445-L000224](../../agents/dialogue_state.py#L224) | 224 | `"        r\"الذي\|التي\|الذين\|ده\|دي\|دا\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
+| [SRC-2D53795445-L000225](../../agents/dialogue_state.py#L225) | 225 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
+| [SRC-2D53795445-L000226](../../agents/dialogue_state.py#L226) | 226 | `"        current,"` | — |
+| [SRC-2D53795445-L000227](../../agents/dialogue_state.py#L227) | 227 | `"    )"` | — |
+| [SRC-2D53795445-L000228](../../agents/dialogue_state.py#L228) | 228 | `"    fragment = re.fullmatch("` | — |
+| [SRC-2D53795445-L000229](../../agents/dialogue_state.py#L229) | 229 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
+| [SRC-2D53795445-L000230](../../agents/dialogue_state.py#L230) | 230 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
+| [SRC-2D53795445-L000231](../../agents/dialogue_state.py#L231) | 231 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
+| [SRC-2D53795445-L000232](../../agents/dialogue_state.py#L232) | 232 | `"        r\"[؟?\\s]*\","` | — |
+| [SRC-2D53795445-L000233](../../agents/dialogue_state.py#L233) | 233 | `"        current,"` | — |
+| [SRC-2D53795445-L000234](../../agents/dialogue_state.py#L234) | 234 | `"    )"` | — |
+| [SRC-2D53795445-L000235](../../agents/dialogue_state.py#L235) | 235 | `"    return bool(lead_in or reference or fragment)"` | — |
 ## الوكيل والمنطق
 
 ### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
@@ -833,4 +834,3 @@
 | [SRC-5587371288-L000428](../../agents/intent_router.py#L428) | 428 | `"        }"` | — |
 | [SRC-5587371288-L000429](../../agents/intent_router.py#L429) | 429 | `""` | — |
 | [SRC-5587371288-L000430](../../agents/intent_router.py#L430) | 430 | `"    if _is_smalltalk(question):"` | — |
-| [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `"        return {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004473 إلى SRC-1AE03B9EC3-L005272
+- النطاق: SRC-1AE03B9EC3-L004472 إلى SRC-1AE03B9EC3-L005271
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004472](../../agents/web_agent.py#L4472) | 4472 | `"        independent_domains = {"` | — |
 | [SRC-1AE03B9EC3-L004473](../../agents/web_agent.py#L4473) | 4473 | `"            registrable_domain("` | — |
 | [SRC-1AE03B9EC3-L004474](../../agents/web_agent.py#L4474) | 4474 | `"                source.get(\"domain\")"` | — |
 | [SRC-1AE03B9EC3-L004475](../../agents/web_agent.py#L4475) | 4475 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005269](../../agents/web_agent.py#L5269) | 5269 | `"                            if not isinstance(candidate, dict):"` | — |
 | [SRC-1AE03B9EC3-L005270](../../agents/web_agent.py#L5270) | 5270 | `"                                continue"` | — |
 | [SRC-1AE03B9EC3-L005271](../../agents/web_agent.py#L5271) | 5271 | `"                            if not self._source_matches_query(gap_query, candidate):"` | — |
-| [SRC-1AE03B9EC3-L005272](../../agents/web_agent.py#L5272) | 5272 | `"                                continue"` | — |

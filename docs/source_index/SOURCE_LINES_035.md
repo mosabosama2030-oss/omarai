@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001899 إلى SRC-F725E90B2A-L002698
+- النطاق: SRC-F725E90B2A-L001897 إلى SRC-F725E90B2A-L002696
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001897](../../tests/test_web_agent.py#L1897) | 1897 | `"        \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L001898](../../tests/test_web_agent.py#L1898) | 1898 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L001899](../../tests/test_web_agent.py#L1899) | 1899 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001900](../../tests/test_web_agent.py#L1900) | 1900 | `"    }"` | — |
 | [SRC-F725E90B2A-L001901](../../tests/test_web_agent.py#L1901) | 1901 | `"    calls = []"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002694](../../tests/test_web_agent.py#L2694) | 2694 | `"        yield RedirectResponse()"` | — |
 | [SRC-F725E90B2A-L002695](../../tests/test_web_agent.py#L2695) | 2695 | `""` | — |
 | [SRC-F725E90B2A-L002696](../../tests/test_web_agent.py#L2696) | 2696 | `"    class FakeClient:"` | — |
-| [SRC-F725E90B2A-L002697](../../tests/test_web_agent.py#L2697) | 2697 | `"        def __init__(self, **kwargs):"` | — |
-| [SRC-F725E90B2A-L002698](../../tests/test_web_agent.py#L2698) | 2698 | `"            self.options = kwargs"` | — |

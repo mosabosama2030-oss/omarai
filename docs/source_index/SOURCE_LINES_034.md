@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001099 إلى SRC-F725E90B2A-L001898
+- النطاق: SRC-F725E90B2A-L001097 إلى SRC-F725E90B2A-L001896
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001097](../../tests/test_web_agent.py#L1097) | 1097 | `"        row[\"provider\"] == \"bing_rss\" and row[\"status\"] == \"ok\""` | — |
+| [SRC-F725E90B2A-L001098](../../tests/test_web_agent.py#L1098) | 1098 | `"        for row in diagnostics"` | — |
 | [SRC-F725E90B2A-L001099](../../tests/test_web_agent.py#L1099) | 1099 | `"    )"` | — |
 | [SRC-F725E90B2A-L001100](../../tests/test_web_agent.py#L1100) | 1100 | `""` | — |
 | [SRC-F725E90B2A-L001101](../../tests/test_web_agent.py#L1101) | 1101 | `""` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001894](../../tests/test_web_agent.py#L1894) | 1894 | `"        \"direct_urls\": [],"` | — |
 | [SRC-F725E90B2A-L001895](../../tests/test_web_agent.py#L1895) | 1895 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001896](../../tests/test_web_agent.py#L1896) | 1896 | `"        \"freshness\": \"today\","` | — |
-| [SRC-F725E90B2A-L001897](../../tests/test_web_agent.py#L1897) | 1897 | `"        \"depth\": \"deep\","` | — |
-| [SRC-F725E90B2A-L001898](../../tests/test_web_agent.py#L1898) | 1898 | `"        \"platforms\": [],"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002873 إلى SRC-1AE03B9EC3-L003672
+- النطاق: SRC-1AE03B9EC3-L002872 إلى SRC-1AE03B9EC3-L003671
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002872](../../agents/web_agent.py#L2872) | 2872 | `"                        budget.reserve(\"tool_calls\", amount=3)"` | — |
 | [SRC-1AE03B9EC3-L002873](../../agents/web_agent.py#L2873) | 2873 | `"                except RequestBudgetExceeded as exc:"` | — |
 | [SRC-1AE03B9EC3-L002874](../../agents/web_agent.py#L2874) | 2874 | `"                    self._record_generation_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L002875](../../agents/web_agent.py#L2875) | 2875 | `"                        requested_model=requested_model,"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003669](../../agents/web_agent.py#L3669) | 3669 | `"            \"timestamp_utc\": datetime.now(UTC).isoformat(timespec=\"seconds\"),"` | — |
 | [SRC-1AE03B9EC3-L003670](../../agents/web_agent.py#L3670) | 3670 | `"            \"checks\": {},"` | — |
 | [SRC-1AE03B9EC3-L003671](../../agents/web_agent.py#L3671) | 3671 | `"            \"configuration\": self.status(),"` | — |
-| [SRC-1AE03B9EC3-L003672](../../agents/web_agent.py#L3672) | 3672 | `"            \"model_usage\": [],"` | — |

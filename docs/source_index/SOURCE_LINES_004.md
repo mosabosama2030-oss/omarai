@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000426 إلى SRC-1AE03B9EC3-L000472
+- النطاق: SRC-59CF4B7DE8-L000425 إلى SRC-1AE03B9EC3-L000471
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000425](../../agents/research.py#L425) | 425 | `") -> list[dict[str, Any]]:"` | — |
 | [SRC-59CF4B7DE8-L000426](../../agents/research.py#L426) | 426 | `"    \"\"\"Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs.\"\"\""` | — |
 | [SRC-59CF4B7DE8-L000427](../../agents/research.py#L427) | 427 | `"    accumulated: dict[str, dict[str, Any]] = {}"` | — |
 | [SRC-59CF4B7DE8-L000428](../../agents/research.py#L428) | 428 | `"    for batch in batches:"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1AE03B9EC3-L000469](../../agents/web_agent.py#L469) | 469 | `"                \"Do not submit secrets or personal/confidential customer data. The default free NVIDIA \""` | — |
 | [SRC-1AE03B9EC3-L000470](../../agents/web_agent.py#L470) | 470 | `"                \"Nemotron endpoint states that sessions may be logged for security and product improvement.\""` | — |
 | [SRC-1AE03B9EC3-L000471](../../agents/web_agent.py#L471) | 471 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L000472](../../agents/web_agent.py#L472) | 472 | `"            \"search_providers\": ["` | — |

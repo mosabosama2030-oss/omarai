@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001273 إلى SRC-1AE03B9EC3-L002072
+- النطاق: SRC-1AE03B9EC3-L001272 إلى SRC-1AE03B9EC3-L002071
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001272](../../agents/web_agent.py#L1272) | 1272 | `""` | — |
 | [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"        response = httpx.post("` | — |
 | [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"            \"https://api.deepseek.com/v1/tools/search\","` | — |
 | [SRC-1AE03B9EC3-L001275](../../agents/web_agent.py#L1275) | 1275 | `"            headers={"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002069](../../agents/web_agent.py#L2069) | 2069 | `"                    follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L002070](../../agents/web_agent.py#L2070) | 2070 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L002071](../../agents/web_agent.py#L2071) | 2071 | `"                if response.status_code == 200:"` | — |
-| [SRC-1AE03B9EC3-L002072](../../agents/web_agent.py#L2072) | 2072 | `"                    data = response.json()"` | — |

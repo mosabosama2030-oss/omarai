@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000261 إلى SRC-F725E90B2A-L000298
+- النطاق: SRC-6BF96689A8-L000259 إلى SRC-F725E90B2A-L000296
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000259](../../tests/test_research.py#L259) | 259 | `"        query = compact_search_query(question)"` | — |
+| [SRC-6BF96689A8-L000260](../../tests/test_research.py#L260) | 260 | `"        assert query"` | — |
 | [SRC-6BF96689A8-L000261](../../tests/test_research.py#L261) | 261 | `"        for term in required_terms:"` | — |
 | [SRC-6BF96689A8-L000262](../../tests/test_research.py#L262) | 262 | `"            assert term in query, f\"lost topic term {term!r}: {query!r}\""` | — |
 | [SRC-6BF96689A8-L000263](../../tests/test_research.py#L263) | 263 | `""` | — |
@@ -850,5 +852,3 @@
 | [SRC-F725E90B2A-L000294](../../tests/test_web_agent.py#L294) | 294 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L000295](../../tests/test_web_agent.py#L295) | 295 | `"        \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L000296](../../tests/test_web_agent.py#L296) | 296 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L000297](../../tests/test_web_agent.py#L297) | 297 | `"    })"` | — |
-| [SRC-F725E90B2A-L000298](../../tests/test_web_agent.py#L298) | 298 | `"    shared = next(item for item in sources if \"shared\" in item[\"url\"])"` | — |

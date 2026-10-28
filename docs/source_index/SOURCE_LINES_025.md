@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001220 إلى SRC-1C77C97630-L000136
+- النطاق: SRC-90FAA34ADE-L001219 إلى SRC-1C77C97630-L000135
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001219](../../tests/fixtures/answer_quality_cases.json#L1219) | 1219 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001220](../../tests/fixtures/answer_quality_cases.json#L1220) | 1220 | `"        \"Only describes Cairo and ignores Alexandria\","` | — |
 | [SRC-90FAA34ADE-L001221](../../tests/fixtures/answer_quality_cases.json#L1221) | 1221 | `"        \"Invents live weather without a retrieval source\""` | — |
 | [SRC-90FAA34ADE-L001222](../../tests/fixtures/answer_quality_cases.json#L1222) | 1222 | `"      ],"` | — |
@@ -851,4 +852,3 @@
 | [SRC-1C77C97630-L000133](../../tests/test_answer_validation.py#L133) | 133 | `"        \"السعر 100 جنيه [المصدر 1].\","` | — |
 | [SRC-1C77C97630-L000134](../../tests/test_answer_validation.py#L134) | 134 | `"        [{"` | — |
 | [SRC-1C77C97630-L000135](../../tests/test_answer_validation.py#L135) | 135 | `"            \"title\": \"مصدر\","` | — |
-| [SRC-1C77C97630-L000136](../../tests/test_answer_validation.py#L136) | 136 | `"            \"url\": \"https://example.com/item\","` | — |

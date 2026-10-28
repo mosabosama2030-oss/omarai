@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000299 إلى SRC-F725E90B2A-L001098
+- النطاق: SRC-F725E90B2A-L000297 إلى SRC-F725E90B2A-L001096
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000297](../../tests/test_web_agent.py#L297) | 297 | `"    })"` | — |
+| [SRC-F725E90B2A-L000298](../../tests/test_web_agent.py#L298) | 298 | `"    shared = next(item for item in sources if \"shared\" in item[\"url\"])"` | — |
 | [SRC-F725E90B2A-L000299](../../tests/test_web_agent.py#L299) | 299 | `"    assert warnings == []"` | — |
 | [SRC-F725E90B2A-L000300](../../tests/test_web_agent.py#L300) | 300 | `"    assert len(sources) == 3"` | — |
 | [SRC-F725E90B2A-L000301](../../tests/test_web_agent.py#L301) | 301 | `"    assert set(shared[\"providers\"]) == {\"ddg\", \"bing\"}"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001094](../../tests/test_web_agent.py#L1094) | 1094 | `"        for row in diagnostics"` | — |
 | [SRC-F725E90B2A-L001095](../../tests/test_web_agent.py#L1095) | 1095 | `"    )"` | — |
 | [SRC-F725E90B2A-L001096](../../tests/test_web_agent.py#L1096) | 1096 | `"    assert any("` | — |
-| [SRC-F725E90B2A-L001097](../../tests/test_web_agent.py#L1097) | 1097 | `"        row[\"provider\"] == \"bing_rss\" and row[\"status\"] == \"ok\""` | — |
-| [SRC-F725E90B2A-L001098](../../tests/test_web_agent.py#L1098) | 1098 | `"        for row in diagnostics"` | — |
