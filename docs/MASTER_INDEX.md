@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **83**
-- ملفات Python المحللة: **42**
-- تعريفات Python المفهرسة: **1082**
+- ملفات المستودع في الجرد: **84**
+- ملفات Python المحللة: **43**
+- تعريفات Python المفهرسة: **1087**
 - تعريفات Python موثقة بوجود Docstring: **210**
-- تعريفات Python بلا Docstring: **656**
+- تعريفات Python بلا Docstring: **661**
 - تعريفات لا ينطبق عليها Docstring: **216**
 - الرموز الساكنة الإضافية: **1635**
-- الأسطر النصية المفهرسة حرفيًا: **28874**
+- الأسطر النصية المفهرسة حرفيًا: **28988**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -92,6 +92,7 @@
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
+| FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 4698 | 114 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
 | FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 21144 | 475 | جرد الملف + AST Python |
@@ -707,6 +708,11 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L4) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 4 | [SRC-3D0A619359-L000004](../tests/test_dashboard_security.py#L4) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L7) | دالة | test_hosted_lead_dashboard_can_send_the_private_access_token | لا توجد Docstring. | ناقص | 7 | [SRC-3D0A619359-L000007](../tests/test_dashboard_security.py#L7) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L14) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 14 | [SRC-3D0A619359-L000014](../tests/test_dashboard_security.py#L14) |
+| [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L10) | دالة | test_deterministic_fallback_preserves_explicit_followup_topic | لا توجد Docstring. | ناقص | 10 | [SRC-DA139AC9D0-L000010](../tests/test_dialogue_state.py#L10) |
+| [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L25) | دالة | test_topic_shift_is_a_hard_boundary_against_stale_context | لا توجد Docstring. | ناقص | 25 | [SRC-DA139AC9D0-L000025](../tests/test_dialogue_state.py#L25) |
+| [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L47) | دالة | test_model_context_is_bounded_and_unknown_slots_are_dropped | لا توجد Docstring. | ناقص | 47 | [SRC-DA139AC9D0-L000047](../tests/test_dialogue_state.py#L47) |
+| [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L83) | دالة | test_unresolved_reference_stays_unresolved_and_cannot_become_a_search_query | لا توجد Docstring. | ناقص | 83 | [SRC-DA139AC9D0-L000083](../tests/test_dialogue_state.py#L83) |
+| [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L108) | دالة | test_context_probe_gate_recognizes_natural_followups_not_every_short_question | لا توجد Docstring. | ناقص | 108 | [SRC-DA139AC9D0-L000108](../tests/test_dialogue_state.py#L108) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L11) | دالة | _addrinfo | لا توجد Docstring. | ناقص | 11 | [SRC-6BCB799CEC-L000011](../tests/test_evidence_provenance.py#L11) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L16) | دالة | test_failed_page_read_is_not_reported_as_fetched | An empty extraction must not set page_fetched through the real collector. | موثق | 16 | [SRC-6BCB799CEC-L000016](../tests/test_evidence_provenance.py#L16) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L20) | دالة | test_failed_page_read_is_not_reported_as_fetched.search | لا توجد Docstring. | ناقص | 20 | [SRC-6BCB799CEC-L000020](../tests/test_evidence_provenance.py#L20) |
