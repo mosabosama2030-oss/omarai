@@ -4219,6 +4219,56 @@ class WebAgent:
             else:
                 final_answer_status = "not_attempted"
             result["final_answer_status"] = final_answer_status
+        # Establish an honest terminal state even for early-return branches
+        # (clarification, budget exhaustion, or no-evidence abstention) that never
+        # pass through the normal synthesis tail.
+        terminal_report = result.get("search_report")
+        if not isinstance(terminal_report, dict):
+            terminal_report = {}
+        terminal_kind = str(result.get("kind") or "")
+        terminal_search_outcome = str(terminal_report.get("search_outcome") or "")
+        terminal_sources = result.get("sources")
+        if not isinstance(terminal_sources, list):
+            terminal_sources = []
+        if terminal_kind == "clarification":
+            terminal_status = "needs_clarification"
+        elif (
+            terminal_search_outcome in _RESEARCH_ERROR_OUTCOMES
+            or terminal_search_outcome in {
+                "unknown_after_budget_exhaustion",
+                "unknown_after_research_error",
+                "attempted_research_error",
+            }
+            or result.get("final_answer_status") in {
+                "budget_exhausted",
+                "generation_failed",
+                "review_failed_with_source_fallback",
+            }
+        ):
+            terminal_status = "execution_failed"
+        elif (
+            terminal_kind == "insufficient_evidence"
+            or not terminal_sources
+            and bool(result.get("search_attempted"))
+        ):
+            terminal_status = "insufficient_evidence"
+        elif result.get("final_answer_status") in {
+            "model_answer_generated",
+            "local_response_no_generation",
+        }:
+            terminal_status = "completed"
+        else:
+            terminal_status = "partial"
+        result.setdefault("pipeline_completion_status", terminal_status)
+        terminal_report.setdefault("pipeline_completion_status", result["pipeline_completion_status"])
+        terminal_report.setdefault(
+            "insufficient_evidence",
+            bool(
+                result["pipeline_completion_status"] == "insufficient_evidence"
+                or terminal_search_outcome in _RESEARCH_ERROR_OUTCOMES
+                or terminal_search_outcome == "unknown_after_budget_exhaustion"
+            ),
+        )
         if isinstance(result.get("search_report"), dict):
             result["search_report"]["request_budget"] = budget_summary
         if budget_summary["deadline_exceeded"]:
