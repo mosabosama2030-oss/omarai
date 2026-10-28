@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004366 إلى SRC-1AE03B9EC3-L005165
+- النطاق: SRC-1AE03B9EC3-L004362 إلى SRC-1AE03B9EC3-L005161
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004362](../../agents/web_agent.py#L4362) | 4362 | `"                # Keep the public API question verbatim; the resolved wording is for"` | — |
+| [SRC-1AE03B9EC3-L004363](../../agents/web_agent.py#L4363) | 4363 | `"                # internal reasoning and generation, not a replacement for user input."` | — |
+| [SRC-1AE03B9EC3-L004364](../../agents/web_agent.py#L4364) | 4364 | `"                general_answer[\"question\"] = question"` | — |
+| [SRC-1AE03B9EC3-L004365](../../agents/web_agent.py#L4365) | 4365 | `"                if context_override is not None:"` | — |
 | [SRC-1AE03B9EC3-L004366](../../agents/web_agent.py#L4366) | 4366 | `"                    general_answer[\"dialogue_context\"] = context_override"` | — |
 | [SRC-1AE03B9EC3-L004367](../../agents/web_agent.py#L4367) | 4367 | `"                    if isinstance(general_answer.get(\"research_plan\"), dict):"` | — |
 | [SRC-1AE03B9EC3-L004368](../../agents/web_agent.py#L4368) | 4368 | `"                        general_answer[\"research_plan\"][\"dialogue_context\"] = context_override"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L005159](../../agents/web_agent.py#L5159) | 5159 | `"            for item in current_research_diagnostics"` | — |
 | [SRC-1AE03B9EC3-L005160](../../agents/web_agent.py#L5160) | 5160 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L005161](../../agents/web_agent.py#L5161) | 5161 | `"        raw_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L005162](../../agents/web_agent.py#L5162) | 5162 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L005163](../../agents/web_agent.py#L5163) | 5163 | `"            queries_attempted = ("` | — |
-| [SRC-1AE03B9EC3-L005164](../../agents/web_agent.py#L5164) | 5164 | `"                None if raw_attempt_count is None"` | — |
-| [SRC-1AE03B9EC3-L005165](../../agents/web_agent.py#L5165) | 5165 | `"                else max(0, int(raw_attempt_count or 0))"` | — |

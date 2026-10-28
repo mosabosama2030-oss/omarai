@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000366 إلى SRC-1AE03B9EC3-L001165
+- النطاق: SRC-1AE03B9EC3-L000362 إلى SRC-1AE03B9EC3-L001161
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000362](../../agents/web_agent.py#L362) | 362 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000363](../../agents/web_agent.py#L363) | 363 | `"    if not usable:"` | — |
+| [SRC-1AE03B9EC3-L000364](../../agents/web_agent.py#L364) | 364 | `"        lines.append(\"لم أتمكن من استخراج مقتطفات كافية من نتائج الويب.\")"` | — |
+| [SRC-1AE03B9EC3-L000365](../../agents/web_agent.py#L365) | 365 | `"    return \"\\n\\n\".join(lines)"` | — |
 | [SRC-1AE03B9EC3-L000366](../../agents/web_agent.py#L366) | 366 | `""` | — |
 | [SRC-1AE03B9EC3-L000367](../../agents/web_agent.py#L367) | 367 | `""` | — |
 | [SRC-1AE03B9EC3-L000368](../../agents/web_agent.py#L368) | 368 | `"class PageFetchResult(tuple):"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L001159](../../agents/web_agent.py#L1159) | 1159 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L001160](../../agents/web_agent.py#L1160) | 1160 | `"        if any(term in value for term in capability_phrases):"` | — |
 | [SRC-1AE03B9EC3-L001161](../../agents/web_agent.py#L1161) | 1161 | `"            answer = ("` | — |
-| [SRC-1AE03B9EC3-L001162](../../agents/web_agent.py#L1162) | 1162 | `"                \"أقدر أساعدك في شرح الأسئلة ووضع خطط عملية، كما يتضمن Omarai مسارًا \""` | — |
-| [SRC-1AE03B9EC3-L001163](../../agents/web_agent.py#L1163) | 1163 | `"                \"للبحث في الويب عند الحاجة إلى معلومات حديثة أو روابط أو مقارنة خيارات. \""` | — |
-| [SRC-1AE03B9EC3-L001164](../../agents/web_agent.py#L1164) | 1164 | `"                \"سأوضح في كل مهمة ما إذا نُفذ البحث فعلًا وما المصادر التي أمكن جمعها، \""` | — |
-| [SRC-1AE03B9EC3-L001165](../../agents/web_agent.py#L1165) | 1165 | `"                \"وما الذي لم يمكن التحقق منه. قد تعمل بعض الموصلات الاختيارية فقط عند \""` | — |

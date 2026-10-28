@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001195 إلى SRC-B3062EB677-L000094
+- النطاق: SRC-90FAA34ADE-L001191 إلى SRC-B3062EB677-L000090
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001191](../../tests/fixtures/answer_quality_cases.json#L1191) | 1191 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001192](../../tests/fixtures/answer_quality_cases.json#L1192) | 1192 | `"        \"Confirms today's rate based only on the cropped screenshot\","` | — |
+| [SRC-90FAA34ADE-L001193](../../tests/fixtures/answer_quality_cases.json#L1193) | 1193 | `"        \"Invents source metadata\""` | — |
+| [SRC-90FAA34ADE-L001194](../../tests/fixtures/answer_quality_cases.json#L1194) | 1194 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001195](../../tests/fixtures/answer_quality_cases.json#L1195) | 1195 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L001196](../../tests/fixtures/answer_quality_cases.json#L1196) | 1196 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L001197](../../tests/fixtures/answer_quality_cases.json#L1197) | 1197 | `"        \"sources\": [],"` | — |
@@ -857,7 +861,3 @@
 | [SRC-B3062EB677-L000088](../../tests/test_answer_quality_runner.py#L88) | 88 | `"    )"` | — |
 | [SRC-B3062EB677-L000089](../../tests/test_answer_quality_runner.py#L89) | 89 | `"    assert rc == 2"` | — |
 | [SRC-B3062EB677-L000090](../../tests/test_answer_quality_runner.py#L90) | 90 | `""` | — |
-| [SRC-B3062EB677-L000091](../../tests/test_answer_quality_runner.py#L91) | 91 | `""` | — |
-| [SRC-B3062EB677-L000092](../../tests/test_answer_quality_runner.py#L92) | 92 | `"def test_redact_secrets_strips_token_value(monkeypatch):"` | — |
-| [SRC-B3062EB677-L000093](../../tests/test_answer_quality_runner.py#L93) | 93 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000094](../../tests/test_answer_quality_runner.py#L94) | 94 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"super-secret-token-value-xyz\")"` | — |

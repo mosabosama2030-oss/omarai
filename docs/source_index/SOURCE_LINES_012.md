@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005166 إلى SRC-1AE03B9EC3-L005965
+- النطاق: SRC-1AE03B9EC3-L005162 إلى SRC-1AE03B9EC3-L005961
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005162](../../agents/web_agent.py#L5162) | 5162 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L005163](../../agents/web_agent.py#L5163) | 5163 | `"            queries_attempted = ("` | — |
+| [SRC-1AE03B9EC3-L005164](../../agents/web_agent.py#L5164) | 5164 | `"                None if raw_attempt_count is None"` | — |
+| [SRC-1AE03B9EC3-L005165](../../agents/web_agent.py#L5165) | 5165 | `"                else max(0, int(raw_attempt_count or 0))"` | — |
 | [SRC-1AE03B9EC3-L005166](../../agents/web_agent.py#L5166) | 5166 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005167](../../agents/web_agent.py#L5167) | 5167 | `"        except (TypeError, ValueError):"` | — |
 | [SRC-1AE03B9EC3-L005168](../../agents/web_agent.py#L5168) | 5168 | `"            queries_attempted = None"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L005959](../../agents/web_agent.py#L5959) | 5959 | `"            \"citation_validation\": citation_validation,"` | — |
 | [SRC-1AE03B9EC3-L005960](../../agents/web_agent.py#L5960) | 5960 | `"            \"answer_evidence_status\": answer_evidence_status,"` | — |
 | [SRC-1AE03B9EC3-L005961](../../agents/web_agent.py#L5961) | 5961 | `"            \"answer_coverage\": answer_coverage,"` | — |
-| [SRC-1AE03B9EC3-L005962](../../agents/web_agent.py#L5962) | 5962 | `"            \"answer_integrity\": answer_integrity,"` | — |
-| [SRC-1AE03B9EC3-L005963](../../agents/web_agent.py#L5963) | 5963 | `"            \"task_fulfillment_status\": task_fulfillment_status,"` | — |
-| [SRC-1AE03B9EC3-L005964](../../agents/web_agent.py#L5964) | 5964 | `"            \"coverage_repair_status\": coverage_repair_status,"` | — |
-| [SRC-1AE03B9EC3-L005965](../../agents/web_agent.py#L5965) | 5965 | `"            \"used_language_model\": used_llm,"` | — |

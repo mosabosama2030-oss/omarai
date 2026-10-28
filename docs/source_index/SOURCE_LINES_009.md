@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002766 إلى SRC-1AE03B9EC3-L003565
+- النطاق: SRC-1AE03B9EC3-L002762 إلى SRC-1AE03B9EC3-L003561
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002762](../../agents/web_agent.py#L2762) | 2762 | `"            \"evidence_signals\": evidence_signal_report(sources, plan.get(\"freshness\", \"any\")),"` | — |
+| [SRC-1AE03B9EC3-L002763](../../agents/web_agent.py#L2763) | 2763 | `"            \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-1AE03B9EC3-L002764](../../agents/web_agent.py#L2764) | 2764 | `"            \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
+| [SRC-1AE03B9EC3-L002765](../../agents/web_agent.py#L2765) | 2765 | `"            \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
 | [SRC-1AE03B9EC3-L002766](../../agents/web_agent.py#L2766) | 2766 | `"            \"provider_diagnostics\": provider_diagnostics,"` | — |
 | [SRC-1AE03B9EC3-L002767](../../agents/web_agent.py#L2767) | 2767 | `"            \"connector_summary\": self._connector_status_summary("` | — |
 | [SRC-1AE03B9EC3-L002768](../../agents/web_agent.py#L2768) | 2768 | `"                provider_diagnostics, sources"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L003559](../../agents/web_agent.py#L3559) | 3559 | `"                    \"نص المصدر أو مقتطفه الظاهر على إشارة واضحة إلى رغبة شخص في الشراء؛ اذكر \""` | — |
 | [SRC-1AE03B9EC3-L003560](../../agents/web_agent.py#L3560) | 3560 | `"                    \"الإشارة ومكان ظهورها، وميّز نص الصفحة المقروء عن مقتطف محرك البحث. \""` | — |
 | [SRC-1AE03B9EC3-L003561](../../agents/web_agent.py#L3561) | 3561 | `"                    \"حتى الإشارة العلنية لا تثبت هوية الشخص أو أنه لا يزال راغبًا في الشراء. \""` | — |
-| [SRC-1AE03B9EC3-L003562](../../agents/web_agent.py#L3562) | 3562 | `"                    \"إذا لم تظهر إشارة صريحة، قل بوضوح إنه لم يتم العثور على عميل محتمل مؤهل؛ \""` | — |
-| [SRC-1AE03B9EC3-L003563](../../agents/web_agent.py#L3563) | 3563 | `"                    \"لا تستنتج نية الشراء من مجرد عرض سلعة للبيع.\""` | — |
-| [SRC-1AE03B9EC3-L003564](../../agents/web_agent.py#L3564) | 3564 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L003565](../../agents/web_agent.py#L3565) | 3565 | `"            })"` | — |

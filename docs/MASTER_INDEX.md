@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **96**
 - ملفات Python المحللة: **54**
-- تعريفات Python المفهرسة: **1226**
+- تعريفات Python المفهرسة: **1229**
 - تعريفات Python موثقة بوجود Docstring: **219**
-- تعريفات Python بلا Docstring: **760**
+- تعريفات Python بلا Docstring: **763**
 - تعريفات لا ينطبق عليها Docstring: **247**
 - الرموز الساكنة الإضافية: **1684**
-- الأسطر النصية المفهرسة حرفيًا: **31848**
+- الأسطر النصية المفهرسة حرفيًا: **31884**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -45,7 +45,7 @@
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32243 | 753 | جرد الملف + AST Python |
-| FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10362 | 259 | جرد الملف + AST Python |
+| FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 321045 | 5974 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
@@ -117,7 +117,7 @@
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 15643 | 329 | جرد الملف + AST Python |
-| FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 15427 | 410 | جرد الملف + AST Python |
+| FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 16516 | 442 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 136529 | 3509 | جرد الملف + AST Python |
@@ -302,8 +302,9 @@
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L91) | دالة | _is_government_domain | لا توجد Docstring. | ناقص | 91 | [SRC-3AA6165B18-L000091](../agents/research_guardrails.py#L91) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L99) | دالة | assess_current_source | Assess whether a read page can support a current-state claim. | موثق | 99 | [SRC-3AA6165B18-L000099](../agents/research_guardrails.py#L99) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L137) | دالة | classify_social_source | Apply a transparent, non-authoritative label to public social content. | موثق | 137 | [SRC-3AA6165B18-L000137](../agents/research_guardrails.py#L137) |
-| [agents/research_guardrails.py](../agents/research_guardrails.py#L175) | دالة | apply_source_guardrails | Apply official-domain, current-evidence, and explicit social-mode guards. | موثق | 175 | [SRC-3AA6165B18-L000175](../agents/research_guardrails.py#L175) |
-| [agents/research_guardrails.py](../agents/research_guardrails.py#L205) | دالة | apply_source_guardrails.reject | لا توجد Docstring. | ناقص | 205 | [SRC-3AA6165B18-L000205](../agents/research_guardrails.py#L205) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L158) | دالة | classify_social_source.has_term | لا توجد Docstring. | ناقص | 158 | [SRC-3AA6165B18-L000158](../agents/research_guardrails.py#L158) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L179) | دالة | apply_source_guardrails | Apply official-domain, current-evidence, and explicit social-mode guards. | موثق | 179 | [SRC-3AA6165B18-L000179](../agents/research_guardrails.py#L179) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L209) | دالة | apply_source_guardrails.reject | لا توجد Docstring. | ناقص | 209 | [SRC-3AA6165B18-L000209](../agents/research_guardrails.py#L209) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
@@ -1094,6 +1095,8 @@
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L371) | دالة | test_social_classification_does_not_claim_unknown_post_is_verified_experience | لا توجد Docstring. | ناقص | 371 | [SRC-01E35ABC46-L000371](../tests/test_research_guardrails.py#L371) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L385) | دالة | test_today_query_requires_current_evidence_even_in_auto_mode | لا توجد Docstring. | ناقص | 385 | [SRC-01E35ABC46-L000385](../tests/test_research_guardrails.py#L385) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L403) | دالة | test_recent_source_date_is_not_enough_without_readable_page_text | لا توجد Docstring. | ناقص | 403 | [SRC-01E35ABC46-L000403](../tests/test_research_guardrails.py#L403) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L414) | دالة | test_social_classification_matches_english_first_person_phrases_case_insensitively | لا توجد Docstring. | ناقص | 414 | [SRC-01E35ABC46-L000414](../tests/test_research_guardrails.py#L414) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L426) | دالة | test_official_domain_check_rejects_suffix_spoofing | لا توجد Docstring. | ناقص | 426 | [SRC-01E35ABC46-L000426](../tests/test_research_guardrails.py#L426) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |

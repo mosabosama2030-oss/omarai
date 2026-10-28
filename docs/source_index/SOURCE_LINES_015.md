@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000016 إلى SRC-E599346ABE-L000708
+- النطاق: SRC-51D44BE378-L000012 إلى SRC-E599346ABE-L000704
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000012](../DEPLOY_SNAPDEPLOY_AR.md#L12) | 12 | `"- يحصل التطبيق على عنوان HTTPS فرعي وشهادة TLS."` | — |
+| [SRC-51D44BE378-L000013](../DEPLOY_SNAPDEPLOY_AR.md#L13) | 13 | `""` | — |
+| [SRC-51D44BE378-L000014](../DEPLOY_SNAPDEPLOY_AR.md#L14) | 14 | `"قد تتغير الحدود والشروط؛ راجع [وثائق الخطة المجانية](https://snapdeploy.dev/docs/free-tier) قبل المتابعة. الخطة مناسبة لتجربة شخصية واختبار قبول، وليست تشغيلًا دائمًا أو مكانًا لحفظ بيانات عملاء."` | — |
+| [SRC-51D44BE378-L000015](../DEPLOY_SNAPDEPLOY_AR.md#L15) | 15 | `""` | — |
 | [SRC-51D44BE378-L000016](../DEPLOY_SNAPDEPLOY_AR.md#L16) | 16 | `"## 1. إنشاء الحساب وربط GitHub"` | — |
 | [SRC-51D44BE378-L000017](../DEPLOY_SNAPDEPLOY_AR.md#L17) | 17 | `""` | — |
 | [SRC-51D44BE378-L000018](../DEPLOY_SNAPDEPLOY_AR.md#L18) | 18 | `"1. افتح [SnapDeploy](https://snapdeploy.dev/) من متصفح الهاتف وأنشئ حسابًا بالبريد أو عبر GitHub."` | — |
@@ -821,7 +825,3 @@
 | [SRC-E599346ABE-L000702](../generate_index.py#L702) | 702 | `"    for file, item in eligible_files.items():"` | — |
 | [SRC-E599346ABE-L000703](../generate_index.py#L703) | 703 | `"        actual = sorted(actual_lines[file])"` | — |
 | [SRC-E599346ABE-L000704](../generate_index.py#L704) | 704 | `"        expected = list(range(1, (item.line_count or 0) + 1))"` | — |
-| [SRC-E599346ABE-L000705](../generate_index.py#L705) | 705 | `"        if actual != expected:"` | — |
-| [SRC-E599346ABE-L000706](../generate_index.py#L706) | 706 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000707](../generate_index.py#L707) | 707 | `"                f\"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، \""` | — |
-| [SRC-E599346ABE-L000708](../generate_index.py#L708) | 708 | `"                f\"الموجود {len(actual)}\""` | — |

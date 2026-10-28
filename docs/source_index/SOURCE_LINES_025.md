@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000396 إلى SRC-90FAA34ADE-L000394
+- النطاق: SRC-4FFD5AFC54-L000392 إلى SRC-90FAA34ADE-L000390
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000392](../../scripts/run_answer_quality_benchmark.py#L392) | 392 | `"            args.corpus,"` | — |
+| [SRC-4FFD5AFC54-L000393](../../scripts/run_answer_quality_benchmark.py#L393) | 393 | `"            args.base_url,"` | — |
+| [SRC-4FFD5AFC54-L000394](../../scripts/run_answer_quality_benchmark.py#L394) | 394 | `"            args.case_id,"` | — |
+| [SRC-4FFD5AFC54-L000395](../../scripts/run_answer_quality_benchmark.py#L395) | 395 | `"            args.limit,"` | — |
 | [SRC-4FFD5AFC54-L000396](../../scripts/run_answer_quality_benchmark.py#L396) | 396 | `"            args.timeout,"` | — |
 | [SRC-4FFD5AFC54-L000397](../../scripts/run_answer_quality_benchmark.py#L397) | 397 | `"            args.delay,"` | — |
 | [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"            args.out,"` | — |
@@ -839,7 +843,3 @@
 | [SRC-90FAA34ADE-L000388](../../tests/fixtures/answer_quality_cases.json#L388) | 388 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000389](../../tests/fixtures/answer_quality_cases.json#L389) | 389 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000390](../../tests/fixtures/answer_quality_cases.json#L390) | 390 | `"      \"case_id\": \"AQ-016\","` | — |
-| [SRC-90FAA34ADE-L000391](../../tests/fixtures/answer_quality_cases.json#L391) | 391 | `"      \"category\": \"empty_or_failed_search\","` | — |
-| [SRC-90FAA34ADE-L000392](../../tests/fixtures/answer_quality_cases.json#L392) | 392 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000393](../../tests/fixtures/answer_quality_cases.json#L393) | 393 | `"      \"question\": \"دورلي على مواعيد مكتب الجوازات في العباسية النهارده، ولو البحث رجّعش نتائج قولي بصراحة.\","` | — |
-| [SRC-90FAA34ADE-L000394](../../tests/fixtures/answer_quality_cases.json#L394) | 394 | `"      \"expected_strategy\": \"web_search\","` | — |

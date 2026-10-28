@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003566 إلى SRC-1AE03B9EC3-L004365
+- النطاق: SRC-1AE03B9EC3-L003562 إلى SRC-1AE03B9EC3-L004361
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003562](../../agents/web_agent.py#L3562) | 3562 | `"                    \"إذا لم تظهر إشارة صريحة، قل بوضوح إنه لم يتم العثور على عميل محتمل مؤهل؛ \""` | — |
+| [SRC-1AE03B9EC3-L003563](../../agents/web_agent.py#L3563) | 3563 | `"                    \"لا تستنتج نية الشراء من مجرد عرض سلعة للبيع.\""` | — |
+| [SRC-1AE03B9EC3-L003564](../../agents/web_agent.py#L3564) | 3564 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003565](../../agents/web_agent.py#L3565) | 3565 | `"            })"` | — |
 | [SRC-1AE03B9EC3-L003566](../../agents/web_agent.py#L3566) | 3566 | `"        messages.append({"` | — |
 | [SRC-1AE03B9EC3-L003567](../../agents/web_agent.py#L3567) | 3567 | `"            \"role\": \"system\","` | — |
 | [SRC-1AE03B9EC3-L003568](../../agents/web_agent.py#L3568) | 3568 | `"            \"content\": ("` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L004359](../../agents/web_agent.py#L4359) | 4359 | `"        if intent_route == \"MODEL_ONLY\":"` | — |
 | [SRC-1AE03B9EC3-L004360](../../agents/web_agent.py#L4360) | 4360 | `"            general_answer = self._answer_without_search(working_question, clean_history)"` | — |
 | [SRC-1AE03B9EC3-L004361](../../agents/web_agent.py#L4361) | 4361 | `"            if general_answer is not None:"` | — |
-| [SRC-1AE03B9EC3-L004362](../../agents/web_agent.py#L4362) | 4362 | `"                # Keep the public API question verbatim; the resolved wording is for"` | — |
-| [SRC-1AE03B9EC3-L004363](../../agents/web_agent.py#L4363) | 4363 | `"                # internal reasoning and generation, not a replacement for user input."` | — |
-| [SRC-1AE03B9EC3-L004364](../../agents/web_agent.py#L4364) | 4364 | `"                general_answer[\"question\"] = question"` | — |
-| [SRC-1AE03B9EC3-L004365](../../agents/web_agent.py#L4365) | 4365 | `"                if context_override is not None:"` | — |
