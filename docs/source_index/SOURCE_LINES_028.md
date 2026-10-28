@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000191 إلى SRC-90FAA34ADE-L000990
+- النطاق: SRC-90FAA34ADE-L000173 إلى SRC-90FAA34ADE-L000972
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000173](../../tests/fixtures/answer_quality_cases.json#L173) | 173 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000174](../../tests/fixtures/answer_quality_cases.json#L174) | 174 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000175](../../tests/fixtures/answer_quality_cases.json#L175) | 175 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000176](../../tests/fixtures/answer_quality_cases.json#L176) | 176 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000177](../../tests/fixtures/answer_quality_cases.json#L177) | 177 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000178](../../tests/fixtures/answer_quality_cases.json#L178) | 178 | `"            \"title\": \"Gold spot price update\","` | — |
+| [SRC-90FAA34ADE-L000179](../../tests/fixtures/answer_quality_cases.json#L179) | 179 | `"            \"url\": \"https://example-market.test/gold/2026-10-18\","` | — |
+| [SRC-90FAA34ADE-L000180](../../tests/fixtures/answer_quality_cases.json#L180) | 180 | `"            \"snippet\": \"Gold traded near 2650 USD/oz in the latest session.\","` | — |
+| [SRC-90FAA34ADE-L000181](../../tests/fixtures/answer_quality_cases.json#L181) | 181 | `"            \"published_at\": \"2026-10-18\","` | — |
+| [SRC-90FAA34ADE-L000182](../../tests/fixtures/answer_quality_cases.json#L182) | 182 | `"            \"domain\": \"example-market.test\","` | — |
+| [SRC-90FAA34ADE-L000183](../../tests/fixtures/answer_quality_cases.json#L183) | 183 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L000184](../../tests/fixtures/answer_quality_cases.json#L184) | 184 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000185](../../tests/fixtures/answer_quality_cases.json#L185) | 185 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L000186](../../tests/fixtures/answer_quality_cases.json#L186) | 186 | `"        \"notes\": \"When running live, require freshness-aware retrieval; fixture is for offline review of expected behaviors\""` | — |
+| [SRC-90FAA34ADE-L000187](../../tests/fixtures/answer_quality_cases.json#L187) | 187 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000188](../../tests/fixtures/answer_quality_cases.json#L188) | 188 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000189](../../tests/fixtures/answer_quality_cases.json#L189) | 189 | `"        \"Numeric price asserted with zero sources\","` | — |
+| [SRC-90FAA34ADE-L000190](../../tests/fixtures/answer_quality_cases.json#L190) | 190 | `"        \"evidence_status insufficient but answer is assertive\""` | — |
 | [SRC-90FAA34ADE-L000191](../../tests/fixtures/answer_quality_cases.json#L191) | 191 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000192](../../tests/fixtures/answer_quality_cases.json#L192) | 192 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L000193](../../tests/fixtures/answer_quality_cases.json#L193) | 193 | `"    },"` | — |
@@ -798,21 +816,3 @@
 | [SRC-90FAA34ADE-L000970](../../tests/fixtures/answer_quality_cases.json#L970) | 970 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000971](../../tests/fixtures/answer_quality_cases.json#L971) | 971 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000972](../../tests/fixtures/answer_quality_cases.json#L972) | 972 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000973](../../tests/fixtures/answer_quality_cases.json#L973) | 973 | `"        \"notes\": \"السياق يقدّم بريدًا عامًا فقط ولا يحتوي على رد من ممثل الشركة\""` | — |
-| [SRC-90FAA34ADE-L000974](../../tests/fixtures/answer_quality_cases.json#L974) | 974 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000975](../../tests/fixtures/answer_quality_cases.json#L975) | 975 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000976](../../tests/fixtures/answer_quality_cases.json#L976) | 976 | `"        \"تأكيد موافقة غير موجودة\","` | — |
-| [SRC-90FAA34ADE-L000977](../../tests/fixtures/answer_quality_cases.json#L977) | 977 | `"        \"اختلاق هوية أو منصب شخص\""` | — |
-| [SRC-90FAA34ADE-L000978](../../tests/fixtures/answer_quality_cases.json#L978) | 978 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000979](../../tests/fixtures/answer_quality_cases.json#L979) | 979 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000980](../../tests/fixtures/answer_quality_cases.json#L980) | 980 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000981](../../tests/fixtures/answer_quality_cases.json#L981) | 981 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000982](../../tests/fixtures/answer_quality_cases.json#L982) | 982 | `"      \"case_id\": \"AQ-034\","` | — |
-| [SRC-90FAA34ADE-L000983](../../tests/fixtures/answer_quality_cases.json#L983) | 983 | `"      \"category\": \"stale_sources_for_current\","` | — |
-| [SRC-90FAA34ADE-L000984](../../tests/fixtures/answer_quality_cases.json#L984) | 984 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000985](../../tests/fixtures/answer_quality_cases.json#L985) | 985 | `"      \"question\": \"What are the current 2026 visa requirements? The only provided page is dated 2021.\","` | — |
-| [SRC-90FAA34ADE-L000986](../../tests/fixtures/answer_quality_cases.json#L986) | 986 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000987](../../tests/fixtures/answer_quality_cases.json#L987) | 987 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000988](../../tests/fixtures/answer_quality_cases.json#L988) | 988 | `"        \"Flags the five-year-old page as potentially stale\","` | — |
-| [SRC-90FAA34ADE-L000989](../../tests/fixtures/answer_quality_cases.json#L989) | 989 | `"        \"Seeks current official guidance or states it cannot verify present rules\","` | — |
-| [SRC-90FAA34ADE-L000990](../../tests/fixtures/answer_quality_cases.json#L990) | 990 | `"        \"Does not provide old requirements as current facts\""` | — |
