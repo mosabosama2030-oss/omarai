@@ -3442,3 +3442,60 @@ def test_auto_navigation_strips_arabic_search_verb_without_regex_regression(monk
     assert observed_plans[0]["queries"]
     assert all(not query.startswith("ابحث عن") for query in observed_plans[0]["queries"])
     assert "الموقع الرسمي لشركة النور" in observed_plans[0]["queries"][0]
+
+
+
+def test_latest_mode_does_not_generate_answer_from_stale_pages(monkeypatch):
+    """Current-mode answers must abstain if only old pages survive retrieval."""
+    agent = WebAgent()
+    plan = {
+        "queries": ["مواعيد عمل مكتب الجوازات العباسية اليوم"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "current",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "fixture",
+        "coverage_targets": [],
+    }
+    collection_calls = []
+
+    def collect(research_plan):
+        collection_calls.append(dict(research_plan))
+        old_page = sample_source(0)
+        old_page.update({
+            "published_at": "2024-01-01T10:00:00Z",
+            "page_fetched": True,
+            "page_text": "محتوى قديم عن مواعيد العمل",
+        })
+        return [old_page], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["fixture"],
+            "provider_counts": {"fixture": 1},
+            "platform_counts": {"web": 1},
+            "social_direct_results": 0,
+            "expansion_queries": [],
+            "provider_diagnostics": [],
+            "query_results": [{"query": research_plan["queries"][0], "results": 1}],
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda *args, **kwargs: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: pytest.fail("Stale pages must not be passed to generation"),
+    )
+
+    result = agent.answer("ما مواعيد عمل مكتب الجوازات اليوم؟", mode="latest")
+
+    assert result["kind"] == "insufficient_evidence"
+    assert len(collection_calls) >= 1
+    guardrails = result["search_report"]["source_guardrails"]
+    assert guardrails["initial"]["rejection_counts"]["stale"] == 1
+    assert guardrails["final"]["current_evidence_status"] == "no_current_eligible_evidence"
+    assert result["search_report"]["search_outcome"] == "attempted_no_usable_sources"
