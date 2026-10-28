@@ -9,7 +9,11 @@ from datetime import UTC, datetime, timedelta
 from typing import Any
 from urllib.parse import urlsplit
 
-from agents.research import SOCIAL_DOMAINS, _parse_publication_date
+from agents.research import (
+    SOCIAL_DOMAINS,
+    _parse_publication_date,
+    detect_freshness,
+)
 
 _CURRENT_EVIDENCE_MAX_AGE_DAYS = 7
 _GOVERNMENT_SUFFIXES = (
@@ -183,8 +187,14 @@ def apply_source_guardrails(
     """
     clean_mode = str(mode or "auto").strip().lower()
     official_required = requires_official_government_domain(question)
+    # An LLM/intent planner can mark broad tasks as freshness-sensitive. In auto
+    # mode, enforce the strict date gate only when the user's question itself signals
+    # a time-sensitive fact; the explicit Latest mode always enforces it.
+    explicit_current_request = detect_freshness(question)
     freshness_required = (
-        (clean_mode == "latest" or plan.get("freshness") == "current")
+        (clean_mode == "latest" or (
+            plan.get("freshness") == "current" and explicit_current_request
+        ))
         and not _is_navigation_request(question)
     )
     social_required = clean_mode == "social"
@@ -199,7 +209,7 @@ def apply_source_guardrails(
             "url": str(source.get("url") or "")[:2048],
         })
 
-    for candidate in sources if isinstance(sources, list) else []:
+    for candidate in (sources if isinstance(sources, list) else []):
         if not isinstance(candidate, dict):
             rejected["malformed_candidate"] = rejected.get("malformed_candidate", 0) + 1
             reasons.append({"reason": "malformed_candidate", "url": ""})
