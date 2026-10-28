@@ -78,6 +78,26 @@ _PATTERNS: dict[str, tuple[str, ...]] = {
         "اذكر المصادر", "مع مصادر", "بالمصادر", "deep research", "research",
         "verify", "fact check", "with sources", "cite sources",
     ),
+    "output_concise": (
+        "باختصار", "بإيجاز", "مختصر", "من غير إطالة", "بدون إطالة",
+        "briefly", "in brief", "concise", "short answer", "keep it short",
+    ),
+    "output_detailed": (
+        "بالتفصيل", "شرح وافي", "اشرح بالتفصيل", "خطوة بخطوة",
+        "in detail", "step by step", "comprehensive explanation", "walkthrough",
+    ),
+    "output_examples": (
+        "مع مثال", "امثلة", "مثال عملي", "بأمثلة", "for example",
+        "give examples", "practical example", "worked example",
+    ),
+    "output_table": (
+        "في جدول", "اعمل جدول", "جدول مقارنة", "as a table", "in a table",
+        "comparison table", "tabulate",
+    ),
+    "output_bullets": (
+        "نقاط", "على شكل نقاط", "قائمة", "bullet points", "as a list",
+        "in bullets", "checklist",
+    ),
 }
 
 _FRESHNESS_CUES = _PATTERNS["current_information"]
@@ -398,9 +418,13 @@ def build_task_spec(
     # A conflict is a reason to preserve alternatives in diagnostics, not a reason to
     # invent certainty. High ambiguity is limited to unresolved references or a
     # short fragment explicitly marked as contextual.
-    unresolved = bool(context.get("needs_clarification")) or (
-        len(raw.strip()) <= 28 and unresolved_followup
-        and not context.get("resolved_question")
+    unresolved = (
+        intent_route == "CLARIFY"
+        or bool(context.get("needs_clarification"))
+        or (
+            len(raw.strip()) <= 28 and unresolved_followup
+            and not context.get("resolved_question")
+        )
     )
     if unresolved:
         ambiguity_status = "needs_clarification"
@@ -411,16 +435,42 @@ def build_task_spec(
     else:
         ambiguity_status = "no_strong_lexical_conflict_detected"
 
+    # Tool requirements are advisory planning metadata, not executable permission.
+    # A clarification route is a hard stop even when the UI has a research mode selected.
+    route_is_clarification = intent_route == "CLARIFY"
+    route_is_local = intent_route == "LOCAL"
+    search_requested = (
+        intent_route in {"WEB_SIMPLE", "WEB_DEEP", "LEAD_GENERATION"}
+        or (
+            intent_route == "deterministic_fallback"
+            and isinstance(plan, dict)
+            and bool(plan.get("queries"))
+        )
+        or (
+            clean_mode != "auto"
+            and not route_is_clarification
+            and not route_is_local
+        )
+    )
+    inline_summary_text = _has_inline_summary_text(raw)
+    page_fetch_requested = bool(urls) or (
+        family == "summarize"
+        and not inline_summary_text
+        and not route_is_clarification
+    )
     tools: list[str] = []
-    if intent_route in {"WEB_SIMPLE", "WEB_DEEP", "LEAD_GENERATION"} or clean_mode != "auto":
+    if search_requested and not route_is_clarification:
         tools.append("web_search")
-    if urls or navigation or family == "summarize":
+    if page_fetch_requested and not route_is_clarification:
         tools.append("page_fetch")
-    if social_required:
+    if social_required and not route_is_clarification:
         tools.append("public_social_search_if_configured")
-    if intent_route != "LOCAL":
+    if (
+        intent_route in {"MODEL_ONLY", "WEB_SIMPLE", "WEB_DEEP", "LEAD_GENERATION", "deterministic_fallback"}
+        or (clean_mode != "auto" and not route_is_clarification and not route_is_local)
+    ):
         tools.append("language_model_generation_if_configured")
-    if tools and ("web_search" in tools or social_required):
+    if tools and ("web_search" in tools or social_required) and not route_is_clarification:
         tools.append("claim_review_if_configured")
     constraints = {
         "explicit_locations": location,
@@ -429,6 +479,7 @@ def build_task_spec(
         "explicit_budgets": budgets,
         "explicit_urls": urls,
         "explicit_aspects": explicit_aspects,
+        "inline_text_supplied_for_summary": inline_summary_text,
         "time_sensitive_request": current_required,
         "official_site_required": government_official_site,
         "official_destination_required": official_destination,
@@ -453,6 +504,13 @@ def build_task_spec(
         "ambiguity_status": ambiguity_status,
         "hypothesis_interpretations": hypothesis_rows,
         "constraints": constraints,
+        "output_preferences": {
+            "concise": bool(matches["output_concise"]),
+            "detailed": bool(matches["output_detailed"]),
+            "examples_requested": bool(matches["output_examples"]),
+            "table_requested": bool(matches["output_table"]),
+            "bullets_or_checklist_requested": bool(matches["output_bullets"]),
+        },
         "evidence_requirements": evidence_requirements,
         "query_strategies": query_strategies,
         "tool_requirements": list(dict.fromkeys(tools)),
