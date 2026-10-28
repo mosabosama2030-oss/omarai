@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000337 إلى SRC-E599346ABE-L001136
+- النطاق: SRC-E599346ABE-L000328 إلى SRC-E599346ABE-L001127
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000328](../generate_index.py#L328) | 328 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
+| [SRC-E599346ABE-L000329](../generate_index.py#L329) | 329 | `"        return True"` | — |
+| [SRC-E599346ABE-L000330](../generate_index.py#L330) | 330 | `"    return path.suffix.lower() in EXCLUDED_SUFFIXES"` | — |
+| [SRC-E599346ABE-L000331](../generate_index.py#L331) | 331 | `""` | — |
+| [SRC-E599346ABE-L000332](../generate_index.py#L332) | 332 | `""` | — |
+| [SRC-E599346ABE-L000333](../generate_index.py#L333) | 333 | `"def _stable_file_id(relative_file: str) -> str:"` | — |
+| [SRC-E599346ABE-L000334](../generate_index.py#L334) | 334 | `"    \"\"\"Return a deterministic path-derived identifier without hashing file contents.\"\"\""` | — |
+| [SRC-E599346ABE-L000335](../generate_index.py#L335) | 335 | `"    digest = hashlib.sha256(relative_file.encode(\"utf-8\")).hexdigest()[:10].upper()"` | — |
+| [SRC-E599346ABE-L000336](../generate_index.py#L336) | 336 | `"    return f\"FILE-{digest}\""` | — |
 | [SRC-E599346ABE-L000337](../generate_index.py#L337) | 337 | `""` | — |
 | [SRC-E599346ABE-L000338](../generate_index.py#L338) | 338 | `""` | — |
 | [SRC-E599346ABE-L000339](../generate_index.py#L339) | 339 | `"def _category_for_path(relative_file: str) -> str:"` | — |
@@ -807,12 +816,3 @@
 | [SRC-E599346ABE-L001125](../generate_index.py#L1125) | 1125 | `""` | — |
 | [SRC-E599346ABE-L001126](../generate_index.py#L1126) | 1126 | `"            ch = line[i]"` | — |
 | [SRC-E599346ABE-L001127](../generate_index.py#L1127) | 1127 | `"            if quote is not None:"` | — |
-| [SRC-E599346ABE-L001128](../generate_index.py#L1128) | 1128 | `"                if ch == \"\\\\\":"` | — |
-| [SRC-E599346ABE-L001129](../generate_index.py#L1129) | 1129 | `"                    i += 2"` | — |
-| [SRC-E599346ABE-L001130](../generate_index.py#L1130) | 1130 | `"                    continue"` | — |
-| [SRC-E599346ABE-L001131](../generate_index.py#L1131) | 1131 | `"                if ch == quote:"` | — |
-| [SRC-E599346ABE-L001132](../generate_index.py#L1132) | 1132 | `"                    quote = None"` | — |
-| [SRC-E599346ABE-L001133](../generate_index.py#L1133) | 1133 | `"                i += 1"` | — |
-| [SRC-E599346ABE-L001134](../generate_index.py#L1134) | 1134 | `"                continue"` | — |
-| [SRC-E599346ABE-L001135](../generate_index.py#L1135) | 1135 | `""` | — |
-| [SRC-E599346ABE-L001136](../generate_index.py#L1136) | 1136 | `"            if ch in (\"'\", '\"', chr(96)):"` | — |

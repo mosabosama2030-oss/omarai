@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000837 إلى SRC-1AE03B9EC3-L001636
+- النطاق: SRC-1AE03B9EC3-L000831 إلى SRC-1AE03B9EC3-L001630
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000831](../../agents/web_agent.py#L831) | 831 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000832](../../agents/web_agent.py#L832) | 832 | `"        return any(term in value for term in terms)"` | — |
+| [SRC-1AE03B9EC3-L000833](../../agents/web_agent.py#L833) | 833 | `""` | — |
+| [SRC-1AE03B9EC3-L000834](../../agents/web_agent.py#L834) | 834 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000835](../../agents/web_agent.py#L835) | 835 | `"    def _is_lead_search(question: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L000836](../../agents/web_agent.py#L836) | 836 | `"        \"\"\"Keep lead discovery distinct from listing searches and generic explanations.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000837](../../agents/web_agent.py#L837) | 837 | `"        return route_intent(question).get(\"route\") == \"LEAD_GENERATION\""` | — |
 | [SRC-1AE03B9EC3-L000838](../../agents/web_agent.py#L838) | 838 | `""` | — |
 | [SRC-1AE03B9EC3-L000839](../../agents/web_agent.py#L839) | 839 | `"    @staticmethod"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L001628](../../agents/web_agent.py#L1628) | 1628 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L001629](../../agents/web_agent.py#L1629) | 1629 | `"        response.raise_for_status()"` | — |
 | [SRC-1AE03B9EC3-L001630](../../agents/web_agent.py#L1630) | 1630 | `"        payload = response.json()"` | — |
-| [SRC-1AE03B9EC3-L001631](../../agents/web_agent.py#L1631) | 1631 | `"        web_results = payload.get(\"web\", {}).get(\"results\", [])"` | — |
-| [SRC-1AE03B9EC3-L001632](../../agents/web_agent.py#L1632) | 1632 | `"        rows: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L001633](../../agents/web_agent.py#L1633) | 1633 | `"        for item in web_results if isinstance(web_results, list) else []:"` | — |
-| [SRC-1AE03B9EC3-L001634](../../agents/web_agent.py#L1634) | 1634 | `"            if not isinstance(item, dict):"` | — |
-| [SRC-1AE03B9EC3-L001635](../../agents/web_agent.py#L1635) | 1635 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L001636](../../agents/web_agent.py#L1636) | 1636 | `"            url = _public_http_url(item.get(\"url\", \"\"))"` | — |

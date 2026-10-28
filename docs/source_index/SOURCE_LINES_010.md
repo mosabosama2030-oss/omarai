@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003237 إلى SRC-1AE03B9EC3-L004036
+- النطاق: SRC-1AE03B9EC3-L003231 إلى SRC-1AE03B9EC3-L004030
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003231](../../agents/web_agent.py#L3231) | 3231 | `"                        \"deterministic_hint\": fallback.get(\"resolved_question\", question),"` | — |
+| [SRC-1AE03B9EC3-L003232](../../agents/web_agent.py#L3232) | 3232 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L003233](../../agents/web_agent.py#L3233) | 3233 | `"                    ensure_ascii=False,"` | — |
+| [SRC-1AE03B9EC3-L003234](../../agents/web_agent.py#L3234) | 3234 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003235](../../agents/web_agent.py#L3235) | 3235 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L003236](../../agents/web_agent.py#L3236) | 3236 | `"        ]"` | — |
 | [SRC-1AE03B9EC3-L003237](../../agents/web_agent.py#L3237) | 3237 | `"        try:"` | — |
 | [SRC-1AE03B9EC3-L003238](../../agents/web_agent.py#L3238) | 3238 | `"            raw = self._request_completion("` | — |
 | [SRC-1AE03B9EC3-L003239](../../agents/web_agent.py#L3239) | 3239 | `"                messages,"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L004028](../../agents/web_agent.py#L4028) | 4028 | `"                \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
 | [SRC-1AE03B9EC3-L004029](../../agents/web_agent.py#L4029) | 4029 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L004030](../../agents/web_agent.py#L4030) | 4030 | `"            configured_platforms.extend("` | — |
-| [SRC-1AE03B9EC3-L004031](../../agents/web_agent.py#L4031) | 4031 | `"                platform"` | — |
-| [SRC-1AE03B9EC3-L004032](../../agents/web_agent.py#L4032) | 4032 | `"                for platform, is_configured in optional_connectors.items()"` | — |
-| [SRC-1AE03B9EC3-L004033](../../agents/web_agent.py#L4033) | 4033 | `"                if is_configured"` | — |
-| [SRC-1AE03B9EC3-L004034](../../agents/web_agent.py#L4034) | 4034 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004035](../../agents/web_agent.py#L4035) | 4035 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L004036](../../agents/web_agent.py#L4036) | 4036 | `"                social_results, social_warnings = self._search_social("` | — |

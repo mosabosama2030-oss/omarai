@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000010 إلى SRC-90FAA34ADE-L000008
+- النطاق: SRC-4FFD5AFC54-L000001 إلى SRC-547CAF1FE3-L000151
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000001](../../scripts/run_answer_quality_benchmark.py#L1) | 1 | `"\"\"\"Offline / optional live runner for OMARAI-REDTEAM-001 answer-quality cases."` | — |
+| [SRC-4FFD5AFC54-L000002](../../scripts/run_answer_quality_benchmark.py#L2) | 2 | `""` | — |
+| [SRC-4FFD5AFC54-L000003](../../scripts/run_answer_quality_benchmark.py#L3) | 3 | `"Modes"` | — |
+| [SRC-4FFD5AFC54-L000004](../../scripts/run_answer_quality_benchmark.py#L4) | 4 | `"-----"` | — |
+| [SRC-4FFD5AFC54-L000005](../../scripts/run_answer_quality_benchmark.py#L5) | 5 | `"validate (default)"` | — |
+| [SRC-4FFD5AFC54-L000006](../../scripts/run_answer_quality_benchmark.py#L6) | 6 | `"    Load and structurally validate the corpus. No network."` | — |
+| [SRC-4FFD5AFC54-L000007](../../scripts/run_answer_quality_benchmark.py#L7) | 7 | `""` | — |
+| [SRC-4FFD5AFC54-L000008](../../scripts/run_answer_quality_benchmark.py#L8) | 8 | `"live (explicit opt-in)"` | — |
+| [SRC-4FFD5AFC54-L000009](../../scripts/run_answer_quality_benchmark.py#L9) | 9 | `"    POST selected cases to an existing Omarai HTTP API (/api/agent)."` | — |
 | [SRC-4FFD5AFC54-L000010](../../scripts/run_answer_quality_benchmark.py#L10) | 10 | `"    Does NOT inject JSON evidence fixtures into the server."` | — |
 | [SRC-4FFD5AFC54-L000011](../../scripts/run_answer_quality_benchmark.py#L11) | 11 | `"    Does NOT auto-grade PASS/FAIL for answer quality; records NOT_TESTED"` | — |
 | [SRC-4FFD5AFC54-L000012](../../scripts/run_answer_quality_benchmark.py#L12) | 12 | `"    unless a transport/auth error makes the run unusable."` | — |
@@ -825,21 +834,3 @@
 | [SRC-547CAF1FE3-L000149](../../scripts/sqlite_backup_restore.py#L149) | 149 | `""` | — |
 | [SRC-547CAF1FE3-L000150](../../scripts/sqlite_backup_restore.py#L150) | 150 | `""` | — |
 | [SRC-547CAF1FE3-L000151](../../scripts/sqlite_backup_restore.py#L151) | 151 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-547CAF1FE3-L000152](../../scripts/sqlite_backup_restore.py#L152) | 152 | `"    sys.exit(main())"` | — |
-## اختبارات
-
-### FILE-90FAA34ADE — [tests/fixtures/answer_quality_cases.json](../../tests/fixtures/answer_quality_cases.json#L1)
-
-- النوع: **JSON**
-- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-90FAA34ADE-L000001](../../tests/fixtures/answer_quality_cases.json#L1) | 1 | `"{"` | — |
-| [SRC-90FAA34ADE-L000002](../../tests/fixtures/answer_quality_cases.json#L2) | 2 | `"  \"benchmark_id\": \"OMARAI-REDTEAM-001\","` | — |
-| [SRC-90FAA34ADE-L000003](../../tests/fixtures/answer_quality_cases.json#L3) | 3 | `"  \"version\": \"1.0.0\","` | — |
-| [SRC-90FAA34ADE-L000004](../../tests/fixtures/answer_quality_cases.json#L4) | 4 | `"  \"base_commit_reference\": \"ac05f4777f140694b285c5364e6c3875fdecdae6\","` | — |
-| [SRC-90FAA34ADE-L000005](../../tests/fixtures/answer_quality_cases.json#L5) | 5 | `"  \"description\": \"Offline adversarial corpus for Omarai answer quality, strategy selection, evidence fidelity, uncertainty, and safety. Structural validation does not grade Omarai's actual answers.\","` | — |
-| [SRC-90FAA34ADE-L000006](../../tests/fixtures/answer_quality_cases.json#L6) | 6 | `"  \"allowed_strategies\": ["` | — |
-| [SRC-90FAA34ADE-L000007](../../tests/fixtures/answer_quality_cases.json#L7) | 7 | `"    \"local\","` | — |
-| [SRC-90FAA34ADE-L000008](../../tests/fixtures/answer_quality_cases.json#L8) | 8 | `"    \"model_no_search\","` | — |

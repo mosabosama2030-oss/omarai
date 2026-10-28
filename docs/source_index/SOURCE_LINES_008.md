@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001637 إلى SRC-1AE03B9EC3-L002436
+- النطاق: SRC-1AE03B9EC3-L001631 إلى SRC-1AE03B9EC3-L002430
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001631](../../agents/web_agent.py#L1631) | 1631 | `"        web_results = payload.get(\"web\", {}).get(\"results\", [])"` | — |
+| [SRC-1AE03B9EC3-L001632](../../agents/web_agent.py#L1632) | 1632 | `"        rows: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L001633](../../agents/web_agent.py#L1633) | 1633 | `"        for item in web_results if isinstance(web_results, list) else []:"` | — |
+| [SRC-1AE03B9EC3-L001634](../../agents/web_agent.py#L1634) | 1634 | `"            if not isinstance(item, dict):"` | — |
+| [SRC-1AE03B9EC3-L001635](../../agents/web_agent.py#L1635) | 1635 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L001636](../../agents/web_agent.py#L1636) | 1636 | `"            url = _public_http_url(item.get(\"url\", \"\"))"` | — |
 | [SRC-1AE03B9EC3-L001637](../../agents/web_agent.py#L1637) | 1637 | `"            if not url:"` | — |
 | [SRC-1AE03B9EC3-L001638](../../agents/web_agent.py#L1638) | 1638 | `"                continue"` | — |
 | [SRC-1AE03B9EC3-L001639](../../agents/web_agent.py#L1639) | 1639 | `"            snippets = item.get(\"extra_snippets\", [])"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L002428](../../agents/web_agent.py#L2428) | 2428 | `"        target_aspects = ["` | — |
 | [SRC-1AE03B9EC3-L002429](../../agents/web_agent.py#L2429) | 2429 | `"            str(target).strip()[:120]"` | — |
 | [SRC-1AE03B9EC3-L002430](../../agents/web_agent.py#L2430) | 2430 | `"            for target in (plan.get(\"coverage_targets\") or [])[:8]"` | — |
-| [SRC-1AE03B9EC3-L002431](../../agents/web_agent.py#L2431) | 2431 | `"            if isinstance(target, str) and target.strip()"` | — |
-| [SRC-1AE03B9EC3-L002432](../../agents/web_agent.py#L2432) | 2432 | `"        ]"` | — |
-| [SRC-1AE03B9EC3-L002433](../../agents/web_agent.py#L2433) | 2433 | `"        # Reserve part of the existing query ceiling for evidence-gap repair."` | — |
-| [SRC-1AE03B9EC3-L002434](../../agents/web_agent.py#L2434) | 2434 | `"        # This is a bounded retrieval loop, not an unbounded agent loop."` | — |
-| [SRC-1AE03B9EC3-L002435](../../agents/web_agent.py#L2435) | 2435 | `"        repair_slot_limit = ("` | — |
-| [SRC-1AE03B9EC3-L002436](../../agents/web_agent.py#L2436) | 2436 | `"            min(3, len(target_aspects), max(0, query_limit - 1))"` | — |

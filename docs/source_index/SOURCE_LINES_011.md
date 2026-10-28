@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004037 إلى SRC-1AE03B9EC3-L004836
+- النطاق: SRC-1AE03B9EC3-L004031 إلى SRC-1AE03B9EC3-L004830
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004031](../../agents/web_agent.py#L4031) | 4031 | `"                platform"` | — |
+| [SRC-1AE03B9EC3-L004032](../../agents/web_agent.py#L4032) | 4032 | `"                for platform, is_configured in optional_connectors.items()"` | — |
+| [SRC-1AE03B9EC3-L004033](../../agents/web_agent.py#L4033) | 4033 | `"                if is_configured"` | — |
+| [SRC-1AE03B9EC3-L004034](../../agents/web_agent.py#L4034) | 4034 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004035](../../agents/web_agent.py#L4035) | 4035 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L004036](../../agents/web_agent.py#L4036) | 4036 | `"                social_results, social_warnings = self._search_social("` | — |
 | [SRC-1AE03B9EC3-L004037](../../agents/web_agent.py#L4037) | 4037 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
 | [SRC-1AE03B9EC3-L004038](../../agents/web_agent.py#L4038) | 4038 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004039](../../agents/web_agent.py#L4039) | 4039 | `"                providers: dict[str, int] = {}"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L004828](../../agents/web_agent.py#L4828) | 4828 | `"                    else evidence_signal_report(sources, plan.get(\"freshness\", \"any\"))"` | — |
 | [SRC-1AE03B9EC3-L004829](../../agents/web_agent.py#L4829) | 4829 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004830](../../agents/web_agent.py#L4830) | 4830 | `"                public_related_sources = [{"` | — |
-| [SRC-1AE03B9EC3-L004831](../../agents/web_agent.py#L4831) | 4831 | `"                    \"title\": source.get(\"title\") or \"نتيجة ويب\","` | — |
-| [SRC-1AE03B9EC3-L004832](../../agents/web_agent.py#L4832) | 4832 | `"                    \"url\": source[\"url\"],"` | — |
-| [SRC-1AE03B9EC3-L004833](../../agents/web_agent.py#L4833) | 4833 | `"                    \"snippet\": source.get(\"snippet\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L004834](../../agents/web_agent.py#L4834) | 4834 | `"                    \"page_fetched\": bool(source.get(\"page_fetched\")),"` | — |
-| [SRC-1AE03B9EC3-L004835](../../agents/web_agent.py#L4835) | 4835 | `"                    \"providers\": source.get(\"providers\", []),"` | — |
-| [SRC-1AE03B9EC3-L004836](../../agents/web_agent.py#L4836) | 4836 | `"                    \"queries\": source.get(\"queries\", []),"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000192 إلى SRC-6BF96689A8-L000058
+- النطاق: SRC-EA6EC52573-L000183 إلى SRC-6BF96689A8-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EA6EC52573-L000183](../../tests/test_intent_router.py#L183) | 183 | `""` | — |
+| [SRC-EA6EC52573-L000184](../../tests/test_intent_router.py#L184) | 184 | `""` | — |
+| [SRC-EA6EC52573-L000185](../../tests/test_intent_router.py#L185) | 185 | `"def test_prefixed_elliptical_followup_uses_topic_when_available():"` | — |
+| [SRC-EA6EC52573-L000186](../../tests/test_intent_router.py#L186) | 186 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000187](../../tests/test_intent_router.py#L187) | 187 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 16 في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000188](../../tests/test_intent_router.py#L188) | 188 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن iPhone 16 في مصر.\"},"` | — |
+| [SRC-EA6EC52573-L000189](../../tests/test_intent_router.py#L189) | 189 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000190](../../tests/test_intent_router.py#L190) | 190 | `"    for question in (\"طب هل فيه ضمان؟\", \"طيب كام سعرها؟\", \"والضمان؟\"):"` | — |
+| [SRC-EA6EC52573-L000191](../../tests/test_intent_router.py#L191) | 191 | `"        decision = route_intent(question, history, requires_web=True)"` | — |
 | [SRC-EA6EC52573-L000192](../../tests/test_intent_router.py#L192) | 192 | `"        assert decision[\"route\"] == \"WEB_SIMPLE\", question"` | — |
 | [SRC-EA6EC52573-L000193](../../tests/test_intent_router.py#L193) | 193 | `"        resolved = resolve_followup_query(question, history)"` | — |
 | [SRC-EA6EC52573-L000194](../../tests/test_intent_router.py#L194) | 194 | `"        assert \"iPhone 16\" in resolved"` | — |
@@ -861,12 +870,3 @@
 | [SRC-6BF96689A8-L000047](../../tests/test_research.py#L47) | 47 | `"            \"provider\": \"ddg\","` | — |
 | [SRC-6BF96689A8-L000048](../../tests/test_research.py#L48) | 48 | `"            \"results\": ["` | — |
 | [SRC-6BF96689A8-L000049](../../tests/test_research.py#L49) | 49 | `"                {\"title\": \"A\", \"url\": \"https://www.example.com/a?utm_source=x\", \"snippet\": \"A\"},"` | — |
-| [SRC-6BF96689A8-L000050](../../tests/test_research.py#L50) | 50 | `"                {\"title\": \"B\", \"url\": \"https://example.com/b\", \"snippet\": \"B\"},"` | — |
-| [SRC-6BF96689A8-L000051](../../tests/test_research.py#L51) | 51 | `"            ],"` | — |
-| [SRC-6BF96689A8-L000052](../../tests/test_research.py#L52) | 52 | `"        },"` | — |
-| [SRC-6BF96689A8-L000053](../../tests/test_research.py#L53) | 53 | `"        {"` | — |
-| [SRC-6BF96689A8-L000054](../../tests/test_research.py#L54) | 54 | `"            \"query\": \"electric vehicles Egypt\","` | — |
-| [SRC-6BF96689A8-L000055](../../tests/test_research.py#L55) | 55 | `"            \"provider\": \"bing\","` | — |
-| [SRC-6BF96689A8-L000056](../../tests/test_research.py#L56) | 56 | `"            \"results\": ["` | — |
-| [SRC-6BF96689A8-L000057](../../tests/test_research.py#L57) | 57 | `"                {\"title\": \"A better title\", \"url\": \"https://example.com/a\", \"snippet\": \"Longer evidence snippet\"},"` | — |
-| [SRC-6BF96689A8-L000058](../../tests/test_research.py#L58) | 58 | `"                {\"title\": \"C\", \"url\": \"https://example.com/c\", \"snippet\": \"C\"},"` | — |
