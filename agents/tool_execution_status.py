@@ -223,9 +223,9 @@ def build_tool_execution_matrix(
         row.get("attempted") is False for row in social_configured_connectors
     ):
         status = "not_attempted"
-    elif social_not_configured_connectors and not social_configured_connectors:
-        status = "not_configured"
-    elif social_not_configured_connectors and not attempted_social_connectors:
+    elif social_not_configured_connectors and (
+        not social_configured_connectors or not attempted_social_connectors
+    ):
         status = "not_configured"
     elif raw_social_results is None and not social_connector_states:
         status = "unknown"
