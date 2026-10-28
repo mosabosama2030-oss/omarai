@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **82**
-- ملفات Python المحللة: **41**
-- تعريفات Python المفهرسة: **1065**
-- تعريفات Python موثقة بوجود Docstring: **205**
-- تعريفات Python بلا Docstring: **654**
-- تعريفات لا ينطبق عليها Docstring: **206**
-- الرموز الساكنة الإضافية: **1631**
-- الأسطر النصية المفهرسة حرفيًا: **28459**
+- ملفات المستودع في الجرد: **83**
+- ملفات Python المحللة: **42**
+- تعريفات Python المفهرسة: **1080**
+- تعريفات Python موثقة بوجود Docstring: **208**
+- تعريفات Python بلا Docstring: **656**
+- تعريفات لا ينطبق عليها Docstring: **216**
+- الرموز الساكنة الإضافية: **1635**
+- الأسطر النصية المفهرسة حرفيًا: **28684**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -38,6 +38,7 @@
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
+| FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 8113 | 225 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 22483 | 504 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
@@ -135,6 +136,21 @@
 | [agents/answer_validation.py](../agents/answer_validation.py#L121) | متغير/ثابت Python | _VALUE_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 121 | [SRC-138992B1FC-L000121](../agents/answer_validation.py#L121) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L148) | دالة | _numeric_values_with_cues | Extract number/dimension pairs as review signals, not as semantic claims. | موثق | 148 | [SRC-138992B1FC-L000148](../agents/answer_validation.py#L148) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L161) | دالة | audit_answer_integrity | Return bounded lexical checks; never label them as semantic fact verification. | موثق | 161 | [SRC-138992B1FC-L000161](../agents/answer_validation.py#L161) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L15) | متغير/ثابت Python | MAX_RESOLVED_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-2D53795445-L000015](../agents/dialogue_state.py#L15) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L16) | متغير/ثابت Python | MAX_CONTEXT_TEXT_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-2D53795445-L000016](../agents/dialogue_state.py#L16) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L17) | متغير/ثابت Python | MAX_ENTITIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-2D53795445-L000017](../agents/dialogue_state.py#L17) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L18) | متغير/ثابت Python | MAX_SLOT_VALUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-2D53795445-L000018](../agents/dialogue_state.py#L18) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L20) | متغير/ثابت Python | _ALLOWED_INTENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-2D53795445-L000020](../agents/dialogue_state.py#L20) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L35) | متغير/ثابت Python | _ALLOWED_SLOT_KEYS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 35 | [SRC-2D53795445-L000035](../agents/dialogue_state.py#L35) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L40) | متغير/ثابت Python | _ALLOWED_CHANGED_SLOTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 40 | [SRC-2D53795445-L000040](../agents/dialogue_state.py#L40) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L41) | متغير/ثابت Python | _ALLOWED_RESOLUTION_BASES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 41 | [SRC-2D53795445-L000041](../agents/dialogue_state.py#L41) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L45) | متغير/ثابت Python | _ALLOWED_CONFIDENCE_BANDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 45 | [SRC-2D53795445-L000045](../agents/dialogue_state.py#L45) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L46) | متغير/ثابت Python | _WHITESPACE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 46 | [SRC-2D53795445-L000046](../agents/dialogue_state.py#L46) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L49) | دالة | _clean_text | لا توجد Docstring. | ناقص | 49 | [SRC-2D53795445-L000049](../agents/dialogue_state.py#L49) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L58) | دالة | _clean_string_list | لا توجد Docstring. | ناقص | 58 | [SRC-2D53795445-L000058](../agents/dialogue_state.py#L58) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L74) | دالة | fallback_dialogue_context | Build a conservative context record from the deterministic follow-up resolver. | موثق | 74 | [SRC-2D53795445-L000074](../agents/dialogue_state.py#L74) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L103) | دالة | validate_dialogue_context | Validate bounded context output from a planner without treating it as truth. | موثق | 103 | [SRC-2D53795445-L000103](../agents/dialogue_state.py#L103) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L208) | دالة | might_be_context_dependent | Cheap trigger only; it does not decide the meaning of a contextual message. | موثق | 208 | [SRC-2D53795445-L000208](../agents/dialogue_state.py#L208) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | متغير/ثابت Python | MAX_CONTEXT_TURNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L14) | متغير/ثابت Python | ROUTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-5587371288-L000014](../agents/intent_router.py#L14) |
 | [agents/intent_router.py](../agents/intent_router.py#L19) | متغير/ثابت Python | _ARABIC_DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-5587371288-L000019](../agents/intent_router.py#L19) |
@@ -1317,6 +1333,10 @@
 | [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
 | [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
 | [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RESOLVED_QUESTION_CHARS | 15 | [SRC-2D53795445-L000015](../agents/dialogue_state.py#L15) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONTEXT_TEXT_CHARS | 16 | [SRC-2D53795445-L000016](../agents/dialogue_state.py#L16) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_ENTITIES | 17 | [SRC-2D53795445-L000017](../agents/dialogue_state.py#L17) |
+| [agents/dialogue_state.py](../agents/dialogue_state.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_SLOT_VALUES | 18 | [SRC-2D53795445-L000018](../agents/dialogue_state.py#L18) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONTEXT_TURNS | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
