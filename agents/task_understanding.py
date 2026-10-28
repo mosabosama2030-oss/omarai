@@ -554,7 +554,15 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} official source report", "primary_source_en", "alternate source-oriented search wording"),
             (f"{topic} limitations risks independent analysis", "independent_analysis", "seek counterevidence and limitations"),
         ])
-    if not candidates and family not in {"general_question", "ambiguous_or_incomplete"}:
+    if (
+        not candidates
+        and not rows
+        and family not in {"general_question", "ambiguous_or_incomplete"}
+        and (
+            spec.get("mode") in {"deep", "latest", "social"}
+            or spec.get("intent_route") in {"WEB_DEEP", "LEAD_GENERATION"}
+        )
+    ):
         candidates.append(
             (f"{topic} مصدر موثوق", "source_oriented_alternative", "search wording is a hypothesis, not evidence")
         )
