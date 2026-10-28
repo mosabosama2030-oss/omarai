@@ -243,7 +243,7 @@ def test_operational_truth_overrides_a_model_claim_about_this_request(monkeypatc
 def test_generation_budget_exhaustion_preserves_partial_sources(monkeypatch):
     agent = WebAgent()
     agent.api_key = "test-key"
-    question = "اجمع معلومات تمهيدية حول الطاقة المتجددة"
+    question = "ابحث عن أحدث معلومات حول الطاقة المتجددة"
     monkeypatch.setenv("OMARAI_REQUEST_MAX_MODEL_CALLS", "1")
     sources = [
         source(
