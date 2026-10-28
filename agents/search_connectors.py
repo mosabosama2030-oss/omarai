@@ -7,7 +7,8 @@ import re
 import urllib.error
 import urllib.parse
 import urllib.request
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 MAX_CONNECTOR_RESULTS = 6
 DEFAULT_TIMEOUT_SECONDS = 5
@@ -78,12 +79,12 @@ def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[st
         return []
     params = urllib.parse.urlencode({"search_query": f"all:{query.strip()[:200]}", "start": 0, "max_results": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})
     xml_text = _http_get_text(f"https://export.arxiv.org/api/query?{params}")
-    entries = re.findall(r"<entry>(.*?)</entry>", xml_text, flags=re.S)
+    entries = re.findall(r"<entry>(.*?)</entry>", xml_text, flags=re.DOTALL)
     rows: list[dict[str, Any]] = []
     for entry in entries[:limit]:
-        title_m = re.search(r"<title>(.*?)</title>", entry, re.S)
+        title_m = re.search(r"<title>(.*?)</title>", entry, re.DOTALL)
         link_m = re.search(r"<id>(https?://arxiv\.org/abs/[^<]+)</id>", entry)
-        summary_m = re.search(r"<summary>(.*?)</summary>", entry, re.S)
+        summary_m = re.search(r"<summary>(.*?)</summary>", entry, re.DOTALL)
         published_m = re.search(r"<published>([^<]+)</published>", entry)
         title = _clean_text(title_m.group(1) if title_m else "")
         link = link_m.group(1) if link_m else ""
