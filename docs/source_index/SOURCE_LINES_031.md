@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000079 إلى SRC-829A979985-L000039
+- النطاق: SRC-6BCB799CEC-L000078 إلى SRC-829A979985-L000038
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000078](../../tests/test_evidence_provenance.py#L78) | 78 | `"            {"` | — |
 | [SRC-6BCB799CEC-L000079](../../tests/test_evidence_provenance.py#L79) | 79 | `"                \"title\": \"آخر المعلومات من مصدر مستقل\","` | — |
 | [SRC-6BCB799CEC-L000080](../../tests/test_evidence_provenance.py#L80) | 80 | `"                \"url\": \"https://beta.example.org/report\","` | — |
 | [SRC-6BCB799CEC-L000081](../../tests/test_evidence_provenance.py#L81) | 81 | `"                \"snippet\": \"معلومات موثقة عن الموضوع\","` | — |
@@ -842,4 +843,3 @@
 | [SRC-829A979985-L000036](../../tests/test_generation_acceptance_matrix.py#L36) | 36 | `"    domain: str,"` | — |
 | [SRC-829A979985-L000037](../../tests/test_generation_acceptance_matrix.py#L37) | 37 | `"    *,"` | — |
 | [SRC-829A979985-L000038](../../tests/test_generation_acceptance_matrix.py#L38) | 38 | `"    page_fetched: bool,"` | — |
-| [SRC-829A979985-L000039](../../tests/test_generation_acceptance_matrix.py#L39) | 39 | `"    page_text: str = \"\","` | — |
