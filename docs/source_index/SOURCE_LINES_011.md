@@ -800,19 +800,19 @@
 | [SRC-1AE03B9EC3-L005143](../../agents/web_agent.py#L5143) | 5143 | `"            for source in sources"` | — |
 | [SRC-1AE03B9EC3-L005144](../../agents/web_agent.py#L5144) | 5144 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L005145](../../agents/web_agent.py#L5145) | 5145 | `"        final_independent_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L005146](../../agents/web_agent.py#L5146) | 5146 | `"        needs_corroboration = ("` | — |
-| [SRC-1AE03B9EC3-L005147](../../agents/web_agent.py#L5147) | 5147 | `"            len(sources) < 2 or len(final_independent_domains) < 2"` | — |
-| [SRC-1AE03B9EC3-L005148](../../agents/web_agent.py#L5148) | 5148 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L005149](../../agents/web_agent.py#L5149) | 5149 | `"        report[\"evidence_repair\"] = evidence_repair"` | — |
-| [SRC-1AE03B9EC3-L005150](../../agents/web_agent.py#L5150) | 5150 | `"        baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}"` | — |
-| [SRC-1AE03B9EC3-L005151](../../agents/web_agent.py#L5151) | 5151 | `"        with self._provider_diagnostics_lock:"` | — |
-| [SRC-1AE03B9EC3-L005152](../../agents/web_agent.py#L5152) | 5152 | `"            current_research_diagnostics = ["` | — |
-| [SRC-1AE03B9EC3-L005153](../../agents/web_agent.py#L5153) | 5153 | `"                item for item in self._provider_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L005154](../../agents/web_agent.py#L5154) | 5154 | `"                if id(item) not in baseline_diagnostic_ids"` | — |
-| [SRC-1AE03B9EC3-L005155](../../agents/web_agent.py#L5155) | 5155 | `"            ]"` | — |
-| [SRC-1AE03B9EC3-L005156](../../agents/web_agent.py#L5156) | 5156 | `"        report[\"provider_diagnostics\"] = current_research_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L005157](../../agents/web_agent.py#L5157) | 5157 | `"        provider_attempt_observed = any("` | — |
-| [SRC-1AE03B9EC3-L005158](../../agents/web_agent.py#L5158) | 5158 | `"            item.get(\"status\") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
-| [SRC-1AE03B9EC3-L005159](../../agents/web_agent.py#L5159) | 5159 | `"            for item in current_research_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L005160](../../agents/web_agent.py#L5160) | 5160 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L005161](../../agents/web_agent.py#L5161) | 5161 | `"        raw_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
+| [SRC-1AE03B9EC3-L005146](../../agents/web_agent.py#L5146) | 5146 | `"        # All post-filter source metrics describe the sources that remain eligible"` | — |
+| [SRC-1AE03B9EC3-L005147](../../agents/web_agent.py#L5147) | 5147 | `"        # for the answer. Connector-level received/accepted/rejected totals remain"` | — |
+| [SRC-1AE03B9EC3-L005148](../../agents/web_agent.py#L5148) | 5148 | `"        # available in provider diagnostics and are intentionally separate."` | — |
+| [SRC-1AE03B9EC3-L005149](../../agents/web_agent.py#L5149) | 5149 | `"        independent_domains = final_independent_domains"` | — |
+| [SRC-1AE03B9EC3-L005150](../../agents/web_agent.py#L5150) | 5150 | `"        report[\"unique_sources\"] = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L005151](../../agents/web_agent.py#L5151) | 5151 | `"        report[\"pages_fetched\"] = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
+| [SRC-1AE03B9EC3-L005152](../../agents/web_agent.py#L5152) | 5152 | `"        report[\"distinct_registrable_domains\"] = len(independent_domains)"` | — |
+| [SRC-1AE03B9EC3-L005153](../../agents/web_agent.py#L5153) | 5153 | `"        report[\"independent_sources\"] = len(independent_domains)"` | — |
+| [SRC-1AE03B9EC3-L005154](../../agents/web_agent.py#L5154) | 5154 | `"        report[\"providers_used\"] = sorted({"` | — |
+| [SRC-1AE03B9EC3-L005155](../../agents/web_agent.py#L5155) | 5155 | `"            str(provider)"` | — |
+| [SRC-1AE03B9EC3-L005156](../../agents/web_agent.py#L5156) | 5156 | `"            for source in sources"` | — |
+| [SRC-1AE03B9EC3-L005157](../../agents/web_agent.py#L5157) | 5157 | `"            for provider in source.get(\"providers\", [])"` | — |
+| [SRC-1AE03B9EC3-L005158](../../agents/web_agent.py#L5158) | 5158 | `"            if provider"` | — |
+| [SRC-1AE03B9EC3-L005159](../../agents/web_agent.py#L5159) | 5159 | `"        })"` | — |
+| [SRC-1AE03B9EC3-L005160](../../agents/web_agent.py#L5160) | 5160 | `"        report[\"provider_counts\"] = {"` | — |
+| [SRC-1AE03B9EC3-L005161](../../agents/web_agent.py#L5161) | 5161 | `"            provider: sum(provider in source.get(\"providers\", []) for source in sources)"` | — |

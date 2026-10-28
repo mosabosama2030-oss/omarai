@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000112 إلى SRC-F725E90B2A-L000231
+- النطاق: SRC-01E35ABC46-L000084 إلى SRC-F725E90B2A-L000203
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000084](../../tests/test_research_guardrails.py#L84) | 84 | `"    assert rel[\"score\"] >= 18"` | — |
+| [SRC-01E35ABC46-L000085](../../tests/test_research_guardrails.py#L85) | 85 | `""` | — |
+| [SRC-01E35ABC46-L000086](../../tests/test_research_guardrails.py#L86) | 86 | `"    # English-English match"` | — |
+| [SRC-01E35ABC46-L000087](../../tests/test_research_guardrails.py#L87) | 87 | `"    src_en = {"` | — |
+| [SRC-01E35ABC46-L000088](../../tests/test_research_guardrails.py#L88) | 88 | `"        \"title\": \"Electric vehicles in Egypt 2026\","` | — |
+| [SRC-01E35ABC46-L000089](../../tests/test_research_guardrails.py#L89) | 89 | `"        \"url\": \"https://example.com/ev-egypt-en\","` | — |
+| [SRC-01E35ABC46-L000090](../../tests/test_research_guardrails.py#L90) | 90 | `"        \"snippet\": \"Market share of electric cars in Egypt rose this year.\","` | — |
+| [SRC-01E35ABC46-L000091](../../tests/test_research_guardrails.py#L91) | 91 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-01E35ABC46-L000092](../../tests/test_research_guardrails.py#L92) | 92 | `"        \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000093](../../tests/test_research_guardrails.py#L93) | 93 | `"        \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000094](../../tests/test_research_guardrails.py#L94) | 94 | `"    }"` | — |
+| [SRC-01E35ABC46-L000095](../../tests/test_research_guardrails.py#L95) | 95 | `"    rel_en = source_relevance_score(src_en, \"electric vehicles Egypt market share\")"` | — |
+| [SRC-01E35ABC46-L000096](../../tests/test_research_guardrails.py#L96) | 96 | `"    assert rel_en[\"accepted\"] is True"` | — |
+| [SRC-01E35ABC46-L000097](../../tests/test_research_guardrails.py#L97) | 97 | `""` | — |
+| [SRC-01E35ABC46-L000098](../../tests/test_research_guardrails.py#L98) | 98 | `""` | — |
+| [SRC-01E35ABC46-L000099](../../tests/test_research_guardrails.py#L99) | 99 | `"def test_relevance_rejects_unrelated():"` | — |
+| [SRC-01E35ABC46-L000100](../../tests/test_research_guardrails.py#L100) | 100 | `"    src = {"` | — |
+| [SRC-01E35ABC46-L000101](../../tests/test_research_guardrails.py#L101) | 101 | `"        \"title\": \"Best pasta recipes\","` | — |
+| [SRC-01E35ABC46-L000102](../../tests/test_research_guardrails.py#L102) | 102 | `"        \"url\": \"https://cooking.example/pasta\","` | — |
+| [SRC-01E35ABC46-L000103](../../tests/test_research_guardrails.py#L103) | 103 | `"        \"snippet\": \"How to make carbonara at home with eggs and cheese.\","` | — |
+| [SRC-01E35ABC46-L000104](../../tests/test_research_guardrails.py#L104) | 104 | `"        \"domain\": \"cooking.example\","` | — |
+| [SRC-01E35ABC46-L000105](../../tests/test_research_guardrails.py#L105) | 105 | `"        \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000106](../../tests/test_research_guardrails.py#L106) | 106 | `"        \"providers\": [\"bing\"],"` | — |
+| [SRC-01E35ABC46-L000107](../../tests/test_research_guardrails.py#L107) | 107 | `"    }"` | — |
+| [SRC-01E35ABC46-L000108](../../tests/test_research_guardrails.py#L108) | 108 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000109](../../tests/test_research_guardrails.py#L109) | 109 | `"    assert rel[\"accepted\"] is False"` | — |
+| [SRC-01E35ABC46-L000110](../../tests/test_research_guardrails.py#L110) | 110 | `""` | — |
+| [SRC-01E35ABC46-L000111](../../tests/test_research_guardrails.py#L111) | 111 | `""` | — |
 | [SRC-01E35ABC46-L000112](../../tests/test_research_guardrails.py#L112) | 112 | `"def test_relevance_keeps_official_despite_wording():"` | — |
 | [SRC-01E35ABC46-L000113](../../tests/test_research_guardrails.py#L113) | 113 | `"    src = {"` | — |
 | [SRC-01E35ABC46-L000114](../../tests/test_research_guardrails.py#L114) | 114 | `"        \"title\": \"Official statistical bulletin Q1\","` | — |
@@ -815,31 +843,3 @@
 | [SRC-F725E90B2A-L000201](../../tests/test_web_agent.py#L201) | 201 | `"    assert results[1][\"url\"] == \"https://example.net/second\""` | — |
 | [SRC-F725E90B2A-L000202](../../tests/test_web_agent.py#L202) | 202 | `"    assert len(calls) == 2"` | — |
 | [SRC-F725E90B2A-L000203](../../tests/test_web_agent.py#L203) | 203 | `""` | — |
-| [SRC-F725E90B2A-L000204](../../tests/test_web_agent.py#L204) | 204 | `""` | — |
-| [SRC-F725E90B2A-L000205](../../tests/test_web_agent.py#L205) | 205 | `""` | — |
-| [SRC-F725E90B2A-L000206](../../tests/test_web_agent.py#L206) | 206 | `"def test_model_planner_preserves_social_intent_and_adds_targeted_query(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000207](../../tests/test_web_agent.py#L207) | 207 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000208](../../tests/test_web_agent.py#L208) | 208 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L000209](../../tests/test_web_agent.py#L209) | 209 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000210](../../tests/test_web_agent.py#L210) | 210 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L000211](../../tests/test_web_agent.py#L211) | 211 | `"        \"_request_completion\","` | — |
-| [SRC-F725E90B2A-L000212](../../tests/test_web_agent.py#L212) | 212 | `"        lambda *args, **kwargs: ("` | — |
-| [SRC-F725E90B2A-L000213](../../tests/test_web_agent.py#L213) | 213 | `"            '{\"queries\":[\"مراجعات السيارات الكهربائية\"],\"social_focus\":true,'"` | — |
-| [SRC-F725E90B2A-L000214](../../tests/test_web_agent.py#L214) | 214 | `"            '\"freshness\":\"any\",\"depth\":\"deep\",\"platforms\":[\"reddit\"]}'"` | — |
-| [SRC-F725E90B2A-L000215](../../tests/test_web_agent.py#L215) | 215 | `"        ),"` | — |
-| [SRC-F725E90B2A-L000216](../../tests/test_web_agent.py#L216) | 216 | `"    )"` | — |
-| [SRC-F725E90B2A-L000217](../../tests/test_web_agent.py#L217) | 217 | `"    plan = agent._plan_search("` | — |
-| [SRC-F725E90B2A-L000218](../../tests/test_web_agent.py#L218) | 218 | `"        \"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\","` | — |
-| [SRC-F725E90B2A-L000219](../../tests/test_web_agent.py#L219) | 219 | `"        [],"` | — |
-| [SRC-F725E90B2A-L000220](../../tests/test_web_agent.py#L220) | 220 | `"    )"` | — |
-| [SRC-F725E90B2A-L000221](../../tests/test_web_agent.py#L221) | 221 | `"    assert plan[\"planning_method\"] == \"language_model\""` | — |
-| [SRC-F725E90B2A-L000222](../../tests/test_web_agent.py#L222) | 222 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L000223](../../tests/test_web_agent.py#L223) | 223 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-F725E90B2A-L000224](../../tests/test_web_agent.py#L224) | 224 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L000225](../../tests/test_web_agent.py#L225) | 225 | `""` | — |
-| [SRC-F725E90B2A-L000226](../../tests/test_web_agent.py#L226) | 226 | `""` | — |
-| [SRC-F725E90B2A-L000227](../../tests/test_web_agent.py#L227) | 227 | `"def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000228](../../tests/test_web_agent.py#L228) | 228 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000229](../../tests/test_web_agent.py#L229) | 229 | `""` | — |
-| [SRC-F725E90B2A-L000230](../../tests/test_web_agent.py#L230) | 230 | `"    reddit_xml = \"\"\"<rss><channel><item>"` | — |
-| [SRC-F725E90B2A-L000231](../../tests/test_web_agent.py#L231) | 231 | `"      <title>تجربة سيارة كهربائية</title>"` | — |

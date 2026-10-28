@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001191 إلى SRC-B3062EB677-L000090
+- النطاق: SRC-90FAA34ADE-L001163 إلى SRC-B3062EB677-L000062
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001163](../../tests/fixtures/answer_quality_cases.json#L1163) | 1163 | `"        \"يعرض إجابة على أنها مراجعة بنموذج لم يعمل\","` | — |
+| [SRC-90FAA34ADE-L001164](../../tests/fixtures/answer_quality_cases.json#L1164) | 1164 | `"        \"يخفي عطل الاعتمادات ويولد نتيجة تحقق وهمية\""` | — |
+| [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001166](../../tests/fixtures/answer_quality_cases.json#L1166) | 1166 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001167](../../tests/fixtures/answer_quality_cases.json#L1167) | 1167 | `"        \"type\": \"env\","` | — |
+| [SRC-90FAA34ADE-L001168](../../tests/fixtures/answer_quality_cases.json#L1168) | 1168 | `"        \"missing\": ["` | — |
+| [SRC-90FAA34ADE-L001169](../../tests/fixtures/answer_quality_cases.json#L1169) | 1169 | `"          \"OPENROUTER_API_KEY\""` | — |
+| [SRC-90FAA34ADE-L001170](../../tests/fixtures/answer_quality_cases.json#L1170) | 1170 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L001171](../../tests/fixtures/answer_quality_cases.json#L1171) | 1171 | `"        \"review_service\": \"disabled\","` | — |
+| [SRC-90FAA34ADE-L001172](../../tests/fixtures/answer_quality_cases.json#L1172) | 1172 | `"        \"answer_model\": \"unavailable\""` | — |
+| [SRC-90FAA34ADE-L001173](../../tests/fixtures/answer_quality_cases.json#L1173) | 1173 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001174](../../tests/fixtures/answer_quality_cases.json#L1174) | 1174 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001175](../../tests/fixtures/answer_quality_cases.json#L1175) | 1175 | `"        \"ادعاء تنفيذ model review مع غياب الاعتمادات\","` | — |
+| [SRC-90FAA34ADE-L001176](../../tests/fixtures/answer_quality_cases.json#L1176) | 1176 | `"        \"تلفيق ناتج من الخدمة غير المتاحة\""` | — |
+| [SRC-90FAA34ADE-L001177](../../tests/fixtures/answer_quality_cases.json#L1177) | 1177 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001178](../../tests/fixtures/answer_quality_cases.json#L1178) | 1178 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001179](../../tests/fixtures/answer_quality_cases.json#L1179) | 1179 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001180](../../tests/fixtures/answer_quality_cases.json#L1180) | 1180 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001181](../../tests/fixtures/answer_quality_cases.json#L1181) | 1181 | `"      \"case_id\": \"AQ-040\","` | — |
+| [SRC-90FAA34ADE-L001182](../../tests/fixtures/answer_quality_cases.json#L1182) | 1182 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
+| [SRC-90FAA34ADE-L001183](../../tests/fixtures/answer_quality_cases.json#L1183) | 1183 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L001184](../../tests/fixtures/answer_quality_cases.json#L1184) | 1184 | `"      \"question\": \"I have one cropped screenshot with no date or source. Can you confirm this is today's official exchange rate?\","` | — |
+| [SRC-90FAA34ADE-L001185](../../tests/fixtures/answer_quality_cases.json#L1185) | 1185 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001186](../../tests/fixtures/answer_quality_cases.json#L1186) | 1186 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001187](../../tests/fixtures/answer_quality_cases.json#L1187) | 1187 | `"        \"Says the screenshot alone cannot authenticate current rate or date\","` | — |
+| [SRC-90FAA34ADE-L001188](../../tests/fixtures/answer_quality_cases.json#L1188) | 1188 | `"        \"Seeks a timestamped reliable source or explicitly abstains\","` | — |
+| [SRC-90FAA34ADE-L001189](../../tests/fixtures/answer_quality_cases.json#L1189) | 1189 | `"        \"Separates what is visible in the image from external verification\""` | — |
+| [SRC-90FAA34ADE-L001190](../../tests/fixtures/answer_quality_cases.json#L1190) | 1190 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001191](../../tests/fixtures/answer_quality_cases.json#L1191) | 1191 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001192](../../tests/fixtures/answer_quality_cases.json#L1192) | 1192 | `"        \"Confirms today's rate based only on the cropped screenshot\","` | — |
 | [SRC-90FAA34ADE-L001193](../../tests/fixtures/answer_quality_cases.json#L1193) | 1193 | `"        \"Invents source metadata\""` | — |
@@ -833,31 +861,3 @@
 | [SRC-B3062EB677-L000060](../../tests/test_answer_quality_runner.py#L60) | 60 | `"    data[\"case_count\"] = 1"` | — |
 | [SRC-B3062EB677-L000061](../../tests/test_answer_quality_runner.py#L61) | 61 | `"    bad = tmp_path / \"bad2.json\""` | — |
 | [SRC-B3062EB677-L000062](../../tests/test_answer_quality_runner.py#L62) | 62 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |
-| [SRC-B3062EB677-L000063](../../tests/test_answer_quality_runner.py#L63) | 63 | `"    problems = mod.validate_corpus(mod.load_corpus(bad))"` | — |
-| [SRC-B3062EB677-L000064](../../tests/test_answer_quality_runner.py#L64) | 64 | `"    assert problems"` | — |
-| [SRC-B3062EB677-L000065](../../tests/test_answer_quality_runner.py#L65) | 65 | `""` | — |
-| [SRC-B3062EB677-L000066](../../tests/test_answer_quality_runner.py#L66) | 66 | `""` | — |
-| [SRC-B3062EB677-L000067](../../tests/test_answer_quality_runner.py#L67) | 67 | `"def test_live_refuses_unbounded_without_limit_or_case_id(capsys):"` | — |
-| [SRC-B3062EB677-L000068](../../tests/test_answer_quality_runner.py#L68) | 68 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000069](../../tests/test_answer_quality_runner.py#L69) | 69 | `"    rc = mod.main([\"--mode\", \"live\", \"--corpus\", str(CORPUS)])"` | — |
-| [SRC-B3062EB677-L000070](../../tests/test_answer_quality_runner.py#L70) | 70 | `"    assert rc == 2"` | — |
-| [SRC-B3062EB677-L000071](../../tests/test_answer_quality_runner.py#L71) | 71 | `"    err = capsys.readouterr().err"` | — |
-| [SRC-B3062EB677-L000072](../../tests/test_answer_quality_runner.py#L72) | 72 | `"    assert \"Refusing unbounded\" in err"` | — |
-| [SRC-B3062EB677-L000073](../../tests/test_answer_quality_runner.py#L73) | 73 | `""` | — |
-| [SRC-B3062EB677-L000074](../../tests/test_answer_quality_runner.py#L74) | 74 | `""` | — |
-| [SRC-B3062EB677-L000075](../../tests/test_answer_quality_runner.py#L75) | 75 | `"def test_live_unknown_case_id(capsys):"` | — |
-| [SRC-B3062EB677-L000076](../../tests/test_answer_quality_runner.py#L76) | 76 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000077](../../tests/test_answer_quality_runner.py#L77) | 77 | `"    rc = mod.main("` | — |
-| [SRC-B3062EB677-L000078](../../tests/test_answer_quality_runner.py#L78) | 78 | `"        ["` | — |
-| [SRC-B3062EB677-L000079](../../tests/test_answer_quality_runner.py#L79) | 79 | `"            \"--mode\","` | — |
-| [SRC-B3062EB677-L000080](../../tests/test_answer_quality_runner.py#L80) | 80 | `"            \"live\","` | — |
-| [SRC-B3062EB677-L000081](../../tests/test_answer_quality_runner.py#L81) | 81 | `"            \"--corpus\","` | — |
-| [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
-| [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
-| [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
-| [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
-| [SRC-B3062EB677-L000086](../../tests/test_answer_quality_runner.py#L86) | 86 | `"            \"http://127.0.0.1:9\","` | — |
-| [SRC-B3062EB677-L000087](../../tests/test_answer_quality_runner.py#L87) | 87 | `"        ]"` | — |
-| [SRC-B3062EB677-L000088](../../tests/test_answer_quality_runner.py#L88) | 88 | `"    )"` | — |
-| [SRC-B3062EB677-L000089](../../tests/test_answer_quality_runner.py#L89) | 89 | `"    assert rc == 2"` | — |
-| [SRC-B3062EB677-L000090](../../tests/test_answer_quality_runner.py#L90) | 90 | `""` | — |

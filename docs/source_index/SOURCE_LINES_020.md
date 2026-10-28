@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000703 إلى SRC-62CE5126F9-L000275
+- النطاق: SRC-D17CE3D12F-L000675 إلى SRC-62CE5126F9-L000247
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000675](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L675) | 675 | `"4. MUST وضع حد لعدد مرات المحاولة وزمن بقاء المهمة وحجم الرسالة ومعدل استهلاك العمال."` | — |
+| [SRC-D17CE3D12F-L000676](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L676) | 676 | `"5. MUST ألا تحتوي الرسائل على أسرار أو بيانات شخصية غير ضرورية، وأن تكون صلاحيات الوصول إلى الطابور محدودة."` | — |
+| [SRC-D17CE3D12F-L000677](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L677) | 677 | `"6. SHOULD استخدام نمط outbox أو آلية اتساق مماثلة عندما يلزم توحيد كتابة البيانات وإصدار حدث مرتبط بها."` | — |
+| [SRC-D17CE3D12F-L000678](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L678) | 678 | `"7. MUST ألا تعتبر الرسالة منجزة قبل ضمان حفظ حالة المعالجة وفق مستوى الديمومة المطلوب."` | — |
+| [SRC-D17CE3D12F-L000679](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L679) | 679 | `"8. MUST وضع سياسة لإعادة معالجة الرسائل والمهام القديمة بعد تغيير الكود أو المخطط."` | — |
+| [SRC-D17CE3D12F-L000680](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L680) | 680 | `"9. SHOULD جعل worker قابلاً للإيقاف المنضبط، وتحديد سلوك المهمة الجارية أثناء الإغلاق."` | — |
+| [SRC-D17CE3D12F-L000681](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L681) | 681 | `"10. MUST مراقبة عمق الطابور، وعمر أقدم مهمة، ومعدل النجاح والفشل، ووقت الانتظار، واستهلاك العمال؛ ارتفاع عمق الطابور قد يكون فشلًا للمستخدم حتى إذا ظل الخادم حيًا."` | — |
+| [SRC-D17CE3D12F-L000682](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L682) | 682 | `"11. MUST تطبيق حد تزامن وتغذية راجعة تمنع الطابور من إغراق قاعدة البيانات أو موفر النماذج."` | — |
+| [SRC-D17CE3D12F-L000683](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L683) | 683 | `"12. SHOULD اختبار duplicate delivery والتأخير والتوقف وإعادة التشغيل وتلف الرسائل في بيئة آمنة."` | — |
+| [SRC-D17CE3D12F-L000684](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L684) | 684 | `""` | — |
+| [SRC-D17CE3D12F-L000685](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L685) | 685 | `"## 46. حدود الشبكة وتقديم المحتوى والواجهات الطرفية"` | — |
+| [SRC-D17CE3D12F-L000686](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L686) | 686 | `""` | — |
+| [SRC-D17CE3D12F-L000687](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L687) | 687 | `"1. MUST أن تظل حدود الثقة واضحة بين المتصفح والـ API والموفرين والروابط الخارجية؛ كل انتقال بيانات عبر الشبكة معرض لفشل أو تلاعب."` | — |
+| [SRC-D17CE3D12F-L000688](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L688) | 688 | `"2. MUST استخدام إعدادات TLS موثوقة للواجهات العامة، وعدم تجاوز تحقق الشهادة في الإنتاج."` | — |
+| [SRC-D17CE3D12F-L000689](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L689) | 689 | `"3. SHOULD الاستفادة من CDN أو التخزين المؤقت على الحافة للملفات العامة والثابتة فقط عندما تحقق قيمة؛ لا تُخزن ردود خاصة في cache عام."` | — |
+| [SRC-D17CE3D12F-L000690](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L690) | 690 | `"4. MUST تمييز المحتوى العام القابل للتخزين عن ردود المستخدم والجلسات والبيانات الحساسة، مع رؤوس cache ملائمة."` | — |
+| [SRC-D17CE3D12F-L000691](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L691) | 691 | `"5. SHOULD إضافة سياسة Content Security Policy وسياسات متصفح دفاعية مناسبة لطبيعة الواجهة، بعد اختبار عدم كسر الوظائف."` | — |
+| [SRC-D17CE3D12F-L000692](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L692) | 692 | `"6. MUST حماية الطلبات التي تغير الحالة من CSRF عندما تعتمد المصادقة على cookies، مع إعدادات cookie مناسبة مثل Secure وHttpOnly وSameSite وفق الحالة."` | — |
+| [SRC-D17CE3D12F-L000693](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L693) | 693 | `"7. MUST ألا يُعرض HTML أو SVG أو روابط قابلة للتنفيذ من مصدر خارجي دون تعقيم وسياسة آمنة؛ والأفضل إبقاء المحتوى نصًا غير نشط."` | — |
+| [SRC-D17CE3D12F-L000694](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L694) | 694 | `"8. MUST التحقق من نوع المحتوى وطول الرد قبل التحليل، ومعالجة ملفات مضغوطة أو ردود ضخمة بطريقة تمنع استنزاف الموارد."` | — |
+| [SRC-D17CE3D12F-L000695](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L695) | 695 | `"9. SHOULD فرض حدود على اتصالات الشبكة المفتوحة والانتظار وحجم الردود والتحويلات."` | — |
+| [SRC-D17CE3D12F-L000696](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L696) | 696 | `"10. MUST حماية الروابط التي يراها المستخدم من الالتباس بين النص الظاهر والنطاق الحقيقي، خاصة مع أسماء نطاقات متشابهة أو أحرف Unicode المضللة."` | — |
+| [SRC-D17CE3D12F-L000697](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L697) | 697 | `"11. SHOULD اختبار الواجهة على شبكة بطيئة وانقطاع مفاجئ وانتهاء الجلسة ووجود مزود غير متاح."` | — |
+| [SRC-D17CE3D12F-L000698](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L698) | 698 | `"12. MUST ألا يُفسر نجاح TLS أو وصول HTTP على أنه دليل لصحة محتوى المصدر."` | — |
+| [SRC-D17CE3D12F-L000699](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L699) | 699 | `""` | — |
+| [SRC-D17CE3D12F-L000700](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L700) | 700 | `"## 47. مكافحة الإساءة والطلبات المؤتمتة واستنزاف الموارد"` | — |
+| [SRC-D17CE3D12F-L000701](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L701) | 701 | `""` | — |
+| [SRC-D17CE3D12F-L000702](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L702) | 702 | `"1. MUST تحليل طرق إساءة الاستخدام التي قد تستهلك حصص البحث أو النماذج أو التخزين، بما فيها loops الآلية وإعادة الطلب وتعدد الحسابات غير الطبيعي."` | — |
 | [SRC-D17CE3D12F-L000703](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L703) | 703 | `"2. MUST وضع حدود متدرجة للطلبات مرتفعة الكلفة، ورفض أو تخفيض الخدمة بوضوح عند تجاوز الحد."` | — |
 | [SRC-D17CE3D12F-L000704](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L704) | 704 | `"3. SHOULD تمييز الزيارات الطبيعية من الأنماط غير الطبيعية عبر إشارات محدودة ومحترمة للخصوصية، مع تجنب جمع بيانات زائدة."` | — |
 | [SRC-D17CE3D12F-L000705](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L705) | 705 | `"4. MUST ألا يُعتمد على عنوان IP وحده كهوية أو آلية عدالة؛ قد يشترك مستخدمون كثيرون في عنوان واحد أو تتغير العناوين."` | — |
@@ -815,31 +843,3 @@
 | [SRC-62CE5126F9-L000245](../OMARAI_REMEDIATION_REGISTER_AR.md#L245) | 245 | `"## G. قاعدة عدم الإغلاق الشكلي"` | — |
 | [SRC-62CE5126F9-L000246](../OMARAI_REMEDIATION_REGISTER_AR.md#L246) | 246 | `""` | — |
 | [SRC-62CE5126F9-L000247](../OMARAI_REMEDIATION_REGISTER_AR.md#L247) | 247 | `"لا يغلق أي بند لمجرد أن ملفًا أو وظيفة أضيفت. يلزم اختبار النجاح والفشل وحدود الإدخال ذات الصلة، وسجل SHA، ورابط تشغيل CI عند انطباقه. لا دمج تلقائيًا، ويظل قرار الدمج والنشر للمدير البشري."` | — |
-| [SRC-62CE5126F9-L000248](../OMARAI_REMEDIATION_REGISTER_AR.md#L248) | 248 | `""` | — |
-| [SRC-62CE5126F9-L000249](../OMARAI_REMEDIATION_REGISTER_AR.md#L249) | 249 | ``"**الحالة المرجعية:** E1–E4 مدمجة ومختبرة آليًا ضمن نطاق الاختبارات المذكور؛ E5 لديها كود هوية بناء مختبر، لكن `HOSTED_SMOKE=NOT_RUN`. حالة PRs هي حالة زمنية على GitHub وليست خاصية دائمة لملف السجل."`` | — |
-| [SRC-62CE5126F9-L000250](../OMARAI_REMEDIATION_REGISTER_AR.md#L250) | 250 | `""` | — |
-| [SRC-62CE5126F9-L000251](../OMARAI_REMEDIATION_REGISTER_AR.md#L251) | 251 | `""` | — |
-| [SRC-62CE5126F9-L000252](../OMARAI_REMEDIATION_REGISTER_AR.md#L252) | 252 | `"## H. نتائج اختبار البحث الحي — 26 أكتوبر 2026"` | — |
-| [SRC-62CE5126F9-L000253](../OMARAI_REMEDIATION_REGISTER_AR.md#L253) | 253 | `""` | — |
-| [SRC-62CE5126F9-L000254](../OMARAI_REMEDIATION_REGISTER_AR.md#L254) | 254 | `"\| المعرّف \| الدليل \| الخطورة \| الحالة الحالية \| معيار الإغلاق \|"` | — |
-| [SRC-62CE5126F9-L000255](../OMARAI_REMEDIATION_REGISTER_AR.md#L255) | 255 | `"\|---\|---\|---:\|---\|---\|"` | — |
-| [SRC-62CE5126F9-L000256](../OMARAI_REMEDIATION_REGISTER_AR.md#L256) | 256 | `"\| OMR-LIVE-001 \| أربع إجابات حيّة قدمها المدير: سؤال معرفة عامة، بحث مقارن، مستجدات حديثة، وآراء مستخدمين \| **P0 — البحث الأساسي** \| **PARTIAL / CI PASSED / HOSTED_RETEST_NOT_RUN** — الاستجابات الأربع انتهت إلى صفر مصادر قابلة للاستخدام. امتناع النظام عن اختلاق مصادر سلوك صحيح، لكن نجاح مهمة البحث لم يتحقق. عالج الفرع مطابقة الكلمات العربية بعد التطبيع، وعلامات الترقيم ضمن تقسيم الكلمات، والمفردات الثنائية اللغة، وفصل المرشحين الخام/المقبولين/المرفوضين. اجتاز [تشغيل GitHub Actions #40280837255](https://github.com/mosabosama2030-oss/omarai/actions/runs/40280837255) عدد 387 اختبارًا على Python 3.11 و387 على Python 3.12، ونجح Ruff وفحص الفهرس وبناء الحاوية/API smoke. **الاختبار الحي بعد النشر لم يُنفذ بعد.** \| اجتياز اختبارات الاستعلامات العربية/الإنجليزية وعدادات المرشحين وتصنيف HTTP على GitHub Actions، مراجعة diff أمنيًا، ثم بعد موافقة المدير فقط نشر النسخة وإعادة الاختبارات الأربعة على المضيف وحفظ الاستجابات الجديدة. لا تُخفّف حماية الروابط العامة أو تتجاوز تحديات anti-bot. \|"` | — |
-| [SRC-62CE5126F9-L000257](../OMARAI_REMEDIATION_REGISTER_AR.md#L257) | 257 | `"\| OMR-LIVE-002 \| تشخيص DuckDuckGo (HTTP 202/403) وReddit (HTTP 429) في النتائج المقدمة \| P1 — التدهور التشغيلي والوضوح \| **PARTIAL / CI PASSED / HOSTED_RETEST_NOT_RUN** — اختبارات HTTP 202 و429 نجحت في التشغيل #40280837255؛ يظل سلوك الموفّرين الحقيقي على المضيف غير مختبر بعد. تصنيف الاستجابة لا يتجاوز تحديات الحماية ولا يعتبرها نتائج صالحة. \| تأكيد تصنيف الحالات في اختبارات دون اتصال، والتحقق من أن تعطل موصل واحد لا يمنع الموصلات الأخرى من المحاولة وأن الواجهة تميّز استجابة الموصل عن صلاحية الأدلة. \|"` | — |
-| [SRC-62CE5126F9-L000258](../OMARAI_REMEDIATION_REGISTER_AR.md#L258) | 258 | `"\| OMR-LIVE-003 \| تسمية «محرك/واجهة بحث» و«نتيجة خام» في تقرير المستخدم \| P1 — سلامة القياس \| **PARTIAL / CI PASSED / HOSTED_RETEST_NOT_RUN** — أضيفت مقاييس منفصلة للمرشحين المستلمة، المقبولة، المرفوضة، والنتائج الداخلة إلى الدمج، واجتاز اختبار العدادات تشغيل #40280837255. يلزم التحقق من قيمها الظاهرة في استجابة حيّة بعد النشر. \| اجتياز الاختبارات وفحص قيم العداد في تقرير حي؛ يجب أن تتطابق هوية كل عداد مع تعريفه، وألا تُعرض المرشحات المرفوضة كمصادر صالحة. \|"` | — |
-| [SRC-62CE5126F9-L000259](../OMARAI_REMEDIATION_REGISTER_AR.md#L259) | 259 | ``"\| OMR-LIVE-004 \| القبول المستضاف بعد الإيقاظ من الخمول؛ سؤال «ما عاصمة مصر؟» في وضع deep \| **P0 — منع إعلان القبول قبل إصلاح الوصول** \| **HOSTED_TEST_FAILED — OBSERVED**: الواجهة ظهرت، لكن الاستعلام أعاد «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف». قراءة `/api/health` أعادت `ok=true` لكن `build.sha=unknown` و`sha_status=unknown` و`live_network_checks_performed=false`. لا يحسم النص هل الرمز مفقود أم غير مطابق؛ السبب الجذري `UNKNOWN`. لم تُدخل/تُكشف أسرار ولم تُغيّر إعدادات أو نشر. \| يراجع مالك البيئة إعداد رمز التطبيق وسجلات الخدمة في SnapDeploy دون مشاركة الرمز. بعد تصحيح السبب بموافقة منفصلة، يعاد اختبار محدود ويُتحقق أن `/api/health` يعيد `build.sha` مطابقًا للنسخة المعتمدة وأن الطلب يكتمل فعليًا دون كشف أسرار. \|"`` | — |
-| [SRC-62CE5126F9-L000260](../OMARAI_REMEDIATION_REGISTER_AR.md#L260) | 260 | `""` | — |
-| [SRC-62CE5126F9-L000261](../OMARAI_REMEDIATION_REGISTER_AR.md#L261) | 261 | `"**قيد الاختبار:** هذه الجولة تثبت فشل أربعة *أنواع من الأسئلة* كما عُرضت في الاستجابات. لا تثبت بمفردها أن خيارات عمق البحث الأربعة اختُبرت كلٌّ على حدة؛ كانت لقطات الواجهة المتاحة لا تؤكد بوضوح اختيارًا مختلفًا لكل نمط."` | — |
-| [SRC-62CE5126F9-L000262](../OMARAI_REMEDIATION_REGISTER_AR.md#L262) | 262 | `""` | — |
-| [SRC-62CE5126F9-L000263](../OMARAI_REMEDIATION_REGISTER_AR.md#L263) | 263 | `"**حدود التغيير الحالي:** التعديل على فرع منفصل، ولا يعني إغلاق OMR-LIVE-001 أو OMR-LIVE-002 أو OMR-LIVE-003. حالة الإغلاق تظل **NOT CLOSED** إلى أن تكتمل الاختبارات الآلية ثم إعادة الاختبار الحي بعد موافقة المدير على النشر."` | — |
-| [SRC-62CE5126F9-L000264](../OMARAI_REMEDIATION_REGISTER_AR.md#L264) | 264 | `""` | — |
-| [SRC-62CE5126F9-L000265](../OMARAI_REMEDIATION_REGISTER_AR.md#L265) | 265 | `""` | — |
-| [SRC-62CE5126F9-L000266](../OMARAI_REMEDIATION_REGISTER_AR.md#L266) | 266 | `"---"` | — |
-| [SRC-62CE5126F9-L000267](../OMARAI_REMEDIATION_REGISTER_AR.md#L267) | 267 | `""` | — |
-| [SRC-62CE5126F9-L000268](../OMARAI_REMEDIATION_REGISTER_AR.md#L268) | 268 | `"## تحديث تنفيذي — 28 أكتوبر 2026: الاسترجاع الموجّه وسجل تتبع الاستشهادات"` | — |
-| [SRC-62CE5126F9-L000269](../OMARAI_REMEDIATION_REGISTER_AR.md#L269) | 269 | `""` | — |
-| [SRC-62CE5126F9-L000270](../OMARAI_REMEDIATION_REGISTER_AR.md#L270) | 270 | ``"- **المرجع:** PR #113 مدمج في `main` عند `c91db27fd67ee04a8da1e3e6f6b29addc5efb07b`; هذا التغيير يبدأ من ذلك الرأس."`` | — |
-| [SRC-62CE5126F9-L000271](../OMARAI_REMEDIATION_REGISTER_AR.md#L271) | 271 | ``"- **OMR-RAG-001 — CODE_ADDED / CI_PENDING:** يحجز جزءًا محدودًا من سقف الاستعلامات لمحاور الأدلة الناقصة، ويعطيها الأولوية قبل التوسعة العامة. لا يزيد `query_limit` ولا ينشئ حلقة غير محدودة."`` | — |
-| [SRC-62CE5126F9-L000272](../OMARAI_REMEDIATION_REGISTER_AR.md#L272) | 272 | `"- **OMR-EVID-001 — CODE_ADDED / CI_PENDING:** إضافة سجل يربط المقاطع النصية المحتملة بعلامات الاستشهاد وفهارس المصدر والعنوان والرابط ونوع النص. يسجل صراحةً أن التحقق الدلالي وصحة الحقيقة لم يُنفذا."` | — |
-| [SRC-62CE5126F9-L000273](../OMARAI_REMEDIATION_REGISTER_AR.md#L273) | 273 | `"- **OMR-UX-001 — CODE_ADDED / CI_PENDING:** عرض ملخص السجل وروابطه في واجهة البحث، مع ترميز النصوص المعروضة وعدم تقديمه على أنه تحقق من الحقيقة."` | — |
-| [SRC-62CE5126F9-L000274](../OMARAI_REMEDIATION_REGISTER_AR.md#L274) | 274 | `"- **OMR-WRITE-001 — CODE_ADDED / CI_PENDING:** إضافة قواعد إخراج للإجابة المباشرة، والجمل الواضحة، وتغطية محاور الطلب والاستشهاد الصادق وعدم تنفيذ تعليمات ضمن نتائج البحث."` | — |
-| [SRC-62CE5126F9-L000275](../OMARAI_REMEDIATION_REGISTER_AR.md#L275) | 275 | ``"- **التقييم الحالي:** corpus `OMARAI-REDTEAM-001` يحتوي 45 حالة؛ التحقق البنيوي لا يقيم الإجابات دلاليًا. SFT/RL وRAGAS/faithfulness/correctness المرجعية والقبول المستضاف ما زالت `NOT_RUN / NOT_ESTABLISHED`."`` | — |
