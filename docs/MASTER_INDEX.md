@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **103**
-- ملفات Python المحللة: **58**
-- تعريفات Python المفهرسة: **1313**
+- ملفات المستودع في الجرد: **104**
+- ملفات Python المحللة: **59**
+- تعريفات Python المفهرسة: **1326**
 - تعريفات Python موثقة بوجود Docstring: **221**
-- تعريفات Python بلا Docstring: **812**
-- تعريفات لا ينطبق عليها Docstring: **280**
+- تعريفات Python بلا Docstring: **824**
+- تعريفات لا ينطبق عليها Docstring: **281**
 - الرموز الساكنة الإضافية: **1700**
-- الأسطر النصية المفهرسة حرفيًا: **32827**
+- الأسطر النصية المفهرسة حرفيًا: **32981**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -51,6 +51,7 @@
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-1A2E47C5FA | الوكيل والمنطق | [agents/retrieval_tool.py](../agents/retrieval_tool.py#L1) | Python | 6375 | 192 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
+| FILE-8A5C31AD7D | الوكيل والمنطق | [agents/specialist_agents.py](../agents/specialist_agents.py#L1) | Python | 5950 | 154 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 322398 | 6002 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -409,6 +410,19 @@
 | [agents/search_connectors.py](../agents/search_connectors.py#L152) | متغير/ثابت Python | CONNECTOR_REGISTRY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 152 | [SRC-6E58A660BC-L000152](../agents/search_connectors.py#L152) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L160) | دالة | run_connector | لا توجد Docstring. | ناقص | 160 | [SRC-6E58A660BC-L000160](../agents/search_connectors.py#L160) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L173) | دالة | run_free_academic_connectors | لا توجد Docstring. | ناقص | 173 | [SRC-6E58A660BC-L000173](../agents/search_connectors.py#L173) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L16) | متغير/ثابت Python | RetrieveFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-8A5C31AD7D-L000016](../agents/specialist_agents.py#L16) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L21) | دالة | extract_aspects | لا توجد Docstring. | ناقص | 21 | [SRC-8A5C31AD7D-L000021](../agents/specialist_agents.py#L21) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L24) | دالة | build_aspect_queries | لا توجد Docstring. | ناقص | 24 | [SRC-8A5C31AD7D-L000024](../agents/specialist_agents.py#L24) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L31) | كلاس | QueryReformulator | لا توجد Docstring. | ناقص | 31 | [SRC-8A5C31AD7D-L000031](../agents/specialist_agents.py#L31) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L32) | دالة | QueryReformulator.reformulate | لا توجد Docstring. | ناقص | 32 | [SRC-8A5C31AD7D-L000032](../agents/specialist_agents.py#L32) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L52) | كلاس | IterativeRetriever | لا توجد Docstring. | ناقص | 52 | [SRC-8A5C31AD7D-L000052](../agents/specialist_agents.py#L52) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L53) | دالة | IterativeRetriever.__init__ | لا توجد Docstring. | ناقص | 53 | [SRC-8A5C31AD7D-L000053](../agents/specialist_agents.py#L53) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L56) | دالة | IterativeRetriever.retrieve | لا توجد Docstring. | ناقص | 56 | [SRC-8A5C31AD7D-L000056](../agents/specialist_agents.py#L56) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L69) | كلاس | HallucinationGuard | لا توجد Docstring. | ناقص | 69 | [SRC-8A5C31AD7D-L000069](../agents/specialist_agents.py#L69) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L70) | دالة | HallucinationGuard.__init__ | لا توجد Docstring. | ناقص | 70 | [SRC-8A5C31AD7D-L000070](../agents/specialist_agents.py#L70) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L73) | دالة | HallucinationGuard.verify_answer | لا توجد Docstring. | ناقص | 73 | [SRC-8A5C31AD7D-L000073](../agents/specialist_agents.py#L73) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L106) | كلاس | FinalComposer | لا توجد Docstring. | ناقص | 106 | [SRC-8A5C31AD7D-L000106](../agents/specialist_agents.py#L106) |
+| [agents/specialist_agents.py](../agents/specialist_agents.py#L107) | دالة | FinalComposer.compose | لا توجد Docstring. | ناقص | 107 | [SRC-8A5C31AD7D-L000107](../agents/specialist_agents.py#L107) |
 | [agents/web_agent.py](../agents/web_agent.py#L52) | متغير/ثابت Python | MAX_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 52 | [SRC-1AE03B9EC3-L000052](../agents/web_agent.py#L52) |
 | [agents/web_agent.py](../agents/web_agent.py#L53) | متغير/ثابت Python | MAX_HISTORY_ITEMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 53 | [SRC-1AE03B9EC3-L000053](../agents/web_agent.py#L53) |
 | [agents/web_agent.py](../agents/web_agent.py#L54) | متغير/ثابت Python | MAX_HISTORY_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 54 | [SRC-1AE03B9EC3-L000054](../agents/web_agent.py#L54) |

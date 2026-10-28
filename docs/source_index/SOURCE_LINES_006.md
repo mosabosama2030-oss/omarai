@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000250 إلى SRC-1AE03B9EC3-L000417
+- النطاق: SRC-3AA6165B18-L000250 إلى SRC-1AE03B9EC3-L000263
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -419,6 +419,169 @@
 | [SRC-6E58A660BC-L000177](../../agents/search_connectors.py#L177) | 177 | `"    return combined"` | — |
 ## الوكيل والمنطق
 
+### FILE-8A5C31AD7D — [agents/specialist_agents.py](../../agents/specialist_agents.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-8A5C31AD7D-L000001](../../agents/specialist_agents.py#L1) | 1 | `"\"\"\"Specialist agents inside Omarai agentic RAG pipeline."` | — |
+| [SRC-8A5C31AD7D-L000002](../../agents/specialist_agents.py#L2) | 2 | `""` | — |
+| [SRC-8A5C31AD7D-L000003](../../agents/specialist_agents.py#L3) | 3 | `"- QueryReformulator: natural language → effective search queries + aspects"` | — |
+| [SRC-8A5C31AD7D-L000004](../../agents/specialist_agents.py#L4) | 4 | `"- IterativeRetriever: multi-hop retrieval tool use"` | — |
+| [SRC-8A5C31AD7D-L000005](../../agents/specialist_agents.py#L5) | 5 | `"- HallucinationGuard: claim vs evidence verification"` | — |
+| [SRC-8A5C31AD7D-L000006](../../agents/specialist_agents.py#L6) | 6 | `"- FinalComposer: fluent answer with mandatory citations / abstention"` | — |
+| [SRC-8A5C31AD7D-L000007](../../agents/specialist_agents.py#L7) | 7 | `"\"\"\""` | — |
+| [SRC-8A5C31AD7D-L000008](../../agents/specialist_agents.py#L8) | 8 | `"from __future__ import annotations"` | — |
+| [SRC-8A5C31AD7D-L000009](../../agents/specialist_agents.py#L9) | 9 | `""` | — |
+| [SRC-8A5C31AD7D-L000010](../../agents/specialist_agents.py#L10) | 10 | `"import re"` | — |
+| [SRC-8A5C31AD7D-L000011](../../agents/specialist_agents.py#L11) | 11 | `"from typing import Any, Callable"` | — |
+| [SRC-8A5C31AD7D-L000012](../../agents/specialist_agents.py#L12) | 12 | `""` | — |
+| [SRC-8A5C31AD7D-L000013](../../agents/specialist_agents.py#L13) | 13 | `"from agents.memory_bank import MemoryBank, split_answer_into_claim_sentences"` | — |
+| [SRC-8A5C31AD7D-L000014](../../agents/specialist_agents.py#L14) | 14 | `"from agents.retrieval_tool import RetrievalTool"` | — |
+| [SRC-8A5C31AD7D-L000015](../../agents/specialist_agents.py#L15) | 15 | `""` | — |
+| [SRC-8A5C31AD7D-L000016](../../agents/specialist_agents.py#L16) | 16 | `"RetrieveFn = Callable[[str], list[dict[str, Any]]]"` | — |
+| [SRC-8A5C31AD7D-L000017](../../agents/specialist_agents.py#L17) | 17 | `""` | — |
+| [SRC-8A5C31AD7D-L000018](../../agents/specialist_agents.py#L18) | 18 | `"try:"` | — |
+| [SRC-8A5C31AD7D-L000019](../../agents/specialist_agents.py#L19) | 19 | `"    from agents.aspect_planning import extract_aspects, build_aspect_queries"` | — |
+| [SRC-8A5C31AD7D-L000020](../../agents/specialist_agents.py#L20) | 20 | `"except Exception:  # pragma: no cover"` | — |
+| [SRC-8A5C31AD7D-L000021](../../agents/specialist_agents.py#L21) | 21 | `"    def extract_aspects(question: str) -> list[str]:"` | — |
+| [SRC-8A5C31AD7D-L000022](../../agents/specialist_agents.py#L22) | 22 | `"        return []"` | — |
+| [SRC-8A5C31AD7D-L000023](../../agents/specialist_agents.py#L23) | 23 | `""` | — |
+| [SRC-8A5C31AD7D-L000024](../../agents/specialist_agents.py#L24) | 24 | `"    def build_aspect_queries(topic: str, aspects: list[str], *, limit: int = 8) -> list[str]:"` | — |
+| [SRC-8A5C31AD7D-L000025](../../agents/specialist_agents.py#L25) | 25 | `"        out = [topic] if topic else []"` | — |
+| [SRC-8A5C31AD7D-L000026](../../agents/specialist_agents.py#L26) | 26 | `"        for a in aspects:"` | — |
+| [SRC-8A5C31AD7D-L000027](../../agents/specialist_agents.py#L27) | 27 | `"            out.append(f\"{topic} {a}\".strip())"` | — |
+| [SRC-8A5C31AD7D-L000028](../../agents/specialist_agents.py#L28) | 28 | `"        return out[:limit]"` | — |
+| [SRC-8A5C31AD7D-L000029](../../agents/specialist_agents.py#L29) | 29 | `""` | — |
+| [SRC-8A5C31AD7D-L000030](../../agents/specialist_agents.py#L30) | 30 | `""` | — |
+| [SRC-8A5C31AD7D-L000031](../../agents/specialist_agents.py#L31) | 31 | `"class QueryReformulator:"` | — |
+| [SRC-8A5C31AD7D-L000032](../../agents/specialist_agents.py#L32) | 32 | `"    def reformulate(self, question: str, *, topic_hint: str = \"\") -> dict[str, Any]:"` | — |
+| [SRC-8A5C31AD7D-L000033](../../agents/specialist_agents.py#L33) | 33 | `"        q = re.sub(r\"\\s+\", \" \", (question or \"\").strip())"` | — |
+| [SRC-8A5C31AD7D-L000034](../../agents/specialist_agents.py#L34) | 34 | `"        aspects = extract_aspects(q)"` | — |
+| [SRC-8A5C31AD7D-L000035](../../agents/specialist_agents.py#L35) | 35 | `"        topic = topic_hint.strip() or q[:240]"` | — |
+| [SRC-8A5C31AD7D-L000036](../../agents/specialist_agents.py#L36) | 36 | `"        queries = build_aspect_queries(topic, aspects, limit=6)"` | — |
+| [SRC-8A5C31AD7D-L000037](../../agents/specialist_agents.py#L37) | 37 | `"        if not queries and q:"` | — |
+| [SRC-8A5C31AD7D-L000038](../../agents/specialist_agents.py#L38) | 38 | `"            queries = [q[:240]]"` | — |
+| [SRC-8A5C31AD7D-L000039](../../agents/specialist_agents.py#L39) | 39 | `"        probes = []"` | — |
+| [SRC-8A5C31AD7D-L000040](../../agents/specialist_agents.py#L40) | 40 | `"        if q and \"مقارنة\" not in q and \"قارن\" not in q:"` | — |
+| [SRC-8A5C31AD7D-L000041](../../agents/specialist_agents.py#L41) | 41 | `"            probes.append(f\"{topic} حقائق مصادر\")"` | — |
+| [SRC-8A5C31AD7D-L000042](../../agents/specialist_agents.py#L42) | 42 | `"        return {"` | — |
+| [SRC-8A5C31AD7D-L000043](../../agents/specialist_agents.py#L43) | 43 | `"            \"original\": q,"` | — |
+| [SRC-8A5C31AD7D-L000044](../../agents/specialist_agents.py#L44) | 44 | `"            \"topic\": topic,"` | — |
+| [SRC-8A5C31AD7D-L000045](../../agents/specialist_agents.py#L45) | 45 | `"            \"aspects\": aspects,"` | — |
+| [SRC-8A5C31AD7D-L000046](../../agents/specialist_agents.py#L46) | 46 | `"            \"queries\": list(dict.fromkeys([x for x in queries + probes if x]))[:8],"` | — |
+| [SRC-8A5C31AD7D-L000047](../../agents/specialist_agents.py#L47) | 47 | `"            \"needs_retrieval\": bool(queries),"` | — |
+| [SRC-8A5C31AD7D-L000048](../../agents/specialist_agents.py#L48) | 48 | `"            \"agent\": \"QueryReformulator\","` | — |
+| [SRC-8A5C31AD7D-L000049](../../agents/specialist_agents.py#L49) | 49 | `"        }"` | — |
+| [SRC-8A5C31AD7D-L000050](../../agents/specialist_agents.py#L50) | 50 | `""` | — |
+| [SRC-8A5C31AD7D-L000051](../../agents/specialist_agents.py#L51) | 51 | `""` | — |
+| [SRC-8A5C31AD7D-L000052](../../agents/specialist_agents.py#L52) | 52 | `"class IterativeRetriever:"` | — |
+| [SRC-8A5C31AD7D-L000053](../../agents/specialist_agents.py#L53) | 53 | `"    def __init__(self, retrieve_fn: RetrieveFn, *, max_hops: int = 3) -> None:"` | — |
+| [SRC-8A5C31AD7D-L000054](../../agents/specialist_agents.py#L54) | 54 | `"        self.tool = RetrievalTool(retrieve_fn, max_hops=max_hops)"` | — |
+| [SRC-8A5C31AD7D-L000055](../../agents/specialist_agents.py#L55) | 55 | `""` | — |
+| [SRC-8A5C31AD7D-L000056](../../agents/specialist_agents.py#L56) | 56 | `"    def retrieve(self, queries: list[str], *, aspect: str = \"\") -> dict[str, Any]:"` | — |
+| [SRC-8A5C31AD7D-L000057](../../agents/specialist_agents.py#L57) | 57 | `"        seed = queries[0] if queries else \"\""` | — |
+| [SRC-8A5C31AD7D-L000058](../../agents/specialist_agents.py#L58) | 58 | `"        extra = queries[1:] if len(queries) > 1 else []"` | — |
+| [SRC-8A5C31AD7D-L000059](../../agents/specialist_agents.py#L59) | 59 | `"        state = self.tool.run_until_sufficient(seed, aspect=aspect, extra_queries=extra)"` | — |
+| [SRC-8A5C31AD7D-L000060](../../agents/specialist_agents.py#L60) | 60 | `"        return {"` | — |
+| [SRC-8A5C31AD7D-L000061](../../agents/specialist_agents.py#L61) | 61 | `"            \"results\": state.all_results,"` | — |
+| [SRC-8A5C31AD7D-L000062](../../agents/specialist_agents.py#L62) | 62 | `"            \"hop_count\": state.hop_count,"` | — |
+| [SRC-8A5C31AD7D-L000063](../../agents/specialist_agents.py#L63) | 63 | `"            \"final_sufficiency\": state.to_dict()[\"final_sufficiency\"],"` | — |
+| [SRC-8A5C31AD7D-L000064](../../agents/specialist_agents.py#L64) | 64 | `"            \"hops\": state.to_dict()[\"hops\"],"` | — |
+| [SRC-8A5C31AD7D-L000065](../../agents/specialist_agents.py#L65) | 65 | `"            \"agent\": \"IterativeRetriever\","` | — |
+| [SRC-8A5C31AD7D-L000066](../../agents/specialist_agents.py#L66) | 66 | `"        }"` | — |
+| [SRC-8A5C31AD7D-L000067](../../agents/specialist_agents.py#L67) | 67 | `""` | — |
+| [SRC-8A5C31AD7D-L000068](../../agents/specialist_agents.py#L68) | 68 | `""` | — |
+| [SRC-8A5C31AD7D-L000069](../../agents/specialist_agents.py#L69) | 69 | `"class HallucinationGuard:"` | — |
+| [SRC-8A5C31AD7D-L000070](../../agents/specialist_agents.py#L70) | 70 | `"    def __init__(self, *, min_support: float = 0.25) -> None:"` | — |
+| [SRC-8A5C31AD7D-L000071](../../agents/specialist_agents.py#L71) | 71 | `"        self.min_support = min_support"` | — |
+| [SRC-8A5C31AD7D-L000072](../../agents/specialist_agents.py#L72) | 72 | `""` | — |
+| [SRC-8A5C31AD7D-L000073](../../agents/specialist_agents.py#L73) | 73 | `"    def verify_answer("` | — |
+| [SRC-8A5C31AD7D-L000074](../../agents/specialist_agents.py#L74) | 74 | `"        self,"` | — |
+| [SRC-8A5C31AD7D-L000075](../../agents/specialist_agents.py#L75) | 75 | `"        answer: str,"` | — |
+| [SRC-8A5C31AD7D-L000076](../../agents/specialist_agents.py#L76) | 76 | `"        bank: MemoryBank,"` | — |
+| [SRC-8A5C31AD7D-L000077](../../agents/specialist_agents.py#L77) | 77 | `"        *,"` | — |
+| [SRC-8A5C31AD7D-L000078](../../agents/specialist_agents.py#L78) | 78 | `"        aspects: list[str] \| None = None,"` | — |
+| [SRC-8A5C31AD7D-L000079](../../agents/specialist_agents.py#L79) | 79 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-8A5C31AD7D-L000080](../../agents/specialist_agents.py#L80) | 80 | `"        claims_text = split_answer_into_claim_sentences(answer)"` | — |
+| [SRC-8A5C31AD7D-L000081](../../agents/specialist_agents.py#L81) | 81 | `"        bound = [bank.bind_claim(c, min_score=self.min_support) for c in claims_text]"` | — |
+| [SRC-8A5C31AD7D-L000082](../../agents/specialist_agents.py#L82) | 82 | `"        unsupported = [c for c in bound if c.status == \"unsupported\"]"` | — |
+| [SRC-8A5C31AD7D-L000083](../../agents/specialist_agents.py#L83) | 83 | `"        weak = [c for c in bound if c.status == \"weak\"]"` | — |
+| [SRC-8A5C31AD7D-L000084](../../agents/specialist_agents.py#L84) | 84 | `"        missing_aspects = []"` | — |
+| [SRC-8A5C31AD7D-L000085](../../agents/specialist_agents.py#L85) | 85 | `"        blob = (answer or \"\").casefold()"` | — |
+| [SRC-8A5C31AD7D-L000086](../../agents/specialist_agents.py#L86) | 86 | `"        for a in aspects or []:"` | — |
+| [SRC-8A5C31AD7D-L000087](../../agents/specialist_agents.py#L87) | 87 | `"            if a and a.casefold() not in blob:"` | — |
+| [SRC-8A5C31AD7D-L000088](../../agents/specialist_agents.py#L88) | 88 | `"                ev_blob = \" \".join(e.snippet.casefold() for e in bank.evidence.values())"` | — |
+| [SRC-8A5C31AD7D-L000089](../../agents/specialist_agents.py#L89) | 89 | `"                if a.casefold() not in ev_blob:"` | — |
+| [SRC-8A5C31AD7D-L000090](../../agents/specialist_agents.py#L90) | 90 | `"                    missing_aspects.append(a)"` | — |
+| [SRC-8A5C31AD7D-L000091](../../agents/specialist_agents.py#L91) | 91 | `"        return {"` | — |
+| [SRC-8A5C31AD7D-L000092](../../agents/specialist_agents.py#L92) | 92 | `"            \"agent\": \"HallucinationGuard\","` | — |
+| [SRC-8A5C31AD7D-L000093](../../agents/specialist_agents.py#L93) | 93 | `"            \"claim_count\": len(bound),"` | — |
+| [SRC-8A5C31AD7D-L000094](../../agents/specialist_agents.py#L94) | 94 | `"            \"unsupported_count\": len(unsupported),"` | — |
+| [SRC-8A5C31AD7D-L000095](../../agents/specialist_agents.py#L95) | 95 | `"            \"weak_count\": len(weak),"` | — |
+| [SRC-8A5C31AD7D-L000096](../../agents/specialist_agents.py#L96) | 96 | `"            \"unsupported_samples\": [c.text[:160] for c in unsupported[:5]],"` | — |
+| [SRC-8A5C31AD7D-L000097](../../agents/specialist_agents.py#L97) | 97 | `"            \"missing_aspects\": missing_aspects,"` | — |
+| [SRC-8A5C31AD7D-L000098](../../agents/specialist_agents.py#L98) | 98 | `"            \"should_abstain\": bool(unsupported) and len(unsupported) >= max(1, len(bound) // 2),"` | — |
+| [SRC-8A5C31AD7D-L000099](../../agents/specialist_agents.py#L99) | 99 | `"            \"support_ratio\": bank.stats().get(\"support_ratio\", 0.0),"` | — |
+| [SRC-8A5C31AD7D-L000100](../../agents/specialist_agents.py#L100) | 100 | `"            \"honesty_note\": ("` | — |
+| [SRC-8A5C31AD7D-L000101](../../agents/specialist_agents.py#L101) | 101 | `"                \"الدعم لفظي/معجمي وليس إثباتًا دلاليًا لصدق الادعاء.\""` | — |
+| [SRC-8A5C31AD7D-L000102](../../agents/specialist_agents.py#L102) | 102 | `"            ),"` | — |
+| [SRC-8A5C31AD7D-L000103](../../agents/specialist_agents.py#L103) | 103 | `"        }"` | — |
+| [SRC-8A5C31AD7D-L000104](../../agents/specialist_agents.py#L104) | 104 | `""` | — |
+| [SRC-8A5C31AD7D-L000105](../../agents/specialist_agents.py#L105) | 105 | `""` | — |
+| [SRC-8A5C31AD7D-L000106](../../agents/specialist_agents.py#L106) | 106 | `"class FinalComposer:"` | — |
+| [SRC-8A5C31AD7D-L000107](../../agents/specialist_agents.py#L107) | 107 | `"    def compose("` | — |
+| [SRC-8A5C31AD7D-L000108](../../agents/specialist_agents.py#L108) | 108 | `"        self,"` | — |
+| [SRC-8A5C31AD7D-L000109](../../agents/specialist_agents.py#L109) | 109 | `"        draft: str,"` | — |
+| [SRC-8A5C31AD7D-L000110](../../agents/specialist_agents.py#L110) | 110 | `"        bank: MemoryBank,"` | — |
+| [SRC-8A5C31AD7D-L000111](../../agents/specialist_agents.py#L111) | 111 | `"        guard_report: dict[str, Any],"` | — |
+| [SRC-8A5C31AD7D-L000112](../../agents/specialist_agents.py#L112) | 112 | `"        *,"` | — |
+| [SRC-8A5C31AD7D-L000113](../../agents/specialist_agents.py#L113) | 113 | `"        language: str = \"ar\","` | — |
+| [SRC-8A5C31AD7D-L000114](../../agents/specialist_agents.py#L114) | 114 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-8A5C31AD7D-L000115](../../agents/specialist_agents.py#L115) | 115 | `"        if guard_report.get(\"should_abstain\") and not bank.evidence:"` | — |
+| [SRC-8A5C31AD7D-L000116](../../agents/specialist_agents.py#L116) | 116 | `"            answer = ("` | — |
+| [SRC-8A5C31AD7D-L000117](../../agents/specialist_agents.py#L117) | 117 | `"                \"لا تتوفر أدلة كافية في المصادر المسترجعة للإجابة بثقة. \""` | — |
+| [SRC-8A5C31AD7D-L000118](../../agents/specialist_agents.py#L118) | 118 | `"                \"يُفضَّل إعادة صياغة السؤال أو توسيع نطاق البحث.\""` | — |
+| [SRC-8A5C31AD7D-L000119](../../agents/specialist_agents.py#L119) | 119 | `"            )"` | — |
+| [SRC-8A5C31AD7D-L000120](../../agents/specialist_agents.py#L120) | 120 | `"            return {"` | — |
+| [SRC-8A5C31AD7D-L000121](../../agents/specialist_agents.py#L121) | 121 | `"                \"agent\": \"FinalComposer\","` | — |
+| [SRC-8A5C31AD7D-L000122](../../agents/specialist_agents.py#L122) | 122 | `"                \"answer\": answer,"` | — |
+| [SRC-8A5C31AD7D-L000123](../../agents/specialist_agents.py#L123) | 123 | `"                \"abstained\": True,"` | — |
+| [SRC-8A5C31AD7D-L000124](../../agents/specialist_agents.py#L124) | 124 | `"                \"citations\": bank.citation_map(),"` | — |
+| [SRC-8A5C31AD7D-L000125](../../agents/specialist_agents.py#L125) | 125 | `"                \"memory\": bank.to_dict(),"` | — |
+| [SRC-8A5C31AD7D-L000126](../../agents/specialist_agents.py#L126) | 126 | `"            }"` | — |
+| [SRC-8A5C31AD7D-L000127](../../agents/specialist_agents.py#L127) | 127 | `""` | — |
+| [SRC-8A5C31AD7D-L000128](../../agents/specialist_agents.py#L128) | 128 | `"        sentences = split_answer_into_claim_sentences(draft)"` | — |
+| [SRC-8A5C31AD7D-L000129](../../agents/specialist_agents.py#L129) | 129 | `"        cited_lines: list[str] = []"` | — |
+| [SRC-8A5C31AD7D-L000130](../../agents/specialist_agents.py#L130) | 130 | `"        for s in sentences:"` | — |
+| [SRC-8A5C31AD7D-L000131](../../agents/specialist_agents.py#L131) | 131 | `"            claim = bank.bind_claim(s)"` | — |
+| [SRC-8A5C31AD7D-L000132](../../agents/specialist_agents.py#L132) | 132 | `"            if claim.status == \"unsupported\":"` | — |
+| [SRC-8A5C31AD7D-L000133](../../agents/specialist_agents.py#L133) | 133 | `"                continue"` | — |
+| [SRC-8A5C31AD7D-L000134](../../agents/specialist_agents.py#L134) | 134 | `"            cited_lines.append(bank.format_claim_with_citations(claim))"` | — |
+| [SRC-8A5C31AD7D-L000135](../../agents/specialist_agents.py#L135) | 135 | `"        if not cited_lines:"` | — |
+| [SRC-8A5C31AD7D-L000136](../../agents/specialist_agents.py#L136) | 136 | `"            body = draft.strip()"` | — |
+| [SRC-8A5C31AD7D-L000137](../../agents/specialist_agents.py#L137) | 137 | `"            note = \"\\n\\nتنبيه: تعذّر ربط جمل الإجابة بأدلة كافية؛ راجع المصادر.\""` | — |
+| [SRC-8A5C31AD7D-L000138](../../agents/specialist_agents.py#L138) | 138 | `"            answer = body + note"` | — |
+| [SRC-8A5C31AD7D-L000139](../../agents/specialist_agents.py#L139) | 139 | `"            abstained = True"` | — |
+| [SRC-8A5C31AD7D-L000140](../../agents/specialist_agents.py#L140) | 140 | `"        else:"` | — |
+| [SRC-8A5C31AD7D-L000141](../../agents/specialist_agents.py#L141) | 141 | `"            answer = \"\\n\".join(cited_lines)"` | — |
+| [SRC-8A5C31AD7D-L000142](../../agents/specialist_agents.py#L142) | 142 | `"            if guard_report.get(\"missing_aspects\"):"` | — |
+| [SRC-8A5C31AD7D-L000143](../../agents/specialist_agents.py#L143) | 143 | `"                answer += ("` | — |
+| [SRC-8A5C31AD7D-L000144](../../agents/specialist_agents.py#L144) | 144 | `"                    \"\\n\\nمحاور بلا دعم كافٍ في النتائج: \""` | — |
+| [SRC-8A5C31AD7D-L000145](../../agents/specialist_agents.py#L145) | 145 | `"                    + \"، \".join(guard_report[\"missing_aspects\"][:6])"` | — |
+| [SRC-8A5C31AD7D-L000146](../../agents/specialist_agents.py#L146) | 146 | `"                )"` | — |
+| [SRC-8A5C31AD7D-L000147](../../agents/specialist_agents.py#L147) | 147 | `"            abstained = False"` | — |
+| [SRC-8A5C31AD7D-L000148](../../agents/specialist_agents.py#L148) | 148 | `"        return {"` | — |
+| [SRC-8A5C31AD7D-L000149](../../agents/specialist_agents.py#L149) | 149 | `"            \"agent\": \"FinalComposer\","` | — |
+| [SRC-8A5C31AD7D-L000150](../../agents/specialist_agents.py#L150) | 150 | `"            \"answer\": answer,"` | — |
+| [SRC-8A5C31AD7D-L000151](../../agents/specialist_agents.py#L151) | 151 | `"            \"abstained\": abstained,"` | — |
+| [SRC-8A5C31AD7D-L000152](../../agents/specialist_agents.py#L152) | 152 | `"            \"citations\": bank.citation_map(),"` | — |
+| [SRC-8A5C31AD7D-L000153](../../agents/specialist_agents.py#L153) | 153 | `"            \"memory\": bank.to_dict(),"` | — |
+| [SRC-8A5C31AD7D-L000154](../../agents/specialist_agents.py#L154) | 154 | `"        }"` | — |
+## الوكيل والمنطق
+
 ### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
 
 - النوع: **Python**
@@ -689,157 +852,3 @@
 | [SRC-1AE03B9EC3-L000261](../../agents/web_agent.py#L261) | 261 | `"    if len(query_tokens) >= 4 and matched < 2:"` | — |
 | [SRC-1AE03B9EC3-L000262](../../agents/web_agent.py#L262) | 262 | `"        return 0.0"` | — |
 | [SRC-1AE03B9EC3-L000263](../../agents/web_agent.py#L263) | 263 | `"    return ratio"` | — |
-| [SRC-1AE03B9EC3-L000264](../../agents/web_agent.py#L264) | 264 | `""` | — |
-| [SRC-1AE03B9EC3-L000265](../../agents/web_agent.py#L265) | 265 | `"def _blocked_source_url(url: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L000266](../../agents/web_agent.py#L266) | 266 | `"    try:"` | — |
-| [SRC-1AE03B9EC3-L000267](../../agents/web_agent.py#L267) | 267 | `"        host = (urllib.parse.urlparse(url).hostname or \"\").lower().rstrip(\".\")"` | — |
-| [SRC-1AE03B9EC3-L000268](../../agents/web_agent.py#L268) | 268 | `"        return any(host == domain or host.endswith(\".\" + domain) for domain in _BLOCKED_SOURCE_DOMAINS)"` | — |
-| [SRC-1AE03B9EC3-L000269](../../agents/web_agent.py#L269) | 269 | `"    except (TypeError, ValueError):"` | — |
-| [SRC-1AE03B9EC3-L000270](../../agents/web_agent.py#L270) | 270 | `"        return True"` | — |
-| [SRC-1AE03B9EC3-L000271](../../agents/web_agent.py#L271) | 271 | `""` | — |
-| [SRC-1AE03B9EC3-L000272](../../agents/web_agent.py#L272) | 272 | `""` | — |
-| [SRC-1AE03B9EC3-L000273](../../agents/web_agent.py#L273) | 273 | `"class AgentDependencyError(RuntimeError):"` | — |
-| [SRC-1AE03B9EC3-L000274](../../agents/web_agent.py#L274) | 274 | `"    \"\"\"A required optional runtime dependency is unavailable.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000275](../../agents/web_agent.py#L275) | 275 | `""` | — |
-| [SRC-1AE03B9EC3-L000276](../../agents/web_agent.py#L276) | 276 | `""` | — |
-| [SRC-1AE03B9EC3-L000277](../../agents/web_agent.py#L277) | 277 | `"def _clean_text(value: Any, limit: int) -> str:"` | — |
-| [SRC-1AE03B9EC3-L000278](../../agents/web_agent.py#L278) | 278 | `"    if not isinstance(value, str):"` | — |
-| [SRC-1AE03B9EC3-L000279](../../agents/web_agent.py#L279) | 279 | `"        return \"\""` | — |
-| [SRC-1AE03B9EC3-L000280](../../agents/web_agent.py#L280) | 280 | `"    return \" \".join(value.replace(\"\\x00\", \" \").split())[:limit]"` | — |
-| [SRC-1AE03B9EC3-L000281](../../agents/web_agent.py#L281) | 281 | `""` | — |
-| [SRC-1AE03B9EC3-L000282](../../agents/web_agent.py#L282) | 282 | `""` | — |
-| [SRC-1AE03B9EC3-L000283](../../agents/web_agent.py#L283) | 283 | `"def _public_http_url(value: Any) -> str \| None:"` | — |
-| [SRC-1AE03B9EC3-L000284](../../agents/web_agent.py#L284) | 284 | `"    \"\"\"Lexically validate an HTTP URL before using it as a search source.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000285](../../agents/web_agent.py#L285) | 285 | `"    if not isinstance(value, str) or len(value) > 2048:"` | — |
-| [SRC-1AE03B9EC3-L000286](../../agents/web_agent.py#L286) | 286 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L000287](../../agents/web_agent.py#L287) | 287 | `"    try:"` | — |
-| [SRC-1AE03B9EC3-L000288](../../agents/web_agent.py#L288) | 288 | `"        parsed = urllib.parse.urlparse(value.strip())"` | — |
-| [SRC-1AE03B9EC3-L000289](../../agents/web_agent.py#L289) | 289 | `"        if parsed.scheme not in {\"http\", \"https\"}:"` | — |
-| [SRC-1AE03B9EC3-L000290](../../agents/web_agent.py#L290) | 290 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000291](../../agents/web_agent.py#L291) | 291 | `"        if not parsed.hostname or parsed.username is not None or parsed.password is not None:"` | — |
-| [SRC-1AE03B9EC3-L000292](../../agents/web_agent.py#L292) | 292 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000293](../../agents/web_agent.py#L293) | 293 | `"        if parsed.port not in (None, 80, 443):"` | — |
-| [SRC-1AE03B9EC3-L000294](../../agents/web_agent.py#L294) | 294 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000295](../../agents/web_agent.py#L295) | 295 | `"        host = parsed.hostname.rstrip(\".\").lower()"` | — |
-| [SRC-1AE03B9EC3-L000296](../../agents/web_agent.py#L296) | 296 | `"        if not host or host in {\"localhost\"} or host.endswith((\".local\", \".internal\", \".localhost\")):"` | — |
-| [SRC-1AE03B9EC3-L000297](../../agents/web_agent.py#L297) | 297 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000298](../../agents/web_agent.py#L298) | 298 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L000299](../../agents/web_agent.py#L299) | 299 | `"            ip = ipaddress.ip_address(host)"` | — |
-| [SRC-1AE03B9EC3-L000300](../../agents/web_agent.py#L300) | 300 | `"        except ValueError:"` | — |
-| [SRC-1AE03B9EC3-L000301](../../agents/web_agent.py#L301) | 301 | `"            pass"` | — |
-| [SRC-1AE03B9EC3-L000302](../../agents/web_agent.py#L302) | 302 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L000303](../../agents/web_agent.py#L303) | 303 | `"            if not ip.is_global:"` | — |
-| [SRC-1AE03B9EC3-L000304](../../agents/web_agent.py#L304) | 304 | `"                return None"` | — |
-| [SRC-1AE03B9EC3-L000305](../../agents/web_agent.py#L305) | 305 | `"        return urllib.parse.urlunparse(parsed._replace(fragment=\"\"))"` | — |
-| [SRC-1AE03B9EC3-L000306](../../agents/web_agent.py#L306) | 306 | `"    except (ValueError, TypeError):"` | — |
-| [SRC-1AE03B9EC3-L000307](../../agents/web_agent.py#L307) | 307 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L000308](../../agents/web_agent.py#L308) | 308 | `""` | — |
-| [SRC-1AE03B9EC3-L000309](../../agents/web_agent.py#L309) | 309 | `""` | — |
-| [SRC-1AE03B9EC3-L000310](../../agents/web_agent.py#L310) | 310 | `"def _public_ip_literals(host: str) -> list[str] \| None:"` | — |
-| [SRC-1AE03B9EC3-L000311](../../agents/web_agent.py#L311) | 311 | `"    \"\"\"Resolve host and return its public addresses."` | — |
-| [SRC-1AE03B9EC3-L000312](../../agents/web_agent.py#L312) | 312 | `""` | — |
-| [SRC-1AE03B9EC3-L000313](../../agents/web_agent.py#L313) | 313 | `"    Returns None when resolution fails or any answer is not a global address."` | — |
-| [SRC-1AE03B9EC3-L000314](../../agents/web_agent.py#L314) | 314 | `"    Callers must open the TCP connection to one of these literals. A second DNS"` | — |
-| [SRC-1AE03B9EC3-L000315](../../agents/web_agent.py#L315) | 315 | `"    lookup is not equivalent: the name can be rebound to a private address"` | — |
-| [SRC-1AE03B9EC3-L000316](../../agents/web_agent.py#L316) | 316 | `"    between the check and the connection (DNS rebinding / TOCTOU)."` | — |
-| [SRC-1AE03B9EC3-L000317](../../agents/web_agent.py#L317) | 317 | `"    \"\"\""` | — |
-| [SRC-1AE03B9EC3-L000318](../../agents/web_agent.py#L318) | 318 | `"    if not host:"` | — |
-| [SRC-1AE03B9EC3-L000319](../../agents/web_agent.py#L319) | 319 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L000320](../../agents/web_agent.py#L320) | 320 | `"    try:"` | — |
-| [SRC-1AE03B9EC3-L000321](../../agents/web_agent.py#L321) | 321 | `"        answers = socket.getaddrinfo(host, None, type=socket.SOCK_STREAM)"` | — |
-| [SRC-1AE03B9EC3-L000322](../../agents/web_agent.py#L322) | 322 | `"    except (OSError, socket.gaierror):"` | — |
-| [SRC-1AE03B9EC3-L000323](../../agents/web_agent.py#L323) | 323 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L000324](../../agents/web_agent.py#L324) | 324 | `"    if not answers:"` | — |
-| [SRC-1AE03B9EC3-L000325](../../agents/web_agent.py#L325) | 325 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L000326](../../agents/web_agent.py#L326) | 326 | `"    literals: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L000327](../../agents/web_agent.py#L327) | 327 | `"    for answer in answers:"` | — |
-| [SRC-1AE03B9EC3-L000328](../../agents/web_agent.py#L328) | 328 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L000329](../../agents/web_agent.py#L329) | 329 | `"            address = ipaddress.ip_address(answer[4][0])"` | — |
-| [SRC-1AE03B9EC3-L000330](../../agents/web_agent.py#L330) | 330 | `"        except ValueError:"` | — |
-| [SRC-1AE03B9EC3-L000331](../../agents/web_agent.py#L331) | 331 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000332](../../agents/web_agent.py#L332) | 332 | `"        if not address.is_global:"` | — |
-| [SRC-1AE03B9EC3-L000333](../../agents/web_agent.py#L333) | 333 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000334](../../agents/web_agent.py#L334) | 334 | `"        literal = str(address)"` | — |
-| [SRC-1AE03B9EC3-L000335](../../agents/web_agent.py#L335) | 335 | `"        if literal not in literals:"` | — |
-| [SRC-1AE03B9EC3-L000336](../../agents/web_agent.py#L336) | 336 | `"            literals.append(literal)"` | — |
-| [SRC-1AE03B9EC3-L000337](../../agents/web_agent.py#L337) | 337 | `"    return literals or None"` | — |
-| [SRC-1AE03B9EC3-L000338](../../agents/web_agent.py#L338) | 338 | `""` | — |
-| [SRC-1AE03B9EC3-L000339](../../agents/web_agent.py#L339) | 339 | `""` | — |
-| [SRC-1AE03B9EC3-L000340](../../agents/web_agent.py#L340) | 340 | `"def _host_resolves_publicly(host: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L000341](../../agents/web_agent.py#L341) | 341 | `"    \"\"\"Reject local/private destinations before fetching a third-party page.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000342](../../agents/web_agent.py#L342) | 342 | `"    return _public_ip_literals(host) is not None"` | — |
-| [SRC-1AE03B9EC3-L000343](../../agents/web_agent.py#L343) | 343 | `""` | — |
-| [SRC-1AE03B9EC3-L000344](../../agents/web_agent.py#L344) | 344 | `""` | — |
-| [SRC-1AE03B9EC3-L000345](../../agents/web_agent.py#L345) | 345 | `"def _pinned_connect_url(logical_url: str, ip: str) -> str \| None:"` | — |
-| [SRC-1AE03B9EC3-L000346](../../agents/web_agent.py#L346) | 346 | `"    \"\"\"Rewrite a validated public URL so the connection target is a checked IP.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000347](../../agents/web_agent.py#L347) | 347 | `"    parsed = urllib.parse.urlparse(logical_url)"` | — |
-| [SRC-1AE03B9EC3-L000348](../../agents/web_agent.py#L348) | 348 | `"    if parsed.port not in (None, 80, 443):"` | — |
-| [SRC-1AE03B9EC3-L000349](../../agents/web_agent.py#L349) | 349 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L000350](../../agents/web_agent.py#L350) | 350 | `"    literal = f\"[{ip}]\" if \":\" in ip else ip"` | — |
-| [SRC-1AE03B9EC3-L000351](../../agents/web_agent.py#L351) | 351 | `"    netloc = literal if parsed.port is None else f\"{literal}:{parsed.port}\""` | — |
-| [SRC-1AE03B9EC3-L000352](../../agents/web_agent.py#L352) | 352 | `"    return urllib.parse.urlunparse(parsed._replace(netloc=netloc))"` | — |
-| [SRC-1AE03B9EC3-L000353](../../agents/web_agent.py#L353) | 353 | `""` | — |
-| [SRC-1AE03B9EC3-L000354](../../agents/web_agent.py#L354) | 354 | `""` | — |
-| [SRC-1AE03B9EC3-L000355](../../agents/web_agent.py#L355) | 355 | `"def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:"` | — |
-| [SRC-1AE03B9EC3-L000356](../../agents/web_agent.py#L356) | 356 | `"    lines = [reason]"` | — |
-| [SRC-1AE03B9EC3-L000357](../../agents/web_agent.py#L357) | 357 | `"    usable = [source for source in sources if source.get(\"snippet\")]"` | — |
-| [SRC-1AE03B9EC3-L000358](../../agents/web_agent.py#L358) | 358 | `"    for index, source in enumerate(usable[:5], 1):"` | — |
-| [SRC-1AE03B9EC3-L000359](../../agents/web_agent.py#L359) | 359 | `"        lines.append("` | — |
-| [SRC-1AE03B9EC3-L000360](../../agents/web_agent.py#L360) | 360 | `"            f\"{index}. {source.get('title', 'نتيجة ويب')}: \""` | — |
-| [SRC-1AE03B9EC3-L000361](../../agents/web_agent.py#L361) | 361 | `"            f\"{source['snippet']} (المصدر: {source['url']})\""` | — |
-| [SRC-1AE03B9EC3-L000362](../../agents/web_agent.py#L362) | 362 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000363](../../agents/web_agent.py#L363) | 363 | `"    if not usable:"` | — |
-| [SRC-1AE03B9EC3-L000364](../../agents/web_agent.py#L364) | 364 | `"        lines.append(\"لم أتمكن من استخراج مقتطفات كافية من نتائج الويب.\")"` | — |
-| [SRC-1AE03B9EC3-L000365](../../agents/web_agent.py#L365) | 365 | `"    return \"\\n\\n\".join(lines)"` | — |
-| [SRC-1AE03B9EC3-L000366](../../agents/web_agent.py#L366) | 366 | `""` | — |
-| [SRC-1AE03B9EC3-L000367](../../agents/web_agent.py#L367) | 367 | `""` | — |
-| [SRC-1AE03B9EC3-L000368](../../agents/web_agent.py#L368) | 368 | `"class PageFetchResult(tuple):"` | — |
-| [SRC-1AE03B9EC3-L000369](../../agents/web_agent.py#L369) | 369 | `"    \"\"\"Two-item tuple compatible with legacy callers, with structured extraction status.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000370](../../agents/web_agent.py#L370) | 370 | `""` | — |
-| [SRC-1AE03B9EC3-L000371](../../agents/web_agent.py#L371) | 371 | `"    def __new__("` | — |
-| [SRC-1AE03B9EC3-L000372](../../agents/web_agent.py#L372) | 372 | `"        cls,"` | — |
-| [SRC-1AE03B9EC3-L000373](../../agents/web_agent.py#L373) | 373 | `"        title: str = \"\","` | — |
-| [SRC-1AE03B9EC3-L000374](../../agents/web_agent.py#L374) | 374 | `"        page_text: str = \"\","` | — |
-| [SRC-1AE03B9EC3-L000375](../../agents/web_agent.py#L375) | 375 | `"        status: str = \"unknown\","` | — |
-| [SRC-1AE03B9EC3-L000376](../../agents/web_agent.py#L376) | 376 | `"        error_class: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L000377](../../agents/web_agent.py#L377) | 377 | `"    ):"` | — |
-| [SRC-1AE03B9EC3-L000378](../../agents/web_agent.py#L378) | 378 | `"        value = super().__new__(cls, (title, page_text))"` | — |
-| [SRC-1AE03B9EC3-L000379](../../agents/web_agent.py#L379) | 379 | `"        value.status = status"` | — |
-| [SRC-1AE03B9EC3-L000380](../../agents/web_agent.py#L380) | 380 | `"        value.error_class = error_class"` | — |
-| [SRC-1AE03B9EC3-L000381](../../agents/web_agent.py#L381) | 381 | `"        return value"` | — |
-| [SRC-1AE03B9EC3-L000382](../../agents/web_agent.py#L382) | 382 | `""` | — |
-| [SRC-1AE03B9EC3-L000383](../../agents/web_agent.py#L383) | 383 | `""` | — |
-| [SRC-1AE03B9EC3-L000384](../../agents/web_agent.py#L384) | 384 | `"def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L000385](../../agents/web_agent.py#L385) | 385 | `"    \"\"\"Withhold a final answer if any explicit axis lacks a text candidate."` | — |
-| [SRC-1AE03B9EC3-L000386](../../agents/web_agent.py#L386) | 386 | `""` | — |
-| [SRC-1AE03B9EC3-L000387](../../agents/web_agent.py#L387) | 387 | `"    Lexical coverage is only a conservative evidence-presence check, not semantic"` | — |
-| [SRC-1AE03B9EC3-L000388](../../agents/web_agent.py#L388) | 388 | `"    verification. A missing candidate therefore blocks a *complete* answer rather"` | — |
-| [SRC-1AE03B9EC3-L000389](../../agents/web_agent.py#L389) | 389 | `"    than asserting the underlying fact is unavailable everywhere."` | — |
-| [SRC-1AE03B9EC3-L000390](../../agents/web_agent.py#L390) | 390 | `"    \"\"\""` | — |
-| [SRC-1AE03B9EC3-L000391](../../agents/web_agent.py#L391) | 391 | `"    search_report = result.get(\"search_report\")"` | — |
-| [SRC-1AE03B9EC3-L000392](../../agents/web_agent.py#L392) | 392 | `"    if not isinstance(search_report, dict):"` | — |
-| [SRC-1AE03B9EC3-L000393](../../agents/web_agent.py#L393) | 393 | `"        return result"` | — |
-| [SRC-1AE03B9EC3-L000394](../../agents/web_agent.py#L394) | 394 | `"    prior_ledger = search_report.get(\"evidence_ledger\")"` | — |
-| [SRC-1AE03B9EC3-L000395](../../agents/web_agent.py#L395) | 395 | `"    if not isinstance(prior_ledger, dict):"` | — |
-| [SRC-1AE03B9EC3-L000396](../../agents/web_agent.py#L396) | 396 | `"        return result"` | — |
-| [SRC-1AE03B9EC3-L000397](../../agents/web_agent.py#L397) | 397 | `"    aspects = prior_ledger.get(\"aspects\")"` | — |
-| [SRC-1AE03B9EC3-L000398](../../agents/web_agent.py#L398) | 398 | `"    if not isinstance(aspects, list) or not aspects:"` | — |
-| [SRC-1AE03B9EC3-L000399](../../agents/web_agent.py#L399) | 399 | `"        return result"` | — |
-| [SRC-1AE03B9EC3-L000400](../../agents/web_agent.py#L400) | 400 | `"    targets = ["` | — |
-| [SRC-1AE03B9EC3-L000401](../../agents/web_agent.py#L401) | 401 | `"        item[:120]"` | — |
-| [SRC-1AE03B9EC3-L000402](../../agents/web_agent.py#L402) | 402 | `"        for item in aspects"` | — |
-| [SRC-1AE03B9EC3-L000403](../../agents/web_agent.py#L403) | 403 | `"        if isinstance(item, str) and item.strip()"` | — |
-| [SRC-1AE03B9EC3-L000404](../../agents/web_agent.py#L404) | 404 | `"    ][:8]"` | — |
-| [SRC-1AE03B9EC3-L000405](../../agents/web_agent.py#L405) | 405 | `"    if not targets:"` | — |
-| [SRC-1AE03B9EC3-L000406](../../agents/web_agent.py#L406) | 406 | `"        return result"` | — |
-| [SRC-1AE03B9EC3-L000407](../../agents/web_agent.py#L407) | 407 | `""` | — |
-| [SRC-1AE03B9EC3-L000408](../../agents/web_agent.py#L408) | 408 | `"    raw_sources = result.get(\"sources\")"` | — |
-| [SRC-1AE03B9EC3-L000409](../../agents/web_agent.py#L409) | 409 | `"    sources = ("` | — |
-| [SRC-1AE03B9EC3-L000410](../../agents/web_agent.py#L410) | 410 | `"        [item for item in raw_sources if isinstance(item, dict)]"` | — |
-| [SRC-1AE03B9EC3-L000411](../../agents/web_agent.py#L411) | 411 | `"        if isinstance(raw_sources, list)"` | — |
-| [SRC-1AE03B9EC3-L000412](../../agents/web_agent.py#L412) | 412 | `"        else []"` | — |
-| [SRC-1AE03B9EC3-L000413](../../agents/web_agent.py#L413) | 413 | `"    )"` | — |
-| [SRC-1AE03B9EC3-L000414](../../agents/web_agent.py#L414) | 414 | `"    ledger = build_evidence_ledger(targets, sources)"` | — |
-| [SRC-1AE03B9EC3-L000415](../../agents/web_agent.py#L415) | 415 | `"    search_report[\"evidence_ledger\"] = ledger"` | — |
-| [SRC-1AE03B9EC3-L000416](../../agents/web_agent.py#L416) | 416 | `"    search_report[\"aspects\"] = targets"` | — |
-| [SRC-1AE03B9EC3-L000417](../../agents/web_agent.py#L417) | 417 | `"    search_report[\"aspect_diagnostics_ar\"] = arabic_aspect_diagnostics(ledger)"` | — |
