@@ -293,13 +293,19 @@ def _is_contextual_followup(question: str) -> bool:
     if _needs_clarification(question) or _starts_with_contextual_aspect(question):
         return True
     # Pronouns and deictic references are strong signals only in a short turn.
-    return bool(
-        re.fullmatch(
-            r"(?:و)?(?:هي|هو|دي|ده|دول|هما|ذلك|تلك|عليها|عليه|فيها|فيه|لها|له|"
-            r"سعرها|سعره|مكانها|مكانه|ضمانها|ضمانه|بطاريتها|كاميرتها|مميزاتها|عيوبها)",
-            normalized,
-        )
+    detached_reference = re.fullmatch(
+        r"(?:و)?(?:هي|هو|دي|ده|دول|هما|ذلك|تلك|عليها|عليه|فيها|فيه|لها|له|"
+        r"سعرها|سعره|مكانها|مكانه|ضمانها|ضمانه|بطاريتها|كاميرتها|مميزاتها|عيوبها)",
+        normalized,
     )
+    # Arabic often attaches object pronouns to verbs (e.g. "أشتريه", "أستخدمها").
+    # These are easy to miss with whitespace-token pronoun lists.
+    attached_reference = re.search(
+        r"\b(?:استخدم|اشتري|اجيب|اشغل|افتح|اصلح|احط|اجرب|اربط|اوصل|اخد|اخلي|"
+        r"اركب|انقل|ادفع|اطلب|احجز)[\u0600-\u06FF]{0,18}(?:ه|ها|هم|هما|هن|ك|كم|كن)\b",
+        normalized,
+    )
+    return bool(detached_reference or attached_reference)
 
 
 def resolve_followup_query(question: str, history: Any = None) -> str:

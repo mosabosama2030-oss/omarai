@@ -125,11 +125,18 @@ def validate_dialogue_context(
         for item in history
     )
     topic_shift = candidate.get("topic_shift") is True
-    is_follow_up = candidate.get("is_follow_up") is True and has_history and not topic_shift
+    model_marked_follow_up = candidate.get("is_follow_up") is True
+    is_follow_up = model_marked_follow_up and has_history and not topic_shift
 
-    # A detected topic shift is a hard boundary: don't allow the old topic to leak
-    # into the resolved question, even if the model accidentally included it.
-    if topic_shift or not has_history:
+    # Context is inherited only when the semantic resolver explicitly says this is
+    # a follow-up. A standalone turn must not retain an old entity merely because
+    # the model accidentally emitted a blended resolved_question.
+    rejected_stale_context = (
+        not model_marked_follow_up
+        and resolved.casefold() != current.casefold()
+    )
+    reset_context = topic_shift or not has_history or rejected_stale_context
+    if reset_context:
         resolved = current
         is_follow_up = False
 
@@ -144,7 +151,10 @@ def validate_dialogue_context(
 
     raw_slots = candidate.get("slots")
     slots: dict[str, str] = {}
-    if isinstance(raw_slots, dict):
+    # Do not carry extracted entities/slots from a rejected or explicitly shifted
+    # topic into downstream planning. The current message will be parsed on its own.
+    clear_inherited_metadata = topic_shift or rejected_stale_context or not has_history
+    if isinstance(raw_slots, dict) and not clear_inherited_metadata:
         for raw_key, raw_value in list(raw_slots.items())[:MAX_SLOT_VALUES]:
             key = _clean_text(raw_key, 40)
             value = _clean_text(raw_value, MAX_CONTEXT_TEXT_CHARS)
@@ -185,12 +195,17 @@ def validate_dialogue_context(
         "method": "llm_semantic_context",
         "resolved_question": resolved,
         "intent": intent,
-        "topic": _clean_text(candidate.get("topic"), MAX_CONTEXT_TEXT_CHARS),
-        "entities": _clean_string_list(
-            candidate.get("entities"), max_items=MAX_ENTITIES, max_chars=MAX_CONTEXT_TEXT_CHARS
+        "topic": (
+            "" if clear_inherited_metadata
+            else _clean_text(candidate.get("topic"), MAX_CONTEXT_TEXT_CHARS)
+        ),
+        "entities": (
+            [] if clear_inherited_metadata else _clean_string_list(
+                candidate.get("entities"), max_items=MAX_ENTITIES, max_chars=MAX_CONTEXT_TEXT_CHARS
+            )
         ),
         "slots": slots,
-        "changed_slots": changed_slots,
+        "changed_slots": [] if clear_inherited_metadata else changed_slots,
         "is_follow_up": is_follow_up,
         "topic_shift": topic_shift,
         "needs_web": candidate.get("needs_web") is True,
@@ -232,4 +247,13 @@ def might_be_context_dependent(question: str) -> bool:
         r"[؟?\s]*",
         current,
     )
-    return bool(lead_in or reference or fragment)
+    # Arabic object pronouns are often attached to verbs, as in "أشتريه"
+    # or "أستخدمها"; whitespace-token pronoun lists miss these natural follow-ups.
+    attached_reference = re.search(
+        r"\b(?:استخدم|أستخدم|اشتري|أشتري|اجيب|أجيب|اشغل|أشغل|افتح|أفتح|"
+        r"اصلح|أصلح|احط|أحط|اجرب|أجرب|اربط|أربط|اوصل|أوصل|اخد|آخد|"
+        r"اخلي|أخلي|اركب|أركب|انقل|أنقل|ادفع|أدفع|اطلب|أطلب|احجز|أحجز)"
+        r"[\u0600-\u06FF]{0,18}(?:ه|ها|هم|هما|هن|ك|كم|كن)\b",
+        current,
+    )
+    return bool(lead_in or reference or fragment or attached_reference)

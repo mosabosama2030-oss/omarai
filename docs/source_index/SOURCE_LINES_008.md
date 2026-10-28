@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002845 إلى SRC-1AE03B9EC3-L003644
+- النطاق: SRC-1AE03B9EC3-L002815 إلى SRC-1AE03B9EC3-L003614
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002815](../../agents/web_agent.py#L2815) | 2815 | `"            \"attempted_model\": str(attempted_model)[:160],"` | — |
+| [SRC-1AE03B9EC3-L002816](../../agents/web_agent.py#L2816) | 2816 | `"            \"fallback_used\": str(attempted_model) != str(requested_model),"` | — |
+| [SRC-1AE03B9EC3-L002817](../../agents/web_agent.py#L2817) | 2817 | `"            \"request_started\": bool(request_started),"` | — |
+| [SRC-1AE03B9EC3-L002818](../../agents/web_agent.py#L2818) | 2818 | `"            \"status\": str(status)[:48],"` | — |
+| [SRC-1AE03B9EC3-L002819](../../agents/web_agent.py#L2819) | 2819 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002820](../../agents/web_agent.py#L2820) | 2820 | `"        if remote_response_received is None and isinstance(finish_reason, str) and finish_reason.strip():"` | — |
+| [SRC-1AE03B9EC3-L002821](../../agents/web_agent.py#L2821) | 2821 | `"            # A concrete finish_reason can only be observed after a provider response was received."` | — |
+| [SRC-1AE03B9EC3-L002822](../../agents/web_agent.py#L2822) | 2822 | `"            remote_response_received = True"` | — |
+| [SRC-1AE03B9EC3-L002823](../../agents/web_agent.py#L2823) | 2823 | `"        if remote_response_received is not None:"` | — |
+| [SRC-1AE03B9EC3-L002824](../../agents/web_agent.py#L2824) | 2824 | `"            record[\"remote_response_received\"] = bool(remote_response_received)"` | — |
+| [SRC-1AE03B9EC3-L002825](../../agents/web_agent.py#L2825) | 2825 | `"        if isinstance(finish_reason, str) and finish_reason.strip():"` | — |
+| [SRC-1AE03B9EC3-L002826](../../agents/web_agent.py#L2826) | 2826 | `"            record[\"finish_reason\"] = finish_reason.strip()[:48]"` | — |
+| [SRC-1AE03B9EC3-L002827](../../agents/web_agent.py#L2827) | 2827 | `"        if isinstance(error_class, str) and error_class:"` | — |
+| [SRC-1AE03B9EC3-L002828](../../agents/web_agent.py#L2828) | 2828 | `"            record[\"error_class\"] = error_class[:80]"` | — |
+| [SRC-1AE03B9EC3-L002829](../../agents/web_agent.py#L2829) | 2829 | `"        self.generation_diagnostics.append(record)"` | — |
+| [SRC-1AE03B9EC3-L002830](../../agents/web_agent.py#L2830) | 2830 | `"        self.generation_diagnostics = self.generation_diagnostics[-12:]"` | — |
+| [SRC-1AE03B9EC3-L002831](../../agents/web_agent.py#L2831) | 2831 | `""` | — |
+| [SRC-1AE03B9EC3-L002832](../../agents/web_agent.py#L2832) | 2832 | `"    def _request_completion("` | — |
+| [SRC-1AE03B9EC3-L002833](../../agents/web_agent.py#L2833) | 2833 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L002834](../../agents/web_agent.py#L2834) | 2834 | `"        messages: list[dict[str, str]],"` | — |
+| [SRC-1AE03B9EC3-L002835](../../agents/web_agent.py#L2835) | 2835 | `"        max_tokens: int = 1400,"` | — |
+| [SRC-1AE03B9EC3-L002836](../../agents/web_agent.py#L2836) | 2836 | `"        temperature: float = 0.2,"` | — |
+| [SRC-1AE03B9EC3-L002837](../../agents/web_agent.py#L2837) | 2837 | `"        timeout: int \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L002838](../../agents/web_agent.py#L2838) | 2838 | `"        model: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L002839](../../agents/web_agent.py#L2839) | 2839 | `"        enable_web_search: bool = False,"` | — |
+| [SRC-1AE03B9EC3-L002840](../../agents/web_agent.py#L2840) | 2840 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L002841](../../agents/web_agent.py#L2841) | 2841 | `"        \"\"\"Call an OpenAI-compatible API with bounded fallback and optional live server search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L002842](../../agents/web_agent.py#L2842) | 2842 | `"        requested_model = (model or self.answer_model).strip()"` | — |
+| [SRC-1AE03B9EC3-L002843](../../agents/web_agent.py#L2843) | 2843 | `"        if not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L002844](../../agents/web_agent.py#L2844) | 2844 | `"            self._record_generation_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L002845](../../agents/web_agent.py#L2845) | 2845 | `"                requested_model=requested_model,"` | — |
 | [SRC-1AE03B9EC3-L002846](../../agents/web_agent.py#L2846) | 2846 | `"                attempted_model=requested_model,"` | — |
 | [SRC-1AE03B9EC3-L002847](../../agents/web_agent.py#L2847) | 2847 | `"                status=\"not_configured\","` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L003612](../../agents/web_agent.py#L3612) | 3612 | `"        def replace(match: re.Match[str]) -> str:"` | — |
 | [SRC-1AE03B9EC3-L003613](../../agents/web_agent.py#L3613) | 3613 | `"            number = int(match.group(1))"` | — |
 | [SRC-1AE03B9EC3-L003614](../../agents/web_agent.py#L3614) | 3614 | `"            if 1 <= number <= source_count:"` | — |
-| [SRC-1AE03B9EC3-L003615](../../agents/web_agent.py#L3615) | 3615 | `"                return match.group(0)"` | — |
-| [SRC-1AE03B9EC3-L003616](../../agents/web_agent.py#L3616) | 3616 | `"            warnings.append(f\"حُذف استشهاد غير صالح إلى المصدر {number}.\")"` | — |
-| [SRC-1AE03B9EC3-L003617](../../agents/web_agent.py#L3617) | 3617 | `"            return \"\""` | — |
-| [SRC-1AE03B9EC3-L003618](../../agents/web_agent.py#L3618) | 3618 | `""` | — |
-| [SRC-1AE03B9EC3-L003619](../../agents/web_agent.py#L3619) | 3619 | `"        clean_answer = re.sub(r\"\\[المصدر\\s+(\\d+)\\]\", replace, answer)"` | — |
-| [SRC-1AE03B9EC3-L003620](../../agents/web_agent.py#L3620) | 3620 | `"        return clean_answer, warnings"` | — |
-| [SRC-1AE03B9EC3-L003621](../../agents/web_agent.py#L3621) | 3621 | `""` | — |
-| [SRC-1AE03B9EC3-L003622](../../agents/web_agent.py#L3622) | 3622 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L003623](../../agents/web_agent.py#L3623) | 3623 | `"    def _citation_validation_metadata("` | — |
-| [SRC-1AE03B9EC3-L003624](../../agents/web_agent.py#L3624) | 3624 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L003625](../../agents/web_agent.py#L3625) | 3625 | `"        source_count: int,"` | — |
-| [SRC-1AE03B9EC3-L003626](../../agents/web_agent.py#L3626) | 3626 | `"        citation_warnings: list[str],"` | — |
-| [SRC-1AE03B9EC3-L003627](../../agents/web_agent.py#L3627) | 3627 | `"        review_status: str,"` | — |
-| [SRC-1AE03B9EC3-L003628](../../agents/web_agent.py#L3628) | 3628 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003629](../../agents/web_agent.py#L3629) | 3629 | `"        \"\"\"Report the scope of citation checks without claiming semantic fact verification.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003630](../../agents/web_agent.py#L3630) | 3630 | `"        citation_count = len(re.findall(r\"\\[المصدر\\s+\\d+\\]\", answer))"` | — |
-| [SRC-1AE03B9EC3-L003631](../../agents/web_agent.py#L3631) | 3631 | `"        max_citable_source_index = max("` | — |
-| [SRC-1AE03B9EC3-L003632](../../agents/web_agent.py#L3632) | 3632 | `"            0, min(MAX_LLM_CITED_SOURCES, int(source_count))"` | — |
-| [SRC-1AE03B9EC3-L003633](../../agents/web_agent.py#L3633) | 3633 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003634](../../agents/web_agent.py#L3634) | 3634 | `"        if citation_warnings:"` | — |
-| [SRC-1AE03B9EC3-L003635](../../agents/web_agent.py#L3635) | 3635 | `"            status = \"invalid_index_references_removed\""` | — |
-| [SRC-1AE03B9EC3-L003636](../../agents/web_agent.py#L3636) | 3636 | `"        elif citation_count:"` | — |
-| [SRC-1AE03B9EC3-L003637](../../agents/web_agent.py#L3637) | 3637 | `"            status = \"index_range_check_passed\""` | — |
-| [SRC-1AE03B9EC3-L003638](../../agents/web_agent.py#L3638) | 3638 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L003639](../../agents/web_agent.py#L3639) | 3639 | `"            status = \"no_citation_markers_present\""` | — |
-| [SRC-1AE03B9EC3-L003640](../../agents/web_agent.py#L3640) | 3640 | `"        return {"` | — |
-| [SRC-1AE03B9EC3-L003641](../../agents/web_agent.py#L3641) | 3641 | `"            \"method\": \"numeric_source_index_range_only\","` | — |
-| [SRC-1AE03B9EC3-L003642](../../agents/web_agent.py#L3642) | 3642 | `"            \"status\": status,"` | — |
-| [SRC-1AE03B9EC3-L003643](../../agents/web_agent.py#L3643) | 3643 | `"            \"valid_citation_count\": citation_count,"` | — |
-| [SRC-1AE03B9EC3-L003644](../../agents/web_agent.py#L3644) | 3644 | `"            \"invalid_references_removed\": len(citation_warnings),"` | — |

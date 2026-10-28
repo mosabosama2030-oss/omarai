@@ -279,3 +279,15 @@ def test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode():
 def test_stable_question_without_source_request_remains_model_only():
     decision = route_intent("اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف")
     assert decision["route"] == "MODEL_ONLY"
+
+
+def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> None:
+    history = [
+        {"role": "user", "content": "بفكر أشتري Lenovo ThinkPad E14 في مصر"},
+        {"role": "assistant", "content": "نتحدث عن Lenovo ThinkPad E14 في السوق المصري."},
+    ]
+
+    resolved = resolve_followup_query("أقدر أشتريه منين؟", history)
+
+    assert "Lenovo ThinkPad E14" in resolved
+    assert "أقدر أشتريه منين" in resolved
