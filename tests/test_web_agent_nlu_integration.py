@@ -82,3 +82,61 @@ def test_web_agent_extracts_joined_comparison_facets() -> None:
     joined = " ".join(targets)
     for expected in ("السعر", "البطارية", "الضمان", "الصيانة", "الخصوصية", "الاعتمادية", "الدعم", "الجودة"):
         assert expected in joined
+
+
+def test_incomplete_compound_evidence_withholds_final_answer() -> None:
+    from agents.web_agent import enforce_aspect_answer_completeness
+
+    payload = {
+        "answer": "PRIVATE DRAFT: claim complete details for price and warranty.",
+        "sources": [
+            {
+                "title": "Price list",
+                "url": "https://example.org/prices",
+                "snippet": "price cost prices",
+                "provider": "mock",
+            }
+        ],
+        "search_report": {
+            "evidence_ledger": {
+                "aspects": ["price", "warranty"],
+                "covered": ["price"],
+                "missing": ["warranty"],
+                "coverage_ratio": 0.5,
+            },
+            "aspect_diagnostics_ar": [],
+        },
+    }
+    result = enforce_aspect_answer_completeness(payload)
+    assert result["answer_was_withheld"] is True
+    assert result["answer_completeness_status"] == "incomplete_evidence_withheld"
+    assert result["aspect_evidence_gaps"] == ["warranty"]
+    assert "PRIVATE DRAFT" not in result["answer"]
+    assert "warranty" in result["answer"]
+    assert result["search_report"]["task_fulfillment_status"] == "possible_gap_detected"
+
+
+def test_no_lexical_gap_is_not_presented_as_semantic_proof() -> None:
+    from agents.web_agent import enforce_aspect_answer_completeness
+
+    payload = {
+        "answer": "Supported draft.",
+        "sources": [
+            {
+                "title": "Price and warranty terms",
+                "url": "https://example.org/terms",
+                "snippet": "price cost warranty warranty coverage",
+                "provider": "mock",
+            }
+        ],
+        "search_report": {
+            "evidence_ledger": {"aspects": ["price", "warranty"], "missing": []},
+            "aspect_diagnostics_ar": [],
+        },
+    }
+    result = enforce_aspect_answer_completeness(payload)
+    assert result["answer_was_withheld"] is False
+    assert result["answer_completeness_status"] == (
+        "no_lexical_gaps_detected_semantic_completeness_not_proven"
+    )
+    assert result["aspect_coverage_is_not_truth_score"] is True

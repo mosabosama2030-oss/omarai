@@ -378,6 +378,75 @@ class PageFetchResult(tuple):
         return value
 
 
+def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]:
+    """Withhold a final answer if any explicit axis lacks a text candidate.
+
+    Lexical coverage is only a conservative evidence-presence check, not semantic
+    verification. A missing candidate therefore blocks a *complete* answer rather
+    than asserting the underlying fact is unavailable everywhere.
+    """
+    search_report = result.get("search_report")
+    if not isinstance(search_report, dict):
+        return result
+    prior_ledger = search_report.get("evidence_ledger")
+    if not isinstance(prior_ledger, dict):
+        return result
+    aspects = prior_ledger.get("aspects")
+    if not isinstance(aspects, list) or not aspects:
+        return result
+    targets = [
+        item[:120]
+        for item in aspects
+        if isinstance(item, str) and item.strip()
+    ][:8]
+    if not targets:
+        return result
+
+    raw_sources = result.get("sources")
+    sources = (
+        [item for item in raw_sources if isinstance(item, dict)]
+        if isinstance(raw_sources, list)
+        else []
+    )
+    ledger = build_evidence_ledger(targets, sources)
+    search_report["evidence_ledger"] = ledger
+    search_report["aspects"] = targets
+    search_report["aspect_diagnostics_ar"] = arabic_aspect_diagnostics(ledger)
+    search_report["aspect_evidence_gaps"] = list(ledger.get("missing") or [])
+    search_report["aspect_coverage_lexical_ratio"] = ledger.get("coverage_ratio")
+    search_report["aspect_coverage_is_not_truth_score"] = True
+
+    result["aspects"] = targets
+    result["aspect_evidence_gaps"] = list(ledger.get("missing") or [])
+    result["aspect_diagnostics_ar"] = list(search_report["aspect_diagnostics_ar"])
+    result["aspect_coverage_lexical_ratio"] = ledger.get("coverage_ratio")
+    result["aspect_coverage_is_not_truth_score"] = True
+
+    missing = list(ledger.get("missing") or [])
+    if missing:
+        result["answer"] = (
+            "لم أقدّم إجابة نهائية؛ لأن نتائج البحث المتاحة لا تتضمن مرشحًا نصيًا كافيًا "
+            "لكل المحاور المطلوبة. المحاور التي تحتاج إلى دليل إضافي: "
+            + "، ".join(str(item) for item in missing)
+            + ". لن أعرض مسودة جزئية على أنها إجابة مكتملة. وهذا النقص يصف النتائج التي جُمعت "
+            "فقط، ولا يثبت عدم وجود معلومات عنها خارجها."
+        )
+        result["answer_was_withheld"] = True
+        result["answer_completeness_status"] = "incomplete_evidence_withheld"
+        result["task_fulfillment_status"] = "possible_gap_detected"
+        search_report["task_fulfillment_status"] = "possible_gap_detected"
+        warning = "حُجبت الإجابة النهائية لوجود محاور مطلوبة بلا مرشح نصي كافٍ."
+        warnings = result.setdefault("warnings", [])
+        if isinstance(warnings, list) and warning not in warnings:
+            warnings.append(warning)
+    else:
+        result["answer_was_withheld"] = False
+        result["answer_completeness_status"] = (
+            "no_lexical_gaps_detected_semantic_completeness_not_proven"
+        )
+    return result
+
+
 class WebAgent:
     """Search, inspect, and synthesize web evidence for open-ended questions."""
 
@@ -4081,19 +4150,7 @@ class WebAgent:
             result.setdefault("warnings", []).append(
                 "انتهت نافذة الوقت المحددة للطلب أو جرى تجاوزها قليلًا أثناء إنهاء اتصال جارٍ."
             )
-        search_report = result.get("search_report")
-        ledger = search_report.get("evidence_ledger") if isinstance(search_report, dict) else None
-        if isinstance(ledger, dict) and ledger.get("aspects"):
-            result["aspects"] = list(ledger.get("aspects") or [])
-            result["aspect_evidence_gaps"] = list(ledger.get("missing") or [])
-            result["aspect_diagnostics_ar"] = list(search_report.get("aspect_diagnostics_ar") or [])
-            result["aspect_coverage_lexical_ratio"] = ledger.get("coverage_ratio")
-            result["aspect_coverage_is_not_truth_score"] = True
-            if ledger.get("missing"):
-                result.setdefault("warnings", []).append(
-                    "بقيت محاور بلا مرشح نصي كافٍ بعد البحث؛ لا تُعد هذه النتيجة تغطية مكتملة."
-                )
-        return result
+        return enforce_aspect_answer_completeness(result)
 
     def _answer_with_budget(
         self, question: str, history: Any = None, mode: str = "auto"
