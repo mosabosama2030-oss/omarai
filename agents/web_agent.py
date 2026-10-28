@@ -4737,11 +4737,17 @@ class WebAgent:
             plan=plan,
             dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
         )
+        query_strategy_limit = (
+            MAX_PLAN_QUERIES
+            if clean_mode in {"deep", "latest", "social"}
+            or intent_route in {"WEB_DEEP", "LEAD_GENERATION"}
+            else 3
+        )
         query_strategy_matrix = build_query_strategy_matrix(
             working_question,
             task_spec,
             plan.get("queries", []),
-            limit=MAX_PLAN_QUERIES,
+            limit=query_strategy_limit,
             compact_fn=compact_search_query,
         )
         if query_strategy_matrix:
