@@ -214,12 +214,12 @@ def might_be_context_dependent(question: str) -> bool:
         return True
     return bool(re.search(
         r"^(?:و?طب|و?طيب|و?تمام|ثم|كمان|وبالنسبه|بالنسبه|"
-        r"and\\s+(?:what|the|how)|what\\s+about|how\\s+about|"
-        r"then\\b|also\\b|as\\s+for\\b|and\\s+its\\b)",
+        r"and\s+(?:what|the|how)|what\s+about|how\s+about|"
+        r"then\b|also\b|as\s+for\b|and\s+its\b)",
         current,
     ) or re.search(
-        r"\\b(?:it|its|they|them|their|this|that|these|those|there|"
+        r"\b(?:it|its|they|them|their|this|that|these|those|there|"
         r"he|she|هو|هي|ده|دي|دول|عليه|عليها|فيه|فيها|لها|له|"
-        r"سعرها|سعره|ضمانها|ضمانه|بطاريتها|كاميرتها)\\b",
+        r"سعرها|سعره|ضمانها|ضمانه|بطاريتها|كاميرتها)\b",
         current,
     ))
