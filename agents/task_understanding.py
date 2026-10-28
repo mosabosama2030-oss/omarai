@@ -599,7 +599,11 @@ def build_query_strategy_matrix(
         # Avoid creating modifier-only queries after a topic was lost upstream.
         topic_tokens = _TOKEN_RE.findall(_query_key(str(queries[0])) if queries else _query_key(question))
         query_tokens = _TOKEN_RE.findall(key)
-        if len(topic_tokens) >= 2 and not any(token in query_tokens for token in topic_tokens[:3]):
+        if (
+            not strategy.startswith("planner_")
+            and len(topic_tokens) >= 2
+            and not any(token in query_tokens for token in topic_tokens[:3])
+        ):
             return
         seen.add(key)
         rows.append({"query": candidate, "strategy": strategy, "rationale": rationale})
