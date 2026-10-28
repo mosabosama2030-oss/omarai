@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005276 إلى SRC-EEF2E6447C-L000413
+- النطاق: SRC-1AE03B9EC3-L005275 إلى SRC-EEF2E6447C-L000412
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005275](../../agents/web_agent.py#L5275) | 5275 | `"                            for text_key in (\"title\", \"snippet\", \"page_text\"):"` | — |
 | [SRC-1AE03B9EC3-L005276](../../agents/web_agent.py#L5276) | 5276 | `"                                old_text = str(merged.get(text_key) or \"\")"` | — |
 | [SRC-1AE03B9EC3-L005277](../../agents/web_agent.py#L5277) | 5277 | `"                                new_text = str(candidate.get(text_key) or \"\")"` | — |
 | [SRC-1AE03B9EC3-L005278](../../agents/web_agent.py#L5278) | 5278 | `"                                if len(new_text) > len(old_text):"` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000410](../../api/omarai.py#L410) | 410 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
 | [SRC-EEF2E6447C-L000411](../../api/omarai.py#L411) | 411 | `"            ),"` | — |
 | [SRC-EEF2E6447C-L000412](../../api/omarai.py#L412) | 412 | `"        )"` | — |
-| [SRC-EEF2E6447C-L000413](../../api/omarai.py#L413) | 413 | `"        deadline = time.monotonic() + total_timeout"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000476 إلى SRC-1AE03B9EC3-L001275
+- النطاق: SRC-1AE03B9EC3-L000475 إلى SRC-1AE03B9EC3-L001274
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000475](../../agents/web_agent.py#L475) | 475 | `"                \"Google News RSS for fresh queries\","` | — |
 | [SRC-1AE03B9EC3-L000476](../../agents/web_agent.py#L476) | 476 | `"                \"DeepSeek Search API when DEEPSEEK_SEARCH_API_KEY is configured (optional; may incur charges)\","` | — |
 | [SRC-1AE03B9EC3-L000477](../../agents/web_agent.py#L477) | 477 | `"                \"OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1\","` | — |
 | [SRC-1AE03B9EC3-L000478](../../agents/web_agent.py#L478) | 478 | `"                \"Brave Search API when BRAVE_SEARCH_API_KEY is configured\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001272](../../agents/web_agent.py#L1272) | 1272 | `"                \"Content-Type\": \"application/json\","` | — |
 | [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"                \"Accept\": \"application/json\","` | — |
 | [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"                \"User-Agent\": \"OmaraiResearchAgent/1.0\","` | — |
-| [SRC-1AE03B9EC3-L001275](../../agents/web_agent.py#L1275) | 1275 | `"            },"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000429 إلى SRC-1AE03B9EC3-L000475
+- النطاق: SRC-59CF4B7DE8-L000428 إلى SRC-1AE03B9EC3-L000474
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000428](../../agents/research.py#L428) | 428 | `"    for batch in batches:"` | — |
 | [SRC-59CF4B7DE8-L000429](../../agents/research.py#L429) | 429 | `"        query = _compact(batch.get(\"query\", \"\"), 500)"` | — |
 | [SRC-59CF4B7DE8-L000430](../../agents/research.py#L430) | 430 | `"        provider = _compact(batch.get(\"provider\", \"search\"), 80)"` | — |
 | [SRC-59CF4B7DE8-L000431](../../agents/research.py#L431) | 431 | `"        results = batch.get(\"results\", [])"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1AE03B9EC3-L000472](../../agents/web_agent.py#L472) | 472 | `"            \"search_providers\": ["` | — |
 | [SRC-1AE03B9EC3-L000473](../../agents/web_agent.py#L473) | 473 | `"                \"DuckDuckGo HTML\","` | — |
 | [SRC-1AE03B9EC3-L000474](../../agents/web_agent.py#L474) | 474 | `"                \"Bing RSS\","` | — |
-| [SRC-1AE03B9EC3-L000475](../../agents/web_agent.py#L475) | 475 | `"                \"Google News RSS for fresh queries\","` | — |

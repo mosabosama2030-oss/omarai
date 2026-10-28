@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004476 إلى SRC-1AE03B9EC3-L005275
+- النطاق: SRC-1AE03B9EC3-L004475 إلى SRC-1AE03B9EC3-L005274
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004475](../../agents/web_agent.py#L4475) | 4475 | `"            and bool(source.get(\"page_fetched\"))"` | — |
 | [SRC-1AE03B9EC3-L004476](../../agents/web_agent.py#L4476) | 4476 | `"            and bool(str(source.get(\"page_text\") or \"\").strip())"` | — |
 | [SRC-1AE03B9EC3-L004477](../../agents/web_agent.py#L4477) | 4477 | `"            for source in sources"` | — |
 | [SRC-1AE03B9EC3-L004478](../../agents/web_agent.py#L4478) | 4478 | `"        )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005272](../../agents/web_agent.py#L5272) | 5272 | `"                            existing_source = sources[existing_index]"` | — |
 | [SRC-1AE03B9EC3-L005273](../../agents/web_agent.py#L5273) | 5273 | `"                            merged = dict(existing_source)"` | — |
 | [SRC-1AE03B9EC3-L005274](../../agents/web_agent.py#L5274) | 5274 | `"                            source_enriched = False"` | — |
-| [SRC-1AE03B9EC3-L005275](../../agents/web_agent.py#L5275) | 5275 | `"                            for text_key in (\"title\", \"snippet\", \"page_text\"):"` | — |

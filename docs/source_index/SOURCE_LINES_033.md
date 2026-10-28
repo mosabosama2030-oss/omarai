@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000314 إلى SRC-F725E90B2A-L001113
+- النطاق: SRC-F725E90B2A-L000313 إلى SRC-F725E90B2A-L001112
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000313](../../tests/test_web_agent.py#L313) | 313 | `"    \"\"\"A budget-limited query must not erase evidence returned by other queries.\"\"\""` | — |
 | [SRC-F725E90B2A-L000314](../../tests/test_web_agent.py#L314) | 314 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L000315](../../tests/test_web_agent.py#L315) | 315 | `""` | — |
 | [SRC-F725E90B2A-L000316](../../tests/test_web_agent.py#L316) | 316 | `"    def search(query):"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001110](../../tests/test_web_agent.py#L1110) | 1110 | `"        \"queries\": [\"لخص الصفحة\"],"` | — |
 | [SRC-F725E90B2A-L001111](../../tests/test_web_agent.py#L1111) | 1111 | `"        \"direct_urls\": [\"https://example.com/research\"],"` | — |
 | [SRC-F725E90B2A-L001112](../../tests/test_web_agent.py#L1112) | 1112 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L001113](../../tests/test_web_agent.py#L1113) | 1113 | `"        \"freshness\": \"any\","` | — |

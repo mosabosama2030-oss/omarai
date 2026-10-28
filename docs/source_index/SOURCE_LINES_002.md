@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000434
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000433
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -385,12 +385,13 @@
 | [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"        current,"` | — |
 | [SRC-2D53795445-L000224](../../agents/dialogue_state.py#L224) | 224 | `"    )"` | — |
 | [SRC-2D53795445-L000225](../../agents/dialogue_state.py#L225) | 225 | `"    fragment = re.fullmatch("` | — |
-| [SRC-2D53795445-L000226](../../agents/dialogue_state.py#L226) | 226 | `"        r\"[؟?\\s]*(?:وال?)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
-| [SRC-2D53795445-L000227](../../agents/dialogue_state.py#L227) | 227 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|warranty\|price\|battery\|\""` | — |
-| [SRC-2D53795445-L000228](../../agents/dialogue_state.py#L228) | 228 | `"        r\"camera\|location\|source\|pros\|cons)[؟?\\s]*\","` | — |
-| [SRC-2D53795445-L000229](../../agents/dialogue_state.py#L229) | 229 | `"        current,"` | — |
-| [SRC-2D53795445-L000230](../../agents/dialogue_state.py#L230) | 230 | `"    )"` | — |
-| [SRC-2D53795445-L000231](../../agents/dialogue_state.py#L231) | 231 | `"    return bool(lead_in or reference or fragment)"` | — |
+| [SRC-2D53795445-L000226](../../agents/dialogue_state.py#L226) | 226 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
+| [SRC-2D53795445-L000227](../../agents/dialogue_state.py#L227) | 227 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
+| [SRC-2D53795445-L000228](../../agents/dialogue_state.py#L228) | 228 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
+| [SRC-2D53795445-L000229](../../agents/dialogue_state.py#L229) | 229 | `"        r\"[؟?\\s]*\","` | — |
+| [SRC-2D53795445-L000230](../../agents/dialogue_state.py#L230) | 230 | `"        current,"` | — |
+| [SRC-2D53795445-L000231](../../agents/dialogue_state.py#L231) | 231 | `"    )"` | — |
+| [SRC-2D53795445-L000232](../../agents/dialogue_state.py#L232) | 232 | `"    return bool(lead_in or reference or fragment)"` | — |
 ## الوكيل والمنطق
 
 ### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
@@ -833,4 +834,3 @@
 | [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `"        return {"` | — |
 | [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"            \"route\": \"LOCAL\","` | — |
 | [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"            \"reason\": \"short_conversational_turn\","` | — |
-| [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"            \"context_available\": context_available,"` | — |

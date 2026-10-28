@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003676 إلى SRC-1AE03B9EC3-L004475
+- النطاق: SRC-1AE03B9EC3-L003675 إلى SRC-1AE03B9EC3-L004474
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003675](../../agents/web_agent.py#L3675) | 3675 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003676](../../agents/web_agent.py#L3676) | 3676 | `"        probe_sources: dict[str, dict[str, Any]] = {}"` | — |
 | [SRC-1AE03B9EC3-L003677](../../agents/web_agent.py#L3677) | 3677 | `"        completed_connector_responses = 0"` | — |
 | [SRC-1AE03B9EC3-L003678](../../agents/web_agent.py#L3678) | 3678 | `"        probe_errors: list[str] = []"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004472](../../agents/web_agent.py#L4472) | 4472 | `"        # but must never be presented as independently corroborated research."` | — |
 | [SRC-1AE03B9EC3-L004473](../../agents/web_agent.py#L4473) | 4473 | `"        has_read_user_supplied_page = any("` | — |
 | [SRC-1AE03B9EC3-L004474](../../agents/web_agent.py#L4474) | 4474 | `"            \"user_supplied_url\" in source.get(\"providers\", [])"` | — |
-| [SRC-1AE03B9EC3-L004475](../../agents/web_agent.py#L4475) | 4475 | `"            and bool(source.get(\"page_fetched\"))"` | — |
