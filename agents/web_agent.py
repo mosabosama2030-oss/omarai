@@ -51,6 +51,7 @@ from agents.research_guardrails import apply_source_guardrails
 from agents.task_understanding import (
     build_query_strategy_matrix,
     build_task_spec,
+    reasoning_guidance_for_task_spec,
     validate_task_spec,
 )
 
@@ -3501,6 +3502,8 @@ class WebAgent:
         task_planning_context = {
             "spec": task_spec,
             "query_strategy_matrix": strategy_matrix,
+            "reasoning_guidance": reasoning_guidance_for_task_spec(task_spec),
+            "decision_matrix": task_spec.get("decision_matrix", []),
             "planned_queries": planned_queries,
             "planned_query_count": len(planned_queries),
             "claim": (
