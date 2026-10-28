@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **99**
 - ملفات Python المحللة: **56**
-- تعريفات Python المفهرسة: **1292**
+- تعريفات Python المفهرسة: **1295**
 - تعريفات Python موثقة بوجود Docstring: **229**
-- تعريفات Python بلا Docstring: **797**
+- تعريفات Python بلا Docstring: **800**
 - تعريفات لا ينطبق عليها Docstring: **266**
 - الرموز الساكنة الإضافية: **1705**
-- الأسطر النصية المفهرسة حرفيًا: **33954**
+- الأسطر النصية المفهرسة حرفيًا: **34008**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -122,7 +122,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 16516 | 442 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 11267 | 243 | جرد الملف + AST Python |
+| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 13881 | 297 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 146829 | 3748 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 59758 | 417 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1172,6 +1172,9 @@
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L218) | دالة | test_official_site_request_with_a_named_target_does_not_require_subject_clarification | لا توجد Docstring. | ناقص | 218 | [SRC-AFEDC2645A-L000218](../tests/test_task_understanding.py#L218) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L228) | دالة | test_summary_without_url_or_text_marks_required_input | لا توجد Docstring. | ناقص | 228 | [SRC-AFEDC2645A-L000228](../tests/test_task_understanding.py#L228) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L234) | دالة | test_output_preferences_do_not_count_as_competing_intent_hypotheses | لا توجد Docstring. | ناقص | 234 | [SRC-AFEDC2645A-L000234](../tests/test_task_understanding.py#L234) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L260) | دالة | test_extended_task_families_cover_non_search_and_specialized_requests | لا توجد Docstring. | ناقص | 260 | [SRC-AFEDC2645A-L000260](../tests/test_task_understanding.py#L260) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L268) | دالة | test_health_and_legal_tasks_attach_domain_specific_caution | لا توجد Docstring. | ناقص | 268 | [SRC-AFEDC2645A-L000268](../tests/test_task_understanding.py#L268) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L287) | دالة | test_output_audience_and_delivery_preferences_are_distinct_fields | لا توجد Docstring. | ناقص | 287 | [SRC-AFEDC2645A-L000287](../tests/test_task_understanding.py#L287) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L18) | دالة | sample_source | لا توجد Docstring. | ناقص | 18 | [SRC-F725E90B2A-L000018](../tests/test_web_agent.py#L18) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L34) | دالة | test_agent_synthesizes_with_sources_without_live_network | لا توجد Docstring. | ناقص | 34 | [SRC-F725E90B2A-L000034](../tests/test_web_agent.py#L34) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L39) | دالة | test_agent_synthesizes_with_sources_without_live_network.plan | لا توجد Docstring. | ناقص | 39 | [SRC-F725E90B2A-L000039](../tests/test_web_agent.py#L39) |
