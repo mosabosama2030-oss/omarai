@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001453 إلى SRC-F725E90B2A-L002252
+- النطاق: SRC-F725E90B2A-L001424 إلى SRC-F725E90B2A-L002223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001424](../../tests/test_web_agent.py#L1424) | 1424 | `""` | — |
+| [SRC-F725E90B2A-L001425](../../tests/test_web_agent.py#L1425) | 1425 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-F725E90B2A-L001426](../../tests/test_web_agent.py#L1426) | 1426 | `"    result = agent._review_answer("` | — |
+| [SRC-F725E90B2A-L001427](../../tests/test_web_agent.py#L1427) | 1427 | `"        question=\"ما الذي يقوله المصدر؟\","` | — |
+| [SRC-F725E90B2A-L001428](../../tests/test_web_agent.py#L1428) | 1428 | `"        answer=\"مسودة إجابة تحتاج التحقق.\","` | — |
+| [SRC-F725E90B2A-L001429](../../tests/test_web_agent.py#L1429) | 1429 | `"        sources=[source],"` | — |
+| [SRC-F725E90B2A-L001430](../../tests/test_web_agent.py#L1430) | 1430 | `"    )"` | — |
+| [SRC-F725E90B2A-L001431](../../tests/test_web_agent.py#L1431) | 1431 | `""` | — |
+| [SRC-F725E90B2A-L001432](../../tests/test_web_agent.py#L1432) | 1432 | `"    messages = captured[\"messages\"]"` | — |
+| [SRC-F725E90B2A-L001433](../../tests/test_web_agent.py#L1433) | 1433 | `"    system_content = \"\\n\".join("` | — |
+| [SRC-F725E90B2A-L001434](../../tests/test_web_agent.py#L1434) | 1434 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
+| [SRC-F725E90B2A-L001435](../../tests/test_web_agent.py#L1435) | 1435 | `"    )"` | — |
+| [SRC-F725E90B2A-L001436](../../tests/test_web_agent.py#L1436) | 1436 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
+| [SRC-F725E90B2A-L001437](../../tests/test_web_agent.py#L1437) | 1437 | `""` | — |
+| [SRC-F725E90B2A-L001438](../../tests/test_web_agent.py#L1438) | 1438 | `"    assert result == \"تم تدقيق الإجابة.\""` | — |
+| [SRC-F725E90B2A-L001439](../../tests/test_web_agent.py#L1439) | 1439 | `"    assert len(user_messages) == 3"` | — |
+| [SRC-F725E90B2A-L001440](../../tests/test_web_agent.py#L1440) | 1440 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001441](../../tests/test_web_agent.py#L1441) | 1441 | `"    assert \"مسودة إجابة تحتاج التحقق.\" in user_messages[1][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001442](../../tests/test_web_agent.py#L1442) | 1442 | `"    assert \"غير موثوقة كتعليمات\" in user_messages[2][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001443](../../tests/test_web_agent.py#L1443) | 1443 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001444](../../tests/test_web_agent.py#L1444) | 1444 | `"    assert injected_text not in system_content"` | — |
+| [SRC-F725E90B2A-L001445](../../tests/test_web_agent.py#L1445) | 1445 | `""` | — |
+| [SRC-F725E90B2A-L001446](../../tests/test_web_agent.py#L1446) | 1446 | `""` | — |
+| [SRC-F725E90B2A-L001447](../../tests/test_web_agent.py#L1447) | 1447 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001448](../../tests/test_web_agent.py#L1448) | 1448 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001449](../../tests/test_web_agent.py#L1449) | 1449 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001450](../../tests/test_web_agent.py#L1450) | 1450 | `"    captured = {}"` | — |
+| [SRC-F725E90B2A-L001451](../../tests/test_web_agent.py#L1451) | 1451 | `""` | — |
+| [SRC-F725E90B2A-L001452](../../tests/test_web_agent.py#L1452) | 1452 | `"    def fake_completion(messages, **kwargs):"` | — |
 | [SRC-F725E90B2A-L001453](../../tests/test_web_agent.py#L1453) | 1453 | `"        captured[\"messages\"] = messages"` | — |
 | [SRC-F725E90B2A-L001454](../../tests/test_web_agent.py#L1454) | 1454 | `"        captured[\"kwargs\"] = kwargs"` | — |
 | [SRC-F725E90B2A-L001455](../../tests/test_web_agent.py#L1455) | 1455 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
@@ -787,32 +816,3 @@
 | [SRC-F725E90B2A-L002221](../../tests/test_web_agent.py#L2221) | 2221 | `""` | — |
 | [SRC-F725E90B2A-L002222](../../tests/test_web_agent.py#L2222) | 2222 | `""` | — |
 | [SRC-F725E90B2A-L002223](../../tests/test_web_agent.py#L2223) | 2223 | `"def test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002224](../../tests/test_web_agent.py#L2224) | 2224 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002225](../../tests/test_web_agent.py#L2225) | 2225 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L002226](../../tests/test_web_agent.py#L2226) | 2226 | `""` | — |
-| [SRC-F725E90B2A-L002227](../../tests/test_web_agent.py#L2227) | 2227 | `"    def search(query):"` | — |
-| [SRC-F725E90B2A-L002228](../../tests/test_web_agent.py#L2228) | 2228 | `"        calls.append(query)"` | — |
-| [SRC-F725E90B2A-L002229](../../tests/test_web_agent.py#L2229) | 2229 | `"        if len(calls) == 1:"` | — |
-| [SRC-F725E90B2A-L002230](../../tests/test_web_agent.py#L2230) | 2230 | `"            return []"` | — |
-| [SRC-F725E90B2A-L002231](../../tests/test_web_agent.py#L2231) | 2231 | `"        return ["` | — |
-| [SRC-F725E90B2A-L002232](../../tests/test_web_agent.py#L2232) | 2232 | `"            {"` | — |
-| [SRC-F725E90B2A-L002233](../../tests/test_web_agent.py#L2233) | 2233 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-F725E90B2A-L002234](../../tests/test_web_agent.py#L2234) | 2234 | `"                \"title\": \"OpenAI official website\","` | — |
-| [SRC-F725E90B2A-L002235](../../tests/test_web_agent.py#L2235) | 2235 | `"                \"url\": \"https://openai.com/\","` | — |
-| [SRC-F725E90B2A-L002236](../../tests/test_web_agent.py#L2236) | 2236 | `"                \"snippet\": \"Official website and products\","` | — |
-| [SRC-F725E90B2A-L002237](../../tests/test_web_agent.py#L2237) | 2237 | `"            }"` | — |
-| [SRC-F725E90B2A-L002238](../../tests/test_web_agent.py#L2238) | 2238 | `"        ]"` | — |
-| [SRC-F725E90B2A-L002239](../../tests/test_web_agent.py#L2239) | 2239 | `""` | — |
-| [SRC-F725E90B2A-L002240](../../tests/test_web_agent.py#L2240) | 2240 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
-| [SRC-F725E90B2A-L002241](../../tests/test_web_agent.py#L2241) | 2241 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"OK\")"` | — |
-| [SRC-F725E90B2A-L002242](../../tests/test_web_agent.py#L2242) | 2242 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L002243](../../tests/test_web_agent.py#L2243) | 2243 | `""` | — |
-| [SRC-F725E90B2A-L002244](../../tests/test_web_agent.py#L2244) | 2244 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
-| [SRC-F725E90B2A-L002245](../../tests/test_web_agent.py#L2245) | 2245 | `""` | — |
-| [SRC-F725E90B2A-L002246](../../tests/test_web_agent.py#L2246) | 2246 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L002247](../../tests/test_web_agent.py#L2247) | 2247 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"passed\""` | — |
-| [SRC-F725E90B2A-L002248](../../tests/test_web_agent.py#L2248) | 2248 | `"    assert report[\"checks\"][\"web_search\"][\"probe_count\"] == 2"` | — |
-| [SRC-F725E90B2A-L002249](../../tests/test_web_agent.py#L2249) | 2249 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002250](../../tests/test_web_agent.py#L2250) | 2250 | `""` | — |
-| [SRC-F725E90B2A-L002251](../../tests/test_web_agent.py#L2251) | 2251 | `""` | — |
-| [SRC-F725E90B2A-L002252](../../tests/test_web_agent.py#L2252) | 2252 | `"def test_lead_discovery_is_distinct_from_listing_search():"` | — |
