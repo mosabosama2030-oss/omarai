@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001243 إلى SRC-F725E90B2A-L002042
+- النطاق: SRC-F725E90B2A-L001236 إلى SRC-F725E90B2A-L002035
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001236](../../tests/test_web_agent.py#L1236) | 1236 | `"                \"pages_fetched\": 2,"` | — |
+| [SRC-F725E90B2A-L001237](../../tests/test_web_agent.py#L1237) | 1237 | `"                \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001238](../../tests/test_web_agent.py#L1238) | 1238 | `"                \"platform_counts\": {\"web\": 2},"` | — |
+| [SRC-F725E90B2A-L001239](../../tests/test_web_agent.py#L1239) | 1239 | `"                \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L001240](../../tests/test_web_agent.py#L1240) | 1240 | `"                \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L001241](../../tests/test_web_agent.py#L1241) | 1241 | `"                \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001242](../../tests/test_web_agent.py#L1242) | 1242 | `"            },"` | — |
 | [SRC-F725E90B2A-L001243](../../tests/test_web_agent.py#L1243) | 1243 | `"        ),"` | — |
 | [SRC-F725E90B2A-L001244](../../tests/test_web_agent.py#L1244) | 1244 | `"    )"` | — |
 | [SRC-F725E90B2A-L001245](../../tests/test_web_agent.py#L1245) | 1245 | `"    monkeypatch.setattr("` | — |
@@ -809,10 +816,3 @@
 | [SRC-F725E90B2A-L002033](../../tests/test_web_agent.py#L2033) | 2033 | `"                    \"message\": {\"content\": content},"` | — |
 | [SRC-F725E90B2A-L002034](../../tests/test_web_agent.py#L2034) | 2034 | `"                    \"finish_reason\": finish_reason,"` | — |
 | [SRC-F725E90B2A-L002035](../../tests/test_web_agent.py#L2035) | 2035 | `"                }]"` | — |
-| [SRC-F725E90B2A-L002036](../../tests/test_web_agent.py#L2036) | 2036 | `"            }).encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L002037](../../tests/test_web_agent.py#L2037) | 2037 | `""` | — |
-| [SRC-F725E90B2A-L002038](../../tests/test_web_agent.py#L2038) | 2038 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L002039](../../tests/test_web_agent.py#L2039) | 2039 | `"            return self"` | — |
-| [SRC-F725E90B2A-L002040](../../tests/test_web_agent.py#L2040) | 2040 | `""` | — |
-| [SRC-F725E90B2A-L002041](../../tests/test_web_agent.py#L2041) | 2041 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-F725E90B2A-L002042](../../tests/test_web_agent.py#L2042) | 2042 | `"            return False"` | — |

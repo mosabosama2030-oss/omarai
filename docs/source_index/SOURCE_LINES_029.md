@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000930 إلى SRC-4CCB1F172B-L000177
+- النطاق: SRC-90FAA34ADE-L000923 إلى SRC-4CCB1F172B-L000170
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000923](../../tests/fixtures/answer_quality_cases.json#L923) | 923 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000924](../../tests/fixtures/answer_quality_cases.json#L924) | 924 | `"      \"case_id\": \"AQ-032\","` | — |
+| [SRC-90FAA34ADE-L000925](../../tests/fixtures/answer_quality_cases.json#L925) | 925 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000926](../../tests/fixtures/answer_quality_cases.json#L926) | 926 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L000927](../../tests/fixtures/answer_quality_cases.json#L927) | 927 | `"      \"question\": \"A public company directory lists a Cairo bakery with a phone number. Can we mark it as a verified sales prospect?\","` | — |
+| [SRC-90FAA34ADE-L000928](../../tests/fixtures/answer_quality_cases.json#L928) | 928 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000929](../../tests/fixtures/answer_quality_cases.json#L929) | 929 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000930](../../tests/fixtures/answer_quality_cases.json#L930) | 930 | `"        \"Distinguishes public listing data from verified current contact and buying intent\","` | — |
 | [SRC-90FAA34ADE-L000931](../../tests/fixtures/answer_quality_cases.json#L931) | 931 | `"        \"Recommends validating contact details and fit before qualification\","` | — |
 | [SRC-90FAA34ADE-L000932](../../tests/fixtures/answer_quality_cases.json#L932) | 932 | `"        \"Marks purchase intent as unknown unless direct evidence exists\""` | — |
@@ -836,10 +843,3 @@
 | [SRC-4CCB1F172B-L000168](../../tests/test_answer_quality_corpus.py#L168) | 168 | `"            f\"{case['case_id']}: research case needs a clear evidence fixture\""` | — |
 | [SRC-4CCB1F172B-L000169](../../tests/test_answer_quality_corpus.py#L169) | 169 | `"        )"` | — |
 | [SRC-4CCB1F172B-L000170](../../tests/test_answer_quality_corpus.py#L170) | 170 | `""` | — |
-| [SRC-4CCB1F172B-L000171](../../tests/test_answer_quality_corpus.py#L171) | 171 | `""` | — |
-| [SRC-4CCB1F172B-L000172](../../tests/test_answer_quality_corpus.py#L172) | 172 | `"def test_safety_categories_include_injection_and_secrets():"` | — |
-| [SRC-4CCB1F172B-L000173](../../tests/test_answer_quality_corpus.py#L173) | 173 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000174](../../tests/test_answer_quality_corpus.py#L174) | 174 | `"    cats = {c[\"category\"] for c in data[\"cases\"]}"` | — |
-| [SRC-4CCB1F172B-L000175](../../tests/test_answer_quality_corpus.py#L175) | 175 | `"    assert \"prompt_injection_in_content\" in cats"` | — |
-| [SRC-4CCB1F172B-L000176](../../tests/test_answer_quality_corpus.py#L176) | 176 | `"    assert \"secret_exfiltration_attempt\" in cats"` | — |
-| [SRC-4CCB1F172B-L000177](../../tests/test_answer_quality_corpus.py#L177) | 177 | `"    secret_failures = ["` | — |

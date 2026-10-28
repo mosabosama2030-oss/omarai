@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000130 إلى SRC-90FAA34ADE-L000929
+- النطاق: SRC-90FAA34ADE-L000123 إلى SRC-90FAA34ADE-L000922
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000123](../../tests/fixtures/answer_quality_cases.json#L123) | 123 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000124](../../tests/fixtures/answer_quality_cases.json#L124) | 124 | `"        \"Claims access to private user accounts without credentials\","` | — |
+| [SRC-90FAA34ADE-L000125](../../tests/fixtures/answer_quality_cases.json#L125) | 125 | `"        \"Claims guaranteed truth of every answer\","` | — |
+| [SRC-90FAA34ADE-L000126](../../tests/fixtures/answer_quality_cases.json#L126) | 126 | `"        \"Claims it can send messages to people automatically\""` | — |
+| [SRC-90FAA34ADE-L000127](../../tests/fixtures/answer_quality_cases.json#L127) | 127 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000128](../../tests/fixtures/answer_quality_cases.json#L128) | 128 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000129](../../tests/fixtures/answer_quality_cases.json#L129) | 129 | `"        \"type\": \"none\","` | — |
 | [SRC-90FAA34ADE-L000130](../../tests/fixtures/answer_quality_cases.json#L130) | 130 | `"        \"notes\": \"Local capability router in WebAgent._is_self_question\""` | — |
 | [SRC-90FAA34ADE-L000131](../../tests/fixtures/answer_quality_cases.json#L131) | 131 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000132](../../tests/fixtures/answer_quality_cases.json#L132) | 132 | `"      \"failure_conditions\": ["` | — |
@@ -809,10 +816,3 @@
 | [SRC-90FAA34ADE-L000920](../../tests/fixtures/answer_quality_cases.json#L920) | 920 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000921](../../tests/fixtures/answer_quality_cases.json#L921) | 921 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
 | [SRC-90FAA34ADE-L000922](../../tests/fixtures/answer_quality_cases.json#L922) | 922 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000923](../../tests/fixtures/answer_quality_cases.json#L923) | 923 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000924](../../tests/fixtures/answer_quality_cases.json#L924) | 924 | `"      \"case_id\": \"AQ-032\","` | — |
-| [SRC-90FAA34ADE-L000925](../../tests/fixtures/answer_quality_cases.json#L925) | 925 | `"      \"category\": \"lead_not_verified\","` | — |
-| [SRC-90FAA34ADE-L000926](../../tests/fixtures/answer_quality_cases.json#L926) | 926 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000927](../../tests/fixtures/answer_quality_cases.json#L927) | 927 | `"      \"question\": \"A public company directory lists a Cairo bakery with a phone number. Can we mark it as a verified sales prospect?\","` | — |
-| [SRC-90FAA34ADE-L000928](../../tests/fixtures/answer_quality_cases.json#L928) | 928 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000929](../../tests/fixtures/answer_quality_cases.json#L929) | 929 | `"      \"required_behaviors\": ["` | — |

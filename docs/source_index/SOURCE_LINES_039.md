@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000443 إلى SRC-F725E90B2A-L001242
+- النطاق: SRC-F725E90B2A-L000436 إلى SRC-F725E90B2A-L001235
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000436](../../tests/test_web_agent.py#L436) | 436 | `"    assert metadata[\"valid_citation_count\"] == 1"` | — |
+| [SRC-F725E90B2A-L000437](../../tests/test_web_agent.py#L437) | 437 | `"    assert metadata[\"invalid_references_removed\"] == 1"` | — |
+| [SRC-F725E90B2A-L000438](../../tests/test_web_agent.py#L438) | 438 | `"    assert metadata[\"claim_support\"] == \"not_verified\""` | — |
+| [SRC-F725E90B2A-L000439](../../tests/test_web_agent.py#L439) | 439 | `""` | — |
+| [SRC-F725E90B2A-L000440](../../tests/test_web_agent.py#L440) | 440 | `""` | — |
+| [SRC-F725E90B2A-L000441](../../tests/test_web_agent.py#L441) | 441 | `"def test_citation_metadata_reports_absent_markers_and_empty_source_range():"` | — |
+| [SRC-F725E90B2A-L000442](../../tests/test_web_agent.py#L442) | 442 | `"    metadata = WebAgent._citation_validation_metadata("` | — |
 | [SRC-F725E90B2A-L000443](../../tests/test_web_agent.py#L443) | 443 | `"        \"لا توجد إحالات للمصادر.\", 0, [], \"not_run\""` | — |
 | [SRC-F725E90B2A-L000444](../../tests/test_web_agent.py#L444) | 444 | `"    )"` | — |
 | [SRC-F725E90B2A-L000445](../../tests/test_web_agent.py#L445) | 445 | `"    assert metadata[\"status\"] == \"no_citation_markers_present\""` | — |
@@ -809,10 +816,3 @@
 | [SRC-F725E90B2A-L001233](../../tests/test_web_agent.py#L1233) | 1233 | `"                \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001234](../../tests/test_web_agent.py#L1234) | 1234 | `"                \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 2}],"` | — |
 | [SRC-F725E90B2A-L001235](../../tests/test_web_agent.py#L1235) | 1235 | `"                \"unique_sources\": 2,"` | — |
-| [SRC-F725E90B2A-L001236](../../tests/test_web_agent.py#L1236) | 1236 | `"                \"pages_fetched\": 2,"` | — |
-| [SRC-F725E90B2A-L001237](../../tests/test_web_agent.py#L1237) | 1237 | `"                \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001238](../../tests/test_web_agent.py#L1238) | 1238 | `"                \"platform_counts\": {\"web\": 2},"` | — |
-| [SRC-F725E90B2A-L001239](../../tests/test_web_agent.py#L1239) | 1239 | `"                \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001240](../../tests/test_web_agent.py#L1240) | 1240 | `"                \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L001241](../../tests/test_web_agent.py#L1241) | 1241 | `"                \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001242](../../tests/test_web_agent.py#L1242) | 1242 | `"            },"` | — |
