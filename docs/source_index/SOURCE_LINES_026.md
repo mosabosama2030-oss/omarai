@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000211 إلى SRC-547CAF1FE3-L000131
+- النطاق: SRC-A8360B1B03-L000142 إلى SRC-547CAF1FE3-L000062
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,75 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"        timeout=min(timeout, 20),"` | — |
+| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    )"` | — |
+| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `"    if status != 401:"` | — |
+| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `"        raise SmokeError(f\"Unauthenticated POST /api/agent should return 401, received {status}.\")"` | — |
+| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"    checks[\"authentication\"] = \"passed\""` | — |
+| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `""` | — |
+| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
+| [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    status, diagnostics = request_json("` | — |
+| [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
+| [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"        payload={\"test_model\": True, \"test_social\": False}, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"    )"` | — |
+| [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    if status != 200 or not diagnostics:"` | — |
+| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
+| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
+| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    model = parts.get(\"language_model\", {}) if isinstance(parts, dict) else {}"` | — |
+| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    if not isinstance(web, dict) or web.get(\"status\") != \"passed\":"` | — |
+| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"        raise SmokeError(\"The real web-search connectivity test did not pass.\")"` | — |
+| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"    if not isinstance(model, dict) or model.get(\"status\") != \"passed\":"` | — |
+| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        raise SmokeError(\"The configured language model did not pass a real completion test.\")"` | — |
+| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `"    checks[\"live_search\"] = {"` | — |
+| [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"        \"status\": \"passed\", \"result_count\": web.get(\"result_count\", 0),"` | — |
+| [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        \"provider_counts\": web.get(\"provider_counts\", {}),"` | — |
+| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"    }"` | — |
+| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    checks[\"language_model\"] = {\"status\": \"passed\", \"response_received\": True}"` | — |
+| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `""` | — |
+| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"    status, answer = request_json("` | — |
+| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"        payload={"` | — |
+| [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"            \"question\": \"اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر.\","` | — |
+| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            \"history\": [], \"mode\": \"auto\","` | — |
+| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        },"` | — |
+| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"    )"` | — |
+| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"    if status != 200 or not answer:"` | — |
+| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\")"` | — |
+| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"    sources = answer.get(\"sources\")"` | — |
+| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    usable = ["` | — |
+| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        item for item in sources if isinstance(item, dict)"` | — |
+| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"        and isinstance(item.get(\"url\"), str)"` | — |
+| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
+| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
+| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"    ] if isinstance(sources, list) else []"` | — |
+| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
+| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        raise SmokeError(\"Agent request did not return a live web search with usable source URLs.\")"` | — |
+| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
+| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"        raise SmokeError(\"Agent request did not confirm that a language model was used.\")"` | — |
+| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"    report = answer.get(\"search_report\")"` | — |
+| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"    checks[\"agent_request\"] = {"` | — |
+| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
+| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `"        \"direct_pages_read\": report.get(\"pages_fetched\") if isinstance(report, dict) else None,"` | — |
+| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"        \"providers_reported\": report.get(\"providers_used\", []) if isinstance(report, dict) else [],"` | — |
+| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"        \"answer_received\": bool(str(answer.get(\"answer\", \"\")).strip()),"` | — |
+| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"    }"` | — |
+| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"    return {"` | — |
+| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"        \"result\": \"passed\", \"target_host\": urllib.parse.urlsplit(origin).hostname,"` | — |
+| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"        \"checks\": checks,"` | — |
+| [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"        \"note\": \"This proves the request path worked at test time, not continuous uptime. Provider usage may incur charges.\","` | — |
+| [SRC-A8360B1B03-L000199](../../scripts/hosted_smoke_test.py#L199) | 199 | `"    }"` | — |
+| [SRC-A8360B1B03-L000200](../../scripts/hosted_smoke_test.py#L200) | 200 | `""` | — |
+| [SRC-A8360B1B03-L000201](../../scripts/hosted_smoke_test.py#L201) | 201 | `""` | — |
+| [SRC-A8360B1B03-L000202](../../scripts/hosted_smoke_test.py#L202) | 202 | `"def main() -> int:"` | — |
+| [SRC-A8360B1B03-L000203](../../scripts/hosted_smoke_test.py#L203) | 203 | `"    parser = argparse.ArgumentParser(description=\"Run live acceptance checks against hosted Omarai.\")"` | — |
+| [SRC-A8360B1B03-L000204](../../scripts/hosted_smoke_test.py#L204) | 204 | `"    parser.add_argument(\"--base-url\", default=os.getenv(\"OMARAI_BASE_URL\", \"\"))"` | — |
+| [SRC-A8360B1B03-L000205](../../scripts/hosted_smoke_test.py#L205) | 205 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
+| [SRC-A8360B1B03-L000206](../../scripts/hosted_smoke_test.py#L206) | 206 | `"    parser.add_argument("` | — |
+| [SRC-A8360B1B03-L000207](../../scripts/hosted_smoke_test.py#L207) | 207 | `"        \"--expected-sha\","` | — |
+| [SRC-A8360B1B03-L000208](../../scripts/hosted_smoke_test.py#L208) | 208 | `"        default=os.getenv(\"OMARAI_EXPECTED_BUILD_SHA\", \"\"),"` | — |
+| [SRC-A8360B1B03-L000209](../../scripts/hosted_smoke_test.py#L209) | 209 | `"        help=\"Require the deployed image to report this full 40-character source Git SHA.\","` | — |
+| [SRC-A8360B1B03-L000210](../../scripts/hosted_smoke_test.py#L210) | 210 | `"    )"` | — |
 | [SRC-A8360B1B03-L000211](../../scripts/hosted_smoke_test.py#L211) | 211 | `"    parser.add_argument(\"--allow-http\", action=\"store_true\","` | — |
 | [SRC-A8360B1B03-L000212](../../scripts/hosted_smoke_test.py#L212) | 212 | `"                        help=\"Allow HTTP only for localhost/127.0.0.1/::1 testing.\")"` | — |
 | [SRC-A8360B1B03-L000213](../../scripts/hosted_smoke_test.py#L213) | 213 | `"    args = parser.parse_args()"` | — |
@@ -774,72 +843,3 @@
 | [SRC-547CAF1FE3-L000060](../../scripts/sqlite_backup_restore.py#L60) | 60 | `"    source_path = Path(source).expanduser().resolve(strict=True)"` | — |
 | [SRC-547CAF1FE3-L000061](../../scripts/sqlite_backup_restore.py#L61) | 61 | `"    requested_destination = Path(destination).expanduser()"` | — |
 | [SRC-547CAF1FE3-L000062](../../scripts/sqlite_backup_restore.py#L62) | 62 | `"    destination_path = requested_destination.resolve(strict=False)"` | — |
-| [SRC-547CAF1FE3-L000063](../../scripts/sqlite_backup_restore.py#L63) | 63 | `""` | — |
-| [SRC-547CAF1FE3-L000064](../../scripts/sqlite_backup_restore.py#L64) | 64 | `"    if not source_path.is_file():"` | — |
-| [SRC-547CAF1FE3-L000065](../../scripts/sqlite_backup_restore.py#L65) | 65 | `"        raise BackupError(\"source must be an existing regular file\")"` | — |
-| [SRC-547CAF1FE3-L000066](../../scripts/sqlite_backup_restore.py#L66) | 66 | `"    if source_path == destination_path:"` | — |
-| [SRC-547CAF1FE3-L000067](../../scripts/sqlite_backup_restore.py#L67) | 67 | `"        raise BackupError(\"source and destination must be different paths\")"` | — |
-| [SRC-547CAF1FE3-L000068](../../scripts/sqlite_backup_restore.py#L68) | 68 | `"    # Check the user-supplied path before resolving it so a dangling symlink is"` | — |
-| [SRC-547CAF1FE3-L000069](../../scripts/sqlite_backup_restore.py#L69) | 69 | `"    # never mistaken for an absent destination and followed to a new target."` | — |
-| [SRC-547CAF1FE3-L000070](../../scripts/sqlite_backup_restore.py#L70) | 70 | `"    if requested_destination.exists() or requested_destination.is_symlink() or destination_path.exists():"` | — |
-| [SRC-547CAF1FE3-L000071](../../scripts/sqlite_backup_restore.py#L71) | 71 | `"        raise FileExistsError(f\"destination already exists: {requested_destination}\")"` | — |
-| [SRC-547CAF1FE3-L000072](../../scripts/sqlite_backup_restore.py#L72) | 72 | `""` | — |
-| [SRC-547CAF1FE3-L000073](../../scripts/sqlite_backup_restore.py#L73) | 73 | `"    # Validate the source before creating anything at the destination."` | — |
-| [SRC-547CAF1FE3-L000074](../../scripts/sqlite_backup_restore.py#L74) | 74 | `"    with closing(_open_read_only(source_path)) as source_db:"` | — |
-| [SRC-547CAF1FE3-L000075](../../scripts/sqlite_backup_restore.py#L75) | 75 | `"        source_count = _validate_omarai_database(source_db)"` | — |
-| [SRC-547CAF1FE3-L000076](../../scripts/sqlite_backup_restore.py#L76) | 76 | `"        _create_destination_exclusively(destination_path)"` | — |
-| [SRC-547CAF1FE3-L000077](../../scripts/sqlite_backup_restore.py#L77) | 77 | `"        try:"` | — |
-| [SRC-547CAF1FE3-L000078](../../scripts/sqlite_backup_restore.py#L78) | 78 | `"            with closing(sqlite3.connect(destination_path, timeout=10)) as destination_db:"` | — |
-| [SRC-547CAF1FE3-L000079](../../scripts/sqlite_backup_restore.py#L79) | 79 | `"                source_db.backup(destination_db)"` | — |
-| [SRC-547CAF1FE3-L000080](../../scripts/sqlite_backup_restore.py#L80) | 80 | `"                destination_db.commit()"` | — |
-| [SRC-547CAF1FE3-L000081](../../scripts/sqlite_backup_restore.py#L81) | 81 | `"                restored_count = _validate_omarai_database(destination_db)"` | — |
-| [SRC-547CAF1FE3-L000082](../../scripts/sqlite_backup_restore.py#L82) | 82 | `"                if restored_count != source_count:"` | — |
-| [SRC-547CAF1FE3-L000083](../../scripts/sqlite_backup_restore.py#L83) | 83 | `"                    raise BackupError("` | — |
-| [SRC-547CAF1FE3-L000084](../../scripts/sqlite_backup_restore.py#L84) | 84 | `"                        \"lead count changed during snapshot: \""` | — |
-| [SRC-547CAF1FE3-L000085](../../scripts/sqlite_backup_restore.py#L85) | 85 | `"                        f\"source={source_count}, destination={restored_count}\""` | — |
-| [SRC-547CAF1FE3-L000086](../../scripts/sqlite_backup_restore.py#L86) | 86 | `"                    )"` | — |
-| [SRC-547CAF1FE3-L000087](../../scripts/sqlite_backup_restore.py#L87) | 87 | `"        except Exception:"` | — |
-| [SRC-547CAF1FE3-L000088](../../scripts/sqlite_backup_restore.py#L88) | 88 | `"            # Remove only the destination created by this operation; never touch source."` | — |
-| [SRC-547CAF1FE3-L000089](../../scripts/sqlite_backup_restore.py#L89) | 89 | `"            try:"` | — |
-| [SRC-547CAF1FE3-L000090](../../scripts/sqlite_backup_restore.py#L90) | 90 | `"                destination_path.unlink(missing_ok=True)"` | — |
-| [SRC-547CAF1FE3-L000091](../../scripts/sqlite_backup_restore.py#L91) | 91 | `"            except OSError:"` | — |
-| [SRC-547CAF1FE3-L000092](../../scripts/sqlite_backup_restore.py#L92) | 92 | `"                pass"` | — |
-| [SRC-547CAF1FE3-L000093](../../scripts/sqlite_backup_restore.py#L93) | 93 | `"            raise"` | — |
-| [SRC-547CAF1FE3-L000094](../../scripts/sqlite_backup_restore.py#L94) | 94 | `""` | — |
-| [SRC-547CAF1FE3-L000095](../../scripts/sqlite_backup_restore.py#L95) | 95 | `"    return {"` | — |
-| [SRC-547CAF1FE3-L000096](../../scripts/sqlite_backup_restore.py#L96) | 96 | `"        \"result\": \"passed\","` | — |
-| [SRC-547CAF1FE3-L000097](../../scripts/sqlite_backup_restore.py#L97) | 97 | `"        \"source\": str(source_path),"` | — |
-| [SRC-547CAF1FE3-L000098](../../scripts/sqlite_backup_restore.py#L98) | 98 | `"        \"destination\": str(destination_path),"` | — |
-| [SRC-547CAF1FE3-L000099](../../scripts/sqlite_backup_restore.py#L99) | 99 | `"        \"integrity_check\": \"ok\","` | — |
-| [SRC-547CAF1FE3-L000100](../../scripts/sqlite_backup_restore.py#L100) | 100 | `"        \"lead_count\": source_count,"` | — |
-| [SRC-547CAF1FE3-L000101](../../scripts/sqlite_backup_restore.py#L101) | 101 | `"        \"overwrite\": False,"` | — |
-| [SRC-547CAF1FE3-L000102](../../scripts/sqlite_backup_restore.py#L102) | 102 | `"    }"` | — |
-| [SRC-547CAF1FE3-L000103](../../scripts/sqlite_backup_restore.py#L103) | 103 | `""` | — |
-| [SRC-547CAF1FE3-L000104](../../scripts/sqlite_backup_restore.py#L104) | 104 | `""` | — |
-| [SRC-547CAF1FE3-L000105](../../scripts/sqlite_backup_restore.py#L105) | 105 | `"def backup_database(source: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
-| [SRC-547CAF1FE3-L000106](../../scripts/sqlite_backup_restore.py#L106) | 106 | `"    \"\"\"Create a consistent SQLite snapshot of a healthy Omarai leads database.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000107](../../scripts/sqlite_backup_restore.py#L107) | 107 | `"    return _copy_verified_database(source, destination)"` | — |
-| [SRC-547CAF1FE3-L000108](../../scripts/sqlite_backup_restore.py#L108) | 108 | `""` | — |
-| [SRC-547CAF1FE3-L000109](../../scripts/sqlite_backup_restore.py#L109) | 109 | `""` | — |
-| [SRC-547CAF1FE3-L000110](../../scripts/sqlite_backup_restore.py#L110) | 110 | `"def restore_database(backup: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
-| [SRC-547CAF1FE3-L000111](../../scripts/sqlite_backup_restore.py#L111) | 111 | `"    \"\"\"Restore a snapshot into a new destination; existing files are never overwritten.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000112](../../scripts/sqlite_backup_restore.py#L112) | 112 | `"    return _copy_verified_database(backup, destination)"` | — |
-| [SRC-547CAF1FE3-L000113](../../scripts/sqlite_backup_restore.py#L113) | 113 | `""` | — |
-| [SRC-547CAF1FE3-L000114](../../scripts/sqlite_backup_restore.py#L114) | 114 | `""` | — |
-| [SRC-547CAF1FE3-L000115](../../scripts/sqlite_backup_restore.py#L115) | 115 | `"def main() -> int:"` | — |
-| [SRC-547CAF1FE3-L000116](../../scripts/sqlite_backup_restore.py#L116) | 116 | `"    parser = argparse.ArgumentParser("` | — |
-| [SRC-547CAF1FE3-L000117](../../scripts/sqlite_backup_restore.py#L117) | 117 | `"        description=("` | — |
-| [SRC-547CAF1FE3-L000118](../../scripts/sqlite_backup_restore.py#L118) | 118 | `"            \"Back up or restore an Omarai SQLite leads database. \""` | — |
-| [SRC-547CAF1FE3-L000119](../../scripts/sqlite_backup_restore.py#L119) | 119 | `"            \"The destination must not already exist.\""` | — |
-| [SRC-547CAF1FE3-L000120](../../scripts/sqlite_backup_restore.py#L120) | 120 | `"        )"` | — |
-| [SRC-547CAF1FE3-L000121](../../scripts/sqlite_backup_restore.py#L121) | 121 | `"    )"` | — |
-| [SRC-547CAF1FE3-L000122](../../scripts/sqlite_backup_restore.py#L122) | 122 | `"    subparsers = parser.add_subparsers(dest=\"command\", required=True)"` | — |
-| [SRC-547CAF1FE3-L000123](../../scripts/sqlite_backup_restore.py#L123) | 123 | `"    backup_parser = subparsers.add_parser(\"backup\", help=\"create a verified snapshot\")"` | — |
-| [SRC-547CAF1FE3-L000124](../../scripts/sqlite_backup_restore.py#L124) | 124 | `"    backup_parser.add_argument(\"source\", help=\"existing Omarai SQLite database path\")"` | — |
-| [SRC-547CAF1FE3-L000125](../../scripts/sqlite_backup_restore.py#L125) | 125 | `"    backup_parser.add_argument(\"destination\", help=\"new backup path; must not exist\")"` | — |
-| [SRC-547CAF1FE3-L000126](../../scripts/sqlite_backup_restore.py#L126) | 126 | `"    restore_parser = subparsers.add_parser(\"restore\", help=\"restore to a new database file\")"` | — |
-| [SRC-547CAF1FE3-L000127](../../scripts/sqlite_backup_restore.py#L127) | 127 | `"    restore_parser.add_argument(\"source\", help=\"existing verified backup path\")"` | — |
-| [SRC-547CAF1FE3-L000128](../../scripts/sqlite_backup_restore.py#L128) | 128 | `"    restore_parser.add_argument(\"destination\", help=\"new restore path; must not exist\")"` | — |
-| [SRC-547CAF1FE3-L000129](../../scripts/sqlite_backup_restore.py#L129) | 129 | `"    args = parser.parse_args()"` | — |
-| [SRC-547CAF1FE3-L000130](../../scripts/sqlite_backup_restore.py#L130) | 130 | `""` | — |
-| [SRC-547CAF1FE3-L000131](../../scripts/sqlite_backup_restore.py#L131) | 131 | `"    try:"` | — |

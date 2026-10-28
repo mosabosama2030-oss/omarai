@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000481 إلى SRC-26428BDA96-L000138
+- النطاق: SRC-EEF2E6447C-L000481 إلى SRC-26428BDA96-L000139
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -502,45 +502,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-228F2C2F4B-L000001](../ARCHITECTURE_AR.md#L1) | 1 | `"# عمارة RAG الوكيلي في Omarai"` | — |
+| [SRC-228F2C2F4B-L000001](../ARCHITECTURE_AR.md#L1) | 1 | `"# عمارة RAG الوكيلي والذاكرة المنظمة في Omarai"` | — |
 | [SRC-228F2C2F4B-L000002](../ARCHITECTURE_AR.md#L2) | 2 | `""` | — |
 | [SRC-228F2C2F4B-L000003](../ARCHITECTURE_AR.md#L3) | 3 | `"## المبادئ الخمسة"` | — |
 | [SRC-228F2C2F4B-L000004](../ARCHITECTURE_AR.md#L4) | 4 | `""` | — |
 | [SRC-228F2C2F4B-L000005](../ARCHITECTURE_AR.md#L5) | 5 | `"1. **الاسترجاع كأداة (Retrieval-as-a-Tool)**"` | — |
-| [SRC-228F2C2F4B-L000006](../ARCHITECTURE_AR.md#L6) | 6 | `"   ليس خط أنابيب ثابتًا. الحلقة: خطط → نفّذ استرجاعًا → لاحظ → قرر → تحقق → ألّف."` | — |
+| [SRC-228F2C2F4B-L000006](../ARCHITECTURE_AR.md#L6) | 6 | `"   حلقة: خطط → استرجع → لاحظ → قرر → تحقق → ألّف."` | — |
 | [SRC-228F2C2F4B-L000007](../ARCHITECTURE_AR.md#L7) | 7 | ``"   التنفيذ: `RetrievalTool` + `AgenticRagOrchestrator`."`` | — |
 | [SRC-228F2C2F4B-L000008](../ARCHITECTURE_AR.md#L8) | 8 | `""` | — |
-| [SRC-228F2C2F4B-L000009](../ARCHITECTURE_AR.md#L9) | 9 | `"2. **ذاكرة منظمة Claim↔Evidence**"` | — |
-| [SRC-228F2C2F4B-L000010](../ARCHITECTURE_AR.md#L10) | 10 | `"   كل ادعاء يُربَط بمعرّفات أدلة مستقرة. الطلاقة مسموحة فقط مع روابط دعم."` | — |
-| [SRC-228F2C2F4B-L000011](../ARCHITECTURE_AR.md#L11) | 11 | ``"   التنفيذ: `MemoryBank` (مع توافق مفاهيمي مع `claim_evidence.py` على main)."`` | — |
-| [SRC-228F2C2F4B-L000012](../ARCHITECTURE_AR.md#L12) | 12 | `""` | — |
-| [SRC-228F2C2F4B-L000013](../ARCHITECTURE_AR.md#L13) | 13 | `"3. **وكلاء متخصصون**"` | — |
-| [SRC-228F2C2F4B-L000014](../ARCHITECTURE_AR.md#L14) | 14 | ``"   - `QueryReformulator` — تفكيك محاور واستعلامات"`` | — |
-| [SRC-228F2C2F4B-L000015](../ARCHITECTURE_AR.md#L15) | 15 | ``"   - `IterativeRetriever` — بحث متعدد القفزات"`` | — |
-| [SRC-228F2C2F4B-L000016](../ARCHITECTURE_AR.md#L16) | 16 | ``"   - `HallucinationGuard` — كشف ادعاءات بلا دعم"`` | — |
-| [SRC-228F2C2F4B-L000017](../ARCHITECTURE_AR.md#L17) | 17 | ``"   - `FinalComposer` — إجابة مع استشهادات أو امتناع"`` | — |
-| [SRC-228F2C2F4B-L000018](../ARCHITECTURE_AR.md#L18) | 18 | `""` | — |
-| [SRC-228F2C2F4B-L000019](../ARCHITECTURE_AR.md#L19) | 19 | `"4. **الاستشهاد جزء من التوليد**"` | — |
-| [SRC-228F2C2F4B-L000020](../ARCHITECTURE_AR.md#L20) | 20 | ``"   `format_claim_with_citations` يضيف `[المصدر N]` عند وجود دعم."`` | — |
-| [SRC-228F2C2F4B-L000021](../ARCHITECTURE_AR.md#L21) | 21 | `""` | — |
-| [SRC-228F2C2F4B-L000022](../ARCHITECTURE_AR.md#L22) | 22 | `"5. **تقييم مستمر**"` | — |
-| [SRC-228F2C2F4B-L000023](../ARCHITECTURE_AR.md#L23) | 23 | ``"   `eval_rag_metrics`: retrieval_relevance، faithfulness، aspect_coverage، writing_quality_proxy."`` | — |
+| [SRC-228F2C2F4B-L000009](../ARCHITECTURE_AR.md#L9) | 9 | ``"2. **ذاكرة منظمة Claim↔Evidence** (`MemoryBank`)"`` | — |
+| [SRC-228F2C2F4B-L000010](../ARCHITECTURE_AR.md#L10) | 10 | ``"   - `ingest_sources`: تحويل نتائج البحث إلى Evidence بمعرّف ثابت"`` | — |
+| [SRC-228F2C2F4B-L000011](../ARCHITECTURE_AR.md#L11) | 11 | ``"   - `bind_claim` / `bind_answer`: ربط كل جملة ادعاء بأدلة عبر تداخل توكنات"`` | — |
+| [SRC-228F2C2F4B-L000012](../ARCHITECTURE_AR.md#L12) | 12 | ``"   - الحالات: `supported` (≥0.45) · `weak` (≥0.25) · `unsupported`"`` | — |
+| [SRC-228F2C2F4B-L000013](../ARCHITECTURE_AR.md#L13) | 13 | ``"   - `format_claim_with_citations`: إضافة `[المصدر N]`"`` | — |
+| [SRC-228F2C2F4B-L000014](../ARCHITECTURE_AR.md#L14) | 14 | ``"   - `render_supported_answer`: إسقاط غير المدعوم"`` | — |
+| [SRC-228F2C2F4B-L000015](../ARCHITECTURE_AR.md#L15) | 15 | ``"   - `graph`: عقد ادعاءات/أدلة + حواف"`` | — |
+| [SRC-228F2C2F4B-L000016](../ARCHITECTURE_AR.md#L16) | 16 | ``"   - `to_claim_evidence_ledger_shape`: توافق مع `claim_evidence` على main"`` | — |
+| [SRC-228F2C2F4B-L000017](../ARCHITECTURE_AR.md#L17) | 17 | `""` | — |
+| [SRC-228F2C2F4B-L000018](../ARCHITECTURE_AR.md#L18) | 18 | `"3. **وكلاء متخصصون**"` | — |
+| [SRC-228F2C2F4B-L000019](../ARCHITECTURE_AR.md#L19) | 19 | `"   QueryReformulator · IterativeRetriever · HallucinationGuard · FinalComposer"` | — |
+| [SRC-228F2C2F4B-L000020](../ARCHITECTURE_AR.md#L20) | 20 | `""` | — |
+| [SRC-228F2C2F4B-L000021](../ARCHITECTURE_AR.md#L21) | 21 | `"4. **الاستشهاد جزء من التوليد** — إلزامي عند وجود دعم"` | — |
+| [SRC-228F2C2F4B-L000022](../ARCHITECTURE_AR.md#L22) | 22 | `""` | — |
+| [SRC-228F2C2F4B-L000023](../ARCHITECTURE_AR.md#L23) | 23 | `"5. **تقييم مستمر** — retrieval_relevance / faithfulness / aspect_coverage / writing_quality_proxy"` | — |
 | [SRC-228F2C2F4B-L000024](../ARCHITECTURE_AR.md#L24) | 24 | `""` | — |
 | [SRC-228F2C2F4B-L000025](../ARCHITECTURE_AR.md#L25) | 25 | `"## حدود الأمانة"` | — |
 | [SRC-228F2C2F4B-L000026](../ARCHITECTURE_AR.md#L26) | 26 | `""` | — |
 | [SRC-228F2C2F4B-L000027](../ARCHITECTURE_AR.md#L27) | 27 | `"- الدعم **لفظي/معجمي** وليس entailment دلاليًا."` | — |
-| [SRC-228F2C2F4B-L000028](../ARCHITECTURE_AR.md#L28) | 28 | ``"- الاسترجاع يمر عبر `retrieve_fn` الذي يفرض SSRF/URL/الصلة في WebAgent."`` | — |
-| [SRC-228F2C2F4B-L000029](../ARCHITECTURE_AR.md#L29) | 29 | `"- الضبط الدقيق (SFT/RL) **لاحقًا** — ليس بديلًا عن هذه الطبقة."` | — |
+| [SRC-228F2C2F4B-L000028](../ARCHITECTURE_AR.md#L28) | 28 | ``"- `retrieve_fn` يفرض SSRF/URL/الصلة في WebAgent."`` | — |
+| [SRC-228F2C2F4B-L000029](../ARCHITECTURE_AR.md#L29) | 29 | `"- الضبط الدقيق (SFT/RL) لاحقًا وليس بديلًا."` | — |
 | [SRC-228F2C2F4B-L000030](../ARCHITECTURE_AR.md#L30) | 30 | `""` | — |
-| [SRC-228F2C2F4B-L000031](../ARCHITECTURE_AR.md#L31) | 31 | `"## مسار الدمج في WebAgent"` | — |
+| [SRC-228F2C2F4B-L000031](../ARCHITECTURE_AR.md#L31) | 31 | `"## الربط مع WebAgent"` | — |
 | [SRC-228F2C2F4B-L000032](../ARCHITECTURE_AR.md#L32) | 32 | `""` | — |
-| [SRC-228F2C2F4B-L000033](../ARCHITECTURE_AR.md#L33) | 33 | ``"بعد جمع `sources` وقبل إرجاع الرد:"`` | — |
-| [SRC-228F2C2F4B-L000034](../ARCHITECTURE_AR.md#L34) | 34 | `""` | — |
-| [SRC-228F2C2F4B-L000035](../ARCHITECTURE_AR.md#L35) | 35 | ````"```python"```` | — |
-| [SRC-228F2C2F4B-L000036](../ARCHITECTURE_AR.md#L36) | 36 | `"from agents.agentic_rag_integration import web_agent_post_answer_hook"` | — |
-| [SRC-228F2C2F4B-L000037](../ARCHITECTURE_AR.md#L37) | 37 | `"extra = web_agent_post_answer_hook(question, answer, sources, aspects=aspects)"` | — |
-| [SRC-228F2C2F4B-L000038](../ARCHITECTURE_AR.md#L38) | 38 | `"result.update(extra)"` | — |
-| [SRC-228F2C2F4B-L000039](../ARCHITECTURE_AR.md#L39) | 39 | ````"```"```` | — |
+| [SRC-228F2C2F4B-L000033](../ARCHITECTURE_AR.md#L33) | 33 | ````"```python"```` | — |
+| [SRC-228F2C2F4B-L000034](../ARCHITECTURE_AR.md#L34) | 34 | `"from agents.agentic_rag_integration import web_agent_post_answer_hook"` | — |
+| [SRC-228F2C2F4B-L000035](../ARCHITECTURE_AR.md#L35) | 35 | `"result.update(web_agent_post_answer_hook(question, answer, sources, aspects=aspects))"` | — |
+| [SRC-228F2C2F4B-L000036](../ARCHITECTURE_AR.md#L36) | 36 | ````"```"```` | — |
+| [SRC-228F2C2F4B-L000037](../ARCHITECTURE_AR.md#L37) | 37 | `""` | — |
+| [SRC-228F2C2F4B-L000038](../ARCHITECTURE_AR.md#L38) | 38 | ``"أو: `python3 scripts/apply_memory_bank_web_agent_hooks.py`"`` | — |
 ## وثائق وفهرسة
 
 ### FILE-C4C6C55E1A — [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1)
@@ -888,3 +887,4 @@
 | [SRC-26428BDA96-L000136](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L136) | 136 | `""` | — |
 | [SRC-26428BDA96-L000137](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L137) | 137 | `"\| المعرف \| نتيجة التدقيق \| الدليل المرصود والحد المتبقي \|"` | — |
 | [SRC-26428BDA96-L000138](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L138) | 138 | `"\|---\|---\|---\|"` | — |
+| [SRC-26428BDA96-L000139](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L139) | 139 | `"\| GOV-001 \| INFERRED \| يعرض وكيل البحث حقولًا مثل search_outcome وresearch_quality_semantics وcitation_validation، وتوجد اختبارات لحفظ UNKNOWN عند فشل البحث؛ لكن لم تُراجع جميع مخرجات المشروع لإثبات أن كل تقرير مؤثر يستخدم حالات موحدة. انظر agents/web_agent.py: 3065–3251 و3583–3642، والاختبارات test_web_agent.py: 1739–1753 و1957–2046 و2310–2345. \|"` | — |

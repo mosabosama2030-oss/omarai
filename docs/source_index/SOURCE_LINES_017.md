@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000360 إلى SRC-E599346ABE-L001159
+- النطاق: SRC-E599346ABE-L000361 إلى SRC-E599346ABE-L001160
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000360](../generate_index.py#L360) | 360 | `"        return \"واجهة الويب\""` | — |
 | [SRC-E599346ABE-L000361](../generate_index.py#L361) | 361 | `"    if name in {"` | — |
 | [SRC-E599346ABE-L000362](../generate_index.py#L362) | 362 | `"        \"dockerfile\", \"makefile\", \"procfile\", \"pyproject.toml\","` | — |
 | [SRC-E599346ABE-L000363](../generate_index.py#L363) | 363 | `"        \"requirements.txt\", \"requirements-dev.txt\", \".gitignore\","` | — |
@@ -816,3 +815,4 @@
 | [SRC-E599346ABE-L001157](../generate_index.py#L1157) | 1157 | `"    return comments"` | — |
 | [SRC-E599346ABE-L001158](../generate_index.py#L1158) | 1158 | `""` | — |
 | [SRC-E599346ABE-L001159](../generate_index.py#L1159) | 1159 | `""` | — |
+| [SRC-E599346ABE-L001160](../generate_index.py#L1160) | 1160 | `"def _html_comment_map(source: str) -> dict[int, list[str]]:"` | — |

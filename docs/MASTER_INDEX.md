@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **105**
-- ملفات Python المحللة: **60**
-- تعريفات Python المفهرسة: **1332**
+- ملفات المستودع في الجرد: **106**
+- ملفات Python المحللة: **61**
+- تعريفات Python المفهرسة: **1337**
 - تعريفات Python موثقة بوجود Docstring: **222**
-- تعريفات Python بلا Docstring: **827**
-- تعريفات لا ينطبق عليها Docstring: **283**
-- الرموز الساكنة الإضافية: **1700**
-- الأسطر النصية المفهرسة حرفيًا: **33161**
+- تعريفات Python بلا Docstring: **828**
+- تعريفات لا ينطبق عليها Docstring: **287**
+- الرموز الساكنة الإضافية: **1703**
+- الأسطر النصية المفهرسة حرفيًا: **33230**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -61,7 +61,7 @@
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
 | FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 889 | 20 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
-| FILE-228F2C2F4B | وثائق وفهرسة | [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L1) | Markdown | 1793 | 39 | جرد الملف + عناوين Markdown |
+| FILE-228F2C2F4B | وثائق وفهرسة | [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L1) | Markdown | 1751 | 38 | جرد الملف + عناوين Markdown |
 | FILE-C4C6C55E1A | وثائق وفهرسة | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 35501 | 191 | جرد الملف + عناوين Markdown |
 | FILE-26428BDA96 | وثائق وفهرسة | [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 50328 | 262 | جرد الملف + عناوين Markdown |
 | FILE-160DC0B3E4 | وثائق وفهرسة | [docs/archive/README.md](archive/README.md#L1) | Markdown | 1021 | 8 | جرد الملف + عناوين Markdown |
@@ -88,13 +88,14 @@
 | FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 4756 | 48 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
-| FILE-D726630AC9 | وثائق وفهرسة | [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L1) | Markdown | 796 | 30 | جرد الملف + عناوين Markdown |
+| FILE-D726630AC9 | وثائق وفهرسة | [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L1) | Markdown | 784 | 30 | جرد الملف + عناوين Markdown |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22391 | 183 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
+| FILE-1AC5C16399 | ملفات أخرى | [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L1) | Python | 2670 | 70 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 15025 | 404 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
@@ -734,6 +735,11 @@
 | [docs/search_code.py](search_code.py#L187) | دالة | search_repository | Return ordered text matches with short context. | موثق | 187 | [SRC-69F3587825-L000187](search_code.py#L187) |
 | [docs/search_code.py](search_code.py#L245) | دالة | format_hits | لا توجد Docstring. | ناقص | 245 | [SRC-69F3587825-L000245](search_code.py#L245) |
 | [docs/search_code.py](search_code.py#L266) | دالة | main | لا توجد Docstring. | ناقص | 266 | [SRC-69F3587825-L000266](search_code.py#L266) |
+| [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L11) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-1AC5C16399-L000011](../scripts/apply_memory_bank_web_agent_hooks.py#L11) |
+| [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L12) | متغير/ثابت Python | TARGET | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-1AC5C16399-L000012](../scripts/apply_memory_bank_web_agent_hooks.py#L12) |
+| [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L14) | متغير/ثابت Python | IMPORT_BLOCK | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-1AC5C16399-L000014](../scripts/apply_memory_bank_web_agent_hooks.py#L14) |
+| [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L17) | متغير/ثابت Python | HOOK_SNIPPET | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-1AC5C16399-L000017](../scripts/apply_memory_bank_web_agent_hooks.py#L17) |
+| [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L35) | دالة | main | لا توجد Docstring. | ناقص | 35 | [SRC-1AC5C16399-L000035](../scripts/apply_memory_bank_web_agent_hooks.py#L35) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L16) | كلاس | SmokeError | A live acceptance check failed. | موثق | 16 | [SRC-A8360B1B03-L000016](../scripts/hosted_smoke_test.py#L16) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L24) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 24 | [SRC-A8360B1B03-L000024](../scripts/hosted_smoke_test.py#L24) |
@@ -1750,10 +1756,10 @@
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L106) | عنوان Markdown (H2) | مقارنة نسختين من عمرai (قبل/بعد) | 106 | [SRC-792A9A235D-L000106](ANSWER_QUALITY_BENCHMARK_AR.md#L106) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L116) | عنوان Markdown (H2) | نقاط عمياء معروفة | 116 | [SRC-792A9A235D-L000116](ANSWER_QUALITY_BENCHMARK_AR.md#L116) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L123) | عنوان Markdown (H2) | إضافة حالات لاحقًا | 123 | [SRC-792A9A235D-L000123](ANSWER_QUALITY_BENCHMARK_AR.md#L123) |
-| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L1) | عنوان Markdown (H1) | عمارة RAG الوكيلي في Omarai | 1 | [SRC-228F2C2F4B-L000001](ARCHITECTURE_AR.md#L1) |
+| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L1) | عنوان Markdown (H1) | عمارة RAG الوكيلي والذاكرة المنظمة في Omarai | 1 | [SRC-228F2C2F4B-L000001](ARCHITECTURE_AR.md#L1) |
 | [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L2) | عنوان Markdown (H2) | المبادئ الخمسة | 2 | [SRC-228F2C2F4B-L000002](ARCHITECTURE_AR.md#L2) |
 | [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L24) | عنوان Markdown (H2) | حدود الأمانة | 24 | [SRC-228F2C2F4B-L000024](ARCHITECTURE_AR.md#L24) |
-| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L30) | عنوان Markdown (H2) | مسار الدمج في WebAgent | 30 | [SRC-228F2C2F4B-L000030](ARCHITECTURE_AR.md#L30) |
+| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L30) | عنوان Markdown (H2) | الربط مع WebAgent | 30 | [SRC-228F2C2F4B-L000030](ARCHITECTURE_AR.md#L30) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
@@ -2524,9 +2530,10 @@
 | [docs/search_code.py](search_code.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 119 | [SRC-69F3587825-L000119](search_code.py#L119) |
 | [docs/search_code.py](search_code.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 124 | [SRC-69F3587825-L000124](search_code.py#L124) |
 | [docs/search_code.py](search_code.py#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 127 | [SRC-69F3587825-L000127](search_code.py#L127) |
-| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L1) | عنوان Markdown (H1) | ربط Agentic RAG مع WebAgent | 1 | [SRC-D726630AC9-L000001](WEB_AGENT_WIRE_AR.md#L1) |
-| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L2) | عنوان Markdown (H2) | الحد الأدنى (بعد التوليد) | 2 | [SRC-D726630AC9-L000002](WEB_AGENT_WIRE_AR.md#L2) |
-| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L14) | عنوان Markdown (H2) | المسار الوكيلي الكامل | 14 | [SRC-D726630AC9-L000014](WEB_AGENT_WIRE_AR.md#L14) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L1) | عنوان Markdown (H1) | ربط MemoryBank و Agentic RAG مع WebAgent | 1 | [SRC-D726630AC9-L000001](WEB_AGENT_WIRE_AR.md#L1) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L2) | عنوان Markdown (H2) | بعد التوليد (موصى به) | 2 | [SRC-D726630AC9-L000002](WEB_AGENT_WIRE_AR.md#L2) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L12) | عنوان Markdown (H2) | سكربت آلي | 12 | [SRC-D726630AC9-L000012](WEB_AGENT_WIRE_AR.md#L12) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L18) | عنوان Markdown (H2) | المسار الوكيلي الكامل | 18 | [SRC-D726630AC9-L000018](WEB_AGENT_WIRE_AR.md#L18) |
 | [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L25) | عنوان Markdown (H2) | لا تفعل | 25 | [SRC-D726630AC9-L000025](WEB_AGENT_WIRE_AR.md#L25) |
 | [pyproject.toml](../pyproject.toml#L1) | قسم TOML | build-system | 1 | [SRC-50C86B7ED8-L000001](../pyproject.toml#L1) |
 | [pyproject.toml](../pyproject.toml#L2) | مفتاح إعداد TOML | requires | 2 | [SRC-50C86B7ED8-L000002](../pyproject.toml#L2) |
@@ -2637,6 +2644,8 @@
 | [render.yaml](../render.yaml#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 12 | [SRC-A64CF250B4-L000012](../render.yaml#L12) |
 | [render.yaml](../render.yaml#L13) | مفتاح إعداد YAML | sync | 13 | [SRC-A64CF250B4-L000013](../render.yaml#L13) |
 | [render.yaml](../render.yaml#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 14 | [SRC-A64CF250B4-L000014](../render.yaml#L14) |
+| [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPORT_BLOCK | 14 | [SRC-1AC5C16399-L000014](../scripts/apply_memory_bank_web_agent_hooks.py#L14) |
+| [scripts/apply_memory_bank_web_agent_hooks.py](../scripts/apply_memory_bank_web_agent_hooks.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | HOOK_SNIPPET | 17 | [SRC-1AC5C16399-L000017](../scripts/apply_memory_bank_web_agent_hooks.py#L17) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 112 | [SRC-A8360B1B03-L000112](../scripts/hosted_smoke_test.py#L112) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L126) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 126 | [SRC-A8360B1B03-L000126](../scripts/hosted_smoke_test.py#L126) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L204) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 204 | [SRC-A8360B1B03-L000204](../scripts/hosted_smoke_test.py#L204) |

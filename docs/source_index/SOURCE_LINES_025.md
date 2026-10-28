@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000041 إلى SRC-A8360B1B03-L000210
+- النطاق: SRC-69F3587825-L000042 إلى SRC-A8360B1B03-L000141
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-69F3587825-L000041](../search_code.py#L41) | 41 | `"        \"dist\","` | — |
 | [SRC-69F3587825-L000042](../search_code.py#L42) | 42 | `"        \".tmp\","` | — |
 | [SRC-69F3587825-L000043](../search_code.py#L43) | 43 | `"        \".idea\","` | — |
 | [SRC-69F3587825-L000044](../search_code.py#L44) | 44 | `"        \".vscode\","` | — |
@@ -312,36 +311,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D726630AC9-L000001](../WEB_AGENT_WIRE_AR.md#L1) | 1 | `"# ربط Agentic RAG مع WebAgent"` | — |
+| [SRC-D726630AC9-L000001](../WEB_AGENT_WIRE_AR.md#L1) | 1 | `"# ربط MemoryBank و Agentic RAG مع WebAgent"` | — |
 | [SRC-D726630AC9-L000002](../WEB_AGENT_WIRE_AR.md#L2) | 2 | `""` | — |
-| [SRC-D726630AC9-L000003](../WEB_AGENT_WIRE_AR.md#L3) | 3 | `"## الحد الأدنى (بعد التوليد)"` | — |
+| [SRC-D726630AC9-L000003](../WEB_AGENT_WIRE_AR.md#L3) | 3 | `"## بعد التوليد (موصى به)"` | — |
 | [SRC-D726630AC9-L000004](../WEB_AGENT_WIRE_AR.md#L4) | 4 | `""` | — |
 | [SRC-D726630AC9-L000005](../WEB_AGENT_WIRE_AR.md#L5) | 5 | ````"```python"```` | — |
 | [SRC-D726630AC9-L000006](../WEB_AGENT_WIRE_AR.md#L6) | 6 | `"from agents.agentic_rag_integration import web_agent_post_answer_hook"` | — |
 | [SRC-D726630AC9-L000007](../WEB_AGENT_WIRE_AR.md#L7) | 7 | `""` | — |
 | [SRC-D726630AC9-L000008](../WEB_AGENT_WIRE_AR.md#L8) | 8 | `"aspects = list((search_report or {}).get(\"aspects\") or [])"` | — |
-| [SRC-D726630AC9-L000009](../WEB_AGENT_WIRE_AR.md#L9) | 9 | `"enrichment = web_agent_post_answer_hook("` | — |
-| [SRC-D726630AC9-L000010](../WEB_AGENT_WIRE_AR.md#L10) | 10 | `"    question, answer, sources, aspects=aspects"` | — |
-| [SRC-D726630AC9-L000011](../WEB_AGENT_WIRE_AR.md#L11) | 11 | `")"` | — |
-| [SRC-D726630AC9-L000012](../WEB_AGENT_WIRE_AR.md#L12) | 12 | `"result.update(enrichment)"` | — |
-| [SRC-D726630AC9-L000013](../WEB_AGENT_WIRE_AR.md#L13) | 13 | ````"```"```` | — |
+| [SRC-D726630AC9-L000009](../WEB_AGENT_WIRE_AR.md#L9) | 9 | `"enrichment = web_agent_post_answer_hook(question, answer, sources, aspects=aspects)"` | — |
+| [SRC-D726630AC9-L000010](../WEB_AGENT_WIRE_AR.md#L10) | 10 | `"result.update(enrichment)"` | — |
+| [SRC-D726630AC9-L000011](../WEB_AGENT_WIRE_AR.md#L11) | 11 | ````"```"```` | — |
+| [SRC-D726630AC9-L000012](../WEB_AGENT_WIRE_AR.md#L12) | 12 | `""` | — |
+| [SRC-D726630AC9-L000013](../WEB_AGENT_WIRE_AR.md#L13) | 13 | `"## سكربت آلي"` | — |
 | [SRC-D726630AC9-L000014](../WEB_AGENT_WIRE_AR.md#L14) | 14 | `""` | — |
-| [SRC-D726630AC9-L000015](../WEB_AGENT_WIRE_AR.md#L15) | 15 | `"## المسار الوكيلي الكامل"` | — |
-| [SRC-D726630AC9-L000016](../WEB_AGENT_WIRE_AR.md#L16) | 16 | `""` | — |
-| [SRC-D726630AC9-L000017](../WEB_AGENT_WIRE_AR.md#L17) | 17 | ````"```python"```` | — |
-| [SRC-D726630AC9-L000018](../WEB_AGENT_WIRE_AR.md#L18) | 18 | `"from agents.agentic_rag_integration import run_agentic_rag"` | — |
-| [SRC-D726630AC9-L000019](../WEB_AGENT_WIRE_AR.md#L19) | 19 | `""` | — |
-| [SRC-D726630AC9-L000020](../WEB_AGENT_WIRE_AR.md#L20) | 20 | `"def retrieve_fn(q: str):"` | — |
-| [SRC-D726630AC9-L000021](../WEB_AGENT_WIRE_AR.md#L21) | 21 | `"    return self._search_web(q)"` | — |
-| [SRC-D726630AC9-L000022](../WEB_AGENT_WIRE_AR.md#L22) | 22 | `""` | — |
-| [SRC-D726630AC9-L000023](../WEB_AGENT_WIRE_AR.md#L23) | 23 | `"payload = run_agentic_rag(question, retrieve_fn, history=history, max_hops=3)"` | — |
+| [SRC-D726630AC9-L000015](../WEB_AGENT_WIRE_AR.md#L15) | 15 | ````"```bash"```` | — |
+| [SRC-D726630AC9-L000016](../WEB_AGENT_WIRE_AR.md#L16) | 16 | `"python3 scripts/apply_memory_bank_web_agent_hooks.py"` | — |
+| [SRC-D726630AC9-L000017](../WEB_AGENT_WIRE_AR.md#L17) | 17 | ````"```"```` | — |
+| [SRC-D726630AC9-L000018](../WEB_AGENT_WIRE_AR.md#L18) | 18 | `""` | — |
+| [SRC-D726630AC9-L000019](../WEB_AGENT_WIRE_AR.md#L19) | 19 | `"## المسار الوكيلي الكامل"` | — |
+| [SRC-D726630AC9-L000020](../WEB_AGENT_WIRE_AR.md#L20) | 20 | `""` | — |
+| [SRC-D726630AC9-L000021](../WEB_AGENT_WIRE_AR.md#L21) | 21 | ````"```python"```` | — |
+| [SRC-D726630AC9-L000022](../WEB_AGENT_WIRE_AR.md#L22) | 22 | `"from agents.agentic_rag_integration import run_agentic_rag"` | — |
+| [SRC-D726630AC9-L000023](../WEB_AGENT_WIRE_AR.md#L23) | 23 | `"payload = run_agentic_rag(question, retrieve_fn=self._search_web, history=history)"` | — |
 | [SRC-D726630AC9-L000024](../WEB_AGENT_WIRE_AR.md#L24) | 24 | ````"```"```` | — |
 | [SRC-D726630AC9-L000025](../WEB_AGENT_WIRE_AR.md#L25) | 25 | `""` | — |
 | [SRC-D726630AC9-L000026](../WEB_AGENT_WIRE_AR.md#L26) | 26 | `"## لا تفعل"` | — |
 | [SRC-D726630AC9-L000027](../WEB_AGENT_WIRE_AR.md#L27) | 27 | `""` | — |
-| [SRC-D726630AC9-L000028](../WEB_AGENT_WIRE_AR.md#L28) | 28 | `"- لا تستدعِ موصلات HTTP خارج مسار URL/SSRF المعتمد."` | — |
-| [SRC-D726630AC9-L000029](../WEB_AGENT_WIRE_AR.md#L29) | 29 | `"- لا تخفض عتبة الصلة 0.20."` | — |
-| [SRC-D726630AC9-L000030](../WEB_AGENT_WIRE_AR.md#L30) | 30 | `"- لا تعرض support_ratio كاحتمال صدق."` | — |
+| [SRC-D726630AC9-L000028](../WEB_AGENT_WIRE_AR.md#L28) | 28 | `"- لا تخفض عتبة الصلة 0.20"` | — |
+| [SRC-D726630AC9-L000029](../WEB_AGENT_WIRE_AR.md#L29) | 29 | `"- لا تفسّر support_ratio كاحتمال صدق"` | — |
+| [SRC-D726630AC9-L000030](../WEB_AGENT_WIRE_AR.md#L30) | 30 | `"- لا تتجاوز مسار SSRF"` | — |
 ## ملفات أخرى
 
 ### FILE-C693279643 — [LICENSE](../../LICENSE#L1)
@@ -671,6 +670,85 @@
 | [SRC-64EDD7FC2B-L000001](../../scripts/__init__.py#L1) | 1 | `"\"\"\"Operational helper scripts for Omarai.\"\"\""` | — |
 ## ملفات أخرى
 
+### FILE-1AC5C16399 — [scripts/apply_memory_bank_web_agent_hooks.py](../../scripts/apply_memory_bank_web_agent_hooks.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1AC5C16399-L000001](../../scripts/apply_memory_bank_web_agent_hooks.py#L1) | 1 | `"#!/usr/bin/env python3"` | — |
+| [SRC-1AC5C16399-L000002](../../scripts/apply_memory_bank_web_agent_hooks.py#L2) | 2 | `"\"\"\"Apply MemoryBank / agentic RAG post-answer hook into agents/web_agent.py."` | — |
+| [SRC-1AC5C16399-L000003](../../scripts/apply_memory_bank_web_agent_hooks.py#L3) | 3 | `""` | — |
+| [SRC-1AC5C16399-L000004](../../scripts/apply_memory_bank_web_agent_hooks.py#L4) | 4 | `"Run from repo root:"` | — |
+| [SRC-1AC5C16399-L000005](../../scripts/apply_memory_bank_web_agent_hooks.py#L5) | 5 | `"  python3 scripts/apply_memory_bank_web_agent_hooks.py"` | — |
+| [SRC-1AC5C16399-L000006](../../scripts/apply_memory_bank_web_agent_hooks.py#L6) | 6 | `"\"\"\""` | — |
+| [SRC-1AC5C16399-L000007](../../scripts/apply_memory_bank_web_agent_hooks.py#L7) | 7 | `"from __future__ import annotations"` | — |
+| [SRC-1AC5C16399-L000008](../../scripts/apply_memory_bank_web_agent_hooks.py#L8) | 8 | `""` | — |
+| [SRC-1AC5C16399-L000009](../../scripts/apply_memory_bank_web_agent_hooks.py#L9) | 9 | `"from pathlib import Path"` | — |
+| [SRC-1AC5C16399-L000010](../../scripts/apply_memory_bank_web_agent_hooks.py#L10) | 10 | `""` | — |
+| [SRC-1AC5C16399-L000011](../../scripts/apply_memory_bank_web_agent_hooks.py#L11) | 11 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-1AC5C16399-L000012](../../scripts/apply_memory_bank_web_agent_hooks.py#L12) | 12 | `"TARGET = ROOT / \"agents\" / \"web_agent.py\""` | — |
+| [SRC-1AC5C16399-L000013](../../scripts/apply_memory_bank_web_agent_hooks.py#L13) | 13 | `""` | — |
+| [SRC-1AC5C16399-L000014](../../scripts/apply_memory_bank_web_agent_hooks.py#L14) | 14 | `"IMPORT_BLOCK = \"\"\"from agents.agentic_rag_integration import web_agent_post_answer_hook"` | — |
+| [SRC-1AC5C16399-L000015](../../scripts/apply_memory_bank_web_agent_hooks.py#L15) | 15 | `"\"\"\""` | — |
+| [SRC-1AC5C16399-L000016](../../scripts/apply_memory_bank_web_agent_hooks.py#L16) | 16 | `""` | — |
+| [SRC-1AC5C16399-L000017](../../scripts/apply_memory_bank_web_agent_hooks.py#L17) | 17 | `"HOOK_SNIPPET = \"\"\""` | — |
+| [SRC-1AC5C16399-L000018](../../scripts/apply_memory_bank_web_agent_hooks.py#L18) | 18 | `"        # Structured claim–evidence memory (agentic RAG) — lexical support only"` | — |
+| [SRC-1AC5C16399-L000019](../../scripts/apply_memory_bank_web_agent_hooks.py#L19) | 19 | `"        try:"` | — |
+| [SRC-1AC5C16399-L000020](../../scripts/apply_memory_bank_web_agent_hooks.py#L20) | 20 | `"            aspects = list((result.get(\"search_report\") or {}).get(\"aspects\") or [])"` | — |
+| [SRC-1AC5C16399-L000021](../../scripts/apply_memory_bank_web_agent_hooks.py#L21) | 21 | `"            enrichment = web_agent_post_answer_hook("` | — |
+| [SRC-1AC5C16399-L000022](../../scripts/apply_memory_bank_web_agent_hooks.py#L22) | 22 | `"                question if \"question\" in dir() else str(result.get(\"question\") or \"\"),"` | — |
+| [SRC-1AC5C16399-L000023](../../scripts/apply_memory_bank_web_agent_hooks.py#L23) | 23 | `"                str(result.get(\"answer\") or \"\"),"` | — |
+| [SRC-1AC5C16399-L000024](../../scripts/apply_memory_bank_web_agent_hooks.py#L24) | 24 | `"                list(result.get(\"sources\") or []),"` | — |
+| [SRC-1AC5C16399-L000025](../../scripts/apply_memory_bank_web_agent_hooks.py#L25) | 25 | `"                aspects=aspects,"` | — |
+| [SRC-1AC5C16399-L000026](../../scripts/apply_memory_bank_web_agent_hooks.py#L26) | 26 | `"            )"` | — |
+| [SRC-1AC5C16399-L000027](../../scripts/apply_memory_bank_web_agent_hooks.py#L27) | 27 | `"            result.update(enrichment)"` | — |
+| [SRC-1AC5C16399-L000028](../../scripts/apply_memory_bank_web_agent_hooks.py#L28) | 28 | `"            if isinstance(result.get(\"search_report\"), dict):"` | — |
+| [SRC-1AC5C16399-L000029](../../scripts/apply_memory_bank_web_agent_hooks.py#L29) | 29 | `"                result[\"search_report\"][\"agentic_rag\"] = enrichment.get(\"agentic_rag\")"` | — |
+| [SRC-1AC5C16399-L000030](../../scripts/apply_memory_bank_web_agent_hooks.py#L30) | 30 | `"        except (RuntimeError, ValueError, TypeError, OSError, KeyError):"` | — |
+| [SRC-1AC5C16399-L000031](../../scripts/apply_memory_bank_web_agent_hooks.py#L31) | 31 | `"            result.setdefault(\"agentic_rag\", {\"enabled\": False, \"error\": \"hook_failed\"})"` | — |
+| [SRC-1AC5C16399-L000032](../../scripts/apply_memory_bank_web_agent_hooks.py#L32) | 32 | `"\"\"\""` | — |
+| [SRC-1AC5C16399-L000033](../../scripts/apply_memory_bank_web_agent_hooks.py#L33) | 33 | `""` | — |
+| [SRC-1AC5C16399-L000034](../../scripts/apply_memory_bank_web_agent_hooks.py#L34) | 34 | `""` | — |
+| [SRC-1AC5C16399-L000035](../../scripts/apply_memory_bank_web_agent_hooks.py#L35) | 35 | `"def main() -> None:"` | — |
+| [SRC-1AC5C16399-L000036](../../scripts/apply_memory_bank_web_agent_hooks.py#L36) | 36 | `"    text = TARGET.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-1AC5C16399-L000037](../../scripts/apply_memory_bank_web_agent_hooks.py#L37) | 37 | `"    if \"web_agent_post_answer_hook\" in text and \"agentic_rag\" in text:"` | — |
+| [SRC-1AC5C16399-L000038](../../scripts/apply_memory_bank_web_agent_hooks.py#L38) | 38 | `"        print(\"hooks already present\")"` | — |
+| [SRC-1AC5C16399-L000039](../../scripts/apply_memory_bank_web_agent_hooks.py#L39) | 39 | `"        return"` | — |
+| [SRC-1AC5C16399-L000040](../../scripts/apply_memory_bank_web_agent_hooks.py#L40) | 40 | `"    if \"from agents.agentic_rag_integration import web_agent_post_answer_hook\" not in text:"` | — |
+| [SRC-1AC5C16399-L000041](../../scripts/apply_memory_bank_web_agent_hooks.py#L41) | 41 | `"        if \"from agents.claim_evidence import\" in text:"` | — |
+| [SRC-1AC5C16399-L000042](../../scripts/apply_memory_bank_web_agent_hooks.py#L42) | 42 | `"            text = text.replace("` | — |
+| [SRC-1AC5C16399-L000043](../../scripts/apply_memory_bank_web_agent_hooks.py#L43) | 43 | `"                \"from agents.claim_evidence import\","` | — |
+| [SRC-1AC5C16399-L000044](../../scripts/apply_memory_bank_web_agent_hooks.py#L44) | 44 | `"                IMPORT_BLOCK + \"from agents.claim_evidence import\","` | — |
+| [SRC-1AC5C16399-L000045](../../scripts/apply_memory_bank_web_agent_hooks.py#L45) | 45 | `"                1,"` | — |
+| [SRC-1AC5C16399-L000046](../../scripts/apply_memory_bank_web_agent_hooks.py#L46) | 46 | `"            )"` | — |
+| [SRC-1AC5C16399-L000047](../../scripts/apply_memory_bank_web_agent_hooks.py#L47) | 47 | `"        elif \"from agents.research import\" in text:"` | — |
+| [SRC-1AC5C16399-L000048](../../scripts/apply_memory_bank_web_agent_hooks.py#L48) | 48 | `"            text = text.replace("` | — |
+| [SRC-1AC5C16399-L000049](../../scripts/apply_memory_bank_web_agent_hooks.py#L49) | 49 | `"                \"from agents.research import\","` | — |
+| [SRC-1AC5C16399-L000050](../../scripts/apply_memory_bank_web_agent_hooks.py#L50) | 50 | `"                IMPORT_BLOCK + \"from agents.research import\","` | — |
+| [SRC-1AC5C16399-L000051](../../scripts/apply_memory_bank_web_agent_hooks.py#L51) | 51 | `"                1,"` | — |
+| [SRC-1AC5C16399-L000052](../../scripts/apply_memory_bank_web_agent_hooks.py#L52) | 52 | `"            )"` | — |
+| [SRC-1AC5C16399-L000053](../../scripts/apply_memory_bank_web_agent_hooks.py#L53) | 53 | `"        else:"` | — |
+| [SRC-1AC5C16399-L000054](../../scripts/apply_memory_bank_web_agent_hooks.py#L54) | 54 | `"            text = IMPORT_BLOCK + text"` | — |
+| [SRC-1AC5C16399-L000055](../../scripts/apply_memory_bank_web_agent_hooks.py#L55) | 55 | `""` | — |
+| [SRC-1AC5C16399-L000056](../../scripts/apply_memory_bank_web_agent_hooks.py#L56) | 56 | `"    marker = 'result[\"claim_evidence_status\"] = \"sentence_level_trace_only\"'"` | — |
+| [SRC-1AC5C16399-L000057](../../scripts/apply_memory_bank_web_agent_hooks.py#L57) | 57 | `"    if marker in text and \"web_agent_post_answer_hook(\" not in text:"` | — |
+| [SRC-1AC5C16399-L000058](../../scripts/apply_memory_bank_web_agent_hooks.py#L58) | 58 | `"        text = text.replace(marker, marker + \"\\n\" + HOOK_SNIPPET, 1)"` | — |
+| [SRC-1AC5C16399-L000059](../../scripts/apply_memory_bank_web_agent_hooks.py#L59) | 59 | `"    elif \"web_agent_post_answer_hook(\" not in text:"` | — |
+| [SRC-1AC5C16399-L000060](../../scripts/apply_memory_bank_web_agent_hooks.py#L60) | 60 | `"        text += ("` | — |
+| [SRC-1AC5C16399-L000061](../../scripts/apply_memory_bank_web_agent_hooks.py#L61) | 61 | `"            \"\\n# NOTE: call web_agent_post_answer_hook(question, answer, sources) \""` | — |
+| [SRC-1AC5C16399-L000062](../../scripts/apply_memory_bank_web_agent_hooks.py#L62) | 62 | `"            \"before returning result\\n\""` | — |
+| [SRC-1AC5C16399-L000063](../../scripts/apply_memory_bank_web_agent_hooks.py#L63) | 63 | `"        )"` | — |
+| [SRC-1AC5C16399-L000064](../../scripts/apply_memory_bank_web_agent_hooks.py#L64) | 64 | `"        print(\"warning: marker not found; import added only\")"` | — |
+| [SRC-1AC5C16399-L000065](../../scripts/apply_memory_bank_web_agent_hooks.py#L65) | 65 | `"    TARGET.write_text(text, encoding=\"utf-8\")"` | — |
+| [SRC-1AC5C16399-L000066](../../scripts/apply_memory_bank_web_agent_hooks.py#L66) | 66 | `"    print(f\"patched {TARGET}\")"` | — |
+| [SRC-1AC5C16399-L000067](../../scripts/apply_memory_bank_web_agent_hooks.py#L67) | 67 | `""` | — |
+| [SRC-1AC5C16399-L000068](../../scripts/apply_memory_bank_web_agent_hooks.py#L68) | 68 | `""` | — |
+| [SRC-1AC5C16399-L000069](../../scripts/apply_memory_bank_web_agent_hooks.py#L69) | 69 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-1AC5C16399-L000070](../../scripts/apply_memory_bank_web_agent_hooks.py#L70) | 70 | `"    main()"` | — |
+## ملفات أخرى
+
 ### FILE-A8360B1B03 — [scripts/hosted_smoke_test.py](../../scripts/hosted_smoke_test.py#L1)
 
 - النوع: **Python**
@@ -819,72 +897,3 @@
 | [SRC-A8360B1B03-L000139](../../scripts/hosted_smoke_test.py#L139) | 139 | `""` | — |
 | [SRC-A8360B1B03-L000140](../../scripts/hosted_smoke_test.py#L140) | 140 | `"    status, _ = request_json("` | — |
 | [SRC-A8360B1B03-L000141](../../scripts/hosted_smoke_test.py#L141) | 141 | `"        f\"{origin}/api/agent\", payload={\"question\": \"اختبار رفض الوصول غير المصرح به\"},"` | — |
-| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"        timeout=min(timeout, 20),"` | — |
-| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    )"` | — |
-| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `"    if status != 401:"` | — |
-| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `"        raise SmokeError(f\"Unauthenticated POST /api/agent should return 401, received {status}.\")"` | — |
-| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"    checks[\"authentication\"] = \"passed\""` | — |
-| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `""` | — |
-| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
-| [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    status, diagnostics = request_json("` | — |
-| [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
-| [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"        payload={\"test_model\": True, \"test_social\": False}, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"    )"` | — |
-| [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    if status != 200 or not diagnostics:"` | — |
-| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\")"` | — |
-| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
-| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
-| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    model = parts.get(\"language_model\", {}) if isinstance(parts, dict) else {}"` | — |
-| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    if not isinstance(web, dict) or web.get(\"status\") != \"passed\":"` | — |
-| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"        raise SmokeError(\"The real web-search connectivity test did not pass.\")"` | — |
-| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"    if not isinstance(model, dict) or model.get(\"status\") != \"passed\":"` | — |
-| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        raise SmokeError(\"The configured language model did not pass a real completion test.\")"` | — |
-| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `"    checks[\"live_search\"] = {"` | — |
-| [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"        \"status\": \"passed\", \"result_count\": web.get(\"result_count\", 0),"` | — |
-| [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        \"provider_counts\": web.get(\"provider_counts\", {}),"` | — |
-| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"    }"` | — |
-| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    checks[\"language_model\"] = {\"status\": \"passed\", \"response_received\": True}"` | — |
-| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `""` | — |
-| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"    status, answer = request_json("` | — |
-| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"        payload={"` | — |
-| [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"            \"question\": \"اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر.\","` | — |
-| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            \"history\": [], \"mode\": \"auto\","` | — |
-| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        },"` | — |
-| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"    )"` | — |
-| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"    if status != 200 or not answer:"` | — |
-| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\")"` | — |
-| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"    sources = answer.get(\"sources\")"` | — |
-| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    usable = ["` | — |
-| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        item for item in sources if isinstance(item, dict)"` | — |
-| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"        and isinstance(item.get(\"url\"), str)"` | — |
-| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
-| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
-| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"    ] if isinstance(sources, list) else []"` | — |
-| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
-| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        raise SmokeError(\"Agent request did not return a live web search with usable source URLs.\")"` | — |
-| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
-| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"        raise SmokeError(\"Agent request did not confirm that a language model was used.\")"` | — |
-| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"    report = answer.get(\"search_report\")"` | — |
-| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"    checks[\"agent_request\"] = {"` | — |
-| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
-| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `"        \"direct_pages_read\": report.get(\"pages_fetched\") if isinstance(report, dict) else None,"` | — |
-| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"        \"providers_reported\": report.get(\"providers_used\", []) if isinstance(report, dict) else [],"` | — |
-| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"        \"answer_received\": bool(str(answer.get(\"answer\", \"\")).strip()),"` | — |
-| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"    }"` | — |
-| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"    return {"` | — |
-| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"        \"result\": \"passed\", \"target_host\": urllib.parse.urlsplit(origin).hostname,"` | — |
-| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"        \"checks\": checks,"` | — |
-| [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"        \"note\": \"This proves the request path worked at test time, not continuous uptime. Provider usage may incur charges.\","` | — |
-| [SRC-A8360B1B03-L000199](../../scripts/hosted_smoke_test.py#L199) | 199 | `"    }"` | — |
-| [SRC-A8360B1B03-L000200](../../scripts/hosted_smoke_test.py#L200) | 200 | `""` | — |
-| [SRC-A8360B1B03-L000201](../../scripts/hosted_smoke_test.py#L201) | 201 | `""` | — |
-| [SRC-A8360B1B03-L000202](../../scripts/hosted_smoke_test.py#L202) | 202 | `"def main() -> int:"` | — |
-| [SRC-A8360B1B03-L000203](../../scripts/hosted_smoke_test.py#L203) | 203 | `"    parser = argparse.ArgumentParser(description=\"Run live acceptance checks against hosted Omarai.\")"` | — |
-| [SRC-A8360B1B03-L000204](../../scripts/hosted_smoke_test.py#L204) | 204 | `"    parser.add_argument(\"--base-url\", default=os.getenv(\"OMARAI_BASE_URL\", \"\"))"` | — |
-| [SRC-A8360B1B03-L000205](../../scripts/hosted_smoke_test.py#L205) | 205 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
-| [SRC-A8360B1B03-L000206](../../scripts/hosted_smoke_test.py#L206) | 206 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000207](../../scripts/hosted_smoke_test.py#L207) | 207 | `"        \"--expected-sha\","` | — |
-| [SRC-A8360B1B03-L000208](../../scripts/hosted_smoke_test.py#L208) | 208 | `"        default=os.getenv(\"OMARAI_EXPECTED_BUILD_SHA\", \"\"),"` | — |
-| [SRC-A8360B1B03-L000209](../../scripts/hosted_smoke_test.py#L209) | 209 | `"        help=\"Require the deployed image to report this full 40-character source Git SHA.\","` | — |
-| [SRC-A8360B1B03-L000210](../../scripts/hosted_smoke_test.py#L210) | 210 | `"    )"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-29A9CD43D1-L000144 إلى SRC-FA4E1423C3-L000134
+- النطاق: SRC-29A9CD43D1-L000075 إلى SRC-FA4E1423C3-L000065
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,75 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-29A9CD43D1-L000075](../../tests/test_dialogue_context_pipeline.py#L75) | 75 | `"        \"unresolved_references\": [\"الضمان\"] if needs_clarification else [],"` | — |
+| [SRC-29A9CD43D1-L000076](../../tests/test_dialogue_context_pipeline.py#L76) | 76 | `"        \"resolution_basis\": \"history_inferred\","` | — |
+| [SRC-29A9CD43D1-L000077](../../tests/test_dialogue_context_pipeline.py#L77) | 77 | `"        \"confidence_band\": \"medium\","` | — |
+| [SRC-29A9CD43D1-L000078](../../tests/test_dialogue_context_pipeline.py#L78) | 78 | `"    }"` | — |
+| [SRC-29A9CD43D1-L000079](../../tests/test_dialogue_context_pipeline.py#L79) | 79 | `""` | — |
+| [SRC-29A9CD43D1-L000080](../../tests/test_dialogue_context_pipeline.py#L80) | 80 | `""` | — |
+| [SRC-29A9CD43D1-L000081](../../tests/test_dialogue_context_pipeline.py#L81) | 81 | `"def test_semantic_context_probe_routes_natural_followup_to_search_and_answer("` | — |
+| [SRC-29A9CD43D1-L000082](../../tests/test_dialogue_context_pipeline.py#L82) | 82 | `"    monkeypatch: pytest.MonkeyPatch,"` | — |
+| [SRC-29A9CD43D1-L000083](../../tests/test_dialogue_context_pipeline.py#L83) | 83 | `") -> None:"` | — |
+| [SRC-29A9CD43D1-L000084](../../tests/test_dialogue_context_pipeline.py#L84) | 84 | `"    agent = WebAgent()"` | — |
+| [SRC-29A9CD43D1-L000085](../../tests/test_dialogue_context_pipeline.py#L85) | 85 | `"    agent.api_key = \"test-key\"  # All model responses are mocked; no provider call is made."` | — |
+| [SRC-29A9CD43D1-L000086](../../tests/test_dialogue_context_pipeline.py#L86) | 86 | `"    history = ["` | — |
+| [SRC-29A9CD43D1-L000087](../../tests/test_dialogue_context_pipeline.py#L87) | 87 | `"        {\"role\": \"user\", \"content\": \"اشتريت iPhone 17 النسخة الأساسية سعة 256 جيجابايت من مصر.\"},"` | — |
+| [SRC-29A9CD43D1-L000088](../../tests/test_dialogue_context_pipeline.py#L88) | 88 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن نسخة iPhone 17 سعة 256 جيجابايت في مصر.\"},"` | — |
+| [SRC-29A9CD43D1-L000089](../../tests/test_dialogue_context_pipeline.py#L89) | 89 | `"    ]"` | — |
+| [SRC-29A9CD43D1-L000090](../../tests/test_dialogue_context_pipeline.py#L90) | 90 | `"    context = _semantic_context()"` | — |
+| [SRC-29A9CD43D1-L000091](../../tests/test_dialogue_context_pipeline.py#L91) | 91 | `"    seen: dict[str, Any] = {\"model_prompts\": []}"` | — |
+| [SRC-29A9CD43D1-L000092](../../tests/test_dialogue_context_pipeline.py#L92) | 92 | `""` | — |
+| [SRC-29A9CD43D1-L000093](../../tests/test_dialogue_context_pipeline.py#L93) | 93 | `"    def mocked_completion(messages, **kwargs):"` | — |
+| [SRC-29A9CD43D1-L000094](../../tests/test_dialogue_context_pipeline.py#L94) | 94 | `"        system_prompt = messages[0][\"content\"]"` | — |
+| [SRC-29A9CD43D1-L000095](../../tests/test_dialogue_context_pipeline.py#L95) | 95 | `"        seen[\"model_prompts\"].append(system_prompt)"` | — |
+| [SRC-29A9CD43D1-L000096](../../tests/test_dialogue_context_pipeline.py#L96) | 96 | `"        if \"أنت محلل سياق حواري\" in system_prompt:"` | — |
+| [SRC-29A9CD43D1-L000097](../../tests/test_dialogue_context_pipeline.py#L97) | 97 | `"            return json.dumps(context, ensure_ascii=False)"` | — |
+| [SRC-29A9CD43D1-L000098](../../tests/test_dialogue_context_pipeline.py#L98) | 98 | `"        if \"أنت مخطط بحث ومحلل دلالي حواري\" in system_prompt:"` | — |
+| [SRC-29A9CD43D1-L000099](../../tests/test_dialogue_context_pipeline.py#L99) | 99 | `"            return json.dumps("` | — |
+| [SRC-29A9CD43D1-L000100](../../tests/test_dialogue_context_pipeline.py#L100) | 100 | `"                {"` | — |
+| [SRC-29A9CD43D1-L000101](../../tests/test_dialogue_context_pipeline.py#L101) | 101 | `"                    \"queries\": ["` | — |
+| [SRC-29A9CD43D1-L000102](../../tests/test_dialogue_context_pipeline.py#L102) | 102 | `"                        \"iPhone 17 256GB الضمان الدولي في مصر تغطية الصيانة warranty Egypt\""` | — |
+| [SRC-29A9CD43D1-L000103](../../tests/test_dialogue_context_pipeline.py#L103) | 103 | `"                    ],"` | — |
+| [SRC-29A9CD43D1-L000104](../../tests/test_dialogue_context_pipeline.py#L104) | 104 | `"                    \"direct_urls\": [],"` | — |
+| [SRC-29A9CD43D1-L000105](../../tests/test_dialogue_context_pipeline.py#L105) | 105 | `"                    \"social_focus\": False,"` | — |
+| [SRC-29A9CD43D1-L000106](../../tests/test_dialogue_context_pipeline.py#L106) | 106 | `"                    \"freshness\": \"current\","` | — |
+| [SRC-29A9CD43D1-L000107](../../tests/test_dialogue_context_pipeline.py#L107) | 107 | `"                    \"depth\": \"standard\","` | — |
+| [SRC-29A9CD43D1-L000108](../../tests/test_dialogue_context_pipeline.py#L108) | 108 | `"                    \"platforms\": [],"` | — |
+| [SRC-29A9CD43D1-L000109](../../tests/test_dialogue_context_pipeline.py#L109) | 109 | `"                    \"dialogue_context\": context,"` | — |
+| [SRC-29A9CD43D1-L000110](../../tests/test_dialogue_context_pipeline.py#L110) | 110 | `"                },"` | — |
+| [SRC-29A9CD43D1-L000111](../../tests/test_dialogue_context_pipeline.py#L111) | 111 | `"                ensure_ascii=False,"` | — |
+| [SRC-29A9CD43D1-L000112](../../tests/test_dialogue_context_pipeline.py#L112) | 112 | `"            )"` | — |
+| [SRC-29A9CD43D1-L000113](../../tests/test_dialogue_context_pipeline.py#L113) | 113 | `"        pytest.fail(\"Unexpected model prompt in mocked offline test\")"` | — |
+| [SRC-29A9CD43D1-L000114](../../tests/test_dialogue_context_pipeline.py#L114) | 114 | `""` | — |
+| [SRC-29A9CD43D1-L000115](../../tests/test_dialogue_context_pipeline.py#L115) | 115 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
+| [SRC-29A9CD43D1-L000116](../../tests/test_dialogue_context_pipeline.py#L116) | 116 | `"    seen[\"generated_question\"] = None"` | — |
+| [SRC-29A9CD43D1-L000117](../../tests/test_dialogue_context_pipeline.py#L117) | 117 | `"    seen[\"reviewed_question\"] = None"` | — |
+| [SRC-29A9CD43D1-L000118](../../tests/test_dialogue_context_pipeline.py#L118) | 118 | `""` | — |
+| [SRC-29A9CD43D1-L000119](../../tests/test_dialogue_context_pipeline.py#L119) | 119 | `"    def collect(plan):"` | — |
+| [SRC-29A9CD43D1-L000120](../../tests/test_dialogue_context_pipeline.py#L120) | 120 | `"        seen[\"plan\"] = dict(plan)"` | — |
+| [SRC-29A9CD43D1-L000121](../../tests/test_dialogue_context_pipeline.py#L121) | 121 | `"        sources = [_source(\"example.com\", plan[\"queries\"]), _source(\"example.net\", plan[\"queries\"])]"` | — |
+| [SRC-29A9CD43D1-L000122](../../tests/test_dialogue_context_pipeline.py#L122) | 122 | `"        return sources, [], _report(plan, sources)"` | — |
+| [SRC-29A9CD43D1-L000123](../../tests/test_dialogue_context_pipeline.py#L123) | 123 | `""` | — |
+| [SRC-29A9CD43D1-L000124](../../tests/test_dialogue_context_pipeline.py#L124) | 124 | `"    def generate(resolved_question, *args, **kwargs):"` | — |
+| [SRC-29A9CD43D1-L000125](../../tests/test_dialogue_context_pipeline.py#L125) | 125 | `"        seen[\"generated_question\"] = resolved_question"` | — |
+| [SRC-29A9CD43D1-L000126](../../tests/test_dialogue_context_pipeline.py#L126) | 126 | `"        return \"لم أؤكد شروط الضمان من النصوص المتاحة؛ راجع الشروط الرسمية [المصدر 1].\""` | — |
+| [SRC-29A9CD43D1-L000127](../../tests/test_dialogue_context_pipeline.py#L127) | 127 | `""` | — |
+| [SRC-29A9CD43D1-L000128](../../tests/test_dialogue_context_pipeline.py#L128) | 128 | `"    def review(resolved_question, answer, sources):"` | — |
+| [SRC-29A9CD43D1-L000129](../../tests/test_dialogue_context_pipeline.py#L129) | 129 | `"        seen[\"reviewed_question\"] = resolved_question"` | — |
+| [SRC-29A9CD43D1-L000130](../../tests/test_dialogue_context_pipeline.py#L130) | 130 | `"        return answer"` | — |
+| [SRC-29A9CD43D1-L000131](../../tests/test_dialogue_context_pipeline.py#L131) | 131 | `""` | — |
+| [SRC-29A9CD43D1-L000132](../../tests/test_dialogue_context_pipeline.py#L132) | 132 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-29A9CD43D1-L000133](../../tests/test_dialogue_context_pipeline.py#L133) | 133 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
+| [SRC-29A9CD43D1-L000134](../../tests/test_dialogue_context_pipeline.py#L134) | 134 | `"    monkeypatch.setattr(agent, \"_generate\", generate)"` | — |
+| [SRC-29A9CD43D1-L000135](../../tests/test_dialogue_context_pipeline.py#L135) | 135 | `"    monkeypatch.setattr(agent, \"_review_answer\", review)"` | — |
+| [SRC-29A9CD43D1-L000136](../../tests/test_dialogue_context_pipeline.py#L136) | 136 | `""` | — |
+| [SRC-29A9CD43D1-L000137](../../tests/test_dialogue_context_pipeline.py#L137) | 137 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
+| [SRC-29A9CD43D1-L000138](../../tests/test_dialogue_context_pipeline.py#L138) | 138 | `"    result = agent.answer(question, history=history)"` | — |
+| [SRC-29A9CD43D1-L000139](../../tests/test_dialogue_context_pipeline.py#L139) | 139 | `""` | — |
+| [SRC-29A9CD43D1-L000140](../../tests/test_dialogue_context_pipeline.py#L140) | 140 | `"    assert result[\"intent_route\"] == \"WEB_SIMPLE\""` | — |
+| [SRC-29A9CD43D1-L000141](../../tests/test_dialogue_context_pipeline.py#L141) | 141 | `"    assert result[\"question\"] == question  # Preserve the visible user utterance."` | — |
+| [SRC-29A9CD43D1-L000142](../../tests/test_dialogue_context_pipeline.py#L142) | 142 | `"    assert result[\"used_web_search\"] is True"` | — |
+| [SRC-29A9CD43D1-L000143](../../tests/test_dialogue_context_pipeline.py#L143) | 143 | `"    assert len(seen[\"model_prompts\"]) == 2  # one context pass + one search-plan pass"` | — |
 | [SRC-29A9CD43D1-L000144](../../tests/test_dialogue_context_pipeline.py#L144) | 144 | `"    assert \"iPhone 17\" in seen[\"generated_question\"]"` | — |
 | [SRC-29A9CD43D1-L000145](../../tests/test_dialogue_context_pipeline.py#L145) | 145 | `"    assert \"256 جيجابايت\" in seen[\"generated_question\"]"` | — |
 | [SRC-29A9CD43D1-L000146](../../tests/test_dialogue_context_pipeline.py#L146) | 146 | `"    assert \"الضمان الدولي\" in seen[\"generated_question\"]"` | — |
@@ -783,72 +852,3 @@
 | [SRC-FA4E1423C3-L000063](../../tests/test_generate_index.py#L63) | 63 | `"    tmp_path: Path,"` | — |
 | [SRC-FA4E1423C3-L000064](../../tests/test_generate_index.py#L64) | 64 | `") -> None:"` | — |
 | [SRC-FA4E1423C3-L000065](../../tests/test_generate_index.py#L65) | 65 | `"    \"\"\"Module/class attributes are searchable without flooding the index with locals.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000066](../../tests/test_generate_index.py#L66) | 66 | `"    (tmp_path / \"settings.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000067](../../tests/test_generate_index.py#L67) | 67 | `"        'MODULE_SETTING = \"enabled\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000068](../../tests/test_generate_index.py#L68) | 68 | `"        'class Settings:\\n'"` | — |
-| [SRC-FA4E1423C3-L000069](../../tests/test_generate_index.py#L69) | 69 | `"        '    CLASS_SETTING: str = \"strict\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000070](../../tests/test_generate_index.py#L70) | 70 | `"        '    def method(self):\\n'"` | — |
-| [SRC-FA4E1423C3-L000071](../../tests/test_generate_index.py#L71) | 71 | `"        '        local_only = \"do not index\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000072](../../tests/test_generate_index.py#L72) | 72 | `"        '        return local_only\\n',"` | — |
-| [SRC-FA4E1423C3-L000073](../../tests/test_generate_index.py#L73) | 73 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000074](../../tests/test_generate_index.py#L74) | 74 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000075](../../tests/test_generate_index.py#L75) | 75 | `""` | — |
-| [SRC-FA4E1423C3-L000076](../../tests/test_generate_index.py#L76) | 76 | `"    symbols, _ = INDEXER.scan_repository(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000077](../../tests/test_generate_index.py#L77) | 77 | `"    by_name = {symbol.name: symbol for symbol in symbols}"` | — |
-| [SRC-FA4E1423C3-L000078](../../tests/test_generate_index.py#L78) | 78 | `""` | — |
-| [SRC-FA4E1423C3-L000079](../../tests/test_generate_index.py#L79) | 79 | `"    assert by_name[\"MODULE_SETTING\"].kind == \"متغير/ثابت Python\""` | — |
-| [SRC-FA4E1423C3-L000080](../../tests/test_generate_index.py#L80) | 80 | `"    assert by_name[\"MODULE_SETTING\"].documented is None"` | — |
-| [SRC-FA4E1423C3-L000081](../../tests/test_generate_index.py#L81) | 81 | `"    assert by_name[\"Settings.CLASS_SETTING\"].kind == \"متغير/ثابت Python\""` | — |
-| [SRC-FA4E1423C3-L000082](../../tests/test_generate_index.py#L82) | 82 | `"    assert \"local_only\" not in by_name"` | — |
-| [SRC-FA4E1423C3-L000083](../../tests/test_generate_index.py#L83) | 83 | `""` | — |
-| [SRC-FA4E1423C3-L000084](../../tests/test_generate_index.py#L84) | 84 | `""` | — |
-| [SRC-FA4E1423C3-L000085](../../tests/test_generate_index.py#L85) | 85 | `"def test_indexes_frontend_ids_javascript_symbols_css_and_documentation_headings("` | — |
-| [SRC-FA4E1423C3-L000086](../../tests/test_generate_index.py#L86) | 86 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000087](../../tests/test_generate_index.py#L87) | 87 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000088](../../tests/test_generate_index.py#L88) | 88 | `"    \"\"\"Frontend declarations and Markdown headings remain navigable without language parsers.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000089](../../tests/test_generate_index.py#L89) | 89 | `"    web_dir = tmp_path / \"web\""` | — |
-| [SRC-FA4E1423C3-L000090](../../tests/test_generate_index.py#L90) | 90 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000091](../../tests/test_generate_index.py#L91) | 91 | `"    web_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000092](../../tests/test_generate_index.py#L92) | 92 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000093](../../tests/test_generate_index.py#L93) | 93 | `"    (web_dir / \"agent.html\").write_text("` | — |
-| [SRC-FA4E1423C3-L000094](../../tests/test_generate_index.py#L94) | 94 | `"        '<div id=\"chat-panel\" name=\"question-box\" data-testid=\"send-button\"></div>\\n'"` | — |
-| [SRC-FA4E1423C3-L000095](../../tests/test_generate_index.py#L95) | 95 | `"        \"<style>\\n\""` | — |
-| [SRC-FA4E1423C3-L000096](../../tests/test_generate_index.py#L96) | 96 | `"        \".chat-panel { --accent-color: #fff; }\\n\""` | — |
-| [SRC-FA4E1423C3-L000097](../../tests/test_generate_index.py#L97) | 97 | `"        \"#answer-panel { display: block; }\\n\""` | — |
-| [SRC-FA4E1423C3-L000098](../../tests/test_generate_index.py#L98) | 98 | `"        \"</style>\\n\""` | — |
-| [SRC-FA4E1423C3-L000099](../../tests/test_generate_index.py#L99) | 99 | `"        \"<script>\\n\""` | — |
-| [SRC-FA4E1423C3-L000100](../../tests/test_generate_index.py#L100) | 100 | `"        \"function sendMessage() { return true; }\\n\""` | — |
-| [SRC-FA4E1423C3-L000101](../../tests/test_generate_index.py#L101) | 101 | `"        \"class AgentCore {}\\n\""` | — |
-| [SRC-FA4E1423C3-L000102](../../tests/test_generate_index.py#L102) | 102 | `"        \"const fetchAnswer = async (question) => question;\\n\""` | — |
-| [SRC-FA4E1423C3-L000103](../../tests/test_generate_index.py#L103) | 103 | `"        \"const ACCESS_TOKEN = 'example';\\n\""` | — |
-| [SRC-FA4E1423C3-L000104](../../tests/test_generate_index.py#L104) | 104 | `"        \"</script>\\n\","` | — |
-| [SRC-FA4E1423C3-L000105](../../tests/test_generate_index.py#L105) | 105 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000106](../../tests/test_generate_index.py#L106) | 106 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000107](../../tests/test_generate_index.py#L107) | 107 | `"    (docs_dir / \"guide.md\").write_text("` | — |
-| [SRC-FA4E1423C3-L000108](../../tests/test_generate_index.py#L108) | 108 | `"        \"# User Guide\\n## Troubleshooting\\n\","` | — |
-| [SRC-FA4E1423C3-L000109](../../tests/test_generate_index.py#L109) | 109 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000110](../../tests/test_generate_index.py#L110) | 110 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000111](../../tests/test_generate_index.py#L111) | 111 | `"    (tmp_path / \"settings.yml\").write_text("` | — |
-| [SRC-FA4E1423C3-L000112](../../tests/test_generate_index.py#L112) | 112 | `"        \"OMARAI_ENABLED: true\\nrequest-budget:\\n  max-calls: 3\\n\","` | — |
-| [SRC-FA4E1423C3-L000113](../../tests/test_generate_index.py#L113) | 113 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000114](../../tests/test_generate_index.py#L114) | 114 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000115](../../tests/test_generate_index.py#L115) | 115 | `""` | — |
-| [SRC-FA4E1423C3-L000116](../../tests/test_generate_index.py#L116) | 116 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000117](../../tests/test_generate_index.py#L117) | 117 | `"    symbols = INDEXER.scan_static_symbols(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000118](../../tests/test_generate_index.py#L118) | 118 | `"    names_by_kind = {(symbol.kind, symbol.name) for symbol in symbols}"` | — |
-| [SRC-FA4E1423C3-L000119](../../tests/test_generate_index.py#L119) | 119 | `""` | — |
-| [SRC-FA4E1423C3-L000120](../../tests/test_generate_index.py#L120) | 120 | `"    assert (\"قيمة سمة HTML (id)\", \"chat-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000121](../../tests/test_generate_index.py#L121) | 121 | `"    assert (\"قيمة سمة HTML (name)\", \"question-box\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000122](../../tests/test_generate_index.py#L122) | 122 | `"    assert (\"قيمة سمة HTML (data-testid)\", \"send-button\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000123](../../tests/test_generate_index.py#L123) | 123 | `"    assert (\"دالة JavaScript/TypeScript\", \"sendMessage\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000124](../../tests/test_generate_index.py#L124) | 124 | `"    assert (\"كلاس JavaScript/TypeScript\", \"AgentCore\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000125](../../tests/test_generate_index.py#L125) | 125 | `"    assert (\"دالة JavaScript/TypeScript\", \"fetchAnswer\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000126](../../tests/test_generate_index.py#L126) | 126 | `"    assert (\"متغير JavaScript/TypeScript\", \"ACCESS_TOKEN\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000127](../../tests/test_generate_index.py#L127) | 127 | `"    assert (\"محدد class في CSS\", \"chat-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000128](../../tests/test_generate_index.py#L128) | 128 | `"    assert (\"محدد id في CSS\", \"answer-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000129](../../tests/test_generate_index.py#L129) | 129 | `"    assert (\"متغير CSS مخصص\", \"accent-color\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000130](../../tests/test_generate_index.py#L130) | 130 | `"    assert (\"عنوان Markdown (H1)\", \"User Guide\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000131](../../tests/test_generate_index.py#L131) | 131 | `"    assert (\"عنوان Markdown (H2)\", \"Troubleshooting\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000132](../../tests/test_generate_index.py#L132) | 132 | `"    assert (\"مفتاح إعداد YAML\", \"OMARAI_ENABLED\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000133](../../tests/test_generate_index.py#L133) | 133 | `"    assert (\"اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE\", \"OMARAI_ENABLED\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000134](../../tests/test_generate_index.py#L134) | 134 | `""` | — |
