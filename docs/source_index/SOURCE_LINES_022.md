@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000440 إلى SRC-B2C95EAEE1-L000028
+- النطاق: SRC-D17CE3D12F-L000440 إلى SRC-B2C95EAEE1-L000001
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -806,6 +806,33 @@
 | [SRC-9A0DFA994E-L000100](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L100) | 100 | ``"تغطي `tests/test_task_understanding.py` عائلات البحث والكتابة والترجمة والحساب والبرمجة وتحليل البيانات والتخطيط والإبداع والصحة والقانون، وقيود السوق والسنة والميزانية والرابط، وطلب الحداثة، والموقع الرسمي، والرأي الاجتماعي، والالتباس، وحدود مصفوفة الاستعلامات، والمدخلات الإلزامية الناقصة، وتفضيلات الإخراج، والتصادمات اللفظية، وتنظيف TaskSpec من أسماء أدوات وحقول غير مسموح بها. وتختبر `tests/test_web_agent.py` ظهور المواصفة في استجابة الوكيل وفي مسارات الإجابة المحلية، وحالة الأدلة غير الكافية، والاستيضاح قبل التخطيط عندما يلزم مدخل أساسي، ومنع تسرب مصدر ويب عادي إلى إصلاح بحث اجتماعي."`` | — |
 | [SRC-9A0DFA994E-L000101](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L101) | 101 | `""` | — |
 | [SRC-9A0DFA994E-L000102](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L102) | 102 | `"الحكم على جودة الفهم في الواقع يحتاج بالإضافة إلى الاختبارات الحتمية إلى مجموعة تقييم بشرية ممثلة للهجات والأسئلة المركبة والمتابعات وتغيير الموضوع، وقياس أخطاء الاسترجاع والامتناع والادعاءات غير المسندة. لا تُعد تغطية الاختبارات بحد ذاتها دليلًا على أن كل صيغة طبيعية مفهومة."` | — |
+| [SRC-9A0DFA994E-L000103](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L103) | 103 | `""` | — |
+| [SRC-9A0DFA994E-L000104](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L104) | 104 | `""` | — |
+| [SRC-9A0DFA994E-L000105](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L105) | 105 | `"## مصفوفة الاستدلال وقواعد القرار — التحديث الإضافي"` | — |
+| [SRC-9A0DFA994E-L000106](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L106) | 106 | `""` | — |
+| [SRC-9A0DFA994E-L000107](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L107) | 107 | `"تتضمن مواصفة المهمة الآن **reasoning_strategy_ids** ومصفوفة قرار ذات مراحل ثابتة، ويُوسّع كل معرّف إلى إرشاد عربي مكتوب داخل الشفرة بعد التحقق من قائمة السماح. هذه إرشادات تشغيل للبحث والتحليل، وليست مطالبة بإظهار سلسلة التفكير الداخلية للمستخدم."` | — |
+| [SRC-9A0DFA994E-L000108](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L108) | 108 | `""` | — |
+| [SRC-9A0DFA994E-L000109](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L109) | 109 | `"### ملفات قواعد الاستدلال"` | — |
+| [SRC-9A0DFA994E-L000110](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L110) | 110 | `""` | — |
+| [SRC-9A0DFA994E-L000111](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L111) | 111 | `"- **سياق وقيود:** الحفاظ على مقصد المستخدم والقيود الصريحة، وربط المتابعة بمرجع معروف، وطلب المدخل الإلزامي الناقص بدل التخمين."` | — |
+| [SRC-9A0DFA994E-L000112](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L112) | 112 | `"- **بحث حالي:** التفريق بين تاريخ وقوع الحدث وتاريخ النشر وآخر تحديث والوصول، واستبعاد الأدلة القديمة عند إثبات حالة متغيرة."` | — |
+| [SRC-9A0DFA994E-L000113](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L113) | 113 | `"- **مواقع رسمية:** حل اسم الجهة والبلد، والبحث عن رابط رسمي أو إحالة مستقلة موثوقة، وعدم اعتبار امتداد النطاق وحده إثبات ملكية."` | — |
+| [SRC-9A0DFA994E-L000114](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L114) | 114 | `"- **مقارنة وتوصية:** تفكيك كل معيار، وتوحيد الوحدات والعملات والظروف، والفصل بين المواصفات وتجارب الأفراد، وإظهار ما لم يتوفر له دليل."` | — |
+| [SRC-9A0DFA994E-L000115](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L115) | 115 | `"- **آراء الناس:** فصل التجربة المحتملة عن الترويج والسؤال والمحتوى الصحفي، وتحديد حجم العينة وحدود التعميم."` | — |
+| [SRC-9A0DFA994E-L000116](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L116) | 116 | `"- **تشخيص الأعطال والبرمجة:** تسجيل الخطأ المرصود والبيئة، وتوليد فرضيات قابلة للاختبار، والرجوع إلى المرجع الفني الأصلي، والبدء بخطوات منخفضة المخاطر."` | — |
+| [SRC-9A0DFA994E-L000117](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L117) | 117 | `"- **الصحة والقانون:** تجنب تحويل المعلومات العامة إلى تشخيص شخصي أو مشورة قانونية، مع مراعاة مصدر الجهة المختصة والاختصاص وتاريخ النفاذ والاستعجال."` | — |
+| [SRC-9A0DFA994E-L000118](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L118) | 118 | `"- **البيانات والحساب والترجمة والكتابة والتخطيط:** فحص تعريف المقياس والوحدات والمدخلات والافتراضات، وحفظ المعنى والنبرة والحقائق المقدمة، وفصل الخطة المقترحة عن الإجراء المنفذ."` | — |
+| [SRC-9A0DFA994E-L000119](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L119) | 119 | `""` | — |
+| [SRC-9A0DFA994E-L000120](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L120) | 120 | `"### مصفوفة القرار الموحدة"` | — |
+| [SRC-9A0DFA994E-L000121](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L121) | 121 | `""` | — |
+| [SRC-9A0DFA994E-L000122](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L122) | 122 | `"1. **تفسير الطلب:** هل الهدف والقيود والمرجع واضح؟ إن غاب مدخل إلزامي، استوضح قبل التنفيذ."` | — |
+| [SRC-9A0DFA994E-L000123](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L123) | 123 | `"2. **اختيار المسار:** هل الأداة مطلوبة ومسموح بها ومهيأة؟ إذا لم تكن كذلك، سجّل أنها غير متاحة ولا تدّعِ تشغيلها."` | — |
+| [SRC-9A0DFA994E-L000124](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L124) | 124 | `"3. **خطة البحث:** هل الاستعلامات مرتبطة بالموضوع ومختلفة بما يكفي وضمن الميزانية؟ امنع التكرار والتوسع غير المحدود."` | — |
+| [SRC-9A0DFA994E-L000125](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L125) | 125 | `"4. **قبول الدليل:** افحص الصلة وهوية المصدر والحداثة وقابلية قراءة الصفحة وسياسة الوضع، وسجّل أسباب الرفض."` | — |
+| [SRC-9A0DFA994E-L000126](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L126) | 126 | `"5. **صياغة الإجابة:** اربط الادعاءات الجوهرية بالدليل، وسمِّ الاستنتاجات والفرضيات وحدود العينة، وامتنع عن المحاور التي لا يسندها دليل."` | — |
+| [SRC-9A0DFA994E-L000127](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L127) | 127 | `"6. **الحالة النهائية:** اعرض ما تم فعله فعلًا وما فشل وما لم يُختبر، ولا تخلط إكمال المسار بصحة كل حقيقة."` | — |
+| [SRC-9A0DFA994E-L000128](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L128) | 128 | `""` | — |
+| [SRC-9A0DFA994E-L000129](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L129) | 129 | `"المصفوفة معرّفة بقيم ثابتة في الشفرة؛ لا يقبل المدقق صفوفًا اعتباطية أو أسماء أدوات أضافها مخطط غير موثوق. يظل نجاح الاختبارات البرمجية دليلًا على سلوك المسارات المختبرة فقط، لا على جودة الفهم لكل لهجة أو نجاح كل موصل حي."` | — |
 ## وثائق وفهرسة
 
 ### FILE-B2C95EAEE1 — [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1)
@@ -816,30 +843,3 @@
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
 | [SRC-B2C95EAEE1-L000001](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | 1 | `"# Omarai — تقرير التحقق الهندسي بعد دمج PR #81"` | — |
-| [SRC-B2C95EAEE1-L000002](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L2) | 2 | `""` | — |
-| [SRC-B2C95EAEE1-L000003](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L3) | 3 | `"## جلسة 1 — تثبيت خط الأساس بعد الدمج (23 أكتوبر 2026)"` | — |
-| [SRC-B2C95EAEE1-L000004](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L4) | 4 | `""` | — |
-| [SRC-B2C95EAEE1-L000005](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L5) | 5 | `"### الحالة المرجعية"` | — |
-| [SRC-B2C95EAEE1-L000006](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L6) | 6 | `""` | — |
-| [SRC-B2C95EAEE1-L000007](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L7) | 7 | ``"- **حالة PR #81:** `MERGED=true`. رابط PR: [#81](https://github.com/mosabosama2030-oss/omarai/pull/81)."`` | — |
-| [SRC-B2C95EAEE1-L000008](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L8) | 8 | ``"- **Commit الدمج:** [`9f6674abf8679a0630d95b269b54a7ef8629c3bf`](https://github.com/mosabosama2030-oss/omarai/commit/9f6674abf8679a0630d95b269b54a7ef8629c3bf)."`` | — |
-| [SRC-B2C95EAEE1-L000009](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L9) | 9 | ``"- **رأس `main` الذي قارنته GitHub مع المرجع الحالي:** [`00a3ede039922c0c24097e89f653e6d3c984435d`](https://github.com/mosabosama2030-oss/omarai/commit/00a3ede039922c0c24097e89f653e6d3c984435d). المقارنة بين `main` وهذا SHA أعادت `identical` (`ahead_by=0`, `behind_by=0`)."`` | — |
-| [SRC-B2C95EAEE1-L000010](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L10) | 10 | ``"- **طبيعة الرأس الحالي:** `00a3ede...` تحديث للفهرس المولد بعد دمج #81؛ ليس تغييرًا في منطق البحث."`` | — |
-| [SRC-B2C95EAEE1-L000011](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L11) | 11 | `""` | — |
-| [SRC-B2C95EAEE1-L000012](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L12) | 12 | `"### نتائج الاختبار التي أمكن إثباتها"` | — |
-| [SRC-B2C95EAEE1-L000013](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L13) | 13 | `""` | — |
-| [SRC-B2C95EAEE1-L000014](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L14) | 14 | `"- [تشغيل CI #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) على رأس PR #81 السابق للدمج نجح في الوظائف الثلاث."` | — |
-| [SRC-B2C95EAEE1-L000015](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L15) | 15 | `"- Python 3.11: **384 passed**؛ Python 3.12: **384 passed**."` | — |
-| [SRC-B2C95EAEE1-L000016](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L16) | 16 | `"- Ruff ناجح؛ اختبارات تصنيف ملفات الفهرس ناجحة؛ توليد الفهرس والتحقق منه ناجحان؛ بناء الحاوية واختبار API المحمي ناجحان."` | — |
-| [SRC-B2C95EAEE1-L000017](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L17) | 17 | `"- PR #81 يعالج السباق السابق بين اختبار main وناشر الفهرس: عند تغييرات المصدر/الوثائق يعيد الاختبار توليد الفهرس في مساحة معزولة؛ وعند تغييرات مخرجات الفهرس وحدها يبقى الفحص الصارم قائمًا."` | — |
-| [SRC-B2C95EAEE1-L000018](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L18) | 18 | `""` | — |
-| [SRC-B2C95EAEE1-L000019](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L19) | 19 | `"### حالة التحقق على الرأس النهائي"` | — |
-| [SRC-B2C95EAEE1-L000020](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L20) | 20 | `""` | — |
-| [SRC-B2C95EAEE1-L000021](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L21) | 21 | ``"- **Push CI مباشر على `00a3ede...`: `NOT_CONFIRMED` في هذه المراجعة.** موصل GitHub المتاح يعيد هنا تشغيلات CI المرتبطة بطلبات الدمج ولا يتيح إثبات تشغيلات push النهائية المطلوبة بصورة مباشرة. لا يعني هذا فشلًا ولا نجاحًا؛ يجب فتح GitHub Actions والتحقق من التشغيل المرتبط بـ`main` وSHA الحالي."`` | — |
-| [SRC-B2C95EAEE1-L000022](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L22) | 22 | ``"- فهرس `main` موجود عند SHA `00a3ede...`، لكن نجاح تشغيل CI على رأس PR قبل الدمج ليس بديلًا عن فحص التشغيل بعد الدمج."`` | — |
-| [SRC-B2C95EAEE1-L000023](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L23) | 23 | `"- لا يوجد من هذا الفحص إثبات لاتصال موفري البحث والنموذج الحيين، أو جودة الإجابات الدلالية في الاستضافة، أو ثبات قاعدة البيانات والاستعادة على المضيف، أو أداء الحمل، أو قبول Android/RTL."` | — |
-| [SRC-B2C95EAEE1-L000024](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L24) | 24 | `""` | — |
-| [SRC-B2C95EAEE1-L000025](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L25) | 25 | `"### حكم الجلسة 1"` | — |
-| [SRC-B2C95EAEE1-L000026](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L26) | 26 | `""` | — |
-| [SRC-B2C95EAEE1-L000027](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L27) | 27 | `"**PARTIAL — اكتمل تحديد الرأس المرجعي، وثبت دمج #81، وثبت نجاح CI قبل الدمج، وصُححت الوثائق على فرع مراجعة.** لا تُغلق الجلسة بالكامل حتى:"` | — |
-| [SRC-B2C95EAEE1-L000028](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L28) | 28 | ``"1. التحقق من تشغيل CI ناجح مرتبط بـSHA الحالي `00a3ede...` على `main`؛ أو تشغيل/إعادة تشغيل workflow المعتمد على ذلك الرأس إذا لم يوجد تشغيل صالح."`` | — |

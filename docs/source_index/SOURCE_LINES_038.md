@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2614DCB6FB-L000083 إلى SRC-F725E90B2A-L000253
+- النطاق: SRC-2614DCB6FB-L000056 إلى SRC-F725E90B2A-L000226
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2614DCB6FB-L000056](../../tests/test_search_code.py#L56) | 56 | `"    (tmp_path / \"credentials.example\").write_text(\"TOKEN=replace-me\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-2614DCB6FB-L000057](../../tests/test_search_code.py#L57) | 57 | `""` | — |
+| [SRC-2614DCB6FB-L000058](../../tests/test_search_code.py#L58) | 58 | `"    hits = SEARCH.search_repository(tmp_path, \"private-value\")"` | — |
+| [SRC-2614DCB6FB-L000059](../../tests/test_search_code.py#L59) | 59 | `"    safe_example = SEARCH.search_repository(tmp_path, \"replace-me\")"` | — |
+| [SRC-2614DCB6FB-L000060](../../tests/test_search_code.py#L60) | 60 | `""` | — |
+| [SRC-2614DCB6FB-L000061](../../tests/test_search_code.py#L61) | 61 | `"    assert hits == []"` | — |
+| [SRC-2614DCB6FB-L000062](../../tests/test_search_code.py#L62) | 62 | `"    assert len(safe_example) == 1"` | — |
+| [SRC-2614DCB6FB-L000063](../../tests/test_search_code.py#L63) | 63 | `"    assert safe_example[0].file == \"credentials.example\""` | — |
+| [SRC-2614DCB6FB-L000064](../../tests/test_search_code.py#L64) | 64 | `""` | — |
+| [SRC-2614DCB6FB-L000065](../../tests/test_search_code.py#L65) | 65 | `""` | — |
+| [SRC-2614DCB6FB-L000066](../../tests/test_search_code.py#L66) | 66 | `"def test_search_validates_query_limits_and_reports_invalid_regex(tmp_path: Path) -> None:"` | — |
+| [SRC-2614DCB6FB-L000067](../../tests/test_search_code.py#L67) | 67 | `"    \"\"\"Invalid search controls fail clearly instead of silently returning confusing results.\"\"\""` | — |
+| [SRC-2614DCB6FB-L000068](../../tests/test_search_code.py#L68) | 68 | `"    try:"` | — |
+| [SRC-2614DCB6FB-L000069](../../tests/test_search_code.py#L69) | 69 | `"        SEARCH.search_repository(tmp_path, \"\")"` | — |
+| [SRC-2614DCB6FB-L000070](../../tests/test_search_code.py#L70) | 70 | `"    except ValueError as exc:"` | — |
+| [SRC-2614DCB6FB-L000071](../../tests/test_search_code.py#L71) | 71 | `"        assert \"فارغ\" in str(exc)"` | — |
+| [SRC-2614DCB6FB-L000072](../../tests/test_search_code.py#L72) | 72 | `"    else:"` | — |
+| [SRC-2614DCB6FB-L000073](../../tests/test_search_code.py#L73) | 73 | `"        raise AssertionError(\"An empty search query should be rejected.\")"` | — |
+| [SRC-2614DCB6FB-L000074](../../tests/test_search_code.py#L74) | 74 | `""` | — |
+| [SRC-2614DCB6FB-L000075](../../tests/test_search_code.py#L75) | 75 | `"    for kwargs in ({\"max_results\": 0}, {\"context\": -1}):"` | — |
+| [SRC-2614DCB6FB-L000076](../../tests/test_search_code.py#L76) | 76 | `"        try:"` | — |
+| [SRC-2614DCB6FB-L000077](../../tests/test_search_code.py#L77) | 77 | `"            SEARCH.search_repository(tmp_path, \"needle\", **kwargs)"` | — |
+| [SRC-2614DCB6FB-L000078](../../tests/test_search_code.py#L78) | 78 | `"        except ValueError:"` | — |
+| [SRC-2614DCB6FB-L000079](../../tests/test_search_code.py#L79) | 79 | `"            continue"` | — |
+| [SRC-2614DCB6FB-L000080](../../tests/test_search_code.py#L80) | 80 | `"        raise AssertionError(f\"Invalid search limits should be rejected: {kwargs}\")"` | — |
+| [SRC-2614DCB6FB-L000081](../../tests/test_search_code.py#L81) | 81 | `""` | — |
+| [SRC-2614DCB6FB-L000082](../../tests/test_search_code.py#L82) | 82 | `"    try:"` | — |
 | [SRC-2614DCB6FB-L000083](../../tests/test_search_code.py#L83) | 83 | `"        SEARCH.search_repository(tmp_path, \"(\", use_regex=True)"` | — |
 | [SRC-2614DCB6FB-L000084](../../tests/test_search_code.py#L84) | 84 | `"    except re.error:"` | — |
 | [SRC-2614DCB6FB-L000085](../../tests/test_search_code.py#L85) | 85 | `"        pass"` | — |
@@ -816,30 +843,3 @@
 | [SRC-F725E90B2A-L000224](../../tests/test_web_agent.py#L224) | 224 | `"        \"_request_completion\","` | — |
 | [SRC-F725E90B2A-L000225](../../tests/test_web_agent.py#L225) | 225 | `"        lambda *args, **kwargs: ("` | — |
 | [SRC-F725E90B2A-L000226](../../tests/test_web_agent.py#L226) | 226 | `"            '{\"queries\":[\"مراجعات السيارات الكهربائية\"],\"social_focus\":true,'"` | — |
-| [SRC-F725E90B2A-L000227](../../tests/test_web_agent.py#L227) | 227 | `"            '\"freshness\":\"any\",\"depth\":\"deep\",\"platforms\":[\"reddit\"]}'"` | — |
-| [SRC-F725E90B2A-L000228](../../tests/test_web_agent.py#L228) | 228 | `"        ),"` | — |
-| [SRC-F725E90B2A-L000229](../../tests/test_web_agent.py#L229) | 229 | `"    )"` | — |
-| [SRC-F725E90B2A-L000230](../../tests/test_web_agent.py#L230) | 230 | `"    plan = agent._plan_search("` | — |
-| [SRC-F725E90B2A-L000231](../../tests/test_web_agent.py#L231) | 231 | `"        \"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\","` | — |
-| [SRC-F725E90B2A-L000232](../../tests/test_web_agent.py#L232) | 232 | `"        [],"` | — |
-| [SRC-F725E90B2A-L000233](../../tests/test_web_agent.py#L233) | 233 | `"    )"` | — |
-| [SRC-F725E90B2A-L000234](../../tests/test_web_agent.py#L234) | 234 | `"    assert plan[\"planning_method\"] == \"language_model\""` | — |
-| [SRC-F725E90B2A-L000235](../../tests/test_web_agent.py#L235) | 235 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L000236](../../tests/test_web_agent.py#L236) | 236 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-F725E90B2A-L000237](../../tests/test_web_agent.py#L237) | 237 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L000238](../../tests/test_web_agent.py#L238) | 238 | `""` | — |
-| [SRC-F725E90B2A-L000239](../../tests/test_web_agent.py#L239) | 239 | `""` | — |
-| [SRC-F725E90B2A-L000240](../../tests/test_web_agent.py#L240) | 240 | `"def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000241](../../tests/test_web_agent.py#L241) | 241 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000242](../../tests/test_web_agent.py#L242) | 242 | `""` | — |
-| [SRC-F725E90B2A-L000243](../../tests/test_web_agent.py#L243) | 243 | `"    reddit_xml = \"\"\"<rss><channel><item>"` | — |
-| [SRC-F725E90B2A-L000244](../../tests/test_web_agent.py#L244) | 244 | `"      <title>تجربة سيارة كهربائية</title>"` | — |
-| [SRC-F725E90B2A-L000245](../../tests/test_web_agent.py#L245) | 245 | `"      <link>https://www.reddit.com/r/cars/comments/abc123/test/</link>"` | — |
-| [SRC-F725E90B2A-L000246](../../tests/test_web_agent.py#L246) | 246 | `"      <description>استهلاك البطارية في الحر</description>"` | — |
-| [SRC-F725E90B2A-L000247](../../tests/test_web_agent.py#L247) | 247 | `"      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>"` | — |
-| [SRC-F725E90B2A-L000248](../../tests/test_web_agent.py#L248) | 248 | `"    </item></channel></rss>\"\"\""` | — |
-| [SRC-F725E90B2A-L000249](../../tests/test_web_agent.py#L249) | 249 | `""` | — |
-| [SRC-F725E90B2A-L000250](../../tests/test_web_agent.py#L250) | 250 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000251](../../tests/test_web_agent.py#L251) | 251 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000252](../../tests/test_web_agent.py#L252) | 252 | `""` | — |
-| [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `"        def __init__(self, text=\"\", data=None):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-29A9CD43D1-L000168 إلى SRC-FA4E1423C3-L000158
+- النطاق: SRC-29A9CD43D1-L000141 إلى SRC-FA4E1423C3-L000131
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-29A9CD43D1-L000141](../../tests/test_dialogue_context_pipeline.py#L141) | 141 | `"    assert result[\"question\"] == question  # Preserve the visible user utterance."` | — |
+| [SRC-29A9CD43D1-L000142](../../tests/test_dialogue_context_pipeline.py#L142) | 142 | `"    assert result[\"used_web_search\"] is True"` | — |
+| [SRC-29A9CD43D1-L000143](../../tests/test_dialogue_context_pipeline.py#L143) | 143 | `"    assert len(seen[\"model_prompts\"]) == 2  # one context pass + one search-plan pass"` | — |
+| [SRC-29A9CD43D1-L000144](../../tests/test_dialogue_context_pipeline.py#L144) | 144 | `"    assert \"iPhone 17\" in seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000145](../../tests/test_dialogue_context_pipeline.py#L145) | 145 | `"    assert \"256 جيجابايت\" in seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000146](../../tests/test_dialogue_context_pipeline.py#L146) | 146 | `"    assert \"الضمان الدولي\" in seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000147](../../tests/test_dialogue_context_pipeline.py#L147) | 147 | `"    assert seen[\"reviewed_question\"] == seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000148](../../tests/test_dialogue_context_pipeline.py#L148) | 148 | `"    context_result = result[\"research_plan\"][\"dialogue_context\"]"` | — |
+| [SRC-29A9CD43D1-L000149](../../tests/test_dialogue_context_pipeline.py#L149) | 149 | `"    assert context_result[\"method\"] == \"llm_semantic_context\""` | — |
+| [SRC-29A9CD43D1-L000150](../../tests/test_dialogue_context_pipeline.py#L150) | 150 | `"    assert context_result[\"slots\"][\"country\"] == \"مصر\""` | — |
+| [SRC-29A9CD43D1-L000151](../../tests/test_dialogue_context_pipeline.py#L151) | 151 | `"    assert context_result[\"changed_slots\"] == [\"aspect\"]"` | — |
+| [SRC-29A9CD43D1-L000152](../../tests/test_dialogue_context_pipeline.py#L152) | 152 | `"    assert context_result[\"needs_web\"] is True"` | — |
+| [SRC-29A9CD43D1-L000153](../../tests/test_dialogue_context_pipeline.py#L153) | 153 | `""` | — |
+| [SRC-29A9CD43D1-L000154](../../tests/test_dialogue_context_pipeline.py#L154) | 154 | `""` | — |
+| [SRC-29A9CD43D1-L000155](../../tests/test_dialogue_context_pipeline.py#L155) | 155 | `"def test_semantic_context_asks_before_search_when_two_referents_are_plausible("` | — |
+| [SRC-29A9CD43D1-L000156](../../tests/test_dialogue_context_pipeline.py#L156) | 156 | `"    monkeypatch: pytest.MonkeyPatch,"` | — |
+| [SRC-29A9CD43D1-L000157](../../tests/test_dialogue_context_pipeline.py#L157) | 157 | `") -> None:"` | — |
+| [SRC-29A9CD43D1-L000158](../../tests/test_dialogue_context_pipeline.py#L158) | 158 | `"    agent = WebAgent()"` | — |
+| [SRC-29A9CD43D1-L000159](../../tests/test_dialogue_context_pipeline.py#L159) | 159 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-29A9CD43D1-L000160](../../tests/test_dialogue_context_pipeline.py#L160) | 160 | `"    history = ["` | — |
+| [SRC-29A9CD43D1-L000161](../../tests/test_dialogue_context_pipeline.py#L161) | 161 | `"        {\"role\": \"user\", \"content\": \"قارن بين iPhone 17 وSamsung S26\"},"` | — |
+| [SRC-29A9CD43D1-L000162](../../tests/test_dialogue_context_pipeline.py#L162) | 162 | `"        {\"role\": \"assistant\", \"content\": \"ذكرت الهاتفين في المقارنة.\"},"` | — |
+| [SRC-29A9CD43D1-L000163](../../tests/test_dialogue_context_pipeline.py#L163) | 163 | `"    ]"` | — |
+| [SRC-29A9CD43D1-L000164](../../tests/test_dialogue_context_pipeline.py#L164) | 164 | `"    ambiguous = {"` | — |
+| [SRC-29A9CD43D1-L000165](../../tests/test_dialogue_context_pipeline.py#L165) | 165 | `"        \"resolved_question\": \"What about the second one?\","` | — |
+| [SRC-29A9CD43D1-L000166](../../tests/test_dialogue_context_pipeline.py#L166) | 166 | `"        \"intent\": \"compare\","` | — |
+| [SRC-29A9CD43D1-L000167](../../tests/test_dialogue_context_pipeline.py#L167) | 167 | `"        \"topic\": \"اختيار الهاتف\","` | — |
 | [SRC-29A9CD43D1-L000168](../../tests/test_dialogue_context_pipeline.py#L168) | 168 | `"        \"entities\": [\"iPhone 17\", \"Samsung S26\"],"` | — |
 | [SRC-29A9CD43D1-L000169](../../tests/test_dialogue_context_pipeline.py#L169) | 169 | `"        \"slots\": {\"aspect\": \"الاختيار\"},"` | — |
 | [SRC-29A9CD43D1-L000170](../../tests/test_dialogue_context_pipeline.py#L170) | 170 | `"        \"changed_slots\": [],"` | — |
@@ -825,30 +852,3 @@
 | [SRC-FA4E1423C3-L000129](../../tests/test_generate_index.py#L129) | 129 | `"    assert (\"متغير CSS مخصص\", \"accent-color\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000130](../../tests/test_generate_index.py#L130) | 130 | `"    assert (\"عنوان Markdown (H1)\", \"User Guide\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000131](../../tests/test_generate_index.py#L131) | 131 | `"    assert (\"عنوان Markdown (H2)\", \"Troubleshooting\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000132](../../tests/test_generate_index.py#L132) | 132 | `"    assert (\"مفتاح إعداد YAML\", \"OMARAI_ENABLED\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000133](../../tests/test_generate_index.py#L133) | 133 | `"    assert (\"اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE\", \"OMARAI_ENABLED\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000134](../../tests/test_generate_index.py#L134) | 134 | `""` | — |
-| [SRC-FA4E1423C3-L000135](../../tests/test_generate_index.py#L135) | 135 | `""` | — |
-| [SRC-FA4E1423C3-L000136](../../tests/test_generate_index.py#L136) | 136 | `"def test_repository_inventory_covers_files_and_excludes_private_runtime_paths("` | — |
-| [SRC-FA4E1423C3-L000137](../../tests/test_generate_index.py#L137) | 137 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000138](../../tests/test_generate_index.py#L138) | 138 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000139](../../tests/test_generate_index.py#L139) | 139 | `"    \"\"\"The file inventory includes docs/config and excludes known local secret/runtime files.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000140](../../tests/test_generate_index.py#L140) | 140 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000141](../../tests/test_generate_index.py#L141) | 141 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000142](../../tests/test_generate_index.py#L142) | 142 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000143](../../tests/test_generate_index.py#L143) | 143 | `"    (docs_dir / \"guide.md\").write_text(\"# Guide\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000144](../../tests/test_generate_index.py#L144) | 144 | `"    (tmp_path / \".env\").write_text(\"OPENROUTER_API_KEY=private-value\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000145](../../tests/test_generate_index.py#L145) | 145 | `"    (tmp_path / \".env.example\").write_text("` | — |
-| [SRC-FA4E1423C3-L000146](../../tests/test_generate_index.py#L146) | 146 | `"        \"OPENROUTER_API_KEY=replace-me\\n\", encoding=\"utf-8\""` | — |
-| [SRC-FA4E1423C3-L000147](../../tests/test_generate_index.py#L147) | 147 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000148](../../tests/test_generate_index.py#L148) | 148 | `"    (tmp_path / \"local.sqlite3\").write_bytes(b\"not a real database\")"` | — |
-| [SRC-FA4E1423C3-L000149](../../tests/test_generate_index.py#L149) | 149 | `"    (tmp_path / \"logo.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
-| [SRC-FA4E1423C3-L000150](../../tests/test_generate_index.py#L150) | 150 | `""` | — |
-| [SRC-FA4E1423C3-L000151](../../tests/test_generate_index.py#L151) | 151 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000152](../../tests/test_generate_index.py#L152) | 152 | `"    paths = {item.file for item in inventory}"` | — |
-| [SRC-FA4E1423C3-L000153](../../tests/test_generate_index.py#L153) | 153 | `"    by_path = {item.file: item for item in inventory}"` | — |
-| [SRC-FA4E1423C3-L000154](../../tests/test_generate_index.py#L154) | 154 | `""` | — |
-| [SRC-FA4E1423C3-L000155](../../tests/test_generate_index.py#L155) | 155 | `"    assert \"app.py\" in paths"` | — |
-| [SRC-FA4E1423C3-L000156](../../tests/test_generate_index.py#L156) | 156 | `"    assert \"docs/guide.md\" in paths"` | — |
-| [SRC-FA4E1423C3-L000157](../../tests/test_generate_index.py#L157) | 157 | `"    assert \".env.example\" in paths"` | — |
-| [SRC-FA4E1423C3-L000158](../../tests/test_generate_index.py#L158) | 158 | `"    assert \".env\" not in paths"` | — |

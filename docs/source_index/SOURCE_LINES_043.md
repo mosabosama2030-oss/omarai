@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003454 إلى SRC-DE7EABE998-L000288
+- النطاق: SRC-F725E90B2A-L003427 إلى SRC-DE7EABE998-L000261
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003427](../../tests/test_web_agent.py#L3427) | 3427 | `"        agent, \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L003428](../../tests/test_web_agent.py#L3428) | 3428 | `"        lambda _question, _history: {"` | — |
+| [SRC-F725E90B2A-L003429](../../tests/test_web_agent.py#L3429) | 3429 | `"            \"queries\": [question],"` | — |
+| [SRC-F725E90B2A-L003430](../../tests/test_web_agent.py#L3430) | 3430 | `"            \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L003431](../../tests/test_web_agent.py#L3431) | 3431 | `"            \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L003432](../../tests/test_web_agent.py#L3432) | 3432 | `"            \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L003433](../../tests/test_web_agent.py#L3433) | 3433 | `"            \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L003434](../../tests/test_web_agent.py#L3434) | 3434 | `"            \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L003435](../../tests/test_web_agent.py#L3435) | 3435 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L003436](../../tests/test_web_agent.py#L3436) | 3436 | `"        },"` | — |
+| [SRC-F725E90B2A-L003437](../../tests/test_web_agent.py#L3437) | 3437 | `"    )"` | — |
+| [SRC-F725E90B2A-L003438](../../tests/test_web_agent.py#L3438) | 3438 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003439](../../tests/test_web_agent.py#L3439) | 3439 | `"        \"agents.web_agent.fallback_plan\","` | — |
+| [SRC-F725E90B2A-L003440](../../tests/test_web_agent.py#L3440) | 3440 | `"        lambda *args, **kwargs: {\"queries\": [question]},"` | — |
+| [SRC-F725E90B2A-L003441](../../tests/test_web_agent.py#L3441) | 3441 | `"    )"` | — |
+| [SRC-F725E90B2A-L003442](../../tests/test_web_agent.py#L3442) | 3442 | `""` | — |
+| [SRC-F725E90B2A-L003443](../../tests/test_web_agent.py#L3443) | 3443 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L003444](../../tests/test_web_agent.py#L3444) | 3444 | `"        observed_plans.append(dict(research_plan))"` | — |
+| [SRC-F725E90B2A-L003445](../../tests/test_web_agent.py#L3445) | 3445 | `"        return [], [], {"` | — |
+| [SRC-F725E90B2A-L003446](../../tests/test_web_agent.py#L3446) | 3446 | `"            \"queries_planned\": len(research_plan.get(\"queries\", [])),"` | — |
+| [SRC-F725E90B2A-L003447](../../tests/test_web_agent.py#L3447) | 3447 | `"            \"queries_attempted\": 0,"` | — |
+| [SRC-F725E90B2A-L003448](../../tests/test_web_agent.py#L3448) | 3448 | `"            \"query_results\": [],"` | — |
+| [SRC-F725E90B2A-L003449](../../tests/test_web_agent.py#L3449) | 3449 | `"            \"unique_sources\": 0,"` | — |
+| [SRC-F725E90B2A-L003450](../../tests/test_web_agent.py#L3450) | 3450 | `"            \"pages_fetched\": 0,"` | — |
+| [SRC-F725E90B2A-L003451](../../tests/test_web_agent.py#L3451) | 3451 | `"            \"providers_used\": [],"` | — |
+| [SRC-F725E90B2A-L003452](../../tests/test_web_agent.py#L3452) | 3452 | `"            \"platform_counts\": {},"` | — |
+| [SRC-F725E90B2A-L003453](../../tests/test_web_agent.py#L3453) | 3453 | `"            \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L003454](../../tests/test_web_agent.py#L3454) | 3454 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-F725E90B2A-L003455](../../tests/test_web_agent.py#L3455) | 3455 | `"            \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L003456](../../tests/test_web_agent.py#L3456) | 3456 | `"            \"evidence_signals\": {},"` | — |
@@ -807,30 +834,3 @@
 | [SRC-DE7EABE998-L000259](../../web/agent.html#L259) | 259 | `"      : \"الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.\")"` | — |
 | [SRC-DE7EABE998-L000260](../../web/agent.html#L260) | 260 | `"  : researchErrorOutcome"` | — |
 | [SRC-DE7EABE998-L000261](../../web/agent.html#L261) | 261 | `"   ? \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا.\""` | — |
-| [SRC-DE7EABE998-L000262](../../web/agent.html#L262) | 262 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
-| [SRC-DE7EABE998-L000263](../../web/agent.html#L263) | 263 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
-| [SRC-DE7EABE998-L000264](../../web/agent.html#L264) | 264 | `" const attemptText=result&&result.search_attempted===true"` | — |
-| [SRC-DE7EABE998-L000265](../../web/agent.html#L265) | 265 | `"  ? (r.search_outcome===\"attempted_research_error\""` | — |
-| [SRC-DE7EABE998-L000266](../../web/agent.html#L266) | 266 | `"     ? \"بدأت محاولة البحث، لكن تعطل مسار تجميع الأدلة قبل اكتمال التقرير؛ لم يمكن تحديد عدد المصادر القابلة للاستخدام.\""` | — |
-| [SRC-DE7EABE998-L000267](../../web/agent.html#L267) | 267 | `"     : \"تمت محاولة البحث في الويب. عدد المصادر القابلة للاستخدام بعد التصفية: \"+(usableSourceCount??\"غير محدد\")+\".\")"` | — |
-| [SRC-DE7EABE998-L000268](../../web/agent.html#L268) | 268 | `"  : result&&result.search_attempted===false"` | — |
-| [SRC-DE7EABE998-L000269](../../web/agent.html#L269) | 269 | `"   ? \"لم تُنفّذ محاولة بحث ويب في هذه الجولة.\""` | — |
-| [SRC-DE7EABE998-L000270](../../web/agent.html#L270) | 270 | `"   : r.search_outcome===\"unknown_after_research_error\""` | — |
-| [SRC-DE7EABE998-L000271](../../web/agent.html#L271) | 271 | `"    ? \"تعطل مسار البحث، ولم يمكن تأكيد ما إذا كانت محاولة البحث قد بدأت أو كم مصدرًا كان قابلًا للاستخدام.\""` | — |
-| [SRC-DE7EABE998-L000272](../../web/agent.html#L272) | 272 | `"    : \"حالة محاولة البحث غير موضحة في الاستجابة.\";"` | — |
-| [SRC-DE7EABE998-L000273](../../web/agent.html#L273) | 273 | `" const qualityText='تصنيف جودة البحث يصف تغطية العملية والأدلة المتاحة، ولا يمثل احتمال صحة الوقائع.';"` | — |
-| [SRC-DE7EABE998-L000274](../../web/agent.html#L274) | 274 | `" const reviewText=r.claim_audit_semantics==='model_assisted_not_independent_fact_check'?'مراجعة الادعاءات تمت بمساعدة نموذج لغوي؛ وهي ليست تحققًا مستقلًا من صحة الحقائق.':'لم يثبت إجراء تحقق مستقل من صحة الحقائق.';"` | — |
-| [SRC-DE7EABE998-L000275](../../web/agent.html#L275) | 275 | `" const diversityText='اختلاف النطاقات المسجلة لا يثبت الاستقلال التحريري؛ فقد تنقل المواقع عن مصدر أصلي واحد.';"` | — |
-| [SRC-DE7EABE998-L000276](../../web/agent.html#L276) | 276 | `" const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class=\"report-note\">'+escapeHtml(n)+'</p>').join(\"\");"` | — |
-| [SRC-DE7EABE998-L000277](../../web/agent.html#L277) | 277 | `" const review=r.second_pass_review===\"model_claim_audit_completed\"?\"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)\":r.second_pass_review===\"model_claim_audit_completed_before_coverage_repair\"?\"تمت مراجعة المسودة قبل تعديل التغطية؛ النسخة المعدلة لم تخضع لمراجعة ثانية\":r.second_pass_review===\"model_claim_audit_unavailable\"?\"تعذرت مراجعة الادعاءات بمساعدة النموذج\":\"\";"` | — |
-| [SRC-DE7EABE998-L000278](../../web/agent.html#L278) | 278 | `" return '<div class=\"report-head\"><b>ملخص الأدلة وتغطية البحث</b><span class=\"coverage\">'+escapeHtml(scoreLabel)+'</span></div><div class=\"metrics\">'+metricHtml+'</div>'+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class=\"providers\">'+providerHtml+'</div>':\"\")+(review?'<p class=\"report-note\">'+escapeHtml(review)+'</p>':\"\")+details;"` | — |
-| [SRC-DE7EABE998-L000279](../../web/agent.html#L279) | 279 | `"}"` | — |
-| [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `"function addMessage(role,text,result,options={}){"` | — |
-| [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `" const welcome=$(\"welcome\");if(welcome)welcome.remove();"` | — |
-| [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `" const box=document.createElement(\"div\");box.className=\"message \"+(role===\"user\"?\"user\":\"assistant\");"` | — |
-| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `" const who=document.createElement(\"div\");who.className=\"who\";"` | — |
-| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" who.textContent=role===\"user\"?\"أنت\":(result&&result.used_language_model?\"Omarai · بحث وتحليل توليدي\":\"Omarai · إجابة جزئية أو احتياطية\");"` | — |
-| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" box.appendChild(who);"` | — |
-| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const linkedQuestion=(options&&options.question)\|\|(result&&result.question);"` | — |
-| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `" if(role===\"assistant\"&&linkedQuestion){"` | — |
-| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `"  const context=document.createElement(\"div\");context.className=\"message-context\";"` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **044**
-- سجلات الأسطر: **175**
-- النطاق: SRC-DE7EABE998-L000289 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **202**
+- النطاق: SRC-DE7EABE998-L000262 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000262](../../web/agent.html#L262) | 262 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
+| [SRC-DE7EABE998-L000263](../../web/agent.html#L263) | 263 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
+| [SRC-DE7EABE998-L000264](../../web/agent.html#L264) | 264 | `" const attemptText=result&&result.search_attempted===true"` | — |
+| [SRC-DE7EABE998-L000265](../../web/agent.html#L265) | 265 | `"  ? (r.search_outcome===\"attempted_research_error\""` | — |
+| [SRC-DE7EABE998-L000266](../../web/agent.html#L266) | 266 | `"     ? \"بدأت محاولة البحث، لكن تعطل مسار تجميع الأدلة قبل اكتمال التقرير؛ لم يمكن تحديد عدد المصادر القابلة للاستخدام.\""` | — |
+| [SRC-DE7EABE998-L000267](../../web/agent.html#L267) | 267 | `"     : \"تمت محاولة البحث في الويب. عدد المصادر القابلة للاستخدام بعد التصفية: \"+(usableSourceCount??\"غير محدد\")+\".\")"` | — |
+| [SRC-DE7EABE998-L000268](../../web/agent.html#L268) | 268 | `"  : result&&result.search_attempted===false"` | — |
+| [SRC-DE7EABE998-L000269](../../web/agent.html#L269) | 269 | `"   ? \"لم تُنفّذ محاولة بحث ويب في هذه الجولة.\""` | — |
+| [SRC-DE7EABE998-L000270](../../web/agent.html#L270) | 270 | `"   : r.search_outcome===\"unknown_after_research_error\""` | — |
+| [SRC-DE7EABE998-L000271](../../web/agent.html#L271) | 271 | `"    ? \"تعطل مسار البحث، ولم يمكن تأكيد ما إذا كانت محاولة البحث قد بدأت أو كم مصدرًا كان قابلًا للاستخدام.\""` | — |
+| [SRC-DE7EABE998-L000272](../../web/agent.html#L272) | 272 | `"    : \"حالة محاولة البحث غير موضحة في الاستجابة.\";"` | — |
+| [SRC-DE7EABE998-L000273](../../web/agent.html#L273) | 273 | `" const qualityText='تصنيف جودة البحث يصف تغطية العملية والأدلة المتاحة، ولا يمثل احتمال صحة الوقائع.';"` | — |
+| [SRC-DE7EABE998-L000274](../../web/agent.html#L274) | 274 | `" const reviewText=r.claim_audit_semantics==='model_assisted_not_independent_fact_check'?'مراجعة الادعاءات تمت بمساعدة نموذج لغوي؛ وهي ليست تحققًا مستقلًا من صحة الحقائق.':'لم يثبت إجراء تحقق مستقل من صحة الحقائق.';"` | — |
+| [SRC-DE7EABE998-L000275](../../web/agent.html#L275) | 275 | `" const diversityText='اختلاف النطاقات المسجلة لا يثبت الاستقلال التحريري؛ فقد تنقل المواقع عن مصدر أصلي واحد.';"` | — |
+| [SRC-DE7EABE998-L000276](../../web/agent.html#L276) | 276 | `" const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class=\"report-note\">'+escapeHtml(n)+'</p>').join(\"\");"` | — |
+| [SRC-DE7EABE998-L000277](../../web/agent.html#L277) | 277 | `" const review=r.second_pass_review===\"model_claim_audit_completed\"?\"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)\":r.second_pass_review===\"model_claim_audit_completed_before_coverage_repair\"?\"تمت مراجعة المسودة قبل تعديل التغطية؛ النسخة المعدلة لم تخضع لمراجعة ثانية\":r.second_pass_review===\"model_claim_audit_unavailable\"?\"تعذرت مراجعة الادعاءات بمساعدة النموذج\":\"\";"` | — |
+| [SRC-DE7EABE998-L000278](../../web/agent.html#L278) | 278 | `" return '<div class=\"report-head\"><b>ملخص الأدلة وتغطية البحث</b><span class=\"coverage\">'+escapeHtml(scoreLabel)+'</span></div><div class=\"metrics\">'+metricHtml+'</div>'+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class=\"providers\">'+providerHtml+'</div>':\"\")+(review?'<p class=\"report-note\">'+escapeHtml(review)+'</p>':\"\")+details;"` | — |
+| [SRC-DE7EABE998-L000279](../../web/agent.html#L279) | 279 | `"}"` | — |
+| [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `"function addMessage(role,text,result,options={}){"` | — |
+| [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `" const welcome=$(\"welcome\");if(welcome)welcome.remove();"` | — |
+| [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `" const box=document.createElement(\"div\");box.className=\"message \"+(role===\"user\"?\"user\":\"assistant\");"` | — |
+| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `" const who=document.createElement(\"div\");who.className=\"who\";"` | — |
+| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" who.textContent=role===\"user\"?\"أنت\":(result&&result.used_language_model?\"Omarai · بحث وتحليل توليدي\":\"Omarai · إجابة جزئية أو احتياطية\");"` | — |
+| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" box.appendChild(who);"` | — |
+| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const linkedQuestion=(options&&options.question)\|\|(result&&result.question);"` | — |
+| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `" if(role===\"assistant\"&&linkedQuestion){"` | — |
+| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `"  const context=document.createElement(\"div\");context.className=\"message-context\";"` | — |
 | [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `"  context.textContent=\"ردًا على السؤال: \"+linkedQuestion;box.appendChild(context);"` | — |
 | [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `" }"` | — |
 | [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `" const bubble=document.createElement(\"div\");bubble.className=\"bubble\";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);"` | — |

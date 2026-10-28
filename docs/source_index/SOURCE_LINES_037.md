@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000054 إلى SRC-2614DCB6FB-L000082
+- النطاق: SRC-6BF96689A8-L000027 إلى SRC-2614DCB6FB-L000055
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000027](../../tests/test_research.py#L27) | 27 | `""` | — |
+| [SRC-6BF96689A8-L000028](../../tests/test_research.py#L28) | 28 | `"def test_plan_validation_caps_queries_and_rejects_non_string_values():"` | — |
+| [SRC-6BF96689A8-L000029](../../tests/test_research.py#L29) | 29 | `"    candidate = {"` | — |
+| [SRC-6BF96689A8-L000030](../../tests/test_research.py#L30) | 30 | `"        \"queries\": [\"بحث أ\", \"بحث ب\", None, \"بحث ج\", \"بحث د\", \"بحث هـ\", \"بحث سادس\", \"بحث سابع\", \"بحث ثامن\", \"بحث تاسع\"],"` | — |
+| [SRC-6BF96689A8-L000031](../../tests/test_research.py#L31) | 31 | `"        \"social_focus\": True,"` | — |
+| [SRC-6BF96689A8-L000032](../../tests/test_research.py#L32) | 32 | `"        \"freshness\": \"current\","` | — |
+| [SRC-6BF96689A8-L000033](../../tests/test_research.py#L33) | 33 | `"        \"depth\": \"deep\","` | — |
+| [SRC-6BF96689A8-L000034](../../tests/test_research.py#L34) | 34 | `"        \"platforms\": [\"reddit\", \"unknown\"],"` | — |
+| [SRC-6BF96689A8-L000035](../../tests/test_research.py#L35) | 35 | `"    }"` | — |
+| [SRC-6BF96689A8-L000036](../../tests/test_research.py#L36) | 36 | `"    plan = validate_plan(candidate, \"بحث عن منشورات\")"` | — |
+| [SRC-6BF96689A8-L000037](../../tests/test_research.py#L37) | 37 | `"    assert len(plan[\"queries\"]) <= 8"` | — |
+| [SRC-6BF96689A8-L000038](../../tests/test_research.py#L38) | 38 | `"    assert \"unknown\" not in plan[\"platforms\"]"` | — |
+| [SRC-6BF96689A8-L000039](../../tests/test_research.py#L39) | 39 | `"    assert plan[\"social_focus\"] is True"` | — |
+| [SRC-6BF96689A8-L000040](../../tests/test_research.py#L40) | 40 | `"    assert plan[\"freshness\"] == \"current\""` | — |
+| [SRC-6BF96689A8-L000041](../../tests/test_research.py#L41) | 41 | `""` | — |
+| [SRC-6BF96689A8-L000042](../../tests/test_research.py#L42) | 42 | `""` | — |
+| [SRC-6BF96689A8-L000043](../../tests/test_research.py#L43) | 43 | `"def test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates():"` | — |
+| [SRC-6BF96689A8-L000044](../../tests/test_research.py#L44) | 44 | `"    batches = ["` | — |
+| [SRC-6BF96689A8-L000045](../../tests/test_research.py#L45) | 45 | `"        {"` | — |
+| [SRC-6BF96689A8-L000046](../../tests/test_research.py#L46) | 46 | `"            \"query\": \"cars Egypt\","` | — |
+| [SRC-6BF96689A8-L000047](../../tests/test_research.py#L47) | 47 | `"            \"provider\": \"ddg\","` | — |
+| [SRC-6BF96689A8-L000048](../../tests/test_research.py#L48) | 48 | `"            \"results\": ["` | — |
+| [SRC-6BF96689A8-L000049](../../tests/test_research.py#L49) | 49 | `"                {\"title\": \"A\", \"url\": \"https://www.example.com/a?utm_source=x\", \"snippet\": \"A\"},"` | — |
+| [SRC-6BF96689A8-L000050](../../tests/test_research.py#L50) | 50 | `"                {\"title\": \"B\", \"url\": \"https://example.com/b\", \"snippet\": \"B\"},"` | — |
+| [SRC-6BF96689A8-L000051](../../tests/test_research.py#L51) | 51 | `"            ],"` | — |
+| [SRC-6BF96689A8-L000052](../../tests/test_research.py#L52) | 52 | `"        },"` | — |
+| [SRC-6BF96689A8-L000053](../../tests/test_research.py#L53) | 53 | `"        {"` | — |
 | [SRC-6BF96689A8-L000054](../../tests/test_research.py#L54) | 54 | `"            \"query\": \"electric vehicles Egypt\","` | — |
 | [SRC-6BF96689A8-L000055](../../tests/test_research.py#L55) | 55 | `"            \"provider\": \"bing\","` | — |
 | [SRC-6BF96689A8-L000056](../../tests/test_research.py#L56) | 56 | `"            \"results\": ["` | — |
@@ -807,30 +834,3 @@
 | [SRC-2614DCB6FB-L000053](../../tests/test_search_code.py#L53) | 53 | `"    data_dir = tmp_path / \"data\""` | — |
 | [SRC-2614DCB6FB-L000054](../../tests/test_search_code.py#L54) | 54 | `"    data_dir.mkdir()"` | — |
 | [SRC-2614DCB6FB-L000055](../../tests/test_search_code.py#L55) | 55 | `"    (data_dir / \"records.sqlite3\").write_bytes(b\"database-token\")"` | — |
-| [SRC-2614DCB6FB-L000056](../../tests/test_search_code.py#L56) | 56 | `"    (tmp_path / \"credentials.example\").write_text(\"TOKEN=replace-me\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000057](../../tests/test_search_code.py#L57) | 57 | `""` | — |
-| [SRC-2614DCB6FB-L000058](../../tests/test_search_code.py#L58) | 58 | `"    hits = SEARCH.search_repository(tmp_path, \"private-value\")"` | — |
-| [SRC-2614DCB6FB-L000059](../../tests/test_search_code.py#L59) | 59 | `"    safe_example = SEARCH.search_repository(tmp_path, \"replace-me\")"` | — |
-| [SRC-2614DCB6FB-L000060](../../tests/test_search_code.py#L60) | 60 | `""` | — |
-| [SRC-2614DCB6FB-L000061](../../tests/test_search_code.py#L61) | 61 | `"    assert hits == []"` | — |
-| [SRC-2614DCB6FB-L000062](../../tests/test_search_code.py#L62) | 62 | `"    assert len(safe_example) == 1"` | — |
-| [SRC-2614DCB6FB-L000063](../../tests/test_search_code.py#L63) | 63 | `"    assert safe_example[0].file == \"credentials.example\""` | — |
-| [SRC-2614DCB6FB-L000064](../../tests/test_search_code.py#L64) | 64 | `""` | — |
-| [SRC-2614DCB6FB-L000065](../../tests/test_search_code.py#L65) | 65 | `""` | — |
-| [SRC-2614DCB6FB-L000066](../../tests/test_search_code.py#L66) | 66 | `"def test_search_validates_query_limits_and_reports_invalid_regex(tmp_path: Path) -> None:"` | — |
-| [SRC-2614DCB6FB-L000067](../../tests/test_search_code.py#L67) | 67 | `"    \"\"\"Invalid search controls fail clearly instead of silently returning confusing results.\"\"\""` | — |
-| [SRC-2614DCB6FB-L000068](../../tests/test_search_code.py#L68) | 68 | `"    try:"` | — |
-| [SRC-2614DCB6FB-L000069](../../tests/test_search_code.py#L69) | 69 | `"        SEARCH.search_repository(tmp_path, \"\")"` | — |
-| [SRC-2614DCB6FB-L000070](../../tests/test_search_code.py#L70) | 70 | `"    except ValueError as exc:"` | — |
-| [SRC-2614DCB6FB-L000071](../../tests/test_search_code.py#L71) | 71 | `"        assert \"فارغ\" in str(exc)"` | — |
-| [SRC-2614DCB6FB-L000072](../../tests/test_search_code.py#L72) | 72 | `"    else:"` | — |
-| [SRC-2614DCB6FB-L000073](../../tests/test_search_code.py#L73) | 73 | `"        raise AssertionError(\"An empty search query should be rejected.\")"` | — |
-| [SRC-2614DCB6FB-L000074](../../tests/test_search_code.py#L74) | 74 | `""` | — |
-| [SRC-2614DCB6FB-L000075](../../tests/test_search_code.py#L75) | 75 | `"    for kwargs in ({\"max_results\": 0}, {\"context\": -1}):"` | — |
-| [SRC-2614DCB6FB-L000076](../../tests/test_search_code.py#L76) | 76 | `"        try:"` | — |
-| [SRC-2614DCB6FB-L000077](../../tests/test_search_code.py#L77) | 77 | `"            SEARCH.search_repository(tmp_path, \"needle\", **kwargs)"` | — |
-| [SRC-2614DCB6FB-L000078](../../tests/test_search_code.py#L78) | 78 | `"        except ValueError:"` | — |
-| [SRC-2614DCB6FB-L000079](../../tests/test_search_code.py#L79) | 79 | `"            continue"` | — |
-| [SRC-2614DCB6FB-L000080](../../tests/test_search_code.py#L80) | 80 | `"        raise AssertionError(f\"Invalid search limits should be rejected: {kwargs}\")"` | — |
-| [SRC-2614DCB6FB-L000081](../../tests/test_search_code.py#L81) | 81 | `""` | — |
-| [SRC-2614DCB6FB-L000082](../../tests/test_search_code.py#L82) | 82 | `"    try:"` | — |

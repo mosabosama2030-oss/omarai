@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001854 إلى SRC-F725E90B2A-L002653
+- النطاق: SRC-F725E90B2A-L001827 إلى SRC-F725E90B2A-L002626
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001827](../../tests/test_web_agent.py#L1827) | 1827 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-F725E90B2A-L001828](../../tests/test_web_agent.py#L1828) | 1828 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"إشارات أولية فقط [المصدر 1].\")"` | — |
+| [SRC-F725E90B2A-L001829](../../tests/test_web_agent.py#L1829) | 1829 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L001830](../../tests/test_web_agent.py#L1830) | 1830 | `""` | — |
+| [SRC-F725E90B2A-L001831](../../tests/test_web_agent.py#L1831) | 1831 | `"    result = agent.answer(\"اجمع آراء الناس حول هذه التقنية\", mode=\"social\")"` | — |
+| [SRC-F725E90B2A-L001832](../../tests/test_web_agent.py#L1832) | 1832 | `""` | — |
+| [SRC-F725E90B2A-L001833](../../tests/test_web_agent.py#L1833) | 1833 | `"    assert len(calls) == 1"` | — |
+| [SRC-F725E90B2A-L001834](../../tests/test_web_agent.py#L1834) | 1834 | `"    assert calls[0][\"social_focus\"] is True"` | — |
+| [SRC-F725E90B2A-L001835](../../tests/test_web_agent.py#L1835) | 1835 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"attempted\"] is False"` | — |
+| [SRC-F725E90B2A-L001836](../../tests/test_web_agent.py#L1836) | 1836 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"reason\"] == \"task_specific_partial_evidence\""` | — |
+| [SRC-F725E90B2A-L001837](../../tests/test_web_agent.py#L1837) | 1837 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
+| [SRC-F725E90B2A-L001838](../../tests/test_web_agent.py#L1838) | 1838 | `""` | — |
+| [SRC-F725E90B2A-L001839](../../tests/test_web_agent.py#L1839) | 1839 | `""` | — |
+| [SRC-F725E90B2A-L001840](../../tests/test_web_agent.py#L1840) | 1840 | `""` | — |
+| [SRC-F725E90B2A-L001841](../../tests/test_web_agent.py#L1841) | 1841 | `"def test_question_coverage_targets_extract_arabic_and_english_explicit_criteria():"` | — |
+| [SRC-F725E90B2A-L001842](../../tests/test_web_agent.py#L1842) | 1842 | `"    arabic = WebAgent._question_coverage_targets("` | — |
+| [SRC-F725E90B2A-L001843](../../tests/test_web_agent.py#L1843) | 1843 | `"        \"قارن بين خدمتين من حيث السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، \""` | — |
+| [SRC-F725E90B2A-L001844](../../tests/test_web_agent.py#L1844) | 1844 | `"        \"واذكر ما لا تستطيع التحقق منه.\""` | — |
+| [SRC-F725E90B2A-L001845](../../tests/test_web_agent.py#L1845) | 1845 | `"    )"` | — |
+| [SRC-F725E90B2A-L001846](../../tests/test_web_agent.py#L1846) | 1846 | `"    assert arabic == [\"السعر\", \"الخصوصية\", \"الاعتمادية\", \"خيار التواصل مع الدعم\"]"` | — |
+| [SRC-F725E90B2A-L001847](../../tests/test_web_agent.py#L1847) | 1847 | `""` | — |
+| [SRC-F725E90B2A-L001848](../../tests/test_web_agent.py#L1848) | 1848 | `"    english = WebAgent._question_coverage_targets("` | — |
+| [SRC-F725E90B2A-L001849](../../tests/test_web_agent.py#L1849) | 1849 | `"        \"Compare two services in terms of price, privacy, reliability and customer support?\""` | — |
+| [SRC-F725E90B2A-L001850](../../tests/test_web_agent.py#L1850) | 1850 | `"    )"` | — |
+| [SRC-F725E90B2A-L001851](../../tests/test_web_agent.py#L1851) | 1851 | `"    assert english == [\"price\", \"privacy\", \"reliability\", \"customer support\"]"` | — |
+| [SRC-F725E90B2A-L001852](../../tests/test_web_agent.py#L1852) | 1852 | `""` | — |
+| [SRC-F725E90B2A-L001853](../../tests/test_web_agent.py#L1853) | 1853 | `"    english_with_period = WebAgent._question_coverage_targets("` | — |
 | [SRC-F725E90B2A-L001854](../../tests/test_web_agent.py#L1854) | 1854 | `"        \"Compare two services in terms of price, privacy and reliability.\""` | — |
 | [SRC-F725E90B2A-L001855](../../tests/test_web_agent.py#L1855) | 1855 | `"    )"` | — |
 | [SRC-F725E90B2A-L001856](../../tests/test_web_agent.py#L1856) | 1856 | `"    assert english_with_period == [\"price\", \"privacy\", \"reliability\"]"` | — |
@@ -789,30 +816,3 @@
 | [SRC-F725E90B2A-L002624](../../tests/test_web_agent.py#L2624) | 2624 | `"        \"getaddrinfo\","` | — |
 | [SRC-F725E90B2A-L002625](../../tests/test_web_agent.py#L2625) | 2625 | `"        lambda host, port, type: answers,"` | — |
 | [SRC-F725E90B2A-L002626](../../tests/test_web_agent.py#L2626) | 2626 | `"    )"` | — |
-| [SRC-F725E90B2A-L002627](../../tests/test_web_agent.py#L2627) | 2627 | `""` | — |
-| [SRC-F725E90B2A-L002628](../../tests/test_web_agent.py#L2628) | 2628 | `"    # One private DNS answer must fail closed, even when another answer is public."` | — |
-| [SRC-F725E90B2A-L002629](../../tests/test_web_agent.py#L2629) | 2629 | `"    assert web_agent._public_ip_literals(\"mixed.example\") is None"` | — |
-| [SRC-F725E90B2A-L002630](../../tests/test_web_agent.py#L2630) | 2630 | `""` | — |
-| [SRC-F725E90B2A-L002631](../../tests/test_web_agent.py#L2631) | 2631 | `""` | — |
-| [SRC-F725E90B2A-L002632](../../tests/test_web_agent.py#L2632) | 2632 | `"def test_pinned_connect_url_uses_checked_ip_without_losing_logical_path():"` | — |
-| [SRC-F725E90B2A-L002633](../../tests/test_web_agent.py#L2633) | 2633 | `"    from agents.web_agent import _pinned_connect_url"` | — |
-| [SRC-F725E90B2A-L002634](../../tests/test_web_agent.py#L2634) | 2634 | `""` | — |
-| [SRC-F725E90B2A-L002635](../../tests/test_web_agent.py#L2635) | 2635 | `"    assert _pinned_connect_url("` | — |
-| [SRC-F725E90B2A-L002636](../../tests/test_web_agent.py#L2636) | 2636 | `"        \"https://example.test:443/path?q=1\","` | — |
-| [SRC-F725E90B2A-L002637](../../tests/test_web_agent.py#L2637) | 2637 | `"        \"93.184.216.34\","` | — |
-| [SRC-F725E90B2A-L002638](../../tests/test_web_agent.py#L2638) | 2638 | `"    ) == \"https://93.184.216.34:443/path?q=1\""` | — |
-| [SRC-F725E90B2A-L002639](../../tests/test_web_agent.py#L2639) | 2639 | `""` | — |
-| [SRC-F725E90B2A-L002640](../../tests/test_web_agent.py#L2640) | 2640 | `""` | — |
-| [SRC-F725E90B2A-L002641](../../tests/test_web_agent.py#L2641) | 2641 | `"def test_fetch_page_rejects_private_redirect_before_connecting(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002642](../../tests/test_web_agent.py#L2642) | 2642 | `"    from contextlib import contextmanager"` | — |
-| [SRC-F725E90B2A-L002643](../../tests/test_web_agent.py#L2643) | 2643 | `""` | — |
-| [SRC-F725E90B2A-L002644](../../tests/test_web_agent.py#L2644) | 2644 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L002645](../../tests/test_web_agent.py#L2645) | 2645 | `""` | — |
-| [SRC-F725E90B2A-L002646](../../tests/test_web_agent.py#L2646) | 2646 | `"    from agents import web_agent"` | — |
-| [SRC-F725E90B2A-L002647](../../tests/test_web_agent.py#L2647) | 2647 | `""` | — |
-| [SRC-F725E90B2A-L002648](../../tests/test_web_agent.py#L2648) | 2648 | `"    resolved_hosts = []"` | — |
-| [SRC-F725E90B2A-L002649](../../tests/test_web_agent.py#L2649) | 2649 | `"    requests = []"` | — |
-| [SRC-F725E90B2A-L002650](../../tests/test_web_agent.py#L2650) | 2650 | `""` | — |
-| [SRC-F725E90B2A-L002651](../../tests/test_web_agent.py#L2651) | 2651 | `"    def resolve_public_ip(host):"` | — |
-| [SRC-F725E90B2A-L002652](../../tests/test_web_agent.py#L2652) | 2652 | `"        resolved_hosts.append(host)"` | — |
-| [SRC-F725E90B2A-L002653](../../tests/test_web_agent.py#L2653) | 2653 | `"        return [\"93.184.216.34\"] if host == \"first.example\" else None"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001054 إلى SRC-F725E90B2A-L001853
+- النطاق: SRC-F725E90B2A-L001027 إلى SRC-F725E90B2A-L001826
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001027](../../tests/test_web_agent.py#L1027) | 1027 | `"                                \"title\": \"Current public report\","` | — |
+| [SRC-F725E90B2A-L001028](../../tests/test_web_agent.py#L1028) | 1028 | `"                                \"content\": \"An excerpt returned by the live search service.\","` | — |
+| [SRC-F725E90B2A-L001029](../../tests/test_web_agent.py#L1029) | 1029 | `"                            },"` | — |
+| [SRC-F725E90B2A-L001030](../../tests/test_web_agent.py#L1030) | 1030 | `"                        }],"` | — |
+| [SRC-F725E90B2A-L001031](../../tests/test_web_agent.py#L1031) | 1031 | `"                    },"` | — |
+| [SRC-F725E90B2A-L001032](../../tests/test_web_agent.py#L1032) | 1032 | `"                    \"finish_reason\": \"stop\","` | — |
+| [SRC-F725E90B2A-L001033](../../tests/test_web_agent.py#L1033) | 1033 | `"                }]"` | — |
+| [SRC-F725E90B2A-L001034](../../tests/test_web_agent.py#L1034) | 1034 | `"            }).encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L001035](../../tests/test_web_agent.py#L1035) | 1035 | `""` | — |
+| [SRC-F725E90B2A-L001036](../../tests/test_web_agent.py#L1036) | 1036 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-F725E90B2A-L001037](../../tests/test_web_agent.py#L1037) | 1037 | `"        seen[\"payload\"] = json.loads(request.data.decode(\"utf-8\"))"` | — |
+| [SRC-F725E90B2A-L001038](../../tests/test_web_agent.py#L1038) | 1038 | `"        return FakeResponse()"` | — |
+| [SRC-F725E90B2A-L001039](../../tests/test_web_agent.py#L1039) | 1039 | `""` | — |
+| [SRC-F725E90B2A-L001040](../../tests/test_web_agent.py#L1040) | 1040 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
+| [SRC-F725E90B2A-L001041](../../tests/test_web_agent.py#L1041) | 1041 | `"    result = agent._request_completion("` | — |
+| [SRC-F725E90B2A-L001042](../../tests/test_web_agent.py#L1042) | 1042 | `"        [{\"role\": \"user\", \"content\": \"ابحث عن أحدث تقرير\"}],"` | — |
+| [SRC-F725E90B2A-L001043](../../tests/test_web_agent.py#L1043) | 1043 | `"        model=\"example/model\","` | — |
+| [SRC-F725E90B2A-L001044](../../tests/test_web_agent.py#L1044) | 1044 | `"        enable_web_search=True,"` | — |
+| [SRC-F725E90B2A-L001045](../../tests/test_web_agent.py#L1045) | 1045 | `"    )"` | — |
+| [SRC-F725E90B2A-L001046](../../tests/test_web_agent.py#L1046) | 1046 | `""` | — |
+| [SRC-F725E90B2A-L001047](../../tests/test_web_agent.py#L1047) | 1047 | `"    assert result == \"تحليل مستند إلى بحث حي.\""` | — |
+| [SRC-F725E90B2A-L001048](../../tests/test_web_agent.py#L1048) | 1048 | `"    assert seen[\"payload\"][\"tools\"][0][\"type\"] == \"openrouter:web_search\""` | — |
+| [SRC-F725E90B2A-L001049](../../tests/test_web_agent.py#L1049) | 1049 | `"    assert seen[\"payload\"][\"tools\"][0][\"parameters\"][\"max_uses\"] == 3"` | — |
+| [SRC-F725E90B2A-L001050](../../tests/test_web_agent.py#L1050) | 1050 | `"    assert seen[\"payload\"][\"max_tool_calls\"] == 5"` | — |
+| [SRC-F725E90B2A-L001051](../../tests/test_web_agent.py#L1051) | 1051 | `"    assert agent.server_search_sources[0][\"url\"] == \"https://example.org/current-report\""` | — |
+| [SRC-F725E90B2A-L001052](../../tests/test_web_agent.py#L1052) | 1052 | `"    assert agent.server_search_sources[0][\"provider\"] == \"openrouter_web_search\""` | — |
+| [SRC-F725E90B2A-L001053](../../tests/test_web_agent.py#L1053) | 1053 | `"    assert \"test-key\" not in str(agent.server_search_sources)"` | — |
 | [SRC-F725E90B2A-L001054](../../tests/test_web_agent.py#L1054) | 1054 | `""` | — |
 | [SRC-F725E90B2A-L001055](../../tests/test_web_agent.py#L1055) | 1055 | `""` | — |
 | [SRC-F725E90B2A-L001056](../../tests/test_web_agent.py#L1056) | 1056 | `"def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):"` | — |
@@ -789,30 +816,3 @@
 | [SRC-F725E90B2A-L001824](../../tests/test_web_agent.py#L1824) | 1824 | `""` | — |
 | [SRC-F725E90B2A-L001825](../../tests/test_web_agent.py#L1825) | 1825 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
 | [SRC-F725E90B2A-L001826](../../tests/test_web_agent.py#L1826) | 1826 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L001827](../../tests/test_web_agent.py#L1827) | 1827 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
-| [SRC-F725E90B2A-L001828](../../tests/test_web_agent.py#L1828) | 1828 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"إشارات أولية فقط [المصدر 1].\")"` | — |
-| [SRC-F725E90B2A-L001829](../../tests/test_web_agent.py#L1829) | 1829 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L001830](../../tests/test_web_agent.py#L1830) | 1830 | `""` | — |
-| [SRC-F725E90B2A-L001831](../../tests/test_web_agent.py#L1831) | 1831 | `"    result = agent.answer(\"اجمع آراء الناس حول هذه التقنية\", mode=\"social\")"` | — |
-| [SRC-F725E90B2A-L001832](../../tests/test_web_agent.py#L1832) | 1832 | `""` | — |
-| [SRC-F725E90B2A-L001833](../../tests/test_web_agent.py#L1833) | 1833 | `"    assert len(calls) == 1"` | — |
-| [SRC-F725E90B2A-L001834](../../tests/test_web_agent.py#L1834) | 1834 | `"    assert calls[0][\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L001835](../../tests/test_web_agent.py#L1835) | 1835 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"attempted\"] is False"` | — |
-| [SRC-F725E90B2A-L001836](../../tests/test_web_agent.py#L1836) | 1836 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"reason\"] == \"task_specific_partial_evidence\""` | — |
-| [SRC-F725E90B2A-L001837](../../tests/test_web_agent.py#L1837) | 1837 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
-| [SRC-F725E90B2A-L001838](../../tests/test_web_agent.py#L1838) | 1838 | `""` | — |
-| [SRC-F725E90B2A-L001839](../../tests/test_web_agent.py#L1839) | 1839 | `""` | — |
-| [SRC-F725E90B2A-L001840](../../tests/test_web_agent.py#L1840) | 1840 | `""` | — |
-| [SRC-F725E90B2A-L001841](../../tests/test_web_agent.py#L1841) | 1841 | `"def test_question_coverage_targets_extract_arabic_and_english_explicit_criteria():"` | — |
-| [SRC-F725E90B2A-L001842](../../tests/test_web_agent.py#L1842) | 1842 | `"    arabic = WebAgent._question_coverage_targets("` | — |
-| [SRC-F725E90B2A-L001843](../../tests/test_web_agent.py#L1843) | 1843 | `"        \"قارن بين خدمتين من حيث السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، \""` | — |
-| [SRC-F725E90B2A-L001844](../../tests/test_web_agent.py#L1844) | 1844 | `"        \"واذكر ما لا تستطيع التحقق منه.\""` | — |
-| [SRC-F725E90B2A-L001845](../../tests/test_web_agent.py#L1845) | 1845 | `"    )"` | — |
-| [SRC-F725E90B2A-L001846](../../tests/test_web_agent.py#L1846) | 1846 | `"    assert arabic == [\"السعر\", \"الخصوصية\", \"الاعتمادية\", \"خيار التواصل مع الدعم\"]"` | — |
-| [SRC-F725E90B2A-L001847](../../tests/test_web_agent.py#L1847) | 1847 | `""` | — |
-| [SRC-F725E90B2A-L001848](../../tests/test_web_agent.py#L1848) | 1848 | `"    english = WebAgent._question_coverage_targets("` | — |
-| [SRC-F725E90B2A-L001849](../../tests/test_web_agent.py#L1849) | 1849 | `"        \"Compare two services in terms of price, privacy, reliability and customer support?\""` | — |
-| [SRC-F725E90B2A-L001850](../../tests/test_web_agent.py#L1850) | 1850 | `"    )"` | — |
-| [SRC-F725E90B2A-L001851](../../tests/test_web_agent.py#L1851) | 1851 | `"    assert english == [\"price\", \"privacy\", \"reliability\", \"customer support\"]"` | — |
-| [SRC-F725E90B2A-L001852](../../tests/test_web_agent.py#L1852) | 1852 | `""` | — |
-| [SRC-F725E90B2A-L001853](../../tests/test_web_agent.py#L1853) | 1853 | `"    english_with_period = WebAgent._question_coverage_targets("` | — |
