@@ -5594,6 +5594,25 @@ class WebAgent:
                             source_key = self._normalized_source_url_key(source.get("url"))
                             if source_key:
                                 source_indexes.setdefault(source_key, source_index)
+                        # A criterion-gap search is a second retrieval path, not a
+                        # trusted bypass. Apply the same task-specific source policy before
+                        # merging candidates into the evidence set or regenerating an answer.
+                        pre_gap_source_keys = set(source_indexes)
+                        gap_sources_before_guardrails = len(gap_sources)
+                        gap_sources, gap_guardrail_report = apply_source_guardrails(
+                            working_question, clean_mode, plan, gap_sources
+                        )
+                        report.setdefault("source_guardrails", {})[
+                            "criterion_gap_repair"
+                        ] = {
+                            **gap_guardrail_report,
+                            "candidates_before_filter": gap_sources_before_guardrails,
+                        }
+                        if gap_guardrail_report["rejected_sources"]:
+                            search_warnings.append(
+                                "رُفضت بعض نتائج البحث الإضافي لأنها لم تستوفِ شروط قبول "
+                                "الأدلة الخاصة بالسؤال."
+                            )
                         evidence_updated = False
                         for candidate in gap_sources:
                             if not isinstance(candidate, dict):
@@ -5635,6 +5654,22 @@ class WebAgent:
                                 + [gap_query]
                             ))
                             sources[existing_index] = merged
+                        # Re-apply the guardrails to the merged set as a final safety
+                        # boundary. Count newly added sources only after this filter.
+                        sources, merged_guardrail_report = apply_source_guardrails(
+                            working_question, clean_mode, plan, sources
+                        )
+                        report["source_guardrails"]["after_criterion_gap_repair"] = (
+                            merged_guardrail_report
+                        )
+                        accepted_source_keys = {
+                            self._normalized_source_url_key(item.get("url"))
+                            for item in sources
+                            if self._normalized_source_url_key(item.get("url"))
+                        }
+                        criterion_gap_research["new_sources_added"] = len(
+                            accepted_source_keys - pre_gap_source_keys
+                        )
                         criterion_gap_research["source_count_after"] = len(sources)
                         plan["queries"] = list(dict.fromkeys(
                             list(plan.get("queries", [])) + [gap_query]
