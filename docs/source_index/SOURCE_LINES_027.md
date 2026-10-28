@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001163 إلى SRC-B3062EB677-L000062
+- النطاق: SRC-90FAA34ADE-L001160 إلى SRC-B3062EB677-L000059
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001160](../../tests/fixtures/answer_quality_cases.json#L1160) | 1160 | `"        \"لا يدّعي أن النموذج أو المراجع نفّذوا الطلب\""` | — |
+| [SRC-90FAA34ADE-L001161](../../tests/fixtures/answer_quality_cases.json#L1161) | 1161 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001162](../../tests/fixtures/answer_quality_cases.json#L1162) | 1162 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001163](../../tests/fixtures/answer_quality_cases.json#L1163) | 1163 | `"        \"يعرض إجابة على أنها مراجعة بنموذج لم يعمل\","` | — |
 | [SRC-90FAA34ADE-L001164](../../tests/fixtures/answer_quality_cases.json#L1164) | 1164 | `"        \"يخفي عطل الاعتمادات ويولد نتيجة تحقق وهمية\""` | — |
 | [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
@@ -858,6 +861,3 @@
 | [SRC-B3062EB677-L000057](../../tests/test_answer_quality_runner.py#L57) | 57 | `"    data = json.loads(CORPUS.read_text(encoding=\"utf-8\"))"` | — |
 | [SRC-B3062EB677-L000058](../../tests/test_answer_quality_runner.py#L58) | 58 | `"    data[\"cases\"] = [dict(data[\"cases\"][0])]"` | — |
 | [SRC-B3062EB677-L000059](../../tests/test_answer_quality_runner.py#L59) | 59 | `"    del data[\"cases\"][0][\"question\"]"` | — |
-| [SRC-B3062EB677-L000060](../../tests/test_answer_quality_runner.py#L60) | 60 | `"    data[\"case_count\"] = 1"` | — |
-| [SRC-B3062EB677-L000061](../../tests/test_answer_quality_runner.py#L61) | 61 | `"    bad = tmp_path / \"bad2.json\""` | — |
-| [SRC-B3062EB677-L000062](../../tests/test_answer_quality_runner.py#L62) | 62 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000204 إلى SRC-F725E90B2A-L001003
+- النطاق: SRC-F725E90B2A-L000201 إلى SRC-F725E90B2A-L001000
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000201](../../tests/test_web_agent.py#L201) | 201 | `"    assert results[1][\"url\"] == \"https://example.net/second\""` | — |
+| [SRC-F725E90B2A-L000202](../../tests/test_web_agent.py#L202) | 202 | `"    assert len(calls) == 2"` | — |
+| [SRC-F725E90B2A-L000203](../../tests/test_web_agent.py#L203) | 203 | `""` | — |
 | [SRC-F725E90B2A-L000204](../../tests/test_web_agent.py#L204) | 204 | `""` | — |
 | [SRC-F725E90B2A-L000205](../../tests/test_web_agent.py#L205) | 205 | `""` | — |
 | [SRC-F725E90B2A-L000206](../../tests/test_web_agent.py#L206) | 206 | `"def test_model_planner_preserves_social_intent_and_adds_targeted_query(monkeypatch):"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L000998](../../tests/test_web_agent.py#L998) | 998 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L000999](../../tests/test_web_agent.py#L999) | 999 | `"        def __enter__(self):"` | — |
 | [SRC-F725E90B2A-L001000](../../tests/test_web_agent.py#L1000) | 1000 | `"            return self"` | — |
-| [SRC-F725E90B2A-L001001](../../tests/test_web_agent.py#L1001) | 1001 | `""` | — |
-| [SRC-F725E90B2A-L001002](../../tests/test_web_agent.py#L1002) | 1002 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-F725E90B2A-L001003](../../tests/test_web_agent.py#L1003) | 1003 | `"            return False"` | — |

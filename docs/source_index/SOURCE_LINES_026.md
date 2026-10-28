@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000363 إلى SRC-90FAA34ADE-L001162
+- النطاق: SRC-90FAA34ADE-L000360 إلى SRC-90FAA34ADE-L001159
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000360](../../tests/fixtures/answer_quality_cases.json#L360) | 360 | `"        \"Answers from unrelated travel blog about visas to Canada as if it were passport renewal\""` | — |
+| [SRC-90FAA34ADE-L000361](../../tests/fixtures/answer_quality_cases.json#L361) | 361 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000363](../../tests/fixtures/answer_quality_cases.json#L363) | 363 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000364](../../tests/fixtures/answer_quality_cases.json#L364) | 364 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000365](../../tests/fixtures/answer_quality_cases.json#L365) | 365 | `"          {"` | — |
@@ -813,6 +816,3 @@
 | [SRC-90FAA34ADE-L001157](../../tests/fixtures/answer_quality_cases.json#L1157) | 1157 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001158](../../tests/fixtures/answer_quality_cases.json#L1158) | 1158 | `"        \"يصرح بتعطل المكون المعتمد على بيانات الاعتماد عند الحاجة\","` | — |
 | [SRC-90FAA34ADE-L001159](../../tests/fixtures/answer_quality_cases.json#L1159) | 1159 | `"        \"يستخدم fallback موثق إن وُجد أو يشرح القيد\","` | — |
-| [SRC-90FAA34ADE-L001160](../../tests/fixtures/answer_quality_cases.json#L1160) | 1160 | `"        \"لا يدّعي أن النموذج أو المراجع نفّذوا الطلب\""` | — |
-| [SRC-90FAA34ADE-L001161](../../tests/fixtures/answer_quality_cases.json#L1161) | 1161 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001162](../../tests/fixtures/answer_quality_cases.json#L1162) | 1162 | `"      \"forbidden_behaviors\": ["` | — |

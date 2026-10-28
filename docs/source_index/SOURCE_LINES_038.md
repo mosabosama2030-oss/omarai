@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001804 إلى SRC-F725E90B2A-L002603
+- النطاق: SRC-F725E90B2A-L001801 إلى SRC-F725E90B2A-L002600
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001801](../../tests/test_web_agent.py#L1801) | 1801 | `"            \"query_results\": [],"` | — |
+| [SRC-F725E90B2A-L001802](../../tests/test_web_agent.py#L1802) | 1802 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-F725E90B2A-L001803](../../tests/test_web_agent.py#L1803) | 1803 | `"            \"pages_fetched\": 1,"` | — |
 | [SRC-F725E90B2A-L001804](../../tests/test_web_agent.py#L1804) | 1804 | `"            \"providers_used\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L001805](../../tests/test_web_agent.py#L1805) | 1805 | `"            \"platform_counts\": {\"web\": 1},"` | — |
 | [SRC-F725E90B2A-L001806](../../tests/test_web_agent.py#L1806) | 1806 | `"            \"social_direct_results\": 1,"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L002598](../../tests/test_web_agent.py#L2598) | 2598 | `"    import socket"` | — |
 | [SRC-F725E90B2A-L002599](../../tests/test_web_agent.py#L2599) | 2599 | `""` | — |
 | [SRC-F725E90B2A-L002600](../../tests/test_web_agent.py#L2600) | 2600 | `"    from agents import web_agent"` | — |
-| [SRC-F725E90B2A-L002601](../../tests/test_web_agent.py#L2601) | 2601 | `""` | — |
-| [SRC-F725E90B2A-L002602](../../tests/test_web_agent.py#L2602) | 2602 | `"    answers = ["` | — |
-| [SRC-F725E90B2A-L002603](../../tests/test_web_agent.py#L2603) | 2603 | `"        (socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, \"\", (\"93.184.216.34\", 80)),"` | — |

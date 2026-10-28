@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000043 إلى SRC-AAA21D04E8-L000226
+- النطاق: SRC-829A979985-L000040 إلى SRC-AAA21D04E8-L000223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000040](../../tests/test_generation_acceptance_matrix.py#L40) | 40 | `"    snippet: str = \"\","` | — |
+| [SRC-829A979985-L000041](../../tests/test_generation_acceptance_matrix.py#L41) | 41 | `"    provider: str = \"test_provider\","` | — |
+| [SRC-829A979985-L000042](../../tests/test_generation_acceptance_matrix.py#L42) | 42 | `") -> dict:"` | — |
 | [SRC-829A979985-L000043](../../tests/test_generation_acceptance_matrix.py#L43) | 43 | `"    return {"` | — |
 | [SRC-829A979985-L000044](../../tests/test_generation_acceptance_matrix.py#L44) | 44 | `"        \"title\": f\"نتيجة عن {domain}\","` | — |
 | [SRC-829A979985-L000045](../../tests/test_generation_acceptance_matrix.py#L45) | 45 | `"        \"url\": url,"` | — |
@@ -822,6 +825,3 @@
 | [SRC-AAA21D04E8-L000221](../../tests/test_generation_capabilities.py#L221) | 221 | `"                \"queries_attempted_known\": True,"` | — |
 | [SRC-AAA21D04E8-L000222](../../tests/test_generation_capabilities.py#L222) | 222 | `"                \"search_attempted\": True,"` | — |
 | [SRC-AAA21D04E8-L000223](../../tests/test_generation_capabilities.py#L223) | 223 | `"                \"search_outcome\": \"attempted_with_usable_sources\","` | — |
-| [SRC-AAA21D04E8-L000224](../../tests/test_generation_capabilities.py#L224) | 224 | `"                \"unique_sources\": 2,"` | — |
-| [SRC-AAA21D04E8-L000225](../../tests/test_generation_capabilities.py#L225) | 225 | `"                \"pages_fetched\": 0,"` | — |
-| [SRC-AAA21D04E8-L000226](../../tests/test_generation_capabilities.py#L226) | 226 | `"                \"providers_used\": [\"duckduckgo_html\", \"bing_rss\"],"` | — |

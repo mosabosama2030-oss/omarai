@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000084 إلى SRC-F725E90B2A-L000203
+- النطاق: SRC-01E35ABC46-L000081 إلى SRC-F725E90B2A-L000200
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000081](../../tests/test_research_guardrails.py#L81) | 81 | `"    }"` | — |
+| [SRC-01E35ABC46-L000082](../../tests/test_research_guardrails.py#L82) | 82 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000083](../../tests/test_research_guardrails.py#L83) | 83 | `"    assert rel[\"accepted\"] is True"` | — |
 | [SRC-01E35ABC46-L000084](../../tests/test_research_guardrails.py#L84) | 84 | `"    assert rel[\"score\"] >= 18"` | — |
 | [SRC-01E35ABC46-L000085](../../tests/test_research_guardrails.py#L85) | 85 | `""` | — |
 | [SRC-01E35ABC46-L000086](../../tests/test_research_guardrails.py#L86) | 86 | `"    # English-English match"` | — |
@@ -840,6 +843,3 @@
 | [SRC-F725E90B2A-L000198](../../tests/test_web_agent.py#L198) | 198 | `"    assert results[0][\"title\"] == \"صفحة أولى\""` | — |
 | [SRC-F725E90B2A-L000199](../../tests/test_web_agent.py#L199) | 199 | `"    assert results[0][\"url\"] == \"https://example.com/first\""` | — |
 | [SRC-F725E90B2A-L000200](../../tests/test_web_agent.py#L200) | 200 | `"    assert results[1][\"title\"] == \"صفحة ثانية\""` | — |
-| [SRC-F725E90B2A-L000201](../../tests/test_web_agent.py#L201) | 201 | `"    assert results[1][\"url\"] == \"https://example.net/second\""` | — |
-| [SRC-F725E90B2A-L000202](../../tests/test_web_agent.py#L202) | 202 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L000203](../../tests/test_web_agent.py#L203) | 203 | `""` | — |

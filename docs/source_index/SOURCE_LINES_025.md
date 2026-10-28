@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000364 إلى SRC-90FAA34ADE-L000362
+- النطاق: SRC-4FFD5AFC54-L000361 إلى SRC-90FAA34ADE-L000359
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000361](../../scripts/run_answer_quality_benchmark.py#L361) | 361 | `"    parser.add_argument("` | — |
+| [SRC-4FFD5AFC54-L000362](../../scripts/run_answer_quality_benchmark.py#L362) | 362 | `"        \"--mode\","` | — |
+| [SRC-4FFD5AFC54-L000363](../../scripts/run_answer_quality_benchmark.py#L363) | 363 | `"        choices=(\"validate\", \"live\"),"` | — |
 | [SRC-4FFD5AFC54-L000364](../../scripts/run_answer_quality_benchmark.py#L364) | 364 | `"        default=\"validate\","` | — |
 | [SRC-4FFD5AFC54-L000365](../../scripts/run_answer_quality_benchmark.py#L365) | 365 | `"        help=\"validate=offline corpus check (default); live=opt-in API calls\","` | — |
 | [SRC-4FFD5AFC54-L000366](../../scripts/run_answer_quality_benchmark.py#L366) | 366 | `"    )"` | — |
@@ -840,6 +843,3 @@
 | [SRC-90FAA34ADE-L000357](../../tests/fixtures/answer_quality_cases.json#L357) | 357 | `"        \"Abstains or warns if only irrelevant hits remain\""` | — |
 | [SRC-90FAA34ADE-L000358](../../tests/fixtures/answer_quality_cases.json#L358) | 358 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000359](../../tests/fixtures/answer_quality_cases.json#L359) | 359 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000360](../../tests/fixtures/answer_quality_cases.json#L360) | 360 | `"        \"Answers from unrelated travel blog about visas to Canada as if it were passport renewal\""` | — |
-| [SRC-90FAA34ADE-L000361](../../tests/fixtures/answer_quality_cases.json#L361) | 361 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
