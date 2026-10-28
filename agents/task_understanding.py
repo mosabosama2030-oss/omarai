@@ -752,8 +752,19 @@ def build_query_strategy_matrix(
         seen.add(key)
         rows.append({"query": candidate, "strategy": strategy, "rationale": rationale})
 
-    # Keep exactly one seed query ahead of all expansion candidates.
-    if queries:
+    constraints = spec.get("constraints") if isinstance(spec.get("constraints"), dict) else {}
+    explicit_aspects = (
+        constraints.get("explicit_aspects")
+        if isinstance(constraints.get("explicit_aspects"), list)
+        else []
+    )
+    # If every query slot is needed to represent explicit comparison criteria,
+    # spend the budget on those criteria rather than a generic planner seed.
+    reserve_all_slots_for_criteria = (
+        spec.get("task_family") == "compare"
+        and len(explicit_aspects) >= maximum
+    )
+    if queries and not reserve_all_slots_for_criteria:
         seed = queries[0]
         strategy, rationale = (
             _label_existing_query(seed, 0, spec)
@@ -779,13 +790,28 @@ def build_query_strategy_matrix(
         return rows
 
     candidates = _generated_strategy_candidates(base, spec)
+    preserve_planner_alternatives_early = (
+        spec.get("task_family") == "find_or_discover"
+        and bool(constraints.get("explicit_locations"))
+        and bool(constraints.get("explicit_budgets"))
+        and not constraints.get("social_evidence_requested")
+        and not constraints.get("time_sensitive_request")
+        and not constraints.get("official_destination_required")
+    )
+    if preserve_planner_alternatives_early:
+        for index, query in enumerate(queries[1:], start=1):
+            if len(rows) >= maximum:
+                break
+            if isinstance(query, str):
+                strategy, rationale = _label_existing_query(query, index, spec)
+                add(query, strategy, rationale, enforce_topic=False)
+
     for query, strategy, rationale in candidates:
         add(query, strategy, rationale)
         if len(rows) >= maximum:
             break
 
-    # Only after task-targeted candidates are considered do we retain alternative
-    # planner queries. That protects criteria and evidence-source variants.
+    # Preserve other planner alternatives only after task-targeted candidates.
     for index, query in enumerate(queries[1:], start=1):
         if len(rows) >= maximum:
             break
