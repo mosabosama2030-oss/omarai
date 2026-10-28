@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002888 إلى SRC-1AE03B9EC3-L003687
+- النطاق: SRC-1AE03B9EC3-L002881 إلى SRC-1AE03B9EC3-L003680
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002881](../../agents/web_agent.py#L2881) | 2881 | `"                \"implemented_in_code\" if name in config"` | — |
+| [SRC-1AE03B9EC3-L002882](../../agents/web_agent.py#L2882) | 2882 | `"                else \"observed_runtime_path\" if attempts or useful.get(name, 0)"` | — |
+| [SRC-1AE03B9EC3-L002883](../../agents/web_agent.py#L2883) | 2883 | `"                else \"unknown\""` | — |
+| [SRC-1AE03B9EC3-L002884](../../agents/web_agent.py#L2884) | 2884 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002885](../../agents/web_agent.py#L2885) | 2885 | `"            queries = list(dict.fromkeys(_clean_text(row.get(\"query\", \"\"), 180) for row in attempts if row.get(\"query\")))[:3]"` | — |
+| [SRC-1AE03B9EC3-L002886](../../agents/web_agent.py#L2886) | 2886 | `"            errors = list(dict.fromkeys(redact(row.get(\"error\")) for row in attempts if row.get(\"error\")))[:3]"` | — |
+| [SRC-1AE03B9EC3-L002887](../../agents/web_agent.py#L2887) | 2887 | `"            result_count = sum(max(0, int(row.get(\"result_count\", 0) or 0)) for row in attempts)"` | — |
 | [SRC-1AE03B9EC3-L002888](../../agents/web_agent.py#L2888) | 2888 | `"            accepted_count = sum("` | — |
 | [SRC-1AE03B9EC3-L002889](../../agents/web_agent.py#L2889) | 2889 | `"                max(0, int(row.get(\"accepted_count\", row.get(\"result_count\", 0)) or 0))"` | — |
 | [SRC-1AE03B9EC3-L002890](../../agents/web_agent.py#L2890) | 2890 | `"                for row in attempts"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L003678](../../agents/web_agent.py#L3678) | 3678 | `"                    + (\"\\n\\n\".join(source_blocks) or \"لا توجد نصوص مصادر متاحة.\")"` | — |
 | [SRC-1AE03B9EC3-L003679](../../agents/web_agent.py#L3679) | 3679 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L003680](../../agents/web_agent.py#L3680) | 3680 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L003681](../../agents/web_agent.py#L3681) | 3681 | `"        ]"` | — |
-| [SRC-1AE03B9EC3-L003682](../../agents/web_agent.py#L3682) | 3682 | `"        raw = self._request_completion("` | — |
-| [SRC-1AE03B9EC3-L003683](../../agents/web_agent.py#L3683) | 3683 | `"            messages,"` | — |
-| [SRC-1AE03B9EC3-L003684](../../agents/web_agent.py#L3684) | 3684 | `"            max_tokens=1600,"` | — |
-| [SRC-1AE03B9EC3-L003685](../../agents/web_agent.py#L3685) | 3685 | `"            temperature=0.0,"` | — |
-| [SRC-1AE03B9EC3-L003686](../../agents/web_agent.py#L3686) | 3686 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
-| [SRC-1AE03B9EC3-L003687](../../agents/web_agent.py#L3687) | 3687 | `"            model=self.review_model,"` | — |

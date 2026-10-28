@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000488 إلى SRC-1AE03B9EC3-L001287
+- النطاق: SRC-1AE03B9EC3-L000481 إلى SRC-1AE03B9EC3-L001280
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000481](../../agents/web_agent.py#L481) | 481 | `"        self.fallback_model = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000482](../../agents/web_agent.py#L482) | 482 | `"            \"OMARAI_LLM_FALLBACK_MODEL\", \"openrouter/free\""` | — |
+| [SRC-1AE03B9EC3-L000483](../../agents/web_agent.py#L483) | 483 | `"        ).strip()"` | — |
+| [SRC-1AE03B9EC3-L000484](../../agents/web_agent.py#L484) | 484 | `"        self.model = self.answer_model  # Backwards-compatible alias."` | — |
+| [SRC-1AE03B9EC3-L000485](../../agents/web_agent.py#L485) | 485 | `"        self.model_usage: list[dict[str, str]] = []"` | — |
+| [SRC-1AE03B9EC3-L000486](../../agents/web_agent.py#L486) | 486 | `"        # Per-answer, bounded diagnostics contain only model identifiers and status metadata."` | — |
+| [SRC-1AE03B9EC3-L000487](../../agents/web_agent.py#L487) | 487 | `"        # They intentionally exclude prompts, generated text, and provider response bodies."` | — |
 | [SRC-1AE03B9EC3-L000488](../../agents/web_agent.py#L488) | 488 | `"        self.generation_diagnostics: list[dict[str, str]] = []"` | — |
 | [SRC-1AE03B9EC3-L000489](../../agents/web_agent.py#L489) | 489 | `"        self.server_search_sources: list[dict[str, Any]] = []"` | — |
 | [SRC-1AE03B9EC3-L000490](../../agents/web_agent.py#L490) | 490 | `"        self._provider_diagnostics: list[dict[str, Any]] = []"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L001278](../../agents/web_agent.py#L1278) | 1278 | `"        rows: list[dict[str, Any]] = []"` | — |
 | [SRC-1AE03B9EC3-L001279](../../agents/web_agent.py#L1279) | 1279 | `"        for card in soup.select(\"div.result\"):"` | — |
 | [SRC-1AE03B9EC3-L001280](../../agents/web_agent.py#L1280) | 1280 | `"            link = card.select_one(\"a.result__a\")"` | — |
-| [SRC-1AE03B9EC3-L001281](../../agents/web_agent.py#L1281) | 1281 | `"            if not link:"` | — |
-| [SRC-1AE03B9EC3-L001282](../../agents/web_agent.py#L1282) | 1282 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L001283](../../agents/web_agent.py#L1283) | 1283 | `"            url = _public_http_url(self._unwrap_search_url(str(link.get(\"href\", \"\"))))"` | — |
-| [SRC-1AE03B9EC3-L001284](../../agents/web_agent.py#L1284) | 1284 | `"            if not url:"` | — |
-| [SRC-1AE03B9EC3-L001285](../../agents/web_agent.py#L1285) | 1285 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L001286](../../agents/web_agent.py#L1286) | 1286 | `"            snippet_node = card.select_one(\".result__snippet\")"` | — |
-| [SRC-1AE03B9EC3-L001287](../../agents/web_agent.py#L1287) | 1287 | `"            rows.append({"` | — |

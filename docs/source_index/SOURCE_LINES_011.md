@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003688 إلى SRC-1AE03B9EC3-L004487
+- النطاق: SRC-1AE03B9EC3-L003681 إلى SRC-1AE03B9EC3-L004480
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003681](../../agents/web_agent.py#L3681) | 3681 | `"        ]"` | — |
+| [SRC-1AE03B9EC3-L003682](../../agents/web_agent.py#L3682) | 3682 | `"        raw = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L003683](../../agents/web_agent.py#L3683) | 3683 | `"            messages,"` | — |
+| [SRC-1AE03B9EC3-L003684](../../agents/web_agent.py#L3684) | 3684 | `"            max_tokens=1600,"` | — |
+| [SRC-1AE03B9EC3-L003685](../../agents/web_agent.py#L3685) | 3685 | `"            temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L003686](../../agents/web_agent.py#L3686) | 3686 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
+| [SRC-1AE03B9EC3-L003687](../../agents/web_agent.py#L3687) | 3687 | `"            model=self.review_model,"` | — |
 | [SRC-1AE03B9EC3-L003688](../../agents/web_agent.py#L3688) | 3688 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003689](../../agents/web_agent.py#L3689) | 3689 | `"        start_marker = \"<<<OMARAI_COVERAGE_REPAIR>>>\""` | — |
 | [SRC-1AE03B9EC3-L003690](../../agents/web_agent.py#L3690) | 3690 | `"        end_marker = \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L004478](../../agents/web_agent.py#L4478) | 4478 | `"                    ))[:3]"` | — |
 | [SRC-1AE03B9EC3-L004479](../../agents/web_agent.py#L4479) | 4479 | `"                    plan[\"depth\"] = \"standard\""` | — |
 | [SRC-1AE03B9EC3-L004480](../../agents/web_agent.py#L4480) | 4480 | `"            base_query = (plan.get(\"queries\") or [\"\"])[0]"` | — |
-| [SRC-1AE03B9EC3-L004481](../../agents/web_agent.py#L4481) | 4481 | `"            if clean_mode == \"auto\" and intent_route == \"WEB_DEEP\" and base_query:"` | — |
-| [SRC-1AE03B9EC3-L004482](../../agents/web_agent.py#L4482) | 4482 | `"                deep_candidates = ["` | — |
-| [SRC-1AE03B9EC3-L004483](../../agents/web_agent.py#L4483) | 4483 | `"                    f\"{base_query} official sources evidence\","` | — |
-| [SRC-1AE03B9EC3-L004484](../../agents/web_agent.py#L4484) | 4484 | `"                    f\"{base_query} risks limitations alternatives\","` | — |
-| [SRC-1AE03B9EC3-L004485](../../agents/web_agent.py#L4485) | 4485 | `"                    f\"{base_query} recent data reviews comparison\","` | — |
-| [SRC-1AE03B9EC3-L004486](../../agents/web_agent.py#L4486) | 4486 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004487](../../agents/web_agent.py#L4487) | 4487 | `"                normalized_question = _normalize_search_query(working_question).casefold()"` | — |

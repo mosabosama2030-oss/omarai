@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000102 إلى SRC-F725E90B2A-L000901
+- النطاق: SRC-F725E90B2A-L000095 إلى SRC-F725E90B2A-L000894
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000095](../../tests/test_web_agent.py#L95) | 95 | `"        \"legacy_compatibility_alias_for_distinct_registrable_domain_count\""` | — |
+| [SRC-F725E90B2A-L000096](../../tests/test_web_agent.py#L96) | 96 | `"    )"` | — |
+| [SRC-F725E90B2A-L000097](../../tests/test_web_agent.py#L97) | 97 | `"    assert any(\"تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري\" in warning"` | — |
+| [SRC-F725E90B2A-L000098](../../tests/test_web_agent.py#L98) | 98 | `"               for warning in result[\"warnings\"])"` | — |
+| [SRC-F725E90B2A-L000099](../../tests/test_web_agent.py#L99) | 99 | `"    assert result[\"used_language_model\"] is True"` | — |
+| [SRC-F725E90B2A-L000100](../../tests/test_web_agent.py#L100) | 100 | `"    assert result[\"sources\"][0][\"url\"] == \"https://example.com/research\""` | — |
+| [SRC-F725E90B2A-L000101](../../tests/test_web_agent.py#L101) | 101 | `"    assert \"[المصدر 1]\" in result[\"answer\"]"` | — |
 | [SRC-F725E90B2A-L000102](../../tests/test_web_agent.py#L102) | 102 | `"    assert seen[\"question\"] == \"قارن هذه التقنية\""` | — |
 | [SRC-F725E90B2A-L000103](../../tests/test_web_agent.py#L103) | 103 | `"    assert seen[\"history\"] == [{\"role\": \"user\", \"content\": \"ما هي التقنية؟\"}]"` | — |
 | [SRC-F725E90B2A-L000104](../../tests/test_web_agent.py#L104) | 104 | `""` | — |
@@ -809,10 +816,3 @@
 | [SRC-F725E90B2A-L000892](../../tests/test_web_agent.py#L892) | 892 | `"    assert status[\"verification_scope\"][\"language_model_configured_means\"] == ("` | — |
 | [SRC-F725E90B2A-L000893](../../tests/test_web_agent.py#L893) | 893 | `"        \"credential_present_not_successful_completion\""` | — |
 | [SRC-F725E90B2A-L000894](../../tests/test_web_agent.py#L894) | 894 | `"    )"` | — |
-| [SRC-F725E90B2A-L000895](../../tests/test_web_agent.py#L895) | 895 | `"    assert status[\"verification_scope\"][\"live_diagnostics_endpoint\"] == \"POST /api/diagnostics\""` | — |
-| [SRC-F725E90B2A-L000896](../../tests/test_web_agent.py#L896) | 896 | `"    assert \"api_key\" not in status"` | — |
-| [SRC-F725E90B2A-L000897](../../tests/test_web_agent.py#L897) | 897 | `""` | — |
-| [SRC-F725E90B2A-L000898](../../tests/test_web_agent.py#L898) | 898 | `""` | — |
-| [SRC-F725E90B2A-L000899](../../tests/test_web_agent.py#L899) | 899 | `""` | — |
-| [SRC-F725E90B2A-L000900](../../tests/test_web_agent.py#L900) | 900 | `"def test_health_status_exposes_external_model_privacy_notice_without_secrets(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000901](../../tests/test_web_agent.py#L901) | 901 | `"    monkeypatch.delenv(\"OPENROUTER_API_KEY\", raising=False)"` | — |
