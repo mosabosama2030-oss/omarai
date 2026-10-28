@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000133 إلى SRC-3451CC474D-L000022
+- النطاق: SRC-4CCB1F172B-L000082 إلى SRC-1C77C97630-L000302
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000082](../../tests/test_answer_quality_corpus.py#L82) | 82 | `"    assert \"parts\" not in data or not data.get(\"parts\"), ("` | — |
+| [SRC-4CCB1F172B-L000083](../../tests/test_answer_quality_corpus.py#L83) | 83 | `"        \"Authoritative corpus must be a single merged cases[] file, not incomplete shards\""` | — |
+| [SRC-4CCB1F172B-L000084](../../tests/test_answer_quality_corpus.py#L84) | 84 | `"    )"` | — |
+| [SRC-4CCB1F172B-L000085](../../tests/test_answer_quality_corpus.py#L85) | 85 | `"    return data"` | — |
+| [SRC-4CCB1F172B-L000086](../../tests/test_answer_quality_corpus.py#L86) | 86 | `""` | — |
+| [SRC-4CCB1F172B-L000087](../../tests/test_answer_quality_corpus.py#L87) | 87 | `""` | — |
+| [SRC-4CCB1F172B-L000088](../../tests/test_answer_quality_corpus.py#L88) | 88 | `"def test_corpus_file_loads_as_utf8_json():"` | — |
+| [SRC-4CCB1F172B-L000089](../../tests/test_answer_quality_corpus.py#L89) | 89 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000090](../../tests/test_answer_quality_corpus.py#L90) | 90 | `"    assert data.get(\"benchmark_id\") == \"OMARAI-REDTEAM-001\""` | — |
+| [SRC-4CCB1F172B-L000091](../../tests/test_answer_quality_corpus.py#L91) | 91 | `"    assert isinstance(data.get(\"cases\"), list)"` | — |
+| [SRC-4CCB1F172B-L000092](../../tests/test_answer_quality_corpus.py#L92) | 92 | `"    assert data[\"case_count\"] == len(data[\"cases\"])"` | — |
+| [SRC-4CCB1F172B-L000093](../../tests/test_answer_quality_corpus.py#L93) | 93 | `""` | — |
+| [SRC-4CCB1F172B-L000094](../../tests/test_answer_quality_corpus.py#L94) | 94 | `""` | — |
+| [SRC-4CCB1F172B-L000095](../../tests/test_answer_quality_corpus.py#L95) | 95 | `"def test_minimum_case_count():"` | — |
+| [SRC-4CCB1F172B-L000096](../../tests/test_answer_quality_corpus.py#L96) | 96 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000097](../../tests/test_answer_quality_corpus.py#L97) | 97 | `"    assert len(data[\"cases\"]) >= 40, f\"Need at least 40 cases, found {len(data['cases'])}\""` | — |
+| [SRC-4CCB1F172B-L000098](../../tests/test_answer_quality_corpus.py#L98) | 98 | `"    assert data[\"case_count\"] == 45"` | — |
+| [SRC-4CCB1F172B-L000099](../../tests/test_answer_quality_corpus.py#L99) | 99 | `""` | — |
+| [SRC-4CCB1F172B-L000100](../../tests/test_answer_quality_corpus.py#L100) | 100 | `""` | — |
+| [SRC-4CCB1F172B-L000101](../../tests/test_answer_quality_corpus.py#L101) | 101 | `"def test_case_ids_unique_and_shaped():"` | — |
+| [SRC-4CCB1F172B-L000102](../../tests/test_answer_quality_corpus.py#L102) | 102 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000103](../../tests/test_answer_quality_corpus.py#L103) | 103 | `"    ids = [c[\"case_id\"] for c in data[\"cases\"]]"` | — |
+| [SRC-4CCB1F172B-L000104](../../tests/test_answer_quality_corpus.py#L104) | 104 | `"    assert len(ids) == len(set(ids)), \"Duplicate case_id values found\""` | — |
+| [SRC-4CCB1F172B-L000105](../../tests/test_answer_quality_corpus.py#L105) | 105 | `"    for case_id in ids:"` | — |
+| [SRC-4CCB1F172B-L000106](../../tests/test_answer_quality_corpus.py#L106) | 106 | `"        assert CASE_ID_RE.match(case_id), f\"Bad case_id shape: {case_id}\""` | — |
+| [SRC-4CCB1F172B-L000107](../../tests/test_answer_quality_corpus.py#L107) | 107 | `"    assert set(ids) == {f\"AQ-{i:03d}\" for i in range(1, 46)}"` | — |
+| [SRC-4CCB1F172B-L000108](../../tests/test_answer_quality_corpus.py#L108) | 108 | `""` | — |
+| [SRC-4CCB1F172B-L000109](../../tests/test_answer_quality_corpus.py#L109) | 109 | `""` | — |
+| [SRC-4CCB1F172B-L000110](../../tests/test_answer_quality_corpus.py#L110) | 110 | `"def test_required_fields_and_types():"` | — |
+| [SRC-4CCB1F172B-L000111](../../tests/test_answer_quality_corpus.py#L111) | 111 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000112](../../tests/test_answer_quality_corpus.py#L112) | 112 | `"    for case in data[\"cases\"]:"` | — |
+| [SRC-4CCB1F172B-L000113](../../tests/test_answer_quality_corpus.py#L113) | 113 | `"        missing = REQUIRED_CASE_FIELDS - set(case)"` | — |
+| [SRC-4CCB1F172B-L000114](../../tests/test_answer_quality_corpus.py#L114) | 114 | `"        assert not missing, f\"{case.get('case_id')}: missing {missing}\""` | — |
+| [SRC-4CCB1F172B-L000115](../../tests/test_answer_quality_corpus.py#L115) | 115 | `"        assert isinstance(case[\"case_id\"], str) and case[\"case_id\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000116](../../tests/test_answer_quality_corpus.py#L116) | 116 | `"        assert isinstance(case[\"category\"], str) and case[\"category\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000117](../../tests/test_answer_quality_corpus.py#L117) | 117 | `"        assert isinstance(case[\"language\"], str) and case[\"language\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000118](../../tests/test_answer_quality_corpus.py#L118) | 118 | `"        assert isinstance(case[\"question\"], str) and len(case[\"question\"].strip()) >= 2"` | — |
+| [SRC-4CCB1F172B-L000119](../../tests/test_answer_quality_corpus.py#L119) | 119 | `"        assert case[\"expected_strategy\"] in ALLOWED_STRATEGIES"` | — |
+| [SRC-4CCB1F172B-L000120](../../tests/test_answer_quality_corpus.py#L120) | 120 | `"        assert case[\"evaluation_mode\"] in ALLOWED_EVAL_MODES"` | — |
+| [SRC-4CCB1F172B-L000121](../../tests/test_answer_quality_corpus.py#L121) | 121 | `"        assert isinstance(case[\"required_behaviors\"], list) and case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000122](../../tests/test_answer_quality_corpus.py#L122) | 122 | `"        assert isinstance(case[\"forbidden_behaviors\"], list) and case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000123](../../tests/test_answer_quality_corpus.py#L123) | 123 | `"        assert isinstance(case[\"failure_conditions\"], list) and case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000124](../../tests/test_answer_quality_corpus.py#L124) | 124 | `"        assert isinstance(case[\"evidence_fixture\"], dict)"` | — |
+| [SRC-4CCB1F172B-L000125](../../tests/test_answer_quality_corpus.py#L125) | 125 | `"        for item in ("` | — |
+| [SRC-4CCB1F172B-L000126](../../tests/test_answer_quality_corpus.py#L126) | 126 | `"            case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000127](../../tests/test_answer_quality_corpus.py#L127) | 127 | `"            + case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000128](../../tests/test_answer_quality_corpus.py#L128) | 128 | `"            + case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000129](../../tests/test_answer_quality_corpus.py#L129) | 129 | `"        ):"` | — |
+| [SRC-4CCB1F172B-L000130](../../tests/test_answer_quality_corpus.py#L130) | 130 | `"            assert isinstance(item, str) and item.strip(), ("` | — |
+| [SRC-4CCB1F172B-L000131](../../tests/test_answer_quality_corpus.py#L131) | 131 | `"                f\"{case['case_id']}: empty behavior/condition\""` | — |
+| [SRC-4CCB1F172B-L000132](../../tests/test_answer_quality_corpus.py#L132) | 132 | `"            )"` | — |
 | [SRC-4CCB1F172B-L000133](../../tests/test_answer_quality_corpus.py#L133) | 133 | `""` | — |
 | [SRC-4CCB1F172B-L000134](../../tests/test_answer_quality_corpus.py#L134) | 134 | `""` | — |
 | [SRC-4CCB1F172B-L000135](../../tests/test_answer_quality_corpus.py#L135) | 135 | `"def test_required_theme_categories_represented():"` | — |
@@ -792,63 +843,3 @@
 | [SRC-1C77C97630-L000300](../../tests/test_answer_validation.py#L300) | 300 | `""` | — |
 | [SRC-1C77C97630-L000301](../../tests/test_answer_validation.py#L301) | 301 | `"    numeric_check = result[\"citation_numeric_support\"][0]"` | — |
 | [SRC-1C77C97630-L000302](../../tests/test_answer_validation.py#L302) | 302 | `"    assert numeric_check[\"potentially_unsupported_numeric_literals\"] == [\"2026\"]"` | — |
-| [SRC-1C77C97630-L000303](../../tests/test_answer_validation.py#L303) | 303 | `"    assert numeric_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
-| [SRC-1C77C97630-L000304](../../tests/test_answer_validation.py#L304) | 304 | `""` | — |
-| [SRC-1C77C97630-L000305](../../tests/test_answer_validation.py#L305) | 305 | `""` | — |
-| [SRC-1C77C97630-L000306](../../tests/test_answer_validation.py#L306) | 306 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |
-| [SRC-1C77C97630-L000307](../../tests/test_answer_validation.py#L307) | 307 | `"    html_path = Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
-| [SRC-1C77C97630-L000308](../../tests/test_answer_validation.py#L308) | 308 | `"    html = html_path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-1C77C97630-L000309](../../tests/test_answer_validation.py#L309) | 309 | `""` | — |
-| [SRC-1C77C97630-L000310](../../tests/test_answer_validation.py#L310) | 310 | `"    assert \"citation_numeric_support\" in html"` | — |
-| [SRC-1C77C97630-L000311](../../tests/test_answer_validation.py#L311) | 311 | `"    assert \"potential_value_discrepancies\" in html"` | — |
-| [SRC-1C77C97630-L000312](../../tests/test_answer_validation.py#L312) | 312 | `"    assert \"claim_evidence_ledger\" in html"` | — |
-| [SRC-1C77C97630-L000313](../../tests/test_answer_validation.py#L313) | 313 | `"    assert \"سجل تتبع الاستشهادات\" in html"` | — |
-| [SRC-1C77C97630-L000314](../../tests/test_answer_validation.py#L314) | 314 | `"    assert \"هذه ليست إثباتًا تلقائيًا لوجود تناقض\" in html"` | — |
-| [SRC-1C77C97630-L000315](../../tests/test_answer_validation.py#L315) | 315 | `"    assert \"ليس تحققًا من الحقيقة\" in html"` | — |
-| [SRC-1C77C97630-L000316](../../tests/test_answer_validation.py#L316) | 316 | `""` | — |
-| [SRC-1C77C97630-L000317](../../tests/test_answer_validation.py#L317) | 317 | `""` | — |
-| [SRC-1C77C97630-L000318](../../tests/test_answer_validation.py#L318) | 318 | `"def test_single_coincidental_token_does_not_count_as_citation_support():"` | — |
-| [SRC-1C77C97630-L000319](../../tests/test_answer_validation.py#L319) | 319 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000320](../../tests/test_answer_validation.py#L320) | 320 | `"        \"What is the device quality?\","` | — |
-| [SRC-1C77C97630-L000321](../../tests/test_answer_validation.py#L321) | 321 | `"        \"Apple is a premium and exceptionally reliable device [source 1].\","` | — |
-| [SRC-1C77C97630-L000322](../../tests/test_answer_validation.py#L322) | 322 | `"        [{"` | — |
-| [SRC-1C77C97630-L000323](../../tests/test_answer_validation.py#L323) | 323 | `"            \"title\": \"Apple catalog\","` | — |
-| [SRC-1C77C97630-L000324](../../tests/test_answer_validation.py#L324) | 324 | `"            \"snippet\": \"Apple product listing\","` | — |
-| [SRC-1C77C97630-L000325](../../tests/test_answer_validation.py#L325) | 325 | `"            \"page_text\": \"Apple products are listed with model identifiers and availability.\","` | — |
-| [SRC-1C77C97630-L000326](../../tests/test_answer_validation.py#L326) | 326 | `"            \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000327](../../tests/test_answer_validation.py#L327) | 327 | `"        }],"` | — |
-| [SRC-1C77C97630-L000328](../../tests/test_answer_validation.py#L328) | 328 | `"    )"` | — |
-| [SRC-1C77C97630-L000329](../../tests/test_answer_validation.py#L329) | 329 | `"    assert result[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
-| [SRC-1C77C97630-L000330](../../tests/test_answer_validation.py#L330) | 330 | `"    assert result[\"weak_citation_alignment_count\"] == 1"` | — |
-| [SRC-1C77C97630-L000331](../../tests/test_answer_validation.py#L331) | 331 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
-## اختبارات
-
-### FILE-3451CC474D — [tests/test_api.py](../../tests/test_api.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-3451CC474D-L000001](../../tests/test_api.py#L1) | 1 | `"\"\"\"HTTP integration tests for Omarai local API and assistant endpoints.\"\"\""` | — |
-| [SRC-3451CC474D-L000002](../../tests/test_api.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-3451CC474D-L000003](../../tests/test_api.py#L3) | 3 | `""` | — |
-| [SRC-3451CC474D-L000004](../../tests/test_api.py#L4) | 4 | `"import json"` | — |
-| [SRC-3451CC474D-L000005](../../tests/test_api.py#L5) | 5 | `"import re"` | — |
-| [SRC-3451CC474D-L000006](../../tests/test_api.py#L6) | 6 | `"import socket"` | — |
-| [SRC-3451CC474D-L000007](../../tests/test_api.py#L7) | 7 | `"import threading"` | — |
-| [SRC-3451CC474D-L000008](../../tests/test_api.py#L8) | 8 | `"from collections import defaultdict, deque"` | — |
-| [SRC-3451CC474D-L000009](../../tests/test_api.py#L9) | 9 | `"from http.server import ThreadingHTTPServer"` | — |
-| [SRC-3451CC474D-L000010](../../tests/test_api.py#L10) | 10 | `"from pathlib import Path"` | — |
-| [SRC-3451CC474D-L000011](../../tests/test_api.py#L11) | 11 | `"from types import SimpleNamespace"` | — |
-| [SRC-3451CC474D-L000012](../../tests/test_api.py#L12) | 12 | `"from urllib.error import HTTPError"` | — |
-| [SRC-3451CC474D-L000013](../../tests/test_api.py#L13) | 13 | `"from urllib.request import Request, urlopen"` | — |
-| [SRC-3451CC474D-L000014](../../tests/test_api.py#L14) | 14 | `""` | — |
-| [SRC-3451CC474D-L000015](../../tests/test_api.py#L15) | 15 | `"import pytest"` | — |
-| [SRC-3451CC474D-L000016](../../tests/test_api.py#L16) | 16 | `""` | — |
-| [SRC-3451CC474D-L000017](../../tests/test_api.py#L17) | 17 | `"from agents.omarai import LeadStore"` | — |
-| [SRC-3451CC474D-L000018](../../tests/test_api.py#L18) | 18 | `"from api.omarai import Handler"` | — |
-| [SRC-3451CC474D-L000019](../../tests/test_api.py#L19) | 19 | `""` | — |
-| [SRC-3451CC474D-L000020](../../tests/test_api.py#L20) | 20 | `""` | — |
-| [SRC-3451CC474D-L000021](../../tests/test_api.py#L21) | 21 | `"@pytest.fixture"` | — |
-| [SRC-3451CC474D-L000022](../../tests/test_api.py#L22) | 22 | `"def local_api(tmp_path):"` | — |

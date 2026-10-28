@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001262 إلى SRC-1AE03B9EC3-L002061
+- النطاق: SRC-1AE03B9EC3-L001211 إلى SRC-1AE03B9EC3-L002010
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001211](../../agents/web_agent.py#L1211) | 1211 | `"                    \"لا تستخدم أدوات الويب ولا تقل إنك بحثت أو تحققت من مصدر. لا تختلق أرقامًا \""` | — |
+| [SRC-1AE03B9EC3-L001212](../../agents/web_agent.py#L1212) | 1212 | `"                    \"أو اقتباسات أو روابط. إذا كان جزء من السؤال يتطلب بيانات حديثة أو تحققًا \""` | — |
+| [SRC-1AE03B9EC3-L001213](../../agents/web_agent.py#L1213) | 1213 | `"                    \"خارجيًا، صرّح بذلك بدل الجزم. وضّح عدم اليقين بإيجاز، وأعط إجابة مفيدة \""` | — |
+| [SRC-1AE03B9EC3-L001214](../../agents/web_agent.py#L1214) | 1214 | `"                    \"من غير إطالة أو سلسلة تفكير داخلية.\""` | — |
+| [SRC-1AE03B9EC3-L001215](../../agents/web_agent.py#L1215) | 1215 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L001216](../../agents/web_agent.py#L1216) | 1216 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L001217](../../agents/web_agent.py#L1217) | 1217 | `"        ]"` | — |
+| [SRC-1AE03B9EC3-L001218](../../agents/web_agent.py#L1218) | 1218 | `"        messages.extend(history[-MAX_HISTORY_ITEMS:])"` | — |
+| [SRC-1AE03B9EC3-L001219](../../agents/web_agent.py#L1219) | 1219 | `"        messages.append({\"role\": \"user\", \"content\": question})"` | — |
+| [SRC-1AE03B9EC3-L001220](../../agents/web_agent.py#L1220) | 1220 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L001221](../../agents/web_agent.py#L1221) | 1221 | `"            answer = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L001222](../../agents/web_agent.py#L1222) | 1222 | `"                messages,"` | — |
+| [SRC-1AE03B9EC3-L001223](../../agents/web_agent.py#L1223) | 1223 | `"                max_tokens=1500,"` | — |
+| [SRC-1AE03B9EC3-L001224](../../agents/web_agent.py#L1224) | 1224 | `"                temperature=0.2,"` | — |
+| [SRC-1AE03B9EC3-L001225](../../agents/web_agent.py#L1225) | 1225 | `"                timeout=self._effective_timeout(min(self.timeout, 28)),"` | — |
+| [SRC-1AE03B9EC3-L001226](../../agents/web_agent.py#L1226) | 1226 | `"                model=self.answer_model,"` | — |
+| [SRC-1AE03B9EC3-L001227](../../agents/web_agent.py#L1227) | 1227 | `"                enable_web_search=False,"` | — |
+| [SRC-1AE03B9EC3-L001228](../../agents/web_agent.py#L1228) | 1228 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001229](../../agents/web_agent.py#L1229) | 1229 | `"        except (RuntimeError, AgentDependencyError):"` | — |
+| [SRC-1AE03B9EC3-L001230](../../agents/web_agent.py#L1230) | 1230 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L001231](../../agents/web_agent.py#L1231) | 1231 | `"        # Never turn an overlong completion into a seemingly complete answer by slicing it."` | — |
+| [SRC-1AE03B9EC3-L001232](../../agents/web_agent.py#L1232) | 1232 | `"        if len(answer) > 24_000:"` | — |
+| [SRC-1AE03B9EC3-L001233](../../agents/web_agent.py#L1233) | 1233 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L001234](../../agents/web_agent.py#L1234) | 1234 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L001235](../../agents/web_agent.py#L1235) | 1235 | `"            \"answer\": answer,"` | — |
+| [SRC-1AE03B9EC3-L001236](../../agents/web_agent.py#L1236) | 1236 | `"            \"question\": question,"` | — |
+| [SRC-1AE03B9EC3-L001237](../../agents/web_agent.py#L1237) | 1237 | `"            \"search_query\": question,"` | — |
+| [SRC-1AE03B9EC3-L001238](../../agents/web_agent.py#L1238) | 1238 | `"            \"search_queries\": [],"` | — |
+| [SRC-1AE03B9EC3-L001239](../../agents/web_agent.py#L1239) | 1239 | `"            \"research_plan\": {"` | — |
+| [SRC-1AE03B9EC3-L001240](../../agents/web_agent.py#L1240) | 1240 | `"                \"mode\": \"auto\","` | — |
+| [SRC-1AE03B9EC3-L001241](../../agents/web_agent.py#L1241) | 1241 | `"                \"planning_method\": \"general_qa_without_web\","` | — |
+| [SRC-1AE03B9EC3-L001242](../../agents/web_agent.py#L1242) | 1242 | `"                \"web_search_skipped\": True,"` | — |
+| [SRC-1AE03B9EC3-L001243](../../agents/web_agent.py#L1243) | 1243 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L001244](../../agents/web_agent.py#L1244) | 1244 | `"            \"sources\": [],"` | — |
+| [SRC-1AE03B9EC3-L001245](../../agents/web_agent.py#L1245) | 1245 | `"            \"used_language_model\": True,"` | — |
+| [SRC-1AE03B9EC3-L001246](../../agents/web_agent.py#L1246) | 1246 | `"            \"used_web_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L001247](../../agents/web_agent.py#L1247) | 1247 | `"            \"search_attempted\": False,"` | — |
+| [SRC-1AE03B9EC3-L001248](../../agents/web_agent.py#L1248) | 1248 | `"            \"used_social_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L001249](../../agents/web_agent.py#L1249) | 1249 | `"            \"warnings\": [],"` | — |
+| [SRC-1AE03B9EC3-L001250](../../agents/web_agent.py#L1250) | 1250 | `"            \"kind\": \"general_answer\","` | — |
+| [SRC-1AE03B9EC3-L001251](../../agents/web_agent.py#L1251) | 1251 | `"            \"research_quality\": \"not_applicable\","` | — |
+| [SRC-1AE03B9EC3-L001252](../../agents/web_agent.py#L1252) | 1252 | `"            \"model_calls\": list(self.model_usage),"` | — |
+| [SRC-1AE03B9EC3-L001253](../../agents/web_agent.py#L1253) | 1253 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L001254](../../agents/web_agent.py#L1254) | 1254 | `""` | — |
+| [SRC-1AE03B9EC3-L001255](../../agents/web_agent.py#L1255) | 1255 | `"    def _search_duckduckgo_html(self, query: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001256](../../agents/web_agent.py#L1256) | 1256 | `"        import httpx"` | — |
+| [SRC-1AE03B9EC3-L001257](../../agents/web_agent.py#L1257) | 1257 | `"        from bs4 import BeautifulSoup"` | — |
+| [SRC-1AE03B9EC3-L001258](../../agents/web_agent.py#L1258) | 1258 | `""` | — |
+| [SRC-1AE03B9EC3-L001259](../../agents/web_agent.py#L1259) | 1259 | `"        response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L001260](../../agents/web_agent.py#L1260) | 1260 | `"            \"https://html.duckduckgo.com/html/\","` | — |
+| [SRC-1AE03B9EC3-L001261](../../agents/web_agent.py#L1261) | 1261 | `"            params={\"q\": query},"` | — |
 | [SRC-1AE03B9EC3-L001262](../../agents/web_agent.py#L1262) | 1262 | `"            headers={"` | — |
 | [SRC-1AE03B9EC3-L001263](../../agents/web_agent.py#L1263) | 1263 | `"                \"User-Agent\": ("` | — |
 | [SRC-1AE03B9EC3-L001264](../../agents/web_agent.py#L1264) | 1264 | `"                    \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 \""` | — |
@@ -765,54 +816,3 @@
 | [SRC-1AE03B9EC3-L002008](../../agents/web_agent.py#L2008) | 2008 | `"                        if response.status_code != 200:"` | — |
 | [SRC-1AE03B9EC3-L002009](../../agents/web_agent.py#L2009) | 2009 | `"                            warnings.append("` | — |
 | [SRC-1AE03B9EC3-L002010](../../agents/web_agent.py#L2010) | 2010 | `"                                \"Facebook Pages API unavailable for one configured page \""` | — |
-| [SRC-1AE03B9EC3-L002011](../../agents/web_agent.py#L2011) | 2011 | `"                                f\"(HTTP {response.status_code}); verify page ownership, token and permissions.\""` | — |
-| [SRC-1AE03B9EC3-L002012](../../agents/web_agent.py#L2012) | 2012 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L002013](../../agents/web_agent.py#L2013) | 2013 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L002014](../../agents/web_agent.py#L2014) | 2014 | `"                        posts = response.json().get(\"data\", [])"` | — |
-| [SRC-1AE03B9EC3-L002015](../../agents/web_agent.py#L2015) | 2015 | `"                        rank = 0"` | — |
-| [SRC-1AE03B9EC3-L002016](../../agents/web_agent.py#L2016) | 2016 | `"                        for post in posts:"` | — |
-| [SRC-1AE03B9EC3-L002017](../../agents/web_agent.py#L2017) | 2017 | `"                            message = _clean_text(post.get(\"message\") or \"\", 1400)"` | — |
-| [SRC-1AE03B9EC3-L002018](../../agents/web_agent.py#L2018) | 2018 | `"                            comments = post.get(\"comments\", {}).get(\"data\", [])"` | — |
-| [SRC-1AE03B9EC3-L002019](../../agents/web_agent.py#L2019) | 2019 | `"                            comment_text = ["` | — |
-| [SRC-1AE03B9EC3-L002020](../../agents/web_agent.py#L2020) | 2020 | `"                                _clean_text(item.get(\"message\") or \"\", 500)"` | — |
-| [SRC-1AE03B9EC3-L002021](../../agents/web_agent.py#L2021) | 2021 | `"                                for item in comments"` | — |
-| [SRC-1AE03B9EC3-L002022](../../agents/web_agent.py#L2022) | 2022 | `"                                if isinstance(item, dict) and item.get(\"message\")"` | — |
-| [SRC-1AE03B9EC3-L002023](../../agents/web_agent.py#L2023) | 2023 | `"                            ]"` | — |
-| [SRC-1AE03B9EC3-L002024](../../agents/web_agent.py#L2024) | 2024 | `"                            searchable = (message + \" \" + \" \".join(comment_text)).casefold()"` | — |
-| [SRC-1AE03B9EC3-L002025](../../agents/web_agent.py#L2025) | 2025 | `"                            matched = sum(term in searchable for term in query_terms)"` | — |
-| [SRC-1AE03B9EC3-L002026](../../agents/web_agent.py#L2026) | 2026 | `"                            if query_terms and matched == 0:"` | — |
-| [SRC-1AE03B9EC3-L002027](../../agents/web_agent.py#L2027) | 2027 | `"                                continue"` | — |
-| [SRC-1AE03B9EC3-L002028](../../agents/web_agent.py#L2028) | 2028 | `"                            permalink = _public_http_url(post.get(\"permalink_url\", \"\"))"` | — |
-| [SRC-1AE03B9EC3-L002029](../../agents/web_agent.py#L2029) | 2029 | `"                            if not permalink:"` | — |
-| [SRC-1AE03B9EC3-L002030](../../agents/web_agent.py#L2030) | 2030 | `"                                continue"` | — |
-| [SRC-1AE03B9EC3-L002031](../../agents/web_agent.py#L2031) | 2031 | `"                            rank += 1"` | — |
-| [SRC-1AE03B9EC3-L002032](../../agents/web_agent.py#L2032) | 2032 | `"                            excerpt = message"` | — |
-| [SRC-1AE03B9EC3-L002033](../../agents/web_agent.py#L2033) | 2033 | `"                            if comment_text:"` | — |
-| [SRC-1AE03B9EC3-L002034](../../agents/web_agent.py#L2034) | 2034 | `"                                excerpt = ("` | — |
-| [SRC-1AE03B9EC3-L002035](../../agents/web_agent.py#L2035) | 2035 | `"                                    excerpt + \"\\n\\nتعليقات عامة على المنشور:\\n\""` | — |
-| [SRC-1AE03B9EC3-L002036](../../agents/web_agent.py#L2036) | 2036 | `"                                    if excerpt else \"تعليقات عامة على المنشور:\\n\""` | — |
-| [SRC-1AE03B9EC3-L002037](../../agents/web_agent.py#L2037) | 2037 | `"                                ) + \"\\n— \".join(comment_text)"` | — |
-| [SRC-1AE03B9EC3-L002038](../../agents/web_agent.py#L2038) | 2038 | `"                            results.append({"` | — |
-| [SRC-1AE03B9EC3-L002039](../../agents/web_agent.py#L2039) | 2039 | `"                                \"title\": _clean_text(message or \"Facebook public Page post\", 300),"` | — |
-| [SRC-1AE03B9EC3-L002040](../../agents/web_agent.py#L2040) | 2040 | `"                                \"url\": permalink,"` | — |
-| [SRC-1AE03B9EC3-L002041](../../agents/web_agent.py#L2041) | 2041 | `"                                \"snippet\": _clean_text(excerpt, 1800),"` | — |
-| [SRC-1AE03B9EC3-L002042](../../agents/web_agent.py#L2042) | 2042 | `"                                \"page_text\": \"\","` | — |
-| [SRC-1AE03B9EC3-L002043](../../agents/web_agent.py#L2043) | 2043 | `"                                \"page_fetched\": False,"` | — |
-| [SRC-1AE03B9EC3-L002044](../../agents/web_agent.py#L2044) | 2044 | `"                                \"provider\": \"facebook_pages_api\","` | — |
-| [SRC-1AE03B9EC3-L002045](../../agents/web_agent.py#L2045) | 2045 | `"                                \"provider_rank\": rank,"` | — |
-| [SRC-1AE03B9EC3-L002046](../../agents/web_agent.py#L2046) | 2046 | `"                                \"search_query\": query,"` | — |
-| [SRC-1AE03B9EC3-L002047](../../agents/web_agent.py#L2047) | 2047 | `"                                \"published_at\": _clean_text(post.get(\"created_time\") or \"\", 100),"` | — |
-| [SRC-1AE03B9EC3-L002048](../../agents/web_agent.py#L2048) | 2048 | `"                            })"` | — |
-| [SRC-1AE03B9EC3-L002049](../../agents/web_agent.py#L2049) | 2049 | `"                            if rank >= 10:"` | — |
-| [SRC-1AE03B9EC3-L002050](../../agents/web_agent.py#L2050) | 2050 | `"                                break"` | — |
-| [SRC-1AE03B9EC3-L002051](../../agents/web_agent.py#L2051) | 2051 | `"                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
-| [SRC-1AE03B9EC3-L002052](../../agents/web_agent.py#L2052) | 2052 | `"                        warnings.append(\"Facebook Pages API failed for one configured page.\")"` | — |
-| [SRC-1AE03B9EC3-L002053](../../agents/web_agent.py#L2053) | 2053 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L002054](../../agents/web_agent.py#L2054) | 2054 | `"                warnings.append("` | — |
-| [SRC-1AE03B9EC3-L002055](../../agents/web_agent.py#L2055) | 2055 | `"                    \"Facebook direct API is not configured for specific pages; indexed public Facebook pages are still searched.\""` | — |
-| [SRC-1AE03B9EC3-L002056](../../agents/web_agent.py#L2056) | 2056 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L002057](../../agents/web_agent.py#L2057) | 2057 | `""` | — |
-| [SRC-1AE03B9EC3-L002058](../../agents/web_agent.py#L2058) | 2058 | `"        if \"instagram\" in platforms:"` | — |
-| [SRC-1AE03B9EC3-L002059](../../agents/web_agent.py#L2059) | 2059 | `"            ig_user_id = os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002060](../../agents/web_agent.py#L2060) | 2060 | `"            ig_token = os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002061](../../agents/web_agent.py#L2061) | 2061 | `"            graph_version = os.getenv(\"META_GRAPH_VERSION\", \"v25.0\").strip()"` | — |

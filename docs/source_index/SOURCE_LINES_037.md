@@ -4,9 +4,39 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000031 إلى SRC-F725E90B2A-L000576
+- النطاق: SRC-2614DCB6FB-L000113 إلى SRC-F725E90B2A-L000525
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-2614DCB6FB — [tests/test_search_code.py](../../tests/test_search_code.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-2614DCB6FB-L000113](../../tests/test_search_code.py#L113) | 113 | `"def test_default_repository_ref_uses_valid_ci_sha("` | — |
+| [SRC-2614DCB6FB-L000114](../../tests/test_search_code.py#L114) | 114 | `"    monkeypatch, tmp_path: Path"` | — |
+| [SRC-2614DCB6FB-L000115](../../tests/test_search_code.py#L115) | 115 | `") -> None:"` | — |
+| [SRC-2614DCB6FB-L000116](../../tests/test_search_code.py#L116) | 116 | `"    monkeypatch.delenv(\"OMARAI_GITHUB_REF\", raising=False)"` | — |
+| [SRC-2614DCB6FB-L000117](../../tests/test_search_code.py#L117) | 117 | `"    monkeypatch.setenv(\"GITHUB_SHA\", \"B\" * 40)"` | — |
+| [SRC-2614DCB6FB-L000118](../../tests/test_search_code.py#L118) | 118 | `""` | — |
+| [SRC-2614DCB6FB-L000119](../../tests/test_search_code.py#L119) | 119 | `"    assert SEARCH.default_repository_ref(tmp_path) == \"b\" * 40"` | — |
+| [SRC-2614DCB6FB-L000120](../../tests/test_search_code.py#L120) | 120 | `""` | — |
+| [SRC-2614DCB6FB-L000121](../../tests/test_search_code.py#L121) | 121 | `"def test_cli_uses_explicit_ref_for_source_links(tmp_path: Path, capsys) -> None:"` | — |
+| [SRC-2614DCB6FB-L000122](../../tests/test_search_code.py#L122) | 122 | `"    source = tmp_path / \"app.py\""` | — |
+| [SRC-2614DCB6FB-L000123](../../tests/test_search_code.py#L123) | 123 | `"    source.write_text(\"needle = 1\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-2614DCB6FB-L000124](../../tests/test_search_code.py#L124) | 124 | `""` | — |
+| [SRC-2614DCB6FB-L000125](../../tests/test_search_code.py#L125) | 125 | `"    exit_code = SEARCH.main(["` | — |
+| [SRC-2614DCB6FB-L000126](../../tests/test_search_code.py#L126) | 126 | `"        \"needle\", \"--root\", str(tmp_path), \"--ref\", \"fix/cli-review\""` | — |
+| [SRC-2614DCB6FB-L000127](../../tests/test_search_code.py#L127) | 127 | `"    ])"` | — |
+| [SRC-2614DCB6FB-L000128](../../tests/test_search_code.py#L128) | 128 | `""` | — |
+| [SRC-2614DCB6FB-L000129](../../tests/test_search_code.py#L129) | 129 | `"    output = capsys.readouterr().out"` | — |
+| [SRC-2614DCB6FB-L000130](../../tests/test_search_code.py#L130) | 130 | `"    assert exit_code == 0"` | — |
+| [SRC-2614DCB6FB-L000131](../../tests/test_search_code.py#L131) | 131 | `"    assert \"blob/fix/cli-review/app.py#L1\" in output"` | — |
+| [SRC-2614DCB6FB-L000132](../../tests/test_search_code.py#L132) | 132 | `"    assert \"blob/main/app.py#L1\" not in output"` | — |
+| [SRC-2614DCB6FB-L000133](../../tests/test_search_code.py#L133) | 133 | `""` | — |
 ## اختبارات
 
 ### FILE-1C0D3D1206 — [tests/test_sqlite_backup_restore.py](../../tests/test_sqlite_backup_restore.py#L1)
@@ -16,6 +46,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000001](../../tests/test_sqlite_backup_restore.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-1C0D3D1206-L000002](../../tests/test_sqlite_backup_restore.py#L2) | 2 | `""` | — |
+| [SRC-1C0D3D1206-L000003](../../tests/test_sqlite_backup_restore.py#L3) | 3 | `"import sqlite3"` | — |
+| [SRC-1C0D3D1206-L000004](../../tests/test_sqlite_backup_restore.py#L4) | 4 | `""` | — |
+| [SRC-1C0D3D1206-L000005](../../tests/test_sqlite_backup_restore.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-1C0D3D1206-L000006](../../tests/test_sqlite_backup_restore.py#L6) | 6 | `""` | — |
+| [SRC-1C0D3D1206-L000007](../../tests/test_sqlite_backup_restore.py#L7) | 7 | `"from agents.omarai import LeadStore"` | — |
+| [SRC-1C0D3D1206-L000008](../../tests/test_sqlite_backup_restore.py#L8) | 8 | `"from scripts.sqlite_backup_restore import BackupError, backup_database, restore_database"` | — |
+| [SRC-1C0D3D1206-L000009](../../tests/test_sqlite_backup_restore.py#L9) | 9 | `""` | — |
+| [SRC-1C0D3D1206-L000010](../../tests/test_sqlite_backup_restore.py#L10) | 10 | `""` | — |
+| [SRC-1C0D3D1206-L000011](../../tests/test_sqlite_backup_restore.py#L11) | 11 | `"def test_backup_and_restore_preserve_omarai_leads(tmp_path):"` | — |
+| [SRC-1C0D3D1206-L000012](../../tests/test_sqlite_backup_restore.py#L12) | 12 | `"    source_path = tmp_path / \"live.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000013](../../tests/test_sqlite_backup_restore.py#L13) | 13 | `"    source = LeadStore(source_path)"` | — |
+| [SRC-1C0D3D1206-L000014](../../tests/test_sqlite_backup_restore.py#L14) | 14 | `"    first, created_first = source.add("` | — |
+| [SRC-1C0D3D1206-L000015](../../tests/test_sqlite_backup_restore.py#L15) | 15 | `"        \"بدور على شقة في التجمع وممكن معاينة\","` | — |
+| [SRC-1C0D3D1206-L000016](../../tests/test_sqlite_backup_restore.py#L16) | 16 | `"        \"https://example.com/posts/1\","` | — |
+| [SRC-1C0D3D1206-L000017](../../tests/test_sqlite_backup_restore.py#L17) | 17 | `"        platform=\"manual\","` | — |
+| [SRC-1C0D3D1206-L000018](../../tests/test_sqlite_backup_restore.py#L18) | 18 | `"        note=\"سجل اختبار أول\","` | — |
+| [SRC-1C0D3D1206-L000019](../../tests/test_sqlite_backup_restore.py#L19) | 19 | `"    )"` | — |
+| [SRC-1C0D3D1206-L000020](../../tests/test_sqlite_backup_restore.py#L20) | 20 | `"    second, created_second = source.add("` | — |
+| [SRC-1C0D3D1206-L000021](../../tests/test_sqlite_backup_restore.py#L21) | 21 | `"        \"محتاج شقة للإيجار الشهر القادم\","` | — |
+| [SRC-1C0D3D1206-L000022](../../tests/test_sqlite_backup_restore.py#L22) | 22 | `"        \"https://example.com/posts/2\","` | — |
+| [SRC-1C0D3D1206-L000023](../../tests/test_sqlite_backup_restore.py#L23) | 23 | `"        platform=\"manual\","` | — |
+| [SRC-1C0D3D1206-L000024](../../tests/test_sqlite_backup_restore.py#L24) | 24 | `"        note=\"سجل اختبار ثان\","` | — |
+| [SRC-1C0D3D1206-L000025](../../tests/test_sqlite_backup_restore.py#L25) | 25 | `"    )"` | — |
+| [SRC-1C0D3D1206-L000026](../../tests/test_sqlite_backup_restore.py#L26) | 26 | `"    assert created_first and created_second"` | — |
+| [SRC-1C0D3D1206-L000027](../../tests/test_sqlite_backup_restore.py#L27) | 27 | `"    source.update_status(first[\"id\"], \"qualified\")"` | — |
+| [SRC-1C0D3D1206-L000028](../../tests/test_sqlite_backup_restore.py#L28) | 28 | `""` | — |
+| [SRC-1C0D3D1206-L000029](../../tests/test_sqlite_backup_restore.py#L29) | 29 | `"    snapshot_path = tmp_path / \"backups\" / \"snapshot.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000030](../../tests/test_sqlite_backup_restore.py#L30) | 30 | `"    backup_report = backup_database(source_path, snapshot_path)"` | — |
 | [SRC-1C0D3D1206-L000031](../../tests/test_sqlite_backup_restore.py#L31) | 31 | `"    assert backup_report[\"result\"] == \"passed\""` | — |
 | [SRC-1C0D3D1206-L000032](../../tests/test_sqlite_backup_restore.py#L32) | 32 | `"    assert backup_report[\"integrity_check\"] == \"ok\""` | — |
 | [SRC-1C0D3D1206-L000033](../../tests/test_sqlite_backup_restore.py#L33) | 33 | `"    assert backup_report[\"lead_count\"] == 2"` | — |
@@ -783,54 +843,3 @@
 | [SRC-F725E90B2A-L000523](../../tests/test_web_agent.py#L523) | 523 | `""` | — |
 | [SRC-F725E90B2A-L000524](../../tests/test_web_agent.py#L524) | 524 | `"        def __init__(self, payload):"` | — |
 | [SRC-F725E90B2A-L000525](../../tests/test_web_agent.py#L525) | 525 | `"            self.payload = payload"` | — |
-| [SRC-F725E90B2A-L000526](../../tests/test_web_agent.py#L526) | 526 | `""` | — |
-| [SRC-F725E90B2A-L000527](../../tests/test_web_agent.py#L527) | 527 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000528](../../tests/test_web_agent.py#L528) | 528 | `"            return self.payload"` | — |
-| [SRC-F725E90B2A-L000529](../../tests/test_web_agent.py#L529) | 529 | `""` | — |
-| [SRC-F725E90B2A-L000530](../../tests/test_web_agent.py#L530) | 530 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000531](../../tests/test_web_agent.py#L531) | 531 | `""` | — |
-| [SRC-F725E90B2A-L000532](../../tests/test_web_agent.py#L532) | 532 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000533](../../tests/test_web_agent.py#L533) | 533 | `"        calls.append((url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000534](../../tests/test_web_agent.py#L534) | 534 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |
-| [SRC-F725E90B2A-L000535](../../tests/test_web_agent.py#L535) | 535 | `"            return FakeResponse({\"data\": [{\"id\": \"tag-7\", \"name\": \"cars\"}]})"` | — |
-| [SRC-F725E90B2A-L000536](../../tests/test_web_agent.py#L536) | 536 | `"        if url.endswith(\"/tag-7/recent_media\"):"` | — |
-| [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"            return FakeResponse({\"data\": [{"` | — |
-| [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `"                \"permalink\": \"https://www.instagram.com/p/ABC123/\","` | — |
-| [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"                \"caption\": \"Owner shared an electric car review\","` | — |
-| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"                \"media_type\": \"IMAGE\","` | — |
-| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
-| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"                \"like_count\": 17,"` | — |
-| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"                \"comments_count\": 4,"` | — |
-| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"            }]})"` | — |
-| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
-| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `""` | — |
-| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"    )"` | — |
-| [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
-| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
-| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
-| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
-| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
-| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    assert \"test-ig-token\" not in str(results)"` | — |
-| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `""` | — |
-| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `""` | — |
-| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"    monkeypatch.delenv(\"INSTAGRAM_USER_ID\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"    monkeypatch.delenv(\"INSTAGRAM_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"        \"تجارب عامة على Instagram\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `"    )"` | — |
-| [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `"    assert results == []"` | — |
-| [SRC-F725E90B2A-L000568](../../tests/test_web_agent.py#L568) | 568 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
-| [SRC-F725E90B2A-L000569](../../tests/test_web_agent.py#L569) | 569 | `""` | — |
-| [SRC-F725E90B2A-L000570](../../tests/test_web_agent.py#L570) | 570 | `""` | — |
-| [SRC-F725E90B2A-L000571](../../tests/test_web_agent.py#L571) | 571 | `"def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000572](../../tests/test_web_agent.py#L572) | 572 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000573](../../tests/test_web_agent.py#L573) | 573 | `""` | — |
-| [SRC-F725E90B2A-L000574](../../tests/test_web_agent.py#L574) | 574 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"test-page-token\")"` | — |
-| [SRC-F725E90B2A-L000575](../../tests/test_web_agent.py#L575) | 575 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_IDS\", \"page-1,page-2\")"` | — |
-| [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `""` | — |

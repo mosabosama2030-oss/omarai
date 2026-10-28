@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006062 إلى SRC-EEF2E6447C-L000581
+- النطاق: SRC-1AE03B9EC3-L006011 إلى SRC-EEF2E6447C-L000530
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006011](../../agents/web_agent.py#L6011) | 6011 | `"            answer += \"\\n\\nروابط إضافية من البحث المباشر عبر الويب:\""` | — |
+| [SRC-1AE03B9EC3-L006012](../../agents/web_agent.py#L6012) | 6012 | `"            for source in self.server_search_sources[:8]:"` | — |
+| [SRC-1AE03B9EC3-L006013](../../agents/web_agent.py#L6013) | 6013 | `"                answer += \"\\n- \" + source[\"title\"] + \" — \" + source[\"url\"]"` | — |
+| [SRC-1AE03B9EC3-L006014](../../agents/web_agent.py#L6014) | 6014 | `"        max_citable_sources = min(MAX_LLM_CITED_SOURCES, len(sources))"` | — |
+| [SRC-1AE03B9EC3-L006015](../../agents/web_agent.py#L6015) | 6015 | `"        answer, citation_warnings = self._remove_invalid_citations("` | — |
+| [SRC-1AE03B9EC3-L006016](../../agents/web_agent.py#L6016) | 6016 | `"            answer, max_citable_sources"` | — |
+| [SRC-1AE03B9EC3-L006017](../../agents/web_agent.py#L6017) | 6017 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006018](../../agents/web_agent.py#L6018) | 6018 | `"        citation_validation = self._citation_validation_metadata("` | — |
+| [SRC-1AE03B9EC3-L006019](../../agents/web_agent.py#L6019) | 6019 | `"            answer, max_citable_sources, citation_warnings, review_status"` | — |
+| [SRC-1AE03B9EC3-L006020](../../agents/web_agent.py#L6020) | 6020 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006021](../../agents/web_agent.py#L6021) | 6021 | `"        report[\"unique_sources\"] = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L006022](../../agents/web_agent.py#L6022) | 6022 | `"        report[\"pages_fetched\"] = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
+| [SRC-1AE03B9EC3-L006023](../../agents/web_agent.py#L6023) | 6023 | `"        report[\"second_pass_review\"] = review_status"` | — |
+| [SRC-1AE03B9EC3-L006024](../../agents/web_agent.py#L6024) | 6024 | `"        report[\"claim_audit\"] = review_status"` | — |
+| [SRC-1AE03B9EC3-L006025](../../agents/web_agent.py#L6025) | 6025 | `"        answer_coverage = {"` | — |
+| [SRC-1AE03B9EC3-L006026](../../agents/web_agent.py#L6026) | 6026 | `"            \"method\": \"explicit_criteria_heuristic\","` | — |
+| [SRC-1AE03B9EC3-L006027](../../agents/web_agent.py#L6027) | 6027 | `"            \"targets\": coverage_targets,"` | — |
+| [SRC-1AE03B9EC3-L006028](../../agents/web_agent.py#L6028) | 6028 | `"            \"review_prompted\": review_status == \"model_claim_audit_completed\","` | — |
+| [SRC-1AE03B9EC3-L006029](../../agents/web_agent.py#L6029) | 6029 | `"            \"status\": ("` | — |
+| [SRC-1AE03B9EC3-L006030](../../agents/web_agent.py#L6030) | 6030 | `"                \"model_review_requested_not_machine_verified\""` | — |
+| [SRC-1AE03B9EC3-L006031](../../agents/web_agent.py#L6031) | 6031 | `"                if coverage_targets and review_status == \"model_claim_audit_completed\""` | — |
+| [SRC-1AE03B9EC3-L006032](../../agents/web_agent.py#L6032) | 6032 | `"                else \"review_unavailable\""` | — |
+| [SRC-1AE03B9EC3-L006033](../../agents/web_agent.py#L6033) | 6033 | `"                if coverage_targets"` | — |
+| [SRC-1AE03B9EC3-L006034](../../agents/web_agent.py#L6034) | 6034 | `"                else \"no_explicit_targets_detected\""` | — |
+| [SRC-1AE03B9EC3-L006035](../../agents/web_agent.py#L6035) | 6035 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L006036](../../agents/web_agent.py#L6036) | 6036 | `"            \"automatically_graded\": False,"` | — |
+| [SRC-1AE03B9EC3-L006037](../../agents/web_agent.py#L6037) | 6037 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L006038](../../agents/web_agent.py#L6038) | 6038 | `"        report[\"answer_coverage\"] = answer_coverage"` | — |
+| [SRC-1AE03B9EC3-L006039](../../agents/web_agent.py#L6039) | 6039 | `"        report[\"coverage_repair_status\"] = coverage_repair_status"` | — |
+| [SRC-1AE03B9EC3-L006040](../../agents/web_agent.py#L6040) | 6040 | `"        answer_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets)"` | — |
+| [SRC-1AE03B9EC3-L006041](../../agents/web_agent.py#L6041) | 6041 | `"        answer_coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
+| [SRC-1AE03B9EC3-L006042](../../agents/web_agent.py#L6042) | 6042 | `"        answer_coverage[\"potentially_missing_target_count\"] = answer_integrity[\"potentially_missing_target_count\"]"` | — |
+| [SRC-1AE03B9EC3-L006043](../../agents/web_agent.py#L6043) | 6043 | `"        answer_coverage[\"source_evidence_gap_count\"] = answer_integrity[\"source_evidence_gap_count\"]"` | — |
+| [SRC-1AE03B9EC3-L006044](../../agents/web_agent.py#L6044) | 6044 | `"        answer_coverage[\"lexical_screen_method\"] = \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
+| [SRC-1AE03B9EC3-L006045](../../agents/web_agent.py#L6045) | 6045 | `"        task_fulfillment_status = ("` | — |
+| [SRC-1AE03B9EC3-L006046](../../agents/web_agent.py#L6046) | 6046 | `"            \"possible_gap_detected\""` | — |
+| [SRC-1AE03B9EC3-L006047](../../agents/web_agent.py#L6047) | 6047 | `"            if ("` | — |
+| [SRC-1AE03B9EC3-L006048](../../agents/web_agent.py#L6048) | 6048 | `"                answer_integrity[\"potentially_missing_target_count\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L006049](../../agents/web_agent.py#L6049) | 6049 | `"                or answer_integrity[\"source_evidence_gap_count\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L006050](../../agents/web_agent.py#L6050) | 6050 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L006051](../../agents/web_agent.py#L6051) | 6051 | `"            else \"lexical_signals_found_not_semantically_verified\" if coverage_targets"` | — |
+| [SRC-1AE03B9EC3-L006052](../../agents/web_agent.py#L6052) | 6052 | `"            else \"not_machine_assessed_no_explicit_targets_detected\""` | — |
+| [SRC-1AE03B9EC3-L006053](../../agents/web_agent.py#L6053) | 6053 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006054](../../agents/web_agent.py#L6054) | 6054 | `"        answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
+| [SRC-1AE03B9EC3-L006055](../../agents/web_agent.py#L6055) | 6055 | `"        report[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
+| [SRC-1AE03B9EC3-L006056](../../agents/web_agent.py#L6056) | 6056 | `"        report[\"answer_integrity\"] = answer_integrity"` | — |
+| [SRC-1AE03B9EC3-L006057](../../agents/web_agent.py#L6057) | 6057 | `"        report[\"connector_summary\"] = self._connector_status_summary("` | — |
+| [SRC-1AE03B9EC3-L006058](../../agents/web_agent.py#L6058) | 6058 | `"            list(self._provider_diagnostics), sources"` | — |
+| [SRC-1AE03B9EC3-L006059](../../agents/web_agent.py#L6059) | 6059 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006060](../../agents/web_agent.py#L6060) | 6060 | `"        report[\"provider_diagnostics\"] = list(self._provider_diagnostics)"` | — |
+| [SRC-1AE03B9EC3-L006061](../../agents/web_agent.py#L6061) | 6061 | `"        distinct_providers = {"` | — |
 | [SRC-1AE03B9EC3-L006062](../../agents/web_agent.py#L6062) | 6062 | `"            provider for source in sources for provider in source.get(\"providers\", [])"` | — |
 | [SRC-1AE03B9EC3-L006063](../../agents/web_agent.py#L6063) | 6063 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L006064](../../agents/web_agent.py#L6064) | 6064 | `"        distinct_domains = {"` | — |
@@ -783,54 +834,3 @@
 | [SRC-EEF2E6447C-L000528](../../api/omarai.py#L528) | 528 | `"            origin = self.headers.get(\"Origin\")"` | — |
 | [SRC-EEF2E6447C-L000529](../../api/omarai.py#L529) | 529 | `"            if origin and not self._origin_allowed(origin):"` | — |
 | [SRC-EEF2E6447C-L000530](../../api/omarai.py#L530) | 530 | `"                return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
-| [SRC-EEF2E6447C-L000531](../../api/omarai.py#L531) | 531 | `""` | — |
-| [SRC-EEF2E6447C-L000532](../../api/omarai.py#L532) | 532 | `"            raw_body = self._read_request_body()"` | — |
-| [SRC-EEF2E6447C-L000533](../../api/omarai.py#L533) | 533 | `"            if raw_body is None:"` | — |
-| [SRC-EEF2E6447C-L000534](../../api/omarai.py#L534) | 534 | `"                return"` | — |
-| [SRC-EEF2E6447C-L000535](../../api/omarai.py#L535) | 535 | `"            data = json.loads(raw_body)"` | — |
-| [SRC-EEF2E6447C-L000536](../../api/omarai.py#L536) | 536 | `"            if not isinstance(data, dict):"` | — |
-| [SRC-EEF2E6447C-L000537](../../api/omarai.py#L537) | 537 | `"                return self.respond(400, {\"error\": \"request body must be a JSON object\"})"` | — |
-| [SRC-EEF2E6447C-L000538](../../api/omarai.py#L538) | 538 | `"            if path == \"/api/diagnostics\":"` | — |
-| [SRC-EEF2E6447C-L000539](../../api/omarai.py#L539) | 539 | `"                test_model = data.get(\"test_model\", True)"` | — |
-| [SRC-EEF2E6447C-L000540](../../api/omarai.py#L540) | 540 | `"                test_social = data.get(\"test_social\", False)"` | — |
-| [SRC-EEF2E6447C-L000541](../../api/omarai.py#L541) | 541 | `"                if not isinstance(test_model, bool) or not isinstance(test_social, bool):"` | — |
-| [SRC-EEF2E6447C-L000542](../../api/omarai.py#L542) | 542 | `"                    return self.respond("` | — |
-| [SRC-EEF2E6447C-L000543](../../api/omarai.py#L543) | 543 | `"                        400,"` | — |
-| [SRC-EEF2E6447C-L000544](../../api/omarai.py#L544) | 544 | `"                        {\"error\": \"test_model and test_social must be booleans\"},"` | — |
-| [SRC-EEF2E6447C-L000545](../../api/omarai.py#L545) | 545 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000546](../../api/omarai.py#L546) | 546 | `"                return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000547](../../api/omarai.py#L547) | 547 | `"                    lambda: WebAgent().diagnostics("` | — |
-| [SRC-EEF2E6447C-L000548](../../api/omarai.py#L548) | 548 | `"                        test_model=test_model,"` | — |
-| [SRC-EEF2E6447C-L000549](../../api/omarai.py#L549) | 549 | `"                        test_social=test_social,"` | — |
-| [SRC-EEF2E6447C-L000550](../../api/omarai.py#L550) | 550 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000551](../../api/omarai.py#L551) | 551 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000552](../../api/omarai.py#L552) | 552 | `""` | — |
-| [SRC-EEF2E6447C-L000553](../../api/omarai.py#L553) | 553 | `"            if path == \"/api/agent\":"` | — |
-| [SRC-EEF2E6447C-L000554](../../api/omarai.py#L554) | 554 | `"                question = data.get(\"question\", \"\")"` | — |
-| [SRC-EEF2E6447C-L000555](../../api/omarai.py#L555) | 555 | `"                if not isinstance(question, str) or not question.strip():"` | — |
-| [SRC-EEF2E6447C-L000556](../../api/omarai.py#L556) | 556 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
-| [SRC-EEF2E6447C-L000557](../../api/omarai.py#L557) | 557 | `"                agent = WebAgent()"` | — |
-| [SRC-EEF2E6447C-L000558](../../api/omarai.py#L558) | 558 | `"                history = data.get(\"history\", [])"` | — |
-| [SRC-EEF2E6447C-L000559](../../api/omarai.py#L559) | 559 | `"                if \"mode\" not in data:"` | — |
-| [SRC-EEF2E6447C-L000560](../../api/omarai.py#L560) | 560 | `"                    return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000561](../../api/omarai.py#L561) | 561 | `"                        lambda: agent.answer(question, history)"` | — |
-| [SRC-EEF2E6447C-L000562](../../api/omarai.py#L562) | 562 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000563](../../api/omarai.py#L563) | 563 | `"                return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000564](../../api/omarai.py#L564) | 564 | `"                    lambda: agent.answer(question, history, data.get(\"mode\"))"` | — |
-| [SRC-EEF2E6447C-L000565](../../api/omarai.py#L565) | 565 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000566](../../api/omarai.py#L566) | 566 | `""` | — |
-| [SRC-EEF2E6447C-L000567](../../api/omarai.py#L567) | 567 | `"            if path == \"/api/ask\":"` | — |
-| [SRC-EEF2E6447C-L000568](../../api/omarai.py#L568) | 568 | `"                question = data.get(\"question\", \"\")"` | — |
-| [SRC-EEF2E6447C-L000569](../../api/omarai.py#L569) | 569 | `"                if not isinstance(question, str) or not question.strip():"` | — |
-| [SRC-EEF2E6447C-L000570](../../api/omarai.py#L570) | 570 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
-| [SRC-EEF2E6447C-L000571](../../api/omarai.py#L571) | 571 | `"                if len(question) > 1000:"` | — |
-| [SRC-EEF2E6447C-L000572](../../api/omarai.py#L572) | 572 | `"                    return self.respond(400, {\"error\": \"question must be at most 1000 characters\"})"` | — |
-| [SRC-EEF2E6447C-L000573](../../api/omarai.py#L573) | 573 | `"                return self.respond(200, answer_question(question, self.store))"` | — |
-| [SRC-EEF2E6447C-L000574](../../api/omarai.py#L574) | 574 | `"            if path == \"/api/analyze\":"` | — |
-| [SRC-EEF2E6447C-L000575](../../api/omarai.py#L575) | 575 | `"                return self.respond("` | — |
-| [SRC-EEF2E6447C-L000576](../../api/omarai.py#L576) | 576 | `"                    200,"` | — |
-| [SRC-EEF2E6447C-L000577](../../api/omarai.py#L577) | 577 | `"                    analyze("` | — |
-| [SRC-EEF2E6447C-L000578](../../api/omarai.py#L578) | 578 | `"                        data.get(\"text\", \"\"),"` | — |
-| [SRC-EEF2E6447C-L000579](../../api/omarai.py#L579) | 579 | `"                        data.get(\"product_terms\", []),"` | — |
-| [SRC-EEF2E6447C-L000580](../../api/omarai.py#L580) | 580 | `"                        data.get(\"location_terms\", []),"` | — |
-| [SRC-EEF2E6447C-L000581](../../api/omarai.py#L581) | 581 | `"                    ),"` | — |

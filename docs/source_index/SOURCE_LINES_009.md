@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002062 إلى SRC-1AE03B9EC3-L002861
+- النطاق: SRC-1AE03B9EC3-L002011 إلى SRC-1AE03B9EC3-L002810
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002011](../../agents/web_agent.py#L2011) | 2011 | `"                                f\"(HTTP {response.status_code}); verify page ownership, token and permissions.\""` | — |
+| [SRC-1AE03B9EC3-L002012](../../agents/web_agent.py#L2012) | 2012 | `"                            )"` | — |
+| [SRC-1AE03B9EC3-L002013](../../agents/web_agent.py#L2013) | 2013 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L002014](../../agents/web_agent.py#L2014) | 2014 | `"                        posts = response.json().get(\"data\", [])"` | — |
+| [SRC-1AE03B9EC3-L002015](../../agents/web_agent.py#L2015) | 2015 | `"                        rank = 0"` | — |
+| [SRC-1AE03B9EC3-L002016](../../agents/web_agent.py#L2016) | 2016 | `"                        for post in posts:"` | — |
+| [SRC-1AE03B9EC3-L002017](../../agents/web_agent.py#L2017) | 2017 | `"                            message = _clean_text(post.get(\"message\") or \"\", 1400)"` | — |
+| [SRC-1AE03B9EC3-L002018](../../agents/web_agent.py#L2018) | 2018 | `"                            comments = post.get(\"comments\", {}).get(\"data\", [])"` | — |
+| [SRC-1AE03B9EC3-L002019](../../agents/web_agent.py#L2019) | 2019 | `"                            comment_text = ["` | — |
+| [SRC-1AE03B9EC3-L002020](../../agents/web_agent.py#L2020) | 2020 | `"                                _clean_text(item.get(\"message\") or \"\", 500)"` | — |
+| [SRC-1AE03B9EC3-L002021](../../agents/web_agent.py#L2021) | 2021 | `"                                for item in comments"` | — |
+| [SRC-1AE03B9EC3-L002022](../../agents/web_agent.py#L2022) | 2022 | `"                                if isinstance(item, dict) and item.get(\"message\")"` | — |
+| [SRC-1AE03B9EC3-L002023](../../agents/web_agent.py#L2023) | 2023 | `"                            ]"` | — |
+| [SRC-1AE03B9EC3-L002024](../../agents/web_agent.py#L2024) | 2024 | `"                            searchable = (message + \" \" + \" \".join(comment_text)).casefold()"` | — |
+| [SRC-1AE03B9EC3-L002025](../../agents/web_agent.py#L2025) | 2025 | `"                            matched = sum(term in searchable for term in query_terms)"` | — |
+| [SRC-1AE03B9EC3-L002026](../../agents/web_agent.py#L2026) | 2026 | `"                            if query_terms and matched == 0:"` | — |
+| [SRC-1AE03B9EC3-L002027](../../agents/web_agent.py#L2027) | 2027 | `"                                continue"` | — |
+| [SRC-1AE03B9EC3-L002028](../../agents/web_agent.py#L2028) | 2028 | `"                            permalink = _public_http_url(post.get(\"permalink_url\", \"\"))"` | — |
+| [SRC-1AE03B9EC3-L002029](../../agents/web_agent.py#L2029) | 2029 | `"                            if not permalink:"` | — |
+| [SRC-1AE03B9EC3-L002030](../../agents/web_agent.py#L2030) | 2030 | `"                                continue"` | — |
+| [SRC-1AE03B9EC3-L002031](../../agents/web_agent.py#L2031) | 2031 | `"                            rank += 1"` | — |
+| [SRC-1AE03B9EC3-L002032](../../agents/web_agent.py#L2032) | 2032 | `"                            excerpt = message"` | — |
+| [SRC-1AE03B9EC3-L002033](../../agents/web_agent.py#L2033) | 2033 | `"                            if comment_text:"` | — |
+| [SRC-1AE03B9EC3-L002034](../../agents/web_agent.py#L2034) | 2034 | `"                                excerpt = ("` | — |
+| [SRC-1AE03B9EC3-L002035](../../agents/web_agent.py#L2035) | 2035 | `"                                    excerpt + \"\\n\\nتعليقات عامة على المنشور:\\n\""` | — |
+| [SRC-1AE03B9EC3-L002036](../../agents/web_agent.py#L2036) | 2036 | `"                                    if excerpt else \"تعليقات عامة على المنشور:\\n\""` | — |
+| [SRC-1AE03B9EC3-L002037](../../agents/web_agent.py#L2037) | 2037 | `"                                ) + \"\\n— \".join(comment_text)"` | — |
+| [SRC-1AE03B9EC3-L002038](../../agents/web_agent.py#L2038) | 2038 | `"                            results.append({"` | — |
+| [SRC-1AE03B9EC3-L002039](../../agents/web_agent.py#L2039) | 2039 | `"                                \"title\": _clean_text(message or \"Facebook public Page post\", 300),"` | — |
+| [SRC-1AE03B9EC3-L002040](../../agents/web_agent.py#L2040) | 2040 | `"                                \"url\": permalink,"` | — |
+| [SRC-1AE03B9EC3-L002041](../../agents/web_agent.py#L2041) | 2041 | `"                                \"snippet\": _clean_text(excerpt, 1800),"` | — |
+| [SRC-1AE03B9EC3-L002042](../../agents/web_agent.py#L2042) | 2042 | `"                                \"page_text\": \"\","` | — |
+| [SRC-1AE03B9EC3-L002043](../../agents/web_agent.py#L2043) | 2043 | `"                                \"page_fetched\": False,"` | — |
+| [SRC-1AE03B9EC3-L002044](../../agents/web_agent.py#L2044) | 2044 | `"                                \"provider\": \"facebook_pages_api\","` | — |
+| [SRC-1AE03B9EC3-L002045](../../agents/web_agent.py#L2045) | 2045 | `"                                \"provider_rank\": rank,"` | — |
+| [SRC-1AE03B9EC3-L002046](../../agents/web_agent.py#L2046) | 2046 | `"                                \"search_query\": query,"` | — |
+| [SRC-1AE03B9EC3-L002047](../../agents/web_agent.py#L2047) | 2047 | `"                                \"published_at\": _clean_text(post.get(\"created_time\") or \"\", 100),"` | — |
+| [SRC-1AE03B9EC3-L002048](../../agents/web_agent.py#L2048) | 2048 | `"                            })"` | — |
+| [SRC-1AE03B9EC3-L002049](../../agents/web_agent.py#L2049) | 2049 | `"                            if rank >= 10:"` | — |
+| [SRC-1AE03B9EC3-L002050](../../agents/web_agent.py#L2050) | 2050 | `"                                break"` | — |
+| [SRC-1AE03B9EC3-L002051](../../agents/web_agent.py#L2051) | 2051 | `"                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L002052](../../agents/web_agent.py#L2052) | 2052 | `"                        warnings.append(\"Facebook Pages API failed for one configured page.\")"` | — |
+| [SRC-1AE03B9EC3-L002053](../../agents/web_agent.py#L2053) | 2053 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L002054](../../agents/web_agent.py#L2054) | 2054 | `"                warnings.append("` | — |
+| [SRC-1AE03B9EC3-L002055](../../agents/web_agent.py#L2055) | 2055 | `"                    \"Facebook direct API is not configured for specific pages; indexed public Facebook pages are still searched.\""` | — |
+| [SRC-1AE03B9EC3-L002056](../../agents/web_agent.py#L2056) | 2056 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002057](../../agents/web_agent.py#L2057) | 2057 | `""` | — |
+| [SRC-1AE03B9EC3-L002058](../../agents/web_agent.py#L2058) | 2058 | `"        if \"instagram\" in platforms:"` | — |
+| [SRC-1AE03B9EC3-L002059](../../agents/web_agent.py#L2059) | 2059 | `"            ig_user_id = os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L002060](../../agents/web_agent.py#L2060) | 2060 | `"            ig_token = os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L002061](../../agents/web_agent.py#L2061) | 2061 | `"            graph_version = os.getenv(\"META_GRAPH_VERSION\", \"v25.0\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002062](../../agents/web_agent.py#L2062) | 2062 | `"            if ig_user_id and ig_token:"` | — |
 | [SRC-1AE03B9EC3-L002063](../../agents/web_agent.py#L2063) | 2063 | `"                # The official Hashtag Search API returns public hashtag media only."` | — |
 | [SRC-1AE03B9EC3-L002064](../../agents/web_agent.py#L2064) | 2064 | `"                # It does not search every Instagram post or bypass private accounts."` | — |
@@ -765,54 +816,3 @@
 | [SRC-1AE03B9EC3-L002808](../../agents/web_agent.py#L2808) | 2808 | `"            \"openalex\": (True, \"built_in_free_academic\"),"` | — |
 | [SRC-1AE03B9EC3-L002809](../../agents/web_agent.py#L2809) | 2809 | `"            \"arxiv\": (True, \"built_in_free_academic\"),"` | — |
 | [SRC-1AE03B9EC3-L002810](../../agents/web_agent.py#L2810) | 2810 | `"            \"crossref\": (True, \"built_in_free_academic\"),"` | — |
-| [SRC-1AE03B9EC3-L002811](../../agents/web_agent.py#L2811) | 2811 | `"            \"reddit_public_rss\": (True, \"built_in_no_api_key\"), \"bluesky_public_search\": (True, \"built_in_no_api_key\"),"` | — |
-| [SRC-1AE03B9EC3-L002812](../../agents/web_agent.py#L2812) | 2812 | `"            \"openrouter_web_search\": (bool(self.openrouter_web_search_enabled),"` | — |
-| [SRC-1AE03B9EC3-L002813](../../agents/web_agent.py#L2813) | 2813 | `"                \"enabled\" if self.openrouter_web_search_enabled else \"disabled\"),"` | — |
-| [SRC-1AE03B9EC3-L002814](../../agents/web_agent.py#L2814) | 2814 | `"            \"user_supplied_url\": (True, \"request_driven\"),"` | — |
-| [SRC-1AE03B9EC3-L002815](../../agents/web_agent.py#L2815) | 2815 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002816](../../agents/web_agent.py#L2816) | 2816 | `"        for name, keys in optional.items():"` | — |
-| [SRC-1AE03B9EC3-L002817](../../agents/web_agent.py#L2817) | 2817 | `"            ready = all(bool(os.getenv(key, \"\").strip()) for key in keys)"` | — |
-| [SRC-1AE03B9EC3-L002818](../../agents/web_agent.py#L2818) | 2818 | `"            config[name] = (ready, \"configured\" if ready else \"not_configured\")"` | — |
-| [SRC-1AE03B9EC3-L002819](../../agents/web_agent.py#L2819) | 2819 | `"        grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
-| [SRC-1AE03B9EC3-L002820](../../agents/web_agent.py#L2820) | 2820 | `"        for item in diagnostics or []:"` | — |
-| [SRC-1AE03B9EC3-L002821](../../agents/web_agent.py#L2821) | 2821 | `"            if isinstance(item, dict):"` | — |
-| [SRC-1AE03B9EC3-L002822](../../agents/web_agent.py#L2822) | 2822 | `"                name = _clean_text(item.get(\"provider\", \"unknown\"), 80) or \"unknown\""` | — |
-| [SRC-1AE03B9EC3-L002823](../../agents/web_agent.py#L2823) | 2823 | `"                grouped.setdefault(name, []).append(item)"` | — |
-| [SRC-1AE03B9EC3-L002824](../../agents/web_agent.py#L2824) | 2824 | `"        useful: dict[str, int] = {}"` | — |
-| [SRC-1AE03B9EC3-L002825](../../agents/web_agent.py#L2825) | 2825 | `"        for source in sources or []:"` | — |
-| [SRC-1AE03B9EC3-L002826](../../agents/web_agent.py#L2826) | 2826 | `"            if not isinstance(source, dict):"` | — |
-| [SRC-1AE03B9EC3-L002827](../../agents/web_agent.py#L2827) | 2827 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L002828](../../agents/web_agent.py#L2828) | 2828 | `"            providers = source.get(\"providers\", [])"` | — |
-| [SRC-1AE03B9EC3-L002829](../../agents/web_agent.py#L2829) | 2829 | `"            if isinstance(providers, str):"` | — |
-| [SRC-1AE03B9EC3-L002830](../../agents/web_agent.py#L2830) | 2830 | `"                providers = [providers]"` | — |
-| [SRC-1AE03B9EC3-L002831](../../agents/web_agent.py#L2831) | 2831 | `"            if not isinstance(providers, list):"` | — |
-| [SRC-1AE03B9EC3-L002832](../../agents/web_agent.py#L2832) | 2832 | `"                providers = []"` | — |
-| [SRC-1AE03B9EC3-L002833](../../agents/web_agent.py#L2833) | 2833 | `"            if isinstance(source.get(\"provider\"), str):"` | — |
-| [SRC-1AE03B9EC3-L002834](../../agents/web_agent.py#L2834) | 2834 | `"                providers = providers + [source[\"provider\"]]"` | — |
-| [SRC-1AE03B9EC3-L002835](../../agents/web_agent.py#L2835) | 2835 | `"            for name in {str(value) for value in providers if value}:"` | — |
-| [SRC-1AE03B9EC3-L002836](../../agents/web_agent.py#L2836) | 2836 | `"                useful[name] = useful.get(name, 0) + 1"` | — |
-| [SRC-1AE03B9EC3-L002837](../../agents/web_agent.py#L2837) | 2837 | `"        priority = {\"ok\": 0, \"no_results\": 1, \"filtered_all\": 2, \"not_attempted\": 3,"` | — |
-| [SRC-1AE03B9EC3-L002838](../../agents/web_agent.py#L2838) | 2838 | `"                    \"disabled\": 4, \"not_configured\": 5, \"budget_exhausted\": 6,"` | — |
-| [SRC-1AE03B9EC3-L002839](../../agents/web_agent.py#L2839) | 2839 | `"                    \"unknown\": 6, \"rate_limited\": 7, \"unauthorized\": 8, \"http_error\": 9,"` | — |
-| [SRC-1AE03B9EC3-L002840](../../agents/web_agent.py#L2840) | 2840 | `"                    \"timeout\": 10, \"failed\": 11, \"error\": 11}"` | — |
-| [SRC-1AE03B9EC3-L002841](../../agents/web_agent.py#L2841) | 2841 | `"        confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES \| {"` | — |
-| [SRC-1AE03B9EC3-L002842](../../agents/web_agent.py#L2842) | 2842 | `"            \"http_error\", \"unauthorized\", \"rate_limited\", \"invalid_response\""` | — |
-| [SRC-1AE03B9EC3-L002843](../../agents/web_agent.py#L2843) | 2843 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002844](../../agents/web_agent.py#L2844) | 2844 | `"        uncertain_attempt_statuses = {\"timeout\", \"failed\", \"error\", \"unknown\", \"inconclusive\"}"` | — |
-| [SRC-1AE03B9EC3-L002845](../../agents/web_agent.py#L2845) | 2845 | `""` | — |
-| [SRC-1AE03B9EC3-L002846](../../agents/web_agent.py#L2846) | 2846 | `"        def redact(value: Any) -> str:"` | — |
-| [SRC-1AE03B9EC3-L002847](../../agents/web_agent.py#L2847) | 2847 | `"            safe = _clean_text(str(value or \"\"), 180)"` | — |
-| [SRC-1AE03B9EC3-L002848](../../agents/web_agent.py#L2848) | 2848 | `"            safe = re.sub(r\"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*\", r\"\\1[REDACTED]\", safe)"` | — |
-| [SRC-1AE03B9EC3-L002849](../../agents/web_agent.py#L2849) | 2849 | `"            safe = re.sub(r\"(?i)\\b(api[_-]?key\|access[_-]?token\|refresh[_-]?token\|token\|secret\|password)\\s*[:=]\\s*[^\\s,;]+\", r\"\\1=[REDACTED]\", safe)"` | — |
-| [SRC-1AE03B9EC3-L002850](../../agents/web_agent.py#L2850) | 2850 | `"            safe = re.sub(r\"(?i)([?&](?:api[_-]?key\|access[_-]?token\|token\|key)=)[^&\\s]+\", r\"\\1[REDACTED]\", safe)"` | — |
-| [SRC-1AE03B9EC3-L002851](../../agents/web_agent.py#L2851) | 2851 | `"            return safe[:180]"` | — |
-| [SRC-1AE03B9EC3-L002852](../../agents/web_agent.py#L2852) | 2852 | `""` | — |
-| [SRC-1AE03B9EC3-L002853](../../agents/web_agent.py#L2853) | 2853 | `"        names = set(config) \| set(grouped) \| set(useful)"` | — |
-| [SRC-1AE03B9EC3-L002854](../../agents/web_agent.py#L2854) | 2854 | `"        connectors = []"` | — |
-| [SRC-1AE03B9EC3-L002855](../../agents/web_agent.py#L2855) | 2855 | `"        for name in sorted(names):"` | — |
-| [SRC-1AE03B9EC3-L002856](../../agents/web_agent.py#L2856) | 2856 | `"            ready, config_status = config.get(name, (bool(grouped.get(name) or useful.get(name)), \"observed_in_code_path\"))"` | — |
-| [SRC-1AE03B9EC3-L002857](../../agents/web_agent.py#L2857) | 2857 | `"            attempts = grouped.get(name, [])"` | — |
-| [SRC-1AE03B9EC3-L002858](../../agents/web_agent.py#L2858) | 2858 | `"            statuses = [_clean_text(row.get(\"status\", \"unknown\"), 40).lower() or \"unknown\" for row in attempts]"` | — |
-| [SRC-1AE03B9EC3-L002859](../../agents/web_agent.py#L2859) | 2859 | `"            status = max(statuses, key=lambda value: priority.get(value, 6)) if statuses else ("` | — |
-| [SRC-1AE03B9EC3-L002860](../../agents/web_agent.py#L2860) | 2860 | `"                \"ok\" if useful.get(name, 0) else \"not_configured\" if not ready else \"not_attempted\")"` | — |
-| [SRC-1AE03B9EC3-L002861](../../agents/web_agent.py#L2861) | 2861 | `"            if any(value in confirmed_attempt_statuses for value in statuses) or useful.get(name, 0):"` | — |

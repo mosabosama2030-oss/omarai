@@ -4,9 +4,70 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-914817100D-L000009 إلى SRC-E599346ABE-L000499
+- النطاق: SRC-26428BDA96-L000228 إلى SRC-E599346ABE-L000448
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-26428BDA96 — [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-26428BDA96-L000228](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L228) | 228 | `"2. قياس precision وrecall لدعم الادعاءات والاستشهادات بدل الاعتماد على مراجعة نموذج فقط."` | — |
+| [SRC-26428BDA96-L000229](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L229) | 229 | `"3. الحفاظ على metadata الحالية التي تفرق بين فحص index-range وبين fact check."` | — |
+| [SRC-26428BDA96-L000230](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L230) | 230 | `"4. عدم تسمية الجودة good/excellent ضمانًا لصحة الحقيقة؛ إنها حاليًا تشير إلى تغطية عملية البحث كما تقول metadata نفسها."` | — |
+| [SRC-26428BDA96-L000231](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L231) | 231 | `""` | — |
+| [SRC-26428BDA96-L000232](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L232) | 232 | `"### Gate 5 — إثبات النشر والتخزين"` | — |
+| [SRC-26428BDA96-L000233](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L233) | 233 | `"1. تشغيل live diagnostics من البيئة المنشورة مع عرض النتائج الفعلية دون كشف الأسرار."` | — |
+| [SRC-26428BDA96-L000234](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L234) | 234 | `"2. ربط deployment بوضوح مع commit محدد."` | — |
+| [SRC-26428BDA96-L000235](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L235) | 235 | `"3. حفظ سجل اختبار، ثم restart/redeploy، ثم التحقق من استمرار البيانات أو توثيق كونها مؤقتة."` | — |
+| [SRC-26428BDA96-L000236](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L236) | 236 | `"4. إعداد نسخة احتياطية وتجربة استعادة إن كانت البيانات لا يمكن تعويضها."` | — |
+| [SRC-26428BDA96-L000237](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L237) | 237 | `""` | — |
+| [SRC-26428BDA96-L000238](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L238) | 238 | `"## 8. متى نسمح بالانتقال للمرحلة التالية؟"` | — |
+| [SRC-26428BDA96-L000239](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L239) | 239 | `""` | — |
+| [SRC-26428BDA96-L000240](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L240) | 240 | `"لا نعتمد التقدم على انطباع عام. شروط البوابة المقترحة:"` | — |
+| [SRC-26428BDA96-L000241](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L241) | 241 | `"- [ ] اختبار deadline شامل يثبت توقف مراحل البحث والنموذج قبل تجاوز حد الطلب."` | — |
+| [SRC-26428BDA96-L000242](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L242) | 242 | `"- [ ] اختبار توازٍ يثبت أن عدد الطلبات المكلفة المتزامنة محدود."` | — |
+| [SRC-26428BDA96-L000243](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L243) | 243 | `"- [ ] قرار نطاق موثق: single-operator أو multi-user؛ وإذا multi-user، تمر جميع اختبارات العزل."` | — |
+| [SRC-26428BDA96-L000244](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L244) | 244 | `"- [ ] نجاح اختبارات SSRF adversarial الجديدة."` | — |
+| [SRC-26428BDA96-L000245](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L245) | 245 | `"- [ ] نجاح اختبارات prompt injection وXSS الجديدة."` | — |
+| [SRC-26428BDA96-L000246](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L246) | 246 | `"- [ ] مجموعة تقييم citations/claim-support بنتائج مسجلة، وحدود قبول متفق عليها."` | — |
+| [SRC-26428BDA96-L000247](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L247) | 247 | `"- [ ] مراجعة تهيئة الوكيل العكسي وOrigin وrate limit في منصة الاستضافة الفعلية."` | — |
+| [SRC-26428BDA96-L000248](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L248) | 248 | `"- [ ] إثبات استمرارية قاعدة البيانات أو تنبيه المستخدم بوضوح أنها غير دائمة."` | — |
+| [SRC-26428BDA96-L000249](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L249) | 249 | `"- [ ] إرفاق commit لكل تغيير، ونتائج CI لكل نسخة، وتحديث سجل المتطلبات بالحالة والدليل."` | — |
+| [SRC-26428BDA96-L000250](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) | 250 | `""` | — |
+| [SRC-26428BDA96-L000251](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L251) | 251 | `"لا تعني كل هذه البنود أن يجب بناء بنية ضخمة. يمكن معالجة كثير منها داخل التطبيق الحالي؛ المطلوب هو وضع الحدود الصحيحة، ثم اختبارها."` | — |
+| [SRC-26428BDA96-L000252](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L252) | 252 | `""` | — |
+| [SRC-26428BDA96-L000253](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L253) | 253 | `"## 9. الخلاصة النهائية"` | — |
+| [SRC-26428BDA96-L000254](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L254) | 254 | `""` | — |
+| [SRC-26428BDA96-L000255](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L255) | 255 | `"**Omarai يسير في اتجاه هندسي صحيح أكثر مما يوحي به كونه مشروعًا صغيرًا: توجد اختبارات، وإخفاقات تُعامل بصدق، وضوابط شبكة، ومراجعة للأدلة، وواجهات تُنقّي النصوص، وأساس CI جيد. وهذه نتيجة إيجابية مدعومة بدليل.**"` | — |
+| [SRC-26428BDA96-L000256](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L256) | 256 | `""` | — |
+| [SRC-26428BDA96-L000257](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L257) | 257 | `"لكن التأكيد الاحترافي ليس «مطابق 100%». النتيجة الأدق هي:"` | — |
+| [SRC-26428BDA96-L000258](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L258) | 258 | `"- **مناسب للاستمرار في التطوير والاختبار كنسخة خاصة ذات نطاق محدود، بشروط واضحة.**"` | — |
+| [SRC-26428BDA96-L000259](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L259) | 259 | `"- **غير مثبت بعد كخدمة عامة متعددة المستخدمين ذات ميزانية تشغيل شاملة واستشهادات متحققة دلاليًا.**"` | — |
+| [SRC-26428BDA96-L000260](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L260) | 260 | `"- **الأولوية القادمة ليست إضافة مزيد من المصطلحات أو الخدمات؛ بل إغلاق A-01 وA-02 وA-03 وA-04 واختبارها، ثم تحديث حالات سجل المتطلبات من UNKNOWN إلى حالات مدعومة بالأدلة.**"` | — |
+| [SRC-26428BDA96-L000261](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L261) | 261 | `""` | — |
+| [SRC-26428BDA96-L000262](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L262) | 262 | `"هذا التقرير لا يغيّر الكود ولا ينشر التطبيق. الغرض منه تثبيت صورة صادقة عن الوضع الحالي وتحديد أقصر مسار إلى جاهزية أعلى."` | — |
+## وثائق وفهرسة
+
+### FILE-160DC0B3E4 — [docs/archive/README.md](../archive/README.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-160DC0B3E4-L000001](../archive/README.md#L1) | 1 | `"# أرشيف تقارير Omarai"` | — |
+| [SRC-160DC0B3E4-L000002](../archive/README.md#L2) | 2 | `""` | — |
+| [SRC-160DC0B3E4-L000003](../archive/README.md#L3) | 3 | `"يحتوي هذا المجلد على لقطات تاريخية مرتبطة بـSHA وتاريخ تدقيق سابق. الهدف حفظ السياق والأدلة التاريخية دون خلطها بالحالة الحالية."` | — |
+| [SRC-160DC0B3E4-L000004](../archive/README.md#L4) | 4 | `""` | — |
+| [SRC-160DC0B3E4-L000005](../archive/README.md#L5) | 5 | `"- [تدقيق P0 المؤرخ 19 أكتوبر 2026](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md): تدقيق أولي قبل دمج إصلاحات لاحقة."` | — |
+| [SRC-160DC0B3E4-L000006](../archive/README.md#L6) | 6 | `"- [تسوية الأدلة التشغيلية المؤرخة 19 أكتوبر 2026](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md): تسلسل تاريخي لنتائج الاختبارات والفروع السابقة."` | — |
+| [SRC-160DC0B3E4-L000007](../archive/README.md#L7) | 7 | `""` | — |
+| [SRC-160DC0B3E4-L000008](../archive/README.md#L8) | 8 | `"للحالة الحالية ابدأ من [نطاق التنفيذ](../IMPLEMENTATION_SCOPE.md)، و[سجل المعالجة المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md)، و[تقرير التحقق بعد الدمج](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md)، و[مصفوفة أدلة الاختبار](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md)."` | — |
 ## وثائق وفهرسة
 
 ### FILE-914817100D — [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1)
@@ -16,6 +77,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-914817100D-L000001](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1) | 1 | `"# إصلاح حلقة الإجابة المركبة في Omarai — 27 أكتوبر 2026"` | — |
+| [SRC-914817100D-L000002](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L2) | 2 | `""` | — |
+| [SRC-914817100D-L000003](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L3) | 3 | `"## الغرض"` | — |
+| [SRC-914817100D-L000004](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L4) | 4 | `""` | — |
+| [SRC-914817100D-L000005](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L5) | 5 | `"إغلاق الفجوة بين محاور السؤال المركب، وخطة البحث، والأدلة التي جُمعت، والإجابة النهائية. هذا التغيير لا يدّعي إثبات صحة المعنى آليًا؛ فهو يحسّن تخصيص البحث ويعرض إشارات الأدلة لكل محور، مع الإبقاء على الفصل بين الإشارة اللفظية والتحقق الدلالي."` | — |
+| [SRC-914817100D-L000006](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L6) | 6 | `""` | — |
+| [SRC-914817100D-L000007](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L7) | 7 | `"## خط الأساس الذي تمت مراجعته"` | — |
+| [SRC-914817100D-L000008](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L8) | 8 | `""` | — |
 | [SRC-914817100D-L000009](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L9) | 9 | ``"- الفرع المرجعي: `main`"`` | — |
 | [SRC-914817100D-L000010](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L10) | 10 | ``"- Commit المرجع الذي تمت مراجعته: `aa42c52c5c98a7788de91269e3d8b51542483a6b` (دمج PR #104)."`` | — |
 | [SRC-914817100D-L000011](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L11) | 11 | `"- نقطة الضعف المؤكدة في الاختبار السابق: اختبار المقارنة المركبة كان يتحقق من أن الخطة عميقة وتحتوي أكثر من استعلام، وأن محاور السعر والبطارية والكاميرا استُخرجت، لكنه كان يقبل إجابة اختبارية قصيرة «مقارنة أولية [المصدر 1]» مع توثيق صريح بأن التغطية لم تُقيّم آليًا. لذلك لم يكن الاختبار يثبت أن كل محور حصل على بحث مخصص أو أن لكل محور إشارة مصدر."` | — |
@@ -801,54 +870,3 @@
 | [SRC-E599346ABE-L000446](../generate_index.py#L446) | 446 | `"        \".css\": \"CSS\","` | — |
 | [SRC-E599346ABE-L000447](../generate_index.py#L447) | 447 | `"        \".scss\": \"SCSS\","` | — |
 | [SRC-E599346ABE-L000448](../generate_index.py#L448) | 448 | `"        \".md\": \"Markdown\","` | — |
-| [SRC-E599346ABE-L000449](../generate_index.py#L449) | 449 | `"        \".yml\": \"YAML\","` | — |
-| [SRC-E599346ABE-L000450](../generate_index.py#L450) | 450 | `"        \".yaml\": \"YAML\","` | — |
-| [SRC-E599346ABE-L000451](../generate_index.py#L451) | 451 | `"        \".json\": \"JSON\","` | — |
-| [SRC-E599346ABE-L000452](../generate_index.py#L452) | 452 | `"        \".toml\": \"TOML\","` | — |
-| [SRC-E599346ABE-L000453](../generate_index.py#L453) | 453 | `"        \".sh\": \"Shell\","` | — |
-| [SRC-E599346ABE-L000454](../generate_index.py#L454) | 454 | `"        \".sql\": \"SQL\","` | — |
-| [SRC-E599346ABE-L000455](../generate_index.py#L455) | 455 | `"        \".txt\": \"Text\","` | — |
-| [SRC-E599346ABE-L000456](../generate_index.py#L456) | 456 | `"        \".svg\": \"SVG\","` | — |
-| [SRC-E599346ABE-L000457](../generate_index.py#L457) | 457 | `"        \".png\": \"PNG image\","` | — |
-| [SRC-E599346ABE-L000458](../generate_index.py#L458) | 458 | `"        \".jpg\": \"JPEG image\","` | — |
-| [SRC-E599346ABE-L000459](../generate_index.py#L459) | 459 | `"        \".jpeg\": \"JPEG image\","` | — |
-| [SRC-E599346ABE-L000460](../generate_index.py#L460) | 460 | `"        \".webp\": \"WebP image\","` | — |
-| [SRC-E599346ABE-L000461](../generate_index.py#L461) | 461 | `"    }"` | — |
-| [SRC-E599346ABE-L000462](../generate_index.py#L462) | 462 | `"    return labels.get(suffix, suffix[1:].upper() if suffix else \"بدون امتداد\")"` | — |
-| [SRC-E599346ABE-L000463](../generate_index.py#L463) | 463 | `""` | — |
-| [SRC-E599346ABE-L000464](../generate_index.py#L464) | 464 | `""` | — |
-| [SRC-E599346ABE-L000465](../generate_index.py#L465) | 465 | `"def _indexing_scope(path: Path, text: str \| None) -> str:"` | — |
-| [SRC-E599346ABE-L000466](../generate_index.py#L466) | 466 | `"    \"\"\"Describe precisely whether a file receives symbol extraction or path inventory only.\"\"\""` | — |
-| [SRC-E599346ABE-L000467](../generate_index.py#L467) | 467 | `"    if text is None:"` | — |
-| [SRC-E599346ABE-L000468](../generate_index.py#L468) | 468 | `"        return \"جرد المسار والحجم فقط (ثنائي/غير مقروء/أكبر من حد الفحص)\""` | — |
-| [SRC-E599346ABE-L000469](../generate_index.py#L469) | 469 | `"    suffix = path.suffix.lower()"` | — |
-| [SRC-E599346ABE-L000470](../generate_index.py#L470) | 470 | `"    if suffix in PYTHON_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000471](../generate_index.py#L471) | 471 | `"        return \"جرد الملف + AST Python\""` | — |
-| [SRC-E599346ABE-L000472](../generate_index.py#L472) | 472 | `"    if suffix in JAVASCRIPT_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000473](../generate_index.py#L473) | 473 | `"        return \"جرد الملف + رموز JavaScript/TypeScript ساكنة\""` | — |
-| [SRC-E599346ABE-L000474](../generate_index.py#L474) | 474 | `"    if suffix in CSS_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000475](../generate_index.py#L475) | 475 | `"        return \"جرد الملف + محددات CSS والمتغيرات المخصصة\""` | — |
-| [SRC-E599346ABE-L000476](../generate_index.py#L476) | 476 | `"    if suffix in {\".html\", \".htm\"}:"` | — |
-| [SRC-E599346ABE-L000477](../generate_index.py#L477) | 477 | `"        return \"جرد الملف + معرفات HTML والرموز داخل script/style\""` | — |
-| [SRC-E599346ABE-L000478](../generate_index.py#L478) | 478 | `"    if suffix == \".md\":"` | — |
-| [SRC-E599346ABE-L000479](../generate_index.py#L479) | 479 | `"        return \"جرد الملف + عناوين Markdown\""` | — |
-| [SRC-E599346ABE-L000480](../generate_index.py#L480) | 480 | `"    if suffix in CONFIG_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000481](../generate_index.py#L481) | 481 | `"        return \"جرد الملف + مفاتيح إعداد ساكنة\""` | — |
-| [SRC-E599346ABE-L000482](../generate_index.py#L482) | 482 | `"    if suffix == \".sh\":"` | — |
-| [SRC-E599346ABE-L000483](../generate_index.py#L483) | 483 | `"        return \"جرد الملف + دوال Shell\""` | — |
-| [SRC-E599346ABE-L000484](../generate_index.py#L484) | 484 | `"    if path.name.lower() in {\"dockerfile\", \"makefile\", \"procfile\"}:"` | — |
-| [SRC-E599346ABE-L000485](../generate_index.py#L485) | 485 | `"        return \"جرد الملف + أسماء إعدادات عامة إن وجدت\""` | — |
-| [SRC-E599346ABE-L000486](../generate_index.py#L486) | 486 | `"    if path.name.lower() == \".env.example\" or suffix == \".example\":"` | — |
-| [SRC-E599346ABE-L000487](../generate_index.py#L487) | 487 | `"        return \"جرد الملف + أسماء إعدادات عامة إن وجدت\""` | — |
-| [SRC-E599346ABE-L000488](../generate_index.py#L488) | 488 | `"    return \"جرد ملف نصي فقط\""` | — |
-| [SRC-E599346ABE-L000489](../generate_index.py#L489) | 489 | `""` | — |
-| [SRC-E599346ABE-L000490](../generate_index.py#L490) | 490 | `""` | — |
-| [SRC-E599346ABE-L000491](../generate_index.py#L491) | 491 | `"def build_file_inventory(root: Path) -> list[IndexedFile]:"` | — |
-| [SRC-E599346ABE-L000492](../generate_index.py#L492) | 492 | `"    \"\"\"Inventory repository files and record whether static symbol scanning was possible.\"\"\""` | — |
-| [SRC-E599346ABE-L000493](../generate_index.py#L493) | 493 | `"    inventory: list[IndexedFile] = []"` | — |
-| [SRC-E599346ABE-L000494](../generate_index.py#L494) | 494 | `"    for path in discover_repository_files(root):"` | — |
-| [SRC-E599346ABE-L000495](../generate_index.py#L495) | 495 | `"        text = _read_text_bounded(path)"` | — |
-| [SRC-E599346ABE-L000496](../generate_index.py#L496) | 496 | `"        inventory.append("` | — |
-| [SRC-E599346ABE-L000497](../generate_index.py#L497) | 497 | `"            IndexedFile("` | — |
-| [SRC-E599346ABE-L000498](../generate_index.py#L498) | 498 | `"                file=path.relative_to(root).as_posix(),"` | — |
-| [SRC-E599346ABE-L000499](../generate_index.py#L499) | 499 | `"                file_type=_file_type(path),"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004462 إلى SRC-1AE03B9EC3-L005261
+- النطاق: SRC-1AE03B9EC3-L004411 إلى SRC-1AE03B9EC3-L005210
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,57 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004411](../../agents/web_agent.py#L4411) | 4411 | `"        self, question: str, history: Any = None, mode: str = \"auto\""` | — |
+| [SRC-1AE03B9EC3-L004412](../../agents/web_agent.py#L4412) | 4412 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L004413](../../agents/web_agent.py#L4413) | 4413 | `"        if not isinstance(question, str) or not question.strip():"` | — |
+| [SRC-1AE03B9EC3-L004414](../../agents/web_agent.py#L4414) | 4414 | `"            raise ValueError(\"اكتب سؤالًا غير فارغ.\")"` | — |
+| [SRC-1AE03B9EC3-L004415](../../agents/web_agent.py#L4415) | 4415 | `"        question = question.strip()"` | — |
+| [SRC-1AE03B9EC3-L004416](../../agents/web_agent.py#L4416) | 4416 | `"        if len(question) > MAX_QUESTION_CHARS:"` | — |
+| [SRC-1AE03B9EC3-L004417](../../agents/web_agent.py#L4417) | 4417 | `"            raise ValueError(f\"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.\")"` | — |
+| [SRC-1AE03B9EC3-L004418](../../agents/web_agent.py#L4418) | 4418 | `"        clean_history = self._sanitize_history(history)"` | — |
+| [SRC-1AE03B9EC3-L004419](../../agents/web_agent.py#L4419) | 4419 | `"        # Resolve elliptical follow-ups once and carry the resolved intent through"` | — |
+| [SRC-1AE03B9EC3-L004420](../../agents/web_agent.py#L4420) | 4420 | ``"        # planning, generation, review, and evidence checks. Keep `question` intact"`` | — |
+| [SRC-1AE03B9EC3-L004421](../../agents/web_agent.py#L4421) | 4421 | `"        # for the public response contract and initial intent routing."` | — |
+| [SRC-1AE03B9EC3-L004422](../../agents/web_agent.py#L4422) | 4422 | `"        working_question = self._history_search_query(question, clean_history) or question"` | — |
+| [SRC-1AE03B9EC3-L004423](../../agents/web_agent.py#L4423) | 4423 | `"        if not isinstance(working_question, str) or not working_question.strip():"` | — |
+| [SRC-1AE03B9EC3-L004424](../../agents/web_agent.py#L4424) | 4424 | `"            working_question = question"` | — |
+| [SRC-1AE03B9EC3-L004425](../../agents/web_agent.py#L4425) | 4425 | `"        self._reset_deepseek_search_budget()"` | — |
+| [SRC-1AE03B9EC3-L004426](../../agents/web_agent.py#L4426) | 4426 | `"        self.server_search_sources = []"` | — |
+| [SRC-1AE03B9EC3-L004427](../../agents/web_agent.py#L4427) | 4427 | `"        self.model_usage = []"` | — |
+| [SRC-1AE03B9EC3-L004428](../../agents/web_agent.py#L4428) | 4428 | `"        self.generation_diagnostics = []"` | — |
+| [SRC-1AE03B9EC3-L004429](../../agents/web_agent.py#L4429) | 4429 | `"        with self._provider_diagnostics_lock:"` | — |
+| [SRC-1AE03B9EC3-L004430](../../agents/web_agent.py#L4430) | 4430 | `"            self._provider_diagnostics = []"` | — |
+| [SRC-1AE03B9EC3-L004431](../../agents/web_agent.py#L4431) | 4431 | `"        clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
+| [SRC-1AE03B9EC3-L004432](../../agents/web_agent.py#L4432) | 4432 | `"        if clean_mode not in {\"auto\", \"deep\", \"latest\", \"social\"}:"` | — |
+| [SRC-1AE03B9EC3-L004433](../../agents/web_agent.py#L4433) | 4433 | `"            raise ValueError(\"نمط البحث غير مدعوم. اختر auto أو deep أو latest أو social.\")"` | — |
+| [SRC-1AE03B9EC3-L004434](../../agents/web_agent.py#L4434) | 4434 | `"        current_search_status_question = self._is_current_search_status_question(question)"` | — |
+| [SRC-1AE03B9EC3-L004435](../../agents/web_agent.py#L4435) | 4435 | `"        # Explicit UI modes control research tasks, but must not turn a status"` | — |
+| [SRC-1AE03B9EC3-L004436](../../agents/web_agent.py#L4436) | 4436 | `"        # question about this answer into a new web-search request."` | — |
+| [SRC-1AE03B9EC3-L004437](../../agents/web_agent.py#L4437) | 4437 | `"        routing_mode = \"auto\" if current_search_status_question else clean_mode"` | — |
+| [SRC-1AE03B9EC3-L004438](../../agents/web_agent.py#L4438) | 4438 | `"        decision = route_intent("` | — |
+| [SRC-1AE03B9EC3-L004439](../../agents/web_agent.py#L4439) | 4439 | `"            question,"` | — |
+| [SRC-1AE03B9EC3-L004440](../../agents/web_agent.py#L4440) | 4440 | `"            clean_history,"` | — |
+| [SRC-1AE03B9EC3-L004441](../../agents/web_agent.py#L4441) | 4441 | `"            routing_mode,"` | — |
+| [SRC-1AE03B9EC3-L004442](../../agents/web_agent.py#L4442) | 4442 | `"            capability_question=self._is_self_question(question),"` | — |
+| [SRC-1AE03B9EC3-L004443](../../agents/web_agent.py#L4443) | 4443 | `"            requires_web=self._requires_web_research(question, routing_mode),"` | — |
+| [SRC-1AE03B9EC3-L004444](../../agents/web_agent.py#L4444) | 4444 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L004445](../../agents/web_agent.py#L4445) | 4445 | `"        intent_route = str(decision[\"route\"])"` | — |
+| [SRC-1AE03B9EC3-L004446](../../agents/web_agent.py#L4446) | 4446 | `"        intent_reason = str(decision[\"reason\"])"` | — |
+| [SRC-1AE03B9EC3-L004447](../../agents/web_agent.py#L4447) | 4447 | `"        context_override: dict[str, Any] \| None = None"` | — |
+| [SRC-1AE03B9EC3-L004448](../../agents/web_agent.py#L4448) | 4448 | `""` | — |
+| [SRC-1AE03B9EC3-L004449](../../agents/web_agent.py#L4449) | 4449 | `"        # Rules only decide when a context probe may be needed. The model interprets"` | — |
+| [SRC-1AE03B9EC3-L004450](../../agents/web_agent.py#L4450) | 4450 | `"        # meaning only on those turns; it never receives authority to execute tools."` | — |
+| [SRC-1AE03B9EC3-L004451](../../agents/web_agent.py#L4451) | 4451 | `"        probe_dialogue = ("` | — |
+| [SRC-1AE03B9EC3-L004452](../../agents/web_agent.py#L4452) | 4452 | `"            bool(clean_history)"` | — |
+| [SRC-1AE03B9EC3-L004453](../../agents/web_agent.py#L4453) | 4453 | `"            and not current_search_status_question"` | — |
+| [SRC-1AE03B9EC3-L004454](../../agents/web_agent.py#L4454) | 4454 | `"            and not self._is_self_question(question)"` | — |
+| [SRC-1AE03B9EC3-L004455](../../agents/web_agent.py#L4455) | 4455 | `"            and ("` | — |
+| [SRC-1AE03B9EC3-L004456](../../agents/web_agent.py#L4456) | 4456 | `"                intent_route != \"LOCAL\""` | — |
+| [SRC-1AE03B9EC3-L004457](../../agents/web_agent.py#L4457) | 4457 | `"                or might_be_context_dependent(question)"` | — |
+| [SRC-1AE03B9EC3-L004458](../../agents/web_agent.py#L4458) | 4458 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004459](../../agents/web_agent.py#L4459) | 4459 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L004460](../../agents/web_agent.py#L4460) | 4460 | `"        if probe_dialogue:"` | — |
+| [SRC-1AE03B9EC3-L004461](../../agents/web_agent.py#L4461) | 4461 | `"            semantic_context = self._resolve_dialogue_context(question, clean_history)"` | — |
 | [SRC-1AE03B9EC3-L004462](../../agents/web_agent.py#L4462) | 4462 | `"            if semantic_context.get(\"method\") == \"llm_semantic_context\":"` | — |
 | [SRC-1AE03B9EC3-L004463](../../agents/web_agent.py#L4463) | 4463 | `"                context_override = semantic_context"` | — |
 | [SRC-1AE03B9EC3-L004464](../../agents/web_agent.py#L4464) | 4464 | `"                if semantic_context.get(\"needs_clarification\"):"` | — |
@@ -765,54 +816,3 @@
 | [SRC-1AE03B9EC3-L005208](../../agents/web_agent.py#L5208) | 5208 | `"                        ))"` | — |
 | [SRC-1AE03B9EC3-L005209](../../agents/web_agent.py#L5209) | 5209 | `"                        if source.get(\"page_fetched\") and not existing_source.get(\"page_fetched\"):"` | — |
 | [SRC-1AE03B9EC3-L005210](../../agents/web_agent.py#L5210) | 5210 | `"                            merged_source = dict(existing_source)"` | — |
-| [SRC-1AE03B9EC3-L005211](../../agents/web_agent.py#L5211) | 5211 | `"                            merged_source.update(source)"` | — |
-| [SRC-1AE03B9EC3-L005212](../../agents/web_agent.py#L5212) | 5212 | `"                            merged_source[\"providers\"] = providers"` | — |
-| [SRC-1AE03B9EC3-L005213](../../agents/web_agent.py#L5213) | 5213 | `"                            merged_source[\"queries\"] = source_queries"` | — |
-| [SRC-1AE03B9EC3-L005214](../../agents/web_agent.py#L5214) | 5214 | `"                            sources[existing_index] = merged_source"` | — |
-| [SRC-1AE03B9EC3-L005215](../../agents/web_agent.py#L5215) | 5215 | `"                        else:"` | — |
-| [SRC-1AE03B9EC3-L005216](../../agents/web_agent.py#L5216) | 5216 | `"                            existing_source[\"providers\"] = providers"` | — |
-| [SRC-1AE03B9EC3-L005217](../../agents/web_agent.py#L5217) | 5217 | `"                            existing_source[\"queries\"] = source_queries"` | — |
-| [SRC-1AE03B9EC3-L005218](../../agents/web_agent.py#L5218) | 5218 | `"                    sources.sort("` | — |
-| [SRC-1AE03B9EC3-L005219](../../agents/web_agent.py#L5219) | 5219 | `"                        key=lambda item: float(item.get(\"rank_score\", 0) or 0),"` | — |
-| [SRC-1AE03B9EC3-L005220](../../agents/web_agent.py#L5220) | 5220 | `"                        reverse=True,"` | — |
-| [SRC-1AE03B9EC3-L005221](../../agents/web_agent.py#L5221) | 5221 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L005222](../../agents/web_agent.py#L5222) | 5222 | `"                    plan[\"queries\"] = list(dict.fromkeys(original_queries + [repair_query]))"` | — |
-| [SRC-1AE03B9EC3-L005223](../../agents/web_agent.py#L5223) | 5223 | `"                    independent_domains = {"` | — |
-| [SRC-1AE03B9EC3-L005224](../../agents/web_agent.py#L5224) | 5224 | `"                        registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L005225](../../agents/web_agent.py#L5225) | 5225 | `"                            source.get(\"domain\")"` | — |
-| [SRC-1AE03B9EC3-L005226](../../agents/web_agent.py#L5226) | 5226 | `"                            or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L005227](../../agents/web_agent.py#L5227) | 5227 | `"                            or \"\""` | — |
-| [SRC-1AE03B9EC3-L005228](../../agents/web_agent.py#L5228) | 5228 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L005229](../../agents/web_agent.py#L5229) | 5229 | `"                        for source in sources"` | — |
-| [SRC-1AE03B9EC3-L005230](../../agents/web_agent.py#L5230) | 5230 | `"                    }"` | — |
-| [SRC-1AE03B9EC3-L005231](../../agents/web_agent.py#L5231) | 5231 | `"                    independent_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L005232](../../agents/web_agent.py#L5232) | 5232 | `"                    needs_corroboration = ("` | — |
-| [SRC-1AE03B9EC3-L005233](../../agents/web_agent.py#L5233) | 5233 | `"                        len(sources) < 2 or len(independent_domains) < 2"` | — |
-| [SRC-1AE03B9EC3-L005234](../../agents/web_agent.py#L5234) | 5234 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L005235](../../agents/web_agent.py#L5235) | 5235 | `"                    evidence_repair.update({"` | — |
-| [SRC-1AE03B9EC3-L005236](../../agents/web_agent.py#L5236) | 5236 | `"                        \"final_source_count\": len(sources),"` | — |
-| [SRC-1AE03B9EC3-L005237](../../agents/web_agent.py#L5237) | 5237 | `"                        \"final_independent_domain_count\": len(independent_domains),"` | — |
-| [SRC-1AE03B9EC3-L005238](../../agents/web_agent.py#L5238) | 5238 | `"                        \"recovered\": not needs_corroboration,"` | — |
-| [SRC-1AE03B9EC3-L005239](../../agents/web_agent.py#L5239) | 5239 | `"                    })"` | — |
-| [SRC-1AE03B9EC3-L005240](../../agents/web_agent.py#L5240) | 5240 | `"                    evidence_repair[\"reason\"] = ("` | — |
-| [SRC-1AE03B9EC3-L005241](../../agents/web_agent.py#L5241) | 5241 | `"                        \"single_bounded_retry_still_insufficient\""` | — |
-| [SRC-1AE03B9EC3-L005242](../../agents/web_agent.py#L5242) | 5242 | `"                        if needs_corroboration else \"evidence_gate_recovered\""` | — |
-| [SRC-1AE03B9EC3-L005243](../../agents/web_agent.py#L5243) | 5243 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L005244](../../agents/web_agent.py#L5244) | 5244 | `"                    report[\"queries_planned\"] = int(report.get(\"queries_planned\", 0) or 0) + int("` | — |
-| [SRC-1AE03B9EC3-L005245](../../agents/web_agent.py#L5245) | 5245 | `"                        repair_report.get(\"queries_planned\", 1) or 0"` | — |
-| [SRC-1AE03B9EC3-L005246](../../agents/web_agent.py#L5246) | 5246 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L005247](../../agents/web_agent.py#L5247) | 5247 | `"                    initial_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L005248](../../agents/web_agent.py#L5248) | 5248 | `"                    repair_attempt_count = repair_report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L005249](../../agents/web_agent.py#L5249) | 5249 | `"                    if initial_attempt_count is None or repair_attempt_count is None:"` | — |
-| [SRC-1AE03B9EC3-L005250](../../agents/web_agent.py#L5250) | 5250 | `"                        report[\"queries_attempted\"] = None"` | — |
-| [SRC-1AE03B9EC3-L005251](../../agents/web_agent.py#L5251) | 5251 | `"                        report[\"queries_attempted_known\"] = False"` | — |
-| [SRC-1AE03B9EC3-L005252](../../agents/web_agent.py#L5252) | 5252 | `"                    else:"` | — |
-| [SRC-1AE03B9EC3-L005253](../../agents/web_agent.py#L5253) | 5253 | `"                        try:"` | — |
-| [SRC-1AE03B9EC3-L005254](../../agents/web_agent.py#L5254) | 5254 | `"                            report[\"queries_attempted\"] = max(0, int(initial_attempt_count or 0)) + max("` | — |
-| [SRC-1AE03B9EC3-L005255](../../agents/web_agent.py#L5255) | 5255 | `"                                0, int(repair_attempt_count or 0)"` | — |
-| [SRC-1AE03B9EC3-L005256](../../agents/web_agent.py#L5256) | 5256 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L005257](../../agents/web_agent.py#L5257) | 5257 | `"                            report[\"queries_attempted_known\"] = True"` | — |
-| [SRC-1AE03B9EC3-L005258](../../agents/web_agent.py#L5258) | 5258 | `"                        except (TypeError, ValueError):"` | — |
-| [SRC-1AE03B9EC3-L005259](../../agents/web_agent.py#L5259) | 5259 | `"                            report[\"queries_attempted\"] = None"` | — |
-| [SRC-1AE03B9EC3-L005260](../../agents/web_agent.py#L5260) | 5260 | `"                            report[\"queries_attempted_known\"] = False"` | — |
-| [SRC-1AE03B9EC3-L005261](../../agents/web_agent.py#L5261) | 5261 | `"                    report[\"query_results\"] = list(report.get(\"query_results\", [])) + list("` | — |
