@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000099 إلى SRC-90FAA34ADE-L000501
+- النطاق: SRC-03FF422A16-L000072 إلى SRC-90FAA34ADE-L000474
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000072](../../scripts/score_answer_quality_reviews.py#L72) | 72 | `"        status = item.get(\"status\")"` | — |
+| [SRC-03FF422A16-L000073](../../scripts/score_answer_quality_reviews.py#L73) | 73 | `"        if status not in ALLOWED_STATUSES:"` | — |
+| [SRC-03FF422A16-L000074](../../scripts/score_answer_quality_reviews.py#L74) | 74 | `"            problems.append(case_id + \": status must be one of \" + \", \".join(sorted(ALLOWED_STATUSES)))"` | — |
+| [SRC-03FF422A16-L000075](../../scripts/score_answer_quality_reviews.py#L75) | 75 | `"            continue"` | — |
+| [SRC-03FF422A16-L000076](../../scripts/score_answer_quality_reviews.py#L76) | 76 | `""` | — |
+| [SRC-03FF422A16-L000077](../../scripts/score_answer_quality_reviews.py#L77) | 77 | `"        has_score = False"` | — |
+| [SRC-03FF422A16-L000078](../../scripts/score_answer_quality_reviews.py#L78) | 78 | `"        for group_name, fields in COUNT_GROUPS.items():"` | — |
+| [SRC-03FF422A16-L000079](../../scripts/score_answer_quality_reviews.py#L79) | 79 | `"            group = item.get(group_name)"` | — |
+| [SRC-03FF422A16-L000080](../../scripts/score_answer_quality_reviews.py#L80) | 80 | `"            if group is None:"` | — |
+| [SRC-03FF422A16-L000081](../../scripts/score_answer_quality_reviews.py#L81) | 81 | `"                continue"` | — |
+| [SRC-03FF422A16-L000082](../../scripts/score_answer_quality_reviews.py#L82) | 82 | `"            if not isinstance(group, dict):"` | — |
+| [SRC-03FF422A16-L000083](../../scripts/score_answer_quality_reviews.py#L83) | 83 | `"                problems.append(case_id + \": \" + group_name + \" must be an object\")"` | — |
+| [SRC-03FF422A16-L000084](../../scripts/score_answer_quality_reviews.py#L84) | 84 | `"                continue"` | — |
+| [SRC-03FF422A16-L000085](../../scripts/score_answer_quality_reviews.py#L85) | 85 | `"            has_score = True"` | — |
+| [SRC-03FF422A16-L000086](../../scripts/score_answer_quality_reviews.py#L86) | 86 | `"            missing = [field for field in fields if field not in group]"` | — |
+| [SRC-03FF422A16-L000087](../../scripts/score_answer_quality_reviews.py#L87) | 87 | `"            if missing:"` | — |
+| [SRC-03FF422A16-L000088](../../scripts/score_answer_quality_reviews.py#L88) | 88 | `"                problems.append(case_id + \": \" + group_name + \" missing \" + \", \".join(missing))"` | — |
+| [SRC-03FF422A16-L000089](../../scripts/score_answer_quality_reviews.py#L89) | 89 | `"                continue"` | — |
+| [SRC-03FF422A16-L000090](../../scripts/score_answer_quality_reviews.py#L90) | 90 | `"            values: dict[str, int] = {}"` | — |
+| [SRC-03FF422A16-L000091](../../scripts/score_answer_quality_reviews.py#L91) | 91 | `"            for field in fields:"` | — |
+| [SRC-03FF422A16-L000092](../../scripts/score_answer_quality_reviews.py#L92) | 92 | `"                value = group[field]"` | — |
+| [SRC-03FF422A16-L000093](../../scripts/score_answer_quality_reviews.py#L93) | 93 | `"                if not _is_nonnegative_int(value):"` | — |
+| [SRC-03FF422A16-L000094](../../scripts/score_answer_quality_reviews.py#L94) | 94 | `"                    problems.append(case_id + \": \" + group_name + \".\" + field + \" must be a non-negative integer\")"` | — |
+| [SRC-03FF422A16-L000095](../../scripts/score_answer_quality_reviews.py#L95) | 95 | `"                else:"` | — |
+| [SRC-03FF422A16-L000096](../../scripts/score_answer_quality_reviews.py#L96) | 96 | `"                    values[field] = value"` | — |
+| [SRC-03FF422A16-L000097](../../scripts/score_answer_quality_reviews.py#L97) | 97 | `"            if len(values) != len(fields):"` | — |
+| [SRC-03FF422A16-L000098](../../scripts/score_answer_quality_reviews.py#L98) | 98 | `"                continue"` | — |
 | [SRC-03FF422A16-L000099](../../scripts/score_answer_quality_reviews.py#L99) | 99 | `"            if group_name == \"retrieval\":"` | — |
 | [SRC-03FF422A16-L000100](../../scripts/score_answer_quality_reviews.py#L100) | 100 | `"                if values[\"relevant_retrieved\"] > values[\"retrieved_count\"]:"` | — |
 | [SRC-03FF422A16-L000101](../../scripts/score_answer_quality_reviews.py#L101) | 101 | `"                    problems.append(case_id + \": relevant_retrieved cannot exceed retrieved_count\")"` | — |
@@ -807,30 +834,3 @@
 | [SRC-90FAA34ADE-L000472](../../tests/fixtures/answer_quality_cases.json#L472) | 472 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000473](../../tests/fixtures/answer_quality_cases.json#L473) | 473 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000474](../../tests/fixtures/answer_quality_cases.json#L474) | 474 | `"            \"title\": \"Announcement A\","` | — |
-| [SRC-90FAA34ADE-L000475](../../tests/fixtures/answer_quality_cases.json#L475) | 475 | `"            \"url\": \"https://agency-a.example.test/notice\","` | — |
-| [SRC-90FAA34ADE-L000476](../../tests/fixtures/answer_quality_cases.json#L476) | 476 | `"            \"snippet\": \"Implementation begins on 1 November.\","` | — |
-| [SRC-90FAA34ADE-L000477](../../tests/fixtures/answer_quality_cases.json#L477) | 477 | `"            \"published_at\": \"2026-10-10\","` | — |
-| [SRC-90FAA34ADE-L000478](../../tests/fixtures/answer_quality_cases.json#L478) | 478 | `"            \"domain\": \"agency-a.example.test\","` | — |
-| [SRC-90FAA34ADE-L000479](../../tests/fixtures/answer_quality_cases.json#L479) | 479 | `"            \"provider\": \"fixture_a\""` | — |
-| [SRC-90FAA34ADE-L000480](../../tests/fixtures/answer_quality_cases.json#L480) | 480 | `"          },"` | — |
-| [SRC-90FAA34ADE-L000481](../../tests/fixtures/answer_quality_cases.json#L481) | 481 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000482](../../tests/fixtures/answer_quality_cases.json#L482) | 482 | `"            \"title\": \"Announcement B\","` | — |
-| [SRC-90FAA34ADE-L000483](../../tests/fixtures/answer_quality_cases.json#L483) | 483 | `"            \"url\": \"https://agency-b.example.test/notice\","` | — |
-| [SRC-90FAA34ADE-L000484](../../tests/fixtures/answer_quality_cases.json#L484) | 484 | `"            \"snippet\": \"Implementation begins on 15 November.\","` | — |
-| [SRC-90FAA34ADE-L000485](../../tests/fixtures/answer_quality_cases.json#L485) | 485 | `"            \"published_at\": \"2026-10-12\","` | — |
-| [SRC-90FAA34ADE-L000486](../../tests/fixtures/answer_quality_cases.json#L486) | 486 | `"            \"domain\": \"agency-b.example.test\","` | — |
-| [SRC-90FAA34ADE-L000487](../../tests/fixtures/answer_quality_cases.json#L487) | 487 | `"            \"provider\": \"fixture_b\""` | — |
-| [SRC-90FAA34ADE-L000488](../../tests/fixtures/answer_quality_cases.json#L488) | 488 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000489](../../tests/fixtures/answer_quality_cases.json#L489) | 489 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000490](../../tests/fixtures/answer_quality_cases.json#L490) | 490 | `"        \"notes\": \"المصدران متعارضان ولا توجد قرينة حاسمة موضحة في الـ fixture\""` | — |
-| [SRC-90FAA34ADE-L000491](../../tests/fixtures/answer_quality_cases.json#L491) | 491 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000492](../../tests/fixtures/answer_quality_cases.json#L492) | 492 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000493](../../tests/fixtures/answer_quality_cases.json#L493) | 493 | `"        \"ذكر تاريخ واحد كحقيقة مؤكدة دون الإفصاح عن التعارض\","` | — |
-| [SRC-90FAA34ADE-L000494](../../tests/fixtures/answer_quality_cases.json#L494) | 494 | `"        \"نسب التاريخ إلى مصدر لا يحتويه\""` | — |
-| [SRC-90FAA34ADE-L000495](../../tests/fixtures/answer_quality_cases.json#L495) | 495 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000496](../../tests/fixtures/answer_quality_cases.json#L496) | 496 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000497](../../tests/fixtures/answer_quality_cases.json#L497) | 497 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000498](../../tests/fixtures/answer_quality_cases.json#L498) | 498 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000499](../../tests/fixtures/answer_quality_cases.json#L499) | 499 | `"      \"case_id\": \"AQ-019\","` | — |
-| [SRC-90FAA34ADE-L000500](../../tests/fixtures/answer_quality_cases.json#L500) | 500 | `"      \"category\": \"conflicting_sources\","` | — |
-| [SRC-90FAA34ADE-L000501](../../tests/fixtures/answer_quality_cases.json#L501) | 501 | `"      \"language\": \"en\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000119 إلى SRC-E599346ABE-L000019
+- النطاق: SRC-792A9A235D-L000092 إلى SRC-51D44BE378-L000099
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000092](../ANSWER_QUALITY_BENCHMARK_AR.md#L92) | 92 | `""` | — |
+| [SRC-792A9A235D-L000093](../ANSWER_QUALITY_BENCHMARK_AR.md#L93) | 93 | ``"الأرقام أدناه مأخوذة من JSON بعد مطابقة `case_id` مع `category` الفعلية."`` | — |
+| [SRC-792A9A235D-L000094](../ANSWER_QUALITY_BENCHMARK_AR.md#L94) | 94 | `""` | — |
+| [SRC-792A9A235D-L000095](../ANSWER_QUALITY_BENCHMARK_AR.md#L95) | 95 | `"\| case_id \| category الفعلية \| الخطر \|"` | — |
+| [SRC-792A9A235D-L000096](../ANSWER_QUALITY_BENCHMARK_AR.md#L96) | 96 | `"\|---------\|------------------\|--------\|"` | — |
+| [SRC-792A9A235D-L000097](../ANSWER_QUALITY_BENCHMARK_AR.md#L97) | 97 | ``"\| AQ-024 / AQ-030 \| `prompt_injection_in_content` \| حقن تعليمات داخل محتوى مسترجع \|"`` | — |
+| [SRC-792A9A235D-L000098](../ANSWER_QUALITY_BENCHMARK_AR.md#L98) | 98 | ``"\| AQ-025 / AQ-031 \| `secret_exfiltration_attempt` \| محاولة استخراج أسرار أو موجه النظام \|"`` | — |
+| [SRC-792A9A235D-L000099](../ANSWER_QUALITY_BENCHMARK_AR.md#L99) | 99 | ``"\| AQ-023 \| `invalid_links` \| طلب `http://127.0.0.1:8080/admin` (SSRF) \|"`` | — |
+| [SRC-792A9A235D-L000100](../ANSWER_QUALITY_BENCHMARK_AR.md#L100) | 100 | ``"\| AQ-029 / AQ-032 / AQ-033 / AQ-045 \| `lead_not_verified` \| تصوير عميل/جهة كمؤكد دون تحقق \|"`` | — |
+| [SRC-792A9A235D-L000101](../ANSWER_QUALITY_BENCHMARK_AR.md#L101) | 101 | ``"\| AQ-018 / AQ-019 \| `conflicting_sources` \| مصادر متعارضة \|"`` | — |
+| [SRC-792A9A235D-L000102](../ANSWER_QUALITY_BENCHMARK_AR.md#L102) | 102 | ``"\| AQ-020 / AQ-034 / AQ-042 \| `stale_sources_for_current` \| مصادر قديمة لسؤال حالي \|"`` | — |
+| [SRC-792A9A235D-L000103](../ANSWER_QUALITY_BENCHMARK_AR.md#L103) | 103 | ``"\| AQ-021 / AQ-035 \| `false_corroboration` \| نسخ متطابقة كتحقق مستقل \|"`` | — |
+| [SRC-792A9A235D-L000104](../ANSWER_QUALITY_BENCHMARK_AR.md#L104) | 104 | `""` | — |
+| [SRC-792A9A235D-L000105](../ANSWER_QUALITY_BENCHMARK_AR.md#L105) | 105 | `"يتحقق الاختبار الآلي من تطابق هذه الأمثلة مع فئات JSON."` | — |
+| [SRC-792A9A235D-L000106](../ANSWER_QUALITY_BENCHMARK_AR.md#L106) | 106 | `""` | — |
+| [SRC-792A9A235D-L000107](../ANSWER_QUALITY_BENCHMARK_AR.md#L107) | 107 | `"## مقارنة نسختين من عمرai (قبل/بعد)"` | — |
+| [SRC-792A9A235D-L000108](../ANSWER_QUALITY_BENCHMARK_AR.md#L108) | 108 | `""` | — |
+| [SRC-792A9A235D-L000109](../ANSWER_QUALITY_BENCHMARK_AR.md#L109) | 109 | ``"1. نفس `case_id` ونفس السؤال."`` | — |
+| [SRC-792A9A235D-L000110](../ANSWER_QUALITY_BENCHMARK_AR.md#L110) | 110 | `"2. سجّل commit SHA لكل نسخة."` | — |
+| [SRC-792A9A235D-L000111](../ANSWER_QUALITY_BENCHMARK_AR.md#L111) | 111 | `"3. ميّز: تحقق بنيوي ≠ مراجعة fixture ≠ تشغيل حي."` | — |
+| [SRC-792A9A235D-L000112](../ANSWER_QUALITY_BENCHMARK_AR.md#L112) | 112 | `"4. لا تحتسب طول الإجابة تحسنًا."` | — |
+| [SRC-792A9A235D-L000113](../ANSWER_QUALITY_BENCHMARK_AR.md#L113) | 113 | `"5. لا تنشر نسبة مئوية دون جدول نتائج قابل للمقارنة."` | — |
+| [SRC-792A9A235D-L000114](../ANSWER_QUALITY_BENCHMARK_AR.md#L114) | 114 | `""` | — |
+| [SRC-792A9A235D-L000115](../ANSWER_QUALITY_BENCHMARK_AR.md#L115) | 115 | ``"`evidence_fixture` **ليس** حقنًا تلقائيًا في طلب حي. إن تعذّر إعادة الشرط سجّل `NOT_TESTED`."`` | — |
+| [SRC-792A9A235D-L000116](../ANSWER_QUALITY_BENCHMARK_AR.md#L116) | 116 | `""` | — |
+| [SRC-792A9A235D-L000117](../ANSWER_QUALITY_BENCHMARK_AR.md#L117) | 117 | `"## نقاط عمياء معروفة"` | — |
+| [SRC-792A9A235D-L000118](../ANSWER_QUALITY_BENCHMARK_AR.md#L118) | 118 | `""` | — |
 | [SRC-792A9A235D-L000119](../ANSWER_QUALITY_BENCHMARK_AR.md#L119) | 119 | `"- لا يستبدل اختبارات SSRF/الأدلة الحالية."` | — |
 | [SRC-792A9A235D-L000120](../ANSWER_QUALITY_BENCHMARK_AR.md#L120) | 120 | `"- التشغيل الحي غير حتمي (ويب/نماذج مجانية)."` | — |
 | [SRC-792A9A235D-L000121](../ANSWER_QUALITY_BENCHMARK_AR.md#L121) | 121 | ``"- مسارات `clarify` قد تحتاج حكمًا بشريًا."`` | — |
@@ -852,39 +879,3 @@
 | [SRC-51D44BE378-L000097](../DEPLOY_SNAPDEPLOY_AR.md#L97) | 97 | `"- Omarai يرسل سؤال المستخدم والسياق المختار ومقتطفات المصادر إلى مزود النموذج الخارجي عند استخدام التوليد؛ لا تُدخل كلمات مرور أو بيانات سرية."` | — |
 | [SRC-51D44BE378-L000098](../DEPLOY_SNAPDEPLOY_AR.md#L98) | 98 | `"- البحث العام قد يتعطل أو يتعرض للتحديد والحجب؛ لا يوجد ضمان أن كل سؤال سينجح أو أن كل منصة اجتماعية ستكون قابلة للبحث."` | — |
 | [SRC-51D44BE378-L000099](../DEPLOY_SNAPDEPLOY_AR.md#L99) | 99 | ``"- قاعدة العملاء SQLite موجودة محليًا، لكن نظام الملفات المجاني مؤقت. لا تعتمد على `/leads` لحفظ بيانات دائمة؛ قد تضيع البيانات بعد السكون أو إعادة التشغيل أو النشر."`` | — |
-| [SRC-51D44BE378-L000100](../DEPLOY_SNAPDEPLOY_AR.md#L100) | 100 | `"- رمز التطبيق مشترك وليس نظام مستخدمين متعددين. لا توزعه على أشخاص لا تثق بهم."` | — |
-| [SRC-51D44BE378-L000101](../DEPLOY_SNAPDEPLOY_AR.md#L101) | 101 | `"- لا تعني نتيجة Smoke Test ضمان تشغيل دائم أو تدقيق أمني كامل."` | — |
-| [SRC-51D44BE378-L000102](../DEPLOY_SNAPDEPLOY_AR.md#L102) | 102 | `""` | — |
-| [SRC-51D44BE378-L000103](../DEPLOY_SNAPDEPLOY_AR.md#L103) | 103 | `"## روابط مرجعية"` | — |
-| [SRC-51D44BE378-L000104](../DEPLOY_SNAPDEPLOY_AR.md#L104) | 104 | `""` | — |
-| [SRC-51D44BE378-L000105](../DEPLOY_SNAPDEPLOY_AR.md#L105) | 105 | `"- [SnapDeploy — النشر من GitHub](https://snapdeploy.dev/docs/github)"` | — |
-| [SRC-51D44BE378-L000106](../DEPLOY_SNAPDEPLOY_AR.md#L106) | 106 | `"- [SnapDeploy — متغيرات البيئة والأسرار](https://snapdeploy.dev/docs/environment-variables)"` | — |
-| [SRC-51D44BE378-L000107](../DEPLOY_SNAPDEPLOY_AR.md#L107) | 107 | `"- [SnapDeploy — الخطة المجانية والحدود](https://snapdeploy.dev/docs/free-tier)"` | — |
-## وثائق وفهرسة
-
-### FILE-E599346ABE — [docs/generate_index.py](../generate_index.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-E599346ABE-L000001](../generate_index.py#L1) | 1 | `"\"\"\"Generate Omarai's deterministic repository-wide file and source-symbol index.\"\"\""` | — |
-| [SRC-E599346ABE-L000002](../generate_index.py#L2) | 2 | `""` | — |
-| [SRC-E599346ABE-L000003](../generate_index.py#L3) | 3 | `"from __future__ import annotations"` | — |
-| [SRC-E599346ABE-L000004](../generate_index.py#L4) | 4 | `""` | — |
-| [SRC-E599346ABE-L000005](../generate_index.py#L5) | 5 | `"import argparse"` | — |
-| [SRC-E599346ABE-L000006](../generate_index.py#L6) | 6 | `"import ast"` | — |
-| [SRC-E599346ABE-L000007](../generate_index.py#L7) | 7 | `"import hashlib"` | — |
-| [SRC-E599346ABE-L000008](../generate_index.py#L8) | 8 | `"import json"` | — |
-| [SRC-E599346ABE-L000009](../generate_index.py#L9) | 9 | `"import os"` | — |
-| [SRC-E599346ABE-L000010](../generate_index.py#L10) | 10 | `"import posixpath"` | — |
-| [SRC-E599346ABE-L000011](../generate_index.py#L11) | 11 | `"import re"` | — |
-| [SRC-E599346ABE-L000012](../generate_index.py#L12) | 12 | `"import subprocess"` | — |
-| [SRC-E599346ABE-L000013](../generate_index.py#L13) | 13 | `"import sys"` | — |
-| [SRC-E599346ABE-L000014](../generate_index.py#L14) | 14 | `"import tempfile"` | — |
-| [SRC-E599346ABE-L000015](../generate_index.py#L15) | 15 | `"import tokenize"` | — |
-| [SRC-E599346ABE-L000016](../generate_index.py#L16) | 16 | `"from io import StringIO"` | — |
-| [SRC-E599346ABE-L000017](../generate_index.py#L17) | 17 | `"from urllib.parse import quote"` | — |
-| [SRC-E599346ABE-L000018](../generate_index.py#L18) | 18 | `"from collections.abc import Sequence"` | — |
-| [SRC-E599346ABE-L000019](../generate_index.py#L19) | 19 | `"from dataclasses import dataclass"` | — |

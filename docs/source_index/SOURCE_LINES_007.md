@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000580 إلى SRC-1AE03B9EC3-L001379
+- النطاق: SRC-1AE03B9EC3-L000553 إلى SRC-1AE03B9EC3-L001352
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000553](../../agents/web_agent.py#L553) | 553 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L000554](../../agents/web_agent.py#L554) | 554 | `"            \"search_providers\": ["` | — |
+| [SRC-1AE03B9EC3-L000555](../../agents/web_agent.py#L555) | 555 | `"                \"DuckDuckGo HTML\","` | — |
+| [SRC-1AE03B9EC3-L000556](../../agents/web_agent.py#L556) | 556 | `"                \"Bing RSS\","` | — |
+| [SRC-1AE03B9EC3-L000557](../../agents/web_agent.py#L557) | 557 | `"                \"Google News RSS for fresh queries\","` | — |
+| [SRC-1AE03B9EC3-L000558](../../agents/web_agent.py#L558) | 558 | `"                \"DeepSeek Search API when DEEPSEEK_SEARCH_API_KEY is configured (optional; may incur charges)\","` | — |
+| [SRC-1AE03B9EC3-L000559](../../agents/web_agent.py#L559) | 559 | `"                \"OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1\","` | — |
+| [SRC-1AE03B9EC3-L000560](../../agents/web_agent.py#L560) | 560 | `"                \"Brave Search API when BRAVE_SEARCH_API_KEY is configured\","` | — |
+| [SRC-1AE03B9EC3-L000561](../../agents/web_agent.py#L561) | 561 | `"                \"Tavily Search API when TAVILY_API_KEY is configured\","` | — |
+| [SRC-1AE03B9EC3-L000562](../../agents/web_agent.py#L562) | 562 | `"            ],"` | — |
+| [SRC-1AE03B9EC3-L000563](../../agents/web_agent.py#L563) | 563 | `"            \"brave_search_api_configured\": bool(os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()),"` | — |
+| [SRC-1AE03B9EC3-L000564](../../agents/web_agent.py#L564) | 564 | `"            \"deepseek_search_api_configured\": bool("` | — |
+| [SRC-1AE03B9EC3-L000565](../../agents/web_agent.py#L565) | 565 | `"                os.getenv(\"DEEPSEEK_SEARCH_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L000566](../../agents/web_agent.py#L566) | 566 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L000567](../../agents/web_agent.py#L567) | 567 | `"            \"tavily_search_api_configured\": bool(os.getenv(\"TAVILY_API_KEY\", \"\").strip()),"` | — |
+| [SRC-1AE03B9EC3-L000568](../../agents/web_agent.py#L568) | 568 | `"            \"openrouter_web_search_enabled\": ("` | — |
+| [SRC-1AE03B9EC3-L000569](../../agents/web_agent.py#L569) | 569 | `"                os.getenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"\").strip() == \"1\""` | — |
+| [SRC-1AE03B9EC3-L000570](../../agents/web_agent.py#L570) | 570 | `"                and \"openrouter.ai\" in os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000571](../../agents/web_agent.py#L571) | 571 | `"                    \"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\""` | — |
+| [SRC-1AE03B9EC3-L000572](../../agents/web_agent.py#L572) | 572 | `"                ).lower()"` | — |
+| [SRC-1AE03B9EC3-L000573](../../agents/web_agent.py#L573) | 573 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L000574](../../agents/web_agent.py#L574) | 574 | `"            \"public_social_sources\": ["` | — |
+| [SRC-1AE03B9EC3-L000575](../../agents/web_agent.py#L575) | 575 | `"                \"Reddit public RSS and optional authorized Reddit OAuth search\","` | — |
+| [SRC-1AE03B9EC3-L000576](../../agents/web_agent.py#L576) | 576 | `"                \"Bluesky public search\","` | — |
+| [SRC-1AE03B9EC3-L000577](../../agents/web_agent.py#L577) | 577 | `"                \"indexed public pages from Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube\","` | — |
+| [SRC-1AE03B9EC3-L000578](../../agents/web_agent.py#L578) | 578 | `"                \"official Instagram public hashtag media when an authorized Graph API token is configured\","` | — |
+| [SRC-1AE03B9EC3-L000579](../../agents/web_agent.py#L579) | 579 | `"                \"configured Facebook Pages when a valid authorized page token is configured\","` | — |
 | [SRC-1AE03B9EC3-L000580](../../agents/web_agent.py#L580) | 580 | `"                \"official X recent-post API when X_BEARER_TOKEN is configured\","` | — |
 | [SRC-1AE03B9EC3-L000581](../../agents/web_agent.py#L581) | 581 | `"            ],"` | — |
 | [SRC-1AE03B9EC3-L000582](../../agents/web_agent.py#L582) | 582 | `"            \"reddit_oauth_configured\": bool("` | — |
@@ -789,30 +816,3 @@
 | [SRC-1AE03B9EC3-L001350](../../agents/web_agent.py#L1350) | 1350 | `""` | — |
 | [SRC-1AE03B9EC3-L001351](../../agents/web_agent.py#L1351) | 1351 | `"    def _search_deepseek_api(self, query: str) -> list[dict[str, Any]]:"` | — |
 | [SRC-1AE03B9EC3-L001352](../../agents/web_agent.py#L1352) | 1352 | `"        \"\"\"Use DeepSeek's optional Search API as a comparison provider, never by default.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001353](../../agents/web_agent.py#L1353) | 1353 | `"        api_key = os.getenv(\"DEEPSEEK_SEARCH_API_KEY\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001354](../../agents/web_agent.py#L1354) | 1354 | `"        if not api_key:"` | — |
-| [SRC-1AE03B9EC3-L001355](../../agents/web_agent.py#L1355) | 1355 | `"            return []"` | — |
-| [SRC-1AE03B9EC3-L001356](../../agents/web_agent.py#L1356) | 1356 | `"        import httpx"` | — |
-| [SRC-1AE03B9EC3-L001357](../../agents/web_agent.py#L1357) | 1357 | `""` | — |
-| [SRC-1AE03B9EC3-L001358](../../agents/web_agent.py#L1358) | 1358 | `"        response = httpx.post("` | — |
-| [SRC-1AE03B9EC3-L001359](../../agents/web_agent.py#L1359) | 1359 | `"            \"https://api.deepseek.com/v1/tools/search\","` | — |
-| [SRC-1AE03B9EC3-L001360](../../agents/web_agent.py#L1360) | 1360 | `"            headers={"` | — |
-| [SRC-1AE03B9EC3-L001361](../../agents/web_agent.py#L1361) | 1361 | `"                \"Authorization\": \"Bearer \" + api_key,"` | — |
-| [SRC-1AE03B9EC3-L001362](../../agents/web_agent.py#L1362) | 1362 | `"                \"Content-Type\": \"application/json\","` | — |
-| [SRC-1AE03B9EC3-L001363](../../agents/web_agent.py#L1363) | 1363 | `"                \"Accept\": \"application/json\","` | — |
-| [SRC-1AE03B9EC3-L001364](../../agents/web_agent.py#L1364) | 1364 | `"                \"User-Agent\": \"OmaraiResearchAgent/1.0\","` | — |
-| [SRC-1AE03B9EC3-L001365](../../agents/web_agent.py#L1365) | 1365 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001366](../../agents/web_agent.py#L1366) | 1366 | `"            json={"` | — |
-| [SRC-1AE03B9EC3-L001367](../../agents/web_agent.py#L1367) | 1367 | `"                \"query\": _normalize_search_query(query)[:128] or \"public web search\","` | — |
-| [SRC-1AE03B9EC3-L001368](../../agents/web_agent.py#L1368) | 1368 | `"                \"count\": min(MAX_PROVIDER_RESULTS, 10),"` | — |
-| [SRC-1AE03B9EC3-L001369](../../agents/web_agent.py#L1369) | 1369 | `"                \"need_content\": False,"` | — |
-| [SRC-1AE03B9EC3-L001370](../../agents/web_agent.py#L1370) | 1370 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001371](../../agents/web_agent.py#L1371) | 1371 | `"            timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L001372](../../agents/web_agent.py#L1372) | 1372 | `"            follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001373](../../agents/web_agent.py#L1373) | 1373 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001374](../../agents/web_agent.py#L1374) | 1374 | `"        response.raise_for_status()"` | — |
-| [SRC-1AE03B9EC3-L001375](../../agents/web_agent.py#L1375) | 1375 | `"        payload = response.json()"` | — |
-| [SRC-1AE03B9EC3-L001376](../../agents/web_agent.py#L1376) | 1376 | `"        results = payload.get(\"results\", []) if isinstance(payload, dict) else []"` | — |
-| [SRC-1AE03B9EC3-L001377](../../agents/web_agent.py#L1377) | 1377 | `"        rows: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L001378](../../agents/web_agent.py#L1378) | 1378 | `"        for item in results if isinstance(results, list) else []:"` | — |
-| [SRC-1AE03B9EC3-L001379](../../agents/web_agent.py#L1379) | 1379 | `"            if not isinstance(item, dict):"` | — |

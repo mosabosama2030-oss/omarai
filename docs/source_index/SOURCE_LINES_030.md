@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000440 إلى SRC-DA61479D59-L000267
+- النطاق: SRC-3451CC474D-L000413 إلى SRC-DA61479D59-L000240
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000413](../../tests/test_api.py#L413) | 413 | `"        serve(\"0.0.0.0\", 0)"` | — |
+| [SRC-3451CC474D-L000414](../../tests/test_api.py#L414) | 414 | `""` | — |
+| [SRC-3451CC474D-L000415](../../tests/test_api.py#L415) | 415 | `"def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):"` | — |
+| [SRC-3451CC474D-L000416](../../tests/test_api.py#L416) | 416 | `"    \"\"\"Client IPs do not accumulate forever after their 60-second window expires.\"\"\""` | — |
+| [SRC-3451CC474D-L000417](../../tests/test_api.py#L417) | 417 | `"    monkeypatch.delenv(\"OMARAI_TRUST_PROXY_HEADERS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
+| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
+| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `"    clock = {\"now\": 100.0}"` | — |
+| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    monkeypatch.setattr(\"api.omarai.time.monotonic\", lambda: clock[\"now\"])"` | — |
+| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `""` | — |
+| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"    class FakeHandler(Handler):"` | — |
+| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"        def __init__(self, ip):"` | — |
+| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"            self.headers = {}"` | — |
+| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"            self.client_address = (ip, 1234)"` | — |
+| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `""` | — |
+| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"    first = FakeHandler(\"192.0.2.1\")"` | — |
+| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"    second = FakeHandler(\"192.0.2.2\")"` | — |
+| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"    assert first._rate_limit_ok() is True"` | — |
+| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `"    assert \"192.0.2.1\" in Handler._request_times"` | — |
+| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `""` | — |
+| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"    clock[\"now\"] = 161.0"` | — |
+| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"    assert second._rate_limit_ok() is True"` | — |
+| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"    assert \"192.0.2.1\" not in Handler._request_times"` | — |
+| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    assert \"192.0.2.2\" in Handler._request_times"` | — |
+| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `""` | — |
+| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `""` | — |
+| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `""` | — |
 | [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"def test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy(local_api, monkeypatch):"` | — |
 | [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"    from api.omarai import WebAgent"` | — |
 | [SRC-3451CC474D-L000442](../../tests/test_api.py#L442) | 442 | `""` | — |
@@ -807,30 +834,3 @@
 | [SRC-DA61479D59-L000238](../../tests/test_connector_summary_counters.py#L238) | 238 | `"            \"provider\": \"bing_rss\","` | — |
 | [SRC-DA61479D59-L000239](../../tests/test_connector_summary_counters.py#L239) | 239 | `"            \"query\": \"Arabic question with source instructions\","` | — |
 | [SRC-DA61479D59-L000240](../../tests/test_connector_summary_counters.py#L240) | 240 | `"            \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000241](../../tests/test_connector_summary_counters.py#L241) | 241 | `"            \"result_count\": 6,"` | — |
-| [SRC-DA61479D59-L000242](../../tests/test_connector_summary_counters.py#L242) | 242 | `"            \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000243](../../tests/test_connector_summary_counters.py#L243) | 243 | `"            \"rejected_count\": 6,"` | — |
-| [SRC-DA61479D59-L000244](../../tests/test_connector_summary_counters.py#L244) | 244 | `"            \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000245](../../tests/test_connector_summary_counters.py#L245) | 245 | `"                \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000246](../../tests/test_connector_summary_counters.py#L246) | 246 | `"                \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000247](../../tests/test_connector_summary_counters.py#L247) | 247 | `"                \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000248](../../tests/test_connector_summary_counters.py#L248) | 248 | `"                \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000249](../../tests/test_connector_summary_counters.py#L249) | 249 | `"            },"` | — |
-| [SRC-DA61479D59-L000250](../../tests/test_connector_summary_counters.py#L250) | 250 | `"            \"error\": \"all candidates rejected; invalid_url_or_unsafe_target=2, blocked_domain=1, relevance_below_threshold=3\","` | — |
-| [SRC-DA61479D59-L000251](../../tests/test_connector_summary_counters.py#L251) | 251 | `"        }],"` | — |
-| [SRC-DA61479D59-L000252](../../tests/test_connector_summary_counters.py#L252) | 252 | `"        [],"` | — |
-| [SRC-DA61479D59-L000253](../../tests/test_connector_summary_counters.py#L253) | 253 | `"    )"` | — |
-| [SRC-DA61479D59-L000254](../../tests/test_connector_summary_counters.py#L254) | 254 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000255](../../tests/test_connector_summary_counters.py#L255) | 255 | `"    assert bing[\"attempted\"] is True"` | — |
-| [SRC-DA61479D59-L000256](../../tests/test_connector_summary_counters.py#L256) | 256 | `"    assert bing[\"result_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000257](../../tests/test_connector_summary_counters.py#L257) | 257 | `"    assert bing[\"accepted_count\"] == 0"` | — |
-| [SRC-DA61479D59-L000258](../../tests/test_connector_summary_counters.py#L258) | 258 | `"    assert bing[\"rejected_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000259](../../tests/test_connector_summary_counters.py#L259) | 259 | `"    assert bing[\"rejection_counts_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000260](../../tests/test_connector_summary_counters.py#L260) | 260 | `"    assert bing[\"rejection_counts\"] == {"` | — |
-| [SRC-DA61479D59-L000261](../../tests/test_connector_summary_counters.py#L261) | 261 | `"        \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000262](../../tests/test_connector_summary_counters.py#L262) | 262 | `"        \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000263](../../tests/test_connector_summary_counters.py#L263) | 263 | `"        \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000264](../../tests/test_connector_summary_counters.py#L264) | 264 | `"        \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000265](../../tests/test_connector_summary_counters.py#L265) | 265 | `"    }"` | — |
-| [SRC-DA61479D59-L000266](../../tests/test_connector_summary_counters.py#L266) | 266 | `"    assert sum(bing[\"rejection_counts\"].values()) == bing[\"rejected_count\"]"` | — |
-| [SRC-DA61479D59-L000267](../../tests/test_connector_summary_counters.py#L267) | 267 | `"    assert bing[\"candidate_rejection_observed\"] is True"` | — |

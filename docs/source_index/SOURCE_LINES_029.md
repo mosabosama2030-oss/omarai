@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000202 إلى SRC-3451CC474D-L000439
+- النطاق: SRC-B3062EB677-L000175 إلى SRC-3451CC474D-L000412
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000175](../../tests/test_answer_quality_runner.py#L175) | 175 | `"    )"` | — |
+| [SRC-B3062EB677-L000176](../../tests/test_answer_quality_runner.py#L176) | 176 | `""` | — |
+| [SRC-B3062EB677-L000177](../../tests/test_answer_quality_runner.py#L177) | 177 | `""` | — |
+| [SRC-B3062EB677-L000178](../../tests/test_answer_quality_runner.py#L178) | 178 | `"def test_redirect_handler_refuses_following_redirects():"` | — |
+| [SRC-B3062EB677-L000179](../../tests/test_answer_quality_runner.py#L179) | 179 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000180](../../tests/test_answer_quality_runner.py#L180) | 180 | `"    handler = mod._NoRedirectHandler()"` | — |
+| [SRC-B3062EB677-L000181](../../tests/test_answer_quality_runner.py#L181) | 181 | `"    assert handler.redirect_request("` | — |
+| [SRC-B3062EB677-L000182](../../tests/test_answer_quality_runner.py#L182) | 182 | `"        req=None,"` | — |
+| [SRC-B3062EB677-L000183](../../tests/test_answer_quality_runner.py#L183) | 183 | `"        fp=None,"` | — |
+| [SRC-B3062EB677-L000184](../../tests/test_answer_quality_runner.py#L184) | 184 | `"        code=302,"` | — |
+| [SRC-B3062EB677-L000185](../../tests/test_answer_quality_runner.py#L185) | 185 | `"        msg=\"Found\","` | — |
+| [SRC-B3062EB677-L000186](../../tests/test_answer_quality_runner.py#L186) | 186 | `"        headers={},"` | — |
+| [SRC-B3062EB677-L000187](../../tests/test_answer_quality_runner.py#L187) | 187 | `"        newurl=\"https://attacker.example/collect\","` | — |
+| [SRC-B3062EB677-L000188](../../tests/test_answer_quality_runner.py#L188) | 188 | `"    ) is None"` | — |
+| [SRC-B3062EB677-L000189](../../tests/test_answer_quality_runner.py#L189) | 189 | `""` | — |
+| [SRC-B3062EB677-L000190](../../tests/test_answer_quality_runner.py#L190) | 190 | `""` | — |
+| [SRC-B3062EB677-L000191](../../tests/test_answer_quality_runner.py#L191) | 191 | `"def test_live_rejects_unapproved_remote_url_before_network(monkeypatch, capsys):"` | — |
+| [SRC-B3062EB677-L000192](../../tests/test_answer_quality_runner.py#L192) | 192 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000193](../../tests/test_answer_quality_runner.py#L193) | 193 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"a-test-token\")"` | — |
+| [SRC-B3062EB677-L000194](../../tests/test_answer_quality_runner.py#L194) | 194 | `"    monkeypatch.delenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", raising=False)"` | — |
+| [SRC-B3062EB677-L000195](../../tests/test_answer_quality_runner.py#L195) | 195 | `"    rc = mod.run_live("` | — |
+| [SRC-B3062EB677-L000196](../../tests/test_answer_quality_runner.py#L196) | 196 | `"        CORPUS,"` | — |
+| [SRC-B3062EB677-L000197](../../tests/test_answer_quality_runner.py#L197) | 197 | `"        \"https://not-allowlisted.example\","` | — |
+| [SRC-B3062EB677-L000198](../../tests/test_answer_quality_runner.py#L198) | 198 | `"        \"AQ-001\","` | — |
+| [SRC-B3062EB677-L000199](../../tests/test_answer_quality_runner.py#L199) | 199 | `"        1,"` | — |
+| [SRC-B3062EB677-L000200](../../tests/test_answer_quality_runner.py#L200) | 200 | `"        1.0,"` | — |
+| [SRC-B3062EB677-L000201](../../tests/test_answer_quality_runner.py#L201) | 201 | `"        0.0,"` | — |
 | [SRC-B3062EB677-L000202](../../tests/test_answer_quality_runner.py#L202) | 202 | `"        None,"` | — |
 | [SRC-B3062EB677-L000203](../../tests/test_answer_quality_runner.py#L203) | 203 | `"    )"` | — |
 | [SRC-B3062EB677-L000204](../../tests/test_answer_quality_runner.py#L204) | 204 | `"    assert rc == 2"` | — |
@@ -807,30 +834,3 @@
 | [SRC-3451CC474D-L000410](../../tests/test_api.py#L410) | 410 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
 | [SRC-3451CC474D-L000411](../../tests/test_api.py#L411) | 411 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"short\")"` | — |
 | [SRC-3451CC474D-L000412](../../tests/test_api.py#L412) | 412 | `"    with pytest.raises(ValueError, match=\"at least 32 characters\"):"` | — |
-| [SRC-3451CC474D-L000413](../../tests/test_api.py#L413) | 413 | `"        serve(\"0.0.0.0\", 0)"` | — |
-| [SRC-3451CC474D-L000414](../../tests/test_api.py#L414) | 414 | `""` | — |
-| [SRC-3451CC474D-L000415](../../tests/test_api.py#L415) | 415 | `"def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000416](../../tests/test_api.py#L416) | 416 | `"    \"\"\"Client IPs do not accumulate forever after their 60-second window expires.\"\"\""` | — |
-| [SRC-3451CC474D-L000417](../../tests/test_api.py#L417) | 417 | `"    monkeypatch.delenv(\"OMARAI_TRUST_PROXY_HEADERS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
-| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
-| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `"    clock = {\"now\": 100.0}"` | — |
-| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    monkeypatch.setattr(\"api.omarai.time.monotonic\", lambda: clock[\"now\"])"` | — |
-| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `""` | — |
-| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"    class FakeHandler(Handler):"` | — |
-| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"        def __init__(self, ip):"` | — |
-| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"            self.headers = {}"` | — |
-| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"            self.client_address = (ip, 1234)"` | — |
-| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `""` | — |
-| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"    first = FakeHandler(\"192.0.2.1\")"` | — |
-| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"    second = FakeHandler(\"192.0.2.2\")"` | — |
-| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"    assert first._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `"    assert \"192.0.2.1\" in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `""` | — |
-| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"    clock[\"now\"] = 161.0"` | — |
-| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"    assert second._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"    assert \"192.0.2.1\" not in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    assert \"192.0.2.2\" in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `""` | — |
-| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `""` | — |
-| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `""` | — |

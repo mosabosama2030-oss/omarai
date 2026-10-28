@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000502 إلى SRC-90FAA34ADE-L001301
+- النطاق: SRC-90FAA34ADE-L000475 إلى SRC-90FAA34ADE-L001274
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000475](../../tests/fixtures/answer_quality_cases.json#L475) | 475 | `"            \"url\": \"https://agency-a.example.test/notice\","` | — |
+| [SRC-90FAA34ADE-L000476](../../tests/fixtures/answer_quality_cases.json#L476) | 476 | `"            \"snippet\": \"Implementation begins on 1 November.\","` | — |
+| [SRC-90FAA34ADE-L000477](../../tests/fixtures/answer_quality_cases.json#L477) | 477 | `"            \"published_at\": \"2026-10-10\","` | — |
+| [SRC-90FAA34ADE-L000478](../../tests/fixtures/answer_quality_cases.json#L478) | 478 | `"            \"domain\": \"agency-a.example.test\","` | — |
+| [SRC-90FAA34ADE-L000479](../../tests/fixtures/answer_quality_cases.json#L479) | 479 | `"            \"provider\": \"fixture_a\""` | — |
+| [SRC-90FAA34ADE-L000480](../../tests/fixtures/answer_quality_cases.json#L480) | 480 | `"          },"` | — |
+| [SRC-90FAA34ADE-L000481](../../tests/fixtures/answer_quality_cases.json#L481) | 481 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000482](../../tests/fixtures/answer_quality_cases.json#L482) | 482 | `"            \"title\": \"Announcement B\","` | — |
+| [SRC-90FAA34ADE-L000483](../../tests/fixtures/answer_quality_cases.json#L483) | 483 | `"            \"url\": \"https://agency-b.example.test/notice\","` | — |
+| [SRC-90FAA34ADE-L000484](../../tests/fixtures/answer_quality_cases.json#L484) | 484 | `"            \"snippet\": \"Implementation begins on 15 November.\","` | — |
+| [SRC-90FAA34ADE-L000485](../../tests/fixtures/answer_quality_cases.json#L485) | 485 | `"            \"published_at\": \"2026-10-12\","` | — |
+| [SRC-90FAA34ADE-L000486](../../tests/fixtures/answer_quality_cases.json#L486) | 486 | `"            \"domain\": \"agency-b.example.test\","` | — |
+| [SRC-90FAA34ADE-L000487](../../tests/fixtures/answer_quality_cases.json#L487) | 487 | `"            \"provider\": \"fixture_b\""` | — |
+| [SRC-90FAA34ADE-L000488](../../tests/fixtures/answer_quality_cases.json#L488) | 488 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000489](../../tests/fixtures/answer_quality_cases.json#L489) | 489 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L000490](../../tests/fixtures/answer_quality_cases.json#L490) | 490 | `"        \"notes\": \"المصدران متعارضان ولا توجد قرينة حاسمة موضحة في الـ fixture\""` | — |
+| [SRC-90FAA34ADE-L000491](../../tests/fixtures/answer_quality_cases.json#L491) | 491 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000492](../../tests/fixtures/answer_quality_cases.json#L492) | 492 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000493](../../tests/fixtures/answer_quality_cases.json#L493) | 493 | `"        \"ذكر تاريخ واحد كحقيقة مؤكدة دون الإفصاح عن التعارض\","` | — |
+| [SRC-90FAA34ADE-L000494](../../tests/fixtures/answer_quality_cases.json#L494) | 494 | `"        \"نسب التاريخ إلى مصدر لا يحتويه\""` | — |
+| [SRC-90FAA34ADE-L000495](../../tests/fixtures/answer_quality_cases.json#L495) | 495 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000496](../../tests/fixtures/answer_quality_cases.json#L496) | 496 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000497](../../tests/fixtures/answer_quality_cases.json#L497) | 497 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000498](../../tests/fixtures/answer_quality_cases.json#L498) | 498 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000499](../../tests/fixtures/answer_quality_cases.json#L499) | 499 | `"      \"case_id\": \"AQ-019\","` | — |
+| [SRC-90FAA34ADE-L000500](../../tests/fixtures/answer_quality_cases.json#L500) | 500 | `"      \"category\": \"conflicting_sources\","` | — |
+| [SRC-90FAA34ADE-L000501](../../tests/fixtures/answer_quality_cases.json#L501) | 501 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000502](../../tests/fixtures/answer_quality_cases.json#L502) | 502 | `"      \"question\": \"Two retrieved pages give different application deadlines for the same public program. Explain the conflict without guessing.\","` | — |
 | [SRC-90FAA34ADE-L000503](../../tests/fixtures/answer_quality_cases.json#L503) | 503 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000504](../../tests/fixtures/answer_quality_cases.json#L504) | 504 | `"      \"required_behaviors\": ["` | — |
@@ -789,30 +816,3 @@
 | [SRC-90FAA34ADE-L001272](../../tests/fixtures/answer_quality_cases.json#L1272) | 1272 | `"        \"غياب التحذير من قدم المصدر\""` | — |
 | [SRC-90FAA34ADE-L001273](../../tests/fixtures/answer_quality_cases.json#L1273) | 1273 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001274](../../tests/fixtures/answer_quality_cases.json#L1274) | 1274 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001276](../../tests/fixtures/answer_quality_cases.json#L1276) | 1276 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001277](../../tests/fixtures/answer_quality_cases.json#L1277) | 1277 | `"      \"case_id\": \"AQ-043\","` | — |
-| [SRC-90FAA34ADE-L001278](../../tests/fixtures/answer_quality_cases.json#L1278) | 1278 | `"      \"category\": \"ambiguous_clarify\","` | — |
-| [SRC-90FAA34ADE-L001279](../../tests/fixtures/answer_quality_cases.json#L1279) | 1279 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L001280](../../tests/fixtures/answer_quality_cases.json#L1280) | 1280 | `"      \"question\": \"Can you check it for me and tell me if it is safe?\","` | — |
-| [SRC-90FAA34ADE-L001281](../../tests/fixtures/answer_quality_cases.json#L1281) | 1281 | `"      \"expected_strategy\": \"clarify\","` | — |
-| [SRC-90FAA34ADE-L001282](../../tests/fixtures/answer_quality_cases.json#L1282) | 1282 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001283](../../tests/fixtures/answer_quality_cases.json#L1283) | 1283 | `"        \"Asks what 'it' refers to and what safety dimension matters\","` | — |
-| [SRC-90FAA34ADE-L001284](../../tests/fixtures/answer_quality_cases.json#L1284) | 1284 | `"        \"Avoids a definitive assessment before context is supplied\","` | — |
-| [SRC-90FAA34ADE-L001285](../../tests/fixtures/answer_quality_cases.json#L1285) | 1285 | `"        \"Keeps clarification concise\""` | — |
-| [SRC-90FAA34ADE-L001286](../../tests/fixtures/answer_quality_cases.json#L1286) | 1286 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001287](../../tests/fixtures/answer_quality_cases.json#L1287) | 1287 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001288](../../tests/fixtures/answer_quality_cases.json#L1288) | 1288 | `"        \"Assumes a specific product, URL, person, or situation\","` | — |
-| [SRC-90FAA34ADE-L001289](../../tests/fixtures/answer_quality_cases.json#L1289) | 1289 | `"        \"Gives a confident safety verdict without identifying the subject\""` | — |
-| [SRC-90FAA34ADE-L001290](../../tests/fixtures/answer_quality_cases.json#L1290) | 1290 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001291](../../tests/fixtures/answer_quality_cases.json#L1291) | 1291 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001292](../../tests/fixtures/answer_quality_cases.json#L1292) | 1292 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L001293](../../tests/fixtures/answer_quality_cases.json#L1293) | 1293 | `"        \"notes\": \"No prior context is available to resolve the pronoun\""` | — |
-| [SRC-90FAA34ADE-L001294](../../tests/fixtures/answer_quality_cases.json#L1294) | 1294 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001295](../../tests/fixtures/answer_quality_cases.json#L1295) | 1295 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001296](../../tests/fixtures/answer_quality_cases.json#L1296) | 1296 | `"        \"Definitive yes/no safety answer with no referent\","` | — |
-| [SRC-90FAA34ADE-L001297](../../tests/fixtures/answer_quality_cases.json#L1297) | 1297 | `"        \"No clarifying question\""` | — |
-| [SRC-90FAA34ADE-L001298](../../tests/fixtures/answer_quality_cases.json#L1298) | 1298 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001299](../../tests/fixtures/answer_quality_cases.json#L1299) | 1299 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L001300](../../tests/fixtures/answer_quality_cases.json#L1300) | 1300 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001301](../../tests/fixtures/answer_quality_cases.json#L1301) | 1301 | `"    {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000820 إلى SRC-E599346ABE-L001619
+- النطاق: SRC-E599346ABE-L000793 إلى SRC-E599346ABE-L001592
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000793](../generate_index.py#L793) | 793 | `"            file=relative_file,"` | — |
+| [SRC-E599346ABE-L000794](../generate_index.py#L794) | 794 | `"            name=clean_name,"` | — |
+| [SRC-E599346ABE-L000795](../generate_index.py#L795) | 795 | `"            kind=kind,"` | — |
+| [SRC-E599346ABE-L000796](../generate_index.py#L796) | 796 | `"            line=max(line, 1),"` | — |
+| [SRC-E599346ABE-L000797](../generate_index.py#L797) | 797 | `"        )"` | — |
+| [SRC-E599346ABE-L000798](../generate_index.py#L798) | 798 | `"    )"` | — |
+| [SRC-E599346ABE-L000799](../generate_index.py#L799) | 799 | `""` | — |
+| [SRC-E599346ABE-L000800](../generate_index.py#L800) | 800 | `""` | — |
+| [SRC-E599346ABE-L000801](../generate_index.py#L801) | 801 | `"def _scan_javascript("` | — |
+| [SRC-E599346ABE-L000802](../generate_index.py#L802) | 802 | `"    source: str,"` | — |
+| [SRC-E599346ABE-L000803](../generate_index.py#L803) | 803 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000804](../generate_index.py#L804) | 804 | `"    markers: list[IndexedMarker],"` | — |
+| [SRC-E599346ABE-L000805](../generate_index.py#L805) | 805 | `"    seen: set[tuple[str, str, str]],"` | — |
+| [SRC-E599346ABE-L000806](../generate_index.py#L806) | 806 | `"    base_line: int = 1,"` | — |
+| [SRC-E599346ABE-L000807](../generate_index.py#L807) | 807 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000808](../generate_index.py#L808) | 808 | `"    \"\"\"Extract navigational JS/TS declarations using bounded regular-expression heuristics.\"\"\""` | — |
+| [SRC-E599346ABE-L000809](../generate_index.py#L809) | 809 | `"    for pattern, kind in ("` | — |
+| [SRC-E599346ABE-L000810](../generate_index.py#L810) | 810 | `"        (JS_FUNCTION_RE, \"دالة JavaScript/TypeScript\"),"` | — |
+| [SRC-E599346ABE-L000811](../generate_index.py#L811) | 811 | `"        (JS_CLASS_RE, \"كلاس JavaScript/TypeScript\"),"` | — |
+| [SRC-E599346ABE-L000812](../generate_index.py#L812) | 812 | `"    ):"` | — |
+| [SRC-E599346ABE-L000813](../generate_index.py#L813) | 813 | `"        for match in pattern.finditer(source):"` | — |
+| [SRC-E599346ABE-L000814](../generate_index.py#L814) | 814 | `"            _add_marker("` | — |
+| [SRC-E599346ABE-L000815](../generate_index.py#L815) | 815 | `"                markers,"` | — |
+| [SRC-E599346ABE-L000816](../generate_index.py#L816) | 816 | `"                seen,"` | — |
+| [SRC-E599346ABE-L000817](../generate_index.py#L817) | 817 | `"                relative_file,"` | — |
+| [SRC-E599346ABE-L000818](../generate_index.py#L818) | 818 | `"                match.group(1),"` | — |
+| [SRC-E599346ABE-L000819](../generate_index.py#L819) | 819 | `"                kind,"` | — |
 | [SRC-E599346ABE-L000820](../generate_index.py#L820) | 820 | `"                _line_at(source, match.start(), base_line),"` | — |
 | [SRC-E599346ABE-L000821](../generate_index.py#L821) | 821 | `"            )"` | — |
 | [SRC-E599346ABE-L000822](../generate_index.py#L822) | 822 | `""` | — |
@@ -789,30 +816,3 @@
 | [SRC-E599346ABE-L001590](../generate_index.py#L1590) | 1590 | `"    line_inventory = source_lines or []"` | — |
 | [SRC-E599346ABE-L001591](../generate_index.py#L1591) | 1591 | `"    finding_inventory = findings or []"` | — |
 | [SRC-E599346ABE-L001592](../generate_index.py#L1592) | 1592 | `"    documented_count = sum(symbol.documented is True for symbol in symbols)"` | — |
-| [SRC-E599346ABE-L001593](../generate_index.py#L1593) | 1593 | `"    missing_count = sum(symbol.documented is False for symbol in symbols)"` | — |
-| [SRC-E599346ABE-L001594](../generate_index.py#L1594) | 1594 | `"    not_applicable_count = sum(symbol.documented is None for symbol in symbols)"` | — |
-| [SRC-E599346ABE-L001595](../generate_index.py#L1595) | 1595 | `"    lines = ["` | — |
-| [SRC-E599346ABE-L001596](../generate_index.py#L1596) | 1596 | `"        \"# MASTER INDEX — Omarai\","` | — |
-| [SRC-E599346ABE-L001597](../generate_index.py#L1597) | 1597 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001598](../generate_index.py#L1598) | 1598 | `"        \"<!-- هذا الملف مُولَّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->\","` | — |
-| [SRC-E599346ABE-L001599](../generate_index.py#L1599) | 1599 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001600](../generate_index.py#L1600) | 1600 | `"        \"> MASTER INDEX يجمع جرد الملفات والتعريفات المسماة ووسوم المراجعة؛ SOURCE LINES INDEX يحتوي الأسطر الكاملة\","` | — |
-| [SRC-E599346ABE-L001601](../generate_index.py#L1601) | 1601 | `"        \"> لكل ملف نصي مؤهل قابل للقراءة، مع معرّف سطر ورقم السطر الأصلي.\","` | — |
-| [SRC-E599346ABE-L001602](../generate_index.py#L1602) | 1602 | `"        \"> استخراج الرموز غير Python تقريبي؛ أما فهرسة الأسطر فمخصصة للوصول إلى النص الموجود وليست حكمًا على صحته.\","` | — |
-| [SRC-E599346ABE-L001603](../generate_index.py#L1603) | 1603 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001604](../generate_index.py#L1604) | 1604 | `"        \"## ملخص الفهرسة\","` | — |
-| [SRC-E599346ABE-L001605](../generate_index.py#L1605) | 1605 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001606](../generate_index.py#L1606) | 1606 | `"        f\"- ملفات المستودع في الجرد: **{len(file_inventory)}**\","` | — |
-| [SRC-E599346ABE-L001607](../generate_index.py#L1607) | 1607 | `"        f\"- ملفات Python المحللة: **{files_scanned}**\","` | — |
-| [SRC-E599346ABE-L001608](../generate_index.py#L1608) | 1608 | `"        f\"- تعريفات Python المفهرسة: **{len(symbols)}**\","` | — |
-| [SRC-E599346ABE-L001609](../generate_index.py#L1609) | 1609 | `"        f\"- تعريفات Python موثقة بوجود Docstring: **{documented_count}**\","` | — |
-| [SRC-E599346ABE-L001610](../generate_index.py#L1610) | 1610 | `"        f\"- تعريفات Python بلا Docstring: **{missing_count}**\","` | — |
-| [SRC-E599346ABE-L001611](../generate_index.py#L1611) | 1611 | `"        f\"- تعريفات لا ينطبق عليها Docstring: **{not_applicable_count}**\","` | — |
-| [SRC-E599346ABE-L001612](../generate_index.py#L1612) | 1612 | `"        f\"- الرموز الساكنة الإضافية: **{len(marker_inventory)}**\","` | — |
-| [SRC-E599346ABE-L001613](../generate_index.py#L1613) | 1613 | `"        f\"- الأسطر النصية المفهرسة حرفيًا: **{len(line_inventory)}**\","` | — |
-| [SRC-E599346ABE-L001614](../generate_index.py#L1614) | 1614 | `"        f\"- وسوم المراجعة/الإصلاح المسجلة: **{len(finding_inventory)}**\","` | — |
-| [SRC-E599346ABE-L001615](../generate_index.py#L1615) | 1615 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001616](../generate_index.py#L1616) | 1616 | `"        \"- فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)\","` | — |
-| [SRC-E599346ABE-L001617](../generate_index.py#L1617) | 1617 | `"        \"- تدقيق التغطية والاستثناءات: [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md)\","` | — |
-| [SRC-E599346ABE-L001618](../generate_index.py#L1618) | 1618 | `"        \"- كل سجل سطر يحمل معرّفًا من الشكل SRC-<FILEHASH>-L000001.\","` | — |
-| [SRC-E599346ABE-L001619](../generate_index.py#L1619) | 1619 | `"        \"\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000223 إلى SRC-F725E90B2A-L000214
+- النطاق: SRC-01E35ABC46-L000196 إلى SRC-F725E90B2A-L000187
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000196](../../tests/test_research_guardrails.py#L196) | 196 | `"def test_evidence_partial_single_source():"` | — |
+| [SRC-01E35ABC46-L000197](../../tests/test_research_guardrails.py#L197) | 197 | `"    sources = ["` | — |
+| [SRC-01E35ABC46-L000198](../../tests/test_research_guardrails.py#L198) | 198 | `"        {\"url\": \"https://a.example/p\", \"domain\": \"a.example\","` | — |
+| [SRC-01E35ABC46-L000199](../../tests/test_research_guardrails.py#L199) | 199 | `"         \"snippet\": \"some text\", \"page_fetched\": True, \"source_class\": \"general\"}"` | — |
+| [SRC-01E35ABC46-L000200](../../tests/test_research_guardrails.py#L200) | 200 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000201](../../tests/test_research_guardrails.py#L201) | 201 | `"    decision = decide_evidence_status(sources, pages_read=1)"` | — |
+| [SRC-01E35ABC46-L000202](../../tests/test_research_guardrails.py#L202) | 202 | `"    assert decision[\"evidence_status\"] == \"partial\""` | — |
+| [SRC-01E35ABC46-L000203](../../tests/test_research_guardrails.py#L203) | 203 | `"    assert decision[\"should_abstain\"] is False"` | — |
+| [SRC-01E35ABC46-L000204](../../tests/test_research_guardrails.py#L204) | 204 | `""` | — |
+| [SRC-01E35ABC46-L000205](../../tests/test_research_guardrails.py#L205) | 205 | `""` | — |
+| [SRC-01E35ABC46-L000206](../../tests/test_research_guardrails.py#L206) | 206 | `""` | — |
+| [SRC-01E35ABC46-L000207](../../tests/test_research_guardrails.py#L207) | 207 | `"# --- task-specific evidence guardrails ---------------------------------------"` | — |
+| [SRC-01E35ABC46-L000208](../../tests/test_research_guardrails.py#L208) | 208 | `""` | — |
+| [SRC-01E35ABC46-L000209](../../tests/test_research_guardrails.py#L209) | 209 | `"_GUARDRAIL_NOW = datetime(2026, 10, 28, 12, 0, tzinfo=UTC)"` | — |
+| [SRC-01E35ABC46-L000210](../../tests/test_research_guardrails.py#L210) | 210 | `""` | — |
+| [SRC-01E35ABC46-L000211](../../tests/test_research_guardrails.py#L211) | 211 | `""` | — |
+| [SRC-01E35ABC46-L000212](../../tests/test_research_guardrails.py#L212) | 212 | `"def _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000213](../../tests/test_research_guardrails.py#L213) | 213 | `"    url: str,"` | — |
+| [SRC-01E35ABC46-L000214](../../tests/test_research_guardrails.py#L214) | 214 | `"    *,"` | — |
+| [SRC-01E35ABC46-L000215](../../tests/test_research_guardrails.py#L215) | 215 | `"    title: str = \"معلومات عن وزارة الاتصالات\","` | — |
+| [SRC-01E35ABC46-L000216](../../tests/test_research_guardrails.py#L216) | 216 | `"    snippet: str = \"معلومات عن وزارة الاتصالات وتكنولوجيا المعلومات في مصر\","` | — |
+| [SRC-01E35ABC46-L000217](../../tests/test_research_guardrails.py#L217) | 217 | `"    published_at: str = \"2026-10-27T10:00:00Z\","` | — |
+| [SRC-01E35ABC46-L000218](../../tests/test_research_guardrails.py#L218) | 218 | `"    page_fetched: bool = True,"` | — |
+| [SRC-01E35ABC46-L000219](../../tests/test_research_guardrails.py#L219) | 219 | `"    page_text: str = \"نص مقروء من الصفحة عن وزارة الاتصالات\","` | — |
+| [SRC-01E35ABC46-L000220](../../tests/test_research_guardrails.py#L220) | 220 | `") -> dict:"` | — |
+| [SRC-01E35ABC46-L000221](../../tests/test_research_guardrails.py#L221) | 221 | `"    return {"` | — |
+| [SRC-01E35ABC46-L000222](../../tests/test_research_guardrails.py#L222) | 222 | `"        \"title\": title,"` | — |
 | [SRC-01E35ABC46-L000223](../../tests/test_research_guardrails.py#L223) | 223 | `"        \"url\": url,"` | — |
 | [SRC-01E35ABC46-L000224](../../tests/test_research_guardrails.py#L224) | 224 | `"        \"snippet\": snippet,"` | — |
 | [SRC-01E35ABC46-L000225](../../tests/test_research_guardrails.py#L225) | 225 | `"        \"published_at\": published_at,"` | — |
@@ -825,30 +852,3 @@
 | [SRC-F725E90B2A-L000185](../../tests/test_web_agent.py#L185) | 185 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L000186](../../tests/test_web_agent.py#L186) | 186 | `"        status_code = 200"` | — |
 | [SRC-F725E90B2A-L000187](../../tests/test_web_agent.py#L187) | 187 | `""` | — |
-| [SRC-F725E90B2A-L000188](../../tests/test_web_agent.py#L188) | 188 | `"        def __init__(self, text):"` | — |
-| [SRC-F725E90B2A-L000189](../../tests/test_web_agent.py#L189) | 189 | `"            self.text = text"` | — |
-| [SRC-F725E90B2A-L000190](../../tests/test_web_agent.py#L190) | 190 | `"            self.content = text.encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L000191](../../tests/test_web_agent.py#L191) | 191 | `""` | — |
-| [SRC-F725E90B2A-L000192](../../tests/test_web_agent.py#L192) | 192 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000193](../../tests/test_web_agent.py#L193) | 193 | `""` | — |
-| [SRC-F725E90B2A-L000194](../../tests/test_web_agent.py#L194) | 194 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000195](../../tests/test_web_agent.py#L195) | 195 | `"        calls.append(url)"` | — |
-| [SRC-F725E90B2A-L000196](../../tests/test_web_agent.py#L196) | 196 | `"        return FakeResponse(html if \"duckduckgo.com\" in url else rss)"` | — |
-| [SRC-F725E90B2A-L000197](../../tests/test_web_agent.py#L197) | 197 | `""` | — |
-| [SRC-F725E90B2A-L000198](../../tests/test_web_agent.py#L198) | 198 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000199](../../tests/test_web_agent.py#L199) | 199 | `"    results = WebAgent()._search_web(\"سؤال بحث تجريبي\")"` | — |
-| [SRC-F725E90B2A-L000200](../../tests/test_web_agent.py#L200) | 200 | `""` | — |
-| [SRC-F725E90B2A-L000201](../../tests/test_web_agent.py#L201) | 201 | `"    assert len(results) == 2"` | — |
-| [SRC-F725E90B2A-L000202](../../tests/test_web_agent.py#L202) | 202 | `"    assert results[0][\"title\"] == \"صفحة أولى\""` | — |
-| [SRC-F725E90B2A-L000203](../../tests/test_web_agent.py#L203) | 203 | `"    assert results[0][\"url\"] == \"https://example.com/first\""` | — |
-| [SRC-F725E90B2A-L000204](../../tests/test_web_agent.py#L204) | 204 | `"    assert results[1][\"title\"] == \"صفحة ثانية\""` | — |
-| [SRC-F725E90B2A-L000205](../../tests/test_web_agent.py#L205) | 205 | `"    assert results[1][\"url\"] == \"https://example.net/second\""` | — |
-| [SRC-F725E90B2A-L000206](../../tests/test_web_agent.py#L206) | 206 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L000207](../../tests/test_web_agent.py#L207) | 207 | `""` | — |
-| [SRC-F725E90B2A-L000208](../../tests/test_web_agent.py#L208) | 208 | `""` | — |
-| [SRC-F725E90B2A-L000209](../../tests/test_web_agent.py#L209) | 209 | `""` | — |
-| [SRC-F725E90B2A-L000210](../../tests/test_web_agent.py#L210) | 210 | `"def test_model_planner_preserves_social_intent_and_adds_targeted_query(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000211](../../tests/test_web_agent.py#L211) | 211 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000212](../../tests/test_web_agent.py#L212) | 212 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L000213](../../tests/test_web_agent.py#L213) | 213 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000214](../../tests/test_web_agent.py#L214) | 214 | `"        agent,"` | — |

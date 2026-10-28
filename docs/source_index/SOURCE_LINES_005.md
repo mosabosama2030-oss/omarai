@@ -741,105 +741,105 @@
 | [SRC-686F71AA50-L000219](../../agents/task_understanding.py#L219) | 219 | `"    if family == \"official_site_lookup\":"` | — |
 | [SRC-686F71AA50-L000220](../../agents/task_understanding.py#L220) | 220 | `"        evidence_requirements = ["` | — |
 | [SRC-686F71AA50-L000221](../../agents/task_understanding.py#L221) | 221 | `"            \"target_entity_match\","` | — |
-| [SRC-686F71AA50-L000222](../../agents/task_understanding.py#L222) | 222 | `"            \"official_domain_or_independently linked official destination\","` | — |
-| [SRC-686F71AA50-L000223](../../agents/task_understanding.py#L223) | 223 | `"            \"never substitute an article or unrelated directory\","` | — |
+| [SRC-686F71AA50-L000222](../../agents/task_understanding.py#L222) | 222 | `"            \"official_domain_or_independently_linked_official_destination\","` | — |
+| [SRC-686F71AA50-L000223](../../agents/task_understanding.py#L223) | 223 | `"            \"never_substitute_an_article_or_unrelated_directory\","` | — |
 | [SRC-686F71AA50-L000224](../../agents/task_understanding.py#L224) | 224 | `"        ]"` | — |
 | [SRC-686F71AA50-L000225](../../agents/task_understanding.py#L225) | 225 | `"        query_strategies = [\"exact_entity\", \"official_domain\", \"government_portal_cross_check\"]"` | — |
-| [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"    elif current_required:"` | — |
+| [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"    elif family == \"social_opinions\":"` | — |
 | [SRC-686F71AA50-L000227](../../agents/task_understanding.py#L227) | 227 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `"            \"publication_or_update_date\","` | — |
-| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"            \"page_text_successfully_read\","` | — |
-| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"            \"prefer_primary_current_source\","` | — |
-| [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"            \"do_not_use_stale_page_as_current_proof\","` | — |
-| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"        ]"` | — |
-| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"        query_strategies = [\"exact_topic\", \"recent_official_update\", \"primary_source\", \"date_check\"]"` | — |
-| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"    elif social_required:"` | — |
-| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"            \"public_social_platform_url\","` | — |
-| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"            \"original_post_or_readable_post_content_when_available\","` | — |
-| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"            \"heuristic_classification_is_not_identity_or_truth_verification\","` | — |
-| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"        ]"` | — |
-| [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"        query_strategies = [\"topic_platform\", \"personal_experience\", \"discussion\", \"commercial_exclusion\"]"` | — |
-| [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"    elif family == \"compare\":"` | — |
-| [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"            \"preserve_each_explicit_comparison_criterion\","` | — |
-| [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"            \"source_support_for_each_material_comparison\","` | — |
-| [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"            \"distinguish_primary_specs_from_individual_experience\","` | — |
-| [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `"        ]"` | — |
-| [SRC-686F71AA50-L000247](../../agents/task_understanding.py#L247) | 247 | `"        query_strategies = [\"topic_baseline\", \"one_query_per_criterion\", \"primary_specification\", \"independent_comparison\"]"` | — |
-| [SRC-686F71AA50-L000248](../../agents/task_understanding.py#L248) | 248 | `"    elif family == \"troubleshoot\":"` | — |
-| [SRC-686F71AA50-L000249](../../agents/task_understanding.py#L249) | 249 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000250](../../agents/task_understanding.py#L250) | 250 | `"            \"preserve_error_message_and_environment\","` | — |
-| [SRC-686F71AA50-L000251](../../agents/task_understanding.py#L251) | 251 | `"            \"prefer_manual_or_primary_technical_source\","` | — |
-| [SRC-686F71AA50-L000252](../../agents/task_understanding.py#L252) | 252 | `"            \"separate_diagnosis_hypotheses_from_confirmed_cause\","` | — |
-| [SRC-686F71AA50-L000253](../../agents/task_understanding.py#L253) | 253 | `"        ]"` | — |
-| [SRC-686F71AA50-L000254](../../agents/task_understanding.py#L254) | 254 | `"        query_strategies = [\"symptom_exact_text\", \"cause_hypotheses\", \"official_manual\", \"safe_remedy\"]"` | — |
-| [SRC-686F71AA50-L000255](../../agents/task_understanding.py#L255) | 255 | `"    elif family == \"how_to\":"` | — |
-| [SRC-686F71AA50-L000256](../../agents/task_understanding.py#L256) | 256 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000257](../../agents/task_understanding.py#L257) | 257 | `"            \"ordered_actionable_steps\","` | — |
-| [SRC-686F71AA50-L000258](../../agents/task_understanding.py#L258) | 258 | `"            \"surface prerequisites and safety constraints\","` | — |
-| [SRC-686F71AA50-L000259](../../agents/task_understanding.py#L259) | 259 | `"            \"distinguish general guidance from product-specific instructions\","` | — |
-| [SRC-686F71AA50-L000260](../../agents/task_understanding.py#L260) | 260 | `"        ]"` | — |
-| [SRC-686F71AA50-L000261](../../agents/task_understanding.py#L261) | 261 | `"        query_strategies = [\"goal_exact_match\", \"official_guide\", \"stepwise_method\"]"` | — |
-| [SRC-686F71AA50-L000262](../../agents/task_understanding.py#L262) | 262 | `"    elif family == \"summarize\":"` | — |
-| [SRC-686F71AA50-L000263](../../agents/task_understanding.py#L263) | 263 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000264](../../agents/task_understanding.py#L264) | 264 | `"            \"read_the_requested_text_or_page\","` | — |
-| [SRC-686F71AA50-L000265](../../agents/task_understanding.py#L265) | 265 | `"            \"do_not_summarize_unread_content_from_title_only\","` | — |
-| [SRC-686F71AA50-L000266](../../agents/task_understanding.py#L266) | 266 | `"            \"preserve_source_scope_and_important_qualifiers\","` | — |
-| [SRC-686F71AA50-L000267](../../agents/task_understanding.py#L267) | 267 | `"        ]"` | — |
-| [SRC-686F71AA50-L000268](../../agents/task_understanding.py#L268) | 268 | `"        query_strategies = [\"exact_url_or_supplied_text\", \"page_read\", \"scope_preserving_summary\"]"` | — |
-| [SRC-686F71AA50-L000269](../../agents/task_understanding.py#L269) | 269 | `"    elif family == \"lead_generation\":"` | — |
-| [SRC-686F71AA50-L000270](../../agents/task_understanding.py#L270) | 270 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000271](../../agents/task_understanding.py#L271) | 271 | `"            \"public_buyer_intent_signal\","` | — |
-| [SRC-686F71AA50-L000272](../../agents/task_understanding.py#L272) | 272 | `"            \"do_not_treat_listing_or_ad_as_a_buyer\","` | — |
-| [SRC-686F71AA50-L000273](../../agents/task_understanding.py#L273) | 273 | `"            \"identity_not_verified_without_separate_evidence\","` | — |
-| [SRC-686F71AA50-L000274](../../agents/task_understanding.py#L274) | 274 | `"        ]"` | — |
-| [SRC-686F71AA50-L000275](../../agents/task_understanding.py#L275) | 275 | `"        query_strategies = [\"buyer_intent_phrase\", \"public_discussion\", \"recent_signal\"]"` | — |
-| [SRC-686F71AA50-L000276](../../agents/task_understanding.py#L276) | 276 | `"    elif family == \"recommendation\":"` | — |
-| [SRC-686F71AA50-L000277](../../agents/task_understanding.py#L277) | 277 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000278](../../agents/task_understanding.py#L278) | 278 | `"            \"preserve_budget_location_and_use_case_if_explicit\","` | — |
-| [SRC-686F71AA50-L000279](../../agents/task_understanding.py#L279) | 279 | `"            \"compare_alternatives\","` | — |
-| [SRC-686F71AA50-L000280](../../agents/task_understanding.py#L280) | 280 | `"            \"make_tradeoffs_and_missing_information_visible\","` | — |
-| [SRC-686F71AA50-L000281](../../agents/task_understanding.py#L281) | 281 | `"        ]"` | — |
-| [SRC-686F71AA50-L000282](../../agents/task_understanding.py#L282) | 282 | `"        query_strategies = [\"use_case\", \"budget_and_location\", \"pros_cons\", \"alternatives\"]"` | — |
-| [SRC-686F71AA50-L000283](../../agents/task_understanding.py#L283) | 283 | `"    else:"` | — |
-| [SRC-686F71AA50-L000284](../../agents/task_understanding.py#L284) | 284 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000285](../../agents/task_understanding.py#L285) | 285 | `"            \"match_sources_to_the_question\","` | — |
-| [SRC-686F71AA50-L000286](../../agents/task_understanding.py#L286) | 286 | `"            \"distinguish_search_snippet_from_read_page\","` | — |
-| [SRC-686F71AA50-L000287](../../agents/task_understanding.py#L287) | 287 | `"            \"cite_material_web_claims\","` | — |
-| [SRC-686F71AA50-L000288](../../agents/task_understanding.py#L288) | 288 | `"        ]"` | — |
-| [SRC-686F71AA50-L000289](../../agents/task_understanding.py#L289) | 289 | `"        query_strategies = [\"exact_topic\", \"primary_source\", \"cross_check_if_needed\"]"` | — |
-| [SRC-686F71AA50-L000290](../../agents/task_understanding.py#L290) | 290 | `""` | — |
-| [SRC-686F71AA50-L000291](../../agents/task_understanding.py#L291) | 291 | `"    location = _extract_explicit_locations(raw)"` | — |
-| [SRC-686F71AA50-L000292](../../agents/task_understanding.py#L292) | 292 | `"    years = list(dict.fromkeys(_YEAR_RE.findall(raw)))"` | — |
-| [SRC-686F71AA50-L000293](../../agents/task_understanding.py#L293) | 293 | `"    dates = list(dict.fromkeys(_DATE_RE.findall(raw)))"` | — |
-| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `"    budgets = [m.group(0).strip()[:100] for m in _BUDGET_RE.finditer(raw)]"` | — |
-| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `"    urls = list(dict.fromkeys(_URL_RE.findall(raw)))[:5]"` | — |
-| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"    unresolved_followup = any(normalize_text(cue) in normalized for cue in _FOLLOWUP_CUES)"` | — |
-| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"    context = dialogue_context if isinstance(dialogue_context, dict) else {}"` | — |
-| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"    explicit_aspects = list(dict.fromkeys(aspect_values))[:MAX_TASK_ASPECTS]"` | — |
-| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `""` | — |
-| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"    # Hypotheses are alternatives considered by the deterministic classifier. Counts"` | — |
-| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `"    # are matched lexical signals, not calibrated confidence or probability."` | — |
-| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"    hypothesis_rows: list[dict[str, Any]] = []"` | — |
-| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"    for candidate_family, signals in matches.items():"` | — |
-| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"        if signals:"` | — |
-| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"            hypothesis_rows.append({"` | — |
-| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `"                \"family\": candidate_family,"` | — |
-| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `"                \"matched_signal_count\": len(signals),"` | — |
-| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"                \"signals\": signals[:4],"` | — |
-| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"                \"status\": \"candidate_interpretation\","` | — |
-| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `"            })"` | — |
-| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    hypothesis_rows.sort("` | — |
-| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"        key=lambda item: (-item[\"matched_signal_count\"], item[\"family\"])"` | — |
-| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"    )"` | — |
-| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"    for item in hypothesis_rows:"` | — |
-| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"        item[\"selected\"] = item[\"family\"] == family"` | — |
-| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    if len(hypothesis_rows) > 8:"` | — |
-| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"        hypothesis_rows = hypothesis_rows[:8]"` | — |
-| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `""` | — |
-| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    # A conflict is a reason to preserve alternatives in diagnostics, not a reason to"` | — |
-| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    # invent certainty. High ambiguity is limited to unresolved references or a"` | — |
-| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `"    # short fragment explicitly marked as contextual."` | — |
-| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    unresolved = bool(context.get(\"needs_clarification\")) or ("` | — |
-| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"        len(raw.strip()) <= 28 and unresolved_followup"` | — |
+| [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `"            \"public_social_platform_url\","` | — |
+| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"            \"original_post_or_readable_post_content_when_available\","` | — |
+| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"            \"heuristic_classification_is_not_identity_or_truth_verification\","` | — |
+| [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"        ]"` | — |
+| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"        query_strategies = [\"topic_platform\", \"personal_experience\", \"discussion\", \"commercial_exclusion\"]"` | — |
+| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"    elif family == \"summarize\":"` | — |
+| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"            \"read_the_requested_text_or_page\","` | — |
+| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"            \"do_not_summarize_unread_content_from_title_only\","` | — |
+| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"            \"preserve_source_scope_and_important_qualifiers\","` | — |
+| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"        ]"` | — |
+| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"        query_strategies = [\"exact_url_or_supplied_text\", \"page_read\", \"scope_preserving_summary\"]"` | — |
+| [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"    elif family == \"troubleshoot\":"` | — |
+| [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"            \"preserve_error_message_and_environment\","` | — |
+| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"            \"prefer_manual_or_primary_technical_source\","` | — |
+| [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"            \"separate_diagnosis_hypotheses_from_confirmed_cause\","` | — |
+| [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"        ]"` | — |
+| [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `"        query_strategies = [\"symptom_exact_text\", \"cause_hypotheses\", \"official_manual\", \"safe_remedy\"]"` | — |
+| [SRC-686F71AA50-L000247](../../agents/task_understanding.py#L247) | 247 | `"    elif family == \"compare\":"` | — |
+| [SRC-686F71AA50-L000248](../../agents/task_understanding.py#L248) | 248 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000249](../../agents/task_understanding.py#L249) | 249 | `"            \"preserve_each_explicit_comparison_criterion\","` | — |
+| [SRC-686F71AA50-L000250](../../agents/task_understanding.py#L250) | 250 | `"            \"source_support_for_each_material_comparison\","` | — |
+| [SRC-686F71AA50-L000251](../../agents/task_understanding.py#L251) | 251 | `"            \"distinguish_primary_specs_from_individual_experience\","` | — |
+| [SRC-686F71AA50-L000252](../../agents/task_understanding.py#L252) | 252 | `"        ]"` | — |
+| [SRC-686F71AA50-L000253](../../agents/task_understanding.py#L253) | 253 | `"        query_strategies = [\"topic_baseline\", \"one_query_per_criterion\", \"primary_specification\", \"independent_comparison\"]"` | — |
+| [SRC-686F71AA50-L000254](../../agents/task_understanding.py#L254) | 254 | `"    elif family == \"how_to\":"` | — |
+| [SRC-686F71AA50-L000255](../../agents/task_understanding.py#L255) | 255 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000256](../../agents/task_understanding.py#L256) | 256 | `"            \"ordered_actionable_steps\","` | — |
+| [SRC-686F71AA50-L000257](../../agents/task_understanding.py#L257) | 257 | `"            \"surface prerequisites and safety constraints\","` | — |
+| [SRC-686F71AA50-L000258](../../agents/task_understanding.py#L258) | 258 | `"            \"distinguish general guidance from product-specific instructions\","` | — |
+| [SRC-686F71AA50-L000259](../../agents/task_understanding.py#L259) | 259 | `"        ]"` | — |
+| [SRC-686F71AA50-L000260](../../agents/task_understanding.py#L260) | 260 | `"        query_strategies = [\"goal_exact_match\", \"official_guide\", \"stepwise_method\"]"` | — |
+| [SRC-686F71AA50-L000261](../../agents/task_understanding.py#L261) | 261 | `"    elif family == \"lead_generation\":"` | — |
+| [SRC-686F71AA50-L000262](../../agents/task_understanding.py#L262) | 262 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000263](../../agents/task_understanding.py#L263) | 263 | `"            \"public_buyer_intent_signal\","` | — |
+| [SRC-686F71AA50-L000264](../../agents/task_understanding.py#L264) | 264 | `"            \"do_not_treat_listing_or_ad_as_a_buyer\","` | — |
+| [SRC-686F71AA50-L000265](../../agents/task_understanding.py#L265) | 265 | `"            \"identity_not_verified_without_separate_evidence\","` | — |
+| [SRC-686F71AA50-L000266](../../agents/task_understanding.py#L266) | 266 | `"        ]"` | — |
+| [SRC-686F71AA50-L000267](../../agents/task_understanding.py#L267) | 267 | `"        query_strategies = [\"buyer_intent_phrase\", \"public_discussion\", \"recent_signal\"]"` | — |
+| [SRC-686F71AA50-L000268](../../agents/task_understanding.py#L268) | 268 | `"    elif family == \"recommendation\":"` | — |
+| [SRC-686F71AA50-L000269](../../agents/task_understanding.py#L269) | 269 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000270](../../agents/task_understanding.py#L270) | 270 | `"            \"preserve_budget_location_and_use_case_if_explicit\","` | — |
+| [SRC-686F71AA50-L000271](../../agents/task_understanding.py#L271) | 271 | `"            \"compare_alternatives\","` | — |
+| [SRC-686F71AA50-L000272](../../agents/task_understanding.py#L272) | 272 | `"            \"make_tradeoffs_and_missing_information_visible\","` | — |
+| [SRC-686F71AA50-L000273](../../agents/task_understanding.py#L273) | 273 | `"        ]"` | — |
+| [SRC-686F71AA50-L000274](../../agents/task_understanding.py#L274) | 274 | `"        query_strategies = [\"use_case\", \"budget_and_location\", \"pros_cons\", \"alternatives\"]"` | — |
+| [SRC-686F71AA50-L000275](../../agents/task_understanding.py#L275) | 275 | `"    else:"` | — |
+| [SRC-686F71AA50-L000276](../../agents/task_understanding.py#L276) | 276 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000277](../../agents/task_understanding.py#L277) | 277 | `"            \"match_sources_to_the_question\","` | — |
+| [SRC-686F71AA50-L000278](../../agents/task_understanding.py#L278) | 278 | `"            \"distinguish_search_snippet_from_read_page\","` | — |
+| [SRC-686F71AA50-L000279](../../agents/task_understanding.py#L279) | 279 | `"            \"cite_material_web_claims\","` | — |
+| [SRC-686F71AA50-L000280](../../agents/task_understanding.py#L280) | 280 | `"        ]"` | — |
+| [SRC-686F71AA50-L000281](../../agents/task_understanding.py#L281) | 281 | `"        query_strategies = [\"exact_topic\", \"primary_source\", \"cross_check_if_needed\"]"` | — |
+| [SRC-686F71AA50-L000282](../../agents/task_understanding.py#L282) | 282 | `""` | — |
+| [SRC-686F71AA50-L000283](../../agents/task_understanding.py#L283) | 283 | `"    # Source freshness, requested officiality, and social evidence are orthogonal"` | — |
+| [SRC-686F71AA50-L000284](../../agents/task_understanding.py#L284) | 284 | `"    # constraints. Preserve them even when another intent is the primary family."` | — |
+| [SRC-686F71AA50-L000285](../../agents/task_understanding.py#L285) | 285 | `"    if current_required and not official_destination:"` | — |
+| [SRC-686F71AA50-L000286](../../agents/task_understanding.py#L286) | 286 | `"        evidence_requirements.extend(["` | — |
+| [SRC-686F71AA50-L000287](../../agents/task_understanding.py#L287) | 287 | `"            \"publication_or_update_date\","` | — |
+| [SRC-686F71AA50-L000288](../../agents/task_understanding.py#L288) | 288 | `"            \"page_text_successfully_read\","` | — |
+| [SRC-686F71AA50-L000289](../../agents/task_understanding.py#L289) | 289 | `"            \"prefer_primary_current_source\","` | — |
+| [SRC-686F71AA50-L000290](../../agents/task_understanding.py#L290) | 290 | `"            \"do_not_use_stale_page_as_current_proof\","` | — |
+| [SRC-686F71AA50-L000291](../../agents/task_understanding.py#L291) | 291 | `"        ])"` | — |
+| [SRC-686F71AA50-L000292](../../agents/task_understanding.py#L292) | 292 | `"        query_strategies.extend([\"recent_official_update\", \"primary_source\", \"date_check\"])"` | — |
+| [SRC-686F71AA50-L000293](../../agents/task_understanding.py#L293) | 293 | `"    if social_required and family != \"social_opinions\":"` | — |
+| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `"        evidence_requirements.extend(["` | — |
+| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `"            \"public_social_platform_url\","` | — |
+| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"            \"separate_personal_experience_from_promotion\","` | — |
+| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"            \"heuristic_classification_is_not_identity_or_truth_verification\","` | — |
+| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"        ])"` | — |
+| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `"        query_strategies.extend([\"personal_experience\", \"discussion\", \"commercial_exclusion\"])"` | — |
+| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"    if official_destination and family != \"official_site_lookup\":"` | — |
+| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `"        evidence_requirements.extend(["` | — |
+| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"            \"distinguish_official_destination_from_mentions_or_articles\","` | — |
+| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"            \"do_not_claim_domain_ownership_without_independent_evidence\","` | — |
+| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"        ])"` | — |
+| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"        query_strategies.extend([\"official_domain\", \"government_portal_cross_check\"])"` | — |
+| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `"    if \"compare\" in matches and family != \"compare\":"` | — |
+| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `"        evidence_requirements.extend(["` | — |
+| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"            \"preserve_explicit_comparison_criteria\","` | — |
+| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"            \"do_not_collapse_multiple_dimensions_into_one_generic_answer\","` | — |
+| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `"        ])"` | — |
+| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"        query_strategies.extend([\"one_query_per_criterion\", \"independent_comparison\"])"` | — |
+| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    if len(explicit_aspects := aspect_values) > 1:"` | — |
+| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"        evidence_requirements.append(\"track_evidence_coverage_per_explicit_aspect\")"` | — |
+| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"        query_strategies.append(\"one_query_per_criterion\")"` | — |
+| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    query_strategies = list(dict.fromkeys(query_strategies))"` | — |
+| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    evidence_requirements = list(dict.fromkeys(evidence_requirements))"` | — |
+| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `""` | — |
+| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"    location = _extract_explicit_locations(raw)"` | — |
+| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    years = list(dict.fromkeys(_YEAR_RE.findall(raw)))"` | — |
+| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    dates = list(dict.fromkeys(_DATE_RE.findall(raw)))"` | — |
+| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `"    budgets = [m.group(0).strip()[:100] for m in _BUDGET_RE.finditer(raw)]"` | — |
+| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    urls = list(dict.fromkeys(_URL_RE.findall(raw)))[:5]"` | — |
+| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"    unresolved_followup = any(normalize_text(cue) in normalized for cue in _FOLLOWUP_CUES)"` | — |

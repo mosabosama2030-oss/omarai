@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003415 إلى SRC-DE7EABE998-L000391
+- النطاق: SRC-F725E90B2A-L003388 إلى SRC-DE7EABE998-L000364
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003388](../../tests/test_web_agent.py#L3388) | 3388 | `"            \"evidence_signals\": {},"` | — |
+| [SRC-F725E90B2A-L003389](../../tests/test_web_agent.py#L3389) | 3389 | `"        }"` | — |
+| [SRC-F725E90B2A-L003390](../../tests/test_web_agent.py#L3390) | 3390 | `""` | — |
+| [SRC-F725E90B2A-L003391](../../tests/test_web_agent.py#L3391) | 3391 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-F725E90B2A-L003392](../../tests/test_web_agent.py#L3392) | 3392 | `""` | — |
+| [SRC-F725E90B2A-L003393](../../tests/test_web_agent.py#L3393) | 3393 | `"    agent.answer(instruction_only, mode=mode)"` | — |
+| [SRC-F725E90B2A-L003394](../../tests/test_web_agent.py#L3394) | 3394 | `""` | — |
+| [SRC-F725E90B2A-L003395](../../tests/test_web_agent.py#L3395) | 3395 | `"    assert observed_plans"` | — |
+| [SRC-F725E90B2A-L003396](../../tests/test_web_agent.py#L3396) | 3396 | `"    assert observed_plans[0][\"queries\"] == []"` | — |
+| [SRC-F725E90B2A-L003397](../../tests/test_web_agent.py#L3397) | 3397 | `"    assert observed_plans[0][\"direct_urls\"] == [direct_url]"` | — |
+| [SRC-F725E90B2A-L003398](../../tests/test_web_agent.py#L3398) | 3398 | `""` | — |
+| [SRC-F725E90B2A-L003399](../../tests/test_web_agent.py#L3399) | 3399 | `""` | — |
+| [SRC-F725E90B2A-L003400](../../tests/test_web_agent.py#L3400) | 3400 | `"def test_auto_navigation_strips_arabic_search_verb_without_regex_regression(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003401](../../tests/test_web_agent.py#L3401) | 3401 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003402](../../tests/test_web_agent.py#L3402) | 3402 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L003403](../../tests/test_web_agent.py#L3403) | 3403 | `"    question = \"ابحث عن الموقع الرسمي لشركة النور\""` | — |
+| [SRC-F725E90B2A-L003404](../../tests/test_web_agent.py#L3404) | 3404 | `"    observed_plans = []"` | — |
+| [SRC-F725E90B2A-L003405](../../tests/test_web_agent.py#L3405) | 3405 | `""` | — |
+| [SRC-F725E90B2A-L003406](../../tests/test_web_agent.py#L3406) | 3406 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003407](../../tests/test_web_agent.py#L3407) | 3407 | `"        \"agents.web_agent.route_intent\","` | — |
+| [SRC-F725E90B2A-L003408](../../tests/test_web_agent.py#L3408) | 3408 | `"        lambda *args, **kwargs: {\"route\": \"WEB_SIMPLE\", \"reason\": \"test\"},"` | — |
+| [SRC-F725E90B2A-L003409](../../tests/test_web_agent.py#L3409) | 3409 | `"    )"` | — |
+| [SRC-F725E90B2A-L003410](../../tests/test_web_agent.py#L3410) | 3410 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003411](../../tests/test_web_agent.py#L3411) | 3411 | `"        \"agents.web_agent.compact_search_query\","` | — |
+| [SRC-F725E90B2A-L003412](../../tests/test_web_agent.py#L3412) | 3412 | `"        lambda value: value.strip() if isinstance(value, str) else \"\","` | — |
+| [SRC-F725E90B2A-L003413](../../tests/test_web_agent.py#L3413) | 3413 | `"    )"` | — |
+| [SRC-F725E90B2A-L003414](../../tests/test_web_agent.py#L3414) | 3414 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L003415](../../tests/test_web_agent.py#L3415) | 3415 | `"        agent, \"_plan_search\","` | — |
 | [SRC-F725E90B2A-L003416](../../tests/test_web_agent.py#L3416) | 3416 | `"        lambda _question, _history: {"` | — |
 | [SRC-F725E90B2A-L003417](../../tests/test_web_agent.py#L3417) | 3417 | `"            \"queries\": [question],"` | — |
@@ -807,30 +834,3 @@
 | [SRC-DE7EABE998-L000362](../../web/agent.html#L362) | 362 | `" }finally{"` | — |
 | [SRC-DE7EABE998-L000363](../../web/agent.html#L363) | 363 | `"  setBusy(false);$(\"question\").focus();"` | — |
 | [SRC-DE7EABE998-L000364](../../web/agent.html#L364) | 364 | `" }"` | — |
-| [SRC-DE7EABE998-L000365](../../web/agent.html#L365) | 365 | `"}"` | — |
-| [SRC-DE7EABE998-L000366](../../web/agent.html#L366) | 366 | `"async function runDiagnostics(){"` | — |
-| [SRC-DE7EABE998-L000367](../../web/agent.html#L367) | 367 | `" const button=$(\"runDiagnostics\"),output=$(\"diagnosticsResult\");if(button.disabled)return;"` | — |
-| [SRC-DE7EABE998-L000368](../../web/agent.html#L368) | 368 | `" button.disabled=true;button.textContent=\"جارٍ الاختبار الحقيقي…\";output.textContent=\"يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.\";"` | — |
-| [SRC-DE7EABE998-L000369](../../web/agent.html#L369) | 369 | `" try{"` | — |
-| [SRC-DE7EABE998-L000370](../../web/agent.html#L370) | 370 | `"  const response=await fetch(\"/api/diagnostics\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$(\"diagSocial\").checked})});"` | — |
-| [SRC-DE7EABE998-L000371](../../web/agent.html#L371) | 371 | `"  const data=await response.json();if(!response.ok)throw Error(data.error\|\|\"فشل طلب الاختبار\");"` | — |
-| [SRC-DE7EABE998-L000372](../../web/agent.html#L372) | 372 | `"  const labels={passed:\"نجح فعليًا\",degraded:\"جزئي أو بلا نتائج كافية\",failed:\"فشل\",skipped:\"لم يُختبر\",not_configured:\"غير مضبوط\"};"` | — |
-| [SRC-DE7EABE998-L000373](../../web/agent.html#L373) | 373 | `"  const lines=[\"النتيجة: \"+(labels[data.overall_status]\|\|data.overall_status)];"` | — |
-| [SRC-DE7EABE998-L000374](../../web/agent.html#L374) | 374 | `"  for(const [key,label] of [[\"web_search\",\"بحث الإنترنت\"],[\"language_model\",\"النموذج اللغوي\"],[\"social_search\",\"المصادر الاجتماعية\"]]){"` | — |
-| [SRC-DE7EABE998-L000375](../../web/agent.html#L375) | 375 | `"   const item=(data.checks\|\|{})[key];if(!item)continue;"` | — |
-| [SRC-DE7EABE998-L000376](../../web/agent.html#L376) | 376 | `"   lines.push(label+\": \"+(labels[item.status]\|\|item.status)+(item.result_count!==undefined?\" · \"+item.result_count+\" نتيجة\":\"\"));"` | — |
-| [SRC-DE7EABE998-L000377](../../web/agent.html#L377) | 377 | `"   if(item.provider_counts&&Object.keys(item.provider_counts).length)lines.push(\"المصادر التي أعادت نتائج: \"+Object.entries(item.provider_counts).map(([p,n])=>p+\" (\"+n+\")\").join(\"، \"));"` | — |
-| [SRC-DE7EABE998-L000378](../../web/agent.html#L378) | 378 | `"   if(item.note)lines.push(item.note);"` | — |
-| [SRC-DE7EABE998-L000379](../../web/agent.html#L379) | 379 | `"   if(item.warnings&&item.warnings.length)lines.push(item.warnings.join(\"؛ \"));"` | — |
-| [SRC-DE7EABE998-L000380](../../web/agent.html#L380) | 380 | `"  }"` | — |
-| [SRC-DE7EABE998-L000381](../../web/agent.html#L381) | 381 | `"  if(data.model_usage&&data.model_usage.length)lines.push(\"النموذج المستخدم: \"+data.model_usage.map(x=>x.used_model).join(\"، \"));"` | — |
-| [SRC-DE7EABE998-L000382](../../web/agent.html#L382) | 382 | `"  if(data.elapsed_ms!==undefined)lines.push(\"مدة الاختبار: \"+(data.elapsed_ms/1000).toFixed(1)+\" ثانية\");"` | — |
-| [SRC-DE7EABE998-L000383](../../web/agent.html#L383) | 383 | `"  output.textContent=lines.join(\"\\n\");setStatus(data.overall_status===\"passed\"?\"نجح الاختبار الحي\":data.overall_status===\"failed\"?\"فشل الاختبار الحي\":\"نتيجة الاختبار جزئية\",data.overall_status===\"passed\"?\"ok\":data.overall_status===\"failed\"?\"bad\":\"warn\");"` | — |
-| [SRC-DE7EABE998-L000384](../../web/agent.html#L384) | 384 | `" }catch(e){output.textContent=\"تعذّر الاختبار الحي: \"+(e&&e.message?e.message:\"خطأ غير معروف\");setStatus(\"فشل الاختبار الحي\",\"bad\");}"` | — |
-| [SRC-DE7EABE998-L000385](../../web/agent.html#L385) | 385 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
-| [SRC-DE7EABE998-L000386](../../web/agent.html#L386) | 386 | `"}"` | — |
-| [SRC-DE7EABE998-L000387](../../web/agent.html#L387) | 387 | `"async function checkHealth(){"` | — |
-| [SRC-DE7EABE998-L000388](../../web/agent.html#L388) | 388 | `" try{"` | — |
-| [SRC-DE7EABE998-L000389](../../web/agent.html#L389) | 389 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
-| [SRC-DE7EABE998-L000390](../../web/agent.html#L390) | 390 | `"  const configured=[];"` | — |
-| [SRC-DE7EABE998-L000391](../../web/agent.html#L391) | 391 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |

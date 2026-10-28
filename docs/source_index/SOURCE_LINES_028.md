@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001302 إلى SRC-B3062EB677-L000201
+- النطاق: SRC-90FAA34ADE-L001275 إلى SRC-B3062EB677-L000174
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001276](../../tests/fixtures/answer_quality_cases.json#L1276) | 1276 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001277](../../tests/fixtures/answer_quality_cases.json#L1277) | 1277 | `"      \"case_id\": \"AQ-043\","` | — |
+| [SRC-90FAA34ADE-L001278](../../tests/fixtures/answer_quality_cases.json#L1278) | 1278 | `"      \"category\": \"ambiguous_clarify\","` | — |
+| [SRC-90FAA34ADE-L001279](../../tests/fixtures/answer_quality_cases.json#L1279) | 1279 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001280](../../tests/fixtures/answer_quality_cases.json#L1280) | 1280 | `"      \"question\": \"Can you check it for me and tell me if it is safe?\","` | — |
+| [SRC-90FAA34ADE-L001281](../../tests/fixtures/answer_quality_cases.json#L1281) | 1281 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L001282](../../tests/fixtures/answer_quality_cases.json#L1282) | 1282 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001283](../../tests/fixtures/answer_quality_cases.json#L1283) | 1283 | `"        \"Asks what 'it' refers to and what safety dimension matters\","` | — |
+| [SRC-90FAA34ADE-L001284](../../tests/fixtures/answer_quality_cases.json#L1284) | 1284 | `"        \"Avoids a definitive assessment before context is supplied\","` | — |
+| [SRC-90FAA34ADE-L001285](../../tests/fixtures/answer_quality_cases.json#L1285) | 1285 | `"        \"Keeps clarification concise\""` | — |
+| [SRC-90FAA34ADE-L001286](../../tests/fixtures/answer_quality_cases.json#L1286) | 1286 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001287](../../tests/fixtures/answer_quality_cases.json#L1287) | 1287 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001288](../../tests/fixtures/answer_quality_cases.json#L1288) | 1288 | `"        \"Assumes a specific product, URL, person, or situation\","` | — |
+| [SRC-90FAA34ADE-L001289](../../tests/fixtures/answer_quality_cases.json#L1289) | 1289 | `"        \"Gives a confident safety verdict without identifying the subject\""` | — |
+| [SRC-90FAA34ADE-L001290](../../tests/fixtures/answer_quality_cases.json#L1290) | 1290 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001291](../../tests/fixtures/answer_quality_cases.json#L1291) | 1291 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001292](../../tests/fixtures/answer_quality_cases.json#L1292) | 1292 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001293](../../tests/fixtures/answer_quality_cases.json#L1293) | 1293 | `"        \"notes\": \"No prior context is available to resolve the pronoun\""` | — |
+| [SRC-90FAA34ADE-L001294](../../tests/fixtures/answer_quality_cases.json#L1294) | 1294 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001295](../../tests/fixtures/answer_quality_cases.json#L1295) | 1295 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001296](../../tests/fixtures/answer_quality_cases.json#L1296) | 1296 | `"        \"Definitive yes/no safety answer with no referent\","` | — |
+| [SRC-90FAA34ADE-L001297](../../tests/fixtures/answer_quality_cases.json#L1297) | 1297 | `"        \"No clarifying question\""` | — |
+| [SRC-90FAA34ADE-L001298](../../tests/fixtures/answer_quality_cases.json#L1298) | 1298 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001299](../../tests/fixtures/answer_quality_cases.json#L1299) | 1299 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001300](../../tests/fixtures/answer_quality_cases.json#L1300) | 1300 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001301](../../tests/fixtures/answer_quality_cases.json#L1301) | 1301 | `"    {"` | — |
 | [SRC-90FAA34ADE-L001302](../../tests/fixtures/answer_quality_cases.json#L1302) | 1302 | `"      \"case_id\": \"AQ-044\","` | — |
 | [SRC-90FAA34ADE-L001303](../../tests/fixtures/answer_quality_cases.json#L1303) | 1303 | `"      \"category\": \"incomplete_answer\","` | — |
 | [SRC-90FAA34ADE-L001304](../../tests/fixtures/answer_quality_cases.json#L1304) | 1304 | `"      \"language\": \"ar-MSA\","` | — |
@@ -834,30 +861,3 @@
 | [SRC-B3062EB677-L000172](../../tests/test_answer_quality_runner.py#L172) | 172 | `"    assert ("` | — |
 | [SRC-B3062EB677-L000173](../../tests/test_answer_quality_runner.py#L173) | 173 | `"        mod.validate_base_url(\"https://app.example:443\", token_present=True)"` | — |
 | [SRC-B3062EB677-L000174](../../tests/test_answer_quality_runner.py#L174) | 174 | `"        == \"https://app.example\""` | — |
-| [SRC-B3062EB677-L000175](../../tests/test_answer_quality_runner.py#L175) | 175 | `"    )"` | — |
-| [SRC-B3062EB677-L000176](../../tests/test_answer_quality_runner.py#L176) | 176 | `""` | — |
-| [SRC-B3062EB677-L000177](../../tests/test_answer_quality_runner.py#L177) | 177 | `""` | — |
-| [SRC-B3062EB677-L000178](../../tests/test_answer_quality_runner.py#L178) | 178 | `"def test_redirect_handler_refuses_following_redirects():"` | — |
-| [SRC-B3062EB677-L000179](../../tests/test_answer_quality_runner.py#L179) | 179 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000180](../../tests/test_answer_quality_runner.py#L180) | 180 | `"    handler = mod._NoRedirectHandler()"` | — |
-| [SRC-B3062EB677-L000181](../../tests/test_answer_quality_runner.py#L181) | 181 | `"    assert handler.redirect_request("` | — |
-| [SRC-B3062EB677-L000182](../../tests/test_answer_quality_runner.py#L182) | 182 | `"        req=None,"` | — |
-| [SRC-B3062EB677-L000183](../../tests/test_answer_quality_runner.py#L183) | 183 | `"        fp=None,"` | — |
-| [SRC-B3062EB677-L000184](../../tests/test_answer_quality_runner.py#L184) | 184 | `"        code=302,"` | — |
-| [SRC-B3062EB677-L000185](../../tests/test_answer_quality_runner.py#L185) | 185 | `"        msg=\"Found\","` | — |
-| [SRC-B3062EB677-L000186](../../tests/test_answer_quality_runner.py#L186) | 186 | `"        headers={},"` | — |
-| [SRC-B3062EB677-L000187](../../tests/test_answer_quality_runner.py#L187) | 187 | `"        newurl=\"https://attacker.example/collect\","` | — |
-| [SRC-B3062EB677-L000188](../../tests/test_answer_quality_runner.py#L188) | 188 | `"    ) is None"` | — |
-| [SRC-B3062EB677-L000189](../../tests/test_answer_quality_runner.py#L189) | 189 | `""` | — |
-| [SRC-B3062EB677-L000190](../../tests/test_answer_quality_runner.py#L190) | 190 | `""` | — |
-| [SRC-B3062EB677-L000191](../../tests/test_answer_quality_runner.py#L191) | 191 | `"def test_live_rejects_unapproved_remote_url_before_network(monkeypatch, capsys):"` | — |
-| [SRC-B3062EB677-L000192](../../tests/test_answer_quality_runner.py#L192) | 192 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000193](../../tests/test_answer_quality_runner.py#L193) | 193 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"a-test-token\")"` | — |
-| [SRC-B3062EB677-L000194](../../tests/test_answer_quality_runner.py#L194) | 194 | `"    monkeypatch.delenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", raising=False)"` | — |
-| [SRC-B3062EB677-L000195](../../tests/test_answer_quality_runner.py#L195) | 195 | `"    rc = mod.run_live("` | — |
-| [SRC-B3062EB677-L000196](../../tests/test_answer_quality_runner.py#L196) | 196 | `"        CORPUS,"` | — |
-| [SRC-B3062EB677-L000197](../../tests/test_answer_quality_runner.py#L197) | 197 | `"        \"https://not-allowlisted.example\","` | — |
-| [SRC-B3062EB677-L000198](../../tests/test_answer_quality_runner.py#L198) | 198 | `"        \"AQ-001\","` | — |
-| [SRC-B3062EB677-L000199](../../tests/test_answer_quality_runner.py#L199) | 199 | `"        1,"` | — |
-| [SRC-B3062EB677-L000200](../../tests/test_answer_quality_runner.py#L200) | 200 | `"        1.0,"` | — |
-| [SRC-B3062EB677-L000201](../../tests/test_answer_quality_runner.py#L201) | 201 | `"        0.0,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002180 إلى SRC-1AE03B9EC3-L002979
+- النطاق: SRC-1AE03B9EC3-L002153 إلى SRC-1AE03B9EC3-L002952
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002153](../../agents/web_agent.py#L2153) | 2153 | `"                            })"` | — |
+| [SRC-1AE03B9EC3-L002154](../../agents/web_agent.py#L2154) | 2154 | `"                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L002155](../../agents/web_agent.py#L2155) | 2155 | `"                        warnings.append(\"Instagram Graph API search failed for a requested hashtag.\")"` | — |
+| [SRC-1AE03B9EC3-L002156](../../agents/web_agent.py#L2156) | 2156 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L002157](../../agents/web_agent.py#L2157) | 2157 | `"                warnings.append("` | — |
+| [SRC-1AE03B9EC3-L002158](../../agents/web_agent.py#L2158) | 2158 | `"                    \"Instagram direct API is not configured; indexed public Instagram pages are still searched.\""` | — |
+| [SRC-1AE03B9EC3-L002159](../../agents/web_agent.py#L2159) | 2159 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002160](../../agents/web_agent.py#L2160) | 2160 | `""` | — |
+| [SRC-1AE03B9EC3-L002161](../../agents/web_agent.py#L2161) | 2161 | `"        if \"x\" in platforms and os.getenv(\"X_BEARER_TOKEN\", \"\").strip():"` | — |
+| [SRC-1AE03B9EC3-L002162](../../agents/web_agent.py#L2162) | 2162 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L002163](../../agents/web_agent.py#L2163) | 2163 | `"                self._reserve_search_call()"` | — |
+| [SRC-1AE03B9EC3-L002164](../../agents/web_agent.py#L2164) | 2164 | `"                response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L002165](../../agents/web_agent.py#L2165) | 2165 | `"                    \"https://api.x.com/2/tweets/search/recent\","` | — |
+| [SRC-1AE03B9EC3-L002166](../../agents/web_agent.py#L2166) | 2166 | `"                    params={"` | — |
+| [SRC-1AE03B9EC3-L002167](../../agents/web_agent.py#L2167) | 2167 | `"                        \"query\": query + \" -is:retweet\","` | — |
+| [SRC-1AE03B9EC3-L002168](../../agents/web_agent.py#L2168) | 2168 | `"                        \"max_results\": 10,"` | — |
+| [SRC-1AE03B9EC3-L002169](../../agents/web_agent.py#L2169) | 2169 | `"                        \"tweet.fields\": \"created_at,lang,public_metrics,author_id\","` | — |
+| [SRC-1AE03B9EC3-L002170](../../agents/web_agent.py#L2170) | 2170 | `"                        \"expansions\": \"author_id\","` | — |
+| [SRC-1AE03B9EC3-L002171](../../agents/web_agent.py#L2171) | 2171 | `"                        \"user.fields\": \"name,username\","` | — |
+| [SRC-1AE03B9EC3-L002172](../../agents/web_agent.py#L2172) | 2172 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L002173](../../agents/web_agent.py#L2173) | 2173 | `"                    headers={"` | — |
+| [SRC-1AE03B9EC3-L002174](../../agents/web_agent.py#L2174) | 2174 | `"                        **headers,"` | — |
+| [SRC-1AE03B9EC3-L002175](../../agents/web_agent.py#L2175) | 2175 | `"                        \"Authorization\": \"Bearer \" + os.getenv(\"X_BEARER_TOKEN\", \"\").strip(),"` | — |
+| [SRC-1AE03B9EC3-L002176](../../agents/web_agent.py#L2176) | 2176 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L002177](../../agents/web_agent.py#L2177) | 2177 | `"                    timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L002178](../../agents/web_agent.py#L2178) | 2178 | `"                    follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L002179](../../agents/web_agent.py#L2179) | 2179 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L002180](../../agents/web_agent.py#L2180) | 2180 | `"                if response.status_code == 200:"` | — |
 | [SRC-1AE03B9EC3-L002181](../../agents/web_agent.py#L2181) | 2181 | `"                    data = response.json()"` | — |
 | [SRC-1AE03B9EC3-L002182](../../agents/web_agent.py#L2182) | 2182 | `"                    authors = {"` | — |
@@ -789,30 +816,3 @@
 | [SRC-1AE03B9EC3-L002950](../../agents/web_agent.py#L2950) | 2950 | `"        return result"` | — |
 | [SRC-1AE03B9EC3-L002951](../../agents/web_agent.py#L2951) | 2951 | `""` | — |
 | [SRC-1AE03B9EC3-L002952](../../agents/web_agent.py#L2952) | 2952 | `"    def _record_generation_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L002953](../../agents/web_agent.py#L2953) | 2953 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L002954](../../agents/web_agent.py#L2954) | 2954 | `"        requested_model: str,"` | — |
-| [SRC-1AE03B9EC3-L002955](../../agents/web_agent.py#L2955) | 2955 | `"        attempted_model: str,"` | — |
-| [SRC-1AE03B9EC3-L002956](../../agents/web_agent.py#L2956) | 2956 | `"        status: str,"` | — |
-| [SRC-1AE03B9EC3-L002957](../../agents/web_agent.py#L2957) | 2957 | `"        finish_reason: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L002958](../../agents/web_agent.py#L2958) | 2958 | `"        error_class: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L002959](../../agents/web_agent.py#L2959) | 2959 | `"        request_started: bool = True,"` | — |
-| [SRC-1AE03B9EC3-L002960](../../agents/web_agent.py#L2960) | 2960 | `"        remote_response_received: bool \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L002961](../../agents/web_agent.py#L2961) | 2961 | `"    ) -> None:"` | — |
-| [SRC-1AE03B9EC3-L002962](../../agents/web_agent.py#L2962) | 2962 | `"        \"\"\"Store bounded metadata for each model attempt; never retain prompts or output.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L002963](../../agents/web_agent.py#L2963) | 2963 | `"        self._generation_attempt_sequence = getattr(self, \"_generation_attempt_sequence\", 0) + 1"` | — |
-| [SRC-1AE03B9EC3-L002964](../../agents/web_agent.py#L2964) | 2964 | `"        record: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L002965](../../agents/web_agent.py#L2965) | 2965 | `"            \"attempt_number\": self._generation_attempt_sequence,"` | — |
-| [SRC-1AE03B9EC3-L002966](../../agents/web_agent.py#L2966) | 2966 | `"            \"requested_model\": str(requested_model)[:160],"` | — |
-| [SRC-1AE03B9EC3-L002967](../../agents/web_agent.py#L2967) | 2967 | `"            \"attempted_model\": str(attempted_model)[:160],"` | — |
-| [SRC-1AE03B9EC3-L002968](../../agents/web_agent.py#L2968) | 2968 | `"            \"fallback_used\": str(attempted_model) != str(requested_model),"` | — |
-| [SRC-1AE03B9EC3-L002969](../../agents/web_agent.py#L2969) | 2969 | `"            \"request_started\": bool(request_started),"` | — |
-| [SRC-1AE03B9EC3-L002970](../../agents/web_agent.py#L2970) | 2970 | `"            \"status\": str(status)[:48],"` | — |
-| [SRC-1AE03B9EC3-L002971](../../agents/web_agent.py#L2971) | 2971 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002972](../../agents/web_agent.py#L2972) | 2972 | `"        if remote_response_received is None and isinstance(finish_reason, str) and finish_reason.strip():"` | — |
-| [SRC-1AE03B9EC3-L002973](../../agents/web_agent.py#L2973) | 2973 | `"            # A concrete finish_reason can only be observed after a provider response was received."` | — |
-| [SRC-1AE03B9EC3-L002974](../../agents/web_agent.py#L2974) | 2974 | `"            remote_response_received = True"` | — |
-| [SRC-1AE03B9EC3-L002975](../../agents/web_agent.py#L2975) | 2975 | `"        if remote_response_received is not None:"` | — |
-| [SRC-1AE03B9EC3-L002976](../../agents/web_agent.py#L2976) | 2976 | `"            record[\"remote_response_received\"] = bool(remote_response_received)"` | — |
-| [SRC-1AE03B9EC3-L002977](../../agents/web_agent.py#L2977) | 2977 | `"        if isinstance(finish_reason, str) and finish_reason.strip():"` | — |
-| [SRC-1AE03B9EC3-L002978](../../agents/web_agent.py#L2978) | 2978 | `"            record[\"finish_reason\"] = finish_reason.strip()[:48]"` | — |
-| [SRC-1AE03B9EC3-L002979](../../agents/web_agent.py#L2979) | 2979 | `"        if isinstance(error_class, str) and error_class:"` | — |
