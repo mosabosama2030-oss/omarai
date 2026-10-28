@@ -97,6 +97,15 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     assert any("تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري" in warning
                for warning in result["warnings"])
     assert result["used_language_model"] is True
+    task_understanding = result["task_understanding"]
+    assert task_understanding["task_spec"]["schema"] == "omarai.task_spec.v1"
+    assert task_understanding["task_spec"]["task_family"] == "compare"
+    assert task_understanding["task_spec"]["classification_is_probability"] is False
+    assert task_understanding["tool_execution"]["search_outcome"] == "attempted_with_usable_sources"
+    assert task_understanding["tool_execution"]["accepted_source_count"] == 2
+    assert task_understanding["query_strategy_matrix"]
+    assert task_understanding["actual_queries"] == result["search_queries"]
+    assert result["search_report"]["task_understanding"]["task_spec"]["schema"] == "omarai.task_spec.v1"
     assert result["sources"][0]["url"] == "https://example.com/research"
     assert "[المصدر 1]" in result["answer"]
     assert seen["question"] == "قارن هذه التقنية"
@@ -3677,4 +3686,16 @@ def test_criterion_gap_repair_cannot_reintroduce_non_social_source(monkeypatch):
     assert "https://example.com/unrelated-repair" not in {
         source["url"] for source in result["sources"]
     }
+
+def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):
+    agent = WebAgent()
+    result = agent.answer("أهلا")
+
+    task_understanding = result["task_understanding"]
+    assert task_understanding["task_spec"]["schema"] == "omarai.task_spec.v1"
+    assert task_understanding["tool_execution"]["search_outcome"] == "not_assessed"
+    assert task_understanding["tool_execution"]["required_tools"] == []
+    assert task_understanding["actual_queries"] == []
+    assert task_understanding["query_strategy_matrix"] == []
+    assert task_understanding["search_was_attempted"] is False
 
