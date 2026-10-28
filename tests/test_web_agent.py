@@ -3472,6 +3472,8 @@ def test_latest_mode_does_not_generate_answer_from_stale_pages(monkeypatch):
         collection_calls.append(dict(research_plan))
         old_page = sample_source(0)
         old_page.update({
+            "url": "https://moi.gov.eg/passports",
+            "domain": "moi.gov.eg",
             "published_at": "2024-01-01T10:00:00Z",
             "page_fetched": True,
             "page_text": "محتوى قديم عن مواعيد العمل",

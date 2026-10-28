@@ -295,7 +295,7 @@ def test_latest_mode_excludes_old_undated_and_unread_pages() -> None:
         ),
     ]
     accepted, report = apply_source_guardrails(
-        "مواعيد عمل مكتب الجوازات اليوم",
+        "سعر الذهب اليوم في مصر",
         "latest",
         {"freshness": "current"},
         candidates,
