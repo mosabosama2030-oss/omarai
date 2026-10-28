@@ -4494,6 +4494,44 @@ class WebAgent:
                     intent_reason = "semantic_dialogue_context_" + str(semantic_decision["reason"])
                 decision = semantic_decision
 
+        # A small deterministic preflight catches requests whose required subject
+        # or source is absent before the planner or search connectors are invoked.
+        # This is intentionally limited to hard missing inputs, not optional details.
+        preflight_task_spec = build_task_spec(
+            working_question,
+            mode=clean_mode,
+            intent_route=intent_route,
+            dialogue_context=context_override,
+        )
+        missing_inputs = set(preflight_task_spec.get("missing_required_inputs") or [])
+        actionable_missing_inputs = missing_inputs & {
+            "official_destination_target_entity",
+            "summary_source_url_or_pasted_text",
+        }
+        if actionable_missing_inputs and intent_route not in {"LOCAL", "CLARIFY"}:
+            clarification = self._clarification_result(
+                question,
+                clean_mode,
+                {
+                    "route": "CLARIFY",
+                    "reason": "task_spec_missing_required_input",
+                    "needs_clarification": True,
+                    "context_available": bool(context_override),
+                },
+            )
+            clarification["task_spec_preflight"] = preflight_task_spec
+            if "official_destination_target_entity" in actionable_missing_inputs:
+                clarification["answer"] = (
+                    "ما اسم الجهة أو الشركة التي تريد موقعها الرسمي؟ اكتب الاسم، "
+                    "والبلد أيضًا إذا كانت الجهة موجودة في أكثر من دولة."
+                )
+            else:
+                clarification["answer"] = (
+                    "أرسل النص الذي تريد تلخيصه أو رابط الصفحة. لن ألخّص محتوى "
+                    "لم أتمكن من الاطلاع عليه."
+                )
+            return clarification
+
         if intent_route == "LOCAL":
             if self._is_self_question(question):
                 local_result = self._self_description_answer(question)
