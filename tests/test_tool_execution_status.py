@@ -124,3 +124,26 @@ def test_tool_matrix_surfaces_mismatch_between_report_counters_and_final_sources
     assert by_tool["page_fetch"]["basis"]["counter_consistency"] == "mismatch"
     assert by_tool["page_fetch"]["basis"]["pages_read_from_returned_sources"] == 1
     assert by_tool["page_fetch"]["basis"]["reported_pages_fetched"] == 0
+
+
+def test_social_search_is_only_called_completed_when_connector_attempt_is_observed():
+    rows = build_tool_execution_matrix(
+        {"tool_requirements": ["public_social_search_if_configured"]},
+        {"search_attempted": True, "sources": []},
+        {
+            "search_outcome": "attempted_no_usable_sources",
+            "social_direct_results": 0,
+            "connector_summary": {
+                "connectors": [
+                    {
+                        "name": "reddit_public_rss",
+                        "configured": True,
+                        "attempted": True,
+                        "status": "no_results",
+                    }
+                ]
+            },
+        },
+    )
+    social = next(row for row in rows if row["tool"] == "public_social_search_if_configured")
+    assert social["status"] == "completed_no_usable_results"
