@@ -158,17 +158,24 @@ def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:
                             forms.add(token)
                             changed = True
                             break
-                for candidate in list(forms):
+                for candidate in forms.copy():
                     for suffix in suffixes:
                         if candidate.endswith(suffix) and len(candidate) - len(suffix) >= 3:
                             forms.add(candidate[:-len(suffix)])
                 if target in forms:
                     found = True
                     break
-                if target.isascii() and len(target) >= 4 and original_token.isascii():
-                    if any(token.endswith(suffix) and token[:-len(suffix)] == target for suffix in english_suffixes):
-                        found = True
-                        break
+                if (
+                    target.isascii()
+                    and len(target) >= 4
+                    and original_token.isascii()
+                    and any(
+                        token.endswith(suffix) and token[:-len(suffix)] == target
+                        for suffix in english_suffixes
+                    )
+                ):
+                    found = True
+                    break
         if found and normalized not in matched:
             matched.append(normalized)
     return matched
