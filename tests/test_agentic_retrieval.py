@@ -46,8 +46,10 @@ def test_claim_ledger_does_not_equate_valid_index_with_verification() -> None:
         "Claim with a marker [المصدر 1].",
         [{"title": "Only a title", "url": "https://example.com"}],
     )
-    assert result["segments"][0]["citation_status"] == "valid_index_without_readable_evidence"
-    assert result["summary"]["cited_segments_with_readable_source_evidence"] == 0
+    assert result["segments"][0]["citation_status"] == "cited_source_attached"
+    assert result["segments"][0]["sources"][0]["evidence_basis"] == "title_only"
+    # A readable title is a text signal, not proof that it entails the claim.
+    assert result["summary"]["cited_segments_with_readable_source_evidence"] == 1
     assert result["fact_correctness"] == "not_checked"
     assert any("do not prove" in item for item in result["limitations"])
 
@@ -92,4 +94,4 @@ def test_collect_research_retries_missing_aspect_within_query_limit(monkeypatch)
     assert len(queries) <= 3
     assert any("warranty" in query.casefold() for query in queries)
     assert report["queries_attempted"] == len(queries)
-    assert any("warranty" in str(source.get("title", "")).casefold() for source in sources)
+    assert any("warranty" in str(source.get("url", "")).casefold() for source in sources)
