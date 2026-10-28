@@ -95,3 +95,32 @@ def test_tool_matrix_marks_unrequired_tools_not_required_and_unknowns_unknown():
     ))
     assert unknown["web_search"] == "unknown"
     assert unknown["page_fetch"] == "unknown"
+
+
+def test_tool_matrix_surfaces_mismatch_between_report_counters_and_final_sources():
+    rows = build_tool_execution_matrix(
+        {"tool_requirements": ["web_search", "page_fetch"]},
+        {
+            "search_attempted": True,
+            "sources": [
+                {"url": "https://example.org/read", "page_fetched": True, "page_text": "text"}
+            ],
+        },
+        {
+            "search_attempted": True,
+            "search_outcome": "attempted_no_usable_sources",
+            "usable_sources_after_filtering": 0,
+            "pages_fetch_attempted": 1,
+            "pages_fetched": 0,
+        },
+    )
+    by_tool = {row["tool"]: row for row in rows}
+
+    assert by_tool["web_search"]["status"] == "counter_mismatch"
+    assert by_tool["web_search"]["basis"]["counter_consistency"] == "mismatch"
+    assert by_tool["web_search"]["basis"]["reported_accepted_source_count"] == 0
+    assert by_tool["web_search"]["basis"]["accepted_source_count"] == 1
+    assert by_tool["page_fetch"]["status"] == "counter_mismatch"
+    assert by_tool["page_fetch"]["basis"]["counter_consistency"] == "mismatch"
+    assert by_tool["page_fetch"]["basis"]["pages_read_from_returned_sources"] == 1
+    assert by_tool["page_fetch"]["basis"]["reported_pages_fetched"] == 0
