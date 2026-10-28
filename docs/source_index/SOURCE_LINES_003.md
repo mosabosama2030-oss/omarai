@@ -4,9 +4,53 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2D53795445-L000126 إلى SRC-9D8012A1A0-L000034
+- النطاق: SRC-7D6FC391EC-L000109 إلى SRC-5587371288-L000411
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-7D6FC391EC — [agents/claim_evidence.py](../../agents/claim_evidence.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-7D6FC391EC-L000109](../../agents/claim_evidence.py#L109) | 109 | `"            \"citation_status\": status,"` | — |
+| [SRC-7D6FC391EC-L000110](../../agents/claim_evidence.py#L110) | 110 | `"            \"lexical_audit_status\": lexical_status,"` | — |
+| [SRC-7D6FC391EC-L000111](../../agents/claim_evidence.py#L111) | 111 | `"            \"sources\": refs,"` | — |
+| [SRC-7D6FC391EC-L000112](../../agents/claim_evidence.py#L112) | 112 | `"        })"` | — |
+| [SRC-7D6FC391EC-L000113](../../agents/claim_evidence.py#L113) | 113 | `""` | — |
+| [SRC-7D6FC391EC-L000114](../../agents/claim_evidence.py#L114) | 114 | `"    total = len(rows)"` | — |
+| [SRC-7D6FC391EC-L000115](../../agents/claim_evidence.py#L115) | 115 | `"    return {"` | — |
+| [SRC-7D6FC391EC-L000116](../../agents/claim_evidence.py#L116) | 116 | `"        \"schema_version\": \"1.0\","` | — |
+| [SRC-7D6FC391EC-L000117](../../agents/claim_evidence.py#L117) | 117 | `"        \"status\": \"built\","` | — |
+| [SRC-7D6FC391EC-L000118](../../agents/claim_evidence.py#L118) | 118 | `"        \"method\": \"bounded_sentence_level_citation_trace\","` | — |
+| [SRC-7D6FC391EC-L000119](../../agents/claim_evidence.py#L119) | 119 | `"        \"semantic_verification\": False,"` | — |
+| [SRC-7D6FC391EC-L000120](../../agents/claim_evidence.py#L120) | 120 | `"        \"claim_entailment\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000121](../../agents/claim_evidence.py#L121) | 121 | `"        \"fact_correctness\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000122](../../agents/claim_evidence.py#L122) | 122 | `"        \"max_segments\": max_segments,"` | — |
+| [SRC-7D6FC391EC-L000123](../../agents/claim_evidence.py#L123) | 123 | `"        \"max_citable_sources\": len(safe_sources),"` | — |
+| [SRC-7D6FC391EC-L000124](../../agents/claim_evidence.py#L124) | 124 | `"        \"truncated\": truncated,"` | — |
+| [SRC-7D6FC391EC-L000125](../../agents/claim_evidence.py#L125) | 125 | `"        \"summary\": {"` | — |
+| [SRC-7D6FC391EC-L000126](../../agents/claim_evidence.py#L126) | 126 | `"            \"segment_candidate_count\": total,"` | — |
+| [SRC-7D6FC391EC-L000127](../../agents/claim_evidence.py#L127) | 127 | `"            \"segments_with_citations\": cited,"` | — |
+| [SRC-7D6FC391EC-L000128](../../agents/claim_evidence.py#L128) | 128 | `"            \"segments_without_citation_markers\": uncited,"` | — |
+| [SRC-7D6FC391EC-L000129](../../agents/claim_evidence.py#L129) | 129 | `"            \"valid_source_reference_count\": valid_refs,"` | — |
+| [SRC-7D6FC391EC-L000130](../../agents/claim_evidence.py#L130) | 130 | `"            \"out_of_range_reference_count\": invalid_refs,"` | — |
+| [SRC-7D6FC391EC-L000131](../../agents/claim_evidence.py#L131) | 131 | `"            \"cited_segments_with_readable_source_evidence\": readable_cited,"` | — |
+| [SRC-7D6FC391EC-L000132](../../agents/claim_evidence.py#L132) | 132 | `"            \"citation_lexical_signal_count\": lexical_signals,"` | — |
+| [SRC-7D6FC391EC-L000133](../../agents/claim_evidence.py#L133) | 133 | `"            \"weak_citation_lexical_signal_count\": weak_signals,"` | — |
+| [SRC-7D6FC391EC-L000134](../../agents/claim_evidence.py#L134) | 134 | `"            \"citation_coverage_ratio\": round(cited / total, 3) if total else 0.0,"` | — |
+| [SRC-7D6FC391EC-L000135](../../agents/claim_evidence.py#L135) | 135 | `"        },"` | — |
+| [SRC-7D6FC391EC-L000136](../../agents/claim_evidence.py#L136) | 136 | `"        \"segments\": rows,"` | — |
+| [SRC-7D6FC391EC-L000137](../../agents/claim_evidence.py#L137) | 137 | `"        \"limitations\": ["` | — |
+| [SRC-7D6FC391EC-L000138](../../agents/claim_evidence.py#L138) | 138 | `"            \"Sentence candidates are not independently classified into semantic claims.\","` | — |
+| [SRC-7D6FC391EC-L000139](../../agents/claim_evidence.py#L139) | 139 | `"            \"An in-range index proves only that the source was in the bounded list.\","` | — |
+| [SRC-7D6FC391EC-L000140](../../agents/claim_evidence.py#L140) | 140 | `"            \"Readable text and lexical overlap do not prove that a source entails a claim.\","` | — |
+| [SRC-7D6FC391EC-L000141](../../agents/claim_evidence.py#L141) | 141 | `"            \"Correctness, source independence, contradiction resolution, and semantic faithfulness were not verified.\","` | — |
+| [SRC-7D6FC391EC-L000142](../../agents/claim_evidence.py#L142) | 142 | `"        ],"` | — |
+| [SRC-7D6FC391EC-L000143](../../agents/claim_evidence.py#L143) | 143 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-2D53795445 — [agents/dialogue_state.py](../../agents/dialogue_state.py#L1)
@@ -16,6 +60,131 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2D53795445-L000001](../../agents/dialogue_state.py#L1) | 1 | `"\"\"\"Validated dialogue-context records for Omarai."` | — |
+| [SRC-2D53795445-L000002](../../agents/dialogue_state.py#L2) | 2 | `""` | — |
+| [SRC-2D53795445-L000003](../../agents/dialogue_state.py#L3) | 3 | `"The language model may propose semantic context, but all returned state is bounded,"` | — |
+| [SRC-2D53795445-L000004](../../agents/dialogue_state.py#L4) | 4 | `"normalized, and explicitly marked as model-derived or deterministic fallback. This"` | — |
+| [SRC-2D53795445-L000005](../../agents/dialogue_state.py#L5) | 5 | `"module never performs I/O and never stores cross-request user state."` | — |
+| [SRC-2D53795445-L000006](../../agents/dialogue_state.py#L6) | 6 | `"\"\"\""` | — |
+| [SRC-2D53795445-L000007](../../agents/dialogue_state.py#L7) | 7 | `"from __future__ import annotations"` | — |
+| [SRC-2D53795445-L000008](../../agents/dialogue_state.py#L8) | 8 | `""` | — |
+| [SRC-2D53795445-L000009](../../agents/dialogue_state.py#L9) | 9 | `"import re"` | — |
+| [SRC-2D53795445-L000010](../../agents/dialogue_state.py#L10) | 10 | `"import unicodedata"` | — |
+| [SRC-2D53795445-L000011](../../agents/dialogue_state.py#L11) | 11 | `"from typing import Any"` | — |
+| [SRC-2D53795445-L000012](../../agents/dialogue_state.py#L12) | 12 | `""` | — |
+| [SRC-2D53795445-L000013](../../agents/dialogue_state.py#L13) | 13 | `"from agents.intent_router import resolve_followup_query"` | — |
+| [SRC-2D53795445-L000014](../../agents/dialogue_state.py#L14) | 14 | `""` | — |
+| [SRC-2D53795445-L000015](../../agents/dialogue_state.py#L15) | 15 | `"MAX_RESOLVED_QUESTION_CHARS = 500"` | — |
+| [SRC-2D53795445-L000016](../../agents/dialogue_state.py#L16) | 16 | `"MAX_CONTEXT_TEXT_CHARS = 180"` | — |
+| [SRC-2D53795445-L000017](../../agents/dialogue_state.py#L17) | 17 | `"MAX_ENTITIES = 8"` | — |
+| [SRC-2D53795445-L000018](../../agents/dialogue_state.py#L18) | 18 | `"MAX_SLOT_VALUES = 16"` | — |
+| [SRC-2D53795445-L000019](../../agents/dialogue_state.py#L19) | 19 | `""` | — |
+| [SRC-2D53795445-L000020](../../agents/dialogue_state.py#L20) | 20 | `"_ALLOWED_INTENTS = frozenset({"` | — |
+| [SRC-2D53795445-L000021](../../agents/dialogue_state.py#L21) | 21 | `"    \"answer_general\","` | — |
+| [SRC-2D53795445-L000022](../../agents/dialogue_state.py#L22) | 22 | `"    \"compare\","` | — |
+| [SRC-2D53795445-L000023](../../agents/dialogue_state.py#L23) | 23 | `"    \"current_information\","` | — |
+| [SRC-2D53795445-L000024](../../agents/dialogue_state.py#L24) | 24 | `"    \"explain\","` | — |
+| [SRC-2D53795445-L000025](../../agents/dialogue_state.py#L25) | 25 | `"    \"find_official_site\","` | — |
+| [SRC-2D53795445-L000026](../../agents/dialogue_state.py#L26) | 26 | `"    \"find_product\","` | — |
+| [SRC-2D53795445-L000027](../../agents/dialogue_state.py#L27) | 27 | `"    \"how_to\","` | — |
+| [SRC-2D53795445-L000028](../../agents/dialogue_state.py#L28) | 28 | `"    \"lead_generation\","` | — |
+| [SRC-2D53795445-L000029](../../agents/dialogue_state.py#L29) | 29 | `"    \"recommend\","` | — |
+| [SRC-2D53795445-L000030](../../agents/dialogue_state.py#L30) | 30 | `"    \"social_opinions\","` | — |
+| [SRC-2D53795445-L000031](../../agents/dialogue_state.py#L31) | 31 | `"    \"summarize\","` | — |
+| [SRC-2D53795445-L000032](../../agents/dialogue_state.py#L32) | 32 | `"    \"troubleshoot\","` | — |
+| [SRC-2D53795445-L000033](../../agents/dialogue_state.py#L33) | 33 | `"    \"unknown\","` | — |
+| [SRC-2D53795445-L000034](../../agents/dialogue_state.py#L34) | 34 | `"})"` | — |
+| [SRC-2D53795445-L000035](../../agents/dialogue_state.py#L35) | 35 | `"_ALLOWED_SLOT_KEYS = frozenset({"` | — |
+| [SRC-2D53795445-L000036](../../agents/dialogue_state.py#L36) | 36 | `"    \"aspect\", \"audience\", \"budget\", \"capacity\", \"country\", \"currency\","` | — |
+| [SRC-2D53795445-L000037](../../agents/dialogue_state.py#L37) | 37 | `"    \"entity\", \"goal\", \"language\", \"location\", \"model\", \"platform\", \"product\","` | — |
+| [SRC-2D53795445-L000038](../../agents/dialogue_state.py#L38) | 38 | `"    \"time_range\", \"variant\", \"version\","` | — |
+| [SRC-2D53795445-L000039](../../agents/dialogue_state.py#L39) | 39 | `"})"` | — |
+| [SRC-2D53795445-L000040](../../agents/dialogue_state.py#L40) | 40 | `"_ALLOWED_CHANGED_SLOTS = _ALLOWED_SLOT_KEYS \| frozenset({\"topic\", \"intent\"})"` | — |
+| [SRC-2D53795445-L000041](../../agents/dialogue_state.py#L41) | 41 | `"_ALLOWED_RESOLUTION_BASES = frozenset({"` | — |
+| [SRC-2D53795445-L000042](../../agents/dialogue_state.py#L42) | 42 | `"    \"current_message\", \"explicit_confirmation\", \"history_inferred\","` | — |
+| [SRC-2D53795445-L000043](../../agents/dialogue_state.py#L43) | 43 | `"    \"insufficient_evidence\", \"deterministic_fallback\","` | — |
+| [SRC-2D53795445-L000044](../../agents/dialogue_state.py#L44) | 44 | `"})"` | — |
+| [SRC-2D53795445-L000045](../../agents/dialogue_state.py#L45) | 45 | `"_ALLOWED_CONFIDENCE_BANDS = frozenset({\"low\", \"medium\", \"high\", \"unassessed\"})"` | — |
+| [SRC-2D53795445-L000046](../../agents/dialogue_state.py#L46) | 46 | `"_WHITESPACE = re.compile(r\"\\s+\")"` | — |
+| [SRC-2D53795445-L000047](../../agents/dialogue_state.py#L47) | 47 | `""` | — |
+| [SRC-2D53795445-L000048](../../agents/dialogue_state.py#L48) | 48 | `""` | — |
+| [SRC-2D53795445-L000049](../../agents/dialogue_state.py#L49) | 49 | `"def _clean_text(value: Any, limit: int) -> str:"` | — |
+| [SRC-2D53795445-L000050](../../agents/dialogue_state.py#L50) | 50 | `"    if not isinstance(value, str):"` | — |
+| [SRC-2D53795445-L000051](../../agents/dialogue_state.py#L51) | 51 | `"        return \"\""` | — |
+| [SRC-2D53795445-L000052](../../agents/dialogue_state.py#L52) | 52 | `"    value = unicodedata.normalize(\"NFKC\", value)"` | — |
+| [SRC-2D53795445-L000053](../../agents/dialogue_state.py#L53) | 53 | `"    value = value.replace(\"\\x00\", \" \")"` | — |
+| [SRC-2D53795445-L000054](../../agents/dialogue_state.py#L54) | 54 | `"    value = _WHITESPACE.sub(\" \", value).strip()"` | — |
+| [SRC-2D53795445-L000055](../../agents/dialogue_state.py#L55) | 55 | `"    return value[:limit]"` | — |
+| [SRC-2D53795445-L000056](../../agents/dialogue_state.py#L56) | 56 | `""` | — |
+| [SRC-2D53795445-L000057](../../agents/dialogue_state.py#L57) | 57 | `""` | — |
+| [SRC-2D53795445-L000058](../../agents/dialogue_state.py#L58) | 58 | `"def _clean_string_list(value: Any, *, max_items: int, max_chars: int) -> list[str]:"` | — |
+| [SRC-2D53795445-L000059](../../agents/dialogue_state.py#L59) | 59 | `"    if not isinstance(value, list):"` | — |
+| [SRC-2D53795445-L000060](../../agents/dialogue_state.py#L60) | 60 | `"        return []"` | — |
+| [SRC-2D53795445-L000061](../../agents/dialogue_state.py#L61) | 61 | `"    result: list[str] = []"` | — |
+| [SRC-2D53795445-L000062](../../agents/dialogue_state.py#L62) | 62 | `"    seen: set[str] = set()"` | — |
+| [SRC-2D53795445-L000063](../../agents/dialogue_state.py#L63) | 63 | `"    for item in value[:max_items * 2]:"` | — |
+| [SRC-2D53795445-L000064](../../agents/dialogue_state.py#L64) | 64 | `"        clean = _clean_text(item, max_chars)"` | — |
+| [SRC-2D53795445-L000065](../../agents/dialogue_state.py#L65) | 65 | `"        key = clean.casefold()"` | — |
+| [SRC-2D53795445-L000066](../../agents/dialogue_state.py#L66) | 66 | `"        if clean and key not in seen:"` | — |
+| [SRC-2D53795445-L000067](../../agents/dialogue_state.py#L67) | 67 | `"            result.append(clean)"` | — |
+| [SRC-2D53795445-L000068](../../agents/dialogue_state.py#L68) | 68 | `"            seen.add(key)"` | — |
+| [SRC-2D53795445-L000069](../../agents/dialogue_state.py#L69) | 69 | `"        if len(result) >= max_items:"` | — |
+| [SRC-2D53795445-L000070](../../agents/dialogue_state.py#L70) | 70 | `"            break"` | — |
+| [SRC-2D53795445-L000071](../../agents/dialogue_state.py#L71) | 71 | `"    return result"` | — |
+| [SRC-2D53795445-L000072](../../agents/dialogue_state.py#L72) | 72 | `""` | — |
+| [SRC-2D53795445-L000073](../../agents/dialogue_state.py#L73) | 73 | `""` | — |
+| [SRC-2D53795445-L000074](../../agents/dialogue_state.py#L74) | 74 | `"def fallback_dialogue_context(question: str, history: Any = None) -> dict[str, Any]:"` | — |
+| [SRC-2D53795445-L000075](../../agents/dialogue_state.py#L75) | 75 | `"    \"\"\"Build a conservative context record from the deterministic follow-up resolver.\"\"\""` | — |
+| [SRC-2D53795445-L000076](../../agents/dialogue_state.py#L76) | 76 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS)"` | — |
+| [SRC-2D53795445-L000077](../../agents/dialogue_state.py#L77) | 77 | `"    resolved = _clean_text("` | — |
+| [SRC-2D53795445-L000078](../../agents/dialogue_state.py#L78) | 78 | `"        resolve_followup_query(current, history) or current,"` | — |
+| [SRC-2D53795445-L000079](../../agents/dialogue_state.py#L79) | 79 | `"        MAX_RESOLVED_QUESTION_CHARS,"` | — |
+| [SRC-2D53795445-L000080](../../agents/dialogue_state.py#L80) | 80 | `"    )"` | — |
+| [SRC-2D53795445-L000081](../../agents/dialogue_state.py#L81) | 81 | `"    is_follow_up = bool(resolved and current and resolved.casefold() != current.casefold())"` | — |
+| [SRC-2D53795445-L000082](../../agents/dialogue_state.py#L82) | 82 | `"    return {"` | — |
+| [SRC-2D53795445-L000083](../../agents/dialogue_state.py#L83) | 83 | `"        \"status\": \"fallback\","` | — |
+| [SRC-2D53795445-L000084](../../agents/dialogue_state.py#L84) | 84 | `"        \"method\": \"deterministic_followup_heuristic\","` | — |
+| [SRC-2D53795445-L000085](../../agents/dialogue_state.py#L85) | 85 | `"        \"resolved_question\": resolved or current,"` | — |
+| [SRC-2D53795445-L000086](../../agents/dialogue_state.py#L86) | 86 | `"        \"intent\": \"unknown\","` | — |
+| [SRC-2D53795445-L000087](../../agents/dialogue_state.py#L87) | 87 | `"        \"topic\": \"\","` | — |
+| [SRC-2D53795445-L000088](../../agents/dialogue_state.py#L88) | 88 | `"        \"entities\": [],"` | — |
+| [SRC-2D53795445-L000089](../../agents/dialogue_state.py#L89) | 89 | `"        \"slots\": {},"` | — |
+| [SRC-2D53795445-L000090](../../agents/dialogue_state.py#L90) | 90 | `"        \"changed_slots\": [],"` | — |
+| [SRC-2D53795445-L000091](../../agents/dialogue_state.py#L91) | 91 | `"        \"is_follow_up\": is_follow_up,"` | — |
+| [SRC-2D53795445-L000092](../../agents/dialogue_state.py#L92) | 92 | `"        \"topic_shift\": False,"` | — |
+| [SRC-2D53795445-L000093](../../agents/dialogue_state.py#L93) | 93 | `"        \"needs_web\": False,"` | — |
+| [SRC-2D53795445-L000094](../../agents/dialogue_state.py#L94) | 94 | `"        \"research_depth\": \"standard\","` | — |
+| [SRC-2D53795445-L000095](../../agents/dialogue_state.py#L95) | 95 | `"        \"needs_clarification\": False,"` | — |
+| [SRC-2D53795445-L000096](../../agents/dialogue_state.py#L96) | 96 | `"        \"clarification_question\": \"\","` | — |
+| [SRC-2D53795445-L000097](../../agents/dialogue_state.py#L97) | 97 | `"        \"unresolved_references\": [],"` | — |
+| [SRC-2D53795445-L000098](../../agents/dialogue_state.py#L98) | 98 | `"        \"resolution_basis\": \"deterministic_fallback\","` | — |
+| [SRC-2D53795445-L000099](../../agents/dialogue_state.py#L99) | 99 | `"        \"confidence_band\": \"unassessed\","` | — |
+| [SRC-2D53795445-L000100](../../agents/dialogue_state.py#L100) | 100 | `"    }"` | — |
+| [SRC-2D53795445-L000101](../../agents/dialogue_state.py#L101) | 101 | `""` | — |
+| [SRC-2D53795445-L000102](../../agents/dialogue_state.py#L102) | 102 | `""` | — |
+| [SRC-2D53795445-L000103](../../agents/dialogue_state.py#L103) | 103 | `"def validate_dialogue_context("` | — |
+| [SRC-2D53795445-L000104](../../agents/dialogue_state.py#L104) | 104 | `"    candidate: Any,"` | — |
+| [SRC-2D53795445-L000105](../../agents/dialogue_state.py#L105) | 105 | `"    question: str,"` | — |
+| [SRC-2D53795445-L000106](../../agents/dialogue_state.py#L106) | 106 | `"    history: Any = None,"` | — |
+| [SRC-2D53795445-L000107](../../agents/dialogue_state.py#L107) | 107 | `"    *,"` | — |
+| [SRC-2D53795445-L000108](../../agents/dialogue_state.py#L108) | 108 | `"    fallback: dict[str, Any] \| None = None,"` | — |
+| [SRC-2D53795445-L000109](../../agents/dialogue_state.py#L109) | 109 | `") -> dict[str, Any]:"` | — |
+| [SRC-2D53795445-L000110](../../agents/dialogue_state.py#L110) | 110 | `"    \"\"\"Validate bounded context output from a planner without treating it as truth.\"\"\""` | — |
+| [SRC-2D53795445-L000111](../../agents/dialogue_state.py#L111) | 111 | `"    baseline = dict(fallback or fallback_dialogue_context(question, history))"` | — |
+| [SRC-2D53795445-L000112](../../agents/dialogue_state.py#L112) | 112 | `"    if not isinstance(candidate, dict):"` | — |
+| [SRC-2D53795445-L000113](../../agents/dialogue_state.py#L113) | 113 | `"        return baseline"` | — |
+| [SRC-2D53795445-L000114](../../agents/dialogue_state.py#L114) | 114 | `""` | — |
+| [SRC-2D53795445-L000115](../../agents/dialogue_state.py#L115) | 115 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS)"` | — |
+| [SRC-2D53795445-L000116](../../agents/dialogue_state.py#L116) | 116 | `"    resolved = _clean_text(candidate.get(\"resolved_question\"), MAX_RESOLVED_QUESTION_CHARS)"` | — |
+| [SRC-2D53795445-L000117](../../agents/dialogue_state.py#L117) | 117 | `"    if not resolved:"` | — |
+| [SRC-2D53795445-L000118](../../agents/dialogue_state.py#L118) | 118 | `"        return baseline"` | — |
+| [SRC-2D53795445-L000119](../../agents/dialogue_state.py#L119) | 119 | `""` | — |
+| [SRC-2D53795445-L000120](../../agents/dialogue_state.py#L120) | 120 | `"    has_history = isinstance(history, list) and any("` | — |
+| [SRC-2D53795445-L000121](../../agents/dialogue_state.py#L121) | 121 | `"        isinstance(item, dict)"` | — |
+| [SRC-2D53795445-L000122](../../agents/dialogue_state.py#L122) | 122 | `"        and item.get(\"role\") in {\"user\", \"assistant\"}"` | — |
+| [SRC-2D53795445-L000123](../../agents/dialogue_state.py#L123) | 123 | `"        and isinstance(item.get(\"content\"), str)"` | — |
+| [SRC-2D53795445-L000124](../../agents/dialogue_state.py#L124) | 124 | `"        and item.get(\"content\", \"\").strip()"` | — |
+| [SRC-2D53795445-L000125](../../agents/dialogue_state.py#L125) | 125 | `"        for item in history"` | — |
 | [SRC-2D53795445-L000126](../../agents/dialogue_state.py#L126) | 126 | `"    )"` | — |
 | [SRC-2D53795445-L000127](../../agents/dialogue_state.py#L127) | 127 | `"    topic_shift = candidate.get(\"topic_shift\") is True"` | — |
 | [SRC-2D53795445-L000128](../../agents/dialogue_state.py#L128) | 128 | `"    model_marked_follow_up = candidate.get(\"is_follow_up\") is True"` | — |
@@ -674,172 +843,3 @@
 | [SRC-5587371288-L000409](../../agents/intent_router.py#L409) | 409 | `""` | — |
 | [SRC-5587371288-L000410](../../agents/intent_router.py#L410) | 410 | `""` | — |
 | [SRC-5587371288-L000411](../../agents/intent_router.py#L411) | 411 | `"def route_intent("` | — |
-| [SRC-5587371288-L000412](../../agents/intent_router.py#L412) | 412 | `"    question: str,"` | — |
-| [SRC-5587371288-L000413](../../agents/intent_router.py#L413) | 413 | `"    history: Any = None,"` | — |
-| [SRC-5587371288-L000414](../../agents/intent_router.py#L414) | 414 | `"    mode: str = \"auto\","` | — |
-| [SRC-5587371288-L000415](../../agents/intent_router.py#L415) | 415 | `"    *,"` | — |
-| [SRC-5587371288-L000416](../../agents/intent_router.py#L416) | 416 | `"    capability_question: bool = False,"` | — |
-| [SRC-5587371288-L000417](../../agents/intent_router.py#L417) | 417 | `"    requires_web: bool = False,"` | — |
-| [SRC-5587371288-L000418](../../agents/intent_router.py#L418) | 418 | `") -> dict[str, Any]:"` | — |
-| [SRC-5587371288-L000419](../../agents/intent_router.py#L419) | 419 | `"    \"\"\"Return a deterministic route and auditable reason for a user question.\"\"\""` | — |
-| [SRC-5587371288-L000420](../../agents/intent_router.py#L420) | 420 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
-| [SRC-5587371288-L000421](../../agents/intent_router.py#L421) | 421 | `""` | — |
-| [SRC-5587371288-L000422](../../agents/intent_router.py#L422) | 422 | `"    # If the assistant just asked for a missing referent, bind the user's concise"` | — |
-| [SRC-5587371288-L000423](../../agents/intent_router.py#L423) | 423 | `"    # reply to that pending question instead of answering the entity name in isolation."` | — |
-| [SRC-5587371288-L000424](../../agents/intent_router.py#L424) | 424 | `"    if _is_clarification_answer(question, history):"` | — |
-| [SRC-5587371288-L000425](../../agents/intent_router.py#L425) | 425 | `"        return {"` | — |
-| [SRC-5587371288-L000426](../../agents/intent_router.py#L426) | 426 | `"            \"route\": \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000427](../../agents/intent_router.py#L427) | 427 | `"            \"reason\": \"answer_to_pending_clarification\","` | — |
-| [SRC-5587371288-L000428](../../agents/intent_router.py#L428) | 428 | `"            \"context_available\": True,"` | — |
-| [SRC-5587371288-L000429](../../agents/intent_router.py#L429) | 429 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000430](../../agents/intent_router.py#L430) | 430 | `"        }"` | — |
-| [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `""` | — |
-| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"    context_available = _has_context(history)"` | — |
-| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `""` | — |
-| [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"    # A search mode cannot supply a missing subject. Clarify genuinely elliptical"` | — |
-| [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"    # questions before honoring the UI's explicit research mode."` | — |
-| [SRC-5587371288-L000436](../../agents/intent_router.py#L436) | 436 | `"    if _needs_clarification(question) and not context_available:"` | — |
-| [SRC-5587371288-L000437](../../agents/intent_router.py#L437) | 437 | `"        return {"` | — |
-| [SRC-5587371288-L000438](../../agents/intent_router.py#L438) | 438 | `"            \"route\": \"CLARIFY\","` | — |
-| [SRC-5587371288-L000439](../../agents/intent_router.py#L439) | 439 | `"            \"reason\": \"missing_referent_and_no_conversation_context\","` | — |
-| [SRC-5587371288-L000440](../../agents/intent_router.py#L440) | 440 | `"            \"context_available\": False,"` | — |
-| [SRC-5587371288-L000441](../../agents/intent_router.py#L441) | 441 | `"            \"needs_clarification\": True,"` | — |
-| [SRC-5587371288-L000442](../../agents/intent_router.py#L442) | 442 | `"        }"` | — |
-| [SRC-5587371288-L000443](../../agents/intent_router.py#L443) | 443 | `""` | — |
-| [SRC-5587371288-L000444](../../agents/intent_router.py#L444) | 444 | `"    # An explicitly selected mode controls research depth when the request itself"` | — |
-| [SRC-5587371288-L000445](../../agents/intent_router.py#L445) | 445 | `"    # is sufficiently specified."` | — |
-| [SRC-5587371288-L000446](../../agents/intent_router.py#L446) | 446 | `"    if clean_mode != \"auto\":"` | — |
-| [SRC-5587371288-L000447](../../agents/intent_router.py#L447) | 447 | `"        route = \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\""` | — |
-| [SRC-5587371288-L000448](../../agents/intent_router.py#L448) | 448 | `"        return {"` | — |
-| [SRC-5587371288-L000449](../../agents/intent_router.py#L449) | 449 | `"            \"route\": route,"` | — |
-| [SRC-5587371288-L000450](../../agents/intent_router.py#L450) | 450 | `"            \"reason\": \"explicit_mode\","` | — |
-| [SRC-5587371288-L000451](../../agents/intent_router.py#L451) | 451 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000452](../../agents/intent_router.py#L452) | 452 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000453](../../agents/intent_router.py#L453) | 453 | `"        }"` | — |
-| [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `""` | — |
-| [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `"    if capability_question:"` | — |
-| [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `"        return {"` | — |
-| [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"            \"route\": \"LOCAL\","` | — |
-| [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"            \"reason\": \"capability_question\","` | — |
-| [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000460](../../agents/intent_router.py#L460) | 460 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000461](../../agents/intent_router.py#L461) | 461 | `"        }"` | — |
-| [SRC-5587371288-L000462](../../agents/intent_router.py#L462) | 462 | `""` | — |
-| [SRC-5587371288-L000463](../../agents/intent_router.py#L463) | 463 | `"    if _is_smalltalk(question):"` | — |
-| [SRC-5587371288-L000464](../../agents/intent_router.py#L464) | 464 | `"        return {"` | — |
-| [SRC-5587371288-L000465](../../agents/intent_router.py#L465) | 465 | `"            \"route\": \"LOCAL\","` | — |
-| [SRC-5587371288-L000466](../../agents/intent_router.py#L466) | 466 | `"            \"reason\": \"short_conversational_turn\","` | — |
-| [SRC-5587371288-L000467](../../agents/intent_router.py#L467) | 467 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000468](../../agents/intent_router.py#L468) | 468 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000469](../../agents/intent_router.py#L469) | 469 | `"        }"` | — |
-| [SRC-5587371288-L000470](../../agents/intent_router.py#L470) | 470 | `""` | — |
-| [SRC-5587371288-L000471](../../agents/intent_router.py#L471) | 471 | `"    # A page/link summary needs a concrete source. Pasted text is handled locally;"` | — |
-| [SRC-5587371288-L000472](../../agents/intent_router.py#L472) | 472 | `"    # an absent source must trigger clarification rather than a search for \"the page\"."` | — |
-| [SRC-5587371288-L000473](../../agents/intent_router.py#L473) | 473 | `"    if _is_page_summarization_request(question):"` | — |
-| [SRC-5587371288-L000474](../../agents/intent_router.py#L474) | 474 | `"        if _has_inline_summary_text(question):"` | — |
-| [SRC-5587371288-L000475](../../agents/intent_router.py#L475) | 475 | `"            return {"` | — |
-| [SRC-5587371288-L000476](../../agents/intent_router.py#L476) | 476 | `"                \"route\": \"MODEL_ONLY\","` | — |
-| [SRC-5587371288-L000477](../../agents/intent_router.py#L477) | 477 | `"                \"reason\": \"summarization_text_provided\","` | — |
-| [SRC-5587371288-L000478](../../agents/intent_router.py#L478) | 478 | `"                \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000479](../../agents/intent_router.py#L479) | 479 | `"                \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000480](../../agents/intent_router.py#L480) | 480 | `"            }"` | — |
-| [SRC-5587371288-L000481](../../agents/intent_router.py#L481) | 481 | `"        if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
-| [SRC-5587371288-L000482](../../agents/intent_router.py#L482) | 482 | `"            return {"` | — |
-| [SRC-5587371288-L000483](../../agents/intent_router.py#L483) | 483 | `"                \"route\": \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000484](../../agents/intent_router.py#L484) | 484 | `"                \"reason\": \"summarization_request\","` | — |
-| [SRC-5587371288-L000485](../../agents/intent_router.py#L485) | 485 | `"                \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000486](../../agents/intent_router.py#L486) | 486 | `"                \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000487](../../agents/intent_router.py#L487) | 487 | `"            }"` | — |
-| [SRC-5587371288-L000488](../../agents/intent_router.py#L488) | 488 | `"        return {"` | — |
-| [SRC-5587371288-L000489](../../agents/intent_router.py#L489) | 489 | `"            \"route\": \"CLARIFY\","` | — |
-| [SRC-5587371288-L000490](../../agents/intent_router.py#L490) | 490 | `"            \"reason\": \"missing_summarization_input\","` | — |
-| [SRC-5587371288-L000491](../../agents/intent_router.py#L491) | 491 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000492](../../agents/intent_router.py#L492) | 492 | `"            \"needs_clarification\": True,"` | — |
-| [SRC-5587371288-L000493](../../agents/intent_router.py#L493) | 493 | `"        }"` | — |
-| [SRC-5587371288-L000494](../../agents/intent_router.py#L494) | 494 | `""` | — |
-| [SRC-5587371288-L000495](../../agents/intent_router.py#L495) | 495 | `"    ambiguous = _is_contextual_followup(question) or _needs_clarification(question)"` | — |
-| [SRC-5587371288-L000496](../../agents/intent_router.py#L496) | 496 | `"    if ambiguous:"` | — |
-| [SRC-5587371288-L000497](../../agents/intent_router.py#L497) | 497 | `"        return {"` | — |
-| [SRC-5587371288-L000498](../../agents/intent_router.py#L498) | 498 | `"            \"route\": \"WEB_DEEP\" if _is_deep(question) else \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000499](../../agents/intent_router.py#L499) | 499 | `"            \"reason\": \"ambiguous_followup_with_context\","` | — |
-| [SRC-5587371288-L000500](../../agents/intent_router.py#L500) | 500 | `"            \"context_available\": True,"` | — |
-| [SRC-5587371288-L000501](../../agents/intent_router.py#L501) | 501 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000502](../../agents/intent_router.py#L502) | 502 | `"        }"` | — |
-| [SRC-5587371288-L000503](../../agents/intent_router.py#L503) | 503 | `""` | — |
-| [SRC-5587371288-L000504](../../agents/intent_router.py#L504) | 504 | `"    if _is_lead_generation_request(question):"` | — |
-| [SRC-5587371288-L000505](../../agents/intent_router.py#L505) | 505 | `"        return {"` | — |
-| [SRC-5587371288-L000506](../../agents/intent_router.py#L506) | 506 | `"            \"route\": \"LEAD_GENERATION\","` | — |
-| [SRC-5587371288-L000507](../../agents/intent_router.py#L507) | 507 | `"            \"reason\": \"explicit_prospect_or_buyer_discovery_request\","` | — |
-| [SRC-5587371288-L000508](../../agents/intent_router.py#L508) | 508 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000509](../../agents/intent_router.py#L509) | 509 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000510](../../agents/intent_router.py#L510) | 510 | `"        }"` | — |
-| [SRC-5587371288-L000511](../../agents/intent_router.py#L511) | 511 | `""` | — |
-| [SRC-5587371288-L000512](../../agents/intent_router.py#L512) | 512 | `"    if _is_deep(question):"` | — |
-| [SRC-5587371288-L000513](../../agents/intent_router.py#L513) | 513 | `"        return {"` | — |
-| [SRC-5587371288-L000514](../../agents/intent_router.py#L514) | 514 | `"            \"route\": \"WEB_DEEP\","` | — |
-| [SRC-5587371288-L000515](../../agents/intent_router.py#L515) | 515 | `"            \"reason\": \"comparison_or_multi_part_research\","` | — |
-| [SRC-5587371288-L000516](../../agents/intent_router.py#L516) | 516 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000517](../../agents/intent_router.py#L517) | 517 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000518](../../agents/intent_router.py#L518) | 518 | `"        }"` | — |
-| [SRC-5587371288-L000519](../../agents/intent_router.py#L519) | 519 | `""` | — |
-| [SRC-5587371288-L000520](../../agents/intent_router.py#L520) | 520 | `"    if requires_web or _has_live_signal(question) or _has_explicit_source_request(question):"` | — |
-| [SRC-5587371288-L000521](../../agents/intent_router.py#L521) | 521 | `"        return {"` | — |
-| [SRC-5587371288-L000522](../../agents/intent_router.py#L522) | 522 | `"            \"route\": \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000523](../../agents/intent_router.py#L523) | 523 | `"            \"reason\": ("` | — |
-| [SRC-5587371288-L000524](../../agents/intent_router.py#L524) | 524 | `"                \"explicit_evidence_request\""` | — |
-| [SRC-5587371288-L000525](../../agents/intent_router.py#L525) | 525 | `"                if _has_explicit_source_request(question)"` | — |
-| [SRC-5587371288-L000526](../../agents/intent_router.py#L526) | 526 | `"                else \"freshness_or_explicit_research_signal\""` | — |
-| [SRC-5587371288-L000527](../../agents/intent_router.py#L527) | 527 | `"            ),"` | — |
-| [SRC-5587371288-L000528](../../agents/intent_router.py#L528) | 528 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000529](../../agents/intent_router.py#L529) | 529 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000530](../../agents/intent_router.py#L530) | 530 | `"        }"` | — |
-| [SRC-5587371288-L000531](../../agents/intent_router.py#L531) | 531 | `""` | — |
-| [SRC-5587371288-L000532](../../agents/intent_router.py#L532) | 532 | `"    return {"` | — |
-| [SRC-5587371288-L000533](../../agents/intent_router.py#L533) | 533 | `"        \"route\": \"MODEL_ONLY\","` | — |
-| [SRC-5587371288-L000534](../../agents/intent_router.py#L534) | 534 | `"        \"reason\": \"stable_knowledge_or_conversation\","` | — |
-| [SRC-5587371288-L000535](../../agents/intent_router.py#L535) | 535 | `"        \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000536](../../agents/intent_router.py#L536) | 536 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000537](../../agents/intent_router.py#L537) | 537 | `"    }"` | — |
-## الوكيل والمنطق
-
-### FILE-9D8012A1A0 — [agents/memory_bank.py](../../agents/memory_bank.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-9D8012A1A0-L000001](../../agents/memory_bank.py#L1) | 1 | `"\"\"\"Structured claim–evidence memory bank for Omarai."` | — |
-| [SRC-9D8012A1A0-L000002](../../agents/memory_bank.py#L2) | 2 | `""` | — |
-| [SRC-9D8012A1A0-L000003](../../agents/memory_bank.py#L3) | 3 | `"Every generated claim can be bound to one or more evidence snippets with a"` | — |
-| [SRC-9D8012A1A0-L000004](../../agents/memory_bank.py#L4) | 4 | `"stable evidence_id. Generation should be constrained by this graph so fluency"` | — |
-| [SRC-9D8012A1A0-L000005](../../agents/memory_bank.py#L5) | 5 | `"never outruns support."` | — |
-| [SRC-9D8012A1A0-L000006](../../agents/memory_bank.py#L6) | 6 | `""` | — |
-| [SRC-9D8012A1A0-L000007](../../agents/memory_bank.py#L7) | 7 | `"Lexical support ≠ semantic entailment. Status labels are honest about that."` | — |
-| [SRC-9D8012A1A0-L000008](../../agents/memory_bank.py#L8) | 8 | `""` | — |
-| [SRC-9D8012A1A0-L000009](../../agents/memory_bank.py#L9) | 9 | `"Compatible conceptually with agents.claim_evidence.build_claim_evidence_ledger"` | — |
-| [SRC-9D8012A1A0-L000010](../../agents/memory_bank.py#L10) | 10 | `"(sentence-level citation index tracing on main)."` | — |
-| [SRC-9D8012A1A0-L000011](../../agents/memory_bank.py#L11) | 11 | `"\"\"\""` | — |
-| [SRC-9D8012A1A0-L000012](../../agents/memory_bank.py#L12) | 12 | `"from __future__ import annotations"` | — |
-| [SRC-9D8012A1A0-L000013](../../agents/memory_bank.py#L13) | 13 | `""` | — |
-| [SRC-9D8012A1A0-L000014](../../agents/memory_bank.py#L14) | 14 | `"import hashlib"` | — |
-| [SRC-9D8012A1A0-L000015](../../agents/memory_bank.py#L15) | 15 | `"import re"` | — |
-| [SRC-9D8012A1A0-L000016](../../agents/memory_bank.py#L16) | 16 | `"import time"` | — |
-| [SRC-9D8012A1A0-L000017](../../agents/memory_bank.py#L17) | 17 | `"from dataclasses import asdict, dataclass, field"` | — |
-| [SRC-9D8012A1A0-L000018](../../agents/memory_bank.py#L18) | 18 | `"from typing import Any"` | — |
-| [SRC-9D8012A1A0-L000019](../../agents/memory_bank.py#L19) | 19 | `""` | — |
-| [SRC-9D8012A1A0-L000020](../../agents/memory_bank.py#L20) | 20 | `"_TOKEN = re.compile(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", re.I)"` | — |
-| [SRC-9D8012A1A0-L000021](../../agents/memory_bank.py#L21) | 21 | `"_SENTENCE_SPLIT = re.compile(r\"(?<=[.!?؟])\\s+\|\\n+\")"` | — |
-| [SRC-9D8012A1A0-L000022](../../agents/memory_bank.py#L22) | 22 | `"_CITATION_MARK = re.compile(r\"\\[(?:المصدر\|source)\\s+(\\d+)\\]\", re.I)"` | — |
-| [SRC-9D8012A1A0-L000023](../../agents/memory_bank.py#L23) | 23 | `"_STOP = {"` | — |
-| [SRC-9D8012A1A0-L000024](../../agents/memory_bank.py#L24) | 24 | `"    \"من\", \"في\", \"على\", \"عن\", \"الى\", \"و\", \"او\", \"هل\", \"ما\", \"ال\", \"the\", \"a\", \"an\","` | — |
-| [SRC-9D8012A1A0-L000025](../../agents/memory_bank.py#L25) | 25 | `"    \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\", \"is\", \"are\", \"this\", \"that\","` | — |
-| [SRC-9D8012A1A0-L000026](../../agents/memory_bank.py#L26) | 26 | `"    \"إلى\", \"أن\", \"إن\", \"كان\", \"يكون\", \"غير\", \"بين\", \"حتى\", \"قد\", \"لم\", \"لن\","` | — |
-| [SRC-9D8012A1A0-L000027](../../agents/memory_bank.py#L27) | 27 | `"}"` | — |
-| [SRC-9D8012A1A0-L000028](../../agents/memory_bank.py#L28) | 28 | `""` | — |
-| [SRC-9D8012A1A0-L000029](../../agents/memory_bank.py#L29) | 29 | `""` | — |
-| [SRC-9D8012A1A0-L000030](../../agents/memory_bank.py#L30) | 30 | `"def _norm(text: str) -> str:"` | — |
-| [SRC-9D8012A1A0-L000031](../../agents/memory_bank.py#L31) | 31 | `"    text = (text or \"\").casefold()"` | — |
-| [SRC-9D8012A1A0-L000032](../../agents/memory_bank.py#L32) | 32 | `"    text = text.translate(str.maketrans({\"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ة\": \"ه\", \"ى\": \"ي\"}))"` | — |
-| [SRC-9D8012A1A0-L000033](../../agents/memory_bank.py#L33) | 33 | `"    return re.sub(r\"\\s+\", \" \", text).strip()"` | — |
-| [SRC-9D8012A1A0-L000034](../../agents/memory_bank.py#L34) | 34 | `""` | — |

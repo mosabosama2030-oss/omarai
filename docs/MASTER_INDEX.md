@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **104**
-- ملفات Python المحللة: **59**
-- تعريفات Python المفهرسة: **1326**
-- تعريفات Python موثقة بوجود Docstring: **221**
-- تعريفات Python بلا Docstring: **824**
-- تعريفات لا ينطبق عليها Docstring: **281**
+- ملفات المستودع في الجرد: **105**
+- ملفات Python المحللة: **60**
+- تعريفات Python المفهرسة: **1332**
+- تعريفات Python موثقة بوجود Docstring: **222**
+- تعريفات Python بلا Docstring: **827**
+- تعريفات لا ينطبق عليها Docstring: **283**
 - الرموز الساكنة الإضافية: **1700**
-- الأسطر النصية المفهرسة حرفيًا: **32981**
+- الأسطر النصية المفهرسة حرفيًا: **33141**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -38,6 +38,7 @@
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-CE59202CFA | الوكيل والمنطق | [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L1) | Python | 3893 | 127 | جرد الملف + AST Python |
+| FILE-DB5EDD8C78 | الوكيل والمنطق | [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L1) | Python | 6084 | 160 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11420 | 270 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 6104 | 143 | جرد الملف + AST Python |
@@ -146,6 +147,12 @@
 | [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L81) | دالة | run_agentic_rag_over_sources._fixed_retrieve | لا توجد Docstring. | ناقص | 81 | [SRC-CE59202CFA-L000081](../agents/agentic_rag_integration.py#L81) |
 | [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L87) | دالة | run_agentic_rag_over_sources.draft_fn | لا توجد Docstring. | ناقص | 87 | [SRC-CE59202CFA-L000087](../agents/agentic_rag_integration.py#L87) |
 | [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L111) | دالة | web_agent_post_answer_hook | لا توجد Docstring. | ناقص | 111 | [SRC-CE59202CFA-L000111](../agents/agentic_rag_integration.py#L111) |
+| [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L20) | متغير/ثابت Python | RetrieveFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-DB5EDD8C78-L000020](../agents/agentic_rag_orchestrator.py#L20) |
+| [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L21) | متغير/ثابت Python | DraftFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-DB5EDD8C78-L000021](../agents/agentic_rag_orchestrator.py#L21) |
+| [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L24) | دالة | _default_draft | لا توجد Docstring. | ناقص | 24 | [SRC-DB5EDD8C78-L000024](../agents/agentic_rag_orchestrator.py#L24) |
+| [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L39) | كلاس | AgenticRagOrchestrator | Reasoning engine that treats retrieval as a tool inside a ReAct loop. | موثق | 39 | [SRC-DB5EDD8C78-L000039](../agents/agentic_rag_orchestrator.py#L39) |
+| [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L42) | دالة | AgenticRagOrchestrator.__init__ | لا توجد Docstring. | ناقص | 42 | [SRC-DB5EDD8C78-L000042](../agents/agentic_rag_orchestrator.py#L42) |
+| [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L57) | دالة | AgenticRagOrchestrator.run | لا توجد Docstring. | ناقص | 57 | [SRC-DB5EDD8C78-L000057](../agents/agentic_rag_orchestrator.py#L57) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L12) | متغير/ثابت Python | _DIGITS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-138992B1FC-L000012](../agents/answer_validation.py#L12) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L13) | متغير/ثابت Python | _ARABIC_NORMALIZATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-138992B1FC-L000013](../agents/answer_validation.py#L13) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L17) | متغير/ثابت Python | _DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-138992B1FC-L000017](../agents/answer_validation.py#L17) |

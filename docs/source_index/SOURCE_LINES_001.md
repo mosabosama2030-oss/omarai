@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000197
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000037
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -702,6 +702,175 @@
 | [SRC-CE59202CFA-L000127](../../agents/agentic_rag_integration.py#L127) | 127 | `"    }"` | — |
 ## الوكيل والمنطق
 
+### FILE-DB5EDD8C78 — [agents/agentic_rag_orchestrator.py](../../agents/agentic_rag_orchestrator.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-DB5EDD8C78-L000001](../../agents/agentic_rag_orchestrator.py#L1) | 1 | `"\"\"\"Agentic RAG orchestrator (ReAct-style) for Omarai."` | — |
+| [SRC-DB5EDD8C78-L000002](../../agents/agentic_rag_orchestrator.py#L2) | 2 | `""` | — |
+| [SRC-DB5EDD8C78-L000003](../../agents/agentic_rag_orchestrator.py#L3) | 3 | `"Loop: Plan (reformulate) → Act (retrieve tool) → Observe → Decide → Verify → Compose."` | — |
+| [SRC-DB5EDD8C78-L000004](../../agents/agentic_rag_orchestrator.py#L4) | 4 | `""` | — |
+| [SRC-DB5EDD8C78-L000005](../../agents/agentic_rag_orchestrator.py#L5) | 5 | `"The orchestrator does not replace WebAgent network/SSRF policy. It accepts an"` | — |
+| [SRC-DB5EDD8C78-L000006](../../agents/agentic_rag_orchestrator.py#L6) | 6 | `"injected retrieve_fn that already enforces those controls."` | — |
+| [SRC-DB5EDD8C78-L000007](../../agents/agentic_rag_orchestrator.py#L7) | 7 | `"\"\"\""` | — |
+| [SRC-DB5EDD8C78-L000008](../../agents/agentic_rag_orchestrator.py#L8) | 8 | `"from __future__ import annotations"` | — |
+| [SRC-DB5EDD8C78-L000009](../../agents/agentic_rag_orchestrator.py#L9) | 9 | `""` | — |
+| [SRC-DB5EDD8C78-L000010](../../agents/agentic_rag_orchestrator.py#L10) | 10 | `"from typing import Any, Callable"` | — |
+| [SRC-DB5EDD8C78-L000011](../../agents/agentic_rag_orchestrator.py#L11) | 11 | `""` | — |
+| [SRC-DB5EDD8C78-L000012](../../agents/agentic_rag_orchestrator.py#L12) | 12 | `"from agents.memory_bank import MemoryBank"` | — |
+| [SRC-DB5EDD8C78-L000013](../../agents/agentic_rag_orchestrator.py#L13) | 13 | `"from agents.specialist_agents import ("` | — |
+| [SRC-DB5EDD8C78-L000014](../../agents/agentic_rag_orchestrator.py#L14) | 14 | `"    FinalComposer,"` | — |
+| [SRC-DB5EDD8C78-L000015](../../agents/agentic_rag_orchestrator.py#L15) | 15 | `"    HallucinationGuard,"` | — |
+| [SRC-DB5EDD8C78-L000016](../../agents/agentic_rag_orchestrator.py#L16) | 16 | `"    IterativeRetriever,"` | — |
+| [SRC-DB5EDD8C78-L000017](../../agents/agentic_rag_orchestrator.py#L17) | 17 | `"    QueryReformulator,"` | — |
+| [SRC-DB5EDD8C78-L000018](../../agents/agentic_rag_orchestrator.py#L18) | 18 | `")"` | — |
+| [SRC-DB5EDD8C78-L000019](../../agents/agentic_rag_orchestrator.py#L19) | 19 | `""` | — |
+| [SRC-DB5EDD8C78-L000020](../../agents/agentic_rag_orchestrator.py#L20) | 20 | `"RetrieveFn = Callable[[str], list[dict[str, Any]]]"` | — |
+| [SRC-DB5EDD8C78-L000021](../../agents/agentic_rag_orchestrator.py#L21) | 21 | `"DraftFn = Callable[[str, list[dict[str, Any]], dict[str, Any]], str]"` | — |
+| [SRC-DB5EDD8C78-L000022](../../agents/agentic_rag_orchestrator.py#L22) | 22 | `""` | — |
+| [SRC-DB5EDD8C78-L000023](../../agents/agentic_rag_orchestrator.py#L23) | 23 | `""` | — |
+| [SRC-DB5EDD8C78-L000024](../../agents/agentic_rag_orchestrator.py#L24) | 24 | `"def _default_draft(question: str, sources: list[dict[str, Any]], meta: dict[str, Any]) -> str:"` | — |
+| [SRC-DB5EDD8C78-L000025](../../agents/agentic_rag_orchestrator.py#L25) | 25 | `"    aspects = meta.get(\"aspects\") or []"` | — |
+| [SRC-DB5EDD8C78-L000026](../../agents/agentic_rag_orchestrator.py#L26) | 26 | `"    lines = [f\"ملخص مستند إلى المصادر المتاحة حول: {question.strip()[:200]}\"]"` | — |
+| [SRC-DB5EDD8C78-L000027](../../agents/agentic_rag_orchestrator.py#L27) | 27 | `"    if aspects:"` | — |
+| [SRC-DB5EDD8C78-L000028](../../agents/agentic_rag_orchestrator.py#L28) | 28 | `"        lines.append(\"المحاور المطلوبة: \" + \"، \".join(map(str, aspects[:8])) + \".\")"` | — |
+| [SRC-DB5EDD8C78-L000029](../../agents/agentic_rag_orchestrator.py#L29) | 29 | `"    for src in sources[:8]:"` | — |
+| [SRC-DB5EDD8C78-L000030](../../agents/agentic_rag_orchestrator.py#L30) | 30 | `"        title = str(src.get(\"title\") or \"\").strip()"` | — |
+| [SRC-DB5EDD8C78-L000031](../../agents/agentic_rag_orchestrator.py#L31) | 31 | `"        snip = str(src.get(\"snippet\") or \"\").strip()[:220]"` | — |
+| [SRC-DB5EDD8C78-L000032](../../agents/agentic_rag_orchestrator.py#L32) | 32 | `"        if title or snip:"` | — |
+| [SRC-DB5EDD8C78-L000033](../../agents/agentic_rag_orchestrator.py#L33) | 33 | `"            lines.append(f\"{title}: {snip}\")"` | — |
+| [SRC-DB5EDD8C78-L000034](../../agents/agentic_rag_orchestrator.py#L34) | 34 | `"    if len(sources) < 2:"` | — |
+| [SRC-DB5EDD8C78-L000035](../../agents/agentic_rag_orchestrator.py#L35) | 35 | `"        lines.append(\"عدد المصادر محدود وقد تكون التغطية جزئية.\")"` | — |
+| [SRC-DB5EDD8C78-L000036](../../agents/agentic_rag_orchestrator.py#L36) | 36 | `"    return \"\\n\".join(lines)"` | — |
+| [SRC-DB5EDD8C78-L000037](../../agents/agentic_rag_orchestrator.py#L37) | 37 | `""` | — |
+| [SRC-DB5EDD8C78-L000038](../../agents/agentic_rag_orchestrator.py#L38) | 38 | `""` | — |
+| [SRC-DB5EDD8C78-L000039](../../agents/agentic_rag_orchestrator.py#L39) | 39 | `"class AgenticRagOrchestrator:"` | — |
+| [SRC-DB5EDD8C78-L000040](../../agents/agentic_rag_orchestrator.py#L40) | 40 | `"    \"\"\"Reasoning engine that treats retrieval as a tool inside a ReAct loop.\"\"\""` | — |
+| [SRC-DB5EDD8C78-L000041](../../agents/agentic_rag_orchestrator.py#L41) | 41 | `""` | — |
+| [SRC-DB5EDD8C78-L000042](../../agents/agentic_rag_orchestrator.py#L42) | 42 | `"    def __init__("` | — |
+| [SRC-DB5EDD8C78-L000043](../../agents/agentic_rag_orchestrator.py#L43) | 43 | `"        self,"` | — |
+| [SRC-DB5EDD8C78-L000044](../../agents/agentic_rag_orchestrator.py#L44) | 44 | `"        retrieve_fn: RetrieveFn,"` | — |
+| [SRC-DB5EDD8C78-L000045](../../agents/agentic_rag_orchestrator.py#L45) | 45 | `"        *,"` | — |
+| [SRC-DB5EDD8C78-L000046](../../agents/agentic_rag_orchestrator.py#L46) | 46 | `"        draft_fn: DraftFn \| None = None,"` | — |
+| [SRC-DB5EDD8C78-L000047](../../agents/agentic_rag_orchestrator.py#L47) | 47 | `"        max_hops: int = 3,"` | — |
+| [SRC-DB5EDD8C78-L000048](../../agents/agentic_rag_orchestrator.py#L48) | 48 | `"        min_support: float = 0.25,"` | — |
+| [SRC-DB5EDD8C78-L000049](../../agents/agentic_rag_orchestrator.py#L49) | 49 | `"    ) -> None:"` | — |
+| [SRC-DB5EDD8C78-L000050](../../agents/agentic_rag_orchestrator.py#L50) | 50 | `"        self.reformulator = QueryReformulator()"` | — |
+| [SRC-DB5EDD8C78-L000051](../../agents/agentic_rag_orchestrator.py#L51) | 51 | `"        self.retriever = IterativeRetriever(retrieve_fn, max_hops=max_hops)"` | — |
+| [SRC-DB5EDD8C78-L000052](../../agents/agentic_rag_orchestrator.py#L52) | 52 | `"        self.guard = HallucinationGuard(min_support=min_support)"` | — |
+| [SRC-DB5EDD8C78-L000053](../../agents/agentic_rag_orchestrator.py#L53) | 53 | `"        self.composer = FinalComposer()"` | — |
+| [SRC-DB5EDD8C78-L000054](../../agents/agentic_rag_orchestrator.py#L54) | 54 | `"        self.draft_fn = draft_fn or _default_draft"` | — |
+| [SRC-DB5EDD8C78-L000055](../../agents/agentic_rag_orchestrator.py#L55) | 55 | `"        self.max_hops = max_hops"` | — |
+| [SRC-DB5EDD8C78-L000056](../../agents/agentic_rag_orchestrator.py#L56) | 56 | `""` | — |
+| [SRC-DB5EDD8C78-L000057](../../agents/agentic_rag_orchestrator.py#L57) | 57 | `"    def run("` | — |
+| [SRC-DB5EDD8C78-L000058](../../agents/agentic_rag_orchestrator.py#L58) | 58 | `"        self,"` | — |
+| [SRC-DB5EDD8C78-L000059](../../agents/agentic_rag_orchestrator.py#L59) | 59 | `"        question: str,"` | — |
+| [SRC-DB5EDD8C78-L000060](../../agents/agentic_rag_orchestrator.py#L60) | 60 | `"        *,"` | — |
+| [SRC-DB5EDD8C78-L000061](../../agents/agentic_rag_orchestrator.py#L61) | 61 | `"        history: list[dict[str, str]] \| None = None,"` | — |
+| [SRC-DB5EDD8C78-L000062](../../agents/agentic_rag_orchestrator.py#L62) | 62 | `"        topic_hint: str = \"\","` | — |
+| [SRC-DB5EDD8C78-L000063](../../agents/agentic_rag_orchestrator.py#L63) | 63 | `"        session_id: str = \"\","` | — |
+| [SRC-DB5EDD8C78-L000064](../../agents/agentic_rag_orchestrator.py#L64) | 64 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-DB5EDD8C78-L000065](../../agents/agentic_rag_orchestrator.py#L65) | 65 | `"        trace_steps: list[dict[str, Any]] = []"` | — |
+| [SRC-DB5EDD8C78-L000066](../../agents/agentic_rag_orchestrator.py#L66) | 66 | `""` | — |
+| [SRC-DB5EDD8C78-L000067](../../agents/agentic_rag_orchestrator.py#L67) | 67 | `"        plan = self.reformulator.reformulate(question, topic_hint=topic_hint)"` | — |
+| [SRC-DB5EDD8C78-L000068](../../agents/agentic_rag_orchestrator.py#L68) | 68 | `"        trace_steps.append({\"phase\": \"plan\", \"agent\": \"QueryReformulator\", \"plan\": {"` | — |
+| [SRC-DB5EDD8C78-L000069](../../agents/agentic_rag_orchestrator.py#L69) | 69 | `"            \"aspects\": plan.get(\"aspects\"),"` | — |
+| [SRC-DB5EDD8C78-L000070](../../agents/agentic_rag_orchestrator.py#L70) | 70 | `"            \"queries\": plan.get(\"queries\"),"` | — |
+| [SRC-DB5EDD8C78-L000071](../../agents/agentic_rag_orchestrator.py#L71) | 71 | `"            \"needs_retrieval\": plan.get(\"needs_retrieval\"),"` | — |
+| [SRC-DB5EDD8C78-L000072](../../agents/agentic_rag_orchestrator.py#L72) | 72 | `"        }})"` | — |
+| [SRC-DB5EDD8C78-L000073](../../agents/agentic_rag_orchestrator.py#L73) | 73 | `""` | — |
+| [SRC-DB5EDD8C78-L000074](../../agents/agentic_rag_orchestrator.py#L74) | 74 | `"        aspect0 = (plan.get(\"aspects\") or [\"\"])[0] if plan.get(\"aspects\") else \"\""` | — |
+| [SRC-DB5EDD8C78-L000075](../../agents/agentic_rag_orchestrator.py#L75) | 75 | `"        retrieval = self.retriever.retrieve(list(plan.get(\"queries\") or []), aspect=str(aspect0))"` | — |
+| [SRC-DB5EDD8C78-L000076](../../agents/agentic_rag_orchestrator.py#L76) | 76 | `"        trace_steps.append({"` | — |
+| [SRC-DB5EDD8C78-L000077](../../agents/agentic_rag_orchestrator.py#L77) | 77 | `"            \"phase\": \"act_observe\","` | — |
+| [SRC-DB5EDD8C78-L000078](../../agents/agentic_rag_orchestrator.py#L78) | 78 | `"            \"agent\": \"IterativeRetriever\","` | — |
+| [SRC-DB5EDD8C78-L000079](../../agents/agentic_rag_orchestrator.py#L79) | 79 | `"            \"hop_count\": retrieval.get(\"hop_count\"),"` | — |
+| [SRC-DB5EDD8C78-L000080](../../agents/agentic_rag_orchestrator.py#L80) | 80 | `"            \"sufficiency\": retrieval.get(\"final_sufficiency\"),"` | — |
+| [SRC-DB5EDD8C78-L000081](../../agents/agentic_rag_orchestrator.py#L81) | 81 | `"            \"result_count\": len(retrieval.get(\"results\") or []),"` | — |
+| [SRC-DB5EDD8C78-L000082](../../agents/agentic_rag_orchestrator.py#L82) | 82 | `"        })"` | — |
+| [SRC-DB5EDD8C78-L000083](../../agents/agentic_rag_orchestrator.py#L83) | 83 | `""` | — |
+| [SRC-DB5EDD8C78-L000084](../../agents/agentic_rag_orchestrator.py#L84) | 84 | `"        sufficiency = str(retrieval.get(\"final_sufficiency\") or \"none\")"` | — |
+| [SRC-DB5EDD8C78-L000085](../../agents/agentic_rag_orchestrator.py#L85) | 85 | `"        decide = {"` | — |
+| [SRC-DB5EDD8C78-L000086](../../agents/agentic_rag_orchestrator.py#L86) | 86 | `"            \"proceed_to_answer\": sufficiency in {\"adequate\", \"rich\", \"thin\"},"` | — |
+| [SRC-DB5EDD8C78-L000087](../../agents/agentic_rag_orchestrator.py#L87) | 87 | `"            \"reason\": ("` | — |
+| [SRC-DB5EDD8C78-L000088](../../agents/agentic_rag_orchestrator.py#L88) | 88 | `"                \"adequate_evidence\""` | — |
+| [SRC-DB5EDD8C78-L000089](../../agents/agentic_rag_orchestrator.py#L89) | 89 | `"                if sufficiency in {\"adequate\", \"rich\"}"` | — |
+| [SRC-DB5EDD8C78-L000090](../../agents/agentic_rag_orchestrator.py#L90) | 90 | `"                else \"thin_or_empty_evidence\""` | — |
+| [SRC-DB5EDD8C78-L000091](../../agents/agentic_rag_orchestrator.py#L91) | 91 | `"            ),"` | — |
+| [SRC-DB5EDD8C78-L000092](../../agents/agentic_rag_orchestrator.py#L92) | 92 | `"        }"` | — |
+| [SRC-DB5EDD8C78-L000093](../../agents/agentic_rag_orchestrator.py#L93) | 93 | `"        trace_steps.append({\"phase\": \"decide\", \"decision\": decide})"` | — |
+| [SRC-DB5EDD8C78-L000094](../../agents/agentic_rag_orchestrator.py#L94) | 94 | `""` | — |
+| [SRC-DB5EDD8C78-L000095](../../agents/agentic_rag_orchestrator.py#L95) | 95 | `"        bank = MemoryBank(session_id=session_id or \"session\")"` | — |
+| [SRC-DB5EDD8C78-L000096](../../agents/agentic_rag_orchestrator.py#L96) | 96 | `"        bank.ingest_sources(retrieval.get(\"results\") or [])"` | — |
+| [SRC-DB5EDD8C78-L000097](../../agents/agentic_rag_orchestrator.py#L97) | 97 | `"        bank.notes.append(f\"retrieval_hops={retrieval.get('hop_count')}\")"` | — |
+| [SRC-DB5EDD8C78-L000098](../../agents/agentic_rag_orchestrator.py#L98) | 98 | `"        bank.notes.append(f\"sufficiency={sufficiency}\")"` | — |
+| [SRC-DB5EDD8C78-L000099](../../agents/agentic_rag_orchestrator.py#L99) | 99 | `""` | — |
+| [SRC-DB5EDD8C78-L000100](../../agents/agentic_rag_orchestrator.py#L100) | 100 | `"        meta = {"` | — |
+| [SRC-DB5EDD8C78-L000101](../../agents/agentic_rag_orchestrator.py#L101) | 101 | `"            \"aspects\": plan.get(\"aspects\") or [],"` | — |
+| [SRC-DB5EDD8C78-L000102](../../agents/agentic_rag_orchestrator.py#L102) | 102 | `"            \"queries\": plan.get(\"queries\") or [],"` | — |
+| [SRC-DB5EDD8C78-L000103](../../agents/agentic_rag_orchestrator.py#L103) | 103 | `"            \"retrieval\": {"` | — |
+| [SRC-DB5EDD8C78-L000104](../../agents/agentic_rag_orchestrator.py#L104) | 104 | `"                \"hop_count\": retrieval.get(\"hop_count\"),"` | — |
+| [SRC-DB5EDD8C78-L000105](../../agents/agentic_rag_orchestrator.py#L105) | 105 | `"                \"final_sufficiency\": sufficiency,"` | — |
+| [SRC-DB5EDD8C78-L000106](../../agents/agentic_rag_orchestrator.py#L106) | 106 | `"            },"` | — |
+| [SRC-DB5EDD8C78-L000107](../../agents/agentic_rag_orchestrator.py#L107) | 107 | `"            \"history_turns\": len(history or []),"` | — |
+| [SRC-DB5EDD8C78-L000108](../../agents/agentic_rag_orchestrator.py#L108) | 108 | `"        }"` | — |
+| [SRC-DB5EDD8C78-L000109](../../agents/agentic_rag_orchestrator.py#L109) | 109 | `""` | — |
+| [SRC-DB5EDD8C78-L000110](../../agents/agentic_rag_orchestrator.py#L110) | 110 | `"        draft = self.draft_fn(question, retrieval.get(\"results\") or [], meta)"` | — |
+| [SRC-DB5EDD8C78-L000111](../../agents/agentic_rag_orchestrator.py#L111) | 111 | `"        trace_steps.append({\"phase\": \"draft\", \"draft_chars\": len(draft or \"\")})"` | — |
+| [SRC-DB5EDD8C78-L000112](../../agents/agentic_rag_orchestrator.py#L112) | 112 | `""` | — |
+| [SRC-DB5EDD8C78-L000113](../../agents/agentic_rag_orchestrator.py#L113) | 113 | `"        guard_report = self.guard.verify_answer("` | — |
+| [SRC-DB5EDD8C78-L000114](../../agents/agentic_rag_orchestrator.py#L114) | 114 | `"            draft, bank, aspects=list(plan.get(\"aspects\") or [])"` | — |
+| [SRC-DB5EDD8C78-L000115](../../agents/agentic_rag_orchestrator.py#L115) | 115 | `"        )"` | — |
+| [SRC-DB5EDD8C78-L000116](../../agents/agentic_rag_orchestrator.py#L116) | 116 | `"        trace_steps.append({"` | — |
+| [SRC-DB5EDD8C78-L000117](../../agents/agentic_rag_orchestrator.py#L117) | 117 | `"            \"phase\": \"verify\","` | — |
+| [SRC-DB5EDD8C78-L000118](../../agents/agentic_rag_orchestrator.py#L118) | 118 | `"            \"agent\": \"HallucinationGuard\","` | — |
+| [SRC-DB5EDD8C78-L000119](../../agents/agentic_rag_orchestrator.py#L119) | 119 | `"            \"unsupported_count\": guard_report.get(\"unsupported_count\"),"` | — |
+| [SRC-DB5EDD8C78-L000120](../../agents/agentic_rag_orchestrator.py#L120) | 120 | `"            \"should_abstain\": guard_report.get(\"should_abstain\"),"` | — |
+| [SRC-DB5EDD8C78-L000121](../../agents/agentic_rag_orchestrator.py#L121) | 121 | `"        })"` | — |
+| [SRC-DB5EDD8C78-L000122](../../agents/agentic_rag_orchestrator.py#L122) | 122 | `""` | — |
+| [SRC-DB5EDD8C78-L000123](../../agents/agentic_rag_orchestrator.py#L123) | 123 | `"        composed = self.composer.compose(draft, bank, guard_report, language=\"ar\")"` | — |
+| [SRC-DB5EDD8C78-L000124](../../agents/agentic_rag_orchestrator.py#L124) | 124 | `"        trace_steps.append({"` | — |
+| [SRC-DB5EDD8C78-L000125](../../agents/agentic_rag_orchestrator.py#L125) | 125 | `"            \"phase\": \"compose\","` | — |
+| [SRC-DB5EDD8C78-L000126](../../agents/agentic_rag_orchestrator.py#L126) | 126 | `"            \"agent\": \"FinalComposer\","` | — |
+| [SRC-DB5EDD8C78-L000127](../../agents/agentic_rag_orchestrator.py#L127) | 127 | `"            \"abstained\": composed.get(\"abstained\"),"` | — |
+| [SRC-DB5EDD8C78-L000128](../../agents/agentic_rag_orchestrator.py#L128) | 128 | `"            \"citation_count\": len(composed.get(\"citations\") or []),"` | — |
+| [SRC-DB5EDD8C78-L000129](../../agents/agentic_rag_orchestrator.py#L129) | 129 | `"        })"` | — |
+| [SRC-DB5EDD8C78-L000130](../../agents/agentic_rag_orchestrator.py#L130) | 130 | `""` | — |
+| [SRC-DB5EDD8C78-L000131](../../agents/agentic_rag_orchestrator.py#L131) | 131 | `"        return {"` | — |
+| [SRC-DB5EDD8C78-L000132](../../agents/agentic_rag_orchestrator.py#L132) | 132 | `"            \"question\": question,"` | — |
+| [SRC-DB5EDD8C78-L000133](../../agents/agentic_rag_orchestrator.py#L133) | 133 | `"            \"plan\": plan,"` | — |
+| [SRC-DB5EDD8C78-L000134](../../agents/agentic_rag_orchestrator.py#L134) | 134 | `"            \"retrieval\": {"` | — |
+| [SRC-DB5EDD8C78-L000135](../../agents/agentic_rag_orchestrator.py#L135) | 135 | `"                \"hop_count\": retrieval.get(\"hop_count\"),"` | — |
+| [SRC-DB5EDD8C78-L000136](../../agents/agentic_rag_orchestrator.py#L136) | 136 | `"                \"final_sufficiency\": retrieval.get(\"final_sufficiency\"),"` | — |
+| [SRC-DB5EDD8C78-L000137](../../agents/agentic_rag_orchestrator.py#L137) | 137 | `"                \"hops\": retrieval.get(\"hops\"),"` | — |
+| [SRC-DB5EDD8C78-L000138](../../agents/agentic_rag_orchestrator.py#L138) | 138 | `"                \"result_count\": len(retrieval.get(\"results\") or []),"` | — |
+| [SRC-DB5EDD8C78-L000139](../../agents/agentic_rag_orchestrator.py#L139) | 139 | `"                \"results\": retrieval.get(\"results\") or [],"` | — |
+| [SRC-DB5EDD8C78-L000140](../../agents/agentic_rag_orchestrator.py#L140) | 140 | `"            },"` | — |
+| [SRC-DB5EDD8C78-L000141](../../agents/agentic_rag_orchestrator.py#L141) | 141 | `"            \"answer\": composed.get(\"answer\"),"` | — |
+| [SRC-DB5EDD8C78-L000142](../../agents/agentic_rag_orchestrator.py#L142) | 142 | `"            \"abstained\": composed.get(\"abstained\"),"` | — |
+| [SRC-DB5EDD8C78-L000143](../../agents/agentic_rag_orchestrator.py#L143) | 143 | `"            \"citations\": composed.get(\"citations\"),"` | — |
+| [SRC-DB5EDD8C78-L000144](../../agents/agentic_rag_orchestrator.py#L144) | 144 | `"            \"guard\": guard_report,"` | — |
+| [SRC-DB5EDD8C78-L000145](../../agents/agentic_rag_orchestrator.py#L145) | 145 | `"            \"memory_stats\": (composed.get(\"memory\") or {}).get(\"stats\"),"` | — |
+| [SRC-DB5EDD8C78-L000146](../../agents/agentic_rag_orchestrator.py#L146) | 146 | `"            \"memory\": composed.get(\"memory\"),"` | — |
+| [SRC-DB5EDD8C78-L000147](../../agents/agentic_rag_orchestrator.py#L147) | 147 | `"            \"trace\": {"` | — |
+| [SRC-DB5EDD8C78-L000148](../../agents/agentic_rag_orchestrator.py#L148) | 148 | `"                \"method\": \"agentic_rag_react\","` | — |
+| [SRC-DB5EDD8C78-L000149](../../agents/agentic_rag_orchestrator.py#L149) | 149 | `"                \"steps\": trace_steps,"` | — |
+| [SRC-DB5EDD8C78-L000150](../../agents/agentic_rag_orchestrator.py#L150) | 150 | `"                \"pipeline\": ["` | — |
+| [SRC-DB5EDD8C78-L000151](../../agents/agentic_rag_orchestrator.py#L151) | 151 | `"                    \"reformulate\","` | — |
+| [SRC-DB5EDD8C78-L000152](../../agents/agentic_rag_orchestrator.py#L152) | 152 | `"                    \"retrieve_until_sufficient\","` | — |
+| [SRC-DB5EDD8C78-L000153](../../agents/agentic_rag_orchestrator.py#L153) | 153 | `"                    \"decide\","` | — |
+| [SRC-DB5EDD8C78-L000154](../../agents/agentic_rag_orchestrator.py#L154) | 154 | `"                    \"ingest_memory_bank\","` | — |
+| [SRC-DB5EDD8C78-L000155](../../agents/agentic_rag_orchestrator.py#L155) | 155 | `"                    \"draft\","` | — |
+| [SRC-DB5EDD8C78-L000156](../../agents/agentic_rag_orchestrator.py#L156) | 156 | `"                    \"verify_claims\","` | — |
+| [SRC-DB5EDD8C78-L000157](../../agents/agentic_rag_orchestrator.py#L157) | 157 | `"                    \"compose_with_citations\","` | — |
+| [SRC-DB5EDD8C78-L000158](../../agents/agentic_rag_orchestrator.py#L158) | 158 | `"                ],"` | — |
+| [SRC-DB5EDD8C78-L000159](../../agents/agentic_rag_orchestrator.py#L159) | 159 | `"            },"` | — |
+| [SRC-DB5EDD8C78-L000160](../../agents/agentic_rag_orchestrator.py#L160) | 160 | `"        }"` | — |
+## الوكيل والمنطق
+
 ### FILE-138992B1FC — [agents/answer_validation.py](../../agents/answer_validation.py#L1)
 
 - النوع: **Python**
@@ -746,163 +915,3 @@
 | [SRC-138992B1FC-L000035](../../agents/answer_validation.py#L35) | 35 | `""` | — |
 | [SRC-138992B1FC-L000036](../../agents/answer_validation.py#L36) | 36 | `""` | — |
 | [SRC-138992B1FC-L000037](../../agents/answer_validation.py#L37) | 37 | `"def _normalize(value: Any) -> str:"` | — |
-| [SRC-138992B1FC-L000038](../../agents/answer_validation.py#L38) | 38 | `"    text = unicodedata.normalize(\"NFKC\", str(value or \"\")).casefold().translate(_DIGITS)"` | — |
-| [SRC-138992B1FC-L000039](../../agents/answer_validation.py#L39) | 39 | `"    text = _DIACRITICS.sub(\"\", text).translate(_ARABIC_NORMALIZATION)"` | — |
-| [SRC-138992B1FC-L000040](../../agents/answer_validation.py#L40) | 40 | `"    return text"` | — |
-| [SRC-138992B1FC-L000041](../../agents/answer_validation.py#L41) | 41 | `""` | — |
-| [SRC-138992B1FC-L000042](../../agents/answer_validation.py#L42) | 42 | `""` | — |
-| [SRC-138992B1FC-L000043](../../agents/answer_validation.py#L43) | 43 | `"def _tokens(value: Any, *, drop_stopwords: bool = False) -> list[str]:"` | — |
-| [SRC-138992B1FC-L000044](../../agents/answer_validation.py#L44) | 44 | `"    tokens = _TOKEN.findall(_normalize(value))"` | — |
-| [SRC-138992B1FC-L000045](../../agents/answer_validation.py#L45) | 45 | `"    if drop_stopwords:"` | — |
-| [SRC-138992B1FC-L000046](../../agents/answer_validation.py#L46) | 46 | `"        tokens = [token for token in tokens if token not in _STOPWORDS]"` | — |
-| [SRC-138992B1FC-L000047](../../agents/answer_validation.py#L47) | 47 | `"    return tokens"` | — |
-| [SRC-138992B1FC-L000048](../../agents/answer_validation.py#L48) | 48 | `""` | — |
-| [SRC-138992B1FC-L000049](../../agents/answer_validation.py#L49) | 49 | `""` | — |
-| [SRC-138992B1FC-L000050](../../agents/answer_validation.py#L50) | 50 | `"def _criterion_tokens(value: Any) -> list[str]:"` | — |
-| [SRC-138992B1FC-L000051](../../agents/answer_validation.py#L51) | 51 | `"    \"\"\"Return criterion terms without discarding their original surface forms.\"\"\""` | — |
-| [SRC-138992B1FC-L000052](../../agents/answer_validation.py#L52) | 52 | `"    tokens = _tokens(value, drop_stopwords=True)"` | — |
-| [SRC-138992B1FC-L000053](../../agents/answer_validation.py#L53) | 53 | `"    return tokens or _tokens(value)"` | — |
-| [SRC-138992B1FC-L000054](../../agents/answer_validation.py#L54) | 54 | `""` | — |
-| [SRC-138992B1FC-L000055](../../agents/answer_validation.py#L55) | 55 | `""` | — |
-| [SRC-138992B1FC-L000056](../../agents/answer_validation.py#L56) | 56 | `"_CRITERION_ALIASES = {"` | — |
-| [SRC-138992B1FC-L000057](../../agents/answer_validation.py#L57) | 57 | `"    \"سعر\": (\"price\", \"cost\", \"pricing\", \"fee\", \"amount\"),"` | — |
-| [SRC-138992B1FC-L000058](../../agents/answer_validation.py#L58) | 58 | `"    \"تكلفه\": (\"price\", \"cost\", \"expense\", \"fee\"),"` | — |
-| [SRC-138992B1FC-L000059](../../agents/answer_validation.py#L59) | 59 | `"    \"بطاريه\": (\"battery\", \"capacity\", \"duration\", \"battery life\"),"` | — |
-| [SRC-138992B1FC-L000060](../../agents/answer_validation.py#L60) | 60 | `"    \"كاميرا\": (\"camera\", \"photography\", \"image quality\", \"photo\"),"` | — |
-| [SRC-138992B1FC-L000061](../../agents/answer_validation.py#L61) | 61 | `"    \"خصوصيه\": (\"privacy\", \"confidentiality\", \"data protection\"),"` | — |
-| [SRC-138992B1FC-L000062](../../agents/answer_validation.py#L62) | 62 | `"    \"اعتماديه\": (\"reliability\", \"uptime\", \"dependability\"),"` | — |
-| [SRC-138992B1FC-L000063](../../agents/answer_validation.py#L63) | 63 | `"    \"دعم\": (\"support\", \"service\", \"helpdesk\", \"customer service\"),"` | — |
-| [SRC-138992B1FC-L000064](../../agents/answer_validation.py#L64) | 64 | `"    \"مساحه\": (\"area\", \"size\", \"space\", \"sqm\"),"` | — |
-| [SRC-138992B1FC-L000065](../../agents/answer_validation.py#L65) | 65 | `"    \"اداء\": (\"performance\", \"speed\", \"throughput\"),"` | — |
-| [SRC-138992B1FC-L000066](../../agents/answer_validation.py#L66) | 66 | `"    \"امان\": (\"safety\", \"security\", \"protection\"),"` | — |
-| [SRC-138992B1FC-L000067](../../agents/answer_validation.py#L67) | 67 | `"    \"جوده\": (\"quality\", \"build quality\"),"` | — |
-| [SRC-138992B1FC-L000068](../../agents/answer_validation.py#L68) | 68 | `"    \"صيانه\": (\"maintenance\", \"repair\", \"servicing\"),"` | — |
-| [SRC-138992B1FC-L000069](../../agents/answer_validation.py#L69) | 69 | `"    \"مميزات\": (\"features\", \"benefits\", \"advantages\"),"` | — |
-| [SRC-138992B1FC-L000070](../../agents/answer_validation.py#L70) | 70 | `"    \"عيوب\": (\"drawbacks\", \"disadvantages\", \"limitations\", \"cons\"),"` | — |
-| [SRC-138992B1FC-L000071](../../agents/answer_validation.py#L71) | 71 | `"    \"ضمان\": (\"warranty\", \"guarantee\"),"` | — |
-| [SRC-138992B1FC-L000072](../../agents/answer_validation.py#L72) | 72 | `"    \"توفر\": (\"availability\", \"in stock\"),"` | — |
-| [SRC-138992B1FC-L000073](../../agents/answer_validation.py#L73) | 73 | `"    \"سرعه\": (\"speed\", \"latency\"),"` | — |
-| [SRC-138992B1FC-L000074](../../agents/answer_validation.py#L74) | 74 | `"    \"ذاكره\": (\"memory\", \"ram\", \"storage\"),"` | — |
-| [SRC-138992B1FC-L000075](../../agents/answer_validation.py#L75) | 75 | `"}"` | — |
-| [SRC-138992B1FC-L000076](../../agents/answer_validation.py#L76) | 76 | `""` | — |
-| [SRC-138992B1FC-L000077](../../agents/answer_validation.py#L77) | 77 | `""` | — |
-| [SRC-138992B1FC-L000078](../../agents/answer_validation.py#L78) | 78 | `"def _criterion_token_variants(token: str) -> set[str]:"` | — |
-| [SRC-138992B1FC-L000079](../../agents/answer_validation.py#L79) | 79 | `"    \"\"\"Return conservative Arabic article and common cross-language criterion variants.\"\"\""` | — |
-| [SRC-138992B1FC-L000080](../../agents/answer_validation.py#L80) | 80 | `"    variants = {token}"` | — |
-| [SRC-138992B1FC-L000081](../../agents/answer_validation.py#L81) | 81 | `"    is_arabic = bool(token) and all(\"ء\" <= char <= \"ي\" for char in token)"` | — |
-| [SRC-138992B1FC-L000082](../../agents/answer_validation.py#L82) | 82 | `"    base = token[2:] if is_arabic and token.startswith(\"ال\") and len(token) > 4 else token"` | — |
-| [SRC-138992B1FC-L000083](../../agents/answer_validation.py#L83) | 83 | `"    if is_arabic:"` | — |
-| [SRC-138992B1FC-L000084](../../agents/answer_validation.py#L84) | 84 | `"        variants.add(base)"` | — |
-| [SRC-138992B1FC-L000085](../../agents/answer_validation.py#L85) | 85 | `"        if len(base) >= 3:"` | — |
-| [SRC-138992B1FC-L000086](../../agents/answer_validation.py#L86) | 86 | `"            variants.add(\"ال\" + base)"` | — |
-| [SRC-138992B1FC-L000087](../../agents/answer_validation.py#L87) | 87 | `"        for alias in _CRITERION_ALIASES.get(base, ()):"` | — |
-| [SRC-138992B1FC-L000088](../../agents/answer_validation.py#L88) | 88 | `"            variants.update(_tokens(alias, drop_stopwords=True))"` | — |
-| [SRC-138992B1FC-L000089](../../agents/answer_validation.py#L89) | 89 | `"    return variants"` | — |
-| [SRC-138992B1FC-L000090](../../agents/answer_validation.py#L90) | 90 | `""` | — |
-| [SRC-138992B1FC-L000091](../../agents/answer_validation.py#L91) | 91 | `""` | — |
-| [SRC-138992B1FC-L000092](../../agents/answer_validation.py#L92) | 92 | `"def _numeric_literals(value: Any, *, question: str = \"\") -> set[str]:"` | — |
-| [SRC-138992B1FC-L000093](../../agents/answer_validation.py#L93) | 93 | `"    \"\"\"Extract explicit numeric literals, ignoring citation indices and unqualified single digits.\"\"\""` | — |
-| [SRC-138992B1FC-L000094](../../agents/answer_validation.py#L94) | 94 | `"    text = _normalize(_CITATION.sub(\" \", str(value or \"\")))"` | — |
-| [SRC-138992B1FC-L000095](../../agents/answer_validation.py#L95) | 95 | `"    question_literals = {"` | — |
-| [SRC-138992B1FC-L000096](../../agents/answer_validation.py#L96) | 96 | `"        _canonical_number(match.group(0))"` | — |
-| [SRC-138992B1FC-L000097](../../agents/answer_validation.py#L97) | 97 | `"        for match in _NUMBER.finditer(_normalize(question))"` | — |
-| [SRC-138992B1FC-L000098](../../agents/answer_validation.py#L98) | 98 | `"    }"` | — |
-| [SRC-138992B1FC-L000099](../../agents/answer_validation.py#L99) | 99 | `"    result: set[str] = set()"` | — |
-| [SRC-138992B1FC-L000100](../../agents/answer_validation.py#L100) | 100 | `"    for match in _NUMBER.finditer(text):"` | — |
-| [SRC-138992B1FC-L000101](../../agents/answer_validation.py#L101) | 101 | `"        raw = match.group(0)"` | — |
-| [SRC-138992B1FC-L000102](../../agents/answer_validation.py#L102) | 102 | `"        context = text[max(0, match.start() - 24):min(len(text), match.end() + 24)]"` | — |
-| [SRC-138992B1FC-L000103](../../agents/answer_validation.py#L103) | 103 | `"        canonical = _canonical_number(raw)"` | — |
-| [SRC-138992B1FC-L000104](../../agents/answer_validation.py#L104) | 104 | `"        digit_count = sum(char.isdigit() for char in canonical)"` | — |
-| [SRC-138992B1FC-L000105](../../agents/answer_validation.py#L105) | 105 | `"        is_year = len(canonical) == 4 and canonical.startswith((\"19\", \"20\"))"` | — |
-| [SRC-138992B1FC-L000106](../../agents/answer_validation.py#L106) | 106 | `"        if digit_count < 2 and not is_year and not _UNIT_OR_VALUE_CONTEXT.search(context):"` | — |
-| [SRC-138992B1FC-L000107](../../agents/answer_validation.py#L107) | 107 | `"            continue"` | — |
-| [SRC-138992B1FC-L000108](../../agents/answer_validation.py#L108) | 108 | `"        if canonical and canonical not in question_literals:"` | — |
-| [SRC-138992B1FC-L000109](../../agents/answer_validation.py#L109) | 109 | `"            result.add(canonical)"` | — |
-| [SRC-138992B1FC-L000110](../../agents/answer_validation.py#L110) | 110 | `"    return result"` | — |
-| [SRC-138992B1FC-L000111](../../agents/answer_validation.py#L111) | 111 | `""` | — |
-| [SRC-138992B1FC-L000112](../../agents/answer_validation.py#L112) | 112 | `""` | — |
-| [SRC-138992B1FC-L000113](../../agents/answer_validation.py#L113) | 113 | `"def _canonical_number(value: str) -> str:"` | — |
-| [SRC-138992B1FC-L000114](../../agents/answer_validation.py#L114) | 114 | `"    text = _normalize(value).replace(\"٬\", \",\").replace(\"٫\", \".\")"` | — |
-| [SRC-138992B1FC-L000115](../../agents/answer_validation.py#L115) | 115 | `"    # Treat conventional comma thousands separators as formatting, not a value change."` | — |
-| [SRC-138992B1FC-L000116](../../agents/answer_validation.py#L116) | 116 | `"    text = re.sub(r\"(?<=\\d),(?=\\d{3}(?:\\D\|$))\", \"\", text)"` | — |
-| [SRC-138992B1FC-L000117](../../agents/answer_validation.py#L117) | 117 | `"    return text.replace(\",\", \"\")"` | — |
-| [SRC-138992B1FC-L000118](../../agents/answer_validation.py#L118) | 118 | `""` | — |
-| [SRC-138992B1FC-L000119](../../agents/answer_validation.py#L119) | 119 | `""` | — |
-| [SRC-138992B1FC-L000120](../../agents/answer_validation.py#L120) | 120 | `""` | — |
-| [SRC-138992B1FC-L000121](../../agents/answer_validation.py#L121) | 121 | `"_VALUE_CUES = {"` | — |
-| [SRC-138992B1FC-L000122](../../agents/answer_validation.py#L122) | 122 | `"    \"price_or_cost\": re.compile("` | — |
-| [SRC-138992B1FC-L000123](../../agents/answer_validation.py#L123) | 123 | `"        r\"(?:السعر\|سعر\|تكلفه\|تكلفة\|التكاليف\|المبلغ\|الثمن\|price\|cost\|fee\|amount\|\""` | — |
-| [SRC-138992B1FC-L000124](../../agents/answer_validation.py#L124) | 124 | `"        r\"جنيه\|دولار\|ريال\|يورو\|egp\|usd\|eur\|\\$\|€\|£)\","` | — |
-| [SRC-138992B1FC-L000125](../../agents/answer_validation.py#L125) | 125 | `"        re.IGNORECASE,"` | — |
-| [SRC-138992B1FC-L000126](../../agents/answer_validation.py#L126) | 126 | `"    ),"` | — |
-| [SRC-138992B1FC-L000127](../../agents/answer_validation.py#L127) | 127 | `"    \"area_or_size\": re.compile("` | — |
-| [SRC-138992B1FC-L000128](../../agents/answer_validation.py#L128) | 128 | `"        r\"(?:المساحه\|المساحة\|مساحه\|مساحة\|متر مربع\|متر\|sqm\|square\\s+met(?:er\|re)s?\|area\|size)\","` | — |
-| [SRC-138992B1FC-L000129](../../agents/answer_validation.py#L129) | 129 | `"        re.IGNORECASE,"` | — |
-| [SRC-138992B1FC-L000130](../../agents/answer_validation.py#L130) | 130 | `"    ),"` | — |
-| [SRC-138992B1FC-L000131](../../agents/answer_validation.py#L131) | 131 | `"    \"duration\": re.compile("` | — |
-| [SRC-138992B1FC-L000132](../../agents/answer_validation.py#L132) | 132 | `"        r\"(?:المده\|المدة\|الوقت\|مده\|مدة\|فتره\|فترة\|duration\|elapsed\|days?\|weeks?\|months?\|years?\|\""` | — |
-| [SRC-138992B1FC-L000133](../../agents/answer_validation.py#L133) | 133 | `"        r\"يوم\|أيام\|اسبوع\|أسبوع\|شهر\|أشهر\|سنه\|سنة\|سنوات\|عام\|أعوام\|ساعة\|ساعات\|دقيقة\|دقائق)\","` | — |
-| [SRC-138992B1FC-L000134](../../agents/answer_validation.py#L134) | 134 | `"        re.IGNORECASE,"` | — |
-| [SRC-138992B1FC-L000135](../../agents/answer_validation.py#L135) | 135 | `"    ),"` | — |
-| [SRC-138992B1FC-L000136](../../agents/answer_validation.py#L136) | 136 | `"    \"percentage_or_rate\": re.compile("` | — |
-| [SRC-138992B1FC-L000137](../../agents/answer_validation.py#L137) | 137 | `"        r\"(?:النسبه\|النسبة\|نسبة\|مئويه\|مئوية\|percent(?:age)?\|rate\|٪\|%)\","` | — |
-| [SRC-138992B1FC-L000138](../../agents/answer_validation.py#L138) | 138 | `"        re.IGNORECASE,"` | — |
-| [SRC-138992B1FC-L000139](../../agents/answer_validation.py#L139) | 139 | `"    ),"` | — |
-| [SRC-138992B1FC-L000140](../../agents/answer_validation.py#L140) | 140 | `"    \"date_or_year\": re.compile("` | — |
-| [SRC-138992B1FC-L000141](../../agents/answer_validation.py#L141) | 141 | `"        r\"(?:التاريخ\|تاريخ\|الموعد\|موعد\|صدر\|نشر\|بتاريخ\|date\|published\|year\|deadline\|\""` | — |
-| [SRC-138992B1FC-L000142](../../agents/answer_validation.py#L142) | 142 | `"        r\"يناير\|فبراير\|مارس\|ابريل\|أبريل\|مايو\|يونيو\|يوليو\|أغسطس\|سبتمبر\|أكتوبر\|نوفمبر\|ديسمبر)\","` | — |
-| [SRC-138992B1FC-L000143](../../agents/answer_validation.py#L143) | 143 | `"        re.IGNORECASE,"` | — |
-| [SRC-138992B1FC-L000144](../../agents/answer_validation.py#L144) | 144 | `"    ),"` | — |
-| [SRC-138992B1FC-L000145](../../agents/answer_validation.py#L145) | 145 | `"}"` | — |
-| [SRC-138992B1FC-L000146](../../agents/answer_validation.py#L146) | 146 | `""` | — |
-| [SRC-138992B1FC-L000147](../../agents/answer_validation.py#L147) | 147 | `""` | — |
-| [SRC-138992B1FC-L000148](../../agents/answer_validation.py#L148) | 148 | `"def _numeric_values_with_cues(value: Any) -> list[tuple[str, str]]:"` | — |
-| [SRC-138992B1FC-L000149](../../agents/answer_validation.py#L149) | 149 | `"    \"\"\"Extract number/dimension pairs as review signals, not as semantic claims.\"\"\""` | — |
-| [SRC-138992B1FC-L000150](../../agents/answer_validation.py#L150) | 150 | `"    text = _normalize(value)"` | — |
-| [SRC-138992B1FC-L000151](../../agents/answer_validation.py#L151) | 151 | `"    found: list[tuple[str, str]] = []"` | — |
-| [SRC-138992B1FC-L000152](../../agents/answer_validation.py#L152) | 152 | `"    for match in _NUMBER.finditer(text):"` | — |
-| [SRC-138992B1FC-L000153](../../agents/answer_validation.py#L153) | 153 | `"        number = _canonical_number(match.group(0))"` | — |
-| [SRC-138992B1FC-L000154](../../agents/answer_validation.py#L154) | 154 | `"        context = text[max(0, match.start() - 55):min(len(text), match.end() + 55)]"` | — |
-| [SRC-138992B1FC-L000155](../../agents/answer_validation.py#L155) | 155 | `"        for dimension, pattern in _VALUE_CUES.items():"` | — |
-| [SRC-138992B1FC-L000156](../../agents/answer_validation.py#L156) | 156 | `"            if pattern.search(context):"` | — |
-| [SRC-138992B1FC-L000157](../../agents/answer_validation.py#L157) | 157 | `"                found.append((dimension, number))"` | — |
-| [SRC-138992B1FC-L000158](../../agents/answer_validation.py#L158) | 158 | `"    return found"` | — |
-| [SRC-138992B1FC-L000159](../../agents/answer_validation.py#L159) | 159 | `""` | — |
-| [SRC-138992B1FC-L000160](../../agents/answer_validation.py#L160) | 160 | `""` | — |
-| [SRC-138992B1FC-L000161](../../agents/answer_validation.py#L161) | 161 | `"def audit_answer_integrity("` | — |
-| [SRC-138992B1FC-L000162](../../agents/answer_validation.py#L162) | 162 | `"    question: str,"` | — |
-| [SRC-138992B1FC-L000163](../../agents/answer_validation.py#L163) | 163 | `"    answer: str,"` | — |
-| [SRC-138992B1FC-L000164](../../agents/answer_validation.py#L164) | 164 | `"    sources: list[dict[str, Any]] \| None,"` | — |
-| [SRC-138992B1FC-L000165](../../agents/answer_validation.py#L165) | 165 | `"    coverage_targets: list[str] \| None = None,"` | — |
-| [SRC-138992B1FC-L000166](../../agents/answer_validation.py#L166) | 166 | `") -> dict[str, Any]:"` | — |
-| [SRC-138992B1FC-L000167](../../agents/answer_validation.py#L167) | 167 | `"    \"\"\"Return bounded lexical checks; never label them as semantic fact verification.\"\"\""` | — |
-| [SRC-138992B1FC-L000168](../../agents/answer_validation.py#L168) | 168 | `"    safe_sources = [item for item in (sources or []) if isinstance(item, dict)]"` | — |
-| [SRC-138992B1FC-L000169](../../agents/answer_validation.py#L169) | 169 | `"    source_texts: list[str] = []"` | — |
-| [SRC-138992B1FC-L000170](../../agents/answer_validation.py#L170) | 170 | `"    extracted_page_count = 0"` | — |
-| [SRC-138992B1FC-L000171](../../agents/answer_validation.py#L171) | 171 | `"    snippet_count = 0"` | — |
-| [SRC-138992B1FC-L000172](../../agents/answer_validation.py#L172) | 172 | `"    source_number_literals: set[str] = set()"` | — |
-| [SRC-138992B1FC-L000173](../../agents/answer_validation.py#L173) | 173 | `"    source_text_by_index: dict[int, str] = {}"` | — |
-| [SRC-138992B1FC-L000174](../../agents/answer_validation.py#L174) | 174 | `""` | — |
-| [SRC-138992B1FC-L000175](../../agents/answer_validation.py#L175) | 175 | `"    for source_index, source in enumerate(safe_sources[:40], 1):"` | — |
-| [SRC-138992B1FC-L000176](../../agents/answer_validation.py#L176) | 176 | `"        page_text = str(source.get(\"page_text\") or \"\")"` | — |
-| [SRC-138992B1FC-L000177](../../agents/answer_validation.py#L177) | 177 | `"        snippet = str(source.get(\"snippet\") or \"\")"` | — |
-| [SRC-138992B1FC-L000178](../../agents/answer_validation.py#L178) | 178 | `"        title = str(source.get(\"title\") or \"\")"` | — |
-| [SRC-138992B1FC-L000179](../../agents/answer_validation.py#L179) | 179 | `"        published_at = str(source.get(\"published_at\") or \"\")"` | — |
-| [SRC-138992B1FC-L000180](../../agents/answer_validation.py#L180) | 180 | `"        if page_text.strip() and bool(source.get(\"page_fetched\")):"` | — |
-| [SRC-138992B1FC-L000181](../../agents/answer_validation.py#L181) | 181 | `"            extracted_page_count += 1"` | — |
-| [SRC-138992B1FC-L000182](../../agents/answer_validation.py#L182) | 182 | `"        elif snippet.strip():"` | — |
-| [SRC-138992B1FC-L000183](../../agents/answer_validation.py#L183) | 183 | `"            snippet_count += 1"` | — |
-| [SRC-138992B1FC-L000184](../../agents/answer_validation.py#L184) | 184 | `"        source_text = \" \".join(part for part in (title, snippet, page_text, published_at) if part)"` | — |
-| [SRC-138992B1FC-L000185](../../agents/answer_validation.py#L185) | 185 | `"        if source_text.strip():"` | — |
-| [SRC-138992B1FC-L000186](../../agents/answer_validation.py#L186) | 186 | `"            bounded_source_text = source_text[:16000]"` | — |
-| [SRC-138992B1FC-L000187](../../agents/answer_validation.py#L187) | 187 | `"            source_texts.append(bounded_source_text)"` | — |
-| [SRC-138992B1FC-L000188](../../agents/answer_validation.py#L188) | 188 | `"            source_text_by_index[source_index] = bounded_source_text"` | — |
-| [SRC-138992B1FC-L000189](../../agents/answer_validation.py#L189) | 189 | `"            source_number_literals.update(_numeric_literals(bounded_source_text))"` | — |
-| [SRC-138992B1FC-L000190](../../agents/answer_validation.py#L190) | 190 | `""` | — |
-| [SRC-138992B1FC-L000191](../../agents/answer_validation.py#L191) | 191 | `"    answer_text = str(answer or \"\")[:24000]"` | — |
-| [SRC-138992B1FC-L000192](../../agents/answer_validation.py#L192) | 192 | `"    answer_number_literals = _numeric_literals(answer_text, question=question)"` | — |
-| [SRC-138992B1FC-L000193](../../agents/answer_validation.py#L193) | 193 | `"    unsupported_numbers = sorted(answer_number_literals - source_number_literals)"` | — |
-| [SRC-138992B1FC-L000194](../../agents/answer_validation.py#L194) | 194 | `"    answer_tokens = set(_criterion_tokens(_CITATION.sub(\" \", answer_text)))"` | — |
-| [SRC-138992B1FC-L000195](../../agents/answer_validation.py#L195) | 195 | `""` | — |
-| [SRC-138992B1FC-L000196](../../agents/answer_validation.py#L196) | 196 | `"    # Align citation-bearing sentences only by lexical overlap with the exact cited"` | — |
-| [SRC-138992B1FC-L000197](../../agents/answer_validation.py#L197) | 197 | `"    # source index. This is an audit hint, not an entailment or truth check."` | — |
