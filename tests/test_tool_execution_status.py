@@ -39,7 +39,7 @@ def test_tool_matrix_distinguishes_no_usable_results_from_page_read_failure():
     assert set(statuses) == TOOLS
     assert statuses["web_search"] == "completed_no_usable_results"
     assert statuses["page_fetch"] == "attempted_no_readable_pages"
-    assert statuses["public_social_search_if_configured"] == "completed_no_usable_results"
+    assert statuses["public_social_search_if_configured"] == "unknown"
     assert statuses["language_model_generation_if_configured"] == "not_configured"
     assert statuses["claim_review_if_configured"] == "not_attempted_no_evidence"
     assert all("لا تثبت صحة المحتوى" in row["semantics"] for row in rows)
