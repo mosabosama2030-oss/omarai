@@ -212,6 +212,8 @@ def might_be_context_dependent(question: str) -> bool:
         return False
     lead_in = re.search(
         r"^(?:و?طب|و?طيب|و?تمام|ثم|كمان|وبالنسبه|بالنسبه|"
+        r"(?:و)?(?:ال)?(?:سعر|اسعار|ثمن|ضمان|بطاريه|كاميرا|مكان|رابط|"
+        r"مصدر|مميزات|عيوب|فرق|توفر|سرعه|اداء|جوده|صيانه)\b|"
         r"and\s+(?:what|the|how)|what\s+about|how\s+about|"
         r"then\b|also\b|as\s+for\b|and\s+its\b)",
         current,
