@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000064 إلى SRC-E599346ABE-L000756
+- النطاق: SRC-51D44BE378-L000058 إلى SRC-E599346ABE-L000750
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000058](../DEPLOY_SNAPDEPLOY_AR.md#L58) | 58 | ````"```bash"```` | — |
+| [SRC-51D44BE378-L000059](../DEPLOY_SNAPDEPLOY_AR.md#L59) | 59 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
+| [SRC-51D44BE378-L000060](../DEPLOY_SNAPDEPLOY_AR.md#L60) | 60 | ````"```"```` | — |
+| [SRC-51D44BE378-L000061](../DEPLOY_SNAPDEPLOY_AR.md#L61) | 61 | `""` | — |
+| [SRC-51D44BE378-L000062](../DEPLOY_SNAPDEPLOY_AR.md#L62) | 62 | `"لا ترسل الرمز أو مفتاح OpenRouter إلى ChatGPT أو DeepSeek، ولا تضعهما في GitHub أو ملف README أو لقطات شاشة. لا تستخدم مفتاح OpenRouter نفسه رمزًا لدخول التطبيق."` | — |
+| [SRC-51D44BE378-L000063](../DEPLOY_SNAPDEPLOY_AR.md#L63) | 63 | `""` | — |
 | [SRC-51D44BE378-L000064](../DEPLOY_SNAPDEPLOY_AR.md#L64) | 64 | ``"اترك `OMARAI_OPENROUTER_WEB_SEARCH` غير مضبوط؛ تفعيله خيار إضافي يمكن أن يستهلك رصيدًا. استخدام النماذج المجانية قد يظل خاضعًا لحصص ومعدلات توفر المزود، وقد تتغير النماذج المتاحة. راجع التسعير وحدود المفتاح لدى OpenRouter ولا توافق على موارد أو استخدام مدفوع."`` | — |
 | [SRC-51D44BE378-L000065](../DEPLOY_SNAPDEPLOY_AR.md#L65) | 65 | `""` | — |
 | [SRC-51D44BE378-L000066](../DEPLOY_SNAPDEPLOY_AR.md#L66) | 66 | `"## 3. النشر الأول"` | — |
@@ -819,9 +825,3 @@
 | [SRC-E599346ABE-L000748](../generate_index.py#L748) | 748 | `"        visitor = SymbolVisitor(relative_file)"` | — |
 | [SRC-E599346ABE-L000749](../generate_index.py#L749) | 749 | `"        visitor.visit(syntax_tree)"` | — |
 | [SRC-E599346ABE-L000750](../generate_index.py#L750) | 750 | `"        all_symbols.extend(visitor.symbols)"` | — |
-| [SRC-E599346ABE-L000751](../generate_index.py#L751) | 751 | `""` | — |
-| [SRC-E599346ABE-L000752](../generate_index.py#L752) | 752 | `"    if failures:"` | — |
-| [SRC-E599346ABE-L000753](../generate_index.py#L753) | 753 | `"        detail = \"\\n\".join(f\"- {failure}\" for failure in failures)"` | — |
-| [SRC-E599346ABE-L000754](../generate_index.py#L754) | 754 | `"        raise IndexGenerationError("` | — |
-| [SRC-E599346ABE-L000755](../generate_index.py#L755) | 755 | `"            \"تعذر إنشاء فهرس Python كامل؛ لم يُكتب MASTER_INDEX.md. \""` | — |
-| [SRC-E599346ABE-L000756](../generate_index.py#L756) | 756 | `"            \"أصلح الملفات التالية ثم أعد التشغيل:\\n\" + detail"` | — |

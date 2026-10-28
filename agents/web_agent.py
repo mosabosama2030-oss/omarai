@@ -3908,6 +3908,12 @@ class WebAgent:
         if len(question) > MAX_QUESTION_CHARS:
             raise ValueError(f"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.")
         clean_history = self._sanitize_history(history)
+        # Resolve elliptical follow-ups once and carry the resolved intent through
+        # planning, generation, review, and evidence checks. Keep `question` intact
+        # for the public response contract and initial intent routing.
+        working_question = self._history_search_query(question, clean_history) or question
+        if not isinstance(working_question, str) or not working_question.strip():
+            working_question = question
         self._reset_deepseek_search_budget()
         self.server_search_sources = []
         self.model_usage = []
@@ -3991,7 +3997,7 @@ class WebAgent:
             if clean_mode == "auto" and intent_route == "WEB_DEEP":
                 plan["depth"] = "deep"
             if clean_mode == "auto":
-                normalized_question = _normalize_search_query(question).casefold()
+                normalized_question = _normalize_search_query(working_question).casefold()
                 deep_terms = (
                     "بحث عميق", "بحث معمق", "بحث شامل", "بالتفصيل", "قارن", "مقارنة",
                     "تحقق", "استقصاء", "deep research", "comprehensive", "in-depth", "compare",
@@ -4003,7 +4009,7 @@ class WebAgent:
                     # The planner may overclassify short lookups as deep research. Preserve
                     # the user's actual intent first and cap routine searches to three queries.
                     fallback_plan_queries = (
-                        fallback_plan(question, clean_history).get("queries") or []
+                        fallback_plan(working_question, clean_history).get("queries") or []
                     )
                     fallback_queries = [
                         compact_search_query(query)
@@ -4017,7 +4023,7 @@ class WebAgent:
                         if isinstance(query, str)
                     ]
                     model_queries = [query for query in model_queries if query]
-                    if self._is_navigation_request(question):
+                    if self._is_navigation_request(working_question):
                         navigation_seed = (
                             fallback_queries[0] if fallback_queries
                             else model_queries[0] if model_queries
@@ -4049,12 +4055,12 @@ class WebAgent:
                     f"{base_query} risks limitations alternatives",
                     f"{base_query} recent data reviews comparison",
                 ]
-                normalized_question = _normalize_search_query(question).casefold()
+                normalized_question = _normalize_search_query(working_question).casefold()
                 property_terms = (
                     "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
                     "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
                 )
-                if self._is_listing_discovery(question) and any(
+                if self._is_listing_discovery(working_question) and any(
                     term in normalized_question for term in property_terms
                 ):
                     deep_candidates.extend([
@@ -4067,7 +4073,7 @@ class WebAgent:
                 # This is a retrieval heuristic, not a guarantee that evidence exists.
                 criterion_queries = [
                     compact_search_query(f"{base_query} {target} official data specifications")
-                    for target in self._question_coverage_targets(question)
+                    for target in self._question_coverage_targets(working_question)
                 ]
                 criterion_queries = [
                     query for query in criterion_queries
@@ -4094,12 +4100,12 @@ class WebAgent:
                     f"{base_query} risks limitations alternatives",
                     f"{base_query} case studies recent analysis",
                 ]
-                normalized_question = _normalize_search_query(question).casefold()
+                normalized_question = _normalize_search_query(working_question).casefold()
                 property_terms = (
                     "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
                     "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
                 )
-                if self._is_listing_discovery(question) and any(
+                if self._is_listing_discovery(working_question) and any(
                     term in normalized_question for term in property_terms
                 ):
                     candidates.extend([
@@ -4112,7 +4118,7 @@ class WebAgent:
                 # dimensions such as price, battery, camera, privacy, or reliability.
                 criterion_queries = [
                     compact_search_query(f"{base_query} {target} official data specifications")
-                    for target in self._question_coverage_targets(question)
+                    for target in self._question_coverage_targets(working_question)
                 ]
                 criterion_queries = [
                     query for query in criterion_queries
@@ -4130,7 +4136,7 @@ class WebAgent:
                 plan["queries"] = list(dict.fromkeys(prioritized_queries))[:MAX_PLAN_QUERIES]
             elif clean_mode == "latest":
                 plan["freshness"] = "current"
-                if self._is_navigation_request(question):
+                if self._is_navigation_request(working_question):
                     # Preserve link-finding intent in the latest mode. Appending broad
                     # news modifiers here can turn "find the official website" into
                     # a news-search task and hide the destination the user requested.
@@ -4166,7 +4172,7 @@ class WebAgent:
             if intent_route == "LEAD_GENERATION" and clean_mode == "auto":
                 # Prospect discovery needs buyer-intent queries and public social signals,
                 # not just broad pages advertising the requested product.
-                plan["queries"] = self._lead_generation_queries(question, plan.get("queries", []))
+                plan["queries"] = self._lead_generation_queries(working_question, plan.get("queries", []))
                 plan["depth"] = "standard"
                 plan["freshness"] = "current"
                 plan["social_focus"] = True
@@ -4194,7 +4200,7 @@ class WebAgent:
             compacted_query = compact_search_query(raw_query)
             if compacted_query and _relevance_query_tokens(compacted_query):
                 final_topic_queries.append(compacted_query)
-        coverage_targets_for_budget = self._question_coverage_targets(question)
+        coverage_targets_for_budget = self._question_coverage_targets(working_question)
         # Reserve one bounded search slot for a post-review criterion-evidence gap.
         # Keep all explicit criterion queries when there are many dimensions; the
         # reserve applies only to ordinary compound tasks with up to six targets.
@@ -4261,7 +4267,7 @@ class WebAgent:
             candidate_queries = (
                 source.get("queries")
                 or plan.get("queries")
-                or [compact_search_query(question)]
+                or [compact_search_query(working_question)]
             )
             if any(self._source_matches_query(str(q), source) for q in candidate_queries):
                 filtered_sources.append(source)
@@ -4298,9 +4304,9 @@ class WebAgent:
         # Link-finding and lead-discovery are actionable discovery tasks, not broad
         # fact-checking. Keep useful candidates visible while explicitly labelling them
         # as uncorroborated instead of refusing a lone result as if it were no result.
-        navigation_request = self._is_navigation_request(question)
-        lead_request = intent_route == "LEAD_GENERATION" or self._is_lead_search(question)
-        listing_request = self._is_listing_discovery(question)
+        navigation_request = self._is_navigation_request(working_question)
+        lead_request = intent_route == "LEAD_GENERATION" or self._is_lead_search(working_question)
+        listing_request = self._is_listing_discovery(working_question)
         lead_evidence_sources: list[dict[str, Any]] = []
         related_lead_results_count = 0
         if lead_request:
@@ -4457,7 +4463,7 @@ class WebAgent:
                 base_query = (
                     original_queries[0]
                     if original_queries
-                    else compact_search_query(question)
+                    else compact_search_query(working_question)
                 )
                 suffix = (
                     "latest official primary source"
@@ -4524,7 +4530,7 @@ class WebAgent:
                     relevant_queries = list(dict.fromkeys(
                         query
                         for query in (
-                            compact_search_query(question),
+                            compact_search_query(working_question),
                             *(
                                 compact_search_query(candidate)
                                 for candidate in original_queries
@@ -4793,7 +4799,7 @@ class WebAgent:
                 reason, 0, [], "not_run"
             )
             citation_validation["status"] = "not_applicable_no_generated_answer"
-            coverage_targets = self._question_coverage_targets(question)
+            coverage_targets = self._question_coverage_targets(working_question)
             answer_coverage = {
                 "method": "explicit_criteria_heuristic",
                 "targets": coverage_targets,
@@ -4803,7 +4809,7 @@ class WebAgent:
                 ),
                 "automatically_graded": False,
             }
-            answer_integrity = audit_answer_integrity(question, reason, sources, coverage_targets)
+            answer_integrity = audit_answer_integrity(working_question, reason, sources, coverage_targets)
             answer_coverage["target_checks"] = answer_integrity["target_coverage"]
             answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
             answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
@@ -4876,7 +4882,7 @@ class WebAgent:
         generation_budget_exhausted = False
         try:
             answer = self._generate(
-                question,
+                working_question,
                 clean_history,
                 sources,
                 search_warning,
@@ -4890,7 +4896,7 @@ class WebAgent:
                 planned_queries = plan.get("queries", [])
                 if not isinstance(planned_queries, list):
                     planned_queries = []
-                for candidate_query in [question, *planned_queries]:
+                for candidate_query in [working_question, *planned_queries]:
                     if not isinstance(candidate_query, str):
                         continue
                     compacted_query = compact_search_query(candidate_query)
@@ -4943,7 +4949,7 @@ class WebAgent:
                 )
             answer = _fallback_answer(sources, reason)
 
-        coverage_targets = self._question_coverage_targets(question)
+        coverage_targets = self._question_coverage_targets(working_question)
         coverage_repair_status = "not_attempted"
         coverage_repair_warning: str | None = None
         review_status = "not_run"
@@ -4951,7 +4957,7 @@ class WebAgent:
         review_budget_exhausted = False
         if used_llm and sources:
             try:
-                answer = self._review_answer(question, answer, sources[:MAX_LLM_CITED_SOURCES])
+                answer = self._review_answer(working_question, answer, sources[:MAX_LLM_CITED_SOURCES])
                 review_status = "model_claim_audit_completed"
             except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
                 review_status = "model_claim_audit_unavailable"
@@ -4982,7 +4988,7 @@ class WebAgent:
             and self.api_key
         ):
             presearch_integrity = audit_answer_integrity(
-                question, answer, sources, coverage_targets
+                working_question, answer, sources, coverage_targets
             )
             source_gap_targets = [
                 item["target"]
@@ -5007,10 +5013,10 @@ class WebAgent:
                         "استعلامًا إضافيًا للتحقق منها؛ لذلك لا تُعدّ الإجابة مكتملة."
                     )
                 else:
-                    fallback_queries = fallback_plan(question, clean_history).get("queries", [])
+                    fallback_queries = fallback_plan(working_question, clean_history).get("queries", [])
                     topic_query = compact_search_query(
-                        fallback_queries[0] if fallback_queries else question
-                    ) or compact_search_query(question)
+                        fallback_queries[0] if fallback_queries else working_question
+                    ) or compact_search_query(working_question)
                     gap_query = compact_search_query(
                         f"{topic_query} {' '.join(source_gap_targets)} official specific evidence data"
                     )
@@ -5133,7 +5139,7 @@ class WebAgent:
                             )
                             try:
                                 revised_draft = self._generate(
-                                    question,
+                                    working_question,
                                     clean_history,
                                     sources,
                                     search_warning,
@@ -5141,7 +5147,7 @@ class WebAgent:
                                     search_report=report,
                                 )
                                 revised_answer = self._review_answer(
-                                    question, revised_draft, sources[:MAX_LLM_CITED_SOURCES]
+                                    working_question, revised_draft, sources[:MAX_LLM_CITED_SOURCES]
                                 )
                                 answer = revised_answer
                                 review_status = "model_claim_audit_completed"
@@ -5169,7 +5175,7 @@ class WebAgent:
             and sources
             and self.api_key
         ):
-            initial_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
+            initial_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets)
             missing_targets = [
                 item["target"] for item in initial_integrity["target_coverage"]
                 if item["status"] == "possibly_missing"
@@ -5191,12 +5197,12 @@ class WebAgent:
                 coverage_repair_status = "attempted"
                 try:
                     repaired_answer = self._repair_answer_coverage(
-                        question, answer, sources, missing_targets
+                        working_question, answer, sources, missing_targets
                     )
                     if repaired_answer.strip() != answer.strip():
                         try:
                             reaudit_answer = self._review_answer(
-                                question,
+                                working_question,
                                 repaired_answer,
                                 sources[:MAX_LLM_CITED_SOURCES],
                             )
@@ -5274,7 +5280,7 @@ class WebAgent:
         }
         report["answer_coverage"] = answer_coverage
         report["coverage_repair_status"] = coverage_repair_status
-        answer_integrity = audit_answer_integrity(question, answer, sources, coverage_targets)
+        answer_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets)
         answer_coverage["target_checks"] = answer_integrity["target_coverage"]
         answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
         answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]

@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000059 إلى SRC-90FAA34ADE-L000858
+- النطاق: SRC-90FAA34ADE-L000053 إلى SRC-90FAA34ADE-L000852
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000053](../../tests/fixtures/answer_quality_cases.json#L53) | 53 | `"        \"No unnecessary research\""` | — |
+| [SRC-90FAA34ADE-L000054](../../tests/fixtures/answer_quality_cases.json#L54) | 54 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000055](../../tests/fixtures/answer_quality_cases.json#L55) | 55 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000056](../../tests/fixtures/answer_quality_cases.json#L56) | 56 | `"        \"Starts a web search\","` | — |
+| [SRC-90FAA34ADE-L000057](../../tests/fixtures/answer_quality_cases.json#L57) | 57 | `"        \"Invented follow-up facts\""` | — |
+| [SRC-90FAA34ADE-L000058](../../tests/fixtures/answer_quality_cases.json#L58) | 58 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000059](../../tests/fixtures/answer_quality_cases.json#L59) | 59 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000060](../../tests/fixtures/answer_quality_cases.json#L60) | 60 | `"        \"type\": \"none\""` | — |
 | [SRC-90FAA34ADE-L000061](../../tests/fixtures/answer_quality_cases.json#L61) | 61 | `"      },"` | — |
@@ -810,9 +816,3 @@
 | [SRC-90FAA34ADE-L000850](../../tests/fixtures/answer_quality_cases.json#L850) | 850 | `"            \"snippet\": \"Apartment for sale in New Cairo. Contact through the listing platform.\","` | — |
 | [SRC-90FAA34ADE-L000851](../../tests/fixtures/answer_quality_cases.json#L851) | 851 | `"            \"domain\": \"listings.example.test\","` | — |
 | [SRC-90FAA34ADE-L000852](../../tests/fixtures/answer_quality_cases.json#L852) | 852 | `"            \"provider\": \"fixture_search\","` | — |
-| [SRC-90FAA34ADE-L000853](../../tests/fixtures/answer_quality_cases.json#L853) | 853 | `"            \"verification_status\": \"unverified\""` | — |
-| [SRC-90FAA34ADE-L000854](../../tests/fixtures/answer_quality_cases.json#L854) | 854 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000855](../../tests/fixtures/answer_quality_cases.json#L855) | 855 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000856](../../tests/fixtures/answer_quality_cases.json#L856) | 856 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000857](../../tests/fixtures/answer_quality_cases.json#L857) | 857 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000858](../../tests/fixtures/answer_quality_cases.json#L858) | 858 | `"        \"التصريح بأن الملكية أو التوافر verified من مصدر الإعلان وحده\","` | — |

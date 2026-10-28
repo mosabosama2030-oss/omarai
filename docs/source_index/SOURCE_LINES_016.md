@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000194 إلى SRC-D17CE3D12F-L000090
+- النطاق: SRC-E73001D9AC-L000188 إلى SRC-D17CE3D12F-L000084
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000188](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L188) | 188 | `"- المدخلات والمخرجات والمخطط المتوقع."` | — |
+| [SRC-E73001D9AC-L000189](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L189) | 189 | `"- الصلاحيات التي تحتاجها."` | — |
+| [SRC-E73001D9AC-L000190](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L190) | 190 | `"- مهلة التنفيذ والميزانية والحدود القصوى."` | — |
+| [SRC-E73001D9AC-L000191](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L191) | 191 | `"- ما إذا كانت للقراءة فقط أم ذات أثر خارجي."` | — |
+| [SRC-E73001D9AC-L000192](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L192) | 192 | `"- طريقة فحص صحتها، وحدود الفحص، ووقت آخر تحقق."` | — |
+| [SRC-E73001D9AC-L000193](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L193) | 193 | `"- مخاطرها وطريقة تعطيلها."` | — |
 | [SRC-E73001D9AC-L000194](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L194) | 194 | `"- اختبارات النجاح والفشل والسلوك عند انقطاع الاتصال."` | — |
 | [SRC-E73001D9AC-L000195](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L195) | 195 | `""` | — |
 | [SRC-E73001D9AC-L000196](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L196) | 196 | `"لا تُظهر المنظومة الأداة على أنها جاهزة لمجرد وجود مفتاح إعداد لها. إعداد المفتاح يثبت وجود إعداد فقط، ولا يثبت الوصول أو الصلاحيات أو النجاح الفعلي."` | — |
@@ -819,9 +825,3 @@
 | [SRC-D17CE3D12F-L000082](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L82) | 82 | `""` | — |
 | [SRC-D17CE3D12F-L000083](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L83) | 83 | `"## 5. مراجعة الاستعداد للإنتاج (Production Readiness Review)"` | — |
 | [SRC-D17CE3D12F-L000084](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L84) | 84 | `""` | — |
-| [SRC-D17CE3D12F-L000085](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L85) | 85 | `"قبل إطلاق قدرة ذات أثر ملحوظ أو تعريض بيانات حقيقية لها، تتم مراجعة تناسبية تشمل:"` | — |
-| [SRC-D17CE3D12F-L000086](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L86) | 86 | `"- قائمة اعتماديات خارجية وحدود حصصها وطرق تعطلها."` | — |
-| [SRC-D17CE3D12F-L000087](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L87) | 87 | `"- إعدادات البيئة والأسرار والمنافذ ونقاط الإدارة."` | — |
-| [SRC-D17CE3D12F-L000088](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L88) | 88 | `"- الصحة والجاهزية والإغلاق الآمن."` | — |
-| [SRC-D17CE3D12F-L000089](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L89) | 89 | `"- سجلات ومقاييس وتنبيهات ذات معنى."` | — |
-| [SRC-D17CE3D12F-L000090](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L90) | 90 | `"- سياسة الوقت والموارد وإعادة المحاولة والإلغاء."` | — |

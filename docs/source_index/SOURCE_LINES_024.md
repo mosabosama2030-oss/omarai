@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000859 إلى SRC-B3062EB677-L000006
+- النطاق: SRC-90FAA34ADE-L000853 إلى SRC-4CCB1F172B-L000230
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000853](../../tests/fixtures/answer_quality_cases.json#L853) | 853 | `"            \"verification_status\": \"unverified\""` | — |
+| [SRC-90FAA34ADE-L000854](../../tests/fixtures/answer_quality_cases.json#L854) | 854 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000855](../../tests/fixtures/answer_quality_cases.json#L855) | 855 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000856](../../tests/fixtures/answer_quality_cases.json#L856) | 856 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000857](../../tests/fixtures/answer_quality_cases.json#L857) | 857 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000858](../../tests/fixtures/answer_quality_cases.json#L858) | 858 | `"        \"التصريح بأن الملكية أو التوافر verified من مصدر الإعلان وحده\","` | — |
 | [SRC-90FAA34ADE-L000859](../../tests/fixtures/answer_quality_cases.json#L859) | 859 | `"        \"تسجيل نية شراء مؤكدة دون دليل\""` | — |
 | [SRC-90FAA34ADE-L000860](../../tests/fixtures/answer_quality_cases.json#L860) | 860 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000861](../../tests/fixtures/answer_quality_cases.json#L861) | 861 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
@@ -828,18 +834,3 @@
 | [SRC-4CCB1F172B-L000228](../../tests/test_answer_quality_corpus.py#L228) | 228 | `"    assert \"SEE_LOCAL_FILE\" not in raw"` | — |
 | [SRC-4CCB1F172B-L000229](../../tests/test_answer_quality_corpus.py#L229) | 229 | `"    data = _load_corpus()"` | — |
 | [SRC-4CCB1F172B-L000230](../../tests/test_answer_quality_corpus.py#L230) | 230 | `"    assert len(data[\"cases\"]) == data[\"case_count\"] == 45"` | — |
-## اختبارات
-
-### FILE-B3062EB677 — [tests/test_answer_quality_runner.py](../../tests/test_answer_quality_runner.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B3062EB677-L000001](../../tests/test_answer_quality_runner.py#L1) | 1 | `"\"\"\"Offline tests for scripts/run_answer_quality_benchmark.py (no network).\"\"\""` | — |
-| [SRC-B3062EB677-L000002](../../tests/test_answer_quality_runner.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-B3062EB677-L000003](../../tests/test_answer_quality_runner.py#L3) | 3 | `""` | — |
-| [SRC-B3062EB677-L000004](../../tests/test_answer_quality_runner.py#L4) | 4 | `"import importlib.util"` | — |
-| [SRC-B3062EB677-L000005](../../tests/test_answer_quality_runner.py#L5) | 5 | `"import json"` | — |
-| [SRC-B3062EB677-L000006](../../tests/test_answer_quality_runner.py#L6) | 6 | `"import sys"` | — |

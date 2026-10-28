@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000017 إلى SRC-0F910493E8-L000241
+- النطاق: SRC-65551FB29F-L000011 إلى SRC-0F910493E8-L000235
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000011](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L11) | 11 | `"---"` | — |
+| [SRC-65551FB29F-L000012](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L12) | 12 | `""` | — |
+| [SRC-65551FB29F-L000013](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L13) | 13 | `"## 0. الغرض الأعلى"` | — |
+| [SRC-65551FB29F-L000014](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L14) | 14 | `""` | — |
+| [SRC-65551FB29F-L000015](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L15) | 15 | `"هذه الوثيقة تحول مجموعة المتطلبات الهندسية إلى نظام حوكمة قابل للاستمرار: ما الذي نطلبه؟ لماذا؟ متى ينطبق؟ أين يُنفذ؟ كيف يُختبر؟ ما الدليل؟ ما المخاطر المتبقية؟ ومن يملك قرار القبول؟"` | — |
+| [SRC-65551FB29F-L000016](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L16) | 16 | `""` | — |
 | [SRC-65551FB29F-L000017](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L17) | 17 | `"الهدف ليس تكبير عدد الأوراق أو تقليد كل تقنية تستخدمها شركة عملاقة، بل منع الفجوات من الضياع بين التخطيط والتصميم والتنفيذ والاختبار والتشغيل. لا توجد قائمة عامة يمكنها سرد كل سياسة داخلية لدى كل منصة عالمية؛ هذا السجل يغطي المجالات العامة المعروفة ويجعل مراجعة النواقص عملية مستمرة."` | — |
 | [SRC-65551FB29F-L000018](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L18) | 18 | `""` | — |
 | [SRC-65551FB29F-L000019](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L19) | 19 | `"## 1. مبادئ غير قابلة للتفاوض"` | — |
@@ -819,9 +825,3 @@
 | [SRC-0F910493E8-L000233](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L233) | 233 | `""` | — |
 | [SRC-0F910493E8-L000234](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L234) | 234 | `"قواعد ملزمة مقترحة:"` | — |
 | [SRC-0F910493E8-L000235](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L235) | 235 | `"- لا وصول مباشر من النموذج إلى أسرار البيئة."` | — |
-| [SRC-0F910493E8-L000236](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L236) | 236 | `"- لا تنفيذ أوامر عامة أو كود حر ينتجه المستخدم أو النموذج."` | — |
-| [SRC-0F910493E8-L000237](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L237) | 237 | `"- تمر الاتصالات الخارجية عبر موصلات معروفة بضوابط شبكة ومهلة وحجم."` | — |
-| [SRC-0F910493E8-L000238](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L238) | 238 | `"- نتائج أدوات البحث والصفحات الخارجية بيانات غير موثوقة وليست تعليمات نظام."` | — |
-| [SRC-0F910493E8-L000239](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L239) | 239 | `"- الأفعال الخارجية ذات الأثر تحتاج إلى تفويض وموافقة مناسبة حسب مستوى المخاطر."` | — |
-| [SRC-0F910493E8-L000240](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L240) | 240 | `"- يجب أن يكون لكل أداة وسيلة إيقاف وحدود موارد وسياسة فشل."` | — |
-| [SRC-0F910493E8-L000241](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L241) | 241 | `"- لا يستطيع ملف أو مهارة أو وكيل تجاوز الميزانية أو توسيع الصلاحيات ذاتيًا."` | — |

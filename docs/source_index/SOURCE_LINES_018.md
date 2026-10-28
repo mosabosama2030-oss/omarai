@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000891 إلى SRC-65551FB29F-L000016
+- النطاق: SRC-D17CE3D12F-L000885 إلى SRC-65551FB29F-L000010
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000885](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L885) | 885 | `"## 60. البيانات الاصطناعية ومجموعات الاختبار وحماية بيانات الإنتاج"` | — |
+| [SRC-D17CE3D12F-L000886](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L886) | 886 | `""` | — |
+| [SRC-D17CE3D12F-L000887](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L887) | 887 | `"1. SHOULD تفضيل بيانات اختبار اصطناعية أو منقحة عند تطوير واختبار الميزات."` | — |
+| [SRC-D17CE3D12F-L000888](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L888) | 888 | `"2. MUST عدم نسخ قاعدة الإنتاج إلى جهاز مطور أو منصة اختبار دون ضوابط وتصريح وحاجة واضحة."` | — |
+| [SRC-D17CE3D12F-L000889](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L889) | 889 | `"3. MUST إزالة الأسرار والمعرفات والبيانات الشخصية من fixtures ولقطات الأخطاء وملفات التسجيل."` | — |
+| [SRC-D17CE3D12F-L000890](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L890) | 890 | `"4. SHOULD امتلاك مجموعة اختبار ثابتة للإجابة العربية تشمل حقائق زمنية وأسئلة مبهمة ومصادر متعارضة ورفضًا صحيحًا وحقن تعليمات."` | — |
 | [SRC-D17CE3D12F-L000891](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L891) | 891 | `"5. MUST فصل بيانات التقييم عن بيانات التطوير التي استعملت لصياغة نفس التوقعات، متى كانت الاستقلالية مهمة لتجنب التضخيم الوهمي للأداء."` | — |
 | [SRC-D17CE3D12F-L000892](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L892) | 892 | `"6. SHOULD كشف التكرارات والتلوث بين مجموعات الاختبار لتقليل خطر النجاح المصطنع."` | — |
 | [SRC-D17CE3D12F-L000893](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L893) | 893 | `"7. MUST أن تكون معايير نجاح التقييم محددة قبل تشغيله قدر الإمكان، لا متغيرة بعد رؤية النتيجة."` | — |
@@ -855,9 +861,3 @@
 | [SRC-65551FB29F-L000008](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | 8 | ``"**يرتبط بـ:** `AGENTS.md`، و`OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md`، و`OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md`، و`OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md`؛ ويشكل هذا الملف طبقة التتبع وإثبات التنفيذ، لا بديلًا عن المعايير الفنية. ويجب استخدام القسم 17 من المعمارية لتحديد ضوابط الأمن السيبراني وحدود الثقة والاختبارات المرتبطة بكل تغيير في الأدوات أو المهارات أو سير العمل أو الوكلاء. ويُنفذ سجل البنود الأولي في [OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md)، ويجب تحديثه بعد كل تدقيق جوهري.  "`` | — |
 | [SRC-65551FB29F-L000009](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L9) | 9 | `"**قاعدة الحالة:** إنشاء المتطلب أو توثيقه لا يثبت تنفيذه. يجب أن يبقى كل بند غير مفحوص UNKNOWN أو PROPOSED إلى أن يثبت العكس بدليل مرتبط بنسخة كود وبيئة محددتين."` | — |
 | [SRC-65551FB29F-L000010](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L10) | 10 | `""` | — |
-| [SRC-65551FB29F-L000011](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L11) | 11 | `"---"` | — |
-| [SRC-65551FB29F-L000012](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L12) | 12 | `""` | — |
-| [SRC-65551FB29F-L000013](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L13) | 13 | `"## 0. الغرض الأعلى"` | — |
-| [SRC-65551FB29F-L000014](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L14) | 14 | `""` | — |
-| [SRC-65551FB29F-L000015](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L15) | 15 | `"هذه الوثيقة تحول مجموعة المتطلبات الهندسية إلى نظام حوكمة قابل للاستمرار: ما الذي نطلبه؟ لماذا؟ متى ينطبق؟ أين يُنفذ؟ كيف يُختبر؟ ما الدليل؟ ما المخاطر المتبقية؟ ومن يملك قرار القبول؟"` | — |
-| [SRC-65551FB29F-L000016](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L16) | 16 | `""` | — |

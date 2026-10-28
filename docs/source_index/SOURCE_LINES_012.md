@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000056 إلى SRC-51D44BE378-L000063
+- النطاق: SRC-792A9A235D-L000050 إلى SRC-51D44BE378-L000057
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000050](../ANSWER_QUALITY_BENCHMARK_AR.md#L50) | 50 | `"### أبعاد المراجعة"` | — |
+| [SRC-792A9A235D-L000051](../ANSWER_QUALITY_BENCHMARK_AR.md#L51) | 51 | `""` | — |
+| [SRC-792A9A235D-L000052](../ANSWER_QUALITY_BENCHMARK_AR.md#L52) | 52 | `"1. اختيار الاستراتيجية"` | — |
+| [SRC-792A9A235D-L000053](../ANSWER_QUALITY_BENCHMARK_AR.md#L53) | 53 | `"2. صدق الأدلة وملاءمة المصادر"` | — |
+| [SRC-792A9A235D-L000054](../ANSWER_QUALITY_BENCHMARK_AR.md#L54) | 54 | `"3. اكتمال الإجابة"` | — |
+| [SRC-792A9A235D-L000055](../ANSWER_QUALITY_BENCHMARK_AR.md#L55) | 55 | `"4. معايرة عدم اليقين"` | — |
 | [SRC-792A9A235D-L000056](../ANSWER_QUALITY_BENCHMARK_AR.md#L56) | 56 | `"5. جودة العربية/الإنجليزية/المختلط"` | — |
 | [SRC-792A9A235D-L000057](../ANSWER_QUALITY_BENCHMARK_AR.md#L57) | 57 | `"6. مقاومة الحقن واستخراج الأسرار"` | — |
 | [SRC-792A9A235D-L000058](../ANSWER_QUALITY_BENCHMARK_AR.md#L58) | 58 | `"7. الصدق حول الأدوات/المزوّدات غير المتاحة"` | — |
@@ -873,9 +879,3 @@
 | [SRC-51D44BE378-L000055](../DEPLOY_SNAPDEPLOY_AR.md#L55) | 55 | `""` | — |
 | [SRC-51D44BE378-L000056](../DEPLOY_SNAPDEPLOY_AR.md#L56) | 56 | `"أنشئ رمز الوصول في Termux محليًا باستخدام Python، ثم انسخه مباشرة إلى خانة السر في SnapDeploy:"` | — |
 | [SRC-51D44BE378-L000057](../DEPLOY_SNAPDEPLOY_AR.md#L57) | 57 | `""` | — |
-| [SRC-51D44BE378-L000058](../DEPLOY_SNAPDEPLOY_AR.md#L58) | 58 | ````"```bash"```` | — |
-| [SRC-51D44BE378-L000059](../DEPLOY_SNAPDEPLOY_AR.md#L59) | 59 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
-| [SRC-51D44BE378-L000060](../DEPLOY_SNAPDEPLOY_AR.md#L60) | 60 | ````"```"```` | — |
-| [SRC-51D44BE378-L000061](../DEPLOY_SNAPDEPLOY_AR.md#L61) | 61 | `""` | — |
-| [SRC-51D44BE378-L000062](../DEPLOY_SNAPDEPLOY_AR.md#L62) | 62 | `"لا ترسل الرمز أو مفتاح OpenRouter إلى ChatGPT أو DeepSeek، ولا تضعهما في GitHub أو ملف README أو لقطات شاشة. لا تستخدم مفتاح OpenRouter نفسه رمزًا لدخول التطبيق."` | — |
-| [SRC-51D44BE378-L000063](../DEPLOY_SNAPDEPLOY_AR.md#L63) | 63 | `""` | — |
