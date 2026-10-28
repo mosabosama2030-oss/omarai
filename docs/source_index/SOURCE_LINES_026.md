@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000242 إلى SRC-90FAA34ADE-L000240
+- النطاق: SRC-4FFD5AFC54-L000234 إلى SRC-90FAA34ADE-L000232
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000234](../../scripts/run_answer_quality_benchmark.py#L234) | 234 | `"    cases = data[\"cases\"]"` | — |
+| [SRC-4FFD5AFC54-L000235](../../scripts/run_answer_quality_benchmark.py#L235) | 235 | `"    cats = sorted({c[\"category\"] for c in cases})"` | — |
+| [SRC-4FFD5AFC54-L000236](../../scripts/run_answer_quality_benchmark.py#L236) | 236 | `"    langs = sorted({c[\"language\"] for c in cases})"` | — |
+| [SRC-4FFD5AFC54-L000237](../../scripts/run_answer_quality_benchmark.py#L237) | 237 | `"    print(\"VALIDATE OK\")"` | — |
+| [SRC-4FFD5AFC54-L000238](../../scripts/run_answer_quality_benchmark.py#L238) | 238 | `"    print(f\"benchmark_id={data.get('benchmark_id')} version={data.get('version')}\")"` | — |
+| [SRC-4FFD5AFC54-L000239](../../scripts/run_answer_quality_benchmark.py#L239) | 239 | `"    print(f\"cases={len(cases)} categories={len(cats)} languages={langs}\")"` | — |
+| [SRC-4FFD5AFC54-L000240](../../scripts/run_answer_quality_benchmark.py#L240) | 240 | `"    if summary:"` | — |
+| [SRC-4FFD5AFC54-L000241](../../scripts/run_answer_quality_benchmark.py#L241) | 241 | `"        from collections import Counter"` | — |
 | [SRC-4FFD5AFC54-L000242](../../scripts/run_answer_quality_benchmark.py#L242) | 242 | `""` | — |
 | [SRC-4FFD5AFC54-L000243](../../scripts/run_answer_quality_benchmark.py#L243) | 243 | `"        print(\"strategies:\", dict(Counter(c[\"expected_strategy\"] for c in cases)))"` | — |
 | [SRC-4FFD5AFC54-L000244](../../scripts/run_answer_quality_benchmark.py#L244) | 244 | `"        print(\"eval_modes:\", dict(Counter(c[\"evaluation_mode\"] for c in cases)))"` | — |
@@ -835,11 +843,3 @@
 | [SRC-90FAA34ADE-L000230](../../tests/fixtures/answer_quality_cases.json#L230) | 230 | `"        \"Answers only the first bullet and pretends complete\","` | — |
 | [SRC-90FAA34ADE-L000231](../../tests/fixtures/answer_quality_cases.json#L231) | 231 | `"        \"Gives legal advice as absolute without disclaimer\""` | — |
 | [SRC-90FAA34ADE-L000232](../../tests/fixtures/answer_quality_cases.json#L232) | 232 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000233](../../tests/fixtures/answer_quality_cases.json#L233) | 233 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000234](../../tests/fixtures/answer_quality_cases.json#L234) | 234 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000235](../../tests/fixtures/answer_quality_cases.json#L235) | 235 | `"        \"notes\": \"Reviewer checks completeness across three asks\""` | — |
-| [SRC-90FAA34ADE-L000236](../../tests/fixtures/answer_quality_cases.json#L236) | 236 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000237](../../tests/fixtures/answer_quality_cases.json#L237) | 237 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000238](../../tests/fixtures/answer_quality_cases.json#L238) | 238 | `"        \"One or more subquestions ignored with no acknowledgment\""` | — |
-| [SRC-90FAA34ADE-L000239](../../tests/fixtures/answer_quality_cases.json#L239) | 239 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000240](../../tests/fixtures/answer_quality_cases.json#L240) | 240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |

@@ -372,8 +372,8 @@
 | [SRC-59CF4B7DE8-L000299](../../agents/research.py#L299) | 299 | `"        limit=MAX_PLAN_QUERIES,"` | — |
 | [SRC-59CF4B7DE8-L000300](../../agents/research.py#L300) | 300 | `"        compact_fn=compact_search_query,"` | — |
 | [SRC-59CF4B7DE8-L000301](../../agents/research.py#L301) | 301 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000302](../../agents/research.py#L302) | 302 | `"    if matrix:"` | — |
-| [SRC-59CF4B7DE8-L000303](../../agents/research.py#L303) | 303 | `"        result[\"queries\"] = [row[\"query\"] for row in matrix]"` | — |
+| [SRC-59CF4B7DE8-L000302](../../agents/research.py#L302) | 302 | `"    # This layer records strategies but does not mutate executable queries."` | — |
+| [SRC-59CF4B7DE8-L000303](../../agents/research.py#L303) | 303 | `"    # The request runner applies them only after it knows the selected mode and budget."` | — |
 | [SRC-59CF4B7DE8-L000304](../../agents/research.py#L304) | 304 | `"    result[\"task_spec\"] = spec"` | — |
 | [SRC-59CF4B7DE8-L000305](../../agents/research.py#L305) | 305 | `"    result[\"query_strategy_matrix\"] = matrix"` | — |
 | [SRC-59CF4B7DE8-L000306](../../agents/research.py#L306) | 306 | `"    return result"` | — |

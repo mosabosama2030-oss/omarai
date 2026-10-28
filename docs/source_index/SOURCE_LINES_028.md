@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001041 إلى SRC-D186ED3822-L000058
+- النطاق: SRC-90FAA34ADE-L001033 إلى SRC-D186ED3822-L000050
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001033](../../tests/fixtures/answer_quality_cases.json#L1033) | 1033 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001034](../../tests/fixtures/answer_quality_cases.json#L1034) | 1034 | `"            \"title\": \"Blog A\","` | — |
+| [SRC-90FAA34ADE-L001035](../../tests/fixtures/answer_quality_cases.json#L1035) | 1035 | `"            \"url\": \"https://blog-a.example.test/stop\","` | — |
+| [SRC-90FAA34ADE-L001036](../../tests/fixtures/answer_quality_cases.json#L1036) | 1036 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001037](../../tests/fixtures/answer_quality_cases.json#L1037) | 1037 | `"            \"domain\": \"blog-a.example.test\","` | — |
+| [SRC-90FAA34ADE-L001038](../../tests/fixtures/answer_quality_cases.json#L1038) | 1038 | `"            \"provider\": \"fixture_a\""` | — |
+| [SRC-90FAA34ADE-L001039](../../tests/fixtures/answer_quality_cases.json#L1039) | 1039 | `"          },"` | — |
+| [SRC-90FAA34ADE-L001040](../../tests/fixtures/answer_quality_cases.json#L1040) | 1040 | `"          {"` | — |
 | [SRC-90FAA34ADE-L001041](../../tests/fixtures/answer_quality_cases.json#L1041) | 1041 | `"            \"title\": \"Blog B\","` | — |
 | [SRC-90FAA34ADE-L001042](../../tests/fixtures/answer_quality_cases.json#L1042) | 1042 | `"            \"url\": \"https://blog-b.example.test/stop\","` | — |
 | [SRC-90FAA34ADE-L001043](../../tests/fixtures/answer_quality_cases.json#L1043) | 1043 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
@@ -844,11 +852,3 @@
 | [SRC-D186ED3822-L000048](../../tests/test_answer_quality_review_scorecard.py#L48) | 48 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] == 0.6"` | — |
 | [SRC-D186ED3822-L000049](../../tests/test_answer_quality_review_scorecard.py#L49) | 49 | `"    assert result[\"metrics\"][\"retrieval_recall\"][\"score\"] == 0.75"` | — |
 | [SRC-D186ED3822-L000050](../../tests/test_answer_quality_review_scorecard.py#L50) | 50 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] == 0.8"` | — |
-| [SRC-D186ED3822-L000051](../../tests/test_answer_quality_review_scorecard.py#L51) | 51 | `"    assert result[\"metrics\"][\"correctness\"][\"score\"] == 0.75"` | — |
-| [SRC-D186ED3822-L000052](../../tests/test_answer_quality_review_scorecard.py#L52) | 52 | `"    assert result[\"metrics\"][\"citation_support\"][\"score\"] == pytest.approx(2 / 3, abs=0.0001)"` | — |
-| [SRC-D186ED3822-L000053](../../tests/test_answer_quality_review_scorecard.py#L53) | 53 | `"    assert result[\"metrics\"][\"writing_quality_1_to_5\"][\"score\"] == 4.0"` | — |
-| [SRC-D186ED3822-L000054](../../tests/test_answer_quality_review_scorecard.py#L54) | 54 | `"    assert result[\"case_status_counts\"][\"NOT_TESTED\"] == 1"` | — |
-| [SRC-D186ED3822-L000055](../../tests/test_answer_quality_review_scorecard.py#L55) | 55 | `"    assert result[\"unique_reviewed_case_count\"] == 2"` | — |
-| [SRC-D186ED3822-L000056](../../tests/test_answer_quality_review_scorecard.py#L56) | 56 | `"    assert result[\"automatic_answer_grading\"] is False"` | — |
-| [SRC-D186ED3822-L000057](../../tests/test_answer_quality_review_scorecard.py#L57) | 57 | `"    assert result[\"ragas_executed\"] is False"` | — |
-| [SRC-D186ED3822-L000058](../../tests/test_answer_quality_review_scorecard.py#L58) | 58 | `""` | — |

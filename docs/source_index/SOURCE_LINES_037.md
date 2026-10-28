@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000082 إلى SRC-F725E90B2A-L000732
+- النطاق: SRC-AFEDC2645A-L000074 إلى SRC-F725E90B2A-L000724
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000074](../../tests/test_task_understanding.py#L74) | 74 | `""` | — |
+| [SRC-AFEDC2645A-L000075](../../tests/test_task_understanding.py#L75) | 75 | `""` | — |
+| [SRC-AFEDC2645A-L000076](../../tests/test_task_understanding.py#L76) | 76 | `"def test_ambiguous_followup_is_not_reported_as_a_confident_interpretation():"` | — |
+| [SRC-AFEDC2645A-L000077](../../tests/test_task_understanding.py#L77) | 77 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000078](../../tests/test_task_understanding.py#L78) | 78 | `"        \"كام سعرها؟\","` | — |
+| [SRC-AFEDC2645A-L000079](../../tests/test_task_understanding.py#L79) | 79 | `"        mode=\"auto\","` | — |
+| [SRC-AFEDC2645A-L000080](../../tests/test_task_understanding.py#L80) | 80 | `"        intent_route=\"CLARIFY\","` | — |
+| [SRC-AFEDC2645A-L000081](../../tests/test_task_understanding.py#L81) | 81 | `"        dialogue_context={\"needs_clarification\": True},"` | — |
 | [SRC-AFEDC2645A-L000082](../../tests/test_task_understanding.py#L82) | 82 | `"    )"` | — |
 | [SRC-AFEDC2645A-L000083](../../tests/test_task_understanding.py#L83) | 83 | `"    assert spec[\"task_family\"] == \"ambiguous_or_incomplete\""` | — |
 | [SRC-AFEDC2645A-L000084](../../tests/test_task_understanding.py#L84) | 84 | `"    assert spec[\"ambiguity_status\"] == \"needs_clarification\""` | — |
@@ -817,11 +825,3 @@
 | [SRC-F725E90B2A-L000722](../../tests/test_web_agent.py#L722) | 722 | `"            raise urllib.error.HTTPError("` | — |
 | [SRC-F725E90B2A-L000723](../../tests/test_web_agent.py#L723) | 723 | `"                request.full_url,"` | — |
 | [SRC-F725E90B2A-L000724](../../tests/test_web_agent.py#L724) | 724 | `"                503,"` | — |
-| [SRC-F725E90B2A-L000725](../../tests/test_web_agent.py#L725) | 725 | `"                \"service unavailable\","` | — |
-| [SRC-F725E90B2A-L000726](../../tests/test_web_agent.py#L726) | 726 | `"                hdrs=None,"` | — |
-| [SRC-F725E90B2A-L000727](../../tests/test_web_agent.py#L727) | 727 | `"                fp=io.BytesIO(b\"private provider diagnostics\"),"` | — |
-| [SRC-F725E90B2A-L000728](../../tests/test_web_agent.py#L728) | 728 | `"            )"` | — |
-| [SRC-F725E90B2A-L000729](../../tests/test_web_agent.py#L729) | 729 | `"        return FakeResponse()"` | — |
-| [SRC-F725E90B2A-L000730](../../tests/test_web_agent.py#L730) | 730 | `""` | — |
-| [SRC-F725E90B2A-L000731](../../tests/test_web_agent.py#L731) | 731 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-F725E90B2A-L000732](../../tests/test_web_agent.py#L732) | 732 | `"    result = agent._request_completion("` | — |

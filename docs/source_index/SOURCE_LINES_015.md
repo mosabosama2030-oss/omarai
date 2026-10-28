@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000641 إلى SRC-914817100D-L000067
+- النطاق: SRC-EEF2E6447C-L000633 إلى SRC-914817100D-L000059
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000633](../../api/omarai.py#L633) | 633 | `"    if any(term in normalized for term in (\"كام عميل\", \"كم عميل\", \"عدد العملاء\", \"عدد الاشارات\", \"الاحصائيات\", \"احصائيات\")):"` | — |
+| [SRC-EEF2E6447C-L000634](../../api/omarai.py#L634) | 634 | `"        keys = (\"new\", \"qualified\", \"contacted\", \"converted\", \"needs_review\", \"rejected\")"` | — |
+| [SRC-EEF2E6447C-L000635](../../api/omarai.py#L635) | 635 | `"        by_status = {key: sum(lead[\"status\"] == key for lead in leads) for key in keys}"` | — |
+| [SRC-EEF2E6447C-L000636](../../api/omarai.py#L636) | 636 | `"        high = sum(lead[\"assessment\"][\"label\"] == \"high_intent\" for lead in leads)"` | — |
+| [SRC-EEF2E6447C-L000637](../../api/omarai.py#L637) | 637 | `"        answer = \"في السجل المحلي \" + str(len(leads)) + \" إشارة، منها \" + str(high) + \" بإشارة قوية نسبيًا وفق القواعد. الحالات: جديد \" + str(by_status[\"new\"]) + \"، مؤهل \" + str(by_status[\"qualified\"]) + \"، تم التواصل \" + str(by_status[\"contacted\"]) + \"، تم البيع \" + str(by_status[\"converted\"]) + \"، تحتاج مراجعة \" + str(by_status[\"needs_review\"]) + \"، مرفوض \" + str(by_status[\"rejected\"]) + \".\""` | — |
+| [SRC-EEF2E6447C-L000638](../../api/omarai.py#L638) | 638 | `"        return {\"answer\": answer, \"kind\": \"local_statistics\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000639](../../api/omarai.py#L639) | 639 | `"    if any(term in normalized for term in (\"ليه الدرجه\", \"سبب الدرجه\", \"طريقة التقييم\", \"بتقيم ازاي\", \"معيار التقييم\")):"` | — |
+| [SRC-EEF2E6447C-L000640](../../api/omarai.py#L640) | 640 | `"        latest = max(leads, key=lambda item: item[\"updated_at\"], default=None)"` | — |
 | [SRC-EEF2E6447C-L000641](../../api/omarai.py#L641) | 641 | `"        if latest:"` | — |
 | [SRC-EEF2E6447C-L000642](../../api/omarai.py#L642) | 642 | `"            signals = \"، \".join(signal[\"phrase\"] for signal in latest[\"assessment\"][\"matched_signals\"]) or \"لم تُطابق عبارات معروفة\""` | — |
 | [SRC-EEF2E6447C-L000643](../../api/omarai.py#L643) | 643 | `"            answer = \"الإشارة الأحدث درجتها \" + str(latest[\"assessment\"][\"score\"]) + \"/100 لأن القواعد طابقت: \" + signals + \". الدرجة ليست احتمالًا إحصائيًا ولا تثبت نية الكاتب.\""` | — |
@@ -889,11 +897,3 @@
 | [SRC-914817100D-L000057](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L57) | 57 | `""` | — |
 | [SRC-914817100D-L000058](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L58) | 58 | `"## بوابة القبول"` | — |
 | [SRC-914817100D-L000059](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L59) | 59 | `""` | — |
-| [SRC-914817100D-L000060](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L60) | 60 | `"\| البند \| دليل القبول المطلوب \|"` | — |
-| [SRC-914817100D-L000061](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L61) | 61 | `"\|---\|---\|"` | — |
-| [SRC-914817100D-L000062](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L62) | 62 | `"\| حفظ المحاور \| كل معيار صريح محفوظ في تقرير التغطية \|"` | — |
-| [SRC-914817100D-L000063](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L63) | 63 | `"\| بحث لكل معيار \| استعلام منفصل لكل معيار ضمن حد الاستعلامات \|"` | — |
-| [SRC-914817100D-L000064](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L64) | 64 | `"\| أدلة لكل معيار \| إشارة مصدر مستقلة عن وجود الكلمات في الإجابة \|"` | — |
-| [SRC-914817100D-L000065](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L65) | 65 | `"\| صدق الحالة \| لا تتحول الإشارة اللفظية إلى ادعاء تحقق دلالي \|"` | — |
-| [SRC-914817100D-L000066](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L66) | 66 | `"\| الاستشهادات \| لا تُقبل مؤشرات مصدر خارج نطاق المصادر المرسلة للنموذج \|"` | — |
-| [SRC-914817100D-L000067](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L67) | 67 | `"\| فجوات الأدلة \| تظهر المحاور التي لا توجد لها إشارات مصدر \|"` | — |

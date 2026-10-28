@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000131 إلى SRC-6BF96689A8-L000290
+- النطاق: SRC-4397BC2CD2-L000123 إلى SRC-6BF96689A8-L000282
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4397BC2CD2-L000123](../../tests/test_intent_router_integration.py#L123) | 123 | `"    assert \"iPhone 17\" in seen[\"generation_question\"]"` | — |
+| [SRC-4397BC2CD2-L000124](../../tests/test_intent_router_integration.py#L124) | 124 | `"    assert \"كام سعرها\" in seen[\"generation_question\"]"` | — |
+| [SRC-4397BC2CD2-L000125](../../tests/test_intent_router_integration.py#L125) | 125 | `"    assert seen[\"review_question\"] == seen[\"generation_question\"]"` | — |
+| [SRC-4397BC2CD2-L000126](../../tests/test_intent_router_integration.py#L126) | 126 | `""` | — |
+| [SRC-4397BC2CD2-L000127](../../tests/test_intent_router_integration.py#L127) | 127 | `""` | — |
+| [SRC-4397BC2CD2-L000128](../../tests/test_intent_router_integration.py#L128) | 128 | `"def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch) -> None:"` | — |
+| [SRC-4397BC2CD2-L000129](../../tests/test_intent_router_integration.py#L129) | 129 | `"    agent = WebAgent()"` | — |
+| [SRC-4397BC2CD2-L000130](../../tests/test_intent_router_integration.py#L130) | 130 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-4397BC2CD2-L000131](../../tests/test_intent_router_integration.py#L131) | 131 | `"    seen: dict = {\"plans\": []}"` | — |
 | [SRC-4397BC2CD2-L000132](../../tests/test_intent_router_integration.py#L132) | 132 | `"    history = []"` | — |
 | [SRC-4397BC2CD2-L000133](../../tests/test_intent_router_integration.py#L133) | 133 | `""` | — |
@@ -853,11 +861,3 @@
 | [SRC-6BF96689A8-L000280](../../tests/test_research.py#L280) | 280 | `""` | — |
 | [SRC-6BF96689A8-L000281](../../tests/test_research.py#L281) | 281 | `"def test_collect_research_compacts_queries_before_provider_calls(monkeypatch):"` | — |
 | [SRC-6BF96689A8-L000282](../../tests/test_research.py#L282) | 282 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-6BF96689A8-L000283](../../tests/test_research.py#L283) | 283 | `""` | — |
-| [SRC-6BF96689A8-L000284](../../tests/test_research.py#L284) | 284 | `"    agent = WebAgent()"` | — |
-| [SRC-6BF96689A8-L000285](../../tests/test_research.py#L285) | 285 | `"    seen = []"` | — |
-| [SRC-6BF96689A8-L000286](../../tests/test_research.py#L286) | 286 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: seen.append(query) or [])"` | — |
-| [SRC-6BF96689A8-L000287](../../tests/test_research.py#L287) | 287 | `"    sources, _warnings, report = agent._collect_research({"` | — |
-| [SRC-6BF96689A8-L000288](../../tests/test_research.py#L288) | 288 | `"        \"queries\": ["` | — |
-| [SRC-6BF96689A8-L000289](../../tests/test_research.py#L289) | 289 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\""` | — |
-| [SRC-6BF96689A8-L000290](../../tests/test_research.py#L290) | 290 | `"        ],"` | — |

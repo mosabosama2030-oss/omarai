@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002873 إلى SRC-1AE03B9EC3-L003672
+- النطاق: SRC-1AE03B9EC3-L002865 إلى SRC-1AE03B9EC3-L003664
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002865](../../agents/web_agent.py#L2865) | 2865 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L002866](../../agents/web_agent.py#L2866) | 2866 | `"                attempted = False"` | — |
+| [SRC-1AE03B9EC3-L002867](../../agents/web_agent.py#L2867) | 2867 | `"            successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
+| [SRC-1AE03B9EC3-L002868](../../agents/web_agent.py#L2868) | 2868 | `"            error_response_statuses = set(statuses) & {\"http_error\", \"unauthorized\", \"rate_limited\"}"` | — |
+| [SRC-1AE03B9EC3-L002869](../../agents/web_agent.py#L2869) | 2869 | `"            uncertain_failure_statuses = set(statuses) & {\"timeout\", \"failed\", \"error\", \"unknown\", \"inconclusive\"}"` | — |
+| [SRC-1AE03B9EC3-L002870](../../agents/web_agent.py#L2870) | 2870 | `"            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or \"budget_exhausted\" in statuses)"` | — |
+| [SRC-1AE03B9EC3-L002871](../../agents/web_agent.py#L2871) | 2871 | `"            available: bool \| None = ("` | — |
+| [SRC-1AE03B9EC3-L002872](../../agents/web_agent.py#L2872) | 2872 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
 | [SRC-1AE03B9EC3-L002873](../../agents/web_agent.py#L2873) | 2873 | `"                else False if error_response_statuses or not ready or \"disabled\" in statuses or \"budget_exhausted\" in statuses"` | — |
 | [SRC-1AE03B9EC3-L002874](../../agents/web_agent.py#L2874) | 2874 | `"                else None"` | — |
 | [SRC-1AE03B9EC3-L002875](../../agents/web_agent.py#L2875) | 2875 | `"            )"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L003662](../../agents/web_agent.py#L3662) | 3662 | `"                \"content\": \"السؤال الأصلي:\\n\" + question[:MAX_QUESTION_CHARS],"` | — |
 | [SRC-1AE03B9EC3-L003663](../../agents/web_agent.py#L3663) | 3663 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L003664](../../agents/web_agent.py#L3664) | 3664 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003665](../../agents/web_agent.py#L3665) | 3665 | `"                \"role\": \"user\","` | — |
-| [SRC-1AE03B9EC3-L003666](../../agents/web_agent.py#L3666) | 3666 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003667](../../agents/web_agent.py#L3667) | 3667 | `"                    \"محاور قد تكون ناقصة بعد مراجعة الإجابة؛ قد يكون بعضها مغطى بمرادف:\\n\""` | — |
-| [SRC-1AE03B9EC3-L003668](../../agents/web_agent.py#L3668) | 3668 | `"                    + \"\\n\".join(\"- \" + str(target)[:120] for target in missing_targets[:8])"` | — |
-| [SRC-1AE03B9EC3-L003669](../../agents/web_agent.py#L3669) | 3669 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L003670](../../agents/web_agent.py#L3670) | 3670 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L003671](../../agents/web_agent.py#L3671) | 3671 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003672](../../agents/web_agent.py#L3672) | 3672 | `"                \"role\": \"user\","` | — |

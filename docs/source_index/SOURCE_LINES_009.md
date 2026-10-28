@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002073 إلى SRC-1AE03B9EC3-L002872
+- النطاق: SRC-1AE03B9EC3-L002065 إلى SRC-1AE03B9EC3-L002864
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002065](../../agents/web_agent.py#L2065) | 2065 | `"                hashtags = re.findall(r\"#([\\w\\u0600-\\u06FF]+)\", query, flags=re.UNICODE)"` | — |
+| [SRC-1AE03B9EC3-L002066](../../agents/web_agent.py#L2066) | 2066 | `"                if not hashtags:"` | — |
+| [SRC-1AE03B9EC3-L002067](../../agents/web_agent.py#L2067) | 2067 | `"                    words = re.findall(r\"[\\w\\u0600-\\u06FF]+\", query, flags=re.UNICODE)"` | — |
+| [SRC-1AE03B9EC3-L002068](../../agents/web_agent.py#L2068) | 2068 | `"                    stopwords = {"` | — |
+| [SRC-1AE03B9EC3-L002069](../../agents/web_agent.py#L2069) | 2069 | `"                        \"ابحث\", \"بحث\", \"عن\", \"في\", \"على\", \"من\", \"مع\", \"تجارب\","` | — |
+| [SRC-1AE03B9EC3-L002070](../../agents/web_agent.py#L2070) | 2070 | `"                        \"الناس\", \"العملاء\", \"منشورات\", \"تعليقات\", \"مواقع\", \"التواصل\","` | — |
+| [SRC-1AE03B9EC3-L002071](../../agents/web_agent.py#L2071) | 2071 | `"                        \"الاجتماعي\", \"public\", \"search\", \"social\", \"media\", \"posts\","` | — |
+| [SRC-1AE03B9EC3-L002072](../../agents/web_agent.py#L2072) | 2072 | `"                        \"find\", \"about\", \"with\", \"the\", \"and\", \"for\","` | — |
 | [SRC-1AE03B9EC3-L002073](../../agents/web_agent.py#L2073) | 2073 | `"                    }"` | — |
 | [SRC-1AE03B9EC3-L002074](../../agents/web_agent.py#L2074) | 2074 | `"                    useful = ["` | — |
 | [SRC-1AE03B9EC3-L002075](../../agents/web_agent.py#L2075) | 2075 | `"                        word for word in words"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L002862](../../agents/web_agent.py#L2862) | 2862 | `"                attempted: bool \| None = True"` | — |
 | [SRC-1AE03B9EC3-L002863](../../agents/web_agent.py#L2863) | 2863 | `"            elif any(value in uncertain_attempt_statuses for value in statuses):"` | — |
 | [SRC-1AE03B9EC3-L002864](../../agents/web_agent.py#L2864) | 2864 | `"                attempted = None"` | — |
-| [SRC-1AE03B9EC3-L002865](../../agents/web_agent.py#L2865) | 2865 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L002866](../../agents/web_agent.py#L2866) | 2866 | `"                attempted = False"` | — |
-| [SRC-1AE03B9EC3-L002867](../../agents/web_agent.py#L2867) | 2867 | `"            successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
-| [SRC-1AE03B9EC3-L002868](../../agents/web_agent.py#L2868) | 2868 | `"            error_response_statuses = set(statuses) & {\"http_error\", \"unauthorized\", \"rate_limited\"}"` | — |
-| [SRC-1AE03B9EC3-L002869](../../agents/web_agent.py#L2869) | 2869 | `"            uncertain_failure_statuses = set(statuses) & {\"timeout\", \"failed\", \"error\", \"unknown\", \"inconclusive\"}"` | — |
-| [SRC-1AE03B9EC3-L002870](../../agents/web_agent.py#L2870) | 2870 | `"            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or \"budget_exhausted\" in statuses)"` | — |
-| [SRC-1AE03B9EC3-L002871](../../agents/web_agent.py#L2871) | 2871 | `"            available: bool \| None = ("` | — |
-| [SRC-1AE03B9EC3-L002872](../../agents/web_agent.py#L2872) | 2872 | `"                True if successful_statuses or useful.get(name, 0)"` | — |

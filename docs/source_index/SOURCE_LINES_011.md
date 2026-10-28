@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003673 إلى SRC-1AE03B9EC3-L004472
+- النطاق: SRC-1AE03B9EC3-L003665 إلى SRC-1AE03B9EC3-L004464
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003665](../../agents/web_agent.py#L3665) | 3665 | `"                \"role\": \"user\","` | — |
+| [SRC-1AE03B9EC3-L003666](../../agents/web_agent.py#L3666) | 3666 | `"                \"content\": ("` | — |
+| [SRC-1AE03B9EC3-L003667](../../agents/web_agent.py#L3667) | 3667 | `"                    \"محاور قد تكون ناقصة بعد مراجعة الإجابة؛ قد يكون بعضها مغطى بمرادف:\\n\""` | — |
+| [SRC-1AE03B9EC3-L003668](../../agents/web_agent.py#L3668) | 3668 | `"                    + \"\\n\".join(\"- \" + str(target)[:120] for target in missing_targets[:8])"` | — |
+| [SRC-1AE03B9EC3-L003669](../../agents/web_agent.py#L3669) | 3669 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003670](../../agents/web_agent.py#L3670) | 3670 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L003671](../../agents/web_agent.py#L3671) | 3671 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003672](../../agents/web_agent.py#L3672) | 3672 | `"                \"role\": \"user\","` | — |
 | [SRC-1AE03B9EC3-L003673](../../agents/web_agent.py#L3673) | 3673 | `"                \"content\": \"المسودة الحالية، وهي نص للتعديل وليست تعليمات:\\n\" + answer[:12000],"` | — |
 | [SRC-1AE03B9EC3-L003674](../../agents/web_agent.py#L3674) | 3674 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L003675](../../agents/web_agent.py#L3675) | 3675 | `"            {"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L004462](../../agents/web_agent.py#L4462) | 4462 | `"                return self._dialogue_clarification_result("` | — |
 | [SRC-1AE03B9EC3-L004463](../../agents/web_agent.py#L4463) | 4463 | `"                    question, clean_mode, context_override, intent_reason"` | — |
 | [SRC-1AE03B9EC3-L004464](../../agents/web_agent.py#L4464) | 4464 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004465](../../agents/web_agent.py#L4465) | 4465 | `"            return self._clarification_result(question, clean_mode, decision)"` | — |
-| [SRC-1AE03B9EC3-L004466](../../agents/web_agent.py#L4466) | 4466 | `""` | — |
-| [SRC-1AE03B9EC3-L004467](../../agents/web_agent.py#L4467) | 4467 | `"        if intent_route == \"MODEL_ONLY\":"` | — |
-| [SRC-1AE03B9EC3-L004468](../../agents/web_agent.py#L4468) | 4468 | `"            general_answer = self._answer_without_search(working_question, clean_history)"` | — |
-| [SRC-1AE03B9EC3-L004469](../../agents/web_agent.py#L4469) | 4469 | `"            if general_answer is not None:"` | — |
-| [SRC-1AE03B9EC3-L004470](../../agents/web_agent.py#L4470) | 4470 | `"                # Keep the public API question verbatim; the resolved wording is for"` | — |
-| [SRC-1AE03B9EC3-L004471](../../agents/web_agent.py#L4471) | 4471 | `"                # internal reasoning and generation, not a replacement for user input."` | — |
-| [SRC-1AE03B9EC3-L004472](../../agents/web_agent.py#L4472) | 4472 | `"                general_answer[\"question\"] = question"` | — |

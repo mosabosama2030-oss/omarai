@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000733 إلى SRC-F725E90B2A-L001532
+- النطاق: SRC-F725E90B2A-L000725 إلى SRC-F725E90B2A-L001524
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000725](../../tests/test_web_agent.py#L725) | 725 | `"                \"service unavailable\","` | — |
+| [SRC-F725E90B2A-L000726](../../tests/test_web_agent.py#L726) | 726 | `"                hdrs=None,"` | — |
+| [SRC-F725E90B2A-L000727](../../tests/test_web_agent.py#L727) | 727 | `"                fp=io.BytesIO(b\"private provider diagnostics\"),"` | — |
+| [SRC-F725E90B2A-L000728](../../tests/test_web_agent.py#L728) | 728 | `"            )"` | — |
+| [SRC-F725E90B2A-L000729](../../tests/test_web_agent.py#L729) | 729 | `"        return FakeResponse()"` | — |
+| [SRC-F725E90B2A-L000730](../../tests/test_web_agent.py#L730) | 730 | `""` | — |
+| [SRC-F725E90B2A-L000731](../../tests/test_web_agent.py#L731) | 731 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
+| [SRC-F725E90B2A-L000732](../../tests/test_web_agent.py#L732) | 732 | `"    result = agent._request_completion("` | — |
 | [SRC-F725E90B2A-L000733](../../tests/test_web_agent.py#L733) | 733 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
 | [SRC-F725E90B2A-L000734](../../tests/test_web_agent.py#L734) | 734 | `"        model=\"broken/primary\","` | — |
 | [SRC-F725E90B2A-L000735](../../tests/test_web_agent.py#L735) | 735 | `"    )"` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L001522](../../tests/test_web_agent.py#L1522) | 1522 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001523](../../tests/test_web_agent.py#L1523) | 1523 | `"        agent, \"_generate\","` | — |
 | [SRC-F725E90B2A-L001524](../../tests/test_web_agent.py#L1524) | 1524 | `"        lambda *args, **kwargs: \"وجدت نتيجة مرشحة لبوابة مصر الرقمية [المصدر 1].\","` | — |
-| [SRC-F725E90B2A-L001525](../../tests/test_web_agent.py#L1525) | 1525 | `"    )"` | — |
-| [SRC-F725E90B2A-L001526](../../tests/test_web_agent.py#L1526) | 1526 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L001527](../../tests/test_web_agent.py#L1527) | 1527 | `""` | — |
-| [SRC-F725E90B2A-L001528](../../tests/test_web_agent.py#L1528) | 1528 | `"    result = agent.answer(\"ابحث عن موقع مصر الرقمية\")"` | — |
-| [SRC-F725E90B2A-L001529](../../tests/test_web_agent.py#L1529) | 1529 | `""` | — |
-| [SRC-F725E90B2A-L001530](../../tests/test_web_agent.py#L1530) | 1530 | `"    assert result[\"kind\"] == \"web_research\""` | — |
-| [SRC-F725E90B2A-L001531](../../tests/test_web_agent.py#L1531) | 1531 | `"    assert len(result[\"sources\"]) == 1"` | — |
-| [SRC-F725E90B2A-L001532](../../tests/test_web_agent.py#L1532) | 1532 | `"    assert result[\"sources\"][0][\"url\"] == \"https://digital.gov.eg/\""` | — |

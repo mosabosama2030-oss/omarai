@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004473 إلى SRC-1AE03B9EC3-L005272
+- النطاق: SRC-1AE03B9EC3-L004465 إلى SRC-1AE03B9EC3-L005264
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004465](../../agents/web_agent.py#L4465) | 4465 | `"            return self._clarification_result(question, clean_mode, decision)"` | — |
+| [SRC-1AE03B9EC3-L004466](../../agents/web_agent.py#L4466) | 4466 | `""` | — |
+| [SRC-1AE03B9EC3-L004467](../../agents/web_agent.py#L4467) | 4467 | `"        if intent_route == \"MODEL_ONLY\":"` | — |
+| [SRC-1AE03B9EC3-L004468](../../agents/web_agent.py#L4468) | 4468 | `"            general_answer = self._answer_without_search(working_question, clean_history)"` | — |
+| [SRC-1AE03B9EC3-L004469](../../agents/web_agent.py#L4469) | 4469 | `"            if general_answer is not None:"` | — |
+| [SRC-1AE03B9EC3-L004470](../../agents/web_agent.py#L4470) | 4470 | `"                # Keep the public API question verbatim; the resolved wording is for"` | — |
+| [SRC-1AE03B9EC3-L004471](../../agents/web_agent.py#L4471) | 4471 | `"                # internal reasoning and generation, not a replacement for user input."` | — |
+| [SRC-1AE03B9EC3-L004472](../../agents/web_agent.py#L4472) | 4472 | `"                general_answer[\"question\"] = question"` | — |
 | [SRC-1AE03B9EC3-L004473](../../agents/web_agent.py#L4473) | 4473 | `"                if context_override is not None:"` | — |
 | [SRC-1AE03B9EC3-L004474](../../agents/web_agent.py#L4474) | 4474 | `"                    general_answer[\"dialogue_context\"] = context_override"` | — |
 | [SRC-1AE03B9EC3-L004475](../../agents/web_agent.py#L4475) | 4475 | `"                    if isinstance(general_answer.get(\"research_plan\"), dict):"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L005262](../../agents/web_agent.py#L5262) | 5262 | `"        if evidence_repair.get(\"attempted\") and \"final_source_count\" in evidence_repair:"` | — |
 | [SRC-1AE03B9EC3-L005263](../../agents/web_agent.py#L5263) | 5263 | `"            final_domains = {"` | — |
 | [SRC-1AE03B9EC3-L005264](../../agents/web_agent.py#L5264) | 5264 | `"                registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L005265](../../agents/web_agent.py#L5265) | 5265 | `"                    source.get(\"domain\")"` | — |
-| [SRC-1AE03B9EC3-L005266](../../agents/web_agent.py#L5266) | 5266 | `"                    or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L005267](../../agents/web_agent.py#L5267) | 5267 | `"                    or \"\""` | — |
-| [SRC-1AE03B9EC3-L005268](../../agents/web_agent.py#L5268) | 5268 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L005269](../../agents/web_agent.py#L5269) | 5269 | `"                for source in sources"` | — |
-| [SRC-1AE03B9EC3-L005270](../../agents/web_agent.py#L5270) | 5270 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L005271](../../agents/web_agent.py#L5271) | 5271 | `"            final_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L005272](../../agents/web_agent.py#L5272) | 5272 | `"            evidence_repair[\"final_source_count\"] = len(sources)"` | — |

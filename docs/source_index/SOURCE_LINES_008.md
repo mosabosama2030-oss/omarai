@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001273 إلى SRC-1AE03B9EC3-L002072
+- النطاق: SRC-1AE03B9EC3-L001265 إلى SRC-1AE03B9EC3-L002064
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001265](../../agents/web_agent.py#L1265) | 1265 | `"                    \"(KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36\""` | — |
+| [SRC-1AE03B9EC3-L001266](../../agents/web_agent.py#L1266) | 1266 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L001267](../../agents/web_agent.py#L1267) | 1267 | `"                \"Accept-Language\": \"ar,en;q=0.9\","` | — |
+| [SRC-1AE03B9EC3-L001268](../../agents/web_agent.py#L1268) | 1268 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L001269](../../agents/web_agent.py#L1269) | 1269 | `"            timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L001270](../../agents/web_agent.py#L1270) | 1270 | `"            # Search provider redirects are not followed automatically. A 3xx is"` | — |
+| [SRC-1AE03B9EC3-L001271](../../agents/web_agent.py#L1271) | 1271 | `"            # reported as a provider failure so the host never fetches an unchecked target."` | — |
+| [SRC-1AE03B9EC3-L001272](../../agents/web_agent.py#L1272) | 1272 | `"            follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"        if response.status_code != 200:"` | — |
 | [SRC-1AE03B9EC3-L001275](../../agents/web_agent.py#L1275) | 1275 | `"            raise RuntimeError(f\"HTTP {response.status_code}\")"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L002062](../../agents/web_agent.py#L2062) | 2062 | `"            if ig_user_id and ig_token:"` | — |
 | [SRC-1AE03B9EC3-L002063](../../agents/web_agent.py#L2063) | 2063 | `"                # The official Hashtag Search API returns public hashtag media only."` | — |
 | [SRC-1AE03B9EC3-L002064](../../agents/web_agent.py#L2064) | 2064 | `"                # It does not search every Instagram post or bypass private accounts."` | — |
-| [SRC-1AE03B9EC3-L002065](../../agents/web_agent.py#L2065) | 2065 | `"                hashtags = re.findall(r\"#([\\w\\u0600-\\u06FF]+)\", query, flags=re.UNICODE)"` | — |
-| [SRC-1AE03B9EC3-L002066](../../agents/web_agent.py#L2066) | 2066 | `"                if not hashtags:"` | — |
-| [SRC-1AE03B9EC3-L002067](../../agents/web_agent.py#L2067) | 2067 | `"                    words = re.findall(r\"[\\w\\u0600-\\u06FF]+\", query, flags=re.UNICODE)"` | — |
-| [SRC-1AE03B9EC3-L002068](../../agents/web_agent.py#L2068) | 2068 | `"                    stopwords = {"` | — |
-| [SRC-1AE03B9EC3-L002069](../../agents/web_agent.py#L2069) | 2069 | `"                        \"ابحث\", \"بحث\", \"عن\", \"في\", \"على\", \"من\", \"مع\", \"تجارب\","` | — |
-| [SRC-1AE03B9EC3-L002070](../../agents/web_agent.py#L2070) | 2070 | `"                        \"الناس\", \"العملاء\", \"منشورات\", \"تعليقات\", \"مواقع\", \"التواصل\","` | — |
-| [SRC-1AE03B9EC3-L002071](../../agents/web_agent.py#L2071) | 2071 | `"                        \"الاجتماعي\", \"public\", \"search\", \"social\", \"media\", \"posts\","` | — |
-| [SRC-1AE03B9EC3-L002072](../../agents/web_agent.py#L2072) | 2072 | `"                        \"find\", \"about\", \"with\", \"the\", \"and\", \"for\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002333 إلى SRC-F725E90B2A-L003132
+- النطاق: SRC-F725E90B2A-L002325 إلى SRC-F725E90B2A-L003124
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002325](../../tests/test_web_agent.py#L2325) | 2325 | `"    assert all(s[\"lead_qualification\"] == \"related_result_not_lead\" for s in result[\"sources\"])"` | — |
+| [SRC-F725E90B2A-L002326](../../tests/test_web_agent.py#L2326) | 2326 | `""` | — |
+| [SRC-F725E90B2A-L002327](../../tests/test_web_agent.py#L2327) | 2327 | `""` | — |
+| [SRC-F725E90B2A-L002328](../../tests/test_web_agent.py#L2328) | 2328 | `"def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002329](../../tests/test_web_agent.py#L2329) | 2329 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002330](../../tests/test_web_agent.py#L2330) | 2330 | `"    seen = {}"` | — |
+| [SRC-F725E90B2A-L002331](../../tests/test_web_agent.py#L2331) | 2331 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L002332](../../tests/test_web_agent.py#L2332) | 2332 | `"        \"queries\": [\"generic apartment listings\"],"` | — |
 | [SRC-F725E90B2A-L002333](../../tests/test_web_agent.py#L2333) | 2333 | `"        \"direct_urls\": [],"` | — |
 | [SRC-F725E90B2A-L002334](../../tests/test_web_agent.py#L2334) | 2334 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L002335](../../tests/test_web_agent.py#L2335) | 2335 | `"        \"freshness\": \"any\","` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L003122](../../tests/test_web_agent.py#L3122) | 3122 | `"    def capture(query):"` | — |
 | [SRC-F725E90B2A-L003123](../../tests/test_web_agent.py#L3123) | 3123 | `"        seen.append(query)"` | — |
 | [SRC-F725E90B2A-L003124](../../tests/test_web_agent.py#L3124) | 3124 | `"        return []"` | — |
-| [SRC-F725E90B2A-L003125](../../tests/test_web_agent.py#L3125) | 3125 | `""` | — |
-| [SRC-F725E90B2A-L003126](../../tests/test_web_agent.py#L3126) | 3126 | `"    for env_name in ("` | — |
-| [SRC-F725E90B2A-L003127](../../tests/test_web_agent.py#L3127) | 3127 | `"        \"DEEPSEEK_SEARCH_API_KEY\","` | — |
-| [SRC-F725E90B2A-L003128](../../tests/test_web_agent.py#L3128) | 3128 | `"        \"BRAVE_SEARCH_API_KEY\","` | — |
-| [SRC-F725E90B2A-L003129](../../tests/test_web_agent.py#L3129) | 3129 | `"        \"TAVILY_API_KEY\","` | — |
-| [SRC-F725E90B2A-L003130](../../tests/test_web_agent.py#L3130) | 3130 | `"    ):"` | — |
-| [SRC-F725E90B2A-L003131](../../tests/test_web_agent.py#L3131) | 3131 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
-| [SRC-F725E90B2A-L003132](../../tests/test_web_agent.py#L3132) | 3132 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", capture)"` | — |

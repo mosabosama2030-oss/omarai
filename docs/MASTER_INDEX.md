@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **786**
 - تعريفات لا ينطبق عليها Docstring: **266**
 - الرموز الساكنة الإضافية: **1694**
-- الأسطر النصية المفهرسة حرفيًا: **33178**
+- الأسطر النصية المفهرسة حرفيًا: **33186**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -44,10 +44,10 @@
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 24099 | 537 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
-| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 33410 | 791 | جرد الملف + AST Python |
+| FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 33498 | 791 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
-| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 32697 | 651 | جرد الملف + AST Python |
+| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 32902 | 659 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 334124 | 6231 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -350,9 +350,9 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L234) | دالة | build_task_spec | Build a bounded task specification, interpretation hypotheses, and test matrix. | موثق | 234 | [SRC-686F71AA50-L000234](../agents/task_understanding.py#L234) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L481) | دالة | _query_key | لا توجد Docstring. | ناقص | 481 | [SRC-686F71AA50-L000481](../agents/task_understanding.py#L481) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L485) | دالة | _generated_strategy_candidates | لا توجد Docstring. | ناقص | 485 | [SRC-686F71AA50-L000485](../agents/task_understanding.py#L485) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L564) | دالة | build_query_strategy_matrix | Annotate existing plan queries and add bounded, task-specific search strategies. | موثق | 564 | [SRC-686F71AA50-L000564](../agents/task_understanding.py#L564) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L579) | دالة | build_query_strategy_matrix.add | لا توجد Docstring. | ناقص | 579 | [SRC-686F71AA50-L000579](../agents/task_understanding.py#L579) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L625) | دالة | validate_task_spec | Return a safe bounded public representation of TaskSpec-like input. | موثق | 625 | [SRC-686F71AA50-L000625](../agents/task_understanding.py#L625) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L572) | دالة | build_query_strategy_matrix | Annotate existing plan queries and add bounded, task-specific search strategies. | موثق | 572 | [SRC-686F71AA50-L000572](../agents/task_understanding.py#L572) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L587) | دالة | build_query_strategy_matrix.add | لا توجد Docstring. | ناقص | 587 | [SRC-686F71AA50-L000587](../agents/task_understanding.py#L587) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L633) | دالة | validate_task_spec | Return a safe bounded public representation of TaskSpec-like input. | موثق | 633 | [SRC-686F71AA50-L000633](../agents/task_understanding.py#L633) |
 | [agents/web_agent.py](../agents/web_agent.py#L53) | متغير/ثابت Python | MAX_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 53 | [SRC-1AE03B9EC3-L000053](../agents/web_agent.py#L53) |
 | [agents/web_agent.py](../agents/web_agent.py#L54) | متغير/ثابت Python | MAX_HISTORY_ITEMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 54 | [SRC-1AE03B9EC3-L000054](../agents/web_agent.py#L54) |
 | [agents/web_agent.py](../agents/web_agent.py#L55) | متغير/ثابت Python | MAX_HISTORY_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 55 | [SRC-1AE03B9EC3-L000055](../agents/web_agent.py#L55) |
