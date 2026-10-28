@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002762 إلى SRC-1AE03B9EC3-L003561
+- النطاق: SRC-1AE03B9EC3-L002761 إلى SRC-1AE03B9EC3-L003560
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002761](../../agents/web_agent.py#L2761) | 2761 | `"            \"expansion_queries\": expansion_queries,"` | — |
 | [SRC-1AE03B9EC3-L002762](../../agents/web_agent.py#L2762) | 2762 | `"            \"evidence_signals\": evidence_signal_report(sources, plan.get(\"freshness\", \"any\")),"` | — |
 | [SRC-1AE03B9EC3-L002763](../../agents/web_agent.py#L2763) | 2763 | `"            \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-1AE03B9EC3-L002764](../../agents/web_agent.py#L2764) | 2764 | `"            \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003558](../../agents/web_agent.py#L3558) | 3558 | `"                    \"لا تصف إعلان بيع أو صفحة تسويقية بأنها عميل. لا تذكر مرشحًا إلا إذا احتوى \""` | — |
 | [SRC-1AE03B9EC3-L003559](../../agents/web_agent.py#L3559) | 3559 | `"                    \"نص المصدر أو مقتطفه الظاهر على إشارة واضحة إلى رغبة شخص في الشراء؛ اذكر \""` | — |
 | [SRC-1AE03B9EC3-L003560](../../agents/web_agent.py#L3560) | 3560 | `"                    \"الإشارة ومكان ظهورها، وميّز نص الصفحة المقروء عن مقتطف محرك البحث. \""` | — |
-| [SRC-1AE03B9EC3-L003561](../../agents/web_agent.py#L3561) | 3561 | `"                    \"حتى الإشارة العلنية لا تثبت هوية الشخص أو أنه لا يزال راغبًا في الشراء. \""` | — |

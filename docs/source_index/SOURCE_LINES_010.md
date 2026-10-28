@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003562 إلى SRC-1AE03B9EC3-L004361
+- النطاق: SRC-1AE03B9EC3-L003561 إلى SRC-1AE03B9EC3-L004360
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003561](../../agents/web_agent.py#L3561) | 3561 | `"                    \"حتى الإشارة العلنية لا تثبت هوية الشخص أو أنه لا يزال راغبًا في الشراء. \""` | — |
 | [SRC-1AE03B9EC3-L003562](../../agents/web_agent.py#L3562) | 3562 | `"                    \"إذا لم تظهر إشارة صريحة، قل بوضوح إنه لم يتم العثور على عميل محتمل مؤهل؛ \""` | — |
 | [SRC-1AE03B9EC3-L003563](../../agents/web_agent.py#L3563) | 3563 | `"                    \"لا تستنتج نية الشراء من مجرد عرض سلعة للبيع.\""` | — |
 | [SRC-1AE03B9EC3-L003564](../../agents/web_agent.py#L3564) | 3564 | `"                ),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004358](../../agents/web_agent.py#L4358) | 4358 | `""` | — |
 | [SRC-1AE03B9EC3-L004359](../../agents/web_agent.py#L4359) | 4359 | `"        if intent_route == \"MODEL_ONLY\":"` | — |
 | [SRC-1AE03B9EC3-L004360](../../agents/web_agent.py#L4360) | 4360 | `"            general_answer = self._answer_without_search(working_question, clean_history)"` | — |
-| [SRC-1AE03B9EC3-L004361](../../agents/web_agent.py#L4361) | 4361 | `"            if general_answer is not None:"` | — |

@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **96**
-- ملفات Python المحللة: **54**
+- ملفات المستودع في الجرد: **97**
+- ملفات Python المحللة: **55**
 - تعريفات Python المفهرسة: **1231**
 - تعريفات Python موثقة بوجود Docstring: **219**
 - تعريفات Python بلا Docstring: **765**
 - تعريفات لا ينطبق عليها Docstring: **247**
 - الرموز الساكنة الإضافية: **1684**
-- الأسطر النصية المفهرسة حرفيًا: **31982**
+- الأسطر النصية المفهرسة حرفيًا: **31983**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -46,6 +46,7 @@
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32243 | 753 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
+| FILE-1A2E47C5FA | الوكيل والمنطق | [agents/retrieval_tool.py](../agents/retrieval_tool.py#L1) | Python | 11 | 1 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 322398 | 6002 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
