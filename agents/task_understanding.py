@@ -704,6 +704,17 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} شخص يبحث عن شراء تجربة سؤال", "buyer_intent_ar", "distinguish explicit buyer intent from product advertisements"),
             (f"{topic} looking to buy seeking recommendations", "buyer_intent_en", "search public discussions for intent signals"),
         ])
+    normalized_topic = normalize_text(topic)
+    property_topic = any(
+        cue in normalized_topic
+        for cue in ("شقه", "شقق", "عقار", "عقارات", "عقاري", "real estate", "apartment", "property")
+    )
+    if family == "find_or_discover" and property_topic:
+        candidates.extend([
+            (f"{topic} إعلانات عقارية", "property_listings", "discover relevant listings without treating ads as independent price evidence"),
+            (f"{topic} متوسط أسعار السوق للمتر", "property_market_price_per_meter", "compare asking prices against market-level context"),
+            (f"{topic} أسعار البيع الفعلية والتقييم العقاري", "property_transaction_price_check", "distinguish asking prices from completed transaction prices"),
+        ])
     if (
         family in {"general_research", "web_research", "find_or_discover"}
         and (
