@@ -565,11 +565,11 @@
 | [SRC-5587371288-L000159](../../agents/intent_router.py#L159) | 159 | `""` | — |
 | [SRC-5587371288-L000160](../../agents/intent_router.py#L160) | 160 | `"_CONTEXTUAL_ASPECT_RE = re.compile("` | — |
 | [SRC-5587371288-L000161](../../agents/intent_router.py#L161) | 161 | `"    r\"^(?:ال)?(?:سعر\|ثمن\|اسعار\|تكلفه\|ضمان\|بطاريه\|كاميرا\|مميزات\|عيوب\|\""` | — |
-| [SRC-5587371288-L000162](../../agents/intent_router.py#L162) | 162 | `"    r\"مكان\|مصدر\|رابط\|تاريخ\|مراجعات\|اراء\|توفر\|سرعه\|اداء\|جوده\|صيانه)\\\\b\""` | — |
+| [SRC-5587371288-L000162](../../agents/intent_router.py#L162) | 162 | `"    r\"مكان\|مصدر\|رابط\|تاريخ\|مراجعات\|اراء\|توفر\|سرعه\|اداء\|جوده\|صيانه)\""` | — |
 | [SRC-5587371288-L000163](../../agents/intent_router.py#L163) | 163 | `")"` | — |
 | [SRC-5587371288-L000164](../../agents/intent_router.py#L164) | 164 | `"_CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile("` | — |
-| [SRC-5587371288-L000165](../../agents/intent_router.py#L165) | 165 | `"    r\"^(?:what about\|how about\|and (?:the\|its\|their)\|its)\\\\s+\""` | — |
-| [SRC-5587371288-L000166](../../agents/intent_router.py#L166) | 166 | `"    r\"(?:price\|warranty\|battery\|camera\|location\|source\|link\|date\|pros\|cons)\\\\b\""` | — |
+| [SRC-5587371288-L000165](../../agents/intent_router.py#L165) | 165 | `"    r\"^(?:what about\|how about\|and (?:the\|its\|their)\|its) +\""` | — |
+| [SRC-5587371288-L000166](../../agents/intent_router.py#L166) | 166 | `"    r\"(?:price\|warranty\|battery\|camera\|location\|source\|link\|date\|pros\|cons)\""` | — |
 | [SRC-5587371288-L000167](../../agents/intent_router.py#L167) | 167 | `")"` | — |
 | [SRC-5587371288-L000168](../../agents/intent_router.py#L168) | 168 | `""` | — |
 | [SRC-5587371288-L000169](../../agents/intent_router.py#L169) | 169 | `""` | — |
