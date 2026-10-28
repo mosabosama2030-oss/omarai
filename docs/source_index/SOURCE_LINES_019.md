@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000022 إلى SRC-E73001D9AC-L000821
+- النطاق: SRC-E73001D9AC-L000014 إلى SRC-E73001D9AC-L000813
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000014](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) | 14 | `"> **مراجع مكملة للمراجعات الواسعة:** تُقرأ هذه الوثيقة مع [خط الأساس الهندسي للمنصات العالمية واسعة النطاق](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md)، ومع [سجل المتطلبات والتتبع والنضج وبوابات الاعتماد](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md)، ومع [سجل المتطلبات الأساسية الأولي](OMARAI_REQUIREMENTS_REGISTER.md). وتُقرأ أيضًا مع [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md)، التي تفصل مسار التوسع من النواة إلى المهارات وسير العمل والوكلاء. هذه الوثائق مكملة بعضها لبعض وليست بدائل متنافسة؛ لا تثبت أي وثيقة وحدها أن الضوابط نُفذت."` | — |
+| [SRC-E73001D9AC-L000015](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L15) | 15 | `""` | — |
+| [SRC-E73001D9AC-L000016](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L16) | 16 | `"## 0. كيف تُقرأ هذه الوثيقة؟"` | — |
+| [SRC-E73001D9AC-L000017](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L17) | 17 | `""` | — |
+| [SRC-E73001D9AC-L000018](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L18) | 18 | `"تستخدم الوثيقة الكلمات التالية بدقة:"` | — |
+| [SRC-E73001D9AC-L000019](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L19) | 19 | `""` | — |
+| [SRC-E73001D9AC-L000020](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L20) | 20 | `"- **MUST / إلزامي:** شرط لا يجوز تجاوزه في التنفيذ المستهدف أو الإصدار الذي يدّعي استيفاءه."` | — |
+| [SRC-E73001D9AC-L000021](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L21) | 21 | `"- **SHOULD / مطلوب افتراضيًا:** يُطبّق ما لم يوجد سبب موثق ومراجع لاستثناء محدود."` | — |
 | [SRC-E73001D9AC-L000022](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L22) | 22 | `"- **MAY / اختياري:** يُطبّق عندما يحقق قيمة مثبتة ولا يضيف مخاطر غير مقبولة."` | — |
 | [SRC-E73001D9AC-L000023](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L23) | 23 | `"- **VERIFIED / متحقق:** تؤيده نتيجة فحص أو اختبار أو قياس محدد يمكن الرجوع إليه."` | — |
 | [SRC-E73001D9AC-L000024](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L24) | 24 | `"- **INFERRED / مستنتج:** تفسير مرجح مبني على الأدلة المتاحة، وليس حقيقة اختبارية."` | — |
@@ -808,11 +816,3 @@
 | [SRC-E73001D9AC-L000811](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L811) | 811 | `"## 27. إدارة الديون التقنية والتغيير المستمر"` | — |
 | [SRC-E73001D9AC-L000812](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L812) | 812 | `""` | — |
 | [SRC-E73001D9AC-L000813](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L813) | 813 | `"- الحفاظ على خريطة اعتماديات بسيطة ومحدثة للمكونات الحرجة ومزوديها ومخازنها."` | — |
-| [SRC-E73001D9AC-L000814](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L814) | 814 | `"- تسجيل القرارات التي يصعب الرجوع عنها في ADR، مع البدائل والتكلفة والمخاطر وأدلة الاختيار."` | — |
-| [SRC-E73001D9AC-L000815](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L815) | 815 | `"- فصل الديون التقنية المعروفة عن العيوب المثبتة والميزات المؤجلة."` | — |
-| [SRC-E73001D9AC-L000816](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L816) | 816 | `"- تقييم الدين التقني وفق احتمال فشل، ونطاق أثر، وكلفة لاحقة، وتكرار لمس الوحدة، بدل التعامل معه كقائمة شكلية."` | — |
-| [SRC-E73001D9AC-L000817](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L817) | 817 | `"- عدم إجراء refactor واسع أثناء إصلاح عيب أمني عاجل إلا لضرورة موثقة؛ يفصل التغيير ليسهل مراجعته واختباره."` | — |
-| [SRC-E73001D9AC-L000818](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L818) | 818 | `"- تحديد سياسة lifecycle للاعتماديات: تحديثات أمنية عاجلة، وتحديثات اعتيادية، واختبارات توافق، والتخلص من المكتبات المهجورة."` | — |
-| [SRC-E73001D9AC-L000819](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L819) | 819 | `"- توفير feature flags أو إعدادات إيقاف عندما تخدم تقليل مخاطر الإطلاق، مع خطة لحذف الأعلام المؤقتة بعد انتهاء الحاجة."` | — |
-| [SRC-E73001D9AC-L000820](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L820) | 820 | `"- نشر التغييرات الكبيرة تدريجيًا حيث تسمح المنصة، ومراقبة النتائج، ووقف النشر أو التراجع إذا تجاوزت حدود الفشل المعتمدة."` | — |
-| [SRC-E73001D9AC-L000821](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L821) | 821 | `"- الحفاظ على changelog مناسب للتغييرات التي تمس المستخدم أو API أو التشغيل."` | — |

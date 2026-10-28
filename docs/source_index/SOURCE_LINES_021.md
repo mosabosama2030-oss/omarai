@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000719 إلى SRC-62CE5126F9-L000291
+- النطاق: SRC-D17CE3D12F-L000711 إلى SRC-62CE5126F9-L000283
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000711](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L711) | 711 | `"10. MUST عدم الادعاء بحماية DDoS على مستوى الشبكة دون خدمة وشواهد فعلية؛ الضوابط داخل التطبيق لا تعوض سعة الحافة ومزود الشبكة."` | — |
+| [SRC-D17CE3D12F-L000712](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L712) | 712 | `"11. SHOULD تضمين إساءة استخدام الوكلاء والموفرات ضمن مراقبة الكلفة والحوادث."` | — |
+| [SRC-D17CE3D12F-L000713](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L713) | 713 | `"12. MUST عدم السماح لمستخدم غير موثق بتشغيل أعمال ضخمة أو تكرارية بلا حصص واضحة."` | — |
+| [SRC-D17CE3D12F-L000714](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L714) | 714 | `""` | — |
+| [SRC-D17CE3D12F-L000715](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L715) | 715 | `"## 48. تجربة المطوّر والمسارات القياسية الآمنة (Developer Experience / Paved Roads)"` | — |
+| [SRC-D17CE3D12F-L000716](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L716) | 716 | `""` | — |
+| [SRC-D17CE3D12F-L000717](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L717) | 717 | `"المنصة الناضجة تجعل المسار الصحيح أسهل من المسار الخاطئ، دون إجبار المشروع الصغير على بناء منصة داخلية مستقلة."` | — |
+| [SRC-D17CE3D12F-L000718](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L718) | 718 | `""` | — |
 | [SRC-D17CE3D12F-L000719](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L719) | 719 | `"1. SHOULD توفير مسار موثق من تعديل الكود إلى الاختبار إلى المراجعة إلى النشر، بأوامر ثابتة قدر الإمكان."` | — |
 | [SRC-D17CE3D12F-L000720](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L720) | 720 | `"2. SHOULD وجود ملفات إعداد نموذجية خالية من الأسرار، ورسائل خطأ واضحة عند غياب المتطلبات."` | — |
 | [SRC-D17CE3D12F-L000721](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L721) | 721 | `"3. MUST أن تكون تعليمات إنشاء بيئة التطوير والاختبار قابلة للتكرار، مع تثبيت إصدارات أو حدود متوافقة للاعتماديات الأساسية."` | — |
@@ -835,11 +843,3 @@
 | [SRC-62CE5126F9-L000281](../OMARAI_REMEDIATION_REGISTER_AR.md#L281) | 281 | `"- **OMR-WRITE-002 — CODE_ADDED / CI_PENDING:** إضافة أمثلة أسلوبية موجهة لإجابة مسندة وامتناع عند نقص الدليل، مع نص صريح يمنع نقل وقائع المثال إلى الإجابة من دون مصدر فعلي، واختبار يتحقق من تضمينها في مطالبة التوليد."` | — |
 | [SRC-62CE5126F9-L000282](../OMARAI_REMEDIATION_REGISTER_AR.md#L282) | 282 | `""` | — |
 | [SRC-62CE5126F9-L000283](../OMARAI_REMEDIATION_REGISTER_AR.md#L283) | 283 | `""` | — |
-| [SRC-62CE5126F9-L000284](../OMARAI_REMEDIATION_REGISTER_AR.md#L284) | 284 | ``"- **إجراء OMR-EVAL-001:** ملف المراجعة يُمرر إلى `scripts/score_answer_quality_reviews.py --reviews reviews.json --corpus tests/fixtures/answer_quality_cases.json --out scorecard.json`. أي سجل `NOT_TESTED` لا يجوز أن يحتوي درجات. الأرقام في أمثلة الوثائق ليست قياسات فعلية."`` | — |
-| [SRC-62CE5126F9-L000285](../OMARAI_REMEDIATION_REGISTER_AR.md#L285) | 285 | `""` | — |
-| [SRC-62CE5126F9-L000286](../OMARAI_REMEDIATION_REGISTER_AR.md#L286) | 286 | `""` | — |
-| [SRC-62CE5126F9-L000287](../OMARAI_REMEDIATION_REGISTER_AR.md#L287) | 287 | `"---"` | — |
-| [SRC-62CE5126F9-L000288](../OMARAI_REMEDIATION_REGISTER_AR.md#L288) | 288 | `""` | — |
-| [SRC-62CE5126F9-L000289](../OMARAI_REMEDIATION_REGISTER_AR.md#L289) | 289 | `"## تحديث تنفيذي — 28 أكتوبر 2026: حواجز قبول الأدلة الخاصة بالمهمة"` | — |
-| [SRC-62CE5126F9-L000290](../OMARAI_REMEDIATION_REGISTER_AR.md#L290) | 290 | `""` | — |
-| [SRC-62CE5126F9-L000291](../OMARAI_REMEDIATION_REGISTER_AR.md#L291) | 291 | ``"- **OMR-SRC-001 — CODE_ADDED / CI_PENDING:** إضافة `agents/research_guardrails.py` كطبقة مشتركة لقبول مصادر البحث بحسب مقصد السؤال، لا بمجرد تشابه الكلمات."`` | — |

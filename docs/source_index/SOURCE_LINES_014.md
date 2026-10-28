@@ -4,9 +4,33 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000003 إلى SRC-792A9A235D-L000019
+- النطاق: SRC-1AE03B9EC3-L006081 إلى SRC-792A9A235D-L000011
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1AE03B9EC3-L006081](../../agents/web_agent.py#L6081) | 6081 | `"            \"kind\": \"web_research\" if used_llm else \"web_fallback\","` | — |
+| [SRC-1AE03B9EC3-L006082](../../agents/web_agent.py#L6082) | 6082 | `"            \"final_answer_status\": final_answer_status,"` | — |
+| [SRC-1AE03B9EC3-L006083](../../agents/web_agent.py#L6083) | 6083 | `"            \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L006084](../../agents/web_agent.py#L6084) | 6084 | `"            \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L006085](../../agents/web_agent.py#L6085) | 6085 | `"        }"` | — |
+## واجهات API
+
+### FILE-D8438CDB65 — [api/__init__.py](../../api/__init__.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D8438CDB65-L000001](../../api/__init__.py#L1) | 1 | `"\"\"\"Omarai local API package.\"\"\""` | — |
 ## واجهات API
 
 ### FILE-EEF2E6447C — [api/omarai.py](../../api/omarai.py#L1)
@@ -16,6 +40,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000001](../../api/omarai.py#L1) | 1 | `"\"\"\"HTTP API for Omarai's web-research agent and lead workspace.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000002](../../api/omarai.py#L2) | 2 | `"from __future__ import annotations"` | — |
 | [SRC-EEF2E6447C-L000003](../../api/omarai.py#L3) | 3 | `""` | — |
 | [SRC-EEF2E6447C-L000004](../../api/omarai.py#L4) | 4 | `"import base64"` | — |
 | [SRC-EEF2E6447C-L000005](../../api/omarai.py#L5) | 5 | `"import hashlib"` | — |
@@ -853,11 +879,3 @@
 | [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
 | [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
 | [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |
-| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | ``"لا يعدّل هذا المعيار ملفات الإنتاج (`agents/`، `api/`، `web/`)."`` | — |
-| [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
-| [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
-| [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |
-| [SRC-792A9A235D-L000016](../ANSWER_QUALITY_BENCHMARK_AR.md#L16) | 16 | `"\| الملف \| الوظيفة \|"` | — |
-| [SRC-792A9A235D-L000017](../ANSWER_QUALITY_BENCHMARK_AR.md#L17) | 17 | `"\|--------\|---------\|"` | — |
-| [SRC-792A9A235D-L000018](../ANSWER_QUALITY_BENCHMARK_AR.md#L18) | 18 | ``"\| `tests/fixtures/answer_quality_cases.json` \| ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة \|"`` | — |
-| [SRC-792A9A235D-L000019](../ANSWER_QUALITY_BENCHMARK_AR.md#L19) | 19 | ``"\| `tests/test_answer_quality_corpus.py` \| تحقق آلي حتمي من البنية (بدون شبكة) \|"`` | — |

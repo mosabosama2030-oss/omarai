@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000404 إلى SRC-90FAA34ADE-L000402
+- النطاق: SRC-4FFD5AFC54-L000396 إلى SRC-90FAA34ADE-L000394
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000396](../../scripts/run_answer_quality_benchmark.py#L396) | 396 | `"            args.timeout,"` | — |
+| [SRC-4FFD5AFC54-L000397](../../scripts/run_answer_quality_benchmark.py#L397) | 397 | `"            args.delay,"` | — |
+| [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"            args.out,"` | — |
+| [SRC-4FFD5AFC54-L000399](../../scripts/run_answer_quality_benchmark.py#L399) | 399 | `"        )"` | — |
+| [SRC-4FFD5AFC54-L000400](../../scripts/run_answer_quality_benchmark.py#L400) | 400 | `"    return 2"` | — |
+| [SRC-4FFD5AFC54-L000401](../../scripts/run_answer_quality_benchmark.py#L401) | 401 | `""` | — |
+| [SRC-4FFD5AFC54-L000402](../../scripts/run_answer_quality_benchmark.py#L402) | 402 | `""` | — |
+| [SRC-4FFD5AFC54-L000403](../../scripts/run_answer_quality_benchmark.py#L403) | 403 | `"if __name__ == \"__main__\":"` | — |
 | [SRC-4FFD5AFC54-L000404](../../scripts/run_answer_quality_benchmark.py#L404) | 404 | `"    raise SystemExit(main())"` | — |
 ## ملفات أخرى
 
@@ -835,11 +843,3 @@
 | [SRC-90FAA34ADE-L000392](../../tests/fixtures/answer_quality_cases.json#L392) | 392 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000393](../../tests/fixtures/answer_quality_cases.json#L393) | 393 | `"      \"question\": \"دورلي على مواعيد مكتب الجوازات في العباسية النهارده، ولو البحث رجّعش نتائج قولي بصراحة.\","` | — |
 | [SRC-90FAA34ADE-L000394](../../tests/fixtures/answer_quality_cases.json#L394) | 394 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000395](../../tests/fixtures/answer_quality_cases.json#L395) | 395 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000396](../../tests/fixtures/answer_quality_cases.json#L396) | 396 | `"        \"يحاول البحث عن ساعات العمل الحالية أو يصرّح بفشل البحث\","` | — |
-| [SRC-90FAA34ADE-L000397](../../tests/fixtures/answer_quality_cases.json#L397) | 397 | `"        \"لا يخترع ساعات فتح أو إغلاق\","` | — |
-| [SRC-90FAA34ADE-L000398](../../tests/fixtures/answer_quality_cases.json#L398) | 398 | `"        \"يفرّق بين عدم العثور على نتائج وبين ثبوت أن المكتب مغلق\""` | — |
-| [SRC-90FAA34ADE-L000399](../../tests/fixtures/answer_quality_cases.json#L399) | 399 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000400](../../tests/fixtures/answer_quality_cases.json#L400) | 400 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000401](../../tests/fixtures/answer_quality_cases.json#L401) | 401 | `"        \"يقدم ساعات عمل بلا مصدر مسترجع\","` | — |
-| [SRC-90FAA34ADE-L000402](../../tests/fixtures/answer_quality_cases.json#L402) | 402 | `"        \"يقول إن المكتب مغلق لمجرد أن النتائج فارغة\""` | — |

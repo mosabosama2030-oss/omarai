@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **042**
-- سجلات الأسطر: **192**
-- النطاق: SRC-DE7EABE998-L000272 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **200**
+- النطاق: SRC-DE7EABE998-L000264 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000264](../../web/agent.html#L264) | 264 | `" const attemptText=result&&result.search_attempted===true"` | — |
+| [SRC-DE7EABE998-L000265](../../web/agent.html#L265) | 265 | `"  ? (r.search_outcome===\"attempted_research_error\""` | — |
+| [SRC-DE7EABE998-L000266](../../web/agent.html#L266) | 266 | `"     ? \"بدأت محاولة البحث، لكن تعطل مسار تجميع الأدلة قبل اكتمال التقرير؛ لم يمكن تحديد عدد المصادر القابلة للاستخدام.\""` | — |
+| [SRC-DE7EABE998-L000267](../../web/agent.html#L267) | 267 | `"     : \"تمت محاولة البحث في الويب. عدد المصادر القابلة للاستخدام بعد التصفية: \"+(usableSourceCount??\"غير محدد\")+\".\")"` | — |
+| [SRC-DE7EABE998-L000268](../../web/agent.html#L268) | 268 | `"  : result&&result.search_attempted===false"` | — |
+| [SRC-DE7EABE998-L000269](../../web/agent.html#L269) | 269 | `"   ? \"لم تُنفّذ محاولة بحث ويب في هذه الجولة.\""` | — |
+| [SRC-DE7EABE998-L000270](../../web/agent.html#L270) | 270 | `"   : r.search_outcome===\"unknown_after_research_error\""` | — |
+| [SRC-DE7EABE998-L000271](../../web/agent.html#L271) | 271 | `"    ? \"تعطل مسار البحث، ولم يمكن تأكيد ما إذا كانت محاولة البحث قد بدأت أو كم مصدرًا كان قابلًا للاستخدام.\""` | — |
 | [SRC-DE7EABE998-L000272](../../web/agent.html#L272) | 272 | `"    : \"حالة محاولة البحث غير موضحة في الاستجابة.\";"` | — |
 | [SRC-DE7EABE998-L000273](../../web/agent.html#L273) | 273 | `" const qualityText='تصنيف جودة البحث يصف تغطية العملية والأدلة المتاحة، ولا يمثل احتمال صحة الوقائع.';"` | — |
 | [SRC-DE7EABE998-L000274](../../web/agent.html#L274) | 274 | `" const reviewText=r.claim_audit_semantics==='model_assisted_not_independent_fact_check'?'مراجعة الادعاءات تمت بمساعدة نموذج لغوي؛ وهي ليست تحققًا مستقلًا من صحة الحقائق.':'لم يثبت إجراء تحقق مستقل من صحة الحقائق.';"` | — |

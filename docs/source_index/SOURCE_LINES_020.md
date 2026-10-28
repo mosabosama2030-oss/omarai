@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000822 إلى SRC-D17CE3D12F-L000718
+- النطاق: SRC-E73001D9AC-L000814 إلى SRC-D17CE3D12F-L000710
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000814](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L814) | 814 | `"- تسجيل القرارات التي يصعب الرجوع عنها في ADR، مع البدائل والتكلفة والمخاطر وأدلة الاختيار."` | — |
+| [SRC-E73001D9AC-L000815](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L815) | 815 | `"- فصل الديون التقنية المعروفة عن العيوب المثبتة والميزات المؤجلة."` | — |
+| [SRC-E73001D9AC-L000816](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L816) | 816 | `"- تقييم الدين التقني وفق احتمال فشل، ونطاق أثر، وكلفة لاحقة، وتكرار لمس الوحدة، بدل التعامل معه كقائمة شكلية."` | — |
+| [SRC-E73001D9AC-L000817](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L817) | 817 | `"- عدم إجراء refactor واسع أثناء إصلاح عيب أمني عاجل إلا لضرورة موثقة؛ يفصل التغيير ليسهل مراجعته واختباره."` | — |
+| [SRC-E73001D9AC-L000818](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L818) | 818 | `"- تحديد سياسة lifecycle للاعتماديات: تحديثات أمنية عاجلة، وتحديثات اعتيادية، واختبارات توافق، والتخلص من المكتبات المهجورة."` | — |
+| [SRC-E73001D9AC-L000819](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L819) | 819 | `"- توفير feature flags أو إعدادات إيقاف عندما تخدم تقليل مخاطر الإطلاق، مع خطة لحذف الأعلام المؤقتة بعد انتهاء الحاجة."` | — |
+| [SRC-E73001D9AC-L000820](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L820) | 820 | `"- نشر التغييرات الكبيرة تدريجيًا حيث تسمح المنصة، ومراقبة النتائج، ووقف النشر أو التراجع إذا تجاوزت حدود الفشل المعتمدة."` | — |
+| [SRC-E73001D9AC-L000821](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L821) | 821 | `"- الحفاظ على changelog مناسب للتغييرات التي تمس المستخدم أو API أو التشغيل."` | — |
 | [SRC-E73001D9AC-L000822](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L822) | 822 | `"- عدم السماح بأن يصبح عدد التجريدات أو الخدمات أكبر من قدرة المشروع على اختبارها ومراقبتها وصيانتها."` | — |
 | [SRC-E73001D9AC-L000823](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L823) | 823 | `""` | — |
 | [SRC-E73001D9AC-L000824](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L824) | 824 | `"## 28. بوابة قبول التوسع والتطوير"` | — |
@@ -817,11 +825,3 @@
 | [SRC-D17CE3D12F-L000708](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L708) | 708 | `"7. SHOULD إيقاف القدرة المتضررة أو الموفر المستنزف عبر circuit breaker أو إعداد kill switch."` | — |
 | [SRC-D17CE3D12F-L000709](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L709) | 709 | `"8. MUST ألا تُستخدم CAPTCHA أو المراقبة الشديدة تلقائيًا دون موازنة الوصولية والخصوصية والمخاطر."` | — |
 | [SRC-D17CE3D12F-L000710](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L710) | 710 | `"9. MUST توثيق حدود الحماية التي توفرها منصة الاستضافة نفسها؛ لا يُفترض أن Omarai قادر على امتصاص هجوم حجمي كبير إذا كانت الاستضافة لا توفر ذلك."` | — |
-| [SRC-D17CE3D12F-L000711](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L711) | 711 | `"10. MUST عدم الادعاء بحماية DDoS على مستوى الشبكة دون خدمة وشواهد فعلية؛ الضوابط داخل التطبيق لا تعوض سعة الحافة ومزود الشبكة."` | — |
-| [SRC-D17CE3D12F-L000712](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L712) | 712 | `"11. SHOULD تضمين إساءة استخدام الوكلاء والموفرات ضمن مراقبة الكلفة والحوادث."` | — |
-| [SRC-D17CE3D12F-L000713](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L713) | 713 | `"12. MUST عدم السماح لمستخدم غير موثق بتشغيل أعمال ضخمة أو تكرارية بلا حصص واضحة."` | — |
-| [SRC-D17CE3D12F-L000714](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L714) | 714 | `""` | — |
-| [SRC-D17CE3D12F-L000715](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L715) | 715 | `"## 48. تجربة المطوّر والمسارات القياسية الآمنة (Developer Experience / Paved Roads)"` | — |
-| [SRC-D17CE3D12F-L000716](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L716) | 716 | `""` | — |
-| [SRC-D17CE3D12F-L000717](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L717) | 717 | `"المنصة الناضجة تجعل المسار الصحيح أسهل من المسار الخاطئ، دون إجبار المشروع الصغير على بناء منصة داخلية مستقلة."` | — |
-| [SRC-D17CE3D12F-L000718](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L718) | 718 | `""` | — |

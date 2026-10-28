@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001695 إلى SRC-F725E90B2A-L002494
+- النطاق: SRC-F725E90B2A-L001687 إلى SRC-F725E90B2A-L002486
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001687](../../tests/test_web_agent.py#L1687) | 1687 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L001688](../../tests/test_web_agent.py#L1688) | 1688 | `"            \"freshness\": \"any\", \"depth\": \"standard\", \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001689](../../tests/test_web_agent.py#L1689) | 1689 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001690](../../tests/test_web_agent.py#L1690) | 1690 | `"        },"` | — |
+| [SRC-F725E90B2A-L001691](../../tests/test_web_agent.py#L1691) | 1691 | `"    )"` | — |
+| [SRC-F725E90B2A-L001692](../../tests/test_web_agent.py#L1692) | 1692 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001693](../../tests/test_web_agent.py#L1693) | 1693 | `"        agent, \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001694](../../tests/test_web_agent.py#L1694) | 1694 | `"        lambda plan: ([source], [], {"` | — |
 | [SRC-F725E90B2A-L001695](../../tests/test_web_agent.py#L1695) | 1695 | `"            \"queries_planned\": 1, \"queries_attempted\": 1, \"unique_sources\": 1,"` | — |
 | [SRC-F725E90B2A-L001696](../../tests/test_web_agent.py#L1696) | 1696 | `"            \"pages_fetched\": 1, \"providers_used\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L001697](../../tests/test_web_agent.py#L1697) | 1697 | `"            \"platform_counts\": {\"web\": 1}, \"social_direct_results\": 0,"` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L002484](../../tests/test_web_agent.py#L2484) | 2484 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L002485](../../tests/test_web_agent.py#L2485) | 2485 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L002486](../../tests/test_web_agent.py#L2486) | 2486 | `"    }"` | — |
-| [SRC-F725E90B2A-L002487](../../tests/test_web_agent.py#L2487) | 2487 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda q, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L002488](../../tests/test_web_agent.py#L2488) | 2488 | `""` | — |
-| [SRC-F725E90B2A-L002489](../../tests/test_web_agent.py#L2489) | 2489 | `"    def fail_research(research_plan):"` | — |
-| [SRC-F725E90B2A-L002490](../../tests/test_web_agent.py#L2490) | 2490 | `"        raise RuntimeError(\"mocked interrupted research\")"` | — |
-| [SRC-F725E90B2A-L002491](../../tests/test_web_agent.py#L2491) | 2491 | `""` | — |
-| [SRC-F725E90B2A-L002492](../../tests/test_web_agent.py#L2492) | 2492 | `"    monkeypatch.setattr(agent, \"_collect_research\", fail_research)"` | — |
-| [SRC-F725E90B2A-L002493](../../tests/test_web_agent.py#L2493) | 2493 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L002494](../../tests/test_web_agent.py#L2494) | 2494 | `"        agent,"` | — |

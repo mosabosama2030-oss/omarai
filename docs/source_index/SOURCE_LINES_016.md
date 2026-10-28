@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000028 إلى SRC-E599346ABE-L000720
+- النطاق: SRC-51D44BE378-L000020 إلى SRC-E599346ABE-L000712
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000020](../DEPLOY_SNAPDEPLOY_AR.md#L20) | 20 | `"3. اختر **Deploy** ثم طريقة النشر من **GitHub repository**."` | — |
+| [SRC-51D44BE378-L000021](../DEPLOY_SNAPDEPLOY_AR.md#L21) | 21 | `"4. اربط حساب GitHub. إذا ظهرت إعدادات اختيار المستودعات، امنح الحد الأدنى من الوصول المطلوب بدل توسيع الصلاحيات بلا حاجة."` | — |
+| [SRC-51D44BE378-L000022](../DEPLOY_SNAPDEPLOY_AR.md#L22) | 22 | ``"5. اختر المستودع `mosabosama2030-oss/omarai)، والفرع `main)، ومجلد الجذر الذي يحتوي على `Dockerfile`."`` | — |
+| [SRC-51D44BE378-L000023](../DEPLOY_SNAPDEPLOY_AR.md#L23) | 23 | ``"6. تأكد أن المنصة اكتشفت `Dockerfile` الموجود في جذر المستودع. لا تحتاج إلى إنشاء ملف إعدادات خاص بالمنصة لهذه النسخة."`` | — |
+| [SRC-51D44BE378-L000024](../DEPLOY_SNAPDEPLOY_AR.md#L24) | 24 | `""` | — |
+| [SRC-51D44BE378-L000025](../DEPLOY_SNAPDEPLOY_AR.md#L25) | 25 | `"## ربط نسخة النشر بالمصدر"` | — |
+| [SRC-51D44BE378-L000026](../DEPLOY_SNAPDEPLOY_AR.md#L26) | 26 | `""` | — |
+| [SRC-51D44BE378-L000027](../DEPLOY_SNAPDEPLOY_AR.md#L27) | 27 | ``"لا يكفي أن يعمل `/api/health`؛ يجب أن يمكن ربط الخدمة بالالتزام الذي بُنيت منه الصورة. يمرر SnapDeploy متغيرات البناء ذات البادئات العامة مثل `PUBLIC_*` إلى وسيطات بناء Docker، بينما تكون المتغيرات الأخرى متاحة وقت التشغيل فقط، وفق [توثيقه الرسمي](https://snapdeploy.dev/docs/deployment) و[دليل متغيرات البيئة](https://snapdeploy.dev/docs/environment-variables)."`` | — |
 | [SRC-51D44BE378-L000028](../DEPLOY_SNAPDEPLOY_AR.md#L28) | 28 | `""` | — |
 | [SRC-51D44BE378-L000029](../DEPLOY_SNAPDEPLOY_AR.md#L29) | 29 | `"### إعداد هوية البناء على SnapDeploy"` | — |
 | [SRC-51D44BE378-L000030](../DEPLOY_SNAPDEPLOY_AR.md#L30) | 30 | `""` | — |
@@ -817,11 +825,3 @@
 | [SRC-E599346ABE-L000710](../generate_index.py#L710) | 710 | `""` | — |
 | [SRC-E599346ABE-L000711](../generate_index.py#L711) | 711 | `"    if failures:"` | — |
 | [SRC-E599346ABE-L000712](../generate_index.py#L712) | 712 | `"        raise IndexGenerationError("` | — |
-| [SRC-E599346ABE-L000713](../generate_index.py#L713) | 713 | `"            \"فشل تحقق اكتمال فهرسة السطور؛ لن يُنشر فهرس جزئي:\\n- \""` | — |
-| [SRC-E599346ABE-L000714](../generate_index.py#L714) | 714 | `"            + \"\\n- \".join(sorted(set(failures)))"` | — |
-| [SRC-E599346ABE-L000715](../generate_index.py#L715) | 715 | `"        )"` | — |
-| [SRC-E599346ABE-L000716](../generate_index.py#L716) | 716 | `""` | — |
-| [SRC-E599346ABE-L000717](../generate_index.py#L717) | 717 | `""` | — |
-| [SRC-E599346ABE-L000718](../generate_index.py#L718) | 718 | `"def discover_python_files(root: Path) -> list[Path]:"` | — |
-| [SRC-E599346ABE-L000719](../generate_index.py#L719) | 719 | `"    \"\"\"Return sorted Python files from the eligible repository inventory.\"\"\""` | — |
-| [SRC-E599346ABE-L000720](../generate_index.py#L720) | 720 | `""` | — |

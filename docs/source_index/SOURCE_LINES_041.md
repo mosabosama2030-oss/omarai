@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003295 إلى SRC-DE7EABE998-L000271
+- النطاق: SRC-F725E90B2A-L003287 إلى SRC-DE7EABE998-L000263
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003287](../../tests/test_web_agent.py#L3287) | 3287 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L003288](../../tests/test_web_agent.py#L3288) | 3288 | `"            \"query_results\": [],"` | — |
+| [SRC-F725E90B2A-L003289](../../tests/test_web_agent.py#L3289) | 3289 | `"            \"unique_sources\": 2,"` | — |
+| [SRC-F725E90B2A-L003290](../../tests/test_web_agent.py#L3290) | 3290 | `"            \"pages_fetched\": 2,"` | — |
+| [SRC-F725E90B2A-L003291](../../tests/test_web_agent.py#L3291) | 3291 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L003292](../../tests/test_web_agent.py#L3292) | 3292 | `"            \"platform_counts\": {\"web\": 2},"` | — |
+| [SRC-F725E90B2A-L003293](../../tests/test_web_agent.py#L3293) | 3293 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L003294](../../tests/test_web_agent.py#L3294) | 3294 | `"            \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L003295](../../tests/test_web_agent.py#L3295) | 3295 | `"            \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L003296](../../tests/test_web_agent.py#L3296) | 3296 | `"            \"evidence_signals\": {},"` | — |
 | [SRC-F725E90B2A-L003297](../../tests/test_web_agent.py#L3297) | 3297 | `"        }),"` | — |
@@ -826,11 +834,3 @@
 | [SRC-DE7EABE998-L000261](../../web/agent.html#L261) | 261 | `"   ? \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا.\""` | — |
 | [SRC-DE7EABE998-L000262](../../web/agent.html#L262) | 262 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
 | [SRC-DE7EABE998-L000263](../../web/agent.html#L263) | 263 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
-| [SRC-DE7EABE998-L000264](../../web/agent.html#L264) | 264 | `" const attemptText=result&&result.search_attempted===true"` | — |
-| [SRC-DE7EABE998-L000265](../../web/agent.html#L265) | 265 | `"  ? (r.search_outcome===\"attempted_research_error\""` | — |
-| [SRC-DE7EABE998-L000266](../../web/agent.html#L266) | 266 | `"     ? \"بدأت محاولة البحث، لكن تعطل مسار تجميع الأدلة قبل اكتمال التقرير؛ لم يمكن تحديد عدد المصادر القابلة للاستخدام.\""` | — |
-| [SRC-DE7EABE998-L000267](../../web/agent.html#L267) | 267 | `"     : \"تمت محاولة البحث في الويب. عدد المصادر القابلة للاستخدام بعد التصفية: \"+(usableSourceCount??\"غير محدد\")+\".\")"` | — |
-| [SRC-DE7EABE998-L000268](../../web/agent.html#L268) | 268 | `"  : result&&result.search_attempted===false"` | — |
-| [SRC-DE7EABE998-L000269](../../web/agent.html#L269) | 269 | `"   ? \"لم تُنفّذ محاولة بحث ويب في هذه الجولة.\""` | — |
-| [SRC-DE7EABE998-L000270](../../web/agent.html#L270) | 270 | `"   : r.search_outcome===\"unknown_after_research_error\""` | — |
-| [SRC-DE7EABE998-L000271](../../web/agent.html#L271) | 271 | `"    ? \"تعطل مسار البحث، ولم يمكن تأكيد ما إذا كانت محاولة البحث قد بدأت أو كم مصدرًا كان قابلًا للاستخدام.\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000895 إلى SRC-F725E90B2A-L001694
+- النطاق: SRC-F725E90B2A-L000887 إلى SRC-F725E90B2A-L001686
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000887](../../tests/test_web_agent.py#L887) | 887 | `"    assert status[\"answer_model\"] == \"google/gemma-4-31b-it:free\""` | — |
+| [SRC-F725E90B2A-L000888](../../tests/test_web_agent.py#L888) | 888 | `"    assert status[\"fallback_model\"] == \"openrouter/free\""` | — |
+| [SRC-F725E90B2A-L000889](../../tests/test_web_agent.py#L889) | 889 | `"    assert status[\"language_model_configured\"] is False"` | — |
+| [SRC-F725E90B2A-L000890](../../tests/test_web_agent.py#L890) | 890 | `"    assert status[\"verification_scope\"][\"kind\"] == \"configuration_snapshot\""` | — |
+| [SRC-F725E90B2A-L000891](../../tests/test_web_agent.py#L891) | 891 | `"    assert status[\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
+| [SRC-F725E90B2A-L000892](../../tests/test_web_agent.py#L892) | 892 | `"    assert status[\"verification_scope\"][\"language_model_configured_means\"] == ("` | — |
+| [SRC-F725E90B2A-L000893](../../tests/test_web_agent.py#L893) | 893 | `"        \"credential_present_not_successful_completion\""` | — |
+| [SRC-F725E90B2A-L000894](../../tests/test_web_agent.py#L894) | 894 | `"    )"` | — |
 | [SRC-F725E90B2A-L000895](../../tests/test_web_agent.py#L895) | 895 | `"    assert status[\"verification_scope\"][\"live_diagnostics_endpoint\"] == \"POST /api/diagnostics\""` | — |
 | [SRC-F725E90B2A-L000896](../../tests/test_web_agent.py#L896) | 896 | `"    assert \"api_key\" not in status"` | — |
 | [SRC-F725E90B2A-L000897](../../tests/test_web_agent.py#L897) | 897 | `""` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L001684](../../tests/test_web_agent.py#L1684) | 1684 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001685](../../tests/test_web_agent.py#L1685) | 1685 | `"        agent, \"_plan_search\","` | — |
 | [SRC-F725E90B2A-L001686](../../tests/test_web_agent.py#L1686) | 1686 | `"        lambda question, history: {"` | — |
-| [SRC-F725E90B2A-L001687](../../tests/test_web_agent.py#L1687) | 1687 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L001688](../../tests/test_web_agent.py#L1688) | 1688 | `"            \"freshness\": \"any\", \"depth\": \"standard\", \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001689](../../tests/test_web_agent.py#L1689) | 1689 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001690](../../tests/test_web_agent.py#L1690) | 1690 | `"        },"` | — |
-| [SRC-F725E90B2A-L001691](../../tests/test_web_agent.py#L1691) | 1691 | `"    )"` | — |
-| [SRC-F725E90B2A-L001692](../../tests/test_web_agent.py#L1692) | 1692 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001693](../../tests/test_web_agent.py#L1693) | 1693 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001694](../../tests/test_web_agent.py#L1694) | 1694 | `"        lambda plan: ([source], [], {"` | — |

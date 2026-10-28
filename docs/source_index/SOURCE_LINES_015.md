@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000020 إلى SRC-51D44BE378-L000027
+- النطاق: SRC-792A9A235D-L000012 إلى SRC-51D44BE378-L000019
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | ``"لا يعدّل هذا المعيار ملفات الإنتاج (`agents/`، `api/`، `web/`)."`` | — |
+| [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
+| [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
+| [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |
+| [SRC-792A9A235D-L000016](../ANSWER_QUALITY_BENCHMARK_AR.md#L16) | 16 | `"\| الملف \| الوظيفة \|"` | — |
+| [SRC-792A9A235D-L000017](../ANSWER_QUALITY_BENCHMARK_AR.md#L17) | 17 | `"\|--------\|---------\|"` | — |
+| [SRC-792A9A235D-L000018](../ANSWER_QUALITY_BENCHMARK_AR.md#L18) | 18 | ``"\| `tests/fixtures/answer_quality_cases.json` \| ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة \|"`` | — |
+| [SRC-792A9A235D-L000019](../ANSWER_QUALITY_BENCHMARK_AR.md#L19) | 19 | ``"\| `tests/test_answer_quality_corpus.py` \| تحقق آلي حتمي من البنية (بدون شبكة) \|"`` | — |
 | [SRC-792A9A235D-L000020](../ANSWER_QUALITY_BENCHMARK_AR.md#L20) | 20 | ``"\| `scripts/run_answer_quality_benchmark.py` \| تشغيل validate / live اختياري (stdlib) \|"`` | — |
 | [SRC-792A9A235D-L000021](../ANSWER_QUALITY_BENCHMARK_AR.md#L21) | 21 | ``"\| `docs/ANSWER_QUALITY_BENCHMARK_AR.md` \| بروتوكول التقييم والتسجيل (هذا الملف) \|"`` | — |
 | [SRC-792A9A235D-L000022](../ANSWER_QUALITY_BENCHMARK_AR.md#L22) | 22 | `""` | — |
@@ -871,11 +879,3 @@
 | [SRC-51D44BE378-L000017](../DEPLOY_SNAPDEPLOY_AR.md#L17) | 17 | `""` | — |
 | [SRC-51D44BE378-L000018](../DEPLOY_SNAPDEPLOY_AR.md#L18) | 18 | `"1. افتح [SnapDeploy](https://snapdeploy.dev/) من متصفح الهاتف وأنشئ حسابًا بالبريد أو عبر GitHub."` | — |
 | [SRC-51D44BE378-L000019](../DEPLOY_SNAPDEPLOY_AR.md#L19) | 19 | `"2. أكّد البريد إذا طُلب ذلك، ثم افتح لوحة التحكم."` | — |
-| [SRC-51D44BE378-L000020](../DEPLOY_SNAPDEPLOY_AR.md#L20) | 20 | `"3. اختر **Deploy** ثم طريقة النشر من **GitHub repository**."` | — |
-| [SRC-51D44BE378-L000021](../DEPLOY_SNAPDEPLOY_AR.md#L21) | 21 | `"4. اربط حساب GitHub. إذا ظهرت إعدادات اختيار المستودعات، امنح الحد الأدنى من الوصول المطلوب بدل توسيع الصلاحيات بلا حاجة."` | — |
-| [SRC-51D44BE378-L000022](../DEPLOY_SNAPDEPLOY_AR.md#L22) | 22 | ``"5. اختر المستودع `mosabosama2030-oss/omarai)، والفرع `main)، ومجلد الجذر الذي يحتوي على `Dockerfile`."`` | — |
-| [SRC-51D44BE378-L000023](../DEPLOY_SNAPDEPLOY_AR.md#L23) | 23 | ``"6. تأكد أن المنصة اكتشفت `Dockerfile` الموجود في جذر المستودع. لا تحتاج إلى إنشاء ملف إعدادات خاص بالمنصة لهذه النسخة."`` | — |
-| [SRC-51D44BE378-L000024](../DEPLOY_SNAPDEPLOY_AR.md#L24) | 24 | `""` | — |
-| [SRC-51D44BE378-L000025](../DEPLOY_SNAPDEPLOY_AR.md#L25) | 25 | `"## ربط نسخة النشر بالمصدر"` | — |
-| [SRC-51D44BE378-L000026](../DEPLOY_SNAPDEPLOY_AR.md#L26) | 26 | `""` | — |
-| [SRC-51D44BE378-L000027](../DEPLOY_SNAPDEPLOY_AR.md#L27) | 27 | ``"لا يكفي أن يعمل `/api/health`؛ يجب أن يمكن ربط الخدمة بالالتزام الذي بُنيت منه الصورة. يمرر SnapDeploy متغيرات البناء ذات البادئات العامة مثل `PUBLIC_*` إلى وسيطات بناء Docker، بينما تكون المتغيرات الأخرى متاحة وقت التشغيل فقط، وفق [توثيقه الرسمي](https://snapdeploy.dev/docs/deployment) و[دليل متغيرات البيئة](https://snapdeploy.dev/docs/environment-variables)."`` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000124 إلى SRC-F725E90B2A-L000094
+- النطاق: SRC-01E35ABC46-L000116 إلى SRC-F725E90B2A-L000086
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000116](../../tests/test_research_guardrails.py#L116) | 116 | `"        \"snippet\": \"National statistics release.\","` | — |
+| [SRC-01E35ABC46-L000117](../../tests/test_research_guardrails.py#L117) | 117 | `"        \"domain\": \"capmas.gov.eg\","` | — |
+| [SRC-01E35ABC46-L000118](../../tests/test_research_guardrails.py#L118) | 118 | `"        \"source_class\": \"government\","` | — |
+| [SRC-01E35ABC46-L000119](../../tests/test_research_guardrails.py#L119) | 119 | `"        \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000120](../../tests/test_research_guardrails.py#L120) | 120 | `"    }"` | — |
+| [SRC-01E35ABC46-L000121](../../tests/test_research_guardrails.py#L121) | 121 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000122](../../tests/test_research_guardrails.py#L122) | 122 | `"    assert rel[\"accepted\"] is True"` | — |
+| [SRC-01E35ABC46-L000123](../../tests/test_research_guardrails.py#L123) | 123 | `"    assert rel[\"reason\"] in {\"accepted\", \"kept_official_despite_low_overlap\"}"` | — |
 | [SRC-01E35ABC46-L000124](../../tests/test_research_guardrails.py#L124) | 124 | `""` | — |
 | [SRC-01E35ABC46-L000125](../../tests/test_research_guardrails.py#L125) | 125 | `""` | — |
 | [SRC-01E35ABC46-L000126](../../tests/test_research_guardrails.py#L126) | 126 | `"def test_filter_deduplicates():"` | — |
@@ -844,11 +852,3 @@
 | [SRC-F725E90B2A-L000084](../../tests/test_web_agent.py#L84) | 84 | `"    assert result[\"search_report\"][\"pipeline_completion_status\"] == \"completed\""` | — |
 | [SRC-F725E90B2A-L000085](../../tests/test_web_agent.py#L85) | 85 | `"    assert result[\"search_report\"][\"completion_stages\"][\"semantic_fact_check\"] == \"not_performed\""` | — |
 | [SRC-F725E90B2A-L000086](../../tests/test_web_agent.py#L86) | 86 | `"    assert result[\"search_report\"][\"research_quality_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000087](../../tests/test_web_agent.py#L87) | 87 | `"        \"process_coverage_not_factual_probability\""` | — |
-| [SRC-F725E90B2A-L000088](../../tests/test_web_agent.py#L88) | 88 | `"    )"` | — |
-| [SRC-F725E90B2A-L000089](../../tests/test_web_agent.py#L89) | 89 | `"    assert result[\"search_report\"][\"claim_audit_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000090](../../tests/test_web_agent.py#L90) | 90 | `"        \"model_assisted_not_independent_fact_check\""` | — |
-| [SRC-F725E90B2A-L000091](../../tests/test_web_agent.py#L91) | 91 | `"    )"` | — |
-| [SRC-F725E90B2A-L000092](../../tests/test_web_agent.py#L92) | 92 | `"    assert result[\"search_report\"][\"distinct_registrable_domains\"] == 2"` | — |
-| [SRC-F725E90B2A-L000093](../../tests/test_web_agent.py#L93) | 93 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
-| [SRC-F725E90B2A-L000094](../../tests/test_web_agent.py#L94) | 94 | `"    assert result[\"search_report\"][\"independent_sources_field_semantics\"] == ("` | — |

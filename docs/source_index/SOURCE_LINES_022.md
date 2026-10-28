@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000292 إلى SRC-0F910493E8-L000030
+- النطاق: SRC-62CE5126F9-L000284 إلى SRC-0F910493E8-L000022
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000284](../OMARAI_REMEDIATION_REGISTER_AR.md#L284) | 284 | ``"- **إجراء OMR-EVAL-001:** ملف المراجعة يُمرر إلى `scripts/score_answer_quality_reviews.py --reviews reviews.json --corpus tests/fixtures/answer_quality_cases.json --out scorecard.json`. أي سجل `NOT_TESTED` لا يجوز أن يحتوي درجات. الأرقام في أمثلة الوثائق ليست قياسات فعلية."`` | — |
+| [SRC-62CE5126F9-L000285](../OMARAI_REMEDIATION_REGISTER_AR.md#L285) | 285 | `""` | — |
+| [SRC-62CE5126F9-L000286](../OMARAI_REMEDIATION_REGISTER_AR.md#L286) | 286 | `""` | — |
+| [SRC-62CE5126F9-L000287](../OMARAI_REMEDIATION_REGISTER_AR.md#L287) | 287 | `"---"` | — |
+| [SRC-62CE5126F9-L000288](../OMARAI_REMEDIATION_REGISTER_AR.md#L288) | 288 | `""` | — |
+| [SRC-62CE5126F9-L000289](../OMARAI_REMEDIATION_REGISTER_AR.md#L289) | 289 | `"## تحديث تنفيذي — 28 أكتوبر 2026: حواجز قبول الأدلة الخاصة بالمهمة"` | — |
+| [SRC-62CE5126F9-L000290](../OMARAI_REMEDIATION_REGISTER_AR.md#L290) | 290 | `""` | — |
+| [SRC-62CE5126F9-L000291](../OMARAI_REMEDIATION_REGISTER_AR.md#L291) | 291 | ``"- **OMR-SRC-001 — CODE_ADDED / CI_PENDING:** إضافة `agents/research_guardrails.py` كطبقة مشتركة لقبول مصادر البحث بحسب مقصد السؤال، لا بمجرد تشابه الكلمات."`` | — |
 | [SRC-62CE5126F9-L000292](../OMARAI_REMEDIATION_REGISTER_AR.md#L292) | 292 | `"- **الطلب عن الموقع الحكومي الرسمي:** عند طلب الموقع الرسمي لوزارة/جهة حكومية، ترفض الطبقة المرشحين غير الموجودين على نطاق حكومي معروف. هذا فحص للنطاق فقط؛ لا يدّعي إثبات ملكية الجهة للنطاق دون تحقق مستقل."` | — |
 | [SRC-62CE5126F9-L000293](../OMARAI_REMEDIATION_REGISTER_AR.md#L293) | 293 | ``"- **طلب المعلومة الحالية:** وضع `latest` يرفض الصفحة غير المؤرخة، أو الأقدم من سبعة أيام، أو غير المقروءة نصيًا. في `auto` لا يفرض الفلتر هذا الشرط لمجرد أن المخطط تنبأ بالحداثة؛ يفعله حين تظهر إشارة زمنية واضحة من سؤال المستخدم. استعلامات العثور على الروابط مستثناة من حداثة المقالات، لكنها تظل خاضعة لشرط النطاق الرسمي عند طلب موقع حكومي رسمي."`` | — |
 | [SRC-62CE5126F9-L000294](../OMARAI_REMEDIATION_REGISTER_AR.md#L294) | 294 | ``"- **آراء الناس:** وضع `social` يقبل فقط الروابط على نطاقات منصات اجتماعية عامة معروفة، ويضيف تصنيفًا استدلاليًا مبدئيًا: تجربة شخصية محتملة، نقاش/سؤال، ترويج تجاري، أو منشور غير محسوم. التصنيف heuristic ولا يثبت هوية الكاتب أو صحة التجربة، ولا يستبدل المراجعة البشرية."`` | — |
@@ -835,11 +843,3 @@
 | [SRC-0F910493E8-L000020](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L20) | 20 | `""` | — |
 | [SRC-0F910493E8-L000021](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L21) | 21 | `"كل بنية أو واجهة أو قدرة موصوفة في هذه الوثيقة تظل **PROPOSED** حتى تُنفذ وتُختبر وتُوثق. لا يجوز استخدام هذه الوثيقة وحدها لإعلان أن ميزة تعمل أو أن Omarai أصبح آمنًا أو مكتملًا."` | — |
 | [SRC-0F910493E8-L000022](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L22) | 22 | `""` | — |
-| [SRC-0F910493E8-L000023](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L23) | 23 | `"### قاعدة عدم الفقد وعدم الانحراف"` | — |
-| [SRC-0F910493E8-L000024](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L24) | 24 | `""` | — |
-| [SRC-0F910493E8-L000025](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L25) | 25 | `"1. لا تستبدل صياغة قائمة أو تعيد كتابة مكون موجود قبل فحص النسخة الفعلية ومسار استخدامه واختباراته."` | — |
-| [SRC-0F910493E8-L000026](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L26) | 26 | `"2. لا تحذف وظيفة قائمة لمجرد أن نموذجًا معماريًا جديدًا يبدو أبسط."` | — |
-| [SRC-0F910493E8-L000027](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L27) | 27 | `"3. عند التعديل، حدد ما سيبقى كما هو، وما سيتغير، واختبارات عدم الانحدار التي تثبت الحفاظ على السلوك السابق."` | — |
-| [SRC-0F910493E8-L000028](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L28) | 28 | `"4. إذا ظهر تعارض بين هذه الوثيقة وبين الدستور التأسيسي، فلا تحذف أيًا منهما أو تحسم التعارض ضمنيًا؛ سجّل التعارض واقترح تسوية لموافقة المدير البشري."` | — |
-| [SRC-0F910493E8-L000029](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L29) | 29 | `"5. لا تُعتبر موافقة المجلس الاستشاري بديلًا عن موافقة المدير البشري على القرار أو الدمج أو النشر."` | — |
-| [SRC-0F910493E8-L000030](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L30) | 30 | `""` | — |

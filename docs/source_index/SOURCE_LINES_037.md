@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000095 إلى SRC-F725E90B2A-L000894
+- النطاق: SRC-F725E90B2A-L000087 إلى SRC-F725E90B2A-L000886
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000087](../../tests/test_web_agent.py#L87) | 87 | `"        \"process_coverage_not_factual_probability\""` | — |
+| [SRC-F725E90B2A-L000088](../../tests/test_web_agent.py#L88) | 88 | `"    )"` | — |
+| [SRC-F725E90B2A-L000089](../../tests/test_web_agent.py#L89) | 89 | `"    assert result[\"search_report\"][\"claim_audit_semantics\"] == ("` | — |
+| [SRC-F725E90B2A-L000090](../../tests/test_web_agent.py#L90) | 90 | `"        \"model_assisted_not_independent_fact_check\""` | — |
+| [SRC-F725E90B2A-L000091](../../tests/test_web_agent.py#L91) | 91 | `"    )"` | — |
+| [SRC-F725E90B2A-L000092](../../tests/test_web_agent.py#L92) | 92 | `"    assert result[\"search_report\"][\"distinct_registrable_domains\"] == 2"` | — |
+| [SRC-F725E90B2A-L000093](../../tests/test_web_agent.py#L93) | 93 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
+| [SRC-F725E90B2A-L000094](../../tests/test_web_agent.py#L94) | 94 | `"    assert result[\"search_report\"][\"independent_sources_field_semantics\"] == ("` | — |
 | [SRC-F725E90B2A-L000095](../../tests/test_web_agent.py#L95) | 95 | `"        \"legacy_compatibility_alias_for_distinct_registrable_domain_count\""` | — |
 | [SRC-F725E90B2A-L000096](../../tests/test_web_agent.py#L96) | 96 | `"    )"` | — |
 | [SRC-F725E90B2A-L000097](../../tests/test_web_agent.py#L97) | 97 | `"    assert any(\"تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري\" in warning"` | — |
@@ -808,11 +816,3 @@
 | [SRC-F725E90B2A-L000884](../../tests/test_web_agent.py#L884) | 884 | `"    monkeypatch.delenv(\"OMARAI_LLM_API_KEY\", raising=False)"` | — |
 | [SRC-F725E90B2A-L000885](../../tests/test_web_agent.py#L885) | 885 | `"    status = WebAgent.status()"` | — |
 | [SRC-F725E90B2A-L000886](../../tests/test_web_agent.py#L886) | 886 | `"    assert status[\"planner_model\"] == \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
-| [SRC-F725E90B2A-L000887](../../tests/test_web_agent.py#L887) | 887 | `"    assert status[\"answer_model\"] == \"google/gemma-4-31b-it:free\""` | — |
-| [SRC-F725E90B2A-L000888](../../tests/test_web_agent.py#L888) | 888 | `"    assert status[\"fallback_model\"] == \"openrouter/free\""` | — |
-| [SRC-F725E90B2A-L000889](../../tests/test_web_agent.py#L889) | 889 | `"    assert status[\"language_model_configured\"] is False"` | — |
-| [SRC-F725E90B2A-L000890](../../tests/test_web_agent.py#L890) | 890 | `"    assert status[\"verification_scope\"][\"kind\"] == \"configuration_snapshot\""` | — |
-| [SRC-F725E90B2A-L000891](../../tests/test_web_agent.py#L891) | 891 | `"    assert status[\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
-| [SRC-F725E90B2A-L000892](../../tests/test_web_agent.py#L892) | 892 | `"    assert status[\"verification_scope\"][\"language_model_configured_means\"] == ("` | — |
-| [SRC-F725E90B2A-L000893](../../tests/test_web_agent.py#L893) | 893 | `"        \"credential_present_not_successful_completion\""` | — |
-| [SRC-F725E90B2A-L000894](../../tests/test_web_agent.py#L894) | 894 | `"    )"` | — |
