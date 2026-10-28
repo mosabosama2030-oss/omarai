@@ -21,6 +21,18 @@ _GOVERNMENT_SUFFIXES = (
     ".gov.in", ".gov.cn", ".gov.br", ".gob.mx", ".go.jp", ".gc.ca",
     ".govt.nz", ".gouv.fr",
 )
+_CURRENT_GOVERNMENT_SERVICE_TERMS = (
+    "الجوازات", "مكتب الجوازات", "مصلحة الجوازات", "السجل المدني",
+    "الشهر العقاري", "مكتب المرور", "إدارة المرور", "مكتب حكومي",
+    "خدمة حكومية", "مصلحة حكومية", "وزارة", "هيئة حكومية",
+    "passport office", "civil registry", "traffic office",
+    "government office", "government service",
+)
+_GOVERNMENT_HOURS_TERMS = (
+    "مواعيد", "مواعيد العمل", "ساعات العمل", "يفتح", "مفتوح",
+    "يغلق", "مواعيد الدوام", "working hours", "opening hours",
+    "office hours", "open today", "closes today",
+)
 _OFFICIAL_WORDS = (
     "الموقع الرسمي", "موقع رسمي", "الصفحة الرسمية", "الموقع الحكومي",
     "official website", "official site", "official homepage",
@@ -94,6 +106,18 @@ def _is_government_domain(url: Any) -> bool:
         return False
     return any(host == suffix.lstrip(".") or host.endswith(suffix)
                for suffix in _GOVERNMENT_SUFFIXES)
+
+
+def requires_official_current_government_source(question: str) -> bool:
+    """Require an official-domain candidate for current government service hours."""
+    value = _normalized(question)
+    has_service = any(
+        _normalized(term) in value for term in _CURRENT_GOVERNMENT_SERVICE_TERMS
+    )
+    has_hours = any(
+        _normalized(term) in value for term in _GOVERNMENT_HOURS_TERMS
+    )
+    return detect_freshness(question) and has_service and has_hours
 
 
 def assess_current_source(
@@ -190,15 +214,22 @@ def apply_source_guardrails(
     totals, and passing them is not a semantic fact check.
     """
     clean_mode = str(mode or "auto").strip().lower()
-    official_required = requires_official_government_domain(question)
-    # An LLM/intent planner can mark broad tasks as freshness-sensitive. In auto
-    # mode, enforce the strict date gate only when the user's question itself signals
-    # a time-sensitive fact; the explicit Latest mode always enforces it.
+    explicit_official_site_request = requires_official_government_domain(question)
+    current_government_hours_request = requires_official_current_government_source(question)
+    official_required = explicit_official_site_request or current_government_hours_request
+    # Latest mode always requires a recent read page. Auto mode also does so for
+    # explicitly current questions when the planner recognizes freshness, plus
+    # current government-service hours even if the planner misses that signal.
     explicit_current_request = detect_freshness(question)
     freshness_required = (
-        (clean_mode == "latest" or (
-            plan.get("freshness") == "current" and explicit_current_request
-        ))
+        (
+            clean_mode == "latest"
+            or (
+                plan.get("freshness") == "current"
+                and explicit_current_request
+            )
+            or current_government_hours_request
+        )
         and not _is_navigation_request(question)
     )
     social_required = clean_mode == "social"
@@ -250,6 +281,13 @@ def apply_source_guardrails(
         "rejection_counts": rejected,
         "rejection_details": reasons[:20],
         "official_government_domain_required": official_required,
+        "official_government_domain_reason": (
+            "explicit_official_site_request"
+            if explicit_official_site_request
+            else "current_government_service_hours"
+            if current_government_hours_request
+            else "not_required"
+        ),
         "official_domain_policy": (
             "government-domain candidate only; organization ownership is not independently verified"
             if official_required else "not_required"

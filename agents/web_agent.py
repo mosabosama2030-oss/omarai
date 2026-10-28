@@ -48,6 +48,7 @@ from agents.research import (
     validate_plan,
 )
 from agents.research_guardrails import apply_source_guardrails
+from agents.research_completion import build_research_completion
 
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
@@ -4249,6 +4250,20 @@ class WebAgent:
                 result.setdefault("warnings", []).append(
                     "تعذر بناء سجل ربط الجمل بمراجع المصادر؛ لا يعني ذلك فشل المصادر نفسها."
                 )
+        try:
+            completion = build_research_completion(result)
+            result["research_completion"] = completion
+            if isinstance(result.get("search_report"), dict):
+                result["search_report"]["research_completion"] = completion
+        except (AttributeError, KeyError, TypeError, ValueError):
+            result["research_completion"] = {
+                "status": "diagnostics_not_computed",
+                "semantic_verification": "not_performed",
+                "error_class": "research_completion_diagnostics_error",
+            }
+            result.setdefault("warnings", []).append(
+                "تعذر حساب حالة إكمال البحث وعداداته؛ لا يُعد ذلك دليلًا على اكتمال البحث."
+            )
         return result
 
     def _answer_with_budget(

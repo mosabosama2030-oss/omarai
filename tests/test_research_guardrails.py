@@ -8,6 +8,7 @@ from agents.research_guardrails import (
     assess_current_source,
     classify_social_source,
     requires_official_government_domain,
+    requires_official_current_government_source,
 )
 from agents.research import (
     decide_evidence_status,
@@ -440,3 +441,49 @@ def test_official_domain_check_rejects_suffix_spoofing() -> None:
 
     assert accepted == []
     assert report["rejection_counts"] == {"not_an_official_government_domain": 1}
+
+
+
+def test_current_government_office_hours_require_official_fresh_page_in_auto_mode() -> None:
+    question = "مواعيد عمل مكتب الجوازات بالعباسية اليوم"
+    assert requires_official_current_government_source(question)
+    candidates = [
+        _guardrail_source(
+            "https://news.example.com/passport-hours",
+            title="مواعيد الجوازات اليوم",
+            snippet="ساعات العمل الحالية لمكتب الجوازات",
+        ),
+        _guardrail_source(
+            "https://moi.gov.eg/",
+            title="بوابة وزارة الداخلية",
+            snippet="مواعيد عمل خدمات الجوازات",
+        ),
+    ]
+    accepted, report = apply_source_guardrails(
+        question, "auto", {"freshness": "any"}, candidates, now=_GUARDRAIL_NOW
+    )
+    assert [item["url"] for item in accepted] == ["https://moi.gov.eg/"]
+    assert report["official_government_domain_required"] is True
+    assert report["official_government_domain_reason"] == "current_government_service_hours"
+    assert report["current_evidence_required"] is True
+    assert report["rejection_counts"] == {"not_an_official_government_domain": 1}
+
+
+def test_government_service_hour_request_rejects_undated_official_page() -> None:
+    question = "مواعيد عمل مكتب الجوازات اليوم"
+    official = _guardrail_source("https://moi.gov.eg/", published_at="")
+    accepted, report = apply_source_guardrails(
+        question, "auto", {"freshness": "any"}, [official], now=_GUARDRAIL_NOW
+    )
+    assert accepted == []
+    assert report["rejection_counts"] == {"date_unavailable": 1}
+
+
+def test_general_current_commercial_question_does_not_require_government_domain() -> None:
+    question = "سعر الذهب اليوم في مصر"
+    candidates = [_guardrail_source("https://example.com/gold")]
+    accepted, report = apply_source_guardrails(
+        question, "auto", {"freshness": "any"}, candidates, now=_GUARDRAIL_NOW
+    )
+    assert accepted == candidates
+    assert report["official_government_domain_required"] is False
