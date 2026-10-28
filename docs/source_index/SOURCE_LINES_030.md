@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000219 إلى SRC-DA61479D59-L000046
+- النطاق: SRC-3451CC474D-L000193 إلى SRC-DA61479D59-L000020
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000193](../../tests/test_api.py#L193) | 193 | `"        data=body,"` | — |
+| [SRC-3451CC474D-L000194](../../tests/test_api.py#L194) | 194 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000195](../../tests/test_api.py#L195) | 195 | `"        headers={\"Content-Type\": \"application/json\", \"Origin\": origin},"` | — |
+| [SRC-3451CC474D-L000196](../../tests/test_api.py#L196) | 196 | `"    )"` | — |
+| [SRC-3451CC474D-L000197](../../tests/test_api.py#L197) | 197 | `"    with urlopen(post, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000198](../../tests/test_api.py#L198) | 198 | `"        payload = json.loads(response.read().decode(\"utf-8\"))"` | — |
+| [SRC-3451CC474D-L000199](../../tests/test_api.py#L199) | 199 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L000200](../../tests/test_api.py#L200) | 200 | `"        assert response.headers.get(\"Access-Control-Allow-Origin\") == origin"` | — |
+| [SRC-3451CC474D-L000201](../../tests/test_api.py#L201) | 201 | `"        assert payload[\"kind\"] == \"no_data\""` | — |
+| [SRC-3451CC474D-L000202](../../tests/test_api.py#L202) | 202 | `""` | — |
+| [SRC-3451CC474D-L000203](../../tests/test_api.py#L203) | 203 | `""` | — |
+| [SRC-3451CC474D-L000204](../../tests/test_api.py#L204) | 204 | `"def test_preflight_rejects_unconfigured_origin(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000205](../../tests/test_api.py#L205) | 205 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000206](../../tests/test_api.py#L206) | 206 | `"    preflight = Request("` | — |
+| [SRC-3451CC474D-L000207](../../tests/test_api.py#L207) | 207 | `"        local_api + \"/api/agent\","` | — |
+| [SRC-3451CC474D-L000208](../../tests/test_api.py#L208) | 208 | `"        method=\"OPTIONS\","` | — |
+| [SRC-3451CC474D-L000209](../../tests/test_api.py#L209) | 209 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000210](../../tests/test_api.py#L210) | 210 | `"            \"Origin\": \"https://attacker.example\","` | — |
+| [SRC-3451CC474D-L000211](../../tests/test_api.py#L211) | 211 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
+| [SRC-3451CC474D-L000212](../../tests/test_api.py#L212) | 212 | `"        },"` | — |
+| [SRC-3451CC474D-L000213](../../tests/test_api.py#L213) | 213 | `"    )"` | — |
+| [SRC-3451CC474D-L000214](../../tests/test_api.py#L214) | 214 | `"    with pytest.raises(HTTPError) as error:"` | — |
+| [SRC-3451CC474D-L000215](../../tests/test_api.py#L215) | 215 | `"        urlopen(preflight, timeout=3)"` | — |
+| [SRC-3451CC474D-L000216](../../tests/test_api.py#L216) | 216 | `"    assert error.value.code == 403"` | — |
+| [SRC-3451CC474D-L000217](../../tests/test_api.py#L217) | 217 | `""` | — |
+| [SRC-3451CC474D-L000218](../../tests/test_api.py#L218) | 218 | `""` | — |
 | [SRC-3451CC474D-L000219](../../tests/test_api.py#L219) | 219 | `"def test_ask_is_honest_when_database_is_empty(local_api):"` | — |
 | [SRC-3451CC474D-L000220](../../tests/test_api.py#L220) | 220 | `"    status, answer = request_json("` | — |
 | [SRC-3451CC474D-L000221](../../tests/test_api.py#L221) | 221 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"مين أفضل إشارة أراجعها؟\"}"` | — |
@@ -808,29 +834,3 @@
 | [SRC-DA61479D59-L000018](../../tests/test_connector_summary_counters.py#L18) | 18 | `"        },"` | — |
 | [SRC-DA61479D59-L000019](../../tests/test_connector_summary_counters.py#L19) | 19 | `"        {"` | — |
 | [SRC-DA61479D59-L000020](../../tests/test_connector_summary_counters.py#L20) | 20 | `"            \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-DA61479D59-L000021](../../tests/test_connector_summary_counters.py#L21) | 21 | `"            \"query\": \"renewable energy\","` | — |
-| [SRC-DA61479D59-L000022](../../tests/test_connector_summary_counters.py#L22) | 22 | `"            \"status\": \"failed\","` | — |
-| [SRC-DA61479D59-L000023](../../tests/test_connector_summary_counters.py#L23) | 23 | `"            \"result_count\": 0,"` | — |
-| [SRC-DA61479D59-L000024](../../tests/test_connector_summary_counters.py#L24) | 24 | `"            \"rejected_count\": 0,"` | — |
-| [SRC-DA61479D59-L000025](../../tests/test_connector_summary_counters.py#L25) | 25 | `"            \"error\": \"HTTP 500 token=secret-value\","` | — |
-| [SRC-DA61479D59-L000026](../../tests/test_connector_summary_counters.py#L26) | 26 | `"        },"` | — |
-| [SRC-DA61479D59-L000027](../../tests/test_connector_summary_counters.py#L27) | 27 | `"    ]"` | — |
-| [SRC-DA61479D59-L000028](../../tests/test_connector_summary_counters.py#L28) | 28 | `"    sources = ["` | — |
-| [SRC-DA61479D59-L000029](../../tests/test_connector_summary_counters.py#L29) | 29 | `"        {\"url\": \"https://example.com/a\", \"providers\": [\"duckduckgo_html\"]},"` | — |
-| [SRC-DA61479D59-L000030](../../tests/test_connector_summary_counters.py#L30) | 30 | `"        {\"url\": \"https://example.org/b\", \"providers\": [\"bing_rss\"]},"` | — |
-| [SRC-DA61479D59-L000031](../../tests/test_connector_summary_counters.py#L31) | 31 | `"    ]"` | — |
-| [SRC-DA61479D59-L000032](../../tests/test_connector_summary_counters.py#L32) | 32 | `""` | — |
-| [SRC-DA61479D59-L000033](../../tests/test_connector_summary_counters.py#L33) | 33 | `"    summary = agent._connector_status_summary(diagnostics, sources)"` | — |
-| [SRC-DA61479D59-L000034](../../tests/test_connector_summary_counters.py#L34) | 34 | `""` | — |
-| [SRC-DA61479D59-L000035](../../tests/test_connector_summary_counters.py#L35) | 35 | `"    duckduckgo = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"duckduckgo_html\")"` | — |
-| [SRC-DA61479D59-L000036](../../tests/test_connector_summary_counters.py#L36) | 36 | `"    brave = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"brave_search_api\")"` | — |
-| [SRC-DA61479D59-L000037](../../tests/test_connector_summary_counters.py#L37) | 37 | `"    assert summary[\"scope\"] == \"this_request_only\""` | — |
-| [SRC-DA61479D59-L000038](../../tests/test_connector_summary_counters.py#L38) | 38 | `"    assert duckduckgo[\"attempted\"] is True"` | — |
-| [SRC-DA61479D59-L000039](../../tests/test_connector_summary_counters.py#L39) | 39 | `"    assert duckduckgo[\"status\"] == \"failed\""` | — |
-| [SRC-DA61479D59-L000040](../../tests/test_connector_summary_counters.py#L40) | 40 | `"    assert duckduckgo[\"observed_statuses\"] == [\"ok\", \"failed\"]"` | — |
-| [SRC-DA61479D59-L000041](../../tests/test_connector_summary_counters.py#L41) | 41 | `"    assert duckduckgo[\"result_count\"] == 3"` | — |
-| [SRC-DA61479D59-L000042](../../tests/test_connector_summary_counters.py#L42) | 42 | `"    assert duckduckgo[\"useful_result_count\"] == 1"` | — |
-| [SRC-DA61479D59-L000043](../../tests/test_connector_summary_counters.py#L43) | 43 | `"    assert duckduckgo[\"rejected_count\"] == 1"` | — |
-| [SRC-DA61479D59-L000044](../../tests/test_connector_summary_counters.py#L44) | 44 | `"    assert duckduckgo[\"implementation_status\"] == \"implemented_in_code\""` | — |
-| [SRC-DA61479D59-L000045](../../tests/test_connector_summary_counters.py#L45) | 45 | `"    assert duckduckgo[\"available_for_this_request\"] is True"` | — |
-| [SRC-DA61479D59-L000046](../../tests/test_connector_summary_counters.py#L46) | 46 | `"    assert duckduckgo[\"verified_for_this_request\"] is True"` | — |

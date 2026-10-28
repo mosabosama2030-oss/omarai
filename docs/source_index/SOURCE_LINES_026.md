@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000282 إلى SRC-90FAA34ADE-L000280
+- النطاق: SRC-4FFD5AFC54-L000256 إلى SRC-90FAA34ADE-L000254
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000256](../../scripts/run_answer_quality_benchmark.py#L256) | 256 | `"    case_id: str \| None,"` | — |
+| [SRC-4FFD5AFC54-L000257](../../scripts/run_answer_quality_benchmark.py#L257) | 257 | `"    limit: int,"` | — |
+| [SRC-4FFD5AFC54-L000258](../../scripts/run_answer_quality_benchmark.py#L258) | 258 | `"    timeout: float,"` | — |
+| [SRC-4FFD5AFC54-L000259](../../scripts/run_answer_quality_benchmark.py#L259) | 259 | `"    delay: float,"` | — |
+| [SRC-4FFD5AFC54-L000260](../../scripts/run_answer_quality_benchmark.py#L260) | 260 | `"    out_path: Path \| None,"` | — |
+| [SRC-4FFD5AFC54-L000261](../../scripts/run_answer_quality_benchmark.py#L261) | 261 | `") -> int:"` | — |
+| [SRC-4FFD5AFC54-L000262](../../scripts/run_answer_quality_benchmark.py#L262) | 262 | `"    data = load_corpus(corpus_path)"` | — |
+| [SRC-4FFD5AFC54-L000263](../../scripts/run_answer_quality_benchmark.py#L263) | 263 | `"    problems = validate_corpus(data)"` | — |
+| [SRC-4FFD5AFC54-L000264](../../scripts/run_answer_quality_benchmark.py#L264) | 264 | `"    if problems:"` | — |
+| [SRC-4FFD5AFC54-L000265](../../scripts/run_answer_quality_benchmark.py#L265) | 265 | `"        print(\"Corpus invalid; refusing live run:\")"` | — |
+| [SRC-4FFD5AFC54-L000266](../../scripts/run_answer_quality_benchmark.py#L266) | 266 | `"        for p in problems:"` | — |
+| [SRC-4FFD5AFC54-L000267](../../scripts/run_answer_quality_benchmark.py#L267) | 267 | `"            print(\" -\", p)"` | — |
+| [SRC-4FFD5AFC54-L000268](../../scripts/run_answer_quality_benchmark.py#L268) | 268 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000269](../../scripts/run_answer_quality_benchmark.py#L269) | 269 | `""` | — |
+| [SRC-4FFD5AFC54-L000270](../../scripts/run_answer_quality_benchmark.py#L270) | 270 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip() or None"` | — |
+| [SRC-4FFD5AFC54-L000271](../../scripts/run_answer_quality_benchmark.py#L271) | 271 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000272](../../scripts/run_answer_quality_benchmark.py#L272) | 272 | `"        safe_base_url = validate_base_url(base_url, token_present=bool(token))"` | — |
+| [SRC-4FFD5AFC54-L000273](../../scripts/run_answer_quality_benchmark.py#L273) | 273 | `"    except ValueError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000274](../../scripts/run_answer_quality_benchmark.py#L274) | 274 | `"        print(f\"Unsafe base URL; refusing live run: {exc}\", file=sys.stderr)"` | — |
+| [SRC-4FFD5AFC54-L000275](../../scripts/run_answer_quality_benchmark.py#L275) | 275 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000276](../../scripts/run_answer_quality_benchmark.py#L276) | 276 | `"    cases = data[\"cases\"]"` | — |
+| [SRC-4FFD5AFC54-L000277](../../scripts/run_answer_quality_benchmark.py#L277) | 277 | `"    if case_id:"` | — |
+| [SRC-4FFD5AFC54-L000278](../../scripts/run_answer_quality_benchmark.py#L278) | 278 | `"        cases = [c for c in cases if c[\"case_id\"] == case_id]"` | — |
+| [SRC-4FFD5AFC54-L000279](../../scripts/run_answer_quality_benchmark.py#L279) | 279 | `"        if not cases:"` | — |
+| [SRC-4FFD5AFC54-L000280](../../scripts/run_answer_quality_benchmark.py#L280) | 280 | `"            print(f\"Unknown case_id: {case_id}\", file=sys.stderr)"` | — |
+| [SRC-4FFD5AFC54-L000281](../../scripts/run_answer_quality_benchmark.py#L281) | 281 | `"            return 2"` | — |
 | [SRC-4FFD5AFC54-L000282](../../scripts/run_answer_quality_benchmark.py#L282) | 282 | `"    if limit > 0:"` | — |
 | [SRC-4FFD5AFC54-L000283](../../scripts/run_answer_quality_benchmark.py#L283) | 283 | `"        cases = cases[:limit]"` | — |
 | [SRC-4FFD5AFC54-L000284](../../scripts/run_answer_quality_benchmark.py#L284) | 284 | `""` | — |
@@ -817,29 +843,3 @@
 | [SRC-90FAA34ADE-L000252](../../tests/fixtures/answer_quality_cases.json#L252) | 252 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000253](../../tests/fixtures/answer_quality_cases.json#L253) | 253 | `"        \"Merges both countries into one unsupported claim\","` | — |
 | [SRC-90FAA34ADE-L000254](../../tests/fixtures/answer_quality_cases.json#L254) | 254 | `"        \"Invented official ministry URLs\""` | — |
-| [SRC-90FAA34ADE-L000255](../../tests/fixtures/answer_quality_cases.json#L255) | 255 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000256](../../tests/fixtures/answer_quality_cases.json#L256) | 256 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000257](../../tests/fixtures/answer_quality_cases.json#L257) | 257 | `"        \"type\": \"controlled_search\""` | — |
-| [SRC-90FAA34ADE-L000258](../../tests/fixtures/answer_quality_cases.json#L258) | 258 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000259](../../tests/fixtures/answer_quality_cases.json#L259) | 259 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000260](../../tests/fixtures/answer_quality_cases.json#L260) | 260 | `"        \"Claims official sources that were not retrieved\""` | — |
-| [SRC-90FAA34ADE-L000261](../../tests/fixtures/answer_quality_cases.json#L261) | 261 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000262](../../tests/fixtures/answer_quality_cases.json#L262) | 262 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000263](../../tests/fixtures/answer_quality_cases.json#L263) | 263 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000264](../../tests/fixtures/answer_quality_cases.json#L264) | 264 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000265](../../tests/fixtures/answer_quality_cases.json#L265) | 265 | `"      \"case_id\": \"AQ-011\","` | — |
-| [SRC-90FAA34ADE-L000266](../../tests/fixtures/answer_quality_cases.json#L266) | 266 | `"      \"category\": \"ambiguous_clarify\","` | — |
-| [SRC-90FAA34ADE-L000267](../../tests/fixtures/answer_quality_cases.json#L267) | 267 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000268](../../tests/fixtures/answer_quality_cases.json#L268) | 268 | `"      \"question\": \"كام سعرها؟\","` | — |
-| [SRC-90FAA34ADE-L000269](../../tests/fixtures/answer_quality_cases.json#L269) | 269 | `"      \"expected_strategy\": \"clarify\","` | — |
-| [SRC-90FAA34ADE-L000270](../../tests/fixtures/answer_quality_cases.json#L270) | 270 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000271](../../tests/fixtures/answer_quality_cases.json#L271) | 271 | `"        \"Asks what product/service/location is meant\","` | — |
-| [SRC-90FAA34ADE-L000272](../../tests/fixtures/answer_quality_cases.json#L272) | 272 | `"        \"Does not invent a price\""` | — |
-| [SRC-90FAA34ADE-L000273](../../tests/fixtures/answer_quality_cases.json#L273) | 273 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000274](../../tests/fixtures/answer_quality_cases.json#L274) | 274 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000275](../../tests/fixtures/answer_quality_cases.json#L275) | 275 | `"        \"Gives a random market price\","` | — |
-| [SRC-90FAA34ADE-L000276](../../tests/fixtures/answer_quality_cases.json#L276) | 276 | `"        \"Assumes a previous product without history\""` | — |
-| [SRC-90FAA34ADE-L000277](../../tests/fixtures/answer_quality_cases.json#L277) | 277 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000278](../../tests/fixtures/answer_quality_cases.json#L278) | 278 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000279](../../tests/fixtures/answer_quality_cases.json#L279) | 279 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000280](../../tests/fixtures/answer_quality_cases.json#L280) | 280 | `"      },"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003173 إلى SRC-DE7EABE998-L000149
+- النطاق: SRC-F725E90B2A-L003147 إلى SRC-DE7EABE998-L000123
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003147](../../tests/test_web_agent.py#L3147) | 3147 | `"    assert results == []"` | — |
+| [SRC-F725E90B2A-L003148](../../tests/test_web_agent.py#L3148) | 3148 | `""` | — |
+| [SRC-F725E90B2A-L003149](../../tests/test_web_agent.py#L3149) | 3149 | `""` | — |
+| [SRC-F725E90B2A-L003150](../../tests/test_web_agent.py#L3150) | 3150 | `"def test_plan_search_does_not_call_planner_without_a_topic(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003151](../../tests/test_web_agent.py#L3151) | 3151 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003152](../../tests/test_web_agent.py#L3152) | 3152 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L003153](../../tests/test_web_agent.py#L3153) | 3153 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003154](../../tests/test_web_agent.py#L3154) | 3154 | `"        agent, \"_request_completion\","` | — |
+| [SRC-F725E90B2A-L003155](../../tests/test_web_agent.py#L3155) | 3155 | `"        lambda *args, **kwargs: pytest.fail(\"planner should not run without a topic\"),"` | — |
+| [SRC-F725E90B2A-L003156](../../tests/test_web_agent.py#L3156) | 3156 | `"    )"` | — |
+| [SRC-F725E90B2A-L003157](../../tests/test_web_agent.py#L3157) | 3157 | `"    plan = agent._plan_search("` | — |
+| [SRC-F725E90B2A-L003158](../../tests/test_web_agent.py#L3158) | 3158 | `"        \"استخدم مصادر متعددة، واذكر روابط المصادر\","` | — |
+| [SRC-F725E90B2A-L003159](../../tests/test_web_agent.py#L3159) | 3159 | `"        [],"` | — |
+| [SRC-F725E90B2A-L003160](../../tests/test_web_agent.py#L3160) | 3160 | `"    )"` | — |
+| [SRC-F725E90B2A-L003161](../../tests/test_web_agent.py#L3161) | 3161 | `"    assert plan[\"queries\"] == []"` | — |
+| [SRC-F725E90B2A-L003162](../../tests/test_web_agent.py#L3162) | 3162 | `""` | — |
+| [SRC-F725E90B2A-L003163](../../tests/test_web_agent.py#L3163) | 3163 | `""` | — |
+| [SRC-F725E90B2A-L003164](../../tests/test_web_agent.py#L3164) | 3164 | `"def test_plan_search_compacts_followup_query_before_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003165](../../tests/test_web_agent.py#L3165) | 3165 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003166](../../tests/test_web_agent.py#L3166) | 3166 | `"    agent.api_key = \"\""` | — |
+| [SRC-F725E90B2A-L003167](../../tests/test_web_agent.py#L3167) | 3167 | `"    history = ["` | — |
+| [SRC-F725E90B2A-L003168](../../tests/test_web_agent.py#L3168) | 3168 | `"        {"` | — |
+| [SRC-F725E90B2A-L003169](../../tests/test_web_agent.py#L3169) | 3169 | `"            \"role\": \"user\","` | — |
+| [SRC-F725E90B2A-L003170](../../tests/test_web_agent.py#L3170) | 3170 | `"            \"content\": ("` | — |
+| [SRC-F725E90B2A-L003171](../../tests/test_web_agent.py#L3171) | 3171 | `"                \"قارن السيارات الكهربائية في مصر. استخدم مصادر متعددة، \""` | — |
+| [SRC-F725E90B2A-L003172](../../tests/test_web_agent.py#L3172) | 3172 | `"                \"واذكر روابط المصادر وأجب بإيجاز.\""` | — |
 | [SRC-F725E90B2A-L003173](../../tests/test_web_agent.py#L3173) | 3173 | `"            ),"` | — |
 | [SRC-F725E90B2A-L003174](../../tests/test_web_agent.py#L3174) | 3174 | `"        },"` | — |
 | [SRC-F725E90B2A-L003175](../../tests/test_web_agent.py#L3175) | 3175 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن مقارنة موثقة.\"},"` | — |
@@ -808,29 +834,3 @@
 | [SRC-DE7EABE998-L000121](../../web/agent.html#L121) | 121 | `"function safeSourceUrl(value){"` | — |
 | [SRC-DE7EABE998-L000122](../../web/agent.html#L122) | 122 | `" try{"` | — |
 | [SRC-DE7EABE998-L000123](../../web/agent.html#L123) | 123 | `"  const parsed=new URL(String(value??\"\"));"` | — |
-| [SRC-DE7EABE998-L000124](../../web/agent.html#L124) | 124 | `"  if(![\"https:\",\"http:\"].includes(parsed.protocol)\|\|!parsed.hostname\|\|parsed.username\|\|parsed.password)return null;"` | — |
-| [SRC-DE7EABE998-L000125](../../web/agent.html#L125) | 125 | `"  return parsed.href;"` | — |
-| [SRC-DE7EABE998-L000126](../../web/agent.html#L126) | 126 | `" }catch(_error){return null;}"` | — |
-| [SRC-DE7EABE998-L000127](../../web/agent.html#L127) | 127 | `"}"` | — |
-| [SRC-DE7EABE998-L000128](../../web/agent.html#L128) | 128 | `"function renderSource(s,index){"` | — |
-| [SRC-DE7EABE998-L000129](../../web/agent.html#L129) | 129 | `" if(!s\|\|typeof s!==\"object\")return \"\";"` | — |
-| [SRC-DE7EABE998-L000130](../../web/agent.html#L130) | 130 | `" const url=safeSourceUrl(s.url);"` | — |
-| [SRC-DE7EABE998-L000131](../../web/agent.html#L131) | 131 | `" const title=escapeHtml(s.title\|\|(\"نتيجة ويب \"+(index+1)));"` | — |
-| [SRC-DE7EABE998-L000132](../../web/agent.html#L132) | 132 | `" const tags=[];"` | — |
-| [SRC-DE7EABE998-L000133](../../web/agent.html#L133) | 133 | `" tags.push('<span class=\"tag\">'+escapeHtml(s.source_class\|\|\"مصدر عام\")+'</span>');"` | — |
-| [SRC-DE7EABE998-L000134](../../web/agent.html#L134) | 134 | `" const fetchStatus=s.page_fetch_status\|\|(s.page_fetched?\"content_extracted\":\"not_attempted\");"` | — |
-| [SRC-DE7EABE998-L000135](../../web/agent.html#L135) | 135 | `" if(fetchStatus===\"partial_extraction\")tags.push('<span class=\"tag read\">اُستخرج جزء من النص فقط</span>');"` | — |
-| [SRC-DE7EABE998-L000136](../../web/agent.html#L136) | 136 | `" else if(fetchStatus===\"content_extracted\"\|\|s.page_fetched)tags.push('<span class=\"tag read\">قُرئت الصفحة واستُخرج نص</span>');"` | — |
-| [SRC-DE7EABE998-L000137](../../web/agent.html#L137) | 137 | `" else if(fetchStatus===\"no_text_extracted\"\|\|fetchStatus===\"empty_content\")tags.push('<span class=\"tag\">لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة</span>');"` | — |
-| [SRC-DE7EABE998-L000138](../../web/agent.html#L138) | 138 | `" else if(fetchStatus===\"blocked_or_unresolved_host\"\|\|fetchStatus===\"blocked_connection_target\")tags.push('<span class=\"tag\">حُظر العنوان أو تعذّر التحقق الآمن منه</span>');"` | — |
-| [SRC-DE7EABE998-L000139](../../web/agent.html#L139) | 139 | `" else if([\"redirect_failed\",\"redirect_rejected\",\"redirect_limit\"].includes(fetchStatus))tags.push('<span class=\"tag\">تعذّر اتباع تحويل الرابط بأمان</span>');"` | — |
-| [SRC-DE7EABE998-L000140](../../web/agent.html#L140) | 140 | `" else if(fetchStatus===\"http_error\")tags.push('<span class=\"tag\">الموقع أعاد خطأ HTTP</span>');"` | — |
-| [SRC-DE7EABE998-L000141](../../web/agent.html#L141) | 141 | `" else if(fetchStatus===\"unsupported_content_type\")tags.push('<span class=\"tag\">نوع محتوى الصفحة غير مدعوم</span>');"` | — |
-| [SRC-DE7EABE998-L000142](../../web/agent.html#L142) | 142 | `" else if(fetchStatus===\"page_too_large\")tags.push('<span class=\"tag\">الصفحة تجاوزت حد الحجم الآمن</span>');"` | — |
-| [SRC-DE7EABE998-L000143](../../web/agent.html#L143) | 143 | `" else if(fetchStatus===\"network_error\")tags.push('<span class=\"tag\">تعذّر الاتصال بالصفحة</span>');"` | — |
-| [SRC-DE7EABE998-L000144](../../web/agent.html#L144) | 144 | `" else if(fetchStatus===\"budget_exhausted\")tags.push('<span class=\"tag\">توقفت القراءة بسبب حدود الموارد</span>');"` | — |
-| [SRC-DE7EABE998-L000145](../../web/agent.html#L145) | 145 | `" else if(fetchStatus===\"rejected_url\")tags.push('<span class=\"tag\">رُفض الرابط لأسباب أمان</span>');"` | — |
-| [SRC-DE7EABE998-L000146](../../web/agent.html#L146) | 146 | `" else if(fetchStatus===\"fetch_failed\")tags.push('<span class=\"tag\">تعذّر جلب الصفحة</span>');"` | — |
-| [SRC-DE7EABE998-L000147](../../web/agent.html#L147) | 147 | `" else if(fetchStatus===\"attempted\")tags.push('<span class=\"tag\">محاولة جلب الصفحة</span>');"` | — |
-| [SRC-DE7EABE998-L000148](../../web/agent.html#L148) | 148 | `" else tags.push('<span class=\"tag\">مقتطف بحث — لم تُحاول قراءة الصفحة</span>');"` | — |
-| [SRC-DE7EABE998-L000149](../../web/agent.html#L149) | 149 | `" if(s.platform&&s.platform!==\"web\")tags.push('<span class=\"tag social\">'+escapeHtml(s.platform)+'</span>');"` | — |

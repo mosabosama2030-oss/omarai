@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000484 إلى SRC-0F910493E8-L000708
+- النطاق: SRC-65551FB29F-L000458 إلى SRC-0F910493E8-L000682
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000458](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L458) | 458 | `"- SSO وأدوار مؤسسية."` | — |
+| [SRC-65551FB29F-L000459](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L459) | 459 | `"- multi-region أو high availability."` | — |
+| [SRC-65551FB29F-L000460](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L460) | 460 | `"- طوابير موزعة أو event streaming."` | — |
+| [SRC-65551FB29F-L000461](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L461) | 461 | `"- بنية مراقبة متقدمة أو SBOM/provenance موسع."` | — |
+| [SRC-65551FB29F-L000462](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L462) | 462 | `"- سياسات قانونية/تنظيمية حسب السوق والبيانات."` | — |
+| [SRC-65551FB29F-L000463](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L463) | 463 | `"- مراجعات خارجية أو شهادات رسمية حين يطلبها عقد أو سوق."` | — |
+| [SRC-65551FB29F-L000464](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L464) | 464 | `""` | — |
+| [SRC-65551FB29F-L000465](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L465) | 465 | `"لا يؤخر غياب هذه القدرات بناء الأساس الصحيح، ولا يعني عدم تفعيلها مبكرًا أن المشروع غير احترافي."` | — |
+| [SRC-65551FB29F-L000466](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L466) | 466 | `""` | — |
+| [SRC-65551FB29F-L000467](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L467) | 467 | `"---"` | — |
+| [SRC-65551FB29F-L000468](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L468) | 468 | `""` | — |
+| [SRC-65551FB29F-L000469](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L469) | 469 | `"# الجزء الثامن — تعريف النجاح ومراقبة اكتمال المتطلبات"` | — |
+| [SRC-65551FB29F-L000470](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L470) | 470 | `""` | — |
+| [SRC-65551FB29F-L000471](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L471) | 471 | `"## 27. كيف نعرف أن منظومة المتطلبات نفسها ناجحة؟"` | — |
+| [SRC-65551FB29F-L000472](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L472) | 472 | `""` | — |
+| [SRC-65551FB29F-L000473](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L473) | 473 | `"1. لكل متطلب حرج معرف ثابت ومصدر وحالة ودليل أو سبب UNKNOWN."` | — |
+| [SRC-65551FB29F-L000474](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L474) | 474 | `"2. يمكن لمراجع جديد معرفة ما ثبت وما لم يثبت."` | — |
+| [SRC-65551FB29F-L000475](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L475) | 475 | `"3. لا يوجد ادعاء سعة أو أمان أو توفر دون نطاق وقياس مناسبين."` | — |
+| [SRC-65551FB29F-L000476](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L476) | 476 | `"4. كل فئة خطر حرجة لها ضابط أو استثناء معتمد."` | — |
+| [SRC-65551FB29F-L000477](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L477) | 477 | `"5. التغييرات الكبيرة لها ADR أو سجل قرار مع أثر الاختبار والتراجع."` | — |
+| [SRC-65551FB29F-L000478](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L478) | 478 | `"6. الاختبارات الحرجة قابلة للتكرار ومتصلة بإصدار كود معروف."` | — |
+| [SRC-65551FB29F-L000479](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L479) | 479 | `"7. تُراجع المعايير المرجعية عند تغيرها أو تغير احتياجات Omarai."` | — |
+| [SRC-65551FB29F-L000480](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L480) | 480 | `"8. يمكن اكتشاف المتطلبات القديمة أو المتعارضة وتحديثها."` | — |
+| [SRC-65551FB29F-L000481](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L481) | 481 | `"9. توجد طريقة لمعرفة من وافق على الاستثناء ومتى تنتهي صلاحيته."` | — |
+| [SRC-65551FB29F-L000482](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L482) | 482 | `"10. لا تعتمد الموافقة على عدد تقارير الوكلاء بل على الأدلة."` | — |
+| [SRC-65551FB29F-L000483](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L483) | 483 | `""` | — |
 | [SRC-65551FB29F-L000484](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L484) | 484 | `"## 28. نموذج سجل متطلب قابل للنسخ"` | — |
 | [SRC-65551FB29F-L000485](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L485) | 485 | `""` | — |
 | [SRC-65551FB29F-L000486](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L486) | 486 | ````"```yaml"```` | — |
@@ -799,29 +825,3 @@
 | [SRC-0F910493E8-L000680](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L680) | 680 | `"- اضبط CORS بأقل مجموعة origins مطلوبة، ولا تعتبره بديلاً عن المصادقة."` | — |
 | [SRC-0F910493E8-L000681](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L681) | 681 | `"- استخدم استعلامات SQL محددة المعاملات، وتحقق من قيم المسار وأسماء الملفات؛ لا تسمح بتجاوز المسارات (path traversal)."` | — |
 | [SRC-0F910493E8-L000682](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L682) | 682 | `"- امنع XSS من خلال الترميز حسب سياق HTML/attribute/URL، وتنقية Markdown/HTML بروتين موثوق، ومنع HTML الخام غير اللازم."` | — |
-| [SRC-0F910493E8-L000683](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L683) | 683 | `"- تحقق من الروابط المعروضة وقيّد المخططات الخطرة مثل javascript: وdata: وفق الاستخدام؛ لا تعرض روابط مولدة على أنها مصادر موثوقة."` | — |
-| [SRC-0F910493E8-L000684](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L684) | 684 | `"- راجع CSP وHSTS وX-Content-Type-Options وReferrer-Policy وframe-ancestors أو X-Frame-Options، بحسب ما تسمح به الواجهة والاستضافة. لا تدّعِ وجود هذه الرؤوس قبل فحص استجابة النشر الفعلية."` | — |
-| [SRC-0F910493E8-L000685](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L685) | 685 | `"- استخدم HTTPS للاتصالات الخارجية وعند تقديم خدمة عامة؛ ويُتحقق من أن proxy أو منصة الاستضافة تفرضه بصورة صحيحة."` | — |
-| [SRC-0F910493E8-L000686](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L686) | 686 | `"- راجع CSRF إذا استُخدمت مصادقة cookies؛ لا تعتمد على CORS وحده."` | — |
-| [SRC-0F910493E8-L000687](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L687) | 687 | `"- لا تكشف رسائل الخطأ العامة تفاصيل stack trace أو المسارات الداخلية أو أسماء الأسرار أو استعلامات حساسة."` | — |
-| [SRC-0F910493E8-L000688](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L688) | 688 | `"- استخدم مصادقة وتفويضًا لعمليات الإدارة والتشخيص والتصدير، وحدودًا للأحجام والتنزيلات."` | — |
-| [SRC-0F910493E8-L000689](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L689) | 689 | `"- اختبر XSS عبر مخرجات النموذج والمصادر، وتجاوز الصلاحيات الأفقية، وطلبات API المزورة، وحدود الطلبات."` | — |
-| [SRC-0F910493E8-L000690](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L690) | 690 | `""` | — |
-| [SRC-0F910493E8-L000691](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L691) | 691 | `"## 17.10 الأسرار وخصوصية مزودي النماذج"` | — |
-| [SRC-0F910493E8-L000692](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L692) | 692 | `""` | — |
-| [SRC-0F910493E8-L000693](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L693) | 693 | `"- تخزن أسرار الإنتاج في مخزن أسرار المنصة أو إعداد بيئة محمي؛ لا في Git أو الكود أو المتصفح أو سجلات الطلب."` | — |
-| [SRC-0F910493E8-L000694](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L694) | 694 | ``"- استخدم `.env.example` بقيم وهمية فقط، وافحص ملفات التغيير وتاريخ المستودع على الأسرار عند الاشتباه."`` | — |
-| [SRC-0F910493E8-L000695](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L695) | 695 | `"- عند الاشتباه بتسرب مفتاح، يُلغى أو يدوّر أولًا، ثم يُبحث عن نطاق التعرض؛ حذف القيمة من آخر commit لا يلغي السر المسرب."` | — |
-| [SRC-0F910493E8-L000696](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L696) | 696 | `"- لا ترسل مفاتيح الخدمات أو رموز الدخول إلى النموذج أو ملف تعريف أو محتوى مسترجع."` | — |
-| [SRC-0F910493E8-L000697](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L697) | 697 | `"- توثّق بيانات كل مرحلة تُرسل إلى مزود خارجي: السؤال، والسياق، والمقتطفات، والتشخيصات، والنموذج البديل."` | — |
-| [SRC-0F910493E8-L000698](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L698) | 698 | `"- لا يُرسل تصنيف بيانات لا يسمح به مزود النموذج أو الإعداد أو موافقة المستخدم."` | — |
-| [SRC-0F910493E8-L000699](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L699) | 699 | `"- افحص خصوصية موفري النماذج المجانية وسياسات الاحتفاظ والاستخدام والتدريب وشروط الخدمة قبل الاعتماد على معالجة بيانات حساسة؛ لا تفترض أن المجانية تعني الخصوصية."` | — |
-| [SRC-0F910493E8-L000700](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L700) | 700 | `"- يكون fallback إلى مزود آخر محدودًا بمزودين معتمدين ونطاق بيانات مسموح؛ لا ينقل بيانات أكثر حساسية أو يغير سياسة الخصوصية تلقائيًا."` | — |
-| [SRC-0F910493E8-L000701](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L701) | 701 | `"- إذا تعذر تأكيد أن البيانات مسموح بإرسالها إلى مزود خارجي، قللها أو احجبها أو اطلب موافقة أو عطّل ذلك المسار."` | — |
-| [SRC-0F910493E8-L000702](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L702) | 702 | `"- لا تسجل محتوى المستخدم أو البيانات الشخصية كاملة افتراضيًا؛ سجّل معرفات حالة وملخصات منقحة حيث تكفي."` | — |
-| [SRC-0F910493E8-L000703](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L703) | 703 | `"- حدد سياسة احتفاظ وحذف واضحة وملكية وصلاحيات للوصول إلى السجلات والنسخ الاحتياطية."` | — |
-| [SRC-0F910493E8-L000704](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L704) | 704 | `""` | — |
-| [SRC-0F910493E8-L000705](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L705) | 705 | `"## 17.11 الذاكرة، العزل، التزامن، وتسميم البيانات"` | — |
-| [SRC-0F910493E8-L000706](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L706) | 706 | `""` | — |
-| [SRC-0F910493E8-L000707](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L707) | 707 | `"- لا تُشارك كائنات mutable خاصة بطلب واحد بين الطلبات المتزامنة دون تزامن وعزل مثبتين."` | — |
-| [SRC-0F910493E8-L000708](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L708) | 708 | `"- لكل طلب معرف وسياق وميزانية وإلغاء خاص به. تُمرر الحالة صراحة بدل الاعتماد على متغيرات عامة مشتركة."` | — |

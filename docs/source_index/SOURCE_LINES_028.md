@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001081 إلى SRC-D186ED3822-L000098
+- النطاق: SRC-90FAA34ADE-L001055 إلى SRC-D186ED3822-L000072
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001055](../../tests/fixtures/answer_quality_cases.json#L1055) | 1055 | `"        \"notes\": \"كل النتائج تشير إلى نفس المنشور غير الموثق\""` | — |
+| [SRC-90FAA34ADE-L001056](../../tests/fixtures/answer_quality_cases.json#L1056) | 1056 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001057](../../tests/fixtures/answer_quality_cases.json#L1057) | 1057 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001058](../../tests/fixtures/answer_quality_cases.json#L1058) | 1058 | `"        \"تأكيد التوقف نهائيًا من هذه النتائج فقط\","` | — |
+| [SRC-90FAA34ADE-L001059](../../tests/fixtures/answer_quality_cases.json#L1059) | 1059 | `"        \"وصف النتائج بأنها مصادر مستقلة مؤكدة\""` | — |
+| [SRC-90FAA34ADE-L001060](../../tests/fixtures/answer_quality_cases.json#L1060) | 1060 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001061](../../tests/fixtures/answer_quality_cases.json#L1061) | 1061 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001062](../../tests/fixtures/answer_quality_cases.json#L1062) | 1062 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001063](../../tests/fixtures/answer_quality_cases.json#L1063) | 1063 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001064](../../tests/fixtures/answer_quality_cases.json#L1064) | 1064 | `"      \"case_id\": \"AQ-036\","` | — |
+| [SRC-90FAA34ADE-L001065](../../tests/fixtures/answer_quality_cases.json#L1065) | 1065 | `"      \"category\": \"unsupported_claim\","` | — |
+| [SRC-90FAA34ADE-L001066](../../tests/fixtures/answer_quality_cases.json#L1066) | 1066 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001067](../../tests/fixtures/answer_quality_cases.json#L1067) | 1067 | `"      \"question\": \"The product page says “battery included.” Does that prove the device lasts 18 hours on a charge?\","` | — |
+| [SRC-90FAA34ADE-L001068](../../tests/fixtures/answer_quality_cases.json#L1068) | 1068 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001069](../../tests/fixtures/answer_quality_cases.json#L1069) | 1069 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001070](../../tests/fixtures/answer_quality_cases.json#L1070) | 1070 | `"        \"States the page supports only that a battery is included\","` | — |
+| [SRC-90FAA34ADE-L001071](../../tests/fixtures/answer_quality_cases.json#L1071) | 1071 | `"        \"Separates battery presence from battery-life duration\","` | — |
+| [SRC-90FAA34ADE-L001072](../../tests/fixtures/answer_quality_cases.json#L1072) | 1072 | `"        \"Requests a specification or credible test for the 18-hour claim\""` | — |
+| [SRC-90FAA34ADE-L001073](../../tests/fixtures/answer_quality_cases.json#L1073) | 1073 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001074](../../tests/fixtures/answer_quality_cases.json#L1074) | 1074 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001075](../../tests/fixtures/answer_quality_cases.json#L1075) | 1075 | `"        \"Claims 18-hour battery life from a page that never mentions duration\","` | — |
+| [SRC-90FAA34ADE-L001076](../../tests/fixtures/answer_quality_cases.json#L1076) | 1076 | `"        \"Invents a specification sheet\""` | — |
+| [SRC-90FAA34ADE-L001077](../../tests/fixtures/answer_quality_cases.json#L1077) | 1077 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001078](../../tests/fixtures/answer_quality_cases.json#L1078) | 1078 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001079](../../tests/fixtures/answer_quality_cases.json#L1079) | 1079 | `"        \"type\": \"controlled_page\","` | — |
+| [SRC-90FAA34ADE-L001080](../../tests/fixtures/answer_quality_cases.json#L1080) | 1080 | `"        \"url\": \"https://product.example.test/spec\","` | — |
 | [SRC-90FAA34ADE-L001081](../../tests/fixtures/answer_quality_cases.json#L1081) | 1081 | `"        \"body\": \"Package includes: device, cable, and battery. No runtime figure is listed.\""` | — |
 | [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |
@@ -826,29 +852,3 @@
 | [SRC-D186ED3822-L000070](../../tests/test_answer_quality_review_scorecard.py#L70) | 70 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] is None"` | — |
 | [SRC-D186ED3822-L000071](../../tests/test_answer_quality_review_scorecard.py#L71) | 71 | `"    assert result[\"metrics\"][\"faithfulness\"][\"status\"] == \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\""` | — |
 | [SRC-D186ED3822-L000072](../../tests/test_answer_quality_review_scorecard.py#L72) | 72 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] is None"` | — |
-| [SRC-D186ED3822-L000073](../../tests/test_answer_quality_review_scorecard.py#L73) | 73 | `""` | — |
-| [SRC-D186ED3822-L000074](../../tests/test_answer_quality_review_scorecard.py#L74) | 74 | `""` | — |
-| [SRC-D186ED3822-L000075](../../tests/test_answer_quality_review_scorecard.py#L75) | 75 | `"def test_scorecard_rejects_numerator_larger_than_denominator():"` | — |
-| [SRC-D186ED3822-L000076](../../tests/test_answer_quality_review_scorecard.py#L76) | 76 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000077](../../tests/test_answer_quality_review_scorecard.py#L77) | 77 | `"    data = {"` | — |
-| [SRC-D186ED3822-L000078](../../tests/test_answer_quality_review_scorecard.py#L78) | 78 | `"        \"reviews\": [{"` | — |
-| [SRC-D186ED3822-L000079](../../tests/test_answer_quality_review_scorecard.py#L79) | 79 | `"            \"case_id\": \"AQ-007\","` | — |
-| [SRC-D186ED3822-L000080](../../tests/test_answer_quality_review_scorecard.py#L80) | 80 | `"            \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000081](../../tests/test_answer_quality_review_scorecard.py#L81) | 81 | `"            \"faithfulness\": {\"supported_claims\": 3, \"reviewed_claims\": 2},"` | — |
-| [SRC-D186ED3822-L000082](../../tests/test_answer_quality_review_scorecard.py#L82) | 82 | `"        }],"` | — |
-| [SRC-D186ED3822-L000083](../../tests/test_answer_quality_review_scorecard.py#L83) | 83 | `"    }"` | — |
-| [SRC-D186ED3822-L000084](../../tests/test_answer_quality_review_scorecard.py#L84) | 84 | `"    with pytest.raises(ValueError, match=\"cannot exceed\"):"` | — |
-| [SRC-D186ED3822-L000085](../../tests/test_answer_quality_review_scorecard.py#L85) | 85 | `"        mod.summarize_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000086](../../tests/test_answer_quality_review_scorecard.py#L86) | 86 | `""` | — |
-| [SRC-D186ED3822-L000087](../../tests/test_answer_quality_review_scorecard.py#L87) | 87 | `""` | — |
-| [SRC-D186ED3822-L000088](../../tests/test_answer_quality_review_scorecard.py#L88) | 88 | `"def test_scorecard_rejects_unknown_case_ids_and_duplicate_reviews():"` | — |
-| [SRC-D186ED3822-L000089](../../tests/test_answer_quality_review_scorecard.py#L89) | 89 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000090](../../tests/test_answer_quality_review_scorecard.py#L90) | 90 | `"    data = {\"reviews\": ["` | — |
-| [SRC-D186ED3822-L000091](../../tests/test_answer_quality_review_scorecard.py#L91) | 91 | `"        {\"case_id\": \"AQ-999\", \"status\": \"NOT_TESTED\"},"` | — |
-| [SRC-D186ED3822-L000092](../../tests/test_answer_quality_review_scorecard.py#L92) | 92 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
-| [SRC-D186ED3822-L000093](../../tests/test_answer_quality_review_scorecard.py#L93) | 93 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
-| [SRC-D186ED3822-L000094](../../tests/test_answer_quality_review_scorecard.py#L94) | 94 | `"    ]}"` | — |
-| [SRC-D186ED3822-L000095](../../tests/test_answer_quality_review_scorecard.py#L95) | 95 | `"    issues = mod.validate_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000096](../../tests/test_answer_quality_review_scorecard.py#L96) | 96 | `"    assert any(\"unknown case_id\" in issue for issue in issues)"` | — |
-| [SRC-D186ED3822-L000097](../../tests/test_answer_quality_review_scorecard.py#L97) | 97 | `"    assert any(\"duplicate review\" in issue for issue in issues)"` | — |
-| [SRC-D186ED3822-L000098](../../tests/test_answer_quality_review_scorecard.py#L98) | 98 | `""` | — |

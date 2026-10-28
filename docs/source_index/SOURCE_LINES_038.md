@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000773 إلى SRC-F725E90B2A-L001572
+- النطاق: SRC-F725E90B2A-L000747 إلى SRC-F725E90B2A-L001546
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000747](../../tests/test_web_agent.py#L747) | 747 | `"            sources=[sample_source(0), sample_source(1)],"` | — |
+| [SRC-F725E90B2A-L000748](../../tests/test_web_agent.py#L748) | 748 | `"            search_warning=None,"` | — |
+| [SRC-F725E90B2A-L000749](../../tests/test_web_agent.py#L749) | 749 | `"            research_plan={\"depth\": \"standard\", \"queries\": [\"لخص هذا المصدر\"]},"` | — |
+| [SRC-F725E90B2A-L000750](../../tests/test_web_agent.py#L750) | 750 | `"            search_report={},"` | — |
+| [SRC-F725E90B2A-L000751](../../tests/test_web_agent.py#L751) | 751 | `"        )"` | — |
+| [SRC-F725E90B2A-L000752](../../tests/test_web_agent.py#L752) | 752 | `""` | — |
+| [SRC-F725E90B2A-L000753](../../tests/test_web_agent.py#L753) | 753 | `""` | — |
+| [SRC-F725E90B2A-L000754](../../tests/test_web_agent.py#L754) | 754 | `"def test_completion_discards_truncated_primary_and_uses_complete_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000755](../../tests/test_web_agent.py#L755) | 755 | `"    import json"` | — |
+| [SRC-F725E90B2A-L000756](../../tests/test_web_agent.py#L756) | 756 | `""` | — |
+| [SRC-F725E90B2A-L000757](../../tests/test_web_agent.py#L757) | 757 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L000758](../../tests/test_web_agent.py#L758) | 758 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L000759](../../tests/test_web_agent.py#L759) | 759 | `"    agent.fallback_model = \"openrouter/free\""` | — |
+| [SRC-F725E90B2A-L000760](../../tests/test_web_agent.py#L760) | 760 | `"    called = []"` | — |
+| [SRC-F725E90B2A-L000761](../../tests/test_web_agent.py#L761) | 761 | `""` | — |
+| [SRC-F725E90B2A-L000762](../../tests/test_web_agent.py#L762) | 762 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000763](../../tests/test_web_agent.py#L763) | 763 | `"        def __init__(self, content, finish_reason):"` | — |
+| [SRC-F725E90B2A-L000764](../../tests/test_web_agent.py#L764) | 764 | `"            self.body = json.dumps({"` | — |
+| [SRC-F725E90B2A-L000765](../../tests/test_web_agent.py#L765) | 765 | `"                \"choices\": [{"` | — |
+| [SRC-F725E90B2A-L000766](../../tests/test_web_agent.py#L766) | 766 | `"                    \"message\": {\"content\": content},"` | — |
+| [SRC-F725E90B2A-L000767](../../tests/test_web_agent.py#L767) | 767 | `"                    \"finish_reason\": finish_reason,"` | — |
+| [SRC-F725E90B2A-L000768](../../tests/test_web_agent.py#L768) | 768 | `"                }]"` | — |
+| [SRC-F725E90B2A-L000769](../../tests/test_web_agent.py#L769) | 769 | `"            }).encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000770](../../tests/test_web_agent.py#L770) | 770 | `""` | — |
+| [SRC-F725E90B2A-L000771](../../tests/test_web_agent.py#L771) | 771 | `"        def __enter__(self):"` | — |
+| [SRC-F725E90B2A-L000772](../../tests/test_web_agent.py#L772) | 772 | `"            return self"` | — |
 | [SRC-F725E90B2A-L000773](../../tests/test_web_agent.py#L773) | 773 | `""` | — |
 | [SRC-F725E90B2A-L000774](../../tests/test_web_agent.py#L774) | 774 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
 | [SRC-F725E90B2A-L000775](../../tests/test_web_agent.py#L775) | 775 | `"            return False"` | — |
@@ -790,29 +816,3 @@
 | [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"    </item>"` | — |
 | [SRC-F725E90B2A-L001545](../../tests/test_web_agent.py#L1545) | 1545 | `"    </channel></rss>\"\"\""` | — |
 | [SRC-F725E90B2A-L001546](../../tests/test_web_agent.py#L1546) | 1546 | `""` | — |
-| [SRC-F725E90B2A-L001547](../../tests/test_web_agent.py#L1547) | 1547 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L001548](../../tests/test_web_agent.py#L1548) | 1548 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L001549](../../tests/test_web_agent.py#L1549) | 1549 | `"        content = rss.encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L001550](../../tests/test_web_agent.py#L1550) | 1550 | `""` | — |
-| [SRC-F725E90B2A-L001551](../../tests/test_web_agent.py#L1551) | 1551 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001552](../../tests/test_web_agent.py#L1552) | 1552 | `"    monkeypatch.setattr(httpx, \"get\", lambda *args, **kwargs: FakeResponse())"` | — |
-| [SRC-F725E90B2A-L001553](../../tests/test_web_agent.py#L1553) | 1553 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _query: [])"` | — |
-| [SRC-F725E90B2A-L001554](../../tests/test_web_agent.py#L1554) | 1554 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _query: [])"` | — |
-| [SRC-F725E90B2A-L001555](../../tests/test_web_agent.py#L1555) | 1555 | `""` | — |
-| [SRC-F725E90B2A-L001556](../../tests/test_web_agent.py#L1556) | 1556 | `"    results = agent._search_web(\"AI use cases for small businesses latest news\")"` | — |
-| [SRC-F725E90B2A-L001557](../../tests/test_web_agent.py#L1557) | 1557 | `""` | — |
-| [SRC-F725E90B2A-L001558](../../tests/test_web_agent.py#L1558) | 1558 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L001559](../../tests/test_web_agent.py#L1559) | 1559 | `"    assert results[0][\"title\"] == \"أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال\""` | — |
-| [SRC-F725E90B2A-L001560](../../tests/test_web_agent.py#L1560) | 1560 | `"    diagnostic = next("` | — |
-| [SRC-F725E90B2A-L001561](../../tests/test_web_agent.py#L1561) | 1561 | `"        row for row in agent._provider_diagnostics"` | — |
-| [SRC-F725E90B2A-L001562](../../tests/test_web_agent.py#L1562) | 1562 | `"        if row[\"provider\"] == \"google_news_rss\""` | — |
-| [SRC-F725E90B2A-L001563](../../tests/test_web_agent.py#L1563) | 1563 | `"    )"` | — |
-| [SRC-F725E90B2A-L001564](../../tests/test_web_agent.py#L1564) | 1564 | `"    assert diagnostic[\"status\"] == \"ok\""` | — |
-| [SRC-F725E90B2A-L001565](../../tests/test_web_agent.py#L1565) | 1565 | `"    assert diagnostic[\"result_count\"] == 2"` | — |
-| [SRC-F725E90B2A-L001566](../../tests/test_web_agent.py#L1566) | 1566 | `"    assert diagnostic[\"accepted_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L001567](../../tests/test_web_agent.py#L1567) | 1567 | `"    assert diagnostic[\"rejected_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L001568](../../tests/test_web_agent.py#L1568) | 1568 | `"    assert diagnostic[\"rejection_counts\"][\"relevance_below_threshold\"] == 1"` | — |
-| [SRC-F725E90B2A-L001569](../../tests/test_web_agent.py#L1569) | 1569 | `""` | — |
-| [SRC-F725E90B2A-L001570](../../tests/test_web_agent.py#L1570) | 1570 | `""` | — |
-| [SRC-F725E90B2A-L001571](../../tests/test_web_agent.py#L1571) | 1571 | `"def test_google_news_preserves_publisher_identity(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001572](../../tests/test_web_agent.py#L1572) | 1572 | `"    import httpx"` | — |

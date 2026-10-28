@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D186ED3822-L000099 إلى SRC-3451CC474D-L000218
+- النطاق: SRC-D186ED3822-L000073 إلى SRC-3451CC474D-L000192
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D186ED3822-L000073](../../tests/test_answer_quality_review_scorecard.py#L73) | 73 | `""` | — |
+| [SRC-D186ED3822-L000074](../../tests/test_answer_quality_review_scorecard.py#L74) | 74 | `""` | — |
+| [SRC-D186ED3822-L000075](../../tests/test_answer_quality_review_scorecard.py#L75) | 75 | `"def test_scorecard_rejects_numerator_larger_than_denominator():"` | — |
+| [SRC-D186ED3822-L000076](../../tests/test_answer_quality_review_scorecard.py#L76) | 76 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000077](../../tests/test_answer_quality_review_scorecard.py#L77) | 77 | `"    data = {"` | — |
+| [SRC-D186ED3822-L000078](../../tests/test_answer_quality_review_scorecard.py#L78) | 78 | `"        \"reviews\": [{"` | — |
+| [SRC-D186ED3822-L000079](../../tests/test_answer_quality_review_scorecard.py#L79) | 79 | `"            \"case_id\": \"AQ-007\","` | — |
+| [SRC-D186ED3822-L000080](../../tests/test_answer_quality_review_scorecard.py#L80) | 80 | `"            \"status\": \"REVIEWED\","` | — |
+| [SRC-D186ED3822-L000081](../../tests/test_answer_quality_review_scorecard.py#L81) | 81 | `"            \"faithfulness\": {\"supported_claims\": 3, \"reviewed_claims\": 2},"` | — |
+| [SRC-D186ED3822-L000082](../../tests/test_answer_quality_review_scorecard.py#L82) | 82 | `"        }],"` | — |
+| [SRC-D186ED3822-L000083](../../tests/test_answer_quality_review_scorecard.py#L83) | 83 | `"    }"` | — |
+| [SRC-D186ED3822-L000084](../../tests/test_answer_quality_review_scorecard.py#L84) | 84 | `"    with pytest.raises(ValueError, match=\"cannot exceed\"):"` | — |
+| [SRC-D186ED3822-L000085](../../tests/test_answer_quality_review_scorecard.py#L85) | 85 | `"        mod.summarize_reviews(data, corpus())"` | — |
+| [SRC-D186ED3822-L000086](../../tests/test_answer_quality_review_scorecard.py#L86) | 86 | `""` | — |
+| [SRC-D186ED3822-L000087](../../tests/test_answer_quality_review_scorecard.py#L87) | 87 | `""` | — |
+| [SRC-D186ED3822-L000088](../../tests/test_answer_quality_review_scorecard.py#L88) | 88 | `"def test_scorecard_rejects_unknown_case_ids_and_duplicate_reviews():"` | — |
+| [SRC-D186ED3822-L000089](../../tests/test_answer_quality_review_scorecard.py#L89) | 89 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000090](../../tests/test_answer_quality_review_scorecard.py#L90) | 90 | `"    data = {\"reviews\": ["` | — |
+| [SRC-D186ED3822-L000091](../../tests/test_answer_quality_review_scorecard.py#L91) | 91 | `"        {\"case_id\": \"AQ-999\", \"status\": \"NOT_TESTED\"},"` | — |
+| [SRC-D186ED3822-L000092](../../tests/test_answer_quality_review_scorecard.py#L92) | 92 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
+| [SRC-D186ED3822-L000093](../../tests/test_answer_quality_review_scorecard.py#L93) | 93 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
+| [SRC-D186ED3822-L000094](../../tests/test_answer_quality_review_scorecard.py#L94) | 94 | `"    ]}"` | — |
+| [SRC-D186ED3822-L000095](../../tests/test_answer_quality_review_scorecard.py#L95) | 95 | `"    issues = mod.validate_reviews(data, corpus())"` | — |
+| [SRC-D186ED3822-L000096](../../tests/test_answer_quality_review_scorecard.py#L96) | 96 | `"    assert any(\"unknown case_id\" in issue for issue in issues)"` | — |
+| [SRC-D186ED3822-L000097](../../tests/test_answer_quality_review_scorecard.py#L97) | 97 | `"    assert any(\"duplicate review\" in issue for issue in issues)"` | — |
+| [SRC-D186ED3822-L000098](../../tests/test_answer_quality_review_scorecard.py#L98) | 98 | `""` | — |
 | [SRC-D186ED3822-L000099](../../tests/test_answer_quality_review_scorecard.py#L99) | 99 | `""` | — |
 | [SRC-D186ED3822-L000100](../../tests/test_answer_quality_review_scorecard.py#L100) | 100 | `"def test_not_tested_cases_must_not_carry_metric_scores():"` | — |
 | [SRC-D186ED3822-L000101](../../tests/test_answer_quality_review_scorecard.py#L101) | 101 | `"    mod = load_module()"` | — |
@@ -817,29 +843,3 @@
 | [SRC-3451CC474D-L000190](../../tests/test_api.py#L190) | 190 | `"    body = json.dumps({\"question\": \"مين أفضل إشارة أراجعها؟\"}, ensure_ascii=False).encode(\"utf-8\")"` | — |
 | [SRC-3451CC474D-L000191](../../tests/test_api.py#L191) | 191 | `"    post = Request("` | — |
 | [SRC-3451CC474D-L000192](../../tests/test_api.py#L192) | 192 | `"        local_api + \"/api/ask\","` | — |
-| [SRC-3451CC474D-L000193](../../tests/test_api.py#L193) | 193 | `"        data=body,"` | — |
-| [SRC-3451CC474D-L000194](../../tests/test_api.py#L194) | 194 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000195](../../tests/test_api.py#L195) | 195 | `"        headers={\"Content-Type\": \"application/json\", \"Origin\": origin},"` | — |
-| [SRC-3451CC474D-L000196](../../tests/test_api.py#L196) | 196 | `"    )"` | — |
-| [SRC-3451CC474D-L000197](../../tests/test_api.py#L197) | 197 | `"    with urlopen(post, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000198](../../tests/test_api.py#L198) | 198 | `"        payload = json.loads(response.read().decode(\"utf-8\"))"` | — |
-| [SRC-3451CC474D-L000199](../../tests/test_api.py#L199) | 199 | `"        assert response.status == 200"` | — |
-| [SRC-3451CC474D-L000200](../../tests/test_api.py#L200) | 200 | `"        assert response.headers.get(\"Access-Control-Allow-Origin\") == origin"` | — |
-| [SRC-3451CC474D-L000201](../../tests/test_api.py#L201) | 201 | `"        assert payload[\"kind\"] == \"no_data\""` | — |
-| [SRC-3451CC474D-L000202](../../tests/test_api.py#L202) | 202 | `""` | — |
-| [SRC-3451CC474D-L000203](../../tests/test_api.py#L203) | 203 | `""` | — |
-| [SRC-3451CC474D-L000204](../../tests/test_api.py#L204) | 204 | `"def test_preflight_rejects_unconfigured_origin(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000205](../../tests/test_api.py#L205) | 205 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000206](../../tests/test_api.py#L206) | 206 | `"    preflight = Request("` | — |
-| [SRC-3451CC474D-L000207](../../tests/test_api.py#L207) | 207 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000208](../../tests/test_api.py#L208) | 208 | `"        method=\"OPTIONS\","` | — |
-| [SRC-3451CC474D-L000209](../../tests/test_api.py#L209) | 209 | `"        headers={"` | — |
-| [SRC-3451CC474D-L000210](../../tests/test_api.py#L210) | 210 | `"            \"Origin\": \"https://attacker.example\","` | — |
-| [SRC-3451CC474D-L000211](../../tests/test_api.py#L211) | 211 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
-| [SRC-3451CC474D-L000212](../../tests/test_api.py#L212) | 212 | `"        },"` | — |
-| [SRC-3451CC474D-L000213](../../tests/test_api.py#L213) | 213 | `"    )"` | — |
-| [SRC-3451CC474D-L000214](../../tests/test_api.py#L214) | 214 | `"    with pytest.raises(HTTPError) as error:"` | — |
-| [SRC-3451CC474D-L000215](../../tests/test_api.py#L215) | 215 | `"        urlopen(preflight, timeout=3)"` | — |
-| [SRC-3451CC474D-L000216](../../tests/test_api.py#L216) | 216 | `"    assert error.value.code == 403"` | — |
-| [SRC-3451CC474D-L000217](../../tests/test_api.py#L217) | 217 | `""` | — |
-| [SRC-3451CC474D-L000218](../../tests/test_api.py#L218) | 218 | `""` | — |

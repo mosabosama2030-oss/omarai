@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA139AC9D0-L000152 إلى SRC-FA4E1423C3-L000435
+- النطاق: SRC-DA139AC9D0-L000126 إلى SRC-FA4E1423C3-L000409
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA139AC9D0-L000126](../../tests/test_dialogue_state.py#L126) | 126 | `"        \"topic_shift\": False,"` | — |
+| [SRC-DA139AC9D0-L000127](../../tests/test_dialogue_state.py#L127) | 127 | `"        \"needs_clarification\": True,"` | — |
+| [SRC-DA139AC9D0-L000128](../../tests/test_dialogue_state.py#L128) | 128 | `"        \"clarification_question\": \"تقصد بطارية أي هاتف، أم تريد مقارنة بطاريتيهما؟\","` | — |
+| [SRC-DA139AC9D0-L000129](../../tests/test_dialogue_state.py#L129) | 129 | `"        \"unresolved_references\": [\"البطارية\"],"` | — |
+| [SRC-DA139AC9D0-L000130](../../tests/test_dialogue_state.py#L130) | 130 | `"    }"` | — |
+| [SRC-DA139AC9D0-L000131](../../tests/test_dialogue_state.py#L131) | 131 | `""` | — |
+| [SRC-DA139AC9D0-L000132](../../tests/test_dialogue_state.py#L132) | 132 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
+| [SRC-DA139AC9D0-L000133](../../tests/test_dialogue_state.py#L133) | 133 | `""` | — |
+| [SRC-DA139AC9D0-L000134](../../tests/test_dialogue_state.py#L134) | 134 | `"    assert context[\"needs_clarification\"] is True"` | — |
+| [SRC-DA139AC9D0-L000135](../../tests/test_dialogue_state.py#L135) | 135 | `"    assert context[\"resolved_question\"] == question"` | — |
+| [SRC-DA139AC9D0-L000136](../../tests/test_dialogue_state.py#L136) | 136 | `"    assert context[\"status\"] == \"needs_clarification\""` | — |
+| [SRC-DA139AC9D0-L000137](../../tests/test_dialogue_state.py#L137) | 137 | `"    assert context[\"clarification_question\"]"` | — |
+| [SRC-DA139AC9D0-L000138](../../tests/test_dialogue_state.py#L138) | 138 | `""` | — |
+| [SRC-DA139AC9D0-L000139](../../tests/test_dialogue_state.py#L139) | 139 | `""` | — |
+| [SRC-DA139AC9D0-L000140](../../tests/test_dialogue_state.py#L140) | 140 | `"def test_context_probe_gate_recognizes_natural_followups_not_every_short_question() -> None:"` | — |
+| [SRC-DA139AC9D0-L000141](../../tests/test_dialogue_state.py#L141) | 141 | `"    assert might_be_context_dependent(\"And what about its warranty?\")"` | — |
+| [SRC-DA139AC9D0-L000142](../../tests/test_dialogue_state.py#L142) | 142 | `"    assert might_be_context_dependent(\"وطب الضمان الدولي بيسري في مصر؟\")"` | — |
+| [SRC-DA139AC9D0-L000143](../../tests/test_dialogue_state.py#L143) | 143 | `"    assert might_be_context_dependent(\"والضمان الدولي بيسري في مصر؟\")"` | — |
+| [SRC-DA139AC9D0-L000144](../../tests/test_dialogue_state.py#L144) | 144 | `"    assert might_be_context_dependent(\"والضمان؟\")"` | — |
+| [SRC-DA139AC9D0-L000145](../../tests/test_dialogue_state.py#L145) | 145 | `"    assert might_be_context_dependent(\"Is it covered?\")"` | — |
+| [SRC-DA139AC9D0-L000146](../../tests/test_dialogue_state.py#L146) | 146 | `"    assert might_be_context_dependent(\"هل هذا الهاتف مناسب؟\")"` | — |
+| [SRC-DA139AC9D0-L000147](../../tests/test_dialogue_state.py#L147) | 147 | `""` | — |
+| [SRC-DA139AC9D0-L000148](../../tests/test_dialogue_state.py#L148) | 148 | `"    assert might_be_context_dependent(\"أقدر أشتريه من هناك؟\")"` | — |
+| [SRC-DA139AC9D0-L000149](../../tests/test_dialogue_state.py#L149) | 149 | `"    assert might_be_context_dependent(\"هل أستخدمها مع الجهاز ده؟\")"` | — |
+| [SRC-DA139AC9D0-L000150](../../tests/test_dialogue_state.py#L150) | 150 | `"    assert not might_be_context_dependent(\"اشتريت شاشة جديدة اليوم؟\")"` | — |
+| [SRC-DA139AC9D0-L000151](../../tests/test_dialogue_state.py#L151) | 151 | `"    assert not might_be_context_dependent(\"اشرح الديناميكا الحرارية ببساطة\")"` | — |
 | [SRC-DA139AC9D0-L000152](../../tests/test_dialogue_state.py#L152) | 152 | `"    assert not might_be_context_dependent(\"Explain entropy in simple terms.\")"` | — |
 ## اختبارات
 
@@ -817,29 +843,3 @@
 | [SRC-FA4E1423C3-L000407](../../tests/test_generate_index.py#L407) | 407 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
 | [SRC-FA4E1423C3-L000408](../../tests/test_generate_index.py#L408) | 408 | `"    pages, _ = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |
 | [SRC-FA4E1423C3-L000409](../../tests/test_generate_index.py#L409) | 409 | `""` | — |
-| [SRC-FA4E1423C3-L000410](../../tests/test_generate_index.py#L410) | 410 | `"    assert len(findings) == 3"` | — |
-| [SRC-FA4E1423C3-L000411](../../tests/test_generate_index.py#L411) | 411 | `"    assert {item.marker for item in findings} == {\"BUG\", \"FIXME\"}"` | — |
-| [SRC-FA4E1423C3-L000412](../../tests/test_generate_index.py#L412) | 412 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
-| [SRC-FA4E1423C3-L000413](../../tests/test_generate_index.py#L413) | 413 | `"    bug_ids = [item.finding_id for item in findings if item.marker == \"BUG\"]"` | — |
-| [SRC-FA4E1423C3-L000414](../../tests/test_generate_index.py#L414) | 414 | `"    assert any(item.endswith(\"-M01\") for item in bug_ids)"` | — |
-| [SRC-FA4E1423C3-L000415](../../tests/test_generate_index.py#L415) | 415 | `"    assert any(item.endswith(\"-M02\") for item in bug_ids)"` | — |
-| [SRC-FA4E1423C3-L000416](../../tests/test_generate_index.py#L416) | 416 | `"    page_content = \"\\n\".join(pages.values())"` | — |
-| [SRC-FA4E1423C3-L000417](../../tests/test_generate_index.py#L417) | 417 | `"    assert all(item.finding_id in page_content for item in findings)"` | — |
-| [SRC-FA4E1423C3-L000418](../../tests/test_generate_index.py#L418) | 418 | `""` | — |
-| [SRC-FA4E1423C3-L000419](../../tests/test_generate_index.py#L419) | 419 | `""` | — |
-| [SRC-FA4E1423C3-L000420](../../tests/test_generate_index.py#L420) | 420 | `"def test_finding_scan_ignores_incidental_words_but_finds_real_annotations("` | — |
-| [SRC-FA4E1423C3-L000421](../../tests/test_generate_index.py#L421) | 421 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000422](../../tests/test_generate_index.py#L422) | 422 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000423](../../tests/test_generate_index.py#L423) | 423 | `"    \"\"\"Only explicit comment or prose markers become findings, never syntax/URLs/strings.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000424](../../tests/test_generate_index.py#L424) | 424 | `"    (tmp_path / \"sample.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000425](../../tests/test_generate_index.py#L425) | 425 | `"        'framework_url = \"https://example.org/risk-management-framework\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000426](../../tests/test_generate_index.py#L426) | 426 | `"        'error = \"ordinary error variable\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000427](../../tests/test_generate_index.py#L427) | 427 | `"        'template = \"# BUG: this is inside a string\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000428](../../tests/test_generate_index.py#L428) | 428 | `"        '# BUG: real Python defect\\n',"` | — |
-| [SRC-FA4E1423C3-L000429](../../tests/test_generate_index.py#L429) | 429 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000430](../../tests/test_generate_index.py#L430) | 430 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000431](../../tests/test_generate_index.py#L431) | 431 | `"    (tmp_path / \"app.js\").write_text("` | — |
-| [SRC-FA4E1423C3-L000432](../../tests/test_generate_index.py#L432) | 432 | `"        'const template = \"// BUG: not a comment\";\\n'"` | — |
-| [SRC-FA4E1423C3-L000433](../../tests/test_generate_index.py#L433) | 433 | `"        'const error = 1;\\n'"` | — |
-| [SRC-FA4E1423C3-L000434](../../tests/test_generate_index.py#L434) | 434 | `"        'const x = 2; // FIXME: actual JS issue\\n'"` | — |
-| [SRC-FA4E1423C3-L000435](../../tests/test_generate_index.py#L435) | 435 | `"        '/* SECURITY: actual CSS/JS comment issue */\\n',"` | — |

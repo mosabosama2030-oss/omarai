@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000709 إلى SRC-69F3587825-L000311
+- النطاق: SRC-0F910493E8-L000683 إلى SRC-69F3587825-L000285
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000683](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L683) | 683 | `"- تحقق من الروابط المعروضة وقيّد المخططات الخطرة مثل javascript: وdata: وفق الاستخدام؛ لا تعرض روابط مولدة على أنها مصادر موثوقة."` | — |
+| [SRC-0F910493E8-L000684](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L684) | 684 | `"- راجع CSP وHSTS وX-Content-Type-Options وReferrer-Policy وframe-ancestors أو X-Frame-Options، بحسب ما تسمح به الواجهة والاستضافة. لا تدّعِ وجود هذه الرؤوس قبل فحص استجابة النشر الفعلية."` | — |
+| [SRC-0F910493E8-L000685](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L685) | 685 | `"- استخدم HTTPS للاتصالات الخارجية وعند تقديم خدمة عامة؛ ويُتحقق من أن proxy أو منصة الاستضافة تفرضه بصورة صحيحة."` | — |
+| [SRC-0F910493E8-L000686](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L686) | 686 | `"- راجع CSRF إذا استُخدمت مصادقة cookies؛ لا تعتمد على CORS وحده."` | — |
+| [SRC-0F910493E8-L000687](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L687) | 687 | `"- لا تكشف رسائل الخطأ العامة تفاصيل stack trace أو المسارات الداخلية أو أسماء الأسرار أو استعلامات حساسة."` | — |
+| [SRC-0F910493E8-L000688](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L688) | 688 | `"- استخدم مصادقة وتفويضًا لعمليات الإدارة والتشخيص والتصدير، وحدودًا للأحجام والتنزيلات."` | — |
+| [SRC-0F910493E8-L000689](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L689) | 689 | `"- اختبر XSS عبر مخرجات النموذج والمصادر، وتجاوز الصلاحيات الأفقية، وطلبات API المزورة، وحدود الطلبات."` | — |
+| [SRC-0F910493E8-L000690](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L690) | 690 | `""` | — |
+| [SRC-0F910493E8-L000691](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L691) | 691 | `"## 17.10 الأسرار وخصوصية مزودي النماذج"` | — |
+| [SRC-0F910493E8-L000692](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L692) | 692 | `""` | — |
+| [SRC-0F910493E8-L000693](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L693) | 693 | `"- تخزن أسرار الإنتاج في مخزن أسرار المنصة أو إعداد بيئة محمي؛ لا في Git أو الكود أو المتصفح أو سجلات الطلب."` | — |
+| [SRC-0F910493E8-L000694](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L694) | 694 | ``"- استخدم `.env.example` بقيم وهمية فقط، وافحص ملفات التغيير وتاريخ المستودع على الأسرار عند الاشتباه."`` | — |
+| [SRC-0F910493E8-L000695](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L695) | 695 | `"- عند الاشتباه بتسرب مفتاح، يُلغى أو يدوّر أولًا، ثم يُبحث عن نطاق التعرض؛ حذف القيمة من آخر commit لا يلغي السر المسرب."` | — |
+| [SRC-0F910493E8-L000696](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L696) | 696 | `"- لا ترسل مفاتيح الخدمات أو رموز الدخول إلى النموذج أو ملف تعريف أو محتوى مسترجع."` | — |
+| [SRC-0F910493E8-L000697](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L697) | 697 | `"- توثّق بيانات كل مرحلة تُرسل إلى مزود خارجي: السؤال، والسياق، والمقتطفات، والتشخيصات، والنموذج البديل."` | — |
+| [SRC-0F910493E8-L000698](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L698) | 698 | `"- لا يُرسل تصنيف بيانات لا يسمح به مزود النموذج أو الإعداد أو موافقة المستخدم."` | — |
+| [SRC-0F910493E8-L000699](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L699) | 699 | `"- افحص خصوصية موفري النماذج المجانية وسياسات الاحتفاظ والاستخدام والتدريب وشروط الخدمة قبل الاعتماد على معالجة بيانات حساسة؛ لا تفترض أن المجانية تعني الخصوصية."` | — |
+| [SRC-0F910493E8-L000700](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L700) | 700 | `"- يكون fallback إلى مزود آخر محدودًا بمزودين معتمدين ونطاق بيانات مسموح؛ لا ينقل بيانات أكثر حساسية أو يغير سياسة الخصوصية تلقائيًا."` | — |
+| [SRC-0F910493E8-L000701](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L701) | 701 | `"- إذا تعذر تأكيد أن البيانات مسموح بإرسالها إلى مزود خارجي، قللها أو احجبها أو اطلب موافقة أو عطّل ذلك المسار."` | — |
+| [SRC-0F910493E8-L000702](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L702) | 702 | `"- لا تسجل محتوى المستخدم أو البيانات الشخصية كاملة افتراضيًا؛ سجّل معرفات حالة وملخصات منقحة حيث تكفي."` | — |
+| [SRC-0F910493E8-L000703](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L703) | 703 | `"- حدد سياسة احتفاظ وحذف واضحة وملكية وصلاحيات للوصول إلى السجلات والنسخ الاحتياطية."` | — |
+| [SRC-0F910493E8-L000704](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L704) | 704 | `""` | — |
+| [SRC-0F910493E8-L000705](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L705) | 705 | `"## 17.11 الذاكرة، العزل، التزامن، وتسميم البيانات"` | — |
+| [SRC-0F910493E8-L000706](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L706) | 706 | `""` | — |
+| [SRC-0F910493E8-L000707](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L707) | 707 | `"- لا تُشارك كائنات mutable خاصة بطلب واحد بين الطلبات المتزامنة دون تزامن وعزل مثبتين."` | — |
+| [SRC-0F910493E8-L000708](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L708) | 708 | `"- لكل طلب معرف وسياق وميزانية وإلغاء خاص به. تُمرر الحالة صراحة بدل الاعتماد على متغيرات عامة مشتركة."` | — |
 | [SRC-0F910493E8-L000709](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L709) | 709 | `"- تتضمن مفاتيح الذاكرة والتخزين المؤقت نطاق المستخدم/الجلسة/المهمة عند انطباقه."` | — |
 | [SRC-0F910493E8-L000710](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L710) | 710 | `"- لا تسمح للطلب بتقديم سجل محادثة مزور يمنح نفسه دور system أو صلاحية داخلية."` | — |
 | [SRC-0F910493E8-L000711](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L711) | 711 | `"- كل ذاكرة مسترجعة بيانات غير موثوقة حتى لو كانت محفوظة من تشغيل سابق؛ تحمي من poisoning والتلوث بين السياقات."` | — |
@@ -835,29 +861,3 @@
 | [SRC-69F3587825-L000283](../search_code.py#L283) | 283 | `"        help=\"امتداد ملف للبحث (يمكن تكراره)، مثل: --ext py --ext html\","` | — |
 | [SRC-69F3587825-L000284](../search_code.py#L284) | 284 | `"    )"` | — |
 | [SRC-69F3587825-L000285](../search_code.py#L285) | 285 | `"    parser.add_argument(\"--max\", type=int, default=50, help=\"أقصى عدد نتائج (افتراضي 50).\")"` | — |
-| [SRC-69F3587825-L000286](../search_code.py#L286) | 286 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000287](../search_code.py#L287) | 287 | `"        \"--context\","` | — |
-| [SRC-69F3587825-L000288](../search_code.py#L288) | 288 | `"        type=int,"` | — |
-| [SRC-69F3587825-L000289](../search_code.py#L289) | 289 | `"        default=0,"` | — |
-| [SRC-69F3587825-L000290](../search_code.py#L290) | 290 | `"        help=\"عدد أسطر السياق قبل/بعد.\","` | — |
-| [SRC-69F3587825-L000291](../search_code.py#L291) | 291 | `"    )"` | — |
-| [SRC-69F3587825-L000292](../search_code.py#L292) | 292 | `"    parser.add_argument("` | — |
-| [SRC-69F3587825-L000293](../search_code.py#L293) | 293 | `"        \"--ref\","` | — |
-| [SRC-69F3587825-L000294](../search_code.py#L294) | 294 | `"        default=None,"` | — |
-| [SRC-69F3587825-L000295](../search_code.py#L295) | 295 | `"        help=\"مرجع GitHub للروابط (SHA أو فرع). افتراضيًا يُستخدم SHA المحلي/بيئة CI ثم main كخيار أخير.\","` | — |
-| [SRC-69F3587825-L000296](../search_code.py#L296) | 296 | `"    )"` | — |
-| [SRC-69F3587825-L000297](../search_code.py#L297) | 297 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-69F3587825-L000298](../search_code.py#L298) | 298 | `""` | — |
-| [SRC-69F3587825-L000299](../search_code.py#L299) | 299 | `"    try:"` | — |
-| [SRC-69F3587825-L000300](../search_code.py#L300) | 300 | `"        root = args.root.resolve(strict=True)"` | — |
-| [SRC-69F3587825-L000301](../search_code.py#L301) | 301 | `"        extensions = ("` | — |
-| [SRC-69F3587825-L000302](../search_code.py#L302) | 302 | `"            frozenset(f\".{ext.lstrip('.')}\" for ext in args.ext)"` | — |
-| [SRC-69F3587825-L000303](../search_code.py#L303) | 303 | `"            if args.ext"` | — |
-| [SRC-69F3587825-L000304](../search_code.py#L304) | 304 | `"            else DEFAULT_EXTENSIONS"` | — |
-| [SRC-69F3587825-L000305](../search_code.py#L305) | 305 | `"        )"` | — |
-| [SRC-69F3587825-L000306](../search_code.py#L306) | 306 | `"        repository_ref = args.ref.strip() if isinstance(args.ref, str) and args.ref.strip() else default_repository_ref(root)"` | — |
-| [SRC-69F3587825-L000307](../search_code.py#L307) | 307 | `"        hits = search_repository("` | — |
-| [SRC-69F3587825-L000308](../search_code.py#L308) | 308 | `"            root,"` | — |
-| [SRC-69F3587825-L000309](../search_code.py#L309) | 309 | `"            args.query,"` | — |
-| [SRC-69F3587825-L000310](../search_code.py#L310) | 310 | `"            use_regex=args.regex,"` | — |
-| [SRC-69F3587825-L000311](../search_code.py#L311) | 311 | `"            case_sensitive=args.case_sensitive,"` | — |

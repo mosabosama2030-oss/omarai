@@ -4,9 +4,44 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65AAF94960-L000001 إلى SRC-C7C7FA8853-L000021
+- النطاق: SRC-EEF2E6447C-L000655 إلى SRC-914817100D-L000081
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## واجهات API
+
+### FILE-EEF2E6447C — [api/omarai.py](../../api/omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-EEF2E6447C-L000655](../../api/omarai.py#L655) | 655 | `""` | — |
+| [SRC-EEF2E6447C-L000656](../../api/omarai.py#L656) | 656 | `""` | — |
+| [SRC-EEF2E6447C-L000657](../../api/omarai.py#L657) | 657 | `"def serve(host=\"127.0.0.1\", port=8765):"` | — |
+| [SRC-EEF2E6447C-L000658](../../api/omarai.py#L658) | 658 | `"    public_deployment = os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\""` | — |
+| [SRC-EEF2E6447C-L000659](../../api/omarai.py#L659) | 659 | `"    access_token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000660](../../api/omarai.py#L660) | 660 | `"    if host not in (\"127.0.0.1\", \"localhost\", \"::1\") and ("` | — |
+| [SRC-EEF2E6447C-L000661](../../api/omarai.py#L661) | 661 | `"        not public_deployment or len(access_token) < 32"` | — |
+| [SRC-EEF2E6447C-L000662](../../api/omarai.py#L662) | 662 | `"    ):"` | — |
+| [SRC-EEF2E6447C-L000663](../../api/omarai.py#L663) | 663 | `"        raise ValueError("` | — |
+| [SRC-EEF2E6447C-L000664](../../api/omarai.py#L664) | 664 | `"                \"Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and \""` | — |
+| [SRC-EEF2E6447C-L000665](../../api/omarai.py#L665) | 665 | `"                \"a private OMARAI_ACCESS_TOKEN of at least 32 characters.\""` | — |
+| [SRC-EEF2E6447C-L000666](../../api/omarai.py#L666) | 666 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000667](../../api/omarai.py#L667) | 667 | `"    server = ThreadingHTTPServer((host, port), Handler)"` | — |
+| [SRC-EEF2E6447C-L000668](../../api/omarai.py#L668) | 668 | `"    server.daemon_threads = True"` | — |
+| [SRC-EEF2E6447C-L000669](../../api/omarai.py#L669) | 669 | `"    print(f\"Omarai running at http://{host}:{port} — Ctrl+C to stop\")"` | — |
+| [SRC-EEF2E6447C-L000670](../../api/omarai.py#L670) | 670 | `"    print(\"Web research agent: /   \|   Lead workspace: /leads\")"` | — |
+| [SRC-EEF2E6447C-L000671](../../api/omarai.py#L671) | 671 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000672](../../api/omarai.py#L672) | 672 | `"        server.serve_forever()"` | — |
+| [SRC-EEF2E6447C-L000673](../../api/omarai.py#L673) | 673 | `"    except KeyboardInterrupt:"` | — |
+| [SRC-EEF2E6447C-L000674](../../api/omarai.py#L674) | 674 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000675](../../api/omarai.py#L675) | 675 | `"    finally:"` | — |
+| [SRC-EEF2E6447C-L000676](../../api/omarai.py#L676) | 676 | `"        server.server_close()"` | — |
+| [SRC-EEF2E6447C-L000677](../../api/omarai.py#L677) | 677 | `""` | — |
+| [SRC-EEF2E6447C-L000678](../../api/omarai.py#L678) | 678 | `""` | — |
+| [SRC-EEF2E6447C-L000679](../../api/omarai.py#L679) | 679 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-EEF2E6447C-L000680](../../api/omarai.py#L680) | 680 | `"    serve()"` | — |
 ## وثائق ونصوص
 
 ### FILE-65AAF94960 — [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1)
@@ -862,38 +897,3 @@
 | [SRC-914817100D-L000079](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L79) | 79 | `"- **MERGE/DEPLOY — NOT DONE:** PR #107 ما زال مفتوحًا وغير مدمج؛ حالته الحالية جاهزة للمراجعة. لم أدمج الفرع ولم أنشر أي إصدار. القرار النهائي لك."` | — |
 | [SRC-914817100D-L000080](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L80) | 80 | `""` | — |
 | [SRC-914817100D-L000081](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L81) | 81 | `"## المراجع"` | — |
-| [SRC-914817100D-L000082](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L82) | 82 | `""` | — |
-| [SRC-914817100D-L000083](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L83) | 83 | ``"- `agents/web_agent.py`"`` | — |
-| [SRC-914817100D-L000084](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L84) | 84 | ``"- `agents/answer_validation.py`"`` | — |
-| [SRC-914817100D-L000085](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L85) | 85 | ``"- `tests/test_intent_router_integration.py`"`` | — |
-| [SRC-914817100D-L000086](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L86) | 86 | ``"- `tests/test_answer_validation.py`"`` | — |
-## وثائق وفهرسة
-
-### FILE-C7C7FA8853 — [docs/DEPLOY_RAILWAY_AR.md](../DEPLOY_RAILWAY_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-C7C7FA8853-L000001](../DEPLOY_RAILWAY_AR.md#L1) | 1 | `"# نشر Omarai على Railway — دليل عربي"` | — |
-| [SRC-C7C7FA8853-L000002](../DEPLOY_RAILWAY_AR.md#L2) | 2 | `""` | — |
-| [SRC-C7C7FA8853-L000003](../DEPLOY_RAILWAY_AR.md#L3) | 3 | `"هذا المستودع أصبح يحتوي على Dockerfile وإعداد Railway قابلين للبناء. **وجود الإعدادات لا يعني أن الخدمة نُشرت بالفعل**؛ يلزم ربط حساب الاستضافة بالمستودع وإضافة الأسرار من لوحة التحكم."` | — |
-| [SRC-C7C7FA8853-L000004](../DEPLOY_RAILWAY_AR.md#L4) | 4 | `""` | — |
-| [SRC-C7C7FA8853-L000005](../DEPLOY_RAILWAY_AR.md#L5) | 5 | `"## المتطلبات"` | — |
-| [SRC-C7C7FA8853-L000006](../DEPLOY_RAILWAY_AR.md#L6) | 6 | `""` | — |
-| [SRC-C7C7FA8853-L000007](../DEPLOY_RAILWAY_AR.md#L7) | 7 | `"1. حساب GitHub لديه صلاحية قراءة المستودع."` | — |
-| [SRC-C7C7FA8853-L000008](../DEPLOY_RAILWAY_AR.md#L8) | 8 | `"2. حساب Railway وربطه بـ GitHub."` | — |
-| [SRC-C7C7FA8853-L000009](../DEPLOY_RAILWAY_AR.md#L9) | 9 | `"3. مفتاح OpenRouter صالح. استخدام النموذج والبحث قد يستهلك رصيدًا؛ راجع أسعار النموذج وأدوات البحث قبل التشغيل."` | — |
-| [SRC-C7C7FA8853-L000010](../DEPLOY_RAILWAY_AR.md#L10) | 10 | `"4. رمز وصول منفصل وسري للتطبيق، لا يقل عن 32 حرفًا. لا تستخدم مفتاح OpenRouter نفسه."` | — |
-| [SRC-C7C7FA8853-L000011](../DEPLOY_RAILWAY_AR.md#L11) | 11 | `""` | — |
-| [SRC-C7C7FA8853-L000012](../DEPLOY_RAILWAY_AR.md#L12) | 12 | `"## النشر"` | — |
-| [SRC-C7C7FA8853-L000013](../DEPLOY_RAILWAY_AR.md#L13) | 13 | `""` | — |
-| [SRC-C7C7FA8853-L000014](../DEPLOY_RAILWAY_AR.md#L14) | 14 | `"1. افتح Railway وسجّل الدخول."` | — |
-| [SRC-C7C7FA8853-L000015](../DEPLOY_RAILWAY_AR.md#L15) | 15 | `"2. أنشئ مشروعًا جديدًا واختر النشر من مستودع GitHub."` | — |
-| [SRC-C7C7FA8853-L000016](../DEPLOY_RAILWAY_AR.md#L16) | 16 | `"3. اختر mosabosama2030-oss/omarai والفرع main."` | — |
-| [SRC-C7C7FA8853-L000017](../DEPLOY_RAILWAY_AR.md#L17) | 17 | `"4. اجعل Railway يبني باستخدام Dockerfile الموجود في المستودع."` | — |
-| [SRC-C7C7FA8853-L000018](../DEPLOY_RAILWAY_AR.md#L18) | 18 | ``"5. يقرأ Omarai SHA من `BUILD_SHA` المخبوز في الصورة إن توفر؛ وإلا يستخدم المتغير الرسمي `RAILWAY_GIT_COMMIT_SHA` الذي توفره Railway لنشر GitHub. بعد النشر يجب أن تعرض `/api/health` قيمة `build.sha` و`build.sha_source`؛ ويجب أن ينجح hosted smoke مع SHA الالتزام المتوقع."`` | — |
-| [SRC-C7C7FA8853-L000019](../DEPLOY_RAILWAY_AR.md#L19) | 19 | `"6. افتح Variables وأضف:"` | — |
-| [SRC-C7C7FA8853-L000020](../DEPLOY_RAILWAY_AR.md#L20) | 20 | `"   - OMARAI_PUBLIC_DEPLOYMENT=1"` | — |
-| [SRC-C7C7FA8853-L000021](../DEPLOY_RAILWAY_AR.md#L21) | 21 | `"   - OMARAI_ACCESS_TOKEN = رمز عشوائي سري قوي (32 حرفًا على الأقل)"` | — |

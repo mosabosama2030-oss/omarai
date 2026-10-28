@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **785**
 - تعريفات لا ينطبق عليها Docstring: **266**
 - الرموز الساكنة الإضافية: **1694**
-- الأسطر النصية المفهرسة حرفيًا: **33114**
+- الأسطر النصية المفهرسة حرفيًا: **33140**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -48,7 +48,7 @@
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 32413 | 643 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 332499 | 6199 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 333908 | 6225 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
@@ -453,7 +453,7 @@
 | [agents/web_agent.py](../agents/web_agent.py#L3824) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 3824 | [SRC-1AE03B9EC3-L003824](../agents/web_agent.py#L3824) |
 | [agents/web_agent.py](../agents/web_agent.py#L3854) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 3854 | [SRC-1AE03B9EC3-L003854](../agents/web_agent.py#L3854) |
 | [agents/web_agent.py](../agents/web_agent.py#L4075) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 4075 | [SRC-1AE03B9EC3-L004075](../agents/web_agent.py#L4075) |
-| [agents/web_agent.py](../agents/web_agent.py#L4336) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 4336 | [SRC-1AE03B9EC3-L004336](../agents/web_agent.py#L4336) |
+| [agents/web_agent.py](../agents/web_agent.py#L4362) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 4362 | [SRC-1AE03B9EC3-L004362](../agents/web_agent.py#L4362) |
 | [api/omarai.py](../api/omarai.py#L23) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-EEF2E6447C-L000023](../api/omarai.py#L23) |
 | [api/omarai.py](../api/omarai.py#L24) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
 | [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
@@ -1626,9 +1626,9 @@
 | [agents/web_agent.py](../agents/web_agent.py#L3747) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 3747 | [SRC-1AE03B9EC3-L003747](../agents/web_agent.py#L3747) |
 | [agents/web_agent.py](../agents/web_agent.py#L3747) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 3747 | [SRC-1AE03B9EC3-L003747](../agents/web_agent.py#L3747) |
 | [agents/web_agent.py](../agents/web_agent.py#L4125) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 4125 | [SRC-1AE03B9EC3-L004125](../agents/web_agent.py#L4125) |
-| [agents/web_agent.py](../agents/web_agent.py#L4412) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 4412 | [SRC-1AE03B9EC3-L004412](../agents/web_agent.py#L4412) |
-| [agents/web_agent.py](../agents/web_agent.py#L4415) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 4415 | [SRC-1AE03B9EC3-L004415](../agents/web_agent.py#L4415) |
-| [agents/web_agent.py](../agents/web_agent.py#L4441) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 4441 | [SRC-1AE03B9EC3-L004441](../agents/web_agent.py#L4441) |
+| [agents/web_agent.py](../agents/web_agent.py#L4438) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 4438 | [SRC-1AE03B9EC3-L004438](../agents/web_agent.py#L4438) |
+| [agents/web_agent.py](../agents/web_agent.py#L4441) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 4441 | [SRC-1AE03B9EC3-L004441](../agents/web_agent.py#L4441) |
+| [agents/web_agent.py](../agents/web_agent.py#L4467) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 4467 | [SRC-1AE03B9EC3-L004467](../agents/web_agent.py#L4467) |
 | [api/omarai.py](../api/omarai.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
 | [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
 | [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |

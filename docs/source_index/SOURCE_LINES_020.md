@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000700 إلى SRC-D17CE3D12F-L000596
+- النطاق: SRC-E73001D9AC-L000674 إلى SRC-D17CE3D12F-L000570
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000674](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L674) | 674 | `"- مسؤولية محددة ومحدودات ملكية واضحة."` | — |
+| [SRC-E73001D9AC-L000675](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L675) | 675 | `"- واجهة عامة صغيرة ومعلومة؛ وتظل تفاصيل التنفيذ داخل الوحدة."` | — |
+| [SRC-E73001D9AC-L000676](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L676) | 676 | `"- مدخلات ومخرجات قابلة للتحقق بعقود محددة."` | — |
+| [SRC-E73001D9AC-L000677](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L677) | 677 | `"- اختبارات وحدة وعقود تغطي واجهاتها."` | — |
+| [SRC-E73001D9AC-L000678](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L678) | 678 | `"- ملكية واضحة للبيانات التي تنشئها أو تعدلها."` | — |
+| [SRC-E73001D9AC-L000679](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L679) | 679 | `"- حدود صلاحيات وموارد مناسبة لطبيعة عملها."` | — |
+| [SRC-E73001D9AC-L000680](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L680) | 680 | `"- سجل اعتماديات يمنع إنشاء دورات اعتماد غير مقصودة."` | — |
+| [SRC-E73001D9AC-L000681](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L681) | 681 | `""` | — |
+| [SRC-E73001D9AC-L000682](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L682) | 682 | `"لا يجوز لوحدة أن تستورد التفاصيل الداخلية لوحدة أخرى أو تعدل مخازنها مباشرة بصورة تتجاوز العقد المتفق عليه. يمكن السماح باستثناءات محددة ومبررة، لكن يجب تسجيلها ومراجعتها."` | — |
+| [SRC-E73001D9AC-L000683](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L683) | 683 | `""` | — |
+| [SRC-E73001D9AC-L000684](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L684) | 684 | `"### متى نفصل الوحدة إلى خدمة مستقلة؟"` | — |
+| [SRC-E73001D9AC-L000685](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L685) | 685 | `""` | — |
+| [SRC-E73001D9AC-L000686](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L686) | 686 | `"لا يتم التفكيك لمجرد اتباع موضة معمارية. يُدرس فصل الوحدة عندما يتوفر واحد أو أكثر من الأدلة التالية:"` | — |
+| [SRC-E73001D9AC-L000687](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L687) | 687 | `"- احتياج توسع مستقل واضح لا يمكن خدمته بكفاءة داخل التطبيق الحالي."` | — |
+| [SRC-E73001D9AC-L000688](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L688) | 688 | `"- متطلبات عزل أمني أو صلاحيات أو موارد تختلف جذريًا عن بقية النظام."` | — |
+| [SRC-E73001D9AC-L000689](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L689) | 689 | `"- اختلاف موثق في دورة النشر أو التوافر أو قيود التشغيل."` | — |
+| [SRC-E73001D9AC-L000690](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L690) | 690 | `"- اختناق مقاس في الأداء أو حدود عملية تمنع التوسع المطلوب."` | — |
+| [SRC-E73001D9AC-L000691](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L691) | 691 | `"- حاجة إلى فريق أو نطاق ملكية مستقل مع عقود تشغيلية واضحة."` | — |
+| [SRC-E73001D9AC-L000692](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L692) | 692 | `""` | — |
+| [SRC-E73001D9AC-L000693](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L693) | 693 | `"قبل الفصل، تُوثق كلفة الشبكات والكمون، وفشل الاتصال، والمصادقة بين الخدمات، والمراقبة، والنشر والتراجع، والتناسق والاتساق، والاختبارات الإضافية. إذا لم تفوق الفائدة هذه التكاليف، تبقى الوحدة داخل التطبيق معزولة منطقيًا."` | — |
+| [SRC-E73001D9AC-L000694](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L694) | 694 | `""` | — |
+| [SRC-E73001D9AC-L000695](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L695) | 695 | `"## 21. حدود المجال والواجهات (Domain Boundaries, Ports & Adapters)"` | — |
+| [SRC-E73001D9AC-L000696](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L696) | 696 | `""` | — |
+| [SRC-E73001D9AC-L000697](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L697) | 697 | `"تُحدد المجالات المنطقية بما يلائم الكود الحقيقي، وقد تشمل: واجهات الطلبات، والهوية والصلاحيات، وتنسيق المهام، والتخطيط، والبحث، وجلب الصفحات، وتنفيذ الأدوات، وتجميع الأدلة، والتحقق من الإجابات، والذاكرة والتخزين، والمراقبة."` | — |
+| [SRC-E73001D9AC-L000698](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L698) | 698 | `""` | — |
+| [SRC-E73001D9AC-L000699](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L699) | 699 | `"هذه قائمة مجالات محتملة وليست إلزامًا بإنشاء وحدة منفصلة لكل اسم. يتم تحديد الحدود بعد فحص تدفق البيانات والاعتماديات الفعلية."` | — |
 | [SRC-E73001D9AC-L000700](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L700) | 700 | `""` | — |
 | [SRC-E73001D9AC-L000701](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L701) | 701 | `"- تعتمد قواعد الأعمال على واجهات داخلية مستقرة، لا على مكتبة مورد خارجي بشكل مباشر."` | — |
 | [SRC-E73001D9AC-L000702](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L702) | 702 | `"- توضع تفاصيل HTTP وSDK الخاص بالمورد وعمليات التحويل داخل Adapter مناسب."` | — |
@@ -799,29 +825,3 @@
 | [SRC-D17CE3D12F-L000568](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L568) | 568 | `"3. MUST توثيق المتطلبات البيئية والأوامر الدقيقة لتثبيت واختبار وتشغيل التطبيق."` | — |
 | [SRC-D17CE3D12F-L000569](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L569) | 569 | `"4. SHOULD الاحتفاظ بقاموس للمصطلحات والمقاييس وعقود البيانات المهمة."` | — |
 | [SRC-D17CE3D12F-L000570](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L570) | 570 | `"5. MUST توثيق خطوات التراجع وعواقب ترحيل البيانات التي لا يمكن عكسها تلقائيًا."` | — |
-| [SRC-D17CE3D12F-L000571](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L571) | 571 | `"6. SHOULD توثيق مسارات تصعيد المشكلة وحدود ما يستطيع النظام إثباته بنفسه."` | — |
-| [SRC-D17CE3D12F-L000572](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L572) | 572 | `"7. MUST التعامل مع المستندات ككود قابل للمراجعة؛ تُراجع الروابط والأسماء والإصدارات بعد التغيير."` | — |
-| [SRC-D17CE3D12F-L000573](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L573) | 573 | `"8. MUST إزالة الإرشادات القديمة المتعارضة أو وسمها بأنها تاريخية وغير صالحة للتنفيذ."` | — |
-| [SRC-D17CE3D12F-L000574](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L574) | 574 | `"9. SHOULD وجود سجل معروف للقيود والديون التقنية والمخاطر، مع مالك أو أولوية أو موعد مراجعة."` | — |
-| [SRC-D17CE3D12F-L000575](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L575) | 575 | `"10. MUST عدم استعمال التوثيق لإعلان قدرات لم تثبتها الاختبارات."` | — |
-| [SRC-D17CE3D12F-L000576](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L576) | 576 | `""` | — |
-| [SRC-D17CE3D12F-L000577](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L577) | 577 | `"---"` | — |
-| [SRC-D17CE3D12F-L000578](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L578) | 578 | `""` | — |
-| [SRC-D17CE3D12F-L000579](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L579) | 579 | `"# القسم الثالث عشر — النضج والأولويات ومعايير القبول"` | — |
-| [SRC-D17CE3D12F-L000580](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L580) | 580 | `""` | — |
-| [SRC-D17CE3D12F-L000581](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L581) | 581 | `"## 40. مستويات النضج"` | — |
-| [SRC-D17CE3D12F-L000582](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L582) | 582 | `""` | — |
-| [SRC-D17CE3D12F-L000583](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L583) | 583 | `"لا ينبغي تطبيق مستوى واحد على كل نظام. يُحدد المستوى لكل مجال حسب المخاطر والحاجة:"` | — |
-| [SRC-D17CE3D12F-L000584](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L584) | 584 | `""` | — |
-| [SRC-D17CE3D12F-L000585](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L585) | 585 | `"- **المستوى 0 — غير موصوف:** لا يوجد تعريف أو دليل كافٍ؛ الحالة UNKNOWN."` | — |
-| [SRC-D17CE3D12F-L000586](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L586) | 586 | `"- **المستوى 1 — أساس مضبوط:** تعريف المتطلب، وسلوك آمن، واختبارات أساسية، ووثائق أولية."` | — |
-| [SRC-D17CE3D12F-L000587](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L587) | 587 | `"- **المستوى 2 — متكرر ومقاس:** اختبارات تلقائية ملائمة، ومقاييس، وحدود، ومراجعة دورية."` | — |
-| [SRC-D17CE3D12F-L000588](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L588) | 588 | `"- **المستوى 3 — إنتاجي مرن:** التعامل المختبر مع الفشل الجزئي، والاستعادة، والتغيير المتدرج، وعقود واضحة."` | — |
-| [SRC-D17CE3D12F-L000589](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L589) | 589 | `"- **المستوى 4 — متكيف ومثبت:** قياس مستمر، واختبارات مخاطر آلية، ومراجعات نضج، وتحسينات مبنية على الحوادث والبيانات."` | — |
-| [SRC-D17CE3D12F-L000590](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L590) | 590 | `""` | — |
-| [SRC-D17CE3D12F-L000591](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L591) | 591 | `"لا يعني الوصول إلى المستوى الأعلى إضافة تقنيات أكثر. قد يكون النظام البسيط ذو الحدود والاختبارات الواضحة أنضج من نظام موزع غني بالأدوات ولا يمكن تشغيله بثقة."` | — |
-| [SRC-D17CE3D12F-L000592](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L592) | 592 | `""` | — |
-| [SRC-D17CE3D12F-L000593](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L593) | 593 | `"## 41. بوابة قبول تغيير مؤثر"` | — |
-| [SRC-D17CE3D12F-L000594](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L594) | 594 | `""` | — |
-| [SRC-D17CE3D12F-L000595](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L595) | 595 | `"قبل دمج تغيير مؤثر معماريًا أو أمنيًا أو تشغيليًا أو متعلقًا بالنموذج، يجب على المنفذ الإجابة على الأسئلة المنطبقة:"` | — |
-| [SRC-D17CE3D12F-L000596](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L596) | 596 | `""` | — |
