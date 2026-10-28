@@ -367,7 +367,7 @@ def _primary_family(matches: dict[str, list[str]], mode: str, route: str, normal
         "social_opinions", "summarize", "troubleshoot", "compare",
         "medical_information", "legal_information", "coding_or_technical_design",
         "data_analysis", "translation", "calculation", "planning",
-        "writing_or_editing", "creative_generation", "lead_generation",
+        "creative_generation", "writing_or_editing", "lead_generation",
         "how_to", "recommendation", "current_information", "find_or_discover",
         "explain_or_define", "general_research",
     ):
