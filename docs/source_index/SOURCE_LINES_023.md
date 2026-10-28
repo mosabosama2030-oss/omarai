@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000134 إلى SRC-90FAA34ADE-L000377
+- النطاق: SRC-4FFD5AFC54-L000119 إلى SRC-90FAA34ADE-L000362
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000119](../../scripts/run_answer_quality_benchmark.py#L119) | 119 | `""` | — |
+| [SRC-4FFD5AFC54-L000120](../../scripts/run_answer_quality_benchmark.py#L120) | 120 | `"def load_corpus(path: Path) -> dict:"` | — |
+| [SRC-4FFD5AFC54-L000121](../../scripts/run_answer_quality_benchmark.py#L121) | 121 | `"    if not path.is_file():"` | — |
+| [SRC-4FFD5AFC54-L000122](../../scripts/run_answer_quality_benchmark.py#L122) | 122 | `"        raise FileNotFoundError(f\"Corpus not found: {path}\")"` | — |
+| [SRC-4FFD5AFC54-L000123](../../scripts/run_answer_quality_benchmark.py#L123) | 123 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-4FFD5AFC54-L000124](../../scripts/run_answer_quality_benchmark.py#L124) | 124 | `"    if not isinstance(data, dict) or not isinstance(data.get(\"cases\"), list):"` | — |
+| [SRC-4FFD5AFC54-L000125](../../scripts/run_answer_quality_benchmark.py#L125) | 125 | `"        raise TypeError(\"Corpus root must be an object with a cases array\")"` | — |
+| [SRC-4FFD5AFC54-L000126](../../scripts/run_answer_quality_benchmark.py#L126) | 126 | `"    if data.get(\"parts\"):"` | — |
+| [SRC-4FFD5AFC54-L000127](../../scripts/run_answer_quality_benchmark.py#L127) | 127 | `"        raise ValueError(\"Incomplete shard index is not accepted; use merged cases[] corpus\")"` | — |
+| [SRC-4FFD5AFC54-L000128](../../scripts/run_answer_quality_benchmark.py#L128) | 128 | `"    return data"` | — |
+| [SRC-4FFD5AFC54-L000129](../../scripts/run_answer_quality_benchmark.py#L129) | 129 | `""` | — |
+| [SRC-4FFD5AFC54-L000130](../../scripts/run_answer_quality_benchmark.py#L130) | 130 | `""` | — |
+| [SRC-4FFD5AFC54-L000131](../../scripts/run_answer_quality_benchmark.py#L131) | 131 | `"def validate_corpus(data: dict) -> list[str]:"` | — |
+| [SRC-4FFD5AFC54-L000132](../../scripts/run_answer_quality_benchmark.py#L132) | 132 | `"    \"\"\"Return a list of human-readable problems (empty => OK).\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000133](../../scripts/run_answer_quality_benchmark.py#L133) | 133 | `"    problems: list[str] = []"` | — |
 | [SRC-4FFD5AFC54-L000134](../../scripts/run_answer_quality_benchmark.py#L134) | 134 | `"    cases = data.get(\"cases\") or []"` | — |
 | [SRC-4FFD5AFC54-L000135](../../scripts/run_answer_quality_benchmark.py#L135) | 135 | `"    if data.get(\"case_count\") != len(cases):"` | — |
 | [SRC-4FFD5AFC54-L000136](../../scripts/run_answer_quality_benchmark.py#L136) | 136 | `"        problems.append("` | — |
@@ -819,18 +834,3 @@
 | [SRC-90FAA34ADE-L000360](../../tests/fixtures/answer_quality_cases.json#L360) | 360 | `"        \"Answers from unrelated travel blog about visas to Canada as if it were passport renewal\""` | — |
 | [SRC-90FAA34ADE-L000361](../../tests/fixtures/answer_quality_cases.json#L361) | 361 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000363](../../tests/fixtures/answer_quality_cases.json#L363) | 363 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000364](../../tests/fixtures/answer_quality_cases.json#L364) | 364 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000365](../../tests/fixtures/answer_quality_cases.json#L365) | 365 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000366](../../tests/fixtures/answer_quality_cases.json#L366) | 366 | `"            \"title\": \"Canada visitor visa checklist\","` | — |
-| [SRC-90FAA34ADE-L000367](../../tests/fixtures/answer_quality_cases.json#L367) | 367 | `"            \"url\": \"https://example-travel.test/canada-visa\","` | — |
-| [SRC-90FAA34ADE-L000368](../../tests/fixtures/answer_quality_cases.json#L368) | 368 | `"            \"snippet\": \"Documents needed for a Canadian visitor visa application.\","` | — |
-| [SRC-90FAA34ADE-L000369](../../tests/fixtures/answer_quality_cases.json#L369) | 369 | `"            \"domain\": \"example-travel.test\","` | — |
-| [SRC-90FAA34ADE-L000370](../../tests/fixtures/answer_quality_cases.json#L370) | 370 | `"            \"provider\": \"fixture_search\","` | — |
-| [SRC-90FAA34ADE-L000371](../../tests/fixtures/answer_quality_cases.json#L371) | 371 | `"            \"relevance\": \"irrelevant\""` | — |
-| [SRC-90FAA34ADE-L000372](../../tests/fixtures/answer_quality_cases.json#L372) | 372 | `"          },"` | — |
-| [SRC-90FAA34ADE-L000373](../../tests/fixtures/answer_quality_cases.json#L373) | 373 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000374](../../tests/fixtures/answer_quality_cases.json#L374) | 374 | `"            \"title\": \"Egyptian passport services overview\","` | — |
-| [SRC-90FAA34ADE-L000375](../../tests/fixtures/answer_quality_cases.json#L375) | 375 | `"            \"url\": \"https://example-gov.test/passport-renewal\","` | — |
-| [SRC-90FAA34ADE-L000376](../../tests/fixtures/answer_quality_cases.json#L376) | 376 | `"            \"snippet\": \"Public information on renewing an Egyptian passport.\","` | — |
-| [SRC-90FAA34ADE-L000377](../../tests/fixtures/answer_quality_cases.json#L377) | 377 | `"            \"domain\": \"example-gov.test\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003630 إلى SRC-1AE03B9EC3-L004429
+- النطاق: SRC-1AE03B9EC3-L003615 إلى SRC-1AE03B9EC3-L004414
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003615](../../agents/web_agent.py#L3615) | 3615 | `"                return match.group(0)"` | — |
+| [SRC-1AE03B9EC3-L003616](../../agents/web_agent.py#L3616) | 3616 | `"            warnings.append(f\"حُذف استشهاد غير صالح إلى المصدر {number}.\")"` | — |
+| [SRC-1AE03B9EC3-L003617](../../agents/web_agent.py#L3617) | 3617 | `"            return \"\""` | — |
+| [SRC-1AE03B9EC3-L003618](../../agents/web_agent.py#L3618) | 3618 | `""` | — |
+| [SRC-1AE03B9EC3-L003619](../../agents/web_agent.py#L3619) | 3619 | `"        clean_answer = re.sub(r\"\\[المصدر\\s+(\\d+)\\]\", replace, answer)"` | — |
+| [SRC-1AE03B9EC3-L003620](../../agents/web_agent.py#L3620) | 3620 | `"        return clean_answer, warnings"` | — |
+| [SRC-1AE03B9EC3-L003621](../../agents/web_agent.py#L3621) | 3621 | `""` | — |
+| [SRC-1AE03B9EC3-L003622](../../agents/web_agent.py#L3622) | 3622 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L003623](../../agents/web_agent.py#L3623) | 3623 | `"    def _citation_validation_metadata("` | — |
+| [SRC-1AE03B9EC3-L003624](../../agents/web_agent.py#L3624) | 3624 | `"        answer: str,"` | — |
+| [SRC-1AE03B9EC3-L003625](../../agents/web_agent.py#L3625) | 3625 | `"        source_count: int,"` | — |
+| [SRC-1AE03B9EC3-L003626](../../agents/web_agent.py#L3626) | 3626 | `"        citation_warnings: list[str],"` | — |
+| [SRC-1AE03B9EC3-L003627](../../agents/web_agent.py#L3627) | 3627 | `"        review_status: str,"` | — |
+| [SRC-1AE03B9EC3-L003628](../../agents/web_agent.py#L3628) | 3628 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L003629](../../agents/web_agent.py#L3629) | 3629 | `"        \"\"\"Report the scope of citation checks without claiming semantic fact verification.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L003630](../../agents/web_agent.py#L3630) | 3630 | `"        citation_count = len(re.findall(r\"\\[المصدر\\s+\\d+\\]\", answer))"` | — |
 | [SRC-1AE03B9EC3-L003631](../../agents/web_agent.py#L3631) | 3631 | `"        max_citable_source_index = max("` | — |
 | [SRC-1AE03B9EC3-L003632](../../agents/web_agent.py#L3632) | 3632 | `"            0, min(MAX_LLM_CITED_SOURCES, int(source_count))"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L004412](../../agents/web_agent.py#L4412) | 4412 | `"        # accidentally inherit provider attempts from an earlier question."` | — |
 | [SRC-1AE03B9EC3-L004413](../../agents/web_agent.py#L4413) | 4413 | `"        with self._provider_diagnostics_lock:"` | — |
 | [SRC-1AE03B9EC3-L004414](../../agents/web_agent.py#L4414) | 4414 | `"            research_diagnostic_baseline = list(self._provider_diagnostics)"` | — |
-| [SRC-1AE03B9EC3-L004415](../../agents/web_agent.py#L4415) | 4415 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L004416](../../agents/web_agent.py#L4416) | 4416 | `"            sources, search_warnings, report = self._collect_research(plan)"` | — |
-| [SRC-1AE03B9EC3-L004417](../../agents/web_agent.py#L4417) | 4417 | `"        except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L004418](../../agents/web_agent.py#L4418) | 4418 | `"            search_warnings.append(str(exc))"` | — |
-| [SRC-1AE03B9EC3-L004419](../../agents/web_agent.py#L4419) | 4419 | `"            baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}"` | — |
-| [SRC-1AE03B9EC3-L004420](../../agents/web_agent.py#L4420) | 4420 | `"            with self._provider_diagnostics_lock:"` | — |
-| [SRC-1AE03B9EC3-L004421](../../agents/web_agent.py#L4421) | 4421 | `"                failure_diagnostics = ["` | — |
-| [SRC-1AE03B9EC3-L004422](../../agents/web_agent.py#L4422) | 4422 | `"                    item for item in self._provider_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L004423](../../agents/web_agent.py#L4423) | 4423 | `"                    if id(item) not in baseline_diagnostic_ids"` | — |
-| [SRC-1AE03B9EC3-L004424](../../agents/web_agent.py#L4424) | 4424 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004425](../../agents/web_agent.py#L4425) | 4425 | `"            provider_attempt_observed = any("` | — |
-| [SRC-1AE03B9EC3-L004426](../../agents/web_agent.py#L4426) | 4426 | `"                item.get(\"status\") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
-| [SRC-1AE03B9EC3-L004427](../../agents/web_agent.py#L4427) | 4427 | `"                for item in failure_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L004428](../../agents/web_agent.py#L4428) | 4428 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004429](../../agents/web_agent.py#L4429) | 4429 | `"            report = {"` | — |

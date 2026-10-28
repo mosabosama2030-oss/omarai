@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000206 إلى SRC-F725E90B2A-L001005
+- النطاق: SRC-F725E90B2A-L000175 إلى SRC-F725E90B2A-L000974
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000175](../../tests/test_web_agent.py#L175) | 175 | `"      <title>صفحة ثانية</title>"` | — |
+| [SRC-F725E90B2A-L000176](../../tests/test_web_agent.py#L176) | 176 | `"      <link>https://example.net/second</link>"` | — |
+| [SRC-F725E90B2A-L000177](../../tests/test_web_agent.py#L177) | 177 | `"      <description>سؤال بحث تجريبي مقتطف ثاني</description>"` | — |
+| [SRC-F725E90B2A-L000178](../../tests/test_web_agent.py#L178) | 178 | `"    </item></channel></rss>"` | — |
+| [SRC-F725E90B2A-L000179](../../tests/test_web_agent.py#L179) | 179 | `"    \"\"\""` | — |
+| [SRC-F725E90B2A-L000180](../../tests/test_web_agent.py#L180) | 180 | `""` | — |
+| [SRC-F725E90B2A-L000181](../../tests/test_web_agent.py#L181) | 181 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000182](../../tests/test_web_agent.py#L182) | 182 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L000183](../../tests/test_web_agent.py#L183) | 183 | `""` | — |
+| [SRC-F725E90B2A-L000184](../../tests/test_web_agent.py#L184) | 184 | `"        def __init__(self, text):"` | — |
+| [SRC-F725E90B2A-L000185](../../tests/test_web_agent.py#L185) | 185 | `"            self.text = text"` | — |
+| [SRC-F725E90B2A-L000186](../../tests/test_web_agent.py#L186) | 186 | `"            self.content = text.encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000187](../../tests/test_web_agent.py#L187) | 187 | `""` | — |
+| [SRC-F725E90B2A-L000188](../../tests/test_web_agent.py#L188) | 188 | `"    calls = []"` | — |
+| [SRC-F725E90B2A-L000189](../../tests/test_web_agent.py#L189) | 189 | `""` | — |
+| [SRC-F725E90B2A-L000190](../../tests/test_web_agent.py#L190) | 190 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000191](../../tests/test_web_agent.py#L191) | 191 | `"        calls.append(url)"` | — |
+| [SRC-F725E90B2A-L000192](../../tests/test_web_agent.py#L192) | 192 | `"        return FakeResponse(html if \"duckduckgo.com\" in url else rss)"` | — |
+| [SRC-F725E90B2A-L000193](../../tests/test_web_agent.py#L193) | 193 | `""` | — |
+| [SRC-F725E90B2A-L000194](../../tests/test_web_agent.py#L194) | 194 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000195](../../tests/test_web_agent.py#L195) | 195 | `"    results = WebAgent()._search_web(\"سؤال بحث تجريبي\")"` | — |
+| [SRC-F725E90B2A-L000196](../../tests/test_web_agent.py#L196) | 196 | `""` | — |
+| [SRC-F725E90B2A-L000197](../../tests/test_web_agent.py#L197) | 197 | `"    assert len(results) == 2"` | — |
+| [SRC-F725E90B2A-L000198](../../tests/test_web_agent.py#L198) | 198 | `"    assert results[0][\"title\"] == \"صفحة أولى\""` | — |
+| [SRC-F725E90B2A-L000199](../../tests/test_web_agent.py#L199) | 199 | `"    assert results[0][\"url\"] == \"https://example.com/first\""` | — |
+| [SRC-F725E90B2A-L000200](../../tests/test_web_agent.py#L200) | 200 | `"    assert results[1][\"title\"] == \"صفحة ثانية\""` | — |
+| [SRC-F725E90B2A-L000201](../../tests/test_web_agent.py#L201) | 201 | `"    assert results[1][\"url\"] == \"https://example.net/second\""` | — |
+| [SRC-F725E90B2A-L000202](../../tests/test_web_agent.py#L202) | 202 | `"    assert len(calls) == 2"` | — |
+| [SRC-F725E90B2A-L000203](../../tests/test_web_agent.py#L203) | 203 | `""` | — |
+| [SRC-F725E90B2A-L000204](../../tests/test_web_agent.py#L204) | 204 | `""` | — |
+| [SRC-F725E90B2A-L000205](../../tests/test_web_agent.py#L205) | 205 | `""` | — |
 | [SRC-F725E90B2A-L000206](../../tests/test_web_agent.py#L206) | 206 | `"def test_model_planner_preserves_social_intent_and_adds_targeted_query(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000207](../../tests/test_web_agent.py#L207) | 207 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L000208](../../tests/test_web_agent.py#L208) | 208 | `"    agent.api_key = \"test-key\""` | — |
@@ -785,34 +816,3 @@
 | [SRC-F725E90B2A-L000972](../../tests/test_web_agent.py#L972) | 972 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: ["` | — |
 | [SRC-F725E90B2A-L000973](../../tests/test_web_agent.py#L973) | 973 | `"        {\"provider\": \"duckduckgo_html\", \"url\": \"https://example.com/a\"}"` | — |
 | [SRC-F725E90B2A-L000974](../../tests/test_web_agent.py#L974) | 974 | `"    ])"` | — |
-| [SRC-F725E90B2A-L000975](../../tests/test_web_agent.py#L975) | 975 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000976](../../tests/test_web_agent.py#L976) | 976 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L000977](../../tests/test_web_agent.py#L977) | 977 | `"        \"_request_completion\","` | — |
-| [SRC-F725E90B2A-L000978](../../tests/test_web_agent.py#L978) | 978 | `"        lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError(\"provider unavailable\")),"` | — |
-| [SRC-F725E90B2A-L000979](../../tests/test_web_agent.py#L979) | 979 | `"    )"` | — |
-| [SRC-F725E90B2A-L000980](../../tests/test_web_agent.py#L980) | 980 | `""` | — |
-| [SRC-F725E90B2A-L000981](../../tests/test_web_agent.py#L981) | 981 | `"    report = agent.diagnostics(test_model=True, test_social=False)"` | — |
-| [SRC-F725E90B2A-L000982](../../tests/test_web_agent.py#L982) | 982 | `""` | — |
-| [SRC-F725E90B2A-L000983](../../tests/test_web_agent.py#L983) | 983 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"passed\""` | — |
-| [SRC-F725E90B2A-L000984](../../tests/test_web_agent.py#L984) | 984 | `"    assert report[\"checks\"][\"language_model\"][\"status\"] == \"failed\""` | — |
-| [SRC-F725E90B2A-L000985](../../tests/test_web_agent.py#L985) | 985 | `"    assert report[\"overall_status\"] == \"degraded\""` | — |
-| [SRC-F725E90B2A-L000986](../../tests/test_web_agent.py#L986) | 986 | `"    assert \"test-key\" not in str(report)"` | — |
-| [SRC-F725E90B2A-L000987](../../tests/test_web_agent.py#L987) | 987 | `""` | — |
-| [SRC-F725E90B2A-L000988](../../tests/test_web_agent.py#L988) | 988 | `""` | — |
-| [SRC-F725E90B2A-L000989](../../tests/test_web_agent.py#L989) | 989 | `"def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000990](../../tests/test_web_agent.py#L990) | 990 | `"    import json"` | — |
-| [SRC-F725E90B2A-L000991](../../tests/test_web_agent.py#L991) | 991 | `""` | — |
-| [SRC-F725E90B2A-L000992](../../tests/test_web_agent.py#L992) | 992 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
-| [SRC-F725E90B2A-L000993](../../tests/test_web_agent.py#L993) | 993 | `"    monkeypatch.setenv(\"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\")"` | — |
-| [SRC-F725E90B2A-L000994](../../tests/test_web_agent.py#L994) | 994 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000995](../../tests/test_web_agent.py#L995) | 995 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L000996](../../tests/test_web_agent.py#L996) | 996 | `"    seen = {}"` | — |
-| [SRC-F725E90B2A-L000997](../../tests/test_web_agent.py#L997) | 997 | `""` | — |
-| [SRC-F725E90B2A-L000998](../../tests/test_web_agent.py#L998) | 998 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000999](../../tests/test_web_agent.py#L999) | 999 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L001000](../../tests/test_web_agent.py#L1000) | 1000 | `"            return self"` | — |
-| [SRC-F725E90B2A-L001001](../../tests/test_web_agent.py#L1001) | 1001 | `""` | — |
-| [SRC-F725E90B2A-L001002](../../tests/test_web_agent.py#L1002) | 1002 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-F725E90B2A-L001003](../../tests/test_web_agent.py#L1003) | 1003 | `"            return False"` | — |
-| [SRC-F725E90B2A-L001004](../../tests/test_web_agent.py#L1004) | 1004 | `""` | — |
-| [SRC-F725E90B2A-L001005](../../tests/test_web_agent.py#L1005) | 1005 | `"        def read(self, limit):"` | — |

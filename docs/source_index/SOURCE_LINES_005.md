@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000430 إلى SRC-1AE03B9EC3-L001229
+- النطاق: SRC-1AE03B9EC3-L000415 إلى SRC-1AE03B9EC3-L001214
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000415](../../agents/web_agent.py#L415) | 415 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000416](../../agents/web_agent.py#L416) | 416 | `"        self.timeout = max("` | — |
+| [SRC-1AE03B9EC3-L000417](../../agents/web_agent.py#L417) | 417 | `"            5, min(int(os.getenv(\"OMARAI_LLM_TIMEOUT\", str(LLM_TIMEOUT_SECONDS))), 60)"` | — |
+| [SRC-1AE03B9EC3-L000418](../../agents/web_agent.py#L418) | 418 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000419](../../agents/web_agent.py#L419) | 419 | `"        self._request_budget: RequestBudget \| None = None"` | — |
+| [SRC-1AE03B9EC3-L000420](../../agents/web_agent.py#L420) | 420 | `""` | — |
+| [SRC-1AE03B9EC3-L000421](../../agents/web_agent.py#L421) | 421 | `"    def _effective_timeout(self, configured_seconds: float) -> float:"` | — |
+| [SRC-1AE03B9EC3-L000422](../../agents/web_agent.py#L422) | 422 | `"        \"\"\"Limit one outbound operation to the remaining per-answer time budget.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000423](../../agents/web_agent.py#L423) | 423 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L000424](../../agents/web_agent.py#L424) | 424 | `"        if budget is None:"` | — |
+| [SRC-1AE03B9EC3-L000425](../../agents/web_agent.py#L425) | 425 | `"            return float(configured_seconds)"` | — |
+| [SRC-1AE03B9EC3-L000426](../../agents/web_agent.py#L426) | 426 | `"        return budget.timeout_for(configured_seconds)"` | — |
+| [SRC-1AE03B9EC3-L000427](../../agents/web_agent.py#L427) | 427 | `""` | — |
+| [SRC-1AE03B9EC3-L000428](../../agents/web_agent.py#L428) | 428 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000429](../../agents/web_agent.py#L429) | 429 | `"    def status() -> dict[str, Any]:"` | — |
 | [SRC-1AE03B9EC3-L000430](../../agents/web_agent.py#L430) | 430 | `"        try:"` | — |
 | [SRC-1AE03B9EC3-L000431](../../agents/web_agent.py#L431) | 431 | `"            import bs4  # noqa: F401"` | — |
 | [SRC-1AE03B9EC3-L000432](../../agents/web_agent.py#L432) | 432 | `"            import httpx  # noqa: F401"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L001212](../../agents/web_agent.py#L1212) | 1212 | `"            })"` | — |
 | [SRC-1AE03B9EC3-L001213](../../agents/web_agent.py#L1213) | 1213 | `"            if len(rows) >= MAX_PROVIDER_RESULTS:"` | — |
 | [SRC-1AE03B9EC3-L001214](../../agents/web_agent.py#L1214) | 1214 | `"                break"` | — |
-| [SRC-1AE03B9EC3-L001215](../../agents/web_agent.py#L1215) | 1215 | `"        if not rows and (\"captcha\" in response.text.casefold() or \"anomaly\" in response.text.casefold()):"` | — |
-| [SRC-1AE03B9EC3-L001216](../../agents/web_agent.py#L1216) | 1216 | `"            raise RuntimeError(\"anti-bot challenge returned no result cards\")"` | — |
-| [SRC-1AE03B9EC3-L001217](../../agents/web_agent.py#L1217) | 1217 | `"        return rows"` | — |
-| [SRC-1AE03B9EC3-L001218](../../agents/web_agent.py#L1218) | 1218 | `""` | — |
-| [SRC-1AE03B9EC3-L001219](../../agents/web_agent.py#L1219) | 1219 | `"    def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L001220](../../agents/web_agent.py#L1220) | 1220 | `"        import xml.etree.ElementTree as ET"` | — |
-| [SRC-1AE03B9EC3-L001221](../../agents/web_agent.py#L1221) | 1221 | `""` | — |
-| [SRC-1AE03B9EC3-L001222](../../agents/web_agent.py#L1222) | 1222 | `"        import httpx"` | — |
-| [SRC-1AE03B9EC3-L001223](../../agents/web_agent.py#L1223) | 1223 | `""` | — |
-| [SRC-1AE03B9EC3-L001224](../../agents/web_agent.py#L1224) | 1224 | `"        response = httpx.get("` | — |
-| [SRC-1AE03B9EC3-L001225](../../agents/web_agent.py#L1225) | 1225 | `"            \"https://www.bing.com/search\","` | — |
-| [SRC-1AE03B9EC3-L001226](../../agents/web_agent.py#L1226) | 1226 | `"            params={\"format\": \"rss\", \"q\": query},"` | — |
-| [SRC-1AE03B9EC3-L001227](../../agents/web_agent.py#L1227) | 1227 | `"            headers={"` | — |
-| [SRC-1AE03B9EC3-L001228](../../agents/web_agent.py#L1228) | 1228 | `"                \"User-Agent\": ("` | — |
-| [SRC-1AE03B9EC3-L001229](../../agents/web_agent.py#L1229) | 1229 | `"                    \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 \""` | — |

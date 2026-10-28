@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000383 إلى SRC-1AE03B9EC3-L000429
+- النطاق: SRC-59CF4B7DE8-L000368 إلى SRC-1AE03B9EC3-L000414
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000368](../../agents/research.py#L368) | 368 | `"    }"` | — |
+| [SRC-59CF4B7DE8-L000369](../../agents/research.py#L369) | 369 | `""` | — |
+| [SRC-59CF4B7DE8-L000370](../../agents/research.py#L370) | 370 | `""` | — |
+| [SRC-59CF4B7DE8-L000371](../../agents/research.py#L371) | 371 | `"def _canonical_result_url(url: str) -> str:"` | — |
+| [SRC-59CF4B7DE8-L000372](../../agents/research.py#L372) | 372 | `"    try:"` | — |
+| [SRC-59CF4B7DE8-L000373](../../agents/research.py#L373) | 373 | `"        parsed = urlparse(url)"` | — |
+| [SRC-59CF4B7DE8-L000374](../../agents/research.py#L374) | 374 | `"        host = (parsed.hostname or \"\").lower().removeprefix(\"www.\")"` | — |
+| [SRC-59CF4B7DE8-L000375](../../agents/research.py#L375) | 375 | `"        # Drop fragments and common tracking query parameters before deduplication."` | — |
+| [SRC-59CF4B7DE8-L000376](../../agents/research.py#L376) | 376 | `"        parts = []"` | — |
+| [SRC-59CF4B7DE8-L000377](../../agents/research.py#L377) | 377 | `"        for part in parsed.query.split(\"&\"):"` | — |
+| [SRC-59CF4B7DE8-L000378](../../agents/research.py#L378) | 378 | `"            key = part.split(\"=\", 1)[0].lower()"` | — |
+| [SRC-59CF4B7DE8-L000379](../../agents/research.py#L379) | 379 | `"            if key.startswith(\"utm_\") or key in {\"fbclid\", \"gclid\", \"ref\", \"ref_src\"}:"` | — |
+| [SRC-59CF4B7DE8-L000380](../../agents/research.py#L380) | 380 | `"                continue"` | — |
+| [SRC-59CF4B7DE8-L000381](../../agents/research.py#L381) | 381 | `"            if part:"` | — |
+| [SRC-59CF4B7DE8-L000382](../../agents/research.py#L382) | 382 | `"                parts.append(part)"` | — |
 | [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"        query = \"&\".join(sorted(parts))"` | — |
 | [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"        path = parsed.path.rstrip(\"/\") or \"/\""` | — |
 | [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"        return f\"{parsed.scheme.lower()}://{host}{path}\" + (f\"?{query}\" if query else \"\")"` | — |
@@ -810,18 +825,3 @@
 | [SRC-1AE03B9EC3-L000412](../../agents/web_agent.py#L412) | 412 | `"        self.openrouter_web_search_enabled = ("` | — |
 | [SRC-1AE03B9EC3-L000413](../../agents/web_agent.py#L413) | 413 | `"            os.getenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"\").strip() == \"1\""` | — |
 | [SRC-1AE03B9EC3-L000414](../../agents/web_agent.py#L414) | 414 | `"            and \"openrouter.ai\" in self.base_url.lower()"` | — |
-| [SRC-1AE03B9EC3-L000415](../../agents/web_agent.py#L415) | 415 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000416](../../agents/web_agent.py#L416) | 416 | `"        self.timeout = max("` | — |
-| [SRC-1AE03B9EC3-L000417](../../agents/web_agent.py#L417) | 417 | `"            5, min(int(os.getenv(\"OMARAI_LLM_TIMEOUT\", str(LLM_TIMEOUT_SECONDS))), 60)"` | — |
-| [SRC-1AE03B9EC3-L000418](../../agents/web_agent.py#L418) | 418 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000419](../../agents/web_agent.py#L419) | 419 | `"        self._request_budget: RequestBudget \| None = None"` | — |
-| [SRC-1AE03B9EC3-L000420](../../agents/web_agent.py#L420) | 420 | `""` | — |
-| [SRC-1AE03B9EC3-L000421](../../agents/web_agent.py#L421) | 421 | `"    def _effective_timeout(self, configured_seconds: float) -> float:"` | — |
-| [SRC-1AE03B9EC3-L000422](../../agents/web_agent.py#L422) | 422 | `"        \"\"\"Limit one outbound operation to the remaining per-answer time budget.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000423](../../agents/web_agent.py#L423) | 423 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L000424](../../agents/web_agent.py#L424) | 424 | `"        if budget is None:"` | — |
-| [SRC-1AE03B9EC3-L000425](../../agents/web_agent.py#L425) | 425 | `"            return float(configured_seconds)"` | — |
-| [SRC-1AE03B9EC3-L000426](../../agents/web_agent.py#L426) | 426 | `"        return budget.timeout_for(configured_seconds)"` | — |
-| [SRC-1AE03B9EC3-L000427](../../agents/web_agent.py#L427) | 427 | `""` | — |
-| [SRC-1AE03B9EC3-L000428](../../agents/web_agent.py#L428) | 428 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L000429](../../agents/web_agent.py#L429) | 429 | `"    def status() -> dict[str, Any]:"` | — |

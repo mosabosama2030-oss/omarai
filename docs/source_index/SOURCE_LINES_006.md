@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001230 إلى SRC-1AE03B9EC3-L002029
+- النطاق: SRC-1AE03B9EC3-L001215 إلى SRC-1AE03B9EC3-L002014
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001215](../../agents/web_agent.py#L1215) | 1215 | `"        if not rows and (\"captcha\" in response.text.casefold() or \"anomaly\" in response.text.casefold()):"` | — |
+| [SRC-1AE03B9EC3-L001216](../../agents/web_agent.py#L1216) | 1216 | `"            raise RuntimeError(\"anti-bot challenge returned no result cards\")"` | — |
+| [SRC-1AE03B9EC3-L001217](../../agents/web_agent.py#L1217) | 1217 | `"        return rows"` | — |
+| [SRC-1AE03B9EC3-L001218](../../agents/web_agent.py#L1218) | 1218 | `""` | — |
+| [SRC-1AE03B9EC3-L001219](../../agents/web_agent.py#L1219) | 1219 | `"    def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001220](../../agents/web_agent.py#L1220) | 1220 | `"        import xml.etree.ElementTree as ET"` | — |
+| [SRC-1AE03B9EC3-L001221](../../agents/web_agent.py#L1221) | 1221 | `""` | — |
+| [SRC-1AE03B9EC3-L001222](../../agents/web_agent.py#L1222) | 1222 | `"        import httpx"` | — |
+| [SRC-1AE03B9EC3-L001223](../../agents/web_agent.py#L1223) | 1223 | `""` | — |
+| [SRC-1AE03B9EC3-L001224](../../agents/web_agent.py#L1224) | 1224 | `"        response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L001225](../../agents/web_agent.py#L1225) | 1225 | `"            \"https://www.bing.com/search\","` | — |
+| [SRC-1AE03B9EC3-L001226](../../agents/web_agent.py#L1226) | 1226 | `"            params={\"format\": \"rss\", \"q\": query},"` | — |
+| [SRC-1AE03B9EC3-L001227](../../agents/web_agent.py#L1227) | 1227 | `"            headers={"` | — |
+| [SRC-1AE03B9EC3-L001228](../../agents/web_agent.py#L1228) | 1228 | `"                \"User-Agent\": ("` | — |
+| [SRC-1AE03B9EC3-L001229](../../agents/web_agent.py#L1229) | 1229 | `"                    \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 \""` | — |
 | [SRC-1AE03B9EC3-L001230](../../agents/web_agent.py#L1230) | 1230 | `"                    \"(KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36\""` | — |
 | [SRC-1AE03B9EC3-L001231](../../agents/web_agent.py#L1231) | 1231 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L001232](../../agents/web_agent.py#L1232) | 1232 | `"                \"Accept-Language\": \"ar,en;q=0.9\","` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L002012](../../agents/web_agent.py#L2012) | 2012 | `"                        if media_response.status_code != 200:"` | — |
 | [SRC-1AE03B9EC3-L002013](../../agents/web_agent.py#L2013) | 2013 | `"                            warnings.append("` | — |
 | [SRC-1AE03B9EC3-L002014](../../agents/web_agent.py#L2014) | 2014 | `"                                \"Instagram public hashtag media unavailable \""` | — |
-| [SRC-1AE03B9EC3-L002015](../../agents/web_agent.py#L2015) | 2015 | `"                                f\"(HTTP {media_response.status_code}).\""` | — |
-| [SRC-1AE03B9EC3-L002016](../../agents/web_agent.py#L2016) | 2016 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L002017](../../agents/web_agent.py#L2017) | 2017 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L002018](../../agents/web_agent.py#L2018) | 2018 | `"                        items = media_response.json().get(\"data\", [])"` | — |
-| [SRC-1AE03B9EC3-L002019](../../agents/web_agent.py#L2019) | 2019 | `"                        for item in items:"` | — |
-| [SRC-1AE03B9EC3-L002020](../../agents/web_agent.py#L2020) | 2020 | `"                            url = _public_http_url(item.get(\"permalink\", \"\"))"` | — |
-| [SRC-1AE03B9EC3-L002021](../../agents/web_agent.py#L2021) | 2021 | `"                            if not url:"` | — |
-| [SRC-1AE03B9EC3-L002022](../../agents/web_agent.py#L2022) | 2022 | `"                                continue"` | — |
-| [SRC-1AE03B9EC3-L002023](../../agents/web_agent.py#L2023) | 2023 | `"                            metrics = []"` | — |
-| [SRC-1AE03B9EC3-L002024](../../agents/web_agent.py#L2024) | 2024 | `"                            if item.get(\"like_count\") is not None:"` | — |
-| [SRC-1AE03B9EC3-L002025](../../agents/web_agent.py#L2025) | 2025 | `"                                metrics.append(\"likes=\" + str(item[\"like_count\"]))"` | — |
-| [SRC-1AE03B9EC3-L002026](../../agents/web_agent.py#L2026) | 2026 | `"                            if item.get(\"comments_count\") is not None:"` | — |
-| [SRC-1AE03B9EC3-L002027](../../agents/web_agent.py#L2027) | 2027 | `"                                metrics.append(\"comments=\" + str(item[\"comments_count\"]))"` | — |
-| [SRC-1AE03B9EC3-L002028](../../agents/web_agent.py#L2028) | 2028 | `"                            caption = _clean_text(item.get(\"caption\") or \"\", 1200)"` | — |
-| [SRC-1AE03B9EC3-L002029](../../agents/web_agent.py#L2029) | 2029 | `"                            if metrics:"` | — |

@@ -4,9 +4,42 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000008 إلى SRC-6BF96689A8-L000167
+- النطاق: SRC-EA6EC52573-L000270 إلى SRC-6BF96689A8-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-EA6EC52573 — [tests/test_intent_router.py](../../tests/test_intent_router.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-EA6EC52573-L000270](../../tests/test_intent_router.py#L270) | 270 | `"    question = ("` | — |
+| [SRC-EA6EC52573-L000271](../../tests/test_intent_router.py#L271) | 271 | `"        \"ما أهم استخدامات الذكاء الاصطناعي في الشركات الصغيرة؟ \""` | — |
+| [SRC-EA6EC52573-L000272](../../tests/test_intent_router.py#L272) | 272 | `"        \"اذكر أمثلة ومصادر موثوقة.\""` | — |
+| [SRC-EA6EC52573-L000273](../../tests/test_intent_router.py#L273) | 273 | `"    )"` | — |
+| [SRC-EA6EC52573-L000274](../../tests/test_intent_router.py#L274) | 274 | `"    decision = route_intent(question, mode=\"auto\")"` | — |
+| [SRC-EA6EC52573-L000275](../../tests/test_intent_router.py#L275) | 275 | `"    assert decision[\"route\"] == \"WEB_SIMPLE\""` | — |
+| [SRC-EA6EC52573-L000276](../../tests/test_intent_router.py#L276) | 276 | `"    assert decision[\"reason\"] == \"explicit_evidence_request\""` | — |
+| [SRC-EA6EC52573-L000277](../../tests/test_intent_router.py#L277) | 277 | `""` | — |
+| [SRC-EA6EC52573-L000278](../../tests/test_intent_router.py#L278) | 278 | `""` | — |
+| [SRC-EA6EC52573-L000279](../../tests/test_intent_router.py#L279) | 279 | `"def test_stable_question_without_source_request_remains_model_only():"` | — |
+| [SRC-EA6EC52573-L000280](../../tests/test_intent_router.py#L280) | 280 | `"    decision = route_intent(\"اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف\")"` | — |
+| [SRC-EA6EC52573-L000281](../../tests/test_intent_router.py#L281) | 281 | `"    assert decision[\"route\"] == \"MODEL_ONLY\""` | — |
+| [SRC-EA6EC52573-L000282](../../tests/test_intent_router.py#L282) | 282 | `""` | — |
+| [SRC-EA6EC52573-L000283](../../tests/test_intent_router.py#L283) | 283 | `""` | — |
+| [SRC-EA6EC52573-L000284](../../tests/test_intent_router.py#L284) | 284 | `"def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> None:"` | — |
+| [SRC-EA6EC52573-L000285](../../tests/test_intent_router.py#L285) | 285 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000286](../../tests/test_intent_router.py#L286) | 286 | `"        {\"role\": \"user\", \"content\": \"بفكر أشتري Lenovo ThinkPad E14 في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000287](../../tests/test_intent_router.py#L287) | 287 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن Lenovo ThinkPad E14 في السوق المصري.\"},"` | — |
+| [SRC-EA6EC52573-L000288](../../tests/test_intent_router.py#L288) | 288 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000289](../../tests/test_intent_router.py#L289) | 289 | `""` | — |
+| [SRC-EA6EC52573-L000290](../../tests/test_intent_router.py#L290) | 290 | `"    resolved = resolve_followup_query(\"أقدر أشتريه منين؟\", history)"` | — |
+| [SRC-EA6EC52573-L000291](../../tests/test_intent_router.py#L291) | 291 | `""` | — |
+| [SRC-EA6EC52573-L000292](../../tests/test_intent_router.py#L292) | 292 | `"    assert \"Lenovo ThinkPad E14\" in resolved"` | — |
+| [SRC-EA6EC52573-L000293](../../tests/test_intent_router.py#L293) | 293 | `"    assert \"أقدر أشتريه منين\" in resolved"` | — |
 ## اختبارات
 
 ### FILE-4397BC2CD2 — [tests/test_intent_router_integration.py](../../tests/test_intent_router_integration.py#L1)
@@ -16,6 +49,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4397BC2CD2-L000001](../../tests/test_intent_router_integration.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-4397BC2CD2-L000002](../../tests/test_intent_router_integration.py#L2) | 2 | `""` | — |
+| [SRC-4397BC2CD2-L000003](../../tests/test_intent_router_integration.py#L3) | 3 | `"import pytest"` | — |
+| [SRC-4397BC2CD2-L000004](../../tests/test_intent_router_integration.py#L4) | 4 | `""` | — |
+| [SRC-4397BC2CD2-L000005](../../tests/test_intent_router_integration.py#L5) | 5 | `"from agents.research import evidence_signal_report"` | — |
+| [SRC-4397BC2CD2-L000006](../../tests/test_intent_router_integration.py#L6) | 6 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-4397BC2CD2-L000007](../../tests/test_intent_router_integration.py#L7) | 7 | `""` | — |
 | [SRC-4397BC2CD2-L000008](../../tests/test_intent_router_integration.py#L8) | 8 | `""` | — |
 | [SRC-4397BC2CD2-L000009](../../tests/test_intent_router_integration.py#L9) | 9 | `"def _evidence(domain: str, queries: list[str]) -> dict:"` | — |
 | [SRC-4397BC2CD2-L000010](../../tests/test_intent_router_integration.py#L10) | 10 | `"    return {"` | — |
@@ -830,34 +870,3 @@
 | [SRC-6BF96689A8-L000134](../../tests/test_research.py#L134) | 134 | `"    assert \"آيفون 16\" in plan[\"queries\"][0]"` | — |
 | [SRC-6BF96689A8-L000135](../../tests/test_research.py#L135) | 135 | `"    assert \"ضمان\" in plan[\"queries\"][0]"` | — |
 | [SRC-6BF96689A8-L000136](../../tests/test_research.py#L136) | 136 | `""` | — |
-| [SRC-6BF96689A8-L000137](../../tests/test_research.py#L137) | 137 | `""` | — |
-| [SRC-6BF96689A8-L000138](../../tests/test_research.py#L138) | 138 | `"def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():"` | — |
-| [SRC-6BF96689A8-L000139](../../tests/test_research.py#L139) | 139 | `"    history = ["` | — |
-| [SRC-6BF96689A8-L000140](../../tests/test_research.py#L140) | 140 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
-| [SRC-6BF96689A8-L000141](../../tests/test_research.py#L141) | 141 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
-| [SRC-6BF96689A8-L000142](../../tests/test_research.py#L142) | 142 | `"        {\"role\": \"user\", \"content\": \"شكرًا\"},"` | — |
-| [SRC-6BF96689A8-L000143](../../tests/test_research.py#L143) | 143 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
-| [SRC-6BF96689A8-L000144](../../tests/test_research.py#L144) | 144 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000145](../../tests/test_research.py#L145) | 145 | `"    plan = fallback_plan(\"فين؟\", history)"` | — |
-| [SRC-6BF96689A8-L000146](../../tests/test_research.py#L146) | 146 | `"    assert \"آيفون 16\" not in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000147](../../tests/test_research.py#L147) | 147 | `""` | — |
-| [SRC-6BF96689A8-L000148](../../tests/test_research.py#L148) | 148 | `""` | — |
-| [SRC-6BF96689A8-L000149](../../tests/test_research.py#L149) | 149 | `"def test_compact_search_query_keeps_subject_and_removes_answer_format_instructions():"` | — |
-| [SRC-6BF96689A8-L000150](../../tests/test_research.py#L150) | 150 | `"    cases = ["` | — |
-| [SRC-6BF96689A8-L000151](../../tests/test_research.py#L151) | 151 | `"        ("` | — |
-| [SRC-6BF96689A8-L000152](../../tests/test_research.py#L152) | 152 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
-| [SRC-6BF96689A8-L000153](../../tests/test_research.py#L153) | 153 | `"            (\"عاصمة مصر\",),"` | — |
-| [SRC-6BF96689A8-L000154](../../tests/test_research.py#L154) | 154 | `"            (\"اذكر مصدرًا موثوقًا\", \"رابط مباشر\", \"بالعربية بإيجاز\"),"` | — |
-| [SRC-6BF96689A8-L000155](../../tests/test_research.py#L155) | 155 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000156](../../tests/test_research.py#L156) | 156 | `"        ("` | — |
-| [SRC-6BF96689A8-L000157](../../tests/test_research.py#L157) | 157 | `"            \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
-| [SRC-6BF96689A8-L000158](../../tests/test_research.py#L158) | 158 | `"            (\"السيارات الكهربائية\", \"مصر\", \"التكلفة\", \"البنية التحتية\", \"الشحن\"),"` | — |
-| [SRC-6BF96689A8-L000159](../../tests/test_research.py#L159) | 159 | `"            (\"استخدم مصادر متعددة\", \"الحقائق والاستنتاجات\", \"روابط المصادر\"),"` | — |
-| [SRC-6BF96689A8-L000160](../../tests/test_research.py#L160) | 160 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000161](../../tests/test_research.py#L161) | 161 | `"        ("` | — |
-| [SRC-6BF96689A8-L000162](../../tests/test_research.py#L162) | 162 | `"            \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
-| [SRC-6BF96689A8-L000163](../../tests/test_research.py#L163) | 163 | `"            (\"وكلاء الذكاء الاصطناعي\", \"الأيام السبعة الماضية\"),"` | — |
-| [SRC-6BF96689A8-L000164](../../tests/test_research.py#L164) | 164 | `"            (\"تواريخ الأخبار\", \"روابط المصادر\", \"معلومات قديمة\"),"` | — |
-| [SRC-6BF96689A8-L000165](../../tests/test_research.py#L165) | 165 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000166](../../tests/test_research.py#L166) | 166 | `"        ("` | — |
-| [SRC-6BF96689A8-L000167](../../tests/test_research.py#L167) | 167 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
