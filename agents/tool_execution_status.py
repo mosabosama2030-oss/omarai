@@ -98,11 +98,14 @@ def build_tool_execution_matrix(
     elif outcome == "not_attempted" or attempted is False:
         status = "not_attempted"
     elif attempted is True:
-        status = (
-            "completed_with_results"
-            if accepted_sources is not None and accepted_sources > 0
-            else "completed_no_usable_results"
-        )
+        if accepted_sources is None and outcome != "attempted_no_usable_sources":
+            status = "unknown"
+        elif accepted_sources is not None and accepted_sources > 0:
+            status = "completed_with_results"
+        elif outcome == "attempted_with_usable_sources":
+            status = "completed_with_results"
+        else:
+            status = "completed_no_usable_results"
     else:
         status = "unknown"
     rows.append(_status_row(tool, tool in required, status, {
@@ -118,6 +121,8 @@ def build_tool_execution_matrix(
         status = "completed_with_read_pages"
     elif pages_attempted is not None and pages_attempted > 0:
         status = "attempted_no_readable_pages"
+    elif pages_attempted is None:
+        status = "unknown"
     elif outcome in _ERROR_OUTCOMES:
         status = "not_attempted_after_search_error"
     elif attempted is True:
