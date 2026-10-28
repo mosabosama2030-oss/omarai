@@ -21,10 +21,10 @@ def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatc
         }
 
     source = {
-        "title": "A public report",
+        "title": "Topic summary public report",
         "url": "https://example.org/report",
-        "snippet": "Evidence snippet",
-        "page_text": "Fetched text",
+        "snippet": "Evidence snippet about topic summary",
+        "page_text": "Fetched text about topic summary",
         "page_fetched": True,
         "provider": "test_search",
         "providers": ["test_search"],
