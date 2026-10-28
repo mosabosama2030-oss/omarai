@@ -210,16 +210,22 @@ def might_be_context_dependent(question: str) -> bool:
     current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()
     if not current or len(current) > 220:
         return False
-    if len(current) <= 72:
-        return True
-    return bool(re.search(
+    lead_in = re.search(
         r"^(?:و?طب|و?طيب|و?تمام|ثم|كمان|وبالنسبه|بالنسبه|"
         r"and\s+(?:what|the|how)|what\s+about|how\s+about|"
         r"then\b|also\b|as\s+for\b|and\s+its\b)",
         current,
-    ) or re.search(
+    )
+    reference = re.search(
         r"\b(?:it|its|they|them|their|this|that|these|those|there|"
         r"he|she|هو|هي|ده|دي|دول|عليه|عليها|فيه|فيها|لها|له|"
         r"سعرها|سعره|ضمانها|ضمانه|بطاريتها|كاميرتها)\b",
         current,
-    ))
+    )
+    fragment = re.fullmatch(
+        r"[؟?\s]*(?:وال?)?(?:السعر|الاسعار|الضمان|البطاريه|الكاميرا|"
+        r"المكان|الرابط|المصدر|المميزات|العيوب|warranty|price|battery|"
+        r"camera|location|source|pros|cons)[؟?\s]*",
+        current,
+    )
+    return bool(lead_in or reference or fragment)
