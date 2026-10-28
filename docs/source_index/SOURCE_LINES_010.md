@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003977 إلى SRC-1AE03B9EC3-L004776
+- النطاق: SRC-1AE03B9EC3-L003976 إلى SRC-1AE03B9EC3-L004775
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003976](../../agents/web_agent.py#L3976) | 3976 | `"                \"search_attempted\": search_attempted,"` | — |
 | [SRC-1AE03B9EC3-L003977](../../agents/web_agent.py#L3977) | 3977 | `"                \"used_social_search\": False,"` | — |
 | [SRC-1AE03B9EC3-L003978](../../agents/web_agent.py#L3978) | 3978 | `"                \"warnings\": [str(exc)],"` | — |
 | [SRC-1AE03B9EC3-L003979](../../agents/web_agent.py#L3979) | 3979 | `"                \"kind\": \"web_fallback\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004773](../../agents/web_agent.py#L4773) | 4773 | `"                        \"queries\": [repair_query],"` | — |
 | [SRC-1AE03B9EC3-L004774](../../agents/web_agent.py#L4774) | 4774 | `"                        \"depth\": \"standard\","` | — |
 | [SRC-1AE03B9EC3-L004775](../../agents/web_agent.py#L4775) | 4775 | `"                        \"social_focus\": False,"` | — |
-| [SRC-1AE03B9EC3-L004776](../../agents/web_agent.py#L4776) | 4776 | `"                        \"platforms\": [],"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001577 إلى SRC-1AE03B9EC3-L002376
+- النطاق: SRC-1AE03B9EC3-L001576 إلى SRC-1AE03B9EC3-L002375
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `""` | — |
 | [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"    def _search_tavily(self, query: str) -> list[dict[str, Any]]:"` | — |
 | [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"        \"\"\"Use Tavily's official search API for structured, extractable live web results.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L001579](../../agents/web_agent.py#L1579) | 1579 | `"        api_key = os.getenv(\"TAVILY_API_KEY\", \"\").strip()"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"                        provider = str(source.get(\"provider\") or \"web_search\")"` | — |
 | [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"                        grouped.setdefault(provider, []).append(source)"` | — |
 | [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"                    for provider, items in grouped.items():"` | — |
-| [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"                        items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |

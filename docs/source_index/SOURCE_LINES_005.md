@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6E58A660BC-L000153 إلى SRC-1AE03B9EC3-L000776
+- النطاق: SRC-6E58A660BC-L000153 إلى SRC-1AE03B9EC3-L000775
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,30 +16,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6E58A660BC-L000153](../../agents/search_connectors.py#L153) | 153 | `"    \"arxiv\": {\"fn\": search_arxiv, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
-| [SRC-6E58A660BC-L000154](../../agents/search_connectors.py#L154) | 154 | `"    \"crossref\": {\"fn\": search_crossref, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
-| [SRC-6E58A660BC-L000155](../../agents/search_connectors.py#L155) | 155 | `"    \"semantic_scholar\": {\"fn\": search_semantic_scholar, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
-| [SRC-6E58A660BC-L000156](../../agents/search_connectors.py#L156) | 156 | `"}"` | — |
-| [SRC-6E58A660BC-L000157](../../agents/search_connectors.py#L157) | 157 | `""` | — |
+| [SRC-6E58A660BC-L000153](../../agents/search_connectors.py#L153) | 153 | `"    \"openalex\": {\"fn\": search_openalex, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
+| [SRC-6E58A660BC-L000154](../../agents/search_connectors.py#L154) | 154 | `"    \"arxiv\": {\"fn\": search_arxiv, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
+| [SRC-6E58A660BC-L000155](../../agents/search_connectors.py#L155) | 155 | `"    \"crossref\": {\"fn\": search_crossref, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
+| [SRC-6E58A660BC-L000156](../../agents/search_connectors.py#L156) | 156 | `"    \"semantic_scholar\": {\"fn\": search_semantic_scholar, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
+| [SRC-6E58A660BC-L000157](../../agents/search_connectors.py#L157) | 157 | `"}"` | — |
 | [SRC-6E58A660BC-L000158](../../agents/search_connectors.py#L158) | 158 | `""` | — |
-| [SRC-6E58A660BC-L000159](../../agents/search_connectors.py#L159) | 159 | `"def run_connector(name: str, query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000160](../../agents/search_connectors.py#L160) | 160 | `"    meta = CONNECTOR_REGISTRY.get(name)"` | — |
-| [SRC-6E58A660BC-L000161](../../agents/search_connectors.py#L161) | 161 | `"    if not meta or meta.get(\"fn\") is None:"` | — |
-| [SRC-6E58A660BC-L000162](../../agents/search_connectors.py#L162) | 162 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000163](../../agents/search_connectors.py#L163) | 163 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000164](../../agents/search_connectors.py#L164) | 164 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000165](../../agents/search_connectors.py#L165) | 165 | `"    try:"` | — |
-| [SRC-6E58A660BC-L000166](../../agents/search_connectors.py#L166) | 166 | `"        rows = meta[\"fn\"](query, limit=limit) or []"` | — |
-| [SRC-6E58A660BC-L000167](../../agents/search_connectors.py#L167) | 167 | `"        return [row for row in rows if isinstance(row, dict) and row.get(\"url\") and row.get(\"title\")]"` | — |
-| [SRC-6E58A660BC-L000168](../../agents/search_connectors.py#L168) | 168 | `"    except (TimeoutError, urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TypeError, json.JSONDecodeError, OSError):"` | — |
-| [SRC-6E58A660BC-L000169](../../agents/search_connectors.py#L169) | 169 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000170](../../agents/search_connectors.py#L170) | 170 | `""` | — |
+| [SRC-6E58A660BC-L000159](../../agents/search_connectors.py#L159) | 159 | `""` | — |
+| [SRC-6E58A660BC-L000160](../../agents/search_connectors.py#L160) | 160 | `"def run_connector(name: str, query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000161](../../agents/search_connectors.py#L161) | 161 | `"    meta = CONNECTOR_REGISTRY.get(name)"` | — |
+| [SRC-6E58A660BC-L000162](../../agents/search_connectors.py#L162) | 162 | `"    if not meta or meta.get(\"fn\") is None:"` | — |
+| [SRC-6E58A660BC-L000163](../../agents/search_connectors.py#L163) | 163 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000164](../../agents/search_connectors.py#L164) | 164 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000165](../../agents/search_connectors.py#L165) | 165 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000166](../../agents/search_connectors.py#L166) | 166 | `"    try:"` | — |
+| [SRC-6E58A660BC-L000167](../../agents/search_connectors.py#L167) | 167 | `"        rows = meta[\"fn\"](query, limit=limit) or []"` | — |
+| [SRC-6E58A660BC-L000168](../../agents/search_connectors.py#L168) | 168 | `"        return [row for row in rows if isinstance(row, dict) and row.get(\"url\") and row.get(\"title\")]"` | — |
+| [SRC-6E58A660BC-L000169](../../agents/search_connectors.py#L169) | 169 | `"    except (TimeoutError, urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TypeError, json.JSONDecodeError, OSError):"` | — |
+| [SRC-6E58A660BC-L000170](../../agents/search_connectors.py#L170) | 170 | `"        return []"` | — |
 | [SRC-6E58A660BC-L000171](../../agents/search_connectors.py#L171) | 171 | `""` | — |
-| [SRC-6E58A660BC-L000172](../../agents/search_connectors.py#L172) | 172 | `"def run_free_academic_connectors(query: str, limit_per: int = 4) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000173](../../agents/search_connectors.py#L173) | 173 | `"    combined: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000174](../../agents/search_connectors.py#L174) | 174 | `"    for name in (\"openalex\", \"arxiv\", \"crossref\"):"` | — |
-| [SRC-6E58A660BC-L000175](../../agents/search_connectors.py#L175) | 175 | `"        combined.extend(run_connector(name, query, limit=limit_per))"` | — |
-| [SRC-6E58A660BC-L000176](../../agents/search_connectors.py#L176) | 176 | `"    return combined"` | — |
+| [SRC-6E58A660BC-L000172](../../agents/search_connectors.py#L172) | 172 | `""` | — |
+| [SRC-6E58A660BC-L000173](../../agents/search_connectors.py#L173) | 173 | `"def run_free_academic_connectors(query: str, limit_per: int = 4) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000174](../../agents/search_connectors.py#L174) | 174 | `"    combined: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000175](../../agents/search_connectors.py#L175) | 175 | `"    for name in (\"openalex\", \"arxiv\", \"crossref\"):"` | — |
+| [SRC-6E58A660BC-L000176](../../agents/search_connectors.py#L176) | 176 | `"        combined.extend(run_connector(name, query, limit=limit_per))"` | — |
+| [SRC-6E58A660BC-L000177](../../agents/search_connectors.py#L177) | 177 | `"    return combined"` | — |
 ## الوكيل والمنطق
 
 ### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
@@ -824,4 +825,3 @@
 | [SRC-1AE03B9EC3-L000773](../../agents/web_agent.py#L773) | 773 | `"            \"wants to buy\", \"want to purchase\", \"wants to purchase\","` | — |
 | [SRC-1AE03B9EC3-L000774](../../agents/web_agent.py#L774) | 774 | `"            \"seeking to buy\", \"seeking to purchase\", \"interested in buying\","` | — |
 | [SRC-1AE03B9EC3-L000775](../../agents/web_agent.py#L775) | 775 | `"            \"interested in purchasing\", \"buyer looking to buy\","` | — |
-| [SRC-1AE03B9EC3-L000776](../../agents/web_agent.py#L776) | 776 | `"        )"` | — |

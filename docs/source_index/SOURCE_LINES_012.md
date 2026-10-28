@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005577 إلى SRC-EEF2E6447C-L000622
+- النطاق: SRC-1AE03B9EC3-L005576 إلى SRC-EEF2E6447C-L000621
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005576](../../agents/web_agent.py#L5576) | 5576 | `"        answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
 | [SRC-1AE03B9EC3-L005577](../../agents/web_agent.py#L5577) | 5577 | `"        report[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
 | [SRC-1AE03B9EC3-L005578](../../agents/web_agent.py#L5578) | 5578 | `"        report[\"answer_integrity\"] = answer_integrity"` | — |
 | [SRC-1AE03B9EC3-L005579](../../agents/web_agent.py#L5579) | 5579 | `"        report[\"connector_summary\"] = self._connector_status_summary("` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000619](../../api/omarai.py#L619) | 619 | `""` | — |
 | [SRC-EEF2E6447C-L000620](../../api/omarai.py#L620) | 620 | `""` | — |
 | [SRC-EEF2E6447C-L000621](../../api/omarai.py#L621) | 621 | `"def answer_question(question, store):"` | — |
-| [SRC-EEF2E6447C-L000622](../../api/omarai.py#L622) | 622 | `"    \"\"\"Answer common operational questions from local records using explicit rules.\"\"\""` | — |

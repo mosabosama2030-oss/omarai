@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003177 إلى SRC-1AE03B9EC3-L003976
+- النطاق: SRC-1AE03B9EC3-L003176 إلى SRC-1AE03B9EC3-L003975
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003176](../../agents/web_agent.py#L3176) | 3176 | `"                    \"أنت مخطط بحث ومحلل دلالي حواري لـ Omarai، ولست مجيبًا عن السؤال. \""` | — |
 | [SRC-1AE03B9EC3-L003177](../../agents/web_agent.py#L3177) | 3177 | `"                    \"حلّل أولًا قصد الرسالة الحالية في ضوء سجل الحوار، ثم أخرج JSON صحيحًا فقط \""` | — |
 | [SRC-1AE03B9EC3-L003178](../../agents/web_agent.py#L3178) | 3178 | `"                    \"دون Markdown. الشكل المطلوب: \""` | — |
 | [SRC-1AE03B9EC3-L003179](../../agents/web_agent.py#L3179) | 3179 | `"                    '{\"queries\":[\"...\"],\"social_focus\":false,\"freshness\":\"any\",\"depth\":\"standard\",'"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003973](../../agents/web_agent.py#L3973) | 3973 | `"                \"answer_coverage\": {},"` | — |
 | [SRC-1AE03B9EC3-L003974](../../agents/web_agent.py#L3974) | 3974 | `"                \"used_language_model\": False,"` | — |
 | [SRC-1AE03B9EC3-L003975](../../agents/web_agent.py#L3975) | 3975 | `"                \"used_web_search\": False,"` | — |
-| [SRC-1AE03B9EC3-L003976](../../agents/web_agent.py#L3976) | 3976 | `"                \"search_attempted\": search_attempted,"` | — |

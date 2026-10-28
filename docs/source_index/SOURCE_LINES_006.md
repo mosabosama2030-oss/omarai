@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000777 إلى SRC-1AE03B9EC3-L001576
+- النطاق: SRC-1AE03B9EC3-L000776 إلى SRC-1AE03B9EC3-L001575
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000776](../../agents/web_agent.py#L776) | 776 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L000777](../../agents/web_agent.py#L777) | 777 | `"        for field, basis in ((\"page_text\", \"page_text\"), (\"title\", \"title\"), (\"snippet\", \"search_snippet\")):"` | — |
 | [SRC-1AE03B9EC3-L000778](../../agents/web_agent.py#L778) | 778 | `"            raw = source.get(field)"` | — |
 | [SRC-1AE03B9EC3-L000779](../../agents/web_agent.py#L779) | 779 | `"            if not isinstance(raw, str) or not raw.strip():"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001573](../../agents/web_agent.py#L1573) | 1573 | `"            if len(rows) >= MAX_PROVIDER_RESULTS:"` | — |
 | [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"                break"` | — |
 | [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `"        return rows"` | — |
-| [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `""` | — |

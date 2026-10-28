@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000028 إلى SRC-4FFD5AFC54-L000398
+- النطاق: SRC-B335630551-L000027 إلى SRC-4FFD5AFC54-L000397
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000027](../../README.md#L27) | 27 | `""` | — |
 | [SRC-B335630551-L000028](../../README.md#L28) | 28 | `""` | — |
 | [SRC-B335630551-L000029](../../README.md#L29) | 29 | `"## Living repository index"` | — |
 | [SRC-B335630551-L000030](../../README.md#L30) | 30 | `""` | — |
@@ -851,4 +852,3 @@
 | [SRC-4FFD5AFC54-L000395](../../scripts/run_answer_quality_benchmark.py#L395) | 395 | `"            args.limit,"` | — |
 | [SRC-4FFD5AFC54-L000396](../../scripts/run_answer_quality_benchmark.py#L396) | 396 | `"            args.timeout,"` | — |
 | [SRC-4FFD5AFC54-L000397](../../scripts/run_answer_quality_benchmark.py#L397) | 397 | `"            args.delay,"` | — |
-| [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"            args.out,"` | — |

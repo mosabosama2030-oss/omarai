@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000399 إلى SRC-90FAA34ADE-L000642
+- النطاق: SRC-4FFD5AFC54-L000398 إلى SRC-90FAA34ADE-L000641
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"            args.out,"` | — |
 | [SRC-4FFD5AFC54-L000399](../../scripts/run_answer_quality_benchmark.py#L399) | 399 | `"        )"` | — |
 | [SRC-4FFD5AFC54-L000400](../../scripts/run_answer_quality_benchmark.py#L400) | 400 | `"    return 2"` | — |
 | [SRC-4FFD5AFC54-L000401](../../scripts/run_answer_quality_benchmark.py#L401) | 401 | `""` | — |
@@ -833,4 +834,3 @@
 | [SRC-90FAA34ADE-L000639](../../tests/fixtures/answer_quality_cases.json#L639) | 639 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000640](../../tests/fixtures/answer_quality_cases.json#L640) | 640 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000641](../../tests/fixtures/answer_quality_cases.json#L641) | 641 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000642](../../tests/fixtures/answer_quality_cases.json#L642) | 642 | `"        \"sources\": ["` | — |

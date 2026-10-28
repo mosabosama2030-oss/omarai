@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002377 إلى SRC-1AE03B9EC3-L003176
+- النطاق: SRC-1AE03B9EC3-L002376 إلى SRC-1AE03B9EC3-L003175
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"                        items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
 | [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"                        batches.append({\"query\": query, \"provider\": provider, \"results\": items})"` | — |
 | [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `""` | — |
 | [SRC-1AE03B9EC3-L002379](../../agents/web_agent.py#L2379) | 2379 | `"        # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003173](../../agents/web_agent.py#L3173) | 3173 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L003174](../../agents/web_agent.py#L3174) | 3174 | `"                \"role\": \"system\","` | — |
 | [SRC-1AE03B9EC3-L003175](../../agents/web_agent.py#L3175) | 3175 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003176](../../agents/web_agent.py#L3176) | 3176 | `"                    \"أنت مخطط بحث ومحلل دلالي حواري لـ Omarai، ولست مجيبًا عن السؤال. \""` | — |

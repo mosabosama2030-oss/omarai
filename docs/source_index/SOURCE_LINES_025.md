@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000643 إلى SRC-4CCB1F172B-L000020
+- النطاق: SRC-90FAA34ADE-L000642 إلى SRC-4CCB1F172B-L000019
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000642](../../tests/fixtures/answer_quality_cases.json#L642) | 642 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000643](../../tests/fixtures/answer_quality_cases.json#L643) | 643 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000644](../../tests/fixtures/answer_quality_cases.json#L644) | 644 | `"            \"title\": \"Store opening note\","` | — |
 | [SRC-90FAA34ADE-L000645](../../tests/fixtures/answer_quality_cases.json#L645) | 645 | `"            \"url\": \"https://shop.example.test/opening\","` | — |
@@ -833,4 +834,3 @@
 | [SRC-4CCB1F172B-L000017](../../tests/test_answer_quality_corpus.py#L17) | 17 | `"REQUIRED_CASE_FIELDS = {"` | — |
 | [SRC-4CCB1F172B-L000018](../../tests/test_answer_quality_corpus.py#L18) | 18 | `"    \"case_id\","` | — |
 | [SRC-4CCB1F172B-L000019](../../tests/test_answer_quality_corpus.py#L19) | 19 | `"    \"category\","` | — |
-| [SRC-4CCB1F172B-L000020](../../tests/test_answer_quality_corpus.py#L20) | 20 | `"    \"language\","` | — |

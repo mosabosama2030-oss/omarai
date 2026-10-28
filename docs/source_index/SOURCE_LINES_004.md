@@ -682,146 +682,146 @@
 | [SRC-6E58A660BC-L000007](../../agents/search_connectors.py#L7) | 7 | `"import urllib.error"` | — |
 | [SRC-6E58A660BC-L000008](../../agents/search_connectors.py#L8) | 8 | `"import urllib.parse"` | — |
 | [SRC-6E58A660BC-L000009](../../agents/search_connectors.py#L9) | 9 | `"import urllib.request"` | — |
-| [SRC-6E58A660BC-L000010](../../agents/search_connectors.py#L10) | 10 | `"from typing import Any, Callable"` | — |
-| [SRC-6E58A660BC-L000011](../../agents/search_connectors.py#L11) | 11 | `""` | — |
-| [SRC-6E58A660BC-L000012](../../agents/search_connectors.py#L12) | 12 | `"MAX_CONNECTOR_RESULTS = 6"` | — |
-| [SRC-6E58A660BC-L000013](../../agents/search_connectors.py#L13) | 13 | `"DEFAULT_TIMEOUT_SECONDS = 5"` | — |
-| [SRC-6E58A660BC-L000014](../../agents/search_connectors.py#L14) | 14 | `"USER_AGENT = \"OmaraiResearchBot/1.0 (mailto:ops@example.com)\""` | — |
-| [SRC-6E58A660BC-L000015](../../agents/search_connectors.py#L15) | 15 | `"ConnectorFn = Callable[[str, int], list[dict[str, Any]]]"` | — |
-| [SRC-6E58A660BC-L000016](../../agents/search_connectors.py#L16) | 16 | `""` | — |
+| [SRC-6E58A660BC-L000010](../../agents/search_connectors.py#L10) | 10 | `"from collections.abc import Callable"` | — |
+| [SRC-6E58A660BC-L000011](../../agents/search_connectors.py#L11) | 11 | `"from typing import Any"` | — |
+| [SRC-6E58A660BC-L000012](../../agents/search_connectors.py#L12) | 12 | `""` | — |
+| [SRC-6E58A660BC-L000013](../../agents/search_connectors.py#L13) | 13 | `"MAX_CONNECTOR_RESULTS = 6"` | — |
+| [SRC-6E58A660BC-L000014](../../agents/search_connectors.py#L14) | 14 | `"DEFAULT_TIMEOUT_SECONDS = 5"` | — |
+| [SRC-6E58A660BC-L000015](../../agents/search_connectors.py#L15) | 15 | `"USER_AGENT = \"OmaraiResearchBot/1.0 (mailto:ops@example.com)\""` | — |
+| [SRC-6E58A660BC-L000016](../../agents/search_connectors.py#L16) | 16 | `"ConnectorFn = Callable[[str, int], list[dict[str, Any]]]"` | — |
 | [SRC-6E58A660BC-L000017](../../agents/search_connectors.py#L17) | 17 | `""` | — |
-| [SRC-6E58A660BC-L000018](../../agents/search_connectors.py#L18) | 18 | `"def _clean_text(value: Any, limit: int = 1600) -> str:"` | — |
-| [SRC-6E58A660BC-L000019](../../agents/search_connectors.py#L19) | 19 | `"    if not isinstance(value, str):"` | — |
-| [SRC-6E58A660BC-L000020](../../agents/search_connectors.py#L20) | 20 | `"        return \"\""` | — |
-| [SRC-6E58A660BC-L000021](../../agents/search_connectors.py#L21) | 21 | `"    return re.sub(r\"\\s+\", \" \", value).strip()[:limit]"` | — |
-| [SRC-6E58A660BC-L000022](../../agents/search_connectors.py#L22) | 22 | `""` | — |
+| [SRC-6E58A660BC-L000018](../../agents/search_connectors.py#L18) | 18 | `""` | — |
+| [SRC-6E58A660BC-L000019](../../agents/search_connectors.py#L19) | 19 | `"def _clean_text(value: Any, limit: int = 1600) -> str:"` | — |
+| [SRC-6E58A660BC-L000020](../../agents/search_connectors.py#L20) | 20 | `"    if not isinstance(value, str):"` | — |
+| [SRC-6E58A660BC-L000021](../../agents/search_connectors.py#L21) | 21 | `"        return \"\""` | — |
+| [SRC-6E58A660BC-L000022](../../agents/search_connectors.py#L22) | 22 | `"    return re.sub(r\"\\s+\", \" \", value).strip()[:limit]"` | — |
 | [SRC-6E58A660BC-L000023](../../agents/search_connectors.py#L23) | 23 | `""` | — |
-| [SRC-6E58A660BC-L000024](../../agents/search_connectors.py#L24) | 24 | `"def _http_get_json(url: str, headers: dict[str, str] \| None = None, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> Any:"` | — |
-| [SRC-6E58A660BC-L000025](../../agents/search_connectors.py#L25) | 25 | `"    req_headers = {\"User-Agent\": USER_AGENT, \"Accept\": \"application/json\"}"` | — |
-| [SRC-6E58A660BC-L000026](../../agents/search_connectors.py#L26) | 26 | `"    if headers:"` | — |
-| [SRC-6E58A660BC-L000027](../../agents/search_connectors.py#L27) | 27 | `"        req_headers.update(headers)"` | — |
-| [SRC-6E58A660BC-L000028](../../agents/search_connectors.py#L28) | 28 | `"    request = urllib.request.Request(url, headers=req_headers, method=\"GET\")"` | — |
-| [SRC-6E58A660BC-L000029](../../agents/search_connectors.py#L29) | 29 | `"    with urllib.request.urlopen(request, timeout=timeout) as response:"` | — |
-| [SRC-6E58A660BC-L000030](../../agents/search_connectors.py#L30) | 30 | `"        return json.loads(response.read().decode(\"utf-8\", errors=\"replace\"))"` | — |
-| [SRC-6E58A660BC-L000031](../../agents/search_connectors.py#L31) | 31 | `""` | — |
+| [SRC-6E58A660BC-L000024](../../agents/search_connectors.py#L24) | 24 | `""` | — |
+| [SRC-6E58A660BC-L000025](../../agents/search_connectors.py#L25) | 25 | `"def _http_get_json(url: str, headers: dict[str, str] \| None = None, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> Any:"` | — |
+| [SRC-6E58A660BC-L000026](../../agents/search_connectors.py#L26) | 26 | `"    req_headers = {\"User-Agent\": USER_AGENT, \"Accept\": \"application/json\"}"` | — |
+| [SRC-6E58A660BC-L000027](../../agents/search_connectors.py#L27) | 27 | `"    if headers:"` | — |
+| [SRC-6E58A660BC-L000028](../../agents/search_connectors.py#L28) | 28 | `"        req_headers.update(headers)"` | — |
+| [SRC-6E58A660BC-L000029](../../agents/search_connectors.py#L29) | 29 | `"    request = urllib.request.Request(url, headers=req_headers, method=\"GET\")"` | — |
+| [SRC-6E58A660BC-L000030](../../agents/search_connectors.py#L30) | 30 | `"    with urllib.request.urlopen(request, timeout=timeout) as response:"` | — |
+| [SRC-6E58A660BC-L000031](../../agents/search_connectors.py#L31) | 31 | `"        return json.loads(response.read().decode(\"utf-8\", errors=\"replace\"))"` | — |
 | [SRC-6E58A660BC-L000032](../../agents/search_connectors.py#L32) | 32 | `""` | — |
-| [SRC-6E58A660BC-L000033](../../agents/search_connectors.py#L33) | 33 | `"def _http_get_text(url: str, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> str:"` | — |
-| [SRC-6E58A660BC-L000034](../../agents/search_connectors.py#L34) | 34 | `"    request = urllib.request.Request(url, headers={\"User-Agent\": USER_AGENT}, method=\"GET\")"` | — |
-| [SRC-6E58A660BC-L000035](../../agents/search_connectors.py#L35) | 35 | `"    with urllib.request.urlopen(request, timeout=timeout) as response:"` | — |
-| [SRC-6E58A660BC-L000036](../../agents/search_connectors.py#L36) | 36 | `"        return response.read().decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-6E58A660BC-L000037](../../agents/search_connectors.py#L37) | 37 | `""` | — |
+| [SRC-6E58A660BC-L000033](../../agents/search_connectors.py#L33) | 33 | `""` | — |
+| [SRC-6E58A660BC-L000034](../../agents/search_connectors.py#L34) | 34 | `"def _http_get_text(url: str, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> str:"` | — |
+| [SRC-6E58A660BC-L000035](../../agents/search_connectors.py#L35) | 35 | `"    request = urllib.request.Request(url, headers={\"User-Agent\": USER_AGENT}, method=\"GET\")"` | — |
+| [SRC-6E58A660BC-L000036](../../agents/search_connectors.py#L36) | 36 | `"    with urllib.request.urlopen(request, timeout=timeout) as response:"` | — |
+| [SRC-6E58A660BC-L000037](../../agents/search_connectors.py#L37) | 37 | `"        return response.read().decode(\"utf-8\", errors=\"replace\")"` | — |
 | [SRC-6E58A660BC-L000038](../../agents/search_connectors.py#L38) | 38 | `""` | — |
-| [SRC-6E58A660BC-L000039](../../agents/search_connectors.py#L39) | 39 | `"def _result(*, title: str, url: str, snippet: str, provider: str, rank: int, query: str, published_at: str = \"\", source_class: str = \"web\") -> dict[str, Any]:"` | — |
-| [SRC-6E58A660BC-L000040](../../agents/search_connectors.py#L40) | 40 | `"    return {"` | — |
-| [SRC-6E58A660BC-L000041](../../agents/search_connectors.py#L41) | 41 | `"        \"title\": _clean_text(title, 300),"` | — |
-| [SRC-6E58A660BC-L000042](../../agents/search_connectors.py#L42) | 42 | `"        \"url\": (url or \"\").strip(),"` | — |
-| [SRC-6E58A660BC-L000043](../../agents/search_connectors.py#L43) | 43 | `"        \"snippet\": _clean_text(snippet, 1600),"` | — |
-| [SRC-6E58A660BC-L000044](../../agents/search_connectors.py#L44) | 44 | `"        \"page_fetched\": False,"` | — |
-| [SRC-6E58A660BC-L000045](../../agents/search_connectors.py#L45) | 45 | `"        \"provider\": provider,"` | — |
-| [SRC-6E58A660BC-L000046](../../agents/search_connectors.py#L46) | 46 | `"        \"provider_rank\": rank,"` | — |
-| [SRC-6E58A660BC-L000047](../../agents/search_connectors.py#L47) | 47 | `"        \"search_query\": query,"` | — |
-| [SRC-6E58A660BC-L000048](../../agents/search_connectors.py#L48) | 48 | `"        \"published_at\": published_at or \"\","` | — |
-| [SRC-6E58A660BC-L000049](../../agents/search_connectors.py#L49) | 49 | `"        \"source_class\": source_class,"` | — |
-| [SRC-6E58A660BC-L000050](../../agents/search_connectors.py#L50) | 50 | `"    }"` | — |
-| [SRC-6E58A660BC-L000051](../../agents/search_connectors.py#L51) | 51 | `""` | — |
+| [SRC-6E58A660BC-L000039](../../agents/search_connectors.py#L39) | 39 | `""` | — |
+| [SRC-6E58A660BC-L000040](../../agents/search_connectors.py#L40) | 40 | `"def _result(*, title: str, url: str, snippet: str, provider: str, rank: int, query: str, published_at: str = \"\", source_class: str = \"web\") -> dict[str, Any]:"` | — |
+| [SRC-6E58A660BC-L000041](../../agents/search_connectors.py#L41) | 41 | `"    return {"` | — |
+| [SRC-6E58A660BC-L000042](../../agents/search_connectors.py#L42) | 42 | `"        \"title\": _clean_text(title, 300),"` | — |
+| [SRC-6E58A660BC-L000043](../../agents/search_connectors.py#L43) | 43 | `"        \"url\": (url or \"\").strip(),"` | — |
+| [SRC-6E58A660BC-L000044](../../agents/search_connectors.py#L44) | 44 | `"        \"snippet\": _clean_text(snippet, 1600),"` | — |
+| [SRC-6E58A660BC-L000045](../../agents/search_connectors.py#L45) | 45 | `"        \"page_fetched\": False,"` | — |
+| [SRC-6E58A660BC-L000046](../../agents/search_connectors.py#L46) | 46 | `"        \"provider\": provider,"` | — |
+| [SRC-6E58A660BC-L000047](../../agents/search_connectors.py#L47) | 47 | `"        \"provider_rank\": rank,"` | — |
+| [SRC-6E58A660BC-L000048](../../agents/search_connectors.py#L48) | 48 | `"        \"search_query\": query,"` | — |
+| [SRC-6E58A660BC-L000049](../../agents/search_connectors.py#L49) | 49 | `"        \"published_at\": published_at or \"\","` | — |
+| [SRC-6E58A660BC-L000050](../../agents/search_connectors.py#L50) | 50 | `"        \"source_class\": source_class,"` | — |
+| [SRC-6E58A660BC-L000051](../../agents/search_connectors.py#L51) | 51 | `"    }"` | — |
 | [SRC-6E58A660BC-L000052](../../agents/search_connectors.py#L52) | 52 | `""` | — |
-| [SRC-6E58A660BC-L000053](../../agents/search_connectors.py#L53) | 53 | `"def search_openalex(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000054](../../agents/search_connectors.py#L54) | 54 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000055](../../agents/search_connectors.py#L55) | 55 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000056](../../agents/search_connectors.py#L56) | 56 | `"    params = urllib.parse.urlencode({\"search\": query.strip()[:240], \"per_page\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"OPENALEX_MAILTO\", \"ops@example.com\")})"` | — |
-| [SRC-6E58A660BC-L000057](../../agents/search_connectors.py#L57) | 57 | `"    data = _http_get_json(f\"https://api.openalex.org/works?{params}\")"` | — |
-| [SRC-6E58A660BC-L000058](../../agents/search_connectors.py#L58) | 58 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000059](../../agents/search_connectors.py#L59) | 59 | `"    for item in data.get(\"results\", [])[:limit]:"` | — |
-| [SRC-6E58A660BC-L000060](../../agents/search_connectors.py#L60) | 60 | `"        if not isinstance(item, dict):"` | — |
-| [SRC-6E58A660BC-L000061](../../agents/search_connectors.py#L61) | 61 | `"            continue"` | — |
-| [SRC-6E58A660BC-L000062](../../agents/search_connectors.py#L62) | 62 | `"        title = item.get(\"display_name\") or \"\""` | — |
-| [SRC-6E58A660BC-L000063](../../agents/search_connectors.py#L63) | 63 | `"        url = \"\""` | — |
-| [SRC-6E58A660BC-L000064](../../agents/search_connectors.py#L64) | 64 | `"        primary = item.get(\"primary_location\") or {}"` | — |
-| [SRC-6E58A660BC-L000065](../../agents/search_connectors.py#L65) | 65 | `"        if isinstance(primary, dict) and primary.get(\"landing_page_url\"):"` | — |
-| [SRC-6E58A660BC-L000066](../../agents/search_connectors.py#L66) | 66 | `"            url = str(primary.get(\"landing_page_url\"))"` | — |
-| [SRC-6E58A660BC-L000067](../../agents/search_connectors.py#L67) | 67 | `"        elif item.get(\"id\"):"` | — |
-| [SRC-6E58A660BC-L000068](../../agents/search_connectors.py#L68) | 68 | `"            url = str(item.get(\"id\"))"` | — |
-| [SRC-6E58A660BC-L000069](../../agents/search_connectors.py#L69) | 69 | `"        concepts = \", \".join(str(c.get(\"display_name\", \"\")) for c in (item.get(\"concepts\") or [])[:5] if isinstance(c, dict))"` | — |
-| [SRC-6E58A660BC-L000070](../../agents/search_connectors.py#L70) | 70 | `"        snippet = f\"{title}. {concepts}\".strip(\". \")"` | — |
-| [SRC-6E58A660BC-L000071](../../agents/search_connectors.py#L71) | 71 | `"        if title and url:"` | — |
-| [SRC-6E58A660BC-L000072](../../agents/search_connectors.py#L72) | 72 | `"            rows.append(_result(title=title, url=url, snippet=snippet or title, provider=\"openalex\", rank=len(rows) + 1, query=query, published_at=str(item.get(\"publication_date\") or \"\"), source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000073](../../agents/search_connectors.py#L73) | 73 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000074](../../agents/search_connectors.py#L74) | 74 | `""` | — |
+| [SRC-6E58A660BC-L000053](../../agents/search_connectors.py#L53) | 53 | `""` | — |
+| [SRC-6E58A660BC-L000054](../../agents/search_connectors.py#L54) | 54 | `"def search_openalex(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000055](../../agents/search_connectors.py#L55) | 55 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000056](../../agents/search_connectors.py#L56) | 56 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000057](../../agents/search_connectors.py#L57) | 57 | `"    params = urllib.parse.urlencode({\"search\": query.strip()[:240], \"per_page\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"OPENALEX_MAILTO\", \"ops@example.com\")})"` | — |
+| [SRC-6E58A660BC-L000058](../../agents/search_connectors.py#L58) | 58 | `"    data = _http_get_json(f\"https://api.openalex.org/works?{params}\")"` | — |
+| [SRC-6E58A660BC-L000059](../../agents/search_connectors.py#L59) | 59 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000060](../../agents/search_connectors.py#L60) | 60 | `"    for item in data.get(\"results\", [])[:limit]:"` | — |
+| [SRC-6E58A660BC-L000061](../../agents/search_connectors.py#L61) | 61 | `"        if not isinstance(item, dict):"` | — |
+| [SRC-6E58A660BC-L000062](../../agents/search_connectors.py#L62) | 62 | `"            continue"` | — |
+| [SRC-6E58A660BC-L000063](../../agents/search_connectors.py#L63) | 63 | `"        title = item.get(\"display_name\") or \"\""` | — |
+| [SRC-6E58A660BC-L000064](../../agents/search_connectors.py#L64) | 64 | `"        url = \"\""` | — |
+| [SRC-6E58A660BC-L000065](../../agents/search_connectors.py#L65) | 65 | `"        primary = item.get(\"primary_location\") or {}"` | — |
+| [SRC-6E58A660BC-L000066](../../agents/search_connectors.py#L66) | 66 | `"        if isinstance(primary, dict) and primary.get(\"landing_page_url\"):"` | — |
+| [SRC-6E58A660BC-L000067](../../agents/search_connectors.py#L67) | 67 | `"            url = str(primary.get(\"landing_page_url\"))"` | — |
+| [SRC-6E58A660BC-L000068](../../agents/search_connectors.py#L68) | 68 | `"        elif item.get(\"id\"):"` | — |
+| [SRC-6E58A660BC-L000069](../../agents/search_connectors.py#L69) | 69 | `"            url = str(item.get(\"id\"))"` | — |
+| [SRC-6E58A660BC-L000070](../../agents/search_connectors.py#L70) | 70 | `"        concepts = \", \".join(str(c.get(\"display_name\", \"\")) for c in (item.get(\"concepts\") or [])[:5] if isinstance(c, dict))"` | — |
+| [SRC-6E58A660BC-L000071](../../agents/search_connectors.py#L71) | 71 | `"        snippet = f\"{title}. {concepts}\".strip(\". \")"` | — |
+| [SRC-6E58A660BC-L000072](../../agents/search_connectors.py#L72) | 72 | `"        if title and url:"` | — |
+| [SRC-6E58A660BC-L000073](../../agents/search_connectors.py#L73) | 73 | `"            rows.append(_result(title=title, url=url, snippet=snippet or title, provider=\"openalex\", rank=len(rows) + 1, query=query, published_at=str(item.get(\"publication_date\") or \"\"), source_class=\"academic\"))"` | — |
+| [SRC-6E58A660BC-L000074](../../agents/search_connectors.py#L74) | 74 | `"    return rows"` | — |
 | [SRC-6E58A660BC-L000075](../../agents/search_connectors.py#L75) | 75 | `""` | — |
-| [SRC-6E58A660BC-L000076](../../agents/search_connectors.py#L76) | 76 | `"def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000077](../../agents/search_connectors.py#L77) | 77 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000078](../../agents/search_connectors.py#L78) | 78 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000079](../../agents/search_connectors.py#L79) | 79 | `"    params = urllib.parse.urlencode({\"search_query\": f\"all:{query.strip()[:200]}\", \"start\": 0, \"max_results\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})"` | — |
-| [SRC-6E58A660BC-L000080](../../agents/search_connectors.py#L80) | 80 | `"    xml_text = _http_get_text(f\"https://export.arxiv.org/api/query?{params}\")"` | — |
-| [SRC-6E58A660BC-L000081](../../agents/search_connectors.py#L81) | 81 | `"    entries = re.findall(r\"<entry>(.*?)</entry>\", xml_text, flags=re.S)"` | — |
-| [SRC-6E58A660BC-L000082](../../agents/search_connectors.py#L82) | 82 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000083](../../agents/search_connectors.py#L83) | 83 | `"    for entry in entries[:limit]:"` | — |
-| [SRC-6E58A660BC-L000084](../../agents/search_connectors.py#L84) | 84 | `"        title_m = re.search(r\"<title>(.*?)</title>\", entry, re.S)"` | — |
-| [SRC-6E58A660BC-L000085](../../agents/search_connectors.py#L85) | 85 | `"        link_m = re.search(r\"<id>(https?://arxiv\\.org/abs/[^<]+)</id>\", entry)"` | — |
-| [SRC-6E58A660BC-L000086](../../agents/search_connectors.py#L86) | 86 | `"        summary_m = re.search(r\"<summary>(.*?)</summary>\", entry, re.S)"` | — |
-| [SRC-6E58A660BC-L000087](../../agents/search_connectors.py#L87) | 87 | `"        published_m = re.search(r\"<published>([^<]+)</published>\", entry)"` | — |
-| [SRC-6E58A660BC-L000088](../../agents/search_connectors.py#L88) | 88 | `"        title = _clean_text(title_m.group(1) if title_m else \"\")"` | — |
-| [SRC-6E58A660BC-L000089](../../agents/search_connectors.py#L89) | 89 | `"        link = link_m.group(1) if link_m else \"\""` | — |
-| [SRC-6E58A660BC-L000090](../../agents/search_connectors.py#L90) | 90 | `"        summary = _clean_text(summary_m.group(1) if summary_m else \"\", 1600)"` | — |
-| [SRC-6E58A660BC-L000091](../../agents/search_connectors.py#L91) | 91 | `"        published = published_m.group(1) if published_m else \"\""` | — |
-| [SRC-6E58A660BC-L000092](../../agents/search_connectors.py#L92) | 92 | `"        if title and link:"` | — |
-| [SRC-6E58A660BC-L000093](../../agents/search_connectors.py#L93) | 93 | `"            rows.append(_result(title=title, url=link, snippet=summary or title, provider=\"arxiv\", rank=len(rows) + 1, query=query, published_at=published, source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000094](../../agents/search_connectors.py#L94) | 94 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000095](../../agents/search_connectors.py#L95) | 95 | `""` | — |
+| [SRC-6E58A660BC-L000076](../../agents/search_connectors.py#L76) | 76 | `""` | — |
+| [SRC-6E58A660BC-L000077](../../agents/search_connectors.py#L77) | 77 | `"def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000078](../../agents/search_connectors.py#L78) | 78 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000079](../../agents/search_connectors.py#L79) | 79 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000080](../../agents/search_connectors.py#L80) | 80 | `"    params = urllib.parse.urlencode({\"search_query\": f\"all:{query.strip()[:200]}\", \"start\": 0, \"max_results\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})"` | — |
+| [SRC-6E58A660BC-L000081](../../agents/search_connectors.py#L81) | 81 | `"    xml_text = _http_get_text(f\"https://export.arxiv.org/api/query?{params}\")"` | — |
+| [SRC-6E58A660BC-L000082](../../agents/search_connectors.py#L82) | 82 | `"    entries = re.findall(r\"<entry>(.*?)</entry>\", xml_text, flags=re.DOTALL)"` | — |
+| [SRC-6E58A660BC-L000083](../../agents/search_connectors.py#L83) | 83 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000084](../../agents/search_connectors.py#L84) | 84 | `"    for entry in entries[:limit]:"` | — |
+| [SRC-6E58A660BC-L000085](../../agents/search_connectors.py#L85) | 85 | `"        title_m = re.search(r\"<title>(.*?)</title>\", entry, re.DOTALL)"` | — |
+| [SRC-6E58A660BC-L000086](../../agents/search_connectors.py#L86) | 86 | `"        link_m = re.search(r\"<id>(https?://arxiv\\.org/abs/[^<]+)</id>\", entry)"` | — |
+| [SRC-6E58A660BC-L000087](../../agents/search_connectors.py#L87) | 87 | `"        summary_m = re.search(r\"<summary>(.*?)</summary>\", entry, re.DOTALL)"` | — |
+| [SRC-6E58A660BC-L000088](../../agents/search_connectors.py#L88) | 88 | `"        published_m = re.search(r\"<published>([^<]+)</published>\", entry)"` | — |
+| [SRC-6E58A660BC-L000089](../../agents/search_connectors.py#L89) | 89 | `"        title = _clean_text(title_m.group(1) if title_m else \"\")"` | — |
+| [SRC-6E58A660BC-L000090](../../agents/search_connectors.py#L90) | 90 | `"        link = link_m.group(1) if link_m else \"\""` | — |
+| [SRC-6E58A660BC-L000091](../../agents/search_connectors.py#L91) | 91 | `"        summary = _clean_text(summary_m.group(1) if summary_m else \"\", 1600)"` | — |
+| [SRC-6E58A660BC-L000092](../../agents/search_connectors.py#L92) | 92 | `"        published = published_m.group(1) if published_m else \"\""` | — |
+| [SRC-6E58A660BC-L000093](../../agents/search_connectors.py#L93) | 93 | `"        if title and link:"` | — |
+| [SRC-6E58A660BC-L000094](../../agents/search_connectors.py#L94) | 94 | `"            rows.append(_result(title=title, url=link, snippet=summary or title, provider=\"arxiv\", rank=len(rows) + 1, query=query, published_at=published, source_class=\"academic\"))"` | — |
+| [SRC-6E58A660BC-L000095](../../agents/search_connectors.py#L95) | 95 | `"    return rows"` | — |
 | [SRC-6E58A660BC-L000096](../../agents/search_connectors.py#L96) | 96 | `""` | — |
-| [SRC-6E58A660BC-L000097](../../agents/search_connectors.py#L97) | 97 | `"def search_crossref(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000098](../../agents/search_connectors.py#L98) | 98 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000099](../../agents/search_connectors.py#L99) | 99 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000100](../../agents/search_connectors.py#L100) | 100 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"rows\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"CROSSREF_MAILTO\", \"ops@example.com\")})"` | — |
-| [SRC-6E58A660BC-L000101](../../agents/search_connectors.py#L101) | 101 | `"    data = _http_get_json(f\"https://api.crossref.org/works?{params}\", headers={\"User-Agent\": USER_AGENT})"` | — |
-| [SRC-6E58A660BC-L000102](../../agents/search_connectors.py#L102) | 102 | `"    items = ((data.get(\"message\") or {}).get(\"items\") or [])[:limit]"` | — |
-| [SRC-6E58A660BC-L000103](../../agents/search_connectors.py#L103) | 103 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000104](../../agents/search_connectors.py#L104) | 104 | `"    for item in items:"` | — |
-| [SRC-6E58A660BC-L000105](../../agents/search_connectors.py#L105) | 105 | `"        if not isinstance(item, dict):"` | — |
-| [SRC-6E58A660BC-L000106](../../agents/search_connectors.py#L106) | 106 | `"            continue"` | — |
-| [SRC-6E58A660BC-L000107](../../agents/search_connectors.py#L107) | 107 | `"        title_list = item.get(\"title\") or []"` | — |
-| [SRC-6E58A660BC-L000108](../../agents/search_connectors.py#L108) | 108 | `"        title = title_list[0] if isinstance(title_list, list) and title_list else \"\""` | — |
-| [SRC-6E58A660BC-L000109](../../agents/search_connectors.py#L109) | 109 | `"        url = str(item.get(\"URL\") or \"\")"` | — |
-| [SRC-6E58A660BC-L000110](../../agents/search_connectors.py#L110) | 110 | `"        container_list = item.get(\"container-title\") or []"` | — |
-| [SRC-6E58A660BC-L000111](../../agents/search_connectors.py#L111) | 111 | `"        container = container_list[0] if isinstance(container_list, list) and container_list else \"\""` | — |
-| [SRC-6E58A660BC-L000112](../../agents/search_connectors.py#L112) | 112 | `"        year = \"\""` | — |
-| [SRC-6E58A660BC-L000113](../../agents/search_connectors.py#L113) | 113 | `"        issued = item.get(\"issued\") or {}"` | — |
-| [SRC-6E58A660BC-L000114](../../agents/search_connectors.py#L114) | 114 | `"        if isinstance(issued, dict) and issued.get(\"date-parts\"):"` | — |
-| [SRC-6E58A660BC-L000115](../../agents/search_connectors.py#L115) | 115 | `"            try:"` | — |
-| [SRC-6E58A660BC-L000116](../../agents/search_connectors.py#L116) | 116 | `"                year = str(issued[\"date-parts\"][0][0])"` | — |
-| [SRC-6E58A660BC-L000117](../../agents/search_connectors.py#L117) | 117 | `"            except (IndexError, TypeError, KeyError):"` | — |
-| [SRC-6E58A660BC-L000118](../../agents/search_connectors.py#L118) | 118 | `"                year = \"\""` | — |
-| [SRC-6E58A660BC-L000119](../../agents/search_connectors.py#L119) | 119 | `"        snippet = _clean_text(f\"{title}. {container} {year}\".strip())"` | — |
-| [SRC-6E58A660BC-L000120](../../agents/search_connectors.py#L120) | 120 | `"        if title and url:"` | — |
-| [SRC-6E58A660BC-L000121](../../agents/search_connectors.py#L121) | 121 | `"            rows.append(_result(title=title, url=url, snippet=snippet, provider=\"crossref\", rank=len(rows) + 1, query=query, published_at=year, source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000122](../../agents/search_connectors.py#L122) | 122 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000123](../../agents/search_connectors.py#L123) | 123 | `""` | — |
+| [SRC-6E58A660BC-L000097](../../agents/search_connectors.py#L97) | 97 | `""` | — |
+| [SRC-6E58A660BC-L000098](../../agents/search_connectors.py#L98) | 98 | `"def search_crossref(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000099](../../agents/search_connectors.py#L99) | 99 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000100](../../agents/search_connectors.py#L100) | 100 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000101](../../agents/search_connectors.py#L101) | 101 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"rows\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"CROSSREF_MAILTO\", \"ops@example.com\")})"` | — |
+| [SRC-6E58A660BC-L000102](../../agents/search_connectors.py#L102) | 102 | `"    data = _http_get_json(f\"https://api.crossref.org/works?{params}\", headers={\"User-Agent\": USER_AGENT})"` | — |
+| [SRC-6E58A660BC-L000103](../../agents/search_connectors.py#L103) | 103 | `"    items = ((data.get(\"message\") or {}).get(\"items\") or [])[:limit]"` | — |
+| [SRC-6E58A660BC-L000104](../../agents/search_connectors.py#L104) | 104 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000105](../../agents/search_connectors.py#L105) | 105 | `"    for item in items:"` | — |
+| [SRC-6E58A660BC-L000106](../../agents/search_connectors.py#L106) | 106 | `"        if not isinstance(item, dict):"` | — |
+| [SRC-6E58A660BC-L000107](../../agents/search_connectors.py#L107) | 107 | `"            continue"` | — |
+| [SRC-6E58A660BC-L000108](../../agents/search_connectors.py#L108) | 108 | `"        title_list = item.get(\"title\") or []"` | — |
+| [SRC-6E58A660BC-L000109](../../agents/search_connectors.py#L109) | 109 | `"        title = title_list[0] if isinstance(title_list, list) and title_list else \"\""` | — |
+| [SRC-6E58A660BC-L000110](../../agents/search_connectors.py#L110) | 110 | `"        url = str(item.get(\"URL\") or \"\")"` | — |
+| [SRC-6E58A660BC-L000111](../../agents/search_connectors.py#L111) | 111 | `"        container_list = item.get(\"container-title\") or []"` | — |
+| [SRC-6E58A660BC-L000112](../../agents/search_connectors.py#L112) | 112 | `"        container = container_list[0] if isinstance(container_list, list) and container_list else \"\""` | — |
+| [SRC-6E58A660BC-L000113](../../agents/search_connectors.py#L113) | 113 | `"        year = \"\""` | — |
+| [SRC-6E58A660BC-L000114](../../agents/search_connectors.py#L114) | 114 | `"        issued = item.get(\"issued\") or {}"` | — |
+| [SRC-6E58A660BC-L000115](../../agents/search_connectors.py#L115) | 115 | `"        if isinstance(issued, dict) and issued.get(\"date-parts\"):"` | — |
+| [SRC-6E58A660BC-L000116](../../agents/search_connectors.py#L116) | 116 | `"            try:"` | — |
+| [SRC-6E58A660BC-L000117](../../agents/search_connectors.py#L117) | 117 | `"                year = str(issued[\"date-parts\"][0][0])"` | — |
+| [SRC-6E58A660BC-L000118](../../agents/search_connectors.py#L118) | 118 | `"            except (IndexError, TypeError, KeyError):"` | — |
+| [SRC-6E58A660BC-L000119](../../agents/search_connectors.py#L119) | 119 | `"                year = \"\""` | — |
+| [SRC-6E58A660BC-L000120](../../agents/search_connectors.py#L120) | 120 | `"        snippet = _clean_text(f\"{title}. {container} {year}\".strip())"` | — |
+| [SRC-6E58A660BC-L000121](../../agents/search_connectors.py#L121) | 121 | `"        if title and url:"` | — |
+| [SRC-6E58A660BC-L000122](../../agents/search_connectors.py#L122) | 122 | `"            rows.append(_result(title=title, url=url, snippet=snippet, provider=\"crossref\", rank=len(rows) + 1, query=query, published_at=year, source_class=\"academic\"))"` | — |
+| [SRC-6E58A660BC-L000123](../../agents/search_connectors.py#L123) | 123 | `"    return rows"` | — |
 | [SRC-6E58A660BC-L000124](../../agents/search_connectors.py#L124) | 124 | `""` | — |
-| [SRC-6E58A660BC-L000125](../../agents/search_connectors.py#L125) | 125 | `"def search_semantic_scholar(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000126](../../agents/search_connectors.py#L126) | 126 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000127](../../agents/search_connectors.py#L127) | 127 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000128](../../agents/search_connectors.py#L128) | 128 | `"    key = os.getenv(\"SEMANTIC_SCHOLAR_API_KEY\", \"\").strip()"` | — |
-| [SRC-6E58A660BC-L000129](../../agents/search_connectors.py#L129) | 129 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"limit\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"fields\": \"title,url,abstract,year,externalIds\"})"` | — |
-| [SRC-6E58A660BC-L000130](../../agents/search_connectors.py#L130) | 130 | `"    headers = {\"User-Agent\": USER_AGENT}"` | — |
-| [SRC-6E58A660BC-L000131](../../agents/search_connectors.py#L131) | 131 | `"    if key:"` | — |
-| [SRC-6E58A660BC-L000132](../../agents/search_connectors.py#L132) | 132 | `"        headers[\"x-api-key\"] = key"` | — |
-| [SRC-6E58A660BC-L000133](../../agents/search_connectors.py#L133) | 133 | `"    data = _http_get_json(f\"https://api.semanticscholar.org/graph/v1/paper/search?{params}\", headers=headers)"` | — |
-| [SRC-6E58A660BC-L000134](../../agents/search_connectors.py#L134) | 134 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000135](../../agents/search_connectors.py#L135) | 135 | `"    for item in (data.get(\"data\") or [])[:limit]:"` | — |
-| [SRC-6E58A660BC-L000136](../../agents/search_connectors.py#L136) | 136 | `"        if not isinstance(item, dict):"` | — |
-| [SRC-6E58A660BC-L000137](../../agents/search_connectors.py#L137) | 137 | `"            continue"` | — |
-| [SRC-6E58A660BC-L000138](../../agents/search_connectors.py#L138) | 138 | `"        title = item.get(\"title\") or \"\""` | — |
-| [SRC-6E58A660BC-L000139](../../agents/search_connectors.py#L139) | 139 | `"        url = item.get(\"url\") or \"\""` | — |
-| [SRC-6E58A660BC-L000140](../../agents/search_connectors.py#L140) | 140 | `"        if not url and isinstance(item.get(\"externalIds\"), dict):"` | — |
-| [SRC-6E58A660BC-L000141](../../agents/search_connectors.py#L141) | 141 | `"            doi = item[\"externalIds\"].get(\"DOI\")"` | — |
-| [SRC-6E58A660BC-L000142](../../agents/search_connectors.py#L142) | 142 | `"            if doi:"` | — |
-| [SRC-6E58A660BC-L000143](../../agents/search_connectors.py#L143) | 143 | `"                url = f\"https://doi.org/{doi}\""` | — |
-| [SRC-6E58A660BC-L000144](../../agents/search_connectors.py#L144) | 144 | `"        snippet = item.get(\"abstract\") or title"` | — |
-| [SRC-6E58A660BC-L000145](../../agents/search_connectors.py#L145) | 145 | `"        year = str(item.get(\"year\") or \"\")"` | — |
-| [SRC-6E58A660BC-L000146](../../agents/search_connectors.py#L146) | 146 | `"        if title and url:"` | — |
-| [SRC-6E58A660BC-L000147](../../agents/search_connectors.py#L147) | 147 | `"            rows.append(_result(title=title, url=url, snippet=snippet, provider=\"semantic_scholar\", rank=len(rows) + 1, query=query, published_at=year, source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000148](../../agents/search_connectors.py#L148) | 148 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000149](../../agents/search_connectors.py#L149) | 149 | `""` | — |
+| [SRC-6E58A660BC-L000125](../../agents/search_connectors.py#L125) | 125 | `""` | — |
+| [SRC-6E58A660BC-L000126](../../agents/search_connectors.py#L126) | 126 | `"def search_semantic_scholar(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000127](../../agents/search_connectors.py#L127) | 127 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000128](../../agents/search_connectors.py#L128) | 128 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000129](../../agents/search_connectors.py#L129) | 129 | `"    key = os.getenv(\"SEMANTIC_SCHOLAR_API_KEY\", \"\").strip()"` | — |
+| [SRC-6E58A660BC-L000130](../../agents/search_connectors.py#L130) | 130 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"limit\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"fields\": \"title,url,abstract,year,externalIds\"})"` | — |
+| [SRC-6E58A660BC-L000131](../../agents/search_connectors.py#L131) | 131 | `"    headers = {\"User-Agent\": USER_AGENT}"` | — |
+| [SRC-6E58A660BC-L000132](../../agents/search_connectors.py#L132) | 132 | `"    if key:"` | — |
+| [SRC-6E58A660BC-L000133](../../agents/search_connectors.py#L133) | 133 | `"        headers[\"x-api-key\"] = key"` | — |
+| [SRC-6E58A660BC-L000134](../../agents/search_connectors.py#L134) | 134 | `"    data = _http_get_json(f\"https://api.semanticscholar.org/graph/v1/paper/search?{params}\", headers=headers)"` | — |
+| [SRC-6E58A660BC-L000135](../../agents/search_connectors.py#L135) | 135 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000136](../../agents/search_connectors.py#L136) | 136 | `"    for item in (data.get(\"data\") or [])[:limit]:"` | — |
+| [SRC-6E58A660BC-L000137](../../agents/search_connectors.py#L137) | 137 | `"        if not isinstance(item, dict):"` | — |
+| [SRC-6E58A660BC-L000138](../../agents/search_connectors.py#L138) | 138 | `"            continue"` | — |
+| [SRC-6E58A660BC-L000139](../../agents/search_connectors.py#L139) | 139 | `"        title = item.get(\"title\") or \"\""` | — |
+| [SRC-6E58A660BC-L000140](../../agents/search_connectors.py#L140) | 140 | `"        url = item.get(\"url\") or \"\""` | — |
+| [SRC-6E58A660BC-L000141](../../agents/search_connectors.py#L141) | 141 | `"        if not url and isinstance(item.get(\"externalIds\"), dict):"` | — |
+| [SRC-6E58A660BC-L000142](../../agents/search_connectors.py#L142) | 142 | `"            doi = item[\"externalIds\"].get(\"DOI\")"` | — |
+| [SRC-6E58A660BC-L000143](../../agents/search_connectors.py#L143) | 143 | `"            if doi:"` | — |
+| [SRC-6E58A660BC-L000144](../../agents/search_connectors.py#L144) | 144 | `"                url = f\"https://doi.org/{doi}\""` | — |
+| [SRC-6E58A660BC-L000145](../../agents/search_connectors.py#L145) | 145 | `"        snippet = item.get(\"abstract\") or title"` | — |
+| [SRC-6E58A660BC-L000146](../../agents/search_connectors.py#L146) | 146 | `"        year = str(item.get(\"year\") or \"\")"` | — |
+| [SRC-6E58A660BC-L000147](../../agents/search_connectors.py#L147) | 147 | `"        if title and url:"` | — |
+| [SRC-6E58A660BC-L000148](../../agents/search_connectors.py#L148) | 148 | `"            rows.append(_result(title=title, url=url, snippet=snippet, provider=\"semantic_scholar\", rank=len(rows) + 1, query=query, published_at=year, source_class=\"academic\"))"` | — |
+| [SRC-6E58A660BC-L000149](../../agents/search_connectors.py#L149) | 149 | `"    return rows"` | — |
 | [SRC-6E58A660BC-L000150](../../agents/search_connectors.py#L150) | 150 | `""` | — |
-| [SRC-6E58A660BC-L000151](../../agents/search_connectors.py#L151) | 151 | `"CONNECTOR_REGISTRY: dict[str, dict[str, Any]] = {"` | — |
-| [SRC-6E58A660BC-L000152](../../agents/search_connectors.py#L152) | 152 | `"    \"openalex\": {\"fn\": search_openalex, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
+| [SRC-6E58A660BC-L000151](../../agents/search_connectors.py#L151) | 151 | `""` | — |
+| [SRC-6E58A660BC-L000152](../../agents/search_connectors.py#L152) | 152 | `"CONNECTOR_REGISTRY: dict[str, dict[str, Any]] = {"` | — |

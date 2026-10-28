@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004777 إلى SRC-1AE03B9EC3-L005576
+- النطاق: SRC-1AE03B9EC3-L004776 إلى SRC-1AE03B9EC3-L005575
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004776](../../agents/web_agent.py#L4776) | 4776 | `"                        \"platforms\": [],"` | — |
 | [SRC-1AE03B9EC3-L004777](../../agents/web_agent.py#L4777) | 4777 | `"                        \"direct_urls\": [],"` | — |
 | [SRC-1AE03B9EC3-L004778](../../agents/web_agent.py#L4778) | 4778 | `"                    })"` | — |
 | [SRC-1AE03B9EC3-L004779](../../agents/web_agent.py#L4779) | 4779 | `"                    try:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005573](../../agents/web_agent.py#L5573) | 5573 | `"            else \"lexical_signals_found_not_semantically_verified\" if coverage_targets"` | — |
 | [SRC-1AE03B9EC3-L005574](../../agents/web_agent.py#L5574) | 5574 | `"            else \"not_machine_assessed_no_explicit_targets_detected\""` | — |
 | [SRC-1AE03B9EC3-L005575](../../agents/web_agent.py#L5575) | 5575 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L005576](../../agents/web_agent.py#L5576) | 5576 | `"        answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
