@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003176 إلى SRC-1AE03B9EC3-L003975
+- النطاق: SRC-1AE03B9EC3-L003168 إلى SRC-1AE03B9EC3-L003967
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003168](../../agents/web_agent.py#L3168) | 3168 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003169](../../agents/web_agent.py#L3169) | 3169 | `"                \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L003170](../../agents/web_agent.py#L3170) | 3170 | `"                \"content\": ("` | — |
+| [SRC-1AE03B9EC3-L003171](../../agents/web_agent.py#L3171) | 3171 | `"                    \"أنت محلل سياق حواري لـ Omarai، ولست مجيبًا أو محرك بحث. حلل آخر رسالة \""` | — |
+| [SRC-1AE03B9EC3-L003172](../../agents/web_agent.py#L3172) | 3172 | `"                    \"للمستخدم في ضوء سجل الحوار فقط، وأخرج JSON صحيحًا فقط. اكتب resolved_question \""` | — |
+| [SRC-1AE03B9EC3-L003173](../../agents/web_agent.py#L3173) | 3173 | `"                    \"بلغة رسالة المستخدم نفسها مع الحفاظ على الأسماء والقيود. افهم العربية المصرية \""` | — |
+| [SRC-1AE03B9EC3-L003174](../../agents/web_agent.py#L3174) | 3174 | `"                    \"والفصحى والإنجليزية والأخطاء المعتادة. ميّز بين استمرار الموضوع وتغيير الموضوع، \""` | — |
+| [SRC-1AE03B9EC3-L003175](../../agents/web_agent.py#L3175) | 3175 | `"                    \"واستعد الكيان والقيود والجانب المطلوب والبلد والنسخة والفترة الزمنية عند وجودها. \""` | — |
 | [SRC-1AE03B9EC3-L003176](../../agents/web_agent.py#L3176) | 3176 | `"                    \"لا تنقل موضوعًا سابقًا إلى سؤال مستقل. إذا كان للضمير أكثر من مرجع معقول ويغيّر \""` | — |
 | [SRC-1AE03B9EC3-L003177](../../agents/web_agent.py#L3177) | 3177 | `"                    \"ذلك الإجابة، اجعل needs_clarification=true واكتب سؤال توضيح قصيرًا بلغة المستخدم. \""` | — |
 | [SRC-1AE03B9EC3-L003178](../../agents/web_agent.py#L3178) | 3178 | `"                    \"لا تخترع مرجعًا ولا تعتبر درجة الثقة حقيقة مقاسة. needs_web=true فقط عندما \""` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L003965](../../agents/web_agent.py#L3965) | 3965 | `"                for source in social_results:"` | — |
 | [SRC-1AE03B9EC3-L003966](../../agents/web_agent.py#L3966) | 3966 | `"                    provider = str(source.get(\"provider\") or \"unknown\")"` | — |
 | [SRC-1AE03B9EC3-L003967](../../agents/web_agent.py#L3967) | 3967 | `"                    providers[provider] = providers.get(provider, 0) + 1"` | — |
-| [SRC-1AE03B9EC3-L003968](../../agents/web_agent.py#L3968) | 3968 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
-| [SRC-1AE03B9EC3-L003969](../../agents/web_agent.py#L3969) | 3969 | `"                    \"status\": \"passed\" if social_results else \"degraded\","` | — |
-| [SRC-1AE03B9EC3-L003970](../../agents/web_agent.py#L3970) | 3970 | `"                    \"platforms_tested\": configured_platforms,"` | — |
-| [SRC-1AE03B9EC3-L003971](../../agents/web_agent.py#L3971) | 3971 | `"                    \"result_count\": len(social_results),"` | — |
-| [SRC-1AE03B9EC3-L003972](../../agents/web_agent.py#L3972) | 3972 | `"                    \"provider_counts\": providers,"` | — |
-| [SRC-1AE03B9EC3-L003973](../../agents/web_agent.py#L3973) | 3973 | `"                    \"warnings\": [_clean_text(item, 300) for item in social_warnings[:8]],"` | — |
-| [SRC-1AE03B9EC3-L003974](../../agents/web_agent.py#L3974) | 3974 | `"                    \"note\": ("` | — |
-| [SRC-1AE03B9EC3-L003975](../../agents/web_agent.py#L3975) | 3975 | `"                        \"Public-source request(s) returned results.\""` | — |

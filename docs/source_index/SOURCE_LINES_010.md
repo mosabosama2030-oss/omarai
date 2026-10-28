@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003976 إلى SRC-1AE03B9EC3-L004775
+- النطاق: SRC-1AE03B9EC3-L003968 إلى SRC-1AE03B9EC3-L004767
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003968](../../agents/web_agent.py#L3968) | 3968 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003969](../../agents/web_agent.py#L3969) | 3969 | `"                    \"status\": \"passed\" if social_results else \"degraded\","` | — |
+| [SRC-1AE03B9EC3-L003970](../../agents/web_agent.py#L3970) | 3970 | `"                    \"platforms_tested\": configured_platforms,"` | — |
+| [SRC-1AE03B9EC3-L003971](../../agents/web_agent.py#L3971) | 3971 | `"                    \"result_count\": len(social_results),"` | — |
+| [SRC-1AE03B9EC3-L003972](../../agents/web_agent.py#L3972) | 3972 | `"                    \"provider_counts\": providers,"` | — |
+| [SRC-1AE03B9EC3-L003973](../../agents/web_agent.py#L3973) | 3973 | `"                    \"warnings\": [_clean_text(item, 300) for item in social_warnings[:8]],"` | — |
+| [SRC-1AE03B9EC3-L003974](../../agents/web_agent.py#L3974) | 3974 | `"                    \"note\": ("` | — |
+| [SRC-1AE03B9EC3-L003975](../../agents/web_agent.py#L3975) | 3975 | `"                        \"Public-source request(s) returned results.\""` | — |
 | [SRC-1AE03B9EC3-L003976](../../agents/web_agent.py#L3976) | 3976 | `"                        if social_results"` | — |
 | [SRC-1AE03B9EC3-L003977](../../agents/web_agent.py#L3977) | 3977 | `"                        else \"No parseable public social results were returned. This does not establish that the platform is offline.\""` | — |
 | [SRC-1AE03B9EC3-L003978](../../agents/web_agent.py#L3978) | 3978 | `"                    ),"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L004765](../../agents/web_agent.py#L4765) | 4765 | `"            independent_domains.discard(\"\")"` | — |
 | [SRC-1AE03B9EC3-L004766](../../agents/web_agent.py#L4766) | 4766 | `"        single_source_navigation = navigation_request and bool(sources)"` | — |
 | [SRC-1AE03B9EC3-L004767](../../agents/web_agent.py#L4767) | 4767 | `"        single_source_social = bool(plan.get(\"social_focus\")) and bool(sources)"` | — |
-| [SRC-1AE03B9EC3-L004768](../../agents/web_agent.py#L4768) | 4768 | `"        single_source_lead = lead_request and bool(lead_evidence_sources)"` | — |
-| [SRC-1AE03B9EC3-L004769](../../agents/web_agent.py#L4769) | 4769 | `"        single_source_listing = listing_request and bool(sources)"` | — |
-| [SRC-1AE03B9EC3-L004770](../../agents/web_agent.py#L4770) | 4770 | `"        task_specific_partial_evidence = ("` | — |
-| [SRC-1AE03B9EC3-L004771](../../agents/web_agent.py#L4771) | 4771 | `"            single_source_page_summary"` | — |
-| [SRC-1AE03B9EC3-L004772](../../agents/web_agent.py#L4772) | 4772 | `"            or single_source_navigation"` | — |
-| [SRC-1AE03B9EC3-L004773](../../agents/web_agent.py#L4773) | 4773 | `"            or single_source_social"` | — |
-| [SRC-1AE03B9EC3-L004774](../../agents/web_agent.py#L4774) | 4774 | `"            or single_source_lead"` | — |
-| [SRC-1AE03B9EC3-L004775](../../agents/web_agent.py#L4775) | 4775 | `"            or single_source_listing"` | — |

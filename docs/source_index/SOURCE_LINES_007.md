@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001576 إلى SRC-1AE03B9EC3-L002375
+- النطاق: SRC-1AE03B9EC3-L001568 إلى SRC-1AE03B9EC3-L002367
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001568](../../agents/web_agent.py#L1568) | 1568 | `"                async def run_academic_all() -> list[list[dict[str, Any]]]:"` | — |
+| [SRC-1AE03B9EC3-L001569](../../agents/web_agent.py#L1569) | 1569 | `"                    return await asyncio.gather("` | — |
+| [SRC-1AE03B9EC3-L001570](../../agents/web_agent.py#L1570) | 1570 | `"                        *(run_one(name, method) for name, method in academic_adapters)"` | — |
+| [SRC-1AE03B9EC3-L001571](../../agents/web_agent.py#L1571) | 1571 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L001572](../../agents/web_agent.py#L1572) | 1572 | `""` | — |
+| [SRC-1AE03B9EC3-L001573](../../agents/web_agent.py#L1573) | 1573 | `"                provider_batches.extend(asyncio.run(run_academic_all()))"` | — |
+| [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"        except RuntimeError as exc:"` | — |
+| [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `"            # This method is synchronous by contract; the HTTP server invokes it in worker threads."` | — |
 | [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `"            raise RuntimeError(\"تعذر تشغيل مجدول موصلات البحث.\") from exc"` | — |
 | [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"        combined = [item for batch in provider_batches for item in batch]"` | — |
 | [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"        # De-duplicate repeated URLs before ranking/fusion."` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L002365](../../agents/web_agent.py#L2365) | 2365 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L002366](../../agents/web_agent.py#L2366) | 2366 | `"            return result(\"\", page_text, status)"` | — |
 | [SRC-1AE03B9EC3-L002367](../../agents/web_agent.py#L2367) | 2367 | `""` | — |
-| [SRC-1AE03B9EC3-L002368](../../agents/web_agent.py#L2368) | 2368 | `"        soup = BeautifulSoup(html, \"html.parser\")"` | — |
-| [SRC-1AE03B9EC3-L002369](../../agents/web_agent.py#L2369) | 2369 | `"        title = _clean_text(soup.title.get_text(\" \", strip=True), 300) if soup.title else \"\""` | — |
-| [SRC-1AE03B9EC3-L002370](../../agents/web_agent.py#L2370) | 2370 | `"        for element in soup(["` | — |
-| [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"            \"script\", \"style\", \"nav\", \"footer\", \"header\", \"noscript\","` | — |
-| [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"            \"svg\", \"form\", \"iframe\", \"template\""` | — |
-| [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"        ]):"` | — |
-| [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"            element.decompose()"` | — |
-| [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"        main = soup.find(\"main\") or soup.find(\"article\") or soup.body or soup"` | — |

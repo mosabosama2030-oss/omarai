@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002376 إلى SRC-1AE03B9EC3-L003175
+- النطاق: SRC-1AE03B9EC3-L002368 إلى SRC-1AE03B9EC3-L003167
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002368](../../agents/web_agent.py#L2368) | 2368 | `"        soup = BeautifulSoup(html, \"html.parser\")"` | — |
+| [SRC-1AE03B9EC3-L002369](../../agents/web_agent.py#L2369) | 2369 | `"        title = _clean_text(soup.title.get_text(\" \", strip=True), 300) if soup.title else \"\""` | — |
+| [SRC-1AE03B9EC3-L002370](../../agents/web_agent.py#L2370) | 2370 | `"        for element in soup(["` | — |
+| [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"            \"script\", \"style\", \"nav\", \"footer\", \"header\", \"noscript\","` | — |
+| [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"            \"svg\", \"form\", \"iframe\", \"template\""` | — |
+| [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"        ]):"` | — |
+| [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"            element.decompose()"` | — |
+| [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"        main = soup.find(\"main\") or soup.find(\"article\") or soup.body or soup"` | — |
 | [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"        bounded_text = _clean_text(main.get_text(\" \", strip=True), MAX_PAGE_TEXT_CHARS + 1)"` | — |
 | [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"        text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS"` | — |
 | [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `"        page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L003165](../../agents/web_agent.py#L3165) | 3165 | `"        if not self.api_key or not history:"` | — |
 | [SRC-1AE03B9EC3-L003166](../../agents/web_agent.py#L3166) | 3166 | `"            return fallback"` | — |
 | [SRC-1AE03B9EC3-L003167](../../agents/web_agent.py#L3167) | 3167 | `"        messages = ["` | — |
-| [SRC-1AE03B9EC3-L003168](../../agents/web_agent.py#L3168) | 3168 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003169](../../agents/web_agent.py#L3169) | 3169 | `"                \"role\": \"system\","` | — |
-| [SRC-1AE03B9EC3-L003170](../../agents/web_agent.py#L3170) | 3170 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003171](../../agents/web_agent.py#L3171) | 3171 | `"                    \"أنت محلل سياق حواري لـ Omarai، ولست مجيبًا أو محرك بحث. حلل آخر رسالة \""` | — |
-| [SRC-1AE03B9EC3-L003172](../../agents/web_agent.py#L3172) | 3172 | `"                    \"للمستخدم في ضوء سجل الحوار فقط، وأخرج JSON صحيحًا فقط. اكتب resolved_question \""` | — |
-| [SRC-1AE03B9EC3-L003173](../../agents/web_agent.py#L3173) | 3173 | `"                    \"بلغة رسالة المستخدم نفسها مع الحفاظ على الأسماء والقيود. افهم العربية المصرية \""` | — |
-| [SRC-1AE03B9EC3-L003174](../../agents/web_agent.py#L3174) | 3174 | `"                    \"والفصحى والإنجليزية والأخطاء المعتادة. ميّز بين استمرار الموضوع وتغيير الموضوع، \""` | — |
-| [SRC-1AE03B9EC3-L003175](../../agents/web_agent.py#L3175) | 3175 | `"                    \"واستعد الكيان والقيود والجانب المطلوب والبلد والنسخة والفترة الزمنية عند وجودها. \""` | — |
