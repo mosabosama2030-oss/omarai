@@ -568,6 +568,33 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
     return candidates
 
 
+def _label_existing_query(query: str, index: int, spec: dict[str, Any]) -> tuple[str, str]:
+    """Classify query wording for diagnostics; this is not a retrieval-success claim."""
+    normalized = normalize_text(query)
+    constraints = spec.get("constraints") if isinstance(spec.get("constraints"), dict) else {}
+    if re.search(r"\bsite\s*:", query, flags=re.IGNORECASE):
+        return "platform_scoped", "query explicitly scopes a public site or platform"
+    if constraints.get("official_destination_required") and any(
+        marker in normalized for marker in ("الموقع الرسمي", "official website", "official site")
+    ):
+        return "official_destination", "query wording seeks an official destination"
+    if constraints.get("time_sensitive_request") and any(
+        marker in normalized for marker in ("latest", "recent", "today", "تحديث", "حديث", "احدث", "اخر")
+    ):
+        return "recent_information", "query wording seeks current information; dates and page readability still require validation"
+    if any(marker in normalized for marker in ("تجارب", "اراء", "تجربه", "experience", "owner review", "user review")):
+        return "personal_experience", "query wording targets user experience; the author's identity and truth remain unverified"
+    if any(marker in normalized for marker in ("اعطال", "الاسباب", "الحلول", "troubleshooting", "common failures")):
+        return "troubleshooting", "query wording targets symptoms, causes, or remedies"
+    if any(marker in normalized for marker in ("المقارنة", "مقارنة", "قارن", "comparison", "versus", "pros cons", "trade offs")):
+        return "comparison", "query wording targets a comparison or trade-off analysis"
+    if any(marker in normalized for marker in ("مصدر رسمي", "official source", "manual", "specifications", "مواصفات")):
+        return "primary_source", "query wording seeks a primary or technical source"
+    if index == 0:
+        return "planner_seed", "initial planner query; relevance and source quality are validated later"
+    return "planner_alternative", "alternate planner query; label is inferred from wording/position"
+
+
 def build_query_strategy_matrix(
     question: str,
     task_spec: dict[str, Any],
@@ -576,14 +603,19 @@ def build_query_strategy_matrix(
     limit: int = MAX_STRATEGY_QUERIES,
     compact_fn: Any = None,
 ) -> list[dict[str, str]]:
-    """Annotate existing plan queries and add bounded, task-specific search strategies."""
+    """Return bounded query candidates, prioritizing task-specific evidence strategies.
+
+    The first existing planner query anchors the topic. Task-aware queries are then
+    considered before secondary planner queries, so generic alternatives cannot consume
+    the whole budget and crowd out explicit user criteria.
+    """
     maximum = max(1, min(int(limit), MAX_STRATEGY_QUERIES))
     spec = task_spec if isinstance(task_spec, dict) else {}
     queries = existing_queries if isinstance(existing_queries, list) else []
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
 
-    def add(query: Any, strategy: str, rationale: str) -> None:
+    def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
             return
         candidate = query.strip()
@@ -596,27 +628,34 @@ def build_query_strategy_matrix(
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
-        # Avoid creating modifier-only queries after a topic was lost upstream.
-        topic_tokens = _TOKEN_RE.findall(_query_key(str(queries[0])) if queries else _query_key(question))
+        # Search modifications must preserve a subject anchor. Existing planner
+        # queries are retained because they may already contain resolved context.
+        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or "")
+        topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))
         query_tokens = _TOKEN_RE.findall(key)
-        if (
-            not strategy.startswith("planner_")
-            and len(topic_tokens) >= 2
-            and not any(token in query_tokens for token in topic_tokens[:3])
+        if enforce_topic and len(topic_tokens) >= 2 and not any(
+            token in query_tokens for token in topic_tokens[:3]
         ):
             return
         seen.add(key)
         rows.append({"query": candidate, "strategy": strategy, "rationale": rationale})
 
-    for index, query in enumerate(queries):
-        strategy = "planner_seed" if index == 0 else "planner_alternative"
-        rationale = "validated existing planner query; no independent quality claim"
-        add(query, strategy, rationale)
+    # Keep exactly one seed query ahead of all expansion candidates.
+    if queries:
+        seed = queries[0]
+        strategy, rationale = (
+            _label_existing_query(seed, 0, spec)
+            if isinstance(seed, str)
+            else ("malformed", "planner seed is not a string")
+        )
+        add(seed, strategy, rationale, enforce_topic=False)
+
     if not rows and (
         spec.get("ambiguity_status") == "needs_clarification"
         or spec.get("task_family") == "ambiguous_or_incomplete"
     ):
         return rows
+
     base = str(queries[0]).strip() if queries and isinstance(queries[0], str) else ""
     if not base:
         base = re.sub(
@@ -626,12 +665,24 @@ def build_query_strategy_matrix(
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
         return rows
-    for query, strategy, rationale in _generated_strategy_candidates(base, spec):
+
+    candidates = _generated_strategy_candidates(base, spec)
+    for query, strategy, rationale in candidates:
         add(query, strategy, rationale)
         if len(rows) >= maximum:
             break
-    return rows
 
+    # Only after task-targeted candidates are considered do we retain alternative
+    # planner queries. That protects criteria and evidence-source variants.
+    for index, query in enumerate(queries[1:], start=1):
+        if len(rows) >= maximum:
+            break
+        if isinstance(query, str):
+            strategy, rationale = _label_existing_query(query, index, spec)
+        else:
+            strategy, rationale = "malformed", "planner alternative is not a string"
+        add(query, strategy, rationale, enforce_topic=False)
+    return rows
 
 def validate_task_spec(value: Any) -> dict[str, Any]:
     """Return a safe bounded public representation of TaskSpec-like input."""
