@@ -291,7 +291,16 @@ def build_task_spec(
     clean_mode = mode.strip().lower() if isinstance(mode, str) else "auto"
     if clean_mode not in SUPPORTED_MODES:
         clean_mode = "auto"
-    matches = {family: _contains(normalized, phrases) for family, phrases in _PATTERNS.items()}
+    matches = {
+        family: _contains(normalized, phrases)
+        for family, phrases in _PATTERNS.items()
+        if not family.startswith("output_")
+    }
+    output_matches = {
+        family: _contains(normalized, phrases)
+        for family, phrases in _PATTERNS.items()
+        if family.startswith("output_")
+    }
     aspect_values: list[str] = []
     try:
         from agents.aspect_planning import extract_aspects
@@ -550,11 +559,11 @@ def build_task_spec(
         "hypothesis_interpretations": hypothesis_rows,
         "constraints": constraints,
         "output_preferences": {
-            "concise": bool(matches["output_concise"]),
-            "detailed": bool(matches["output_detailed"]),
-            "examples_requested": bool(matches["output_examples"]),
-            "table_requested": bool(matches["output_table"]),
-            "bullets_or_checklist_requested": bool(matches["output_bullets"]),
+            "concise": bool(output_matches["output_concise"]),
+            "detailed": bool(output_matches["output_detailed"]),
+            "examples_requested": bool(output_matches["output_examples"]),
+            "table_requested": bool(output_matches["output_table"]),
+            "bullets_or_checklist_requested": bool(output_matches["output_bullets"]),
         },
         "evidence_requirements": evidence_requirements,
         "query_strategies": query_strategies,
