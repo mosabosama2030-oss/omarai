@@ -5143,8 +5143,36 @@ class WebAgent:
             for source in sources
         }
         final_independent_domains.discard("")
+        # All post-filter source metrics describe the sources that remain eligible
+        # for the answer. Connector-level received/accepted/rejected totals remain
+        # available in provider diagnostics and are intentionally separate.
+        independent_domains = final_independent_domains
+        report["unique_sources"] = len(sources)
+        report["pages_fetched"] = sum(bool(source.get("page_fetched")) for source in sources)
+        report["distinct_registrable_domains"] = len(independent_domains)
+        report["independent_sources"] = len(independent_domains)
+        report["providers_used"] = sorted({
+            str(provider)
+            for source in sources
+            for provider in source.get("providers", [])
+            if provider
+        })
+        report["provider_counts"] = {
+            provider: sum(provider in source.get("providers", []) for source in sources)
+            for provider in report["providers_used"]
+        }
+        report["platform_counts"] = {
+            str(source.get("platform", "web")): sum(
+                str(other.get("platform", "web")) == str(source.get("platform", "web"))
+                for other in sources
+            )
+            for source in sources
+        }
+        report["evidence_signals"] = evidence_signal_report(
+            sources, plan.get("freshness", "any")
+        )
         needs_corroboration = (
-            len(sources) < 2 or len(final_independent_domains) < 2
+            len(sources) < 2 or len(independent_domains) < 2
         )
         report["evidence_repair"] = evidence_repair
         baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}
