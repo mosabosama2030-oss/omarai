@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **95**
-- ملفات Python المحللة: **53**
-- تعريفات Python المفهرسة: **1195**
-- تعريفات Python موثقة بوجود Docstring: **213**
-- تعريفات Python بلا Docstring: **744**
-- تعريفات لا ينطبق عليها Docstring: **238**
-- الرموز الساكنة الإضافية: **1682**
-- الأسطر النصية المفهرسة حرفيًا: **31205**
+- ملفات المستودع في الجرد: **96**
+- ملفات Python المحللة: **54**
+- تعريفات Python المفهرسة: **1213**
+- تعريفات Python موثقة بوجود Docstring: **218**
+- تعريفات Python بلا Docstring: **749**
+- تعريفات لا ينطبق عليها Docstring: **246**
+- الرموز الساكنة الإضافية: **1683**
+- الأسطر النصية المفهرسة حرفيًا: **31454**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -45,6 +45,7 @@
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32243 | 753 | جرد الملف + AST Python |
+| FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 9973 | 249 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 316026 | 5884 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
@@ -285,6 +286,24 @@
 | [agents/research.py](../agents/research.py#L648) | دالة | source_relevance_score | لا توجد Docstring. | ناقص | 648 | [SRC-59CF4B7DE8-L000648](../agents/research.py#L648) |
 | [agents/research.py](../agents/research.py#L682) | دالة | filter_relevant_sources | لا توجد Docstring. | ناقص | 682 | [SRC-59CF4B7DE8-L000682](../agents/research.py#L682) |
 | [agents/research.py](../agents/research.py#L719) | دالة | decide_evidence_status | لا توجد Docstring. | ناقص | 719 | [SRC-59CF4B7DE8-L000719](../agents/research.py#L719) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L14) | متغير/ثابت Python | _CURRENT_EVIDENCE_MAX_AGE_DAYS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-3AA6165B18-L000014](../agents/research_guardrails.py#L14) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L15) | متغير/ثابت Python | _GOVERNMENT_SUFFIXES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-3AA6165B18-L000015](../agents/research_guardrails.py#L15) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L20) | متغير/ثابت Python | _OFFICIAL_WORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-3AA6165B18-L000020](../agents/research_guardrails.py#L20) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L24) | متغير/ثابت Python | _GOVERNMENT_ENTITY_WORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-3AA6165B18-L000024](../agents/research_guardrails.py#L24) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L28) | متغير/ثابت Python | _TODAY_WORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-3AA6165B18-L000028](../agents/research_guardrails.py#L28) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L32) | متغير/ثابت Python | _PROMOTION_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 32 | [SRC-3AA6165B18-L000032](../agents/research_guardrails.py#L32) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L38) | متغير/ثابت Python | _PERSONAL_EXPERIENCE_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 38 | [SRC-3AA6165B18-L000038](../agents/research_guardrails.py#L38) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L44) | متغير/ثابت Python | _DISCUSSION_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 44 | [SRC-3AA6165B18-L000044](../agents/research_guardrails.py#L44) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L50) | دالة | _normalized | لا توجد Docstring. | ناقص | 50 | [SRC-3AA6165B18-L000050](../agents/research_guardrails.py#L50) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L54) | دالة | _host | لا توجد Docstring. | ناقص | 54 | [SRC-3AA6165B18-L000054](../agents/research_guardrails.py#L54) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L61) | دالة | is_social_platform_url | Return whether a URL belongs to a recognized public social platform. | موثق | 61 | [SRC-3AA6165B18-L000061](../agents/research_guardrails.py#L61) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L70) | دالة | _is_navigation_request | لا توجد Docstring. | ناقص | 70 | [SRC-3AA6165B18-L000070](../agents/research_guardrails.py#L70) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L78) | دالة | requires_official_government_domain | Detect explicit requests for a government's official site, not articles about it. | موثق | 78 | [SRC-3AA6165B18-L000078](../agents/research_guardrails.py#L78) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L87) | دالة | _is_government_domain | لا توجد Docstring. | ناقص | 87 | [SRC-3AA6165B18-L000087](../agents/research_guardrails.py#L87) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L95) | دالة | assess_current_source | Assess whether a read page can support a current-state claim. | موثق | 95 | [SRC-3AA6165B18-L000095](../agents/research_guardrails.py#L95) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L133) | دالة | classify_social_source | Apply a transparent, non-authoritative label to public social content. | موثق | 133 | [SRC-3AA6165B18-L000133](../agents/research_guardrails.py#L133) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L171) | دالة | apply_source_guardrails | Apply official-domain, current-evidence, and explicit social-mode guards. | موثق | 171 | [SRC-3AA6165B18-L000171](../agents/research_guardrails.py#L171) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L195) | دالة | apply_source_guardrails.reject | لا توجد Docstring. | ناقص | 195 | [SRC-3AA6165B18-L000195](../agents/research_guardrails.py#L195) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
@@ -1482,6 +1501,7 @@
 | [agents/research.py](../agents/research.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_QUERY_CHARS | 20 | [SRC-59CF4B7DE8-L000020](../agents/research.py#L20) |
 | [agents/research.py](../agents/research.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_FUSED_RESULTS | 21 | [SRC-59CF4B7DE8-L000021](../agents/research.py#L21) |
 | [agents/research.py](../agents/research.py#L58) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 58 | [SRC-59CF4B7DE8-L000058](../agents/research.py#L58) |
+| [agents/research_guardrails.py](../agents/research_guardrails.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 12 | [SRC-3AA6165B18-L000012](../agents/research_guardrails.py#L12) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
