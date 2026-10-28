@@ -15,6 +15,7 @@ from urllib.parse import urlparse
 import tldextract
 
 from agents.intent_router import resolve_followup_query
+from agents.task_understanding import build_query_strategy_matrix, build_task_spec
 
 MAX_PLAN_QUERIES = 8
 MAX_QUERY_CHARS = 240
@@ -276,6 +277,35 @@ def mentioned_social_platforms(text: str) -> list[str]:
     return [name for name, aliases in rules if any(alias.casefold() in low for alias in aliases)]
 
 
+def _attach_task_understanding(
+    plan: dict[str, Any],
+    question: str,
+    *,
+    intent_route: str = "deterministic_fallback",
+    mode: str = "auto",
+) -> dict[str, Any]:
+    """Attach deterministic task interpretation and a bounded strategy matrix."""
+    result = dict(plan)
+    spec = build_task_spec(
+        question,
+        mode=mode,
+        intent_route=intent_route,
+        plan=result,
+    )
+    matrix = build_query_strategy_matrix(
+        question,
+        spec,
+        result.get("queries", []),
+        limit=MAX_PLAN_QUERIES,
+        compact_fn=compact_search_query,
+    )
+    if matrix:
+        result["queries"] = [row["query"] for row in matrix]
+    result["task_spec"] = spec
+    result["query_strategy_matrix"] = matrix
+    return result
+
+
 def fallback_plan(
     question: str, history: list[dict[str, str]] | None = None
 ) -> dict[str, Any]:
@@ -317,7 +347,7 @@ def fallback_plan(
         if len(unique) >= MAX_PLAN_QUERIES:
             break
 
-    return {
+    base_plan = {
         "queries": unique or ([base] if base else []),
         "direct_urls": direct_urls,
         "social_focus": social_focus,
@@ -326,6 +356,9 @@ def fallback_plan(
         "platforms": platforms,
         "planning_method": "deterministic_fallback",
     }
+    return _attach_task_understanding(
+        base_plan, contextual_question, intent_route="deterministic_fallback"
+    )
 
 
 def validate_plan(
@@ -357,7 +390,7 @@ def validate_plan(
     if not isinstance(platforms, list):
         platforms = base["platforms"]
     safe_platforms = [p for p in platforms if isinstance(p, str) and p in SOCIAL_DOMAINS]
-    return {
+    validated_plan = {
         "queries": queries,
         "direct_urls": fallback["direct_urls"],
         "social_focus": bool(candidate.get("social_focus", base["social_focus"])),
@@ -366,6 +399,11 @@ def validate_plan(
         "platforms": list(dict.fromkeys(safe_platforms))[:5],
         "planning_method": "language_model",
     }
+    return _attach_task_understanding(
+        validated_plan,
+        resolve_followup_query(question, history),
+        intent_route="validated_language_model_plan",
+    )
 
 
 def _canonical_result_url(url: str) -> str:
