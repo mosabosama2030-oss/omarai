@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002081 إلى SRC-1AE03B9EC3-L002880
+- النطاق: SRC-1AE03B9EC3-L002073 إلى SRC-1AE03B9EC3-L002872
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002073](../../agents/web_agent.py#L2073) | 2073 | `"                    }"` | — |
+| [SRC-1AE03B9EC3-L002074](../../agents/web_agent.py#L2074) | 2074 | `"                    useful = ["` | — |
+| [SRC-1AE03B9EC3-L002075](../../agents/web_agent.py#L2075) | 2075 | `"                        word for word in words"` | — |
+| [SRC-1AE03B9EC3-L002076](../../agents/web_agent.py#L2076) | 2076 | `"                        if len(word) >= 3 and word.casefold() not in stopwords"` | — |
+| [SRC-1AE03B9EC3-L002077](../../agents/web_agent.py#L2077) | 2077 | `"                    ]"` | — |
+| [SRC-1AE03B9EC3-L002078](../../agents/web_agent.py#L2078) | 2078 | `"                    if useful:"` | — |
+| [SRC-1AE03B9EC3-L002079](../../agents/web_agent.py#L2079) | 2079 | `"                        hashtags = [\"_\".join(useful[:3])]"` | — |
+| [SRC-1AE03B9EC3-L002080](../../agents/web_agent.py#L2080) | 2080 | `"                # Meta limits unique hashtag searches over a rolling week; keep this"` | — |
 | [SRC-1AE03B9EC3-L002081](../../agents/web_agent.py#L2081) | 2081 | `"                # connector conservative and use no more than two tags per user request."` | — |
 | [SRC-1AE03B9EC3-L002082](../../agents/web_agent.py#L2082) | 2082 | `"                for hashtag in list(dict.fromkeys(hashtags))[:1]:"` | — |
 | [SRC-1AE03B9EC3-L002083](../../agents/web_agent.py#L2083) | 2083 | `"                    try:"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L002870](../../agents/web_agent.py#L2870) | 2870 | `"            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or \"budget_exhausted\" in statuses)"` | — |
 | [SRC-1AE03B9EC3-L002871](../../agents/web_agent.py#L2871) | 2871 | `"            available: bool \| None = ("` | — |
 | [SRC-1AE03B9EC3-L002872](../../agents/web_agent.py#L2872) | 2872 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
-| [SRC-1AE03B9EC3-L002873](../../agents/web_agent.py#L2873) | 2873 | `"                else False if error_response_statuses or not ready or \"disabled\" in statuses or \"budget_exhausted\" in statuses"` | — |
-| [SRC-1AE03B9EC3-L002874](../../agents/web_agent.py#L2874) | 2874 | `"                else None"` | — |
-| [SRC-1AE03B9EC3-L002875](../../agents/web_agent.py#L2875) | 2875 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002876](../../agents/web_agent.py#L2876) | 2876 | `"            verified: bool \| None = ("` | — |
-| [SRC-1AE03B9EC3-L002877](../../agents/web_agent.py#L2877) | 2877 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
-| [SRC-1AE03B9EC3-L002878](../../agents/web_agent.py#L2878) | 2878 | `"                else False if error_response_statuses"` | — |
-| [SRC-1AE03B9EC3-L002879](../../agents/web_agent.py#L2879) | 2879 | `"                else None"` | — |
-| [SRC-1AE03B9EC3-L002880](../../agents/web_agent.py#L2880) | 2880 | `"            )"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000747 إلى SRC-F725E90B2A-L001546
+- النطاق: SRC-F725E90B2A-L000733 إلى SRC-F725E90B2A-L001532
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000733](../../tests/test_web_agent.py#L733) | 733 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-F725E90B2A-L000734](../../tests/test_web_agent.py#L734) | 734 | `"        model=\"broken/primary\","` | — |
+| [SRC-F725E90B2A-L000735](../../tests/test_web_agent.py#L735) | 735 | `"    )"` | — |
+| [SRC-F725E90B2A-L000736](../../tests/test_web_agent.py#L736) | 736 | `""` | — |
+| [SRC-F725E90B2A-L000737](../../tests/test_web_agent.py#L737) | 737 | `"    assert result == \"إجابة من النموذج الاحتياطي\""` | — |
+| [SRC-F725E90B2A-L000738](../../tests/test_web_agent.py#L738) | 738 | `"    assert called == [\"broken/primary\", \"openrouter/free\"]"` | — |
+| [SRC-F725E90B2A-L000739](../../tests/test_web_agent.py#L739) | 739 | `"    assert agent.model_usage == [{"` | — |
+| [SRC-F725E90B2A-L000740](../../tests/test_web_agent.py#L740) | 740 | `"        \"requested_model\": \"broken/primary\","` | — |
+| [SRC-F725E90B2A-L000741](../../tests/test_web_agent.py#L741) | 741 | `"        \"used_model\": \"openrouter/free\","` | — |
+| [SRC-F725E90B2A-L000742](../../tests/test_web_agent.py#L742) | 742 | `"        \"fallback_used\": \"true\","` | — |
+| [SRC-F725E90B2A-L000743](../../tests/test_web_agent.py#L743) | 743 | `"    }]"` | — |
+| [SRC-F725E90B2A-L000744](../../tests/test_web_agent.py#L744) | 744 | `""` | — |
+| [SRC-F725E90B2A-L000745](../../tests/test_web_agent.py#L745) | 745 | `""` | — |
+| [SRC-F725E90B2A-L000746](../../tests/test_web_agent.py#L746) | 746 | `""` | — |
 | [SRC-F725E90B2A-L000747](../../tests/test_web_agent.py#L747) | 747 | `""` | — |
 | [SRC-F725E90B2A-L000748](../../tests/test_web_agent.py#L748) | 748 | `"def test_generator_rejects_silent_character_limit_truncation(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000749](../../tests/test_web_agent.py#L749) | 749 | `"    agent = WebAgent()"` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L001530](../../tests/test_web_agent.py#L1530) | 1530 | `"    assert result[\"kind\"] == \"web_research\""` | — |
 | [SRC-F725E90B2A-L001531](../../tests/test_web_agent.py#L1531) | 1531 | `"    assert len(result[\"sources\"]) == 1"` | — |
 | [SRC-F725E90B2A-L001532](../../tests/test_web_agent.py#L1532) | 1532 | `"    assert result[\"sources\"][0][\"url\"] == \"https://digital.gov.eg/\""` | — |
-| [SRC-F725E90B2A-L001533](../../tests/test_web_agent.py#L1533) | 1533 | `"    assert any(\"نتيجة مرشحة\" in warning for warning in result[\"warnings\"])"` | — |
-| [SRC-F725E90B2A-L001534](../../tests/test_web_agent.py#L1534) | 1534 | `""` | — |
-| [SRC-F725E90B2A-L001535](../../tests/test_web_agent.py#L1535) | 1535 | `""` | — |
-| [SRC-F725E90B2A-L001536](../../tests/test_web_agent.py#L1536) | 1536 | `"def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001537](../../tests/test_web_agent.py#L1537) | 1537 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L001538](../../tests/test_web_agent.py#L1538) | 1538 | `""` | — |
-| [SRC-F725E90B2A-L001539](../../tests/test_web_agent.py#L1539) | 1539 | `"    rss = \"\"\"<rss><channel>"` | — |
-| [SRC-F725E90B2A-L001540](../../tests/test_web_agent.py#L1540) | 1540 | `"    <item>"` | — |
-| [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"      <title>أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال</title>"` | — |
-| [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"      <link>https://news.google.com/rss/articles/relevant</link>"` | — |
-| [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `"      <description>أمثلة على استخدام الذكاء الاصطناعي في الأعمال</description>"` | — |
-| [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"      <source url=\"https://www.ibm.com/\">IBM</source>"` | — |
-| [SRC-F725E90B2A-L001545](../../tests/test_web_agent.py#L1545) | 1545 | `"      <pubDate>Tue, 27 Oct 2026 10:00:00 GMT</pubDate>"` | — |
-| [SRC-F725E90B2A-L001546](../../tests/test_web_agent.py#L1546) | 1546 | `"    </item>"` | — |

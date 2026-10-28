@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000481 إلى SRC-1AE03B9EC3-L001280
+- النطاق: SRC-1AE03B9EC3-L000473 إلى SRC-1AE03B9EC3-L001272
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000473](../../agents/web_agent.py#L473) | 473 | `"            \"OMARAI_ANSWER_MODEL\", global_model or \"google/gemma-4-31b-it:free\""` | — |
+| [SRC-1AE03B9EC3-L000474](../../agents/web_agent.py#L474) | 474 | `"        ).strip()"` | — |
+| [SRC-1AE03B9EC3-L000475](../../agents/web_agent.py#L475) | 475 | `"        self.planner_model = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000476](../../agents/web_agent.py#L476) | 476 | `"            \"OMARAI_PLANNER_MODEL\","` | — |
+| [SRC-1AE03B9EC3-L000477](../../agents/web_agent.py#L477) | 477 | `"            global_model or \"nvidia/nemotron-3-ultra-550b-a55b:free\","` | — |
+| [SRC-1AE03B9EC3-L000478](../../agents/web_agent.py#L478) | 478 | `"        ).strip()"` | — |
+| [SRC-1AE03B9EC3-L000479](../../agents/web_agent.py#L479) | 479 | `"        self.review_model = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000480](../../agents/web_agent.py#L480) | 480 | `"            \"OMARAI_REVIEW_MODEL\", self.answer_model"` | — |
 | [SRC-1AE03B9EC3-L000481](../../agents/web_agent.py#L481) | 481 | `"        ).strip()"` | — |
 | [SRC-1AE03B9EC3-L000482](../../agents/web_agent.py#L482) | 482 | `"        self.fallback_model = os.getenv("` | — |
 | [SRC-1AE03B9EC3-L000483](../../agents/web_agent.py#L483) | 483 | `"            \"OMARAI_LLM_FALLBACK_MODEL\", \"openrouter/free\""` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L001270](../../agents/web_agent.py#L1270) | 1270 | `"            # Search provider redirects are not followed automatically. A 3xx is"` | — |
 | [SRC-1AE03B9EC3-L001271](../../agents/web_agent.py#L1271) | 1271 | `"            # reported as a provider failure so the host never fetches an unchecked target."` | — |
 | [SRC-1AE03B9EC3-L001272](../../agents/web_agent.py#L1272) | 1272 | `"            follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"        if response.status_code != 200:"` | — |
-| [SRC-1AE03B9EC3-L001275](../../agents/web_agent.py#L1275) | 1275 | `"            raise RuntimeError(f\"HTTP {response.status_code}\")"` | — |
-| [SRC-1AE03B9EC3-L001276](../../agents/web_agent.py#L1276) | 1276 | `"        soup = BeautifulSoup(response.text, \"html.parser\")"` | — |
-| [SRC-1AE03B9EC3-L001277](../../agents/web_agent.py#L1277) | 1277 | `"        if soup.select_one(\"form#challenge-form, #challenge-form, .anomaly-modal\"):"` | — |
-| [SRC-1AE03B9EC3-L001278](../../agents/web_agent.py#L1278) | 1278 | `"            raise RuntimeError(\"anti-bot challenge returned\")"` | — |
-| [SRC-1AE03B9EC3-L001279](../../agents/web_agent.py#L1279) | 1279 | `"        rows: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L001280](../../agents/web_agent.py#L1280) | 1280 | `"        for card in soup.select(\"div.result\"):"` | — |

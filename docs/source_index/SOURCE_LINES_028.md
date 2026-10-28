@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001055 إلى SRC-D186ED3822-L000072
+- النطاق: SRC-90FAA34ADE-L001041 إلى SRC-D186ED3822-L000058
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001041](../../tests/fixtures/answer_quality_cases.json#L1041) | 1041 | `"            \"title\": \"Blog B\","` | — |
+| [SRC-90FAA34ADE-L001042](../../tests/fixtures/answer_quality_cases.json#L1042) | 1042 | `"            \"url\": \"https://blog-b.example.test/stop\","` | — |
+| [SRC-90FAA34ADE-L001043](../../tests/fixtures/answer_quality_cases.json#L1043) | 1043 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001044](../../tests/fixtures/answer_quality_cases.json#L1044) | 1044 | `"            \"domain\": \"blog-b.example.test\","` | — |
+| [SRC-90FAA34ADE-L001045](../../tests/fixtures/answer_quality_cases.json#L1045) | 1045 | `"            \"provider\": \"fixture_b\""` | — |
+| [SRC-90FAA34ADE-L001046](../../tests/fixtures/answer_quality_cases.json#L1046) | 1046 | `"          },"` | — |
+| [SRC-90FAA34ADE-L001047](../../tests/fixtures/answer_quality_cases.json#L1047) | 1047 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001048](../../tests/fixtures/answer_quality_cases.json#L1048) | 1048 | `"            \"title\": \"Community page C\","` | — |
+| [SRC-90FAA34ADE-L001049](../../tests/fixtures/answer_quality_cases.json#L1049) | 1049 | `"            \"url\": \"https://community.example.test/stop\","` | — |
+| [SRC-90FAA34ADE-L001050](../../tests/fixtures/answer_quality_cases.json#L1050) | 1050 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001051](../../tests/fixtures/answer_quality_cases.json#L1051) | 1051 | `"            \"domain\": \"community.example.test\","` | — |
+| [SRC-90FAA34ADE-L001052](../../tests/fixtures/answer_quality_cases.json#L1052) | 1052 | `"            \"provider\": \"fixture_c\""` | — |
+| [SRC-90FAA34ADE-L001053](../../tests/fixtures/answer_quality_cases.json#L1053) | 1053 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001054](../../tests/fixtures/answer_quality_cases.json#L1054) | 1054 | `"        ],"` | — |
 | [SRC-90FAA34ADE-L001055](../../tests/fixtures/answer_quality_cases.json#L1055) | 1055 | `"        \"notes\": \"كل النتائج تشير إلى نفس المنشور غير الموثق\""` | — |
 | [SRC-90FAA34ADE-L001056](../../tests/fixtures/answer_quality_cases.json#L1056) | 1056 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001057](../../tests/fixtures/answer_quality_cases.json#L1057) | 1057 | `"      \"failure_conditions\": ["` | — |
@@ -838,17 +852,3 @@
 | [SRC-D186ED3822-L000056](../../tests/test_answer_quality_review_scorecard.py#L56) | 56 | `"    assert result[\"automatic_answer_grading\"] is False"` | — |
 | [SRC-D186ED3822-L000057](../../tests/test_answer_quality_review_scorecard.py#L57) | 57 | `"    assert result[\"ragas_executed\"] is False"` | — |
 | [SRC-D186ED3822-L000058](../../tests/test_answer_quality_review_scorecard.py#L58) | 58 | `""` | — |
-| [SRC-D186ED3822-L000059](../../tests/test_answer_quality_review_scorecard.py#L59) | 59 | `""` | — |
-| [SRC-D186ED3822-L000060](../../tests/test_answer_quality_review_scorecard.py#L60) | 60 | `"def test_scorecard_keeps_unmeasured_denominators_not_scorable():"` | — |
-| [SRC-D186ED3822-L000061](../../tests/test_answer_quality_review_scorecard.py#L61) | 61 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000062](../../tests/test_answer_quality_review_scorecard.py#L62) | 62 | `"    data = {"` | — |
-| [SRC-D186ED3822-L000063](../../tests/test_answer_quality_review_scorecard.py#L63) | 63 | `"        \"reviews\": [{"` | — |
-| [SRC-D186ED3822-L000064](../../tests/test_answer_quality_review_scorecard.py#L64) | 64 | `"            \"case_id\": \"AQ-001\","` | — |
-| [SRC-D186ED3822-L000065](../../tests/test_answer_quality_review_scorecard.py#L65) | 65 | `"            \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000066](../../tests/test_answer_quality_review_scorecard.py#L66) | 66 | `"            \"faithfulness\": {\"supported_claims\": 0, \"reviewed_claims\": 0},"` | — |
-| [SRC-D186ED3822-L000067](../../tests/test_answer_quality_review_scorecard.py#L67) | 67 | `"        }],"` | — |
-| [SRC-D186ED3822-L000068](../../tests/test_answer_quality_review_scorecard.py#L68) | 68 | `"    }"` | — |
-| [SRC-D186ED3822-L000069](../../tests/test_answer_quality_review_scorecard.py#L69) | 69 | `"    result = mod.summarize_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000070](../../tests/test_answer_quality_review_scorecard.py#L70) | 70 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] is None"` | — |
-| [SRC-D186ED3822-L000071](../../tests/test_answer_quality_review_scorecard.py#L71) | 71 | `"    assert result[\"metrics\"][\"faithfulness\"][\"status\"] == \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\""` | — |
-| [SRC-D186ED3822-L000072](../../tests/test_answer_quality_review_scorecard.py#L72) | 72 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] is None"` | — |

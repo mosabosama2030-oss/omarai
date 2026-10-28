@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001547 إلى SRC-F725E90B2A-L002346
+- النطاق: SRC-F725E90B2A-L001533 إلى SRC-F725E90B2A-L002332
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001533](../../tests/test_web_agent.py#L1533) | 1533 | `"    assert any(\"نتيجة مرشحة\" in warning for warning in result[\"warnings\"])"` | — |
+| [SRC-F725E90B2A-L001534](../../tests/test_web_agent.py#L1534) | 1534 | `""` | — |
+| [SRC-F725E90B2A-L001535](../../tests/test_web_agent.py#L1535) | 1535 | `""` | — |
+| [SRC-F725E90B2A-L001536](../../tests/test_web_agent.py#L1536) | 1536 | `"def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001537](../../tests/test_web_agent.py#L1537) | 1537 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L001538](../../tests/test_web_agent.py#L1538) | 1538 | `""` | — |
+| [SRC-F725E90B2A-L001539](../../tests/test_web_agent.py#L1539) | 1539 | `"    rss = \"\"\"<rss><channel>"` | — |
+| [SRC-F725E90B2A-L001540](../../tests/test_web_agent.py#L1540) | 1540 | `"    <item>"` | — |
+| [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"      <title>أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال</title>"` | — |
+| [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"      <link>https://news.google.com/rss/articles/relevant</link>"` | — |
+| [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `"      <description>أمثلة على استخدام الذكاء الاصطناعي في الأعمال</description>"` | — |
+| [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"      <source url=\"https://www.ibm.com/\">IBM</source>"` | — |
+| [SRC-F725E90B2A-L001545](../../tests/test_web_agent.py#L1545) | 1545 | `"      <pubDate>Tue, 27 Oct 2026 10:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L001546](../../tests/test_web_agent.py#L1546) | 1546 | `"    </item>"` | — |
 | [SRC-F725E90B2A-L001547](../../tests/test_web_agent.py#L1547) | 1547 | `"    <item>"` | — |
 | [SRC-F725E90B2A-L001548](../../tests/test_web_agent.py#L1548) | 1548 | `"      <title>نتائج بطولة كرة القدم اليوم</title>"` | — |
 | [SRC-F725E90B2A-L001549](../../tests/test_web_agent.py#L1549) | 1549 | `"      <link>https://news.google.com/rss/articles/irrelevant</link>"` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L002330](../../tests/test_web_agent.py#L2330) | 2330 | `"        \"direct_urls\": [],"` | — |
 | [SRC-F725E90B2A-L002331](../../tests/test_web_agent.py#L2331) | 2331 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L002332](../../tests/test_web_agent.py#L2332) | 2332 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L002333](../../tests/test_web_agent.py#L2333) | 2333 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L002334](../../tests/test_web_agent.py#L2334) | 2334 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002335](../../tests/test_web_agent.py#L2335) | 2335 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002336](../../tests/test_web_agent.py#L2336) | 2336 | `"    }"` | — |
-| [SRC-F725E90B2A-L002337](../../tests/test_web_agent.py#L2337) | 2337 | `""` | — |
-| [SRC-F725E90B2A-L002338](../../tests/test_web_agent.py#L2338) | 2338 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L002339](../../tests/test_web_agent.py#L2339) | 2339 | `"        seen.update(research_plan)"` | — |
-| [SRC-F725E90B2A-L002340](../../tests/test_web_agent.py#L2340) | 2340 | `"        source = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L002341](../../tests/test_web_agent.py#L2341) | 2341 | `"        source.update({"` | — |
-| [SRC-F725E90B2A-L002342](../../tests/test_web_agent.py#L2342) | 2342 | `"            \"title\": \"مطلوب شقة تمليك في العاصمة الإدارية\","` | — |
-| [SRC-F725E90B2A-L002343](../../tests/test_web_agent.py#L2343) | 2343 | `"            \"snippet\": \"صاحب المنشور يبحث عن شقة للشراء\","` | — |
-| [SRC-F725E90B2A-L002344](../../tests/test_web_agent.py#L2344) | 2344 | `"            \"page_text\": \"مطلوب شقة تمليك في العاصمة الإدارية، أريد الشراء.\","` | — |
-| [SRC-F725E90B2A-L002345](../../tests/test_web_agent.py#L2345) | 2345 | `"            \"queries\": list(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002346](../../tests/test_web_agent.py#L2346) | 2346 | `"        })"` | — |

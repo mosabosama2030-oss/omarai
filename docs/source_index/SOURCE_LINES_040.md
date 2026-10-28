@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002347 إلى SRC-F725E90B2A-L003146
+- النطاق: SRC-F725E90B2A-L002333 إلى SRC-F725E90B2A-L003132
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002333](../../tests/test_web_agent.py#L2333) | 2333 | `"        \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L002334](../../tests/test_web_agent.py#L2334) | 2334 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L002335](../../tests/test_web_agent.py#L2335) | 2335 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L002336](../../tests/test_web_agent.py#L2336) | 2336 | `"    }"` | — |
+| [SRC-F725E90B2A-L002337](../../tests/test_web_agent.py#L2337) | 2337 | `""` | — |
+| [SRC-F725E90B2A-L002338](../../tests/test_web_agent.py#L2338) | 2338 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L002339](../../tests/test_web_agent.py#L2339) | 2339 | `"        seen.update(research_plan)"` | — |
+| [SRC-F725E90B2A-L002340](../../tests/test_web_agent.py#L2340) | 2340 | `"        source = sample_source(0)"` | — |
+| [SRC-F725E90B2A-L002341](../../tests/test_web_agent.py#L2341) | 2341 | `"        source.update({"` | — |
+| [SRC-F725E90B2A-L002342](../../tests/test_web_agent.py#L2342) | 2342 | `"            \"title\": \"مطلوب شقة تمليك في العاصمة الإدارية\","` | — |
+| [SRC-F725E90B2A-L002343](../../tests/test_web_agent.py#L2343) | 2343 | `"            \"snippet\": \"صاحب المنشور يبحث عن شقة للشراء\","` | — |
+| [SRC-F725E90B2A-L002344](../../tests/test_web_agent.py#L2344) | 2344 | `"            \"page_text\": \"مطلوب شقة تمليك في العاصمة الإدارية، أريد الشراء.\","` | — |
+| [SRC-F725E90B2A-L002345](../../tests/test_web_agent.py#L2345) | 2345 | `"            \"queries\": list(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L002346](../../tests/test_web_agent.py#L2346) | 2346 | `"        })"` | — |
 | [SRC-F725E90B2A-L002347](../../tests/test_web_agent.py#L2347) | 2347 | `"        return [source], [], {"` | — |
 | [SRC-F725E90B2A-L002348](../../tests/test_web_agent.py#L2348) | 2348 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
 | [SRC-F725E90B2A-L002349](../../tests/test_web_agent.py#L2349) | 2349 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L003130](../../tests/test_web_agent.py#L3130) | 3130 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", capture)"` | — |
 | [SRC-F725E90B2A-L003131](../../tests/test_web_agent.py#L3131) | 3131 | `""` | — |
 | [SRC-F725E90B2A-L003132](../../tests/test_web_agent.py#L3132) | 3132 | `"    raw_question = ("` | — |
-| [SRC-F725E90B2A-L003133](../../tests/test_web_agent.py#L3133) | 3133 | `"        \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\""` | — |
-| [SRC-F725E90B2A-L003134](../../tests/test_web_agent.py#L3134) | 3134 | `"    )"` | — |
-| [SRC-F725E90B2A-L003135](../../tests/test_web_agent.py#L3135) | 3135 | `"    with pytest.raises(RuntimeError, match=\"لم تُرجع موصلات البحث\"):"` | — |
-| [SRC-F725E90B2A-L003136](../../tests/test_web_agent.py#L3136) | 3136 | `"        agent._search_web(raw_question)"` | — |
-| [SRC-F725E90B2A-L003137](../../tests/test_web_agent.py#L3137) | 3137 | `""` | — |
-| [SRC-F725E90B2A-L003138](../../tests/test_web_agent.py#L3138) | 3138 | `"    expected = _normalize_search_query(compact_search_query(raw_question))"` | — |
-| [SRC-F725E90B2A-L003139](../../tests/test_web_agent.py#L3139) | 3139 | `"    assert seen"` | — |
-| [SRC-F725E90B2A-L003140](../../tests/test_web_agent.py#L3140) | 3140 | `"    assert set(seen) == {expected}"` | — |
-| [SRC-F725E90B2A-L003141](../../tests/test_web_agent.py#L3141) | 3141 | `"    assert len(expected) <= 240"` | — |
-| [SRC-F725E90B2A-L003142](../../tests/test_web_agent.py#L3142) | 3142 | `"    assert \"رابط مباشر\" not in \" \".join(seen)"` | — |
-| [SRC-F725E90B2A-L003143](../../tests/test_web_agent.py#L3143) | 3143 | `""` | — |
-| [SRC-F725E90B2A-L003144](../../tests/test_web_agent.py#L3144) | 3144 | `""` | — |
-| [SRC-F725E90B2A-L003145](../../tests/test_web_agent.py#L3145) | 3145 | `"def test_search_web_does_not_dispatch_instruction_only_query(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003146](../../tests/test_web_agent.py#L3146) | 3146 | `"    agent = WebAgent()"` | — |
