@@ -159,11 +159,11 @@ _FOLLOWUP_ASPECT_FRAGMENTS = frozenset({
 
 _CONTEXTUAL_ASPECT_RE = re.compile(
     r"^(?:ال)?(?:سعر|ثمن|اسعار|تكلفه|ضمان|بطاريه|كاميرا|مميزات|عيوب|"
-    r"مكان|مصدر|رابط|تاريخ|مراجعات|اراء|توفر|سرعه|اداء|جوده|صيانه)\\b"
+    r"مكان|مصدر|رابط|تاريخ|مراجعات|اراء|توفر|سرعه|اداء|جوده|صيانه)"
 )
 _CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile(
-    r"^(?:what about|how about|and (?:the|its|their)|its)\\s+"
-    r"(?:price|warranty|battery|camera|location|source|link|date|pros|cons)\\b"
+    r"^(?:what about|how about|and (?:the|its|their)|its) +"
+    r"(?:price|warranty|battery|camera|location|source|link|date|pros|cons)"
 )
 
 
