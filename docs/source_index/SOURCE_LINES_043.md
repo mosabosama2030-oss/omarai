@@ -408,7 +408,7 @@
 | [SRC-F725E90B2A-L003816](../../tests/test_web_agent.py#L3816) | 3816 | `"    assert \"reasoning_guidance\" in prompt"` | — |
 | [SRC-F725E90B2A-L003817](../../tests/test_web_agent.py#L3817) | 3817 | `"    assert \"decision_matrix\" in prompt"` | — |
 | [SRC-F725E90B2A-L003818](../../tests/test_web_agent.py#L3818) | 3818 | `"    assert \"قسّم المقارنة إلى كل معيار صريح\" in prompt"` | — |
-| [SRC-F725E90B2A-L003819](../../tests/test_web_agent.py#L3819) | 3819 | `"    assert \"لا تعمم على الجميع\" in prompt"` | — |
+| [SRC-F725E90B2A-L003819](../../tests/test_web_agent.py#L3819) | 3819 | `"    assert \"وحّد العملة والوحدات\" in prompt"` | — |
 | [SRC-F725E90B2A-L003820](../../tests/test_web_agent.py#L3820) | 3820 | `"    assert \"query_strategy_matrix\" in prompt"` | — |
 | [SRC-F725E90B2A-L003821](../../tests/test_web_agent.py#L3821) | 3821 | `"    assert \"الأولوية لكلام المستخدم الحالي\" in prompt"` | — |
 | [SRC-F725E90B2A-L003822](../../tests/test_web_agent.py#L3822) | 3822 | `"    assert \"الاستعلامات المخططة فقط\" in prompt"` | — |
