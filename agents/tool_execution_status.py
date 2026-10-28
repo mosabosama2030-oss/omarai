@@ -81,11 +81,20 @@ def build_tool_execution_matrix(
     )
     # The public return value is the final accepted source set. Prefer it when
     # present; preserve report counters separately so disagreements stay visible.
+    returned_source_count = len(source_rows) if returned_sources_known else None
     accepted_sources = (
-        len(source_rows) if returned_sources_known else reported_accepted_sources
+        returned_source_count if returned_sources_known else reported_accepted_sources
     )
-    pages_read = (
-        readable_page_rows if returned_sources_known else reported_pages_read
+    pages_read = reported_pages_read if reported_pages_read is not None else readable_page_rows
+    source_count_mismatch = (
+        returned_sources_known
+        and reported_accepted_sources is not None
+        and reported_accepted_sources != returned_source_count
+    )
+    page_count_mismatch = (
+        returned_sources_known
+        and reported_pages_read is not None
+        and reported_pages_read != readable_page_rows
     )
 
     rows: list[dict[str, Any]] = []
@@ -102,16 +111,17 @@ def build_tool_execution_matrix(
         status = "unknown"
     elif outcome == "not_attempted" or attempted is False:
         status = "not_attempted"
+    elif source_count_mismatch:
+        status = "counter_mismatch"
     elif attempted is True:
-        if accepted_sources is None and outcome != "attempted_no_usable_sources":
-            status = "unknown"
-        elif (
-            (accepted_sources is not None and accepted_sources > 0)
-            or outcome == "attempted_with_usable_sources"
-        ):
+        if accepted_sources is not None:
+            status = "completed_with_results" if accepted_sources > 0 else "completed_no_usable_results"
+        elif outcome == "attempted_with_usable_sources":
             status = "completed_with_results"
-        else:
+        elif outcome == "attempted_no_usable_sources":
             status = "completed_no_usable_results"
+        else:
+            status = "unknown"
     else:
         status = "unknown"
     rows.append(_status_row(tool, tool in required, status, {
@@ -119,11 +129,18 @@ def build_tool_execution_matrix(
         "search_attempted": attempted if isinstance(attempted, bool) else None,
         "accepted_source_count": accepted_sources,
         "reported_accepted_source_count": reported_accepted_sources,
+        "counter_consistency": (
+            "mismatch" if source_count_mismatch else "consistent"
+            if returned_sources_known and reported_accepted_sources is not None
+            else "not_comparable"
+        ),
     }))
 
     tool = "page_fetch"
     if tool not in required:
         status = "not_required"
+    elif page_count_mismatch:
+        status = "counter_mismatch"
     elif pages_read > 0:
         status = "completed_with_read_pages"
     elif pages_attempted is not None and pages_attempted > 0:
@@ -143,6 +160,11 @@ def build_tool_execution_matrix(
         "pages_read": pages_read,
         "reported_pages_fetched": reported_pages_read,
         "pages_read_from_returned_sources": readable_page_rows,
+        "counter_consistency": (
+            "mismatch" if page_count_mismatch else "consistent"
+            if returned_sources_known and reported_pages_read is not None
+            else "not_comparable"
+        ),
     }))
 
     tool = "public_social_search_if_configured"
