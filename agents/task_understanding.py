@@ -439,50 +439,65 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
         return candidates
     locations = constraints.get("explicit_locations") or []
     location_suffix = " ".join(str(item) for item in locations[:2])
+    hypotheses = spec.get("hypothesis_interpretations")
+    hypothesis_families = {
+        str(item.get("family"))
+        for item in hypotheses
+        if isinstance(item, dict) and item.get("family")
+    } if isinstance(hypotheses, list) else set()
     if family == "official_site_lookup" or constraints.get("official_destination_required"):
         candidates.extend([
             (f"{topic} الموقع الرسمي", "official_destination", "exact official-site discovery"),
             (f"{topic} official website government portal", "official_domain", "cross-language destination discovery"),
         ])
-    elif constraints.get("time_sensitive_request"):
+    if constraints.get("time_sensitive_request"):
         candidates.extend([
             (f"{topic} تحديث رسمي حديث {location_suffix}".strip(), "recent_official_update", "current-state fact requires fresh primary evidence"),
             (f"{topic} latest official update {location_suffix}".strip(), "recent_official_update_en", "alternate language and source wording"),
         ])
-    elif family == "social_opinions" or constraints.get("social_evidence_requested"):
+    if family == "social_opinions" or constraints.get("social_evidence_requested"):
         candidates.extend([
             (f"{topic} تجارب مستخدمين آراء الملاك {location_suffix}".strip(), "personal_experience_ar", "search for first-person experience rather than generic product mentions"),
             (f"{topic} owner experience review {location_suffix}".strip(), "personal_experience_en", "cross-language owner-experience discovery"),
             (f"{topic} common complaints discussion", "discussion_and_complaints", "look for contrasting experiences and discussions"),
         ])
-    elif family == "compare":
+    if family == "compare" or "compare" in hypothesis_families:
         for aspect in aspects[:MAX_TASK_ASPECTS]:
             candidates.append((f"{topic} {aspect}", "explicit_criterion", f"separate evidence retrieval for criterion: {aspect}"))
         candidates.extend([
             (f"{topic} official specifications", "primary_specification", "separate technical specifications from opinion"),
             (f"{topic} independent comparison pros cons", "independent_comparison", "seek comparative analysis and trade-offs"),
         ])
-    elif family == "troubleshoot":
+    if family == "troubleshoot" or "troubleshoot" in hypothesis_families:
         candidates.extend([
             (f"{topic} الأعطال الشائعة الأسباب والحلول", "failure_modes_ar", "search causes and remedies without treating hypotheses as confirmed"),
             (f"{topic} troubleshooting common failures official manual", "failure_modes_en", "technical cross-language search and primary manual"),
         ])
-    elif family == "how_to":
+    if family == "how_to" or "how_to" in hypothesis_families:
         candidates.extend([
             (f"{topic} خطوات شرح دليل رسمي", "procedural_guide_ar", "seek stepwise procedure and applicable prerequisites"),
             (f"{topic} official guide steps", "procedural_guide_en", "cross-language guide discovery"),
         ])
-    elif family == "recommendation":
+    if family == "recommendation" or "recommendation" in hypothesis_families:
         candidates.extend([
             (f"{topic} المميزات العيوب البدائل", "tradeoffs_ar", "compare trade-offs and alternatives"),
             (f"{topic} pros cons alternatives review", "tradeoffs_en", "cross-language alternatives discovery"),
         ])
-    elif family in {"general_research", "web_research", "find_or_discover"}:
+    if family == "lead_generation" or "lead_generation" in hypothesis_families:
+        candidates.extend([
+            (f"{topic} شخص يبحث عن شراء تجربة سؤال", "buyer_intent_ar", "distinguish explicit buyer intent from product advertisements"),
+            (f"{topic} looking to buy seeking recommendations", "buyer_intent_en", "search public discussions for intent signals"),
+        ])
+    if family in {"general_research", "web_research", "find_or_discover"}:
         candidates.extend([
             (f"{topic} مصدر رسمي", "primary_source_ar", "prefer an original or primary source when appropriate"),
             (f"{topic} official source report", "primary_source_en", "alternate source-oriented search wording"),
             (f"{topic} limitations risks independent analysis", "independent_analysis", "seek counterevidence and limitations"),
         ])
+    if not candidates and family not in {"general_question", "ambiguous_or_incomplete"}:
+        candidates.append(
+            (f"{topic} مصدر موثوق", "source_oriented_alternative", "search wording is a hypothesis, not evidence")
+        )
     return candidates
 
 
