@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **101**
 - ملفات Python المحللة: **58**
-- تعريفات Python المفهرسة: **1322**
+- تعريفات Python المفهرسة: **1323**
 - تعريفات Python موثقة بوجود Docstring: **231**
-- تعريفات Python بلا Docstring: **816**
+- تعريفات Python بلا Docstring: **817**
 - تعريفات لا ينطبق عليها Docstring: **275**
 - الرموز الساكنة الإضافية: **1712**
-- الأسطر النصية المفهرسة حرفيًا: **35067**
+- الأسطر النصية المفهرسة حرفيًا: **35090**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -124,7 +124,7 @@
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
-| FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 4645 | 126 | جرد الملف + AST Python |
+| FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 149456 | 3826 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 59758 | 417 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1202,6 +1202,7 @@
 | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L48) | دالة | test_tool_matrix_reports_observed_success_without_claiming_fact_verification | لا توجد Docstring. | ناقص | 48 | [SRC-FBDC61DA0B-L000048](../tests/test_tool_execution_status.py#L48) |
 | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L81) | دالة | test_tool_matrix_marks_unrequired_tools_not_required_and_unknowns_unknown | لا توجد Docstring. | ناقص | 81 | [SRC-FBDC61DA0B-L000081](../tests/test_tool_execution_status.py#L81) |
 | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L100) | دالة | test_tool_matrix_surfaces_mismatch_between_report_counters_and_final_sources | لا توجد Docstring. | ناقص | 100 | [SRC-FBDC61DA0B-L000100](../tests/test_tool_execution_status.py#L100) |
+| [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L129) | دالة | test_social_search_is_only_called_completed_when_connector_attempt_is_observed | لا توجد Docstring. | ناقص | 129 | [SRC-FBDC61DA0B-L000129](../tests/test_tool_execution_status.py#L129) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L18) | دالة | sample_source | لا توجد Docstring. | ناقص | 18 | [SRC-F725E90B2A-L000018](../tests/test_web_agent.py#L18) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L34) | دالة | test_agent_synthesizes_with_sources_without_live_network | لا توجد Docstring. | ناقص | 34 | [SRC-F725E90B2A-L000034](../tests/test_web_agent.py#L34) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L39) | دالة | test_agent_synthesizes_with_sources_without_live_network.plan | لا توجد Docstring. | ناقص | 39 | [SRC-F725E90B2A-L000039](../tests/test_web_agent.py#L39) |

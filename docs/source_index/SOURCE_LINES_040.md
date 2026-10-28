@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000566 إلى SRC-F725E90B2A-L001365
+- النطاق: SRC-F725E90B2A-L000543 إلى SRC-F725E90B2A-L001342
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"                \"comments_count\": 4,"` | — |
+| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"            }]})"` | — |
+| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
+| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `""` | — |
+| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
+| [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"    )"` | — |
+| [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
+| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
+| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
+| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
+| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
+| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    assert \"test-ig-token\" not in str(results)"` | — |
+| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `""` | — |
+| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `""` | — |
+| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"    monkeypatch.delenv(\"INSTAGRAM_USER_ID\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"    monkeypatch.delenv(\"INSTAGRAM_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"        \"تجارب عامة على Instagram\", [\"instagram\"]"` | — |
 | [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `"    )"` | — |
 | [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `"    assert results == []"` | — |
 | [SRC-F725E90B2A-L000568](../../tests/test_web_agent.py#L568) | 568 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
@@ -793,26 +816,3 @@
 | [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
 | [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `""` | — |
-| [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `"    def collect_only_one_source(research_plan):"` | — |
-| [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"        return [sample_source(0)], [], {"` | — |
-| [SRC-F725E90B2A-L001346](../../tests/test_web_agent.py#L1346) | 1346 | `"            \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L001347](../../tests/test_web_agent.py#L1347) | 1347 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001348](../../tests/test_web_agent.py#L1348) | 1348 | `"            \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 1}],"` | — |
-| [SRC-F725E90B2A-L001349](../../tests/test_web_agent.py#L1349) | 1349 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-F725E90B2A-L001350](../../tests/test_web_agent.py#L1350) | 1350 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-F725E90B2A-L001351](../../tests/test_web_agent.py#L1351) | 1351 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `"            \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"        }"` | — |
-| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `""` | — |
-| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect_only_one_source)"` | — |
-| [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"        lambda *args, **kwargs: pytest.fail(\"LLM must not answer without two independent domains\"),"` | — |
-| [SRC-F725E90B2A-L001363](../../tests/test_web_agent.py#L1363) | 1363 | `"    )"` | — |
-| [SRC-F725E90B2A-L001364](../../tests/test_web_agent.py#L1364) | 1364 | `"    result = agent.answer(\"ما آخر أخبار هذه التقنية اليوم؟\")"` | — |
-| [SRC-F725E90B2A-L001365](../../tests/test_web_agent.py#L1365) | 1365 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
