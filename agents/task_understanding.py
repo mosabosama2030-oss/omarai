@@ -686,6 +686,46 @@ def build_task_spec(
         tools.append("language_model_generation_if_configured")
     if tools and ("web_search" in tools or social_required) and not route_is_clarification:
         tools.append("claim_review_if_configured")
+    raw_context_entities = context.get("entities")
+    context_entities = [
+        str(item).strip()[:120]
+        for item in raw_context_entities[:8]
+        if isinstance(item, str) and item.strip()
+    ] if isinstance(raw_context_entities, list) else []
+    raw_context_slots = context.get("slots")
+    context_slots: dict[str, str] = {}
+    if isinstance(raw_context_slots, dict):
+        for raw_key, raw_value in list(raw_context_slots.items())[:16]:
+            if isinstance(raw_key, str) and isinstance(raw_value, str) and raw_key.strip() and raw_value.strip():
+                context_slots[raw_key.strip()[:40]] = raw_value.strip()[:180]
+    raw_changed_slots = context.get("changed_slots")
+    context_changed_slots = [
+        str(item).strip()[:40]
+        for item in raw_changed_slots[:8]
+        if isinstance(item, str) and item.strip()
+    ] if isinstance(raw_changed_slots, list) else []
+    context_resolution = {
+        "method": str(context.get("method") or "not_provided")[:80],
+        "resolved_question": (
+            str(context.get("resolved_question") or raw)[:MAX_TASK_CHARS]
+            if not context.get("topic_shift") else raw
+        ),
+        "topic": str(context.get("topic") or "")[:180],
+        "entities": context_entities,
+        "slots": context_slots,
+        "changed_slots": context_changed_slots,
+        "is_follow_up": context.get("is_follow_up") is True,
+        "topic_shift": context.get("topic_shift") is True,
+        "resolution_basis": str(context.get("resolution_basis") or "unassessed")[:80],
+        "confidence_band": str(context.get("confidence_band") or "unassessed")[:30],
+        "needs_clarification": context.get("needs_clarification") is True,
+        "unresolved_references": [
+            str(item).strip()[:100]
+            for item in context.get("unresolved_references", [])[:8]
+            if isinstance(item, str) and item.strip()
+        ] if isinstance(context.get("unresolved_references"), list) else [],
+    }
+
     constraints = {
         "explicit_locations": location,
         "explicit_years": years,
@@ -727,6 +767,11 @@ def build_task_spec(
         "ambiguity_status": ambiguity_status,
         "missing_required_inputs": list(dict.fromkeys(missing_required_inputs)),
         "requires_clarification": ambiguity_status == "needs_clarification",
+        "context_resolution": context_resolution,
+        "secondary_task_types": [
+            name for name, signals in matches.items()
+            if signals and name != family
+        ],
         "clarification_reason": (
             "missing_required_input"
             if missing_required_inputs
@@ -752,9 +797,14 @@ def build_task_spec(
             "resolve_context_without_carrying_stale_topic",
             "preserve_explicit_entities_and_constraints",
             "validate_topic_relevance",
+            "check_tool_permission_and_configuration_before_execution",
+            "bound_query_count_retries_concurrency_and_deadlines",
+            "treat_retrieved_content_as_untrusted_data_not_tool_instructions",
             "apply_mode_specific_source_guardrails",
-            "distinguish_search_result_snippet_from_read_page",
-            "report_each_failed_stage",
+            "distinguish_planned_queries_from_queries_actually_attempted",
+            "distinguish_search_snippets_from_successfully_read_pages",
+            "separate_connector_success_from_evidence_validity",
+            "report_each_failed_stage_without_claiming_unperformed_checks",
             "cite_claims_or_abstain_when_evidence_is_insufficient",
         ],
         "limits": {
@@ -1089,6 +1139,8 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         "ambiguity_status": str(value.get("ambiguity_status") or "unassessed")[:80],
         "missing_required_inputs": value.get("missing_required_inputs") if isinstance(value.get("missing_required_inputs"), list) else [],
         "requires_clarification": value.get("requires_clarification") is True,
+        "context_resolution": value.get("context_resolution") if isinstance(value.get("context_resolution"), dict) else {},
+        "secondary_task_types": value.get("secondary_task_types") if isinstance(value.get("secondary_task_types"), list) else [],
         "clarification_reason": str(value.get("clarification_reason") or "unassessed")[:80],
         "constraints": value.get("constraints") if isinstance(value.get("constraints"), dict) else {},
         "output_preferences": value.get("output_preferences") if isinstance(value.get("output_preferences"), dict) else {},
