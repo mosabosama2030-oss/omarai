@@ -5998,10 +5998,7 @@ class WebAgent:
             llm_warning
             or review_warning
             or review_status != "model_claim_audit_completed"
-        ):
-            pipeline_completion_status = "partial"
-        elif (
-            answer_integrity["potentially_missing_target_count"] > 0
+            or answer_integrity["potentially_missing_target_count"] > 0
             or answer_integrity["source_evidence_gap_count"] > 0
             or citation_validation["valid_citation_count"] == 0
         ):
