@@ -3702,3 +3702,47 @@ def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):
     assert task_understanding["query_strategy_matrix"] == []
     assert task_understanding["search_was_attempted"] is False
 
+
+
+def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):
+    agent = WebAgent()
+
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda *args, **kwargs: pytest.fail("Missing official-site target must be clarified before planning"),
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda *args, **kwargs: pytest.fail("Missing official-site target must not invoke search"),
+    )
+
+    result = agent.answer("هات الموقع الرسمي")
+
+    assert result["intent_route"] == "CLARIFY"
+    assert result["kind"] == "clarification_needed"
+    assert "اسم الجهة أو الشركة" in result["answer"]
+    assert result["search_attempted"] is False
+    assert "official_destination_target_entity" in result["task_understanding"]["task_spec"]["missing_required_inputs"]
+
+
+def test_summary_without_source_clarifies_before_search(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda *args, **kwargs: pytest.fail("Missing summary source must be clarified before planning"),
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda *args, **kwargs: pytest.fail("Missing summary source must not invoke search"),
+    )
+
+    result = agent.answer("لخص")
+
+    assert result["intent_route"] == "CLARIFY"
+    assert "أرسل النص" in result["answer"]
+    assert result["search_attempted"] is False
+    assert "summary_source_url_or_pasted_text" in result["task_understanding"]["task_spec"]["missing_required_inputs"]
