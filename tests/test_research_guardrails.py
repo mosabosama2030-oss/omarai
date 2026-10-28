@@ -408,3 +408,35 @@ def test_recent_source_date_is_not_enough_without_readable_page_text() -> None:
         page_text="   ",
     )
     assert assess_current_source(item, now=_GUARDRAIL_NOW)["status"] == "page_not_read"
+
+
+
+def test_social_classification_matches_english_first_person_phrases_case_insensitively() -> None:
+    result = classify_social_source(
+        _guardrail_source(
+            "https://www.reddit.com/r/cars/comments/owner",
+            title="Nissan Sunny ownership",
+            snippet="I OWN the car and I use it for my daily commute",
+        )
+    )
+
+    assert result["opinion_source_classification"] == "personal_experience_candidate"
+
+
+def test_official_domain_check_rejects_suffix_spoofing() -> None:
+    question = "ابحث عن الموقع الرسمي لوزارة الاتصالات المصرية"
+    accepted, report = apply_source_guardrails(
+        question,
+        "auto",
+        {"freshness": "any"},
+        [
+            _guardrail_source(
+                "https://mcit.gov.eg.attacker.example/",
+                title="وزارة الاتصالات المصرية الموقع الرسمي",
+            )
+        ],
+        now=_GUARDRAIL_NOW,
+    )
+
+    assert accepted == []
+    assert report["rejection_counts"] == {"not_an_official_government_domain": 1}
