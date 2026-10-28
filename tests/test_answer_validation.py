@@ -309,6 +309,8 @@ def test_frontend_surfaces_source_specific_number_and_possible_value_discrepanci
 
     assert "citation_numeric_support" in html
     assert "potential_value_discrepancies" in html
+    assert "claim_evidence_ledger" in html
+    assert "سجل تتبع الاستشهادات" in html
     assert "هذه ليست إثباتًا تلقائيًا لوجود تناقض" in html
     assert "ليس تحققًا من الحقيقة" in html
 
