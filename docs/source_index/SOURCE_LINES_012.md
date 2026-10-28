@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003865 إلى SRC-1AE03B9EC3-L004664
+- النطاق: SRC-1AE03B9EC3-L003811 إلى SRC-1AE03B9EC3-L004610
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003811](../../agents/web_agent.py#L3811) | 3811 | `"        warnings: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L003812](../../agents/web_agent.py#L3812) | 3812 | `""` | — |
+| [SRC-1AE03B9EC3-L003813](../../agents/web_agent.py#L3813) | 3813 | `"        def replace(match: re.Match[str]) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003814](../../agents/web_agent.py#L3814) | 3814 | `"            number = int(match.group(1))"` | — |
+| [SRC-1AE03B9EC3-L003815](../../agents/web_agent.py#L3815) | 3815 | `"            if 1 <= number <= source_count:"` | — |
+| [SRC-1AE03B9EC3-L003816](../../agents/web_agent.py#L3816) | 3816 | `"                return match.group(0)"` | — |
+| [SRC-1AE03B9EC3-L003817](../../agents/web_agent.py#L3817) | 3817 | `"            warnings.append(f\"حُذف استشهاد غير صالح إلى المصدر {number}.\")"` | — |
+| [SRC-1AE03B9EC3-L003818](../../agents/web_agent.py#L3818) | 3818 | `"            return \"\""` | — |
+| [SRC-1AE03B9EC3-L003819](../../agents/web_agent.py#L3819) | 3819 | `""` | — |
+| [SRC-1AE03B9EC3-L003820](../../agents/web_agent.py#L3820) | 3820 | `"        clean_answer = re.sub(r\"\\[المصدر\\s+(\\d+)\\]\", replace, answer)"` | — |
+| [SRC-1AE03B9EC3-L003821](../../agents/web_agent.py#L3821) | 3821 | `"        return clean_answer, warnings"` | — |
+| [SRC-1AE03B9EC3-L003822](../../agents/web_agent.py#L3822) | 3822 | `""` | — |
+| [SRC-1AE03B9EC3-L003823](../../agents/web_agent.py#L3823) | 3823 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L003824](../../agents/web_agent.py#L3824) | 3824 | `"    def _citation_validation_metadata("` | — |
+| [SRC-1AE03B9EC3-L003825](../../agents/web_agent.py#L3825) | 3825 | `"        answer: str,"` | — |
+| [SRC-1AE03B9EC3-L003826](../../agents/web_agent.py#L3826) | 3826 | `"        source_count: int,"` | — |
+| [SRC-1AE03B9EC3-L003827](../../agents/web_agent.py#L3827) | 3827 | `"        citation_warnings: list[str],"` | — |
+| [SRC-1AE03B9EC3-L003828](../../agents/web_agent.py#L3828) | 3828 | `"        review_status: str,"` | — |
+| [SRC-1AE03B9EC3-L003829](../../agents/web_agent.py#L3829) | 3829 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L003830](../../agents/web_agent.py#L3830) | 3830 | `"        \"\"\"Report the scope of citation checks without claiming semantic fact verification.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003831](../../agents/web_agent.py#L3831) | 3831 | `"        citation_count = len(re.findall(r\"\\[المصدر\\s+\\d+\\]\", answer))"` | — |
+| [SRC-1AE03B9EC3-L003832](../../agents/web_agent.py#L3832) | 3832 | `"        max_citable_source_index = max("` | — |
+| [SRC-1AE03B9EC3-L003833](../../agents/web_agent.py#L3833) | 3833 | `"            0, min(MAX_LLM_CITED_SOURCES, int(source_count))"` | — |
+| [SRC-1AE03B9EC3-L003834](../../agents/web_agent.py#L3834) | 3834 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003835](../../agents/web_agent.py#L3835) | 3835 | `"        if citation_warnings:"` | — |
+| [SRC-1AE03B9EC3-L003836](../../agents/web_agent.py#L3836) | 3836 | `"            status = \"invalid_index_references_removed\""` | — |
+| [SRC-1AE03B9EC3-L003837](../../agents/web_agent.py#L3837) | 3837 | `"        elif citation_count:"` | — |
+| [SRC-1AE03B9EC3-L003838](../../agents/web_agent.py#L3838) | 3838 | `"            status = \"index_range_check_passed\""` | — |
+| [SRC-1AE03B9EC3-L003839](../../agents/web_agent.py#L3839) | 3839 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L003840](../../agents/web_agent.py#L3840) | 3840 | `"            status = \"no_citation_markers_present\""` | — |
+| [SRC-1AE03B9EC3-L003841](../../agents/web_agent.py#L3841) | 3841 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L003842](../../agents/web_agent.py#L3842) | 3842 | `"            \"method\": \"numeric_source_index_range_only\","` | — |
+| [SRC-1AE03B9EC3-L003843](../../agents/web_agent.py#L3843) | 3843 | `"            \"status\": status,"` | — |
+| [SRC-1AE03B9EC3-L003844](../../agents/web_agent.py#L3844) | 3844 | `"            \"valid_citation_count\": citation_count,"` | — |
+| [SRC-1AE03B9EC3-L003845](../../agents/web_agent.py#L3845) | 3845 | `"            \"invalid_references_removed\": len(citation_warnings),"` | — |
+| [SRC-1AE03B9EC3-L003846](../../agents/web_agent.py#L3846) | 3846 | `"            \"max_citable_source_index\": max_citable_source_index,"` | — |
+| [SRC-1AE03B9EC3-L003847](../../agents/web_agent.py#L3847) | 3847 | `"            \"claim_support\": ("` | — |
+| [SRC-1AE03B9EC3-L003848](../../agents/web_agent.py#L3848) | 3848 | `"                \"model_review_not_independent_fact_check\""` | — |
+| [SRC-1AE03B9EC3-L003849](../../agents/web_agent.py#L3849) | 3849 | `"                if review_status == \"model_claim_audit_completed\""` | — |
+| [SRC-1AE03B9EC3-L003850](../../agents/web_agent.py#L3850) | 3850 | `"                else \"not_verified\""` | — |
+| [SRC-1AE03B9EC3-L003851](../../agents/web_agent.py#L3851) | 3851 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L003852](../../agents/web_agent.py#L3852) | 3852 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L003853](../../agents/web_agent.py#L3853) | 3853 | `""` | — |
+| [SRC-1AE03B9EC3-L003854](../../agents/web_agent.py#L3854) | 3854 | `"    def diagnostics("` | — |
+| [SRC-1AE03B9EC3-L003855](../../agents/web_agent.py#L3855) | 3855 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L003856](../../agents/web_agent.py#L3856) | 3856 | `"        test_model: bool = True,"` | — |
+| [SRC-1AE03B9EC3-L003857](../../agents/web_agent.py#L3857) | 3857 | `"        test_social: bool = False,"` | — |
+| [SRC-1AE03B9EC3-L003858](../../agents/web_agent.py#L3858) | 3858 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L003859](../../agents/web_agent.py#L3859) | 3859 | `"        \"\"\"Run explicit live checks without exposing credentials or retaining returned content.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003860](../../agents/web_agent.py#L3860) | 3860 | `"        import time"` | — |
+| [SRC-1AE03B9EC3-L003861](../../agents/web_agent.py#L3861) | 3861 | `"        from datetime import UTC, datetime"` | — |
+| [SRC-1AE03B9EC3-L003862](../../agents/web_agent.py#L3862) | 3862 | `""` | — |
+| [SRC-1AE03B9EC3-L003863](../../agents/web_agent.py#L3863) | 3863 | `"        started = time.monotonic()"` | — |
+| [SRC-1AE03B9EC3-L003864](../../agents/web_agent.py#L3864) | 3864 | `"        self._reset_deepseek_search_budget()"` | — |
 | [SRC-1AE03B9EC3-L003865](../../agents/web_agent.py#L3865) | 3865 | `"        # Keep this report scoped to the current diagnostics request, not earlier asks."` | — |
 | [SRC-1AE03B9EC3-L003866](../../agents/web_agent.py#L3866) | 3866 | `"        with self._provider_diagnostics_lock:"` | — |
 | [SRC-1AE03B9EC3-L003867](../../agents/web_agent.py#L3867) | 3867 | `"            self._provider_diagnostics = []"` | — |
@@ -762,57 +816,3 @@
 | [SRC-1AE03B9EC3-L004608](../../agents/web_agent.py#L4608) | 4608 | `"        plan[\"queries\"] = normalized_plan_queries[:MAX_PLAN_QUERIES]"` | — |
 | [SRC-1AE03B9EC3-L004609](../../agents/web_agent.py#L4609) | 4609 | `"        # Preserve the requested mode in diagnostics even when no usable query exists."` | — |
 | [SRC-1AE03B9EC3-L004610](../../agents/web_agent.py#L4610) | 4610 | `"        if clean_mode == \"deep\":"` | — |
-| [SRC-1AE03B9EC3-L004611](../../agents/web_agent.py#L4611) | 4611 | `"            plan[\"depth\"] = \"deep\""` | — |
-| [SRC-1AE03B9EC3-L004612](../../agents/web_agent.py#L4612) | 4612 | `"        elif clean_mode == \"latest\":"` | — |
-| [SRC-1AE03B9EC3-L004613](../../agents/web_agent.py#L4613) | 4613 | `"            plan[\"freshness\"] = \"current\""` | — |
-| [SRC-1AE03B9EC3-L004614](../../agents/web_agent.py#L4614) | 4614 | `"        elif clean_mode == \"social\":"` | — |
-| [SRC-1AE03B9EC3-L004615](../../agents/web_agent.py#L4615) | 4615 | `"            plan[\"social_focus\"] = True"` | — |
-| [SRC-1AE03B9EC3-L004616](../../agents/web_agent.py#L4616) | 4616 | `"            if not plan.get(\"platforms\"):"` | — |
-| [SRC-1AE03B9EC3-L004617](../../agents/web_agent.py#L4617) | 4617 | `"                plan[\"platforms\"] = [\"reddit\", \"bluesky\", \"youtube\"]"` | — |
-| [SRC-1AE03B9EC3-L004618](../../agents/web_agent.py#L4618) | 4618 | `""` | — |
-| [SRC-1AE03B9EC3-L004619](../../agents/web_agent.py#L4619) | 4619 | `"        if plan.get(\"queries\"):"` | — |
-| [SRC-1AE03B9EC3-L004620](../../agents/web_agent.py#L4620) | 4620 | `"            if clean_mode == \"auto\" and intent_route == \"WEB_DEEP\":"` | — |
-| [SRC-1AE03B9EC3-L004621](../../agents/web_agent.py#L4621) | 4621 | `"                plan[\"depth\"] = \"deep\""` | — |
-| [SRC-1AE03B9EC3-L004622](../../agents/web_agent.py#L4622) | 4622 | `"            if clean_mode == \"auto\":"` | — |
-| [SRC-1AE03B9EC3-L004623](../../agents/web_agent.py#L4623) | 4623 | `"                normalized_question = _normalize_search_query(working_question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L004624](../../agents/web_agent.py#L4624) | 4624 | `"                deep_terms = ("` | — |
-| [SRC-1AE03B9EC3-L004625](../../agents/web_agent.py#L4625) | 4625 | `"                    \"بحث عميق\", \"بحث معمق\", \"بحث شامل\", \"بالتفصيل\", \"قارن\", \"مقارنة\","` | — |
-| [SRC-1AE03B9EC3-L004626](../../agents/web_agent.py#L4626) | 4626 | `"                    \"تحقق\", \"استقصاء\", \"deep research\", \"comprehensive\", \"in-depth\", \"compare\","` | — |
-| [SRC-1AE03B9EC3-L004627](../../agents/web_agent.py#L4627) | 4627 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004628](../../agents/web_agent.py#L4628) | 4628 | `"                explicit_deep = intent_route == \"WEB_DEEP\" or any("` | — |
-| [SRC-1AE03B9EC3-L004629](../../agents/web_agent.py#L4629) | 4629 | `"                    term in normalized_question for term in deep_terms"` | — |
-| [SRC-1AE03B9EC3-L004630](../../agents/web_agent.py#L4630) | 4630 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004631](../../agents/web_agent.py#L4631) | 4631 | `"                if not explicit_deep:"` | — |
-| [SRC-1AE03B9EC3-L004632](../../agents/web_agent.py#L4632) | 4632 | `"                    # The planner may overclassify short lookups as deep research. Preserve"` | — |
-| [SRC-1AE03B9EC3-L004633](../../agents/web_agent.py#L4633) | 4633 | `"                    # the user's actual intent first and cap routine searches to three queries."` | — |
-| [SRC-1AE03B9EC3-L004634](../../agents/web_agent.py#L4634) | 4634 | `"                    fallback_plan_queries = ("` | — |
-| [SRC-1AE03B9EC3-L004635](../../agents/web_agent.py#L4635) | 4635 | `"                        fallback_plan(working_question, clean_history).get(\"queries\") or []"` | — |
-| [SRC-1AE03B9EC3-L004636](../../agents/web_agent.py#L4636) | 4636 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004637](../../agents/web_agent.py#L4637) | 4637 | `"                    fallback_queries = ["` | — |
-| [SRC-1AE03B9EC3-L004638](../../agents/web_agent.py#L4638) | 4638 | `"                        compact_search_query(query)"` | — |
-| [SRC-1AE03B9EC3-L004639](../../agents/web_agent.py#L4639) | 4639 | `"                        for query in fallback_plan_queries"` | — |
-| [SRC-1AE03B9EC3-L004640](../../agents/web_agent.py#L4640) | 4640 | `"                        if isinstance(query, str)"` | — |
-| [SRC-1AE03B9EC3-L004641](../../agents/web_agent.py#L4641) | 4641 | `"                    ]"` | — |
-| [SRC-1AE03B9EC3-L004642](../../agents/web_agent.py#L4642) | 4642 | `"                    fallback_queries = [query for query in fallback_queries if query]"` | — |
-| [SRC-1AE03B9EC3-L004643](../../agents/web_agent.py#L4643) | 4643 | `"                    model_queries = ["` | — |
-| [SRC-1AE03B9EC3-L004644](../../agents/web_agent.py#L4644) | 4644 | `"                        compact_search_query(query)"` | — |
-| [SRC-1AE03B9EC3-L004645](../../agents/web_agent.py#L4645) | 4645 | `"                        for query in (plan.get(\"queries\") or [])"` | — |
-| [SRC-1AE03B9EC3-L004646](../../agents/web_agent.py#L4646) | 4646 | `"                        if isinstance(query, str)"` | — |
-| [SRC-1AE03B9EC3-L004647](../../agents/web_agent.py#L4647) | 4647 | `"                    ]"` | — |
-| [SRC-1AE03B9EC3-L004648](../../agents/web_agent.py#L4648) | 4648 | `"                    model_queries = [query for query in model_queries if query]"` | — |
-| [SRC-1AE03B9EC3-L004649](../../agents/web_agent.py#L4649) | 4649 | `"                    if self._is_navigation_request(working_question):"` | — |
-| [SRC-1AE03B9EC3-L004650](../../agents/web_agent.py#L4650) | 4650 | `"                        navigation_seed = ("` | — |
-| [SRC-1AE03B9EC3-L004651](../../agents/web_agent.py#L4651) | 4651 | `"                            fallback_queries[0] if fallback_queries"` | — |
-| [SRC-1AE03B9EC3-L004652](../../agents/web_agent.py#L4652) | 4652 | `"                            else model_queries[0] if model_queries"` | — |
-| [SRC-1AE03B9EC3-L004653](../../agents/web_agent.py#L4653) | 4653 | `"                            else \"\""` | — |
-| [SRC-1AE03B9EC3-L004654](../../agents/web_agent.py#L4654) | 4654 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L004655](../../agents/web_agent.py#L4655) | 4655 | `"                        subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L004656](../../agents/web_agent.py#L4656) | 4656 | `"                            r\"^(?:ابحث\|بحث\|دور\|اعثر)\\s+(?:عن\|على)?\\s*\","` | — |
-| [SRC-1AE03B9EC3-L004657](../../agents/web_agent.py#L4657) | 4657 | `"                            \"\","` | — |
-| [SRC-1AE03B9EC3-L004658](../../agents/web_agent.py#L4658) | 4658 | `"                            navigation_seed,"` | — |
-| [SRC-1AE03B9EC3-L004659](../../agents/web_agent.py#L4659) | 4659 | `"                        ).strip()"` | — |
-| [SRC-1AE03B9EC3-L004660](../../agents/web_agent.py#L4660) | 4660 | `"                        plan_queries = ("` | — |
-| [SRC-1AE03B9EC3-L004661](../../agents/web_agent.py#L4661) | 4661 | `"                            ["` | — |
-| [SRC-1AE03B9EC3-L004662](../../agents/web_agent.py#L4662) | 4662 | `"                                subject,"` | — |
-| [SRC-1AE03B9EC3-L004663](../../agents/web_agent.py#L4663) | 4663 | `"                                subject + \" الموقع الرسمي\","` | — |
-| [SRC-1AE03B9EC3-L004664](../../agents/web_agent.py#L4664) | 4664 | `"                                subject + \" official website\","` | — |

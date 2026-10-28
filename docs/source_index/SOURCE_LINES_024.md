@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000453 إلى SRC-0F910493E8-L000677
+- النطاق: SRC-65551FB29F-L000399 إلى SRC-0F910493E8-L000623
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000399](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L399) | 399 | `""` | — |
+| [SRC-65551FB29F-L000400](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L400) | 400 | `"## 21. المرحلة 1: السلامة والحقيقة والحدود"` | — |
+| [SRC-65551FB29F-L000401](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L401) | 401 | `""` | — |
+| [SRC-65551FB29F-L000402](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L402) | 402 | `"تعالج أولًا، بناءً على نتائج الفحص:"` | — |
+| [SRC-65551FB29F-L000403](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L403) | 403 | `"- صلاحيات الأدوات والحدود الخارجية."` | — |
+| [SRC-65551FB29F-L000404](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L404) | 404 | `"- صدق البحث والإسناد وعدم اليقين."` | — |
+| [SRC-65551FB29F-L000405](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L405) | 405 | `"- SSRF والمدخلات ومحتوى صفحات الويب غير الموثوق."` | — |
+| [SRC-65551FB29F-L000406](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L406) | 406 | `"- عزل طلبات المستخدمين والحالة."` | — |
+| [SRC-65551FB29F-L000407](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L407) | 407 | `"- المهلات والميزانيات وحدود التكرار."` | — |
+| [SRC-65551FB29F-L000408](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L408) | 408 | `"- الأسرار وأخطاء التسريب."` | — |
+| [SRC-65551FB29F-L000409](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L409) | 409 | `"- اختبارات regression للعيوب المثبتة."` | — |
+| [SRC-65551FB29F-L000410](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L410) | 410 | `""` | — |
+| [SRC-65551FB29F-L000411](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L411) | 411 | `"القبول يتم باختبارات ونتائج فعلية؛ مجرد إضافة اختبارات لا تكفي إذا كانت لا تختبر الخطر الصحيح."` | — |
+| [SRC-65551FB29F-L000412](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L412) | 412 | `""` | — |
+| [SRC-65551FB29F-L000413](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L413) | 413 | `"## 22. المرحلة 2: قابلية إعادة الاختبار والتشخيص"` | — |
+| [SRC-65551FB29F-L000414](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L414) | 414 | `""` | — |
+| [SRC-65551FB29F-L000415](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L415) | 415 | `"المخرجات:"` | — |
+| [SRC-65551FB29F-L000416](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L416) | 416 | `"- أمر اختبار واضح وموثق."` | — |
+| [SRC-65551FB29F-L000417](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L417) | 417 | `"- اختبارات محلية مستقرة قدر الإمكان."` | — |
+| [SRC-65551FB29F-L000418](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L418) | 418 | `"- اختبارات تكامل تفصل عن الاختبارات المعتمدة على الشبكة."` | — |
+| [SRC-65551FB29F-L000419](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L419) | 419 | `"- سجلات منقحة ومعرفات تتبع مناسبة."` | — |
+| [SRC-65551FB29F-L000420](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L420) | 420 | `"- حالات فشل قابلة لإعادة الإنتاج."` | — |
+| [SRC-65551FB29F-L000421](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L421) | 421 | `"- توثيق طريقة التمييز بين «موصل مُعد» و«موفر متاح» و«عملية نجحت»."` | — |
+| [SRC-65551FB29F-L000422](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L422) | 422 | `""` | — |
+| [SRC-65551FB29F-L000423](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L423) | 423 | `"## 23. المرحلة 3: ضبط التشغيل والتعافي"` | — |
+| [SRC-65551FB29F-L000424](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L424) | 424 | `""` | — |
+| [SRC-65551FB29F-L000425](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L425) | 425 | `"المخرجات المشروطة بوجود الحاجة:"` | — |
+| [SRC-65551FB29F-L000426](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L426) | 426 | `"- SLI/SLO مبدئية واقعية."` | — |
+| [SRC-65551FB29F-L000427](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L427) | 427 | `"- مراقبة أخطاء وزمن استجابة وحدود موارد."` | — |
+| [SRC-65551FB29F-L000428](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L428) | 428 | `"- إجراءات استعادة وتراجع."` | — |
+| [SRC-65551FB29F-L000429](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L429) | 429 | `"- سياسة تحديث الاعتماديات والأسرار."` | — |
+| [SRC-65551FB29F-L000430](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L430) | 430 | `"- اختبار النسخ/الاستعادة للبيانات المهمة."` | — |
+| [SRC-65551FB29F-L000431](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L431) | 431 | `"- مراجعة الاستعداد للإنتاج قبل توسيع الجمهور."` | — |
+| [SRC-65551FB29F-L000432](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L432) | 432 | `""` | — |
+| [SRC-65551FB29F-L000433](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L433) | 433 | `"## 24. المرحلة 4: تحسين الأداء والتوسع بالقياس"` | — |
+| [SRC-65551FB29F-L000434](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L434) | 434 | `""` | — |
+| [SRC-65551FB29F-L000435](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L435) | 435 | `"لا تبدأ قبل وجود workload وقياس:"` | — |
+| [SRC-65551FB29F-L000436](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L436) | 436 | `"- قياس نقطة الاختناق."` | — |
+| [SRC-65551FB29F-L000437](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L437) | 437 | `"- تحديد حدود الموارد."` | — |
+| [SRC-65551FB29F-L000438](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L438) | 438 | `"- إزالة التكرار أو تحسين الاستعلامات والمسارات."` | — |
+| [SRC-65551FB29F-L000439](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L439) | 439 | `"- اختبار حمل تدريجي."` | — |
+| [SRC-65551FB29F-L000440](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L440) | 440 | `"- إضافة cache أو queue أو workers فقط عند وجود مسوغ."` | — |
+| [SRC-65551FB29F-L000441](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L441) | 441 | `"- اختبار التزامن وعزل البيانات."` | — |
+| [SRC-65551FB29F-L000442](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L442) | 442 | `"- تقييم الاستضافة وقدرتها الفعلية على تحقيق الهدف."` | — |
+| [SRC-65551FB29F-L000443](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L443) | 443 | `""` | — |
+| [SRC-65551FB29F-L000444](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L444) | 444 | `"## 25. المرحلة 5: نضج الذكاء الاصطناعي"` | — |
+| [SRC-65551FB29F-L000445](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L445) | 445 | `""` | — |
+| [SRC-65551FB29F-L000446](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L446) | 446 | `"المخرجات:"` | — |
+| [SRC-65551FB29F-L000447](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L447) | 447 | `"- مجموعة تقييم عربية مرجعية."` | — |
+| [SRC-65551FB29F-L000448](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L448) | 448 | `"- مقاييس لدعم الادعاءات بالمصادر والرفض الصحيح والتعامل مع التعارض."` | — |
+| [SRC-65551FB29F-L000449](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L449) | 449 | `"- اختبارات prompt injection وإساءة الأدوات."` | — |
+| [SRC-65551FB29F-L000450](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L450) | 450 | `"- تتبع إصدار النموذج والموجهات وتغيرات الموفر."` | — |
+| [SRC-65551FB29F-L000451](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L451) | 451 | `"- مقارنة منظمة قبل تغييرات النموذج أو التخطيط."` | — |
+| [SRC-65551FB29F-L000452](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L452) | 452 | `"- ضوابط جودة وتكلفة وفشل بديل."` | — |
 | [SRC-65551FB29F-L000453](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L453) | 453 | `""` | — |
 | [SRC-65551FB29F-L000454](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L454) | 454 | `"## 26. المرحلة 6: القدرات المؤسسية المشروطة"` | — |
 | [SRC-65551FB29F-L000455](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L455) | 455 | `""` | — |
@@ -771,57 +825,3 @@
 | [SRC-0F910493E8-L000621](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L621) | 621 | `""` | — |
 | [SRC-0F910493E8-L000622](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L622) | 622 | `"يجب أن تكون بوابة الأدوات (Tool Broker / Execution Gateway) نقطة إنفاذ واضحة يمكن اختبارها، سواء نفذت كوحدة داخل التطبيق أو كمكوّن منفصل. لا يستدعي النموذج أدوات التنفيذ مباشرة."` | — |
 | [SRC-0F910493E8-L000623](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L623) | 623 | `""` | — |
-| [SRC-0F910493E8-L000624](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L624) | 624 | `"قبل كل استدعاء:"` | — |
-| [SRC-0F910493E8-L000625](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L625) | 625 | `"1. تحقق من هوية الطلب ونطاقه."` | — |
-| [SRC-0F910493E8-L000626](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L626) | 626 | `"2. تحقق من تسجيل الأداة وإصدارها وحالة إتاحتها."` | — |
-| [SRC-0F910493E8-L000627](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L627) | 627 | `"3. تحقق من صلاحية العملية على موردها المحدد."` | — |
-| [SRC-0F910493E8-L000628](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L628) | 628 | `"4. تحقق من صحة المخطط والأنواع والقيم والأحجام."` | — |
-| [SRC-0F910493E8-L000629](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L629) | 629 | `"5. تحقق من الميزانية والوقت والتزامن والحد الأقصى للخطوات."` | — |
-| [SRC-0F910493E8-L000630](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L630) | 630 | `"6. حدد هل الأداة قراءة فقط أم ذات أثر خارجي."` | — |
-| [SRC-0F910493E8-L000631](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L631) | 631 | `"7. اطلب تأكيدًا بشريًا حيث تتطلب السياسة ذلك."` | — |
-| [SRC-0F910493E8-L000632](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L632) | 632 | `"8. نفّذ عبر Adapter محدود."` | — |
-| [SRC-0F910493E8-L000633](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L633) | 633 | `"9. تحقق من النتيجة الفعلية للأداة."` | — |
-| [SRC-0F910493E8-L000634](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L634) | 634 | `"10. سجّل القرار والنتيجة دون أسرار."` | — |
-| [SRC-0F910493E8-L000635](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L635) | 635 | `""` | — |
-| [SRC-0F910493E8-L000636](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L636) | 636 | `"إذا استخدمت البنية رموز قدرات داخلية (capability tokens)، فلتكن قصيرة العمر، ومقيدة بالأداة والفعل والمورد والمهمة، وغير مكشوفة للنموذج أو المستخدم، وقابلة للإبطال، ولا تمنح سلطة لتوسيع نفسها. لا يلزم اعتماد بنية رموز منفصلة إذا كان التفويض داخل العملية أوضح وأقل تعقيدًا؛ المطلوب هو إنفاذ الصلاحية، لا إضافة تقنية شكلية."` | — |
-| [SRC-0F910493E8-L000637](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L637) | 637 | `""` | — |
-| [SRC-0F910493E8-L000638](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L638) | 638 | `"لا تُستخدم أوامر shell عامة أو eval أو exec أو استيراد ديناميكي أو عناوين/أسماء أدوات يولدها النموذج دون تحقق. لا تُبنى الأسماء أو الاستعلامات أو أوامر الملفات بسلاسل غير آمنة؛ استخدم واجهات محددة وتمرير وسائط ومخططات صريحة."` | — |
-| [SRC-0F910493E8-L000639](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L639) | 639 | `""` | — |
-| [SRC-0F910493E8-L000640](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L640) | 640 | `"## 17.7 مقاومة حقن التعليمات وإساءة استخدام النموذج"` | — |
-| [SRC-0F910493E8-L000641](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L641) | 641 | `""` | — |
-| [SRC-0F910493E8-L000642](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L642) | 642 | `"لا يُفترض أن النموذج سيقاوم كل محاولة حقن تعليمات. يجب أن يبقى ضرر النجاح في خداعه محدودًا بالتصميم."` | — |
-| [SRC-0F910493E8-L000643](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L643) | 643 | `""` | — |
-| [SRC-0F910493E8-L000644](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L644) | 644 | `"الضوابط:"` | — |
-| [SRC-0F910493E8-L000645](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L645) | 645 | `"- فصل تعليمات النظام والسياسة عن طلب المستخدم وعن المحتوى الخارجي وعن نتائج الأدوات في تمثيل الرسائل والبيانات."` | — |
-| [SRC-0F910493E8-L000646](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L646) | 646 | `"- وسم النص المسترجع والمرفقات على أنها بيانات غير موثوقة؛ لا تمنحها سلطة إصدار أوامر."` | — |
-| [SRC-0F910493E8-L000647](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L647) | 647 | `"- لا يتخذ المحتوى الخارجي قرار تفويض ولا يغير أداة أو نطاقًا أو ميزانية."` | — |
-| [SRC-0F910493E8-L000648](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L648) | 648 | `"- لا يسمح للنموذج بإرسال أسرار أو محتوى حساس إلى رابط أو موفر لمجرد أن صفحة طلبت ذلك."` | — |
-| [SRC-0F910493E8-L000649](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L649) | 649 | `"- خطط LLM ومخرجاته هياكل بيانات غير موثوقة. تطبق عليها schema وallowlist وقواعد مجال وحدود عددية قبل التنفيذ."` | — |
-| [SRC-0F910493E8-L000650](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L650) | 650 | `"- لا تمر الأداة الحساسة اعتمادًا على نية استنتجها النموذج وحده إذا كانت العملية تحتاج إلى موافقة واضحة."` | — |
-| [SRC-0F910493E8-L000651](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L651) | 651 | `"- تعامل مع سياق المحادثة والذاكرة السابقة كمدخل قد يكون مزورًا أو مسمومًا؛ لا تجعل رسالة assistant المرسلة من العميل تتمتع بسلطة نظام."` | — |
-| [SRC-0F910493E8-L000652](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L652) | 652 | `"- افصل نموذج قراءة المحتوى غير الموثوق عن القدرة على تنفيذ الأدوات حيث يبرر الخطر ذلك. وإذا تعذر الفصل، فعوضه بقيود تنفيذ أشد واختبارات واضحة."` | — |
-| [SRC-0F910493E8-L000653](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L653) | 653 | `"- اختبر هجمات التعليمات المباشرة وغير المباشرة، وتعليمات استخراج الأسرار، وتغيير الهدف، ومحاولات طلب أدوات غير مسموحة، وتسميم الذاكرة."` | — |
-| [SRC-0F910493E8-L000654](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L654) | 654 | `"- لا تستخدم «فلتر كلمات» أو System Prompt وحده باعتباره دفاعًا كاملًا."` | — |
-| [SRC-0F910493E8-L000655](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L655) | 655 | `""` | — |
-| [SRC-0F910493E8-L000656](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L656) | 656 | `"## 17.8 البحث والشبكة وSSRF وDNS rebinding"` | — |
-| [SRC-0F910493E8-L000657](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L657) | 657 | `""` | — |
-| [SRC-0F910493E8-L000658](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L658) | 658 | `"جلب الصفحات أحد أبرز حدود الخطر لأن URL قد يتحكم فيه المستخدم أو المصدر أو النموذج."` | — |
-| [SRC-0F910493E8-L000659](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L659) | 659 | `""` | — |
-| [SRC-0F910493E8-L000660](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L660) | 660 | `"الحد الأدنى:"` | — |
-| [SRC-0F910493E8-L000661](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L661) | 661 | `"- قبول بروتوكولات معلومة فقط (HTTP/HTTPS بحسب الحاجة)، ورفض المخططات غير المطلوبة وصيغ URL الملتبسة وuserinfo غير اللازم والمنافذ غير المعتمدة."` | — |
-| [SRC-0F910493E8-L000662](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L662) | 662 | `"- فحص DNS والتحقق من كل عنوان IPv4 وIPv6 الناتج؛ حظر loopback وprivate وlink-local وmulticast وreserved وmetadata addresses والتمثيلات الملتبسة."` | — |
-| [SRC-0F910493E8-L000663](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L663) | 663 | `"- منع DNS rebinding وفرق الوقت بين التحقق والاتصال حيث تسمح المكتبات والبنية بذلك، وربط الاتصال بعنوان جرى التحقق منه أو استخدام شبكة خروج وسيطة موثوقة."` | — |
-| [SRC-0F910493E8-L000664](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L664) | 664 | `"- التحقق من الوجهة بعد كل redirect، وتحديد عدد التحويلات؛ لا يكفي فحص الرابط الأول."` | — |
-| [SRC-0F910493E8-L000665](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L665) | 665 | `"- عدم اتباع إعدادات proxy غير موثوقة بصمت لتجاوز حدود الشبكة؛ توثق سياسة proxy وتختبر."` | — |
-| [SRC-0F910493E8-L000666](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L666) | 666 | `"- ضبط timeout وconnection timeout وread timeout وعمق التحويل وعدد الطلبات والتزامن والحد الأعلى للبيانات بعد فك الضغط."` | — |
-| [SRC-0F910493E8-L000667](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L667) | 667 | `"- فرض allowlist للدومينات عندما تكون المهمة معروفة والمجال محدودًا. ولا تعني allowlist المفتوحة لجميع الإنترنت عدم الحاجة إلى فحوص SSRF."` | — |
-| [SRC-0F910493E8-L000668](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L668) | 668 | `"- رفض الوصول إلى file:// وlocalhost وخدمات الشبكة الداخلية وقواعد البيانات وmetadata الخاصة بالاستضافة."` | — |
-| [SRC-0F910493E8-L000669](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L669) | 669 | `"- التحقق من نوع المحتوى والحجم والترميز؛ وعدم فك ملفات مضغوطة أو مستندات معقدة بلا حدود موارد."` | — |
-| [SRC-0F910493E8-L000670](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L670) | 670 | `"- لا ترسل Cookies أو جلسات المستخدم أو رؤوسًا حساسة لمصدر خارجي."` | — |
-| [SRC-0F910493E8-L000671](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L671) | 671 | `"- تعامل مع كل محتوى جالب على أنه غير موثوق، ولا تنفذ HTML أو JavaScript أو ماكروهات أو أوامر مضمنة."` | — |
-| [SRC-0F910493E8-L000672](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L672) | 672 | `"- اختبارات SSRF تجرى في بيئة محلية/اختبارية مضبوطة، تشمل redirect إلى عنوان محظور وIPv6 وDNS متغيرًا وحدود الحجم والمهلة؛ لا تجرّب على أهداف خارجية غير مصرح بها."` | — |
-| [SRC-0F910493E8-L000673](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L673) | 673 | `""` | — |
-| [SRC-0F910493E8-L000674](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L674) | 674 | `"إذا لم يمكن ضمان فحص عنوان الاتصال الفعلي بسبب حدود مكتبة أو استضافة، سجّل ذلك بوضوح، وقلّص وجهات الجلب أو عطّل الجلب المباشر عند الحاجة."` | — |
-| [SRC-0F910493E8-L000675](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L675) | 675 | `""` | — |
-| [SRC-0F910493E8-L000676](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L676) | 676 | `"## 17.9 حماية API والويب والمتصفح"` | — |
-| [SRC-0F910493E8-L000677](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L677) | 677 | `""` | — |

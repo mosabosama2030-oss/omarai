@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000091 إلى SRC-F725E90B2A-L000593
+- النطاق: SRC-AFEDC2645A-L000037 إلى SRC-F725E90B2A-L000539
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000037](../../tests/test_task_understanding.py#L37) | 37 | `"    assert \"2022\" in constraints[\"explicit_years\"]"` | — |
+| [SRC-AFEDC2645A-L000038](../../tests/test_task_understanding.py#L38) | 38 | `"    assert \"مصر\" in constraints[\"explicit_locations\"]"` | — |
+| [SRC-AFEDC2645A-L000039](../../tests/test_task_understanding.py#L39) | 39 | `"    assert constraints[\"explicit_budgets\"]"` | — |
+| [SRC-AFEDC2645A-L000040](../../tests/test_task_understanding.py#L40) | 40 | `"    assert constraints[\"language_profile\"] in {\"ar\", \"mixed\"}"` | — |
+| [SRC-AFEDC2645A-L000041](../../tests/test_task_understanding.py#L41) | 41 | `""` | — |
+| [SRC-AFEDC2645A-L000042](../../tests/test_task_understanding.py#L42) | 42 | `""` | — |
+| [SRC-AFEDC2645A-L000043](../../tests/test_task_understanding.py#L43) | 43 | `"def test_latest_mode_requires_current_evidence_for_stateful_facts():"` | — |
+| [SRC-AFEDC2645A-L000044](../../tests/test_task_understanding.py#L44) | 44 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000045](../../tests/test_task_understanding.py#L45) | 45 | `"        \"مواعيد عمل مكتب الجوازات اليوم\","` | — |
+| [SRC-AFEDC2645A-L000046](../../tests/test_task_understanding.py#L46) | 46 | `"        mode=\"latest\","` | — |
+| [SRC-AFEDC2645A-L000047](../../tests/test_task_understanding.py#L47) | 47 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-AFEDC2645A-L000048](../../tests/test_task_understanding.py#L48) | 48 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000049](../../tests/test_task_understanding.py#L49) | 49 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is True"` | — |
+| [SRC-AFEDC2645A-L000050](../../tests/test_task_understanding.py#L50) | 50 | `"    assert \"page_text_successfully_read\" in spec[\"evidence_requirements\"]"` | — |
+| [SRC-AFEDC2645A-L000051](../../tests/test_task_understanding.py#L51) | 51 | `"    assert \"date_check\" in spec[\"query_strategies\"]"` | — |
+| [SRC-AFEDC2645A-L000052](../../tests/test_task_understanding.py#L52) | 52 | `""` | — |
+| [SRC-AFEDC2645A-L000053](../../tests/test_task_understanding.py#L53) | 53 | `""` | — |
+| [SRC-AFEDC2645A-L000054](../../tests/test_task_understanding.py#L54) | 54 | `"def test_official_site_navigation_is_not_misclassified_as_current_news():"` | — |
+| [SRC-AFEDC2645A-L000055](../../tests/test_task_understanding.py#L55) | 55 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000056](../../tests/test_task_understanding.py#L56) | 56 | `"        \"ابحث عن الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
+| [SRC-AFEDC2645A-L000057](../../tests/test_task_understanding.py#L57) | 57 | `"        mode=\"latest\","` | — |
+| [SRC-AFEDC2645A-L000058](../../tests/test_task_understanding.py#L58) | 58 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-AFEDC2645A-L000059](../../tests/test_task_understanding.py#L59) | 59 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000060](../../tests/test_task_understanding.py#L60) | 60 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
+| [SRC-AFEDC2645A-L000061](../../tests/test_task_understanding.py#L61) | 61 | `"    assert spec[\"constraints\"][\"official_site_required\"] is True"` | — |
+| [SRC-AFEDC2645A-L000062](../../tests/test_task_understanding.py#L62) | 62 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is False"` | — |
+| [SRC-AFEDC2645A-L000063](../../tests/test_task_understanding.py#L63) | 63 | `""` | — |
+| [SRC-AFEDC2645A-L000064](../../tests/test_task_understanding.py#L64) | 64 | `""` | — |
+| [SRC-AFEDC2645A-L000065](../../tests/test_task_understanding.py#L65) | 65 | `"def test_social_request_separates_experience_from_truth_verification():"` | — |
+| [SRC-AFEDC2645A-L000066](../../tests/test_task_understanding.py#L66) | 66 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000067](../../tests/test_task_understanding.py#L67) | 67 | `"        \"أريد آراء وتجارب ملاك نيسان صني 2022 في مصر\","` | — |
+| [SRC-AFEDC2645A-L000068](../../tests/test_task_understanding.py#L68) | 68 | `"        mode=\"social\","` | — |
+| [SRC-AFEDC2645A-L000069](../../tests/test_task_understanding.py#L69) | 69 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-AFEDC2645A-L000070](../../tests/test_task_understanding.py#L70) | 70 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000071](../../tests/test_task_understanding.py#L71) | 71 | `"    assert spec[\"constraints\"][\"social_evidence_requested\"] is True"` | — |
+| [SRC-AFEDC2645A-L000072](../../tests/test_task_understanding.py#L72) | 72 | `"    assert \"heuristic_classification_is_not_identity_or_truth_verification\" in spec[\"evidence_requirements\"]"` | — |
+| [SRC-AFEDC2645A-L000073](../../tests/test_task_understanding.py#L73) | 73 | `"    assert \"personal_experience\" in spec[\"query_strategies\"]"` | — |
+| [SRC-AFEDC2645A-L000074](../../tests/test_task_understanding.py#L74) | 74 | `""` | — |
+| [SRC-AFEDC2645A-L000075](../../tests/test_task_understanding.py#L75) | 75 | `""` | — |
+| [SRC-AFEDC2645A-L000076](../../tests/test_task_understanding.py#L76) | 76 | `"def test_ambiguous_followup_is_not_reported_as_a_confident_interpretation():"` | — |
+| [SRC-AFEDC2645A-L000077](../../tests/test_task_understanding.py#L77) | 77 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000078](../../tests/test_task_understanding.py#L78) | 78 | `"        \"كام سعرها؟\","` | — |
+| [SRC-AFEDC2645A-L000079](../../tests/test_task_understanding.py#L79) | 79 | `"        mode=\"auto\","` | — |
+| [SRC-AFEDC2645A-L000080](../../tests/test_task_understanding.py#L80) | 80 | `"        intent_route=\"CLARIFY\","` | — |
+| [SRC-AFEDC2645A-L000081](../../tests/test_task_understanding.py#L81) | 81 | `"        dialogue_context={\"needs_clarification\": True},"` | — |
+| [SRC-AFEDC2645A-L000082](../../tests/test_task_understanding.py#L82) | 82 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000083](../../tests/test_task_understanding.py#L83) | 83 | `"    assert spec[\"task_family\"] == \"ambiguous_or_incomplete\""` | — |
+| [SRC-AFEDC2645A-L000084](../../tests/test_task_understanding.py#L84) | 84 | `"    assert spec[\"ambiguity_status\"] == \"needs_clarification\""` | — |
+| [SRC-AFEDC2645A-L000085](../../tests/test_task_understanding.py#L85) | 85 | `""` | — |
+| [SRC-AFEDC2645A-L000086](../../tests/test_task_understanding.py#L86) | 86 | `""` | — |
+| [SRC-AFEDC2645A-L000087](../../tests/test_task_understanding.py#L87) | 87 | `"def test_query_strategy_matrix_is_bounded_deduplicated_and_topic_anchored():"` | — |
+| [SRC-AFEDC2645A-L000088](../../tests/test_task_understanding.py#L88) | 88 | `"    question = \"قارن السيارات الكهربائية في مصر من حيث السعر والضمان\""` | — |
+| [SRC-AFEDC2645A-L000089](../../tests/test_task_understanding.py#L89) | 89 | `"    spec = build_task_spec(question, mode=\"deep\", intent_route=\"WEB_DEEP\")"` | — |
+| [SRC-AFEDC2645A-L000090](../../tests/test_task_understanding.py#L90) | 90 | `"    existing = [\"السيارات الكهربائية في مصر\"] + ["` | — |
 | [SRC-AFEDC2645A-L000091](../../tests/test_task_understanding.py#L91) | 91 | `"        f\"السيارات الكهربائية في مصر بديل عام {i}\" for i in range(1, 9)"` | — |
 | [SRC-AFEDC2645A-L000092](../../tests/test_task_understanding.py#L92) | 92 | `"    ]"` | — |
 | [SRC-AFEDC2645A-L000093](../../tests/test_task_understanding.py#L93) | 93 | `"    rows = build_query_strategy_matrix(question, spec, existing, limit=6)"` | — |
@@ -771,57 +825,3 @@
 | [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"            return FakeResponse({\"data\": [{"` | — |
 | [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `"                \"permalink\": \"https://www.instagram.com/p/ABC123/\","` | — |
 | [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"                \"caption\": \"Owner shared an electric car review\","` | — |
-| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"                \"media_type\": \"IMAGE\","` | — |
-| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
-| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"                \"like_count\": 17,"` | — |
-| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"                \"comments_count\": 4,"` | — |
-| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"            }]})"` | — |
-| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
-| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `""` | — |
-| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"    )"` | — |
-| [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
-| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
-| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
-| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
-| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
-| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    assert \"test-ig-token\" not in str(results)"` | — |
-| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `""` | — |
-| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `""` | — |
-| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"    monkeypatch.delenv(\"INSTAGRAM_USER_ID\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"    monkeypatch.delenv(\"INSTAGRAM_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"        \"تجارب عامة على Instagram\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `"    )"` | — |
-| [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `"    assert results == []"` | — |
-| [SRC-F725E90B2A-L000568](../../tests/test_web_agent.py#L568) | 568 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
-| [SRC-F725E90B2A-L000569](../../tests/test_web_agent.py#L569) | 569 | `""` | — |
-| [SRC-F725E90B2A-L000570](../../tests/test_web_agent.py#L570) | 570 | `""` | — |
-| [SRC-F725E90B2A-L000571](../../tests/test_web_agent.py#L571) | 571 | `"def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000572](../../tests/test_web_agent.py#L572) | 572 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000573](../../tests/test_web_agent.py#L573) | 573 | `""` | — |
-| [SRC-F725E90B2A-L000574](../../tests/test_web_agent.py#L574) | 574 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"test-page-token\")"` | — |
-| [SRC-F725E90B2A-L000575](../../tests/test_web_agent.py#L575) | 575 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_IDS\", \"page-1,page-2\")"` | — |
-| [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `""` | — |
-| [SRC-F725E90B2A-L000577](../../tests/test_web_agent.py#L577) | 577 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000578](../../tests/test_web_agent.py#L578) | 578 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000579](../../tests/test_web_agent.py#L579) | 579 | `""` | — |
-| [SRC-F725E90B2A-L000580](../../tests/test_web_agent.py#L580) | 580 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000581](../../tests/test_web_agent.py#L581) | 581 | `"            return {\"data\": [{"` | — |
-| [SRC-F725E90B2A-L000582](../../tests/test_web_agent.py#L582) | 582 | `"                \"message\": \"Electric car owners looking for charging advice\","` | — |
-| [SRC-F725E90B2A-L000583](../../tests/test_web_agent.py#L583) | 583 | `"                \"permalink_url\": \"https://www.facebook.com/example/posts/123\","` | — |
-| [SRC-F725E90B2A-L000584](../../tests/test_web_agent.py#L584) | 584 | `"                \"created_time\": \"2026-10-12T12:00:00+0000\","` | — |
-| [SRC-F725E90B2A-L000585](../../tests/test_web_agent.py#L585) | 585 | `"                \"comments\": {\"data\": ["` | — |
-| [SRC-F725E90B2A-L000586](../../tests/test_web_agent.py#L586) | 586 | `"                    {\"message\": \"What is the current price?\", \"like_count\": 3}"` | — |
-| [SRC-F725E90B2A-L000587](../../tests/test_web_agent.py#L587) | 587 | `"                ]},"` | — |
-| [SRC-F725E90B2A-L000588](../../tests/test_web_agent.py#L588) | 588 | `"            }]}"` | — |
-| [SRC-F725E90B2A-L000589](../../tests/test_web_agent.py#L589) | 589 | `""` | — |
-| [SRC-F725E90B2A-L000590](../../tests/test_web_agent.py#L590) | 590 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000591](../../tests/test_web_agent.py#L591) | 591 | `""` | — |
-| [SRC-F725E90B2A-L000592](../../tests/test_web_agent.py#L592) | 592 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000593](../../tests/test_web_agent.py#L593) | 593 | `"        calls.append((url, kwargs))"` | — |

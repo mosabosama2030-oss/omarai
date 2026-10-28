@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003065 إلى SRC-1AE03B9EC3-L003864
+- النطاق: SRC-1AE03B9EC3-L003011 إلى SRC-1AE03B9EC3-L003810
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003011](../../agents/web_agent.py#L3011) | 3011 | `"        last_error: RuntimeError \| None = None"` | — |
+| [SRC-1AE03B9EC3-L003012](../../agents/web_agent.py#L3012) | 3012 | `"        for candidate_model in model_candidates:"` | — |
+| [SRC-1AE03B9EC3-L003013](../../agents/web_agent.py#L3013) | 3013 | `"            budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L003014](../../agents/web_agent.py#L3014) | 3014 | `"            use_web_search = enable_web_search and self.openrouter_web_search_enabled"` | — |
+| [SRC-1AE03B9EC3-L003015](../../agents/web_agent.py#L3015) | 3015 | `"            if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L003016](../../agents/web_agent.py#L3016) | 3016 | `"                try:"` | — |
+| [SRC-1AE03B9EC3-L003017](../../agents/web_agent.py#L3017) | 3017 | `"                    budget.reserve(\"model_calls\")"` | — |
+| [SRC-1AE03B9EC3-L003018](../../agents/web_agent.py#L3018) | 3018 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
+| [SRC-1AE03B9EC3-L003019](../../agents/web_agent.py#L3019) | 3019 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
+| [SRC-1AE03B9EC3-L003020](../../agents/web_agent.py#L3020) | 3020 | `"                        # The model may still answer, but the optional server-side search"` | — |
+| [SRC-1AE03B9EC3-L003021](../../agents/web_agent.py#L3021) | 3021 | `"                        # tool is disabled when its separate budget is unavailable."` | — |
+| [SRC-1AE03B9EC3-L003022](../../agents/web_agent.py#L3022) | 3022 | `"                        use_web_search = False"` | — |
+| [SRC-1AE03B9EC3-L003023](../../agents/web_agent.py#L3023) | 3023 | `"                    elif use_web_search:"` | — |
+| [SRC-1AE03B9EC3-L003024](../../agents/web_agent.py#L3024) | 3024 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |
+| [SRC-1AE03B9EC3-L003025](../../agents/web_agent.py#L3025) | 3025 | `"                        budget.reserve(\"tool_calls\", amount=3)"` | — |
+| [SRC-1AE03B9EC3-L003026](../../agents/web_agent.py#L3026) | 3026 | `"                except RequestBudgetExceeded as exc:"` | — |
+| [SRC-1AE03B9EC3-L003027](../../agents/web_agent.py#L3027) | 3027 | `"                    self._record_generation_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L003028](../../agents/web_agent.py#L3028) | 3028 | `"                        requested_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L003029](../../agents/web_agent.py#L3029) | 3029 | `"                        attempted_model=candidate_model,"` | — |
+| [SRC-1AE03B9EC3-L003030](../../agents/web_agent.py#L3030) | 3030 | `"                        status=\"budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L003031](../../agents/web_agent.py#L3031) | 3031 | `"                        error_class=type(exc).__name__,"` | — |
+| [SRC-1AE03B9EC3-L003032](../../agents/web_agent.py#L3032) | 3032 | `"                        request_started=False,"` | — |
+| [SRC-1AE03B9EC3-L003033](../../agents/web_agent.py#L3033) | 3033 | `"                        remote_response_received=False,"` | — |
+| [SRC-1AE03B9EC3-L003034](../../agents/web_agent.py#L3034) | 3034 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L003035](../../agents/web_agent.py#L3035) | 3035 | `"                    raise"` | — |
+| [SRC-1AE03B9EC3-L003036](../../agents/web_agent.py#L3036) | 3036 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L003037](../../agents/web_agent.py#L3037) | 3037 | `"                request_timeout = timeout or self.timeout"` | — |
+| [SRC-1AE03B9EC3-L003038](../../agents/web_agent.py#L3038) | 3038 | `"            request_payload: dict[str, Any] = {"` | — |
+| [SRC-1AE03B9EC3-L003039](../../agents/web_agent.py#L3039) | 3039 | `"                \"model\": candidate_model,"` | — |
+| [SRC-1AE03B9EC3-L003040](../../agents/web_agent.py#L3040) | 3040 | `"                \"messages\": messages,"` | — |
+| [SRC-1AE03B9EC3-L003041](../../agents/web_agent.py#L3041) | 3041 | `"                \"temperature\": temperature,"` | — |
+| [SRC-1AE03B9EC3-L003042](../../agents/web_agent.py#L3042) | 3042 | `"                \"max_tokens\": max(100, min(int(max_tokens), 3000)),"` | — |
+| [SRC-1AE03B9EC3-L003043](../../agents/web_agent.py#L3043) | 3043 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003044](../../agents/web_agent.py#L3044) | 3044 | `"            if use_web_search:"` | — |
+| [SRC-1AE03B9EC3-L003045](../../agents/web_agent.py#L3045) | 3045 | `"                # OpenRouter executes these searches server-side and returns URL citations."` | — |
+| [SRC-1AE03B9EC3-L003046](../../agents/web_agent.py#L3046) | 3046 | `"                # This is opt-in because provider search incurs usage charges."` | — |
+| [SRC-1AE03B9EC3-L003047](../../agents/web_agent.py#L3047) | 3047 | `"                request_payload[\"tools\"] = [{"` | — |
+| [SRC-1AE03B9EC3-L003048](../../agents/web_agent.py#L3048) | 3048 | `"                    \"type\": \"openrouter:web_search\","` | — |
+| [SRC-1AE03B9EC3-L003049](../../agents/web_agent.py#L3049) | 3049 | `"                    \"parameters\": {"` | — |
+| [SRC-1AE03B9EC3-L003050](../../agents/web_agent.py#L3050) | 3050 | `"                        \"engine\": \"auto\","` | — |
+| [SRC-1AE03B9EC3-L003051](../../agents/web_agent.py#L3051) | 3051 | `"                        \"max_results\": 5,"` | — |
+| [SRC-1AE03B9EC3-L003052](../../agents/web_agent.py#L3052) | 3052 | `"                        \"max_total_results\": 12,"` | — |
+| [SRC-1AE03B9EC3-L003053](../../agents/web_agent.py#L3053) | 3053 | `"                        \"max_uses\": 3,"` | — |
+| [SRC-1AE03B9EC3-L003054](../../agents/web_agent.py#L3054) | 3054 | `"                        \"search_context_size\": \"medium\","` | — |
+| [SRC-1AE03B9EC3-L003055](../../agents/web_agent.py#L3055) | 3055 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L003056](../../agents/web_agent.py#L3056) | 3056 | `"                }]"` | — |
+| [SRC-1AE03B9EC3-L003057](../../agents/web_agent.py#L3057) | 3057 | `"                request_payload[\"max_tool_calls\"] = 5"` | — |
+| [SRC-1AE03B9EC3-L003058](../../agents/web_agent.py#L3058) | 3058 | `"            payload = json.dumps(request_payload, ensure_ascii=False).encode(\"utf-8\")"` | — |
+| [SRC-1AE03B9EC3-L003059](../../agents/web_agent.py#L3059) | 3059 | `"            request = urllib.request.Request("` | — |
+| [SRC-1AE03B9EC3-L003060](../../agents/web_agent.py#L3060) | 3060 | `"                self.base_url + \"/chat/completions\","` | — |
+| [SRC-1AE03B9EC3-L003061](../../agents/web_agent.py#L3061) | 3061 | `"                data=payload,"` | — |
+| [SRC-1AE03B9EC3-L003062](../../agents/web_agent.py#L3062) | 3062 | `"                headers={"` | — |
+| [SRC-1AE03B9EC3-L003063](../../agents/web_agent.py#L3063) | 3063 | `"                    \"Authorization\": \"Bearer \" + self.api_key,"` | — |
+| [SRC-1AE03B9EC3-L003064](../../agents/web_agent.py#L3064) | 3064 | `"                    \"Content-Type\": \"application/json\","` | — |
 | [SRC-1AE03B9EC3-L003065](../../agents/web_agent.py#L3065) | 3065 | `"                    \"HTTP-Referer\": \"https://github.com/mosabosama2030-oss/omarai\","` | — |
 | [SRC-1AE03B9EC3-L003066](../../agents/web_agent.py#L3066) | 3066 | `"                    \"X-Title\": \"Omarai Web Agent\","` | — |
 | [SRC-1AE03B9EC3-L003067](../../agents/web_agent.py#L3067) | 3067 | `"                },"` | — |
@@ -762,57 +816,3 @@
 | [SRC-1AE03B9EC3-L003808](../../agents/web_agent.py#L3808) | 3808 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L003809](../../agents/web_agent.py#L3809) | 3809 | `"    def _remove_invalid_citations(answer: str, source_count: int) -> tuple[str, list[str]]:"` | — |
 | [SRC-1AE03B9EC3-L003810](../../agents/web_agent.py#L3810) | 3810 | `"        \"\"\"Remove citation labels that point outside the exact source list sent to the model.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003811](../../agents/web_agent.py#L3811) | 3811 | `"        warnings: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003812](../../agents/web_agent.py#L3812) | 3812 | `""` | — |
-| [SRC-1AE03B9EC3-L003813](../../agents/web_agent.py#L3813) | 3813 | `"        def replace(match: re.Match[str]) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003814](../../agents/web_agent.py#L3814) | 3814 | `"            number = int(match.group(1))"` | — |
-| [SRC-1AE03B9EC3-L003815](../../agents/web_agent.py#L3815) | 3815 | `"            if 1 <= number <= source_count:"` | — |
-| [SRC-1AE03B9EC3-L003816](../../agents/web_agent.py#L3816) | 3816 | `"                return match.group(0)"` | — |
-| [SRC-1AE03B9EC3-L003817](../../agents/web_agent.py#L3817) | 3817 | `"            warnings.append(f\"حُذف استشهاد غير صالح إلى المصدر {number}.\")"` | — |
-| [SRC-1AE03B9EC3-L003818](../../agents/web_agent.py#L3818) | 3818 | `"            return \"\""` | — |
-| [SRC-1AE03B9EC3-L003819](../../agents/web_agent.py#L3819) | 3819 | `""` | — |
-| [SRC-1AE03B9EC3-L003820](../../agents/web_agent.py#L3820) | 3820 | `"        clean_answer = re.sub(r\"\\[المصدر\\s+(\\d+)\\]\", replace, answer)"` | — |
-| [SRC-1AE03B9EC3-L003821](../../agents/web_agent.py#L3821) | 3821 | `"        return clean_answer, warnings"` | — |
-| [SRC-1AE03B9EC3-L003822](../../agents/web_agent.py#L3822) | 3822 | `""` | — |
-| [SRC-1AE03B9EC3-L003823](../../agents/web_agent.py#L3823) | 3823 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L003824](../../agents/web_agent.py#L3824) | 3824 | `"    def _citation_validation_metadata("` | — |
-| [SRC-1AE03B9EC3-L003825](../../agents/web_agent.py#L3825) | 3825 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L003826](../../agents/web_agent.py#L3826) | 3826 | `"        source_count: int,"` | — |
-| [SRC-1AE03B9EC3-L003827](../../agents/web_agent.py#L3827) | 3827 | `"        citation_warnings: list[str],"` | — |
-| [SRC-1AE03B9EC3-L003828](../../agents/web_agent.py#L3828) | 3828 | `"        review_status: str,"` | — |
-| [SRC-1AE03B9EC3-L003829](../../agents/web_agent.py#L3829) | 3829 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003830](../../agents/web_agent.py#L3830) | 3830 | `"        \"\"\"Report the scope of citation checks without claiming semantic fact verification.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003831](../../agents/web_agent.py#L3831) | 3831 | `"        citation_count = len(re.findall(r\"\\[المصدر\\s+\\d+\\]\", answer))"` | — |
-| [SRC-1AE03B9EC3-L003832](../../agents/web_agent.py#L3832) | 3832 | `"        max_citable_source_index = max("` | — |
-| [SRC-1AE03B9EC3-L003833](../../agents/web_agent.py#L3833) | 3833 | `"            0, min(MAX_LLM_CITED_SOURCES, int(source_count))"` | — |
-| [SRC-1AE03B9EC3-L003834](../../agents/web_agent.py#L3834) | 3834 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003835](../../agents/web_agent.py#L3835) | 3835 | `"        if citation_warnings:"` | — |
-| [SRC-1AE03B9EC3-L003836](../../agents/web_agent.py#L3836) | 3836 | `"            status = \"invalid_index_references_removed\""` | — |
-| [SRC-1AE03B9EC3-L003837](../../agents/web_agent.py#L3837) | 3837 | `"        elif citation_count:"` | — |
-| [SRC-1AE03B9EC3-L003838](../../agents/web_agent.py#L3838) | 3838 | `"            status = \"index_range_check_passed\""` | — |
-| [SRC-1AE03B9EC3-L003839](../../agents/web_agent.py#L3839) | 3839 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L003840](../../agents/web_agent.py#L3840) | 3840 | `"            status = \"no_citation_markers_present\""` | — |
-| [SRC-1AE03B9EC3-L003841](../../agents/web_agent.py#L3841) | 3841 | `"        return {"` | — |
-| [SRC-1AE03B9EC3-L003842](../../agents/web_agent.py#L3842) | 3842 | `"            \"method\": \"numeric_source_index_range_only\","` | — |
-| [SRC-1AE03B9EC3-L003843](../../agents/web_agent.py#L3843) | 3843 | `"            \"status\": status,"` | — |
-| [SRC-1AE03B9EC3-L003844](../../agents/web_agent.py#L3844) | 3844 | `"            \"valid_citation_count\": citation_count,"` | — |
-| [SRC-1AE03B9EC3-L003845](../../agents/web_agent.py#L3845) | 3845 | `"            \"invalid_references_removed\": len(citation_warnings),"` | — |
-| [SRC-1AE03B9EC3-L003846](../../agents/web_agent.py#L3846) | 3846 | `"            \"max_citable_source_index\": max_citable_source_index,"` | — |
-| [SRC-1AE03B9EC3-L003847](../../agents/web_agent.py#L3847) | 3847 | `"            \"claim_support\": ("` | — |
-| [SRC-1AE03B9EC3-L003848](../../agents/web_agent.py#L3848) | 3848 | `"                \"model_review_not_independent_fact_check\""` | — |
-| [SRC-1AE03B9EC3-L003849](../../agents/web_agent.py#L3849) | 3849 | `"                if review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L003850](../../agents/web_agent.py#L3850) | 3850 | `"                else \"not_verified\""` | — |
-| [SRC-1AE03B9EC3-L003851](../../agents/web_agent.py#L3851) | 3851 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L003852](../../agents/web_agent.py#L3852) | 3852 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L003853](../../agents/web_agent.py#L3853) | 3853 | `""` | — |
-| [SRC-1AE03B9EC3-L003854](../../agents/web_agent.py#L3854) | 3854 | `"    def diagnostics("` | — |
-| [SRC-1AE03B9EC3-L003855](../../agents/web_agent.py#L3855) | 3855 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003856](../../agents/web_agent.py#L3856) | 3856 | `"        test_model: bool = True,"` | — |
-| [SRC-1AE03B9EC3-L003857](../../agents/web_agent.py#L3857) | 3857 | `"        test_social: bool = False,"` | — |
-| [SRC-1AE03B9EC3-L003858](../../agents/web_agent.py#L3858) | 3858 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003859](../../agents/web_agent.py#L3859) | 3859 | `"        \"\"\"Run explicit live checks without exposing credentials or retaining returned content.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003860](../../agents/web_agent.py#L3860) | 3860 | `"        import time"` | — |
-| [SRC-1AE03B9EC3-L003861](../../agents/web_agent.py#L3861) | 3861 | `"        from datetime import UTC, datetime"` | — |
-| [SRC-1AE03B9EC3-L003862](../../agents/web_agent.py#L3862) | 3862 | `""` | — |
-| [SRC-1AE03B9EC3-L003863](../../agents/web_agent.py#L3863) | 3863 | `"        started = time.monotonic()"` | — |
-| [SRC-1AE03B9EC3-L003864](../../agents/web_agent.py#L3864) | 3864 | `"        self._reset_deepseek_search_budget()"` | — |

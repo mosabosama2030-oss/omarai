@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001050 إلى SRC-D186ED3822-L000067
+- النطاق: SRC-90FAA34ADE-L000996 إلى SRC-D186ED3822-L000013
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000996](../../tests/fixtures/answer_quality_cases.json#L996) | 996 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000997](../../tests/fixtures/answer_quality_cases.json#L997) | 997 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000998](../../tests/fixtures/answer_quality_cases.json#L998) | 998 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000999](../../tests/fixtures/answer_quality_cases.json#L999) | 999 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001000](../../tests/fixtures/answer_quality_cases.json#L1000) | 1000 | `"            \"title\": \"Visa guidance 2021\","` | — |
+| [SRC-90FAA34ADE-L001001](../../tests/fixtures/answer_quality_cases.json#L1001) | 1001 | `"            \"url\": \"https://consulate.example.test/visa-2021\","` | — |
+| [SRC-90FAA34ADE-L001002](../../tests/fixtures/answer_quality_cases.json#L1002) | 1002 | `"            \"snippet\": \"Required documents listed for 2021 applications.\","` | — |
+| [SRC-90FAA34ADE-L001003](../../tests/fixtures/answer_quality_cases.json#L1003) | 1003 | `"            \"published_at\": \"2021-06-10\","` | — |
+| [SRC-90FAA34ADE-L001004](../../tests/fixtures/answer_quality_cases.json#L1004) | 1004 | `"            \"domain\": \"consulate.example.test\","` | — |
+| [SRC-90FAA34ADE-L001005](../../tests/fixtures/answer_quality_cases.json#L1005) | 1005 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001006](../../tests/fixtures/answer_quality_cases.json#L1006) | 1006 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001007](../../tests/fixtures/answer_quality_cases.json#L1007) | 1007 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L001008](../../tests/fixtures/answer_quality_cases.json#L1008) | 1008 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001009](../../tests/fixtures/answer_quality_cases.json#L1009) | 1009 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001010](../../tests/fixtures/answer_quality_cases.json#L1010) | 1010 | `"        \"Current 2026 requirements asserted from 2021-only evidence\","` | — |
+| [SRC-90FAA34ADE-L001011](../../tests/fixtures/answer_quality_cases.json#L1011) | 1011 | `"        \"No caveat about source date\""` | — |
+| [SRC-90FAA34ADE-L001012](../../tests/fixtures/answer_quality_cases.json#L1012) | 1012 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001013](../../tests/fixtures/answer_quality_cases.json#L1013) | 1013 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001014](../../tests/fixtures/answer_quality_cases.json#L1014) | 1014 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001015](../../tests/fixtures/answer_quality_cases.json#L1015) | 1015 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001016](../../tests/fixtures/answer_quality_cases.json#L1016) | 1016 | `"      \"case_id\": \"AQ-035\","` | — |
+| [SRC-90FAA34ADE-L001017](../../tests/fixtures/answer_quality_cases.json#L1017) | 1017 | `"      \"category\": \"false_corroboration\","` | — |
+| [SRC-90FAA34ADE-L001018](../../tests/fixtures/answer_quality_cases.json#L1018) | 1018 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L001019](../../tests/fixtures/answer_quality_cases.json#L1019) | 1019 | `"      \"question\": \"ثلاث صفحات ناقلة عن بوست فيسبوك واحد قالت إن الخدمة اتوقفت. هل ده تحقق مستقل؟\","` | — |
+| [SRC-90FAA34ADE-L001020](../../tests/fixtures/answer_quality_cases.json#L1020) | 1020 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001021](../../tests/fixtures/answer_quality_cases.json#L1021) | 1021 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001022](../../tests/fixtures/answer_quality_cases.json#L1022) | 1022 | `"        \"يتتبع الإسناد للمصدر الأصلي إن أمكن\","` | — |
+| [SRC-90FAA34ADE-L001023](../../tests/fixtures/answer_quality_cases.json#L1023) | 1023 | `"        \"يوضح أن تكرار نقل بوست واحد لا يصنع ثلاث عمليات تحقق مستقلة\","` | — |
+| [SRC-90FAA34ADE-L001024](../../tests/fixtures/answer_quality_cases.json#L1024) | 1024 | `"        \"يطلب بيانًا رسميًا أو مصدرًا مستقلًا قبل تأكيد التوقف\""` | — |
+| [SRC-90FAA34ADE-L001025](../../tests/fixtures/answer_quality_cases.json#L1025) | 1025 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001026](../../tests/fixtures/answer_quality_cases.json#L1026) | 1026 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001027](../../tests/fixtures/answer_quality_cases.json#L1027) | 1027 | `"        \"يعلن توقف الخدمة كحقيقة لمجرد تكرار الخبر\","` | — |
+| [SRC-90FAA34ADE-L001028](../../tests/fixtures/answer_quality_cases.json#L1028) | 1028 | `"        \"يعدّ الناقلين الثلاثة أدلة مستقلة بلا فحص\""` | — |
+| [SRC-90FAA34ADE-L001029](../../tests/fixtures/answer_quality_cases.json#L1029) | 1029 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001030](../../tests/fixtures/answer_quality_cases.json#L1030) | 1030 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001031](../../tests/fixtures/answer_quality_cases.json#L1031) | 1031 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001032](../../tests/fixtures/answer_quality_cases.json#L1032) | 1032 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001033](../../tests/fixtures/answer_quality_cases.json#L1033) | 1033 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001034](../../tests/fixtures/answer_quality_cases.json#L1034) | 1034 | `"            \"title\": \"Blog A\","` | — |
+| [SRC-90FAA34ADE-L001035](../../tests/fixtures/answer_quality_cases.json#L1035) | 1035 | `"            \"url\": \"https://blog-a.example.test/stop\","` | — |
+| [SRC-90FAA34ADE-L001036](../../tests/fixtures/answer_quality_cases.json#L1036) | 1036 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001037](../../tests/fixtures/answer_quality_cases.json#L1037) | 1037 | `"            \"domain\": \"blog-a.example.test\","` | — |
+| [SRC-90FAA34ADE-L001038](../../tests/fixtures/answer_quality_cases.json#L1038) | 1038 | `"            \"provider\": \"fixture_a\""` | — |
+| [SRC-90FAA34ADE-L001039](../../tests/fixtures/answer_quality_cases.json#L1039) | 1039 | `"          },"` | — |
+| [SRC-90FAA34ADE-L001040](../../tests/fixtures/answer_quality_cases.json#L1040) | 1040 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001041](../../tests/fixtures/answer_quality_cases.json#L1041) | 1041 | `"            \"title\": \"Blog B\","` | — |
+| [SRC-90FAA34ADE-L001042](../../tests/fixtures/answer_quality_cases.json#L1042) | 1042 | `"            \"url\": \"https://blog-b.example.test/stop\","` | — |
+| [SRC-90FAA34ADE-L001043](../../tests/fixtures/answer_quality_cases.json#L1043) | 1043 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001044](../../tests/fixtures/answer_quality_cases.json#L1044) | 1044 | `"            \"domain\": \"blog-b.example.test\","` | — |
+| [SRC-90FAA34ADE-L001045](../../tests/fixtures/answer_quality_cases.json#L1045) | 1045 | `"            \"provider\": \"fixture_b\""` | — |
+| [SRC-90FAA34ADE-L001046](../../tests/fixtures/answer_quality_cases.json#L1046) | 1046 | `"          },"` | — |
+| [SRC-90FAA34ADE-L001047](../../tests/fixtures/answer_quality_cases.json#L1047) | 1047 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001048](../../tests/fixtures/answer_quality_cases.json#L1048) | 1048 | `"            \"title\": \"Community page C\","` | — |
+| [SRC-90FAA34ADE-L001049](../../tests/fixtures/answer_quality_cases.json#L1049) | 1049 | `"            \"url\": \"https://community.example.test/stop\","` | — |
 | [SRC-90FAA34ADE-L001050](../../tests/fixtures/answer_quality_cases.json#L1050) | 1050 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
 | [SRC-90FAA34ADE-L001051](../../tests/fixtures/answer_quality_cases.json#L1051) | 1051 | `"            \"domain\": \"community.example.test\","` | — |
 | [SRC-90FAA34ADE-L001052](../../tests/fixtures/answer_quality_cases.json#L1052) | 1052 | `"            \"provider\": \"fixture_c\""` | — |
@@ -798,57 +852,3 @@
 | [SRC-D186ED3822-L000011](../../tests/test_answer_quality_review_scorecard.py#L11) | 11 | `""` | — |
 | [SRC-D186ED3822-L000012](../../tests/test_answer_quality_review_scorecard.py#L12) | 12 | `""` | — |
 | [SRC-D186ED3822-L000013](../../tests/test_answer_quality_review_scorecard.py#L13) | 13 | `"def load_module():"` | — |
-| [SRC-D186ED3822-L000014](../../tests/test_answer_quality_review_scorecard.py#L14) | 14 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_review_scorecard\", SCRIPT)"` | — |
-| [SRC-D186ED3822-L000015](../../tests/test_answer_quality_review_scorecard.py#L15) | 15 | `"    assert spec and spec.loader"` | — |
-| [SRC-D186ED3822-L000016](../../tests/test_answer_quality_review_scorecard.py#L16) | 16 | `"    module = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-D186ED3822-L000017](../../tests/test_answer_quality_review_scorecard.py#L17) | 17 | `"    spec.loader.exec_module(module)"` | — |
-| [SRC-D186ED3822-L000018](../../tests/test_answer_quality_review_scorecard.py#L18) | 18 | `"    return module"` | — |
-| [SRC-D186ED3822-L000019](../../tests/test_answer_quality_review_scorecard.py#L19) | 19 | `""` | — |
-| [SRC-D186ED3822-L000020](../../tests/test_answer_quality_review_scorecard.py#L20) | 20 | `""` | — |
-| [SRC-D186ED3822-L000021](../../tests/test_answer_quality_review_scorecard.py#L21) | 21 | `"def corpus():"` | — |
-| [SRC-D186ED3822-L000022](../../tests/test_answer_quality_review_scorecard.py#L22) | 22 | `"    return load_module().load_json_object(CORPUS_PATH)"` | — |
-| [SRC-D186ED3822-L000023](../../tests/test_answer_quality_review_scorecard.py#L23) | 23 | `""` | — |
-| [SRC-D186ED3822-L000024](../../tests/test_answer_quality_review_scorecard.py#L24) | 24 | `""` | — |
-| [SRC-D186ED3822-L000025](../../tests/test_answer_quality_review_scorecard.py#L25) | 25 | `"def test_manual_scorecard_aggregates_only_explicit_reviewed_metrics():"` | — |
-| [SRC-D186ED3822-L000026](../../tests/test_answer_quality_review_scorecard.py#L26) | 26 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000027](../../tests/test_answer_quality_review_scorecard.py#L27) | 27 | `"    data = {"` | — |
-| [SRC-D186ED3822-L000028](../../tests/test_answer_quality_review_scorecard.py#L28) | 28 | `"        \"schema_version\": \"1.0\","` | — |
-| [SRC-D186ED3822-L000029](../../tests/test_answer_quality_review_scorecard.py#L29) | 29 | `"        \"reviews\": ["` | — |
-| [SRC-D186ED3822-L000030](../../tests/test_answer_quality_review_scorecard.py#L30) | 30 | `"            {"` | — |
-| [SRC-D186ED3822-L000031](../../tests/test_answer_quality_review_scorecard.py#L31) | 31 | `"                \"case_id\": \"AQ-007\","` | — |
-| [SRC-D186ED3822-L000032](../../tests/test_answer_quality_review_scorecard.py#L32) | 32 | `"                \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000033](../../tests/test_answer_quality_review_scorecard.py#L33) | 33 | `"                \"retrieval\": {\"relevant_retrieved\": 3, \"retrieved_count\": 5, \"relevant_available\": 4},"` | — |
-| [SRC-D186ED3822-L000034](../../tests/test_answer_quality_review_scorecard.py#L34) | 34 | `"                \"faithfulness\": {\"supported_claims\": 4, \"reviewed_claims\": 5},"` | — |
-| [SRC-D186ED3822-L000035](../../tests/test_answer_quality_review_scorecard.py#L35) | 35 | `"                \"correctness\": {\"correct_facts\": 3, \"reviewed_facts\": 4},"` | — |
-| [SRC-D186ED3822-L000036](../../tests/test_answer_quality_review_scorecard.py#L36) | 36 | `"                \"citations\": {\"supported_citations\": 2, \"reviewed_citations\": 3},"` | — |
-| [SRC-D186ED3822-L000037](../../tests/test_answer_quality_review_scorecard.py#L37) | 37 | `"                \"writing_quality\": 4,"` | — |
-| [SRC-D186ED3822-L000038](../../tests/test_answer_quality_review_scorecard.py#L38) | 38 | `"            },"` | — |
-| [SRC-D186ED3822-L000039](../../tests/test_answer_quality_review_scorecard.py#L39) | 39 | `"            {"` | — |
-| [SRC-D186ED3822-L000040](../../tests/test_answer_quality_review_scorecard.py#L40) | 40 | `"                \"case_id\": \"AQ-008\","` | — |
-| [SRC-D186ED3822-L000041](../../tests/test_answer_quality_review_scorecard.py#L41) | 41 | `"                \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000042](../../tests/test_answer_quality_review_scorecard.py#L42) | 42 | `"                \"writing_quality\": 4,"` | — |
-| [SRC-D186ED3822-L000043](../../tests/test_answer_quality_review_scorecard.py#L43) | 43 | `"            },"` | — |
-| [SRC-D186ED3822-L000044](../../tests/test_answer_quality_review_scorecard.py#L44) | 44 | `"            {\"case_id\": \"AQ-009\", \"status\": \"NOT_TESTED\", \"notes\": \"No reviewer judgment yet.\"},"` | — |
-| [SRC-D186ED3822-L000045](../../tests/test_answer_quality_review_scorecard.py#L45) | 45 | `"        ],"` | — |
-| [SRC-D186ED3822-L000046](../../tests/test_answer_quality_review_scorecard.py#L46) | 46 | `"    }"` | — |
-| [SRC-D186ED3822-L000047](../../tests/test_answer_quality_review_scorecard.py#L47) | 47 | `"    result = mod.summarize_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000048](../../tests/test_answer_quality_review_scorecard.py#L48) | 48 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] == 0.6"` | — |
-| [SRC-D186ED3822-L000049](../../tests/test_answer_quality_review_scorecard.py#L49) | 49 | `"    assert result[\"metrics\"][\"retrieval_recall\"][\"score\"] == 0.75"` | — |
-| [SRC-D186ED3822-L000050](../../tests/test_answer_quality_review_scorecard.py#L50) | 50 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] == 0.8"` | — |
-| [SRC-D186ED3822-L000051](../../tests/test_answer_quality_review_scorecard.py#L51) | 51 | `"    assert result[\"metrics\"][\"correctness\"][\"score\"] == 0.75"` | — |
-| [SRC-D186ED3822-L000052](../../tests/test_answer_quality_review_scorecard.py#L52) | 52 | `"    assert result[\"metrics\"][\"citation_support\"][\"score\"] == pytest.approx(2 / 3, abs=0.0001)"` | — |
-| [SRC-D186ED3822-L000053](../../tests/test_answer_quality_review_scorecard.py#L53) | 53 | `"    assert result[\"metrics\"][\"writing_quality_1_to_5\"][\"score\"] == 4.0"` | — |
-| [SRC-D186ED3822-L000054](../../tests/test_answer_quality_review_scorecard.py#L54) | 54 | `"    assert result[\"case_status_counts\"][\"NOT_TESTED\"] == 1"` | — |
-| [SRC-D186ED3822-L000055](../../tests/test_answer_quality_review_scorecard.py#L55) | 55 | `"    assert result[\"unique_reviewed_case_count\"] == 2"` | — |
-| [SRC-D186ED3822-L000056](../../tests/test_answer_quality_review_scorecard.py#L56) | 56 | `"    assert result[\"automatic_answer_grading\"] is False"` | — |
-| [SRC-D186ED3822-L000057](../../tests/test_answer_quality_review_scorecard.py#L57) | 57 | `"    assert result[\"ragas_executed\"] is False"` | — |
-| [SRC-D186ED3822-L000058](../../tests/test_answer_quality_review_scorecard.py#L58) | 58 | `""` | — |
-| [SRC-D186ED3822-L000059](../../tests/test_answer_quality_review_scorecard.py#L59) | 59 | `""` | — |
-| [SRC-D186ED3822-L000060](../../tests/test_answer_quality_review_scorecard.py#L60) | 60 | `"def test_scorecard_keeps_unmeasured_denominators_not_scorable():"` | — |
-| [SRC-D186ED3822-L000061](../../tests/test_answer_quality_review_scorecard.py#L61) | 61 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000062](../../tests/test_answer_quality_review_scorecard.py#L62) | 62 | `"    data = {"` | — |
-| [SRC-D186ED3822-L000063](../../tests/test_answer_quality_review_scorecard.py#L63) | 63 | `"        \"reviews\": [{"` | — |
-| [SRC-D186ED3822-L000064](../../tests/test_answer_quality_review_scorecard.py#L64) | 64 | `"            \"case_id\": \"AQ-001\","` | — |
-| [SRC-D186ED3822-L000065](../../tests/test_answer_quality_review_scorecard.py#L65) | 65 | `"            \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000066](../../tests/test_answer_quality_review_scorecard.py#L66) | 66 | `"            \"faithfulness\": {\"supported_claims\": 0, \"reviewed_claims\": 0},"` | — |
-| [SRC-D186ED3822-L000067](../../tests/test_answer_quality_review_scorecard.py#L67) | 67 | `"        }],"` | — |

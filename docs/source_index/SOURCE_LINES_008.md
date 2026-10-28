@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000665 إلى SRC-1AE03B9EC3-L001464
+- النطاق: SRC-1AE03B9EC3-L000611 إلى SRC-1AE03B9EC3-L001410
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000611](../../agents/web_agent.py#L611) | 611 | `"    def _unwrap_search_url(value: str) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000612](../../agents/web_agent.py#L612) | 612 | `"        if value.startswith(\"//\"):"` | — |
+| [SRC-1AE03B9EC3-L000613](../../agents/web_agent.py#L613) | 613 | `"            value = \"https:\" + value"` | — |
+| [SRC-1AE03B9EC3-L000614](../../agents/web_agent.py#L614) | 614 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L000615](../../agents/web_agent.py#L615) | 615 | `"            parsed = urllib.parse.urlparse(value)"` | — |
+| [SRC-1AE03B9EC3-L000616](../../agents/web_agent.py#L616) | 616 | `"            host = (parsed.hostname or \"\").lower()"` | — |
+| [SRC-1AE03B9EC3-L000617](../../agents/web_agent.py#L617) | 617 | `"            if host.endswith(\"duckduckgo.com\") and parsed.path.startswith(\"/l/\"):"` | — |
+| [SRC-1AE03B9EC3-L000618](../../agents/web_agent.py#L618) | 618 | `"                target = urllib.parse.parse_qs(parsed.query).get(\"uddg\", [\"\"])[0]"` | — |
+| [SRC-1AE03B9EC3-L000619](../../agents/web_agent.py#L619) | 619 | `"                return urllib.parse.unquote(target) if target else \"\""` | — |
+| [SRC-1AE03B9EC3-L000620](../../agents/web_agent.py#L620) | 620 | `"        except (ValueError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L000621](../../agents/web_agent.py#L621) | 621 | `"            return \"\""` | — |
+| [SRC-1AE03B9EC3-L000622](../../agents/web_agent.py#L622) | 622 | `"        return value"` | — |
+| [SRC-1AE03B9EC3-L000623](../../agents/web_agent.py#L623) | 623 | `""` | — |
+| [SRC-1AE03B9EC3-L000624](../../agents/web_agent.py#L624) | 624 | `"    def _record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L000625](../../agents/web_agent.py#L625) | 625 | `"        self, provider: str, query: str, status: str, result_count: int = 0,"` | — |
+| [SRC-1AE03B9EC3-L000626](../../agents/web_agent.py#L626) | 626 | `"        rejected_count: int = 0, error: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L000627](../../agents/web_agent.py#L627) | 627 | `"        accepted_count: int \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L000628](../../agents/web_agent.py#L628) | 628 | `"        rejection_counts: dict[str, int] \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L000629](../../agents/web_agent.py#L629) | 629 | `"    ) -> None:"` | — |
+| [SRC-1AE03B9EC3-L000630](../../agents/web_agent.py#L630) | 630 | `"        def redact(value: Any, limit: int) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000631](../../agents/web_agent.py#L631) | 631 | `"            safe = _clean_text(str(value or \"\"), limit)"` | — |
+| [SRC-1AE03B9EC3-L000632](../../agents/web_agent.py#L632) | 632 | `"            safe = re.sub("` | — |
+| [SRC-1AE03B9EC3-L000633](../../agents/web_agent.py#L633) | 633 | `"                r\"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*\","` | — |
+| [SRC-1AE03B9EC3-L000634](../../agents/web_agent.py#L634) | 634 | `"                r\"\\1[REDACTED]\","` | — |
+| [SRC-1AE03B9EC3-L000635](../../agents/web_agent.py#L635) | 635 | `"                safe,"` | — |
+| [SRC-1AE03B9EC3-L000636](../../agents/web_agent.py#L636) | 636 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000637](../../agents/web_agent.py#L637) | 637 | `"            safe = re.sub("` | — |
+| [SRC-1AE03B9EC3-L000638](../../agents/web_agent.py#L638) | 638 | `"                r\"(?i)\\b(api[_-]?key\|access[_-]?token\|refresh[_-]?token\|token\|secret\|password)\\s*[:=]\\s*[^\\s,;]+\","` | — |
+| [SRC-1AE03B9EC3-L000639](../../agents/web_agent.py#L639) | 639 | `"                r\"\\1=[REDACTED]\","` | — |
+| [SRC-1AE03B9EC3-L000640](../../agents/web_agent.py#L640) | 640 | `"                safe,"` | — |
+| [SRC-1AE03B9EC3-L000641](../../agents/web_agent.py#L641) | 641 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000642](../../agents/web_agent.py#L642) | 642 | `"            safe = re.sub("` | — |
+| [SRC-1AE03B9EC3-L000643](../../agents/web_agent.py#L643) | 643 | `"                r\"(?i)([?&](?:api[_-]?key\|access[_-]?token\|token\|key)=)[^&\\s]+\","` | — |
+| [SRC-1AE03B9EC3-L000644](../../agents/web_agent.py#L644) | 644 | `"                r\"\\1[REDACTED]\","` | — |
+| [SRC-1AE03B9EC3-L000645](../../agents/web_agent.py#L645) | 645 | `"                safe,"` | — |
+| [SRC-1AE03B9EC3-L000646](../../agents/web_agent.py#L646) | 646 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000647](../../agents/web_agent.py#L647) | 647 | `"            return safe[:limit]"` | — |
+| [SRC-1AE03B9EC3-L000648](../../agents/web_agent.py#L648) | 648 | `""` | — |
+| [SRC-1AE03B9EC3-L000649](../../agents/web_agent.py#L649) | 649 | `"        record = {"` | — |
+| [SRC-1AE03B9EC3-L000650](../../agents/web_agent.py#L650) | 650 | `"            \"provider\": provider,"` | — |
+| [SRC-1AE03B9EC3-L000651](../../agents/web_agent.py#L651) | 651 | `"            \"query\": redact(query, 220),"` | — |
+| [SRC-1AE03B9EC3-L000652](../../agents/web_agent.py#L652) | 652 | `"            \"status\": status,"` | — |
+| [SRC-1AE03B9EC3-L000653](../../agents/web_agent.py#L653) | 653 | `"            \"result_count\": int(result_count),"` | — |
+| [SRC-1AE03B9EC3-L000654](../../agents/web_agent.py#L654) | 654 | `"            \"accepted_count\": int(result_count if accepted_count is None else accepted_count),"` | — |
+| [SRC-1AE03B9EC3-L000655](../../agents/web_agent.py#L655) | 655 | `"            \"rejected_count\": int(rejected_count),"` | — |
+| [SRC-1AE03B9EC3-L000656](../../agents/web_agent.py#L656) | 656 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L000657](../../agents/web_agent.py#L657) | 657 | `"        if isinstance(rejection_counts, dict):"` | — |
+| [SRC-1AE03B9EC3-L000658](../../agents/web_agent.py#L658) | 658 | `"            safe_counts: dict[str, int] = {}"` | — |
+| [SRC-1AE03B9EC3-L000659](../../agents/web_agent.py#L659) | 659 | `"            for reason in _PROVIDER_REJECTION_REASONS:"` | — |
+| [SRC-1AE03B9EC3-L000660](../../agents/web_agent.py#L660) | 660 | `"                try:"` | — |
+| [SRC-1AE03B9EC3-L000661](../../agents/web_agent.py#L661) | 661 | `"                    safe_counts[reason] = max(0, int(rejection_counts.get(reason, 0) or 0))"` | — |
+| [SRC-1AE03B9EC3-L000662](../../agents/web_agent.py#L662) | 662 | `"                except (TypeError, ValueError, OverflowError):"` | — |
+| [SRC-1AE03B9EC3-L000663](../../agents/web_agent.py#L663) | 663 | `"                    safe_counts[reason] = 0"` | — |
+| [SRC-1AE03B9EC3-L000664](../../agents/web_agent.py#L664) | 664 | `"            record[\"rejection_counts\"] = safe_counts"` | — |
 | [SRC-1AE03B9EC3-L000665](../../agents/web_agent.py#L665) | 665 | `"        if error:"` | — |
 | [SRC-1AE03B9EC3-L000666](../../agents/web_agent.py#L666) | 666 | `"            record[\"error\"] = redact(error, 180)"` | — |
 | [SRC-1AE03B9EC3-L000667](../../agents/web_agent.py#L667) | 667 | `"        with self._provider_diagnostics_lock:"` | — |
@@ -762,57 +816,3 @@
 | [SRC-1AE03B9EC3-L001408](../../agents/web_agent.py#L1408) | 1408 | `"    def _reset_deepseek_search_budget(self) -> None:"` | — |
 | [SRC-1AE03B9EC3-L001409](../../agents/web_agent.py#L1409) | 1409 | `"        \"\"\"Reset the bounded optional Search API request budget for one operation.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L001410](../../agents/web_agent.py#L1410) | 1410 | `"        with self._deepseek_budget_lock:"` | — |
-| [SRC-1AE03B9EC3-L001411](../../agents/web_agent.py#L1411) | 1411 | `"            self._deepseek_search_requests_reserved = 0"` | — |
-| [SRC-1AE03B9EC3-L001412](../../agents/web_agent.py#L1412) | 1412 | `""` | — |
-| [SRC-1AE03B9EC3-L001413](../../agents/web_agent.py#L1413) | 1413 | `"    def _reserve_deepseek_search_request(self) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L001414](../../agents/web_agent.py#L1414) | 1414 | `"        \"\"\"Reserve one paid search request before concurrent queries invoke the provider.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001415](../../agents/web_agent.py#L1415) | 1415 | `"        if not os.getenv(\"DEEPSEEK_SEARCH_API_KEY\", \"\").strip():"` | — |
-| [SRC-1AE03B9EC3-L001416](../../agents/web_agent.py#L1416) | 1416 | `"            return False"` | — |
-| [SRC-1AE03B9EC3-L001417](../../agents/web_agent.py#L1417) | 1417 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L001418](../../agents/web_agent.py#L1418) | 1418 | `"            configured_budget = int("` | — |
-| [SRC-1AE03B9EC3-L001419](../../agents/web_agent.py#L1419) | 1419 | `"                os.getenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", \"1\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001420](../../agents/web_agent.py#L1420) | 1420 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001421](../../agents/web_agent.py#L1421) | 1421 | `"        except ValueError:"` | — |
-| [SRC-1AE03B9EC3-L001422](../../agents/web_agent.py#L1422) | 1422 | `"            configured_budget = 1"` | — |
-| [SRC-1AE03B9EC3-L001423](../../agents/web_agent.py#L1423) | 1423 | `"        budget = max(0, min(configured_budget, 3))"` | — |
-| [SRC-1AE03B9EC3-L001424](../../agents/web_agent.py#L1424) | 1424 | `"        with self._deepseek_budget_lock:"` | — |
-| [SRC-1AE03B9EC3-L001425](../../agents/web_agent.py#L1425) | 1425 | `"            if self._deepseek_search_requests_reserved >= budget:"` | — |
-| [SRC-1AE03B9EC3-L001426](../../agents/web_agent.py#L1426) | 1426 | `"                return False"` | — |
-| [SRC-1AE03B9EC3-L001427](../../agents/web_agent.py#L1427) | 1427 | `"            self._deepseek_search_requests_reserved += 1"` | — |
-| [SRC-1AE03B9EC3-L001428](../../agents/web_agent.py#L1428) | 1428 | `"            return True"` | — |
-| [SRC-1AE03B9EC3-L001429](../../agents/web_agent.py#L1429) | 1429 | `""` | — |
-| [SRC-1AE03B9EC3-L001430](../../agents/web_agent.py#L1430) | 1430 | `"    def _search_web(self, query: str) -> list[dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L001431](../../agents/web_agent.py#L1431) | 1431 | `"        \"\"\"Run configured search connectors concurrently with isolated failures and relevance checks.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001432](../../agents/web_agent.py#L1432) | 1432 | `"        from agents.research import detect_freshness"` | — |
-| [SRC-1AE03B9EC3-L001433](../../agents/web_agent.py#L1433) | 1433 | `""` | — |
-| [SRC-1AE03B9EC3-L001434](../../agents/web_agent.py#L1434) | 1434 | `"        query = compact_search_query(query)"` | — |
-| [SRC-1AE03B9EC3-L001435](../../agents/web_agent.py#L1435) | 1435 | `"        if not query:"` | — |
-| [SRC-1AE03B9EC3-L001436](../../agents/web_agent.py#L1436) | 1436 | `"            return []"` | — |
-| [SRC-1AE03B9EC3-L001437](../../agents/web_agent.py#L1437) | 1437 | `"        search_query = _normalize_search_query(query)"` | — |
-| [SRC-1AE03B9EC3-L001438](../../agents/web_agent.py#L1438) | 1438 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L001439](../../agents/web_agent.py#L1439) | 1439 | `"        if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L001440](../../agents/web_agent.py#L1440) | 1440 | `"            budget.reserve(\"search_queries\")"` | — |
-| [SRC-1AE03B9EC3-L001441](../../agents/web_agent.py#L1441) | 1441 | `"        adapters: list[tuple[str, Any]] = ["` | — |
-| [SRC-1AE03B9EC3-L001442](../../agents/web_agent.py#L1442) | 1442 | `"            (\"duckduckgo_html\", self._search_duckduckgo_html),"` | — |
-| [SRC-1AE03B9EC3-L001443](../../agents/web_agent.py#L1443) | 1443 | `"            (\"bing_rss\", self._search_bing_rss),"` | — |
-| [SRC-1AE03B9EC3-L001444](../../agents/web_agent.py#L1444) | 1444 | `"        ]"` | — |
-| [SRC-1AE03B9EC3-L001445](../../agents/web_agent.py#L1445) | 1445 | `"        # Experimental opt-in only: DeepSeek Search is billed per successful request."` | — |
-| [SRC-1AE03B9EC3-L001446](../../agents/web_agent.py#L1446) | 1446 | `"        # Do not promote it to primary without a measured comparison."` | — |
-| [SRC-1AE03B9EC3-L001447](../../agents/web_agent.py#L1447) | 1447 | `"        if not os.getenv(\"DEEPSEEK_SEARCH_API_KEY\", \"\").strip():"` | — |
-| [SRC-1AE03B9EC3-L001448](../../agents/web_agent.py#L1448) | 1448 | `"            self._record_provider_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L001449](../../agents/web_agent.py#L1449) | 1449 | `"                \"deepseek_search_api\", search_query, \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001450](../../agents/web_agent.py#L1450) | 1450 | `"                error=\"DEEPSEEK_SEARCH_API_KEY is not set\","` | — |
-| [SRC-1AE03B9EC3-L001451](../../agents/web_agent.py#L1451) | 1451 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001452](../../agents/web_agent.py#L1452) | 1452 | `"        elif self._reserve_deepseek_search_request():"` | — |
-| [SRC-1AE03B9EC3-L001453](../../agents/web_agent.py#L1453) | 1453 | `"            adapters.append((\"deepseek_search_api\", self._search_deepseek_api))"` | — |
-| [SRC-1AE03B9EC3-L001454](../../agents/web_agent.py#L1454) | 1454 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L001455](../../agents/web_agent.py#L1455) | 1455 | `"            self._record_provider_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L001456](../../agents/web_agent.py#L1456) | 1456 | `"                \"deepseek_search_api\", search_query, \"budget_exhausted\","` | — |
-| [SRC-1AE03B9EC3-L001457](../../agents/web_agent.py#L1457) | 1457 | `"                error=\"per-operation DeepSeek Search request budget exhausted\","` | — |
-| [SRC-1AE03B9EC3-L001458](../../agents/web_agent.py#L1458) | 1458 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001459](../../agents/web_agent.py#L1459) | 1459 | `"        if os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip():"` | — |
-| [SRC-1AE03B9EC3-L001460](../../agents/web_agent.py#L1460) | 1460 | `"            adapters.append((\"brave_search_api\", self._search_brave))"` | — |
-| [SRC-1AE03B9EC3-L001461](../../agents/web_agent.py#L1461) | 1461 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L001462](../../agents/web_agent.py#L1462) | 1462 | `"            self._record_provider_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L001463](../../agents/web_agent.py#L1463) | 1463 | `"                \"brave_search_api\", search_query, \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001464](../../agents/web_agent.py#L1464) | 1464 | `"                error=\"BRAVE_SEARCH_API_KEY is not set\","` | — |

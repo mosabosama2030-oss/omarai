@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001465 إلى SRC-1AE03B9EC3-L002264
+- النطاق: SRC-1AE03B9EC3-L001411 إلى SRC-1AE03B9EC3-L002210
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001411](../../agents/web_agent.py#L1411) | 1411 | `"            self._deepseek_search_requests_reserved = 0"` | — |
+| [SRC-1AE03B9EC3-L001412](../../agents/web_agent.py#L1412) | 1412 | `""` | — |
+| [SRC-1AE03B9EC3-L001413](../../agents/web_agent.py#L1413) | 1413 | `"    def _reserve_deepseek_search_request(self) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L001414](../../agents/web_agent.py#L1414) | 1414 | `"        \"\"\"Reserve one paid search request before concurrent queries invoke the provider.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001415](../../agents/web_agent.py#L1415) | 1415 | `"        if not os.getenv(\"DEEPSEEK_SEARCH_API_KEY\", \"\").strip():"` | — |
+| [SRC-1AE03B9EC3-L001416](../../agents/web_agent.py#L1416) | 1416 | `"            return False"` | — |
+| [SRC-1AE03B9EC3-L001417](../../agents/web_agent.py#L1417) | 1417 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L001418](../../agents/web_agent.py#L1418) | 1418 | `"            configured_budget = int("` | — |
+| [SRC-1AE03B9EC3-L001419](../../agents/web_agent.py#L1419) | 1419 | `"                os.getenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", \"1\").strip()"` | — |
+| [SRC-1AE03B9EC3-L001420](../../agents/web_agent.py#L1420) | 1420 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001421](../../agents/web_agent.py#L1421) | 1421 | `"        except ValueError:"` | — |
+| [SRC-1AE03B9EC3-L001422](../../agents/web_agent.py#L1422) | 1422 | `"            configured_budget = 1"` | — |
+| [SRC-1AE03B9EC3-L001423](../../agents/web_agent.py#L1423) | 1423 | `"        budget = max(0, min(configured_budget, 3))"` | — |
+| [SRC-1AE03B9EC3-L001424](../../agents/web_agent.py#L1424) | 1424 | `"        with self._deepseek_budget_lock:"` | — |
+| [SRC-1AE03B9EC3-L001425](../../agents/web_agent.py#L1425) | 1425 | `"            if self._deepseek_search_requests_reserved >= budget:"` | — |
+| [SRC-1AE03B9EC3-L001426](../../agents/web_agent.py#L1426) | 1426 | `"                return False"` | — |
+| [SRC-1AE03B9EC3-L001427](../../agents/web_agent.py#L1427) | 1427 | `"            self._deepseek_search_requests_reserved += 1"` | — |
+| [SRC-1AE03B9EC3-L001428](../../agents/web_agent.py#L1428) | 1428 | `"            return True"` | — |
+| [SRC-1AE03B9EC3-L001429](../../agents/web_agent.py#L1429) | 1429 | `""` | — |
+| [SRC-1AE03B9EC3-L001430](../../agents/web_agent.py#L1430) | 1430 | `"    def _search_web(self, query: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001431](../../agents/web_agent.py#L1431) | 1431 | `"        \"\"\"Run configured search connectors concurrently with isolated failures and relevance checks.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001432](../../agents/web_agent.py#L1432) | 1432 | `"        from agents.research import detect_freshness"` | — |
+| [SRC-1AE03B9EC3-L001433](../../agents/web_agent.py#L1433) | 1433 | `""` | — |
+| [SRC-1AE03B9EC3-L001434](../../agents/web_agent.py#L1434) | 1434 | `"        query = compact_search_query(query)"` | — |
+| [SRC-1AE03B9EC3-L001435](../../agents/web_agent.py#L1435) | 1435 | `"        if not query:"` | — |
+| [SRC-1AE03B9EC3-L001436](../../agents/web_agent.py#L1436) | 1436 | `"            return []"` | — |
+| [SRC-1AE03B9EC3-L001437](../../agents/web_agent.py#L1437) | 1437 | `"        search_query = _normalize_search_query(query)"` | — |
+| [SRC-1AE03B9EC3-L001438](../../agents/web_agent.py#L1438) | 1438 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L001439](../../agents/web_agent.py#L1439) | 1439 | `"        if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L001440](../../agents/web_agent.py#L1440) | 1440 | `"            budget.reserve(\"search_queries\")"` | — |
+| [SRC-1AE03B9EC3-L001441](../../agents/web_agent.py#L1441) | 1441 | `"        adapters: list[tuple[str, Any]] = ["` | — |
+| [SRC-1AE03B9EC3-L001442](../../agents/web_agent.py#L1442) | 1442 | `"            (\"duckduckgo_html\", self._search_duckduckgo_html),"` | — |
+| [SRC-1AE03B9EC3-L001443](../../agents/web_agent.py#L1443) | 1443 | `"            (\"bing_rss\", self._search_bing_rss),"` | — |
+| [SRC-1AE03B9EC3-L001444](../../agents/web_agent.py#L1444) | 1444 | `"        ]"` | — |
+| [SRC-1AE03B9EC3-L001445](../../agents/web_agent.py#L1445) | 1445 | `"        # Experimental opt-in only: DeepSeek Search is billed per successful request."` | — |
+| [SRC-1AE03B9EC3-L001446](../../agents/web_agent.py#L1446) | 1446 | `"        # Do not promote it to primary without a measured comparison."` | — |
+| [SRC-1AE03B9EC3-L001447](../../agents/web_agent.py#L1447) | 1447 | `"        if not os.getenv(\"DEEPSEEK_SEARCH_API_KEY\", \"\").strip():"` | — |
+| [SRC-1AE03B9EC3-L001448](../../agents/web_agent.py#L1448) | 1448 | `"            self._record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L001449](../../agents/web_agent.py#L1449) | 1449 | `"                \"deepseek_search_api\", search_query, \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L001450](../../agents/web_agent.py#L1450) | 1450 | `"                error=\"DEEPSEEK_SEARCH_API_KEY is not set\","` | — |
+| [SRC-1AE03B9EC3-L001451](../../agents/web_agent.py#L1451) | 1451 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001452](../../agents/web_agent.py#L1452) | 1452 | `"        elif self._reserve_deepseek_search_request():"` | — |
+| [SRC-1AE03B9EC3-L001453](../../agents/web_agent.py#L1453) | 1453 | `"            adapters.append((\"deepseek_search_api\", self._search_deepseek_api))"` | — |
+| [SRC-1AE03B9EC3-L001454](../../agents/web_agent.py#L1454) | 1454 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L001455](../../agents/web_agent.py#L1455) | 1455 | `"            self._record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L001456](../../agents/web_agent.py#L1456) | 1456 | `"                \"deepseek_search_api\", search_query, \"budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L001457](../../agents/web_agent.py#L1457) | 1457 | `"                error=\"per-operation DeepSeek Search request budget exhausted\","` | — |
+| [SRC-1AE03B9EC3-L001458](../../agents/web_agent.py#L1458) | 1458 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001459](../../agents/web_agent.py#L1459) | 1459 | `"        if os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip():"` | — |
+| [SRC-1AE03B9EC3-L001460](../../agents/web_agent.py#L1460) | 1460 | `"            adapters.append((\"brave_search_api\", self._search_brave))"` | — |
+| [SRC-1AE03B9EC3-L001461](../../agents/web_agent.py#L1461) | 1461 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L001462](../../agents/web_agent.py#L1462) | 1462 | `"            self._record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L001463](../../agents/web_agent.py#L1463) | 1463 | `"                \"brave_search_api\", search_query, \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L001464](../../agents/web_agent.py#L1464) | 1464 | `"                error=\"BRAVE_SEARCH_API_KEY is not set\","` | — |
 | [SRC-1AE03B9EC3-L001465](../../agents/web_agent.py#L1465) | 1465 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001466](../../agents/web_agent.py#L1466) | 1466 | `"        if os.getenv(\"TAVILY_API_KEY\", \"\").strip():"` | — |
 | [SRC-1AE03B9EC3-L001467](../../agents/web_agent.py#L1467) | 1467 | `"            adapters.append((\"tavily_search_api\", self._search_tavily))"` | — |
@@ -762,57 +816,3 @@
 | [SRC-1AE03B9EC3-L002208](../../agents/web_agent.py#L2208) | 2208 | `"                    warnings.append(f\"X API unavailable (HTTP {response.status_code})\")"` | — |
 | [SRC-1AE03B9EC3-L002209](../../agents/web_agent.py#L2209) | 2209 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
 | [SRC-1AE03B9EC3-L002210](../../agents/web_agent.py#L2210) | 2210 | `"                warnings.append(\"X API unavailable for this request\")"` | — |
-| [SRC-1AE03B9EC3-L002211](../../agents/web_agent.py#L2211) | 2211 | `"        elif \"x\" in platforms:"` | — |
-| [SRC-1AE03B9EC3-L002212](../../agents/web_agent.py#L2212) | 2212 | `"            warnings.append(\"X direct API is not configured; indexed public X pages are still searched.\")"` | — |
-| [SRC-1AE03B9EC3-L002213](../../agents/web_agent.py#L2213) | 2213 | `""` | — |
-| [SRC-1AE03B9EC3-L002214](../../agents/web_agent.py#L2214) | 2214 | `"        if \"youtube\" in platforms and os.getenv(\"YOUTUBE_API_KEY\", \"\").strip():"` | — |
-| [SRC-1AE03B9EC3-L002215](../../agents/web_agent.py#L2215) | 2215 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L002216](../../agents/web_agent.py#L2216) | 2216 | `"                self._reserve_search_call()"` | — |
-| [SRC-1AE03B9EC3-L002217](../../agents/web_agent.py#L2217) | 2217 | `"                response = httpx.get("` | — |
-| [SRC-1AE03B9EC3-L002218](../../agents/web_agent.py#L2218) | 2218 | `"                    \"https://www.googleapis.com/youtube/v3/search\","` | — |
-| [SRC-1AE03B9EC3-L002219](../../agents/web_agent.py#L2219) | 2219 | `"                    params={"` | — |
-| [SRC-1AE03B9EC3-L002220](../../agents/web_agent.py#L2220) | 2220 | `"                        \"part\": \"snippet\","` | — |
-| [SRC-1AE03B9EC3-L002221](../../agents/web_agent.py#L2221) | 2221 | `"                        \"q\": query,"` | — |
-| [SRC-1AE03B9EC3-L002222](../../agents/web_agent.py#L2222) | 2222 | `"                        \"type\": \"video\","` | — |
-| [SRC-1AE03B9EC3-L002223](../../agents/web_agent.py#L2223) | 2223 | `"                        \"maxResults\": 8,"` | — |
-| [SRC-1AE03B9EC3-L002224](../../agents/web_agent.py#L2224) | 2224 | `"                        \"key\": os.getenv(\"YOUTUBE_API_KEY\", \"\").strip(),"` | — |
-| [SRC-1AE03B9EC3-L002225](../../agents/web_agent.py#L2225) | 2225 | `"                    },"` | — |
-| [SRC-1AE03B9EC3-L002226](../../agents/web_agent.py#L2226) | 2226 | `"                    headers=headers,"` | — |
-| [SRC-1AE03B9EC3-L002227](../../agents/web_agent.py#L2227) | 2227 | `"                    timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L002228](../../agents/web_agent.py#L2228) | 2228 | `"                    follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L002229](../../agents/web_agent.py#L2229) | 2229 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L002230](../../agents/web_agent.py#L2230) | 2230 | `"                if response.status_code == 200:"` | — |
-| [SRC-1AE03B9EC3-L002231](../../agents/web_agent.py#L2231) | 2231 | `"                    data = response.json()"` | — |
-| [SRC-1AE03B9EC3-L002232](../../agents/web_agent.py#L2232) | 2232 | `"                    for item in data.get(\"items\", []):"` | — |
-| [SRC-1AE03B9EC3-L002233](../../agents/web_agent.py#L2233) | 2233 | `"                        video_id = item.get(\"id\", {}).get(\"videoId\")"` | — |
-| [SRC-1AE03B9EC3-L002234](../../agents/web_agent.py#L2234) | 2234 | `"                        snippet = item.get(\"snippet\", {})"` | — |
-| [SRC-1AE03B9EC3-L002235](../../agents/web_agent.py#L2235) | 2235 | `"                        if not video_id:"` | — |
-| [SRC-1AE03B9EC3-L002236](../../agents/web_agent.py#L2236) | 2236 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L002237](../../agents/web_agent.py#L2237) | 2237 | `"                        results.append({"` | — |
-| [SRC-1AE03B9EC3-L002238](../../agents/web_agent.py#L2238) | 2238 | `"                            \"title\": _clean_text(snippet.get(\"title\") or \"\", 300),"` | — |
-| [SRC-1AE03B9EC3-L002239](../../agents/web_agent.py#L2239) | 2239 | `"                            \"url\": f\"https://www.youtube.com/watch?v={video_id}\","` | — |
-| [SRC-1AE03B9EC3-L002240](../../agents/web_agent.py#L2240) | 2240 | `"                            \"snippet\": _clean_text(snippet.get(\"description\") or \"\", 1200),"` | — |
-| [SRC-1AE03B9EC3-L002241](../../agents/web_agent.py#L2241) | 2241 | `"                            \"page_text\": \"\","` | — |
-| [SRC-1AE03B9EC3-L002242](../../agents/web_agent.py#L2242) | 2242 | `"                            \"page_fetched\": False,"` | — |
-| [SRC-1AE03B9EC3-L002243](../../agents/web_agent.py#L2243) | 2243 | `"                            \"provider\": \"youtube_data_api\","` | — |
-| [SRC-1AE03B9EC3-L002244](../../agents/web_agent.py#L2244) | 2244 | `"                            \"provider_rank\": len(["` | — |
-| [SRC-1AE03B9EC3-L002245](../../agents/web_agent.py#L2245) | 2245 | `"                                row for row in results"` | — |
-| [SRC-1AE03B9EC3-L002246](../../agents/web_agent.py#L2246) | 2246 | `"                                if row.get(\"provider\") == \"youtube_data_api\""` | — |
-| [SRC-1AE03B9EC3-L002247](../../agents/web_agent.py#L2247) | 2247 | `"                            ]) + 1,"` | — |
-| [SRC-1AE03B9EC3-L002248](../../agents/web_agent.py#L2248) | 2248 | `"                            \"search_query\": query,"` | — |
-| [SRC-1AE03B9EC3-L002249](../../agents/web_agent.py#L2249) | 2249 | `"                            \"published_at\": _clean_text(snippet.get(\"publishedAt\") or \"\", 100),"` | — |
-| [SRC-1AE03B9EC3-L002250](../../agents/web_agent.py#L2250) | 2250 | `"                        })"` | — |
-| [SRC-1AE03B9EC3-L002251](../../agents/web_agent.py#L2251) | 2251 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L002252](../../agents/web_agent.py#L2252) | 2252 | `"                    warnings.append(f\"YouTube Data API unavailable (HTTP {response.status_code})\")"` | — |
-| [SRC-1AE03B9EC3-L002253](../../agents/web_agent.py#L2253) | 2253 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
-| [SRC-1AE03B9EC3-L002254](../../agents/web_agent.py#L2254) | 2254 | `"                warnings.append(\"YouTube Data API unavailable for this request\")"` | — |
-| [SRC-1AE03B9EC3-L002255](../../agents/web_agent.py#L2255) | 2255 | `"        elif \"youtube\" in platforms:"` | — |
-| [SRC-1AE03B9EC3-L002256](../../agents/web_agent.py#L2256) | 2256 | `"            warnings.append(\"YouTube direct API is not configured; indexed public YouTube pages are still searched.\")"` | — |
-| [SRC-1AE03B9EC3-L002257](../../agents/web_agent.py#L2257) | 2257 | `""` | — |
-| [SRC-1AE03B9EC3-L002258](../../agents/web_agent.py#L2258) | 2258 | `"        return results, warnings"` | — |
-| [SRC-1AE03B9EC3-L002259](../../agents/web_agent.py#L2259) | 2259 | `""` | — |
-| [SRC-1AE03B9EC3-L002260](../../agents/web_agent.py#L2260) | 2260 | `"    def _fetch_page(self, url: str) -> tuple[str, str]:"` | — |
-| [SRC-1AE03B9EC3-L002261](../../agents/web_agent.py#L2261) | 2261 | `"        \"\"\"Fetch a public page with bounded redirects and an inspectable extraction outcome.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L002262](../../agents/web_agent.py#L2262) | 2262 | `"        def result("` | — |
-| [SRC-1AE03B9EC3-L002263](../../agents/web_agent.py#L2263) | 2263 | `"            title: str = \"\","` | — |
-| [SRC-1AE03B9EC3-L002264](../../agents/web_agent.py#L2264) | 2264 | `"            page_text: str = \"\","` | — |

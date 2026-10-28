@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006265 إلى SRC-9C97DF51AC-L000024
+- النطاق: SRC-1AE03B9EC3-L006211 إلى SRC-65AAF94960-L000012
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006211](../../agents/web_agent.py#L6211) | 6211 | `"            final_answer_status = ("` | — |
+| [SRC-1AE03B9EC3-L006212](../../agents/web_agent.py#L6212) | 6212 | `"                \"model_not_configured_fallback\""` | — |
+| [SRC-1AE03B9EC3-L006213](../../agents/web_agent.py#L6213) | 6213 | `"                if not self.api_key"` | — |
+| [SRC-1AE03B9EC3-L006214](../../agents/web_agent.py#L6214) | 6214 | `"                else \"generation_failed_with_source_fallback\""` | — |
+| [SRC-1AE03B9EC3-L006215](../../agents/web_agent.py#L6215) | 6215 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L006216](../../agents/web_agent.py#L6216) | 6216 | `"        elif review_warning:"` | — |
+| [SRC-1AE03B9EC3-L006217](../../agents/web_agent.py#L6217) | 6217 | `"            final_answer_status = \"review_failed_with_source_fallback\""` | — |
+| [SRC-1AE03B9EC3-L006218](../../agents/web_agent.py#L6218) | 6218 | `"        elif coverage_repair_status == \"no_change_gap_unresolved\":"` | — |
+| [SRC-1AE03B9EC3-L006219](../../agents/web_agent.py#L6219) | 6219 | `"            final_answer_status = \"coverage_repair_left_possible_gap\""` | — |
+| [SRC-1AE03B9EC3-L006220](../../agents/web_agent.py#L6220) | 6220 | `"        elif coverage_repair_status == \"budget_exhausted\":"` | — |
+| [SRC-1AE03B9EC3-L006221](../../agents/web_agent.py#L6221) | 6221 | `"            final_answer_status = \"coverage_repair_budget_exhausted_with_possible_gap\""` | — |
+| [SRC-1AE03B9EC3-L006222](../../agents/web_agent.py#L6222) | 6222 | `"        elif coverage_repair_status == \"unavailable\":"` | — |
+| [SRC-1AE03B9EC3-L006223](../../agents/web_agent.py#L6223) | 6223 | `"            final_answer_status = \"coverage_repair_unavailable_with_possible_gap\""` | — |
+| [SRC-1AE03B9EC3-L006224](../../agents/web_agent.py#L6224) | 6224 | `"        elif used_llm:"` | — |
+| [SRC-1AE03B9EC3-L006225](../../agents/web_agent.py#L6225) | 6225 | `"            final_answer_status = \"model_answer_generated\""` | — |
+| [SRC-1AE03B9EC3-L006226](../../agents/web_agent.py#L6226) | 6226 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L006227](../../agents/web_agent.py#L6227) | 6227 | `"            final_answer_status = \"source_fallback\""` | — |
+| [SRC-1AE03B9EC3-L006228](../../agents/web_agent.py#L6228) | 6228 | `""` | — |
+| [SRC-1AE03B9EC3-L006229](../../agents/web_agent.py#L6229) | 6229 | `"        # Report pipeline completion separately from factual correctness. A successful"` | — |
+| [SRC-1AE03B9EC3-L006230](../../agents/web_agent.py#L6230) | 6230 | `"        # retrieval or model review is not an independent semantic fact check."` | — |
+| [SRC-1AE03B9EC3-L006231](../../agents/web_agent.py#L6231) | 6231 | `"        if report.get(\"search_outcome\") in _RESEARCH_ERROR_OUTCOMES:"` | — |
+| [SRC-1AE03B9EC3-L006232](../../agents/web_agent.py#L6232) | 6232 | `"            pipeline_completion_status = \"execution_failed\""` | — |
+| [SRC-1AE03B9EC3-L006233](../../agents/web_agent.py#L6233) | 6233 | `"        elif not search_attempted:"` | — |
+| [SRC-1AE03B9EC3-L006234](../../agents/web_agent.py#L6234) | 6234 | `"            pipeline_completion_status = \"not_verified\""` | — |
+| [SRC-1AE03B9EC3-L006235](../../agents/web_agent.py#L6235) | 6235 | `"        elif not sources:"` | — |
+| [SRC-1AE03B9EC3-L006236](../../agents/web_agent.py#L6236) | 6236 | `"            pipeline_completion_status = \"insufficient_evidence\""` | — |
+| [SRC-1AE03B9EC3-L006237](../../agents/web_agent.py#L6237) | 6237 | `"        elif ("` | — |
+| [SRC-1AE03B9EC3-L006238](../../agents/web_agent.py#L6238) | 6238 | `"            llm_warning"` | — |
+| [SRC-1AE03B9EC3-L006239](../../agents/web_agent.py#L6239) | 6239 | `"            or review_warning"` | — |
+| [SRC-1AE03B9EC3-L006240](../../agents/web_agent.py#L6240) | 6240 | `"            or review_status != \"model_claim_audit_completed\""` | — |
+| [SRC-1AE03B9EC3-L006241](../../agents/web_agent.py#L6241) | 6241 | `"            or answer_integrity[\"potentially_missing_target_count\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L006242](../../agents/web_agent.py#L6242) | 6242 | `"            or answer_integrity[\"source_evidence_gap_count\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L006243](../../agents/web_agent.py#L6243) | 6243 | `"            or citation_validation[\"valid_citation_count\"] == 0"` | — |
+| [SRC-1AE03B9EC3-L006244](../../agents/web_agent.py#L6244) | 6244 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L006245](../../agents/web_agent.py#L6245) | 6245 | `"            pipeline_completion_status = \"partial\""` | — |
+| [SRC-1AE03B9EC3-L006246](../../agents/web_agent.py#L6246) | 6246 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L006247](../../agents/web_agent.py#L6247) | 6247 | `"            pipeline_completion_status = \"completed\""` | — |
+| [SRC-1AE03B9EC3-L006248](../../agents/web_agent.py#L6248) | 6248 | `"        completion_stages = {"` | — |
+| [SRC-1AE03B9EC3-L006249](../../agents/web_agent.py#L6249) | 6249 | `"            \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L006250](../../agents/web_agent.py#L6250) | 6250 | `"            \"accepted_sources\": len(sources),"` | — |
+| [SRC-1AE03B9EC3-L006251](../../agents/web_agent.py#L6251) | 6251 | `"            \"pages_read\": fetched_pages,"` | — |
+| [SRC-1AE03B9EC3-L006252](../../agents/web_agent.py#L6252) | 6252 | `"            \"answer_generated_by_model\": bool(used_llm),"` | — |
+| [SRC-1AE03B9EC3-L006253](../../agents/web_agent.py#L6253) | 6253 | `"            \"claim_review\": review_status,"` | — |
+| [SRC-1AE03B9EC3-L006254](../../agents/web_agent.py#L6254) | 6254 | `"            \"valid_citations\": citation_validation[\"valid_citation_count\"],"` | — |
+| [SRC-1AE03B9EC3-L006255](../../agents/web_agent.py#L6255) | 6255 | `"            \"semantic_fact_check\": \"not_performed\","` | — |
+| [SRC-1AE03B9EC3-L006256](../../agents/web_agent.py#L6256) | 6256 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L006257](../../agents/web_agent.py#L6257) | 6257 | `"        report[\"pipeline_completion_status\"] = pipeline_completion_status"` | — |
+| [SRC-1AE03B9EC3-L006258](../../agents/web_agent.py#L6258) | 6258 | `"        report[\"completion_stages\"] = completion_stages"` | — |
+| [SRC-1AE03B9EC3-L006259](../../agents/web_agent.py#L6259) | 6259 | `"        report[\"pipeline_completion_semantics\"] = ("` | — |
+| [SRC-1AE03B9EC3-L006260](../../agents/web_agent.py#L6260) | 6260 | `"            \"pipeline stage completion only; not a guarantee of factual correctness\""` | — |
+| [SRC-1AE03B9EC3-L006261](../../agents/web_agent.py#L6261) | 6261 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006262](../../agents/web_agent.py#L6262) | 6262 | `""` | — |
+| [SRC-1AE03B9EC3-L006263](../../agents/web_agent.py#L6263) | 6263 | `"        public_sources = []"` | — |
+| [SRC-1AE03B9EC3-L006264](../../agents/web_agent.py#L6264) | 6264 | `"        for source in sources:"` | — |
 | [SRC-1AE03B9EC3-L006265](../../agents/web_agent.py#L6265) | 6265 | `"            public_sources.append({"` | — |
 | [SRC-1AE03B9EC3-L006266](../../agents/web_agent.py#L6266) | 6266 | `"                \"title\": source.get(\"title\") or \"نتيجة ويب\","` | — |
 | [SRC-1AE03B9EC3-L006267](../../agents/web_agent.py#L6267) | 6267 | `"                \"url\": source[\"url\"],"` | — |
@@ -789,75 +843,3 @@
 | [SRC-65AAF94960-L000010](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L10) | 10 | `"هذه النتيجة لا تثبت أن الرمز المخزن في متصفح المستخدم غير صحيح؛ إنها تثبت فقط أن رمزًا لم يكن متاحًا في ملف المتصفح الاختباري. التخزين المحلي في المتصفحات/الملفات منفصل."` | — |
 | [SRC-65AAF94960-L000011](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) | 11 | `""` | — |
 | [SRC-65AAF94960-L000012](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L12) | 12 | `"## أدلة القبول"` | — |
-| [SRC-65AAF94960-L000013](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L13) | 13 | `"\| الفحص \| النتيجة \| الحالة \|"` | — |
-| [SRC-65AAF94960-L000014](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L14) | 14 | `"\|---\|---\|---\|"` | — |
-| [SRC-65AAF94960-L000015](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L15) | 15 | `"\| تحميل الصفحة الرئيسية \| ظهرت واجهة Omarai \| VERIFIED \|"` | — |
-| [SRC-65AAF94960-L000016](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L16) | 16 | ``"\| وجود رمز وصول في ملف المتصفح الاختباري \| الحقل `accessToken` فارغ ويعرض «أدخل رمز الاستضافة الذي أنشأته» \| VERIFIED \|"`` | — |
-| [SRC-65AAF94960-L000017](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L17) | 17 | `"\| سؤال «ما عاصمة مصر؟» في الوضع الافتراضي الظاهر «بحث معمّق» \| فشل قبل استرجاع إجابة أو مصادر \| FAILED / BLOCKED \|"` | — |
-| [SRC-65AAF94960-L000018](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L18) | 18 | `"\| نص الخطأ \| «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.» \| VERIFIED \|"` | — |
-| [SRC-65AAF94960-L000019](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L19) | 19 | `"\| البحث عن الموقع الرسمي لـ OpenAI في «الأحدث الآن» \| لم يُنفذ بسبب حاجز المصادقة \| NOT_RUN \|"` | — |
-| [SRC-65AAF94960-L000020](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L20) | 20 | `"\| سؤال بحث معمّق إضافي \| لم يُنفذ بسبب حاجز المصادقة \| NOT_RUN \|"` | — |
-| [SRC-65AAF94960-L000021](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L21) | 21 | ``"\| `GET /api/health` \| `ok=true` \| VERIFIED — لكنه لا يثبت صلاحية البحث الحي \|"`` | — |
-| [SRC-65AAF94960-L000022](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L22) | 22 | ``"\| هوية البناء \| `build.sha=unknown`, `sha_status=unknown`, `sha_source=unknown` \| BLOCKED / NOT VERIFIED \|"`` | — |
-| [SRC-65AAF94960-L000023](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L23) | 23 | ``"\| فحص الشبكة الحي \| `live_network_checks_performed=false` \| NOT_RUN \|"`` | — |
-| [SRC-65AAF94960-L000024](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L24) | 24 | `""` | — |
-| [SRC-65AAF94960-L000025](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L25) | 25 | `"## تفسير الاستجابة الصحية"` | — |
-| [SRC-65AAF94960-L000026](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L26) | 26 | ``"يصرّح رد الصحة بأن `web_search_ready` يعني أن الاعتماديات قابلة للاستيراد، وليس أن مزود البحث متصل؛ وأن `language_model_configured` يعني وجود بيانات اعتماد، وليس نجاح إكمال طلب. ويعرض مصادر منها DuckDuckGo HTML وBing RSS وGoogle News RSS كمدعومة، بينما يعرض DeepSeek/Brave/Tavily على أنها مشروطة الإعداد، ويعرض OpenRouter server-side live web search على أنه معطل. هذه أوصاف إعداد وليست اختبارات اتصال."`` | — |
-| [SRC-65AAF94960-L000027](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L27) | 27 | `""` | — |
-| [SRC-65AAF94960-L000028](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L28) | 28 | `"## السبب والحالة"` | — |
-| [SRC-65AAF94960-L000029](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L29) | 29 | `"- **OMR-LIVE-004 — PARTIAL / BLOCKED:** اختبار الطلبات المحمية يتوقف عند المصادقة. السبب الدقيق وراء عدم وجود الرمز في ملف المتصفح الاختباري هو اختلاف سياق التخزين، لا دليل على فساد الرمز نفسه."` | — |
-| [SRC-65AAF94960-L000030](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L30) | 30 | ``"- **OMR-LIVE-005 — CODE/CI FIXED_AND_TESTED; HOST_CONFIGURATION_PENDING:** إصلاح Dockerfile الذي يقرأ `PUBLIC_OMARAI_BUILD_SHA` موجود في #98، لكن المضيف ما زال يعرض SHA مجهولًا. يلزم تعيين متغير الإصدار العام إلى SHA الكامل المعتمد وإعادة البناء/النشر من مالك الاستضافة، ثم التحقق من التطابق. لا تضع أي أسرار في متغير الإصدار."`` | — |
-| [SRC-65AAF94960-L000031](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L31) | 31 | ``"- لا يجوز اعتبار نجاح CI أو `ok=true` إثباتًا لصحة البحث أو الإجابات في الإنتاج."`` | — |
-| [SRC-65AAF94960-L000032](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L32) | 32 | `""` | — |
-| [SRC-65AAF94960-L000033](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L33) | 33 | `"## الخطوات اللازمة للإغلاق"` | — |
-| [SRC-65AAF94960-L000034](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L34) | 34 | `"1. افتح جلسة إعداد ملف المتصفح الآمنة من الرابط الذي يوفره ChatGPT، على الموقع المستضاف."` | — |
-| [SRC-65AAF94960-L000035](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L35) | 35 | `"2. أدخل رمز الوصول بنفسك في حقل التطبيق، واحفظه داخل ملف المتصفح الاختباري. **لا ترسل الرمز في المحادثة ولا تضعه في سجل GitHub.**"` | — |
-| [SRC-65AAF94960-L000036](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L36) | 36 | `"3. أعد اختبار سؤال معرفي بسيط، ثم بحث الموقع الرسمي في وضع «الأحدث الآن»، ثم بحث معمّق؛ سجل حالة الطلب وروابط المصادر الفعلية."` | — |
-| [SRC-65AAF94960-L000037](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L37) | 37 | ``"4. راجع إعدادات SnapDeploy لتعيين `PUBLIC_OMARAI_BUILD_SHA` إلى SHA الكامل النهائي المعتمد، ثم أعد البناء/النشر عبر مسار النشر المعتاد، وبعدها تحقق أن `/api/health` يعرض SHA المطابق. هذا التقرير لا يغير إعدادات المضيف ولا ينشر."`` | — |
-| [SRC-65AAF94960-L000038](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L38) | 38 | `"5. لا تعلن القبول النهائي حتى تنجح هذه الاختبارات وتوثق مصادر حقيقية قابلة للفتح، أو تسجل كل عائق متبقٍ بوضوح."` | — |
-| [SRC-65AAF94960-L000039](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L39) | 39 | `""` | — |
-| [SRC-65AAF94960-L000040](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L40) | 40 | `"## حدود العمل"` | — |
-| [SRC-65AAF94960-L000041](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L41) | 41 | `"لم تُقرأ أو تُكشف أسرار، ولم تُغير إعدادات الاستضافة، ولم يُنفذ نشر أو إجراء مدفوع. تم استخدام المتصفح للقراءة والاختبار فقط."` | — |
-## واجهة سطر الأوامر
-
-### FILE-14C6359E27 — [cli/__init__.py](../../cli/__init__.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-14C6359E27-L000001](../../cli/__init__.py#L1) | 1 | `"\"\"\"Omarai command-line package.\"\"\""` | — |
-## واجهة سطر الأوامر
-
-### FILE-9C97DF51AC — [cli/omarai.py](../../cli/omarai.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-9C97DF51AC-L000001](../../cli/omarai.py#L1) | 1 | `"\"\"\"Command-line interface for Omarai.\"\"\""` | — |
-| [SRC-9C97DF51AC-L000002](../../cli/omarai.py#L2) | 2 | `"import argparse"` | — |
-| [SRC-9C97DF51AC-L000003](../../cli/omarai.py#L3) | 3 | `"import json"` | — |
-| [SRC-9C97DF51AC-L000004](../../cli/omarai.py#L4) | 4 | `""` | — |
-| [SRC-9C97DF51AC-L000005](../../cli/omarai.py#L5) | 5 | `"from agents.omarai import LeadStore, analyze"` | — |
-| [SRC-9C97DF51AC-L000006](../../cli/omarai.py#L6) | 6 | `"from api.omarai import serve"` | — |
-| [SRC-9C97DF51AC-L000007](../../cli/omarai.py#L7) | 7 | `""` | — |
-| [SRC-9C97DF51AC-L000008](../../cli/omarai.py#L8) | 8 | `""` | — |
-| [SRC-9C97DF51AC-L000009](../../cli/omarai.py#L9) | 9 | `"def main():"` | — |
-| [SRC-9C97DF51AC-L000010](../../cli/omarai.py#L10) | 10 | `"    parser=argparse.ArgumentParser(prog=\"omarai\",description=\"Arabic lead-intent helper\")"` | — |
-| [SRC-9C97DF51AC-L000011](../../cli/omarai.py#L11) | 11 | `"    sub=parser.add_subparsers(dest=\"command\",required=True)"` | — |
-| [SRC-9C97DF51AC-L000012](../../cli/omarai.py#L12) | 12 | `"    p=sub.add_parser(\"analyze\")"` | — |
-| [SRC-9C97DF51AC-L000013](../../cli/omarai.py#L13) | 13 | `"    p.add_argument(\"--text\",required=True)"` | — |
-| [SRC-9C97DF51AC-L000014](../../cli/omarai.py#L14) | 14 | `"    p.add_argument(\"--product\",default=\"\")"` | — |
-| [SRC-9C97DF51AC-L000015](../../cli/omarai.py#L15) | 15 | `"    p.add_argument(\"--location\",default=\"\")"` | — |
-| [SRC-9C97DF51AC-L000016](../../cli/omarai.py#L16) | 16 | `"    p=sub.add_parser(\"serve\")"` | — |
-| [SRC-9C97DF51AC-L000017](../../cli/omarai.py#L17) | 17 | `"    p.add_argument(\"--host\",default=\"127.0.0.1\")"` | — |
-| [SRC-9C97DF51AC-L000018](../../cli/omarai.py#L18) | 18 | `"    p.add_argument(\"--port\",type=int,default=8765)"` | — |
-| [SRC-9C97DF51AC-L000019](../../cli/omarai.py#L19) | 19 | `"    p=sub.add_parser(\"import-csv\")"` | — |
-| [SRC-9C97DF51AC-L000020](../../cli/omarai.py#L20) | 20 | `"    p.add_argument(\"--file\",required=True)"` | — |
-| [SRC-9C97DF51AC-L000021](../../cli/omarai.py#L21) | 21 | `"    p=sub.add_parser(\"list\")"` | — |
-| [SRC-9C97DF51AC-L000022](../../cli/omarai.py#L22) | 22 | `"    p.add_argument(\"--limit\",type=int,default=100)"` | — |
-| [SRC-9C97DF51AC-L000023](../../cli/omarai.py#L23) | 23 | `"    p.add_argument(\"--status\")"` | — |
-| [SRC-9C97DF51AC-L000024](../../cli/omarai.py#L24) | 24 | `"    p=sub.add_parser(\"export-csv\")"` | — |
