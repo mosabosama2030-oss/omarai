@@ -48,6 +48,7 @@ from agents.research import (
     validate_plan,
 )
 from agents.research_guardrails import apply_source_guardrails
+from agents.tool_execution_status import build_tool_execution_matrix
 from agents.task_understanding import (
     build_query_strategy_matrix,
     build_task_spec,
@@ -4424,6 +4425,11 @@ class WebAgent:
                 }
                 if status_row:
                     provider_status_rows.append(status_row)
+            tool_status_matrix = build_tool_execution_matrix(
+                task_spec,
+                result,
+                report,
+            )
             task_summary = {
                 "task_spec": task_spec,
                 "query_strategy_matrix": query_matrix,
@@ -4432,6 +4438,7 @@ class WebAgent:
                 "search_was_attempted": bool(result.get("search_attempted")),
                 "tool_execution": {
                     "required_tools": list(task_spec.get("tool_requirements") or []),
+                    "tool_status_matrix": tool_status_matrix,
                     "search_outcome": report.get("search_outcome", "not_assessed"),
                     "providers_used": report.get("providers_used", []),
                     "provider_statuses": provider_status_rows,
