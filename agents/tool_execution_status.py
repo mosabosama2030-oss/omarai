@@ -66,22 +66,27 @@ def build_tool_execution_matrix(
 
     outcome = str(search_report.get("search_outcome") or "unknown")
     attempted = output.get("search_attempted", search_report.get("search_attempted"))
-    accepted_sources = _nonnegative_int(
+    reported_accepted_sources = _nonnegative_int(
         search_report.get("usable_sources_after_filtering")
     )
+    reported_pages_read = _nonnegative_int(search_report.get("pages_fetched"))
     pages_attempted = _nonnegative_int(search_report.get("pages_fetch_attempted"))
-    pages_read = _nonnegative_int(search_report.get("pages_fetched"))
-    source_rows = output.get("sources")
-    source_rows = source_rows if isinstance(source_rows, list) else []
+    raw_source_rows = output.get("sources")
+    returned_sources_known = isinstance(raw_source_rows, list)
+    source_rows = raw_source_rows if returned_sources_known else []
     readable_page_rows = sum(
         1 for source in source_rows
         if isinstance(source, dict)
         and source.get("page_fetched") is True
     )
-    if pages_read is None:
-        pages_read = readable_page_rows
-    if accepted_sources is None:
-        accepted_sources = len(source_rows) if source_rows else None
+    # The public return value is the final accepted source set. Prefer it when
+    # present; preserve report counters separately so disagreements stay visible.
+    accepted_sources = (
+        len(source_rows) if returned_sources_known else reported_accepted_sources
+    )
+    pages_read = (
+        readable_page_rows if returned_sources_known else reported_pages_read
+    )
 
     rows: list[dict[str, Any]] = []
 
@@ -113,6 +118,7 @@ def build_tool_execution_matrix(
         "search_outcome": outcome,
         "search_attempted": attempted if isinstance(attempted, bool) else None,
         "accepted_source_count": accepted_sources,
+        "reported_accepted_source_count": reported_accepted_sources,
     }))
 
     tool = "page_fetch"
@@ -135,6 +141,7 @@ def build_tool_execution_matrix(
     rows.append(_status_row(tool, tool in required, status, {
         "pages_fetch_attempted": pages_attempted,
         "pages_read": pages_read,
+        "reported_pages_fetched": reported_pages_read,
         "pages_read_from_returned_sources": readable_page_rows,
     }))
 
