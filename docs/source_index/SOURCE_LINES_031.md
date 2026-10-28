@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000072 إلى SRC-6BF96689A8-L000231
+- النطاق: SRC-4397BC2CD2-L000054 إلى SRC-6BF96689A8-L000213
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4397BC2CD2-L000054](../../tests/test_intent_router_integration.py#L54) | 54 | `"    assert result[\"kind\"] == \"local_conversation\""` | — |
+| [SRC-4397BC2CD2-L000055](../../tests/test_intent_router_integration.py#L55) | 55 | `"    assert result[\"intent_route\"] == \"LOCAL\""` | — |
+| [SRC-4397BC2CD2-L000056](../../tests/test_intent_router_integration.py#L56) | 56 | `"    assert result[\"research_plan\"][\"intent_route\"] == \"LOCAL\""` | — |
+| [SRC-4397BC2CD2-L000057](../../tests/test_intent_router_integration.py#L57) | 57 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-4397BC2CD2-L000058](../../tests/test_intent_router_integration.py#L58) | 58 | `"    assert result[\"used_language_model\"] is False"` | — |
+| [SRC-4397BC2CD2-L000059](../../tests/test_intent_router_integration.py#L59) | 59 | `"    assert result[\"sources\"] == []"` | — |
+| [SRC-4397BC2CD2-L000060](../../tests/test_intent_router_integration.py#L60) | 60 | `""` | — |
+| [SRC-4397BC2CD2-L000061](../../tests/test_intent_router_integration.py#L61) | 61 | `""` | — |
+| [SRC-4397BC2CD2-L000062](../../tests/test_intent_router_integration.py#L62) | 62 | `"def test_ambiguous_question_clarifies_without_model_or_search(monkeypatch) -> None:"` | — |
+| [SRC-4397BC2CD2-L000063](../../tests/test_intent_router_integration.py#L63) | 63 | `"    agent = WebAgent()"` | — |
+| [SRC-4397BC2CD2-L000064](../../tests/test_intent_router_integration.py#L64) | 64 | `""` | — |
+| [SRC-4397BC2CD2-L000065](../../tests/test_intent_router_integration.py#L65) | 65 | `"    def unexpected(*args, **kwargs):"` | — |
+| [SRC-4397BC2CD2-L000066](../../tests/test_intent_router_integration.py#L66) | 66 | `"        pytest.fail(\"An unresolved referent must be clarified without model/search.\")"` | — |
+| [SRC-4397BC2CD2-L000067](../../tests/test_intent_router_integration.py#L67) | 67 | `""` | — |
+| [SRC-4397BC2CD2-L000068](../../tests/test_intent_router_integration.py#L68) | 68 | `"    monkeypatch.setattr(agent, \"_answer_without_search\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000069](../../tests/test_intent_router_integration.py#L69) | 69 | `"    monkeypatch.setattr(agent, \"_plan_search\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000070](../../tests/test_intent_router_integration.py#L70) | 70 | `"    monkeypatch.setattr(agent, \"_collect_research\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000071](../../tests/test_intent_router_integration.py#L71) | 71 | `""` | — |
 | [SRC-4397BC2CD2-L000072](../../tests/test_intent_router_integration.py#L72) | 72 | `"    result = agent.answer(\"كام سعرها؟\")"` | — |
 | [SRC-4397BC2CD2-L000073](../../tests/test_intent_router_integration.py#L73) | 73 | `""` | — |
 | [SRC-4397BC2CD2-L000074](../../tests/test_intent_router_integration.py#L74) | 74 | `"    assert result[\"kind\"] == \"clarification_needed\""` | — |
@@ -843,21 +861,3 @@
 | [SRC-6BF96689A8-L000211](../../tests/test_research.py#L211) | 211 | `""` | — |
 | [SRC-6BF96689A8-L000212](../../tests/test_research.py#L212) | 212 | `""` | — |
 | [SRC-6BF96689A8-L000213](../../tests/test_research.py#L213) | 213 | `"def test_compact_search_query_preserves_subject_when_prompt_starts_with_action_verb():"` | — |
-| [SRC-6BF96689A8-L000214](../../tests/test_research.py#L214) | 214 | `"    query = compact_search_query("` | — |
-| [SRC-6BF96689A8-L000215](../../tests/test_research.py#L215) | 215 | `"        \"وضح أهمية السيارات الكهربائية في مصر. ما تأثير الشحن على المدى الطويل؟ اذكر مصادر موثوقة.\""` | — |
-| [SRC-6BF96689A8-L000216](../../tests/test_research.py#L216) | 216 | `"    )"` | — |
-| [SRC-6BF96689A8-L000217](../../tests/test_research.py#L217) | 217 | `"    assert \"السيارات الكهربائية في مصر\" in query"` | — |
-| [SRC-6BF96689A8-L000218](../../tests/test_research.py#L218) | 218 | `"    assert \"الشحن على المدى الطويل\" in query"` | — |
-| [SRC-6BF96689A8-L000219](../../tests/test_research.py#L219) | 219 | `"    assert \"مصادر موثوقة\" not in query"` | — |
-| [SRC-6BF96689A8-L000220](../../tests/test_research.py#L220) | 220 | `""` | — |
-| [SRC-6BF96689A8-L000221](../../tests/test_research.py#L221) | 221 | `"    query = compact_search_query("` | — |
-| [SRC-6BF96689A8-L000222](../../tests/test_research.py#L222) | 222 | `"        \"اذكر أبرز السيارات الكهربائية في مصر. قارن بين أسعارها.\""` | — |
-| [SRC-6BF96689A8-L000223](../../tests/test_research.py#L223) | 223 | `"    )"` | — |
-| [SRC-6BF96689A8-L000224](../../tests/test_research.py#L224) | 224 | `"    assert \"السيارات الكهربائية في مصر\" in query"` | — |
-| [SRC-6BF96689A8-L000225](../../tests/test_research.py#L225) | 225 | `"    assert \"أسعارها\" in query"` | — |
-| [SRC-6BF96689A8-L000226](../../tests/test_research.py#L226) | 226 | `"    assert \"اذكر أبرز\" not in query"` | — |
-| [SRC-6BF96689A8-L000227](../../tests/test_research.py#L227) | 227 | `""` | — |
-| [SRC-6BF96689A8-L000228](../../tests/test_research.py#L228) | 228 | `""` | — |
-| [SRC-6BF96689A8-L000229](../../tests/test_research.py#L229) | 229 | `""` | — |
-| [SRC-6BF96689A8-L000230](../../tests/test_research.py#L230) | 230 | `"def test_compact_search_query_returns_empty_for_instruction_only_request():"` | — |
-| [SRC-6BF96689A8-L000231](../../tests/test_research.py#L231) | 231 | `"    query = compact_search_query(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |

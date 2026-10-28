@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AAA21D04E8-L000016 إلى SRC-4397BC2CD2-L000071
+- النطاق: SRC-AAA21D04E8-L000016 إلى SRC-4397BC2CD2-L000053
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -697,72 +697,90 @@
 | [SRC-EA6EC52573-L000195](../../tests/test_intent_router.py#L195) | 195 | `"        assert \"مصر\" in resolved"` | — |
 | [SRC-EA6EC52573-L000196](../../tests/test_intent_router.py#L196) | 196 | `""` | — |
 | [SRC-EA6EC52573-L000197](../../tests/test_intent_router.py#L197) | 197 | `""` | — |
-| [SRC-EA6EC52573-L000198](../../tests/test_intent_router.py#L198) | 198 | `"def test_new_question_starting_with_tayyib_does_not_inherit_old_topic():"` | — |
+| [SRC-EA6EC52573-L000198](../../tests/test_intent_router.py#L198) | 198 | `"def test_long_arabic_warranty_followup_resolves_with_context():"` | — |
 | [SRC-EA6EC52573-L000199](../../tests/test_intent_router.py#L199) | 199 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000200](../../tests/test_intent_router.py#L200) | 200 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
-| [SRC-EA6EC52573-L000201](../../tests/test_intent_router.py#L201) | 201 | `"        {\"role\": \"assistant\", \"content\": \"هذه بعض معلومات السعر.\"},"` | — |
+| [SRC-EA6EC52573-L000200](../../tests/test_intent_router.py#L200) | 200 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 نسخة 256 جيجابايت في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000201](../../tests/test_intent_router.py#L201) | 201 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن السعر.\"},"` | — |
 | [SRC-EA6EC52573-L000202](../../tests/test_intent_router.py#L202) | 202 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000203](../../tests/test_intent_router.py#L203) | 203 | `"    question = \"طيب اشرح الذكاء الاصطناعي في المدارس\""` | — |
-| [SRC-EA6EC52573-L000204](../../tests/test_intent_router.py#L204) | 204 | `"    assert resolve_followup_query(question, history) == question"` | — |
-| [SRC-EA6EC52573-L000205](../../tests/test_intent_router.py#L205) | 205 | `"    decision = route_intent(question, history)"` | — |
-| [SRC-EA6EC52573-L000206](../../tests/test_intent_router.py#L206) | 206 | `"    assert decision[\"route\"] == \"MODEL_ONLY\""` | — |
+| [SRC-EA6EC52573-L000203](../../tests/test_intent_router.py#L203) | 203 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
+| [SRC-EA6EC52573-L000204](../../tests/test_intent_router.py#L204) | 204 | `"    resolved = resolve_followup_query(question, history)"` | — |
+| [SRC-EA6EC52573-L000205](../../tests/test_intent_router.py#L205) | 205 | `"    assert \"iPhone 17\" in resolved"` | — |
+| [SRC-EA6EC52573-L000206](../../tests/test_intent_router.py#L206) | 206 | `"    assert question in resolved"` | — |
 | [SRC-EA6EC52573-L000207](../../tests/test_intent_router.py#L207) | 207 | `""` | — |
 | [SRC-EA6EC52573-L000208](../../tests/test_intent_router.py#L208) | 208 | `""` | — |
-| [SRC-EA6EC52573-L000209](../../tests/test_intent_router.py#L209) | 209 | `"def test_chained_followups_keep_the_last_substantive_topic():"` | — |
-| [SRC-EA6EC52573-L000210](../../tests/test_intent_router.py#L210) | 210 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000211](../../tests/test_intent_router.py#L211) | 211 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
-| [SRC-EA6EC52573-L000212](../../tests/test_intent_router.py#L212) | 212 | `"        {\"role\": \"assistant\", \"content\": \"السعر يختلف حسب المتجر.\"},"` | — |
-| [SRC-EA6EC52573-L000213](../../tests/test_intent_router.py#L213) | 213 | `"        {\"role\": \"user\", \"content\": \"والضمان؟\"},"` | — |
-| [SRC-EA6EC52573-L000214](../../tests/test_intent_router.py#L214) | 214 | `"        {\"role\": \"assistant\", \"content\": \"سأوضح الضمان.\"},"` | — |
-| [SRC-EA6EC52573-L000215](../../tests/test_intent_router.py#L215) | 215 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000216](../../tests/test_intent_router.py#L216) | 216 | `"    resolved = resolve_followup_query(\"والبطارية؟\", history)"` | — |
-| [SRC-EA6EC52573-L000217](../../tests/test_intent_router.py#L217) | 217 | `"    assert \"iPhone 16\" in resolved"` | — |
-| [SRC-EA6EC52573-L000218](../../tests/test_intent_router.py#L218) | 218 | `"    assert \"البطارية\" in resolved"` | — |
-| [SRC-EA6EC52573-L000219](../../tests/test_intent_router.py#L219) | 219 | `""` | — |
-| [SRC-EA6EC52573-L000220](../../tests/test_intent_router.py#L220) | 220 | `""` | — |
-| [SRC-EA6EC52573-L000221](../../tests/test_intent_router.py#L221) | 221 | `"def test_answer_to_clarification_restores_original_intent():"` | — |
-| [SRC-EA6EC52573-L000222](../../tests/test_intent_router.py#L222) | 222 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000223](../../tests/test_intent_router.py#L223) | 223 | `"        {\"role\": \"user\", \"content\": \"كام سعرها؟\"},"` | — |
-| [SRC-EA6EC52573-L000224](../../tests/test_intent_router.py#L224) | 224 | `"        {"` | — |
-| [SRC-EA6EC52573-L000225](../../tests/test_intent_router.py#L225) | 225 | `"            \"role\": \"assistant\","` | — |
-| [SRC-EA6EC52573-L000226](../../tests/test_intent_router.py#L226) | 226 | `"            \"content\": \"تقصد إيه تحديدًا؟ اكتب اسم الشيء أو المنتج المقصود، أو ابعت الرابط، وأكمل معاك من غير ما أخمّن.\","` | — |
-| [SRC-EA6EC52573-L000227](../../tests/test_intent_router.py#L227) | 227 | `"        },"` | — |
-| [SRC-EA6EC52573-L000228](../../tests/test_intent_router.py#L228) | 228 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000229](../../tests/test_intent_router.py#L229) | 229 | `"    decision = route_intent(\"iPhone 16\", history)"` | — |
-| [SRC-EA6EC52573-L000230](../../tests/test_intent_router.py#L230) | 230 | `"    assert decision[\"route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-EA6EC52573-L000231](../../tests/test_intent_router.py#L231) | 231 | `"    assert decision[\"reason\"] == \"answer_to_pending_clarification\""` | — |
-| [SRC-EA6EC52573-L000232](../../tests/test_intent_router.py#L232) | 232 | `"    resolved = resolve_followup_query(\"iPhone 16\", history)"` | — |
-| [SRC-EA6EC52573-L000233](../../tests/test_intent_router.py#L233) | 233 | `"    assert \"سعرها\" in resolved"` | — |
-| [SRC-EA6EC52573-L000234](../../tests/test_intent_router.py#L234) | 234 | `"    assert \"iPhone 16\" in resolved"` | — |
-| [SRC-EA6EC52573-L000235](../../tests/test_intent_router.py#L235) | 235 | `""` | — |
-| [SRC-EA6EC52573-L000236](../../tests/test_intent_router.py#L236) | 236 | `""` | — |
-| [SRC-EA6EC52573-L000237](../../tests/test_intent_router.py#L237) | 237 | `"def test_topic_detection_does_not_inherit_old_social_or_depth_intent():"` | — |
-| [SRC-EA6EC52573-L000238](../../tests/test_intent_router.py#L238) | 238 | `"    from agents.research import fallback_plan"` | — |
-| [SRC-EA6EC52573-L000239](../../tests/test_intent_router.py#L239) | 239 | `""` | — |
+| [SRC-EA6EC52573-L000209](../../tests/test_intent_router.py#L209) | 209 | `"def test_long_arabic_warranty_followup_without_context_clarifies():"` | — |
+| [SRC-EA6EC52573-L000210](../../tests/test_intent_router.py#L210) | 210 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
+| [SRC-EA6EC52573-L000211](../../tests/test_intent_router.py#L211) | 211 | `"    decision = route_intent(question)"` | — |
+| [SRC-EA6EC52573-L000212](../../tests/test_intent_router.py#L212) | 212 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |
+| [SRC-EA6EC52573-L000213](../../tests/test_intent_router.py#L213) | 213 | `"    assert decision[\"needs_clarification\"] is True"` | — |
+| [SRC-EA6EC52573-L000214](../../tests/test_intent_router.py#L214) | 214 | `""` | — |
+| [SRC-EA6EC52573-L000215](../../tests/test_intent_router.py#L215) | 215 | `""` | — |
+| [SRC-EA6EC52573-L000216](../../tests/test_intent_router.py#L216) | 216 | `"def test_new_question_starting_with_tayyib_does_not_inherit_old_topic():"` | — |
+| [SRC-EA6EC52573-L000217](../../tests/test_intent_router.py#L217) | 217 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000218](../../tests/test_intent_router.py#L218) | 218 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
+| [SRC-EA6EC52573-L000219](../../tests/test_intent_router.py#L219) | 219 | `"        {\"role\": \"assistant\", \"content\": \"هذه بعض معلومات السعر.\"},"` | — |
+| [SRC-EA6EC52573-L000220](../../tests/test_intent_router.py#L220) | 220 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000221](../../tests/test_intent_router.py#L221) | 221 | `"    question = \"طيب اشرح الذكاء الاصطناعي في المدارس\""` | — |
+| [SRC-EA6EC52573-L000222](../../tests/test_intent_router.py#L222) | 222 | `"    assert resolve_followup_query(question, history) == question"` | — |
+| [SRC-EA6EC52573-L000223](../../tests/test_intent_router.py#L223) | 223 | `"    decision = route_intent(question, history)"` | — |
+| [SRC-EA6EC52573-L000224](../../tests/test_intent_router.py#L224) | 224 | `"    assert decision[\"route\"] == \"MODEL_ONLY\""` | — |
+| [SRC-EA6EC52573-L000225](../../tests/test_intent_router.py#L225) | 225 | `""` | — |
+| [SRC-EA6EC52573-L000226](../../tests/test_intent_router.py#L226) | 226 | `""` | — |
+| [SRC-EA6EC52573-L000227](../../tests/test_intent_router.py#L227) | 227 | `"def test_chained_followups_keep_the_last_substantive_topic():"` | — |
+| [SRC-EA6EC52573-L000228](../../tests/test_intent_router.py#L228) | 228 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000229](../../tests/test_intent_router.py#L229) | 229 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
+| [SRC-EA6EC52573-L000230](../../tests/test_intent_router.py#L230) | 230 | `"        {\"role\": \"assistant\", \"content\": \"السعر يختلف حسب المتجر.\"},"` | — |
+| [SRC-EA6EC52573-L000231](../../tests/test_intent_router.py#L231) | 231 | `"        {\"role\": \"user\", \"content\": \"والضمان؟\"},"` | — |
+| [SRC-EA6EC52573-L000232](../../tests/test_intent_router.py#L232) | 232 | `"        {\"role\": \"assistant\", \"content\": \"سأوضح الضمان.\"},"` | — |
+| [SRC-EA6EC52573-L000233](../../tests/test_intent_router.py#L233) | 233 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000234](../../tests/test_intent_router.py#L234) | 234 | `"    resolved = resolve_followup_query(\"والبطارية؟\", history)"` | — |
+| [SRC-EA6EC52573-L000235](../../tests/test_intent_router.py#L235) | 235 | `"    assert \"iPhone 16\" in resolved"` | — |
+| [SRC-EA6EC52573-L000236](../../tests/test_intent_router.py#L236) | 236 | `"    assert \"البطارية\" in resolved"` | — |
+| [SRC-EA6EC52573-L000237](../../tests/test_intent_router.py#L237) | 237 | `""` | — |
+| [SRC-EA6EC52573-L000238](../../tests/test_intent_router.py#L238) | 238 | `""` | — |
+| [SRC-EA6EC52573-L000239](../../tests/test_intent_router.py#L239) | 239 | `"def test_answer_to_clarification_restores_original_intent():"` | — |
 | [SRC-EA6EC52573-L000240](../../tests/test_intent_router.py#L240) | 240 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000241](../../tests/test_intent_router.py#L241) | 241 | `"        {\"role\": \"user\", \"content\": \"اجمع آراء مستخدمي السيارات الكهربائية على Reddit\"},"` | — |
-| [SRC-EA6EC52573-L000242](../../tests/test_intent_router.py#L242) | 242 | `"        {\"role\": \"assistant\", \"content\": \"هذه النتائج.\"},"` | — |
-| [SRC-EA6EC52573-L000243](../../tests/test_intent_router.py#L243) | 243 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000244](../../tests/test_intent_router.py#L244) | 244 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\", history)"` | — |
-| [SRC-EA6EC52573-L000245](../../tests/test_intent_router.py#L245) | 245 | `"    assert plan[\"social_focus\"] is False"` | — |
-| [SRC-EA6EC52573-L000246](../../tests/test_intent_router.py#L246) | 246 | `"    assert plan[\"platforms\"] == []"` | — |
-| [SRC-EA6EC52573-L000247](../../tests/test_intent_router.py#L247) | 247 | `"    assert plan[\"depth\"] == \"standard\""` | — |
-| [SRC-EA6EC52573-L000248](../../tests/test_intent_router.py#L248) | 248 | `""` | — |
-| [SRC-EA6EC52573-L000249](../../tests/test_intent_router.py#L249) | 249 | `""` | — |
-| [SRC-EA6EC52573-L000250](../../tests/test_intent_router.py#L250) | 250 | `""` | — |
-| [SRC-EA6EC52573-L000251](../../tests/test_intent_router.py#L251) | 251 | `"def test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode():"` | — |
-| [SRC-EA6EC52573-L000252](../../tests/test_intent_router.py#L252) | 252 | `"    question = ("` | — |
-| [SRC-EA6EC52573-L000253](../../tests/test_intent_router.py#L253) | 253 | `"        \"ما أهم استخدامات الذكاء الاصطناعي في الشركات الصغيرة؟ \""` | — |
-| [SRC-EA6EC52573-L000254](../../tests/test_intent_router.py#L254) | 254 | `"        \"اذكر أمثلة ومصادر موثوقة.\""` | — |
-| [SRC-EA6EC52573-L000255](../../tests/test_intent_router.py#L255) | 255 | `"    )"` | — |
-| [SRC-EA6EC52573-L000256](../../tests/test_intent_router.py#L256) | 256 | `"    decision = route_intent(question, mode=\"auto\")"` | — |
-| [SRC-EA6EC52573-L000257](../../tests/test_intent_router.py#L257) | 257 | `"    assert decision[\"route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-EA6EC52573-L000258](../../tests/test_intent_router.py#L258) | 258 | `"    assert decision[\"reason\"] == \"explicit_evidence_request\""` | — |
-| [SRC-EA6EC52573-L000259](../../tests/test_intent_router.py#L259) | 259 | `""` | — |
-| [SRC-EA6EC52573-L000260](../../tests/test_intent_router.py#L260) | 260 | `""` | — |
-| [SRC-EA6EC52573-L000261](../../tests/test_intent_router.py#L261) | 261 | `"def test_stable_question_without_source_request_remains_model_only():"` | — |
-| [SRC-EA6EC52573-L000262](../../tests/test_intent_router.py#L262) | 262 | `"    decision = route_intent(\"اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف\")"` | — |
-| [SRC-EA6EC52573-L000263](../../tests/test_intent_router.py#L263) | 263 | `"    assert decision[\"route\"] == \"MODEL_ONLY\""` | — |
+| [SRC-EA6EC52573-L000241](../../tests/test_intent_router.py#L241) | 241 | `"        {\"role\": \"user\", \"content\": \"كام سعرها؟\"},"` | — |
+| [SRC-EA6EC52573-L000242](../../tests/test_intent_router.py#L242) | 242 | `"        {"` | — |
+| [SRC-EA6EC52573-L000243](../../tests/test_intent_router.py#L243) | 243 | `"            \"role\": \"assistant\","` | — |
+| [SRC-EA6EC52573-L000244](../../tests/test_intent_router.py#L244) | 244 | `"            \"content\": \"تقصد إيه تحديدًا؟ اكتب اسم الشيء أو المنتج المقصود، أو ابعت الرابط، وأكمل معاك من غير ما أخمّن.\","` | — |
+| [SRC-EA6EC52573-L000245](../../tests/test_intent_router.py#L245) | 245 | `"        },"` | — |
+| [SRC-EA6EC52573-L000246](../../tests/test_intent_router.py#L246) | 246 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000247](../../tests/test_intent_router.py#L247) | 247 | `"    decision = route_intent(\"iPhone 16\", history)"` | — |
+| [SRC-EA6EC52573-L000248](../../tests/test_intent_router.py#L248) | 248 | `"    assert decision[\"route\"] == \"WEB_SIMPLE\""` | — |
+| [SRC-EA6EC52573-L000249](../../tests/test_intent_router.py#L249) | 249 | `"    assert decision[\"reason\"] == \"answer_to_pending_clarification\""` | — |
+| [SRC-EA6EC52573-L000250](../../tests/test_intent_router.py#L250) | 250 | `"    resolved = resolve_followup_query(\"iPhone 16\", history)"` | — |
+| [SRC-EA6EC52573-L000251](../../tests/test_intent_router.py#L251) | 251 | `"    assert \"سعرها\" in resolved"` | — |
+| [SRC-EA6EC52573-L000252](../../tests/test_intent_router.py#L252) | 252 | `"    assert \"iPhone 16\" in resolved"` | — |
+| [SRC-EA6EC52573-L000253](../../tests/test_intent_router.py#L253) | 253 | `""` | — |
+| [SRC-EA6EC52573-L000254](../../tests/test_intent_router.py#L254) | 254 | `""` | — |
+| [SRC-EA6EC52573-L000255](../../tests/test_intent_router.py#L255) | 255 | `"def test_topic_detection_does_not_inherit_old_social_or_depth_intent():"` | — |
+| [SRC-EA6EC52573-L000256](../../tests/test_intent_router.py#L256) | 256 | `"    from agents.research import fallback_plan"` | — |
+| [SRC-EA6EC52573-L000257](../../tests/test_intent_router.py#L257) | 257 | `""` | — |
+| [SRC-EA6EC52573-L000258](../../tests/test_intent_router.py#L258) | 258 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000259](../../tests/test_intent_router.py#L259) | 259 | `"        {\"role\": \"user\", \"content\": \"اجمع آراء مستخدمي السيارات الكهربائية على Reddit\"},"` | — |
+| [SRC-EA6EC52573-L000260](../../tests/test_intent_router.py#L260) | 260 | `"        {\"role\": \"assistant\", \"content\": \"هذه النتائج.\"},"` | — |
+| [SRC-EA6EC52573-L000261](../../tests/test_intent_router.py#L261) | 261 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000262](../../tests/test_intent_router.py#L262) | 262 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\", history)"` | — |
+| [SRC-EA6EC52573-L000263](../../tests/test_intent_router.py#L263) | 263 | `"    assert plan[\"social_focus\"] is False"` | — |
+| [SRC-EA6EC52573-L000264](../../tests/test_intent_router.py#L264) | 264 | `"    assert plan[\"platforms\"] == []"` | — |
+| [SRC-EA6EC52573-L000265](../../tests/test_intent_router.py#L265) | 265 | `"    assert plan[\"depth\"] == \"standard\""` | — |
+| [SRC-EA6EC52573-L000266](../../tests/test_intent_router.py#L266) | 266 | `""` | — |
+| [SRC-EA6EC52573-L000267](../../tests/test_intent_router.py#L267) | 267 | `""` | — |
+| [SRC-EA6EC52573-L000268](../../tests/test_intent_router.py#L268) | 268 | `""` | — |
+| [SRC-EA6EC52573-L000269](../../tests/test_intent_router.py#L269) | 269 | `"def test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode():"` | — |
+| [SRC-EA6EC52573-L000270](../../tests/test_intent_router.py#L270) | 270 | `"    question = ("` | — |
+| [SRC-EA6EC52573-L000271](../../tests/test_intent_router.py#L271) | 271 | `"        \"ما أهم استخدامات الذكاء الاصطناعي في الشركات الصغيرة؟ \""` | — |
+| [SRC-EA6EC52573-L000272](../../tests/test_intent_router.py#L272) | 272 | `"        \"اذكر أمثلة ومصادر موثوقة.\""` | — |
+| [SRC-EA6EC52573-L000273](../../tests/test_intent_router.py#L273) | 273 | `"    )"` | — |
+| [SRC-EA6EC52573-L000274](../../tests/test_intent_router.py#L274) | 274 | `"    decision = route_intent(question, mode=\"auto\")"` | — |
+| [SRC-EA6EC52573-L000275](../../tests/test_intent_router.py#L275) | 275 | `"    assert decision[\"route\"] == \"WEB_SIMPLE\""` | — |
+| [SRC-EA6EC52573-L000276](../../tests/test_intent_router.py#L276) | 276 | `"    assert decision[\"reason\"] == \"explicit_evidence_request\""` | — |
+| [SRC-EA6EC52573-L000277](../../tests/test_intent_router.py#L277) | 277 | `""` | — |
+| [SRC-EA6EC52573-L000278](../../tests/test_intent_router.py#L278) | 278 | `""` | — |
+| [SRC-EA6EC52573-L000279](../../tests/test_intent_router.py#L279) | 279 | `"def test_stable_question_without_source_request_remains_model_only():"` | — |
+| [SRC-EA6EC52573-L000280](../../tests/test_intent_router.py#L280) | 280 | `"    decision = route_intent(\"اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف\")"` | — |
+| [SRC-EA6EC52573-L000281](../../tests/test_intent_router.py#L281) | 281 | `"    assert decision[\"route\"] == \"MODEL_ONLY\""` | — |
 ## اختبارات
 
 ### FILE-4397BC2CD2 — [tests/test_intent_router_integration.py](../../tests/test_intent_router_integration.py#L1)
@@ -825,21 +843,3 @@
 | [SRC-4397BC2CD2-L000051](../../tests/test_intent_router_integration.py#L51) | 51 | `""` | — |
 | [SRC-4397BC2CD2-L000052](../../tests/test_intent_router_integration.py#L52) | 52 | `"    result = agent.answer(\"ازيك؟ عامل ايه النهاردة؟\")"` | — |
 | [SRC-4397BC2CD2-L000053](../../tests/test_intent_router_integration.py#L53) | 53 | `""` | — |
-| [SRC-4397BC2CD2-L000054](../../tests/test_intent_router_integration.py#L54) | 54 | `"    assert result[\"kind\"] == \"local_conversation\""` | — |
-| [SRC-4397BC2CD2-L000055](../../tests/test_intent_router_integration.py#L55) | 55 | `"    assert result[\"intent_route\"] == \"LOCAL\""` | — |
-| [SRC-4397BC2CD2-L000056](../../tests/test_intent_router_integration.py#L56) | 56 | `"    assert result[\"research_plan\"][\"intent_route\"] == \"LOCAL\""` | — |
-| [SRC-4397BC2CD2-L000057](../../tests/test_intent_router_integration.py#L57) | 57 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-4397BC2CD2-L000058](../../tests/test_intent_router_integration.py#L58) | 58 | `"    assert result[\"used_language_model\"] is False"` | — |
-| [SRC-4397BC2CD2-L000059](../../tests/test_intent_router_integration.py#L59) | 59 | `"    assert result[\"sources\"] == []"` | — |
-| [SRC-4397BC2CD2-L000060](../../tests/test_intent_router_integration.py#L60) | 60 | `""` | — |
-| [SRC-4397BC2CD2-L000061](../../tests/test_intent_router_integration.py#L61) | 61 | `""` | — |
-| [SRC-4397BC2CD2-L000062](../../tests/test_intent_router_integration.py#L62) | 62 | `"def test_ambiguous_question_clarifies_without_model_or_search(monkeypatch) -> None:"` | — |
-| [SRC-4397BC2CD2-L000063](../../tests/test_intent_router_integration.py#L63) | 63 | `"    agent = WebAgent()"` | — |
-| [SRC-4397BC2CD2-L000064](../../tests/test_intent_router_integration.py#L64) | 64 | `""` | — |
-| [SRC-4397BC2CD2-L000065](../../tests/test_intent_router_integration.py#L65) | 65 | `"    def unexpected(*args, **kwargs):"` | — |
-| [SRC-4397BC2CD2-L000066](../../tests/test_intent_router_integration.py#L66) | 66 | `"        pytest.fail(\"An unresolved referent must be clarified without model/search.\")"` | — |
-| [SRC-4397BC2CD2-L000067](../../tests/test_intent_router_integration.py#L67) | 67 | `""` | — |
-| [SRC-4397BC2CD2-L000068](../../tests/test_intent_router_integration.py#L68) | 68 | `"    monkeypatch.setattr(agent, \"_answer_without_search\", unexpected)"` | — |
-| [SRC-4397BC2CD2-L000069](../../tests/test_intent_router_integration.py#L69) | 69 | `"    monkeypatch.setattr(agent, \"_plan_search\", unexpected)"` | — |
-| [SRC-4397BC2CD2-L000070](../../tests/test_intent_router_integration.py#L70) | 70 | `"    monkeypatch.setattr(agent, \"_collect_research\", unexpected)"` | — |
-| [SRC-4397BC2CD2-L000071](../../tests/test_intent_router_integration.py#L71) | 71 | `""` | — |

@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **85**
 - ملفات Python المحللة: **44**
-- تعريفات Python المفهرسة: **1101**
+- تعريفات Python المفهرسة: **1103**
 - تعريفات Python موثقة بوجود Docstring: **211**
-- تعريفات Python بلا Docstring: **672**
+- تعريفات Python بلا Docstring: **674**
 - تعريفات لا ينطبق عليها Docstring: **218**
 - الرموز الساكنة الإضافية: **1636**
-- الأسطر النصية المفهرسة حرفيًا: **29234**
+- الأسطر النصية المفهرسة حرفيًا: **29252**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 8849 | 235 | جرد الملف + AST Python |
-| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 23572 | 531 | جرد الملف + AST Python |
+| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 23590 | 531 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32243 | 753 | جرد الملف + AST Python |
@@ -100,7 +100,7 @@
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23470 | 616 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
-| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 11166 | 263 | جرد الملف + AST Python |
+| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 11919 | 281 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
@@ -866,12 +866,14 @@
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L174) | دالة | test_followup_resolver_bounds_output_and_handles_malformed_history | لا توجد Docstring. | ناقص | 174 | [SRC-EA6EC52573-L000174](../tests/test_intent_router.py#L174) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L179) | دالة | test_prefixed_elliptical_followup_is_clarified_without_topic | لا توجد Docstring. | ناقص | 179 | [SRC-EA6EC52573-L000179](../tests/test_intent_router.py#L179) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L185) | دالة | test_prefixed_elliptical_followup_uses_topic_when_available | لا توجد Docstring. | ناقص | 185 | [SRC-EA6EC52573-L000185](../tests/test_intent_router.py#L185) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L198) | دالة | test_new_question_starting_with_tayyib_does_not_inherit_old_topic | لا توجد Docstring. | ناقص | 198 | [SRC-EA6EC52573-L000198](../tests/test_intent_router.py#L198) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L209) | دالة | test_chained_followups_keep_the_last_substantive_topic | لا توجد Docstring. | ناقص | 209 | [SRC-EA6EC52573-L000209](../tests/test_intent_router.py#L209) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L221) | دالة | test_answer_to_clarification_restores_original_intent | لا توجد Docstring. | ناقص | 221 | [SRC-EA6EC52573-L000221](../tests/test_intent_router.py#L221) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L237) | دالة | test_topic_detection_does_not_inherit_old_social_or_depth_intent | لا توجد Docstring. | ناقص | 237 | [SRC-EA6EC52573-L000237](../tests/test_intent_router.py#L237) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L251) | دالة | test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode | لا توجد Docstring. | ناقص | 251 | [SRC-EA6EC52573-L000251](../tests/test_intent_router.py#L251) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L261) | دالة | test_stable_question_without_source_request_remains_model_only | لا توجد Docstring. | ناقص | 261 | [SRC-EA6EC52573-L000261](../tests/test_intent_router.py#L261) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L198) | دالة | test_long_arabic_warranty_followup_resolves_with_context | لا توجد Docstring. | ناقص | 198 | [SRC-EA6EC52573-L000198](../tests/test_intent_router.py#L198) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L209) | دالة | test_long_arabic_warranty_followup_without_context_clarifies | لا توجد Docstring. | ناقص | 209 | [SRC-EA6EC52573-L000209](../tests/test_intent_router.py#L209) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L216) | دالة | test_new_question_starting_with_tayyib_does_not_inherit_old_topic | لا توجد Docstring. | ناقص | 216 | [SRC-EA6EC52573-L000216](../tests/test_intent_router.py#L216) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L227) | دالة | test_chained_followups_keep_the_last_substantive_topic | لا توجد Docstring. | ناقص | 227 | [SRC-EA6EC52573-L000227](../tests/test_intent_router.py#L227) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L239) | دالة | test_answer_to_clarification_restores_original_intent | لا توجد Docstring. | ناقص | 239 | [SRC-EA6EC52573-L000239](../tests/test_intent_router.py#L239) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L255) | دالة | test_topic_detection_does_not_inherit_old_social_or_depth_intent | لا توجد Docstring. | ناقص | 255 | [SRC-EA6EC52573-L000255](../tests/test_intent_router.py#L255) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L269) | دالة | test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode | لا توجد Docstring. | ناقص | 269 | [SRC-EA6EC52573-L000269](../tests/test_intent_router.py#L269) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L279) | دالة | test_stable_question_without_source_request_remains_model_only | لا توجد Docstring. | ناقص | 279 | [SRC-EA6EC52573-L000279](../tests/test_intent_router.py#L279) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L9) | دالة | _evidence | لا توجد Docstring. | ناقص | 9 | [SRC-4397BC2CD2-L000009](../tests/test_intent_router_integration.py#L9) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L26) | دالة | _report | لا توجد Docstring. | ناقص | 26 | [SRC-4397BC2CD2-L000026](../tests/test_intent_router_integration.py#L26) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L43) | دالة | test_greeting_is_local_without_model_or_search | لا توجد Docstring. | ناقص | 43 | [SRC-4397BC2CD2-L000043](../tests/test_intent_router_integration.py#L43) |

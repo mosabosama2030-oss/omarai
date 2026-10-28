@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000232 إلى SRC-F725E90B2A-L000269
+- النطاق: SRC-6BF96689A8-L000214 إلى SRC-F725E90B2A-L000251
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000214](../../tests/test_research.py#L214) | 214 | `"    query = compact_search_query("` | — |
+| [SRC-6BF96689A8-L000215](../../tests/test_research.py#L215) | 215 | `"        \"وضح أهمية السيارات الكهربائية في مصر. ما تأثير الشحن على المدى الطويل؟ اذكر مصادر موثوقة.\""` | — |
+| [SRC-6BF96689A8-L000216](../../tests/test_research.py#L216) | 216 | `"    )"` | — |
+| [SRC-6BF96689A8-L000217](../../tests/test_research.py#L217) | 217 | `"    assert \"السيارات الكهربائية في مصر\" in query"` | — |
+| [SRC-6BF96689A8-L000218](../../tests/test_research.py#L218) | 218 | `"    assert \"الشحن على المدى الطويل\" in query"` | — |
+| [SRC-6BF96689A8-L000219](../../tests/test_research.py#L219) | 219 | `"    assert \"مصادر موثوقة\" not in query"` | — |
+| [SRC-6BF96689A8-L000220](../../tests/test_research.py#L220) | 220 | `""` | — |
+| [SRC-6BF96689A8-L000221](../../tests/test_research.py#L221) | 221 | `"    query = compact_search_query("` | — |
+| [SRC-6BF96689A8-L000222](../../tests/test_research.py#L222) | 222 | `"        \"اذكر أبرز السيارات الكهربائية في مصر. قارن بين أسعارها.\""` | — |
+| [SRC-6BF96689A8-L000223](../../tests/test_research.py#L223) | 223 | `"    )"` | — |
+| [SRC-6BF96689A8-L000224](../../tests/test_research.py#L224) | 224 | `"    assert \"السيارات الكهربائية في مصر\" in query"` | — |
+| [SRC-6BF96689A8-L000225](../../tests/test_research.py#L225) | 225 | `"    assert \"أسعارها\" in query"` | — |
+| [SRC-6BF96689A8-L000226](../../tests/test_research.py#L226) | 226 | `"    assert \"اذكر أبرز\" not in query"` | — |
+| [SRC-6BF96689A8-L000227](../../tests/test_research.py#L227) | 227 | `""` | — |
+| [SRC-6BF96689A8-L000228](../../tests/test_research.py#L228) | 228 | `""` | — |
+| [SRC-6BF96689A8-L000229](../../tests/test_research.py#L229) | 229 | `""` | — |
+| [SRC-6BF96689A8-L000230](../../tests/test_research.py#L230) | 230 | `"def test_compact_search_query_returns_empty_for_instruction_only_request():"` | — |
+| [SRC-6BF96689A8-L000231](../../tests/test_research.py#L231) | 231 | `"    query = compact_search_query(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |
 | [SRC-6BF96689A8-L000232](../../tests/test_research.py#L232) | 232 | `"    assert query == \"\""` | — |
 | [SRC-6BF96689A8-L000233](../../tests/test_research.py#L233) | 233 | `""` | — |
 | [SRC-6BF96689A8-L000234](../../tests/test_research.py#L234) | 234 | `""` | — |
@@ -834,21 +852,3 @@
 | [SRC-F725E90B2A-L000249](../../tests/test_web_agent.py#L249) | 249 | `"        if \"reddit.com\" in url:"` | — |
 | [SRC-F725E90B2A-L000250](../../tests/test_web_agent.py#L250) | 250 | `"            return FakeResponse(reddit_xml)"` | — |
 | [SRC-F725E90B2A-L000251](../../tests/test_web_agent.py#L251) | 251 | `"        if \"bsky.app\" in url or \"public.api.bsky.app\" in url:"` | — |
-| [SRC-F725E90B2A-L000252](../../tests/test_web_agent.py#L252) | 252 | `"            return FakeResponse(data={"` | — |
-| [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `"                \"posts\": [{"` | — |
-| [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"                    \"post\": {"` | — |
-| [SRC-F725E90B2A-L000255](../../tests/test_web_agent.py#L255) | 255 | `"                        \"uri\": \"at://did:plc:example/app.bsky.feed.post/rkey123\","` | — |
-| [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `"                        \"indexedAt\": \"2026-10-12T10:00:00Z\","` | — |
-| [SRC-F725E90B2A-L000257](../../tests/test_web_agent.py#L257) | 257 | `"                        \"record\": {\"text\": \"استخدمت السيارة شهرًا\"},"` | — |
-| [SRC-F725E90B2A-L000258](../../tests/test_web_agent.py#L258) | 258 | `"                        \"author\": {\"handle\": \"driver.bsky.social\", \"displayName\": \"Driver\"},"` | — |
-| [SRC-F725E90B2A-L000259](../../tests/test_web_agent.py#L259) | 259 | `"                    }"` | — |
-| [SRC-F725E90B2A-L000260](../../tests/test_web_agent.py#L260) | 260 | `"                }]"` | — |
-| [SRC-F725E90B2A-L000261](../../tests/test_web_agent.py#L261) | 261 | `"            })"` | — |
-| [SRC-F725E90B2A-L000262](../../tests/test_web_agent.py#L262) | 262 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
-| [SRC-F725E90B2A-L000263](../../tests/test_web_agent.py#L263) | 263 | `""` | — |
-| [SRC-F725E90B2A-L000264](../../tests/test_web_agent.py#L264) | 264 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000265](../../tests/test_web_agent.py#L265) | 265 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000266](../../tests/test_web_agent.py#L266) | 266 | `"        \"سيارة كهربائية\", [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-F725E90B2A-L000267](../../tests/test_web_agent.py#L267) | 267 | `"    )"` | — |
-| [SRC-F725E90B2A-L000268](../../tests/test_web_agent.py#L268) | 268 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000269](../../tests/test_web_agent.py#L269) | 269 | `"    assert any(item[\"provider\"] == \"reddit_public_rss\" for item in results)"` | — |
