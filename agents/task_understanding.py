@@ -201,64 +201,64 @@ def normalize_text(value: Any) -> str:
 
 
 def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:
-    """Match phrases on token boundaries and only strip known Arabic clitics/suffixes.
+    """Match phrases on token boundaries with conservative Arabic clitic handling.
 
-    This deliberately avoids substring collisions such as "الان" (now) inside
-    "الانذار" (alarm), while retaining common forms such as "سعرها" and "قارنهم".
+    The matcher never accepts arbitrary substrings: variants are formed only by
+    removing a short, explicit list of common prefixes/suffixes. This avoids
+    collisions such as treating "الإنذار" as "الآن".
     """
     tokens = _TOKEN_RE.findall(text)
     matched: list[str] = []
     prefixes = ("وال", "بال", "فال", "كال", "لل", "ال", "و", "ف", "ب", "ل", "ك")
-    suffixes = ("هما", "هم", "هن", "ها", "ه", "كم", "كن", "ك", "نا", "ني")
+    suffixes = ("هما", "هم", "هن", "ها", "ه", "كم", "كن", "ك", "نا", "ني", "ين", "ات", "ون")
     english_suffixes = ("ing", "ed", "es", "s")
+    cache: dict[str, set[str]] = {}
+
+    def token_forms(raw_token: str) -> set[str]:
+        original = normalize_text(raw_token)
+        if original in cache:
+            return cache[original]
+        forms = {original} if original else set()
+        queue = list(forms)
+        while queue:
+            current = queue.pop()
+            for prefix in prefixes:
+                if current.startswith(prefix) and len(current) - len(prefix) >= 3:
+                    candidate = current[len(prefix):]
+                    if candidate not in forms:
+                        forms.add(candidate)
+                        queue.append(candidate)
+            for suffix in suffixes:
+                if current.endswith(suffix) and len(current) - len(suffix) >= 3:
+                    candidate = current[:-len(suffix)]
+                    if candidate not in forms:
+                        forms.add(candidate)
+                        queue.append(candidate)
+            if current.isascii() and len(current) >= 5:
+                for suffix in english_suffixes:
+                    if current.endswith(suffix) and len(current) - len(suffix) >= 3:
+                        candidate = current[:-len(suffix)]
+                        if candidate not in forms:
+                            forms.add(candidate)
+                            queue.append(candidate)
+        cache[original] = forms
+        return forms
+
+    token_forms_cache = [token_forms(token) for token in tokens]
     for phrase in phrases:
         normalized = normalize_text(phrase)
         phrase_tokens = _TOKEN_RE.findall(normalized)
         if not phrase_tokens:
             continue
-        found = False
+        phrase_forms = [token_forms(token) for token in phrase_tokens]
         width = len(phrase_tokens)
-        for index in range(max(0, len(tokens) - width + 1)):
-            segment = tokens[index:index + width]
-            if [token.casefold() for token in segment] == [token.casefold() for token in phrase_tokens]:
-                found = True
-                break
-        if not found and width == 1:
-            target = phrase_tokens[0].casefold()
-            for original_token in tokens:
-                token = original_token.casefold()
-                forms = {token}
-                changed = True
-                while changed:
-                    changed = False
-                    for prefix in prefixes:
-                        if token.startswith(prefix) and len(token) - len(prefix) >= 3:
-                            token = token[len(prefix):]
-                            forms.add(token)
-                            changed = True
-                            break
-                for candidate in forms.copy():
-                    for suffix in suffixes:
-                        if candidate.endswith(suffix) and len(candidate) - len(suffix) >= 3:
-                            forms.add(candidate[:-len(suffix)])
-                if target in forms:
-                    found = True
-                    break
-                if (
-                    target.isascii()
-                    and len(target) >= 4
-                    and original_token.isascii()
-                    and any(
-                        token.endswith(suffix) and token[:-len(suffix)] == target
-                        for suffix in english_suffixes
-                    )
-                ):
-                    found = True
-                    break
+        found = any(
+            all(token_forms_cache[index + offset] & phrase_forms[offset] for offset in range(width))
+            for index in range(max(0, len(tokens) - width + 1))
+        )
         if found and normalized not in matched:
             matched.append(normalized)
     return matched
-
 
 def _has_inline_summary_text(question: str) -> bool:
     """Detect explicitly supplied summary text without treating a URL as pasted content."""
