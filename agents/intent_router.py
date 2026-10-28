@@ -162,7 +162,7 @@ _CONTEXTUAL_ASPECT_RE = re.compile(
     r"مكان|مصدر|رابط|تاريخ|مراجعات|اراء|توفر|سرعه|اداء|جوده|صيانه)"
 )
 _CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile(
-    r"^(?:what about|how about|and (?:the|its|their)|its) +"
+    r"^(?:what about(?: its)?|how about(?: its)?|and (?:the|its|their)|its) +"
     r"(?:price|warranty|battery|camera|location|source|link|date|pros|cons)"
 )
 
