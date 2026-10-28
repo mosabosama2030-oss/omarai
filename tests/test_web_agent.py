@@ -3698,6 +3698,10 @@ def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):
     assert task_understanding["task_spec"]["schema"] == "omarai.task_spec.v1"
     assert task_understanding["tool_execution"]["search_outcome"] == "not_assessed"
     assert task_understanding["tool_execution"]["required_tools"] == []
+    assert all(
+        row["status"] == "not_required"
+        for row in task_understanding["tool_execution"]["tool_status_matrix"]
+    )
     assert task_understanding["actual_queries"] == []
     assert task_understanding["query_strategy_matrix"] == []
     assert task_understanding["search_was_attempted"] is False
