@@ -100,9 +100,10 @@ def build_tool_execution_matrix(
     elif attempted is True:
         if accepted_sources is None and outcome != "attempted_no_usable_sources":
             status = "unknown"
-        elif accepted_sources is not None and accepted_sources > 0:
-            status = "completed_with_results"
-        elif outcome == "attempted_with_usable_sources":
+        elif (
+            (accepted_sources is not None and accepted_sources > 0)
+            or outcome == "attempted_with_usable_sources"
+        ):
             status = "completed_with_results"
         else:
             status = "completed_no_usable_results"
