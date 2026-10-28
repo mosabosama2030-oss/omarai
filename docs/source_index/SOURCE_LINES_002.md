@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-2D53795445-L000252
+- النطاق: SRC-138992B1FC-L000198 إلى SRC-2D53795445-L000125
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,133 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000198](../../agents/answer_validation.py#L198) | 198 | `"    citable_sources = safe_sources[:12]"` | — |
+| [SRC-138992B1FC-L000199](../../agents/answer_validation.py#L199) | 199 | `"    source_token_sets: list[set[str]] = []"` | — |
+| [SRC-138992B1FC-L000200](../../agents/answer_validation.py#L200) | 200 | `"    source_bases: list[str] = []"` | — |
+| [SRC-138992B1FC-L000201](../../agents/answer_validation.py#L201) | 201 | `"    for source in citable_sources:"` | — |
+| [SRC-138992B1FC-L000202](../../agents/answer_validation.py#L202) | 202 | `"        page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-138992B1FC-L000203](../../agents/answer_validation.py#L203) | 203 | `"        snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-138992B1FC-L000204](../../agents/answer_validation.py#L204) | 204 | `"        title = str(source.get(\"title\") or \"\")"` | — |
+| [SRC-138992B1FC-L000205](../../agents/answer_validation.py#L205) | 205 | `"        if bool(source.get(\"page_fetched\")) and page_text.strip():"` | — |
+| [SRC-138992B1FC-L000206](../../agents/answer_validation.py#L206) | 206 | `"            selected_text = page_text"` | — |
+| [SRC-138992B1FC-L000207](../../agents/answer_validation.py#L207) | 207 | `"            basis = \"extracted_page_text\""` | — |
+| [SRC-138992B1FC-L000208](../../agents/answer_validation.py#L208) | 208 | `"        elif snippet.strip():"` | — |
+| [SRC-138992B1FC-L000209](../../agents/answer_validation.py#L209) | 209 | `"            selected_text = snippet"` | — |
+| [SRC-138992B1FC-L000210](../../agents/answer_validation.py#L210) | 210 | `"            basis = \"search_snippet\""` | — |
+| [SRC-138992B1FC-L000211](../../agents/answer_validation.py#L211) | 211 | `"        elif title.strip():"` | — |
+| [SRC-138992B1FC-L000212](../../agents/answer_validation.py#L212) | 212 | `"            selected_text = title"` | — |
+| [SRC-138992B1FC-L000213](../../agents/answer_validation.py#L213) | 213 | `"            basis = \"title_only\""` | — |
+| [SRC-138992B1FC-L000214](../../agents/answer_validation.py#L214) | 214 | `"        else:"` | — |
+| [SRC-138992B1FC-L000215](../../agents/answer_validation.py#L215) | 215 | `"            selected_text = \"\""` | — |
+| [SRC-138992B1FC-L000216](../../agents/answer_validation.py#L216) | 216 | `"            basis = \"no_readable_text\""` | — |
+| [SRC-138992B1FC-L000217](../../agents/answer_validation.py#L217) | 217 | `"        source_token_sets.append(set(_tokens(selected_text, drop_stopwords=True)))"` | — |
+| [SRC-138992B1FC-L000218](../../agents/answer_validation.py#L218) | 218 | `"        source_bases.append(basis)"` | — |
+| [SRC-138992B1FC-L000219](../../agents/answer_validation.py#L219) | 219 | `""` | — |
+| [SRC-138992B1FC-L000220](../../agents/answer_validation.py#L220) | 220 | `"    citation_alignment: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000221](../../agents/answer_validation.py#L221) | 221 | `"    sentence_parts = ["` | — |
+| [SRC-138992B1FC-L000222](../../agents/answer_validation.py#L222) | 222 | `"        part.strip()"` | — |
+| [SRC-138992B1FC-L000223](../../agents/answer_validation.py#L223) | 223 | `"        for part in re.split(r\"(?<=[.!?؟])\\s+\|\\n+\", answer_text)"` | — |
+| [SRC-138992B1FC-L000224](../../agents/answer_validation.py#L224) | 224 | `"        if part.strip()"` | — |
+| [SRC-138992B1FC-L000225](../../agents/answer_validation.py#L225) | 225 | `"    ]"` | — |
+| [SRC-138992B1FC-L000226](../../agents/answer_validation.py#L226) | 226 | `"    for sentence_number, sentence in enumerate(sentence_parts[:40], 1):"` | — |
+| [SRC-138992B1FC-L000227](../../agents/answer_validation.py#L227) | 227 | `"        cited_indices = ["` | — |
+| [SRC-138992B1FC-L000228](../../agents/answer_validation.py#L228) | 228 | `"            int(match.group(1))"` | — |
+| [SRC-138992B1FC-L000229](../../agents/answer_validation.py#L229) | 229 | `"            for match in _CITATION.finditer(sentence)"` | — |
+| [SRC-138992B1FC-L000230](../../agents/answer_validation.py#L230) | 230 | `"        ]"` | — |
+| [SRC-138992B1FC-L000231](../../agents/answer_validation.py#L231) | 231 | `"        if not cited_indices:"` | — |
+| [SRC-138992B1FC-L000232](../../agents/answer_validation.py#L232) | 232 | `"            continue"` | — |
+| [SRC-138992B1FC-L000233](../../agents/answer_validation.py#L233) | 233 | `"        claim_tokens = list(dict.fromkeys(_tokens(_CITATION.sub(\" \", sentence), drop_stopwords=True)))"` | — |
+| [SRC-138992B1FC-L000234](../../agents/answer_validation.py#L234) | 234 | `"        cited_checks: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000235](../../agents/answer_validation.py#L235) | 235 | `"        for source_index in list(dict.fromkeys(cited_indices))[:8]:"` | — |
+| [SRC-138992B1FC-L000236](../../agents/answer_validation.py#L236) | 236 | `"            if source_index < 1 or source_index > len(source_token_sets):"` | — |
+| [SRC-138992B1FC-L000237](../../agents/answer_validation.py#L237) | 237 | `"                cited_checks.append({"` | — |
+| [SRC-138992B1FC-L000238](../../agents/answer_validation.py#L238) | 238 | `"                    \"source_index\": source_index,"` | — |
+| [SRC-138992B1FC-L000239](../../agents/answer_validation.py#L239) | 239 | `"                    \"status\": \"source_index_out_of_scope\","` | — |
+| [SRC-138992B1FC-L000240](../../agents/answer_validation.py#L240) | 240 | `"                    \"evidence_basis\": \"unavailable\","` | — |
+| [SRC-138992B1FC-L000241](../../agents/answer_validation.py#L241) | 241 | `"                    \"matched_terms\": [],"` | — |
+| [SRC-138992B1FC-L000242](../../agents/answer_validation.py#L242) | 242 | `"                    \"overlap_ratio\": 0.0,"` | — |
+| [SRC-138992B1FC-L000243](../../agents/answer_validation.py#L243) | 243 | `"                })"` | — |
+| [SRC-138992B1FC-L000244](../../agents/answer_validation.py#L244) | 244 | `"                continue"` | — |
+| [SRC-138992B1FC-L000245](../../agents/answer_validation.py#L245) | 245 | `"            available_tokens = source_token_sets[source_index - 1]"` | — |
+| [SRC-138992B1FC-L000246](../../agents/answer_validation.py#L246) | 246 | `"            overlap = [token for token in claim_tokens if token in available_tokens]"` | — |
+| [SRC-138992B1FC-L000247](../../agents/answer_validation.py#L247) | 247 | `"            ratio = len(overlap) / len(claim_tokens) if claim_tokens else 0.0"` | — |
+| [SRC-138992B1FC-L000248](../../agents/answer_validation.py#L248) | 248 | `"            # A lexical match is only a weak proxy for relevance, not entailment."` | — |
+| [SRC-138992B1FC-L000249](../../agents/answer_validation.py#L249) | 249 | `"            # Require both relative coverage and at least two content-token matches."` | — |
+| [SRC-138992B1FC-L000250](../../agents/answer_validation.py#L250) | 250 | `"            enough_overlap = len(overlap) >= 2 and ratio >= 0.5"` | — |
+| [SRC-138992B1FC-L000251](../../agents/answer_validation.py#L251) | 251 | `"            cited_checks.append({"` | — |
+| [SRC-138992B1FC-L000252](../../agents/answer_validation.py#L252) | 252 | `"                \"source_index\": source_index,"` | — |
+| [SRC-138992B1FC-L000253](../../agents/answer_validation.py#L253) | 253 | `"                \"status\": \"lexical_overlap_signal_found\" if enough_overlap else \"weak_lexical_overlap\","` | — |
+| [SRC-138992B1FC-L000254](../../agents/answer_validation.py#L254) | 254 | `"                \"evidence_basis\": source_bases[source_index - 1],"` | — |
+| [SRC-138992B1FC-L000255](../../agents/answer_validation.py#L255) | 255 | `"                \"matched_terms\": overlap[:8],"` | — |
+| [SRC-138992B1FC-L000256](../../agents/answer_validation.py#L256) | 256 | `"                \"overlap_ratio\": round(ratio, 3),"` | — |
+| [SRC-138992B1FC-L000257](../../agents/answer_validation.py#L257) | 257 | `"            })"` | — |
+| [SRC-138992B1FC-L000258](../../agents/answer_validation.py#L258) | 258 | `"        sentence_status = ("` | — |
+| [SRC-138992B1FC-L000259](../../agents/answer_validation.py#L259) | 259 | `"            \"lexical_overlap_signal_found\""` | — |
+| [SRC-138992B1FC-L000260](../../agents/answer_validation.py#L260) | 260 | `"            if any(item[\"status\"] == \"lexical_overlap_signal_found\" for item in cited_checks)"` | — |
+| [SRC-138992B1FC-L000261](../../agents/answer_validation.py#L261) | 261 | `"            else \"weak_lexical_overlap\""` | — |
+| [SRC-138992B1FC-L000262](../../agents/answer_validation.py#L262) | 262 | `"        )"` | — |
+| [SRC-138992B1FC-L000263](../../agents/answer_validation.py#L263) | 263 | `"        citation_alignment.append({"` | — |
+| [SRC-138992B1FC-L000264](../../agents/answer_validation.py#L264) | 264 | `"            \"sentence_number\": sentence_number,"` | — |
+| [SRC-138992B1FC-L000265](../../agents/answer_validation.py#L265) | 265 | `"            \"status\": sentence_status,"` | — |
+| [SRC-138992B1FC-L000266](../../agents/answer_validation.py#L266) | 266 | `"            \"claim_terms_checked\": claim_tokens[:16],"` | — |
+| [SRC-138992B1FC-L000267](../../agents/answer_validation.py#L267) | 267 | `"            \"citations\": cited_checks,"` | — |
+| [SRC-138992B1FC-L000268](../../agents/answer_validation.py#L268) | 268 | `"        })"` | — |
+| [SRC-138992B1FC-L000269](../../agents/answer_validation.py#L269) | 269 | `""` | — |
+| [SRC-138992B1FC-L000270](../../agents/answer_validation.py#L270) | 270 | `""` | — |
+| [SRC-138992B1FC-L000271](../../agents/answer_validation.py#L271) | 271 | `"    # Check numeric literals against the exact source indices cited in each sentence."` | — |
+| [SRC-138992B1FC-L000272](../../agents/answer_validation.py#L272) | 272 | `"    # Values found in some unrelated source do not count as support for this citation."` | — |
+| [SRC-138992B1FC-L000273](../../agents/answer_validation.py#L273) | 273 | `"    source_numbers_by_index = {"` | — |
+| [SRC-138992B1FC-L000274](../../agents/answer_validation.py#L274) | 274 | `"        index: _numeric_literals(text)"` | — |
+| [SRC-138992B1FC-L000275](../../agents/answer_validation.py#L275) | 275 | `"        for index, text in source_text_by_index.items()"` | — |
+| [SRC-138992B1FC-L000276](../../agents/answer_validation.py#L276) | 276 | `"    }"` | — |
+| [SRC-138992B1FC-L000277](../../agents/answer_validation.py#L277) | 277 | `"    citation_numeric_support: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000278](../../agents/answer_validation.py#L278) | 278 | `"    for sentence_number, sentence in enumerate(sentence_parts[:40], 1):"` | — |
+| [SRC-138992B1FC-L000279](../../agents/answer_validation.py#L279) | 279 | `"        cited_indices = list(dict.fromkeys("` | — |
+| [SRC-138992B1FC-L000280](../../agents/answer_validation.py#L280) | 280 | `"            int(match.group(1)) for match in _CITATION.finditer(sentence)"` | — |
+| [SRC-138992B1FC-L000281](../../agents/answer_validation.py#L281) | 281 | `"        ))"` | — |
+| [SRC-138992B1FC-L000282](../../agents/answer_validation.py#L282) | 282 | `"        if not cited_indices:"` | — |
+| [SRC-138992B1FC-L000283](../../agents/answer_validation.py#L283) | 283 | `"            continue"` | — |
+| [SRC-138992B1FC-L000284](../../agents/answer_validation.py#L284) | 284 | `"        claim_numbers = sorted(_numeric_literals(sentence, question=question))"` | — |
+| [SRC-138992B1FC-L000285](../../agents/answer_validation.py#L285) | 285 | `"        valid_indices = [index for index in cited_indices if 1 <= index <= len(citable_sources)]"` | — |
+| [SRC-138992B1FC-L000286](../../agents/answer_validation.py#L286) | 286 | `"        supported_numbers = {"` | — |
+| [SRC-138992B1FC-L000287](../../agents/answer_validation.py#L287) | 287 | `"            number"` | — |
+| [SRC-138992B1FC-L000288](../../agents/answer_validation.py#L288) | 288 | `"            for number in claim_numbers"` | — |
+| [SRC-138992B1FC-L000289](../../agents/answer_validation.py#L289) | 289 | `"            if any(number in source_numbers_by_index.get(index, set()) for index in valid_indices)"` | — |
+| [SRC-138992B1FC-L000290](../../agents/answer_validation.py#L290) | 290 | `"        }"` | — |
+| [SRC-138992B1FC-L000291](../../agents/answer_validation.py#L291) | 291 | `"        unsupported_for_citation = ["` | — |
+| [SRC-138992B1FC-L000292](../../agents/answer_validation.py#L292) | 292 | `"            number for number in claim_numbers if number not in supported_numbers"` | — |
+| [SRC-138992B1FC-L000293](../../agents/answer_validation.py#L293) | 293 | `"        ]"` | — |
+| [SRC-138992B1FC-L000294](../../agents/answer_validation.py#L294) | 294 | `"        citation_numeric_support.append({"` | — |
+| [SRC-138992B1FC-L000295](../../agents/answer_validation.py#L295) | 295 | `"            \"sentence_number\": sentence_number,"` | — |
+| [SRC-138992B1FC-L000296](../../agents/answer_validation.py#L296) | 296 | `"            \"cited_source_indexes\": cited_indices[:8],"` | — |
+| [SRC-138992B1FC-L000297](../../agents/answer_validation.py#L297) | 297 | `"            \"claim_numeric_literals\": claim_numbers[:30],"` | — |
+| [SRC-138992B1FC-L000298](../../agents/answer_validation.py#L298) | 298 | `"            \"potentially_unsupported_numeric_literals\": unsupported_for_citation[:30],"` | — |
+| [SRC-138992B1FC-L000299](../../agents/answer_validation.py#L299) | 299 | `"            \"status\": ("` | — |
+| [SRC-138992B1FC-L000300](../../agents/answer_validation.py#L300) | 300 | `"                \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
+| [SRC-138992B1FC-L000301](../../agents/answer_validation.py#L301) | 301 | `"                if unsupported_for_citation"` | — |
+| [SRC-138992B1FC-L000302](../../agents/answer_validation.py#L302) | 302 | `"                else \"numeric_literals_seen_in_cited_source_text\""` | — |
+| [SRC-138992B1FC-L000303](../../agents/answer_validation.py#L303) | 303 | `"                if claim_numbers and valid_indices"` | — |
+| [SRC-138992B1FC-L000304](../../agents/answer_validation.py#L304) | 304 | `"                else \"no_numeric_literals_to_check\""` | — |
+| [SRC-138992B1FC-L000305](../../agents/answer_validation.py#L305) | 305 | `"                if not claim_numbers"` | — |
+| [SRC-138992B1FC-L000306](../../agents/answer_validation.py#L306) | 306 | `"                else \"not_assessable_no_readable_cited_source\""` | — |
+| [SRC-138992B1FC-L000307](../../agents/answer_validation.py#L307) | 307 | `"            ),"` | — |
+| [SRC-138992B1FC-L000308](../../agents/answer_validation.py#L308) | 308 | `"        })"` | — |
+| [SRC-138992B1FC-L000309](../../agents/answer_validation.py#L309) | 309 | `""` | — |
+| [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"    value_evidence: dict[str, list[dict[str, Any]]] = {}"` | — |
+| [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"    for source_index in source_text_by_index:"` | — |
+| [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"        source = safe_sources[source_index - 1]"` | — |
+| [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"        page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"        snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `"        selected_evidence = page_text if bool(source.get(\"page_fetched\")) and page_text.strip() else snippet"` | — |
+| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `"        if not selected_evidence.strip():"` | — |
+| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `"            selected_evidence = str(source.get(\"title\") or \"\")"` | — |
+| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"        for dimension, number in _numeric_values_with_cues(selected_evidence):"` | — |
+| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"            value_evidence.setdefault(dimension, []).append({"` | — |
+| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"                \"source_index\": source_index,"` | — |
+| [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `"                \"value\": number,"` | — |
+| [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"            })"` | — |
+| [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"    potential_value_discrepancies: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"    for dimension, entries in sorted(value_evidence.items()):"` | — |
 | [SRC-138992B1FC-L000325](../../agents/answer_validation.py#L325) | 325 | `"        unique_values = list(dict.fromkeys(entry[\"value\"] for entry in entries))"` | — |
 | [SRC-138992B1FC-L000326](../../agents/answer_validation.py#L326) | 326 | `"        source_indexes = sorted({entry[\"source_index\"] for entry in entries})"` | — |
 | [SRC-138992B1FC-L000327](../../agents/answer_validation.py#L327) | 327 | `"        if len(unique_values) < 2 or len(source_indexes) < 2:"` | — |
@@ -716,130 +843,3 @@
 | [SRC-2D53795445-L000123](../../agents/dialogue_state.py#L123) | 123 | `"        and isinstance(item.get(\"content\"), str)"` | — |
 | [SRC-2D53795445-L000124](../../agents/dialogue_state.py#L124) | 124 | `"        and item.get(\"content\", \"\").strip()"` | — |
 | [SRC-2D53795445-L000125](../../agents/dialogue_state.py#L125) | 125 | `"        for item in history"` | — |
-| [SRC-2D53795445-L000126](../../agents/dialogue_state.py#L126) | 126 | `"    )"` | — |
-| [SRC-2D53795445-L000127](../../agents/dialogue_state.py#L127) | 127 | `"    topic_shift = candidate.get(\"topic_shift\") is True"` | — |
-| [SRC-2D53795445-L000128](../../agents/dialogue_state.py#L128) | 128 | `"    model_marked_follow_up = candidate.get(\"is_follow_up\") is True"` | — |
-| [SRC-2D53795445-L000129](../../agents/dialogue_state.py#L129) | 129 | `"    is_follow_up = model_marked_follow_up and has_history and not topic_shift"` | — |
-| [SRC-2D53795445-L000130](../../agents/dialogue_state.py#L130) | 130 | `""` | — |
-| [SRC-2D53795445-L000131](../../agents/dialogue_state.py#L131) | 131 | `"    # Context is inherited only when the semantic resolver explicitly says this is"` | — |
-| [SRC-2D53795445-L000132](../../agents/dialogue_state.py#L132) | 132 | `"    # a follow-up. A standalone turn must not retain an old entity merely because"` | — |
-| [SRC-2D53795445-L000133](../../agents/dialogue_state.py#L133) | 133 | `"    # the model accidentally emitted a blended resolved_question."` | — |
-| [SRC-2D53795445-L000134](../../agents/dialogue_state.py#L134) | 134 | `"    rejected_stale_context = ("` | — |
-| [SRC-2D53795445-L000135](../../agents/dialogue_state.py#L135) | 135 | `"        not model_marked_follow_up"` | — |
-| [SRC-2D53795445-L000136](../../agents/dialogue_state.py#L136) | 136 | `"        and resolved.casefold() != current.casefold()"` | — |
-| [SRC-2D53795445-L000137](../../agents/dialogue_state.py#L137) | 137 | `"    )"` | — |
-| [SRC-2D53795445-L000138](../../agents/dialogue_state.py#L138) | 138 | `"    reset_context = topic_shift or not has_history or rejected_stale_context"` | — |
-| [SRC-2D53795445-L000139](../../agents/dialogue_state.py#L139) | 139 | `"    if reset_context:"` | — |
-| [SRC-2D53795445-L000140](../../agents/dialogue_state.py#L140) | 140 | `"        resolved = current"` | — |
-| [SRC-2D53795445-L000141](../../agents/dialogue_state.py#L141) | 141 | `"        is_follow_up = False"` | — |
-| [SRC-2D53795445-L000142](../../agents/dialogue_state.py#L142) | 142 | `""` | — |
-| [SRC-2D53795445-L000143](../../agents/dialogue_state.py#L143) | 143 | `"    needs_clarification = candidate.get(\"needs_clarification\") is True"` | — |
-| [SRC-2D53795445-L000144](../../agents/dialogue_state.py#L144) | 144 | `"    if needs_clarification:"` | — |
-| [SRC-2D53795445-L000145](../../agents/dialogue_state.py#L145) | 145 | `"        # Never issue a search based on a reference the model itself says is unresolved."` | — |
-| [SRC-2D53795445-L000146](../../agents/dialogue_state.py#L146) | 146 | `"        resolved = current"` | — |
-| [SRC-2D53795445-L000147](../../agents/dialogue_state.py#L147) | 147 | `""` | — |
-| [SRC-2D53795445-L000148](../../agents/dialogue_state.py#L148) | 148 | `"    intent = candidate.get(\"intent\")"` | — |
-| [SRC-2D53795445-L000149](../../agents/dialogue_state.py#L149) | 149 | `"    if not isinstance(intent, str) or intent not in _ALLOWED_INTENTS:"` | — |
-| [SRC-2D53795445-L000150](../../agents/dialogue_state.py#L150) | 150 | `"        intent = \"unknown\""` | — |
-| [SRC-2D53795445-L000151](../../agents/dialogue_state.py#L151) | 151 | `""` | — |
-| [SRC-2D53795445-L000152](../../agents/dialogue_state.py#L152) | 152 | `"    raw_slots = candidate.get(\"slots\")"` | — |
-| [SRC-2D53795445-L000153](../../agents/dialogue_state.py#L153) | 153 | `"    slots: dict[str, str] = {}"` | — |
-| [SRC-2D53795445-L000154](../../agents/dialogue_state.py#L154) | 154 | `"    # Do not carry extracted entities/slots from a rejected or explicitly shifted"` | — |
-| [SRC-2D53795445-L000155](../../agents/dialogue_state.py#L155) | 155 | `"    # topic into downstream planning. The current message will be parsed on its own."` | — |
-| [SRC-2D53795445-L000156](../../agents/dialogue_state.py#L156) | 156 | `"    clear_inherited_metadata = topic_shift or rejected_stale_context or not has_history"` | — |
-| [SRC-2D53795445-L000157](../../agents/dialogue_state.py#L157) | 157 | `"    if isinstance(raw_slots, dict) and not clear_inherited_metadata:"` | — |
-| [SRC-2D53795445-L000158](../../agents/dialogue_state.py#L158) | 158 | `"        for raw_key, raw_value in list(raw_slots.items())[:MAX_SLOT_VALUES]:"` | — |
-| [SRC-2D53795445-L000159](../../agents/dialogue_state.py#L159) | 159 | `"            key = _clean_text(raw_key, 40)"` | — |
-| [SRC-2D53795445-L000160](../../agents/dialogue_state.py#L160) | 160 | `"            value = _clean_text(raw_value, MAX_CONTEXT_TEXT_CHARS)"` | — |
-| [SRC-2D53795445-L000161](../../agents/dialogue_state.py#L161) | 161 | `"            if key in _ALLOWED_SLOT_KEYS and value:"` | — |
-| [SRC-2D53795445-L000162](../../agents/dialogue_state.py#L162) | 162 | `"                slots[key] = value"` | — |
-| [SRC-2D53795445-L000163](../../agents/dialogue_state.py#L163) | 163 | `""` | — |
-| [SRC-2D53795445-L000164](../../agents/dialogue_state.py#L164) | 164 | `"    changed_slots = ["` | — |
-| [SRC-2D53795445-L000165](../../agents/dialogue_state.py#L165) | 165 | `"        item for item in _clean_string_list("` | — |
-| [SRC-2D53795445-L000166](../../agents/dialogue_state.py#L166) | 166 | `"            candidate.get(\"changed_slots\"), max_items=8, max_chars=40"` | — |
-| [SRC-2D53795445-L000167](../../agents/dialogue_state.py#L167) | 167 | `"        )"` | — |
-| [SRC-2D53795445-L000168](../../agents/dialogue_state.py#L168) | 168 | `"        if item in _ALLOWED_CHANGED_SLOTS"` | — |
-| [SRC-2D53795445-L000169](../../agents/dialogue_state.py#L169) | 169 | `"    ]"` | — |
-| [SRC-2D53795445-L000170](../../agents/dialogue_state.py#L170) | 170 | `"    resolution_basis = candidate.get(\"resolution_basis\")"` | — |
-| [SRC-2D53795445-L000171](../../agents/dialogue_state.py#L171) | 171 | `"    if not isinstance(resolution_basis, str) or resolution_basis not in _ALLOWED_RESOLUTION_BASES:"` | — |
-| [SRC-2D53795445-L000172](../../agents/dialogue_state.py#L172) | 172 | `"        resolution_basis = \"history_inferred\" if is_follow_up else \"current_message\""` | — |
-| [SRC-2D53795445-L000173](../../agents/dialogue_state.py#L173) | 173 | `"    if topic_shift:"` | — |
-| [SRC-2D53795445-L000174](../../agents/dialogue_state.py#L174) | 174 | `"        resolution_basis = \"current_message\""` | — |
-| [SRC-2D53795445-L000175](../../agents/dialogue_state.py#L175) | 175 | `""` | — |
-| [SRC-2D53795445-L000176](../../agents/dialogue_state.py#L176) | 176 | `"    depth = candidate.get(\"research_depth\")"` | — |
-| [SRC-2D53795445-L000177](../../agents/dialogue_state.py#L177) | 177 | `"    if depth not in {\"standard\", \"deep\"}:"` | — |
-| [SRC-2D53795445-L000178](../../agents/dialogue_state.py#L178) | 178 | `"        depth = \"standard\""` | — |
-| [SRC-2D53795445-L000179](../../agents/dialogue_state.py#L179) | 179 | `""` | — |
-| [SRC-2D53795445-L000180](../../agents/dialogue_state.py#L180) | 180 | `"    confidence_band = candidate.get(\"confidence_band\")"` | — |
-| [SRC-2D53795445-L000181](../../agents/dialogue_state.py#L181) | 181 | `"    if confidence_band not in _ALLOWED_CONFIDENCE_BANDS:"` | — |
-| [SRC-2D53795445-L000182](../../agents/dialogue_state.py#L182) | 182 | `"        confidence_band = \"unassessed\""` | — |
-| [SRC-2D53795445-L000183](../../agents/dialogue_state.py#L183) | 183 | `""` | — |
-| [SRC-2D53795445-L000184](../../agents/dialogue_state.py#L184) | 184 | `"    clarification_question = _clean_text("` | — |
-| [SRC-2D53795445-L000185](../../agents/dialogue_state.py#L185) | 185 | `"        candidate.get(\"clarification_question\"), 400"` | — |
-| [SRC-2D53795445-L000186](../../agents/dialogue_state.py#L186) | 186 | `"    ) if needs_clarification else \"\""` | — |
-| [SRC-2D53795445-L000187](../../agents/dialogue_state.py#L187) | 187 | `""` | — |
-| [SRC-2D53795445-L000188](../../agents/dialogue_state.py#L188) | 188 | `"    status = ("` | — |
-| [SRC-2D53795445-L000189](../../agents/dialogue_state.py#L189) | 189 | `"        \"needs_clarification\" if needs_clarification"` | — |
-| [SRC-2D53795445-L000190](../../agents/dialogue_state.py#L190) | 190 | `"        else \"topic_shift\" if topic_shift"` | — |
-| [SRC-2D53795445-L000191](../../agents/dialogue_state.py#L191) | 191 | `"        else \"resolved\""` | — |
-| [SRC-2D53795445-L000192](../../agents/dialogue_state.py#L192) | 192 | `"    )"` | — |
-| [SRC-2D53795445-L000193](../../agents/dialogue_state.py#L193) | 193 | `"    return {"` | — |
-| [SRC-2D53795445-L000194](../../agents/dialogue_state.py#L194) | 194 | `"        \"status\": status,"` | — |
-| [SRC-2D53795445-L000195](../../agents/dialogue_state.py#L195) | 195 | `"        \"method\": \"llm_semantic_context\","` | — |
-| [SRC-2D53795445-L000196](../../agents/dialogue_state.py#L196) | 196 | `"        \"resolved_question\": resolved,"` | — |
-| [SRC-2D53795445-L000197](../../agents/dialogue_state.py#L197) | 197 | `"        \"intent\": intent,"` | — |
-| [SRC-2D53795445-L000198](../../agents/dialogue_state.py#L198) | 198 | `"        \"topic\": ("` | — |
-| [SRC-2D53795445-L000199](../../agents/dialogue_state.py#L199) | 199 | `"            \"\" if clear_inherited_metadata"` | — |
-| [SRC-2D53795445-L000200](../../agents/dialogue_state.py#L200) | 200 | `"            else _clean_text(candidate.get(\"topic\"), MAX_CONTEXT_TEXT_CHARS)"` | — |
-| [SRC-2D53795445-L000201](../../agents/dialogue_state.py#L201) | 201 | `"        ),"` | — |
-| [SRC-2D53795445-L000202](../../agents/dialogue_state.py#L202) | 202 | `"        \"entities\": ("` | — |
-| [SRC-2D53795445-L000203](../../agents/dialogue_state.py#L203) | 203 | `"            [] if clear_inherited_metadata else _clean_string_list("` | — |
-| [SRC-2D53795445-L000204](../../agents/dialogue_state.py#L204) | 204 | `"                candidate.get(\"entities\"), max_items=MAX_ENTITIES, max_chars=MAX_CONTEXT_TEXT_CHARS"` | — |
-| [SRC-2D53795445-L000205](../../agents/dialogue_state.py#L205) | 205 | `"            )"` | — |
-| [SRC-2D53795445-L000206](../../agents/dialogue_state.py#L206) | 206 | `"        ),"` | — |
-| [SRC-2D53795445-L000207](../../agents/dialogue_state.py#L207) | 207 | `"        \"slots\": slots,"` | — |
-| [SRC-2D53795445-L000208](../../agents/dialogue_state.py#L208) | 208 | `"        \"changed_slots\": [] if clear_inherited_metadata else changed_slots,"` | — |
-| [SRC-2D53795445-L000209](../../agents/dialogue_state.py#L209) | 209 | `"        \"is_follow_up\": is_follow_up,"` | — |
-| [SRC-2D53795445-L000210](../../agents/dialogue_state.py#L210) | 210 | `"        \"topic_shift\": topic_shift,"` | — |
-| [SRC-2D53795445-L000211](../../agents/dialogue_state.py#L211) | 211 | `"        \"needs_web\": candidate.get(\"needs_web\") is True,"` | — |
-| [SRC-2D53795445-L000212](../../agents/dialogue_state.py#L212) | 212 | `"        \"research_depth\": depth,"` | — |
-| [SRC-2D53795445-L000213](../../agents/dialogue_state.py#L213) | 213 | `"        \"needs_clarification\": needs_clarification,"` | — |
-| [SRC-2D53795445-L000214](../../agents/dialogue_state.py#L214) | 214 | `"        \"clarification_question\": clarification_question,"` | — |
-| [SRC-2D53795445-L000215](../../agents/dialogue_state.py#L215) | 215 | `"        \"unresolved_references\": _clean_string_list("` | — |
-| [SRC-2D53795445-L000216](../../agents/dialogue_state.py#L216) | 216 | `"            candidate.get(\"unresolved_references\"), max_items=8, max_chars=100"` | — |
-| [SRC-2D53795445-L000217](../../agents/dialogue_state.py#L217) | 217 | `"        ),"` | — |
-| [SRC-2D53795445-L000218](../../agents/dialogue_state.py#L218) | 218 | `"        \"resolution_basis\": resolution_basis,"` | — |
-| [SRC-2D53795445-L000219](../../agents/dialogue_state.py#L219) | 219 | `"        \"confidence_band\": confidence_band,"` | — |
-| [SRC-2D53795445-L000220](../../agents/dialogue_state.py#L220) | 220 | `"    }"` | — |
-| [SRC-2D53795445-L000221](../../agents/dialogue_state.py#L221) | 221 | `""` | — |
-| [SRC-2D53795445-L000222](../../agents/dialogue_state.py#L222) | 222 | `""` | — |
-| [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"def might_be_context_dependent(question: str) -> bool:"` | — |
-| [SRC-2D53795445-L000224](../../agents/dialogue_state.py#L224) | 224 | `"    \"\"\"Cheap trigger only; it does not decide the meaning of a contextual message.\"\"\""` | — |
-| [SRC-2D53795445-L000225](../../agents/dialogue_state.py#L225) | 225 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()"` | — |
-| [SRC-2D53795445-L000226](../../agents/dialogue_state.py#L226) | 226 | `"    if not current or len(current) > 220:"` | — |
-| [SRC-2D53795445-L000227](../../agents/dialogue_state.py#L227) | 227 | `"        return False"` | — |
-| [SRC-2D53795445-L000228](../../agents/dialogue_state.py#L228) | 228 | `"    lead_in = re.search("` | — |
-| [SRC-2D53795445-L000229](../../agents/dialogue_state.py#L229) | 229 | `"        r\"^(?:و?طب\|و?طيب\|و?تمام\|ثم\|كمان\|وبالنسبه\|بالنسبه\|\""` | — |
-| [SRC-2D53795445-L000230](../../agents/dialogue_state.py#L230) | 230 | `"        r\"(?:و)?(?:ال)?(?:سعر\|اسعار\|ثمن\|ضمان\|بطاريه\|كاميرا\|مكان\|رابط\|\""` | — |
-| [SRC-2D53795445-L000231](../../agents/dialogue_state.py#L231) | 231 | `"        r\"مصدر\|مميزات\|عيوب\|فرق\|توفر\|سرعه\|اداء\|جوده\|صيانه)\\b\|\""` | — |
-| [SRC-2D53795445-L000232](../../agents/dialogue_state.py#L232) | 232 | `"        r\"and\\s+(?:what\|the\|how)\|what\\s+about\|how\\s+about\|\""` | — |
-| [SRC-2D53795445-L000233](../../agents/dialogue_state.py#L233) | 233 | `"        r\"then\\b\|also\\b\|as\\s+for\\b\|and\\s+its\\b)\","` | — |
-| [SRC-2D53795445-L000234](../../agents/dialogue_state.py#L234) | 234 | `"        current,"` | — |
-| [SRC-2D53795445-L000235](../../agents/dialogue_state.py#L235) | 235 | `"    )"` | — |
-| [SRC-2D53795445-L000236](../../agents/dialogue_state.py#L236) | 236 | `"    reference = re.search("` | — |
-| [SRC-2D53795445-L000237](../../agents/dialogue_state.py#L237) | 237 | `"        r\"\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
-| [SRC-2D53795445-L000238](../../agents/dialogue_state.py#L238) | 238 | `"        r\"he\|she\|هو\|هي\|هذا\|هذه\|هذان\|هاتان\|هؤلاء\|ذلك\|تلك\|اللذان\|اللتان\|\""` | — |
-| [SRC-2D53795445-L000239](../../agents/dialogue_state.py#L239) | 239 | `"        r\"الذي\|التي\|الذين\|ده\|دي\|دا\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
-| [SRC-2D53795445-L000240](../../agents/dialogue_state.py#L240) | 240 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
-| [SRC-2D53795445-L000241](../../agents/dialogue_state.py#L241) | 241 | `"        current,"` | — |
-| [SRC-2D53795445-L000242](../../agents/dialogue_state.py#L242) | 242 | `"    )"` | — |
-| [SRC-2D53795445-L000243](../../agents/dialogue_state.py#L243) | 243 | `"    fragment = re.fullmatch("` | — |
-| [SRC-2D53795445-L000244](../../agents/dialogue_state.py#L244) | 244 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
-| [SRC-2D53795445-L000245](../../agents/dialogue_state.py#L245) | 245 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
-| [SRC-2D53795445-L000246](../../agents/dialogue_state.py#L246) | 246 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
-| [SRC-2D53795445-L000247](../../agents/dialogue_state.py#L247) | 247 | `"        r\"[؟?\\s]*\","` | — |
-| [SRC-2D53795445-L000248](../../agents/dialogue_state.py#L248) | 248 | `"        current,"` | — |
-| [SRC-2D53795445-L000249](../../agents/dialogue_state.py#L249) | 249 | `"    )"` | — |
-| [SRC-2D53795445-L000250](../../agents/dialogue_state.py#L250) | 250 | `"    # Arabic object pronouns are often attached to verbs, as in \"أشتريه\""` | — |
-| [SRC-2D53795445-L000251](../../agents/dialogue_state.py#L251) | 251 | `"    # or \"أستخدمها\"; whitespace-token pronoun lists miss these natural follow-ups."` | — |
-| [SRC-2D53795445-L000252](../../agents/dialogue_state.py#L252) | 252 | `"    attached_reference = re.search("` | — |
