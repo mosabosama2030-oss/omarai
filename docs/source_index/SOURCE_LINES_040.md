@@ -791,12 +791,12 @@
 | [SRC-F725E90B2A-L003599](../../tests/test_web_agent.py#L3599) | 3599 | `"        },"` | — |
 | [SRC-F725E90B2A-L003600](../../tests/test_web_agent.py#L3600) | 3600 | `"    )"` | — |
 | [SRC-F725E90B2A-L003601](../../tests/test_web_agent.py#L3601) | 3601 | `"    monkeypatch.setattr(agent, \"_collect_research\", lambda plan: ("` | — |
-| [SRC-F725E90B2A-L003602](../../tests/test_web_agent.py#L3602) | 3602 | `"        [sample_source(0)], [], {"` | — |
+| [SRC-F725E90B2A-L003602](../../tests/test_web_agent.py#L3602) | 3602 | `"        [sample_source(0), sample_source(1)], [], {"` | — |
 | [SRC-F725E90B2A-L003603](../../tests/test_web_agent.py#L3603) | 3603 | `"            \"queries_planned\": 1,"` | — |
 | [SRC-F725E90B2A-L003604](../../tests/test_web_agent.py#L3604) | 3604 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L003605](../../tests/test_web_agent.py#L3605) | 3605 | `"            \"query_results\": [{\"query\": plan[\"queries\"][0], \"results\": 1}],"` | — |
-| [SRC-F725E90B2A-L003606](../../tests/test_web_agent.py#L3606) | 3606 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-F725E90B2A-L003607](../../tests/test_web_agent.py#L3607) | 3607 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-F725E90B2A-L003605](../../tests/test_web_agent.py#L3605) | 3605 | `"            \"query_results\": [{\"query\": plan[\"queries\"][0], \"results\": 2}],"` | — |
+| [SRC-F725E90B2A-L003606](../../tests/test_web_agent.py#L3606) | 3606 | `"            \"unique_sources\": 2,"` | — |
+| [SRC-F725E90B2A-L003607](../../tests/test_web_agent.py#L3607) | 3607 | `"            \"pages_fetched\": 2,"` | — |
 | [SRC-F725E90B2A-L003608](../../tests/test_web_agent.py#L3608) | 3608 | `"            \"providers_used\": [\"test\"],"` | — |
 | [SRC-F725E90B2A-L003609](../../tests/test_web_agent.py#L3609) | 3609 | `"            \"provider_diagnostics\": [],"` | — |
 | [SRC-F725E90B2A-L003610](../../tests/test_web_agent.py#L3610) | 3610 | `"        }"` | — |
