@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000431 إلى SRC-59CF4B7DE8-L000397
+- النطاق: SRC-5587371288-L000416 إلى SRC-59CF4B7DE8-L000382
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000416](../../agents/intent_router.py#L416) | 416 | `"    # If the assistant just asked for a missing referent, bind the user's concise"` | — |
+| [SRC-5587371288-L000417](../../agents/intent_router.py#L417) | 417 | `"    # reply to that pending question instead of answering the entity name in isolation."` | — |
+| [SRC-5587371288-L000418](../../agents/intent_router.py#L418) | 418 | `"    if _is_clarification_answer(question, history):"` | — |
+| [SRC-5587371288-L000419](../../agents/intent_router.py#L419) | 419 | `"        return {"` | — |
+| [SRC-5587371288-L000420](../../agents/intent_router.py#L420) | 420 | `"            \"route\": \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000421](../../agents/intent_router.py#L421) | 421 | `"            \"reason\": \"answer_to_pending_clarification\","` | — |
+| [SRC-5587371288-L000422](../../agents/intent_router.py#L422) | 422 | `"            \"context_available\": True,"` | — |
+| [SRC-5587371288-L000423](../../agents/intent_router.py#L423) | 423 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000424](../../agents/intent_router.py#L424) | 424 | `"        }"` | — |
+| [SRC-5587371288-L000425](../../agents/intent_router.py#L425) | 425 | `""` | — |
+| [SRC-5587371288-L000426](../../agents/intent_router.py#L426) | 426 | `"    context_available = _has_context(history)"` | — |
+| [SRC-5587371288-L000427](../../agents/intent_router.py#L427) | 427 | `""` | — |
+| [SRC-5587371288-L000428](../../agents/intent_router.py#L428) | 428 | `"    # A search mode cannot supply a missing subject. Clarify genuinely elliptical"` | — |
+| [SRC-5587371288-L000429](../../agents/intent_router.py#L429) | 429 | `"    # questions before honoring the UI's explicit research mode."` | — |
+| [SRC-5587371288-L000430](../../agents/intent_router.py#L430) | 430 | `"    if _needs_clarification(question) and not context_available:"` | — |
 | [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `"        return {"` | — |
 | [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"            \"route\": \"CLARIFY\","` | — |
 | [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"            \"reason\": \"missing_referent_and_no_conversation_context\","` | — |
@@ -828,18 +843,3 @@
 | [SRC-59CF4B7DE8-L000380](../../agents/research.py#L380) | 380 | `"                continue"` | — |
 | [SRC-59CF4B7DE8-L000381](../../agents/research.py#L381) | 381 | `"            if part:"` | — |
 | [SRC-59CF4B7DE8-L000382](../../agents/research.py#L382) | 382 | `"                parts.append(part)"` | — |
-| [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"        query = \"&\".join(sorted(parts))"` | — |
-| [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"        path = parsed.path.rstrip(\"/\") or \"/\""` | — |
-| [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"        return f\"{parsed.scheme.lower()}://{host}{path}\" + (f\"?{query}\" if query else \"\")"` | — |
-| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    except (ValueError, TypeError):"` | — |
-| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"        return url"` | — |
-| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `""` | — |
-| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `""` | — |
-| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"def classify_source(url: str) -> dict[str, str]:"` | — |
-| [SRC-59CF4B7DE8-L000391](../../agents/research.py#L391) | 391 | `"    host = (urlparse(url).hostname or \"\").lower().removeprefix(\"www.\")"` | — |
-| [SRC-59CF4B7DE8-L000392](../../agents/research.py#L392) | 392 | `"    platform = \"web\""` | — |
-| [SRC-59CF4B7DE8-L000393](../../agents/research.py#L393) | 393 | `"    mapping = {"` | — |
-| [SRC-59CF4B7DE8-L000394](../../agents/research.py#L394) | 394 | `"        \"reddit.com\": \"reddit\", \"old.reddit.com\": \"reddit\","` | — |
-| [SRC-59CF4B7DE8-L000395](../../agents/research.py#L395) | 395 | `"        \"youtube.com\": \"youtube\", \"youtu.be\": \"youtube\","` | — |
-| [SRC-59CF4B7DE8-L000396](../../agents/research.py#L396) | 396 | `"        \"facebook.com\": \"facebook\", \"instagram.com\": \"instagram\","` | — |
-| [SRC-59CF4B7DE8-L000397](../../agents/research.py#L397) | 397 | `"        \"x.com\": \"x\", \"twitter.com\": \"x\", \"tiktok.com\": \"tiktok\","` | — |

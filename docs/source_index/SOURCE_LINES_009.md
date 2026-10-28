@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003645 إلى SRC-1AE03B9EC3-L004444
+- النطاق: SRC-1AE03B9EC3-L003630 إلى SRC-1AE03B9EC3-L004429
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003630](../../agents/web_agent.py#L3630) | 3630 | `"        citation_count = len(re.findall(r\"\\[المصدر\\s+\\d+\\]\", answer))"` | — |
+| [SRC-1AE03B9EC3-L003631](../../agents/web_agent.py#L3631) | 3631 | `"        max_citable_source_index = max("` | — |
+| [SRC-1AE03B9EC3-L003632](../../agents/web_agent.py#L3632) | 3632 | `"            0, min(MAX_LLM_CITED_SOURCES, int(source_count))"` | — |
+| [SRC-1AE03B9EC3-L003633](../../agents/web_agent.py#L3633) | 3633 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003634](../../agents/web_agent.py#L3634) | 3634 | `"        if citation_warnings:"` | — |
+| [SRC-1AE03B9EC3-L003635](../../agents/web_agent.py#L3635) | 3635 | `"            status = \"invalid_index_references_removed\""` | — |
+| [SRC-1AE03B9EC3-L003636](../../agents/web_agent.py#L3636) | 3636 | `"        elif citation_count:"` | — |
+| [SRC-1AE03B9EC3-L003637](../../agents/web_agent.py#L3637) | 3637 | `"            status = \"index_range_check_passed\""` | — |
+| [SRC-1AE03B9EC3-L003638](../../agents/web_agent.py#L3638) | 3638 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L003639](../../agents/web_agent.py#L3639) | 3639 | `"            status = \"no_citation_markers_present\""` | — |
+| [SRC-1AE03B9EC3-L003640](../../agents/web_agent.py#L3640) | 3640 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L003641](../../agents/web_agent.py#L3641) | 3641 | `"            \"method\": \"numeric_source_index_range_only\","` | — |
+| [SRC-1AE03B9EC3-L003642](../../agents/web_agent.py#L3642) | 3642 | `"            \"status\": status,"` | — |
+| [SRC-1AE03B9EC3-L003643](../../agents/web_agent.py#L3643) | 3643 | `"            \"valid_citation_count\": citation_count,"` | — |
+| [SRC-1AE03B9EC3-L003644](../../agents/web_agent.py#L3644) | 3644 | `"            \"invalid_references_removed\": len(citation_warnings),"` | — |
 | [SRC-1AE03B9EC3-L003645](../../agents/web_agent.py#L3645) | 3645 | `"            \"max_citable_source_index\": max_citable_source_index,"` | — |
 | [SRC-1AE03B9EC3-L003646](../../agents/web_agent.py#L3646) | 3646 | `"            \"claim_support\": ("` | — |
 | [SRC-1AE03B9EC3-L003647](../../agents/web_agent.py#L3647) | 3647 | `"                \"model_review_not_independent_fact_check\""` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L004427](../../agents/web_agent.py#L4427) | 4427 | `"                for item in failure_diagnostics"` | — |
 | [SRC-1AE03B9EC3-L004428](../../agents/web_agent.py#L4428) | 4428 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004429](../../agents/web_agent.py#L4429) | 4429 | `"            report = {"` | — |
-| [SRC-1AE03B9EC3-L004430](../../agents/web_agent.py#L4430) | 4430 | `"                \"queries_planned\": len(plan.get(\"queries\", [])),"` | — |
-| [SRC-1AE03B9EC3-L004431](../../agents/web_agent.py#L4431) | 4431 | `"                # The exact query count is unknowable when the pipeline fails before it"` | — |
-| [SRC-1AE03B9EC3-L004432](../../agents/web_agent.py#L4432) | 4432 | `"                # returns its report. A provider diagnostic may still prove an attempt."` | — |
-| [SRC-1AE03B9EC3-L004433](../../agents/web_agent.py#L4433) | 4433 | `"                \"queries_attempted\": None,"` | — |
-| [SRC-1AE03B9EC3-L004434](../../agents/web_agent.py#L4434) | 4434 | `"                \"queries_attempted_known\": False,"` | — |
-| [SRC-1AE03B9EC3-L004435](../../agents/web_agent.py#L4435) | 4435 | `"                \"search_attempted\": True if provider_attempt_observed else None,"` | — |
-| [SRC-1AE03B9EC3-L004436](../../agents/web_agent.py#L4436) | 4436 | `"                \"search_outcome\": ("` | — |
-| [SRC-1AE03B9EC3-L004437](../../agents/web_agent.py#L4437) | 4437 | `"                    \"attempted_research_error\""` | — |
-| [SRC-1AE03B9EC3-L004438](../../agents/web_agent.py#L4438) | 4438 | `"                    if provider_attempt_observed"` | — |
-| [SRC-1AE03B9EC3-L004439](../../agents/web_agent.py#L4439) | 4439 | `"                    else \"unknown_after_research_error\""` | — |
-| [SRC-1AE03B9EC3-L004440](../../agents/web_agent.py#L4440) | 4440 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L004441](../../agents/web_agent.py#L4441) | 4441 | `"                \"usable_sources_after_filtering\": None,"` | — |
-| [SRC-1AE03B9EC3-L004442](../../agents/web_agent.py#L4442) | 4442 | `"                \"unique_sources\": None,"` | — |
-| [SRC-1AE03B9EC3-L004443](../../agents/web_agent.py#L4443) | 4443 | `"                \"pages_fetched\": None,"` | — |
-| [SRC-1AE03B9EC3-L004444](../../agents/web_agent.py#L4444) | 4444 | `"                \"providers_used\": [],"` | — |
