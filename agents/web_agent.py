@@ -4407,7 +4407,7 @@ class WebAgent:
                 # This is a retrieval heuristic, not a guarantee that evidence exists.
                 criterion_queries = [
                     compact_search_query(f"{base_query} {target} official data specifications")
-                    for target in self._question_coverage_targets(working_question)
+                    for target in self._question_coverage_targets(question)
                 ]
                 criterion_queries = [
                     query for query in criterion_queries
@@ -4452,7 +4452,7 @@ class WebAgent:
                 # dimensions such as price, battery, camera, privacy, or reliability.
                 criterion_queries = [
                     compact_search_query(f"{base_query} {target} official data specifications")
-                    for target in self._question_coverage_targets(working_question)
+                    for target in self._question_coverage_targets(question)
                 ]
                 criterion_queries = [
                     query for query in criterion_queries
@@ -5138,7 +5138,7 @@ class WebAgent:
                 reason, 0, [], "not_run"
             )
             citation_validation["status"] = "not_applicable_no_generated_answer"
-            coverage_targets = self._question_coverage_targets(working_question)
+            coverage_targets = self._question_coverage_targets(question)
             answer_coverage = {
                 "method": "explicit_criteria_heuristic",
                 "targets": coverage_targets,
@@ -5289,7 +5289,7 @@ class WebAgent:
                 )
             answer = _fallback_answer(sources, reason)
 
-        coverage_targets = self._question_coverage_targets(working_question)
+        coverage_targets = self._question_coverage_targets(question)
         coverage_repair_status = "not_attempted"
         coverage_repair_warning: str | None = None
         review_status = "not_run"
