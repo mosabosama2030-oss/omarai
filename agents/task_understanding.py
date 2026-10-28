@@ -219,46 +219,17 @@ def build_task_spec(
     if family == "official_site_lookup":
         evidence_requirements = [
             "target_entity_match",
-            "official_domain_or_independently linked official destination",
-            "never substitute an article or unrelated directory",
+            "official_domain_or_independently_linked_official_destination",
+            "never_substitute_an_article_or_unrelated_directory",
         ]
         query_strategies = ["exact_entity", "official_domain", "government_portal_cross_check"]
-    elif current_required:
-        evidence_requirements = [
-            "publication_or_update_date",
-            "page_text_successfully_read",
-            "prefer_primary_current_source",
-            "do_not_use_stale_page_as_current_proof",
-        ]
-        query_strategies = ["exact_topic", "recent_official_update", "primary_source", "date_check"]
-    elif social_required:
+    elif family == "social_opinions":
         evidence_requirements = [
             "public_social_platform_url",
             "original_post_or_readable_post_content_when_available",
             "heuristic_classification_is_not_identity_or_truth_verification",
         ]
         query_strategies = ["topic_platform", "personal_experience", "discussion", "commercial_exclusion"]
-    elif family == "compare":
-        evidence_requirements = [
-            "preserve_each_explicit_comparison_criterion",
-            "source_support_for_each_material_comparison",
-            "distinguish_primary_specs_from_individual_experience",
-        ]
-        query_strategies = ["topic_baseline", "one_query_per_criterion", "primary_specification", "independent_comparison"]
-    elif family == "troubleshoot":
-        evidence_requirements = [
-            "preserve_error_message_and_environment",
-            "prefer_manual_or_primary_technical_source",
-            "separate_diagnosis_hypotheses_from_confirmed_cause",
-        ]
-        query_strategies = ["symptom_exact_text", "cause_hypotheses", "official_manual", "safe_remedy"]
-    elif family == "how_to":
-        evidence_requirements = [
-            "ordered_actionable_steps",
-            "surface prerequisites and safety constraints",
-            "distinguish general guidance from product-specific instructions",
-        ]
-        query_strategies = ["goal_exact_match", "official_guide", "stepwise_method"]
     elif family == "summarize":
         evidence_requirements = [
             "read_the_requested_text_or_page",
@@ -266,6 +237,27 @@ def build_task_spec(
             "preserve_source_scope_and_important_qualifiers",
         ]
         query_strategies = ["exact_url_or_supplied_text", "page_read", "scope_preserving_summary"]
+    elif family == "troubleshoot":
+        evidence_requirements = [
+            "preserve_error_message_and_environment",
+            "prefer_manual_or_primary_technical_source",
+            "separate_diagnosis_hypotheses_from_confirmed_cause",
+        ]
+        query_strategies = ["symptom_exact_text", "cause_hypotheses", "official_manual", "safe_remedy"]
+    elif family == "compare":
+        evidence_requirements = [
+            "preserve_each_explicit_comparison_criterion",
+            "source_support_for_each_material_comparison",
+            "distinguish_primary_specs_from_individual_experience",
+        ]
+        query_strategies = ["topic_baseline", "one_query_per_criterion", "primary_specification", "independent_comparison"]
+    elif family == "how_to":
+        evidence_requirements = [
+            "ordered_actionable_steps",
+            "surface prerequisites and safety constraints",
+            "distinguish general guidance from product-specific instructions",
+        ]
+        query_strategies = ["goal_exact_match", "official_guide", "stepwise_method"]
     elif family == "lead_generation":
         evidence_requirements = [
             "public_buyer_intent_signal",
@@ -287,6 +279,41 @@ def build_task_spec(
             "cite_material_web_claims",
         ]
         query_strategies = ["exact_topic", "primary_source", "cross_check_if_needed"]
+
+    # Source freshness, requested officiality, and social evidence are orthogonal
+    # constraints. Preserve them even when another intent is the primary family.
+    if current_required and not official_destination:
+        evidence_requirements.extend([
+            "publication_or_update_date",
+            "page_text_successfully_read",
+            "prefer_primary_current_source",
+            "do_not_use_stale_page_as_current_proof",
+        ])
+        query_strategies.extend(["recent_official_update", "primary_source", "date_check"])
+    if social_required and family != "social_opinions":
+        evidence_requirements.extend([
+            "public_social_platform_url",
+            "separate_personal_experience_from_promotion",
+            "heuristic_classification_is_not_identity_or_truth_verification",
+        ])
+        query_strategies.extend(["personal_experience", "discussion", "commercial_exclusion"])
+    if official_destination and family != "official_site_lookup":
+        evidence_requirements.extend([
+            "distinguish_official_destination_from_mentions_or_articles",
+            "do_not_claim_domain_ownership_without_independent_evidence",
+        ])
+        query_strategies.extend(["official_domain", "government_portal_cross_check"])
+    if "compare" in matches and family != "compare":
+        evidence_requirements.extend([
+            "preserve_explicit_comparison_criteria",
+            "do_not_collapse_multiple_dimensions_into_one_generic_answer",
+        ])
+        query_strategies.extend(["one_query_per_criterion", "independent_comparison"])
+    if len(explicit_aspects := aspect_values) > 1:
+        evidence_requirements.append("track_evidence_coverage_per_explicit_aspect")
+        query_strategies.append("one_query_per_criterion")
+    query_strategies = list(dict.fromkeys(query_strategies))
+    evidence_requirements = list(dict.fromkeys(evidence_requirements))
 
     location = _extract_explicit_locations(raw)
     years = list(dict.fromkeys(_YEAR_RE.findall(raw)))
