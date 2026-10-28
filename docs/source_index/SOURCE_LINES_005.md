@@ -748,98 +748,98 @@
 | [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"    )"` | — |
 | [SRC-686F71AA50-L000227](../../agents/task_understanding.py#L227) | 227 | `""` | — |
 | [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `""` | — |
-| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"def _extract_explicit_locations(question: str) -> list[str]:"` | — |
-| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"    \"\"\"Return only a small, explicit location vocabulary; never infer geolocation.\"\"\""` | — |
+| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"def _has_official_site_target(question: str) -> bool:"` | — |
+| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"    \"\"\"Conservatively check whether an official-site request names a target.\"\"\""` | — |
 | [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"    normalized = normalize_text(question)"` | — |
-| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"    known = ("` | — |
-| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"        (\"مصر\", (\"في مصر\", \"داخل مصر\", \"المصري\", \"المصرية\", \"مصر\", \"egypt\", \"egyptian\")),"` | — |
-| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"        (\"القاهرة\", (\"القاهرة\", \"القاهره\", \"cairo\")),"` | — |
-| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"        (\"الإسكندرية\", (\"الاسكندرية\", \"الاسكندريه\", \"alexandria\")),"` | — |
-| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"        (\"السعودية\", (\"السعودية\", \"السعوديه\", \"saudi arabia\")),"` | — |
-| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"        (\"الإمارات\", (\"الامارات\", \"uae\", \"united arab emirates\")),"` | — |
-| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"        (\"المملكة المتحدة\", (\"المملكة المتحدة\", \"united kingdom\", \"the uk\")),"` | — |
-| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"        (\"الولايات المتحدة\", (\"الولايات المتحدة\", \"united states\", \"the us\")),"` | — |
-| [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"    )"` | — |
-| [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"    result: list[str] = []"` | — |
-| [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"    for canonical, cues in known:"` | — |
-| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"        if any(_contains(normalized, (cue,)) for cue in cues):"` | — |
-| [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"            result.append(canonical)"` | — |
-| [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"    return result"` | — |
-| [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `""` | — |
-| [SRC-686F71AA50-L000247](../../agents/task_understanding.py#L247) | 247 | `""` | — |
-| [SRC-686F71AA50-L000248](../../agents/task_understanding.py#L248) | 248 | `"def _language_profile(question: str) -> str:"` | — |
-| [SRC-686F71AA50-L000249](../../agents/task_understanding.py#L249) | 249 | `"    arabic = len(re.findall(r\"[\\u0600-\\u06FF]\", question))"` | — |
-| [SRC-686F71AA50-L000250](../../agents/task_understanding.py#L250) | 250 | `"    latin = len(re.findall(r\"[A-Za-z]\", question))"` | — |
-| [SRC-686F71AA50-L000251](../../agents/task_understanding.py#L251) | 251 | `"    if arabic and latin:"` | — |
-| [SRC-686F71AA50-L000252](../../agents/task_understanding.py#L252) | 252 | `"        return \"mixed\""` | — |
-| [SRC-686F71AA50-L000253](../../agents/task_understanding.py#L253) | 253 | `"    if arabic:"` | — |
-| [SRC-686F71AA50-L000254](../../agents/task_understanding.py#L254) | 254 | `"        return \"ar\""` | — |
-| [SRC-686F71AA50-L000255](../../agents/task_understanding.py#L255) | 255 | `"    if latin:"` | — |
-| [SRC-686F71AA50-L000256](../../agents/task_understanding.py#L256) | 256 | `"        return \"en\""` | — |
-| [SRC-686F71AA50-L000257](../../agents/task_understanding.py#L257) | 257 | `"    return \"und\""` | — |
-| [SRC-686F71AA50-L000258](../../agents/task_understanding.py#L258) | 258 | `""` | — |
-| [SRC-686F71AA50-L000259](../../agents/task_understanding.py#L259) | 259 | `""` | — |
-| [SRC-686F71AA50-L000260](../../agents/task_understanding.py#L260) | 260 | `"def _primary_family(matches: dict[str, list[str]], mode: str, route: str, normalized: str) -> str:"` | — |
-| [SRC-686F71AA50-L000261](../../agents/task_understanding.py#L261) | 261 | `"    # An explicit official-destination request is different from a request for an"` | — |
-| [SRC-686F71AA50-L000262](../../agents/task_understanding.py#L262) | 262 | `"    # article mentioning the organization; government verification is a separate slot."` | — |
-| [SRC-686F71AA50-L000263](../../agents/task_understanding.py#L263) | 263 | `"    if matches[\"official_site_lookup\"]:"` | — |
-| [SRC-686F71AA50-L000264](../../agents/task_understanding.py#L264) | 264 | `"        return \"official_site_lookup\""` | — |
-| [SRC-686F71AA50-L000265](../../agents/task_understanding.py#L265) | 265 | `"    for family in ("` | — |
-| [SRC-686F71AA50-L000266](../../agents/task_understanding.py#L266) | 266 | `"        \"social_opinions\", \"summarize\", \"troubleshoot\", \"compare\","` | — |
-| [SRC-686F71AA50-L000267](../../agents/task_understanding.py#L267) | 267 | `"        \"lead_generation\", \"how_to\", \"recommendation\", \"current_information\","` | — |
-| [SRC-686F71AA50-L000268](../../agents/task_understanding.py#L268) | 268 | `"        \"find_or_discover\", \"explain_or_define\", \"general_research\","` | — |
-| [SRC-686F71AA50-L000269](../../agents/task_understanding.py#L269) | 269 | `"    ):"` | — |
-| [SRC-686F71AA50-L000270](../../agents/task_understanding.py#L270) | 270 | `"        if matches.get(family):"` | — |
-| [SRC-686F71AA50-L000271](../../agents/task_understanding.py#L271) | 271 | `"            return family"` | — |
-| [SRC-686F71AA50-L000272](../../agents/task_understanding.py#L272) | 272 | `"    if route == \"CLARIFY\":"` | — |
-| [SRC-686F71AA50-L000273](../../agents/task_understanding.py#L273) | 273 | `"        return \"ambiguous_or_incomplete\""` | — |
-| [SRC-686F71AA50-L000274](../../agents/task_understanding.py#L274) | 274 | `"    if route in {\"WEB_SIMPLE\", \"WEB_DEEP\", \"LEAD_GENERATION\"} or mode != \"auto\":"` | — |
-| [SRC-686F71AA50-L000275](../../agents/task_understanding.py#L275) | 275 | `"        return \"web_research\""` | — |
-| [SRC-686F71AA50-L000276](../../agents/task_understanding.py#L276) | 276 | `"    return \"general_question\""` | — |
-| [SRC-686F71AA50-L000277](../../agents/task_understanding.py#L277) | 277 | `""` | — |
-| [SRC-686F71AA50-L000278](../../agents/task_understanding.py#L278) | 278 | `""` | — |
-| [SRC-686F71AA50-L000279](../../agents/task_understanding.py#L279) | 279 | `"def build_task_spec("` | — |
-| [SRC-686F71AA50-L000280](../../agents/task_understanding.py#L280) | 280 | `"    question: str,"` | — |
-| [SRC-686F71AA50-L000281](../../agents/task_understanding.py#L281) | 281 | `"    *,"` | — |
-| [SRC-686F71AA50-L000282](../../agents/task_understanding.py#L282) | 282 | `"    mode: str = \"auto\","` | — |
-| [SRC-686F71AA50-L000283](../../agents/task_understanding.py#L283) | 283 | `"    intent_route: str = \"\","` | — |
-| [SRC-686F71AA50-L000284](../../agents/task_understanding.py#L284) | 284 | `"    plan: dict[str, Any] \| None = None,"` | — |
-| [SRC-686F71AA50-L000285](../../agents/task_understanding.py#L285) | 285 | `"    dialogue_context: dict[str, Any] \| None = None,"` | — |
-| [SRC-686F71AA50-L000286](../../agents/task_understanding.py#L286) | 286 | `") -> dict[str, Any]:"` | — |
-| [SRC-686F71AA50-L000287](../../agents/task_understanding.py#L287) | 287 | `"    \"\"\"Build a bounded task specification, interpretation hypotheses, and test matrix.\"\"\""` | — |
-| [SRC-686F71AA50-L000288](../../agents/task_understanding.py#L288) | 288 | `"    raw = question if isinstance(question, str) else \"\""` | — |
-| [SRC-686F71AA50-L000289](../../agents/task_understanding.py#L289) | 289 | `"    raw = raw[:MAX_TASK_CHARS]"` | — |
-| [SRC-686F71AA50-L000290](../../agents/task_understanding.py#L290) | 290 | `"    normalized = normalize_text(raw)"` | — |
-| [SRC-686F71AA50-L000291](../../agents/task_understanding.py#L291) | 291 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
-| [SRC-686F71AA50-L000292](../../agents/task_understanding.py#L292) | 292 | `"    if clean_mode not in SUPPORTED_MODES:"` | — |
-| [SRC-686F71AA50-L000293](../../agents/task_understanding.py#L293) | 293 | `"        clean_mode = \"auto\""` | — |
-| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `"    matches = {"` | — |
-| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `"        family: _contains(normalized, phrases)"` | — |
-| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"        for family, phrases in _PATTERNS.items()"` | — |
-| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"        if not family.startswith(\"output_\")"` | — |
-| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"    }"` | — |
-| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `"    output_matches = {"` | — |
-| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"        family: _contains(normalized, phrases)"` | — |
-| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `"        for family, phrases in _PATTERNS.items()"` | — |
-| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"        if family.startswith(\"output_\")"` | — |
-| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"    }"` | — |
-| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"    aspect_values: list[str] = []"` | — |
-| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"    try:"` | — |
-| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `"        from agents.aspect_planning import extract_aspects"` | — |
-| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `"        aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]"` | — |
-| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"    except (ImportError, TypeError, ValueError):"` | — |
-| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"        aspect_values = []"` | — |
-| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `""` | — |
-| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    official_destination = bool(matches[\"official_site_lookup\"])"` | — |
-| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    government_official_site = bool("` | — |
-| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"        official_destination"` | — |
-| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"        and bool(_contains(normalized, _OFFICIAL_WORDS))"` | — |
-| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    )"` | — |
-| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    navigation = official_destination or bool("` | — |
-| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"        _URL_RE.search(raw)"` | — |
-| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"        or any(normalize_text(term) in normalized for term in (\"هات رابط\", \"website\", \"homepage\"))"` | — |
-| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    )"` | — |
-| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))"` | — |
-| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `"    current_required = (clean_mode == \"latest\" or explicit_freshness) and not navigation"` | — |
-| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    social_required = clean_mode == \"social\" or bool(matches[\"social_opinions\"])"` | — |
-| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"    family = _primary_family(matches, clean_mode, intent_route, normalized)"` | — |
+| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"    for phrase in _PATTERNS[\"official_site_lookup\"]:"` | — |
+| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"        normalized = normalized.replace(normalize_text(phrase), \" \")"` | — |
+| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"    action_phrases = ("` | — |
+| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"        \"من فضلك\", \"لو سمحت\", \"اريد\", \"عايز\", \"عاوزه\", \"ابحث لي عن\","` | — |
+| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"        \"ابحث عن\", \"هات لي\", \"هاتلي\", \"هات\", \"اعثر على\", \"دور على\", \"دورلي على\","` | — |
+| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"        \"find\", \"search for\", \"look up\", \"please\", \"can you\", \"could you\", \"get me\","` | — |
+| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"        \"the\", \"of\", \"for\", \"government\","` | — |
+| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"    )"` | — |
+| [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"    for phrase in action_phrases:"` | — |
+| [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"        normalized = re.sub("` | — |
+| [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"            rf\"(?<!\\w){re.escape(normalize_text(phrase))}(?!\\w)\", \" \", normalized"` | — |
+| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"        )"` | — |
+| [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"    generic_target_words = {"` | — |
+| [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"        \"الموقع\", \"موقع\", \"الرابط\", \"رابط\", \"لينك\", \"الصفحه\", \"صفحه\","` | — |
+| [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `"        \"رسمي\", \"الرسمي\", \"الرسمى\", \"الموقع\", \"حكومي\", \"الحكومي\","` | — |
+| [SRC-686F71AA50-L000247](../../agents/task_understanding.py#L247) | 247 | `"        \"وزاره\", \"وزاره\", \"وزاره\", \"هيئه\", \"جهة\", \"جهه\", \"حكوميه\","` | — |
+| [SRC-686F71AA50-L000248](../../agents/task_understanding.py#L248) | 248 | `"        \"شركه\", \"الشركه\", \"مؤسسه\", \"المؤسسه\", \"بنك\", \"البنك\","` | — |
+| [SRC-686F71AA50-L000249](../../agents/task_understanding.py#L249) | 249 | `"        \"منظمه\", \"المنظمه\", \"مصلحه\", \"المصلحه\", \"اداره\", \"الاداره\","` | — |
+| [SRC-686F71AA50-L000250](../../agents/task_understanding.py#L250) | 250 | `"        \"وزارة\", \"شركة\", \"الشركة\", \"مؤسسة\", \"الهيئة\", \"الحكومية\","` | — |
+| [SRC-686F71AA50-L000251](../../agents/task_understanding.py#L251) | 251 | `"        \"website\", \"site\", \"homepage\", \"official\", \"ministry\", \"agency\","` | — |
+| [SRC-686F71AA50-L000252](../../agents/task_understanding.py#L252) | 252 | `"        \"department\", \"organization\", \"organisation\", \"company\", \"bank\","` | — |
+| [SRC-686F71AA50-L000253](../../agents/task_understanding.py#L253) | 253 | `"        \"authority\", \"portal\", \"url\", \"link\", \"gov\", \"the\","` | — |
+| [SRC-686F71AA50-L000254](../../agents/task_understanding.py#L254) | 254 | `"    }"` | — |
+| [SRC-686F71AA50-L000255](../../agents/task_understanding.py#L255) | 255 | `"    ignored = {normalize_text(word) for word in generic_target_words}"` | — |
+| [SRC-686F71AA50-L000256](../../agents/task_understanding.py#L256) | 256 | `"    for raw_token in _TOKEN_RE.findall(normalized):"` | — |
+| [SRC-686F71AA50-L000257](../../agents/task_understanding.py#L257) | 257 | `"        token = normalize_text(raw_token)"` | — |
+| [SRC-686F71AA50-L000258](../../agents/task_understanding.py#L258) | 258 | `"        changed = True"` | — |
+| [SRC-686F71AA50-L000259](../../agents/task_understanding.py#L259) | 259 | `"        while changed:"` | — |
+| [SRC-686F71AA50-L000260](../../agents/task_understanding.py#L260) | 260 | `"            changed = False"` | — |
+| [SRC-686F71AA50-L000261](../../agents/task_understanding.py#L261) | 261 | `"            for prefix in (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\"):"` | — |
+| [SRC-686F71AA50-L000262](../../agents/task_understanding.py#L262) | 262 | `"                if token.startswith(prefix) and len(token) - len(prefix) >= 3:"` | — |
+| [SRC-686F71AA50-L000263](../../agents/task_understanding.py#L263) | 263 | `"                    token = token[len(prefix):]"` | — |
+| [SRC-686F71AA50-L000264](../../agents/task_understanding.py#L264) | 264 | `"                    changed = True"` | — |
+| [SRC-686F71AA50-L000265](../../agents/task_understanding.py#L265) | 265 | `"                    break"` | — |
+| [SRC-686F71AA50-L000266](../../agents/task_understanding.py#L266) | 266 | `"        if token and token not in ignored and len(token) >= 2:"` | — |
+| [SRC-686F71AA50-L000267](../../agents/task_understanding.py#L267) | 267 | `"            return True"` | — |
+| [SRC-686F71AA50-L000268](../../agents/task_understanding.py#L268) | 268 | `"    return False"` | — |
+| [SRC-686F71AA50-L000269](../../agents/task_understanding.py#L269) | 269 | `""` | — |
+| [SRC-686F71AA50-L000270](../../agents/task_understanding.py#L270) | 270 | `""` | — |
+| [SRC-686F71AA50-L000271](../../agents/task_understanding.py#L271) | 271 | `"def _extract_explicit_locations(question: str) -> list[str]:"` | — |
+| [SRC-686F71AA50-L000272](../../agents/task_understanding.py#L272) | 272 | `"    \"\"\"Return only a small, explicit location vocabulary; never infer geolocation.\"\"\""` | — |
+| [SRC-686F71AA50-L000273](../../agents/task_understanding.py#L273) | 273 | `"    normalized = normalize_text(question)"` | — |
+| [SRC-686F71AA50-L000274](../../agents/task_understanding.py#L274) | 274 | `"    known = ("` | — |
+| [SRC-686F71AA50-L000275](../../agents/task_understanding.py#L275) | 275 | `"        (\"مصر\", (\"في مصر\", \"داخل مصر\", \"المصري\", \"المصرية\", \"مصر\", \"egypt\", \"egyptian\")),"` | — |
+| [SRC-686F71AA50-L000276](../../agents/task_understanding.py#L276) | 276 | `"        (\"القاهرة\", (\"القاهرة\", \"القاهره\", \"cairo\")),"` | — |
+| [SRC-686F71AA50-L000277](../../agents/task_understanding.py#L277) | 277 | `"        (\"الإسكندرية\", (\"الاسكندرية\", \"الاسكندريه\", \"alexandria\")),"` | — |
+| [SRC-686F71AA50-L000278](../../agents/task_understanding.py#L278) | 278 | `"        (\"السعودية\", (\"السعودية\", \"السعوديه\", \"saudi arabia\")),"` | — |
+| [SRC-686F71AA50-L000279](../../agents/task_understanding.py#L279) | 279 | `"        (\"الإمارات\", (\"الامارات\", \"uae\", \"united arab emirates\")),"` | — |
+| [SRC-686F71AA50-L000280](../../agents/task_understanding.py#L280) | 280 | `"        (\"المملكة المتحدة\", (\"المملكة المتحدة\", \"united kingdom\", \"the uk\")),"` | — |
+| [SRC-686F71AA50-L000281](../../agents/task_understanding.py#L281) | 281 | `"        (\"الولايات المتحدة\", (\"الولايات المتحدة\", \"united states\", \"the us\")),"` | — |
+| [SRC-686F71AA50-L000282](../../agents/task_understanding.py#L282) | 282 | `"    )"` | — |
+| [SRC-686F71AA50-L000283](../../agents/task_understanding.py#L283) | 283 | `"    result: list[str] = []"` | — |
+| [SRC-686F71AA50-L000284](../../agents/task_understanding.py#L284) | 284 | `"    for canonical, cues in known:"` | — |
+| [SRC-686F71AA50-L000285](../../agents/task_understanding.py#L285) | 285 | `"        if any(_contains(normalized, (cue,)) for cue in cues):"` | — |
+| [SRC-686F71AA50-L000286](../../agents/task_understanding.py#L286) | 286 | `"            result.append(canonical)"` | — |
+| [SRC-686F71AA50-L000287](../../agents/task_understanding.py#L287) | 287 | `"    return result"` | — |
+| [SRC-686F71AA50-L000288](../../agents/task_understanding.py#L288) | 288 | `""` | — |
+| [SRC-686F71AA50-L000289](../../agents/task_understanding.py#L289) | 289 | `""` | — |
+| [SRC-686F71AA50-L000290](../../agents/task_understanding.py#L290) | 290 | `"def _language_profile(question: str) -> str:"` | — |
+| [SRC-686F71AA50-L000291](../../agents/task_understanding.py#L291) | 291 | `"    arabic = len(re.findall(r\"[\\u0600-\\u06FF]\", question))"` | — |
+| [SRC-686F71AA50-L000292](../../agents/task_understanding.py#L292) | 292 | `"    latin = len(re.findall(r\"[A-Za-z]\", question))"` | — |
+| [SRC-686F71AA50-L000293](../../agents/task_understanding.py#L293) | 293 | `"    if arabic and latin:"` | — |
+| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `"        return \"mixed\""` | — |
+| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `"    if arabic:"` | — |
+| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"        return \"ar\""` | — |
+| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"    if latin:"` | — |
+| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"        return \"en\""` | — |
+| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `"    return \"und\""` | — |
+| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `""` | — |
+| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `""` | — |
+| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"def _primary_family(matches: dict[str, list[str]], mode: str, route: str, normalized: str) -> str:"` | — |
+| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"    # An explicit official-destination request is different from a request for an"` | — |
+| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"    # article mentioning the organization; government verification is a separate slot."` | — |
+| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"    if matches[\"official_site_lookup\"]:"` | — |
+| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `"        return \"official_site_lookup\""` | — |
+| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `"    for family in ("` | — |
+| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"        \"social_opinions\", \"summarize\", \"troubleshoot\", \"compare\","` | — |
+| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"        \"lead_generation\", \"how_to\", \"recommendation\", \"current_information\","` | — |
+| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `"        \"find_or_discover\", \"explain_or_define\", \"general_research\","` | — |
+| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    ):"` | — |
+| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"        if matches.get(family):"` | — |
+| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"            return family"` | — |
+| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"    if route == \"CLARIFY\":"` | — |
+| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"        return \"ambiguous_or_incomplete\""` | — |
+| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    if route in {\"WEB_SIMPLE\", \"WEB_DEEP\", \"LEAD_GENERATION\"} or mode != \"auto\":"` | — |
+| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"        return \"web_research\""` | — |
+| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"    return \"general_question\""` | — |
+| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `""` | — |
+| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `""` | — |
+| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `"def build_task_spec("` | — |
+| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    question: str,"` | — |
+| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"    *,"` | — |
