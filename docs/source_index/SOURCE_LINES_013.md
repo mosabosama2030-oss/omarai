@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004264 إلى SRC-1AE03B9EC3-L005063
+- النطاق: SRC-1AE03B9EC3-L004242 إلى SRC-1AE03B9EC3-L005041
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004242](../../agents/web_agent.py#L4242) | 4242 | `"                result[\"task_fulfillment_status\"] = fulfillment_status"` | — |
+| [SRC-1AE03B9EC3-L004243](../../agents/web_agent.py#L4243) | 4243 | `"                if isinstance(result.get(\"search_report\"), dict):"` | — |
+| [SRC-1AE03B9EC3-L004244](../../agents/web_agent.py#L4244) | 4244 | `"                    result[\"search_report\"][\"answer_integrity\"] = answer_integrity"` | — |
+| [SRC-1AE03B9EC3-L004245](../../agents/web_agent.py#L4245) | 4245 | `"                    result[\"search_report\"][\"task_fulfillment_status\"] = fulfillment_status"` | — |
+| [SRC-1AE03B9EC3-L004246](../../agents/web_agent.py#L4246) | 4246 | `"            except (AttributeError, KeyError, TypeError, ValueError):"` | — |
+| [SRC-1AE03B9EC3-L004247](../../agents/web_agent.py#L4247) | 4247 | `"                # Auxiliary integrity screening never replaces the actual answer."` | — |
+| [SRC-1AE03B9EC3-L004248](../../agents/web_agent.py#L4248) | 4248 | `"                result[\"answer_integrity\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004249](../../agents/web_agent.py#L4249) | 4249 | `"                    \"method\": \"deterministic_lexical_screen_only\","` | — |
+| [SRC-1AE03B9EC3-L004250](../../agents/web_agent.py#L4250) | 4250 | `"                    \"status\": \"not_run\","` | — |
+| [SRC-1AE03B9EC3-L004251](../../agents/web_agent.py#L4251) | 4251 | `"                    \"semantic_verification\": False,"` | — |
+| [SRC-1AE03B9EC3-L004252](../../agents/web_agent.py#L4252) | 4252 | `"                    \"independent_fact_check\": False,"` | — |
+| [SRC-1AE03B9EC3-L004253](../../agents/web_agent.py#L4253) | 4253 | `"                    \"error_class\": \"integrity_screen_error\","` | — |
+| [SRC-1AE03B9EC3-L004254](../../agents/web_agent.py#L4254) | 4254 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L004255](../../agents/web_agent.py#L4255) | 4255 | `"                result.setdefault(\"warnings\", []).append("` | — |
+| [SRC-1AE03B9EC3-L004256](../../agents/web_agent.py#L4256) | 4256 | `"                    \"تعذر تشغيل الفحص اللفظي الأولي لسلامة الأدلة؛ لم يُعدّ ذلك إثباتًا أو نفيًا لصحة الإجابة.\""` | — |
+| [SRC-1AE03B9EC3-L004257](../../agents/web_agent.py#L4257) | 4257 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004258](../../agents/web_agent.py#L4258) | 4258 | `"        if \"final_answer_status\" not in result:"` | — |
+| [SRC-1AE03B9EC3-L004259](../../agents/web_agent.py#L4259) | 4259 | `"            if result.get(\"kind\") in {\"capability_answer\", \"local_conversation\"}:"` | — |
+| [SRC-1AE03B9EC3-L004260](../../agents/web_agent.py#L4260) | 4260 | `"                final_answer_status = \"local_response_no_generation\""` | — |
+| [SRC-1AE03B9EC3-L004261](../../agents/web_agent.py#L4261) | 4261 | `"            elif result.get(\"kind\") == \"insufficient_evidence\":"` | — |
+| [SRC-1AE03B9EC3-L004262](../../agents/web_agent.py#L4262) | 4262 | `"                final_answer_status = \"insufficient_evidence_no_generation\""` | — |
+| [SRC-1AE03B9EC3-L004263](../../agents/web_agent.py#L4263) | 4263 | `"            elif result.get(\"used_language_model\") is True:"` | — |
 | [SRC-1AE03B9EC3-L004264](../../agents/web_agent.py#L4264) | 4264 | `"                final_answer_status = \"model_answer_generated\""` | — |
 | [SRC-1AE03B9EC3-L004265](../../agents/web_agent.py#L4265) | 4265 | `"            elif self.generation_diagnostics:"` | — |
 | [SRC-1AE03B9EC3-L004266](../../agents/web_agent.py#L4266) | 4266 | `"                final_answer_status = ("` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L005039](../../agents/web_agent.py#L5039) | 5039 | `"                \"هذا ملخص للرابط الذي قدمته فقط؛ لم يتم تأكيد محتواه من مصدر مستقل آخر.\""` | — |
 | [SRC-1AE03B9EC3-L005040](../../agents/web_agent.py#L5040) | 5040 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005041](../../agents/web_agent.py#L5041) | 5041 | `"            search_warning = \"؛ \".join(search_warnings)"` | — |
-| [SRC-1AE03B9EC3-L005042](../../agents/web_agent.py#L5042) | 5042 | `"        # Link-finding and lead-discovery are actionable discovery tasks, not broad"` | — |
-| [SRC-1AE03B9EC3-L005043](../../agents/web_agent.py#L5043) | 5043 | `"        # fact-checking. Keep useful candidates visible while explicitly labelling them"` | — |
-| [SRC-1AE03B9EC3-L005044](../../agents/web_agent.py#L5044) | 5044 | `"        # as uncorroborated instead of refusing a lone result as if it were no result."` | — |
-| [SRC-1AE03B9EC3-L005045](../../agents/web_agent.py#L5045) | 5045 | `"        navigation_request = self._is_navigation_request(working_question)"` | — |
-| [SRC-1AE03B9EC3-L005046](../../agents/web_agent.py#L5046) | 5046 | `"        lead_request = intent_route == \"LEAD_GENERATION\" or self._is_lead_search(working_question)"` | — |
-| [SRC-1AE03B9EC3-L005047](../../agents/web_agent.py#L5047) | 5047 | `"        listing_request = self._is_listing_discovery(working_question)"` | — |
-| [SRC-1AE03B9EC3-L005048](../../agents/web_agent.py#L5048) | 5048 | `"        lead_evidence_sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L005049](../../agents/web_agent.py#L5049) | 5049 | `"        related_lead_results_count = 0"` | — |
-| [SRC-1AE03B9EC3-L005050](../../agents/web_agent.py#L5050) | 5050 | `"        if lead_request:"` | — |
-| [SRC-1AE03B9EC3-L005051](../../agents/web_agent.py#L5051) | 5051 | `"            related_lead_results_count = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L005052](../../agents/web_agent.py#L5052) | 5052 | `"            for source in sources:"` | — |
-| [SRC-1AE03B9EC3-L005053](../../agents/web_agent.py#L5053) | 5053 | `"                signal = self._lead_intent_evidence(source)"` | — |
-| [SRC-1AE03B9EC3-L005054](../../agents/web_agent.py#L5054) | 5054 | `"                if signal:"` | — |
-| [SRC-1AE03B9EC3-L005055](../../agents/web_agent.py#L5055) | 5055 | `"                    source[\"lead_qualification\"] = \"public_buyer_intent_signal\""` | — |
-| [SRC-1AE03B9EC3-L005056](../../agents/web_agent.py#L5056) | 5056 | `"                    source[\"lead_intent_evidence\"] = signal"` | — |
-| [SRC-1AE03B9EC3-L005057](../../agents/web_agent.py#L5057) | 5057 | `"                    lead_evidence_sources.append(source)"` | — |
-| [SRC-1AE03B9EC3-L005058](../../agents/web_agent.py#L5058) | 5058 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L005059](../../agents/web_agent.py#L5059) | 5059 | `"                    source[\"lead_qualification\"] = \"related_result_not_lead\""` | — |
-| [SRC-1AE03B9EC3-L005060](../../agents/web_agent.py#L5060) | 5060 | `"            lead_research_incomplete = ("` | — |
-| [SRC-1AE03B9EC3-L005061](../../agents/web_agent.py#L5061) | 5061 | `"                not sources"` | — |
-| [SRC-1AE03B9EC3-L005062](../../agents/web_agent.py#L5062) | 5062 | `"                and report.get(\"search_outcome\") in _RESEARCH_ERROR_OUTCOMES"` | — |
-| [SRC-1AE03B9EC3-L005063](../../agents/web_agent.py#L5063) | 5063 | `"            )"` | — |

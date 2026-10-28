@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001475 إلى SRC-F725E90B2A-L002274
+- النطاق: SRC-F725E90B2A-L001453 إلى SRC-F725E90B2A-L002252
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001453](../../tests/test_web_agent.py#L1453) | 1453 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-F725E90B2A-L001454](../../tests/test_web_agent.py#L1454) | 1454 | `"        captured[\"kwargs\"] = kwargs"` | — |
+| [SRC-F725E90B2A-L001455](../../tests/test_web_agent.py#L1455) | 1455 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
+| [SRC-F725E90B2A-L001456](../../tests/test_web_agent.py#L1456) | 1456 | `""` | — |
+| [SRC-F725E90B2A-L001457](../../tests/test_web_agent.py#L1457) | 1457 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-F725E90B2A-L001458](../../tests/test_web_agent.py#L1458) | 1458 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001459](../../tests/test_web_agent.py#L1459) | 1459 | `"        agent, \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001460](../../tests/test_web_agent.py#L1460) | 1460 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
+| [SRC-F725E90B2A-L001461](../../tests/test_web_agent.py#L1461) | 1461 | `"    )"` | — |
+| [SRC-F725E90B2A-L001462](../../tests/test_web_agent.py#L1462) | 1462 | `""` | — |
+| [SRC-F725E90B2A-L001463](../../tests/test_web_agent.py#L1463) | 1463 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
+| [SRC-F725E90B2A-L001464](../../tests/test_web_agent.py#L1464) | 1464 | `""` | — |
+| [SRC-F725E90B2A-L001465](../../tests/test_web_agent.py#L1465) | 1465 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
+| [SRC-F725E90B2A-L001466](../../tests/test_web_agent.py#L1466) | 1466 | `"    assert result[\"used_language_model\"] is True"` | — |
+| [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    assert result[\"sources\"] == []"` | — |
+| [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001471](../../tests/test_web_agent.py#L1471) | 1471 | `""` | — |
+| [SRC-F725E90B2A-L001472](../../tests/test_web_agent.py#L1472) | 1472 | `""` | — |
+| [SRC-F725E90B2A-L001473](../../tests/test_web_agent.py#L1473) | 1473 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001475](../../tests/test_web_agent.py#L1475) | 1475 | `"    agent.api_key = \"\""` | — |
 | [SRC-F725E90B2A-L001476](../../tests/test_web_agent.py#L1476) | 1476 | `""` | — |
 | [SRC-F725E90B2A-L001477](../../tests/test_web_agent.py#L1477) | 1477 | `"    monkeypatch.setattr("` | — |
@@ -794,25 +816,3 @@
 | [SRC-F725E90B2A-L002250](../../tests/test_web_agent.py#L2250) | 2250 | `""` | — |
 | [SRC-F725E90B2A-L002251](../../tests/test_web_agent.py#L2251) | 2251 | `""` | — |
 | [SRC-F725E90B2A-L002252](../../tests/test_web_agent.py#L2252) | 2252 | `"def test_lead_discovery_is_distinct_from_listing_search():"` | — |
-| [SRC-F725E90B2A-L002253](../../tests/test_web_agent.py#L2253) | 2253 | `"    assert WebAgent._is_lead_search(\"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية\")"` | — |
-| [SRC-F725E90B2A-L002254](../../tests/test_web_agent.py#L2254) | 2254 | `"    assert WebAgent._is_lead_search(\"Find buyers looking to buy apartments\")"` | — |
-| [SRC-F725E90B2A-L002255](../../tests/test_web_agent.py#L2255) | 2255 | `"    assert not WebAgent._is_lead_search(\"ابحث عن شقق للبيع في العاصمة الإدارية\")"` | — |
-| [SRC-F725E90B2A-L002256](../../tests/test_web_agent.py#L2256) | 2256 | `"    assert not WebAgent._is_lead_search(\"Find apartments for sale\")"` | — |
-| [SRC-F725E90B2A-L002257](../../tests/test_web_agent.py#L2257) | 2257 | `""` | — |
-| [SRC-F725E90B2A-L002258](../../tests/test_web_agent.py#L2258) | 2258 | `""` | — |
-| [SRC-F725E90B2A-L002259](../../tests/test_web_agent.py#L2259) | 2259 | `"def test_buyer_intent_evidence_requires_explicit_purchase_signal():"` | — |
-| [SRC-F725E90B2A-L002260](../../tests/test_web_agent.py#L2260) | 2260 | `"    listing = {"` | — |
-| [SRC-F725E90B2A-L002261](../../tests/test_web_agent.py#L2261) | 2261 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
-| [SRC-F725E90B2A-L002262](../../tests/test_web_agent.py#L2262) | 2262 | `"        \"snippet\": \"أفضل شقق للبيع بالتقسيط\","` | — |
-| [SRC-F725E90B2A-L002263](../../tests/test_web_agent.py#L2263) | 2263 | `"        \"page_text\": \"إعلانات وحدات سكنية للبيع بمساحات مختلفة.\","` | — |
-| [SRC-F725E90B2A-L002264](../../tests/test_web_agent.py#L2264) | 2264 | `"    }"` | — |
-| [SRC-F725E90B2A-L002265](../../tests/test_web_agent.py#L2265) | 2265 | `"    buyer_post = {"` | — |
-| [SRC-F725E90B2A-L002266](../../tests/test_web_agent.py#L2266) | 2266 | `"        \"title\": \"بدور على شقة تمليك في العاصمة الإدارية\","` | — |
-| [SRC-F725E90B2A-L002267](../../tests/test_web_agent.py#L2267) | 2267 | `"        \"snippet\": \"مطلوب شقة تمليك في العاصمة الإدارية.\","` | — |
-| [SRC-F725E90B2A-L002268](../../tests/test_web_agent.py#L2268) | 2268 | `"        \"page_text\": \"أنا بدور على شقة تمليك في العاصمة الإدارية وعايز أشتري خلال شهر.\","` | — |
-| [SRC-F725E90B2A-L002269](../../tests/test_web_agent.py#L2269) | 2269 | `"    }"` | — |
-| [SRC-F725E90B2A-L002270](../../tests/test_web_agent.py#L2270) | 2270 | `"    assert WebAgent._lead_intent_evidence(listing) is None"` | — |
-| [SRC-F725E90B2A-L002271](../../tests/test_web_agent.py#L2271) | 2271 | `"    signal = WebAgent._lead_intent_evidence(buyer_post)"` | — |
-| [SRC-F725E90B2A-L002272](../../tests/test_web_agent.py#L2272) | 2272 | `"    assert signal is not None"` | — |
-| [SRC-F725E90B2A-L002273](../../tests/test_web_agent.py#L2273) | 2273 | `"    assert signal[\"basis\"] == \"page_text\""` | — |
-| [SRC-F725E90B2A-L002274](../../tests/test_web_agent.py#L2274) | 2274 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000675 إلى SRC-F725E90B2A-L001474
+- النطاق: SRC-F725E90B2A-L000653 إلى SRC-F725E90B2A-L001452
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000653](../../tests/test_web_agent.py#L653) | 653 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000654](../../tests/test_web_agent.py#L654) | 654 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000655](../../tests/test_web_agent.py#L655) | 655 | `"    assert results[0][\"provider\"] == \"reddit_oauth_api\""` | — |
+| [SRC-F725E90B2A-L000656](../../tests/test_web_agent.py#L656) | 656 | `"    assert results[0][\"url\"] == \"https://www.reddit.com/r/cars/comments/example/post/\""` | — |
+| [SRC-F725E90B2A-L000657](../../tests/test_web_agent.py#L657) | 657 | `"    assert \"score=25\" in results[0][\"snippet\"]"` | — |
+| [SRC-F725E90B2A-L000658](../../tests/test_web_agent.py#L658) | 658 | `"    assert len([call for call in calls if call[0] == \"POST\"]) == 1"` | — |
+| [SRC-F725E90B2A-L000659](../../tests/test_web_agent.py#L659) | 659 | `"    assert any(\"oauth.reddit.com/search\" in call[1] for call in calls if call[0] == \"GET\")"` | — |
+| [SRC-F725E90B2A-L000660](../../tests/test_web_agent.py#L660) | 660 | `"    assert \"test-reddit-access-token\" not in str(results)"` | — |
+| [SRC-F725E90B2A-L000661](../../tests/test_web_agent.py#L661) | 661 | `""` | — |
+| [SRC-F725E90B2A-L000662](../../tests/test_web_agent.py#L662) | 662 | `""` | — |
+| [SRC-F725E90B2A-L000663](../../tests/test_web_agent.py#L663) | 663 | `""` | — |
+| [SRC-F725E90B2A-L000664](../../tests/test_web_agent.py#L664) | 664 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000665](../../tests/test_web_agent.py#L665) | 665 | `"    for name in ("` | — |
+| [SRC-F725E90B2A-L000666](../../tests/test_web_agent.py#L666) | 666 | `"        \"OMARAI_LLM_MODEL\","` | — |
+| [SRC-F725E90B2A-L000667](../../tests/test_web_agent.py#L667) | 667 | `"        \"OMARAI_PLANNER_MODEL\","` | — |
+| [SRC-F725E90B2A-L000668](../../tests/test_web_agent.py#L668) | 668 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
+| [SRC-F725E90B2A-L000669](../../tests/test_web_agent.py#L669) | 669 | `"        \"OMARAI_REVIEW_MODEL\","` | — |
+| [SRC-F725E90B2A-L000670](../../tests/test_web_agent.py#L670) | 670 | `"        \"OMARAI_LLM_FALLBACK_MODEL\","` | — |
+| [SRC-F725E90B2A-L000671](../../tests/test_web_agent.py#L671) | 671 | `"    ):"` | — |
+| [SRC-F725E90B2A-L000672](../../tests/test_web_agent.py#L672) | 672 | `"        monkeypatch.delenv(name, raising=False)"` | — |
+| [SRC-F725E90B2A-L000673](../../tests/test_web_agent.py#L673) | 673 | `""` | — |
+| [SRC-F725E90B2A-L000674](../../tests/test_web_agent.py#L674) | 674 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L000675](../../tests/test_web_agent.py#L675) | 675 | `"    assert agent.planner_model == \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
 | [SRC-F725E90B2A-L000676](../../tests/test_web_agent.py#L676) | 676 | `"    assert agent.answer_model == \"google/gemma-4-31b-it:free\""` | — |
 | [SRC-F725E90B2A-L000677](../../tests/test_web_agent.py#L677) | 677 | `"    assert agent.review_model == agent.answer_model"` | — |
@@ -794,25 +816,3 @@
 | [SRC-F725E90B2A-L001450](../../tests/test_web_agent.py#L1450) | 1450 | `"    captured = {}"` | — |
 | [SRC-F725E90B2A-L001451](../../tests/test_web_agent.py#L1451) | 1451 | `""` | — |
 | [SRC-F725E90B2A-L001452](../../tests/test_web_agent.py#L1452) | 1452 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-F725E90B2A-L001453](../../tests/test_web_agent.py#L1453) | 1453 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-F725E90B2A-L001454](../../tests/test_web_agent.py#L1454) | 1454 | `"        captured[\"kwargs\"] = kwargs"` | — |
-| [SRC-F725E90B2A-L001455](../../tests/test_web_agent.py#L1455) | 1455 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
-| [SRC-F725E90B2A-L001456](../../tests/test_web_agent.py#L1456) | 1456 | `""` | — |
-| [SRC-F725E90B2A-L001457](../../tests/test_web_agent.py#L1457) | 1457 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001458](../../tests/test_web_agent.py#L1458) | 1458 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001459](../../tests/test_web_agent.py#L1459) | 1459 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001460](../../tests/test_web_agent.py#L1460) | 1460 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
-| [SRC-F725E90B2A-L001461](../../tests/test_web_agent.py#L1461) | 1461 | `"    )"` | — |
-| [SRC-F725E90B2A-L001462](../../tests/test_web_agent.py#L1462) | 1462 | `""` | — |
-| [SRC-F725E90B2A-L001463](../../tests/test_web_agent.py#L1463) | 1463 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
-| [SRC-F725E90B2A-L001464](../../tests/test_web_agent.py#L1464) | 1464 | `""` | — |
-| [SRC-F725E90B2A-L001465](../../tests/test_web_agent.py#L1465) | 1465 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
-| [SRC-F725E90B2A-L001466](../../tests/test_web_agent.py#L1466) | 1466 | `"    assert result[\"used_language_model\"] is True"` | — |
-| [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    assert result[\"sources\"] == []"` | — |
-| [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001471](../../tests/test_web_agent.py#L1471) | 1471 | `""` | — |
-| [SRC-F725E90B2A-L001472](../../tests/test_web_agent.py#L1472) | 1472 | `""` | — |
-| [SRC-F725E90B2A-L001473](../../tests/test_web_agent.py#L1473) | 1473 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"    agent = WebAgent()"` | — |

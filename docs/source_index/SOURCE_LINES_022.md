@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000202 إلى SRC-D17CE3D12F-L001001
+- النطاق: SRC-D17CE3D12F-L000180 إلى SRC-D17CE3D12F-L000979
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000180](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L180) | 180 | `""` | — |
+| [SRC-D17CE3D12F-L000181](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L181) | 181 | `"عندما يُتاح المنتج لأكثر من مستخدم أو عميل، MUST:"` | — |
+| [SRC-D17CE3D12F-L000182](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L182) | 182 | `"1. فصل المصادقة (من أنت؟) عن التفويض (ما الذي يسمح لك بفعله؟)."` | — |
+| [SRC-D17CE3D12F-L000183](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L183) | 183 | `"2. التحقق من الصلاحية على مستوى المورد/السجل/العملية، لا على مستوى صفحة الواجهة فقط."` | — |
+| [SRC-D17CE3D12F-L000184](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L184) | 184 | `"3. تطبيق أقل صلاحية ورفض افتراضي عند غياب السياسة أو تعطل التحقق."` | — |
+| [SRC-D17CE3D12F-L000185](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L185) | 185 | `"4. اختبار IDOR/BOLA وتبديل المعرفات والوصول العرضي إلى محادثات مستخدم آخر."` | — |
+| [SRC-D17CE3D12F-L000186](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L186) | 186 | `"5. حماية الجلسات والرموز والكوكيز من السرقة والتثبيت والتسريب؛ وتحديد انتهاء صلاحيتها وإبطالها."` | — |
+| [SRC-D17CE3D12F-L000187](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L187) | 187 | `"6. منع أسرار الاعتماد من الظهور في URL أو سجلات الوصول أو رسائل الخطأ."` | — |
+| [SRC-D17CE3D12F-L000188](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L188) | 188 | `"7. تحديد مسارات استعادة الحساب وتغيير بيانات الاعتماد ومراجعة الصلاحيات."` | — |
+| [SRC-D17CE3D12F-L000189](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L189) | 189 | `"8. توثيق فصل حساب المالك/الإدارة عن المستخدم العادي وعدم نشر لوحات الإدارة بلا حماية."` | — |
+| [SRC-D17CE3D12F-L000190](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L190) | 190 | `"9. عند الحاجة، دعم SSO/OIDC أو إدارة المؤسسات وفق حاجة مثبتة؛ لا يُضاف هذا التعقيد إلى نسخة فردية بلا متطلب."` | — |
+| [SRC-D17CE3D12F-L000191](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L191) | 191 | `"10. اختبار سلوك الصلاحيات في API مباشرة، لا الاكتفاء باختبار الواجهة."` | — |
+| [SRC-D17CE3D12F-L000192](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L192) | 192 | `""` | — |
+| [SRC-D17CE3D12F-L000193](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L193) | 193 | `"## 13. العزل متعدد المستأجرين (Multi-tenancy)"` | — |
+| [SRC-D17CE3D12F-L000194](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L194) | 194 | `""` | — |
+| [SRC-D17CE3D12F-L000195](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L195) | 195 | `"هذا القسم يصبح إلزاميًا قبل تقديم مساحة عمل مشتركة لعدة جهات مستقلة، وليس مطلوبًا إنشاء نظام مؤسسات كامل قبل وجود مستخدمين متعددين."` | — |
+| [SRC-D17CE3D12F-L000196](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L196) | 196 | `""` | — |
+| [SRC-D17CE3D12F-L000197](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L197) | 197 | `"1. MUST تعريف حد واضح للمستأجر Tenant، وكيفية تحديده من سياق موثوق لا من قيمة غير موثقة يرسلها العميل."` | — |
+| [SRC-D17CE3D12F-L000198](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L198) | 198 | `"2. MUST تمرير سياق المستأجر والتحقق منه في كل مسار يصل إلى بياناته، بما في ذلك البحث والتخزين والكاش والمهام والطوابير والسجلات والتصدير."` | — |
+| [SRC-D17CE3D12F-L000199](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L199) | 199 | `"3. MUST تضمين tenant/user scope في مفاتيح cache والجلسات وعناصر التخزين عند انطباقه."` | — |
+| [SRC-D17CE3D12F-L000200](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L200) | 200 | `"4. MUST اختبار حالات اختلاط المستأجرين وIDOR/BOLA وطلبات متزامنة بهويات مختلفة."` | — |
+| [SRC-D17CE3D12F-L000201](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L201) | 201 | `"5. SHOULD توفير حصص وتحديد معدل لكل مستأجر، مع منع أن يستنزف عميل الموارد المشتركة كلها."` | — |
 | [SRC-D17CE3D12F-L000202](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L202) | 202 | `"6. MUST تحديد تصدير البيانات والحذف ومشاركة البيانات داخل المؤسسة وصلاحيات الأدوار."` | — |
 | [SRC-D17CE3D12F-L000203](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L203) | 203 | `"7. MUST تحديد ما إذا كانت البيانات مشتركة منطقيًا أو معزولة ماديًا، وشرح المخاطر ومقايضات التكلفة."` | — |
 | [SRC-D17CE3D12F-L000204](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L204) | 204 | `"8. MUST منع إدخال بيانات مستأجر في ذاكرة مشتركة أو prompt أو retrieval index دون سياسة عزل واختبارات."` | — |
@@ -794,25 +816,3 @@
 | [SRC-D17CE3D12F-L000977](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L977) | 977 | `""` | — |
 | [SRC-D17CE3D12F-L000978](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L978) | 978 | `"---"` | — |
 | [SRC-D17CE3D12F-L000979](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L979) | 979 | `""` | — |
-| [SRC-D17CE3D12F-L000980](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L980) | 980 | `"# القسم السادس عشر — خريطة المرجعيات الخارجية"` | — |
-| [SRC-D17CE3D12F-L000981](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L981) | 981 | `""` | — |
-| [SRC-D17CE3D12F-L000982](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L982) | 982 | `"تُستخدم المرجعيات التالية لتوجيه المراجعة وتحويل المبادئ إلى فحوص مناسبة. يجب مراجعة الإصدار الرسمي الحالي عند استخدامها، وعدم نسخ ضوابطها آليًا دون فهم السياق."` | — |
-| [SRC-D17CE3D12F-L000983](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L983) | 983 | `""` | — |
-| [SRC-D17CE3D12F-L000984](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L984) | 984 | `"## أطر المعمارية والتشغيل"` | — |
-| [SRC-D17CE3D12F-L000985](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L985) | 985 | `"- [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) — التميز التشغيلي والأمان والموثوقية وكفاءة الأداء والتكلفة والاستدامة."` | — |
-| [SRC-D17CE3D12F-L000986](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L986) | 986 | `"- [Microsoft Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/architecture/framework/) — موثوقية وأمان وتكلفة وتشغيل وأداء."` | — |
-| [SRC-D17CE3D12F-L000987](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L987) | 987 | `"- [Google Cloud Well-Architected Framework](https://docs.cloud.google.com/architecture/framework) — معمارية قابلة للتشغيل والقياس والتحسين والقدرة على التعافي."` | — |
-| [SRC-D17CE3D12F-L000988](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L988) | 988 | `"- [Google SRE Books](https://sre.google/books/) — SLI/SLO وميزانيات الأخطاء والاستجابة للحوادث وتشغيل الخدمات."` | — |
-| [SRC-D17CE3D12F-L000989](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L989) | 989 | `"- [DORA — Continuous Delivery](https://dora.dev/capabilities/continuous-delivery/) — إطلاق تغييرات بأمان وبسرعة وبصورة مستدامة."` | — |
-| [SRC-D17CE3D12F-L000990](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L990) | 990 | `"- [CNCF Cloud Native Definition](https://github.com/cncf/toc/blob/main/DEFINITION.md) — مبادئ تشغيل قابل للتكرار على بيئات متنوعة؛ مرجع للفهم لا شرط لاستخدام تقنيات cloud-native."` | — |
-| [SRC-D17CE3D12F-L000991](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L991) | 991 | `""` | — |
-| [SRC-D17CE3D12F-L000992](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L992) | 992 | `"## الأمن والخصوصية وسلسلة التوريد"` | — |
-| [SRC-D17CE3D12F-L000993](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L993) | 993 | `"- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)."` | — |
-| [SRC-D17CE3D12F-L000994](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L994) | 994 | `"- [NIST Secure Software Development Framework (SSDF)](https://csrc.nist.gov/projects/ssdf)."` | — |
-| [SRC-D17CE3D12F-L000995](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L995) | 995 | `"- [NIST Privacy Framework](https://www.nist.gov/privacy-framework)."` | — |
-| [SRC-D17CE3D12F-L000996](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L996) | 996 | `"- [NIST SP 800-61 Rev. 3 — Incident Response](https://csrc.nist.gov/pubs/sp/800/61/r3/final)."` | — |
-| [SRC-D17CE3D12F-L000997](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | 997 | `"- [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/)."` | — |
-| [SRC-D17CE3D12F-L000998](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L998) | 998 | `"- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/)."` | — |
-| [SRC-D17CE3D12F-L000999](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L999) | 999 | `"- [OWASP GenAI Security Project](https://genai.owasp.org/)."` | — |
-| [SRC-D17CE3D12F-L001000](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | 1000 | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` | — |
-| [SRC-D17CE3D12F-L001001](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1001) | 1001 | `"- [SLSA — Supply-chain Levels for Software Artifacts](https://slsa.dev/)."` | — |

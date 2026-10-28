@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002275 إلى SRC-F725E90B2A-L003074
+- النطاق: SRC-F725E90B2A-L002253 إلى SRC-F725E90B2A-L003052
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002253](../../tests/test_web_agent.py#L2253) | 2253 | `"    assert WebAgent._is_lead_search(\"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية\")"` | — |
+| [SRC-F725E90B2A-L002254](../../tests/test_web_agent.py#L2254) | 2254 | `"    assert WebAgent._is_lead_search(\"Find buyers looking to buy apartments\")"` | — |
+| [SRC-F725E90B2A-L002255](../../tests/test_web_agent.py#L2255) | 2255 | `"    assert not WebAgent._is_lead_search(\"ابحث عن شقق للبيع في العاصمة الإدارية\")"` | — |
+| [SRC-F725E90B2A-L002256](../../tests/test_web_agent.py#L2256) | 2256 | `"    assert not WebAgent._is_lead_search(\"Find apartments for sale\")"` | — |
+| [SRC-F725E90B2A-L002257](../../tests/test_web_agent.py#L2257) | 2257 | `""` | — |
+| [SRC-F725E90B2A-L002258](../../tests/test_web_agent.py#L2258) | 2258 | `""` | — |
+| [SRC-F725E90B2A-L002259](../../tests/test_web_agent.py#L2259) | 2259 | `"def test_buyer_intent_evidence_requires_explicit_purchase_signal():"` | — |
+| [SRC-F725E90B2A-L002260](../../tests/test_web_agent.py#L2260) | 2260 | `"    listing = {"` | — |
+| [SRC-F725E90B2A-L002261](../../tests/test_web_agent.py#L2261) | 2261 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
+| [SRC-F725E90B2A-L002262](../../tests/test_web_agent.py#L2262) | 2262 | `"        \"snippet\": \"أفضل شقق للبيع بالتقسيط\","` | — |
+| [SRC-F725E90B2A-L002263](../../tests/test_web_agent.py#L2263) | 2263 | `"        \"page_text\": \"إعلانات وحدات سكنية للبيع بمساحات مختلفة.\","` | — |
+| [SRC-F725E90B2A-L002264](../../tests/test_web_agent.py#L2264) | 2264 | `"    }"` | — |
+| [SRC-F725E90B2A-L002265](../../tests/test_web_agent.py#L2265) | 2265 | `"    buyer_post = {"` | — |
+| [SRC-F725E90B2A-L002266](../../tests/test_web_agent.py#L2266) | 2266 | `"        \"title\": \"بدور على شقة تمليك في العاصمة الإدارية\","` | — |
+| [SRC-F725E90B2A-L002267](../../tests/test_web_agent.py#L2267) | 2267 | `"        \"snippet\": \"مطلوب شقة تمليك في العاصمة الإدارية.\","` | — |
+| [SRC-F725E90B2A-L002268](../../tests/test_web_agent.py#L2268) | 2268 | `"        \"page_text\": \"أنا بدور على شقة تمليك في العاصمة الإدارية وعايز أشتري خلال شهر.\","` | — |
+| [SRC-F725E90B2A-L002269](../../tests/test_web_agent.py#L2269) | 2269 | `"    }"` | — |
+| [SRC-F725E90B2A-L002270](../../tests/test_web_agent.py#L2270) | 2270 | `"    assert WebAgent._lead_intent_evidence(listing) is None"` | — |
+| [SRC-F725E90B2A-L002271](../../tests/test_web_agent.py#L2271) | 2271 | `"    signal = WebAgent._lead_intent_evidence(buyer_post)"` | — |
+| [SRC-F725E90B2A-L002272](../../tests/test_web_agent.py#L2272) | 2272 | `"    assert signal is not None"` | — |
+| [SRC-F725E90B2A-L002273](../../tests/test_web_agent.py#L2273) | 2273 | `"    assert signal[\"basis\"] == \"page_text\""` | — |
+| [SRC-F725E90B2A-L002274](../../tests/test_web_agent.py#L2274) | 2274 | `""` | — |
 | [SRC-F725E90B2A-L002275](../../tests/test_web_agent.py#L2275) | 2275 | `""` | — |
 | [SRC-F725E90B2A-L002276](../../tests/test_web_agent.py#L2276) | 2276 | `"def test_lead_generation_does_not_present_sale_listings_as_buyers(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L002277](../../tests/test_web_agent.py#L2277) | 2277 | `"    agent = WebAgent()"` | — |
@@ -794,25 +816,3 @@
 | [SRC-F725E90B2A-L003050](../../tests/test_web_agent.py#L3050) | 3050 | `"    ]"` | — |
 | [SRC-F725E90B2A-L003051](../../tests/test_web_agent.py#L3051) | 3051 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _q: [dict(x) if isinstance(x, dict) else x for x in candidates])"` | — |
 | [SRC-F725E90B2A-L003052](../../tests/test_web_agent.py#L3052) | 3052 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _q: [dict(x) if isinstance(x, dict) else x for x in candidates])"` | — |
-| [SRC-F725E90B2A-L003053](../../tests/test_web_agent.py#L3053) | 3053 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _q: [])"` | — |
-| [SRC-F725E90B2A-L003054](../../tests/test_web_agent.py#L3054) | 3054 | `""` | — |
-| [SRC-F725E90B2A-L003055](../../tests/test_web_agent.py#L3055) | 3055 | `"    with pytest.raises(RuntimeError, match=\"لم تُرجع موصلات البحث\"):"` | — |
-| [SRC-F725E90B2A-L003056](../../tests/test_web_agent.py#L3056) | 3056 | `"        agent._search_web(query)"` | — |
-| [SRC-F725E90B2A-L003057](../../tests/test_web_agent.py#L3057) | 3057 | `""` | — |
-| [SRC-F725E90B2A-L003058](../../tests/test_web_agent.py#L3058) | 3058 | `"    diagnostic = next("` | — |
-| [SRC-F725E90B2A-L003059](../../tests/test_web_agent.py#L3059) | 3059 | `"        item for item in agent._provider_diagnostics"` | — |
-| [SRC-F725E90B2A-L003060](../../tests/test_web_agent.py#L3060) | 3060 | `"        if item.get(\"provider\") == \"duckduckgo_html\""` | — |
-| [SRC-F725E90B2A-L003061](../../tests/test_web_agent.py#L3061) | 3061 | `"    )"` | — |
-| [SRC-F725E90B2A-L003062](../../tests/test_web_agent.py#L3062) | 3062 | `"    assert diagnostic[\"status\"] == \"filtered_all\""` | — |
-| [SRC-F725E90B2A-L003063](../../tests/test_web_agent.py#L3063) | 3063 | `"    assert diagnostic[\"result_count\"] == 4"` | — |
-| [SRC-F725E90B2A-L003064](../../tests/test_web_agent.py#L3064) | 3064 | `"    assert diagnostic[\"accepted_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L003065](../../tests/test_web_agent.py#L3065) | 3065 | `"    assert diagnostic[\"rejected_count\"] == 4"` | — |
-| [SRC-F725E90B2A-L003066](../../tests/test_web_agent.py#L3066) | 3066 | `"    assert diagnostic[\"rejection_counts\"] == {"` | — |
-| [SRC-F725E90B2A-L003067](../../tests/test_web_agent.py#L3067) | 3067 | `"        \"malformed_candidate\": 1,"` | — |
-| [SRC-F725E90B2A-L003068](../../tests/test_web_agent.py#L3068) | 3068 | `"        \"invalid_url_or_unsafe_target\": 1,"` | — |
-| [SRC-F725E90B2A-L003069](../../tests/test_web_agent.py#L3069) | 3069 | `"        \"blocked_domain\": 1,"` | — |
-| [SRC-F725E90B2A-L003070](../../tests/test_web_agent.py#L3070) | 3070 | `"        \"relevance_below_threshold\": 1,"` | — |
-| [SRC-F725E90B2A-L003071](../../tests/test_web_agent.py#L3071) | 3071 | `"    }"` | — |
-| [SRC-F725E90B2A-L003072](../../tests/test_web_agent.py#L3072) | 3072 | `"    assert sum(diagnostic[\"rejection_counts\"].values()) == diagnostic[\"rejected_count\"]"` | — |
-| [SRC-F725E90B2A-L003073](../../tests/test_web_agent.py#L3073) | 3073 | `""` | — |
-| [SRC-F725E90B2A-L003074](../../tests/test_web_agent.py#L3074) | 3074 | `""` | — |

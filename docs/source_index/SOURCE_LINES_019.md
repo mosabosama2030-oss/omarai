@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001004 إلى SRC-E599346ABE-L001803
+- النطاق: SRC-E599346ABE-L000982 إلى SRC-E599346ABE-L001781
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000982](../generate_index.py#L982) | 982 | `"                    f\"عنوان Markdown (H{len(match.group(1))})\","` | — |
+| [SRC-E599346ABE-L000983](../generate_index.py#L983) | 983 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000984](../generate_index.py#L984) | 984 | `"                )"` | — |
+| [SRC-E599346ABE-L000985](../generate_index.py#L985) | 985 | `"        elif suffix == \".sh\":"` | — |
+| [SRC-E599346ABE-L000986](../generate_index.py#L986) | 986 | `"            for match in SHELL_FUNCTION_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000987](../generate_index.py#L987) | 987 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L000988](../generate_index.py#L988) | 988 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000989](../generate_index.py#L989) | 989 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L000990](../generate_index.py#L990) | 990 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L000991](../generate_index.py#L991) | 991 | `"                    match.group(1),"` | — |
+| [SRC-E599346ABE-L000992](../generate_index.py#L992) | 992 | `"                    \"دالة Shell\","` | — |
+| [SRC-E599346ABE-L000993](../generate_index.py#L993) | 993 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000994](../generate_index.py#L994) | 994 | `"                )"` | — |
+| [SRC-E599346ABE-L000995](../generate_index.py#L995) | 995 | `"        elif suffix in CONFIG_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L000996](../generate_index.py#L996) | 996 | `"            _scan_config_keys(source, suffix, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000997](../generate_index.py#L997) | 997 | `""` | — |
+| [SRC-E599346ABE-L000998](../generate_index.py#L998) | 998 | `"        if suffix in TEXT_SCAN_EXTENSIONS or is_example_env or file_name in {"` | — |
+| [SRC-E599346ABE-L000999](../generate_index.py#L999) | 999 | `"            \"dockerfile\","` | — |
+| [SRC-E599346ABE-L001000](../generate_index.py#L1000) | 1000 | `"            \"makefile\","` | — |
+| [SRC-E599346ABE-L001001](../generate_index.py#L1001) | 1001 | `"            \"procfile\","` | — |
+| [SRC-E599346ABE-L001002](../generate_index.py#L1002) | 1002 | `"        }:"` | — |
+| [SRC-E599346ABE-L001003](../generate_index.py#L1003) | 1003 | `"            for match in UPPER_SNAKE_RE.finditer(source):"` | — |
 | [SRC-E599346ABE-L001004](../generate_index.py#L1004) | 1004 | `"                _add_marker("` | — |
 | [SRC-E599346ABE-L001005](../generate_index.py#L1005) | 1005 | `"                    markers,"` | — |
 | [SRC-E599346ABE-L001006](../generate_index.py#L1006) | 1006 | `"                    seen,"` | — |
@@ -794,25 +816,3 @@
 | [SRC-E599346ABE-L001779](../generate_index.py#L1779) | 1779 | `"    except FileNotFoundError:"` | — |
 | [SRC-E599346ABE-L001780](../generate_index.py#L1780) | 1780 | `"        pass"` | — |
 | [SRC-E599346ABE-L001781](../generate_index.py#L1781) | 1781 | `""` | — |
-| [SRC-E599346ABE-L001782](../generate_index.py#L1782) | 1782 | `"    temporary_path: Path \| None = None"` | — |
-| [SRC-E599346ABE-L001783](../generate_index.py#L1783) | 1783 | `"    try:"` | — |
-| [SRC-E599346ABE-L001784](../generate_index.py#L1784) | 1784 | `"        with tempfile.NamedTemporaryFile("` | — |
-| [SRC-E599346ABE-L001785](../generate_index.py#L1785) | 1785 | `"            mode=\"w\","` | — |
-| [SRC-E599346ABE-L001786](../generate_index.py#L1786) | 1786 | `"            encoding=\"utf-8\","` | — |
-| [SRC-E599346ABE-L001787](../generate_index.py#L1787) | 1787 | `"            newline=\"\\n\","` | — |
-| [SRC-E599346ABE-L001788](../generate_index.py#L1788) | 1788 | `"            dir=output_path.parent,"` | — |
-| [SRC-E599346ABE-L001789](../generate_index.py#L1789) | 1789 | `"            prefix=f\".{output_path.name}.\","` | — |
-| [SRC-E599346ABE-L001790](../generate_index.py#L1790) | 1790 | `"            suffix=\".tmp\","` | — |
-| [SRC-E599346ABE-L001791](../generate_index.py#L1791) | 1791 | `"            delete=False,"` | — |
-| [SRC-E599346ABE-L001792](../generate_index.py#L1792) | 1792 | `"        ) as temporary_file:"` | — |
-| [SRC-E599346ABE-L001793](../generate_index.py#L1793) | 1793 | `"            temporary_file.write(content)"` | — |
-| [SRC-E599346ABE-L001794](../generate_index.py#L1794) | 1794 | `"            temporary_path = Path(temporary_file.name)"` | — |
-| [SRC-E599346ABE-L001795](../generate_index.py#L1795) | 1795 | `"        temporary_path.replace(output_path)"` | — |
-| [SRC-E599346ABE-L001796](../generate_index.py#L1796) | 1796 | `"    finally:"` | — |
-| [SRC-E599346ABE-L001797](../generate_index.py#L1797) | 1797 | `"        if temporary_path is not None and temporary_path.exists():"` | — |
-| [SRC-E599346ABE-L001798](../generate_index.py#L1798) | 1798 | `"            temporary_path.unlink()"` | — |
-| [SRC-E599346ABE-L001799](../generate_index.py#L1799) | 1799 | `"    return True"` | — |
-| [SRC-E599346ABE-L001800](../generate_index.py#L1800) | 1800 | `""` | — |
-| [SRC-E599346ABE-L001801](../generate_index.py#L1801) | 1801 | `""` | — |
-| [SRC-E599346ABE-L001802](../generate_index.py#L1802) | 1802 | `"def _generate("` | — |
-| [SRC-E599346ABE-L001803](../generate_index.py#L1803) | 1803 | `"    root: Path,"` | — |

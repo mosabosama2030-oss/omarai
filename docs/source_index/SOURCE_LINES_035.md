@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000202 إلى SRC-1A176AD4F0-L000096
+- النطاق: SRC-829A979985-L000180 إلى SRC-1A176AD4F0-L000074
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000180](../../tests/test_generation_acceptance_matrix.py#L180) | 180 | `"    assert providers[\"deepseek_search_api\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
+| [SRC-829A979985-L000181](../../tests/test_generation_acceptance_matrix.py#L181) | 181 | `"    assert providers[\"brave_search_api\"][\"configuration_status\"] == \"configured\""` | — |
+| [SRC-829A979985-L000182](../../tests/test_generation_acceptance_matrix.py#L182) | 182 | `"    assert providers[\"brave_search_api\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
+| [SRC-829A979985-L000183](../../tests/test_generation_acceptance_matrix.py#L183) | 183 | `"    assert providers[\"tavily_search_api\"][\"configuration_status\"] == \"not_configured\""` | — |
+| [SRC-829A979985-L000184](../../tests/test_generation_acceptance_matrix.py#L184) | 184 | `"    assert providers[\"tavily_search_api\"][\"runtime_status\"] == \"not_configured\""` | — |
+| [SRC-829A979985-L000185](../../tests/test_generation_acceptance_matrix.py#L185) | 185 | `"    assert providers[\"openrouter_web_search\"][\"configuration_status\"] == \"disabled\""` | — |
+| [SRC-829A979985-L000186](../../tests/test_generation_acceptance_matrix.py#L186) | 186 | `"    assert providers[\"openrouter_web_search\"][\"runtime_status\"] == \"disabled\""` | — |
+| [SRC-829A979985-L000187](../../tests/test_generation_acceptance_matrix.py#L187) | 187 | `""` | — |
+| [SRC-829A979985-L000188](../../tests/test_generation_acceptance_matrix.py#L188) | 188 | `""` | — |
+| [SRC-829A979985-L000189](../../tests/test_generation_acceptance_matrix.py#L189) | 189 | `"def test_capability_answer_discloses_optional_deepseek_search_status(monkeypatch):"` | — |
+| [SRC-829A979985-L000190](../../tests/test_generation_acceptance_matrix.py#L190) | 190 | `"    agent = WebAgent()"` | — |
+| [SRC-829A979985-L000191](../../tests/test_generation_acceptance_matrix.py#L191) | 191 | `"    monkeypatch.setattr("` | — |
+| [SRC-829A979985-L000192](../../tests/test_generation_acceptance_matrix.py#L192) | 192 | `"        agent,"` | — |
+| [SRC-829A979985-L000193](../../tests/test_generation_acceptance_matrix.py#L193) | 193 | `"        \"status\","` | — |
+| [SRC-829A979985-L000194](../../tests/test_generation_acceptance_matrix.py#L194) | 194 | `"        lambda: {"` | — |
+| [SRC-829A979985-L000195](../../tests/test_generation_acceptance_matrix.py#L195) | 195 | `"            \"web_search_ready\": True,"` | — |
+| [SRC-829A979985-L000196](../../tests/test_generation_acceptance_matrix.py#L196) | 196 | `"            \"language_model_configured\": True,"` | — |
+| [SRC-829A979985-L000197](../../tests/test_generation_acceptance_matrix.py#L197) | 197 | `"            \"deepseek_search_api_configured\": True,"` | — |
+| [SRC-829A979985-L000198](../../tests/test_generation_acceptance_matrix.py#L198) | 198 | `"            \"brave_search_api_configured\": False,"` | — |
+| [SRC-829A979985-L000199](../../tests/test_generation_acceptance_matrix.py#L199) | 199 | `"            \"tavily_search_api_configured\": False,"` | — |
+| [SRC-829A979985-L000200](../../tests/test_generation_acceptance_matrix.py#L200) | 200 | `"            \"openrouter_web_search_enabled\": False,"` | — |
+| [SRC-829A979985-L000201](../../tests/test_generation_acceptance_matrix.py#L201) | 201 | `"        },"` | — |
 | [SRC-829A979985-L000202](../../tests/test_generation_acceptance_matrix.py#L202) | 202 | `"    )"` | — |
 | [SRC-829A979985-L000203](../../tests/test_generation_acceptance_matrix.py#L203) | 203 | `""` | — |
 | [SRC-829A979985-L000204](../../tests/test_generation_acceptance_matrix.py#L204) | 204 | `"    result = agent.answer(\"ما محركات البحث التي تستخدمها؟\")"` | — |
@@ -812,25 +834,3 @@
 | [SRC-1A176AD4F0-L000072](../../tests/test_hosted_smoke.py#L72) | 72 | `"        server.shutdown()"` | — |
 | [SRC-1A176AD4F0-L000073](../../tests/test_hosted_smoke.py#L73) | 73 | `"        server.server_close()"` | — |
 | [SRC-1A176AD4F0-L000074](../../tests/test_hosted_smoke.py#L74) | 74 | `"        thread.join(timeout=2)"` | — |
-| [SRC-1A176AD4F0-L000075](../../tests/test_hosted_smoke.py#L75) | 75 | `""` | — |
-| [SRC-1A176AD4F0-L000076](../../tests/test_hosted_smoke.py#L76) | 76 | `""` | — |
-| [SRC-1A176AD4F0-L000077](../../tests/test_hosted_smoke.py#L77) | 77 | `"def test_normalize_origin_requires_https_and_rejects_credentials_or_paths():"` | — |
-| [SRC-1A176AD4F0-L000078](../../tests/test_hosted_smoke.py#L78) | 78 | `"    assert normalize_origin(\"https://example.com/\") == \"https://example.com\""` | — |
-| [SRC-1A176AD4F0-L000079](../../tests/test_hosted_smoke.py#L79) | 79 | `"    for invalid in ("` | — |
-| [SRC-1A176AD4F0-L000080](../../tests/test_hosted_smoke.py#L80) | 80 | `"        \"http://example.com\","` | — |
-| [SRC-1A176AD4F0-L000081](../../tests/test_hosted_smoke.py#L81) | 81 | `"        \"https://user:password@example.com\","` | — |
-| [SRC-1A176AD4F0-L000082](../../tests/test_hosted_smoke.py#L82) | 82 | `"        \"https://example.com/path\","` | — |
-| [SRC-1A176AD4F0-L000083](../../tests/test_hosted_smoke.py#L83) | 83 | `"        \"https://example.com/?token=secret\","` | — |
-| [SRC-1A176AD4F0-L000084](../../tests/test_hosted_smoke.py#L84) | 84 | `"    ):"` | — |
-| [SRC-1A176AD4F0-L000085](../../tests/test_hosted_smoke.py#L85) | 85 | `"        with pytest.raises(SmokeError):"` | — |
-| [SRC-1A176AD4F0-L000086](../../tests/test_hosted_smoke.py#L86) | 86 | `"            normalize_origin(invalid)"` | — |
-| [SRC-1A176AD4F0-L000087](../../tests/test_hosted_smoke.py#L87) | 87 | `""` | — |
-| [SRC-1A176AD4F0-L000088](../../tests/test_hosted_smoke.py#L88) | 88 | `""` | — |
-| [SRC-1A176AD4F0-L000089](../../tests/test_hosted_smoke.py#L89) | 89 | `"def test_normalize_origin_allows_plain_http_only_for_local_test():"` | — |
-| [SRC-1A176AD4F0-L000090](../../tests/test_hosted_smoke.py#L90) | 90 | `"    assert normalize_origin(\"http://127.0.0.1:8765\", allow_http=True) == ("` | — |
-| [SRC-1A176AD4F0-L000091](../../tests/test_hosted_smoke.py#L91) | 91 | `"        \"http://127.0.0.1:8765\""` | — |
-| [SRC-1A176AD4F0-L000092](../../tests/test_hosted_smoke.py#L92) | 92 | `"    )"` | — |
-| [SRC-1A176AD4F0-L000093](../../tests/test_hosted_smoke.py#L93) | 93 | `"    with pytest.raises(SmokeError):"` | — |
-| [SRC-1A176AD4F0-L000094](../../tests/test_hosted_smoke.py#L94) | 94 | `"        normalize_origin(\"http://example.com\", allow_http=True)"` | — |
-| [SRC-1A176AD4F0-L000095](../../tests/test_hosted_smoke.py#L95) | 95 | `""` | — |
-| [SRC-1A176AD4F0-L000096](../../tests/test_hosted_smoke.py#L96) | 96 | `""` | — |

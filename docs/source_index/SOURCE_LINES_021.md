@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000305 إلى SRC-D17CE3D12F-L000201
+- النطاق: SRC-E73001D9AC-L000283 إلى SRC-D17CE3D12F-L000179
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000283](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L283) | 283 | `"### 6.1 حماية الطلبات وواجهات API"` | — |
+| [SRC-E73001D9AC-L000284](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L284) | 284 | `"- تحقق من الأنواع والأطوال والقيم المسموح بها والحقول غير المتوقعة."` | — |
+| [SRC-E73001D9AC-L000285](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L285) | 285 | `"- تحديد حدود واضحة للجسم والعمق وعدد عناصر القوائم والسجل التاريخي."` | — |
+| [SRC-E73001D9AC-L000286](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L286) | 286 | `"- استخدام استعلامات parameterized عندما توجد قاعدة SQL."` | — |
+| [SRC-E73001D9AC-L000287](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L287) | 287 | `"- ترميز مخرجات العرض حسب السياق ومنع تفسير المحتوى غير الموثوق على أنه HTML أو JavaScript."` | — |
+| [SRC-E73001D9AC-L000288](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L288) | 288 | `"- المصادقة والصلاحيات تطبّقان من جانب الخادم."` | — |
+| [SRC-E73001D9AC-L000289](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L289) | 289 | `"- ضبط CORS على الأصول المطلوبة فقط، مع عدم اعتبار CORS نظام مصادقة."` | — |
+| [SRC-E73001D9AC-L000290](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L290) | 290 | `"- وضع حد للطلبات المكلفة، وليس فقط عدد الطلبات العامة."` | — |
+| [SRC-E73001D9AC-L000291](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L291) | 291 | `"- ألا تُكشف stack traces أو الأسرار أو إعدادات التشغيل أو المسارات الداخلية في الاستجابة العامة."` | — |
+| [SRC-E73001D9AC-L000292](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L292) | 292 | `""` | — |
+| [SRC-E73001D9AC-L000293](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L293) | 293 | `"### 6.2 حماية وكيل البحث من SSRF والوصول إلى الشبكة الداخلية"` | — |
+| [SRC-E73001D9AC-L000294](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L294) | 294 | `"لأن Omarai قد يجلب روابط من الإنترنت، تعد هذه المنطقة عالية الخطورة:"` | — |
+| [SRC-E73001D9AC-L000295](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L295) | 295 | `"- السماح ببروتوكولات HTTP وHTTPS فقط بحسب الحاجة."` | — |
+| [SRC-E73001D9AC-L000296](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L296) | 296 | `"- رفض localhost والشبكات الخاصة والمحجوزة وعناوين link-local وعناوين metadata الحساسة، بما يشمل IPv4 وIPv6 وصيغ العناوين الممثلة أو الملتبسة."` | — |
+| [SRC-E73001D9AC-L000297](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L297) | 297 | `"- حل DNS والتحقق من جميع العناوين الناتجة، ثم منع إعادة التوجيه إلى وجهة محظورة."` | — |
+| [SRC-E73001D9AC-L000298](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L298) | 298 | `"- إعادة التحقق من كل عنوان وجهة في كل خطوة تحويل؛ لا يُوثق بالعنوان الأول وحده."` | — |
+| [SRC-E73001D9AC-L000299](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L299) | 299 | `"- الحماية من DNS rebinding واختلاف نتيجة DNS بين التحقق والاتصال، واستخدام ضوابط شبكة خروج عند توفرها."` | — |
+| [SRC-E73001D9AC-L000300](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L300) | 300 | `"- رفض userinfo الملتبس في URL، والمنافذ غير المطلوبة، والصيغ غير القياسية التي قد تتجاوز التحقق."` | — |
+| [SRC-E73001D9AC-L000301](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L301) | 301 | `"- وضع سقف لحجم البيانات بعد فك الضغط، وعدد التحويلات، ووقت القراءة، وحجم النص المستخرج."` | — |
+| [SRC-E73001D9AC-L000302](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L302) | 302 | `"- التحقق من نوع المحتوى والتعامل الآمن مع HTML وXML والملفات غير المتوقعة."` | — |
+| [SRC-E73001D9AC-L000303](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L303) | 303 | `"- عدم السماح لجلب الصفحة بالوصول إلى ملفات محلية أو بروتوكولات داخلية."` | — |
+| [SRC-E73001D9AC-L000304](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L304) | 304 | `"- اختبار المتجهات الأمنية باستخدام خادم محلي وهمي واختبارات مضبوطة؛ لا يُنفذ اختبار هجومي ضد طرف خارجي غير مصرح به."` | — |
 | [SRC-E73001D9AC-L000305](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L305) | 305 | `""` | — |
 | [SRC-E73001D9AC-L000306](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L306) | 306 | `"### 6.3 حماية النماذج والوكلاء من حقن التعليمات"` | — |
 | [SRC-E73001D9AC-L000307](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L307) | 307 | `"- تعليم المحتوى الخارجي بوضوح على أنه بيانات غير موثوقة لا أوامر نظام."` | — |
@@ -803,25 +825,3 @@
 | [SRC-D17CE3D12F-L000177](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L177) | 177 | `"10. SHOULD استخدام معرفات داخلية بدل نسخ بيانات شخصية إلى سجلات التشغيل حين تكفي المعرفات."` | — |
 | [SRC-D17CE3D12F-L000178](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L178) | 178 | `""` | — |
 | [SRC-D17CE3D12F-L000179](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L179) | 179 | `"## 12. الهوية والمصادقة والتفويض"` | — |
-| [SRC-D17CE3D12F-L000180](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L180) | 180 | `""` | — |
-| [SRC-D17CE3D12F-L000181](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L181) | 181 | `"عندما يُتاح المنتج لأكثر من مستخدم أو عميل، MUST:"` | — |
-| [SRC-D17CE3D12F-L000182](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L182) | 182 | `"1. فصل المصادقة (من أنت؟) عن التفويض (ما الذي يسمح لك بفعله؟)."` | — |
-| [SRC-D17CE3D12F-L000183](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L183) | 183 | `"2. التحقق من الصلاحية على مستوى المورد/السجل/العملية، لا على مستوى صفحة الواجهة فقط."` | — |
-| [SRC-D17CE3D12F-L000184](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L184) | 184 | `"3. تطبيق أقل صلاحية ورفض افتراضي عند غياب السياسة أو تعطل التحقق."` | — |
-| [SRC-D17CE3D12F-L000185](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L185) | 185 | `"4. اختبار IDOR/BOLA وتبديل المعرفات والوصول العرضي إلى محادثات مستخدم آخر."` | — |
-| [SRC-D17CE3D12F-L000186](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L186) | 186 | `"5. حماية الجلسات والرموز والكوكيز من السرقة والتثبيت والتسريب؛ وتحديد انتهاء صلاحيتها وإبطالها."` | — |
-| [SRC-D17CE3D12F-L000187](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L187) | 187 | `"6. منع أسرار الاعتماد من الظهور في URL أو سجلات الوصول أو رسائل الخطأ."` | — |
-| [SRC-D17CE3D12F-L000188](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L188) | 188 | `"7. تحديد مسارات استعادة الحساب وتغيير بيانات الاعتماد ومراجعة الصلاحيات."` | — |
-| [SRC-D17CE3D12F-L000189](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L189) | 189 | `"8. توثيق فصل حساب المالك/الإدارة عن المستخدم العادي وعدم نشر لوحات الإدارة بلا حماية."` | — |
-| [SRC-D17CE3D12F-L000190](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L190) | 190 | `"9. عند الحاجة، دعم SSO/OIDC أو إدارة المؤسسات وفق حاجة مثبتة؛ لا يُضاف هذا التعقيد إلى نسخة فردية بلا متطلب."` | — |
-| [SRC-D17CE3D12F-L000191](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L191) | 191 | `"10. اختبار سلوك الصلاحيات في API مباشرة، لا الاكتفاء باختبار الواجهة."` | — |
-| [SRC-D17CE3D12F-L000192](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L192) | 192 | `""` | — |
-| [SRC-D17CE3D12F-L000193](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L193) | 193 | `"## 13. العزل متعدد المستأجرين (Multi-tenancy)"` | — |
-| [SRC-D17CE3D12F-L000194](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L194) | 194 | `""` | — |
-| [SRC-D17CE3D12F-L000195](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L195) | 195 | `"هذا القسم يصبح إلزاميًا قبل تقديم مساحة عمل مشتركة لعدة جهات مستقلة، وليس مطلوبًا إنشاء نظام مؤسسات كامل قبل وجود مستخدمين متعددين."` | — |
-| [SRC-D17CE3D12F-L000196](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L196) | 196 | `""` | — |
-| [SRC-D17CE3D12F-L000197](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L197) | 197 | `"1. MUST تعريف حد واضح للمستأجر Tenant، وكيفية تحديده من سياق موثوق لا من قيمة غير موثقة يرسلها العميل."` | — |
-| [SRC-D17CE3D12F-L000198](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L198) | 198 | `"2. MUST تمرير سياق المستأجر والتحقق منه في كل مسار يصل إلى بياناته، بما في ذلك البحث والتخزين والكاش والمهام والطوابير والسجلات والتصدير."` | — |
-| [SRC-D17CE3D12F-L000199](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L199) | 199 | `"3. MUST تضمين tenant/user scope في مفاتيح cache والجلسات وعناصر التخزين عند انطباقه."` | — |
-| [SRC-D17CE3D12F-L000200](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L200) | 200 | `"4. MUST اختبار حالات اختلاط المستأجرين وIDOR/BOLA وطلبات متزامنة بهويات مختلفة."` | — |
-| [SRC-D17CE3D12F-L000201](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L201) | 201 | `"5. SHOULD توفير حصص وتحديد معدل لكل مستأجر، مع منع أن يستنزف عميل الموارد المشتركة كلها."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002664 إلى SRC-1AE03B9EC3-L003463
+- النطاق: SRC-1AE03B9EC3-L002642 إلى SRC-1AE03B9EC3-L003441
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002642](../../agents/web_agent.py#L2642) | 2642 | `"                        source[\"page_fetch_error_class\"] = type(exc).__name__"` | — |
+| [SRC-1AE03B9EC3-L002643](../../agents/web_agent.py#L2643) | 2643 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L002644](../../agents/web_agent.py#L2644) | 2644 | `"                    title, page_text = fetch_result"` | — |
+| [SRC-1AE03B9EC3-L002645](../../agents/web_agent.py#L2645) | 2645 | `"                    observed_status = getattr(fetch_result, \"status\", None)"` | — |
+| [SRC-1AE03B9EC3-L002646](../../agents/web_agent.py#L2646) | 2646 | `"                    error_class = getattr(fetch_result, \"error_class\", None)"` | — |
+| [SRC-1AE03B9EC3-L002647](../../agents/web_agent.py#L2647) | 2647 | `"                    if title:"` | — |
+| [SRC-1AE03B9EC3-L002648](../../agents/web_agent.py#L2648) | 2648 | `"                        source[\"title\"] = title"` | — |
+| [SRC-1AE03B9EC3-L002649](../../agents/web_agent.py#L2649) | 2649 | `"                    if page_text and page_text.strip():"` | — |
+| [SRC-1AE03B9EC3-L002650](../../agents/web_agent.py#L2650) | 2650 | `"                        source[\"page_text\"] = page_text"` | — |
+| [SRC-1AE03B9EC3-L002651](../../agents/web_agent.py#L2651) | 2651 | `"                        source[\"snippet\"] = page_text[:1800]"` | — |
+| [SRC-1AE03B9EC3-L002652](../../agents/web_agent.py#L2652) | 2652 | `"                        source[\"page_fetched\"] = True"` | — |
+| [SRC-1AE03B9EC3-L002653](../../agents/web_agent.py#L2653) | 2653 | `"                        source[\"page_fetch_status\"] = ("` | — |
+| [SRC-1AE03B9EC3-L002654](../../agents/web_agent.py#L2654) | 2654 | `"                            observed_status"` | — |
+| [SRC-1AE03B9EC3-L002655](../../agents/web_agent.py#L2655) | 2655 | `"                            if observed_status in {\"content_extracted\", \"partial_extraction\"}"` | — |
+| [SRC-1AE03B9EC3-L002656](../../agents/web_agent.py#L2656) | 2656 | `"                            else \"partial_extraction\""` | — |
+| [SRC-1AE03B9EC3-L002657](../../agents/web_agent.py#L2657) | 2657 | `"                            if len(page_text) >= MAX_PAGE_TEXT_CHARS"` | — |
+| [SRC-1AE03B9EC3-L002658](../../agents/web_agent.py#L2658) | 2658 | `"                            else \"content_extracted\""` | — |
+| [SRC-1AE03B9EC3-L002659](../../agents/web_agent.py#L2659) | 2659 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L002660](../../agents/web_agent.py#L2660) | 2660 | `"                        if error_class:"` | — |
+| [SRC-1AE03B9EC3-L002661](../../agents/web_agent.py#L2661) | 2661 | `"                            source[\"page_fetch_error_class\"] = str(error_class)[:80]"` | — |
+| [SRC-1AE03B9EC3-L002662](../../agents/web_agent.py#L2662) | 2662 | `"                        else:"` | — |
+| [SRC-1AE03B9EC3-L002663](../../agents/web_agent.py#L2663) | 2663 | `"                            source.pop(\"page_fetch_error_class\", None)"` | — |
 | [SRC-1AE03B9EC3-L002664](../../agents/web_agent.py#L2664) | 2664 | `"                        fetched_count += 1"` | — |
 | [SRC-1AE03B9EC3-L002665](../../agents/web_agent.py#L2665) | 2665 | `"                        if source[\"page_fetch_status\"] == \"partial_extraction\":"` | — |
 | [SRC-1AE03B9EC3-L002666](../../agents/web_agent.py#L2666) | 2666 | `"                            host = urllib.parse.urlparse(source.get(\"url\", \"\")).hostname or \"المصدر\""` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L003439](../../agents/web_agent.py#L3439) | 3439 | `"        question: str,"` | — |
 | [SRC-1AE03B9EC3-L003440](../../agents/web_agent.py#L3440) | 3440 | `"        history: list[dict[str, str]],"` | — |
 | [SRC-1AE03B9EC3-L003441](../../agents/web_agent.py#L3441) | 3441 | `"        sources: list[dict[str, Any]],"` | — |
-| [SRC-1AE03B9EC3-L003442](../../agents/web_agent.py#L3442) | 3442 | `"        search_warning: str \| None,"` | — |
-| [SRC-1AE03B9EC3-L003443](../../agents/web_agent.py#L3443) | 3443 | `"        research_plan: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003444](../../agents/web_agent.py#L3444) | 3444 | `"        search_report: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003445](../../agents/web_agent.py#L3445) | 3445 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003446](../../agents/web_agent.py#L3446) | 3446 | `"        plan = research_plan or {}"` | — |
-| [SRC-1AE03B9EC3-L003447](../../agents/web_agent.py#L3447) | 3447 | `"        report = search_report or {}"` | — |
-| [SRC-1AE03B9EC3-L003448](../../agents/web_agent.py#L3448) | 3448 | `"        source_blocks: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003449](../../agents/web_agent.py#L3449) | 3449 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
-| [SRC-1AE03B9EC3-L003450](../../agents/web_agent.py#L3450) | 3450 | `"            evidence = ("` | — |
-| [SRC-1AE03B9EC3-L003451](../../agents/web_agent.py#L3451) | 3451 | `"                source.get(\"page_text\")"` | — |
-| [SRC-1AE03B9EC3-L003452](../../agents/web_agent.py#L3452) | 3452 | `"                or source.get(\"snippet\")"` | — |
-| [SRC-1AE03B9EC3-L003453](../../agents/web_agent.py#L3453) | 3453 | `"                or \"لا يتوفر مقتطف نصي.\""` | — |
-| [SRC-1AE03B9EC3-L003454](../../agents/web_agent.py#L3454) | 3454 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003455](../../agents/web_agent.py#L3455) | 3455 | `"            evidence = _clean_text(evidence, 2400)"` | — |
-| [SRC-1AE03B9EC3-L003456](../../agents/web_agent.py#L3456) | 3456 | `"            providers = \", \".join(source.get(\"providers\", [])) or \"غير محدد\""` | — |
-| [SRC-1AE03B9EC3-L003457](../../agents/web_agent.py#L3457) | 3457 | `"            queries = \" \| \".join(source.get(\"queries\", [])[:3]) or \"غير محدد\""` | — |
-| [SRC-1AE03B9EC3-L003458](../../agents/web_agent.py#L3458) | 3458 | `"            source_blocks.append("` | — |
-| [SRC-1AE03B9EC3-L003459](../../agents/web_agent.py#L3459) | 3459 | `"                f\"[المصدر {index}] {source.get('title', 'نتيجة ويب')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003460](../../agents/web_agent.py#L3460) | 3460 | `"                f\"الرابط: {source['url']}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003461](../../agents/web_agent.py#L3461) | 3461 | `"                f\"نوع المصدر: {source.get('source_class', 'general')}؛ \""` | — |
-| [SRC-1AE03B9EC3-L003462](../../agents/web_agent.py#L3462) | 3462 | `"                f\"المنصة: {source.get('platform', 'web')}؛ \""` | — |
-| [SRC-1AE03B9EC3-L003463](../../agents/web_agent.py#L3463) | 3463 | `"                f\"المجال: {source.get('domain', '')}\\n\""` | — |

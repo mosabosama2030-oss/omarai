@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000152 إلى SRC-03FF422A16-L000118
+- النطاق: SRC-B335630551-L000130 إلى SRC-03FF422A16-L000096
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000130](../../README.md#L130) | 130 | ````"```"```` | — |
+| [SRC-B335630551-L000131](../../README.md#L131) | 131 | `""` | — |
+| [SRC-B335630551-L000132](../../README.md#L132) | 132 | ``"Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. To customize model roles, set `OMARAI_PLANNER_MODEL`, `OMARAI_ANSWER_MODEL`, and/or `OMARAI_REVIEW_MODEL`; `OMARAI_LLM_MODEL` remains a global override for all roles that have no role-specific override. `OMARAI_LLM_FALLBACK_MODEL` changes the default `openrouter/free` fallback. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. Optional social credentials may be configured in the same Termux session before starting the server: `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` (official OAuth access), `X_BEARER_TOKEN`, `YOUTUBE_API_KEY`, `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` + optional `META_GRAPH_VERSION`, and `FACEBOOK_PAGE_ACCESS_TOKEN` + `FACEBOOK_PAGE_IDS` (comma-separated Page IDs that the authorized token can access). Use `read -r -s` to enter secrets privately rather than saving them in shell history. Do not store keys in source files, HTML, commits or chat messages."`` | — |
+| [SRC-B335630551-L000133](../../README.md#L133) | 133 | `""` | — |
+| [SRC-B335630551-L000134](../../README.md#L134) | 134 | `"If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded."` | — |
+| [SRC-B335630551-L000135](../../README.md#L135) | 135 | `""` | — |
+| [SRC-B335630551-L000136](../../README.md#L136) | 136 | `"For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md)."` | — |
+| [SRC-B335630551-L000137](../../README.md#L137) | 137 | `""` | — |
+| [SRC-B335630551-L000138](../../README.md#L138) | 138 | `"## API"` | — |
+| [SRC-B335630551-L000139](../../README.md#L139) | 139 | `""` | — |
+| [SRC-B335630551-L000140](../../README.md#L140) | 140 | ``"- `GET /` — web-research chat"`` | — |
+| [SRC-B335630551-L000141](../../README.md#L141) | 141 | ``"- `GET /leads` — existing lead workspace"`` | — |
+| [SRC-B335630551-L000142](../../README.md#L142) | 142 | ``"- `GET /api/health` — setup and dependency status (never returns the API key)"`` | — |
+| [SRC-B335630551-L000143](../../README.md#L143) | 143 | ``"- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors"`` | — |
+| [SRC-B335630551-L000144](../../README.md#L144) | 144 | ``"- `POST /api/agent` — open-ended question plus optional recent `history`"`` | — |
+| [SRC-B335630551-L000145](../../README.md#L145) | 145 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
+| [SRC-B335630551-L000146](../../README.md#L146) | 146 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
+| [SRC-B335630551-L000147](../../README.md#L147) | 147 | `""` | — |
+| [SRC-B335630551-L000148](../../README.md#L148) | 148 | `"Example request:"` | — |
+| [SRC-B335630551-L000149](../../README.md#L149) | 149 | `""` | — |
+| [SRC-B335630551-L000150](../../README.md#L150) | 150 | ````"```json"```` | — |
+| [SRC-B335630551-L000151](../../README.md#L151) | 151 | `"{"` | — |
 | [SRC-B335630551-L000152](../../README.md#L152) | 152 | `"  \"question\": \"Compare the latest public information about two technologies\","` | — |
 | [SRC-B335630551-L000153](../../README.md#L153) | 153 | `"  \"history\": []"` | — |
 | [SRC-B335630551-L000154](../../README.md#L154) | 154 | `"}"` | — |
@@ -839,25 +861,3 @@
 | [SRC-03FF422A16-L000094](../../scripts/score_answer_quality_reviews.py#L94) | 94 | `"                    problems.append(case_id + \": \" + group_name + \".\" + field + \" must be a non-negative integer\")"` | — |
 | [SRC-03FF422A16-L000095](../../scripts/score_answer_quality_reviews.py#L95) | 95 | `"                else:"` | — |
 | [SRC-03FF422A16-L000096](../../scripts/score_answer_quality_reviews.py#L96) | 96 | `"                    values[field] = value"` | — |
-| [SRC-03FF422A16-L000097](../../scripts/score_answer_quality_reviews.py#L97) | 97 | `"            if len(values) != len(fields):"` | — |
-| [SRC-03FF422A16-L000098](../../scripts/score_answer_quality_reviews.py#L98) | 98 | `"                continue"` | — |
-| [SRC-03FF422A16-L000099](../../scripts/score_answer_quality_reviews.py#L99) | 99 | `"            if group_name == \"retrieval\":"` | — |
-| [SRC-03FF422A16-L000100](../../scripts/score_answer_quality_reviews.py#L100) | 100 | `"                if values[\"relevant_retrieved\"] > values[\"retrieved_count\"]:"` | — |
-| [SRC-03FF422A16-L000101](../../scripts/score_answer_quality_reviews.py#L101) | 101 | `"                    problems.append(case_id + \": relevant_retrieved cannot exceed retrieved_count\")"` | — |
-| [SRC-03FF422A16-L000102](../../scripts/score_answer_quality_reviews.py#L102) | 102 | `"                if values[\"relevant_retrieved\"] > values[\"relevant_available\"]:"` | — |
-| [SRC-03FF422A16-L000103](../../scripts/score_answer_quality_reviews.py#L103) | 103 | `"                    problems.append(case_id + \": relevant_retrieved cannot exceed relevant_available\")"` | — |
-| [SRC-03FF422A16-L000104](../../scripts/score_answer_quality_reviews.py#L104) | 104 | `"            else:"` | — |
-| [SRC-03FF422A16-L000105](../../scripts/score_answer_quality_reviews.py#L105) | 105 | `"                numerator, denominator = fields"` | — |
-| [SRC-03FF422A16-L000106](../../scripts/score_answer_quality_reviews.py#L106) | 106 | `"                if values[numerator] > values[denominator]:"` | — |
-| [SRC-03FF422A16-L000107](../../scripts/score_answer_quality_reviews.py#L107) | 107 | `"                    problems.append(case_id + \": \" + numerator + \" cannot exceed \" + denominator)"` | — |
-| [SRC-03FF422A16-L000108](../../scripts/score_answer_quality_reviews.py#L108) | 108 | `""` | — |
-| [SRC-03FF422A16-L000109](../../scripts/score_answer_quality_reviews.py#L109) | 109 | `"        writing = item.get(\"writing_quality\")"` | — |
-| [SRC-03FF422A16-L000110](../../scripts/score_answer_quality_reviews.py#L110) | 110 | `"        if writing is not None:"` | — |
-| [SRC-03FF422A16-L000111](../../scripts/score_answer_quality_reviews.py#L111) | 111 | `"            has_score = True"` | — |
-| [SRC-03FF422A16-L000112](../../scripts/score_answer_quality_reviews.py#L112) | 112 | `"            if ("` | — |
-| [SRC-03FF422A16-L000113](../../scripts/score_answer_quality_reviews.py#L113) | 113 | `"                isinstance(writing, bool)"` | — |
-| [SRC-03FF422A16-L000114](../../scripts/score_answer_quality_reviews.py#L114) | 114 | `"                or not isinstance(writing, (int, float))"` | — |
-| [SRC-03FF422A16-L000115](../../scripts/score_answer_quality_reviews.py#L115) | 115 | `"                or not math.isfinite(float(writing))"` | — |
-| [SRC-03FF422A16-L000116](../../scripts/score_answer_quality_reviews.py#L116) | 116 | `"                or float(writing) < 1"` | — |
-| [SRC-03FF422A16-L000117](../../scripts/score_answer_quality_reviews.py#L117) | 117 | `"                or float(writing) > 5"` | — |
-| [SRC-03FF422A16-L000118](../../scripts/score_answer_quality_reviews.py#L118) | 118 | `"            ):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000241 إلى SRC-829A979985-L000201
+- النطاق: SRC-6BCB799CEC-L000219 إلى SRC-829A979985-L000179
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000219](../../tests/test_evidence_provenance.py#L219) | 219 | `"    monkeypatch.setattr(\"httpx.Client\", FakeClient)"` | — |
+| [SRC-6BCB799CEC-L000220](../../tests/test_evidence_provenance.py#L220) | 220 | `"    title, text = WebAgent()._fetch_page(\"https://example.com/article\")"` | — |
+| [SRC-6BCB799CEC-L000221](../../tests/test_evidence_provenance.py#L221) | 221 | `"    assert title == \"\""` | — |
+| [SRC-6BCB799CEC-L000222](../../tests/test_evidence_provenance.py#L222) | 222 | `"    assert \"نص عام\" in text"` | — |
+| [SRC-6BCB799CEC-L000223](../../tests/test_evidence_provenance.py#L223) | 223 | `"    assert seen[\"url\"].startswith(\"https://1.1.1.1/\")"` | — |
+| [SRC-6BCB799CEC-L000224](../../tests/test_evidence_provenance.py#L224) | 224 | `"    assert seen[\"headers\"][\"Host\"] == \"example.com\""` | — |
+| [SRC-6BCB799CEC-L000225](../../tests/test_evidence_provenance.py#L225) | 225 | `"    assert seen[\"extensions\"][\"sni_hostname\"] == \"example.com\""` | — |
+| [SRC-6BCB799CEC-L000226](../../tests/test_evidence_provenance.py#L226) | 226 | `""` | — |
+| [SRC-6BCB799CEC-L000227](../../tests/test_evidence_provenance.py#L227) | 227 | `"def test_mixed_public_and_private_dns_answers_block_page_fetch(monkeypatch):"` | — |
+| [SRC-6BCB799CEC-L000228](../../tests/test_evidence_provenance.py#L228) | 228 | `"    \"\"\"A hostname is rejected when even one DNS answer is non-global.\"\"\""` | — |
+| [SRC-6BCB799CEC-L000229](../../tests/test_evidence_provenance.py#L229) | 229 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000230](../../tests/test_evidence_provenance.py#L230) | 230 | `"        return _addrinfo(\"1.1.1.1\") + _addrinfo(\"127.0.0.1\")"` | — |
+| [SRC-6BCB799CEC-L000231](../../tests/test_evidence_provenance.py#L231) | 231 | `""` | — |
+| [SRC-6BCB799CEC-L000232](../../tests/test_evidence_provenance.py#L232) | 232 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
+| [SRC-6BCB799CEC-L000233](../../tests/test_evidence_provenance.py#L233) | 233 | `"    assert _public_ip_literals(\"example.com\") is None"` | — |
+| [SRC-6BCB799CEC-L000234](../../tests/test_evidence_provenance.py#L234) | 234 | `""` | — |
+| [SRC-6BCB799CEC-L000235](../../tests/test_evidence_provenance.py#L235) | 235 | `""` | — |
+| [SRC-6BCB799CEC-L000236](../../tests/test_evidence_provenance.py#L236) | 236 | `"def test_private_redirect_target_is_rejected_before_a_second_connection(monkeypatch):"` | — |
+| [SRC-6BCB799CEC-L000237](../../tests/test_evidence_provenance.py#L237) | 237 | `"    \"\"\"Every redirect is validated independently, even after a pinned public request.\"\"\""` | — |
+| [SRC-6BCB799CEC-L000238](../../tests/test_evidence_provenance.py#L238) | 238 | `"    resolutions = []"` | — |
+| [SRC-6BCB799CEC-L000239](../../tests/test_evidence_provenance.py#L239) | 239 | `"    connections = []"` | — |
+| [SRC-6BCB799CEC-L000240](../../tests/test_evidence_provenance.py#L240) | 240 | `""` | — |
 | [SRC-6BCB799CEC-L000241](../../tests/test_evidence_provenance.py#L241) | 241 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
 | [SRC-6BCB799CEC-L000242](../../tests/test_evidence_provenance.py#L242) | 242 | `"        resolutions.append(host)"` | — |
 | [SRC-6BCB799CEC-L000243](../../tests/test_evidence_provenance.py#L243) | 243 | `"        assert host == \"example.com\""` | — |
@@ -821,25 +843,3 @@
 | [SRC-829A979985-L000177](../../tests/test_generation_acceptance_matrix.py#L177) | 177 | `"    assert providers[\"duckduckgo_html\"][\"configuration_status\"] == \"built_in_no_api_key\""` | — |
 | [SRC-829A979985-L000178](../../tests/test_generation_acceptance_matrix.py#L178) | 178 | `"    assert providers[\"duckduckgo_html\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
 | [SRC-829A979985-L000179](../../tests/test_generation_acceptance_matrix.py#L179) | 179 | `"    assert providers[\"deepseek_search_api\"][\"configuration_status\"] == \"configured\""` | — |
-| [SRC-829A979985-L000180](../../tests/test_generation_acceptance_matrix.py#L180) | 180 | `"    assert providers[\"deepseek_search_api\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
-| [SRC-829A979985-L000181](../../tests/test_generation_acceptance_matrix.py#L181) | 181 | `"    assert providers[\"brave_search_api\"][\"configuration_status\"] == \"configured\""` | — |
-| [SRC-829A979985-L000182](../../tests/test_generation_acceptance_matrix.py#L182) | 182 | `"    assert providers[\"brave_search_api\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
-| [SRC-829A979985-L000183](../../tests/test_generation_acceptance_matrix.py#L183) | 183 | `"    assert providers[\"tavily_search_api\"][\"configuration_status\"] == \"not_configured\""` | — |
-| [SRC-829A979985-L000184](../../tests/test_generation_acceptance_matrix.py#L184) | 184 | `"    assert providers[\"tavily_search_api\"][\"runtime_status\"] == \"not_configured\""` | — |
-| [SRC-829A979985-L000185](../../tests/test_generation_acceptance_matrix.py#L185) | 185 | `"    assert providers[\"openrouter_web_search\"][\"configuration_status\"] == \"disabled\""` | — |
-| [SRC-829A979985-L000186](../../tests/test_generation_acceptance_matrix.py#L186) | 186 | `"    assert providers[\"openrouter_web_search\"][\"runtime_status\"] == \"disabled\""` | — |
-| [SRC-829A979985-L000187](../../tests/test_generation_acceptance_matrix.py#L187) | 187 | `""` | — |
-| [SRC-829A979985-L000188](../../tests/test_generation_acceptance_matrix.py#L188) | 188 | `""` | — |
-| [SRC-829A979985-L000189](../../tests/test_generation_acceptance_matrix.py#L189) | 189 | `"def test_capability_answer_discloses_optional_deepseek_search_status(monkeypatch):"` | — |
-| [SRC-829A979985-L000190](../../tests/test_generation_acceptance_matrix.py#L190) | 190 | `"    agent = WebAgent()"` | — |
-| [SRC-829A979985-L000191](../../tests/test_generation_acceptance_matrix.py#L191) | 191 | `"    monkeypatch.setattr("` | — |
-| [SRC-829A979985-L000192](../../tests/test_generation_acceptance_matrix.py#L192) | 192 | `"        agent,"` | — |
-| [SRC-829A979985-L000193](../../tests/test_generation_acceptance_matrix.py#L193) | 193 | `"        \"status\","` | — |
-| [SRC-829A979985-L000194](../../tests/test_generation_acceptance_matrix.py#L194) | 194 | `"        lambda: {"` | — |
-| [SRC-829A979985-L000195](../../tests/test_generation_acceptance_matrix.py#L195) | 195 | `"            \"web_search_ready\": True,"` | — |
-| [SRC-829A979985-L000196](../../tests/test_generation_acceptance_matrix.py#L196) | 196 | `"            \"language_model_configured\": True,"` | — |
-| [SRC-829A979985-L000197](../../tests/test_generation_acceptance_matrix.py#L197) | 197 | `"            \"deepseek_search_api_configured\": True,"` | — |
-| [SRC-829A979985-L000198](../../tests/test_generation_acceptance_matrix.py#L198) | 198 | `"            \"brave_search_api_configured\": False,"` | — |
-| [SRC-829A979985-L000199](../../tests/test_generation_acceptance_matrix.py#L199) | 199 | `"            \"tavily_search_api_configured\": False,"` | — |
-| [SRC-829A979985-L000200](../../tests/test_generation_acceptance_matrix.py#L200) | 200 | `"            \"openrouter_web_search_enabled\": False,"` | — |
-| [SRC-829A979985-L000201](../../tests/test_generation_acceptance_matrix.py#L201) | 201 | `"        },"` | — |

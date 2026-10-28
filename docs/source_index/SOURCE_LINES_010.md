@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001864 إلى SRC-1AE03B9EC3-L002663
+- النطاق: SRC-1AE03B9EC3-L001842 إلى SRC-1AE03B9EC3-L002641
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001842](../../agents/web_agent.py#L1842) | 1842 | `"                            timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L001843](../../agents/web_agent.py#L1843) | 1843 | `"                            follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L001844](../../agents/web_agent.py#L1844) | 1844 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L001845](../../agents/web_agent.py#L1845) | 1845 | `"                        if search_response.status_code == 200:"` | — |
+| [SRC-1AE03B9EC3-L001846](../../agents/web_agent.py#L1846) | 1846 | `"                            children = search_response.json().get(\"data\", {}).get(\"children\", [])"` | — |
+| [SRC-1AE03B9EC3-L001847](../../agents/web_agent.py#L1847) | 1847 | `"                            rank = 0"` | — |
+| [SRC-1AE03B9EC3-L001848](../../agents/web_agent.py#L1848) | 1848 | `"                            for child in children:"` | — |
+| [SRC-1AE03B9EC3-L001849](../../agents/web_agent.py#L1849) | 1849 | `"                                post = child.get(\"data\", {}) if isinstance(child, dict) else {}"` | — |
+| [SRC-1AE03B9EC3-L001850](../../agents/web_agent.py#L1850) | 1850 | `"                                permalink = str(post.get(\"permalink\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L001851](../../agents/web_agent.py#L1851) | 1851 | `"                                url = _public_http_url("` | — |
+| [SRC-1AE03B9EC3-L001852](../../agents/web_agent.py#L1852) | 1852 | `"                                    permalink if permalink.startswith(\"http\")"` | — |
+| [SRC-1AE03B9EC3-L001853](../../agents/web_agent.py#L1853) | 1853 | `"                                    else \"https://www.reddit.com\" + permalink"` | — |
+| [SRC-1AE03B9EC3-L001854](../../agents/web_agent.py#L1854) | 1854 | `"                                )"` | — |
+| [SRC-1AE03B9EC3-L001855](../../agents/web_agent.py#L1855) | 1855 | `"                                if not url:"` | — |
+| [SRC-1AE03B9EC3-L001856](../../agents/web_agent.py#L1856) | 1856 | `"                                    continue"` | — |
+| [SRC-1AE03B9EC3-L001857](../../agents/web_agent.py#L1857) | 1857 | `"                                rank += 1"` | — |
+| [SRC-1AE03B9EC3-L001858](../../agents/web_agent.py#L1858) | 1858 | `"                                snippet = _clean_text(post.get(\"selftext\") or \"\", 1000)"` | — |
+| [SRC-1AE03B9EC3-L001859](../../agents/web_agent.py#L1859) | 1859 | `"                                metrics = []"` | — |
+| [SRC-1AE03B9EC3-L001860](../../agents/web_agent.py#L1860) | 1860 | `"                                if post.get(\"score\") is not None:"` | — |
+| [SRC-1AE03B9EC3-L001861](../../agents/web_agent.py#L1861) | 1861 | `"                                    metrics.append(\"score=\" + str(post[\"score\"]))"` | — |
+| [SRC-1AE03B9EC3-L001862](../../agents/web_agent.py#L1862) | 1862 | `"                                if post.get(\"num_comments\") is not None:"` | — |
+| [SRC-1AE03B9EC3-L001863](../../agents/web_agent.py#L1863) | 1863 | `"                                    metrics.append(\"comments=\" + str(post[\"num_comments\"]))"` | — |
 | [SRC-1AE03B9EC3-L001864](../../agents/web_agent.py#L1864) | 1864 | `"                                if metrics:"` | — |
 | [SRC-1AE03B9EC3-L001865](../../agents/web_agent.py#L1865) | 1865 | `"                                    snippet = (snippet + \" \| \" if snippet else \"\") + \", \".join(metrics)"` | — |
 | [SRC-1AE03B9EC3-L001866](../../agents/web_agent.py#L1866) | 1866 | `"                                results.append({"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L002639](../../agents/web_agent.py#L2639) | 2639 | `"                        continue"` | — |
 | [SRC-1AE03B9EC3-L002640](../../agents/web_agent.py#L2640) | 2640 | `"                    except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
 | [SRC-1AE03B9EC3-L002641](../../agents/web_agent.py#L2641) | 2641 | `"                        source[\"page_fetch_status\"] = \"fetch_failed\""` | — |
-| [SRC-1AE03B9EC3-L002642](../../agents/web_agent.py#L2642) | 2642 | `"                        source[\"page_fetch_error_class\"] = type(exc).__name__"` | — |
-| [SRC-1AE03B9EC3-L002643](../../agents/web_agent.py#L2643) | 2643 | `"                        continue"` | — |
-| [SRC-1AE03B9EC3-L002644](../../agents/web_agent.py#L2644) | 2644 | `"                    title, page_text = fetch_result"` | — |
-| [SRC-1AE03B9EC3-L002645](../../agents/web_agent.py#L2645) | 2645 | `"                    observed_status = getattr(fetch_result, \"status\", None)"` | — |
-| [SRC-1AE03B9EC3-L002646](../../agents/web_agent.py#L2646) | 2646 | `"                    error_class = getattr(fetch_result, \"error_class\", None)"` | — |
-| [SRC-1AE03B9EC3-L002647](../../agents/web_agent.py#L2647) | 2647 | `"                    if title:"` | — |
-| [SRC-1AE03B9EC3-L002648](../../agents/web_agent.py#L2648) | 2648 | `"                        source[\"title\"] = title"` | — |
-| [SRC-1AE03B9EC3-L002649](../../agents/web_agent.py#L2649) | 2649 | `"                    if page_text and page_text.strip():"` | — |
-| [SRC-1AE03B9EC3-L002650](../../agents/web_agent.py#L2650) | 2650 | `"                        source[\"page_text\"] = page_text"` | — |
-| [SRC-1AE03B9EC3-L002651](../../agents/web_agent.py#L2651) | 2651 | `"                        source[\"snippet\"] = page_text[:1800]"` | — |
-| [SRC-1AE03B9EC3-L002652](../../agents/web_agent.py#L2652) | 2652 | `"                        source[\"page_fetched\"] = True"` | — |
-| [SRC-1AE03B9EC3-L002653](../../agents/web_agent.py#L2653) | 2653 | `"                        source[\"page_fetch_status\"] = ("` | — |
-| [SRC-1AE03B9EC3-L002654](../../agents/web_agent.py#L2654) | 2654 | `"                            observed_status"` | — |
-| [SRC-1AE03B9EC3-L002655](../../agents/web_agent.py#L2655) | 2655 | `"                            if observed_status in {\"content_extracted\", \"partial_extraction\"}"` | — |
-| [SRC-1AE03B9EC3-L002656](../../agents/web_agent.py#L2656) | 2656 | `"                            else \"partial_extraction\""` | — |
-| [SRC-1AE03B9EC3-L002657](../../agents/web_agent.py#L2657) | 2657 | `"                            if len(page_text) >= MAX_PAGE_TEXT_CHARS"` | — |
-| [SRC-1AE03B9EC3-L002658](../../agents/web_agent.py#L2658) | 2658 | `"                            else \"content_extracted\""` | — |
-| [SRC-1AE03B9EC3-L002659](../../agents/web_agent.py#L2659) | 2659 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L002660](../../agents/web_agent.py#L2660) | 2660 | `"                        if error_class:"` | — |
-| [SRC-1AE03B9EC3-L002661](../../agents/web_agent.py#L2661) | 2661 | `"                            source[\"page_fetch_error_class\"] = str(error_class)[:80]"` | — |
-| [SRC-1AE03B9EC3-L002662](../../agents/web_agent.py#L2662) | 2662 | `"                        else:"` | — |
-| [SRC-1AE03B9EC3-L002663](../../agents/web_agent.py#L2663) | 2663 | `"                            source.pop(\"page_fetch_error_class\", None)"` | — |

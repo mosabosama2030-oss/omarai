@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001064 إلى SRC-1AE03B9EC3-L001863
+- النطاق: SRC-1AE03B9EC3-L001042 إلى SRC-1AE03B9EC3-L001841
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001042](../../agents/web_agent.py#L1042) | 1042 | `"        context[\"status\"] = \"needs_clarification\""` | — |
+| [SRC-1AE03B9EC3-L001043](../../agents/web_agent.py#L1043) | 1043 | `"        context[\"resolved_question\"] = question[:MAX_QUESTION_CHARS]"` | — |
+| [SRC-1AE03B9EC3-L001044](../../agents/web_agent.py#L1044) | 1044 | `"        context[\"resolution_basis\"] = \"insufficient_evidence\""` | — |
+| [SRC-1AE03B9EC3-L001045](../../agents/web_agent.py#L1045) | 1045 | `"        result = self._clarification_result("` | — |
+| [SRC-1AE03B9EC3-L001046](../../agents/web_agent.py#L1046) | 1046 | `"            question, mode, {"` | — |
+| [SRC-1AE03B9EC3-L001047](../../agents/web_agent.py#L1047) | 1047 | `"                \"reason\": reason,"` | — |
+| [SRC-1AE03B9EC3-L001048](../../agents/web_agent.py#L1048) | 1048 | `"                \"needs_clarification\": True,"` | — |
+| [SRC-1AE03B9EC3-L001049](../../agents/web_agent.py#L1049) | 1049 | `"                \"context_available\": bool(context.get(\"is_follow_up\")),"` | — |
+| [SRC-1AE03B9EC3-L001050](../../agents/web_agent.py#L1050) | 1050 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L001051](../../agents/web_agent.py#L1051) | 1051 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001052](../../agents/web_agent.py#L1052) | 1052 | `"        requested_clarification = context.get(\"clarification_question\")"` | — |
+| [SRC-1AE03B9EC3-L001053](../../agents/web_agent.py#L1053) | 1053 | `"        if isinstance(requested_clarification, str) and requested_clarification.strip():"` | — |
+| [SRC-1AE03B9EC3-L001054](../../agents/web_agent.py#L1054) | 1054 | `"            result[\"answer\"] = requested_clarification[:400]"` | — |
+| [SRC-1AE03B9EC3-L001055](../../agents/web_agent.py#L1055) | 1055 | `"        result[\"dialogue_context\"] = context"` | — |
+| [SRC-1AE03B9EC3-L001056](../../agents/web_agent.py#L1056) | 1056 | `"        if isinstance(result.get(\"research_plan\"), dict):"` | — |
+| [SRC-1AE03B9EC3-L001057](../../agents/web_agent.py#L1057) | 1057 | `"            result[\"research_plan\"][\"dialogue_context\"] = context"` | — |
+| [SRC-1AE03B9EC3-L001058](../../agents/web_agent.py#L1058) | 1058 | `"        return result"` | — |
+| [SRC-1AE03B9EC3-L001059](../../agents/web_agent.py#L1059) | 1059 | `""` | — |
+| [SRC-1AE03B9EC3-L001060](../../agents/web_agent.py#L1060) | 1060 | `"    def _capability_status_snapshot(self) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L001061](../../agents/web_agent.py#L1061) | 1061 | `"        \"\"\"Describe configured capabilities without claiming a live health check.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001062](../../agents/web_agent.py#L1062) | 1062 | `"        status = self.status()"` | — |
+| [SRC-1AE03B9EC3-L001063](../../agents/web_agent.py#L1063) | 1063 | `"        not_tested = \"not_tested_in_this_response\""` | — |
 | [SRC-1AE03B9EC3-L001064](../../agents/web_agent.py#L1064) | 1064 | `"        providers = ["` | — |
 | [SRC-1AE03B9EC3-L001065](../../agents/web_agent.py#L1065) | 1065 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L001066](../../agents/web_agent.py#L1066) | 1066 | `"                \"name\": \"duckduckgo_html\","` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L001839](../../agents/web_agent.py#L1839) | 1839 | `"                                \"User-Agent\": reddit_user_agent,"` | — |
 | [SRC-1AE03B9EC3-L001840](../../agents/web_agent.py#L1840) | 1840 | `"                                \"Authorization\": \"Bearer \" + access_token,"` | — |
 | [SRC-1AE03B9EC3-L001841](../../agents/web_agent.py#L1841) | 1841 | `"                            },"` | — |
-| [SRC-1AE03B9EC3-L001842](../../agents/web_agent.py#L1842) | 1842 | `"                            timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L001843](../../agents/web_agent.py#L1843) | 1843 | `"                            follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001844](../../agents/web_agent.py#L1844) | 1844 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L001845](../../agents/web_agent.py#L1845) | 1845 | `"                        if search_response.status_code == 200:"` | — |
-| [SRC-1AE03B9EC3-L001846](../../agents/web_agent.py#L1846) | 1846 | `"                            children = search_response.json().get(\"data\", {}).get(\"children\", [])"` | — |
-| [SRC-1AE03B9EC3-L001847](../../agents/web_agent.py#L1847) | 1847 | `"                            rank = 0"` | — |
-| [SRC-1AE03B9EC3-L001848](../../agents/web_agent.py#L1848) | 1848 | `"                            for child in children:"` | — |
-| [SRC-1AE03B9EC3-L001849](../../agents/web_agent.py#L1849) | 1849 | `"                                post = child.get(\"data\", {}) if isinstance(child, dict) else {}"` | — |
-| [SRC-1AE03B9EC3-L001850](../../agents/web_agent.py#L1850) | 1850 | `"                                permalink = str(post.get(\"permalink\") or \"\")"` | — |
-| [SRC-1AE03B9EC3-L001851](../../agents/web_agent.py#L1851) | 1851 | `"                                url = _public_http_url("` | — |
-| [SRC-1AE03B9EC3-L001852](../../agents/web_agent.py#L1852) | 1852 | `"                                    permalink if permalink.startswith(\"http\")"` | — |
-| [SRC-1AE03B9EC3-L001853](../../agents/web_agent.py#L1853) | 1853 | `"                                    else \"https://www.reddit.com\" + permalink"` | — |
-| [SRC-1AE03B9EC3-L001854](../../agents/web_agent.py#L1854) | 1854 | `"                                )"` | — |
-| [SRC-1AE03B9EC3-L001855](../../agents/web_agent.py#L1855) | 1855 | `"                                if not url:"` | — |
-| [SRC-1AE03B9EC3-L001856](../../agents/web_agent.py#L1856) | 1856 | `"                                    continue"` | — |
-| [SRC-1AE03B9EC3-L001857](../../agents/web_agent.py#L1857) | 1857 | `"                                rank += 1"` | — |
-| [SRC-1AE03B9EC3-L001858](../../agents/web_agent.py#L1858) | 1858 | `"                                snippet = _clean_text(post.get(\"selftext\") or \"\", 1000)"` | — |
-| [SRC-1AE03B9EC3-L001859](../../agents/web_agent.py#L1859) | 1859 | `"                                metrics = []"` | — |
-| [SRC-1AE03B9EC3-L001860](../../agents/web_agent.py#L1860) | 1860 | `"                                if post.get(\"score\") is not None:"` | — |
-| [SRC-1AE03B9EC3-L001861](../../agents/web_agent.py#L1861) | 1861 | `"                                    metrics.append(\"score=\" + str(post[\"score\"]))"` | — |
-| [SRC-1AE03B9EC3-L001862](../../agents/web_agent.py#L1862) | 1862 | `"                                if post.get(\"num_comments\") is not None:"` | — |
-| [SRC-1AE03B9EC3-L001863](../../agents/web_agent.py#L1863) | 1863 | `"                                    metrics.append(\"comments=\" + str(post[\"num_comments\"]))"` | — |

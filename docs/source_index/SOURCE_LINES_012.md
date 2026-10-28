@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003464 إلى SRC-1AE03B9EC3-L004263
+- النطاق: SRC-1AE03B9EC3-L003442 إلى SRC-1AE03B9EC3-L004241
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003442](../../agents/web_agent.py#L3442) | 3442 | `"        search_warning: str \| None,"` | — |
+| [SRC-1AE03B9EC3-L003443](../../agents/web_agent.py#L3443) | 3443 | `"        research_plan: dict[str, Any] \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003444](../../agents/web_agent.py#L3444) | 3444 | `"        search_report: dict[str, Any] \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003445](../../agents/web_agent.py#L3445) | 3445 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003446](../../agents/web_agent.py#L3446) | 3446 | `"        plan = research_plan or {}"` | — |
+| [SRC-1AE03B9EC3-L003447](../../agents/web_agent.py#L3447) | 3447 | `"        report = search_report or {}"` | — |
+| [SRC-1AE03B9EC3-L003448](../../agents/web_agent.py#L3448) | 3448 | `"        source_blocks: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L003449](../../agents/web_agent.py#L3449) | 3449 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
+| [SRC-1AE03B9EC3-L003450](../../agents/web_agent.py#L3450) | 3450 | `"            evidence = ("` | — |
+| [SRC-1AE03B9EC3-L003451](../../agents/web_agent.py#L3451) | 3451 | `"                source.get(\"page_text\")"` | — |
+| [SRC-1AE03B9EC3-L003452](../../agents/web_agent.py#L3452) | 3452 | `"                or source.get(\"snippet\")"` | — |
+| [SRC-1AE03B9EC3-L003453](../../agents/web_agent.py#L3453) | 3453 | `"                or \"لا يتوفر مقتطف نصي.\""` | — |
+| [SRC-1AE03B9EC3-L003454](../../agents/web_agent.py#L3454) | 3454 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003455](../../agents/web_agent.py#L3455) | 3455 | `"            evidence = _clean_text(evidence, 2400)"` | — |
+| [SRC-1AE03B9EC3-L003456](../../agents/web_agent.py#L3456) | 3456 | `"            providers = \", \".join(source.get(\"providers\", [])) or \"غير محدد\""` | — |
+| [SRC-1AE03B9EC3-L003457](../../agents/web_agent.py#L3457) | 3457 | `"            queries = \" \| \".join(source.get(\"queries\", [])[:3]) or \"غير محدد\""` | — |
+| [SRC-1AE03B9EC3-L003458](../../agents/web_agent.py#L3458) | 3458 | `"            source_blocks.append("` | — |
+| [SRC-1AE03B9EC3-L003459](../../agents/web_agent.py#L3459) | 3459 | `"                f\"[المصدر {index}] {source.get('title', 'نتيجة ويب')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003460](../../agents/web_agent.py#L3460) | 3460 | `"                f\"الرابط: {source['url']}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003461](../../agents/web_agent.py#L3461) | 3461 | `"                f\"نوع المصدر: {source.get('source_class', 'general')}؛ \""` | — |
+| [SRC-1AE03B9EC3-L003462](../../agents/web_agent.py#L3462) | 3462 | `"                f\"المنصة: {source.get('platform', 'web')}؛ \""` | — |
+| [SRC-1AE03B9EC3-L003463](../../agents/web_agent.py#L3463) | 3463 | `"                f\"المجال: {source.get('domain', '')}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003464](../../agents/web_agent.py#L3464) | 3464 | `"                f\"محركات/واجهات أعادت النتيجة: {providers}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003465](../../agents/web_agent.py#L3465) | 3465 | `"                f\"ظهر ضمن الاستعلامات: {queries}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003466](../../agents/web_agent.py#L3466) | 3466 | `"                f\"تاريخ ظاهر من المصدر إن توفر: {source.get('published_at', '')}\\n\""` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L004239](../../agents/web_agent.py#L4239) | 4239 | `"                    fulfillment_status = \"not_machine_assessed_no_explicit_targets_detected\""` | — |
 | [SRC-1AE03B9EC3-L004240](../../agents/web_agent.py#L4240) | 4240 | `"                coverage[\"task_fulfillment_status\"] = fulfillment_status"` | — |
 | [SRC-1AE03B9EC3-L004241](../../agents/web_agent.py#L4241) | 4241 | `"                result[\"answer_coverage\"] = coverage"` | — |
-| [SRC-1AE03B9EC3-L004242](../../agents/web_agent.py#L4242) | 4242 | `"                result[\"task_fulfillment_status\"] = fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L004243](../../agents/web_agent.py#L4243) | 4243 | `"                if isinstance(result.get(\"search_report\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L004244](../../agents/web_agent.py#L4244) | 4244 | `"                    result[\"search_report\"][\"answer_integrity\"] = answer_integrity"` | — |
-| [SRC-1AE03B9EC3-L004245](../../agents/web_agent.py#L4245) | 4245 | `"                    result[\"search_report\"][\"task_fulfillment_status\"] = fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L004246](../../agents/web_agent.py#L4246) | 4246 | `"            except (AttributeError, KeyError, TypeError, ValueError):"` | — |
-| [SRC-1AE03B9EC3-L004247](../../agents/web_agent.py#L4247) | 4247 | `"                # Auxiliary integrity screening never replaces the actual answer."` | — |
-| [SRC-1AE03B9EC3-L004248](../../agents/web_agent.py#L4248) | 4248 | `"                result[\"answer_integrity\"] = {"` | — |
-| [SRC-1AE03B9EC3-L004249](../../agents/web_agent.py#L4249) | 4249 | `"                    \"method\": \"deterministic_lexical_screen_only\","` | — |
-| [SRC-1AE03B9EC3-L004250](../../agents/web_agent.py#L4250) | 4250 | `"                    \"status\": \"not_run\","` | — |
-| [SRC-1AE03B9EC3-L004251](../../agents/web_agent.py#L4251) | 4251 | `"                    \"semantic_verification\": False,"` | — |
-| [SRC-1AE03B9EC3-L004252](../../agents/web_agent.py#L4252) | 4252 | `"                    \"independent_fact_check\": False,"` | — |
-| [SRC-1AE03B9EC3-L004253](../../agents/web_agent.py#L4253) | 4253 | `"                    \"error_class\": \"integrity_screen_error\","` | — |
-| [SRC-1AE03B9EC3-L004254](../../agents/web_agent.py#L4254) | 4254 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L004255](../../agents/web_agent.py#L4255) | 4255 | `"                result.setdefault(\"warnings\", []).append("` | — |
-| [SRC-1AE03B9EC3-L004256](../../agents/web_agent.py#L4256) | 4256 | `"                    \"تعذر تشغيل الفحص اللفظي الأولي لسلامة الأدلة؛ لم يُعدّ ذلك إثباتًا أو نفيًا لصحة الإجابة.\""` | — |
-| [SRC-1AE03B9EC3-L004257](../../agents/web_agent.py#L4257) | 4257 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004258](../../agents/web_agent.py#L4258) | 4258 | `"        if \"final_answer_status\" not in result:"` | — |
-| [SRC-1AE03B9EC3-L004259](../../agents/web_agent.py#L4259) | 4259 | `"            if result.get(\"kind\") in {\"capability_answer\", \"local_conversation\"}:"` | — |
-| [SRC-1AE03B9EC3-L004260](../../agents/web_agent.py#L4260) | 4260 | `"                final_answer_status = \"local_response_no_generation\""` | — |
-| [SRC-1AE03B9EC3-L004261](../../agents/web_agent.py#L4261) | 4261 | `"            elif result.get(\"kind\") == \"insufficient_evidence\":"` | — |
-| [SRC-1AE03B9EC3-L004262](../../agents/web_agent.py#L4262) | 4262 | `"                final_answer_status = \"insufficient_evidence_no_generation\""` | — |
-| [SRC-1AE03B9EC3-L004263](../../agents/web_agent.py#L4263) | 4263 | `"            elif result.get(\"used_language_model\") is True:"` | — |

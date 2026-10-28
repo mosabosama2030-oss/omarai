@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005064 إلى SRC-1AE03B9EC3-L005863
+- النطاق: SRC-1AE03B9EC3-L005042 إلى SRC-1AE03B9EC3-L005841
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005042](../../agents/web_agent.py#L5042) | 5042 | `"        # Link-finding and lead-discovery are actionable discovery tasks, not broad"` | — |
+| [SRC-1AE03B9EC3-L005043](../../agents/web_agent.py#L5043) | 5043 | `"        # fact-checking. Keep useful candidates visible while explicitly labelling them"` | — |
+| [SRC-1AE03B9EC3-L005044](../../agents/web_agent.py#L5044) | 5044 | `"        # as uncorroborated instead of refusing a lone result as if it were no result."` | — |
+| [SRC-1AE03B9EC3-L005045](../../agents/web_agent.py#L5045) | 5045 | `"        navigation_request = self._is_navigation_request(working_question)"` | — |
+| [SRC-1AE03B9EC3-L005046](../../agents/web_agent.py#L5046) | 5046 | `"        lead_request = intent_route == \"LEAD_GENERATION\" or self._is_lead_search(working_question)"` | — |
+| [SRC-1AE03B9EC3-L005047](../../agents/web_agent.py#L5047) | 5047 | `"        listing_request = self._is_listing_discovery(working_question)"` | — |
+| [SRC-1AE03B9EC3-L005048](../../agents/web_agent.py#L5048) | 5048 | `"        lead_evidence_sources: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L005049](../../agents/web_agent.py#L5049) | 5049 | `"        related_lead_results_count = 0"` | — |
+| [SRC-1AE03B9EC3-L005050](../../agents/web_agent.py#L5050) | 5050 | `"        if lead_request:"` | — |
+| [SRC-1AE03B9EC3-L005051](../../agents/web_agent.py#L5051) | 5051 | `"            related_lead_results_count = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L005052](../../agents/web_agent.py#L5052) | 5052 | `"            for source in sources:"` | — |
+| [SRC-1AE03B9EC3-L005053](../../agents/web_agent.py#L5053) | 5053 | `"                signal = self._lead_intent_evidence(source)"` | — |
+| [SRC-1AE03B9EC3-L005054](../../agents/web_agent.py#L5054) | 5054 | `"                if signal:"` | — |
+| [SRC-1AE03B9EC3-L005055](../../agents/web_agent.py#L5055) | 5055 | `"                    source[\"lead_qualification\"] = \"public_buyer_intent_signal\""` | — |
+| [SRC-1AE03B9EC3-L005056](../../agents/web_agent.py#L5056) | 5056 | `"                    source[\"lead_intent_evidence\"] = signal"` | — |
+| [SRC-1AE03B9EC3-L005057](../../agents/web_agent.py#L5057) | 5057 | `"                    lead_evidence_sources.append(source)"` | — |
+| [SRC-1AE03B9EC3-L005058](../../agents/web_agent.py#L5058) | 5058 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L005059](../../agents/web_agent.py#L5059) | 5059 | `"                    source[\"lead_qualification\"] = \"related_result_not_lead\""` | — |
+| [SRC-1AE03B9EC3-L005060](../../agents/web_agent.py#L5060) | 5060 | `"            lead_research_incomplete = ("` | — |
+| [SRC-1AE03B9EC3-L005061](../../agents/web_agent.py#L5061) | 5061 | `"                not sources"` | — |
+| [SRC-1AE03B9EC3-L005062](../../agents/web_agent.py#L5062) | 5062 | `"                and report.get(\"search_outcome\") in _RESEARCH_ERROR_OUTCOMES"` | — |
+| [SRC-1AE03B9EC3-L005063](../../agents/web_agent.py#L5063) | 5063 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005064](../../agents/web_agent.py#L5064) | 5064 | `"            report[\"lead_generation\"] = {"` | — |
 | [SRC-1AE03B9EC3-L005065](../../agents/web_agent.py#L5065) | 5065 | `"                \"status\": ("` | — |
 | [SRC-1AE03B9EC3-L005066](../../agents/web_agent.py#L5066) | 5066 | `"                    \"research_incomplete\" if lead_research_incomplete"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L005839](../../agents/web_agent.py#L5839) | 5839 | `"                    ) or compact_search_query(working_question)"` | — |
 | [SRC-1AE03B9EC3-L005840](../../agents/web_agent.py#L5840) | 5840 | `"                    gap_query = compact_search_query("` | — |
 | [SRC-1AE03B9EC3-L005841](../../agents/web_agent.py#L5841) | 5841 | `"                        f\"{topic_query} {' '.join(source_gap_targets)} official specific evidence data\""` | — |
-| [SRC-1AE03B9EC3-L005842](../../agents/web_agent.py#L5842) | 5842 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L005843](../../agents/web_agent.py#L5843) | 5843 | `"                    known_query_keys = {"` | — |
-| [SRC-1AE03B9EC3-L005844](../../agents/web_agent.py#L5844) | 5844 | `"                        _normalize_search_query(item).casefold()"` | — |
-| [SRC-1AE03B9EC3-L005845](../../agents/web_agent.py#L5845) | 5845 | `"                        for item in plan.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L005846](../../agents/web_agent.py#L5846) | 5846 | `"                        if isinstance(item, str) and item.strip()"` | — |
-| [SRC-1AE03B9EC3-L005847](../../agents/web_agent.py#L5847) | 5847 | `"                    }"` | — |
-| [SRC-1AE03B9EC3-L005848](../../agents/web_agent.py#L5848) | 5848 | `"                    if not gap_query or not _relevance_query_tokens(gap_query):"` | — |
-| [SRC-1AE03B9EC3-L005849](../../agents/web_agent.py#L5849) | 5849 | `"                        criterion_gap_research[\"status\"] = \"skipped_no_valid_query\""` | — |
-| [SRC-1AE03B9EC3-L005850](../../agents/web_agent.py#L5850) | 5850 | `"                    elif _normalize_search_query(gap_query).casefold() in known_query_keys:"` | — |
-| [SRC-1AE03B9EC3-L005851](../../agents/web_agent.py#L5851) | 5851 | `"                        criterion_gap_research[\"status\"] = \"skipped_query_not_distinct\""` | — |
-| [SRC-1AE03B9EC3-L005852](../../agents/web_agent.py#L5852) | 5852 | `"                    else:"` | — |
-| [SRC-1AE03B9EC3-L005853](../../agents/web_agent.py#L5853) | 5853 | `"                        criterion_gap_research.update({"` | — |
-| [SRC-1AE03B9EC3-L005854](../../agents/web_agent.py#L5854) | 5854 | `"                            \"attempted\": True,"` | — |
-| [SRC-1AE03B9EC3-L005855](../../agents/web_agent.py#L5855) | 5855 | `"                            \"status\": \"searching_for_missing_criterion_evidence\","` | — |
-| [SRC-1AE03B9EC3-L005856](../../agents/web_agent.py#L5856) | 5856 | `"                            \"query\": gap_query,"` | — |
-| [SRC-1AE03B9EC3-L005857](../../agents/web_agent.py#L5857) | 5857 | `"                        })"` | — |
-| [SRC-1AE03B9EC3-L005858](../../agents/web_agent.py#L5858) | 5858 | `"                        gap_plan = dict(plan)"` | — |
-| [SRC-1AE03B9EC3-L005859](../../agents/web_agent.py#L5859) | 5859 | `"                        gap_plan.update({"` | — |
-| [SRC-1AE03B9EC3-L005860](../../agents/web_agent.py#L5860) | 5860 | `"                            \"queries\": [gap_query],"` | — |
-| [SRC-1AE03B9EC3-L005861](../../agents/web_agent.py#L5861) | 5861 | `"                            \"query_limit\": 1,"` | — |
-| [SRC-1AE03B9EC3-L005862](../../agents/web_agent.py#L5862) | 5862 | `"                            \"depth\": \"standard\","` | — |
-| [SRC-1AE03B9EC3-L005863](../../agents/web_agent.py#L5863) | 5863 | `"                            \"social_focus\": False,"` | — |

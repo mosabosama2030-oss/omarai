@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000264 إلى SRC-1AE03B9EC3-L001063
+- النطاق: SRC-1AE03B9EC3-L000242 إلى SRC-1AE03B9EC3-L001041
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000242](../../agents/web_agent.py#L242) | 242 | `"            and len(token) >= 2"` | — |
+| [SRC-1AE03B9EC3-L000243](../../agents/web_agent.py#L243) | 243 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000244](../../agents/web_agent.py#L244) | 244 | `"    }"` | — |
+| [SRC-1AE03B9EC3-L000245](../../agents/web_agent.py#L245) | 245 | `""` | — |
+| [SRC-1AE03B9EC3-L000246](../../agents/web_agent.py#L246) | 246 | `""` | — |
+| [SRC-1AE03B9EC3-L000247](../../agents/web_agent.py#L247) | 247 | `"def _minimum_relevance_ratio(_query: str) -> float:"` | — |
+| [SRC-1AE03B9EC3-L000248](../../agents/web_agent.py#L248) | 248 | `"    \"\"\"Keep the established 20% relevance floor after query normalization and token cleanup.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000249](../../agents/web_agent.py#L249) | 249 | `"    return 0.20"` | — |
+| [SRC-1AE03B9EC3-L000250](../../agents/web_agent.py#L250) | 250 | `""` | — |
+| [SRC-1AE03B9EC3-L000251](../../agents/web_agent.py#L251) | 251 | `""` | — |
+| [SRC-1AE03B9EC3-L000252](../../agents/web_agent.py#L252) | 252 | `"def _relevance_ratio(query: str, evidence: str) -> float:"` | — |
+| [SRC-1AE03B9EC3-L000253](../../agents/web_agent.py#L253) | 253 | `"    \"\"\"Fraction of meaningful query concepts present in a candidate's title/snippet.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000254](../../agents/web_agent.py#L254) | 254 | `"    query_tokens = _relevance_query_tokens(query)"` | — |
+| [SRC-1AE03B9EC3-L000255](../../agents/web_agent.py#L255) | 255 | `"    if not query_tokens:"` | — |
+| [SRC-1AE03B9EC3-L000256](../../agents/web_agent.py#L256) | 256 | `"        # Relevance cannot be established from an instruction-only query."` | — |
+| [SRC-1AE03B9EC3-L000257](../../agents/web_agent.py#L257) | 257 | `"        return 0.0"` | — |
+| [SRC-1AE03B9EC3-L000258](../../agents/web_agent.py#L258) | 258 | `"    expanded_evidence = _search_tokens(evidence)"` | — |
+| [SRC-1AE03B9EC3-L000259](../../agents/web_agent.py#L259) | 259 | `"    matched = sum("` | — |
+| [SRC-1AE03B9EC3-L000260](../../agents/web_agent.py#L260) | 260 | `"        1 for token in query_tokens"` | — |
+| [SRC-1AE03B9EC3-L000261](../../agents/web_agent.py#L261) | 261 | `"        if token in expanded_evidence"` | — |
+| [SRC-1AE03B9EC3-L000262](../../agents/web_agent.py#L262) | 262 | `"        or (token.startswith(\"ال\") and token[2:] in expanded_evidence)"` | — |
+| [SRC-1AE03B9EC3-L000263](../../agents/web_agent.py#L263) | 263 | `"        or bool(_NORMALIZED_SEARCH_SYNONYMS.get(token, set()) & expanded_evidence)"` | — |
 | [SRC-1AE03B9EC3-L000264](../../agents/web_agent.py#L264) | 264 | `"    )"` | — |
 | [SRC-1AE03B9EC3-L000265](../../agents/web_agent.py#L265) | 265 | `"    ratio = matched / len(query_tokens)"` | — |
 | [SRC-1AE03B9EC3-L000266](../../agents/web_agent.py#L266) | 266 | `"    # On longer questions, two matching topic concepts are required; request wording"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L001039](../../agents/web_agent.py#L1039) | 1039 | `"        \"\"\"Expose why context resolution stopped and ask instead of guessing.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L001040](../../agents/web_agent.py#L1040) | 1040 | `"        context = dict(context)"` | — |
 | [SRC-1AE03B9EC3-L001041](../../agents/web_agent.py#L1041) | 1041 | `"        context[\"needs_clarification\"] = True"` | — |
-| [SRC-1AE03B9EC3-L001042](../../agents/web_agent.py#L1042) | 1042 | `"        context[\"status\"] = \"needs_clarification\""` | — |
-| [SRC-1AE03B9EC3-L001043](../../agents/web_agent.py#L1043) | 1043 | `"        context[\"resolved_question\"] = question[:MAX_QUESTION_CHARS]"` | — |
-| [SRC-1AE03B9EC3-L001044](../../agents/web_agent.py#L1044) | 1044 | `"        context[\"resolution_basis\"] = \"insufficient_evidence\""` | — |
-| [SRC-1AE03B9EC3-L001045](../../agents/web_agent.py#L1045) | 1045 | `"        result = self._clarification_result("` | — |
-| [SRC-1AE03B9EC3-L001046](../../agents/web_agent.py#L1046) | 1046 | `"            question, mode, {"` | — |
-| [SRC-1AE03B9EC3-L001047](../../agents/web_agent.py#L1047) | 1047 | `"                \"reason\": reason,"` | — |
-| [SRC-1AE03B9EC3-L001048](../../agents/web_agent.py#L1048) | 1048 | `"                \"needs_clarification\": True,"` | — |
-| [SRC-1AE03B9EC3-L001049](../../agents/web_agent.py#L1049) | 1049 | `"                \"context_available\": bool(context.get(\"is_follow_up\")),"` | — |
-| [SRC-1AE03B9EC3-L001050](../../agents/web_agent.py#L1050) | 1050 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L001051](../../agents/web_agent.py#L1051) | 1051 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001052](../../agents/web_agent.py#L1052) | 1052 | `"        requested_clarification = context.get(\"clarification_question\")"` | — |
-| [SRC-1AE03B9EC3-L001053](../../agents/web_agent.py#L1053) | 1053 | `"        if isinstance(requested_clarification, str) and requested_clarification.strip():"` | — |
-| [SRC-1AE03B9EC3-L001054](../../agents/web_agent.py#L1054) | 1054 | `"            result[\"answer\"] = requested_clarification[:400]"` | — |
-| [SRC-1AE03B9EC3-L001055](../../agents/web_agent.py#L1055) | 1055 | `"        result[\"dialogue_context\"] = context"` | — |
-| [SRC-1AE03B9EC3-L001056](../../agents/web_agent.py#L1056) | 1056 | `"        if isinstance(result.get(\"research_plan\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L001057](../../agents/web_agent.py#L1057) | 1057 | `"            result[\"research_plan\"][\"dialogue_context\"] = context"` | — |
-| [SRC-1AE03B9EC3-L001058](../../agents/web_agent.py#L1058) | 1058 | `"        return result"` | — |
-| [SRC-1AE03B9EC3-L001059](../../agents/web_agent.py#L1059) | 1059 | `""` | — |
-| [SRC-1AE03B9EC3-L001060](../../agents/web_agent.py#L1060) | 1060 | `"    def _capability_status_snapshot(self) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L001061](../../agents/web_agent.py#L1061) | 1061 | `"        \"\"\"Describe configured capabilities without claiming a live health check.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001062](../../agents/web_agent.py#L1062) | 1062 | `"        status = self.status()"` | — |
-| [SRC-1AE03B9EC3-L001063](../../agents/web_agent.py#L1063) | 1063 | `"        not_tested = \"not_tested_in_this_response\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-61B24BEFCC-L000098 إلى SRC-B335630551-L000151
+- النطاق: SRC-61B24BEFCC-L000076 إلى SRC-B335630551-L000129
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-61B24BEFCC-L000076](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L76) | 76 | `""` | — |
+| [SRC-61B24BEFCC-L000077](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L77) | 77 | `"## 5. طريقة تشغيل قبول حي — بعد الموافقة فقط"` | — |
+| [SRC-61B24BEFCC-L000078](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L78) | 78 | `""` | — |
+| [SRC-61B24BEFCC-L000079](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L79) | 79 | `"هذا الإجراء ليس جزءًا من اختبارات PR العادية، وقد يستهلك استخدامًا من مزودي النموذج أو البحث."` | — |
+| [SRC-61B24BEFCC-L000080](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L80) | 80 | `""` | — |
+| [SRC-61B24BEFCC-L000081](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L81) | 81 | `"المتطلبات قبل التشغيل:"` | — |
+| [SRC-61B24BEFCC-L000082](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L82) | 82 | `"1. وجود خدمة Omarai منشورة يملك مدير المشروع صلاحية اختبارها."` | — |
+| [SRC-61B24BEFCC-L000083](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L83) | 83 | `"2. التحقق من أن الهدف هو أصل HTTPS المقصود."` | — |
+| [SRC-61B24BEFCC-L000084](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L84) | 84 | ``"3. إعداد `OMARAI_BASE_URL` و`OMARAI_ACCESS_TOKEN` في GitHub Secrets فقط، وعدم وضع الرمز في مدخلات workflow أو تعليق أو سجل."`` | — |
+| [SRC-61B24BEFCC-L000085](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L85) | 85 | `"4. موافقة صريحة على إجراء اختبار حي قد يستهلك رصيدًا."` | — |
+| [SRC-61B24BEFCC-L000086](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L86) | 86 | `"5. استخدام سؤال عام غير حساس، وعدم استخدام بيانات عملاء حقيقية."` | — |
+| [SRC-61B24BEFCC-L000087](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L87) | 87 | `"6. تسجيل commit/نسخة الخدمة والوقت ونتيجة كل خطوة دون تسجيل أي سر."` | — |
+| [SRC-61B24BEFCC-L000088](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L88) | 88 | `""` | — |
+| [SRC-61B24BEFCC-L000089](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L89) | 89 | ``"يشغّل `scripts/hosted_smoke_test.py`:"`` | — |
+| [SRC-61B24BEFCC-L000090](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L90) | 90 | ``"- فحص `/api/health`."`` | — |
+| [SRC-61B24BEFCC-L000091](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L91) | 91 | ``"- اختبار أن `POST /api/agent` بلا رمز يرجع 401."`` | — |
+| [SRC-61B24BEFCC-L000092](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L92) | 92 | ``"- فحصًا حيًا للبحث والنموذج من `/api/diagnostics`."`` | — |
+| [SRC-61B24BEFCC-L000093](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L93) | 93 | `"- سؤالًا عربيًا يتطلب بحثًا ومصادر."` | — |
+| [SRC-61B24BEFCC-L000094](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L94) | 94 | `"- تحققًا من أن التقرير لا يحتاج إلى كشف مفاتيح."` | — |
+| [SRC-61B24BEFCC-L000095](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L95) | 95 | `""` | — |
+| [SRC-61B24BEFCC-L000096](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L96) | 96 | ``"إذا لم تتوفر البيئة أو الأسرار أو الموافقة على الاستخدام، تبقى النتيجة `NOT_RUN`؛ لا يُستعاض عن ذلك بنجاح CI."`` | — |
+| [SRC-61B24BEFCC-L000097](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L97) | 97 | `""` | — |
 | [SRC-61B24BEFCC-L000098](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L98) | 98 | `"## 6. شروط قبول نتيجة أي اختبار"` | — |
 | [SRC-61B24BEFCC-L000099](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L99) | 99 | `""` | — |
 | [SRC-61B24BEFCC-L000100](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L100) | 100 | `"يجب أن يتضمن سجل النتيجة:"` | — |
@@ -866,25 +888,3 @@
 | [SRC-B335630551-L000127](../../README.md#L127) | 127 | ````"```bash"```` | — |
 | [SRC-B335630551-L000128](../../README.md#L128) | 128 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
 | [SRC-B335630551-L000129](../../README.md#L129) | 129 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
-| [SRC-B335630551-L000130](../../README.md#L130) | 130 | ````"```"```` | — |
-| [SRC-B335630551-L000131](../../README.md#L131) | 131 | `""` | — |
-| [SRC-B335630551-L000132](../../README.md#L132) | 132 | ``"Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. To customize model roles, set `OMARAI_PLANNER_MODEL`, `OMARAI_ANSWER_MODEL`, and/or `OMARAI_REVIEW_MODEL`; `OMARAI_LLM_MODEL` remains a global override for all roles that have no role-specific override. `OMARAI_LLM_FALLBACK_MODEL` changes the default `openrouter/free` fallback. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. Optional social credentials may be configured in the same Termux session before starting the server: `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` (official OAuth access), `X_BEARER_TOKEN`, `YOUTUBE_API_KEY`, `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` + optional `META_GRAPH_VERSION`, and `FACEBOOK_PAGE_ACCESS_TOKEN` + `FACEBOOK_PAGE_IDS` (comma-separated Page IDs that the authorized token can access). Use `read -r -s` to enter secrets privately rather than saving them in shell history. Do not store keys in source files, HTML, commits or chat messages."`` | — |
-| [SRC-B335630551-L000133](../../README.md#L133) | 133 | `""` | — |
-| [SRC-B335630551-L000134](../../README.md#L134) | 134 | `"If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded."` | — |
-| [SRC-B335630551-L000135](../../README.md#L135) | 135 | `""` | — |
-| [SRC-B335630551-L000136](../../README.md#L136) | 136 | `"For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md)."` | — |
-| [SRC-B335630551-L000137](../../README.md#L137) | 137 | `""` | — |
-| [SRC-B335630551-L000138](../../README.md#L138) | 138 | `"## API"` | — |
-| [SRC-B335630551-L000139](../../README.md#L139) | 139 | `""` | — |
-| [SRC-B335630551-L000140](../../README.md#L140) | 140 | ``"- `GET /` — web-research chat"`` | — |
-| [SRC-B335630551-L000141](../../README.md#L141) | 141 | ``"- `GET /leads` — existing lead workspace"`` | — |
-| [SRC-B335630551-L000142](../../README.md#L142) | 142 | ``"- `GET /api/health` — setup and dependency status (never returns the API key)"`` | — |
-| [SRC-B335630551-L000143](../../README.md#L143) | 143 | ``"- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors"`` | — |
-| [SRC-B335630551-L000144](../../README.md#L144) | 144 | ``"- `POST /api/agent` — open-ended question plus optional recent `history`"`` | — |
-| [SRC-B335630551-L000145](../../README.md#L145) | 145 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
-| [SRC-B335630551-L000146](../../README.md#L146) | 146 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
-| [SRC-B335630551-L000147](../../README.md#L147) | 147 | `""` | — |
-| [SRC-B335630551-L000148](../../README.md#L148) | 148 | `"Example request:"` | — |
-| [SRC-B335630551-L000149](../../README.md#L149) | 149 | `""` | — |
-| [SRC-B335630551-L000150](../../README.md#L150) | 150 | ````"```json"```` | — |
-| [SRC-B335630551-L000151](../../README.md#L151) | 151 | `"{"` | — |

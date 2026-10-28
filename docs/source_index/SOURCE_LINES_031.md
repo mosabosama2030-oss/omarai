@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000222 إلى SRC-3451CC474D-L000459
+- النطاق: SRC-B3062EB677-L000200 إلى SRC-3451CC474D-L000437
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000200](../../tests/test_answer_quality_runner.py#L200) | 200 | `"        1.0,"` | — |
+| [SRC-B3062EB677-L000201](../../tests/test_answer_quality_runner.py#L201) | 201 | `"        0.0,"` | — |
+| [SRC-B3062EB677-L000202](../../tests/test_answer_quality_runner.py#L202) | 202 | `"        None,"` | — |
+| [SRC-B3062EB677-L000203](../../tests/test_answer_quality_runner.py#L203) | 203 | `"    )"` | — |
+| [SRC-B3062EB677-L000204](../../tests/test_answer_quality_runner.py#L204) | 204 | `"    assert rc == 2"` | — |
+| [SRC-B3062EB677-L000205](../../tests/test_answer_quality_runner.py#L205) | 205 | `"    assert \"Unsafe base URL\" in capsys.readouterr().err"` | — |
+| [SRC-B3062EB677-L000206](../../tests/test_answer_quality_runner.py#L206) | 206 | `""` | — |
+| [SRC-B3062EB677-L000207](../../tests/test_answer_quality_runner.py#L207) | 207 | `""` | — |
+| [SRC-B3062EB677-L000208](../../tests/test_answer_quality_runner.py#L208) | 208 | `"def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):"` | — |
+| [SRC-B3062EB677-L000209](../../tests/test_answer_quality_runner.py#L209) | 209 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000210](../../tests/test_answer_quality_runner.py#L210) | 210 | `""` | — |
+| [SRC-B3062EB677-L000211](../../tests/test_answer_quality_runner.py#L211) | 211 | `"    def fake_post(base_url, question, timeout, token):"` | — |
+| [SRC-B3062EB677-L000212](../../tests/test_answer_quality_runner.py#L212) | 212 | `"        return 0, {\"error\": \"URLError\", \"detail\": \"connection refused\"}"` | — |
+| [SRC-B3062EB677-L000213](../../tests/test_answer_quality_runner.py#L213) | 213 | `""` | — |
+| [SRC-B3062EB677-L000214](../../tests/test_answer_quality_runner.py#L214) | 214 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
+| [SRC-B3062EB677-L000215](../../tests/test_answer_quality_runner.py#L215) | 215 | `"    out = tmp_path / \"results.json\""` | — |
+| [SRC-B3062EB677-L000216](../../tests/test_answer_quality_runner.py#L216) | 216 | `"    rc = mod.main("` | — |
+| [SRC-B3062EB677-L000217](../../tests/test_answer_quality_runner.py#L217) | 217 | `"        ["` | — |
+| [SRC-B3062EB677-L000218](../../tests/test_answer_quality_runner.py#L218) | 218 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000219](../../tests/test_answer_quality_runner.py#L219) | 219 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000220](../../tests/test_answer_quality_runner.py#L220) | 220 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000221](../../tests/test_answer_quality_runner.py#L221) | 221 | `"            str(CORPUS),"` | — |
 | [SRC-B3062EB677-L000222](../../tests/test_answer_quality_runner.py#L222) | 222 | `"            \"--case-id\","` | — |
 | [SRC-B3062EB677-L000223](../../tests/test_answer_quality_runner.py#L223) | 223 | `"            \"AQ-001\","` | — |
 | [SRC-B3062EB677-L000224](../../tests/test_answer_quality_runner.py#L224) | 224 | `"            \"--out\","` | — |
@@ -812,25 +834,3 @@
 | [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"    assert \"192.0.2.1\" not in Handler._request_times"` | — |
 | [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    assert \"192.0.2.2\" in Handler._request_times"` | — |
 | [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `""` | — |
-| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `""` | — |
-| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `""` | — |
-| [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"def test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"    from api.omarai import WebAgent"` | — |
-| [SRC-3451CC474D-L000442](../../tests/test_api.py#L442) | 442 | `""` | — |
-| [SRC-3451CC474D-L000443](../../tests/test_api.py#L443) | 443 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000444](../../tests/test_api.py#L444) | 444 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000445](../../tests/test_api.py#L445) | 445 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
-| [SRC-3451CC474D-L000446](../../tests/test_api.py#L446) | 446 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
-| [SRC-3451CC474D-L000447](../../tests/test_api.py#L447) | 447 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
-| [SRC-3451CC474D-L000448](../../tests/test_api.py#L448) | 448 | `""` | — |
-| [SRC-3451CC474D-L000449](../../tests/test_api.py#L449) | 449 | `"    entered = threading.Event()"` | — |
-| [SRC-3451CC474D-L000450](../../tests/test_api.py#L450) | 450 | `"    release = threading.Event()"` | — |
-| [SRC-3451CC474D-L000451](../../tests/test_api.py#L451) | 451 | `"    first_result = {}"` | — |
-| [SRC-3451CC474D-L000452](../../tests/test_api.py#L452) | 452 | `""` | — |
-| [SRC-3451CC474D-L000453](../../tests/test_api.py#L453) | 453 | `"    def slow_answer(self, question, history=None, mode=\"auto\"):"` | — |
-| [SRC-3451CC474D-L000454](../../tests/test_api.py#L454) | 454 | `"        entered.set()"` | — |
-| [SRC-3451CC474D-L000455](../../tests/test_api.py#L455) | 455 | `"        assert release.wait(timeout=2), \"test did not release the held research slot\""` | — |
-| [SRC-3451CC474D-L000456](../../tests/test_api.py#L456) | 456 | `"        return {"` | — |
-| [SRC-3451CC474D-L000457](../../tests/test_api.py#L457) | 457 | `"            \"answer\": \"نتيجة اختبار محدودة\","` | — |
-| [SRC-3451CC474D-L000458](../../tests/test_api.py#L458) | 458 | `"            \"question\": question,"` | — |
-| [SRC-3451CC474D-L000459](../../tests/test_api.py#L459) | 459 | `"            \"search_query\": question,"` | — |

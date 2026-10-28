@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000363 إلى SRC-F725E90B2A-L000674
+- النطاق: SRC-AFEDC2645A-L000341 إلى SRC-F725E90B2A-L000652
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
+| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"            \"method\": \"test_context\","` | — |
+| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"        },"` | — |
+| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `""` | — |
+| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `"    ids = set(spec[\"reasoning_strategy_ids\"])"` | — |
+| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
+| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"    assert \"separate_facts_inferences_hypotheses\" in ids"` | — |
+| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `"    assert \"bounded_stop_rule\" in ids"` | — |
+| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `"    assert \"separate_event_and_publication_dates\" in ids"` | — |
+| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"    assert \"reject_stale_current_claims\" in ids"` | — |
+| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"    assert \"balance_social_evidence\" in ids"` | — |
+| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"    assert \"resolve_followup_slots\" in ids"` | — |
+| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
+| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
+| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `""` | — |
+| [SRC-AFEDC2645A-L000357](../../tests/test_task_understanding.py#L357) | 357 | `"    guidance = reasoning_guidance_for_task_spec(spec)"` | — |
+| [SRC-AFEDC2645A-L000358](../../tests/test_task_understanding.py#L358) | 358 | `"    assert any(\"لا تعمم على الجميع\" in item for item in guidance)"` | — |
+| [SRC-AFEDC2645A-L000359](../../tests/test_task_understanding.py#L359) | 359 | `"    assert any(\"تاريخ النشر\" in item for item in guidance)"` | — |
+| [SRC-AFEDC2645A-L000360](../../tests/test_task_understanding.py#L360) | 360 | `"    assert all(isinstance(item, str) and item for item in guidance)"` | — |
+| [SRC-AFEDC2645A-L000361](../../tests/test_task_understanding.py#L361) | 361 | `""` | — |
+| [SRC-AFEDC2645A-L000362](../../tests/test_task_understanding.py#L362) | 362 | `""` | — |
 | [SRC-AFEDC2645A-L000363](../../tests/test_task_understanding.py#L363) | 363 | `"def test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned():"` | — |
 | [SRC-AFEDC2645A-L000364](../../tests/test_task_understanding.py#L364) | 364 | `"    from agents.task_understanding import validate_task_spec"` | — |
 | [SRC-AFEDC2645A-L000365](../../tests/test_task_understanding.py#L365) | 365 | `""` | — |
@@ -812,25 +834,3 @@
 | [SRC-F725E90B2A-L000650](../../tests/test_web_agent.py#L650) | 650 | `"    results, warnings = WebAgent()._search_social("` | — |
 | [SRC-F725E90B2A-L000651](../../tests/test_web_agent.py#L651) | 651 | `"        \"electric vehicles\", [\"reddit\"]"` | — |
 | [SRC-F725E90B2A-L000652](../../tests/test_web_agent.py#L652) | 652 | `"    )"` | — |
-| [SRC-F725E90B2A-L000653](../../tests/test_web_agent.py#L653) | 653 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L000654](../../tests/test_web_agent.py#L654) | 654 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000655](../../tests/test_web_agent.py#L655) | 655 | `"    assert results[0][\"provider\"] == \"reddit_oauth_api\""` | — |
-| [SRC-F725E90B2A-L000656](../../tests/test_web_agent.py#L656) | 656 | `"    assert results[0][\"url\"] == \"https://www.reddit.com/r/cars/comments/example/post/\""` | — |
-| [SRC-F725E90B2A-L000657](../../tests/test_web_agent.py#L657) | 657 | `"    assert \"score=25\" in results[0][\"snippet\"]"` | — |
-| [SRC-F725E90B2A-L000658](../../tests/test_web_agent.py#L658) | 658 | `"    assert len([call for call in calls if call[0] == \"POST\"]) == 1"` | — |
-| [SRC-F725E90B2A-L000659](../../tests/test_web_agent.py#L659) | 659 | `"    assert any(\"oauth.reddit.com/search\" in call[1] for call in calls if call[0] == \"GET\")"` | — |
-| [SRC-F725E90B2A-L000660](../../tests/test_web_agent.py#L660) | 660 | `"    assert \"test-reddit-access-token\" not in str(results)"` | — |
-| [SRC-F725E90B2A-L000661](../../tests/test_web_agent.py#L661) | 661 | `""` | — |
-| [SRC-F725E90B2A-L000662](../../tests/test_web_agent.py#L662) | 662 | `""` | — |
-| [SRC-F725E90B2A-L000663](../../tests/test_web_agent.py#L663) | 663 | `""` | — |
-| [SRC-F725E90B2A-L000664](../../tests/test_web_agent.py#L664) | 664 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000665](../../tests/test_web_agent.py#L665) | 665 | `"    for name in ("` | — |
-| [SRC-F725E90B2A-L000666](../../tests/test_web_agent.py#L666) | 666 | `"        \"OMARAI_LLM_MODEL\","` | — |
-| [SRC-F725E90B2A-L000667](../../tests/test_web_agent.py#L667) | 667 | `"        \"OMARAI_PLANNER_MODEL\","` | — |
-| [SRC-F725E90B2A-L000668](../../tests/test_web_agent.py#L668) | 668 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
-| [SRC-F725E90B2A-L000669](../../tests/test_web_agent.py#L669) | 669 | `"        \"OMARAI_REVIEW_MODEL\","` | — |
-| [SRC-F725E90B2A-L000670](../../tests/test_web_agent.py#L670) | 670 | `"        \"OMARAI_LLM_FALLBACK_MODEL\","` | — |
-| [SRC-F725E90B2A-L000671](../../tests/test_web_agent.py#L671) | 671 | `"    ):"` | — |
-| [SRC-F725E90B2A-L000672](../../tests/test_web_agent.py#L672) | 672 | `"        monkeypatch.delenv(name, raising=False)"` | — |
-| [SRC-F725E90B2A-L000673](../../tests/test_web_agent.py#L673) | 673 | `""` | — |
-| [SRC-F725E90B2A-L000674](../../tests/test_web_agent.py#L674) | 674 | `"    agent = WebAgent()"` | — |

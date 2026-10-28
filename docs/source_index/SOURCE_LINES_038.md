@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000243 إلى SRC-AFEDC2645A-L000362
+- النطاق: SRC-01E35ABC46-L000221 إلى SRC-AFEDC2645A-L000340
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000221](../../tests/test_research_guardrails.py#L221) | 221 | `"    return {"` | — |
+| [SRC-01E35ABC46-L000222](../../tests/test_research_guardrails.py#L222) | 222 | `"        \"title\": title,"` | — |
+| [SRC-01E35ABC46-L000223](../../tests/test_research_guardrails.py#L223) | 223 | `"        \"url\": url,"` | — |
+| [SRC-01E35ABC46-L000224](../../tests/test_research_guardrails.py#L224) | 224 | `"        \"snippet\": snippet,"` | — |
+| [SRC-01E35ABC46-L000225](../../tests/test_research_guardrails.py#L225) | 225 | `"        \"published_at\": published_at,"` | — |
+| [SRC-01E35ABC46-L000226](../../tests/test_research_guardrails.py#L226) | 226 | `"        \"page_fetched\": page_fetched,"` | — |
+| [SRC-01E35ABC46-L000227](../../tests/test_research_guardrails.py#L227) | 227 | `"        \"page_text\": page_text,"` | — |
+| [SRC-01E35ABC46-L000228](../../tests/test_research_guardrails.py#L228) | 228 | `"    }"` | — |
+| [SRC-01E35ABC46-L000229](../../tests/test_research_guardrails.py#L229) | 229 | `""` | — |
+| [SRC-01E35ABC46-L000230](../../tests/test_research_guardrails.py#L230) | 230 | `""` | — |
+| [SRC-01E35ABC46-L000231](../../tests/test_research_guardrails.py#L231) | 231 | `"def test_official_government_website_request_rejects_tourism_domain() -> None:"` | — |
+| [SRC-01E35ABC46-L000232](../../tests/test_research_guardrails.py#L232) | 232 | `"    question = \"ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية\""` | — |
+| [SRC-01E35ABC46-L000233](../../tests/test_research_guardrails.py#L233) | 233 | `"    assert requires_official_government_domain(question)"` | — |
+| [SRC-01E35ABC46-L000234](../../tests/test_research_guardrails.py#L234) | 234 | `"    candidates = ["` | — |
+| [SRC-01E35ABC46-L000235](../../tests/test_research_guardrails.py#L235) | 235 | `"        _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000236](../../tests/test_research_guardrails.py#L236) | 236 | `"            \"https://visitegypt.com/\","` | — |
+| [SRC-01E35ABC46-L000237](../../tests/test_research_guardrails.py#L237) | 237 | `"            title=\"وزارة الاتصالات في مصر ومعلومات سياحية\","` | — |
+| [SRC-01E35ABC46-L000238](../../tests/test_research_guardrails.py#L238) | 238 | `"        ),"` | — |
+| [SRC-01E35ABC46-L000239](../../tests/test_research_guardrails.py#L239) | 239 | `"        _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000240](../../tests/test_research_guardrails.py#L240) | 240 | `"            \"https://mcit.gov.eg/\","` | — |
+| [SRC-01E35ABC46-L000241](../../tests/test_research_guardrails.py#L241) | 241 | `"            title=\"وزارة الاتصالات وتكنولوجيا المعلومات - الموقع الرسمي\","` | — |
+| [SRC-01E35ABC46-L000242](../../tests/test_research_guardrails.py#L242) | 242 | `"        ),"` | — |
 | [SRC-01E35ABC46-L000243](../../tests/test_research_guardrails.py#L243) | 243 | `"    ]"` | — |
 | [SRC-01E35ABC46-L000244](../../tests/test_research_guardrails.py#L244) | 244 | `""` | — |
 | [SRC-01E35ABC46-L000245](../../tests/test_research_guardrails.py#L245) | 245 | `"    accepted, report = apply_source_guardrails("` | — |
@@ -821,25 +843,3 @@
 | [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `"        dialogue_context={"` | — |
 | [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"            \"is_follow_up\": True,"` | — |
 | [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"            \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"            \"method\": \"test_context\","` | — |
-| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `""` | — |
-| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `"    ids = set(spec[\"reasoning_strategy_ids\"])"` | — |
-| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
-| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"    assert \"separate_facts_inferences_hypotheses\" in ids"` | — |
-| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `"    assert \"bounded_stop_rule\" in ids"` | — |
-| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `"    assert \"separate_event_and_publication_dates\" in ids"` | — |
-| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"    assert \"reject_stale_current_claims\" in ids"` | — |
-| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"    assert \"balance_social_evidence\" in ids"` | — |
-| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"    assert \"resolve_followup_slots\" in ids"` | — |
-| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
-| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
-| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `""` | — |
-| [SRC-AFEDC2645A-L000357](../../tests/test_task_understanding.py#L357) | 357 | `"    guidance = reasoning_guidance_for_task_spec(spec)"` | — |
-| [SRC-AFEDC2645A-L000358](../../tests/test_task_understanding.py#L358) | 358 | `"    assert any(\"لا تعمم على الجميع\" in item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000359](../../tests/test_task_understanding.py#L359) | 359 | `"    assert any(\"تاريخ النشر\" in item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000360](../../tests/test_task_understanding.py#L360) | 360 | `"    assert all(isinstance(item, str) and item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000361](../../tests/test_task_understanding.py#L361) | 361 | `""` | — |
-| [SRC-AFEDC2645A-L000362](../../tests/test_task_understanding.py#L362) | 362 | `""` | — |
