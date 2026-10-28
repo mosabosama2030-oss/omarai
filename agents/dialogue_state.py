@@ -223,9 +223,10 @@ def might_be_context_dependent(question: str) -> bool:
         current,
     )
     fragment = re.fullmatch(
-        r"[؟?\s]*(?:وال?)?(?:السعر|الاسعار|الضمان|البطاريه|الكاميرا|"
-        r"المكان|الرابط|المصدر|المميزات|العيوب|warranty|price|battery|"
-        r"camera|location|source|pros|cons)[؟?\s]*",
+        r"[؟?\s]*(?:و)?(?:السعر|الاسعار|الضمان|البطاريه|الكاميرا|"
+        r"المكان|الرابط|المصدر|المميزات|العيوب|سعر|ضمان|بطاريه|كاميرا|"
+        r"مكان|رابط|مصدر|warranty|price|battery|camera|location|source|pros|cons)"
+        r"[؟?\s]*",
         current,
     )
     return bool(lead_in or reference or fragment)
