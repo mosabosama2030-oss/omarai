@@ -3599,12 +3599,12 @@ def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
         },
     )
     monkeypatch.setattr(agent, "_collect_research", lambda plan: (
-        [sample_source(0)], [], {
+        [sample_source(0), sample_source(1)], [], {
             "queries_planned": 1,
             "queries_attempted": 1,
-            "query_results": [{"query": plan["queries"][0], "results": 1}],
-            "unique_sources": 1,
-            "pages_fetched": 1,
+            "query_results": [{"query": plan["queries"][0], "results": 2}],
+            "unique_sources": 2,
+            "pages_fetched": 2,
             "providers_used": ["test"],
             "provider_diagnostics": [],
         }
