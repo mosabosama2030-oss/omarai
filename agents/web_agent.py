@@ -48,7 +48,11 @@ from agents.research import (
     validate_plan,
 )
 from agents.research_guardrails import apply_source_guardrails
-from agents.task_understanding import build_query_strategy_matrix, build_task_spec
+from agents.task_understanding import (
+    build_query_strategy_matrix,
+    build_task_spec,
+    validate_task_spec,
+)
 
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
@@ -3466,14 +3470,53 @@ class WebAgent:
             "\n\n".join(source_blocks)
             or "لم تتوفر نتائج ويب يمكن استخدامها في هذه الجولة."
         )
+        # TaskSpec is used by synthesis, not merely displayed in diagnostics.
+        # Sanitize it again at the trust boundary and only keep strategy rows
+        # whose query was retained in the bounded executable plan.
+        raw_task_spec = plan.get("task_spec")
+        task_spec = validate_task_spec(raw_task_spec)
+        planned_queries = [
+            _clean_text(query, 240)
+            for query in (plan.get("queries") or [])[:MAX_PLAN_QUERIES]
+            if isinstance(query, str) and query.strip()
+        ]
+        planned_query_set = set(planned_queries)
+        raw_matrix = plan.get("query_strategy_matrix")
+        strategy_matrix: list[dict[str, str]] = []
+        if isinstance(raw_matrix, list):
+            for row in raw_matrix[:MAX_PLAN_QUERIES]:
+                if not isinstance(row, dict):
+                    continue
+                matrix_query = row.get("query")
+                if not isinstance(matrix_query, str):
+                    continue
+                matrix_query = _clean_text(matrix_query, 240)
+                if not matrix_query or matrix_query not in planned_query_set:
+                    continue
+                strategy_matrix.append({
+                    "query": matrix_query,
+                    "strategy": _clean_text(row.get("strategy"), 80),
+                    "rationale": _clean_text(row.get("rationale"), 220),
+                })
+        task_planning_context = {
+            "spec": task_spec,
+            "query_strategy_matrix": strategy_matrix,
+            "planned_queries": planned_queries,
+            "planned_query_count": len(planned_queries),
+            "claim": (
+                "planning metadata only; planned queries are not proof they ran, "
+                "and neither TaskSpec nor strategy labels are factual evidence"
+            ),
+        }
         report_text = json.dumps(
             {
                 "research_plan": {
                     "depth": plan.get("depth", "standard"),
                     "freshness": plan.get("freshness", "any"),
                     "social_focus": bool(plan.get("social_focus")),
-                    "queries": plan.get("queries", []),
-                    "dialogue_context": plan.get("dialogue_context", {}),
+                    "queries": planned_queries,
+                    "dialogue_context": task_spec.get("context_resolution", {}),
+                    "task_planning_context": task_planning_context,
                 },
                 "search_report": {
                     "queries_planned": report.get("queries_planned", 0),
