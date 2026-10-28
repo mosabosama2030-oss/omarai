@@ -92,8 +92,8 @@ _YEAR_RE = re.compile(r"(?<!\d)(?:19\d{2}|20\d{2})(?!\d)")
 _DATE_RE = re.compile(r"(?<!\d)(?:\d{4}-\d{2}-\d{2}|\d{1,2}[/-]\d{1,2}[/-]\d{2,4})(?!\d)")
 _URL_RE = re.compile(r"https?://[^\s<>]+", re.IGNORECASE)
 _BUDGET_RE = re.compile(
-    r"(?:ميزاني(?:ة|تي)(?:\s+(?:اقل\s+من|بحد\s+اقصى|في\s+حدود))?"
-    r"|بحد\s+اقصى|اقل\s+من|في\s+حدود|budget(?:\s+of)?|under|below|up\s+to)"
+    r"(?:ميزاني(?:ة|تي)(?:\s+(?:(?:أقل|اقل)\s+من|بحد\s+اقصى|في\s+حدود))?"
+    r"|بحد\s+اقصى|(?:أقل|اقل)\s+من|في\s+حدود|budget(?:\s+of)?|under|below|up\s+to)"
     r"\s*[:：]?\s*(?:egp|usd|eur|جنيه|دولار|ريال)?\s*[\d,.\u0660-\u0669]+"
     r"(?:\s*(?:الف|ألف|مليون|thousand|million|k))?",
     re.IGNORECASE,
