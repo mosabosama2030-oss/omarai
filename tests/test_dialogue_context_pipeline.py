@@ -6,6 +6,7 @@ from typing import Any
 import pytest
 
 from agents.research import evidence_signal_report
+from agents.dialogue_state import might_be_context_dependent
 from agents.web_agent import WebAgent
 
 
@@ -196,3 +197,97 @@ def test_semantic_context_asks_before_search_when_two_referents_are_plausible(
     assert "Samsung S26" in result["answer"]
     assert result["dialogue_context"]["needs_clarification"] is True
     assert result["used_web_search"] is False
+
+def test_semantic_probe_catches_implicit_context_without_keyword_trigger(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "في وضعي، أبدأ بإيه؟"
+    history = [
+        {
+            "role": "user",
+            "content": (
+                "عندي امتحان كيمياء بكرة، وفاضلي ساعتين أراجع الاتزان الكيميائي "
+                "ومش فاهمه كويس."
+            ),
+        },
+        {
+            "role": "assistant",
+            "content": "نقدر نرتب الساعتين لمراجعة المفاهيم والتدريب على المسائل.",
+        },
+    ]
+    assert not might_be_context_dependent(question)
+
+    semantic_context = {
+        "resolved_question": (
+            "في ظل امتحان الكيمياء غدًا ووجود ساعتين لمراجعة الاتزان الكيميائي، "
+            "بماذا أبدأ؟"
+        ),
+        "intent": "how_to",
+        "topic": "خطة مراجعة الاتزان الكيميائي",
+        "entities": ["امتحان الكيمياء", "الاتزان الكيميائي"],
+        "slots": {
+            "goal": "مراجعة امتحان الكيمياء",
+            "time_range": "ساعتان",
+            "topic": "الاتزان الكيميائي",
+        },
+        "changed_slots": ["goal"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_web": False,
+        "research_depth": "standard",
+        "needs_clarification": False,
+        "clarification_question": "",
+        "unresolved_references": [],
+        "resolution_basis": "history_inferred",
+        "confidence_band": "medium",
+    }
+    seen: dict[str, Any] = {"context_calls": 0}
+
+    def mocked_completion(messages, **kwargs):
+        assert "أنت محلل سياق حواري" in messages[0]["content"]
+        seen["context_calls"] += 1
+        return json.dumps(semantic_context, ensure_ascii=False)
+
+    def answer_without_search(resolved_question, prior_history):
+        seen["resolved_question"] = resolved_question
+        return {
+            "answer": "ابدأ بمراجعة أساسيات الاتزان ثم حل أمثلة قصيرة.",
+            "question": resolved_question,
+            "search_query": resolved_question,
+            "search_queries": [],
+            "research_plan": {
+                "mode": "auto",
+                "planning_method": "general_qa_without_web",
+                "web_search_skipped": True,
+            },
+            "sources": [],
+            "used_language_model": True,
+            "used_web_search": False,
+            "search_attempted": False,
+            "used_social_search": False,
+            "warnings": [],
+            "kind": "general_answer",
+            "research_quality": "not_applicable",
+            "model_calls": [],
+        }
+
+    def forbidden_search(*args, **kwargs):
+        pytest.fail("This contextual study-plan question must not start web search.")
+
+    monkeypatch.setattr(agent, "_request_completion", mocked_completion)
+    monkeypatch.setattr(agent, "_answer_without_search", answer_without_search)
+    monkeypatch.setattr(agent, "_collect_research", forbidden_search)
+
+    result = agent.answer(question, history=history)
+
+    assert seen["context_calls"] == 1
+    assert "الكيمياء" in seen["resolved_question"]
+    assert "ساعتين" in seen["resolved_question"]
+    assert "الاتزان الكيميائي" in seen["resolved_question"]
+    assert result["question"] == question
+    assert result["dialogue_context"]["is_follow_up"] is True
+    assert result["used_web_search"] is False
+    assert result["search_attempted"] is False
+

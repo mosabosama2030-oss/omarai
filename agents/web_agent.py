@@ -4064,8 +4064,14 @@ class WebAgent:
 
         # Rules only decide when a context probe may be needed. The model interprets
         # meaning only on those turns; it never receives authority to execute tools.
-        probe_dialogue = bool(clean_history) and (
-            intent_route == "CLARIFY" or might_be_context_dependent(question)
+        probe_dialogue = (
+            bool(clean_history)
+            and not current_search_status_question
+            and not self._is_self_question(question)
+            and (
+                intent_route != "LOCAL"
+                or might_be_context_dependent(question)
+            )
         )
         if probe_dialogue:
             semantic_context = self._resolve_dialogue_context(question, clean_history)
@@ -4125,6 +4131,9 @@ class WebAgent:
         if intent_route == "MODEL_ONLY":
             general_answer = self._answer_without_search(working_question, clean_history)
             if general_answer is not None:
+                # Keep the public API question verbatim; the resolved wording is for
+                # internal reasoning and generation, not a replacement for user input.
+                general_answer["question"] = question
                 if context_override is not None:
                     general_answer["dialogue_context"] = context_override
                     if isinstance(general_answer.get("research_plan"), dict):

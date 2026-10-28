@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000321 إلى SRC-0F910493E8-L000545
+- النطاق: SRC-65551FB29F-L000312 إلى SRC-0F910493E8-L000536
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000312](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L312) | 312 | `"---"` | — |
+| [SRC-65551FB29F-L000313](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L313) | 313 | `""` | — |
+| [SRC-65551FB29F-L000314](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L314) | 314 | `"# الجزء السادس — بوابات التطوير والإطلاق"` | — |
+| [SRC-65551FB29F-L000315](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L315) | 315 | `""` | — |
+| [SRC-65551FB29F-L000316](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L316) | 316 | `"## 14. بوابة A: تعريف التغيير"` | — |
+| [SRC-65551FB29F-L000317](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L317) | 317 | `""` | — |
+| [SRC-65551FB29F-L000318](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L318) | 318 | `"قبل التنفيذ:"` | — |
+| [SRC-65551FB29F-L000319](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L319) | 319 | `"1. تحديد المتطلب ومعرفه."` | — |
+| [SRC-65551FB29F-L000320](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L320) | 320 | `"2. تحديد المشكلة وسيناريو الاستخدام."` | — |
 | [SRC-65551FB29F-L000321](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L321) | 321 | `"3. حصر الملفات والبيانات والاعتماديات المتأثرة."` | — |
 | [SRC-65551FB29F-L000322](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L322) | 322 | `"4. تحديد مستوى المخاطر والخبرة اللازمة للمراجعة."` | — |
 | [SRC-65551FB29F-L000323](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L323) | 323 | `"5. تحديد اختبار قبول النجاح والفشل."` | — |
@@ -816,12 +825,3 @@
 | [SRC-0F910493E8-L000534](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L534) | 534 | `""` | — |
 | [SRC-0F910493E8-L000535](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L535) | 535 | `"## 17.1 هدف الأمن وحدود الادعاء"` | — |
 | [SRC-0F910493E8-L000536](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L536) | 536 | `""` | — |
-| [SRC-0F910493E8-L000537](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L537) | 537 | `"**[PROPOSED]** يُصمَّم Omarai وفق دفاع متعدد الطبقات (Defense in Depth)، وأقل صلاحية (Least Privilege)، ومنع افتراضي (Deny by Default)، والتحقق المستمر من الهوية والصلاحية (Zero Trust)، وبناء آمن وصيانة قابلة للتدقيق. المقصود هو الوصول إلى **أعلى مستوى عملي قابل للإثبات ضمن الموارد والبيئة ونموذج التهديد**، وليس الادعاء بأن أي نظام «آمن 100%» أو «غير قابل للاختراق»."` | — |
-| [SRC-0F910493E8-L000538](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L538) | 538 | `""` | — |
-| [SRC-0F910493E8-L000539](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L539) | 539 | `"لا توجد قائمة ضوابط تضمن الأمان المطلق. لكل قدرة مخاطر متبقية، ولكل حاجز حدود، وقد تفشل مكتبة أو منصة استضافة أو مزود خارجي. لذلك لا يُعلن مستوى أمان أو امتثال أو شهادة إلا بوجود تقييم محدد النطاق وأدلة مناسبة. وجود سياسة في هذه الوثيقة لا يعني تطبيقها، ووجود اختبار واحد لا يثبت الحماية الشاملة."` | — |
-| [SRC-0F910493E8-L000540](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L540) | 540 | `""` | — |
-| [SRC-0F910493E8-L000541](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L541) | 541 | `"هذه المواصفات تُكيَّف مع حجم Omarai وواقع الاستضافة، لكنها لا تسمح بتجاوز ضوابط الأساس التي تحمي الأسرار والصلاحيات والبيانات والاتصال بالشبكة. إذا كانت بيئة التشغيل لا تستطيع توفير عزل أو مصادقة أو حد شبكة مطلوبًا، فالحل هو تقليل القدرة أو تعطيلها أو عدم نشرها، لا اعتبار القيد غير موجود."` | — |
-| [SRC-0F910493E8-L000542](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L542) | 542 | `""` | — |
-| [SRC-0F910493E8-L000543](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L543) | 543 | `"## 17.2 أطر مرجعية ومبدأ عدم الادعاء بالامتثال"` | — |
-| [SRC-0F910493E8-L000544](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L544) | 544 | `""` | — |
-| [SRC-0F910493E8-L000545](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L545) | 545 | `"تُستخدم الأطر التالية كمراجع تصميم وتقييم بحسب الصلة:"` | — |

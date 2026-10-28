@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001163 إلى SRC-1C77C97630-L000079
+- النطاق: SRC-90FAA34ADE-L001154 إلى SRC-1C77C97630-L000070
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001154](../../tests/fixtures/answer_quality_cases.json#L1154) | 1154 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L001155](../../tests/fixtures/answer_quality_cases.json#L1155) | 1155 | `"      \"question\": \"الموديل الأساسي ومراجع الإجابة مش متاحين بسبب غياب المفاتيح. جاوب المستخدم من غير ما تدّعي إن النماذج اشتغلت.\","` | — |
+| [SRC-90FAA34ADE-L001156](../../tests/fixtures/answer_quality_cases.json#L1156) | 1156 | `"      \"expected_strategy\": \"model_no_search\","` | — |
+| [SRC-90FAA34ADE-L001157](../../tests/fixtures/answer_quality_cases.json#L1157) | 1157 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001158](../../tests/fixtures/answer_quality_cases.json#L1158) | 1158 | `"        \"يصرح بتعطل المكون المعتمد على بيانات الاعتماد عند الحاجة\","` | — |
+| [SRC-90FAA34ADE-L001159](../../tests/fixtures/answer_quality_cases.json#L1159) | 1159 | `"        \"يستخدم fallback موثق إن وُجد أو يشرح القيد\","` | — |
+| [SRC-90FAA34ADE-L001160](../../tests/fixtures/answer_quality_cases.json#L1160) | 1160 | `"        \"لا يدّعي أن النموذج أو المراجع نفّذوا الطلب\""` | — |
+| [SRC-90FAA34ADE-L001161](../../tests/fixtures/answer_quality_cases.json#L1161) | 1161 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001162](../../tests/fixtures/answer_quality_cases.json#L1162) | 1162 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001163](../../tests/fixtures/answer_quality_cases.json#L1163) | 1163 | `"        \"يعرض إجابة على أنها مراجعة بنموذج لم يعمل\","` | — |
 | [SRC-90FAA34ADE-L001164](../../tests/fixtures/answer_quality_cases.json#L1164) | 1164 | `"        \"يخفي عطل الاعتمادات ويولد نتيجة تحقق وهمية\""` | — |
 | [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
@@ -843,12 +852,3 @@
 | [SRC-1C77C97630-L000068](../../tests/test_answer_validation.py#L68) | 68 | `"        \"قارن من حيث السعر والمساحة\","` | — |
 | [SRC-1C77C97630-L000069](../../tests/test_answer_validation.py#L69) | 69 | `"        \"السعر واضح، أما المساحة فلا تتوفر بيانات عنها.\","` | — |
 | [SRC-1C77C97630-L000070](../../tests/test_answer_validation.py#L70) | 70 | `"        [{"` | — |
-| [SRC-1C77C97630-L000071](../../tests/test_answer_validation.py#L71) | 71 | `"            \"title\": \"سعر الهاتف\","` | — |
-| [SRC-1C77C97630-L000072](../../tests/test_answer_validation.py#L72) | 72 | `"            \"snippet\": \"سعر الهاتف 100 جنيه\","` | — |
-| [SRC-1C77C97630-L000073](../../tests/test_answer_validation.py#L73) | 73 | `"            \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000074](../../tests/test_answer_validation.py#L74) | 74 | `"        }],"` | — |
-| [SRC-1C77C97630-L000075](../../tests/test_answer_validation.py#L75) | 75 | `"        [\"السعر\", \"المساحة\"],"` | — |
-| [SRC-1C77C97630-L000076](../../tests/test_answer_validation.py#L76) | 76 | `"    )"` | — |
-| [SRC-1C77C97630-L000077](../../tests/test_answer_validation.py#L77) | 77 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
-| [SRC-1C77C97630-L000078](../../tests/test_answer_validation.py#L78) | 78 | `""` | — |
-| [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    # Both dimensions are mentioned in the answer, but only price has a source signal."` | — |

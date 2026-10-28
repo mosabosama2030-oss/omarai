@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000080 إلى SRC-3451CC474D-L000550
+- النطاق: SRC-1C77C97630-L000071 إلى SRC-3451CC474D-L000541
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000071](../../tests/test_answer_validation.py#L71) | 71 | `"            \"title\": \"سعر الهاتف\","` | — |
+| [SRC-1C77C97630-L000072](../../tests/test_answer_validation.py#L72) | 72 | `"            \"snippet\": \"سعر الهاتف 100 جنيه\","` | — |
+| [SRC-1C77C97630-L000073](../../tests/test_answer_validation.py#L73) | 73 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000074](../../tests/test_answer_validation.py#L74) | 74 | `"        }],"` | — |
+| [SRC-1C77C97630-L000075](../../tests/test_answer_validation.py#L75) | 75 | `"        [\"السعر\", \"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000076](../../tests/test_answer_validation.py#L76) | 76 | `"    )"` | — |
+| [SRC-1C77C97630-L000077](../../tests/test_answer_validation.py#L77) | 77 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
+| [SRC-1C77C97630-L000078](../../tests/test_answer_validation.py#L78) | 78 | `""` | — |
+| [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    # Both dimensions are mentioned in the answer, but only price has a source signal."` | — |
 | [SRC-1C77C97630-L000080](../../tests/test_answer_validation.py#L80) | 80 | `"    assert checks[\"السعر\"][\"status\"] == \"lexical_signal_found\""` | — |
 | [SRC-1C77C97630-L000081](../../tests/test_answer_validation.py#L81) | 81 | `"    assert checks[\"السعر\"][\"source_evidence_status\"] == \"source_lexical_signal_found\""` | — |
 | [SRC-1C77C97630-L000082](../../tests/test_answer_validation.py#L82) | 82 | `"    assert checks[\"المساحة\"][\"status\"] == \"lexical_signal_found\""` | — |
@@ -816,12 +825,3 @@
 | [SRC-3451CC474D-L000539](../../tests/test_api.py#L539) | 539 | `""` | — |
 | [SRC-3451CC474D-L000540](../../tests/test_api.py#L540) | 540 | `"def test_api_returns_408_when_request_body_read_times_out(local_api, monkeypatch):"` | — |
 | [SRC-3451CC474D-L000541](../../tests/test_api.py#L541) | 541 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000542](../../tests/test_api.py#L542) | 542 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000543](../../tests/test_api.py#L543) | 543 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS\", 0.1)"` | — |
-| [SRC-3451CC474D-L000544](../../tests/test_api.py#L544) | 544 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
-| [SRC-3451CC474D-L000545](../../tests/test_api.py#L545) | 545 | `"    with socket.create_connection((host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2) as client:"` | — |
-| [SRC-3451CC474D-L000546](../../tests/test_api.py#L546) | 546 | `"        client.settimeout(2)"` | — |
-| [SRC-3451CC474D-L000547](../../tests/test_api.py#L547) | 547 | `"        client.sendall("` | — |
-| [SRC-3451CC474D-L000548](../../tests/test_api.py#L548) | 548 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
-| [SRC-3451CC474D-L000549](../../tests/test_api.py#L549) | 549 | `"            b\"Host: localhost\\r\\n\""` | — |
-| [SRC-3451CC474D-L000550](../../tests/test_api.py#L550) | 550 | `"            b\"Content-Type: application/json\\r\\n\""` | — |

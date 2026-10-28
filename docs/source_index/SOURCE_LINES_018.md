@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000395 إلى SRC-B2C95EAEE1-L000085
+- النطاق: SRC-D17CE3D12F-L000386 إلى SRC-B2C95EAEE1-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000386](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L386) | 386 | `"4. MUST التعامل مع تضارب المصادر بتوضيحه أو ترجيح الموثق مع بيان السبب؛ لا تُخفى المعارضة المهمة."` | — |
+| [SRC-D17CE3D12F-L000387](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L387) | 387 | `"5. MUST أن يحدد النظام عدم اليقين والقيود، ويطلب توضيحًا عندما يغيّر الغموض الإجابة بشكل جوهري."` | — |
+| [SRC-D17CE3D12F-L000388](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L388) | 388 | `"6. SHOULD بناء مجموعة تقييم عربية تغطي: صحة الحقائق، وملاءمة المصدر، وجودة الاستشهاد، واكتمال الإجابة، والتعامل مع عدم اليقين، وحداثة المعلومة."` | — |
+| [SRC-D17CE3D12F-L000389](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L389) | 389 | `"7. MUST اختبار حالات لا يوجد فيها مصدر كافٍ، أو توجد مصادر متعارضة، أو الروابط ميتة، أو التاريخ قديم، أو المصدر لا يدعم الجملة."` | — |
+| [SRC-D17CE3D12F-L000390](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L390) | 390 | `"8. SHOULD فصل جودة الصياغة عن صحة المحتوى؛ الإجابة الفصيحة قد تكون خاطئة."` | — |
+| [SRC-D17CE3D12F-L000391](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L391) | 391 | `"9. MUST عدم استخدام الثقة التي يعلنها النموذج عن نفسه بديلًا عن تحقق مستقل من الأدلة."` | — |
+| [SRC-D17CE3D12F-L000392](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L392) | 392 | `"10. MUST ألا تتجاوز اللغة درجة ما تسمح به الأدلة، ولا يحوّل الاستنتاج الاحتمالي إلى خبر مؤكد."` | — |
+| [SRC-D17CE3D12F-L000393](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L393) | 393 | `""` | — |
+| [SRC-D17CE3D12F-L000394](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L394) | 394 | `"---"` | — |
 | [SRC-D17CE3D12F-L000395](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L395) | 395 | `""` | — |
 | [SRC-D17CE3D12F-L000396](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L396) | 396 | `"# القسم التاسع — هندسة الذكاء الاصطناعي والوكلاء (LLMOps/AgentOps)"` | — |
 | [SRC-D17CE3D12F-L000397](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L397) | 397 | `""` | — |
@@ -825,12 +834,3 @@
 | [SRC-B2C95EAEE1-L000074](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L74) | 74 | `"- تحسين حالات تشخيص جلب الصفحات والموصلات، واختبارات منع التحويل التلقائي لبعض مزودي البحث المغطّين."` | — |
 | [SRC-B2C95EAEE1-L000075](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L75) | 75 | ``"- رؤوس أمان للمتصفح وسياسة CSP مع اختبارات تمنع عودة `unsafe-inline` إلى السياسة المختبرة."`` | — |
 | [SRC-B2C95EAEE1-L000076](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L76) | 76 | ``"- تضمين هوية البناء في الحاوية وإتاحتها عبر `/api/health`، ودعم `OMARAI_DB_PATH` لاختيار مسار SQLite."`` | — |
-| [SRC-B2C95EAEE1-L000077](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L77) | 77 | ``"- أداة بحث محلي في المصدر وروابط مرجعية قابلة للضبط، وإصلاح سباق فحص الفهرس في CI للفروع غير `main`."`` | — |
-| [SRC-B2C95EAEE1-L000078](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L78) | 78 | `""` | — |
-| [SRC-B2C95EAEE1-L000079](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L79) | 79 | `"هذه أدلة على وجود المسارات البرمجية واجتياز الاختبارات المحددة؛ ليست ضمانًا أمنيًا شاملًا أو شهادة صحة معرفية."` | — |
-| [SRC-B2C95EAEE1-L000080](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L80) | 80 | `""` | — |
-| [SRC-B2C95EAEE1-L000081](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L81) | 81 | `"## 4. المخاطر والبوابات التي لم تُغلق"` | — |
-| [SRC-B2C95EAEE1-L000082](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L82) | 82 | `""` | — |
-| [SRC-B2C95EAEE1-L000083](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L83) | 83 | `"\| الأولوية \| المعرف \| المجال \| الحالة الحالية \| معيار الإغلاق المطلوب \|"` | — |
-| [SRC-B2C95EAEE1-L000084](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L84) | 84 | `"\|---\|---\|---\|---\|---\|"` | — |
-| [SRC-B2C95EAEE1-L000085](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L85) | 85 | ``"\| P0 \| POST-001 \| CI على SHA الدمج \| **NOT_CONFIRMED** \| رابط تشغيل مكتمل على `528a255...` أو تحقق لاحق واضح على SHA أحدث في `main` مع نفس التغييرات. \|"`` | — |
