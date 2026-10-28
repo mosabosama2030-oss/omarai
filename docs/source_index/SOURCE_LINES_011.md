@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000039 إلى SRC-792A9A235D-L000055
+- النطاق: SRC-EEF2E6447C-L000033 إلى SRC-792A9A235D-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000033](../../api/omarai.py#L33) | 33 | `""` | — |
+| [SRC-EEF2E6447C-L000034](../../api/omarai.py#L34) | 34 | `"@lru_cache(maxsize=1)"` | — |
+| [SRC-EEF2E6447C-L000035](../../api/omarai.py#L35) | 35 | `"def _content_security_policy() -> str:"` | — |
+| [SRC-EEF2E6447C-L000036](../../api/omarai.py#L36) | 36 | `"    \"\"\"Allow only known inline blocks/attributes from the static first-party HTML."` | — |
+| [SRC-EEF2E6447C-L000037](../../api/omarai.py#L37) | 37 | `""` | — |
+| [SRC-EEF2E6447C-L000038](../../api/omarai.py#L38) | 38 | `"    Hashes deliberately replace unsafe-inline. Updating an inline script/style means its"` | — |
 | [SRC-EEF2E6447C-L000039](../../api/omarai.py#L39) | 39 | `"    hash changes automatically with the served source. This is not a sanitizer for"` | — |
 | [SRC-EEF2E6447C-L000040](../../api/omarai.py#L40) | 40 | `"    untrusted HTML; callers must never splice untrusted input into these static files."` | — |
 | [SRC-EEF2E6447C-L000041](../../api/omarai.py#L41) | 41 | `"    \"\"\""` | — |
@@ -855,9 +861,3 @@
 | [SRC-792A9A235D-L000047](../ANSWER_QUALITY_BENCHMARK_AR.md#L47) | 47 | `"- **FAIL** — ظهر شرط فشل واحد على الأقل، أو غاب سلوك مطلوب جوهري"` | — |
 | [SRC-792A9A235D-L000048](../ANSWER_QUALITY_BENCHMARK_AR.md#L48) | 48 | `"- **NOT_TESTED** — لم يُشغَّل / لم يُراجع / بيئة غير كافية"` | — |
 | [SRC-792A9A235D-L000049](../ANSWER_QUALITY_BENCHMARK_AR.md#L49) | 49 | `""` | — |
-| [SRC-792A9A235D-L000050](../ANSWER_QUALITY_BENCHMARK_AR.md#L50) | 50 | `"### أبعاد المراجعة"` | — |
-| [SRC-792A9A235D-L000051](../ANSWER_QUALITY_BENCHMARK_AR.md#L51) | 51 | `""` | — |
-| [SRC-792A9A235D-L000052](../ANSWER_QUALITY_BENCHMARK_AR.md#L52) | 52 | `"1. اختيار الاستراتيجية"` | — |
-| [SRC-792A9A235D-L000053](../ANSWER_QUALITY_BENCHMARK_AR.md#L53) | 53 | `"2. صدق الأدلة وملاءمة المصادر"` | — |
-| [SRC-792A9A235D-L000054](../ANSWER_QUALITY_BENCHMARK_AR.md#L54) | 54 | `"3. اكتمال الإجابة"` | — |
-| [SRC-792A9A235D-L000055](../ANSWER_QUALITY_BENCHMARK_AR.md#L55) | 55 | `"4. معايرة عدم اليقين"` | — |
