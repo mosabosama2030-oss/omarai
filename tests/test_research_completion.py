@@ -112,3 +112,34 @@ def test_counter_consistency_is_not_claimed_when_legacy_counters_are_missing() -
         "search_report": {"query_results": []},
     })
     assert result["counter_consistency"]["status"] == "not_computable"
+
+
+
+def test_public_readability_marker_counts_read_page_without_exposing_text() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "sources": [{
+            "url": "https://example.com/a",
+            "snippet": "summary",
+            "page_fetched": True,
+            "readable_page_text_available": True,
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+    assert result["counters"]["pages_read_with_text_count"] == 1
+    assert result["phases"]["page_reading"] == "all_final_sources_read"
+
+
+def test_ref_query_parameters_are_not_assumed_to_be_tracking_ids() -> None:
+    result = build_research_completion({
+        "kind": "web_fallback",
+        "sources": [
+            {"url": "https://example.com/post?ref=one"},
+            {"url": "https://example.com/post?ref=two"},
+        ],
+        "search_report": {},
+    })
+    assert result["counters"]["unique_normalized_url_count"] == 2
+    assert result["counters"]["duplicate_normalized_url_count"] == 0

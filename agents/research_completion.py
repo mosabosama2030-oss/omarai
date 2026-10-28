@@ -19,7 +19,7 @@ _CONNECTOR_ERRORS = frozenset({
     "failed", "timeout", "error", "not_configured", "disabled",
     "rate_limited", "blocked",
 })
-_TRACKING_KEYS = frozenset({"fbclid", "gclid", "mc_cid", "mc_eid", "ref", "source"})
+_TRACKING_KEYS = frozenset({"fbclid", "gclid", "mc_cid", "mc_eid"})
 
 
 def _dict(value: Any) -> dict[str, Any]:
@@ -40,8 +40,9 @@ def _int(value: Any) -> int | None:
 
 
 def _readable(source: dict[str, Any]) -> bool:
-    return bool(source.get("page_fetched")) and bool(
-        str(source.get("page_text") or "").strip()
+    return bool(source.get("page_fetched")) and (
+        bool(str(source.get("page_text") or "").strip())
+        or source.get("readable_page_text_available") is True
     )
 
 
@@ -253,8 +254,13 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
         "counters": {
             "queries_planned": _int(report.get("queries_planned")),
             "queries_attempted": _int(report.get("queries_attempted")),
-            "search_result_count_observed": query_total,
-            "query_result_rows_with_counts": len(query_rows) if query_rows else 0,
+            "per_query_result_count_sum": query_total,
+            "per_query_result_count_sum_semantics": "sum_of_reported_per_query_counts_not_deduplicated_sources",
+            "query_result_row_count": len(query_rows),
+            "query_result_rows_with_counts": sum(
+                isinstance(row, dict) and _int(row.get("results")) is not None
+                for row in query_rows
+            ),
             "final_source_list_count": len(sources),
             "unique_normalized_url_count": len(unique_urls),
             "duplicate_normalized_url_count": max(0, len(url_keys) - len(unique_urls)),
