@@ -153,13 +153,16 @@ def classify_social_source(source: dict[str, Any]) -> dict[str, str]:
         str(source.get(field) or "")
         for field in ("title", "snippet", "page_text")
     ))
-    if any(term in text for term in _PROMOTION_TERMS):
+    # Normalize the vocabulary as well as the source text so English phrases
+    # remain case-insensitive (for example, "I own" versus "i own").
+    has_term = lambda terms: any(_normalized(term) in text for term in terms)
+    if has_term(_PROMOTION_TERMS):
         label = "promotional_or_commercial"
         basis = "commercial language detected"
-    elif any(term in text for term in _PERSONAL_EXPERIENCE_TERMS):
+    elif has_term(_PERSONAL_EXPERIENCE_TERMS):
         label = "personal_experience_candidate"
         basis = "first-person experience language detected"
-    elif any(term in text for term in _DISCUSSION_TERMS):
+    elif has_term(_DISCUSSION_TERMS):
         label = "discussion_or_question"
         basis = "question or discussion language detected"
     else:
