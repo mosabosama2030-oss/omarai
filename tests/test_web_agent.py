@@ -1955,6 +1955,9 @@ def test_search_attempt_is_reported_when_no_sources_survive(monkeypatch):
     assert result["search_report"]["search_attempted"] is True
     assert result["search_report"]["search_outcome"] == "attempted_no_usable_sources"
     assert result["search_report"]["usable_sources_after_filtering"] == 0
+    assert result["search_report"]["insufficient_evidence"] is True
+    assert result["search_report"]["pipeline_completion_status"] == "insufficient_evidence"
+    assert result["task_understanding"]["tool_execution"]["accepted_source_count"] == 0
     assert calls, "Expected at least one attempted retrieval round"
 
 
