@@ -29,6 +29,12 @@ from agents.dialogue_state import (
 )
 from agents.answer_validation import audit_answer_integrity
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
+from agents.aspect_planning import (
+    arabic_aspect_diagnostics,
+    build_evidence_ledger,
+    extract_aspects,
+)
+from agents.search_connectors import search_arxiv, search_crossref, search_openalex
 from agents.research import (
     MAX_PLAN_QUERIES,
     SOCIAL_DOMAINS,
@@ -630,6 +636,9 @@ class WebAgent:
         if not isinstance(question, str) or not question.strip():
             return []
         text = question.strip()[:MAX_QUESTION_CHARS]
+        enhanced_targets = extract_aspects(text)
+        if enhanced_targets:
+            return enhanced_targets[:8]
         marker = re.compile(
             r"(?:من\s+حيث|من\s+ناحية|من\s+الناحية|فيما\s+يتعلق\s+ب|فيما\s+يخص|"
             r"من\s+منظور|in\s+terms\s+of|with\s+respect\s+to|"
@@ -1469,6 +1478,30 @@ class WebAgent:
             return await asyncio.gather(*(run_one(name, method) for name, method in adapters))
         try:
             provider_batches = asyncio.run(run_all())
+            combined = [item for batch in provider_batches for item in batch]
+            # Scholarly fallback only for explicit research-shaped queries; reuse
+            # run_one so budget, timeouts, public-URL/SSRF, blocklist and relevance
+            # validation are identical to ordinary search connectors.
+            academic_markers = (
+                "دراسة علمية", "دراسات", "ابحاث", "أبحاث", "بحث علمي",
+                "ورقة علمية", "أوراق علمية", "academic", "research",
+                "scientific study", "research paper", "peer reviewed",
+                "peer-reviewed", "scholarly", "literature review",
+                "systematic review", "arxiv", "openalex", "crossref",
+            )
+            if len(combined) < 3 and any(marker in search_query.casefold() for marker in academic_markers):
+                academic_adapters: list[tuple[str, Any]] = [
+                    ("openalex", lambda q: search_openalex(q, limit=3)),
+                    ("arxiv", lambda q: search_arxiv(q, limit=3)),
+                    ("crossref", lambda q: search_crossref(q, limit=3)),
+                ]
+
+                async def run_academic_all() -> list[list[dict[str, Any]]]:
+                    return await asyncio.gather(
+                        *(run_one(name, method) for name, method in academic_adapters)
+                    )
+
+                provider_batches.extend(asyncio.run(run_academic_all()))
         except RuntimeError as exc:
             # This method is synchronous by contract; the HTTP server invokes it in worker threads.
             raise RuntimeError("تعذر تشغيل مجدول موصلات البحث.") from exc
@@ -2635,6 +2668,21 @@ class WebAgent:
             ),
             "pages_fetch_attempted": len(fetch_targets),
         }
+        coverage_targets = plan.get("coverage_targets") or []
+        if isinstance(coverage_targets, list) and coverage_targets:
+            safe_targets = [
+                target[:120]
+                for target in coverage_targets
+                if isinstance(target, str) and target.strip()
+            ][:8]
+            ledger = build_evidence_ledger(safe_targets, sources)
+            report["aspects"] = safe_targets
+            report["evidence_ledger"] = ledger
+            report["aspect_diagnostics_ar"] = arabic_aspect_diagnostics(ledger)
+            report["aspect_evidence_gaps"] = list(ledger.get("missing") or [])
+            report["aspect_coverage_lexical_ratio"] = ledger.get("coverage_ratio")
+            report["aspect_coverage_is_not_truth_score"] = True
+
         return sources, list(dict.fromkeys(warnings)), report
 
     @staticmethod
@@ -2655,6 +2703,9 @@ class WebAgent:
         config: dict[str, tuple[bool, str]] = {
             "duckduckgo_html": (True, "built_in_no_api_key"), "bing_rss": (True, "built_in_no_api_key"),
             "google_news_rss": (True, "built_in_conditional_no_api_key"),
+            "openalex": (True, "built_in_free_academic"),
+            "arxiv": (True, "built_in_free_academic"),
+            "crossref": (True, "built_in_free_academic"),
             "reddit_public_rss": (True, "built_in_no_api_key"), "bluesky_public_search": (True, "built_in_no_api_key"),
             "openrouter_web_search": (bool(self.openrouter_web_search_enabled),
                 "enabled" if self.openrouter_web_search_enabled else "disabled"),
@@ -3327,6 +3378,12 @@ class WebAgent:
                     "providers_used": report.get("providers_used", []),
                     "platform_counts": report.get("platform_counts", {}),
                     "evidence_signals": report.get("evidence_signals", {}),
+                    "aspect_evidence": {
+                        "covered": ((report.get("evidence_ledger") or {}).get("covered") or []),
+                        "missing": ((report.get("evidence_ledger") or {}).get("missing") or []),
+                        "lexical_coverage_ratio": report.get("aspect_coverage_lexical_ratio"),
+                        "interpretation": "وجود مرشح نصي لا يثبت صحة الادعاء، ونسبة التغطية ليست درجة ثقة.",
+                    },
                 },
                 "warnings": search_warning or "",
             },
@@ -3973,6 +4030,9 @@ class WebAgent:
                 elif (
                     answer_integrity["potentially_missing_target_count"] > 0
                     or answer_integrity["source_evidence_gap_count"] > 0
+                    or bool(
+                        ((result.get("search_report") or {}).get("evidence_ledger") or {}).get("missing")
+                    )
                 ):
                     fulfillment_status = "possible_gap_detected"
                 elif coverage_targets:
@@ -4021,6 +4081,18 @@ class WebAgent:
             result.setdefault("warnings", []).append(
                 "انتهت نافذة الوقت المحددة للطلب أو جرى تجاوزها قليلًا أثناء إنهاء اتصال جارٍ."
             )
+        search_report = result.get("search_report")
+        ledger = search_report.get("evidence_ledger") if isinstance(search_report, dict) else None
+        if isinstance(ledger, dict) and ledger.get("aspects"):
+            result["aspects"] = list(ledger.get("aspects") or [])
+            result["aspect_evidence_gaps"] = list(ledger.get("missing") or [])
+            result["aspect_diagnostics_ar"] = list(search_report.get("aspect_diagnostics_ar") or [])
+            result["aspect_coverage_lexical_ratio"] = ledger.get("coverage_ratio")
+            result["aspect_coverage_is_not_truth_score"] = True
+            if ledger.get("missing"):
+                result.setdefault("warnings", []).append(
+                    "بقيت محاور بلا مرشح نصي كافٍ بعد البحث؛ لا تُعد هذه النتيجة تغطية مكتملة."
+                )
         return result
 
     def _answer_with_budget(
@@ -4412,6 +4484,7 @@ class WebAgent:
         query_limit = MAX_PLAN_QUERIES - 1 if reserve_coverage_gap_query else MAX_PLAN_QUERIES
         plan["coverage_gap_repair_slot_reserved"] = reserve_coverage_gap_query
         plan["query_limit"] = query_limit
+        plan["coverage_targets"] = list(coverage_targets_for_budget)
         plan["queries"] = list(dict.fromkeys(final_topic_queries))[:query_limit]
 
         sources: list[dict[str, Any]] = []
