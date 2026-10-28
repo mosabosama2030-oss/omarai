@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **98**
+- ملفات المستودع في الجرد: **100**
 - ملفات Python المحللة: **56**
 - تعريفات Python المفهرسة: **1238**
 - تعريفات Python موثقة بوجود Docstring: **219**
 - تعريفات Python بلا Docstring: **771**
 - تعريفات لا ينطبق عليها Docstring: **248**
-- الرموز الساكنة الإضافية: **1684**
-- الأسطر النصية المفهرسة حرفيًا: **32078**
+- الرموز الساكنة الإضافية: **1692**
+- الأسطر النصية المفهرسة حرفيًا: **32147**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -57,6 +57,7 @@
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
 | FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 889 | 20 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 7174 | 129 | جرد الملف + عناوين Markdown |
+| FILE-228F2C2F4B | وثائق وفهرسة | [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L1) | Markdown | 1793 | 39 | جرد الملف + عناوين Markdown |
 | FILE-C4C6C55E1A | وثائق وفهرسة | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 35501 | 191 | جرد الملف + عناوين Markdown |
 | FILE-26428BDA96 | وثائق وفهرسة | [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 50328 | 262 | جرد الملف + عناوين Markdown |
 | FILE-160DC0B3E4 | وثائق وفهرسة | [docs/archive/README.md](archive/README.md#L1) | Markdown | 1021 | 8 | جرد الملف + عناوين Markdown |
@@ -82,6 +83,7 @@
 | FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 4756 | 48 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
+| FILE-D726630AC9 | وثائق وفهرسة | [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L1) | Markdown | 796 | 30 | جرد الملف + عناوين Markdown |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -1648,6 +1650,10 @@
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L106) | عنوان Markdown (H2) | مقارنة نسختين من عمرai (قبل/بعد) | 106 | [SRC-792A9A235D-L000106](ANSWER_QUALITY_BENCHMARK_AR.md#L106) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L116) | عنوان Markdown (H2) | نقاط عمياء معروفة | 116 | [SRC-792A9A235D-L000116](ANSWER_QUALITY_BENCHMARK_AR.md#L116) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L123) | عنوان Markdown (H2) | إضافة حالات لاحقًا | 123 | [SRC-792A9A235D-L000123](ANSWER_QUALITY_BENCHMARK_AR.md#L123) |
+| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L1) | عنوان Markdown (H1) | عمارة RAG الوكيلي في Omarai | 1 | [SRC-228F2C2F4B-L000001](ARCHITECTURE_AR.md#L1) |
+| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L2) | عنوان Markdown (H2) | المبادئ الخمسة | 2 | [SRC-228F2C2F4B-L000002](ARCHITECTURE_AR.md#L2) |
+| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L24) | عنوان Markdown (H2) | حدود الأمانة | 24 | [SRC-228F2C2F4B-L000024](ARCHITECTURE_AR.md#L24) |
+| [docs/ARCHITECTURE_AR.md](ARCHITECTURE_AR.md#L30) | عنوان Markdown (H2) | مسار الدمج في WebAgent | 30 | [SRC-228F2C2F4B-L000030](ARCHITECTURE_AR.md#L30) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
@@ -2411,6 +2417,10 @@
 | [docs/search_code.py](search_code.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 119 | [SRC-69F3587825-L000119](search_code.py#L119) |
 | [docs/search_code.py](search_code.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 124 | [SRC-69F3587825-L000124](search_code.py#L124) |
 | [docs/search_code.py](search_code.py#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 127 | [SRC-69F3587825-L000127](search_code.py#L127) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L1) | عنوان Markdown (H1) | ربط Agentic RAG مع WebAgent | 1 | [SRC-D726630AC9-L000001](WEB_AGENT_WIRE_AR.md#L1) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L2) | عنوان Markdown (H2) | الحد الأدنى (بعد التوليد) | 2 | [SRC-D726630AC9-L000002](WEB_AGENT_WIRE_AR.md#L2) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L14) | عنوان Markdown (H2) | المسار الوكيلي الكامل | 14 | [SRC-D726630AC9-L000014](WEB_AGENT_WIRE_AR.md#L14) |
+| [docs/WEB_AGENT_WIRE_AR.md](WEB_AGENT_WIRE_AR.md#L25) | عنوان Markdown (H2) | لا تفعل | 25 | [SRC-D726630AC9-L000025](WEB_AGENT_WIRE_AR.md#L25) |
 | [pyproject.toml](../pyproject.toml#L1) | قسم TOML | build-system | 1 | [SRC-50C86B7ED8-L000001](../pyproject.toml#L1) |
 | [pyproject.toml](../pyproject.toml#L2) | مفتاح إعداد TOML | requires | 2 | [SRC-50C86B7ED8-L000002](../pyproject.toml#L2) |
 | [pyproject.toml](../pyproject.toml#L3) | مفتاح إعداد TOML | build-backend | 3 | [SRC-50C86B7ED8-L000003](../pyproject.toml#L3) |

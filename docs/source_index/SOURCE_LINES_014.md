@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000663 إلى SRC-C7C7FA8853-L000003
+- النطاق: SRC-EEF2E6447C-L000663 إلى SRC-914817100D-L000050
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -311,6 +311,54 @@
 | [SRC-792A9A235D-L000127](../ANSWER_QUALITY_BENCHMARK_AR.md#L127) | 127 | ``"2. حدّث `case_count`."`` | — |
 | [SRC-792A9A235D-L000128](../ANSWER_QUALITY_BENCHMARK_AR.md#L128) | 128 | `"3. شغّل pytest للذخيرة والأداة."` | — |
 | [SRC-792A9A235D-L000129](../ANSWER_QUALITY_BENCHMARK_AR.md#L129) | 129 | `"4. لا تُدرج نتائج PASS/FAIL داخل JSON."` | — |
+## وثائق وفهرسة
+
+### FILE-228F2C2F4B — [docs/ARCHITECTURE_AR.md](../ARCHITECTURE_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-228F2C2F4B-L000001](../ARCHITECTURE_AR.md#L1) | 1 | `"# عمارة RAG الوكيلي في Omarai"` | — |
+| [SRC-228F2C2F4B-L000002](../ARCHITECTURE_AR.md#L2) | 2 | `""` | — |
+| [SRC-228F2C2F4B-L000003](../ARCHITECTURE_AR.md#L3) | 3 | `"## المبادئ الخمسة"` | — |
+| [SRC-228F2C2F4B-L000004](../ARCHITECTURE_AR.md#L4) | 4 | `""` | — |
+| [SRC-228F2C2F4B-L000005](../ARCHITECTURE_AR.md#L5) | 5 | `"1. **الاسترجاع كأداة (Retrieval-as-a-Tool)**"` | — |
+| [SRC-228F2C2F4B-L000006](../ARCHITECTURE_AR.md#L6) | 6 | `"   ليس خط أنابيب ثابتًا. الحلقة: خطط → نفّذ استرجاعًا → لاحظ → قرر → تحقق → ألّف."` | — |
+| [SRC-228F2C2F4B-L000007](../ARCHITECTURE_AR.md#L7) | 7 | ``"   التنفيذ: `RetrievalTool` + `AgenticRagOrchestrator`."`` | — |
+| [SRC-228F2C2F4B-L000008](../ARCHITECTURE_AR.md#L8) | 8 | `""` | — |
+| [SRC-228F2C2F4B-L000009](../ARCHITECTURE_AR.md#L9) | 9 | `"2. **ذاكرة منظمة Claim↔Evidence**"` | — |
+| [SRC-228F2C2F4B-L000010](../ARCHITECTURE_AR.md#L10) | 10 | `"   كل ادعاء يُربَط بمعرّفات أدلة مستقرة. الطلاقة مسموحة فقط مع روابط دعم."` | — |
+| [SRC-228F2C2F4B-L000011](../ARCHITECTURE_AR.md#L11) | 11 | ``"   التنفيذ: `MemoryBank` (مع توافق مفاهيمي مع `claim_evidence.py` على main)."`` | — |
+| [SRC-228F2C2F4B-L000012](../ARCHITECTURE_AR.md#L12) | 12 | `""` | — |
+| [SRC-228F2C2F4B-L000013](../ARCHITECTURE_AR.md#L13) | 13 | `"3. **وكلاء متخصصون**"` | — |
+| [SRC-228F2C2F4B-L000014](../ARCHITECTURE_AR.md#L14) | 14 | ``"   - `QueryReformulator` — تفكيك محاور واستعلامات"`` | — |
+| [SRC-228F2C2F4B-L000015](../ARCHITECTURE_AR.md#L15) | 15 | ``"   - `IterativeRetriever` — بحث متعدد القفزات"`` | — |
+| [SRC-228F2C2F4B-L000016](../ARCHITECTURE_AR.md#L16) | 16 | ``"   - `HallucinationGuard` — كشف ادعاءات بلا دعم"`` | — |
+| [SRC-228F2C2F4B-L000017](../ARCHITECTURE_AR.md#L17) | 17 | ``"   - `FinalComposer` — إجابة مع استشهادات أو امتناع"`` | — |
+| [SRC-228F2C2F4B-L000018](../ARCHITECTURE_AR.md#L18) | 18 | `""` | — |
+| [SRC-228F2C2F4B-L000019](../ARCHITECTURE_AR.md#L19) | 19 | `"4. **الاستشهاد جزء من التوليد**"` | — |
+| [SRC-228F2C2F4B-L000020](../ARCHITECTURE_AR.md#L20) | 20 | ``"   `format_claim_with_citations` يضيف `[المصدر N]` عند وجود دعم."`` | — |
+| [SRC-228F2C2F4B-L000021](../ARCHITECTURE_AR.md#L21) | 21 | `""` | — |
+| [SRC-228F2C2F4B-L000022](../ARCHITECTURE_AR.md#L22) | 22 | `"5. **تقييم مستمر**"` | — |
+| [SRC-228F2C2F4B-L000023](../ARCHITECTURE_AR.md#L23) | 23 | ``"   `eval_rag_metrics`: retrieval_relevance، faithfulness، aspect_coverage، writing_quality_proxy."`` | — |
+| [SRC-228F2C2F4B-L000024](../ARCHITECTURE_AR.md#L24) | 24 | `""` | — |
+| [SRC-228F2C2F4B-L000025](../ARCHITECTURE_AR.md#L25) | 25 | `"## حدود الأمانة"` | — |
+| [SRC-228F2C2F4B-L000026](../ARCHITECTURE_AR.md#L26) | 26 | `""` | — |
+| [SRC-228F2C2F4B-L000027](../ARCHITECTURE_AR.md#L27) | 27 | `"- الدعم **لفظي/معجمي** وليس entailment دلاليًا."` | — |
+| [SRC-228F2C2F4B-L000028](../ARCHITECTURE_AR.md#L28) | 28 | ``"- الاسترجاع يمر عبر `retrieve_fn` الذي يفرض SSRF/URL/الصلة في WebAgent."`` | — |
+| [SRC-228F2C2F4B-L000029](../ARCHITECTURE_AR.md#L29) | 29 | `"- الضبط الدقيق (SFT/RL) **لاحقًا** — ليس بديلًا عن هذه الطبقة."` | — |
+| [SRC-228F2C2F4B-L000030](../ARCHITECTURE_AR.md#L30) | 30 | `""` | — |
+| [SRC-228F2C2F4B-L000031](../ARCHITECTURE_AR.md#L31) | 31 | `"## مسار الدمج في WebAgent"` | — |
+| [SRC-228F2C2F4B-L000032](../ARCHITECTURE_AR.md#L32) | 32 | `""` | — |
+| [SRC-228F2C2F4B-L000033](../ARCHITECTURE_AR.md#L33) | 33 | ``"بعد جمع `sources` وقبل إرجاع الرد:"`` | — |
+| [SRC-228F2C2F4B-L000034](../ARCHITECTURE_AR.md#L34) | 34 | `""` | — |
+| [SRC-228F2C2F4B-L000035](../ARCHITECTURE_AR.md#L35) | 35 | ````"```python"```` | — |
+| [SRC-228F2C2F4B-L000036](../ARCHITECTURE_AR.md#L36) | 36 | `"from agents.agentic_rag_integration import web_agent_post_answer_hook"` | — |
+| [SRC-228F2C2F4B-L000037](../ARCHITECTURE_AR.md#L37) | 37 | `"extra = web_agent_post_answer_hook(question, answer, sources, aspects=aspects)"` | — |
+| [SRC-228F2C2F4B-L000038](../ARCHITECTURE_AR.md#L38) | 38 | `"result.update(extra)"` | — |
+| [SRC-228F2C2F4B-L000039](../ARCHITECTURE_AR.md#L39) | 39 | ````"```"```` | — |
 ## وثائق وفهرسة
 
 ### FILE-C4C6C55E1A — [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1)
@@ -858,51 +906,3 @@
 | [SRC-914817100D-L000048](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L48) | 48 | `"## دورة الإجابة المستهدفة"` | — |
 | [SRC-914817100D-L000049](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L49) | 49 | `""` | — |
 | [SRC-914817100D-L000050](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L50) | 50 | `"1. استخراج معايير السؤال المحددة دون تحويل تعليمات الأسلوب إلى معايير موضوعية."` | — |
-| [SRC-914817100D-L000051](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L51) | 51 | `"2. إعداد استعلام مستقل لكل معيار ضمن ميزانية محدودة."` | — |
-| [SRC-914817100D-L000052](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L52) | 52 | `"3. جمع النتائج ورفض النتائج غير ذات الصلة وفق المرشحات الحالية."` | — |
-| [SRC-914817100D-L000053](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L53) | 53 | `"4. تسجيل إشارة المصدر لكل معيار منفصلة عن مجرد ذكره في الإجابة."` | — |
-| [SRC-914817100D-L000054](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L54) | 54 | `"5. توليد الإجابة ومراجعتها مقابل النصوص المتاحة."` | — |
-| [SRC-914817100D-L000055](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L55) | 55 | `"6. إعادة فحص المعايير والاستشهادات والأرقام، وإظهار الفجوات بدل إعلان الاكتمال بلا دليل."` | — |
-| [SRC-914817100D-L000056](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L56) | 56 | `"7. إذا بقيت الفجوة، فالإجابة الصحيحة هي التصريح بأن المعلومة غير متاحة/غير محسومة، لا اختلاقها."` | — |
-| [SRC-914817100D-L000057](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L57) | 57 | `""` | — |
-| [SRC-914817100D-L000058](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L58) | 58 | `"## بوابة القبول"` | — |
-| [SRC-914817100D-L000059](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L59) | 59 | `""` | — |
-| [SRC-914817100D-L000060](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L60) | 60 | `"\| البند \| دليل القبول المطلوب \|"` | — |
-| [SRC-914817100D-L000061](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L61) | 61 | `"\|---\|---\|"` | — |
-| [SRC-914817100D-L000062](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L62) | 62 | `"\| حفظ المحاور \| كل معيار صريح محفوظ في تقرير التغطية \|"` | — |
-| [SRC-914817100D-L000063](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L63) | 63 | `"\| بحث لكل معيار \| استعلام منفصل لكل معيار ضمن حد الاستعلامات \|"` | — |
-| [SRC-914817100D-L000064](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L64) | 64 | `"\| أدلة لكل معيار \| إشارة مصدر مستقلة عن وجود الكلمات في الإجابة \|"` | — |
-| [SRC-914817100D-L000065](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L65) | 65 | `"\| صدق الحالة \| لا تتحول الإشارة اللفظية إلى ادعاء تحقق دلالي \|"` | — |
-| [SRC-914817100D-L000066](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L66) | 66 | `"\| الاستشهادات \| لا تُقبل مؤشرات مصدر خارج نطاق المصادر المرسلة للنموذج \|"` | — |
-| [SRC-914817100D-L000067](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L67) | 67 | `"\| فجوات الأدلة \| تظهر المحاور التي لا توجد لها إشارات مصدر \|"` | — |
-| [SRC-914817100D-L000068](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L68) | 68 | `"\| الموارد \| حدود الاستعلامات والصفحات والميزانية تبقى نافذة \|"` | — |
-| [SRC-914817100D-L000069](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L69) | 69 | `"\| عدم التراجع \| الاختبارات الحالية واختبارات القبول الجديدة تنجح على CI \|"` | — |
-| [SRC-914817100D-L000070](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L70) | 70 | `"\| الاستضافة \| إعادة اختبار حي على عنوان الاستضافة الصحيح ونسخة البناء الفعلية بعد موافقة منفصلة \|"` | — |
-| [SRC-914817100D-L000071](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L71) | 71 | `""` | — |
-| [SRC-914817100D-L000072](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L72) | 72 | `"## الحالة الصادقة — آخر تحقق 27 أكتوبر 2026"` | — |
-| [SRC-914817100D-L000073](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L73) | 73 | `""` | — |
-| [SRC-914817100D-L000074](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L74) | 74 | `"- **FIXED_IN_BRANCH:** استعلامات مخصصة للمعايير الصريحة؛ حجز استعلام إضافي محدود في الأسئلة المركبة المعتادة؛ بحث فجوة الأدلة بعد مراجعة المسودة؛ إعادة توليد ومراجعة عند ورود دليل جديد؛ مؤشرات مصدر لكل محور؛ مطابقة لفظية عربية/إنجليزية محافظة؛ وعرض نتيجة بحث الفجوة في الواجهة."` | — |
-| [SRC-914817100D-L000075](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L75) | 75 | ``"- **CI — PASS على رأس الكود الذي تم التحقق منه:** تشغيل GitHub Actions [#40516576478](https://github.com/mosabosama2030-oss/omarai/actions/runs/40516576478) على commit `88226f8767664d9e4163aa11c49e4d424e5e25a6`: نجح Ruff، والتحقق من الفهارس المولدة، و**428 اختبارًا على Python 3.11 و428 اختبارًا على Python 3.12**، وبناء الحاوية واختبار API المحمي."`` | — |
-| [SRC-914817100D-L000076](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L76) | 76 | `"- **الفهرس:** سجل التدقيق المولّد على الفرع يعرض **82/82 ملفًا و28,244 سجل سطر وتغطية حسابية 100% PASS**. هذا تحقق من اكتمال الفهرسة الحسابية للملفات المؤهلة فقط، وليس تحققًا من جودة الكود أو خلوه من العيوب."` | — |
-| [SRC-914817100D-L000077](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L77) | 77 | `"- **HOSTED_ACCEPTANCE — PARTIAL / NOT RUN:** لم يُنشر هذا الفرع ولم يُختبر على الاستضافة الحية؛ لا يوجد هنا عنوان استضافة صحيح تم التحقق منه، ولا يجوز استنتاج نجاح حي من CI."` | — |
-| [SRC-914817100D-L000078](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L78) | 78 | `"- **SEMANTIC_COMPLETENESS — NOT VERIFIED:** فحص الكلمات ومطابقة المرادفات إشارات استدلالية فقط؛ لا يثبتان أن المصدر يسند الادعاء أو أن كل مطلب أُجيب عنه دلاليًا."` | — |
-| [SRC-914817100D-L000079](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L79) | 79 | `"- **MERGE/DEPLOY — NOT DONE:** PR #107 ما زال مفتوحًا وغير مدمج؛ حالته الحالية جاهزة للمراجعة. لم أدمج الفرع ولم أنشر أي إصدار. القرار النهائي لك."` | — |
-| [SRC-914817100D-L000080](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L80) | 80 | `""` | — |
-| [SRC-914817100D-L000081](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L81) | 81 | `"## المراجع"` | — |
-| [SRC-914817100D-L000082](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L82) | 82 | `""` | — |
-| [SRC-914817100D-L000083](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L83) | 83 | ``"- `agents/web_agent.py`"`` | — |
-| [SRC-914817100D-L000084](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L84) | 84 | ``"- `agents/answer_validation.py`"`` | — |
-| [SRC-914817100D-L000085](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L85) | 85 | ``"- `tests/test_intent_router_integration.py`"`` | — |
-| [SRC-914817100D-L000086](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L86) | 86 | ``"- `tests/test_answer_validation.py`"`` | — |
-## وثائق وفهرسة
-
-### FILE-C7C7FA8853 — [docs/DEPLOY_RAILWAY_AR.md](../DEPLOY_RAILWAY_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-C7C7FA8853-L000001](../DEPLOY_RAILWAY_AR.md#L1) | 1 | `"# نشر Omarai على Railway — دليل عربي"` | — |
-| [SRC-C7C7FA8853-L000002](../DEPLOY_RAILWAY_AR.md#L2) | 2 | `""` | — |
-| [SRC-C7C7FA8853-L000003](../DEPLOY_RAILWAY_AR.md#L3) | 3 | `"هذا المستودع أصبح يحتوي على Dockerfile وإعداد Railway قابلين للبناء. **وجود الإعدادات لا يعني أن الخدمة نُشرت بالفعل**؛ يلزم ربط حساب الاستضافة بالمستودع وإضافة الأسرار من لوحة التحكم."` | — |
