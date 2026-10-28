@@ -3507,3 +3507,69 @@ def test_latest_mode_does_not_generate_answer_from_stale_pages(monkeypatch):
     assert guardrails["initial"]["rejection_counts"]["stale"] == 1
     assert guardrails["final"]["current_evidence_status"] == "no_current_eligible_evidence"
     assert result["search_report"]["search_outcome"] == "attempted_no_usable_sources"
+
+
+def test_official_government_lookup_never_synthesizes_tourism_result(monkeypatch):
+    agent = WebAgent()
+    question = "ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية"
+    plan = {
+        "queries": ["وزارة الاتصالات وتكنولوجيا المعلومات مصر الموقع الرسمي"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "fixture",
+    }
+    calls = []
+
+    def collect(research_plan):
+        calls.append(dict(research_plan))
+        candidate = sample_source(0)
+        candidate.update({
+            "title": "وزارة الاتصالات في مصر ومعلومات سياحية",
+            "url": "https://visitegypt.com/",
+            "domain": "visitegypt.com",
+            "snippet": "معلومات عن الوزارة ضمن دليل سياحي لمصر",
+            "page_fetched": True,
+            "page_text": "معلومات سياحية تذكر وزارة الاتصالات",
+            "queries": list(research_plan["queries"]),
+        })
+        return [candidate], [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [],
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["fixture"],
+            "provider_counts": {"fixture": 1},
+            "platform_counts": {"web": 1},
+            "social_direct_results": 0,
+            "depth": "standard",
+            "planning_method": "fixture",
+            "provider_diagnostics": [],
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda *args, **kwargs: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: pytest.fail(
+            "A tourism result must never be passed to answer generation as the official site"
+        ),
+    )
+
+    result = agent.answer(question, mode="auto")
+
+    assert calls  # initial research, plus bounded repair where applicable
+    assert result["kind"] == "insufficient_evidence"
+    assert result["sources"] == []
+    guardrails = result["search_report"]["source_guardrails"]
+    assert guardrails["initial"]["official_government_domain_required"] is True
+    assert guardrails["initial"]["rejection_counts"] == {
+        "not_an_official_government_domain": 1
+    }
+    assert guardrails["final"]["accepted_sources"] == 0
+    assert result["search_report"]["usable_sources_after_filtering"] == 0
