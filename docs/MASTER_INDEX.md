@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **96**
 - ملفات Python المحللة: **54**
-- تعريفات Python المفهرسة: **1213**
+- تعريفات Python المفهرسة: **1224**
 - تعريفات Python موثقة بوجود Docstring: **218**
-- تعريفات Python بلا Docstring: **749**
-- تعريفات لا ينطبق عليها Docstring: **246**
+- تعريفات Python بلا Docstring: **759**
+- تعريفات لا ينطبق عليها Docstring: **247**
 - الرموز الساكنة الإضافية: **1683**
-- الأسطر النصية المفهرسة حرفيًا: **31525**
+- الأسطر النصية المفهرسة حرفيًا: **31740**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -117,7 +117,7 @@
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 15643 | 329 | جرد الملف + AST Python |
-| FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 7323 | 195 | جرد الملف + AST Python |
+| FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 15427 | 410 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 133873 | 3444 | جرد الملف + AST Python |
@@ -1067,22 +1067,33 @@
 | [tests/test_research.py](../tests/test_research.py#L281) | دالة | test_collect_research_compacts_queries_before_provider_calls | لا توجد Docstring. | ناقص | 281 | [SRC-6BF96689A8-L000281](../tests/test_research.py#L281) |
 | [tests/test_research.py](../tests/test_research.py#L304) | دالة | test_collect_research_skips_provider_calls_without_topic_or_direct_url | لا توجد Docstring. | ناقص | 304 | [SRC-6BF96689A8-L000304](../tests/test_research.py#L304) |
 | [tests/test_research.py](../tests/test_research.py#L326) | دالة | test_fallback_plan_keeps_direct_url_without_generic_keyword_query | لا توجد Docstring. | ناقص | 326 | [SRC-6BF96689A8-L000326](../tests/test_research.py#L326) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L15) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 15 | [SRC-01E35ABC46-L000015](../tests/test_research_guardrails.py#L15) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L21) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 21 | [SRC-01E35ABC46-L000021](../tests/test_research_guardrails.py#L21) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L27) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 27 | [SRC-01E35ABC46-L000027](../tests/test_research_guardrails.py#L27) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L35) | دالة | test_depth_does_not_trigger_on_partial_words | لا توجد Docstring. | ناقص | 35 | [SRC-01E35ABC46-L000035](../tests/test_research_guardrails.py#L35) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L43) | دالة | test_freshness_positive_english | لا توجد Docstring. | ناقص | 43 | [SRC-01E35ABC46-L000043](../tests/test_research_guardrails.py#L43) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L50) | دالة | test_freshness_positive_arabic | لا توجد Docstring. | ناقص | 50 | [SRC-01E35ABC46-L000050](../tests/test_research_guardrails.py#L50) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L56) | دالة | test_freshness_negative_know_and_snowden | لا توجد Docstring. | ناقص | 56 | [SRC-01E35ABC46-L000056](../tests/test_research_guardrails.py#L56) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L65) | دالة | test_relevance_keeps_matching_source | لا توجد Docstring. | ناقص | 65 | [SRC-01E35ABC46-L000065](../tests/test_research_guardrails.py#L65) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L91) | دالة | test_relevance_rejects_unrelated | لا توجد Docstring. | ناقص | 91 | [SRC-01E35ABC46-L000091](../tests/test_research_guardrails.py#L91) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L104) | دالة | test_relevance_keeps_official_despite_wording | لا توجد Docstring. | ناقص | 104 | [SRC-01E35ABC46-L000104](../tests/test_research_guardrails.py#L104) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L118) | دالة | test_filter_deduplicates | لا توجد Docstring. | ناقص | 118 | [SRC-01E35ABC46-L000118](../tests/test_research_guardrails.py#L118) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L144) | دالة | test_filter_empty_and_failed_extract | لا توجد Docstring. | ناقص | 144 | [SRC-01E35ABC46-L000144](../tests/test_research_guardrails.py#L144) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L164) | دالة | test_evidence_adequate | لا توجد Docstring. | ناقص | 164 | [SRC-01E35ABC46-L000164](../tests/test_research_guardrails.py#L164) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L176) | دالة | test_evidence_insufficient_empty | لا توجد Docstring. | ناقص | 176 | [SRC-01E35ABC46-L000176](../tests/test_research_guardrails.py#L176) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L182) | دالة | test_evidence_failed_provider | لا توجد Docstring. | ناقص | 182 | [SRC-01E35ABC46-L000182](../tests/test_research_guardrails.py#L182) |
-| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L188) | دالة | test_evidence_partial_single_source | لا توجد Docstring. | ناقص | 188 | [SRC-01E35ABC46-L000188](../tests/test_research_guardrails.py#L188) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L23) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 23 | [SRC-01E35ABC46-L000023](../tests/test_research_guardrails.py#L23) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L29) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 29 | [SRC-01E35ABC46-L000029](../tests/test_research_guardrails.py#L29) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L35) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 35 | [SRC-01E35ABC46-L000035](../tests/test_research_guardrails.py#L35) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L43) | دالة | test_depth_does_not_trigger_on_partial_words | لا توجد Docstring. | ناقص | 43 | [SRC-01E35ABC46-L000043](../tests/test_research_guardrails.py#L43) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L51) | دالة | test_freshness_positive_english | لا توجد Docstring. | ناقص | 51 | [SRC-01E35ABC46-L000051](../tests/test_research_guardrails.py#L51) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L58) | دالة | test_freshness_positive_arabic | لا توجد Docstring. | ناقص | 58 | [SRC-01E35ABC46-L000058](../tests/test_research_guardrails.py#L58) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L64) | دالة | test_freshness_negative_know_and_snowden | لا توجد Docstring. | ناقص | 64 | [SRC-01E35ABC46-L000064](../tests/test_research_guardrails.py#L64) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L73) | دالة | test_relevance_keeps_matching_source | لا توجد Docstring. | ناقص | 73 | [SRC-01E35ABC46-L000073](../tests/test_research_guardrails.py#L73) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L99) | دالة | test_relevance_rejects_unrelated | لا توجد Docstring. | ناقص | 99 | [SRC-01E35ABC46-L000099](../tests/test_research_guardrails.py#L99) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L112) | دالة | test_relevance_keeps_official_despite_wording | لا توجد Docstring. | ناقص | 112 | [SRC-01E35ABC46-L000112](../tests/test_research_guardrails.py#L112) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L126) | دالة | test_filter_deduplicates | لا توجد Docstring. | ناقص | 126 | [SRC-01E35ABC46-L000126](../tests/test_research_guardrails.py#L126) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L152) | دالة | test_filter_empty_and_failed_extract | لا توجد Docstring. | ناقص | 152 | [SRC-01E35ABC46-L000152](../tests/test_research_guardrails.py#L152) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L172) | دالة | test_evidence_adequate | لا توجد Docstring. | ناقص | 172 | [SRC-01E35ABC46-L000172](../tests/test_research_guardrails.py#L172) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L184) | دالة | test_evidence_insufficient_empty | لا توجد Docstring. | ناقص | 184 | [SRC-01E35ABC46-L000184](../tests/test_research_guardrails.py#L184) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L190) | دالة | test_evidence_failed_provider | لا توجد Docstring. | ناقص | 190 | [SRC-01E35ABC46-L000190](../tests/test_research_guardrails.py#L190) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L196) | دالة | test_evidence_partial_single_source | لا توجد Docstring. | ناقص | 196 | [SRC-01E35ABC46-L000196](../tests/test_research_guardrails.py#L196) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L209) | متغير/ثابت Python | _GUARDRAIL_NOW | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 209 | [SRC-01E35ABC46-L000209](../tests/test_research_guardrails.py#L209) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L212) | دالة | _guardrail_source | لا توجد Docstring. | ناقص | 212 | [SRC-01E35ABC46-L000212](../tests/test_research_guardrails.py#L212) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L231) | دالة | test_official_government_website_request_rejects_tourism_domain | لا توجد Docstring. | ناقص | 231 | [SRC-01E35ABC46-L000231](../tests/test_research_guardrails.py#L231) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L255) | دالة | test_official_request_fails_closed_when_only_non_government_result_exists | لا توجد Docstring. | ناقص | 255 | [SRC-01E35ABC46-L000255](../tests/test_research_guardrails.py#L255) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L269) | دالة | test_current_evidence_requires_recent_date_and_readable_page | لا توجد Docstring. | ناقص | 269 | [SRC-01E35ABC46-L000269](../tests/test_research_guardrails.py#L269) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L285) | دالة | test_latest_mode_excludes_old_undated_and_unread_pages | لا توجد Docstring. | ناقص | 285 | [SRC-01E35ABC46-L000285](../tests/test_research_guardrails.py#L285) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L314) | دالة | test_official_site_navigation_does_not_require_news_publication_date | لا توجد Docstring. | ناقص | 314 | [SRC-01E35ABC46-L000314](../tests/test_research_guardrails.py#L314) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L334) | دالة | test_social_mode_rejects_non_social_sources_and_classifies_public_posts | لا توجد Docstring. | ناقص | 334 | [SRC-01E35ABC46-L000334](../tests/test_research_guardrails.py#L334) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L371) | دالة | test_social_classification_does_not_claim_unknown_post_is_verified_experience | لا توجد Docstring. | ناقص | 371 | [SRC-01E35ABC46-L000371](../tests/test_research_guardrails.py#L371) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L385) | دالة | test_today_query_requires_current_evidence_even_in_auto_mode | لا توجد Docstring. | ناقص | 385 | [SRC-01E35ABC46-L000385](../tests/test_research_guardrails.py#L385) |
+| [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L403) | دالة | test_recent_source_date_is_not_enough_without_readable_page_text | لا توجد Docstring. | ناقص | 403 | [SRC-01E35ABC46-L000403](../tests/test_research_guardrails.py#L403) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |
