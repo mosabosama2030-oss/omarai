@@ -62,7 +62,7 @@
 | [SRC-686F71AA50-L000367](../../agents/task_understanding.py#L367) | 367 | `"        \"social_opinions\", \"summarize\", \"troubleshoot\", \"compare\","` | — |
 | [SRC-686F71AA50-L000368](../../agents/task_understanding.py#L368) | 368 | `"        \"medical_information\", \"legal_information\", \"coding_or_technical_design\","` | — |
 | [SRC-686F71AA50-L000369](../../agents/task_understanding.py#L369) | 369 | `"        \"data_analysis\", \"translation\", \"calculation\", \"planning\","` | — |
-| [SRC-686F71AA50-L000370](../../agents/task_understanding.py#L370) | 370 | `"        \"writing_or_editing\", \"creative_generation\", \"lead_generation\","` | — |
+| [SRC-686F71AA50-L000370](../../agents/task_understanding.py#L370) | 370 | `"        \"creative_generation\", \"writing_or_editing\", \"lead_generation\","` | — |
 | [SRC-686F71AA50-L000371](../../agents/task_understanding.py#L371) | 371 | `"        \"how_to\", \"recommendation\", \"current_information\", \"find_or_discover\","` | — |
 | [SRC-686F71AA50-L000372](../../agents/task_understanding.py#L372) | 372 | `"        \"explain_or_define\", \"general_research\","` | — |
 | [SRC-686F71AA50-L000373](../../agents/task_understanding.py#L373) | 373 | `"    ):"` | — |
