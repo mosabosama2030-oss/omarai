@@ -687,7 +687,7 @@
 | [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"        or any(normalize_text(term) in normalized for term in (\"هات رابط\", \"الموقع الرسمي\", \"website\", \"homepage\"))"` | — |
 | [SRC-686F71AA50-L000213](../../agents/task_understanding.py#L213) | 213 | `"    )"` | — |
 | [SRC-686F71AA50-L000214](../../agents/task_understanding.py#L214) | 214 | `"    explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))"` | — |
-| [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"    current_required = clean_mode == \"latest\" or (explicit_freshness and not navigation)"` | — |
+| [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"    current_required = (clean_mode == \"latest\" or explicit_freshness) and not navigation"` | — |
 | [SRC-686F71AA50-L000216](../../agents/task_understanding.py#L216) | 216 | `"    social_required = clean_mode == \"social\" or bool(matches[\"social_opinions\"])"` | — |
 | [SRC-686F71AA50-L000217](../../agents/task_understanding.py#L217) | 217 | `"    family = _primary_family(matches, clean_mode, intent_route, normalized)"` | — |
 | [SRC-686F71AA50-L000218](../../agents/task_understanding.py#L218) | 218 | `""` | — |
