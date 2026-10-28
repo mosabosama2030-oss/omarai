@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **101**
-- ملفات Python المحللة: **57**
-- تعريفات Python المفهرسة: **1271**
-- تعريفات Python موثقة بوجود Docstring: **220**
-- تعريفات Python بلا Docstring: **789**
-- تعريفات لا ينطبق عليها Docstring: **262**
-- الرموز الساكنة الإضافية: **1693**
-- الأسطر النصية المفهرسة حرفيًا: **32465**
+- ملفات المستودع في الجرد: **103**
+- ملفات Python المحللة: **58**
+- تعريفات Python المفهرسة: **1313**
+- تعريفات Python موثقة بوجود Docstring: **221**
+- تعريفات Python بلا Docstring: **812**
+- تعريفات لا ينطبق عليها Docstring: **280**
+- الرموز الساكنة الإضافية: **1700**
+- الأسطر النصية المفهرسة حرفيًا: **32827**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -44,6 +44,7 @@
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-390A5E6F46 | الوكيل والمنطق | [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L1) | Python | 3002 | 95 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 24099 | 537 | جرد الملف + AST Python |
+| FILE-9D8012A1A0 | الوكيل والمنطق | [agents/memory_bank.py](../agents/memory_bank.py#L1) | Python | 11548 | 330 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32243 | 753 | جرد الملف + AST Python |
@@ -69,6 +70,7 @@
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 6869 | 43 | جرد الملف + عناوين Markdown |
+| FILE-2574986393 | وثائق وفهرسة | [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L1) | Markdown | 1318 | 32 | جرد الملف + عناوين Markdown |
 | FILE-53E640B937 | وثائق وفهرسة | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | Markdown | 12943 | 136 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
@@ -235,6 +237,48 @@
 | [agents/intent_router.py](../agents/intent_router.py#L368) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 368 | [SRC-5587371288-L000368](../agents/intent_router.py#L368) |
 | [agents/intent_router.py](../agents/intent_router.py#L385) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 385 | [SRC-5587371288-L000385](../agents/intent_router.py#L385) |
 | [agents/intent_router.py](../agents/intent_router.py#L411) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 411 | [SRC-5587371288-L000411](../agents/intent_router.py#L411) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L20) | متغير/ثابت Python | _TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-9D8012A1A0-L000020](../agents/memory_bank.py#L20) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L21) | متغير/ثابت Python | _SENTENCE_SPLIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-9D8012A1A0-L000021](../agents/memory_bank.py#L21) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L22) | متغير/ثابت Python | _CITATION_MARK | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-9D8012A1A0-L000022](../agents/memory_bank.py#L22) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L23) | متغير/ثابت Python | _STOP | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-9D8012A1A0-L000023](../agents/memory_bank.py#L23) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L30) | دالة | _norm | لا توجد Docstring. | ناقص | 30 | [SRC-9D8012A1A0-L000030](../agents/memory_bank.py#L30) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L36) | دالة | _tokens | لا توجد Docstring. | ناقص | 36 | [SRC-9D8012A1A0-L000036](../agents/memory_bank.py#L36) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L40) | دالة | _evidence_id | لا توجد Docstring. | ناقص | 40 | [SRC-9D8012A1A0-L000040](../agents/memory_bank.py#L40) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L45) | دالة | _claim_id | لا توجد Docstring. | ناقص | 45 | [SRC-9D8012A1A0-L000045](../agents/memory_bank.py#L45) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L50) | كلاس | Evidence | لا توجد Docstring. | ناقص | 50 | [SRC-9D8012A1A0-L000050](../agents/memory_bank.py#L50) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L51) | متغير/ثابت Python | Evidence.evidence_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 51 | [SRC-9D8012A1A0-L000051](../agents/memory_bank.py#L51) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L52) | متغير/ثابت Python | Evidence.url | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 52 | [SRC-9D8012A1A0-L000052](../agents/memory_bank.py#L52) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L53) | متغير/ثابت Python | Evidence.title | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 53 | [SRC-9D8012A1A0-L000053](../agents/memory_bank.py#L53) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L54) | متغير/ثابت Python | Evidence.snippet | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 54 | [SRC-9D8012A1A0-L000054](../agents/memory_bank.py#L54) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L55) | متغير/ثابت Python | Evidence.provider | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 55 | [SRC-9D8012A1A0-L000055](../agents/memory_bank.py#L55) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L56) | متغير/ثابت Python | Evidence.source_class | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 56 | [SRC-9D8012A1A0-L000056](../agents/memory_bank.py#L56) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L57) | متغير/ثابت Python | Evidence.page_fetched | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 57 | [SRC-9D8012A1A0-L000057](../agents/memory_bank.py#L57) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L58) | متغير/ثابت Python | Evidence.source_index | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 58 | [SRC-9D8012A1A0-L000058](../agents/memory_bank.py#L58) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L60) | دالة | Evidence.to_dict | لا توجد Docstring. | ناقص | 60 | [SRC-9D8012A1A0-L000060](../agents/memory_bank.py#L60) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L64) | دالة | Evidence.readable | لا توجد Docstring. | ناقص | 64 | [SRC-9D8012A1A0-L000064](../agents/memory_bank.py#L64) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L69) | كلاس | Claim | لا توجد Docstring. | ناقص | 69 | [SRC-9D8012A1A0-L000069](../agents/memory_bank.py#L69) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L70) | متغير/ثابت Python | Claim.claim_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 70 | [SRC-9D8012A1A0-L000070](../agents/memory_bank.py#L70) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L71) | متغير/ثابت Python | Claim.text | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 71 | [SRC-9D8012A1A0-L000071](../agents/memory_bank.py#L71) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L72) | متغير/ثابت Python | Claim.evidence_ids | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 72 | [SRC-9D8012A1A0-L000072](../agents/memory_bank.py#L72) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L73) | متغير/ثابت Python | Claim.support_score | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 73 | [SRC-9D8012A1A0-L000073](../agents/memory_bank.py#L73) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L74) | متغير/ثابت Python | Claim.status | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 74 | [SRC-9D8012A1A0-L000074](../agents/memory_bank.py#L74) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L75) | متغير/ثابت Python | Claim.aspect | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 75 | [SRC-9D8012A1A0-L000075](../agents/memory_bank.py#L75) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L77) | دالة | Claim.to_dict | لا توجد Docstring. | ناقص | 77 | [SRC-9D8012A1A0-L000077](../agents/memory_bank.py#L77) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L81) | كلاس | MemoryBank | In-session claim↔evidence graph for agentic RAG. | موثق | 81 | [SRC-9D8012A1A0-L000081](../agents/memory_bank.py#L81) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L84) | دالة | MemoryBank.__init__ | لا توجد Docstring. | ناقص | 84 | [SRC-9D8012A1A0-L000084](../agents/memory_bank.py#L84) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L91) | دالة | MemoryBank.ingest_sources | لا توجد Docstring. | ناقص | 91 | [SRC-9D8012A1A0-L000091](../agents/memory_bank.py#L91) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L125) | دالة | MemoryBank._score_claim_against | لا توجد Docstring. | ناقص | 125 | [SRC-9D8012A1A0-L000125](../agents/memory_bank.py#L125) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L132) | دالة | MemoryBank.bind_claim | لا توجد Docstring. | ناقص | 132 | [SRC-9D8012A1A0-L000132](../agents/memory_bank.py#L132) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L168) | دالة | MemoryBank.bind_answer | لا توجد Docstring. | ناقص | 168 | [SRC-9D8012A1A0-L000168](../agents/memory_bank.py#L168) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L188) | دالة | MemoryBank.format_claim_with_citations | لا توجد Docstring. | ناقص | 188 | [SRC-9D8012A1A0-L000188](../agents/memory_bank.py#L188) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L200) | دالة | MemoryBank.render_supported_answer | لا توجد Docstring. | ناقص | 200 | [SRC-9D8012A1A0-L000200](../agents/memory_bank.py#L200) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L208) | دالة | MemoryBank.citation_map | لا توجد Docstring. | ناقص | 208 | [SRC-9D8012A1A0-L000208](../agents/memory_bank.py#L208) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L222) | دالة | MemoryBank.stats | لا توجد Docstring. | ناقص | 222 | [SRC-9D8012A1A0-L000222](../agents/memory_bank.py#L222) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L240) | دالة | MemoryBank.graph | لا توجد Docstring. | ناقص | 240 | [SRC-9D8012A1A0-L000240](../agents/memory_bank.py#L240) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L257) | دالة | MemoryBank.to_claim_evidence_ledger_shape | لا توجد Docstring. | ناقص | 257 | [SRC-9D8012A1A0-L000257](../agents/memory_bank.py#L257) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L302) | دالة | MemoryBank.to_dict | لا توجد Docstring. | ناقص | 302 | [SRC-9D8012A1A0-L000302](../agents/memory_bank.py#L302) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L314) | دالة | split_answer_into_claim_sentences | لا توجد Docstring. | ناقص | 314 | [SRC-9D8012A1A0-L000314](../agents/memory_bank.py#L314) |
+| [agents/memory_bank.py](../agents/memory_bank.py#L319) | دالة | build_memory_from_sources_and_answer | لا توجد Docstring. | ناقص | 319 | [SRC-9D8012A1A0-L000319](../agents/memory_bank.py#L319) |
 | [agents/omarai.py](../agents/omarai.py#L14) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-C9CF9B54F8-L000014](../agents/omarai.py#L14) |
 | [agents/omarai.py](../agents/omarai.py#L15) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-C9CF9B54F8-L000015](../agents/omarai.py#L15) |
 | [agents/omarai.py](../agents/omarai.py#L16) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-C9CF9B54F8-L000016](../agents/omarai.py#L16) |
@@ -1911,6 +1955,13 @@
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 38 | [SRC-C8EA754D73-L000038](IMPLEMENTATION_SCOPE.md#L38) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 39 | [SRC-C8EA754D73-L000039](IMPLEMENTATION_SCOPE.md#L39) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 40 | [SRC-C8EA754D73-L000040](IMPLEMENTATION_SCOPE.md#L40) |
+| [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L1) | عنوان Markdown (H1) | بنك الذاكرة المنظمة (Memory Bank) | 1 | [SRC-2574986393-L000001](nlu/MEMORY_BANK_AR.md#L1) |
+| [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L2) | عنوان Markdown (H2) | الهدف | 2 | [SRC-2574986393-L000002](nlu/MEMORY_BANK_AR.md#L2) |
+| [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L5) | عنوان Markdown (H2) | الكيانات | 5 | [SRC-2574986393-L000005](nlu/MEMORY_BANK_AR.md#L5) |
+| [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L9) | عنوان Markdown (H2) | العمليات | 9 | [SRC-2574986393-L000009](nlu/MEMORY_BANK_AR.md#L9) |
+| [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L17) | عنوان Markdown (H2) | التصنيف | 17 | [SRC-2574986393-L000017](nlu/MEMORY_BANK_AR.md#L17) |
+| [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L24) | عنوان Markdown (H2) | الأمانة | 24 | [SRC-2574986393-L000024](nlu/MEMORY_BANK_AR.md#L24) |
+| [docs/nlu/MEMORY_BANK_AR.md](nlu/MEMORY_BANK_AR.md#L27) | عنوان Markdown (H2) | الربط مع WebAgent | 27 | [SRC-2574986393-L000027](nlu/MEMORY_BANK_AR.md#L27) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | عنوان Markdown (H1) | خطة تنفيذ RAG الوكيلي وسلامة الأدلة في Omarai | 1 | [SRC-53E640B937-L000001](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) | عنوان Markdown (H2) | تعريف النظام المستهدف | 4 | [SRC-53E640B937-L000004](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) | عنوان Markdown (H2) | سجل البنود وحالتها | 8 | [SRC-53E640B937-L000008](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) |

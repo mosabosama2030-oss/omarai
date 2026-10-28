@@ -4,9 +4,47 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000334 إلى SRC-D911B73392-L000066
+- النطاق: SRC-65551FB29F-L000547 إلى SRC-0F910493E8-L000771
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-65551FB29F — [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-65551FB29F-L000547](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L547) | 547 | `"## الأمن والهوية وسلسلة التوريد"` | — |
+| [SRC-65551FB29F-L000548](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L548) | 548 | `"- [NIST SSDF SP 800-218](https://csrc.nist.gov/pubs/sp/800/218/final) — راجع وضع المراجعة والإصدارات الحديثة قبل التقييم."` | — |
+| [SRC-65551FB29F-L000549](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L549) | 549 | `"- [NIST Zero Trust Architecture SP 800-207](https://www.nist.gov/publications/zero-trust-architecture)"` | — |
+| [SRC-65551FB29F-L000550](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L550) | 550 | `"- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)"` | — |
+| [SRC-65551FB29F-L000551](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L551) | 551 | `"- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/)"` | — |
+| [SRC-65551FB29F-L000552](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L552) | 552 | `"- [SLSA](https://slsa.dev/)"` | — |
+| [SRC-65551FB29F-L000553](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L553) | 553 | `"- [CISA Secure by Design](https://www.cisa.gov/securebydesign)"` | — |
+| [SRC-65551FB29F-L000554](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L554) | 554 | `""` | — |
+| [SRC-65551FB29F-L000555](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L555) | 555 | `"## الذكاء الاصطناعي والبيانات والرصد"` | — |
+| [SRC-65551FB29F-L000556](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L556) | 556 | `"- [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)"` | — |
+| [SRC-65551FB29F-L000557](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L557) | 557 | `"- [NIST Generative AI Profile — AI 600-1](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)"` | — |
+| [SRC-65551FB29F-L000558](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L558) | 558 | `"- [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/)"` | — |
+| [SRC-65551FB29F-L000559](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L559) | 559 | `"- [OpenTelemetry](https://opentelemetry.io/docs/)"` | — |
+| [SRC-65551FB29F-L000560](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L560) | 560 | `""` | — |
+| [SRC-65551FB29F-L000561](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L561) | 561 | `"## تجربة المستخدم والاقتصاد"` | — |
+| [SRC-65551FB29F-L000562](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L562) | 562 | `"- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)"` | — |
+| [SRC-65551FB29F-L000563](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L563) | 563 | `"- [FinOps Framework](https://www.finops.org/framework/)"` | — |
+| [SRC-65551FB29F-L000564](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L564) | 564 | `""` | — |
+| [SRC-65551FB29F-L000565](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L565) | 565 | `"تُراجع الإصدارات الرسمية دوريًا. تعرض NIST، مثلًا، موادًا جديدة ومسودات تحديث في بعض أطرها؛ لذلك يجب التحقق من حالة الإصدار قبل إنشاء تقييم رسمي أو إعلان توافق. وجود رابط إلى معيار أو ملف تعريف لا يثبت التطبيق."` | — |
+| [SRC-65551FB29F-L000566](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L566) | 566 | `""` | — |
+| [SRC-65551FB29F-L000567](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L567) | 567 | `"---"` | — |
+| [SRC-65551FB29F-L000568](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L568) | 568 | `""` | — |
+| [SRC-65551FB29F-L000569](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L569) | 569 | `"# القرار الحاكم"` | — |
+| [SRC-65551FB29F-L000570](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L570) | 570 | `""` | — |
+| [SRC-65551FB29F-L000571](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L571) | 571 | `"يصبح هذا السجل، بعد موافقة مدير المشروع، آلية التحكم التي تربط المتطلبات بالدليل. ويُقرأ مع الدستور الهندسي وخط الأساس الموسع وتعليمات الوكلاء."` | — |
+| [SRC-65551FB29F-L000572](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L572) | 572 | `""` | — |
+| [SRC-65551FB29F-L000573](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L573) | 573 | `"**لا نعتمد اكتمال Omarai بعدد صفحات المواصفات أو عدد الطبقات. نعتمده بقدر ما لدينا من سلوك صحيح ومختبر، وحدود أمنية قابلة للتحقق، وقياسات صادقة، وقدرة على الاستعادة والتغيير دون تدهور.**"` | — |
+| [SRC-65551FB29F-L000574](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L574) | 574 | `""` | — |
+| [SRC-65551FB29F-L000575](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L575) | 575 | `"كل ما لم يُفحص في التنفيذ يجب أن يبقى UNKNOWN أو PROPOSED حتى يظهر دليل مناسب."` | — |
 ## وثائق وفهرسة
 
 ### FILE-0F910493E8 — [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1)
@@ -16,6 +54,339 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000001](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | 1 | `"# Omarai — المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء"` | — |
+| [SRC-0F910493E8-L000002](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L2) | 2 | `""` | — |
+| [SRC-0F910493E8-L000003](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-ARCH-SKILL-WORKFLOW-AGENT-001  "` | — |
+| [SRC-0F910493E8-L000004](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L4) | 4 | `"**الإصدار:** 1.1.0  "` | — |
+| [SRC-0F910493E8-L000005](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L5) | 5 | `"**الحالة:** مقترح معماري للتدقيق والموافقة البشرية؛ لا يثبت التنفيذ أو اجتياز الاختبارات أو وجود أمن مطلق. يتضمن الإصدار 1.1.0 خط أساس للأمن السيبراني قابلًا للقياس والتدقيق.  "` | — |
+| [SRC-0F910493E8-L000006](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L6) | 6 | `"**المالك وصاحب قرار الاعتماد:** المدير البشري لمشروع Omarai.  "` | — |
+| [SRC-0F910493E8-L000007](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) | 7 | `"**الوثائق الحاكمة المرتبطة:** [الدستور التأسيسي للهندسة والموثوقية والأمان والذكاء](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md)، و[خط الأساس الهندسي للمنصات العالمية واسعة النطاق](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md)، و[سجل المتطلبات والتتبع والنضج وبوابات الاعتماد](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md)، و[سجل المتطلبات الأساسية الأولي](OMARAI_REQUIREMENTS_REGISTER.md)."` | — |
+| [SRC-0F910493E8-L000008](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L8) | 8 | `""` | — |
+| [SRC-0F910493E8-L000009](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L9) | 9 | `"> **الغرض:** تحويل قرار المجلس المعماري إلى مرجع تشغيل وتطوير واضح، يعود إليه المطور أو الوكيل قبل أي تغيير معماري مؤثر، ويحافظ على القرارات المتفق عليها دون استبدال الدستور التأسيسي أو حذف متطلباته السابقة."` | — |
+| [SRC-0F910493E8-L000010](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L10) | 10 | `""` | — |
+| [SRC-0F910493E8-L000011](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L11) | 11 | `"## 0. كيفية استخدام هذه الوثيقة وحدودها"` | — |
+| [SRC-0F910493E8-L000012](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L12) | 12 | `""` | — |
+| [SRC-0F910493E8-L000013](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L13) | 13 | `"هذه الوثيقة **تفصيل معماري مكمل** للدستور التأسيسي، وليست بديلًا عنه، ولا تلغي الطبقات أو الضوابط أو الاختبارات أو متطلبات التشغيل الواردة فيه. تُقرأ معه ومع وثائق التتبع. يظل الدستور التأسيسي وقرارات المدير البشري هما المرجع الأعلى؛ وهذه الوثيقة تفصل كيفية تنظيم المهارات وسير العمل والوكلاء في حدود ذلك المرجع."` | — |
+| [SRC-0F910493E8-L000014](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L14) | 14 | `""` | — |
+| [SRC-0F910493E8-L000015](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L15) | 15 | `"تستخدم التصنيفات التالية:"` | — |
+| [SRC-0F910493E8-L000016](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L16) | 16 | `"- **VERIFIED / متحقق:** تؤيده أدلة تنفيذ أو اختبار محددة يمكن الرجوع إليها."` | — |
+| [SRC-0F910493E8-L000017](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L17) | 17 | `"- **INFERRED / مستنتج:** تفسير يستند إلى أدلة، ولم يثبت باختبار مباشر."` | — |
+| [SRC-0F910493E8-L000018](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L18) | 18 | `"- **PROPOSED / مقترح:** تصميم أو قرار مستقبلي لم يثبت تنفيذه أو اعتماده بعد."` | — |
+| [SRC-0F910493E8-L000019](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L19) | 19 | `"- **UNKNOWN / غير معلوم:** لا تكفي الأدلة المتاحة للحكم."` | — |
+| [SRC-0F910493E8-L000020](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L20) | 20 | `""` | — |
+| [SRC-0F910493E8-L000021](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L21) | 21 | `"كل بنية أو واجهة أو قدرة موصوفة في هذه الوثيقة تظل **PROPOSED** حتى تُنفذ وتُختبر وتُوثق. لا يجوز استخدام هذه الوثيقة وحدها لإعلان أن ميزة تعمل أو أن Omarai أصبح آمنًا أو مكتملًا."` | — |
+| [SRC-0F910493E8-L000022](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L22) | 22 | `""` | — |
+| [SRC-0F910493E8-L000023](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L23) | 23 | `"### قاعدة عدم الفقد وعدم الانحراف"` | — |
+| [SRC-0F910493E8-L000024](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L24) | 24 | `""` | — |
+| [SRC-0F910493E8-L000025](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L25) | 25 | `"1. لا تستبدل صياغة قائمة أو تعيد كتابة مكون موجود قبل فحص النسخة الفعلية ومسار استخدامه واختباراته."` | — |
+| [SRC-0F910493E8-L000026](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L26) | 26 | `"2. لا تحذف وظيفة قائمة لمجرد أن نموذجًا معماريًا جديدًا يبدو أبسط."` | — |
+| [SRC-0F910493E8-L000027](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L27) | 27 | `"3. عند التعديل، حدد ما سيبقى كما هو، وما سيتغير، واختبارات عدم الانحدار التي تثبت الحفاظ على السلوك السابق."` | — |
+| [SRC-0F910493E8-L000028](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L28) | 28 | `"4. إذا ظهر تعارض بين هذه الوثيقة وبين الدستور التأسيسي، فلا تحذف أيًا منهما أو تحسم التعارض ضمنيًا؛ سجّل التعارض واقترح تسوية لموافقة المدير البشري."` | — |
+| [SRC-0F910493E8-L000029](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L29) | 29 | `"5. لا تُعتبر موافقة المجلس الاستشاري بديلًا عن موافقة المدير البشري على القرار أو الدمج أو النشر."` | — |
+| [SRC-0F910493E8-L000030](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L30) | 30 | `""` | — |
+| [SRC-0F910493E8-L000031](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L31) | 31 | `"---"` | — |
+| [SRC-0F910493E8-L000032](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L32) | 32 | `""` | — |
+| [SRC-0F910493E8-L000033](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L33) | 33 | `"# 1. القرار المعماري الحاكم"` | — |
+| [SRC-0F910493E8-L000034](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L34) | 34 | `""` | — |
+| [SRC-0F910493E8-L000035](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L35) | 35 | `"## 1.1 الاتجاه"` | — |
+| [SRC-0F910493E8-L000036](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L36) | 36 | `""` | — |
+| [SRC-0F910493E8-L000037](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L37) | 37 | `"**[PROPOSED] يعتمد الاتجاه المستهدف: Capability-First + Skill/Workflow-First + Agent-Later.**"` | — |
+| [SRC-0F910493E8-L000038](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L38) | 38 | `""` | — |
+| [SRC-0F910493E8-L000039](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L39) | 39 | `"المعنى العملي:"` | — |
+| [SRC-0F910493E8-L000040](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L40) | 40 | `"1. نثبت موثوقية النواة وسلوكها الفعلي."` | — |
+| [SRC-0F910493E8-L000041](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L41) | 41 | `"2. نوحد عقود الأدوات وحدود الصلاحيات."` | — |
+| [SRC-0F910493E8-L000042](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L42) | 42 | `"3. ننظم الوظائف القابلة لإعادة الاستخدام في مهارات."` | — |
+| [SRC-0F910493E8-L000043](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L43) | 43 | `"4. ننظم المسارات متعددة الخطوات في سير عمل محدد وقابل للاختبار."` | — |
+| [SRC-0F910493E8-L000044](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L44) | 44 | `"5. نستخدم سياق تنفيذ مستقلًا ومحدود العمر لكل مهمة افتراضيًا."` | — |
+| [SRC-0F910493E8-L000045](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L45) | 45 | `"6. نضيف تعريفات للوكلاء أو مصنعًا لإنشائها فقط عند وجود حاجة مثبتة لا تُحل بصورة أبسط بالمهارات أو سير العمل."` | — |
+| [SRC-0F910493E8-L000046](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L46) | 46 | `"7. نؤجل توليد الكود التنفيذي وتشغيله ذاتيًا إلى قرار لاحق مستقل ومشروط بالأدلة والعزل والمراجعة الأمنية."` | — |
+| [SRC-0F910493E8-L000047](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L47) | 47 | `""` | — |
+| [SRC-0F910493E8-L000048](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L48) | 48 | `"هذا الاتجاه لا يحظر الوكلاء المتخصصين مستقبلًا؛ بل يمنع جعل الوكيل كيانًا مستقلًا لمجرد أن المستخدم وصف مهمة باللغة الطبيعية."` | — |
+| [SRC-0F910493E8-L000049](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L49) | 49 | `""` | — |
+| [SRC-0F910493E8-L000050](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L50) | 50 | `"## 1.2 لماذا هذا هو الخيار الافتراضي؟"` | — |
+| [SRC-0F910493E8-L000051](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L51) | 51 | `""` | — |
+| [SRC-0F910493E8-L000052](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L52) | 52 | `"**[INFERRED]** معظم فوائد التخصيص يمكن استكشافها أولًا بإعادة تركيب قدرات معتمدة، دون دفع تكاليف إنشاء وكلاء مستقلين أو تشغيل حلقات تفكير مفتوحة أو بناء بنية توليد كود."` | — |
+| [SRC-0F910493E8-L000053](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L53) | 53 | `""` | — |
+| [SRC-0F910493E8-L000054](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L54) | 54 | `"**[PROPOSED]** لا يُبنى مصنع وكلاء قبل أن توضح التجارب أن هناك طلبًا متكررًا لا يمكن تغطيته بجودة وكلفة مناسبتين عن طريق المهارات وسير العمل الحاليين."` | — |
+| [SRC-0F910493E8-L000055](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L55) | 55 | `""` | — |
+| [SRC-0F910493E8-L000056](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L56) | 56 | `"لا تعتمد هذه الوثيقة على نسب افتراضية، مثل نسبة محددة من الطلبات التي ستحتاج إلى وكلاء. تُجمع بيانات الاستخدام والتقييم أولًا ثم يُتخذ القرار."` | — |
+| [SRC-0F910493E8-L000057](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L57) | 57 | `""` | — |
+| [SRC-0F910493E8-L000058](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L58) | 58 | `"## 1.3 ما الذي لا يتغير؟"` | — |
+| [SRC-0F910493E8-L000059](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L59) | 59 | `""` | — |
+| [SRC-0F910493E8-L000060](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L60) | 60 | `"يظل هدف Omarai الأساسي كما ورد في الدستور:"` | — |
+| [SRC-0F910493E8-L000061](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L61) | 61 | `"- استقبال الأسئلة والمهام بالعربية وفهمها."` | — |
+| [SRC-0F910493E8-L000062](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L62) | 62 | `"- البحث عند الحاجة فقط."` | — |
+| [SRC-0F910493E8-L000063](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L63) | 63 | `"- استخدام الأدوات التي ثبت عملها ضمن حدودها."` | — |
+| [SRC-0F910493E8-L000064](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L64) | 64 | `"- ربط النتائج بالأدلة المتاحة."` | — |
+| [SRC-0F910493E8-L000065](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L65) | 65 | `"- إظهار فشل الأدوات ونقص المعلومات والتعارض وعدم اليقين بصدق."` | — |
+| [SRC-0F910493E8-L000066](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L66) | 66 | `"- الحفاظ على الأمن والخصوصية والميزانيات والتحكم البشري."` | — |
+| [SRC-0F910493E8-L000067](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L67) | 67 | `"- عدم ادعاء قدرة أو اختبار أو تكامل لم يثبت فعليًا."` | — |
+| [SRC-0F910493E8-L000068](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L68) | 68 | `""` | — |
+| [SRC-0F910493E8-L000069](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L69) | 69 | `"هذه المعمارية تنظم طريق التوسع؛ ولا تستبدل هذه الأهداف."` | — |
+| [SRC-0F910493E8-L000070](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L70) | 70 | `""` | — |
+| [SRC-0F910493E8-L000071](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L71) | 71 | `"---"` | — |
+| [SRC-0F910493E8-L000072](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L72) | 72 | `""` | — |
+| [SRC-0F910493E8-L000073](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L73) | 73 | `"# 2. المفاهيم التي يجب عدم الخلط بينها"` | — |
+| [SRC-0F910493E8-L000074](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L74) | 74 | `""` | — |
+| [SRC-0F910493E8-L000075](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L75) | 75 | `"تُستخدم المصطلحات التالية بعقود منفصلة. يجوز أن يشترك بعضها في ملف أو وحدة برمجية واحدة إذا ظل الفصل واضحًا وقابلًا للاختبار؛ لا يلزم إنشاء خدمة أو ملف مستقل لكل مفهوم."` | — |
+| [SRC-0F910493E8-L000076](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L76) | 76 | `""` | — |
+| [SRC-0F910493E8-L000077](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L77) | 77 | `"## 2.1 الأداة Tool"` | — |
+| [SRC-0F910493E8-L000078](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L78) | 78 | `""` | — |
+| [SRC-0F910493E8-L000079](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L79) | 79 | `"عملية أو واجهة تنفيذ ذات عقد محدد للمدخلات والمخرجات والأخطاء والموارد والصلاحيات. قد تكون دالة محلية أو موصلًا خارجيًا. ولا يُفترض أنها حتمية أو ناجحة لمجرد تسجيلها."` | — |
+| [SRC-0F910493E8-L000080](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L80) | 80 | `""` | — |
+| [SRC-0F910493E8-L000081](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L81) | 81 | `"**مثال توضيحي:** البحث في مصدر عام، أو جلب صفحة، أو حساب قيمة."` | — |
+| [SRC-0F910493E8-L000082](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L82) | 82 | `""` | — |
+| [SRC-0F910493E8-L000083](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L83) | 83 | `"## 2.2 القدرة Capability"` | — |
+| [SRC-0F910493E8-L000084](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L84) | 84 | `""` | — |
+| [SRC-0F910493E8-L000085](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L85) | 85 | `"صلاحية محددة تسمح بتنفيذ فئة من العمليات ضمن نطاق معلوم. الأداة هي آلية التنفيذ، والقدرة هي ما يسمح النظام للطلب أو المكوّن بفعله."` | — |
+| [SRC-0F910493E8-L000086](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L86) | 86 | `""` | — |
+| [SRC-0F910493E8-L000087](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L87) | 87 | `"**قاعدة إلزامية مقترحة:** قدرة النموذج على طلب عملية لا تعني امتلاكه صلاحيتها. القرار النهائي يصدر عن محرك السياسات أو بوابة الأدوات في الكود، لا عن نص النموذج."` | — |
+| [SRC-0F910493E8-L000088](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L88) | 88 | `""` | — |
+| [SRC-0F910493E8-L000089](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L89) | 89 | `"## 2.3 المهارة Skill"` | — |
+| [SRC-0F910493E8-L000090](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L90) | 90 | `""` | — |
+| [SRC-0F910493E8-L000091](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L91) | 91 | `"وحدة قدرة قابلة لإعادة الاستخدام تجمع، بحسب الحاجة:"` | — |
+| [SRC-0F910493E8-L000092](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L92) | 92 | `"- وصف الغرض وحدود الاستخدام."` | — |
+| [SRC-0F910493E8-L000093](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L93) | 93 | `"- مدخلات ومخرجات واضحة."` | — |
+| [SRC-0F910493E8-L000094](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L94) | 94 | `"- تعليمات تخصصية محدودة وغير مخولة لتجاوز السياسات."` | — |
+| [SRC-0F910493E8-L000095](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L95) | 95 | `"- الأدوات والقدرات التي تحتاج إليها."` | — |
+| [SRC-0F910493E8-L000096](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L96) | 96 | `"- معايير النجاح والفشل."` | — |
+| [SRC-0F910493E8-L000097](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L97) | 97 | `"- اختبارات مرجعية."` | — |
+| [SRC-0F910493E8-L000098](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L98) | 98 | `"- إصدارًا وحالة اعتماد وميزانية مناسبة."` | — |
+| [SRC-0F910493E8-L000099](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L99) | 99 | `""` | — |
+| [SRC-0F910493E8-L000100](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L100) | 100 | `"لا تساوي المهارة برومبتًا طويلًا فقط، ولا يجوز أن تضم كودًا تنفيذيًا اعتباطيًا مولدًا وقت التشغيل."` | — |
+| [SRC-0F910493E8-L000101](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L101) | 101 | `""` | — |
+| [SRC-0F910493E8-L000102](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L102) | 102 | `"**أمثلة مقترحة:** تلخيص عربي، بحث موثق، مقارنة مصادر، تحليل نية شراء، أو استخراج بيانات من ملف مصرح به. هذه أمثلة وليست ادعاءً بوجود مهارات مسجلة حاليًا."` | — |
+| [SRC-0F910493E8-L000103](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L103) | 103 | `""` | — |
+| [SRC-0F910493E8-L000104](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L104) | 104 | `"## 2.4 سير العمل Workflow"` | — |
+| [SRC-0F910493E8-L000105](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L105) | 105 | `""` | — |
+| [SRC-0F910493E8-L000106](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L106) | 106 | `"مسار محدود من الخطوات والانتقالات وشروط التوقف. يمكن أن يستدعي مهارة أو أداة أو نموذجًا داخل خطوة معرفة، لكن ترتيب المراحل وحدود التنفيذ وسياسات الفشل يظل تحت تحكم المنسق."` | — |
+| [SRC-0F910493E8-L000107](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L107) | 107 | `""` | — |
+| [SRC-0F910493E8-L000108](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L108) | 108 | `"يفضل استخدام مسار محدد عندما تكون الخطوات متكررة أو حساسة أو قابلة للاختبار. لا يلزم إنشاء محرك DAG عام منذ البداية؛ يبدأ التنفيذ بأبسط تمثيل واضح يناسب المسارات الموجودة."` | — |
+| [SRC-0F910493E8-L000109](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L109) | 109 | `""` | — |
+| [SRC-0F910493E8-L000110](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L110) | 110 | `"## 2.5 مواصفة المهمة TaskSpec"` | — |
+| [SRC-0F910493E8-L000111](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L111) | 111 | `""` | — |
+| [SRC-0F910493E8-L000112](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L112) | 112 | `"تمثيل منظم لما يريد المستخدم تحقيقه. تستخدم المواصفة الكاملة عند الحاجة إلى تخطيط متعدد الخطوات أو قيود خاصة، وليس لكل سؤال بسيط."` | — |
+| [SRC-0F910493E8-L000113](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L113) | 113 | `""` | — |
+| [SRC-0F910493E8-L000114](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L114) | 114 | `"حقولها المقترحة:"` | — |
+| [SRC-0F910493E8-L000115](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L115) | 115 | `"- الهدف المطلوب."` | — |
+| [SRC-0F910493E8-L000116](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L116) | 116 | `"- المدخلات المتاحة."` | — |
+| [SRC-0F910493E8-L000117](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L117) | 117 | `"- المخرجات المتوقعة."` | — |
+| [SRC-0F910493E8-L000118](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L118) | 118 | `"- القيود والشروط."` | — |
+| [SRC-0F910493E8-L000119](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L119) | 119 | `"- القدرات المطلوبة."` | — |
+| [SRC-0F910493E8-L000120](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L120) | 120 | `"- معايير القبول."` | — |
+| [SRC-0F910493E8-L000121](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L121) | 121 | `"- متطلبات المصادر والأدلة عند انطباقها."` | — |
+| [SRC-0F910493E8-L000122](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L122) | 122 | `"- سياسة الذاكرة والاحتفاظ عند انطباقها."` | — |
+| [SRC-0F910493E8-L000123](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L123) | 123 | `"- حدود الوقت والخطوات والموارد."` | — |
+| [SRC-0F910493E8-L000124](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L124) | 124 | `""` | — |
+| [SRC-0F910493E8-L000125](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L125) | 125 | `"مواصفة المهمة لا تمنح الصلاحيات؛ إنها تصف الحاجة. يخضع طلبها لاحقًا للتحقق والسياسات."` | — |
+| [SRC-0F910493E8-L000126](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L126) | 126 | `""` | — |
+| [SRC-0F910493E8-L000127](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L127) | 127 | `"## 2.6 ملف تعريف الوكيل Agent Profile"` | — |
+| [SRC-0F910493E8-L000128](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L128) | 128 | `""` | — |
+| [SRC-0F910493E8-L000129](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L129) | 129 | `"وصفة إعلانية لإعادة استخدام إعداد معتمد: هدف أو قالب مهمة، ومهارات محددة بإصداراتها، وسياسة الذاكرة، وميزانية وحدود تنفيذ، وقيود وصلاحيات لا تتجاوز سقف المنصة."` | — |
+| [SRC-0F910493E8-L000130](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L130) | 130 | `""` | — |
+| [SRC-0F910493E8-L000131](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L131) | 131 | `"لا ينبغي أن يكون الملف برنامجًا حرًا، ولا أن يحتوي على صلاحيات يقررها لنفسه."` | — |
+| [SRC-0F910493E8-L000132](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L132) | 132 | `""` | — |
+| [SRC-0F910493E8-L000133](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L133) | 133 | `"## 2.7 الوكيل Agent"` | — |
+| [SRC-0F910493E8-L000134](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L134) | 134 | `""` | — |
+| [SRC-0F910493E8-L000135](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L135) | 135 | `"سياق تنفيذ يركب هدفًا ومهارات وخطة وأدوات ضمن حدود وسياسة. ليس مطلوبًا أن يكون عملية دائمة أو خدمة مستقلة. الوضع الافتراضي هو تشغيل مؤقت ينتهي عند اكتمال المهمة، مع حفظ النتائج التي تسمح بها السياسة."` | — |
+| [SRC-0F910493E8-L000136](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L136) | 136 | `""` | — |
+| [SRC-0F910493E8-L000137](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L137) | 137 | `"لا يُنشأ وكيل مستقل إلا عند وجود سبب موثق، مثل حاجة طويلة الأمد فعلًا، أو فصل بيانات أو صلاحيات، أو استقلال في دورة العمل لا يمكن تمثيله بشكل أبسط. هذه الأسباب تبرر الدراسة، لكنها لا تعني موافقة آلية."` | — |
+| [SRC-0F910493E8-L000138](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L138) | 138 | `""` | — |
+| [SRC-0F910493E8-L000139](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L139) | 139 | `"## 2.8 الإضافة Plugin"` | — |
+| [SRC-0F910493E8-L000140](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L140) | 140 | `""` | — |
+| [SRC-0F910493E8-L000141](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L141) | 141 | `"مكون خارجي أو حزمة من طرف ثالث. قد توسع سطح الهجوم وسلسلة التوريد؛ لذا تكون خارج المسار الأولي، ولا تُفعّل افتراضيًا. تخضع لمراجعة المصدر والاعتماديات والصلاحيات والعزل والاختبارات عند دراسة إضافتها."` | — |
+| [SRC-0F910493E8-L000142](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L142) | 142 | `""` | — |
+| [SRC-0F910493E8-L000143](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L143) | 143 | `"---"` | — |
+| [SRC-0F910493E8-L000144](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L144) | 144 | `""` | — |
+| [SRC-0F910493E8-L000145](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L145) | 145 | `"# 3. تدفق العمل القياسي للطلب"` | — |
+| [SRC-0F910493E8-L000146](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L146) | 146 | `""` | — |
+| [SRC-0F910493E8-L000147](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L147) | 147 | `"**[PROPOSED]** يكون التدفق الافتراضي للطلب كما يلي، مع تجاوز الخطوات غير اللازمة للأسئلة البسيطة:"` | — |
+| [SRC-0F910493E8-L000148](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L148) | 148 | `""` | — |
+| [SRC-0F910493E8-L000149](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L149) | 149 | `"1. **استقبال الطلب:** التحقق من النوع والحجم والسياق والمصادقة والحدود التي تنطبق على الواجهة."` | — |
+| [SRC-0F910493E8-L000150](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L150) | 150 | `"2. **تحديد النية:** استخدام التوجيه الحتمي حيث يكون كافيًا، وطلب توضيح عندما يؤثر الغموض في النتيجة."` | — |
+| [SRC-0F910493E8-L000151](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L151) | 151 | `"3. **اختيار المسار:** محلي مباشر، أو إجابة من النموذج دون بحث، أو بحث، أو سير عمل متعدد الخطوات."` | — |
+| [SRC-0F910493E8-L000152](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L152) | 152 | `"4. **صياغة TaskSpec عند الحاجة:** تحديد الهدف والقيود والمخرجات ومعايير القبول؛ لا تنشئ مواصفة معقدة بلا داعٍ."` | — |
+| [SRC-0F910493E8-L000153](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L153) | 153 | `"5. **مطابقة القدرات:** اختيار الأدوات والمهارات وسير العمل المسجلة التي تلائم المهمة؛ لا تفترض وجود قدرة مفقودة."` | — |
+| [SRC-0F910493E8-L000154](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L154) | 154 | `"6. **التحقق من الصلاحيات:** حساب الصلاحيات الفعلية من سياسة المنصة والتكوين المعتمد وسياق المهمة. رفض ما يتجاوز الحدود."` | — |
+| [SRC-0F910493E8-L000155](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L155) | 155 | `"7. **تكوين خطة محدودة:** يمكن للنموذج اقتراح خطة مهيكلة، لكنها تظل مدخلًا غير موثوق حتى تتحقق البنية والحدود والأدوات والخطوات والميزانية."` | — |
+| [SRC-0F910493E8-L000156](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L156) | 156 | `"8. **التنفيذ عبر المنسق وبوابة الأدوات:** ينفذ الكود الخطوات المسموح بها، ويطبق الوقت والحجم والتزامن وحد إعادة المحاولة. لا تنفذ التعليمات أو الكود الحر الوارد من النموذج."` | — |
+| [SRC-0F910493E8-L000157](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L157) | 157 | `"9. **تجميع الأدلة والنتائج:** حفظ المصدر والحالة والوقت وبيانات التتبع المناسبة. تظل المحتويات الخارجية غير موثوقة حتى التحقق منها."` | — |
+| [SRC-0F910493E8-L000158](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L158) | 158 | `"10. **التحقق:** افحص البنية والإسناد والتغطية والتعارض حسب نوع المهمة. لا تعتبر مراجعة النموذج لنفسه تحققًا مستقلًا."` | — |
+| [SRC-0F910493E8-L000159](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L159) | 159 | `"11. **صياغة النتيجة:** أجب بالعربية، وميّز ما تم تأكيده عما هو استنتاج أو غير معلوم، وأظهر القيود المؤثرة."` | — |
+| [SRC-0F910493E8-L000160](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L160) | 160 | `"12. **إغلاق المهمة وتسجيلها:** أخرج حالة نهائية صادقة، وسجلًا منقحًا، ونتائج قابلة للمراجعة. لا تحفظ بيانات دائمة إلا وفق سياسة واضحة."` | — |
+| [SRC-0F910493E8-L000161](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L161) | 161 | `""` | — |
+| [SRC-0F910493E8-L000162](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L162) | 162 | `"يمكن لمسار صغير أن يختصر هذه الخطوات إلى الحد الأدنى المفيد. لا يُجبر السؤال البسيط على المرور بخطة بحث أو سلسلة تحقق مكلفة إذا لم تكن ضرورية."` | — |
+| [SRC-0F910493E8-L000163](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L163) | 163 | `""` | — |
+| [SRC-0F910493E8-L000164](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L164) | 164 | `"## 3.1 حالات النهاية"` | — |
+| [SRC-0F910493E8-L000165](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L165) | 165 | `""` | — |
+| [SRC-0F910493E8-L000166](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L166) | 166 | `"على مستوى العقد المنطقي، يجب التمييز بين:"` | — |
+| [SRC-0F910493E8-L000167](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L167) | 167 | `"- **COMPLETED:** اكتملت المهمة وفق معاييرها المحددة."` | — |
+| [SRC-0F910493E8-L000168](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L168) | 168 | `"- **PARTIAL / DEGRADED:** أُنجز جزء مفيد مع قصور معلن."` | — |
+| [SRC-0F910493E8-L000169](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L169) | 169 | `"- **NEEDS_CLARIFICATION:** لا يمكن المتابعة الموثوقة قبل توضيح مؤثر."` | — |
+| [SRC-0F910493E8-L000170](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L170) | 170 | `"- **REJECTED / POLICY_BLOCKED:** رفضت السياسة العملية."` | — |
+| [SRC-0F910493E8-L000171](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L171) | 171 | `"- **FAILED:** لم يمكن إنجاز المهمة."` | — |
+| [SRC-0F910493E8-L000172](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L172) | 172 | `"- **UNKNOWN:** لم تتوفر أدلة كافية لإثبات الحالة."` | — |
+| [SRC-0F910493E8-L000173](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L173) | 173 | `""` | — |
+| [SRC-0F910493E8-L000174](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L174) | 174 | `"يمكن ترجمة هذه الحالات إلى أسماء مناسبة لعقد API الموجود بعد فحصه؛ لا تغيّر أسماء أو حقول واجهة قائمة بشكل يكسر التوافق من أجل مطابقة هذه التسميات حرفيًا."` | — |
+| [SRC-0F910493E8-L000175](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L175) | 175 | `""` | — |
+| [SRC-0F910493E8-L000176](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L176) | 176 | `"---"` | — |
+| [SRC-0F910493E8-L000177](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L177) | 177 | `""` | — |
+| [SRC-0F910493E8-L000178](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L178) | 178 | `"# 4. حدود الثقة وفصل إدارة التعريفات عن التشغيل"` | — |
+| [SRC-0F910493E8-L000179](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L179) | 179 | `""` | — |
+| [SRC-0F910493E8-L000180](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L180) | 180 | `"## 4.1 Runtime Plane — مسار التشغيل"` | — |
+| [SRC-0F910493E8-L000181](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L181) | 181 | `""` | — |
+| [SRC-0F910493E8-L000182](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L182) | 182 | `"مسؤول عن:"` | — |
+| [SRC-0F910493E8-L000183](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L183) | 183 | `"- استقبال الطلبات."` | — |
+| [SRC-0F910493E8-L000184](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L184) | 184 | `"- تنفيذ التوجيه والخطة."` | — |
+| [SRC-0F910493E8-L000185](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L185) | 185 | `"- إنشاء سياق مهمة مستقل."` | — |
+| [SRC-0F910493E8-L000186](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L186) | 186 | `"- تطبيق السياسات والميزانيات."` | — |
+| [SRC-0F910493E8-L000187](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L187) | 187 | `"- استدعاء المهارات والأدوات المعتمدة."` | — |
+| [SRC-0F910493E8-L000188](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L188) | 188 | `"- إدارة الأدلة والنتائج."` | — |
+| [SRC-0F910493E8-L000189](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L189) | 189 | `"- إخراج حالة المهمة والإجابة."` | — |
+| [SRC-0F910493E8-L000190](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L190) | 190 | `"- حفظ سجل تدقيق منقح."` | — |
+| [SRC-0F910493E8-L000191](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L191) | 191 | `""` | — |
+| [SRC-0F910493E8-L000192](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L192) | 192 | `"لا ينبغي لمسار التشغيل أن يحمل صلاحية تعديل السياسات أو اعتماد تعريفات جديدة أثناء تنفيذ الطلب."` | — |
+| [SRC-0F910493E8-L000193](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L193) | 193 | `""` | — |
+| [SRC-0F910493E8-L000194](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L194) | 194 | `"## 4.2 Control / Definition Plane — إدارة التعريفات والتغيير"` | — |
+| [SRC-0F910493E8-L000195](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L195) | 195 | `""` | — |
+| [SRC-0F910493E8-L000196](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L196) | 196 | `"مسؤول عن:"` | — |
+| [SRC-0F910493E8-L000197](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L197) | 197 | `"- إعداد مسودة مهارة أو سير عمل أو ملف تعريف."` | — |
+| [SRC-0F910493E8-L000198](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L198) | 198 | `"- التحقق من المخطط والحقول."` | — |
+| [SRC-0F910493E8-L000199](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L199) | 199 | `"- التحقق من مراجع الأدوات والمهارات والإصدارات."` | — |
+| [SRC-0F910493E8-L000200](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L200) | 200 | `"- تشغيل الاختبارات المطلوبة."` | — |
+| [SRC-0F910493E8-L000201](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L201) | 201 | `"- مراجعة التغييرات والصلاحيات."` | — |
+| [SRC-0F910493E8-L000202](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L202) | 202 | `"- تسجيل الاعتماد والإصدار."` | — |
+| [SRC-0F910493E8-L000203](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L203) | 203 | `"- تعطيل النسخة أو العودة إلى إصدار سابق عند الحاجة."` | — |
+| [SRC-0F910493E8-L000204](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L204) | 204 | `""` | — |
+| [SRC-0F910493E8-L000205](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L205) | 205 | `"يمكن تنفيذ المسارين داخل التطبيق نفسه في البداية، لكن حدود الصلاحيات والعقود بينهما يجب أن تكون واضحة."` | — |
+| [SRC-0F910493E8-L000206](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L206) | 206 | `""` | — |
+| [SRC-0F910493E8-L000207](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L207) | 207 | `"## 4.3 بوابة التفعيل"` | — |
+| [SRC-0F910493E8-L000208](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L208) | 208 | `""` | — |
+| [SRC-0F910493E8-L000209](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L209) | 209 | `"التدفق المقترح للتعريف الجديد:"` | — |
+| [SRC-0F910493E8-L000210](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L210) | 210 | `""` | — |
+| [SRC-0F910493E8-L000211](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L211) | 211 | `"**DRAFT → VALIDATED → TESTED → APPROVED → ACTIVE**"` | — |
+| [SRC-0F910493E8-L000212](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L212) | 212 | `""` | — |
+| [SRC-0F910493E8-L000213](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L213) | 213 | `"وتوجد أيضًا حالات رفض أو تعطيل واضحة."` | — |
+| [SRC-0F910493E8-L000214](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L214) | 214 | `""` | — |
+| [SRC-0F910493E8-L000215](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L215) | 215 | `"- اجتياز المخطط لا يعني اجتياز الاختبارات."` | — |
+| [SRC-0F910493E8-L000216](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L216) | 216 | `"- اجتياز الاختبارات لا يعني وجود موافقة."` | — |
+| [SRC-0F910493E8-L000217](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L217) | 217 | `"- الاعتماد لا يعني أن موفرًا خارجيًا متاح في كل لحظة."` | — |
+| [SRC-0F910493E8-L000218](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L218) | 218 | `"- لا يملك Meta-Agent مستقبلًا صلاحية نقل مسودته بنفسه إلى APPROVED أو ACTIVE."` | — |
+| [SRC-0F910493E8-L000219](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L219) | 219 | `"- يقرأ Runtime الإصدارات المعتمدة فقط."` | — |
+| [SRC-0F910493E8-L000220](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L220) | 220 | `""` | — |
+| [SRC-0F910493E8-L000221](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L221) | 221 | `"---"` | — |
+| [SRC-0F910493E8-L000222](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L222) | 222 | `""` | — |
+| [SRC-0F910493E8-L000223](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L223) | 223 | `"# 5. نموذج الصلاحيات"` | — |
+| [SRC-0F910493E8-L000224](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L224) | 224 | `""` | — |
+| [SRC-0F910493E8-L000225](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L225) | 225 | `"**[PROPOSED]** تتبع كل القدرات مبدأ المنع الافتراضي وأقل صلاحية لازمة."` | — |
+| [SRC-0F910493E8-L000226](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L226) | 226 | `""` | — |
+| [SRC-0F910493E8-L000227](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L227) | 227 | `"الصلاحيات الفعلية هي تقاطع:"` | — |
+| [SRC-0F910493E8-L000228](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L228) | 228 | `"1. سقف سياسات المنصة."` | — |
+| [SRC-0F910493E8-L000229](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L229) | 229 | `"2. الصلاحيات المعتمدة للمهارة أو ملف التعريف."` | — |
+| [SRC-0F910493E8-L000230](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L230) | 230 | `"3. ما تسمح به المهمة الحالية وسياق المستخدم."` | — |
+| [SRC-0F910493E8-L000231](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L231) | 231 | `""` | — |
+| [SRC-0F910493E8-L000232](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L232) | 232 | `"ينفذ الفحص عند التحميل وعند الاستدعاء ذي الأثر، وخصوصًا عند تغيير البيانات أو الاتصال بالخارج. لا يكفي فحص ملف التعريف مرة واحدة، ولا يكفي إخفاء الأداة في واجهة المستخدم."` | — |
+| [SRC-0F910493E8-L000233](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L233) | 233 | `""` | — |
+| [SRC-0F910493E8-L000234](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L234) | 234 | `"قواعد ملزمة مقترحة:"` | — |
+| [SRC-0F910493E8-L000235](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L235) | 235 | `"- لا وصول مباشر من النموذج إلى أسرار البيئة."` | — |
+| [SRC-0F910493E8-L000236](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L236) | 236 | `"- لا تنفيذ أوامر عامة أو كود حر ينتجه المستخدم أو النموذج."` | — |
+| [SRC-0F910493E8-L000237](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L237) | 237 | `"- تمر الاتصالات الخارجية عبر موصلات معروفة بضوابط شبكة ومهلة وحجم."` | — |
+| [SRC-0F910493E8-L000238](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L238) | 238 | `"- نتائج أدوات البحث والصفحات الخارجية بيانات غير موثوقة وليست تعليمات نظام."` | — |
+| [SRC-0F910493E8-L000239](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L239) | 239 | `"- الأفعال الخارجية ذات الأثر تحتاج إلى تفويض وموافقة مناسبة حسب مستوى المخاطر."` | — |
+| [SRC-0F910493E8-L000240](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L240) | 240 | `"- يجب أن يكون لكل أداة وسيلة إيقاف وحدود موارد وسياسة فشل."` | — |
+| [SRC-0F910493E8-L000241](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L241) | 241 | `"- لا يستطيع ملف أو مهارة أو وكيل تجاوز الميزانية أو توسيع الصلاحيات ذاتيًا."` | — |
+| [SRC-0F910493E8-L000242](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L242) | 242 | `"- تظل حدود العزل الفعلية غير معلومة حتى اختبارها في بيئة التشغيل المستهدفة."` | — |
+| [SRC-0F910493E8-L000243](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L243) | 243 | `""` | — |
+| [SRC-0F910493E8-L000244](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L244) | 244 | `"---"` | — |
+| [SRC-0F910493E8-L000245](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L245) | 245 | `""` | — |
+| [SRC-0F910493E8-L000246](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L246) | 246 | `"# 6. عقود الأدوات والمهارات وسير العمل"` | — |
+| [SRC-0F910493E8-L000247](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L247) | 247 | `""` | — |
+| [SRC-0F910493E8-L000248](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L248) | 248 | `"## 6.1 عقد الأداة"` | — |
+| [SRC-0F910493E8-L000249](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L249) | 249 | `""` | — |
+| [SRC-0F910493E8-L000250](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L250) | 250 | `"يتضمن بحسب طبيعة الأداة:"` | — |
+| [SRC-0F910493E8-L000251](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L251) | 251 | `"- معرفًا ثابتًا وإصدارًا ومالكًا ووصفًا."` | — |
+| [SRC-0F910493E8-L000252](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L252) | 252 | `"- مخطط المدخلات والمخرجات."` | — |
+| [SRC-0F910493E8-L000253](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L253) | 253 | `"- الصلاحيات ونطاق البيانات."` | — |
+| [SRC-0F910493E8-L000254](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L254) | 254 | `"- تصنيف أثر العملية."` | — |
+| [SRC-0F910493E8-L000255](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L255) | 255 | `"- timeout وميزانية وحجم وتزامن."` | — |
+| [SRC-0F910493E8-L000256](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L256) | 256 | `"- سلوك النجاح والفشل والإلغاء وإعادة المحاولة."` | — |
+| [SRC-0F910493E8-L000257](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L257) | 257 | `"- مؤشرات التشخيص دون أسرار."` | — |
+| [SRC-0F910493E8-L000258](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L258) | 258 | `"- اختبارات النجاح والمدخلات غير الصالحة وانقطاع الاتصال."` | — |
+| [SRC-0F910493E8-L000259](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L259) | 259 | `"- تاريخ ونطاق آخر تحقق عند وجود فحص صحة."` | — |
+| [SRC-0F910493E8-L000260](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L260) | 260 | `"- طريقة تعطيل وتعافٍ."` | — |
+| [SRC-0F910493E8-L000261](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L261) | 261 | `""` | — |
+| [SRC-0F910493E8-L000262](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L262) | 262 | `"يجب التمييز بين الأداة المسجلة، والمختبرة، والمهيأة، والمتاحة الآن، والناجحة في الطلب الحالي. هذه حالات مختلفة ولا يجوز دمجها في ادعاء واحد."` | — |
+| [SRC-0F910493E8-L000263](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L263) | 263 | `""` | — |
+| [SRC-0F910493E8-L000264](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L264) | 264 | `"## 6.2 عقد المهارة"` | — |
+| [SRC-0F910493E8-L000265](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L265) | 265 | `""` | — |
+| [SRC-0F910493E8-L000266](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L266) | 266 | `"تتضمن المهارة:"` | — |
+| [SRC-0F910493E8-L000267](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L267) | 267 | `"- معرفًا وإصدارًا."` | — |
+| [SRC-0F910493E8-L000268](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L268) | 268 | `"- وصفًا واضحًا للغرض والنطاق والحدود."` | — |
+| [SRC-0F910493E8-L000269](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L269) | 269 | `"- مدخلات ومخرجات متوقعة."` | — |
+| [SRC-0F910493E8-L000270](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L270) | 270 | `"- المراجع إلى الأدوات والمهارات الأخرى بإصدارات محددة."` | — |
+| [SRC-0F910493E8-L000271](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L271) | 271 | `"- قائمة القدرات المطلوبة."` | — |
+| [SRC-0F910493E8-L000272](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L272) | 272 | `"- سياسة للأدلة والذاكرة حسب المهمة."` | — |
+| [SRC-0F910493E8-L000273](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L273) | 273 | `"- حدودًا للوقت والخطوات والتكلفة."` | — |
+| [SRC-0F910493E8-L000274](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L274) | 274 | `"- معايير نجاح وفشل."` | — |
+| [SRC-0F910493E8-L000275](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L275) | 275 | `"- اختبارات إيجابية وسلبية واختبارات للغة العربية."` | — |
+| [SRC-0F910493E8-L000276](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L276) | 276 | `"- حالة اعتماد وسجل تغييرات."` | — |
+| [SRC-0F910493E8-L000277](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L277) | 277 | `""` | — |
+| [SRC-0F910493E8-L000278](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L278) | 278 | `"لا تستدعي المهارة أداة من خارج سجل الأدوات، ولا تمنح نفسها صلاحية."` | — |
+| [SRC-0F910493E8-L000279](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L279) | 279 | `""` | — |
+| [SRC-0F910493E8-L000280](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L280) | 280 | `"## 6.3 عقد سير العمل"` | — |
+| [SRC-0F910493E8-L000281](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L281) | 281 | `""` | — |
+| [SRC-0F910493E8-L000282](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L282) | 282 | `"يحدد:"` | — |
+| [SRC-0F910493E8-L000283](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L283) | 283 | `"- الخطوات المسموح بها وترتيبها أو شروط الانتقال بينها."` | — |
+| [SRC-0F910493E8-L000284](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L284) | 284 | `"- المدخلات والمخرجات لكل خطوة."` | — |
+| [SRC-0F910493E8-L000285](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L285) | 285 | `"- المهارات والأدوات المطلوبة لكل خطوة."` | — |
+| [SRC-0F910493E8-L000286](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L286) | 286 | `"- شروط النجاح والتوقف والفشل الجزئي."` | — |
+| [SRC-0F910493E8-L000287](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L287) | 287 | `"- أقصى عدد للخطوات وإعادة التخطيط والاستدعاءات."` | — |
+| [SRC-0F910493E8-L000288](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L288) | 288 | `"- ميزانية الوقت والموارد."` | — |
+| [SRC-0F910493E8-L000289](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L289) | 289 | `"- شروط الموافقة البشرية عند الحاجة."` | — |
+| [SRC-0F910493E8-L000290](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L290) | 290 | `"- اختبارات لكل مسار مهم، بما فيها الفشل والتعافي."` | — |
+| [SRC-0F910493E8-L000291](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L291) | 291 | `""` | — |
+| [SRC-0F910493E8-L000292](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L292) | 292 | `"أي خطة يولدها النموذج خارج المخطط أو الحدود تُرفض أو تُعاد إلى مسار توضيح آمن؛ لا يوسع النموذج القواعد من تلقاء نفسه."` | — |
+| [SRC-0F910493E8-L000293](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L293) | 293 | `""` | — |
+| [SRC-0F910493E8-L000294](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L294) | 294 | `"## 6.4 ملفات التعريف وإصداراتها"` | — |
+| [SRC-0F910493E8-L000295](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L295) | 295 | `""` | — |
+| [SRC-0F910493E8-L000296](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L296) | 296 | `"يحدد ملف تعريف الوكيل الهدف والمهارات بالإصدارات وقواعد المهمة وحدود الميزانية والذاكرة. لا يحتوي على برنامج تنفيذي حر، ولا يستبدل سياسة المنصة."` | — |
+| [SRC-0F910493E8-L000297](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L297) | 297 | `""` | — |
+| [SRC-0F910493E8-L000298](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L298) | 298 | `"التعديلات لا تُجري في مكانها على نسخة نشطة دون سجل. يحتفظ كل إصدار بمعرف معلوم ومحتوى قابل للتتبع، مع اختبارات التوافق والرجوع. يمكن استخدام hash وإصدار دلالي إذا كان ذلك مناسبًا؛ لا يُعد أي منهما دليلًا على الجودة أو الأمان بمفرده."` | — |
+| [SRC-0F910493E8-L000299](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L299) | 299 | `""` | — |
+| [SRC-0F910493E8-L000300](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L300) | 300 | `"---"` | — |
+| [SRC-0F910493E8-L000301](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L301) | 301 | `""` | — |
+| [SRC-0F910493E8-L000302](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L302) | 302 | `"# 7. الذاكرة وسياق التنفيذ"` | — |
+| [SRC-0F910493E8-L000303](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L303) | 303 | `""` | — |
+| [SRC-0F910493E8-L000304](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L304) | 304 | `"**[PROPOSED]** يكون سياق التنفيذ مؤقتًا ومعزولًا لكل طلب هو الافتراضي."` | — |
+| [SRC-0F910493E8-L000305](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L305) | 305 | `""` | — |
+| [SRC-0F910493E8-L000306](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L306) | 306 | `"يجب الفصل بين:"` | — |
+| [SRC-0F910493E8-L000307](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L307) | 307 | `"1. تاريخ المحادثة الذي يلزم لفهم المتابعة."` | — |
+| [SRC-0F910493E8-L000308](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L308) | 308 | `"2. بيانات المهمة المؤقتة ونتائج أدواتها."` | — |
+| [SRC-0F910493E8-L000309](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L309) | 309 | `"3. البيانات الدائمة التي يحتفظ بها النظام وفق سياسة وسبب واضحين."` | — |
+| [SRC-0F910493E8-L000310](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L310) | 310 | `"4. التخزين المؤقت للنتائج العامة، إن استخدم، مع صلاحية وانتهاء وإبطال مناسبين."` | — |
+| [SRC-0F910493E8-L000311](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L311) | 311 | `""` | — |
+| [SRC-0F910493E8-L000312](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L312) | 312 | `"لا تشارك ذاكرة أو ملفًا أو صلاحية بين المستخدمين أو المهام بلا تفويض صريح. ويجب التعامل مع الذاكرة المسترجعة نفسها كبيانات قديمة أو غير موثوقة عند انطباق المخاطر."` | — |
+| [SRC-0F910493E8-L000313](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L313) | 313 | `""` | — |
+| [SRC-0F910493E8-L000314](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L314) | 314 | `"لا تُبنى ذاكرة طويلة الأمد لمجرد أن النظام أصبح قادرًا على إنشاء ملفات تعريف. يجب أن تحدد الحاجة أولًا، مع تقليل البيانات وفترة احتفاظ وحذف وموافقة مناسبة."` | — |
+| [SRC-0F910493E8-L000315](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L315) | 315 | `""` | — |
+| [SRC-0F910493E8-L000316](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L316) | 316 | `"---"` | — |
+| [SRC-0F910493E8-L000317](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L317) | 317 | `""` | — |
+| [SRC-0F910493E8-L000318](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L318) | 318 | `"# 8. الأدلة والتحقق وجودة الإجابات"` | — |
+| [SRC-0F910493E8-L000319](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L319) | 319 | `""` | — |
+| [SRC-0F910493E8-L000320](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L320) | 320 | `"يمثل Evidence Ledger أو سجل الأدلة، حيثما ينطبق، العلاقة بين الادعاء والمصدر والنص المسترجع ووقت الرصد وحالة الجلب."` | — |
+| [SRC-0F910493E8-L000321](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L321) | 321 | `""` | — |
+| [SRC-0F910493E8-L000322](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L322) | 322 | `"ينبغي فصل مستويات التحقق:"` | — |
+| [SRC-0F910493E8-L000323](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L323) | 323 | `"1. **Schema validation:** هل البنية صحيحة؟"` | — |
+| [SRC-0F910493E8-L000324](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L324) | 324 | `"2. **Execution validation:** هل نُفذت العملية فعلًا؟"` | — |
+| [SRC-0F910493E8-L000325](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L325) | 325 | `"3. **Provenance validation:** هل المصدر والمقتطف والرابط موثقة؟"` | — |
+| [SRC-0F910493E8-L000326](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L326) | 326 | `"4. **Support evaluation:** هل الأدلة تدعم الادعاء؟"` | — |
+| [SRC-0F910493E8-L000327](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L327) | 327 | `"5. **Independent checks:** هل يتوافر تحقق إضافي مستقل مناسب للمخاطر؟"` | — |
+| [SRC-0F910493E8-L000328](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L328) | 328 | `""` | — |
+| [SRC-0F910493E8-L000329](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L329) | 329 | `"وجود رابط لا يثبت دعم الادعاء. ووجود مقتطف مطابق يثبت أن النص ظهر في المصدر المسترجع، لا صحة مضمون النص بالضرورة. ومراجعة LLM لنص LLM آخر لا تُسمى تحققًا مستقلًا إلا إذا حُدد أساس استقلالها وأُثبتت حدودها."` | — |
+| [SRC-0F910493E8-L000330](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L330) | 330 | `""` | — |
+| [SRC-0F910493E8-L000331](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L331) | 331 | `"عند نقص الأدلة أو فشل المصدر، يقدم Omarai إجابة جزئية صادقة أو يوضح تعذر التحقق. لا يحول الفشل إلى نجاح، ولا يصنع مصدرًا أو نتيجة أو حالة أداة غير موجودة."` | — |
+| [SRC-0F910493E8-L000332](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L332) | 332 | `""` | — |
+| [SRC-0F910493E8-L000333](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L333) | 333 | `"---"` | — |
 | [SRC-0F910493E8-L000334](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L334) | 334 | `""` | — |
 | [SRC-0F910493E8-L000335](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L335) | 335 | `"# 9. Meta-Agent: قدرة مؤجلة ومشروطة"` | — |
 | [SRC-0F910493E8-L000336](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L336) | 336 | `""` | — |
@@ -454,401 +825,3 @@
 | [SRC-0F910493E8-L000769](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L769) | 769 | `"- لا تسجل API keys أو cookies أو Authorization headers أو أسرار النموذج أو بيانات خاصة لا حاجة إليها."` | — |
 | [SRC-0F910493E8-L000770](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L770) | 770 | `"- قيد الوصول إلى السجلات، وحدد مدة الاحتفاظ والحذف ومراجعة الوصول."` | — |
 | [SRC-0F910493E8-L000771](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L771) | 771 | `"- افصل خطأ التطبيق العادي عن الحادث الأمني وعن فشل الموفر."` | — |
-| [SRC-0F910493E8-L000772](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L772) | 772 | `"- وفر طريقة لإيقاف أداة أو موصل أو تكوين خطير بسرعة (kill switch) متى أمكن."` | — |
-| [SRC-0F910493E8-L000773](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L773) | 773 | `"- وثّق إجراءً مختصرًا للتعامل مع: سر مسرب، وصول غير مصرح، ثغرة حرجة، تسريب بيانات، إساءة استهلاك، وخلل في سلسلة التوريد."` | — |
-| [SRC-0F910493E8-L000774](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L774) | 774 | `"- يتضمن الإجراء الاحتواء، وإلغاء الأسرار، وحفظ أدلة مناسبة، وتقييم نطاق الأثر، وإصلاحًا واختبارًا، ومراجعة سبب جذري، واختبار منع تكرار."` | — |
-| [SRC-0F910493E8-L000775](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L775) | 775 | `"- اختبر النسخ الاحتياطي والاستعادة للبيانات المهمة. وجود ملف backup غير كافٍ."` | — |
-| [SRC-0F910493E8-L000776](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L776) | 776 | `"- يحدّث سجل المتطلبات والمخاطر بعد الحادث، ولا تُخفى القيود التي لم تُعالج."` | — |
-| [SRC-0F910493E8-L000777](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L777) | 777 | `""` | — |
-| [SRC-0F910493E8-L000778](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L778) | 778 | `"## 17.16 فحوص الأمان الإلزامية قبل اعتماد تغيير مؤثر"` | — |
-| [SRC-0F910493E8-L000779](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L779) | 779 | `""` | — |
-| [SRC-0F910493E8-L000780](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L780) | 780 | `"لا يلزم تشغيل كل فحص على كل تعديل توثيقي؛ لكن أي تغيير يؤثر في مسار أمني يجب أن يرتبط بالاختبارات المنطبقة، على الأقل من المجموعة التالية:"` | — |
-| [SRC-0F910493E8-L000781](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L781) | 781 | `"- **AuthN/AuthZ:** رفض وصول مجهول أو غير مالك للمورد؛ اختبار BOLA/IDOR إن وجدت موارد خاصة."` | — |
-| [SRC-0F910493E8-L000782](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L782) | 782 | `"- **Input validation:** الأنواع والأطوال والحقول المجهولة والحدود والمدخلات المشوهة."` | — |
-| [SRC-0F910493E8-L000783](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L783) | 783 | `"- **SSRF/network:** loopback/private/IPv6/metadata/redirect/DNS changes/oversized responses/timeouts."` | — |
-| [SRC-0F910493E8-L000784](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L784) | 784 | `"- **Prompt injection:** محتوى خبيث داخل صفحات أو مرفقات أو ذاكرة، مع التحقق من عدم نشوء استدعاء أداة غير مسموح."` | — |
-| [SRC-0F910493E8-L000785](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L785) | 785 | `"- **Tool permissions:** أداة غير مسجلة، صلاحية مرفوضة، تجاوز budget، وسياسة تتطلب تأكيدًا بشريًا."` | — |
-| [SRC-0F910493E8-L000786](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L786) | 786 | `"- **XSS/output safety:** HTML/Markdown/URL مسترجع أو مولد، وروابط ذات مخططات خطرة."` | — |
-| [SRC-0F910493E8-L000787](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L787) | 787 | `"- **Secrets/privacy:** عدم تسرب الأسرار أو السياق الحساس إلى output أو logs أو PR أو مزود غير معتمد."` | — |
-| [SRC-0F910493E8-L000788](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L788) | 788 | `"- **Concurrency/isolation:** طلبات متزامنة وسياقات مستخدمين مختلفين وإلغاء أو timeout."` | — |
-| [SRC-0F910493E8-L000789](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L789) | 789 | `"- **Abuse/resource limits:** عدد الطلبات والخطوات والصفحات والمحاولات واستنفاد الحصة."` | — |
-| [SRC-0F910493E8-L000790](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L790) | 790 | `"- **Supply chain/CI:** صلاحيات workflow، سلوك PR غير موثوق، الاعتماديات، ووجود الأسرار في التغيير."` | — |
-| [SRC-0F910493E8-L000791](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L791) | 791 | `"- **Data safety:** ملكية السجل، التصدير، الترحيل، النسخ الاحتياطي والحذف بحسب المسار."` | — |
-| [SRC-0F910493E8-L000792](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L792) | 792 | `"- **Regression:** كل سلوك سابق متأثر بالتغيير مع حالات النجاح والفشل."` | — |
-| [SRC-0F910493E8-L000793](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L793) | 793 | `""` | — |
-| [SRC-0F910493E8-L000794](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L794) | 794 | `"تُحفظ النتيجة الفعلية وبيئة التشغيل وإصدار المصدر لكل ادعاء. ويجب أن تميز التقارير بين PASS وFAIL وNOT_RUN وNOT_APPLICABLE مع سبب. لا يُعامل NOT_RUN أو اختبار mock على أنه إثبات لعمل حي."` | — |
-| [SRC-0F910493E8-L000795](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L795) | 795 | `""` | — |
-| [SRC-0F910493E8-L000796](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L796) | 796 | `"## 17.17 بوابات إطلاق أمنية (Security Release Gates)"` | — |
-| [SRC-0F910493E8-L000797](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L797) | 797 | `""` | — |
-| [SRC-0F910493E8-L000798](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L798) | 798 | `"**لا يجوز إطلاق أو تمكين مسار ذي أثر بناء على توثيق فقط.** تحدد درجة الصرامة بحسب الخطر:"` | — |
-| [SRC-0F910493E8-L000799](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L799) | 799 | `""` | — |
-| [SRC-0F910493E8-L000800](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L800) | 800 | `"### البوابة S0 — سلامة الأساس"` | — |
-| [SRC-0F910493E8-L000801](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L801) | 801 | `"- لا أسرار معروفة مكشوفة في التغيير."` | — |
-| [SRC-0F910493E8-L000802](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L802) | 802 | `"- المصادقة والتفويض مفعّلان على المسارات التي تتطلبهما."` | — |
-| [SRC-0F910493E8-L000803](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L803) | 803 | `"- لا يوجد تجاوز معروف للصلاحيات في المسار المتأثر."` | — |
-| [SRC-0F910493E8-L000804](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L804) | 804 | `"- مدخلات وموارد الطلب محدودة."` | — |
-| [SRC-0F910493E8-L000805](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L805) | 805 | `"- الاختبارات الأساسية واختبارات الانحدار المنطبقة تعمل."` | — |
-| [SRC-0F910493E8-L000806](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L806) | 806 | `""` | — |
-| [SRC-0F910493E8-L000807](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L807) | 807 | `"### البوابة S1 — أدوات وشبكة وبيانات"` | — |
-| [SRC-0F910493E8-L000808](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L808) | 808 | `"- اختبارات الرفض والصلاحيات وSSRF والمهل والحجم موجودة ومجتازة بحسب التغيير."` | — |
-| [SRC-0F910493E8-L000809](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L809) | 809 | `"- المحتوى غير الموثوق لا يصبح تعليمات تنفيذية أو HTML نشطًا."` | — |
-| [SRC-0F910493E8-L000810](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L810) | 810 | `"- الأسرار والبيانات لا تتسرب إلى سجلات أو مزود غير معتمد."` | — |
-| [SRC-0F910493E8-L000811](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L811) | 811 | `"- عزل السياق مثبت للمسارات التي تتعامل مع طلبات متزامنة أو بيانات مختلفة."` | — |
-| [SRC-0F910493E8-L000812](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L812) | 812 | `""` | — |
-| [SRC-0F910493E8-L000813](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L813) | 813 | `"### البوابة S2 — وكيل جديد أو صلاحية جديدة"` | — |
-| [SRC-0F910493E8-L000814](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L814) | 814 | `"- نموذج تهديد مختصر ومراجعة مخاطر."` | — |
-| [SRC-0F910493E8-L000815](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L815) | 815 | `"- تعريف وصلاحيات ومعايير فشل واضحة."` | — |
-| [SRC-0F910493E8-L000816](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L816) | 816 | `"- اختبارات وظيفية وسلبية وجودة ملائمة للمهمة."` | — |
-| [SRC-0F910493E8-L000817](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L817) | 817 | `"- سجل إصدار واعتماد وتعطيل/تراجع."` | — |
-| [SRC-0F910493E8-L000818](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L818) | 818 | `"- موافقة بشرية حسب الأثر."` | — |
-| [SRC-0F910493E8-L000819](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L819) | 819 | `""` | — |
-| [SRC-0F910493E8-L000820](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L820) | 820 | `"### البوابة S3 — تنفيذ كود مولد أو فعل خارجي عالي الأثر"` | — |
-| [SRC-0F910493E8-L000821](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L821) | 821 | `"- قرار معماري مستقل ومبرر."` | — |
-| [SRC-0F910493E8-L000822](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L822) | 822 | `"- عزل اختُبرت حدوده في بيئة مطابقة لمسار التشغيل."` | — |
-| [SRC-0F910493E8-L000823](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L823) | 823 | `"- اختبار هروب وصلاحيات وموارد وسلسلة توريد."` | — |
-| [SRC-0F910493E8-L000824](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L824) | 824 | `"- فصل أسرار الإنتاج عن بيئة الاختبار."` | — |
-| [SRC-0F910493E8-L000825](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L825) | 825 | `"- مراجعة أمنية وموافقة بشرية وخطة استجابة وتراجع."` | — |
-| [SRC-0F910493E8-L000826](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L826) | 826 | `"- لا يُفعّل إذا تعذر إثبات أحد المتطلبات الحرجة."` | — |
-| [SRC-0F910493E8-L000827](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L827) | 827 | `""` | — |
-| [SRC-0F910493E8-L000828](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L828) | 828 | `"إذا كان هناك خطر حرج معروف أو مسار يسمح بتسرب سر أو تجاوز صلاحيات أو تنفيذ كود غير موثوق خارج العزل، فالقرار الافتراضي هو تعطيل المسار المتأثر حتى المعالجة، مع توثيق السبب. لا يمنع ذلك استمرار التطوير في مسارات أخرى غير معرضة للخطر."` | — |
-| [SRC-0F910493E8-L000829](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L829) | 829 | `""` | — |
-| [SRC-0F910493E8-L000830](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L830) | 830 | `"## 17.18 الأمن كدورة حياة، لا كقائمة نهائية"` | — |
-| [SRC-0F910493E8-L000831](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L831) | 831 | `""` | — |
-| [SRC-0F910493E8-L000832](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L832) | 832 | `"تبدأ المراجعة عند تعريف المتطلب، وتستمر خلال التصميم والتنفيذ والاختبار والنشر وما بعد النشر. لكل تغيير جوهري:"` | — |
-| [SRC-0F910493E8-L000833](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L833) | 833 | `"1. الحاجة والبيانات والأصول."` | — |
-| [SRC-0F910493E8-L000834](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L834) | 834 | `"2. حدود الثقة ونموذج التهديد."` | — |
-| [SRC-0F910493E8-L000835](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L835) | 835 | `"3. التصميم وأقل صلاحيات."` | — |
-| [SRC-0F910493E8-L000836](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L836) | 836 | `"4. اختبارات الفشل والهجوم المناسبة."` | — |
-| [SRC-0F910493E8-L000837](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L837) | 837 | `"5. مراجعة diff والاعتماديات والأسرار."` | — |
-| [SRC-0F910493E8-L000838](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L838) | 838 | `"6. نتيجة اختبار موثقة."` | — |
-| [SRC-0F910493E8-L000839](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L839) | 839 | `"7. قرار قبول المخاطر من صاحب الصلاحية."` | — |
-| [SRC-0F910493E8-L000840](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L840) | 840 | `"8. مراقبة وتراجع عند الحاجة."` | — |
-| [SRC-0F910493E8-L000841](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L841) | 841 | `""` | — |
-| [SRC-0F910493E8-L000842](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L842) | 842 | `"الأمن المستمر لا يعني إضافة كل أداة أو إطار امتثال متاح. يعني أن كل ضابط يواجه خطرًا معروفًا، وله مالك واختبار وحدود، ويمكن تعطيله أو التراجع عنه عند ظهور خلل، ولا نضيف تعقيدًا لا يستطيع المشروع تشغيله ومراجعته."` | — |
-| [SRC-0F910493E8-L000843](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L843) | 843 | `""` | — |
-| [SRC-0F910493E8-L000844](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L844) | 844 | `"---"` | — |
-| [SRC-0F910493E8-L000845](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L845) | 845 | `""` | — |
-| [SRC-0F910493E8-L000846](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L846) | 846 | `"## الخلاصة الحاكمة"` | — |
-| [SRC-0F910493E8-L000847](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L847) | 847 | `""` | — |
-| [SRC-0F910493E8-L000848](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L848) | 848 | `"**ابنِ قدرات موثوقة قبل أن تبني مصنعًا لإنشاء القدرات.**"` | — |
-| [SRC-0F910493E8-L000849](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L849) | 849 | `""` | — |
-| [SRC-0F910493E8-L000850](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L850) | 850 | `"نواة Omarai ومسارات البحث والأدوات والأدلة الحالية هي نقطة البداية التي يجب تدقيقها والحفاظ على المفيد منها. تتطور المنظومة بإضافة عقود واضحة ومهارات وسير عمل قابلة للاختبار، ثم مواصفات وتركيب ديناميكي محدود عند الحاجة. يأتي إنشاء الوكلاء بعد ذلك، وتوليد الكود التنفيذي قرار مستقبلي مستقل."` | — |
-| [SRC-0F910493E8-L000851](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L851) | 851 | `""` | — |
-| [SRC-0F910493E8-L000852](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L852) | 852 | `"النجاح ليس عدد الوكلاء أو الطبقات، بل قدرة Omarai على أداء مهمة حقيقية، ضمن صلاحيات محددة، بنتيجة يمكن فحصها، مع توضيح صادق لما نجح وما فشل وما لا يزال مجهولًا."` | — |
-## وثائق وفهرسة
-
-### FILE-61B24BEFCC — [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-61B24BEFCC-L000001](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | 1 | `"# Omarai — مصفوفة أدلة الاختبار: محلي، Mock، حاوية، وتكامل حي"` | — |
-| [SRC-61B24BEFCC-L000002](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L2) | 2 | `""` | — |
-| [SRC-61B24BEFCC-L000003](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L3) | 3 | ``"> **تحديث ما بعد الدمج — 21 أكتوبر 2026:** دُمج PR #76 في `main` عند `528a2552c0cda809d6c444713466e0e075c13ed9`. تشغيل PR الأحدث الذي فُحص هو [#39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) على رأس PR `3fb028...` قبل الدمج: 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff والفهرس وبناء الحاوية وAPI smoke ناجحة. تشغيل CI مستقل على SHA الدمج نفسه **NOT_CONFIRMED**؛ راجع [تقرير التحقق بعد الدمج](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md). كل إشارات الخط الأساسي/الدمج أدناه تُقرأ كتاريخ عند كتابة المقطع ما لم ينص على غير ذلك."`` | — |
-| [SRC-61B24BEFCC-L000004](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L4) | 4 | `""` | — |
-| [SRC-61B24BEFCC-L000005](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L5) | 5 | `"**معرف الوثيقة:** OMARAI-TEST-EVIDENCE-MATRIX-001  "` | — |
-| [SRC-61B24BEFCC-L000006](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L6) | 6 | `"**تاريخ اللقطة:** 2026-10-19  "` | — |
-| [SRC-61B24BEFCC-L000007](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L7) | 7 | ``"**نسخة المصدر المرجعية:** `871d2930405d164d3ae4c53f368937a4f5f01a6f`  "`` | — |
-| [SRC-61B24BEFCC-L000008](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L8) | 8 | `"**الغرض:** منع الخلط بين وجود الكود ونجاح اختبارات وحداته وبين إثبات الاتصال بخدمة خارجية أو تشغيل نسخة عامة."` | — |
-| [SRC-61B24BEFCC-L000009](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L9) | 9 | `""` | — |
-| [SRC-61B24BEFCC-L000010](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L10) | 10 | `"## ملحق تحديث خط الأساس — 21 أكتوبر 2026"` | — |
-| [SRC-61B24BEFCC-L000011](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L11) | 11 | `""` | — |
-| [SRC-61B24BEFCC-L000012](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L12) | 12 | ``"**خط أساس `main` التاريخي في لقطة 19 أكتوبر بعد #75 (قبل دمج #76):** `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`.  "`` | — |
-| [SRC-61B24BEFCC-L000013](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L13) | 13 | `"**نتيجة CI:** [التشغيل 39584599539](https://github.com/mosabosama2030-oss/omarai/actions/runs/39584599539) — 308 اختبارًا ناجحًا على Python 3.11 و308 على Python 3.12، وRuff، والتحقق من الفهرس، وبناء الحاوية، وفحص API المحمية.  "` | — |
-| [SRC-61B24BEFCC-L000014](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L14) | 14 | `"**نطاق الإثبات:** يخص هذا التشغيل SHA المذكور فقط. لا يثبت تشغيل البحث/النموذج خارجيًا، ولا يثبت نشر خدمة، أو دوام SQLite على الاستضافة، أو اختبار حمل، أو عزل مستأجرين."` | — |
-| [SRC-61B24BEFCC-L000015](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L15) | 15 | `""` | — |
-| [SRC-61B24BEFCC-L000016](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L16) | 16 | ``"المراجع `871d293...` ونتائج CI بتاريخ 19 أكتوبر أدناه سجل تاريخي للنسخ التي تشير إليها. كانت عبارة «فرع الإغلاق يحتوي تغييرات مقترحة» صحيحة قبل دمج #76 فقط؛ وقد فُحص CI على رأس PR لاحقًا. مقارنة GitHub بين رأس PR المختبَر `3fb02880aec9ec231d973e0b3668308d1379ee89` وcommit الدمج `528a2552c0cda809d6c444713466e0e075c13ed9` أعادت `ahead_by=1` و`behind_by=0` بلا أي ملف مختلف؛ شجرة الملفات مطابقة. هذا يدعم أن نتائج CI تغطي محتوى الكود المدمج، لكنه لا ينشئ تشغيلًا مستقلًا مرتبطًا بحدث push على SHA الدمج. لذلك تبقى حالة تشغيل CI مستقل على SHA الدمج `NOT_CONFIRMED`، لا `FAIL`."`` | — |
-| [SRC-61B24BEFCC-L000017](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L17) | 17 | `""` | — |
-| [SRC-61B24BEFCC-L000018](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L18) | 18 | `"## ملاحظة بشأن سجل CI التاريخي"` | — |
-| [SRC-61B24BEFCC-L000019](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L19) | 19 | `""` | — |
-| [SRC-61B24BEFCC-L000020](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L20) | 20 | `"الجدول التالي يحتفظ بنتائج تشغيلات وفروع وقت تسجيلها؛ أوصاف مثل «مفتوح» أو «غير مدمج» فيه تاريخية ولا تصف بالضرورة حالة PR الآن. الخط الحالي ونتائج #76 موضحان في الملحق أعلى هذه الوثيقة، أما حالة كل عيب ومعيار إغلاقه ففي [السجل المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)."` | — |
-| [SRC-61B24BEFCC-L000021](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L21) | 21 | `""` | — |
-| [SRC-61B24BEFCC-L000022](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L22) | 22 | `"## 1. أنواع الدليل"` | — |
-| [SRC-61B24BEFCC-L000023](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L23) | 23 | `""` | — |
-| [SRC-61B24BEFCC-L000024](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L24) | 24 | `"\| النوع \| ما الذي يثبته؟ \| ما الذي لا يثبته؟ \|"` | — |
-| [SRC-61B24BEFCC-L000025](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L25) | 25 | `"\|---\|---\|---\|"` | — |
-| [SRC-61B24BEFCC-L000026](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L26) | 26 | `"\| Unit / deterministic \| سلوك دالة/قاعدة محددة في شروط مضبوطة. \| اتصال حي أو تكامل خارجي أو أداء إنتاجي. \|"` | — |
-| [SRC-61B24BEFCC-L000027](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L27) | 27 | `"\| Mock / monkeypatch \| تعامل المكون مع استجابة/فشل اصطناعي محدد. \| صلاحية مفاتيح أو توافر موفر حقيقي أو مطابقته للسلوك الفعلي. \|"` | — |
-| [SRC-61B24BEFCC-L000028](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L28) | 28 | `"\| Local HTTP integration \| تشغيل Handler/API الفعلي على loopback مع قاعدة اختبار. \| صحة TLS أو CORS عبر مضيف حقيقي أو هوية نشر عامة. \|"` | — |
-| [SRC-61B24BEFCC-L000029](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L29) | 29 | `"\| Container smoke on CI \| بناء الحاوية وتشغيلها واختبار مسارات API أساسية محلية ومحمية. \| نشر فعلي أو دوام الملفات أو اتصال كل موفر خارجي. \|"` | — |
-| [SRC-61B24BEFCC-L000030](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L30) | 30 | `"\| Live provider diagnostic \| موفر محدد رد في وقت الاختبار من بيئة الاختبار. \| استمرار التوافر أو دقة كل إجابة أو استقلال المصادر. \|"` | — |
-| [SRC-61B24BEFCC-L000031](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L31) | 31 | `"\| Hosted acceptance smoke \| مسار مصادق عليه يعمل على عنوان الاستضافة الذي فُحص وقت التشغيل. \| توافر مستمر، حمل إنتاجي، استعادة بيانات، أو امتثال أمني شامل. \|"` | — |
-| [SRC-61B24BEFCC-L000032](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L32) | 32 | `"\| Load / restore / red-team \| فقط النطاق المحدد في التقرير ونتائج الاختبار التي نُفذت. \| أي نطاق أو تهديد لم يشمله القياس أو الاختبار. \|"` | — |
-| [SRC-61B24BEFCC-L000033](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L33) | 33 | `""` | — |
-| [SRC-61B24BEFCC-L000034](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L34) | 34 | `"## 2. تصنيف الموجود في المستودع"` | — |
-| [SRC-61B24BEFCC-L000035](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L35) | 35 | `""` | — |
-| [SRC-61B24BEFCC-L000036](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L36) | 36 | `"\| المسار \| التصنيف \| الدليل الحالي \| الحالة والحدود \|"` | — |
-| [SRC-61B24BEFCC-L000037](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L37) | 37 | `"\|---\|---\|---\|---\|"` | — |
-| [SRC-61B24BEFCC-L000038](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L38) | 38 | ``"\| `tests/test_request_budget.py` \| Unit / deterministic \| عدادات الميزانية والحدود والساعة الوهمية، مع اختبارات حدود لكل مورد ورفض المورد المعطل والتزامن في PR #56. \| CI [39223310566](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223310566) نجح على PR #56: Ruff، و249 اختبارًا على Python 3.11 و249 على Python 3.12، وبناء الحاوية وفحص API المحمية. الاختبار محلي ولا يثبت حمل الإنتاج أو hard cancellation. \|"`` | — |
-| [SRC-61B24BEFCC-L000039](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L39) | 39 | ``"\| `tests/test_api.py` \| Local HTTP integration + mocks محددة \| Handler حقيقي على loopback وقاعدة SQLite مؤقتة؛ بعض مسارات الوكيل تُعزل بـmonkeypatch. \| يثبت السلوك المحلي المُمثّل فقط؛ لا يثبت عنوان استضافة عام. \|"`` | — |
-| [SRC-61B24BEFCC-L000040](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L40) | 40 | ``"\| `tests/test_web_agent.py` \| Unit / mocked provider behavior غالبًا \| تهيئة موفرين ونتائج/failures اصطناعية وفحوص سلوك محلية. \| لا يُعامل كاختبار اتصال حي. يلزم فحص كل اختبار/marker قبل تصنيف كامل الملف آليًا. \|"`` | — |
-| [SRC-61B24BEFCC-L000041](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L41) | 41 | ``"\| `tests/test_answer_quality_corpus.py` \| Structural corpus validation \| التحقق من الشكل والمعرفات والفئات ومعايير الحالات. \| وجود 45 حالة في corpus لا يعني أن النموذج أجاب عنها أو اجتازها حيًا. \|"`` | — |
-| [SRC-61B24BEFCC-L000042](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L42) | 42 | ``"\| `tests/test_answer_quality_runner.py` \| Runner/schema/status behavior \| اختبارات لحفظ حالات مثل NOT_TESTED وعدم اعتبارها PASS. \| لا يثبت جودة إجابات نموذج لم تُشغّل عليه. \|"`` | — |
-| [SRC-61B24BEFCC-L000043](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L43) | 43 | ``"\| `.github/workflows/tests.yml` \| CI + container smoke \| Ruff وPytest على Python 3.11/3.12، وبناء الحاوية واختبار API الأساسي المحمي. \| بنية الحاوية وsmoke المحلي لا يساويان خدمة منشورة. \|"`` | — |
-| [SRC-61B24BEFCC-L000044](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L44) | 44 | ``"\| `scripts/hosted_smoke_test.py` \| Live hosted acceptance script \| يستهدف أصل HTTPS معلومًا، ويفحص الصحة ورفض غير المصادق، والتشخيص الحي للبحث والنموذج، ثم سؤالًا عربيًا ومصادر. \| لم يُنفذ في هذه اللقطة؛ قد يستهلك استخدام موفر النموذج/البحث. \|"`` | — |
-| [SRC-61B24BEFCC-L000045](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L45) | 45 | ``"\| `.github/workflows/hosted-smoke.yml` \| Manual live workflow \| `workflow_dispatch`، ويستخدم `OMARAI_BASE_URL` و`OMARAI_ACCESS_TOKEN` كأسرار مضبوطة إداريًا، لا URL حرًا من مشغل workflow. \| لا يُشغّل دون عنوان استضافة معتمد وموافقة على الاستخدام/التكلفة. \|"`` | — |
-| [SRC-61B24BEFCC-L000046](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L46) | 46 | `""` | — |
-| [SRC-61B24BEFCC-L000047](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L47) | 47 | `"## 3. أمثلة تشغيل CI الحديثة وحدود الاستدلال"` | — |
-| [SRC-61B24BEFCC-L000048](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L48) | 48 | `""` | — |
-| [SRC-61B24BEFCC-L000049](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L49) | 49 | `"هذه نتائج فعلية مرتبطة برؤوس PR محددة. تختلف بين الفروع، ولا تثبت تشغيل خدمة عامة أو اتصالًا حيًا بمزود خارجي. الحالات أدناه تعكس حالة PRs حتى لقطة 2026-10-19."` | — |
-| [SRC-61B24BEFCC-L000050](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L50) | 50 | `""` | — |
-| [SRC-61B24BEFCC-L000051](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L51) | 51 | `"\| PR / run \| HEAD \| النتائج ونطاق الدليل \|"` | — |
-| [SRC-61B24BEFCC-L000052](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L52) | 52 | `"\|---\|---\|---\|"` | — |
-| [SRC-61B24BEFCC-L000053](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L53) | 53 | ``"\| [PR #48 — run 39215710124](https://github.com/mosabosama2030-oss/omarai/actions/runs/39215710124) — **مدمج** \| `3e2faba92f20d87db002ba3a4fe3e8ab7165a1f0` \| Ruff؛ 238 اختبارًا على كل من Python 3.11 و3.12؛ بناء الحاوية وفحص API المحمية. دُمج الإصلاح لاحقًا في `main` عند `871d2930405d164d3ae4c53f368937a4f5f01a6f`. يثبت حالات حد جسم الطلب والمهلة والـslow-trickle التي اختُبرت، لا كل صور Slowloris. \|"`` | — |
-| [SRC-61B24BEFCC-L000054](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L54) | 54 | ``"\| [PR #58 — run 39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) — **مفتوح وغير مدمج** \| `59027f44388730d34c7bd7164450abdba2f9fd0a` \| Ruff؛ 244 اختبارًا على كل من Python 3.11 و3.12؛ بناء الحاوية وفحص API المحمية. يثبت اختبارات أداة SQLite المحلية على فرع PR الحالي، لا الاستعادة على مضيف الاستضافة. PR #50 أغلق دون دمج لأنه أقدم من `main`. \|"`` | — |
-| [SRC-61B24BEFCC-L000055](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L55) | 55 | ``"\| [PR #51 — run 39223782361](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223782361) — **مغلق دون دمج؛ استُبدل بـPR #57** \| `f0af91c06bffdddcc3a25184754969e86d9e7f86` \| Ruff؛ 249 اختبارًا على كل من Python 3.11 و3.12؛ بناء الحاوية وفحص API المحمية. أدلة توثيقية فقط؛ لا تثبت قبولًا حيًا. \|"`` | — |
-| [SRC-61B24BEFCC-L000056](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L56) | 56 | ``"\| [PR #54 — run 39221649040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39221649040) — **مفتوح وغير مدمج** \| `c602de0d039283119236807b075953b4bcf6e89a` \| Ruff؛ 249 اختبارًا على كل من Python 3.11 و3.12؛ بناء الحاوية وفحص API المحمية. الاختبارات الجديدة تستخدم DNS محاكى لتغطية فئات IPv4/IPv6 غير العامة؛ ليست اختبار شبكة حيًا أو شهادة SSRF شاملة. \|"`` | — |
-| [SRC-61B24BEFCC-L000057](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L57) | 57 | ``"\| [PR #55 — run 39224020934](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224020934) — **مفتوح وغير مدمج** \| `4604a83d760b7fe913e1a75cdec04a102c33b0d6` \| Ruff؛ 239 اختبارًا على كل من Python 3.11 و3.12؛ بناء الحاوية وفحص API المحمية. يشمل الاختبار التأكد من إغلاق الطلب البطيء قبل إصدار استجابة؛ لا يثبت النشر ولا كل أنواع DoS. \|"`` | — |
-| [SRC-61B24BEFCC-L000058](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L58) | 58 | ``"\| [PR #56 — run 39223310566](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223310566) — **مفتوح وغير مدمج** \| `0ca1b14aa1dd63bdc48a8ca73f698f7f6bc83416` \| Ruff؛ 249 اختبارًا على كل من Python 3.11 و3.12؛ بناء الحاوية وفحص API المحمية. يختبر قيود الموارد ورفض المورد المعطل والحجوزات المتزامنة وتحرير semaphore محليًا. \|"`` | — |
-| [SRC-61B24BEFCC-L000059](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L59) | 59 | ``"\| [PR #59 — run 39225038734](https://github.com/mosabosama2030-oss/omarai/actions/runs/39225038734) — **مفتوح وغير مدمج** \| `2b8c3de983f09ea1a7c4ca73d4c1a09a54ab987a` \| Pinning لـ`actions/checkout` و`actions/setup-python` على SHA كاملة؛ Ruff؛ 238 اختبارًا على كل من Python 3.11 و3.12؛ بناء الحاوية وفحص API المحمية. لا يشغّل هذا workflow اختبار الاستضافة الحي. \|"`` | — |
-| [SRC-61B24BEFCC-L000060](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L60) | 60 | `""` | — |
-| [SRC-61B24BEFCC-L000061](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L61) | 61 | ``"أُغلق PR #49 وPR #52 دون دمج بعد أن استُبدل مسار اختبارات الميزانية بـPR #56 المبني على `main` الأحدث. لا تستخدم نتائج CI من الفروع القديمة على أنها تحقق لرؤوس PR أحدث، أو دليلًا على قدرات موجودة في `main` قبل دمجها."`` | — |
-| [SRC-61B24BEFCC-L000062](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L62) | 62 | `""` | — |
-| [SRC-61B24BEFCC-L000063](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L63) | 63 | `"**نطاق الأرقام:** أعداد Pytest أعلاه مأخوذة من سجلات وظائف CI الفعلية. لا تعني زيادة عدد الاختبارات تحسنًا أمنيًا بحد ذاتها، ولا تعني هذه الاختبارات اتصالًا حيًا بكل مزود أو إثباتًا لجودة الإجابات أو تحمل الضغط."` | — |
-| [SRC-61B24BEFCC-L000064](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L64) | 64 | `""` | — |
-| [SRC-61B24BEFCC-L000065](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L65) | 65 | `"## 4. ما الذي لا يزال NOT_RUN / UNKNOWN؟"` | — |
-| [SRC-61B24BEFCC-L000066](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L66) | 66 | `""` | — |
-| [SRC-61B24BEFCC-L000067](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L67) | 67 | `"حتى إعداد هذه المصفوفة:"` | — |
-| [SRC-61B24BEFCC-L000068](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L68) | 68 | `""` | — |
-| [SRC-61B24BEFCC-L000069](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L69) | 69 | `"- **NOT_RUN:** لم يُنفذ الاختبار الحي الشامل للموفرين عبر استضافة محددة في هذه الجولة."` | — |
-| [SRC-61B24BEFCC-L000070](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L70) | 70 | `"- **NOT_RUN:** لم يُنفذ اختبار يدوي بالمتصفح على الخدمة المنشورة."` | — |
-| [SRC-61B24BEFCC-L000071](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L71) | 71 | `"- **NOT_RUN:** لم يُنفذ اختبار حمل ممثل أو soak test."` | — |
-| [SRC-61B24BEFCC-L000072](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L72) | 72 | `"- **NOT_RUN:** لم تُثبت استعادة نسخة SQLite على مضيف الاستضافة المستهدف."` | — |
-| [SRC-61B24BEFCC-L000073](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L73) | 73 | `"- **UNKNOWN:** صلاحية مفاتيح موفري البحث/النموذج وقيود حساباتهم الفعلية، ما لم يثبتها اختبار حي منفصل."` | — |
-| [SRC-61B24BEFCC-L000074](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L74) | 74 | ``"- **UNKNOWN:** ربط SHA الموجود في `main` بالـartifact الفعلي لخدمة عامة، ما لم تتوفر بيانات نشر قابلة للفحص."`` | — |
-| [SRC-61B24BEFCC-L000075](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L75) | 75 | `"- **UNKNOWN:** سلوك الوكيل العكسي الحقيقي وTLS وCORS وإعداد التخزين لكل مضيف بعينه."` | — |
-| [SRC-61B24BEFCC-L000076](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L76) | 76 | `""` | — |
-| [SRC-61B24BEFCC-L000077](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L77) | 77 | `"## 5. طريقة تشغيل قبول حي — بعد الموافقة فقط"` | — |
-| [SRC-61B24BEFCC-L000078](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L78) | 78 | `""` | — |
-| [SRC-61B24BEFCC-L000079](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L79) | 79 | `"هذا الإجراء ليس جزءًا من اختبارات PR العادية، وقد يستهلك استخدامًا من مزودي النموذج أو البحث."` | — |
-| [SRC-61B24BEFCC-L000080](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L80) | 80 | `""` | — |
-| [SRC-61B24BEFCC-L000081](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L81) | 81 | `"المتطلبات قبل التشغيل:"` | — |
-| [SRC-61B24BEFCC-L000082](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L82) | 82 | `"1. وجود خدمة Omarai منشورة يملك مدير المشروع صلاحية اختبارها."` | — |
-| [SRC-61B24BEFCC-L000083](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L83) | 83 | `"2. التحقق من أن الهدف هو أصل HTTPS المقصود."` | — |
-| [SRC-61B24BEFCC-L000084](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L84) | 84 | ``"3. إعداد `OMARAI_BASE_URL` و`OMARAI_ACCESS_TOKEN` في GitHub Secrets فقط، وعدم وضع الرمز في مدخلات workflow أو تعليق أو سجل."`` | — |
-| [SRC-61B24BEFCC-L000085](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L85) | 85 | `"4. موافقة صريحة على إجراء اختبار حي قد يستهلك رصيدًا."` | — |
-| [SRC-61B24BEFCC-L000086](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L86) | 86 | `"5. استخدام سؤال عام غير حساس، وعدم استخدام بيانات عملاء حقيقية."` | — |
-| [SRC-61B24BEFCC-L000087](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L87) | 87 | `"6. تسجيل commit/نسخة الخدمة والوقت ونتيجة كل خطوة دون تسجيل أي سر."` | — |
-| [SRC-61B24BEFCC-L000088](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L88) | 88 | `""` | — |
-| [SRC-61B24BEFCC-L000089](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L89) | 89 | ``"يشغّل `scripts/hosted_smoke_test.py`:"`` | — |
-| [SRC-61B24BEFCC-L000090](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L90) | 90 | ``"- فحص `/api/health`."`` | — |
-| [SRC-61B24BEFCC-L000091](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L91) | 91 | ``"- اختبار أن `POST /api/agent` بلا رمز يرجع 401."`` | — |
-| [SRC-61B24BEFCC-L000092](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L92) | 92 | ``"- فحصًا حيًا للبحث والنموذج من `/api/diagnostics`."`` | — |
-| [SRC-61B24BEFCC-L000093](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L93) | 93 | `"- سؤالًا عربيًا يتطلب بحثًا ومصادر."` | — |
-| [SRC-61B24BEFCC-L000094](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L94) | 94 | `"- تحققًا من أن التقرير لا يحتاج إلى كشف مفاتيح."` | — |
-| [SRC-61B24BEFCC-L000095](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L95) | 95 | `""` | — |
-| [SRC-61B24BEFCC-L000096](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L96) | 96 | ``"إذا لم تتوفر البيئة أو الأسرار أو الموافقة على الاستخدام، تبقى النتيجة `NOT_RUN`؛ لا يُستعاض عن ذلك بنجاح CI."`` | — |
-| [SRC-61B24BEFCC-L000097](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L97) | 97 | `""` | — |
-| [SRC-61B24BEFCC-L000098](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L98) | 98 | `"## 6. شروط قبول نتيجة أي اختبار"` | — |
-| [SRC-61B24BEFCC-L000099](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L99) | 99 | `""` | — |
-| [SRC-61B24BEFCC-L000100](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L100) | 100 | `"يجب أن يتضمن سجل النتيجة:"` | — |
-| [SRC-61B24BEFCC-L000101](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L101) | 101 | `"- معرف الاختبار واسمه."` | — |
-| [SRC-61B24BEFCC-L000102](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L102) | 102 | `"- نوع الاختبار (unit/mock/local/container/live/load/restore/red-team)."` | — |
-| [SRC-61B24BEFCC-L000103](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L103) | 103 | `"- SHA والفرع أو النسخة المنشورة."` | — |
-| [SRC-61B24BEFCC-L000104](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L104) | 104 | `"- الأمر أو workflow ورابط التشغيل."` | — |
-| [SRC-61B24BEFCC-L000105](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L105) | 105 | `"- إعدادات البيئة اللازمة دون الأسرار."` | — |
-| [SRC-61B24BEFCC-L000106](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L106) | 106 | `"- النتيجة الفعلية ووقت الاختبار."` | — |
-| [SRC-61B24BEFCC-L000107](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L107) | 107 | `"- ما يثبته الاختبار وما لا يثبته."` | — |
-| [SRC-61B24BEFCC-L000108](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L108) | 108 | `"- الحالات المستثناة أو التي لم تُنفّذ."` | — |
-| [SRC-61B24BEFCC-L000109](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L109) | 109 | `"- المسؤول عن مراجعة النتيجة ومعايير الإغلاق."` | — |
-| [SRC-61B24BEFCC-L000110](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L110) | 110 | `""` | — |
-| [SRC-61B24BEFCC-L000111](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L111) | 111 | ``"لا تُحوّل `NOT_RUN` إلى `PASS`، ولا تستخدم نجاح Mock دليلًا على توفر موفر حي."`` | — |
-| [SRC-61B24BEFCC-L000112](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L112) | 112 | `""` | — |
-| [SRC-61B24BEFCC-L000113](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L113) | 113 | `"## ملحق مصفوفة الدليل قبل الدمج — لقطة 21 أكتوبر 2026"` | — |
-| [SRC-61B24BEFCC-L000114](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L114) | 114 | `""` | — |
-| [SRC-61B24BEFCC-L000115](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L115) | 115 | `"\| الدليل \| SHA/التشغيل \| النتيجة \| ما لا يثبته \|"` | — |
-| [SRC-61B24BEFCC-L000116](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L116) | 116 | `"\|---\|---\|---\|---\|"` | — |
-| [SRC-61B24BEFCC-L000117](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L117) | 117 | `"\| اختبارات #76 / Ruff / حاوية / API محمي \| SHA 10d8a7d9f07ef3f91cbb90a5834ac6b71f963de1، تشغيل [#39650978817](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650978817) \| 380 passed على Python 3.11 و380 passed على Python 3.12؛ Ruff وبناء الحاوية واختبار API المحمي ناجحة \| لا يثبت اتصال مزودي البحث/النموذج من مضيف حقيقي أو صحة كل إجابة دلاليًا \|"` | — |
-| [SRC-61B24BEFCC-L000118](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L118) | 118 | `"\| إعادة توليد وفحص الفهرس \| [#39650974507](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650974507) \| ناجح \| لا يثبت خلو الفهرس من كل العيوب ولا صحة الإجابات \|"` | — |
-| [SRC-61B24BEFCC-L000119](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L119) | 119 | `"\| رأس الفهرس الحالي \| b6aadf7ea02627bbf523501bb879b0fd6705a5c8 \| ملفات فهرسة مولدة فقط بعد رأس 10d8a7d المختبر \| لا يُنسب إليه تشغيل pytest مباشر؛ تشغيل #39651004404 على الرأس نفسه كان action_required بلا jobs \|"` | — |
-| [SRC-61B24BEFCC-L000120](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L120) | 120 | `"\| Hosted smoke وSHA الخدمة \| لم يُشغّل \| NOT_RUN \| يتطلب خدمة فعلية وأسرار البيئة وموافقة على الاتصال الخارجي \|"` | — |
-| [SRC-61B24BEFCC-L000121](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L121) | 121 | `"\| اختبارات prompt injection \| اختبارات regression محلية موجودة \| دليل حتمي محدود \| ليست red-team حية شاملة \|"` | — |
-| [SRC-61B24BEFCC-L000122](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L122) | 122 | `"\| ثبات التخزين والنسخ الاحتياطي \| لم يُختبر على مضيف \| NOT_RUN \| يحتاج Volume دائمًا واختبار استعادة فعليًا \|"` | — |
-| [SRC-61B24BEFCC-L000123](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L123) | 123 | `"\| الحمل والعزل متعدد المستأجرين \| لم يُختبر \| UNKNOWN / NOT_RUN؛ تعدد المستأجرين خارج نطاق المشغّل الواحد \| لا تُستنتج السعة أو العزل من CI \|"` | — |
-| [SRC-61B24BEFCC-L000124](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L124) | 124 | `""` | — |
-| [SRC-61B24BEFCC-L000125](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L125) | 125 | ``"عند كتابة هذا المقطع كان مرشح الإغلاق [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76) مفتوحًا على أساس `main` عند `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. وقد دُمج لاحقًا عبر `528a255...` كما يوضح تحديث ما بعد الدمج أعلى الوثيقة. لا تُحوّل UNKNOWN أو NOT_RUN إلى PASS دون دليل من البيئة التي سيُستخدم فيها التطبيق."`` | — |
-| [SRC-61B24BEFCC-L000126](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L126) | 126 | `""` | — |
-| [SRC-61B24BEFCC-L000127](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L127) | 127 | `""` | — |
-| [SRC-61B24BEFCC-L000128](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L128) | 128 | `"## تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026"` | — |
-| [SRC-61B24BEFCC-L000129](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L129) | 129 | `""` | — |
-| [SRC-61B24BEFCC-L000130](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L130) | 130 | `"هذا التحديث أحدث من ملحقات CI السابقة في هذه الوثيقة، ويجب قراءته معها دون حذف سجل النتائج التاريخية:"` | — |
-| [SRC-61B24BEFCC-L000131](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L131) | 131 | `""` | — |
-| [SRC-61B24BEFCC-L000132](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L132) | 132 | ``"- آخر تشغيل شامل أخضر **قبل** تغيير `docs/search_code.py` و`.github/workflows/tests.yml` هو [run #39651908777](https://github.com/mosabosama2030-oss/omarai/actions/runs/39651908777) على `5a2259ef787d4a4553a503276daf399fa6514f3f`: 380 اختبارًا لكل من Python 3.11 و3.12، وRuff، وفحص الفهرس، وبناء الحاوية واختبار API المحمي ناجحة. لا يغطي هذا التشغيل التغييرات التي أضيفت بعده."`` | — |
-| [SRC-61B24BEFCC-L000133](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L133) | 133 | ``"- أُضيف إلى أداة البحث خيار `--ref`، مع `OMARAI_GITHUB_REF` والالتقاط الآمن لمرجع SHA المحلي/CI، حتى تشير الروابط إلى النسخة التي تُراجع بدل تثبيتها على `blob/main`. أضيفت اختبارات لهذه السلوكيات، لكن pytest لم يصل إليها في التشغيل الأخير."`` | — |
-| [SRC-61B24BEFCC-L000134](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L134) | 134 | ``"- غُيّر CI إلى فحص الفهرس الملتزم مباشرة باستخدام `python docs/generate_index.py --check`. في [run #39652716421](https://github.com/mosabosama2030-oss/omarai/actions/runs/39652716421) نجح Ruff، لكن فحص الفهرس اكتشف ملفات مولدة قديمة في لقطة PR merge قبل تحديثها آليًا؛ لذلك توقفت pytest ولم تُشغّل."`` | — |
-| [SRC-61B24BEFCC-L000135](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L135) | 135 | ``"- **ملاحظة تاريخية وقت كتابة هذا التحديث:** تشغيل [#39653239007](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653239007) على رأس bot كان `action_required` بلا jobs. هذا لم يعد يصف أحدث تشغيل معروف؛ لاحقًا نجح [#39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) على رأس PR `3fb028...` قبل دمجه. تحقق CI على SHA الدمج نفسه ما يزال `NOT_CONFIRMED` وفق التقرير الحالي."`` | — |
-| [SRC-61B24BEFCC-L000136](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L136) | 136 | ``"- لذلك حالة التغييرات الأخيرة للبحث وفحص الفهرس هي **PARTIAL / NOT YET FULLY TESTED**، وليست `FIXED_AND_TESTED`. يلزم اعتماد وتشغيل GitHub Actions على الرأس الحالي ثم مراجعة نتائج pytest وRuff والفهرس والحاوية."`` | — |
-| [SRC-61B24BEFCC-L000137](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L137) | 137 | ``"- لا يغيّر ذلك حالة الاختبارات الحية المستقلة: `NOT_RUN/UNKNOWN` ما زالت تنطبق على hosted smoke، وتوافر كل موفري البحث والنموذج، والتقييم الدلالي لـAQ-001–045، ودوام التخزين/الاستعادة على المضيف، واختبار الحمل، وعزل تعدد المستأجرين، والتقرير المستقل الكامل من Grok."`` | — |
-| [SRC-61B24BEFCC-L000138](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L138) | 138 | ``"- **السجل المركزي الوحيد لجميع المعرفات ومعايير الإغلاق:** [`OMARAI_REMEDIATION_REGISTER_AR.md`](OMARAI_REMEDIATION_REGISTER_AR.md). لا تكرر بنودًا جديدة هنا دون إضافتها إلى ذلك السجل."`` | — |
-| [SRC-61B24BEFCC-L000139](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L139) | 139 | `""` | — |
-| [SRC-61B24BEFCC-L000140](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L140) | 140 | `"## تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026"` | — |
-| [SRC-61B24BEFCC-L000141](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L141) | 141 | `""` | — |
-| [SRC-61B24BEFCC-L000142](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L142) | 142 | ``"تم بعد الملاحظة التاريخية أعلاه إكمال بوابة CI على كود/اختبارات/Workflow مرشح الإغلاق: الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، [تشغيل PR #39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) — 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة. بعد ذلك تُظهر المقارنة مع رأس PR الذي شوهد `b848f96...` تغييرات وثائق وفهرسة مولّدة فقط، من دون تغيير التطبيق أو الاختبارات أو Workflow. يظل هذا التصحيح خاصًا بالاختبارات الآلية؛ الاستضافة الحقيقية، ومزودو البحث/النماذج الحيون، وتقييم الجودة الدلالي، ودوام التخزين/الاستعادة، والحمل، والتدقيق المستقل تبقى `NOT_RUN/UNKNOWN`. السجل التفصيلي المعتمد: [سجل الإغلاق المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
-## وثائق وفهرسة
-
-### FILE-B6BD2CE1A8 — [docs/OPERATIONS_AR.md](../OPERATIONS_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B6BD2CE1A8-L000001](../OPERATIONS_AR.md#L1) | 1 | `"# دليل تشغيل Omarai"` | — |
-| [SRC-B6BD2CE1A8-L000002](../OPERATIONS_AR.md#L2) | 2 | `""` | — |
-| [SRC-B6BD2CE1A8-L000003](../OPERATIONS_AR.md#L3) | 3 | `"## التشغيل"` | — |
-| [SRC-B6BD2CE1A8-L000004](../OPERATIONS_AR.md#L4) | 4 | `"من مجلد المشروع شغّل:"` | — |
-| [SRC-B6BD2CE1A8-L000005](../OPERATIONS_AR.md#L5) | 5 | ````"```bash"```` | — |
-| [SRC-B6BD2CE1A8-L000006](../OPERATIONS_AR.md#L6) | 6 | `"python -m cli.omarai serve"` | — |
-| [SRC-B6BD2CE1A8-L000007](../OPERATIONS_AR.md#L7) | 7 | ````"```"```` | — |
-| [SRC-B6BD2CE1A8-L000008](../OPERATIONS_AR.md#L8) | 8 | ``"ثم افتح `http://127.0.0.1:8765` في المتصفح على الهاتف نفسه. أوقف الخادم بـ Ctrl+C."`` | — |
-| [SRC-B6BD2CE1A8-L000009](../OPERATIONS_AR.md#L9) | 9 | `""` | — |
-| [SRC-B6BD2CE1A8-L000010](../OPERATIONS_AR.md#L10) | 10 | `"## سير العمل"` | — |
-| [SRC-B6BD2CE1A8-L000011](../OPERATIONS_AR.md#L11) | 11 | `""` | — |
-| [SRC-B6BD2CE1A8-L000012](../OPERATIONS_AR.md#L12) | 12 | `"يمكنك كذلك استخدام مربع «اسأل Omarai» لطلب إحصائيات السجل المحلي أو ترشيح إشارة للمراجعة أو تفسير الدرجة أو صياغة مسودة تواصل. الإجابات مبنية على قواعد محلية وسجلات محفوظة فقط؛ لا يوجد نموذج سحابي ولا تُرسل أي رسالة تلقائيًا."` | — |
-| [SRC-B6BD2CE1A8-L000013](../OPERATIONS_AR.md#L13) | 13 | `""` | — |
-| [SRC-B6BD2CE1A8-L000014](../OPERATIONS_AR.md#L14) | 14 | `"1. أدخل نصًا من مصدر عام أو مصدر لديك إذن باستخدامه."` | — |
-| [SRC-B6BD2CE1A8-L000015](../OPERATIONS_AR.md#L15) | 15 | `"2. اضغط «حلّل الإشارة» وافحص العبارات المطابقة وسبب النقاط."` | — |
-| [SRC-B6BD2CE1A8-L000016](../OPERATIONS_AR.md#L16) | 16 | `"3. أضف رابط المصدر الحقيقي قبل الحفظ."` | — |
-| [SRC-B6BD2CE1A8-L000017](../OPERATIONS_AR.md#L17) | 17 | `"4. راجع الإشارات يدويًا وغيّر الحالة إلى مؤهل أو يحتاج مراجعة أو غير ذلك."` | — |
-| [SRC-B6BD2CE1A8-L000018](../OPERATIONS_AR.md#L18) | 18 | `"5. صدّر CSV عند الحاجة واحتفظ بنسخة احتياطية آمنة."` | — |
-| [SRC-B6BD2CE1A8-L000019](../OPERATIONS_AR.md#L19) | 19 | `""` | — |
-| [SRC-B6BD2CE1A8-L000020](../OPERATIONS_AR.md#L20) | 20 | `"## قواعد مهمة"` | — |
-| [SRC-B6BD2CE1A8-L000021](../OPERATIONS_AR.md#L21) | 21 | `"- لا تدخل رسائل خاصة أو بيانات اعتماد أو أرقام هواتف غير لازمة."` | — |
-| [SRC-B6BD2CE1A8-L000022](../OPERATIONS_AR.md#L22) | 22 | `"- لا تعتبر الدرجة احتمالًا للشراء."` | — |
-| [SRC-B6BD2CE1A8-L000023](../OPERATIONS_AR.md#L23) | 23 | `"- لا يتصفح Omarai المنصات تلقائيًا ولا يرسل رسائل."` | — |
-| [SRC-B6BD2CE1A8-L000024](../OPERATIONS_AR.md#L24) | 24 | `"- الخادم مربوط بعنوان loopback افتراضيًا، ويرفض أنواع المحتوى غير JSON والطلبات ذات Origin غير محلي. لا تكشفه للشبكة أو الإنترنت دون مصادقة واختبار أمني."` | — |
-| [SRC-B6BD2CE1A8-L000025](../OPERATIONS_AR.md#L25) | 25 | ``"- قاعدة البيانات الافتراضية: `~/.omarai/omarai.sqlite3`."`` | — |
-## وثائق وفهرسة
-
-### FILE-0B5CA119D2 — [docs/README.md](../README.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-0B5CA119D2-L000001](../README.md#L1) | 1 | `"# دليل وثائق Omarai"` | — |
-| [SRC-0B5CA119D2-L000002](../README.md#L2) | 2 | `""` | — |
-| [SRC-0B5CA119D2-L000003](../README.md#L3) | 3 | `"هذا الملف هو نقطة البداية لاختيار الوثيقة الصحيحة وتجنب تكرار السجلات أو التعارض بينها."` | — |
-| [SRC-0B5CA119D2-L000004](../README.md#L4) | 4 | `""` | — |
-| [SRC-0B5CA119D2-L000005](../README.md#L5) | 5 | `"## ابدأ من هنا"` | — |
-| [SRC-0B5CA119D2-L000006](../README.md#L6) | 6 | `""` | — |
-| [SRC-0B5CA119D2-L000007](../README.md#L7) | 7 | `"\| الهدف \| الوثيقة المعتمدة \| حدود الاستخدام \|"` | — |
-| [SRC-0B5CA119D2-L000008](../README.md#L8) | 8 | `"\|---\|---\|---\|"` | — |
-| [SRC-0B5CA119D2-L000009](../README.md#L9) | 9 | `"\| فهم ما يفعله المستودع وطريقة التشغيل \| [README الرئيسي](../README.md) \| وصف الوظيفة الحالية؛ تحقق من الكود عند الحاجة إلى إثبات. \|"` | — |
-| [SRC-0B5CA119D2-L000010](../README.md#L10) | 10 | `"\| معرفة حدود التطبيق الحالية \| [نطاق التنفيذ](IMPLEMENTATION_SCOPE.md) \| ملخص للحالة التي تدعمها الشفرة والأدلة المتاحة. \|"` | — |
-| [SRC-0B5CA119D2-L000011](../README.md#L11) | 11 | `"\| معرفة كل عيب وحالته ومعيار إغلاقه \| [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md) \| المصدر الواحد لمعرفات المعالجة والتداخلات الهندسية. \|"` | — |
-| [SRC-0B5CA119D2-L000012](../README.md#L12) | 12 | `"\| فهم أحدث حالة ما بعد PR #76 \| [تقرير التحقق بعد الدمج](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md) \| لقطة بأدلة محددة وحدودها؛ لا يثبت التشغيل الحي. \|"` | — |
-| [SRC-0B5CA119D2-L000013](../README.md#L13) | 13 | `"\| اختيار نوع الاختبار وقراءة حدوده \| [مصفوفة أدلة الاختبار](OMARAI_TEST_EVIDENCE_MATRIX_AR.md) \| النتائج التاريخية تبقى مرتبطة بوقت/SHA التشغيل. \|"` | — |
-| [SRC-0B5CA119D2-L000014](../README.md#L14) | 14 | `"\| إعداد الاستضافة وقبولها \| [قائمة قبول التشغيل](GO_LIVE_CHECKLIST_AR.md) \| لا تعني وجود مضيف أو موافقة على اختبار قد يستهلك رصيدًا. \|"` | — |
-| [SRC-0B5CA119D2-L000015](../README.md#L15) | 15 | `"\| إعداد موصلات البحث \| [دليل الموصلات](RESEARCH_CONNECTORS_AR.md) \| إعداد الموصل لا يثبت أنه متصل حيًا. \|"` | — |
-| [SRC-0B5CA119D2-L000016](../README.md#L16) | 16 | `"\| تشغيل وصيانة النسخة \| [دليل العمليات](OPERATIONS_AR.md) \| الإجراءات اليومية والقيود التشغيلية. \|"` | — |
-| [SRC-0B5CA119D2-L000017](../README.md#L17) | 17 | `""` | — |
-| [SRC-0B5CA119D2-L000018](../README.md#L18) | 18 | `"## معمارية ومتطلبات التأسيس"` | — |
-| [SRC-0B5CA119D2-L000019](../README.md#L19) | 19 | `""` | — |
-| [SRC-0B5CA119D2-L000020](../README.md#L20) | 20 | `"- [الدستور الهندسي التأسيسي](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md): متطلبات ومبادئ؛ ليس إثبات تنفيذ."` | — |
-| [SRC-0B5CA119D2-L000021](../README.md#L21) | 21 | `"- [خط الأساس الهندسي الموسع](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md): ضوابط المنصة عبر الاعتمادية والأمن والخصوصية والتشغيل."` | — |
-| [SRC-0B5CA119D2-L000022](../README.md#L22) | 22 | `"- [نموذج تتبع المتطلبات والنضج](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md): معرّفات المتطلبات وأدلة التحقق وبوابات الإطلاق."` | — |
-| [SRC-0B5CA119D2-L000023](../README.md#L23) | 23 | `"- [سجل المتطلبات الأولي](OMARAI_REQUIREMENTS_REGISTER.md): سجل متطلبات؛ أعمدة الحالة التاريخية تُقرأ مع سجل المعالجة الحالي ولا تستبدله."` | — |
-| [SRC-0B5CA119D2-L000024](../README.md#L24) | 24 | `"- [معمارية المهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md): عقد معماري تكميلي؛ لا ينفذ المقترحات تلقائيًا."` | — |
-| [SRC-0B5CA119D2-L000025](../README.md#L25) | 25 | `"- [سجل الاستثناءات](OMARAI_EXCEPTIONS_REGISTER_AR.md): لا يصبح المقترح استثناءً معتمدًا دون موافقة بشرية صريحة."` | — |
-| [SRC-0B5CA119D2-L000026](../README.md#L26) | 26 | `""` | — |
-| [SRC-0B5CA119D2-L000027](../README.md#L27) | 27 | `"## أدوات وفهرسة المستودع"` | — |
-| [SRC-0B5CA119D2-L000028](../README.md#L28) | 28 | `""` | — |
-| [SRC-0B5CA119D2-L000029](../README.md#L29) | 29 | `"- [MASTER INDEX](MASTER_INDEX.md): جرد الملفات والرموز وعلامات المراجعة."` | — |
-| [SRC-0B5CA119D2-L000030](../README.md#L30) | 30 | `"- [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md): فهرس الأسطر والروابط الدقيقة."` | — |
-| [SRC-0B5CA119D2-L000031](../README.md#L31) | 31 | `"- [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md): نطاق التغطية والاستثناءات."` | — |
-| [SRC-0B5CA119D2-L000032](../README.md#L32) | 32 | `"- [البحث المحلي في الشفرة](search_code.py): بحث نصي/regex بلا API."` | — |
-| [SRC-0B5CA119D2-L000033](../README.md#L33) | 33 | `"- [مولد الفهرس](generate_index.py): المصدر الوحيد لمخرجات الفهرسة المولدة."` | — |
-| [SRC-0B5CA119D2-L000034](../README.md#L34) | 34 | `""` | — |
-| [SRC-0B5CA119D2-L000035](../README.md#L35) | 35 | `"لا تعدّل مخرجات الفهرس يدويًا. بعد أي تغيير مؤهل شغّل:"` | — |
-| [SRC-0B5CA119D2-L000036](../README.md#L36) | 36 | `""` | — |
-| [SRC-0B5CA119D2-L000037](../README.md#L37) | 37 | ````"```bash"```` | — |
-| [SRC-0B5CA119D2-L000038](../README.md#L38) | 38 | `"python docs/generate_index.py"` | — |
-| [SRC-0B5CA119D2-L000039](../README.md#L39) | 39 | `"python docs/generate_index.py --check"` | — |
-| [SRC-0B5CA119D2-L000040](../README.md#L40) | 40 | ````"```"```` | — |
-| [SRC-0B5CA119D2-L000041](../README.md#L41) | 41 | `""` | — |
-| [SRC-0B5CA119D2-L000042](../README.md#L42) | 42 | `"## سياسة تنظيم الوثائق"` | — |
-| [SRC-0B5CA119D2-L000043](../README.md#L43) | 43 | `""` | — |
-| [SRC-0B5CA119D2-L000044](../README.md#L44) | 44 | `"1. لكل موضوع حيّ وثيقة مرجعية واحدة؛ عدّلها بدل إنشاء ملف حالة موازٍ."` | — |
-| [SRC-0B5CA119D2-L000045](../README.md#L45) | 45 | `"2. احتفظ بلقطات التدقيق التاريخية في [الأرشيف](archive/README.md) مع SHA والتاريخ وحدودها."` | — |
-| [SRC-0B5CA119D2-L000046](../README.md#L46) | 46 | `"3. لا تثبّت حالة PR مفتوحة داخل وثيقة دائمة؛ اقرأ الحالة المباشرة من GitHub."` | — |
-| [SRC-0B5CA119D2-L000047](../README.md#L47) | 47 | ``"4. لا تعلن `VERIFIED` أو `FIXED_AND_TESTED` دون دليل مرتبط بنسخة واختبار. استخدم `NOT_RUN` و`UNKNOWN` عندما ينقص الدليل."`` | — |
-| [SRC-0B5CA119D2-L000048](../README.md#L48) | 48 | `"5. لا تحذف إعدادًا أو موصلًا لمجرد أنه لم يستخدم في تشغيل واحد؛ تحقّق من مراجع README والاختبارات وملفات النشر أولًا."` | — |
-## وثائق وفهرسة
-
-### FILE-D911B73392 — [docs/RESEARCH_CONNECTORS_AR.md](../RESEARCH_CONNECTORS_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-D911B73392-L000001](../RESEARCH_CONNECTORS_AR.md#L1) | 1 | `"# دليل البحث المتقدم والموصلات الاجتماعية — Omarai"` | — |
-| [SRC-D911B73392-L000002](../RESEARCH_CONNECTORS_AR.md#L2) | 2 | `""` | — |
-| [SRC-D911B73392-L000003](../RESEARCH_CONNECTORS_AR.md#L3) | 3 | `"هذا الدليل يشرح ما يستطيع Omarai الوصول إليه فعلًا، وما يحتاج إلى مفاتيح وصلاحيات، وكيفية إعدادها من Termux. لا توجد طريقة شرعية أو تقنية مضمونة للوصول إلى كل منشورات كل منصة: بعض البيانات تتطلب مراجعة تطبيق وصلاحيات، وبعضها لا يظهر إلا في البحث المفهرس."` | — |
-| [SRC-D911B73392-L000004](../RESEARCH_CONNECTORS_AR.md#L4) | 4 | `""` | — |
-| [SRC-D911B73392-L000005](../RESEARCH_CONNECTORS_AR.md#L5) | 5 | `"## 1. كيف يجري Omarai البحث؟"` | — |
-| [SRC-D911B73392-L000006](../RESEARCH_CONNECTORS_AR.md#L6) | 6 | `""` | — |
-| [SRC-D911B73392-L000007](../RESEARCH_CONNECTORS_AR.md#L7) | 7 | `"1. يفهم السؤال ويخطط حتى ثمانية استعلامات بحث، باستخدام النموذج اللغوي إذا كان مفتاحه مضبوطًا؛ وإلا يستخدم خطة احتياطية محددة."` | — |
-| [SRC-D911B73392-L000008](../RESEARCH_CONNECTORS_AR.md#L8) | 8 | `"2. يبحث في DuckDuckGo HTML وBing RSS لكل استعلام، ويمكنه إضافة واجهتي البحث الرسميتين Brave Search وTavily عند ضبط مفاتيحهما، ويستخدم موجز Google News للأسئلة الحديثة."` | — |
-| [SRC-D911B73392-L000009](../RESEARCH_CONNECTORS_AR.md#L9) | 9 | `"3. إذا كان السؤال اجتماعيًا، يجرّب المصادر العامة المتاحة والموصلات الرسمية التي أُعدّت بياناتها."` | — |
-| [SRC-D911B73392-L000010](../RESEARCH_CONNECTORS_AR.md#L10) | 10 | `"4. يزيل النتائج المكررة ويجمع تكرار ظهور المصدر عبر الاستعلامات ومحركات البحث مع الاحتفاظ باسم الموفر والاستعلام ورابط المصدر."` | — |
-| [SRC-D911B73392-L000011](../RESEARCH_CONNECTORS_AR.md#L11) | 11 | `"5. يحاول قراءة النص من أفضل ثماني صفحات عامة على الأكثر، ضمن حدود زمنية وحجمية، مع اتباع عدد محدود من التحويلات العامة بشرط التحقق من كل وجهة قبل الاتصال بها."` | — |
-| [SRC-D911B73392-L000012](../RESEARCH_CONNECTORS_AR.md#L12) | 12 | `"6. ينتج إجابة بلغة السؤال مع روابط قابلة للمراجعة وتقرير يوضح ما جرى فعليًا: عدد الاستعلامات، المصادر والنطاقات الفريدة، الصفحات المقروءة، تنوع المحركات، نوع المصادر، وتغطية تواريخ النشر والتحذيرات. يحتوي على أوضاع تلقائي/معمّق/الأحدث/آراء الناس. مؤشرات التغطية تقيس اتساع البحث وقابلية مراجعة الدليل، ولا تعني نسبة صحة الإجابة."` | — |
-| [SRC-D911B73392-L000013](../RESEARCH_CONNECTORS_AR.md#L13) | 13 | `"7. في البحث العميق، يمرر المسودة على مراجعة ثانية للاتساق مع المصادر. هذه مراجعة من النموذج/الموفر نفسه وليست تحققًا مستقلًا من الحقيقة."` | — |
-| [SRC-D911B73392-L000014](../RESEARCH_CONNECTORS_AR.md#L14) | 14 | `""` | — |
-| [SRC-D911B73392-L000015](../RESEARCH_CONNECTORS_AR.md#L15) | 15 | `"لا ينبغي تفسير اتفاق نتيجتين بحثيتين على أنه تصديق مستقل، ولا اعتبار عينة من التعليقات ممثلة لكل المستخدمين."` | — |
-| [SRC-D911B73392-L000016](../RESEARCH_CONNECTORS_AR.md#L16) | 16 | `""` | — |
-| [SRC-D911B73392-L000017](../RESEARCH_CONNECTORS_AR.md#L17) | 17 | `"## 2.1 واجهات بحث ويب اختيارية"` | — |
-| [SRC-D911B73392-L000018](../RESEARCH_CONNECTORS_AR.md#L18) | 18 | `""` | — |
-| [SRC-D911B73392-L000019](../RESEARCH_CONNECTORS_AR.md#L19) | 19 | `"يمكنك إضافة فهرسين مباشرين للبحث بدل الاعتماد على استخراج صفحات نتائج محركات البحث فقط. قد يحتاج كل مزود إلى حساب أو خطة أو حصّة استخدام؛ لا تفترض أن الخدمة مجانية أو أن المفتاح صالح قبل الاختبار الحي."` | — |
-| [SRC-D911B73392-L000020](../RESEARCH_CONNECTORS_AR.md#L20) | 20 | `""` | — |
-| [SRC-D911B73392-L000021](../RESEARCH_CONNECTORS_AR.md#L21) | 21 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000022](../RESEARCH_CONNECTORS_AR.md#L22) | 22 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
-| [SRC-D911B73392-L000023](../RESEARCH_CONNECTORS_AR.md#L23) | 23 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
-| [SRC-D911B73392-L000024](../RESEARCH_CONNECTORS_AR.md#L24) | 24 | ````"```"```` | — |
-| [SRC-D911B73392-L000025](../RESEARCH_CONNECTORS_AR.md#L25) | 25 | `""` | — |
-| [SRC-D911B73392-L000026](../RESEARCH_CONNECTORS_AR.md#L26) | 26 | `"يدمج Omarai النتائج من هذه الواجهات مع محركات البحث العامة عند ضبط المتغيرات. لا تُحفظ المفاتيح في المستودع أو واجهة HTML، ولا يُرجعها تقرير الصحة. إذا فشل المفتاح أو انتهت الحصة، قد تظهر نتائج من المحركات العامة الأخرى؛ افحص أسماء المحركات الفعلية في تقرير البحث لتعرف ما أعاد نتائج في هذه الجولة."` | — |
-| [SRC-D911B73392-L000027](../RESEARCH_CONNECTORS_AR.md#L27) | 27 | `""` | — |
-| [SRC-D911B73392-L000028](../RESEARCH_CONNECTORS_AR.md#L28) | 28 | `"## 2. المصادر والحدود"` | — |
-| [SRC-D911B73392-L000029](../RESEARCH_CONNECTORS_AR.md#L29) | 29 | `""` | — |
-| [SRC-D911B73392-L000030](../RESEARCH_CONNECTORS_AR.md#L30) | 30 | `"\| المصدر \| ما يستخدمه Omarai \| ما يلزم أو ما لا يمكن ضمانه \|"` | — |
-| [SRC-D911B73392-L000031](../RESEARCH_CONNECTORS_AR.md#L31) | 31 | `"\| --- \| --- \| --- \|"` | — |
-| [SRC-D911B73392-L000032](../RESEARCH_CONNECTORS_AR.md#L32) | 32 | `"\| صفحات الويب العامة \| DuckDuckGo HTML وBing RSS، وBrave Search API وTavily Search API عند إعداد المفاتيح، واستخراج نص الصفحات المتاحة \| قد تمنع بعض المواقع القراءة أو لا تظهر في نتائج البحث؛ لا يتم تجاوز تسجيل الدخول أو الجدران المدفوعة \|"` | — |
-| [SRC-D911B73392-L000033](../RESEARCH_CONNECTORS_AR.md#L33) | 33 | `"\| الأخبار الحديثة \| Google News RSS بالإضافة إلى البحث العام \| التاريخ الذي يظهر في موجز البحث قد لا يكون تاريخ نشر الصفحة الأصلية؛ يجب فتح المصدر والتحقق \|"` | — |
-| [SRC-D911B73392-L000034](../RESEARCH_CONNECTORS_AR.md#L34) | 34 | `"\| Reddit \| موجز البحث العام RSS \| قد يُحجب أو يُقيَّد أحيانًا؛ يمكن إعداد OAuth لطلب API رسمي عند توفر وصول مسموح \|"` | — |
-| [SRC-D911B73392-L000035](../RESEARCH_CONNECTORS_AR.md#L35) | 35 | `"\| Bluesky \| واجهة البحث العامة للمنشورات \| بحث عام وليس بيانات خاصة أو رسائل مباشرة \|"` | — |
-| [SRC-D911B73392-L000036](../RESEARCH_CONNECTORS_AR.md#L36) | 36 | `"\| Instagram \| صفحات عامة مفهرسة؛ وموصل Graph API للوسوم العامة عند إعداده \| واجهة الوسوم الرسمية ليست بحثًا شاملًا في كل المنشورات، وتتطلب حسابًا وصلاحيات وموافقة/ميزات مناسبة وحدود استخدام \|"` | — |
-| [SRC-D911B73392-L000037](../RESEARCH_CONNECTORS_AR.md#L37) | 37 | `"\| Facebook \| صفحات عامة مفهرسة؛ وموصل مباشر لصفحات محددة صراحةً عند إعداده \| الموصل المباشر ليس بحثًا عالميًا في Facebook؛ يعمل فقط على Page IDs يمكن للرمز والصلاحيات قراءتها \|"` | — |
-| [SRC-D911B73392-L000038](../RESEARCH_CONNECTORS_AR.md#L38) | 38 | `"\| X \| صفحات عامة مفهرسة؛ وواجهة البحث الحديث الرسمية عند إعداد Bearer Token \| يتطلب وصول API مناسبًا، ونطاق البحث والحدود تابعان لخطة X \|"` | — |
-| [SRC-D911B73392-L000039](../RESEARCH_CONNECTORS_AR.md#L39) | 39 | `"\| YouTube \| صفحات الفيديو العامة المفهرسة؛ وYouTube Data API عند إعداد المفتاح \| الواجهة الرسمية لها حصص استخدام، وقد لا تعيد كل الفيديوهات \|"` | — |
-| [SRC-D911B73392-L000040](../RESEARCH_CONNECTORS_AR.md#L40) | 40 | `"\| TikTok \| الصفحات العامة التي تظهر في محركات البحث \| لا يدّعي Omarai أنه يملك بحثًا رسميًا شاملًا في TikTok. أدوات Research API تتطلب الأهلية والموافقة البحثية، وهي ليست واجهة عامة تلقائية للاستخدام التجاري \|"` | — |
-| [SRC-D911B73392-L000041](../RESEARCH_CONNECTORS_AR.md#L41) | 41 | `""` | — |
-| [SRC-D911B73392-L000042](../RESEARCH_CONNECTORS_AR.md#L42) | 42 | `"## 3. تشغيل الطبقة التوليدية"` | — |
-| [SRC-D911B73392-L000043](../RESEARCH_CONNECTORS_AR.md#L43) | 43 | `""` | — |
-| [SRC-D911B73392-L000044](../RESEARCH_CONNECTORS_AR.md#L44) | 44 | ``"يقرأ Omarai مفتاح النموذج من متغيرات بيئة Termux. افتراضيًا يستخدم نموذج NVIDIA Nemotron 3 Ultra (المجاني) لتخطيط البحث، وGoogle Gemma 4 31B Instruct (المجاني) لصياغة الإجابة ومراجعة الاتساق الثانية، مع الرجوع إلى `openrouter/free` إذا أخفق النموذج المحدد. هذا يقلل تغيير النموذج عشوائيًا بين الطلبات، لكنه لا يضمن استجابة كل موفر أو إجابة صحيحة. المفتاح يتيح تخطيط البحث والإجابة التوليدية والمراجعة الثانية. لا تحفظه داخل مستودع GitHub أو ملف HTML أو المحادثة. **تنبيه خصوصية مهم:** يرسل Omarai السؤال وسياق المتابعة ومقتطفات الصفحات المختارة إلى مزود النموذج الخارجي لكي يخطط ويكتب الإجابة ويراجعها. نقطة نهاية NVIDIA Nemotron المجانية في OpenRouter توضّح أن جلسات الاستخدام قد تُسجل لأغراض الأمان وتحسين منتجات NVIDIA؛ لذلك لا تستخدم هذا الإعداد مع كلمات مرور أو مفاتيح أو معلومات سرية أو بيانات شخصية/تجارية حساسة. راجع [إشعار الخصوصية لنقطة Nemotron المجانية](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free)."`` | — |
-| [SRC-D911B73392-L000045](../RESEARCH_CONNECTORS_AR.md#L45) | 45 | `""` | — |
-| [SRC-D911B73392-L000046](../RESEARCH_CONNECTORS_AR.md#L46) | 46 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000047](../RESEARCH_CONNECTORS_AR.md#L47) | 47 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
-| [SRC-D911B73392-L000048](../RESEARCH_CONNECTORS_AR.md#L48) | 48 | `"printf '\\n'"` | — |
-| [SRC-D911B73392-L000049](../RESEARCH_CONNECTORS_AR.md#L49) | 49 | `"export OPENROUTER_API_KEY"` | — |
-| [SRC-D911B73392-L000050](../RESEARCH_CONNECTORS_AR.md#L50) | 50 | ````"```"```` | — |
-| [SRC-D911B73392-L000051](../RESEARCH_CONNECTORS_AR.md#L51) | 51 | `""` | — |
-| [SRC-D911B73392-L000052](../RESEARCH_CONNECTORS_AR.md#L52) | 52 | ``"يمكن تغيير موفر النموذج المتوافق مع OpenAI عبر `OMARAI_LLM_BASE_URL`. اضبط `OMARAI_PLANNER_MODEL` و`OMARAI_ANSWER_MODEL` و`OMARAI_REVIEW_MODEL` لتغيير الأدوار كلٌ على حدة، أو `OMARAI_LLM_MODEL` لتطبيق نموذج واحد على الأدوار التي لم تُحدد لها قيمة منفصلة، و`OMARAI_LLM_FALLBACK_MODEL` لتغيير النموذج الاحتياطي. توافر النماذج المجانية وحدودها يتغير؛ لذلك لا يفترض التطبيق أن النموذج مجاني دائمًا أو أن الطلب سينجح كل مرة."`` | — |
-| [SRC-D911B73392-L000053](../RESEARCH_CONNECTORS_AR.md#L53) | 53 | `""` | — |
-| [SRC-D911B73392-L000054](../RESEARCH_CONNECTORS_AR.md#L54) | 54 | `"## 4. إعداد الموصلات الرسمية الاختيارية"` | — |
-| [SRC-D911B73392-L000055](../RESEARCH_CONNECTORS_AR.md#L55) | 55 | `""` | — |
-| [SRC-D911B73392-L000056](../RESEARCH_CONNECTORS_AR.md#L56) | 56 | `"نفّذ فقط الأجزاء التي تملك بيانات اعتمادها وصلاحيات استخدامها. الأوامر أدناه تطلب السر دون إظهاره أثناء الكتابة، لكنها تبقيه في بيئة جلسة Termux الحالية حتى توقف الخادم أو تغلق الجلسة."` | — |
-| [SRC-D911B73392-L000057](../RESEARCH_CONNECTORS_AR.md#L57) | 57 | `""` | — |
-| [SRC-D911B73392-L000058](../RESEARCH_CONNECTORS_AR.md#L58) | 58 | `"### Reddit OAuth"` | — |
-| [SRC-D911B73392-L000059](../RESEARCH_CONNECTORS_AR.md#L59) | 59 | `""` | — |
-| [SRC-D911B73392-L000060](../RESEARCH_CONNECTORS_AR.md#L60) | 60 | `"يتطلب بيانات تطبيق Reddit مع وصول API مسموحًا وفق شروط Reddit:"` | — |
-| [SRC-D911B73392-L000061](../RESEARCH_CONNECTORS_AR.md#L61) | 61 | `""` | — |
-| [SRC-D911B73392-L000062](../RESEARCH_CONNECTORS_AR.md#L62) | 62 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000063](../RESEARCH_CONNECTORS_AR.md#L63) | 63 | `"read -r -s -p \"Reddit client ID: \" REDDIT_CLIENT_ID; printf '\\n'; export REDDIT_CLIENT_ID"` | — |
-| [SRC-D911B73392-L000064](../RESEARCH_CONNECTORS_AR.md#L64) | 64 | `"read -r -s -p \"Reddit client secret: \" REDDIT_CLIENT_SECRET; printf '\\n'; export REDDIT_CLIENT_SECRET"` | — |
-| [SRC-D911B73392-L000065](../RESEARCH_CONNECTORS_AR.md#L65) | 65 | `"read -r -p \"Reddit User-Agent: \" REDDIT_USER_AGENT; export REDDIT_USER_AGENT"` | — |
-| [SRC-D911B73392-L000066](../RESEARCH_CONNECTORS_AR.md#L66) | 66 | ````"```"```` | — |

@@ -4,9 +4,319 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000107 إلى SRC-547CAF1FE3-L000027
+- النطاق: SRC-C693279643-L000018 إلى SRC-4FFD5AFC54-L000314
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## ملفات أخرى
+
+### FILE-C693279643 — [LICENSE](../../LICENSE#L1)
+
+- النوع: **بدون امتداد**
+- نطاق الفهرسة: جرد ملف نصي فقط
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-C693279643-L000018](../../LICENSE#L18) | 18 | `"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"` | — |
+| [SRC-C693279643-L000019](../../LICENSE#L19) | 19 | `"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,"` | — |
+| [SRC-C693279643-L000020](../../LICENSE#L20) | 20 | `"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE"` | — |
+| [SRC-C693279643-L000021](../../LICENSE#L21) | 21 | `"SOFTWARE."` | — |
+## إعدادات وتشغيل
+
+### FILE-50C86B7ED8 — [pyproject.toml](../../pyproject.toml#L1)
+
+- النوع: **TOML**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-50C86B7ED8-L000001](../../pyproject.toml#L1) | 1 | `"[build-system]"` | — |
+| [SRC-50C86B7ED8-L000002](../../pyproject.toml#L2) | 2 | `"requires = [\"setuptools>=68\"]"` | — |
+| [SRC-50C86B7ED8-L000003](../../pyproject.toml#L3) | 3 | `"build-backend = \"setuptools.build_meta\""` | — |
+| [SRC-50C86B7ED8-L000004](../../pyproject.toml#L4) | 4 | `""` | — |
+| [SRC-50C86B7ED8-L000005](../../pyproject.toml#L5) | 5 | `"[project]"` | — |
+| [SRC-50C86B7ED8-L000006](../../pyproject.toml#L6) | 6 | `"name = \"omarai-agent\""` | — |
+| [SRC-50C86B7ED8-L000007](../../pyproject.toml#L7) | 7 | `"version = \"0.2.0\""` | — |
+| [SRC-50C86B7ED8-L000008](../../pyproject.toml#L8) | 8 | `"description = \"Arabic-first web research and generative Q&A agent with lead workspace\""` | — |
+| [SRC-50C86B7ED8-L000009](../../pyproject.toml#L9) | 9 | `"readme = \"README.md\""` | — |
+| [SRC-50C86B7ED8-L000010](../../pyproject.toml#L10) | 10 | `"requires-python = \">=3.11\""` | — |
+| [SRC-50C86B7ED8-L000011](../../pyproject.toml#L11) | 11 | `"license = { text = \"MIT\" }"` | — |
+| [SRC-50C86B7ED8-L000012](../../pyproject.toml#L12) | 12 | `"dependencies = ["` | — |
+| [SRC-50C86B7ED8-L000013](../../pyproject.toml#L13) | 13 | `"  \"beautifulsoup4>=4.12,<5\","` | — |
+| [SRC-50C86B7ED8-L000014](../../pyproject.toml#L14) | 14 | `"  \"httpx>=0.27,<1\","` | — |
+| [SRC-50C86B7ED8-L000015](../../pyproject.toml#L15) | 15 | `"  \"tldextract>=5.3,<6\","` | — |
+| [SRC-50C86B7ED8-L000016](../../pyproject.toml#L16) | 16 | `"]"` | — |
+| [SRC-50C86B7ED8-L000017](../../pyproject.toml#L17) | 17 | `""` | — |
+| [SRC-50C86B7ED8-L000018](../../pyproject.toml#L18) | 18 | `"[project.optional-dependencies]"` | — |
+| [SRC-50C86B7ED8-L000019](../../pyproject.toml#L19) | 19 | `"dev = [\"pytest>=8.0\", \"ruff>=0.5\"]"` | — |
+| [SRC-50C86B7ED8-L000020](../../pyproject.toml#L20) | 20 | `""` | — |
+| [SRC-50C86B7ED8-L000021](../../pyproject.toml#L21) | 21 | `"[tool.pytest.ini_options]"` | — |
+| [SRC-50C86B7ED8-L000022](../../pyproject.toml#L22) | 22 | `"testpaths = [\"tests\"]"` | — |
+| [SRC-50C86B7ED8-L000023](../../pyproject.toml#L23) | 23 | `""` | — |
+| [SRC-50C86B7ED8-L000024](../../pyproject.toml#L24) | 24 | `"[tool.setuptools.packages.find]"` | — |
+| [SRC-50C86B7ED8-L000025](../../pyproject.toml#L25) | 25 | `"include = [\"agents*\", \"api*\", \"cli*\"]"` | — |
+| [SRC-50C86B7ED8-L000026](../../pyproject.toml#L26) | 26 | `"exclude = [\"tests*\", \"web*\"]"` | — |
+| [SRC-50C86B7ED8-L000027](../../pyproject.toml#L27) | 27 | `""` | — |
+| [SRC-50C86B7ED8-L000028](../../pyproject.toml#L28) | 28 | `"[tool.ruff]"` | — |
+| [SRC-50C86B7ED8-L000029](../../pyproject.toml#L29) | 29 | `"line-length = 100"` | — |
+| [SRC-50C86B7ED8-L000030](../../pyproject.toml#L30) | 30 | `"target-version = \"py311\""` | — |
+| [SRC-50C86B7ED8-L000031](../../pyproject.toml#L31) | 31 | `""` | — |
+| [SRC-50C86B7ED8-L000032](../../pyproject.toml#L32) | 32 | `"[tool.ruff.lint]"` | — |
+| [SRC-50C86B7ED8-L000033](../../pyproject.toml#L33) | 33 | `"# Keep default rules; ignore only patterns intentional in this codebase."` | — |
+| [SRC-50C86B7ED8-L000034](../../pyproject.toml#L34) | 34 | `"# BLE001: broad except at API boundary to avoid leaking internals"` | — |
+| [SRC-50C86B7ED8-L000035](../../pyproject.toml#L35) | 35 | `"# E501: long Arabic/English diagnostic strings"` | — |
+| [SRC-50C86B7ED8-L000036](../../pyproject.toml#L36) | 36 | `"# I001: historical import order; do not block CI on style alone"` | — |
+| [SRC-50C86B7ED8-L000037](../../pyproject.toml#L37) | 37 | `"# F841: unused assignment kept for clarity in some tests"` | — |
+| [SRC-50C86B7ED8-L000038](../../pyproject.toml#L38) | 38 | `"# RUF100: residual noqa:BLE001 comments after BLE001 is ignored globally"` | — |
+| [SRC-50C86B7ED8-L000039](../../pyproject.toml#L39) | 39 | `"ignore = [\"BLE001\", \"E501\", \"I001\", \"F841\", \"RUF100\"]"` | — |
+## إعدادات وتشغيل
+
+### FILE-115C2027D9 — [railway.json](../../railway.json#L1)
+
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-115C2027D9-L000001](../../railway.json#L1) | 1 | `"{"` | — |
+| [SRC-115C2027D9-L000002](../../railway.json#L2) | 2 | `"  \"$schema\": \"https://railway.com/railway.schema.json\","` | — |
+| [SRC-115C2027D9-L000003](../../railway.json#L3) | 3 | `"  \"build\": {"` | — |
+| [SRC-115C2027D9-L000004](../../railway.json#L4) | 4 | `"    \"builder\": \"DOCKERFILE\","` | — |
+| [SRC-115C2027D9-L000005](../../railway.json#L5) | 5 | `"    \"dockerfilePath\": \"Dockerfile\""` | — |
+| [SRC-115C2027D9-L000006](../../railway.json#L6) | 6 | `"  },"` | — |
+| [SRC-115C2027D9-L000007](../../railway.json#L7) | 7 | `"  \"deploy\": {"` | — |
+| [SRC-115C2027D9-L000008](../../railway.json#L8) | 8 | `"    \"startCommand\": \"sh -c 'python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}'\","` | — |
+| [SRC-115C2027D9-L000009](../../railway.json#L9) | 9 | `"    \"healthcheckPath\": \"/api/health\","` | — |
+| [SRC-115C2027D9-L000010](../../railway.json#L10) | 10 | `"    \"healthcheckTimeout\": 120,"` | — |
+| [SRC-115C2027D9-L000011](../../railway.json#L11) | 11 | `"    \"restartPolicyType\": \"ON_FAILURE\","` | — |
+| [SRC-115C2027D9-L000012](../../railway.json#L12) | 12 | `"    \"restartPolicyMaxRetries\": 5"` | — |
+| [SRC-115C2027D9-L000013](../../railway.json#L13) | 13 | `"  }"` | — |
+| [SRC-115C2027D9-L000014](../../railway.json#L14) | 14 | `"}"` | — |
+## وثائق ونصوص
+
+### FILE-B335630551 — [README.md](../../README.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B335630551-L000001](../../README.md#L1) | 1 | `"# Omarai — Web Research & Generative Q&A Agent"` | — |
+| [SRC-B335630551-L000002](../../README.md#L2) | 2 | `""` | — |
+| [SRC-B335630551-L000003](../../README.md#L3) | 3 | `"> **Foundational engineering requirements:** mandatory contributor/agent rules are in [AGENTS.md](AGENTS.md). The core architecture and security charter is [OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md); the expanded platform practices across reliability, security, privacy, data, SRE, AI, accessibility, supply chain, and cost are in [OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md); and the requirement IDs, expert-review lenses, evidence model, risk priorities, maturity stages, and release gates are in [OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md). The initial foundational requirements checklist is [OMARAI_REQUIREMENTS_REGISTER.md](docs/OMARAI_REQUIREMENTS_REGISTER.md). These documents define required direction; they do not prove every control is implemented or tested. Use the [documentation index](docs/README.md) to find the current source of truth for each topic."` | — |
+| [SRC-B335630551-L000004](../../README.md#L4) | 4 | `""` | — |
+| [SRC-B335630551-L000005](../../README.md#L5) | 5 | `"Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You can ask open-ended questions in natural language, search the public web, extract text from accessible pages, compare and summarize findings, ask follow-up questions, and inspect the source links."` | — |
+| [SRC-B335630551-L000006](../../README.md#L6) | 6 | `""` | — |
+| [SRC-B335630551-L000007](../../README.md#L7) | 7 | `"## What this version does"` | — |
+| [SRC-B335630551-L000008](../../README.md#L8) | 8 | `""` | — |
+| [SRC-B335630551-L000009](../../README.md#L9) | 9 | `"- Plans up to eight search queries from a natural-language question with a dedicated reasoning/planning model, and uses a deterministic multi-query fallback when the model is unavailable."` | — |
+| [SRC-B335630551-L000010](../../README.md#L10) | 10 | `"- Uses separate model roles by default: NVIDIA Nemotron 3 Ultra (free) for query planning and Google Gemma 4 31B Instruct (free) for answer synthesis and the second-pass consistency review; retries with OpenRouter's free-model router if a chosen model fails."` | — |
+| [SRC-B335630551-L000011](../../README.md#L11) | 11 | `"- Runs DuckDuckGo HTML and Bing RSS independently for every planned query; can add official Brave Search API and Tavily Search API result indexes when their environment keys are configured; uses Google News RSS for queries judged time-sensitive."` | — |
+| [SRC-B335630551-L000012](../../README.md#L12) | 12 | `"- Fuses duplicate results across queries and engines using reciprocal-rank fusion, preserving provider, query, domain, platform, publication-date and page-extraction provenance."` | — |
+| [SRC-B335630551-L000013](../../README.md#L13) | 13 | `"- Extracts text from up to eight accessible public pages per question with request-size and timeout bounds, following at most three individually validated public redirects."` | — |
+| [SRC-B335630551-L000014](../../README.md#L14) | 14 | ``"- Searches public Reddit RSS and the Bluesky public search endpoint when social discussion is relevant; can use Reddit's OAuth API when `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` are provided."`` | — |
+| [SRC-B335630551-L000015](../../README.md#L15) | 15 | `"- Searches indexed public pages on Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube through the general web engines."` | — |
+| [SRC-B335630551-L000016](../../README.md#L16) | 16 | `"- Can use the official Meta Graph API to read posts and a small sample of public comments from explicitly configured Facebook Pages when the token has suitable permissions."` | — |
+| [SRC-B335630551-L000017](../../README.md#L17) | 17 | ``"- Can use Instagram Graph API hashtag search to read public hashtag media when `INSTAGRAM_USER_ID` and `INSTAGRAM_ACCESS_TOKEN` have the required permissions. It is not a global Instagram search and has platform quotas."`` | — |
+| [SRC-B335630551-L000018](../../README.md#L18) | 18 | ``"- Can use the official X recent-post endpoint when `X_BEARER_TOKEN` is configured and the account/API tier permits the request; can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured."`` | — |
+| [SRC-B335630551-L000019](../../README.md#L19) | 19 | `"- Generates an evidence-grounded answer in the user's language, showing source links, query plan, provider coverage, direct page reads, platform mix, source/domain diversity, date coverage, and evidence-coverage warnings. Coverage indicators describe breadth and inspectability; they are not probabilities that the answer is true."` | — |
+| [SRC-B335630551-L000020](../../README.md#L20) | 20 | `"- Carries up to eight recent chat messages from the current browser session into follow-up questions."` | — |
+| [SRC-B335630551-L000021](../../README.md#L21) | 21 | ``"- Keeps the existing local SQLite lead workspace at `/leads`."`` | — |
+| [SRC-B335630551-L000022](../../README.md#L22) | 22 | `"- Binds to loopback by default; it is not a public production deployment."` | — |
+| [SRC-B335630551-L000023](../../README.md#L23) | 23 | `""` | — |
+| [SRC-B335630551-L000024](../../README.md#L24) | 24 | ``"**Verification semantics:** `GET /api/health` is a configuration/dependency snapshot, not proof that search providers or the model are reachable. Check the `agent.verification_scope` field to see what is and is not verified. Use the protected `POST /api/diagnostics` endpoint for explicit live search/model probes; a passed diagnostic only verifies the specific probes run at that time, not every optional connector or answer quality."`` | — |
+| [SRC-B335630551-L000025](../../README.md#L25) | 25 | `""` | — |
+| [SRC-B335630551-L000026](../../README.md#L26) | 26 | `"This is a tool-using research agent built around existing language models, not a foundation model trained from scratch. The role-specific defaults aim for more consistent behaviour than using a router that selects a different free model at random on each call. Exact availability and response quality still depend on OpenRouter/provider conditions. **Privacy warning:** the user's question, conversation context and selected web excerpts are sent to the configured external language-model provider for planning/synthesis/review. OpenRouter's NVIDIA Nemotron free endpoint states that session data may be logged for security and product improvement; do not send passwords, API keys, private information or personal/confidential customer data through the free endpoint. See the [NVIDIA Nemotron free-endpoint privacy notice](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free). Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: Reddit API access requires approved app credentials and is subject to Reddit's terms; Facebook Pages reads require a valid token, page identifiers and correct permissions; Instagram hashtag search requires a professional Instagram account token and the specific supported permissions; X API access requires an authorized bearer token and suitable access; YouTube direct API search requires a Google API key. These APIs do not grant universal access to all content, accounts or comments. Review each platform's terms, quotas and permitted use before using the agent commercially. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people."` | — |
+| [SRC-B335630551-L000027](../../README.md#L27) | 27 | `""` | — |
+| [SRC-B335630551-L000028](../../README.md#L28) | 28 | `""` | — |
+| [SRC-B335630551-L000029](../../README.md#L29) | 29 | `"## Living repository index"` | — |
+| [SRC-B335630551-L000030](../../README.md#L30) | 30 | `""` | — |
+| [SRC-B335630551-L000031](../../README.md#L31) | 31 | `"**Current delivery gate (Arabic):** [OMARAI HANDOFF CHECKLIST](docs/OMARAI_HANDOFF_CHECKLIST_AR.md) — current release blockers, required evidence, and operator actions. The central [remediation register](docs/OMARAI_REMEDIATION_REGISTER_AR.md) remains the detailed issue history."` | — |
+| [SRC-B335630551-L000032](../../README.md#L32) | 32 | `""` | — |
+| [SRC-B335630551-L000033](../../README.md#L33) | 33 | `"Omarai maintains a categorized master index and a paginated, line-by-line source index:"` | — |
+| [SRC-B335630551-L000034](../../README.md#L34) | 34 | `""` | — |
+| [SRC-B335630551-L000035](../../README.md#L35) | 35 | ``"- [MASTER INDEX](docs/MASTER_INDEX.md): file inventory with stable file IDs, Python AST definitions, static frontend/configuration symbols, and explicitly marked TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED/ISSUE/DEFECT/REGRESSION/RISK/GAP/ERROR/WARNING/PERF/PRIVACY/DATA_LOSS/ACCESSIBILITY entries. Each review marker has an `FND-...` code and a link to the exact source line."`` | — |
+| [SRC-B335630551-L000036](../../README.md#L36) | 36 | `"- [SOURCE LINES INDEX](docs/SOURCE_LINES_INDEX.md): search-friendly directory of files, page links, per-file line counts, and links to each source line."` | — |
+| [SRC-B335630551-L000037](../../README.md#L37) | 37 | `"- [INDEX COVERAGE AUDIT](docs/INDEX_COVERAGE_AUDIT.md): generated evidence of line-count consistency, metadata-only files, excluded path names and their reasons, and the exact scope of any “100%” coverage statement."` | — |
+| [SRC-B335630551-L000038](../../README.md#L38) | 38 | ``"- [Source line pages](docs/source_index/): small generated pages containing every logical line from eligible readable text files. Each line has a `SRC-<FILEHASH>-L000001` code, exact JSON-escaped text, and a link back to the source file at the matching line. Pages are capped at 800 line records to remain navigable on mobile and in GitHub's web view."`` | — |
+| [SRC-B335630551-L000039](../../README.md#L39) | 39 | `"- [Local source search](docs/search_code.py): offline text/regex search with file, line, nearby context, and GitHub line links. It excludes common secret/configuration files, databases, key files, symlinks, and runtime directories; it does not detect every secret or replace a security audit."` | — |
+| [SRC-B335630551-L000040](../../README.md#L40) | 40 | `""` | — |
+| [SRC-B335630551-L000041](../../README.md#L41) | 41 | ``"Example: `python docs/search_code.py \"resolve_followup_query\" --ext py --context 2`."`` | — |
+| [SRC-B335630551-L000042](../../README.md#L42) | 42 | `""` | — |
+| [SRC-B335630551-L000043](../../README.md#L43) | 43 | ``"The generator now refuses to publish indexes if any eligible file has missing, duplicated, or misnumbered source-line records. It still cannot infer every unmarked logical/programming defect; known issues should be recorded explicitly with a supported marker (for example, `# BUG: explain the defect`) so the generated `FND-...` register can point to the corresponding `SRC-...` line."`` | — |
+| [SRC-B335630551-L000044](../../README.md#L44) | 44 | `""` | — |
+| [SRC-B335630551-L000045](../../README.md#L45) | 45 | `"Regenerate and verify the indexes locally:"` | — |
+| [SRC-B335630551-L000046](../../README.md#L46) | 46 | `""` | — |
+| [SRC-B335630551-L000047](../../README.md#L47) | 47 | ````"```bash"```` | — |
+| [SRC-B335630551-L000048](../../README.md#L48) | 48 | `"python docs/generate_index.py"` | — |
+| [SRC-B335630551-L000049](../../README.md#L49) | 49 | `"python docs/generate_index.py --check"` | — |
+| [SRC-B335630551-L000050](../../README.md#L50) | 50 | ````"```"```` | — |
+| [SRC-B335630551-L000051](../../README.md#L51) | 51 | `""` | — |
+| [SRC-B335630551-L000052](../../README.md#L52) | 52 | ``"GitHub Actions validates the generator on Python 3.11 and 3.12. The publishing workflow runs on pushes to `main` and the `feat/**`, `fix/**`, and `feature/**` branches. It regenerates and commits all indexes and generated pages only when output changes; obsolete generated pages are removed, while generated-index-only commits are ignored to avoid loops. Documentation-only and repository-hygiene branches are still tested with indexes regenerated in the isolated test workspace, but do not carry a large generated-page diff solely because documentation lines moved; after merge, the publisher refreshes the committed indexes on `main`. If direct publication to `main` is rejected, it opens a pull request instead of force-updating a branch or auto-merging."`` | — |
+| [SRC-B335630551-L000053](../../README.md#L53) | 53 | `""` | — |
+| [SRC-B335630551-L000054](../../README.md#L54) | 54 | ``"When a known code issue is found, add a source comment using one supported marker name (TODO, FIXME, BUG, HACK, XXX, REVIEW, SECURITY, DEPRECATED, ISSUE, DEFECT, REGRESSION, RISK, GAP, ERROR, WARNING, PERF, PRIVACY, DATA_LOSS, or ACCESSIBILITY), followed by a colon and a concise description. The index assigns an `FND-...` code and links it to the exact `SRC-...` source-line record; removing or editing that source annotation updates the generated register on the next index run. Coverage includes every logical line in eligible readable text files up to 2 MiB. Known local secrets, runtime databases, dependency/build directories, binary/unreadable files and oversized files are excluded from line-level indexing by design but listed by metadata where eligible. Static review markers help track explicit findings; no source index can prove that every arbitrary logic bug has been detected or that all code is correct."`` | — |
+| [SRC-B335630551-L000055](../../README.md#L55) | 55 | `""` | — |
+| [SRC-B335630551-L000056](../../README.md#L56) | 56 | `"## Per-request resource budget"` | — |
+| [SRC-B335630551-L000057](../../README.md#L57) | 57 | `""` | — |
+| [SRC-B335630551-L000058](../../README.md#L58) | 58 | ``"Each `POST /api/agent` answer includes a `request_budget` object with elapsed and remaining time, reserved resource counts, and configured limits. The current defaults are a 90-second cooperative deadline, at most 8 search queries, 32 provider search calls, 8 model HTTP attempts, 8 page fetches, and up to 3 optional server-side search-tool calls per request. Operator limits may be lowered or raised only within hard caps: `OMARAI_REQUEST_BUDGET_SECONDS` (10–120), `OMARAI_REQUEST_MAX_SEARCH_QUERIES` (1–8), `OMARAI_REQUEST_MAX_SEARCH_CALLS` (1–40), `OMARAI_REQUEST_MAX_MODEL_CALLS` (1–12), `OMARAI_REQUEST_MAX_PAGE_FETCHES` (1–8), and `OMARAI_REQUEST_MAX_TOOL_CALLS` (0–3). Invalid numeric values fall back to the defaults; out-of-range values are clamped."`` | — |
+| [SRC-B335630551-L000059](../../README.md#L59) | 59 | `""` | — |
+| [SRC-B335630551-L000060](../../README.md#L60) | 60 | `"The deadline caps the timeout passed to outbound operations and prevents new work from being reserved after the deadline or a resource cap is exhausted. It is **cooperative, not hard cancellation**: a network call already in progress may overrun slightly while its client unwinds. Do not interpret this metadata as a load test, a throughput guarantee, or proof that any live provider is reachable. CI tests for budget logic are separate from live-provider validation."` | — |
+| [SRC-B335630551-L000061](../../README.md#L61) | 61 | `""` | — |
+| [SRC-B335630551-L000062](../../README.md#L62) | 62 | ``"The HTTP API also limits expensive `/api/agent` and `/api/diagnostics` operations to at most 4 concurrent operations per process by default. Configure `OMARAI_MAX_CONCURRENT_AGENT_REQUESTS` from 1 to 8. If all slots are occupied, the API returns HTTP 503 with a short retry hint instead of queueing unlimited expensive work. This is a **process-local** cap, not a distributed semaphore across multiple workers or replicas, and it is not a throughput/load-test claim."`` | — |
+| [SRC-B335630551-L000063](../../README.md#L63) | 63 | `""` | — |
+| [SRC-B335630551-L000064](../../README.md#L64) | 64 | `"## Experimental DeepSeek Search provider"` | — |
+| [SRC-B335630551-L000065](../../README.md#L65) | 65 | `""` | — |
+| [SRC-B335630551-L000066](../../README.md#L66) | 66 | `"Omarai can optionally compare results from DeepSeek's Search API when"` | — |
+| [SRC-B335630551-L000067](../../README.md#L67) | 67 | ``"`DEEPSEEK_SEARCH_API_KEY` is configured in the host's secret settings. It is"`` | — |
+| [SRC-B335630551-L000068](../../README.md#L68) | 68 | `"**disabled by default**; DuckDuckGo and Bing remain configured as before."` | — |
+| [SRC-B335630551-L000069](../../README.md#L69) | 69 | `"To limit possible spend when opted in, the request budget defaults to **one"` | — |
+| [SRC-B335630551-L000070](../../README.md#L70) | 70 | `"DeepSeek Search call per answer/diagnostic operation**. It can be set from 0 to 3"` | — |
+| [SRC-B335630551-L000071](../../README.md#L71) | 71 | ``"using `OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET`; invalid values fall back to 1."`` | — |
+| [SRC-B335630551-L000072](../../README.md#L72) | 72 | `"DeepSeek Search is billed per successful request (currently documented at"` | — |
+| [SRC-B335630551-L000073](../../README.md#L73) | 73 | `"US$0.75 per 1,000 successful searches); review the"` | — |
+| [SRC-B335630551-L000074](../../README.md#L74) | 74 | `"[official Search & Fetch guide](https://api-docs.deepseek.com/guides/search/)"` | — |
+| [SRC-B335630551-L000075](../../README.md#L75) | 75 | `"before enabling it. Unit tests use a mocked response; this repository change"` | — |
+| [SRC-B335630551-L000076](../../README.md#L76) | 76 | `"does not claim live DeepSeek connectivity or answer-quality improvement."` | — |
+| [SRC-B335630551-L000077](../../README.md#L77) | 77 | `""` | — |
+| [SRC-B335630551-L000078](../../README.md#L78) | 78 | `"## Hosting and live acceptance"` | — |
+| [SRC-B335630551-L000079](../../README.md#L79) | 79 | `""` | — |
+| [SRC-B335630551-L000080](../../README.md#L80) | 80 | `"Omarai includes several **alternative** hosting paths. Choose one provider; the presence of a config file is not proof that a service exists or has passed acceptance."` | — |
+| [SRC-B335630551-L000081](../../README.md#L81) | 81 | `""` | — |
+| [SRC-B335630551-L000082](../../README.md#L82) | 82 | ``"- **Railway:** [Arabic deployment guide](docs/DEPLOY_RAILWAY_AR.md), using `railway.json`."`` | — |
+| [SRC-B335630551-L000083](../../README.md#L83) | 83 | `"- **SnapDeploy:** [free-demo guide](docs/DEPLOY_SNAPDEPLOY_AR.md). Confirm current quotas and terms before use; ephemeral storage means it is not a durable lead database."` | — |
+| [SRC-B335630551-L000084](../../README.md#L84) | 84 | ``"- **Render:** [optional alternative guide](docs/DEPLOY_RENDER_AR.md), using `render.yaml`. Use it only if the provider/account is available to you."`` | — |
+| [SRC-B335630551-L000085](../../README.md#L85) | 85 | `""` | — |
+| [SRC-B335630551-L000086](../../README.md#L86) | 86 | ``"All providers share the same acceptance rules. The API reports a validated source revision at `/api/health`: it prefers image-baked `BUILD_SHA`, then documented platform Git metadata where supported. For another Docker host, pass `--build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`. A local/container build is not evidence of a live deployment; compare the reported SHA with the exact intended commit."`` | — |
+| [SRC-B335630551-L000087](../../README.md#L87) | 87 | `""` | — |
+| [SRC-B335630551-L000088](../../README.md#L88) | 88 | `"**Single-operator limit:** the current bearer token is shared application access, not individual identity or a tenant boundary. The lead workspace does not provide confirmed per-customer data isolation. Keep a hosted instance private to one operator; do not store confidential records for multiple customers. Concurrency and rate-limit state are process-local, not distributed, and production load capacity has not been established."` | — |
+| [SRC-B335630551-L000089](../../README.md#L89) | 89 | `""` | — |
+| [SRC-B335630551-L000090](../../README.md#L90) | 90 | ``"For a public-bound instance, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `OMARAI_ACCESS_TOKEN` of at least 32 characters. The app refuses public binding without both. Configure `OPENROUTER_API_KEY` or `OMARAI_LLM_API_KEY` only in the provider's secret store. If the UI is on another origin, set `OMARAI_ALLOWED_ORIGINS` to the exact trusted origins (scheme, host, optional port; no path or wildcard). The built-in UI served from the same host usually needs no extra origin entry. Public API routes require the bearer token and apply a default in-memory per-client IP limit of 20 requests per minute. The browser stores only the app access token in local storage, not the provider API key."`` | — |
+| [SRC-B335630551-L000091](../../README.md#L91) | 91 | `""` | — |
+| [SRC-B335630551-L000092](../../README.md#L92) | 92 | ``"Before accepting any host, follow the [go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) and run the manually triggered [hosted acceptance smoke workflow](.github/workflows/hosted-smoke.yml) only after setting GitHub Actions secrets `OMARAI_ACCESS_TOKEN` and `OMARAI_BASE_URL` to the authorized service. The workflow makes real model/search calls and may incur usage charges; do not run it without human approval. On hosts with a genuinely persistent mounted volume, set `OMARAI_DB_PATH` to a file inside the mount (for example, `/data/omarai.sqlite3`). This setting selects a path; it does not create storage or replace backups and a tested restore. Keep the lead workspace disabled for important records until persistence across restart/redeploy and restore are verified on the actual host."`` | — |
+| [SRC-B335630551-L000093](../../README.md#L93) | 93 | `""` | — |
+| [SRC-B335630551-L000094](../../README.md#L94) | 94 | `"## Run on Android / Termux"` | — |
+| [SRC-B335630551-L000095](../../README.md#L95) | 95 | `""` | — |
+| [SRC-B335630551-L000096](../../README.md#L96) | 96 | `"From the repository directory:"` | — |
+| [SRC-B335630551-L000097](../../README.md#L97) | 97 | `""` | — |
+| [SRC-B335630551-L000098](../../README.md#L98) | 98 | ````"```bash"```` | — |
+| [SRC-B335630551-L000099](../../README.md#L99) | 99 | `"python -m pip install -e ."` | — |
+| [SRC-B335630551-L000100](../../README.md#L100) | 100 | ````"```"```` | — |
+| [SRC-B335630551-L000101](../../README.md#L101) | 101 | `""` | — |
+| [SRC-B335630551-L000102](../../README.md#L102) | 102 | ``"The default language-model configuration uses OpenRouter: Nemotron 3 Ultra (free) plans queries, Gemma 4 31B Instruct (free) writes the answer and performs the optional second-pass review, and `openrouter/free` is the fallback if a selected model fails. Create an OpenRouter API key, then enter it without putting the secret into a command-history entry. The model key enables both search planning and generative synthesis; general web search can still run without it, but results will not be turned into a full language-model analysis:"`` | — |
+| [SRC-B335630551-L000103](../../README.md#L103) | 103 | `""` | — |
+| [SRC-B335630551-L000104](../../README.md#L104) | 104 | ````"```bash"```` | — |
+| [SRC-B335630551-L000105](../../README.md#L105) | 105 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000106](../../README.md#L106) | 106 | `"printf '\\n'"` | — |
+| [SRC-B335630551-L000107](../../README.md#L107) | 107 | `"export OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000108](../../README.md#L108) | 108 | `"python -m cli.omarai serve"` | — |
+| [SRC-B335630551-L000109](../../README.md#L109) | 109 | ````"```"```` | — |
+| [SRC-B335630551-L000110](../../README.md#L110) | 110 | `""` | — |
+| [SRC-B335630551-L000111](../../README.md#L111) | 111 | `"Keep this Termux session running and open **http://127.0.0.1:8765** in the phone's browser. The agent chat is the home screen. The existing lead workspace remains available at **http://127.0.0.1:8765/leads**."` | — |
+| [SRC-B335630551-L000112](../../README.md#L112) | 112 | `""` | — |
+| [SRC-B335630551-L000113](../../README.md#L113) | 113 | `"The key is held in the current shell environment and is not written into the repository. Enter it again in a new Termux session. Never commit API keys or paste them into public issues or chat."` | — |
+| [SRC-B335630551-L000114](../../README.md#L114) | 114 | `""` | — |
+| [SRC-B335630551-L000115](../../README.md#L115) | 115 | `"### Optional configuration"` | — |
+| [SRC-B335630551-L000116](../../README.md#L116) | 116 | `""` | — |
+| [SRC-B335630551-L000117](../../README.md#L117) | 117 | `"For additional live web-search indexes, configure either official search API. These keys are optional: the built-in public engines are still attempted, and each API may have its own account, quota, rate limit or cost. Do not assume an API is free or that a configured key is valid until you run the live diagnostics."` | — |
+| [SRC-B335630551-L000118](../../README.md#L118) | 118 | `""` | — |
+| [SRC-B335630551-L000119](../../README.md#L119) | 119 | ````"```bash"```` | — |
+| [SRC-B335630551-L000120](../../README.md#L120) | 120 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-B335630551-L000121](../../README.md#L121) | 121 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-B335630551-L000122](../../README.md#L122) | 122 | ````"```"```` | — |
+| [SRC-B335630551-L000123](../../README.md#L123) | 123 | `""` | — |
+| [SRC-B335630551-L000124](../../README.md#L124) | 124 | `""` | — |
+| [SRC-B335630551-L000125](../../README.md#L125) | 125 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
+| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |
+| [SRC-B335630551-L000127](../../README.md#L127) | 127 | ````"```bash"```` | — |
+| [SRC-B335630551-L000128](../../README.md#L128) | 128 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
+| [SRC-B335630551-L000129](../../README.md#L129) | 129 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
+| [SRC-B335630551-L000130](../../README.md#L130) | 130 | ````"```"```` | — |
+| [SRC-B335630551-L000131](../../README.md#L131) | 131 | `""` | — |
+| [SRC-B335630551-L000132](../../README.md#L132) | 132 | ``"Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. To customize model roles, set `OMARAI_PLANNER_MODEL`, `OMARAI_ANSWER_MODEL`, and/or `OMARAI_REVIEW_MODEL`; `OMARAI_LLM_MODEL` remains a global override for all roles that have no role-specific override. `OMARAI_LLM_FALLBACK_MODEL` changes the default `openrouter/free` fallback. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. Optional social credentials may be configured in the same Termux session before starting the server: `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` (official OAuth access), `X_BEARER_TOKEN`, `YOUTUBE_API_KEY`, `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` + optional `META_GRAPH_VERSION`, and `FACEBOOK_PAGE_ACCESS_TOKEN` + `FACEBOOK_PAGE_IDS` (comma-separated Page IDs that the authorized token can access). Use `read -r -s` to enter secrets privately rather than saving them in shell history. Do not store keys in source files, HTML, commits or chat messages."`` | — |
+| [SRC-B335630551-L000133](../../README.md#L133) | 133 | `""` | — |
+| [SRC-B335630551-L000134](../../README.md#L134) | 134 | `"If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded."` | — |
+| [SRC-B335630551-L000135](../../README.md#L135) | 135 | `""` | — |
+| [SRC-B335630551-L000136](../../README.md#L136) | 136 | `"For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md)."` | — |
+| [SRC-B335630551-L000137](../../README.md#L137) | 137 | `""` | — |
+| [SRC-B335630551-L000138](../../README.md#L138) | 138 | `"## API"` | — |
+| [SRC-B335630551-L000139](../../README.md#L139) | 139 | `""` | — |
+| [SRC-B335630551-L000140](../../README.md#L140) | 140 | ``"- `GET /` — web-research chat"`` | — |
+| [SRC-B335630551-L000141](../../README.md#L141) | 141 | ``"- `GET /leads` — existing lead workspace"`` | — |
+| [SRC-B335630551-L000142](../../README.md#L142) | 142 | ``"- `GET /api/health` — setup and dependency status (never returns the API key)"`` | — |
+| [SRC-B335630551-L000143](../../README.md#L143) | 143 | ``"- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors"`` | — |
+| [SRC-B335630551-L000144](../../README.md#L144) | 144 | ``"- `POST /api/agent` — open-ended question plus optional recent `history`"`` | — |
+| [SRC-B335630551-L000145](../../README.md#L145) | 145 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
+| [SRC-B335630551-L000146](../../README.md#L146) | 146 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
+| [SRC-B335630551-L000147](../../README.md#L147) | 147 | `""` | — |
+| [SRC-B335630551-L000148](../../README.md#L148) | 148 | `"Example request:"` | — |
+| [SRC-B335630551-L000149](../../README.md#L149) | 149 | `""` | — |
+| [SRC-B335630551-L000150](../../README.md#L150) | 150 | ````"```json"```` | — |
+| [SRC-B335630551-L000151](../../README.md#L151) | 151 | `"{"` | — |
+| [SRC-B335630551-L000152](../../README.md#L152) | 152 | `"  \"question\": \"Compare the latest public information about two technologies\","` | — |
+| [SRC-B335630551-L000153](../../README.md#L153) | 153 | `"  \"history\": []"` | — |
+| [SRC-B335630551-L000154](../../README.md#L154) | 154 | `"}"` | — |
+| [SRC-B335630551-L000155](../../README.md#L155) | 155 | ````"```"```` | — |
+| [SRC-B335630551-L000156](../../README.md#L156) | 156 | `""` | — |
+| [SRC-B335630551-L000157](../../README.md#L157) | 157 | ``"The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The Arabic web UI offers automatic, deep, latest-information, and public-social research modes, plus a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The request can pass `mode` as `auto`, `deep`, `latest`, or `social`. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax and resolved private/local addresses are checked before page fetches; public redirects are followed only through a small bounded loop with each destination revalidated. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose."`` | — |
+| [SRC-B335630551-L000158](../../README.md#L158) | 158 | `""` | — |
+| [SRC-B335630551-L000159](../../README.md#L159) | 159 | `"## Existing lead workspace"` | — |
+| [SRC-B335630551-L000160](../../README.md#L160) | 160 | `""` | — |
+| [SRC-B335630551-L000161](../../README.md#L161) | 161 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
+| [SRC-B335630551-L000162](../../README.md#L162) | 162 | `""` | — |
+| [SRC-B335630551-L000163](../../README.md#L163) | 163 | `"Analyze text from the CLI:"` | — |
+| [SRC-B335630551-L000164](../../README.md#L164) | 164 | `""` | — |
+| [SRC-B335630551-L000165](../../README.md#L165) | 165 | ````"```bash"```` | — |
+| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
+| [SRC-B335630551-L000167](../../README.md#L167) | 167 | ````"```"```` | — |
+| [SRC-B335630551-L000168](../../README.md#L168) | 168 | `""` | — |
+| [SRC-B335630551-L000169](../../README.md#L169) | 169 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
+| [SRC-B335630551-L000170](../../README.md#L170) | 170 | `""` | — |
+| [SRC-B335630551-L000171](../../README.md#L171) | 171 | ````"```bash"```` | — |
+| [SRC-B335630551-L000172](../../README.md#L172) | 172 | `"python -m cli.omarai import-csv --file leads.csv"` | — |
+| [SRC-B335630551-L000173](../../README.md#L173) | 173 | `"python -m cli.omarai list --limit 50"` | — |
+| [SRC-B335630551-L000174](../../README.md#L174) | 174 | `"python -m cli.omarai export-csv --file leads-export.csv"` | — |
+| [SRC-B335630551-L000175](../../README.md#L175) | 175 | ````"```"```` | — |
+| [SRC-B335630551-L000176](../../README.md#L176) | 176 | `""` | — |
+| [SRC-B335630551-L000177](../../README.md#L177) | 177 | `"## Checks"` | — |
+| [SRC-B335630551-L000178](../../README.md#L178) | 178 | `""` | — |
+| [SRC-B335630551-L000179](../../README.md#L179) | 179 | ````"```bash"```` | — |
+| [SRC-B335630551-L000180](../../README.md#L180) | 180 | `"python -m pip install -e \".[dev]\""` | — |
+| [SRC-B335630551-L000181](../../README.md#L181) | 181 | `"ruff check agents api cli tests"` | — |
+| [SRC-B335630551-L000182](../../README.md#L182) | 182 | `"python -m pytest -q"` | — |
+| [SRC-B335630551-L000183](../../README.md#L183) | 183 | ````"```"```` | — |
+## إعدادات وتشغيل
+
+### FILE-A64CF250B4 — [render.yaml](../../render.yaml#L1)
+
+- النوع: **YAML**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-A64CF250B4-L000001](../../render.yaml#L1) | 1 | `"services:"` | — |
+| [SRC-A64CF250B4-L000002](../../render.yaml#L2) | 2 | `"  - type: web"` | — |
+| [SRC-A64CF250B4-L000003](../../render.yaml#L3) | 3 | `"    name: omarai"` | — |
+| [SRC-A64CF250B4-L000004](../../render.yaml#L4) | 4 | `"    runtime: docker"` | — |
+| [SRC-A64CF250B4-L000005](../../render.yaml#L5) | 5 | `"    plan: free"` | — |
+| [SRC-A64CF250B4-L000006](../../render.yaml#L6) | 6 | `"    region: frankfurt"` | — |
+| [SRC-A64CF250B4-L000007](../../render.yaml#L7) | 7 | `"    dockerfilePath: ./Dockerfile"` | — |
+| [SRC-A64CF250B4-L000008](../../render.yaml#L8) | 8 | `"    healthCheckPath: /api/health"` | — |
+| [SRC-A64CF250B4-L000009](../../render.yaml#L9) | 9 | `"    envVars:"` | — |
+| [SRC-A64CF250B4-L000010](../../render.yaml#L10) | 10 | `"      - key: OMARAI_PUBLIC_DEPLOYMENT"` | — |
+| [SRC-A64CF250B4-L000011](../../render.yaml#L11) | 11 | `"        value: \"1\""` | — |
+| [SRC-A64CF250B4-L000012](../../render.yaml#L12) | 12 | `"      - key: OMARAI_ACCESS_TOKEN"` | — |
+| [SRC-A64CF250B4-L000013](../../render.yaml#L13) | 13 | `"        sync: false"` | — |
+| [SRC-A64CF250B4-L000014](../../render.yaml#L14) | 14 | `"      - key: OPENROUTER_API_KEY"` | — |
+| [SRC-A64CF250B4-L000015](../../render.yaml#L15) | 15 | `"        sync: false"` | — |
+## ملفات أخرى
+
+### FILE-64EDD7FC2B — [scripts/__init__.py](../../scripts/__init__.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-64EDD7FC2B-L000001](../../scripts/__init__.py#L1) | 1 | `"\"\"\"Operational helper scripts for Omarai.\"\"\""` | — |
 ## ملفات أخرى
 
 ### FILE-A8360B1B03 — [scripts/hosted_smoke_test.py](../../scripts/hosted_smoke_test.py#L1)
@@ -16,6 +326,112 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000001](../../scripts/hosted_smoke_test.py#L1) | 1 | `"#!/usr/bin/env python3"` | — |
+| [SRC-A8360B1B03-L000002](../../scripts/hosted_smoke_test.py#L2) | 2 | `"\"\"\"End-to-end smoke test for a deployed Omarai instance; uses only stdlib.\"\"\""` | — |
+| [SRC-A8360B1B03-L000003](../../scripts/hosted_smoke_test.py#L3) | 3 | `"from __future__ import annotations"` | — |
+| [SRC-A8360B1B03-L000004](../../scripts/hosted_smoke_test.py#L4) | 4 | `""` | — |
+| [SRC-A8360B1B03-L000005](../../scripts/hosted_smoke_test.py#L5) | 5 | `"import argparse"` | — |
+| [SRC-A8360B1B03-L000006](../../scripts/hosted_smoke_test.py#L6) | 6 | `"import json"` | — |
+| [SRC-A8360B1B03-L000007](../../scripts/hosted_smoke_test.py#L7) | 7 | `"import os"` | — |
+| [SRC-A8360B1B03-L000008](../../scripts/hosted_smoke_test.py#L8) | 8 | `"import re"` | — |
+| [SRC-A8360B1B03-L000009](../../scripts/hosted_smoke_test.py#L9) | 9 | `"import sys"` | — |
+| [SRC-A8360B1B03-L000010](../../scripts/hosted_smoke_test.py#L10) | 10 | `"import urllib.error"` | — |
+| [SRC-A8360B1B03-L000011](../../scripts/hosted_smoke_test.py#L11) | 11 | `"import urllib.parse"` | — |
+| [SRC-A8360B1B03-L000012](../../scripts/hosted_smoke_test.py#L12) | 12 | `"import urllib.request"` | — |
+| [SRC-A8360B1B03-L000013](../../scripts/hosted_smoke_test.py#L13) | 13 | `"from typing import Any"` | — |
+| [SRC-A8360B1B03-L000014](../../scripts/hosted_smoke_test.py#L14) | 14 | `""` | — |
+| [SRC-A8360B1B03-L000015](../../scripts/hosted_smoke_test.py#L15) | 15 | `""` | — |
+| [SRC-A8360B1B03-L000016](../../scripts/hosted_smoke_test.py#L16) | 16 | `"class SmokeError(RuntimeError):"` | — |
+| [SRC-A8360B1B03-L000017](../../scripts/hosted_smoke_test.py#L17) | 17 | `"    \"\"\"A live acceptance check failed.\"\"\""` | — |
+| [SRC-A8360B1B03-L000018](../../scripts/hosted_smoke_test.py#L18) | 18 | `""` | — |
+| [SRC-A8360B1B03-L000019](../../scripts/hosted_smoke_test.py#L19) | 19 | `""` | — |
+| [SRC-A8360B1B03-L000020](../../scripts/hosted_smoke_test.py#L20) | 20 | `"class _SameOriginRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
+| [SRC-A8360B1B03-L000021](../../scripts/hosted_smoke_test.py#L21) | 21 | `"    \"\"\"Never forward a bearer token to a different origin during an HTTP redirect.\"\"\""` | — |
+| [SRC-A8360B1B03-L000022](../../scripts/hosted_smoke_test.py#L22) | 22 | `""` | — |
+| [SRC-A8360B1B03-L000023](../../scripts/hosted_smoke_test.py#L23) | 23 | `"    @staticmethod"` | — |
+| [SRC-A8360B1B03-L000024](../../scripts/hosted_smoke_test.py#L24) | 24 | `"    def _origin(url: str) -> tuple[str, str, int \| None]:"` | — |
+| [SRC-A8360B1B03-L000025](../../scripts/hosted_smoke_test.py#L25) | 25 | `"        parsed = urllib.parse.urlsplit(url)"` | — |
+| [SRC-A8360B1B03-L000026](../../scripts/hosted_smoke_test.py#L26) | 26 | `"        try:"` | — |
+| [SRC-A8360B1B03-L000027](../../scripts/hosted_smoke_test.py#L27) | 27 | `"            port = parsed.port"` | — |
+| [SRC-A8360B1B03-L000028](../../scripts/hosted_smoke_test.py#L28) | 28 | `"        except ValueError:"` | — |
+| [SRC-A8360B1B03-L000029](../../scripts/hosted_smoke_test.py#L29) | 29 | `"            return \"\", \"\", None"` | — |
+| [SRC-A8360B1B03-L000030](../../scripts/hosted_smoke_test.py#L30) | 30 | `"        if port is None:"` | — |
+| [SRC-A8360B1B03-L000031](../../scripts/hosted_smoke_test.py#L31) | 31 | `"            port = 443 if parsed.scheme.lower() == \"https\" else 80 if parsed.scheme.lower() == \"http\" else None"` | — |
+| [SRC-A8360B1B03-L000032](../../scripts/hosted_smoke_test.py#L32) | 32 | `"        return parsed.scheme.lower(), (parsed.hostname or \"\").lower(), port"` | — |
+| [SRC-A8360B1B03-L000033](../../scripts/hosted_smoke_test.py#L33) | 33 | `""` | — |
+| [SRC-A8360B1B03-L000034](../../scripts/hosted_smoke_test.py#L34) | 34 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
+| [SRC-A8360B1B03-L000035](../../scripts/hosted_smoke_test.py#L35) | 35 | `"        target_url = urllib.parse.urljoin(req.full_url, newurl)"` | — |
+| [SRC-A8360B1B03-L000036](../../scripts/hosted_smoke_test.py#L36) | 36 | `"        target = urllib.parse.urlsplit(target_url)"` | — |
+| [SRC-A8360B1B03-L000037](../../scripts/hosted_smoke_test.py#L37) | 37 | `"        if ("` | — |
+| [SRC-A8360B1B03-L000038](../../scripts/hosted_smoke_test.py#L38) | 38 | `"            self._origin(req.full_url) != self._origin(target_url)"` | — |
+| [SRC-A8360B1B03-L000039](../../scripts/hosted_smoke_test.py#L39) | 39 | `"            or target.scheme.lower() not in {\"http\", \"https\"}"` | — |
+| [SRC-A8360B1B03-L000040](../../scripts/hosted_smoke_test.py#L40) | 40 | `"            or target.username"` | — |
+| [SRC-A8360B1B03-L000041](../../scripts/hosted_smoke_test.py#L41) | 41 | `"            or target.password"` | — |
+| [SRC-A8360B1B03-L000042](../../scripts/hosted_smoke_test.py#L42) | 42 | `"        ):"` | — |
+| [SRC-A8360B1B03-L000043](../../scripts/hosted_smoke_test.py#L43) | 43 | `"            raise urllib.error.HTTPError("` | — |
+| [SRC-A8360B1B03-L000044](../../scripts/hosted_smoke_test.py#L44) | 44 | `"                req.full_url, code, \"Cross-origin redirect blocked\", headers, fp"` | — |
+| [SRC-A8360B1B03-L000045](../../scripts/hosted_smoke_test.py#L45) | 45 | `"            )"` | — |
+| [SRC-A8360B1B03-L000046](../../scripts/hosted_smoke_test.py#L46) | 46 | `"        return super().redirect_request(req, fp, code, msg, headers, target_url)"` | — |
+| [SRC-A8360B1B03-L000047](../../scripts/hosted_smoke_test.py#L47) | 47 | `""` | — |
+| [SRC-A8360B1B03-L000048](../../scripts/hosted_smoke_test.py#L48) | 48 | `""` | — |
+| [SRC-A8360B1B03-L000049](../../scripts/hosted_smoke_test.py#L49) | 49 | `"def normalize_origin(value: str, allow_http: bool = False) -> str:"` | — |
+| [SRC-A8360B1B03-L000050](../../scripts/hosted_smoke_test.py#L50) | 50 | `"    parsed = urllib.parse.urlsplit((value or \"\").strip())"` | — |
+| [SRC-A8360B1B03-L000051](../../scripts/hosted_smoke_test.py#L51) | 51 | `"    if parsed.scheme not in {\"https\", \"http\"} or not parsed.hostname:"` | — |
+| [SRC-A8360B1B03-L000052](../../scripts/hosted_smoke_test.py#L52) | 52 | `"        raise SmokeError(\"Provide an absolute HTTPS origin, for example https://your-app.example.com.\")"` | — |
+| [SRC-A8360B1B03-L000053](../../scripts/hosted_smoke_test.py#L53) | 53 | `"    if parsed.username or parsed.password or parsed.query or parsed.fragment:"` | — |
+| [SRC-A8360B1B03-L000054](../../scripts/hosted_smoke_test.py#L54) | 54 | `"        raise SmokeError(\"The base URL must not contain credentials, a query, or a fragment.\")"` | — |
+| [SRC-A8360B1B03-L000055](../../scripts/hosted_smoke_test.py#L55) | 55 | `"    if parsed.path not in {\"\", \"/\"}:"` | — |
+| [SRC-A8360B1B03-L000056](../../scripts/hosted_smoke_test.py#L56) | 56 | `"        raise SmokeError(\"The base URL must be an origin only; do not add /api or another path.\")"` | — |
+| [SRC-A8360B1B03-L000057](../../scripts/hosted_smoke_test.py#L57) | 57 | `"    if parsed.scheme != \"https\" and not ("` | — |
+| [SRC-A8360B1B03-L000058](../../scripts/hosted_smoke_test.py#L58) | 58 | `"        allow_http and parsed.hostname.lower() in {\"localhost\", \"127.0.0.1\", \"::1\"}"` | — |
+| [SRC-A8360B1B03-L000059](../../scripts/hosted_smoke_test.py#L59) | 59 | `"    ):"` | — |
+| [SRC-A8360B1B03-L000060](../../scripts/hosted_smoke_test.py#L60) | 60 | `"        raise SmokeError(\"Hosted tests require HTTPS; plain HTTP is allowed only for local tests.\")"` | — |
+| [SRC-A8360B1B03-L000061](../../scripts/hosted_smoke_test.py#L61) | 61 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000062](../../scripts/hosted_smoke_test.py#L62) | 62 | `"        port = parsed.port"` | — |
+| [SRC-A8360B1B03-L000063](../../scripts/hosted_smoke_test.py#L63) | 63 | `"    except ValueError as exc:"` | — |
+| [SRC-A8360B1B03-L000064](../../scripts/hosted_smoke_test.py#L64) | 64 | `"        raise SmokeError(\"Invalid port in base URL.\") from exc"` | — |
+| [SRC-A8360B1B03-L000065](../../scripts/hosted_smoke_test.py#L65) | 65 | `"    host = parsed.hostname"` | — |
+| [SRC-A8360B1B03-L000066](../../scripts/hosted_smoke_test.py#L66) | 66 | `"    if \":\" in host and not host.startswith(\"[\"):"` | — |
+| [SRC-A8360B1B03-L000067](../../scripts/hosted_smoke_test.py#L67) | 67 | `"        host = f\"[{host}]\""` | — |
+| [SRC-A8360B1B03-L000068](../../scripts/hosted_smoke_test.py#L68) | 68 | `"    if port:"` | — |
+| [SRC-A8360B1B03-L000069](../../scripts/hosted_smoke_test.py#L69) | 69 | `"        host += f\":{port}\""` | — |
+| [SRC-A8360B1B03-L000070](../../scripts/hosted_smoke_test.py#L70) | 70 | `"    return f\"{parsed.scheme}://{host}\""` | — |
+| [SRC-A8360B1B03-L000071](../../scripts/hosted_smoke_test.py#L71) | 71 | `""` | — |
+| [SRC-A8360B1B03-L000072](../../scripts/hosted_smoke_test.py#L72) | 72 | `""` | — |
+| [SRC-A8360B1B03-L000073](../../scripts/hosted_smoke_test.py#L73) | 73 | `"def request_json(url: str, *, token: str = \"\", payload: dict[str, Any] \| None = None,"` | — |
+| [SRC-A8360B1B03-L000074](../../scripts/hosted_smoke_test.py#L74) | 74 | `"                 timeout: float = 90) -> tuple[int, dict[str, Any] \| None]:"` | — |
+| [SRC-A8360B1B03-L000075](../../scripts/hosted_smoke_test.py#L75) | 75 | `"    headers = {\"Accept\": \"application/json\"}"` | — |
+| [SRC-A8360B1B03-L000076](../../scripts/hosted_smoke_test.py#L76) | 76 | `"    data = None"` | — |
+| [SRC-A8360B1B03-L000077](../../scripts/hosted_smoke_test.py#L77) | 77 | `"    if payload is not None:"` | — |
+| [SRC-A8360B1B03-L000078](../../scripts/hosted_smoke_test.py#L78) | 78 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
+| [SRC-A8360B1B03-L000079](../../scripts/hosted_smoke_test.py#L79) | 79 | `"        data = json.dumps(payload, ensure_ascii=False).encode()"` | — |
+| [SRC-A8360B1B03-L000080](../../scripts/hosted_smoke_test.py#L80) | 80 | `"    if token:"` | — |
+| [SRC-A8360B1B03-L000081](../../scripts/hosted_smoke_test.py#L81) | 81 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
+| [SRC-A8360B1B03-L000082](../../scripts/hosted_smoke_test.py#L82) | 82 | `"    request = urllib.request.Request(url, data=data, headers=headers)"` | — |
+| [SRC-A8360B1B03-L000083](../../scripts/hosted_smoke_test.py#L83) | 83 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000084](../../scripts/hosted_smoke_test.py#L84) | 84 | `"        opener = urllib.request.build_opener(_SameOriginRedirectHandler())"` | — |
+| [SRC-A8360B1B03-L000085](../../scripts/hosted_smoke_test.py#L85) | 85 | `"        with opener.open(request, timeout=timeout) as response:"` | — |
+| [SRC-A8360B1B03-L000086](../../scripts/hosted_smoke_test.py#L86) | 86 | `"            status, body = response.status, response.read(1_000_000)"` | — |
+| [SRC-A8360B1B03-L000087](../../scripts/hosted_smoke_test.py#L87) | 87 | `"    except urllib.error.HTTPError as exc:"` | — |
+| [SRC-A8360B1B03-L000088](../../scripts/hosted_smoke_test.py#L88) | 88 | `"        status = exc.code"` | — |
+| [SRC-A8360B1B03-L000089](../../scripts/hosted_smoke_test.py#L89) | 89 | `"        body = exc.read(100_000)"` | — |
+| [SRC-A8360B1B03-L000090](../../scripts/hosted_smoke_test.py#L90) | 90 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
+| [SRC-A8360B1B03-L000091](../../scripts/hosted_smoke_test.py#L91) | 91 | `"        path = urllib.parse.urlsplit(url).path"` | — |
+| [SRC-A8360B1B03-L000092](../../scripts/hosted_smoke_test.py#L92) | 92 | `"        raise SmokeError(f\"Network request failed at {path}; check the service and network.\") from exc"` | — |
+| [SRC-A8360B1B03-L000093](../../scripts/hosted_smoke_test.py#L93) | 93 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000094](../../scripts/hosted_smoke_test.py#L94) | 94 | `"        result = json.loads(body.decode(\"utf-8\"))"` | — |
+| [SRC-A8360B1B03-L000095](../../scripts/hosted_smoke_test.py#L95) | 95 | `"    except (UnicodeDecodeError, json.JSONDecodeError):"` | — |
+| [SRC-A8360B1B03-L000096](../../scripts/hosted_smoke_test.py#L96) | 96 | `"        result = None"` | — |
+| [SRC-A8360B1B03-L000097](../../scripts/hosted_smoke_test.py#L97) | 97 | `"    return status, result if isinstance(result, dict) else None"` | — |
+| [SRC-A8360B1B03-L000098](../../scripts/hosted_smoke_test.py#L98) | 98 | `""` | — |
+| [SRC-A8360B1B03-L000099](../../scripts/hosted_smoke_test.py#L99) | 99 | `""` | — |
+| [SRC-A8360B1B03-L000100](../../scripts/hosted_smoke_test.py#L100) | 100 | `"def run_smoke("` | — |
+| [SRC-A8360B1B03-L000101](../../scripts/hosted_smoke_test.py#L101) | 101 | `"    origin: str,"` | — |
+| [SRC-A8360B1B03-L000102](../../scripts/hosted_smoke_test.py#L102) | 102 | `"    token: str,"` | — |
+| [SRC-A8360B1B03-L000103](../../scripts/hosted_smoke_test.py#L103) | 103 | `"    *,"` | — |
+| [SRC-A8360B1B03-L000104](../../scripts/hosted_smoke_test.py#L104) | 104 | `"    timeout: float = 90,"` | — |
+| [SRC-A8360B1B03-L000105](../../scripts/hosted_smoke_test.py#L105) | 105 | `"    allow_http: bool = False,"` | — |
+| [SRC-A8360B1B03-L000106](../../scripts/hosted_smoke_test.py#L106) | 106 | `"    expected_sha: str \| None = None,"` | — |
 | [SRC-A8360B1B03-L000107](../../scripts/hosted_smoke_test.py#L107) | 107 | `") -> dict[str, Any]:"` | — |
 | [SRC-A8360B1B03-L000108](../../scripts/hosted_smoke_test.py#L108) | 108 | `"    origin = normalize_origin(origin, allow_http)"` | — |
 | [SRC-A8360B1B03-L000109](../../scripts/hosted_smoke_test.py#L109) | 109 | `"    if expected_sha is not None and not re.fullmatch(r\"[0-9a-fA-F]{40}\", expected_sha.strip()):"` | — |
@@ -463,383 +879,3 @@
 | [SRC-4FFD5AFC54-L000312](../../scripts/run_answer_quality_benchmark.py#L312) | 312 | `"            \"used_web_search\": ("` | — |
 | [SRC-4FFD5AFC54-L000313](../../scripts/run_answer_quality_benchmark.py#L313) | 313 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
 | [SRC-4FFD5AFC54-L000314](../../scripts/run_answer_quality_benchmark.py#L314) | 314 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000315](../../scripts/run_answer_quality_benchmark.py#L315) | 315 | `"            \"used_language_model\": ("` | — |
-| [SRC-4FFD5AFC54-L000316](../../scripts/run_answer_quality_benchmark.py#L316) | 316 | `"                safe_payload.get(\"used_language_model\")"` | — |
-| [SRC-4FFD5AFC54-L000317](../../scripts/run_answer_quality_benchmark.py#L317) | 317 | `"                if isinstance(safe_payload, dict)"` | — |
-| [SRC-4FFD5AFC54-L000318](../../scripts/run_answer_quality_benchmark.py#L318) | 318 | `"                else None"` | — |
-| [SRC-4FFD5AFC54-L000319](../../scripts/run_answer_quality_benchmark.py#L319) | 319 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000320](../../scripts/run_answer_quality_benchmark.py#L320) | 320 | `"            \"sources\": ("` | — |
-| [SRC-4FFD5AFC54-L000321](../../scripts/run_answer_quality_benchmark.py#L321) | 321 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000322](../../scripts/run_answer_quality_benchmark.py#L322) | 322 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000323](../../scripts/run_answer_quality_benchmark.py#L323) | 323 | `"            \"status\": \"NOT_TESTED\","` | — |
-| [SRC-4FFD5AFC54-L000324](../../scripts/run_answer_quality_benchmark.py#L324) | 324 | `"            \"transport_ok\": transport_ok,"` | — |
-| [SRC-4FFD5AFC54-L000325](../../scripts/run_answer_quality_benchmark.py#L325) | 325 | `"            \"reviewer_notes\": ("` | — |
-| [SRC-4FFD5AFC54-L000326](../../scripts/run_answer_quality_benchmark.py#L326) | 326 | `"                \"Response collected; human/fixture review required for PASS/FAIL.\""` | — |
-| [SRC-4FFD5AFC54-L000327](../../scripts/run_answer_quality_benchmark.py#L327) | 327 | `"                if transport_ok"` | — |
-| [SRC-4FFD5AFC54-L000328](../../scripts/run_answer_quality_benchmark.py#L328) | 328 | `"                else \"Transport or HTTP error; quality not graded.\""` | — |
-| [SRC-4FFD5AFC54-L000329](../../scripts/run_answer_quality_benchmark.py#L329) | 329 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000330](../../scripts/run_answer_quality_benchmark.py#L330) | 330 | `"            \"evidence_fixture_injected\": False,"` | — |
-| [SRC-4FFD5AFC54-L000331](../../scripts/run_answer_quality_benchmark.py#L331) | 331 | `"        }"` | — |
-| [SRC-4FFD5AFC54-L000332](../../scripts/run_answer_quality_benchmark.py#L332) | 332 | `"        results.append(record)"` | — |
-| [SRC-4FFD5AFC54-L000333](../../scripts/run_answer_quality_benchmark.py#L333) | 333 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
-| [SRC-4FFD5AFC54-L000334](../../scripts/run_answer_quality_benchmark.py#L334) | 334 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
-| [SRC-4FFD5AFC54-L000335](../../scripts/run_answer_quality_benchmark.py#L335) | 335 | `"        if delay > 0:"` | — |
-| [SRC-4FFD5AFC54-L000336](../../scripts/run_answer_quality_benchmark.py#L336) | 336 | `"            time.sleep(delay)"` | — |
-| [SRC-4FFD5AFC54-L000337](../../scripts/run_answer_quality_benchmark.py#L337) | 337 | `""` | — |
-| [SRC-4FFD5AFC54-L000338](../../scripts/run_answer_quality_benchmark.py#L338) | 338 | `"    envelope = {"` | — |
-| [SRC-4FFD5AFC54-L000339](../../scripts/run_answer_quality_benchmark.py#L339) | 339 | `"        \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
-| [SRC-4FFD5AFC54-L000340](../../scripts/run_answer_quality_benchmark.py#L340) | 340 | `"        \"benchmark_version\": data.get(\"version\"),"` | — |
-| [SRC-4FFD5AFC54-L000341](../../scripts/run_answer_quality_benchmark.py#L341) | 341 | `"        \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000342](../../scripts/run_answer_quality_benchmark.py#L342) | 342 | `"        \"executed_at_utc\": _utc_now(),"` | — |
-| [SRC-4FFD5AFC54-L000343](../../scripts/run_answer_quality_benchmark.py#L343) | 343 | `"        \"case_count\": len(results),"` | — |
-| [SRC-4FFD5AFC54-L000344](../../scripts/run_answer_quality_benchmark.py#L344) | 344 | `"        \"results\": results,"` | — |
-| [SRC-4FFD5AFC54-L000345](../../scripts/run_answer_quality_benchmark.py#L345) | 345 | `"        \"disclaimer\": ("` | — |
-| [SRC-4FFD5AFC54-L000346](../../scripts/run_answer_quality_benchmark.py#L346) | 346 | `"            \"status=NOT_TESTED means answer quality was not auto-graded. \""` | — |
-| [SRC-4FFD5AFC54-L000347](../../scripts/run_answer_quality_benchmark.py#L347) | 347 | `"            \"Fixtures in JSON were not applied to the live server.\""` | — |
-| [SRC-4FFD5AFC54-L000348](../../scripts/run_answer_quality_benchmark.py#L348) | 348 | `"        ),"` | — |
-| [SRC-4FFD5AFC54-L000349](../../scripts/run_answer_quality_benchmark.py#L349) | 349 | `"    }"` | — |
-| [SRC-4FFD5AFC54-L000350](../../scripts/run_answer_quality_benchmark.py#L350) | 350 | `"    text = json.dumps(envelope, ensure_ascii=False, indent=2)"` | — |
-| [SRC-4FFD5AFC54-L000351](../../scripts/run_answer_quality_benchmark.py#L351) | 351 | `"    if out_path:"` | — |
-| [SRC-4FFD5AFC54-L000352](../../scripts/run_answer_quality_benchmark.py#L352) | 352 | `"        out_path.write_text(text + \"\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-4FFD5AFC54-L000353](../../scripts/run_answer_quality_benchmark.py#L353) | 353 | `"        print(f\"Wrote {out_path}\")"` | — |
-| [SRC-4FFD5AFC54-L000354](../../scripts/run_answer_quality_benchmark.py#L354) | 354 | `"    else:"` | — |
-| [SRC-4FFD5AFC54-L000355](../../scripts/run_answer_quality_benchmark.py#L355) | 355 | `"        print(text)"` | — |
-| [SRC-4FFD5AFC54-L000356](../../scripts/run_answer_quality_benchmark.py#L356) | 356 | `"    return 0"` | — |
-| [SRC-4FFD5AFC54-L000357](../../scripts/run_answer_quality_benchmark.py#L357) | 357 | `""` | — |
-| [SRC-4FFD5AFC54-L000358](../../scripts/run_answer_quality_benchmark.py#L358) | 358 | `""` | — |
-| [SRC-4FFD5AFC54-L000359](../../scripts/run_answer_quality_benchmark.py#L359) | 359 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
-| [SRC-4FFD5AFC54-L000360](../../scripts/run_answer_quality_benchmark.py#L360) | 360 | `"    parser = argparse.ArgumentParser(description=\"Omarai answer-quality benchmark runner\")"` | — |
-| [SRC-4FFD5AFC54-L000361](../../scripts/run_answer_quality_benchmark.py#L361) | 361 | `"    parser.add_argument("` | — |
-| [SRC-4FFD5AFC54-L000362](../../scripts/run_answer_quality_benchmark.py#L362) | 362 | `"        \"--mode\","` | — |
-| [SRC-4FFD5AFC54-L000363](../../scripts/run_answer_quality_benchmark.py#L363) | 363 | `"        choices=(\"validate\", \"live\"),"` | — |
-| [SRC-4FFD5AFC54-L000364](../../scripts/run_answer_quality_benchmark.py#L364) | 364 | `"        default=\"validate\","` | — |
-| [SRC-4FFD5AFC54-L000365](../../scripts/run_answer_quality_benchmark.py#L365) | 365 | `"        help=\"validate=offline corpus check (default); live=opt-in API calls\","` | — |
-| [SRC-4FFD5AFC54-L000366](../../scripts/run_answer_quality_benchmark.py#L366) | 366 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000367](../../scripts/run_answer_quality_benchmark.py#L367) | 367 | `"    parser.add_argument("` | — |
-| [SRC-4FFD5AFC54-L000368](../../scripts/run_answer_quality_benchmark.py#L368) | 368 | `"        \"--corpus\","` | — |
-| [SRC-4FFD5AFC54-L000369](../../scripts/run_answer_quality_benchmark.py#L369) | 369 | `"        type=Path,"` | — |
-| [SRC-4FFD5AFC54-L000370](../../scripts/run_answer_quality_benchmark.py#L370) | 370 | `"        default=DEFAULT_CORPUS,"` | — |
-| [SRC-4FFD5AFC54-L000371](../../scripts/run_answer_quality_benchmark.py#L371) | 371 | `"        help=\"Path to answer_quality_cases.json\","` | — |
-| [SRC-4FFD5AFC54-L000372](../../scripts/run_answer_quality_benchmark.py#L372) | 372 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000373](../../scripts/run_answer_quality_benchmark.py#L373) | 373 | `"    parser.add_argument(\"--summary\", action=\"store_true\", help=\"Extra validate summary\")"` | — |
-| [SRC-4FFD5AFC54-L000374](../../scripts/run_answer_quality_benchmark.py#L374) | 374 | `"    parser.add_argument(\"--base-url\", default=\"http://127.0.0.1:8765\")"` | — |
-| [SRC-4FFD5AFC54-L000375](../../scripts/run_answer_quality_benchmark.py#L375) | 375 | `"    parser.add_argument(\"--case-id\", default=None, help=\"Run a single case (live)\")"` | — |
-| [SRC-4FFD5AFC54-L000376](../../scripts/run_answer_quality_benchmark.py#L376) | 376 | `"    parser.add_argument(\"--limit\", type=int, default=0, help=\"Max cases in live mode (0=all selected)\")"` | — |
-| [SRC-4FFD5AFC54-L000377](../../scripts/run_answer_quality_benchmark.py#L377) | 377 | `"    parser.add_argument(\"--timeout\", type=float, default=60.0)"` | — |
-| [SRC-4FFD5AFC54-L000378](../../scripts/run_answer_quality_benchmark.py#L378) | 378 | `"    parser.add_argument(\"--delay\", type=float, default=0.0, help=\"Seconds between live requests\")"` | — |
-| [SRC-4FFD5AFC54-L000379](../../scripts/run_answer_quality_benchmark.py#L379) | 379 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Write live results JSON\")"` | — |
-| [SRC-4FFD5AFC54-L000380](../../scripts/run_answer_quality_benchmark.py#L380) | 380 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-4FFD5AFC54-L000381](../../scripts/run_answer_quality_benchmark.py#L381) | 381 | `""` | — |
-| [SRC-4FFD5AFC54-L000382](../../scripts/run_answer_quality_benchmark.py#L382) | 382 | `"    if args.mode == \"validate\":"` | — |
-| [SRC-4FFD5AFC54-L000383](../../scripts/run_answer_quality_benchmark.py#L383) | 383 | `"        return run_validate(args.corpus, args.summary)"` | — |
-| [SRC-4FFD5AFC54-L000384](../../scripts/run_answer_quality_benchmark.py#L384) | 384 | `"    if args.mode == \"live\":"` | — |
-| [SRC-4FFD5AFC54-L000385](../../scripts/run_answer_quality_benchmark.py#L385) | 385 | `"        if not args.case_id and args.limit <= 0:"` | — |
-| [SRC-4FFD5AFC54-L000386](../../scripts/run_answer_quality_benchmark.py#L386) | 386 | `"            print("` | — |
-| [SRC-4FFD5AFC54-L000387](../../scripts/run_answer_quality_benchmark.py#L387) | 387 | `"                \"Refusing unbounded live run. Pass --case-id and/or --limit > 0.\","` | — |
-| [SRC-4FFD5AFC54-L000388](../../scripts/run_answer_quality_benchmark.py#L388) | 388 | `"                file=sys.stderr,"` | — |
-| [SRC-4FFD5AFC54-L000389](../../scripts/run_answer_quality_benchmark.py#L389) | 389 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000390](../../scripts/run_answer_quality_benchmark.py#L390) | 390 | `"            return 2"` | — |
-| [SRC-4FFD5AFC54-L000391](../../scripts/run_answer_quality_benchmark.py#L391) | 391 | `"        return run_live("` | — |
-| [SRC-4FFD5AFC54-L000392](../../scripts/run_answer_quality_benchmark.py#L392) | 392 | `"            args.corpus,"` | — |
-| [SRC-4FFD5AFC54-L000393](../../scripts/run_answer_quality_benchmark.py#L393) | 393 | `"            args.base_url,"` | — |
-| [SRC-4FFD5AFC54-L000394](../../scripts/run_answer_quality_benchmark.py#L394) | 394 | `"            args.case_id,"` | — |
-| [SRC-4FFD5AFC54-L000395](../../scripts/run_answer_quality_benchmark.py#L395) | 395 | `"            args.limit,"` | — |
-| [SRC-4FFD5AFC54-L000396](../../scripts/run_answer_quality_benchmark.py#L396) | 396 | `"            args.timeout,"` | — |
-| [SRC-4FFD5AFC54-L000397](../../scripts/run_answer_quality_benchmark.py#L397) | 397 | `"            args.delay,"` | — |
-| [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"            args.out,"` | — |
-| [SRC-4FFD5AFC54-L000399](../../scripts/run_answer_quality_benchmark.py#L399) | 399 | `"        )"` | — |
-| [SRC-4FFD5AFC54-L000400](../../scripts/run_answer_quality_benchmark.py#L400) | 400 | `"    return 2"` | — |
-| [SRC-4FFD5AFC54-L000401](../../scripts/run_answer_quality_benchmark.py#L401) | 401 | `""` | — |
-| [SRC-4FFD5AFC54-L000402](../../scripts/run_answer_quality_benchmark.py#L402) | 402 | `""` | — |
-| [SRC-4FFD5AFC54-L000403](../../scripts/run_answer_quality_benchmark.py#L403) | 403 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-4FFD5AFC54-L000404](../../scripts/run_answer_quality_benchmark.py#L404) | 404 | `"    raise SystemExit(main())"` | — |
-## ملفات أخرى
-
-### FILE-03FF422A16 — [scripts/score_answer_quality_reviews.py](../../scripts/score_answer_quality_reviews.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-03FF422A16-L000001](../../scripts/score_answer_quality_reviews.py#L1) | 1 | `"\"\"\"Score manually reviewed Omarai answer-quality cases without auto-grading."` | — |
-| [SRC-03FF422A16-L000002](../../scripts/score_answer_quality_reviews.py#L2) | 2 | `""` | — |
-| [SRC-03FF422A16-L000003](../../scripts/score_answer_quality_reviews.py#L3) | 3 | `"This offline tool calculates aggregate retrieval, faithfulness, correctness, citation,"` | — |
-| [SRC-03FF422A16-L000004](../../scripts/score_answer_quality_reviews.py#L4) | 4 | `"and writing-quality metrics only from explicit review annotations. Missing judgments"` | — |
-| [SRC-03FF422A16-L000005](../../scripts/score_answer_quality_reviews.py#L5) | 5 | `"remain NOT_TESTED; this script never calls an LLM or treats transport success as PASS."` | — |
-| [SRC-03FF422A16-L000006](../../scripts/score_answer_quality_reviews.py#L6) | 6 | `"\"\"\""` | — |
-| [SRC-03FF422A16-L000007](../../scripts/score_answer_quality_reviews.py#L7) | 7 | `"from __future__ import annotations"` | — |
-| [SRC-03FF422A16-L000008](../../scripts/score_answer_quality_reviews.py#L8) | 8 | `""` | — |
-| [SRC-03FF422A16-L000009](../../scripts/score_answer_quality_reviews.py#L9) | 9 | `"import argparse"` | — |
-| [SRC-03FF422A16-L000010](../../scripts/score_answer_quality_reviews.py#L10) | 10 | `"import json"` | — |
-| [SRC-03FF422A16-L000011](../../scripts/score_answer_quality_reviews.py#L11) | 11 | `"import math"` | — |
-| [SRC-03FF422A16-L000012](../../scripts/score_answer_quality_reviews.py#L12) | 12 | `"import sys"` | — |
-| [SRC-03FF422A16-L000013](../../scripts/score_answer_quality_reviews.py#L13) | 13 | `"from collections import Counter"` | — |
-| [SRC-03FF422A16-L000014](../../scripts/score_answer_quality_reviews.py#L14) | 14 | `"from pathlib import Path"` | — |
-| [SRC-03FF422A16-L000015](../../scripts/score_answer_quality_reviews.py#L15) | 15 | `"from typing import Any"` | — |
-| [SRC-03FF422A16-L000016](../../scripts/score_answer_quality_reviews.py#L16) | 16 | `""` | — |
-| [SRC-03FF422A16-L000017](../../scripts/score_answer_quality_reviews.py#L17) | 17 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-03FF422A16-L000018](../../scripts/score_answer_quality_reviews.py#L18) | 18 | `"DEFAULT_CORPUS = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-03FF422A16-L000019](../../scripts/score_answer_quality_reviews.py#L19) | 19 | `"ALLOWED_STATUSES = {\"REVIEWED\", \"NOT_TESTED\", \"BLOCKED\"}"` | — |
-| [SRC-03FF422A16-L000020](../../scripts/score_answer_quality_reviews.py#L20) | 20 | `"COUNT_GROUPS = {"` | — |
-| [SRC-03FF422A16-L000021](../../scripts/score_answer_quality_reviews.py#L21) | 21 | `"    \"retrieval\": (\"relevant_retrieved\", \"retrieved_count\", \"relevant_available\"),"` | — |
-| [SRC-03FF422A16-L000022](../../scripts/score_answer_quality_reviews.py#L22) | 22 | `"    \"faithfulness\": (\"supported_claims\", \"reviewed_claims\"),"` | — |
-| [SRC-03FF422A16-L000023](../../scripts/score_answer_quality_reviews.py#L23) | 23 | `"    \"correctness\": (\"correct_facts\", \"reviewed_facts\"),"` | — |
-| [SRC-03FF422A16-L000024](../../scripts/score_answer_quality_reviews.py#L24) | 24 | `"    \"citations\": (\"supported_citations\", \"reviewed_citations\"),"` | — |
-| [SRC-03FF422A16-L000025](../../scripts/score_answer_quality_reviews.py#L25) | 25 | `"}"` | — |
-| [SRC-03FF422A16-L000026](../../scripts/score_answer_quality_reviews.py#L26) | 26 | `""` | — |
-| [SRC-03FF422A16-L000027](../../scripts/score_answer_quality_reviews.py#L27) | 27 | `""` | — |
-| [SRC-03FF422A16-L000028](../../scripts/score_answer_quality_reviews.py#L28) | 28 | `"def load_json_object(path: Path) -> dict[str, Any]:"` | — |
-| [SRC-03FF422A16-L000029](../../scripts/score_answer_quality_reviews.py#L29) | 29 | `"    if not path.is_file():"` | — |
-| [SRC-03FF422A16-L000030](../../scripts/score_answer_quality_reviews.py#L30) | 30 | `"        raise FileNotFoundError(\"Input file not found: \" + str(path))"` | — |
-| [SRC-03FF422A16-L000031](../../scripts/score_answer_quality_reviews.py#L31) | 31 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-03FF422A16-L000032](../../scripts/score_answer_quality_reviews.py#L32) | 32 | `"    if not isinstance(data, dict):"` | — |
-| [SRC-03FF422A16-L000033](../../scripts/score_answer_quality_reviews.py#L33) | 33 | `"        raise TypeError(\"JSON root must be an object\")"` | — |
-| [SRC-03FF422A16-L000034](../../scripts/score_answer_quality_reviews.py#L34) | 34 | `"    return data"` | — |
-| [SRC-03FF422A16-L000035](../../scripts/score_answer_quality_reviews.py#L35) | 35 | `""` | — |
-| [SRC-03FF422A16-L000036](../../scripts/score_answer_quality_reviews.py#L36) | 36 | `""` | — |
-| [SRC-03FF422A16-L000037](../../scripts/score_answer_quality_reviews.py#L37) | 37 | `"def _is_nonnegative_int(value: Any) -> bool:"` | — |
-| [SRC-03FF422A16-L000038](../../scripts/score_answer_quality_reviews.py#L38) | 38 | `"    return isinstance(value, int) and not isinstance(value, bool) and value >= 0"` | — |
-| [SRC-03FF422A16-L000039](../../scripts/score_answer_quality_reviews.py#L39) | 39 | `""` | — |
-| [SRC-03FF422A16-L000040](../../scripts/score_answer_quality_reviews.py#L40) | 40 | `""` | — |
-| [SRC-03FF422A16-L000041](../../scripts/score_answer_quality_reviews.py#L41) | 41 | `"def validate_reviews("` | — |
-| [SRC-03FF422A16-L000042](../../scripts/score_answer_quality_reviews.py#L42) | 42 | `"    review_data: dict[str, Any], corpus_data: dict[str, Any]"` | — |
-| [SRC-03FF422A16-L000043](../../scripts/score_answer_quality_reviews.py#L43) | 43 | `") -> list[str]:"` | — |
-| [SRC-03FF422A16-L000044](../../scripts/score_answer_quality_reviews.py#L44) | 44 | `"    problems: list[str] = []"` | — |
-| [SRC-03FF422A16-L000045](../../scripts/score_answer_quality_reviews.py#L45) | 45 | `"    reviews = review_data.get(\"reviews\")"` | — |
-| [SRC-03FF422A16-L000046](../../scripts/score_answer_quality_reviews.py#L46) | 46 | `"    corpus_cases = corpus_data.get(\"cases\")"` | — |
-| [SRC-03FF422A16-L000047](../../scripts/score_answer_quality_reviews.py#L47) | 47 | `"    if not isinstance(reviews, list):"` | — |
-| [SRC-03FF422A16-L000048](../../scripts/score_answer_quality_reviews.py#L48) | 48 | `"        return [\"reviews must be an array\"]"` | — |
-| [SRC-03FF422A16-L000049](../../scripts/score_answer_quality_reviews.py#L49) | 49 | `"    if not isinstance(corpus_cases, list):"` | — |
-| [SRC-03FF422A16-L000050](../../scripts/score_answer_quality_reviews.py#L50) | 50 | `"        return [\"corpus must contain a cases array\"]"` | — |
-| [SRC-03FF422A16-L000051](../../scripts/score_answer_quality_reviews.py#L51) | 51 | `""` | — |
-| [SRC-03FF422A16-L000052](../../scripts/score_answer_quality_reviews.py#L52) | 52 | `"    valid_case_ids = {"` | — |
-| [SRC-03FF422A16-L000053](../../scripts/score_answer_quality_reviews.py#L53) | 53 | `"        item.get(\"case_id\")"` | — |
-| [SRC-03FF422A16-L000054](../../scripts/score_answer_quality_reviews.py#L54) | 54 | `"        for item in corpus_cases"` | — |
-| [SRC-03FF422A16-L000055](../../scripts/score_answer_quality_reviews.py#L55) | 55 | `"        if isinstance(item, dict) and isinstance(item.get(\"case_id\"), str)"` | — |
-| [SRC-03FF422A16-L000056](../../scripts/score_answer_quality_reviews.py#L56) | 56 | `"    }"` | — |
-| [SRC-03FF422A16-L000057](../../scripts/score_answer_quality_reviews.py#L57) | 57 | `"    seen: set[str] = set()"` | — |
-| [SRC-03FF422A16-L000058](../../scripts/score_answer_quality_reviews.py#L58) | 58 | `"    for index, item in enumerate(reviews):"` | — |
-| [SRC-03FF422A16-L000059](../../scripts/score_answer_quality_reviews.py#L59) | 59 | `"        label = \"reviews[\" + str(index) + \"]\""` | — |
-| [SRC-03FF422A16-L000060](../../scripts/score_answer_quality_reviews.py#L60) | 60 | `"        if not isinstance(item, dict):"` | — |
-| [SRC-03FF422A16-L000061](../../scripts/score_answer_quality_reviews.py#L61) | 61 | `"            problems.append(label + \" must be an object\")"` | — |
-| [SRC-03FF422A16-L000062](../../scripts/score_answer_quality_reviews.py#L62) | 62 | `"            continue"` | — |
-| [SRC-03FF422A16-L000063](../../scripts/score_answer_quality_reviews.py#L63) | 63 | `"        case_id = item.get(\"case_id\")"` | — |
-| [SRC-03FF422A16-L000064](../../scripts/score_answer_quality_reviews.py#L64) | 64 | `"        if not isinstance(case_id, str) or not case_id.strip():"` | — |
-| [SRC-03FF422A16-L000065](../../scripts/score_answer_quality_reviews.py#L65) | 65 | `"            problems.append(label + \": case_id must be a non-empty string\")"` | — |
-| [SRC-03FF422A16-L000066](../../scripts/score_answer_quality_reviews.py#L66) | 66 | `"            continue"` | — |
-| [SRC-03FF422A16-L000067](../../scripts/score_answer_quality_reviews.py#L67) | 67 | `"        if case_id in seen:"` | — |
-| [SRC-03FF422A16-L000068](../../scripts/score_answer_quality_reviews.py#L68) | 68 | `"            problems.append(case_id + \": duplicate review\")"` | — |
-| [SRC-03FF422A16-L000069](../../scripts/score_answer_quality_reviews.py#L69) | 69 | `"        seen.add(case_id)"` | — |
-| [SRC-03FF422A16-L000070](../../scripts/score_answer_quality_reviews.py#L70) | 70 | `"        if case_id not in valid_case_ids:"` | — |
-| [SRC-03FF422A16-L000071](../../scripts/score_answer_quality_reviews.py#L71) | 71 | `"            problems.append(case_id + \": unknown case_id (not in the supplied corpus)\")"` | — |
-| [SRC-03FF422A16-L000072](../../scripts/score_answer_quality_reviews.py#L72) | 72 | `"        status = item.get(\"status\")"` | — |
-| [SRC-03FF422A16-L000073](../../scripts/score_answer_quality_reviews.py#L73) | 73 | `"        if status not in ALLOWED_STATUSES:"` | — |
-| [SRC-03FF422A16-L000074](../../scripts/score_answer_quality_reviews.py#L74) | 74 | `"            problems.append(case_id + \": status must be one of \" + \", \".join(sorted(ALLOWED_STATUSES)))"` | — |
-| [SRC-03FF422A16-L000075](../../scripts/score_answer_quality_reviews.py#L75) | 75 | `"            continue"` | — |
-| [SRC-03FF422A16-L000076](../../scripts/score_answer_quality_reviews.py#L76) | 76 | `""` | — |
-| [SRC-03FF422A16-L000077](../../scripts/score_answer_quality_reviews.py#L77) | 77 | `"        has_score = False"` | — |
-| [SRC-03FF422A16-L000078](../../scripts/score_answer_quality_reviews.py#L78) | 78 | `"        for group_name, fields in COUNT_GROUPS.items():"` | — |
-| [SRC-03FF422A16-L000079](../../scripts/score_answer_quality_reviews.py#L79) | 79 | `"            group = item.get(group_name)"` | — |
-| [SRC-03FF422A16-L000080](../../scripts/score_answer_quality_reviews.py#L80) | 80 | `"            if group is None:"` | — |
-| [SRC-03FF422A16-L000081](../../scripts/score_answer_quality_reviews.py#L81) | 81 | `"                continue"` | — |
-| [SRC-03FF422A16-L000082](../../scripts/score_answer_quality_reviews.py#L82) | 82 | `"            if not isinstance(group, dict):"` | — |
-| [SRC-03FF422A16-L000083](../../scripts/score_answer_quality_reviews.py#L83) | 83 | `"                problems.append(case_id + \": \" + group_name + \" must be an object\")"` | — |
-| [SRC-03FF422A16-L000084](../../scripts/score_answer_quality_reviews.py#L84) | 84 | `"                continue"` | — |
-| [SRC-03FF422A16-L000085](../../scripts/score_answer_quality_reviews.py#L85) | 85 | `"            has_score = True"` | — |
-| [SRC-03FF422A16-L000086](../../scripts/score_answer_quality_reviews.py#L86) | 86 | `"            missing = [field for field in fields if field not in group]"` | — |
-| [SRC-03FF422A16-L000087](../../scripts/score_answer_quality_reviews.py#L87) | 87 | `"            if missing:"` | — |
-| [SRC-03FF422A16-L000088](../../scripts/score_answer_quality_reviews.py#L88) | 88 | `"                problems.append(case_id + \": \" + group_name + \" missing \" + \", \".join(missing))"` | — |
-| [SRC-03FF422A16-L000089](../../scripts/score_answer_quality_reviews.py#L89) | 89 | `"                continue"` | — |
-| [SRC-03FF422A16-L000090](../../scripts/score_answer_quality_reviews.py#L90) | 90 | `"            values: dict[str, int] = {}"` | — |
-| [SRC-03FF422A16-L000091](../../scripts/score_answer_quality_reviews.py#L91) | 91 | `"            for field in fields:"` | — |
-| [SRC-03FF422A16-L000092](../../scripts/score_answer_quality_reviews.py#L92) | 92 | `"                value = group[field]"` | — |
-| [SRC-03FF422A16-L000093](../../scripts/score_answer_quality_reviews.py#L93) | 93 | `"                if not _is_nonnegative_int(value):"` | — |
-| [SRC-03FF422A16-L000094](../../scripts/score_answer_quality_reviews.py#L94) | 94 | `"                    problems.append(case_id + \": \" + group_name + \".\" + field + \" must be a non-negative integer\")"` | — |
-| [SRC-03FF422A16-L000095](../../scripts/score_answer_quality_reviews.py#L95) | 95 | `"                else:"` | — |
-| [SRC-03FF422A16-L000096](../../scripts/score_answer_quality_reviews.py#L96) | 96 | `"                    values[field] = value"` | — |
-| [SRC-03FF422A16-L000097](../../scripts/score_answer_quality_reviews.py#L97) | 97 | `"            if len(values) != len(fields):"` | — |
-| [SRC-03FF422A16-L000098](../../scripts/score_answer_quality_reviews.py#L98) | 98 | `"                continue"` | — |
-| [SRC-03FF422A16-L000099](../../scripts/score_answer_quality_reviews.py#L99) | 99 | `"            if group_name == \"retrieval\":"` | — |
-| [SRC-03FF422A16-L000100](../../scripts/score_answer_quality_reviews.py#L100) | 100 | `"                if values[\"relevant_retrieved\"] > values[\"retrieved_count\"]:"` | — |
-| [SRC-03FF422A16-L000101](../../scripts/score_answer_quality_reviews.py#L101) | 101 | `"                    problems.append(case_id + \": relevant_retrieved cannot exceed retrieved_count\")"` | — |
-| [SRC-03FF422A16-L000102](../../scripts/score_answer_quality_reviews.py#L102) | 102 | `"                if values[\"relevant_retrieved\"] > values[\"relevant_available\"]:"` | — |
-| [SRC-03FF422A16-L000103](../../scripts/score_answer_quality_reviews.py#L103) | 103 | `"                    problems.append(case_id + \": relevant_retrieved cannot exceed relevant_available\")"` | — |
-| [SRC-03FF422A16-L000104](../../scripts/score_answer_quality_reviews.py#L104) | 104 | `"            else:"` | — |
-| [SRC-03FF422A16-L000105](../../scripts/score_answer_quality_reviews.py#L105) | 105 | `"                numerator, denominator = fields"` | — |
-| [SRC-03FF422A16-L000106](../../scripts/score_answer_quality_reviews.py#L106) | 106 | `"                if values[numerator] > values[denominator]:"` | — |
-| [SRC-03FF422A16-L000107](../../scripts/score_answer_quality_reviews.py#L107) | 107 | `"                    problems.append(case_id + \": \" + numerator + \" cannot exceed \" + denominator)"` | — |
-| [SRC-03FF422A16-L000108](../../scripts/score_answer_quality_reviews.py#L108) | 108 | `""` | — |
-| [SRC-03FF422A16-L000109](../../scripts/score_answer_quality_reviews.py#L109) | 109 | `"        writing = item.get(\"writing_quality\")"` | — |
-| [SRC-03FF422A16-L000110](../../scripts/score_answer_quality_reviews.py#L110) | 110 | `"        if writing is not None:"` | — |
-| [SRC-03FF422A16-L000111](../../scripts/score_answer_quality_reviews.py#L111) | 111 | `"            has_score = True"` | — |
-| [SRC-03FF422A16-L000112](../../scripts/score_answer_quality_reviews.py#L112) | 112 | `"            if ("` | — |
-| [SRC-03FF422A16-L000113](../../scripts/score_answer_quality_reviews.py#L113) | 113 | `"                isinstance(writing, bool)"` | — |
-| [SRC-03FF422A16-L000114](../../scripts/score_answer_quality_reviews.py#L114) | 114 | `"                or not isinstance(writing, (int, float))"` | — |
-| [SRC-03FF422A16-L000115](../../scripts/score_answer_quality_reviews.py#L115) | 115 | `"                or not math.isfinite(float(writing))"` | — |
-| [SRC-03FF422A16-L000116](../../scripts/score_answer_quality_reviews.py#L116) | 116 | `"                or float(writing) < 1"` | — |
-| [SRC-03FF422A16-L000117](../../scripts/score_answer_quality_reviews.py#L117) | 117 | `"                or float(writing) > 5"` | — |
-| [SRC-03FF422A16-L000118](../../scripts/score_answer_quality_reviews.py#L118) | 118 | `"            ):"` | — |
-| [SRC-03FF422A16-L000119](../../scripts/score_answer_quality_reviews.py#L119) | 119 | `"                problems.append(case_id + \": writing_quality must be a finite score from 1 to 5\")"` | — |
-| [SRC-03FF422A16-L000120](../../scripts/score_answer_quality_reviews.py#L120) | 120 | `""` | — |
-| [SRC-03FF422A16-L000121](../../scripts/score_answer_quality_reviews.py#L121) | 121 | `"        if status != \"REVIEWED\" and has_score:"` | — |
-| [SRC-03FF422A16-L000122](../../scripts/score_answer_quality_reviews.py#L122) | 122 | `"            problems.append(case_id + \": unreviewed case must not contain metric scores\")"` | — |
-| [SRC-03FF422A16-L000123](../../scripts/score_answer_quality_reviews.py#L123) | 123 | `"        if status == \"REVIEWED\" and not has_score:"` | — |
-| [SRC-03FF422A16-L000124](../../scripts/score_answer_quality_reviews.py#L124) | 124 | `"            problems.append(case_id + \": REVIEWED case must include at least one scored dimension\")"` | — |
-| [SRC-03FF422A16-L000125](../../scripts/score_answer_quality_reviews.py#L125) | 125 | `"    return problems"` | — |
-| [SRC-03FF422A16-L000126](../../scripts/score_answer_quality_reviews.py#L126) | 126 | `""` | — |
-| [SRC-03FF422A16-L000127](../../scripts/score_answer_quality_reviews.py#L127) | 127 | `""` | — |
-| [SRC-03FF422A16-L000128](../../scripts/score_answer_quality_reviews.py#L128) | 128 | `"def _ratio(numerator: int, denominator: int, case_count: int) -> dict[str, Any]:"` | — |
-| [SRC-03FF422A16-L000129](../../scripts/score_answer_quality_reviews.py#L129) | 129 | `"    return {"` | — |
-| [SRC-03FF422A16-L000130](../../scripts/score_answer_quality_reviews.py#L130) | 130 | `"        \"score\": round(numerator / denominator, 4) if denominator else None,"` | — |
-| [SRC-03FF422A16-L000131](../../scripts/score_answer_quality_reviews.py#L131) | 131 | `"        \"numerator\": numerator,"` | — |
-| [SRC-03FF422A16-L000132](../../scripts/score_answer_quality_reviews.py#L132) | 132 | `"        \"denominator\": denominator,"` | — |
-| [SRC-03FF422A16-L000133](../../scripts/score_answer_quality_reviews.py#L133) | 133 | `"        \"reviewed_case_count\": case_count,"` | — |
-| [SRC-03FF422A16-L000134](../../scripts/score_answer_quality_reviews.py#L134) | 134 | `"        \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if denominator else \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\","` | — |
-| [SRC-03FF422A16-L000135](../../scripts/score_answer_quality_reviews.py#L135) | 135 | `"    }"` | — |
-| [SRC-03FF422A16-L000136](../../scripts/score_answer_quality_reviews.py#L136) | 136 | `""` | — |
-| [SRC-03FF422A16-L000137](../../scripts/score_answer_quality_reviews.py#L137) | 137 | `""` | — |
-| [SRC-03FF422A16-L000138](../../scripts/score_answer_quality_reviews.py#L138) | 138 | `"def summarize_reviews("` | — |
-| [SRC-03FF422A16-L000139](../../scripts/score_answer_quality_reviews.py#L139) | 139 | `"    review_data: dict[str, Any], corpus_data: dict[str, Any]"` | — |
-| [SRC-03FF422A16-L000140](../../scripts/score_answer_quality_reviews.py#L140) | 140 | `") -> dict[str, Any]:"` | — |
-| [SRC-03FF422A16-L000141](../../scripts/score_answer_quality_reviews.py#L141) | 141 | `"    problems = validate_reviews(review_data, corpus_data)"` | — |
-| [SRC-03FF422A16-L000142](../../scripts/score_answer_quality_reviews.py#L142) | 142 | `"    if problems:"` | — |
-| [SRC-03FF422A16-L000143](../../scripts/score_answer_quality_reviews.py#L143) | 143 | `"        raise ValueError(\"; \".join(problems))"` | — |
-| [SRC-03FF422A16-L000144](../../scripts/score_answer_quality_reviews.py#L144) | 144 | `"    reviews = review_data[\"reviews\"]"` | — |
-| [SRC-03FF422A16-L000145](../../scripts/score_answer_quality_reviews.py#L145) | 145 | `"    reviewed = [item for item in reviews if item[\"status\"] == \"REVIEWED\"]"` | — |
-| [SRC-03FF422A16-L000146](../../scripts/score_answer_quality_reviews.py#L146) | 146 | `"    status_counts = Counter(item[\"status\"] for item in reviews)"` | — |
-| [SRC-03FF422A16-L000147](../../scripts/score_answer_quality_reviews.py#L147) | 147 | `"    corpus_count = len(corpus_data[\"cases\"])"` | — |
-| [SRC-03FF422A16-L000148](../../scripts/score_answer_quality_reviews.py#L148) | 148 | `"    reviewed_ids = {item[\"case_id\"] for item in reviewed}"` | — |
-| [SRC-03FF422A16-L000149](../../scripts/score_answer_quality_reviews.py#L149) | 149 | `""` | — |
-| [SRC-03FF422A16-L000150](../../scripts/score_answer_quality_reviews.py#L150) | 150 | `"    retrieval_rel = retrieval_total = retrieval_available = 0"` | — |
-| [SRC-03FF422A16-L000151](../../scripts/score_answer_quality_reviews.py#L151) | 151 | `"    retrieval_cases = set()"` | — |
-| [SRC-03FF422A16-L000152](../../scripts/score_answer_quality_reviews.py#L152) | 152 | `"    faithfulness_supported = faithfulness_total = 0"` | — |
-| [SRC-03FF422A16-L000153](../../scripts/score_answer_quality_reviews.py#L153) | 153 | `"    faithfulness_cases = set()"` | — |
-| [SRC-03FF422A16-L000154](../../scripts/score_answer_quality_reviews.py#L154) | 154 | `"    correctness_correct = correctness_total = 0"` | — |
-| [SRC-03FF422A16-L000155](../../scripts/score_answer_quality_reviews.py#L155) | 155 | `"    correctness_cases = set()"` | — |
-| [SRC-03FF422A16-L000156](../../scripts/score_answer_quality_reviews.py#L156) | 156 | `"    citation_supported = citation_total = 0"` | — |
-| [SRC-03FF422A16-L000157](../../scripts/score_answer_quality_reviews.py#L157) | 157 | `"    citation_cases = set()"` | — |
-| [SRC-03FF422A16-L000158](../../scripts/score_answer_quality_reviews.py#L158) | 158 | `"    writing_scores: list[float] = []"` | — |
-| [SRC-03FF422A16-L000159](../../scripts/score_answer_quality_reviews.py#L159) | 159 | `""` | — |
-| [SRC-03FF422A16-L000160](../../scripts/score_answer_quality_reviews.py#L160) | 160 | `"    for item in reviewed:"` | — |
-| [SRC-03FF422A16-L000161](../../scripts/score_answer_quality_reviews.py#L161) | 161 | `"        case_id = item[\"case_id\"]"` | — |
-| [SRC-03FF422A16-L000162](../../scripts/score_answer_quality_reviews.py#L162) | 162 | `"        retrieval = item.get(\"retrieval\")"` | — |
-| [SRC-03FF422A16-L000163](../../scripts/score_answer_quality_reviews.py#L163) | 163 | `"        if isinstance(retrieval, dict):"` | — |
-| [SRC-03FF422A16-L000164](../../scripts/score_answer_quality_reviews.py#L164) | 164 | `"            retrieval_rel += retrieval[\"relevant_retrieved\"]"` | — |
-| [SRC-03FF422A16-L000165](../../scripts/score_answer_quality_reviews.py#L165) | 165 | `"            retrieval_total += retrieval[\"retrieved_count\"]"` | — |
-| [SRC-03FF422A16-L000166](../../scripts/score_answer_quality_reviews.py#L166) | 166 | `"            retrieval_available += retrieval[\"relevant_available\"]"` | — |
-| [SRC-03FF422A16-L000167](../../scripts/score_answer_quality_reviews.py#L167) | 167 | `"            retrieval_cases.add(case_id)"` | — |
-| [SRC-03FF422A16-L000168](../../scripts/score_answer_quality_reviews.py#L168) | 168 | `"        faithfulness = item.get(\"faithfulness\")"` | — |
-| [SRC-03FF422A16-L000169](../../scripts/score_answer_quality_reviews.py#L169) | 169 | `"        if isinstance(faithfulness, dict):"` | — |
-| [SRC-03FF422A16-L000170](../../scripts/score_answer_quality_reviews.py#L170) | 170 | `"            faithfulness_supported += faithfulness[\"supported_claims\"]"` | — |
-| [SRC-03FF422A16-L000171](../../scripts/score_answer_quality_reviews.py#L171) | 171 | `"            faithfulness_total += faithfulness[\"reviewed_claims\"]"` | — |
-| [SRC-03FF422A16-L000172](../../scripts/score_answer_quality_reviews.py#L172) | 172 | `"            faithfulness_cases.add(case_id)"` | — |
-| [SRC-03FF422A16-L000173](../../scripts/score_answer_quality_reviews.py#L173) | 173 | `"        correctness = item.get(\"correctness\")"` | — |
-| [SRC-03FF422A16-L000174](../../scripts/score_answer_quality_reviews.py#L174) | 174 | `"        if isinstance(correctness, dict):"` | — |
-| [SRC-03FF422A16-L000175](../../scripts/score_answer_quality_reviews.py#L175) | 175 | `"            correctness_correct += correctness[\"correct_facts\"]"` | — |
-| [SRC-03FF422A16-L000176](../../scripts/score_answer_quality_reviews.py#L176) | 176 | `"            correctness_total += correctness[\"reviewed_facts\"]"` | — |
-| [SRC-03FF422A16-L000177](../../scripts/score_answer_quality_reviews.py#L177) | 177 | `"            correctness_cases.add(case_id)"` | — |
-| [SRC-03FF422A16-L000178](../../scripts/score_answer_quality_reviews.py#L178) | 178 | `"        citations = item.get(\"citations\")"` | — |
-| [SRC-03FF422A16-L000179](../../scripts/score_answer_quality_reviews.py#L179) | 179 | `"        if isinstance(citations, dict):"` | — |
-| [SRC-03FF422A16-L000180](../../scripts/score_answer_quality_reviews.py#L180) | 180 | `"            citation_supported += citations[\"supported_citations\"]"` | — |
-| [SRC-03FF422A16-L000181](../../scripts/score_answer_quality_reviews.py#L181) | 181 | `"            citation_total += citations[\"reviewed_citations\"]"` | — |
-| [SRC-03FF422A16-L000182](../../scripts/score_answer_quality_reviews.py#L182) | 182 | `"            citation_cases.add(case_id)"` | — |
-| [SRC-03FF422A16-L000183](../../scripts/score_answer_quality_reviews.py#L183) | 183 | `"        score = item.get(\"writing_quality\")"` | — |
-| [SRC-03FF422A16-L000184](../../scripts/score_answer_quality_reviews.py#L184) | 184 | `"        if score is not None:"` | — |
-| [SRC-03FF422A16-L000185](../../scripts/score_answer_quality_reviews.py#L185) | 185 | `"            writing_scores.append(float(score))"` | — |
-| [SRC-03FF422A16-L000186](../../scripts/score_answer_quality_reviews.py#L186) | 186 | `""` | — |
-| [SRC-03FF422A16-L000187](../../scripts/score_answer_quality_reviews.py#L187) | 187 | `"    return {"` | — |
-| [SRC-03FF422A16-L000188](../../scripts/score_answer_quality_reviews.py#L188) | 188 | `"        \"benchmark_id\": corpus_data.get(\"benchmark_id\", \"unknown\"),"` | — |
-| [SRC-03FF422A16-L000189](../../scripts/score_answer_quality_reviews.py#L189) | 189 | `"        \"review_schema_version\": review_data.get(\"schema_version\", \"unknown\"),"` | — |
-| [SRC-03FF422A16-L000190](../../scripts/score_answer_quality_reviews.py#L190) | 190 | `"        \"scoring_method\": \"aggregate_from_explicit_human_annotations\","` | — |
-| [SRC-03FF422A16-L000191](../../scripts/score_answer_quality_reviews.py#L191) | 191 | `"        \"automatic_answer_grading\": False,"` | — |
-| [SRC-03FF422A16-L000192](../../scripts/score_answer_quality_reviews.py#L192) | 192 | `"        \"ragas_executed\": False,"` | — |
-| [SRC-03FF422A16-L000193](../../scripts/score_answer_quality_reviews.py#L193) | 193 | `"        \"corpus_case_count\": corpus_count,"` | — |
-| [SRC-03FF422A16-L000194](../../scripts/score_answer_quality_reviews.py#L194) | 194 | `"        \"submitted_review_count\": len(reviews),"` | — |
-| [SRC-03FF422A16-L000195](../../scripts/score_answer_quality_reviews.py#L195) | 195 | `"        \"unique_reviewed_case_count\": len(reviewed_ids),"` | — |
-| [SRC-03FF422A16-L000196](../../scripts/score_answer_quality_reviews.py#L196) | 196 | `"        \"case_status_counts\": {status: status_counts.get(status, 0) for status in sorted(ALLOWED_STATUSES)},"` | — |
-| [SRC-03FF422A16-L000197](../../scripts/score_answer_quality_reviews.py#L197) | 197 | `"        \"reviewed_case_coverage\": round(len(reviewed_ids) / corpus_count, 4) if corpus_count else 0.0,"` | — |
-| [SRC-03FF422A16-L000198](../../scripts/score_answer_quality_reviews.py#L198) | 198 | `"        \"metrics\": {"` | — |
-| [SRC-03FF422A16-L000199](../../scripts/score_answer_quality_reviews.py#L199) | 199 | `"            \"retrieval_precision\": _ratio(retrieval_rel, retrieval_total, len(retrieval_cases)),"` | — |
-| [SRC-03FF422A16-L000200](../../scripts/score_answer_quality_reviews.py#L200) | 200 | `"            \"retrieval_recall\": _ratio(retrieval_rel, retrieval_available, len(retrieval_cases)),"` | — |
-| [SRC-03FF422A16-L000201](../../scripts/score_answer_quality_reviews.py#L201) | 201 | `"            \"faithfulness\": _ratio(faithfulness_supported, faithfulness_total, len(faithfulness_cases)),"` | — |
-| [SRC-03FF422A16-L000202](../../scripts/score_answer_quality_reviews.py#L202) | 202 | `"            \"correctness\": _ratio(correctness_correct, correctness_total, len(correctness_cases)),"` | — |
-| [SRC-03FF422A16-L000203](../../scripts/score_answer_quality_reviews.py#L203) | 203 | `"            \"citation_support\": _ratio(citation_supported, citation_total, len(citation_cases)),"` | — |
-| [SRC-03FF422A16-L000204](../../scripts/score_answer_quality_reviews.py#L204) | 204 | `"            \"writing_quality_1_to_5\": {"` | — |
-| [SRC-03FF422A16-L000205](../../scripts/score_answer_quality_reviews.py#L205) | 205 | `"                \"score\": round(sum(writing_scores) / len(writing_scores), 3) if writing_scores else None,"` | — |
-| [SRC-03FF422A16-L000206](../../scripts/score_answer_quality_reviews.py#L206) | 206 | `"                \"scale_min\": 1,"` | — |
-| [SRC-03FF422A16-L000207](../../scripts/score_answer_quality_reviews.py#L207) | 207 | `"                \"scale_max\": 5,"` | — |
-| [SRC-03FF422A16-L000208](../../scripts/score_answer_quality_reviews.py#L208) | 208 | `"                \"reviewed_case_count\": len(writing_scores),"` | — |
-| [SRC-03FF422A16-L000209](../../scripts/score_answer_quality_reviews.py#L209) | 209 | `"                \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if writing_scores else \"NOT_SCORABLE_NO_HUMAN_SCORES\","` | — |
-| [SRC-03FF422A16-L000210](../../scripts/score_answer_quality_reviews.py#L210) | 210 | `"            },"` | — |
-| [SRC-03FF422A16-L000211](../../scripts/score_answer_quality_reviews.py#L211) | 211 | `"        },"` | — |
-| [SRC-03FF422A16-L000212](../../scripts/score_answer_quality_reviews.py#L212) | 212 | `"        \"limitations\": ["` | — |
-| [SRC-03FF422A16-L000213](../../scripts/score_answer_quality_reviews.py#L213) | 213 | `"            \"Metrics include only explicitly reviewed cases and human-entered labels.\","` | — |
-| [SRC-03FF422A16-L000214](../../scripts/score_answer_quality_reviews.py#L214) | 214 | `"            \"Retrieval scores depend on consistent, deduplicated relevance counts and a defined candidate pool.\","` | — |
-| [SRC-03FF422A16-L000215](../../scripts/score_answer_quality_reviews.py#L215) | 215 | `"            \"Faithfulness and correctness reflect reviewer judgments, not automatic proof of truth.\","` | — |
-| [SRC-03FF422A16-L000216](../../scripts/score_answer_quality_reviews.py#L216) | 216 | `"            \"Writing quality is a 1-to-5 human rating; it is not a fluency model score.\","` | — |
-| [SRC-03FF422A16-L000217](../../scripts/score_answer_quality_reviews.py#L217) | 217 | `"            \"RAGAS was not executed and no unobserved case is assigned a PASS.\","` | — |
-| [SRC-03FF422A16-L000218](../../scripts/score_answer_quality_reviews.py#L218) | 218 | `"        ],"` | — |
-| [SRC-03FF422A16-L000219](../../scripts/score_answer_quality_reviews.py#L219) | 219 | `"    }"` | — |
-| [SRC-03FF422A16-L000220](../../scripts/score_answer_quality_reviews.py#L220) | 220 | `""` | — |
-| [SRC-03FF422A16-L000221](../../scripts/score_answer_quality_reviews.py#L221) | 221 | `""` | — |
-| [SRC-03FF422A16-L000222](../../scripts/score_answer_quality_reviews.py#L222) | 222 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
-| [SRC-03FF422A16-L000223](../../scripts/score_answer_quality_reviews.py#L223) | 223 | `"    parser = argparse.ArgumentParser(description=__doc__)"` | — |
-| [SRC-03FF422A16-L000224](../../scripts/score_answer_quality_reviews.py#L224) | 224 | `"    parser.add_argument(\"--reviews\", required=True, type=Path, help=\"JSON file containing explicit human review annotations\")"` | — |
-| [SRC-03FF422A16-L000225](../../scripts/score_answer_quality_reviews.py#L225) | 225 | `"    parser.add_argument(\"--corpus\", default=DEFAULT_CORPUS, type=Path, help=\"Answer-quality corpus used to validate case IDs\")"` | — |
-| [SRC-03FF422A16-L000226](../../scripts/score_answer_quality_reviews.py#L226) | 226 | `"    parser.add_argument(\"--out\", type=Path, help=\"Optional path to write the summary JSON\")"` | — |
-| [SRC-03FF422A16-L000227](../../scripts/score_answer_quality_reviews.py#L227) | 227 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-03FF422A16-L000228](../../scripts/score_answer_quality_reviews.py#L228) | 228 | `""` | — |
-| [SRC-03FF422A16-L000229](../../scripts/score_answer_quality_reviews.py#L229) | 229 | `"    try:"` | — |
-| [SRC-03FF422A16-L000230](../../scripts/score_answer_quality_reviews.py#L230) | 230 | `"        reviews = load_json_object(args.reviews)"` | — |
-| [SRC-03FF422A16-L000231](../../scripts/score_answer_quality_reviews.py#L231) | 231 | `"        corpus = load_json_object(args.corpus)"` | — |
-| [SRC-03FF422A16-L000232](../../scripts/score_answer_quality_reviews.py#L232) | 232 | `"        summary = summarize_reviews(reviews, corpus)"` | — |
-| [SRC-03FF422A16-L000233](../../scripts/score_answer_quality_reviews.py#L233) | 233 | `"    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
-| [SRC-03FF422A16-L000234](../../scripts/score_answer_quality_reviews.py#L234) | 234 | `"        print(\"REVIEW SCORECARD INVALID: \" + str(exc), file=sys.stderr)"` | — |
-| [SRC-03FF422A16-L000235](../../scripts/score_answer_quality_reviews.py#L235) | 235 | `"        return 2"` | — |
-| [SRC-03FF422A16-L000236](../../scripts/score_answer_quality_reviews.py#L236) | 236 | `""` | — |
-| [SRC-03FF422A16-L000237](../../scripts/score_answer_quality_reviews.py#L237) | 237 | `"    output = json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True)"` | — |
-| [SRC-03FF422A16-L000238](../../scripts/score_answer_quality_reviews.py#L238) | 238 | `"    if args.out:"` | — |
-| [SRC-03FF422A16-L000239](../../scripts/score_answer_quality_reviews.py#L239) | 239 | `"        args.out.write_text(output + \"\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-03FF422A16-L000240](../../scripts/score_answer_quality_reviews.py#L240) | 240 | `"    print(output)"` | — |
-| [SRC-03FF422A16-L000241](../../scripts/score_answer_quality_reviews.py#L241) | 241 | `"    return 0"` | — |
-| [SRC-03FF422A16-L000242](../../scripts/score_answer_quality_reviews.py#L242) | 242 | `""` | — |
-| [SRC-03FF422A16-L000243](../../scripts/score_answer_quality_reviews.py#L243) | 243 | `""` | — |
-| [SRC-03FF422A16-L000244](../../scripts/score_answer_quality_reviews.py#L244) | 244 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-03FF422A16-L000245](../../scripts/score_answer_quality_reviews.py#L245) | 245 | `"    raise SystemExit(main())"` | — |
-## ملفات أخرى
-
-### FILE-547CAF1FE3 — [scripts/sqlite_backup_restore.py](../../scripts/sqlite_backup_restore.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-547CAF1FE3-L000001](../../scripts/sqlite_backup_restore.py#L1) | 1 | `"#!/usr/bin/env python3"` | — |
-| [SRC-547CAF1FE3-L000002](../../scripts/sqlite_backup_restore.py#L2) | 2 | `"\"\"\"Create and restore verified, non-overwriting snapshots of Omarai's SQLite lead DB.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000003](../../scripts/sqlite_backup_restore.py#L3) | 3 | `"from __future__ import annotations"` | — |
-| [SRC-547CAF1FE3-L000004](../../scripts/sqlite_backup_restore.py#L4) | 4 | `""` | — |
-| [SRC-547CAF1FE3-L000005](../../scripts/sqlite_backup_restore.py#L5) | 5 | `"import argparse"` | — |
-| [SRC-547CAF1FE3-L000006](../../scripts/sqlite_backup_restore.py#L6) | 6 | `"from contextlib import closing"` | — |
-| [SRC-547CAF1FE3-L000007](../../scripts/sqlite_backup_restore.py#L7) | 7 | `"import json"` | — |
-| [SRC-547CAF1FE3-L000008](../../scripts/sqlite_backup_restore.py#L8) | 8 | `"import os"` | — |
-| [SRC-547CAF1FE3-L000009](../../scripts/sqlite_backup_restore.py#L9) | 9 | `"import sqlite3"` | — |
-| [SRC-547CAF1FE3-L000010](../../scripts/sqlite_backup_restore.py#L10) | 10 | `"import sys"` | — |
-| [SRC-547CAF1FE3-L000011](../../scripts/sqlite_backup_restore.py#L11) | 11 | `"from pathlib import Path"` | — |
-| [SRC-547CAF1FE3-L000012](../../scripts/sqlite_backup_restore.py#L12) | 12 | `"from typing import Any"` | — |
-| [SRC-547CAF1FE3-L000013](../../scripts/sqlite_backup_restore.py#L13) | 13 | `""` | — |
-| [SRC-547CAF1FE3-L000014](../../scripts/sqlite_backup_restore.py#L14) | 14 | `""` | — |
-| [SRC-547CAF1FE3-L000015](../../scripts/sqlite_backup_restore.py#L15) | 15 | `"class BackupError(RuntimeError):"` | — |
-| [SRC-547CAF1FE3-L000016](../../scripts/sqlite_backup_restore.py#L16) | 16 | `"    \"\"\"Raised when a backup/restore operation cannot be proven safe.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000017](../../scripts/sqlite_backup_restore.py#L17) | 17 | `""` | — |
-| [SRC-547CAF1FE3-L000018](../../scripts/sqlite_backup_restore.py#L18) | 18 | `""` | — |
-| [SRC-547CAF1FE3-L000019](../../scripts/sqlite_backup_restore.py#L19) | 19 | `"def _open_read_only(path: Path) -> sqlite3.Connection:"` | — |
-| [SRC-547CAF1FE3-L000020](../../scripts/sqlite_backup_restore.py#L20) | 20 | `"    \"\"\"Open an existing SQLite database without accidentally creating a missing source.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000021](../../scripts/sqlite_backup_restore.py#L21) | 21 | `"    try:"` | — |
-| [SRC-547CAF1FE3-L000022](../../scripts/sqlite_backup_restore.py#L22) | 22 | `"        return sqlite3.connect(f\"{path.as_uri()}?mode=ro\", uri=True, timeout=10)"` | — |
-| [SRC-547CAF1FE3-L000023](../../scripts/sqlite_backup_restore.py#L23) | 23 | `"    except (OSError, sqlite3.Error) as exc:"` | — |
-| [SRC-547CAF1FE3-L000024](../../scripts/sqlite_backup_restore.py#L24) | 24 | `"        raise BackupError(f\"cannot open SQLite source: {type(exc).__name__}\") from exc"` | — |
-| [SRC-547CAF1FE3-L000025](../../scripts/sqlite_backup_restore.py#L25) | 25 | `""` | — |
-| [SRC-547CAF1FE3-L000026](../../scripts/sqlite_backup_restore.py#L26) | 26 | `""` | — |
-| [SRC-547CAF1FE3-L000027](../../scripts/sqlite_backup_restore.py#L27) | 27 | `"def _validate_omarai_database(db: sqlite3.Connection) -> int:"` | — |

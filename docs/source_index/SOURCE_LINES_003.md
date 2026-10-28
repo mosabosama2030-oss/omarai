@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2D53795445-L000126 إلى SRC-C9CF9B54F8-L000034
+- النطاق: SRC-2D53795445-L000126 إلى SRC-9D8012A1A0-L000034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -802,44 +802,44 @@
 | [SRC-5587371288-L000537](../../agents/intent_router.py#L537) | 537 | `"    }"` | — |
 ## الوكيل والمنطق
 
-### FILE-C9CF9B54F8 — [agents/omarai.py](../../agents/omarai.py#L1)
+### FILE-9D8012A1A0 — [agents/memory_bank.py](../../agents/memory_bank.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-C9CF9B54F8-L000001](../../agents/omarai.py#L1) | 1 | `"\"\"\"Explainable Arabic lead-intent analysis and local SQLite storage.\"\"\""` | — |
-| [SRC-C9CF9B54F8-L000002](../../agents/omarai.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-C9CF9B54F8-L000003](../../agents/omarai.py#L3) | 3 | `""` | — |
-| [SRC-C9CF9B54F8-L000004](../../agents/omarai.py#L4) | 4 | `"import csv"` | — |
-| [SRC-C9CF9B54F8-L000005](../../agents/omarai.py#L5) | 5 | `"import hashlib"` | — |
-| [SRC-C9CF9B54F8-L000006](../../agents/omarai.py#L6) | 6 | `"import json"` | — |
-| [SRC-C9CF9B54F8-L000007](../../agents/omarai.py#L7) | 7 | `"import re"` | — |
-| [SRC-C9CF9B54F8-L000008](../../agents/omarai.py#L8) | 8 | `"import sqlite3"` | — |
-| [SRC-C9CF9B54F8-L000009](../../agents/omarai.py#L9) | 9 | `"import unicodedata"` | — |
-| [SRC-C9CF9B54F8-L000010](../../agents/omarai.py#L10) | 10 | `"from datetime import UTC, datetime"` | — |
-| [SRC-C9CF9B54F8-L000011](../../agents/omarai.py#L11) | 11 | `"from pathlib import Path"` | — |
-| [SRC-C9CF9B54F8-L000012](../../agents/omarai.py#L12) | 12 | `"from urllib.parse import urlparse"` | — |
-| [SRC-C9CF9B54F8-L000013](../../agents/omarai.py#L13) | 13 | `""` | — |
-| [SRC-C9CF9B54F8-L000014](../../agents/omarai.py#L14) | 14 | `"MAX_TEXT = 12000"` | — |
-| [SRC-C9CF9B54F8-L000015](../../agents/omarai.py#L15) | 15 | `"_TRANSLATION = str.maketrans({\"أ\":\"ا\",\"إ\":\"ا\",\"آ\":\"ا\",\"ٱ\":\"ا\",\"ى\":\"ي\",\"ئ\":\"ي\",\"ؤ\":\"و\",\"ـ\":\"\"})"` | — |
-| [SRC-C9CF9B54F8-L000016](../../agents/omarai.py#L16) | 16 | `"SIGNALS = {"` | — |
-| [SRC-C9CF9B54F8-L000017](../../agents/omarai.py#L17) | 17 | `"    \"high\": (35, (\"عايز اشتري\", \"عاوز اشتري\", \"بدور على شقة\", \"بدور على عقار\", \"مطلوب شقة\", \"عايز وحدة\", \"محتاج اشتري\")),"` | — |
-| [SRC-C9CF9B54F8-L000018](../../agents/omarai.py#L18) | 18 | `"    \"next_step\": (20, (\"ممكن معاينة\", \"عايز اعاين\", \"عاوز اعاين\", \"ابعت التفاصيل\", \"ابعت اللوكيشن\", \"ميعاد للمعاينة\")),"` | — |
-| [SRC-C9CF9B54F8-L000019](../../agents/omarai.py#L19) | 19 | `"    \"budget\": (15, (\"السعر كام\", \"مقدم كام\", \"ميزانيتي\", \"معايا مقدم\", \"تقسيط\", \"على اقساط\", \"في حدود\")),"` | — |
-| [SRC-C9CF9B54F8-L000020](../../agents/omarai.py#L20) | 20 | `"    \"explore\": (10, (\"بدور على\", \"فيه شقق\", \"ايه المتاح\", \"عايز اعرف الاسعار\")),"` | — |
-| [SRC-C9CF9B54F8-L000021](../../agents/omarai.py#L21) | 21 | `"}"` | — |
-| [SRC-C9CF9B54F8-L000022](../../agents/omarai.py#L22) | 22 | `"NOT_BUYER = (\"مش عايز اشتري\", \"مش عاوز اشتري\", \"عايز ابيع\", \"عاوز ابيع\", \"عندي شقة للبيع\", \"انا وسيط\", \"انا سمسار\", \"عايز ايجار\", \"للايجار\")"` | — |
-| [SRC-C9CF9B54F8-L000023](../../agents/omarai.py#L23) | 23 | `""` | — |
-| [SRC-C9CF9B54F8-L000024](../../agents/omarai.py#L24) | 24 | `"def normalize(text: str) -> str:"` | — |
-| [SRC-C9CF9B54F8-L000025](../../agents/omarai.py#L25) | 25 | `"    value = unicodedata.normalize(\"NFKC\", str(text)).translate(_TRANSLATION)"` | — |
-| [SRC-C9CF9B54F8-L000026](../../agents/omarai.py#L26) | 26 | `"    value = \"\".join(c for c in value if not unicodedata.category(c).startswith(\"M\"))"` | — |
-| [SRC-C9CF9B54F8-L000027](../../agents/omarai.py#L27) | 27 | `"    return re.sub(r\"\\s+\", \" \", re.sub(r\"[^\\w\\s]\", \" \", value.casefold())).strip()"` | — |
-| [SRC-C9CF9B54F8-L000028](../../agents/omarai.py#L28) | 28 | `""` | — |
-| [SRC-C9CF9B54F8-L000029](../../agents/omarai.py#L29) | 29 | `"def now_utc() -> str:"` | — |
-| [SRC-C9CF9B54F8-L000030](../../agents/omarai.py#L30) | 30 | `"    return datetime.now(UTC).isoformat(timespec=\"seconds\").replace(\"+00:00\", \"Z\")"` | — |
-| [SRC-C9CF9B54F8-L000031](../../agents/omarai.py#L31) | 31 | `""` | — |
-| [SRC-C9CF9B54F8-L000032](../../agents/omarai.py#L32) | 32 | `"def _csv_safe_cell(value: object) -> str:"` | — |
-| [SRC-C9CF9B54F8-L000033](../../agents/omarai.py#L33) | 33 | `"    \"\"\"Prefix spreadsheet formulas even when hidden whitespace/control chars precede them.\"\"\""` | — |
-| [SRC-C9CF9B54F8-L000034](../../agents/omarai.py#L34) | 34 | `"    text = \"\" if value is None else str(value)"` | — |
+| [SRC-9D8012A1A0-L000001](../../agents/memory_bank.py#L1) | 1 | `"\"\"\"Structured claim–evidence memory bank for Omarai."` | — |
+| [SRC-9D8012A1A0-L000002](../../agents/memory_bank.py#L2) | 2 | `""` | — |
+| [SRC-9D8012A1A0-L000003](../../agents/memory_bank.py#L3) | 3 | `"Every generated claim can be bound to one or more evidence snippets with a"` | — |
+| [SRC-9D8012A1A0-L000004](../../agents/memory_bank.py#L4) | 4 | `"stable evidence_id. Generation should be constrained by this graph so fluency"` | — |
+| [SRC-9D8012A1A0-L000005](../../agents/memory_bank.py#L5) | 5 | `"never outruns support."` | — |
+| [SRC-9D8012A1A0-L000006](../../agents/memory_bank.py#L6) | 6 | `""` | — |
+| [SRC-9D8012A1A0-L000007](../../agents/memory_bank.py#L7) | 7 | `"Lexical support ≠ semantic entailment. Status labels are honest about that."` | — |
+| [SRC-9D8012A1A0-L000008](../../agents/memory_bank.py#L8) | 8 | `""` | — |
+| [SRC-9D8012A1A0-L000009](../../agents/memory_bank.py#L9) | 9 | `"Compatible conceptually with agents.claim_evidence.build_claim_evidence_ledger"` | — |
+| [SRC-9D8012A1A0-L000010](../../agents/memory_bank.py#L10) | 10 | `"(sentence-level citation index tracing on main)."` | — |
+| [SRC-9D8012A1A0-L000011](../../agents/memory_bank.py#L11) | 11 | `"\"\"\""` | — |
+| [SRC-9D8012A1A0-L000012](../../agents/memory_bank.py#L12) | 12 | `"from __future__ import annotations"` | — |
+| [SRC-9D8012A1A0-L000013](../../agents/memory_bank.py#L13) | 13 | `""` | — |
+| [SRC-9D8012A1A0-L000014](../../agents/memory_bank.py#L14) | 14 | `"import hashlib"` | — |
+| [SRC-9D8012A1A0-L000015](../../agents/memory_bank.py#L15) | 15 | `"import re"` | — |
+| [SRC-9D8012A1A0-L000016](../../agents/memory_bank.py#L16) | 16 | `"import time"` | — |
+| [SRC-9D8012A1A0-L000017](../../agents/memory_bank.py#L17) | 17 | `"from dataclasses import asdict, dataclass, field"` | — |
+| [SRC-9D8012A1A0-L000018](../../agents/memory_bank.py#L18) | 18 | `"from typing import Any"` | — |
+| [SRC-9D8012A1A0-L000019](../../agents/memory_bank.py#L19) | 19 | `""` | — |
+| [SRC-9D8012A1A0-L000020](../../agents/memory_bank.py#L20) | 20 | `"_TOKEN = re.compile(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", re.I)"` | — |
+| [SRC-9D8012A1A0-L000021](../../agents/memory_bank.py#L21) | 21 | `"_SENTENCE_SPLIT = re.compile(r\"(?<=[.!?؟])\\s+\|\\n+\")"` | — |
+| [SRC-9D8012A1A0-L000022](../../agents/memory_bank.py#L22) | 22 | `"_CITATION_MARK = re.compile(r\"\\[(?:المصدر\|source)\\s+(\\d+)\\]\", re.I)"` | — |
+| [SRC-9D8012A1A0-L000023](../../agents/memory_bank.py#L23) | 23 | `"_STOP = {"` | — |
+| [SRC-9D8012A1A0-L000024](../../agents/memory_bank.py#L24) | 24 | `"    \"من\", \"في\", \"على\", \"عن\", \"الى\", \"و\", \"او\", \"هل\", \"ما\", \"ال\", \"the\", \"a\", \"an\","` | — |
+| [SRC-9D8012A1A0-L000025](../../agents/memory_bank.py#L25) | 25 | `"    \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\", \"is\", \"are\", \"this\", \"that\","` | — |
+| [SRC-9D8012A1A0-L000026](../../agents/memory_bank.py#L26) | 26 | `"    \"إلى\", \"أن\", \"إن\", \"كان\", \"يكون\", \"غير\", \"بين\", \"حتى\", \"قد\", \"لم\", \"لن\","` | — |
+| [SRC-9D8012A1A0-L000027](../../agents/memory_bank.py#L27) | 27 | `"}"` | — |
+| [SRC-9D8012A1A0-L000028](../../agents/memory_bank.py#L28) | 28 | `""` | — |
+| [SRC-9D8012A1A0-L000029](../../agents/memory_bank.py#L29) | 29 | `""` | — |
+| [SRC-9D8012A1A0-L000030](../../agents/memory_bank.py#L30) | 30 | `"def _norm(text: str) -> str:"` | — |
+| [SRC-9D8012A1A0-L000031](../../agents/memory_bank.py#L31) | 31 | `"    text = (text or \"\").casefold()"` | — |
+| [SRC-9D8012A1A0-L000032](../../agents/memory_bank.py#L32) | 32 | `"    text = text.translate(str.maketrans({\"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ة\": \"ه\", \"ى\": \"ي\"}))"` | — |
+| [SRC-9D8012A1A0-L000033](../../agents/memory_bank.py#L33) | 33 | `"    return re.sub(r\"\\s+\", \" \", text).strip()"` | — |
+| [SRC-9D8012A1A0-L000034](../../agents/memory_bank.py#L34) | 34 | `""` | — |
