@@ -945,6 +945,11 @@ class WebAgent:
         self, question: str, mode: str, context: dict[str, Any], reason: str
     ) -> dict[str, Any]:
         """Expose why context resolution stopped and ask instead of guessing."""
+        context = dict(context)
+        context["needs_clarification"] = True
+        context["status"] = "needs_clarification"
+        context["resolved_question"] = question[:MAX_QUESTION_CHARS]
+        context["resolution_basis"] = "insufficient_evidence"
         result = self._clarification_result(
             question, mode, {
                 "reason": reason,
@@ -3044,7 +3049,8 @@ class WebAgent:
                 "role": "system",
                 "content": (
                     "أنت محلل سياق حواري لـ Omarai، ولست مجيبًا أو محرك بحث. حلل آخر رسالة "
-                    "للمستخدم في ضوء سجل الحوار فقط، وأخرج JSON صحيحًا فقط. افهم العربية المصرية "
+                    "للمستخدم في ضوء سجل الحوار فقط، وأخرج JSON صحيحًا فقط. اكتب resolved_question "
+                    "بلغة رسالة المستخدم نفسها مع الحفاظ على الأسماء والقيود. افهم العربية المصرية "
                     "والفصحى والإنجليزية والأخطاء المعتادة. ميّز بين استمرار الموضوع وتغيير الموضوع، "
                     "واستعد الكيان والقيود والجانب المطلوب والبلد والنسخة والفترة الزمنية عند وجودها. "
                     "لا تنقل موضوعًا سابقًا إلى سؤال مستقل. إذا كان للضمير أكثر من مرجع معقول ويغيّر "
@@ -3125,6 +3131,7 @@ class WebAgent:
                     '"changed_slots":["aspect"],"is_follow_up":true,"topic_shift":false,"needs_web":true,'
                     '"research_depth":"standard","needs_clarification":false,"clarification_question":"",'
                     '"unresolved_references":[],"resolution_basis":"history_inferred","confidence_band":"medium"}}. '
+                    "اكتب resolved_question بلغة رسالة المستخدم، ويمكن صياغة queries بلغة تناسب البحث. "
                     "ضع 2 إلى 5 استعلامات مختلفة ومفيدة عندما يكون السؤال واضحًا. حافظ على أسماء "
                     "الأشخاص والمنتجات والأماكن والأرقام والقيود. إذا تغير الموضوع، لا تدمج الموضوع "
                     "السابق في resolved_question أو الاستعلام. إذا كان المرجع ملتبسًا بشكل مؤثر، "
@@ -4119,6 +4126,10 @@ class WebAgent:
         if intent_route == "MODEL_ONLY":
             general_answer = self._answer_without_search(working_question, clean_history)
             if general_answer is not None:
+                if context_override is not None:
+                    general_answer["dialogue_context"] = context_override
+                    if isinstance(general_answer.get("research_plan"), dict):
+                        general_answer["research_plan"]["dialogue_context"] = context_override
                 return self._annotate_intent_route(
                     general_answer, intent_route, intent_reason, clean_mode
                 )
