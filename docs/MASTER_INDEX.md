@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **93**
-- ملفات Python المحللة: **51**
-- تعريفات Python المفهرسة: **1172**
+- ملفات المستودع في الجرد: **95**
+- ملفات Python المحللة: **53**
+- تعريفات Python المفهرسة: **1193**
 - تعريفات Python موثقة بوجود Docstring: **213**
-- تعريفات Python بلا Docstring: **728**
-- تعريفات لا ينطبق عليها Docstring: **231**
-- الرموز الساكنة الإضافية: **1668**
-- الأسطر النصية المفهرسة حرفيًا: **30724**
+- تعريفات Python بلا Docstring: **742**
+- تعريفات لا ينطبق عليها Docstring: **238**
+- الرموز الساكنة الإضافية: **1679**
+- الأسطر النصية المفهرسة حرفيًا: **31102**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -64,13 +64,13 @@
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 6869 | 43 | جرد الملف + عناوين Markdown |
-| FILE-53E640B937 | وثائق وفهرسة | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | Markdown | 8384 | 65 | جرد الملف + عناوين Markdown |
+| FILE-53E640B937 | وثائق وفهرسة | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | Markdown | 9704 | 77 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
 | FILE-E1EAC11EFE | وثائق وفهرسة | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L1) | Markdown | 14423 | 74 | جرد الملف + عناوين Markdown |
 | FILE-B2C95EAEE1 | وثائق وفهرسة | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | Markdown | 15555 | 118 | جرد الملف + عناوين Markdown |
-| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 57823 | 277 | جرد الملف + عناوين Markdown |
+| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 58192 | 280 | جرد الملف + عناوين Markdown |
 | FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 59153 | 184 | جرد الملف + عناوين Markdown |
 | FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 76904 | 852 | جرد الملف + عناوين Markdown |
@@ -87,11 +87,13 @@
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 15025 | 404 | جرد الملف + AST Python |
+| FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
 | FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 4410 | 97 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
+| FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
@@ -628,6 +630,16 @@
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L226) | دالة | run_validate | لا توجد Docstring. | ناقص | 226 | [SRC-4FFD5AFC54-L000226](../scripts/run_answer_quality_benchmark.py#L226) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L253) | دالة | run_live | لا توجد Docstring. | ناقص | 253 | [SRC-4FFD5AFC54-L000253](../scripts/run_answer_quality_benchmark.py#L253) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L359) | دالة | main | لا توجد Docstring. | ناقص | 359 | [SRC-4FFD5AFC54-L000359](../scripts/run_answer_quality_benchmark.py#L359) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L17) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-03FF422A16-L000017](../scripts/score_answer_quality_reviews.py#L17) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L18) | متغير/ثابت Python | DEFAULT_CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-03FF422A16-L000018](../scripts/score_answer_quality_reviews.py#L18) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L19) | متغير/ثابت Python | ALLOWED_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-03FF422A16-L000019](../scripts/score_answer_quality_reviews.py#L19) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L20) | متغير/ثابت Python | COUNT_GROUPS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-03FF422A16-L000020](../scripts/score_answer_quality_reviews.py#L20) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L28) | دالة | load_json_object | لا توجد Docstring. | ناقص | 28 | [SRC-03FF422A16-L000028](../scripts/score_answer_quality_reviews.py#L28) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L37) | دالة | _is_nonnegative_int | لا توجد Docstring. | ناقص | 37 | [SRC-03FF422A16-L000037](../scripts/score_answer_quality_reviews.py#L37) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L41) | دالة | validate_reviews | لا توجد Docstring. | ناقص | 41 | [SRC-03FF422A16-L000041](../scripts/score_answer_quality_reviews.py#L41) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L128) | دالة | _ratio | لا توجد Docstring. | ناقص | 128 | [SRC-03FF422A16-L000128](../scripts/score_answer_quality_reviews.py#L128) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L138) | دالة | summarize_reviews | لا توجد Docstring. | ناقص | 138 | [SRC-03FF422A16-L000138](../scripts/score_answer_quality_reviews.py#L138) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L222) | دالة | main | لا توجد Docstring. | ناقص | 222 | [SRC-03FF422A16-L000222](../scripts/score_answer_quality_reviews.py#L222) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L15) | كلاس | BackupError | Raised when a backup/restore operation cannot be proven safe. | موثق | 15 | [SRC-547CAF1FE3-L000015](../scripts/sqlite_backup_restore.py#L15) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L19) | دالة | _open_read_only | Open an existing SQLite database without accidentally creating a missing source. | موثق | 19 | [SRC-547CAF1FE3-L000019](../scripts/sqlite_backup_restore.py#L19) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L27) | دالة | _validate_omarai_database | Require a healthy SQLite file containing the Omarai leads table. | موثق | 27 | [SRC-547CAF1FE3-L000027](../scripts/sqlite_backup_restore.py#L27) |
@@ -666,6 +678,17 @@
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L206) | دالة | test_documented_high_risk_examples_match_json_categories | لا توجد Docstring. | ناقص | 206 | [SRC-4CCB1F172B-L000206](../tests/test_answer_quality_corpus.py#L206) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L218) | دالة | test_docs_mention_corrected_high_risk_ids | لا توجد Docstring. | ناقص | 218 | [SRC-4CCB1F172B-L000218](../tests/test_answer_quality_corpus.py#L218) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L225) | دالة | test_no_placeholder_corpus_content | لا توجد Docstring. | ناقص | 225 | [SRC-4CCB1F172B-L000225](../tests/test_answer_quality_corpus.py#L225) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L8) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-D186ED3822-L000008](../tests/test_answer_quality_review_scorecard.py#L8) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L9) | متغير/ثابت Python | SCRIPT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-D186ED3822-L000009](../tests/test_answer_quality_review_scorecard.py#L9) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L10) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-D186ED3822-L000010](../tests/test_answer_quality_review_scorecard.py#L10) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L13) | دالة | load_module | لا توجد Docstring. | ناقص | 13 | [SRC-D186ED3822-L000013](../tests/test_answer_quality_review_scorecard.py#L13) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L21) | دالة | corpus | لا توجد Docstring. | ناقص | 21 | [SRC-D186ED3822-L000021](../tests/test_answer_quality_review_scorecard.py#L21) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L25) | دالة | test_manual_scorecard_aggregates_only_explicit_reviewed_metrics | لا توجد Docstring. | ناقص | 25 | [SRC-D186ED3822-L000025](../tests/test_answer_quality_review_scorecard.py#L25) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L60) | دالة | test_scorecard_keeps_unmeasured_denominators_not_scorable | لا توجد Docstring. | ناقص | 60 | [SRC-D186ED3822-L000060](../tests/test_answer_quality_review_scorecard.py#L60) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L75) | دالة | test_scorecard_rejects_numerator_larger_than_denominator | لا توجد Docstring. | ناقص | 75 | [SRC-D186ED3822-L000075](../tests/test_answer_quality_review_scorecard.py#L75) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L88) | دالة | test_scorecard_rejects_unknown_case_ids_and_duplicate_reviews | لا توجد Docstring. | ناقص | 88 | [SRC-D186ED3822-L000088](../tests/test_answer_quality_review_scorecard.py#L88) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L100) | دالة | test_not_tested_cases_must_not_carry_metric_scores | لا توجد Docstring. | ناقص | 100 | [SRC-D186ED3822-L000100](../tests/test_answer_quality_review_scorecard.py#L100) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L110) | دالة | test_scorecard_cli_writes_a_machine_readable_summary | لا توجد Docstring. | ناقص | 110 | [SRC-D186ED3822-L000110](../tests/test_answer_quality_review_scorecard.py#L110) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L11) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-B3062EB677-L000011](../tests/test_answer_quality_runner.py#L11) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L12) | متغير/ثابت Python | SCRIPT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-B3062EB677-L000012](../tests/test_answer_quality_runner.py#L12) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L13) | متغير/ثابت Python | CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-B3062EB677-L000013](../tests/test_answer_quality_runner.py#L13) |
@@ -1809,6 +1832,7 @@
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L49) | عنوان Markdown (H2) | بوابات القبول | 49 | [SRC-53E640B937-L000049](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L49) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 54 | [SRC-53E640B937-L000054](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L54) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L57) | عنوان Markdown (H2) | قواعد لا نتجاوزها | 57 | [SRC-53E640B937-L000057](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L57) |
+| [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L66) | عنوان Markdown (H2) | إضافة تالية لنظام التقييم — 28 أكتوبر 2026 | 66 | [SRC-53E640B937-L000066](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L66) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل الاستثناءات والقرارات المؤجلة | 1 | [SRC-21D5D044E2-L000001](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) | عنوان Markdown (H2) | 1. الغرض وقواعد الاستخدام | 8 | [SRC-21D5D044E2-L000008](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) | عنوان Markdown (H2) | 2. سجل الاستثناءات المعتمدة | 22 | [SRC-21D5D044E2-L000022](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) |
@@ -2458,6 +2482,13 @@
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L171) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 171 | [SRC-4FFD5AFC54-L000171](../scripts/run_answer_quality_benchmark.py#L171) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L172) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 172 | [SRC-4FFD5AFC54-L000172](../scripts/run_answer_quality_benchmark.py#L172) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L194) | مسار API/واجهة محتمل | /api/agent | 194 | [SRC-4FFD5AFC54-L000194](../scripts/run_answer_quality_benchmark.py#L194) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 5 | [SRC-03FF422A16-L000005](../scripts/score_answer_quality_reviews.py#L5) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_CORPUS | 18 | [SRC-03FF422A16-L000018](../scripts/score_answer_quality_reviews.py#L18) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STATUSES | 19 | [SRC-03FF422A16-L000019](../scripts/score_answer_quality_reviews.py#L19) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COUNT_GROUPS | 20 | [SRC-03FF422A16-L000020](../scripts/score_answer_quality_reviews.py#L20) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR | 134 | [SRC-03FF422A16-L000134](../scripts/score_answer_quality_reviews.py#L134) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SCORED_FROM_HUMAN_REVIEW | 134 | [SRC-03FF422A16-L000134](../scripts/score_answer_quality_reviews.py#L134) |
+| [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L209) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_NO_HUMAN_SCORES | 209 | [SRC-03FF422A16-L000209](../scripts/score_answer_quality_reviews.py#L209) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_CREAT | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_EXCL | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_WRONLY | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
@@ -2516,6 +2547,9 @@
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOC_EXAMPLE_CATEGORY_EXPECTATIONS | 56 | [SRC-4CCB1F172B-L000056](../tests/test_answer_quality_corpus.py#L56) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CASE_ID_RE | 75 | [SRC-4CCB1F172B-L000075](../tests/test_answer_quality_corpus.py#L75) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L228) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEE_LOCAL_FILE | 228 | [SRC-4CCB1F172B-L000228](../tests/test_answer_quality_corpus.py#L228) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CORPUS_PATH | 10 | [SRC-D186ED3822-L000010](../tests/test_answer_quality_review_scorecard.py#L10) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 44 | [SRC-D186ED3822-L000044](../tests/test_answer_quality_review_scorecard.py#L44) |
+| [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR | 71 | [SRC-D186ED3822-L000071](../tests/test_answer_quality_review_scorecard.py#L71) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 35 | [SRC-B3062EB677-L000035](../tests/test_answer_quality_runner.py#L35) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 94 | [SRC-B3062EB677-L000094](../tests/test_answer_quality_runner.py#L94) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 95 | [SRC-B3062EB677-L000095](../tests/test_answer_quality_runner.py#L95) |
