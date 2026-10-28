@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003417 إلى SRC-1AE03B9EC3-L004216
+- النطاق: SRC-1AE03B9EC3-L003395 إلى SRC-1AE03B9EC3-L004194
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003395](../../agents/web_agent.py#L3395) | 3395 | `"                elif plan[\"queries\"]:"` | — |
+| [SRC-1AE03B9EC3-L003396](../../agents/web_agent.py#L3396) | 3396 | `"                    plan[\"queries\"][-1] = fresh_query[:240]"` | — |
+| [SRC-1AE03B9EC3-L003397](../../agents/web_agent.py#L3397) | 3397 | `""` | — |
+| [SRC-1AE03B9EC3-L003398](../../agents/web_agent.py#L3398) | 3398 | `"        # Do not let a planner accidentally drop explicit social-media/freshness intent."` | — |
+| [SRC-1AE03B9EC3-L003399](../../agents/web_agent.py#L3399) | 3399 | `"        plan[\"social_focus\"] = bool(plan.get(\"social_focus\") or fallback.get(\"social_focus\"))"` | — |
+| [SRC-1AE03B9EC3-L003400](../../agents/web_agent.py#L3400) | 3400 | `"        if fallback.get(\"freshness\") == \"current\":"` | — |
+| [SRC-1AE03B9EC3-L003401](../../agents/web_agent.py#L3401) | 3401 | `"            plan[\"freshness\"] = \"current\""` | — |
+| [SRC-1AE03B9EC3-L003402](../../agents/web_agent.py#L3402) | 3402 | `"        if fallback.get(\"depth\") == \"deep\":"` | — |
+| [SRC-1AE03B9EC3-L003403](../../agents/web_agent.py#L3403) | 3403 | `"            plan[\"depth\"] = \"deep\""` | — |
+| [SRC-1AE03B9EC3-L003404](../../agents/web_agent.py#L3404) | 3404 | `"        explicit_platforms = fallback_plan(question, history).get(\"platforms\", [])"` | — |
+| [SRC-1AE03B9EC3-L003405](../../agents/web_agent.py#L3405) | 3405 | `"        plan[\"platforms\"] = list(dict.fromkeys(plan.get(\"platforms\", []) + explicit_platforms))[:5]"` | — |
+| [SRC-1AE03B9EC3-L003406](../../agents/web_agent.py#L3406) | 3406 | `""` | — |
+| [SRC-1AE03B9EC3-L003407](../../agents/web_agent.py#L3407) | 3407 | `"        # Add real platform-targeted searches alongside broad queries when social evidence matters."` | — |
+| [SRC-1AE03B9EC3-L003408](../../agents/web_agent.py#L3408) | 3408 | `"        if plan[\"social_focus\"]:"` | — |
+| [SRC-1AE03B9EC3-L003409](../../agents/web_agent.py#L3409) | 3409 | `"            targets = plan[\"platforms\"] or [\"facebook\", \"instagram\", \"reddit\"]"` | — |
+| [SRC-1AE03B9EC3-L003410](../../agents/web_agent.py#L3410) | 3410 | `"            fallback_queries = fallback.get(\"queries\", [])"` | — |
+| [SRC-1AE03B9EC3-L003411](../../agents/web_agent.py#L3411) | 3411 | `"            plan_queries = plan.get(\"queries\", [])"` | — |
+| [SRC-1AE03B9EC3-L003412](../../agents/web_agent.py#L3412) | 3412 | `"            base_query = (fallback_queries or plan_queries or [\"\"])[0]"` | — |
+| [SRC-1AE03B9EC3-L003413](../../agents/web_agent.py#L3413) | 3413 | `"            query_list = list(plan_queries)"` | — |
+| [SRC-1AE03B9EC3-L003414](../../agents/web_agent.py#L3414) | 3414 | `"            for platform in targets[:2]:"` | — |
+| [SRC-1AE03B9EC3-L003415](../../agents/web_agent.py#L3415) | 3415 | `"                domain = SOCIAL_DOMAINS.get(platform)"` | — |
+| [SRC-1AE03B9EC3-L003416](../../agents/web_agent.py#L3416) | 3416 | `"                if not domain or not base_query:"` | — |
 | [SRC-1AE03B9EC3-L003417](../../agents/web_agent.py#L3417) | 3417 | `"                    continue"` | — |
 | [SRC-1AE03B9EC3-L003418](../../agents/web_agent.py#L3418) | 3418 | `"                targeted = compact_search_query(f\"site:{domain} {base_query}\")"` | — |
 | [SRC-1AE03B9EC3-L003419](../../agents/web_agent.py#L3419) | 3419 | `"                if not targeted:"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L004192](../../agents/web_agent.py#L4192) | 4192 | `"            except (AttributeError, KeyError, TypeError, ValueError):"` | — |
 | [SRC-1AE03B9EC3-L004193](../../agents/web_agent.py#L4193) | 4193 | `"                # Auxiliary integrity screening never replaces the actual answer."` | — |
 | [SRC-1AE03B9EC3-L004194](../../agents/web_agent.py#L4194) | 4194 | `"                result[\"answer_integrity\"] = {"` | — |
-| [SRC-1AE03B9EC3-L004195](../../agents/web_agent.py#L4195) | 4195 | `"                    \"method\": \"deterministic_lexical_screen_only\","` | — |
-| [SRC-1AE03B9EC3-L004196](../../agents/web_agent.py#L4196) | 4196 | `"                    \"status\": \"not_run\","` | — |
-| [SRC-1AE03B9EC3-L004197](../../agents/web_agent.py#L4197) | 4197 | `"                    \"semantic_verification\": False,"` | — |
-| [SRC-1AE03B9EC3-L004198](../../agents/web_agent.py#L4198) | 4198 | `"                    \"independent_fact_check\": False,"` | — |
-| [SRC-1AE03B9EC3-L004199](../../agents/web_agent.py#L4199) | 4199 | `"                    \"error_class\": \"integrity_screen_error\","` | — |
-| [SRC-1AE03B9EC3-L004200](../../agents/web_agent.py#L4200) | 4200 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L004201](../../agents/web_agent.py#L4201) | 4201 | `"                result.setdefault(\"warnings\", []).append("` | — |
-| [SRC-1AE03B9EC3-L004202](../../agents/web_agent.py#L4202) | 4202 | `"                    \"تعذر تشغيل الفحص اللفظي الأولي لسلامة الأدلة؛ لم يُعدّ ذلك إثباتًا أو نفيًا لصحة الإجابة.\""` | — |
-| [SRC-1AE03B9EC3-L004203](../../agents/web_agent.py#L4203) | 4203 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004204](../../agents/web_agent.py#L4204) | 4204 | `"        if \"final_answer_status\" not in result:"` | — |
-| [SRC-1AE03B9EC3-L004205](../../agents/web_agent.py#L4205) | 4205 | `"            if result.get(\"kind\") in {\"capability_answer\", \"local_conversation\"}:"` | — |
-| [SRC-1AE03B9EC3-L004206](../../agents/web_agent.py#L4206) | 4206 | `"                final_answer_status = \"local_response_no_generation\""` | — |
-| [SRC-1AE03B9EC3-L004207](../../agents/web_agent.py#L4207) | 4207 | `"            elif result.get(\"kind\") == \"insufficient_evidence\":"` | — |
-| [SRC-1AE03B9EC3-L004208](../../agents/web_agent.py#L4208) | 4208 | `"                final_answer_status = \"insufficient_evidence_no_generation\""` | — |
-| [SRC-1AE03B9EC3-L004209](../../agents/web_agent.py#L4209) | 4209 | `"            elif result.get(\"used_language_model\") is True:"` | — |
-| [SRC-1AE03B9EC3-L004210](../../agents/web_agent.py#L4210) | 4210 | `"                final_answer_status = \"model_answer_generated\""` | — |
-| [SRC-1AE03B9EC3-L004211](../../agents/web_agent.py#L4211) | 4211 | `"            elif self.generation_diagnostics:"` | — |
-| [SRC-1AE03B9EC3-L004212](../../agents/web_agent.py#L4212) | 4212 | `"                final_answer_status = ("` | — |
-| [SRC-1AE03B9EC3-L004213](../../agents/web_agent.py#L4213) | 4213 | `"                    \"generation_failed_with_source_fallback\""` | — |
-| [SRC-1AE03B9EC3-L004214](../../agents/web_agent.py#L4214) | 4214 | `"                    if result.get(\"sources\")"` | — |
-| [SRC-1AE03B9EC3-L004215](../../agents/web_agent.py#L4215) | 4215 | `"                    else \"generation_failed\""` | — |
-| [SRC-1AE03B9EC3-L004216](../../agents/web_agent.py#L4216) | 4216 | `"                )"` | — |

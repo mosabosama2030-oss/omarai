@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002617 إلى SRC-1AE03B9EC3-L003416
+- النطاق: SRC-1AE03B9EC3-L002595 إلى SRC-1AE03B9EC3-L003394
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002595](../../agents/web_agent.py#L2595) | 2595 | `"            batches.append({"` | — |
+| [SRC-1AE03B9EC3-L002596](../../agents/web_agent.py#L2596) | 2596 | `"                \"query\": (queries[0] if queries else \"\"),"` | — |
+| [SRC-1AE03B9EC3-L002597](../../agents/web_agent.py#L2597) | 2597 | `"                \"provider\": \"user_supplied_url\","` | — |
+| [SRC-1AE03B9EC3-L002598](../../agents/web_agent.py#L2598) | 2598 | `"                \"results\": [{"` | — |
+| [SRC-1AE03B9EC3-L002599](../../agents/web_agent.py#L2599) | 2599 | `"                    \"title\": \"رابط قدمه المستخدم للتحليل\","` | — |
+| [SRC-1AE03B9EC3-L002600](../../agents/web_agent.py#L2600) | 2600 | `"                    \"url\": direct_url,"` | — |
+| [SRC-1AE03B9EC3-L002601](../../agents/web_agent.py#L2601) | 2601 | `"                    \"snippet\": \"\","` | — |
+| [SRC-1AE03B9EC3-L002602](../../agents/web_agent.py#L2602) | 2602 | `"                    \"page_text\": \"\","` | — |
+| [SRC-1AE03B9EC3-L002603](../../agents/web_agent.py#L2603) | 2603 | `"                    \"page_fetched\": False,"` | — |
+| [SRC-1AE03B9EC3-L002604](../../agents/web_agent.py#L2604) | 2604 | `"                    \"provider\": \"user_supplied_url\","` | — |
+| [SRC-1AE03B9EC3-L002605](../../agents/web_agent.py#L2605) | 2605 | `"                    \"provider_rank\": 1,"` | — |
+| [SRC-1AE03B9EC3-L002606](../../agents/web_agent.py#L2606) | 2606 | `"                    \"search_query\": (queries[0] if queries else \"\"),"` | — |
+| [SRC-1AE03B9EC3-L002607](../../agents/web_agent.py#L2607) | 2607 | `"                    \"published_at\": \"\","` | — |
+| [SRC-1AE03B9EC3-L002608](../../agents/web_agent.py#L2608) | 2608 | `"                }],"` | — |
+| [SRC-1AE03B9EC3-L002609](../../agents/web_agent.py#L2609) | 2609 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L002610](../../agents/web_agent.py#L2610) | 2610 | `""` | — |
+| [SRC-1AE03B9EC3-L002611](../../agents/web_agent.py#L2611) | 2611 | `"        raw_results_count = sum(len(batch.get(\"results\", [])) for batch in batches if isinstance(batch, dict) and isinstance(batch.get(\"results\", []), list))"` | — |
+| [SRC-1AE03B9EC3-L002612](../../agents/web_agent.py#L2612) | 2612 | `"        sources = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)"` | — |
+| [SRC-1AE03B9EC3-L002613](../../agents/web_agent.py#L2613) | 2613 | `"        for source in sources:"` | — |
+| [SRC-1AE03B9EC3-L002614](../../agents/web_agent.py#L2614) | 2614 | `"            source.setdefault(\"page_fetch_status\", \"not_attempted\")"` | — |
+| [SRC-1AE03B9EC3-L002615](../../agents/web_agent.py#L2615) | 2615 | `"        # Fetch page text only for the best few public URLs; do it concurrently with strict bounds."` | — |
+| [SRC-1AE03B9EC3-L002616](../../agents/web_agent.py#L2616) | 2616 | `"        fetch_targets = sources[:MAX_FETCHED_PAGES]"` | — |
 | [SRC-1AE03B9EC3-L002617](../../agents/web_agent.py#L2617) | 2617 | `"        for source in fetch_targets:"` | — |
 | [SRC-1AE03B9EC3-L002618](../../agents/web_agent.py#L2618) | 2618 | `"            source[\"page_fetch_status\"] = \"attempted\""` | — |
 | [SRC-1AE03B9EC3-L002619](../../agents/web_agent.py#L2619) | 2619 | `"        fetched_count = 0"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L003392](../../agents/web_agent.py#L3392) | 3392 | `"            if fresh_query and _relevance_query_tokens(fresh_query):"` | — |
 | [SRC-1AE03B9EC3-L003393](../../agents/web_agent.py#L3393) | 3393 | `"                if len(plan[\"queries\"]) < MAX_PLAN_QUERIES:"` | — |
 | [SRC-1AE03B9EC3-L003394](../../agents/web_agent.py#L3394) | 3394 | `"                    plan[\"queries\"].append(fresh_query[:240])"` | — |
-| [SRC-1AE03B9EC3-L003395](../../agents/web_agent.py#L3395) | 3395 | `"                elif plan[\"queries\"]:"` | — |
-| [SRC-1AE03B9EC3-L003396](../../agents/web_agent.py#L3396) | 3396 | `"                    plan[\"queries\"][-1] = fresh_query[:240]"` | — |
-| [SRC-1AE03B9EC3-L003397](../../agents/web_agent.py#L3397) | 3397 | `""` | — |
-| [SRC-1AE03B9EC3-L003398](../../agents/web_agent.py#L3398) | 3398 | `"        # Do not let a planner accidentally drop explicit social-media/freshness intent."` | — |
-| [SRC-1AE03B9EC3-L003399](../../agents/web_agent.py#L3399) | 3399 | `"        plan[\"social_focus\"] = bool(plan.get(\"social_focus\") or fallback.get(\"social_focus\"))"` | — |
-| [SRC-1AE03B9EC3-L003400](../../agents/web_agent.py#L3400) | 3400 | `"        if fallback.get(\"freshness\") == \"current\":"` | — |
-| [SRC-1AE03B9EC3-L003401](../../agents/web_agent.py#L3401) | 3401 | `"            plan[\"freshness\"] = \"current\""` | — |
-| [SRC-1AE03B9EC3-L003402](../../agents/web_agent.py#L3402) | 3402 | `"        if fallback.get(\"depth\") == \"deep\":"` | — |
-| [SRC-1AE03B9EC3-L003403](../../agents/web_agent.py#L3403) | 3403 | `"            plan[\"depth\"] = \"deep\""` | — |
-| [SRC-1AE03B9EC3-L003404](../../agents/web_agent.py#L3404) | 3404 | `"        explicit_platforms = fallback_plan(question, history).get(\"platforms\", [])"` | — |
-| [SRC-1AE03B9EC3-L003405](../../agents/web_agent.py#L3405) | 3405 | `"        plan[\"platforms\"] = list(dict.fromkeys(plan.get(\"platforms\", []) + explicit_platforms))[:5]"` | — |
-| [SRC-1AE03B9EC3-L003406](../../agents/web_agent.py#L3406) | 3406 | `""` | — |
-| [SRC-1AE03B9EC3-L003407](../../agents/web_agent.py#L3407) | 3407 | `"        # Add real platform-targeted searches alongside broad queries when social evidence matters."` | — |
-| [SRC-1AE03B9EC3-L003408](../../agents/web_agent.py#L3408) | 3408 | `"        if plan[\"social_focus\"]:"` | — |
-| [SRC-1AE03B9EC3-L003409](../../agents/web_agent.py#L3409) | 3409 | `"            targets = plan[\"platforms\"] or [\"facebook\", \"instagram\", \"reddit\"]"` | — |
-| [SRC-1AE03B9EC3-L003410](../../agents/web_agent.py#L3410) | 3410 | `"            fallback_queries = fallback.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L003411](../../agents/web_agent.py#L3411) | 3411 | `"            plan_queries = plan.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L003412](../../agents/web_agent.py#L3412) | 3412 | `"            base_query = (fallback_queries or plan_queries or [\"\"])[0]"` | — |
-| [SRC-1AE03B9EC3-L003413](../../agents/web_agent.py#L3413) | 3413 | `"            query_list = list(plan_queries)"` | — |
-| [SRC-1AE03B9EC3-L003414](../../agents/web_agent.py#L3414) | 3414 | `"            for platform in targets[:2]:"` | — |
-| [SRC-1AE03B9EC3-L003415](../../agents/web_agent.py#L3415) | 3415 | `"                domain = SOCIAL_DOMAINS.get(platform)"` | — |
-| [SRC-1AE03B9EC3-L003416](../../agents/web_agent.py#L3416) | 3416 | `"                if not domain or not base_query:"` | — |
