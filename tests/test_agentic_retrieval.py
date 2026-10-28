@@ -95,3 +95,35 @@ def test_collect_research_retries_missing_aspect_within_query_limit(monkeypatch)
     assert any("warranty" in query.casefold() for query in queries)
     assert report["queries_attempted"] == len(queries)
     assert any("warranty" in str(source.get("url", "")).casefold() for source in sources)
+
+
+
+def test_generation_prompt_includes_grounded_writing_examples(monkeypatch) -> None:
+    agent = WebAgent()
+    captured: dict[str, object] = {}
+
+    def fake_completion(messages, **_kwargs):
+        captured["messages"] = messages
+        return "إجابة تجريبية."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    answer = agent._generate(
+        question="اشرح لي معنى مفهوم بسيط.",
+        history=[],
+        sources=[],
+        search_warning=None,
+        research_plan={"depth": "standard"},
+        search_report={},
+    )
+
+    assert answer == "إجابة تجريبية."
+    messages = captured["messages"]
+    assert isinstance(messages, list)
+    combined = "\n".join(
+        str(message.get("content") or "")
+        for message in messages
+        if isinstance(message, dict)
+    )
+    assert "مثال أسلوبي توضيحي فقط" in combined
+    assert "لا تعمم هذا على منتجات أخرى" in combined
+    assert "لا أستطيع تأكيده من هذه النتائج" in combined
