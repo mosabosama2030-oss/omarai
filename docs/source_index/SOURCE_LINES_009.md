@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003672 إلى SRC-1AE03B9EC3-L004471
+- النطاق: SRC-1AE03B9EC3-L003645 إلى SRC-1AE03B9EC3-L004444
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003645](../../agents/web_agent.py#L3645) | 3645 | `"            \"max_citable_source_index\": max_citable_source_index,"` | — |
+| [SRC-1AE03B9EC3-L003646](../../agents/web_agent.py#L3646) | 3646 | `"            \"claim_support\": ("` | — |
+| [SRC-1AE03B9EC3-L003647](../../agents/web_agent.py#L3647) | 3647 | `"                \"model_review_not_independent_fact_check\""` | — |
+| [SRC-1AE03B9EC3-L003648](../../agents/web_agent.py#L3648) | 3648 | `"                if review_status == \"model_claim_audit_completed\""` | — |
+| [SRC-1AE03B9EC3-L003649](../../agents/web_agent.py#L3649) | 3649 | `"                else \"not_verified\""` | — |
+| [SRC-1AE03B9EC3-L003650](../../agents/web_agent.py#L3650) | 3650 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L003651](../../agents/web_agent.py#L3651) | 3651 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L003652](../../agents/web_agent.py#L3652) | 3652 | `""` | — |
+| [SRC-1AE03B9EC3-L003653](../../agents/web_agent.py#L3653) | 3653 | `"    def diagnostics("` | — |
+| [SRC-1AE03B9EC3-L003654](../../agents/web_agent.py#L3654) | 3654 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L003655](../../agents/web_agent.py#L3655) | 3655 | `"        test_model: bool = True,"` | — |
+| [SRC-1AE03B9EC3-L003656](../../agents/web_agent.py#L3656) | 3656 | `"        test_social: bool = False,"` | — |
+| [SRC-1AE03B9EC3-L003657](../../agents/web_agent.py#L3657) | 3657 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L003658](../../agents/web_agent.py#L3658) | 3658 | `"        \"\"\"Run explicit live checks without exposing credentials or retaining returned content.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003659](../../agents/web_agent.py#L3659) | 3659 | `"        import time"` | — |
+| [SRC-1AE03B9EC3-L003660](../../agents/web_agent.py#L3660) | 3660 | `"        from datetime import UTC, datetime"` | — |
+| [SRC-1AE03B9EC3-L003661](../../agents/web_agent.py#L3661) | 3661 | `""` | — |
+| [SRC-1AE03B9EC3-L003662](../../agents/web_agent.py#L3662) | 3662 | `"        started = time.monotonic()"` | — |
+| [SRC-1AE03B9EC3-L003663](../../agents/web_agent.py#L3663) | 3663 | `"        self._reset_deepseek_search_budget()"` | — |
+| [SRC-1AE03B9EC3-L003664](../../agents/web_agent.py#L3664) | 3664 | `"        # Keep this report scoped to the current diagnostics request, not earlier asks."` | — |
+| [SRC-1AE03B9EC3-L003665](../../agents/web_agent.py#L3665) | 3665 | `"        with self._provider_diagnostics_lock:"` | — |
+| [SRC-1AE03B9EC3-L003666](../../agents/web_agent.py#L3666) | 3666 | `"            self._provider_diagnostics = []"` | — |
+| [SRC-1AE03B9EC3-L003667](../../agents/web_agent.py#L3667) | 3667 | `"        self.model_usage = []"` | — |
+| [SRC-1AE03B9EC3-L003668](../../agents/web_agent.py#L3668) | 3668 | `"        report: dict[str, Any] = {"` | — |
+| [SRC-1AE03B9EC3-L003669](../../agents/web_agent.py#L3669) | 3669 | `"            \"timestamp_utc\": datetime.now(UTC).isoformat(timespec=\"seconds\"),"` | — |
+| [SRC-1AE03B9EC3-L003670](../../agents/web_agent.py#L3670) | 3670 | `"            \"checks\": {},"` | — |
+| [SRC-1AE03B9EC3-L003671](../../agents/web_agent.py#L3671) | 3671 | `"            \"configuration\": self.status(),"` | — |
 | [SRC-1AE03B9EC3-L003672](../../agents/web_agent.py#L3672) | 3672 | `"            \"model_usage\": [],"` | — |
 | [SRC-1AE03B9EC3-L003673](../../agents/web_agent.py#L3673) | 3673 | `"            \"warnings\": [],"` | — |
 | [SRC-1AE03B9EC3-L003674](../../agents/web_agent.py#L3674) | 3674 | `"        }"` | — |
@@ -789,30 +816,3 @@
 | [SRC-1AE03B9EC3-L004442](../../agents/web_agent.py#L4442) | 4442 | `"                \"usable_sources_after_filtering\": None,"` | — |
 | [SRC-1AE03B9EC3-L004443](../../agents/web_agent.py#L4443) | 4443 | `"                \"unique_sources\": None,"` | — |
 | [SRC-1AE03B9EC3-L004444](../../agents/web_agent.py#L4444) | 4444 | `"                \"pages_fetched\": None,"` | — |
-| [SRC-1AE03B9EC3-L004445](../../agents/web_agent.py#L4445) | 4445 | `"                \"providers_used\": [],"` | — |
-| [SRC-1AE03B9EC3-L004446](../../agents/web_agent.py#L4446) | 4446 | `"                \"provider_counts\": None,"` | — |
-| [SRC-1AE03B9EC3-L004447](../../agents/web_agent.py#L4447) | 4447 | `"                \"platform_counts\": {},"` | — |
-| [SRC-1AE03B9EC3-L004448](../../agents/web_agent.py#L4448) | 4448 | `"                \"social_direct_results\": None,"` | — |
-| [SRC-1AE03B9EC3-L004449](../../agents/web_agent.py#L4449) | 4449 | `"                \"provider_diagnostics\": failure_diagnostics,"` | — |
-| [SRC-1AE03B9EC3-L004450](../../agents/web_agent.py#L4450) | 4450 | `"                \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-1AE03B9EC3-L004451](../../agents/web_agent.py#L4451) | 4451 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L004452](../../agents/web_agent.py#L4452) | 4452 | `"                \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
-| [SRC-1AE03B9EC3-L004453](../../agents/web_agent.py#L4453) | 4453 | `"                \"evidence_signals\": evidence_signal_report([], plan.get(\"freshness\", \"any\")),"` | — |
-| [SRC-1AE03B9EC3-L004454](../../agents/web_agent.py#L4454) | 4454 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L004455](../../agents/web_agent.py#L4455) | 4455 | `"        if isinstance(report, dict):"` | — |
-| [SRC-1AE03B9EC3-L004456](../../agents/web_agent.py#L4456) | 4456 | `"            report[\"dialogue_context\"] = plan.get(\"dialogue_context\", {})"` | — |
-| [SRC-1AE03B9EC3-L004457](../../agents/web_agent.py#L4457) | 4457 | `"        # Final relevance check is intentionally repeated after fusion, before any answer LLM call."` | — |
-| [SRC-1AE03B9EC3-L004458](../../agents/web_agent.py#L4458) | 4458 | `"        filtered_sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L004459](../../agents/web_agent.py#L4459) | 4459 | `"        for source in sources:"` | — |
-| [SRC-1AE03B9EC3-L004460](../../agents/web_agent.py#L4460) | 4460 | `"            if \"user_supplied_url\" in source.get(\"providers\", []):"` | — |
-| [SRC-1AE03B9EC3-L004461](../../agents/web_agent.py#L4461) | 4461 | `"                filtered_sources.append(source)"` | — |
-| [SRC-1AE03B9EC3-L004462](../../agents/web_agent.py#L4462) | 4462 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L004463](../../agents/web_agent.py#L4463) | 4463 | `"            candidate_queries = ("` | — |
-| [SRC-1AE03B9EC3-L004464](../../agents/web_agent.py#L4464) | 4464 | `"                source.get(\"queries\")"` | — |
-| [SRC-1AE03B9EC3-L004465](../../agents/web_agent.py#L4465) | 4465 | `"                or plan.get(\"queries\")"` | — |
-| [SRC-1AE03B9EC3-L004466](../../agents/web_agent.py#L4466) | 4466 | `"                or [compact_search_query(working_question)]"` | — |
-| [SRC-1AE03B9EC3-L004467](../../agents/web_agent.py#L4467) | 4467 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004468](../../agents/web_agent.py#L4468) | 4468 | `"            if any(self._source_matches_query(str(q), source) for q in candidate_queries):"` | — |
-| [SRC-1AE03B9EC3-L004469](../../agents/web_agent.py#L4469) | 4469 | `"                filtered_sources.append(source)"` | — |
-| [SRC-1AE03B9EC3-L004470](../../agents/web_agent.py#L4470) | 4470 | `"        sources = filtered_sources"` | — |
-| [SRC-1AE03B9EC3-L004471](../../agents/web_agent.py#L4471) | 4471 | `"        search_warning = \"؛ \".join(search_warnings) if search_warnings else None"` | — |

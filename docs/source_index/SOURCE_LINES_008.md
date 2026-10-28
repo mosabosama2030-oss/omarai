@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002872 إلى SRC-1AE03B9EC3-L003671
+- النطاق: SRC-1AE03B9EC3-L002845 إلى SRC-1AE03B9EC3-L003644
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002845](../../agents/web_agent.py#L2845) | 2845 | `"                requested_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L002846](../../agents/web_agent.py#L2846) | 2846 | `"                attempted_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L002847](../../agents/web_agent.py#L2847) | 2847 | `"                status=\"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L002848](../../agents/web_agent.py#L2848) | 2848 | `"                error_class=\"MissingAPIKey\","` | — |
+| [SRC-1AE03B9EC3-L002849](../../agents/web_agent.py#L2849) | 2849 | `"                request_started=False,"` | — |
+| [SRC-1AE03B9EC3-L002850](../../agents/web_agent.py#L2850) | 2850 | `"                remote_response_received=False,"` | — |
+| [SRC-1AE03B9EC3-L002851](../../agents/web_agent.py#L2851) | 2851 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002852](../../agents/web_agent.py#L2852) | 2852 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |
+| [SRC-1AE03B9EC3-L002853](../../agents/web_agent.py#L2853) | 2853 | `""` | — |
+| [SRC-1AE03B9EC3-L002854](../../agents/web_agent.py#L2854) | 2854 | `"        model_candidates = [requested_model]"` | — |
+| [SRC-1AE03B9EC3-L002855](../../agents/web_agent.py#L2855) | 2855 | `"        if self.fallback_model and self.fallback_model not in model_candidates:"` | — |
+| [SRC-1AE03B9EC3-L002856](../../agents/web_agent.py#L2856) | 2856 | `"            model_candidates.append(self.fallback_model)"` | — |
+| [SRC-1AE03B9EC3-L002857](../../agents/web_agent.py#L2857) | 2857 | `""` | — |
+| [SRC-1AE03B9EC3-L002858](../../agents/web_agent.py#L2858) | 2858 | `"        last_error: RuntimeError \| None = None"` | — |
+| [SRC-1AE03B9EC3-L002859](../../agents/web_agent.py#L2859) | 2859 | `"        for candidate_model in model_candidates:"` | — |
+| [SRC-1AE03B9EC3-L002860](../../agents/web_agent.py#L2860) | 2860 | `"            budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L002861](../../agents/web_agent.py#L2861) | 2861 | `"            use_web_search = enable_web_search and self.openrouter_web_search_enabled"` | — |
+| [SRC-1AE03B9EC3-L002862](../../agents/web_agent.py#L2862) | 2862 | `"            if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L002863](../../agents/web_agent.py#L2863) | 2863 | `"                try:"` | — |
+| [SRC-1AE03B9EC3-L002864](../../agents/web_agent.py#L2864) | 2864 | `"                    budget.reserve(\"model_calls\")"` | — |
+| [SRC-1AE03B9EC3-L002865](../../agents/web_agent.py#L2865) | 2865 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
+| [SRC-1AE03B9EC3-L002866](../../agents/web_agent.py#L2866) | 2866 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
+| [SRC-1AE03B9EC3-L002867](../../agents/web_agent.py#L2867) | 2867 | `"                        # The model may still answer, but the optional server-side search"` | — |
+| [SRC-1AE03B9EC3-L002868](../../agents/web_agent.py#L2868) | 2868 | `"                        # tool is disabled when its separate budget is unavailable."` | — |
+| [SRC-1AE03B9EC3-L002869](../../agents/web_agent.py#L2869) | 2869 | `"                        use_web_search = False"` | — |
+| [SRC-1AE03B9EC3-L002870](../../agents/web_agent.py#L2870) | 2870 | `"                    elif use_web_search:"` | — |
+| [SRC-1AE03B9EC3-L002871](../../agents/web_agent.py#L2871) | 2871 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |
 | [SRC-1AE03B9EC3-L002872](../../agents/web_agent.py#L2872) | 2872 | `"                        budget.reserve(\"tool_calls\", amount=3)"` | — |
 | [SRC-1AE03B9EC3-L002873](../../agents/web_agent.py#L2873) | 2873 | `"                except RequestBudgetExceeded as exc:"` | — |
 | [SRC-1AE03B9EC3-L002874](../../agents/web_agent.py#L2874) | 2874 | `"                    self._record_generation_diagnostic("` | — |
@@ -789,30 +816,3 @@
 | [SRC-1AE03B9EC3-L003642](../../agents/web_agent.py#L3642) | 3642 | `"            \"status\": status,"` | — |
 | [SRC-1AE03B9EC3-L003643](../../agents/web_agent.py#L3643) | 3643 | `"            \"valid_citation_count\": citation_count,"` | — |
 | [SRC-1AE03B9EC3-L003644](../../agents/web_agent.py#L3644) | 3644 | `"            \"invalid_references_removed\": len(citation_warnings),"` | — |
-| [SRC-1AE03B9EC3-L003645](../../agents/web_agent.py#L3645) | 3645 | `"            \"max_citable_source_index\": max_citable_source_index,"` | — |
-| [SRC-1AE03B9EC3-L003646](../../agents/web_agent.py#L3646) | 3646 | `"            \"claim_support\": ("` | — |
-| [SRC-1AE03B9EC3-L003647](../../agents/web_agent.py#L3647) | 3647 | `"                \"model_review_not_independent_fact_check\""` | — |
-| [SRC-1AE03B9EC3-L003648](../../agents/web_agent.py#L3648) | 3648 | `"                if review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L003649](../../agents/web_agent.py#L3649) | 3649 | `"                else \"not_verified\""` | — |
-| [SRC-1AE03B9EC3-L003650](../../agents/web_agent.py#L3650) | 3650 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L003651](../../agents/web_agent.py#L3651) | 3651 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L003652](../../agents/web_agent.py#L3652) | 3652 | `""` | — |
-| [SRC-1AE03B9EC3-L003653](../../agents/web_agent.py#L3653) | 3653 | `"    def diagnostics("` | — |
-| [SRC-1AE03B9EC3-L003654](../../agents/web_agent.py#L3654) | 3654 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003655](../../agents/web_agent.py#L3655) | 3655 | `"        test_model: bool = True,"` | — |
-| [SRC-1AE03B9EC3-L003656](../../agents/web_agent.py#L3656) | 3656 | `"        test_social: bool = False,"` | — |
-| [SRC-1AE03B9EC3-L003657](../../agents/web_agent.py#L3657) | 3657 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003658](../../agents/web_agent.py#L3658) | 3658 | `"        \"\"\"Run explicit live checks without exposing credentials or retaining returned content.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003659](../../agents/web_agent.py#L3659) | 3659 | `"        import time"` | — |
-| [SRC-1AE03B9EC3-L003660](../../agents/web_agent.py#L3660) | 3660 | `"        from datetime import UTC, datetime"` | — |
-| [SRC-1AE03B9EC3-L003661](../../agents/web_agent.py#L3661) | 3661 | `""` | — |
-| [SRC-1AE03B9EC3-L003662](../../agents/web_agent.py#L3662) | 3662 | `"        started = time.monotonic()"` | — |
-| [SRC-1AE03B9EC3-L003663](../../agents/web_agent.py#L3663) | 3663 | `"        self._reset_deepseek_search_budget()"` | — |
-| [SRC-1AE03B9EC3-L003664](../../agents/web_agent.py#L3664) | 3664 | `"        # Keep this report scoped to the current diagnostics request, not earlier asks."` | — |
-| [SRC-1AE03B9EC3-L003665](../../agents/web_agent.py#L3665) | 3665 | `"        with self._provider_diagnostics_lock:"` | — |
-| [SRC-1AE03B9EC3-L003666](../../agents/web_agent.py#L3666) | 3666 | `"            self._provider_diagnostics = []"` | — |
-| [SRC-1AE03B9EC3-L003667](../../agents/web_agent.py#L3667) | 3667 | `"        self.model_usage = []"` | — |
-| [SRC-1AE03B9EC3-L003668](../../agents/web_agent.py#L3668) | 3668 | `"        report: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L003669](../../agents/web_agent.py#L3669) | 3669 | `"            \"timestamp_utc\": datetime.now(UTC).isoformat(timespec=\"seconds\"),"` | — |
-| [SRC-1AE03B9EC3-L003670](../../agents/web_agent.py#L3670) | 3670 | `"            \"checks\": {},"` | — |
-| [SRC-1AE03B9EC3-L003671](../../agents/web_agent.py#L3671) | 3671 | `"            \"configuration\": self.status(),"` | — |
