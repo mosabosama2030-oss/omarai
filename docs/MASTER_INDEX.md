@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **83**
-- ملفات Python المحللة: **42**
-- تعريفات Python المفهرسة: **1065**
+- ملفات المستودع في الجرد: **85**
+- ملفات Python المحللة: **43**
+- تعريفات Python المفهرسة: **1068**
 - تعريفات Python موثقة بوجود Docstring: **205**
-- تعريفات Python بلا Docstring: **654**
+- تعريفات Python بلا Docstring: **657**
 - تعريفات لا ينطبق عليها Docstring: **206**
-- الرموز الساكنة الإضافية: **1631**
-- الأسطر النصية المفهرسة حرفيًا: **28460**
+- الرموز الساكنة الإضافية: **1636**
+- الأسطر النصية المفهرسة حرفيًا: **28549**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -37,6 +37,7 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
+| FILE-19039BA967 | الوكيل والمنطق | [agents/answer_transparency.py](../agents/answer_transparency.py#L1) | Python | 2518 | 70 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11 | 1 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 22483 | 504 | جرد الملف + AST Python |
@@ -61,6 +62,7 @@
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 6869 | 43 | جرد الملف + عناوين Markdown |
+| FILE-16E5156C8A | وثائق وفهرسة | [docs/NLU_SEARCH_UPGRADE_STATUS_AR.md](NLU_SEARCH_UPGRADE_STATUS_AR.md#L1) | Markdown | 831 | 19 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
@@ -118,6 +120,9 @@
 
 | الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر | كود السطر للوصول المباشر |
 |---|---|---|---|---|---:|---|
+| [agents/answer_transparency.py](../agents/answer_transparency.py#L7) | دالة | build_aspect_answer_preamble | لا توجد Docstring. | ناقص | 7 | [SRC-19039BA967-L000007](../agents/answer_transparency.py#L7) |
+| [agents/answer_transparency.py](../agents/answer_transparency.py#L31) | دالة | enrich_answer_payload | لا توجد Docstring. | ناقص | 31 | [SRC-19039BA967-L000031](../agents/answer_transparency.py#L31) |
+| [agents/answer_transparency.py](../agents/answer_transparency.py#L57) | دالة | format_ui_diagnostics_block | لا توجد Docstring. | ناقص | 57 | [SRC-19039BA967-L000057](../agents/answer_transparency.py#L57) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L12) | متغير/ثابت Python | _DIGITS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-138992B1FC-L000012](../agents/answer_validation.py#L12) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L13) | متغير/ثابت Python | _ARABIC_NORMALIZATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-138992B1FC-L000013](../agents/answer_validation.py#L13) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L17) | متغير/ثابت Python | _DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-138992B1FC-L000017](../agents/answer_validation.py#L17) |
@@ -1668,6 +1673,11 @@
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 38 | [SRC-C8EA754D73-L000038](IMPLEMENTATION_SCOPE.md#L38) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 39 | [SRC-C8EA754D73-L000039](IMPLEMENTATION_SCOPE.md#L39) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 40 | [SRC-C8EA754D73-L000040](IMPLEMENTATION_SCOPE.md#L40) |
+| [docs/NLU_SEARCH_UPGRADE_STATUS_AR.md](NLU_SEARCH_UPGRADE_STATUS_AR.md#L1) | عنوان Markdown (H1) | حالة دمج حزمة NLU/Search على الفرع | 1 | [SRC-16E5156C8A-L000001](NLU_SEARCH_UPGRADE_STATUS_AR.md#L1) |
+| [docs/NLU_SEARCH_UPGRADE_STATUS_AR.md](NLU_SEARCH_UPGRADE_STATUS_AR.md#L5) | عنوان Markdown (H2) | ما يُدفع على الفرع | 5 | [SRC-16E5156C8A-L000005](NLU_SEARCH_UPGRADE_STATUS_AR.md#L5) |
+| [docs/NLU_SEARCH_UPGRADE_STATUS_AR.md](NLU_SEARCH_UPGRADE_STATUS_AR.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_AGENT_WIRE_AR | 10 | [SRC-16E5156C8A-L000010](NLU_SEARCH_UPGRADE_STATUS_AR.md#L10) |
+| [docs/NLU_SEARCH_UPGRADE_STATUS_AR.md](NLU_SEARCH_UPGRADE_STATUS_AR.md#L11) | عنوان Markdown (H2) | ما لم يُنفَّذ | 11 | [SRC-16E5156C8A-L000011](NLU_SEARCH_UPGRADE_STATUS_AR.md#L11) |
+| [docs/NLU_SEARCH_UPGRADE_STATUS_AR.md](NLU_SEARCH_UPGRADE_STATUS_AR.md#L16) | عنوان Markdown (H2) | الأمان | 16 | [SRC-16E5156C8A-L000016](NLU_SEARCH_UPGRADE_STATUS_AR.md#L16) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل الاستثناءات والقرارات المؤجلة | 1 | [SRC-21D5D044E2-L000001](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) | عنوان Markdown (H2) | 1. الغرض وقواعد الاستخدام | 8 | [SRC-21D5D044E2-L000008](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) | عنوان Markdown (H2) | 2. سجل الاستثناءات المعتمدة | 22 | [SRC-21D5D044E2-L000022](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) |
