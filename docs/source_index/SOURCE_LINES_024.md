@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000029 إلى SRC-90FAA34ADE-L000027
+- النطاق: SRC-4FFD5AFC54-L000018 إلى SRC-90FAA34ADE-L000016
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000018](../../scripts/run_answer_quality_benchmark.py#L18) | 18 | `"  python scripts/run_answer_quality_benchmark.py"` | — |
+| [SRC-4FFD5AFC54-L000019](../../scripts/run_answer_quality_benchmark.py#L19) | 19 | `"  python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
+| [SRC-4FFD5AFC54-L000020](../../scripts/run_answer_quality_benchmark.py#L20) | 20 | `"  python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 \\\\"` | — |
+| [SRC-4FFD5AFC54-L000021](../../scripts/run_answer_quality_benchmark.py#L21) | 21 | `"      --case-id AQ-001 --limit 1 --out /tmp/aq_results.json"` | — |
+| [SRC-4FFD5AFC54-L000022](../../scripts/run_answer_quality_benchmark.py#L22) | 22 | `"\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000023](../../scripts/run_answer_quality_benchmark.py#L23) | 23 | `"from __future__ import annotations"` | — |
+| [SRC-4FFD5AFC54-L000024](../../scripts/run_answer_quality_benchmark.py#L24) | 24 | `""` | — |
+| [SRC-4FFD5AFC54-L000025](../../scripts/run_answer_quality_benchmark.py#L25) | 25 | `"import argparse"` | — |
+| [SRC-4FFD5AFC54-L000026](../../scripts/run_answer_quality_benchmark.py#L26) | 26 | `"import ipaddress"` | — |
+| [SRC-4FFD5AFC54-L000027](../../scripts/run_answer_quality_benchmark.py#L27) | 27 | `"import json"` | — |
+| [SRC-4FFD5AFC54-L000028](../../scripts/run_answer_quality_benchmark.py#L28) | 28 | `"import os"` | — |
 | [SRC-4FFD5AFC54-L000029](../../scripts/run_answer_quality_benchmark.py#L29) | 29 | `"import sys"` | — |
 | [SRC-4FFD5AFC54-L000030](../../scripts/run_answer_quality_benchmark.py#L30) | 30 | `"import time"` | — |
 | [SRC-4FFD5AFC54-L000031](../../scripts/run_answer_quality_benchmark.py#L31) | 31 | `"import urllib.error"` | — |
@@ -832,14 +843,3 @@
 | [SRC-90FAA34ADE-L000014](../../tests/fixtures/answer_quality_cases.json#L14) | 14 | `"    \"fixture_assisted\","` | — |
 | [SRC-90FAA34ADE-L000015](../../tests/fixtures/answer_quality_cases.json#L15) | 15 | `"    \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000016](../../tests/fixtures/answer_quality_cases.json#L16) | 16 | `"  ],"` | — |
-| [SRC-90FAA34ADE-L000017](../../tests/fixtures/answer_quality_cases.json#L17) | 17 | `"  \"case_count\": 45,"` | — |
-| [SRC-90FAA34ADE-L000018](../../tests/fixtures/answer_quality_cases.json#L18) | 18 | `"  \"cases\": ["` | — |
-| [SRC-90FAA34ADE-L000019](../../tests/fixtures/answer_quality_cases.json#L19) | 19 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000020](../../tests/fixtures/answer_quality_cases.json#L20) | 20 | `"      \"case_id\": \"AQ-001\","` | — |
-| [SRC-90FAA34ADE-L000021](../../tests/fixtures/answer_quality_cases.json#L21) | 21 | `"      \"category\": \"simple_conversational\","` | — |
-| [SRC-90FAA34ADE-L000022](../../tests/fixtures/answer_quality_cases.json#L22) | 22 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000023](../../tests/fixtures/answer_quality_cases.json#L23) | 23 | `"      \"question\": \"ازيك؟ عامل ايه النهاردة؟\","` | — |
-| [SRC-90FAA34ADE-L000024](../../tests/fixtures/answer_quality_cases.json#L24) | 24 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000025](../../tests/fixtures/answer_quality_cases.json#L25) | 25 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000026](../../tests/fixtures/answer_quality_cases.json#L26) | 26 | `"        \"Responds in Arabic in a brief friendly way\","` | — |
-| [SRC-90FAA34ADE-L000027](../../tests/fixtures/answer_quality_cases.json#L27) | 27 | `"        \"Does not invent current events or weather\","` | — |
