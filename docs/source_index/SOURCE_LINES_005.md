@@ -762,7 +762,7 @@
 | [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"    )"` | — |
 | [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"    result: list[str] = []"` | — |
 | [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"    for canonical, cues in known:"` | — |
-| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"        if any(normalize_text(cue) in normalized for cue in cues):"` | — |
+| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"        if any(_contains(normalized, (cue,)) for cue in cues):"` | — |
 | [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"            result.append(canonical)"` | — |
 | [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"    return result"` | — |
 | [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `""` | — |
@@ -824,7 +824,7 @@
 | [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"    official_destination = bool(matches[\"official_site_lookup\"])"` | — |
 | [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"    government_official_site = bool("` | — |
 | [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"        official_destination"` | — |
-| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"        and any(normalize_text(word) in normalized for word in _OFFICIAL_WORDS)"` | — |
+| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"        and bool(_contains(normalized, _OFFICIAL_WORDS))"` | — |
 | [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `"    )"` | — |
 | [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `"    navigation = official_destination or bool("` | — |
 | [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"        _URL_RE.search(raw)"` | — |
