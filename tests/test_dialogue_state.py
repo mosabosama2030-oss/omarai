@@ -42,6 +42,38 @@ def test_topic_shift_is_a_hard_boundary_against_stale_context() -> None:
     assert context["is_follow_up"] is False
     assert context["resolved_question"] == question
     assert context["resolution_basis"] == "current_message"
+    assert context["topic"] == ""
+    assert context["entities"] == []
+    assert context["slots"] == {}
+    assert context["changed_slots"] == []
+
+
+def test_standalone_question_cannot_inherit_old_topic_without_followup_signal() -> None:
+    question = "ازاي أنظف شاشة اللابتوب بأمان؟"
+    history = [
+        {"role": "user", "content": "قارن iPhone 17 وSamsung S26 من حيث السعر"},
+        {"role": "assistant", "content": "هذه مقارنة بين هاتفين."},
+    ]
+    proposed = {
+        "resolved_question": "قارن iPhone 17 ثم ازاي أنظف شاشة اللابتوب بأمان",
+        "topic": "مقارنة الهواتف",
+        "entities": ["iPhone 17", "Samsung S26"],
+        "slots": {"product": "iPhone 17", "country": "مصر"},
+        "changed_slots": ["aspect"],
+        "is_follow_up": False,
+        "topic_shift": False,
+        "intent": "how_to",
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["resolved_question"] == question
+    assert context["is_follow_up"] is False
+    assert context["topic"] == ""
+    assert context["entities"] == []
+    assert context["slots"] == {}
+    assert context["changed_slots"] == []
 
 
 def test_model_context_is_bounded_and_unknown_slots_are_dropped() -> None:
