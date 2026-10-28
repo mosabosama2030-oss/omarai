@@ -69,12 +69,13 @@ def build_claim_evidence_ledger(
             source = safe_sources[index - 1]
             basis = _evidence_basis(source)
             valid_refs += 1
-            has_readable = has_readable or basis != "no_readable_evidence"
+            # Titles are useful metadata, but not readable source text for checking entailment.
+            has_readable = has_readable or basis in {"extracted_page_text", "search_snippet"}
             refs.append({
                 "source_index": index,
                 "reference_status": (
                     "valid_index_with_readable_evidence"
-                    if basis != "no_readable_evidence"
+                    if basis in {"extracted_page_text", "search_snippet"}
                     else "valid_index_without_readable_evidence"
                 ),
                 "title": str(source.get("title") or "")[:240],
