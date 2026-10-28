@@ -240,7 +240,7 @@ def _extract_explicit_locations(question: str) -> list[str]:
     )
     result: list[str] = []
     for canonical, cues in known:
-        if any(normalize_text(cue) in normalized for cue in cues):
+        if any(_contains(normalized, (cue,)) for cue in cues):
             result.append(canonical)
     return result
 
@@ -302,7 +302,7 @@ def build_task_spec(
     official_destination = bool(matches["official_site_lookup"])
     government_official_site = bool(
         official_destination
-        and any(normalize_text(word) in normalized for word in _OFFICIAL_WORDS)
+        and bool(_contains(normalized, _OFFICIAL_WORDS))
     )
     navigation = official_destination or bool(
         _URL_RE.search(raw)
