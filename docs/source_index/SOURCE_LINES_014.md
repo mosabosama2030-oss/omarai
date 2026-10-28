@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006081 إلى SRC-792A9A235D-L000011
+- النطاق: SRC-1AE03B9EC3-L006081 إلى SRC-9C97DF51AC-L000039
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,11 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L006081](../../agents/web_agent.py#L6081) | 6081 | `"            \"kind\": \"web_research\" if used_llm else \"web_fallback\","` | — |
-| [SRC-1AE03B9EC3-L006082](../../agents/web_agent.py#L6082) | 6082 | `"            \"final_answer_status\": final_answer_status,"` | — |
-| [SRC-1AE03B9EC3-L006083](../../agents/web_agent.py#L6083) | 6083 | `"            \"intent_route\": intent_route,"` | — |
-| [SRC-1AE03B9EC3-L006084](../../agents/web_agent.py#L6084) | 6084 | `"            \"intent_route_reason\": intent_reason,"` | — |
-| [SRC-1AE03B9EC3-L006085](../../agents/web_agent.py#L6085) | 6085 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L006081](../../agents/web_agent.py#L6081) | 6081 | `"                \"lead_intent_evidence\": source.get(\"lead_intent_evidence\"),"` | — |
+| [SRC-1AE03B9EC3-L006082](../../agents/web_agent.py#L6082) | 6082 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L006083](../../agents/web_agent.py#L6083) | 6083 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L006084](../../agents/web_agent.py#L6084) | 6084 | `"            \"answer\": answer,"` | — |
+| [SRC-1AE03B9EC3-L006085](../../agents/web_agent.py#L6085) | 6085 | `"            \"question\": question,"` | — |
+| [SRC-1AE03B9EC3-L006086](../../agents/web_agent.py#L6086) | 6086 | `"            \"search_query\": (plan.get(\"queries\") or [\"\"])[0],"` | — |
+| [SRC-1AE03B9EC3-L006087](../../agents/web_agent.py#L6087) | 6087 | `"            \"search_queries\": plan.get(\"queries\", []),"` | — |
+| [SRC-1AE03B9EC3-L006088](../../agents/web_agent.py#L6088) | 6088 | `"            \"research_plan\": {"` | — |
+| [SRC-1AE03B9EC3-L006089](../../agents/web_agent.py#L6089) | 6089 | `"                \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-1AE03B9EC3-L006090](../../agents/web_agent.py#L6090) | 6090 | `"                \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
+| [SRC-1AE03B9EC3-L006091](../../agents/web_agent.py#L6091) | 6091 | `"                \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
+| [SRC-1AE03B9EC3-L006092](../../agents/web_agent.py#L6092) | 6092 | `"                \"platforms\": plan.get(\"platforms\", []),"` | — |
+| [SRC-1AE03B9EC3-L006093](../../agents/web_agent.py#L6093) | 6093 | `"                \"mode\": clean_mode,"` | — |
+| [SRC-1AE03B9EC3-L006094](../../agents/web_agent.py#L6094) | 6094 | `"                \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
+| [SRC-1AE03B9EC3-L006095](../../agents/web_agent.py#L6095) | 6095 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
+| [SRC-1AE03B9EC3-L006096](../../agents/web_agent.py#L6096) | 6096 | `"                \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
+| [SRC-1AE03B9EC3-L006097](../../agents/web_agent.py#L6097) | 6097 | `"                \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L006098](../../agents/web_agent.py#L6098) | 6098 | `"                \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L006099](../../agents/web_agent.py#L6099) | 6099 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L006100](../../agents/web_agent.py#L6100) | 6100 | `"            \"search_report\": report,"` | — |
+| [SRC-1AE03B9EC3-L006101](../../agents/web_agent.py#L6101) | 6101 | `"            \"sources\": public_sources,"` | — |
+| [SRC-1AE03B9EC3-L006102](../../agents/web_agent.py#L6102) | 6102 | `"            \"research_quality\": research_quality,"` | — |
+| [SRC-1AE03B9EC3-L006103](../../agents/web_agent.py#L6103) | 6103 | `"            \"citation_validation\": citation_validation,"` | — |
+| [SRC-1AE03B9EC3-L006104](../../agents/web_agent.py#L6104) | 6104 | `"            \"answer_evidence_status\": answer_evidence_status,"` | — |
+| [SRC-1AE03B9EC3-L006105](../../agents/web_agent.py#L6105) | 6105 | `"            \"answer_coverage\": answer_coverage,"` | — |
+| [SRC-1AE03B9EC3-L006106](../../agents/web_agent.py#L6106) | 6106 | `"            \"answer_integrity\": answer_integrity,"` | — |
+| [SRC-1AE03B9EC3-L006107](../../agents/web_agent.py#L6107) | 6107 | `"            \"task_fulfillment_status\": task_fulfillment_status,"` | — |
+| [SRC-1AE03B9EC3-L006108](../../agents/web_agent.py#L6108) | 6108 | `"            \"coverage_repair_status\": coverage_repair_status,"` | — |
+| [SRC-1AE03B9EC3-L006109](../../agents/web_agent.py#L6109) | 6109 | `"            \"used_language_model\": used_llm,"` | — |
+| [SRC-1AE03B9EC3-L006110](../../agents/web_agent.py#L6110) | 6110 | `"            \"used_web_search\": bool(sources),"` | — |
+| [SRC-1AE03B9EC3-L006111](../../agents/web_agent.py#L6111) | 6111 | `"            \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L006112](../../agents/web_agent.py#L6112) | 6112 | `"            \"used_social_search\": bool(report.get(\"social_direct_results\", 0)),"` | — |
+| [SRC-1AE03B9EC3-L006113](../../agents/web_agent.py#L6113) | 6113 | `"            \"warnings\": warnings,"` | — |
+| [SRC-1AE03B9EC3-L006114](../../agents/web_agent.py#L6114) | 6114 | `"            \"kind\": \"web_research\" if used_llm else \"web_fallback\","` | — |
+| [SRC-1AE03B9EC3-L006115](../../agents/web_agent.py#L6115) | 6115 | `"            \"final_answer_status\": final_answer_status,"` | — |
+| [SRC-1AE03B9EC3-L006116](../../agents/web_agent.py#L6116) | 6116 | `"            \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L006117](../../agents/web_agent.py#L6117) | 6117 | `"            \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L006118](../../agents/web_agent.py#L6118) | 6118 | `"        }"` | — |
 ## واجهات API
 
 ### FILE-D8438CDB65 — [api/__init__.py](../../api/__init__.py#L1)
@@ -828,54 +861,3 @@
 | [SRC-9C97DF51AC-L000037](../../cli/omarai.py#L37) | 37 | `"        print(json.dumps(store.list(args.status,args.limit),ensure_ascii=False,indent=2))"` | — |
 | [SRC-9C97DF51AC-L000038](../../cli/omarai.py#L38) | 38 | `"    elif args.command==\"export-csv\":"` | — |
 | [SRC-9C97DF51AC-L000039](../../cli/omarai.py#L39) | 39 | `"        print(f\"Exported {store.export_csv(args.file)} leads to {args.file}\")"` | — |
-| [SRC-9C97DF51AC-L000040](../../cli/omarai.py#L40) | 40 | `"if __name__==\"__main__\":"` | — |
-| [SRC-9C97DF51AC-L000041](../../cli/omarai.py#L41) | 41 | `"    main()"` | — |
-## إعدادات وتشغيل
-
-### FILE-DD2C0EB6EA — [Dockerfile](../../Dockerfile#L1)
-
-- النوع: **Dockerfile**
-- نطاق الفهرسة: جرد الملف + أسماء إعدادات عامة إن وجدت
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-DD2C0EB6EA-L000001](../../Dockerfile#L1) | 1 | `"FROM python:3.12-slim"` | — |
-| [SRC-DD2C0EB6EA-L000002](../../Dockerfile#L2) | 2 | `""` | — |
-| [SRC-DD2C0EB6EA-L000003](../../Dockerfile#L3) | 3 | `"ARG OMARAI_BUILD_SHA=unknown"` | — |
-| [SRC-DD2C0EB6EA-L000004](../../Dockerfile#L4) | 4 | `"ARG PUBLIC_OMARAI_BUILD_SHA=unknown"` | — |
-| [SRC-DD2C0EB6EA-L000005](../../Dockerfile#L5) | 5 | `"ENV PYTHONDONTWRITEBYTECODE=1 \\"` | — |
-| [SRC-DD2C0EB6EA-L000006](../../Dockerfile#L6) | 6 | `"    PYTHONUNBUFFERED=1 \\"` | — |
-| [SRC-DD2C0EB6EA-L000007](../../Dockerfile#L7) | 7 | `"    PIP_DISABLE_PIP_VERSION_CHECK=1"` | — |
-| [SRC-DD2C0EB6EA-L000008](../../Dockerfile#L8) | 8 | `""` | — |
-| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"WORKDIR /app"` | — |
-| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY pyproject.toml README.md ./"` | — |
-| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY agents ./agents"` | — |
-| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY api ./api"` | — |
-| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY cli ./cli"` | — |
-| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
-| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
-| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
-| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
-| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
-| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
-| [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
-## وثائق وفهرسة
-
-### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-792A9A235D-L000001](../ANSWER_QUALITY_BENCHMARK_AR.md#L1) | 1 | `"# معيار تقييم جودة الإجابة (عدائي / Red-Team)"` | — |
-| [SRC-792A9A235D-L000002](../ANSWER_QUALITY_BENCHMARK_AR.md#L2) | 2 | `""` | — |
-| [SRC-792A9A235D-L000003](../ANSWER_QUALITY_BENCHMARK_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-REDTEAM-001  "` | — |
-| [SRC-792A9A235D-L000004](../ANSWER_QUALITY_BENCHMARK_AR.md#L4) | 4 | `"**الإصدار:** 1.1.0 (تصحيح أمثلة الحالة + بروتوكول المقارنة)  "` | — |
-| [SRC-792A9A235D-L000005](../ANSWER_QUALITY_BENCHMARK_AR.md#L5) | 5 | ``"**مرجع الكود عند التصميم:** `ac05f4777f140694b285c5364e6c3875fdecdae6` (main)"`` | — |
-| [SRC-792A9A235D-L000006](../ANSWER_QUALITY_BENCHMARK_AR.md#L6) | 6 | `""` | — |
-| [SRC-792A9A235D-L000007](../ANSWER_QUALITY_BENCHMARK_AR.md#L7) | 7 | `"هذا المجلد يوفّر **مجموعة تقييم قابلة لإعادة التشغيل** لفحص فهم عمرai، استراتيجية البحث، استخدام الأدلة، التعامل مع عدم اليقين، والأمان."` | — |
-| [SRC-792A9A235D-L000008](../ANSWER_QUALITY_BENCHMARK_AR.md#L8) | 8 | `""` | — |
-| [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
-| [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
-| [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |

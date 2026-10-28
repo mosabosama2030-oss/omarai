@@ -4,9 +4,32 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000020 إلى SRC-E599346ABE-L000712
+- النطاق: SRC-D57B0BB030-L000053 إلى SRC-E599346ABE-L000679
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-D57B0BB030 — [docs/DEPLOY_RENDER_AR.md](../DEPLOY_RENDER_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D57B0BB030-L000053](../DEPLOY_RENDER_AR.md#L53) | 53 | `""` | — |
+| [SRC-D57B0BB030-L000054](../DEPLOY_RENDER_AR.md#L54) | 54 | ``"ملف قبول التشغيل `scripts/hosted_smoke_test.py` متاح على الفرع الذي أُعدّت فيه هذه الحزمة. بعد دمجه في `main`، أضف GitHub Actions secrets باسم `OMARAI_ACCESS_TOKEN` (نفس رمز الخدمة) و`OMARAI_BASE_URL` (أصل HTTPS للخدمة فقط)، ثم شغّل workflow اليدوي `Omarai hosted acceptance smoke`. يستخدم الاختبار العنوان المحفوظ في إعدادات المستودع لتجنب إرسال رمز الوصول إلى عنوان حرّ. الاختبار ينفذ اتصالات بحث ونموذج فعلية وقد يستهلك استخدامًا من حساب المزود."`` | — |
+| [SRC-D57B0BB030-L000055](../DEPLOY_RENDER_AR.md#L55) | 55 | `""` | — |
+| [SRC-D57B0BB030-L000056](../DEPLOY_RENDER_AR.md#L56) | 56 | `"إذا لم تدمج حزمة الاختبار بعد، استخدم زر الاختبار الحي المدمج في واجهة Omarai، ثم أجرِ فحص HTTP 401 دون رمز وصول، وتجربة سؤال عربي ومراجعة المصادر."` | — |
+| [SRC-D57B0BB030-L000057](../DEPLOY_RENDER_AR.md#L57) | 57 | `""` | — |
+| [SRC-D57B0BB030-L000058](../DEPLOY_RENDER_AR.md#L58) | 58 | `"## إذا فشل النشر"` | — |
+| [SRC-D57B0BB030-L000059](../DEPLOY_RENDER_AR.md#L59) | 59 | `""` | — |
+| [SRC-D57B0BB030-L000060](../DEPLOY_RENDER_AR.md#L60) | 60 | `"- افتح Logs على Render، ولا تنشر أي قيمة سرية في Issue عام."` | — |
+| [SRC-D57B0BB030-L000061](../DEPLOY_RENDER_AR.md#L61) | 61 | ``"- تحقق أن الخادم يستمع على الواجهة العامة والمنفذ الذي توفره بيئة الاستضافة؛ يستخدم Dockerfile الحالي متغير `PORT`."`` | — |
+| [SRC-D57B0BB030-L000062](../DEPLOY_RENDER_AR.md#L62) | 62 | ``"- إذا كانت الخدمة تبدأ ثم تفشل فحص الصحة، راجع أن `/api/health` يعيد HTTP 200."`` | — |
+| [SRC-D57B0BB030-L000063](../DEPLOY_RENDER_AR.md#L63) | 63 | ``"- تحقق أن `OMARAI_PUBLIC_DEPLOYMENT=1` ورمز الوصول مضبوطين، وأن الرمز 32 حرفًا على الأقل."`` | — |
+| [SRC-D57B0BB030-L000064](../DEPLOY_RENDER_AR.md#L64) | 64 | `"- إذا فشل النموذج، تحقق من صحة مفتاح المزود وحدوده. وإذا فشل البحث فقط، قد تكون محركات البحث العامة حظرت الطلب أو لم ترجع نتائج قابلة للتحليل."` | — |
+| [SRC-D57B0BB030-L000065](../DEPLOY_RENDER_AR.md#L65) | 65 | `""` | — |
+| [SRC-D57B0BB030-L000066](../DEPLOY_RENDER_AR.md#L66) | 66 | `"راجع كذلك [دليل القبول العام](GO_LIVE_CHECKLIST_AR.md) قبل اعتماد النسخة."` | — |
 ## وثائق وفهرسة
 
 ### FILE-51D44BE378 — [docs/DEPLOY_SNAPDEPLOY_AR.md](../DEPLOY_SNAPDEPLOY_AR.md#L1)
@@ -16,6 +39,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000001](../DEPLOY_SNAPDEPLOY_AR.md#L1) | 1 | `"# نشر Omarai على SnapDeploy Free — دليل عربي"` | — |
+| [SRC-51D44BE378-L000002](../DEPLOY_SNAPDEPLOY_AR.md#L2) | 2 | `""` | — |
+| [SRC-51D44BE378-L000003](../DEPLOY_SNAPDEPLOY_AR.md#L3) | 3 | ``"هذا دليل بديل للنشر بعد تعذّر Render. الإعداد الموجود في المستودع متوافق مبدئيًا مع تشغيل Docker على SnapDeploy: `Dockerfile` في جذر المشروع، وخادم يستمع على `0.0.0.0` والمنفذ الذي توفره البيئة، وفحص صحة عبر `/api/health`. **هذا الدليل لا يعني أن حسابًا أو خدمة قد أُنشئت بالفعل.**"`` | — |
+| [SRC-51D44BE378-L000004](../DEPLOY_SNAPDEPLOY_AR.md#L4) | 4 | `""` | — |
+| [SRC-51D44BE378-L000005](../DEPLOY_SNAPDEPLOY_AR.md#L5) | 5 | `"## حدود الخطة المجانية — راجعها قبل النشر"` | — |
+| [SRC-51D44BE378-L000006](../DEPLOY_SNAPDEPLOY_AR.md#L6) | 6 | `""` | — |
+| [SRC-51D44BE378-L000007](../DEPLOY_SNAPDEPLOY_AR.md#L7) | 7 | `"بحسب وثائق SnapDeploy الحالية وقت كتابة الدليل:"` | — |
+| [SRC-51D44BE378-L000008](../DEPLOY_SNAPDEPLOY_AR.md#L8) | 8 | `"- لا يلزم إدخال بطاقة دفع للبدء في الخطة المجانية."` | — |
+| [SRC-51D44BE378-L000009](../DEPLOY_SNAPDEPLOY_AR.md#L9) | 9 | `"- الحد المشترك هو 100 ساعة تشغيل للحاويات شهريًا، وحتى 4 حاويات بالحجم الصغير."` | — |
+| [SRC-51D44BE378-L000010](../DEPLOY_SNAPDEPLOY_AR.md#L10) | 10 | `"- الحاوية الصغيرة لها 512 MB RAM و0.25 vCPU، وتدخل في السكون بعد نحو 15 دقيقة بلا زيارات؛ قد يستغرق الاستيقاظ قرابة 60 ثانية."` | — |
+| [SRC-51D44BE378-L000011](../DEPLOY_SNAPDEPLOY_AR.md#L11) | 11 | `"- لا يوجد قرص دائم في الخطة المجانية؛ يُعاد ضبط نظام الملفات عند الاستيقاظ أو إعادة التشغيل أو النشر."` | — |
+| [SRC-51D44BE378-L000012](../DEPLOY_SNAPDEPLOY_AR.md#L12) | 12 | `"- يحصل التطبيق على عنوان HTTPS فرعي وشهادة TLS."` | — |
+| [SRC-51D44BE378-L000013](../DEPLOY_SNAPDEPLOY_AR.md#L13) | 13 | `""` | — |
+| [SRC-51D44BE378-L000014](../DEPLOY_SNAPDEPLOY_AR.md#L14) | 14 | `"قد تتغير الحدود والشروط؛ راجع [وثائق الخطة المجانية](https://snapdeploy.dev/docs/free-tier) قبل المتابعة. الخطة مناسبة لتجربة شخصية واختبار قبول، وليست تشغيلًا دائمًا أو مكانًا لحفظ بيانات عملاء."` | — |
+| [SRC-51D44BE378-L000015](../DEPLOY_SNAPDEPLOY_AR.md#L15) | 15 | `""` | — |
+| [SRC-51D44BE378-L000016](../DEPLOY_SNAPDEPLOY_AR.md#L16) | 16 | `"## 1. إنشاء الحساب وربط GitHub"` | — |
+| [SRC-51D44BE378-L000017](../DEPLOY_SNAPDEPLOY_AR.md#L17) | 17 | `""` | — |
+| [SRC-51D44BE378-L000018](../DEPLOY_SNAPDEPLOY_AR.md#L18) | 18 | `"1. افتح [SnapDeploy](https://snapdeploy.dev/) من متصفح الهاتف وأنشئ حسابًا بالبريد أو عبر GitHub."` | — |
+| [SRC-51D44BE378-L000019](../DEPLOY_SNAPDEPLOY_AR.md#L19) | 19 | `"2. أكّد البريد إذا طُلب ذلك، ثم افتح لوحة التحكم."` | — |
 | [SRC-51D44BE378-L000020](../DEPLOY_SNAPDEPLOY_AR.md#L20) | 20 | `"3. اختر **Deploy** ثم طريقة النشر من **GitHub repository**."` | — |
 | [SRC-51D44BE378-L000021](../DEPLOY_SNAPDEPLOY_AR.md#L21) | 21 | `"4. اربط حساب GitHub. إذا ظهرت إعدادات اختيار المستودعات، امنح الحد الأدنى من الوصول المطلوب بدل توسيع الصلاحيات بلا حاجة."` | — |
 | [SRC-51D44BE378-L000022](../DEPLOY_SNAPDEPLOY_AR.md#L22) | 22 | ``"5. اختر المستودع `mosabosama2030-oss/omarai)، والفرع `main)، ومجلد الجذر الذي يحتوي على `Dockerfile`."`` | — |
@@ -792,36 +834,3 @@
 | [SRC-E599346ABE-L000677](../generate_index.py#L677) | 677 | `"            failures.append("` | — |
 | [SRC-E599346ABE-L000678](../generate_index.py#L678) | 678 | `"                f\"{source_line.file}:{source_line.line}: نص السطر لا يطابق المصدر\""` | — |
 | [SRC-E599346ABE-L000679](../generate_index.py#L679) | 679 | `"            )"` | — |
-| [SRC-E599346ABE-L000680](../generate_index.py#L680) | 680 | `""` | — |
-| [SRC-E599346ABE-L000681](../generate_index.py#L681) | 681 | `"        expected_line_id = _source_line_id(source_line.file, source_line.line)"` | — |
-| [SRC-E599346ABE-L000682](../generate_index.py#L682) | 682 | `"        if source_line.line_id != expected_line_id:"` | — |
-| [SRC-E599346ABE-L000683](../generate_index.py#L683) | 683 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000684](../generate_index.py#L684) | 684 | `"                f\"{source_line.file}:{source_line.line}: كود SRC لا يطابق المسار ورقم السطر\""` | — |
-| [SRC-E599346ABE-L000685](../generate_index.py#L685) | 685 | `"            )"` | — |
-| [SRC-E599346ABE-L000686](../generate_index.py#L686) | 686 | `"        if source_line.file_id != _stable_file_id(source_line.file):"` | — |
-| [SRC-E599346ABE-L000687](../generate_index.py#L687) | 687 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000688](../generate_index.py#L688) | 688 | `"                f\"{source_line.file}:{source_line.line}: كود FILE لا يطابق مسار الملف\""` | — |
-| [SRC-E599346ABE-L000689](../generate_index.py#L689) | 689 | `"            )"` | — |
-| [SRC-E599346ABE-L000690](../generate_index.py#L690) | 690 | `"        if source_line.file_id != expected_item.file_id:"` | — |
-| [SRC-E599346ABE-L000691](../generate_index.py#L691) | 691 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000692](../generate_index.py#L692) | 692 | `"                f\"{source_line.file}:{source_line.line}: معرّف الملف لا يطابق الجرد\""` | — |
-| [SRC-E599346ABE-L000693](../generate_index.py#L693) | 693 | `"            )"` | — |
-| [SRC-E599346ABE-L000694](../generate_index.py#L694) | 694 | `"        if source_line.category != expected_item.category:"` | — |
-| [SRC-E599346ABE-L000695](../generate_index.py#L695) | 695 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000696](../generate_index.py#L696) | 696 | `"                f\"{source_line.file}:{source_line.line}: تصنيف السطر لا يطابق الجرد\""` | — |
-| [SRC-E599346ABE-L000697](../generate_index.py#L697) | 697 | `"            )"` | — |
-| [SRC-E599346ABE-L000698](../generate_index.py#L698) | 698 | `"        if source_line.line_id in seen_ids:"` | — |
-| [SRC-E599346ABE-L000699](../generate_index.py#L699) | 699 | `"            failures.append(f\"{source_line.file}:{source_line.line}: معرّف SRC مكرر\")"` | — |
-| [SRC-E599346ABE-L000700](../generate_index.py#L700) | 700 | `"        seen_ids.add(source_line.line_id)"` | — |
-| [SRC-E599346ABE-L000701](../generate_index.py#L701) | 701 | `""` | — |
-| [SRC-E599346ABE-L000702](../generate_index.py#L702) | 702 | `"    for file, item in eligible_files.items():"` | — |
-| [SRC-E599346ABE-L000703](../generate_index.py#L703) | 703 | `"        actual = sorted(actual_lines[file])"` | — |
-| [SRC-E599346ABE-L000704](../generate_index.py#L704) | 704 | `"        expected = list(range(1, (item.line_count or 0) + 1))"` | — |
-| [SRC-E599346ABE-L000705](../generate_index.py#L705) | 705 | `"        if actual != expected:"` | — |
-| [SRC-E599346ABE-L000706](../generate_index.py#L706) | 706 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000707](../generate_index.py#L707) | 707 | `"                f\"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، \""` | — |
-| [SRC-E599346ABE-L000708](../generate_index.py#L708) | 708 | `"                f\"الموجود {len(actual)}\""` | — |
-| [SRC-E599346ABE-L000709](../generate_index.py#L709) | 709 | `"            )"` | — |
-| [SRC-E599346ABE-L000710](../generate_index.py#L710) | 710 | `""` | — |
-| [SRC-E599346ABE-L000711](../generate_index.py#L711) | 711 | `"    if failures:"` | — |
-| [SRC-E599346ABE-L000712](../generate_index.py#L712) | 712 | `"        raise IndexGenerationError("` | — |
