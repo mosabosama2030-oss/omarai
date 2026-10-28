@@ -1,6 +1,14 @@
 """Regression and adversarial tests for depth, freshness, relevance, evidence."""
 from __future__ import annotations
 
+from datetime import UTC, datetime
+
+from agents.research_guardrails import (
+    apply_source_guardrails,
+    assess_current_source,
+    classify_social_source,
+    requires_official_government_domain,
+)
 from agents.research import (
     decide_evidence_status,
     detect_depth,
@@ -193,3 +201,210 @@ def test_evidence_partial_single_source():
     decision = decide_evidence_status(sources, pages_read=1)
     assert decision["evidence_status"] == "partial"
     assert decision["should_abstain"] is False
+
+
+
+# --- task-specific evidence guardrails ---------------------------------------
+
+_GUARDRAIL_NOW = datetime(2026, 10, 28, 12, 0, tzinfo=UTC)
+
+
+def _guardrail_source(
+    url: str,
+    *,
+    title: str = "معلومات عن وزارة الاتصالات",
+    snippet: str = "معلومات عن وزارة الاتصالات وتكنولوجيا المعلومات في مصر",
+    published_at: str = "2026-10-27T10:00:00Z",
+    page_fetched: bool = True,
+    page_text: str = "نص مقروء من الصفحة عن وزارة الاتصالات",
+) -> dict:
+    return {
+        "title": title,
+        "url": url,
+        "snippet": snippet,
+        "published_at": published_at,
+        "page_fetched": page_fetched,
+        "page_text": page_text,
+    }
+
+
+def test_official_government_website_request_rejects_tourism_domain() -> None:
+    question = "ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية"
+    assert requires_official_government_domain(question)
+    candidates = [
+        _guardrail_source(
+            "https://visitegypt.com/",
+            title="وزارة الاتصالات في مصر ومعلومات سياحية",
+        ),
+        _guardrail_source(
+            "https://mcit.gov.eg/",
+            title="وزارة الاتصالات وتكنولوجيا المعلومات - الموقع الرسمي",
+        ),
+    ]
+
+    accepted, report = apply_source_guardrails(
+        question, "auto", {"freshness": "any"}, candidates, now=_GUARDRAIL_NOW
+    )
+
+    assert [item["url"] for item in accepted] == ["https://mcit.gov.eg/"]
+    assert report["official_government_domain_required"] is True
+    assert report["rejection_counts"] == {"not_an_official_government_domain": 1}
+    assert "not independently verified" in report["official_domain_policy"]
+
+
+def test_official_request_fails_closed_when_only_non_government_result_exists() -> None:
+    accepted, report = apply_source_guardrails(
+        "الموقع الرسمي لوزارة الاتصالات المصرية",
+        "auto",
+        {"freshness": "any"},
+        [_guardrail_source("https://visitegypt.com/")],
+        now=_GUARDRAIL_NOW,
+    )
+
+    assert accepted == []
+    assert report["accepted_sources"] == 0
+    assert report["current_evidence_status"] == "not_required"
+
+
+def test_current_evidence_requires_recent_date_and_readable_page() -> None:
+    recent = _guardrail_source("https://example.com/current")
+    stale = _guardrail_source(
+        "https://example.org/old", published_at="2024-06-01T10:00:00Z"
+    )
+    undated = _guardrail_source("https://example.net/undated", published_at="")
+    unread = _guardrail_source(
+        "https://example.edu/unread", page_fetched=False, page_text=""
+    )
+
+    assert assess_current_source(recent, now=_GUARDRAIL_NOW)["eligible"] is True
+    assert assess_current_source(stale, now=_GUARDRAIL_NOW)["status"] == "stale"
+    assert assess_current_source(undated, now=_GUARDRAIL_NOW)["status"] == "date_unavailable"
+    assert assess_current_source(unread, now=_GUARDRAIL_NOW)["status"] == "page_not_read"
+
+
+def test_latest_mode_excludes_old_undated_and_unread_pages() -> None:
+    candidates = [
+        _guardrail_source("https://example.com/recent"),
+        _guardrail_source(
+            "https://example.org/old", published_at="2023-11-15T10:00:00Z"
+        ),
+        _guardrail_source("https://example.net/undated", published_at=""),
+        _guardrail_source(
+            "https://example.edu/unread", page_fetched=False, page_text=""
+        ),
+    ]
+    accepted, report = apply_source_guardrails(
+        "مواعيد عمل مكتب الجوازات اليوم",
+        "latest",
+        {"freshness": "current"},
+        candidates,
+        now=_GUARDRAIL_NOW,
+    )
+
+    assert [item["url"] for item in accepted] == ["https://example.com/recent"]
+    assert report["current_evidence_required"] is True
+    assert report["current_evidence_status"] == "eligible_recent_read_pages_only"
+    assert report["rejection_counts"] == {
+        "stale": 1,
+        "date_unavailable": 1,
+        "page_not_read": 1,
+    }
+
+
+def test_official_site_navigation_does_not_require_news_publication_date() -> None:
+    question = "ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية"
+    official_page = _guardrail_source(
+        "https://mcit.gov.eg/",
+        published_at="",
+        title="وزارة الاتصالات وتكنولوجيا المعلومات - الموقع الرسمي",
+    )
+
+    accepted, report = apply_source_guardrails(
+        question,
+        "latest",
+        {"freshness": "current"},
+        [official_page],
+        now=_GUARDRAIL_NOW,
+    )
+
+    assert len(accepted) == 1
+    assert report["current_evidence_required"] is False
+
+
+def test_social_mode_rejects_non_social_sources_and_classifies_public_posts() -> None:
+    question = "اجمع آراء وتجارب الناس حول نيسان صني 2022 في مصر"
+    personal_post = _guardrail_source(
+        "https://www.reddit.com/r/cars/comments/example",
+        title="تجربتي مع نيسان صني",
+        snippet="أنا امتلك السيارة واستخدمتها يوميًا لمدة عام",
+    )
+    promotional_post = _guardrail_source(
+        "https://www.reddit.com/r/cars/comments/ad",
+        title="نيسان صني 2022 للبيع",
+        snippet="سعر خاص، تواصل معنا عبر واتساب",
+    )
+    editorial_review = _guardrail_source(
+        "https://example.com/car-review",
+        title="مراجعة نيسان صني",
+    )
+
+    accepted, report = apply_source_guardrails(
+        question,
+        "social",
+        {"social_focus": True, "freshness": "any"},
+        [personal_post, promotional_post, editorial_review],
+        now=_GUARDRAIL_NOW,
+    )
+
+    labels = {item["url"]: item["opinion_source_classification"] for item in accepted}
+    assert labels[personal_post["url"]] == "personal_experience_candidate"
+    assert labels[promotional_post["url"]] == "promotional_or_commercial"
+    assert editorial_review["url"] not in labels
+    assert report["social_platform_only"] is True
+    assert report["rejection_counts"] == {"not_a_social_platform_source": 1}
+    assert all(
+        item["opinion_classification_method"] == "heuristic_only"
+        for item in accepted
+    )
+
+
+def test_social_classification_does_not_claim_unknown_post_is_verified_experience() -> None:
+    result = classify_social_source(
+        _guardrail_source(
+            "https://www.youtube.com/watch?v=example",
+            title="Nissan Sunny 2022",
+            snippet="معلومات ومقاطع عن السيارة",
+        )
+    )
+
+    assert result["opinion_source_classification"] == "social_post_unclassified"
+    assert result["opinion_classification_method"] == "heuristic_only"
+    assert "manual review" in result["opinion_classification_basis"]
+
+
+def test_today_query_requires_current_evidence_even_in_auto_mode() -> None:
+    accepted, report = apply_source_guardrails(
+        "ما مواعيد العمل اليوم؟",
+        "auto",
+        {"freshness": "current"},
+        [
+            _guardrail_source(
+                "https://example.com/old", published_at="2024-01-01T10:00:00Z"
+            )
+        ],
+        now=_GUARDRAIL_NOW,
+    )
+
+    assert accepted == []
+    assert report["current_evidence_required"] is True
+    assert report["rejection_counts"] == {"stale": 1}
+
+
+def test_recent_source_date_is_not_enough_without_readable_page_text() -> None:
+    item = _guardrail_source(
+        "https://example.com/unread",
+        published_at="2026-10-27T10:00:00Z",
+        page_fetched=True,
+        page_text="   ",
+    )
+    assert assess_current_source(item, now=_GUARDRAIL_NOW)["status"] == "page_not_read"
