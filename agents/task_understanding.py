@@ -226,6 +226,48 @@ def _has_inline_summary_text(question: str) -> bool:
     )
 
 
+def _has_official_site_target(question: str) -> bool:
+    """Conservatively check whether an official-site request names a target."""
+    normalized = normalize_text(question)
+    for phrase in _PATTERNS["official_site_lookup"]:
+        normalized = normalized.replace(normalize_text(phrase), " ")
+    action_phrases = (
+        "من فضلك", "لو سمحت", "اريد", "عايز", "عاوزه", "ابحث لي عن",
+        "ابحث عن", "هات لي", "هاتلي", "هات", "اعثر على", "دور على", "دورلي على",
+        "find", "search for", "look up", "please", "can you", "could you", "get me",
+        "the", "of", "for", "government",
+    )
+    for phrase in action_phrases:
+        normalized = re.sub(
+            rf"(?<!\w){re.escape(normalize_text(phrase))}(?!\w)", " ", normalized
+        )
+    generic_target_words = {
+        "الموقع", "موقع", "الرابط", "رابط", "لينك", "الصفحه", "صفحه",
+        "رسمي", "الرسمي", "الرسمى", "الموقع", "حكومي", "الحكومي",
+        "وزاره", "وزاره", "وزاره", "هيئه", "جهة", "جهه", "حكوميه",
+        "شركه", "الشركه", "مؤسسه", "المؤسسه", "بنك", "البنك",
+        "منظمه", "المنظمه", "مصلحه", "المصلحه", "اداره", "الاداره",
+        "وزارة", "شركة", "الشركة", "مؤسسة", "الهيئة", "الحكومية",
+        "website", "site", "homepage", "official", "ministry", "agency",
+        "department", "organization", "organisation", "company", "bank",
+        "authority", "portal", "url", "link", "gov", "the",
+    }
+    ignored = {normalize_text(word) for word in generic_target_words}
+    for raw_token in _TOKEN_RE.findall(normalized):
+        token = normalize_text(raw_token)
+        changed = True
+        while changed:
+            changed = False
+            for prefix in ("وال", "بال", "فال", "كال", "لل", "ال", "و", "ف", "ب", "ل", "ك"):
+                if token.startswith(prefix) and len(token) - len(prefix) >= 3:
+                    token = token[len(prefix):]
+                    changed = True
+                    break
+        if token and token not in ignored and len(token) >= 2:
+            return True
+    return False
+
+
 def _extract_explicit_locations(question: str) -> list[str]:
     """Return only a small, explicit location vocabulary; never infer geolocation."""
     normalized = normalize_text(question)
@@ -427,6 +469,13 @@ def build_task_spec(
     budgets = [m.group(0).strip()[:100] for m in _BUDGET_RE.finditer(raw)]
     urls = list(dict.fromkeys(_URL_RE.findall(raw)))[:5]
     unresolved_followup = any(normalize_text(cue) in normalized for cue in _FOLLOWUP_CUES)
+    missing_required_inputs: list[str] = []
+    if intent_route == "CLARIFY":
+        missing_required_inputs.append("unresolved_referent_or_incomplete_request")
+    if official_destination and not _has_official_site_target(raw):
+        missing_required_inputs.append("official_destination_target_entity")
+    if family == "summarize" and not urls and not inline_summary_text:
+        missing_required_inputs.append("summary_source_url_or_pasted_text")
     context = dialogue_context if isinstance(dialogue_context, dict) else {}
     explicit_aspects = list(dict.fromkeys(aspect_values))[:MAX_TASK_ASPECTS]
 
@@ -452,13 +501,9 @@ def build_task_spec(
     # A conflict is a reason to preserve alternatives in diagnostics, not a reason to
     # invent certainty. High ambiguity is limited to unresolved references or a
     # short fragment explicitly marked as contextual.
-    unresolved = (
-        intent_route == "CLARIFY"
-        or bool(context.get("needs_clarification"))
-        or (
-            len(raw.strip()) <= 28 and unresolved_followup
-            and not context.get("resolved_question")
-        )
+    unresolved = bool(missing_required_inputs) or bool(context.get("needs_clarification")) or (
+        len(raw.strip()) <= 28 and unresolved_followup
+        and not context.get("resolved_question")
     )
     if unresolved:
         ambiguity_status = "needs_clarification"
@@ -556,6 +601,13 @@ def build_task_spec(
         "classification_method": "deterministic_multi_pattern_hypotheses",
         "classification_is_probability": False,
         "ambiguity_status": ambiguity_status,
+        "missing_required_inputs": list(dict.fromkeys(missing_required_inputs)),
+        "requires_clarification": ambiguity_status == "needs_clarification",
+        "clarification_reason": (
+            "missing_required_input"
+            if missing_required_inputs
+            else "no_strong_lexical_conflict_detected"
+        ),
         "hypothesis_interpretations": hypothesis_rows,
         "constraints": constraints,
         "output_preferences": {
@@ -840,6 +892,9 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         "classification_method": str(value.get("classification_method") or "")[:100],
         "classification_is_probability": False,
         "ambiguity_status": str(value.get("ambiguity_status") or "unassessed")[:80],
+        "missing_required_inputs": value.get("missing_required_inputs") if isinstance(value.get("missing_required_inputs"), list) else [],
+        "requires_clarification": value.get("requires_clarification") is True,
+        "clarification_reason": str(value.get("clarification_reason") or "unassessed")[:80],
         "constraints": value.get("constraints") if isinstance(value.get("constraints"), dict) else {},
         "output_preferences": value.get("output_preferences") if isinstance(value.get("output_preferences"), dict) else {},
         "evidence_requirements": value.get("evidence_requirements") if isinstance(value.get("evidence_requirements"), list) else [],
