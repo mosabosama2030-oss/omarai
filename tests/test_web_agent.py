@@ -3573,3 +3573,104 @@ def test_official_government_lookup_never_synthesizes_tourism_result(monkeypatch
     }
     assert guardrails["final"]["accepted_sources"] == 0
     assert result["search_report"]["usable_sources_after_filtering"] == 0
+
+def test_criterion_gap_repair_cannot_reintroduce_non_social_source(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = (
+        "قارن بين خدمتين من حيث السعر والخصوصية والاعتمادية "
+        "واعرض آراء وتجارب المستخدمين"
+    )
+    initial_sources = [
+        {
+            **sample_source(0),
+            "url": "https://www.reddit.com/r/example/comments/1",
+            "domain": "reddit.com",
+            "title": "مناقشة تجارب المستخدمين للخدمتين",
+            "snippet": "تجارب وآراء مستخدمين حول الخدمتين",
+            "page_text": "تجارب وآراء مستخدمين حول الخدمتين",
+            "platform": "reddit",
+            "providers": ["reddit"],
+        },
+        {
+            **sample_source(1),
+            "url": "https://www.reddit.com/r/example/comments/2",
+            "domain": "reddit.com",
+            "title": "مناقشة أخرى عن الخدمتين",
+            "snippet": "مناقشة وتجارب مستخدمين حول الخدمتين",
+            "page_text": "مناقشة وتجارب مستخدمين حول الخدمتين",
+            "platform": "reddit",
+            "providers": ["reddit"],
+        },
+    ]
+    repair_candidate = {
+        **sample_source(2),
+        "url": "https://example.com/unrelated-repair",
+        "domain": "example.com",
+        "title": "معلومات عن الخدمة",
+        "snippet": "معلومات عامة عن الخدمة",
+        "page_text": "معلومات عامة عن الخدمة",
+        "providers": ["test_provider"],
+    }
+    collect_calls = []
+
+    def plan(_question, _history):
+        return {
+            "queries": [_question],
+            "direct_urls": [],
+            "social_focus": True,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": ["reddit"],
+            "planning_method": "test",
+        }
+
+    def collect(research_plan):
+        collect_calls.append(dict(research_plan))
+        if len(collect_calls) == 1:
+            sources = initial_sources
+        else:
+            sources = [repair_candidate]
+        return sources, [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 1,
+            "query_results": [],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["reddit"] if len(collect_calls) == 1 else ["test_provider"],
+            "provider_counts": {},
+            "platform_counts": {},
+            "social_direct_results": len(sources) if len(collect_calls) == 1 else 0,
+            "depth": research_plan.get("depth", "deep"),
+            "planning_method": "test",
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", plan)
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda _query, _source: True)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: (
+            "السعر مناسب [المصدر 1]. الخصوصية جيدة [المصدر 2]. "
+            "الاعتمادية مناسبة [المصدر 1]."
+        ),
+    )
+    monkeypatch.setattr(
+        agent,
+        "_review_answer",
+        lambda _question, answer, _sources: answer,
+    )
+
+    result = agent.answer(question, mode="social")
+    report = result["search_report"]
+    repair_guardrails = report["source_guardrails"]["criterion_gap_repair"]
+
+    assert len(collect_calls) >= 2
+    assert repair_guardrails["rejected_sources"] >= 1
+    assert repair_guardrails["rejection_counts"]["not_a_social_platform_source"] >= 1
+    assert all("reddit.com" in source["url"] for source in result["sources"])
+    assert "https://example.com/unrelated-repair" not in {
+        source["url"] for source in result["sources"]
+    }
+
