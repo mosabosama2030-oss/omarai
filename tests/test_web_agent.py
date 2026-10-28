@@ -3813,6 +3813,10 @@ def test_task_spec_controls_generation_context_without_becoming_evidence(monkeyp
     assert "explicit_aspects" in prompt
     assert "output_preferences" in prompt
     assert "beginner_friendly_requested" in prompt
+    assert "reasoning_guidance" in prompt
+    assert "decision_matrix" in prompt
+    assert "قسّم المقارنة إلى كل معيار صريح" in prompt
+    assert "لا تعمم على الجميع" in prompt
     assert "query_strategy_matrix" in prompt
     assert "الأولوية لكلام المستخدم الحالي" in prompt
     assert "الاستعلامات المخططة فقط" in prompt
