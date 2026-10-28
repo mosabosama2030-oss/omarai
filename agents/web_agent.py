@@ -48,6 +48,7 @@ from agents.research import (
     validate_plan,
 )
 from agents.research_guardrails import apply_source_guardrails
+from agents.task_understanding import build_query_strategy_matrix, build_task_spec
 
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
@@ -4622,6 +4623,25 @@ class WebAgent:
                     allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
+        task_spec = build_task_spec(
+            working_question,
+            mode=clean_mode,
+            intent_route=intent_route,
+            plan=plan,
+            dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
+        )
+        query_strategy_matrix = build_query_strategy_matrix(
+            working_question,
+            task_spec,
+            plan.get("queries", []),
+            limit=MAX_PLAN_QUERIES,
+            compact_fn=compact_search_query,
+        )
+        if query_strategy_matrix:
+            plan["queries"] = [item["query"] for item in query_strategy_matrix]
+        plan["task_spec"] = task_spec
+        plan["query_strategy_matrix"] = query_strategy_matrix
+
         final_topic_queries = []
         for raw_query in plan.get("queries", []):
             if not isinstance(raw_query, str) or not raw_query.strip():
@@ -4642,6 +4662,11 @@ class WebAgent:
         plan["query_limit"] = query_limit
         plan["coverage_targets"] = list(coverage_targets_for_budget)
         plan["queries"] = list(dict.fromkeys(final_topic_queries))[:query_limit]
+        actual_query_keys = set(plan["queries"])
+        plan["query_strategy_matrix"] = [
+            item for item in query_strategy_matrix
+            if item.get("query") in actual_query_keys
+        ]
 
         sources: list[dict[str, Any]] = []
         search_warnings: list[str] = []
@@ -4691,6 +4716,14 @@ class WebAgent:
             }
         if isinstance(report, dict):
             report["dialogue_context"] = plan.get("dialogue_context", {})
+            report["task_understanding"] = {
+                "task_spec": task_spec,
+                "query_strategy_matrix": plan.get("query_strategy_matrix", []),
+                "actual_queries": list(plan.get("queries") or []),
+                "actual_query_count": len(plan.get("queries") or []),
+                "max_query_count": MAX_PLAN_QUERIES,
+                "status": "deterministic_interpretation_attached",
+            }
         # Final relevance check is intentionally repeated after fusion, before any answer LLM call.
         filtered_sources: list[dict[str, Any]] = []
         for source in sources:
