@@ -299,8 +299,8 @@ def _attach_task_understanding(
         limit=MAX_PLAN_QUERIES,
         compact_fn=compact_search_query,
     )
-    if matrix:
-        result["queries"] = [row["query"] for row in matrix]
+    # This layer records strategies but does not mutate executable queries.
+    # The request runner applies them only after it knows the selected mode and budget.
     result["task_spec"] = spec
     result["query_strategy_matrix"] = matrix
     return result
