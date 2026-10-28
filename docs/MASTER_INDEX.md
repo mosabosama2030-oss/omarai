@@ -10,9 +10,9 @@
 
 - ملفات المستودع في الجرد: **99**
 - ملفات Python المحللة: **56**
-- تعريفات Python المفهرسة: **1297**
+- تعريفات Python المفهرسة: **1298**
 - تعريفات Python موثقة بوجود Docstring: **229**
-- تعريفات Python بلا Docstring: **802**
+- تعريفات Python بلا Docstring: **803**
 - تعريفات لا ينطبق عليها Docstring: **266**
 - الرموز الساكنة الإضافية: **1705**
 - الأسطر النصية المفهرسة حرفيًا: **34161**
@@ -47,7 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 33498 | 791 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
-| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 64145 | 1259 | جرد الملف + AST Python |
+| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 64280 | 1259 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 338305 | 6317 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -344,7 +344,8 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L180) | متغير/ثابت Python | _FOLLOWUP_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 180 | [SRC-686F71AA50-L000180](../agents/task_understanding.py#L180) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L185) | متغير/ثابت Python | _QUERY_STOP | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 185 | [SRC-686F71AA50-L000185](../agents/task_understanding.py#L185) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L191) | دالة | normalize_text | Normalize orthographic variation for matching; preserve the original elsewhere. | موثق | 191 | [SRC-686F71AA50-L000191](../agents/task_understanding.py#L191) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L203) | دالة | _contains | Match phrases on token boundaries and only strip known Arabic clitics/suffixes. | موثق | 203 | [SRC-686F71AA50-L000203](../agents/task_understanding.py#L203) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L203) | دالة | _contains | Match phrases on token boundaries with conservative Arabic clitic handling. | موثق | 203 | [SRC-686F71AA50-L000203](../agents/task_understanding.py#L203) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L217) | دالة | _contains.token_forms | لا توجد Docstring. | ناقص | 217 | [SRC-686F71AA50-L000217](../agents/task_understanding.py#L217) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L263) | دالة | _has_inline_summary_text | Detect explicitly supplied summary text without treating a URL as pasted content. | موثق | 263 | [SRC-686F71AA50-L000263](../agents/task_understanding.py#L263) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L288) | دالة | _has_official_site_target | Conservatively check whether an official-site request names a target. | موثق | 288 | [SRC-686F71AA50-L000288](../agents/task_understanding.py#L288) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L330) | دالة | _extract_explicit_locations | Return only a small, explicit location vocabulary; never infer geolocation. | موثق | 330 | [SRC-686F71AA50-L000330](../agents/task_understanding.py#L330) |

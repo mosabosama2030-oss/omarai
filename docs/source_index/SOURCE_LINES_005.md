@@ -723,64 +723,64 @@
 | [SRC-686F71AA50-L000201](../../agents/task_understanding.py#L201) | 201 | `""` | — |
 | [SRC-686F71AA50-L000202](../../agents/task_understanding.py#L202) | 202 | `""` | — |
 | [SRC-686F71AA50-L000203](../../agents/task_understanding.py#L203) | 203 | `"def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:"` | — |
-| [SRC-686F71AA50-L000204](../../agents/task_understanding.py#L204) | 204 | `"    \"\"\"Match phrases on token boundaries and only strip known Arabic clitics/suffixes."` | — |
+| [SRC-686F71AA50-L000204](../../agents/task_understanding.py#L204) | 204 | `"    \"\"\"Match phrases on token boundaries with conservative Arabic clitic handling."` | — |
 | [SRC-686F71AA50-L000205](../../agents/task_understanding.py#L205) | 205 | `""` | — |
-| [SRC-686F71AA50-L000206](../../agents/task_understanding.py#L206) | 206 | `"    This deliberately avoids substring collisions such as \"الان\" (now) inside"` | — |
-| [SRC-686F71AA50-L000207](../../agents/task_understanding.py#L207) | 207 | `"    \"الانذار\" (alarm), while retaining common forms such as \"سعرها\" and \"قارنهم\"."` | — |
-| [SRC-686F71AA50-L000208](../../agents/task_understanding.py#L208) | 208 | `"    \"\"\""` | — |
-| [SRC-686F71AA50-L000209](../../agents/task_understanding.py#L209) | 209 | `"    tokens = _TOKEN_RE.findall(text)"` | — |
-| [SRC-686F71AA50-L000210](../../agents/task_understanding.py#L210) | 210 | `"    matched: list[str] = []"` | — |
-| [SRC-686F71AA50-L000211](../../agents/task_understanding.py#L211) | 211 | `"    prefixes = (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\")"` | — |
-| [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"    suffixes = (\"هما\", \"هم\", \"هن\", \"ها\", \"ه\", \"كم\", \"كن\", \"ك\", \"نا\", \"ني\")"` | — |
-| [SRC-686F71AA50-L000213](../../agents/task_understanding.py#L213) | 213 | `"    english_suffixes = (\"ing\", \"ed\", \"es\", \"s\")"` | — |
-| [SRC-686F71AA50-L000214](../../agents/task_understanding.py#L214) | 214 | `"    for phrase in phrases:"` | — |
-| [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"        normalized = normalize_text(phrase)"` | — |
-| [SRC-686F71AA50-L000216](../../agents/task_understanding.py#L216) | 216 | `"        phrase_tokens = _TOKEN_RE.findall(normalized)"` | — |
-| [SRC-686F71AA50-L000217](../../agents/task_understanding.py#L217) | 217 | `"        if not phrase_tokens:"` | — |
-| [SRC-686F71AA50-L000218](../../agents/task_understanding.py#L218) | 218 | `"            continue"` | — |
-| [SRC-686F71AA50-L000219](../../agents/task_understanding.py#L219) | 219 | `"        found = False"` | — |
-| [SRC-686F71AA50-L000220](../../agents/task_understanding.py#L220) | 220 | `"        width = len(phrase_tokens)"` | — |
-| [SRC-686F71AA50-L000221](../../agents/task_understanding.py#L221) | 221 | `"        for index in range(max(0, len(tokens) - width + 1)):"` | — |
-| [SRC-686F71AA50-L000222](../../agents/task_understanding.py#L222) | 222 | `"            segment = tokens[index:index + width]"` | — |
-| [SRC-686F71AA50-L000223](../../agents/task_understanding.py#L223) | 223 | `"            if [token.casefold() for token in segment] == [token.casefold() for token in phrase_tokens]:"` | — |
-| [SRC-686F71AA50-L000224](../../agents/task_understanding.py#L224) | 224 | `"                found = True"` | — |
-| [SRC-686F71AA50-L000225](../../agents/task_understanding.py#L225) | 225 | `"                break"` | — |
-| [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"        if not found and width == 1:"` | — |
-| [SRC-686F71AA50-L000227](../../agents/task_understanding.py#L227) | 227 | `"            target = phrase_tokens[0].casefold()"` | — |
-| [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `"            for original_token in tokens:"` | — |
-| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"                token = original_token.casefold()"` | — |
-| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"                forms = {token}"` | — |
-| [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"                changed = True"` | — |
-| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"                while changed:"` | — |
-| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"                    changed = False"` | — |
-| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"                    for prefix in prefixes:"` | — |
-| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"                        if token.startswith(prefix) and len(token) - len(prefix) >= 3:"` | — |
-| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"                            token = token[len(prefix):]"` | — |
-| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"                            forms.add(token)"` | — |
-| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"                            changed = True"` | — |
-| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"                            break"` | — |
-| [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"                for candidate in forms.copy():"` | — |
-| [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"                    for suffix in suffixes:"` | — |
-| [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"                        if candidate.endswith(suffix) and len(candidate) - len(suffix) >= 3:"` | — |
-| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"                            forms.add(candidate[:-len(suffix)])"` | — |
-| [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"                if target in forms:"` | — |
-| [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"                    found = True"` | — |
-| [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `"                    break"` | — |
-| [SRC-686F71AA50-L000247](../../agents/task_understanding.py#L247) | 247 | `"                if ("` | — |
-| [SRC-686F71AA50-L000248](../../agents/task_understanding.py#L248) | 248 | `"                    target.isascii()"` | — |
-| [SRC-686F71AA50-L000249](../../agents/task_understanding.py#L249) | 249 | `"                    and len(target) >= 4"` | — |
-| [SRC-686F71AA50-L000250](../../agents/task_understanding.py#L250) | 250 | `"                    and original_token.isascii()"` | — |
-| [SRC-686F71AA50-L000251](../../agents/task_understanding.py#L251) | 251 | `"                    and any("` | — |
-| [SRC-686F71AA50-L000252](../../agents/task_understanding.py#L252) | 252 | `"                        token.endswith(suffix) and token[:-len(suffix)] == target"` | — |
-| [SRC-686F71AA50-L000253](../../agents/task_understanding.py#L253) | 253 | `"                        for suffix in english_suffixes"` | — |
-| [SRC-686F71AA50-L000254](../../agents/task_understanding.py#L254) | 254 | `"                    )"` | — |
-| [SRC-686F71AA50-L000255](../../agents/task_understanding.py#L255) | 255 | `"                ):"` | — |
-| [SRC-686F71AA50-L000256](../../agents/task_understanding.py#L256) | 256 | `"                    found = True"` | — |
-| [SRC-686F71AA50-L000257](../../agents/task_understanding.py#L257) | 257 | `"                    break"` | — |
-| [SRC-686F71AA50-L000258](../../agents/task_understanding.py#L258) | 258 | `"        if found and normalized not in matched:"` | — |
-| [SRC-686F71AA50-L000259](../../agents/task_understanding.py#L259) | 259 | `"            matched.append(normalized)"` | — |
-| [SRC-686F71AA50-L000260](../../agents/task_understanding.py#L260) | 260 | `"    return matched"` | — |
-| [SRC-686F71AA50-L000261](../../agents/task_understanding.py#L261) | 261 | `""` | — |
+| [SRC-686F71AA50-L000206](../../agents/task_understanding.py#L206) | 206 | `"    The matcher never accepts arbitrary substrings: variants are formed only by"` | — |
+| [SRC-686F71AA50-L000207](../../agents/task_understanding.py#L207) | 207 | `"    removing a short, explicit list of common prefixes/suffixes. This avoids"` | — |
+| [SRC-686F71AA50-L000208](../../agents/task_understanding.py#L208) | 208 | `"    collisions such as treating \"الإنذار\" as \"الآن\"."` | — |
+| [SRC-686F71AA50-L000209](../../agents/task_understanding.py#L209) | 209 | `"    \"\"\""` | — |
+| [SRC-686F71AA50-L000210](../../agents/task_understanding.py#L210) | 210 | `"    tokens = _TOKEN_RE.findall(text)"` | — |
+| [SRC-686F71AA50-L000211](../../agents/task_understanding.py#L211) | 211 | `"    matched: list[str] = []"` | — |
+| [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"    prefixes = (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\")"` | — |
+| [SRC-686F71AA50-L000213](../../agents/task_understanding.py#L213) | 213 | `"    suffixes = (\"هما\", \"هم\", \"هن\", \"ها\", \"ه\", \"كم\", \"كن\", \"ك\", \"نا\", \"ني\", \"ين\", \"ات\", \"ون\")"` | — |
+| [SRC-686F71AA50-L000214](../../agents/task_understanding.py#L214) | 214 | `"    english_suffixes = (\"ing\", \"ed\", \"es\", \"s\")"` | — |
+| [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"    cache: dict[str, set[str]] = {}"` | — |
+| [SRC-686F71AA50-L000216](../../agents/task_understanding.py#L216) | 216 | `""` | — |
+| [SRC-686F71AA50-L000217](../../agents/task_understanding.py#L217) | 217 | `"    def token_forms(raw_token: str) -> set[str]:"` | — |
+| [SRC-686F71AA50-L000218](../../agents/task_understanding.py#L218) | 218 | `"        original = normalize_text(raw_token)"` | — |
+| [SRC-686F71AA50-L000219](../../agents/task_understanding.py#L219) | 219 | `"        if original in cache:"` | — |
+| [SRC-686F71AA50-L000220](../../agents/task_understanding.py#L220) | 220 | `"            return cache[original]"` | — |
+| [SRC-686F71AA50-L000221](../../agents/task_understanding.py#L221) | 221 | `"        forms = {original} if original else set()"` | — |
+| [SRC-686F71AA50-L000222](../../agents/task_understanding.py#L222) | 222 | `"        queue = list(forms)"` | — |
+| [SRC-686F71AA50-L000223](../../agents/task_understanding.py#L223) | 223 | `"        while queue:"` | — |
+| [SRC-686F71AA50-L000224](../../agents/task_understanding.py#L224) | 224 | `"            current = queue.pop()"` | — |
+| [SRC-686F71AA50-L000225](../../agents/task_understanding.py#L225) | 225 | `"            for prefix in prefixes:"` | — |
+| [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"                if current.startswith(prefix) and len(current) - len(prefix) >= 3:"` | — |
+| [SRC-686F71AA50-L000227](../../agents/task_understanding.py#L227) | 227 | `"                    candidate = current[len(prefix):]"` | — |
+| [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `"                    if candidate not in forms:"` | — |
+| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"                        forms.add(candidate)"` | — |
+| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"                        queue.append(candidate)"` | — |
+| [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"            for suffix in suffixes:"` | — |
+| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"                if current.endswith(suffix) and len(current) - len(suffix) >= 3:"` | — |
+| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"                    candidate = current[:-len(suffix)]"` | — |
+| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"                    if candidate not in forms:"` | — |
+| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"                        forms.add(candidate)"` | — |
+| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"                        queue.append(candidate)"` | — |
+| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"            if current.isascii() and len(current) >= 5:"` | — |
+| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"                for suffix in english_suffixes:"` | — |
+| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"                    if current.endswith(suffix) and len(current) - len(suffix) >= 3:"` | — |
+| [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"                        candidate = current[:-len(suffix)]"` | — |
+| [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"                        if candidate not in forms:"` | — |
+| [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"                            forms.add(candidate)"` | — |
+| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"                            queue.append(candidate)"` | — |
+| [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"        cache[original] = forms"` | — |
+| [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"        return forms"` | — |
+| [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `""` | — |
+| [SRC-686F71AA50-L000247](../../agents/task_understanding.py#L247) | 247 | `"    token_forms_cache = [token_forms(token) for token in tokens]"` | — |
+| [SRC-686F71AA50-L000248](../../agents/task_understanding.py#L248) | 248 | `"    for phrase in phrases:"` | — |
+| [SRC-686F71AA50-L000249](../../agents/task_understanding.py#L249) | 249 | `"        normalized = normalize_text(phrase)"` | — |
+| [SRC-686F71AA50-L000250](../../agents/task_understanding.py#L250) | 250 | `"        phrase_tokens = _TOKEN_RE.findall(normalized)"` | — |
+| [SRC-686F71AA50-L000251](../../agents/task_understanding.py#L251) | 251 | `"        if not phrase_tokens:"` | — |
+| [SRC-686F71AA50-L000252](../../agents/task_understanding.py#L252) | 252 | `"            continue"` | — |
+| [SRC-686F71AA50-L000253](../../agents/task_understanding.py#L253) | 253 | `"        phrase_forms = [token_forms(token) for token in phrase_tokens]"` | — |
+| [SRC-686F71AA50-L000254](../../agents/task_understanding.py#L254) | 254 | `"        width = len(phrase_tokens)"` | — |
+| [SRC-686F71AA50-L000255](../../agents/task_understanding.py#L255) | 255 | `"        found = any("` | — |
+| [SRC-686F71AA50-L000256](../../agents/task_understanding.py#L256) | 256 | `"            all(token_forms_cache[index + offset] & phrase_forms[offset] for offset in range(width))"` | — |
+| [SRC-686F71AA50-L000257](../../agents/task_understanding.py#L257) | 257 | `"            for index in range(max(0, len(tokens) - width + 1))"` | — |
+| [SRC-686F71AA50-L000258](../../agents/task_understanding.py#L258) | 258 | `"        )"` | — |
+| [SRC-686F71AA50-L000259](../../agents/task_understanding.py#L259) | 259 | `"        if found and normalized not in matched:"` | — |
+| [SRC-686F71AA50-L000260](../../agents/task_understanding.py#L260) | 260 | `"            matched.append(normalized)"` | — |
+| [SRC-686F71AA50-L000261](../../agents/task_understanding.py#L261) | 261 | `"    return matched"` | — |
 | [SRC-686F71AA50-L000262](../../agents/task_understanding.py#L262) | 262 | `""` | — |
 | [SRC-686F71AA50-L000263](../../agents/task_understanding.py#L263) | 263 | `"def _has_inline_summary_text(question: str) -> bool:"` | — |
 | [SRC-686F71AA50-L000264](../../agents/task_understanding.py#L264) | 264 | `"    \"\"\"Detect explicitly supplied summary text without treating a URL as pasted content.\"\"\""` | — |
