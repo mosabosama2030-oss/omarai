@@ -369,7 +369,7 @@
 | [SRC-1AE03B9EC3-L005632](../../agents/web_agent.py#L5632) | 5632 | `"                \"mode\": clean_mode,"` | — |
 | [SRC-1AE03B9EC3-L005633](../../agents/web_agent.py#L5633) | 5633 | `"                \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
 | [SRC-1AE03B9EC3-L005634](../../agents/web_agent.py#L5634) | 5634 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L005635](../../agents/web_agent.py#L5635) | 5635 | `"\"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
+| [SRC-1AE03B9EC3-L005635](../../agents/web_agent.py#L5635) | 5635 | `"                \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
 | [SRC-1AE03B9EC3-L005636](../../agents/web_agent.py#L5636) | 5636 | `"                \"intent_route\": intent_route,"` | — |
 | [SRC-1AE03B9EC3-L005637](../../agents/web_agent.py#L5637) | 5637 | `"                \"intent_route_reason\": intent_reason,"` | — |
 | [SRC-1AE03B9EC3-L005638](../../agents/web_agent.py#L5638) | 5638 | `"            },"` | — |

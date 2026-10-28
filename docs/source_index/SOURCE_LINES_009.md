@@ -771,7 +771,7 @@
 | [SRC-1AE03B9EC3-L004434](../../agents/web_agent.py#L4434) | 4434 | `"                \"provider_diagnostics\": failure_diagnostics,"` | — |
 | [SRC-1AE03B9EC3-L004435](../../agents/web_agent.py#L4435) | 4435 | `"                \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-1AE03B9EC3-L004436](../../agents/web_agent.py#L4436) | 4436 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L004437](../../agents/web_agent.py#L4437) | 4437 | `"\"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
+| [SRC-1AE03B9EC3-L004437](../../agents/web_agent.py#L4437) | 4437 | `"                \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
 | [SRC-1AE03B9EC3-L004438](../../agents/web_agent.py#L4438) | 4438 | `"                \"evidence_signals\": evidence_signal_report([], plan.get(\"freshness\", \"any\")),"` | — |
 | [SRC-1AE03B9EC3-L004439](../../agents/web_agent.py#L4439) | 4439 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L004440](../../agents/web_agent.py#L4440) | 4440 | `"        if isinstance(report, dict):"` | — |

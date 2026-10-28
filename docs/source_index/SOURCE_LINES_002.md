@@ -376,13 +376,13 @@
 | [SRC-2D53795445-L000214](../../agents/dialogue_state.py#L214) | 214 | `"        return True"` | — |
 | [SRC-2D53795445-L000215](../../agents/dialogue_state.py#L215) | 215 | `"    return bool(re.search("` | — |
 | [SRC-2D53795445-L000216](../../agents/dialogue_state.py#L216) | 216 | `"        r\"^(?:و?طب\|و?طيب\|و?تمام\|ثم\|كمان\|وبالنسبه\|بالنسبه\|\""` | — |
-| [SRC-2D53795445-L000217](../../agents/dialogue_state.py#L217) | 217 | `"        r\"and\\\\s+(?:what\|the\|how)\|what\\\\s+about\|how\\\\s+about\|\""` | — |
-| [SRC-2D53795445-L000218](../../agents/dialogue_state.py#L218) | 218 | `"        r\"then\\\\b\|also\\\\b\|as\\\\s+for\\\\b\|and\\\\s+its\\\\b)\","` | — |
+| [SRC-2D53795445-L000217](../../agents/dialogue_state.py#L217) | 217 | `"        r\"and\\s+(?:what\|the\|how)\|what\\s+about\|how\\s+about\|\""` | — |
+| [SRC-2D53795445-L000218](../../agents/dialogue_state.py#L218) | 218 | `"        r\"then\\b\|also\\b\|as\\s+for\\b\|and\\s+its\\b)\","` | — |
 | [SRC-2D53795445-L000219](../../agents/dialogue_state.py#L219) | 219 | `"        current,"` | — |
 | [SRC-2D53795445-L000220](../../agents/dialogue_state.py#L220) | 220 | `"    ) or re.search("` | — |
-| [SRC-2D53795445-L000221](../../agents/dialogue_state.py#L221) | 221 | `"        r\"\\\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
+| [SRC-2D53795445-L000221](../../agents/dialogue_state.py#L221) | 221 | `"        r\"\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
 | [SRC-2D53795445-L000222](../../agents/dialogue_state.py#L222) | 222 | `"        r\"he\|she\|هو\|هي\|ده\|دي\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
-| [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\\\b\","` | — |
+| [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
 | [SRC-2D53795445-L000224](../../agents/dialogue_state.py#L224) | 224 | `"        current,"` | — |
 | [SRC-2D53795445-L000225](../../agents/dialogue_state.py#L225) | 225 | `"    ))"` | — |
 ## الوكيل والمنطق

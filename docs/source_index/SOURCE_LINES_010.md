@@ -113,7 +113,7 @@
 | [SRC-1AE03B9EC3-L004576](../../agents/web_agent.py#L4576) | 4576 | `"                        \"mode\": clean_mode,"` | — |
 | [SRC-1AE03B9EC3-L004577](../../agents/web_agent.py#L4577) | 4577 | `"                        \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
 | [SRC-1AE03B9EC3-L004578](../../agents/web_agent.py#L4578) | 4578 | `"                        \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L004579](../../agents/web_agent.py#L4579) | 4579 | `"\"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
+| [SRC-1AE03B9EC3-L004579](../../agents/web_agent.py#L4579) | 4579 | `"                        \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
 | [SRC-1AE03B9EC3-L004580](../../agents/web_agent.py#L4580) | 4580 | `"                        \"intent_route\": intent_route,"` | — |
 | [SRC-1AE03B9EC3-L004581](../../agents/web_agent.py#L4581) | 4581 | `"                        \"intent_route_reason\": intent_reason,"` | — |
 | [SRC-1AE03B9EC3-L004582](../../agents/web_agent.py#L4582) | 4582 | `"                    },"` | — |
@@ -574,7 +574,7 @@
 | [SRC-1AE03B9EC3-L005037](../../agents/web_agent.py#L5037) | 5037 | `"                    \"mode\": clean_mode,"` | — |
 | [SRC-1AE03B9EC3-L005038](../../agents/web_agent.py#L5038) | 5038 | `"                    \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
 | [SRC-1AE03B9EC3-L005039](../../agents/web_agent.py#L5039) | 5039 | `"                    \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L005040](../../agents/web_agent.py#L5040) | 5040 | `"\"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
+| [SRC-1AE03B9EC3-L005040](../../agents/web_agent.py#L5040) | 5040 | `"                    \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
 | [SRC-1AE03B9EC3-L005041](../../agents/web_agent.py#L5041) | 5041 | `"                    \"intent_route\": intent_route,"` | — |
 | [SRC-1AE03B9EC3-L005042](../../agents/web_agent.py#L5042) | 5042 | `"                    \"intent_route_reason\": intent_reason,"` | — |
 | [SRC-1AE03B9EC3-L005043](../../agents/web_agent.py#L5043) | 5043 | `"                },"` | — |

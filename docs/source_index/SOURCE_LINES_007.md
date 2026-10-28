@@ -560,7 +560,7 @@
 | [SRC-1AE03B9EC3-L002623](../../agents/web_agent.py#L2623) | 2623 | `"            \"evidence_signals\": evidence_signal_report(sources, plan.get(\"freshness\", \"any\")),"` | — |
 | [SRC-1AE03B9EC3-L002624](../../agents/web_agent.py#L2624) | 2624 | `"            \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-1AE03B9EC3-L002625](../../agents/web_agent.py#L2625) | 2625 | `"            \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L002626](../../agents/web_agent.py#L2626) | 2626 | `"\"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
+| [SRC-1AE03B9EC3-L002626](../../agents/web_agent.py#L2626) | 2626 | `"            \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
 | [SRC-1AE03B9EC3-L002627](../../agents/web_agent.py#L2627) | 2627 | `"            \"provider_diagnostics\": provider_diagnostics,"` | — |
 | [SRC-1AE03B9EC3-L002628](../../agents/web_agent.py#L2628) | 2628 | `"            \"connector_summary\": self._connector_status_summary("` | — |
 | [SRC-1AE03B9EC3-L002629](../../agents/web_agent.py#L2629) | 2629 | `"                provider_diagnostics, sources"` | — |
