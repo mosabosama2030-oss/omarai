@@ -4250,6 +4250,87 @@ class WebAgent:
                 result.setdefault("warnings", []).append(
                     "تعذر بناء سجل ربط الجمل بمراجع المصادر؛ لا يعني ذلك فشل المصادر نفسها."
                 )
+        # Expose the same structured interpretation for every response path, including
+        # clarifications and local answers. Empty query matrices remain empty when no
+        # search was attempted; diagnostics must not imply that a tool ran.
+        try:
+            report = result.get("search_report")
+            if not isinstance(report, dict):
+                report = {}
+            research_plan = result.get("research_plan")
+            if not isinstance(research_plan, dict):
+                research_plan = {}
+            context = result.get("dialogue_context")
+            if not isinstance(context, dict):
+                context = research_plan.get("dialogue_context")
+            resolved_question = (
+                str(context.get("resolved_question") or question)
+                if isinstance(context, dict) and not context.get("topic_shift")
+                else question
+            )
+            existing_task_data = report.get("task_understanding")
+            if not isinstance(existing_task_data, dict):
+                existing_task_data = {}
+            task_spec = (
+                existing_task_data.get("task_spec")
+                or research_plan.get("task_spec")
+            )
+            requested_mode = mode if isinstance(mode, str) else "auto"
+            if (
+                not isinstance(task_spec, dict)
+                or task_spec.get("schema") != "omarai.task_spec.v1"
+                or task_spec.get("mode") != requested_mode.strip().lower()
+            ):
+                task_spec = build_task_spec(
+                    resolved_question,
+                    mode=requested_mode,
+                    intent_route=str(result.get("intent_route") or ""),
+                    plan=research_plan,
+                    dialogue_context=context if isinstance(context, dict) else None,
+                )
+            actual_queries = result.get("search_queries")
+            if not isinstance(actual_queries, list):
+                actual_queries = []
+            query_matrix = (
+                existing_task_data.get("query_strategy_matrix")
+                or research_plan.get("query_strategy_matrix")
+                or []
+            )
+            if not isinstance(query_matrix, list):
+                query_matrix = []
+            if (result.get("search_attempted") or result.get("used_web_search")) and not query_matrix:
+                query_matrix = build_query_strategy_matrix(
+                    resolved_question,
+                    task_spec,
+                    actual_queries,
+                    limit=MAX_PLAN_QUERIES,
+                    compact_fn=compact_search_query,
+                )
+            task_summary = {
+                "task_spec": task_spec,
+                "query_strategy_matrix": query_matrix,
+                "actual_queries": actual_queries,
+                "actual_query_count": len(actual_queries),
+                "search_was_attempted": bool(result.get("search_attempted")),
+                "interpretation_status": (
+                    "needs_clarification"
+                    if task_spec.get("ambiguity_status") == "needs_clarification"
+                    else "deterministic_task_spec_attached"
+                ),
+                "claim": "task interpretation and plan diagnostics only; not factual verification",
+            }
+            result["task_understanding"] = task_summary
+            if isinstance(result.get("research_plan"), dict):
+                result["research_plan"]["task_spec"] = task_spec
+                result["research_plan"]["query_strategy_matrix"] = query_matrix
+            if isinstance(result.get("search_report"), dict):
+                result["search_report"]["task_understanding"] = task_summary
+        except (AttributeError, KeyError, TypeError, ValueError) as exc:
+            result["task_understanding"] = {
+                "status": "not_run",
+                "error_class": type(exc).__name__,
+                "claim": "task interpretation diagnostics unavailable; answer was not independently verified",
+            }
         return result
 
     def _answer_with_budget(
