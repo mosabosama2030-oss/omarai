@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003218 إلى SRC-1AE03B9EC3-L004017
+- النطاق: SRC-1AE03B9EC3-L003222 إلى SRC-1AE03B9EC3-L004021
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003218](../../agents/web_agent.py#L3218) | 3218 | `"                    '\"clarification_question\":\"\",\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",'"` | — |
-| [SRC-1AE03B9EC3-L003219](../../agents/web_agent.py#L3219) | 3219 | `"                    '\"confidence_band\":\"medium\"}. intent المسموح: answer_general, compare, '"` | — |
-| [SRC-1AE03B9EC3-L003220](../../agents/web_agent.py#L3220) | 3220 | `"                    \"current_information, explain, find_official_site, find_product, how_to, \""` | — |
-| [SRC-1AE03B9EC3-L003221](../../agents/web_agent.py#L3221) | 3221 | `"                    \"lead_generation, recommend, social_opinions, summarize, troubleshoot, unknown. \""` | — |
 | [SRC-1AE03B9EC3-L003222](../../agents/web_agent.py#L3222) | 3222 | `"                    \"research_depth إما standard أو deep.\""` | — |
 | [SRC-1AE03B9EC3-L003223](../../agents/web_agent.py#L3223) | 3223 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L003224](../../agents/web_agent.py#L3224) | 3224 | `"            },"` | — |
@@ -816,3 +812,7 @@
 | [SRC-1AE03B9EC3-L004015](../../agents/web_agent.py#L4015) | 4015 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L004016](../../agents/web_agent.py#L4016) | 4016 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L004017](../../agents/web_agent.py#L4017) | 4017 | `"            configured_platforms = [\"reddit\", \"bluesky\"]"` | — |
+| [SRC-1AE03B9EC3-L004018](../../agents/web_agent.py#L4018) | 4018 | `"            optional_connectors = {"` | — |
+| [SRC-1AE03B9EC3-L004019](../../agents/web_agent.py#L4019) | 4019 | `"                \"facebook\": bool("` | — |
+| [SRC-1AE03B9EC3-L004020](../../agents/web_agent.py#L4020) | 4020 | `"                    os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L004021](../../agents/web_agent.py#L4021) | 4021 | `"                    and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |

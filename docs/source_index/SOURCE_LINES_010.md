@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002418 إلى SRC-1AE03B9EC3-L003217
+- النطاق: SRC-1AE03B9EC3-L002422 إلى SRC-1AE03B9EC3-L003221
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L002418](../../agents/web_agent.py#L2418) | 2418 | `"            query_limit = int(plan.get(\"query_limit\", MAX_PLAN_QUERIES))"` | — |
-| [SRC-1AE03B9EC3-L002419](../../agents/web_agent.py#L2419) | 2419 | `"        except (TypeError, ValueError, OverflowError):"` | — |
-| [SRC-1AE03B9EC3-L002420](../../agents/web_agent.py#L2420) | 2420 | `"            query_limit = MAX_PLAN_QUERIES"` | — |
-| [SRC-1AE03B9EC3-L002421](../../agents/web_agent.py#L2421) | 2421 | `"        query_limit = max(1, min(query_limit, MAX_PLAN_QUERIES))"` | — |
 | [SRC-1AE03B9EC3-L002422](../../agents/web_agent.py#L2422) | 2422 | `"        raw_queries = list(dict.fromkeys("` | — |
 | [SRC-1AE03B9EC3-L002423](../../agents/web_agent.py#L2423) | 2423 | `"            compact_search_query(query)"` | — |
 | [SRC-1AE03B9EC3-L002424](../../agents/web_agent.py#L2424) | 2424 | `"            for query in plan.get(\"queries\", [])[:query_limit]"` | — |
@@ -816,3 +812,7 @@
 | [SRC-1AE03B9EC3-L003215](../../agents/web_agent.py#L3215) | 3215 | `"                    '\"topic\":\"...\",\"entities\":[\"...\"],\"slots\":{\"entity\":\"...\",\"aspect\":\"...\"},'"` | — |
 | [SRC-1AE03B9EC3-L003216](../../agents/web_agent.py#L3216) | 3216 | `"                    '\"changed_slots\":[\"aspect\"],\"is_follow_up\":true,\"topic_shift\":false,'"` | — |
 | [SRC-1AE03B9EC3-L003217](../../agents/web_agent.py#L3217) | 3217 | `"                    '\"needs_web\":true,\"research_depth\":\"standard\",\"needs_clarification\":false,'"` | — |
+| [SRC-1AE03B9EC3-L003218](../../agents/web_agent.py#L3218) | 3218 | `"                    '\"clarification_question\":\"\",\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",'"` | — |
+| [SRC-1AE03B9EC3-L003219](../../agents/web_agent.py#L3219) | 3219 | `"                    '\"confidence_band\":\"medium\"}. intent المسموح: answer_general, compare, '"` | — |
+| [SRC-1AE03B9EC3-L003220](../../agents/web_agent.py#L3220) | 3220 | `"                    \"current_information, explain, find_official_site, find_product, how_to, \""` | — |
+| [SRC-1AE03B9EC3-L003221](../../agents/web_agent.py#L3221) | 3221 | `"                    \"lead_generation, recommend, social_opinions, summarize, troubleshoot, unknown. \""` | — |
