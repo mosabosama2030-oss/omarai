@@ -47,6 +47,7 @@ from agents.research import (
     registrable_domain,
     validate_plan,
 )
+from agents.research_guardrails import apply_source_guardrails
 
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
@@ -3456,6 +3457,8 @@ class WebAgent:
                 f"محركات/واجهات أعادت النتيجة: {providers}\n"
                 f"ظهر ضمن الاستعلامات: {queries}\n"
                 f"تاريخ ظاهر من المصدر إن توفر: {source.get('published_at', '')}\n"
+                f"تصنيف محتوى التجارب إن توفر: {source.get('opinion_source_classification', 'غير مصنف')} "
+                f"(إشارة آلية أولية وليست إثباتًا لهوية الكاتب أو صحة التجربة)\n"
                 f"نص متاح: {evidence}"
             )
         evidence_text = (
@@ -3478,6 +3481,28 @@ class WebAgent:
                     "providers_used": report.get("providers_used", []),
                     "platform_counts": report.get("platform_counts", {}),
                     "evidence_signals": report.get("evidence_signals", {}),
+                    "source_guardrails": {
+                        "official_government_domain_required": (
+                            ((report.get("source_guardrails") or {}).get("final")
+                             or (report.get("source_guardrails") or {}).get("initial") or {})
+                            .get("official_government_domain_required", False)
+                        ),
+                        "official_domain_policy": (
+                            ((report.get("source_guardrails") or {}).get("final")
+                             or (report.get("source_guardrails") or {}).get("initial") or {})
+                            .get("official_domain_policy", "not_required")
+                        ),
+                        "current_evidence_required": (
+                            ((report.get("source_guardrails") or {}).get("final")
+                             or (report.get("source_guardrails") or {}).get("initial") or {})
+                            .get("current_evidence_required", False)
+                        ),
+                        "current_evidence_status": (
+                            ((report.get("source_guardrails") or {}).get("final")
+                             or (report.get("source_guardrails") or {}).get("initial") or {})
+                            .get("current_evidence_status", "not_required")
+                        ),
+                    },
                     "aspect_evidence": {
                         "covered": ((report.get("evidence_ledger") or {}).get("covered") or []),
                         "missing": ((report.get("evidence_ledger") or {}).get("missing") or []),
@@ -4680,6 +4705,18 @@ class WebAgent:
             if any(self._source_matches_query(str(q), source) for q in candidate_queries):
                 filtered_sources.append(source)
         sources = filtered_sources
+        sources, initial_source_guardrails = apply_source_guardrails(
+            working_question, clean_mode, plan, sources
+        )
+        report["source_guardrails"] = {
+            "initial": initial_source_guardrails,
+            "final": None,
+        }
+        if initial_source_guardrails["rejected_sources"]:
+            search_warnings.append(
+                "استُبعدت نتائج لا تستوفي شروط قبول المصدر الخاصة بهذا الطلب؛ "
+                "راجع تشخيص حواجز الأدلة لمعرفة الأسباب."
+            )
         search_warning = "؛ ".join(search_warnings) if search_warnings else None
         independent_domains = {
             registrable_domain(
@@ -5060,6 +5097,36 @@ class WebAgent:
                     )
                 else:
                     evidence_repair["reason"] = "repair_query_was_not_distinct"
+        # Re-apply task guardrails after the optional repair query so stale,
+        # non-government, or non-social candidates cannot re-enter the answer.
+        pre_final_guardrail_count = len(sources)
+        sources, final_source_guardrails = apply_source_guardrails(
+            working_question, clean_mode, plan, sources
+        )
+        report["source_guardrails"]["final"] = final_source_guardrails
+        report["source_guardrails"]["repair_candidates_before_final_filter"] = (
+            pre_final_guardrail_count
+        )
+        if final_source_guardrails["rejected_sources"]:
+            search_warnings.append(
+                "أُعيد تطبيق شروط قبول الأدلة بعد محاولة الإصلاح؛ لم تُستخدم النتائج "
+                "التي أخفقت في شروط الرسمية أو الحداثة أو كونها منشورات اجتماعية."
+            )
+        if evidence_repair.get("attempted") and "final_source_count" in evidence_repair:
+            final_domains = {
+                registrable_domain(
+                    source.get("domain")
+                    or urllib.parse.urlparse(source.get("url", "")).hostname
+                    or ""
+                )
+                for source in sources
+            }
+            final_domains.discard("")
+            evidence_repair["final_source_count"] = len(sources)
+            evidence_repair["final_independent_domain_count"] = len(final_domains)
+            evidence_repair["recovered"] = (
+                len(sources) >= 2 and len(final_domains) >= 2
+            )
         report["evidence_repair"] = evidence_repair
         baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}
         with self._provider_diagnostics_lock:
@@ -5198,6 +5265,10 @@ class WebAgent:
                 "domain": source.get("domain", ""),
                 "source_class": source.get("source_class", "general"),
                 "published_at": source.get("published_at", ""),
+                "opinion_source_classification": source.get("opinion_source_classification", ""),
+                "opinion_classification_basis": source.get("opinion_classification_basis", ""),
+                "opinion_classification_method": source.get("opinion_classification_method", ""),
+                "current_evidence_assessment": source.get("current_evidence_assessment", {}),
                 "publisher_name": source.get("publisher_name", ""),
                 "publisher_url": source.get("publisher_url", ""),
                 "rank_score": round(float(source.get("rank_score", 0)), 6),
