@@ -201,6 +201,31 @@ def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:
     return matched
 
 
+def _has_inline_summary_text(question: str) -> bool:
+    """Detect explicitly supplied summary text without treating a URL as pasted content."""
+    if not isinstance(question, str) or _URL_RE.search(question):
+        return False
+    normalized = normalize_text(question)
+    markers = (
+        "النص التالي", "النص الاتي", "النص ده", "النص اللي جاي",
+        "المحتوى التالي", "هذا النص", "following text", "the following text",
+        "text below", "content below", "this text",
+    )
+    for marker in markers:
+        candidate = normalize_text(marker)
+        if candidate and candidate in normalized:
+            remainder = normalized.split(candidate, 1)[1].strip()
+            if len(remainder) >= 8:
+                return True
+    return bool(
+        re.search(
+            r"^\s*(?:لخص(?:\s+لي)?|تلخيص|summari[sz]e|summary)\s*[:：]\s*\S.{12,}$",
+            question,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
 def _extract_explicit_locations(question: str) -> list[str]:
     """Return only a small, explicit location vocabulary; never infer geolocation."""
     normalized = normalize_text(question)
@@ -447,6 +472,19 @@ def build_task_spec(
             and bool(plan.get("queries"))
         )
         or (
+            intent_route not in {"LOCAL", "CLARIFY", "BUDGET_EXHAUSTED"}
+            and (
+                social_required
+                or official_destination
+                or current_required
+                or family in {"find_or_discover", "lead_generation", "general_research"}
+                or (
+                    family == "compare"
+                    and not inline_summary_text
+                )
+            )
+        )
+        or (
             clean_mode != "auto"
             and not route_is_clarification
             and not route_is_local
@@ -492,6 +530,13 @@ def build_task_spec(
             else "public_social_content" if social_required
             else "task_relevant_sources"
         ),
+        "source_policies": list(dict.fromkeys(
+            (["government_official_destination"] if government_official_site else [])
+            + (["official_destination"] if official_destination else [])
+            + (["current_read_page"] if current_required else [])
+            + (["public_social_content"] if social_required else [])
+            + (["task_relevant_sources"] if not (government_official_site or official_destination or current_required or social_required) else [])
+        )),
     }
     spec = {
         "schema": "omarai.task_spec.v1",
@@ -761,6 +806,7 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         "classification_is_probability": False,
         "ambiguity_status": str(value.get("ambiguity_status") or "unassessed")[:80],
         "constraints": value.get("constraints") if isinstance(value.get("constraints"), dict) else {},
+        "output_preferences": value.get("output_preferences") if isinstance(value.get("output_preferences"), dict) else {},
         "evidence_requirements": value.get("evidence_requirements") if isinstance(value.get("evidence_requirements"), list) else [],
         "query_strategies": value.get("query_strategies") if isinstance(value.get("query_strategies"), list) else [],
         "tool_requirements": value.get("tool_requirements") if isinstance(value.get("tool_requirements"), list) else [],
