@@ -141,6 +141,22 @@ _PATTERNS: dict[str, tuple[str, ...]] = {
         "نقاط", "على شكل نقاط", "قائمة", "bullet points", "as a list",
         "in bullets", "checklist",
     ),
+    "output_beginner_friendly": (
+        "ببساطة", "بشرح بسيط", "للمبتدئين", "من الصفر", "بلغة سهلة",
+        "simple language", "beginner friendly", "beginner-friendly",
+        "explain like i'm five", "eli5",
+    ),
+    "output_citations": (
+        "مع مصادر", "اذكر المصادر", "مصادر موثوقة", "روابط مباشرة",
+        "with sources", "cite sources", "include references", "with citations",
+    ),
+    "output_links": (
+        "رابط مباشر", "روابط مباشرة", "هات الرابط", "لينك", "url",
+        "direct link", "direct links", "include links", "source url",
+    ),
+    "output_json": (
+        "بصيغة json", "تنسيق json", "return json", "output json", "as json",
+    ),
 }
 
 _FRESHNESS_CUES = _PATTERNS["current_information"]
@@ -726,6 +742,10 @@ def build_task_spec(
             "examples_requested": bool(output_matches["output_examples"]),
             "table_requested": bool(output_matches["output_table"]),
             "bullets_or_checklist_requested": bool(output_matches["output_bullets"]),
+            "beginner_friendly_requested": bool(output_matches["output_beginner_friendly"]),
+            "citations_requested": bool(output_matches["output_citations"]),
+            "links_requested": bool(output_matches["output_links"]),
+            "json_requested": bool(output_matches["output_json"]),
         },
         "evidence_requirements": evidence_requirements,
         "query_strategies": query_strategies,
