@@ -1591,7 +1591,7 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L274) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 274 | [SRC-686F71AA50-L000274](../agents/task_understanding.py#L274) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L274) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 274 | [SRC-686F71AA50-L000274](../agents/task_understanding.py#L274) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L274) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 274 | [SRC-686F71AA50-L000274](../agents/task_understanding.py#L274) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L475) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 475 | [SRC-686F71AA50-L000475](../agents/task_understanding.py#L475) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L476) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 476 | [SRC-686F71AA50-L000476](../agents/task_understanding.py#L476) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L507) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 507 | [SRC-686F71AA50-L000507](../agents/task_understanding.py#L507) |
 | [agents/web_agent.py](../agents/web_agent.py#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 41 | [SRC-1AE03B9EC3-L000041](../agents/web_agent.py#L41) |
 | [agents/web_agent.py](../agents/web_agent.py#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 42 | [SRC-1AE03B9EC3-L000042](../agents/web_agent.py#L42) |
