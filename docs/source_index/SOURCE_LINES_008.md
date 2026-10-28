@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003107 إلى SRC-1AE03B9EC3-L003906
+- النطاق: SRC-1AE03B9EC3-L003106 إلى SRC-1AE03B9EC3-L003905
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003106](../../agents/web_agent.py#L3106) | 3106 | `"            ]"` | — |
 | [SRC-1AE03B9EC3-L003107](../../agents/web_agent.py#L3107) | 3107 | `"        plan[\"queries\"] = list(dict.fromkeys(cleaned_queries))[:MAX_PLAN_QUERIES]"` | — |
 | [SRC-1AE03B9EC3-L003108](../../agents/web_agent.py#L3108) | 3108 | `"        if plan.get(\"freshness\") == \"current\" and not any("` | — |
 | [SRC-1AE03B9EC3-L003109](../../agents/web_agent.py#L3109) | 3109 | `"            detect_word in _normalize_search_query(item).casefold()"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003903](../../agents/web_agent.py#L3903) | 3903 | `"        self, question: str, history: Any = None, mode: str = \"auto\""` | — |
 | [SRC-1AE03B9EC3-L003904](../../agents/web_agent.py#L3904) | 3904 | `"    ) -> dict[str, Any]:"` | — |
 | [SRC-1AE03B9EC3-L003905](../../agents/web_agent.py#L3905) | 3905 | `"        if not isinstance(question, str) or not question.strip():"` | — |
-| [SRC-1AE03B9EC3-L003906](../../agents/web_agent.py#L3906) | 3906 | `"            raise ValueError(\"اكتب سؤالًا غير فارغ.\")"` | — |

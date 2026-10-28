@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003907 إلى SRC-1AE03B9EC3-L004706
+- النطاق: SRC-1AE03B9EC3-L003906 إلى SRC-1AE03B9EC3-L004705
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003906](../../agents/web_agent.py#L3906) | 3906 | `"            raise ValueError(\"اكتب سؤالًا غير فارغ.\")"` | — |
 | [SRC-1AE03B9EC3-L003907](../../agents/web_agent.py#L3907) | 3907 | `"        question = question.strip()"` | — |
 | [SRC-1AE03B9EC3-L003908](../../agents/web_agent.py#L3908) | 3908 | `"        if len(question) > MAX_QUESTION_CHARS:"` | — |
 | [SRC-1AE03B9EC3-L003909](../../agents/web_agent.py#L3909) | 3909 | `"            raise ValueError(f\"السؤال طويل جدًا؛ الحد الأقصى {MAX_QUESTION_CHARS} حرف.\")"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004703](../../agents/web_agent.py#L4703) | 4703 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004704](../../agents/web_agent.py#L4704) | 4704 | `"        report[\"search_outcome\"] = search_outcome"` | — |
 | [SRC-1AE03B9EC3-L004705](../../agents/web_agent.py#L4705) | 4705 | `"        if search_outcome in _RESEARCH_ERROR_OUTCOMES:"` | — |
-| [SRC-1AE03B9EC3-L004706](../../agents/web_agent.py#L4706) | 4706 | `"            report[\"usable_sources_after_filtering\"] = None"` | — |

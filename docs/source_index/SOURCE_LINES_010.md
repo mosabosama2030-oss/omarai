@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004707 إلى SRC-EEF2E6447C-L000032
+- النطاق: SRC-1AE03B9EC3-L004706 إلى SRC-EEF2E6447C-L000031
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004706](../../agents/web_agent.py#L4706) | 4706 | `"            report[\"usable_sources_after_filtering\"] = None"` | — |
 | [SRC-1AE03B9EC3-L004707](../../agents/web_agent.py#L4707) | 4707 | `"            report[\"unique_sources\"] = None"` | — |
 | [SRC-1AE03B9EC3-L004708](../../agents/web_agent.py#L4708) | 4708 | `"            report[\"pages_fetched\"] = None"` | — |
 | [SRC-1AE03B9EC3-L004709](../../agents/web_agent.py#L4709) | 4709 | `"            report[\"provider_counts\"] = None"` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000029](../../api/omarai.py#L29) | 29 | `"def _csp_hash_source(value: str) -> str:"` | — |
 | [SRC-EEF2E6447C-L000030](../../api/omarai.py#L30) | 30 | `"    digest = base64.b64encode(hashlib.sha256(value.encode(\"utf-8\")).digest()).decode(\"ascii\")"` | — |
 | [SRC-EEF2E6447C-L000031](../../api/omarai.py#L31) | 31 | `"    return f\"'sha256-{digest}'\""` | — |
-| [SRC-EEF2E6447C-L000032](../../api/omarai.py#L32) | 32 | `""` | — |

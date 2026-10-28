@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002307 إلى SRC-1AE03B9EC3-L003106
+- النطاق: SRC-1AE03B9EC3-L002306 إلى SRC-1AE03B9EC3-L003105
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002306](../../agents/web_agent.py#L2306) | 2306 | `"                        query_counts.append({\"query\": query, \"results\": 0})"` | — |
 | [SRC-1AE03B9EC3-L002307](../../agents/web_agent.py#L2307) | 2307 | `"                        continue"` | — |
 | [SRC-1AE03B9EC3-L002308](../../agents/web_agent.py#L2308) | 2308 | `"                    query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
 | [SRC-1AE03B9EC3-L002309](../../agents/web_agent.py#L2309) | 2309 | `"                    grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003103](../../agents/web_agent.py#L3103) | 3103 | `"                compact_search_query(item)"` | — |
 | [SRC-1AE03B9EC3-L003104](../../agents/web_agent.py#L3104) | 3104 | `"                for item in cleaned_queries"` | — |
 | [SRC-1AE03B9EC3-L003105](../../agents/web_agent.py#L3105) | 3105 | `"                if compact_search_query(item) and _relevance_query_tokens(compact_search_query(item))"` | — |
-| [SRC-1AE03B9EC3-L003106](../../agents/web_agent.py#L3106) | 3106 | `"            ]"` | — |
