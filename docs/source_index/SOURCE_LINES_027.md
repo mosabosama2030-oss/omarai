@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001081 إلى SRC-D186ED3822-L000098
+- النطاق: SRC-90FAA34ADE-L001084 إلى SRC-D186ED3822-L000101
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-90FAA34ADE-L001081](../../tests/fixtures/answer_quality_cases.json#L1081) | 1081 | `"        \"body\": \"Package includes: device, cable, and battery. No runtime figure is listed.\""` | — |
-| [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L001084](../../tests/fixtures/answer_quality_cases.json#L1084) | 1084 | `"        \"States 18 hours as supported by this page\","` | — |
 | [SRC-90FAA34ADE-L001085](../../tests/fixtures/answer_quality_cases.json#L1085) | 1085 | `"        \"Attributes a nonexistent runtime specification to the source\""` | — |
 | [SRC-90FAA34ADE-L001086](../../tests/fixtures/answer_quality_cases.json#L1086) | 1086 | `"      ],"` | — |
@@ -852,3 +849,6 @@
 | [SRC-D186ED3822-L000096](../../tests/test_answer_quality_review_scorecard.py#L96) | 96 | `"    assert any(\"unknown case_id\" in issue for issue in issues)"` | — |
 | [SRC-D186ED3822-L000097](../../tests/test_answer_quality_review_scorecard.py#L97) | 97 | `"    assert any(\"duplicate review\" in issue for issue in issues)"` | — |
 | [SRC-D186ED3822-L000098](../../tests/test_answer_quality_review_scorecard.py#L98) | 98 | `""` | — |
+| [SRC-D186ED3822-L000099](../../tests/test_answer_quality_review_scorecard.py#L99) | 99 | `""` | — |
+| [SRC-D186ED3822-L000100](../../tests/test_answer_quality_review_scorecard.py#L100) | 100 | `"def test_not_tested_cases_must_not_carry_metric_scores():"` | — |
+| [SRC-D186ED3822-L000101](../../tests/test_answer_quality_review_scorecard.py#L101) | 101 | `"    mod = load_module()"` | — |

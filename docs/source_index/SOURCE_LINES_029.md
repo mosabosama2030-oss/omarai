@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000219 إلى SRC-DA61479D59-L000046
+- النطاق: SRC-3451CC474D-L000222 إلى SRC-DA61479D59-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000219](../../tests/test_api.py#L219) | 219 | `"def test_ask_is_honest_when_database_is_empty(local_api):"` | — |
-| [SRC-3451CC474D-L000220](../../tests/test_api.py#L220) | 220 | `"    status, answer = request_json("` | — |
-| [SRC-3451CC474D-L000221](../../tests/test_api.py#L221) | 221 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"مين أفضل إشارة أراجعها؟\"}"` | — |
 | [SRC-3451CC474D-L000222](../../tests/test_api.py#L222) | 222 | `"    )"` | — |
 | [SRC-3451CC474D-L000223](../../tests/test_api.py#L223) | 223 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000224](../../tests/test_api.py#L224) | 224 | `"    assert answer[\"kind\"] == \"no_data\""` | — |
@@ -834,3 +831,6 @@
 | [SRC-DA61479D59-L000044](../../tests/test_connector_summary_counters.py#L44) | 44 | `"    assert duckduckgo[\"implementation_status\"] == \"implemented_in_code\""` | — |
 | [SRC-DA61479D59-L000045](../../tests/test_connector_summary_counters.py#L45) | 45 | `"    assert duckduckgo[\"available_for_this_request\"] is True"` | — |
 | [SRC-DA61479D59-L000046](../../tests/test_connector_summary_counters.py#L46) | 46 | `"    assert duckduckgo[\"verified_for_this_request\"] is True"` | — |
+| [SRC-DA61479D59-L000047](../../tests/test_connector_summary_counters.py#L47) | 47 | `"    assert duckduckgo[\"failure_observed\"] is True"` | — |
+| [SRC-DA61479D59-L000048](../../tests/test_connector_summary_counters.py#L48) | 48 | `"    assert \"secret-value\" not in json.dumps(summary)"` | — |
+| [SRC-DA61479D59-L000049](../../tests/test_connector_summary_counters.py#L49) | 49 | `"    assert brave[\"configured\"] is False"` | — |

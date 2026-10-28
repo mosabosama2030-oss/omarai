@@ -4,20 +4,9 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-53E640B937-L000135 إلى SRC-E73001D9AC-L000699
+- النطاق: SRC-21D5D044E2-L000002 إلى SRC-E73001D9AC-L000702
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
-## وثائق وفهرسة
-
-### FILE-53E640B937 — [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-53E640B937-L000135](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L135) | 135 | `""` | — |
-| [SRC-53E640B937-L000136](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L136) | 136 | ``"يجب مراجعة النص الأصلي للمصدر لا عنوانه فقط. يفضل أن يراجع شخصان عينة مشتركة وأن تتم تسوية اختلافاتهما قبل المقارنة بين الإصدارات. حالة `NOT_TESTED` لا تدخل في أي بسط أو مقام ولا تتحول إلى PASS. هذه المقاييس مراجعات بشرية مجمعة وليست تطبيقًا لـRAGAS."`` | — |
 ## وثائق وفهرسة
 
 ### FILE-21D5D044E2 — [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L1)
@@ -27,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-21D5D044E2-L000001](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | 1 | `"# Omarai — سجل الاستثناءات والقرارات المؤجلة"` | — |
 | [SRC-21D5D044E2-L000002](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L2) | 2 | `""` | — |
 | [SRC-21D5D044E2-L000003](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L3) | 3 | `"**المعرف:** OMARAI-EXCEPTIONS-REGISTER-001  "` | — |
 | [SRC-21D5D044E2-L000004](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L4) | 4 | `"**التاريخ:** 2026-10-19  "` | — |
@@ -834,3 +822,6 @@
 | [SRC-E73001D9AC-L000697](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L697) | 697 | `"تُحدد المجالات المنطقية بما يلائم الكود الحقيقي، وقد تشمل: واجهات الطلبات، والهوية والصلاحيات، وتنسيق المهام، والتخطيط، والبحث، وجلب الصفحات، وتنفيذ الأدوات، وتجميع الأدلة، والتحقق من الإجابات، والذاكرة والتخزين، والمراقبة."` | — |
 | [SRC-E73001D9AC-L000698](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L698) | 698 | `""` | — |
 | [SRC-E73001D9AC-L000699](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L699) | 699 | `"هذه قائمة مجالات محتملة وليست إلزامًا بإنشاء وحدة منفصلة لكل اسم. يتم تحديد الحدود بعد فحص تدفق البيانات والاعتماديات الفعلية."` | — |
+| [SRC-E73001D9AC-L000700](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L700) | 700 | `""` | — |
+| [SRC-E73001D9AC-L000701](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L701) | 701 | `"- تعتمد قواعد الأعمال على واجهات داخلية مستقرة، لا على مكتبة مورد خارجي بشكل مباشر."` | — |
+| [SRC-E73001D9AC-L000702](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L702) | 702 | `"- توضع تفاصيل HTTP وSDK الخاص بالمورد وعمليات التحويل داخل Adapter مناسب."` | — |

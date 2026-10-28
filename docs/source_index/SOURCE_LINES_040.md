@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003322 إلى SRC-DE7EABE998-L000298
+- النطاق: SRC-F725E90B2A-L003325 إلى SRC-DE7EABE998-L000301
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L003322](../../tests/test_web_agent.py#L3322) | 3322 | `"            source_queries.append(query)"` | — |
-| [SRC-F725E90B2A-L003323](../../tests/test_web_agent.py#L3323) | 3323 | `"            if planned_query and query != compact_search_query(topic_query):"` | — |
-| [SRC-F725E90B2A-L003324](../../tests/test_web_agent.py#L3324) | 3324 | `"                return 0.0"` | — |
 | [SRC-F725E90B2A-L003325](../../tests/test_web_agent.py#L3325) | 3325 | `"        return 0.25"` | — |
 | [SRC-F725E90B2A-L003326](../../tests/test_web_agent.py#L3326) | 3326 | `""` | — |
 | [SRC-F725E90B2A-L003327](../../tests/test_web_agent.py#L3327) | 3327 | `"    monkeypatch.setattr(\"agents.web_agent._relevance_ratio\", capture_relevance)"` | — |
@@ -834,3 +831,6 @@
 | [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `" }"` | — |
 | [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `" if(result&&result.used_language_model!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
 | [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
+| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"  notice.textContent=\"لم تُستخدم استجابة مؤكدة من النموذج اللغوي؛ قد تكون الإجابة مقتطفات أو ردًا احتياطيًا وليست تحليلًا توليديًا كاملًا.\";"` | — |
+| [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `"  box.appendChild(notice);"` | — |
+| [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `" }"` | — |

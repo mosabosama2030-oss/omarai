@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000171 إلى SRC-01E35ABC46-L000001
+- النطاق: SRC-4397BC2CD2-L000174 إلى SRC-01E35ABC46-L000004
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-4397BC2CD2-L000171](../../tests/test_intent_router_integration.py#L171) | 171 | `"    assert initial_plan[\"query_limit\"] == 7"` | — |
-| [SRC-4397BC2CD2-L000172](../../tests/test_intent_router_integration.py#L172) | 172 | `"    # Each requested criterion gets a distinct search angle before generic deep"` | — |
-| [SRC-4397BC2CD2-L000173](../../tests/test_intent_router_integration.py#L173) | 173 | `"    # modifiers consume the bounded query budget."` | — |
 | [SRC-4397BC2CD2-L000174](../../tests/test_intent_router_integration.py#L174) | 174 | `"    planned_queries = \" \".join(initial_plan[\"queries\"]).casefold()"` | — |
 | [SRC-4397BC2CD2-L000175](../../tests/test_intent_router_integration.py#L175) | 175 | `"    assert \"السعر\" in planned_queries"` | — |
 | [SRC-4397BC2CD2-L000176](../../tests/test_intent_router_integration.py#L176) | 176 | `"    assert \"البطارية\" in planned_queries"` | — |
@@ -870,3 +867,6 @@
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
 | [SRC-01E35ABC46-L000001](../../tests/test_research_guardrails.py#L1) | 1 | `"\"\"\"Regression and adversarial tests for depth, freshness, relevance, evidence.\"\"\""` | — |
+| [SRC-01E35ABC46-L000002](../../tests/test_research_guardrails.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-01E35ABC46-L000003](../../tests/test_research_guardrails.py#L3) | 3 | `""` | — |
+| [SRC-01E35ABC46-L000004](../../tests/test_research_guardrails.py#L4) | 4 | `"from datetime import UTC, datetime"` | — |

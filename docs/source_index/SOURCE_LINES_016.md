@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000599 إلى SRC-E599346ABE-L001398
+- النطاق: SRC-E599346ABE-L000602 إلى SRC-E599346ABE-L001401
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000599](../generate_index.py#L599) | 599 | `"            elif ("` | — |
-| [SRC-E599346ABE-L000600](../generate_index.py#L600) | 600 | `"                relative.startswith(SOURCE_LINES_PAGES_DIR + \"/\")"` | — |
-| [SRC-E599346ABE-L000601](../generate_index.py#L601) | 601 | `"                and tracked_scope_contains(relative)"` | — |
 | [SRC-E599346ABE-L000602](../generate_index.py#L602) | 602 | `"            ):"` | — |
 | [SRC-E599346ABE-L000603](../generate_index.py#L603) | 603 | `"                excluded.append((relative, \"صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية\"))"` | — |
 | [SRC-E599346ABE-L000604](../generate_index.py#L604) | 604 | `""` | — |
@@ -816,3 +813,6 @@
 | [SRC-E599346ABE-L001396](../generate_index.py#L1396) | 1396 | `"    findings: list[IndexedFinding],"` | — |
 | [SRC-E599346ABE-L001397](../generate_index.py#L1397) | 1397 | `"    pages_by_file: dict[str, list[str]] \| None = None,"` | — |
 | [SRC-E599346ABE-L001398](../generate_index.py#L1398) | 1398 | `"    source_pages: dict[str, str] \| None = None,"` | — |
+| [SRC-E599346ABE-L001399](../generate_index.py#L1399) | 1399 | `") -> str:"` | — |
+| [SRC-E599346ABE-L001400](../generate_index.py#L1400) | 1400 | `"    \"\"\"Render a compact table of contents for the sharded full source-line index.\"\"\""` | — |
+| [SRC-E599346ABE-L001401](../generate_index.py#L1401) | 1401 | `"    assigned_pages = pages_by_file or {}"` | — |

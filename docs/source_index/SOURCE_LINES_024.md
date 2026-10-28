@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000312 إلى SRC-4FFD5AFC54-L000281
+- النطاق: SRC-69F3587825-L000315 إلى SRC-4FFD5AFC54-L000284
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-69F3587825-L000312](../search_code.py#L312) | 312 | `"            extensions=extensions,"` | — |
-| [SRC-69F3587825-L000313](../search_code.py#L313) | 313 | `"            repository_ref=repository_ref,"` | — |
-| [SRC-69F3587825-L000314](../search_code.py#L314) | 314 | `"            max_results=max(1, args.max),"` | — |
 | [SRC-69F3587825-L000315](../search_code.py#L315) | 315 | `"            context=max(0, args.context),"` | — |
 | [SRC-69F3587825-L000316](../search_code.py#L316) | 316 | `"        )"` | — |
 | [SRC-69F3587825-L000317](../search_code.py#L317) | 317 | `"    except (OSError, ValueError, re.error) as exc:"` | — |
@@ -888,3 +885,6 @@
 | [SRC-4FFD5AFC54-L000279](../../scripts/run_answer_quality_benchmark.py#L279) | 279 | `"        if not cases:"` | — |
 | [SRC-4FFD5AFC54-L000280](../../scripts/run_answer_quality_benchmark.py#L280) | 280 | `"            print(f\"Unknown case_id: {case_id}\", file=sys.stderr)"` | — |
 | [SRC-4FFD5AFC54-L000281](../../scripts/run_answer_quality_benchmark.py#L281) | 281 | `"            return 2"` | — |
+| [SRC-4FFD5AFC54-L000282](../../scripts/run_answer_quality_benchmark.py#L282) | 282 | `"    if limit > 0:"` | — |
+| [SRC-4FFD5AFC54-L000283](../../scripts/run_answer_quality_benchmark.py#L283) | 283 | `"        cases = cases[:limit]"` | — |
+| [SRC-4FFD5AFC54-L000284](../../scripts/run_answer_quality_benchmark.py#L284) | 284 | `""` | — |

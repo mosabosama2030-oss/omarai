@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000709 إلى SRC-69F3587825-L000311
+- النطاق: SRC-0F910493E8-L000712 إلى SRC-69F3587825-L000314
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-0F910493E8-L000709](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L709) | 709 | `"- تتضمن مفاتيح الذاكرة والتخزين المؤقت نطاق المستخدم/الجلسة/المهمة عند انطباقه."` | — |
-| [SRC-0F910493E8-L000710](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L710) | 710 | `"- لا تسمح للطلب بتقديم سجل محادثة مزور يمنح نفسه دور system أو صلاحية داخلية."` | — |
-| [SRC-0F910493E8-L000711](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L711) | 711 | `"- كل ذاكرة مسترجعة بيانات غير موثوقة حتى لو كانت محفوظة من تشغيل سابق؛ تحمي من poisoning والتلوث بين السياقات."` | — |
 | [SRC-0F910493E8-L000712](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L712) | 712 | `"- لا تحفظ إلا ما تحدده سياسة الذاكرة؛ وتوثق مدة الاحتفاظ والحذف وموافقة المستخدم عند الحاجة."` | — |
 | [SRC-0F910493E8-L000713](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L713) | 713 | `"- اختبر طلبين متزامنين بمستخدمين أو سياقين مختلفين، والإلغاء أثناء تنفيذ أداة، وإعادة استخدام worker بعد الفشل، واستعادة مخزن البيانات."` | — |
 | [SRC-0F910493E8-L000714](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L714) | 714 | `"- إذا لم يكن تعدد المستخدمين مدعومًا أو مختبرًا، فوثق ذلك ولا تعرض الخدمة كمنصة متعددة المستأجرين مؤكدة."` | — |
@@ -861,3 +858,6 @@
 | [SRC-69F3587825-L000309](../search_code.py#L309) | 309 | `"            args.query,"` | — |
 | [SRC-69F3587825-L000310](../search_code.py#L310) | 310 | `"            use_regex=args.regex,"` | — |
 | [SRC-69F3587825-L000311](../search_code.py#L311) | 311 | `"            case_sensitive=args.case_sensitive,"` | — |
+| [SRC-69F3587825-L000312](../search_code.py#L312) | 312 | `"            extensions=extensions,"` | — |
+| [SRC-69F3587825-L000313](../search_code.py#L313) | 313 | `"            repository_ref=repository_ref,"` | — |
+| [SRC-69F3587825-L000314](../search_code.py#L314) | 314 | `"            max_results=max(1, args.max),"` | — |

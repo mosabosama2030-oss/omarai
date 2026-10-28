@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005962 إلى SRC-EEF2E6447C-L000680
+- النطاق: SRC-1AE03B9EC3-L005962 إلى SRC-65AAF94960-L000003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -55,86 +55,83 @@
 | [SRC-1AE03B9EC3-L005998](../../agents/web_agent.py#L5998) | 5998 | `"            llm_warning"` | — |
 | [SRC-1AE03B9EC3-L005999](../../agents/web_agent.py#L5999) | 5999 | `"            or review_warning"` | — |
 | [SRC-1AE03B9EC3-L006000](../../agents/web_agent.py#L6000) | 6000 | `"            or review_status != \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006001](../../agents/web_agent.py#L6001) | 6001 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L006002](../../agents/web_agent.py#L6002) | 6002 | `"            pipeline_completion_status = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L006003](../../agents/web_agent.py#L6003) | 6003 | `"        elif ("` | — |
-| [SRC-1AE03B9EC3-L006004](../../agents/web_agent.py#L6004) | 6004 | `"            answer_integrity[\"potentially_missing_target_count\"] > 0"` | — |
-| [SRC-1AE03B9EC3-L006005](../../agents/web_agent.py#L6005) | 6005 | `"            or answer_integrity[\"source_evidence_gap_count\"] > 0"` | — |
-| [SRC-1AE03B9EC3-L006006](../../agents/web_agent.py#L6006) | 6006 | `"            or citation_validation[\"valid_citation_count\"] == 0"` | — |
-| [SRC-1AE03B9EC3-L006007](../../agents/web_agent.py#L6007) | 6007 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L006008](../../agents/web_agent.py#L6008) | 6008 | `"            pipeline_completion_status = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L006009](../../agents/web_agent.py#L6009) | 6009 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L006010](../../agents/web_agent.py#L6010) | 6010 | `"            pipeline_completion_status = \"completed\""` | — |
-| [SRC-1AE03B9EC3-L006011](../../agents/web_agent.py#L6011) | 6011 | `"        completion_stages = {"` | — |
-| [SRC-1AE03B9EC3-L006012](../../agents/web_agent.py#L6012) | 6012 | `"            \"search_attempted\": search_attempted,"` | — |
-| [SRC-1AE03B9EC3-L006013](../../agents/web_agent.py#L6013) | 6013 | `"            \"accepted_sources\": len(sources),"` | — |
-| [SRC-1AE03B9EC3-L006014](../../agents/web_agent.py#L6014) | 6014 | `"            \"pages_read\": fetched_pages,"` | — |
-| [SRC-1AE03B9EC3-L006015](../../agents/web_agent.py#L6015) | 6015 | `"            \"answer_generated_by_model\": bool(used_llm),"` | — |
-| [SRC-1AE03B9EC3-L006016](../../agents/web_agent.py#L6016) | 6016 | `"            \"claim_review\": review_status,"` | — |
-| [SRC-1AE03B9EC3-L006017](../../agents/web_agent.py#L6017) | 6017 | `"            \"valid_citations\": citation_validation[\"valid_citation_count\"],"` | — |
-| [SRC-1AE03B9EC3-L006018](../../agents/web_agent.py#L6018) | 6018 | `"            \"semantic_fact_check\": \"not_performed\","` | — |
-| [SRC-1AE03B9EC3-L006019](../../agents/web_agent.py#L6019) | 6019 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L006020](../../agents/web_agent.py#L6020) | 6020 | `"        report[\"pipeline_completion_status\"] = pipeline_completion_status"` | — |
-| [SRC-1AE03B9EC3-L006021](../../agents/web_agent.py#L6021) | 6021 | `"        report[\"completion_stages\"] = completion_stages"` | — |
-| [SRC-1AE03B9EC3-L006022](../../agents/web_agent.py#L6022) | 6022 | `"        report[\"pipeline_completion_semantics\"] = ("` | — |
-| [SRC-1AE03B9EC3-L006023](../../agents/web_agent.py#L6023) | 6023 | `"            \"pipeline stage completion only; not a guarantee of factual correctness\""` | — |
-| [SRC-1AE03B9EC3-L006024](../../agents/web_agent.py#L6024) | 6024 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L006025](../../agents/web_agent.py#L6025) | 6025 | `""` | — |
-| [SRC-1AE03B9EC3-L006026](../../agents/web_agent.py#L6026) | 6026 | `"        public_sources = []"` | — |
-| [SRC-1AE03B9EC3-L006027](../../agents/web_agent.py#L6027) | 6027 | `"        for source in sources:"` | — |
-| [SRC-1AE03B9EC3-L006028](../../agents/web_agent.py#L6028) | 6028 | `"            public_sources.append({"` | — |
-| [SRC-1AE03B9EC3-L006029](../../agents/web_agent.py#L6029) | 6029 | `"                \"title\": source.get(\"title\") or \"نتيجة ويب\","` | — |
-| [SRC-1AE03B9EC3-L006030](../../agents/web_agent.py#L6030) | 6030 | `"                \"url\": source[\"url\"],"` | — |
-| [SRC-1AE03B9EC3-L006031](../../agents/web_agent.py#L6031) | 6031 | `"                \"snippet\": source.get(\"snippet\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L006032](../../agents/web_agent.py#L6032) | 6032 | `"                \"page_fetched\": bool(source.get(\"page_fetched\")),"` | — |
-| [SRC-1AE03B9EC3-L006033](../../agents/web_agent.py#L6033) | 6033 | `"                \"providers\": source.get(\"providers\", []),"` | — |
-| [SRC-1AE03B9EC3-L006034](../../agents/web_agent.py#L6034) | 6034 | `"                \"queries\": source.get(\"queries\", []),"` | — |
-| [SRC-1AE03B9EC3-L006035](../../agents/web_agent.py#L6035) | 6035 | `"                \"platform\": source.get(\"platform\", \"web\"),"` | — |
-| [SRC-1AE03B9EC3-L006036](../../agents/web_agent.py#L6036) | 6036 | `"                \"domain\": source.get(\"domain\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L006037](../../agents/web_agent.py#L6037) | 6037 | `"                \"source_class\": source.get(\"source_class\", \"general\"),"` | — |
-| [SRC-1AE03B9EC3-L006038](../../agents/web_agent.py#L6038) | 6038 | `"                \"published_at\": source.get(\"published_at\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L006039](../../agents/web_agent.py#L6039) | 6039 | `"                \"publisher_name\": source.get(\"publisher_name\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L006040](../../agents/web_agent.py#L6040) | 6040 | `"                \"publisher_url\": source.get(\"publisher_url\", \"\"),"` | — |
-| [SRC-1AE03B9EC3-L006041](../../agents/web_agent.py#L6041) | 6041 | `"                \"rank_score\": round(float(source.get(\"rank_score\", 0)), 6),"` | — |
-| [SRC-1AE03B9EC3-L006042](../../agents/web_agent.py#L6042) | 6042 | `"                \"lead_qualification\": source.get(\"lead_qualification\"),"` | — |
-| [SRC-1AE03B9EC3-L006043](../../agents/web_agent.py#L6043) | 6043 | `"                \"lead_intent_evidence\": source.get(\"lead_intent_evidence\"),"` | — |
-| [SRC-1AE03B9EC3-L006044](../../agents/web_agent.py#L6044) | 6044 | `"            })"` | — |
-| [SRC-1AE03B9EC3-L006045](../../agents/web_agent.py#L6045) | 6045 | `"        return {"` | — |
-| [SRC-1AE03B9EC3-L006046](../../agents/web_agent.py#L6046) | 6046 | `"            \"answer\": answer,"` | — |
-| [SRC-1AE03B9EC3-L006047](../../agents/web_agent.py#L6047) | 6047 | `"            \"question\": question,"` | — |
-| [SRC-1AE03B9EC3-L006048](../../agents/web_agent.py#L6048) | 6048 | `"            \"search_query\": (plan.get(\"queries\") or [\"\"])[0],"` | — |
-| [SRC-1AE03B9EC3-L006049](../../agents/web_agent.py#L6049) | 6049 | `"            \"search_queries\": plan.get(\"queries\", []),"` | — |
-| [SRC-1AE03B9EC3-L006050](../../agents/web_agent.py#L6050) | 6050 | `"            \"research_plan\": {"` | — |
-| [SRC-1AE03B9EC3-L006051](../../agents/web_agent.py#L6051) | 6051 | `"                \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-1AE03B9EC3-L006052](../../agents/web_agent.py#L6052) | 6052 | `"                \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
-| [SRC-1AE03B9EC3-L006053](../../agents/web_agent.py#L6053) | 6053 | `"                \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
-| [SRC-1AE03B9EC3-L006054](../../agents/web_agent.py#L6054) | 6054 | `"                \"platforms\": plan.get(\"platforms\", []),"` | — |
-| [SRC-1AE03B9EC3-L006055](../../agents/web_agent.py#L6055) | 6055 | `"                \"mode\": clean_mode,"` | — |
-| [SRC-1AE03B9EC3-L006056](../../agents/web_agent.py#L6056) | 6056 | `"                \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
-| [SRC-1AE03B9EC3-L006057](../../agents/web_agent.py#L6057) | 6057 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
-| [SRC-1AE03B9EC3-L006058](../../agents/web_agent.py#L6058) | 6058 | `"                \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
-| [SRC-1AE03B9EC3-L006059](../../agents/web_agent.py#L6059) | 6059 | `"                \"intent_route\": intent_route,"` | — |
-| [SRC-1AE03B9EC3-L006060](../../agents/web_agent.py#L6060) | 6060 | `"                \"intent_route_reason\": intent_reason,"` | — |
-| [SRC-1AE03B9EC3-L006061](../../agents/web_agent.py#L6061) | 6061 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L006062](../../agents/web_agent.py#L6062) | 6062 | `"            \"search_report\": report,"` | — |
-| [SRC-1AE03B9EC3-L006063](../../agents/web_agent.py#L6063) | 6063 | `"            \"sources\": public_sources,"` | — |
-| [SRC-1AE03B9EC3-L006064](../../agents/web_agent.py#L6064) | 6064 | `"            \"research_quality\": research_quality,"` | — |
-| [SRC-1AE03B9EC3-L006065](../../agents/web_agent.py#L6065) | 6065 | `"            \"citation_validation\": citation_validation,"` | — |
-| [SRC-1AE03B9EC3-L006066](../../agents/web_agent.py#L6066) | 6066 | `"            \"answer_evidence_status\": answer_evidence_status,"` | — |
-| [SRC-1AE03B9EC3-L006067](../../agents/web_agent.py#L6067) | 6067 | `"            \"answer_coverage\": answer_coverage,"` | — |
-| [SRC-1AE03B9EC3-L006068](../../agents/web_agent.py#L6068) | 6068 | `"            \"answer_integrity\": answer_integrity,"` | — |
-| [SRC-1AE03B9EC3-L006069](../../agents/web_agent.py#L6069) | 6069 | `"            \"task_fulfillment_status\": task_fulfillment_status,"` | — |
-| [SRC-1AE03B9EC3-L006070](../../agents/web_agent.py#L6070) | 6070 | `"            \"coverage_repair_status\": coverage_repair_status,"` | — |
-| [SRC-1AE03B9EC3-L006071](../../agents/web_agent.py#L6071) | 6071 | `"            \"used_language_model\": used_llm,"` | — |
-| [SRC-1AE03B9EC3-L006072](../../agents/web_agent.py#L6072) | 6072 | `"            \"used_web_search\": bool(sources),"` | — |
-| [SRC-1AE03B9EC3-L006073](../../agents/web_agent.py#L6073) | 6073 | `"            \"search_attempted\": search_attempted,"` | — |
-| [SRC-1AE03B9EC3-L006074](../../agents/web_agent.py#L6074) | 6074 | `"            \"used_social_search\": bool(report.get(\"social_direct_results\", 0)),"` | — |
-| [SRC-1AE03B9EC3-L006075](../../agents/web_agent.py#L6075) | 6075 | `"            \"warnings\": warnings,"` | — |
-| [SRC-1AE03B9EC3-L006076](../../agents/web_agent.py#L6076) | 6076 | `"            \"kind\": \"web_research\" if used_llm else \"web_fallback\","` | — |
-| [SRC-1AE03B9EC3-L006077](../../agents/web_agent.py#L6077) | 6077 | `"            \"final_answer_status\": final_answer_status,"` | — |
-| [SRC-1AE03B9EC3-L006078](../../agents/web_agent.py#L6078) | 6078 | `"            \"intent_route\": intent_route,"` | — |
-| [SRC-1AE03B9EC3-L006079](../../agents/web_agent.py#L6079) | 6079 | `"            \"intent_route_reason\": intent_reason,"` | — |
-| [SRC-1AE03B9EC3-L006080](../../agents/web_agent.py#L6080) | 6080 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L006001](../../agents/web_agent.py#L6001) | 6001 | `"            or answer_integrity[\"potentially_missing_target_count\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L006002](../../agents/web_agent.py#L6002) | 6002 | `"            or answer_integrity[\"source_evidence_gap_count\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L006003](../../agents/web_agent.py#L6003) | 6003 | `"            or citation_validation[\"valid_citation_count\"] == 0"` | — |
+| [SRC-1AE03B9EC3-L006004](../../agents/web_agent.py#L6004) | 6004 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L006005](../../agents/web_agent.py#L6005) | 6005 | `"            pipeline_completion_status = \"partial\""` | — |
+| [SRC-1AE03B9EC3-L006006](../../agents/web_agent.py#L6006) | 6006 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L006007](../../agents/web_agent.py#L6007) | 6007 | `"            pipeline_completion_status = \"completed\""` | — |
+| [SRC-1AE03B9EC3-L006008](../../agents/web_agent.py#L6008) | 6008 | `"        completion_stages = {"` | — |
+| [SRC-1AE03B9EC3-L006009](../../agents/web_agent.py#L6009) | 6009 | `"            \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L006010](../../agents/web_agent.py#L6010) | 6010 | `"            \"accepted_sources\": len(sources),"` | — |
+| [SRC-1AE03B9EC3-L006011](../../agents/web_agent.py#L6011) | 6011 | `"            \"pages_read\": fetched_pages,"` | — |
+| [SRC-1AE03B9EC3-L006012](../../agents/web_agent.py#L6012) | 6012 | `"            \"answer_generated_by_model\": bool(used_llm),"` | — |
+| [SRC-1AE03B9EC3-L006013](../../agents/web_agent.py#L6013) | 6013 | `"            \"claim_review\": review_status,"` | — |
+| [SRC-1AE03B9EC3-L006014](../../agents/web_agent.py#L6014) | 6014 | `"            \"valid_citations\": citation_validation[\"valid_citation_count\"],"` | — |
+| [SRC-1AE03B9EC3-L006015](../../agents/web_agent.py#L6015) | 6015 | `"            \"semantic_fact_check\": \"not_performed\","` | — |
+| [SRC-1AE03B9EC3-L006016](../../agents/web_agent.py#L6016) | 6016 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L006017](../../agents/web_agent.py#L6017) | 6017 | `"        report[\"pipeline_completion_status\"] = pipeline_completion_status"` | — |
+| [SRC-1AE03B9EC3-L006018](../../agents/web_agent.py#L6018) | 6018 | `"        report[\"completion_stages\"] = completion_stages"` | — |
+| [SRC-1AE03B9EC3-L006019](../../agents/web_agent.py#L6019) | 6019 | `"        report[\"pipeline_completion_semantics\"] = ("` | — |
+| [SRC-1AE03B9EC3-L006020](../../agents/web_agent.py#L6020) | 6020 | `"            \"pipeline stage completion only; not a guarantee of factual correctness\""` | — |
+| [SRC-1AE03B9EC3-L006021](../../agents/web_agent.py#L6021) | 6021 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006022](../../agents/web_agent.py#L6022) | 6022 | `""` | — |
+| [SRC-1AE03B9EC3-L006023](../../agents/web_agent.py#L6023) | 6023 | `"        public_sources = []"` | — |
+| [SRC-1AE03B9EC3-L006024](../../agents/web_agent.py#L6024) | 6024 | `"        for source in sources:"` | — |
+| [SRC-1AE03B9EC3-L006025](../../agents/web_agent.py#L6025) | 6025 | `"            public_sources.append({"` | — |
+| [SRC-1AE03B9EC3-L006026](../../agents/web_agent.py#L6026) | 6026 | `"                \"title\": source.get(\"title\") or \"نتيجة ويب\","` | — |
+| [SRC-1AE03B9EC3-L006027](../../agents/web_agent.py#L6027) | 6027 | `"                \"url\": source[\"url\"],"` | — |
+| [SRC-1AE03B9EC3-L006028](../../agents/web_agent.py#L6028) | 6028 | `"                \"snippet\": source.get(\"snippet\", \"\"),"` | — |
+| [SRC-1AE03B9EC3-L006029](../../agents/web_agent.py#L6029) | 6029 | `"                \"page_fetched\": bool(source.get(\"page_fetched\")),"` | — |
+| [SRC-1AE03B9EC3-L006030](../../agents/web_agent.py#L6030) | 6030 | `"                \"providers\": source.get(\"providers\", []),"` | — |
+| [SRC-1AE03B9EC3-L006031](../../agents/web_agent.py#L6031) | 6031 | `"                \"queries\": source.get(\"queries\", []),"` | — |
+| [SRC-1AE03B9EC3-L006032](../../agents/web_agent.py#L6032) | 6032 | `"                \"platform\": source.get(\"platform\", \"web\"),"` | — |
+| [SRC-1AE03B9EC3-L006033](../../agents/web_agent.py#L6033) | 6033 | `"                \"domain\": source.get(\"domain\", \"\"),"` | — |
+| [SRC-1AE03B9EC3-L006034](../../agents/web_agent.py#L6034) | 6034 | `"                \"source_class\": source.get(\"source_class\", \"general\"),"` | — |
+| [SRC-1AE03B9EC3-L006035](../../agents/web_agent.py#L6035) | 6035 | `"                \"published_at\": source.get(\"published_at\", \"\"),"` | — |
+| [SRC-1AE03B9EC3-L006036](../../agents/web_agent.py#L6036) | 6036 | `"                \"publisher_name\": source.get(\"publisher_name\", \"\"),"` | — |
+| [SRC-1AE03B9EC3-L006037](../../agents/web_agent.py#L6037) | 6037 | `"                \"publisher_url\": source.get(\"publisher_url\", \"\"),"` | — |
+| [SRC-1AE03B9EC3-L006038](../../agents/web_agent.py#L6038) | 6038 | `"                \"rank_score\": round(float(source.get(\"rank_score\", 0)), 6),"` | — |
+| [SRC-1AE03B9EC3-L006039](../../agents/web_agent.py#L6039) | 6039 | `"                \"lead_qualification\": source.get(\"lead_qualification\"),"` | — |
+| [SRC-1AE03B9EC3-L006040](../../agents/web_agent.py#L6040) | 6040 | `"                \"lead_intent_evidence\": source.get(\"lead_intent_evidence\"),"` | — |
+| [SRC-1AE03B9EC3-L006041](../../agents/web_agent.py#L6041) | 6041 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L006042](../../agents/web_agent.py#L6042) | 6042 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L006043](../../agents/web_agent.py#L6043) | 6043 | `"            \"answer\": answer,"` | — |
+| [SRC-1AE03B9EC3-L006044](../../agents/web_agent.py#L6044) | 6044 | `"            \"question\": question,"` | — |
+| [SRC-1AE03B9EC3-L006045](../../agents/web_agent.py#L6045) | 6045 | `"            \"search_query\": (plan.get(\"queries\") or [\"\"])[0],"` | — |
+| [SRC-1AE03B9EC3-L006046](../../agents/web_agent.py#L6046) | 6046 | `"            \"search_queries\": plan.get(\"queries\", []),"` | — |
+| [SRC-1AE03B9EC3-L006047](../../agents/web_agent.py#L6047) | 6047 | `"            \"research_plan\": {"` | — |
+| [SRC-1AE03B9EC3-L006048](../../agents/web_agent.py#L6048) | 6048 | `"                \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-1AE03B9EC3-L006049](../../agents/web_agent.py#L6049) | 6049 | `"                \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
+| [SRC-1AE03B9EC3-L006050](../../agents/web_agent.py#L6050) | 6050 | `"                \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
+| [SRC-1AE03B9EC3-L006051](../../agents/web_agent.py#L6051) | 6051 | `"                \"platforms\": plan.get(\"platforms\", []),"` | — |
+| [SRC-1AE03B9EC3-L006052](../../agents/web_agent.py#L6052) | 6052 | `"                \"mode\": clean_mode,"` | — |
+| [SRC-1AE03B9EC3-L006053](../../agents/web_agent.py#L6053) | 6053 | `"                \"direct_urls_provided\": len(plan.get(\"direct_urls\", [])),"` | — |
+| [SRC-1AE03B9EC3-L006054](../../agents/web_agent.py#L6054) | 6054 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
+| [SRC-1AE03B9EC3-L006055](../../agents/web_agent.py#L6055) | 6055 | `"                \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
+| [SRC-1AE03B9EC3-L006056](../../agents/web_agent.py#L6056) | 6056 | `"                \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L006057](../../agents/web_agent.py#L6057) | 6057 | `"                \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L006058](../../agents/web_agent.py#L6058) | 6058 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L006059](../../agents/web_agent.py#L6059) | 6059 | `"            \"search_report\": report,"` | — |
+| [SRC-1AE03B9EC3-L006060](../../agents/web_agent.py#L6060) | 6060 | `"            \"sources\": public_sources,"` | — |
+| [SRC-1AE03B9EC3-L006061](../../agents/web_agent.py#L6061) | 6061 | `"            \"research_quality\": research_quality,"` | — |
+| [SRC-1AE03B9EC3-L006062](../../agents/web_agent.py#L6062) | 6062 | `"            \"citation_validation\": citation_validation,"` | — |
+| [SRC-1AE03B9EC3-L006063](../../agents/web_agent.py#L6063) | 6063 | `"            \"answer_evidence_status\": answer_evidence_status,"` | — |
+| [SRC-1AE03B9EC3-L006064](../../agents/web_agent.py#L6064) | 6064 | `"            \"answer_coverage\": answer_coverage,"` | — |
+| [SRC-1AE03B9EC3-L006065](../../agents/web_agent.py#L6065) | 6065 | `"            \"answer_integrity\": answer_integrity,"` | — |
+| [SRC-1AE03B9EC3-L006066](../../agents/web_agent.py#L6066) | 6066 | `"            \"task_fulfillment_status\": task_fulfillment_status,"` | — |
+| [SRC-1AE03B9EC3-L006067](../../agents/web_agent.py#L6067) | 6067 | `"            \"coverage_repair_status\": coverage_repair_status,"` | — |
+| [SRC-1AE03B9EC3-L006068](../../agents/web_agent.py#L6068) | 6068 | `"            \"used_language_model\": used_llm,"` | — |
+| [SRC-1AE03B9EC3-L006069](../../agents/web_agent.py#L6069) | 6069 | `"            \"used_web_search\": bool(sources),"` | — |
+| [SRC-1AE03B9EC3-L006070](../../agents/web_agent.py#L6070) | 6070 | `"            \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L006071](../../agents/web_agent.py#L6071) | 6071 | `"            \"used_social_search\": bool(report.get(\"social_direct_results\", 0)),"` | — |
+| [SRC-1AE03B9EC3-L006072](../../agents/web_agent.py#L6072) | 6072 | `"            \"warnings\": warnings,"` | — |
+| [SRC-1AE03B9EC3-L006073](../../agents/web_agent.py#L6073) | 6073 | `"            \"kind\": \"web_research\" if used_llm else \"web_fallback\","` | — |
+| [SRC-1AE03B9EC3-L006074](../../agents/web_agent.py#L6074) | 6074 | `"            \"final_answer_status\": final_answer_status,"` | — |
+| [SRC-1AE03B9EC3-L006075](../../agents/web_agent.py#L6075) | 6075 | `"            \"intent_route\": intent_route,"` | — |
+| [SRC-1AE03B9EC3-L006076](../../agents/web_agent.py#L6076) | 6076 | `"            \"intent_route_reason\": intent_reason,"` | — |
+| [SRC-1AE03B9EC3-L006077](../../agents/web_agent.py#L6077) | 6077 | `"        }"` | — |
 ## واجهات API
 
 ### FILE-D8438CDB65 — [api/__init__.py](../../api/__init__.py#L1)
@@ -834,3 +831,15 @@
 | [SRC-EEF2E6447C-L000678](../../api/omarai.py#L678) | 678 | `""` | — |
 | [SRC-EEF2E6447C-L000679](../../api/omarai.py#L679) | 679 | `"if __name__ == \"__main__\":"` | — |
 | [SRC-EEF2E6447C-L000680](../../api/omarai.py#L680) | 680 | `"    serve()"` | — |
+## وثائق ونصوص
+
+### FILE-65AAF94960 — [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-65AAF94960-L000001](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | 1 | `"# تقرير قبول الاستضافة — Omarai"` | — |
+| [SRC-65AAF94960-L000002](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L2) | 2 | `"**التاريخ:** 27 أكتوبر 2026  "` | — |
+| [SRC-65AAF94960-L000003](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L3) | 3 | `"**المضيف:** https://omarai-dec45.containers.snapdeploy.app/  "` | — |

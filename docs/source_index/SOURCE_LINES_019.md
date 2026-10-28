@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000700 إلى SRC-D17CE3D12F-L000596
+- النطاق: SRC-E73001D9AC-L000703 إلى SRC-D17CE3D12F-L000599
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E73001D9AC-L000700](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L700) | 700 | `""` | — |
-| [SRC-E73001D9AC-L000701](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L701) | 701 | `"- تعتمد قواعد الأعمال على واجهات داخلية مستقرة، لا على مكتبة مورد خارجي بشكل مباشر."` | — |
-| [SRC-E73001D9AC-L000702](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L702) | 702 | `"- توضع تفاصيل HTTP وSDK الخاص بالمورد وعمليات التحويل داخل Adapter مناسب."` | — |
 | [SRC-E73001D9AC-L000703](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L703) | 703 | `"- تعرف العقود سلوك النجاح والفشل والمهلة والإلغاء وحدود الحجم وإعادة المحاولة."` | — |
 | [SRC-E73001D9AC-L000704](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L704) | 704 | `"- تعزل صيغة رد موفر معين عن بقية النواة عبر تحويل صريح واختبارات للعقد."` | — |
 | [SRC-E73001D9AC-L000705](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L705) | 705 | `"- لا تتسلل بيانات الاعتماد أو أسرار المورد إلى النماذج أو الواجهة أو سجلات المجال."` | — |
@@ -825,3 +822,6 @@
 | [SRC-D17CE3D12F-L000594](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L594) | 594 | `""` | — |
 | [SRC-D17CE3D12F-L000595](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L595) | 595 | `"قبل دمج تغيير مؤثر معماريًا أو أمنيًا أو تشغيليًا أو متعلقًا بالنموذج، يجب على المنفذ الإجابة على الأسئلة المنطبقة:"` | — |
 | [SRC-D17CE3D12F-L000596](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L596) | 596 | `""` | — |
+| [SRC-D17CE3D12F-L000597](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L597) | 597 | `"1. ما المشكلة أو الحاجة التي يعالجها التغيير؟"` | — |
+| [SRC-D17CE3D12F-L000598](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L598) | 598 | `"2. ما المتطلب/الخطر/المقياس المرتبط به؟"` | — |
+| [SRC-D17CE3D12F-L000599](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L599) | 599 | `"3. هل توجد طريقة أبسط؟"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D186ED3822-L000099 إلى SRC-3451CC474D-L000218
+- النطاق: SRC-D186ED3822-L000102 إلى SRC-3451CC474D-L000221
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D186ED3822-L000099](../../tests/test_answer_quality_review_scorecard.py#L99) | 99 | `""` | — |
-| [SRC-D186ED3822-L000100](../../tests/test_answer_quality_review_scorecard.py#L100) | 100 | `"def test_not_tested_cases_must_not_carry_metric_scores():"` | — |
-| [SRC-D186ED3822-L000101](../../tests/test_answer_quality_review_scorecard.py#L101) | 101 | `"    mod = load_module()"` | — |
 | [SRC-D186ED3822-L000102](../../tests/test_answer_quality_review_scorecard.py#L102) | 102 | `"    data = {\"reviews\": [{"` | — |
 | [SRC-D186ED3822-L000103](../../tests/test_answer_quality_review_scorecard.py#L103) | 103 | `"        \"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D186ED3822-L000104](../../tests/test_answer_quality_review_scorecard.py#L104) | 104 | `"        \"writing_quality\": 5,"` | — |
@@ -843,3 +840,6 @@
 | [SRC-3451CC474D-L000216](../../tests/test_api.py#L216) | 216 | `"    assert error.value.code == 403"` | — |
 | [SRC-3451CC474D-L000217](../../tests/test_api.py#L217) | 217 | `""` | — |
 | [SRC-3451CC474D-L000218](../../tests/test_api.py#L218) | 218 | `""` | — |
+| [SRC-3451CC474D-L000219](../../tests/test_api.py#L219) | 219 | `"def test_ask_is_honest_when_database_is_empty(local_api):"` | — |
+| [SRC-3451CC474D-L000220](../../tests/test_api.py#L220) | 220 | `"    status, answer = request_json("` | — |
+| [SRC-3451CC474D-L000221](../../tests/test_api.py#L221) | 221 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"مين أفضل إشارة أراجعها؟\"}"` | — |

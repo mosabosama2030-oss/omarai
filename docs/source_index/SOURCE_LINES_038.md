@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001722 إلى SRC-F725E90B2A-L002521
+- النطاق: SRC-F725E90B2A-L001725 إلى SRC-F725E90B2A-L002524
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001722](../../tests/test_web_agent.py#L1722) | 1722 | `"    )"` | — |
-| [SRC-F725E90B2A-L001723](../../tests/test_web_agent.py#L1723) | 1723 | `"    assert normalize(\"file:///etc/passwd\") == \"\""` | — |
-| [SRC-F725E90B2A-L001724](../../tests/test_web_agent.py#L1724) | 1724 | `""` | — |
 | [SRC-F725E90B2A-L001725](../../tests/test_web_agent.py#L1725) | 1725 | `""` | — |
 | [SRC-F725E90B2A-L001726](../../tests/test_web_agent.py#L1726) | 1726 | `"def test_bounded_repair_deduplicates_same_page_even_with_tracking_url(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001727](../../tests/test_web_agent.py#L1727) | 1727 | `"    agent = WebAgent()"` | — |
@@ -816,3 +813,6 @@
 | [SRC-F725E90B2A-L002519](../../tests/test_web_agent.py#L2519) | 2519 | `"    assert budget[\"counts\"][\"model_calls\"] == 0"` | — |
 | [SRC-F725E90B2A-L002520](../../tests/test_web_agent.py#L2520) | 2520 | `"    assert budget[\"hard_cancellation_guaranteed\"] is False"` | — |
 | [SRC-F725E90B2A-L002521](../../tests/test_web_agent.py#L2521) | 2521 | `""` | — |
+| [SRC-F725E90B2A-L002522](../../tests/test_web_agent.py#L2522) | 2522 | `""` | — |
+| [SRC-F725E90B2A-L002523](../../tests/test_web_agent.py#L2523) | 2523 | `"@pytest.mark.parametrize("` | — |
+| [SRC-F725E90B2A-L002524](../../tests/test_web_agent.py#L2524) | 2524 | `"    \"draft_answer\","` | — |

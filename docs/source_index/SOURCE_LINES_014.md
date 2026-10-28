@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65AAF94960-L000001 إلى SRC-C7C7FA8853-L000021
+- النطاق: SRC-65AAF94960-L000004 إلى SRC-C7C7FA8853-L000024
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-65AAF94960-L000001](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | 1 | `"# تقرير قبول الاستضافة — Omarai"` | — |
-| [SRC-65AAF94960-L000002](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L2) | 2 | `"**التاريخ:** 27 أكتوبر 2026  "` | — |
-| [SRC-65AAF94960-L000003](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L3) | 3 | `"**المضيف:** https://omarai-dec45.containers.snapdeploy.app/  "` | — |
 | [SRC-65AAF94960-L000004](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L4) | 4 | `"**جلسة المتصفح:** [TinyFish run af7ebb42-e032-4321-8454-a3628432f53d](https://agent.tinyfish.ai/runs/af7ebb42-e032-4321-8454-a3628432f53d)  "` | — |
 | [SRC-65AAF94960-L000005](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L5) | 5 | `"**التصنيف:** PARTIAL / BLOCKED — لا إعلان جاهزية."` | — |
 | [SRC-65AAF94960-L000006](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) | 6 | `""` | — |
@@ -897,3 +894,6 @@
 | [SRC-C7C7FA8853-L000019](../DEPLOY_RAILWAY_AR.md#L19) | 19 | `"6. افتح Variables وأضف:"` | — |
 | [SRC-C7C7FA8853-L000020](../DEPLOY_RAILWAY_AR.md#L20) | 20 | `"   - OMARAI_PUBLIC_DEPLOYMENT=1"` | — |
 | [SRC-C7C7FA8853-L000021](../DEPLOY_RAILWAY_AR.md#L21) | 21 | `"   - OMARAI_ACCESS_TOKEN = رمز عشوائي سري قوي (32 حرفًا على الأقل)"` | — |
+| [SRC-C7C7FA8853-L000022](../DEPLOY_RAILWAY_AR.md#L22) | 22 | `"   - OPENROUTER_API_KEY = مفتاحك الشخصي"` | — |
+| [SRC-C7C7FA8853-L000023](../DEPLOY_RAILWAY_AR.md#L23) | 23 | `"   - اختياريًا: OMARAI_ANSWER_MODEL وOMARAI_PLANNER_MODEL وOMARAI_REVIEW_MODEL بعد التحقق من صلاحية النماذج وأسعارها."` | — |
+| [SRC-C7C7FA8853-L000024](../DEPLOY_RAILWAY_AR.md#L24) | 24 | `"   - اختياريًا لتفعيل بحث مباشر ينفذه مزود OpenRouter داخل طلب التوليد: OMARAI_OPENROUTER_WEB_SEARCH=1. هذا خيار إضافي قد يستهلك رصيد بحث فوق تكلفة النموذج؛ اتركه غير مضبوط إذا لم توافق على التكلفة."` | — |

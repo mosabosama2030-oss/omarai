@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000170 إلى SRC-65551FB29F-L000483
+- النطاق: SRC-62CE5126F9-L000173 إلى SRC-65551FB29F-L000486
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-62CE5126F9-L000170](../OMARAI_REMEDIATION_REGISTER_AR.md#L170) | 170 | ``"\| OMR-T-006 \| PR #76 \| P1 \| صحة فحص الفهرس وتطابق رأس الاختبار \| `.github/workflows/tests.yml`, `docs/generate_index.py` \| **FIXED_AND_TESTED على `463f4a4...`** — PR [#39654530305](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654530305) اجتاز 384 اختبارًا لكل إصدار Python وRuff وفحص الفهرس والحاوية/API smoke؛ فحص المراجع غير `main` يولد في مساحة الاختبار قبل تحقق الاتساق \| رأس PR الحالي يتضمن تحديث تقرير/فهرس مولد فقط؛ يعاد الاختبار لأي تغيير لاحق في الكود/الاختبارات/Workflow \|"`` | — |
-| [SRC-62CE5126F9-L000171](../OMARAI_REMEDIATION_REGISTER_AR.md#L171) | 171 | ``"\| OMR-CI-001 \| مراجعة أدوات التحقق \| P1 \| كانت الاختبارات تخسر سباقًا مع workflow الفهرسة في الفروع غير main \| `.github/workflows/tests.yml`, `.github/workflows/update_index.yml`, `docs/generate_index.py` \| **FIXED_AND_TESTED** — تُحدّث فحوص المراجع غير `main` الفهرس داخل checkout المؤقت قبل فحصه؛ يبقى فحص `main` صارمًا من الملفات الملتزمة. PR [#39654530305](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654530305) اجتاز 384 اختبارًا بكل من Python 3.11/3.12، وRuff والفهرس والحاوية/API smoke \| لا تتجاوز stale index على `main`؛ انشر الملفات المولدة آليًا واحتفظ بفحص `main --check` الصارم \|"`` | — |
-| [SRC-62CE5126F9-L000172](../OMARAI_REMEDIATION_REGISTER_AR.md#L172) | 172 | ``"\| OMR-CI-002 \| سباق ما بعد دمج تغييرات الوثائق مع تحديث الفهرس \| P1 — جودة بوابة CI \| بعد دمج #79 فشل `generate_index.py --check` لأن الفهرس لم يكن محدثًا عند بدء الاختبار. \| `.github/workflows/tests.yml`, `.github/workflows/update_index.yml` \| **FIXED_AND_TESTED على رأس PR #81 قبل الدمج** عبر [run #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221): 384 اختبارًا على Python 3.11 و3.12 لكل منهما، وRuff والفهرس والحاوية/API smoke. PR #81 مدمج في `9f6674a...`. **CI مباشر على رأس main النهائي: NOT_CONFIRMED** في هذه المراجعة، وليس FAIL. \| التحقق من تشغيل push CI على الرأس النهائي `00a3ede...`؛ الإبقاء على تصنيف المسارات واختبار الفهرس الصارم للتغييرات المولدة وحدها. \|"`` | — |
 | [SRC-62CE5126F9-L000173](../OMARAI_REMEDIATION_REGISTER_AR.md#L173) | 173 | ``"\| OMR-T-007 \| Grok / Issue #68 \| P1 \| تقرير مستقل كامل قابل للتحقق \| Issue #68 والتقرير الذي قدمه المدير \| **PARTIAL** — ملخص Grok قدمه Human Director بالمحادثة؛ لم يُثبت وجود artifact كامل في `main` بالمسار المذكور \| إرفاق التقرير الحقيقي/رابطه وSHA الذي راجعه المراجع؛ لا تدّع اكتمال مراجعة مستقلة دون ذلك \|"`` | — |
 | [SRC-62CE5126F9-L000174](../OMARAI_REMEDIATION_REGISTER_AR.md#L174) | 174 | `""` | — |
 | [SRC-62CE5126F9-L000175](../OMARAI_REMEDIATION_REGISTER_AR.md#L175) | 175 | `"## D. التداخلات والفروع"` | — |
@@ -834,3 +831,6 @@
 | [SRC-65551FB29F-L000481](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L481) | 481 | `"9. توجد طريقة لمعرفة من وافق على الاستثناء ومتى تنتهي صلاحيته."` | — |
 | [SRC-65551FB29F-L000482](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L482) | 482 | `"10. لا تعتمد الموافقة على عدد تقارير الوكلاء بل على الأدلة."` | — |
 | [SRC-65551FB29F-L000483](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L483) | 483 | `""` | — |
+| [SRC-65551FB29F-L000484](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L484) | 484 | `"## 28. نموذج سجل متطلب قابل للنسخ"` | — |
+| [SRC-65551FB29F-L000485](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L485) | 485 | `""` | — |
+| [SRC-65551FB29F-L000486](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L486) | 486 | ````"```yaml"```` | — |

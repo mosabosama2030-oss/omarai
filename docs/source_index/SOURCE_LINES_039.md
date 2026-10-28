@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002522 إلى SRC-F725E90B2A-L003321
+- النطاق: SRC-F725E90B2A-L002525 إلى SRC-F725E90B2A-L003324
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002522](../../tests/test_web_agent.py#L2522) | 2522 | `""` | — |
-| [SRC-F725E90B2A-L002523](../../tests/test_web_agent.py#L2523) | 2523 | `"@pytest.mark.parametrize("` | — |
-| [SRC-F725E90B2A-L002524](../../tests/test_web_agent.py#L2524) | 2524 | `"    \"draft_answer\","` | — |
 | [SRC-F725E90B2A-L002525](../../tests/test_web_agent.py#L2525) | 2525 | `"    ["` | — |
 | [SRC-F725E90B2A-L002526](../../tests/test_web_agent.py#L2526) | 2526 | `"        \"وفق المقارنة، الخيار الأول أفضل من الثاني.\","` | — |
 | [SRC-F725E90B2A-L002527](../../tests/test_web_agent.py#L2527) | 2527 | `"        \"وفق المقارنة، الخيار الأول أفضل من الثاني [المصدر 99].\","` | — |
@@ -816,3 +813,6 @@
 | [SRC-F725E90B2A-L003319](../../tests/test_web_agent.py#L3319) | 3319 | `""` | — |
 | [SRC-F725E90B2A-L003320](../../tests/test_web_agent.py#L3320) | 3320 | `"    def capture_relevance(query, text):"` | — |
 | [SRC-F725E90B2A-L003321](../../tests/test_web_agent.py#L3321) | 3321 | `"        if \"تجارب السيارات الكهربائية المستعملة\" in text:"` | — |
+| [SRC-F725E90B2A-L003322](../../tests/test_web_agent.py#L3322) | 3322 | `"            source_queries.append(query)"` | — |
+| [SRC-F725E90B2A-L003323](../../tests/test_web_agent.py#L3323) | 3323 | `"            if planned_query and query != compact_search_query(topic_query):"` | — |
+| [SRC-F725E90B2A-L003324](../../tests/test_web_agent.py#L3324) | 3324 | `"                return 0.0"` | — |

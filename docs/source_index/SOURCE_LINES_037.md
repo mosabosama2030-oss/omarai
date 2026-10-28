@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000922 إلى SRC-F725E90B2A-L001721
+- النطاق: SRC-F725E90B2A-L000925 إلى SRC-F725E90B2A-L001724
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000922](../../tests/test_web_agent.py#L922) | 922 | `"    )"` | — |
-| [SRC-F725E90B2A-L000923](../../tests/test_web_agent.py#L923) | 923 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
-| [SRC-F725E90B2A-L000924](../../tests/test_web_agent.py#L924) | 924 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"passed\""` | — |
 | [SRC-F725E90B2A-L000925](../../tests/test_web_agent.py#L925) | 925 | `"    assert report[\"checks\"][\"web_search\"][\"provider_counts\"] == {"` | — |
 | [SRC-F725E90B2A-L000926](../../tests/test_web_agent.py#L926) | 926 | `"        \"duckduckgo_html\": 1, \"bing_rss\": 1"` | — |
 | [SRC-F725E90B2A-L000927](../../tests/test_web_agent.py#L927) | 927 | `"    }"` | — |
@@ -816,3 +813,6 @@
 | [SRC-F725E90B2A-L001719](../../tests/test_web_agent.py#L1719) | 1719 | `"    )"` | — |
 | [SRC-F725E90B2A-L001720](../../tests/test_web_agent.py#L1720) | 1720 | `"    assert normalize(\"https://example.com/article?fbclid=abc&x=1\") == ("` | — |
 | [SRC-F725E90B2A-L001721](../../tests/test_web_agent.py#L1721) | 1721 | `"        \"https://example.com/article?x=1\""` | — |
+| [SRC-F725E90B2A-L001722](../../tests/test_web_agent.py#L1722) | 1722 | `"    )"` | — |
+| [SRC-F725E90B2A-L001723](../../tests/test_web_agent.py#L1723) | 1723 | `"    assert normalize(\"file:///etc/passwd\") == \"\""` | — |
+| [SRC-F725E90B2A-L001724](../../tests/test_web_agent.py#L1724) | 1724 | `""` | — |

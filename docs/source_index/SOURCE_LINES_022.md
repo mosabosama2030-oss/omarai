@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000484 إلى SRC-0F910493E8-L000708
+- النطاق: SRC-65551FB29F-L000487 إلى SRC-0F910493E8-L000711
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-65551FB29F-L000484](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L484) | 484 | `"## 28. نموذج سجل متطلب قابل للنسخ"` | — |
-| [SRC-65551FB29F-L000485](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L485) | 485 | `""` | — |
-| [SRC-65551FB29F-L000486](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L486) | 486 | ````"```yaml"```` | — |
 | [SRC-65551FB29F-L000487](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L487) | 487 | `"id: SEC-EXAMPLE-001"` | — |
 | [SRC-65551FB29F-L000488](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L488) | 488 | `"requirement: \"يجب منع أداة جلب الصفحات من الوصول إلى عناوين الشبكات الداخلية.\""` | — |
 | [SRC-65551FB29F-L000489](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L489) | 489 | `"source:"` | — |
@@ -825,3 +822,6 @@
 | [SRC-0F910493E8-L000706](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L706) | 706 | `""` | — |
 | [SRC-0F910493E8-L000707](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L707) | 707 | `"- لا تُشارك كائنات mutable خاصة بطلب واحد بين الطلبات المتزامنة دون تزامن وعزل مثبتين."` | — |
 | [SRC-0F910493E8-L000708](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L708) | 708 | `"- لكل طلب معرف وسياق وميزانية وإلغاء خاص به. تُمرر الحالة صراحة بدل الاعتماد على متغيرات عامة مشتركة."` | — |
+| [SRC-0F910493E8-L000709](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L709) | 709 | `"- تتضمن مفاتيح الذاكرة والتخزين المؤقت نطاق المستخدم/الجلسة/المهمة عند انطباقه."` | — |
+| [SRC-0F910493E8-L000710](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L710) | 710 | `"- لا تسمح للطلب بتقديم سجل محادثة مزور يمنح نفسه دور system أو صلاحية داخلية."` | — |
+| [SRC-0F910493E8-L000711](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L711) | 711 | `"- كل ذاكرة مسترجعة بيانات غير موثوقة حتى لو كانت محفوظة من تشغيل سابق؛ تحمي من poisoning والتلوث بين السياقات."` | — |

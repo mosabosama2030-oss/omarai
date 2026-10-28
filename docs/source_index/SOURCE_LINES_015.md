@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C7C7FA8853-L000022 إلى SRC-E599346ABE-L000598
+- النطاق: SRC-C7C7FA8853-L000025 إلى SRC-E599346ABE-L000601
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-C7C7FA8853-L000022](../DEPLOY_RAILWAY_AR.md#L22) | 22 | `"   - OPENROUTER_API_KEY = مفتاحك الشخصي"` | — |
-| [SRC-C7C7FA8853-L000023](../DEPLOY_RAILWAY_AR.md#L23) | 23 | `"   - اختياريًا: OMARAI_ANSWER_MODEL وOMARAI_PLANNER_MODEL وOMARAI_REVIEW_MODEL بعد التحقق من صلاحية النماذج وأسعارها."` | — |
-| [SRC-C7C7FA8853-L000024](../DEPLOY_RAILWAY_AR.md#L24) | 24 | `"   - اختياريًا لتفعيل بحث مباشر ينفذه مزود OpenRouter داخل طلب التوليد: OMARAI_OPENROUTER_WEB_SEARCH=1. هذا خيار إضافي قد يستهلك رصيد بحث فوق تكلفة النموذج؛ اتركه غير مضبوط إذا لم توافق على التكلفة."` | — |
 | [SRC-C7C7FA8853-L000025](../DEPLOY_RAILWAY_AR.md#L25) | 25 | `"7. انشر الخدمة، ثم فعّل Generate Domain من Networking."` | — |
 | [SRC-C7C7FA8853-L000026](../DEPLOY_RAILWAY_AR.md#L26) | 26 | `"8. افتح الرابط العام. أدخل OMARAI_ACCESS_TOKEN في قسم «الوصول الآمن» واضغط «حفظ الرمز على هذا الجهاز»."` | — |
 | [SRC-C7C7FA8853-L000027](../DEPLOY_RAILWAY_AR.md#L27) | 27 | `"9. اضغط «اختبار حي للإنترنت والنموذج». لا تعتبر الصفحة منشورة بنجاح حتى ينجح اختبار الشبكة والنموذج من رابط الاستضافة."` | — |
@@ -843,3 +840,6 @@
 | [SRC-E599346ABE-L000596](../generate_index.py#L596) | 596 | `"                    excluded.append((relative, reason))"` | — |
 | [SRC-E599346ABE-L000597](../generate_index.py#L597) | 597 | `"            elif relative in INDEX_OUTPUT_PATHS:"` | — |
 | [SRC-E599346ABE-L000598](../generate_index.py#L598) | 598 | `"                excluded.append((relative, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\"))"` | — |
+| [SRC-E599346ABE-L000599](../generate_index.py#L599) | 599 | `"            elif ("` | — |
+| [SRC-E599346ABE-L000600](../generate_index.py#L600) | 600 | `"                relative.startswith(SOURCE_LINES_PAGES_DIR + \"/\")"` | — |
+| [SRC-E599346ABE-L000601](../generate_index.py#L601) | 601 | `"                and tracked_scope_contains(relative)"` | — |

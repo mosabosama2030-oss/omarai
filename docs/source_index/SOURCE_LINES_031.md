@@ -4,19 +4,9 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA139AC9D0-L000152 إلى SRC-FA4E1423C3-L000435
+- النطاق: SRC-6BCB799CEC-L000003 إلى SRC-FA4E1423C3-L000438
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
-## اختبارات
-
-### FILE-DA139AC9D0 — [tests/test_dialogue_state.py](../../tests/test_dialogue_state.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-DA139AC9D0-L000152](../../tests/test_dialogue_state.py#L152) | 152 | `"    assert not might_be_context_dependent(\"Explain entropy in simple terms.\")"` | — |
 ## اختبارات
 
 ### FILE-6BCB799CEC — [tests/test_evidence_provenance.py](../../tests/test_evidence_provenance.py#L1)
@@ -26,8 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6BCB799CEC-L000001](../../tests/test_evidence_provenance.py#L1) | 1 | `"\"\"\"Regression tests for evidence provenance and pinned public-page retrieval.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000002](../../tests/test_evidence_provenance.py#L2) | 2 | `"from __future__ import annotations"` | — |
 | [SRC-6BCB799CEC-L000003](../../tests/test_evidence_provenance.py#L3) | 3 | `""` | — |
 | [SRC-6BCB799CEC-L000004](../../tests/test_evidence_provenance.py#L4) | 4 | `"import socket"` | — |
 | [SRC-6BCB799CEC-L000005](../../tests/test_evidence_provenance.py#L5) | 5 | `""` | — |
@@ -843,3 +831,6 @@
 | [SRC-FA4E1423C3-L000433](../../tests/test_generate_index.py#L433) | 433 | `"        'const error = 1;\\n'"` | — |
 | [SRC-FA4E1423C3-L000434](../../tests/test_generate_index.py#L434) | 434 | `"        'const x = 2; // FIXME: actual JS issue\\n'"` | — |
 | [SRC-FA4E1423C3-L000435](../../tests/test_generate_index.py#L435) | 435 | `"        '/* SECURITY: actual CSS/JS comment issue */\\n',"` | — |
+| [SRC-FA4E1423C3-L000436](../../tests/test_generate_index.py#L436) | 436 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000437](../../tests/test_generate_index.py#L437) | 437 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000438](../../tests/test_generate_index.py#L438) | 438 | `"    (tmp_path / \"styles.css\").write_text("` | — |

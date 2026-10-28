@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **041**
-- سجلات الأسطر: **165**
-- النطاق: SRC-DE7EABE998-L000299 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **162**
+- النطاق: SRC-DE7EABE998-L000302 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"  notice.textContent=\"لم تُستخدم استجابة مؤكدة من النموذج اللغوي؛ قد تكون الإجابة مقتطفات أو ردًا احتياطيًا وليست تحليلًا توليديًا كاملًا.\";"` | — |
-| [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `"  box.appendChild(notice);"` | — |
-| [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `" }"` | — |
 | [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `" if(result&&result.search_report){"` | — |
 | [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `"  const report=document.createElement(\"section\");report.className=\"report\";report.innerHTML=renderReport(result);box.appendChild(report);"` | — |
 | [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" }"` | — |

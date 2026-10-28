@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000281 إلى SRC-90FAA34ADE-L001080
+- النطاق: SRC-90FAA34ADE-L000284 إلى SRC-90FAA34ADE-L001083
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-90FAA34ADE-L000281](../../tests/fixtures/answer_quality_cases.json#L281) | 281 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000282](../../tests/fixtures/answer_quality_cases.json#L282) | 282 | `"        \"Numeric price given without referent\""` | — |
-| [SRC-90FAA34ADE-L000283](../../tests/fixtures/answer_quality_cases.json#L283) | 283 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000284](../../tests/fixtures/answer_quality_cases.json#L284) | 284 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000285](../../tests/fixtures/answer_quality_cases.json#L285) | 285 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000286](../../tests/fixtures/answer_quality_cases.json#L286) | 286 | `"    {"` | — |
@@ -816,3 +813,6 @@
 | [SRC-90FAA34ADE-L001078](../../tests/fixtures/answer_quality_cases.json#L1078) | 1078 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L001079](../../tests/fixtures/answer_quality_cases.json#L1079) | 1079 | `"        \"type\": \"controlled_page\","` | — |
 | [SRC-90FAA34ADE-L001080](../../tests/fixtures/answer_quality_cases.json#L1080) | 1080 | `"        \"url\": \"https://product.example.test/spec\","` | — |
+| [SRC-90FAA34ADE-L001081](../../tests/fixtures/answer_quality_cases.json#L1081) | 1081 | `"        \"body\": \"Package includes: device, cable, and battery. No runtime figure is listed.\""` | — |
+| [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |

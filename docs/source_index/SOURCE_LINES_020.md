@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000597 إلى SRC-62CE5126F9-L000169
+- النطاق: SRC-D17CE3D12F-L000600 إلى SRC-62CE5126F9-L000172
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D17CE3D12F-L000597](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L597) | 597 | `"1. ما المشكلة أو الحاجة التي يعالجها التغيير؟"` | — |
-| [SRC-D17CE3D12F-L000598](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L598) | 598 | `"2. ما المتطلب/الخطر/المقياس المرتبط به؟"` | — |
-| [SRC-D17CE3D12F-L000599](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L599) | 599 | `"3. هل توجد طريقة أبسط؟"` | — |
 | [SRC-D17CE3D12F-L000600](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L600) | 600 | `"4. ما الملفات والواجهات والبيانات التي تتأثر؟"` | — |
 | [SRC-D17CE3D12F-L000601](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L601) | 601 | `"5. ما حدود الوقت والحجم والتوازي والتكلفة؟"` | — |
 | [SRC-D17CE3D12F-L000602](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L602) | 602 | `"6. ماذا يحدث عند المدخل الخاطئ، وفشل المورد، وانقطاع الشبكة، ونفاد الحصة؟"` | — |
@@ -843,3 +840,6 @@
 | [SRC-62CE5126F9-L000167](../OMARAI_REMEDIATION_REGISTER_AR.md#L167) | 167 | `"\| OMR-T-003 \| تقريرا التدقيق \| P1 \| تشغيل AQ-001–045 وتقييم الإجابات دلاليًا \| benchmark runner/fixtures/tests \| **PARTIAL / LIVE QUALITY NOT_RUN** — بنية الحالات موجودة والاختبارات الآلية تمر؛ لم يُثبت تقييم جودة إجابات حقيقية وفق مرجع بشري \| تشغيل البروتوكول على الرأس النهائي، حفظ المخرجات، ومراجعة مرجعية لكل حكم \|"` | — |
 | [SRC-62CE5126F9-L000168](../OMARAI_REMEDIATION_REGISTER_AR.md#L168) | 168 | `"\| OMR-T-004 \| Grok W6 \| P1 \| اختبار الحمل \| scripts/tests \| **NOT_RUN** \| سيناريو حمل قابل للتكرار وقياس p50/p95 والأخطاء واستخدام الموارد والتزامن \|"` | — |
 | [SRC-62CE5126F9-L000169](../OMARAI_REMEDIATION_REGISTER_AR.md#L169) | 169 | ``"\| OMR-T-005 \| تقريرا التدقيق \| P1 للإنتاج \| التخزين والنسخ الاحتياطي والاستعادة الحية \| `OMARAI_DB_PATH`, deploy \| **NOT_RUN على مضيف فعلي** \| إثبات Volume دائم، بقاء البيانات، وإنجاح restore \|"`` | — |
+| [SRC-62CE5126F9-L000170](../OMARAI_REMEDIATION_REGISTER_AR.md#L170) | 170 | ``"\| OMR-T-006 \| PR #76 \| P1 \| صحة فحص الفهرس وتطابق رأس الاختبار \| `.github/workflows/tests.yml`, `docs/generate_index.py` \| **FIXED_AND_TESTED على `463f4a4...`** — PR [#39654530305](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654530305) اجتاز 384 اختبارًا لكل إصدار Python وRuff وفحص الفهرس والحاوية/API smoke؛ فحص المراجع غير `main` يولد في مساحة الاختبار قبل تحقق الاتساق \| رأس PR الحالي يتضمن تحديث تقرير/فهرس مولد فقط؛ يعاد الاختبار لأي تغيير لاحق في الكود/الاختبارات/Workflow \|"`` | — |
+| [SRC-62CE5126F9-L000171](../OMARAI_REMEDIATION_REGISTER_AR.md#L171) | 171 | ``"\| OMR-CI-001 \| مراجعة أدوات التحقق \| P1 \| كانت الاختبارات تخسر سباقًا مع workflow الفهرسة في الفروع غير main \| `.github/workflows/tests.yml`, `.github/workflows/update_index.yml`, `docs/generate_index.py` \| **FIXED_AND_TESTED** — تُحدّث فحوص المراجع غير `main` الفهرس داخل checkout المؤقت قبل فحصه؛ يبقى فحص `main` صارمًا من الملفات الملتزمة. PR [#39654530305](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654530305) اجتاز 384 اختبارًا بكل من Python 3.11/3.12، وRuff والفهرس والحاوية/API smoke \| لا تتجاوز stale index على `main`؛ انشر الملفات المولدة آليًا واحتفظ بفحص `main --check` الصارم \|"`` | — |
+| [SRC-62CE5126F9-L000172](../OMARAI_REMEDIATION_REGISTER_AR.md#L172) | 172 | ``"\| OMR-CI-002 \| سباق ما بعد دمج تغييرات الوثائق مع تحديث الفهرس \| P1 — جودة بوابة CI \| بعد دمج #79 فشل `generate_index.py --check` لأن الفهرس لم يكن محدثًا عند بدء الاختبار. \| `.github/workflows/tests.yml`, `.github/workflows/update_index.yml` \| **FIXED_AND_TESTED على رأس PR #81 قبل الدمج** عبر [run #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221): 384 اختبارًا على Python 3.11 و3.12 لكل منهما، وRuff والفهرس والحاوية/API smoke. PR #81 مدمج في `9f6674a...`. **CI مباشر على رأس main النهائي: NOT_CONFIRMED** في هذه المراجعة، وليس FAIL. \| التحقق من تشغيل push CI على الرأس النهائي `00a3ede...`؛ الإبقاء على تصنيف المسارات واختبار الفهرس الصارم للتغييرات المولدة وحدها. \|"`` | — |

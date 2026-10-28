@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000122 إلى SRC-F725E90B2A-L000921
+- النطاق: SRC-F725E90B2A-L000125 إلى SRC-F725E90B2A-L000924
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000122](../../tests/test_web_agent.py#L122) | 122 | `"                \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L000123](../../tests/test_web_agent.py#L123) | 123 | `"                \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L000124](../../tests/test_web_agent.py#L124) | 124 | `"                \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L000125](../../tests/test_web_agent.py#L125) | 125 | `"                \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L000126](../../tests/test_web_agent.py#L126) | 126 | `"            },"` | — |
 | [SRC-F725E90B2A-L000127](../../tests/test_web_agent.py#L127) | 127 | `"        ),"` | — |
@@ -816,3 +813,6 @@
 | [SRC-F725E90B2A-L000919](../../tests/test_web_agent.py#L919) | 919 | `"        agent,"` | — |
 | [SRC-F725E90B2A-L000920](../../tests/test_web_agent.py#L920) | 920 | `"        \"_request_completion\","` | — |
 | [SRC-F725E90B2A-L000921](../../tests/test_web_agent.py#L921) | 921 | `"        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError(\"model should be skipped\")),"` | — |
+| [SRC-F725E90B2A-L000922](../../tests/test_web_agent.py#L922) | 922 | `"    )"` | — |
+| [SRC-F725E90B2A-L000923](../../tests/test_web_agent.py#L923) | 923 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
+| [SRC-F725E90B2A-L000924](../../tests/test_web_agent.py#L924) | 924 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"passed\""` | — |

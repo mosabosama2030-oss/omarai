@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000002 إلى SRC-F725E90B2A-L000121
+- النطاق: SRC-01E35ABC46-L000005 إلى SRC-F725E90B2A-L000124
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-01E35ABC46-L000002](../../tests/test_research_guardrails.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-01E35ABC46-L000003](../../tests/test_research_guardrails.py#L3) | 3 | `""` | — |
-| [SRC-01E35ABC46-L000004](../../tests/test_research_guardrails.py#L4) | 4 | `"from datetime import UTC, datetime"` | — |
 | [SRC-01E35ABC46-L000005](../../tests/test_research_guardrails.py#L5) | 5 | `""` | — |
 | [SRC-01E35ABC46-L000006](../../tests/test_research_guardrails.py#L6) | 6 | `"from agents.research_guardrails import ("` | — |
 | [SRC-01E35ABC46-L000007](../../tests/test_research_guardrails.py#L7) | 7 | `"    apply_source_guardrails,"` | — |
@@ -843,3 +840,6 @@
 | [SRC-F725E90B2A-L000119](../../tests/test_web_agent.py#L119) | 119 | `"                \"unique_sources\": 2,"` | — |
 | [SRC-F725E90B2A-L000120](../../tests/test_web_agent.py#L120) | 120 | `"                \"pages_fetched\": 2,"` | — |
 | [SRC-F725E90B2A-L000121](../../tests/test_web_agent.py#L121) | 121 | `"                \"providers_used\": [\"test\"],"` | — |
+| [SRC-F725E90B2A-L000122](../../tests/test_web_agent.py#L122) | 122 | `"                \"platform_counts\": {\"web\": 1},"` | — |
+| [SRC-F725E90B2A-L000123](../../tests/test_web_agent.py#L123) | 123 | `"                \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L000124](../../tests/test_web_agent.py#L124) | 124 | `"                \"depth\": \"standard\","` | — |
