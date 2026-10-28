@@ -133,7 +133,7 @@ def _extract_explicit_locations(question: str) -> list[str]:
     """Return only a small, explicit location vocabulary; never infer geolocation."""
     normalized = normalize_text(question)
     known = (
-        ("مصر", ("في مصر", "داخل مصر", "المصري", "المصرية", "مصر")),
+        ("مصر", ("في مصر", "داخل مصر", "المصري", "المصرية", "مصر", "egypt", "egyptian")),
         ("القاهرة", ("القاهرة", "القاهره", "cairo")),
         ("الإسكندرية", ("الاسكندرية", "الاسكندريه", "alexandria")),
         ("السعودية", ("السعودية", "السعوديه", "saudi arabia")),
@@ -161,10 +161,9 @@ def _language_profile(question: str) -> str:
 
 
 def _primary_family(matches: dict[str, list[str]], mode: str, route: str, normalized: str) -> str:
-    # Route/mode are policy inputs; lexical patterns supply task evidence.
-    if matches["official_site_lookup"] and any(
-        normalize_text(word) in normalized for word in _OFFICIAL_WORDS
-    ):
+    # An explicit official-destination request is different from a request for an
+    # article mentioning the organization; government verification is a separate slot.
+    if matches["official_site_lookup"]:
         return "official_site_lookup"
     for family in (
         "social_opinions", "summarize", "troubleshoot", "compare",
@@ -203,13 +202,14 @@ def build_task_spec(
     except (ImportError, TypeError, ValueError):
         aspect_values = []
 
-    official_site = bool(
-        matches["official_site_lookup"]
+    official_destination = bool(matches["official_site_lookup"])
+    government_official_site = bool(
+        official_destination
         and any(normalize_text(word) in normalized for word in _OFFICIAL_WORDS)
     )
-    navigation = official_site or bool(
+    navigation = official_destination or bool(
         _URL_RE.search(raw)
-        or any(normalize_text(term) in normalized for term in ("هات رابط", "الموقع الرسمي", "website", "homepage"))
+        or any(normalize_text(term) in normalized for term in ("هات رابط", "website", "homepage"))
     )
     explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))
     current_required = (clean_mode == "latest" or explicit_freshness) and not navigation
@@ -351,7 +351,8 @@ def build_task_spec(
         "explicit_urls": urls,
         "explicit_aspects": explicit_aspects,
         "time_sensitive_request": current_required,
-        "official_site_required": official_site,
+        "official_site_required": government_official_site,
+        "official_destination_required": official_destination,
         "social_evidence_requested": social_required,
         "language_profile": _language_profile(raw),
         "source_policy": (
@@ -410,7 +411,7 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
         return candidates
     locations = constraints.get("explicit_locations") or []
     location_suffix = " ".join(str(item) for item in locations[:2])
-    if family == "official_site_lookup" or constraints.get("official_site_required"):
+    if family == "official_site_lookup" or constraints.get("official_destination_required"):
         candidates.extend([
             (f"{topic} الموقع الرسمي", "official_destination", "exact official-site discovery"),
             (f"{topic} official website government portal", "official_domain", "cross-language destination discovery"),
