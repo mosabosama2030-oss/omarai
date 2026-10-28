@@ -89,8 +89,9 @@ def test_tool_matrix_marks_unrequired_tools_not_required_and_unknowns_unknown():
     assert all(row["status"] == "not_required" for row in rows)
 
     unknown = _statuses(build_tool_execution_matrix(
-        {"tool_requirements": ["web_search"]},
+        {"tool_requirements": ["web_search", "page_fetch"]},
         {},
         {},
     ))
     assert unknown["web_search"] == "unknown"
+    assert unknown["page_fetch"] == "unknown"
