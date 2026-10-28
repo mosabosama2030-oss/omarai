@@ -4,9 +4,104 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000148 إلى SRC-547CAF1FE3-L000114
+- النطاق: SRC-C693279643-L000007 إلى SRC-4FFD5AFC54-L000303
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## ملفات أخرى
+
+### FILE-C693279643 — [LICENSE](../../LICENSE#L1)
+
+- النوع: **بدون امتداد**
+- نطاق الفهرسة: جرد ملف نصي فقط
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-C693279643-L000007](../../LICENSE#L7) | 7 | `"in the Software without restriction, including without limitation the rights"` | — |
+| [SRC-C693279643-L000008](../../LICENSE#L8) | 8 | `"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell"` | — |
+| [SRC-C693279643-L000009](../../LICENSE#L9) | 9 | `"copies of the Software, and to permit persons to whom the Software is"` | — |
+| [SRC-C693279643-L000010](../../LICENSE#L10) | 10 | `"furnished to do so, subject to the following conditions:"` | — |
+| [SRC-C693279643-L000011](../../LICENSE#L11) | 11 | `""` | — |
+| [SRC-C693279643-L000012](../../LICENSE#L12) | 12 | `"The above copyright notice and this permission notice shall be included in all"` | — |
+| [SRC-C693279643-L000013](../../LICENSE#L13) | 13 | `"copies or substantial portions of the Software."` | — |
+| [SRC-C693279643-L000014](../../LICENSE#L14) | 14 | `""` | — |
+| [SRC-C693279643-L000015](../../LICENSE#L15) | 15 | `"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR"` | — |
+| [SRC-C693279643-L000016](../../LICENSE#L16) | 16 | `"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,"` | — |
+| [SRC-C693279643-L000017](../../LICENSE#L17) | 17 | `"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE"` | — |
+| [SRC-C693279643-L000018](../../LICENSE#L18) | 18 | `"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"` | — |
+| [SRC-C693279643-L000019](../../LICENSE#L19) | 19 | `"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,"` | — |
+| [SRC-C693279643-L000020](../../LICENSE#L20) | 20 | `"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE"` | — |
+| [SRC-C693279643-L000021](../../LICENSE#L21) | 21 | `"SOFTWARE."` | — |
+## إعدادات وتشغيل
+
+### FILE-50C86B7ED8 — [pyproject.toml](../../pyproject.toml#L1)
+
+- النوع: **TOML**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-50C86B7ED8-L000001](../../pyproject.toml#L1) | 1 | `"[build-system]"` | — |
+| [SRC-50C86B7ED8-L000002](../../pyproject.toml#L2) | 2 | `"requires = [\"setuptools>=68\"]"` | — |
+| [SRC-50C86B7ED8-L000003](../../pyproject.toml#L3) | 3 | `"build-backend = \"setuptools.build_meta\""` | — |
+| [SRC-50C86B7ED8-L000004](../../pyproject.toml#L4) | 4 | `""` | — |
+| [SRC-50C86B7ED8-L000005](../../pyproject.toml#L5) | 5 | `"[project]"` | — |
+| [SRC-50C86B7ED8-L000006](../../pyproject.toml#L6) | 6 | `"name = \"omarai-agent\""` | — |
+| [SRC-50C86B7ED8-L000007](../../pyproject.toml#L7) | 7 | `"version = \"0.2.0\""` | — |
+| [SRC-50C86B7ED8-L000008](../../pyproject.toml#L8) | 8 | `"description = \"Arabic-first web research and generative Q&A agent with lead workspace\""` | — |
+| [SRC-50C86B7ED8-L000009](../../pyproject.toml#L9) | 9 | `"readme = \"README.md\""` | — |
+| [SRC-50C86B7ED8-L000010](../../pyproject.toml#L10) | 10 | `"requires-python = \">=3.11\""` | — |
+| [SRC-50C86B7ED8-L000011](../../pyproject.toml#L11) | 11 | `"license = { text = \"MIT\" }"` | — |
+| [SRC-50C86B7ED8-L000012](../../pyproject.toml#L12) | 12 | `"dependencies = ["` | — |
+| [SRC-50C86B7ED8-L000013](../../pyproject.toml#L13) | 13 | `"  \"beautifulsoup4>=4.12,<5\","` | — |
+| [SRC-50C86B7ED8-L000014](../../pyproject.toml#L14) | 14 | `"  \"httpx>=0.27,<1\","` | — |
+| [SRC-50C86B7ED8-L000015](../../pyproject.toml#L15) | 15 | `"  \"tldextract>=5.3,<6\","` | — |
+| [SRC-50C86B7ED8-L000016](../../pyproject.toml#L16) | 16 | `"]"` | — |
+| [SRC-50C86B7ED8-L000017](../../pyproject.toml#L17) | 17 | `""` | — |
+| [SRC-50C86B7ED8-L000018](../../pyproject.toml#L18) | 18 | `"[project.optional-dependencies]"` | — |
+| [SRC-50C86B7ED8-L000019](../../pyproject.toml#L19) | 19 | `"dev = [\"pytest>=8.0\", \"ruff>=0.5\"]"` | — |
+| [SRC-50C86B7ED8-L000020](../../pyproject.toml#L20) | 20 | `""` | — |
+| [SRC-50C86B7ED8-L000021](../../pyproject.toml#L21) | 21 | `"[tool.pytest.ini_options]"` | — |
+| [SRC-50C86B7ED8-L000022](../../pyproject.toml#L22) | 22 | `"testpaths = [\"tests\"]"` | — |
+| [SRC-50C86B7ED8-L000023](../../pyproject.toml#L23) | 23 | `""` | — |
+| [SRC-50C86B7ED8-L000024](../../pyproject.toml#L24) | 24 | `"[tool.setuptools.packages.find]"` | — |
+| [SRC-50C86B7ED8-L000025](../../pyproject.toml#L25) | 25 | `"include = [\"agents*\", \"api*\", \"cli*\"]"` | — |
+| [SRC-50C86B7ED8-L000026](../../pyproject.toml#L26) | 26 | `"exclude = [\"tests*\", \"web*\"]"` | — |
+| [SRC-50C86B7ED8-L000027](../../pyproject.toml#L27) | 27 | `""` | — |
+| [SRC-50C86B7ED8-L000028](../../pyproject.toml#L28) | 28 | `"[tool.ruff]"` | — |
+| [SRC-50C86B7ED8-L000029](../../pyproject.toml#L29) | 29 | `"line-length = 100"` | — |
+| [SRC-50C86B7ED8-L000030](../../pyproject.toml#L30) | 30 | `"target-version = \"py311\""` | — |
+| [SRC-50C86B7ED8-L000031](../../pyproject.toml#L31) | 31 | `""` | — |
+| [SRC-50C86B7ED8-L000032](../../pyproject.toml#L32) | 32 | `"[tool.ruff.lint]"` | — |
+| [SRC-50C86B7ED8-L000033](../../pyproject.toml#L33) | 33 | `"# Keep default rules; ignore only patterns intentional in this codebase."` | — |
+| [SRC-50C86B7ED8-L000034](../../pyproject.toml#L34) | 34 | `"# BLE001: broad except at API boundary to avoid leaking internals"` | — |
+| [SRC-50C86B7ED8-L000035](../../pyproject.toml#L35) | 35 | `"# E501: long Arabic/English diagnostic strings"` | — |
+| [SRC-50C86B7ED8-L000036](../../pyproject.toml#L36) | 36 | `"# I001: historical import order; do not block CI on style alone"` | — |
+| [SRC-50C86B7ED8-L000037](../../pyproject.toml#L37) | 37 | `"# F841: unused assignment kept for clarity in some tests"` | — |
+| [SRC-50C86B7ED8-L000038](../../pyproject.toml#L38) | 38 | `"# RUF100: residual noqa:BLE001 comments after BLE001 is ignored globally"` | — |
+| [SRC-50C86B7ED8-L000039](../../pyproject.toml#L39) | 39 | `"ignore = [\"BLE001\", \"E501\", \"I001\", \"F841\", \"RUF100\"]"` | — |
+## إعدادات وتشغيل
+
+### FILE-115C2027D9 — [railway.json](../../railway.json#L1)
+
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-115C2027D9-L000001](../../railway.json#L1) | 1 | `"{"` | — |
+| [SRC-115C2027D9-L000002](../../railway.json#L2) | 2 | `"  \"$schema\": \"https://railway.com/railway.schema.json\","` | — |
+| [SRC-115C2027D9-L000003](../../railway.json#L3) | 3 | `"  \"build\": {"` | — |
+| [SRC-115C2027D9-L000004](../../railway.json#L4) | 4 | `"    \"builder\": \"DOCKERFILE\","` | — |
+| [SRC-115C2027D9-L000005](../../railway.json#L5) | 5 | `"    \"dockerfilePath\": \"Dockerfile\""` | — |
+| [SRC-115C2027D9-L000006](../../railway.json#L6) | 6 | `"  },"` | — |
+| [SRC-115C2027D9-L000007](../../railway.json#L7) | 7 | `"  \"deploy\": {"` | — |
+| [SRC-115C2027D9-L000008](../../railway.json#L8) | 8 | `"    \"startCommand\": \"sh -c 'python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}'\","` | — |
+| [SRC-115C2027D9-L000009](../../railway.json#L9) | 9 | `"    \"healthcheckPath\": \"/api/health\","` | — |
+| [SRC-115C2027D9-L000010](../../railway.json#L10) | 10 | `"    \"healthcheckTimeout\": 120,"` | — |
+| [SRC-115C2027D9-L000011](../../railway.json#L11) | 11 | `"    \"restartPolicyType\": \"ON_FAILURE\","` | — |
+| [SRC-115C2027D9-L000012](../../railway.json#L12) | 12 | `"    \"restartPolicyMaxRetries\": 5"` | — |
+| [SRC-115C2027D9-L000013](../../railway.json#L13) | 13 | `"  }"` | — |
+| [SRC-115C2027D9-L000014](../../railway.json#L14) | 14 | `"}"` | — |
 ## وثائق ونصوص
 
 ### FILE-B335630551 — [README.md](../../README.md#L1)
@@ -16,6 +111,153 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000001](../../README.md#L1) | 1 | `"# Omarai — Web Research & Generative Q&A Agent"` | — |
+| [SRC-B335630551-L000002](../../README.md#L2) | 2 | `""` | — |
+| [SRC-B335630551-L000003](../../README.md#L3) | 3 | `"> **Foundational engineering requirements:** mandatory contributor/agent rules are in [AGENTS.md](AGENTS.md). The core architecture and security charter is [OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md); the expanded platform practices across reliability, security, privacy, data, SRE, AI, accessibility, supply chain, and cost are in [OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md); and the requirement IDs, expert-review lenses, evidence model, risk priorities, maturity stages, and release gates are in [OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md). The initial foundational requirements checklist is [OMARAI_REQUIREMENTS_REGISTER.md](docs/OMARAI_REQUIREMENTS_REGISTER.md). These documents define required direction; they do not prove every control is implemented or tested. Use the [documentation index](docs/README.md) to find the current source of truth for each topic."` | — |
+| [SRC-B335630551-L000004](../../README.md#L4) | 4 | `""` | — |
+| [SRC-B335630551-L000005](../../README.md#L5) | 5 | `"Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You can ask open-ended questions in natural language, search the public web, extract text from accessible pages, compare and summarize findings, ask follow-up questions, and inspect the source links."` | — |
+| [SRC-B335630551-L000006](../../README.md#L6) | 6 | `""` | — |
+| [SRC-B335630551-L000007](../../README.md#L7) | 7 | `"## What this version does"` | — |
+| [SRC-B335630551-L000008](../../README.md#L8) | 8 | `""` | — |
+| [SRC-B335630551-L000009](../../README.md#L9) | 9 | `"- Plans up to eight search queries from a natural-language question with a dedicated reasoning/planning model, and uses a deterministic multi-query fallback when the model is unavailable."` | — |
+| [SRC-B335630551-L000010](../../README.md#L10) | 10 | `"- Uses separate model roles by default: NVIDIA Nemotron 3 Ultra (free) for query planning and Google Gemma 4 31B Instruct (free) for answer synthesis and the second-pass consistency review; retries with OpenRouter's free-model router if a chosen model fails."` | — |
+| [SRC-B335630551-L000011](../../README.md#L11) | 11 | `"- Runs DuckDuckGo HTML and Bing RSS independently for every planned query; can add official Brave Search API and Tavily Search API result indexes when their environment keys are configured; uses Google News RSS for queries judged time-sensitive."` | — |
+| [SRC-B335630551-L000012](../../README.md#L12) | 12 | `"- Fuses duplicate results across queries and engines using reciprocal-rank fusion, preserving provider, query, domain, platform, publication-date and page-extraction provenance."` | — |
+| [SRC-B335630551-L000013](../../README.md#L13) | 13 | `"- Extracts text from up to eight accessible public pages per question with request-size and timeout bounds, following at most three individually validated public redirects."` | — |
+| [SRC-B335630551-L000014](../../README.md#L14) | 14 | ``"- Searches public Reddit RSS and the Bluesky public search endpoint when social discussion is relevant; can use Reddit's OAuth API when `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` are provided."`` | — |
+| [SRC-B335630551-L000015](../../README.md#L15) | 15 | `"- Searches indexed public pages on Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube through the general web engines."` | — |
+| [SRC-B335630551-L000016](../../README.md#L16) | 16 | `"- Can use the official Meta Graph API to read posts and a small sample of public comments from explicitly configured Facebook Pages when the token has suitable permissions."` | — |
+| [SRC-B335630551-L000017](../../README.md#L17) | 17 | ``"- Can use Instagram Graph API hashtag search to read public hashtag media when `INSTAGRAM_USER_ID` and `INSTAGRAM_ACCESS_TOKEN` have the required permissions. It is not a global Instagram search and has platform quotas."`` | — |
+| [SRC-B335630551-L000018](../../README.md#L18) | 18 | ``"- Can use the official X recent-post endpoint when `X_BEARER_TOKEN` is configured and the account/API tier permits the request; can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured."`` | — |
+| [SRC-B335630551-L000019](../../README.md#L19) | 19 | `"- Generates an evidence-grounded answer in the user's language, showing source links, query plan, provider coverage, direct page reads, platform mix, source/domain diversity, date coverage, and evidence-coverage warnings. Coverage indicators describe breadth and inspectability; they are not probabilities that the answer is true."` | — |
+| [SRC-B335630551-L000020](../../README.md#L20) | 20 | `"- Carries up to eight recent chat messages from the current browser session into follow-up questions."` | — |
+| [SRC-B335630551-L000021](../../README.md#L21) | 21 | ``"- Keeps the existing local SQLite lead workspace at `/leads`."`` | — |
+| [SRC-B335630551-L000022](../../README.md#L22) | 22 | `"- Binds to loopback by default; it is not a public production deployment."` | — |
+| [SRC-B335630551-L000023](../../README.md#L23) | 23 | `""` | — |
+| [SRC-B335630551-L000024](../../README.md#L24) | 24 | ``"**Verification semantics:** `GET /api/health` is a configuration/dependency snapshot, not proof that search providers or the model are reachable. Check the `agent.verification_scope` field to see what is and is not verified. Use the protected `POST /api/diagnostics` endpoint for explicit live search/model probes; a passed diagnostic only verifies the specific probes run at that time, not every optional connector or answer quality."`` | — |
+| [SRC-B335630551-L000025](../../README.md#L25) | 25 | `""` | — |
+| [SRC-B335630551-L000026](../../README.md#L26) | 26 | `"This is a tool-using research agent built around existing language models, not a foundation model trained from scratch. The role-specific defaults aim for more consistent behaviour than using a router that selects a different free model at random on each call. Exact availability and response quality still depend on OpenRouter/provider conditions. **Privacy warning:** the user's question, conversation context and selected web excerpts are sent to the configured external language-model provider for planning/synthesis/review. OpenRouter's NVIDIA Nemotron free endpoint states that session data may be logged for security and product improvement; do not send passwords, API keys, private information or personal/confidential customer data through the free endpoint. See the [NVIDIA Nemotron free-endpoint privacy notice](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free). Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: Reddit API access requires approved app credentials and is subject to Reddit's terms; Facebook Pages reads require a valid token, page identifiers and correct permissions; Instagram hashtag search requires a professional Instagram account token and the specific supported permissions; X API access requires an authorized bearer token and suitable access; YouTube direct API search requires a Google API key. These APIs do not grant universal access to all content, accounts or comments. Review each platform's terms, quotas and permitted use before using the agent commercially. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people."` | — |
+| [SRC-B335630551-L000027](../../README.md#L27) | 27 | `""` | — |
+| [SRC-B335630551-L000028](../../README.md#L28) | 28 | `""` | — |
+| [SRC-B335630551-L000029](../../README.md#L29) | 29 | `"## Living repository index"` | — |
+| [SRC-B335630551-L000030](../../README.md#L30) | 30 | `""` | — |
+| [SRC-B335630551-L000031](../../README.md#L31) | 31 | `"**Current delivery gate (Arabic):** [OMARAI HANDOFF CHECKLIST](docs/OMARAI_HANDOFF_CHECKLIST_AR.md) — current release blockers, required evidence, and operator actions. The central [remediation register](docs/OMARAI_REMEDIATION_REGISTER_AR.md) remains the detailed issue history."` | — |
+| [SRC-B335630551-L000032](../../README.md#L32) | 32 | `""` | — |
+| [SRC-B335630551-L000033](../../README.md#L33) | 33 | `"Omarai maintains a categorized master index and a paginated, line-by-line source index:"` | — |
+| [SRC-B335630551-L000034](../../README.md#L34) | 34 | `""` | — |
+| [SRC-B335630551-L000035](../../README.md#L35) | 35 | ``"- [MASTER INDEX](docs/MASTER_INDEX.md): file inventory with stable file IDs, Python AST definitions, static frontend/configuration symbols, and explicitly marked TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED/ISSUE/DEFECT/REGRESSION/RISK/GAP/ERROR/WARNING/PERF/PRIVACY/DATA_LOSS/ACCESSIBILITY entries. Each review marker has an `FND-...` code and a link to the exact source line."`` | — |
+| [SRC-B335630551-L000036](../../README.md#L36) | 36 | `"- [SOURCE LINES INDEX](docs/SOURCE_LINES_INDEX.md): search-friendly directory of files, page links, per-file line counts, and links to each source line."` | — |
+| [SRC-B335630551-L000037](../../README.md#L37) | 37 | `"- [INDEX COVERAGE AUDIT](docs/INDEX_COVERAGE_AUDIT.md): generated evidence of line-count consistency, metadata-only files, excluded path names and their reasons, and the exact scope of any “100%” coverage statement."` | — |
+| [SRC-B335630551-L000038](../../README.md#L38) | 38 | ``"- [Source line pages](docs/source_index/): small generated pages containing every logical line from eligible readable text files. Each line has a `SRC-<FILEHASH>-L000001` code, exact JSON-escaped text, and a link back to the source file at the matching line. Pages are capped at 800 line records to remain navigable on mobile and in GitHub's web view."`` | — |
+| [SRC-B335630551-L000039](../../README.md#L39) | 39 | `"- [Local source search](docs/search_code.py): offline text/regex search with file, line, nearby context, and GitHub line links. It excludes common secret/configuration files, databases, key files, symlinks, and runtime directories; it does not detect every secret or replace a security audit."` | — |
+| [SRC-B335630551-L000040](../../README.md#L40) | 40 | `""` | — |
+| [SRC-B335630551-L000041](../../README.md#L41) | 41 | ``"Example: `python docs/search_code.py \"resolve_followup_query\" --ext py --context 2`."`` | — |
+| [SRC-B335630551-L000042](../../README.md#L42) | 42 | `""` | — |
+| [SRC-B335630551-L000043](../../README.md#L43) | 43 | ``"The generator now refuses to publish indexes if any eligible file has missing, duplicated, or misnumbered source-line records. It still cannot infer every unmarked logical/programming defect; known issues should be recorded explicitly with a supported marker (for example, `# BUG: explain the defect`) so the generated `FND-...` register can point to the corresponding `SRC-...` line."`` | — |
+| [SRC-B335630551-L000044](../../README.md#L44) | 44 | `""` | — |
+| [SRC-B335630551-L000045](../../README.md#L45) | 45 | `"Regenerate and verify the indexes locally:"` | — |
+| [SRC-B335630551-L000046](../../README.md#L46) | 46 | `""` | — |
+| [SRC-B335630551-L000047](../../README.md#L47) | 47 | ````"```bash"```` | — |
+| [SRC-B335630551-L000048](../../README.md#L48) | 48 | `"python docs/generate_index.py"` | — |
+| [SRC-B335630551-L000049](../../README.md#L49) | 49 | `"python docs/generate_index.py --check"` | — |
+| [SRC-B335630551-L000050](../../README.md#L50) | 50 | ````"```"```` | — |
+| [SRC-B335630551-L000051](../../README.md#L51) | 51 | `""` | — |
+| [SRC-B335630551-L000052](../../README.md#L52) | 52 | ``"GitHub Actions validates the generator on Python 3.11 and 3.12. The publishing workflow runs on pushes to `main` and the `feat/**`, `fix/**`, and `feature/**` branches. It regenerates and commits all indexes and generated pages only when output changes; obsolete generated pages are removed, while generated-index-only commits are ignored to avoid loops. Documentation-only and repository-hygiene branches are still tested with indexes regenerated in the isolated test workspace, but do not carry a large generated-page diff solely because documentation lines moved; after merge, the publisher refreshes the committed indexes on `main`. If direct publication to `main` is rejected, it opens a pull request instead of force-updating a branch or auto-merging."`` | — |
+| [SRC-B335630551-L000053](../../README.md#L53) | 53 | `""` | — |
+| [SRC-B335630551-L000054](../../README.md#L54) | 54 | ``"When a known code issue is found, add a source comment using one supported marker name (TODO, FIXME, BUG, HACK, XXX, REVIEW, SECURITY, DEPRECATED, ISSUE, DEFECT, REGRESSION, RISK, GAP, ERROR, WARNING, PERF, PRIVACY, DATA_LOSS, or ACCESSIBILITY), followed by a colon and a concise description. The index assigns an `FND-...` code and links it to the exact `SRC-...` source-line record; removing or editing that source annotation updates the generated register on the next index run. Coverage includes every logical line in eligible readable text files up to 2 MiB. Known local secrets, runtime databases, dependency/build directories, binary/unreadable files and oversized files are excluded from line-level indexing by design but listed by metadata where eligible. Static review markers help track explicit findings; no source index can prove that every arbitrary logic bug has been detected or that all code is correct."`` | — |
+| [SRC-B335630551-L000055](../../README.md#L55) | 55 | `""` | — |
+| [SRC-B335630551-L000056](../../README.md#L56) | 56 | `"## Per-request resource budget"` | — |
+| [SRC-B335630551-L000057](../../README.md#L57) | 57 | `""` | — |
+| [SRC-B335630551-L000058](../../README.md#L58) | 58 | ``"Each `POST /api/agent` answer includes a `request_budget` object with elapsed and remaining time, reserved resource counts, and configured limits. The current defaults are a 90-second cooperative deadline, at most 8 search queries, 32 provider search calls, 8 model HTTP attempts, 8 page fetches, and up to 3 optional server-side search-tool calls per request. Operator limits may be lowered or raised only within hard caps: `OMARAI_REQUEST_BUDGET_SECONDS` (10–120), `OMARAI_REQUEST_MAX_SEARCH_QUERIES` (1–8), `OMARAI_REQUEST_MAX_SEARCH_CALLS` (1–40), `OMARAI_REQUEST_MAX_MODEL_CALLS` (1–12), `OMARAI_REQUEST_MAX_PAGE_FETCHES` (1–8), and `OMARAI_REQUEST_MAX_TOOL_CALLS` (0–3). Invalid numeric values fall back to the defaults; out-of-range values are clamped."`` | — |
+| [SRC-B335630551-L000059](../../README.md#L59) | 59 | `""` | — |
+| [SRC-B335630551-L000060](../../README.md#L60) | 60 | `"The deadline caps the timeout passed to outbound operations and prevents new work from being reserved after the deadline or a resource cap is exhausted. It is **cooperative, not hard cancellation**: a network call already in progress may overrun slightly while its client unwinds. Do not interpret this metadata as a load test, a throughput guarantee, or proof that any live provider is reachable. CI tests for budget logic are separate from live-provider validation."` | — |
+| [SRC-B335630551-L000061](../../README.md#L61) | 61 | `""` | — |
+| [SRC-B335630551-L000062](../../README.md#L62) | 62 | ``"The HTTP API also limits expensive `/api/agent` and `/api/diagnostics` operations to at most 4 concurrent operations per process by default. Configure `OMARAI_MAX_CONCURRENT_AGENT_REQUESTS` from 1 to 8. If all slots are occupied, the API returns HTTP 503 with a short retry hint instead of queueing unlimited expensive work. This is a **process-local** cap, not a distributed semaphore across multiple workers or replicas, and it is not a throughput/load-test claim."`` | — |
+| [SRC-B335630551-L000063](../../README.md#L63) | 63 | `""` | — |
+| [SRC-B335630551-L000064](../../README.md#L64) | 64 | `"## Experimental DeepSeek Search provider"` | — |
+| [SRC-B335630551-L000065](../../README.md#L65) | 65 | `""` | — |
+| [SRC-B335630551-L000066](../../README.md#L66) | 66 | `"Omarai can optionally compare results from DeepSeek's Search API when"` | — |
+| [SRC-B335630551-L000067](../../README.md#L67) | 67 | ``"`DEEPSEEK_SEARCH_API_KEY` is configured in the host's secret settings. It is"`` | — |
+| [SRC-B335630551-L000068](../../README.md#L68) | 68 | `"**disabled by default**; DuckDuckGo and Bing remain configured as before."` | — |
+| [SRC-B335630551-L000069](../../README.md#L69) | 69 | `"To limit possible spend when opted in, the request budget defaults to **one"` | — |
+| [SRC-B335630551-L000070](../../README.md#L70) | 70 | `"DeepSeek Search call per answer/diagnostic operation**. It can be set from 0 to 3"` | — |
+| [SRC-B335630551-L000071](../../README.md#L71) | 71 | ``"using `OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET`; invalid values fall back to 1."`` | — |
+| [SRC-B335630551-L000072](../../README.md#L72) | 72 | `"DeepSeek Search is billed per successful request (currently documented at"` | — |
+| [SRC-B335630551-L000073](../../README.md#L73) | 73 | `"US$0.75 per 1,000 successful searches); review the"` | — |
+| [SRC-B335630551-L000074](../../README.md#L74) | 74 | `"[official Search & Fetch guide](https://api-docs.deepseek.com/guides/search/)"` | — |
+| [SRC-B335630551-L000075](../../README.md#L75) | 75 | `"before enabling it. Unit tests use a mocked response; this repository change"` | — |
+| [SRC-B335630551-L000076](../../README.md#L76) | 76 | `"does not claim live DeepSeek connectivity or answer-quality improvement."` | — |
+| [SRC-B335630551-L000077](../../README.md#L77) | 77 | `""` | — |
+| [SRC-B335630551-L000078](../../README.md#L78) | 78 | `"## Hosting and live acceptance"` | — |
+| [SRC-B335630551-L000079](../../README.md#L79) | 79 | `""` | — |
+| [SRC-B335630551-L000080](../../README.md#L80) | 80 | `"Omarai includes several **alternative** hosting paths. Choose one provider; the presence of a config file is not proof that a service exists or has passed acceptance."` | — |
+| [SRC-B335630551-L000081](../../README.md#L81) | 81 | `""` | — |
+| [SRC-B335630551-L000082](../../README.md#L82) | 82 | ``"- **Railway:** [Arabic deployment guide](docs/DEPLOY_RAILWAY_AR.md), using `railway.json`."`` | — |
+| [SRC-B335630551-L000083](../../README.md#L83) | 83 | `"- **SnapDeploy:** [free-demo guide](docs/DEPLOY_SNAPDEPLOY_AR.md). Confirm current quotas and terms before use; ephemeral storage means it is not a durable lead database."` | — |
+| [SRC-B335630551-L000084](../../README.md#L84) | 84 | ``"- **Render:** [optional alternative guide](docs/DEPLOY_RENDER_AR.md), using `render.yaml`. Use it only if the provider/account is available to you."`` | — |
+| [SRC-B335630551-L000085](../../README.md#L85) | 85 | `""` | — |
+| [SRC-B335630551-L000086](../../README.md#L86) | 86 | ``"All providers share the same acceptance rules. The API reports a validated source revision at `/api/health`: it prefers image-baked `BUILD_SHA`, then documented platform Git metadata where supported. For another Docker host, pass `--build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`. A local/container build is not evidence of a live deployment; compare the reported SHA with the exact intended commit."`` | — |
+| [SRC-B335630551-L000087](../../README.md#L87) | 87 | `""` | — |
+| [SRC-B335630551-L000088](../../README.md#L88) | 88 | `"**Single-operator limit:** the current bearer token is shared application access, not individual identity or a tenant boundary. The lead workspace does not provide confirmed per-customer data isolation. Keep a hosted instance private to one operator; do not store confidential records for multiple customers. Concurrency and rate-limit state are process-local, not distributed, and production load capacity has not been established."` | — |
+| [SRC-B335630551-L000089](../../README.md#L89) | 89 | `""` | — |
+| [SRC-B335630551-L000090](../../README.md#L90) | 90 | ``"For a public-bound instance, set `OMARAI_PUBLIC_DEPLOYMENT=1` and a separate random `OMARAI_ACCESS_TOKEN` of at least 32 characters. The app refuses public binding without both. Configure `OPENROUTER_API_KEY` or `OMARAI_LLM_API_KEY` only in the provider's secret store. If the UI is on another origin, set `OMARAI_ALLOWED_ORIGINS` to the exact trusted origins (scheme, host, optional port; no path or wildcard). The built-in UI served from the same host usually needs no extra origin entry. Public API routes require the bearer token and apply a default in-memory per-client IP limit of 20 requests per minute. The browser stores only the app access token in local storage, not the provider API key."`` | — |
+| [SRC-B335630551-L000091](../../README.md#L91) | 91 | `""` | — |
+| [SRC-B335630551-L000092](../../README.md#L92) | 92 | ``"Before accepting any host, follow the [go-live checklist](docs/GO_LIVE_CHECKLIST_AR.md) and run the manually triggered [hosted acceptance smoke workflow](.github/workflows/hosted-smoke.yml) only after setting GitHub Actions secrets `OMARAI_ACCESS_TOKEN` and `OMARAI_BASE_URL` to the authorized service. The workflow makes real model/search calls and may incur usage charges; do not run it without human approval. On hosts with a genuinely persistent mounted volume, set `OMARAI_DB_PATH` to a file inside the mount (for example, `/data/omarai.sqlite3`). This setting selects a path; it does not create storage or replace backups and a tested restore. Keep the lead workspace disabled for important records until persistence across restart/redeploy and restore are verified on the actual host."`` | — |
+| [SRC-B335630551-L000093](../../README.md#L93) | 93 | `""` | — |
+| [SRC-B335630551-L000094](../../README.md#L94) | 94 | `"## Run on Android / Termux"` | — |
+| [SRC-B335630551-L000095](../../README.md#L95) | 95 | `""` | — |
+| [SRC-B335630551-L000096](../../README.md#L96) | 96 | `"From the repository directory:"` | — |
+| [SRC-B335630551-L000097](../../README.md#L97) | 97 | `""` | — |
+| [SRC-B335630551-L000098](../../README.md#L98) | 98 | ````"```bash"```` | — |
+| [SRC-B335630551-L000099](../../README.md#L99) | 99 | `"python -m pip install -e ."` | — |
+| [SRC-B335630551-L000100](../../README.md#L100) | 100 | ````"```"```` | — |
+| [SRC-B335630551-L000101](../../README.md#L101) | 101 | `""` | — |
+| [SRC-B335630551-L000102](../../README.md#L102) | 102 | ``"The default language-model configuration uses OpenRouter: Nemotron 3 Ultra (free) plans queries, Gemma 4 31B Instruct (free) writes the answer and performs the optional second-pass review, and `openrouter/free` is the fallback if a selected model fails. Create an OpenRouter API key, then enter it without putting the secret into a command-history entry. The model key enables both search planning and generative synthesis; general web search can still run without it, but results will not be turned into a full language-model analysis:"`` | — |
+| [SRC-B335630551-L000103](../../README.md#L103) | 103 | `""` | — |
+| [SRC-B335630551-L000104](../../README.md#L104) | 104 | ````"```bash"```` | — |
+| [SRC-B335630551-L000105](../../README.md#L105) | 105 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000106](../../README.md#L106) | 106 | `"printf '\\n'"` | — |
+| [SRC-B335630551-L000107](../../README.md#L107) | 107 | `"export OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000108](../../README.md#L108) | 108 | `"python -m cli.omarai serve"` | — |
+| [SRC-B335630551-L000109](../../README.md#L109) | 109 | ````"```"```` | — |
+| [SRC-B335630551-L000110](../../README.md#L110) | 110 | `""` | — |
+| [SRC-B335630551-L000111](../../README.md#L111) | 111 | `"Keep this Termux session running and open **http://127.0.0.1:8765** in the phone's browser. The agent chat is the home screen. The existing lead workspace remains available at **http://127.0.0.1:8765/leads**."` | — |
+| [SRC-B335630551-L000112](../../README.md#L112) | 112 | `""` | — |
+| [SRC-B335630551-L000113](../../README.md#L113) | 113 | `"The key is held in the current shell environment and is not written into the repository. Enter it again in a new Termux session. Never commit API keys or paste them into public issues or chat."` | — |
+| [SRC-B335630551-L000114](../../README.md#L114) | 114 | `""` | — |
+| [SRC-B335630551-L000115](../../README.md#L115) | 115 | `"### Optional configuration"` | — |
+| [SRC-B335630551-L000116](../../README.md#L116) | 116 | `""` | — |
+| [SRC-B335630551-L000117](../../README.md#L117) | 117 | `"For additional live web-search indexes, configure either official search API. These keys are optional: the built-in public engines are still attempted, and each API may have its own account, quota, rate limit or cost. Do not assume an API is free or that a configured key is valid until you run the live diagnostics."` | — |
+| [SRC-B335630551-L000118](../../README.md#L118) | 118 | `""` | — |
+| [SRC-B335630551-L000119](../../README.md#L119) | 119 | ````"```bash"```` | — |
+| [SRC-B335630551-L000120](../../README.md#L120) | 120 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-B335630551-L000121](../../README.md#L121) | 121 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-B335630551-L000122](../../README.md#L122) | 122 | ````"```"```` | — |
+| [SRC-B335630551-L000123](../../README.md#L123) | 123 | `""` | — |
+| [SRC-B335630551-L000124](../../README.md#L124) | 124 | `""` | — |
+| [SRC-B335630551-L000125](../../README.md#L125) | 125 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
+| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |
+| [SRC-B335630551-L000127](../../README.md#L127) | 127 | ````"```bash"```` | — |
+| [SRC-B335630551-L000128](../../README.md#L128) | 128 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
+| [SRC-B335630551-L000129](../../README.md#L129) | 129 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
+| [SRC-B335630551-L000130](../../README.md#L130) | 130 | ````"```"```` | — |
+| [SRC-B335630551-L000131](../../README.md#L131) | 131 | `""` | — |
+| [SRC-B335630551-L000132](../../README.md#L132) | 132 | ``"Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. To customize model roles, set `OMARAI_PLANNER_MODEL`, `OMARAI_ANSWER_MODEL`, and/or `OMARAI_REVIEW_MODEL`; `OMARAI_LLM_MODEL` remains a global override for all roles that have no role-specific override. `OMARAI_LLM_FALLBACK_MODEL` changes the default `openrouter/free` fallback. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. Optional social credentials may be configured in the same Termux session before starting the server: `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` (official OAuth access), `X_BEARER_TOKEN`, `YOUTUBE_API_KEY`, `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` + optional `META_GRAPH_VERSION`, and `FACEBOOK_PAGE_ACCESS_TOKEN` + `FACEBOOK_PAGE_IDS` (comma-separated Page IDs that the authorized token can access). Use `read -r -s` to enter secrets privately rather than saving them in shell history. Do not store keys in source files, HTML, commits or chat messages."`` | — |
+| [SRC-B335630551-L000133](../../README.md#L133) | 133 | `""` | — |
+| [SRC-B335630551-L000134](../../README.md#L134) | 134 | `"If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded."` | — |
+| [SRC-B335630551-L000135](../../README.md#L135) | 135 | `""` | — |
+| [SRC-B335630551-L000136](../../README.md#L136) | 136 | `"For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md)."` | — |
+| [SRC-B335630551-L000137](../../README.md#L137) | 137 | `""` | — |
+| [SRC-B335630551-L000138](../../README.md#L138) | 138 | `"## API"` | — |
+| [SRC-B335630551-L000139](../../README.md#L139) | 139 | `""` | — |
+| [SRC-B335630551-L000140](../../README.md#L140) | 140 | ``"- `GET /` — web-research chat"`` | — |
+| [SRC-B335630551-L000141](../../README.md#L141) | 141 | ``"- `GET /leads` — existing lead workspace"`` | — |
+| [SRC-B335630551-L000142](../../README.md#L142) | 142 | ``"- `GET /api/health` — setup and dependency status (never returns the API key)"`` | — |
+| [SRC-B335630551-L000143](../../README.md#L143) | 143 | ``"- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors"`` | — |
+| [SRC-B335630551-L000144](../../README.md#L144) | 144 | ``"- `POST /api/agent` — open-ended question plus optional recent `history`"`` | — |
+| [SRC-B335630551-L000145](../../README.md#L145) | 145 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
+| [SRC-B335630551-L000146](../../README.md#L146) | 146 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
+| [SRC-B335630551-L000147](../../README.md#L147) | 147 | `""` | — |
 | [SRC-B335630551-L000148](../../README.md#L148) | 148 | `"Example request:"` | — |
 | [SRC-B335630551-L000149](../../README.md#L149) | 149 | `""` | — |
 | [SRC-B335630551-L000150](../../README.md#L150) | 150 | ````"```json"```` | — |
@@ -637,227 +879,3 @@
 | [SRC-4FFD5AFC54-L000301](../../scripts/run_answer_quality_benchmark.py#L301) | 301 | `"            \"case_id\": cid,"` | — |
 | [SRC-4FFD5AFC54-L000302](../../scripts/run_answer_quality_benchmark.py#L302) | 302 | `"            \"benchmark_version\": data.get(\"version\"),"` | — |
 | [SRC-4FFD5AFC54-L000303](../../scripts/run_answer_quality_benchmark.py#L303) | 303 | `"            \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
-| [SRC-4FFD5AFC54-L000304](../../scripts/run_answer_quality_benchmark.py#L304) | 304 | `"            \"executed_at_utc\": _utc_now(),"` | — |
-| [SRC-4FFD5AFC54-L000305](../../scripts/run_answer_quality_benchmark.py#L305) | 305 | `"            \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000306](../../scripts/run_answer_quality_benchmark.py#L306) | 306 | `"            \"base_url\": safe_base_url,"` | — |
-| [SRC-4FFD5AFC54-L000307](../../scripts/run_answer_quality_benchmark.py#L307) | 307 | `"            \"http_status\": status_code,"` | — |
-| [SRC-4FFD5AFC54-L000308](../../scripts/run_answer_quality_benchmark.py#L308) | 308 | `"            \"prompt\": prompt,"` | — |
-| [SRC-4FFD5AFC54-L000309](../../scripts/run_answer_quality_benchmark.py#L309) | 309 | `"            \"expected_strategy\": case[\"expected_strategy\"],"` | — |
-| [SRC-4FFD5AFC54-L000310](../../scripts/run_answer_quality_benchmark.py#L310) | 310 | `"            \"category\": case[\"category\"],"` | — |
-| [SRC-4FFD5AFC54-L000311](../../scripts/run_answer_quality_benchmark.py#L311) | 311 | `"            \"response\": safe_payload,"` | — |
-| [SRC-4FFD5AFC54-L000312](../../scripts/run_answer_quality_benchmark.py#L312) | 312 | `"            \"used_web_search\": ("` | — |
-| [SRC-4FFD5AFC54-L000313](../../scripts/run_answer_quality_benchmark.py#L313) | 313 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000314](../../scripts/run_answer_quality_benchmark.py#L314) | 314 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000315](../../scripts/run_answer_quality_benchmark.py#L315) | 315 | `"            \"used_language_model\": ("` | — |
-| [SRC-4FFD5AFC54-L000316](../../scripts/run_answer_quality_benchmark.py#L316) | 316 | `"                safe_payload.get(\"used_language_model\")"` | — |
-| [SRC-4FFD5AFC54-L000317](../../scripts/run_answer_quality_benchmark.py#L317) | 317 | `"                if isinstance(safe_payload, dict)"` | — |
-| [SRC-4FFD5AFC54-L000318](../../scripts/run_answer_quality_benchmark.py#L318) | 318 | `"                else None"` | — |
-| [SRC-4FFD5AFC54-L000319](../../scripts/run_answer_quality_benchmark.py#L319) | 319 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000320](../../scripts/run_answer_quality_benchmark.py#L320) | 320 | `"            \"sources\": ("` | — |
-| [SRC-4FFD5AFC54-L000321](../../scripts/run_answer_quality_benchmark.py#L321) | 321 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000322](../../scripts/run_answer_quality_benchmark.py#L322) | 322 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000323](../../scripts/run_answer_quality_benchmark.py#L323) | 323 | `"            \"status\": \"NOT_TESTED\","` | — |
-| [SRC-4FFD5AFC54-L000324](../../scripts/run_answer_quality_benchmark.py#L324) | 324 | `"            \"transport_ok\": transport_ok,"` | — |
-| [SRC-4FFD5AFC54-L000325](../../scripts/run_answer_quality_benchmark.py#L325) | 325 | `"            \"reviewer_notes\": ("` | — |
-| [SRC-4FFD5AFC54-L000326](../../scripts/run_answer_quality_benchmark.py#L326) | 326 | `"                \"Response collected; human/fixture review required for PASS/FAIL.\""` | — |
-| [SRC-4FFD5AFC54-L000327](../../scripts/run_answer_quality_benchmark.py#L327) | 327 | `"                if transport_ok"` | — |
-| [SRC-4FFD5AFC54-L000328](../../scripts/run_answer_quality_benchmark.py#L328) | 328 | `"                else \"Transport or HTTP error; quality not graded.\""` | — |
-| [SRC-4FFD5AFC54-L000329](../../scripts/run_answer_quality_benchmark.py#L329) | 329 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000330](../../scripts/run_answer_quality_benchmark.py#L330) | 330 | `"            \"evidence_fixture_injected\": False,"` | — |
-| [SRC-4FFD5AFC54-L000331](../../scripts/run_answer_quality_benchmark.py#L331) | 331 | `"        }"` | — |
-| [SRC-4FFD5AFC54-L000332](../../scripts/run_answer_quality_benchmark.py#L332) | 332 | `"        results.append(record)"` | — |
-| [SRC-4FFD5AFC54-L000333](../../scripts/run_answer_quality_benchmark.py#L333) | 333 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
-| [SRC-4FFD5AFC54-L000334](../../scripts/run_answer_quality_benchmark.py#L334) | 334 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
-| [SRC-4FFD5AFC54-L000335](../../scripts/run_answer_quality_benchmark.py#L335) | 335 | `"        if delay > 0:"` | — |
-| [SRC-4FFD5AFC54-L000336](../../scripts/run_answer_quality_benchmark.py#L336) | 336 | `"            time.sleep(delay)"` | — |
-| [SRC-4FFD5AFC54-L000337](../../scripts/run_answer_quality_benchmark.py#L337) | 337 | `""` | — |
-| [SRC-4FFD5AFC54-L000338](../../scripts/run_answer_quality_benchmark.py#L338) | 338 | `"    envelope = {"` | — |
-| [SRC-4FFD5AFC54-L000339](../../scripts/run_answer_quality_benchmark.py#L339) | 339 | `"        \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
-| [SRC-4FFD5AFC54-L000340](../../scripts/run_answer_quality_benchmark.py#L340) | 340 | `"        \"benchmark_version\": data.get(\"version\"),"` | — |
-| [SRC-4FFD5AFC54-L000341](../../scripts/run_answer_quality_benchmark.py#L341) | 341 | `"        \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000342](../../scripts/run_answer_quality_benchmark.py#L342) | 342 | `"        \"executed_at_utc\": _utc_now(),"` | — |
-| [SRC-4FFD5AFC54-L000343](../../scripts/run_answer_quality_benchmark.py#L343) | 343 | `"        \"case_count\": len(results),"` | — |
-| [SRC-4FFD5AFC54-L000344](../../scripts/run_answer_quality_benchmark.py#L344) | 344 | `"        \"results\": results,"` | — |
-| [SRC-4FFD5AFC54-L000345](../../scripts/run_answer_quality_benchmark.py#L345) | 345 | `"        \"disclaimer\": ("` | — |
-| [SRC-4FFD5AFC54-L000346](../../scripts/run_answer_quality_benchmark.py#L346) | 346 | `"            \"status=NOT_TESTED means answer quality was not auto-graded. \""` | — |
-| [SRC-4FFD5AFC54-L000347](../../scripts/run_answer_quality_benchmark.py#L347) | 347 | `"            \"Fixtures in JSON were not applied to the live server.\""` | — |
-| [SRC-4FFD5AFC54-L000348](../../scripts/run_answer_quality_benchmark.py#L348) | 348 | `"        ),"` | — |
-| [SRC-4FFD5AFC54-L000349](../../scripts/run_answer_quality_benchmark.py#L349) | 349 | `"    }"` | — |
-| [SRC-4FFD5AFC54-L000350](../../scripts/run_answer_quality_benchmark.py#L350) | 350 | `"    text = json.dumps(envelope, ensure_ascii=False, indent=2)"` | — |
-| [SRC-4FFD5AFC54-L000351](../../scripts/run_answer_quality_benchmark.py#L351) | 351 | `"    if out_path:"` | — |
-| [SRC-4FFD5AFC54-L000352](../../scripts/run_answer_quality_benchmark.py#L352) | 352 | `"        out_path.write_text(text + \"\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-4FFD5AFC54-L000353](../../scripts/run_answer_quality_benchmark.py#L353) | 353 | `"        print(f\"Wrote {out_path}\")"` | — |
-| [SRC-4FFD5AFC54-L000354](../../scripts/run_answer_quality_benchmark.py#L354) | 354 | `"    else:"` | — |
-| [SRC-4FFD5AFC54-L000355](../../scripts/run_answer_quality_benchmark.py#L355) | 355 | `"        print(text)"` | — |
-| [SRC-4FFD5AFC54-L000356](../../scripts/run_answer_quality_benchmark.py#L356) | 356 | `"    return 0"` | — |
-| [SRC-4FFD5AFC54-L000357](../../scripts/run_answer_quality_benchmark.py#L357) | 357 | `""` | — |
-| [SRC-4FFD5AFC54-L000358](../../scripts/run_answer_quality_benchmark.py#L358) | 358 | `""` | — |
-| [SRC-4FFD5AFC54-L000359](../../scripts/run_answer_quality_benchmark.py#L359) | 359 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
-| [SRC-4FFD5AFC54-L000360](../../scripts/run_answer_quality_benchmark.py#L360) | 360 | `"    parser = argparse.ArgumentParser(description=\"Omarai answer-quality benchmark runner\")"` | — |
-| [SRC-4FFD5AFC54-L000361](../../scripts/run_answer_quality_benchmark.py#L361) | 361 | `"    parser.add_argument("` | — |
-| [SRC-4FFD5AFC54-L000362](../../scripts/run_answer_quality_benchmark.py#L362) | 362 | `"        \"--mode\","` | — |
-| [SRC-4FFD5AFC54-L000363](../../scripts/run_answer_quality_benchmark.py#L363) | 363 | `"        choices=(\"validate\", \"live\"),"` | — |
-| [SRC-4FFD5AFC54-L000364](../../scripts/run_answer_quality_benchmark.py#L364) | 364 | `"        default=\"validate\","` | — |
-| [SRC-4FFD5AFC54-L000365](../../scripts/run_answer_quality_benchmark.py#L365) | 365 | `"        help=\"validate=offline corpus check (default); live=opt-in API calls\","` | — |
-| [SRC-4FFD5AFC54-L000366](../../scripts/run_answer_quality_benchmark.py#L366) | 366 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000367](../../scripts/run_answer_quality_benchmark.py#L367) | 367 | `"    parser.add_argument("` | — |
-| [SRC-4FFD5AFC54-L000368](../../scripts/run_answer_quality_benchmark.py#L368) | 368 | `"        \"--corpus\","` | — |
-| [SRC-4FFD5AFC54-L000369](../../scripts/run_answer_quality_benchmark.py#L369) | 369 | `"        type=Path,"` | — |
-| [SRC-4FFD5AFC54-L000370](../../scripts/run_answer_quality_benchmark.py#L370) | 370 | `"        default=DEFAULT_CORPUS,"` | — |
-| [SRC-4FFD5AFC54-L000371](../../scripts/run_answer_quality_benchmark.py#L371) | 371 | `"        help=\"Path to answer_quality_cases.json\","` | — |
-| [SRC-4FFD5AFC54-L000372](../../scripts/run_answer_quality_benchmark.py#L372) | 372 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000373](../../scripts/run_answer_quality_benchmark.py#L373) | 373 | `"    parser.add_argument(\"--summary\", action=\"store_true\", help=\"Extra validate summary\")"` | — |
-| [SRC-4FFD5AFC54-L000374](../../scripts/run_answer_quality_benchmark.py#L374) | 374 | `"    parser.add_argument(\"--base-url\", default=\"http://127.0.0.1:8765\")"` | — |
-| [SRC-4FFD5AFC54-L000375](../../scripts/run_answer_quality_benchmark.py#L375) | 375 | `"    parser.add_argument(\"--case-id\", default=None, help=\"Run a single case (live)\")"` | — |
-| [SRC-4FFD5AFC54-L000376](../../scripts/run_answer_quality_benchmark.py#L376) | 376 | `"    parser.add_argument(\"--limit\", type=int, default=0, help=\"Max cases in live mode (0=all selected)\")"` | — |
-| [SRC-4FFD5AFC54-L000377](../../scripts/run_answer_quality_benchmark.py#L377) | 377 | `"    parser.add_argument(\"--timeout\", type=float, default=60.0)"` | — |
-| [SRC-4FFD5AFC54-L000378](../../scripts/run_answer_quality_benchmark.py#L378) | 378 | `"    parser.add_argument(\"--delay\", type=float, default=0.0, help=\"Seconds between live requests\")"` | — |
-| [SRC-4FFD5AFC54-L000379](../../scripts/run_answer_quality_benchmark.py#L379) | 379 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Write live results JSON\")"` | — |
-| [SRC-4FFD5AFC54-L000380](../../scripts/run_answer_quality_benchmark.py#L380) | 380 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-4FFD5AFC54-L000381](../../scripts/run_answer_quality_benchmark.py#L381) | 381 | `""` | — |
-| [SRC-4FFD5AFC54-L000382](../../scripts/run_answer_quality_benchmark.py#L382) | 382 | `"    if args.mode == \"validate\":"` | — |
-| [SRC-4FFD5AFC54-L000383](../../scripts/run_answer_quality_benchmark.py#L383) | 383 | `"        return run_validate(args.corpus, args.summary)"` | — |
-| [SRC-4FFD5AFC54-L000384](../../scripts/run_answer_quality_benchmark.py#L384) | 384 | `"    if args.mode == \"live\":"` | — |
-| [SRC-4FFD5AFC54-L000385](../../scripts/run_answer_quality_benchmark.py#L385) | 385 | `"        if not args.case_id and args.limit <= 0:"` | — |
-| [SRC-4FFD5AFC54-L000386](../../scripts/run_answer_quality_benchmark.py#L386) | 386 | `"            print("` | — |
-| [SRC-4FFD5AFC54-L000387](../../scripts/run_answer_quality_benchmark.py#L387) | 387 | `"                \"Refusing unbounded live run. Pass --case-id and/or --limit > 0.\","` | — |
-| [SRC-4FFD5AFC54-L000388](../../scripts/run_answer_quality_benchmark.py#L388) | 388 | `"                file=sys.stderr,"` | — |
-| [SRC-4FFD5AFC54-L000389](../../scripts/run_answer_quality_benchmark.py#L389) | 389 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000390](../../scripts/run_answer_quality_benchmark.py#L390) | 390 | `"            return 2"` | — |
-| [SRC-4FFD5AFC54-L000391](../../scripts/run_answer_quality_benchmark.py#L391) | 391 | `"        return run_live("` | — |
-| [SRC-4FFD5AFC54-L000392](../../scripts/run_answer_quality_benchmark.py#L392) | 392 | `"            args.corpus,"` | — |
-| [SRC-4FFD5AFC54-L000393](../../scripts/run_answer_quality_benchmark.py#L393) | 393 | `"            args.base_url,"` | — |
-| [SRC-4FFD5AFC54-L000394](../../scripts/run_answer_quality_benchmark.py#L394) | 394 | `"            args.case_id,"` | — |
-| [SRC-4FFD5AFC54-L000395](../../scripts/run_answer_quality_benchmark.py#L395) | 395 | `"            args.limit,"` | — |
-| [SRC-4FFD5AFC54-L000396](../../scripts/run_answer_quality_benchmark.py#L396) | 396 | `"            args.timeout,"` | — |
-| [SRC-4FFD5AFC54-L000397](../../scripts/run_answer_quality_benchmark.py#L397) | 397 | `"            args.delay,"` | — |
-| [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"            args.out,"` | — |
-| [SRC-4FFD5AFC54-L000399](../../scripts/run_answer_quality_benchmark.py#L399) | 399 | `"        )"` | — |
-| [SRC-4FFD5AFC54-L000400](../../scripts/run_answer_quality_benchmark.py#L400) | 400 | `"    return 2"` | — |
-| [SRC-4FFD5AFC54-L000401](../../scripts/run_answer_quality_benchmark.py#L401) | 401 | `""` | — |
-| [SRC-4FFD5AFC54-L000402](../../scripts/run_answer_quality_benchmark.py#L402) | 402 | `""` | — |
-| [SRC-4FFD5AFC54-L000403](../../scripts/run_answer_quality_benchmark.py#L403) | 403 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-4FFD5AFC54-L000404](../../scripts/run_answer_quality_benchmark.py#L404) | 404 | `"    raise SystemExit(main())"` | — |
-## ملفات أخرى
-
-### FILE-547CAF1FE3 — [scripts/sqlite_backup_restore.py](../../scripts/sqlite_backup_restore.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-547CAF1FE3-L000001](../../scripts/sqlite_backup_restore.py#L1) | 1 | `"#!/usr/bin/env python3"` | — |
-| [SRC-547CAF1FE3-L000002](../../scripts/sqlite_backup_restore.py#L2) | 2 | `"\"\"\"Create and restore verified, non-overwriting snapshots of Omarai's SQLite lead DB.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000003](../../scripts/sqlite_backup_restore.py#L3) | 3 | `"from __future__ import annotations"` | — |
-| [SRC-547CAF1FE3-L000004](../../scripts/sqlite_backup_restore.py#L4) | 4 | `""` | — |
-| [SRC-547CAF1FE3-L000005](../../scripts/sqlite_backup_restore.py#L5) | 5 | `"import argparse"` | — |
-| [SRC-547CAF1FE3-L000006](../../scripts/sqlite_backup_restore.py#L6) | 6 | `"from contextlib import closing"` | — |
-| [SRC-547CAF1FE3-L000007](../../scripts/sqlite_backup_restore.py#L7) | 7 | `"import json"` | — |
-| [SRC-547CAF1FE3-L000008](../../scripts/sqlite_backup_restore.py#L8) | 8 | `"import os"` | — |
-| [SRC-547CAF1FE3-L000009](../../scripts/sqlite_backup_restore.py#L9) | 9 | `"import sqlite3"` | — |
-| [SRC-547CAF1FE3-L000010](../../scripts/sqlite_backup_restore.py#L10) | 10 | `"import sys"` | — |
-| [SRC-547CAF1FE3-L000011](../../scripts/sqlite_backup_restore.py#L11) | 11 | `"from pathlib import Path"` | — |
-| [SRC-547CAF1FE3-L000012](../../scripts/sqlite_backup_restore.py#L12) | 12 | `"from typing import Any"` | — |
-| [SRC-547CAF1FE3-L000013](../../scripts/sqlite_backup_restore.py#L13) | 13 | `""` | — |
-| [SRC-547CAF1FE3-L000014](../../scripts/sqlite_backup_restore.py#L14) | 14 | `""` | — |
-| [SRC-547CAF1FE3-L000015](../../scripts/sqlite_backup_restore.py#L15) | 15 | `"class BackupError(RuntimeError):"` | — |
-| [SRC-547CAF1FE3-L000016](../../scripts/sqlite_backup_restore.py#L16) | 16 | `"    \"\"\"Raised when a backup/restore operation cannot be proven safe.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000017](../../scripts/sqlite_backup_restore.py#L17) | 17 | `""` | — |
-| [SRC-547CAF1FE3-L000018](../../scripts/sqlite_backup_restore.py#L18) | 18 | `""` | — |
-| [SRC-547CAF1FE3-L000019](../../scripts/sqlite_backup_restore.py#L19) | 19 | `"def _open_read_only(path: Path) -> sqlite3.Connection:"` | — |
-| [SRC-547CAF1FE3-L000020](../../scripts/sqlite_backup_restore.py#L20) | 20 | `"    \"\"\"Open an existing SQLite database without accidentally creating a missing source.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000021](../../scripts/sqlite_backup_restore.py#L21) | 21 | `"    try:"` | — |
-| [SRC-547CAF1FE3-L000022](../../scripts/sqlite_backup_restore.py#L22) | 22 | `"        return sqlite3.connect(f\"{path.as_uri()}?mode=ro\", uri=True, timeout=10)"` | — |
-| [SRC-547CAF1FE3-L000023](../../scripts/sqlite_backup_restore.py#L23) | 23 | `"    except (OSError, sqlite3.Error) as exc:"` | — |
-| [SRC-547CAF1FE3-L000024](../../scripts/sqlite_backup_restore.py#L24) | 24 | `"        raise BackupError(f\"cannot open SQLite source: {type(exc).__name__}\") from exc"` | — |
-| [SRC-547CAF1FE3-L000025](../../scripts/sqlite_backup_restore.py#L25) | 25 | `""` | — |
-| [SRC-547CAF1FE3-L000026](../../scripts/sqlite_backup_restore.py#L26) | 26 | `""` | — |
-| [SRC-547CAF1FE3-L000027](../../scripts/sqlite_backup_restore.py#L27) | 27 | `"def _validate_omarai_database(db: sqlite3.Connection) -> int:"` | — |
-| [SRC-547CAF1FE3-L000028](../../scripts/sqlite_backup_restore.py#L28) | 28 | `"    \"\"\"Require a healthy SQLite file containing the Omarai leads table.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000029](../../scripts/sqlite_backup_restore.py#L29) | 29 | `"    try:"` | — |
-| [SRC-547CAF1FE3-L000030](../../scripts/sqlite_backup_restore.py#L30) | 30 | `"        integrity_row = db.execute(\"PRAGMA integrity_check\").fetchone()"` | — |
-| [SRC-547CAF1FE3-L000031](../../scripts/sqlite_backup_restore.py#L31) | 31 | `"        if not integrity_row or integrity_row[0] != \"ok\":"` | — |
-| [SRC-547CAF1FE3-L000032](../../scripts/sqlite_backup_restore.py#L32) | 32 | `"            raise BackupError(\"SQLite integrity_check did not return ok\")"` | — |
-| [SRC-547CAF1FE3-L000033](../../scripts/sqlite_backup_restore.py#L33) | 33 | `"        table_row = db.execute("` | — |
-| [SRC-547CAF1FE3-L000034](../../scripts/sqlite_backup_restore.py#L34) | 34 | `"            \"SELECT 1 FROM sqlite_master WHERE type='table' AND name='leads'\""` | — |
-| [SRC-547CAF1FE3-L000035](../../scripts/sqlite_backup_restore.py#L35) | 35 | `"        ).fetchone()"` | — |
-| [SRC-547CAF1FE3-L000036](../../scripts/sqlite_backup_restore.py#L36) | 36 | `"        if not table_row:"` | — |
-| [SRC-547CAF1FE3-L000037](../../scripts/sqlite_backup_restore.py#L37) | 37 | `"            raise BackupError(\"source is not an Omarai leads database\")"` | — |
-| [SRC-547CAF1FE3-L000038](../../scripts/sqlite_backup_restore.py#L38) | 38 | `"        count_row = db.execute(\"SELECT COUNT(*) FROM leads\").fetchone()"` | — |
-| [SRC-547CAF1FE3-L000039](../../scripts/sqlite_backup_restore.py#L39) | 39 | `"        if not count_row:"` | — |
-| [SRC-547CAF1FE3-L000040](../../scripts/sqlite_backup_restore.py#L40) | 40 | `"            raise BackupError(\"could not count leads in database\")"` | — |
-| [SRC-547CAF1FE3-L000041](../../scripts/sqlite_backup_restore.py#L41) | 41 | `"        return int(count_row[0])"` | — |
-| [SRC-547CAF1FE3-L000042](../../scripts/sqlite_backup_restore.py#L42) | 42 | `"    except sqlite3.Error as exc:"` | — |
-| [SRC-547CAF1FE3-L000043](../../scripts/sqlite_backup_restore.py#L43) | 43 | `"        raise BackupError(f\"SQLite validation failed: {type(exc).__name__}\") from exc"` | — |
-| [SRC-547CAF1FE3-L000044](../../scripts/sqlite_backup_restore.py#L44) | 44 | `""` | — |
-| [SRC-547CAF1FE3-L000045](../../scripts/sqlite_backup_restore.py#L45) | 45 | `""` | — |
-| [SRC-547CAF1FE3-L000046](../../scripts/sqlite_backup_restore.py#L46) | 46 | `"def _create_destination_exclusively(path: Path) -> None:"` | — |
-| [SRC-547CAF1FE3-L000047](../../scripts/sqlite_backup_restore.py#L47) | 47 | `"    \"\"\"Create a new destination without overwriting an existing file or following its symlink.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000048](../../scripts/sqlite_backup_restore.py#L48) | 48 | `"    path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-547CAF1FE3-L000049](../../scripts/sqlite_backup_restore.py#L49) | 49 | `"    descriptor = os.open(path, os.O_CREAT \| os.O_EXCL \| os.O_WRONLY, 0o600)"` | — |
-| [SRC-547CAF1FE3-L000050](../../scripts/sqlite_backup_restore.py#L50) | 50 | `"    os.close(descriptor)"` | — |
-| [SRC-547CAF1FE3-L000051](../../scripts/sqlite_backup_restore.py#L51) | 51 | `"    try:"` | — |
-| [SRC-547CAF1FE3-L000052](../../scripts/sqlite_backup_restore.py#L52) | 52 | `"        path.chmod(0o600)"` | — |
-| [SRC-547CAF1FE3-L000053](../../scripts/sqlite_backup_restore.py#L53) | 53 | `"    except OSError:"` | — |
-| [SRC-547CAF1FE3-L000054](../../scripts/sqlite_backup_restore.py#L54) | 54 | `"        # The exclusive-create mode remains the primary permission setting; do not"` | — |
-| [SRC-547CAF1FE3-L000055](../../scripts/sqlite_backup_restore.py#L55) | 55 | `"        # discard a completed backup solely because chmod is unavailable on a host."` | — |
-| [SRC-547CAF1FE3-L000056](../../scripts/sqlite_backup_restore.py#L56) | 56 | `"        pass"` | — |
-| [SRC-547CAF1FE3-L000057](../../scripts/sqlite_backup_restore.py#L57) | 57 | `""` | — |
-| [SRC-547CAF1FE3-L000058](../../scripts/sqlite_backup_restore.py#L58) | 58 | `""` | — |
-| [SRC-547CAF1FE3-L000059](../../scripts/sqlite_backup_restore.py#L59) | 59 | `"def _copy_verified_database(source: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
-| [SRC-547CAF1FE3-L000060](../../scripts/sqlite_backup_restore.py#L60) | 60 | `"    source_path = Path(source).expanduser().resolve(strict=True)"` | — |
-| [SRC-547CAF1FE3-L000061](../../scripts/sqlite_backup_restore.py#L61) | 61 | `"    requested_destination = Path(destination).expanduser()"` | — |
-| [SRC-547CAF1FE3-L000062](../../scripts/sqlite_backup_restore.py#L62) | 62 | `"    destination_path = requested_destination.resolve(strict=False)"` | — |
-| [SRC-547CAF1FE3-L000063](../../scripts/sqlite_backup_restore.py#L63) | 63 | `""` | — |
-| [SRC-547CAF1FE3-L000064](../../scripts/sqlite_backup_restore.py#L64) | 64 | `"    if not source_path.is_file():"` | — |
-| [SRC-547CAF1FE3-L000065](../../scripts/sqlite_backup_restore.py#L65) | 65 | `"        raise BackupError(\"source must be an existing regular file\")"` | — |
-| [SRC-547CAF1FE3-L000066](../../scripts/sqlite_backup_restore.py#L66) | 66 | `"    if source_path == destination_path:"` | — |
-| [SRC-547CAF1FE3-L000067](../../scripts/sqlite_backup_restore.py#L67) | 67 | `"        raise BackupError(\"source and destination must be different paths\")"` | — |
-| [SRC-547CAF1FE3-L000068](../../scripts/sqlite_backup_restore.py#L68) | 68 | `"    # Check the user-supplied path before resolving it so a dangling symlink is"` | — |
-| [SRC-547CAF1FE3-L000069](../../scripts/sqlite_backup_restore.py#L69) | 69 | `"    # never mistaken for an absent destination and followed to a new target."` | — |
-| [SRC-547CAF1FE3-L000070](../../scripts/sqlite_backup_restore.py#L70) | 70 | `"    if requested_destination.exists() or requested_destination.is_symlink() or destination_path.exists():"` | — |
-| [SRC-547CAF1FE3-L000071](../../scripts/sqlite_backup_restore.py#L71) | 71 | `"        raise FileExistsError(f\"destination already exists: {requested_destination}\")"` | — |
-| [SRC-547CAF1FE3-L000072](../../scripts/sqlite_backup_restore.py#L72) | 72 | `""` | — |
-| [SRC-547CAF1FE3-L000073](../../scripts/sqlite_backup_restore.py#L73) | 73 | `"    # Validate the source before creating anything at the destination."` | — |
-| [SRC-547CAF1FE3-L000074](../../scripts/sqlite_backup_restore.py#L74) | 74 | `"    with closing(_open_read_only(source_path)) as source_db:"` | — |
-| [SRC-547CAF1FE3-L000075](../../scripts/sqlite_backup_restore.py#L75) | 75 | `"        source_count = _validate_omarai_database(source_db)"` | — |
-| [SRC-547CAF1FE3-L000076](../../scripts/sqlite_backup_restore.py#L76) | 76 | `"        _create_destination_exclusively(destination_path)"` | — |
-| [SRC-547CAF1FE3-L000077](../../scripts/sqlite_backup_restore.py#L77) | 77 | `"        try:"` | — |
-| [SRC-547CAF1FE3-L000078](../../scripts/sqlite_backup_restore.py#L78) | 78 | `"            with closing(sqlite3.connect(destination_path, timeout=10)) as destination_db:"` | — |
-| [SRC-547CAF1FE3-L000079](../../scripts/sqlite_backup_restore.py#L79) | 79 | `"                source_db.backup(destination_db)"` | — |
-| [SRC-547CAF1FE3-L000080](../../scripts/sqlite_backup_restore.py#L80) | 80 | `"                destination_db.commit()"` | — |
-| [SRC-547CAF1FE3-L000081](../../scripts/sqlite_backup_restore.py#L81) | 81 | `"                restored_count = _validate_omarai_database(destination_db)"` | — |
-| [SRC-547CAF1FE3-L000082](../../scripts/sqlite_backup_restore.py#L82) | 82 | `"                if restored_count != source_count:"` | — |
-| [SRC-547CAF1FE3-L000083](../../scripts/sqlite_backup_restore.py#L83) | 83 | `"                    raise BackupError("` | — |
-| [SRC-547CAF1FE3-L000084](../../scripts/sqlite_backup_restore.py#L84) | 84 | `"                        \"lead count changed during snapshot: \""` | — |
-| [SRC-547CAF1FE3-L000085](../../scripts/sqlite_backup_restore.py#L85) | 85 | `"                        f\"source={source_count}, destination={restored_count}\""` | — |
-| [SRC-547CAF1FE3-L000086](../../scripts/sqlite_backup_restore.py#L86) | 86 | `"                    )"` | — |
-| [SRC-547CAF1FE3-L000087](../../scripts/sqlite_backup_restore.py#L87) | 87 | `"        except Exception:"` | — |
-| [SRC-547CAF1FE3-L000088](../../scripts/sqlite_backup_restore.py#L88) | 88 | `"            # Remove only the destination created by this operation; never touch source."` | — |
-| [SRC-547CAF1FE3-L000089](../../scripts/sqlite_backup_restore.py#L89) | 89 | `"            try:"` | — |
-| [SRC-547CAF1FE3-L000090](../../scripts/sqlite_backup_restore.py#L90) | 90 | `"                destination_path.unlink(missing_ok=True)"` | — |
-| [SRC-547CAF1FE3-L000091](../../scripts/sqlite_backup_restore.py#L91) | 91 | `"            except OSError:"` | — |
-| [SRC-547CAF1FE3-L000092](../../scripts/sqlite_backup_restore.py#L92) | 92 | `"                pass"` | — |
-| [SRC-547CAF1FE3-L000093](../../scripts/sqlite_backup_restore.py#L93) | 93 | `"            raise"` | — |
-| [SRC-547CAF1FE3-L000094](../../scripts/sqlite_backup_restore.py#L94) | 94 | `""` | — |
-| [SRC-547CAF1FE3-L000095](../../scripts/sqlite_backup_restore.py#L95) | 95 | `"    return {"` | — |
-| [SRC-547CAF1FE3-L000096](../../scripts/sqlite_backup_restore.py#L96) | 96 | `"        \"result\": \"passed\","` | — |
-| [SRC-547CAF1FE3-L000097](../../scripts/sqlite_backup_restore.py#L97) | 97 | `"        \"source\": str(source_path),"` | — |
-| [SRC-547CAF1FE3-L000098](../../scripts/sqlite_backup_restore.py#L98) | 98 | `"        \"destination\": str(destination_path),"` | — |
-| [SRC-547CAF1FE3-L000099](../../scripts/sqlite_backup_restore.py#L99) | 99 | `"        \"integrity_check\": \"ok\","` | — |
-| [SRC-547CAF1FE3-L000100](../../scripts/sqlite_backup_restore.py#L100) | 100 | `"        \"lead_count\": source_count,"` | — |
-| [SRC-547CAF1FE3-L000101](../../scripts/sqlite_backup_restore.py#L101) | 101 | `"        \"overwrite\": False,"` | — |
-| [SRC-547CAF1FE3-L000102](../../scripts/sqlite_backup_restore.py#L102) | 102 | `"    }"` | — |
-| [SRC-547CAF1FE3-L000103](../../scripts/sqlite_backup_restore.py#L103) | 103 | `""` | — |
-| [SRC-547CAF1FE3-L000104](../../scripts/sqlite_backup_restore.py#L104) | 104 | `""` | — |
-| [SRC-547CAF1FE3-L000105](../../scripts/sqlite_backup_restore.py#L105) | 105 | `"def backup_database(source: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
-| [SRC-547CAF1FE3-L000106](../../scripts/sqlite_backup_restore.py#L106) | 106 | `"    \"\"\"Create a consistent SQLite snapshot of a healthy Omarai leads database.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000107](../../scripts/sqlite_backup_restore.py#L107) | 107 | `"    return _copy_verified_database(source, destination)"` | — |
-| [SRC-547CAF1FE3-L000108](../../scripts/sqlite_backup_restore.py#L108) | 108 | `""` | — |
-| [SRC-547CAF1FE3-L000109](../../scripts/sqlite_backup_restore.py#L109) | 109 | `""` | — |
-| [SRC-547CAF1FE3-L000110](../../scripts/sqlite_backup_restore.py#L110) | 110 | `"def restore_database(backup: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
-| [SRC-547CAF1FE3-L000111](../../scripts/sqlite_backup_restore.py#L111) | 111 | `"    \"\"\"Restore a snapshot into a new destination; existing files are never overwritten.\"\"\""` | — |
-| [SRC-547CAF1FE3-L000112](../../scripts/sqlite_backup_restore.py#L112) | 112 | `"    return _copy_verified_database(backup, destination)"` | — |
-| [SRC-547CAF1FE3-L000113](../../scripts/sqlite_backup_restore.py#L113) | 113 | `""` | — |
-| [SRC-547CAF1FE3-L000114](../../scripts/sqlite_backup_restore.py#L114) | 114 | `""` | — |

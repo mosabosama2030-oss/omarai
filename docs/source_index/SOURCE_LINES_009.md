@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003836 إلى SRC-1AE03B9EC3-L004635
+- النطاق: SRC-1AE03B9EC3-L003621 إلى SRC-1AE03B9EC3-L004420
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,221 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003621](../../agents/web_agent.py#L3621) | 3621 | `"        elif completed_connector_responses:"` | — |
+| [SRC-1AE03B9EC3-L003622](../../agents/web_agent.py#L3622) | 3622 | `"            web_status = \"degraded\""` | — |
+| [SRC-1AE03B9EC3-L003623](../../agents/web_agent.py#L3623) | 3623 | `"            web_note = ("` | — |
+| [SRC-1AE03B9EC3-L003624](../../agents/web_agent.py#L3624) | 3624 | `"                \"At least one connector completed a request, but no usable results were returned. \""` | — |
+| [SRC-1AE03B9EC3-L003625](../../agents/web_agent.py#L3625) | 3625 | `"                \"This differs from a confirmed connection failure.\""` | — |
+| [SRC-1AE03B9EC3-L003626](../../agents/web_agent.py#L3626) | 3626 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003627](../../agents/web_agent.py#L3627) | 3627 | `"        elif probe_errors or provider_failure_count:"` | — |
+| [SRC-1AE03B9EC3-L003628](../../agents/web_agent.py#L3628) | 3628 | `"            web_status = \"failed\""` | — |
+| [SRC-1AE03B9EC3-L003629](../../agents/web_agent.py#L3629) | 3629 | `"            web_note = \"All probes failed before any completed connector response or usable result was confirmed.\""` | — |
+| [SRC-1AE03B9EC3-L003630](../../agents/web_agent.py#L3630) | 3630 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L003631](../../agents/web_agent.py#L3631) | 3631 | `"            web_status = \"degraded\""` | — |
+| [SRC-1AE03B9EC3-L003632](../../agents/web_agent.py#L3632) | 3632 | `"            web_note = ("` | — |
+| [SRC-1AE03B9EC3-L003633](../../agents/web_agent.py#L3633) | 3633 | `"                \"No usable matches were returned and connector completion could not be confirmed; \""` | — |
+| [SRC-1AE03B9EC3-L003634](../../agents/web_agent.py#L3634) | 3634 | `"                \"this is inconclusive, not proof that all search services are offline.\""` | — |
+| [SRC-1AE03B9EC3-L003635](../../agents/web_agent.py#L3635) | 3635 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003636](../../agents/web_agent.py#L3636) | 3636 | `"        report[\"checks\"][\"web_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003637](../../agents/web_agent.py#L3637) | 3637 | `"            \"status\": web_status,"` | — |
+| [SRC-1AE03B9EC3-L003638](../../agents/web_agent.py#L3638) | 3638 | `"            \"result_count\": len(probe_result_list),"` | — |
+| [SRC-1AE03B9EC3-L003639](../../agents/web_agent.py#L3639) | 3639 | `"            \"provider_counts\": providers,"` | — |
+| [SRC-1AE03B9EC3-L003640](../../agents/web_agent.py#L3640) | 3640 | `"            \"probe_count\": probes_attempted,"` | — |
+| [SRC-1AE03B9EC3-L003641](../../agents/web_agent.py#L3641) | 3641 | `"            \"completed_connector_responses\": completed_connector_responses,"` | — |
+| [SRC-1AE03B9EC3-L003642](../../agents/web_agent.py#L3642) | 3642 | `"            \"confirmed_connector_attempts\": confirmed_connector_attempts,"` | — |
+| [SRC-1AE03B9EC3-L003643](../../agents/web_agent.py#L3643) | 3643 | `"            \"note\": _clean_text(web_note, 400),"` | — |
+| [SRC-1AE03B9EC3-L003644](../../agents/web_agent.py#L3644) | 3644 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L003645](../../agents/web_agent.py#L3645) | 3645 | `""` | — |
+| [SRC-1AE03B9EC3-L003646](../../agents/web_agent.py#L3646) | 3646 | `"        # Do not send a provider request unless a model check was explicitly requested."` | — |
+| [SRC-1AE03B9EC3-L003647](../../agents/web_agent.py#L3647) | 3647 | `"        if not test_model:"` | — |
+| [SRC-1AE03B9EC3-L003648](../../agents/web_agent.py#L3648) | 3648 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003649](../../agents/web_agent.py#L3649) | 3649 | `"                \"status\": \"skipped\","` | — |
+| [SRC-1AE03B9EC3-L003650](../../agents/web_agent.py#L3650) | 3650 | `"                \"note\": \"Model request was not requested.\","` | — |
+| [SRC-1AE03B9EC3-L003651](../../agents/web_agent.py#L3651) | 3651 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003652](../../agents/web_agent.py#L3652) | 3652 | `"        elif not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L003653](../../agents/web_agent.py#L3653) | 3653 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003654](../../agents/web_agent.py#L3654) | 3654 | `"                \"status\": \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L003655](../../agents/web_agent.py#L3655) | 3655 | `"                \"note\": \"No language-model key is configured in this server session.\","` | — |
+| [SRC-1AE03B9EC3-L003656](../../agents/web_agent.py#L3656) | 3656 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003657](../../agents/web_agent.py#L3657) | 3657 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L003658](../../agents/web_agent.py#L3658) | 3658 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L003659](../../agents/web_agent.py#L3659) | 3659 | `"                probe = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L003660](../../agents/web_agent.py#L3660) | 3660 | `"                    ["` | — |
+| [SRC-1AE03B9EC3-L003661](../../agents/web_agent.py#L3661) | 3661 | `"                        {"` | — |
+| [SRC-1AE03B9EC3-L003662](../../agents/web_agent.py#L3662) | 3662 | `"                            \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L003663](../../agents/web_agent.py#L3663) | 3663 | `"                            \"content\": \"Reply with the exact text OK and nothing else.\","` | — |
+| [SRC-1AE03B9EC3-L003664](../../agents/web_agent.py#L3664) | 3664 | `"                        },"` | — |
+| [SRC-1AE03B9EC3-L003665](../../agents/web_agent.py#L3665) | 3665 | `"                        {"` | — |
+| [SRC-1AE03B9EC3-L003666](../../agents/web_agent.py#L3666) | 3666 | `"                            \"role\": \"user\","` | — |
+| [SRC-1AE03B9EC3-L003667](../../agents/web_agent.py#L3667) | 3667 | `"                            \"content\": \"Omarai connectivity self-test.\","` | — |
+| [SRC-1AE03B9EC3-L003668](../../agents/web_agent.py#L3668) | 3668 | `"                        },"` | — |
+| [SRC-1AE03B9EC3-L003669](../../agents/web_agent.py#L3669) | 3669 | `"                    ],"` | — |
+| [SRC-1AE03B9EC3-L003670](../../agents/web_agent.py#L3670) | 3670 | `"                    max_tokens=12,"` | — |
+| [SRC-1AE03B9EC3-L003671](../../agents/web_agent.py#L3671) | 3671 | `"                    temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L003672](../../agents/web_agent.py#L3672) | 3672 | `"                    timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
+| [SRC-1AE03B9EC3-L003673](../../agents/web_agent.py#L3673) | 3673 | `"                    model=self.answer_model,"` | — |
+| [SRC-1AE03B9EC3-L003674](../../agents/web_agent.py#L3674) | 3674 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L003675](../../agents/web_agent.py#L3675) | 3675 | `"                report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003676](../../agents/web_agent.py#L3676) | 3676 | `"                    \"status\": \"passed\" if probe.strip() else \"failed\","` | — |
+| [SRC-1AE03B9EC3-L003677](../../agents/web_agent.py#L3677) | 3677 | `"                    \"note\": \"A real model completion was received; no prompt content was retained.\","` | — |
+| [SRC-1AE03B9EC3-L003678](../../agents/web_agent.py#L3678) | 3678 | `"                    \"response_received\": bool(probe.strip()),"` | — |
+| [SRC-1AE03B9EC3-L003679](../../agents/web_agent.py#L3679) | 3679 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L003680](../../agents/web_agent.py#L3680) | 3680 | `"            except (RuntimeError, AgentDependencyError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L003681](../../agents/web_agent.py#L3681) | 3681 | `"                report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003682](../../agents/web_agent.py#L3682) | 3682 | `"                    \"status\": \"failed\","` | — |
+| [SRC-1AE03B9EC3-L003683](../../agents/web_agent.py#L3683) | 3683 | `"                    \"note\": _clean_text(str(exc), 400),"` | — |
+| [SRC-1AE03B9EC3-L003684](../../agents/web_agent.py#L3684) | 3684 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L003685](../../agents/web_agent.py#L3685) | 3685 | `""` | — |
+| [SRC-1AE03B9EC3-L003686](../../agents/web_agent.py#L3686) | 3686 | `"        if not test_social:"` | — |
+| [SRC-1AE03B9EC3-L003687](../../agents/web_agent.py#L3687) | 3687 | `"            report[\"checks\"][\"social_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003688](../../agents/web_agent.py#L3688) | 3688 | `"                \"status\": \"skipped\","` | — |
+| [SRC-1AE03B9EC3-L003689](../../agents/web_agent.py#L3689) | 3689 | `"                \"note\": \"Social-source probes were not requested.\","` | — |
+| [SRC-1AE03B9EC3-L003690](../../agents/web_agent.py#L3690) | 3690 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003691](../../agents/web_agent.py#L3691) | 3691 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L003692](../../agents/web_agent.py#L3692) | 3692 | `"            configured_platforms = [\"reddit\", \"bluesky\"]"` | — |
+| [SRC-1AE03B9EC3-L003693](../../agents/web_agent.py#L3693) | 3693 | `"            optional_connectors = {"` | — |
+| [SRC-1AE03B9EC3-L003694](../../agents/web_agent.py#L3694) | 3694 | `"                \"facebook\": bool("` | — |
+| [SRC-1AE03B9EC3-L003695](../../agents/web_agent.py#L3695) | 3695 | `"                    os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L003696](../../agents/web_agent.py#L3696) | 3696 | `"                    and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L003697](../../agents/web_agent.py#L3697) | 3697 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003698](../../agents/web_agent.py#L3698) | 3698 | `"                \"instagram\": bool("` | — |
+| [SRC-1AE03B9EC3-L003699](../../agents/web_agent.py#L3699) | 3699 | `"                    os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L003700](../../agents/web_agent.py#L3700) | 3700 | `"                    and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L003701](../../agents/web_agent.py#L3701) | 3701 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003702](../../agents/web_agent.py#L3702) | 3702 | `"                \"x\": bool(os.getenv(\"X_BEARER_TOKEN\", \"\").strip()),"` | — |
+| [SRC-1AE03B9EC3-L003703](../../agents/web_agent.py#L3703) | 3703 | `"                \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
+| [SRC-1AE03B9EC3-L003704](../../agents/web_agent.py#L3704) | 3704 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003705](../../agents/web_agent.py#L3705) | 3705 | `"            configured_platforms.extend("` | — |
+| [SRC-1AE03B9EC3-L003706](../../agents/web_agent.py#L3706) | 3706 | `"                platform"` | — |
+| [SRC-1AE03B9EC3-L003707](../../agents/web_agent.py#L3707) | 3707 | `"                for platform, is_configured in optional_connectors.items()"` | — |
+| [SRC-1AE03B9EC3-L003708](../../agents/web_agent.py#L3708) | 3708 | `"                if is_configured"` | — |
+| [SRC-1AE03B9EC3-L003709](../../agents/web_agent.py#L3709) | 3709 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003710](../../agents/web_agent.py#L3710) | 3710 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L003711](../../agents/web_agent.py#L3711) | 3711 | `"                social_results, social_warnings = self._search_social("` | — |
+| [SRC-1AE03B9EC3-L003712](../../agents/web_agent.py#L3712) | 3712 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
+| [SRC-1AE03B9EC3-L003713](../../agents/web_agent.py#L3713) | 3713 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L003714](../../agents/web_agent.py#L3714) | 3714 | `"                providers: dict[str, int] = {}"` | — |
+| [SRC-1AE03B9EC3-L003715](../../agents/web_agent.py#L3715) | 3715 | `"                for source in social_results:"` | — |
+| [SRC-1AE03B9EC3-L003716](../../agents/web_agent.py#L3716) | 3716 | `"                    provider = str(source.get(\"provider\") or \"unknown\")"` | — |
+| [SRC-1AE03B9EC3-L003717](../../agents/web_agent.py#L3717) | 3717 | `"                    providers[provider] = providers.get(provider, 0) + 1"` | — |
+| [SRC-1AE03B9EC3-L003718](../../agents/web_agent.py#L3718) | 3718 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003719](../../agents/web_agent.py#L3719) | 3719 | `"                    \"status\": \"passed\" if social_results else \"degraded\","` | — |
+| [SRC-1AE03B9EC3-L003720](../../agents/web_agent.py#L3720) | 3720 | `"                    \"platforms_tested\": configured_platforms,"` | — |
+| [SRC-1AE03B9EC3-L003721](../../agents/web_agent.py#L3721) | 3721 | `"                    \"result_count\": len(social_results),"` | — |
+| [SRC-1AE03B9EC3-L003722](../../agents/web_agent.py#L3722) | 3722 | `"                    \"provider_counts\": providers,"` | — |
+| [SRC-1AE03B9EC3-L003723](../../agents/web_agent.py#L3723) | 3723 | `"                    \"warnings\": [_clean_text(item, 300) for item in social_warnings[:8]],"` | — |
+| [SRC-1AE03B9EC3-L003724](../../agents/web_agent.py#L3724) | 3724 | `"                    \"note\": ("` | — |
+| [SRC-1AE03B9EC3-L003725](../../agents/web_agent.py#L3725) | 3725 | `"                        \"Public-source request(s) returned results.\""` | — |
+| [SRC-1AE03B9EC3-L003726](../../agents/web_agent.py#L3726) | 3726 | `"                        if social_results"` | — |
+| [SRC-1AE03B9EC3-L003727](../../agents/web_agent.py#L3727) | 3727 | `"                        else \"No parseable public social results were returned. This does not establish that the platform is offline.\""` | — |
+| [SRC-1AE03B9EC3-L003728](../../agents/web_agent.py#L3728) | 3728 | `"                    ),"` | — |
+| [SRC-1AE03B9EC3-L003729](../../agents/web_agent.py#L3729) | 3729 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L003730](../../agents/web_agent.py#L3730) | 3730 | `"            except (RuntimeError, AgentDependencyError, ValueError, OSError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L003731](../../agents/web_agent.py#L3731) | 3731 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003732](../../agents/web_agent.py#L3732) | 3732 | `"                    \"status\": \"failed\","` | — |
+| [SRC-1AE03B9EC3-L003733](../../agents/web_agent.py#L3733) | 3733 | `"                    \"platforms_tested\": configured_platforms,"` | — |
+| [SRC-1AE03B9EC3-L003734](../../agents/web_agent.py#L3734) | 3734 | `"                    \"result_count\": 0,"` | — |
+| [SRC-1AE03B9EC3-L003735](../../agents/web_agent.py#L3735) | 3735 | `"                    \"note\": _clean_text(str(exc), 400),"` | — |
+| [SRC-1AE03B9EC3-L003736](../../agents/web_agent.py#L3736) | 3736 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L003737](../../agents/web_agent.py#L3737) | 3737 | `""` | — |
+| [SRC-1AE03B9EC3-L003738](../../agents/web_agent.py#L3738) | 3738 | `"        report[\"model_usage\"] = list(self.model_usage)"` | — |
+| [SRC-1AE03B9EC3-L003739](../../agents/web_agent.py#L3739) | 3739 | `"        report[\"elapsed_ms\"] = round((time.monotonic() - started) * 1000)"` | — |
+| [SRC-1AE03B9EC3-L003740](../../agents/web_agent.py#L3740) | 3740 | `"        statuses = [check.get(\"status\") for check in report[\"checks\"].values()]"` | — |
+| [SRC-1AE03B9EC3-L003741](../../agents/web_agent.py#L3741) | 3741 | `"        report[\"overall_status\"] = ("` | — |
+| [SRC-1AE03B9EC3-L003742](../../agents/web_agent.py#L3742) | 3742 | `"            \"passed\""` | — |
+| [SRC-1AE03B9EC3-L003743](../../agents/web_agent.py#L3743) | 3743 | `"            if all(status in {\"passed\", \"skipped\"} for status in statuses)"` | — |
+| [SRC-1AE03B9EC3-L003744](../../agents/web_agent.py#L3744) | 3744 | `"            else \"degraded\""` | — |
+| [SRC-1AE03B9EC3-L003745](../../agents/web_agent.py#L3745) | 3745 | `"            if any(status in {\"passed\", \"degraded\"} for status in statuses)"` | — |
+| [SRC-1AE03B9EC3-L003746](../../agents/web_agent.py#L3746) | 3746 | `"            else \"failed\""` | — |
+| [SRC-1AE03B9EC3-L003747](../../agents/web_agent.py#L3747) | 3747 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003748](../../agents/web_agent.py#L3748) | 3748 | `"        return report"` | — |
+| [SRC-1AE03B9EC3-L003749](../../agents/web_agent.py#L3749) | 3749 | `""` | — |
+| [SRC-1AE03B9EC3-L003750](../../agents/web_agent.py#L3750) | 3750 | `"    def answer("` | — |
+| [SRC-1AE03B9EC3-L003751](../../agents/web_agent.py#L3751) | 3751 | `"        self, question: str, history: Any = None, mode: str = \"auto\""` | — |
+| [SRC-1AE03B9EC3-L003752](../../agents/web_agent.py#L3752) | 3752 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L003753](../../agents/web_agent.py#L3753) | 3753 | `"        \"\"\"Run one answer with an isolated, observable resource budget.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003754](../../agents/web_agent.py#L3754) | 3754 | `"        previous_budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L003755](../../agents/web_agent.py#L3755) | 3755 | `"        self.generation_diagnostics = []"` | — |
+| [SRC-1AE03B9EC3-L003756](../../agents/web_agent.py#L3756) | 3756 | `"        self._generation_attempt_sequence = 0"` | — |
+| [SRC-1AE03B9EC3-L003757](../../agents/web_agent.py#L3757) | 3757 | `"        budget = RequestBudget.from_environment()"` | — |
+| [SRC-1AE03B9EC3-L003758](../../agents/web_agent.py#L3758) | 3758 | `"        self._request_budget = budget"` | — |
+| [SRC-1AE03B9EC3-L003759](../../agents/web_agent.py#L3759) | 3759 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L003760](../../agents/web_agent.py#L3760) | 3760 | `"            result = self._answer_with_budget(question, history, mode)"` | — |
+| [SRC-1AE03B9EC3-L003761](../../agents/web_agent.py#L3761) | 3761 | `"        except RequestBudgetExceeded as exc:"` | — |
+| [SRC-1AE03B9EC3-L003762](../../agents/web_agent.py#L3762) | 3762 | `"            safe_question = ("` | — |
+| [SRC-1AE03B9EC3-L003763](../../agents/web_agent.py#L3763) | 3763 | `"                question.strip()[:MAX_QUESTION_CHARS]"` | — |
+| [SRC-1AE03B9EC3-L003764](../../agents/web_agent.py#L3764) | 3764 | `"                if isinstance(question, str)"` | — |
+| [SRC-1AE03B9EC3-L003765](../../agents/web_agent.py#L3765) | 3765 | `"                else \"\""` | — |
+| [SRC-1AE03B9EC3-L003766](../../agents/web_agent.py#L3766) | 3766 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003767](../../agents/web_agent.py#L3767) | 3767 | `"            budget_at_failure = budget.snapshot()"` | — |
+| [SRC-1AE03B9EC3-L003768](../../agents/web_agent.py#L3768) | 3768 | `"            search_attempted = budget_at_failure[\"counts\"][\"search_calls\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L003769](../../agents/web_agent.py#L3769) | 3769 | `"            result = {"` | — |
+| [SRC-1AE03B9EC3-L003770](../../agents/web_agent.py#L3770) | 3770 | `"                \"answer\": ("` | — |
+| [SRC-1AE03B9EC3-L003771](../../agents/web_agent.py#L3771) | 3771 | `"                    \"توقفت العملية لأن ميزانية الوقت أو الموارد المحددة لهذا الطلب \""` | — |
+| [SRC-1AE03B9EC3-L003772](../../agents/web_agent.py#L3772) | 3772 | `"                    \"قد استُنفدت. لم أتمكن من إكمال البحث ضمن الحدود الحالية؛ \""` | — |
+| [SRC-1AE03B9EC3-L003773](../../agents/web_agent.py#L3773) | 3773 | `"                    \"لا تعتبر هذه النتيجة بحثًا مكتملًا.\""` | — |
+| [SRC-1AE03B9EC3-L003774](../../agents/web_agent.py#L3774) | 3774 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003775](../../agents/web_agent.py#L3775) | 3775 | `"                \"question\": safe_question,"` | — |
+| [SRC-1AE03B9EC3-L003776](../../agents/web_agent.py#L3776) | 3776 | `"                \"search_query\": safe_question,"` | — |
+| [SRC-1AE03B9EC3-L003777](../../agents/web_agent.py#L3777) | 3777 | `"                \"search_queries\": [],"` | — |
+| [SRC-1AE03B9EC3-L003778](../../agents/web_agent.py#L3778) | 3778 | `"                \"search_report\": {"` | — |
+| [SRC-1AE03B9EC3-L003779](../../agents/web_agent.py#L3779) | 3779 | `"                    \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L003780](../../agents/web_agent.py#L3780) | 3780 | `"                    \"search_outcome\": ("` | — |
+| [SRC-1AE03B9EC3-L003781](../../agents/web_agent.py#L3781) | 3781 | `"                        \"unknown_after_budget_exhaustion\""` | — |
+| [SRC-1AE03B9EC3-L003782](../../agents/web_agent.py#L3782) | 3782 | `"                        if search_attempted"` | — |
+| [SRC-1AE03B9EC3-L003783](../../agents/web_agent.py#L3783) | 3783 | `"                        else \"not_attempted\""` | — |
+| [SRC-1AE03B9EC3-L003784](../../agents/web_agent.py#L3784) | 3784 | `"                    ),"` | — |
+| [SRC-1AE03B9EC3-L003785](../../agents/web_agent.py#L3785) | 3785 | `"                    \"insufficient_evidence\": True,"` | — |
+| [SRC-1AE03B9EC3-L003786](../../agents/web_agent.py#L3786) | 3786 | `"                    \"budget_exhausted\": True,"` | — |
+| [SRC-1AE03B9EC3-L003787](../../agents/web_agent.py#L3787) | 3787 | `"                    \"warnings\": [str(exc)],"` | — |
+| [SRC-1AE03B9EC3-L003788](../../agents/web_agent.py#L3788) | 3788 | `"                },"` | — |
+| [SRC-1AE03B9EC3-L003789](../../agents/web_agent.py#L3789) | 3789 | `"                \"sources\": [],"` | — |
+| [SRC-1AE03B9EC3-L003790](../../agents/web_agent.py#L3790) | 3790 | `"                \"research_quality\": \"failed\","` | — |
+| [SRC-1AE03B9EC3-L003791](../../agents/web_agent.py#L3791) | 3791 | `"                \"citation_validation\": {\"status\": \"not_checked\"},"` | — |
+| [SRC-1AE03B9EC3-L003792](../../agents/web_agent.py#L3792) | 3792 | `"                \"answer_coverage\": {},"` | — |
+| [SRC-1AE03B9EC3-L003793](../../agents/web_agent.py#L3793) | 3793 | `"                \"used_language_model\": False,"` | — |
+| [SRC-1AE03B9EC3-L003794](../../agents/web_agent.py#L3794) | 3794 | `"                \"used_web_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L003795](../../agents/web_agent.py#L3795) | 3795 | `"                \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L003796](../../agents/web_agent.py#L3796) | 3796 | `"                \"used_social_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L003797](../../agents/web_agent.py#L3797) | 3797 | `"                \"warnings\": [str(exc)],"` | — |
+| [SRC-1AE03B9EC3-L003798](../../agents/web_agent.py#L3798) | 3798 | `"                \"kind\": \"web_fallback\","` | — |
+| [SRC-1AE03B9EC3-L003799](../../agents/web_agent.py#L3799) | 3799 | `"                \"final_answer_status\": \"budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L003800](../../agents/web_agent.py#L3800) | 3800 | `"                \"intent_route\": \"BUDGET_EXHAUSTED\","` | — |
+| [SRC-1AE03B9EC3-L003801](../../agents/web_agent.py#L3801) | 3801 | `"                \"intent_route_reason\": \"request_budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L003802](../../agents/web_agent.py#L3802) | 3802 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003803](../../agents/web_agent.py#L3803) | 3803 | `"        finally:"` | — |
+| [SRC-1AE03B9EC3-L003804](../../agents/web_agent.py#L3804) | 3804 | `"            budget_summary = budget.snapshot()"` | — |
+| [SRC-1AE03B9EC3-L003805](../../agents/web_agent.py#L3805) | 3805 | `"            self._request_budget = previous_budget"` | — |
+| [SRC-1AE03B9EC3-L003806](../../agents/web_agent.py#L3806) | 3806 | `""` | — |
+| [SRC-1AE03B9EC3-L003807](../../agents/web_agent.py#L3807) | 3807 | `"        result[\"request_budget\"] = budget_summary"` | — |
+| [SRC-1AE03B9EC3-L003808](../../agents/web_agent.py#L3808) | 3808 | `"        result[\"generation_diagnostics\"] = list(self.generation_diagnostics[-12:])"` | — |
+| [SRC-1AE03B9EC3-L003809](../../agents/web_agent.py#L3809) | 3809 | `""` | — |
+| [SRC-1AE03B9EC3-L003810](../../agents/web_agent.py#L3810) | 3810 | `"        # Keep the public result contract resilient if a fallback/alternate result"` | — |
+| [SRC-1AE03B9EC3-L003811](../../agents/web_agent.py#L3811) | 3811 | `"        # builder omitted the lexical integrity fields. Normal research results are"` | — |
+| [SRC-1AE03B9EC3-L003812](../../agents/web_agent.py#L3812) | 3812 | `"        # already audited inside _answer_with_budget, so do not duplicate that work."` | — |
+| [SRC-1AE03B9EC3-L003813](../../agents/web_agent.py#L3813) | 3813 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L003814](../../agents/web_agent.py#L3814) | 3814 | `"            result.get(\"kind\") in {\"web_research\", \"web_fallback\", \"insufficient_evidence\"}"` | — |
+| [SRC-1AE03B9EC3-L003815](../../agents/web_agent.py#L3815) | 3815 | `"            and \"answer_integrity\" not in result"` | — |
+| [SRC-1AE03B9EC3-L003816](../../agents/web_agent.py#L3816) | 3816 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L003817](../../agents/web_agent.py#L3817) | 3817 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L003818](../../agents/web_agent.py#L3818) | 3818 | `"                coverage_targets = self._question_coverage_targets(question)"` | — |
+| [SRC-1AE03B9EC3-L003819](../../agents/web_agent.py#L3819) | 3819 | `"                source_rows = result.get(\"sources\")"` | — |
+| [SRC-1AE03B9EC3-L003820](../../agents/web_agent.py#L3820) | 3820 | `"                safe_sources = source_rows if isinstance(source_rows, list) else []"` | — |
+| [SRC-1AE03B9EC3-L003821](../../agents/web_agent.py#L3821) | 3821 | `"                answer_integrity = audit_answer_integrity("` | — |
+| [SRC-1AE03B9EC3-L003822](../../agents/web_agent.py#L3822) | 3822 | `"                    question,"` | — |
+| [SRC-1AE03B9EC3-L003823](../../agents/web_agent.py#L3823) | 3823 | `"                    str(result.get(\"answer\") or \"\"),"` | — |
+| [SRC-1AE03B9EC3-L003824](../../agents/web_agent.py#L3824) | 3824 | `"                    safe_sources,"` | — |
+| [SRC-1AE03B9EC3-L003825](../../agents/web_agent.py#L3825) | 3825 | `"                    coverage_targets,"` | — |
+| [SRC-1AE03B9EC3-L003826](../../agents/web_agent.py#L3826) | 3826 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L003827](../../agents/web_agent.py#L3827) | 3827 | `"                result[\"answer_integrity\"] = answer_integrity"` | — |
+| [SRC-1AE03B9EC3-L003828](../../agents/web_agent.py#L3828) | 3828 | `"                coverage = result.get(\"answer_coverage\")"` | — |
+| [SRC-1AE03B9EC3-L003829](../../agents/web_agent.py#L3829) | 3829 | `"                if not isinstance(coverage, dict):"` | — |
+| [SRC-1AE03B9EC3-L003830](../../agents/web_agent.py#L3830) | 3830 | `"                    coverage = {}"` | — |
+| [SRC-1AE03B9EC3-L003831](../../agents/web_agent.py#L3831) | 3831 | `"                coverage[\"targets\"] = coverage_targets"` | — |
+| [SRC-1AE03B9EC3-L003832](../../agents/web_agent.py#L3832) | 3832 | `"                coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
+| [SRC-1AE03B9EC3-L003833](../../agents/web_agent.py#L3833) | 3833 | `"                coverage[\"potentially_missing_target_count\"] = ("` | — |
+| [SRC-1AE03B9EC3-L003834](../../agents/web_agent.py#L3834) | 3834 | `"                    answer_integrity[\"potentially_missing_target_count\"]"` | — |
+| [SRC-1AE03B9EC3-L003835](../../agents/web_agent.py#L3835) | 3835 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L003836](../../agents/web_agent.py#L3836) | 3836 | `"                coverage[\"source_evidence_gap_count\"] = answer_integrity[\"source_evidence_gap_count\"]"` | — |
 | [SRC-1AE03B9EC3-L003837](../../agents/web_agent.py#L3837) | 3837 | `"                coverage[\"lexical_screen_method\"] = ("` | — |
 | [SRC-1AE03B9EC3-L003838](../../agents/web_agent.py#L3838) | 3838 | `"                    \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
@@ -601,218 +816,3 @@
 | [SRC-1AE03B9EC3-L004418](../../agents/web_agent.py#L4418) | 4418 | `"            report[\"evidence_signals\"] = evidence_signal_report(sources, plan.get(\"freshness\", \"any\"))"` | — |
 | [SRC-1AE03B9EC3-L004419](../../agents/web_agent.py#L4419) | 4419 | `"            report[\"unique_sources\"] = len(sources)"` | — |
 | [SRC-1AE03B9EC3-L004420](../../agents/web_agent.py#L4420) | 4420 | `"            report[\"usable_sources_after_filtering\"] = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L004421](../../agents/web_agent.py#L4421) | 4421 | `"            report[\"pages_fetched\"] = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
-| [SRC-1AE03B9EC3-L004422](../../agents/web_agent.py#L4422) | 4422 | `"            independent_domains = {"` | — |
-| [SRC-1AE03B9EC3-L004423](../../agents/web_agent.py#L4423) | 4423 | `"                registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L004424](../../agents/web_agent.py#L4424) | 4424 | `"                    source.get(\"domain\")"` | — |
-| [SRC-1AE03B9EC3-L004425](../../agents/web_agent.py#L4425) | 4425 | `"                    or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L004426](../../agents/web_agent.py#L4426) | 4426 | `"                    or \"\""` | — |
-| [SRC-1AE03B9EC3-L004427](../../agents/web_agent.py#L4427) | 4427 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004428](../../agents/web_agent.py#L4428) | 4428 | `"                for source in sources"` | — |
-| [SRC-1AE03B9EC3-L004429](../../agents/web_agent.py#L4429) | 4429 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L004430](../../agents/web_agent.py#L4430) | 4430 | `"            independent_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L004431](../../agents/web_agent.py#L4431) | 4431 | `"        single_source_navigation = navigation_request and bool(sources)"` | — |
-| [SRC-1AE03B9EC3-L004432](../../agents/web_agent.py#L4432) | 4432 | `"        single_source_social = bool(plan.get(\"social_focus\")) and bool(sources)"` | — |
-| [SRC-1AE03B9EC3-L004433](../../agents/web_agent.py#L4433) | 4433 | `"        single_source_lead = lead_request and bool(lead_evidence_sources)"` | — |
-| [SRC-1AE03B9EC3-L004434](../../agents/web_agent.py#L4434) | 4434 | `"        single_source_listing = listing_request and bool(sources)"` | — |
-| [SRC-1AE03B9EC3-L004435](../../agents/web_agent.py#L4435) | 4435 | `"        task_specific_partial_evidence = ("` | — |
-| [SRC-1AE03B9EC3-L004436](../../agents/web_agent.py#L4436) | 4436 | `"            single_source_page_summary"` | — |
-| [SRC-1AE03B9EC3-L004437](../../agents/web_agent.py#L4437) | 4437 | `"            or single_source_navigation"` | — |
-| [SRC-1AE03B9EC3-L004438](../../agents/web_agent.py#L4438) | 4438 | `"            or single_source_social"` | — |
-| [SRC-1AE03B9EC3-L004439](../../agents/web_agent.py#L4439) | 4439 | `"            or single_source_lead"` | — |
-| [SRC-1AE03B9EC3-L004440](../../agents/web_agent.py#L4440) | 4440 | `"            or single_source_listing"` | — |
-| [SRC-1AE03B9EC3-L004441](../../agents/web_agent.py#L4441) | 4441 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004442](../../agents/web_agent.py#L4442) | 4442 | `"        needs_corroboration = len(sources) < 2 or len(independent_domains) < 2"` | — |
-| [SRC-1AE03B9EC3-L004443](../../agents/web_agent.py#L4443) | 4443 | `"        evidence_repair: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L004444](../../agents/web_agent.py#L4444) | 4444 | `"            \"attempted\": False,"` | — |
-| [SRC-1AE03B9EC3-L004445](../../agents/web_agent.py#L4445) | 4445 | `"            \"max_extra_queries\": 1,"` | — |
-| [SRC-1AE03B9EC3-L004446](../../agents/web_agent.py#L4446) | 4446 | `"            \"reason\": \"initial_evidence_gate_satisfied\" if not needs_corroboration else \"not_attempted\","` | — |
-| [SRC-1AE03B9EC3-L004447](../../agents/web_agent.py#L4447) | 4447 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L004448](../../agents/web_agent.py#L4448) | 4448 | `"        if needs_corroboration and not plan.get(\"queries\"):"` | — |
-| [SRC-1AE03B9EC3-L004449](../../agents/web_agent.py#L4449) | 4449 | `"            evidence_repair[\"reason\"] = \"no_topic_query_available\""` | — |
-| [SRC-1AE03B9EC3-L004450](../../agents/web_agent.py#L4450) | 4450 | `"        elif needs_corroboration:"` | — |
-| [SRC-1AE03B9EC3-L004451](../../agents/web_agent.py#L4451) | 4451 | `"            if task_specific_partial_evidence:"` | — |
-| [SRC-1AE03B9EC3-L004452](../../agents/web_agent.py#L4452) | 4452 | `"                evidence_repair[\"reason\"] = \"task_specific_partial_evidence\""` | — |
-| [SRC-1AE03B9EC3-L004453](../../agents/web_agent.py#L4453) | 4453 | `"            elif plan.get(\"social_focus\"):"` | — |
-| [SRC-1AE03B9EC3-L004454](../../agents/web_agent.py#L4454) | 4454 | `"                evidence_repair[\"reason\"] = \"social_search_not_retried\""` | — |
-| [SRC-1AE03B9EC3-L004455](../../agents/web_agent.py#L4455) | 4455 | `"            elif plan.get(\"depth\") == \"deep\" or report.get(\"expansion_queries\"):"` | — |
-| [SRC-1AE03B9EC3-L004456](../../agents/web_agent.py#L4456) | 4456 | `"                evidence_repair[\"reason\"] = \"deep_research_already_expanded\""` | — |
-| [SRC-1AE03B9EC3-L004457](../../agents/web_agent.py#L4457) | 4457 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L004458](../../agents/web_agent.py#L4458) | 4458 | `"                original_queries = ["` | — |
-| [SRC-1AE03B9EC3-L004459](../../agents/web_agent.py#L4459) | 4459 | `"                    str(item).strip()"` | — |
-| [SRC-1AE03B9EC3-L004460](../../agents/web_agent.py#L4460) | 4460 | `"                    for item in plan.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L004461](../../agents/web_agent.py#L4461) | 4461 | `"                    if isinstance(item, str) and item.strip()"` | — |
-| [SRC-1AE03B9EC3-L004462](../../agents/web_agent.py#L4462) | 4462 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004463](../../agents/web_agent.py#L4463) | 4463 | `"                base_query = ("` | — |
-| [SRC-1AE03B9EC3-L004464](../../agents/web_agent.py#L4464) | 4464 | `"                    original_queries[0]"` | — |
-| [SRC-1AE03B9EC3-L004465](../../agents/web_agent.py#L4465) | 4465 | `"                    if original_queries"` | — |
-| [SRC-1AE03B9EC3-L004466](../../agents/web_agent.py#L4466) | 4466 | `"                    else compact_search_query(working_question)"` | — |
-| [SRC-1AE03B9EC3-L004467](../../agents/web_agent.py#L4467) | 4467 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004468](../../agents/web_agent.py#L4468) | 4468 | `"                suffix = ("` | — |
-| [SRC-1AE03B9EC3-L004469](../../agents/web_agent.py#L4469) | 4469 | `"                    \"latest official primary source\""` | — |
-| [SRC-1AE03B9EC3-L004470](../../agents/web_agent.py#L4470) | 4470 | `"                    if plan.get(\"freshness\") == \"current\""` | — |
-| [SRC-1AE03B9EC3-L004471](../../agents/web_agent.py#L4471) | 4471 | `"                    else \"official primary source data\""` | — |
-| [SRC-1AE03B9EC3-L004472](../../agents/web_agent.py#L4472) | 4472 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004473](../../agents/web_agent.py#L4473) | 4473 | `"                repair_query = compact_search_query(f\"{base_query} {suffix}\")"` | — |
-| [SRC-1AE03B9EC3-L004474](../../agents/web_agent.py#L4474) | 4474 | `"                if not repair_query or not _relevance_query_tokens(repair_query):"` | — |
-| [SRC-1AE03B9EC3-L004475](../../agents/web_agent.py#L4475) | 4475 | `"                    evidence_repair[\"reason\"] = \"no_topic_query_available\""` | — |
-| [SRC-1AE03B9EC3-L004476](../../agents/web_agent.py#L4476) | 4476 | `"                    repair_query = \"\""` | — |
-| [SRC-1AE03B9EC3-L004477](../../agents/web_agent.py#L4477) | 4477 | `"                known_queries = {"` | — |
-| [SRC-1AE03B9EC3-L004478](../../agents/web_agent.py#L4478) | 4478 | `"                    _normalize_search_query(item).casefold()"` | — |
-| [SRC-1AE03B9EC3-L004479](../../agents/web_agent.py#L4479) | 4479 | `"                    for item in original_queries"` | — |
-| [SRC-1AE03B9EC3-L004480](../../agents/web_agent.py#L4480) | 4480 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L004481](../../agents/web_agent.py#L4481) | 4481 | `"                if repair_query and _normalize_search_query(repair_query).casefold() in known_queries:"` | — |
-| [SRC-1AE03B9EC3-L004482](../../agents/web_agent.py#L4482) | 4482 | `"                    repair_query = compact_search_query("` | — |
-| [SRC-1AE03B9EC3-L004483](../../agents/web_agent.py#L4483) | 4483 | `"                        f\"{base_query} independent corroborating evidence\""` | — |
-| [SRC-1AE03B9EC3-L004484](../../agents/web_agent.py#L4484) | 4484 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004485](../../agents/web_agent.py#L4485) | 4485 | `"                if repair_query and _relevance_query_tokens(repair_query) and ("` | — |
-| [SRC-1AE03B9EC3-L004486](../../agents/web_agent.py#L4486) | 4486 | `"                    _normalize_search_query(repair_query).casefold() not in known_queries"` | — |
-| [SRC-1AE03B9EC3-L004487](../../agents/web_agent.py#L4487) | 4487 | `"                ):"` | — |
-| [SRC-1AE03B9EC3-L004488](../../agents/web_agent.py#L4488) | 4488 | `"                    initial_source_count = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L004489](../../agents/web_agent.py#L4489) | 4489 | `"                    initial_domain_count = len(independent_domains)"` | — |
-| [SRC-1AE03B9EC3-L004490](../../agents/web_agent.py#L4490) | 4490 | `"                    evidence_repair[\"attempted\"] = True"` | — |
-| [SRC-1AE03B9EC3-L004491](../../agents/web_agent.py#L4491) | 4491 | `"                    evidence_repair[\"reason\"] = \"thin_or_unrelated_initial_evidence\""` | — |
-| [SRC-1AE03B9EC3-L004492](../../agents/web_agent.py#L4492) | 4492 | `"                    evidence_repair[\"query\"] = repair_query"` | — |
-| [SRC-1AE03B9EC3-L004493](../../agents/web_agent.py#L4493) | 4493 | `"                    repair_plan = dict(plan)"` | — |
-| [SRC-1AE03B9EC3-L004494](../../agents/web_agent.py#L4494) | 4494 | `"                    repair_plan.update({"` | — |
-| [SRC-1AE03B9EC3-L004495](../../agents/web_agent.py#L4495) | 4495 | `"                        \"queries\": [repair_query],"` | — |
-| [SRC-1AE03B9EC3-L004496](../../agents/web_agent.py#L4496) | 4496 | `"                        \"depth\": \"standard\","` | — |
-| [SRC-1AE03B9EC3-L004497](../../agents/web_agent.py#L4497) | 4497 | `"                        \"social_focus\": False,"` | — |
-| [SRC-1AE03B9EC3-L004498](../../agents/web_agent.py#L4498) | 4498 | `"                        \"platforms\": [],"` | — |
-| [SRC-1AE03B9EC3-L004499](../../agents/web_agent.py#L4499) | 4499 | `"                        \"direct_urls\": [],"` | — |
-| [SRC-1AE03B9EC3-L004500](../../agents/web_agent.py#L4500) | 4500 | `"                    })"` | — |
-| [SRC-1AE03B9EC3-L004501](../../agents/web_agent.py#L4501) | 4501 | `"                    try:"` | — |
-| [SRC-1AE03B9EC3-L004502](../../agents/web_agent.py#L4502) | 4502 | `"                        repair_sources, repair_warnings, repair_report = self._collect_research("` | — |
-| [SRC-1AE03B9EC3-L004503](../../agents/web_agent.py#L4503) | 4503 | `"                            repair_plan"` | — |
-| [SRC-1AE03B9EC3-L004504](../../agents/web_agent.py#L4504) | 4504 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L004505](../../agents/web_agent.py#L4505) | 4505 | `"                    except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L004506](../../agents/web_agent.py#L4506) | 4506 | `"                        repair_sources = []"` | — |
-| [SRC-1AE03B9EC3-L004507](../../agents/web_agent.py#L4507) | 4507 | `"                        repair_warnings = []"` | — |
-| [SRC-1AE03B9EC3-L004508](../../agents/web_agent.py#L4508) | 4508 | `"                        repair_report = {"` | — |
-| [SRC-1AE03B9EC3-L004509](../../agents/web_agent.py#L4509) | 4509 | `"                            \"queries_planned\": 1,"` | — |
-| [SRC-1AE03B9EC3-L004510](../../agents/web_agent.py#L4510) | 4510 | `"                            \"queries_attempted\": None,"` | — |
-| [SRC-1AE03B9EC3-L004511](../../agents/web_agent.py#L4511) | 4511 | `"                            \"queries_attempted_known\": False,"` | — |
-| [SRC-1AE03B9EC3-L004512](../../agents/web_agent.py#L4512) | 4512 | `"                            \"search_attempted\": None,"` | — |
-| [SRC-1AE03B9EC3-L004513](../../agents/web_agent.py#L4513) | 4513 | `"                            \"search_outcome\": \"unknown_after_research_error\","` | — |
-| [SRC-1AE03B9EC3-L004514](../../agents/web_agent.py#L4514) | 4514 | `"                            \"usable_sources_after_filtering\": None,"` | — |
-| [SRC-1AE03B9EC3-L004515](../../agents/web_agent.py#L4515) | 4515 | `"                        }"` | — |
-| [SRC-1AE03B9EC3-L004516](../../agents/web_agent.py#L4516) | 4516 | `"                        search_warnings.append("` | — |
-| [SRC-1AE03B9EC3-L004517](../../agents/web_agent.py#L4517) | 4517 | `"                            \"تعذر تنفيذ محاولة البحث الإضافية المحدودة (\""` | — |
-| [SRC-1AE03B9EC3-L004518](../../agents/web_agent.py#L4518) | 4518 | `"                            + type(exc).__name__ + \").\""` | — |
-| [SRC-1AE03B9EC3-L004519](../../agents/web_agent.py#L4519) | 4519 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L004520](../../agents/web_agent.py#L4520) | 4520 | `"                    search_warnings.extend(repair_warnings)"` | — |
-| [SRC-1AE03B9EC3-L004521](../../agents/web_agent.py#L4521) | 4521 | `"                    evidence_repair[\"attempted_query_count\"] = 1"` | — |
-| [SRC-1AE03B9EC3-L004522](../../agents/web_agent.py#L4522) | 4522 | `"                    evidence_repair[\"initial_source_count\"] = initial_source_count"` | — |
-| [SRC-1AE03B9EC3-L004523](../../agents/web_agent.py#L4523) | 4523 | `"                    evidence_repair[\"initial_independent_domain_count\"] = initial_domain_count"` | — |
-| [SRC-1AE03B9EC3-L004524](../../agents/web_agent.py#L4524) | 4524 | `"                    evidence_repair[\"new_sources_added\"] = 0"` | — |
-| [SRC-1AE03B9EC3-L004525](../../agents/web_agent.py#L4525) | 4525 | `"                    source_indexes: dict[str, int] = {}"` | — |
-| [SRC-1AE03B9EC3-L004526](../../agents/web_agent.py#L4526) | 4526 | `"                    for source_index, source in enumerate(sources):"` | — |
-| [SRC-1AE03B9EC3-L004527](../../agents/web_agent.py#L4527) | 4527 | `"                        source_key = self._normalized_source_url_key(source.get(\"url\"))"` | — |
-| [SRC-1AE03B9EC3-L004528](../../agents/web_agent.py#L4528) | 4528 | `"                        if source_key:"` | — |
-| [SRC-1AE03B9EC3-L004529](../../agents/web_agent.py#L4529) | 4529 | `"                            source_indexes.setdefault(source_key, source_index)"` | — |
-| [SRC-1AE03B9EC3-L004530](../../agents/web_agent.py#L4530) | 4530 | `"                    relevant_queries = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L004531](../../agents/web_agent.py#L4531) | 4531 | `"                        query"` | — |
-| [SRC-1AE03B9EC3-L004532](../../agents/web_agent.py#L4532) | 4532 | `"                        for query in ("` | — |
-| [SRC-1AE03B9EC3-L004533](../../agents/web_agent.py#L4533) | 4533 | `"                            compact_search_query(working_question),"` | — |
-| [SRC-1AE03B9EC3-L004534](../../agents/web_agent.py#L4534) | 4534 | `"                            *("` | — |
-| [SRC-1AE03B9EC3-L004535](../../agents/web_agent.py#L4535) | 4535 | `"                                compact_search_query(candidate)"` | — |
-| [SRC-1AE03B9EC3-L004536](../../agents/web_agent.py#L4536) | 4536 | `"                                for candidate in original_queries"` | — |
-| [SRC-1AE03B9EC3-L004537](../../agents/web_agent.py#L4537) | 4537 | `"                                if isinstance(candidate, str)"` | — |
-| [SRC-1AE03B9EC3-L004538](../../agents/web_agent.py#L4538) | 4538 | `"                            ),"` | — |
-| [SRC-1AE03B9EC3-L004539](../../agents/web_agent.py#L4539) | 4539 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L004540](../../agents/web_agent.py#L4540) | 4540 | `"                        if query"` | — |
-| [SRC-1AE03B9EC3-L004541](../../agents/web_agent.py#L4541) | 4541 | `"                    ))"` | — |
-| [SRC-1AE03B9EC3-L004542](../../agents/web_agent.py#L4542) | 4542 | `"                    for source in repair_sources:"` | — |
-| [SRC-1AE03B9EC3-L004543](../../agents/web_agent.py#L4543) | 4543 | `"                        if not isinstance(source, dict):"` | — |
-| [SRC-1AE03B9EC3-L004544](../../agents/web_agent.py#L4544) | 4544 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L004545](../../agents/web_agent.py#L4545) | 4545 | `"                        if not any("` | — |
-| [SRC-1AE03B9EC3-L004546](../../agents/web_agent.py#L4546) | 4546 | `"                            self._source_matches_query(candidate, source)"` | — |
-| [SRC-1AE03B9EC3-L004547](../../agents/web_agent.py#L4547) | 4547 | `"                            for candidate in relevant_queries if candidate"` | — |
-| [SRC-1AE03B9EC3-L004548](../../agents/web_agent.py#L4548) | 4548 | `"                        ):"` | — |
-| [SRC-1AE03B9EC3-L004549](../../agents/web_agent.py#L4549) | 4549 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L004550](../../agents/web_agent.py#L4550) | 4550 | `"                        source_key = self._normalized_source_url_key(source.get(\"url\"))"` | — |
-| [SRC-1AE03B9EC3-L004551](../../agents/web_agent.py#L4551) | 4551 | `"                        if not source_key:"` | — |
-| [SRC-1AE03B9EC3-L004552](../../agents/web_agent.py#L4552) | 4552 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L004553](../../agents/web_agent.py#L4553) | 4553 | `"                        existing_index = source_indexes.get(source_key)"` | — |
-| [SRC-1AE03B9EC3-L004554](../../agents/web_agent.py#L4554) | 4554 | `"                        if existing_index is None:"` | — |
-| [SRC-1AE03B9EC3-L004555](../../agents/web_agent.py#L4555) | 4555 | `"                            source_indexes[source_key] = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L004556](../../agents/web_agent.py#L4556) | 4556 | `"                            sources.append(source)"` | — |
-| [SRC-1AE03B9EC3-L004557](../../agents/web_agent.py#L4557) | 4557 | `"                            evidence_repair[\"new_sources_added\"] += 1"` | — |
-| [SRC-1AE03B9EC3-L004558](../../agents/web_agent.py#L4558) | 4558 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L004559](../../agents/web_agent.py#L4559) | 4559 | `"                        existing_source = sources[existing_index]"` | — |
-| [SRC-1AE03B9EC3-L004560](../../agents/web_agent.py#L4560) | 4560 | `"                        providers = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L004561](../../agents/web_agent.py#L4561) | 4561 | `"                            list(existing_source.get(\"providers\", []))"` | — |
-| [SRC-1AE03B9EC3-L004562](../../agents/web_agent.py#L4562) | 4562 | `"                            + list(source.get(\"providers\", []))"` | — |
-| [SRC-1AE03B9EC3-L004563](../../agents/web_agent.py#L4563) | 4563 | `"                        ))"` | — |
-| [SRC-1AE03B9EC3-L004564](../../agents/web_agent.py#L4564) | 4564 | `"                        source_queries = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L004565](../../agents/web_agent.py#L4565) | 4565 | `"                            list(existing_source.get(\"queries\", []))"` | — |
-| [SRC-1AE03B9EC3-L004566](../../agents/web_agent.py#L4566) | 4566 | `"                            + list(source.get(\"queries\", []))"` | — |
-| [SRC-1AE03B9EC3-L004567](../../agents/web_agent.py#L4567) | 4567 | `"                        ))"` | — |
-| [SRC-1AE03B9EC3-L004568](../../agents/web_agent.py#L4568) | 4568 | `"                        if source.get(\"page_fetched\") and not existing_source.get(\"page_fetched\"):"` | — |
-| [SRC-1AE03B9EC3-L004569](../../agents/web_agent.py#L4569) | 4569 | `"                            merged_source = dict(existing_source)"` | — |
-| [SRC-1AE03B9EC3-L004570](../../agents/web_agent.py#L4570) | 4570 | `"                            merged_source.update(source)"` | — |
-| [SRC-1AE03B9EC3-L004571](../../agents/web_agent.py#L4571) | 4571 | `"                            merged_source[\"providers\"] = providers"` | — |
-| [SRC-1AE03B9EC3-L004572](../../agents/web_agent.py#L4572) | 4572 | `"                            merged_source[\"queries\"] = source_queries"` | — |
-| [SRC-1AE03B9EC3-L004573](../../agents/web_agent.py#L4573) | 4573 | `"                            sources[existing_index] = merged_source"` | — |
-| [SRC-1AE03B9EC3-L004574](../../agents/web_agent.py#L4574) | 4574 | `"                        else:"` | — |
-| [SRC-1AE03B9EC3-L004575](../../agents/web_agent.py#L4575) | 4575 | `"                            existing_source[\"providers\"] = providers"` | — |
-| [SRC-1AE03B9EC3-L004576](../../agents/web_agent.py#L4576) | 4576 | `"                            existing_source[\"queries\"] = source_queries"` | — |
-| [SRC-1AE03B9EC3-L004577](../../agents/web_agent.py#L4577) | 4577 | `"                    sources.sort("` | — |
-| [SRC-1AE03B9EC3-L004578](../../agents/web_agent.py#L4578) | 4578 | `"                        key=lambda item: float(item.get(\"rank_score\", 0) or 0),"` | — |
-| [SRC-1AE03B9EC3-L004579](../../agents/web_agent.py#L4579) | 4579 | `"                        reverse=True,"` | — |
-| [SRC-1AE03B9EC3-L004580](../../agents/web_agent.py#L4580) | 4580 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004581](../../agents/web_agent.py#L4581) | 4581 | `"                    plan[\"queries\"] = list(dict.fromkeys(original_queries + [repair_query]))"` | — |
-| [SRC-1AE03B9EC3-L004582](../../agents/web_agent.py#L4582) | 4582 | `"                    independent_domains = {"` | — |
-| [SRC-1AE03B9EC3-L004583](../../agents/web_agent.py#L4583) | 4583 | `"                        registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L004584](../../agents/web_agent.py#L4584) | 4584 | `"                            source.get(\"domain\")"` | — |
-| [SRC-1AE03B9EC3-L004585](../../agents/web_agent.py#L4585) | 4585 | `"                            or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L004586](../../agents/web_agent.py#L4586) | 4586 | `"                            or \"\""` | — |
-| [SRC-1AE03B9EC3-L004587](../../agents/web_agent.py#L4587) | 4587 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L004588](../../agents/web_agent.py#L4588) | 4588 | `"                        for source in sources"` | — |
-| [SRC-1AE03B9EC3-L004589](../../agents/web_agent.py#L4589) | 4589 | `"                    }"` | — |
-| [SRC-1AE03B9EC3-L004590](../../agents/web_agent.py#L4590) | 4590 | `"                    independent_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L004591](../../agents/web_agent.py#L4591) | 4591 | `"                    needs_corroboration = ("` | — |
-| [SRC-1AE03B9EC3-L004592](../../agents/web_agent.py#L4592) | 4592 | `"                        len(sources) < 2 or len(independent_domains) < 2"` | — |
-| [SRC-1AE03B9EC3-L004593](../../agents/web_agent.py#L4593) | 4593 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004594](../../agents/web_agent.py#L4594) | 4594 | `"                    evidence_repair.update({"` | — |
-| [SRC-1AE03B9EC3-L004595](../../agents/web_agent.py#L4595) | 4595 | `"                        \"final_source_count\": len(sources),"` | — |
-| [SRC-1AE03B9EC3-L004596](../../agents/web_agent.py#L4596) | 4596 | `"                        \"final_independent_domain_count\": len(independent_domains),"` | — |
-| [SRC-1AE03B9EC3-L004597](../../agents/web_agent.py#L4597) | 4597 | `"                        \"recovered\": not needs_corroboration,"` | — |
-| [SRC-1AE03B9EC3-L004598](../../agents/web_agent.py#L4598) | 4598 | `"                    })"` | — |
-| [SRC-1AE03B9EC3-L004599](../../agents/web_agent.py#L4599) | 4599 | `"                    evidence_repair[\"reason\"] = ("` | — |
-| [SRC-1AE03B9EC3-L004600](../../agents/web_agent.py#L4600) | 4600 | `"                        \"single_bounded_retry_still_insufficient\""` | — |
-| [SRC-1AE03B9EC3-L004601](../../agents/web_agent.py#L4601) | 4601 | `"                        if needs_corroboration else \"evidence_gate_recovered\""` | — |
-| [SRC-1AE03B9EC3-L004602](../../agents/web_agent.py#L4602) | 4602 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004603](../../agents/web_agent.py#L4603) | 4603 | `"                    report[\"queries_planned\"] = int(report.get(\"queries_planned\", 0) or 0) + int("` | — |
-| [SRC-1AE03B9EC3-L004604](../../agents/web_agent.py#L4604) | 4604 | `"                        repair_report.get(\"queries_planned\", 1) or 0"` | — |
-| [SRC-1AE03B9EC3-L004605](../../agents/web_agent.py#L4605) | 4605 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004606](../../agents/web_agent.py#L4606) | 4606 | `"                    initial_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L004607](../../agents/web_agent.py#L4607) | 4607 | `"                    repair_attempt_count = repair_report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L004608](../../agents/web_agent.py#L4608) | 4608 | `"                    if initial_attempt_count is None or repair_attempt_count is None:"` | — |
-| [SRC-1AE03B9EC3-L004609](../../agents/web_agent.py#L4609) | 4609 | `"                        report[\"queries_attempted\"] = None"` | — |
-| [SRC-1AE03B9EC3-L004610](../../agents/web_agent.py#L4610) | 4610 | `"                        report[\"queries_attempted_known\"] = False"` | — |
-| [SRC-1AE03B9EC3-L004611](../../agents/web_agent.py#L4611) | 4611 | `"                    else:"` | — |
-| [SRC-1AE03B9EC3-L004612](../../agents/web_agent.py#L4612) | 4612 | `"                        try:"` | — |
-| [SRC-1AE03B9EC3-L004613](../../agents/web_agent.py#L4613) | 4613 | `"                            report[\"queries_attempted\"] = max(0, int(initial_attempt_count or 0)) + max("` | — |
-| [SRC-1AE03B9EC3-L004614](../../agents/web_agent.py#L4614) | 4614 | `"                                0, int(repair_attempt_count or 0)"` | — |
-| [SRC-1AE03B9EC3-L004615](../../agents/web_agent.py#L4615) | 4615 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L004616](../../agents/web_agent.py#L4616) | 4616 | `"                            report[\"queries_attempted_known\"] = True"` | — |
-| [SRC-1AE03B9EC3-L004617](../../agents/web_agent.py#L4617) | 4617 | `"                        except (TypeError, ValueError):"` | — |
-| [SRC-1AE03B9EC3-L004618](../../agents/web_agent.py#L4618) | 4618 | `"                            report[\"queries_attempted\"] = None"` | — |
-| [SRC-1AE03B9EC3-L004619](../../agents/web_agent.py#L4619) | 4619 | `"                            report[\"queries_attempted_known\"] = False"` | — |
-| [SRC-1AE03B9EC3-L004620](../../agents/web_agent.py#L4620) | 4620 | `"                    report[\"query_results\"] = list(report.get(\"query_results\", [])) + list("` | — |
-| [SRC-1AE03B9EC3-L004621](../../agents/web_agent.py#L4621) | 4621 | `"                        repair_report.get(\"query_results\", [])"` | — |
-| [SRC-1AE03B9EC3-L004622](../../agents/web_agent.py#L4622) | 4622 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004623](../../agents/web_agent.py#L4623) | 4623 | `"                    merged_providers = {"` | — |
-| [SRC-1AE03B9EC3-L004624](../../agents/web_agent.py#L4624) | 4624 | `"                        provider"` | — |
-| [SRC-1AE03B9EC3-L004625](../../agents/web_agent.py#L4625) | 4625 | `"                        for source in sources"` | — |
-| [SRC-1AE03B9EC3-L004626](../../agents/web_agent.py#L4626) | 4626 | `"                        for provider in source.get(\"providers\", [])"` | — |
-| [SRC-1AE03B9EC3-L004627](../../agents/web_agent.py#L4627) | 4627 | `"                    }"` | — |
-| [SRC-1AE03B9EC3-L004628](../../agents/web_agent.py#L4628) | 4628 | `"                    report[\"providers_used\"] = sorted(merged_providers)"` | — |
-| [SRC-1AE03B9EC3-L004629](../../agents/web_agent.py#L4629) | 4629 | `"                    report[\"provider_counts\"] = {"` | — |
-| [SRC-1AE03B9EC3-L004630](../../agents/web_agent.py#L4630) | 4630 | `"                        provider: sum("` | — |
-| [SRC-1AE03B9EC3-L004631](../../agents/web_agent.py#L4631) | 4631 | `"                            provider in source.get(\"providers\", []) for source in sources"` | — |
-| [SRC-1AE03B9EC3-L004632](../../agents/web_agent.py#L4632) | 4632 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L004633](../../agents/web_agent.py#L4633) | 4633 | `"                        for provider in merged_providers"` | — |
-| [SRC-1AE03B9EC3-L004634](../../agents/web_agent.py#L4634) | 4634 | `"                    }"` | — |
-| [SRC-1AE03B9EC3-L004635](../../agents/web_agent.py#L4635) | 4635 | `"                    report[\"platform_counts\"] = {"` | — |

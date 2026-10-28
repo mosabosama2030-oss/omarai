@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **85**
 - ملفات Python المحللة: **43**
-- تعريفات Python المفهرسة: **1068**
+- تعريفات Python المفهرسة: **1082**
 - تعريفات Python موثقة بوجود Docstring: **205**
-- تعريفات Python بلا Docstring: **657**
-- تعريفات لا ينطبق عليها Docstring: **206**
-- الرموز الساكنة الإضافية: **1636**
-- الأسطر النصية المفهرسة حرفيًا: **28549**
+- تعريفات Python بلا Docstring: **666**
+- تعريفات لا ينطبق عليها Docstring: **211**
+- الرموز الساكنة الإضافية: **1638**
+- الأسطر النصية المفهرسة حرفيًا: **28764**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-19039BA967 | الوكيل والمنطق | [agents/answer_transparency.py](../agents/answer_transparency.py#L1) | Python | 2518 | 70 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
-| FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11 | 1 | جرد الملف + AST Python |
+| FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 9109 | 216 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 22483 | 504 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
@@ -141,6 +141,20 @@
 | [agents/answer_validation.py](../agents/answer_validation.py#L121) | متغير/ثابت Python | _VALUE_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 121 | [SRC-138992B1FC-L000121](../agents/answer_validation.py#L121) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L148) | دالة | _numeric_values_with_cues | Extract number/dimension pairs as review signals, not as semantic claims. | موثق | 148 | [SRC-138992B1FC-L000148](../agents/answer_validation.py#L148) |
 | [agents/answer_validation.py](../agents/answer_validation.py#L161) | دالة | audit_answer_integrity | Return bounded lexical checks; never label them as semantic fact verification. | موثق | 161 | [SRC-138992B1FC-L000161](../agents/answer_validation.py#L161) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L7) | متغير/ثابت Python | MAX_PLAN_QUERIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 7 | [SRC-01273BA196-L000007](../agents/aspect_planning.py#L7) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L8) | متغير/ثابت Python | MAX_ASPECTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-01273BA196-L000008](../agents/aspect_planning.py#L8) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L10) | متغير/ثابت Python | _ASPECT_MARKER_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-01273BA196-L000010](../agents/aspect_planning.py#L10) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L17) | متغير/ثابت Python | _COMPARE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-01273BA196-L000017](../agents/aspect_planning.py#L17) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L21) | متغير/ثابت Python | _DIMENSION_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-01273BA196-L000021](../agents/aspect_planning.py#L21) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L30) | دالة | _normalize_space | لا توجد Docstring. | ناقص | 30 | [SRC-01273BA196-L000030](../agents/aspect_planning.py#L30) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L34) | دالة | _normalize_key | لا توجد Docstring. | ناقص | 34 | [SRC-01273BA196-L000034](../agents/aspect_planning.py#L34) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L39) | دالة | extract_aspects | لا توجد Docstring. | ناقص | 39 | [SRC-01273BA196-L000039](../agents/aspect_planning.py#L39) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L85) | دالة | build_aspect_queries | لا توجد Docstring. | ناقص | 85 | [SRC-01273BA196-L000085](../agents/aspect_planning.py#L85) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L107) | دالة | augment_plan_with_aspects | لا توجد Docstring. | ناقص | 107 | [SRC-01273BA196-L000107](../agents/aspect_planning.py#L107) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L142) | دالة | _source_text | لا توجد Docstring. | ناقص | 142 | [SRC-01273BA196-L000142](../agents/aspect_planning.py#L142) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L146) | دالة | build_evidence_ledger | لا توجد Docstring. | ناقص | 146 | [SRC-01273BA196-L000146](../agents/aspect_planning.py#L146) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L178) | دالة | repair_queries_for_missing_aspects | لا توجد Docstring. | ناقص | 178 | [SRC-01273BA196-L000178](../agents/aspect_planning.py#L178) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L202) | دالة | arabic_aspect_diagnostics | لا توجد Docstring. | ناقص | 202 | [SRC-01273BA196-L000202](../agents/aspect_planning.py#L202) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | متغير/ثابت Python | MAX_CONTEXT_TURNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L14) | متغير/ثابت Python | ROUTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-5587371288-L000014](../agents/intent_router.py#L14) |
 | [agents/intent_router.py](../agents/intent_router.py#L19) | متغير/ثابت Python | _ARABIC_DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-5587371288-L000019](../agents/intent_router.py#L19) |
@@ -1323,6 +1337,8 @@
 | [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
 | [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
 | [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 7 | [SRC-01273BA196-L000007](../agents/aspect_planning.py#L7) |
+| [agents/aspect_planning.py](../agents/aspect_planning.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_ASPECTS | 8 | [SRC-01273BA196-L000008](../agents/aspect_planning.py#L8) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONTEXT_TURNS | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
