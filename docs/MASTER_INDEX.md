@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **827**
 - تعريفات لا ينطبق عليها Docstring: **283**
 - الرموز الساكنة الإضافية: **1700**
-- الأسطر النصية المفهرسة حرفيًا: **33141**
+- الأسطر النصية المفهرسة حرفيًا: **33161**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -37,7 +37,7 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
-| FILE-CE59202CFA | الوكيل والمنطق | [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L1) | Python | 3893 | 127 | جرد الملف + AST Python |
+| FILE-CE59202CFA | الوكيل والمنطق | [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L1) | Python | 4609 | 147 | جرد الملف + AST Python |
 | FILE-DB5EDD8C78 | الوكيل والمنطق | [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L1) | Python | 6084 | 160 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11420 | 270 | جرد الملف + AST Python |
@@ -140,13 +140,13 @@
 
 | الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر | كود السطر للوصول المباشر |
 |---|---|---|---|---|---:|---|
-| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L15) | متغير/ثابت Python | RetrieveFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-CE59202CFA-L000015](../agents/agentic_rag_integration.py#L15) |
-| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L18) | دالة | bind_existing_answer_to_sources | لا توجد Docstring. | ناقص | 18 | [SRC-CE59202CFA-L000018](../agents/agentic_rag_integration.py#L18) |
-| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L52) | دالة | run_agentic_rag | لا توجد Docstring. | ناقص | 52 | [SRC-CE59202CFA-L000052](../agents/agentic_rag_integration.py#L52) |
-| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L71) | دالة | run_agentic_rag_over_sources | لا توجد Docstring. | ناقص | 71 | [SRC-CE59202CFA-L000071](../agents/agentic_rag_integration.py#L71) |
-| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L81) | دالة | run_agentic_rag_over_sources._fixed_retrieve | لا توجد Docstring. | ناقص | 81 | [SRC-CE59202CFA-L000081](../agents/agentic_rag_integration.py#L81) |
-| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L87) | دالة | run_agentic_rag_over_sources.draft_fn | لا توجد Docstring. | ناقص | 87 | [SRC-CE59202CFA-L000087](../agents/agentic_rag_integration.py#L87) |
-| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L111) | دالة | web_agent_post_answer_hook | لا توجد Docstring. | ناقص | 111 | [SRC-CE59202CFA-L000111](../agents/agentic_rag_integration.py#L111) |
+| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L16) | متغير/ثابت Python | RetrieveFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-CE59202CFA-L000016](../agents/agentic_rag_integration.py#L16) |
+| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L19) | دالة | bind_existing_answer_to_sources | لا توجد Docstring. | ناقص | 19 | [SRC-CE59202CFA-L000019](../agents/agentic_rag_integration.py#L19) |
+| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L56) | دالة | run_agentic_rag | لا توجد Docstring. | ناقص | 56 | [SRC-CE59202CFA-L000056](../agents/agentic_rag_integration.py#L56) |
+| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L81) | دالة | run_agentic_rag_over_sources | لا توجد Docstring. | ناقص | 81 | [SRC-CE59202CFA-L000081](../agents/agentic_rag_integration.py#L81) |
+| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L91) | دالة | run_agentic_rag_over_sources._fixed_retrieve | لا توجد Docstring. | ناقص | 91 | [SRC-CE59202CFA-L000091](../agents/agentic_rag_integration.py#L91) |
+| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L97) | دالة | run_agentic_rag_over_sources.draft_fn | لا توجد Docstring. | ناقص | 97 | [SRC-CE59202CFA-L000097](../agents/agentic_rag_integration.py#L97) |
+| [agents/agentic_rag_integration.py](../agents/agentic_rag_integration.py#L122) | دالة | web_agent_post_answer_hook | لا توجد Docstring. | ناقص | 122 | [SRC-CE59202CFA-L000122](../agents/agentic_rag_integration.py#L122) |
 | [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L20) | متغير/ثابت Python | RetrieveFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-DB5EDD8C78-L000020](../agents/agentic_rag_orchestrator.py#L20) |
 | [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L21) | متغير/ثابت Python | DraftFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-DB5EDD8C78-L000021](../agents/agentic_rag_orchestrator.py#L21) |
 | [agents/agentic_rag_orchestrator.py](../agents/agentic_rag_orchestrator.py#L24) | دالة | _default_draft | لا توجد Docstring. | ناقص | 24 | [SRC-DB5EDD8C78-L000024](../agents/agentic_rag_orchestrator.py#L24) |

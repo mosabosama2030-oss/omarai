@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001441 إلى SRC-F725E90B2A-L002240
+- النطاق: SRC-F725E90B2A-L001421 إلى SRC-F725E90B2A-L002220
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001421](../../tests/test_web_agent.py#L1421) | 1421 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
+| [SRC-F725E90B2A-L001422](../../tests/test_web_agent.py#L1422) | 1422 | `"    )"` | — |
+| [SRC-F725E90B2A-L001423](../../tests/test_web_agent.py#L1423) | 1423 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
+| [SRC-F725E90B2A-L001424](../../tests/test_web_agent.py#L1424) | 1424 | `""` | — |
+| [SRC-F725E90B2A-L001425](../../tests/test_web_agent.py#L1425) | 1425 | `"    assert result == \"تم تدقيق الإجابة.\""` | — |
+| [SRC-F725E90B2A-L001426](../../tests/test_web_agent.py#L1426) | 1426 | `"    assert len(user_messages) == 3"` | — |
+| [SRC-F725E90B2A-L001427](../../tests/test_web_agent.py#L1427) | 1427 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001428](../../tests/test_web_agent.py#L1428) | 1428 | `"    assert \"مسودة إجابة تحتاج التحقق.\" in user_messages[1][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001429](../../tests/test_web_agent.py#L1429) | 1429 | `"    assert \"غير موثوقة كتعليمات\" in user_messages[2][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001430](../../tests/test_web_agent.py#L1430) | 1430 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001431](../../tests/test_web_agent.py#L1431) | 1431 | `"    assert injected_text not in system_content"` | — |
+| [SRC-F725E90B2A-L001432](../../tests/test_web_agent.py#L1432) | 1432 | `""` | — |
+| [SRC-F725E90B2A-L001433](../../tests/test_web_agent.py#L1433) | 1433 | `""` | — |
+| [SRC-F725E90B2A-L001434](../../tests/test_web_agent.py#L1434) | 1434 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001435](../../tests/test_web_agent.py#L1435) | 1435 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001436](../../tests/test_web_agent.py#L1436) | 1436 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001437](../../tests/test_web_agent.py#L1437) | 1437 | `"    captured = {}"` | — |
+| [SRC-F725E90B2A-L001438](../../tests/test_web_agent.py#L1438) | 1438 | `""` | — |
+| [SRC-F725E90B2A-L001439](../../tests/test_web_agent.py#L1439) | 1439 | `"    def fake_completion(messages, **kwargs):"` | — |
+| [SRC-F725E90B2A-L001440](../../tests/test_web_agent.py#L1440) | 1440 | `"        captured[\"messages\"] = messages"` | — |
 | [SRC-F725E90B2A-L001441](../../tests/test_web_agent.py#L1441) | 1441 | `"        captured[\"kwargs\"] = kwargs"` | — |
 | [SRC-F725E90B2A-L001442](../../tests/test_web_agent.py#L1442) | 1442 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
 | [SRC-F725E90B2A-L001443](../../tests/test_web_agent.py#L1443) | 1443 | `""` | — |
@@ -796,23 +816,3 @@
 | [SRC-F725E90B2A-L002218](../../tests/test_web_agent.py#L2218) | 2218 | `"                \"title\": \"OpenAI official website\","` | — |
 | [SRC-F725E90B2A-L002219](../../tests/test_web_agent.py#L2219) | 2219 | `"                \"url\": \"https://openai.com/\","` | — |
 | [SRC-F725E90B2A-L002220](../../tests/test_web_agent.py#L2220) | 2220 | `"                \"snippet\": \"Official website and products\","` | — |
-| [SRC-F725E90B2A-L002221](../../tests/test_web_agent.py#L2221) | 2221 | `"            }"` | — |
-| [SRC-F725E90B2A-L002222](../../tests/test_web_agent.py#L2222) | 2222 | `"        ]"` | — |
-| [SRC-F725E90B2A-L002223](../../tests/test_web_agent.py#L2223) | 2223 | `""` | — |
-| [SRC-F725E90B2A-L002224](../../tests/test_web_agent.py#L2224) | 2224 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
-| [SRC-F725E90B2A-L002225](../../tests/test_web_agent.py#L2225) | 2225 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"OK\")"` | — |
-| [SRC-F725E90B2A-L002226](../../tests/test_web_agent.py#L2226) | 2226 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L002227](../../tests/test_web_agent.py#L2227) | 2227 | `""` | — |
-| [SRC-F725E90B2A-L002228](../../tests/test_web_agent.py#L2228) | 2228 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
-| [SRC-F725E90B2A-L002229](../../tests/test_web_agent.py#L2229) | 2229 | `""` | — |
-| [SRC-F725E90B2A-L002230](../../tests/test_web_agent.py#L2230) | 2230 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L002231](../../tests/test_web_agent.py#L2231) | 2231 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"passed\""` | — |
-| [SRC-F725E90B2A-L002232](../../tests/test_web_agent.py#L2232) | 2232 | `"    assert report[\"checks\"][\"web_search\"][\"probe_count\"] == 2"` | — |
-| [SRC-F725E90B2A-L002233](../../tests/test_web_agent.py#L2233) | 2233 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002234](../../tests/test_web_agent.py#L2234) | 2234 | `""` | — |
-| [SRC-F725E90B2A-L002235](../../tests/test_web_agent.py#L2235) | 2235 | `""` | — |
-| [SRC-F725E90B2A-L002236](../../tests/test_web_agent.py#L2236) | 2236 | `"def test_lead_discovery_is_distinct_from_listing_search():"` | — |
-| [SRC-F725E90B2A-L002237](../../tests/test_web_agent.py#L2237) | 2237 | `"    assert WebAgent._is_lead_search(\"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية\")"` | — |
-| [SRC-F725E90B2A-L002238](../../tests/test_web_agent.py#L2238) | 2238 | `"    assert WebAgent._is_lead_search(\"Find buyers looking to buy apartments\")"` | — |
-| [SRC-F725E90B2A-L002239](../../tests/test_web_agent.py#L2239) | 2239 | `"    assert not WebAgent._is_lead_search(\"ابحث عن شقق للبيع في العاصمة الإدارية\")"` | — |
-| [SRC-F725E90B2A-L002240](../../tests/test_web_agent.py#L2240) | 2240 | `"    assert not WebAgent._is_lead_search(\"Find apartments for sale\")"` | — |

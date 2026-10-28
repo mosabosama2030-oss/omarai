@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000038 إلى SRC-7D6FC391EC-L000108
+- النطاق: SRC-138992B1FC-L000018 إلى SRC-7D6FC391EC-L000088
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000018](../../agents/answer_validation.py#L18) | 18 | `"_TOKEN = re.compile(r\"[a-z0-9]+\|[\\u0621-\\u064A\\u0660-\\u0669]+\", re.IGNORECASE)"` | — |
+| [SRC-138992B1FC-L000019](../../agents/answer_validation.py#L19) | 19 | `"_NUMBER = re.compile(r\"(?<![\\w])\\d+(?:[.,٬٫]\\d+)*(?![\\w])\")"` | — |
+| [SRC-138992B1FC-L000020](../../agents/answer_validation.py#L20) | 20 | `"_CITATION = re.compile(r\"\\[(?:المصدر\|source)\\s+(\\d+)\\]\", re.IGNORECASE)"` | — |
+| [SRC-138992B1FC-L000021](../../agents/answer_validation.py#L21) | 21 | `"_STOPWORDS = {"` | — |
+| [SRC-138992B1FC-L000022](../../agents/answer_validation.py#L22) | 22 | `"    \"من\", \"في\", \"على\", \"عن\", \"الى\", \"و\", \"او\", \"هل\", \"ما\", \"ماذا\", \"كيف\","` | — |
+| [SRC-138992B1FC-L000023](../../agents/answer_validation.py#L23) | 23 | `"    \"مع\", \"بين\", \"هذا\", \"هذه\", \"ذلك\", \"تلك\", \"الذي\", \"التي\", \"هو\", \"هي\","` | — |
+| [SRC-138992B1FC-L000024](../../agents/answer_validation.py#L24) | 24 | `"    \"the\", \"a\", \"an\", \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\","` | — |
+| [SRC-138992B1FC-L000025](../../agents/answer_validation.py#L25) | 25 | `"    \"from\", \"is\", \"are\", \"what\", \"which\", \"who\", \"how\", \"why\", \"when\","` | — |
+| [SRC-138992B1FC-L000026](../../agents/answer_validation.py#L26) | 26 | `"    \"where\", \"compare\", \"comparison\", \"based\", \"terms\", \"respect\","` | — |
+| [SRC-138992B1FC-L000027](../../agents/answer_validation.py#L27) | 27 | `"}"` | — |
+| [SRC-138992B1FC-L000028](../../agents/answer_validation.py#L28) | 28 | `"_UNIT_OR_VALUE_CONTEXT = re.compile("` | — |
+| [SRC-138992B1FC-L000029](../../agents/answer_validation.py#L29) | 29 | `"    r\"(?:جنيه\|ج\\.م\|دولار\|ريال\|يورو\|درهم\|egp\|usd\|eur\|\\$\|€\|£\|%\|٪\|\""` | — |
+| [SRC-138992B1FC-L000030](../../agents/answer_validation.py#L30) | 30 | `"    r\"متر\|مربع\|كيلومتر\|كلم\|كم\|كيلو\|كجم\|kg\|km\|gb\|mb\|tb\|\""` | — |
+| [SRC-138992B1FC-L000031](../../agents/answer_validation.py#L31) | 31 | `"    r\"سنة\|سنوات\|عام\|أعوام\|شهر\|أشهر\|يوم\|أيام\|ساعة\|ساعات\|دقيقة\|دقائق\|\""` | — |
+| [SRC-138992B1FC-L000032](../../agents/answer_validation.py#L32) | 32 | `"    r\"مليون\|مليار\|ألف\|الف\|فدان\|درجة\|شخص\|أشخاص)\","` | — |
+| [SRC-138992B1FC-L000033](../../agents/answer_validation.py#L33) | 33 | `"    re.IGNORECASE,"` | — |
+| [SRC-138992B1FC-L000034](../../agents/answer_validation.py#L34) | 34 | `")"` | — |
+| [SRC-138992B1FC-L000035](../../agents/answer_validation.py#L35) | 35 | `""` | — |
+| [SRC-138992B1FC-L000036](../../agents/answer_validation.py#L36) | 36 | `""` | — |
+| [SRC-138992B1FC-L000037](../../agents/answer_validation.py#L37) | 37 | `"def _normalize(value: Any) -> str:"` | — |
 | [SRC-138992B1FC-L000038](../../agents/answer_validation.py#L38) | 38 | `"    text = unicodedata.normalize(\"NFKC\", str(value or \"\")).casefold().translate(_DIGITS)"` | — |
 | [SRC-138992B1FC-L000039](../../agents/answer_validation.py#L39) | 39 | `"    text = _DIACRITICS.sub(\"\", text).translate(_ARABIC_NORMALIZATION)"` | — |
 | [SRC-138992B1FC-L000040](../../agents/answer_validation.py#L40) | 40 | `"    return text"` | — |
@@ -814,23 +834,3 @@
 | [SRC-7D6FC391EC-L000086](../../agents/claim_evidence.py#L86) | 86 | `""` | — |
 | [SRC-7D6FC391EC-L000087](../../agents/claim_evidence.py#L87) | 87 | `"        cited += bool(indexes)"` | — |
 | [SRC-7D6FC391EC-L000088](../../agents/claim_evidence.py#L88) | 88 | `"        uncited += not bool(indexes)"` | — |
-| [SRC-7D6FC391EC-L000089](../../agents/claim_evidence.py#L89) | 89 | `"        readable_cited += bool(indexes) and has_readable"` | — |
-| [SRC-7D6FC391EC-L000090](../../agents/claim_evidence.py#L90) | 90 | `"        alignment = alignment_by_sentence.get(number, {})"` | — |
-| [SRC-7D6FC391EC-L000091](../../agents/claim_evidence.py#L91) | 91 | `"        lexical_status = str(alignment.get(\"status\") or \"not_assessed_no_citation_alignment\")"` | — |
-| [SRC-7D6FC391EC-L000092](../../agents/claim_evidence.py#L92) | 92 | `"        lexical_signals += lexical_status == \"lexical_overlap_signal_found\""` | — |
-| [SRC-7D6FC391EC-L000093](../../agents/claim_evidence.py#L93) | 93 | `"        weak_signals += lexical_status == \"weak_lexical_overlap\""` | — |
-| [SRC-7D6FC391EC-L000094](../../agents/claim_evidence.py#L94) | 94 | `"        if any(ref[\"reference_status\"] == \"index_out_of_citable_range\" for ref in refs):"` | — |
-| [SRC-7D6FC391EC-L000095](../../agents/claim_evidence.py#L95) | 95 | `"            status = \"citation_index_out_of_range\""` | — |
-| [SRC-7D6FC391EC-L000096](../../agents/claim_evidence.py#L96) | 96 | `"        elif indexes and not has_readable:"` | — |
-| [SRC-7D6FC391EC-L000097](../../agents/claim_evidence.py#L97) | 97 | `"            status = \"valid_index_without_readable_evidence\""` | — |
-| [SRC-7D6FC391EC-L000098](../../agents/claim_evidence.py#L98) | 98 | `"        elif indexes:"` | — |
-| [SRC-7D6FC391EC-L000099](../../agents/claim_evidence.py#L99) | 99 | `"            status = \"cited_source_attached\""` | — |
-| [SRC-7D6FC391EC-L000100](../../agents/claim_evidence.py#L100) | 100 | `"        else:"` | — |
-| [SRC-7D6FC391EC-L000101](../../agents/claim_evidence.py#L101) | 101 | `"            status = \"no_citation_marker\""` | — |
-| [SRC-7D6FC391EC-L000102](../../agents/claim_evidence.py#L102) | 102 | `""` | — |
-| [SRC-7D6FC391EC-L000103](../../agents/claim_evidence.py#L103) | 103 | `"        rows.append({"` | — |
-| [SRC-7D6FC391EC-L000104](../../agents/claim_evidence.py#L104) | 104 | `"            \"segment_id\": f\"S{number:03d}\","` | — |
-| [SRC-7D6FC391EC-L000105](../../agents/claim_evidence.py#L105) | 105 | `"            \"segment_number\": number,"` | — |
-| [SRC-7D6FC391EC-L000106](../../agents/claim_evidence.py#L106) | 106 | `"            \"unit_kind\": \"sentence_candidate_not_semantically_classified\","` | — |
-| [SRC-7D6FC391EC-L000107](../../agents/claim_evidence.py#L107) | 107 | `"            \"text\": segment[:1200],"` | — |
-| [SRC-7D6FC391EC-L000108](../../agents/claim_evidence.py#L108) | 108 | `"            \"citation_indexes\": indexes,"` | — |

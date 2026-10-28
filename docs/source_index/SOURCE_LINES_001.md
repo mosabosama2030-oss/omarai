@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000037
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000017
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -573,34 +573,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-CE59202CFA-L000001](../../agents/agentic_rag_integration.py#L1) | 1 | `"\"\"\"Wire Agentic RAG into Omarai WebAgent without breaking SSRF/relevance policy."` | — |
+| [SRC-CE59202CFA-L000001](../../agents/agentic_rag_integration.py#L1) | 1 | `"\"\"\"Wire Agentic RAG + MemoryBank into Omarai WebAgent safely."` | — |
 | [SRC-CE59202CFA-L000002](../../agents/agentic_rag_integration.py#L2) | 2 | `""` | — |
-| [SRC-CE59202CFA-L000003](../../agents/agentic_rag_integration.py#L3) | 3 | `"Primary path: after WebAgent collects sources, bind answer claims to evidence"` | — |
-| [SRC-CE59202CFA-L000004](../../agents/agentic_rag_integration.py#L4) | 4 | `"and attach metrics/trace. Optional path: run full ReAct orchestrator with an"` | — |
-| [SRC-CE59202CFA-L000005](../../agents/agentic_rag_integration.py#L5) | 5 | `"injected retrieve_fn that already enforces Omarai URL policy."` | — |
-| [SRC-CE59202CFA-L000006](../../agents/agentic_rag_integration.py#L6) | 6 | `"\"\"\""` | — |
-| [SRC-CE59202CFA-L000007](../../agents/agentic_rag_integration.py#L7) | 7 | `"from __future__ import annotations"` | — |
+| [SRC-CE59202CFA-L000003](../../agents/agentic_rag_integration.py#L3) | 3 | `"Does not bypass SSRF/URL/relevance policy. retrieve_fn must already enforce them."` | — |
+| [SRC-CE59202CFA-L000004](../../agents/agentic_rag_integration.py#L4) | 4 | `"\"\"\""` | — |
+| [SRC-CE59202CFA-L000005](../../agents/agentic_rag_integration.py#L5) | 5 | `"from __future__ import annotations"` | — |
+| [SRC-CE59202CFA-L000006](../../agents/agentic_rag_integration.py#L6) | 6 | `""` | — |
+| [SRC-CE59202CFA-L000007](../../agents/agentic_rag_integration.py#L7) | 7 | `"from typing import Any, Callable"` | — |
 | [SRC-CE59202CFA-L000008](../../agents/agentic_rag_integration.py#L8) | 8 | `""` | — |
-| [SRC-CE59202CFA-L000009](../../agents/agentic_rag_integration.py#L9) | 9 | `"from typing import Any, Callable"` | — |
-| [SRC-CE59202CFA-L000010](../../agents/agentic_rag_integration.py#L10) | 10 | `""` | — |
-| [SRC-CE59202CFA-L000011](../../agents/agentic_rag_integration.py#L11) | 11 | `"from agents.agentic_rag_orchestrator import AgenticRagOrchestrator"` | — |
-| [SRC-CE59202CFA-L000012](../../agents/agentic_rag_integration.py#L12) | 12 | `"from agents.eval_rag_metrics import evaluate_rag_case"` | — |
-| [SRC-CE59202CFA-L000013](../../agents/agentic_rag_integration.py#L13) | 13 | `"from agents.memory_bank import MemoryBank, split_answer_into_claim_sentences"` | — |
-| [SRC-CE59202CFA-L000014](../../agents/agentic_rag_integration.py#L14) | 14 | `""` | — |
-| [SRC-CE59202CFA-L000015](../../agents/agentic_rag_integration.py#L15) | 15 | `"RetrieveFn = Callable[[str], list[dict[str, Any]]]"` | — |
-| [SRC-CE59202CFA-L000016](../../agents/agentic_rag_integration.py#L16) | 16 | `""` | — |
+| [SRC-CE59202CFA-L000009](../../agents/agentic_rag_integration.py#L9) | 9 | `"from agents.agentic_rag_orchestrator import AgenticRagOrchestrator"` | — |
+| [SRC-CE59202CFA-L000010](../../agents/agentic_rag_integration.py#L10) | 10 | `"from agents.eval_rag_metrics import evaluate_rag_case"` | — |
+| [SRC-CE59202CFA-L000011](../../agents/agentic_rag_integration.py#L11) | 11 | `"from agents.memory_bank import ("` | — |
+| [SRC-CE59202CFA-L000012](../../agents/agentic_rag_integration.py#L12) | 12 | `"    MemoryBank,"` | — |
+| [SRC-CE59202CFA-L000013](../../agents/agentic_rag_integration.py#L13) | 13 | `"    build_memory_from_sources_and_answer,"` | — |
+| [SRC-CE59202CFA-L000014](../../agents/agentic_rag_integration.py#L14) | 14 | `")"` | — |
+| [SRC-CE59202CFA-L000015](../../agents/agentic_rag_integration.py#L15) | 15 | `""` | — |
+| [SRC-CE59202CFA-L000016](../../agents/agentic_rag_integration.py#L16) | 16 | `"RetrieveFn = Callable[[str], list[dict[str, Any]]]"` | — |
 | [SRC-CE59202CFA-L000017](../../agents/agentic_rag_integration.py#L17) | 17 | `""` | — |
-| [SRC-CE59202CFA-L000018](../../agents/agentic_rag_integration.py#L18) | 18 | `"def bind_existing_answer_to_sources("` | — |
-| [SRC-CE59202CFA-L000019](../../agents/agentic_rag_integration.py#L19) | 19 | `"    answer: str,"` | — |
-| [SRC-CE59202CFA-L000020](../../agents/agentic_rag_integration.py#L20) | 20 | `"    sources: list[dict[str, Any]],"` | — |
-| [SRC-CE59202CFA-L000021](../../agents/agentic_rag_integration.py#L21) | 21 | `"    *,"` | — |
-| [SRC-CE59202CFA-L000022](../../agents/agentic_rag_integration.py#L22) | 22 | `"    aspects: list[str] \| None = None,"` | — |
-| [SRC-CE59202CFA-L000023](../../agents/agentic_rag_integration.py#L23) | 23 | `") -> dict[str, Any]:"` | — |
-| [SRC-CE59202CFA-L000024](../../agents/agentic_rag_integration.py#L24) | 24 | `"    bank = MemoryBank(session_id=\"post_hoc\")"` | — |
-| [SRC-CE59202CFA-L000025](../../agents/agentic_rag_integration.py#L25) | 25 | `"    bank.ingest_sources(sources)"` | — |
-| [SRC-CE59202CFA-L000026](../../agents/agentic_rag_integration.py#L26) | 26 | `"    claims = []"` | — |
-| [SRC-CE59202CFA-L000027](../../agents/agentic_rag_integration.py#L27) | 27 | `"    for sentence in split_answer_into_claim_sentences(answer):"` | — |
-| [SRC-CE59202CFA-L000028](../../agents/agentic_rag_integration.py#L28) | 28 | `"        claims.append(bank.bind_claim(sentence))"` | — |
+| [SRC-CE59202CFA-L000018](../../agents/agentic_rag_integration.py#L18) | 18 | `""` | — |
+| [SRC-CE59202CFA-L000019](../../agents/agentic_rag_integration.py#L19) | 19 | `"def bind_existing_answer_to_sources("` | — |
+| [SRC-CE59202CFA-L000020](../../agents/agentic_rag_integration.py#L20) | 20 | `"    answer: str,"` | — |
+| [SRC-CE59202CFA-L000021](../../agents/agentic_rag_integration.py#L21) | 21 | `"    sources: list[dict[str, Any]],"` | — |
+| [SRC-CE59202CFA-L000022](../../agents/agentic_rag_integration.py#L22) | 22 | `"    *,"` | — |
+| [SRC-CE59202CFA-L000023](../../agents/agentic_rag_integration.py#L23) | 23 | `"    aspects: list[str] \| None = None,"` | — |
+| [SRC-CE59202CFA-L000024](../../agents/agentic_rag_integration.py#L24) | 24 | `"    min_score: float = 0.25,"` | — |
+| [SRC-CE59202CFA-L000025](../../agents/agentic_rag_integration.py#L25) | 25 | `") -> dict[str, Any]:"` | — |
+| [SRC-CE59202CFA-L000026](../../agents/agentic_rag_integration.py#L26) | 26 | `"    bank = build_memory_from_sources_and_answer("` | — |
+| [SRC-CE59202CFA-L000027](../../agents/agentic_rag_integration.py#L27) | 27 | `"        sources, answer, aspects=aspects, min_score=min_score"` | — |
+| [SRC-CE59202CFA-L000028](../../agents/agentic_rag_integration.py#L28) | 28 | `"    )"` | — |
 | [SRC-CE59202CFA-L000029](../../agents/agentic_rag_integration.py#L29) | 29 | `"    metrics = evaluate_rag_case("` | — |
 | [SRC-CE59202CFA-L000030](../../agents/agentic_rag_integration.py#L30) | 30 | `"        question=\"\","` | — |
 | [SRC-CE59202CFA-L000031](../../agents/agentic_rag_integration.py#L31) | 31 | `"        answer=answer,"` | — |
@@ -609,97 +609,117 @@
 | [SRC-CE59202CFA-L000034](../../agents/agentic_rag_integration.py#L34) | 34 | `"    )"` | — |
 | [SRC-CE59202CFA-L000035](../../agents/agentic_rag_integration.py#L35) | 35 | `"    return {"` | — |
 | [SRC-CE59202CFA-L000036](../../agents/agentic_rag_integration.py#L36) | 36 | `"        \"memory\": bank.to_dict(),"` | — |
-| [SRC-CE59202CFA-L000037](../../agents/agentic_rag_integration.py#L37) | 37 | `"        \"claims\": ["` | — |
-| [SRC-CE59202CFA-L000038](../../agents/agentic_rag_integration.py#L38) | 38 | `"            {"` | — |
-| [SRC-CE59202CFA-L000039](../../agents/agentic_rag_integration.py#L39) | 39 | `"                \"text\": c.text,"` | — |
-| [SRC-CE59202CFA-L000040](../../agents/agentic_rag_integration.py#L40) | 40 | `"                \"status\": c.status,"` | — |
-| [SRC-CE59202CFA-L000041](../../agents/agentic_rag_integration.py#L41) | 41 | `"                \"support_score\": c.support_score,"` | — |
-| [SRC-CE59202CFA-L000042](../../agents/agentic_rag_integration.py#L42) | 42 | `"                \"evidence_ids\": c.evidence_ids,"` | — |
-| [SRC-CE59202CFA-L000043](../../agents/agentic_rag_integration.py#L43) | 43 | `"                \"cited\": bank.format_claim_with_citations(c),"` | — |
-| [SRC-CE59202CFA-L000044](../../agents/agentic_rag_integration.py#L44) | 44 | `"            }"` | — |
-| [SRC-CE59202CFA-L000045](../../agents/agentic_rag_integration.py#L45) | 45 | `"            for c in claims"` | — |
-| [SRC-CE59202CFA-L000046](../../agents/agentic_rag_integration.py#L46) | 46 | `"        ],"` | — |
-| [SRC-CE59202CFA-L000047](../../agents/agentic_rag_integration.py#L47) | 47 | `"        \"metrics\": metrics,"` | — |
-| [SRC-CE59202CFA-L000048](../../agents/agentic_rag_integration.py#L48) | 48 | `"        \"citation_map\": bank.citation_map(),"` | — |
-| [SRC-CE59202CFA-L000049](../../agents/agentic_rag_integration.py#L49) | 49 | `"    }"` | — |
-| [SRC-CE59202CFA-L000050](../../agents/agentic_rag_integration.py#L50) | 50 | `""` | — |
-| [SRC-CE59202CFA-L000051](../../agents/agentic_rag_integration.py#L51) | 51 | `""` | — |
-| [SRC-CE59202CFA-L000052](../../agents/agentic_rag_integration.py#L52) | 52 | `"def run_agentic_rag("` | — |
-| [SRC-CE59202CFA-L000053](../../agents/agentic_rag_integration.py#L53) | 53 | `"    question: str,"` | — |
-| [SRC-CE59202CFA-L000054](../../agents/agentic_rag_integration.py#L54) | 54 | `"    retrieve_fn: RetrieveFn,"` | — |
-| [SRC-CE59202CFA-L000055](../../agents/agentic_rag_integration.py#L55) | 55 | `"    *,"` | — |
-| [SRC-CE59202CFA-L000056](../../agents/agentic_rag_integration.py#L56) | 56 | `"    history: list[dict[str, str]] \| None = None,"` | — |
-| [SRC-CE59202CFA-L000057](../../agents/agentic_rag_integration.py#L57) | 57 | `"    max_hops: int = 3,"` | — |
-| [SRC-CE59202CFA-L000058](../../agents/agentic_rag_integration.py#L58) | 58 | `") -> dict[str, Any]:"` | — |
-| [SRC-CE59202CFA-L000059](../../agents/agentic_rag_integration.py#L59) | 59 | `"    orch = AgenticRagOrchestrator(retrieve_fn, max_hops=max_hops)"` | — |
-| [SRC-CE59202CFA-L000060](../../agents/agentic_rag_integration.py#L60) | 60 | `"    result = orch.run(question, history=history)"` | — |
-| [SRC-CE59202CFA-L000061](../../agents/agentic_rag_integration.py#L61) | 61 | `"    sources = list((result.get(\"retrieval\") or {}).get(\"results\") or [])"` | — |
-| [SRC-CE59202CFA-L000062](../../agents/agentic_rag_integration.py#L62) | 62 | `"    result[\"metrics\"] = evaluate_rag_case("` | — |
-| [SRC-CE59202CFA-L000063](../../agents/agentic_rag_integration.py#L63) | 63 | `"        question=question,"` | — |
-| [SRC-CE59202CFA-L000064](../../agents/agentic_rag_integration.py#L64) | 64 | `"        answer=str(result.get(\"answer\") or \"\"),"` | — |
-| [SRC-CE59202CFA-L000065](../../agents/agentic_rag_integration.py#L65) | 65 | `"        sources=sources,"` | — |
-| [SRC-CE59202CFA-L000066](../../agents/agentic_rag_integration.py#L66) | 66 | `"        aspects=list((result.get(\"plan\") or {}).get(\"aspects\") or []),"` | — |
-| [SRC-CE59202CFA-L000067](../../agents/agentic_rag_integration.py#L67) | 67 | `"    )"` | — |
-| [SRC-CE59202CFA-L000068](../../agents/agentic_rag_integration.py#L68) | 68 | `"    return result"` | — |
-| [SRC-CE59202CFA-L000069](../../agents/agentic_rag_integration.py#L69) | 69 | `""` | — |
-| [SRC-CE59202CFA-L000070](../../agents/agentic_rag_integration.py#L70) | 70 | `""` | — |
-| [SRC-CE59202CFA-L000071](../../agents/agentic_rag_integration.py#L71) | 71 | `"def run_agentic_rag_over_sources("` | — |
-| [SRC-CE59202CFA-L000072](../../agents/agentic_rag_integration.py#L72) | 72 | `"    question: str,"` | — |
-| [SRC-CE59202CFA-L000073](../../agents/agentic_rag_integration.py#L73) | 73 | `"    sources: list[dict[str, Any]],"` | — |
-| [SRC-CE59202CFA-L000074](../../agents/agentic_rag_integration.py#L74) | 74 | `"    *,"` | — |
-| [SRC-CE59202CFA-L000075](../../agents/agentic_rag_integration.py#L75) | 75 | `"    retrieve_fn: RetrieveFn \| None = None,"` | — |
-| [SRC-CE59202CFA-L000076](../../agents/agentic_rag_integration.py#L76) | 76 | `"    aspects: list[str] \| None = None,"` | — |
-| [SRC-CE59202CFA-L000077](../../agents/agentic_rag_integration.py#L77) | 77 | `"    draft_answer: str = \"\","` | — |
-| [SRC-CE59202CFA-L000078](../../agents/agentic_rag_integration.py#L78) | 78 | `") -> dict[str, Any]:"` | — |
-| [SRC-CE59202CFA-L000079](../../agents/agentic_rag_integration.py#L79) | 79 | `"    fixed = list(sources or [])"` | — |
+| [SRC-CE59202CFA-L000037](../../agents/agentic_rag_integration.py#L37) | 37 | `"        \"ledger\": bank.to_claim_evidence_ledger_shape(),"` | — |
+| [SRC-CE59202CFA-L000038](../../agents/agentic_rag_integration.py#L38) | 38 | `"        \"claims\": ["` | — |
+| [SRC-CE59202CFA-L000039](../../agents/agentic_rag_integration.py#L39) | 39 | `"            {"` | — |
+| [SRC-CE59202CFA-L000040](../../agents/agentic_rag_integration.py#L40) | 40 | `"                \"text\": c.text,"` | — |
+| [SRC-CE59202CFA-L000041](../../agents/agentic_rag_integration.py#L41) | 41 | `"                \"status\": c.status,"` | — |
+| [SRC-CE59202CFA-L000042](../../agents/agentic_rag_integration.py#L42) | 42 | `"                \"support_score\": c.support_score,"` | — |
+| [SRC-CE59202CFA-L000043](../../agents/agentic_rag_integration.py#L43) | 43 | `"                \"evidence_ids\": c.evidence_ids,"` | — |
+| [SRC-CE59202CFA-L000044](../../agents/agentic_rag_integration.py#L44) | 44 | `"                \"aspect\": c.aspect,"` | — |
+| [SRC-CE59202CFA-L000045](../../agents/agentic_rag_integration.py#L45) | 45 | `"                \"cited\": bank.format_claim_with_citations(c),"` | — |
+| [SRC-CE59202CFA-L000046](../../agents/agentic_rag_integration.py#L46) | 46 | `"            }"` | — |
+| [SRC-CE59202CFA-L000047](../../agents/agentic_rag_integration.py#L47) | 47 | `"            for c in bank.claims"` | — |
+| [SRC-CE59202CFA-L000048](../../agents/agentic_rag_integration.py#L48) | 48 | `"        ],"` | — |
+| [SRC-CE59202CFA-L000049](../../agents/agentic_rag_integration.py#L49) | 49 | `"        \"supported_answer\": bank.render_supported_answer(drop_unsupported=True),"` | — |
+| [SRC-CE59202CFA-L000050](../../agents/agentic_rag_integration.py#L50) | 50 | `"        \"metrics\": metrics,"` | — |
+| [SRC-CE59202CFA-L000051](../../agents/agentic_rag_integration.py#L51) | 51 | `"        \"citation_map\": bank.citation_map(),"` | — |
+| [SRC-CE59202CFA-L000052](../../agents/agentic_rag_integration.py#L52) | 52 | `"        \"stats\": bank.stats(),"` | — |
+| [SRC-CE59202CFA-L000053](../../agents/agentic_rag_integration.py#L53) | 53 | `"    }"` | — |
+| [SRC-CE59202CFA-L000054](../../agents/agentic_rag_integration.py#L54) | 54 | `""` | — |
+| [SRC-CE59202CFA-L000055](../../agents/agentic_rag_integration.py#L55) | 55 | `""` | — |
+| [SRC-CE59202CFA-L000056](../../agents/agentic_rag_integration.py#L56) | 56 | `"def run_agentic_rag("` | — |
+| [SRC-CE59202CFA-L000057](../../agents/agentic_rag_integration.py#L57) | 57 | `"    question: str,"` | — |
+| [SRC-CE59202CFA-L000058](../../agents/agentic_rag_integration.py#L58) | 58 | `"    retrieve_fn: RetrieveFn,"` | — |
+| [SRC-CE59202CFA-L000059](../../agents/agentic_rag_integration.py#L59) | 59 | `"    *,"` | — |
+| [SRC-CE59202CFA-L000060](../../agents/agentic_rag_integration.py#L60) | 60 | `"    history: list[dict[str, str]] \| None = None,"` | — |
+| [SRC-CE59202CFA-L000061](../../agents/agentic_rag_integration.py#L61) | 61 | `"    max_hops: int = 3,"` | — |
+| [SRC-CE59202CFA-L000062](../../agents/agentic_rag_integration.py#L62) | 62 | `") -> dict[str, Any]:"` | — |
+| [SRC-CE59202CFA-L000063](../../agents/agentic_rag_integration.py#L63) | 63 | `"    orch = AgenticRagOrchestrator(retrieve_fn, max_hops=max_hops)"` | — |
+| [SRC-CE59202CFA-L000064](../../agents/agentic_rag_integration.py#L64) | 64 | `"    result = orch.run(question, history=history)"` | — |
+| [SRC-CE59202CFA-L000065](../../agents/agentic_rag_integration.py#L65) | 65 | `"    sources = list((result.get(\"retrieval\") or {}).get(\"results\") or [])"` | — |
+| [SRC-CE59202CFA-L000066](../../agents/agentic_rag_integration.py#L66) | 66 | `"    result[\"metrics\"] = evaluate_rag_case("` | — |
+| [SRC-CE59202CFA-L000067](../../agents/agentic_rag_integration.py#L67) | 67 | `"        question=question,"` | — |
+| [SRC-CE59202CFA-L000068](../../agents/agentic_rag_integration.py#L68) | 68 | `"        answer=str(result.get(\"answer\") or \"\"),"` | — |
+| [SRC-CE59202CFA-L000069](../../agents/agentic_rag_integration.py#L69) | 69 | `"        sources=sources,"` | — |
+| [SRC-CE59202CFA-L000070](../../agents/agentic_rag_integration.py#L70) | 70 | `"        aspects=list((result.get(\"plan\") or {}).get(\"aspects\") or []),"` | — |
+| [SRC-CE59202CFA-L000071](../../agents/agentic_rag_integration.py#L71) | 71 | `"    )"` | — |
+| [SRC-CE59202CFA-L000072](../../agents/agentic_rag_integration.py#L72) | 72 | `"    mem = result.get(\"memory\")"` | — |
+| [SRC-CE59202CFA-L000073](../../agents/agentic_rag_integration.py#L73) | 73 | `"    if isinstance(mem, dict) and mem.get(\"claims\"):"` | — |
+| [SRC-CE59202CFA-L000074](../../agents/agentic_rag_integration.py#L74) | 74 | `"        bank = MemoryBank(session_id=str(mem.get(\"session_id\") or \"\"))"` | — |
+| [SRC-CE59202CFA-L000075](../../agents/agentic_rag_integration.py#L75) | 75 | `"        bank.ingest_sources(sources)"` | — |
+| [SRC-CE59202CFA-L000076](../../agents/agentic_rag_integration.py#L76) | 76 | `"        bank.bind_answer(str(result.get(\"answer\") or \"\"))"` | — |
+| [SRC-CE59202CFA-L000077](../../agents/agentic_rag_integration.py#L77) | 77 | `"        result[\"ledger\"] = bank.to_claim_evidence_ledger_shape()"` | — |
+| [SRC-CE59202CFA-L000078](../../agents/agentic_rag_integration.py#L78) | 78 | `"    return result"` | — |
+| [SRC-CE59202CFA-L000079](../../agents/agentic_rag_integration.py#L79) | 79 | `""` | — |
 | [SRC-CE59202CFA-L000080](../../agents/agentic_rag_integration.py#L80) | 80 | `""` | — |
-| [SRC-CE59202CFA-L000081](../../agents/agentic_rag_integration.py#L81) | 81 | `"    def _fixed_retrieve(q: str) -> list[dict[str, Any]]:"` | — |
-| [SRC-CE59202CFA-L000082](../../agents/agentic_rag_integration.py#L82) | 82 | `"        return fixed"` | — |
-| [SRC-CE59202CFA-L000083](../../agents/agentic_rag_integration.py#L83) | 83 | `""` | — |
-| [SRC-CE59202CFA-L000084](../../agents/agentic_rag_integration.py#L84) | 84 | `"    fn = retrieve_fn or _fixed_retrieve"` | — |
-| [SRC-CE59202CFA-L000085](../../agents/agentic_rag_integration.py#L85) | 85 | `"    orch = AgenticRagOrchestrator(fn, max_hops=2)"` | — |
-| [SRC-CE59202CFA-L000086](../../agents/agentic_rag_integration.py#L86) | 86 | `""` | — |
-| [SRC-CE59202CFA-L000087](../../agents/agentic_rag_integration.py#L87) | 87 | `"    def draft_fn(q: str, srcs: list[dict[str, Any]], meta: dict[str, Any]) -> str:"` | — |
-| [SRC-CE59202CFA-L000088](../../agents/agentic_rag_integration.py#L88) | 88 | `"        if draft_answer.strip():"` | — |
-| [SRC-CE59202CFA-L000089](../../agents/agentic_rag_integration.py#L89) | 89 | `"            return draft_answer"` | — |
-| [SRC-CE59202CFA-L000090](../../agents/agentic_rag_integration.py#L90) | 90 | `"        return ("` | — |
-| [SRC-CE59202CFA-L000091](../../agents/agentic_rag_integration.py#L91) | 91 | `"            f\"إجابة موجّهة بالأدلة عن: {q}\\n\""` | — |
-| [SRC-CE59202CFA-L000092](../../agents/agentic_rag_integration.py#L92) | 92 | `"            + \"\\n\".join("` | — |
-| [SRC-CE59202CFA-L000093](../../agents/agentic_rag_integration.py#L93) | 93 | `"                f\"- {s.get('title')}: {str(s.get('snippet') or '')[:180]}\""` | — |
-| [SRC-CE59202CFA-L000094](../../agents/agentic_rag_integration.py#L94) | 94 | `"                for s in (srcs or fixed)[:8]"` | — |
-| [SRC-CE59202CFA-L000095](../../agents/agentic_rag_integration.py#L95) | 95 | `"            )"` | — |
-| [SRC-CE59202CFA-L000096](../../agents/agentic_rag_integration.py#L96) | 96 | `"        )"` | — |
-| [SRC-CE59202CFA-L000097](../../agents/agentic_rag_integration.py#L97) | 97 | `""` | — |
-| [SRC-CE59202CFA-L000098](../../agents/agentic_rag_integration.py#L98) | 98 | `"    orch.draft_fn = draft_fn"` | — |
-| [SRC-CE59202CFA-L000099](../../agents/agentic_rag_integration.py#L99) | 99 | `"    result = orch.run(question)"` | — |
-| [SRC-CE59202CFA-L000100](../../agents/agentic_rag_integration.py#L100) | 100 | `"    if fixed:"` | — |
-| [SRC-CE59202CFA-L000101](../../agents/agentic_rag_integration.py#L101) | 101 | `"        post = bind_existing_answer_to_sources("` | — |
-| [SRC-CE59202CFA-L000102](../../agents/agentic_rag_integration.py#L102) | 102 | `"            str(result.get(\"answer\") or draft_answer or \"\"),"` | — |
-| [SRC-CE59202CFA-L000103](../../agents/agentic_rag_integration.py#L103) | 103 | `"            fixed,"` | — |
-| [SRC-CE59202CFA-L000104](../../agents/agentic_rag_integration.py#L104) | 104 | `"            aspects=aspects,"` | — |
-| [SRC-CE59202CFA-L000105](../../agents/agentic_rag_integration.py#L105) | 105 | `"        )"` | — |
-| [SRC-CE59202CFA-L000106](../../agents/agentic_rag_integration.py#L106) | 106 | `"        result[\"post_hoc_binding\"] = post"` | — |
-| [SRC-CE59202CFA-L000107](../../agents/agentic_rag_integration.py#L107) | 107 | `"        result[\"metrics\"] = post.get(\"metrics\")"` | — |
-| [SRC-CE59202CFA-L000108](../../agents/agentic_rag_integration.py#L108) | 108 | `"    return result"` | — |
-| [SRC-CE59202CFA-L000109](../../agents/agentic_rag_integration.py#L109) | 109 | `""` | — |
-| [SRC-CE59202CFA-L000110](../../agents/agentic_rag_integration.py#L110) | 110 | `""` | — |
-| [SRC-CE59202CFA-L000111](../../agents/agentic_rag_integration.py#L111) | 111 | `"def web_agent_post_answer_hook("` | — |
-| [SRC-CE59202CFA-L000112](../../agents/agentic_rag_integration.py#L112) | 112 | `"    question: str,"` | — |
-| [SRC-CE59202CFA-L000113](../../agents/agentic_rag_integration.py#L113) | 113 | `"    answer: str,"` | — |
-| [SRC-CE59202CFA-L000114](../../agents/agentic_rag_integration.py#L114) | 114 | `"    sources: list[dict[str, Any]],"` | — |
-| [SRC-CE59202CFA-L000115](../../agents/agentic_rag_integration.py#L115) | 115 | `"    *,"` | — |
-| [SRC-CE59202CFA-L000116](../../agents/agentic_rag_integration.py#L116) | 116 | `"    aspects: list[str] \| None = None,"` | — |
-| [SRC-CE59202CFA-L000117](../../agents/agentic_rag_integration.py#L117) | 117 | `") -> dict[str, Any]:"` | — |
-| [SRC-CE59202CFA-L000118](../../agents/agentic_rag_integration.py#L118) | 118 | `"    binding = bind_existing_answer_to_sources(answer, sources, aspects=aspects)"` | — |
-| [SRC-CE59202CFA-L000119](../../agents/agentic_rag_integration.py#L119) | 119 | `"    return {"` | — |
-| [SRC-CE59202CFA-L000120](../../agents/agentic_rag_integration.py#L120) | 120 | `"        \"agentic_rag\": {"` | — |
-| [SRC-CE59202CFA-L000121](../../agents/agentic_rag_integration.py#L121) | 121 | `"            \"enabled\": True,"` | — |
-| [SRC-CE59202CFA-L000122](../../agents/agentic_rag_integration.py#L122) | 122 | `"            \"claims\": binding.get(\"claims\"),"` | — |
-| [SRC-CE59202CFA-L000123](../../agents/agentic_rag_integration.py#L123) | 123 | `"            \"metrics\": binding.get(\"metrics\"),"` | — |
-| [SRC-CE59202CFA-L000124](../../agents/agentic_rag_integration.py#L124) | 124 | `"            \"citation_map\": binding.get(\"citation_map\"),"` | — |
-| [SRC-CE59202CFA-L000125](../../agents/agentic_rag_integration.py#L125) | 125 | `"            \"memory_stats\": (binding.get(\"memory\") or {}).get(\"stats\"),"` | — |
-| [SRC-CE59202CFA-L000126](../../agents/agentic_rag_integration.py#L126) | 126 | `"        }"` | — |
-| [SRC-CE59202CFA-L000127](../../agents/agentic_rag_integration.py#L127) | 127 | `"    }"` | — |
+| [SRC-CE59202CFA-L000081](../../agents/agentic_rag_integration.py#L81) | 81 | `"def run_agentic_rag_over_sources("` | — |
+| [SRC-CE59202CFA-L000082](../../agents/agentic_rag_integration.py#L82) | 82 | `"    question: str,"` | — |
+| [SRC-CE59202CFA-L000083](../../agents/agentic_rag_integration.py#L83) | 83 | `"    sources: list[dict[str, Any]],"` | — |
+| [SRC-CE59202CFA-L000084](../../agents/agentic_rag_integration.py#L84) | 84 | `"    *,"` | — |
+| [SRC-CE59202CFA-L000085](../../agents/agentic_rag_integration.py#L85) | 85 | `"    retrieve_fn: RetrieveFn \| None = None,"` | — |
+| [SRC-CE59202CFA-L000086](../../agents/agentic_rag_integration.py#L86) | 86 | `"    aspects: list[str] \| None = None,"` | — |
+| [SRC-CE59202CFA-L000087](../../agents/agentic_rag_integration.py#L87) | 87 | `"    draft_answer: str = \"\","` | — |
+| [SRC-CE59202CFA-L000088](../../agents/agentic_rag_integration.py#L88) | 88 | `") -> dict[str, Any]:"` | — |
+| [SRC-CE59202CFA-L000089](../../agents/agentic_rag_integration.py#L89) | 89 | `"    fixed = list(sources or [])"` | — |
+| [SRC-CE59202CFA-L000090](../../agents/agentic_rag_integration.py#L90) | 90 | `""` | — |
+| [SRC-CE59202CFA-L000091](../../agents/agentic_rag_integration.py#L91) | 91 | `"    def _fixed_retrieve(q: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-CE59202CFA-L000092](../../agents/agentic_rag_integration.py#L92) | 92 | `"        return fixed"` | — |
+| [SRC-CE59202CFA-L000093](../../agents/agentic_rag_integration.py#L93) | 93 | `""` | — |
+| [SRC-CE59202CFA-L000094](../../agents/agentic_rag_integration.py#L94) | 94 | `"    fn = retrieve_fn or _fixed_retrieve"` | — |
+| [SRC-CE59202CFA-L000095](../../agents/agentic_rag_integration.py#L95) | 95 | `"    orch = AgenticRagOrchestrator(fn, max_hops=2)"` | — |
+| [SRC-CE59202CFA-L000096](../../agents/agentic_rag_integration.py#L96) | 96 | `""` | — |
+| [SRC-CE59202CFA-L000097](../../agents/agentic_rag_integration.py#L97) | 97 | `"    def draft_fn(q: str, srcs: list[dict[str, Any]], meta: dict[str, Any]) -> str:"` | — |
+| [SRC-CE59202CFA-L000098](../../agents/agentic_rag_integration.py#L98) | 98 | `"        if draft_answer.strip():"` | — |
+| [SRC-CE59202CFA-L000099](../../agents/agentic_rag_integration.py#L99) | 99 | `"            return draft_answer"` | — |
+| [SRC-CE59202CFA-L000100](../../agents/agentic_rag_integration.py#L100) | 100 | `"        return ("` | — |
+| [SRC-CE59202CFA-L000101](../../agents/agentic_rag_integration.py#L101) | 101 | `"            f\"إجابة موجّهة بالأدلة عن: {q}\\n\""` | — |
+| [SRC-CE59202CFA-L000102](../../agents/agentic_rag_integration.py#L102) | 102 | `"            + \"\\n\".join("` | — |
+| [SRC-CE59202CFA-L000103](../../agents/agentic_rag_integration.py#L103) | 103 | `"                f\"- {s.get('title')}: {str(s.get('snippet') or '')[:180]}\""` | — |
+| [SRC-CE59202CFA-L000104](../../agents/agentic_rag_integration.py#L104) | 104 | `"                for s in (srcs or fixed)[:8]"` | — |
+| [SRC-CE59202CFA-L000105](../../agents/agentic_rag_integration.py#L105) | 105 | `"            )"` | — |
+| [SRC-CE59202CFA-L000106](../../agents/agentic_rag_integration.py#L106) | 106 | `"        )"` | — |
+| [SRC-CE59202CFA-L000107](../../agents/agentic_rag_integration.py#L107) | 107 | `""` | — |
+| [SRC-CE59202CFA-L000108](../../agents/agentic_rag_integration.py#L108) | 108 | `"    orch.draft_fn = draft_fn"` | — |
+| [SRC-CE59202CFA-L000109](../../agents/agentic_rag_integration.py#L109) | 109 | `"    result = orch.run(question)"` | — |
+| [SRC-CE59202CFA-L000110](../../agents/agentic_rag_integration.py#L110) | 110 | `"    if fixed:"` | — |
+| [SRC-CE59202CFA-L000111](../../agents/agentic_rag_integration.py#L111) | 111 | `"        post = bind_existing_answer_to_sources("` | — |
+| [SRC-CE59202CFA-L000112](../../agents/agentic_rag_integration.py#L112) | 112 | `"            str(result.get(\"answer\") or draft_answer or \"\"),"` | — |
+| [SRC-CE59202CFA-L000113](../../agents/agentic_rag_integration.py#L113) | 113 | `"            fixed,"` | — |
+| [SRC-CE59202CFA-L000114](../../agents/agentic_rag_integration.py#L114) | 114 | `"            aspects=aspects,"` | — |
+| [SRC-CE59202CFA-L000115](../../agents/agentic_rag_integration.py#L115) | 115 | `"        )"` | — |
+| [SRC-CE59202CFA-L000116](../../agents/agentic_rag_integration.py#L116) | 116 | `"        result[\"post_hoc_binding\"] = post"` | — |
+| [SRC-CE59202CFA-L000117](../../agents/agentic_rag_integration.py#L117) | 117 | `"        result[\"metrics\"] = post.get(\"metrics\")"` | — |
+| [SRC-CE59202CFA-L000118](../../agents/agentic_rag_integration.py#L118) | 118 | `"        result[\"ledger\"] = post.get(\"ledger\")"` | — |
+| [SRC-CE59202CFA-L000119](../../agents/agentic_rag_integration.py#L119) | 119 | `"    return result"` | — |
+| [SRC-CE59202CFA-L000120](../../agents/agentic_rag_integration.py#L120) | 120 | `""` | — |
+| [SRC-CE59202CFA-L000121](../../agents/agentic_rag_integration.py#L121) | 121 | `""` | — |
+| [SRC-CE59202CFA-L000122](../../agents/agentic_rag_integration.py#L122) | 122 | `"def web_agent_post_answer_hook("` | — |
+| [SRC-CE59202CFA-L000123](../../agents/agentic_rag_integration.py#L123) | 123 | `"    question: str,"` | — |
+| [SRC-CE59202CFA-L000124](../../agents/agentic_rag_integration.py#L124) | 124 | `"    answer: str,"` | — |
+| [SRC-CE59202CFA-L000125](../../agents/agentic_rag_integration.py#L125) | 125 | `"    sources: list[dict[str, Any]],"` | — |
+| [SRC-CE59202CFA-L000126](../../agents/agentic_rag_integration.py#L126) | 126 | `"    *,"` | — |
+| [SRC-CE59202CFA-L000127](../../agents/agentic_rag_integration.py#L127) | 127 | `"    aspects: list[str] \| None = None,"` | — |
+| [SRC-CE59202CFA-L000128](../../agents/agentic_rag_integration.py#L128) | 128 | `"    min_score: float = 0.25,"` | — |
+| [SRC-CE59202CFA-L000129](../../agents/agentic_rag_integration.py#L129) | 129 | `") -> dict[str, Any]:"` | — |
+| [SRC-CE59202CFA-L000130](../../agents/agentic_rag_integration.py#L130) | 130 | `"    binding = bind_existing_answer_to_sources("` | — |
+| [SRC-CE59202CFA-L000131](../../agents/agentic_rag_integration.py#L131) | 131 | `"        answer, sources, aspects=aspects, min_score=min_score"` | — |
+| [SRC-CE59202CFA-L000132](../../agents/agentic_rag_integration.py#L132) | 132 | `"    )"` | — |
+| [SRC-CE59202CFA-L000133](../../agents/agentic_rag_integration.py#L133) | 133 | `"    return {"` | — |
+| [SRC-CE59202CFA-L000134](../../agents/agentic_rag_integration.py#L134) | 134 | `"        \"agentic_rag\": {"` | — |
+| [SRC-CE59202CFA-L000135](../../agents/agentic_rag_integration.py#L135) | 135 | `"            \"enabled\": True,"` | — |
+| [SRC-CE59202CFA-L000136](../../agents/agentic_rag_integration.py#L136) | 136 | `"            \"question\": question[:500],"` | — |
+| [SRC-CE59202CFA-L000137](../../agents/agentic_rag_integration.py#L137) | 137 | `"            \"claims\": binding.get(\"claims\"),"` | — |
+| [SRC-CE59202CFA-L000138](../../agents/agentic_rag_integration.py#L138) | 138 | `"            \"metrics\": binding.get(\"metrics\"),"` | — |
+| [SRC-CE59202CFA-L000139](../../agents/agentic_rag_integration.py#L139) | 139 | `"            \"citation_map\": binding.get(\"citation_map\"),"` | — |
+| [SRC-CE59202CFA-L000140](../../agents/agentic_rag_integration.py#L140) | 140 | `"            \"memory_stats\": binding.get(\"stats\"),"` | — |
+| [SRC-CE59202CFA-L000141](../../agents/agentic_rag_integration.py#L141) | 141 | `"            \"ledger\": binding.get(\"ledger\"),"` | — |
+| [SRC-CE59202CFA-L000142](../../agents/agentic_rag_integration.py#L142) | 142 | `"            \"supported_answer\": binding.get(\"supported_answer\"),"` | — |
+| [SRC-CE59202CFA-L000143](../../agents/agentic_rag_integration.py#L143) | 143 | `"            \"honesty\": ("` | — |
+| [SRC-CE59202CFA-L000144](../../agents/agentic_rag_integration.py#L144) | 144 | `"                \"الدعم لفظي عبر MemoryBank؛ لا يُفسَّر كتحقق حقيقة دلالي.\""` | — |
+| [SRC-CE59202CFA-L000145](../../agents/agentic_rag_integration.py#L145) | 145 | `"            ),"` | — |
+| [SRC-CE59202CFA-L000146](../../agents/agentic_rag_integration.py#L146) | 146 | `"        }"` | — |
+| [SRC-CE59202CFA-L000147](../../agents/agentic_rag_integration.py#L147) | 147 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-DB5EDD8C78 — [agents/agentic_rag_orchestrator.py](../../agents/agentic_rag_orchestrator.py#L1)
@@ -895,23 +915,3 @@
 | [SRC-138992B1FC-L000015](../../agents/answer_validation.py#L15) | 15 | `"    \"ؤ\": \"و\", \"ئ\": \"ي\", \"ة\": \"ه\", \"ـ\": \"\","` | — |
 | [SRC-138992B1FC-L000016](../../agents/answer_validation.py#L16) | 16 | `"})"` | — |
 | [SRC-138992B1FC-L000017](../../agents/answer_validation.py#L17) | 17 | `"_DIACRITICS = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
-| [SRC-138992B1FC-L000018](../../agents/answer_validation.py#L18) | 18 | `"_TOKEN = re.compile(r\"[a-z0-9]+\|[\\u0621-\\u064A\\u0660-\\u0669]+\", re.IGNORECASE)"` | — |
-| [SRC-138992B1FC-L000019](../../agents/answer_validation.py#L19) | 19 | `"_NUMBER = re.compile(r\"(?<![\\w])\\d+(?:[.,٬٫]\\d+)*(?![\\w])\")"` | — |
-| [SRC-138992B1FC-L000020](../../agents/answer_validation.py#L20) | 20 | `"_CITATION = re.compile(r\"\\[(?:المصدر\|source)\\s+(\\d+)\\]\", re.IGNORECASE)"` | — |
-| [SRC-138992B1FC-L000021](../../agents/answer_validation.py#L21) | 21 | `"_STOPWORDS = {"` | — |
-| [SRC-138992B1FC-L000022](../../agents/answer_validation.py#L22) | 22 | `"    \"من\", \"في\", \"على\", \"عن\", \"الى\", \"و\", \"او\", \"هل\", \"ما\", \"ماذا\", \"كيف\","` | — |
-| [SRC-138992B1FC-L000023](../../agents/answer_validation.py#L23) | 23 | `"    \"مع\", \"بين\", \"هذا\", \"هذه\", \"ذلك\", \"تلك\", \"الذي\", \"التي\", \"هو\", \"هي\","` | — |
-| [SRC-138992B1FC-L000024](../../agents/answer_validation.py#L24) | 24 | `"    \"the\", \"a\", \"an\", \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\","` | — |
-| [SRC-138992B1FC-L000025](../../agents/answer_validation.py#L25) | 25 | `"    \"from\", \"is\", \"are\", \"what\", \"which\", \"who\", \"how\", \"why\", \"when\","` | — |
-| [SRC-138992B1FC-L000026](../../agents/answer_validation.py#L26) | 26 | `"    \"where\", \"compare\", \"comparison\", \"based\", \"terms\", \"respect\","` | — |
-| [SRC-138992B1FC-L000027](../../agents/answer_validation.py#L27) | 27 | `"}"` | — |
-| [SRC-138992B1FC-L000028](../../agents/answer_validation.py#L28) | 28 | `"_UNIT_OR_VALUE_CONTEXT = re.compile("` | — |
-| [SRC-138992B1FC-L000029](../../agents/answer_validation.py#L29) | 29 | `"    r\"(?:جنيه\|ج\\.م\|دولار\|ريال\|يورو\|درهم\|egp\|usd\|eur\|\\$\|€\|£\|%\|٪\|\""` | — |
-| [SRC-138992B1FC-L000030](../../agents/answer_validation.py#L30) | 30 | `"    r\"متر\|مربع\|كيلومتر\|كلم\|كم\|كيلو\|كجم\|kg\|km\|gb\|mb\|tb\|\""` | — |
-| [SRC-138992B1FC-L000031](../../agents/answer_validation.py#L31) | 31 | `"    r\"سنة\|سنوات\|عام\|أعوام\|شهر\|أشهر\|يوم\|أيام\|ساعة\|ساعات\|دقيقة\|دقائق\|\""` | — |
-| [SRC-138992B1FC-L000032](../../agents/answer_validation.py#L32) | 32 | `"    r\"مليون\|مليار\|ألف\|الف\|فدان\|درجة\|شخص\|أشخاص)\","` | — |
-| [SRC-138992B1FC-L000033](../../agents/answer_validation.py#L33) | 33 | `"    re.IGNORECASE,"` | — |
-| [SRC-138992B1FC-L000034](../../agents/answer_validation.py#L34) | 34 | `")"` | — |
-| [SRC-138992B1FC-L000035](../../agents/answer_validation.py#L35) | 35 | `""` | — |
-| [SRC-138992B1FC-L000036](../../agents/answer_validation.py#L36) | 36 | `""` | — |
-| [SRC-138992B1FC-L000037](../../agents/answer_validation.py#L37) | 37 | `"def _normalize(value: Any) -> str:"` | — |
