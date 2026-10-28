@@ -473,7 +473,7 @@
 | [SRC-1AE03B9EC3-L004069](../../agents/web_agent.py#L4069) | 4069 | `"            and not current_search_status_question"` | — |
 | [SRC-1AE03B9EC3-L004070](../../agents/web_agent.py#L4070) | 4070 | `"            and not self._is_self_question(question)"` | — |
 | [SRC-1AE03B9EC3-L004071](../../agents/web_agent.py#L4071) | 4071 | `"            and ("` | — |
-| [SRC-1AE03B9EC3-L004072](../../agents/web_agent.py#L4072) | 4072 | `"                intent_route in {\"CLARIFY\", \"MODEL_ONLY\"}"` | — |
+| [SRC-1AE03B9EC3-L004072](../../agents/web_agent.py#L4072) | 4072 | `"                intent_route != \"LOCAL\""` | — |
 | [SRC-1AE03B9EC3-L004073](../../agents/web_agent.py#L4073) | 4073 | `"                or might_be_context_dependent(question)"` | — |
 | [SRC-1AE03B9EC3-L004074](../../agents/web_agent.py#L4074) | 4074 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004075](../../agents/web_agent.py#L4075) | 4075 | `"        )"` | — |
