@@ -925,7 +925,7 @@ class WebAgent:
     def _clarification_result(
         self, question: str, mode: str, decision: dict[str, Any]
     ) -> dict[str, Any]:
-        """Ask for a missing referent without calling the model or search providers."""
+        """Return a bounded clarification result without starting web search."""
         if re.search(r"[a-z]", question.casefold()):
             answer = (
                 "What are you referring to? Please name the item or share its link, "
@@ -940,6 +940,25 @@ class WebAgent:
         return self._annotate_intent_route(
             result, "CLARIFY", str(decision.get("reason", "missing_referent")), mode
         )
+
+    def _dialogue_clarification_result(
+        self, question: str, mode: str, context: dict[str, Any], reason: str
+    ) -> dict[str, Any]:
+        """Expose why context resolution stopped and ask instead of guessing."""
+        result = self._clarification_result(
+            question, mode, {
+                "reason": reason,
+                "needs_clarification": True,
+                "context_available": bool(context.get("is_follow_up")),
+            }
+        )
+        requested_clarification = context.get("clarification_question")
+        if isinstance(requested_clarification, str) and requested_clarification.strip():
+            result["answer"] = requested_clarification[:400]
+        result["dialogue_context"] = context
+        if isinstance(result.get("research_plan"), dict):
+            result["research_plan"]["dialogue_context"] = context
+        return result
 
     def _capability_status_snapshot(self) -> dict[str, Any]:
         """Describe configured capabilities without claiming a live health check."""
@@ -2604,6 +2623,7 @@ class WebAgent:
             "evidence_signals": evidence_signal_report(sources, plan.get("freshness", "any")),
             "depth": plan.get("depth", "standard"),
             "planning_method": plan.get("planning_method", "deterministic_fallback"),
+"dialogue_context": plan.get("dialogue_context", {}),
             "provider_diagnostics": provider_diagnostics,
             "connector_summary": self._connector_status_summary(
                 provider_diagnostics, sources
@@ -4033,6 +4053,50 @@ class WebAgent:
         )
         intent_route = str(decision["route"])
         intent_reason = str(decision["reason"])
+        context_override: dict[str, Any] | None = None
+
+        # Rules only decide when a context probe may be needed. The model interprets
+        # meaning only on those turns; it never receives authority to execute tools.
+        probe_dialogue = bool(clean_history) and (
+            intent_route == "CLARIFY"
+            or (intent_route == "MODEL_ONLY" and might_be_context_dependent(question))
+        )
+        if probe_dialogue:
+            semantic_context = self._resolve_dialogue_context(question, clean_history)
+            if semantic_context.get("method") == "llm_semantic_context":
+                context_override = semantic_context
+                if semantic_context.get("needs_clarification"):
+                    return self._dialogue_clarification_result(
+                        question, clean_mode, semantic_context,
+                        "semantic_context_has_unresolved_referent",
+                    )
+                working_question = (
+                    question if semantic_context.get("topic_shift")
+                    else semantic_context.get("resolved_question") or question
+                )
+                semantic_decision = route_intent(
+                    working_question,
+                    clean_history,
+                    routing_mode,
+                    capability_question=self._is_self_question(working_question),
+                    requires_web=(
+                        bool(semantic_context.get("needs_web"))
+                        or self._requires_web_research(working_question, routing_mode)
+                    ),
+                )
+                if semantic_context.get("needs_web") and routing_mode == "auto":
+                    deep_intents = {"compare", "social_opinions", "lead_generation"}
+                    intent_route = (
+                        "WEB_DEEP"
+                        if semantic_context.get("research_depth") == "deep"
+                        or semantic_context.get("intent") in deep_intents
+                        else "WEB_SIMPLE"
+                    )
+                    intent_reason = "semantic_dialogue_context_requires_web"
+                else:
+                    intent_route = str(semantic_decision["route"])
+                    intent_reason = "semantic_dialogue_context_" + str(semantic_decision["reason"])
+                decision = semantic_decision
 
         if intent_route == "LOCAL":
             if self._is_self_question(question):
@@ -4046,10 +4110,14 @@ class WebAgent:
             )
 
         if intent_route == "CLARIFY":
+            if context_override is not None:
+                return self._dialogue_clarification_result(
+                    question, clean_mode, context_override, intent_reason
+                )
             return self._clarification_result(question, clean_mode, decision)
 
         if intent_route == "MODEL_ONLY":
-            general_answer = self._answer_without_search(question, clean_history)
+            general_answer = self._answer_without_search(working_question, clean_history)
             if general_answer is not None:
                 return self._annotate_intent_route(
                     general_answer, intent_route, intent_reason, clean_mode
@@ -4059,7 +4127,20 @@ class WebAgent:
             intent_route = "WEB_SIMPLE"
             intent_reason = "model_unavailable_fallback_to_existing_web_research"
 
-        plan = self._plan_search(question, clean_history)
+        plan = self._plan_search(
+            question, clean_history, context_override=context_override
+        )
+        dialogue_context = plan.get("dialogue_context")
+        if isinstance(dialogue_context, dict):
+            if dialogue_context.get("needs_clarification"):
+                return self._dialogue_clarification_result(
+                    question, clean_mode, dialogue_context,
+                    "planner_detected_unresolved_referent",
+                )
+            working_question = (
+                question if dialogue_context.get("topic_shift")
+                else dialogue_context.get("resolved_question") or working_question
+            )
         plan["mode"] = clean_mode
         plan["intent_route"] = intent_route
         plan["intent_route_reason"] = intent_reason
@@ -4353,8 +4434,11 @@ class WebAgent:
                 "provider_diagnostics": failure_diagnostics,
                 "depth": plan.get("depth", "standard"),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
+"dialogue_context": plan.get("dialogue_context", {}),
                 "evidence_signals": evidence_signal_report([], plan.get("freshness", "any")),
             }
+        if isinstance(report, dict):
+            report["dialogue_context"] = plan.get("dialogue_context", {})
         # Final relevance check is intentionally repeated after fusion, before any answer LLM call.
         filtered_sources: list[dict[str, Any]] = []
         for source in sources:
@@ -4492,6 +4576,7 @@ class WebAgent:
                         "mode": clean_mode,
                         "direct_urls_provided": len(plan.get("direct_urls", [])),
                         "planning_method": plan.get("planning_method", "deterministic_fallback"),
+"dialogue_context": plan.get("dialogue_context", {}),
                         "intent_route": intent_route,
                         "intent_route_reason": intent_reason,
                     },
@@ -4952,6 +5037,7 @@ class WebAgent:
                     "mode": clean_mode,
                     "direct_urls_provided": len(plan.get("direct_urls", [])),
                     "planning_method": plan.get("planning_method", "deterministic_fallback"),
+"dialogue_context": plan.get("dialogue_context", {}),
                     "intent_route": intent_route,
                     "intent_route_reason": intent_reason,
                 },
@@ -5546,6 +5632,7 @@ class WebAgent:
                 "mode": clean_mode,
                 "direct_urls_provided": len(plan.get("direct_urls", [])),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
+"dialogue_context": plan.get("dialogue_context", {}),
                 "intent_route": intent_route,
                 "intent_route_reason": intent_reason,
             },
