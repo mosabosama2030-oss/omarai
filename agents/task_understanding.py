@@ -356,7 +356,8 @@ def build_task_spec(
         "social_evidence_requested": social_required,
         "language_profile": _language_profile(raw),
         "source_policy": (
-            "official_destination" if official_site
+            "government_official_destination" if government_official_site
+            else "official_destination" if official_destination
             else "current_read_page" if current_required
             else "public_social_content" if social_required
             else "task_relevant_sources"
