@@ -540,7 +540,15 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} شخص يبحث عن شراء تجربة سؤال", "buyer_intent_ar", "distinguish explicit buyer intent from product advertisements"),
             (f"{topic} looking to buy seeking recommendations", "buyer_intent_en", "search public discussions for intent signals"),
         ])
-    if family in {"general_research", "web_research", "find_or_discover"}:
+    if (
+        family in {"general_research", "web_research", "find_or_discover"}
+        and (
+            spec.get("mode") in {"deep", "latest", "social"}
+            or constraints.get("time_sensitive_request")
+            or spec.get("planner_depth") == "deep"
+            or spec.get("intent_route") in {"WEB_DEEP", "LEAD_GENERATION"}
+        )
+    ):
         candidates.extend([
             (f"{topic} مصدر رسمي", "primary_source_ar", "prefer an original or primary source when appropriate"),
             (f"{topic} official source report", "primary_source_en", "alternate source-oriented search wording"),
