@@ -5980,6 +5980,43 @@ class WebAgent:
         else:
             final_answer_status = "source_fallback"
 
+        # Report pipeline completion separately from factual correctness. A successful
+        # retrieval or model review is not an independent semantic fact check.
+        if report.get("search_outcome") in _RESEARCH_ERROR_OUTCOMES:
+            pipeline_completion_status = "execution_failed"
+        elif not search_attempted:
+            pipeline_completion_status = "not_verified"
+        elif not sources:
+            pipeline_completion_status = "insufficient_evidence"
+        elif (
+            llm_warning
+            or review_warning
+            or review_status != "model_claim_audit_completed"
+        ):
+            pipeline_completion_status = "partial"
+        elif (
+            answer_integrity["potentially_missing_target_count"] > 0
+            or answer_integrity["source_evidence_gap_count"] > 0
+            or citation_validation["valid_citation_count"] == 0
+        ):
+            pipeline_completion_status = "partial"
+        else:
+            pipeline_completion_status = "completed"
+        completion_stages = {
+            "search_attempted": search_attempted,
+            "accepted_sources": len(sources),
+            "pages_read": fetched_pages,
+            "answer_generated_by_model": bool(used_llm),
+            "claim_review": review_status,
+            "valid_citations": citation_validation["valid_citation_count"],
+            "semantic_fact_check": "not_performed",
+        }
+        report["pipeline_completion_status"] = pipeline_completion_status
+        report["completion_stages"] = completion_stages
+        report["pipeline_completion_semantics"] = (
+            "pipeline stage completion only; not a guarantee of factual correctness"
+        )
+
         public_sources = []
         for source in sources:
             public_sources.append({
