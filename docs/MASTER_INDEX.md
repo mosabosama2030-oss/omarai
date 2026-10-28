@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **99**
 - ملفات Python المحللة: **56**
-- تعريفات Python المفهرسة: **1308**
+- تعريفات Python المفهرسة: **1310**
 - تعريفات Python موثقة بوجود Docstring: **230**
-- تعريفات Python بلا Docstring: **807**
+- تعريفات Python بلا Docstring: **809**
 - تعريفات لا ينطبق عليها Docstring: **271**
 - الرموز الساكنة الإضافية: **1708**
-- الأسطر النصية المفهرسة حرفيًا: **34508**
+- الأسطر النصية المفهرسة حرفيًا: **34575**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -122,8 +122,8 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 16516 | 442 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 15241 | 328 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 149092 | 3818 | جرد الملف + AST Python |
+| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 149311 | 3822 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 59758 | 417 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1186,6 +1186,8 @@
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L268) | دالة | test_health_and_legal_tasks_attach_domain_specific_caution | لا توجد Docstring. | ناقص | 268 | [SRC-AFEDC2645A-L000268](../tests/test_task_understanding.py#L268) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L287) | دالة | test_output_audience_and_delivery_preferences_are_distinct_fields | لا توجد Docstring. | ناقص | 287 | [SRC-AFEDC2645A-L000287](../tests/test_task_understanding.py#L287) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L300) | دالة | test_task_spec_validator_allowlists_tools_policies_and_context_slots | لا توجد Docstring. | ناقص | 300 | [SRC-AFEDC2645A-L000300](../tests/test_task_understanding.py#L300) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L331) | دالة | test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints | لا توجد Docstring. | ناقص | 331 | [SRC-AFEDC2645A-L000331](../tests/test_task_understanding.py#L331) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L363) | دالة | test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned | لا توجد Docstring. | ناقص | 363 | [SRC-AFEDC2645A-L000363](../tests/test_task_understanding.py#L363) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L18) | دالة | sample_source | لا توجد Docstring. | ناقص | 18 | [SRC-F725E90B2A-L000018](../tests/test_web_agent.py#L18) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L34) | دالة | test_agent_synthesizes_with_sources_without_live_network | لا توجد Docstring. | ناقص | 34 | [SRC-F725E90B2A-L000034](../tests/test_web_agent.py#L34) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L39) | دالة | test_agent_synthesizes_with_sources_without_live_network.plan | لا توجد Docstring. | ناقص | 39 | [SRC-F725E90B2A-L000039](../tests/test_web_agent.py#L39) |
