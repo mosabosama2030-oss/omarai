@@ -4,9 +4,51 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000020 إلى SRC-D17CE3D12F-L000819
+- النطاق: SRC-E73001D9AC-L000871 إلى SRC-D17CE3D12F-L000767
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-E73001D9AC — [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-E73001D9AC-L000871](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L871) | 871 | `"أي استثناء من MUST يجب أن يكون صريحًا، محدد النطاق والمدة، مع بديل تعويضي وخطة إغلاق وموافقة صاحب المشروع؛ لا يُحوّل إلى استثناء شامل دائم."` | — |
+| [SRC-E73001D9AC-L000872](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L872) | 872 | `""` | — |
+| [SRC-E73001D9AC-L000873](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L873) | 873 | `"## 31. القاعدة النهائية"` | — |
+| [SRC-E73001D9AC-L000874](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L874) | 874 | `""` | — |
+| [SRC-E73001D9AC-L000875](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L875) | 875 | `"هذا الدستور يحكم اتجاه التطوير، لكنه لا يجيز تضخيم المعمارية بلا دليل، ولا يسمح بتسويق مزايا غير مختبرة. الأولوية هي بناء نظام **سريع بقدر ما تسمح به الأدلة والموارد، قوي أمام الأعطال، مقيد الصلاحيات، قابل للمراقبة، وصادق في حدود معرفته**."` | — |
+| [SRC-E73001D9AC-L000876](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L876) | 876 | `""` | — |
+| [SRC-E73001D9AC-L000877](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L877) | 877 | `"---"` | — |
+| [SRC-E73001D9AC-L000878](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L878) | 878 | `""` | — |
+| [SRC-E73001D9AC-L000879](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L879) | 879 | `"# مراجع معيارية خارجية للمراجعة الدورية"` | — |
+| [SRC-E73001D9AC-L000880](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L880) | 880 | `""` | — |
+| [SRC-E73001D9AC-L000881](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L881) | 881 | `"هذه المراجع مصادر إرشادية تُستخدم لاختيار الضوابط والاختبارات المناسبة، ولا تعني أن Omarai متوافق معها بمجرد إدراجها في الوثيقة. يجب تثبيت الإصدار المستخدم في كل تقييم أمني:"` | — |
+| [SRC-E73001D9AC-L000882](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L882) | 882 | `""` | — |
+| [SRC-E73001D9AC-L000883](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L883) | 883 | `"- [NIST Cybersecurity Framework (CSF) 2.0](https://www.nist.gov/cyberframework) — الحوكمة وتحديد المخاطر والحماية والكشف والاستجابة والتعافي."` | — |
+| [SRC-E73001D9AC-L000884](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L884) | 884 | `"- [NIST Secure Software Development Framework (SSDF)](https://csrc.nist.gov/projects/ssdf) — ممارسات تطوير البرامج الآمنة وإدارة الثغرات."` | — |
+| [SRC-E73001D9AC-L000885](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L885) | 885 | `"- [NIST AI Risk Management Framework (AI RMF)](https://www.nist.gov/itl/ai-risk-management-framework) — مخاطر الذكاء الاصطناعي وخصائص الثقة."` | — |
+| [SRC-E73001D9AC-L000886](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L886) | 886 | `"- [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/projects/asvs) — متطلبات قابلة للتحقق لأمن تطبيقات الويب."` | — |
+| [SRC-E73001D9AC-L000887](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L887) | 887 | `"- [OWASP GenAI Security Project — LLM Top 10](https://genai.owasp.org/llm-top-10/) — مخاطر تطبيقات النماذج والوكلاء، بما فيها حقن التعليمات وإساءة استخدام الأدوات وتسريب المعلومات."` | — |
+| [SRC-E73001D9AC-L000888](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L888) | 888 | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs) — متطلبات تحقق أمنية مخصصة لأنظمة الذكاء الاصطناعي."` | — |
+| [SRC-E73001D9AC-L000889](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L889) | 889 | `"- [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) — مبادئ المعمارية التشغيلية والأمان والموثوقية والأداء والتكلفة والاستدامة."` | — |
+| [SRC-E73001D9AC-L000890](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L890) | 890 | `"- [Microsoft Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/architecture/framework/) — مرجع مراجعة موثوقية وأمن وأداء وتكلفة الأنظمة."` | — |
+| [SRC-E73001D9AC-L000891](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L891) | 891 | `"- [Google Cloud Well-Architected Framework](https://docs.cloud.google.com/architecture/framework) — تصميم الأنظمة وتشغيلها وقياسها وتحسينها."` | — |
+| [SRC-E73001D9AC-L000892](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L892) | 892 | `"- [Google SRE Books](https://sre.google/books/) — أهداف مستوى الخدمة وميزانيات الأخطاء والاستجابة للحوادث."` | — |
+| [SRC-E73001D9AC-L000893](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L893) | 893 | `"- [DORA — Continuous Delivery](https://dora.dev/capabilities/continuous-delivery/) — تسليم تغييرات آمنة وقابلة للتكرار."` | — |
+| [SRC-E73001D9AC-L000894](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L894) | 894 | `"- [OpenTelemetry](https://opentelemetry.io/docs/) — توحيد المقاييس والسجلات والتتبعات."` | — |
+| [SRC-E73001D9AC-L000895](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L895) | 895 | `"- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/) — مخاطر شائعة في واجهات API."` | — |
+| [SRC-E73001D9AC-L000896](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L896) | 896 | `"- [SLSA](https://slsa.dev/) — سلامة سلسلة توريد البرمجيات وإثبات منشأ artifacts."` | — |
+| [SRC-E73001D9AC-L000897](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L897) | 897 | `"- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/) — إمكانية الوصول إلى محتوى الويب."` | — |
+| [SRC-E73001D9AC-L000898](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L898) | 898 | `"- [NIST Privacy Framework](https://www.nist.gov/privacy-framework) — إدارة مخاطر الخصوصية."` | — |
+| [SRC-E73001D9AC-L000899](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L899) | 899 | `"- [NIST SP 800-61 Rev. 3](https://csrc.nist.gov/pubs/sp/800/61/r3/final) — الاستعداد والاستجابة لحوادث الأمن السيبراني."` | — |
+| [SRC-E73001D9AC-L000900](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L900) | 900 | `"- [FinOps Framework](https://www.finops.org/framework/) — الشفافية والمسؤولية وتحسين تكلفة استخدام التقنية."` | — |
+| [SRC-E73001D9AC-L000901](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L901) | 901 | `"- [Omarai Global Platform Engineering Baseline](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md) — المتطلبات الموسعة وعناصر المراجعة العملية."` | — |
+| [SRC-E73001D9AC-L000902](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L902) | 902 | `""` | — |
+| [SRC-E73001D9AC-L000903](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L903) | 903 | `"تُراجع الإصدارات الرسمية دوريًا، وتُسجل النسخة والتاريخ عند تحويل أي مرجع إلى قائمة اختبار. لا تُستخدم عبارة “متوافق مع NIST/OWASP” إلا بعد وجود تقييم نطاقي وأدلة تغطي المتطلبات المنطبقة."` | — |
 ## وثائق وفهرسة
 
 ### FILE-D17CE3D12F — [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1)
@@ -16,6 +58,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000001](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | 1 | `"# Omarai — خط الأساس الهندسي للمنصات العالمية واسعة النطاق"` | — |
+| [SRC-D17CE3D12F-L000002](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L2) | 2 | `""` | — |
+| [SRC-D17CE3D12F-L000003](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-GLOBAL-PLATFORM-BASELINE-001  "` | — |
+| [SRC-D17CE3D12F-L000004](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L4) | 4 | `"**الإصدار:** 1.0.0  "` | — |
+| [SRC-D17CE3D12F-L000005](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L5) | 5 | `"**الحالة:** معيار تأسيسي مقترح للمراجعة والاعتماد من مدير المشروع  "` | — |
+| [SRC-D17CE3D12F-L000006](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L6) | 6 | `"**النطاق:** المنتج، والمعمارية، والبيانات، والأمن، والذكاء الاصطناعي، والواجهة، والتشغيل، وسلسلة توريد البرمجيات، والتكلفة، والحوكمة  "` | — |
+| [SRC-D17CE3D12F-L000007](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) | 7 | `"**علاقته بالدستور:** وثيقة مكمّلة للدستور التأسيسي للهندسة والموثوقية والأمان والذكاء، ولـ [سجل المتطلبات والتتبع والنضج وبوابات الاعتماد](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md) الذي يحول المتطلبات إلى حالات وأدلة وبوابات قرار؛ وتُقرأ الوثائق معًا لا بدلًا من بعضها. ويُستخدم [سجل المتطلبات الأساسية الأولي](OMARAI_REQUIREMENTS_REGISTER.md) لتحويل البنود الأساسية إلى معرفات وأولويات ومعايير قبول قابلة للتتبع.  "` | — |
+| [SRC-D17CE3D12F-L000008](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L8) | 8 | `"**قاعدة الدليل:** هذه المتطلبات لا تثبت وحدها أن Omarai يطبقها. الحالة تظل PROPOSED إلى أن يوجد تنفيذ واختبار/قياس مناسب."` | — |
+| [SRC-D17CE3D12F-L000009](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L9) | 9 | `""` | — |
+| [SRC-D17CE3D12F-L000010](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L10) | 10 | `"---"` | — |
+| [SRC-D17CE3D12F-L000011](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L11) | 11 | `""` | — |
+| [SRC-D17CE3D12F-L000012](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L12) | 12 | `"## 0. حدود الوثيقة وكيفية استخدامها"` | — |
+| [SRC-D17CE3D12F-L000013](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L13) | 13 | `""` | — |
+| [SRC-D17CE3D12F-L000014](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L14) | 14 | `"لا توجد قائمة عامة واحدة تحتوي حرفيًا على كل سياسة داخلية تستخدمها كل منصة عالمية كبيرة؛ كثير من السياسات التجارية والداخلية غير منشور، وتختلف الاحتياجات باختلاف المخاطر والمنتج والبنية والميزانية. لذلك لا تدّعي هذه الوثيقة معرفة الأسرار الداخلية للشركات. إنها تجمع متطلبات وممارسات عامة منشورة ومبادئ هندسية ناضجة، ثم تكيّفها مع Omarai."` | — |
+| [SRC-D17CE3D12F-L000015](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L15) | 15 | `""` | — |
+| [SRC-D17CE3D12F-L000016](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L16) | 16 | `"نموذج المرجع يشمل، بحسب الصلة: أطر Well-Architected لدى AWS وMicrosoft Azure وGoogle Cloud؛ ممارسات SRE؛ مبادئ التسليم البرمجي المستمر؛ OWASP لتطبيقات الويب وواجهات API والذكاء الاصطناعي؛ أطر NIST للأمن والخصوصية وتطوير البرمجيات والاستجابة للحوادث؛ OpenTelemetry؛ SLSA؛ WCAG؛ وFinOps. وجود اسم معيار هنا لا يعني التوافق معه."` | — |
+| [SRC-D17CE3D12F-L000017](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L17) | 17 | `""` | — |
+| [SRC-D17CE3D12F-L000018](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L18) | 18 | `"### 0.1 الكلمات الملزمة"` | — |
+| [SRC-D17CE3D12F-L000019](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L19) | 19 | `""` | — |
 | [SRC-D17CE3D12F-L000020](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L20) | 20 | `"- **MUST / إلزامي:** شرط قبول في النطاق الذي ينطبق عليه."` | — |
 | [SRC-D17CE3D12F-L000021](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L21) | 21 | `"- **SHOULD / افتراضيًا:** يطبّق ما لم يوثق سبب استثناء معقول وموافقة مناسبة."` | — |
 | [SRC-D17CE3D12F-L000022](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L22) | 22 | `"- **MAY / عند الحاجة:** خيار مشروط بالقيمة والدليل."` | — |
@@ -764,55 +825,3 @@
 | [SRC-D17CE3D12F-L000765](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L765) | 765 | `""` | — |
 | [SRC-D17CE3D12F-L000766](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L766) | 766 | `"1. MUST تحليل النظام كتدفق عمل كامل لا كمجموعة ملفات منفصلة؛ فقد يكون السبب الجذري للفشل بين المكونات لا داخل وظيفة واحدة."` | — |
 | [SRC-D17CE3D12F-L000767](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L767) | 767 | `"2. SHOULD رسم خريطة تدفق الطلب والبيانات والاعتماديات الخارجية لكل رحلة حرجة، وتحديد أين تُنشأ البيانات وأين تُتحقق وأين تُخزن وأين تُعرض."` | — |
-| [SRC-D17CE3D12F-L000768](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L768) | 768 | `"3. MUST تحديد ما إذا كان كل مكوّن حرجًا أو اختياريًا، وتأثير فشله، وخيار التدهور عند تعذره."` | — |
-| [SRC-D17CE3D12F-L000769](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L769) | 769 | `"4. SHOULD استخدام خريطة الاعتماديات لكشف النقاط المشتركة التي قد تسبب فشلًا متسلسلًا، مثل موفر واحد أو مخزن واحد أو إعداد واحد."` | — |
-| [SRC-D17CE3D12F-L000770](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L770) | 770 | `"5. MUST تحديد مصدر الحقيقة والمسؤولية عن كل قرار حساس؛ لا تتوزع الصلاحية بين الواجهة والنموذج والأداة بصورة مبهمة."` | — |
-| [SRC-D17CE3D12F-L000771](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L771) | 771 | `"6. MUST التحقق من حدود الثقة عبر كل انتقال بيانات، لا عند نقطة الدخول فقط."` | — |
-| [SRC-D17CE3D12F-L000772](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L772) | 772 | `"7. SHOULD تحليل أثر التغيير خارج الملف الذي عُدل: العقود، والذاكرة، والتخزين، والسجلات، والتكلفة، والسلوك الظاهر للمستخدم."` | — |
-| [SRC-D17CE3D12F-L000773](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L773) | 773 | `"8. MUST أن يكون لكل مسار حرج تعريف صريح للنجاح الجزئي والفشل الجزئي والنجاح الكامل."` | — |
-| [SRC-D17CE3D12F-L000774](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L774) | 774 | `"9. SHOULD استخدام نموذج سياقي ومخطط حاويات/مكونات (مثل C4 أو بديل مبسط) عند وجود تعقيد يستدعي ذلك؛ لا يُطلب إنشاء رسومات ضخمة لبرنامج صغير."` | — |
-| [SRC-D17CE3D12F-L000775](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L775) | 775 | `"10. MUST تحديث الخريطة أو وصف المعمارية عندما يصبح الرسم الحالي مضللًا بسبب تغيير مؤثر."` | — |
-| [SRC-D17CE3D12F-L000776](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L776) | 776 | `""` | — |
-| [SRC-D17CE3D12F-L000777](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L777) | 777 | `"## 52. تحليل المخاطر والتهديدات وسيناريوهات الإساءة"` | — |
-| [SRC-D17CE3D12F-L000778](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L778) | 778 | `""` | — |
-| [SRC-D17CE3D12F-L000779](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L779) | 779 | `"1. MUST إجراء Threat Modeling للتغييرات التي تضيف سطح وصول أو بيانات حساسة أو صلاحيات أو اتصالًا خارجيًا أو قدرة تنفيذ."` | — |
-| [SRC-D17CE3D12F-L000780](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L780) | 780 | `"2. SHOULD تحديد الأصول والخصوم وحدود الثقة ومسارات الدخول والأثر المتوقع، باستخدام STRIDE أو أسلوب مكافئ عند فائدته."` | — |
-| [SRC-D17CE3D12F-L000781](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L781) | 781 | `"3. MUST إضافة Abuse Cases بجانب Use Cases: كيف يمكن استخدام القدرة بطريقة صحيحة ظاهريًا لكنها تستنزف الموارد أو تسرّب بيانات أو تتجاوز السياسة؟"` | — |
-| [SRC-D17CE3D12F-L000782](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L782) | 782 | `"4. MUST تقييم المخاطر عبر الشدة، واحتمال الحدوث، والتعرض، وصعوبة الكشف، وعدم اليقين في الأدلة؛ وتوثيق ما يظل مقبولًا ومن وافق عليه."` | — |
-| [SRC-D17CE3D12F-L000783](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L783) | 783 | `"5. MUST إعطاء الأولوية للسيناريوهات التي تمس أسرارًا أو خصوصية أو تنفيذ فعل خارجي أو بيانات عدة مستخدمين أو تكلفة غير محدودة."` | — |
-| [SRC-D17CE3D12F-L000784](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L784) | 784 | `"6. SHOULD مراجعة أثر التغيرات على الخصم الداخلي أو الحساب المخترق، لا المهاجم الخارجي فقط."` | — |
-| [SRC-D17CE3D12F-L000785](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L785) | 785 | `"7. MUST تحويل حوادث وعيوب الإنتاج والحالات الهجومية المثبتة إلى اختبارات انحدار أو ضوابط منع تكرار."` | — |
-| [SRC-D17CE3D12F-L000786](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L786) | 786 | `"8. MUST عدم اعتبار وجود فحص آلي أو قائمة عامة إلغاءً للضرورة من التفكير في التهديدات الخاصة بالنظام."` | — |
-| [SRC-D17CE3D12F-L000787](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L787) | 787 | `"9. SHOULD مراجعة التهديدات دوريًا وعند تغيير مزود أو منصة استضافة أو نموذج أو صلاحيات أو نموذج بيانات."` | — |
-| [SRC-D17CE3D12F-L000788](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L788) | 788 | `"10. MUST توثيق الافتراضات التي لو كانت خاطئة ستبطل الحماية، وتحديد طريقة للتحقق منها."` | — |
-| [SRC-D17CE3D12F-L000789](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L789) | 789 | `""` | — |
-| [SRC-D17CE3D12F-L000790](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L790) | 790 | `"## 53. Zero Trust وهوية المكونات والاتصالات الداخلية"` | — |
-| [SRC-D17CE3D12F-L000791](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L791) | 791 | `""` | — |
-| [SRC-D17CE3D12F-L000792](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L792) | 792 | `"ينطبق هذا القسم بدرجة تتناسب مع حقيقة أن النظام قد يبدأ بعملية واحدة ثم ينمو."` | — |
-| [SRC-D17CE3D12F-L000793](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L793) | 793 | `""` | — |
-| [SRC-D17CE3D12F-L000794](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L794) | 794 | `"1. MUST ألا تعتبر الشبكة الداخلية أو اتصالًا سابقًا أو اسم خدمة ضمانًا كافيًا للثقة."` | — |
-| [SRC-D17CE3D12F-L000795](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L795) | 795 | `"2. MUST التحقق من هوية الطرف وصلاحيات العملية عند حدود الموارد الحساسة."` | — |
-| [SRC-D17CE3D12F-L000796](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L796) | 796 | `"3. SHOULD استخدام هويات منفصلة للخدمات والعمال بدل مشاركة مفتاح إداري شامل."` | — |
-| [SRC-D17CE3D12F-L000797](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L797) | 797 | `"4. MUST تحديد صلاحيات egress: ما النطاقات والبروتوكولات التي تستطيع كل أداة الوصول إليها؟ الاتصال الخارجي ليس حقًا مفتوحًا لكل مكوّن."` | — |
-| [SRC-D17CE3D12F-L000798](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L798) | 798 | `"5. MUST منع انتقال صلاحيات المستخدم تلقائيًا إلى الأداة أو النموذج دون تفويض صريح وسياق قابل للتحقق."` | — |
-| [SRC-D17CE3D12F-L000799](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L799) | 799 | `"6. SHOULD استخدام رموز قصيرة العمر أو هوية workload حيث تدعم المنصة ذلك."` | — |
-| [SRC-D17CE3D12F-L000800](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L800) | 800 | `"7. MUST تسجيل محاولات الوصول المرفوضة بشكل مفيد دون تسجيل الأسرار أو المحتوى الحساس."` | — |
-| [SRC-D17CE3D12F-L000801](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L801) | 801 | `"8. MUST أن يكون فشل التحقق من الهوية أو السياسة سببًا للرفض، لا سببًا لتخفيض الحماية."` | — |
-| [SRC-D17CE3D12F-L000802](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L802) | 802 | `"9. SHOULD مراجعة الصلاحيات دوريًا وإزالة الوصول الذي لم تعد تحتاج إليه المكونات."` | — |
-| [SRC-D17CE3D12F-L000803](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L803) | 803 | `"10. MUST ألا تدّعي المنظومة تطبيق Zero Trust لمجرد ذكر المصطلح؛ يُوثق النطاق والضوابط المختبرة."` | — |
-| [SRC-D17CE3D12F-L000804](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L804) | 804 | `""` | — |
-| [SRC-D17CE3D12F-L000805](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L805) | 805 | `"## 54. التوافر الجغرافي وتعدد المناطق وتوطين البيانات"` | — |
-| [SRC-D17CE3D12F-L000806](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L806) | 806 | `""` | — |
-| [SRC-D17CE3D12F-L000807](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L807) | 807 | `"هذا مستوى تطبيقي مشروط بالحاجة. لا يُطلب من نسخة أولية على استضافة مجانية بناء multi-region قبل وجود متطلبات تستدعي ذلك."` | — |
-| [SRC-D17CE3D12F-L000808](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L808) | 808 | `""` | — |
-| [SRC-D17CE3D12F-L000809](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L809) | 809 | `"1. MUST تحديد نقطة الفشل الواحدة المعروفة في كل قدرة حرجة، بما في ذلك التطبيق والمخزن وDNS والاستضافة والموفر الخارجي وحساب المالك."` | — |
-| [SRC-D17CE3D12F-L000810](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L810) | 810 | `"2. SHOULD اختيار نمط الاستعادة وفق RTO/RPO والتكلفة وقيود مزودي الخدمة ومكان البيانات."` | — |
-| [SRC-D17CE3D12F-L000811](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L811) | 811 | `"3. MUST تقييم أثر النسخ المتعدد على اتساق البيانات والتكرار والكمون والصلاحيات والفوترة."` | — |
-| [SRC-D17CE3D12F-L000812](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L812) | 812 | `"4. SHOULD التمييز بين active-active وactive-passive والنسخ الاحتياطي والاستعادة؛ فهذه حلول مختلفة لا تُجمع في وصف واحد."` | — |
-| [SRC-D17CE3D12F-L000813](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L813) | 813 | `"5. MUST ألا تُفعّل كتابة متعددة المناطق لبيانات مشتركة دون سياسة تعارض واتساق مُختبرة."` | — |
-| [SRC-D17CE3D12F-L000814](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L814) | 814 | `"6. MUST تحديد متطلبات إقامة البيانات أو نقلها عبر الحدود عند انطباقها، وربط اختيار منطقة التشغيل بها."` | — |
-| [SRC-D17CE3D12F-L000815](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L815) | 815 | `"7. SHOULD اختبار مسار التعافي عند انقطاع مكوّن أو منطقة متى كانت البنية تدعم ذلك وبما لا يعرض بيانات حقيقية للخطر."` | — |
-| [SRC-D17CE3D12F-L000816](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L816) | 816 | `"8. MUST عدم إعلان التوافر العالي من مجرد تشغيل نسختين إذا كانت النسختان تشتركان في نقطة فشل حاسمة."` | — |
-| [SRC-D17CE3D12F-L000817](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L817) | 817 | `"9. SHOULD تقييم الاعتماد الجغرافي على موفر بحث أو نموذج وخطة التدهور عند تعطل المنطقة أو الخدمة."` | — |
-| [SRC-D17CE3D12F-L000818](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L818) | 818 | `"10. MUST أن تكون تكلفة التكرار الجغرافي مبررة بأهداف خدمة ومخاطر واضحة وموافقة صاحب المشروع."` | — |
-| [SRC-D17CE3D12F-L000819](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L819) | 819 | `""` | — |

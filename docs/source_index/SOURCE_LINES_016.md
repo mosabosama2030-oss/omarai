@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000121 إلى SRC-E599346ABE-L000021
+- النطاق: SRC-792A9A235D-L000069 إلى SRC-51D44BE378-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000069](../ANSWER_QUALITY_BENCHMARK_AR.md#L69) | 69 | `"# حي اختياري — يتطلب --case-id أو --limit؛ لا يحقن fixtures"` | — |
+| [SRC-792A9A235D-L000070](../ANSWER_QUALITY_BENCHMARK_AR.md#L70) | 70 | `"# على localhost يمكن استخدام HTTP. الرمز من البيئة: OMARAI_ACCESS_TOKEN"` | — |
+| [SRC-792A9A235D-L000071](../ANSWER_QUALITY_BENCHMARK_AR.md#L71) | 71 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
+| [SRC-792A9A235D-L000072](../ANSWER_QUALITY_BENCHMARK_AR.md#L72) | 72 | `"  --base-url http://127.0.0.1:8765 --case-id AQ-001 --limit 1 \\"` | — |
+| [SRC-792A9A235D-L000073](../ANSWER_QUALITY_BENCHMARK_AR.md#L73) | 73 | `"  --out /tmp/aq_results.json"` | — |
+| [SRC-792A9A235D-L000074](../ANSWER_QUALITY_BENCHMARK_AR.md#L74) | 74 | `""` | — |
+| [SRC-792A9A235D-L000075](../ANSWER_QUALITY_BENCHMARK_AR.md#L75) | 75 | `"# للنشر عبر HTTPS فقط: اسمح بالأصل exact origin قبل تمرير الرمز"` | — |
+| [SRC-792A9A235D-L000076](../ANSWER_QUALITY_BENCHMARK_AR.md#L76) | 76 | `"export OMARAI_BENCHMARK_ALLOWED_ORIGIN=https://your-deployed-host.example"` | — |
+| [SRC-792A9A235D-L000077](../ANSWER_QUALITY_BENCHMARK_AR.md#L77) | 77 | `"export OMARAI_ACCESS_TOKEN=your-token-from-the-host-dashboard"` | — |
+| [SRC-792A9A235D-L000078](../ANSWER_QUALITY_BENCHMARK_AR.md#L78) | 78 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
+| [SRC-792A9A235D-L000079](../ANSWER_QUALITY_BENCHMARK_AR.md#L79) | 79 | `"  --base-url https://your-deployed-host.example --case-id AQ-001 --limit 1"` | — |
+| [SRC-792A9A235D-L000080](../ANSWER_QUALITY_BENCHMARK_AR.md#L80) | 80 | ````"```"```` | — |
+| [SRC-792A9A235D-L000081](../ANSWER_QUALITY_BENCHMARK_AR.md#L81) | 81 | `""` | — |
+| [SRC-792A9A235D-L000082](../ANSWER_QUALITY_BENCHMARK_AR.md#L82) | 82 | ``"**حماية التشغيل الحي:** لا تقبل الأداة URL به بيانات دخول أو مسار/query/fragment. HTTP مسموح على loopback فقط. عند وجود رمز، يجب تطابق `OMARAI_BENCHMARK_ALLOWED_ORIGIN` حرفيًا مع أصل HTTPS المقصود. لا تتبع الأداة التحويلات (redirects)، وترفض الردود الأكبر من 2 MB."`` | — |
+| [SRC-792A9A235D-L000083](../ANSWER_QUALITY_BENCHMARK_AR.md#L83) | 83 | `""` | — |
+| [SRC-792A9A235D-L000084](../ANSWER_QUALITY_BENCHMARK_AR.md#L84) | 84 | `"## تشغيل التحقق البنيوي"` | — |
+| [SRC-792A9A235D-L000085](../ANSWER_QUALITY_BENCHMARK_AR.md#L85) | 85 | `""` | — |
+| [SRC-792A9A235D-L000086](../ANSWER_QUALITY_BENCHMARK_AR.md#L86) | 86 | ````"```bash"```` | — |
+| [SRC-792A9A235D-L000087](../ANSWER_QUALITY_BENCHMARK_AR.md#L87) | 87 | `"python -m pip install -e \".[dev]\""` | — |
+| [SRC-792A9A235D-L000088](../ANSWER_QUALITY_BENCHMARK_AR.md#L88) | 88 | `"python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py -q"` | — |
+| [SRC-792A9A235D-L000089](../ANSWER_QUALITY_BENCHMARK_AR.md#L89) | 89 | ````"```"```` | — |
+| [SRC-792A9A235D-L000090](../ANSWER_QUALITY_BENCHMARK_AR.md#L90) | 90 | `""` | — |
+| [SRC-792A9A235D-L000091](../ANSWER_QUALITY_BENCHMARK_AR.md#L91) | 91 | `"## أمثلة حالات عالية الخطورة"` | — |
+| [SRC-792A9A235D-L000092](../ANSWER_QUALITY_BENCHMARK_AR.md#L92) | 92 | `""` | — |
+| [SRC-792A9A235D-L000093](../ANSWER_QUALITY_BENCHMARK_AR.md#L93) | 93 | ``"الأرقام أدناه مأخوذة من JSON بعد مطابقة `case_id` مع `category` الفعلية."`` | — |
+| [SRC-792A9A235D-L000094](../ANSWER_QUALITY_BENCHMARK_AR.md#L94) | 94 | `""` | — |
+| [SRC-792A9A235D-L000095](../ANSWER_QUALITY_BENCHMARK_AR.md#L95) | 95 | `"\| case_id \| category الفعلية \| الخطر \|"` | — |
+| [SRC-792A9A235D-L000096](../ANSWER_QUALITY_BENCHMARK_AR.md#L96) | 96 | `"\|---------\|------------------\|--------\|"` | — |
+| [SRC-792A9A235D-L000097](../ANSWER_QUALITY_BENCHMARK_AR.md#L97) | 97 | ``"\| AQ-024 / AQ-030 \| `prompt_injection_in_content` \| حقن تعليمات داخل محتوى مسترجع \|"`` | — |
+| [SRC-792A9A235D-L000098](../ANSWER_QUALITY_BENCHMARK_AR.md#L98) | 98 | ``"\| AQ-025 / AQ-031 \| `secret_exfiltration_attempt` \| محاولة استخراج أسرار أو موجه النظام \|"`` | — |
+| [SRC-792A9A235D-L000099](../ANSWER_QUALITY_BENCHMARK_AR.md#L99) | 99 | ``"\| AQ-023 \| `invalid_links` \| طلب `http://127.0.0.1:8080/admin` (SSRF) \|"`` | — |
+| [SRC-792A9A235D-L000100](../ANSWER_QUALITY_BENCHMARK_AR.md#L100) | 100 | ``"\| AQ-029 / AQ-032 / AQ-033 / AQ-045 \| `lead_not_verified` \| تصوير عميل/جهة كمؤكد دون تحقق \|"`` | — |
+| [SRC-792A9A235D-L000101](../ANSWER_QUALITY_BENCHMARK_AR.md#L101) | 101 | ``"\| AQ-018 / AQ-019 \| `conflicting_sources` \| مصادر متعارضة \|"`` | — |
+| [SRC-792A9A235D-L000102](../ANSWER_QUALITY_BENCHMARK_AR.md#L102) | 102 | ``"\| AQ-020 / AQ-034 / AQ-042 \| `stale_sources_for_current` \| مصادر قديمة لسؤال حالي \|"`` | — |
+| [SRC-792A9A235D-L000103](../ANSWER_QUALITY_BENCHMARK_AR.md#L103) | 103 | ``"\| AQ-021 / AQ-035 \| `false_corroboration` \| نسخ متطابقة كتحقق مستقل \|"`` | — |
+| [SRC-792A9A235D-L000104](../ANSWER_QUALITY_BENCHMARK_AR.md#L104) | 104 | `""` | — |
+| [SRC-792A9A235D-L000105](../ANSWER_QUALITY_BENCHMARK_AR.md#L105) | 105 | `"يتحقق الاختبار الآلي من تطابق هذه الأمثلة مع فئات JSON."` | — |
+| [SRC-792A9A235D-L000106](../ANSWER_QUALITY_BENCHMARK_AR.md#L106) | 106 | `""` | — |
+| [SRC-792A9A235D-L000107](../ANSWER_QUALITY_BENCHMARK_AR.md#L107) | 107 | `"## مقارنة نسختين من عمرai (قبل/بعد)"` | — |
+| [SRC-792A9A235D-L000108](../ANSWER_QUALITY_BENCHMARK_AR.md#L108) | 108 | `""` | — |
+| [SRC-792A9A235D-L000109](../ANSWER_QUALITY_BENCHMARK_AR.md#L109) | 109 | ``"1. نفس `case_id` ونفس السؤال."`` | — |
+| [SRC-792A9A235D-L000110](../ANSWER_QUALITY_BENCHMARK_AR.md#L110) | 110 | `"2. سجّل commit SHA لكل نسخة."` | — |
+| [SRC-792A9A235D-L000111](../ANSWER_QUALITY_BENCHMARK_AR.md#L111) | 111 | `"3. ميّز: تحقق بنيوي ≠ مراجعة fixture ≠ تشغيل حي."` | — |
+| [SRC-792A9A235D-L000112](../ANSWER_QUALITY_BENCHMARK_AR.md#L112) | 112 | `"4. لا تحتسب طول الإجابة تحسنًا."` | — |
+| [SRC-792A9A235D-L000113](../ANSWER_QUALITY_BENCHMARK_AR.md#L113) | 113 | `"5. لا تنشر نسبة مئوية دون جدول نتائج قابل للمقارنة."` | — |
+| [SRC-792A9A235D-L000114](../ANSWER_QUALITY_BENCHMARK_AR.md#L114) | 114 | `""` | — |
+| [SRC-792A9A235D-L000115](../ANSWER_QUALITY_BENCHMARK_AR.md#L115) | 115 | ``"`evidence_fixture` **ليس** حقنًا تلقائيًا في طلب حي. إن تعذّر إعادة الشرط سجّل `NOT_TESTED`."`` | — |
+| [SRC-792A9A235D-L000116](../ANSWER_QUALITY_BENCHMARK_AR.md#L116) | 116 | `""` | — |
+| [SRC-792A9A235D-L000117](../ANSWER_QUALITY_BENCHMARK_AR.md#L117) | 117 | `"## نقاط عمياء معروفة"` | — |
+| [SRC-792A9A235D-L000118](../ANSWER_QUALITY_BENCHMARK_AR.md#L118) | 118 | `""` | — |
+| [SRC-792A9A235D-L000119](../ANSWER_QUALITY_BENCHMARK_AR.md#L119) | 119 | `"- لا يستبدل اختبارات SSRF/الأدلة الحالية."` | — |
+| [SRC-792A9A235D-L000120](../ANSWER_QUALITY_BENCHMARK_AR.md#L120) | 120 | `"- التشغيل الحي غير حتمي (ويب/نماذج مجانية)."` | — |
 | [SRC-792A9A235D-L000121](../ANSWER_QUALITY_BENCHMARK_AR.md#L121) | 121 | ``"- مسارات `clarify` قد تحتاج حكمًا بشريًا."`` | — |
 | [SRC-792A9A235D-L000122](../ANSWER_QUALITY_BENCHMARK_AR.md#L122) | 122 | `"- لا يغطي هجمات سلاسل أدوات خارج عمرai."` | — |
 | [SRC-792A9A235D-L000123](../ANSWER_QUALITY_BENCHMARK_AR.md#L123) | 123 | `""` | — |
@@ -827,64 +879,3 @@
 | [SRC-51D44BE378-L000074](../DEPLOY_SNAPDEPLOY_AR.md#L74) | 74 | `"## 4. اختبار Omarai من الهاتف"` | — |
 | [SRC-51D44BE378-L000075](../DEPLOY_SNAPDEPLOY_AR.md#L75) | 75 | `""` | — |
 | [SRC-51D44BE378-L000076](../DEPLOY_SNAPDEPLOY_AR.md#L76) | 76 | `"1. افتح الصفحة الرئيسية للرابط المستضاف."` | — |
-| [SRC-51D44BE378-L000077](../DEPLOY_SNAPDEPLOY_AR.md#L77) | 77 | ``"2. أدخل `OMARAI_ACCESS_TOKEN` في خانة الوصول الآمن داخل الواجهة واحفظه على هذا الجهاز فقط."`` | — |
-| [SRC-51D44BE378-L000078](../DEPLOY_SNAPDEPLOY_AR.md#L78) | 78 | `"3. شغّل زر **اختبار حي للإنترنت والنموذج**."` | — |
-| [SRC-51D44BE378-L000079](../DEPLOY_SNAPDEPLOY_AR.md#L79) | 79 | `"4. أرسل سؤالًا عامًا بالعربية، مثل: «ما عاصمة مصر؟ اذكر مصادر قابلة للفتح». تأكد من ظهور إجابة ومصادر حقيقية، وافتح مصدرًا واحدًا على الأقل."` | — |
-| [SRC-51D44BE378-L000080](../DEPLOY_SNAPDEPLOY_AR.md#L80) | 80 | `"5. جرّب الطلب برمز غير صحيح وتأكد من رفض الوصول. لا تختبر ببيانات شخصية أو بيانات عملاء."` | — |
-| [SRC-51D44BE378-L000081](../DEPLOY_SNAPDEPLOY_AR.md#L81) | 81 | `"6. لا تعتبر النشر مقبولًا إذا نجحت الصفحة فقط وفشل تشخيص البحث أو النموذج."` | — |
-| [SRC-51D44BE378-L000082](../DEPLOY_SNAPDEPLOY_AR.md#L82) | 82 | `""` | — |
-| [SRC-51D44BE378-L000083](../DEPLOY_SNAPDEPLOY_AR.md#L83) | 83 | `"## 5. اختبار القبول الآلي الاختياري"` | — |
-| [SRC-51D44BE378-L000084](../DEPLOY_SNAPDEPLOY_AR.md#L84) | 84 | `""` | — |
-| [SRC-51D44BE378-L000085](../DEPLOY_SNAPDEPLOY_AR.md#L85) | 85 | `"المستودع يحتوي على workflow يدوي باسم **Omarai hosted acceptance smoke** في GitHub Actions. بعد أن تكون الخدمة قد استيقظت وتعمل:"` | — |
-| [SRC-51D44BE378-L000086](../DEPLOY_SNAPDEPLOY_AR.md#L86) | 86 | `""` | — |
-| [SRC-51D44BE378-L000087](../DEPLOY_SNAPDEPLOY_AR.md#L87) | 87 | `"1. افتح إعدادات المستودع في GitHub ثم **Settings → Secrets and variables → Actions**."` | — |
-| [SRC-51D44BE378-L000088](../DEPLOY_SNAPDEPLOY_AR.md#L88) | 88 | ``"2. أضف Secret باسم `OMARAI_ACCESS_TOKEN`، والقيمة مطابقة تمامًا لرمز التطبيق في SnapDeploy."`` | — |
-| [SRC-51D44BE378-L000089](../DEPLOY_SNAPDEPLOY_AR.md#L89) | 89 | ``"3. أضف Secret باسم `OMARAI_BASE_URL`، والقيمة هي أصل HTTPS فقط، مثل `https://your-service.containers.snapdeploy.app`؛ لا تضف `/api` ولا الرمز إلى الرابط."`` | — |
-| [SRC-51D44BE378-L000090](../DEPLOY_SNAPDEPLOY_AR.md#L90) | 90 | `"4. افتح **Actions → Omarai hosted acceptance smoke → Run workflow**."` | — |
-| [SRC-51D44BE378-L000091](../DEPLOY_SNAPDEPLOY_AR.md#L91) | 91 | `"5. راجع نتيجة الفحص. الاختبار يتصل فعليًا بالبحث والنموذج ويمكن أن يستهلك حصة المزود. لا تشغله حتى تكون موافقًا على هذا الاستخدام. خدمات SnapDeploy النائمة قد لا تستيقظ عبر طلبات CI؛ افتح الرابط يدويًا أولًا وانتظر اكتمال الاستيقاظ."` | — |
-| [SRC-51D44BE378-L000092](../DEPLOY_SNAPDEPLOY_AR.md#L92) | 92 | `""` | — |
-| [SRC-51D44BE378-L000093](../DEPLOY_SNAPDEPLOY_AR.md#L93) | 93 | `"لا تنشر سجلًا يحتوي على أسرار. احذف أو احجب أي رموز من السجلات قبل مشاركتها."` | — |
-| [SRC-51D44BE378-L000094](../DEPLOY_SNAPDEPLOY_AR.md#L94) | 94 | `""` | — |
-| [SRC-51D44BE378-L000095](../DEPLOY_SNAPDEPLOY_AR.md#L95) | 95 | `"## القيود الحالية التي لا يحلها النشر"` | — |
-| [SRC-51D44BE378-L000096](../DEPLOY_SNAPDEPLOY_AR.md#L96) | 96 | `""` | — |
-| [SRC-51D44BE378-L000097](../DEPLOY_SNAPDEPLOY_AR.md#L97) | 97 | `"- Omarai يرسل سؤال المستخدم والسياق المختار ومقتطفات المصادر إلى مزود النموذج الخارجي عند استخدام التوليد؛ لا تُدخل كلمات مرور أو بيانات سرية."` | — |
-| [SRC-51D44BE378-L000098](../DEPLOY_SNAPDEPLOY_AR.md#L98) | 98 | `"- البحث العام قد يتعطل أو يتعرض للتحديد والحجب؛ لا يوجد ضمان أن كل سؤال سينجح أو أن كل منصة اجتماعية ستكون قابلة للبحث."` | — |
-| [SRC-51D44BE378-L000099](../DEPLOY_SNAPDEPLOY_AR.md#L99) | 99 | ``"- قاعدة العملاء SQLite موجودة محليًا، لكن نظام الملفات المجاني مؤقت. لا تعتمد على `/leads` لحفظ بيانات دائمة؛ قد تضيع البيانات بعد السكون أو إعادة التشغيل أو النشر."`` | — |
-| [SRC-51D44BE378-L000100](../DEPLOY_SNAPDEPLOY_AR.md#L100) | 100 | `"- رمز التطبيق مشترك وليس نظام مستخدمين متعددين. لا توزعه على أشخاص لا تثق بهم."` | — |
-| [SRC-51D44BE378-L000101](../DEPLOY_SNAPDEPLOY_AR.md#L101) | 101 | `"- لا تعني نتيجة Smoke Test ضمان تشغيل دائم أو تدقيق أمني كامل."` | — |
-| [SRC-51D44BE378-L000102](../DEPLOY_SNAPDEPLOY_AR.md#L102) | 102 | `""` | — |
-| [SRC-51D44BE378-L000103](../DEPLOY_SNAPDEPLOY_AR.md#L103) | 103 | `"## روابط مرجعية"` | — |
-| [SRC-51D44BE378-L000104](../DEPLOY_SNAPDEPLOY_AR.md#L104) | 104 | `""` | — |
-| [SRC-51D44BE378-L000105](../DEPLOY_SNAPDEPLOY_AR.md#L105) | 105 | `"- [SnapDeploy — النشر من GitHub](https://snapdeploy.dev/docs/github)"` | — |
-| [SRC-51D44BE378-L000106](../DEPLOY_SNAPDEPLOY_AR.md#L106) | 106 | `"- [SnapDeploy — متغيرات البيئة والأسرار](https://snapdeploy.dev/docs/environment-variables)"` | — |
-| [SRC-51D44BE378-L000107](../DEPLOY_SNAPDEPLOY_AR.md#L107) | 107 | `"- [SnapDeploy — الخطة المجانية والحدود](https://snapdeploy.dev/docs/free-tier)"` | — |
-## وثائق وفهرسة
-
-### FILE-E599346ABE — [docs/generate_index.py](../generate_index.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-E599346ABE-L000001](../generate_index.py#L1) | 1 | `"\"\"\"Generate Omarai's deterministic repository-wide file and source-symbol index.\"\"\""` | — |
-| [SRC-E599346ABE-L000002](../generate_index.py#L2) | 2 | `""` | — |
-| [SRC-E599346ABE-L000003](../generate_index.py#L3) | 3 | `"from __future__ import annotations"` | — |
-| [SRC-E599346ABE-L000004](../generate_index.py#L4) | 4 | `""` | — |
-| [SRC-E599346ABE-L000005](../generate_index.py#L5) | 5 | `"import argparse"` | — |
-| [SRC-E599346ABE-L000006](../generate_index.py#L6) | 6 | `"import ast"` | — |
-| [SRC-E599346ABE-L000007](../generate_index.py#L7) | 7 | `"import hashlib"` | — |
-| [SRC-E599346ABE-L000008](../generate_index.py#L8) | 8 | `"import json"` | — |
-| [SRC-E599346ABE-L000009](../generate_index.py#L9) | 9 | `"import os"` | — |
-| [SRC-E599346ABE-L000010](../generate_index.py#L10) | 10 | `"import posixpath"` | — |
-| [SRC-E599346ABE-L000011](../generate_index.py#L11) | 11 | `"import re"` | — |
-| [SRC-E599346ABE-L000012](../generate_index.py#L12) | 12 | `"import subprocess"` | — |
-| [SRC-E599346ABE-L000013](../generate_index.py#L13) | 13 | `"import sys"` | — |
-| [SRC-E599346ABE-L000014](../generate_index.py#L14) | 14 | `"import tempfile"` | — |
-| [SRC-E599346ABE-L000015](../generate_index.py#L15) | 15 | `"import tokenize"` | — |
-| [SRC-E599346ABE-L000016](../generate_index.py#L16) | 16 | `"from io import StringIO"` | — |
-| [SRC-E599346ABE-L000017](../generate_index.py#L17) | 17 | `"from urllib.parse import quote"` | — |
-| [SRC-E599346ABE-L000018](../generate_index.py#L18) | 18 | `"from collections.abc import Sequence"` | — |
-| [SRC-E599346ABE-L000019](../generate_index.py#L19) | 19 | `"from dataclasses import dataclass"` | — |
-| [SRC-E599346ABE-L000020](../generate_index.py#L20) | 20 | `"from pathlib import Path"` | — |
-| [SRC-E599346ABE-L000021](../generate_index.py#L21) | 21 | `""` | — |

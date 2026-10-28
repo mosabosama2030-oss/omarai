@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000822 إلى SRC-1AE03B9EC3-L001621
+- النطاق: SRC-1AE03B9EC3-L000770 إلى SRC-1AE03B9EC3-L001569
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000770](../../agents/web_agent.py#L770) | 770 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000771](../../agents/web_agent.py#L771) | 771 | `"    def _is_current_search_status_question(question: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L000772](../../agents/web_agent.py#L772) | 772 | `"        \"\"\"Recognize a question about whether this answer already used web search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000773](../../agents/web_agent.py#L773) | 773 | `"        value = _normalize_search_query(question).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000774](../../agents/web_agent.py#L774) | 774 | `"        asks_if_searched = any("` | — |
+| [SRC-1AE03B9EC3-L000775](../../agents/web_agent.py#L775) | 775 | `"            term in value"` | — |
+| [SRC-1AE03B9EC3-L000776](../../agents/web_agent.py#L776) | 776 | `"            for term in (\"بحثت\", \"اجريت بحث\", \"قمت بالبحث\", \"عملت بحث\", \"did you search\", \"did you browse\")"` | — |
+| [SRC-1AE03B9EC3-L000777](../../agents/web_agent.py#L777) | 777 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000778](../../agents/web_agent.py#L778) | 778 | `"        references_web = any("` | — |
+| [SRC-1AE03B9EC3-L000779](../../agents/web_agent.py#L779) | 779 | `"            term in value for term in (\"انترنت\", \"النت\", \"الويب\", \"ويب\", \"the web\", \"online\")"` | — |
+| [SRC-1AE03B9EC3-L000780](../../agents/web_agent.py#L780) | 780 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000781](../../agents/web_agent.py#L781) | 781 | `"        references_current_answer = any("` | — |
+| [SRC-1AE03B9EC3-L000782](../../agents/web_agent.py#L782) | 782 | `"            term in value"` | — |
+| [SRC-1AE03B9EC3-L000783](../../agents/web_agent.py#L783) | 783 | `"            for term in ("` | — |
+| [SRC-1AE03B9EC3-L000784](../../agents/web_agent.py#L784) | 784 | `"                \"اجاب\", \"الرد الحالي\", \"هذا السؤال\", \"هذه الاجابه\","` | — |
+| [SRC-1AE03B9EC3-L000785](../../agents/web_agent.py#L785) | 785 | `"                \"this answer\", \"this response\","` | — |
+| [SRC-1AE03B9EC3-L000786](../../agents/web_agent.py#L786) | 786 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000787](../../agents/web_agent.py#L787) | 787 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000788](../../agents/web_agent.py#L788) | 788 | `"        return asks_if_searched and references_web and references_current_answer"` | — |
+| [SRC-1AE03B9EC3-L000789](../../agents/web_agent.py#L789) | 789 | `""` | — |
+| [SRC-1AE03B9EC3-L000790](../../agents/web_agent.py#L790) | 790 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000791](../../agents/web_agent.py#L791) | 791 | `"    def _is_self_question(question: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L000792](../../agents/web_agent.py#L792) | 792 | `"        \"\"\"Recognize questions about Omarai itself so they do not need web search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000793](../../agents/web_agent.py#L793) | 793 | `"        value = _normalize_search_query(question).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000794](../../agents/web_agent.py#L794) | 794 | `"        capability_phrases = ("` | — |
+| [SRC-1AE03B9EC3-L000795](../../agents/web_agent.py#L795) | 795 | `"            \"كيف تستطيع مساعدتي\", \"ازاي تقدر تساعدني\", \"ازاي ممكن تساعدني\","` | — |
+| [SRC-1AE03B9EC3-L000796](../../agents/web_agent.py#L796) | 796 | `"            \"ماذا تستطيع ان تفعل\", \"ما الذي تستطيع فعله\", \"ايه اللي تقدر تعمله\","` | — |
+| [SRC-1AE03B9EC3-L000797](../../agents/web_agent.py#L797) | 797 | `"            \"what can you do\", \"how can you help me\","` | — |
+| [SRC-1AE03B9EC3-L000798](../../agents/web_agent.py#L798) | 798 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000799](../../agents/web_agent.py#L799) | 799 | `"        search_phrases = ("` | — |
+| [SRC-1AE03B9EC3-L000800](../../agents/web_agent.py#L800) | 800 | `"            \"كيف تبحث انت\", \"ازاي بتبحث\", \"كيف يعمل البحث عندك\","` | — |
+| [SRC-1AE03B9EC3-L000801](../../agents/web_agent.py#L801) | 801 | `"            \"ما المواقع التي تستخدمها\", \"ما محركات البحث التي تستخدمها\","` | — |
+| [SRC-1AE03B9EC3-L000802](../../agents/web_agent.py#L802) | 802 | `"            \"ما المواقع التي قدرت\", \"كيف تبحث على الانترنت\","` | — |
+| [SRC-1AE03B9EC3-L000803](../../agents/web_agent.py#L803) | 803 | `"            \"هل تستطيع البحث\", \"هل يمكنك البحث\", \"هل تقدر تبحث\","` | — |
+| [SRC-1AE03B9EC3-L000804](../../agents/web_agent.py#L804) | 804 | `"            \"هل تستطيع الوصول\", \"هل يمكنك الوصول\","` | — |
+| [SRC-1AE03B9EC3-L000805](../../agents/web_agent.py#L805) | 805 | `"            \"هل عندك اتصال بالانترنت\", \"هل عندك اتصال بالانترنيت\","` | — |
+| [SRC-1AE03B9EC3-L000806](../../agents/web_agent.py#L806) | 806 | `"            \"هل عندك انترنت\","` | — |
+| [SRC-1AE03B9EC3-L000807](../../agents/web_agent.py#L807) | 807 | `"            \"هل بحثت في الانترنت للاجابه الحاليه\","` | — |
+| [SRC-1AE03B9EC3-L000808](../../agents/web_agent.py#L808) | 808 | `"            \"هل بحثت علي الانترنت للاجابه الحاليه\","` | — |
+| [SRC-1AE03B9EC3-L000809](../../agents/web_agent.py#L809) | 809 | `"            \"هل بحثت في الانترنت لهذا السؤال\","` | — |
+| [SRC-1AE03B9EC3-L000810](../../agents/web_agent.py#L810) | 810 | `"            \"هل بحثت في النت للرد ده\","` | — |
+| [SRC-1AE03B9EC3-L000811](../../agents/web_agent.py#L811) | 811 | `"            \"did you search the web for this answer\","` | — |
+| [SRC-1AE03B9EC3-L000812](../../agents/web_agent.py#L812) | 812 | `"            \"did you browse for this response\","` | — |
+| [SRC-1AE03B9EC3-L000813](../../agents/web_agent.py#L813) | 813 | `"            \"how do you search\", \"which search engines\", \"what sites do you use\","` | — |
+| [SRC-1AE03B9EC3-L000814](../../agents/web_agent.py#L814) | 814 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000815](../../agents/web_agent.py#L815) | 815 | `"        return ("` | — |
+| [SRC-1AE03B9EC3-L000816](../../agents/web_agent.py#L816) | 816 | `"            any(phrase in value for phrase in capability_phrases + search_phrases)"` | — |
+| [SRC-1AE03B9EC3-L000817](../../agents/web_agent.py#L817) | 817 | `"            or WebAgent._is_current_search_status_question(question)"` | — |
+| [SRC-1AE03B9EC3-L000818](../../agents/web_agent.py#L818) | 818 | `"            or ("` | — |
+| [SRC-1AE03B9EC3-L000819](../../agents/web_agent.py#L819) | 819 | `"                \"omarai\" in value"` | — |
+| [SRC-1AE03B9EC3-L000820](../../agents/web_agent.py#L820) | 820 | `"                and any(token in value for token in (\"بحث\", \"موقع\", \"تستطيع\", \"تقدر\", \"تعمل\"))"` | — |
+| [SRC-1AE03B9EC3-L000821](../../agents/web_agent.py#L821) | 821 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000822](../../agents/web_agent.py#L822) | 822 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L000823](../../agents/web_agent.py#L823) | 823 | `""` | — |
 | [SRC-1AE03B9EC3-L000824](../../agents/web_agent.py#L824) | 824 | `"    @staticmethod"` | — |
@@ -764,55 +816,3 @@
 | [SRC-1AE03B9EC3-L001567](../../agents/web_agent.py#L1567) | 1567 | `"                \"systematic review\", \"arxiv\", \"openalex\", \"crossref\","` | — |
 | [SRC-1AE03B9EC3-L001568](../../agents/web_agent.py#L1568) | 1568 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001569](../../agents/web_agent.py#L1569) | 1569 | `"            if len(combined) < 3 and any(marker in search_query.casefold() for marker in academic_markers):"` | — |
-| [SRC-1AE03B9EC3-L001570](../../agents/web_agent.py#L1570) | 1570 | `"                academic_adapters: list[tuple[str, Any]] = ["` | — |
-| [SRC-1AE03B9EC3-L001571](../../agents/web_agent.py#L1571) | 1571 | `"                    (\"openalex\", lambda q: search_openalex(q, limit=3)),"` | — |
-| [SRC-1AE03B9EC3-L001572](../../agents/web_agent.py#L1572) | 1572 | `"                    (\"arxiv\", lambda q: search_arxiv(q, limit=3)),"` | — |
-| [SRC-1AE03B9EC3-L001573](../../agents/web_agent.py#L1573) | 1573 | `"                    (\"crossref\", lambda q: search_crossref(q, limit=3)),"` | — |
-| [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `""` | — |
-| [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `"                async def run_academic_all() -> list[list[dict[str, Any]]]:"` | — |
-| [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"                    return await asyncio.gather("` | — |
-| [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"                        *(run_one(name, method) for name, method in academic_adapters)"` | — |
-| [SRC-1AE03B9EC3-L001579](../../agents/web_agent.py#L1579) | 1579 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L001580](../../agents/web_agent.py#L1580) | 1580 | `""` | — |
-| [SRC-1AE03B9EC3-L001581](../../agents/web_agent.py#L1581) | 1581 | `"                provider_batches.extend(asyncio.run(run_academic_all()))"` | — |
-| [SRC-1AE03B9EC3-L001582](../../agents/web_agent.py#L1582) | 1582 | `"        except RuntimeError as exc:"` | — |
-| [SRC-1AE03B9EC3-L001583](../../agents/web_agent.py#L1583) | 1583 | `"            # This method is synchronous by contract; the HTTP server invokes it in worker threads."` | — |
-| [SRC-1AE03B9EC3-L001584](../../agents/web_agent.py#L1584) | 1584 | `"            raise RuntimeError(\"تعذر تشغيل مجدول موصلات البحث.\") from exc"` | — |
-| [SRC-1AE03B9EC3-L001585](../../agents/web_agent.py#L1585) | 1585 | `"        combined = [item for batch in provider_batches for item in batch]"` | — |
-| [SRC-1AE03B9EC3-L001586](../../agents/web_agent.py#L1586) | 1586 | `"        # De-duplicate repeated URLs before ranking/fusion."` | — |
-| [SRC-1AE03B9EC3-L001587](../../agents/web_agent.py#L1587) | 1587 | `"        unique: dict[str, dict[str, Any]] = {}"` | — |
-| [SRC-1AE03B9EC3-L001588](../../agents/web_agent.py#L1588) | 1588 | `"        for item in combined:"` | — |
-| [SRC-1AE03B9EC3-L001589](../../agents/web_agent.py#L1589) | 1589 | `"            key = item[\"url\"].split(\"#\", 1)[0].rstrip(\"/\")"` | — |
-| [SRC-1AE03B9EC3-L001590](../../agents/web_agent.py#L1590) | 1590 | `"            if key not in unique or len(str(item.get(\"snippet\") or \"\")) > len(str(unique[key].get(\"snippet\") or \"\")):"` | — |
-| [SRC-1AE03B9EC3-L001591](../../agents/web_agent.py#L1591) | 1591 | `"                unique[key] = item"` | — |
-| [SRC-1AE03B9EC3-L001592](../../agents/web_agent.py#L1592) | 1592 | `"        if not unique:"` | — |
-| [SRC-1AE03B9EC3-L001593](../../agents/web_agent.py#L1593) | 1593 | `"            raise RuntimeError(\"لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.\")"` | — |
-| [SRC-1AE03B9EC3-L001594](../../agents/web_agent.py#L1594) | 1594 | `"        return list(unique.values())"` | — |
-| [SRC-1AE03B9EC3-L001595](../../agents/web_agent.py#L1595) | 1595 | `""` | — |
-| [SRC-1AE03B9EC3-L001596](../../agents/web_agent.py#L1596) | 1596 | `"    def _reserve_search_call(self) -> None:"` | — |
-| [SRC-1AE03B9EC3-L001597](../../agents/web_agent.py#L1597) | 1597 | `"        \"\"\"Reserve one outbound search/social-provider request before network I/O.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001598](../../agents/web_agent.py#L1598) | 1598 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L001599](../../agents/web_agent.py#L1599) | 1599 | `"        if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L001600](../../agents/web_agent.py#L1600) | 1600 | `"            budget.reserve(\"search_calls\")"` | — |
-| [SRC-1AE03B9EC3-L001601](../../agents/web_agent.py#L1601) | 1601 | `""` | — |
-| [SRC-1AE03B9EC3-L001602](../../agents/web_agent.py#L1602) | 1602 | `"    def _search_brave(self, query: str) -> list[dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L001603](../../agents/web_agent.py#L1603) | 1603 | `"        \"\"\"Use Brave's official web-search API when the operator provides an API key.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001604](../../agents/web_agent.py#L1604) | 1604 | `"        api_key = os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001605](../../agents/web_agent.py#L1605) | 1605 | `"        if not api_key:"` | — |
-| [SRC-1AE03B9EC3-L001606](../../agents/web_agent.py#L1606) | 1606 | `"            return []"` | — |
-| [SRC-1AE03B9EC3-L001607](../../agents/web_agent.py#L1607) | 1607 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L001608](../../agents/web_agent.py#L1608) | 1608 | `"            import httpx"` | — |
-| [SRC-1AE03B9EC3-L001609](../../agents/web_agent.py#L1609) | 1609 | `"        except ImportError as exc:"` | — |
-| [SRC-1AE03B9EC3-L001610](../../agents/web_agent.py#L1610) | 1610 | `"            raise AgentDependencyError(\"حزمة httpx غير مثبتة.\") from exc"` | — |
-| [SRC-1AE03B9EC3-L001611](../../agents/web_agent.py#L1611) | 1611 | `"        is_arabic = bool(re.search(r\"[\\u0600-\\u06FF]\", query))"` | — |
-| [SRC-1AE03B9EC3-L001612](../../agents/web_agent.py#L1612) | 1612 | `"        response = httpx.get("` | — |
-| [SRC-1AE03B9EC3-L001613](../../agents/web_agent.py#L1613) | 1613 | `"            \"https://api.search.brave.com/res/v1/web/search\","` | — |
-| [SRC-1AE03B9EC3-L001614](../../agents/web_agent.py#L1614) | 1614 | `"            params={"` | — |
-| [SRC-1AE03B9EC3-L001615](../../agents/web_agent.py#L1615) | 1615 | `"                \"q\": query[:600],"` | — |
-| [SRC-1AE03B9EC3-L001616](../../agents/web_agent.py#L1616) | 1616 | `"                \"count\": MAX_PROVIDER_RESULTS,"` | — |
-| [SRC-1AE03B9EC3-L001617](../../agents/web_agent.py#L1617) | 1617 | `"                \"country\": \"EG\" if is_arabic else \"US\","` | — |
-| [SRC-1AE03B9EC3-L001618](../../agents/web_agent.py#L1618) | 1618 | `"                \"search_lang\": \"ar\" if is_arabic else \"en\","` | — |
-| [SRC-1AE03B9EC3-L001619](../../agents/web_agent.py#L1619) | 1619 | `"                \"extra_snippets\": \"true\","` | — |
-| [SRC-1AE03B9EC3-L001620](../../agents/web_agent.py#L1620) | 1620 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001621](../../agents/web_agent.py#L1621) | 1621 | `"            headers={"` | — |

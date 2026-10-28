@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001622 إلى SRC-1AE03B9EC3-L002421
+- النطاق: SRC-1AE03B9EC3-L001570 إلى SRC-1AE03B9EC3-L002369
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001570](../../agents/web_agent.py#L1570) | 1570 | `"                academic_adapters: list[tuple[str, Any]] = ["` | — |
+| [SRC-1AE03B9EC3-L001571](../../agents/web_agent.py#L1571) | 1571 | `"                    (\"openalex\", lambda q: search_openalex(q, limit=3)),"` | — |
+| [SRC-1AE03B9EC3-L001572](../../agents/web_agent.py#L1572) | 1572 | `"                    (\"arxiv\", lambda q: search_arxiv(q, limit=3)),"` | — |
+| [SRC-1AE03B9EC3-L001573](../../agents/web_agent.py#L1573) | 1573 | `"                    (\"crossref\", lambda q: search_crossref(q, limit=3)),"` | — |
+| [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"                ]"` | — |
+| [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `""` | — |
+| [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `"                async def run_academic_all() -> list[list[dict[str, Any]]]:"` | — |
+| [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"                    return await asyncio.gather("` | — |
+| [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"                        *(run_one(name, method) for name, method in academic_adapters)"` | — |
+| [SRC-1AE03B9EC3-L001579](../../agents/web_agent.py#L1579) | 1579 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L001580](../../agents/web_agent.py#L1580) | 1580 | `""` | — |
+| [SRC-1AE03B9EC3-L001581](../../agents/web_agent.py#L1581) | 1581 | `"                provider_batches.extend(asyncio.run(run_academic_all()))"` | — |
+| [SRC-1AE03B9EC3-L001582](../../agents/web_agent.py#L1582) | 1582 | `"        except RuntimeError as exc:"` | — |
+| [SRC-1AE03B9EC3-L001583](../../agents/web_agent.py#L1583) | 1583 | `"            # This method is synchronous by contract; the HTTP server invokes it in worker threads."` | — |
+| [SRC-1AE03B9EC3-L001584](../../agents/web_agent.py#L1584) | 1584 | `"            raise RuntimeError(\"تعذر تشغيل مجدول موصلات البحث.\") from exc"` | — |
+| [SRC-1AE03B9EC3-L001585](../../agents/web_agent.py#L1585) | 1585 | `"        combined = [item for batch in provider_batches for item in batch]"` | — |
+| [SRC-1AE03B9EC3-L001586](../../agents/web_agent.py#L1586) | 1586 | `"        # De-duplicate repeated URLs before ranking/fusion."` | — |
+| [SRC-1AE03B9EC3-L001587](../../agents/web_agent.py#L1587) | 1587 | `"        unique: dict[str, dict[str, Any]] = {}"` | — |
+| [SRC-1AE03B9EC3-L001588](../../agents/web_agent.py#L1588) | 1588 | `"        for item in combined:"` | — |
+| [SRC-1AE03B9EC3-L001589](../../agents/web_agent.py#L1589) | 1589 | `"            key = item[\"url\"].split(\"#\", 1)[0].rstrip(\"/\")"` | — |
+| [SRC-1AE03B9EC3-L001590](../../agents/web_agent.py#L1590) | 1590 | `"            if key not in unique or len(str(item.get(\"snippet\") or \"\")) > len(str(unique[key].get(\"snippet\") or \"\")):"` | — |
+| [SRC-1AE03B9EC3-L001591](../../agents/web_agent.py#L1591) | 1591 | `"                unique[key] = item"` | — |
+| [SRC-1AE03B9EC3-L001592](../../agents/web_agent.py#L1592) | 1592 | `"        if not unique:"` | — |
+| [SRC-1AE03B9EC3-L001593](../../agents/web_agent.py#L1593) | 1593 | `"            raise RuntimeError(\"لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.\")"` | — |
+| [SRC-1AE03B9EC3-L001594](../../agents/web_agent.py#L1594) | 1594 | `"        return list(unique.values())"` | — |
+| [SRC-1AE03B9EC3-L001595](../../agents/web_agent.py#L1595) | 1595 | `""` | — |
+| [SRC-1AE03B9EC3-L001596](../../agents/web_agent.py#L1596) | 1596 | `"    def _reserve_search_call(self) -> None:"` | — |
+| [SRC-1AE03B9EC3-L001597](../../agents/web_agent.py#L1597) | 1597 | `"        \"\"\"Reserve one outbound search/social-provider request before network I/O.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001598](../../agents/web_agent.py#L1598) | 1598 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L001599](../../agents/web_agent.py#L1599) | 1599 | `"        if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L001600](../../agents/web_agent.py#L1600) | 1600 | `"            budget.reserve(\"search_calls\")"` | — |
+| [SRC-1AE03B9EC3-L001601](../../agents/web_agent.py#L1601) | 1601 | `""` | — |
+| [SRC-1AE03B9EC3-L001602](../../agents/web_agent.py#L1602) | 1602 | `"    def _search_brave(self, query: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001603](../../agents/web_agent.py#L1603) | 1603 | `"        \"\"\"Use Brave's official web-search API when the operator provides an API key.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001604](../../agents/web_agent.py#L1604) | 1604 | `"        api_key = os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L001605](../../agents/web_agent.py#L1605) | 1605 | `"        if not api_key:"` | — |
+| [SRC-1AE03B9EC3-L001606](../../agents/web_agent.py#L1606) | 1606 | `"            return []"` | — |
+| [SRC-1AE03B9EC3-L001607](../../agents/web_agent.py#L1607) | 1607 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L001608](../../agents/web_agent.py#L1608) | 1608 | `"            import httpx"` | — |
+| [SRC-1AE03B9EC3-L001609](../../agents/web_agent.py#L1609) | 1609 | `"        except ImportError as exc:"` | — |
+| [SRC-1AE03B9EC3-L001610](../../agents/web_agent.py#L1610) | 1610 | `"            raise AgentDependencyError(\"حزمة httpx غير مثبتة.\") from exc"` | — |
+| [SRC-1AE03B9EC3-L001611](../../agents/web_agent.py#L1611) | 1611 | `"        is_arabic = bool(re.search(r\"[\\u0600-\\u06FF]\", query))"` | — |
+| [SRC-1AE03B9EC3-L001612](../../agents/web_agent.py#L1612) | 1612 | `"        response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L001613](../../agents/web_agent.py#L1613) | 1613 | `"            \"https://api.search.brave.com/res/v1/web/search\","` | — |
+| [SRC-1AE03B9EC3-L001614](../../agents/web_agent.py#L1614) | 1614 | `"            params={"` | — |
+| [SRC-1AE03B9EC3-L001615](../../agents/web_agent.py#L1615) | 1615 | `"                \"q\": query[:600],"` | — |
+| [SRC-1AE03B9EC3-L001616](../../agents/web_agent.py#L1616) | 1616 | `"                \"count\": MAX_PROVIDER_RESULTS,"` | — |
+| [SRC-1AE03B9EC3-L001617](../../agents/web_agent.py#L1617) | 1617 | `"                \"country\": \"EG\" if is_arabic else \"US\","` | — |
+| [SRC-1AE03B9EC3-L001618](../../agents/web_agent.py#L1618) | 1618 | `"                \"search_lang\": \"ar\" if is_arabic else \"en\","` | — |
+| [SRC-1AE03B9EC3-L001619](../../agents/web_agent.py#L1619) | 1619 | `"                \"extra_snippets\": \"true\","` | — |
+| [SRC-1AE03B9EC3-L001620](../../agents/web_agent.py#L1620) | 1620 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L001621](../../agents/web_agent.py#L1621) | 1621 | `"            headers={"` | — |
 | [SRC-1AE03B9EC3-L001622](../../agents/web_agent.py#L1622) | 1622 | `"                \"Accept\": \"application/json\","` | — |
 | [SRC-1AE03B9EC3-L001623](../../agents/web_agent.py#L1623) | 1623 | `"                \"X-Subscription-Token\": api_key,"` | — |
 | [SRC-1AE03B9EC3-L001624](../../agents/web_agent.py#L1624) | 1624 | `"                \"User-Agent\": \"OmaraiResearchAgent/1.0\","` | — |
@@ -764,55 +816,3 @@
 | [SRC-1AE03B9EC3-L002367](../../agents/web_agent.py#L2367) | 2367 | `"            text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS"` | — |
 | [SRC-1AE03B9EC3-L002368](../../agents/web_agent.py#L2368) | 2368 | `"            page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)"` | — |
 | [SRC-1AE03B9EC3-L002369](../../agents/web_agent.py#L2369) | 2369 | `"            status = ("` | — |
-| [SRC-1AE03B9EC3-L002370](../../agents/web_agent.py#L2370) | 2370 | `"                \"empty_content\" if not page_text"` | — |
-| [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"                else \"partial_extraction\" if bytes_truncated or text_truncated"` | — |
-| [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"                else \"content_extracted\""` | — |
-| [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"            return result(\"\", page_text, status)"` | — |
-| [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `""` | — |
-| [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"        soup = BeautifulSoup(html, \"html.parser\")"` | — |
-| [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"        title = _clean_text(soup.title.get_text(\" \", strip=True), 300) if soup.title else \"\""` | — |
-| [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `"        for element in soup(["` | — |
-| [SRC-1AE03B9EC3-L002379](../../agents/web_agent.py#L2379) | 2379 | `"            \"script\", \"style\", \"nav\", \"footer\", \"header\", \"noscript\","` | — |
-| [SRC-1AE03B9EC3-L002380](../../agents/web_agent.py#L2380) | 2380 | `"            \"svg\", \"form\", \"iframe\", \"template\""` | — |
-| [SRC-1AE03B9EC3-L002381](../../agents/web_agent.py#L2381) | 2381 | `"        ]):"` | — |
-| [SRC-1AE03B9EC3-L002382](../../agents/web_agent.py#L2382) | 2382 | `"            element.decompose()"` | — |
-| [SRC-1AE03B9EC3-L002383](../../agents/web_agent.py#L2383) | 2383 | `"        main = soup.find(\"main\") or soup.find(\"article\") or soup.body or soup"` | — |
-| [SRC-1AE03B9EC3-L002384](../../agents/web_agent.py#L2384) | 2384 | `"        bounded_text = _clean_text(main.get_text(\" \", strip=True), MAX_PAGE_TEXT_CHARS + 1)"` | — |
-| [SRC-1AE03B9EC3-L002385](../../agents/web_agent.py#L2385) | 2385 | `"        text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS"` | — |
-| [SRC-1AE03B9EC3-L002386](../../agents/web_agent.py#L2386) | 2386 | `"        page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)"` | — |
-| [SRC-1AE03B9EC3-L002387](../../agents/web_agent.py#L2387) | 2387 | `"        status = ("` | — |
-| [SRC-1AE03B9EC3-L002388](../../agents/web_agent.py#L2388) | 2388 | `"            \"no_text_extracted\" if not page_text"` | — |
-| [SRC-1AE03B9EC3-L002389](../../agents/web_agent.py#L2389) | 2389 | `"            else \"partial_extraction\" if bytes_truncated or text_truncated"` | — |
-| [SRC-1AE03B9EC3-L002390](../../agents/web_agent.py#L2390) | 2390 | `"            else \"content_extracted\""` | — |
-| [SRC-1AE03B9EC3-L002391](../../agents/web_agent.py#L2391) | 2391 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L002392](../../agents/web_agent.py#L2392) | 2392 | `"        return result(title, page_text, status)"` | — |
-| [SRC-1AE03B9EC3-L002393](../../agents/web_agent.py#L2393) | 2393 | `""` | — |
-| [SRC-1AE03B9EC3-L002394](../../agents/web_agent.py#L2394) | 2394 | `"    def _collect_sources(self, query: str) -> tuple[list[dict[str, Any]], str \| None]:"` | — |
-| [SRC-1AE03B9EC3-L002395](../../agents/web_agent.py#L2395) | 2395 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L002396](../../agents/web_agent.py#L2396) | 2396 | `"            sources = self._search_web(query)"` | — |
-| [SRC-1AE03B9EC3-L002397](../../agents/web_agent.py#L2397) | 2397 | `"        except (RuntimeError, AgentDependencyError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L002398](../../agents/web_agent.py#L2398) | 2398 | `"            return [], str(exc)"` | — |
-| [SRC-1AE03B9EC3-L002399](../../agents/web_agent.py#L2399) | 2399 | `"        for source in sources[:MAX_FETCHED_PAGES]:"` | — |
-| [SRC-1AE03B9EC3-L002400](../../agents/web_agent.py#L2400) | 2400 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"                title, page_text = self._fetch_page(source[\"url\"])"` | — |
-| [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"            except (AgentDependencyError, RuntimeError):"` | — |
-| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"            if title:"` | — |
-| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"                source[\"title\"] = title"` | — |
-| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"            if page_text:"` | — |
-| [SRC-1AE03B9EC3-L002407](../../agents/web_agent.py#L2407) | 2407 | `"                source[\"page_text\"] = page_text"` | — |
-| [SRC-1AE03B9EC3-L002408](../../agents/web_agent.py#L2408) | 2408 | `"                source[\"page_fetched\"] = True"` | — |
-| [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"                # Prefer extracted text over a thin search snippet."` | — |
-| [SRC-1AE03B9EC3-L002410](../../agents/web_agent.py#L2410) | 2410 | `"                source[\"snippet\"] = page_text[:1800]"` | — |
-| [SRC-1AE03B9EC3-L002411](../../agents/web_agent.py#L2411) | 2411 | `"        return sources, None"` | — |
-| [SRC-1AE03B9EC3-L002412](../../agents/web_agent.py#L2412) | 2412 | `""` | — |
-| [SRC-1AE03B9EC3-L002413](../../agents/web_agent.py#L2413) | 2413 | `"    def _collect_research("` | — |
-| [SRC-1AE03B9EC3-L002414](../../agents/web_agent.py#L2414) | 2414 | `"        self, plan: dict[str, Any]"` | — |
-| [SRC-1AE03B9EC3-L002415](../../agents/web_agent.py#L2415) | 2415 | `"    ) -> tuple[list[dict[str, Any]], list[str], dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L002416](../../agents/web_agent.py#L2416) | 2416 | `"        \"\"\"Run independent query searches concurrently, fuse evidence, then fetch top pages.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L002417](../../agents/web_agent.py#L2417) | 2417 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L002418](../../agents/web_agent.py#L2418) | 2418 | `"            query_limit = int(plan.get(\"query_limit\", MAX_PLAN_QUERIES))"` | — |
-| [SRC-1AE03B9EC3-L002419](../../agents/web_agent.py#L2419) | 2419 | `"        except (TypeError, ValueError, OverflowError):"` | — |
-| [SRC-1AE03B9EC3-L002420](../../agents/web_agent.py#L2420) | 2420 | `"            query_limit = MAX_PLAN_QUERIES"` | — |
-| [SRC-1AE03B9EC3-L002421](../../agents/web_agent.py#L2421) | 2421 | `"        query_limit = max(1, min(query_limit, MAX_PLAN_QUERIES))"` | — |

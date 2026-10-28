@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004022 إلى SRC-1AE03B9EC3-L004821
+- النطاق: SRC-1AE03B9EC3-L003970 إلى SRC-1AE03B9EC3-L004769
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003970](../../agents/web_agent.py#L3970) | 3970 | `""` | — |
+| [SRC-1AE03B9EC3-L003971](../../agents/web_agent.py#L3971) | 3971 | `"        # Do not send a provider request unless a model check was explicitly requested."` | — |
+| [SRC-1AE03B9EC3-L003972](../../agents/web_agent.py#L3972) | 3972 | `"        if not test_model:"` | — |
+| [SRC-1AE03B9EC3-L003973](../../agents/web_agent.py#L3973) | 3973 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003974](../../agents/web_agent.py#L3974) | 3974 | `"                \"status\": \"skipped\","` | — |
+| [SRC-1AE03B9EC3-L003975](../../agents/web_agent.py#L3975) | 3975 | `"                \"note\": \"Model request was not requested.\","` | — |
+| [SRC-1AE03B9EC3-L003976](../../agents/web_agent.py#L3976) | 3976 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003977](../../agents/web_agent.py#L3977) | 3977 | `"        elif not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L003978](../../agents/web_agent.py#L3978) | 3978 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L003979](../../agents/web_agent.py#L3979) | 3979 | `"                \"status\": \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L003980](../../agents/web_agent.py#L3980) | 3980 | `"                \"note\": \"No language-model key is configured in this server session.\","` | — |
+| [SRC-1AE03B9EC3-L003981](../../agents/web_agent.py#L3981) | 3981 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003982](../../agents/web_agent.py#L3982) | 3982 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L003983](../../agents/web_agent.py#L3983) | 3983 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L003984](../../agents/web_agent.py#L3984) | 3984 | `"                probe = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L003985](../../agents/web_agent.py#L3985) | 3985 | `"                    ["` | — |
+| [SRC-1AE03B9EC3-L003986](../../agents/web_agent.py#L3986) | 3986 | `"                        {"` | — |
+| [SRC-1AE03B9EC3-L003987](../../agents/web_agent.py#L3987) | 3987 | `"                            \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L003988](../../agents/web_agent.py#L3988) | 3988 | `"                            \"content\": \"Reply with the exact text OK and nothing else.\","` | — |
+| [SRC-1AE03B9EC3-L003989](../../agents/web_agent.py#L3989) | 3989 | `"                        },"` | — |
+| [SRC-1AE03B9EC3-L003990](../../agents/web_agent.py#L3990) | 3990 | `"                        {"` | — |
+| [SRC-1AE03B9EC3-L003991](../../agents/web_agent.py#L3991) | 3991 | `"                            \"role\": \"user\","` | — |
+| [SRC-1AE03B9EC3-L003992](../../agents/web_agent.py#L3992) | 3992 | `"                            \"content\": \"Omarai connectivity self-test.\","` | — |
+| [SRC-1AE03B9EC3-L003993](../../agents/web_agent.py#L3993) | 3993 | `"                        },"` | — |
+| [SRC-1AE03B9EC3-L003994](../../agents/web_agent.py#L3994) | 3994 | `"                    ],"` | — |
+| [SRC-1AE03B9EC3-L003995](../../agents/web_agent.py#L3995) | 3995 | `"                    max_tokens=12,"` | — |
+| [SRC-1AE03B9EC3-L003996](../../agents/web_agent.py#L3996) | 3996 | `"                    temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L003997](../../agents/web_agent.py#L3997) | 3997 | `"                    timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
+| [SRC-1AE03B9EC3-L003998](../../agents/web_agent.py#L3998) | 3998 | `"                    model=self.answer_model,"` | — |
+| [SRC-1AE03B9EC3-L003999](../../agents/web_agent.py#L3999) | 3999 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004000](../../agents/web_agent.py#L4000) | 4000 | `"                report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004001](../../agents/web_agent.py#L4001) | 4001 | `"                    \"status\": \"passed\" if probe.strip() else \"failed\","` | — |
+| [SRC-1AE03B9EC3-L004002](../../agents/web_agent.py#L4002) | 4002 | `"                    \"note\": \"A real model completion was received; no prompt content was retained.\","` | — |
+| [SRC-1AE03B9EC3-L004003](../../agents/web_agent.py#L4003) | 4003 | `"                    \"response_received\": bool(probe.strip()),"` | — |
+| [SRC-1AE03B9EC3-L004004](../../agents/web_agent.py#L4004) | 4004 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L004005](../../agents/web_agent.py#L4005) | 4005 | `"            except (RuntimeError, AgentDependencyError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L004006](../../agents/web_agent.py#L4006) | 4006 | `"                report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004007](../../agents/web_agent.py#L4007) | 4007 | `"                    \"status\": \"failed\","` | — |
+| [SRC-1AE03B9EC3-L004008](../../agents/web_agent.py#L4008) | 4008 | `"                    \"note\": _clean_text(str(exc), 400),"` | — |
+| [SRC-1AE03B9EC3-L004009](../../agents/web_agent.py#L4009) | 4009 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L004010](../../agents/web_agent.py#L4010) | 4010 | `""` | — |
+| [SRC-1AE03B9EC3-L004011](../../agents/web_agent.py#L4011) | 4011 | `"        if not test_social:"` | — |
+| [SRC-1AE03B9EC3-L004012](../../agents/web_agent.py#L4012) | 4012 | `"            report[\"checks\"][\"social_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004013](../../agents/web_agent.py#L4013) | 4013 | `"                \"status\": \"skipped\","` | — |
+| [SRC-1AE03B9EC3-L004014](../../agents/web_agent.py#L4014) | 4014 | `"                \"note\": \"Social-source probes were not requested.\","` | — |
+| [SRC-1AE03B9EC3-L004015](../../agents/web_agent.py#L4015) | 4015 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L004016](../../agents/web_agent.py#L4016) | 4016 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L004017](../../agents/web_agent.py#L4017) | 4017 | `"            configured_platforms = [\"reddit\", \"bluesky\"]"` | — |
+| [SRC-1AE03B9EC3-L004018](../../agents/web_agent.py#L4018) | 4018 | `"            optional_connectors = {"` | — |
+| [SRC-1AE03B9EC3-L004019](../../agents/web_agent.py#L4019) | 4019 | `"                \"facebook\": bool("` | — |
+| [SRC-1AE03B9EC3-L004020](../../agents/web_agent.py#L4020) | 4020 | `"                    os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L004021](../../agents/web_agent.py#L4021) | 4021 | `"                    and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L004022](../../agents/web_agent.py#L4022) | 4022 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L004023](../../agents/web_agent.py#L4023) | 4023 | `"                \"instagram\": bool("` | — |
 | [SRC-1AE03B9EC3-L004024](../../agents/web_agent.py#L4024) | 4024 | `"                    os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
@@ -764,55 +816,3 @@
 | [SRC-1AE03B9EC3-L004767](../../agents/web_agent.py#L4767) | 4767 | `"                        base_query,"` | — |
 | [SRC-1AE03B9EC3-L004768](../../agents/web_agent.py#L4768) | 4768 | `"                        f\"{base_query} الموقع الرسمي\","` | — |
 | [SRC-1AE03B9EC3-L004769](../../agents/web_agent.py#L4769) | 4769 | `"                        f\"{base_query} official website\","` | — |
-| [SRC-1AE03B9EC3-L004770](../../agents/web_agent.py#L4770) | 4770 | `"                    ]"` | — |
-| [SRC-1AE03B9EC3-L004771](../../agents/web_agent.py#L4771) | 4771 | `"                    plan[\"queries\"] = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L004772](../../agents/web_agent.py#L4772) | 4772 | `"                        candidates + (plan.get(\"queries\") or [])[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L004773](../../agents/web_agent.py#L4773) | 4773 | `"                    ))[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L004774](../../agents/web_agent.py#L4774) | 4774 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L004775](../../agents/web_agent.py#L4775) | 4775 | `"                    candidates = ["` | — |
-| [SRC-1AE03B9EC3-L004776](../../agents/web_agent.py#L4776) | 4776 | `"                        f\"{base_query} latest news updates {dt.datetime.now().year}\","` | — |
-| [SRC-1AE03B9EC3-L004777](../../agents/web_agent.py#L4777) | 4777 | `"                        f\"{base_query} recent official announcement\","` | — |
-| [SRC-1AE03B9EC3-L004778](../../agents/web_agent.py#L4778) | 4778 | `"                    ]"` | — |
-| [SRC-1AE03B9EC3-L004779](../../agents/web_agent.py#L4779) | 4779 | `"                    plan[\"queries\"] = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L004780](../../agents/web_agent.py#L4780) | 4780 | `"                        (plan.get(\"queries\") or [])[:6] + candidates"` | — |
-| [SRC-1AE03B9EC3-L004781](../../agents/web_agent.py#L4781) | 4781 | `"                    ))[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L004782](../../agents/web_agent.py#L4782) | 4782 | `"            elif clean_mode == \"social\":"` | — |
-| [SRC-1AE03B9EC3-L004783](../../agents/web_agent.py#L4783) | 4783 | `"                plan[\"social_focus\"] = True"` | — |
-| [SRC-1AE03B9EC3-L004784](../../agents/web_agent.py#L4784) | 4784 | `"                if not plan.get(\"platforms\"):"` | — |
-| [SRC-1AE03B9EC3-L004785](../../agents/web_agent.py#L4785) | 4785 | `"                    plan[\"platforms\"] = [\"reddit\", \"bluesky\", \"youtube\"]"` | — |
-| [SRC-1AE03B9EC3-L004786](../../agents/web_agent.py#L4786) | 4786 | `"                from agents.research import SOCIAL_DOMAINS"` | — |
-| [SRC-1AE03B9EC3-L004787](../../agents/web_agent.py#L4787) | 4787 | `"                candidates = ["` | — |
-| [SRC-1AE03B9EC3-L004788](../../agents/web_agent.py#L4788) | 4788 | `"                    f\"site:{SOCIAL_DOMAINS[name]} {base_query}\""` | — |
-| [SRC-1AE03B9EC3-L004789](../../agents/web_agent.py#L4789) | 4789 | `"                    for name in plan[\"platforms\"][:3]"` | — |
-| [SRC-1AE03B9EC3-L004790](../../agents/web_agent.py#L4790) | 4790 | `"                    if name in SOCIAL_DOMAINS"` | — |
-| [SRC-1AE03B9EC3-L004791](../../agents/web_agent.py#L4791) | 4791 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004792](../../agents/web_agent.py#L4792) | 4792 | `"                plan[\"queries\"] = list(dict.fromkeys((plan.get(\"queries\") or [])[:5] + candidates))["` | — |
-| [SRC-1AE03B9EC3-L004793](../../agents/web_agent.py#L4793) | 4793 | `"                    :MAX_PLAN_QUERIES"` | — |
-| [SRC-1AE03B9EC3-L004794](../../agents/web_agent.py#L4794) | 4794 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004795](../../agents/web_agent.py#L4795) | 4795 | `"            if intent_route == \"LEAD_GENERATION\" and clean_mode == \"auto\":"` | — |
-| [SRC-1AE03B9EC3-L004796](../../agents/web_agent.py#L4796) | 4796 | `"                # Prospect discovery needs buyer-intent queries and public social signals,"` | — |
-| [SRC-1AE03B9EC3-L004797](../../agents/web_agent.py#L4797) | 4797 | `"                # not just broad pages advertising the requested product."` | — |
-| [SRC-1AE03B9EC3-L004798](../../agents/web_agent.py#L4798) | 4798 | `"                plan[\"queries\"] = self._lead_generation_queries(working_question, plan.get(\"queries\", []))"` | — |
-| [SRC-1AE03B9EC3-L004799](../../agents/web_agent.py#L4799) | 4799 | `"                plan[\"depth\"] = \"standard\""` | — |
-| [SRC-1AE03B9EC3-L004800](../../agents/web_agent.py#L4800) | 4800 | `"                plan[\"freshness\"] = \"current\""` | — |
-| [SRC-1AE03B9EC3-L004801](../../agents/web_agent.py#L4801) | 4801 | `"                plan[\"social_focus\"] = True"` | — |
-| [SRC-1AE03B9EC3-L004802](../../agents/web_agent.py#L4802) | 4802 | `"                allowed_public_platforms = [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-1AE03B9EC3-L004803](../../agents/web_agent.py#L4803) | 4803 | `"                if ("` | — |
-| [SRC-1AE03B9EC3-L004804](../../agents/web_agent.py#L4804) | 4804 | `"                    os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004805](../../agents/web_agent.py#L4805) | 4805 | `"                    and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004806](../../agents/web_agent.py#L4806) | 4806 | `"                ):"` | — |
-| [SRC-1AE03B9EC3-L004807](../../agents/web_agent.py#L4807) | 4807 | `"                    allowed_public_platforms.append(\"facebook\")"` | — |
-| [SRC-1AE03B9EC3-L004808](../../agents/web_agent.py#L4808) | 4808 | `"                if os.getenv(\"X_BEARER_TOKEN\", \"\").strip():"` | — |
-| [SRC-1AE03B9EC3-L004809](../../agents/web_agent.py#L4809) | 4809 | `"                    allowed_public_platforms.append(\"x\")"` | — |
-| [SRC-1AE03B9EC3-L004810](../../agents/web_agent.py#L4810) | 4810 | `"                if os.getenv(\"YOUTUBE_API_KEY\", \"\").strip():"` | — |
-| [SRC-1AE03B9EC3-L004811](../../agents/web_agent.py#L4811) | 4811 | `"                    allowed_public_platforms.append(\"youtube\")"` | — |
-| [SRC-1AE03B9EC3-L004812](../../agents/web_agent.py#L4812) | 4812 | `"                if ("` | — |
-| [SRC-1AE03B9EC3-L004813](../../agents/web_agent.py#L4813) | 4813 | `"                    os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004814](../../agents/web_agent.py#L4814) | 4814 | `"                    and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004815](../../agents/web_agent.py#L4815) | 4815 | `"                ):"` | — |
-| [SRC-1AE03B9EC3-L004816](../../agents/web_agent.py#L4816) | 4816 | `"                    allowed_public_platforms.append(\"instagram\")"` | — |
-| [SRC-1AE03B9EC3-L004817](../../agents/web_agent.py#L4817) | 4817 | `"                plan[\"platforms\"] = list(dict.fromkeys(allowed_public_platforms))"` | — |
-| [SRC-1AE03B9EC3-L004818](../../agents/web_agent.py#L4818) | 4818 | `""` | — |
-| [SRC-1AE03B9EC3-L004819](../../agents/web_agent.py#L4819) | 4819 | `"        task_spec = build_task_spec("` | — |
-| [SRC-1AE03B9EC3-L004820](../../agents/web_agent.py#L4820) | 4820 | `"            working_question,"` | — |
-| [SRC-1AE03B9EC3-L004821](../../agents/web_agent.py#L4821) | 4821 | `"            mode=clean_mode,"` | — |

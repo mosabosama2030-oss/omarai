@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000104 إلى SRC-792A9A235D-L000120
+- النطاق: SRC-EEF2E6447C-L000052 إلى SRC-792A9A235D-L000068
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000052](../../api/omarai.py#L52) | 52 | `""` | — |
+| [SRC-EEF2E6447C-L000053](../../api/omarai.py#L53) | 53 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000054](../../api/omarai.py#L54) | 54 | `"            r\"<script\\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\\s*>\","` | — |
+| [SRC-EEF2E6447C-L000055](../../api/omarai.py#L55) | 55 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000056](../../api/omarai.py#L56) | 56 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000057](../../api/omarai.py#L57) | 57 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000058](../../api/omarai.py#L58) | 58 | `"            if re.search(r\"\\bsrc\\s*=\", match.group(\"attrs\"), re.IGNORECASE):"` | — |
+| [SRC-EEF2E6447C-L000059](../../api/omarai.py#L59) | 59 | `"                continue"` | — |
+| [SRC-EEF2E6447C-L000060](../../api/omarai.py#L60) | 60 | `"            script_hashes.add(_csp_hash_source(match.group(\"body\")))"` | — |
+| [SRC-EEF2E6447C-L000061](../../api/omarai.py#L61) | 61 | `""` | — |
+| [SRC-EEF2E6447C-L000062](../../api/omarai.py#L62) | 62 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000063](../../api/omarai.py#L63) | 63 | `"            r\"<style\\b[^>]*>(?P<body>.*?)</style\\s*>\","` | — |
+| [SRC-EEF2E6447C-L000064](../../api/omarai.py#L64) | 64 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000065](../../api/omarai.py#L65) | 65 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000066](../../api/omarai.py#L66) | 66 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000067](../../api/omarai.py#L67) | 67 | `"            style_hashes.add(_csp_hash_source(match.group(\"body\")))"` | — |
+| [SRC-EEF2E6447C-L000068](../../api/omarai.py#L68) | 68 | `""` | — |
+| [SRC-EEF2E6447C-L000069](../../api/omarai.py#L69) | 69 | `"        # This scan intentionally includes style/event attributes embedded in"` | — |
+| [SRC-EEF2E6447C-L000070](../../api/omarai.py#L70) | 70 | `"        # trusted first-party HTML templates assembled by inline scripts."` | — |
+| [SRC-EEF2E6447C-L000071](../../api/omarai.py#L71) | 71 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000072](../../api/omarai.py#L72) | 72 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
+| [SRC-EEF2E6447C-L000073](../../api/omarai.py#L73) | 73 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000074](../../api/omarai.py#L74) | 74 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000075](../../api/omarai.py#L75) | 75 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000076](../../api/omarai.py#L76) | 76 | `"            style_attribute_hashes.add(_csp_hash_source(match.group(2).strip()))"` | — |
+| [SRC-EEF2E6447C-L000077](../../api/omarai.py#L77) | 77 | `""` | — |
+| [SRC-EEF2E6447C-L000078](../../api/omarai.py#L78) | 78 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000079](../../api/omarai.py#L79) | 79 | `"            r\"\"\"\\bon[a-z]+\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
+| [SRC-EEF2E6447C-L000080](../../api/omarai.py#L80) | 80 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000081](../../api/omarai.py#L81) | 81 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000082](../../api/omarai.py#L82) | 82 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000083](../../api/omarai.py#L83) | 83 | `"            event_handler_hashes.add(_csp_hash_source(match.group(2).strip()))"` | — |
+| [SRC-EEF2E6447C-L000084](../../api/omarai.py#L84) | 84 | `""` | — |
+| [SRC-EEF2E6447C-L000085](../../api/omarai.py#L85) | 85 | `"    script_sources = [\"'self'\", *sorted(script_hashes)]"` | — |
+| [SRC-EEF2E6447C-L000086](../../api/omarai.py#L86) | 86 | `"    style_sources = [\"'self'\", *sorted(style_hashes)]"` | — |
+| [SRC-EEF2E6447C-L000087](../../api/omarai.py#L87) | 87 | `"    if event_handler_hashes:"` | — |
+| [SRC-EEF2E6447C-L000088](../../api/omarai.py#L88) | 88 | `"        script_sources.extend([\"'unsafe-hashes'\", *sorted(event_handler_hashes)])"` | — |
+| [SRC-EEF2E6447C-L000089](../../api/omarai.py#L89) | 89 | `"    if style_attribute_hashes:"` | — |
+| [SRC-EEF2E6447C-L000090](../../api/omarai.py#L90) | 90 | `"        style_sources.extend([\"'unsafe-hashes'\", *sorted(style_attribute_hashes)])"` | — |
+| [SRC-EEF2E6447C-L000091](../../api/omarai.py#L91) | 91 | `""` | — |
+| [SRC-EEF2E6447C-L000092](../../api/omarai.py#L92) | 92 | `"    return ("` | — |
+| [SRC-EEF2E6447C-L000093](../../api/omarai.py#L93) | 93 | `"        \"default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; \""` | — |
+| [SRC-EEF2E6447C-L000094](../../api/omarai.py#L94) | 94 | `"        \"form-action 'self'; connect-src 'self'; img-src 'self' data:; \""` | — |
+| [SRC-EEF2E6447C-L000095](../../api/omarai.py#L95) | 95 | `"        f\"script-src {' '.join(script_sources)}; \""` | — |
+| [SRC-EEF2E6447C-L000096](../../api/omarai.py#L96) | 96 | `"        f\"style-src {' '.join(style_sources)}; font-src 'self' data:\""` | — |
+| [SRC-EEF2E6447C-L000097](../../api/omarai.py#L97) | 97 | `"    )"` | — |
+| [SRC-EEF2E6447C-L000098](../../api/omarai.py#L98) | 98 | `"# Bound request-line + header parsing before application code or body processing."` | — |
+| [SRC-EEF2E6447C-L000099](../../api/omarai.py#L99) | 99 | `"REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0"` | — |
+| [SRC-EEF2E6447C-L000100](../../api/omarai.py#L100) | 100 | `"REQUEST_HEADER_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
+| [SRC-EEF2E6447C-L000101](../../api/omarai.py#L101) | 101 | `"MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS = 15.0"` | — |
+| [SRC-EEF2E6447C-L000102](../../api/omarai.py#L102) | 102 | `"# Absolute deadline for reading the entire body, not merely a per-read idle timeout."` | — |
+| [SRC-EEF2E6447C-L000103](../../api/omarai.py#L103) | 103 | `"REQUEST_BODY_READ_TIMEOUT_SECONDS = 10.0"` | — |
 | [SRC-EEF2E6447C-L000104](../../api/omarai.py#L104) | 104 | `"REQUEST_BODY_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
 | [SRC-EEF2E6447C-L000105](../../api/omarai.py#L105) | 105 | `"MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0"` | — |
 | [SRC-EEF2E6447C-L000106](../../api/omarai.py#L106) | 106 | `"REQUEST_BODY_READ_CHUNK_BYTES = 8_192"` | — |
@@ -809,55 +861,3 @@
 | [SRC-792A9A235D-L000066](../ANSWER_QUALITY_BENCHMARK_AR.md#L66) | 66 | `"python scripts/run_answer_quality_benchmark.py"` | — |
 | [SRC-792A9A235D-L000067](../ANSWER_QUALITY_BENCHMARK_AR.md#L67) | 67 | `"python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
 | [SRC-792A9A235D-L000068](../ANSWER_QUALITY_BENCHMARK_AR.md#L68) | 68 | `""` | — |
-| [SRC-792A9A235D-L000069](../ANSWER_QUALITY_BENCHMARK_AR.md#L69) | 69 | `"# حي اختياري — يتطلب --case-id أو --limit؛ لا يحقن fixtures"` | — |
-| [SRC-792A9A235D-L000070](../ANSWER_QUALITY_BENCHMARK_AR.md#L70) | 70 | `"# على localhost يمكن استخدام HTTP. الرمز من البيئة: OMARAI_ACCESS_TOKEN"` | — |
-| [SRC-792A9A235D-L000071](../ANSWER_QUALITY_BENCHMARK_AR.md#L71) | 71 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
-| [SRC-792A9A235D-L000072](../ANSWER_QUALITY_BENCHMARK_AR.md#L72) | 72 | `"  --base-url http://127.0.0.1:8765 --case-id AQ-001 --limit 1 \\"` | — |
-| [SRC-792A9A235D-L000073](../ANSWER_QUALITY_BENCHMARK_AR.md#L73) | 73 | `"  --out /tmp/aq_results.json"` | — |
-| [SRC-792A9A235D-L000074](../ANSWER_QUALITY_BENCHMARK_AR.md#L74) | 74 | `""` | — |
-| [SRC-792A9A235D-L000075](../ANSWER_QUALITY_BENCHMARK_AR.md#L75) | 75 | `"# للنشر عبر HTTPS فقط: اسمح بالأصل exact origin قبل تمرير الرمز"` | — |
-| [SRC-792A9A235D-L000076](../ANSWER_QUALITY_BENCHMARK_AR.md#L76) | 76 | `"export OMARAI_BENCHMARK_ALLOWED_ORIGIN=https://your-deployed-host.example"` | — |
-| [SRC-792A9A235D-L000077](../ANSWER_QUALITY_BENCHMARK_AR.md#L77) | 77 | `"export OMARAI_ACCESS_TOKEN=your-token-from-the-host-dashboard"` | — |
-| [SRC-792A9A235D-L000078](../ANSWER_QUALITY_BENCHMARK_AR.md#L78) | 78 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
-| [SRC-792A9A235D-L000079](../ANSWER_QUALITY_BENCHMARK_AR.md#L79) | 79 | `"  --base-url https://your-deployed-host.example --case-id AQ-001 --limit 1"` | — |
-| [SRC-792A9A235D-L000080](../ANSWER_QUALITY_BENCHMARK_AR.md#L80) | 80 | ````"```"```` | — |
-| [SRC-792A9A235D-L000081](../ANSWER_QUALITY_BENCHMARK_AR.md#L81) | 81 | `""` | — |
-| [SRC-792A9A235D-L000082](../ANSWER_QUALITY_BENCHMARK_AR.md#L82) | 82 | ``"**حماية التشغيل الحي:** لا تقبل الأداة URL به بيانات دخول أو مسار/query/fragment. HTTP مسموح على loopback فقط. عند وجود رمز، يجب تطابق `OMARAI_BENCHMARK_ALLOWED_ORIGIN` حرفيًا مع أصل HTTPS المقصود. لا تتبع الأداة التحويلات (redirects)، وترفض الردود الأكبر من 2 MB."`` | — |
-| [SRC-792A9A235D-L000083](../ANSWER_QUALITY_BENCHMARK_AR.md#L83) | 83 | `""` | — |
-| [SRC-792A9A235D-L000084](../ANSWER_QUALITY_BENCHMARK_AR.md#L84) | 84 | `"## تشغيل التحقق البنيوي"` | — |
-| [SRC-792A9A235D-L000085](../ANSWER_QUALITY_BENCHMARK_AR.md#L85) | 85 | `""` | — |
-| [SRC-792A9A235D-L000086](../ANSWER_QUALITY_BENCHMARK_AR.md#L86) | 86 | ````"```bash"```` | — |
-| [SRC-792A9A235D-L000087](../ANSWER_QUALITY_BENCHMARK_AR.md#L87) | 87 | `"python -m pip install -e \".[dev]\""` | — |
-| [SRC-792A9A235D-L000088](../ANSWER_QUALITY_BENCHMARK_AR.md#L88) | 88 | `"python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py -q"` | — |
-| [SRC-792A9A235D-L000089](../ANSWER_QUALITY_BENCHMARK_AR.md#L89) | 89 | ````"```"```` | — |
-| [SRC-792A9A235D-L000090](../ANSWER_QUALITY_BENCHMARK_AR.md#L90) | 90 | `""` | — |
-| [SRC-792A9A235D-L000091](../ANSWER_QUALITY_BENCHMARK_AR.md#L91) | 91 | `"## أمثلة حالات عالية الخطورة"` | — |
-| [SRC-792A9A235D-L000092](../ANSWER_QUALITY_BENCHMARK_AR.md#L92) | 92 | `""` | — |
-| [SRC-792A9A235D-L000093](../ANSWER_QUALITY_BENCHMARK_AR.md#L93) | 93 | ``"الأرقام أدناه مأخوذة من JSON بعد مطابقة `case_id` مع `category` الفعلية."`` | — |
-| [SRC-792A9A235D-L000094](../ANSWER_QUALITY_BENCHMARK_AR.md#L94) | 94 | `""` | — |
-| [SRC-792A9A235D-L000095](../ANSWER_QUALITY_BENCHMARK_AR.md#L95) | 95 | `"\| case_id \| category الفعلية \| الخطر \|"` | — |
-| [SRC-792A9A235D-L000096](../ANSWER_QUALITY_BENCHMARK_AR.md#L96) | 96 | `"\|---------\|------------------\|--------\|"` | — |
-| [SRC-792A9A235D-L000097](../ANSWER_QUALITY_BENCHMARK_AR.md#L97) | 97 | ``"\| AQ-024 / AQ-030 \| `prompt_injection_in_content` \| حقن تعليمات داخل محتوى مسترجع \|"`` | — |
-| [SRC-792A9A235D-L000098](../ANSWER_QUALITY_BENCHMARK_AR.md#L98) | 98 | ``"\| AQ-025 / AQ-031 \| `secret_exfiltration_attempt` \| محاولة استخراج أسرار أو موجه النظام \|"`` | — |
-| [SRC-792A9A235D-L000099](../ANSWER_QUALITY_BENCHMARK_AR.md#L99) | 99 | ``"\| AQ-023 \| `invalid_links` \| طلب `http://127.0.0.1:8080/admin` (SSRF) \|"`` | — |
-| [SRC-792A9A235D-L000100](../ANSWER_QUALITY_BENCHMARK_AR.md#L100) | 100 | ``"\| AQ-029 / AQ-032 / AQ-033 / AQ-045 \| `lead_not_verified` \| تصوير عميل/جهة كمؤكد دون تحقق \|"`` | — |
-| [SRC-792A9A235D-L000101](../ANSWER_QUALITY_BENCHMARK_AR.md#L101) | 101 | ``"\| AQ-018 / AQ-019 \| `conflicting_sources` \| مصادر متعارضة \|"`` | — |
-| [SRC-792A9A235D-L000102](../ANSWER_QUALITY_BENCHMARK_AR.md#L102) | 102 | ``"\| AQ-020 / AQ-034 / AQ-042 \| `stale_sources_for_current` \| مصادر قديمة لسؤال حالي \|"`` | — |
-| [SRC-792A9A235D-L000103](../ANSWER_QUALITY_BENCHMARK_AR.md#L103) | 103 | ``"\| AQ-021 / AQ-035 \| `false_corroboration` \| نسخ متطابقة كتحقق مستقل \|"`` | — |
-| [SRC-792A9A235D-L000104](../ANSWER_QUALITY_BENCHMARK_AR.md#L104) | 104 | `""` | — |
-| [SRC-792A9A235D-L000105](../ANSWER_QUALITY_BENCHMARK_AR.md#L105) | 105 | `"يتحقق الاختبار الآلي من تطابق هذه الأمثلة مع فئات JSON."` | — |
-| [SRC-792A9A235D-L000106](../ANSWER_QUALITY_BENCHMARK_AR.md#L106) | 106 | `""` | — |
-| [SRC-792A9A235D-L000107](../ANSWER_QUALITY_BENCHMARK_AR.md#L107) | 107 | `"## مقارنة نسختين من عمرai (قبل/بعد)"` | — |
-| [SRC-792A9A235D-L000108](../ANSWER_QUALITY_BENCHMARK_AR.md#L108) | 108 | `""` | — |
-| [SRC-792A9A235D-L000109](../ANSWER_QUALITY_BENCHMARK_AR.md#L109) | 109 | ``"1. نفس `case_id` ونفس السؤال."`` | — |
-| [SRC-792A9A235D-L000110](../ANSWER_QUALITY_BENCHMARK_AR.md#L110) | 110 | `"2. سجّل commit SHA لكل نسخة."` | — |
-| [SRC-792A9A235D-L000111](../ANSWER_QUALITY_BENCHMARK_AR.md#L111) | 111 | `"3. ميّز: تحقق بنيوي ≠ مراجعة fixture ≠ تشغيل حي."` | — |
-| [SRC-792A9A235D-L000112](../ANSWER_QUALITY_BENCHMARK_AR.md#L112) | 112 | `"4. لا تحتسب طول الإجابة تحسنًا."` | — |
-| [SRC-792A9A235D-L000113](../ANSWER_QUALITY_BENCHMARK_AR.md#L113) | 113 | `"5. لا تنشر نسبة مئوية دون جدول نتائج قابل للمقارنة."` | — |
-| [SRC-792A9A235D-L000114](../ANSWER_QUALITY_BENCHMARK_AR.md#L114) | 114 | `""` | — |
-| [SRC-792A9A235D-L000115](../ANSWER_QUALITY_BENCHMARK_AR.md#L115) | 115 | ``"`evidence_fixture` **ليس** حقنًا تلقائيًا في طلب حي. إن تعذّر إعادة الشرط سجّل `NOT_TESTED`."`` | — |
-| [SRC-792A9A235D-L000116](../ANSWER_QUALITY_BENCHMARK_AR.md#L116) | 116 | `""` | — |
-| [SRC-792A9A235D-L000117](../ANSWER_QUALITY_BENCHMARK_AR.md#L117) | 117 | `"## نقاط عمياء معروفة"` | — |
-| [SRC-792A9A235D-L000118](../ANSWER_QUALITY_BENCHMARK_AR.md#L118) | 118 | `""` | — |
-| [SRC-792A9A235D-L000119](../ANSWER_QUALITY_BENCHMARK_AR.md#L119) | 119 | `"- لا يستبدل اختبارات SSRF/الأدلة الحالية."` | — |
-| [SRC-792A9A235D-L000120](../ANSWER_QUALITY_BENCHMARK_AR.md#L120) | 120 | `"- التشغيل الحي غير حتمي (ويب/نماذج مجانية)."` | — |
