@@ -2749,6 +2749,10 @@ def test_frontend_exposes_structured_page_fetch_statuses():
     assert "partial_extraction" in html
     assert "لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة" in html
     assert "تشخيص الموصلات في هذا الطلب" in html
+    assert "حالة إكمال البحث" in html
+    assert "تفاصيل مراحل إكمال البحث والعدادات" in html
+    assert "pages_read_with_text_count" in html
+    assert "التحقق الدلالي من أن كل ادعاء مسنود فعلًا بالمصدر" in html
 
 
 @pytest.mark.parametrize(
