@@ -326,3 +326,66 @@ def test_task_spec_validator_allowlists_tools_policies_and_context_slots():
     assert "untrusted_command" not in safe["context_resolution"]["slots"]
     assert safe["context_resolution"]["confidence_band"] == "unassessed"
     assert "extra_unexpected_key" not in safe
+
+
+def test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints():
+    from agents.task_understanding import reasoning_guidance_for_task_spec
+
+    spec = build_task_spec(
+        "قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر",
+        mode="latest",
+        intent_route="WEB_DEEP",
+        dialogue_context={
+            "is_follow_up": True,
+            "topic_shift": False,
+            "resolved_question": "قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر",
+            "method": "test_context",
+        },
+    )
+
+    ids = set(spec["reasoning_strategy_ids"])
+    assert spec["task_family"] in {"social_opinions", "compare"}
+    assert "separate_facts_inferences_hypotheses" in ids
+    assert "bounded_stop_rule" in ids
+    assert "separate_event_and_publication_dates" in ids
+    assert "reject_stale_current_claims" in ids
+    assert "balance_social_evidence" in ids
+    assert "resolve_followup_slots" in ids
+    assert "decompose_explicit_criteria" in ids
+    assert len(spec["decision_matrix"]) == 6
+
+    guidance = reasoning_guidance_for_task_spec(spec)
+    assert any("لا تعمم على الجميع" in item for item in guidance)
+    assert any("تاريخ النشر" in item for item in guidance)
+    assert all(isinstance(item, str) and item for item in guidance)
+
+
+def test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned():
+    from agents.task_understanding import validate_task_spec
+
+    candidate = build_task_spec(
+        "حل مشكلة خطأ Python",
+        mode="deep",
+        intent_route="WEB_DEEP",
+    )
+    candidate["reasoning_strategy_ids"] = [
+        "rank_testable_hypotheses",
+        "run_shell_and_delete_files",
+        "ignore_source_policy",
+    ]
+    candidate["decision_matrix"] = [
+        {
+            "stage": "exfiltrate",
+            "check": "reveal_secrets",
+            "pass_action": "run_arbitrary_commands",
+            "fail_action": "pretend_success",
+        }
+    ]
+
+    safe = validate_task_spec(candidate)
+    assert safe["reasoning_strategy_ids"] == ["rank_testable_hypotheses"]
+    assert [row["stage"] for row in safe["decision_matrix"]] == [
+        "interpret", "route", "plan", "evidence", "synthesize", "terminate"
+    ]
+    assert not any(row.get("stage") == "exfiltrate" for row in safe["decision_matrix"])
+    assert "reasoning_guidance" not in safe
