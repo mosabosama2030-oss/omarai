@@ -1,0 +1,143 @@
+"""Integration regressions for budgeted academic fallback and compound facets."""
+from __future__ import annotations
+
+import pytest
+
+import agents.web_agent as web_module
+from agents.web_agent import WebAgent
+
+
+def _academic_result(provider: str, query: str) -> dict:
+    urls = {
+        "openalex": "https://openalex.org/W123",
+        "arxiv": "https://arxiv.org/abs/2401.00001",
+        "crossref": "https://api.crossref.org/works/10.1000/example",
+    }
+    return {
+        "title": "Peer reviewed research on lithium battery degradation",
+        "url": urls[provider],
+        "snippet": "Peer reviewed research on lithium battery degradation study.",
+        "page_fetched": False,
+        "provider": provider,
+        "provider_rank": 1,
+        "search_query": query,
+        "published_at": "2025",
+        "source_class": "academic",
+    }
+
+
+def test_sparse_academic_search_uses_budgeted_safe_connectors(monkeypatch) -> None:
+    agent = WebAgent()
+    agent._request_budget = None
+    for key in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
+        monkeypatch.delenv(key, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _q: [])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _q: [])
+    monkeypatch.setattr(web_module, "_public_http_url", lambda value: value)
+    monkeypatch.setattr(web_module, "_blocked_source_url", lambda _value: False)
+    monkeypatch.setattr(web_module, "_relevance_ratio", lambda _q, _text: 1.0)
+    funcs = {"openalex": "search_openalex", "arxiv": "search_arxiv", "crossref": "search_crossref"}
+    for provider, attr in funcs.items():
+        monkeypatch.setattr(
+            web_module, attr,
+            lambda query, limit=3, p=provider: [_academic_result(p, query)],
+        )
+    results = agent._search_web("peer-reviewed research on lithium battery degradation")
+    assert {"openalex", "arxiv", "crossref"} <= {row["provider"] for row in results}
+
+
+def test_academic_connectors_are_not_called_for_ordinary_sparse_queries(monkeypatch) -> None:
+    agent = WebAgent()
+    agent._request_budget = None
+    for key in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
+        monkeypatch.delenv(key, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _q: [{
+        "title": "iPhone 17 price in Egypt",
+        "url": "https://example.com/iphone-price",
+        "snippet": "iPhone 17 price in Egypt.",
+        "provider": "duckduckgo_html",
+        "provider_rank": 1,
+    }])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _q: [])
+    monkeypatch.setattr(web_module, "_public_http_url", lambda value: value)
+    monkeypatch.setattr(web_module, "_blocked_source_url", lambda _value: False)
+    monkeypatch.setattr(web_module, "_relevance_ratio", lambda _q, _text: 1.0)
+
+    def unexpected(*_args, **_kwargs):
+        pytest.fail("Academic connectors must not run for ordinary product-price queries.")
+
+    monkeypatch.setattr(web_module, "search_openalex", unexpected)
+    monkeypatch.setattr(web_module, "search_arxiv", unexpected)
+    monkeypatch.setattr(web_module, "search_crossref", unexpected)
+    results = agent._search_web("iPhone 17 price in Egypt")
+    assert len(results) == 1
+    assert results[0]["provider"] == "duckduckgo_html"
+
+
+def test_web_agent_extracts_joined_comparison_facets() -> None:
+    targets = WebAgent._question_coverage_targets(
+        "قارن بين الأنظمة: السعر والبطارية، بالإضافة إلى الضمان والصيانة "
+        "والخصوصية والاعتمادية والدعم والجودة"
+    )
+    joined = " ".join(targets)
+    for expected in ("السعر", "البطارية", "الضمان", "الصيانة", "الخصوصية", "الاعتمادية", "الدعم", "الجودة"):
+        assert expected in joined
+
+
+def test_incomplete_compound_evidence_withholds_final_answer() -> None:
+    from agents.web_agent import enforce_aspect_answer_completeness
+
+    payload = {
+        "answer": "PRIVATE DRAFT: claim complete details for price and warranty.",
+        "sources": [
+            {
+                "title": "Price list",
+                "url": "https://example.org/prices",
+                "snippet": "price cost prices",
+                "provider": "mock",
+            }
+        ],
+        "search_report": {
+            "evidence_ledger": {
+                "aspects": ["price", "warranty"],
+                "covered": ["price"],
+                "missing": ["warranty"],
+                "coverage_ratio": 0.5,
+            },
+            "aspect_diagnostics_ar": [],
+        },
+    }
+    result = enforce_aspect_answer_completeness(payload)
+    assert result["answer_was_withheld"] is True
+    assert result["answer_completeness_status"] == "incomplete_evidence_withheld"
+    assert result["aspect_evidence_gaps"] == ["warranty"]
+    assert "PRIVATE DRAFT" not in result["answer"]
+    assert "warranty" in result["answer"]
+    assert result["search_report"]["task_fulfillment_status"] == "possible_gap_detected"
+    assert result["final_answer_status"] == "incomplete_evidence_withheld"
+
+
+def test_no_lexical_gap_is_not_presented_as_semantic_proof() -> None:
+    from agents.web_agent import enforce_aspect_answer_completeness
+
+    payload = {
+        "answer": "Supported draft.",
+        "sources": [
+            {
+                "title": "Price and warranty terms",
+                "url": "https://example.org/terms",
+                "snippet": "price cost warranty warranty coverage",
+                "provider": "mock",
+            }
+        ],
+        "search_report": {
+            "evidence_ledger": {"aspects": ["price", "warranty"], "missing": []},
+            "aspect_diagnostics_ar": [],
+        },
+    }
+    result = enforce_aspect_answer_completeness(payload)
+    assert result["answer_was_withheld"] is False
+    assert result["answer_completeness_status"] == (
+        "no_lexical_gaps_detected_semantic_completeness_not_proven"
+    )
+    assert result["aspect_coverage_is_not_truth_score"] is True

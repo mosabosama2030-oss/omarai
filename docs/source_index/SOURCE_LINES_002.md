@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000406
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -151,6 +151,285 @@
 | [SRC-138992B1FC-L000457](../../agents/answer_validation.py#L457) | 457 | `"            \"Search snippets may be partial; extracted page text is still not independent verification.\","` | — |
 | [SRC-138992B1FC-L000458](../../agents/answer_validation.py#L458) | 458 | `"        ],"` | — |
 | [SRC-138992B1FC-L000459](../../agents/answer_validation.py#L459) | 459 | `"    }"` | — |
+## الوكيل والمنطق
+
+### FILE-01273BA196 — [agents/aspect_planning.py](../../agents/aspect_planning.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-01273BA196-L000001](../../agents/aspect_planning.py#L1) | 1 | `"\"\"\"Compound-question aspect extraction and per-aspect search planning for Omarai.\"\"\""` | — |
+| [SRC-01273BA196-L000002](../../agents/aspect_planning.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-01273BA196-L000003](../../agents/aspect_planning.py#L3) | 3 | `""` | — |
+| [SRC-01273BA196-L000004](../../agents/aspect_planning.py#L4) | 4 | `"import re"` | — |
+| [SRC-01273BA196-L000005](../../agents/aspect_planning.py#L5) | 5 | `"from typing import Any"` | — |
+| [SRC-01273BA196-L000006](../../agents/aspect_planning.py#L6) | 6 | `""` | — |
+| [SRC-01273BA196-L000007](../../agents/aspect_planning.py#L7) | 7 | `"MAX_PLAN_QUERIES = 8"` | — |
+| [SRC-01273BA196-L000008](../../agents/aspect_planning.py#L8) | 8 | `"MAX_ASPECTS = 8"` | — |
+| [SRC-01273BA196-L000009](../../agents/aspect_planning.py#L9) | 9 | `""` | — |
+| [SRC-01273BA196-L000010](../../agents/aspect_planning.py#L10) | 10 | `"_ASPECT_MARKER_RE = re.compile("` | — |
+| [SRC-01273BA196-L000011](../../agents/aspect_planning.py#L11) | 11 | `"    r\"(?:من\\s+حيث\|من\\s+ناحية\|من\\s+الناحية\|فيما\\s+يتعلق\\s+ب\|فيما\\s+يخص\|\""` | — |
+| [SRC-01273BA196-L000012](../../agents/aspect_planning.py#L12) | 12 | `"    r\"من\\s+منظور\|in\\s+terms\\s+of\|with\\s+respect\\s+to\|\""` | — |
+| [SRC-01273BA196-L000013](../../agents/aspect_planning.py#L13) | 13 | `"    r\"from\\s+the\\s+perspective\\s+of\|based\\s+on\\s+the\\s+following\\s+criteria)\""` | — |
+| [SRC-01273BA196-L000014](../../agents/aspect_planning.py#L14) | 14 | `"    r\"\\s*(.+?)(?=[؟?!.؛;\\n]\|$)\","` | — |
+| [SRC-01273BA196-L000015](../../agents/aspect_planning.py#L15) | 15 | `"    flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000016](../../agents/aspect_planning.py#L16) | 16 | `")"` | — |
+| [SRC-01273BA196-L000017](../../agents/aspect_planning.py#L17) | 17 | `"_COMPARE_RE = re.compile("` | — |
+| [SRC-01273BA196-L000018](../../agents/aspect_planning.py#L18) | 18 | `"    r\"(?:قارن(?:ي\|وا)?\|مقارنة\|compare\|versus\|\\bvs\\.?\\b\|الفرق\\s+بين)\","` | — |
+| [SRC-01273BA196-L000019](../../agents/aspect_planning.py#L19) | 19 | `"    flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000020](../../agents/aspect_planning.py#L20) | 20 | `")"` | — |
+| [SRC-01273BA196-L000021](../../agents/aspect_planning.py#L21) | 21 | `"_DIMENSION_GROUPS = ("` | — |
+| [SRC-01273BA196-L000022](../../agents/aspect_planning.py#L22) | 22 | `"    (\"السعر\", (\"السعر\", \"سعر\", \"الأسعار\", \"الاسعار\", \"التكلفة\", \"التكلفه\", \"price\", \"cost\", \"pricing\")),"` | — |
+| [SRC-01273BA196-L000023](../../agents/aspect_planning.py#L23) | 23 | `"    (\"البطارية\", (\"البطارية\", \"البطاريه\", \"البطاريات\", \"battery\", \"batteries\")),"` | — |
+| [SRC-01273BA196-L000024](../../agents/aspect_planning.py#L24) | 24 | `"    (\"الشحن\", (\"الشحن\", \"charging\", \"charge time\")),"` | — |
+| [SRC-01273BA196-L000025](../../agents/aspect_planning.py#L25) | 25 | `"    (\"الضمان\", (\"الضمان\", \"ضمان\", \"warranty\")),"` | — |
+| [SRC-01273BA196-L000026](../../agents/aspect_planning.py#L26) | 26 | `"    (\"الصيانة\", (\"الصيانة\", \"الصيانه\", \"الإصلاح\", \"الاصلاح\", \"maintenance\", \"repair\")),"` | — |
+| [SRC-01273BA196-L000027](../../agents/aspect_planning.py#L27) | 27 | `"    (\"الأمان\", (\"الأمان\", \"الامان\", \"safety\", \"security\")),"` | — |
+| [SRC-01273BA196-L000028](../../agents/aspect_planning.py#L28) | 28 | `"    (\"الكاميرا\", (\"الكاميرا\", \"كاميرا\", \"camera\")),"` | — |
+| [SRC-01273BA196-L000029](../../agents/aspect_planning.py#L29) | 29 | `"    (\"الأداء\", (\"الأداء\", \"الاداء\", \"performance\")),"` | — |
+| [SRC-01273BA196-L000030](../../agents/aspect_planning.py#L30) | 30 | `"    (\"المميزات\", (\"المميزات\", \"المزايا\", \"features\", \"pros\")),"` | — |
+| [SRC-01273BA196-L000031](../../agents/aspect_planning.py#L31) | 31 | `"    (\"العيوب\", (\"العيوب\", \"drawbacks\", \"cons\")),"` | — |
+| [SRC-01273BA196-L000032](../../agents/aspect_planning.py#L32) | 32 | `"    (\"المراجعات\", (\"المراجعات\", \"الآراء\", \"الاراء\", \"reviews\", \"opinions\")),"` | — |
+| [SRC-01273BA196-L000033](../../agents/aspect_planning.py#L33) | 33 | `"    (\"الخصوصية\", (\"الخصوصية\", \"privacy\")),"` | — |
+| [SRC-01273BA196-L000034](../../agents/aspect_planning.py#L34) | 34 | `"    (\"الاعتمادية\", (\"الاعتمادية\", \"الموثوقية\", \"reliability\")),"` | — |
+| [SRC-01273BA196-L000035](../../agents/aspect_planning.py#L35) | 35 | `"    (\"الدعم\", (\"الدعم\", \"support\")),"` | — |
+| [SRC-01273BA196-L000036](../../agents/aspect_planning.py#L36) | 36 | `"    (\"السرعة\", (\"السرعة\", \"speed\")),"` | — |
+| [SRC-01273BA196-L000037](../../agents/aspect_planning.py#L37) | 37 | `"    (\"الجودة\", (\"الجودة\", \"الجوده\", \"quality\")),"` | — |
+| [SRC-01273BA196-L000038](../../agents/aspect_planning.py#L38) | 38 | `"    (\"التوفر\", (\"التوفر\", \"التوافر\", \"availability\")),"` | — |
+| [SRC-01273BA196-L000039](../../agents/aspect_planning.py#L39) | 39 | `"    (\"المدى\", (\"المدى\", \"range\")),"` | — |
+| [SRC-01273BA196-L000040](../../agents/aspect_planning.py#L40) | 40 | `")"` | — |
+| [SRC-01273BA196-L000041](../../agents/aspect_planning.py#L41) | 41 | `"_COMPOUND_CONNECTOR_RE = re.compile("` | — |
+| [SRC-01273BA196-L000042](../../agents/aspect_planning.py#L42) | 42 | `"    r\"(?:بالإضافة\\s+إلى\|بالاضافة\\s+الى\|إلى\\s+جانب\|الى\\s+جانب\|\""` | — |
+| [SRC-01273BA196-L000043](../../agents/aspect_planning.py#L43) | 43 | `"    r\"فضلًا\\s+عن\|فضلا\\s+عن\|بجانب\|as\\s+well\\s+as\|in\\s+addition\\s+to\|\""` | — |
+| [SRC-01273BA196-L000044](../../agents/aspect_planning.py#L44) | 44 | `"    r\"along\\s+with\|however\|whereas)\","` | — |
+| [SRC-01273BA196-L000045](../../agents/aspect_planning.py#L45) | 45 | `"    flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000046](../../agents/aspect_planning.py#L46) | 46 | `")"` | — |
+| [SRC-01273BA196-L000047](../../agents/aspect_planning.py#L47) | 47 | `""` | — |
+| [SRC-01273BA196-L000048](../../agents/aspect_planning.py#L48) | 48 | `""` | — |
+| [SRC-01273BA196-L000049](../../agents/aspect_planning.py#L49) | 49 | `"def _normalize_space(value: str) -> str:"` | — |
+| [SRC-01273BA196-L000050](../../agents/aspect_planning.py#L50) | 50 | `"    return re.sub(r\"\\s+\", \" \", (value or \"\")).strip()"` | — |
+| [SRC-01273BA196-L000051](../../agents/aspect_planning.py#L51) | 51 | `""` | — |
+| [SRC-01273BA196-L000052](../../agents/aspect_planning.py#L52) | 52 | `""` | — |
+| [SRC-01273BA196-L000053](../../agents/aspect_planning.py#L53) | 53 | `"def _normalize_key(value: str) -> str:"` | — |
+| [SRC-01273BA196-L000054](../../agents/aspect_planning.py#L54) | 54 | `"    text = _normalize_space(value).casefold()"` | — |
+| [SRC-01273BA196-L000055](../../agents/aspect_planning.py#L55) | 55 | `"    text = text.translate(str.maketrans({\"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ة\": \"ه\", \"ى\": \"ي\"}))"` | — |
+| [SRC-01273BA196-L000056](../../agents/aspect_planning.py#L56) | 56 | `"    return text"` | — |
+| [SRC-01273BA196-L000057](../../agents/aspect_planning.py#L57) | 57 | `""` | — |
+| [SRC-01273BA196-L000058](../../agents/aspect_planning.py#L58) | 58 | `""` | — |
+| [SRC-01273BA196-L000059](../../agents/aspect_planning.py#L59) | 59 | `"def extract_aspects(question: str) -> list[str]:"` | — |
+| [SRC-01273BA196-L000060](../../agents/aspect_planning.py#L60) | 60 | `"    if not isinstance(question, str) or not question.strip():"` | — |
+| [SRC-01273BA196-L000061](../../agents/aspect_planning.py#L61) | 61 | `"        return []"` | — |
+| [SRC-01273BA196-L000062](../../agents/aspect_planning.py#L62) | 62 | `"    text = question.strip()[:4000]"` | — |
+| [SRC-01273BA196-L000063](../../agents/aspect_planning.py#L63) | 63 | `"    match = _ASPECT_MARKER_RE.search(text)"` | — |
+| [SRC-01273BA196-L000064](../../agents/aspect_planning.py#L64) | 64 | `"    pieces: list[str] = []"` | — |
+| [SRC-01273BA196-L000065](../../agents/aspect_planning.py#L65) | 65 | `"    if match:"` | — |
+| [SRC-01273BA196-L000066](../../agents/aspect_planning.py#L66) | 66 | `"        raw = match.group(1)"` | — |
+| [SRC-01273BA196-L000067](../../agents/aspect_planning.py#L67) | 67 | `"        raw = re.split("` | — |
+| [SRC-01273BA196-L000068](../../agents/aspect_planning.py#L68) | 68 | `"            r\"(?:،\|,\|؛\|;)\\s*(?:و?اذكر\|و?وضح\|بيّن\|اشرح\|and\\s+(?:explain\|note\|discuss))\\b\","` | — |
+| [SRC-01273BA196-L000069](../../agents/aspect_planning.py#L69) | 69 | `"            raw, maxsplit=1, flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000070](../../agents/aspect_planning.py#L70) | 70 | `"        )[0]"` | — |
+| [SRC-01273BA196-L000071](../../agents/aspect_planning.py#L71) | 71 | `"        pieces = re.split("` | — |
+| [SRC-01273BA196-L000072](../../agents/aspect_planning.py#L72) | 72 | `"            r\"\\s*(?:،\|,\|؛\|;\|/)\\s*\|\\s+\\band\\b\\s+\|\\s+\\bas well as\\b\\s+\|\""` | — |
+| [SRC-01273BA196-L000073](../../agents/aspect_planning.py#L73) | 73 | `"            r\"\\s+و(?=ال\|[ء-ي])\|\\s+(?:بالإضافة\\s+إلى\|بالاضافة\\s+الى\|\""` | — |
+| [SRC-01273BA196-L000074](../../agents/aspect_planning.py#L74) | 74 | `"            r\"إلى\\s+جانب\|الى\\s+جانب\|فضلًا\\s+عن\|فضلا\\s+عن\|بجانب\|\""` | — |
+| [SRC-01273BA196-L000075](../../agents/aspect_planning.py#L75) | 75 | `"            r\"in\\s+addition\\s+to\|along\\s+with)\\s+\","` | — |
+| [SRC-01273BA196-L000076](../../agents/aspect_planning.py#L76) | 76 | `"            raw, flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000077](../../agents/aspect_planning.py#L77) | 77 | `"        )"` | — |
+| [SRC-01273BA196-L000078](../../agents/aspect_planning.py#L78) | 78 | `"    else:"` | — |
+| [SRC-01273BA196-L000079](../../agents/aspect_planning.py#L79) | 79 | `"        question_parts = ["` | — |
+| [SRC-01273BA196-L000080](../../agents/aspect_planning.py#L80) | 80 | `"            part.strip(\" \\t\\r\\n-•\")"` | — |
+| [SRC-01273BA196-L000081](../../agents/aspect_planning.py#L81) | 81 | `"            for part in re.split(r\"[؟?]+\", text)"` | — |
+| [SRC-01273BA196-L000082](../../agents/aspect_planning.py#L82) | 82 | `"            if len(part.strip(\" \\t\\r\\n-•\")) >= 4"` | — |
+| [SRC-01273BA196-L000083](../../agents/aspect_planning.py#L83) | 83 | `"        ]"` | — |
+| [SRC-01273BA196-L000084](../../agents/aspect_planning.py#L84) | 84 | `"        if len(question_parts) > 1:"` | — |
+| [SRC-01273BA196-L000085](../../agents/aspect_planning.py#L85) | 85 | `"            pieces = question_parts"` | — |
+| [SRC-01273BA196-L000086](../../agents/aspect_planning.py#L86) | 86 | `"        else:"` | — |
+| [SRC-01273BA196-L000087](../../agents/aspect_planning.py#L87) | 87 | `"            normalized_text = _normalize_key(text)"` | — |
+| [SRC-01273BA196-L000088](../../agents/aspect_planning.py#L88) | 88 | `"            found_facets = ["` | — |
+| [SRC-01273BA196-L000089](../../agents/aspect_planning.py#L89) | 89 | `"                canonical"` | — |
+| [SRC-01273BA196-L000090](../../agents/aspect_planning.py#L90) | 90 | `"                for canonical, aliases in _DIMENSION_GROUPS"` | — |
+| [SRC-01273BA196-L000091](../../agents/aspect_planning.py#L91) | 91 | `"                if any(_normalize_key(alias) in normalized_text for alias in aliases)"` | — |
+| [SRC-01273BA196-L000092](../../agents/aspect_planning.py#L92) | 92 | `"            ]"` | — |
+| [SRC-01273BA196-L000093](../../agents/aspect_planning.py#L93) | 93 | `"            # Joined facet nouns (e.g. \"price and warranty\") are compound"` | — |
+| [SRC-01273BA196-L000094](../../agents/aspect_planning.py#L94) | 94 | `"            # requirements even when the user omits a formal comparison phrase."` | — |
+| [SRC-01273BA196-L000095](../../agents/aspect_planning.py#L95) | 95 | `"            if ("` | — |
+| [SRC-01273BA196-L000096](../../agents/aspect_planning.py#L96) | 96 | `"                len(found_facets) >= 2"` | — |
+| [SRC-01273BA196-L000097](../../agents/aspect_planning.py#L97) | 97 | `"                or _COMPARE_RE.search(text)"` | — |
+| [SRC-01273BA196-L000098](../../agents/aspect_planning.py#L98) | 98 | `"                or _COMPOUND_CONNECTOR_RE.search(text)"` | — |
+| [SRC-01273BA196-L000099](../../agents/aspect_planning.py#L99) | 99 | `"            ):"` | — |
+| [SRC-01273BA196-L000100](../../agents/aspect_planning.py#L100) | 100 | `"                pieces = found_facets[:MAX_ASPECTS]"` | — |
+| [SRC-01273BA196-L000101](../../agents/aspect_planning.py#L101) | 101 | `"    targets: list[str] = []"` | — |
+| [SRC-01273BA196-L000102](../../agents/aspect_planning.py#L102) | 102 | `"    seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000103](../../agents/aspect_planning.py#L103) | 103 | `"    for piece in pieces:"` | — |
+| [SRC-01273BA196-L000104](../../agents/aspect_planning.py#L104) | 104 | `"        target = re.sub(r\"^[\\s:،,؛;/.!?\\-–—]+\|[\\s:،,؛;/.!?\\-–—]+$\", \"\", piece).strip()"` | — |
+| [SRC-01273BA196-L000105](../../agents/aspect_planning.py#L105) | 105 | `"        target = re.sub(r\"^(?:و\\s*)\", \"\", target).strip()"` | — |
+| [SRC-01273BA196-L000106](../../agents/aspect_planning.py#L106) | 106 | `"        if len(target) < 2:"` | — |
+| [SRC-01273BA196-L000107](../../agents/aspect_planning.py#L107) | 107 | `"            continue"` | — |
+| [SRC-01273BA196-L000108](../../agents/aspect_planning.py#L108) | 108 | `"        if len(target) > 120:"` | — |
+| [SRC-01273BA196-L000109](../../agents/aspect_planning.py#L109) | 109 | `"            target = target[:120].rsplit(\" \", 1)[0].strip()"` | — |
+| [SRC-01273BA196-L000110](../../agents/aspect_planning.py#L110) | 110 | `"        key = _normalize_key(target)"` | — |
+| [SRC-01273BA196-L000111](../../agents/aspect_planning.py#L111) | 111 | `"        if key and key not in seen:"` | — |
+| [SRC-01273BA196-L000112](../../agents/aspect_planning.py#L112) | 112 | `"            seen.add(key)"` | — |
+| [SRC-01273BA196-L000113](../../agents/aspect_planning.py#L113) | 113 | `"            targets.append(target)"` | — |
+| [SRC-01273BA196-L000114](../../agents/aspect_planning.py#L114) | 114 | `"        if len(targets) >= MAX_ASPECTS:"` | — |
+| [SRC-01273BA196-L000115](../../agents/aspect_planning.py#L115) | 115 | `"            break"` | — |
+| [SRC-01273BA196-L000116](../../agents/aspect_planning.py#L116) | 116 | `"    return targets"` | — |
+| [SRC-01273BA196-L000117](../../agents/aspect_planning.py#L117) | 117 | `""` | — |
+| [SRC-01273BA196-L000118](../../agents/aspect_planning.py#L118) | 118 | `""` | — |
+| [SRC-01273BA196-L000119](../../agents/aspect_planning.py#L119) | 119 | `"def build_aspect_queries(topic_query: str, aspects: list[str], *, limit: int = MAX_PLAN_QUERIES) -> list[str]:"` | — |
+| [SRC-01273BA196-L000120](../../agents/aspect_planning.py#L120) | 120 | `"    queries: list[str] = []"` | — |
+| [SRC-01273BA196-L000121](../../agents/aspect_planning.py#L121) | 121 | `"    seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000122](../../agents/aspect_planning.py#L122) | 122 | `"    topic = _normalize_space(topic_query)"` | — |
+| [SRC-01273BA196-L000123](../../agents/aspect_planning.py#L123) | 123 | `"    if topic:"` | — |
+| [SRC-01273BA196-L000124](../../agents/aspect_planning.py#L124) | 124 | `"        queries.append(topic)"` | — |
+| [SRC-01273BA196-L000125](../../agents/aspect_planning.py#L125) | 125 | `"        seen.add(_normalize_key(topic))"` | — |
+| [SRC-01273BA196-L000126](../../agents/aspect_planning.py#L126) | 126 | `"    for aspect in aspects:"` | — |
+| [SRC-01273BA196-L000127](../../agents/aspect_planning.py#L127) | 127 | `"        aspect_clean = _normalize_space(str(aspect))"` | — |
+| [SRC-01273BA196-L000128](../../agents/aspect_planning.py#L128) | 128 | `"        if not aspect_clean:"` | — |
+| [SRC-01273BA196-L000129](../../agents/aspect_planning.py#L129) | 129 | `"            continue"` | — |
+| [SRC-01273BA196-L000130](../../agents/aspect_planning.py#L130) | 130 | `"        candidate = _normalize_space(f\"{topic} {aspect_clean}\" if topic else aspect_clean)[:240]"` | — |
+| [SRC-01273BA196-L000131](../../agents/aspect_planning.py#L131) | 131 | `"        key = _normalize_key(candidate)"` | — |
+| [SRC-01273BA196-L000132](../../agents/aspect_planning.py#L132) | 132 | `"        if key and key not in seen:"` | — |
+| [SRC-01273BA196-L000133](../../agents/aspect_planning.py#L133) | 133 | `"            seen.add(key)"` | — |
+| [SRC-01273BA196-L000134](../../agents/aspect_planning.py#L134) | 134 | `"            queries.append(candidate)"` | — |
+| [SRC-01273BA196-L000135](../../agents/aspect_planning.py#L135) | 135 | `"        if len(queries) >= max(1, min(int(limit), MAX_PLAN_QUERIES)):"` | — |
+| [SRC-01273BA196-L000136](../../agents/aspect_planning.py#L136) | 136 | `"            break"` | — |
+| [SRC-01273BA196-L000137](../../agents/aspect_planning.py#L137) | 137 | `"    return queries"` | — |
+| [SRC-01273BA196-L000138](../../agents/aspect_planning.py#L138) | 138 | `""` | — |
+| [SRC-01273BA196-L000139](../../agents/aspect_planning.py#L139) | 139 | `""` | — |
+| [SRC-01273BA196-L000140](../../agents/aspect_planning.py#L140) | 140 | `"def augment_plan_with_aspects("` | — |
+| [SRC-01273BA196-L000141](../../agents/aspect_planning.py#L141) | 141 | `"    plan: dict[str, Any], question: str, topic_query: str, *, compact_fn: Any = None,"` | — |
+| [SRC-01273BA196-L000142](../../agents/aspect_planning.py#L142) | 142 | `") -> dict[str, Any]:"` | — |
+| [SRC-01273BA196-L000143](../../agents/aspect_planning.py#L143) | 143 | `"    out = dict(plan or {})"` | — |
+| [SRC-01273BA196-L000144](../../agents/aspect_planning.py#L144) | 144 | `"    aspects = extract_aspects(question)"` | — |
+| [SRC-01273BA196-L000145](../../agents/aspect_planning.py#L145) | 145 | `"    out[\"aspects\"] = aspects"` | — |
+| [SRC-01273BA196-L000146](../../agents/aspect_planning.py#L146) | 146 | `"    base_queries = [str(q).strip() for q in (out.get(\"queries\") or []) if isinstance(q, str) and q.strip()]"` | — |
+| [SRC-01273BA196-L000147](../../agents/aspect_planning.py#L147) | 147 | `"    topic = topic_query or (base_queries[0] if base_queries else \"\")"` | — |
+| [SRC-01273BA196-L000148](../../agents/aspect_planning.py#L148) | 148 | `"    if compact_fn is not None:"` | — |
+| [SRC-01273BA196-L000149](../../agents/aspect_planning.py#L149) | 149 | `"        try:"` | — |
+| [SRC-01273BA196-L000150](../../agents/aspect_planning.py#L150) | 150 | `"            topic = compact_fn(topic) or topic"` | — |
+| [SRC-01273BA196-L000151](../../agents/aspect_planning.py#L151) | 151 | `"        except (TypeError, ValueError):"` | — |
+| [SRC-01273BA196-L000152](../../agents/aspect_planning.py#L152) | 152 | `"            pass"` | — |
+| [SRC-01273BA196-L000153](../../agents/aspect_planning.py#L153) | 153 | `"    aspect_queries = build_aspect_queries(topic, aspects)"` | — |
+| [SRC-01273BA196-L000154](../../agents/aspect_planning.py#L154) | 154 | `"    if compact_fn is not None:"` | — |
+| [SRC-01273BA196-L000155](../../agents/aspect_planning.py#L155) | 155 | `"        compacted: list[str] = []"` | — |
+| [SRC-01273BA196-L000156](../../agents/aspect_planning.py#L156) | 156 | `"        seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000157](../../agents/aspect_planning.py#L157) | 157 | `"        for q in aspect_queries + base_queries:"` | — |
+| [SRC-01273BA196-L000158](../../agents/aspect_planning.py#L158) | 158 | `"            try:"` | — |
+| [SRC-01273BA196-L000159](../../agents/aspect_planning.py#L159) | 159 | `"                cq = compact_fn(q)"` | — |
+| [SRC-01273BA196-L000160](../../agents/aspect_planning.py#L160) | 160 | `"            except (TypeError, ValueError):"` | — |
+| [SRC-01273BA196-L000161](../../agents/aspect_planning.py#L161) | 161 | `"                cq = q"` | — |
+| [SRC-01273BA196-L000162](../../agents/aspect_planning.py#L162) | 162 | `"            if not cq:"` | — |
+| [SRC-01273BA196-L000163](../../agents/aspect_planning.py#L163) | 163 | `"                continue"` | — |
+| [SRC-01273BA196-L000164](../../agents/aspect_planning.py#L164) | 164 | `"            key = _normalize_key(cq)"` | — |
+| [SRC-01273BA196-L000165](../../agents/aspect_planning.py#L165) | 165 | `"            if key not in seen:"` | — |
+| [SRC-01273BA196-L000166](../../agents/aspect_planning.py#L166) | 166 | `"                seen.add(key)"` | — |
+| [SRC-01273BA196-L000167](../../agents/aspect_planning.py#L167) | 167 | `"                compacted.append(cq)"` | — |
+| [SRC-01273BA196-L000168](../../agents/aspect_planning.py#L168) | 168 | `"            if len(compacted) >= MAX_PLAN_QUERIES:"` | — |
+| [SRC-01273BA196-L000169](../../agents/aspect_planning.py#L169) | 169 | `"                break"` | — |
+| [SRC-01273BA196-L000170](../../agents/aspect_planning.py#L170) | 170 | `"        out[\"queries\"] = compacted"` | — |
+| [SRC-01273BA196-L000171](../../agents/aspect_planning.py#L171) | 171 | `"    else:"` | — |
+| [SRC-01273BA196-L000172](../../agents/aspect_planning.py#L172) | 172 | `"        merged: list[str] = []"` | — |
+| [SRC-01273BA196-L000173](../../agents/aspect_planning.py#L173) | 173 | `"        seen_m: set[str] = set()"` | — |
+| [SRC-01273BA196-L000174](../../agents/aspect_planning.py#L174) | 174 | `"        for q in aspect_queries + base_queries:"` | — |
+| [SRC-01273BA196-L000175](../../agents/aspect_planning.py#L175) | 175 | `"            key = _normalize_key(q)"` | — |
+| [SRC-01273BA196-L000176](../../agents/aspect_planning.py#L176) | 176 | `"            if key and key not in seen_m:"` | — |
+| [SRC-01273BA196-L000177](../../agents/aspect_planning.py#L177) | 177 | `"                seen_m.add(key)"` | — |
+| [SRC-01273BA196-L000178](../../agents/aspect_planning.py#L178) | 178 | `"                merged.append(q)"` | — |
+| [SRC-01273BA196-L000179](../../agents/aspect_planning.py#L179) | 179 | `"            if len(merged) >= MAX_PLAN_QUERIES:"` | — |
+| [SRC-01273BA196-L000180](../../agents/aspect_planning.py#L180) | 180 | `"                break"` | — |
+| [SRC-01273BA196-L000181](../../agents/aspect_planning.py#L181) | 181 | `"        out[\"queries\"] = merged"` | — |
+| [SRC-01273BA196-L000182](../../agents/aspect_planning.py#L182) | 182 | `"    out[\"aspect_queries\"] = list(out.get(\"queries\") or [])"` | — |
+| [SRC-01273BA196-L000183](../../agents/aspect_planning.py#L183) | 183 | `"    return out"` | — |
+| [SRC-01273BA196-L000184](../../agents/aspect_planning.py#L184) | 184 | `""` | — |
+| [SRC-01273BA196-L000185](../../agents/aspect_planning.py#L185) | 185 | `""` | — |
+| [SRC-01273BA196-L000186](../../agents/aspect_planning.py#L186) | 186 | `"def _source_text(source: dict[str, Any]) -> str:"` | — |
+| [SRC-01273BA196-L000187](../../agents/aspect_planning.py#L187) | 187 | `"    return \" \".join(str(source.get(key) or \"\") for key in (\"title\", \"snippet\", \"page_text\"))"` | — |
+| [SRC-01273BA196-L000188](../../agents/aspect_planning.py#L188) | 188 | `""` | — |
+| [SRC-01273BA196-L000189](../../agents/aspect_planning.py#L189) | 189 | `""` | — |
+| [SRC-01273BA196-L000190](../../agents/aspect_planning.py#L190) | 190 | `"def build_evidence_ledger(aspects: list[str], sources: list[dict[str, Any]], *, min_term_len: int = 2) -> dict[str, Any]:"` | — |
+| [SRC-01273BA196-L000191](../../agents/aspect_planning.py#L191) | 191 | `"    ledger: dict[str, Any] = {\"aspects\": [], \"covered\": [], \"missing\": [], \"by_aspect\": {}}"` | — |
+| [SRC-01273BA196-L000192](../../agents/aspect_planning.py#L192) | 192 | `"    if not aspects:"` | — |
+| [SRC-01273BA196-L000193](../../agents/aspect_planning.py#L193) | 193 | `"        ledger[\"note\"] = \"no_explicit_aspects\""` | — |
+| [SRC-01273BA196-L000194](../../agents/aspect_planning.py#L194) | 194 | `"        return ledger"` | — |
+| [SRC-01273BA196-L000195](../../agents/aspect_planning.py#L195) | 195 | `"    for aspect in aspects:"` | — |
+| [SRC-01273BA196-L000196](../../agents/aspect_planning.py#L196) | 196 | `"        tokens = [t for t in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", _normalize_key(aspect)) if len(t) >= min_term_len]"` | — |
+| [SRC-01273BA196-L000197](../../agents/aspect_planning.py#L197) | 197 | `"        matches: list[dict[str, Any]] = []"` | — |
+| [SRC-01273BA196-L000198](../../agents/aspect_planning.py#L198) | 198 | `"        for source in sources or []:"` | — |
+| [SRC-01273BA196-L000199](../../agents/aspect_planning.py#L199) | 199 | `"            if not isinstance(source, dict):"` | — |
+| [SRC-01273BA196-L000200](../../agents/aspect_planning.py#L200) | 200 | `"                continue"` | — |
+| [SRC-01273BA196-L000201](../../agents/aspect_planning.py#L201) | 201 | `"            hay = _normalize_key(_source_text(source))"` | — |
+| [SRC-01273BA196-L000202](../../agents/aspect_planning.py#L202) | 202 | `"            if not hay:"` | — |
+| [SRC-01273BA196-L000203](../../agents/aspect_planning.py#L203) | 203 | `"                continue"` | — |
+| [SRC-01273BA196-L000204](../../agents/aspect_planning.py#L204) | 204 | `"            hit = sum(1 for t in tokens if t in hay)"` | — |
+| [SRC-01273BA196-L000205](../../agents/aspect_planning.py#L205) | 205 | `"            if tokens and hit >= max(1, (len(tokens) + 1) // 2):"` | — |
+| [SRC-01273BA196-L000206](../../agents/aspect_planning.py#L206) | 206 | `"                evidence_type = \"page_text\" if source.get(\"page_text\") else \"snippet\" if source.get(\"snippet\") else \"title\""` | — |
+| [SRC-01273BA196-L000207](../../agents/aspect_planning.py#L207) | 207 | `"                matches.append({"` | — |
+| [SRC-01273BA196-L000208](../../agents/aspect_planning.py#L208) | 208 | `"                    \"url\": source.get(\"url\", \"\"),"` | — |
+| [SRC-01273BA196-L000209](../../agents/aspect_planning.py#L209) | 209 | `"                    \"title\": source.get(\"title\", \"\"),"` | — |
+| [SRC-01273BA196-L000210](../../agents/aspect_planning.py#L210) | 210 | `"                    \"provider\": source.get(\"provider\") or (source.get(\"providers\") or [\"unknown\"])[0],"` | — |
+| [SRC-01273BA196-L000211](../../agents/aspect_planning.py#L211) | 211 | `"                    \"evidence_type\": evidence_type,"` | — |
+| [SRC-01273BA196-L000212](../../agents/aspect_planning.py#L212) | 212 | `"                    \"lexical_hits\": hit,"` | — |
+| [SRC-01273BA196-L000213](../../agents/aspect_planning.py#L213) | 213 | `"                    \"search_query\": source.get(\"search_query\") or ((source.get(\"queries\") or [\"\"])[0] if source.get(\"queries\") else \"\"),"` | — |
+| [SRC-01273BA196-L000214](../../agents/aspect_planning.py#L214) | 214 | `"                })"` | — |
+| [SRC-01273BA196-L000215](../../agents/aspect_planning.py#L215) | 215 | `"        entry = {\"aspect\": aspect, \"candidate_count\": len(matches), \"candidates\": matches[:5], \"has_lexical_candidate\": bool(matches)}"` | — |
+| [SRC-01273BA196-L000216](../../agents/aspect_planning.py#L216) | 216 | `"        ledger[\"by_aspect\"][aspect] = entry"` | — |
+| [SRC-01273BA196-L000217](../../agents/aspect_planning.py#L217) | 217 | `"        ledger[\"aspects\"].append(aspect)"` | — |
+| [SRC-01273BA196-L000218](../../agents/aspect_planning.py#L218) | 218 | `"        if matches:"` | — |
+| [SRC-01273BA196-L000219](../../agents/aspect_planning.py#L219) | 219 | `"            ledger[\"covered\"].append(aspect)"` | — |
+| [SRC-01273BA196-L000220](../../agents/aspect_planning.py#L220) | 220 | `"        else:"` | — |
+| [SRC-01273BA196-L000221](../../agents/aspect_planning.py#L221) | 221 | `"            ledger[\"missing\"].append(aspect)"` | — |
+| [SRC-01273BA196-L000222](../../agents/aspect_planning.py#L222) | 222 | `"    ledger[\"coverage_ratio\"] = round(len(ledger[\"covered\"]) / max(1, len(aspects)), 3)"` | — |
+| [SRC-01273BA196-L000223](../../agents/aspect_planning.py#L223) | 223 | `"    return ledger"` | — |
+| [SRC-01273BA196-L000224](../../agents/aspect_planning.py#L224) | 224 | `""` | — |
+| [SRC-01273BA196-L000225](../../agents/aspect_planning.py#L225) | 225 | `""` | — |
+| [SRC-01273BA196-L000226](../../agents/aspect_planning.py#L226) | 226 | `"def repair_queries_for_missing_aspects("` | — |
+| [SRC-01273BA196-L000227](../../agents/aspect_planning.py#L227) | 227 | `"    topic_query: str, missing_aspects: list[str], *, limit: int = 3, compact_fn: Any = None,"` | — |
+| [SRC-01273BA196-L000228](../../agents/aspect_planning.py#L228) | 228 | `") -> list[str]:"` | — |
+| [SRC-01273BA196-L000229](../../agents/aspect_planning.py#L229) | 229 | `"    topic = _normalize_space(topic_query)"` | — |
+| [SRC-01273BA196-L000230](../../agents/aspect_planning.py#L230) | 230 | `"    out: list[str] = []"` | — |
+| [SRC-01273BA196-L000231](../../agents/aspect_planning.py#L231) | 231 | `"    seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000232](../../agents/aspect_planning.py#L232) | 232 | `"    for aspect in missing_aspects:"` | — |
+| [SRC-01273BA196-L000233](../../agents/aspect_planning.py#L233) | 233 | `"        aspect_clean = _normalize_space(str(aspect))"` | — |
+| [SRC-01273BA196-L000234](../../agents/aspect_planning.py#L234) | 234 | `"        if not aspect_clean:"` | — |
+| [SRC-01273BA196-L000235](../../agents/aspect_planning.py#L235) | 235 | `"            continue"` | — |
+| [SRC-01273BA196-L000236](../../agents/aspect_planning.py#L236) | 236 | `"        raw = f\"{topic} {aspect_clean}\".strip() if topic else aspect_clean"` | — |
+| [SRC-01273BA196-L000237](../../agents/aspect_planning.py#L237) | 237 | `"        if compact_fn is not None:"` | — |
+| [SRC-01273BA196-L000238](../../agents/aspect_planning.py#L238) | 238 | `"            try:"` | — |
+| [SRC-01273BA196-L000239](../../agents/aspect_planning.py#L239) | 239 | `"                raw = compact_fn(raw) or raw"` | — |
+| [SRC-01273BA196-L000240](../../agents/aspect_planning.py#L240) | 240 | `"            except (TypeError, ValueError):"` | — |
+| [SRC-01273BA196-L000241](../../agents/aspect_planning.py#L241) | 241 | `"                pass"` | — |
+| [SRC-01273BA196-L000242](../../agents/aspect_planning.py#L242) | 242 | `"        raw = _normalize_space(raw)[:240]"` | — |
+| [SRC-01273BA196-L000243](../../agents/aspect_planning.py#L243) | 243 | `"        key = _normalize_key(raw)"` | — |
+| [SRC-01273BA196-L000244](../../agents/aspect_planning.py#L244) | 244 | `"        if raw and key not in seen:"` | — |
+| [SRC-01273BA196-L000245](../../agents/aspect_planning.py#L245) | 245 | `"            seen.add(key)"` | — |
+| [SRC-01273BA196-L000246](../../agents/aspect_planning.py#L246) | 246 | `"            out.append(raw)"` | — |
+| [SRC-01273BA196-L000247](../../agents/aspect_planning.py#L247) | 247 | `"        if len(out) >= max(1, min(int(limit), 3)):"` | — |
+| [SRC-01273BA196-L000248](../../agents/aspect_planning.py#L248) | 248 | `"            break"` | — |
+| [SRC-01273BA196-L000249](../../agents/aspect_planning.py#L249) | 249 | `"    return out"` | — |
+| [SRC-01273BA196-L000250](../../agents/aspect_planning.py#L250) | 250 | `""` | — |
+| [SRC-01273BA196-L000251](../../agents/aspect_planning.py#L251) | 251 | `""` | — |
+| [SRC-01273BA196-L000252](../../agents/aspect_planning.py#L252) | 252 | `"def arabic_aspect_diagnostics(ledger: dict[str, Any]) -> list[str]:"` | — |
+| [SRC-01273BA196-L000253](../../agents/aspect_planning.py#L253) | 253 | `"    lines: list[str] = []"` | — |
+| [SRC-01273BA196-L000254](../../agents/aspect_planning.py#L254) | 254 | `"    if not ledger or ledger.get(\"note\") == \"no_explicit_aspects\":"` | — |
+| [SRC-01273BA196-L000255](../../agents/aspect_planning.py#L255) | 255 | `"        return lines"` | — |
+| [SRC-01273BA196-L000256](../../agents/aspect_planning.py#L256) | 256 | `"    covered = ledger.get(\"covered\") or []"` | — |
+| [SRC-01273BA196-L000257](../../agents/aspect_planning.py#L257) | 257 | `"    missing = ledger.get(\"missing\") or []"` | — |
+| [SRC-01273BA196-L000258](../../agents/aspect_planning.py#L258) | 258 | `"    if covered:"` | — |
+| [SRC-01273BA196-L000259](../../agents/aspect_planning.py#L259) | 259 | `"        lines.append(\"محاور وُجد لها مرشح نصي واحد على الأقل: \" + \"، \".join(str(x) for x in covered))"` | — |
+| [SRC-01273BA196-L000260](../../agents/aspect_planning.py#L260) | 260 | `"    if missing:"` | — |
+| [SRC-01273BA196-L000261](../../agents/aspect_planning.py#L261) | 261 | `"        lines.append("` | — |
+| [SRC-01273BA196-L000262](../../agents/aspect_planning.py#L262) | 262 | `"            \"محاور بلا مرشح نصي كافٍ في النتائج الحالية: \""` | — |
+| [SRC-01273BA196-L000263](../../agents/aspect_planning.py#L263) | 263 | `"            + \"، \".join(str(x) for x in missing)"` | — |
+| [SRC-01273BA196-L000264](../../agents/aspect_planning.py#L264) | 264 | `"            + \". هذا لا ينفي وجود معلومات خارج النتائج المجلوبة.\""` | — |
+| [SRC-01273BA196-L000265](../../agents/aspect_planning.py#L265) | 265 | `"        )"` | — |
+| [SRC-01273BA196-L000266](../../agents/aspect_planning.py#L266) | 266 | `"    ratio = ledger.get(\"coverage_ratio\")"` | — |
+| [SRC-01273BA196-L000267](../../agents/aspect_planning.py#L267) | 267 | `"    if isinstance(ratio, (int, float)):"` | — |
+| [SRC-01273BA196-L000268](../../agents/aspect_planning.py#L268) | 268 | `"        lines.append(f\"نسبة تغطية المحاور لفظيًا (تقريبية): {int(ratio * 100)}٪.\")"` | — |
+| [SRC-01273BA196-L000269](../../agents/aspect_planning.py#L269) | 269 | `"    lines.append(\"تنبيه: وجود مقتطف يطابق كلمات المحور لا يثبت صحة الادعاء.\")"` | — |
+| [SRC-01273BA196-L000270](../../agents/aspect_planning.py#L270) | 270 | `"    return lines"` | — |
 ## الوكيل والمنطق
 
 ### FILE-2D53795445 — [agents/dialogue_state.py](../../agents/dialogue_state.py#L1)
@@ -564,273 +843,3 @@
 | [SRC-5587371288-L000134](../../agents/intent_router.py#L134) | 134 | `"        re.search("` | — |
 | [SRC-5587371288-L000135](../../agents/intent_router.py#L135) | 135 | `"            r\"\\b(?:buyers?\|customers?\|prospects?\|leads?)\\b.{0,45}\\b\""` | — |
 | [SRC-5587371288-L000136](../../agents/intent_router.py#L136) | 136 | `"            r\"(?:looking to buy\|want to buy\|wants to buy\|seeking to purchase)\\b\","` | — |
-| [SRC-5587371288-L000137](../../agents/intent_router.py#L137) | 137 | `"            normalized,"` | — |
-| [SRC-5587371288-L000138](../../agents/intent_router.py#L138) | 138 | `"        )"` | — |
-| [SRC-5587371288-L000139](../../agents/intent_router.py#L139) | 139 | `"    )"` | — |
-| [SRC-5587371288-L000140](../../agents/intent_router.py#L140) | 140 | `""` | — |
-| [SRC-5587371288-L000141](../../agents/intent_router.py#L141) | 141 | `""` | — |
-| [SRC-5587371288-L000142](../../agents/intent_router.py#L142) | 142 | `"_FOLLOWUP_LEAD_IN_RE = re.compile("` | — |
-| [SRC-5587371288-L000143](../../agents/intent_router.py#L143) | 143 | `"    r\"^(?:(?:و?طيب\|و?طب\|و?تمام\|well\|okay\|ok\|so)\\s+)+\","` | — |
-| [SRC-5587371288-L000144](../../agents/intent_router.py#L144) | 144 | `"    re.IGNORECASE,"` | — |
-| [SRC-5587371288-L000145](../../agents/intent_router.py#L145) | 145 | `")"` | — |
-| [SRC-5587371288-L000146](../../agents/intent_router.py#L146) | 146 | `""` | — |
-| [SRC-5587371288-L000147](../../agents/intent_router.py#L147) | 147 | `"_FOLLOWUP_ASPECT_FRAGMENTS = frozenset({"` | — |
-| [SRC-5587371288-L000148](../../agents/intent_router.py#L148) | 148 | `"    \"السعر\", \"سعرها كام\", \"سعره كام\", \"سعرها\", \"سعره\", \"والسعر\", \"وسعرها\","` | — |
-| [SRC-5587371288-L000149](../../agents/intent_router.py#L149) | 149 | `"    \"الاسعار\", \"والاسعار\", \"الاسعار الحاليه\", \"اسعار الحاليه\", \"السعر الحالي\","` | — |
-| [SRC-5587371288-L000150](../../agents/intent_router.py#L150) | 150 | `"    \"سعر اليوم\", \"اسعار اليوم\", \"التكلفه\", \"والتكلفه\", \"الضمان\", \"والضمان\","` | — |
-| [SRC-5587371288-L000151](../../agents/intent_router.py#L151) | 151 | `"    \"ضمانها\", \"ضمانه\", \"البطاريه\", \"والبطاريه\", \"الكاميرا\", \"والكاميرا\","` | — |
-| [SRC-5587371288-L000152](../../agents/intent_router.py#L152) | 152 | `"    \"المميزات\", \"والمميزات\", \"العيوب\", \"والعيوب\", \"المكان\", \"والمكان\","` | — |
-| [SRC-5587371288-L000153](../../agents/intent_router.py#L153) | 153 | `"    \"المصدر\", \"والمصدر\", \"الرابط\", \"والرابط\", \"التاريخ\", \"والتاريخ\","` | — |
-| [SRC-5587371288-L000154](../../agents/intent_router.py#L154) | 154 | `"    \"المراجعات\", \"والمراجعات\", \"الاراء\", \"والاراء\", \"and the price\","` | — |
-| [SRC-5587371288-L000155](../../agents/intent_router.py#L155) | 155 | `"    \"and the warranty\", \"what about the warranty\", \"what about the price\","` | — |
-| [SRC-5587371288-L000156](../../agents/intent_router.py#L156) | 156 | `"    \"its price\", \"the warranty\", \"the location\", \"the pros\", \"the cons\","` | — |
-| [SRC-5587371288-L000157](../../agents/intent_router.py#L157) | 157 | `"})"` | — |
-| [SRC-5587371288-L000158](../../agents/intent_router.py#L158) | 158 | `""` | — |
-| [SRC-5587371288-L000159](../../agents/intent_router.py#L159) | 159 | `""` | — |
-| [SRC-5587371288-L000160](../../agents/intent_router.py#L160) | 160 | `"_CONTEXTUAL_ASPECT_RE = re.compile("` | — |
-| [SRC-5587371288-L000161](../../agents/intent_router.py#L161) | 161 | `"    r\"^(?:ال)?(?:سعر\|ثمن\|اسعار\|تكلفه\|ضمان\|بطاريه\|كاميرا\|مميزات\|عيوب\|\""` | — |
-| [SRC-5587371288-L000162](../../agents/intent_router.py#L162) | 162 | `"    r\"مكان\|مصدر\|رابط\|تاريخ\|مراجعات\|اراء\|توفر\|سرعه\|اداء\|جوده\|صيانه)\""` | — |
-| [SRC-5587371288-L000163](../../agents/intent_router.py#L163) | 163 | `")"` | — |
-| [SRC-5587371288-L000164](../../agents/intent_router.py#L164) | 164 | `"_CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile("` | — |
-| [SRC-5587371288-L000165](../../agents/intent_router.py#L165) | 165 | `"    r\"^(?:what about(?: its)?\|how about(?: its)?\|and (?:the\|its\|their)\|its) +\""` | — |
-| [SRC-5587371288-L000166](../../agents/intent_router.py#L166) | 166 | `"    r\"(?:price\|warranty\|battery\|camera\|location\|source\|link\|date\|pros\|cons)\""` | — |
-| [SRC-5587371288-L000167](../../agents/intent_router.py#L167) | 167 | `")"` | — |
-| [SRC-5587371288-L000168](../../agents/intent_router.py#L168) | 168 | `""` | — |
-| [SRC-5587371288-L000169](../../agents/intent_router.py#L169) | 169 | `""` | — |
-| [SRC-5587371288-L000170](../../agents/intent_router.py#L170) | 170 | `"def _strip_followup_leadin(value: str) -> str:"` | — |
-| [SRC-5587371288-L000171](../../agents/intent_router.py#L171) | 171 | `"    return _FOLLOWUP_LEAD_IN_RE.sub(\"\", value).strip()"` | — |
-| [SRC-5587371288-L000172](../../agents/intent_router.py#L172) | 172 | `""` | — |
-| [SRC-5587371288-L000173](../../agents/intent_router.py#L173) | 173 | `""` | — |
-| [SRC-5587371288-L000174](../../agents/intent_router.py#L174) | 174 | `"def _starts_with_contextual_aspect(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000175](../../agents/intent_router.py#L175) | 175 | `"    \"\"\"Recognize aspect-led follow-ups without merging standalone new topics.\"\"\""` | — |
-| [SRC-5587371288-L000176](../../agents/intent_router.py#L176) | 176 | `"    normalized = _normalize(question)"` | — |
-| [SRC-5587371288-L000177](../../agents/intent_router.py#L177) | 177 | `"    if _CONTEXTUAL_ENGLISH_ASPECT_RE.match(normalized):"` | — |
-| [SRC-5587371288-L000178](../../agents/intent_router.py#L178) | 178 | `"        return True"` | — |
-| [SRC-5587371288-L000179](../../agents/intent_router.py#L179) | 179 | `"    stripped = _strip_followup_leadin(normalized)"` | — |
-| [SRC-5587371288-L000180](../../agents/intent_router.py#L180) | 180 | `"    if stripped != normalized:"` | — |
-| [SRC-5587371288-L000181](../../agents/intent_router.py#L181) | 181 | `"        return bool(_CONTEXTUAL_ASPECT_RE.match(stripped))"` | — |
-| [SRC-5587371288-L000182](../../agents/intent_router.py#L182) | 182 | `"    if normalized.startswith(\"و\"):"` | — |
-| [SRC-5587371288-L000183](../../agents/intent_router.py#L183) | 183 | `"        return bool(_CONTEXTUAL_ASPECT_RE.match(normalized[1:]))"` | — |
-| [SRC-5587371288-L000184](../../agents/intent_router.py#L184) | 184 | `"    return False"` | — |
-| [SRC-5587371288-L000185](../../agents/intent_router.py#L185) | 185 | `""` | — |
-| [SRC-5587371288-L000186](../../agents/intent_router.py#L186) | 186 | `""` | — |
-| [SRC-5587371288-L000187](../../agents/intent_router.py#L187) | 187 | `"def _needs_clarification(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000188](../../agents/intent_router.py#L188) | 188 | `"    normalized = _strip_followup_leadin(_normalize(question))"` | — |
-| [SRC-5587371288-L000189](../../agents/intent_router.py#L189) | 189 | `"    ambiguous = {_normalize(item) for item in _AMBIGUOUS_ARABIC}"` | — |
-| [SRC-5587371288-L000190](../../agents/intent_router.py#L190) | 190 | `"    ambiguous.update(_normalize(item) for item in _AMBIGUOUS_ENGLISH)"` | — |
-| [SRC-5587371288-L000191](../../agents/intent_router.py#L191) | 191 | `"    if ("` | — |
-| [SRC-5587371288-L000192](../../agents/intent_router.py#L192) | 192 | `"        normalized in ambiguous"` | — |
-| [SRC-5587371288-L000193](../../agents/intent_router.py#L193) | 193 | `"        or normalized in _FOLLOWUP_ASPECT_FRAGMENTS"` | — |
-| [SRC-5587371288-L000194](../../agents/intent_router.py#L194) | 194 | `"        or _starts_with_contextual_aspect(question)"` | — |
-| [SRC-5587371288-L000195](../../agents/intent_router.py#L195) | 195 | `"    ):"` | — |
-| [SRC-5587371288-L000196](../../agents/intent_router.py#L196) | 196 | `"        return True"` | — |
-| [SRC-5587371288-L000197](../../agents/intent_router.py#L197) | 197 | `"    # Common inflected forms and short property-only follow-ups."` | — |
-| [SRC-5587371288-L000198](../../agents/intent_router.py#L198) | 198 | `"    return bool("` | — |
-| [SRC-5587371288-L000199](../../agents/intent_router.py#L199) | 199 | `"        re.fullmatch(r\"(?:كام\|كم\|بكام)\\s+(?:سعر\|ثمن)\\s*(?:ها\|ه\|هم)\", normalized)"` | — |
-| [SRC-5587371288-L000200](../../agents/intent_router.py#L200) | 200 | `"        or re.fullmatch(r\"(?:قارن\|قارنلي)\\s+(?:بينهم\|بينهما\|دول\|دي\|دولتين)\", normalized)"` | — |
-| [SRC-5587371288-L000201](../../agents/intent_router.py#L201) | 201 | `"        or re.fullmatch(r\"(?:و)?(?:السعر\|الاسعار\|التكلفه\|الضمان\|المميزات\|العيوب\|البطاريه\|الكاميرا\|المكان\|المصدر\|الرابط\|التاريخ)\", normalized)"` | — |
-| [SRC-5587371288-L000202](../../agents/intent_router.py#L202) | 202 | `"    )"` | — |
-| [SRC-5587371288-L000203](../../agents/intent_router.py#L203) | 203 | `""` | — |
-| [SRC-5587371288-L000204](../../agents/intent_router.py#L204) | 204 | `""` | — |
-| [SRC-5587371288-L000205](../../agents/intent_router.py#L205) | 205 | `"def _is_clarification_message(content: Any) -> bool:"` | — |
-| [SRC-5587371288-L000206](../../agents/intent_router.py#L206) | 206 | `"    if not isinstance(content, str):"` | — |
-| [SRC-5587371288-L000207](../../agents/intent_router.py#L207) | 207 | `"        return False"` | — |
-| [SRC-5587371288-L000208](../../agents/intent_router.py#L208) | 208 | `"    normalized = _normalize(content)"` | — |
-| [SRC-5587371288-L000209](../../agents/intent_router.py#L209) | 209 | `"    return any(marker in normalized for marker in ("` | — |
-| [SRC-5587371288-L000210](../../agents/intent_router.py#L210) | 210 | `"        \"تقصد ايه تحديدا\", \"اكتب اسم الشيء\", \"ابعت الرابط\","` | — |
-| [SRC-5587371288-L000211](../../agents/intent_router.py#L211) | 211 | `"        \"what are you referring to\", \"please name the item\","` | — |
-| [SRC-5587371288-L000212](../../agents/intent_router.py#L212) | 212 | `"        \"share its link\", \"clarify what you mean\","` | — |
-| [SRC-5587371288-L000213](../../agents/intent_router.py#L213) | 213 | `"    ))"` | — |
-| [SRC-5587371288-L000214](../../agents/intent_router.py#L214) | 214 | `""` | — |
-| [SRC-5587371288-L000215](../../agents/intent_router.py#L215) | 215 | `""` | — |
-| [SRC-5587371288-L000216](../../agents/intent_router.py#L216) | 216 | `"def _latest_context_anchor(history: Any) -> str:"` | — |
-| [SRC-5587371288-L000217](../../agents/intent_router.py#L217) | 217 | `"    \"\"\"Find the latest substantive user topic, skipping ellipsis follow-ups only."` | — |
-| [SRC-5587371288-L000218](../../agents/intent_router.py#L218) | 218 | `""` | — |
-| [SRC-5587371288-L000219](../../agents/intent_router.py#L219) | 219 | `"    A recent acknowledgment is a hard boundary: never search past it for stale topics."` | — |
-| [SRC-5587371288-L000220](../../agents/intent_router.py#L220) | 220 | `"    Short entity replies can anchor context when the assistant explicitly asked for one."` | — |
-| [SRC-5587371288-L000221](../../agents/intent_router.py#L221) | 221 | `"    \"\"\""` | — |
-| [SRC-5587371288-L000222](../../agents/intent_router.py#L222) | 222 | `"    if not isinstance(history, list):"` | — |
-| [SRC-5587371288-L000223](../../agents/intent_router.py#L223) | 223 | `"        return \"\""` | — |
-| [SRC-5587371288-L000224](../../agents/intent_router.py#L224) | 224 | `"    bounded = history[-MAX_CONTEXT_TURNS:]"` | — |
-| [SRC-5587371288-L000225](../../agents/intent_router.py#L225) | 225 | `"    for index in range(len(bounded) - 1, -1, -1):"` | — |
-| [SRC-5587371288-L000226](../../agents/intent_router.py#L226) | 226 | `"        item = bounded[index]"` | — |
-| [SRC-5587371288-L000227](../../agents/intent_router.py#L227) | 227 | `"        if not isinstance(item, dict) or item.get(\"role\") != \"user\":"` | — |
-| [SRC-5587371288-L000228](../../agents/intent_router.py#L228) | 228 | `"            continue"` | — |
-| [SRC-5587371288-L000229](../../agents/intent_router.py#L229) | 229 | `"        content = item.get(\"content\")"` | — |
-| [SRC-5587371288-L000230](../../agents/intent_router.py#L230) | 230 | `"        if not isinstance(content, str):"` | — |
-| [SRC-5587371288-L000231](../../agents/intent_router.py#L231) | 231 | `"            continue"` | — |
-| [SRC-5587371288-L000232](../../agents/intent_router.py#L232) | 232 | `"        normalized = _normalize(content)"` | — |
-| [SRC-5587371288-L000233](../../agents/intent_router.py#L233) | 233 | `"        if not normalized or _is_smalltalk(normalized):"` | — |
-| [SRC-5587371288-L000234](../../agents/intent_router.py#L234) | 234 | `"            return \"\""` | — |
-| [SRC-5587371288-L000235](../../agents/intent_router.py#L235) | 235 | `"        if _needs_clarification(content):"` | — |
-| [SRC-5587371288-L000236](../../agents/intent_router.py#L236) | 236 | `"            continue"` | — |
-| [SRC-5587371288-L000237](../../agents/intent_router.py#L237) | 237 | `"        meaningful = re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", normalized)"` | — |
-| [SRC-5587371288-L000238](../../agents/intent_router.py#L238) | 238 | `"        if len(meaningful) >= 2 and len(normalized) >= 8:"` | — |
-| [SRC-5587371288-L000239](../../agents/intent_router.py#L239) | 239 | `"            return re.sub(r\"\\s+\", \" \", content).strip()[:300]"` | — |
-| [SRC-5587371288-L000240](../../agents/intent_router.py#L240) | 240 | `"        if index > 0:"` | — |
-| [SRC-5587371288-L000241](../../agents/intent_router.py#L241) | 241 | `"            previous = bounded[index - 1]"` | — |
-| [SRC-5587371288-L000242](../../agents/intent_router.py#L242) | 242 | `"            if isinstance(previous, dict) and previous.get(\"role\") == \"assistant\" and _is_clarification_message(previous.get(\"content\")):"` | — |
-| [SRC-5587371288-L000243](../../agents/intent_router.py#L243) | 243 | `"                return re.sub(r\"\\s+\", \" \", content).strip()[:120]"` | — |
-| [SRC-5587371288-L000244](../../agents/intent_router.py#L244) | 244 | `"        return \"\""` | — |
-| [SRC-5587371288-L000245](../../agents/intent_router.py#L245) | 245 | `"    return \"\""` | — |
-| [SRC-5587371288-L000246](../../agents/intent_router.py#L246) | 246 | `""` | — |
-| [SRC-5587371288-L000247](../../agents/intent_router.py#L247) | 247 | `""` | — |
-| [SRC-5587371288-L000248](../../agents/intent_router.py#L248) | 248 | `"def _pending_clarification_query(history: Any) -> str:"` | — |
-| [SRC-5587371288-L000249](../../agents/intent_router.py#L249) | 249 | `"    \"\"\"Return the unresolved elliptical question immediately awaiting a user slot-fill.\"\"\""` | — |
-| [SRC-5587371288-L000250](../../agents/intent_router.py#L250) | 250 | `"    if not isinstance(history, list) or not history:"` | — |
-| [SRC-5587371288-L000251](../../agents/intent_router.py#L251) | 251 | `"        return \"\""` | — |
-| [SRC-5587371288-L000252](../../agents/intent_router.py#L252) | 252 | `"    last_index = len(history) - 1"` | — |
-| [SRC-5587371288-L000253](../../agents/intent_router.py#L253) | 253 | `"    while last_index >= 0 and not ("` | — |
-| [SRC-5587371288-L000254](../../agents/intent_router.py#L254) | 254 | `"        isinstance(history[last_index], dict)"` | — |
-| [SRC-5587371288-L000255](../../agents/intent_router.py#L255) | 255 | `"        and isinstance(history[last_index].get(\"content\"), str)"` | — |
-| [SRC-5587371288-L000256](../../agents/intent_router.py#L256) | 256 | `"        and history[last_index].get(\"content\", \"\").strip()"` | — |
-| [SRC-5587371288-L000257](../../agents/intent_router.py#L257) | 257 | `"    ):"` | — |
-| [SRC-5587371288-L000258](../../agents/intent_router.py#L258) | 258 | `"        last_index -= 1"` | — |
-| [SRC-5587371288-L000259](../../agents/intent_router.py#L259) | 259 | `"    if last_index < 0 or history[last_index].get(\"role\") != \"assistant\":"` | — |
-| [SRC-5587371288-L000260](../../agents/intent_router.py#L260) | 260 | `"        return \"\""` | — |
-| [SRC-5587371288-L000261](../../agents/intent_router.py#L261) | 261 | `"    if not _is_clarification_message(history[last_index].get(\"content\")):"` | — |
-| [SRC-5587371288-L000262](../../agents/intent_router.py#L262) | 262 | `"        return \"\""` | — |
-| [SRC-5587371288-L000263](../../agents/intent_router.py#L263) | 263 | `"    for index in range(last_index - 1, -1, -1):"` | — |
-| [SRC-5587371288-L000264](../../agents/intent_router.py#L264) | 264 | `"        item = history[index]"` | — |
-| [SRC-5587371288-L000265](../../agents/intent_router.py#L265) | 265 | `"        if isinstance(item, dict) and item.get(\"role\") == \"user\":"` | — |
-| [SRC-5587371288-L000266](../../agents/intent_router.py#L266) | 266 | `"            content = item.get(\"content\")"` | — |
-| [SRC-5587371288-L000267](../../agents/intent_router.py#L267) | 267 | `"            if not isinstance(content, str) or not _needs_clarification(content):"` | — |
-| [SRC-5587371288-L000268](../../agents/intent_router.py#L268) | 268 | `"                return \"\""` | — |
-| [SRC-5587371288-L000269](../../agents/intent_router.py#L269) | 269 | `"            if _latest_context_anchor(history[:index]):"` | — |
-| [SRC-5587371288-L000270](../../agents/intent_router.py#L270) | 270 | `"                return \"\""` | — |
-| [SRC-5587371288-L000271](../../agents/intent_router.py#L271) | 271 | `"            return content.strip()[:180]"` | — |
-| [SRC-5587371288-L000272](../../agents/intent_router.py#L272) | 272 | `"    return \"\""` | — |
-| [SRC-5587371288-L000273](../../agents/intent_router.py#L273) | 273 | `""` | — |
-| [SRC-5587371288-L000274](../../agents/intent_router.py#L274) | 274 | `""` | — |
-| [SRC-5587371288-L000275](../../agents/intent_router.py#L275) | 275 | `"def _is_clarification_answer(question: str, history: Any) -> bool:"` | — |
-| [SRC-5587371288-L000276](../../agents/intent_router.py#L276) | 276 | `"    \"\"\"Recognize a concise answer to Omarai's immediately preceding clarification.\"\"\""` | — |
-| [SRC-5587371288-L000277](../../agents/intent_router.py#L277) | 277 | `"    if not _pending_clarification_query(history) or not isinstance(question, str):"` | — |
-| [SRC-5587371288-L000278](../../agents/intent_router.py#L278) | 278 | `"        return False"` | — |
-| [SRC-5587371288-L000279](../../agents/intent_router.py#L279) | 279 | `"    query = question.strip()"` | — |
-| [SRC-5587371288-L000280](../../agents/intent_router.py#L280) | 280 | `"    if not query or len(query) >= 100 or _needs_clarification(query) or _is_smalltalk(query):"` | — |
-| [SRC-5587371288-L000281](../../agents/intent_router.py#L281) | 281 | `"        return False"` | — |
-| [SRC-5587371288-L000282](../../agents/intent_router.py#L282) | 282 | `"    # A self-contained live request should not be mistaken for a slot-fill."` | — |
-| [SRC-5587371288-L000283](../../agents/intent_router.py#L283) | 283 | `"    return not (_has_live_signal(query) or re.search(r\"https?://\", query, re.IGNORECASE))"` | — |
-| [SRC-5587371288-L000284](../../agents/intent_router.py#L284) | 284 | `""` | — |
-| [SRC-5587371288-L000285](../../agents/intent_router.py#L285) | 285 | `""` | — |
-| [SRC-5587371288-L000286](../../agents/intent_router.py#L286) | 286 | `"def _is_contextual_followup(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000287](../../agents/intent_router.py#L287) | 287 | `"    \"\"\"Detect short referent-dependent follow-ups without treating every 'okay' as one.\"\"\""` | — |
-| [SRC-5587371288-L000288](../../agents/intent_router.py#L288) | 288 | `"    if not isinstance(question, str) or len(question.strip()) >= 100:"` | — |
-| [SRC-5587371288-L000289](../../agents/intent_router.py#L289) | 289 | `"        return False"` | — |
-| [SRC-5587371288-L000290](../../agents/intent_router.py#L290) | 290 | `"    if re.search(r\"https?://\", question, re.IGNORECASE):"` | — |
-| [SRC-5587371288-L000291](../../agents/intent_router.py#L291) | 291 | `"        return False"` | — |
-| [SRC-5587371288-L000292](../../agents/intent_router.py#L292) | 292 | `"    normalized = _strip_followup_leadin(_normalize(question))"` | — |
-| [SRC-5587371288-L000293](../../agents/intent_router.py#L293) | 293 | `"    if _needs_clarification(question) or _starts_with_contextual_aspect(question):"` | — |
-| [SRC-5587371288-L000294](../../agents/intent_router.py#L294) | 294 | `"        return True"` | — |
-| [SRC-5587371288-L000295](../../agents/intent_router.py#L295) | 295 | `"    # Pronouns and deictic references are strong signals only in a short turn."` | — |
-| [SRC-5587371288-L000296](../../agents/intent_router.py#L296) | 296 | `"    detached_reference = re.fullmatch("` | — |
-| [SRC-5587371288-L000297](../../agents/intent_router.py#L297) | 297 | `"        r\"(?:و)?(?:هي\|هو\|دي\|ده\|دول\|هما\|ذلك\|تلك\|عليها\|عليه\|فيها\|فيه\|لها\|له\|\""` | — |
-| [SRC-5587371288-L000298](../../agents/intent_router.py#L298) | 298 | `"        r\"سعرها\|سعره\|مكانها\|مكانه\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها\|مميزاتها\|عيوبها)\","` | — |
-| [SRC-5587371288-L000299](../../agents/intent_router.py#L299) | 299 | `"        normalized,"` | — |
-| [SRC-5587371288-L000300](../../agents/intent_router.py#L300) | 300 | `"    )"` | — |
-| [SRC-5587371288-L000301](../../agents/intent_router.py#L301) | 301 | `"    # Arabic often attaches object pronouns to verbs (e.g. \"أشتريه\", \"أستخدمها\")."` | — |
-| [SRC-5587371288-L000302](../../agents/intent_router.py#L302) | 302 | `"    # These are easy to miss with whitespace-token pronoun lists."` | — |
-| [SRC-5587371288-L000303](../../agents/intent_router.py#L303) | 303 | `"    attached_reference = re.search("` | — |
-| [SRC-5587371288-L000304](../../agents/intent_router.py#L304) | 304 | `"        r\"\\b(?:استخدم\|اشتري\|اجيب\|اشغل\|افتح\|اصلح\|احط\|اجرب\|اربط\|اوصل\|اخد\|اخلي\|\""` | — |
-| [SRC-5587371288-L000305](../../agents/intent_router.py#L305) | 305 | `"        r\"اركب\|انقل\|ادفع\|اطلب\|احجز)[\\u0600-\\u06FF]{0,18}(?:ه\|ها\|هم\|هما\|هن\|ك\|كم\|كن)\\b\","` | — |
-| [SRC-5587371288-L000306](../../agents/intent_router.py#L306) | 306 | `"        normalized,"` | — |
-| [SRC-5587371288-L000307](../../agents/intent_router.py#L307) | 307 | `"    )"` | — |
-| [SRC-5587371288-L000308](../../agents/intent_router.py#L308) | 308 | `"    return bool(detached_reference or attached_reference)"` | — |
-| [SRC-5587371288-L000309](../../agents/intent_router.py#L309) | 309 | `""` | — |
-| [SRC-5587371288-L000310](../../agents/intent_router.py#L310) | 310 | `""` | — |
-| [SRC-5587371288-L000311](../../agents/intent_router.py#L311) | 311 | `"def resolve_followup_query(question: str, history: Any = None) -> str:"` | — |
-| [SRC-5587371288-L000312](../../agents/intent_router.py#L312) | 312 | `"    \"\"\"Resolve a short contextual follow-up against the nearest substantive topic."` | — |
-| [SRC-5587371288-L000313](../../agents/intent_router.py#L313) | 313 | `""` | — |
-| [SRC-5587371288-L000314](../../agents/intent_router.py#L314) | 314 | `"    Repeated follow-ups retain the original topic. An answer to an explicit"` | — |
-| [SRC-5587371288-L000315](../../agents/intent_router.py#L315) | 315 | `"    clarification is joined to the pending question. New standalone questions are"` | — |
-| [SRC-5587371288-L000316](../../agents/intent_router.py#L316) | 316 | `"    never merged merely because they start with 'طيب' or 'طب'."` | — |
-| [SRC-5587371288-L000317](../../agents/intent_router.py#L317) | 317 | `"    \"\"\""` | — |
-| [SRC-5587371288-L000318](../../agents/intent_router.py#L318) | 318 | `"    if not isinstance(question, str):"` | — |
-| [SRC-5587371288-L000319](../../agents/intent_router.py#L319) | 319 | `"        return \"\""` | — |
-| [SRC-5587371288-L000320](../../agents/intent_router.py#L320) | 320 | `"    query = re.sub(r\"\\s+\", \" \", question).strip()"` | — |
-| [SRC-5587371288-L000321](../../agents/intent_router.py#L321) | 321 | `"    if not query:"` | — |
-| [SRC-5587371288-L000322](../../agents/intent_router.py#L322) | 322 | `"        return \"\""` | — |
-| [SRC-5587371288-L000323](../../agents/intent_router.py#L323) | 323 | `"    pending = _pending_clarification_query(history)"` | — |
-| [SRC-5587371288-L000324](../../agents/intent_router.py#L324) | 324 | `"    if pending and _is_clarification_answer(query, history):"` | — |
-| [SRC-5587371288-L000325](../../agents/intent_router.py#L325) | 325 | `"        return f\"{pending[:220]} — {query[:180]}\"[:500]"` | — |
-| [SRC-5587371288-L000326](../../agents/intent_router.py#L326) | 326 | `"    if len(query) >= 100 or not isinstance(history, list):"` | — |
-| [SRC-5587371288-L000327](../../agents/intent_router.py#L327) | 327 | `"        return query[:500]"` | — |
-| [SRC-5587371288-L000328](../../agents/intent_router.py#L328) | 328 | `"    if not _is_contextual_followup(query):"` | — |
-| [SRC-5587371288-L000329](../../agents/intent_router.py#L329) | 329 | `"        return query[:500]"` | — |
-| [SRC-5587371288-L000330](../../agents/intent_router.py#L330) | 330 | `"    previous = _latest_context_anchor(history)"` | — |
-| [SRC-5587371288-L000331](../../agents/intent_router.py#L331) | 331 | `"    if not previous:"` | — |
-| [SRC-5587371288-L000332](../../agents/intent_router.py#L332) | 332 | `"        return query[:500]"` | — |
-| [SRC-5587371288-L000333](../../agents/intent_router.py#L333) | 333 | `"    return f\"{previous[:300]} — {query[:180]}\"[:500]"` | — |
-| [SRC-5587371288-L000334](../../agents/intent_router.py#L334) | 334 | `""` | — |
-| [SRC-5587371288-L000335](../../agents/intent_router.py#L335) | 335 | `""` | — |
-| [SRC-5587371288-L000336](../../agents/intent_router.py#L336) | 336 | `"def _has_explicit_source_request(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000337](../../agents/intent_router.py#L337) | 337 | `"    \"\"\"Recognize explicit requests for evidence/citations that require web-backed retrieval.\"\"\""` | — |
-| [SRC-5587371288-L000338](../../agents/intent_router.py#L338) | 338 | `"    normalized = _normalize(question)"` | — |
-| [SRC-5587371288-L000339](../../agents/intent_router.py#L339) | 339 | `"    markers = ("` | — |
-| [SRC-5587371288-L000340](../../agents/intent_router.py#L340) | 340 | `"        \"اذكر مصادر\", \"اذكر المصدر\", \"مصادر موثوقة\", \"مصدر موثوق\","` | — |
-| [SRC-5587371288-L000341](../../agents/intent_router.py#L341) | 341 | `"        \"مصادر رسمية\", \"مصادر حديثة\", \"مع مصادر\", \"مع المصادر\","` | — |
-| [SRC-5587371288-L000342](../../agents/intent_router.py#L342) | 342 | `"        \"بالمصادر\", \"روابط المصادر\", \"ارفق المصادر\", \"أرفق المصادر\","` | — |
-| [SRC-5587371288-L000343](../../agents/intent_router.py#L343) | 343 | `"        \"استشهد بمصادر\", \"وثق الاجابة\", \"وثق الإجابة\", \"المراجع\","` | — |
-| [SRC-5587371288-L000344](../../agents/intent_router.py#L344) | 344 | `"        \"with sources\", \"cite sources\", \"trusted sources\", \"reliable sources\","` | — |
-| [SRC-5587371288-L000345](../../agents/intent_router.py#L345) | 345 | `"        \"official sources\", \"include references\", \"with citations\","` | — |
-| [SRC-5587371288-L000346](../../agents/intent_router.py#L346) | 346 | `"        \"source-backed\", \"cite your sources\","` | — |
-| [SRC-5587371288-L000347](../../agents/intent_router.py#L347) | 347 | `"    )"` | — |
-| [SRC-5587371288-L000348](../../agents/intent_router.py#L348) | 348 | `"    return any(_normalize(marker) in normalized for marker in markers)"` | — |
-| [SRC-5587371288-L000349](../../agents/intent_router.py#L349) | 349 | `""` | — |
-| [SRC-5587371288-L000350](../../agents/intent_router.py#L350) | 350 | `""` | — |
-| [SRC-5587371288-L000351](../../agents/intent_router.py#L351) | 351 | `"def _is_deep(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000352](../../agents/intent_router.py#L352) | 352 | `"    normalized = _normalize(question)"` | — |
-| [SRC-5587371288-L000353](../../agents/intent_router.py#L353) | 353 | `"    if any(_normalize(term) in normalized for term in _DEEP_TERMS):"` | — |
-| [SRC-5587371288-L000354](../../agents/intent_router.py#L354) | 354 | `"        return True"` | — |
-| [SRC-5587371288-L000355](../../agents/intent_router.py#L355) | 355 | `"    # Explicit multi-dimension comparisons need evidence from more than one angle."` | — |
-| [SRC-5587371288-L000356](../../agents/intent_router.py#L356) | 356 | `"    dimensions = ("` | — |
-| [SRC-5587371288-L000357](../../agents/intent_router.py#L357) | 357 | `"        \"السعر\", \"سعر\", \"بطاريه\", \"كاميرا\", \"اداء\", \"امان\", \"تكلفه\","` | — |
-| [SRC-5587371288-L000358](../../agents/intent_router.py#L358) | 358 | `"        \"الصيانه\", \"الجوده\", \"المميزات\", \"العيوب\", \"الاراء\", \"المراجعات\","` | — |
-| [SRC-5587371288-L000359](../../agents/intent_router.py#L359) | 359 | `"        \"price\", \"battery\", \"camera\", \"performance\", \"safety\", \"cost\","` | — |
-| [SRC-5587371288-L000360](../../agents/intent_router.py#L360) | 360 | `"        \"maintenance\", \"quality\", \"features\", \"drawbacks\", \"reviews\","` | — |
-| [SRC-5587371288-L000361](../../agents/intent_router.py#L361) | 361 | `"    )"` | — |
-| [SRC-5587371288-L000362](../../agents/intent_router.py#L362) | 362 | `"    matched_dimensions = sum(1 for item in dimensions if _normalize(item) in normalized)"` | — |
-| [SRC-5587371288-L000363](../../agents/intent_router.py#L363) | 363 | `"    return matched_dimensions >= 2 and any("` | — |
-| [SRC-5587371288-L000364](../../agents/intent_router.py#L364) | 364 | `"        marker in normalized for marker in _MULTIPART_MARKERS"` | — |
-| [SRC-5587371288-L000365](../../agents/intent_router.py#L365) | 365 | `"    )"` | — |
-| [SRC-5587371288-L000366](../../agents/intent_router.py#L366) | 366 | `""` | — |
-| [SRC-5587371288-L000367](../../agents/intent_router.py#L367) | 367 | `""` | — |
-| [SRC-5587371288-L000368](../../agents/intent_router.py#L368) | 368 | `"def _is_page_summarization_request(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000369](../../agents/intent_router.py#L369) | 369 | `"    \"\"\"Recognize a request to summarize a specific web page or link.\"\"\""` | — |
-| [SRC-5587371288-L000370](../../agents/intent_router.py#L370) | 370 | `"    normalized = _normalize(question)"` | — |
-| [SRC-5587371288-L000371](../../agents/intent_router.py#L371) | 371 | `"    terms = (\"لخص\", \"تلخيص\", \"ملخص\", \"summarize\", \"summarise\", \"summary\")"` | — |
-| [SRC-5587371288-L000372](../../agents/intent_router.py#L372) | 372 | `"    page_references = ("` | — |
-| [SRC-5587371288-L000373](../../agents/intent_router.py#L373) | 373 | `"        \"صفحه\", \"الصفحه\", \"مقال\", \"المقال\", \"رابط\", \"لينك\", \"url\","` | — |
-| [SRC-5587371288-L000374](../../agents/intent_router.py#L374) | 374 | `"        \"link\", \"article\", \"page\", \"webpage\", \"web page\", \"website\","` | — |
-| [SRC-5587371288-L000375](../../agents/intent_router.py#L375) | 375 | `"    )"` | — |
-| [SRC-5587371288-L000376](../../agents/intent_router.py#L376) | 376 | `"    return ("` | — |
-| [SRC-5587371288-L000377](../../agents/intent_router.py#L377) | 377 | `"        any(_normalize(term) in normalized for term in terms)"` | — |
-| [SRC-5587371288-L000378](../../agents/intent_router.py#L378) | 378 | `"        and ("` | — |
-| [SRC-5587371288-L000379](../../agents/intent_router.py#L379) | 379 | `"            bool(re.search(r\"https?://\", question, flags=re.IGNORECASE))"` | — |
-| [SRC-5587371288-L000380](../../agents/intent_router.py#L380) | 380 | `"            or any(_normalize(term) in normalized for term in page_references)"` | — |
-| [SRC-5587371288-L000381](../../agents/intent_router.py#L381) | 381 | `"        )"` | — |
-| [SRC-5587371288-L000382](../../agents/intent_router.py#L382) | 382 | `"    )"` | — |
-| [SRC-5587371288-L000383](../../agents/intent_router.py#L383) | 383 | `""` | — |
-| [SRC-5587371288-L000384](../../agents/intent_router.py#L384) | 384 | `""` | — |
-| [SRC-5587371288-L000385](../../agents/intent_router.py#L385) | 385 | `"def _has_inline_summary_text(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000386](../../agents/intent_router.py#L386) | 386 | `"    \"\"\"Detect text explicitly pasted after a summary instruction, not a web page URL.\"\"\""` | — |
-| [SRC-5587371288-L000387](../../agents/intent_router.py#L387) | 387 | `"    if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
-| [SRC-5587371288-L000388](../../agents/intent_router.py#L388) | 388 | `"        return False"` | — |
-| [SRC-5587371288-L000389](../../agents/intent_router.py#L389) | 389 | `"    normalized = _normalize(question)"` | — |
-| [SRC-5587371288-L000390](../../agents/intent_router.py#L390) | 390 | `"    markers = ("` | — |
-| [SRC-5587371288-L000391](../../agents/intent_router.py#L391) | 391 | `"        \"النص التالي\", \"النص الاتي\", \"النص ده\", \"النص اللي جاي\","` | — |
-| [SRC-5587371288-L000392](../../agents/intent_router.py#L392) | 392 | `"        \"this text\", \"following text\", \"the following text\", \"text below\","` | — |
-| [SRC-5587371288-L000393](../../agents/intent_router.py#L393) | 393 | `"        \"text to summarize\", \"content below\","` | — |
-| [SRC-5587371288-L000394](../../agents/intent_router.py#L394) | 394 | `"    )"` | — |
-| [SRC-5587371288-L000395](../../agents/intent_router.py#L395) | 395 | `"    for marker in markers:"` | — |
-| [SRC-5587371288-L000396](../../agents/intent_router.py#L396) | 396 | `"        normalized_marker = _normalize(marker)"` | — |
-| [SRC-5587371288-L000397](../../agents/intent_router.py#L397) | 397 | `"        if normalized_marker in normalized:"` | — |
-| [SRC-5587371288-L000398](../../agents/intent_router.py#L398) | 398 | `"            remainder = normalized.split(normalized_marker, 1)[1].strip()"` | — |
-| [SRC-5587371288-L000399](../../agents/intent_router.py#L399) | 399 | `"            if len(remainder) >= 8:"` | — |
-| [SRC-5587371288-L000400](../../agents/intent_router.py#L400) | 400 | `"                return True"` | — |
-| [SRC-5587371288-L000401](../../agents/intent_router.py#L401) | 401 | `"    # Also allow a concise direct form such as \"لخص: [pasted paragraph]\"."` | — |
-| [SRC-5587371288-L000402](../../agents/intent_router.py#L402) | 402 | `"    return bool("` | — |
-| [SRC-5587371288-L000403](../../agents/intent_router.py#L403) | 403 | `"        re.search("` | — |
-| [SRC-5587371288-L000404](../../agents/intent_router.py#L404) | 404 | `"            r\"^\\s*(?:لخص(?:\\s+لي)?\|تلخيص\|summari[sz]e\|summary)\\s*[:：]\\s*\\S.{12,}$\","` | — |
-| [SRC-5587371288-L000405](../../agents/intent_router.py#L405) | 405 | `"            question,"` | — |
-| [SRC-5587371288-L000406](../../agents/intent_router.py#L406) | 406 | `"            flags=re.IGNORECASE,"` | — |
