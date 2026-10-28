@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000407 إلى SRC-59CF4B7DE8-L000367
+- النطاق: SRC-5587371288-L000145 إلى SRC-59CF4B7DE8-L000105
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,268 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000145](../../agents/intent_router.py#L145) | 145 | `")"` | — |
+| [SRC-5587371288-L000146](../../agents/intent_router.py#L146) | 146 | `""` | — |
+| [SRC-5587371288-L000147](../../agents/intent_router.py#L147) | 147 | `"_FOLLOWUP_ASPECT_FRAGMENTS = frozenset({"` | — |
+| [SRC-5587371288-L000148](../../agents/intent_router.py#L148) | 148 | `"    \"السعر\", \"سعرها كام\", \"سعره كام\", \"سعرها\", \"سعره\", \"والسعر\", \"وسعرها\","` | — |
+| [SRC-5587371288-L000149](../../agents/intent_router.py#L149) | 149 | `"    \"الاسعار\", \"والاسعار\", \"الاسعار الحاليه\", \"اسعار الحاليه\", \"السعر الحالي\","` | — |
+| [SRC-5587371288-L000150](../../agents/intent_router.py#L150) | 150 | `"    \"سعر اليوم\", \"اسعار اليوم\", \"التكلفه\", \"والتكلفه\", \"الضمان\", \"والضمان\","` | — |
+| [SRC-5587371288-L000151](../../agents/intent_router.py#L151) | 151 | `"    \"ضمانها\", \"ضمانه\", \"البطاريه\", \"والبطاريه\", \"الكاميرا\", \"والكاميرا\","` | — |
+| [SRC-5587371288-L000152](../../agents/intent_router.py#L152) | 152 | `"    \"المميزات\", \"والمميزات\", \"العيوب\", \"والعيوب\", \"المكان\", \"والمكان\","` | — |
+| [SRC-5587371288-L000153](../../agents/intent_router.py#L153) | 153 | `"    \"المصدر\", \"والمصدر\", \"الرابط\", \"والرابط\", \"التاريخ\", \"والتاريخ\","` | — |
+| [SRC-5587371288-L000154](../../agents/intent_router.py#L154) | 154 | `"    \"المراجعات\", \"والمراجعات\", \"الاراء\", \"والاراء\", \"and the price\","` | — |
+| [SRC-5587371288-L000155](../../agents/intent_router.py#L155) | 155 | `"    \"and the warranty\", \"what about the warranty\", \"what about the price\","` | — |
+| [SRC-5587371288-L000156](../../agents/intent_router.py#L156) | 156 | `"    \"its price\", \"the warranty\", \"the location\", \"the pros\", \"the cons\","` | — |
+| [SRC-5587371288-L000157](../../agents/intent_router.py#L157) | 157 | `"})"` | — |
+| [SRC-5587371288-L000158](../../agents/intent_router.py#L158) | 158 | `""` | — |
+| [SRC-5587371288-L000159](../../agents/intent_router.py#L159) | 159 | `""` | — |
+| [SRC-5587371288-L000160](../../agents/intent_router.py#L160) | 160 | `"_CONTEXTUAL_ASPECT_RE = re.compile("` | — |
+| [SRC-5587371288-L000161](../../agents/intent_router.py#L161) | 161 | `"    r\"^(?:ال)?(?:سعر\|ثمن\|اسعار\|تكلفه\|ضمان\|بطاريه\|كاميرا\|مميزات\|عيوب\|\""` | — |
+| [SRC-5587371288-L000162](../../agents/intent_router.py#L162) | 162 | `"    r\"مكان\|مصدر\|رابط\|تاريخ\|مراجعات\|اراء\|توفر\|سرعه\|اداء\|جوده\|صيانه)\""` | — |
+| [SRC-5587371288-L000163](../../agents/intent_router.py#L163) | 163 | `")"` | — |
+| [SRC-5587371288-L000164](../../agents/intent_router.py#L164) | 164 | `"_CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile("` | — |
+| [SRC-5587371288-L000165](../../agents/intent_router.py#L165) | 165 | `"    r\"^(?:what about(?: its)?\|how about(?: its)?\|and (?:the\|its\|their)\|its) +\""` | — |
+| [SRC-5587371288-L000166](../../agents/intent_router.py#L166) | 166 | `"    r\"(?:price\|warranty\|battery\|camera\|location\|source\|link\|date\|pros\|cons)\""` | — |
+| [SRC-5587371288-L000167](../../agents/intent_router.py#L167) | 167 | `")"` | — |
+| [SRC-5587371288-L000168](../../agents/intent_router.py#L168) | 168 | `""` | — |
+| [SRC-5587371288-L000169](../../agents/intent_router.py#L169) | 169 | `""` | — |
+| [SRC-5587371288-L000170](../../agents/intent_router.py#L170) | 170 | `"def _strip_followup_leadin(value: str) -> str:"` | — |
+| [SRC-5587371288-L000171](../../agents/intent_router.py#L171) | 171 | `"    return _FOLLOWUP_LEAD_IN_RE.sub(\"\", value).strip()"` | — |
+| [SRC-5587371288-L000172](../../agents/intent_router.py#L172) | 172 | `""` | — |
+| [SRC-5587371288-L000173](../../agents/intent_router.py#L173) | 173 | `""` | — |
+| [SRC-5587371288-L000174](../../agents/intent_router.py#L174) | 174 | `"def _starts_with_contextual_aspect(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000175](../../agents/intent_router.py#L175) | 175 | `"    \"\"\"Recognize aspect-led follow-ups without merging standalone new topics.\"\"\""` | — |
+| [SRC-5587371288-L000176](../../agents/intent_router.py#L176) | 176 | `"    normalized = _normalize(question)"` | — |
+| [SRC-5587371288-L000177](../../agents/intent_router.py#L177) | 177 | `"    if _CONTEXTUAL_ENGLISH_ASPECT_RE.match(normalized):"` | — |
+| [SRC-5587371288-L000178](../../agents/intent_router.py#L178) | 178 | `"        return True"` | — |
+| [SRC-5587371288-L000179](../../agents/intent_router.py#L179) | 179 | `"    stripped = _strip_followup_leadin(normalized)"` | — |
+| [SRC-5587371288-L000180](../../agents/intent_router.py#L180) | 180 | `"    if stripped != normalized:"` | — |
+| [SRC-5587371288-L000181](../../agents/intent_router.py#L181) | 181 | `"        return bool(_CONTEXTUAL_ASPECT_RE.match(stripped))"` | — |
+| [SRC-5587371288-L000182](../../agents/intent_router.py#L182) | 182 | `"    if normalized.startswith(\"و\"):"` | — |
+| [SRC-5587371288-L000183](../../agents/intent_router.py#L183) | 183 | `"        return bool(_CONTEXTUAL_ASPECT_RE.match(normalized[1:]))"` | — |
+| [SRC-5587371288-L000184](../../agents/intent_router.py#L184) | 184 | `"    return False"` | — |
+| [SRC-5587371288-L000185](../../agents/intent_router.py#L185) | 185 | `""` | — |
+| [SRC-5587371288-L000186](../../agents/intent_router.py#L186) | 186 | `""` | — |
+| [SRC-5587371288-L000187](../../agents/intent_router.py#L187) | 187 | `"def _needs_clarification(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000188](../../agents/intent_router.py#L188) | 188 | `"    normalized = _strip_followup_leadin(_normalize(question))"` | — |
+| [SRC-5587371288-L000189](../../agents/intent_router.py#L189) | 189 | `"    ambiguous = {_normalize(item) for item in _AMBIGUOUS_ARABIC}"` | — |
+| [SRC-5587371288-L000190](../../agents/intent_router.py#L190) | 190 | `"    ambiguous.update(_normalize(item) for item in _AMBIGUOUS_ENGLISH)"` | — |
+| [SRC-5587371288-L000191](../../agents/intent_router.py#L191) | 191 | `"    if ("` | — |
+| [SRC-5587371288-L000192](../../agents/intent_router.py#L192) | 192 | `"        normalized in ambiguous"` | — |
+| [SRC-5587371288-L000193](../../agents/intent_router.py#L193) | 193 | `"        or normalized in _FOLLOWUP_ASPECT_FRAGMENTS"` | — |
+| [SRC-5587371288-L000194](../../agents/intent_router.py#L194) | 194 | `"        or _starts_with_contextual_aspect(question)"` | — |
+| [SRC-5587371288-L000195](../../agents/intent_router.py#L195) | 195 | `"    ):"` | — |
+| [SRC-5587371288-L000196](../../agents/intent_router.py#L196) | 196 | `"        return True"` | — |
+| [SRC-5587371288-L000197](../../agents/intent_router.py#L197) | 197 | `"    # Common inflected forms and short property-only follow-ups."` | — |
+| [SRC-5587371288-L000198](../../agents/intent_router.py#L198) | 198 | `"    return bool("` | — |
+| [SRC-5587371288-L000199](../../agents/intent_router.py#L199) | 199 | `"        re.fullmatch(r\"(?:كام\|كم\|بكام)\\s+(?:سعر\|ثمن)\\s*(?:ها\|ه\|هم)\", normalized)"` | — |
+| [SRC-5587371288-L000200](../../agents/intent_router.py#L200) | 200 | `"        or re.fullmatch(r\"(?:قارن\|قارنلي)\\s+(?:بينهم\|بينهما\|دول\|دي\|دولتين)\", normalized)"` | — |
+| [SRC-5587371288-L000201](../../agents/intent_router.py#L201) | 201 | `"        or re.fullmatch(r\"(?:و)?(?:السعر\|الاسعار\|التكلفه\|الضمان\|المميزات\|العيوب\|البطاريه\|الكاميرا\|المكان\|المصدر\|الرابط\|التاريخ)\", normalized)"` | — |
+| [SRC-5587371288-L000202](../../agents/intent_router.py#L202) | 202 | `"    )"` | — |
+| [SRC-5587371288-L000203](../../agents/intent_router.py#L203) | 203 | `""` | — |
+| [SRC-5587371288-L000204](../../agents/intent_router.py#L204) | 204 | `""` | — |
+| [SRC-5587371288-L000205](../../agents/intent_router.py#L205) | 205 | `"def _is_clarification_message(content: Any) -> bool:"` | — |
+| [SRC-5587371288-L000206](../../agents/intent_router.py#L206) | 206 | `"    if not isinstance(content, str):"` | — |
+| [SRC-5587371288-L000207](../../agents/intent_router.py#L207) | 207 | `"        return False"` | — |
+| [SRC-5587371288-L000208](../../agents/intent_router.py#L208) | 208 | `"    normalized = _normalize(content)"` | — |
+| [SRC-5587371288-L000209](../../agents/intent_router.py#L209) | 209 | `"    return any(marker in normalized for marker in ("` | — |
+| [SRC-5587371288-L000210](../../agents/intent_router.py#L210) | 210 | `"        \"تقصد ايه تحديدا\", \"اكتب اسم الشيء\", \"ابعت الرابط\","` | — |
+| [SRC-5587371288-L000211](../../agents/intent_router.py#L211) | 211 | `"        \"what are you referring to\", \"please name the item\","` | — |
+| [SRC-5587371288-L000212](../../agents/intent_router.py#L212) | 212 | `"        \"share its link\", \"clarify what you mean\","` | — |
+| [SRC-5587371288-L000213](../../agents/intent_router.py#L213) | 213 | `"    ))"` | — |
+| [SRC-5587371288-L000214](../../agents/intent_router.py#L214) | 214 | `""` | — |
+| [SRC-5587371288-L000215](../../agents/intent_router.py#L215) | 215 | `""` | — |
+| [SRC-5587371288-L000216](../../agents/intent_router.py#L216) | 216 | `"def _latest_context_anchor(history: Any) -> str:"` | — |
+| [SRC-5587371288-L000217](../../agents/intent_router.py#L217) | 217 | `"    \"\"\"Find the latest substantive user topic, skipping ellipsis follow-ups only."` | — |
+| [SRC-5587371288-L000218](../../agents/intent_router.py#L218) | 218 | `""` | — |
+| [SRC-5587371288-L000219](../../agents/intent_router.py#L219) | 219 | `"    A recent acknowledgment is a hard boundary: never search past it for stale topics."` | — |
+| [SRC-5587371288-L000220](../../agents/intent_router.py#L220) | 220 | `"    Short entity replies can anchor context when the assistant explicitly asked for one."` | — |
+| [SRC-5587371288-L000221](../../agents/intent_router.py#L221) | 221 | `"    \"\"\""` | — |
+| [SRC-5587371288-L000222](../../agents/intent_router.py#L222) | 222 | `"    if not isinstance(history, list):"` | — |
+| [SRC-5587371288-L000223](../../agents/intent_router.py#L223) | 223 | `"        return \"\""` | — |
+| [SRC-5587371288-L000224](../../agents/intent_router.py#L224) | 224 | `"    bounded = history[-MAX_CONTEXT_TURNS:]"` | — |
+| [SRC-5587371288-L000225](../../agents/intent_router.py#L225) | 225 | `"    for index in range(len(bounded) - 1, -1, -1):"` | — |
+| [SRC-5587371288-L000226](../../agents/intent_router.py#L226) | 226 | `"        item = bounded[index]"` | — |
+| [SRC-5587371288-L000227](../../agents/intent_router.py#L227) | 227 | `"        if not isinstance(item, dict) or item.get(\"role\") != \"user\":"` | — |
+| [SRC-5587371288-L000228](../../agents/intent_router.py#L228) | 228 | `"            continue"` | — |
+| [SRC-5587371288-L000229](../../agents/intent_router.py#L229) | 229 | `"        content = item.get(\"content\")"` | — |
+| [SRC-5587371288-L000230](../../agents/intent_router.py#L230) | 230 | `"        if not isinstance(content, str):"` | — |
+| [SRC-5587371288-L000231](../../agents/intent_router.py#L231) | 231 | `"            continue"` | — |
+| [SRC-5587371288-L000232](../../agents/intent_router.py#L232) | 232 | `"        normalized = _normalize(content)"` | — |
+| [SRC-5587371288-L000233](../../agents/intent_router.py#L233) | 233 | `"        if not normalized or _is_smalltalk(normalized):"` | — |
+| [SRC-5587371288-L000234](../../agents/intent_router.py#L234) | 234 | `"            return \"\""` | — |
+| [SRC-5587371288-L000235](../../agents/intent_router.py#L235) | 235 | `"        if _needs_clarification(content):"` | — |
+| [SRC-5587371288-L000236](../../agents/intent_router.py#L236) | 236 | `"            continue"` | — |
+| [SRC-5587371288-L000237](../../agents/intent_router.py#L237) | 237 | `"        meaningful = re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", normalized)"` | — |
+| [SRC-5587371288-L000238](../../agents/intent_router.py#L238) | 238 | `"        if len(meaningful) >= 2 and len(normalized) >= 8:"` | — |
+| [SRC-5587371288-L000239](../../agents/intent_router.py#L239) | 239 | `"            return re.sub(r\"\\s+\", \" \", content).strip()[:300]"` | — |
+| [SRC-5587371288-L000240](../../agents/intent_router.py#L240) | 240 | `"        if index > 0:"` | — |
+| [SRC-5587371288-L000241](../../agents/intent_router.py#L241) | 241 | `"            previous = bounded[index - 1]"` | — |
+| [SRC-5587371288-L000242](../../agents/intent_router.py#L242) | 242 | `"            if isinstance(previous, dict) and previous.get(\"role\") == \"assistant\" and _is_clarification_message(previous.get(\"content\")):"` | — |
+| [SRC-5587371288-L000243](../../agents/intent_router.py#L243) | 243 | `"                return re.sub(r\"\\s+\", \" \", content).strip()[:120]"` | — |
+| [SRC-5587371288-L000244](../../agents/intent_router.py#L244) | 244 | `"        return \"\""` | — |
+| [SRC-5587371288-L000245](../../agents/intent_router.py#L245) | 245 | `"    return \"\""` | — |
+| [SRC-5587371288-L000246](../../agents/intent_router.py#L246) | 246 | `""` | — |
+| [SRC-5587371288-L000247](../../agents/intent_router.py#L247) | 247 | `""` | — |
+| [SRC-5587371288-L000248](../../agents/intent_router.py#L248) | 248 | `"def _pending_clarification_query(history: Any) -> str:"` | — |
+| [SRC-5587371288-L000249](../../agents/intent_router.py#L249) | 249 | `"    \"\"\"Return the unresolved elliptical question immediately awaiting a user slot-fill.\"\"\""` | — |
+| [SRC-5587371288-L000250](../../agents/intent_router.py#L250) | 250 | `"    if not isinstance(history, list) or not history:"` | — |
+| [SRC-5587371288-L000251](../../agents/intent_router.py#L251) | 251 | `"        return \"\""` | — |
+| [SRC-5587371288-L000252](../../agents/intent_router.py#L252) | 252 | `"    last_index = len(history) - 1"` | — |
+| [SRC-5587371288-L000253](../../agents/intent_router.py#L253) | 253 | `"    while last_index >= 0 and not ("` | — |
+| [SRC-5587371288-L000254](../../agents/intent_router.py#L254) | 254 | `"        isinstance(history[last_index], dict)"` | — |
+| [SRC-5587371288-L000255](../../agents/intent_router.py#L255) | 255 | `"        and isinstance(history[last_index].get(\"content\"), str)"` | — |
+| [SRC-5587371288-L000256](../../agents/intent_router.py#L256) | 256 | `"        and history[last_index].get(\"content\", \"\").strip()"` | — |
+| [SRC-5587371288-L000257](../../agents/intent_router.py#L257) | 257 | `"    ):"` | — |
+| [SRC-5587371288-L000258](../../agents/intent_router.py#L258) | 258 | `"        last_index -= 1"` | — |
+| [SRC-5587371288-L000259](../../agents/intent_router.py#L259) | 259 | `"    if last_index < 0 or history[last_index].get(\"role\") != \"assistant\":"` | — |
+| [SRC-5587371288-L000260](../../agents/intent_router.py#L260) | 260 | `"        return \"\""` | — |
+| [SRC-5587371288-L000261](../../agents/intent_router.py#L261) | 261 | `"    if not _is_clarification_message(history[last_index].get(\"content\")):"` | — |
+| [SRC-5587371288-L000262](../../agents/intent_router.py#L262) | 262 | `"        return \"\""` | — |
+| [SRC-5587371288-L000263](../../agents/intent_router.py#L263) | 263 | `"    for index in range(last_index - 1, -1, -1):"` | — |
+| [SRC-5587371288-L000264](../../agents/intent_router.py#L264) | 264 | `"        item = history[index]"` | — |
+| [SRC-5587371288-L000265](../../agents/intent_router.py#L265) | 265 | `"        if isinstance(item, dict) and item.get(\"role\") == \"user\":"` | — |
+| [SRC-5587371288-L000266](../../agents/intent_router.py#L266) | 266 | `"            content = item.get(\"content\")"` | — |
+| [SRC-5587371288-L000267](../../agents/intent_router.py#L267) | 267 | `"            if not isinstance(content, str) or not _needs_clarification(content):"` | — |
+| [SRC-5587371288-L000268](../../agents/intent_router.py#L268) | 268 | `"                return \"\""` | — |
+| [SRC-5587371288-L000269](../../agents/intent_router.py#L269) | 269 | `"            if _latest_context_anchor(history[:index]):"` | — |
+| [SRC-5587371288-L000270](../../agents/intent_router.py#L270) | 270 | `"                return \"\""` | — |
+| [SRC-5587371288-L000271](../../agents/intent_router.py#L271) | 271 | `"            return content.strip()[:180]"` | — |
+| [SRC-5587371288-L000272](../../agents/intent_router.py#L272) | 272 | `"    return \"\""` | — |
+| [SRC-5587371288-L000273](../../agents/intent_router.py#L273) | 273 | `""` | — |
+| [SRC-5587371288-L000274](../../agents/intent_router.py#L274) | 274 | `""` | — |
+| [SRC-5587371288-L000275](../../agents/intent_router.py#L275) | 275 | `"def _is_clarification_answer(question: str, history: Any) -> bool:"` | — |
+| [SRC-5587371288-L000276](../../agents/intent_router.py#L276) | 276 | `"    \"\"\"Recognize a concise answer to Omarai's immediately preceding clarification.\"\"\""` | — |
+| [SRC-5587371288-L000277](../../agents/intent_router.py#L277) | 277 | `"    if not _pending_clarification_query(history) or not isinstance(question, str):"` | — |
+| [SRC-5587371288-L000278](../../agents/intent_router.py#L278) | 278 | `"        return False"` | — |
+| [SRC-5587371288-L000279](../../agents/intent_router.py#L279) | 279 | `"    query = question.strip()"` | — |
+| [SRC-5587371288-L000280](../../agents/intent_router.py#L280) | 280 | `"    if not query or len(query) >= 100 or _needs_clarification(query) or _is_smalltalk(query):"` | — |
+| [SRC-5587371288-L000281](../../agents/intent_router.py#L281) | 281 | `"        return False"` | — |
+| [SRC-5587371288-L000282](../../agents/intent_router.py#L282) | 282 | `"    # A self-contained live request should not be mistaken for a slot-fill."` | — |
+| [SRC-5587371288-L000283](../../agents/intent_router.py#L283) | 283 | `"    return not (_has_live_signal(query) or re.search(r\"https?://\", query, re.IGNORECASE))"` | — |
+| [SRC-5587371288-L000284](../../agents/intent_router.py#L284) | 284 | `""` | — |
+| [SRC-5587371288-L000285](../../agents/intent_router.py#L285) | 285 | `""` | — |
+| [SRC-5587371288-L000286](../../agents/intent_router.py#L286) | 286 | `"def _is_contextual_followup(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000287](../../agents/intent_router.py#L287) | 287 | `"    \"\"\"Detect short referent-dependent follow-ups without treating every 'okay' as one.\"\"\""` | — |
+| [SRC-5587371288-L000288](../../agents/intent_router.py#L288) | 288 | `"    if not isinstance(question, str) or len(question.strip()) >= 100:"` | — |
+| [SRC-5587371288-L000289](../../agents/intent_router.py#L289) | 289 | `"        return False"` | — |
+| [SRC-5587371288-L000290](../../agents/intent_router.py#L290) | 290 | `"    if re.search(r\"https?://\", question, re.IGNORECASE):"` | — |
+| [SRC-5587371288-L000291](../../agents/intent_router.py#L291) | 291 | `"        return False"` | — |
+| [SRC-5587371288-L000292](../../agents/intent_router.py#L292) | 292 | `"    normalized = _strip_followup_leadin(_normalize(question))"` | — |
+| [SRC-5587371288-L000293](../../agents/intent_router.py#L293) | 293 | `"    if _needs_clarification(question) or _starts_with_contextual_aspect(question):"` | — |
+| [SRC-5587371288-L000294](../../agents/intent_router.py#L294) | 294 | `"        return True"` | — |
+| [SRC-5587371288-L000295](../../agents/intent_router.py#L295) | 295 | `"    # Pronouns and deictic references are strong signals only in a short turn."` | — |
+| [SRC-5587371288-L000296](../../agents/intent_router.py#L296) | 296 | `"    detached_reference = re.fullmatch("` | — |
+| [SRC-5587371288-L000297](../../agents/intent_router.py#L297) | 297 | `"        r\"(?:و)?(?:هي\|هو\|دي\|ده\|دول\|هما\|ذلك\|تلك\|عليها\|عليه\|فيها\|فيه\|لها\|له\|\""` | — |
+| [SRC-5587371288-L000298](../../agents/intent_router.py#L298) | 298 | `"        r\"سعرها\|سعره\|مكانها\|مكانه\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها\|مميزاتها\|عيوبها)\","` | — |
+| [SRC-5587371288-L000299](../../agents/intent_router.py#L299) | 299 | `"        normalized,"` | — |
+| [SRC-5587371288-L000300](../../agents/intent_router.py#L300) | 300 | `"    )"` | — |
+| [SRC-5587371288-L000301](../../agents/intent_router.py#L301) | 301 | `"    # Arabic often attaches object pronouns to verbs (e.g. \"أشتريه\", \"أستخدمها\")."` | — |
+| [SRC-5587371288-L000302](../../agents/intent_router.py#L302) | 302 | `"    # These are easy to miss with whitespace-token pronoun lists."` | — |
+| [SRC-5587371288-L000303](../../agents/intent_router.py#L303) | 303 | `"    attached_reference = re.search("` | — |
+| [SRC-5587371288-L000304](../../agents/intent_router.py#L304) | 304 | `"        r\"\\b(?:استخدم\|اشتري\|اجيب\|اشغل\|افتح\|اصلح\|احط\|اجرب\|اربط\|اوصل\|اخد\|اخلي\|\""` | — |
+| [SRC-5587371288-L000305](../../agents/intent_router.py#L305) | 305 | `"        r\"اركب\|انقل\|ادفع\|اطلب\|احجز)[\\u0600-\\u06FF]{0,18}(?:ه\|ها\|هم\|هما\|هن\|ك\|كم\|كن)\\b\","` | — |
+| [SRC-5587371288-L000306](../../agents/intent_router.py#L306) | 306 | `"        normalized,"` | — |
+| [SRC-5587371288-L000307](../../agents/intent_router.py#L307) | 307 | `"    )"` | — |
+| [SRC-5587371288-L000308](../../agents/intent_router.py#L308) | 308 | `"    return bool(detached_reference or attached_reference)"` | — |
+| [SRC-5587371288-L000309](../../agents/intent_router.py#L309) | 309 | `""` | — |
+| [SRC-5587371288-L000310](../../agents/intent_router.py#L310) | 310 | `""` | — |
+| [SRC-5587371288-L000311](../../agents/intent_router.py#L311) | 311 | `"def resolve_followup_query(question: str, history: Any = None) -> str:"` | — |
+| [SRC-5587371288-L000312](../../agents/intent_router.py#L312) | 312 | `"    \"\"\"Resolve a short contextual follow-up against the nearest substantive topic."` | — |
+| [SRC-5587371288-L000313](../../agents/intent_router.py#L313) | 313 | `""` | — |
+| [SRC-5587371288-L000314](../../agents/intent_router.py#L314) | 314 | `"    Repeated follow-ups retain the original topic. An answer to an explicit"` | — |
+| [SRC-5587371288-L000315](../../agents/intent_router.py#L315) | 315 | `"    clarification is joined to the pending question. New standalone questions are"` | — |
+| [SRC-5587371288-L000316](../../agents/intent_router.py#L316) | 316 | `"    never merged merely because they start with 'طيب' or 'طب'."` | — |
+| [SRC-5587371288-L000317](../../agents/intent_router.py#L317) | 317 | `"    \"\"\""` | — |
+| [SRC-5587371288-L000318](../../agents/intent_router.py#L318) | 318 | `"    if not isinstance(question, str):"` | — |
+| [SRC-5587371288-L000319](../../agents/intent_router.py#L319) | 319 | `"        return \"\""` | — |
+| [SRC-5587371288-L000320](../../agents/intent_router.py#L320) | 320 | `"    query = re.sub(r\"\\s+\", \" \", question).strip()"` | — |
+| [SRC-5587371288-L000321](../../agents/intent_router.py#L321) | 321 | `"    if not query:"` | — |
+| [SRC-5587371288-L000322](../../agents/intent_router.py#L322) | 322 | `"        return \"\""` | — |
+| [SRC-5587371288-L000323](../../agents/intent_router.py#L323) | 323 | `"    pending = _pending_clarification_query(history)"` | — |
+| [SRC-5587371288-L000324](../../agents/intent_router.py#L324) | 324 | `"    if pending and _is_clarification_answer(query, history):"` | — |
+| [SRC-5587371288-L000325](../../agents/intent_router.py#L325) | 325 | `"        return f\"{pending[:220]} — {query[:180]}\"[:500]"` | — |
+| [SRC-5587371288-L000326](../../agents/intent_router.py#L326) | 326 | `"    if len(query) >= 100 or not isinstance(history, list):"` | — |
+| [SRC-5587371288-L000327](../../agents/intent_router.py#L327) | 327 | `"        return query[:500]"` | — |
+| [SRC-5587371288-L000328](../../agents/intent_router.py#L328) | 328 | `"    if not _is_contextual_followup(query):"` | — |
+| [SRC-5587371288-L000329](../../agents/intent_router.py#L329) | 329 | `"        return query[:500]"` | — |
+| [SRC-5587371288-L000330](../../agents/intent_router.py#L330) | 330 | `"    previous = _latest_context_anchor(history)"` | — |
+| [SRC-5587371288-L000331](../../agents/intent_router.py#L331) | 331 | `"    if not previous:"` | — |
+| [SRC-5587371288-L000332](../../agents/intent_router.py#L332) | 332 | `"        return query[:500]"` | — |
+| [SRC-5587371288-L000333](../../agents/intent_router.py#L333) | 333 | `"    return f\"{previous[:300]} — {query[:180]}\"[:500]"` | — |
+| [SRC-5587371288-L000334](../../agents/intent_router.py#L334) | 334 | `""` | — |
+| [SRC-5587371288-L000335](../../agents/intent_router.py#L335) | 335 | `""` | — |
+| [SRC-5587371288-L000336](../../agents/intent_router.py#L336) | 336 | `"def _has_explicit_source_request(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000337](../../agents/intent_router.py#L337) | 337 | `"    \"\"\"Recognize explicit requests for evidence/citations that require web-backed retrieval.\"\"\""` | — |
+| [SRC-5587371288-L000338](../../agents/intent_router.py#L338) | 338 | `"    normalized = _normalize(question)"` | — |
+| [SRC-5587371288-L000339](../../agents/intent_router.py#L339) | 339 | `"    markers = ("` | — |
+| [SRC-5587371288-L000340](../../agents/intent_router.py#L340) | 340 | `"        \"اذكر مصادر\", \"اذكر المصدر\", \"مصادر موثوقة\", \"مصدر موثوق\","` | — |
+| [SRC-5587371288-L000341](../../agents/intent_router.py#L341) | 341 | `"        \"مصادر رسمية\", \"مصادر حديثة\", \"مع مصادر\", \"مع المصادر\","` | — |
+| [SRC-5587371288-L000342](../../agents/intent_router.py#L342) | 342 | `"        \"بالمصادر\", \"روابط المصادر\", \"ارفق المصادر\", \"أرفق المصادر\","` | — |
+| [SRC-5587371288-L000343](../../agents/intent_router.py#L343) | 343 | `"        \"استشهد بمصادر\", \"وثق الاجابة\", \"وثق الإجابة\", \"المراجع\","` | — |
+| [SRC-5587371288-L000344](../../agents/intent_router.py#L344) | 344 | `"        \"with sources\", \"cite sources\", \"trusted sources\", \"reliable sources\","` | — |
+| [SRC-5587371288-L000345](../../agents/intent_router.py#L345) | 345 | `"        \"official sources\", \"include references\", \"with citations\","` | — |
+| [SRC-5587371288-L000346](../../agents/intent_router.py#L346) | 346 | `"        \"source-backed\", \"cite your sources\","` | — |
+| [SRC-5587371288-L000347](../../agents/intent_router.py#L347) | 347 | `"    )"` | — |
+| [SRC-5587371288-L000348](../../agents/intent_router.py#L348) | 348 | `"    return any(_normalize(marker) in normalized for marker in markers)"` | — |
+| [SRC-5587371288-L000349](../../agents/intent_router.py#L349) | 349 | `""` | — |
+| [SRC-5587371288-L000350](../../agents/intent_router.py#L350) | 350 | `""` | — |
+| [SRC-5587371288-L000351](../../agents/intent_router.py#L351) | 351 | `"def _is_deep(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000352](../../agents/intent_router.py#L352) | 352 | `"    normalized = _normalize(question)"` | — |
+| [SRC-5587371288-L000353](../../agents/intent_router.py#L353) | 353 | `"    if any(_normalize(term) in normalized for term in _DEEP_TERMS):"` | — |
+| [SRC-5587371288-L000354](../../agents/intent_router.py#L354) | 354 | `"        return True"` | — |
+| [SRC-5587371288-L000355](../../agents/intent_router.py#L355) | 355 | `"    # Explicit multi-dimension comparisons need evidence from more than one angle."` | — |
+| [SRC-5587371288-L000356](../../agents/intent_router.py#L356) | 356 | `"    dimensions = ("` | — |
+| [SRC-5587371288-L000357](../../agents/intent_router.py#L357) | 357 | `"        \"السعر\", \"سعر\", \"بطاريه\", \"كاميرا\", \"اداء\", \"امان\", \"تكلفه\","` | — |
+| [SRC-5587371288-L000358](../../agents/intent_router.py#L358) | 358 | `"        \"الصيانه\", \"الجوده\", \"المميزات\", \"العيوب\", \"الاراء\", \"المراجعات\","` | — |
+| [SRC-5587371288-L000359](../../agents/intent_router.py#L359) | 359 | `"        \"price\", \"battery\", \"camera\", \"performance\", \"safety\", \"cost\","` | — |
+| [SRC-5587371288-L000360](../../agents/intent_router.py#L360) | 360 | `"        \"maintenance\", \"quality\", \"features\", \"drawbacks\", \"reviews\","` | — |
+| [SRC-5587371288-L000361](../../agents/intent_router.py#L361) | 361 | `"    )"` | — |
+| [SRC-5587371288-L000362](../../agents/intent_router.py#L362) | 362 | `"    matched_dimensions = sum(1 for item in dimensions if _normalize(item) in normalized)"` | — |
+| [SRC-5587371288-L000363](../../agents/intent_router.py#L363) | 363 | `"    return matched_dimensions >= 2 and any("` | — |
+| [SRC-5587371288-L000364](../../agents/intent_router.py#L364) | 364 | `"        marker in normalized for marker in _MULTIPART_MARKERS"` | — |
+| [SRC-5587371288-L000365](../../agents/intent_router.py#L365) | 365 | `"    )"` | — |
+| [SRC-5587371288-L000366](../../agents/intent_router.py#L366) | 366 | `""` | — |
+| [SRC-5587371288-L000367](../../agents/intent_router.py#L367) | 367 | `""` | — |
+| [SRC-5587371288-L000368](../../agents/intent_router.py#L368) | 368 | `"def _is_page_summarization_request(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000369](../../agents/intent_router.py#L369) | 369 | `"    \"\"\"Recognize a request to summarize a specific web page or link.\"\"\""` | — |
+| [SRC-5587371288-L000370](../../agents/intent_router.py#L370) | 370 | `"    normalized = _normalize(question)"` | — |
+| [SRC-5587371288-L000371](../../agents/intent_router.py#L371) | 371 | `"    terms = (\"لخص\", \"تلخيص\", \"ملخص\", \"summarize\", \"summarise\", \"summary\")"` | — |
+| [SRC-5587371288-L000372](../../agents/intent_router.py#L372) | 372 | `"    page_references = ("` | — |
+| [SRC-5587371288-L000373](../../agents/intent_router.py#L373) | 373 | `"        \"صفحه\", \"الصفحه\", \"مقال\", \"المقال\", \"رابط\", \"لينك\", \"url\","` | — |
+| [SRC-5587371288-L000374](../../agents/intent_router.py#L374) | 374 | `"        \"link\", \"article\", \"page\", \"webpage\", \"web page\", \"website\","` | — |
+| [SRC-5587371288-L000375](../../agents/intent_router.py#L375) | 375 | `"    )"` | — |
+| [SRC-5587371288-L000376](../../agents/intent_router.py#L376) | 376 | `"    return ("` | — |
+| [SRC-5587371288-L000377](../../agents/intent_router.py#L377) | 377 | `"        any(_normalize(term) in normalized for term in terms)"` | — |
+| [SRC-5587371288-L000378](../../agents/intent_router.py#L378) | 378 | `"        and ("` | — |
+| [SRC-5587371288-L000379](../../agents/intent_router.py#L379) | 379 | `"            bool(re.search(r\"https?://\", question, flags=re.IGNORECASE))"` | — |
+| [SRC-5587371288-L000380](../../agents/intent_router.py#L380) | 380 | `"            or any(_normalize(term) in normalized for term in page_references)"` | — |
+| [SRC-5587371288-L000381](../../agents/intent_router.py#L381) | 381 | `"        )"` | — |
+| [SRC-5587371288-L000382](../../agents/intent_router.py#L382) | 382 | `"    )"` | — |
+| [SRC-5587371288-L000383](../../agents/intent_router.py#L383) | 383 | `""` | — |
+| [SRC-5587371288-L000384](../../agents/intent_router.py#L384) | 384 | `""` | — |
+| [SRC-5587371288-L000385](../../agents/intent_router.py#L385) | 385 | `"def _has_inline_summary_text(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000386](../../agents/intent_router.py#L386) | 386 | `"    \"\"\"Detect text explicitly pasted after a summary instruction, not a web page URL.\"\"\""` | — |
+| [SRC-5587371288-L000387](../../agents/intent_router.py#L387) | 387 | `"    if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
+| [SRC-5587371288-L000388](../../agents/intent_router.py#L388) | 388 | `"        return False"` | — |
+| [SRC-5587371288-L000389](../../agents/intent_router.py#L389) | 389 | `"    normalized = _normalize(question)"` | — |
+| [SRC-5587371288-L000390](../../agents/intent_router.py#L390) | 390 | `"    markers = ("` | — |
+| [SRC-5587371288-L000391](../../agents/intent_router.py#L391) | 391 | `"        \"النص التالي\", \"النص الاتي\", \"النص ده\", \"النص اللي جاي\","` | — |
+| [SRC-5587371288-L000392](../../agents/intent_router.py#L392) | 392 | `"        \"this text\", \"following text\", \"the following text\", \"text below\","` | — |
+| [SRC-5587371288-L000393](../../agents/intent_router.py#L393) | 393 | `"        \"text to summarize\", \"content below\","` | — |
+| [SRC-5587371288-L000394](../../agents/intent_router.py#L394) | 394 | `"    )"` | — |
+| [SRC-5587371288-L000395](../../agents/intent_router.py#L395) | 395 | `"    for marker in markers:"` | — |
+| [SRC-5587371288-L000396](../../agents/intent_router.py#L396) | 396 | `"        normalized_marker = _normalize(marker)"` | — |
+| [SRC-5587371288-L000397](../../agents/intent_router.py#L397) | 397 | `"        if normalized_marker in normalized:"` | — |
+| [SRC-5587371288-L000398](../../agents/intent_router.py#L398) | 398 | `"            remainder = normalized.split(normalized_marker, 1)[1].strip()"` | — |
+| [SRC-5587371288-L000399](../../agents/intent_router.py#L399) | 399 | `"            if len(remainder) >= 8:"` | — |
+| [SRC-5587371288-L000400](../../agents/intent_router.py#L400) | 400 | `"                return True"` | — |
+| [SRC-5587371288-L000401](../../agents/intent_router.py#L401) | 401 | `"    # Also allow a concise direct form such as \"لخص: [pasted paragraph]\"."` | — |
+| [SRC-5587371288-L000402](../../agents/intent_router.py#L402) | 402 | `"    return bool("` | — |
+| [SRC-5587371288-L000403](../../agents/intent_router.py#L403) | 403 | `"        re.search("` | — |
+| [SRC-5587371288-L000404](../../agents/intent_router.py#L404) | 404 | `"            r\"^\\s*(?:لخص(?:\\s+لي)?\|تلخيص\|summari[sz]e\|summary)\\s*[:：]\\s*\\S.{12,}$\","` | — |
+| [SRC-5587371288-L000405](../../agents/intent_router.py#L405) | 405 | `"            question,"` | — |
+| [SRC-5587371288-L000406](../../agents/intent_router.py#L406) | 406 | `"            flags=re.IGNORECASE,"` | — |
 | [SRC-5587371288-L000407](../../agents/intent_router.py#L407) | 407 | `"        )"` | — |
 | [SRC-5587371288-L000408](../../agents/intent_router.py#L408) | 408 | `"    )"` | — |
 | [SRC-5587371288-L000409](../../agents/intent_router.py#L409) | 409 | `""` | — |
@@ -581,265 +843,3 @@
 | [SRC-59CF4B7DE8-L000103](../../agents/research.py#L103) | 103 | `"    candidates = re.findall(r\"https?://[^\\s<>()]+\", text or \"\", flags=re.IGNORECASE)"` | — |
 | [SRC-59CF4B7DE8-L000104](../../agents/research.py#L104) | 104 | `"    cleaned: list[str] = []"` | — |
 | [SRC-59CF4B7DE8-L000105](../../agents/research.py#L105) | 105 | `"    for value in candidates:"` | — |
-| [SRC-59CF4B7DE8-L000106](../../agents/research.py#L106) | 106 | `"        url = value.rstrip(\".,;!?،؛:)\\\"'»\")"` | — |
-| [SRC-59CF4B7DE8-L000107](../../agents/research.py#L107) | 107 | `"        if url and url not in cleaned:"` | — |
-| [SRC-59CF4B7DE8-L000108](../../agents/research.py#L108) | 108 | `"            cleaned.append(url[:2048])"` | — |
-| [SRC-59CF4B7DE8-L000109](../../agents/research.py#L109) | 109 | `"        if len(cleaned) >= 5:"` | — |
-| [SRC-59CF4B7DE8-L000110](../../agents/research.py#L110) | 110 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000111](../../agents/research.py#L111) | 111 | `"    return cleaned"` | — |
-| [SRC-59CF4B7DE8-L000112](../../agents/research.py#L112) | 112 | `""` | — |
-| [SRC-59CF4B7DE8-L000113](../../agents/research.py#L113) | 113 | `""` | — |
-| [SRC-59CF4B7DE8-L000114](../../agents/research.py#L114) | 114 | `"def _compact(value: Any, limit: int = MAX_QUERY_CHARS) -> str:"` | — |
-| [SRC-59CF4B7DE8-L000115](../../agents/research.py#L115) | 115 | `"    if not isinstance(value, str):"` | — |
-| [SRC-59CF4B7DE8-L000116](../../agents/research.py#L116) | 116 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000117](../../agents/research.py#L117) | 117 | `"    return re.sub(r\"\\s+\", \" \", value).strip()[:limit]"` | — |
-| [SRC-59CF4B7DE8-L000118](../../agents/research.py#L118) | 118 | `""` | — |
-| [SRC-59CF4B7DE8-L000119](../../agents/research.py#L119) | 119 | `""` | — |
-| [SRC-59CF4B7DE8-L000120](../../agents/research.py#L120) | 120 | `"_SEARCH_TOPIC_PRESERVING_META_PREFIX_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000121](../../agents/research.py#L121) | 121 | `"    r\"^(?:(?:و?استخدم\|و?استعمل)\\s+مصادر?\\s+متعددة\\s+\""` | — |
-| [SRC-59CF4B7DE8-L000122](../../agents/research.py#L122) | 122 | `"    r\"(?:للبحث\\s+عن\|للعثور\\s+على\|لإيجاد\|عن\|حول\|بشأن)\|\""` | — |
-| [SRC-59CF4B7DE8-L000123](../../agents/research.py#L123) | 123 | `"    r\"use\\s+multiple\\s+sources\\s+to\\s+(?:research\|find\|investigate))\\s+\","` | — |
-| [SRC-59CF4B7DE8-L000124](../../agents/research.py#L124) | 124 | `"    re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000125](../../agents/research.py#L125) | 125 | `")"` | — |
-| [SRC-59CF4B7DE8-L000126](../../agents/research.py#L126) | 126 | `""` | — |
-| [SRC-59CF4B7DE8-L000127](../../agents/research.py#L127) | 127 | `"_SEARCH_META_START_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000128](../../agents/research.py#L128) | 128 | `"    r\"^(?:و?استخدم\|و?استعمل\|و?اجب\|و?أجب\|و?لا تعرض\|و?لا تقدم\|\""` | — |
-| [SRC-59CF4B7DE8-L000129](../../agents/research.py#L129) | 129 | `"    r\"please cite\|cite\|provide links\|mention sources\|use multiple sources\|\""` | — |
-| [SRC-59CF4B7DE8-L000130](../../agents/research.py#L130) | 130 | `"    r\"don't present\|do not present)\\b\","` | — |
-| [SRC-59CF4B7DE8-L000131](../../agents/research.py#L131) | 131 | `"    re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000132](../../agents/research.py#L132) | 132 | `")"` | — |
-| [SRC-59CF4B7DE8-L000133](../../agents/research.py#L133) | 133 | `"# Treat \"اذكر\" as an action unless its object is clearly citation/format metadata."` | — |
-| [SRC-59CF4B7DE8-L000134](../../agents/research.py#L134) | 134 | `"# This preserves topic-bearing prompts such as \"اذكر أبرز السيارات الكهربائية...\"."` | — |
-| [SRC-59CF4B7DE8-L000135](../../agents/research.py#L135) | 135 | `"_SEARCH_CITATION_META_START_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000136](../../agents/research.py#L136) | 136 | `"    r\"^(?:و?اذكر(?:ي\|وا)?\|mention\|cite\|provide)\\s+\""` | — |
-| [SRC-59CF4B7DE8-L000137](../../agents/research.py#L137) | 137 | `"    r\"(?:المصادر\|مصادر\|المصدر\|مصدر(?:[ًٌٍ]ا?\|ا[ًٌٍ]?)?\|\""` | — |
-| [SRC-59CF4B7DE8-L000138](../../agents/research.py#L138) | 138 | `"    r\"روابط?\|رابط\|تواريخ?\|تاريخ\|الاخبار\|الأخبار\|\""` | — |
-| [SRC-59CF4B7DE8-L000139](../../agents/research.py#L139) | 139 | `"    r\"the original posts\|links\|sources\|dates)(?=\\s\|$\|[،,])\","` | — |
-| [SRC-59CF4B7DE8-L000140](../../agents/research.py#L140) | 140 | `"    re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000141](../../agents/research.py#L141) | 141 | `")"` | — |
-| [SRC-59CF4B7DE8-L000142](../../agents/research.py#L142) | 142 | `"# This is a response-quality instruction, not a topic query."` | — |
-| [SRC-59CF4B7DE8-L000143](../../agents/research.py#L143) | 143 | `"_SEARCH_UNCERTAINTY_META_START_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000144](../../agents/research.py#L144) | 144 | `"    r\"^و?وضّ?ح\\s+اذا\\s+كانت\\s+النتائج\\s+غير\\s+كافيه\\b\""` | — |
-| [SRC-59CF4B7DE8-L000145](../../agents/research.py#L145) | 145 | `"    r\".*(?:لتمثيل\|تمثيل).*(?:اراء\\s+المستخدمين\|المستخدمين)\\b\","` | — |
-| [SRC-59CF4B7DE8-L000146](../../agents/research.py#L146) | 146 | `"    re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000147](../../agents/research.py#L147) | 147 | `")"` | — |
-| [SRC-59CF4B7DE8-L000148](../../agents/research.py#L148) | 148 | `""` | — |
-| [SRC-59CF4B7DE8-L000149](../../agents/research.py#L149) | 149 | `"_SEARCH_FACTS_INFERENCE_META_ONLY_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000150](../../agents/research.py#L150) | 150 | `"    r\"^و?(?:ميّز\|ميز)\\s+بين\\s+الحقائق\\s+والاستنتاجات\\s*[.!؟؛،,]*$\","` | — |
-| [SRC-59CF4B7DE8-L000151](../../agents/research.py#L151) | 151 | `"    re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000152](../../agents/research.py#L152) | 152 | `")"` | — |
-| [SRC-59CF4B7DE8-L000153](../../agents/research.py#L153) | 153 | `"_SEARCH_META_TAIL_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000154](../../agents/research.py#L154) | 154 | `"    r\"\\s*[,،؛;]\\s*(?:و\\s*)?(?:استخدم\|استعمل\|ميّز\|ميز\|اجب\|أجب\|لا تعرض\|لا تقدم\|\""` | — |
-| [SRC-59CF4B7DE8-L000155](../../agents/research.py#L155) | 155 | `"    r\"please cite\|cite\|provide links\|mention sources\|use multiple sources\|\""` | — |
-| [SRC-59CF4B7DE8-L000156](../../agents/research.py#L156) | 156 | `"    r\"don't present\|do not present\|\""` | — |
-| [SRC-59CF4B7DE8-L000157](../../agents/research.py#L157) | 157 | `"    r\"اذكر(?:ي\|وا)?\\s+(?:مصادر?\|المصادر\|مصدر\|روابط?\|رابط\|تواريخ?\|تاريخ\|الاخبار\|الأخبار))\\b.*$\","` | — |
-| [SRC-59CF4B7DE8-L000158](../../agents/research.py#L158) | 158 | `"    re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000159](../../agents/research.py#L159) | 159 | `")"` | — |
-| [SRC-59CF4B7DE8-L000160](../../agents/research.py#L160) | 160 | `"_SEARCH_LEADING_ACTION_RE = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000161](../../agents/research.py#L161) | 161 | `"    r\"^(?:حلّل\|حلل\|اجمع\|قارن\|ناقش\|استكشف\|استقصِ\|و?ميّز\|و?ميز\|اعرض\|و?وضح\|و?وضّح\|و?اذكر(?:ي\|وا)?\|\""` | — |
-| [SRC-59CF4B7DE8-L000162](../../agents/research.py#L162) | 162 | `"    r\"analyze\|analyse\|compare\|investigate\|collect\|gather\|review\|summarize\|\""` | — |
-| [SRC-59CF4B7DE8-L000163](../../agents/research.py#L163) | 163 | `"    r\"(?:ابحث\|بحث\|دورلي\|دور\|اعثر)(?:\\s+(?:عن\|على))?)\\s+\","` | — |
-| [SRC-59CF4B7DE8-L000164](../../agents/research.py#L164) | 164 | `"    re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000165](../../agents/research.py#L165) | 165 | `")"` | — |
-| [SRC-59CF4B7DE8-L000166](../../agents/research.py#L166) | 166 | `""` | — |
-| [SRC-59CF4B7DE8-L000167](../../agents/research.py#L167) | 167 | `""` | — |
-| [SRC-59CF4B7DE8-L000168](../../agents/research.py#L168) | 168 | `"def compact_search_query(value: Any, limit: int = MAX_QUERY_CHARS) -> str:"` | — |
-| [SRC-59CF4B7DE8-L000169](../../agents/research.py#L169) | 169 | `"    \"\"\"Reduce a full request to the topic-bearing query; preserve safety checks elsewhere.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000170](../../agents/research.py#L170) | 170 | `"    if not isinstance(value, str):"` | — |
-| [SRC-59CF4B7DE8-L000171](../../agents/research.py#L171) | 171 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000172](../../agents/research.py#L172) | 172 | `"    cleaned = re.sub(r\"https?://[^\\s<>()]+\", \" \", value, flags=re.IGNORECASE)"` | — |
-| [SRC-59CF4B7DE8-L000173](../../agents/research.py#L173) | 173 | `"    # Split question/sentence boundaries without splitting operators such as site:reddit.com."` | — |
-| [SRC-59CF4B7DE8-L000174](../../agents/research.py#L174) | 174 | `"    segments = re.split("` | — |
-| [SRC-59CF4B7DE8-L000175](../../agents/research.py#L175) | 175 | `"        r\"(?<=[!?؟؛;])\\s+\|(?<=\\.)\\s+(?=[A-Z\\u0600-\\u06FF])\","` | — |
-| [SRC-59CF4B7DE8-L000176](../../agents/research.py#L176) | 176 | `"        cleaned,"` | — |
-| [SRC-59CF4B7DE8-L000177](../../agents/research.py#L177) | 177 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000178](../../agents/research.py#L178) | 178 | `"    useful: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000179](../../agents/research.py#L179) | 179 | `"    for segment in segments:"` | — |
-| [SRC-59CF4B7DE8-L000180](../../agents/research.py#L180) | 180 | `"        segment = segment.strip()"` | — |
-| [SRC-59CF4B7DE8-L000181](../../agents/research.py#L181) | 181 | `"        if not segment:"` | — |
-| [SRC-59CF4B7DE8-L000182](../../agents/research.py#L182) | 182 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000183](../../agents/research.py#L183) | 183 | `"        normalized_segment = re.sub(r\"[\\u064B-\\u065F\\u0670]\", \"\", segment)"` | — |
-| [SRC-59CF4B7DE8-L000184](../../agents/research.py#L184) | 184 | `"        normalized_segment = _normalize_arabic(normalized_segment).casefold()"` | — |
-| [SRC-59CF4B7DE8-L000185](../../agents/research.py#L185) | 185 | `"        if ("` | — |
-| [SRC-59CF4B7DE8-L000186](../../agents/research.py#L186) | 186 | `"            _SEARCH_CITATION_META_START_RE.search(normalized_segment)"` | — |
-| [SRC-59CF4B7DE8-L000187](../../agents/research.py#L187) | 187 | `"            or _SEARCH_UNCERTAINTY_META_START_RE.search(normalized_segment)"` | — |
-| [SRC-59CF4B7DE8-L000188](../../agents/research.py#L188) | 188 | `"            or _SEARCH_FACTS_INFERENCE_META_ONLY_RE.search(normalized_segment)"` | — |
-| [SRC-59CF4B7DE8-L000189](../../agents/research.py#L189) | 189 | `"        ):"` | — |
-| [SRC-59CF4B7DE8-L000190](../../agents/research.py#L190) | 190 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000191](../../agents/research.py#L191) | 191 | `"        if _SEARCH_META_START_RE.search(normalized_segment):"` | — |
-| [SRC-59CF4B7DE8-L000192](../../agents/research.py#L192) | 192 | `"            # Keep a concrete topic when a \"use multiple sources\" directive"` | — |
-| [SRC-59CF4B7DE8-L000193](../../agents/research.py#L193) | 193 | `"            # introduces the subject, but discard standalone formatting clauses."` | — |
-| [SRC-59CF4B7DE8-L000194](../../agents/research.py#L194) | 194 | `"            preserved = _SEARCH_TOPIC_PRESERVING_META_PREFIX_RE.sub(\"\", segment, count=1).strip()"` | — |
-| [SRC-59CF4B7DE8-L000195](../../agents/research.py#L195) | 195 | `"            if not preserved:"` | — |
-| [SRC-59CF4B7DE8-L000196](../../agents/research.py#L196) | 196 | `"                continue"` | — |
-| [SRC-59CF4B7DE8-L000197](../../agents/research.py#L197) | 197 | `"            if preserved == segment:"` | — |
-| [SRC-59CF4B7DE8-L000198](../../agents/research.py#L198) | 198 | `"                continue"` | — |
-| [SRC-59CF4B7DE8-L000199](../../agents/research.py#L199) | 199 | `"            segment = preserved"` | — |
-| [SRC-59CF4B7DE8-L000200](../../agents/research.py#L200) | 200 | `"        segment = _SEARCH_META_TAIL_RE.sub(\"\", segment).strip()"` | — |
-| [SRC-59CF4B7DE8-L000201](../../agents/research.py#L201) | 201 | `"        segment = _SEARCH_LEADING_ACTION_RE.sub(\"\", segment).strip()"` | — |
-| [SRC-59CF4B7DE8-L000202](../../agents/research.py#L202) | 202 | `"        if segment:"` | — |
-| [SRC-59CF4B7DE8-L000203](../../agents/research.py#L203) | 203 | `"            useful.append(segment)"` | — |
-| [SRC-59CF4B7DE8-L000204](../../agents/research.py#L204) | 204 | `"    result = re.sub(r\"\\s+\", \" \", \" \".join(useful)).strip(\" \\t\\r\\n,،;؛\")"` | — |
-| [SRC-59CF4B7DE8-L000205](../../agents/research.py#L205) | 205 | `"    if not result:"` | — |
-| [SRC-59CF4B7DE8-L000206](../../agents/research.py#L206) | 206 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000207](../../agents/research.py#L207) | 207 | `"    try:"` | — |
-| [SRC-59CF4B7DE8-L000208](../../agents/research.py#L208) | 208 | `"        max_chars = max(2, min(int(limit), MAX_QUERY_CHARS))"` | — |
-| [SRC-59CF4B7DE8-L000209](../../agents/research.py#L209) | 209 | `"    except (TypeError, ValueError, OverflowError):"` | — |
-| [SRC-59CF4B7DE8-L000210](../../agents/research.py#L210) | 210 | `"        max_chars = MAX_QUERY_CHARS"` | — |
-| [SRC-59CF4B7DE8-L000211](../../agents/research.py#L211) | 211 | `"    if len(result) > max_chars:"` | — |
-| [SRC-59CF4B7DE8-L000212](../../agents/research.py#L212) | 212 | `"        shortened = result[:max_chars]"` | — |
-| [SRC-59CF4B7DE8-L000213](../../agents/research.py#L213) | 213 | `"        result = shortened.rsplit(\" \", 1)[0] if \" \" in shortened else shortened"` | — |
-| [SRC-59CF4B7DE8-L000214](../../agents/research.py#L214) | 214 | `"    return result"` | — |
-| [SRC-59CF4B7DE8-L000215](../../agents/research.py#L215) | 215 | `""` | — |
-| [SRC-59CF4B7DE8-L000216](../../agents/research.py#L216) | 216 | `""` | — |
-| [SRC-59CF4B7DE8-L000217](../../agents/research.py#L217) | 217 | `"_ARABIC_RE = re.compile(r\"[؀-ۿ]\")"` | — |
-| [SRC-59CF4B7DE8-L000218](../../agents/research.py#L218) | 218 | `""` | — |
-| [SRC-59CF4B7DE8-L000219](../../agents/research.py#L219) | 219 | `""` | — |
-| [SRC-59CF4B7DE8-L000220](../../agents/research.py#L220) | 220 | `"def _normalize_arabic(text: str) -> str:"` | — |
-| [SRC-59CF4B7DE8-L000221](../../agents/research.py#L221) | 221 | `"    if not text:"` | — |
-| [SRC-59CF4B7DE8-L000222](../../agents/research.py#L222) | 222 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000223](../../agents/research.py#L223) | 223 | `"    return (text.replace(\"\\u0623\", \"\\u0627\")"` | — |
-| [SRC-59CF4B7DE8-L000224](../../agents/research.py#L224) | 224 | `"                .replace(\"\\u0625\", \"\\u0627\")"` | — |
-| [SRC-59CF4B7DE8-L000225](../../agents/research.py#L225) | 225 | `"                .replace(\"\\u0622\", \"\\u0627\")"` | — |
-| [SRC-59CF4B7DE8-L000226](../../agents/research.py#L226) | 226 | `"                .replace(\"\\u0629\", \"\\u0647\")"` | — |
-| [SRC-59CF4B7DE8-L000227](../../agents/research.py#L227) | 227 | `"                .replace(\"\\u0649\", \"\\u064a\"))"` | — |
-| [SRC-59CF4B7DE8-L000228](../../agents/research.py#L228) | 228 | `""` | — |
-| [SRC-59CF4B7DE8-L000229](../../agents/research.py#L229) | 229 | `""` | — |
-| [SRC-59CF4B7DE8-L000230](../../agents/research.py#L230) | 230 | `"def _contains_any(text: str, terms: tuple) -> bool:"` | — |
-| [SRC-59CF4B7DE8-L000231](../../agents/research.py#L231) | 231 | `"    if not text:"` | — |
-| [SRC-59CF4B7DE8-L000232](../../agents/research.py#L232) | 232 | `"        return False"` | — |
-| [SRC-59CF4B7DE8-L000233](../../agents/research.py#L233) | 233 | `"    haystack = _normalize_arabic(text.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000234](../../agents/research.py#L234) | 234 | `"    for term in terms:"` | — |
-| [SRC-59CF4B7DE8-L000235](../../agents/research.py#L235) | 235 | `"        if not term:"` | — |
-| [SRC-59CF4B7DE8-L000236](../../agents/research.py#L236) | 236 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000237](../../agents/research.py#L237) | 237 | `"        t = _normalize_arabic(term.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000238](../../agents/research.py#L238) | 238 | `"        if _ARABIC_RE.search(t):"` | — |
-| [SRC-59CF4B7DE8-L000239](../../agents/research.py#L239) | 239 | `"            if t in haystack:"` | — |
-| [SRC-59CF4B7DE8-L000240](../../agents/research.py#L240) | 240 | `"                return True"` | — |
-| [SRC-59CF4B7DE8-L000241](../../agents/research.py#L241) | 241 | `"        else:"` | — |
-| [SRC-59CF4B7DE8-L000242](../../agents/research.py#L242) | 242 | `"            pat = r\"(?<![a-zA-Z0-9])\" + re.escape(t) + r\"(?![a-zA-Z0-9])\""` | — |
-| [SRC-59CF4B7DE8-L000243](../../agents/research.py#L243) | 243 | `"            if re.search(pat, haystack):"` | — |
-| [SRC-59CF4B7DE8-L000244](../../agents/research.py#L244) | 244 | `"                return True"` | — |
-| [SRC-59CF4B7DE8-L000245](../../agents/research.py#L245) | 245 | `"    return False"` | — |
-| [SRC-59CF4B7DE8-L000246](../../agents/research.py#L246) | 246 | `""` | — |
-| [SRC-59CF4B7DE8-L000247](../../agents/research.py#L247) | 247 | `""` | — |
-| [SRC-59CF4B7DE8-L000248](../../agents/research.py#L248) | 248 | `"def detect_social_focus(question: str, history: list[dict[str, str]] \| None = None) -> bool:"` | — |
-| [SRC-59CF4B7DE8-L000249](../../agents/research.py#L249) | 249 | `"    context = question + \" \" + \" \".join("` | — |
-| [SRC-59CF4B7DE8-L000250](../../agents/research.py#L250) | 250 | `"        item.get(\"content\", \"\") for item in (history or [])[-4:]"` | — |
-| [SRC-59CF4B7DE8-L000251](../../agents/research.py#L251) | 251 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000252](../../agents/research.py#L252) | 252 | `"    return _contains_any(context, _SOCIAL_TERMS)"` | — |
-| [SRC-59CF4B7DE8-L000253](../../agents/research.py#L253) | 253 | `""` | — |
-| [SRC-59CF4B7DE8-L000254](../../agents/research.py#L254) | 254 | `""` | — |
-| [SRC-59CF4B7DE8-L000255](../../agents/research.py#L255) | 255 | `"def detect_freshness(question: str) -> bool:"` | — |
-| [SRC-59CF4B7DE8-L000256](../../agents/research.py#L256) | 256 | `"    return _contains_any(question, _FRESH_TERMS)"` | — |
-| [SRC-59CF4B7DE8-L000257](../../agents/research.py#L257) | 257 | `""` | — |
-| [SRC-59CF4B7DE8-L000258](../../agents/research.py#L258) | 258 | `""` | — |
-| [SRC-59CF4B7DE8-L000259](../../agents/research.py#L259) | 259 | `"def detect_depth(question: str) -> str:"` | — |
-| [SRC-59CF4B7DE8-L000260](../../agents/research.py#L260) | 260 | `"    return \"deep\" if _contains_any(question, _DEEP_TERMS) else \"standard\""` | — |
-| [SRC-59CF4B7DE8-L000261](../../agents/research.py#L261) | 261 | `""` | — |
-| [SRC-59CF4B7DE8-L000262](../../agents/research.py#L262) | 262 | `""` | — |
-| [SRC-59CF4B7DE8-L000263](../../agents/research.py#L263) | 263 | `"def mentioned_social_platforms(text: str) -> list[str]:"` | — |
-| [SRC-59CF4B7DE8-L000264](../../agents/research.py#L264) | 264 | `"    rules = ("` | — |
-| [SRC-59CF4B7DE8-L000265](../../agents/research.py#L265) | 265 | `"        (\"reddit\", (\"reddit\", \"ريديت\")),"` | — |
-| [SRC-59CF4B7DE8-L000266](../../agents/research.py#L266) | 266 | `"        (\"youtube\", (\"youtube\", \"يوتيوب\")),"` | — |
-| [SRC-59CF4B7DE8-L000267](../../agents/research.py#L267) | 267 | `"        (\"facebook\", (\"facebook\", \"فيسبوك\", \"فيس بوك\")),"` | — |
-| [SRC-59CF4B7DE8-L000268](../../agents/research.py#L268) | 268 | `"        (\"instagram\", (\"instagram\", \"انستجرام\", \"إنستجرام\")),"` | — |
-| [SRC-59CF4B7DE8-L000269](../../agents/research.py#L269) | 269 | `"        (\"x\", (\"x.com\", \"twitter\", \"تويتر\", \"اكس\", \"إكس\")),"` | — |
-| [SRC-59CF4B7DE8-L000270](../../agents/research.py#L270) | 270 | `"        (\"tiktok\", (\"tiktok\", \"تيك توك\")),"` | — |
-| [SRC-59CF4B7DE8-L000271](../../agents/research.py#L271) | 271 | `"        (\"linkedin\", (\"linkedin\", \"لينكدان\", \"لينكدإن\")),"` | — |
-| [SRC-59CF4B7DE8-L000272](../../agents/research.py#L272) | 272 | `"        (\"threads\", (\"threads\", \"ثريدز\")),"` | — |
-| [SRC-59CF4B7DE8-L000273](../../agents/research.py#L273) | 273 | `"        (\"bluesky\", (\"bluesky\", \"بلو سكاي\")),"` | — |
-| [SRC-59CF4B7DE8-L000274](../../agents/research.py#L274) | 274 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000275](../../agents/research.py#L275) | 275 | `"    low = text.casefold()"` | — |
-| [SRC-59CF4B7DE8-L000276](../../agents/research.py#L276) | 276 | `"    return [name for name, aliases in rules if any(alias.casefold() in low for alias in aliases)]"` | — |
-| [SRC-59CF4B7DE8-L000277](../../agents/research.py#L277) | 277 | `""` | — |
-| [SRC-59CF4B7DE8-L000278](../../agents/research.py#L278) | 278 | `""` | — |
-| [SRC-59CF4B7DE8-L000279](../../agents/research.py#L279) | 279 | `"def fallback_plan("` | — |
-| [SRC-59CF4B7DE8-L000280](../../agents/research.py#L280) | 280 | `"    question: str, history: list[dict[str, str]] \| None = None"` | — |
-| [SRC-59CF4B7DE8-L000281](../../agents/research.py#L281) | 281 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000282](../../agents/research.py#L282) | 282 | `"    \"\"\"Build a small but varied plan when no model planner is configured or parsing fails.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000283](../../agents/research.py#L283) | 283 | `"    contextual_question = resolve_followup_query(question, history)"` | — |
-| [SRC-59CF4B7DE8-L000284](../../agents/research.py#L284) | 284 | `"    direct_urls = extract_urls(question)"` | — |
-| [SRC-59CF4B7DE8-L000285](../../agents/research.py#L285) | 285 | `"    base = compact_search_query(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000286](../../agents/research.py#L286) | 286 | `"    social_focus = detect_social_focus(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000287](../../agents/research.py#L287) | 287 | `"    fresh = detect_freshness(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000288](../../agents/research.py#L288) | 288 | `"    detected_depth = detect_depth(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000289](../../agents/research.py#L289) | 289 | `"    deep = detected_depth == \"deep\""` | — |
-| [SRC-59CF4B7DE8-L000290](../../agents/research.py#L290) | 290 | `"    platforms = mentioned_social_platforms(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000291](../../agents/research.py#L291) | 291 | `"    queries: list[str] = [base] if base else []"` | — |
-| [SRC-59CF4B7DE8-L000292](../../agents/research.py#L292) | 292 | `""` | — |
-| [SRC-59CF4B7DE8-L000293](../../agents/research.py#L293) | 293 | `"    if fresh and base:"` | — |
-| [SRC-59CF4B7DE8-L000294](../../agents/research.py#L294) | 294 | `"        queries.append(compact_search_query(base + \" أحدث مستجدات آخر الأخبار\"))"` | — |
-| [SRC-59CF4B7DE8-L000295](../../agents/research.py#L295) | 295 | `"    if base and _contains_any(contextual_question, (\"قارن\", \"مقارنة\", \"compare\", \"versus\", \"vs\", \"الفرق بين\")):"` | — |
-| [SRC-59CF4B7DE8-L000296](../../agents/research.py#L296) | 296 | `"        queries.append(compact_search_query(base + \" مقارنة مراجعات مميزات عيوب\"))"` | — |
-| [SRC-59CF4B7DE8-L000297](../../agents/research.py#L297) | 297 | `""` | — |
-| [SRC-59CF4B7DE8-L000298](../../agents/research.py#L298) | 298 | `"    if social_focus and base:"` | — |
-| [SRC-59CF4B7DE8-L000299](../../agents/research.py#L299) | 299 | `"        selected = platforms or [\"facebook\", \"instagram\", \"reddit\"]"` | — |
-| [SRC-59CF4B7DE8-L000300](../../agents/research.py#L300) | 300 | `"        for platform in selected[:3]:"` | — |
-| [SRC-59CF4B7DE8-L000301](../../agents/research.py#L301) | 301 | `"            domain = SOCIAL_DOMAINS[platform]"` | — |
-| [SRC-59CF4B7DE8-L000302](../../agents/research.py#L302) | 302 | `"            site_query = compact_search_query(f\"site:{domain} {base}\")"` | — |
-| [SRC-59CF4B7DE8-L000303](../../agents/research.py#L303) | 303 | `"            if site_query not in queries:"` | — |
-| [SRC-59CF4B7DE8-L000304](../../agents/research.py#L304) | 304 | `"                queries.append(site_query)"` | — |
-| [SRC-59CF4B7DE8-L000305](../../agents/research.py#L305) | 305 | `""` | — |
-| [SRC-59CF4B7DE8-L000306](../../agents/research.py#L306) | 306 | `"    if deep and base and not social_focus and len(queries) < MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000307](../../agents/research.py#L307) | 307 | `"        queries.append(compact_search_query(base + \" مصادر موثوقة تقارير إحصاءات\"))"` | — |
-| [SRC-59CF4B7DE8-L000308](../../agents/research.py#L308) | 308 | `""` | — |
-| [SRC-59CF4B7DE8-L000309](../../agents/research.py#L309) | 309 | `"    unique: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000310](../../agents/research.py#L310) | 310 | `"    seen: set[str] = set()"` | — |
-| [SRC-59CF4B7DE8-L000311](../../agents/research.py#L311) | 311 | `"    for query in queries:"` | — |
-| [SRC-59CF4B7DE8-L000312](../../agents/research.py#L312) | 312 | `"        value = compact_search_query(query)"` | — |
-| [SRC-59CF4B7DE8-L000313](../../agents/research.py#L313) | 313 | `"        key = value.casefold()"` | — |
-| [SRC-59CF4B7DE8-L000314](../../agents/research.py#L314) | 314 | `"        if value and key not in seen:"` | — |
-| [SRC-59CF4B7DE8-L000315](../../agents/research.py#L315) | 315 | `"            unique.append(value)"` | — |
-| [SRC-59CF4B7DE8-L000316](../../agents/research.py#L316) | 316 | `"            seen.add(key)"` | — |
-| [SRC-59CF4B7DE8-L000317](../../agents/research.py#L317) | 317 | `"        if len(unique) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000318](../../agents/research.py#L318) | 318 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000319](../../agents/research.py#L319) | 319 | `""` | — |
-| [SRC-59CF4B7DE8-L000320](../../agents/research.py#L320) | 320 | `"    return {"` | — |
-| [SRC-59CF4B7DE8-L000321](../../agents/research.py#L321) | 321 | `"        \"queries\": unique or ([base] if base else []),"` | — |
-| [SRC-59CF4B7DE8-L000322](../../agents/research.py#L322) | 322 | `"        \"direct_urls\": direct_urls,"` | — |
-| [SRC-59CF4B7DE8-L000323](../../agents/research.py#L323) | 323 | `"        \"social_focus\": social_focus,"` | — |
-| [SRC-59CF4B7DE8-L000324](../../agents/research.py#L324) | 324 | `"        \"freshness\": \"current\" if fresh else \"any\","` | — |
-| [SRC-59CF4B7DE8-L000325](../../agents/research.py#L325) | 325 | `"        \"depth\": detected_depth,"` | — |
-| [SRC-59CF4B7DE8-L000326](../../agents/research.py#L326) | 326 | `"        \"platforms\": platforms,"` | — |
-| [SRC-59CF4B7DE8-L000327](../../agents/research.py#L327) | 327 | `"        \"planning_method\": \"deterministic_fallback\","` | — |
-| [SRC-59CF4B7DE8-L000328](../../agents/research.py#L328) | 328 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000329](../../agents/research.py#L329) | 329 | `""` | — |
-| [SRC-59CF4B7DE8-L000330](../../agents/research.py#L330) | 330 | `""` | — |
-| [SRC-59CF4B7DE8-L000331](../../agents/research.py#L331) | 331 | `"def validate_plan("` | — |
-| [SRC-59CF4B7DE8-L000332](../../agents/research.py#L332) | 332 | `"    candidate: Any, question: str, history: list[dict[str, str]] \| None = None"` | — |
-| [SRC-59CF4B7DE8-L000333](../../agents/research.py#L333) | 333 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000334](../../agents/research.py#L334) | 334 | `"    fallback = fallback_plan(question, history)"` | — |
-| [SRC-59CF4B7DE8-L000335](../../agents/research.py#L335) | 335 | `"    if not isinstance(candidate, dict):"` | — |
-| [SRC-59CF4B7DE8-L000336](../../agents/research.py#L336) | 336 | `"        return fallback"` | — |
-| [SRC-59CF4B7DE8-L000337](../../agents/research.py#L337) | 337 | `"    raw_queries = candidate.get(\"queries\", [])"` | — |
-| [SRC-59CF4B7DE8-L000338](../../agents/research.py#L338) | 338 | `"    if not isinstance(raw_queries, list):"` | — |
-| [SRC-59CF4B7DE8-L000339](../../agents/research.py#L339) | 339 | `"        return fallback"` | — |
-| [SRC-59CF4B7DE8-L000340](../../agents/research.py#L340) | 340 | `"    queries: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000341](../../agents/research.py#L341) | 341 | `"    seen: set[str] = set()"` | — |
-| [SRC-59CF4B7DE8-L000342](../../agents/research.py#L342) | 342 | `"    for item in raw_queries:"` | — |
-| [SRC-59CF4B7DE8-L000343](../../agents/research.py#L343) | 343 | `"        query = compact_search_query(item)"` | — |
-| [SRC-59CF4B7DE8-L000344](../../agents/research.py#L344) | 344 | `"        # Never accept prompt-like multi-line payloads as search-query instructions."` | — |
-| [SRC-59CF4B7DE8-L000345](../../agents/research.py#L345) | 345 | `"        query = query.replace(\"\\n\", \" \").replace(\"\\r\", \" \")"` | — |
-| [SRC-59CF4B7DE8-L000346](../../agents/research.py#L346) | 346 | `"        if len(query) < 2:"` | — |
-| [SRC-59CF4B7DE8-L000347](../../agents/research.py#L347) | 347 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000348](../../agents/research.py#L348) | 348 | `"        if query.casefold() not in seen:"` | — |
-| [SRC-59CF4B7DE8-L000349](../../agents/research.py#L349) | 349 | `"            seen.add(query.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000350](../../agents/research.py#L350) | 350 | `"            queries.append(query)"` | — |
-| [SRC-59CF4B7DE8-L000351](../../agents/research.py#L351) | 351 | `"        if len(queries) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000352](../../agents/research.py#L352) | 352 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000353](../../agents/research.py#L353) | 353 | `"    if not queries:"` | — |
-| [SRC-59CF4B7DE8-L000354](../../agents/research.py#L354) | 354 | `"        return fallback"` | — |
-| [SRC-59CF4B7DE8-L000355](../../agents/research.py#L355) | 355 | `"    base = fallback_plan(question, history)"` | — |
-| [SRC-59CF4B7DE8-L000356](../../agents/research.py#L356) | 356 | `"    platforms = candidate.get(\"platforms\")"` | — |
-| [SRC-59CF4B7DE8-L000357](../../agents/research.py#L357) | 357 | `"    if not isinstance(platforms, list):"` | — |
-| [SRC-59CF4B7DE8-L000358](../../agents/research.py#L358) | 358 | `"        platforms = base[\"platforms\"]"` | — |
-| [SRC-59CF4B7DE8-L000359](../../agents/research.py#L359) | 359 | `"    safe_platforms = [p for p in platforms if isinstance(p, str) and p in SOCIAL_DOMAINS]"` | — |
-| [SRC-59CF4B7DE8-L000360](../../agents/research.py#L360) | 360 | `"    return {"` | — |
-| [SRC-59CF4B7DE8-L000361](../../agents/research.py#L361) | 361 | `"        \"queries\": queries,"` | — |
-| [SRC-59CF4B7DE8-L000362](../../agents/research.py#L362) | 362 | `"        \"direct_urls\": fallback[\"direct_urls\"],"` | — |
-| [SRC-59CF4B7DE8-L000363](../../agents/research.py#L363) | 363 | `"        \"social_focus\": bool(candidate.get(\"social_focus\", base[\"social_focus\"])),"` | — |
-| [SRC-59CF4B7DE8-L000364](../../agents/research.py#L364) | 364 | `"        \"freshness\": \"current\" if candidate.get(\"freshness\") == \"current\" else base[\"freshness\"],"` | — |
-| [SRC-59CF4B7DE8-L000365](../../agents/research.py#L365) | 365 | `"        \"depth\": \"deep\" if candidate.get(\"depth\") == \"deep\" else base[\"depth\"],"` | — |
-| [SRC-59CF4B7DE8-L000366](../../agents/research.py#L366) | 366 | `"        \"platforms\": list(dict.fromkeys(safe_platforms))[:5],"` | — |
-| [SRC-59CF4B7DE8-L000367](../../agents/research.py#L367) | 367 | `"        \"planning_method\": \"language_model\","` | — |
