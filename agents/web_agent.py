@@ -4306,18 +4306,44 @@ class WebAgent:
                     limit=MAX_PLAN_QUERIES,
                     compact_fn=compact_search_query,
                 )
+            provider_diagnostics = report.get("provider_diagnostics")
+            if not isinstance(provider_diagnostics, list):
+                provider_diagnostics = []
+            provider_status_rows = []
+            for diagnostic in provider_diagnostics[:24]:
+                if not isinstance(diagnostic, dict):
+                    continue
+                status_row = {
+                    key: diagnostic[key]
+                    for key in (
+                        "provider", "connector", "status", "error_class",
+                        "http_status", "results_count", "elapsed_ms", "reason",
+                    )
+                    if key in diagnostic
+                }
+                if status_row:
+                    provider_status_rows.append(status_row)
             task_summary = {
                 "task_spec": task_spec,
                 "query_strategy_matrix": query_matrix,
                 "actual_queries": actual_queries,
                 "actual_query_count": len(actual_queries),
                 "search_was_attempted": bool(result.get("search_attempted")),
+                "tool_execution": {
+                    "required_tools": list(task_spec.get("tool_requirements") or []),
+                    "search_outcome": report.get("search_outcome", "not_assessed"),
+                    "providers_used": report.get("providers_used", []),
+                    "provider_statuses": provider_status_rows,
+                    "accepted_source_count": report.get("usable_sources_after_filtering", "not_assessed"),
+                    "pages_read_count": report.get("pages_fetched", "not_assessed"),
+                    "connector_summary": report.get("connector_summary", {}),
+                },
                 "interpretation_status": (
                     "needs_clarification"
                     if task_spec.get("ambiguity_status") == "needs_clarification"
                     else "deterministic_task_spec_attached"
                 ),
-                "claim": "task interpretation and plan diagnostics only; not factual verification",
+                "claim": "task interpretation and tool diagnostics only; not factual verification",
             }
             result["task_understanding"] = task_summary
             if isinstance(result.get("research_plan"), dict):
