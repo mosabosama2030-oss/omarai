@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2D53795445-L000253 إلى SRC-FDEEAFDFCA-L000096
+- النطاق: SRC-2D53795445-L000253 إلى SRC-FDEEAFDFCA-L000001
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -23,6 +23,110 @@
 | [SRC-2D53795445-L000257](../../agents/dialogue_state.py#L257) | 257 | `"        current,"` | — |
 | [SRC-2D53795445-L000258](../../agents/dialogue_state.py#L258) | 258 | `"    )"` | — |
 | [SRC-2D53795445-L000259](../../agents/dialogue_state.py#L259) | 259 | `"    return bool(lead_in or reference or fragment or attached_reference)"` | — |
+## الوكيل والمنطق
+
+### FILE-390A5E6F46 — [agents/eval_rag_metrics.py](../../agents/eval_rag_metrics.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-390A5E6F46-L000001](../../agents/eval_rag_metrics.py#L1) | 1 | `"\"\"\"Lightweight RAG evaluation metrics for Omarai (RAGAS-inspired, local)."` | — |
+| [SRC-390A5E6F46-L000002](../../agents/eval_rag_metrics.py#L2) | 2 | `""` | — |
+| [SRC-390A5E6F46-L000003](../../agents/eval_rag_metrics.py#L3) | 3 | `"Metrics (deterministic proxies — not full LLM-as-judge):"` | — |
+| [SRC-390A5E6F46-L000004](../../agents/eval_rag_metrics.py#L4) | 4 | `"- retrieval_relevance"` | — |
+| [SRC-390A5E6F46-L000005](../../agents/eval_rag_metrics.py#L5) | 5 | `"- faithfulness"` | — |
+| [SRC-390A5E6F46-L000006](../../agents/eval_rag_metrics.py#L6) | 6 | `"- answer_coverage (aspects)"` | — |
+| [SRC-390A5E6F46-L000007](../../agents/eval_rag_metrics.py#L7) | 7 | `"- writing_quality_proxy"` | — |
+| [SRC-390A5E6F46-L000008](../../agents/eval_rag_metrics.py#L8) | 8 | `"\"\"\""` | — |
+| [SRC-390A5E6F46-L000009](../../agents/eval_rag_metrics.py#L9) | 9 | `"from __future__ import annotations"` | — |
+| [SRC-390A5E6F46-L000010](../../agents/eval_rag_metrics.py#L10) | 10 | `""` | — |
+| [SRC-390A5E6F46-L000011](../../agents/eval_rag_metrics.py#L11) | 11 | `"import re"` | — |
+| [SRC-390A5E6F46-L000012](../../agents/eval_rag_metrics.py#L12) | 12 | `"from typing import Any"` | — |
+| [SRC-390A5E6F46-L000013](../../agents/eval_rag_metrics.py#L13) | 13 | `""` | — |
+| [SRC-390A5E6F46-L000014](../../agents/eval_rag_metrics.py#L14) | 14 | `"from agents.memory_bank import MemoryBank, split_answer_into_claim_sentences"` | — |
+| [SRC-390A5E6F46-L000015](../../agents/eval_rag_metrics.py#L15) | 15 | `""` | — |
+| [SRC-390A5E6F46-L000016](../../agents/eval_rag_metrics.py#L16) | 16 | `"_TOKEN = re.compile(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", re.I)"` | — |
+| [SRC-390A5E6F46-L000017](../../agents/eval_rag_metrics.py#L17) | 17 | `""` | — |
+| [SRC-390A5E6F46-L000018](../../agents/eval_rag_metrics.py#L18) | 18 | `""` | — |
+| [SRC-390A5E6F46-L000019](../../agents/eval_rag_metrics.py#L19) | 19 | `"def _tokens(text: str) -> set[str]:"` | — |
+| [SRC-390A5E6F46-L000020](../../agents/eval_rag_metrics.py#L20) | 20 | `"    return {t for t in _TOKEN.findall((text or \"\").casefold()) if len(t) >= 2}"` | — |
+| [SRC-390A5E6F46-L000021](../../agents/eval_rag_metrics.py#L21) | 21 | `""` | — |
+| [SRC-390A5E6F46-L000022](../../agents/eval_rag_metrics.py#L22) | 22 | `""` | — |
+| [SRC-390A5E6F46-L000023](../../agents/eval_rag_metrics.py#L23) | 23 | `"def retrieval_relevance(query: str, sources: list[dict[str, Any]]) -> float:"` | — |
+| [SRC-390A5E6F46-L000024](../../agents/eval_rag_metrics.py#L24) | 24 | `"    qt = _tokens(query)"` | — |
+| [SRC-390A5E6F46-L000025](../../agents/eval_rag_metrics.py#L25) | 25 | `"    if not qt or not sources:"` | — |
+| [SRC-390A5E6F46-L000026](../../agents/eval_rag_metrics.py#L26) | 26 | `"        return 0.0"` | — |
+| [SRC-390A5E6F46-L000027](../../agents/eval_rag_metrics.py#L27) | 27 | `"    scores = []"` | — |
+| [SRC-390A5E6F46-L000028](../../agents/eval_rag_metrics.py#L28) | 28 | `"    for src in sources:"` | — |
+| [SRC-390A5E6F46-L000029](../../agents/eval_rag_metrics.py#L29) | 29 | `"        blob = \" \".join(str(src.get(k) or \"\") for k in (\"title\", \"snippet\", \"page_text\"))"` | — |
+| [SRC-390A5E6F46-L000030](../../agents/eval_rag_metrics.py#L30) | 30 | `"        st = _tokens(blob)"` | — |
+| [SRC-390A5E6F46-L000031](../../agents/eval_rag_metrics.py#L31) | 31 | `"        if not st:"` | — |
+| [SRC-390A5E6F46-L000032](../../agents/eval_rag_metrics.py#L32) | 32 | `"            scores.append(0.0)"` | — |
+| [SRC-390A5E6F46-L000033](../../agents/eval_rag_metrics.py#L33) | 33 | `"            continue"` | — |
+| [SRC-390A5E6F46-L000034](../../agents/eval_rag_metrics.py#L34) | 34 | `"        scores.append(len(qt & st) / max(1, len(qt)))"` | — |
+| [SRC-390A5E6F46-L000035](../../agents/eval_rag_metrics.py#L35) | 35 | `"    return round(sum(scores) / max(1, len(scores)), 3)"` | — |
+| [SRC-390A5E6F46-L000036](../../agents/eval_rag_metrics.py#L36) | 36 | `""` | — |
+| [SRC-390A5E6F46-L000037](../../agents/eval_rag_metrics.py#L37) | 37 | `""` | — |
+| [SRC-390A5E6F46-L000038](../../agents/eval_rag_metrics.py#L38) | 38 | `"def faithfulness_score(answer: str, sources: list[dict[str, Any]]) -> float:"` | — |
+| [SRC-390A5E6F46-L000039](../../agents/eval_rag_metrics.py#L39) | 39 | `"    bank = MemoryBank()"` | — |
+| [SRC-390A5E6F46-L000040](../../agents/eval_rag_metrics.py#L40) | 40 | `"    bank.ingest_sources(sources)"` | — |
+| [SRC-390A5E6F46-L000041](../../agents/eval_rag_metrics.py#L41) | 41 | `"    claims = split_answer_into_claim_sentences(answer)"` | — |
+| [SRC-390A5E6F46-L000042](../../agents/eval_rag_metrics.py#L42) | 42 | `"    if not claims:"` | — |
+| [SRC-390A5E6F46-L000043](../../agents/eval_rag_metrics.py#L43) | 43 | `"        return 0.0"` | — |
+| [SRC-390A5E6F46-L000044](../../agents/eval_rag_metrics.py#L44) | 44 | `"    supported = 0"` | — |
+| [SRC-390A5E6F46-L000045](../../agents/eval_rag_metrics.py#L45) | 45 | `"    for c in claims:"` | — |
+| [SRC-390A5E6F46-L000046](../../agents/eval_rag_metrics.py#L46) | 46 | `"        claim = bank.bind_claim(c, min_score=0.25)"` | — |
+| [SRC-390A5E6F46-L000047](../../agents/eval_rag_metrics.py#L47) | 47 | `"        if claim.status in {\"supported\", \"weak\"}:"` | — |
+| [SRC-390A5E6F46-L000048](../../agents/eval_rag_metrics.py#L48) | 48 | `"            supported += 1"` | — |
+| [SRC-390A5E6F46-L000049](../../agents/eval_rag_metrics.py#L49) | 49 | `"    return round(supported / len(claims), 3)"` | — |
+| [SRC-390A5E6F46-L000050](../../agents/eval_rag_metrics.py#L50) | 50 | `""` | — |
+| [SRC-390A5E6F46-L000051](../../agents/eval_rag_metrics.py#L51) | 51 | `""` | — |
+| [SRC-390A5E6F46-L000052](../../agents/eval_rag_metrics.py#L52) | 52 | `"def aspect_coverage(aspects: list[str], answer: str, sources: list[dict[str, Any]]) -> float:"` | — |
+| [SRC-390A5E6F46-L000053](../../agents/eval_rag_metrics.py#L53) | 53 | `"    if not aspects:"` | — |
+| [SRC-390A5E6F46-L000054](../../agents/eval_rag_metrics.py#L54) | 54 | `"        return 1.0"` | — |
+| [SRC-390A5E6F46-L000055](../../agents/eval_rag_metrics.py#L55) | 55 | `"    blob = (answer or \"\") + \" \" + \" \".join("` | — |
+| [SRC-390A5E6F46-L000056](../../agents/eval_rag_metrics.py#L56) | 56 | `"        str(s.get(\"snippet\") or s.get(\"title\") or \"\") for s in (sources or [])"` | — |
+| [SRC-390A5E6F46-L000057](../../agents/eval_rag_metrics.py#L57) | 57 | `"    )"` | — |
+| [SRC-390A5E6F46-L000058](../../agents/eval_rag_metrics.py#L58) | 58 | `"    blob_l = blob.casefold()"` | — |
+| [SRC-390A5E6F46-L000059](../../agents/eval_rag_metrics.py#L59) | 59 | `"    hit = sum(1 for a in aspects if a and a.casefold() in blob_l)"` | — |
+| [SRC-390A5E6F46-L000060](../../agents/eval_rag_metrics.py#L60) | 60 | `"    return round(hit / max(1, len(aspects)), 3)"` | — |
+| [SRC-390A5E6F46-L000061](../../agents/eval_rag_metrics.py#L61) | 61 | `""` | — |
+| [SRC-390A5E6F46-L000062](../../agents/eval_rag_metrics.py#L62) | 62 | `""` | — |
+| [SRC-390A5E6F46-L000063](../../agents/eval_rag_metrics.py#L63) | 63 | `"def writing_quality_proxy(answer: str) -> float:"` | — |
+| [SRC-390A5E6F46-L000064](../../agents/eval_rag_metrics.py#L64) | 64 | `"    text = (answer or \"\").strip()"` | — |
+| [SRC-390A5E6F46-L000065](../../agents/eval_rag_metrics.py#L65) | 65 | `"    if not text:"` | — |
+| [SRC-390A5E6F46-L000066](../../agents/eval_rag_metrics.py#L66) | 66 | `"        return 0.0"` | — |
+| [SRC-390A5E6F46-L000067](../../agents/eval_rag_metrics.py#L67) | 67 | `"    score = 0.0"` | — |
+| [SRC-390A5E6F46-L000068](../../agents/eval_rag_metrics.py#L68) | 68 | `"    if 40 <= len(text) <= 4000:"` | — |
+| [SRC-390A5E6F46-L000069](../../agents/eval_rag_metrics.py#L69) | 69 | `"        score += 0.4"` | — |
+| [SRC-390A5E6F46-L000070](../../agents/eval_rag_metrics.py#L70) | 70 | `"    if any(p in text for p in (\".\", \"。\", \"؟\", \"?\")):"` | — |
+| [SRC-390A5E6F46-L000071](../../agents/eval_rag_metrics.py#L71) | 71 | `"        score += 0.2"` | — |
+| [SRC-390A5E6F46-L000072](../../agents/eval_rag_metrics.py#L72) | 72 | `"    if \"\\n\" in text or \"،\" in text or \",\" in text:"` | — |
+| [SRC-390A5E6F46-L000073](../../agents/eval_rag_metrics.py#L73) | 73 | `"        score += 0.2"` | — |
+| [SRC-390A5E6F46-L000074](../../agents/eval_rag_metrics.py#L74) | 74 | `"    if \"[المصدر\" in text or \"[source\" in text.lower():"` | — |
+| [SRC-390A5E6F46-L000075](../../agents/eval_rag_metrics.py#L75) | 75 | `"        score += 0.2"` | — |
+| [SRC-390A5E6F46-L000076](../../agents/eval_rag_metrics.py#L76) | 76 | `"    return round(min(1.0, score), 3)"` | — |
+| [SRC-390A5E6F46-L000077](../../agents/eval_rag_metrics.py#L77) | 77 | `""` | — |
+| [SRC-390A5E6F46-L000078](../../agents/eval_rag_metrics.py#L78) | 78 | `""` | — |
+| [SRC-390A5E6F46-L000079](../../agents/eval_rag_metrics.py#L79) | 79 | `"def evaluate_rag_case("` | — |
+| [SRC-390A5E6F46-L000080](../../agents/eval_rag_metrics.py#L80) | 80 | `"    *,"` | — |
+| [SRC-390A5E6F46-L000081](../../agents/eval_rag_metrics.py#L81) | 81 | `"    question: str,"` | — |
+| [SRC-390A5E6F46-L000082](../../agents/eval_rag_metrics.py#L82) | 82 | `"    answer: str,"` | — |
+| [SRC-390A5E6F46-L000083](../../agents/eval_rag_metrics.py#L83) | 83 | `"    sources: list[dict[str, Any]],"` | — |
+| [SRC-390A5E6F46-L000084](../../agents/eval_rag_metrics.py#L84) | 84 | `"    aspects: list[str] \| None = None,"` | — |
+| [SRC-390A5E6F46-L000085](../../agents/eval_rag_metrics.py#L85) | 85 | `") -> dict[str, Any]:"` | — |
+| [SRC-390A5E6F46-L000086](../../agents/eval_rag_metrics.py#L86) | 86 | `"    return {"` | — |
+| [SRC-390A5E6F46-L000087](../../agents/eval_rag_metrics.py#L87) | 87 | `"        \"retrieval_relevance\": retrieval_relevance(question, sources),"` | — |
+| [SRC-390A5E6F46-L000088](../../agents/eval_rag_metrics.py#L88) | 88 | `"        \"faithfulness\": faithfulness_score(answer, sources),"` | — |
+| [SRC-390A5E6F46-L000089](../../agents/eval_rag_metrics.py#L89) | 89 | `"        \"aspect_coverage\": aspect_coverage(list(aspects or []), answer, sources),"` | — |
+| [SRC-390A5E6F46-L000090](../../agents/eval_rag_metrics.py#L90) | 90 | `"        \"writing_quality_proxy\": writing_quality_proxy(answer),"` | — |
+| [SRC-390A5E6F46-L000091](../../agents/eval_rag_metrics.py#L91) | 91 | `"        \"notes\": ["` | — |
+| [SRC-390A5E6F46-L000092](../../agents/eval_rag_metrics.py#L92) | 92 | `"            \"المقاييس تقريبية حتمية وليست حكم LLM.\","` | — |
+| [SRC-390A5E6F46-L000093](../../agents/eval_rag_metrics.py#L93) | 93 | `"            \"faithfulness لفظي عبر MemoryBank وليس entailment دلالي.\","` | — |
+| [SRC-390A5E6F46-L000094](../../agents/eval_rag_metrics.py#L94) | 94 | `"        ],"` | — |
+| [SRC-390A5E6F46-L000095](../../agents/eval_rag_metrics.py#L95) | 95 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
@@ -748,98 +852,3 @@
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
 | [SRC-FDEEAFDFCA-L000001](../../agents/request_budget.py#L1) | 1 | `"\"\"\"Cooperative per-request resource budgets for Omarai's web-research pipeline."` | — |
-| [SRC-FDEEAFDFCA-L000002](../../agents/request_budget.py#L2) | 2 | `""` | — |
-| [SRC-FDEEAFDFCA-L000003](../../agents/request_budget.py#L3) | 3 | `"The budget limits work that has not started yet and caps the timeout supplied to"` | — |
-| [SRC-FDEEAFDFCA-L000004](../../agents/request_budget.py#L4) | 4 | `"each outbound operation by the remaining request window. Socket libraries may"` | — |
-| [SRC-FDEEAFDFCA-L000005](../../agents/request_budget.py#L5) | 5 | `"still overrun a cooperative deadline slightly while unwinding an in-flight call;"` | — |
-| [SRC-FDEEAFDFCA-L000006](../../agents/request_budget.py#L6) | 6 | `"this is not a hard real-time cancellation primitive."` | — |
-| [SRC-FDEEAFDFCA-L000007](../../agents/request_budget.py#L7) | 7 | `"\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000008](../../agents/request_budget.py#L8) | 8 | `"from __future__ import annotations"` | — |
-| [SRC-FDEEAFDFCA-L000009](../../agents/request_budget.py#L9) | 9 | `""` | — |
-| [SRC-FDEEAFDFCA-L000010](../../agents/request_budget.py#L10) | 10 | `"import os"` | — |
-| [SRC-FDEEAFDFCA-L000011](../../agents/request_budget.py#L11) | 11 | `"import threading"` | — |
-| [SRC-FDEEAFDFCA-L000012](../../agents/request_budget.py#L12) | 12 | `"import time"` | — |
-| [SRC-FDEEAFDFCA-L000013](../../agents/request_budget.py#L13) | 13 | `"from collections.abc import Callable, Mapping"` | — |
-| [SRC-FDEEAFDFCA-L000014](../../agents/request_budget.py#L14) | 14 | `"from typing import Any"` | — |
-| [SRC-FDEEAFDFCA-L000015](../../agents/request_budget.py#L15) | 15 | `""` | — |
-| [SRC-FDEEAFDFCA-L000016](../../agents/request_budget.py#L16) | 16 | `""` | — |
-| [SRC-FDEEAFDFCA-L000017](../../agents/request_budget.py#L17) | 17 | `"class RequestBudgetExceeded(Exception):"` | — |
-| [SRC-FDEEAFDFCA-L000018](../../agents/request_budget.py#L18) | 18 | `"    \"\"\"Raised when a request cannot start more work within its resource budget.\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000019](../../agents/request_budget.py#L19) | 19 | `""` | — |
-| [SRC-FDEEAFDFCA-L000020](../../agents/request_budget.py#L20) | 20 | `""` | — |
-| [SRC-FDEEAFDFCA-L000021](../../agents/request_budget.py#L21) | 21 | `"DEFAULT_TIMEOUT_SECONDS = 90"` | — |
-| [SRC-FDEEAFDFCA-L000022](../../agents/request_budget.py#L22) | 22 | `"MAX_TIMEOUT_SECONDS = 120"` | — |
-| [SRC-FDEEAFDFCA-L000023](../../agents/request_budget.py#L23) | 23 | `"RESOURCE_LIMITS = {"` | — |
-| [SRC-FDEEAFDFCA-L000024](../../agents/request_budget.py#L24) | 24 | `"    \"search_queries\": (8, 8),"` | — |
-| [SRC-FDEEAFDFCA-L000025](../../agents/request_budget.py#L25) | 25 | `"    \"search_calls\": (32, 40),"` | — |
-| [SRC-FDEEAFDFCA-L000026](../../agents/request_budget.py#L26) | 26 | `"    \"model_calls\": (8, 12),"` | — |
-| [SRC-FDEEAFDFCA-L000027](../../agents/request_budget.py#L27) | 27 | `"    \"page_fetches\": (8, 8),"` | — |
-| [SRC-FDEEAFDFCA-L000028](../../agents/request_budget.py#L28) | 28 | `"    \"tool_calls\": (3, 3),"` | — |
-| [SRC-FDEEAFDFCA-L000029](../../agents/request_budget.py#L29) | 29 | `"}"` | — |
-| [SRC-FDEEAFDFCA-L000030](../../agents/request_budget.py#L30) | 30 | `""` | — |
-| [SRC-FDEEAFDFCA-L000031](../../agents/request_budget.py#L31) | 31 | `""` | — |
-| [SRC-FDEEAFDFCA-L000032](../../agents/request_budget.py#L32) | 32 | `"def _bounded_env_int(name: str, default: int, minimum: int, maximum: int) -> int:"` | — |
-| [SRC-FDEEAFDFCA-L000033](../../agents/request_budget.py#L33) | 33 | `"    raw = os.getenv(name, \"\").strip()"` | — |
-| [SRC-FDEEAFDFCA-L000034](../../agents/request_budget.py#L34) | 34 | `"    try:"` | — |
-| [SRC-FDEEAFDFCA-L000035](../../agents/request_budget.py#L35) | 35 | `"        value = int(raw) if raw else default"` | — |
-| [SRC-FDEEAFDFCA-L000036](../../agents/request_budget.py#L36) | 36 | `"    except (TypeError, ValueError):"` | — |
-| [SRC-FDEEAFDFCA-L000037](../../agents/request_budget.py#L37) | 37 | `"        value = default"` | — |
-| [SRC-FDEEAFDFCA-L000038](../../agents/request_budget.py#L38) | 38 | `"    return max(minimum, min(value, maximum))"` | — |
-| [SRC-FDEEAFDFCA-L000039](../../agents/request_budget.py#L39) | 39 | `""` | — |
-| [SRC-FDEEAFDFCA-L000040](../../agents/request_budget.py#L40) | 40 | `""` | — |
-| [SRC-FDEEAFDFCA-L000041](../../agents/request_budget.py#L41) | 41 | `"class RequestBudget:"` | — |
-| [SRC-FDEEAFDFCA-L000042](../../agents/request_budget.py#L42) | 42 | `"    \"\"\"Thread-safe counters and a cooperative monotonic deadline for one answer.\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000043](../../agents/request_budget.py#L43) | 43 | `""` | — |
-| [SRC-FDEEAFDFCA-L000044](../../agents/request_budget.py#L44) | 44 | `"    def __init__("` | — |
-| [SRC-FDEEAFDFCA-L000045](../../agents/request_budget.py#L45) | 45 | `"        self,"` | — |
-| [SRC-FDEEAFDFCA-L000046](../../agents/request_budget.py#L46) | 46 | `"        timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,"` | — |
-| [SRC-FDEEAFDFCA-L000047](../../agents/request_budget.py#L47) | 47 | `"        limits: Mapping[str, int] \| None = None,"` | — |
-| [SRC-FDEEAFDFCA-L000048](../../agents/request_budget.py#L48) | 48 | `"        clock: Callable[[], float] = time.monotonic,"` | — |
-| [SRC-FDEEAFDFCA-L000049](../../agents/request_budget.py#L49) | 49 | `"    ) -> None:"` | — |
-| [SRC-FDEEAFDFCA-L000050](../../agents/request_budget.py#L50) | 50 | `"        self._clock = clock"` | — |
-| [SRC-FDEEAFDFCA-L000051](../../agents/request_budget.py#L51) | 51 | `"        bounded_timeout = max(10, min(int(timeout_seconds), MAX_TIMEOUT_SECONDS))"` | — |
-| [SRC-FDEEAFDFCA-L000052](../../agents/request_budget.py#L52) | 52 | `"        self.started_at = clock()"` | — |
-| [SRC-FDEEAFDFCA-L000053](../../agents/request_budget.py#L53) | 53 | `"        self.deadline = self.started_at + bounded_timeout"` | — |
-| [SRC-FDEEAFDFCA-L000054](../../agents/request_budget.py#L54) | 54 | `"        self._limits = {"` | — |
-| [SRC-FDEEAFDFCA-L000055](../../agents/request_budget.py#L55) | 55 | `"            key: max(0, min(int(value), RESOURCE_LIMITS[key][1]))"` | — |
-| [SRC-FDEEAFDFCA-L000056](../../agents/request_budget.py#L56) | 56 | `"            for key, (default, _maximum) in RESOURCE_LIMITS.items()"` | — |
-| [SRC-FDEEAFDFCA-L000057](../../agents/request_budget.py#L57) | 57 | `"            for value in [limits[key] if limits and key in limits else default]"` | — |
-| [SRC-FDEEAFDFCA-L000058](../../agents/request_budget.py#L58) | 58 | `"        }"` | — |
-| [SRC-FDEEAFDFCA-L000059](../../agents/request_budget.py#L59) | 59 | `"        self._counts = {key: 0 for key in self._limits}"` | — |
-| [SRC-FDEEAFDFCA-L000060](../../agents/request_budget.py#L60) | 60 | `"        self._exhausted_reasons: set[str] = set()"` | — |
-| [SRC-FDEEAFDFCA-L000061](../../agents/request_budget.py#L61) | 61 | `"        self._lock = threading.Lock()"` | — |
-| [SRC-FDEEAFDFCA-L000062](../../agents/request_budget.py#L62) | 62 | `""` | — |
-| [SRC-FDEEAFDFCA-L000063](../../agents/request_budget.py#L63) | 63 | `"    @classmethod"` | — |
-| [SRC-FDEEAFDFCA-L000064](../../agents/request_budget.py#L64) | 64 | `"    def from_environment(cls) -> RequestBudget:"` | — |
-| [SRC-FDEEAFDFCA-L000065](../../agents/request_budget.py#L65) | 65 | `"        timeout = _bounded_env_int("` | — |
-| [SRC-FDEEAFDFCA-L000066](../../agents/request_budget.py#L66) | 66 | `"            \"OMARAI_REQUEST_BUDGET_SECONDS\","` | — |
-| [SRC-FDEEAFDFCA-L000067](../../agents/request_budget.py#L67) | 67 | `"            DEFAULT_TIMEOUT_SECONDS,"` | — |
-| [SRC-FDEEAFDFCA-L000068](../../agents/request_budget.py#L68) | 68 | `"            10,"` | — |
-| [SRC-FDEEAFDFCA-L000069](../../agents/request_budget.py#L69) | 69 | `"            MAX_TIMEOUT_SECONDS,"` | — |
-| [SRC-FDEEAFDFCA-L000070](../../agents/request_budget.py#L70) | 70 | `"        )"` | — |
-| [SRC-FDEEAFDFCA-L000071](../../agents/request_budget.py#L71) | 71 | `"        limits = {"` | — |
-| [SRC-FDEEAFDFCA-L000072](../../agents/request_budget.py#L72) | 72 | `"            key: _bounded_env_int("` | — |
-| [SRC-FDEEAFDFCA-L000073](../../agents/request_budget.py#L73) | 73 | `"                f\"OMARAI_REQUEST_MAX_{key.upper()}\","` | — |
-| [SRC-FDEEAFDFCA-L000074](../../agents/request_budget.py#L74) | 74 | `"                defaults[0],"` | — |
-| [SRC-FDEEAFDFCA-L000075](../../agents/request_budget.py#L75) | 75 | `"                0 if key == \"tool_calls\" else 1,"` | — |
-| [SRC-FDEEAFDFCA-L000076](../../agents/request_budget.py#L76) | 76 | `"                defaults[1],"` | — |
-| [SRC-FDEEAFDFCA-L000077](../../agents/request_budget.py#L77) | 77 | `"            )"` | — |
-| [SRC-FDEEAFDFCA-L000078](../../agents/request_budget.py#L78) | 78 | `"            for key, defaults in RESOURCE_LIMITS.items()"` | — |
-| [SRC-FDEEAFDFCA-L000079](../../agents/request_budget.py#L79) | 79 | `"        }"` | — |
-| [SRC-FDEEAFDFCA-L000080](../../agents/request_budget.py#L80) | 80 | `"        return cls(timeout_seconds=timeout, limits=limits)"` | — |
-| [SRC-FDEEAFDFCA-L000081](../../agents/request_budget.py#L81) | 81 | `""` | — |
-| [SRC-FDEEAFDFCA-L000082](../../agents/request_budget.py#L82) | 82 | `"    def remaining_seconds(self) -> float:"` | — |
-| [SRC-FDEEAFDFCA-L000083](../../agents/request_budget.py#L83) | 83 | `"        return max(0.0, self.deadline - self._clock())"` | — |
-| [SRC-FDEEAFDFCA-L000084](../../agents/request_budget.py#L84) | 84 | `""` | — |
-| [SRC-FDEEAFDFCA-L000085](../../agents/request_budget.py#L85) | 85 | `"    def timeout_for(self, configured_seconds: float) -> float:"` | — |
-| [SRC-FDEEAFDFCA-L000086](../../agents/request_budget.py#L86) | 86 | `"        \"\"\"Cap one outbound timeout to time remaining; raise instead of starting at zero.\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000087](../../agents/request_budget.py#L87) | 87 | `"        remaining = self.remaining_seconds()"` | — |
-| [SRC-FDEEAFDFCA-L000088](../../agents/request_budget.py#L88) | 88 | `"        if remaining <= 0:"` | — |
-| [SRC-FDEEAFDFCA-L000089](../../agents/request_budget.py#L89) | 89 | `"            with self._lock:"` | — |
-| [SRC-FDEEAFDFCA-L000090](../../agents/request_budget.py#L90) | 90 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
-| [SRC-FDEEAFDFCA-L000091](../../agents/request_budget.py#L91) | 91 | `"            raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
-| [SRC-FDEEAFDFCA-L000092](../../agents/request_budget.py#L92) | 92 | `"        return min(float(configured_seconds), remaining)"` | — |
-| [SRC-FDEEAFDFCA-L000093](../../agents/request_budget.py#L93) | 93 | `""` | — |
-| [SRC-FDEEAFDFCA-L000094](../../agents/request_budget.py#L94) | 94 | `"    def remaining_units(self, resource: str) -> int:"` | — |
-| [SRC-FDEEAFDFCA-L000095](../../agents/request_budget.py#L95) | 95 | `"        \"\"\"Return unused units for a resource; zero means disabled, exhausted, or expired.\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000096](../../agents/request_budget.py#L96) | 96 | `"        if resource not in self._limits:"` | — |

@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **97**
-- ملفات Python المحللة: **55**
-- تعريفات Python المفهرسة: **1231**
+- ملفات المستودع في الجرد: **98**
+- ملفات Python المحللة: **56**
+- تعريفات Python المفهرسة: **1238**
 - تعريفات Python موثقة بوجود Docstring: **219**
-- تعريفات Python بلا Docstring: **765**
-- تعريفات لا ينطبق عليها Docstring: **247**
+- تعريفات Python بلا Docstring: **771**
+- تعريفات لا ينطبق عليها Docstring: **248**
 - الرموز الساكنة الإضافية: **1684**
-- الأسطر النصية المفهرسة حرفيًا: **31983**
+- الأسطر النصية المفهرسة حرفيًا: **32078**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -41,6 +41,7 @@
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11420 | 270 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 6104 | 143 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
+| FILE-390A5E6F46 | الوكيل والمنطق | [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L1) | Python | 3002 | 95 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 24099 | 537 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
@@ -184,6 +185,13 @@
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L74) | دالة | fallback_dialogue_context | Build a conservative context record from the deterministic follow-up resolver. | موثق | 74 | [SRC-2D53795445-L000074](../agents/dialogue_state.py#L74) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L103) | دالة | validate_dialogue_context | Validate bounded context output from a planner without treating it as truth. | موثق | 103 | [SRC-2D53795445-L000103](../agents/dialogue_state.py#L103) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L223) | دالة | might_be_context_dependent | Cheap trigger only; it does not decide the meaning of a contextual message. | موثق | 223 | [SRC-2D53795445-L000223](../agents/dialogue_state.py#L223) |
+| [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L16) | متغير/ثابت Python | _TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-390A5E6F46-L000016](../agents/eval_rag_metrics.py#L16) |
+| [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L19) | دالة | _tokens | لا توجد Docstring. | ناقص | 19 | [SRC-390A5E6F46-L000019](../agents/eval_rag_metrics.py#L19) |
+| [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L23) | دالة | retrieval_relevance | لا توجد Docstring. | ناقص | 23 | [SRC-390A5E6F46-L000023](../agents/eval_rag_metrics.py#L23) |
+| [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L38) | دالة | faithfulness_score | لا توجد Docstring. | ناقص | 38 | [SRC-390A5E6F46-L000038](../agents/eval_rag_metrics.py#L38) |
+| [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L52) | دالة | aspect_coverage | لا توجد Docstring. | ناقص | 52 | [SRC-390A5E6F46-L000052](../agents/eval_rag_metrics.py#L52) |
+| [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L63) | دالة | writing_quality_proxy | لا توجد Docstring. | ناقص | 63 | [SRC-390A5E6F46-L000063](../agents/eval_rag_metrics.py#L63) |
+| [agents/eval_rag_metrics.py](../agents/eval_rag_metrics.py#L79) | دالة | evaluate_rag_case | لا توجد Docstring. | ناقص | 79 | [SRC-390A5E6F46-L000079](../agents/eval_rag_metrics.py#L79) |
 | [agents/intent_router.py](../agents/intent_router.py#L12) | متغير/ثابت Python | MAX_CONTEXT_TURNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
 | [agents/intent_router.py](../agents/intent_router.py#L14) | متغير/ثابت Python | ROUTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-5587371288-L000014](../agents/intent_router.py#L14) |
 | [agents/intent_router.py](../agents/intent_router.py#L19) | متغير/ثابت Python | _ARABIC_DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-5587371288-L000019](../agents/intent_router.py#L19) |
