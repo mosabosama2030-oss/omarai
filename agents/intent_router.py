@@ -157,15 +157,42 @@ _FOLLOWUP_ASPECT_FRAGMENTS = frozenset({
 })
 
 
+_CONTEXTUAL_ASPECT_RE = re.compile(
+    r"^(?:ال)?(?:سعر|ثمن|اسعار|تكلفه|ضمان|بطاريه|كاميرا|مميزات|عيوب|"
+    r"مكان|مصدر|رابط|تاريخ|مراجعات|اراء|توفر|سرعه|اداء|جوده|صيانه)\\b"
+)
+_CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile(
+    r"^(?:what about|how about|and (?:the|its|their)|its)\\s+"
+    r"(?:price|warranty|battery|camera|location|source|link|date|pros|cons)\\b"
+)
+
+
 def _strip_followup_leadin(value: str) -> str:
     return _FOLLOWUP_LEAD_IN_RE.sub("", value).strip()
+
+
+def _starts_with_contextual_aspect(question: str) -> bool:
+    """Recognize aspect-led follow-ups without merging standalone new topics."""
+    normalized = _normalize(question)
+    if _CONTEXTUAL_ENGLISH_ASPECT_RE.match(normalized):
+        return True
+    stripped = _strip_followup_leadin(normalized)
+    if stripped != normalized:
+        return bool(_CONTEXTUAL_ASPECT_RE.match(stripped))
+    if normalized.startswith("و"):
+        return bool(_CONTEXTUAL_ASPECT_RE.match(normalized[1:]))
+    return False
 
 
 def _needs_clarification(question: str) -> bool:
     normalized = _strip_followup_leadin(_normalize(question))
     ambiguous = {_normalize(item) for item in _AMBIGUOUS_ARABIC}
     ambiguous.update(_normalize(item) for item in _AMBIGUOUS_ENGLISH)
-    if normalized in ambiguous or normalized in _FOLLOWUP_ASPECT_FRAGMENTS:
+    if (
+        normalized in ambiguous
+        or normalized in _FOLLOWUP_ASPECT_FRAGMENTS
+        or _starts_with_contextual_aspect(question)
+    ):
         return True
     # Common inflected forms and short property-only follow-ups.
     return bool(
@@ -263,7 +290,7 @@ def _is_contextual_followup(question: str) -> bool:
     if re.search(r"https?://", question, re.IGNORECASE):
         return False
     normalized = _strip_followup_leadin(_normalize(question))
-    if _needs_clarification(question):
+    if _needs_clarification(question) or _starts_with_contextual_aspect(question):
         return True
     # Pronouns and deictic references are strong signals only in a short turn.
     return bool(
