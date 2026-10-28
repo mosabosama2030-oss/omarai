@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003826 إلى SRC-1AE03B9EC3-L004625
+- النطاق: SRC-1AE03B9EC3-L003825 إلى SRC-1AE03B9EC3-L004624
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003825](../../agents/web_agent.py#L3825) | 3825 | `"            ),"` | — |
 | [SRC-1AE03B9EC3-L003826](../../agents/web_agent.py#L3826) | 3826 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L003827](../../agents/web_agent.py#L3827) | 3827 | `""` | — |
 | [SRC-1AE03B9EC3-L003828](../../agents/web_agent.py#L3828) | 3828 | `"    def diagnostics("` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004622](../../agents/web_agent.py#L4622) | 4622 | `"        search_warnings: list[str] = []"` | — |
 | [SRC-1AE03B9EC3-L004623](../../agents/web_agent.py#L4623) | 4623 | `"        report: dict[str, Any] = {}"` | — |
 | [SRC-1AE03B9EC3-L004624](../../agents/web_agent.py#L4624) | 4624 | `"        # Scope diagnostic evidence to this research attempt; a reused WebAgent must not"` | — |
-| [SRC-1AE03B9EC3-L004625](../../agents/web_agent.py#L4625) | 4625 | `"        # accidentally inherit provider attempts from an earlier question."` | — |

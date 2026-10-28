@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6E58A660BC-L000003 إلى SRC-1AE03B9EC3-L000625
+- النطاق: SRC-6E58A660BC-L000002 إلى SRC-1AE03B9EC3-L000624
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6E58A660BC-L000002](../../agents/search_connectors.py#L2) | 2 | `"from __future__ import annotations"` | — |
 | [SRC-6E58A660BC-L000003](../../agents/search_connectors.py#L3) | 3 | `""` | — |
 | [SRC-6E58A660BC-L000004](../../agents/search_connectors.py#L4) | 4 | `"import json"` | — |
 | [SRC-6E58A660BC-L000005](../../agents/search_connectors.py#L5) | 5 | `"import os"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1AE03B9EC3-L000622](../../agents/web_agent.py#L622) | 622 | `"    def _record_provider_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L000623](../../agents/web_agent.py#L623) | 623 | `"        self, provider: str, query: str, status: str, result_count: int = 0,"` | — |
 | [SRC-1AE03B9EC3-L000624](../../agents/web_agent.py#L624) | 624 | `"        rejected_count: int = 0, error: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L000625](../../agents/web_agent.py#L625) | 625 | `"        accepted_count: int \| None = None,"` | — |

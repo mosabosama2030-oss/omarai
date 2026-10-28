@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000111 إلى SRC-90FAA34ADE-L000758
+- النطاق: SRC-547CAF1FE3-L000110 إلى SRC-90FAA34ADE-L000757
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000110](../../scripts/sqlite_backup_restore.py#L110) | 110 | `"def restore_database(backup: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
 | [SRC-547CAF1FE3-L000111](../../scripts/sqlite_backup_restore.py#L111) | 111 | `"    \"\"\"Restore a snapshot into a new destination; existing files are never overwritten.\"\"\""` | — |
 | [SRC-547CAF1FE3-L000112](../../scripts/sqlite_backup_restore.py#L112) | 112 | `"    return _copy_verified_database(backup, destination)"` | — |
 | [SRC-547CAF1FE3-L000113](../../scripts/sqlite_backup_restore.py#L113) | 113 | `""` | — |
@@ -824,4 +825,3 @@
 | [SRC-90FAA34ADE-L000755](../../tests/fixtures/answer_quality_cases.json#L755) | 755 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000756](../../tests/fixtures/answer_quality_cases.json#L756) | 756 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000757](../../tests/fixtures/answer_quality_cases.json#L757) | 757 | `"        \"type\": \"env\","` | — |
-| [SRC-90FAA34ADE-L000758](../../tests/fixtures/answer_quality_cases.json#L758) | 758 | `"        \"missing\": ["` | — |

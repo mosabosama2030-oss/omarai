@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001426 إلى SRC-1AE03B9EC3-L002225
+- النطاق: SRC-1AE03B9EC3-L001425 إلى SRC-1AE03B9EC3-L002224
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001425](../../agents/web_agent.py#L1425) | 1425 | `"            self._deepseek_search_requests_reserved += 1"` | — |
 | [SRC-1AE03B9EC3-L001426](../../agents/web_agent.py#L1426) | 1426 | `"            return True"` | — |
 | [SRC-1AE03B9EC3-L001427](../../agents/web_agent.py#L1427) | 1427 | `""` | — |
 | [SRC-1AE03B9EC3-L001428](../../agents/web_agent.py#L1428) | 1428 | `"    def _search_web(self, query: str) -> list[dict[str, Any]]:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002222](../../agents/web_agent.py#L2222) | 2222 | `"                        \"key\": os.getenv(\"YOUTUBE_API_KEY\", \"\").strip(),"` | — |
 | [SRC-1AE03B9EC3-L002223](../../agents/web_agent.py#L2223) | 2223 | `"                    },"` | — |
 | [SRC-1AE03B9EC3-L002224](../../agents/web_agent.py#L2224) | 2224 | `"                    headers=headers,"` | — |
-| [SRC-1AE03B9EC3-L002225](../../agents/web_agent.py#L2225) | 2225 | `"                    timeout=self._effective_timeout(9.0),"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003026 إلى SRC-1AE03B9EC3-L003825
+- النطاق: SRC-1AE03B9EC3-L003025 إلى SRC-1AE03B9EC3-L003824
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003025](../../agents/web_agent.py#L3025) | 3025 | `"                    self._record_generation_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L003026](../../agents/web_agent.py#L3026) | 3026 | `"                        requested_model=requested_model,"` | — |
 | [SRC-1AE03B9EC3-L003027](../../agents/web_agent.py#L3027) | 3027 | `"                        attempted_model=candidate_model,"` | — |
 | [SRC-1AE03B9EC3-L003028](../../agents/web_agent.py#L3028) | 3028 | `"                        status=\"budget_exhausted\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003822](../../agents/web_agent.py#L3822) | 3822 | `"                \"model_review_not_independent_fact_check\""` | — |
 | [SRC-1AE03B9EC3-L003823](../../agents/web_agent.py#L3823) | 3823 | `"                if review_status == \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L003824](../../agents/web_agent.py#L3824) | 3824 | `"                else \"not_verified\""` | — |
-| [SRC-1AE03B9EC3-L003825](../../agents/web_agent.py#L3825) | 3825 | `"            ),"` | — |

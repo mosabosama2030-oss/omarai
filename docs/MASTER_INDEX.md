@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **744**
 - تعريفات لا ينطبق عليها Docstring: **238**
 - الرموز الساكنة الإضافية: **1682**
-- الأسطر النصية المفهرسة حرفيًا: **31203**
+- الأسطر النصية المفهرسة حرفيًا: **31205**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11420 | 270 | جرد الملف + AST Python |
-| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 5970 | 142 | جرد الملف + AST Python |
+| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 6104 | 143 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 24099 | 537 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
@@ -91,7 +91,7 @@
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
-| FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5493 | 129 | جرد الملف + AST Python |
+| FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5620 | 130 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
@@ -654,10 +654,10 @@
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L7) | دالة | test_claim_ledger_maps_citations_to_exact_sources | لا توجد Docstring. | ناقص | 7 | [SRC-63610B9E85-L000007](../tests/test_agentic_retrieval.py#L7) |
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L32) | دالة | test_claim_ledger_marks_uncited_and_out_of_range_references | لا توجد Docstring. | ناقص | 32 | [SRC-63610B9E85-L000032](../tests/test_agentic_retrieval.py#L32) |
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L44) | دالة | test_claim_ledger_does_not_equate_valid_index_with_verification | لا توجد Docstring. | ناقص | 44 | [SRC-63610B9E85-L000044](../tests/test_agentic_retrieval.py#L44) |
-| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L57) | دالة | test_collect_research_retries_missing_aspect_within_query_limit | لا توجد Docstring. | ناقص | 57 | [SRC-63610B9E85-L000057](../tests/test_agentic_retrieval.py#L57) |
-| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L62) | دالة | test_collect_research_retries_missing_aspect_within_query_limit.fake_search | لا توجد Docstring. | ناقص | 62 | [SRC-63610B9E85-L000062](../tests/test_agentic_retrieval.py#L62) |
-| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L101) | دالة | test_generation_prompt_includes_grounded_writing_examples | لا توجد Docstring. | ناقص | 101 | [SRC-63610B9E85-L000101](../tests/test_agentic_retrieval.py#L101) |
-| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L105) | دالة | test_generation_prompt_includes_grounded_writing_examples.fake_completion | لا توجد Docstring. | ناقص | 105 | [SRC-63610B9E85-L000105](../tests/test_agentic_retrieval.py#L105) |
+| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L58) | دالة | test_collect_research_retries_missing_aspect_within_query_limit | لا توجد Docstring. | ناقص | 58 | [SRC-63610B9E85-L000058](../tests/test_agentic_retrieval.py#L58) |
+| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L63) | دالة | test_collect_research_retries_missing_aspect_within_query_limit.fake_search | لا توجد Docstring. | ناقص | 63 | [SRC-63610B9E85-L000063](../tests/test_agentic_retrieval.py#L63) |
+| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L102) | دالة | test_generation_prompt_includes_grounded_writing_examples | لا توجد Docstring. | ناقص | 102 | [SRC-63610B9E85-L000102](../tests/test_agentic_retrieval.py#L102) |
+| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L106) | دالة | test_generation_prompt_includes_grounded_writing_examples.fake_completion | لا توجد Docstring. | ناقص | 106 | [SRC-63610B9E85-L000106](../tests/test_agentic_retrieval.py#L106) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | متغير/ثابت Python | DOCS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L17) | متغير/ثابت Python | REQUIRED_CASE_FIELDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-4CCB1F172B-L000017](../tests/test_answer_quality_corpus.py#L17) |

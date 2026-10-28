@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000626 إلى SRC-1AE03B9EC3-L001425
+- النطاق: SRC-1AE03B9EC3-L000625 إلى SRC-1AE03B9EC3-L001424
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000625](../../agents/web_agent.py#L625) | 625 | `"        accepted_count: int \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L000626](../../agents/web_agent.py#L626) | 626 | `"        rejection_counts: dict[str, int] \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L000627](../../agents/web_agent.py#L627) | 627 | `"    ) -> None:"` | — |
 | [SRC-1AE03B9EC3-L000628](../../agents/web_agent.py#L628) | 628 | `"        def redact(value: Any, limit: int) -> str:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001422](../../agents/web_agent.py#L1422) | 1422 | `"        with self._deepseek_budget_lock:"` | — |
 | [SRC-1AE03B9EC3-L001423](../../agents/web_agent.py#L1423) | 1423 | `"            if self._deepseek_search_requests_reserved >= budget:"` | — |
 | [SRC-1AE03B9EC3-L001424](../../agents/web_agent.py#L1424) | 1424 | `"                return False"` | — |
-| [SRC-1AE03B9EC3-L001425](../../agents/web_agent.py#L1425) | 1425 | `"            self._deepseek_search_requests_reserved += 1"` | — |

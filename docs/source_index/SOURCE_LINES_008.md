@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002226 إلى SRC-1AE03B9EC3-L003025
+- النطاق: SRC-1AE03B9EC3-L002225 إلى SRC-1AE03B9EC3-L003024
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002225](../../agents/web_agent.py#L2225) | 2225 | `"                    timeout=self._effective_timeout(9.0),"` | — |
 | [SRC-1AE03B9EC3-L002226](../../agents/web_agent.py#L2226) | 2226 | `"                    follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L002227](../../agents/web_agent.py#L2227) | 2227 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L002228](../../agents/web_agent.py#L2228) | 2228 | `"                if response.status_code == 200:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003022](../../agents/web_agent.py#L3022) | 3022 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |
 | [SRC-1AE03B9EC3-L003023](../../agents/web_agent.py#L3023) | 3023 | `"                        budget.reserve(\"tool_calls\", amount=3)"` | — |
 | [SRC-1AE03B9EC3-L003024](../../agents/web_agent.py#L3024) | 3024 | `"                except RequestBudgetExceeded as exc:"` | — |
-| [SRC-1AE03B9EC3-L003025](../../agents/web_agent.py#L3025) | 3025 | `"                    self._record_generation_diagnostic("` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004626 إلى SRC-1AE03B9EC3-L005425
+- النطاق: SRC-1AE03B9EC3-L004625 إلى SRC-1AE03B9EC3-L005424
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004625](../../agents/web_agent.py#L4625) | 4625 | `"        # accidentally inherit provider attempts from an earlier question."` | — |
 | [SRC-1AE03B9EC3-L004626](../../agents/web_agent.py#L4626) | 4626 | `"        with self._provider_diagnostics_lock:"` | — |
 | [SRC-1AE03B9EC3-L004627](../../agents/web_agent.py#L4627) | 4627 | `"            research_diagnostic_baseline = list(self._provider_diagnostics)"` | — |
 | [SRC-1AE03B9EC3-L004628](../../agents/web_agent.py#L4628) | 4628 | `"        try:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005422](../../agents/web_agent.py#L5422) | 5422 | `"                        \"رُصدت محاور بلا إشارة لفظية في المصادر، لكن ميزانية البحث لم تترك \""` | — |
 | [SRC-1AE03B9EC3-L005423](../../agents/web_agent.py#L5423) | 5423 | `"                        \"استعلامًا إضافيًا للتحقق منها؛ لذلك لا تُعدّ الإجابة مكتملة.\""` | — |
 | [SRC-1AE03B9EC3-L005424](../../agents/web_agent.py#L5424) | 5424 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L005425](../../agents/web_agent.py#L5425) | 5425 | `"                else:"` | — |

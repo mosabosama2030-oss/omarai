@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000259 إلى SRC-E599346ABE-L001058
+- النطاق: SRC-E599346ABE-L000258 إلى SRC-E599346ABE-L001057
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000258](../generate_index.py#L258) | 258 | `"        )"` | — |
 | [SRC-E599346ABE-L000259](../generate_index.py#L259) | 259 | `""` | — |
 | [SRC-E599346ABE-L000260](../generate_index.py#L260) | 260 | `"    def _record_assignment_target(self, node: ast.AST, line: int) -> None:"` | — |
 | [SRC-E599346ABE-L000261](../generate_index.py#L261) | 261 | `"        \"\"\"Record declared names from a module-level or class-level assignment.\"\"\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L001055](../generate_index.py#L1055) | 1055 | `"        \"\|\", r\"\\\|\""` | — |
 | [SRC-E599346ABE-L001056](../generate_index.py#L1056) | 1056 | `"    )"` | — |
 | [SRC-E599346ABE-L001057](../generate_index.py#L1057) | 1057 | `""` | — |
-| [SRC-E599346ABE-L001058](../generate_index.py#L1058) | 1058 | `""` | — |
