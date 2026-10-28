@@ -4710,6 +4710,7 @@ class WebAgent:
         )
         report["source_guardrails"] = {
             "initial": initial_source_guardrails,
+            "initial_eligible_source_count": len(sources),
             "final": None,
         }
         if initial_source_guardrails["rejected_sources"]:
@@ -5127,6 +5128,24 @@ class WebAgent:
             evidence_repair["recovered"] = (
                 len(sources) >= 2 and len(final_domains) >= 2
             )
+            evidence_repair["new_sources_added"] = max(
+                0,
+                len(sources) - int(
+                    report["source_guardrails"].get("initial_eligible_source_count", 0)
+                ),
+            )
+        final_independent_domains = {
+            registrable_domain(
+                source.get("domain")
+                or urllib.parse.urlparse(source.get("url", "")).hostname
+                or ""
+            )
+            for source in sources
+        }
+        final_independent_domains.discard("")
+        needs_corroboration = (
+            len(sources) < 2 or len(final_independent_domains) < 2
+        )
         report["evidence_repair"] = evidence_repair
         baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}
         with self._provider_diagnostics_lock:
