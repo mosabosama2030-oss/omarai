@@ -1,8 +1,6 @@
-"""Wire Agentic RAG into Omarai WebAgent without breaking SSRF/relevance policy.
+"""Wire Agentic RAG + MemoryBank into Omarai WebAgent safely.
 
-Primary path: after WebAgent collects sources, bind answer claims to evidence
-and attach metrics/trace. Optional path: run full ReAct orchestrator with an
-injected retrieve_fn that already enforces Omarai URL policy.
+Does not bypass SSRF/URL/relevance policy. retrieve_fn must already enforce them.
 """
 from __future__ import annotations
 
@@ -10,7 +8,10 @@ from typing import Any, Callable
 
 from agents.agentic_rag_orchestrator import AgenticRagOrchestrator
 from agents.eval_rag_metrics import evaluate_rag_case
-from agents.memory_bank import MemoryBank, split_answer_into_claim_sentences
+from agents.memory_bank import (
+    MemoryBank,
+    build_memory_from_sources_and_answer,
+)
 
 RetrieveFn = Callable[[str], list[dict[str, Any]]]
 
@@ -20,12 +21,11 @@ def bind_existing_answer_to_sources(
     sources: list[dict[str, Any]],
     *,
     aspects: list[str] | None = None,
+    min_score: float = 0.25,
 ) -> dict[str, Any]:
-    bank = MemoryBank(session_id="post_hoc")
-    bank.ingest_sources(sources)
-    claims = []
-    for sentence in split_answer_into_claim_sentences(answer):
-        claims.append(bank.bind_claim(sentence))
+    bank = build_memory_from_sources_and_answer(
+        sources, answer, aspects=aspects, min_score=min_score
+    )
     metrics = evaluate_rag_case(
         question="",
         answer=answer,
@@ -34,18 +34,22 @@ def bind_existing_answer_to_sources(
     )
     return {
         "memory": bank.to_dict(),
+        "ledger": bank.to_claim_evidence_ledger_shape(),
         "claims": [
             {
                 "text": c.text,
                 "status": c.status,
                 "support_score": c.support_score,
                 "evidence_ids": c.evidence_ids,
+                "aspect": c.aspect,
                 "cited": bank.format_claim_with_citations(c),
             }
-            for c in claims
+            for c in bank.claims
         ],
+        "supported_answer": bank.render_supported_answer(drop_unsupported=True),
         "metrics": metrics,
         "citation_map": bank.citation_map(),
+        "stats": bank.stats(),
     }
 
 
@@ -65,6 +69,12 @@ def run_agentic_rag(
         sources=sources,
         aspects=list((result.get("plan") or {}).get("aspects") or []),
     )
+    mem = result.get("memory")
+    if isinstance(mem, dict) and mem.get("claims"):
+        bank = MemoryBank(session_id=str(mem.get("session_id") or ""))
+        bank.ingest_sources(sources)
+        bank.bind_answer(str(result.get("answer") or ""))
+        result["ledger"] = bank.to_claim_evidence_ledger_shape()
     return result
 
 
@@ -105,6 +115,7 @@ def run_agentic_rag_over_sources(
         )
         result["post_hoc_binding"] = post
         result["metrics"] = post.get("metrics")
+        result["ledger"] = post.get("ledger")
     return result
 
 
@@ -114,14 +125,23 @@ def web_agent_post_answer_hook(
     sources: list[dict[str, Any]],
     *,
     aspects: list[str] | None = None,
+    min_score: float = 0.25,
 ) -> dict[str, Any]:
-    binding = bind_existing_answer_to_sources(answer, sources, aspects=aspects)
+    binding = bind_existing_answer_to_sources(
+        answer, sources, aspects=aspects, min_score=min_score
+    )
     return {
         "agentic_rag": {
             "enabled": True,
+            "question": question[:500],
             "claims": binding.get("claims"),
             "metrics": binding.get("metrics"),
             "citation_map": binding.get("citation_map"),
-            "memory_stats": (binding.get("memory") or {}).get("stats"),
+            "memory_stats": binding.get("stats"),
+            "ledger": binding.get("ledger"),
+            "supported_answer": binding.get("supported_answer"),
+            "honesty": (
+                "الدعم لفظي عبر MemoryBank؛ لا يُفسَّر كتحقق حقيقة دلالي."
+            ),
         }
     }
