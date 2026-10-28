@@ -241,3 +241,57 @@ def test_output_preferences_do_not_count_as_competing_intent_hypotheses():
     assert "compare" in families
     assert not any(family.startswith("output_") for family in families)
     assert spec["ambiguity_status"] == "no_strong_lexical_conflict_detected"
+
+
+@pytest.mark.parametrize(
+    ("question", "family"),
+    [
+        ("ترجم هذا النص إلى الإنجليزية: Hello world", "translation"),
+        ("اكتب بريد إلكتروني للعميل بنبرة مهنية", "writing_or_editing"),
+        ("احسب 17 بالمئة من 500", "calculation"),
+        ("حلل البيانات في ملف CSV وحدد القيم الناقصة", "data_analysis"),
+        ("راجع كود Python الذي يعرض stack trace", "coding_or_technical_design"),
+        ("ضع خطة عمل لافتتاح متجر خلال شهر", "planning"),
+        ("ما أعراض الإنفلونزا؟", "medical_information"),
+        ("ما شروط العقد وفق القانون المصري؟", "legal_information"),
+        ("اكتب قصة قصيرة عن رحلة خيالية", "creative_generation"),
+    ],
+)
+def test_extended_task_families_cover_non_search_and_specialized_requests(question, family):
+    spec = build_task_spec(question, mode="auto", intent_route="MODEL_ONLY")
+    assert spec["task_family"] == family
+    assert spec["classification_is_probability"] is False
+    assert spec["evidence_requirements"]
+    assert spec["query_strategies"]
+
+
+def test_health_and_legal_tasks_attach_domain_specific_caution():
+    health = build_task_spec(
+        "ما أعراض الإنفلونزا اليوم؟",
+        mode="latest",
+        intent_route="WEB_SIMPLE",
+    )
+    assert "authoritative_health_content" in health["constraints"]["source_policies"]
+    assert "distinguish_general_health_information_from_personal_diagnosis" in health["evidence_requirements"]
+    assert "page_text_successfully_read" in health["evidence_requirements"]
+
+    legal = build_task_spec(
+        "ما نص القانون الحالي المنظم للإيجار في مصر؟",
+        mode="latest",
+        intent_route="WEB_SIMPLE",
+    )
+    assert "official_legal_text" in legal["constraints"]["source_policies"]
+    assert "identify_jurisdiction_and_effective_date_if_relevant" in legal["evidence_requirements"]
+
+
+def test_output_audience_and_delivery_preferences_are_distinct_fields():
+    spec = build_task_spec(
+        "اشرح الموضوع ببساطة مع مصادر وروابط مباشرة وبصيغة JSON",
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+    )
+    preferences = spec["output_preferences"]
+    assert preferences["beginner_friendly_requested"] is True
+    assert preferences["citations_requested"] is True
+    assert preferences["links_requested"] is True
+    assert preferences["json_requested"] is True
