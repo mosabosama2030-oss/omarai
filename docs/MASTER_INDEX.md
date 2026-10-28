@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **728**
 - تعريفات لا ينطبق عليها Docstring: **231**
 - الرموز الساكنة الإضافية: **1668**
-- الأسطر النصية المفهرسة حرفيًا: **30722**
+- الأسطر النصية المفهرسة حرفيًا: **30724**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -90,7 +90,7 @@
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2583 | 70 | جرد الملف + AST Python |
-| FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 4269 | 95 | جرد الملف + AST Python |
+| FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 4410 | 97 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
@@ -642,8 +642,8 @@
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L7) | دالة | test_claim_ledger_maps_citations_to_exact_sources | لا توجد Docstring. | ناقص | 7 | [SRC-63610B9E85-L000007](../tests/test_agentic_retrieval.py#L7) |
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L32) | دالة | test_claim_ledger_marks_uncited_and_out_of_range_references | لا توجد Docstring. | ناقص | 32 | [SRC-63610B9E85-L000032](../tests/test_agentic_retrieval.py#L32) |
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L44) | دالة | test_claim_ledger_does_not_equate_valid_index_with_verification | لا توجد Docstring. | ناقص | 44 | [SRC-63610B9E85-L000044](../tests/test_agentic_retrieval.py#L44) |
-| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L55) | دالة | test_collect_research_retries_missing_aspect_within_query_limit | لا توجد Docstring. | ناقص | 55 | [SRC-63610B9E85-L000055](../tests/test_agentic_retrieval.py#L55) |
-| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L60) | دالة | test_collect_research_retries_missing_aspect_within_query_limit.fake_search | لا توجد Docstring. | ناقص | 60 | [SRC-63610B9E85-L000060](../tests/test_agentic_retrieval.py#L60) |
+| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L57) | دالة | test_collect_research_retries_missing_aspect_within_query_limit | لا توجد Docstring. | ناقص | 57 | [SRC-63610B9E85-L000057](../tests/test_agentic_retrieval.py#L57) |
+| [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L62) | دالة | test_collect_research_retries_missing_aspect_within_query_limit.fake_search | لا توجد Docstring. | ناقص | 62 | [SRC-63610B9E85-L000062](../tests/test_agentic_retrieval.py#L62) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | متغير/ثابت Python | DOCS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L17) | متغير/ثابت Python | REQUIRED_CASE_FIELDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-4CCB1F172B-L000017](../tests/test_answer_quality_corpus.py#L17) |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001329 إلى SRC-F725E90B2A-L002128
+- النطاق: SRC-F725E90B2A-L001327 إلى SRC-F725E90B2A-L002126
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001327](../../tests/test_web_agent.py#L1327) | 1327 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L001328](../../tests/test_web_agent.py#L1328) | 1328 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001329](../../tests/test_web_agent.py#L1329) | 1329 | `""` | — |
 | [SRC-F725E90B2A-L001330](../../tests/test_web_agent.py#L1330) | 1330 | `"    def collect_only_one_source(research_plan):"` | — |
 | [SRC-F725E90B2A-L001331](../../tests/test_web_agent.py#L1331) | 1331 | `"        calls.append(dict(research_plan))"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002124](../../tests/test_web_agent.py#L2124) | 2124 | `""` | — |
 | [SRC-F725E90B2A-L002125](../../tests/test_web_agent.py#L2125) | 2125 | `"    result = agent.answer(\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\")"` | — |
 | [SRC-F725E90B2A-L002126](../../tests/test_web_agent.py#L2126) | 2126 | `""` | — |
-| [SRC-F725E90B2A-L002127](../../tests/test_web_agent.py#L2127) | 2127 | `"    report = result[\"search_report\"]"` | — |
-| [SRC-F725E90B2A-L002128](../../tests/test_web_agent.py#L2128) | 2128 | `"    assert result[\"search_attempted\"] is None"` | — |

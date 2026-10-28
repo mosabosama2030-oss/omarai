@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000529 إلى SRC-F725E90B2A-L001328
+- النطاق: SRC-F725E90B2A-L000527 إلى SRC-F725E90B2A-L001326
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000527](../../tests/test_web_agent.py#L527) | 527 | `"                \"media_type\": \"IMAGE\","` | — |
+| [SRC-F725E90B2A-L000528](../../tests/test_web_agent.py#L528) | 528 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
 | [SRC-F725E90B2A-L000529](../../tests/test_web_agent.py#L529) | 529 | `"                \"like_count\": 17,"` | — |
 | [SRC-F725E90B2A-L000530](../../tests/test_web_agent.py#L530) | 530 | `"                \"comments_count\": 4,"` | — |
 | [SRC-F725E90B2A-L000531](../../tests/test_web_agent.py#L531) | 531 | `"            }]})"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001324](../../tests/test_web_agent.py#L1324) | 1324 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L001325](../../tests/test_web_agent.py#L1325) | 1325 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001326](../../tests/test_web_agent.py#L1326) | 1326 | `"    }"` | — |
-| [SRC-F725E90B2A-L001327](../../tests/test_web_agent.py#L1327) | 1327 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001328](../../tests/test_web_agent.py#L1328) | 1328 | `"    calls = []"` | — |
