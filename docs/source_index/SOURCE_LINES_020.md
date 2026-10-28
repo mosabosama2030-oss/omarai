@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000380 إلى SRC-0F910493E8-L000604
+- النطاق: SRC-65551FB29F-L000378 إلى SRC-0F910493E8-L000602
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000378](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L378) | 378 | `"5. تسجيل الانحرافات وإيقاف أو التراجع عند تجاوز حد الخطر."` | — |
+| [SRC-65551FB29F-L000379](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L379) | 379 | `"6. تحديث سجل المتطلبات بالدليل الجديد."` | — |
 | [SRC-65551FB29F-L000380](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L380) | 380 | `"7. تحويل الحوادث إلى أعمال تصحيح واختبارات انحدار."` | — |
 | [SRC-65551FB29F-L000381](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L381) | 381 | `""` | — |
 | [SRC-65551FB29F-L000382](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L382) | 382 | `"---"` | — |
@@ -823,5 +825,3 @@
 | [SRC-0F910493E8-L000600](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L600) | 600 | `"9. التطبيق ومزودي الخدمات الخارجية."` | — |
 | [SRC-0F910493E8-L000601](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L601) | 601 | `"10. بيانات مستخدم إلى مستخدم آخر أو جلسة أخرى."` | — |
 | [SRC-0F910493E8-L000602](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L602) | 602 | `""` | — |
-| [SRC-0F910493E8-L000603](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L603) | 603 | `"قبل تغيير أحد هذه الحدود، يُكتب تحليل مصغر يحدد الأصل المعرّض، والخصم أو الخطأ المحتمل، ومسار الاستغلال، والضوابط، والاختبار السلبي، والمخاطر المتبقية. لا يكفي وجود عنوان «Threat Model» في وثيقة دون ربطه بالتغيير المحدد."` | — |
-| [SRC-0F910493E8-L000604](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L604) | 604 | `""` | — |

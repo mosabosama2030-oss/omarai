@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000104 إلى SRC-6BF96689A8-L000263
+- النطاق: SRC-4397BC2CD2-L000101 إلى SRC-6BF96689A8-L000260
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4397BC2CD2-L000101](../../tests/test_intent_router_integration.py#L101) | 101 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-4397BC2CD2-L000102](../../tests/test_intent_router_integration.py#L102) | 102 | `"    def generate(resolved_question, *args, **kwargs):"` | — |
+| [SRC-4397BC2CD2-L000103](../../tests/test_intent_router_integration.py#L103) | 103 | `"        seen[\"generation_question\"] = resolved_question"` | — |
 | [SRC-4397BC2CD2-L000104](../../tests/test_intent_router_integration.py#L104) | 104 | `"        return \"توجد أسعار مختلفة حسب النسخة [المصدر 1].\""` | — |
 | [SRC-4397BC2CD2-L000105](../../tests/test_intent_router_integration.py#L105) | 105 | `""` | — |
 | [SRC-4397BC2CD2-L000106](../../tests/test_intent_router_integration.py#L106) | 106 | `"    def review(resolved_question, answer, sources):"` | — |
@@ -858,6 +861,3 @@
 | [SRC-6BF96689A8-L000258](../../tests/test_research.py#L258) | 258 | `"    for question, required_terms in cases:"` | — |
 | [SRC-6BF96689A8-L000259](../../tests/test_research.py#L259) | 259 | `"        query = compact_search_query(question)"` | — |
 | [SRC-6BF96689A8-L000260](../../tests/test_research.py#L260) | 260 | `"        assert query"` | — |
-| [SRC-6BF96689A8-L000261](../../tests/test_research.py#L261) | 261 | `"        for term in required_terms:"` | — |
-| [SRC-6BF96689A8-L000262](../../tests/test_research.py#L262) | 262 | `"            assert term in query, f\"lost topic term {term!r}: {query!r}\""` | — |
-| [SRC-6BF96689A8-L000263](../../tests/test_research.py#L263) | 263 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001902 إلى SRC-F725E90B2A-L002701
+- النطاق: SRC-F725E90B2A-L001899 إلى SRC-F725E90B2A-L002698
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001899](../../tests/test_web_agent.py#L1899) | 1899 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001900](../../tests/test_web_agent.py#L1900) | 1900 | `"    }"` | — |
+| [SRC-F725E90B2A-L001901](../../tests/test_web_agent.py#L1901) | 1901 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001902](../../tests/test_web_agent.py#L1902) | 1902 | `""` | — |
 | [SRC-F725E90B2A-L001903](../../tests/test_web_agent.py#L1903) | 1903 | `"    def collect(research_plan):"` | — |
 | [SRC-F725E90B2A-L001904](../../tests/test_web_agent.py#L1904) | 1904 | `"        calls.append(dict(research_plan))"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L002696](../../tests/test_web_agent.py#L2696) | 2696 | `"    class FakeClient:"` | — |
 | [SRC-F725E90B2A-L002697](../../tests/test_web_agent.py#L2697) | 2697 | `"        def __init__(self, **kwargs):"` | — |
 | [SRC-F725E90B2A-L002698](../../tests/test_web_agent.py#L2698) | 2698 | `"            self.options = kwargs"` | — |
-| [SRC-F725E90B2A-L002699](../../tests/test_web_agent.py#L2699) | 2699 | `""` | — |
-| [SRC-F725E90B2A-L002700](../../tests/test_web_agent.py#L2700) | 2700 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L002701](../../tests/test_web_agent.py#L2701) | 2701 | `"            return self"` | — |

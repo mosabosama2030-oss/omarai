@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001920 إلى SRC-E73001D9AC-L000556
+- النطاق: SRC-E599346ABE-L001918 إلى SRC-E73001D9AC-L000554
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001918](../generate_index.py#L1918) | 1918 | `"                    for path in pages_directory.iterdir()"` | — |
+| [SRC-E599346ABE-L001919](../generate_index.py#L1919) | 1919 | `"                    if path.is_file() and SOURCE_LINES_PAGE_RE.fullmatch(path.name)"` | — |
 | [SRC-E599346ABE-L001920](../generate_index.py#L1920) | 1920 | `"                }"` | — |
 | [SRC-E599346ABE-L001921](../generate_index.py#L1921) | 1921 | `"                stale_pages = actual_page_names - expected_page_names"` | — |
 | [SRC-E599346ABE-L001922](../generate_index.py#L1922) | 1922 | `"                if stale_pages:"` | — |
@@ -850,5 +852,3 @@
 | [SRC-E73001D9AC-L000552](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L552) | 552 | `""` | — |
 | [SRC-E73001D9AC-L000553](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L553) | 553 | `"# الجزء الثامن — تشغيل الخدمة والتعافي"` | — |
 | [SRC-E73001D9AC-L000554](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L554) | 554 | `""` | — |
-| [SRC-E73001D9AC-L000555](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L555) | 555 | `"## 15. الجاهزية والتشخيص"` | — |
-| [SRC-E73001D9AC-L000556](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L556) | 556 | ``"- `liveness`: هل العملية نفسها حية ويمكنها مواصلة العمل؟"`` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001102 إلى SRC-F725E90B2A-L001901
+- النطاق: SRC-F725E90B2A-L001099 إلى SRC-F725E90B2A-L001898
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001099](../../tests/test_web_agent.py#L1099) | 1099 | `"    )"` | — |
+| [SRC-F725E90B2A-L001100](../../tests/test_web_agent.py#L1100) | 1100 | `""` | — |
+| [SRC-F725E90B2A-L001101](../../tests/test_web_agent.py#L1101) | 1101 | `""` | — |
 | [SRC-F725E90B2A-L001102](../../tests/test_web_agent.py#L1102) | 1102 | `"def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001103](../../tests/test_web_agent.py#L1103) | 1103 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001104](../../tests/test_web_agent.py#L1104) | 1104 | `"    agent.api_key = \"test-key\""` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L001896](../../tests/test_web_agent.py#L1896) | 1896 | `"        \"freshness\": \"today\","` | — |
 | [SRC-F725E90B2A-L001897](../../tests/test_web_agent.py#L1897) | 1897 | `"        \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L001898](../../tests/test_web_agent.py#L1898) | 1898 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001899](../../tests/test_web_agent.py#L1899) | 1899 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001900](../../tests/test_web_agent.py#L1900) | 1900 | `"    }"` | — |
-| [SRC-F725E90B2A-L001901](../../tests/test_web_agent.py#L1901) | 1901 | `"    calls = []"` | — |

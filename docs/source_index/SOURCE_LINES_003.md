@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000434 إلى SRC-59CF4B7DE8-L000427
+- النطاق: SRC-5587371288-L000432 إلى SRC-59CF4B7DE8-L000425
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"            \"route\": \"LOCAL\","` | — |
+| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"            \"reason\": \"short_conversational_turn\","` | — |
 | [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"            \"context_available\": context_available,"` | — |
 | [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"            \"needs_clarification\": False,"` | — |
 | [SRC-5587371288-L000436](../../agents/intent_router.py#L436) | 436 | `"        }"` | — |
@@ -841,5 +843,3 @@
 | [SRC-59CF4B7DE8-L000423](../../agents/research.py#L423) | 423 | `"def fuse_ranked_results("` | — |
 | [SRC-59CF4B7DE8-L000424](../../agents/research.py#L424) | 424 | `"    batches: list[dict[str, Any]], limit: int = MAX_FUSED_RESULTS"` | — |
 | [SRC-59CF4B7DE8-L000425](../../agents/research.py#L425) | 425 | `") -> list[dict[str, Any]]:"` | — |
-| [SRC-59CF4B7DE8-L000426](../../agents/research.py#L426) | 426 | `"    \"\"\"Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000427](../../agents/research.py#L427) | 427 | `"    accumulated: dict[str, dict[str, Any]] = {}"` | — |

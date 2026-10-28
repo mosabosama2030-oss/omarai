@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA139AC9D0-L000017 إلى SRC-FA4E1423C3-L000338
+- النطاق: SRC-DA139AC9D0-L000015 إلى SRC-FA4E1423C3-L000335
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA139AC9D0-L000015](../../tests/test_dialogue_state.py#L15) | 15 | `""` | — |
+| [SRC-DA139AC9D0-L000016](../../tests/test_dialogue_state.py#L16) | 16 | `"    context = fallback_dialogue_context(\"كام سعرها؟\", history)"` | — |
 | [SRC-DA139AC9D0-L000017](../../tests/test_dialogue_state.py#L17) | 17 | `""` | — |
 | [SRC-DA139AC9D0-L000018](../../tests/test_dialogue_state.py#L18) | 18 | `"    assert context[\"method\"] == \"deterministic_followup_heuristic\""` | — |
 | [SRC-DA139AC9D0-L000019](../../tests/test_dialogue_state.py#L19) | 19 | `"    assert context[\"is_follow_up\"] is True"` | — |
@@ -110,10 +112,11 @@
 | [SRC-DA139AC9D0-L000108](../../tests/test_dialogue_state.py#L108) | 108 | `"def test_context_probe_gate_recognizes_natural_followups_not_every_short_question() -> None:"` | — |
 | [SRC-DA139AC9D0-L000109](../../tests/test_dialogue_state.py#L109) | 109 | `"    assert might_be_context_dependent(\"And what about its warranty?\")"` | — |
 | [SRC-DA139AC9D0-L000110](../../tests/test_dialogue_state.py#L110) | 110 | `"    assert might_be_context_dependent(\"وطب الضمان الدولي بيسري في مصر؟\")"` | — |
-| [SRC-DA139AC9D0-L000111](../../tests/test_dialogue_state.py#L111) | 111 | `"    assert might_be_context_dependent(\"والضمان؟\")"` | — |
-| [SRC-DA139AC9D0-L000112](../../tests/test_dialogue_state.py#L112) | 112 | `"    assert might_be_context_dependent(\"Is it covered?\")"` | — |
-| [SRC-DA139AC9D0-L000113](../../tests/test_dialogue_state.py#L113) | 113 | `"    assert not might_be_context_dependent(\"اشرح الديناميكا الحرارية ببساطة\")"` | — |
-| [SRC-DA139AC9D0-L000114](../../tests/test_dialogue_state.py#L114) | 114 | `"    assert not might_be_context_dependent(\"Explain entropy in simple terms.\")"` | — |
+| [SRC-DA139AC9D0-L000111](../../tests/test_dialogue_state.py#L111) | 111 | `"    assert might_be_context_dependent(\"والضمان الدولي بيسري في مصر؟\")"` | — |
+| [SRC-DA139AC9D0-L000112](../../tests/test_dialogue_state.py#L112) | 112 | `"    assert might_be_context_dependent(\"والضمان؟\")"` | — |
+| [SRC-DA139AC9D0-L000113](../../tests/test_dialogue_state.py#L113) | 113 | `"    assert might_be_context_dependent(\"Is it covered?\")"` | — |
+| [SRC-DA139AC9D0-L000114](../../tests/test_dialogue_state.py#L114) | 114 | `"    assert not might_be_context_dependent(\"اشرح الديناميكا الحرارية ببساطة\")"` | — |
+| [SRC-DA139AC9D0-L000115](../../tests/test_dialogue_state.py#L115) | 115 | `"    assert not might_be_context_dependent(\"Explain entropy in simple terms.\")"` | — |
 ## اختبارات
 
 ### FILE-6BCB799CEC — [tests/test_evidence_provenance.py](../../tests/test_evidence_provenance.py#L1)
@@ -840,6 +843,3 @@
 | [SRC-FA4E1423C3-L000333](../../tests/test_generate_index.py#L333) | 333 | `"    assert line_index_path.exists()"` | — |
 | [SRC-FA4E1423C3-L000334](../../tests/test_generate_index.py#L334) | 334 | `"    assert coverage_path.exists()"` | — |
 | [SRC-FA4E1423C3-L000335](../../tests/test_generate_index.py#L335) | 335 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
-| [SRC-FA4E1423C3-L000336](../../tests/test_generate_index.py#L336) | 336 | `""` | — |
-| [SRC-FA4E1423C3-L000337](../../tests/test_generate_index.py#L337) | 337 | `"    original_line_index = line_index_path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000338](../../tests/test_generate_index.py#L338) | 338 | `"    line_index_path.write_text(\"stale line index\", encoding=\"utf-8\")"` | — |

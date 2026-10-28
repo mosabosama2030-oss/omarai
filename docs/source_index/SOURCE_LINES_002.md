@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000433
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-5587371288-L000431
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -374,24 +374,26 @@
 | [SRC-2D53795445-L000212](../../agents/dialogue_state.py#L212) | 212 | `"        return False"` | — |
 | [SRC-2D53795445-L000213](../../agents/dialogue_state.py#L213) | 213 | `"    lead_in = re.search("` | — |
 | [SRC-2D53795445-L000214](../../agents/dialogue_state.py#L214) | 214 | `"        r\"^(?:و?طب\|و?طيب\|و?تمام\|ثم\|كمان\|وبالنسبه\|بالنسبه\|\""` | — |
-| [SRC-2D53795445-L000215](../../agents/dialogue_state.py#L215) | 215 | `"        r\"and\\s+(?:what\|the\|how)\|what\\s+about\|how\\s+about\|\""` | — |
-| [SRC-2D53795445-L000216](../../agents/dialogue_state.py#L216) | 216 | `"        r\"then\\b\|also\\b\|as\\s+for\\b\|and\\s+its\\b)\","` | — |
-| [SRC-2D53795445-L000217](../../agents/dialogue_state.py#L217) | 217 | `"        current,"` | — |
-| [SRC-2D53795445-L000218](../../agents/dialogue_state.py#L218) | 218 | `"    )"` | — |
-| [SRC-2D53795445-L000219](../../agents/dialogue_state.py#L219) | 219 | `"    reference = re.search("` | — |
-| [SRC-2D53795445-L000220](../../agents/dialogue_state.py#L220) | 220 | `"        r\"\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
-| [SRC-2D53795445-L000221](../../agents/dialogue_state.py#L221) | 221 | `"        r\"he\|she\|هو\|هي\|ده\|دي\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
-| [SRC-2D53795445-L000222](../../agents/dialogue_state.py#L222) | 222 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
-| [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"        current,"` | — |
-| [SRC-2D53795445-L000224](../../agents/dialogue_state.py#L224) | 224 | `"    )"` | — |
-| [SRC-2D53795445-L000225](../../agents/dialogue_state.py#L225) | 225 | `"    fragment = re.fullmatch("` | — |
-| [SRC-2D53795445-L000226](../../agents/dialogue_state.py#L226) | 226 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
-| [SRC-2D53795445-L000227](../../agents/dialogue_state.py#L227) | 227 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
-| [SRC-2D53795445-L000228](../../agents/dialogue_state.py#L228) | 228 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
-| [SRC-2D53795445-L000229](../../agents/dialogue_state.py#L229) | 229 | `"        r\"[؟?\\s]*\","` | — |
-| [SRC-2D53795445-L000230](../../agents/dialogue_state.py#L230) | 230 | `"        current,"` | — |
-| [SRC-2D53795445-L000231](../../agents/dialogue_state.py#L231) | 231 | `"    )"` | — |
-| [SRC-2D53795445-L000232](../../agents/dialogue_state.py#L232) | 232 | `"    return bool(lead_in or reference or fragment)"` | — |
+| [SRC-2D53795445-L000215](../../agents/dialogue_state.py#L215) | 215 | `"        r\"(?:و)?(?:ال)?(?:سعر\|اسعار\|ثمن\|ضمان\|بطاريه\|كاميرا\|مكان\|رابط\|\""` | — |
+| [SRC-2D53795445-L000216](../../agents/dialogue_state.py#L216) | 216 | `"        r\"مصدر\|مميزات\|عيوب\|فرق\|توفر\|سرعه\|اداء\|جوده\|صيانه)\\b\|\""` | — |
+| [SRC-2D53795445-L000217](../../agents/dialogue_state.py#L217) | 217 | `"        r\"and\\s+(?:what\|the\|how)\|what\\s+about\|how\\s+about\|\""` | — |
+| [SRC-2D53795445-L000218](../../agents/dialogue_state.py#L218) | 218 | `"        r\"then\\b\|also\\b\|as\\s+for\\b\|and\\s+its\\b)\","` | — |
+| [SRC-2D53795445-L000219](../../agents/dialogue_state.py#L219) | 219 | `"        current,"` | — |
+| [SRC-2D53795445-L000220](../../agents/dialogue_state.py#L220) | 220 | `"    )"` | — |
+| [SRC-2D53795445-L000221](../../agents/dialogue_state.py#L221) | 221 | `"    reference = re.search("` | — |
+| [SRC-2D53795445-L000222](../../agents/dialogue_state.py#L222) | 222 | `"        r\"\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
+| [SRC-2D53795445-L000223](../../agents/dialogue_state.py#L223) | 223 | `"        r\"he\|she\|هو\|هي\|ده\|دي\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
+| [SRC-2D53795445-L000224](../../agents/dialogue_state.py#L224) | 224 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
+| [SRC-2D53795445-L000225](../../agents/dialogue_state.py#L225) | 225 | `"        current,"` | — |
+| [SRC-2D53795445-L000226](../../agents/dialogue_state.py#L226) | 226 | `"    )"` | — |
+| [SRC-2D53795445-L000227](../../agents/dialogue_state.py#L227) | 227 | `"    fragment = re.fullmatch("` | — |
+| [SRC-2D53795445-L000228](../../agents/dialogue_state.py#L228) | 228 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
+| [SRC-2D53795445-L000229](../../agents/dialogue_state.py#L229) | 229 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
+| [SRC-2D53795445-L000230](../../agents/dialogue_state.py#L230) | 230 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
+| [SRC-2D53795445-L000231](../../agents/dialogue_state.py#L231) | 231 | `"        r\"[؟?\\s]*\","` | — |
+| [SRC-2D53795445-L000232](../../agents/dialogue_state.py#L232) | 232 | `"        current,"` | — |
+| [SRC-2D53795445-L000233](../../agents/dialogue_state.py#L233) | 233 | `"    )"` | — |
+| [SRC-2D53795445-L000234](../../agents/dialogue_state.py#L234) | 234 | `"    return bool(lead_in or reference or fragment)"` | — |
 ## الوكيل والمنطق
 
 ### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
@@ -832,5 +834,3 @@
 | [SRC-5587371288-L000429](../../agents/intent_router.py#L429) | 429 | `""` | — |
 | [SRC-5587371288-L000430](../../agents/intent_router.py#L430) | 430 | `"    if _is_smalltalk(question):"` | — |
 | [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `"        return {"` | — |
-| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"            \"route\": \"LOCAL\","` | — |
-| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"            \"reason\": \"short_conversational_turn\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000139 إلى SRC-3451CC474D-L000609
+- النطاق: SRC-1C77C97630-L000137 إلى SRC-3451CC474D-L000607
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000137](../../tests/test_answer_validation.py#L137) | 137 | `"            \"page_text\": \"السعر 90 جنيه، والمدة 5 أيام.\","` | — |
+| [SRC-1C77C97630-L000138](../../tests/test_answer_validation.py#L138) | 138 | `"            \"snippet\": \"السعر 90 جنيه\","` | — |
 | [SRC-1C77C97630-L000139](../../tests/test_answer_validation.py#L139) | 139 | `"            \"page_fetched\": True,"` | — |
 | [SRC-1C77C97630-L000140](../../tests/test_answer_validation.py#L140) | 140 | `"        }],"` | — |
 | [SRC-1C77C97630-L000141](../../tests/test_answer_validation.py#L141) | 141 | `"    )"` | — |
@@ -823,5 +825,3 @@
 | [SRC-3451CC474D-L000605](../../tests/test_api.py#L605) | 605 | `""` | — |
 | [SRC-3451CC474D-L000606](../../tests/test_api.py#L606) | 606 | `"    elapsed = time.monotonic() - started"` | — |
 | [SRC-3451CC474D-L000607](../../tests/test_api.py#L607) | 607 | `"    assert response.startswith(b\"HTTP/1.0 408\")"` | — |
-| [SRC-3451CC474D-L000608](../../tests/test_api.py#L608) | 608 | `"    assert b\"request body read timed out\" in response"` | — |
-| [SRC-3451CC474D-L000609](../../tests/test_api.py#L609) | 609 | `"    assert elapsed < 1.5"` | — |

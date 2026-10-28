@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000557 إلى SRC-D17CE3D12F-L000453
+- النطاق: SRC-E73001D9AC-L000555 إلى SRC-D17CE3D12F-L000451
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000555](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L555) | 555 | `"## 15. الجاهزية والتشخيص"` | — |
+| [SRC-E73001D9AC-L000556](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L556) | 556 | ``"- `liveness`: هل العملية نفسها حية ويمكنها مواصلة العمل؟"`` | — |
 | [SRC-E73001D9AC-L000557](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L557) | 557 | ``"- `readiness`: هل العملية جاهزة لقبول هذا النوع من الطلبات؟"`` | — |
 | [SRC-E73001D9AC-L000558](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L558) | 558 | `"- حالة الموصل: إعداد موجود، اتصال فعلي ناجح، أو غير متاح."` | — |
 | [SRC-E73001D9AC-L000559](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L559) | 559 | `"- حالة النموذج: إعداد، نجاح طلب تشخيص حي، أو فشل/عدم فحص."` | — |
@@ -823,5 +825,3 @@
 | [SRC-D17CE3D12F-L000449](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L449) | 449 | `""` | — |
 | [SRC-D17CE3D12F-L000450](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L450) | 450 | `"## 31. الأدوات والقدرات ذات الأثر"` | — |
 | [SRC-D17CE3D12F-L000451](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L451) | 451 | `""` | — |
-| [SRC-D17CE3D12F-L000452](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L452) | 452 | `"1. MUST تصنيف الأدوات إلى قراءة عامة، وقراءة بيانات خاصة، وكتابة داخلية، وأثر خارجي حساس."` | — |
-| [SRC-D17CE3D12F-L000453](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L453) | 453 | `"2. MUST إجراء تحقق صلاحيات من جهة الخادم قبل كل عملية حساسة."` | — |

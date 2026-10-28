@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000320 إلى SRC-E599346ABE-L001119
+- النطاق: SRC-E599346ABE-L000318 إلى SRC-E599346ABE-L001117
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000318](../generate_index.py#L318) | 318 | `"        finally:"` | — |
+| [SRC-E599346ABE-L000319](../generate_index.py#L319) | 319 | `"            self.function_depth -= 1"` | — |
 | [SRC-E599346ABE-L000320](../generate_index.py#L320) | 320 | `"            self.scope.pop()"` | — |
 | [SRC-E599346ABE-L000321](../generate_index.py#L321) | 321 | `""` | — |
 | [SRC-E599346ABE-L000322](../generate_index.py#L322) | 322 | `""` | — |
@@ -814,5 +816,3 @@
 | [SRC-E599346ABE-L001115](../generate_index.py#L1115) | 1115 | `"            if in_block:"` | — |
 | [SRC-E599346ABE-L001116](../generate_index.py#L1116) | 1116 | `"                end = line.find(\"*/\", i)"` | — |
 | [SRC-E599346ABE-L001117](../generate_index.py#L1117) | 1117 | `"                if end < 0:"` | — |
-| [SRC-E599346ABE-L001118](../generate_index.py#L1118) | 1118 | `"                    _append_comment_text(comments, line_number, line[i:])"` | — |
-| [SRC-E599346ABE-L001119](../generate_index.py#L1119) | 1119 | `"                    i = len(line)"` | — |

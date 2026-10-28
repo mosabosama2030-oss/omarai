@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000422 إلى SRC-90FAA34ADE-L001221
+- النطاق: SRC-90FAA34ADE-L000420 إلى SRC-90FAA34ADE-L001219
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000420](../../tests/fixtures/answer_quality_cases.json#L420) | 420 | `"      \"case_id\": \"AQ-017\","` | — |
+| [SRC-90FAA34ADE-L000421](../../tests/fixtures/answer_quality_cases.json#L421) | 421 | `"      \"category\": \"empty_or_failed_search\","` | — |
 | [SRC-90FAA34ADE-L000422](../../tests/fixtures/answer_quality_cases.json#L422) | 422 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000423](../../tests/fixtures/answer_quality_cases.json#L423) | 423 | `"      \"question\": \"Find the official announcement about a new Egyptian government service; simulate a search provider timeout.\","` | — |
 | [SRC-90FAA34ADE-L000424](../../tests/fixtures/answer_quality_cases.json#L424) | 424 | `"      \"expected_strategy\": \"web_search\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-90FAA34ADE-L001217](../../tests/fixtures/answer_quality_cases.json#L1217) | 1217 | `"        \"Keeps city-specific details distinct\""` | — |
 | [SRC-90FAA34ADE-L001218](../../tests/fixtures/answer_quality_cases.json#L1218) | 1218 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001219](../../tests/fixtures/answer_quality_cases.json#L1219) | 1219 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001220](../../tests/fixtures/answer_quality_cases.json#L1220) | 1220 | `"        \"Only describes Cairo and ignores Alexandria\","` | — |
-| [SRC-90FAA34ADE-L001221](../../tests/fixtures/answer_quality_cases.json#L1221) | 1221 | `"        \"Invents live weather without a retrieval source\""` | — |

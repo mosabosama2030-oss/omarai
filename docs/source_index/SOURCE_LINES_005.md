@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000475 إلى SRC-1AE03B9EC3-L001274
+- النطاق: SRC-1AE03B9EC3-L000473 إلى SRC-1AE03B9EC3-L001272
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000473](../../agents/web_agent.py#L473) | 473 | `"                \"DuckDuckGo HTML\","` | — |
+| [SRC-1AE03B9EC3-L000474](../../agents/web_agent.py#L474) | 474 | `"                \"Bing RSS\","` | — |
 | [SRC-1AE03B9EC3-L000475](../../agents/web_agent.py#L475) | 475 | `"                \"Google News RSS for fresh queries\","` | — |
 | [SRC-1AE03B9EC3-L000476](../../agents/web_agent.py#L476) | 476 | `"                \"DeepSeek Search API when DEEPSEEK_SEARCH_API_KEY is configured (optional; may incur charges)\","` | — |
 | [SRC-1AE03B9EC3-L000477](../../agents/web_agent.py#L477) | 477 | `"                \"OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L001270](../../agents/web_agent.py#L1270) | 1270 | `"            return []"` | — |
 | [SRC-1AE03B9EC3-L001271](../../agents/web_agent.py#L1271) | 1271 | `"        import httpx"` | — |
 | [SRC-1AE03B9EC3-L001272](../../agents/web_agent.py#L1272) | 1272 | `""` | — |
-| [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"        response = httpx.post("` | — |
-| [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"            \"https://api.deepseek.com/v1/tools/search\","` | — |

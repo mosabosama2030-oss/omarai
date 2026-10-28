@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003675 إلى SRC-1AE03B9EC3-L004474
+- النطاق: SRC-1AE03B9EC3-L003673 إلى SRC-1AE03B9EC3-L004472
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003673](../../agents/web_agent.py#L3673) | 3673 | `"            \"warnings\": [],"` | — |
+| [SRC-1AE03B9EC3-L003674](../../agents/web_agent.py#L3674) | 3674 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L003675](../../agents/web_agent.py#L3675) | 3675 | `""` | — |
 | [SRC-1AE03B9EC3-L003676](../../agents/web_agent.py#L3676) | 3676 | `"        # Use several ordinary probes: an empty response to one test phrase is"` | — |
 | [SRC-1AE03B9EC3-L003677](../../agents/web_agent.py#L3677) | 3677 | `"        # not enough to claim the search connectors are offline."` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L004470](../../agents/web_agent.py#L4470) | 4470 | `"        sources = filtered_sources"` | — |
 | [SRC-1AE03B9EC3-L004471](../../agents/web_agent.py#L4471) | 4471 | `"        search_warning = \"؛ \".join(search_warnings) if search_warnings else None"` | — |
 | [SRC-1AE03B9EC3-L004472](../../agents/web_agent.py#L4472) | 4472 | `"        independent_domains = {"` | — |
-| [SRC-1AE03B9EC3-L004473](../../agents/web_agent.py#L4473) | 4473 | `"            registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L004474](../../agents/web_agent.py#L4474) | 4474 | `"                source.get(\"domain\")"` | — |

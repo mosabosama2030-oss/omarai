@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000302 إلى SRC-F725E90B2A-L001101
+- النطاق: SRC-F725E90B2A-L000299 إلى SRC-F725E90B2A-L001098
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000299](../../tests/test_web_agent.py#L299) | 299 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000300](../../tests/test_web_agent.py#L300) | 300 | `"    assert len(sources) == 3"` | — |
+| [SRC-F725E90B2A-L000301](../../tests/test_web_agent.py#L301) | 301 | `"    assert set(shared[\"providers\"]) == {\"ddg\", \"bing\"}"` | — |
 | [SRC-F725E90B2A-L000302](../../tests/test_web_agent.py#L302) | 302 | `"    assert {\"query one\", \"query two\"}.issubset(set(shared[\"queries\"]))"` | — |
 | [SRC-F725E90B2A-L000303](../../tests/test_web_agent.py#L303) | 303 | `"    assert len(shared[\"queries\"]) >= 2"` | — |
 | [SRC-F725E90B2A-L000304](../../tests/test_web_agent.py#L304) | 304 | `"    assert report[\"queries_planned\"] >= 2"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L001096](../../tests/test_web_agent.py#L1096) | 1096 | `"    assert any("` | — |
 | [SRC-F725E90B2A-L001097](../../tests/test_web_agent.py#L1097) | 1097 | `"        row[\"provider\"] == \"bing_rss\" and row[\"status\"] == \"ok\""` | — |
 | [SRC-F725E90B2A-L001098](../../tests/test_web_agent.py#L1098) | 1098 | `"        for row in diagnostics"` | — |
-| [SRC-F725E90B2A-L001099](../../tests/test_web_agent.py#L1099) | 1099 | `"    )"` | — |
-| [SRC-F725E90B2A-L001100](../../tests/test_web_agent.py#L1100) | 1100 | `""` | — |
-| [SRC-F725E90B2A-L001101](../../tests/test_web_agent.py#L1101) | 1101 | `""` | — |

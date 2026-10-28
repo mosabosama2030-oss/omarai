@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000428 إلى SRC-1AE03B9EC3-L000474
+- النطاق: SRC-59CF4B7DE8-L000426 إلى SRC-1AE03B9EC3-L000472
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000426](../../agents/research.py#L426) | 426 | `"    \"\"\"Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs.\"\"\""` | — |
+| [SRC-59CF4B7DE8-L000427](../../agents/research.py#L427) | 427 | `"    accumulated: dict[str, dict[str, Any]] = {}"` | — |
 | [SRC-59CF4B7DE8-L000428](../../agents/research.py#L428) | 428 | `"    for batch in batches:"` | — |
 | [SRC-59CF4B7DE8-L000429](../../agents/research.py#L429) | 429 | `"        query = _compact(batch.get(\"query\", \"\"), 500)"` | — |
 | [SRC-59CF4B7DE8-L000430](../../agents/research.py#L430) | 430 | `"        provider = _compact(batch.get(\"provider\", \"search\"), 80)"` | — |
@@ -823,5 +825,3 @@
 | [SRC-1AE03B9EC3-L000470](../../agents/web_agent.py#L470) | 470 | `"                \"Nemotron endpoint states that sessions may be logged for security and product improvement.\""` | — |
 | [SRC-1AE03B9EC3-L000471](../../agents/web_agent.py#L471) | 471 | `"            ),"` | — |
 | [SRC-1AE03B9EC3-L000472](../../agents/web_agent.py#L472) | 472 | `"            \"search_providers\": ["` | — |
-| [SRC-1AE03B9EC3-L000473](../../agents/web_agent.py#L473) | 473 | `"                \"DuckDuckGo HTML\","` | — |
-| [SRC-1AE03B9EC3-L000474](../../agents/web_agent.py#L474) | 474 | `"                \"Bing RSS\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005275 إلى SRC-EEF2E6447C-L000401
+- النطاق: SRC-1AE03B9EC3-L005273 إلى SRC-EEF2E6447C-L000399
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005273](../../agents/web_agent.py#L5273) | 5273 | `"                            source_key = self._normalized_source_url_key(candidate.get(\"url\"))"` | — |
+| [SRC-1AE03B9EC3-L005274](../../agents/web_agent.py#L5274) | 5274 | `"                            if not source_key:"` | — |
 | [SRC-1AE03B9EC3-L005275](../../agents/web_agent.py#L5275) | 5275 | `"                                continue"` | — |
 | [SRC-1AE03B9EC3-L005276](../../agents/web_agent.py#L5276) | 5276 | `"                            existing_index = source_indexes.get(source_key)"` | — |
 | [SRC-1AE03B9EC3-L005277](../../agents/web_agent.py#L5277) | 5277 | `"                            if existing_index is None:"` | — |
@@ -832,5 +834,3 @@
 | [SRC-EEF2E6447C-L000397](../../api/omarai.py#L397) | 397 | `"            return None"` | — |
 | [SRC-EEF2E6447C-L000398](../../api/omarai.py#L398) | 398 | `""` | — |
 | [SRC-EEF2E6447C-L000399](../../api/omarai.py#L399) | 399 | `"        total_timeout = max("` | — |
-| [SRC-EEF2E6447C-L000400](../../api/omarai.py#L400) | 400 | `"            0.1,"` | — |
-| [SRC-EEF2E6447C-L000401](../../api/omarai.py#L401) | 401 | `"            min("` | — |

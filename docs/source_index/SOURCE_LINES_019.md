@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000027 إلى SRC-65551FB29F-L000379
+- النطاق: SRC-62CE5126F9-L000025 إلى SRC-65551FB29F-L000377
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000025](../OMARAI_REMEDIATION_REGISTER_AR.md#L25) | 25 | `""` | — |
+| [SRC-62CE5126F9-L000026](../OMARAI_REMEDIATION_REGISTER_AR.md#L26) | 26 | `"---"` | — |
 | [SRC-62CE5126F9-L000027](../OMARAI_REMEDIATION_REGISTER_AR.md#L27) | 27 | `""` | — |
 | [SRC-62CE5126F9-L000028](../OMARAI_REMEDIATION_REGISTER_AR.md#L28) | 28 | `"## تحديث تنفيذي — 27 أكتوبر 2026: إصلاح مسار هوية البناء على SnapDeploy"` | — |
 | [SRC-62CE5126F9-L000029](../OMARAI_REMEDIATION_REGISTER_AR.md#L29) | 29 | `""` | — |
@@ -832,5 +834,3 @@
 | [SRC-65551FB29F-L000375](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L375) | 375 | `"2. مقارنة السلوك والمقاييس بالخط الأساس عند توفرها."` | — |
 | [SRC-65551FB29F-L000376](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L376) | 376 | `"3. مراقبة الأخطاء ومعدل الفشل وتكلفة الموارد."` | — |
 | [SRC-65551FB29F-L000377](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L377) | 377 | `"4. التحقق من أن fallback وإيقاف القدرة يعملان عند الحاجة."` | — |
-| [SRC-65551FB29F-L000378](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L378) | 378 | `"5. تسجيل الانحرافات وإيقاف أو التراجع عند تجاوز حد الخطر."` | — |
-| [SRC-65551FB29F-L000379](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L379) | 379 | `"6. تحديث سجل المتطلبات بالدليل الجديد."` | — |

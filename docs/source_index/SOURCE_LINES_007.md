@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002075 إلى SRC-1AE03B9EC3-L002874
+- النطاق: SRC-1AE03B9EC3-L002073 إلى SRC-1AE03B9EC3-L002872
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002073](../../agents/web_agent.py#L2073) | 2073 | `"                    authors = {"` | — |
+| [SRC-1AE03B9EC3-L002074](../../agents/web_agent.py#L2074) | 2074 | `"                        user.get(\"id\"): user"` | — |
 | [SRC-1AE03B9EC3-L002075](../../agents/web_agent.py#L2075) | 2075 | `"                        for user in data.get(\"includes\", {}).get(\"users\", [])"` | — |
 | [SRC-1AE03B9EC3-L002076](../../agents/web_agent.py#L2076) | 2076 | `"                    }"` | — |
 | [SRC-1AE03B9EC3-L002077](../../agents/web_agent.py#L2077) | 2077 | `"                    for item in data.get(\"data\", []):"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L002870](../../agents/web_agent.py#L2870) | 2870 | `"                    elif use_web_search:"` | — |
 | [SRC-1AE03B9EC3-L002871](../../agents/web_agent.py#L2871) | 2871 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |
 | [SRC-1AE03B9EC3-L002872](../../agents/web_agent.py#L2872) | 2872 | `"                        budget.reserve(\"tool_calls\", amount=3)"` | — |
-| [SRC-1AE03B9EC3-L002873](../../agents/web_agent.py#L2873) | 2873 | `"                except RequestBudgetExceeded as exc:"` | — |
-| [SRC-1AE03B9EC3-L002874](../../agents/web_agent.py#L2874) | 2874 | `"                    self._record_generation_diagnostic("` | — |

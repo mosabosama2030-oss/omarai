@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001120 إلى SRC-E599346ABE-L001919
+- النطاق: SRC-E599346ABE-L001118 إلى SRC-E599346ABE-L001917
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001118](../generate_index.py#L1118) | 1118 | `"                    _append_comment_text(comments, line_number, line[i:])"` | — |
+| [SRC-E599346ABE-L001119](../generate_index.py#L1119) | 1119 | `"                    i = len(line)"` | — |
 | [SRC-E599346ABE-L001120](../generate_index.py#L1120) | 1120 | `"                else:"` | — |
 | [SRC-E599346ABE-L001121](../generate_index.py#L1121) | 1121 | `"                    _append_comment_text(comments, line_number, line[i:end])"` | — |
 | [SRC-E599346ABE-L001122](../generate_index.py#L1122) | 1122 | `"                    i = end + 2"` | — |
@@ -814,5 +816,3 @@
 | [SRC-E599346ABE-L001915](../generate_index.py#L1915) | 1915 | `"            if pages_directory.exists():"` | — |
 | [SRC-E599346ABE-L001916](../generate_index.py#L1916) | 1916 | `"                actual_page_names = {"` | — |
 | [SRC-E599346ABE-L001917](../generate_index.py#L1917) | 1917 | `"                    path.name"` | — |
-| [SRC-E599346ABE-L001918](../generate_index.py#L1918) | 1918 | `"                    for path in pages_directory.iterdir()"` | — |
-| [SRC-E599346ABE-L001919](../generate_index.py#L1919) | 1919 | `"                    if path.is_file() and SOURCE_LINES_PAGE_RE.fullmatch(path.name)"` | — |

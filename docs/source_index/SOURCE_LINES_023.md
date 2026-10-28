@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000178 إلى SRC-90FAA34ADE-L000421
+- النطاق: SRC-4FFD5AFC54-L000176 إلى SRC-90FAA34ADE-L000419
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000176](../../scripts/run_answer_quality_benchmark.py#L176) | 176 | `"        out = out.replace(key, f\"[REDACTED:{key.strip()}]\")"` | — |
+| [SRC-4FFD5AFC54-L000177](../../scripts/run_answer_quality_benchmark.py#L177) | 177 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
 | [SRC-4FFD5AFC54-L000178](../../scripts/run_answer_quality_benchmark.py#L178) | 178 | `"    if token and token in out:"` | — |
 | [SRC-4FFD5AFC54-L000179](../../scripts/run_answer_quality_benchmark.py#L179) | 179 | `"        out = out.replace(token, \"[REDACTED:OMARAI_ACCESS_TOKEN]\")"` | — |
 | [SRC-4FFD5AFC54-L000180](../../scripts/run_answer_quality_benchmark.py#L180) | 180 | `"    for env_name in (\"OPENROUTER_API_KEY\", \"OMARAI_LLM_API_KEY\"):"` | — |
@@ -832,5 +834,3 @@
 | [SRC-90FAA34ADE-L000417](../../tests/fixtures/answer_quality_cases.json#L417) | 417 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L000418](../../tests/fixtures/answer_quality_cases.json#L418) | 418 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000419](../../tests/fixtures/answer_quality_cases.json#L419) | 419 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000420](../../tests/fixtures/answer_quality_cases.json#L420) | 420 | `"      \"case_id\": \"AQ-017\","` | — |
-| [SRC-90FAA34ADE-L000421](../../tests/fixtures/answer_quality_cases.json#L421) | 421 | `"      \"category\": \"empty_or_failed_search\","` | — |

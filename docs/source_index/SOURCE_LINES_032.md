@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000264 إلى SRC-F725E90B2A-L000301
+- النطاق: SRC-6BF96689A8-L000261 إلى SRC-F725E90B2A-L000298
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000261](../../tests/test_research.py#L261) | 261 | `"        for term in required_terms:"` | — |
+| [SRC-6BF96689A8-L000262](../../tests/test_research.py#L262) | 262 | `"            assert term in query, f\"lost topic term {term!r}: {query!r}\""` | — |
+| [SRC-6BF96689A8-L000263](../../tests/test_research.py#L263) | 263 | `""` | — |
 | [SRC-6BF96689A8-L000264](../../tests/test_research.py#L264) | 264 | `""` | — |
 | [SRC-6BF96689A8-L000265](../../tests/test_research.py#L265) | 265 | `"def test_compact_search_query_preserves_topic_after_distinguish_action():"` | — |
 | [SRC-6BF96689A8-L000266](../../tests/test_research.py#L266) | 266 | `"    query = compact_search_query(\"ميّز بين السيارات الكهربائية وسيارات البنزين في مصر\")"` | — |
@@ -849,6 +852,3 @@
 | [SRC-F725E90B2A-L000296](../../tests/test_web_agent.py#L296) | 296 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L000297](../../tests/test_web_agent.py#L297) | 297 | `"    })"` | — |
 | [SRC-F725E90B2A-L000298](../../tests/test_web_agent.py#L298) | 298 | `"    shared = next(item for item in sources if \"shared\" in item[\"url\"])"` | — |
-| [SRC-F725E90B2A-L000299](../../tests/test_web_agent.py#L299) | 299 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000300](../../tests/test_web_agent.py#L300) | 300 | `"    assert len(sources) == 3"` | — |
-| [SRC-F725E90B2A-L000301](../../tests/test_web_agent.py#L301) | 301 | `"    assert set(shared[\"providers\"]) == {\"ddg\", \"bing\"}"` | — |

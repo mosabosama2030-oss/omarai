@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **672**
 - تعريفات لا ينطبق عليها Docstring: **216**
 - الرموز الساكنة الإضافية: **1636**
-- الأسطر النصية المفهرسة حرفيًا: **29202**
+- الأسطر النصية المفهرسة حرفيًا: **29205**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -38,7 +38,7 @@
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
-| FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 8509 | 232 | جرد الملف + AST Python |
+| FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 8718 | 234 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 22483 | 504 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
@@ -93,7 +93,7 @@
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 8308 | 198 | جرد الملف + AST Python |
-| FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 4698 | 114 | جرد الملف + AST Python |
+| FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 4792 | 115 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
 | FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 21144 | 475 | جرد الملف + AST Python |
