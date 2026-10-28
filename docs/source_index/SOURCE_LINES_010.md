@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003231 إلى SRC-1AE03B9EC3-L004030
+- النطاق: SRC-1AE03B9EC3-L003228 إلى SRC-1AE03B9EC3-L004027
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003228](../../agents/web_agent.py#L3228) | 3228 | `"                    {"` | — |
+| [SRC-1AE03B9EC3-L003229](../../agents/web_agent.py#L3229) | 3229 | `"                        \"current_question\": question[:MAX_QUESTION_CHARS],"` | — |
+| [SRC-1AE03B9EC3-L003230](../../agents/web_agent.py#L3230) | 3230 | `"                        \"recent_history\": history[-MAX_HISTORY_ITEMS:],"` | — |
 | [SRC-1AE03B9EC3-L003231](../../agents/web_agent.py#L3231) | 3231 | `"                        \"deterministic_hint\": fallback.get(\"resolved_question\", question),"` | — |
 | [SRC-1AE03B9EC3-L003232](../../agents/web_agent.py#L3232) | 3232 | `"                    },"` | — |
 | [SRC-1AE03B9EC3-L003233](../../agents/web_agent.py#L3233) | 3233 | `"                    ensure_ascii=False,"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L004025](../../agents/web_agent.py#L4025) | 4025 | `"                    and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L004026](../../agents/web_agent.py#L4026) | 4026 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L004027](../../agents/web_agent.py#L4027) | 4027 | `"                \"x\": bool(os.getenv(\"X_BEARER_TOKEN\", \"\").strip()),"` | — |
-| [SRC-1AE03B9EC3-L004028](../../agents/web_agent.py#L4028) | 4028 | `"                \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
-| [SRC-1AE03B9EC3-L004029](../../agents/web_agent.py#L4029) | 4029 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L004030](../../agents/web_agent.py#L4030) | 4030 | `"            configured_platforms.extend("` | — |

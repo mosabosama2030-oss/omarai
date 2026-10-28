@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000831 إلى SRC-1AE03B9EC3-L001630
+- النطاق: SRC-1AE03B9EC3-L000828 إلى SRC-1AE03B9EC3-L001627
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000828](../../agents/web_agent.py#L828) | 828 | `"        terms = ("` | — |
+| [SRC-1AE03B9EC3-L000829](../../agents/web_agent.py#L829) | 829 | `"            \"موقع\", \"رابط\", \"لينك\", \"الموقع الرسمي\", \"الصفحة الرسمية\","` | — |
+| [SRC-1AE03B9EC3-L000830](../../agents/web_agent.py#L830) | 830 | `"            \"official website\", \"website\", \"homepage\", \"link to\","` | — |
 | [SRC-1AE03B9EC3-L000831](../../agents/web_agent.py#L831) | 831 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L000832](../../agents/web_agent.py#L832) | 832 | `"        return any(term in value for term in terms)"` | — |
 | [SRC-1AE03B9EC3-L000833](../../agents/web_agent.py#L833) | 833 | `""` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L001625](../../agents/web_agent.py#L1625) | 1625 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L001626](../../agents/web_agent.py#L1626) | 1626 | `"            timeout=self._effective_timeout(8.5),"` | — |
 | [SRC-1AE03B9EC3-L001627](../../agents/web_agent.py#L1627) | 1627 | `"            follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001628](../../agents/web_agent.py#L1628) | 1628 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001629](../../agents/web_agent.py#L1629) | 1629 | `"        response.raise_for_status()"` | — |
-| [SRC-1AE03B9EC3-L001630](../../agents/web_agent.py#L1630) | 1630 | `"        payload = response.json()"` | — |

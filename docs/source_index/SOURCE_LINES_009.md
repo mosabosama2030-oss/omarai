@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002431 إلى SRC-1AE03B9EC3-L003230
+- النطاق: SRC-1AE03B9EC3-L002428 إلى SRC-1AE03B9EC3-L003227
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002428](../../agents/web_agent.py#L2428) | 2428 | `"        target_aspects = ["` | — |
+| [SRC-1AE03B9EC3-L002429](../../agents/web_agent.py#L2429) | 2429 | `"            str(target).strip()[:120]"` | — |
+| [SRC-1AE03B9EC3-L002430](../../agents/web_agent.py#L2430) | 2430 | `"            for target in (plan.get(\"coverage_targets\") or [])[:8]"` | — |
 | [SRC-1AE03B9EC3-L002431](../../agents/web_agent.py#L2431) | 2431 | `"            if isinstance(target, str) and target.strip()"` | — |
 | [SRC-1AE03B9EC3-L002432](../../agents/web_agent.py#L2432) | 2432 | `"        ]"` | — |
 | [SRC-1AE03B9EC3-L002433](../../agents/web_agent.py#L2433) | 2433 | `"        # Reserve part of the existing query ceiling for evidence-gap repair."` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L003225](../../agents/web_agent.py#L3225) | 3225 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L003226](../../agents/web_agent.py#L3226) | 3226 | `"                \"role\": \"user\","` | — |
 | [SRC-1AE03B9EC3-L003227](../../agents/web_agent.py#L3227) | 3227 | `"                \"content\": json.dumps("` | — |
-| [SRC-1AE03B9EC3-L003228](../../agents/web_agent.py#L3228) | 3228 | `"                    {"` | — |
-| [SRC-1AE03B9EC3-L003229](../../agents/web_agent.py#L3229) | 3229 | `"                        \"current_question\": question[:MAX_QUESTION_CHARS],"` | — |
-| [SRC-1AE03B9EC3-L003230](../../agents/web_agent.py#L3230) | 3230 | `"                        \"recent_history\": history[-MAX_HISTORY_ITEMS:],"` | — |

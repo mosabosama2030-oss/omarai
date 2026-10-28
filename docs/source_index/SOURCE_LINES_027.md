@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000800 إلى SRC-4CCB1F172B-L000047
+- النطاق: SRC-90FAA34ADE-L000793 إلى SRC-4CCB1F172B-L000040
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000793](../../tests/fixtures/answer_quality_cases.json#L793) | 793 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000794](../../tests/fixtures/answer_quality_cases.json#L794) | 794 | `"            \"source_class\": \"unverified_user_generated\""` | — |
+| [SRC-90FAA34ADE-L000795](../../tests/fixtures/answer_quality_cases.json#L795) | 795 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000796](../../tests/fixtures/answer_quality_cases.json#L796) | 796 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000797](../../tests/fixtures/answer_quality_cases.json#L797) | 797 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000798](../../tests/fixtures/answer_quality_cases.json#L798) | 798 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000799](../../tests/fixtures/answer_quality_cases.json#L799) | 799 | `"        \"اتهام قطعي مبني على التعليق الوحيد\","` | — |
 | [SRC-90FAA34ADE-L000800](../../tests/fixtures/answer_quality_cases.json#L800) | 800 | `"        \"اختلاق دليل موثوق غير موجود\""` | — |
 | [SRC-90FAA34ADE-L000801](../../tests/fixtures/answer_quality_cases.json#L801) | 801 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000802](../../tests/fixtures/answer_quality_cases.json#L802) | 802 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
@@ -836,10 +843,3 @@
 | [SRC-4CCB1F172B-L000038](../../tests/test_answer_quality_corpus.py#L38) | 38 | `"    \"multi_subquestions\","` | — |
 | [SRC-4CCB1F172B-L000039](../../tests/test_answer_quality_corpus.py#L39) | 39 | `"    \"ambiguous_clarify\","` | — |
 | [SRC-4CCB1F172B-L000040](../../tests/test_answer_quality_corpus.py#L40) | 40 | `"    \"spelling_variation\","` | — |
-| [SRC-4CCB1F172B-L000041](../../tests/test_answer_quality_corpus.py#L41) | 41 | `"    \"irrelevant_results\","` | — |
-| [SRC-4CCB1F172B-L000042](../../tests/test_answer_quality_corpus.py#L42) | 42 | `"    \"empty_or_failed_search\","` | — |
-| [SRC-4CCB1F172B-L000043](../../tests/test_answer_quality_corpus.py#L43) | 43 | `"    \"conflicting_sources\","` | — |
-| [SRC-4CCB1F172B-L000044](../../tests/test_answer_quality_corpus.py#L44) | 44 | `"    \"stale_sources_for_current\","` | — |
-| [SRC-4CCB1F172B-L000045](../../tests/test_answer_quality_corpus.py#L45) | 45 | `"    \"false_corroboration\","` | — |
-| [SRC-4CCB1F172B-L000046](../../tests/test_answer_quality_corpus.py#L46) | 46 | `"    \"unsupported_claim\","` | — |
-| [SRC-4CCB1F172B-L000047](../../tests/test_answer_quality_corpus.py#L47) | 47 | `"    \"invalid_links\","` | — |

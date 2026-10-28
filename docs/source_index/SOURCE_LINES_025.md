@@ -4,9 +4,25 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000001 إلى SRC-547CAF1FE3-L000151
+- النطاق: SRC-A8360B1B03-L000224 إلى SRC-547CAF1FE3-L000144
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## ملفات أخرى
+
+### FILE-A8360B1B03 — [scripts/hosted_smoke_test.py](../../scripts/hosted_smoke_test.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"        return 1"` | — |
+| [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
+| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"    return 0"` | — |
+| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `""` | — |
+| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `""` | — |
+| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"    sys.exit(main())"` | — |
 ## ملفات أخرى
 
 ### FILE-4FFD5AFC54 — [scripts/run_answer_quality_benchmark.py](../../scripts/run_answer_quality_benchmark.py#L1)
@@ -827,10 +843,3 @@
 | [SRC-547CAF1FE3-L000142](../../scripts/sqlite_backup_restore.py#L142) | 142 | `"            ),"` | — |
 | [SRC-547CAF1FE3-L000143](../../scripts/sqlite_backup_restore.py#L143) | 143 | `"            file=sys.stderr,"` | — |
 | [SRC-547CAF1FE3-L000144](../../scripts/sqlite_backup_restore.py#L144) | 144 | `"        )"` | — |
-| [SRC-547CAF1FE3-L000145](../../scripts/sqlite_backup_restore.py#L145) | 145 | `"        return 1"` | — |
-| [SRC-547CAF1FE3-L000146](../../scripts/sqlite_backup_restore.py#L146) | 146 | `""` | — |
-| [SRC-547CAF1FE3-L000147](../../scripts/sqlite_backup_restore.py#L147) | 147 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
-| [SRC-547CAF1FE3-L000148](../../scripts/sqlite_backup_restore.py#L148) | 148 | `"    return 0"` | — |
-| [SRC-547CAF1FE3-L000149](../../scripts/sqlite_backup_restore.py#L149) | 149 | `""` | — |
-| [SRC-547CAF1FE3-L000150](../../scripts/sqlite_backup_restore.py#L150) | 150 | `""` | — |
-| [SRC-547CAF1FE3-L000151](../../scripts/sqlite_backup_restore.py#L151) | 151 | `"if __name__ == \"__main__\":"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001249 إلى SRC-F725E90B2A-L002048
+- النطاق: SRC-F725E90B2A-L001227 إلى SRC-F725E90B2A-L002026
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001227](../../tests/test_web_agent.py#L1227) | 1227 | `"                \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L001228](../../tests/test_web_agent.py#L1228) | 1228 | `"                \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001229](../../tests/test_web_agent.py#L1229) | 1229 | `"            },"` | — |
+| [SRC-F725E90B2A-L001230](../../tests/test_web_agent.py#L1230) | 1230 | `"        ),"` | — |
+| [SRC-F725E90B2A-L001231](../../tests/test_web_agent.py#L1231) | 1231 | `"    )"` | — |
+| [SRC-F725E90B2A-L001232](../../tests/test_web_agent.py#L1232) | 1232 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001233](../../tests/test_web_agent.py#L1233) | 1233 | `"        agent, \"_generate\","` | — |
+| [SRC-F725E90B2A-L001234](../../tests/test_web_agent.py#L1234) | 1234 | `"        lambda *args, **kwargs: pytest.fail("` | — |
+| [SRC-F725E90B2A-L001235](../../tests/test_web_agent.py#L1235) | 1235 | `"            \"LLM must not answer when both sources belong to one registrable domain\""` | — |
+| [SRC-F725E90B2A-L001236](../../tests/test_web_agent.py#L1236) | 1236 | `"        ),"` | — |
+| [SRC-F725E90B2A-L001237](../../tests/test_web_agent.py#L1237) | 1237 | `"    )"` | — |
+| [SRC-F725E90B2A-L001238](../../tests/test_web_agent.py#L1238) | 1238 | `""` | — |
+| [SRC-F725E90B2A-L001239](../../tests/test_web_agent.py#L1239) | 1239 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
+| [SRC-F725E90B2A-L001240](../../tests/test_web_agent.py#L1240) | 1240 | `""` | — |
+| [SRC-F725E90B2A-L001241](../../tests/test_web_agent.py#L1241) | 1241 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
+| [SRC-F725E90B2A-L001242](../../tests/test_web_agent.py#L1242) | 1242 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
+| [SRC-F725E90B2A-L001243](../../tests/test_web_agent.py#L1243) | 1243 | `"    assert result[\"search_report\"][\"unique_sources\"] == 2"` | — |
+| [SRC-F725E90B2A-L001244](../../tests/test_web_agent.py#L1244) | 1244 | `""` | — |
+| [SRC-F725E90B2A-L001245](../../tests/test_web_agent.py#L1245) | 1245 | `""` | — |
+| [SRC-F725E90B2A-L001246](../../tests/test_web_agent.py#L1246) | 1246 | `"def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001247](../../tests/test_web_agent.py#L1247) | 1247 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001248](../../tests/test_web_agent.py#L1248) | 1248 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001249](../../tests/test_web_agent.py#L1249) | 1249 | `"    plan = {"` | — |
 | [SRC-F725E90B2A-L001250](../../tests/test_web_agent.py#L1250) | 1250 | `"        \"queries\": [\"شركة ألفا التقنية معلومات\"],"` | — |
 | [SRC-F725E90B2A-L001251](../../tests/test_web_agent.py#L1251) | 1251 | `"        \"direct_urls\": [],"` | — |
@@ -794,25 +816,3 @@
 | [SRC-F725E90B2A-L002024](../../tests/test_web_agent.py#L2024) | 2024 | `""` | — |
 | [SRC-F725E90B2A-L002025](../../tests/test_web_agent.py#L2025) | 2025 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
 | [SRC-F725E90B2A-L002026](../../tests/test_web_agent.py#L2026) | 2026 | `"            return False"` | — |
-| [SRC-F725E90B2A-L002027](../../tests/test_web_agent.py#L2027) | 2027 | `""` | — |
-| [SRC-F725E90B2A-L002028](../../tests/test_web_agent.py#L2028) | 2028 | `"        def read(self, limit):"` | — |
-| [SRC-F725E90B2A-L002029](../../tests/test_web_agent.py#L2029) | 2029 | `"            return self.body"` | — |
-| [SRC-F725E90B2A-L002030](../../tests/test_web_agent.py#L2030) | 2030 | `""` | — |
-| [SRC-F725E90B2A-L002031](../../tests/test_web_agent.py#L2031) | 2031 | `"    def fake_urlopen(request, timeout):"` | — |
-| [SRC-F725E90B2A-L002032](../../tests/test_web_agent.py#L2032) | 2032 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
-| [SRC-F725E90B2A-L002033](../../tests/test_web_agent.py#L2033) | 2033 | `"        called.append(model)"` | — |
-| [SRC-F725E90B2A-L002034](../../tests/test_web_agent.py#L2034) | 2034 | `"        if model == \"filtered/primary\":"` | — |
-| [SRC-F725E90B2A-L002035](../../tests/test_web_agent.py#L2035) | 2035 | `"            return FakeResponse(\"جزء جواب مفلتر لا ينبغي اعتباره مكتملا\", \"content_filter\")"` | — |
-| [SRC-F725E90B2A-L002036](../../tests/test_web_agent.py#L2036) | 2036 | `"        return FakeResponse(\"إجابة الاحتياط المكتملة\", \"stop\")"` | — |
-| [SRC-F725E90B2A-L002037](../../tests/test_web_agent.py#L2037) | 2037 | `""` | — |
-| [SRC-F725E90B2A-L002038](../../tests/test_web_agent.py#L2038) | 2038 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-F725E90B2A-L002039](../../tests/test_web_agent.py#L2039) | 2039 | `"    result = agent._request_completion("` | — |
-| [SRC-F725E90B2A-L002040](../../tests/test_web_agent.py#L2040) | 2040 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
-| [SRC-F725E90B2A-L002041](../../tests/test_web_agent.py#L2041) | 2041 | `"        model=\"filtered/primary\","` | — |
-| [SRC-F725E90B2A-L002042](../../tests/test_web_agent.py#L2042) | 2042 | `"    )"` | — |
-| [SRC-F725E90B2A-L002043](../../tests/test_web_agent.py#L2043) | 2043 | `""` | — |
-| [SRC-F725E90B2A-L002044](../../tests/test_web_agent.py#L2044) | 2044 | `"    assert result == \"إجابة الاحتياط المكتملة\""` | — |
-| [SRC-F725E90B2A-L002045](../../tests/test_web_agent.py#L2045) | 2045 | `"    assert called == [\"filtered/primary\", \"fallback/model\"]"` | — |
-| [SRC-F725E90B2A-L002046](../../tests/test_web_agent.py#L2046) | 2046 | `"    assert \"جزء جواب مفلتر\" not in result"` | — |
-| [SRC-F725E90B2A-L002047](../../tests/test_web_agent.py#L2047) | 2047 | `""` | — |
-| [SRC-F725E90B2A-L002048](../../tests/test_web_agent.py#L2048) | 2048 | `""` | — |

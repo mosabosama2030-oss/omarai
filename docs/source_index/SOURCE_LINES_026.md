@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000152 إلى SRC-90FAA34ADE-L000799
+- النطاق: SRC-547CAF1FE3-L000145 إلى SRC-90FAA34ADE-L000792
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000145](../../scripts/sqlite_backup_restore.py#L145) | 145 | `"        return 1"` | — |
+| [SRC-547CAF1FE3-L000146](../../scripts/sqlite_backup_restore.py#L146) | 146 | `""` | — |
+| [SRC-547CAF1FE3-L000147](../../scripts/sqlite_backup_restore.py#L147) | 147 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
+| [SRC-547CAF1FE3-L000148](../../scripts/sqlite_backup_restore.py#L148) | 148 | `"    return 0"` | — |
+| [SRC-547CAF1FE3-L000149](../../scripts/sqlite_backup_restore.py#L149) | 149 | `""` | — |
+| [SRC-547CAF1FE3-L000150](../../scripts/sqlite_backup_restore.py#L150) | 150 | `""` | — |
+| [SRC-547CAF1FE3-L000151](../../scripts/sqlite_backup_restore.py#L151) | 151 | `"if __name__ == \"__main__\":"` | — |
 | [SRC-547CAF1FE3-L000152](../../scripts/sqlite_backup_restore.py#L152) | 152 | `"    sys.exit(main())"` | — |
 ## اختبارات
 
@@ -818,10 +825,3 @@
 | [SRC-90FAA34ADE-L000790](../../tests/fixtures/answer_quality_cases.json#L790) | 790 | `"            \"url\": \"https://reviews.example.test/post/1\","` | — |
 | [SRC-90FAA34ADE-L000791](../../tests/fixtures/answer_quality_cases.json#L791) | 791 | `"            \"snippet\": \"I think this company is a scam.\","` | — |
 | [SRC-90FAA34ADE-L000792](../../tests/fixtures/answer_quality_cases.json#L792) | 792 | `"            \"domain\": \"reviews.example.test\","` | — |
-| [SRC-90FAA34ADE-L000793](../../tests/fixtures/answer_quality_cases.json#L793) | 793 | `"            \"provider\": \"fixture_search\","` | — |
-| [SRC-90FAA34ADE-L000794](../../tests/fixtures/answer_quality_cases.json#L794) | 794 | `"            \"source_class\": \"unverified_user_generated\""` | — |
-| [SRC-90FAA34ADE-L000795](../../tests/fixtures/answer_quality_cases.json#L795) | 795 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000796](../../tests/fixtures/answer_quality_cases.json#L796) | 796 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000797](../../tests/fixtures/answer_quality_cases.json#L797) | 797 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000798](../../tests/fixtures/answer_quality_cases.json#L798) | 798 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000799](../../tests/fixtures/answer_quality_cases.json#L799) | 799 | `"        \"اتهام قطعي مبني على التعليق الوحيد\","` | — |

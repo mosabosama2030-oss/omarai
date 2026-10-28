@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001631 إلى SRC-1AE03B9EC3-L002430
+- النطاق: SRC-1AE03B9EC3-L001628 إلى SRC-1AE03B9EC3-L002427
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001628](../../agents/web_agent.py#L1628) | 1628 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001629](../../agents/web_agent.py#L1629) | 1629 | `"        response.raise_for_status()"` | — |
+| [SRC-1AE03B9EC3-L001630](../../agents/web_agent.py#L1630) | 1630 | `"        payload = response.json()"` | — |
 | [SRC-1AE03B9EC3-L001631](../../agents/web_agent.py#L1631) | 1631 | `"        web_results = payload.get(\"web\", {}).get(\"results\", [])"` | — |
 | [SRC-1AE03B9EC3-L001632](../../agents/web_agent.py#L1632) | 1632 | `"        rows: list[dict[str, Any]] = []"` | — |
 | [SRC-1AE03B9EC3-L001633](../../agents/web_agent.py#L1633) | 1633 | `"        for item in web_results if isinstance(web_results, list) else []:"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L002425](../../agents/web_agent.py#L2425) | 2425 | `"            if isinstance(query, str) and query.strip()"` | — |
 | [SRC-1AE03B9EC3-L002426](../../agents/web_agent.py#L2426) | 2426 | `"        ))"` | — |
 | [SRC-1AE03B9EC3-L002427](../../agents/web_agent.py#L2427) | 2427 | `"        raw_queries = [query for query in raw_queries if query]"` | — |
-| [SRC-1AE03B9EC3-L002428](../../agents/web_agent.py#L2428) | 2428 | `"        target_aspects = ["` | — |
-| [SRC-1AE03B9EC3-L002429](../../agents/web_agent.py#L2429) | 2429 | `"            str(target).strip()[:120]"` | — |
-| [SRC-1AE03B9EC3-L002430](../../agents/web_agent.py#L2430) | 2430 | `"            for target in (plan.get(\"coverage_targets\") or [])[:8]"` | — |
