@@ -212,7 +212,7 @@ def build_task_spec(
         or any(normalize_text(term) in normalized for term in ("هات رابط", "الموقع الرسمي", "website", "homepage"))
     )
     explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))
-    current_required = clean_mode == "latest" or (explicit_freshness and not navigation)
+    current_required = (clean_mode == "latest" or explicit_freshness) and not navigation
     social_required = clean_mode == "social" or bool(matches["social_opinions"])
     family = _primary_family(matches, clean_mode, intent_route, normalized)
 
