@@ -815,4 +815,4 @@
 | [SRC-686F71AA50-L001120](../../agents/task_understanding.py#L1120) | 1120 | `"    return rows"` | — |
 | [SRC-686F71AA50-L001121](../../agents/task_understanding.py#L1121) | 1121 | `""` | — |
 | [SRC-686F71AA50-L001122](../../agents/task_understanding.py#L1122) | 1122 | `"def validate_task_spec(value: Any) -> dict[str, Any]:"` | — |
-| [SRC-686F71AA50-L001123](../../agents/task_understanding.py#L1123) | 1123 | `"    \"\"\"Return a safe bounded public representation of TaskSpec-like input.\"\"\""` | — |
+| [SRC-686F71AA50-L001123](../../agents/task_understanding.py#L1123) | 1123 | `"    \"\"\"Return an allowlisted, bounded JSON representation of TaskSpec-like input.\"\"\""` | — |
