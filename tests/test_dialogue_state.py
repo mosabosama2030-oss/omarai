@@ -111,5 +111,6 @@ def test_context_probe_gate_recognizes_natural_followups_not_every_short_questio
     assert might_be_context_dependent("والضمان الدولي بيسري في مصر؟")
     assert might_be_context_dependent("والضمان؟")
     assert might_be_context_dependent("Is it covered?")
+    assert might_be_context_dependent("هل هذا الهاتف مناسب؟")
     assert not might_be_context_dependent("اشرح الديناميكا الحرارية ببساطة")
     assert not might_be_context_dependent("Explain entropy in simple terms.")
