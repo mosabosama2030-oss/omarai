@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003395 إلى SRC-1AE03B9EC3-L004194
+- النطاق: SRC-1AE03B9EC3-L003384 إلى SRC-1AE03B9EC3-L004183
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003384](../../agents/web_agent.py#L3384) | 3384 | `"            detect_word in _normalize_search_query(item).casefold()"` | — |
+| [SRC-1AE03B9EC3-L003385](../../agents/web_agent.py#L3385) | 3385 | `"            for item in plan[\"queries\"]"` | — |
+| [SRC-1AE03B9EC3-L003386](../../agents/web_agent.py#L3386) | 3386 | `"            for detect_word in (\"latest\", \"recent\", \"news\", \"احدث\", \"أحدث\", \"مستجدات\", \"اخبار\", \"الأخبار\")"` | — |
+| [SRC-1AE03B9EC3-L003387](../../agents/web_agent.py#L3387) | 3387 | `"        ) and plan[\"queries\"]:"` | — |
+| [SRC-1AE03B9EC3-L003388](../../agents/web_agent.py#L3388) | 3388 | `"            fresh_query = next("` | — |
+| [SRC-1AE03B9EC3-L003389](../../agents/web_agent.py#L3389) | 3389 | `"                (item for item in fallback_queries if item not in plan[\"queries\"]),"` | — |
+| [SRC-1AE03B9EC3-L003390](../../agents/web_agent.py#L3390) | 3390 | `"                compact_search_query(plan[\"queries\"][0] + \" أحدث الأخبار والمستجدات\"),"` | — |
+| [SRC-1AE03B9EC3-L003391](../../agents/web_agent.py#L3391) | 3391 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003392](../../agents/web_agent.py#L3392) | 3392 | `"            if fresh_query and _relevance_query_tokens(fresh_query):"` | — |
+| [SRC-1AE03B9EC3-L003393](../../agents/web_agent.py#L3393) | 3393 | `"                if len(plan[\"queries\"]) < MAX_PLAN_QUERIES:"` | — |
+| [SRC-1AE03B9EC3-L003394](../../agents/web_agent.py#L3394) | 3394 | `"                    plan[\"queries\"].append(fresh_query[:240])"` | — |
 | [SRC-1AE03B9EC3-L003395](../../agents/web_agent.py#L3395) | 3395 | `"                elif plan[\"queries\"]:"` | — |
 | [SRC-1AE03B9EC3-L003396](../../agents/web_agent.py#L3396) | 3396 | `"                    plan[\"queries\"][-1] = fresh_query[:240]"` | — |
 | [SRC-1AE03B9EC3-L003397](../../agents/web_agent.py#L3397) | 3397 | `""` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L004181](../../agents/web_agent.py#L4181) | 4181 | `"                    fulfillment_status = \"possible_gap_detected\""` | — |
 | [SRC-1AE03B9EC3-L004182](../../agents/web_agent.py#L4182) | 4182 | `"                elif coverage_targets:"` | — |
 | [SRC-1AE03B9EC3-L004183](../../agents/web_agent.py#L4183) | 4183 | `"                    fulfillment_status = \"lexical_signals_found_not_semantically_verified\""` | — |
-| [SRC-1AE03B9EC3-L004184](../../agents/web_agent.py#L4184) | 4184 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L004185](../../agents/web_agent.py#L4185) | 4185 | `"                    fulfillment_status = \"not_machine_assessed_no_explicit_targets_detected\""` | — |
-| [SRC-1AE03B9EC3-L004186](../../agents/web_agent.py#L4186) | 4186 | `"                coverage[\"task_fulfillment_status\"] = fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L004187](../../agents/web_agent.py#L4187) | 4187 | `"                result[\"answer_coverage\"] = coverage"` | — |
-| [SRC-1AE03B9EC3-L004188](../../agents/web_agent.py#L4188) | 4188 | `"                result[\"task_fulfillment_status\"] = fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L004189](../../agents/web_agent.py#L4189) | 4189 | `"                if isinstance(result.get(\"search_report\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L004190](../../agents/web_agent.py#L4190) | 4190 | `"                    result[\"search_report\"][\"answer_integrity\"] = answer_integrity"` | — |
-| [SRC-1AE03B9EC3-L004191](../../agents/web_agent.py#L4191) | 4191 | `"                    result[\"search_report\"][\"task_fulfillment_status\"] = fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L004192](../../agents/web_agent.py#L4192) | 4192 | `"            except (AttributeError, KeyError, TypeError, ValueError):"` | — |
-| [SRC-1AE03B9EC3-L004193](../../agents/web_agent.py#L4193) | 4193 | `"                # Auxiliary integrity screening never replaces the actual answer."` | — |
-| [SRC-1AE03B9EC3-L004194](../../agents/web_agent.py#L4194) | 4194 | `"                result[\"answer_integrity\"] = {"` | — |
