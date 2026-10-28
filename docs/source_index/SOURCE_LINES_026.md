@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000136 إلى SRC-3451CC474D-L000606
+- النطاق: SRC-1C77C97630-L000110 إلى SRC-3451CC474D-L000580
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000110](../../tests/test_answer_validation.py#L110) | 110 | `""` | — |
+| [SRC-1C77C97630-L000111](../../tests/test_answer_validation.py#L111) | 111 | `"def test_source_scope_does_not_confuse_snippet_with_fetched_page():"` | — |
+| [SRC-1C77C97630-L000112](../../tests/test_answer_validation.py#L112) | 112 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000113](../../tests/test_answer_validation.py#L113) | 113 | `"        \"ما التفاصيل؟\","` | — |
+| [SRC-1C77C97630-L000114](../../tests/test_answer_validation.py#L114) | 114 | `"        \"وجدت مقتطفًا.\","` | — |
+| [SRC-1C77C97630-L000115](../../tests/test_answer_validation.py#L115) | 115 | `"        [{\"title\": \"نتيجة\", \"snippet\": \"مقتطف قصير\", \"page_fetched\": False}],"` | — |
+| [SRC-1C77C97630-L000116](../../tests/test_answer_validation.py#L116) | 116 | `"    )"` | — |
+| [SRC-1C77C97630-L000117](../../tests/test_answer_validation.py#L117) | 117 | `"    assert result[\"source_evidence_scope\"] == \"search_snippets_only\""` | — |
+| [SRC-1C77C97630-L000118](../../tests/test_answer_validation.py#L118) | 118 | `"    assert result[\"pages_with_extracted_text\"] == 0"` | — |
+| [SRC-1C77C97630-L000119](../../tests/test_answer_validation.py#L119) | 119 | `"    assert result[\"sources_with_snippets_only\"] == 1"` | — |
+| [SRC-1C77C97630-L000120](../../tests/test_answer_validation.py#L120) | 120 | `""` | — |
+| [SRC-1C77C97630-L000121](../../tests/test_answer_validation.py#L121) | 121 | `""` | — |
+| [SRC-1C77C97630-L000122](../../tests/test_answer_validation.py#L122) | 122 | `"def test_review_prompt_explicitly_requires_number_and_conflict_audit(monkeypatch):"` | — |
+| [SRC-1C77C97630-L000123](../../tests/test_answer_validation.py#L123) | 123 | `"    agent = WebAgent()"` | — |
+| [SRC-1C77C97630-L000124](../../tests/test_answer_validation.py#L124) | 124 | `"    captured = {}"` | — |
+| [SRC-1C77C97630-L000125](../../tests/test_answer_validation.py#L125) | 125 | `""` | — |
+| [SRC-1C77C97630-L000126](../../tests/test_answer_validation.py#L126) | 126 | `"    def fake_completion(messages, **kwargs):"` | — |
+| [SRC-1C77C97630-L000127](../../tests/test_answer_validation.py#L127) | 127 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-1C77C97630-L000128](../../tests/test_answer_validation.py#L128) | 128 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>لا تكفي الأدلة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
+| [SRC-1C77C97630-L000129](../../tests/test_answer_validation.py#L129) | 129 | `""` | — |
+| [SRC-1C77C97630-L000130](../../tests/test_answer_validation.py#L130) | 130 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-1C77C97630-L000131](../../tests/test_answer_validation.py#L131) | 131 | `"    answer = agent._review_answer("` | — |
+| [SRC-1C77C97630-L000132](../../tests/test_answer_validation.py#L132) | 132 | `"        \"قارن السعر والمدة\","` | — |
+| [SRC-1C77C97630-L000133](../../tests/test_answer_validation.py#L133) | 133 | `"        \"السعر 100 جنيه [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000134](../../tests/test_answer_validation.py#L134) | 134 | `"        [{"` | — |
+| [SRC-1C77C97630-L000135](../../tests/test_answer_validation.py#L135) | 135 | `"            \"title\": \"مصدر\","` | — |
 | [SRC-1C77C97630-L000136](../../tests/test_answer_validation.py#L136) | 136 | `"            \"url\": \"https://example.com/item\","` | — |
 | [SRC-1C77C97630-L000137](../../tests/test_answer_validation.py#L137) | 137 | `"            \"page_text\": \"السعر 90 جنيه، والمدة 5 أيام.\","` | — |
 | [SRC-1C77C97630-L000138](../../tests/test_answer_validation.py#L138) | 138 | `"            \"snippet\": \"السعر 90 جنيه\","` | — |
@@ -799,29 +825,3 @@
 | [SRC-3451CC474D-L000578](../../tests/test_api.py#L578) | 578 | `"        started = time.monotonic()"` | — |
 | [SRC-3451CC474D-L000579](../../tests/test_api.py#L579) | 579 | `"        client.sendall("` | — |
 | [SRC-3451CC474D-L000580](../../tests/test_api.py#L580) | 580 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
-| [SRC-3451CC474D-L000581](../../tests/test_api.py#L581) | 581 | `"            b\"Host: localhost\\r\\n\""` | — |
-| [SRC-3451CC474D-L000582](../../tests/test_api.py#L582) | 582 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
-| [SRC-3451CC474D-L000583](../../tests/test_api.py#L583) | 583 | `"            b\"Content-Length: 100\\r\\n\""` | — |
-| [SRC-3451CC474D-L000584](../../tests/test_api.py#L584) | 584 | `"            b\"Connection: close\\r\\n\\r\\n\""` | — |
-| [SRC-3451CC474D-L000585](../../tests/test_api.py#L585) | 585 | `"            b\"{\""` | — |
-| [SRC-3451CC474D-L000586](../../tests/test_api.py#L586) | 586 | `"        )"` | — |
-| [SRC-3451CC474D-L000587](../../tests/test_api.py#L587) | 587 | `"        # Each fragment arrives before the 0.20s idle timeout, but the complete"` | — |
-| [SRC-3451CC474D-L000588](../../tests/test_api.py#L588) | 588 | `"        # request body never arrives before the 0.45s absolute deadline."` | — |
-| [SRC-3451CC474D-L000589](../../tests/test_api.py#L589) | 589 | `"        for fragment in (b'\"', b\"text\", b'\"', b\":\"):"` | — |
-| [SRC-3451CC474D-L000590](../../tests/test_api.py#L590) | 590 | `"            time.sleep(0.08)"` | — |
-| [SRC-3451CC474D-L000591](../../tests/test_api.py#L591) | 591 | `"            try:"` | — |
-| [SRC-3451CC474D-L000592](../../tests/test_api.py#L592) | 592 | `"                client.sendall(fragment)"` | — |
-| [SRC-3451CC474D-L000593](../../tests/test_api.py#L593) | 593 | `"            except OSError:"` | — |
-| [SRC-3451CC474D-L000594](../../tests/test_api.py#L594) | 594 | `"                break"` | — |
-| [SRC-3451CC474D-L000595](../../tests/test_api.py#L595) | 595 | `""` | — |
-| [SRC-3451CC474D-L000596](../../tests/test_api.py#L596) | 596 | `"        response = bytearray()"` | — |
-| [SRC-3451CC474D-L000597](../../tests/test_api.py#L597) | 597 | `"        while True:"` | — |
-| [SRC-3451CC474D-L000598](../../tests/test_api.py#L598) | 598 | `"            try:"` | — |
-| [SRC-3451CC474D-L000599](../../tests/test_api.py#L599) | 599 | `"                chunk = client.recv(4096)"` | — |
-| [SRC-3451CC474D-L000600](../../tests/test_api.py#L600) | 600 | `"            except TimeoutError:"` | — |
-| [SRC-3451CC474D-L000601](../../tests/test_api.py#L601) | 601 | `"                break"` | — |
-| [SRC-3451CC474D-L000602](../../tests/test_api.py#L602) | 602 | `"            if not chunk:"` | — |
-| [SRC-3451CC474D-L000603](../../tests/test_api.py#L603) | 603 | `"                break"` | — |
-| [SRC-3451CC474D-L000604](../../tests/test_api.py#L604) | 604 | `"            response.extend(chunk)"` | — |
-| [SRC-3451CC474D-L000605](../../tests/test_api.py#L605) | 605 | `""` | — |
-| [SRC-3451CC474D-L000606](../../tests/test_api.py#L606) | 606 | `"    elapsed = time.monotonic() - started"` | — |

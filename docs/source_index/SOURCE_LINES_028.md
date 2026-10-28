@@ -4,9 +4,31 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA139AC9D0-L000014 إلى SRC-FA4E1423C3-L000333
+- النطاق: SRC-29A9CD43D1-L000186 إلى SRC-FA4E1423C3-L000307
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-29A9CD43D1 — [tests/test_dialogue_context_pipeline.py](../../tests/test_dialogue_context_pipeline.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-29A9CD43D1-L000186](../../tests/test_dialogue_context_pipeline.py#L186) | 186 | `"        pytest.fail(\"An unresolved referent must not start web research.\")"` | — |
+| [SRC-29A9CD43D1-L000187](../../tests/test_dialogue_context_pipeline.py#L187) | 187 | `""` | — |
+| [SRC-29A9CD43D1-L000188](../../tests/test_dialogue_context_pipeline.py#L188) | 188 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
+| [SRC-29A9CD43D1-L000189](../../tests/test_dialogue_context_pipeline.py#L189) | 189 | `"    monkeypatch.setattr(agent, \"_collect_research\", forbidden_search)"` | — |
+| [SRC-29A9CD43D1-L000190](../../tests/test_dialogue_context_pipeline.py#L190) | 190 | `""` | — |
+| [SRC-29A9CD43D1-L000191](../../tests/test_dialogue_context_pipeline.py#L191) | 191 | `"    result = agent.answer(\"What about the second one?\", history=history)"` | — |
+| [SRC-29A9CD43D1-L000192](../../tests/test_dialogue_context_pipeline.py#L192) | 192 | `""` | — |
+| [SRC-29A9CD43D1-L000193](../../tests/test_dialogue_context_pipeline.py#L193) | 193 | `"    assert result[\"kind\"] == \"clarification_needed\""` | — |
+| [SRC-29A9CD43D1-L000194](../../tests/test_dialogue_context_pipeline.py#L194) | 194 | `"    assert result[\"intent_route\"] == \"CLARIFY\""` | — |
+| [SRC-29A9CD43D1-L000195](../../tests/test_dialogue_context_pipeline.py#L195) | 195 | `"    assert \"iPhone 17\" in result[\"answer\"]"` | — |
+| [SRC-29A9CD43D1-L000196](../../tests/test_dialogue_context_pipeline.py#L196) | 196 | `"    assert \"Samsung S26\" in result[\"answer\"]"` | — |
+| [SRC-29A9CD43D1-L000197](../../tests/test_dialogue_context_pipeline.py#L197) | 197 | `"    assert result[\"dialogue_context\"][\"needs_clarification\"] is True"` | — |
+| [SRC-29A9CD43D1-L000198](../../tests/test_dialogue_context_pipeline.py#L198) | 198 | `"    assert result[\"used_web_search\"] is False"` | — |
 ## اختبارات
 
 ### FILE-DA139AC9D0 — [tests/test_dialogue_state.py](../../tests/test_dialogue_state.py#L1)
@@ -16,6 +38,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA139AC9D0-L000001](../../tests/test_dialogue_state.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-DA139AC9D0-L000002](../../tests/test_dialogue_state.py#L2) | 2 | `""` | — |
+| [SRC-DA139AC9D0-L000003](../../tests/test_dialogue_state.py#L3) | 3 | `"from agents.dialogue_state import ("` | — |
+| [SRC-DA139AC9D0-L000004](../../tests/test_dialogue_state.py#L4) | 4 | `"    fallback_dialogue_context,"` | — |
+| [SRC-DA139AC9D0-L000005](../../tests/test_dialogue_state.py#L5) | 5 | `"    might_be_context_dependent,"` | — |
+| [SRC-DA139AC9D0-L000006](../../tests/test_dialogue_state.py#L6) | 6 | `"    validate_dialogue_context,"` | — |
+| [SRC-DA139AC9D0-L000007](../../tests/test_dialogue_state.py#L7) | 7 | `")"` | — |
+| [SRC-DA139AC9D0-L000008](../../tests/test_dialogue_state.py#L8) | 8 | `""` | — |
+| [SRC-DA139AC9D0-L000009](../../tests/test_dialogue_state.py#L9) | 9 | `""` | — |
+| [SRC-DA139AC9D0-L000010](../../tests/test_dialogue_state.py#L10) | 10 | `"def test_deterministic_fallback_preserves_explicit_followup_topic() -> None:"` | — |
+| [SRC-DA139AC9D0-L000011](../../tests/test_dialogue_state.py#L11) | 11 | `"    history = ["` | — |
+| [SRC-DA139AC9D0-L000012](../../tests/test_dialogue_state.py#L12) | 12 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 في مصر\"},"` | — |
+| [SRC-DA139AC9D0-L000013](../../tests/test_dialogue_state.py#L13) | 13 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن هاتف iPhone 17 في السوق المصري.\"},"` | — |
 | [SRC-DA139AC9D0-L000014](../../tests/test_dialogue_state.py#L14) | 14 | `"    ]"` | — |
 | [SRC-DA139AC9D0-L000015](../../tests/test_dialogue_state.py#L15) | 15 | `""` | — |
 | [SRC-DA139AC9D0-L000016](../../tests/test_dialogue_state.py#L16) | 16 | `"    context = fallback_dialogue_context(\"كام سعرها؟\", history)"` | — |
@@ -817,29 +852,3 @@
 | [SRC-FA4E1423C3-L000305](../../tests/test_generate_index.py#L305) | 305 | `"        \"# SECURITY: check token handling\\n\""` | — |
 | [SRC-FA4E1423C3-L000306](../../tests/test_generate_index.py#L306) | 306 | `"        \"def ready():\\n\""` | — |
 | [SRC-FA4E1423C3-L000307](../../tests/test_generate_index.py#L307) | 307 | `"        \"    return True\\n\","` | — |
-| [SRC-FA4E1423C3-L000308](../../tests/test_generate_index.py#L308) | 308 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000309](../../tests/test_generate_index.py#L309) | 309 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000310](../../tests/test_generate_index.py#L310) | 310 | `""` | — |
-| [SRC-FA4E1423C3-L000311](../../tests/test_generate_index.py#L311) | 311 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000312](../../tests/test_generate_index.py#L312) | 312 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000313](../../tests/test_generate_index.py#L313) | 313 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000314](../../tests/test_generate_index.py#L314) | 314 | `""` | — |
-| [SRC-FA4E1423C3-L000315](../../tests/test_generate_index.py#L315) | 315 | `"    assert [item.marker for item in findings] == [\"FIXME\", \"SECURITY\", \"TODO\"]"` | — |
-| [SRC-FA4E1423C3-L000316](../../tests/test_generate_index.py#L316) | 316 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
-| [SRC-FA4E1423C3-L000317](../../tests/test_generate_index.py#L317) | 317 | `"    for finding in findings:"` | — |
-| [SRC-FA4E1423C3-L000318](../../tests/test_generate_index.py#L318) | 318 | `"        assert finding.finding_id.startswith(f\"FND-{finding.marker}-\")"` | — |
-| [SRC-FA4E1423C3-L000319](../../tests/test_generate_index.py#L319) | 319 | `"        assert finding.line_id.startswith(\"SRC-\")"` | — |
-| [SRC-FA4E1423C3-L000320](../../tests/test_generate_index.py#L320) | 320 | `"        assert finding.file == \"module.py\""` | — |
-| [SRC-FA4E1423C3-L000321](../../tests/test_generate_index.py#L321) | 321 | `""` | — |
-| [SRC-FA4E1423C3-L000322](../../tests/test_generate_index.py#L322) | 322 | `""` | — |
-| [SRC-FA4E1423C3-L000323](../../tests/test_generate_index.py#L323) | 323 | `"def test_check_mode_validates_all_generated_indexes(tmp_path: Path, capsys) -> None:"` | — |
-| [SRC-FA4E1423C3-L000324](../../tests/test_generate_index.py#L324) | 324 | `"    \"\"\"Check mode detects stale master, line, and coverage indexes.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000325](../../tests/test_generate_index.py#L325) | 325 | `""` | — |
-| [SRC-FA4E1423C3-L000326](../../tests/test_generate_index.py#L326) | 326 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000327](../../tests/test_generate_index.py#L327) | 327 | `""` | — |
-| [SRC-FA4E1423C3-L000328](../../tests/test_generate_index.py#L328) | 328 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
-| [SRC-FA4E1423C3-L000329](../../tests/test_generate_index.py#L329) | 329 | `"    master_path = tmp_path / INDEXER.INDEX_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000330](../../tests/test_generate_index.py#L330) | 330 | `"    line_index_path = tmp_path / INDEXER.SOURCE_LINES_INDEX_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000331](../../tests/test_generate_index.py#L331) | 331 | `"    coverage_path = tmp_path / INDEXER.COVERAGE_AUDIT_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000332](../../tests/test_generate_index.py#L332) | 332 | `"    assert master_path.exists()"` | — |
-| [SRC-FA4E1423C3-L000333](../../tests/test_generate_index.py#L333) | 333 | `"    assert line_index_path.exists()"` | — |

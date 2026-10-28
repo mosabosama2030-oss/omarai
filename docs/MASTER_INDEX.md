@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **85**
 - ملفات Python المحللة: **44**
-- تعريفات Python المفهرسة: **1098**
-- تعريفات Python موثقة بوجود Docstring: **210**
-- تعريفات Python بلا Docstring: **672**
-- تعريفات لا ينطبق عليها Docstring: **216**
+- تعريفات Python المفهرسة: **1103**
+- تعريفات Python موثقة بوجود Docstring: **211**
+- تعريفات Python بلا Docstring: **674**
+- تعريفات لا ينطبق عليها Docstring: **218**
 - الرموز الساكنة الإضافية: **1636**
-- الأسطر النصية المفهرسة حرفيًا: **29207**
+- الأسطر النصية المفهرسة حرفيًا: **29251**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,11 +39,11 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 8849 | 235 | جرد الملف + AST Python |
-| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 22483 | 504 | جرد الملف + AST Python |
+| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 23590 | 531 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32243 | 753 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 303850 | 5672 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 303803 | 5671 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
@@ -100,7 +100,7 @@
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23470 | 616 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
-| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 11166 | 263 | جرد الملف + AST Python |
+| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 11919 | 281 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
@@ -170,19 +170,22 @@
 | [agents/intent_router.py](../agents/intent_router.py#L115) | دالة | _is_lead_generation_request | Recognize an explicit request to discover prospective buyers/customers. | موثق | 115 | [SRC-5587371288-L000115](../agents/intent_router.py#L115) |
 | [agents/intent_router.py](../agents/intent_router.py#L142) | متغير/ثابت Python | _FOLLOWUP_LEAD_IN_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 142 | [SRC-5587371288-L000142](../agents/intent_router.py#L142) |
 | [agents/intent_router.py](../agents/intent_router.py#L147) | متغير/ثابت Python | _FOLLOWUP_ASPECT_FRAGMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 147 | [SRC-5587371288-L000147](../agents/intent_router.py#L147) |
-| [agents/intent_router.py](../agents/intent_router.py#L160) | دالة | _strip_followup_leadin | لا توجد Docstring. | ناقص | 160 | [SRC-5587371288-L000160](../agents/intent_router.py#L160) |
-| [agents/intent_router.py](../agents/intent_router.py#L164) | دالة | _needs_clarification | لا توجد Docstring. | ناقص | 164 | [SRC-5587371288-L000164](../agents/intent_router.py#L164) |
-| [agents/intent_router.py](../agents/intent_router.py#L178) | دالة | _is_clarification_message | لا توجد Docstring. | ناقص | 178 | [SRC-5587371288-L000178](../agents/intent_router.py#L178) |
-| [agents/intent_router.py](../agents/intent_router.py#L189) | دالة | _latest_context_anchor | Find the latest substantive user topic, skipping ellipsis follow-ups only. | موثق | 189 | [SRC-5587371288-L000189](../agents/intent_router.py#L189) |
-| [agents/intent_router.py](../agents/intent_router.py#L221) | دالة | _pending_clarification_query | Return the unresolved elliptical question immediately awaiting a user slot-fill. | موثق | 221 | [SRC-5587371288-L000221](../agents/intent_router.py#L221) |
-| [agents/intent_router.py](../agents/intent_router.py#L248) | دالة | _is_clarification_answer | Recognize a concise answer to Omarai's immediately preceding clarification. | موثق | 248 | [SRC-5587371288-L000248](../agents/intent_router.py#L248) |
-| [agents/intent_router.py](../agents/intent_router.py#L259) | دالة | _is_contextual_followup | Detect short referent-dependent follow-ups without treating every 'okay' as one. | موثق | 259 | [SRC-5587371288-L000259](../agents/intent_router.py#L259) |
-| [agents/intent_router.py](../agents/intent_router.py#L278) | دالة | resolve_followup_query | Resolve a short contextual follow-up against the nearest substantive topic. | موثق | 278 | [SRC-5587371288-L000278](../agents/intent_router.py#L278) |
-| [agents/intent_router.py](../agents/intent_router.py#L303) | دالة | _has_explicit_source_request | Recognize explicit requests for evidence/citations that require web-backed retrieval. | موثق | 303 | [SRC-5587371288-L000303](../agents/intent_router.py#L303) |
-| [agents/intent_router.py](../agents/intent_router.py#L318) | دالة | _is_deep | لا توجد Docstring. | ناقص | 318 | [SRC-5587371288-L000318](../agents/intent_router.py#L318) |
-| [agents/intent_router.py](../agents/intent_router.py#L335) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 335 | [SRC-5587371288-L000335](../agents/intent_router.py#L335) |
-| [agents/intent_router.py](../agents/intent_router.py#L352) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 352 | [SRC-5587371288-L000352](../agents/intent_router.py#L352) |
-| [agents/intent_router.py](../agents/intent_router.py#L378) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 378 | [SRC-5587371288-L000378](../agents/intent_router.py#L378) |
+| [agents/intent_router.py](../agents/intent_router.py#L160) | متغير/ثابت Python | _CONTEXTUAL_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 160 | [SRC-5587371288-L000160](../agents/intent_router.py#L160) |
+| [agents/intent_router.py](../agents/intent_router.py#L164) | متغير/ثابت Python | _CONTEXTUAL_ENGLISH_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 164 | [SRC-5587371288-L000164](../agents/intent_router.py#L164) |
+| [agents/intent_router.py](../agents/intent_router.py#L170) | دالة | _strip_followup_leadin | لا توجد Docstring. | ناقص | 170 | [SRC-5587371288-L000170](../agents/intent_router.py#L170) |
+| [agents/intent_router.py](../agents/intent_router.py#L174) | دالة | _starts_with_contextual_aspect | Recognize aspect-led follow-ups without merging standalone new topics. | موثق | 174 | [SRC-5587371288-L000174](../agents/intent_router.py#L174) |
+| [agents/intent_router.py](../agents/intent_router.py#L187) | دالة | _needs_clarification | لا توجد Docstring. | ناقص | 187 | [SRC-5587371288-L000187](../agents/intent_router.py#L187) |
+| [agents/intent_router.py](../agents/intent_router.py#L205) | دالة | _is_clarification_message | لا توجد Docstring. | ناقص | 205 | [SRC-5587371288-L000205](../agents/intent_router.py#L205) |
+| [agents/intent_router.py](../agents/intent_router.py#L216) | دالة | _latest_context_anchor | Find the latest substantive user topic, skipping ellipsis follow-ups only. | موثق | 216 | [SRC-5587371288-L000216](../agents/intent_router.py#L216) |
+| [agents/intent_router.py](../agents/intent_router.py#L248) | دالة | _pending_clarification_query | Return the unresolved elliptical question immediately awaiting a user slot-fill. | موثق | 248 | [SRC-5587371288-L000248](../agents/intent_router.py#L248) |
+| [agents/intent_router.py](../agents/intent_router.py#L275) | دالة | _is_clarification_answer | Recognize a concise answer to Omarai's immediately preceding clarification. | موثق | 275 | [SRC-5587371288-L000275](../agents/intent_router.py#L275) |
+| [agents/intent_router.py](../agents/intent_router.py#L286) | دالة | _is_contextual_followup | Detect short referent-dependent follow-ups without treating every 'okay' as one. | موثق | 286 | [SRC-5587371288-L000286](../agents/intent_router.py#L286) |
+| [agents/intent_router.py](../agents/intent_router.py#L305) | دالة | resolve_followup_query | Resolve a short contextual follow-up against the nearest substantive topic. | موثق | 305 | [SRC-5587371288-L000305](../agents/intent_router.py#L305) |
+| [agents/intent_router.py](../agents/intent_router.py#L330) | دالة | _has_explicit_source_request | Recognize explicit requests for evidence/citations that require web-backed retrieval. | موثق | 330 | [SRC-5587371288-L000330](../agents/intent_router.py#L330) |
+| [agents/intent_router.py](../agents/intent_router.py#L345) | دالة | _is_deep | لا توجد Docstring. | ناقص | 345 | [SRC-5587371288-L000345](../agents/intent_router.py#L345) |
+| [agents/intent_router.py](../agents/intent_router.py#L362) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 362 | [SRC-5587371288-L000362](../agents/intent_router.py#L362) |
+| [agents/intent_router.py](../agents/intent_router.py#L379) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 379 | [SRC-5587371288-L000379](../agents/intent_router.py#L379) |
+| [agents/intent_router.py](../agents/intent_router.py#L405) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 405 | [SRC-5587371288-L000405](../agents/intent_router.py#L405) |
 | [agents/omarai.py](../agents/omarai.py#L14) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-C9CF9B54F8-L000014](../agents/omarai.py#L14) |
 | [agents/omarai.py](../agents/omarai.py#L15) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-C9CF9B54F8-L000015](../agents/omarai.py#L15) |
 | [agents/omarai.py](../agents/omarai.py#L16) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-C9CF9B54F8-L000016](../agents/omarai.py#L16) |
@@ -863,12 +866,14 @@
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L174) | دالة | test_followup_resolver_bounds_output_and_handles_malformed_history | لا توجد Docstring. | ناقص | 174 | [SRC-EA6EC52573-L000174](../tests/test_intent_router.py#L174) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L179) | دالة | test_prefixed_elliptical_followup_is_clarified_without_topic | لا توجد Docstring. | ناقص | 179 | [SRC-EA6EC52573-L000179](../tests/test_intent_router.py#L179) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L185) | دالة | test_prefixed_elliptical_followup_uses_topic_when_available | لا توجد Docstring. | ناقص | 185 | [SRC-EA6EC52573-L000185](../tests/test_intent_router.py#L185) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L198) | دالة | test_new_question_starting_with_tayyib_does_not_inherit_old_topic | لا توجد Docstring. | ناقص | 198 | [SRC-EA6EC52573-L000198](../tests/test_intent_router.py#L198) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L209) | دالة | test_chained_followups_keep_the_last_substantive_topic | لا توجد Docstring. | ناقص | 209 | [SRC-EA6EC52573-L000209](../tests/test_intent_router.py#L209) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L221) | دالة | test_answer_to_clarification_restores_original_intent | لا توجد Docstring. | ناقص | 221 | [SRC-EA6EC52573-L000221](../tests/test_intent_router.py#L221) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L237) | دالة | test_topic_detection_does_not_inherit_old_social_or_depth_intent | لا توجد Docstring. | ناقص | 237 | [SRC-EA6EC52573-L000237](../tests/test_intent_router.py#L237) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L251) | دالة | test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode | لا توجد Docstring. | ناقص | 251 | [SRC-EA6EC52573-L000251](../tests/test_intent_router.py#L251) |
-| [tests/test_intent_router.py](../tests/test_intent_router.py#L261) | دالة | test_stable_question_without_source_request_remains_model_only | لا توجد Docstring. | ناقص | 261 | [SRC-EA6EC52573-L000261](../tests/test_intent_router.py#L261) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L198) | دالة | test_long_arabic_warranty_followup_resolves_with_context | لا توجد Docstring. | ناقص | 198 | [SRC-EA6EC52573-L000198](../tests/test_intent_router.py#L198) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L209) | دالة | test_long_arabic_warranty_followup_without_context_clarifies | لا توجد Docstring. | ناقص | 209 | [SRC-EA6EC52573-L000209](../tests/test_intent_router.py#L209) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L216) | دالة | test_new_question_starting_with_tayyib_does_not_inherit_old_topic | لا توجد Docstring. | ناقص | 216 | [SRC-EA6EC52573-L000216](../tests/test_intent_router.py#L216) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L227) | دالة | test_chained_followups_keep_the_last_substantive_topic | لا توجد Docstring. | ناقص | 227 | [SRC-EA6EC52573-L000227](../tests/test_intent_router.py#L227) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L239) | دالة | test_answer_to_clarification_restores_original_intent | لا توجد Docstring. | ناقص | 239 | [SRC-EA6EC52573-L000239](../tests/test_intent_router.py#L239) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L255) | دالة | test_topic_detection_does_not_inherit_old_social_or_depth_intent | لا توجد Docstring. | ناقص | 255 | [SRC-EA6EC52573-L000255](../tests/test_intent_router.py#L255) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L269) | دالة | test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode | لا توجد Docstring. | ناقص | 269 | [SRC-EA6EC52573-L000269](../tests/test_intent_router.py#L269) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L279) | دالة | test_stable_question_without_source_request_remains_model_only | لا توجد Docstring. | ناقص | 279 | [SRC-EA6EC52573-L000279](../tests/test_intent_router.py#L279) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L9) | دالة | _evidence | لا توجد Docstring. | ناقص | 9 | [SRC-4397BC2CD2-L000009](../tests/test_intent_router_integration.py#L9) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L26) | دالة | _report | لا توجد Docstring. | ناقص | 26 | [SRC-4397BC2CD2-L000026](../tests/test_intent_router_integration.py#L26) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L43) | دالة | test_greeting_is_local_without_model_or_search | لا توجد Docstring. | ناقص | 43 | [SRC-4397BC2CD2-L000043](../tests/test_intent_router_integration.py#L43) |
@@ -1417,9 +1422,9 @@
 | [agents/web_agent.py](../agents/web_agent.py#L3546) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 3546 | [SRC-1AE03B9EC3-L003546](../agents/web_agent.py#L3546) |
 | [agents/web_agent.py](../agents/web_agent.py#L3546) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 3546 | [SRC-1AE03B9EC3-L003546](../agents/web_agent.py#L3546) |
 | [agents/web_agent.py](../agents/web_agent.py#L3924) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 3924 | [SRC-1AE03B9EC3-L003924](../agents/web_agent.py#L3924) |
-| [agents/web_agent.py](../agents/web_agent.py#L4069) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 4069 | [SRC-1AE03B9EC3-L004069](../agents/web_agent.py#L4069) |
-| [agents/web_agent.py](../agents/web_agent.py#L4097) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 4097 | [SRC-1AE03B9EC3-L004097](../agents/web_agent.py#L4097) |
-| [agents/web_agent.py](../agents/web_agent.py#L4100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 4100 | [SRC-1AE03B9EC3-L004100](../agents/web_agent.py#L4100) |
+| [agents/web_agent.py](../agents/web_agent.py#L4096) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 4096 | [SRC-1AE03B9EC3-L004096](../agents/web_agent.py#L4096) |
+| [agents/web_agent.py](../agents/web_agent.py#L4099) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 4099 | [SRC-1AE03B9EC3-L004099](../agents/web_agent.py#L4099) |
+| [agents/web_agent.py](../agents/web_agent.py#L4125) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 4125 | [SRC-1AE03B9EC3-L004125](../agents/web_agent.py#L4125) |
 | [api/omarai.py](../api/omarai.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
 | [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
 | [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |

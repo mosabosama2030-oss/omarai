@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001917 إلى SRC-E73001D9AC-L000553
+- النطاق: SRC-E599346ABE-L001891 إلى SRC-E73001D9AC-L000527
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001891](../generate_index.py#L1891) | 1891 | `"                        f\"فهرس مولّد مفقود: {generated_path}. \""` | — |
+| [SRC-E599346ABE-L001892](../generate_index.py#L1892) | 1892 | `"                        \"شغّل python docs/generate_index.py.\","` | — |
+| [SRC-E599346ABE-L001893](../generate_index.py#L1893) | 1893 | `"                        file=sys.stderr,"` | — |
+| [SRC-E599346ABE-L001894](../generate_index.py#L1894) | 1894 | `"                    )"` | — |
+| [SRC-E599346ABE-L001895](../generate_index.py#L1895) | 1895 | `"                    return 1"` | — |
+| [SRC-E599346ABE-L001896](../generate_index.py#L1896) | 1896 | `"                if current_content != expected_content:"` | — |
+| [SRC-E599346ABE-L001897](../generate_index.py#L1897) | 1897 | `"                    if relative_path == INDEX_RELATIVE_PATH:"` | — |
+| [SRC-E599346ABE-L001898](../generate_index.py#L1898) | 1898 | `"                        message = \"الفهرس قديم (الرئيسي)\""` | — |
+| [SRC-E599346ABE-L001899](../generate_index.py#L1899) | 1899 | `"                    elif relative_path == SOURCE_LINES_INDEX_RELATIVE_PATH:"` | — |
+| [SRC-E599346ABE-L001900](../generate_index.py#L1900) | 1900 | `"                        message = \"فهرس الأسطر قديم\""` | — |
+| [SRC-E599346ABE-L001901](../generate_index.py#L1901) | 1901 | `"                    else:"` | — |
+| [SRC-E599346ABE-L001902](../generate_index.py#L1902) | 1902 | `"                        message = \"فهرس تغطية الفهرسة قديم\""` | — |
+| [SRC-E599346ABE-L001903](../generate_index.py#L1903) | 1903 | `"                    print("` | — |
+| [SRC-E599346ABE-L001904](../generate_index.py#L1904) | 1904 | `"                        f\"{message}: {generated_path}. \""` | — |
+| [SRC-E599346ABE-L001905](../generate_index.py#L1905) | 1905 | `"                        \"شغّل python docs/generate_index.py.\","` | — |
+| [SRC-E599346ABE-L001906](../generate_index.py#L1906) | 1906 | `"                        file=sys.stderr,"` | — |
+| [SRC-E599346ABE-L001907](../generate_index.py#L1907) | 1907 | `"                    )"` | — |
+| [SRC-E599346ABE-L001908](../generate_index.py#L1908) | 1908 | `"                    return 1"` | — |
+| [SRC-E599346ABE-L001909](../generate_index.py#L1909) | 1909 | `""` | — |
+| [SRC-E599346ABE-L001910](../generate_index.py#L1910) | 1910 | `"            pages_directory = root / SOURCE_LINES_PAGES_DIR"` | — |
+| [SRC-E599346ABE-L001911](../generate_index.py#L1911) | 1911 | `"            expected_page_names = {"` | — |
+| [SRC-E599346ABE-L001912](../generate_index.py#L1912) | 1912 | `"                Path(relative_path).name"` | — |
+| [SRC-E599346ABE-L001913](../generate_index.py#L1913) | 1913 | `"                for relative_path in source_pages"` | — |
+| [SRC-E599346ABE-L001914](../generate_index.py#L1914) | 1914 | `"            }"` | — |
+| [SRC-E599346ABE-L001915](../generate_index.py#L1915) | 1915 | `"            if pages_directory.exists():"` | — |
+| [SRC-E599346ABE-L001916](../generate_index.py#L1916) | 1916 | `"                actual_page_names = {"` | — |
 | [SRC-E599346ABE-L001917](../generate_index.py#L1917) | 1917 | `"                    path.name"` | — |
 | [SRC-E599346ABE-L001918](../generate_index.py#L1918) | 1918 | `"                    for path in pages_directory.iterdir()"` | — |
 | [SRC-E599346ABE-L001919](../generate_index.py#L1919) | 1919 | `"                    if path.is_file() and SOURCE_LINES_PAGE_RE.fullmatch(path.name)"` | — |
@@ -826,29 +852,3 @@
 | [SRC-E73001D9AC-L000525](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L525) | 525 | `"طلبات متزامنة ببيانات مختلفة، وإلغاء وtimeouts وأخطاء متداخلة، مع التأكد من عدم تسرب السياق."` | — |
 | [SRC-E73001D9AC-L000526](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L526) | 526 | `""` | — |
 | [SRC-E73001D9AC-L000527](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L527) | 527 | `"### T5 — اختبارات الأداء والحمل"` | — |
-| [SRC-E73001D9AC-L000528](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L528) | 528 | `"حمل تدريجي، ذروة، زيادة مفاجئة، وتحمل مستمر. توثيق عدد العملاء ومعدل الوصول وزمن الاختبار وبيئة التنفيذ."` | — |
-| [SRC-E73001D9AC-L000529](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L529) | 529 | `""` | — |
-| [SRC-E73001D9AC-L000530](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L530) | 530 | `"### T6 — اختبارات الفشل والتعافي"` | — |
-| [SRC-E73001D9AC-L000531](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L531) | 531 | `"تعطل موفر، تأخره، رد غير صالح، انقطاع شبكة، إعادة تشغيل عامل، نفاد حصة؛ والتحقق من التعافي وسلامة الحالة."` | — |
-| [SRC-E73001D9AC-L000532](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L532) | 532 | `""` | — |
-| [SRC-E73001D9AC-L000533](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L533) | 533 | `"### T7 — اختبارات الأمن والخصوصية"` | — |
-| [SRC-E73001D9AC-L000534](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L534) | 534 | `"صلاحيات، جلسات، SSRF، حقن تعليمات، تسريب الأسرار، إساءة استخدام API، والتحقق من عدم اختلاط بيانات المستخدمين."` | — |
-| [SRC-E73001D9AC-L000535](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L535) | 535 | `""` | — |
-| [SRC-E73001D9AC-L000536](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L536) | 536 | `"### T8 — تقييم جودة الإجابة"` | — |
-| [SRC-E73001D9AC-L000537](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L537) | 537 | `"صحة المصادر والاستشهادات، التغطية، وضوح عدم اليقين، والامتناع عند نقص الأدلة."` | — |
-| [SRC-E73001D9AC-L000538](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L538) | 538 | `""` | — |
-| [SRC-E73001D9AC-L000539](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L539) | 539 | `"لا يلزم تشغيل كل اختبار مكلف على كل تعديل صغير؛ لكن يجب أن تكون التغييرات ذات المخاطر العالية مرتبطة بمجموعة اختبار إلزامية، مع تشغيل اختبارات شاملة قبل إصدار إنتاجي."` | — |
-| [SRC-E73001D9AC-L000540](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L540) | 540 | `""` | — |
-| [SRC-E73001D9AC-L000541](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L541) | 541 | `"## 14. بوابات إصدار مقترحة"` | — |
-| [SRC-E73001D9AC-L000542](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L542) | 542 | `"قبل وسم إصدار بأنه جاهز للإنتاج:"` | — |
-| [SRC-E73001D9AC-L000543](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L543) | 543 | `"- نجاح الاختبارات الإلزامية المسجلة لهذا الإصدار."` | — |
-| [SRC-E73001D9AC-L000544](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L544) | 544 | `"- عدم وجود ثغرات حرجة أو عالية غير معالجة دون استثناء مخاطر مكتوب ومقبول من المالك."` | — |
-| [SRC-E73001D9AC-L000545](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L545) | 545 | `"- مراجعة الأسرار والاعتماديات وإعدادات النشر."` | — |
-| [SRC-E73001D9AC-L000546](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L546) | 546 | `"- اختبارات دخان بعد النشر مع تمييز صحتها الفعلية عن فحص الإعدادات."` | — |
-| [SRC-E73001D9AC-L000547](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L547) | 547 | `"- وجود خطة rollback واختبارها عندما يكون أثر النشر كبيرًا."` | — |
-| [SRC-E73001D9AC-L000548](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L548) | 548 | `"- توثيق القيود المعروفة وحدود السعة والتحذيرات."` | — |
-| [SRC-E73001D9AC-L000549](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L549) | 549 | `"- تفعيل المقاييس والتنبيهات الأساسية قبل استقبال حمل حقيقي."` | — |
-| [SRC-E73001D9AC-L000550](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L550) | 550 | `""` | — |
-| [SRC-E73001D9AC-L000551](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L551) | 551 | `"---"` | — |
-| [SRC-E73001D9AC-L000552](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L552) | 552 | `""` | — |
-| [SRC-E73001D9AC-L000553](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L553) | 553 | `"# الجزء الثامن — تشغيل الخدمة والتعافي"` | — |

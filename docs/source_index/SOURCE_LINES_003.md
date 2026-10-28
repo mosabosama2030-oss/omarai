@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000431 إلى SRC-59CF4B7DE8-L000424
+- النطاق: SRC-5587371288-L000431 إلى SRC-59CF4B7DE8-L000397
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -17,79 +17,106 @@
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
 | [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `"        return {"` | — |
-| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"            \"route\": \"LOCAL\","` | — |
-| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"            \"reason\": \"short_conversational_turn\","` | — |
-| [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"            \"route\": \"CLARIFY\","` | — |
+| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"            \"reason\": \"missing_referent_and_no_conversation_context\","` | — |
+| [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"            \"context_available\": False,"` | — |
+| [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"            \"needs_clarification\": True,"` | — |
 | [SRC-5587371288-L000436](../../agents/intent_router.py#L436) | 436 | `"        }"` | — |
 | [SRC-5587371288-L000437](../../agents/intent_router.py#L437) | 437 | `""` | — |
-| [SRC-5587371288-L000438](../../agents/intent_router.py#L438) | 438 | `"    # A page/link summary needs a concrete source. Pasted text is handled locally;"` | — |
-| [SRC-5587371288-L000439](../../agents/intent_router.py#L439) | 439 | `"    # an absent source must trigger clarification rather than a search for \"the page\"."` | — |
-| [SRC-5587371288-L000440](../../agents/intent_router.py#L440) | 440 | `"    if _is_page_summarization_request(question):"` | — |
-| [SRC-5587371288-L000441](../../agents/intent_router.py#L441) | 441 | `"        if _has_inline_summary_text(question):"` | — |
-| [SRC-5587371288-L000442](../../agents/intent_router.py#L442) | 442 | `"            return {"` | — |
-| [SRC-5587371288-L000443](../../agents/intent_router.py#L443) | 443 | `"                \"route\": \"MODEL_ONLY\","` | — |
-| [SRC-5587371288-L000444](../../agents/intent_router.py#L444) | 444 | `"                \"reason\": \"summarization_text_provided\","` | — |
-| [SRC-5587371288-L000445](../../agents/intent_router.py#L445) | 445 | `"                \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000446](../../agents/intent_router.py#L446) | 446 | `"                \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000447](../../agents/intent_router.py#L447) | 447 | `"            }"` | — |
-| [SRC-5587371288-L000448](../../agents/intent_router.py#L448) | 448 | `"        if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
-| [SRC-5587371288-L000449](../../agents/intent_router.py#L449) | 449 | `"            return {"` | — |
-| [SRC-5587371288-L000450](../../agents/intent_router.py#L450) | 450 | `"                \"route\": \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000451](../../agents/intent_router.py#L451) | 451 | `"                \"reason\": \"summarization_request\","` | — |
-| [SRC-5587371288-L000452](../../agents/intent_router.py#L452) | 452 | `"                \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000453](../../agents/intent_router.py#L453) | 453 | `"                \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `"            }"` | — |
-| [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `"        return {"` | — |
-| [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `"            \"route\": \"CLARIFY\","` | — |
-| [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"            \"reason\": \"missing_summarization_input\","` | — |
-| [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"            \"needs_clarification\": True,"` | — |
-| [SRC-5587371288-L000460](../../agents/intent_router.py#L460) | 460 | `"        }"` | — |
-| [SRC-5587371288-L000461](../../agents/intent_router.py#L461) | 461 | `""` | — |
-| [SRC-5587371288-L000462](../../agents/intent_router.py#L462) | 462 | `"    ambiguous = _is_contextual_followup(question) or _needs_clarification(question)"` | — |
-| [SRC-5587371288-L000463](../../agents/intent_router.py#L463) | 463 | `"    if ambiguous:"` | — |
-| [SRC-5587371288-L000464](../../agents/intent_router.py#L464) | 464 | `"        return {"` | — |
-| [SRC-5587371288-L000465](../../agents/intent_router.py#L465) | 465 | `"            \"route\": \"WEB_DEEP\" if _is_deep(question) else \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000466](../../agents/intent_router.py#L466) | 466 | `"            \"reason\": \"ambiguous_followup_with_context\","` | — |
-| [SRC-5587371288-L000467](../../agents/intent_router.py#L467) | 467 | `"            \"context_available\": True,"` | — |
-| [SRC-5587371288-L000468](../../agents/intent_router.py#L468) | 468 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000469](../../agents/intent_router.py#L469) | 469 | `"        }"` | — |
-| [SRC-5587371288-L000470](../../agents/intent_router.py#L470) | 470 | `""` | — |
-| [SRC-5587371288-L000471](../../agents/intent_router.py#L471) | 471 | `"    if _is_lead_generation_request(question):"` | — |
-| [SRC-5587371288-L000472](../../agents/intent_router.py#L472) | 472 | `"        return {"` | — |
-| [SRC-5587371288-L000473](../../agents/intent_router.py#L473) | 473 | `"            \"route\": \"LEAD_GENERATION\","` | — |
-| [SRC-5587371288-L000474](../../agents/intent_router.py#L474) | 474 | `"            \"reason\": \"explicit_prospect_or_buyer_discovery_request\","` | — |
-| [SRC-5587371288-L000475](../../agents/intent_router.py#L475) | 475 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000476](../../agents/intent_router.py#L476) | 476 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000477](../../agents/intent_router.py#L477) | 477 | `"        }"` | — |
-| [SRC-5587371288-L000478](../../agents/intent_router.py#L478) | 478 | `""` | — |
-| [SRC-5587371288-L000479](../../agents/intent_router.py#L479) | 479 | `"    if _is_deep(question):"` | — |
-| [SRC-5587371288-L000480](../../agents/intent_router.py#L480) | 480 | `"        return {"` | — |
-| [SRC-5587371288-L000481](../../agents/intent_router.py#L481) | 481 | `"            \"route\": \"WEB_DEEP\","` | — |
-| [SRC-5587371288-L000482](../../agents/intent_router.py#L482) | 482 | `"            \"reason\": \"comparison_or_multi_part_research\","` | — |
-| [SRC-5587371288-L000483](../../agents/intent_router.py#L483) | 483 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000484](../../agents/intent_router.py#L484) | 484 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000485](../../agents/intent_router.py#L485) | 485 | `"        }"` | — |
-| [SRC-5587371288-L000486](../../agents/intent_router.py#L486) | 486 | `""` | — |
-| [SRC-5587371288-L000487](../../agents/intent_router.py#L487) | 487 | `"    if requires_web or _has_live_signal(question) or _has_explicit_source_request(question):"` | — |
-| [SRC-5587371288-L000488](../../agents/intent_router.py#L488) | 488 | `"        return {"` | — |
-| [SRC-5587371288-L000489](../../agents/intent_router.py#L489) | 489 | `"            \"route\": \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000490](../../agents/intent_router.py#L490) | 490 | `"            \"reason\": ("` | — |
-| [SRC-5587371288-L000491](../../agents/intent_router.py#L491) | 491 | `"                \"explicit_evidence_request\""` | — |
-| [SRC-5587371288-L000492](../../agents/intent_router.py#L492) | 492 | `"                if _has_explicit_source_request(question)"` | — |
-| [SRC-5587371288-L000493](../../agents/intent_router.py#L493) | 493 | `"                else \"freshness_or_explicit_research_signal\""` | — |
-| [SRC-5587371288-L000494](../../agents/intent_router.py#L494) | 494 | `"            ),"` | — |
-| [SRC-5587371288-L000495](../../agents/intent_router.py#L495) | 495 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000496](../../agents/intent_router.py#L496) | 496 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000497](../../agents/intent_router.py#L497) | 497 | `"        }"` | — |
-| [SRC-5587371288-L000498](../../agents/intent_router.py#L498) | 498 | `""` | — |
-| [SRC-5587371288-L000499](../../agents/intent_router.py#L499) | 499 | `"    return {"` | — |
-| [SRC-5587371288-L000500](../../agents/intent_router.py#L500) | 500 | `"        \"route\": \"MODEL_ONLY\","` | — |
-| [SRC-5587371288-L000501](../../agents/intent_router.py#L501) | 501 | `"        \"reason\": \"stable_knowledge_or_conversation\","` | — |
-| [SRC-5587371288-L000502](../../agents/intent_router.py#L502) | 502 | `"        \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000503](../../agents/intent_router.py#L503) | 503 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000504](../../agents/intent_router.py#L504) | 504 | `"    }"` | — |
+| [SRC-5587371288-L000438](../../agents/intent_router.py#L438) | 438 | `"    # An explicitly selected mode controls research depth when the request itself"` | — |
+| [SRC-5587371288-L000439](../../agents/intent_router.py#L439) | 439 | `"    # is sufficiently specified."` | — |
+| [SRC-5587371288-L000440](../../agents/intent_router.py#L440) | 440 | `"    if clean_mode != \"auto\":"` | — |
+| [SRC-5587371288-L000441](../../agents/intent_router.py#L441) | 441 | `"        route = \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\""` | — |
+| [SRC-5587371288-L000442](../../agents/intent_router.py#L442) | 442 | `"        return {"` | — |
+| [SRC-5587371288-L000443](../../agents/intent_router.py#L443) | 443 | `"            \"route\": route,"` | — |
+| [SRC-5587371288-L000444](../../agents/intent_router.py#L444) | 444 | `"            \"reason\": \"explicit_mode\","` | — |
+| [SRC-5587371288-L000445](../../agents/intent_router.py#L445) | 445 | `"            \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000446](../../agents/intent_router.py#L446) | 446 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000447](../../agents/intent_router.py#L447) | 447 | `"        }"` | — |
+| [SRC-5587371288-L000448](../../agents/intent_router.py#L448) | 448 | `""` | — |
+| [SRC-5587371288-L000449](../../agents/intent_router.py#L449) | 449 | `"    if capability_question:"` | — |
+| [SRC-5587371288-L000450](../../agents/intent_router.py#L450) | 450 | `"        return {"` | — |
+| [SRC-5587371288-L000451](../../agents/intent_router.py#L451) | 451 | `"            \"route\": \"LOCAL\","` | — |
+| [SRC-5587371288-L000452](../../agents/intent_router.py#L452) | 452 | `"            \"reason\": \"capability_question\","` | — |
+| [SRC-5587371288-L000453](../../agents/intent_router.py#L453) | 453 | `"            \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `"        }"` | — |
+| [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `""` | — |
+| [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"    if _is_smalltalk(question):"` | — |
+| [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"        return {"` | — |
+| [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"            \"route\": \"LOCAL\","` | — |
+| [SRC-5587371288-L000460](../../agents/intent_router.py#L460) | 460 | `"            \"reason\": \"short_conversational_turn\","` | — |
+| [SRC-5587371288-L000461](../../agents/intent_router.py#L461) | 461 | `"            \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000462](../../agents/intent_router.py#L462) | 462 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000463](../../agents/intent_router.py#L463) | 463 | `"        }"` | — |
+| [SRC-5587371288-L000464](../../agents/intent_router.py#L464) | 464 | `""` | — |
+| [SRC-5587371288-L000465](../../agents/intent_router.py#L465) | 465 | `"    # A page/link summary needs a concrete source. Pasted text is handled locally;"` | — |
+| [SRC-5587371288-L000466](../../agents/intent_router.py#L466) | 466 | `"    # an absent source must trigger clarification rather than a search for \"the page\"."` | — |
+| [SRC-5587371288-L000467](../../agents/intent_router.py#L467) | 467 | `"    if _is_page_summarization_request(question):"` | — |
+| [SRC-5587371288-L000468](../../agents/intent_router.py#L468) | 468 | `"        if _has_inline_summary_text(question):"` | — |
+| [SRC-5587371288-L000469](../../agents/intent_router.py#L469) | 469 | `"            return {"` | — |
+| [SRC-5587371288-L000470](../../agents/intent_router.py#L470) | 470 | `"                \"route\": \"MODEL_ONLY\","` | — |
+| [SRC-5587371288-L000471](../../agents/intent_router.py#L471) | 471 | `"                \"reason\": \"summarization_text_provided\","` | — |
+| [SRC-5587371288-L000472](../../agents/intent_router.py#L472) | 472 | `"                \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000473](../../agents/intent_router.py#L473) | 473 | `"                \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000474](../../agents/intent_router.py#L474) | 474 | `"            }"` | — |
+| [SRC-5587371288-L000475](../../agents/intent_router.py#L475) | 475 | `"        if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
+| [SRC-5587371288-L000476](../../agents/intent_router.py#L476) | 476 | `"            return {"` | — |
+| [SRC-5587371288-L000477](../../agents/intent_router.py#L477) | 477 | `"                \"route\": \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000478](../../agents/intent_router.py#L478) | 478 | `"                \"reason\": \"summarization_request\","` | — |
+| [SRC-5587371288-L000479](../../agents/intent_router.py#L479) | 479 | `"                \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000480](../../agents/intent_router.py#L480) | 480 | `"                \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000481](../../agents/intent_router.py#L481) | 481 | `"            }"` | — |
+| [SRC-5587371288-L000482](../../agents/intent_router.py#L482) | 482 | `"        return {"` | — |
+| [SRC-5587371288-L000483](../../agents/intent_router.py#L483) | 483 | `"            \"route\": \"CLARIFY\","` | — |
+| [SRC-5587371288-L000484](../../agents/intent_router.py#L484) | 484 | `"            \"reason\": \"missing_summarization_input\","` | — |
+| [SRC-5587371288-L000485](../../agents/intent_router.py#L485) | 485 | `"            \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000486](../../agents/intent_router.py#L486) | 486 | `"            \"needs_clarification\": True,"` | — |
+| [SRC-5587371288-L000487](../../agents/intent_router.py#L487) | 487 | `"        }"` | — |
+| [SRC-5587371288-L000488](../../agents/intent_router.py#L488) | 488 | `""` | — |
+| [SRC-5587371288-L000489](../../agents/intent_router.py#L489) | 489 | `"    ambiguous = _is_contextual_followup(question) or _needs_clarification(question)"` | — |
+| [SRC-5587371288-L000490](../../agents/intent_router.py#L490) | 490 | `"    if ambiguous:"` | — |
+| [SRC-5587371288-L000491](../../agents/intent_router.py#L491) | 491 | `"        return {"` | — |
+| [SRC-5587371288-L000492](../../agents/intent_router.py#L492) | 492 | `"            \"route\": \"WEB_DEEP\" if _is_deep(question) else \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000493](../../agents/intent_router.py#L493) | 493 | `"            \"reason\": \"ambiguous_followup_with_context\","` | — |
+| [SRC-5587371288-L000494](../../agents/intent_router.py#L494) | 494 | `"            \"context_available\": True,"` | — |
+| [SRC-5587371288-L000495](../../agents/intent_router.py#L495) | 495 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000496](../../agents/intent_router.py#L496) | 496 | `"        }"` | — |
+| [SRC-5587371288-L000497](../../agents/intent_router.py#L497) | 497 | `""` | — |
+| [SRC-5587371288-L000498](../../agents/intent_router.py#L498) | 498 | `"    if _is_lead_generation_request(question):"` | — |
+| [SRC-5587371288-L000499](../../agents/intent_router.py#L499) | 499 | `"        return {"` | — |
+| [SRC-5587371288-L000500](../../agents/intent_router.py#L500) | 500 | `"            \"route\": \"LEAD_GENERATION\","` | — |
+| [SRC-5587371288-L000501](../../agents/intent_router.py#L501) | 501 | `"            \"reason\": \"explicit_prospect_or_buyer_discovery_request\","` | — |
+| [SRC-5587371288-L000502](../../agents/intent_router.py#L502) | 502 | `"            \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000503](../../agents/intent_router.py#L503) | 503 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000504](../../agents/intent_router.py#L504) | 504 | `"        }"` | — |
+| [SRC-5587371288-L000505](../../agents/intent_router.py#L505) | 505 | `""` | — |
+| [SRC-5587371288-L000506](../../agents/intent_router.py#L506) | 506 | `"    if _is_deep(question):"` | — |
+| [SRC-5587371288-L000507](../../agents/intent_router.py#L507) | 507 | `"        return {"` | — |
+| [SRC-5587371288-L000508](../../agents/intent_router.py#L508) | 508 | `"            \"route\": \"WEB_DEEP\","` | — |
+| [SRC-5587371288-L000509](../../agents/intent_router.py#L509) | 509 | `"            \"reason\": \"comparison_or_multi_part_research\","` | — |
+| [SRC-5587371288-L000510](../../agents/intent_router.py#L510) | 510 | `"            \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000511](../../agents/intent_router.py#L511) | 511 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000512](../../agents/intent_router.py#L512) | 512 | `"        }"` | — |
+| [SRC-5587371288-L000513](../../agents/intent_router.py#L513) | 513 | `""` | — |
+| [SRC-5587371288-L000514](../../agents/intent_router.py#L514) | 514 | `"    if requires_web or _has_live_signal(question) or _has_explicit_source_request(question):"` | — |
+| [SRC-5587371288-L000515](../../agents/intent_router.py#L515) | 515 | `"        return {"` | — |
+| [SRC-5587371288-L000516](../../agents/intent_router.py#L516) | 516 | `"            \"route\": \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000517](../../agents/intent_router.py#L517) | 517 | `"            \"reason\": ("` | — |
+| [SRC-5587371288-L000518](../../agents/intent_router.py#L518) | 518 | `"                \"explicit_evidence_request\""` | — |
+| [SRC-5587371288-L000519](../../agents/intent_router.py#L519) | 519 | `"                if _has_explicit_source_request(question)"` | — |
+| [SRC-5587371288-L000520](../../agents/intent_router.py#L520) | 520 | `"                else \"freshness_or_explicit_research_signal\""` | — |
+| [SRC-5587371288-L000521](../../agents/intent_router.py#L521) | 521 | `"            ),"` | — |
+| [SRC-5587371288-L000522](../../agents/intent_router.py#L522) | 522 | `"            \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000523](../../agents/intent_router.py#L523) | 523 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000524](../../agents/intent_router.py#L524) | 524 | `"        }"` | — |
+| [SRC-5587371288-L000525](../../agents/intent_router.py#L525) | 525 | `""` | — |
+| [SRC-5587371288-L000526](../../agents/intent_router.py#L526) | 526 | `"    return {"` | — |
+| [SRC-5587371288-L000527](../../agents/intent_router.py#L527) | 527 | `"        \"route\": \"MODEL_ONLY\","` | — |
+| [SRC-5587371288-L000528](../../agents/intent_router.py#L528) | 528 | `"        \"reason\": \"stable_knowledge_or_conversation\","` | — |
+| [SRC-5587371288-L000529](../../agents/intent_router.py#L529) | 529 | `"        \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000530](../../agents/intent_router.py#L530) | 530 | `"        \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000531](../../agents/intent_router.py#L531) | 531 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-C9CF9B54F8 — [agents/omarai.py](../../agents/omarai.py#L1)
@@ -816,30 +843,3 @@
 | [SRC-59CF4B7DE8-L000395](../../agents/research.py#L395) | 395 | `"        \"youtube.com\": \"youtube\", \"youtu.be\": \"youtube\","` | — |
 | [SRC-59CF4B7DE8-L000396](../../agents/research.py#L396) | 396 | `"        \"facebook.com\": \"facebook\", \"instagram.com\": \"instagram\","` | — |
 | [SRC-59CF4B7DE8-L000397](../../agents/research.py#L397) | 397 | `"        \"x.com\": \"x\", \"twitter.com\": \"x\", \"tiktok.com\": \"tiktok\","` | — |
-| [SRC-59CF4B7DE8-L000398](../../agents/research.py#L398) | 398 | `"        \"linkedin.com\": \"linkedin\", \"threads.net\": \"threads\","` | — |
-| [SRC-59CF4B7DE8-L000399](../../agents/research.py#L399) | 399 | `"        \"bsky.app\": \"bluesky\","` | — |
-| [SRC-59CF4B7DE8-L000400](../../agents/research.py#L400) | 400 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000401](../../agents/research.py#L401) | 401 | `"    for domain, label in mapping.items():"` | — |
-| [SRC-59CF4B7DE8-L000402](../../agents/research.py#L402) | 402 | `"        if host == domain or host.endswith(\".\" + domain):"` | — |
-| [SRC-59CF4B7DE8-L000403](../../agents/research.py#L403) | 403 | `"            platform = label"` | — |
-| [SRC-59CF4B7DE8-L000404](../../agents/research.py#L404) | 404 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000405](../../agents/research.py#L405) | 405 | `"    trust = \"general\""` | — |
-| [SRC-59CF4B7DE8-L000406](../../agents/research.py#L406) | 406 | `"    if host.endswith((\".gov\", \".gov.eg\", \".gov.uk\")):"` | — |
-| [SRC-59CF4B7DE8-L000407](../../agents/research.py#L407) | 407 | `"        trust = \"government\""` | — |
-| [SRC-59CF4B7DE8-L000408](../../agents/research.py#L408) | 408 | `"    elif host.endswith((\".edu\", \".ac.uk\", \".edu.eg\")):"` | — |
-| [SRC-59CF4B7DE8-L000409](../../agents/research.py#L409) | 409 | `"        trust = \"academic\""` | — |
-| [SRC-59CF4B7DE8-L000410](../../agents/research.py#L410) | 410 | `"    elif host == \"news.google.com\" or any("` | — |
-| [SRC-59CF4B7DE8-L000411](../../agents/research.py#L411) | 411 | `"        name in host"` | — |
-| [SRC-59CF4B7DE8-L000412](../../agents/research.py#L412) | 412 | `"        for name in ("` | — |
-| [SRC-59CF4B7DE8-L000413](../../agents/research.py#L413) | 413 | `"            \"reuters.com\", \"apnews.com\", \"bbc.com\", \"bbc.co.uk\","` | — |
-| [SRC-59CF4B7DE8-L000414](../../agents/research.py#L414) | 414 | `"            \"ft.com\", \"nytimes.com\", \"theguardian.com\","` | — |
-| [SRC-59CF4B7DE8-L000415](../../agents/research.py#L415) | 415 | `"        )"` | — |
-| [SRC-59CF4B7DE8-L000416](../../agents/research.py#L416) | 416 | `"    ):"` | — |
-| [SRC-59CF4B7DE8-L000417](../../agents/research.py#L417) | 417 | `"        trust = \"news\""` | — |
-| [SRC-59CF4B7DE8-L000418](../../agents/research.py#L418) | 418 | `"    elif platform != \"web\":"` | — |
-| [SRC-59CF4B7DE8-L000419](../../agents/research.py#L419) | 419 | `"        trust = \"social\""` | — |
-| [SRC-59CF4B7DE8-L000420](../../agents/research.py#L420) | 420 | `"    return {\"domain\": host, \"platform\": platform, \"source_class\": trust}"` | — |
-| [SRC-59CF4B7DE8-L000421](../../agents/research.py#L421) | 421 | `""` | — |
-| [SRC-59CF4B7DE8-L000422](../../agents/research.py#L422) | 422 | `""` | — |
-| [SRC-59CF4B7DE8-L000423](../../agents/research.py#L423) | 423 | `"def fuse_ranked_results("` | — |
-| [SRC-59CF4B7DE8-L000424](../../agents/research.py#L424) | 424 | `"    batches: list[dict[str, Any]], limit: int = MAX_FUSED_RESULTS"` | — |

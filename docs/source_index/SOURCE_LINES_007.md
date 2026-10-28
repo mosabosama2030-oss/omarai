@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002072 إلى SRC-1AE03B9EC3-L002871
+- النطاق: SRC-1AE03B9EC3-L002045 إلى SRC-1AE03B9EC3-L002844
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002045](../../agents/web_agent.py#L2045) | 2045 | `"                    except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L002046](../../agents/web_agent.py#L2046) | 2046 | `"                        warnings.append(\"Instagram Graph API search failed for a requested hashtag.\")"` | — |
+| [SRC-1AE03B9EC3-L002047](../../agents/web_agent.py#L2047) | 2047 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L002048](../../agents/web_agent.py#L2048) | 2048 | `"                warnings.append("` | — |
+| [SRC-1AE03B9EC3-L002049](../../agents/web_agent.py#L2049) | 2049 | `"                    \"Instagram direct API is not configured; indexed public Instagram pages are still searched.\""` | — |
+| [SRC-1AE03B9EC3-L002050](../../agents/web_agent.py#L2050) | 2050 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002051](../../agents/web_agent.py#L2051) | 2051 | `""` | — |
+| [SRC-1AE03B9EC3-L002052](../../agents/web_agent.py#L2052) | 2052 | `"        if \"x\" in platforms and os.getenv(\"X_BEARER_TOKEN\", \"\").strip():"` | — |
+| [SRC-1AE03B9EC3-L002053](../../agents/web_agent.py#L2053) | 2053 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L002054](../../agents/web_agent.py#L2054) | 2054 | `"                self._reserve_search_call()"` | — |
+| [SRC-1AE03B9EC3-L002055](../../agents/web_agent.py#L2055) | 2055 | `"                response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L002056](../../agents/web_agent.py#L2056) | 2056 | `"                    \"https://api.x.com/2/tweets/search/recent\","` | — |
+| [SRC-1AE03B9EC3-L002057](../../agents/web_agent.py#L2057) | 2057 | `"                    params={"` | — |
+| [SRC-1AE03B9EC3-L002058](../../agents/web_agent.py#L2058) | 2058 | `"                        \"query\": query + \" -is:retweet\","` | — |
+| [SRC-1AE03B9EC3-L002059](../../agents/web_agent.py#L2059) | 2059 | `"                        \"max_results\": 10,"` | — |
+| [SRC-1AE03B9EC3-L002060](../../agents/web_agent.py#L2060) | 2060 | `"                        \"tweet.fields\": \"created_at,lang,public_metrics,author_id\","` | — |
+| [SRC-1AE03B9EC3-L002061](../../agents/web_agent.py#L2061) | 2061 | `"                        \"expansions\": \"author_id\","` | — |
+| [SRC-1AE03B9EC3-L002062](../../agents/web_agent.py#L2062) | 2062 | `"                        \"user.fields\": \"name,username\","` | — |
+| [SRC-1AE03B9EC3-L002063](../../agents/web_agent.py#L2063) | 2063 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L002064](../../agents/web_agent.py#L2064) | 2064 | `"                    headers={"` | — |
+| [SRC-1AE03B9EC3-L002065](../../agents/web_agent.py#L2065) | 2065 | `"                        **headers,"` | — |
+| [SRC-1AE03B9EC3-L002066](../../agents/web_agent.py#L2066) | 2066 | `"                        \"Authorization\": \"Bearer \" + os.getenv(\"X_BEARER_TOKEN\", \"\").strip(),"` | — |
+| [SRC-1AE03B9EC3-L002067](../../agents/web_agent.py#L2067) | 2067 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L002068](../../agents/web_agent.py#L2068) | 2068 | `"                    timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L002069](../../agents/web_agent.py#L2069) | 2069 | `"                    follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L002070](../../agents/web_agent.py#L2070) | 2070 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002071](../../agents/web_agent.py#L2071) | 2071 | `"                if response.status_code == 200:"` | — |
 | [SRC-1AE03B9EC3-L002072](../../agents/web_agent.py#L2072) | 2072 | `"                    data = response.json()"` | — |
 | [SRC-1AE03B9EC3-L002073](../../agents/web_agent.py#L2073) | 2073 | `"                    authors = {"` | — |
 | [SRC-1AE03B9EC3-L002074](../../agents/web_agent.py#L2074) | 2074 | `"                        user.get(\"id\"): user"` | — |
@@ -789,30 +816,3 @@
 | [SRC-1AE03B9EC3-L002842](../../agents/web_agent.py#L2842) | 2842 | `"        requested_model = (model or self.answer_model).strip()"` | — |
 | [SRC-1AE03B9EC3-L002843](../../agents/web_agent.py#L2843) | 2843 | `"        if not self.api_key:"` | — |
 | [SRC-1AE03B9EC3-L002844](../../agents/web_agent.py#L2844) | 2844 | `"            self._record_generation_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L002845](../../agents/web_agent.py#L2845) | 2845 | `"                requested_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L002846](../../agents/web_agent.py#L2846) | 2846 | `"                attempted_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L002847](../../agents/web_agent.py#L2847) | 2847 | `"                status=\"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L002848](../../agents/web_agent.py#L2848) | 2848 | `"                error_class=\"MissingAPIKey\","` | — |
-| [SRC-1AE03B9EC3-L002849](../../agents/web_agent.py#L2849) | 2849 | `"                request_started=False,"` | — |
-| [SRC-1AE03B9EC3-L002850](../../agents/web_agent.py#L2850) | 2850 | `"                remote_response_received=False,"` | — |
-| [SRC-1AE03B9EC3-L002851](../../agents/web_agent.py#L2851) | 2851 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002852](../../agents/web_agent.py#L2852) | 2852 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |
-| [SRC-1AE03B9EC3-L002853](../../agents/web_agent.py#L2853) | 2853 | `""` | — |
-| [SRC-1AE03B9EC3-L002854](../../agents/web_agent.py#L2854) | 2854 | `"        model_candidates = [requested_model]"` | — |
-| [SRC-1AE03B9EC3-L002855](../../agents/web_agent.py#L2855) | 2855 | `"        if self.fallback_model and self.fallback_model not in model_candidates:"` | — |
-| [SRC-1AE03B9EC3-L002856](../../agents/web_agent.py#L2856) | 2856 | `"            model_candidates.append(self.fallback_model)"` | — |
-| [SRC-1AE03B9EC3-L002857](../../agents/web_agent.py#L2857) | 2857 | `""` | — |
-| [SRC-1AE03B9EC3-L002858](../../agents/web_agent.py#L2858) | 2858 | `"        last_error: RuntimeError \| None = None"` | — |
-| [SRC-1AE03B9EC3-L002859](../../agents/web_agent.py#L2859) | 2859 | `"        for candidate_model in model_candidates:"` | — |
-| [SRC-1AE03B9EC3-L002860](../../agents/web_agent.py#L2860) | 2860 | `"            budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L002861](../../agents/web_agent.py#L2861) | 2861 | `"            use_web_search = enable_web_search and self.openrouter_web_search_enabled"` | — |
-| [SRC-1AE03B9EC3-L002862](../../agents/web_agent.py#L2862) | 2862 | `"            if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L002863](../../agents/web_agent.py#L2863) | 2863 | `"                try:"` | — |
-| [SRC-1AE03B9EC3-L002864](../../agents/web_agent.py#L2864) | 2864 | `"                    budget.reserve(\"model_calls\")"` | — |
-| [SRC-1AE03B9EC3-L002865](../../agents/web_agent.py#L2865) | 2865 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
-| [SRC-1AE03B9EC3-L002866](../../agents/web_agent.py#L2866) | 2866 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
-| [SRC-1AE03B9EC3-L002867](../../agents/web_agent.py#L2867) | 2867 | `"                        # The model may still answer, but the optional server-side search"` | — |
-| [SRC-1AE03B9EC3-L002868](../../agents/web_agent.py#L2868) | 2868 | `"                        # tool is disabled when its separate budget is unavailable."` | — |
-| [SRC-1AE03B9EC3-L002869](../../agents/web_agent.py#L2869) | 2869 | `"                        use_web_search = False"` | — |
-| [SRC-1AE03B9EC3-L002870](../../agents/web_agent.py#L2870) | 2870 | `"                    elif use_web_search:"` | — |
-| [SRC-1AE03B9EC3-L002871](../../agents/web_agent.py#L2871) | 2871 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |

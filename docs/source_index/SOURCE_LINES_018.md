@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000451 إلى SRC-62CE5126F9-L000023
+- النطاق: SRC-D17CE3D12F-L000425 إلى SRC-B2C95EAEE1-L000115
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000425](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L425) | 425 | `""` | — |
+| [SRC-D17CE3D12F-L000426](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L426) | 426 | `"1. MUST اعتبار تغيير النموذج أو إصدار SDK أو system prompt أو قالب الاسترجاع أو إعدادات sampling تغييرًا قد يؤثر في السلوك، وأن يمر باختبارات تناسب أثره."` | — |
+| [SRC-D17CE3D12F-L000427](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L427) | 427 | `"2. SHOULD حفظ prompts المهمة والإصدارات والتغييرات بطريقة قابلة للمراجعة، مع عدم تخزين أسرار داخلها."` | — |
+| [SRC-D17CE3D12F-L000428](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L428) | 428 | `"3. MUST امتلاك مجموعة تقييم عربية ثابتة تشمل الأسئلة البسيطة، والبحث الحديث، والتعارض، والغموض، والرفض المناسب، وحقن التعليمات، والمصادر المفقودة، والمدخلات الطويلة."` | — |
+| [SRC-D17CE3D12F-L000429](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L429) | 429 | `"4. SHOULD تقييم الإجابة عبر محاور منفصلة مثل صحة الادعاء، والاستشهاد، والاكتمال، واللغة، والرفض، والتكلفة، وزمن الإنجاز."` | — |
+| [SRC-D17CE3D12F-L000430](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L430) | 430 | `"5. MUST مقارنة الإصدارات الجديدة بمجموعة الأساس؛ لا يكفي مثال واحد أعجب المراجع."` | — |
+| [SRC-D17CE3D12F-L000431](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L431) | 431 | `"6. SHOULD استخدام مراجعة بشرية للعينات ذات الأثر العالي أو الحالات التي لا توجد لها مقاييس آلية موثوقة."` | — |
+| [SRC-D17CE3D12F-L000432](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L432) | 432 | `"7. MUST تسجيل نسخة النموذج وإعداداته الأساسية عند قياس الجودة، مع إدراك أن الاستجابات قد تختلف رغم نفس الإصدار."` | — |
+| [SRC-D17CE3D12F-L000433](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L433) | 433 | `"8. MUST عدم السماح لمقيّم يستخدم النموذج نفسه أن يكون الدليل الوحيد على صحة ذلك النموذج."` | — |
+| [SRC-D17CE3D12F-L000434](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L434) | 434 | `"9. SHOULD اختبار الموجهات على هجمات الخصم والتكرار وتغيير ترتيب النصوص وتضارب التعليمات."` | — |
+| [SRC-D17CE3D12F-L000435](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L435) | 435 | `"10. MUST توثيق حدود التقييم: حجم العينة، وتغطيتها، وأوجه التحيز، وما لم يتم اختباره."` | — |
+| [SRC-D17CE3D12F-L000436](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L436) | 436 | `""` | — |
+| [SRC-D17CE3D12F-L000437](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L437) | 437 | `"## 30. توجيه النماذج والموفرين والكلفة"` | — |
+| [SRC-D17CE3D12F-L000438](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L438) | 438 | `""` | — |
+| [SRC-D17CE3D12F-L000439](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L439) | 439 | `"1. MUST عزل كل موفر عبر adapter وعقد موحد، مع مهلة واستجابة خطأ موحدة واختبارات توافق."` | — |
+| [SRC-D17CE3D12F-L000440](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L440) | 440 | `"2. SHOULD قياس زمن البدء، وزمن الاستجابة، وحدود السياق، ومعدل الأخطاء، واستهلاك الرموز، والكلفة/الحصة بحسب المتاح."` | — |
+| [SRC-D17CE3D12F-L000441](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L441) | 441 | `"3. MUST تحديد fallback واضح عند فشل نموذج أو موفر، مع منع تدهور الجودة بصمت."` | — |
+| [SRC-D17CE3D12F-L000442](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L442) | 442 | `"4. MUST عدم تبديل إلى موفر أقل جودة ثم تقديم النتيجة على أنها مكافئة دون سياسة واضحة أو اختبار."` | — |
+| [SRC-D17CE3D12F-L000443](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L443) | 443 | `"5. SHOULD استخدام توجيه حسب المهمة: نموذج صغير/أرخص للأعمال البسيطة، وقدرة أقوى حين تبررها الحاجة، بشرط تحقق الجودة والأمان."` | — |
+| [SRC-D17CE3D12F-L000444](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L444) | 444 | `"6. MUST وضع حدود لتكلفة المهمة بما فيها التخطيط والبحث والتركيب والمراجعة؛ لا تترك الاستدعاءات مفتوحة."` | — |
+| [SRC-D17CE3D12F-L000445](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L445) | 445 | `"7. SHOULD caching لمخرجات آمنة قابلة لإعادة الاستخدام مع مراعاة الحداثة والخصوصية ونطاق المستخدم."` | — |
+| [SRC-D17CE3D12F-L000446](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L446) | 446 | `"8. MUST تجنب تخزين إجابات شخصية أو سرية في cache مشترك أو إعادة عرضها لمستخدم آخر."` | — |
+| [SRC-D17CE3D12F-L000447](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L447) | 447 | `"9. SHOULD اختبار انتهاء الحصة، ورفض الخدمة، والـ timeout، والردود المشوهة، وتغير شكل استجابة الموفر."` | — |
+| [SRC-D17CE3D12F-L000448](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L448) | 448 | `"10. MUST فصل «المفتاح موجود» و«الموصل مهيأ» عن «الموفر reachable» و«الطلب نجح»؛ لكل حالة دليل مختلف."` | — |
+| [SRC-D17CE3D12F-L000449](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L449) | 449 | `""` | — |
+| [SRC-D17CE3D12F-L000450](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L450) | 450 | `"## 31. الأدوات والقدرات ذات الأثر"` | — |
 | [SRC-D17CE3D12F-L000451](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L451) | 451 | `""` | — |
 | [SRC-D17CE3D12F-L000452](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L452) | 452 | `"1. MUST تصنيف الأدوات إلى قراءة عامة، وقراءة بيانات خاصة، وكتابة داخلية، وأثر خارجي حساس."` | — |
 | [SRC-D17CE3D12F-L000453](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L453) | 453 | `"2. MUST إجراء تحقق صلاحيات من جهة الخادم قبل كل عملية حساسة."` | — |
@@ -808,38 +834,3 @@
 | [SRC-B2C95EAEE1-L000113](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L113) | 113 | `"- [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76)"` | — |
 | [SRC-B2C95EAEE1-L000114](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L114) | 114 | `"- [CI على رأس PR: run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040)"` | — |
 | [SRC-B2C95EAEE1-L000115](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L115) | 115 | ``"- [التزام الدمج: `528a255...`](https://github.com/mosabosama2030-oss/omarai/commit/528a2552c0cda809d6c444713466e0e075c13ed9)"`` | — |
-| [SRC-B2C95EAEE1-L000116](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L116) | 116 | `"- [Issue #11 — قبول الواجهة](https://github.com/mosabosama2030-oss/omarai/issues/11)"` | — |
-| [SRC-B2C95EAEE1-L000117](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L117) | 117 | `"- [Issue #68 — التدقيق المستقل](https://github.com/mosabosama2030-oss/omarai/issues/68)"` | — |
-| [SRC-B2C95EAEE1-L000118](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L118) | 118 | `"- [Issue #73 — خارطة الطريق المقترحة](https://github.com/mosabosama2030-oss/omarai/issues/73)"` | — |
-## وثائق وفهرسة
-
-### FILE-62CE5126F9 — [docs/OMARAI_REMEDIATION_REGISTER_AR.md](../OMARAI_REMEDIATION_REGISTER_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-62CE5126F9-L000001](../OMARAI_REMEDIATION_REGISTER_AR.md#L1) | 1 | `"# سجل الإغلاق الهندسي المركزي لمشروع Omarai"` | — |
-| [SRC-62CE5126F9-L000002](../OMARAI_REMEDIATION_REGISTER_AR.md#L2) | 2 | `""` | — |
-| [SRC-62CE5126F9-L000003](../OMARAI_REMEDIATION_REGISTER_AR.md#L3) | 3 | `"## تحديث تشخيص البحث المعمّق — 27 أكتوبر 2026"` | — |
-| [SRC-62CE5126F9-L000004](../OMARAI_REMEDIATION_REGISTER_AR.md#L4) | 4 | `""` | — |
-| [SRC-62CE5126F9-L000005](../OMARAI_REMEDIATION_REGISTER_AR.md#L5) | 5 | `"- **OMR-LIVE-006 — CODE/CI FIXED_AND_TESTED; HOSTED_RETEST_PENDING:** أُنشئ PR #104 لتصحيح مطابقة النتائج متعددة اللغات وتشخيص موصل Google News. لم يُدمج ولم يُنشر."` | — |
-| [SRC-62CE5126F9-L000006](../OMARAI_REMEDIATION_REGISTER_AR.md#L6) | 6 | ``"- **VERIFIED — مسار الكود:** كانت `_search_news` تطبق `_relevance_ratio` داخليًا ثم لا تعيد إلا ما اجتاز المرشح، بينما يطبق `_search_web` مرشح الصلة المركزي مرة أخرى. إذا رُفضت جميع عناصر RSS داخل الموصل، لا تصل تلك العناصر إلى عدادات الرفض المشتركة ويظهر الموصل وكأنه لم يقدم نتائج قابلة للقراءة."`` | — |
-| [SRC-62CE5126F9-L000007](../OMARAI_REMEDIATION_REGISTER_AR.md#L7) | 7 | ``"- **VERIFIED — فحص RSS حي مباشر:** أعاد Google News RSS مع الإعدادات نفسها `hl=ar&gl=EG&ceid=EG:ar` أربع نتائج XML قابلة للقراءة لاستعلام `AI use cases for small businesses`، منها نتيجتا IBM بعنوان عربي عن حالات استخدام الذكاء الاصطناعي. سجل المتصفح: [فحص Google News RSS](https://agent.tinyfish.ai/runs/5559be88-c189-48c7-af78-5c02a6145e6d) و[قراءة موجز Google News بالإنجليزية/أمريكا](https://agent.tinyfish.ai/runs/1eeadc0e-906c-4ecf-96d9-811ef07bcd6e)."`` | — |
-| [SRC-62CE5126F9-L000008](../OMARAI_REMEDIATION_REGISTER_AR.md#L8) | 8 | `"- **VERIFIED — Bing RSS:** فحص موجز Bing لعدة صيغ من سؤال الشركات الصغيرة أعاد نتائج عامة أو غير متصلة بالموضوع؛ لذلك لم تُخفّض عتبة الصلة البالغة 0.20 ولم تُمرر مصادر ضعيفة لمجرد إنتاج إجابة. الفحوص: [Bing RSS الأول](https://agent.tinyfish.ai/runs/a02bda48-1141-473f-b914-1245d0dc4edf)، [مقارنة الاستعلامات](https://agent.tinyfish.ai/runs/896d3c16-7601-4f47-81cd-522d8112c70d)، [استعلام العبارة المقتبسة](https://agent.tinyfish.ai/runs/b70d0c5e-e2d3-41e9-842f-1f39da5fa857)."` | — |
-| [SRC-62CE5126F9-L000009](../OMARAI_REMEDIATION_REGISTER_AR.md#L9) | 9 | ``"- **PATCH داخل PR #104:** أضيفت مفردات عربية/إنجليزية محدودة لتطابق كلمات `use/use cases/business` مع عناوين عربية مقابلة، وأزيل الترشيح المكرر من موصل Google News كي تصل العناصر الآمنة القابلة للتحليل إلى المرشح المركزي وعدادات القبول/الرفض. لا تغيير في حد الصلة أو فحوص URL/SSRF."`` | — |
-| [SRC-62CE5126F9-L000010](../OMARAI_REMEDIATION_REGISTER_AR.md#L10) | 10 | ``"- **FIXED_AND_TESTED — CI على SHA `222ff1096adac89b27e5dce61780743009aa68fd`:** نجح [تشغيل Actions #40479342580](https://github.com/mosabosama2030-oss/omarai/actions/runs/40479342580): `ruff check` ناجح، و**425 اختبارًا ناجحًا على Python 3.12** و**425 اختبارًا ناجحًا على Python 3.11**، ونجح بناء الحاوية وفحص API المحمي."`` | — |
-| [SRC-62CE5126F9-L000011](../OMARAI_REMEDIATION_REGISTER_AR.md#L11) | 11 | ``"- **حدّ الدليل:** نجح CI على SHA `222ff1096adac89b27e5dce61780743009aa68fd` الذي احتوى الكود والاختبارات، ثم نجح أيضًا على `f90d205df806465ad94f504f67722205c22f3533` بعد تحديث سجل المعالجة: [#40479569158](https://github.com/mosabosama2030-oss/omarai/actions/runs/40479569158)، مع 425 اختبارًا على Python 3.11 و425 على Python 3.12، وRuff وبناء الحاوية وAPI smoke ناجحة. أضافت عملية الفهرسة بعد ذلك ملفات مولدة فقط؛ تشغيل PR على رأس الفهرسة كان `action_required`، وهي حالة لم تثبت نجاحًا أو فشلًا على ذلك الرأس. لم يُنشر الإصلاح ولم يُختبر المضيف بعده."`` | — |
-| [SRC-62CE5126F9-L000012](../OMARAI_REMEDIATION_REGISTER_AR.md#L12) | 12 | ``"- **الإغلاق المتبقي:** مراجعة بشرية وقرار دمج PR #104، ثم نشر بإذن منفصل والتحقق من SHA البناء، وبعدها إعادة اختبار السؤال العربي نفسه في وضع `deep` والتحقق من عدد المصادر المقبولة وروابطها وتشخيص الرفض. حتى ذلك الحين تظل بوابة القبول الحي `PARTIAL`."`` | — |
-| [SRC-62CE5126F9-L000013](../OMARAI_REMEDIATION_REGISTER_AR.md#L13) | 13 | `""` | — |
-| [SRC-62CE5126F9-L000014](../OMARAI_REMEDIATION_REGISTER_AR.md#L14) | 14 | `"---"` | — |
-| [SRC-62CE5126F9-L000015](../OMARAI_REMEDIATION_REGISTER_AR.md#L15) | 15 | `""` | — |
-| [SRC-62CE5126F9-L000016](../OMARAI_REMEDIATION_REGISTER_AR.md#L16) | 16 | `"## تحديث قبول الاستضافة — 27 أكتوبر 2026، تشغيل متصفح محفوظ"` | — |
-| [SRC-62CE5126F9-L000017](../OMARAI_REMEDIATION_REGISTER_AR.md#L17) | 17 | `""` | — |
-| [SRC-62CE5126F9-L000018](../OMARAI_REMEDIATION_REGISTER_AR.md#L18) | 18 | ``"- **OMR-LIVE-004 — PARTIAL / BLOCKED:** أعيد اختبار المضيف عبر جلسة المتصفح [af7ebb42-e032-4321-8454-a3628432f53d](https://agent.tinyfish.ai/runs/af7ebb42-e032-4321-8454-a3628432f53d). حُمّلت الواجهة، لكن حقل `accessToken` كان فارغًا داخل ملف المتصفح الاختباري. فشل سؤال «ما عاصمة مصر؟» قبل تنفيذ البحث برسالة: «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف»."`` | — |
-| [SRC-62CE5126F9-L000019](../OMARAI_REMEDIATION_REGISTER_AR.md#L19) | 19 | `"- **حد الاستنتاج:** يثبت الاختبار عدم وجود الرمز في ملف المتصفح الاختباري فقط؛ لا يثبت أن الرمز في متصفح المستخدم غير صحيح. بيانات التخزين المحلي منفصلة بين الملفات/المتصفحات. لم يُدخل الرمز أو يُكشف ولم تُستخدم خزنة أسرار."` | — |
-| [SRC-62CE5126F9-L000020](../OMARAI_REMEDIATION_REGISTER_AR.md#L20) | 20 | `"- **اختبارات لم تُنفذ:** البحث عن الموقع الرسمي لـ OpenAI في وضع «الأحدث الآن» وبحث معمّق إضافي، لأن حاجز المصادقة أوقف الطلبات."` | — |
-| [SRC-62CE5126F9-L000021](../OMARAI_REMEDIATION_REGISTER_AR.md#L21) | 21 | ``"- **`GET /api/health`:** أعاد `ok=true` لكن `build.sha=unknown`, `sha_status=unknown`, `sha_source=unknown`، و`live_network_checks_performed=false`. `web_search_ready` و`language_model_configured` لا يثبتان اتصال مزودي البحث أو نجاح إكمال النموذج."`` | — |
-| [SRC-62CE5126F9-L000022](../OMARAI_REMEDIATION_REGISTER_AR.md#L22) | 22 | ``"- **OMR-LIVE-005 — CODE/CI FIXED_AND_TESTED; HOST_CONFIGURATION_PENDING:** إصلاح #98 موجود في `main`، لكن المضيف لا يعلن SHA البناء بعد. يجب على مالك الاستضافة ضبط `PUBLIC_OMARAI_BUILD_SHA` على SHA الكامل النهائي المعتمد ثم إعادة البناء/النشر عبر مسار المنصة، والتحقق من التطابق. هذا العمل لم يغير إعدادات المضيف ولم ينشر."`` | — |
-| [SRC-62CE5126F9-L000023](../OMARAI_REMEDIATION_REGISTER_AR.md#L23) | 23 | `"- **المتابعة المطلوبة:** أُنشئت جلسة إعداد آمنة لملف المتصفح الاختباري كي يُدخل المستخدم رمز الوصول بنفسه ويحفظه دون إرساله في المحادثة؛ بعد الحفظ يعاد اختبار الأسئلة الثلاثة وتسجيل روابط المصادر الفعلية. لا إعلان قبول نهائي قبل نجاح هذه الخطوات."` | — |

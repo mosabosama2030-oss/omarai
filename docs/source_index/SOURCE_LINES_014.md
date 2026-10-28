@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000317 إلى SRC-E599346ABE-L001116
+- النطاق: SRC-E599346ABE-L000291 إلى SRC-E599346ABE-L001090
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000291](../generate_index.py#L291) | 291 | `"    def visit_ClassDef(self, node: ast.ClassDef) -> None:"` | — |
+| [SRC-E599346ABE-L000292](../generate_index.py#L292) | 292 | `"        \"\"\"Record a class and recursively inspect its body.\"\"\""` | — |
+| [SRC-E599346ABE-L000293](../generate_index.py#L293) | 293 | `"        self._record_definition(node, \"كلاس\")"` | — |
+| [SRC-E599346ABE-L000294](../generate_index.py#L294) | 294 | `"        self.scope.append(node.name)"` | — |
+| [SRC-E599346ABE-L000295](../generate_index.py#L295) | 295 | `"        try:"` | — |
+| [SRC-E599346ABE-L000296](../generate_index.py#L296) | 296 | `"            self.generic_visit(node)"` | — |
+| [SRC-E599346ABE-L000297](../generate_index.py#L297) | 297 | `"        finally:"` | — |
+| [SRC-E599346ABE-L000298](../generate_index.py#L298) | 298 | `"            self.scope.pop()"` | — |
+| [SRC-E599346ABE-L000299](../generate_index.py#L299) | 299 | `""` | — |
+| [SRC-E599346ABE-L000300](../generate_index.py#L300) | 300 | `"    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:"` | — |
+| [SRC-E599346ABE-L000301](../generate_index.py#L301) | 301 | `"        \"\"\"Record a synchronous function or method and nested definitions.\"\"\""` | — |
+| [SRC-E599346ABE-L000302](../generate_index.py#L302) | 302 | `"        self._record_definition(node, \"دالة\")"` | — |
+| [SRC-E599346ABE-L000303](../generate_index.py#L303) | 303 | `"        self.scope.append(node.name)"` | — |
+| [SRC-E599346ABE-L000304](../generate_index.py#L304) | 304 | `"        self.function_depth += 1"` | — |
+| [SRC-E599346ABE-L000305](../generate_index.py#L305) | 305 | `"        try:"` | — |
+| [SRC-E599346ABE-L000306](../generate_index.py#L306) | 306 | `"            self.generic_visit(node)"` | — |
+| [SRC-E599346ABE-L000307](../generate_index.py#L307) | 307 | `"        finally:"` | — |
+| [SRC-E599346ABE-L000308](../generate_index.py#L308) | 308 | `"            self.function_depth -= 1"` | — |
+| [SRC-E599346ABE-L000309](../generate_index.py#L309) | 309 | `"            self.scope.pop()"` | — |
+| [SRC-E599346ABE-L000310](../generate_index.py#L310) | 310 | `""` | — |
+| [SRC-E599346ABE-L000311](../generate_index.py#L311) | 311 | `"    def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:"` | — |
+| [SRC-E599346ABE-L000312](../generate_index.py#L312) | 312 | `"        \"\"\"Record an asynchronous function or method and nested definitions.\"\"\""` | — |
+| [SRC-E599346ABE-L000313](../generate_index.py#L313) | 313 | `"        self._record_definition(node, \"دالة غير متزامنة\")"` | — |
+| [SRC-E599346ABE-L000314](../generate_index.py#L314) | 314 | `"        self.scope.append(node.name)"` | — |
+| [SRC-E599346ABE-L000315](../generate_index.py#L315) | 315 | `"        self.function_depth += 1"` | — |
+| [SRC-E599346ABE-L000316](../generate_index.py#L316) | 316 | `"        try:"` | — |
 | [SRC-E599346ABE-L000317](../generate_index.py#L317) | 317 | `"            self.generic_visit(node)"` | — |
 | [SRC-E599346ABE-L000318](../generate_index.py#L318) | 318 | `"        finally:"` | — |
 | [SRC-E599346ABE-L000319](../generate_index.py#L319) | 319 | `"            self.function_depth -= 1"` | — |
@@ -790,29 +816,3 @@
 | [SRC-E599346ABE-L001088](../generate_index.py#L1088) | 1088 | `"        comments.setdefault(starting_line + offset, []).append(line_text)"` | — |
 | [SRC-E599346ABE-L001089](../generate_index.py#L1089) | 1089 | `""` | — |
 | [SRC-E599346ABE-L001090](../generate_index.py#L1090) | 1090 | `""` | — |
-| [SRC-E599346ABE-L001091](../generate_index.py#L1091) | 1091 | `"def _python_comment_map(source: str) -> dict[int, list[str]]:"` | — |
-| [SRC-E599346ABE-L001092](../generate_index.py#L1092) | 1092 | `"    \"\"\"Return real Python comment tokens, excluding strings and docstrings.\"\"\""` | — |
-| [SRC-E599346ABE-L001093](../generate_index.py#L1093) | 1093 | `"    comments: dict[int, list[str]] = {}"` | — |
-| [SRC-E599346ABE-L001094](../generate_index.py#L1094) | 1094 | `"    try:"` | — |
-| [SRC-E599346ABE-L001095](../generate_index.py#L1095) | 1095 | `"        for token in tokenize.generate_tokens(StringIO(source).readline):"` | — |
-| [SRC-E599346ABE-L001096](../generate_index.py#L1096) | 1096 | `"            if token.type == tokenize.COMMENT:"` | — |
-| [SRC-E599346ABE-L001097](../generate_index.py#L1097) | 1097 | `"                _append_comment_text(comments, token.start[0], token.string[1:])"` | — |
-| [SRC-E599346ABE-L001098](../generate_index.py#L1098) | 1098 | `"    except (tokenize.TokenError, IndentationError, SyntaxError, StopIteration):"` | — |
-| [SRC-E599346ABE-L001099](../generate_index.py#L1099) | 1099 | `"        return comments"` | — |
-| [SRC-E599346ABE-L001100](../generate_index.py#L1100) | 1100 | `"    return comments"` | — |
-| [SRC-E599346ABE-L001101](../generate_index.py#L1101) | 1101 | `""` | — |
-| [SRC-E599346ABE-L001102](../generate_index.py#L1102) | 1102 | `""` | — |
-| [SRC-E599346ABE-L001103](../generate_index.py#L1103) | 1103 | `"def _c_style_comment_map(source: str, *, hash_comments: bool = False) -> dict[int, list[str]]:"` | — |
-| [SRC-E599346ABE-L001104](../generate_index.py#L1104) | 1104 | `"    \"\"\"Extract C-style or hash comments while skipping quoted strings.\"\"\""` | — |
-| [SRC-E599346ABE-L001105](../generate_index.py#L1105) | 1105 | `"    comments: dict[int, list[str]] = {}"` | — |
-| [SRC-E599346ABE-L001106](../generate_index.py#L1106) | 1106 | `"    lines = source.splitlines(keepends=True)"` | — |
-| [SRC-E599346ABE-L001107](../generate_index.py#L1107) | 1107 | `"    if not lines and source:"` | — |
-| [SRC-E599346ABE-L001108](../generate_index.py#L1108) | 1108 | `"        lines = [source]"` | — |
-| [SRC-E599346ABE-L001109](../generate_index.py#L1109) | 1109 | `"    quote: str \| None = None"` | — |
-| [SRC-E599346ABE-L001110](../generate_index.py#L1110) | 1110 | `"    in_block = False"` | — |
-| [SRC-E599346ABE-L001111](../generate_index.py#L1111) | 1111 | `""` | — |
-| [SRC-E599346ABE-L001112](../generate_index.py#L1112) | 1112 | `"    for line_number, line in enumerate(lines, start=1):"` | — |
-| [SRC-E599346ABE-L001113](../generate_index.py#L1113) | 1113 | `"        i = 0"` | — |
-| [SRC-E599346ABE-L001114](../generate_index.py#L1114) | 1114 | `"        while i < len(line):"` | — |
-| [SRC-E599346ABE-L001115](../generate_index.py#L1115) | 1115 | `"            if in_block:"` | — |
-| [SRC-E599346ABE-L001116](../generate_index.py#L1116) | 1116 | `"                end = line.find(\"*/\", i)"` | — |
