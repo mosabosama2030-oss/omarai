@@ -114,6 +114,7 @@ def test_incomplete_compound_evidence_withholds_final_answer() -> None:
     assert "PRIVATE DRAFT" not in result["answer"]
     assert "warranty" in result["answer"]
     assert result["search_report"]["task_fulfillment_status"] == "possible_gap_detected"
+    assert result["final_answer_status"] == "incomplete_evidence_withheld"
 
 
 def test_no_lexical_gap_is_not_presented_as_semantic_proof() -> None:

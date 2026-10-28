@@ -433,8 +433,12 @@ def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]
         )
         result["answer_was_withheld"] = True
         result["answer_completeness_status"] = "incomplete_evidence_withheld"
+        result["final_answer_status"] = "incomplete_evidence_withheld"
         result["task_fulfillment_status"] = "possible_gap_detected"
         search_report["task_fulfillment_status"] = "possible_gap_detected"
+        answer_coverage = result.get("answer_coverage")
+        if isinstance(answer_coverage, dict):
+            answer_coverage["task_fulfillment_status"] = "possible_gap_detected"
         warning = "حُجبت الإجابة النهائية لوجود محاور مطلوبة بلا مرشح نصي كافٍ."
         warnings = result.setdefault("warnings", [])
         if isinstance(warnings, list) and warning not in warnings:
@@ -4530,7 +4534,7 @@ class WebAgent:
             compacted_query = compact_search_query(raw_query)
             if compacted_query and _relevance_query_tokens(compacted_query):
                 final_topic_queries.append(compacted_query)
-        coverage_targets_for_budget = self._question_coverage_targets(working_question)
+        coverage_targets_for_budget = self._question_coverage_targets(question)
         # Reserve one bounded search slot for a post-review criterion-evidence gap.
         # Keep all explicit criterion queries when there are many dimensions; the
         # reserve applies only to ordinary compound tasks with up to six targets.
