@@ -659,10 +659,6 @@ def build_task_spec(
                 or official_destination
                 or current_required
                 or family in {"find_or_discover", "lead_generation", "general_research"}
-                or (
-                    family == "compare"
-                    and not inline_summary_text
-                )
             )
         )
         or (
