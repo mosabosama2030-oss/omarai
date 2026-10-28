@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001674 إلى SRC-1AE03B9EC3-L002473
+- النطاق: SRC-1AE03B9EC3-L001654 إلى SRC-1AE03B9EC3-L002453
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001654](../../agents/web_agent.py#L1654) | 1654 | `"    def _search_tavily(self, query: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001655](../../agents/web_agent.py#L1655) | 1655 | `"        \"\"\"Use Tavily's official search API for structured, extractable live web results.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001656](../../agents/web_agent.py#L1656) | 1656 | `"        api_key = os.getenv(\"TAVILY_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L001657](../../agents/web_agent.py#L1657) | 1657 | `"        if not api_key:"` | — |
+| [SRC-1AE03B9EC3-L001658](../../agents/web_agent.py#L1658) | 1658 | `"            return []"` | — |
+| [SRC-1AE03B9EC3-L001659](../../agents/web_agent.py#L1659) | 1659 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L001660](../../agents/web_agent.py#L1660) | 1660 | `"            import httpx"` | — |
+| [SRC-1AE03B9EC3-L001661](../../agents/web_agent.py#L1661) | 1661 | `"        except ImportError as exc:"` | — |
+| [SRC-1AE03B9EC3-L001662](../../agents/web_agent.py#L1662) | 1662 | `"            raise AgentDependencyError(\"حزمة httpx غير مثبتة.\") from exc"` | — |
+| [SRC-1AE03B9EC3-L001663](../../agents/web_agent.py#L1663) | 1663 | `"        from agents.research import detect_depth, detect_freshness"` | — |
+| [SRC-1AE03B9EC3-L001664](../../agents/web_agent.py#L1664) | 1664 | `""` | — |
+| [SRC-1AE03B9EC3-L001665](../../agents/web_agent.py#L1665) | 1665 | `"        response = httpx.post("` | — |
+| [SRC-1AE03B9EC3-L001666](../../agents/web_agent.py#L1666) | 1666 | `"            \"https://api.tavily.com/search\","` | — |
+| [SRC-1AE03B9EC3-L001667](../../agents/web_agent.py#L1667) | 1667 | `"            json={"` | — |
+| [SRC-1AE03B9EC3-L001668](../../agents/web_agent.py#L1668) | 1668 | `"                \"api_key\": api_key,"` | — |
+| [SRC-1AE03B9EC3-L001669](../../agents/web_agent.py#L1669) | 1669 | `"                \"query\": query[:500],"` | — |
+| [SRC-1AE03B9EC3-L001670](../../agents/web_agent.py#L1670) | 1670 | `"                \"search_depth\": \"advanced\" if detect_depth(query) == \"deep\" else \"basic\","` | — |
+| [SRC-1AE03B9EC3-L001671](../../agents/web_agent.py#L1671) | 1671 | `"                \"topic\": \"news\" if detect_freshness(query) else \"general\","` | — |
+| [SRC-1AE03B9EC3-L001672](../../agents/web_agent.py#L1672) | 1672 | `"                \"max_results\": MAX_PROVIDER_RESULTS,"` | — |
+| [SRC-1AE03B9EC3-L001673](../../agents/web_agent.py#L1673) | 1673 | `"                \"include_answer\": False,"` | — |
 | [SRC-1AE03B9EC3-L001674](../../agents/web_agent.py#L1674) | 1674 | `"                \"include_raw_content\": False,"` | — |
 | [SRC-1AE03B9EC3-L001675](../../agents/web_agent.py#L1675) | 1675 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L001676](../../agents/web_agent.py#L1676) | 1676 | `"            headers={"` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L002451](../../agents/web_agent.py#L2451) | 2451 | `"                for future in as_completed(futures):"` | — |
 | [SRC-1AE03B9EC3-L002452](../../agents/web_agent.py#L2452) | 2452 | `"                    query = futures[future]"` | — |
 | [SRC-1AE03B9EC3-L002453](../../agents/web_agent.py#L2453) | 2453 | `"                    search_started_queries += 1"` | — |
-| [SRC-1AE03B9EC3-L002454](../../agents/web_agent.py#L2454) | 2454 | `"                    try:"` | — |
-| [SRC-1AE03B9EC3-L002455](../../agents/web_agent.py#L2455) | 2455 | `"                        results = future.result()"` | — |
-| [SRC-1AE03B9EC3-L002456](../../agents/web_agent.py#L2456) | 2456 | `"                    except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L002457](../../agents/web_agent.py#L2457) | 2457 | `"                        warnings.append(f\"تعذر بحث الاستعلام «{query[:70]}»: {exc}\")"` | — |
-| [SRC-1AE03B9EC3-L002458](../../agents/web_agent.py#L2458) | 2458 | `"                        query_counts.append({\"query\": query, \"results\": 0})"` | — |
-| [SRC-1AE03B9EC3-L002459](../../agents/web_agent.py#L2459) | 2459 | `"                        continue"` | — |
-| [SRC-1AE03B9EC3-L002460](../../agents/web_agent.py#L2460) | 2460 | `"                    query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
-| [SRC-1AE03B9EC3-L002461](../../agents/web_agent.py#L2461) | 2461 | `"                    grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
-| [SRC-1AE03B9EC3-L002462](../../agents/web_agent.py#L2462) | 2462 | `"                    for source in results:"` | — |
-| [SRC-1AE03B9EC3-L002463](../../agents/web_agent.py#L2463) | 2463 | `"                        provider = str(source.get(\"provider\") or \"web_search\")"` | — |
-| [SRC-1AE03B9EC3-L002464](../../agents/web_agent.py#L2464) | 2464 | `"                        grouped.setdefault(provider, []).append(source)"` | — |
-| [SRC-1AE03B9EC3-L002465](../../agents/web_agent.py#L2465) | 2465 | `"                    for provider, items in grouped.items():"` | — |
-| [SRC-1AE03B9EC3-L002466](../../agents/web_agent.py#L2466) | 2466 | `"                        items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
-| [SRC-1AE03B9EC3-L002467](../../agents/web_agent.py#L2467) | 2467 | `"                        batches.append({\"query\": query, \"provider\": provider, \"results\": items})"` | — |
-| [SRC-1AE03B9EC3-L002468](../../agents/web_agent.py#L2468) | 2468 | `""` | — |
-| [SRC-1AE03B9EC3-L002469](../../agents/web_agent.py#L2469) | 2469 | `"        # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches"` | — |
-| [SRC-1AE03B9EC3-L002470](../../agents/web_agent.py#L2470) | 2470 | `"        # when initial coverage is thin. This uses observed source/domain/provider coverage,"` | — |
-| [SRC-1AE03B9EC3-L002471](../../agents/web_agent.py#L2471) | 2471 | `"        # not the language model's subjective claim that it has enough evidence."` | — |
-| [SRC-1AE03B9EC3-L002472](../../agents/web_agent.py#L2472) | 2472 | `"        preliminary = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)"` | — |
-| [SRC-1AE03B9EC3-L002473](../../agents/web_agent.py#L2473) | 2473 | `"        preliminary_domains = {"` | — |

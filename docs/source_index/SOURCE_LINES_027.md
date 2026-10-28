@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000056 إلى SRC-90FAA34ADE-L000458
+- النطاق: SRC-03FF422A16-L000036 إلى SRC-90FAA34ADE-L000438
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000036](../../scripts/score_answer_quality_reviews.py#L36) | 36 | `""` | — |
+| [SRC-03FF422A16-L000037](../../scripts/score_answer_quality_reviews.py#L37) | 37 | `"def _is_nonnegative_int(value: Any) -> bool:"` | — |
+| [SRC-03FF422A16-L000038](../../scripts/score_answer_quality_reviews.py#L38) | 38 | `"    return isinstance(value, int) and not isinstance(value, bool) and value >= 0"` | — |
+| [SRC-03FF422A16-L000039](../../scripts/score_answer_quality_reviews.py#L39) | 39 | `""` | — |
+| [SRC-03FF422A16-L000040](../../scripts/score_answer_quality_reviews.py#L40) | 40 | `""` | — |
+| [SRC-03FF422A16-L000041](../../scripts/score_answer_quality_reviews.py#L41) | 41 | `"def validate_reviews("` | — |
+| [SRC-03FF422A16-L000042](../../scripts/score_answer_quality_reviews.py#L42) | 42 | `"    review_data: dict[str, Any], corpus_data: dict[str, Any]"` | — |
+| [SRC-03FF422A16-L000043](../../scripts/score_answer_quality_reviews.py#L43) | 43 | `") -> list[str]:"` | — |
+| [SRC-03FF422A16-L000044](../../scripts/score_answer_quality_reviews.py#L44) | 44 | `"    problems: list[str] = []"` | — |
+| [SRC-03FF422A16-L000045](../../scripts/score_answer_quality_reviews.py#L45) | 45 | `"    reviews = review_data.get(\"reviews\")"` | — |
+| [SRC-03FF422A16-L000046](../../scripts/score_answer_quality_reviews.py#L46) | 46 | `"    corpus_cases = corpus_data.get(\"cases\")"` | — |
+| [SRC-03FF422A16-L000047](../../scripts/score_answer_quality_reviews.py#L47) | 47 | `"    if not isinstance(reviews, list):"` | — |
+| [SRC-03FF422A16-L000048](../../scripts/score_answer_quality_reviews.py#L48) | 48 | `"        return [\"reviews must be an array\"]"` | — |
+| [SRC-03FF422A16-L000049](../../scripts/score_answer_quality_reviews.py#L49) | 49 | `"    if not isinstance(corpus_cases, list):"` | — |
+| [SRC-03FF422A16-L000050](../../scripts/score_answer_quality_reviews.py#L50) | 50 | `"        return [\"corpus must contain a cases array\"]"` | — |
+| [SRC-03FF422A16-L000051](../../scripts/score_answer_quality_reviews.py#L51) | 51 | `""` | — |
+| [SRC-03FF422A16-L000052](../../scripts/score_answer_quality_reviews.py#L52) | 52 | `"    valid_case_ids = {"` | — |
+| [SRC-03FF422A16-L000053](../../scripts/score_answer_quality_reviews.py#L53) | 53 | `"        item.get(\"case_id\")"` | — |
+| [SRC-03FF422A16-L000054](../../scripts/score_answer_quality_reviews.py#L54) | 54 | `"        for item in corpus_cases"` | — |
+| [SRC-03FF422A16-L000055](../../scripts/score_answer_quality_reviews.py#L55) | 55 | `"        if isinstance(item, dict) and isinstance(item.get(\"case_id\"), str)"` | — |
 | [SRC-03FF422A16-L000056](../../scripts/score_answer_quality_reviews.py#L56) | 56 | `"    }"` | — |
 | [SRC-03FF422A16-L000057](../../scripts/score_answer_quality_reviews.py#L57) | 57 | `"    seen: set[str] = set()"` | — |
 | [SRC-03FF422A16-L000058](../../scripts/score_answer_quality_reviews.py#L58) | 58 | `"    for index, item in enumerate(reviews):"` | — |
@@ -814,23 +834,3 @@
 | [SRC-90FAA34ADE-L000436](../../tests/fixtures/answer_quality_cases.json#L436) | 436 | `"        \"providers\": ["` | — |
 | [SRC-90FAA34ADE-L000437](../../tests/fixtures/answer_quality_cases.json#L437) | 437 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000438](../../tests/fixtures/answer_quality_cases.json#L438) | 438 | `"            \"name\": \"fixture_search_a\","` | — |
-| [SRC-90FAA34ADE-L000439](../../tests/fixtures/answer_quality_cases.json#L439) | 439 | `"            \"error\": \"timeout\""` | — |
-| [SRC-90FAA34ADE-L000440](../../tests/fixtures/answer_quality_cases.json#L440) | 440 | `"          },"` | — |
-| [SRC-90FAA34ADE-L000441](../../tests/fixtures/answer_quality_cases.json#L441) | 441 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000442](../../tests/fixtures/answer_quality_cases.json#L442) | 442 | `"            \"name\": \"fixture_search_b\","` | — |
-| [SRC-90FAA34ADE-L000443](../../tests/fixtures/answer_quality_cases.json#L443) | 443 | `"            \"error\": \"503\""` | — |
-| [SRC-90FAA34ADE-L000444](../../tests/fixtures/answer_quality_cases.json#L444) | 444 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000445](../../tests/fixtures/answer_quality_cases.json#L445) | 445 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000446](../../tests/fixtures/answer_quality_cases.json#L446) | 446 | `"        \"sources\": [],"` | — |
-| [SRC-90FAA34ADE-L000447](../../tests/fixtures/answer_quality_cases.json#L447) | 447 | `"        \"notes\": \"Both search providers fail deterministically\""` | — |
-| [SRC-90FAA34ADE-L000448](../../tests/fixtures/answer_quality_cases.json#L448) | 448 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000449](../../tests/fixtures/answer_quality_cases.json#L449) | 449 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000450](../../tests/fixtures/answer_quality_cases.json#L450) | 450 | `"        \"Claims to have found an announcement despite zero retrieved documents\","` | — |
-| [SRC-90FAA34ADE-L000451](../../tests/fixtures/answer_quality_cases.json#L451) | 451 | `"        \"Invents a source URL\""` | — |
-| [SRC-90FAA34ADE-L000452](../../tests/fixtures/answer_quality_cases.json#L452) | 452 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000453](../../tests/fixtures/answer_quality_cases.json#L453) | 453 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000454](../../tests/fixtures/answer_quality_cases.json#L454) | 454 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000455](../../tests/fixtures/answer_quality_cases.json#L455) | 455 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000456](../../tests/fixtures/answer_quality_cases.json#L456) | 456 | `"      \"case_id\": \"AQ-018\","` | — |
-| [SRC-90FAA34ADE-L000457](../../tests/fixtures/answer_quality_cases.json#L457) | 457 | `"      \"category\": \"conflicting_sources\","` | — |
-| [SRC-90FAA34ADE-L000458](../../tests/fixtures/answer_quality_cases.json#L458) | 458 | `"      \"language\": \"ar-MSA\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000156 إلى SRC-C4C6C55E1A-L000043
+- النطاق: SRC-EEF2E6447C-L000136 إلى SRC-C4C6C55E1A-L000023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000136](../../api/omarai.py#L136) | 136 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000137](../../api/omarai.py#L137) | 137 | `"            while len(line) < max_bytes:"` | — |
+| [SRC-EEF2E6447C-L000138](../../api/omarai.py#L138) | 138 | `"                deadline = getattr(self.handler, \"_request_header_deadline\", None)"` | — |
+| [SRC-EEF2E6447C-L000139](../../api/omarai.py#L139) | 139 | `"                if deadline is None:"` | — |
+| [SRC-EEF2E6447C-L000140](../../api/omarai.py#L140) | 140 | `"                    raise TimeoutError(\"request-header deadline is not active\")"` | — |
+| [SRC-EEF2E6447C-L000141](../../api/omarai.py#L141) | 141 | `"                remaining = deadline - time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000142](../../api/omarai.py#L142) | 142 | `"                if remaining <= 0:"` | — |
+| [SRC-EEF2E6447C-L000143](../../api/omarai.py#L143) | 143 | `"                    raise TimeoutError(\"absolute request-header deadline exceeded\")"` | — |
+| [SRC-EEF2E6447C-L000144](../../api/omarai.py#L144) | 144 | `""` | — |
+| [SRC-EEF2E6447C-L000145](../../api/omarai.py#L145) | 145 | `"                newline_index = self._buffer.find(b\"\\n\")"` | — |
+| [SRC-EEF2E6447C-L000146](../../api/omarai.py#L146) | 146 | `"                if newline_index >= 0:"` | — |
+| [SRC-EEF2E6447C-L000147](../../api/omarai.py#L147) | 147 | `"                    take = min(newline_index + 1, max_bytes - len(line))"` | — |
+| [SRC-EEF2E6447C-L000148](../../api/omarai.py#L148) | 148 | `"                    line.extend(self._buffer[:take])"` | — |
+| [SRC-EEF2E6447C-L000149](../../api/omarai.py#L149) | 149 | `"                    del self._buffer[:take]"` | — |
+| [SRC-EEF2E6447C-L000150](../../api/omarai.py#L150) | 150 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000151](../../api/omarai.py#L151) | 151 | `""` | — |
+| [SRC-EEF2E6447C-L000152](../../api/omarai.py#L152) | 152 | `"                if self._buffer:"` | — |
+| [SRC-EEF2E6447C-L000153](../../api/omarai.py#L153) | 153 | `"                    take = min(len(self._buffer), max_bytes - len(line))"` | — |
+| [SRC-EEF2E6447C-L000154](../../api/omarai.py#L154) | 154 | `"                    line.extend(self._buffer[:take])"` | — |
+| [SRC-EEF2E6447C-L000155](../../api/omarai.py#L155) | 155 | `"                    del self._buffer[:take]"` | — |
 | [SRC-EEF2E6447C-L000156](../../api/omarai.py#L156) | 156 | `"                    if len(line) >= max_bytes:"` | — |
 | [SRC-EEF2E6447C-L000157](../../api/omarai.py#L157) | 157 | `"                        break"` | — |
 | [SRC-EEF2E6447C-L000158](../../api/omarai.py#L158) | 158 | `""` | — |
@@ -850,23 +870,3 @@
 | [SRC-C4C6C55E1A-L000021](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L21) | 21 | ``"لا تزال عناصر `NOT_RUN/UNKNOWN` التالية مفتوحة حتى يتوفر دليل مباشر: قبول حي لعنوان استضافة يملكه المشروع، مطابقة SHA الصورة المنشورة، نجاح البحث والنموذج من الاستضافة، دوام قاعدة البيانات والاستعادة، اختبار يدوي بالمتصفح، حمل ممثل، ومراجعة أمنية مستقلة نهائية. في لقطة 21 أكتوبر كان فرع الإغلاق منفصلًا. **تحديث لاحق:** دُمج PR #76 في `main` عند `528a2552c0cda809d6c444713466e0e075c13ed9`. لا تزال بوابات التشغيل الحي منفصلة."`` | — |
 | [SRC-C4C6C55E1A-L000022](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L22) | 22 | `""` | — |
 | [SRC-C4C6C55E1A-L000023](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L23) | 23 | `"## 1. دلالات الحالة"` | — |
-| [SRC-C4C6C55E1A-L000024](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L24) | 24 | `""` | — |
-| [SRC-C4C6C55E1A-L000025](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L25) | 25 | `"- **VERIFIED:** دليل مباشر محدد النطاق، مرتبط بنسخة/اختبار واضح."` | — |
-| [SRC-C4C6C55E1A-L000026](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L26) | 26 | `"- **INFERRED:** قرائن من الكود أو الوثائق دون إثبات كامل في بيئة التشغيل."` | — |
-| [SRC-C4C6C55E1A-L000027](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L27) | 27 | `"- **PARTIAL:** جزء من المتطلب مثبت، لكن بقيت فجوة مؤثرة."` | — |
-| [SRC-C4C6C55E1A-L000028](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L28) | 28 | `"- **UNKNOWN:** لا تكفي الأدلة للحكم."` | — |
-| [SRC-C4C6C55E1A-L000029](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L29) | 29 | `"- **NOT_RUN:** اختبار معروف لم يتم تشغيله في هذه الجولة."` | — |
-| [SRC-C4C6C55E1A-L000030](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L30) | 30 | `"- **PROPOSED:** قرار أو إجراء مقترح لم يعتمد بعد."` | — |
-| [SRC-C4C6C55E1A-L000031](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L31) | 31 | `"- **NOT APPLICABLE:** لا ينطبق على النطاق الحالي مع سبب واضح؛ لا يستعمل لإخفاء نقص الإثبات."` | — |
-| [SRC-C4C6C55E1A-L000032](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L32) | 32 | `"- **WAIVED:** استثناء صريح وافق عليه صاحب الصلاحية، مع نطاق وتعويض وشرط انتهاء/مراجعة."` | — |
-| [SRC-C4C6C55E1A-L000033](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L33) | 33 | `""` | — |
-| [SRC-C4C6C55E1A-L000034](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) | 34 | `"كل حالة تنطبق على الضابط المحدد والنطاق المذكور فقط، لا على المشروع كله."` | — |
-| [SRC-C4C6C55E1A-L000035](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L35) | 35 | `""` | — |
-| [SRC-C4C6C55E1A-L000036](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L36) | 36 | `"## 2. خط الأساس وسلسلة الأدلة"` | — |
-| [SRC-C4C6C55E1A-L000037](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L37) | 37 | `""` | — |
-| [SRC-C4C6C55E1A-L000038](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L38) | 38 | `"### نسخة المصدر"` | — |
-| [SRC-C4C6C55E1A-L000039](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L39) | 39 | `""` | — |
-| [SRC-C4C6C55E1A-L000040](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L40) | 40 | ``"نسخة `main` التي تمت مراجعتها في هذه الجولة: `871d2930405d164d3ae4c53f368937a4f5f01a6f`."`` | — |
-| [SRC-C4C6C55E1A-L000041](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) | 41 | `""` | — |
-| [SRC-C4C6C55E1A-L000042](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L42) | 42 | `"### تغييرات مدمجة ذات صلة"` | — |
-| [SRC-C4C6C55E1A-L000043](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L43) | 43 | `""` | — |

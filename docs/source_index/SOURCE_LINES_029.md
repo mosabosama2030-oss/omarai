@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001259 إلى SRC-B3062EB677-L000158
+- النطاق: SRC-90FAA34ADE-L001239 إلى SRC-B3062EB677-L000138
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001239](../../tests/fixtures/answer_quality_cases.json#L1239) | 1239 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001240](../../tests/fixtures/answer_quality_cases.json#L1240) | 1240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001241](../../tests/fixtures/answer_quality_cases.json#L1241) | 1241 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001242](../../tests/fixtures/answer_quality_cases.json#L1242) | 1242 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |
+| [SRC-90FAA34ADE-L001244](../../tests/fixtures/answer_quality_cases.json#L1244) | 1244 | `"      \"category\": \"stale_sources_for_current\","` | — |
+| [SRC-90FAA34ADE-L001245](../../tests/fixtures/answer_quality_cases.json#L1245) | 1245 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001246](../../tests/fixtures/answer_quality_cases.json#L1246) | 1246 | `"      \"question\": \"عايز القواعد الحالية للتسجيل في خدمة حكومية في مصر؛ result timestamp بتاع صفحة الشروط هو 2020 بس.\","` | — |
+| [SRC-90FAA34ADE-L001247](../../tests/fixtures/answer_quality_cases.json#L1247) | 1247 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001248](../../tests/fixtures/answer_quality_cases.json#L1248) | 1248 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001249](../../tests/fixtures/answer_quality_cases.json#L1249) | 1249 | `"        \"يراعي أن صفحة 2020 قد لا تمثل القواعد الحالية\","` | — |
+| [SRC-90FAA34ADE-L001250](../../tests/fixtures/answer_quality_cases.json#L1250) | 1250 | `"        \"يبحث عن صفحة حديثة/رسمية أو يصرح بأن التحقق لم يكتمل\","` | — |
+| [SRC-90FAA34ADE-L001251](../../tests/fixtures/answer_quality_cases.json#L1251) | 1251 | `"        \"يعرض تاريخ المصدر بوضوح عند الاستشهاد به\""` | — |
+| [SRC-90FAA34ADE-L001252](../../tests/fixtures/answer_quality_cases.json#L1252) | 1252 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001253](../../tests/fixtures/answer_quality_cases.json#L1253) | 1253 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001254](../../tests/fixtures/answer_quality_cases.json#L1254) | 1254 | `"        \"يعتمد على شروط 2020 كأنها حالية بلا تنبيه\","` | — |
+| [SRC-90FAA34ADE-L001255](../../tests/fixtures/answer_quality_cases.json#L1255) | 1255 | `"        \"يختلق تحديثًا أحدث\""` | — |
+| [SRC-90FAA34ADE-L001256](../../tests/fixtures/answer_quality_cases.json#L1256) | 1256 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001257](../../tests/fixtures/answer_quality_cases.json#L1257) | 1257 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001258](../../tests/fixtures/answer_quality_cases.json#L1258) | 1258 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L001259](../../tests/fixtures/answer_quality_cases.json#L1259) | 1259 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L001260](../../tests/fixtures/answer_quality_cases.json#L1260) | 1260 | `"          {"` | — |
 | [SRC-90FAA34ADE-L001261](../../tests/fixtures/answer_quality_cases.json#L1261) | 1261 | `"            \"title\": \"Service registration guide\","` | — |
@@ -841,23 +861,3 @@
 | [SRC-B3062EB677-L000136](../../tests/test_answer_quality_runner.py#L136) | 136 | `"def test_validate_base_url_rejects_non_loopback_http():"` | — |
 | [SRC-B3062EB677-L000137](../../tests/test_answer_quality_runner.py#L137) | 137 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000138](../../tests/test_answer_quality_runner.py#L138) | 138 | `"    with pytest.raises(ValueError, match=\"Plain HTTP\"):"` | — |
-| [SRC-B3062EB677-L000139](../../tests/test_answer_quality_runner.py#L139) | 139 | `"        mod.validate_base_url(\"http://research.example\")"` | — |
-| [SRC-B3062EB677-L000140](../../tests/test_answer_quality_runner.py#L140) | 140 | `""` | — |
-| [SRC-B3062EB677-L000141](../../tests/test_answer_quality_runner.py#L141) | 141 | `""` | — |
-| [SRC-B3062EB677-L000142](../../tests/test_answer_quality_runner.py#L142) | 142 | `"@pytest.mark.parametrize("` | — |
-| [SRC-B3062EB677-L000143](../../tests/test_answer_quality_runner.py#L143) | 143 | `"    \"url\","` | — |
-| [SRC-B3062EB677-L000144](../../tests/test_answer_quality_runner.py#L144) | 144 | `"    ["` | — |
-| [SRC-B3062EB677-L000145](../../tests/test_answer_quality_runner.py#L145) | 145 | `"        \"https://user:password@example.com\","` | — |
-| [SRC-B3062EB677-L000146](../../tests/test_answer_quality_runner.py#L146) | 146 | `"        \"https://example.com/private/path\","` | — |
-| [SRC-B3062EB677-L000147](../../tests/test_answer_quality_runner.py#L147) | 147 | `"        \"https://example.com/?token=oops\","` | — |
-| [SRC-B3062EB677-L000148](../../tests/test_answer_quality_runner.py#L148) | 148 | `"        \"https://example.com/#fragment\","` | — |
-| [SRC-B3062EB677-L000149](../../tests/test_answer_quality_runner.py#L149) | 149 | `"    ],"` | — |
-| [SRC-B3062EB677-L000150](../../tests/test_answer_quality_runner.py#L150) | 150 | `")"` | — |
-| [SRC-B3062EB677-L000151](../../tests/test_answer_quality_runner.py#L151) | 151 | `"def test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls(url):"` | — |
-| [SRC-B3062EB677-L000152](../../tests/test_answer_quality_runner.py#L152) | 152 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000153](../../tests/test_answer_quality_runner.py#L153) | 153 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-B3062EB677-L000154](../../tests/test_answer_quality_runner.py#L154) | 154 | `"        mod.validate_base_url(url)"` | — |
-| [SRC-B3062EB677-L000155](../../tests/test_answer_quality_runner.py#L155) | 155 | `""` | — |
-| [SRC-B3062EB677-L000156](../../tests/test_answer_quality_runner.py#L156) | 156 | `""` | — |
-| [SRC-B3062EB677-L000157](../../tests/test_answer_quality_runner.py#L157) | 157 | `"def test_remote_bearer_token_requires_exact_allowlisted_https_origin(monkeypatch):"` | — |
-| [SRC-B3062EB677-L000158](../../tests/test_answer_quality_runner.py#L158) | 158 | `"    mod = _load_runner()"` | — |

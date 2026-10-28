@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002457 إلى SRC-F725E90B2A-L003256
+- النطاق: SRC-F725E90B2A-L002437 إلى SRC-F725E90B2A-L003236
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002437](../../tests/test_web_agent.py#L2437) | 2437 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 0"` | — |
+| [SRC-F725E90B2A-L002438](../../tests/test_web_agent.py#L2438) | 2438 | `"    assert report[\"checks\"][\"web_search\"][\"completed_connector_responses\"] >= 1"` | — |
+| [SRC-F725E90B2A-L002439](../../tests/test_web_agent.py#L2439) | 2439 | `"    assert \"completed a request\" in report[\"checks\"][\"web_search\"][\"note\"]"` | — |
+| [SRC-F725E90B2A-L002440](../../tests/test_web_agent.py#L2440) | 2440 | `""` | — |
+| [SRC-F725E90B2A-L002441](../../tests/test_web_agent.py#L2441) | 2441 | `""` | — |
+| [SRC-F725E90B2A-L002442](../../tests/test_web_agent.py#L2442) | 2442 | `"def test_deepseek_search_request_budget_defaults_to_one_and_is_bounded(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002443](../../tests/test_web_agent.py#L2443) | 2443 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"test-secret-key\")"` | — |
+| [SRC-F725E90B2A-L002444](../../tests/test_web_agent.py#L2444) | 2444 | `"    monkeypatch.delenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", raising=False)"` | — |
+| [SRC-F725E90B2A-L002445](../../tests/test_web_agent.py#L2445) | 2445 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002446](../../tests/test_web_agent.py#L2446) | 2446 | `"    assert agent._reserve_deepseek_search_request() is True"` | — |
+| [SRC-F725E90B2A-L002447](../../tests/test_web_agent.py#L2447) | 2447 | `"    assert agent._reserve_deepseek_search_request() is False"` | — |
+| [SRC-F725E90B2A-L002448](../../tests/test_web_agent.py#L2448) | 2448 | `""` | — |
+| [SRC-F725E90B2A-L002449](../../tests/test_web_agent.py#L2449) | 2449 | `"    monkeypatch.setenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", \"2\")"` | — |
+| [SRC-F725E90B2A-L002450](../../tests/test_web_agent.py#L2450) | 2450 | `"    other_agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002451](../../tests/test_web_agent.py#L2451) | 2451 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
+| [SRC-F725E90B2A-L002452](../../tests/test_web_agent.py#L2452) | 2452 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
+| [SRC-F725E90B2A-L002453](../../tests/test_web_agent.py#L2453) | 2453 | `"    assert other_agent._reserve_deepseek_search_request() is False"` | — |
+| [SRC-F725E90B2A-L002454](../../tests/test_web_agent.py#L2454) | 2454 | `""` | — |
+| [SRC-F725E90B2A-L002455](../../tests/test_web_agent.py#L2455) | 2455 | `""` | — |
+| [SRC-F725E90B2A-L002456](../../tests/test_web_agent.py#L2456) | 2456 | `""` | — |
 | [SRC-F725E90B2A-L002457](../../tests/test_web_agent.py#L2457) | 2457 | `"def test_diagnostics_distinguishes_completed_search_without_matches_from_connection_failure(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L002458](../../tests/test_web_agent.py#L2458) | 2458 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L002459](../../tests/test_web_agent.py#L2459) | 2459 | `"    # A stale record from a prior search must not make a new diagnostics call pass."` | — |
@@ -796,23 +816,3 @@
 | [SRC-F725E90B2A-L003234](../../tests/test_web_agent.py#L3234) | 3234 | `"        observed_plans.append(dict(research_plan))"` | — |
 | [SRC-F725E90B2A-L003235](../../tests/test_web_agent.py#L3235) | 3235 | `"        return [], [], {"` | — |
 | [SRC-F725E90B2A-L003236](../../tests/test_web_agent.py#L3236) | 3236 | `"            \"queries_planned\": len(research_plan.get(\"queries\", [])),"` | — |
-| [SRC-F725E90B2A-L003237](../../tests/test_web_agent.py#L3237) | 3237 | `"            \"queries_attempted\": 0,"` | — |
-| [SRC-F725E90B2A-L003238](../../tests/test_web_agent.py#L3238) | 3238 | `"            \"query_results\": [],"` | — |
-| [SRC-F725E90B2A-L003239](../../tests/test_web_agent.py#L3239) | 3239 | `"            \"unique_sources\": 0,"` | — |
-| [SRC-F725E90B2A-L003240](../../tests/test_web_agent.py#L3240) | 3240 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-F725E90B2A-L003241](../../tests/test_web_agent.py#L3241) | 3241 | `"            \"providers_used\": [],"` | — |
-| [SRC-F725E90B2A-L003242](../../tests/test_web_agent.py#L3242) | 3242 | `"            \"platform_counts\": {},"` | — |
-| [SRC-F725E90B2A-L003243](../../tests/test_web_agent.py#L3243) | 3243 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L003244](../../tests/test_web_agent.py#L3244) | 3244 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-F725E90B2A-L003245](../../tests/test_web_agent.py#L3245) | 3245 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L003246](../../tests/test_web_agent.py#L3246) | 3246 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L003247](../../tests/test_web_agent.py#L3247) | 3247 | `"        }"` | — |
-| [SRC-F725E90B2A-L003248](../../tests/test_web_agent.py#L3248) | 3248 | `""` | — |
-| [SRC-F725E90B2A-L003249](../../tests/test_web_agent.py#L3249) | 3249 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L003250](../../tests/test_web_agent.py#L3250) | 3250 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"لا تتوفر مصادر كافية.\")"` | — |
-| [SRC-F725E90B2A-L003251](../../tests/test_web_agent.py#L3251) | 3251 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda _question, answer, _sources: answer)"` | — |
-| [SRC-F725E90B2A-L003252](../../tests/test_web_agent.py#L3252) | 3252 | `""` | — |
-| [SRC-F725E90B2A-L003253](../../tests/test_web_agent.py#L3253) | 3253 | `"    agent.answer(question, mode=\"auto\")"` | — |
-| [SRC-F725E90B2A-L003254](../../tests/test_web_agent.py#L3254) | 3254 | `""` | — |
-| [SRC-F725E90B2A-L003255](../../tests/test_web_agent.py#L3255) | 3255 | `"    assert observed_plans"` | — |
-| [SRC-F725E90B2A-L003256](../../tests/test_web_agent.py#L3256) | 3256 | `"    assert question not in observed_plans[0][\"queries\"]"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001657 إلى SRC-F725E90B2A-L002456
+- النطاق: SRC-F725E90B2A-L001637 إلى SRC-F725E90B2A-L002436
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001637](../../tests/test_web_agent.py#L1637) | 1637 | `"            \"domain\": domain,"` | — |
+| [SRC-F725E90B2A-L001638](../../tests/test_web_agent.py#L1638) | 1638 | `"            \"source_class\": \"general\","` | — |
+| [SRC-F725E90B2A-L001639](../../tests/test_web_agent.py#L1639) | 1639 | `"            \"platform\": \"web\","` | — |
+| [SRC-F725E90B2A-L001640](../../tests/test_web_agent.py#L1640) | 1640 | `"        })"` | — |
+| [SRC-F725E90B2A-L001641](../../tests/test_web_agent.py#L1641) | 1641 | `""` | — |
+| [SRC-F725E90B2A-L001642](../../tests/test_web_agent.py#L1642) | 1642 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001643](../../tests/test_web_agent.py#L1643) | 1643 | `"        agent, \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L001644](../../tests/test_web_agent.py#L1644) | 1644 | `"        lambda question, history: {"` | — |
+| [SRC-F725E90B2A-L001645](../../tests/test_web_agent.py#L1645) | 1645 | `"            \"queries\": [f\"query {i}\" for i in range(8)],"` | — |
+| [SRC-F725E90B2A-L001646](../../tests/test_web_agent.py#L1646) | 1646 | `"            \"direct_urls\": [], \"social_focus\": False, \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L001647](../../tests/test_web_agent.py#L1647) | 1647 | `"            \"depth\": \"deep\", \"platforms\": [], \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001648](../../tests/test_web_agent.py#L1648) | 1648 | `"        },"` | — |
+| [SRC-F725E90B2A-L001649](../../tests/test_web_agent.py#L1649) | 1649 | `"    )"` | — |
+| [SRC-F725E90B2A-L001650](../../tests/test_web_agent.py#L1650) | 1650 | `""` | — |
+| [SRC-F725E90B2A-L001651](../../tests/test_web_agent.py#L1651) | 1651 | `"    def collect(plan):"` | — |
+| [SRC-F725E90B2A-L001652](../../tests/test_web_agent.py#L1652) | 1652 | `"        observed[\"plan\"] = plan"` | — |
+| [SRC-F725E90B2A-L001653](../../tests/test_web_agent.py#L1653) | 1653 | `"        return sources, [], {"` | — |
+| [SRC-F725E90B2A-L001654](../../tests/test_web_agent.py#L1654) | 1654 | `"            \"queries_planned\": len(plan[\"queries\"]), \"queries_attempted\": len(plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L001655](../../tests/test_web_agent.py#L1655) | 1655 | `"            \"unique_sources\": 2, \"pages_fetched\": 2,"` | — |
+| [SRC-F725E90B2A-L001656](../../tests/test_web_agent.py#L1656) | 1656 | `"            \"providers_used\": [\"test_provider\"], \"platform_counts\": {\"web\": 2},"` | — |
 | [SRC-F725E90B2A-L001657](../../tests/test_web_agent.py#L1657) | 1657 | `"            \"social_direct_results\": 0, \"depth\": plan[\"depth\"], \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001658](../../tests/test_web_agent.py#L1658) | 1658 | `"        }"` | — |
 | [SRC-F725E90B2A-L001659](../../tests/test_web_agent.py#L1659) | 1659 | `""` | — |
@@ -796,23 +816,3 @@
 | [SRC-F725E90B2A-L002434](../../tests/test_web_agent.py#L2434) | 2434 | `"    report = agent.diagnostics(test_model=False, test_social=False)"` | — |
 | [SRC-F725E90B2A-L002435](../../tests/test_web_agent.py#L2435) | 2435 | `""` | — |
 | [SRC-F725E90B2A-L002436](../../tests/test_web_agent.py#L2436) | 2436 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"degraded\""` | — |
-| [SRC-F725E90B2A-L002437](../../tests/test_web_agent.py#L2437) | 2437 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L002438](../../tests/test_web_agent.py#L2438) | 2438 | `"    assert report[\"checks\"][\"web_search\"][\"completed_connector_responses\"] >= 1"` | — |
-| [SRC-F725E90B2A-L002439](../../tests/test_web_agent.py#L2439) | 2439 | `"    assert \"completed a request\" in report[\"checks\"][\"web_search\"][\"note\"]"` | — |
-| [SRC-F725E90B2A-L002440](../../tests/test_web_agent.py#L2440) | 2440 | `""` | — |
-| [SRC-F725E90B2A-L002441](../../tests/test_web_agent.py#L2441) | 2441 | `""` | — |
-| [SRC-F725E90B2A-L002442](../../tests/test_web_agent.py#L2442) | 2442 | `"def test_deepseek_search_request_budget_defaults_to_one_and_is_bounded(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002443](../../tests/test_web_agent.py#L2443) | 2443 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"test-secret-key\")"` | — |
-| [SRC-F725E90B2A-L002444](../../tests/test_web_agent.py#L2444) | 2444 | `"    monkeypatch.delenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", raising=False)"` | — |
-| [SRC-F725E90B2A-L002445](../../tests/test_web_agent.py#L2445) | 2445 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002446](../../tests/test_web_agent.py#L2446) | 2446 | `"    assert agent._reserve_deepseek_search_request() is True"` | — |
-| [SRC-F725E90B2A-L002447](../../tests/test_web_agent.py#L2447) | 2447 | `"    assert agent._reserve_deepseek_search_request() is False"` | — |
-| [SRC-F725E90B2A-L002448](../../tests/test_web_agent.py#L2448) | 2448 | `""` | — |
-| [SRC-F725E90B2A-L002449](../../tests/test_web_agent.py#L2449) | 2449 | `"    monkeypatch.setenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", \"2\")"` | — |
-| [SRC-F725E90B2A-L002450](../../tests/test_web_agent.py#L2450) | 2450 | `"    other_agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002451](../../tests/test_web_agent.py#L2451) | 2451 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
-| [SRC-F725E90B2A-L002452](../../tests/test_web_agent.py#L2452) | 2452 | `"    assert other_agent._reserve_deepseek_search_request() is True"` | — |
-| [SRC-F725E90B2A-L002453](../../tests/test_web_agent.py#L2453) | 2453 | `"    assert other_agent._reserve_deepseek_search_request() is False"` | — |
-| [SRC-F725E90B2A-L002454](../../tests/test_web_agent.py#L2454) | 2454 | `""` | — |
-| [SRC-F725E90B2A-L002455](../../tests/test_web_agent.py#L2455) | 2455 | `""` | — |
-| [SRC-F725E90B2A-L002456](../../tests/test_web_agent.py#L2456) | 2456 | `""` | — |

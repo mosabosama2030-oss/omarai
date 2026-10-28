@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000874 إلى SRC-E599346ABE-L001673
+- النطاق: SRC-E599346ABE-L000854 إلى SRC-E599346ABE-L001653
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000854](../generate_index.py#L854) | 854 | `"    source: str,"` | — |
+| [SRC-E599346ABE-L000855](../generate_index.py#L855) | 855 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L000856](../generate_index.py#L856) | 856 | `"    markers: list[IndexedMarker],"` | — |
+| [SRC-E599346ABE-L000857](../generate_index.py#L857) | 857 | `"    seen: set[tuple[str, str, str]],"` | — |
+| [SRC-E599346ABE-L000858](../generate_index.py#L858) | 858 | `"    base_line: int = 1,"` | — |
+| [SRC-E599346ABE-L000859](../generate_index.py#L859) | 859 | `") -> None:"` | — |
+| [SRC-E599346ABE-L000860](../generate_index.py#L860) | 860 | `"    \"\"\"Extract CSS class/id selectors and custom properties; this is not a full CSS parser.\"\"\""` | — |
+| [SRC-E599346ABE-L000861](../generate_index.py#L861) | 861 | `"    cleaned = CSS_COMMENT_RE.sub("` | — |
+| [SRC-E599346ABE-L000862](../generate_index.py#L862) | 862 | `"        lambda match: \"\".join(\"\\n\" if char == \"\\n\" else \" \" for char in match.group(0)),"` | — |
+| [SRC-E599346ABE-L000863](../generate_index.py#L863) | 863 | `"        source,"` | — |
+| [SRC-E599346ABE-L000864](../generate_index.py#L864) | 864 | `"    )"` | — |
+| [SRC-E599346ABE-L000865](../generate_index.py#L865) | 865 | `"    patterns = ("` | — |
+| [SRC-E599346ABE-L000866](../generate_index.py#L866) | 866 | `"        (CSS_CUSTOM_PROPERTY_RE, \"متغير CSS مخصص\"),"` | — |
+| [SRC-E599346ABE-L000867](../generate_index.py#L867) | 867 | `"        (CSS_CLASS_RE, \"محدد class في CSS\"),"` | — |
+| [SRC-E599346ABE-L000868](../generate_index.py#L868) | 868 | `"        (CSS_ID_RE, \"محدد id في CSS\"),"` | — |
+| [SRC-E599346ABE-L000869](../generate_index.py#L869) | 869 | `"    )"` | — |
+| [SRC-E599346ABE-L000870](../generate_index.py#L870) | 870 | `"    for pattern, kind in patterns:"` | — |
+| [SRC-E599346ABE-L000871](../generate_index.py#L871) | 871 | `"        for match in pattern.finditer(cleaned):"` | — |
+| [SRC-E599346ABE-L000872](../generate_index.py#L872) | 872 | `"            _add_marker("` | — |
+| [SRC-E599346ABE-L000873](../generate_index.py#L873) | 873 | `"                markers,"` | — |
 | [SRC-E599346ABE-L000874](../generate_index.py#L874) | 874 | `"                seen,"` | — |
 | [SRC-E599346ABE-L000875](../generate_index.py#L875) | 875 | `"                relative_file,"` | — |
 | [SRC-E599346ABE-L000876](../generate_index.py#L876) | 876 | `"                match.group(1),"` | — |
@@ -796,23 +816,3 @@
 | [SRC-E599346ABE-L001651](../generate_index.py#L1651) | 1651 | `"    lines.extend("` | — |
 | [SRC-E599346ABE-L001652](../generate_index.py#L1652) | 1652 | `"        ["` | — |
 | [SRC-E599346ABE-L001653](../generate_index.py#L1653) | 1653 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001654](../generate_index.py#L1654) | 1654 | `"            \"## تعريفات Python من AST\","` | — |
-| [SRC-E599346ABE-L001655](../generate_index.py#L1655) | 1655 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001656](../generate_index.py#L1656) | 1656 | `"            (\"> تُحسب حالة Docstring للدوال والكلاسات فقط. المتغيرات والثوابت لا تُصنّف \""` | — |
-| [SRC-E599346ABE-L001657](../generate_index.py#L1657) | 1657 | `"            \"على أنها موثقة أو ناقصة Docstring.\"),"` | — |
-| [SRC-E599346ABE-L001658](../generate_index.py#L1658) | 1658 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001659](../generate_index.py#L1659) | 1659 | `"            \"\| الملف \| النوع \| الاسم المؤهل \| الوصف \| حالة Docstring \| السطر \| كود السطر للوصول المباشر \|\","` | — |
-| [SRC-E599346ABE-L001660](../generate_index.py#L1660) | 1660 | `"            \"\|---\|---\|---\|---\|---\|---:\|---\|\","` | — |
-| [SRC-E599346ABE-L001661](../generate_index.py#L1661) | 1661 | `"        ]"` | — |
-| [SRC-E599346ABE-L001662](../generate_index.py#L1662) | 1662 | `"    )"` | — |
-| [SRC-E599346ABE-L001663](../generate_index.py#L1663) | 1663 | `""` | — |
-| [SRC-E599346ABE-L001664](../generate_index.py#L1664) | 1664 | `"    if not symbols:"` | — |
-| [SRC-E599346ABE-L001665](../generate_index.py#L1665) | 1665 | `"        lines.append(\"\| — \| — \| — \| لا توجد تعريفات Python في الملفات المؤهلة. \| — \| — \| — \|\")"` | — |
-| [SRC-E599346ABE-L001666](../generate_index.py#L1666) | 1666 | `"    else:"` | — |
-| [SRC-E599346ABE-L001667](../generate_index.py#L1667) | 1667 | `"        for symbol in symbols:"` | — |
-| [SRC-E599346ABE-L001668](../generate_index.py#L1668) | 1668 | `"            if symbol.documented is True:"` | — |
-| [SRC-E599346ABE-L001669](../generate_index.py#L1669) | 1669 | `"                status = \"موثق\""` | — |
-| [SRC-E599346ABE-L001670](../generate_index.py#L1670) | 1670 | `"            elif symbol.documented is False:"` | — |
-| [SRC-E599346ABE-L001671](../generate_index.py#L1671) | 1671 | `"                status = \"ناقص\""` | — |
-| [SRC-E599346ABE-L001672](../generate_index.py#L1672) | 1672 | `"            else:"` | — |
-| [SRC-E599346ABE-L001673](../generate_index.py#L1673) | 1673 | `"                status = \"لا ينطبق\""` | — |

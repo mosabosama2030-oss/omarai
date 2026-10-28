@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000874 إلى SRC-1AE03B9EC3-L001673
+- النطاق: SRC-1AE03B9EC3-L000854 إلى SRC-1AE03B9EC3-L001653
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000854](../../agents/web_agent.py#L854) | 854 | `"        for field, basis in ((\"page_text\", \"page_text\"), (\"title\", \"title\"), (\"snippet\", \"search_snippet\")):"` | — |
+| [SRC-1AE03B9EC3-L000855](../../agents/web_agent.py#L855) | 855 | `"            raw = source.get(field)"` | — |
+| [SRC-1AE03B9EC3-L000856](../../agents/web_agent.py#L856) | 856 | `"            if not isinstance(raw, str) or not raw.strip():"` | — |
+| [SRC-1AE03B9EC3-L000857](../../agents/web_agent.py#L857) | 857 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L000858](../../agents/web_agent.py#L858) | 858 | `"            normalized = _normalize_search_query(raw).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000859](../../agents/web_agent.py#L859) | 859 | `"            negations = ("` | — |
+| [SRC-1AE03B9EC3-L000860](../../agents/web_agent.py#L860) | 860 | `"                \"not looking to buy\", \"not interested in buying\","` | — |
+| [SRC-1AE03B9EC3-L000861](../../agents/web_agent.py#L861) | 861 | `"                \"not interested in purchasing\", \"no longer looking to buy\","` | — |
+| [SRC-1AE03B9EC3-L000862](../../agents/web_agent.py#L862) | 862 | `"                \"مش بدور على\", \"مش عايز اشتري\", \"مش عاوز اشتري\","` | — |
+| [SRC-1AE03B9EC3-L000863](../../agents/web_agent.py#L863) | 863 | `"                \"لا اريد شراء\", \"لا ارغب في شراء\", \"مش محتاج اشتري\","` | — |
+| [SRC-1AE03B9EC3-L000864](../../agents/web_agent.py#L864) | 864 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000865](../../agents/web_agent.py#L865) | 865 | `"            if any(_normalize_search_query(term).casefold() in normalized for term in negations):"` | — |
+| [SRC-1AE03B9EC3-L000866](../../agents/web_agent.py#L866) | 866 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L000867](../../agents/web_agent.py#L867) | 867 | `"            for phrase in phrases:"` | — |
+| [SRC-1AE03B9EC3-L000868](../../agents/web_agent.py#L868) | 868 | `"                needle = _normalize_search_query(phrase).casefold()"` | — |
+| [SRC-1AE03B9EC3-L000869](../../agents/web_agent.py#L869) | 869 | `"                if needle and needle in normalized:"` | — |
+| [SRC-1AE03B9EC3-L000870](../../agents/web_agent.py#L870) | 870 | `"                    return {\"phrase\": phrase, \"basis\": basis}"` | — |
+| [SRC-1AE03B9EC3-L000871](../../agents/web_agent.py#L871) | 871 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L000872](../../agents/web_agent.py#L872) | 872 | `""` | — |
+| [SRC-1AE03B9EC3-L000873](../../agents/web_agent.py#L873) | 873 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L000874](../../agents/web_agent.py#L874) | 874 | `"    def _lead_generation_queries("` | — |
 | [SRC-1AE03B9EC3-L000875](../../agents/web_agent.py#L875) | 875 | `"        question: str, existing_queries: list[str] \| None = None"` | — |
 | [SRC-1AE03B9EC3-L000876](../../agents/web_agent.py#L876) | 876 | `"    ) -> list[str]:"` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L001651](../../agents/web_agent.py#L1651) | 1651 | `"                break"` | — |
 | [SRC-1AE03B9EC3-L001652](../../agents/web_agent.py#L1652) | 1652 | `"        return rows"` | — |
 | [SRC-1AE03B9EC3-L001653](../../agents/web_agent.py#L1653) | 1653 | `""` | — |
-| [SRC-1AE03B9EC3-L001654](../../agents/web_agent.py#L1654) | 1654 | `"    def _search_tavily(self, query: str) -> list[dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L001655](../../agents/web_agent.py#L1655) | 1655 | `"        \"\"\"Use Tavily's official search API for structured, extractable live web results.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001656](../../agents/web_agent.py#L1656) | 1656 | `"        api_key = os.getenv(\"TAVILY_API_KEY\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001657](../../agents/web_agent.py#L1657) | 1657 | `"        if not api_key:"` | — |
-| [SRC-1AE03B9EC3-L001658](../../agents/web_agent.py#L1658) | 1658 | `"            return []"` | — |
-| [SRC-1AE03B9EC3-L001659](../../agents/web_agent.py#L1659) | 1659 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L001660](../../agents/web_agent.py#L1660) | 1660 | `"            import httpx"` | — |
-| [SRC-1AE03B9EC3-L001661](../../agents/web_agent.py#L1661) | 1661 | `"        except ImportError as exc:"` | — |
-| [SRC-1AE03B9EC3-L001662](../../agents/web_agent.py#L1662) | 1662 | `"            raise AgentDependencyError(\"حزمة httpx غير مثبتة.\") from exc"` | — |
-| [SRC-1AE03B9EC3-L001663](../../agents/web_agent.py#L1663) | 1663 | `"        from agents.research import detect_depth, detect_freshness"` | — |
-| [SRC-1AE03B9EC3-L001664](../../agents/web_agent.py#L1664) | 1664 | `""` | — |
-| [SRC-1AE03B9EC3-L001665](../../agents/web_agent.py#L1665) | 1665 | `"        response = httpx.post("` | — |
-| [SRC-1AE03B9EC3-L001666](../../agents/web_agent.py#L1666) | 1666 | `"            \"https://api.tavily.com/search\","` | — |
-| [SRC-1AE03B9EC3-L001667](../../agents/web_agent.py#L1667) | 1667 | `"            json={"` | — |
-| [SRC-1AE03B9EC3-L001668](../../agents/web_agent.py#L1668) | 1668 | `"                \"api_key\": api_key,"` | — |
-| [SRC-1AE03B9EC3-L001669](../../agents/web_agent.py#L1669) | 1669 | `"                \"query\": query[:500],"` | — |
-| [SRC-1AE03B9EC3-L001670](../../agents/web_agent.py#L1670) | 1670 | `"                \"search_depth\": \"advanced\" if detect_depth(query) == \"deep\" else \"basic\","` | — |
-| [SRC-1AE03B9EC3-L001671](../../agents/web_agent.py#L1671) | 1671 | `"                \"topic\": \"news\" if detect_freshness(query) else \"general\","` | — |
-| [SRC-1AE03B9EC3-L001672](../../agents/web_agent.py#L1672) | 1672 | `"                \"max_results\": MAX_PROVIDER_RESULTS,"` | — |
-| [SRC-1AE03B9EC3-L001673](../../agents/web_agent.py#L1673) | 1673 | `"                \"include_answer\": False,"` | — |

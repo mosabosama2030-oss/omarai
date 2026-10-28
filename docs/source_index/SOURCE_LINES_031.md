@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000397 إلى SRC-DA61479D59-L000224
+- النطاق: SRC-3451CC474D-L000377 إلى SRC-DA61479D59-L000204
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000377](../../tests/test_api.py#L377) | 377 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000378](../../tests/test_api.py#L378) | 378 | `"    assert result[\"count\"] == 0"` | — |
+| [SRC-3451CC474D-L000379](../../tests/test_api.py#L379) | 379 | `""` | — |
+| [SRC-3451CC474D-L000380](../../tests/test_api.py#L380) | 380 | `""` | — |
+| [SRC-3451CC474D-L000381](../../tests/test_api.py#L381) | 381 | `"def test_hosted_api_rate_limits_authenticated_requests(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000382](../../tests/test_api.py#L382) | 382 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000383](../../tests/test_api.py#L383) | 383 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"y\" * 48)"` | — |
+| [SRC-3451CC474D-L000384](../../tests/test_api.py#L384) | 384 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
+| [SRC-3451CC474D-L000385](../../tests/test_api.py#L385) | 385 | `"    with Handler._rate_lock:"` | — |
+| [SRC-3451CC474D-L000386](../../tests/test_api.py#L386) | 386 | `"        Handler._request_times.clear()"` | — |
+| [SRC-3451CC474D-L000387](../../tests/test_api.py#L387) | 387 | `"    headers = {\"Authorization\": \"Bearer \" + \"y\" * 48}"` | — |
+| [SRC-3451CC474D-L000388](../../tests/test_api.py#L388) | 388 | `""` | — |
+| [SRC-3451CC474D-L000389](../../tests/test_api.py#L389) | 389 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L000390](../../tests/test_api.py#L390) | 390 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"first\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000391](../../tests/test_api.py#L391) | 391 | `"    )"` | — |
+| [SRC-3451CC474D-L000392](../../tests/test_api.py#L392) | 392 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000393](../../tests/test_api.py#L393) | 393 | `""` | — |
+| [SRC-3451CC474D-L000394](../../tests/test_api.py#L394) | 394 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L000395](../../tests/test_api.py#L395) | 395 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"second\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000396](../../tests/test_api.py#L396) | 396 | `"    )"` | — |
 | [SRC-3451CC474D-L000397](../../tests/test_api.py#L397) | 397 | `"    assert status == 429"` | — |
 | [SRC-3451CC474D-L000398](../../tests/test_api.py#L398) | 398 | `"    assert \"حد الطلبات\" in error[\"error\"]"` | — |
 | [SRC-3451CC474D-L000399](../../tests/test_api.py#L399) | 399 | `""` | — |
@@ -814,23 +834,3 @@
 | [SRC-DA61479D59-L000202](../../tests/test_connector_summary_counters.py#L202) | 202 | `"    })"` | — |
 | [SRC-DA61479D59-L000203](../../tests/test_connector_summary_counters.py#L203) | 203 | `""` | — |
 | [SRC-DA61479D59-L000204](../../tests/test_connector_summary_counters.py#L204) | 204 | `"    assert warnings"` | — |
-| [SRC-DA61479D59-L000205](../../tests/test_connector_summary_counters.py#L205) | 205 | `"    assert report[\"pages_fetch_attempted\"] == 2"` | — |
-| [SRC-DA61479D59-L000206](../../tests/test_connector_summary_counters.py#L206) | 206 | `"    assert report[\"pages_content_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000207](../../tests/test_connector_summary_counters.py#L207) | 207 | `"    assert report[\"pages_partial_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000208](../../tests/test_connector_summary_counters.py#L208) | 208 | `"    assert report[\"pages_extract_failed\"] == 1"` | — |
-| [SRC-DA61479D59-L000209](../../tests/test_connector_summary_counters.py#L209) | 209 | `"    assert report[\"page_fetch_status_counts\"][\"partial_extraction\"] == 1"` | — |
-| [SRC-DA61479D59-L000210](../../tests/test_connector_summary_counters.py#L210) | 210 | `"    assert report[\"page_fetch_status_counts\"][\"http_error\"] == 1"` | — |
-| [SRC-DA61479D59-L000211](../../tests/test_connector_summary_counters.py#L211) | 211 | `"    assert sum(item[\"page_fetch_status\"] == \"partial_extraction\" for item in sources) == 1"` | — |
-| [SRC-DA61479D59-L000212](../../tests/test_connector_summary_counters.py#L212) | 212 | `"    assert sum(item[\"page_fetch_status\"] == \"http_error\" for item in sources) == 1"` | — |
-| [SRC-DA61479D59-L000213](../../tests/test_connector_summary_counters.py#L213) | 213 | `"    assert any(\"HTTPStatus\" in str(item.get(\"page_fetch_error_class\")) for item in sources)"` | — |
-| [SRC-DA61479D59-L000214](../../tests/test_connector_summary_counters.py#L214) | 214 | `""` | — |
-| [SRC-DA61479D59-L000215](../../tests/test_connector_summary_counters.py#L215) | 215 | `""` | — |
-| [SRC-DA61479D59-L000216](../../tests/test_connector_summary_counters.py#L216) | 216 | `"def test_raw_provider_diagnostics_redact_credentials_from_queries_and_errors():"` | — |
-| [SRC-DA61479D59-L000217](../../tests/test_connector_summary_counters.py#L217) | 217 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000218](../../tests/test_connector_summary_counters.py#L218) | 218 | `"    agent._record_provider_diagnostic("` | — |
-| [SRC-DA61479D59-L000219](../../tests/test_connector_summary_counters.py#L219) | 219 | `"        provider=\"test_provider\","` | — |
-| [SRC-DA61479D59-L000220](../../tests/test_connector_summary_counters.py#L220) | 220 | `"        query=\"research API_KEY=query-secret\","` | — |
-| [SRC-DA61479D59-L000221](../../tests/test_connector_summary_counters.py#L221) | 221 | `"        status=\"failed\","` | — |
-| [SRC-DA61479D59-L000222](../../tests/test_connector_summary_counters.py#L222) | 222 | `"        error=("` | — |
-| [SRC-DA61479D59-L000223](../../tests/test_connector_summary_counters.py#L223) | 223 | `"            \"Authorization: Bearer bearer-secret access_token=access-secret; \""` | — |
-| [SRC-DA61479D59-L000224](../../tests/test_connector_summary_counters.py#L224) | 224 | `"            \"URL https://example.test/search?token=url-secret\""` | — |

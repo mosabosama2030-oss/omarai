@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000178 إلى SRC-829A979985-L000138
+- النطاق: SRC-6BCB799CEC-L000158 إلى SRC-829A979985-L000118
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000158](../../tests/test_evidence_provenance.py#L158) | 158 | `"        def __enter__(self):"` | — |
+| [SRC-6BCB799CEC-L000159](../../tests/test_evidence_provenance.py#L159) | 159 | `"            return self"` | — |
+| [SRC-6BCB799CEC-L000160](../../tests/test_evidence_provenance.py#L160) | 160 | `""` | — |
+| [SRC-6BCB799CEC-L000161](../../tests/test_evidence_provenance.py#L161) | 161 | `"        def __exit__(self, *args):"` | — |
+| [SRC-6BCB799CEC-L000162](../../tests/test_evidence_provenance.py#L162) | 162 | `"            return False"` | — |
+| [SRC-6BCB799CEC-L000163](../../tests/test_evidence_provenance.py#L163) | 163 | `""` | — |
+| [SRC-6BCB799CEC-L000164](../../tests/test_evidence_provenance.py#L164) | 164 | `"        def stream(self, *args, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000165](../../tests/test_evidence_provenance.py#L165) | 165 | `"            called[\"stream\"] += 1"` | — |
+| [SRC-6BCB799CEC-L000166](../../tests/test_evidence_provenance.py#L166) | 166 | `"            raise AssertionError(\"private destinations must not be connected\")"` | — |
+| [SRC-6BCB799CEC-L000167](../../tests/test_evidence_provenance.py#L167) | 167 | `""` | — |
+| [SRC-6BCB799CEC-L000168](../../tests/test_evidence_provenance.py#L168) | 168 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
+| [SRC-6BCB799CEC-L000169](../../tests/test_evidence_provenance.py#L169) | 169 | `"    monkeypatch.setattr(\"httpx.Client\", FakeClient)"` | — |
+| [SRC-6BCB799CEC-L000170](../../tests/test_evidence_provenance.py#L170) | 170 | `"    assert _public_ip_literals(\"example.com\") is None"` | — |
+| [SRC-6BCB799CEC-L000171](../../tests/test_evidence_provenance.py#L171) | 171 | `"    assert WebAgent()._fetch_page(\"https://example.com/secret\") == (\"\", \"\")"` | — |
+| [SRC-6BCB799CEC-L000172](../../tests/test_evidence_provenance.py#L172) | 172 | `"    assert called[\"stream\"] == 0"` | — |
+| [SRC-6BCB799CEC-L000173](../../tests/test_evidence_provenance.py#L173) | 173 | `""` | — |
+| [SRC-6BCB799CEC-L000174](../../tests/test_evidence_provenance.py#L174) | 174 | `""` | — |
+| [SRC-6BCB799CEC-L000175](../../tests/test_evidence_provenance.py#L175) | 175 | `"def test_page_fetch_connects_to_the_validated_public_ip(monkeypatch):"` | — |
+| [SRC-6BCB799CEC-L000176](../../tests/test_evidence_provenance.py#L176) | 176 | `"    seen = {}"` | — |
+| [SRC-6BCB799CEC-L000177](../../tests/test_evidence_provenance.py#L177) | 177 | `""` | — |
 | [SRC-6BCB799CEC-L000178](../../tests/test_evidence_provenance.py#L178) | 178 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
 | [SRC-6BCB799CEC-L000179](../../tests/test_evidence_provenance.py#L179) | 179 | `"        assert host == \"example.com\""` | — |
 | [SRC-6BCB799CEC-L000180](../../tests/test_evidence_provenance.py#L180) | 180 | `"        return _addrinfo(\"1.1.1.1\")"` | — |
@@ -823,23 +843,3 @@
 | [SRC-829A979985-L000116](../../tests/test_generation_acceptance_matrix.py#L116) | 116 | `"    assert agent.model_usage == []"` | — |
 | [SRC-829A979985-L000117](../../tests/test_generation_acceptance_matrix.py#L117) | 117 | `"    assert [item[\"status\"] for item in agent.generation_diagnostics] == ["` | — |
 | [SRC-829A979985-L000118](../../tests/test_generation_acceptance_matrix.py#L118) | 118 | `"        \"truncated\","` | — |
-| [SRC-829A979985-L000119](../../tests/test_generation_acceptance_matrix.py#L119) | 119 | `"        \"truncated\","` | — |
-| [SRC-829A979985-L000120](../../tests/test_generation_acceptance_matrix.py#L120) | 120 | `"    ]"` | — |
-| [SRC-829A979985-L000121](../../tests/test_generation_acceptance_matrix.py#L121) | 121 | `"    assert all(\"مبتور\" not in str(item) for item in agent.generation_diagnostics)"` | — |
-| [SRC-829A979985-L000122](../../tests/test_generation_acceptance_matrix.py#L122) | 122 | `""` | — |
-| [SRC-829A979985-L000123](../../tests/test_generation_acceptance_matrix.py#L123) | 123 | `""` | — |
-| [SRC-829A979985-L000124](../../tests/test_generation_acceptance_matrix.py#L124) | 124 | `"def test_model_fallback_cannot_exceed_request_model_call_budget(monkeypatch):"` | — |
-| [SRC-829A979985-L000125](../../tests/test_generation_acceptance_matrix.py#L125) | 125 | `"    agent = WebAgent()"` | — |
-| [SRC-829A979985-L000126](../../tests/test_generation_acceptance_matrix.py#L126) | 126 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-829A979985-L000127](../../tests/test_generation_acceptance_matrix.py#L127) | 127 | `"    agent.fallback_model = \"fallback/model\""` | — |
-| [SRC-829A979985-L000128](../../tests/test_generation_acceptance_matrix.py#L128) | 128 | `"    budget = RequestBudget(timeout_seconds=60, limits={\"model_calls\": 1})"` | — |
-| [SRC-829A979985-L000129](../../tests/test_generation_acceptance_matrix.py#L129) | 129 | `"    agent._request_budget = budget"` | — |
-| [SRC-829A979985-L000130](../../tests/test_generation_acceptance_matrix.py#L130) | 130 | `"    calls: list[str] = []"` | — |
-| [SRC-829A979985-L000131](../../tests/test_generation_acceptance_matrix.py#L131) | 131 | `""` | — |
-| [SRC-829A979985-L000132](../../tests/test_generation_acceptance_matrix.py#L132) | 132 | `"    def fake_urlopen(request, timeout):"` | — |
-| [SRC-829A979985-L000133](../../tests/test_generation_acceptance_matrix.py#L133) | 133 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
-| [SRC-829A979985-L000134](../../tests/test_generation_acceptance_matrix.py#L134) | 134 | `"        calls.append(model)"` | — |
-| [SRC-829A979985-L000135](../../tests/test_generation_acceptance_matrix.py#L135) | 135 | `"        return FakeCompletionResponse(\"محتوى مبتور\", \"length\")"` | — |
-| [SRC-829A979985-L000136](../../tests/test_generation_acceptance_matrix.py#L136) | 136 | `""` | — |
-| [SRC-829A979985-L000137](../../tests/test_generation_acceptance_matrix.py#L137) | 137 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-829A979985-L000138](../../tests/test_generation_acceptance_matrix.py#L138) | 138 | `""` | — |

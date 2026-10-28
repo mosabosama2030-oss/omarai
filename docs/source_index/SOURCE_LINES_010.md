@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002474 إلى SRC-1AE03B9EC3-L003273
+- النطاق: SRC-1AE03B9EC3-L002454 إلى SRC-1AE03B9EC3-L003253
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002454](../../agents/web_agent.py#L2454) | 2454 | `"                    try:"` | — |
+| [SRC-1AE03B9EC3-L002455](../../agents/web_agent.py#L2455) | 2455 | `"                        results = future.result()"` | — |
+| [SRC-1AE03B9EC3-L002456](../../agents/web_agent.py#L2456) | 2456 | `"                    except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L002457](../../agents/web_agent.py#L2457) | 2457 | `"                        warnings.append(f\"تعذر بحث الاستعلام «{query[:70]}»: {exc}\")"` | — |
+| [SRC-1AE03B9EC3-L002458](../../agents/web_agent.py#L2458) | 2458 | `"                        query_counts.append({\"query\": query, \"results\": 0})"` | — |
+| [SRC-1AE03B9EC3-L002459](../../agents/web_agent.py#L2459) | 2459 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L002460](../../agents/web_agent.py#L2460) | 2460 | `"                    query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
+| [SRC-1AE03B9EC3-L002461](../../agents/web_agent.py#L2461) | 2461 | `"                    grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
+| [SRC-1AE03B9EC3-L002462](../../agents/web_agent.py#L2462) | 2462 | `"                    for source in results:"` | — |
+| [SRC-1AE03B9EC3-L002463](../../agents/web_agent.py#L2463) | 2463 | `"                        provider = str(source.get(\"provider\") or \"web_search\")"` | — |
+| [SRC-1AE03B9EC3-L002464](../../agents/web_agent.py#L2464) | 2464 | `"                        grouped.setdefault(provider, []).append(source)"` | — |
+| [SRC-1AE03B9EC3-L002465](../../agents/web_agent.py#L2465) | 2465 | `"                    for provider, items in grouped.items():"` | — |
+| [SRC-1AE03B9EC3-L002466](../../agents/web_agent.py#L2466) | 2466 | `"                        items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
+| [SRC-1AE03B9EC3-L002467](../../agents/web_agent.py#L2467) | 2467 | `"                        batches.append({\"query\": query, \"provider\": provider, \"results\": items})"` | — |
+| [SRC-1AE03B9EC3-L002468](../../agents/web_agent.py#L2468) | 2468 | `""` | — |
+| [SRC-1AE03B9EC3-L002469](../../agents/web_agent.py#L2469) | 2469 | `"        # Evidence-gap iteration: deep tasks get up to three targeted follow-up searches"` | — |
+| [SRC-1AE03B9EC3-L002470](../../agents/web_agent.py#L2470) | 2470 | `"        # when initial coverage is thin. This uses observed source/domain/provider coverage,"` | — |
+| [SRC-1AE03B9EC3-L002471](../../agents/web_agent.py#L2471) | 2471 | `"        # not the language model's subjective claim that it has enough evidence."` | — |
+| [SRC-1AE03B9EC3-L002472](../../agents/web_agent.py#L2472) | 2472 | `"        preliminary = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)"` | — |
+| [SRC-1AE03B9EC3-L002473](../../agents/web_agent.py#L2473) | 2473 | `"        preliminary_domains = {"` | — |
 | [SRC-1AE03B9EC3-L002474](../../agents/web_agent.py#L2474) | 2474 | `"            registrable_domain(item.get(\"domain\") or urllib.parse.urlparse(item.get(\"url\", \"\")).hostname)"` | — |
 | [SRC-1AE03B9EC3-L002475](../../agents/web_agent.py#L2475) | 2475 | `"            for item in preliminary"` | — |
 | [SRC-1AE03B9EC3-L002476](../../agents/web_agent.py#L2476) | 2476 | `"        }"` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L003251](../../agents/web_agent.py#L3251) | 3251 | `"            return fallback"` | — |
 | [SRC-1AE03B9EC3-L003252](../../agents/web_agent.py#L3252) | 3252 | `""` | — |
 | [SRC-1AE03B9EC3-L003253](../../agents/web_agent.py#L3253) | 3253 | `"    def _plan_search("` | — |
-| [SRC-1AE03B9EC3-L003254](../../agents/web_agent.py#L3254) | 3254 | `"        self, question: str, history: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L003255](../../agents/web_agent.py#L3255) | 3255 | `"        *, context_override: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003256](../../agents/web_agent.py#L3256) | 3256 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003257](../../agents/web_agent.py#L3257) | 3257 | `"        \"\"\"Resolve dialogue semantics and plan searches, with deterministic fallbacks.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003258](../../agents/web_agent.py#L3258) | 3258 | `"        context_fallback = fallback_dialogue_context(question, history)"` | — |
-| [SRC-1AE03B9EC3-L003259](../../agents/web_agent.py#L3259) | 3259 | `"        dialogue_context = validate_dialogue_context("` | — |
-| [SRC-1AE03B9EC3-L003260](../../agents/web_agent.py#L3260) | 3260 | `"            context_override, question, history, fallback=context_fallback"` | — |
-| [SRC-1AE03B9EC3-L003261](../../agents/web_agent.py#L3261) | 3261 | `"        ) if context_override is not None else context_fallback"` | — |
-| [SRC-1AE03B9EC3-L003262](../../agents/web_agent.py#L3262) | 3262 | `"        search_question = ("` | — |
-| [SRC-1AE03B9EC3-L003263](../../agents/web_agent.py#L3263) | 3263 | `"            question if dialogue_context.get(\"topic_shift\")"` | — |
-| [SRC-1AE03B9EC3-L003264](../../agents/web_agent.py#L3264) | 3264 | `"            else dialogue_context.get(\"resolved_question\") or question"` | — |
-| [SRC-1AE03B9EC3-L003265](../../agents/web_agent.py#L3265) | 3265 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003266](../../agents/web_agent.py#L3266) | 3266 | `"        fallback = fallback_plan(search_question, history)"` | — |
-| [SRC-1AE03B9EC3-L003267](../../agents/web_agent.py#L3267) | 3267 | `"        fallback[\"dialogue_context\"] = dialogue_context"` | — |
-| [SRC-1AE03B9EC3-L003268](../../agents/web_agent.py#L3268) | 3268 | `"        # Do not invent generic searches when no usable topic exists."` | — |
-| [SRC-1AE03B9EC3-L003269](../../agents/web_agent.py#L3269) | 3269 | `"        if not fallback.get(\"queries\"):"` | — |
-| [SRC-1AE03B9EC3-L003270](../../agents/web_agent.py#L3270) | 3270 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003271](../../agents/web_agent.py#L3271) | 3271 | `"        if not self.api_key:"` | — |
-| [SRC-1AE03B9EC3-L003272](../../agents/web_agent.py#L3272) | 3272 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003273](../../agents/web_agent.py#L3273) | 3273 | `"        platform_names = \", \".join(SOCIAL_DOMAINS)"` | — |

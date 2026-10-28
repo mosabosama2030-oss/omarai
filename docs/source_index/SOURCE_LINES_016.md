@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C4C6C55E1A-L000044 إلى SRC-E599346ABE-L000073
+- النطاق: SRC-C4C6C55E1A-L000024 إلى SRC-E599346ABE-L000053
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C4C6C55E1A-L000024](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L24) | 24 | `""` | — |
+| [SRC-C4C6C55E1A-L000025](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L25) | 25 | `"- **VERIFIED:** دليل مباشر محدد النطاق، مرتبط بنسخة/اختبار واضح."` | — |
+| [SRC-C4C6C55E1A-L000026](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L26) | 26 | `"- **INFERRED:** قرائن من الكود أو الوثائق دون إثبات كامل في بيئة التشغيل."` | — |
+| [SRC-C4C6C55E1A-L000027](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L27) | 27 | `"- **PARTIAL:** جزء من المتطلب مثبت، لكن بقيت فجوة مؤثرة."` | — |
+| [SRC-C4C6C55E1A-L000028](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L28) | 28 | `"- **UNKNOWN:** لا تكفي الأدلة للحكم."` | — |
+| [SRC-C4C6C55E1A-L000029](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L29) | 29 | `"- **NOT_RUN:** اختبار معروف لم يتم تشغيله في هذه الجولة."` | — |
+| [SRC-C4C6C55E1A-L000030](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L30) | 30 | `"- **PROPOSED:** قرار أو إجراء مقترح لم يعتمد بعد."` | — |
+| [SRC-C4C6C55E1A-L000031](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L31) | 31 | `"- **NOT APPLICABLE:** لا ينطبق على النطاق الحالي مع سبب واضح؛ لا يستعمل لإخفاء نقص الإثبات."` | — |
+| [SRC-C4C6C55E1A-L000032](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L32) | 32 | `"- **WAIVED:** استثناء صريح وافق عليه صاحب الصلاحية، مع نطاق وتعويض وشرط انتهاء/مراجعة."` | — |
+| [SRC-C4C6C55E1A-L000033](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L33) | 33 | `""` | — |
+| [SRC-C4C6C55E1A-L000034](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L34) | 34 | `"كل حالة تنطبق على الضابط المحدد والنطاق المذكور فقط، لا على المشروع كله."` | — |
+| [SRC-C4C6C55E1A-L000035](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L35) | 35 | `""` | — |
+| [SRC-C4C6C55E1A-L000036](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L36) | 36 | `"## 2. خط الأساس وسلسلة الأدلة"` | — |
+| [SRC-C4C6C55E1A-L000037](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L37) | 37 | `""` | — |
+| [SRC-C4C6C55E1A-L000038](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L38) | 38 | `"### نسخة المصدر"` | — |
+| [SRC-C4C6C55E1A-L000039](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L39) | 39 | `""` | — |
+| [SRC-C4C6C55E1A-L000040](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L40) | 40 | ``"نسخة `main` التي تمت مراجعتها في هذه الجولة: `871d2930405d164d3ae4c53f368937a4f5f01a6f`."`` | — |
+| [SRC-C4C6C55E1A-L000041](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L41) | 41 | `""` | — |
+| [SRC-C4C6C55E1A-L000042](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L42) | 42 | `"### تغييرات مدمجة ذات صلة"` | — |
+| [SRC-C4C6C55E1A-L000043](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L43) | 43 | `""` | — |
 | [SRC-C4C6C55E1A-L000044](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L44) | 44 | `"\| التغيير \| ما يثبته ضمن النطاق \| ما لا يثبته \|"` | — |
 | [SRC-C4C6C55E1A-L000045](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L45) | 45 | `"\|---\|---\|---\|"` | — |
 | [SRC-C4C6C55E1A-L000046](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L46) | 46 | `"\| [PR #44](https://github.com/mosabosama2030-oss/omarai/pull/44) \| ميزانية موارد تعاونية للطلب وحد process-local للعمليات المكلفة. \| إلغاء قاطع لكل اتصال جارٍ، أو حد موزع بين النسخ، أو سعة إنتاجية. \|"` | — |
@@ -859,23 +879,3 @@
 | [SRC-E599346ABE-L000051](../generate_index.py#L51) | 51 | `"    }"` | — |
 | [SRC-E599346ABE-L000052](../generate_index.py#L52) | 52 | `")"` | — |
 | [SRC-E599346ABE-L000053](../generate_index.py#L53) | 53 | `"EXCLUDED_SUFFIXES = frozenset("` | — |
-| [SRC-E599346ABE-L000054](../generate_index.py#L54) | 54 | `"    {"` | — |
-| [SRC-E599346ABE-L000055](../generate_index.py#L55) | 55 | `"        \".pyc\","` | — |
-| [SRC-E599346ABE-L000056](../generate_index.py#L56) | 56 | `"        \".pyo\","` | — |
-| [SRC-E599346ABE-L000057](../generate_index.py#L57) | 57 | `"        \".sqlite\","` | — |
-| [SRC-E599346ABE-L000058](../generate_index.py#L58) | 58 | `"        \".sqlite3\","` | — |
-| [SRC-E599346ABE-L000059](../generate_index.py#L59) | 59 | `"        \".db\","` | — |
-| [SRC-E599346ABE-L000060](../generate_index.py#L60) | 60 | `"        \".pem\","` | — |
-| [SRC-E599346ABE-L000061](../generate_index.py#L61) | 61 | `"        \".key\","` | — |
-| [SRC-E599346ABE-L000062](../generate_index.py#L62) | 62 | `"        \".p12\","` | — |
-| [SRC-E599346ABE-L000063](../generate_index.py#L63) | 63 | `"        \".pfx\","` | — |
-| [SRC-E599346ABE-L000064](../generate_index.py#L64) | 64 | `"    }"` | — |
-| [SRC-E599346ABE-L000065](../generate_index.py#L65) | 65 | `")"` | — |
-| [SRC-E599346ABE-L000066](../generate_index.py#L66) | 66 | `"MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024"` | — |
-| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |
-| [SRC-E599346ABE-L000068](../generate_index.py#L68) | 68 | `"INDEX_RELATIVE_PATH = \"docs/MASTER_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000069](../generate_index.py#L69) | 69 | `"SOURCE_LINES_INDEX_RELATIVE_PATH = \"docs/SOURCE_LINES_INDEX.md\""` | — |
-| [SRC-E599346ABE-L000070](../generate_index.py#L70) | 70 | `"COVERAGE_AUDIT_RELATIVE_PATH = \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
-| [SRC-E599346ABE-L000071](../generate_index.py#L71) | 71 | `"INDEX_OUTPUT_PATHS = frozenset("` | — |
-| [SRC-E599346ABE-L000072](../generate_index.py#L72) | 72 | `"    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}"` | — |
-| [SRC-E599346ABE-L000073](../generate_index.py#L73) | 73 | `")"` | — |

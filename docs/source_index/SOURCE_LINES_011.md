@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003274 إلى SRC-1AE03B9EC3-L004073
+- النطاق: SRC-1AE03B9EC3-L003254 إلى SRC-1AE03B9EC3-L004053
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003254](../../agents/web_agent.py#L3254) | 3254 | `"        self, question: str, history: list[dict[str, str]],"` | — |
+| [SRC-1AE03B9EC3-L003255](../../agents/web_agent.py#L3255) | 3255 | `"        *, context_override: dict[str, Any] \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003256](../../agents/web_agent.py#L3256) | 3256 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L003257](../../agents/web_agent.py#L3257) | 3257 | `"        \"\"\"Resolve dialogue semantics and plan searches, with deterministic fallbacks.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003258](../../agents/web_agent.py#L3258) | 3258 | `"        context_fallback = fallback_dialogue_context(question, history)"` | — |
+| [SRC-1AE03B9EC3-L003259](../../agents/web_agent.py#L3259) | 3259 | `"        dialogue_context = validate_dialogue_context("` | — |
+| [SRC-1AE03B9EC3-L003260](../../agents/web_agent.py#L3260) | 3260 | `"            context_override, question, history, fallback=context_fallback"` | — |
+| [SRC-1AE03B9EC3-L003261](../../agents/web_agent.py#L3261) | 3261 | `"        ) if context_override is not None else context_fallback"` | — |
+| [SRC-1AE03B9EC3-L003262](../../agents/web_agent.py#L3262) | 3262 | `"        search_question = ("` | — |
+| [SRC-1AE03B9EC3-L003263](../../agents/web_agent.py#L3263) | 3263 | `"            question if dialogue_context.get(\"topic_shift\")"` | — |
+| [SRC-1AE03B9EC3-L003264](../../agents/web_agent.py#L3264) | 3264 | `"            else dialogue_context.get(\"resolved_question\") or question"` | — |
+| [SRC-1AE03B9EC3-L003265](../../agents/web_agent.py#L3265) | 3265 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003266](../../agents/web_agent.py#L3266) | 3266 | `"        fallback = fallback_plan(search_question, history)"` | — |
+| [SRC-1AE03B9EC3-L003267](../../agents/web_agent.py#L3267) | 3267 | `"        fallback[\"dialogue_context\"] = dialogue_context"` | — |
+| [SRC-1AE03B9EC3-L003268](../../agents/web_agent.py#L3268) | 3268 | `"        # Do not invent generic searches when no usable topic exists."` | — |
+| [SRC-1AE03B9EC3-L003269](../../agents/web_agent.py#L3269) | 3269 | `"        if not fallback.get(\"queries\"):"` | — |
+| [SRC-1AE03B9EC3-L003270](../../agents/web_agent.py#L3270) | 3270 | `"            return fallback"` | — |
+| [SRC-1AE03B9EC3-L003271](../../agents/web_agent.py#L3271) | 3271 | `"        if not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L003272](../../agents/web_agent.py#L3272) | 3272 | `"            return fallback"` | — |
+| [SRC-1AE03B9EC3-L003273](../../agents/web_agent.py#L3273) | 3273 | `"        platform_names = \", \".join(SOCIAL_DOMAINS)"` | — |
 | [SRC-1AE03B9EC3-L003274](../../agents/web_agent.py#L3274) | 3274 | `"        messages = ["` | — |
 | [SRC-1AE03B9EC3-L003275](../../agents/web_agent.py#L3275) | 3275 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L003276](../../agents/web_agent.py#L3276) | 3276 | `"                \"role\": \"system\","` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"                        if social_results"` | — |
 | [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"                        else \"No parseable public social results were returned. This does not establish that the platform is offline.\""` | — |
 | [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"                    ),"` | — |
-| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"            except (RuntimeError, AgentDependencyError, ValueError, OSError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
-| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"                    \"status\": \"failed\","` | — |
-| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                    \"platforms_tested\": configured_platforms,"` | — |
-| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                    \"result_count\": 0,"` | — |
-| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                    \"note\": _clean_text(str(exc), 400),"` | — |
-| [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L004062](../../agents/web_agent.py#L4062) | 4062 | `""` | — |
-| [SRC-1AE03B9EC3-L004063](../../agents/web_agent.py#L4063) | 4063 | `"        report[\"model_usage\"] = list(self.model_usage)"` | — |
-| [SRC-1AE03B9EC3-L004064](../../agents/web_agent.py#L4064) | 4064 | `"        report[\"elapsed_ms\"] = round((time.monotonic() - started) * 1000)"` | — |
-| [SRC-1AE03B9EC3-L004065](../../agents/web_agent.py#L4065) | 4065 | `"        statuses = [check.get(\"status\") for check in report[\"checks\"].values()]"` | — |
-| [SRC-1AE03B9EC3-L004066](../../agents/web_agent.py#L4066) | 4066 | `"        report[\"overall_status\"] = ("` | — |
-| [SRC-1AE03B9EC3-L004067](../../agents/web_agent.py#L4067) | 4067 | `"            \"passed\""` | — |
-| [SRC-1AE03B9EC3-L004068](../../agents/web_agent.py#L4068) | 4068 | `"            if all(status in {\"passed\", \"skipped\"} for status in statuses)"` | — |
-| [SRC-1AE03B9EC3-L004069](../../agents/web_agent.py#L4069) | 4069 | `"            else \"degraded\""` | — |
-| [SRC-1AE03B9EC3-L004070](../../agents/web_agent.py#L4070) | 4070 | `"            if any(status in {\"passed\", \"degraded\"} for status in statuses)"` | — |
-| [SRC-1AE03B9EC3-L004071](../../agents/web_agent.py#L4071) | 4071 | `"            else \"failed\""` | — |
-| [SRC-1AE03B9EC3-L004072](../../agents/web_agent.py#L4072) | 4072 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004073](../../agents/web_agent.py#L4073) | 4073 | `"        return report"` | — |

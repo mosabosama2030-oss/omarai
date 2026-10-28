@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004074 إلى SRC-1AE03B9EC3-L004873
+- النطاق: SRC-1AE03B9EC3-L004054 إلى SRC-1AE03B9EC3-L004853
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"            except (RuntimeError, AgentDependencyError, ValueError, OSError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"                    \"status\": \"failed\","` | — |
+| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                    \"platforms_tested\": configured_platforms,"` | — |
+| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                    \"result_count\": 0,"` | — |
+| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                    \"note\": _clean_text(str(exc), 400),"` | — |
+| [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                }"` | — |
+| [SRC-1AE03B9EC3-L004062](../../agents/web_agent.py#L4062) | 4062 | `""` | — |
+| [SRC-1AE03B9EC3-L004063](../../agents/web_agent.py#L4063) | 4063 | `"        report[\"model_usage\"] = list(self.model_usage)"` | — |
+| [SRC-1AE03B9EC3-L004064](../../agents/web_agent.py#L4064) | 4064 | `"        report[\"elapsed_ms\"] = round((time.monotonic() - started) * 1000)"` | — |
+| [SRC-1AE03B9EC3-L004065](../../agents/web_agent.py#L4065) | 4065 | `"        statuses = [check.get(\"status\") for check in report[\"checks\"].values()]"` | — |
+| [SRC-1AE03B9EC3-L004066](../../agents/web_agent.py#L4066) | 4066 | `"        report[\"overall_status\"] = ("` | — |
+| [SRC-1AE03B9EC3-L004067](../../agents/web_agent.py#L4067) | 4067 | `"            \"passed\""` | — |
+| [SRC-1AE03B9EC3-L004068](../../agents/web_agent.py#L4068) | 4068 | `"            if all(status in {\"passed\", \"skipped\"} for status in statuses)"` | — |
+| [SRC-1AE03B9EC3-L004069](../../agents/web_agent.py#L4069) | 4069 | `"            else \"degraded\""` | — |
+| [SRC-1AE03B9EC3-L004070](../../agents/web_agent.py#L4070) | 4070 | `"            if any(status in {\"passed\", \"degraded\"} for status in statuses)"` | — |
+| [SRC-1AE03B9EC3-L004071](../../agents/web_agent.py#L4071) | 4071 | `"            else \"failed\""` | — |
+| [SRC-1AE03B9EC3-L004072](../../agents/web_agent.py#L4072) | 4072 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L004073](../../agents/web_agent.py#L4073) | 4073 | `"        return report"` | — |
 | [SRC-1AE03B9EC3-L004074](../../agents/web_agent.py#L4074) | 4074 | `""` | — |
 | [SRC-1AE03B9EC3-L004075](../../agents/web_agent.py#L4075) | 4075 | `"    def answer("` | — |
 | [SRC-1AE03B9EC3-L004076](../../agents/web_agent.py#L4076) | 4076 | `"        self, question: str, history: Any = None, mode: str = \"auto\""` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L004851](../../agents/web_agent.py#L4851) | 4851 | `"        coverage_targets_for_budget = self._question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L004852](../../agents/web_agent.py#L4852) | 4852 | `"        # Reserve one bounded search slot for a post-review criterion-evidence gap."` | — |
 | [SRC-1AE03B9EC3-L004853](../../agents/web_agent.py#L4853) | 4853 | `"        # Keep all explicit criterion queries when there are many dimensions; the"` | — |
-| [SRC-1AE03B9EC3-L004854](../../agents/web_agent.py#L4854) | 4854 | `"        # reserve applies only to ordinary compound tasks with up to six targets."` | — |
-| [SRC-1AE03B9EC3-L004855](../../agents/web_agent.py#L4855) | 4855 | `"        reserve_coverage_gap_query = ("` | — |
-| [SRC-1AE03B9EC3-L004856](../../agents/web_agent.py#L4856) | 4856 | `"            2 <= len(coverage_targets_for_budget) <= 6"` | — |
-| [SRC-1AE03B9EC3-L004857](../../agents/web_agent.py#L4857) | 4857 | `"            and plan.get(\"depth\") == \"deep\""` | — |
-| [SRC-1AE03B9EC3-L004858](../../agents/web_agent.py#L4858) | 4858 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004859](../../agents/web_agent.py#L4859) | 4859 | `"        query_limit = MAX_PLAN_QUERIES - 1 if reserve_coverage_gap_query else MAX_PLAN_QUERIES"` | — |
-| [SRC-1AE03B9EC3-L004860](../../agents/web_agent.py#L4860) | 4860 | `"        plan[\"coverage_gap_repair_slot_reserved\"] = reserve_coverage_gap_query"` | — |
-| [SRC-1AE03B9EC3-L004861](../../agents/web_agent.py#L4861) | 4861 | `"        plan[\"query_limit\"] = query_limit"` | — |
-| [SRC-1AE03B9EC3-L004862](../../agents/web_agent.py#L4862) | 4862 | `"        plan[\"coverage_targets\"] = list(coverage_targets_for_budget)"` | — |
-| [SRC-1AE03B9EC3-L004863](../../agents/web_agent.py#L4863) | 4863 | `"        plan[\"queries\"] = list(dict.fromkeys(final_topic_queries))[:query_limit]"` | — |
-| [SRC-1AE03B9EC3-L004864](../../agents/web_agent.py#L4864) | 4864 | `"        actual_query_keys = set(plan[\"queries\"])"` | — |
-| [SRC-1AE03B9EC3-L004865](../../agents/web_agent.py#L4865) | 4865 | `"        plan[\"query_strategy_matrix\"] = ["` | — |
-| [SRC-1AE03B9EC3-L004866](../../agents/web_agent.py#L4866) | 4866 | `"            item for item in query_strategy_matrix"` | — |
-| [SRC-1AE03B9EC3-L004867](../../agents/web_agent.py#L4867) | 4867 | `"            if item.get(\"query\") in actual_query_keys"` | — |
-| [SRC-1AE03B9EC3-L004868](../../agents/web_agent.py#L4868) | 4868 | `"        ]"` | — |
-| [SRC-1AE03B9EC3-L004869](../../agents/web_agent.py#L4869) | 4869 | `""` | — |
-| [SRC-1AE03B9EC3-L004870](../../agents/web_agent.py#L4870) | 4870 | `"        sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L004871](../../agents/web_agent.py#L4871) | 4871 | `"        search_warnings: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L004872](../../agents/web_agent.py#L4872) | 4872 | `"        report: dict[str, Any] = {}"` | — |
-| [SRC-1AE03B9EC3-L004873](../../agents/web_agent.py#L4873) | 4873 | `"        # Scope diagnostic evidence to this research attempt; a reused WebAgent must not"` | — |

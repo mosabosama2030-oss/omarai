@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000057 إلى SRC-F725E90B2A-L000856
+- النطاق: SRC-F725E90B2A-L000037 إلى SRC-F725E90B2A-L000836
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000037](../../tests/test_web_agent.py#L37) | 37 | `"    seen = {}"` | — |
+| [SRC-F725E90B2A-L000038](../../tests/test_web_agent.py#L38) | 38 | `""` | — |
+| [SRC-F725E90B2A-L000039](../../tests/test_web_agent.py#L39) | 39 | `"    def plan(question, history):"` | — |
+| [SRC-F725E90B2A-L000040](../../tests/test_web_agent.py#L40) | 40 | `"        return {"` | — |
+| [SRC-F725E90B2A-L000041](../../tests/test_web_agent.py#L41) | 41 | `"            \"queries\": [question],"` | — |
+| [SRC-F725E90B2A-L000042](../../tests/test_web_agent.py#L42) | 42 | `"            \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L000043](../../tests/test_web_agent.py#L43) | 43 | `"            \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L000044](../../tests/test_web_agent.py#L44) | 44 | `"            \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L000045](../../tests/test_web_agent.py#L45) | 45 | `"            \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L000046](../../tests/test_web_agent.py#L46) | 46 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L000047](../../tests/test_web_agent.py#L47) | 47 | `"        }"` | — |
+| [SRC-F725E90B2A-L000048](../../tests/test_web_agent.py#L48) | 48 | `""` | — |
+| [SRC-F725E90B2A-L000049](../../tests/test_web_agent.py#L49) | 49 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L000050](../../tests/test_web_agent.py#L50) | 50 | `"        seen[\"plan\"] = research_plan"` | — |
+| [SRC-F725E90B2A-L000051](../../tests/test_web_agent.py#L51) | 51 | `"        return [sample_source(0), sample_source(1)], [], {"` | — |
+| [SRC-F725E90B2A-L000052](../../tests/test_web_agent.py#L52) | 52 | `"            \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L000053](../../tests/test_web_agent.py#L53) | 53 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L000054](../../tests/test_web_agent.py#L54) | 54 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": 1}],"` | — |
+| [SRC-F725E90B2A-L000055](../../tests/test_web_agent.py#L55) | 55 | `"            \"unique_sources\": 2,"` | — |
+| [SRC-F725E90B2A-L000056](../../tests/test_web_agent.py#L56) | 56 | `"            \"pages_fetched\": 2,"` | — |
 | [SRC-F725E90B2A-L000057](../../tests/test_web_agent.py#L57) | 57 | `"            \"providers_used\": [\"test\"],"` | — |
 | [SRC-F725E90B2A-L000058](../../tests/test_web_agent.py#L58) | 58 | `"            \"platform_counts\": {\"web\": 1},"` | — |
 | [SRC-F725E90B2A-L000059](../../tests/test_web_agent.py#L59) | 59 | `"            \"social_direct_results\": 0,"` | — |
@@ -796,23 +816,3 @@
 | [SRC-F725E90B2A-L000834](../../tests/test_web_agent.py#L834) | 834 | `""` | — |
 | [SRC-F725E90B2A-L000835](../../tests/test_web_agent.py#L835) | 835 | `"    def fake_urlopen(request, timeout):"` | — |
 | [SRC-F725E90B2A-L000836](../../tests/test_web_agent.py#L836) | 836 | `"        called.append(json.loads(request.data.decode(\"utf-8\"))[\"model\"])"` | — |
-| [SRC-F725E90B2A-L000837](../../tests/test_web_agent.py#L837) | 837 | `"        return FakeResponse()"` | — |
-| [SRC-F725E90B2A-L000838](../../tests/test_web_agent.py#L838) | 838 | `""` | — |
-| [SRC-F725E90B2A-L000839](../../tests/test_web_agent.py#L839) | 839 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-F725E90B2A-L000840](../../tests/test_web_agent.py#L840) | 840 | `"    with pytest.raises(RuntimeError, match=\"مبتورة\"):"` | — |
-| [SRC-F725E90B2A-L000841](../../tests/test_web_agent.py#L841) | 841 | `"        agent._request_completion("` | — |
-| [SRC-F725E90B2A-L000842](../../tests/test_web_agent.py#L842) | 842 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
-| [SRC-F725E90B2A-L000843](../../tests/test_web_agent.py#L843) | 843 | `"            model=\"broken/primary\","` | — |
-| [SRC-F725E90B2A-L000844](../../tests/test_web_agent.py#L844) | 844 | `"        )"` | — |
-| [SRC-F725E90B2A-L000845](../../tests/test_web_agent.py#L845) | 845 | `""` | — |
-| [SRC-F725E90B2A-L000846](../../tests/test_web_agent.py#L846) | 846 | `"    assert called == [\"broken/primary\", \"fallback/model\"]"` | — |
-| [SRC-F725E90B2A-L000847](../../tests/test_web_agent.py#L847) | 847 | `"    assert agent.model_usage == []"` | — |
-| [SRC-F725E90B2A-L000848](../../tests/test_web_agent.py#L848) | 848 | `""` | — |
-| [SRC-F725E90B2A-L000849](../../tests/test_web_agent.py#L849) | 849 | `""` | — |
-| [SRC-F725E90B2A-L000850](../../tests/test_web_agent.py#L850) | 850 | `"def test_completion_falls_back_for_malformed_choice(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000851](../../tests/test_web_agent.py#L851) | 851 | `"    import json"` | — |
-| [SRC-F725E90B2A-L000852](../../tests/test_web_agent.py#L852) | 852 | `""` | — |
-| [SRC-F725E90B2A-L000853](../../tests/test_web_agent.py#L853) | 853 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000854](../../tests/test_web_agent.py#L854) | 854 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L000855](../../tests/test_web_agent.py#L855) | 855 | `"    agent.fallback_model = \"fallback/model\""` | — |
-| [SRC-F725E90B2A-L000856](../../tests/test_web_agent.py#L856) | 856 | `"    called = []"` | — |

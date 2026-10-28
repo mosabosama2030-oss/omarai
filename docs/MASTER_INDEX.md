@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **797**
 - تعريفات لا ينطبق عليها Docstring: **266**
 - الرموز الساكنة الإضافية: **1705**
-- الأسطر النصية المفهرسة حرفيًا: **33898**
+- الأسطر النصية المفهرسة حرفيًا: **33918**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -47,7 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 33498 | 791 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
-| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 53565 | 1050 | جرد الملف + AST Python |
+| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 54664 | 1070 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 338305 | 6317 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -333,30 +333,30 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L21) | متغير/ثابت Python | _SPACE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-686F71AA50-L000021](../agents/task_understanding.py#L21) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L22) | متغير/ثابت Python | _TOKEN_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-686F71AA50-L000022](../agents/task_understanding.py#L22) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L24) | متغير/ثابت Python | _PATTERNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-686F71AA50-L000024](../agents/task_understanding.py#L24) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L146) | متغير/ثابت Python | _FRESHNESS_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 146 | [SRC-686F71AA50-L000146](../agents/task_understanding.py#L146) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L147) | متغير/ثابت Python | _SOCIAL_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 147 | [SRC-686F71AA50-L000147](../agents/task_understanding.py#L147) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L148) | متغير/ثابت Python | _LOCATION_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 148 | [SRC-686F71AA50-L000148](../agents/task_understanding.py#L148) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L153) | متغير/ثابت Python | _OFFICIAL_WORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 153 | [SRC-686F71AA50-L000153](../agents/task_understanding.py#L153) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L154) | متغير/ثابت Python | _YEAR_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 154 | [SRC-686F71AA50-L000154](../agents/task_understanding.py#L154) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L155) | متغير/ثابت Python | _DATE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 155 | [SRC-686F71AA50-L000155](../agents/task_understanding.py#L155) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L156) | متغير/ثابت Python | _URL_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 156 | [SRC-686F71AA50-L000156](../agents/task_understanding.py#L156) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L157) | متغير/ثابت Python | _BUDGET_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 157 | [SRC-686F71AA50-L000157](../agents/task_understanding.py#L157) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L164) | متغير/ثابت Python | _FOLLOWUP_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 164 | [SRC-686F71AA50-L000164](../agents/task_understanding.py#L164) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L169) | متغير/ثابت Python | _QUERY_STOP | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 169 | [SRC-686F71AA50-L000169](../agents/task_understanding.py#L169) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L175) | دالة | normalize_text | Normalize orthographic variation for matching; preserve the original elsewhere. | موثق | 175 | [SRC-686F71AA50-L000175](../agents/task_understanding.py#L175) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L187) | دالة | _contains | Match phrases on token boundaries and only strip known Arabic clitics/suffixes. | موثق | 187 | [SRC-686F71AA50-L000187](../agents/task_understanding.py#L187) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L247) | دالة | _has_inline_summary_text | Detect explicitly supplied summary text without treating a URL as pasted content. | موثق | 247 | [SRC-686F71AA50-L000247](../agents/task_understanding.py#L247) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L272) | دالة | _has_official_site_target | Conservatively check whether an official-site request names a target. | موثق | 272 | [SRC-686F71AA50-L000272](../agents/task_understanding.py#L272) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L314) | دالة | _extract_explicit_locations | Return only a small, explicit location vocabulary; never infer geolocation. | موثق | 314 | [SRC-686F71AA50-L000314](../agents/task_understanding.py#L314) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L333) | دالة | _language_profile | لا توجد Docstring. | ناقص | 333 | [SRC-686F71AA50-L000333](../agents/task_understanding.py#L333) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L345) | دالة | _primary_family | لا توجد Docstring. | ناقص | 345 | [SRC-686F71AA50-L000345](../agents/task_understanding.py#L345) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L367) | دالة | build_task_spec | Build a bounded task specification, interpretation hypotheses, and test matrix. | موثق | 367 | [SRC-686F71AA50-L000367](../agents/task_understanding.py#L367) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L755) | دالة | _query_key | لا توجد Docstring. | ناقص | 755 | [SRC-686F71AA50-L000755](../agents/task_understanding.py#L755) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L759) | دالة | _generated_strategy_candidates | لا توجد Docstring. | ناقص | 759 | [SRC-686F71AA50-L000759](../agents/task_understanding.py#L759) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L856) | دالة | _label_existing_query | Classify query wording for diagnostics; this is not a retrieval-success claim. | موثق | 856 | [SRC-686F71AA50-L000856](../agents/task_understanding.py#L856) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L883) | دالة | build_query_strategy_matrix | Return bounded query candidates, prioritizing task-specific evidence strategies. | موثق | 883 | [SRC-686F71AA50-L000883](../agents/task_understanding.py#L883) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L903) | دالة | build_query_strategy_matrix.add | لا توجد Docstring. | ناقص | 903 | [SRC-686F71AA50-L000903](../agents/task_understanding.py#L903) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1020) | دالة | validate_task_spec | Return a safe bounded public representation of TaskSpec-like input. | موثق | 1020 | [SRC-686F71AA50-L001020](../agents/task_understanding.py#L1020) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L162) | متغير/ثابت Python | _FRESHNESS_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 162 | [SRC-686F71AA50-L000162](../agents/task_understanding.py#L162) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L163) | متغير/ثابت Python | _SOCIAL_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 163 | [SRC-686F71AA50-L000163](../agents/task_understanding.py#L163) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L164) | متغير/ثابت Python | _LOCATION_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 164 | [SRC-686F71AA50-L000164](../agents/task_understanding.py#L164) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L169) | متغير/ثابت Python | _OFFICIAL_WORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 169 | [SRC-686F71AA50-L000169](../agents/task_understanding.py#L169) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L170) | متغير/ثابت Python | _YEAR_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 170 | [SRC-686F71AA50-L000170](../agents/task_understanding.py#L170) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L171) | متغير/ثابت Python | _DATE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 171 | [SRC-686F71AA50-L000171](../agents/task_understanding.py#L171) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L172) | متغير/ثابت Python | _URL_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 172 | [SRC-686F71AA50-L000172](../agents/task_understanding.py#L172) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L173) | متغير/ثابت Python | _BUDGET_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 173 | [SRC-686F71AA50-L000173](../agents/task_understanding.py#L173) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L180) | متغير/ثابت Python | _FOLLOWUP_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 180 | [SRC-686F71AA50-L000180](../agents/task_understanding.py#L180) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L185) | متغير/ثابت Python | _QUERY_STOP | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 185 | [SRC-686F71AA50-L000185](../agents/task_understanding.py#L185) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L191) | دالة | normalize_text | Normalize orthographic variation for matching; preserve the original elsewhere. | موثق | 191 | [SRC-686F71AA50-L000191](../agents/task_understanding.py#L191) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L203) | دالة | _contains | Match phrases on token boundaries and only strip known Arabic clitics/suffixes. | موثق | 203 | [SRC-686F71AA50-L000203](../agents/task_understanding.py#L203) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L263) | دالة | _has_inline_summary_text | Detect explicitly supplied summary text without treating a URL as pasted content. | موثق | 263 | [SRC-686F71AA50-L000263](../agents/task_understanding.py#L263) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L288) | دالة | _has_official_site_target | Conservatively check whether an official-site request names a target. | موثق | 288 | [SRC-686F71AA50-L000288](../agents/task_understanding.py#L288) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L330) | دالة | _extract_explicit_locations | Return only a small, explicit location vocabulary; never infer geolocation. | موثق | 330 | [SRC-686F71AA50-L000330](../agents/task_understanding.py#L330) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L349) | دالة | _language_profile | لا توجد Docstring. | ناقص | 349 | [SRC-686F71AA50-L000349](../agents/task_understanding.py#L349) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L361) | دالة | _primary_family | لا توجد Docstring. | ناقص | 361 | [SRC-686F71AA50-L000361](../agents/task_understanding.py#L361) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L383) | دالة | build_task_spec | Build a bounded task specification, interpretation hypotheses, and test matrix. | موثق | 383 | [SRC-686F71AA50-L000383](../agents/task_understanding.py#L383) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L775) | دالة | _query_key | لا توجد Docstring. | ناقص | 775 | [SRC-686F71AA50-L000775](../agents/task_understanding.py#L775) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L779) | دالة | _generated_strategy_candidates | لا توجد Docstring. | ناقص | 779 | [SRC-686F71AA50-L000779](../agents/task_understanding.py#L779) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L876) | دالة | _label_existing_query | Classify query wording for diagnostics; this is not a retrieval-success claim. | موثق | 876 | [SRC-686F71AA50-L000876](../agents/task_understanding.py#L876) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L903) | دالة | build_query_strategy_matrix | Return bounded query candidates, prioritizing task-specific evidence strategies. | موثق | 903 | [SRC-686F71AA50-L000903](../agents/task_understanding.py#L903) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L923) | دالة | build_query_strategy_matrix.add | لا توجد Docstring. | ناقص | 923 | [SRC-686F71AA50-L000923](../agents/task_understanding.py#L923) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1040) | دالة | validate_task_spec | Return a safe bounded public representation of TaskSpec-like input. | موثق | 1040 | [SRC-686F71AA50-L001040](../agents/task_understanding.py#L1040) |
 | [agents/web_agent.py](../agents/web_agent.py#L53) | متغير/ثابت Python | MAX_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 53 | [SRC-1AE03B9EC3-L000053](../agents/web_agent.py#L53) |
 | [agents/web_agent.py](../agents/web_agent.py#L54) | متغير/ثابت Python | MAX_HISTORY_ITEMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 54 | [SRC-1AE03B9EC3-L000054](../agents/web_agent.py#L54) |
 | [agents/web_agent.py](../agents/web_agent.py#L55) | متغير/ثابت Python | MAX_HISTORY_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 55 | [SRC-1AE03B9EC3-L000055](../agents/web_agent.py#L55) |
@@ -1595,11 +1595,11 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TASK_ASPECTS | 15 | [SRC-686F71AA50-L000015](../agents/task_understanding.py#L15) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_STRATEGY_QUERIES | 16 | [SRC-686F71AA50-L000016](../agents/task_understanding.py#L16) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SUPPORTED_MODES | 17 | [SRC-686F71AA50-L000017](../agents/task_understanding.py#L17) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L362) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 362 | [SRC-686F71AA50-L000362](../agents/task_understanding.py#L362) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L362) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 362 | [SRC-686F71AA50-L000362](../agents/task_understanding.py#L362) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L362) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 362 | [SRC-686F71AA50-L000362](../agents/task_understanding.py#L362) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L640) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 640 | [SRC-686F71AA50-L000640](../agents/task_understanding.py#L640) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L671) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 671 | [SRC-686F71AA50-L000671](../agents/task_understanding.py#L671) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L378) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 378 | [SRC-686F71AA50-L000378](../agents/task_understanding.py#L378) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L378) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 378 | [SRC-686F71AA50-L000378](../agents/task_understanding.py#L378) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L378) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 378 | [SRC-686F71AA50-L000378](../agents/task_understanding.py#L378) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L656) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 656 | [SRC-686F71AA50-L000656](../agents/task_understanding.py#L656) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L687) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 687 | [SRC-686F71AA50-L000687](../agents/task_understanding.py#L687) |
 | [agents/web_agent.py](../agents/web_agent.py#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 41 | [SRC-1AE03B9EC3-L000041](../agents/web_agent.py#L41) |
 | [agents/web_agent.py](../agents/web_agent.py#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 42 | [SRC-1AE03B9EC3-L000042](../agents/web_agent.py#L42) |
 | [agents/web_agent.py](../agents/web_agent.py#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_QUESTION_CHARS | 53 | [SRC-1AE03B9EC3-L000053](../agents/web_agent.py#L53) |

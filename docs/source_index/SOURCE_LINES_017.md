@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000074 إلى SRC-E599346ABE-L000873
+- النطاق: SRC-E599346ABE-L000054 إلى SRC-E599346ABE-L000853
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000054](../generate_index.py#L54) | 54 | `"    {"` | — |
+| [SRC-E599346ABE-L000055](../generate_index.py#L55) | 55 | `"        \".pyc\","` | — |
+| [SRC-E599346ABE-L000056](../generate_index.py#L56) | 56 | `"        \".pyo\","` | — |
+| [SRC-E599346ABE-L000057](../generate_index.py#L57) | 57 | `"        \".sqlite\","` | — |
+| [SRC-E599346ABE-L000058](../generate_index.py#L58) | 58 | `"        \".sqlite3\","` | — |
+| [SRC-E599346ABE-L000059](../generate_index.py#L59) | 59 | `"        \".db\","` | — |
+| [SRC-E599346ABE-L000060](../generate_index.py#L60) | 60 | `"        \".pem\","` | — |
+| [SRC-E599346ABE-L000061](../generate_index.py#L61) | 61 | `"        \".key\","` | — |
+| [SRC-E599346ABE-L000062](../generate_index.py#L62) | 62 | `"        \".p12\","` | — |
+| [SRC-E599346ABE-L000063](../generate_index.py#L63) | 63 | `"        \".pfx\","` | — |
+| [SRC-E599346ABE-L000064](../generate_index.py#L64) | 64 | `"    }"` | — |
+| [SRC-E599346ABE-L000065](../generate_index.py#L65) | 65 | `")"` | — |
+| [SRC-E599346ABE-L000066](../generate_index.py#L66) | 66 | `"MAX_INDEXED_TEXT_BYTES = 2 * 1024 * 1024"` | — |
+| [SRC-E599346ABE-L000067](../generate_index.py#L67) | 67 | `"MAX_DESCRIPTION_LENGTH = 240"` | — |
+| [SRC-E599346ABE-L000068](../generate_index.py#L68) | 68 | `"INDEX_RELATIVE_PATH = \"docs/MASTER_INDEX.md\""` | — |
+| [SRC-E599346ABE-L000069](../generate_index.py#L69) | 69 | `"SOURCE_LINES_INDEX_RELATIVE_PATH = \"docs/SOURCE_LINES_INDEX.md\""` | — |
+| [SRC-E599346ABE-L000070](../generate_index.py#L70) | 70 | `"COVERAGE_AUDIT_RELATIVE_PATH = \"docs/INDEX_COVERAGE_AUDIT.md\""` | — |
+| [SRC-E599346ABE-L000071](../generate_index.py#L71) | 71 | `"INDEX_OUTPUT_PATHS = frozenset("` | — |
+| [SRC-E599346ABE-L000072](../generate_index.py#L72) | 72 | `"    {INDEX_RELATIVE_PATH, SOURCE_LINES_INDEX_RELATIVE_PATH, COVERAGE_AUDIT_RELATIVE_PATH}"` | — |
+| [SRC-E599346ABE-L000073](../generate_index.py#L73) | 73 | `")"` | — |
 | [SRC-E599346ABE-L000074](../generate_index.py#L74) | 74 | `"SOURCE_LINES_PAGES_DIR = \"docs/source_index\""` | — |
 | [SRC-E599346ABE-L000075](../generate_index.py#L75) | 75 | `"SOURCE_LINES_PAGE_SIZE = 800"` | — |
 | [SRC-E599346ABE-L000076](../generate_index.py#L76) | 76 | `"SOURCE_LINES_PAGE_RE = re.compile(r\"SOURCE_LINES_\\d{3,}\\.md\")"` | — |
@@ -796,23 +816,3 @@
 | [SRC-E599346ABE-L000851](../generate_index.py#L851) | 851 | `""` | — |
 | [SRC-E599346ABE-L000852](../generate_index.py#L852) | 852 | `""` | — |
 | [SRC-E599346ABE-L000853](../generate_index.py#L853) | 853 | `"def _scan_css("` | — |
-| [SRC-E599346ABE-L000854](../generate_index.py#L854) | 854 | `"    source: str,"` | — |
-| [SRC-E599346ABE-L000855](../generate_index.py#L855) | 855 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000856](../generate_index.py#L856) | 856 | `"    markers: list[IndexedMarker],"` | — |
-| [SRC-E599346ABE-L000857](../generate_index.py#L857) | 857 | `"    seen: set[tuple[str, str, str]],"` | — |
-| [SRC-E599346ABE-L000858](../generate_index.py#L858) | 858 | `"    base_line: int = 1,"` | — |
-| [SRC-E599346ABE-L000859](../generate_index.py#L859) | 859 | `") -> None:"` | — |
-| [SRC-E599346ABE-L000860](../generate_index.py#L860) | 860 | `"    \"\"\"Extract CSS class/id selectors and custom properties; this is not a full CSS parser.\"\"\""` | — |
-| [SRC-E599346ABE-L000861](../generate_index.py#L861) | 861 | `"    cleaned = CSS_COMMENT_RE.sub("` | — |
-| [SRC-E599346ABE-L000862](../generate_index.py#L862) | 862 | `"        lambda match: \"\".join(\"\\n\" if char == \"\\n\" else \" \" for char in match.group(0)),"` | — |
-| [SRC-E599346ABE-L000863](../generate_index.py#L863) | 863 | `"        source,"` | — |
-| [SRC-E599346ABE-L000864](../generate_index.py#L864) | 864 | `"    )"` | — |
-| [SRC-E599346ABE-L000865](../generate_index.py#L865) | 865 | `"    patterns = ("` | — |
-| [SRC-E599346ABE-L000866](../generate_index.py#L866) | 866 | `"        (CSS_CUSTOM_PROPERTY_RE, \"متغير CSS مخصص\"),"` | — |
-| [SRC-E599346ABE-L000867](../generate_index.py#L867) | 867 | `"        (CSS_CLASS_RE, \"محدد class في CSS\"),"` | — |
-| [SRC-E599346ABE-L000868](../generate_index.py#L868) | 868 | `"        (CSS_ID_RE, \"محدد id في CSS\"),"` | — |
-| [SRC-E599346ABE-L000869](../generate_index.py#L869) | 869 | `"    )"` | — |
-| [SRC-E599346ABE-L000870](../generate_index.py#L870) | 870 | `"    for pattern, kind in patterns:"` | — |
-| [SRC-E599346ABE-L000871](../generate_index.py#L871) | 871 | `"        for match in pattern.finditer(cleaned):"` | — |
-| [SRC-E599346ABE-L000872](../generate_index.py#L872) | 872 | `"            _add_marker("` | — |
-| [SRC-E599346ABE-L000873](../generate_index.py#L873) | 873 | `"                markers,"` | — |

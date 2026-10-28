@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000074 إلى SRC-1AE03B9EC3-L000873
+- النطاق: SRC-1AE03B9EC3-L000054 إلى SRC-1AE03B9EC3-L000853
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000054](../../agents/web_agent.py#L54) | 54 | `"MAX_HISTORY_ITEMS = 8"` | — |
+| [SRC-1AE03B9EC3-L000055](../../agents/web_agent.py#L55) | 55 | `"MAX_HISTORY_CHARS = 4000"` | — |
+| [SRC-1AE03B9EC3-L000056](../../agents/web_agent.py#L56) | 56 | `"MAX_SEARCH_RESULTS = 18"` | — |
+| [SRC-1AE03B9EC3-L000057](../../agents/web_agent.py#L57) | 57 | `"MAX_PROVIDER_RESULTS = 6"` | — |
+| [SRC-1AE03B9EC3-L000058](../../agents/web_agent.py#L58) | 58 | `"MAX_FETCHED_PAGES = 8"` | — |
+| [SRC-1AE03B9EC3-L000059](../../agents/web_agent.py#L59) | 59 | `"MAX_LLM_CITED_SOURCES = 12"` | — |
+| [SRC-1AE03B9EC3-L000060](../../agents/web_agent.py#L60) | 60 | `"MAX_RESEARCH_WORKERS = 8"` | — |
+| [SRC-1AE03B9EC3-L000061](../../agents/web_agent.py#L61) | 61 | `"MAX_PAGE_BYTES = 1_000_000"` | — |
+| [SRC-1AE03B9EC3-L000062](../../agents/web_agent.py#L62) | 62 | `"MAX_PAGE_TEXT_CHARS = 12_000"` | — |
+| [SRC-1AE03B9EC3-L000063](../../agents/web_agent.py#L63) | 63 | `"LLM_TIMEOUT_SECONDS = 35"` | — |
+| [SRC-1AE03B9EC3-L000064](../../agents/web_agent.py#L64) | 64 | `""` | — |
+| [SRC-1AE03B9EC3-L000065](../../agents/web_agent.py#L65) | 65 | `"# Only completed connector result-processing states positively confirm an attempt."` | — |
+| [SRC-1AE03B9EC3-L000066](../../agents/web_agent.py#L66) | 66 | `"# A generic \"failed\" or timeout diagnostic may occur before a network request is sent."` | — |
+| [SRC-1AE03B9EC3-L000067](../../agents/web_agent.py#L67) | 67 | `"_SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES = frozenset({\"ok\", \"no_results\", \"filtered_all\"})"` | — |
+| [SRC-1AE03B9EC3-L000068](../../agents/web_agent.py#L68) | 68 | `"_RESEARCH_ERROR_OUTCOMES = frozenset({\"attempted_research_error\", \"unknown_after_research_error\"})"` | — |
+| [SRC-1AE03B9EC3-L000069](../../agents/web_agent.py#L69) | 69 | `"_PROVIDER_REJECTION_REASONS = ("` | — |
+| [SRC-1AE03B9EC3-L000070](../../agents/web_agent.py#L70) | 70 | `"    \"malformed_candidate\","` | — |
+| [SRC-1AE03B9EC3-L000071](../../agents/web_agent.py#L71) | 71 | `"    \"invalid_url_or_unsafe_target\","` | — |
+| [SRC-1AE03B9EC3-L000072](../../agents/web_agent.py#L72) | 72 | `"    \"blocked_domain\","` | — |
+| [SRC-1AE03B9EC3-L000073](../../agents/web_agent.py#L73) | 73 | `"    \"relevance_below_threshold\","` | — |
 | [SRC-1AE03B9EC3-L000074](../../agents/web_agent.py#L74) | 74 | `")"` | — |
 | [SRC-1AE03B9EC3-L000075](../../agents/web_agent.py#L75) | 75 | `""` | — |
 | [SRC-1AE03B9EC3-L000076](../../agents/web_agent.py#L76) | 76 | `""` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L000851](../../agents/web_agent.py#L851) | 851 | `"            \"seeking to buy\", \"seeking to purchase\", \"interested in buying\","` | — |
 | [SRC-1AE03B9EC3-L000852](../../agents/web_agent.py#L852) | 852 | `"            \"interested in purchasing\", \"buyer looking to buy\","` | — |
 | [SRC-1AE03B9EC3-L000853](../../agents/web_agent.py#L853) | 853 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000854](../../agents/web_agent.py#L854) | 854 | `"        for field, basis in ((\"page_text\", \"page_text\"), (\"title\", \"title\"), (\"snippet\", \"search_snippet\")):"` | — |
-| [SRC-1AE03B9EC3-L000855](../../agents/web_agent.py#L855) | 855 | `"            raw = source.get(field)"` | — |
-| [SRC-1AE03B9EC3-L000856](../../agents/web_agent.py#L856) | 856 | `"            if not isinstance(raw, str) or not raw.strip():"` | — |
-| [SRC-1AE03B9EC3-L000857](../../agents/web_agent.py#L857) | 857 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L000858](../../agents/web_agent.py#L858) | 858 | `"            normalized = _normalize_search_query(raw).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000859](../../agents/web_agent.py#L859) | 859 | `"            negations = ("` | — |
-| [SRC-1AE03B9EC3-L000860](../../agents/web_agent.py#L860) | 860 | `"                \"not looking to buy\", \"not interested in buying\","` | — |
-| [SRC-1AE03B9EC3-L000861](../../agents/web_agent.py#L861) | 861 | `"                \"not interested in purchasing\", \"no longer looking to buy\","` | — |
-| [SRC-1AE03B9EC3-L000862](../../agents/web_agent.py#L862) | 862 | `"                \"مش بدور على\", \"مش عايز اشتري\", \"مش عاوز اشتري\","` | — |
-| [SRC-1AE03B9EC3-L000863](../../agents/web_agent.py#L863) | 863 | `"                \"لا اريد شراء\", \"لا ارغب في شراء\", \"مش محتاج اشتري\","` | — |
-| [SRC-1AE03B9EC3-L000864](../../agents/web_agent.py#L864) | 864 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L000865](../../agents/web_agent.py#L865) | 865 | `"            if any(_normalize_search_query(term).casefold() in normalized for term in negations):"` | — |
-| [SRC-1AE03B9EC3-L000866](../../agents/web_agent.py#L866) | 866 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L000867](../../agents/web_agent.py#L867) | 867 | `"            for phrase in phrases:"` | — |
-| [SRC-1AE03B9EC3-L000868](../../agents/web_agent.py#L868) | 868 | `"                needle = _normalize_search_query(phrase).casefold()"` | — |
-| [SRC-1AE03B9EC3-L000869](../../agents/web_agent.py#L869) | 869 | `"                if needle and needle in normalized:"` | — |
-| [SRC-1AE03B9EC3-L000870](../../agents/web_agent.py#L870) | 870 | `"                    return {\"phrase\": phrase, \"basis\": basis}"` | — |
-| [SRC-1AE03B9EC3-L000871](../../agents/web_agent.py#L871) | 871 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L000872](../../agents/web_agent.py#L872) | 872 | `""` | — |
-| [SRC-1AE03B9EC3-L000873](../../agents/web_agent.py#L873) | 873 | `"    @staticmethod"` | — |
