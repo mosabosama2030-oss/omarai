@@ -28,7 +28,7 @@ _PATTERNS: dict[str, tuple[str, ...]] = {
     ),
     "social_opinions": (
         "اراء الناس", "اراء المستخدمين", "تجارب الناس", "تجارب المستخدمين",
-        "تجارب الملاك", "تجربة مالك", "مراجعات المستخدمين", "الناس بتقول ايه",
+        "تجارب الملاك", "تجارب ملاك", "تجربة مالك", "مراجعات المستخدمين", "الناس بتقول ايه",
         "real user reviews", "owner experience", "customer opinions", "people's opinions",
         "user experiences", "what do owners say",
     ),
@@ -92,7 +92,8 @@ _YEAR_RE = re.compile(r"(?<!\d)(?:19\d{2}|20\d{2})(?!\d)")
 _DATE_RE = re.compile(r"(?<!\d)(?:\d{4}-\d{2}-\d{2}|\d{1,2}[/-]\d{1,2}[/-]\d{2,4})(?!\d)")
 _URL_RE = re.compile(r"https?://[^\s<>]+", re.IGNORECASE)
 _BUDGET_RE = re.compile(
-    r"(?:ميزاني(?:ة|تي)|بحد\s+اقصى|اقل\s+من|في\s+حدود|budget(?:\s+of)?|under|below|up\s+to)"
+    r"(?:ميزاني(?:ة|تي)(?:\s+(?:اقل\s+من|بحد\s+اقصى|في\s+حدود))?"
+    r"|بحد\s+اقصى|اقل\s+من|في\s+حدود|budget(?:\s+of)?|under|below|up\s+to)"
     r"\s*[:：]?\s*(?:egp|usd|eur|جنيه|دولار|ريال)?\s*[\d,.\u0660-\u0669]+"
     r"(?:\s*(?:الف|ألف|مليون|thousand|million|k))?",
     re.IGNORECASE,
@@ -121,10 +122,54 @@ def normalize_text(value: Any) -> str:
 
 
 def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:
+    """Match phrases on token boundaries and only strip known Arabic clitics/suffixes.
+
+    This deliberately avoids substring collisions such as "الان" (now) inside
+    "الانذار" (alarm), while retaining common forms such as "سعرها" and "قارنهم".
+    """
+    tokens = _TOKEN_RE.findall(text)
     matched: list[str] = []
+    prefixes = ("وال", "بال", "فال", "كال", "لل", "ال", "و", "ف", "ب", "ل", "ك")
+    suffixes = ("هما", "هم", "هن", "ها", "ه", "كم", "كن", "ك", "نا", "ني")
+    english_suffixes = ("ing", "ed", "es", "s")
     for phrase in phrases:
         normalized = normalize_text(phrase)
-        if normalized and normalized in text and normalized not in matched:
+        phrase_tokens = _TOKEN_RE.findall(normalized)
+        if not phrase_tokens:
+            continue
+        found = False
+        width = len(phrase_tokens)
+        for index in range(max(0, len(tokens) - width + 1)):
+            segment = tokens[index:index + width]
+            if [token.casefold() for token in segment] == [token.casefold() for token in phrase_tokens]:
+                found = True
+                break
+        if not found and width == 1:
+            target = phrase_tokens[0].casefold()
+            for original_token in tokens:
+                token = original_token.casefold()
+                forms = {token}
+                changed = True
+                while changed:
+                    changed = False
+                    for prefix in prefixes:
+                        if token.startswith(prefix) and len(token) - len(prefix) >= 3:
+                            token = token[len(prefix):]
+                            forms.add(token)
+                            changed = True
+                            break
+                for candidate in list(forms):
+                    for suffix in suffixes:
+                        if candidate.endswith(suffix) and len(candidate) - len(suffix) >= 3:
+                            forms.add(candidate[:-len(suffix)])
+                if target in forms:
+                    found = True
+                    break
+                if target.isascii() and len(target) >= 4 and original_token.isascii():
+                    if any(token.endswith(suffix) and token[:-len(suffix)] == target for suffix in english_suffixes):
+                        found = True
+                        break
+        if found and normalized not in matched:
             matched.append(normalized)
     return matched
 
@@ -541,6 +586,11 @@ def build_query_strategy_matrix(
         strategy = "planner_seed" if index == 0 else "planner_alternative"
         rationale = "validated existing planner query; no independent quality claim"
         add(query, strategy, rationale)
+    if not rows and (
+        spec.get("ambiguity_status") == "needs_clarification"
+        or spec.get("task_family") == "ambiguous_or_incomplete"
+    ):
+        return rows
     base = str(queries[0]).strip() if queries and isinstance(queries[0], str) else ""
     if not base:
         base = re.sub(
