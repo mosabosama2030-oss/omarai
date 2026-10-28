@@ -220,7 +220,8 @@ def might_be_context_dependent(question: str) -> bool:
     )
     reference = re.search(
         r"\b(?:it|its|they|them|their|this|that|these|those|there|"
-        r"he|she|هو|هي|ده|دي|دول|عليه|عليها|فيه|فيها|لها|له|"
+        r"he|she|هو|هي|هذا|هذه|هذان|هاتان|هؤلاء|ذلك|تلك|اللذان|اللتان|"
+        r"الذي|التي|الذين|ده|دي|دا|دول|عليه|عليها|فيه|فيها|لها|له|"
         r"سعرها|سعره|ضمانها|ضمانه|بطاريتها|كاميرتها)\b",
         current,
     )
