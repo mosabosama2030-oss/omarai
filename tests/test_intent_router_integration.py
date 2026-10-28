@@ -99,8 +99,16 @@ def test_contextual_price_followup_searches_with_previous_subject(monkeypatch) -
 
     monkeypatch.setattr(agent, "_collect_research", collect)
     monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
-    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "توجد أسعار مختلفة حسب النسخة [المصدر 1].")
-    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    def generate(resolved_question, *args, **kwargs):
+        seen["generation_question"] = resolved_question
+        return "توجد أسعار مختلفة حسب النسخة [المصدر 1]."
+
+    def review(resolved_question, answer, sources):
+        seen["review_question"] = resolved_question
+        return answer
+
+    monkeypatch.setattr(agent, "_generate", generate)
+    monkeypatch.setattr(agent, "_review_answer", review)
 
     result = agent.answer("كام سعرها؟", history=history)
 
@@ -110,6 +118,11 @@ def test_contextual_price_followup_searches_with_previous_subject(monkeypatch) -
     assert result["citation_validation"]["method"] == "numeric_source_index_range_only"
     assert result["search_report"]["citation_validation"] == result["citation_validation"]
     assert any("iPhone 17" in query for query in seen["plan"]["queries"])
+    # The plan already resolved the follow-up for search, but historically generation
+    # still received only "كام سعرها؟". All answer stages must receive the same context.
+    assert "iPhone 17" in seen["generation_question"]
+    assert "كام سعرها" in seen["generation_question"]
+    assert seen["review_question"] == seen["generation_question"]
 
 
 def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch) -> None:
