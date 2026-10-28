@@ -4069,7 +4069,7 @@ class WebAgent:
             and not current_search_status_question
             and not self._is_self_question(question)
             and (
-                intent_route in {"CLARIFY", "MODEL_ONLY"}
+                intent_route != "LOCAL"
                 or might_be_context_dependent(question)
             )
         )
