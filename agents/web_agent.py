@@ -4261,13 +4261,11 @@ class WebAgent:
             terminal_status = "partial"
         result.setdefault("pipeline_completion_status", terminal_status)
         terminal_report.setdefault("pipeline_completion_status", result["pipeline_completion_status"])
-        terminal_report.setdefault(
-            "insufficient_evidence",
-            bool(
-                result["pipeline_completion_status"] == "insufficient_evidence"
-                or terminal_search_outcome in _RESEARCH_ERROR_OUTCOMES
-                or terminal_search_outcome == "unknown_after_budget_exhaustion"
-            ),
+        terminal_report["insufficient_evidence"] = bool(
+            terminal_report.get("insufficient_evidence") is True
+            or result["pipeline_completion_status"] == "insufficient_evidence"
+            or terminal_search_outcome in _RESEARCH_ERROR_OUTCOMES
+            or terminal_search_outcome == "unknown_after_budget_exhaustion"
         )
         if isinstance(result.get("search_report"), dict):
             result["search_report"]["request_budget"] = budget_summary
