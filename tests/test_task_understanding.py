@@ -295,3 +295,34 @@ def test_output_audience_and_delivery_preferences_are_distinct_fields():
     assert preferences["citations_requested"] is True
     assert preferences["links_requested"] is True
     assert preferences["json_requested"] is True
+
+
+def test_task_spec_validator_allowlists_tools_policies_and_context_slots():
+    from agents.task_understanding import validate_task_spec
+
+    candidate = build_task_spec(
+        "قارن هاتفين",
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context={
+            "method": "test",
+            "resolved_question": "قارن هاتفين",
+            "topic": "هواتف",
+            "entities": ["Phone A", "Phone B"],
+            "slots": {"product": "Phone A", "untrusted_command": "execute something"},
+            "is_follow_up": True,
+        },
+    )
+    candidate["tool_requirements"] = ["web_search", "delete files", "run shell"]
+    candidate["constraints"]["source_policies"].append("execute arbitrary tool")
+    candidate["constraints"]["language_profile"] = []
+    candidate["context_resolution"]["confidence_band"] = []
+    candidate["extra_unexpected_key"] = "must not survive"
+    safe = validate_task_spec(candidate)
+
+    assert safe["tool_requirements"] == ["web_search"]
+    assert safe["constraints"]["source_policies"] == ["task_relevant_sources"]
+    assert safe["constraints"]["language_profile"] == "und"
+    assert "untrusted_command" not in safe["context_resolution"]["slots"]
+    assert safe["context_resolution"]["confidence_band"] == "unassessed"
+    assert "extra_unexpected_key" not in safe
