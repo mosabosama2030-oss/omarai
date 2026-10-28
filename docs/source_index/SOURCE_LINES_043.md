@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **043**
-- سجلات الأسطر: **646**
-- النطاق: SRC-F725E90B2A-L003709 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **651**
+- النطاق: SRC-F725E90B2A-L003704 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003704](../../tests/test_web_agent.py#L3704) | 3704 | `""` | — |
+| [SRC-F725E90B2A-L003705](../../tests/test_web_agent.py#L3705) | 3705 | `""` | — |
+| [SRC-F725E90B2A-L003706](../../tests/test_web_agent.py#L3706) | 3706 | `""` | — |
+| [SRC-F725E90B2A-L003707](../../tests/test_web_agent.py#L3707) | 3707 | `"def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003708](../../tests/test_web_agent.py#L3708) | 3708 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L003709](../../tests/test_web_agent.py#L3709) | 3709 | `""` | — |
 | [SRC-F725E90B2A-L003710](../../tests/test_web_agent.py#L3710) | 3710 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L003711](../../tests/test_web_agent.py#L3711) | 3711 | `"        agent,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000996 إلى SRC-D186ED3822-L000013
+- النطاق: SRC-90FAA34ADE-L000991 إلى SRC-D186ED3822-L000008
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000991](../../tests/fixtures/answer_quality_cases.json#L991) | 991 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000992](../../tests/fixtures/answer_quality_cases.json#L992) | 992 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000993](../../tests/fixtures/answer_quality_cases.json#L993) | 993 | `"        \"Presents 2021 rules as current without qualification\","` | — |
+| [SRC-90FAA34ADE-L000994](../../tests/fixtures/answer_quality_cases.json#L994) | 994 | `"        \"Invents a newer official source\""` | — |
+| [SRC-90FAA34ADE-L000995](../../tests/fixtures/answer_quality_cases.json#L995) | 995 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000996](../../tests/fixtures/answer_quality_cases.json#L996) | 996 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000997](../../tests/fixtures/answer_quality_cases.json#L997) | 997 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000998](../../tests/fixtures/answer_quality_cases.json#L998) | 998 | `"        \"sources\": ["` | — |
@@ -847,8 +852,3 @@
 | [SRC-D186ED3822-L000006](../../tests/test_answer_quality_review_scorecard.py#L6) | 6 | `"import pytest"` | — |
 | [SRC-D186ED3822-L000007](../../tests/test_answer_quality_review_scorecard.py#L7) | 7 | `""` | — |
 | [SRC-D186ED3822-L000008](../../tests/test_answer_quality_review_scorecard.py#L8) | 8 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-D186ED3822-L000009](../../tests/test_answer_quality_review_scorecard.py#L9) | 9 | `"SCRIPT = ROOT / \"scripts\" / \"score_answer_quality_reviews.py\""` | — |
-| [SRC-D186ED3822-L000010](../../tests/test_answer_quality_review_scorecard.py#L10) | 10 | `"CORPUS_PATH = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-D186ED3822-L000011](../../tests/test_answer_quality_review_scorecard.py#L11) | 11 | `""` | — |
-| [SRC-D186ED3822-L000012](../../tests/test_answer_quality_review_scorecard.py#L12) | 12 | `""` | — |
-| [SRC-D186ED3822-L000013](../../tests/test_answer_quality_review_scorecard.py#L13) | 13 | `"def load_module():"` | — |

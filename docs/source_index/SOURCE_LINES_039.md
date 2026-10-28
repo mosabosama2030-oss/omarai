@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000509 إلى SRC-F725E90B2A-L001308
+- النطاق: SRC-F725E90B2A-L000504 إلى SRC-F725E90B2A-L001303
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000504](../../tests/test_web_agent.py#L504) | 504 | `"        \"سيارة كهربائية\", [\"x\"]"` | — |
+| [SRC-F725E90B2A-L000505](../../tests/test_web_agent.py#L505) | 505 | `"    )"` | — |
+| [SRC-F725E90B2A-L000506](../../tests/test_web_agent.py#L506) | 506 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000507](../../tests/test_web_agent.py#L507) | 507 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000508](../../tests/test_web_agent.py#L508) | 508 | `"    assert results[0][\"provider\"] == \"x_official_api\""` | — |
 | [SRC-F725E90B2A-L000509](../../tests/test_web_agent.py#L509) | 509 | `"    assert results[0][\"url\"] == \"https://x.com/driver/status/1840000000000000000\""` | — |
 | [SRC-F725E90B2A-L000510](../../tests/test_web_agent.py#L510) | 510 | `"    assert calls[0][1][\"headers\"][\"Authorization\"] == \"Bearer test-token\""` | — |
 | [SRC-F725E90B2A-L000511](../../tests/test_web_agent.py#L511) | 511 | `""` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L001301](../../tests/test_web_agent.py#L1301) | 1301 | `""` | — |
 | [SRC-F725E90B2A-L001302](../../tests/test_web_agent.py#L1302) | 1302 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", capture_source_match_query)"` | — |
 | [SRC-F725E90B2A-L001303](../../tests/test_web_agent.py#L1303) | 1303 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001304](../../tests/test_web_agent.py#L1304) | 1304 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001305](../../tests/test_web_agent.py#L1305) | 1305 | `"        lambda *args, **kwargs: \"توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].\","` | — |
-| [SRC-F725E90B2A-L001306](../../tests/test_web_agent.py#L1306) | 1306 | `"    )"` | — |
-| [SRC-F725E90B2A-L001307](../../tests/test_web_agent.py#L1307) | 1307 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L001308](../../tests/test_web_agent.py#L1308) | 1308 | `""` | — |

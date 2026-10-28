@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000197 إلى SRC-90FAA34ADE-L000195
+- النطاق: SRC-4FFD5AFC54-L000192 إلى SRC-90FAA34ADE-L000190
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000192](../../scripts/run_answer_quality_benchmark.py#L192) | 192 | `") -> tuple[int, dict \| str]:"` | — |
+| [SRC-4FFD5AFC54-L000193](../../scripts/run_answer_quality_benchmark.py#L193) | 193 | `"    origin = validate_base_url(base_url, token_present=bool(token))"` | — |
+| [SRC-4FFD5AFC54-L000194](../../scripts/run_answer_quality_benchmark.py#L194) | 194 | `"    url = origin + \"/api/agent\""` | — |
+| [SRC-4FFD5AFC54-L000195](../../scripts/run_answer_quality_benchmark.py#L195) | 195 | `"    body = json.dumps({\"question\": question, \"history\": []}, ensure_ascii=False).encode(\"utf-8\")"` | — |
+| [SRC-4FFD5AFC54-L000196](../../scripts/run_answer_quality_benchmark.py#L196) | 196 | `"    headers = {\"Content-Type\": \"application/json\", \"Content-Length\": str(len(body))}"` | — |
 | [SRC-4FFD5AFC54-L000197](../../scripts/run_answer_quality_benchmark.py#L197) | 197 | `"    if token:"` | — |
 | [SRC-4FFD5AFC54-L000198](../../scripts/run_answer_quality_benchmark.py#L198) | 198 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
 | [SRC-4FFD5AFC54-L000199](../../scripts/run_answer_quality_benchmark.py#L199) | 199 | `"    req = urllib.request.Request(url, data=body, headers=headers, method=\"POST\")"` | — |
@@ -838,8 +843,3 @@
 | [SRC-90FAA34ADE-L000188](../../tests/fixtures/answer_quality_cases.json#L188) | 188 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000189](../../tests/fixtures/answer_quality_cases.json#L189) | 189 | `"        \"Numeric price asserted with zero sources\","` | — |
 | [SRC-90FAA34ADE-L000190](../../tests/fixtures/answer_quality_cases.json#L190) | 190 | `"        \"evidence_status insufficient but answer is assertive\""` | — |
-| [SRC-90FAA34ADE-L000191](../../tests/fixtures/answer_quality_cases.json#L191) | 191 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000192](../../tests/fixtures/answer_quality_cases.json#L192) | 192 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000193](../../tests/fixtures/answer_quality_cases.json#L193) | 193 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000194](../../tests/fixtures/answer_quality_cases.json#L194) | 194 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000195](../../tests/fixtures/answer_quality_cases.json#L195) | 195 | `"      \"case_id\": \"AQ-008\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001309 إلى SRC-F725E90B2A-L002108
+- النطاق: SRC-F725E90B2A-L001304 إلى SRC-F725E90B2A-L002103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001304](../../tests/test_web_agent.py#L1304) | 1304 | `"        agent, \"_generate\","` | — |
+| [SRC-F725E90B2A-L001305](../../tests/test_web_agent.py#L1305) | 1305 | `"        lambda *args, **kwargs: \"توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].\","` | — |
+| [SRC-F725E90B2A-L001306](../../tests/test_web_agent.py#L1306) | 1306 | `"    )"` | — |
+| [SRC-F725E90B2A-L001307](../../tests/test_web_agent.py#L1307) | 1307 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L001308](../../tests/test_web_agent.py#L1308) | 1308 | `""` | — |
 | [SRC-F725E90B2A-L001309](../../tests/test_web_agent.py#L1309) | 1309 | `"    result = agent.answer(question)"` | — |
 | [SRC-F725E90B2A-L001310](../../tests/test_web_agent.py#L1310) | 1310 | `""` | — |
 | [SRC-F725E90B2A-L001311](../../tests/test_web_agent.py#L1311) | 1311 | `"    assert len(calls) == 2"` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L002101](../../tests/test_web_agent.py#L2101) | 2101 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L002102](../../tests/test_web_agent.py#L2102) | 2102 | `"    }"` | — |
 | [SRC-F725E90B2A-L002103](../../tests/test_web_agent.py#L2103) | 2103 | `""` | — |
-| [SRC-F725E90B2A-L002104](../../tests/test_web_agent.py#L2104) | 2104 | `"    def failed_after_provider_result(research_plan):"` | — |
-| [SRC-F725E90B2A-L002105](../../tests/test_web_agent.py#L2105) | 2105 | `"        # A completed provider result-processing state confirms that a search"` | — |
-| [SRC-F725E90B2A-L002106](../../tests/test_web_agent.py#L2106) | 2106 | `"        # connector returned; the collector then fails during downstream processing."` | — |
-| [SRC-F725E90B2A-L002107](../../tests/test_web_agent.py#L2107) | 2107 | `"        agent._record_provider_diagnostic("` | — |
-| [SRC-F725E90B2A-L002108](../../tests/test_web_agent.py#L2108) | 2108 | `"            \"duckduckgo_html\","` | — |

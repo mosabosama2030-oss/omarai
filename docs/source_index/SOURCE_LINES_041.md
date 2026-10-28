@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002109 إلى SRC-F725E90B2A-L002908
+- النطاق: SRC-F725E90B2A-L002104 إلى SRC-F725E90B2A-L002903
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002104](../../tests/test_web_agent.py#L2104) | 2104 | `"    def failed_after_provider_result(research_plan):"` | — |
+| [SRC-F725E90B2A-L002105](../../tests/test_web_agent.py#L2105) | 2105 | `"        # A completed provider result-processing state confirms that a search"` | — |
+| [SRC-F725E90B2A-L002106](../../tests/test_web_agent.py#L2106) | 2106 | `"        # connector returned; the collector then fails during downstream processing."` | — |
+| [SRC-F725E90B2A-L002107](../../tests/test_web_agent.py#L2107) | 2107 | `"        agent._record_provider_diagnostic("` | — |
+| [SRC-F725E90B2A-L002108](../../tests/test_web_agent.py#L2108) | 2108 | `"            \"duckduckgo_html\","` | — |
 | [SRC-F725E90B2A-L002109](../../tests/test_web_agent.py#L2109) | 2109 | `"            research_plan[\"queries\"][0],"` | — |
 | [SRC-F725E90B2A-L002110](../../tests/test_web_agent.py#L2110) | 2110 | `"            \"ok\","` | — |
 | [SRC-F725E90B2A-L002111](../../tests/test_web_agent.py#L2111) | 2111 | `"            result_count=1,"` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L002901](../../tests/test_web_agent.py#L2901) | 2901 | `"        \"واعرض رابط المصدر وتاريخ الصفحة إن توفر\""` | — |
 | [SRC-F725E90B2A-L002902](../../tests/test_web_agent.py#L2902) | 2902 | `"    )"` | — |
 | [SRC-F725E90B2A-L002903](../../tests/test_web_agent.py#L2903) | 2903 | `"    result = agent.answer(question, mode=\"latest\")"` | — |
-| [SRC-F725E90B2A-L002904](../../tests/test_web_agent.py#L2904) | 2904 | `"    plan = seen[\"plan\"]"` | — |
-| [SRC-F725E90B2A-L002905](../../tests/test_web_agent.py#L2905) | 2905 | `""` | — |
-| [SRC-F725E90B2A-L002906](../../tests/test_web_agent.py#L2906) | 2906 | `"    assert plan[\"mode\"] == \"latest\""` | — |
-| [SRC-F725E90B2A-L002907](../../tests/test_web_agent.py#L2907) | 2907 | `"    assert result[\"research_plan\"][\"mode\"] == \"latest\""` | — |
-| [SRC-F725E90B2A-L002908](../../tests/test_web_agent.py#L2908) | 2908 | `"    assert any("` | — |

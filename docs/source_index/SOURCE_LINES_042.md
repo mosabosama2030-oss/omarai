@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002909 إلى SRC-F725E90B2A-L003708
+- النطاق: SRC-F725E90B2A-L002904 إلى SRC-F725E90B2A-L003703
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002904](../../tests/test_web_agent.py#L2904) | 2904 | `"    plan = seen[\"plan\"]"` | — |
+| [SRC-F725E90B2A-L002905](../../tests/test_web_agent.py#L2905) | 2905 | `""` | — |
+| [SRC-F725E90B2A-L002906](../../tests/test_web_agent.py#L2906) | 2906 | `"    assert plan[\"mode\"] == \"latest\""` | — |
+| [SRC-F725E90B2A-L002907](../../tests/test_web_agent.py#L2907) | 2907 | `"    assert result[\"research_plan\"][\"mode\"] == \"latest\""` | — |
+| [SRC-F725E90B2A-L002908](../../tests/test_web_agent.py#L2908) | 2908 | `"    assert any("` | — |
 | [SRC-F725E90B2A-L002909](../../tests/test_web_agent.py#L2909) | 2909 | `"        \"الموقع الرسمي\" in query or \"official website\" in query.lower()"` | — |
 | [SRC-F725E90B2A-L002910](../../tests/test_web_agent.py#L2910) | 2910 | `"        for query in plan[\"queries\"]"` | — |
 | [SRC-F725E90B2A-L002911](../../tests/test_web_agent.py#L2911) | 2911 | `"    )"` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L003701](../../tests/test_web_agent.py#L3701) | 3701 | `"    assert task_understanding[\"actual_queries\"] == []"` | — |
 | [SRC-F725E90B2A-L003702](../../tests/test_web_agent.py#L3702) | 3702 | `"    assert task_understanding[\"query_strategy_matrix\"] == []"` | — |
 | [SRC-F725E90B2A-L003703](../../tests/test_web_agent.py#L3703) | 3703 | `"    assert task_understanding[\"search_was_attempted\"] is False"` | — |
-| [SRC-F725E90B2A-L003704](../../tests/test_web_agent.py#L3704) | 3704 | `""` | — |
-| [SRC-F725E90B2A-L003705](../../tests/test_web_agent.py#L3705) | 3705 | `""` | — |
-| [SRC-F725E90B2A-L003706](../../tests/test_web_agent.py#L3706) | 3706 | `""` | — |
-| [SRC-F725E90B2A-L003707](../../tests/test_web_agent.py#L3707) | 3707 | `"def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003708](../../tests/test_web_agent.py#L3708) | 3708 | `"    agent = WebAgent()"` | — |

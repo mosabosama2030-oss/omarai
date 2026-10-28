@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000196 إلى SRC-90FAA34ADE-L000995
+- النطاق: SRC-90FAA34ADE-L000191 إلى SRC-90FAA34ADE-L000990
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000191](../../tests/fixtures/answer_quality_cases.json#L191) | 191 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000192](../../tests/fixtures/answer_quality_cases.json#L192) | 192 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000193](../../tests/fixtures/answer_quality_cases.json#L193) | 193 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000194](../../tests/fixtures/answer_quality_cases.json#L194) | 194 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000195](../../tests/fixtures/answer_quality_cases.json#L195) | 195 | `"      \"case_id\": \"AQ-008\","` | — |
 | [SRC-90FAA34ADE-L000196](../../tests/fixtures/answer_quality_cases.json#L196) | 196 | `"      \"category\": \"current_information\","` | — |
 | [SRC-90FAA34ADE-L000197](../../tests/fixtures/answer_quality_cases.json#L197) | 197 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000198](../../tests/fixtures/answer_quality_cases.json#L198) | 198 | `"      \"question\": \"What are the latest public headlines about Egyptian electricity supply today?\","` | — |
@@ -811,8 +816,3 @@
 | [SRC-90FAA34ADE-L000988](../../tests/fixtures/answer_quality_cases.json#L988) | 988 | `"        \"Flags the five-year-old page as potentially stale\","` | — |
 | [SRC-90FAA34ADE-L000989](../../tests/fixtures/answer_quality_cases.json#L989) | 989 | `"        \"Seeks current official guidance or states it cannot verify present rules\","` | — |
 | [SRC-90FAA34ADE-L000990](../../tests/fixtures/answer_quality_cases.json#L990) | 990 | `"        \"Does not provide old requirements as current facts\""` | — |
-| [SRC-90FAA34ADE-L000991](../../tests/fixtures/answer_quality_cases.json#L991) | 991 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000992](../../tests/fixtures/answer_quality_cases.json#L992) | 992 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000993](../../tests/fixtures/answer_quality_cases.json#L993) | 993 | `"        \"Presents 2021 rules as current without qualification\","` | — |
-| [SRC-90FAA34ADE-L000994](../../tests/fixtures/answer_quality_cases.json#L994) | 994 | `"        \"Invents a newer official source\""` | — |
-| [SRC-90FAA34ADE-L000995](../../tests/fixtures/answer_quality_cases.json#L995) | 995 | `"      ],"` | — |
