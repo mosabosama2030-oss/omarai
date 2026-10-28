@@ -1169,9 +1169,21 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         constraints[key] = raw_constraints.get(key) is True
     language_profile = raw_constraints.get("language_profile")
     constraints["language_profile"] = (
-        language_profile if language_profile in {"ar", "en", "mixed", "und"} else "und"
+        language_profile
+        if isinstance(language_profile, str) and language_profile in {"ar", "en", "mixed", "und"}
+        else "und"
     )
-    constraints["source_policy"] = clean_text(raw_constraints.get("source_policy"), 80) or "unassessed"
+    allowed_source_policies = {
+        "government_official_destination", "official_destination", "current_read_page",
+        "public_social_content", "authoritative_health_content", "official_legal_text",
+        "task_relevant_sources", "unassessed",
+    }
+    source_policy = clean_text(raw_constraints.get("source_policy"), 80)
+    constraints["source_policy"] = source_policy if source_policy in allowed_source_policies else "unassessed"
+    constraints["source_policies"] = [
+        item for item in constraints["source_policies"]
+        if item in allowed_source_policies
+    ]
 
     raw_preferences = value.get("output_preferences")
     raw_preferences = raw_preferences if isinstance(raw_preferences, dict) else {}
@@ -1204,7 +1216,8 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         "resolution_basis": clean_text(raw_context.get("resolution_basis"), 80) or "unassessed",
         "confidence_band": (
             raw_context.get("confidence_band")
-            if raw_context.get("confidence_band") in {"low", "medium", "high", "unassessed"}
+            if isinstance(raw_context.get("confidence_band"), str)
+            and raw_context.get("confidence_band") in {"low", "medium", "high", "unassessed"}
             else "unassessed"
         ),
         "needs_clarification": raw_context.get("needs_clarification") is True,
@@ -1226,24 +1239,65 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
                 "selected": item.get("selected") is True,
             })
 
+    allowed_families = {
+        name for name in _PATTERNS if not name.startswith("output_")
+    } | {"general_question", "ambiguous_or_incomplete", "web_research"}
+    raw_family = clean_text(value.get("task_family"), 80)
+    raw_mode = clean_text(value.get("mode"), 20)
+    raw_route = clean_text(value.get("intent_route"), 40)
+    allowed_routes = {
+        "LOCAL", "MODEL_ONLY", "CLARIFY", "WEB_SIMPLE", "WEB_DEEP",
+        "LEAD_GENERATION", "BUDGET_EXHAUSTED", "deterministic_fallback",
+        "validated_language_model_plan", "unassessed",
+    }
+    allowed_tools = {
+        "web_search", "page_fetch", "public_social_search_if_configured",
+        "language_model_generation_if_configured", "claim_review_if_configured",
+    }
+    allowed_slots = {
+        "aspect", "audience", "budget", "capacity", "country", "currency",
+        "entity", "goal", "language", "location", "model", "platform",
+        "product", "time_range", "variant", "version",
+    }
+    context_resolution["slots"] = {
+        key: item for key, item in context_resolution["slots"].items()
+        if key in allowed_slots
+    }
+    hypotheses = [
+        item for item in hypotheses
+        if item.get("family") in allowed_families
+    ]
+    raw_secondary = clean_list(value.get("secondary_task_types"), items=16, chars=80)
     spec = {
         "schema": "omarai.task_spec.v1",
-        "task_family": clean_text(value.get("task_family"), 80) or "general_question",
-        "mode": clean_text(value.get("mode"), 20) or "auto",
-        "intent_route": clean_text(value.get("intent_route"), 40) or "unassessed",
+        "task_family": raw_family if raw_family in allowed_families else "general_question",
+        "mode": raw_mode if raw_mode in SUPPORTED_MODES else "auto",
+        "intent_route": raw_route if raw_route in allowed_routes else "unassessed",
         "classification_method": clean_text(value.get("classification_method"), 100),
         "classification_is_probability": False,
         "ambiguity_status": clean_text(value.get("ambiguity_status"), 80) or "unassessed",
-        "missing_required_inputs": clean_list(value.get("missing_required_inputs"), items=8, chars=100),
+        "missing_required_inputs": [
+            item for item in clean_list(value.get("missing_required_inputs"), items=8, chars=100)
+            if item in {
+                "unresolved_referent_or_incomplete_request",
+                "official_destination_target_entity",
+                "summary_source_url_or_pasted_text",
+            }
+        ],
         "requires_clarification": value.get("requires_clarification") is True,
         "clarification_reason": clean_text(value.get("clarification_reason"), 80) or "unassessed",
         "context_resolution": context_resolution,
-        "secondary_task_types": clean_list(value.get("secondary_task_types"), items=16, chars=80),
+        "secondary_task_types": [
+            item for item in raw_secondary if item in allowed_families
+        ],
         "constraints": constraints,
         "output_preferences": output_preferences,
         "evidence_requirements": clean_list(value.get("evidence_requirements"), items=32, chars=180),
         "query_strategies": clean_list(value.get("query_strategies"), items=32, chars=100),
-        "tool_requirements": clean_list(value.get("tool_requirements"), items=12, chars=100),
+        "tool_requirements": [
+            item for item in clean_list(value.get("tool_requirements"), items=12, chars=100)
+            if item in allowed_tools
+        ],
         "decision_checks": clean_list(value.get("decision_checks"), items=24, chars=120),
         "hypothesis_interpretations": hypotheses,
         "limits": {
