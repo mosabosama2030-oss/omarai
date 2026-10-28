@@ -112,7 +112,7 @@ def test_strategy_matrix_does_not_create_generic_queries_without_topic():
 
 def test_mixed_language_is_supported_and_urls_are_explicit_constraints():
     spec = build_task_spec(
-        "Compare Nissan Sunny 2022 with BYD Dolphin in Egypt https://example.com/specs",
+        "Compare Nissan Sunny 2022 with BYD Dolphin في مصر https://example.com/specs",
         mode="auto",
         intent_route="WEB_DEEP",
     )
@@ -126,3 +126,24 @@ def test_task_spec_validator_does_not_accept_untrusted_arbitrary_objects():
 
     invalid = validate_task_spec({"schema": "wrong", "tool_requirements": ["delete files"]})
     assert invalid["status"] == "not_available"
+
+
+def test_compound_task_keeps_current_social_and_comparison_requirements_together():
+    spec = build_task_spec(
+        "قارن تجارب ملاك نيسان صني 2022 في مصر اليوم من حيث السعر والأعطال",
+        mode="social",
+        intent_route="WEB_DEEP",
+    )
+    assert spec["task_family"] in {"social_opinions", "compare"}
+    assert spec["constraints"]["time_sensitive_request"] is True
+    assert spec["constraints"]["social_evidence_requested"] is True
+    assert "publication_or_update_date" in spec["evidence_requirements"]
+    assert "preserve_explicit_comparison_criteria" in spec["evidence_requirements"] or "preserve_each_explicit_comparison_criterion" in spec["evidence_requirements"]
+    assert "personal_experience" in spec["query_strategies"]
+    assert "date_check" in spec["query_strategies"]
+
+
+def test_alarm_word_does_not_trigger_current_information_pattern():
+    spec = build_task_spec("ما معنى نظام الإنذار المعنون؟", mode="auto", intent_route="MODEL_ONLY")
+    assert spec["constraints"]["time_sensitive_request"] is False
+    assert spec["task_family"] == "explain_or_define"
