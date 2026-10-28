@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000633 إلى SRC-914817100D-L000059
+- النطاق: SRC-EEF2E6447C-L000585 إلى SRC-914817100D-L000011
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000585](../../api/omarai.py#L585) | 585 | `"                    data.get(\"text\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000586](../../api/omarai.py#L586) | 586 | `"                    data.get(\"source_url\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000587](../../api/omarai.py#L587) | 587 | `"                    data.get(\"platform\", \"manual\"),"` | — |
+| [SRC-EEF2E6447C-L000588](../../api/omarai.py#L588) | 588 | `"                    data.get(\"observed_at\"),"` | — |
+| [SRC-EEF2E6447C-L000589](../../api/omarai.py#L589) | 589 | `"                    data.get(\"note\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000590](../../api/omarai.py#L590) | 590 | `"                    data.get(\"product_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000591](../../api/omarai.py#L591) | 591 | `"                    data.get(\"location_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000592](../../api/omarai.py#L592) | 592 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000593](../../api/omarai.py#L593) | 593 | `"                return self.respond(201 if created else 200, {\"lead\": lead, \"created\": created})"` | — |
+| [SRC-EEF2E6447C-L000594](../../api/omarai.py#L594) | 594 | `"            route = path.split(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000595](../../api/omarai.py#L595) | 595 | `"            if len(route) == 5 and route[1:3] == [\"api\", \"leads\"] and route[4] == \"status\":"` | — |
+| [SRC-EEF2E6447C-L000596](../../api/omarai.py#L596) | 596 | `"                lead = self.store.update_status(route[3], data.get(\"status\", \"new\"))"` | — |
+| [SRC-EEF2E6447C-L000597](../../api/omarai.py#L597) | 597 | `"                return self.respond(200, {\"lead\": lead}) if lead else self.respond(404, {\"error\": \"lead not found\"})"` | — |
+| [SRC-EEF2E6447C-L000598](../../api/omarai.py#L598) | 598 | `"            return self.respond(404, {\"error\": \"not found\"})"` | — |
+| [SRC-EEF2E6447C-L000599](../../api/omarai.py#L599) | 599 | `"        except (ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
+| [SRC-EEF2E6447C-L000600](../../api/omarai.py#L600) | 600 | `"            return self.respond(400, {\"error\": str(exc)})"` | — |
+| [SRC-EEF2E6447C-L000601](../../api/omarai.py#L601) | 601 | `"        except Exception:  # noqa: BLE001 — keep unexpected details out of API responses"` | — |
+| [SRC-EEF2E6447C-L000602](../../api/omarai.py#L602) | 602 | `"            return self.respond(500, {\"error\": \"internal server error\"})"` | — |
+| [SRC-EEF2E6447C-L000603](../../api/omarai.py#L603) | 603 | `""` | — |
+| [SRC-EEF2E6447C-L000604](../../api/omarai.py#L604) | 604 | `"    def do_OPTIONS(self):"` | — |
+| [SRC-EEF2E6447C-L000605](../../api/omarai.py#L605) | 605 | `"        origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000606](../../api/omarai.py#L606) | 606 | `"        if not origin or not self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000607](../../api/omarai.py#L607) | 607 | `"            return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
+| [SRC-EEF2E6447C-L000608](../../api/omarai.py#L608) | 608 | `"        self.send_response(204)"` | — |
+| [SRC-EEF2E6447C-L000609](../../api/omarai.py#L609) | 609 | `"        self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
+| [SRC-EEF2E6447C-L000610](../../api/omarai.py#L610) | 610 | `"        self.send_header(\"Vary\", \"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000611](../../api/omarai.py#L611) | 611 | `"        self.send_header(\"Access-Control-Allow-Methods\", \"GET, POST, OPTIONS\")"` | — |
+| [SRC-EEF2E6447C-L000612](../../api/omarai.py#L612) | 612 | `"        self.send_header(\"Access-Control-Allow-Headers\", \"Authorization, Content-Type\")"` | — |
+| [SRC-EEF2E6447C-L000613](../../api/omarai.py#L613) | 613 | `"        self.send_header(\"Access-Control-Max-Age\", \"600\")"` | — |
+| [SRC-EEF2E6447C-L000614](../../api/omarai.py#L614) | 614 | `"        self.send_header(\"Content-Length\", \"0\")"` | — |
+| [SRC-EEF2E6447C-L000615](../../api/omarai.py#L615) | 615 | `"        self.end_headers()"` | — |
+| [SRC-EEF2E6447C-L000616](../../api/omarai.py#L616) | 616 | `""` | — |
+| [SRC-EEF2E6447C-L000617](../../api/omarai.py#L617) | 617 | `"    def log_message(self, *args):"` | — |
+| [SRC-EEF2E6447C-L000618](../../api/omarai.py#L618) | 618 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000619](../../api/omarai.py#L619) | 619 | `""` | — |
+| [SRC-EEF2E6447C-L000620](../../api/omarai.py#L620) | 620 | `""` | — |
+| [SRC-EEF2E6447C-L000621](../../api/omarai.py#L621) | 621 | `"def answer_question(question, store):"` | — |
+| [SRC-EEF2E6447C-L000622](../../api/omarai.py#L622) | 622 | `"    \"\"\"Answer common operational questions from local records using explicit rules.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000623](../../api/omarai.py#L623) | 623 | `"    normalized = normalize(question)"` | — |
+| [SRC-EEF2E6447C-L000624](../../api/omarai.py#L624) | 624 | `"    leads = store.list(limit=500)"` | — |
+| [SRC-EEF2E6447C-L000625](../../api/omarai.py#L625) | 625 | `"    active = [lead for lead in leads if lead[\"status\"] not in {\"rejected\", \"converted\"}]"` | — |
+| [SRC-EEF2E6447C-L000626](../../api/omarai.py#L626) | 626 | `"    if any(term in normalized for term in (\"افضل عميل\", \"احسن عميل\", \"افضل اشارة\", \"احسن اشارة\", \"اشارة اراجعها\", \"مين افضل\", \"مين اتابع\", \"اتابع مين\", \"اهم عميل\")):"` | — |
+| [SRC-EEF2E6447C-L000627](../../api/omarai.py#L627) | 627 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000628](../../api/omarai.py#L628) | 628 | `"            return {\"answer\": \"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.\", \"kind\": \"no_data\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000629](../../api/omarai.py#L629) | 629 | `"        lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000630](../../api/omarai.py#L630) | 630 | `"        assessment = lead[\"assessment\"]"` | — |
+| [SRC-EEF2E6447C-L000631](../../api/omarai.py#L631) | 631 | `"        answer = \"الأولوية المقترحة للمراجعة هي الإشارة \" + lead[\"id\"][:8] + \" بدرجة قواعد \" + str(assessment[\"score\"]) + \"/100. السبب: \" + assessment[\"summary\"] + \" المصدر: \" + lead[\"source_url\"] + \". هذه أولوية مراجعة وليست تأكيدًا أن صاحبه سيشتري.\""` | — |
+| [SRC-EEF2E6447C-L000632](../../api/omarai.py#L632) | 632 | `"        return {\"answer\": answer, \"kind\": \"lead_recommendation\", \"lead_id\": lead[\"id\"]}"` | — |
 | [SRC-EEF2E6447C-L000633](../../api/omarai.py#L633) | 633 | `"    if any(term in normalized for term in (\"كام عميل\", \"كم عميل\", \"عدد العملاء\", \"عدد الاشارات\", \"الاحصائيات\", \"احصائيات\")):"` | — |
 | [SRC-EEF2E6447C-L000634](../../api/omarai.py#L634) | 634 | `"        keys = (\"new\", \"qualified\", \"contacted\", \"converted\", \"needs_review\", \"rejected\")"` | — |
 | [SRC-EEF2E6447C-L000635](../../api/omarai.py#L635) | 635 | `"        by_status = {key: sum(lead[\"status\"] == key for lead in leads) for key in keys}"` | — |
@@ -849,51 +897,3 @@
 | [SRC-914817100D-L000009](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L9) | 9 | ``"- الفرع المرجعي: `main`"`` | — |
 | [SRC-914817100D-L000010](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L10) | 10 | ``"- Commit المرجع الذي تمت مراجعته: `aa42c52c5c98a7788de91269e3d8b51542483a6b` (دمج PR #104)."`` | — |
 | [SRC-914817100D-L000011](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L11) | 11 | `"- نقطة الضعف المؤكدة في الاختبار السابق: اختبار المقارنة المركبة كان يتحقق من أن الخطة عميقة وتحتوي أكثر من استعلام، وأن محاور السعر والبطارية والكاميرا استُخرجت، لكنه كان يقبل إجابة اختبارية قصيرة «مقارنة أولية [المصدر 1]» مع توثيق صريح بأن التغطية لم تُقيّم آليًا. لذلك لم يكن الاختبار يثبت أن كل محور حصل على بحث مخصص أو أن لكل محور إشارة مصدر."` | — |
-| [SRC-914817100D-L000012](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L12) | 12 | `"- توجد بالفعل مراجعة للنموذج ومحاولة إصلاح تغطية محدودة وفحص استشهادات. لا ينبغي إعادة بناء هذه الأجزاء أو وصفها بأنها غير موجودة؛ التغيير يعالج الفجوة المحددة في تخصيص الاستعلامات وتشخيص الأدلة لكل محور."` | — |
-| [SRC-914817100D-L000013](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L13) | 13 | `""` | — |
-| [SRC-914817100D-L000014](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L14) | 14 | `"## التغييرات في هذا الفرع"` | — |
-| [SRC-914817100D-L000015](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L15) | 15 | `""` | — |
-| [SRC-914817100D-L000016](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L16) | 16 | `"### 1. استعلامات مخصصة لكل معيار"` | — |
-| [SRC-914817100D-L000017](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L17) | 17 | `""` | — |
-| [SRC-914817100D-L000018](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L18) | 18 | ``"في البحث العميق التلقائي والبحث العميق المحدد من المستخدم، أصبحت المعايير الصريحة المستخرجة من السؤال تحصل على استعلامات مستقلة قبل الاستعلامات العامة مثل «المخاطر والقيود» أو «التحليل الحديث». يتضمن كل استعلام معيار الموضوع الأساسي؛ لذلك تحصل المعايير الثمانية القصوى المستخرجة على ثمانية استعلامات عند الحاجة، وتُضاف الاستعلامات العامة فقط إذا بقيت مساحة ضمن حد `MAX_PLAN_QUERIES`."`` | — |
-| [SRC-914817100D-L000019](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L19) | 19 | `""` | — |
-| [SRC-914817100D-L000020](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L20) | 20 | `"هذا تحسين في توزيع ميزانية البحث، وليس ضمانًا بأن المصادر ستحتوي على المعلومات المطلوبة. لا تُرفع الحدود ولا يُلغى التحقق من صلة النتائج."` | — |
-| [SRC-914817100D-L000021](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L21) | 21 | `""` | — |
-| [SRC-914817100D-L000022](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L22) | 22 | `"### 2. تخصيص الميزانية وإصلاح فجوات البحث"` | — |
-| [SRC-914817100D-L000023](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L23) | 23 | `""` | — |
-| [SRC-914817100D-L000024](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L24) | 24 | `"- في الأسئلة المركبة المعتادة (حتى ستة معايير صريحة)، يُحجز موضع بحث واحد لمرحلة التحقق بعد صياغة الإجابة، ويقتصر توسيع البحث الأولي على سبعة استعلامات كحد أقصى."` | — |
-| [SRC-914817100D-L000025](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L25) | 25 | `"- بعد مراجعة المسودة، إذا ذُكر معيار في الإجابة دون إشارة في نصوص المصادر، يحاول النظام بحثًا إضافيًا محدودًا يستهدف حتى ثلاثة محاور ناقصة في استعلام واحد، بشرط توفر ميزانية الاستعلام المحجوزة."` | — |
-| [SRC-914817100D-L000026](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L26) | 26 | `"- إذا لم توجد ميزانية محجوزة، أو لم ينتج البحث نص مصدر جديدًا، أو لم تتغير الأدلة، تسجل الحالة بوضوح ولا تُعامل المحاور على أنها محسومة."` | — |
-| [SRC-914817100D-L000027](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L27) | 27 | `"- عندما تتطلب المهمة ثمانية معايير صريحة، قد تستهلك الاستعلامات المخصصة كامل الحد؛ لا يتجاوز النظام حد الموارد، ويسجل فجوة الأدلة بدل إطلاق استعلام تاسع."` | — |
-| [SRC-914817100D-L000028](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L28) | 28 | `""` | — |
-| [SRC-914817100D-L000029](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L29) | 29 | `"### 3. إشارة مصدر مستقلة لكل معيار"` | — |
-| [SRC-914817100D-L000030](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L30) | 30 | `""` | — |
-| [SRC-914817100D-L000031](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L31) | 31 | ``"يضيف `audit_answer_integrity` لكل معيار:"`` | — |
-| [SRC-914817100D-L000032](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L32) | 32 | `"- حالة الإشارة اللفظية في الإجابة."` | — |
-| [SRC-914817100D-L000033](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L33) | 33 | `"- حالة الإشارة اللفظية في نصوص المصادر."` | — |
-| [SRC-914817100D-L000034](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L34) | 34 | `"- أرقام المصادر التي ظهرت فيها الإشارة، ونوع النص المستخدم: نص صفحة مستخرجة أو مقتطف بحث أو عنوان."` | — |
-| [SRC-914817100D-L000035](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L35) | 35 | ``"- `source_evidence_gap_count` وعدد الفجوات على مستوى المصادر."`` | — |
-| [SRC-914817100D-L000036](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L36) | 36 | ``"- عرض عدد المحاور التي لا توجد لها إشارة لفظية في المصادر ضمن ملخص الفحص في واجهة `web/agent.html`، بدل إبقاء الفجوة داخل بيانات التشخيص فقط."`` | — |
-| [SRC-914817100D-L000037](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L37) | 37 | `""` | — |
-| [SRC-914817100D-L000038](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L38) | 38 | `"إذا ذكرت الإجابة محورًا دون وجود إشارة لفظية له في المصادر، فسيظهر ذلك كفجوة أدلة حتى لو ورد اسم المحور في الإجابة. هذا فحص استدلالي لفظي محدود؛ لا يثبت أن المصدر يدعم الادعاء ولا يثبت الاستلزام أو الحقيقة."` | — |
-| [SRC-914817100D-L000039](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L39) | 39 | `""` | — |
-| [SRC-914817100D-L000040](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L40) | 40 | `"### 4. اختبارات تراجعية"` | — |
-| [SRC-914817100D-L000041](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L41) | 41 | `""` | — |
-| [SRC-914817100D-L000042](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L42) | 42 | `"- توسيع اختبار المقارنة العربية المركبة للتحقق من وجود استعلامات تتضمن السعر والبطارية والكاميرا مع بقاء عدد الاستعلامات ضمن الحد."` | — |
-| [SRC-914817100D-L000043](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L43) | 43 | `"- اختبار حجز استعلام الإصلاح في الأسئلة المركبة المعتادة، ومنع طلب إضافي غير محجوز عندما تستخدم المهمة ثمانية معايير."` | — |
-| [SRC-914817100D-L000044](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L44) | 44 | `"- اختبار مطابقة معايير عربية مع مصادر إنجليزية شائعة، مع بقاء حالة التحقق الدلالي مستقلة وغير مفعّلة."` | — |
-| [SRC-914817100D-L000045](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L45) | 45 | `"- إضافة اختبار يثبت أن ذكر «المساحة» في الإجابة لا يُحسب دليلًا من المصدر عندما لا يحتوي المصدر على إشارة للمساحة."` | — |
-| [SRC-914817100D-L000046](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L46) | 46 | `"- الإبقاء على التسميات الصريحة بأن الفحوص اللفظية ليست تحققًا دلاليًا أو تدقيقًا مستقلًا للحقيقة."` | — |
-| [SRC-914817100D-L000047](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L47) | 47 | `""` | — |
-| [SRC-914817100D-L000048](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L48) | 48 | `"## دورة الإجابة المستهدفة"` | — |
-| [SRC-914817100D-L000049](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L49) | 49 | `""` | — |
-| [SRC-914817100D-L000050](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L50) | 50 | `"1. استخراج معايير السؤال المحددة دون تحويل تعليمات الأسلوب إلى معايير موضوعية."` | — |
-| [SRC-914817100D-L000051](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L51) | 51 | `"2. إعداد استعلام مستقل لكل معيار ضمن ميزانية محدودة."` | — |
-| [SRC-914817100D-L000052](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L52) | 52 | `"3. جمع النتائج ورفض النتائج غير ذات الصلة وفق المرشحات الحالية."` | — |
-| [SRC-914817100D-L000053](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L53) | 53 | `"4. تسجيل إشارة المصدر لكل معيار منفصلة عن مجرد ذكره في الإجابة."` | — |
-| [SRC-914817100D-L000054](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L54) | 54 | `"5. توليد الإجابة ومراجعتها مقابل النصوص المتاحة."` | — |
-| [SRC-914817100D-L000055](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L55) | 55 | `"6. إعادة فحص المعايير والاستشهادات والأرقام، وإظهار الفجوات بدل إعلان الاكتمال بلا دليل."` | — |
-| [SRC-914817100D-L000056](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L56) | 56 | `"7. إذا بقيت الفجوة، فالإجابة الصحيحة هي التصريح بأن المعلومة غير متاحة/غير محسومة، لا اختلاقها."` | — |
-| [SRC-914817100D-L000057](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L57) | 57 | `""` | — |
-| [SRC-914817100D-L000058](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L58) | 58 | `"## بوابة القبول"` | — |
-| [SRC-914817100D-L000059](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L59) | 59 | `""` | — |
