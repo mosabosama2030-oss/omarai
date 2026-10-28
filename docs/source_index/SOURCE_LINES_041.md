@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003323 إلى SRC-DE7EABE998-L000299
+- النطاق: SRC-F725E90B2A-L003302 إلى SRC-DE7EABE998-L000278
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003302](../../tests/test_web_agent.py#L3302) | 3302 | `"            \"title\": \"تجارب السيارات الكهربائية المستعملة\","` | — |
+| [SRC-F725E90B2A-L003303](../../tests/test_web_agent.py#L3303) | 3303 | `"            \"url\": \"https://example.org/ev-used-cars\","` | — |
+| [SRC-F725E90B2A-L003304](../../tests/test_web_agent.py#L3304) | 3304 | `"            \"snippet\": \"تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر\","` | — |
+| [SRC-F725E90B2A-L003305](../../tests/test_web_agent.py#L3305) | 3305 | `"            \"page_text\": \"تكلفة البطارية والمدى الفعلي للسيارات الكهربائية المستعملة في مصر\","` | — |
+| [SRC-F725E90B2A-L003306](../../tests/test_web_agent.py#L3306) | 3306 | `"            \"page_fetched\": False,"` | — |
+| [SRC-F725E90B2A-L003307](../../tests/test_web_agent.py#L3307) | 3307 | `"            \"provider\": \"openrouter_web_search\","` | — |
+| [SRC-F725E90B2A-L003308](../../tests/test_web_agent.py#L3308) | 3308 | `"            \"providers\": [\"openrouter_web_search\"],"` | — |
+| [SRC-F725E90B2A-L003309](../../tests/test_web_agent.py#L3309) | 3309 | `"            \"queries\": [],"` | — |
+| [SRC-F725E90B2A-L003310](../../tests/test_web_agent.py#L3310) | 3310 | `"            \"domain\": \"example.org\","` | — |
+| [SRC-F725E90B2A-L003311](../../tests/test_web_agent.py#L3311) | 3311 | `"            \"source_class\": \"general\","` | — |
+| [SRC-F725E90B2A-L003312](../../tests/test_web_agent.py#L3312) | 3312 | `"            \"platform\": \"web\","` | — |
+| [SRC-F725E90B2A-L003313](../../tests/test_web_agent.py#L3313) | 3313 | `"            \"published_at\": \"\","` | — |
+| [SRC-F725E90B2A-L003314](../../tests/test_web_agent.py#L3314) | 3314 | `"        }]"` | — |
+| [SRC-F725E90B2A-L003315](../../tests/test_web_agent.py#L3315) | 3315 | `"        return \"إجابة مبدئية [المصدر 1].\""` | — |
+| [SRC-F725E90B2A-L003316](../../tests/test_web_agent.py#L3316) | 3316 | `""` | — |
+| [SRC-F725E90B2A-L003317](../../tests/test_web_agent.py#L3317) | 3317 | `"    monkeypatch.setattr(agent, \"_generate\", generate)"` | — |
+| [SRC-F725E90B2A-L003318](../../tests/test_web_agent.py#L3318) | 3318 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda _question, answer, _sources: answer)"` | — |
+| [SRC-F725E90B2A-L003319](../../tests/test_web_agent.py#L3319) | 3319 | `""` | — |
+| [SRC-F725E90B2A-L003320](../../tests/test_web_agent.py#L3320) | 3320 | `"    def capture_relevance(query, text):"` | — |
+| [SRC-F725E90B2A-L003321](../../tests/test_web_agent.py#L3321) | 3321 | `"        if \"تجارب السيارات الكهربائية المستعملة\" in text:"` | — |
+| [SRC-F725E90B2A-L003322](../../tests/test_web_agent.py#L3322) | 3322 | `"            source_queries.append(query)"` | — |
 | [SRC-F725E90B2A-L003323](../../tests/test_web_agent.py#L3323) | 3323 | `"            if planned_query and query != compact_search_query(topic_query):"` | — |
 | [SRC-F725E90B2A-L003324](../../tests/test_web_agent.py#L3324) | 3324 | `"                return 0.0"` | — |
 | [SRC-F725E90B2A-L003325](../../tests/test_web_agent.py#L3325) | 3325 | `"        return 0.25"` | — |
@@ -813,24 +834,3 @@
 | [SRC-DE7EABE998-L000276](../../web/agent.html#L276) | 276 | `" const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class=\"report-note\">'+escapeHtml(n)+'</p>').join(\"\");"` | — |
 | [SRC-DE7EABE998-L000277](../../web/agent.html#L277) | 277 | `" const review=r.second_pass_review===\"model_claim_audit_completed\"?\"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)\":r.second_pass_review===\"model_claim_audit_completed_before_coverage_repair\"?\"تمت مراجعة المسودة قبل تعديل التغطية؛ النسخة المعدلة لم تخضع لمراجعة ثانية\":r.second_pass_review===\"model_claim_audit_unavailable\"?\"تعذرت مراجعة الادعاءات بمساعدة النموذج\":\"\";"` | — |
 | [SRC-DE7EABE998-L000278](../../web/agent.html#L278) | 278 | `" return '<div class=\"report-head\"><b>ملخص الأدلة وتغطية البحث</b><span class=\"coverage\">'+escapeHtml(scoreLabel)+'</span></div><div class=\"metrics\">'+metricHtml+'</div>'+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class=\"providers\">'+providerHtml+'</div>':\"\")+(review?'<p class=\"report-note\">'+escapeHtml(review)+'</p>':\"\")+details;"` | — |
-| [SRC-DE7EABE998-L000279](../../web/agent.html#L279) | 279 | `"}"` | — |
-| [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `"function addMessage(role,text,result,options={}){"` | — |
-| [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `" const welcome=$(\"welcome\");if(welcome)welcome.remove();"` | — |
-| [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `" const box=document.createElement(\"div\");box.className=\"message \"+(role===\"user\"?\"user\":\"assistant\");"` | — |
-| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `" const who=document.createElement(\"div\");who.className=\"who\";"` | — |
-| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" who.textContent=role===\"user\"?\"أنت\":(result&&result.used_language_model?\"Omarai · بحث وتحليل توليدي\":\"Omarai · إجابة جزئية أو احتياطية\");"` | — |
-| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" box.appendChild(who);"` | — |
-| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const linkedQuestion=(options&&options.question)\|\|(result&&result.question);"` | — |
-| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `" if(role===\"assistant\"&&linkedQuestion){"` | — |
-| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `"  const context=document.createElement(\"div\");context.className=\"message-context\";"` | — |
-| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `"  context.textContent=\"ردًا على السؤال: \"+linkedQuestion;box.appendChild(context);"` | — |
-| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `" }"` | — |
-| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `" const bubble=document.createElement(\"div\");bubble.className=\"bubble\";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);"` | — |
-| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `" if(result&&result.used_web_search!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
-| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
-| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `"  notice.textContent=result.search_attempted===true?\"نُفذت محاولة بحث، لكن لم يؤكد النظام توفر مصادر قابلة للاستخدام؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.\":result.search_attempted===false?\"لم تُنفذ محاولة بحث ويب في هذه الجولة؛ لا تعتبر الإجابة نتيجة بحث حي.\":\"لم يؤكد النظام نجاح البحث الحي في هذه الجولة؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.\";"` | — |
-| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `"  box.appendChild(notice);"` | — |
-| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `" }"` | — |
-| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `" if(result&&result.used_language_model!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
-| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
-| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"  notice.textContent=\"لم تُستخدم استجابة مؤكدة من النموذج اللغوي؛ قد تكون الإجابة مقتطفات أو ردًا احتياطيًا وليست تحليلًا توليديًا كاملًا.\";"` | — |

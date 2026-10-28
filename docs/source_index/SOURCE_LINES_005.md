@@ -614,8 +614,8 @@
 | [SRC-686F71AA50-L000092](../../agents/task_understanding.py#L92) | 92 | `"_DATE_RE = re.compile(r\"(?<!\\d)(?:\\d{4}-\\d{2}-\\d{2}\|\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4})(?!\\d)\")"` | — |
 | [SRC-686F71AA50-L000093](../../agents/task_understanding.py#L93) | 93 | `"_URL_RE = re.compile(r\"https?://[^\\s<>]+\", re.IGNORECASE)"` | — |
 | [SRC-686F71AA50-L000094](../../agents/task_understanding.py#L94) | 94 | `"_BUDGET_RE = re.compile("` | — |
-| [SRC-686F71AA50-L000095](../../agents/task_understanding.py#L95) | 95 | `"    r\"(?:ميزاني(?:ة\|تي)(?:\\s+(?:اقل\\s+من\|بحد\\s+اقصى\|في\\s+حدود))?\""` | — |
-| [SRC-686F71AA50-L000096](../../agents/task_understanding.py#L96) | 96 | `"    r\"\|بحد\\s+اقصى\|اقل\\s+من\|في\\s+حدود\|budget(?:\\s+of)?\|under\|below\|up\\s+to)\""` | — |
+| [SRC-686F71AA50-L000095](../../agents/task_understanding.py#L95) | 95 | `"    r\"(?:ميزاني(?:ة\|تي)(?:\\s+(?:(?:أقل\|اقل)\\s+من\|بحد\\s+اقصى\|في\\s+حدود))?\""` | — |
+| [SRC-686F71AA50-L000096](../../agents/task_understanding.py#L96) | 96 | `"    r\"\|بحد\\s+اقصى\|(?:أقل\|اقل)\\s+من\|في\\s+حدود\|budget(?:\\s+of)?\|under\|below\|up\\s+to)\""` | — |
 | [SRC-686F71AA50-L000097](../../agents/task_understanding.py#L97) | 97 | `"    r\"\\s*[:：]?\\s*(?:egp\|usd\|eur\|جنيه\|دولار\|ريال)?\\s*[\\d,.\\u0660-\\u0669]+\""` | — |
 | [SRC-686F71AA50-L000098](../../agents/task_understanding.py#L98) | 98 | `"    r\"(?:\\s*(?:الف\|ألف\|مليون\|thousand\|million\|k))?\","` | — |
 | [SRC-686F71AA50-L000099](../../agents/task_understanding.py#L99) | 99 | `"    re.IGNORECASE,"` | — |

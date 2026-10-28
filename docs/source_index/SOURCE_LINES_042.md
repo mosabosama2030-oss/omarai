@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **042**
-- سجلات الأسطر: **164**
-- النطاق: SRC-DE7EABE998-L000300 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **185**
+- النطاق: SRC-DE7EABE998-L000279 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000279](../../web/agent.html#L279) | 279 | `"}"` | — |
+| [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `"function addMessage(role,text,result,options={}){"` | — |
+| [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `" const welcome=$(\"welcome\");if(welcome)welcome.remove();"` | — |
+| [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `" const box=document.createElement(\"div\");box.className=\"message \"+(role===\"user\"?\"user\":\"assistant\");"` | — |
+| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `" const who=document.createElement(\"div\");who.className=\"who\";"` | — |
+| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" who.textContent=role===\"user\"?\"أنت\":(result&&result.used_language_model?\"Omarai · بحث وتحليل توليدي\":\"Omarai · إجابة جزئية أو احتياطية\");"` | — |
+| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" box.appendChild(who);"` | — |
+| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const linkedQuestion=(options&&options.question)\|\|(result&&result.question);"` | — |
+| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `" if(role===\"assistant\"&&linkedQuestion){"` | — |
+| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `"  const context=document.createElement(\"div\");context.className=\"message-context\";"` | — |
+| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `"  context.textContent=\"ردًا على السؤال: \"+linkedQuestion;box.appendChild(context);"` | — |
+| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `" }"` | — |
+| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `" const bubble=document.createElement(\"div\");bubble.className=\"bubble\";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);"` | — |
+| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `" if(result&&result.used_web_search!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
+| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `"  notice.textContent=result.search_attempted===true?\"نُفذت محاولة بحث، لكن لم يؤكد النظام توفر مصادر قابلة للاستخدام؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.\":result.search_attempted===false?\"لم تُنفذ محاولة بحث ويب في هذه الجولة؛ لا تعتبر الإجابة نتيجة بحث حي.\":\"لم يؤكد النظام نجاح البحث الحي في هذه الجولة؛ تعامل مع الإجابة باعتبارها غير مكتملة حتى مراجعة المصادر.\";"` | — |
+| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `"  box.appendChild(notice);"` | — |
+| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `" }"` | — |
+| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `" if(result&&result.used_language_model!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
+| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"  notice.textContent=\"لم تُستخدم استجابة مؤكدة من النموذج اللغوي؛ قد تكون الإجابة مقتطفات أو ردًا احتياطيًا وليست تحليلًا توليديًا كاملًا.\";"` | — |
 | [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `"  box.appendChild(notice);"` | — |
 | [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `" }"` | — |
 | [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `" if(result&&result.search_report){"` | — |

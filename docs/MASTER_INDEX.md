@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **98**
 - ملفات Python المحللة: **56**
-- تعريفات Python المفهرسة: **1275**
+- تعريفات Python المفهرسة: **1277**
 - تعريفات Python موثقة بوجود Docstring: **226**
-- تعريفات Python بلا Docstring: **783**
+- تعريفات Python بلا Docstring: **785**
 - تعريفات لا ينطبق عليها Docstring: **266**
-- الرموز الساكنة الإضافية: **1693**
-- الأسطر النصية المفهرسة حرفيًا: **32964**
+- الرموز الساكنة الإضافية: **1694**
+- الأسطر النصية المفهرسة حرفيًا: **32985**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -47,7 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 33410 | 791 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
-| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 32248 | 636 | جرد الملف + AST Python |
+| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 32270 | 636 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 326672 | 6077 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -121,7 +121,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 16516 | 442 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 5665 | 128 | جرد الملف + AST Python |
+| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 6835 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 143661 | 3680 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 59758 | 417 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1157,6 +1157,8 @@
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L107) | دالة | test_strategy_matrix_does_not_create_generic_queries_without_topic | لا توجد Docstring. | ناقص | 107 | [SRC-AFEDC2645A-L000107](../tests/test_task_understanding.py#L107) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L113) | دالة | test_mixed_language_is_supported_and_urls_are_explicit_constraints | لا توجد Docstring. | ناقص | 113 | [SRC-AFEDC2645A-L000113](../tests/test_task_understanding.py#L113) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L124) | دالة | test_task_spec_validator_does_not_accept_untrusted_arbitrary_objects | لا توجد Docstring. | ناقص | 124 | [SRC-AFEDC2645A-L000124](../tests/test_task_understanding.py#L124) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L131) | دالة | test_compound_task_keeps_current_social_and_comparison_requirements_together | لا توجد Docstring. | ناقص | 131 | [SRC-AFEDC2645A-L000131](../tests/test_task_understanding.py#L131) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L146) | دالة | test_alarm_word_does_not_trigger_current_information_pattern | لا توجد Docstring. | ناقص | 146 | [SRC-AFEDC2645A-L000146](../tests/test_task_understanding.py#L146) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L18) | دالة | sample_source | لا توجد Docstring. | ناقص | 18 | [SRC-F725E90B2A-L000018](../tests/test_web_agent.py#L18) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L34) | دالة | test_agent_synthesizes_with_sources_without_live_network | لا توجد Docstring. | ناقص | 34 | [SRC-F725E90B2A-L000034](../tests/test_web_agent.py#L34) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L39) | دالة | test_agent_synthesizes_with_sources_without_live_network.plan | لا توجد Docstring. | ناقص | 39 | [SRC-F725E90B2A-L000039](../tests/test_web_agent.py#L39) |
@@ -2738,6 +2740,7 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 108 | [SRC-2614DCB6FB-L000108](../tests/test_search_code.py#L108) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 24 | [SRC-AFEDC2645A-L000024](../tests/test_task_understanding.py#L24) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 34 | [SRC-AFEDC2645A-L000034](../tests/test_task_understanding.py#L34) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L147) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 147 | [SRC-AFEDC2645A-L000147](../tests/test_task_understanding.py#L147) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L136) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 136 | [SRC-F725E90B2A-L000136](../tests/test_web_agent.py#L136) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L469) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 469 | [SRC-F725E90B2A-L000469](../tests/test_web_agent.py#L469) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L508) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 508 | [SRC-F725E90B2A-L000508](../tests/test_web_agent.py#L508) |
