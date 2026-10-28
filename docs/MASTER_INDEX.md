@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **101**
 - ملفات Python المحللة: **57**
-- تعريفات Python المفهرسة: **1245**
-- تعريفات Python موثقة بوجود Docstring: **219**
-- تعريفات Python بلا Docstring: **777**
-- تعريفات لا ينطبق عليها Docstring: **249**
-- الرموز الساكنة الإضافية: **1692**
-- الأسطر النصية المفهرسة حرفيًا: **32274**
+- تعريفات Python المفهرسة: **1271**
+- تعريفات Python موثقة بوجود Docstring: **220**
+- تعريفات Python بلا Docstring: **789**
+- تعريفات لا ينطبق عليها Docstring: **262**
+- الرموز الساكنة الإضافية: **1693**
+- الأسطر النصية المفهرسة حرفيًا: **32465**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -48,7 +48,7 @@
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 32243 | 753 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
-| FILE-1A2E47C5FA | الوكيل والمنطق | [agents/retrieval_tool.py](../agents/retrieval_tool.py#L1) | Python | 11 | 1 | جرد الملف + AST Python |
+| FILE-1A2E47C5FA | الوكيل والمنطق | [agents/retrieval_tool.py](../agents/retrieval_tool.py#L1) | Python | 6375 | 192 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 322398 | 6002 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
@@ -324,6 +324,32 @@
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L158) | دالة | classify_social_source.has_term | لا توجد Docstring. | ناقص | 158 | [SRC-3AA6165B18-L000158](../agents/research_guardrails.py#L158) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L179) | دالة | apply_source_guardrails | Apply official-domain, current-evidence, and explicit social-mode guards. | موثق | 179 | [SRC-3AA6165B18-L000179](../agents/research_guardrails.py#L179) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L209) | دالة | apply_source_guardrails.reject | لا توجد Docstring. | ناقص | 209 | [SRC-3AA6165B18-L000209](../agents/research_guardrails.py#L209) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L16) | متغير/ثابت Python | RetrieveFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-1A2E47C5FA-L000016](../agents/retrieval_tool.py#L16) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L18) | متغير/ثابت Python | _TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-1A2E47C5FA-L000018](../agents/retrieval_tool.py#L18) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L20) | متغير/ثابت Python | ACADEMIC_MARKERS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-1A2E47C5FA-L000020](../agents/retrieval_tool.py#L20) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L27) | كلاس | RetrievalObservation | لا توجد Docstring. | ناقص | 27 | [SRC-1A2E47C5FA-L000027](../agents/retrieval_tool.py#L27) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L28) | متغير/ثابت Python | RetrievalObservation.query | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-1A2E47C5FA-L000028](../agents/retrieval_tool.py#L28) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L29) | متغير/ثابت Python | RetrievalObservation.results | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-1A2E47C5FA-L000029](../agents/retrieval_tool.py#L29) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L30) | متغير/ثابت Python | RetrievalObservation.result_count | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-1A2E47C5FA-L000030](../agents/retrieval_tool.py#L30) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L31) | متغير/ثابت Python | RetrievalObservation.unique_domains | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 31 | [SRC-1A2E47C5FA-L000031](../agents/retrieval_tool.py#L31) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L32) | متغير/ثابت Python | RetrievalObservation.sufficiency | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 32 | [SRC-1A2E47C5FA-L000032](../agents/retrieval_tool.py#L32) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L33) | متغير/ثابت Python | RetrievalObservation.source_class_hint | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 33 | [SRC-1A2E47C5FA-L000033](../agents/retrieval_tool.py#L33) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L34) | متغير/ثابت Python | RetrievalObservation.suggested_next_query | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 34 | [SRC-1A2E47C5FA-L000034](../agents/retrieval_tool.py#L34) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L35) | متغير/ثابت Python | RetrievalObservation.reason | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 35 | [SRC-1A2E47C5FA-L000035](../agents/retrieval_tool.py#L35) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L37) | دالة | RetrievalObservation.to_dict | لا توجد Docstring. | ناقص | 37 | [SRC-1A2E47C5FA-L000037](../agents/retrieval_tool.py#L37) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L52) | كلاس | RetrievalToolState | لا توجد Docstring. | ناقص | 52 | [SRC-1A2E47C5FA-L000052](../agents/retrieval_tool.py#L52) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L53) | متغير/ثابت Python | RetrievalToolState.hops | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 53 | [SRC-1A2E47C5FA-L000053](../agents/retrieval_tool.py#L53) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L54) | متغير/ثابت Python | RetrievalToolState.all_results | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 54 | [SRC-1A2E47C5FA-L000054](../agents/retrieval_tool.py#L54) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L57) | دالة | RetrievalToolState.hop_count | لا توجد Docstring. | ناقص | 57 | [SRC-1A2E47C5FA-L000057](../agents/retrieval_tool.py#L57) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L60) | دالة | RetrievalToolState.to_dict | لا توجد Docstring. | ناقص | 60 | [SRC-1A2E47C5FA-L000060](../agents/retrieval_tool.py#L60) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L69) | دالة | _domains | لا توجد Docstring. | ناقص | 69 | [SRC-1A2E47C5FA-L000069](../agents/retrieval_tool.py#L69) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L82) | دالة | score_sufficiency | لا توجد Docstring. | ناقص | 82 | [SRC-1A2E47C5FA-L000082](../agents/retrieval_tool.py#L82) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L94) | دالة | infer_source_class_hint | لا توجد Docstring. | ناقص | 94 | [SRC-1A2E47C5FA-L000094](../agents/retrieval_tool.py#L94) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L101) | دالة | suggest_refined_query | لا توجد Docstring. | ناقص | 101 | [SRC-1A2E47C5FA-L000101](../agents/retrieval_tool.py#L101) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L114) | كلاس | RetrievalTool | Callable retrieval tool for the ReAct loop. | موثق | 114 | [SRC-1A2E47C5FA-L000114](../agents/retrieval_tool.py#L114) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L117) | دالة | RetrievalTool.__init__ | لا توجد Docstring. | ناقص | 117 | [SRC-1A2E47C5FA-L000117](../agents/retrieval_tool.py#L117) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L121) | دالة | RetrievalTool.once | لا توجد Docstring. | ناقص | 121 | [SRC-1A2E47C5FA-L000121](../agents/retrieval_tool.py#L121) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L160) | دالة | RetrievalTool.run_until_sufficient | لا توجد Docstring. | ناقص | 160 | [SRC-1A2E47C5FA-L000160](../agents/retrieval_tool.py#L160) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
@@ -1539,6 +1565,7 @@
 | [agents/research.py](../agents/research.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_FUSED_RESULTS | 21 | [SRC-59CF4B7DE8-L000021](../agents/research.py#L21) |
 | [agents/research.py](../agents/research.py#L58) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 58 | [SRC-59CF4B7DE8-L000058](../agents/research.py#L58) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 13 | [SRC-3AA6165B18-L000013](../agents/research_guardrails.py#L13) |
+| [agents/retrieval_tool.py](../agents/retrieval_tool.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACADEMIC_MARKERS | 20 | [SRC-1A2E47C5FA-L000020](../agents/retrieval_tool.py#L20) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
