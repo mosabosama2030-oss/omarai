@@ -144,5 +144,9 @@ def test_context_probe_gate_recognizes_natural_followups_not_every_short_questio
     assert might_be_context_dependent("والضمان؟")
     assert might_be_context_dependent("Is it covered?")
     assert might_be_context_dependent("هل هذا الهاتف مناسب؟")
+
+    assert might_be_context_dependent("أقدر أشتريه من هناك؟")
+    assert might_be_context_dependent("هل أستخدمها مع الجهاز ده؟")
+    assert not might_be_context_dependent("اشتريت شاشة جديدة اليوم؟")
     assert not might_be_context_dependent("اشرح الديناميكا الحرارية ببساطة")
     assert not might_be_context_dependent("Explain entropy in simple terms.")
