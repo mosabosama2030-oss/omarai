@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001918 إلى SRC-F725E90B2A-L002717
+- النطاق: SRC-F725E90B2A-L001914 إلى SRC-F725E90B2A-L002713
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001914](../../tests/test_web_agent.py#L1914) | 1914 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L001915](../../tests/test_web_agent.py#L1915) | 1915 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-F725E90B2A-L001916](../../tests/test_web_agent.py#L1916) | 1916 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001917](../../tests/test_web_agent.py#L1917) | 1917 | `"            \"evidence_signals\": {},"` | — |
 | [SRC-F725E90B2A-L001918](../../tests/test_web_agent.py#L1918) | 1918 | `"        }"` | — |
 | [SRC-F725E90B2A-L001919](../../tests/test_web_agent.py#L1919) | 1919 | `""` | — |
 | [SRC-F725E90B2A-L001920](../../tests/test_web_agent.py#L1920) | 1920 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002711](../../tests/test_web_agent.py#L2711) | 2711 | `"    assert resolved_hosts == [\"first.example\", \"second.example\"]"` | — |
 | [SRC-F725E90B2A-L002712](../../tests/test_web_agent.py#L2712) | 2712 | `"    # The second host is validated before any connection attempt to it."` | — |
 | [SRC-F725E90B2A-L002713](../../tests/test_web_agent.py#L2713) | 2713 | `"    assert len(requests) == 1"` | — |
-| [SRC-F725E90B2A-L002714](../../tests/test_web_agent.py#L2714) | 2714 | `""` | — |
-| [SRC-F725E90B2A-L002715](../../tests/test_web_agent.py#L2715) | 2715 | `""` | — |
-| [SRC-F725E90B2A-L002716](../../tests/test_web_agent.py#L2716) | 2716 | `""` | — |
-| [SRC-F725E90B2A-L002717](../../tests/test_web_agent.py#L2717) | 2717 | `"def test_history_search_query_uses_shared_context_resolver():"` | — |

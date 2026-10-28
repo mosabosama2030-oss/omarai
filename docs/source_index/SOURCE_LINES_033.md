@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000318 إلى SRC-F725E90B2A-L001117
+- النطاق: SRC-F725E90B2A-L000314 إلى SRC-F725E90B2A-L001113
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000314](../../tests/test_web_agent.py#L314) | 314 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L000315](../../tests/test_web_agent.py#L315) | 315 | `""` | — |
+| [SRC-F725E90B2A-L000316](../../tests/test_web_agent.py#L316) | 316 | `"    def search(query):"` | — |
+| [SRC-F725E90B2A-L000317](../../tests/test_web_agent.py#L317) | 317 | `"        if query == \"query over budget\":"` | — |
 | [SRC-F725E90B2A-L000318](../../tests/test_web_agent.py#L318) | 318 | `"            raise RequestBudgetExceeded(\"تم بلوغ حد موارد الطلب: search_queries.\")"` | — |
 | [SRC-F725E90B2A-L000319](../../tests/test_web_agent.py#L319) | 319 | `"        return ["` | — |
 | [SRC-F725E90B2A-L000320](../../tests/test_web_agent.py#L320) | 320 | `"            {"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001111](../../tests/test_web_agent.py#L1111) | 1111 | `"        \"direct_urls\": [\"https://example.com/research\"],"` | — |
 | [SRC-F725E90B2A-L001112](../../tests/test_web_agent.py#L1112) | 1112 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001113](../../tests/test_web_agent.py#L1113) | 1113 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L001114](../../tests/test_web_agent.py#L1114) | 1114 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L001115](../../tests/test_web_agent.py#L1115) | 1115 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001116](../../tests/test_web_agent.py#L1116) | 1116 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001117](../../tests/test_web_agent.py#L1117) | 1117 | `"    }"` | — |

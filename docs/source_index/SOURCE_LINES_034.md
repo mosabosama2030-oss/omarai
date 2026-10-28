@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001118 إلى SRC-F725E90B2A-L001917
+- النطاق: SRC-F725E90B2A-L001114 إلى SRC-F725E90B2A-L001913
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001114](../../tests/test_web_agent.py#L1114) | 1114 | `"        \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L001115](../../tests/test_web_agent.py#L1115) | 1115 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L001116](../../tests/test_web_agent.py#L1116) | 1116 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001117](../../tests/test_web_agent.py#L1117) | 1117 | `"    }"` | — |
 | [SRC-F725E90B2A-L001118](../../tests/test_web_agent.py#L1118) | 1118 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
 | [SRC-F725E90B2A-L001119](../../tests/test_web_agent.py#L1119) | 1119 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001120](../../tests/test_web_agent.py#L1120) | 1120 | `"        agent,"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001911](../../tests/test_web_agent.py#L1911) | 1911 | `"            \"providers_used\": [],"` | — |
 | [SRC-F725E90B2A-L001912](../../tests/test_web_agent.py#L1912) | 1912 | `"            \"provider_counts\": {},"` | — |
 | [SRC-F725E90B2A-L001913](../../tests/test_web_agent.py#L1913) | 1913 | `"            \"platform_counts\": {},"` | — |
-| [SRC-F725E90B2A-L001914](../../tests/test_web_agent.py#L1914) | 1914 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001915](../../tests/test_web_agent.py#L1915) | 1915 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-F725E90B2A-L001916](../../tests/test_web_agent.py#L1916) | 1916 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001917](../../tests/test_web_agent.py#L1917) | 1917 | `"            \"evidence_signals\": {},"` | — |
