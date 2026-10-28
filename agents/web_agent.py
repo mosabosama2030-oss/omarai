@@ -4131,6 +4131,9 @@ class WebAgent:
         if intent_route == "MODEL_ONLY":
             general_answer = self._answer_without_search(working_question, clean_history)
             if general_answer is not None:
+                # Keep the public API question verbatim; the resolved wording is for
+                # internal reasoning and generation, not a replacement for user input.
+                general_answer["question"] = question
                 if context_override is not None:
                     general_answer["dialogue_context"] = context_override
                     if isinstance(general_answer.get("research_plan"), dict):
