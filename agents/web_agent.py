@@ -4064,8 +4064,14 @@ class WebAgent:
 
         # Rules only decide when a context probe may be needed. The model interprets
         # meaning only on those turns; it never receives authority to execute tools.
-        probe_dialogue = bool(clean_history) and (
-            intent_route == "CLARIFY" or might_be_context_dependent(question)
+        probe_dialogue = (
+            bool(clean_history)
+            and not current_search_status_question
+            and not self._is_self_question(question)
+            and (
+                intent_route in {"CLARIFY", "MODEL_ONLY"}
+                or might_be_context_dependent(question)
+            )
         )
         if probe_dialogue:
             semantic_context = self._resolve_dialogue_context(question, clean_history)
