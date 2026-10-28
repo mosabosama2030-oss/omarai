@@ -168,7 +168,8 @@ def build_tool_execution_matrix(
     }))
 
     tool = "public_social_search_if_configured"
-    social_results = _nonnegative_int(search_report.get("social_direct_results")) or 0
+    raw_social_results = _nonnegative_int(search_report.get("social_direct_results"))
+    social_results = raw_social_results or 0
     social_sources = sum(
         1 for source in source_rows
         if isinstance(source, dict)
@@ -177,22 +178,79 @@ def build_tool_execution_matrix(
             or str(source.get("source_class") or "").lower() == "social"
         )
     )
+    connector_summary = search_report.get("connector_summary")
+    connector_summary = connector_summary if isinstance(connector_summary, dict) else {}
+    connector_rows = connector_summary.get("connectors")
+    connector_rows = connector_rows if isinstance(connector_rows, list) else []
+    social_connector_names = {
+        "reddit_public_rss", "bluesky_public_search", "reddit_oauth_api",
+        "facebook_pages_api", "instagram_graph_api", "x_official_api",
+        "youtube_data_api",
+    }
+    social_connector_states = [
+        row for row in connector_rows
+        if isinstance(row, dict) and row.get("name") in social_connector_names
+    ]
+    attempted_social_connectors = [
+        row for row in social_connector_states if row.get("attempted") is True
+    ]
+    social_connector_errors = [
+        row for row in social_connector_states
+        if row.get("status") in {
+            "failed", "error", "timeout", "http_error", "unauthorized",
+            "rate_limited", "budget_exhausted",
+        }
+    ]
+    social_configured_connectors = [
+        row for row in social_connector_states
+        if row.get("configured") is True
+    ]
+    social_not_configured_connectors = [
+        row for row in social_connector_states
+        if row.get("configured") is False
+    ]
     if tool not in required:
         status = "not_required"
     elif social_results > 0 or social_sources > 0:
         status = "completed_with_results"
+    elif outcome in _ERROR_OUTCOMES and outcome == "attempted_research_error":
+        status = "failed"
     elif outcome in _ERROR_OUTCOMES:
-        status = "failed" if outcome == "attempted_research_error" else "unknown"
-    elif attempted is True:
-        status = "completed_no_usable_results"
+        status = "unknown"
+    elif attempted_social_connectors:
+        status = "failed" if social_connector_errors else "completed_no_usable_results"
+    elif social_configured_connectors and all(
+        row.get("attempted") is False for row in social_configured_connectors
+    ):
+        status = "not_attempted"
+    elif social_not_configured_connectors and not social_configured_connectors:
+        status = "not_configured"
+    elif social_not_configured_connectors and not attempted_social_connectors:
+        status = "not_configured"
+    elif raw_social_results is None and not social_connector_states:
+        status = "unknown"
     elif attempted is False:
         status = "not_attempted"
     else:
+        # A general web search attempt is not proof that social connectors ran.
         status = "unknown"
     rows.append(_status_row(tool, tool in required, status, {
         "social_direct_results": social_results,
+        "social_result_count_known": raw_social_results is not None,
         "accepted_social_sources": social_sources,
+        "social_connectors_observed": [
+            {
+                "name": row.get("name"),
+                "configured": row.get("configured"),
+                "attempted": row.get("attempted"),
+                "status": row.get("status"),
+            }
+            for row in social_connector_states[:8]
+        ],
         "search_outcome": outcome,
+        "interpretation": (
+            "A general web search attempt does not prove that a social connector was attempted."
+        ),
     }))
 
     tool = "language_model_generation_if_configured"
