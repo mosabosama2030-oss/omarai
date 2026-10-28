@@ -85,24 +85,20 @@ def test_ambiguous_followup_is_not_reported_as_a_confident_interpretation():
 
 
 def test_query_strategy_matrix_is_bounded_deduplicated_and_topic_anchored():
-    spec = build_task_spec(
-        "قارن السيارات الكهربائية في مصر من حيث السعر والضمان",
-        mode="deep",
-        intent_route="WEB_DEEP",
-    )
-    rows = build_query_strategy_matrix(
-        "قارن السيارات الكهربائية في مصر من حيث السعر والضمان",
-        spec,
-        ["السيارات الكهربائية في مصر", "السيارات الكهربائية في مصر"],
-        limit=6,
-    )
+    question = "قارن السيارات الكهربائية في مصر من حيث السعر والضمان"
+    spec = build_task_spec(question, mode="deep", intent_route="WEB_DEEP")
+    existing = ["السيارات الكهربائية في مصر"] + [
+        f"السيارات الكهربائية في مصر بديل عام {i}" for i in range(1, 9)
+    ]
+    rows = build_query_strategy_matrix(question, spec, existing, limit=6)
     queries = [row["query"] for row in rows]
     assert 1 <= len(queries) <= 6
     assert len({query.casefold() for query in queries}) == len(queries)
     assert all("السيارات" in query for query in queries)
+    assert any(row["strategy"] == "explicit_criterion" for row in rows)
     assert any(row["strategy"] == "primary_specification" for row in rows)
+    assert sum(row["strategy"] == "planner_alternative" for row in rows) <= 1
     assert all(row["rationale"] for row in rows)
-
 
 def test_strategy_matrix_does_not_create_generic_queries_without_topic():
     spec = build_task_spec("قارنهم", mode="deep", intent_route="CLARIFY")
@@ -147,3 +143,66 @@ def test_alarm_word_does_not_trigger_current_information_pattern():
     spec = build_task_spec("ما معنى نظام الإنذار المعنون؟", mode="auto", intent_route="MODEL_ONLY")
     assert spec["constraints"]["time_sensitive_request"] is False
     assert spec["task_family"] == "explain_or_define"
+
+
+def test_clarification_route_does_not_claim_search_or_generation_tools():
+    spec = build_task_spec("كام سعرها؟", mode="deep", intent_route="CLARIFY")
+    assert spec["ambiguity_status"] == "needs_clarification"
+    assert "web_search" not in spec["tool_requirements"]
+    assert "page_fetch" not in spec["tool_requirements"]
+    assert "language_model_generation_if_configured" not in spec["tool_requirements"]
+
+
+def test_summary_text_and_page_link_require_different_tools():
+    pasted = build_task_spec(
+        "لخص النص التالي: يتناول النص صيانة أجهزة الإنذار وإجراء الاختبار الدوري.",
+        mode="auto",
+        intent_route="MODEL_ONLY",
+    )
+    assert pasted["constraints"]["inline_text_supplied_for_summary"] is True
+    assert "page_fetch" not in pasted["tool_requirements"]
+    assert "web_search" not in pasted["tool_requirements"]
+    linked = build_task_spec(
+        "لخص الصفحة https://example.com/manual",
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+    )
+    assert "page_fetch" in linked["tool_requirements"]
+    assert "web_search" in linked["tool_requirements"]
+
+
+def test_output_format_preferences_are_preserved_separately_from_intent():
+    spec = build_task_spec(
+        "قارن الخيارين في جدول مع أمثلة وبالتفصيل وعلى شكل نقاط",
+        mode="deep",
+        intent_route="WEB_DEEP",
+    )
+    preferences = spec["output_preferences"]
+    assert preferences["table_requested"] is True
+    assert preferences["examples_requested"] is True
+    assert preferences["detailed"] is True
+    assert preferences["bullets_or_checklist_requested"] is True
+
+
+def test_location_matching_avoids_partial_english_word_collision():
+    spec = build_task_spec(
+        "Explain Egyptology as an academic field",
+        mode="auto",
+        intent_route="MODEL_ONLY",
+    )
+    assert "مصر" not in spec["constraints"]["explicit_locations"]
+
+
+def test_source_policies_keep_orthogonal_research_constraints():
+    spec = build_task_spec(
+        "قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والاعتمادية",
+        mode="social",
+        intent_route="WEB_DEEP",
+    )
+    policies = spec["constraints"]["source_policies"]
+    assert "current_read_page" in policies
+    assert "public_social_content" in policies
+    assert spec["constraints"]["time_sensitive_request"] is True
+    assert spec["constraints"]["social_evidence_requested"] is True
+    assert "publication_or_update_date" in spec["evidence_requirements"]
+    assert "heuristic_classification_is_not_identity_or_truth_verification" in spec["evidence_requirements"]
