@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **785**
 - تعريفات لا ينطبق عليها Docstring: **254**
 - الرموز الساكنة الإضافية: **1698**
-- الأسطر النصية المفهرسة حرفيًا: **32666**
+- الأسطر النصية المفهرسة حرفيًا: **32667**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -122,7 +122,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 141351 | 3622 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 141435 | 3623 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 66886 | 481 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1385,7 +1385,7 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3518) | دالة | test_official_government_lookup_never_synthesizes_tourism_result | لا توجد Docstring. | ناقص | 3518 | [SRC-F725E90B2A-L003518](../tests/test_web_agent.py#L3518) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3532) | دالة | test_official_government_lookup_never_synthesizes_tourism_result.collect | لا توجد Docstring. | ناقص | 3532 | [SRC-F725E90B2A-L003532](../tests/test_web_agent.py#L3532) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3585) | دالة | test_completion_diagnostics_failure_does_not_break_answer | لا توجد Docstring. | ناقص | 3585 | [SRC-F725E90B2A-L003585](../tests/test_web_agent.py#L3585) |
-| [tests/test_web_agent.py](../tests/test_web_agent.py#L3615) | دالة | test_completion_diagnostics_failure_does_not_break_answer.fail_diagnostics | لا توجد Docstring. | ناقص | 3615 | [SRC-F725E90B2A-L003615](../tests/test_web_agent.py#L3615) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3616) | دالة | test_completion_diagnostics_failure_does_not_break_answer.fail_diagnostics | لا توجد Docstring. | ناقص | 3616 | [SRC-F725E90B2A-L003616](../tests/test_web_agent.py#L3616) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L10) | دالة | _academic_result | لا توجد Docstring. | ناقص | 10 | [SRC-8C13B81AB4-L000010](../tests/test_web_agent_nlu_integration.py#L10) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L29) | دالة | test_sparse_academic_search_uses_budgeted_safe_connectors | لا توجد Docstring. | ناقص | 29 | [SRC-8C13B81AB4-L000029](../tests/test_web_agent_nlu_integration.py#L29) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L49) | دالة | test_academic_connectors_are_not_called_for_ordinary_sparse_queries | لا توجد Docstring. | ناقص | 49 | [SRC-8C13B81AB4-L000049](../tests/test_web_agent_nlu_integration.py#L49) |
