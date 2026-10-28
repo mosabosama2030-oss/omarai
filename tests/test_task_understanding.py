@@ -206,3 +206,38 @@ def test_source_policies_keep_orthogonal_research_constraints():
     assert spec["constraints"]["social_evidence_requested"] is True
     assert "publication_or_update_date" in spec["evidence_requirements"]
     assert "heuristic_classification_is_not_identity_or_truth_verification" in spec["evidence_requirements"]
+
+
+def test_official_site_request_without_a_target_marks_required_input():
+    spec = build_task_spec("هات الموقع الرسمي", mode="auto", intent_route="WEB_SIMPLE")
+    assert spec["task_family"] == "official_site_lookup"
+    assert "official_destination_target_entity" in spec["missing_required_inputs"]
+    assert spec["requires_clarification"] is True
+
+
+def test_official_site_request_with_a_named_target_does_not_require_subject_clarification():
+    spec = build_task_spec(
+        "هات الموقع الرسمي لوزارة الاتصالات في مصر",
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+    )
+    assert "official_destination_target_entity" not in spec["missing_required_inputs"]
+    assert spec["constraints"]["official_destination_required"] is True
+
+
+def test_summary_without_url_or_text_marks_required_input():
+    spec = build_task_spec("لخص", mode="auto", intent_route="MODEL_ONLY")
+    assert "summary_source_url_or_pasted_text" in spec["missing_required_inputs"]
+    assert spec["requires_clarification"] is True
+
+
+def test_output_preferences_do_not_count_as_competing_intent_hypotheses():
+    spec = build_task_spec(
+        "قارن الخيارين في جدول مع أمثلة وبالتفصيل",
+        mode="deep",
+        intent_route="WEB_DEEP",
+    )
+    families = {row["family"] for row in spec["hypothesis_interpretations"]}
+    assert "compare" in families
+    assert not any(family.startswith("output_") for family in families)
+    assert spec["ambiguity_status"] == "no_strong_lexical_conflict_detected"
