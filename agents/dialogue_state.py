@@ -247,4 +247,13 @@ def might_be_context_dependent(question: str) -> bool:
         r"[؟?\s]*",
         current,
     )
-    return bool(lead_in or reference or fragment)
+    # Arabic object pronouns are often attached to verbs, as in "أشتريه"
+    # or "أستخدمها"; whitespace-token pronoun lists miss these natural follow-ups.
+    attached_reference = re.search(
+        r"\b(?:استخدم|أستخدم|اشتري|أشتري|اجيب|أجيب|اشغل|أشغل|افتح|أفتح|"
+        r"اصلح|أصلح|احط|أحط|اجرب|أجرب|اربط|أربط|اوصل|أوصل|اخد|آخد|"
+        r"اخلي|أخلي|اركب|أركب|انقل|أنقل|ادفع|أدفع|اطلب|أطلب|احجز|أحجز)"
+        r"[\u0600-\u06FF]{0,18}(?:ه|ها|هم|هما|هن|ك|كم|كن)\b",
+        current,
+    )
+    return bool(lead_in or reference or fragment or attached_reference)
