@@ -155,7 +155,8 @@ def classify_social_source(source: dict[str, Any]) -> dict[str, str]:
     ))
     # Normalize the vocabulary as well as the source text so English phrases
     # remain case-insensitive (for example, "I own" versus "i own").
-    has_term = lambda terms: any(_normalized(term) in text for term in terms)
+    def has_term(terms: tuple[str, ...]) -> bool:
+        return any(_normalized(term) in text for term in terms)
     if has_term(_PROMOTION_TERMS):
         label = "promotional_or_commercial"
         basis = "commercial language detected"
