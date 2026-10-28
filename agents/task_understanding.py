@@ -468,6 +468,7 @@ def build_task_spec(
     dates = list(dict.fromkeys(_DATE_RE.findall(raw)))
     budgets = [m.group(0).strip()[:100] for m in _BUDGET_RE.finditer(raw)]
     urls = list(dict.fromkeys(_URL_RE.findall(raw)))[:5]
+    inline_summary_text = _has_inline_summary_text(raw)
     unresolved_followup = any(normalize_text(cue) in normalized for cue in _FOLLOWUP_CUES)
     missing_required_inputs: list[str] = []
     if intent_route == "CLARIFY":
@@ -518,7 +519,6 @@ def build_task_spec(
     # A clarification route is a hard stop even when the UI has a research mode selected.
     route_is_clarification = intent_route == "CLARIFY"
     route_is_local = intent_route == "LOCAL"
-    inline_summary_text = _has_inline_summary_text(raw)
     search_requested = (
         intent_route in {"WEB_SIMPLE", "WEB_DEEP", "LEAD_GENERATION"}
         or (
