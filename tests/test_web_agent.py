@@ -3579,3 +3579,44 @@ def test_official_government_lookup_never_synthesizes_tourism_result(monkeypatch
     }
     assert guardrails["final"]["accepted_sources"] == 0
     assert result["search_report"]["usable_sources_after_filtering"] == 0
+
+
+
+def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+            "coverage_targets": [],
+        },
+    )
+    monkeypatch.setattr(agent, "_collect_research", lambda plan: (
+        [sample_source(0)], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": plan["queries"][0], "results": 1}],
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test"],
+            "provider_diagnostics": [],
+        }
+    ))
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "إجابة اختبارية [المصدر 1].")
+
+    def fail_diagnostics(_result):
+        raise RuntimeError("diagnostics are optional")
+
+    monkeypatch.setattr("agents.web_agent.build_research_completion", fail_diagnostics)
+    result = agent.answer("قارن هذه التقنية")
+    assert result["answer"] == "إجابة اختبارية [المصدر 1]."
+    assert result["research_completion"]["status"] == "diagnostics_not_computed"
+    assert any("لا يُعد ذلك دليلًا على اكتمال البحث" in warning for warning in result["warnings"])

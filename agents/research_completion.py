@@ -106,8 +106,11 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
         for source in sources
     )
     unflagged_text = sum(
-        bool(str(source.get("page_text") or "").strip())
-        and not bool(source.get("page_fetched"))
+        (
+            bool(str(source.get("page_text") or "").strip())
+            and not bool(source.get("page_fetched"))
+        )
+        or source.get("page_text_present_without_fetch_flag") is True
         for source in sources
     )
     url_keys = [_url_key(source.get("url")) for source in sources]

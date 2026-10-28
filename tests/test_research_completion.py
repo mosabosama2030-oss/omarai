@@ -143,3 +143,18 @@ def test_ref_query_parameters_are_not_assumed_to_be_tracking_ids() -> None:
     })
     assert result["counters"]["unique_normalized_url_count"] == 2
     assert result["counters"]["duplicate_normalized_url_count"] == 0
+
+
+
+def test_unflagged_page_text_marker_is_counted_without_exposing_page_text() -> None:
+    result = build_research_completion({
+        "kind": "web_fallback",
+        "sources": [{
+            "url": "https://example.com/a",
+            "snippet": "summary",
+            "page_fetched": False,
+            "page_text_present_without_fetch_flag": True,
+        }],
+        "search_report": {},
+    })
+    assert result["counters"]["page_text_without_fetched_flag_count"] == 1

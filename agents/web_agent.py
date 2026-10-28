@@ -4255,7 +4255,8 @@ class WebAgent:
             result["research_completion"] = completion
             if isinstance(result.get("search_report"), dict):
                 result["search_report"]["research_completion"] = completion
-        except (AttributeError, KeyError, TypeError, ValueError):
+        except Exception:
+            # Diagnostics must never replace a valid answer with an internal error.
             result["research_completion"] = {
                 "status": "diagnostics_not_computed",
                 "semantic_verification": "not_performed",
@@ -4833,6 +4834,7 @@ class WebAgent:
                     "snippet": source.get("snippet", ""),
                     "page_fetched": bool(source.get("page_fetched")),
                 "readable_page_text_available": bool(source.get("page_fetched")) and bool(str(source.get("page_text") or "").strip()),
+                "page_text_present_without_fetch_flag": bool(str(source.get("page_text") or "").strip()) and not bool(source.get("page_fetched")),
                     "providers": source.get("providers", []),
                     "queries": source.get("queries", []),
                     "platform": source.get("platform", "web"),
@@ -5321,6 +5323,7 @@ class WebAgent:
                 "snippet": source.get("snippet", ""),
                 "page_fetched": bool(source.get("page_fetched")),
                 "readable_page_text_available": bool(source.get("page_fetched")) and bool(str(source.get("page_text") or "").strip()),
+                "page_text_present_without_fetch_flag": bool(str(source.get("page_text") or "").strip()) and not bool(source.get("page_fetched")),
                 "page_fetch_status": source.get("page_fetch_status", "unknown"),
                 "page_fetch_error_class": source.get("page_fetch_error_class"),
                 "providers": source.get("providers", []),
@@ -5970,6 +5973,7 @@ class WebAgent:
                 "snippet": source.get("snippet", ""),
                 "page_fetched": bool(source.get("page_fetched")),
                 "readable_page_text_available": bool(source.get("page_fetched")) and bool(str(source.get("page_text") or "").strip()),
+                "page_text_present_without_fetch_flag": bool(str(source.get("page_text") or "").strip()) and not bool(source.get("page_fetched")),
                 "providers": source.get("providers", []),
                 "queries": source.get("queries", []),
                 "platform": source.get("platform", "web"),
