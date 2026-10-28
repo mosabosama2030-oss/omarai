@@ -464,6 +464,7 @@ def build_task_spec(
     # A clarification route is a hard stop even when the UI has a research mode selected.
     route_is_clarification = intent_route == "CLARIFY"
     route_is_local = intent_route == "LOCAL"
+    inline_summary_text = _has_inline_summary_text(raw)
     search_requested = (
         intent_route in {"WEB_SIMPLE", "WEB_DEEP", "LEAD_GENERATION"}
         or (
@@ -490,7 +491,6 @@ def build_task_spec(
             and not route_is_local
         )
     )
-    inline_summary_text = _has_inline_summary_text(raw)
     page_fetch_requested = bool(urls) or (
         family == "summarize"
         and not inline_summary_text
