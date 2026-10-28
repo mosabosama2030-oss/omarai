@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006065 إلى SRC-EEF2E6447C-L000584
+- النطاق: SRC-1AE03B9EC3-L006066 إلى SRC-EEF2E6447C-L000585
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L006065](../../agents/web_agent.py#L6065) | 6065 | `"            registrable_domain("` | — |
 | [SRC-1AE03B9EC3-L006066](../../agents/web_agent.py#L6066) | 6066 | `"                source.get(\"domain\")"` | — |
 | [SRC-1AE03B9EC3-L006067](../../agents/web_agent.py#L6067) | 6067 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
 | [SRC-1AE03B9EC3-L006068](../../agents/web_agent.py#L6068) | 6068 | `"                or \"\""` | — |
@@ -834,3 +833,4 @@
 | [SRC-EEF2E6447C-L000582](../../api/omarai.py#L582) | 582 | `"                )"` | — |
 | [SRC-EEF2E6447C-L000583](../../api/omarai.py#L583) | 583 | `"            if path == \"/api/leads\":"` | — |
 | [SRC-EEF2E6447C-L000584](../../api/omarai.py#L584) | 584 | `"                lead, created = self.store.add("` | — |
+| [SRC-EEF2E6447C-L000585](../../api/omarai.py#L585) | 585 | `"                    data.get(\"text\", \"\"),"` | — |

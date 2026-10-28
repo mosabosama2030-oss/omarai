@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002865 إلى SRC-1AE03B9EC3-L003664
+- النطاق: SRC-1AE03B9EC3-L002866 إلى SRC-1AE03B9EC3-L003665
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L002865](../../agents/web_agent.py#L2865) | 2865 | `"            else:"` | — |
 | [SRC-1AE03B9EC3-L002866](../../agents/web_agent.py#L2866) | 2866 | `"                attempted = False"` | — |
 | [SRC-1AE03B9EC3-L002867](../../agents/web_agent.py#L2867) | 2867 | `"            successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
 | [SRC-1AE03B9EC3-L002868](../../agents/web_agent.py#L2868) | 2868 | `"            error_response_statuses = set(statuses) & {\"http_error\", \"unauthorized\", \"rate_limited\"}"` | — |
@@ -816,3 +815,4 @@
 | [SRC-1AE03B9EC3-L003662](../../agents/web_agent.py#L3662) | 3662 | `"                \"content\": \"السؤال الأصلي:\\n\" + question[:MAX_QUESTION_CHARS],"` | — |
 | [SRC-1AE03B9EC3-L003663](../../agents/web_agent.py#L3663) | 3663 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L003664](../../agents/web_agent.py#L3664) | 3664 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003665](../../agents/web_agent.py#L3665) | 3665 | `"                \"role\": \"user\","` | — |

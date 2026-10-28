@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004465 إلى SRC-1AE03B9EC3-L005264
+- النطاق: SRC-1AE03B9EC3-L004466 إلى SRC-1AE03B9EC3-L005265
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L004465](../../agents/web_agent.py#L4465) | 4465 | `"                    return self._dialogue_clarification_result("` | — |
 | [SRC-1AE03B9EC3-L004466](../../agents/web_agent.py#L4466) | 4466 | `"                        question, clean_mode, semantic_context,"` | — |
 | [SRC-1AE03B9EC3-L004467](../../agents/web_agent.py#L4467) | 4467 | `"                        \"semantic_context_has_unresolved_referent\","` | — |
 | [SRC-1AE03B9EC3-L004468](../../agents/web_agent.py#L4468) | 4468 | `"                    )"` | — |
@@ -816,3 +815,4 @@
 | [SRC-1AE03B9EC3-L005262](../../agents/web_agent.py#L5262) | 5262 | `"                        repair_report.get(\"query_results\", [])"` | — |
 | [SRC-1AE03B9EC3-L005263](../../agents/web_agent.py#L5263) | 5263 | `"                    )"` | — |
 | [SRC-1AE03B9EC3-L005264](../../agents/web_agent.py#L5264) | 5264 | `"                    merged_providers = {"` | — |
+| [SRC-1AE03B9EC3-L005265](../../agents/web_agent.py#L5265) | 5265 | `"                        provider"` | — |

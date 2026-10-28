@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001477 إلى SRC-F725E90B2A-L002276
+- النطاق: SRC-F725E90B2A-L001478 إلى SRC-F725E90B2A-L002277
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001477](../../tests/test_web_agent.py#L1477) | 1477 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001478](../../tests/test_web_agent.py#L1478) | 1478 | `"        agent, \"_collect_research\","` | — |
 | [SRC-F725E90B2A-L001479](../../tests/test_web_agent.py#L1479) | 1479 | `"        lambda plan: pytest.fail(\"Self-description must not call external search\"),"` | — |
 | [SRC-F725E90B2A-L001480](../../tests/test_web_agent.py#L1480) | 1480 | `"    )"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L002274](../../tests/test_web_agent.py#L2274) | 2274 | `""` | — |
 | [SRC-F725E90B2A-L002275](../../tests/test_web_agent.py#L2275) | 2275 | `""` | — |
 | [SRC-F725E90B2A-L002276](../../tests/test_web_agent.py#L2276) | 2276 | `"def test_lead_generation_does_not_present_sale_listings_as_buyers(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002277](../../tests/test_web_agent.py#L2277) | 2277 | `"    agent = WebAgent()"` | — |

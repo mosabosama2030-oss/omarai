@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000677 إلى SRC-F725E90B2A-L001476
+- النطاق: SRC-F725E90B2A-L000678 إلى SRC-F725E90B2A-L001477
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000677](../../tests/test_web_agent.py#L677) | 677 | `"    assert agent.review_model == agent.answer_model"` | — |
 | [SRC-F725E90B2A-L000678](../../tests/test_web_agent.py#L678) | 678 | `"    assert agent.fallback_model == \"openrouter/free\""` | — |
 | [SRC-F725E90B2A-L000679](../../tests/test_web_agent.py#L679) | 679 | `""` | — |
 | [SRC-F725E90B2A-L000680](../../tests/test_web_agent.py#L680) | 680 | `""` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001475](../../tests/test_web_agent.py#L1475) | 1475 | `"    agent.api_key = \"\""` | — |
 | [SRC-F725E90B2A-L001476](../../tests/test_web_agent.py#L1476) | 1476 | `""` | — |
+| [SRC-F725E90B2A-L001477](../../tests/test_web_agent.py#L1477) | 1477 | `"    monkeypatch.setattr("` | — |

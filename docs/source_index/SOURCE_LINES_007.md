@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000465 إلى SRC-1AE03B9EC3-L001264
+- النطاق: SRC-1AE03B9EC3-L000466 إلى SRC-1AE03B9EC3-L001265
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000465](../../agents/web_agent.py#L465) | 465 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L000466](../../agents/web_agent.py#L466) | 466 | `"        self.base_url = os.getenv("` | — |
 | [SRC-1AE03B9EC3-L000467](../../agents/web_agent.py#L467) | 467 | `"            \"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\""` | — |
 | [SRC-1AE03B9EC3-L000468](../../agents/web_agent.py#L468) | 468 | `"        ).strip().rstrip(\"/\")"` | — |
@@ -816,3 +815,4 @@
 | [SRC-1AE03B9EC3-L001262](../../agents/web_agent.py#L1262) | 1262 | `"            headers={"` | — |
 | [SRC-1AE03B9EC3-L001263](../../agents/web_agent.py#L1263) | 1263 | `"                \"User-Agent\": ("` | — |
 | [SRC-1AE03B9EC3-L001264](../../agents/web_agent.py#L1264) | 1264 | `"                    \"Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 \""` | — |
+| [SRC-1AE03B9EC3-L001265](../../agents/web_agent.py#L1265) | 1265 | `"                    \"(KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36\""` | — |

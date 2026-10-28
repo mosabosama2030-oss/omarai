@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000985 إلى SRC-D186ED3822-L000002
+- النطاق: SRC-90FAA34ADE-L000986 إلى SRC-D186ED3822-L000003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-90FAA34ADE-L000985](../../tests/fixtures/answer_quality_cases.json#L985) | 985 | `"      \"question\": \"What are the current 2026 visa requirements? The only provided page is dated 2021.\","` | — |
 | [SRC-90FAA34ADE-L000986](../../tests/fixtures/answer_quality_cases.json#L986) | 986 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000987](../../tests/fixtures/answer_quality_cases.json#L987) | 987 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000988](../../tests/fixtures/answer_quality_cases.json#L988) | 988 | `"        \"Flags the five-year-old page as potentially stale\","` | — |
@@ -852,3 +851,4 @@
 |---|---:|---|---|
 | [SRC-D186ED3822-L000001](../../tests/test_answer_quality_review_scorecard.py#L1) | 1 | `"from __future__ import annotations"` | — |
 | [SRC-D186ED3822-L000002](../../tests/test_answer_quality_review_scorecard.py#L2) | 2 | `""` | — |
+| [SRC-D186ED3822-L000003](../../tests/test_answer_quality_review_scorecard.py#L3) | 3 | `"import importlib.util"` | — |

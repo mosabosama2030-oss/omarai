@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000503 إلى SRC-E599346ABE-L001302
+- النطاق: SRC-E599346ABE-L000504 إلى SRC-E599346ABE-L001303
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000503](../generate_index.py#L503) | 503 | `"                file_id=_stable_file_id(path.relative_to(root).as_posix()),"` | — |
 | [SRC-E599346ABE-L000504](../generate_index.py#L504) | 504 | `"                category=_category_for_path(path.relative_to(root).as_posix()),"` | — |
 | [SRC-E599346ABE-L000505](../generate_index.py#L505) | 505 | `"            )"` | — |
 | [SRC-E599346ABE-L000506](../generate_index.py#L506) | 506 | `"        )"` | — |
@@ -816,3 +815,4 @@
 | [SRC-E599346ABE-L001300](../generate_index.py#L1300) | 1300 | `"    return findings"` | — |
 | [SRC-E599346ABE-L001301](../generate_index.py#L1301) | 1301 | `""` | — |
 | [SRC-E599346ABE-L001302](../generate_index.py#L1302) | 1302 | `""` | — |
+| [SRC-E599346ABE-L001303](../generate_index.py#L1303) | 1303 | `"def _markdown_code_span(value: str) -> str:"` | — |

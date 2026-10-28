@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001265 إلى SRC-1AE03B9EC3-L002064
+- النطاق: SRC-1AE03B9EC3-L001266 إلى SRC-1AE03B9EC3-L002065
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001265](../../agents/web_agent.py#L1265) | 1265 | `"                    \"(KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36\""` | — |
 | [SRC-1AE03B9EC3-L001266](../../agents/web_agent.py#L1266) | 1266 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L001267](../../agents/web_agent.py#L1267) | 1267 | `"                \"Accept-Language\": \"ar,en;q=0.9\","` | — |
 | [SRC-1AE03B9EC3-L001268](../../agents/web_agent.py#L1268) | 1268 | `"            },"` | — |
@@ -816,3 +815,4 @@
 | [SRC-1AE03B9EC3-L002062](../../agents/web_agent.py#L2062) | 2062 | `"            if ig_user_id and ig_token:"` | — |
 | [SRC-1AE03B9EC3-L002063](../../agents/web_agent.py#L2063) | 2063 | `"                # The official Hashtag Search API returns public hashtag media only."` | — |
 | [SRC-1AE03B9EC3-L002064](../../agents/web_agent.py#L2064) | 2064 | `"                # It does not search every Instagram post or bypass private accounts."` | — |
+| [SRC-1AE03B9EC3-L002065](../../agents/web_agent.py#L2065) | 2065 | `"                hashtags = re.findall(r\"#([\\w\\u0600-\\u06FF]+)\", query, flags=re.UNICODE)"` | — |

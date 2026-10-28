@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003665 إلى SRC-1AE03B9EC3-L004464
+- النطاق: SRC-1AE03B9EC3-L003666 إلى SRC-1AE03B9EC3-L004465
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003665](../../agents/web_agent.py#L3665) | 3665 | `"                \"role\": \"user\","` | — |
 | [SRC-1AE03B9EC3-L003666](../../agents/web_agent.py#L3666) | 3666 | `"                \"content\": ("` | — |
 | [SRC-1AE03B9EC3-L003667](../../agents/web_agent.py#L3667) | 3667 | `"                    \"محاور قد تكون ناقصة بعد مراجعة الإجابة؛ قد يكون بعضها مغطى بمرادف:\\n\""` | — |
 | [SRC-1AE03B9EC3-L003668](../../agents/web_agent.py#L3668) | 3668 | `"                    + \"\\n\".join(\"- \" + str(target)[:120] for target in missing_targets[:8])"` | — |
@@ -816,3 +815,4 @@
 | [SRC-1AE03B9EC3-L004462](../../agents/web_agent.py#L4462) | 4462 | `"            if semantic_context.get(\"method\") == \"llm_semantic_context\":"` | — |
 | [SRC-1AE03B9EC3-L004463](../../agents/web_agent.py#L4463) | 4463 | `"                context_override = semantic_context"` | — |
 | [SRC-1AE03B9EC3-L004464](../../agents/web_agent.py#L4464) | 4464 | `"                if semantic_context.get(\"needs_clarification\"):"` | — |
+| [SRC-1AE03B9EC3-L004465](../../agents/web_agent.py#L4465) | 4465 | `"                    return self._dialogue_clarification_result("` | — |
