@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004271 إلى SRC-1AE03B9EC3-L005070
+- النطاق: SRC-1AE03B9EC3-L004264 إلى SRC-1AE03B9EC3-L005063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004264](../../agents/web_agent.py#L4264) | 4264 | `"                final_answer_status = \"model_answer_generated\""` | — |
+| [SRC-1AE03B9EC3-L004265](../../agents/web_agent.py#L4265) | 4265 | `"            elif self.generation_diagnostics:"` | — |
+| [SRC-1AE03B9EC3-L004266](../../agents/web_agent.py#L4266) | 4266 | `"                final_answer_status = ("` | — |
+| [SRC-1AE03B9EC3-L004267](../../agents/web_agent.py#L4267) | 4267 | `"                    \"generation_failed_with_source_fallback\""` | — |
+| [SRC-1AE03B9EC3-L004268](../../agents/web_agent.py#L4268) | 4268 | `"                    if result.get(\"sources\")"` | — |
+| [SRC-1AE03B9EC3-L004269](../../agents/web_agent.py#L4269) | 4269 | `"                    else \"generation_failed\""` | — |
+| [SRC-1AE03B9EC3-L004270](../../agents/web_agent.py#L4270) | 4270 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004271](../../agents/web_agent.py#L4271) | 4271 | `"            elif result.get(\"kind\") == \"clarification\":"` | — |
 | [SRC-1AE03B9EC3-L004272](../../agents/web_agent.py#L4272) | 4272 | `"                final_answer_status = \"clarification_required\""` | — |
 | [SRC-1AE03B9EC3-L004273](../../agents/web_agent.py#L4273) | 4273 | `"            else:"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L005061](../../agents/web_agent.py#L5061) | 5061 | `"                not sources"` | — |
 | [SRC-1AE03B9EC3-L005062](../../agents/web_agent.py#L5062) | 5062 | `"                and report.get(\"search_outcome\") in _RESEARCH_ERROR_OUTCOMES"` | — |
 | [SRC-1AE03B9EC3-L005063](../../agents/web_agent.py#L5063) | 5063 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005064](../../agents/web_agent.py#L5064) | 5064 | `"            report[\"lead_generation\"] = {"` | — |
-| [SRC-1AE03B9EC3-L005065](../../agents/web_agent.py#L5065) | 5065 | `"                \"status\": ("` | — |
-| [SRC-1AE03B9EC3-L005066](../../agents/web_agent.py#L5066) | 5066 | `"                    \"research_incomplete\" if lead_research_incomplete"` | — |
-| [SRC-1AE03B9EC3-L005067](../../agents/web_agent.py#L5067) | 5067 | `"                    else \"candidate_signals_found\" if lead_evidence_sources"` | — |
-| [SRC-1AE03B9EC3-L005068](../../agents/web_agent.py#L5068) | 5068 | `"                    else \"no_qualified_candidates_found\""` | — |
-| [SRC-1AE03B9EC3-L005069](../../agents/web_agent.py#L5069) | 5069 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L005070](../../agents/web_agent.py#L5070) | 5070 | `"                \"candidate_signal_count\": ("` | — |

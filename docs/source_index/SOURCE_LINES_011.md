@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002671 إلى SRC-1AE03B9EC3-L003470
+- النطاق: SRC-1AE03B9EC3-L002664 إلى SRC-1AE03B9EC3-L003463
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002664](../../agents/web_agent.py#L2664) | 2664 | `"                        fetched_count += 1"` | — |
+| [SRC-1AE03B9EC3-L002665](../../agents/web_agent.py#L2665) | 2665 | `"                        if source[\"page_fetch_status\"] == \"partial_extraction\":"` | — |
+| [SRC-1AE03B9EC3-L002666](../../agents/web_agent.py#L2666) | 2666 | `"                            host = urllib.parse.urlparse(source.get(\"url\", \"\")).hostname or \"المصدر\""` | — |
+| [SRC-1AE03B9EC3-L002667](../../agents/web_agent.py#L2667) | 2667 | `"                            warnings.append("` | — |
+| [SRC-1AE03B9EC3-L002668](../../agents/web_agent.py#L2668) | 2668 | `"                                f\"استُخرج جزء من نص {host} فقط؛ قد تكون الصفحة أطول من الحد الآمن.\""` | — |
+| [SRC-1AE03B9EC3-L002669](../../agents/web_agent.py#L2669) | 2669 | `"                            )"` | — |
+| [SRC-1AE03B9EC3-L002670](../../agents/web_agent.py#L2670) | 2670 | `"                    else:"` | — |
 | [SRC-1AE03B9EC3-L002671](../../agents/web_agent.py#L2671) | 2671 | `"                        source[\"page_fetched\"] = False"` | — |
 | [SRC-1AE03B9EC3-L002672](../../agents/web_agent.py#L2672) | 2672 | `"                        if observed_status in {"` | — |
 | [SRC-1AE03B9EC3-L002673](../../agents/web_agent.py#L2673) | 2673 | `"                            \"rejected_url\", \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L003461](../../agents/web_agent.py#L3461) | 3461 | `"                f\"نوع المصدر: {source.get('source_class', 'general')}؛ \""` | — |
 | [SRC-1AE03B9EC3-L003462](../../agents/web_agent.py#L3462) | 3462 | `"                f\"المنصة: {source.get('platform', 'web')}؛ \""` | — |
 | [SRC-1AE03B9EC3-L003463](../../agents/web_agent.py#L3463) | 3463 | `"                f\"المجال: {source.get('domain', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003464](../../agents/web_agent.py#L3464) | 3464 | `"                f\"محركات/واجهات أعادت النتيجة: {providers}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003465](../../agents/web_agent.py#L3465) | 3465 | `"                f\"ظهر ضمن الاستعلامات: {queries}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003466](../../agents/web_agent.py#L3466) | 3466 | `"                f\"تاريخ ظاهر من المصدر إن توفر: {source.get('published_at', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003467](../../agents/web_agent.py#L3467) | 3467 | `"                f\"تصنيف محتوى التجارب إن توفر: {source.get('opinion_source_classification', 'غير مصنف')} \""` | — |
-| [SRC-1AE03B9EC3-L003468](../../agents/web_agent.py#L3468) | 3468 | `"                f\"(إشارة آلية أولية وليست إثباتًا لهوية الكاتب أو صحة التجربة)\\n\""` | — |
-| [SRC-1AE03B9EC3-L003469](../../agents/web_agent.py#L3469) | 3469 | `"                f\"نص متاح: {evidence}\""` | — |
-| [SRC-1AE03B9EC3-L003470](../../agents/web_agent.py#L3470) | 3470 | `"            )"` | — |

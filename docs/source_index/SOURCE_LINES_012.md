@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003471 إلى SRC-1AE03B9EC3-L004270
+- النطاق: SRC-1AE03B9EC3-L003464 إلى SRC-1AE03B9EC3-L004263
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003464](../../agents/web_agent.py#L3464) | 3464 | `"                f\"محركات/واجهات أعادت النتيجة: {providers}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003465](../../agents/web_agent.py#L3465) | 3465 | `"                f\"ظهر ضمن الاستعلامات: {queries}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003466](../../agents/web_agent.py#L3466) | 3466 | `"                f\"تاريخ ظاهر من المصدر إن توفر: {source.get('published_at', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003467](../../agents/web_agent.py#L3467) | 3467 | `"                f\"تصنيف محتوى التجارب إن توفر: {source.get('opinion_source_classification', 'غير مصنف')} \""` | — |
+| [SRC-1AE03B9EC3-L003468](../../agents/web_agent.py#L3468) | 3468 | `"                f\"(إشارة آلية أولية وليست إثباتًا لهوية الكاتب أو صحة التجربة)\\n\""` | — |
+| [SRC-1AE03B9EC3-L003469](../../agents/web_agent.py#L3469) | 3469 | `"                f\"نص متاح: {evidence}\""` | — |
+| [SRC-1AE03B9EC3-L003470](../../agents/web_agent.py#L3470) | 3470 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003471](../../agents/web_agent.py#L3471) | 3471 | `"        evidence_text = ("` | — |
 | [SRC-1AE03B9EC3-L003472](../../agents/web_agent.py#L3472) | 3472 | `"            \"\\n\\n\".join(source_blocks)"` | — |
 | [SRC-1AE03B9EC3-L003473](../../agents/web_agent.py#L3473) | 3473 | `"            or \"لم تتوفر نتائج ويب يمكن استخدامها في هذه الجولة.\""` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L004261](../../agents/web_agent.py#L4261) | 4261 | `"            elif result.get(\"kind\") == \"insufficient_evidence\":"` | — |
 | [SRC-1AE03B9EC3-L004262](../../agents/web_agent.py#L4262) | 4262 | `"                final_answer_status = \"insufficient_evidence_no_generation\""` | — |
 | [SRC-1AE03B9EC3-L004263](../../agents/web_agent.py#L4263) | 4263 | `"            elif result.get(\"used_language_model\") is True:"` | — |
-| [SRC-1AE03B9EC3-L004264](../../agents/web_agent.py#L4264) | 4264 | `"                final_answer_status = \"model_answer_generated\""` | — |
-| [SRC-1AE03B9EC3-L004265](../../agents/web_agent.py#L4265) | 4265 | `"            elif self.generation_diagnostics:"` | — |
-| [SRC-1AE03B9EC3-L004266](../../agents/web_agent.py#L4266) | 4266 | `"                final_answer_status = ("` | — |
-| [SRC-1AE03B9EC3-L004267](../../agents/web_agent.py#L4267) | 4267 | `"                    \"generation_failed_with_source_fallback\""` | — |
-| [SRC-1AE03B9EC3-L004268](../../agents/web_agent.py#L4268) | 4268 | `"                    if result.get(\"sources\")"` | — |
-| [SRC-1AE03B9EC3-L004269](../../agents/web_agent.py#L4269) | 4269 | `"                    else \"generation_failed\""` | — |
-| [SRC-1AE03B9EC3-L004270](../../agents/web_agent.py#L4270) | 4270 | `"                )"` | — |
