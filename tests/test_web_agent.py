@@ -3746,3 +3746,73 @@ def test_summary_without_source_clarifies_before_search(monkeypatch):
     assert "أرسل النص" in result["answer"]
     assert result["search_attempted"] is False
     assert "summary_source_url_or_pasted_text" in result["task_understanding"]["task_spec"]["missing_required_inputs"]
+
+
+def test_task_spec_controls_generation_context_without_becoming_evidence(monkeypatch):
+    from agents.task_understanding import build_query_strategy_matrix, build_task_spec
+
+    agent = WebAgent()
+    captured = {}
+
+    question = (
+        "قارن السيارات الكهربائية في مصر من حيث السعر والضمان، "
+        "اشرح ببساطة مع أمثلة وروابط مباشرة"
+    )
+    task_spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+    )
+    initial_queries = [compact_search_query(question)]
+    matrix = build_query_strategy_matrix(
+        question,
+        task_spec,
+        initial_queries,
+        limit=4,
+        compact_fn=compact_search_query,
+    )
+    plan = {
+        "depth": "deep",
+        "freshness": "any",
+        "social_focus": False,
+        "queries": [row["query"] for row in matrix],
+        "dialogue_context": {},
+        "intent_route": "WEB_DEEP",
+        "task_spec": task_spec,
+        "query_strategy_matrix": matrix,
+    }
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        captured["kwargs"] = kwargs
+        return "إجابة اختبارية مرتبطة بالأدلة."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+
+    answer = agent._generate(
+        question,
+        [],
+        [sample_source(0)],
+        None,
+        research_plan=plan,
+        search_report={
+            "queries_planned": len(plan["queries"]),
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test_provider"],
+        },
+    )
+
+    prompt = "\n".join(
+        message.get("content", "")
+        for message in captured["messages"]
+        if isinstance(message, dict)
+    )
+    assert answer == "إجابة اختبارية مرتبطة بالأدلة."
+    assert "task_planning_context" in prompt
+    assert "explicit_aspects" in prompt
+    assert "output_preferences" in prompt
+    assert "beginner_friendly_requested" in prompt
+    assert "query_strategy_matrix" in prompt
+    assert "الأولوية لكلام المستخدم الحالي" in prompt
+    assert "الاستعلامات المخططة فقط" in prompt
