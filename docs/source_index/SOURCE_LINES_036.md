@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000263 إلى SRC-F725E90B2A-L000254
+- النطاق: SRC-01E35ABC46-L000223 إلى SRC-F725E90B2A-L000214
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000223](../../tests/test_research_guardrails.py#L223) | 223 | `"        \"url\": url,"` | — |
+| [SRC-01E35ABC46-L000224](../../tests/test_research_guardrails.py#L224) | 224 | `"        \"snippet\": snippet,"` | — |
+| [SRC-01E35ABC46-L000225](../../tests/test_research_guardrails.py#L225) | 225 | `"        \"published_at\": published_at,"` | — |
+| [SRC-01E35ABC46-L000226](../../tests/test_research_guardrails.py#L226) | 226 | `"        \"page_fetched\": page_fetched,"` | — |
+| [SRC-01E35ABC46-L000227](../../tests/test_research_guardrails.py#L227) | 227 | `"        \"page_text\": page_text,"` | — |
+| [SRC-01E35ABC46-L000228](../../tests/test_research_guardrails.py#L228) | 228 | `"    }"` | — |
+| [SRC-01E35ABC46-L000229](../../tests/test_research_guardrails.py#L229) | 229 | `""` | — |
+| [SRC-01E35ABC46-L000230](../../tests/test_research_guardrails.py#L230) | 230 | `""` | — |
+| [SRC-01E35ABC46-L000231](../../tests/test_research_guardrails.py#L231) | 231 | `"def test_official_government_website_request_rejects_tourism_domain() -> None:"` | — |
+| [SRC-01E35ABC46-L000232](../../tests/test_research_guardrails.py#L232) | 232 | `"    question = \"ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية\""` | — |
+| [SRC-01E35ABC46-L000233](../../tests/test_research_guardrails.py#L233) | 233 | `"    assert requires_official_government_domain(question)"` | — |
+| [SRC-01E35ABC46-L000234](../../tests/test_research_guardrails.py#L234) | 234 | `"    candidates = ["` | — |
+| [SRC-01E35ABC46-L000235](../../tests/test_research_guardrails.py#L235) | 235 | `"        _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000236](../../tests/test_research_guardrails.py#L236) | 236 | `"            \"https://visitegypt.com/\","` | — |
+| [SRC-01E35ABC46-L000237](../../tests/test_research_guardrails.py#L237) | 237 | `"            title=\"وزارة الاتصالات في مصر ومعلومات سياحية\","` | — |
+| [SRC-01E35ABC46-L000238](../../tests/test_research_guardrails.py#L238) | 238 | `"        ),"` | — |
+| [SRC-01E35ABC46-L000239](../../tests/test_research_guardrails.py#L239) | 239 | `"        _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000240](../../tests/test_research_guardrails.py#L240) | 240 | `"            \"https://mcit.gov.eg/\","` | — |
+| [SRC-01E35ABC46-L000241](../../tests/test_research_guardrails.py#L241) | 241 | `"            title=\"وزارة الاتصالات وتكنولوجيا المعلومات - الموقع الرسمي\","` | — |
+| [SRC-01E35ABC46-L000242](../../tests/test_research_guardrails.py#L242) | 242 | `"        ),"` | — |
+| [SRC-01E35ABC46-L000243](../../tests/test_research_guardrails.py#L243) | 243 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000244](../../tests/test_research_guardrails.py#L244) | 244 | `""` | — |
+| [SRC-01E35ABC46-L000245](../../tests/test_research_guardrails.py#L245) | 245 | `"    accepted, report = apply_source_guardrails("` | — |
+| [SRC-01E35ABC46-L000246](../../tests/test_research_guardrails.py#L246) | 246 | `"        question, \"auto\", {\"freshness\": \"any\"}, candidates, now=_GUARDRAIL_NOW"` | — |
+| [SRC-01E35ABC46-L000247](../../tests/test_research_guardrails.py#L247) | 247 | `"    )"` | — |
+| [SRC-01E35ABC46-L000248](../../tests/test_research_guardrails.py#L248) | 248 | `""` | — |
+| [SRC-01E35ABC46-L000249](../../tests/test_research_guardrails.py#L249) | 249 | `"    assert [item[\"url\"] for item in accepted] == [\"https://mcit.gov.eg/\"]"` | — |
+| [SRC-01E35ABC46-L000250](../../tests/test_research_guardrails.py#L250) | 250 | `"    assert report[\"official_government_domain_required\"] is True"` | — |
+| [SRC-01E35ABC46-L000251](../../tests/test_research_guardrails.py#L251) | 251 | `"    assert report[\"rejection_counts\"] == {\"not_an_official_government_domain\": 1}"` | — |
+| [SRC-01E35ABC46-L000252](../../tests/test_research_guardrails.py#L252) | 252 | `"    assert \"not independently verified\" in report[\"official_domain_policy\"]"` | — |
+| [SRC-01E35ABC46-L000253](../../tests/test_research_guardrails.py#L253) | 253 | `""` | — |
+| [SRC-01E35ABC46-L000254](../../tests/test_research_guardrails.py#L254) | 254 | `""` | — |
+| [SRC-01E35ABC46-L000255](../../tests/test_research_guardrails.py#L255) | 255 | `"def test_official_request_fails_closed_when_only_non_government_result_exists() -> None:"` | — |
+| [SRC-01E35ABC46-L000256](../../tests/test_research_guardrails.py#L256) | 256 | `"    accepted, report = apply_source_guardrails("` | — |
+| [SRC-01E35ABC46-L000257](../../tests/test_research_guardrails.py#L257) | 257 | `"        \"الموقع الرسمي لوزارة الاتصالات المصرية\","` | — |
+| [SRC-01E35ABC46-L000258](../../tests/test_research_guardrails.py#L258) | 258 | `"        \"auto\","` | — |
+| [SRC-01E35ABC46-L000259](../../tests/test_research_guardrails.py#L259) | 259 | `"        {\"freshness\": \"any\"},"` | — |
+| [SRC-01E35ABC46-L000260](../../tests/test_research_guardrails.py#L260) | 260 | `"        [_guardrail_source(\"https://visitegypt.com/\")],"` | — |
+| [SRC-01E35ABC46-L000261](../../tests/test_research_guardrails.py#L261) | 261 | `"        now=_GUARDRAIL_NOW,"` | — |
+| [SRC-01E35ABC46-L000262](../../tests/test_research_guardrails.py#L262) | 262 | `"    )"` | — |
 | [SRC-01E35ABC46-L000263](../../tests/test_research_guardrails.py#L263) | 263 | `""` | — |
 | [SRC-01E35ABC46-L000264](../../tests/test_research_guardrails.py#L264) | 264 | `"    assert accepted == []"` | — |
 | [SRC-01E35ABC46-L000265](../../tests/test_research_guardrails.py#L265) | 265 | `"    assert report[\"accepted_sources\"] == 0"` | — |
@@ -812,43 +852,3 @@
 | [SRC-F725E90B2A-L000212](../../tests/test_web_agent.py#L212) | 212 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L000213](../../tests/test_web_agent.py#L213) | 213 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L000214](../../tests/test_web_agent.py#L214) | 214 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L000215](../../tests/test_web_agent.py#L215) | 215 | `"        \"_request_completion\","` | — |
-| [SRC-F725E90B2A-L000216](../../tests/test_web_agent.py#L216) | 216 | `"        lambda *args, **kwargs: ("` | — |
-| [SRC-F725E90B2A-L000217](../../tests/test_web_agent.py#L217) | 217 | `"            '{\"queries\":[\"مراجعات السيارات الكهربائية\"],\"social_focus\":true,'"` | — |
-| [SRC-F725E90B2A-L000218](../../tests/test_web_agent.py#L218) | 218 | `"            '\"freshness\":\"any\",\"depth\":\"deep\",\"platforms\":[\"reddit\"]}'"` | — |
-| [SRC-F725E90B2A-L000219](../../tests/test_web_agent.py#L219) | 219 | `"        ),"` | — |
-| [SRC-F725E90B2A-L000220](../../tests/test_web_agent.py#L220) | 220 | `"    )"` | — |
-| [SRC-F725E90B2A-L000221](../../tests/test_web_agent.py#L221) | 221 | `"    plan = agent._plan_search("` | — |
-| [SRC-F725E90B2A-L000222](../../tests/test_web_agent.py#L222) | 222 | `"        \"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\","` | — |
-| [SRC-F725E90B2A-L000223](../../tests/test_web_agent.py#L223) | 223 | `"        [],"` | — |
-| [SRC-F725E90B2A-L000224](../../tests/test_web_agent.py#L224) | 224 | `"    )"` | — |
-| [SRC-F725E90B2A-L000225](../../tests/test_web_agent.py#L225) | 225 | `"    assert plan[\"planning_method\"] == \"language_model\""` | — |
-| [SRC-F725E90B2A-L000226](../../tests/test_web_agent.py#L226) | 226 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L000227](../../tests/test_web_agent.py#L227) | 227 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-F725E90B2A-L000228](../../tests/test_web_agent.py#L228) | 228 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L000229](../../tests/test_web_agent.py#L229) | 229 | `""` | — |
-| [SRC-F725E90B2A-L000230](../../tests/test_web_agent.py#L230) | 230 | `""` | — |
-| [SRC-F725E90B2A-L000231](../../tests/test_web_agent.py#L231) | 231 | `"def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000232](../../tests/test_web_agent.py#L232) | 232 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000233](../../tests/test_web_agent.py#L233) | 233 | `""` | — |
-| [SRC-F725E90B2A-L000234](../../tests/test_web_agent.py#L234) | 234 | `"    reddit_xml = \"\"\"<rss><channel><item>"` | — |
-| [SRC-F725E90B2A-L000235](../../tests/test_web_agent.py#L235) | 235 | `"      <title>تجربة سيارة كهربائية</title>"` | — |
-| [SRC-F725E90B2A-L000236](../../tests/test_web_agent.py#L236) | 236 | `"      <link>https://www.reddit.com/r/cars/comments/abc123/test/</link>"` | — |
-| [SRC-F725E90B2A-L000237](../../tests/test_web_agent.py#L237) | 237 | `"      <description>استهلاك البطارية في الحر</description>"` | — |
-| [SRC-F725E90B2A-L000238](../../tests/test_web_agent.py#L238) | 238 | `"      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>"` | — |
-| [SRC-F725E90B2A-L000239](../../tests/test_web_agent.py#L239) | 239 | `"    </item></channel></rss>\"\"\""` | — |
-| [SRC-F725E90B2A-L000240](../../tests/test_web_agent.py#L240) | 240 | `""` | — |
-| [SRC-F725E90B2A-L000241](../../tests/test_web_agent.py#L241) | 241 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000242](../../tests/test_web_agent.py#L242) | 242 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000243](../../tests/test_web_agent.py#L243) | 243 | `""` | — |
-| [SRC-F725E90B2A-L000244](../../tests/test_web_agent.py#L244) | 244 | `"        def __init__(self, text=\"\", data=None):"` | — |
-| [SRC-F725E90B2A-L000245](../../tests/test_web_agent.py#L245) | 245 | `"            self.text = text"` | — |
-| [SRC-F725E90B2A-L000246](../../tests/test_web_agent.py#L246) | 246 | `"            self.content = text.encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L000247](../../tests/test_web_agent.py#L247) | 247 | `"            self._data = data or {}"` | — |
-| [SRC-F725E90B2A-L000248](../../tests/test_web_agent.py#L248) | 248 | `""` | — |
-| [SRC-F725E90B2A-L000249](../../tests/test_web_agent.py#L249) | 249 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000250](../../tests/test_web_agent.py#L250) | 250 | `"            return self._data"` | — |
-| [SRC-F725E90B2A-L000251](../../tests/test_web_agent.py#L251) | 251 | `""` | — |
-| [SRC-F725E90B2A-L000252](../../tests/test_web_agent.py#L252) | 252 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `"        if \"reddit.com\" in url:"` | — |
-| [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"            return FakeResponse(reddit_xml)"` | — |

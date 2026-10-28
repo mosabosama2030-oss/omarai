@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002220 إلى SRC-1AE03B9EC3-L003019
+- النطاق: SRC-1AE03B9EC3-L002180 إلى SRC-1AE03B9EC3-L002979
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002180](../../agents/web_agent.py#L2180) | 2180 | `"                if response.status_code == 200:"` | — |
+| [SRC-1AE03B9EC3-L002181](../../agents/web_agent.py#L2181) | 2181 | `"                    data = response.json()"` | — |
+| [SRC-1AE03B9EC3-L002182](../../agents/web_agent.py#L2182) | 2182 | `"                    authors = {"` | — |
+| [SRC-1AE03B9EC3-L002183](../../agents/web_agent.py#L2183) | 2183 | `"                        user.get(\"id\"): user"` | — |
+| [SRC-1AE03B9EC3-L002184](../../agents/web_agent.py#L2184) | 2184 | `"                        for user in data.get(\"includes\", {}).get(\"users\", [])"` | — |
+| [SRC-1AE03B9EC3-L002185](../../agents/web_agent.py#L2185) | 2185 | `"                    }"` | — |
+| [SRC-1AE03B9EC3-L002186](../../agents/web_agent.py#L2186) | 2186 | `"                    for item in data.get(\"data\", []):"` | — |
+| [SRC-1AE03B9EC3-L002187](../../agents/web_agent.py#L2187) | 2187 | `"                        author = authors.get(item.get(\"author_id\"), {})"` | — |
+| [SRC-1AE03B9EC3-L002188](../../agents/web_agent.py#L2188) | 2188 | `"                        username = author.get(\"username\", \"\")"` | — |
+| [SRC-1AE03B9EC3-L002189](../../agents/web_agent.py#L2189) | 2189 | `"                        post_id = item.get(\"id\", \"\")"` | — |
+| [SRC-1AE03B9EC3-L002190](../../agents/web_agent.py#L2190) | 2190 | `"                        if not username or not post_id:"` | — |
+| [SRC-1AE03B9EC3-L002191](../../agents/web_agent.py#L2191) | 2191 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L002192](../../agents/web_agent.py#L2192) | 2192 | `"                        results.append({"` | — |
+| [SRC-1AE03B9EC3-L002193](../../agents/web_agent.py#L2193) | 2193 | `"                            \"title\": _clean_text(author.get(\"name\") or username, 300),"` | — |
+| [SRC-1AE03B9EC3-L002194](../../agents/web_agent.py#L2194) | 2194 | `"                            \"url\": f\"https://x.com/{username}/status/{post_id}\","` | — |
+| [SRC-1AE03B9EC3-L002195](../../agents/web_agent.py#L2195) | 2195 | `"                            \"snippet\": _clean_text(item.get(\"text\") or \"\", 1200),"` | — |
+| [SRC-1AE03B9EC3-L002196](../../agents/web_agent.py#L2196) | 2196 | `"                            \"page_text\": \"\","` | — |
+| [SRC-1AE03B9EC3-L002197](../../agents/web_agent.py#L2197) | 2197 | `"                            \"page_fetched\": False,"` | — |
+| [SRC-1AE03B9EC3-L002198](../../agents/web_agent.py#L2198) | 2198 | `"                            \"provider\": \"x_official_api\","` | — |
+| [SRC-1AE03B9EC3-L002199](../../agents/web_agent.py#L2199) | 2199 | `"                            \"provider_rank\": len(["` | — |
+| [SRC-1AE03B9EC3-L002200](../../agents/web_agent.py#L2200) | 2200 | `"                                row for row in results"` | — |
+| [SRC-1AE03B9EC3-L002201](../../agents/web_agent.py#L2201) | 2201 | `"                                if row.get(\"provider\") == \"x_official_api\""` | — |
+| [SRC-1AE03B9EC3-L002202](../../agents/web_agent.py#L2202) | 2202 | `"                            ]) + 1,"` | — |
+| [SRC-1AE03B9EC3-L002203](../../agents/web_agent.py#L2203) | 2203 | `"                            \"search_query\": query,"` | — |
+| [SRC-1AE03B9EC3-L002204](../../agents/web_agent.py#L2204) | 2204 | `"                            \"published_at\": _clean_text(item.get(\"created_at\") or \"\", 100),"` | — |
+| [SRC-1AE03B9EC3-L002205](../../agents/web_agent.py#L2205) | 2205 | `"                        })"` | — |
+| [SRC-1AE03B9EC3-L002206](../../agents/web_agent.py#L2206) | 2206 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L002207](../../agents/web_agent.py#L2207) | 2207 | `"                    warnings.append(f\"X API unavailable (HTTP {response.status_code})\")"` | — |
+| [SRC-1AE03B9EC3-L002208](../../agents/web_agent.py#L2208) | 2208 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L002209](../../agents/web_agent.py#L2209) | 2209 | `"                warnings.append(\"X API unavailable for this request\")"` | — |
+| [SRC-1AE03B9EC3-L002210](../../agents/web_agent.py#L2210) | 2210 | `"        elif \"x\" in platforms:"` | — |
+| [SRC-1AE03B9EC3-L002211](../../agents/web_agent.py#L2211) | 2211 | `"            warnings.append(\"X direct API is not configured; indexed public X pages are still searched.\")"` | — |
+| [SRC-1AE03B9EC3-L002212](../../agents/web_agent.py#L2212) | 2212 | `""` | — |
+| [SRC-1AE03B9EC3-L002213](../../agents/web_agent.py#L2213) | 2213 | `"        if \"youtube\" in platforms and os.getenv(\"YOUTUBE_API_KEY\", \"\").strip():"` | — |
+| [SRC-1AE03B9EC3-L002214](../../agents/web_agent.py#L2214) | 2214 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L002215](../../agents/web_agent.py#L2215) | 2215 | `"                self._reserve_search_call()"` | — |
+| [SRC-1AE03B9EC3-L002216](../../agents/web_agent.py#L2216) | 2216 | `"                response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L002217](../../agents/web_agent.py#L2217) | 2217 | `"                    \"https://www.googleapis.com/youtube/v3/search\","` | — |
+| [SRC-1AE03B9EC3-L002218](../../agents/web_agent.py#L2218) | 2218 | `"                    params={"` | — |
+| [SRC-1AE03B9EC3-L002219](../../agents/web_agent.py#L2219) | 2219 | `"                        \"part\": \"snippet\","` | — |
 | [SRC-1AE03B9EC3-L002220](../../agents/web_agent.py#L2220) | 2220 | `"                        \"q\": query,"` | — |
 | [SRC-1AE03B9EC3-L002221](../../agents/web_agent.py#L2221) | 2221 | `"                        \"type\": \"video\","` | — |
 | [SRC-1AE03B9EC3-L002222](../../agents/web_agent.py#L2222) | 2222 | `"                        \"maxResults\": 8,"` | — |
@@ -776,43 +816,3 @@
 | [SRC-1AE03B9EC3-L002977](../../agents/web_agent.py#L2977) | 2977 | `"        if isinstance(finish_reason, str) and finish_reason.strip():"` | — |
 | [SRC-1AE03B9EC3-L002978](../../agents/web_agent.py#L2978) | 2978 | `"            record[\"finish_reason\"] = finish_reason.strip()[:48]"` | — |
 | [SRC-1AE03B9EC3-L002979](../../agents/web_agent.py#L2979) | 2979 | `"        if isinstance(error_class, str) and error_class:"` | — |
-| [SRC-1AE03B9EC3-L002980](../../agents/web_agent.py#L2980) | 2980 | `"            record[\"error_class\"] = error_class[:80]"` | — |
-| [SRC-1AE03B9EC3-L002981](../../agents/web_agent.py#L2981) | 2981 | `"        self.generation_diagnostics.append(record)"` | — |
-| [SRC-1AE03B9EC3-L002982](../../agents/web_agent.py#L2982) | 2982 | `"        self.generation_diagnostics = self.generation_diagnostics[-12:]"` | — |
-| [SRC-1AE03B9EC3-L002983](../../agents/web_agent.py#L2983) | 2983 | `""` | — |
-| [SRC-1AE03B9EC3-L002984](../../agents/web_agent.py#L2984) | 2984 | `"    def _request_completion("` | — |
-| [SRC-1AE03B9EC3-L002985](../../agents/web_agent.py#L2985) | 2985 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L002986](../../agents/web_agent.py#L2986) | 2986 | `"        messages: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L002987](../../agents/web_agent.py#L2987) | 2987 | `"        max_tokens: int = 1400,"` | — |
-| [SRC-1AE03B9EC3-L002988](../../agents/web_agent.py#L2988) | 2988 | `"        temperature: float = 0.2,"` | — |
-| [SRC-1AE03B9EC3-L002989](../../agents/web_agent.py#L2989) | 2989 | `"        timeout: int \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L002990](../../agents/web_agent.py#L2990) | 2990 | `"        model: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L002991](../../agents/web_agent.py#L2991) | 2991 | `"        enable_web_search: bool = False,"` | — |
-| [SRC-1AE03B9EC3-L002992](../../agents/web_agent.py#L2992) | 2992 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L002993](../../agents/web_agent.py#L2993) | 2993 | `"        \"\"\"Call an OpenAI-compatible API with bounded fallback and optional live server search.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L002994](../../agents/web_agent.py#L2994) | 2994 | `"        requested_model = (model or self.answer_model).strip()"` | — |
-| [SRC-1AE03B9EC3-L002995](../../agents/web_agent.py#L2995) | 2995 | `"        if not self.api_key:"` | — |
-| [SRC-1AE03B9EC3-L002996](../../agents/web_agent.py#L2996) | 2996 | `"            self._record_generation_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L002997](../../agents/web_agent.py#L2997) | 2997 | `"                requested_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L002998](../../agents/web_agent.py#L2998) | 2998 | `"                attempted_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L002999](../../agents/web_agent.py#L2999) | 2999 | `"                status=\"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L003000](../../agents/web_agent.py#L3000) | 3000 | `"                error_class=\"MissingAPIKey\","` | — |
-| [SRC-1AE03B9EC3-L003001](../../agents/web_agent.py#L3001) | 3001 | `"                request_started=False,"` | — |
-| [SRC-1AE03B9EC3-L003002](../../agents/web_agent.py#L3002) | 3002 | `"                remote_response_received=False,"` | — |
-| [SRC-1AE03B9EC3-L003003](../../agents/web_agent.py#L3003) | 3003 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003004](../../agents/web_agent.py#L3004) | 3004 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |
-| [SRC-1AE03B9EC3-L003005](../../agents/web_agent.py#L3005) | 3005 | `""` | — |
-| [SRC-1AE03B9EC3-L003006](../../agents/web_agent.py#L3006) | 3006 | `"        model_candidates = [requested_model]"` | — |
-| [SRC-1AE03B9EC3-L003007](../../agents/web_agent.py#L3007) | 3007 | `"        if self.fallback_model and self.fallback_model not in model_candidates:"` | — |
-| [SRC-1AE03B9EC3-L003008](../../agents/web_agent.py#L3008) | 3008 | `"            model_candidates.append(self.fallback_model)"` | — |
-| [SRC-1AE03B9EC3-L003009](../../agents/web_agent.py#L3009) | 3009 | `""` | — |
-| [SRC-1AE03B9EC3-L003010](../../agents/web_agent.py#L3010) | 3010 | `"        last_error: RuntimeError \| None = None"` | — |
-| [SRC-1AE03B9EC3-L003011](../../agents/web_agent.py#L3011) | 3011 | `"        for candidate_model in model_candidates:"` | — |
-| [SRC-1AE03B9EC3-L003012](../../agents/web_agent.py#L3012) | 3012 | `"            budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L003013](../../agents/web_agent.py#L3013) | 3013 | `"            use_web_search = enable_web_search and self.openrouter_web_search_enabled"` | — |
-| [SRC-1AE03B9EC3-L003014](../../agents/web_agent.py#L3014) | 3014 | `"            if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L003015](../../agents/web_agent.py#L3015) | 3015 | `"                try:"` | — |
-| [SRC-1AE03B9EC3-L003016](../../agents/web_agent.py#L3016) | 3016 | `"                    budget.reserve(\"model_calls\")"` | — |
-| [SRC-1AE03B9EC3-L003017](../../agents/web_agent.py#L3017) | 3017 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
-| [SRC-1AE03B9EC3-L003018](../../agents/web_agent.py#L3018) | 3018 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
-| [SRC-1AE03B9EC3-L003019](../../agents/web_agent.py#L3019) | 3019 | `"                        # The model may still answer, but the optional server-side search"` | — |

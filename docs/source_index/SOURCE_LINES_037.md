@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000255 إلى SRC-F725E90B2A-L001054
+- النطاق: SRC-F725E90B2A-L000215 إلى SRC-F725E90B2A-L001014
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000215](../../tests/test_web_agent.py#L215) | 215 | `"        \"_request_completion\","` | — |
+| [SRC-F725E90B2A-L000216](../../tests/test_web_agent.py#L216) | 216 | `"        lambda *args, **kwargs: ("` | — |
+| [SRC-F725E90B2A-L000217](../../tests/test_web_agent.py#L217) | 217 | `"            '{\"queries\":[\"مراجعات السيارات الكهربائية\"],\"social_focus\":true,'"` | — |
+| [SRC-F725E90B2A-L000218](../../tests/test_web_agent.py#L218) | 218 | `"            '\"freshness\":\"any\",\"depth\":\"deep\",\"platforms\":[\"reddit\"]}'"` | — |
+| [SRC-F725E90B2A-L000219](../../tests/test_web_agent.py#L219) | 219 | `"        ),"` | — |
+| [SRC-F725E90B2A-L000220](../../tests/test_web_agent.py#L220) | 220 | `"    )"` | — |
+| [SRC-F725E90B2A-L000221](../../tests/test_web_agent.py#L221) | 221 | `"    plan = agent._plan_search("` | — |
+| [SRC-F725E90B2A-L000222](../../tests/test_web_agent.py#L222) | 222 | `"        \"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\","` | — |
+| [SRC-F725E90B2A-L000223](../../tests/test_web_agent.py#L223) | 223 | `"        [],"` | — |
+| [SRC-F725E90B2A-L000224](../../tests/test_web_agent.py#L224) | 224 | `"    )"` | — |
+| [SRC-F725E90B2A-L000225](../../tests/test_web_agent.py#L225) | 225 | `"    assert plan[\"planning_method\"] == \"language_model\""` | — |
+| [SRC-F725E90B2A-L000226](../../tests/test_web_agent.py#L226) | 226 | `"    assert plan[\"social_focus\"] is True"` | — |
+| [SRC-F725E90B2A-L000227](../../tests/test_web_agent.py#L227) | 227 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
+| [SRC-F725E90B2A-L000228](../../tests/test_web_agent.py#L228) | 228 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
+| [SRC-F725E90B2A-L000229](../../tests/test_web_agent.py#L229) | 229 | `""` | — |
+| [SRC-F725E90B2A-L000230](../../tests/test_web_agent.py#L230) | 230 | `""` | — |
+| [SRC-F725E90B2A-L000231](../../tests/test_web_agent.py#L231) | 231 | `"def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000232](../../tests/test_web_agent.py#L232) | 232 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L000233](../../tests/test_web_agent.py#L233) | 233 | `""` | — |
+| [SRC-F725E90B2A-L000234](../../tests/test_web_agent.py#L234) | 234 | `"    reddit_xml = \"\"\"<rss><channel><item>"` | — |
+| [SRC-F725E90B2A-L000235](../../tests/test_web_agent.py#L235) | 235 | `"      <title>تجربة سيارة كهربائية</title>"` | — |
+| [SRC-F725E90B2A-L000236](../../tests/test_web_agent.py#L236) | 236 | `"      <link>https://www.reddit.com/r/cars/comments/abc123/test/</link>"` | — |
+| [SRC-F725E90B2A-L000237](../../tests/test_web_agent.py#L237) | 237 | `"      <description>استهلاك البطارية في الحر</description>"` | — |
+| [SRC-F725E90B2A-L000238](../../tests/test_web_agent.py#L238) | 238 | `"      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L000239](../../tests/test_web_agent.py#L239) | 239 | `"    </item></channel></rss>\"\"\""` | — |
+| [SRC-F725E90B2A-L000240](../../tests/test_web_agent.py#L240) | 240 | `""` | — |
+| [SRC-F725E90B2A-L000241](../../tests/test_web_agent.py#L241) | 241 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000242](../../tests/test_web_agent.py#L242) | 242 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L000243](../../tests/test_web_agent.py#L243) | 243 | `""` | — |
+| [SRC-F725E90B2A-L000244](../../tests/test_web_agent.py#L244) | 244 | `"        def __init__(self, text=\"\", data=None):"` | — |
+| [SRC-F725E90B2A-L000245](../../tests/test_web_agent.py#L245) | 245 | `"            self.text = text"` | — |
+| [SRC-F725E90B2A-L000246](../../tests/test_web_agent.py#L246) | 246 | `"            self.content = text.encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000247](../../tests/test_web_agent.py#L247) | 247 | `"            self._data = data or {}"` | — |
+| [SRC-F725E90B2A-L000248](../../tests/test_web_agent.py#L248) | 248 | `""` | — |
+| [SRC-F725E90B2A-L000249](../../tests/test_web_agent.py#L249) | 249 | `"        def json(self):"` | — |
+| [SRC-F725E90B2A-L000250](../../tests/test_web_agent.py#L250) | 250 | `"            return self._data"` | — |
+| [SRC-F725E90B2A-L000251](../../tests/test_web_agent.py#L251) | 251 | `""` | — |
+| [SRC-F725E90B2A-L000252](../../tests/test_web_agent.py#L252) | 252 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `"        if \"reddit.com\" in url:"` | — |
+| [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"            return FakeResponse(reddit_xml)"` | — |
 | [SRC-F725E90B2A-L000255](../../tests/test_web_agent.py#L255) | 255 | `"        if \"bsky.app\" in url or \"public.api.bsky.app\" in url:"` | — |
 | [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `"            return FakeResponse(data={"` | — |
 | [SRC-F725E90B2A-L000257](../../tests/test_web_agent.py#L257) | 257 | `"                \"posts\": [{"` | — |
@@ -776,43 +816,3 @@
 | [SRC-F725E90B2A-L001012](../../tests/test_web_agent.py#L1012) | 1012 | `"                    \"message\": {"` | — |
 | [SRC-F725E90B2A-L001013](../../tests/test_web_agent.py#L1013) | 1013 | `"                        \"content\": \"تحليل مستند إلى بحث حي.\","` | — |
 | [SRC-F725E90B2A-L001014](../../tests/test_web_agent.py#L1014) | 1014 | `"                        \"annotations\": [{"` | — |
-| [SRC-F725E90B2A-L001015](../../tests/test_web_agent.py#L1015) | 1015 | `"                            \"type\": \"url_citation\","` | — |
-| [SRC-F725E90B2A-L001016](../../tests/test_web_agent.py#L1016) | 1016 | `"                            \"url_citation\": {"` | — |
-| [SRC-F725E90B2A-L001017](../../tests/test_web_agent.py#L1017) | 1017 | `"                                \"url\": \"https://example.org/current-report\","` | — |
-| [SRC-F725E90B2A-L001018](../../tests/test_web_agent.py#L1018) | 1018 | `"                                \"title\": \"Current public report\","` | — |
-| [SRC-F725E90B2A-L001019](../../tests/test_web_agent.py#L1019) | 1019 | `"                                \"content\": \"An excerpt returned by the live search service.\","` | — |
-| [SRC-F725E90B2A-L001020](../../tests/test_web_agent.py#L1020) | 1020 | `"                            },"` | — |
-| [SRC-F725E90B2A-L001021](../../tests/test_web_agent.py#L1021) | 1021 | `"                        }],"` | — |
-| [SRC-F725E90B2A-L001022](../../tests/test_web_agent.py#L1022) | 1022 | `"                    },"` | — |
-| [SRC-F725E90B2A-L001023](../../tests/test_web_agent.py#L1023) | 1023 | `"                    \"finish_reason\": \"stop\","` | — |
-| [SRC-F725E90B2A-L001024](../../tests/test_web_agent.py#L1024) | 1024 | `"                }]"` | — |
-| [SRC-F725E90B2A-L001025](../../tests/test_web_agent.py#L1025) | 1025 | `"            }).encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L001026](../../tests/test_web_agent.py#L1026) | 1026 | `""` | — |
-| [SRC-F725E90B2A-L001027](../../tests/test_web_agent.py#L1027) | 1027 | `"    def fake_urlopen(request, timeout):"` | — |
-| [SRC-F725E90B2A-L001028](../../tests/test_web_agent.py#L1028) | 1028 | `"        seen[\"payload\"] = json.loads(request.data.decode(\"utf-8\"))"` | — |
-| [SRC-F725E90B2A-L001029](../../tests/test_web_agent.py#L1029) | 1029 | `"        return FakeResponse()"` | — |
-| [SRC-F725E90B2A-L001030](../../tests/test_web_agent.py#L1030) | 1030 | `""` | — |
-| [SRC-F725E90B2A-L001031](../../tests/test_web_agent.py#L1031) | 1031 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-F725E90B2A-L001032](../../tests/test_web_agent.py#L1032) | 1032 | `"    result = agent._request_completion("` | — |
-| [SRC-F725E90B2A-L001033](../../tests/test_web_agent.py#L1033) | 1033 | `"        [{\"role\": \"user\", \"content\": \"ابحث عن أحدث تقرير\"}],"` | — |
-| [SRC-F725E90B2A-L001034](../../tests/test_web_agent.py#L1034) | 1034 | `"        model=\"example/model\","` | — |
-| [SRC-F725E90B2A-L001035](../../tests/test_web_agent.py#L1035) | 1035 | `"        enable_web_search=True,"` | — |
-| [SRC-F725E90B2A-L001036](../../tests/test_web_agent.py#L1036) | 1036 | `"    )"` | — |
-| [SRC-F725E90B2A-L001037](../../tests/test_web_agent.py#L1037) | 1037 | `""` | — |
-| [SRC-F725E90B2A-L001038](../../tests/test_web_agent.py#L1038) | 1038 | `"    assert result == \"تحليل مستند إلى بحث حي.\""` | — |
-| [SRC-F725E90B2A-L001039](../../tests/test_web_agent.py#L1039) | 1039 | `"    assert seen[\"payload\"][\"tools\"][0][\"type\"] == \"openrouter:web_search\""` | — |
-| [SRC-F725E90B2A-L001040](../../tests/test_web_agent.py#L1040) | 1040 | `"    assert seen[\"payload\"][\"tools\"][0][\"parameters\"][\"max_uses\"] == 3"` | — |
-| [SRC-F725E90B2A-L001041](../../tests/test_web_agent.py#L1041) | 1041 | `"    assert seen[\"payload\"][\"max_tool_calls\"] == 5"` | — |
-| [SRC-F725E90B2A-L001042](../../tests/test_web_agent.py#L1042) | 1042 | `"    assert agent.server_search_sources[0][\"url\"] == \"https://example.org/current-report\""` | — |
-| [SRC-F725E90B2A-L001043](../../tests/test_web_agent.py#L1043) | 1043 | `"    assert agent.server_search_sources[0][\"provider\"] == \"openrouter_web_search\""` | — |
-| [SRC-F725E90B2A-L001044](../../tests/test_web_agent.py#L1044) | 1044 | `"    assert \"test-key\" not in str(agent.server_search_sources)"` | — |
-| [SRC-F725E90B2A-L001045](../../tests/test_web_agent.py#L1045) | 1045 | `""` | — |
-| [SRC-F725E90B2A-L001046](../../tests/test_web_agent.py#L1046) | 1046 | `""` | — |
-| [SRC-F725E90B2A-L001047](../../tests/test_web_agent.py#L1047) | 1047 | `"def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001048](../../tests/test_web_agent.py#L1048) | 1048 | `"    monkeypatch.delenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", raising=False)"` | — |
-| [SRC-F725E90B2A-L001049](../../tests/test_web_agent.py#L1049) | 1049 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001050](../../tests/test_web_agent.py#L1050) | 1050 | `"    assert agent.openrouter_web_search_enabled is False"` | — |
-| [SRC-F725E90B2A-L001051](../../tests/test_web_agent.py#L1051) | 1051 | `""` | — |
-| [SRC-F725E90B2A-L001052](../../tests/test_web_agent.py#L1052) | 1052 | `""` | — |
-| [SRC-F725E90B2A-L001053](../../tests/test_web_agent.py#L1053) | 1053 | `""` | — |
-| [SRC-F725E90B2A-L001054](../../tests/test_web_agent.py#L1054) | 1054 | `"def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():"` | — |

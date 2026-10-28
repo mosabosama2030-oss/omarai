@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001342 إلى SRC-1C77C97630-L000010
+- النطاق: SRC-90FAA34ADE-L001302 إلى SRC-B3062EB677-L000201
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001302](../../tests/fixtures/answer_quality_cases.json#L1302) | 1302 | `"      \"case_id\": \"AQ-044\","` | — |
+| [SRC-90FAA34ADE-L001303](../../tests/fixtures/answer_quality_cases.json#L1303) | 1303 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L001304](../../tests/fixtures/answer_quality_cases.json#L1304) | 1304 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L001305](../../tests/fixtures/answer_quality_cases.json#L1305) | 1305 | `"      \"question\": \"قارن بين خدمتين من ناحية السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، واذكر ما لا تستطيع التحقق منه.\","` | — |
+| [SRC-90FAA34ADE-L001306](../../tests/fixtures/answer_quality_cases.json#L1306) | 1306 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L001307](../../tests/fixtures/answer_quality_cases.json#L1307) | 1307 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001308](../../tests/fixtures/answer_quality_cases.json#L1308) | 1308 | `"        \"يطلب اسم الخدمتين إذا لم تكونا محددتين في السياق\","` | — |
+| [SRC-90FAA34ADE-L001309](../../tests/fixtures/answer_quality_cases.json#L1309) | 1309 | `"        \"يحافظ على أبعاد المقارنة الأربعة في خطة الإجابة\","` | — |
+| [SRC-90FAA34ADE-L001310](../../tests/fixtures/answer_quality_cases.json#L1310) | 1310 | `"        \"يصرح بحدود التحقق بدل اختلاق تفاصيل\""` | — |
+| [SRC-90FAA34ADE-L001311](../../tests/fixtures/answer_quality_cases.json#L1311) | 1311 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001312](../../tests/fixtures/answer_quality_cases.json#L1312) | 1312 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001313](../../tests/fixtures/answer_quality_cases.json#L1313) | 1313 | `"        \"يخمن أسماء خدمات أو أسعارًا\","` | — |
+| [SRC-90FAA34ADE-L001314](../../tests/fixtures/answer_quality_cases.json#L1314) | 1314 | `"        \"يقدم مقارنة ناقصة على أنها نهائية\""` | — |
+| [SRC-90FAA34ADE-L001315](../../tests/fixtures/answer_quality_cases.json#L1315) | 1315 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001316](../../tests/fixtures/answer_quality_cases.json#L1316) | 1316 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001317](../../tests/fixtures/answer_quality_cases.json#L1317) | 1317 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001318](../../tests/fixtures/answer_quality_cases.json#L1318) | 1318 | `"        \"notes\": \"لم تُذكر أسماء الخدمات في السؤال ولا يوجد سياق سابق\""` | — |
+| [SRC-90FAA34ADE-L001319](../../tests/fixtures/answer_quality_cases.json#L1319) | 1319 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001320](../../tests/fixtures/answer_quality_cases.json#L1320) | 1320 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001321](../../tests/fixtures/answer_quality_cases.json#L1321) | 1321 | `"        \"عدم طلب توضيح عن الخدمتين\","` | — |
+| [SRC-90FAA34ADE-L001322](../../tests/fixtures/answer_quality_cases.json#L1322) | 1322 | `"        \"إعلان نتيجة مقارنة بلا بيانات عن أي خدمة\""` | — |
+| [SRC-90FAA34ADE-L001323](../../tests/fixtures/answer_quality_cases.json#L1323) | 1323 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001324](../../tests/fixtures/answer_quality_cases.json#L1324) | 1324 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001325](../../tests/fixtures/answer_quality_cases.json#L1325) | 1325 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001326](../../tests/fixtures/answer_quality_cases.json#L1326) | 1326 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001327](../../tests/fixtures/answer_quality_cases.json#L1327) | 1327 | `"      \"case_id\": \"AQ-045\","` | — |
+| [SRC-90FAA34ADE-L001328](../../tests/fixtures/answer_quality_cases.json#L1328) | 1328 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L001329](../../tests/fixtures/answer_quality_cases.json#L1329) | 1329 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L001330](../../tests/fixtures/answer_quality_cases.json#L1330) | 1330 | `"      \"question\": \"في شركة تشطيب في القاهرة، موقعها فيه نموذج تواصل بس ومفيش دليل إنها محتاجة عملاء جدد. صنّفها في نظام leads.\","` | — |
+| [SRC-90FAA34ADE-L001331](../../tests/fixtures/answer_quality_cases.json#L1331) | 1331 | `"      \"expected_strategy\": \"local\","` | — |
+| [SRC-90FAA34ADE-L001332](../../tests/fixtures/answer_quality_cases.json#L1332) | 1332 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001333](../../tests/fixtures/answer_quality_cases.json#L1333) | 1333 | `"        \"يسجل الشركة كجهة محتملة فقط لا كعميل جاهز\","` | — |
+| [SRC-90FAA34ADE-L001334](../../tests/fixtures/answer_quality_cases.json#L1334) | 1334 | `"        \"يفصل وجود نموذج التواصل عن دليل الاحتياج أو نية الشراء\","` | — |
+| [SRC-90FAA34ADE-L001335](../../tests/fixtures/answer_quality_cases.json#L1335) | 1335 | `"        \"يحدد حالة التحقق والخطوة التالية المقترحة دون إرسال تلقائي\""` | — |
+| [SRC-90FAA34ADE-L001336](../../tests/fixtures/answer_quality_cases.json#L1336) | 1336 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001337](../../tests/fixtures/answer_quality_cases.json#L1337) | 1337 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001338](../../tests/fixtures/answer_quality_cases.json#L1338) | 1338 | `"        \"يستنتج أن الشركة تبحث عن عملاء أو اشترت الخدمة\","` | — |
+| [SRC-90FAA34ADE-L001339](../../tests/fixtures/answer_quality_cases.json#L1339) | 1339 | `"        \"يدّعي أنه تواصل معها أو حصل على رد\""` | — |
+| [SRC-90FAA34ADE-L001340](../../tests/fixtures/answer_quality_cases.json#L1340) | 1340 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001341](../../tests/fixtures/answer_quality_cases.json#L1341) | 1341 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L001342](../../tests/fixtures/answer_quality_cases.json#L1342) | 1342 | `"        \"type\": \"none\","` | — |
 | [SRC-90FAA34ADE-L001343](../../tests/fixtures/answer_quality_cases.json#L1343) | 1343 | `"        \"notes\": \"المتاح فقط نموذج تواصل عام؛ لا يوجد تفاعل أو تصريح باحتياج شراء\""` | — |
 | [SRC-90FAA34ADE-L001344](../../tests/fixtures/answer_quality_cases.json#L1344) | 1344 | `"      },"` | — |
@@ -821,52 +861,3 @@
 | [SRC-B3062EB677-L000199](../../tests/test_answer_quality_runner.py#L199) | 199 | `"        1,"` | — |
 | [SRC-B3062EB677-L000200](../../tests/test_answer_quality_runner.py#L200) | 200 | `"        1.0,"` | — |
 | [SRC-B3062EB677-L000201](../../tests/test_answer_quality_runner.py#L201) | 201 | `"        0.0,"` | — |
-| [SRC-B3062EB677-L000202](../../tests/test_answer_quality_runner.py#L202) | 202 | `"        None,"` | — |
-| [SRC-B3062EB677-L000203](../../tests/test_answer_quality_runner.py#L203) | 203 | `"    )"` | — |
-| [SRC-B3062EB677-L000204](../../tests/test_answer_quality_runner.py#L204) | 204 | `"    assert rc == 2"` | — |
-| [SRC-B3062EB677-L000205](../../tests/test_answer_quality_runner.py#L205) | 205 | `"    assert \"Unsafe base URL\" in capsys.readouterr().err"` | — |
-| [SRC-B3062EB677-L000206](../../tests/test_answer_quality_runner.py#L206) | 206 | `""` | — |
-| [SRC-B3062EB677-L000207](../../tests/test_answer_quality_runner.py#L207) | 207 | `""` | — |
-| [SRC-B3062EB677-L000208](../../tests/test_answer_quality_runner.py#L208) | 208 | `"def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):"` | — |
-| [SRC-B3062EB677-L000209](../../tests/test_answer_quality_runner.py#L209) | 209 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000210](../../tests/test_answer_quality_runner.py#L210) | 210 | `""` | — |
-| [SRC-B3062EB677-L000211](../../tests/test_answer_quality_runner.py#L211) | 211 | `"    def fake_post(base_url, question, timeout, token):"` | — |
-| [SRC-B3062EB677-L000212](../../tests/test_answer_quality_runner.py#L212) | 212 | `"        return 0, {\"error\": \"URLError\", \"detail\": \"connection refused\"}"` | — |
-| [SRC-B3062EB677-L000213](../../tests/test_answer_quality_runner.py#L213) | 213 | `""` | — |
-| [SRC-B3062EB677-L000214](../../tests/test_answer_quality_runner.py#L214) | 214 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
-| [SRC-B3062EB677-L000215](../../tests/test_answer_quality_runner.py#L215) | 215 | `"    out = tmp_path / \"results.json\""` | — |
-| [SRC-B3062EB677-L000216](../../tests/test_answer_quality_runner.py#L216) | 216 | `"    rc = mod.main("` | — |
-| [SRC-B3062EB677-L000217](../../tests/test_answer_quality_runner.py#L217) | 217 | `"        ["` | — |
-| [SRC-B3062EB677-L000218](../../tests/test_answer_quality_runner.py#L218) | 218 | `"            \"--mode\","` | — |
-| [SRC-B3062EB677-L000219](../../tests/test_answer_quality_runner.py#L219) | 219 | `"            \"live\","` | — |
-| [SRC-B3062EB677-L000220](../../tests/test_answer_quality_runner.py#L220) | 220 | `"            \"--corpus\","` | — |
-| [SRC-B3062EB677-L000221](../../tests/test_answer_quality_runner.py#L221) | 221 | `"            str(CORPUS),"` | — |
-| [SRC-B3062EB677-L000222](../../tests/test_answer_quality_runner.py#L222) | 222 | `"            \"--case-id\","` | — |
-| [SRC-B3062EB677-L000223](../../tests/test_answer_quality_runner.py#L223) | 223 | `"            \"AQ-001\","` | — |
-| [SRC-B3062EB677-L000224](../../tests/test_answer_quality_runner.py#L224) | 224 | `"            \"--out\","` | — |
-| [SRC-B3062EB677-L000225](../../tests/test_answer_quality_runner.py#L225) | 225 | `"            str(out),"` | — |
-| [SRC-B3062EB677-L000226](../../tests/test_answer_quality_runner.py#L226) | 226 | `"        ]"` | — |
-| [SRC-B3062EB677-L000227](../../tests/test_answer_quality_runner.py#L227) | 227 | `"    )"` | — |
-| [SRC-B3062EB677-L000228](../../tests/test_answer_quality_runner.py#L228) | 228 | `"    assert rc == 0"` | — |
-| [SRC-B3062EB677-L000229](../../tests/test_answer_quality_runner.py#L229) | 229 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-B3062EB677-L000230](../../tests/test_answer_quality_runner.py#L230) | 230 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
-| [SRC-B3062EB677-L000231](../../tests/test_answer_quality_runner.py#L231) | 231 | `"    assert payload[\"results\"][0][\"transport_ok\"] is False"` | — |
-## اختبارات
-
-### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
-| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |
-| [SRC-1C77C97630-L000005](../../tests/test_answer_validation.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-1C77C97630-L000006](../../tests/test_answer_validation.py#L6) | 6 | `""` | — |
-| [SRC-1C77C97630-L000007](../../tests/test_answer_validation.py#L7) | 7 | `"from agents.answer_validation import audit_answer_integrity"` | — |
-| [SRC-1C77C97630-L000008](../../tests/test_answer_validation.py#L8) | 8 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-1C77C97630-L000009](../../tests/test_answer_validation.py#L9) | 9 | `""` | — |
-| [SRC-1C77C97630-L000010](../../tests/test_answer_validation.py#L10) | 10 | `""` | — |

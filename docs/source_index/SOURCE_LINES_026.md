@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000139 إلى SRC-90FAA34ADE-L000541
+- النطاق: SRC-03FF422A16-L000099 إلى SRC-90FAA34ADE-L000501
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,46 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000099](../../scripts/score_answer_quality_reviews.py#L99) | 99 | `"            if group_name == \"retrieval\":"` | — |
+| [SRC-03FF422A16-L000100](../../scripts/score_answer_quality_reviews.py#L100) | 100 | `"                if values[\"relevant_retrieved\"] > values[\"retrieved_count\"]:"` | — |
+| [SRC-03FF422A16-L000101](../../scripts/score_answer_quality_reviews.py#L101) | 101 | `"                    problems.append(case_id + \": relevant_retrieved cannot exceed retrieved_count\")"` | — |
+| [SRC-03FF422A16-L000102](../../scripts/score_answer_quality_reviews.py#L102) | 102 | `"                if values[\"relevant_retrieved\"] > values[\"relevant_available\"]:"` | — |
+| [SRC-03FF422A16-L000103](../../scripts/score_answer_quality_reviews.py#L103) | 103 | `"                    problems.append(case_id + \": relevant_retrieved cannot exceed relevant_available\")"` | — |
+| [SRC-03FF422A16-L000104](../../scripts/score_answer_quality_reviews.py#L104) | 104 | `"            else:"` | — |
+| [SRC-03FF422A16-L000105](../../scripts/score_answer_quality_reviews.py#L105) | 105 | `"                numerator, denominator = fields"` | — |
+| [SRC-03FF422A16-L000106](../../scripts/score_answer_quality_reviews.py#L106) | 106 | `"                if values[numerator] > values[denominator]:"` | — |
+| [SRC-03FF422A16-L000107](../../scripts/score_answer_quality_reviews.py#L107) | 107 | `"                    problems.append(case_id + \": \" + numerator + \" cannot exceed \" + denominator)"` | — |
+| [SRC-03FF422A16-L000108](../../scripts/score_answer_quality_reviews.py#L108) | 108 | `""` | — |
+| [SRC-03FF422A16-L000109](../../scripts/score_answer_quality_reviews.py#L109) | 109 | `"        writing = item.get(\"writing_quality\")"` | — |
+| [SRC-03FF422A16-L000110](../../scripts/score_answer_quality_reviews.py#L110) | 110 | `"        if writing is not None:"` | — |
+| [SRC-03FF422A16-L000111](../../scripts/score_answer_quality_reviews.py#L111) | 111 | `"            has_score = True"` | — |
+| [SRC-03FF422A16-L000112](../../scripts/score_answer_quality_reviews.py#L112) | 112 | `"            if ("` | — |
+| [SRC-03FF422A16-L000113](../../scripts/score_answer_quality_reviews.py#L113) | 113 | `"                isinstance(writing, bool)"` | — |
+| [SRC-03FF422A16-L000114](../../scripts/score_answer_quality_reviews.py#L114) | 114 | `"                or not isinstance(writing, (int, float))"` | — |
+| [SRC-03FF422A16-L000115](../../scripts/score_answer_quality_reviews.py#L115) | 115 | `"                or not math.isfinite(float(writing))"` | — |
+| [SRC-03FF422A16-L000116](../../scripts/score_answer_quality_reviews.py#L116) | 116 | `"                or float(writing) < 1"` | — |
+| [SRC-03FF422A16-L000117](../../scripts/score_answer_quality_reviews.py#L117) | 117 | `"                or float(writing) > 5"` | — |
+| [SRC-03FF422A16-L000118](../../scripts/score_answer_quality_reviews.py#L118) | 118 | `"            ):"` | — |
+| [SRC-03FF422A16-L000119](../../scripts/score_answer_quality_reviews.py#L119) | 119 | `"                problems.append(case_id + \": writing_quality must be a finite score from 1 to 5\")"` | — |
+| [SRC-03FF422A16-L000120](../../scripts/score_answer_quality_reviews.py#L120) | 120 | `""` | — |
+| [SRC-03FF422A16-L000121](../../scripts/score_answer_quality_reviews.py#L121) | 121 | `"        if status != \"REVIEWED\" and has_score:"` | — |
+| [SRC-03FF422A16-L000122](../../scripts/score_answer_quality_reviews.py#L122) | 122 | `"            problems.append(case_id + \": unreviewed case must not contain metric scores\")"` | — |
+| [SRC-03FF422A16-L000123](../../scripts/score_answer_quality_reviews.py#L123) | 123 | `"        if status == \"REVIEWED\" and not has_score:"` | — |
+| [SRC-03FF422A16-L000124](../../scripts/score_answer_quality_reviews.py#L124) | 124 | `"            problems.append(case_id + \": REVIEWED case must include at least one scored dimension\")"` | — |
+| [SRC-03FF422A16-L000125](../../scripts/score_answer_quality_reviews.py#L125) | 125 | `"    return problems"` | — |
+| [SRC-03FF422A16-L000126](../../scripts/score_answer_quality_reviews.py#L126) | 126 | `""` | — |
+| [SRC-03FF422A16-L000127](../../scripts/score_answer_quality_reviews.py#L127) | 127 | `""` | — |
+| [SRC-03FF422A16-L000128](../../scripts/score_answer_quality_reviews.py#L128) | 128 | `"def _ratio(numerator: int, denominator: int, case_count: int) -> dict[str, Any]:"` | — |
+| [SRC-03FF422A16-L000129](../../scripts/score_answer_quality_reviews.py#L129) | 129 | `"    return {"` | — |
+| [SRC-03FF422A16-L000130](../../scripts/score_answer_quality_reviews.py#L130) | 130 | `"        \"score\": round(numerator / denominator, 4) if denominator else None,"` | — |
+| [SRC-03FF422A16-L000131](../../scripts/score_answer_quality_reviews.py#L131) | 131 | `"        \"numerator\": numerator,"` | — |
+| [SRC-03FF422A16-L000132](../../scripts/score_answer_quality_reviews.py#L132) | 132 | `"        \"denominator\": denominator,"` | — |
+| [SRC-03FF422A16-L000133](../../scripts/score_answer_quality_reviews.py#L133) | 133 | `"        \"reviewed_case_count\": case_count,"` | — |
+| [SRC-03FF422A16-L000134](../../scripts/score_answer_quality_reviews.py#L134) | 134 | `"        \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if denominator else \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\","` | — |
+| [SRC-03FF422A16-L000135](../../scripts/score_answer_quality_reviews.py#L135) | 135 | `"    }"` | — |
+| [SRC-03FF422A16-L000136](../../scripts/score_answer_quality_reviews.py#L136) | 136 | `""` | — |
+| [SRC-03FF422A16-L000137](../../scripts/score_answer_quality_reviews.py#L137) | 137 | `""` | — |
+| [SRC-03FF422A16-L000138](../../scripts/score_answer_quality_reviews.py#L138) | 138 | `"def summarize_reviews("` | — |
 | [SRC-03FF422A16-L000139](../../scripts/score_answer_quality_reviews.py#L139) | 139 | `"    review_data: dict[str, Any], corpus_data: dict[str, Any]"` | — |
 | [SRC-03FF422A16-L000140](../../scripts/score_answer_quality_reviews.py#L140) | 140 | `") -> dict[str, Any]:"` | — |
 | [SRC-03FF422A16-L000141](../../scripts/score_answer_quality_reviews.py#L141) | 141 | `"    problems = validate_reviews(review_data, corpus_data)"` | — |
@@ -794,43 +834,3 @@
 | [SRC-90FAA34ADE-L000499](../../tests/fixtures/answer_quality_cases.json#L499) | 499 | `"      \"case_id\": \"AQ-019\","` | — |
 | [SRC-90FAA34ADE-L000500](../../tests/fixtures/answer_quality_cases.json#L500) | 500 | `"      \"category\": \"conflicting_sources\","` | — |
 | [SRC-90FAA34ADE-L000501](../../tests/fixtures/answer_quality_cases.json#L501) | 501 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000502](../../tests/fixtures/answer_quality_cases.json#L502) | 502 | `"      \"question\": \"Two retrieved pages give different application deadlines for the same public program. Explain the conflict without guessing.\","` | — |
-| [SRC-90FAA34ADE-L000503](../../tests/fixtures/answer_quality_cases.json#L503) | 503 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000504](../../tests/fixtures/answer_quality_cases.json#L504) | 504 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000505](../../tests/fixtures/answer_quality_cases.json#L505) | 505 | `"        \"States both retrieved deadlines and their respective source links\","` | — |
-| [SRC-90FAA34ADE-L000506](../../tests/fixtures/answer_quality_cases.json#L506) | 506 | `"        \"Checks whether dates refer to different rounds or publication times\","` | — |
-| [SRC-90FAA34ADE-L000507](../../tests/fixtures/answer_quality_cases.json#L507) | 507 | `"        \"Uses uncertainty or requests official confirmation if unresolved\""` | — |
-| [SRC-90FAA34ADE-L000508](../../tests/fixtures/answer_quality_cases.json#L508) | 508 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000509](../../tests/fixtures/answer_quality_cases.json#L509) | 509 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000510](../../tests/fixtures/answer_quality_cases.json#L510) | 510 | `"        \"Silently merges the dates\","` | — |
-| [SRC-90FAA34ADE-L000511](../../tests/fixtures/answer_quality_cases.json#L511) | 511 | `"        \"Claims one source is authoritative without evidence\""` | — |
-| [SRC-90FAA34ADE-L000512](../../tests/fixtures/answer_quality_cases.json#L512) | 512 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000513](../../tests/fixtures/answer_quality_cases.json#L513) | 513 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000514](../../tests/fixtures/answer_quality_cases.json#L514) | 514 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000515](../../tests/fixtures/answer_quality_cases.json#L515) | 515 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000516](../../tests/fixtures/answer_quality_cases.json#L516) | 516 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000517](../../tests/fixtures/answer_quality_cases.json#L517) | 517 | `"            \"title\": \"Program FAQ\","` | — |
-| [SRC-90FAA34ADE-L000518](../../tests/fixtures/answer_quality_cases.json#L518) | 518 | `"            \"url\": \"https://program.example.test/faq\","` | — |
-| [SRC-90FAA34ADE-L000519](../../tests/fixtures/answer_quality_cases.json#L519) | 519 | `"            \"snippet\": \"Applications close on 30 October 2026.\","` | — |
-| [SRC-90FAA34ADE-L000520](../../tests/fixtures/answer_quality_cases.json#L520) | 520 | `"            \"published_at\": \"2026-09-28\","` | — |
-| [SRC-90FAA34ADE-L000521](../../tests/fixtures/answer_quality_cases.json#L521) | 521 | `"            \"domain\": \"program.example.test\","` | — |
-| [SRC-90FAA34ADE-L000522](../../tests/fixtures/answer_quality_cases.json#L522) | 522 | `"            \"provider\": \"fixture_a\""` | — |
-| [SRC-90FAA34ADE-L000523](../../tests/fixtures/answer_quality_cases.json#L523) | 523 | `"          },"` | — |
-| [SRC-90FAA34ADE-L000524](../../tests/fixtures/answer_quality_cases.json#L524) | 524 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000525](../../tests/fixtures/answer_quality_cases.json#L525) | 525 | `"            \"title\": \"Regional office notice\","` | — |
-| [SRC-90FAA34ADE-L000526](../../tests/fixtures/answer_quality_cases.json#L526) | 526 | `"            \"url\": \"https://region.example.test/notice\","` | — |
-| [SRC-90FAA34ADE-L000527](../../tests/fixtures/answer_quality_cases.json#L527) | 527 | `"            \"snippet\": \"Applications close on 5 November 2026.\","` | — |
-| [SRC-90FAA34ADE-L000528](../../tests/fixtures/answer_quality_cases.json#L528) | 528 | `"            \"published_at\": \"2026-10-02\","` | — |
-| [SRC-90FAA34ADE-L000529](../../tests/fixtures/answer_quality_cases.json#L529) | 529 | `"            \"domain\": \"region.example.test\","` | — |
-| [SRC-90FAA34ADE-L000530](../../tests/fixtures/answer_quality_cases.json#L530) | 530 | `"            \"provider\": \"fixture_b\""` | — |
-| [SRC-90FAA34ADE-L000531](../../tests/fixtures/answer_quality_cases.json#L531) | 531 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000532](../../tests/fixtures/answer_quality_cases.json#L532) | 532 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000533](../../tests/fixtures/answer_quality_cases.json#L533) | 533 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000534](../../tests/fixtures/answer_quality_cases.json#L534) | 534 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000535](../../tests/fixtures/answer_quality_cases.json#L535) | 535 | `"        \"Omits one deadline\","` | — |
-| [SRC-90FAA34ADE-L000536](../../tests/fixtures/answer_quality_cases.json#L536) | 536 | `"        \"Presents a definitive deadline without describing the unresolved discrepancy\""` | — |
-| [SRC-90FAA34ADE-L000537](../../tests/fixtures/answer_quality_cases.json#L537) | 537 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000538](../../tests/fixtures/answer_quality_cases.json#L538) | 538 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000539](../../tests/fixtures/answer_quality_cases.json#L539) | 539 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000540](../../tests/fixtures/answer_quality_cases.json#L540) | 540 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000541](../../tests/fixtures/answer_quality_cases.json#L541) | 541 | `"      \"case_id\": \"AQ-020\","` | — |

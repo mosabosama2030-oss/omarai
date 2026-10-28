@@ -4,9 +4,55 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000002 إلى SRC-686F71AA50-L000361
+- النطاق: SRC-59CF4B7DE8-L000755 إلى SRC-686F71AA50-L000323
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-59CF4B7DE8 — [agents/research.py](../../agents/research.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-59CF4B7DE8-L000755](../../agents/research.py#L755) | 755 | `""` | — |
+| [SRC-59CF4B7DE8-L000756](../../agents/research.py#L756) | 756 | `""` | — |
+| [SRC-59CF4B7DE8-L000757](../../agents/research.py#L757) | 757 | `"def decide_evidence_status(sources, pages_read: int = 0,"` | — |
+| [SRC-59CF4B7DE8-L000758](../../agents/research.py#L758) | 758 | `"                           provider_failures: int = 0,"` | — |
+| [SRC-59CF4B7DE8-L000759](../../agents/research.py#L759) | 759 | `"                           search_attempted: bool = True) -> dict:"` | — |
+| [SRC-59CF4B7DE8-L000760](../../agents/research.py#L760) | 760 | `"    if not search_attempted:"` | — |
+| [SRC-59CF4B7DE8-L000761](../../agents/research.py#L761) | 761 | `"        return {\"evidence_status\": \"failed\", \"should_abstain\": True}"` | — |
+| [SRC-59CF4B7DE8-L000762](../../agents/research.py#L762) | 762 | `""` | — |
+| [SRC-59CF4B7DE8-L000763](../../agents/research.py#L763) | 763 | `"    domains = set()"` | — |
+| [SRC-59CF4B7DE8-L000764](../../agents/research.py#L764) | 764 | `"    has_official = False"` | — |
+| [SRC-59CF4B7DE8-L000765](../../agents/research.py#L765) | 765 | `"    for s in sources or []:"` | — |
+| [SRC-59CF4B7DE8-L000766](../../agents/research.py#L766) | 766 | `"        if not isinstance(s, dict):"` | — |
+| [SRC-59CF4B7DE8-L000767](../../agents/research.py#L767) | 767 | `"            continue"` | — |
+| [SRC-59CF4B7DE8-L000768](../../agents/research.py#L768) | 768 | `"        d = str(s.get(\"domain\") or \"\").lower()"` | — |
+| [SRC-59CF4B7DE8-L000769](../../agents/research.py#L769) | 769 | `"        if not d:"` | — |
+| [SRC-59CF4B7DE8-L000770](../../agents/research.py#L770) | 770 | `"            url = str(s.get(\"url\") or \"\")"` | — |
+| [SRC-59CF4B7DE8-L000771](../../agents/research.py#L771) | 771 | `"            if url:"` | — |
+| [SRC-59CF4B7DE8-L000772](../../agents/research.py#L772) | 772 | `"                try:"` | — |
+| [SRC-59CF4B7DE8-L000773](../../agents/research.py#L773) | 773 | `"                    from urllib.parse import urlparse"` | — |
+| [SRC-59CF4B7DE8-L000774](../../agents/research.py#L774) | 774 | `"                    d = urlparse(url).netloc.lower()"` | — |
+| [SRC-59CF4B7DE8-L000775](../../agents/research.py#L775) | 775 | `"                except Exception:"` | — |
+| [SRC-59CF4B7DE8-L000776](../../agents/research.py#L776) | 776 | `"                    d = \"\""` | — |
+| [SRC-59CF4B7DE8-L000777](../../agents/research.py#L777) | 777 | `"        if d:"` | — |
+| [SRC-59CF4B7DE8-L000778](../../agents/research.py#L778) | 778 | `"            domains.add(d)"` | — |
+| [SRC-59CF4B7DE8-L000779](../../agents/research.py#L779) | 779 | `"        if str(s.get(\"source_class\") or \"\").lower() in _OFFICIAL_CLASSES:"` | — |
+| [SRC-59CF4B7DE8-L000780](../../agents/research.py#L780) | 780 | `"            has_official = True"` | — |
+| [SRC-59CF4B7DE8-L000781](../../agents/research.py#L781) | 781 | `""` | — |
+| [SRC-59CF4B7DE8-L000782](../../agents/research.py#L782) | 782 | `"    if not sources:"` | — |
+| [SRC-59CF4B7DE8-L000783](../../agents/research.py#L783) | 783 | `"        if provider_failures > 0:"` | — |
+| [SRC-59CF4B7DE8-L000784](../../agents/research.py#L784) | 784 | `"            return {\"evidence_status\": \"failed\", \"should_abstain\": True}"` | — |
+| [SRC-59CF4B7DE8-L000785](../../agents/research.py#L785) | 785 | `"        return {\"evidence_status\": \"insufficient\", \"should_abstain\": True}"` | — |
+| [SRC-59CF4B7DE8-L000786](../../agents/research.py#L786) | 786 | `""` | — |
+| [SRC-59CF4B7DE8-L000787](../../agents/research.py#L787) | 787 | `"    if len(domains) >= 2 or has_official:"` | — |
+| [SRC-59CF4B7DE8-L000788](../../agents/research.py#L788) | 788 | `"        return {\"evidence_status\": \"adequate\", \"should_abstain\": False}"` | — |
+| [SRC-59CF4B7DE8-L000789](../../agents/research.py#L789) | 789 | `"    if len(domains) >= 1:"` | — |
+| [SRC-59CF4B7DE8-L000790](../../agents/research.py#L790) | 790 | `"        return {\"evidence_status\": \"partial\", \"should_abstain\": False}"` | — |
+| [SRC-59CF4B7DE8-L000791](../../agents/research.py#L791) | 791 | `"    return {\"evidence_status\": \"insufficient\", \"should_abstain\": True}"` | — |
 ## الوكيل والمنطق
 
 ### FILE-3AA6165B18 — [agents/research_guardrails.py](../../agents/research_guardrails.py#L1)
@@ -16,6 +62,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000001](../../agents/research_guardrails.py#L1) | 1 | `"\"\"\"Task-specific guardrails for search evidence."` | — |
 | [SRC-3AA6165B18-L000002](../../agents/research_guardrails.py#L2) | 2 | `""` | — |
 | [SRC-3AA6165B18-L000003](../../agents/research_guardrails.py#L3) | 3 | `"These checks are conservative retrieval filters, not proof of factual correctness."` | — |
 | [SRC-3AA6165B18-L000004](../../agents/research_guardrails.py#L4) | 4 | `"\"\"\""` | — |
@@ -608,7 +655,7 @@
 | [SRC-686F71AA50-L000133](../../agents/task_understanding.py#L133) | 133 | `"    \"\"\"Return only a small, explicit location vocabulary; never infer geolocation.\"\"\""` | — |
 | [SRC-686F71AA50-L000134](../../agents/task_understanding.py#L134) | 134 | `"    normalized = normalize_text(question)"` | — |
 | [SRC-686F71AA50-L000135](../../agents/task_understanding.py#L135) | 135 | `"    known = ("` | — |
-| [SRC-686F71AA50-L000136](../../agents/task_understanding.py#L136) | 136 | `"        (\"مصر\", (\"في مصر\", \"داخل مصر\", \"المصري\", \"المصرية\", \"مصر\")),"` | — |
+| [SRC-686F71AA50-L000136](../../agents/task_understanding.py#L136) | 136 | `"        (\"مصر\", (\"في مصر\", \"داخل مصر\", \"المصري\", \"المصرية\", \"مصر\", \"egypt\", \"egyptian\")),"` | — |
 | [SRC-686F71AA50-L000137](../../agents/task_understanding.py#L137) | 137 | `"        (\"القاهرة\", (\"القاهرة\", \"القاهره\", \"cairo\")),"` | — |
 | [SRC-686F71AA50-L000138](../../agents/task_understanding.py#L138) | 138 | `"        (\"الإسكندرية\", (\"الاسكندرية\", \"الاسكندريه\", \"alexandria\")),"` | — |
 | [SRC-686F71AA50-L000139](../../agents/task_understanding.py#L139) | 139 | `"        (\"السعودية\", (\"السعودية\", \"السعوديه\", \"saudi arabia\")),"` | — |
@@ -636,55 +683,55 @@
 | [SRC-686F71AA50-L000161](../../agents/task_understanding.py#L161) | 161 | `""` | — |
 | [SRC-686F71AA50-L000162](../../agents/task_understanding.py#L162) | 162 | `""` | — |
 | [SRC-686F71AA50-L000163](../../agents/task_understanding.py#L163) | 163 | `"def _primary_family(matches: dict[str, list[str]], mode: str, route: str, normalized: str) -> str:"` | — |
-| [SRC-686F71AA50-L000164](../../agents/task_understanding.py#L164) | 164 | `"    # Route/mode are policy inputs; lexical patterns supply task evidence."` | — |
-| [SRC-686F71AA50-L000165](../../agents/task_understanding.py#L165) | 165 | `"    if matches[\"official_site_lookup\"] and any("` | — |
-| [SRC-686F71AA50-L000166](../../agents/task_understanding.py#L166) | 166 | `"        normalize_text(word) in normalized for word in _OFFICIAL_WORDS"` | — |
-| [SRC-686F71AA50-L000167](../../agents/task_understanding.py#L167) | 167 | `"    ):"` | — |
-| [SRC-686F71AA50-L000168](../../agents/task_understanding.py#L168) | 168 | `"        return \"official_site_lookup\""` | — |
-| [SRC-686F71AA50-L000169](../../agents/task_understanding.py#L169) | 169 | `"    for family in ("` | — |
-| [SRC-686F71AA50-L000170](../../agents/task_understanding.py#L170) | 170 | `"        \"social_opinions\", \"summarize\", \"troubleshoot\", \"compare\","` | — |
-| [SRC-686F71AA50-L000171](../../agents/task_understanding.py#L171) | 171 | `"        \"lead_generation\", \"how_to\", \"recommendation\", \"current_information\","` | — |
-| [SRC-686F71AA50-L000172](../../agents/task_understanding.py#L172) | 172 | `"        \"find_or_discover\", \"explain_or_define\", \"general_research\","` | — |
-| [SRC-686F71AA50-L000173](../../agents/task_understanding.py#L173) | 173 | `"    ):"` | — |
-| [SRC-686F71AA50-L000174](../../agents/task_understanding.py#L174) | 174 | `"        if matches.get(family):"` | — |
-| [SRC-686F71AA50-L000175](../../agents/task_understanding.py#L175) | 175 | `"            return family"` | — |
-| [SRC-686F71AA50-L000176](../../agents/task_understanding.py#L176) | 176 | `"    if route == \"CLARIFY\":"` | — |
-| [SRC-686F71AA50-L000177](../../agents/task_understanding.py#L177) | 177 | `"        return \"ambiguous_or_incomplete\""` | — |
-| [SRC-686F71AA50-L000178](../../agents/task_understanding.py#L178) | 178 | `"    if route in {\"WEB_SIMPLE\", \"WEB_DEEP\", \"LEAD_GENERATION\"} or mode != \"auto\":"` | — |
-| [SRC-686F71AA50-L000179](../../agents/task_understanding.py#L179) | 179 | `"        return \"web_research\""` | — |
-| [SRC-686F71AA50-L000180](../../agents/task_understanding.py#L180) | 180 | `"    return \"general_question\""` | — |
+| [SRC-686F71AA50-L000164](../../agents/task_understanding.py#L164) | 164 | `"    # An explicit official-destination request is different from a request for an"` | — |
+| [SRC-686F71AA50-L000165](../../agents/task_understanding.py#L165) | 165 | `"    # article mentioning the organization; government verification is a separate slot."` | — |
+| [SRC-686F71AA50-L000166](../../agents/task_understanding.py#L166) | 166 | `"    if matches[\"official_site_lookup\"]:"` | — |
+| [SRC-686F71AA50-L000167](../../agents/task_understanding.py#L167) | 167 | `"        return \"official_site_lookup\""` | — |
+| [SRC-686F71AA50-L000168](../../agents/task_understanding.py#L168) | 168 | `"    for family in ("` | — |
+| [SRC-686F71AA50-L000169](../../agents/task_understanding.py#L169) | 169 | `"        \"social_opinions\", \"summarize\", \"troubleshoot\", \"compare\","` | — |
+| [SRC-686F71AA50-L000170](../../agents/task_understanding.py#L170) | 170 | `"        \"lead_generation\", \"how_to\", \"recommendation\", \"current_information\","` | — |
+| [SRC-686F71AA50-L000171](../../agents/task_understanding.py#L171) | 171 | `"        \"find_or_discover\", \"explain_or_define\", \"general_research\","` | — |
+| [SRC-686F71AA50-L000172](../../agents/task_understanding.py#L172) | 172 | `"    ):"` | — |
+| [SRC-686F71AA50-L000173](../../agents/task_understanding.py#L173) | 173 | `"        if matches.get(family):"` | — |
+| [SRC-686F71AA50-L000174](../../agents/task_understanding.py#L174) | 174 | `"            return family"` | — |
+| [SRC-686F71AA50-L000175](../../agents/task_understanding.py#L175) | 175 | `"    if route == \"CLARIFY\":"` | — |
+| [SRC-686F71AA50-L000176](../../agents/task_understanding.py#L176) | 176 | `"        return \"ambiguous_or_incomplete\""` | — |
+| [SRC-686F71AA50-L000177](../../agents/task_understanding.py#L177) | 177 | `"    if route in {\"WEB_SIMPLE\", \"WEB_DEEP\", \"LEAD_GENERATION\"} or mode != \"auto\":"` | — |
+| [SRC-686F71AA50-L000178](../../agents/task_understanding.py#L178) | 178 | `"        return \"web_research\""` | — |
+| [SRC-686F71AA50-L000179](../../agents/task_understanding.py#L179) | 179 | `"    return \"general_question\""` | — |
+| [SRC-686F71AA50-L000180](../../agents/task_understanding.py#L180) | 180 | `""` | — |
 | [SRC-686F71AA50-L000181](../../agents/task_understanding.py#L181) | 181 | `""` | — |
-| [SRC-686F71AA50-L000182](../../agents/task_understanding.py#L182) | 182 | `""` | — |
-| [SRC-686F71AA50-L000183](../../agents/task_understanding.py#L183) | 183 | `"def build_task_spec("` | — |
-| [SRC-686F71AA50-L000184](../../agents/task_understanding.py#L184) | 184 | `"    question: str,"` | — |
-| [SRC-686F71AA50-L000185](../../agents/task_understanding.py#L185) | 185 | `"    *,"` | — |
-| [SRC-686F71AA50-L000186](../../agents/task_understanding.py#L186) | 186 | `"    mode: str = \"auto\","` | — |
-| [SRC-686F71AA50-L000187](../../agents/task_understanding.py#L187) | 187 | `"    intent_route: str = \"\","` | — |
-| [SRC-686F71AA50-L000188](../../agents/task_understanding.py#L188) | 188 | `"    plan: dict[str, Any] \| None = None,"` | — |
-| [SRC-686F71AA50-L000189](../../agents/task_understanding.py#L189) | 189 | `"    dialogue_context: dict[str, Any] \| None = None,"` | — |
-| [SRC-686F71AA50-L000190](../../agents/task_understanding.py#L190) | 190 | `") -> dict[str, Any]:"` | — |
-| [SRC-686F71AA50-L000191](../../agents/task_understanding.py#L191) | 191 | `"    \"\"\"Build a bounded task specification, interpretation hypotheses, and test matrix.\"\"\""` | — |
-| [SRC-686F71AA50-L000192](../../agents/task_understanding.py#L192) | 192 | `"    raw = question if isinstance(question, str) else \"\""` | — |
-| [SRC-686F71AA50-L000193](../../agents/task_understanding.py#L193) | 193 | `"    raw = raw[:MAX_TASK_CHARS]"` | — |
-| [SRC-686F71AA50-L000194](../../agents/task_understanding.py#L194) | 194 | `"    normalized = normalize_text(raw)"` | — |
-| [SRC-686F71AA50-L000195](../../agents/task_understanding.py#L195) | 195 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
-| [SRC-686F71AA50-L000196](../../agents/task_understanding.py#L196) | 196 | `"    if clean_mode not in SUPPORTED_MODES:"` | — |
-| [SRC-686F71AA50-L000197](../../agents/task_understanding.py#L197) | 197 | `"        clean_mode = \"auto\""` | — |
-| [SRC-686F71AA50-L000198](../../agents/task_understanding.py#L198) | 198 | `"    matches = {family: _contains(normalized, phrases) for family, phrases in _PATTERNS.items()}"` | — |
-| [SRC-686F71AA50-L000199](../../agents/task_understanding.py#L199) | 199 | `"    aspect_values: list[str] = []"` | — |
-| [SRC-686F71AA50-L000200](../../agents/task_understanding.py#L200) | 200 | `"    try:"` | — |
-| [SRC-686F71AA50-L000201](../../agents/task_understanding.py#L201) | 201 | `"        from agents.aspect_planning import extract_aspects"` | — |
-| [SRC-686F71AA50-L000202](../../agents/task_understanding.py#L202) | 202 | `"        aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]"` | — |
-| [SRC-686F71AA50-L000203](../../agents/task_understanding.py#L203) | 203 | `"    except (ImportError, TypeError, ValueError):"` | — |
-| [SRC-686F71AA50-L000204](../../agents/task_understanding.py#L204) | 204 | `"        aspect_values = []"` | — |
-| [SRC-686F71AA50-L000205](../../agents/task_understanding.py#L205) | 205 | `""` | — |
-| [SRC-686F71AA50-L000206](../../agents/task_understanding.py#L206) | 206 | `"    official_site = bool("` | — |
-| [SRC-686F71AA50-L000207](../../agents/task_understanding.py#L207) | 207 | `"        matches[\"official_site_lookup\"]"` | — |
+| [SRC-686F71AA50-L000182](../../agents/task_understanding.py#L182) | 182 | `"def build_task_spec("` | — |
+| [SRC-686F71AA50-L000183](../../agents/task_understanding.py#L183) | 183 | `"    question: str,"` | — |
+| [SRC-686F71AA50-L000184](../../agents/task_understanding.py#L184) | 184 | `"    *,"` | — |
+| [SRC-686F71AA50-L000185](../../agents/task_understanding.py#L185) | 185 | `"    mode: str = \"auto\","` | — |
+| [SRC-686F71AA50-L000186](../../agents/task_understanding.py#L186) | 186 | `"    intent_route: str = \"\","` | — |
+| [SRC-686F71AA50-L000187](../../agents/task_understanding.py#L187) | 187 | `"    plan: dict[str, Any] \| None = None,"` | — |
+| [SRC-686F71AA50-L000188](../../agents/task_understanding.py#L188) | 188 | `"    dialogue_context: dict[str, Any] \| None = None,"` | — |
+| [SRC-686F71AA50-L000189](../../agents/task_understanding.py#L189) | 189 | `") -> dict[str, Any]:"` | — |
+| [SRC-686F71AA50-L000190](../../agents/task_understanding.py#L190) | 190 | `"    \"\"\"Build a bounded task specification, interpretation hypotheses, and test matrix.\"\"\""` | — |
+| [SRC-686F71AA50-L000191](../../agents/task_understanding.py#L191) | 191 | `"    raw = question if isinstance(question, str) else \"\""` | — |
+| [SRC-686F71AA50-L000192](../../agents/task_understanding.py#L192) | 192 | `"    raw = raw[:MAX_TASK_CHARS]"` | — |
+| [SRC-686F71AA50-L000193](../../agents/task_understanding.py#L193) | 193 | `"    normalized = normalize_text(raw)"` | — |
+| [SRC-686F71AA50-L000194](../../agents/task_understanding.py#L194) | 194 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
+| [SRC-686F71AA50-L000195](../../agents/task_understanding.py#L195) | 195 | `"    if clean_mode not in SUPPORTED_MODES:"` | — |
+| [SRC-686F71AA50-L000196](../../agents/task_understanding.py#L196) | 196 | `"        clean_mode = \"auto\""` | — |
+| [SRC-686F71AA50-L000197](../../agents/task_understanding.py#L197) | 197 | `"    matches = {family: _contains(normalized, phrases) for family, phrases in _PATTERNS.items()}"` | — |
+| [SRC-686F71AA50-L000198](../../agents/task_understanding.py#L198) | 198 | `"    aspect_values: list[str] = []"` | — |
+| [SRC-686F71AA50-L000199](../../agents/task_understanding.py#L199) | 199 | `"    try:"` | — |
+| [SRC-686F71AA50-L000200](../../agents/task_understanding.py#L200) | 200 | `"        from agents.aspect_planning import extract_aspects"` | — |
+| [SRC-686F71AA50-L000201](../../agents/task_understanding.py#L201) | 201 | `"        aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]"` | — |
+| [SRC-686F71AA50-L000202](../../agents/task_understanding.py#L202) | 202 | `"    except (ImportError, TypeError, ValueError):"` | — |
+| [SRC-686F71AA50-L000203](../../agents/task_understanding.py#L203) | 203 | `"        aspect_values = []"` | — |
+| [SRC-686F71AA50-L000204](../../agents/task_understanding.py#L204) | 204 | `""` | — |
+| [SRC-686F71AA50-L000205](../../agents/task_understanding.py#L205) | 205 | `"    official_destination = bool(matches[\"official_site_lookup\"])"` | — |
+| [SRC-686F71AA50-L000206](../../agents/task_understanding.py#L206) | 206 | `"    government_official_site = bool("` | — |
+| [SRC-686F71AA50-L000207](../../agents/task_understanding.py#L207) | 207 | `"        official_destination"` | — |
 | [SRC-686F71AA50-L000208](../../agents/task_understanding.py#L208) | 208 | `"        and any(normalize_text(word) in normalized for word in _OFFICIAL_WORDS)"` | — |
 | [SRC-686F71AA50-L000209](../../agents/task_understanding.py#L209) | 209 | `"    )"` | — |
-| [SRC-686F71AA50-L000210](../../agents/task_understanding.py#L210) | 210 | `"    navigation = official_site or bool("` | — |
+| [SRC-686F71AA50-L000210](../../agents/task_understanding.py#L210) | 210 | `"    navigation = official_destination or bool("` | — |
 | [SRC-686F71AA50-L000211](../../agents/task_understanding.py#L211) | 211 | `"        _URL_RE.search(raw)"` | — |
-| [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"        or any(normalize_text(term) in normalized for term in (\"هات رابط\", \"الموقع الرسمي\", \"website\", \"homepage\"))"` | — |
+| [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"        or any(normalize_text(term) in normalized for term in (\"هات رابط\", \"website\", \"homepage\"))"` | — |
 | [SRC-686F71AA50-L000213](../../agents/task_understanding.py#L213) | 213 | `"    )"` | — |
 | [SRC-686F71AA50-L000214](../../agents/task_understanding.py#L214) | 214 | `"    explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))"` | — |
 | [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"    current_required = (clean_mode == \"latest\" or explicit_freshness) and not navigation"` | — |
@@ -796,41 +843,3 @@
 | [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `"    # short fragment explicitly marked as contextual."` | — |
 | [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    unresolved = bool(context.get(\"needs_clarification\")) or ("` | — |
 | [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"        len(raw.strip()) <= 28 and unresolved_followup"` | — |
-| [SRC-686F71AA50-L000324](../../agents/task_understanding.py#L324) | 324 | `"        and not context.get(\"resolved_question\")"` | — |
-| [SRC-686F71AA50-L000325](../../agents/task_understanding.py#L325) | 325 | `"    )"` | — |
-| [SRC-686F71AA50-L000326](../../agents/task_understanding.py#L326) | 326 | `"    if unresolved:"` | — |
-| [SRC-686F71AA50-L000327](../../agents/task_understanding.py#L327) | 327 | `"        ambiguity_status = \"needs_clarification\""` | — |
-| [SRC-686F71AA50-L000328](../../agents/task_understanding.py#L328) | 328 | `"    elif len(hypothesis_rows) >= 3:"` | — |
-| [SRC-686F71AA50-L000329](../../agents/task_understanding.py#L329) | 329 | `"        ambiguity_status = \"multiple_overlapping_signals\""` | — |
-| [SRC-686F71AA50-L000330](../../agents/task_understanding.py#L330) | 330 | `"    elif len(hypothesis_rows) == 2:"` | — |
-| [SRC-686F71AA50-L000331](../../agents/task_understanding.py#L331) | 331 | `"        ambiguity_status = \"some_intent_overlap\""` | — |
-| [SRC-686F71AA50-L000332](../../agents/task_understanding.py#L332) | 332 | `"    else:"` | — |
-| [SRC-686F71AA50-L000333](../../agents/task_understanding.py#L333) | 333 | `"        ambiguity_status = \"no_strong_lexical_conflict_detected\""` | — |
-| [SRC-686F71AA50-L000334](../../agents/task_understanding.py#L334) | 334 | `""` | — |
-| [SRC-686F71AA50-L000335](../../agents/task_understanding.py#L335) | 335 | `"    tools: list[str] = []"` | — |
-| [SRC-686F71AA50-L000336](../../agents/task_understanding.py#L336) | 336 | `"    if intent_route in {\"WEB_SIMPLE\", \"WEB_DEEP\", \"LEAD_GENERATION\"} or clean_mode != \"auto\":"` | — |
-| [SRC-686F71AA50-L000337](../../agents/task_understanding.py#L337) | 337 | `"        tools.append(\"web_search\")"` | — |
-| [SRC-686F71AA50-L000338](../../agents/task_understanding.py#L338) | 338 | `"    if urls or navigation or family == \"summarize\":"` | — |
-| [SRC-686F71AA50-L000339](../../agents/task_understanding.py#L339) | 339 | `"        tools.append(\"page_fetch\")"` | — |
-| [SRC-686F71AA50-L000340](../../agents/task_understanding.py#L340) | 340 | `"    if social_required:"` | — |
-| [SRC-686F71AA50-L000341](../../agents/task_understanding.py#L341) | 341 | `"        tools.append(\"public_social_search_if_configured\")"` | — |
-| [SRC-686F71AA50-L000342](../../agents/task_understanding.py#L342) | 342 | `"    if intent_route != \"LOCAL\":"` | — |
-| [SRC-686F71AA50-L000343](../../agents/task_understanding.py#L343) | 343 | `"        tools.append(\"language_model_generation_if_configured\")"` | — |
-| [SRC-686F71AA50-L000344](../../agents/task_understanding.py#L344) | 344 | `"    if tools and (\"web_search\" in tools or social_required):"` | — |
-| [SRC-686F71AA50-L000345](../../agents/task_understanding.py#L345) | 345 | `"        tools.append(\"claim_review_if_configured\")"` | — |
-| [SRC-686F71AA50-L000346](../../agents/task_understanding.py#L346) | 346 | `"    constraints = {"` | — |
-| [SRC-686F71AA50-L000347](../../agents/task_understanding.py#L347) | 347 | `"        \"explicit_locations\": location,"` | — |
-| [SRC-686F71AA50-L000348](../../agents/task_understanding.py#L348) | 348 | `"        \"explicit_years\": years,"` | — |
-| [SRC-686F71AA50-L000349](../../agents/task_understanding.py#L349) | 349 | `"        \"explicit_dates\": dates,"` | — |
-| [SRC-686F71AA50-L000350](../../agents/task_understanding.py#L350) | 350 | `"        \"explicit_budgets\": budgets,"` | — |
-| [SRC-686F71AA50-L000351](../../agents/task_understanding.py#L351) | 351 | `"        \"explicit_urls\": urls,"` | — |
-| [SRC-686F71AA50-L000352](../../agents/task_understanding.py#L352) | 352 | `"        \"explicit_aspects\": explicit_aspects,"` | — |
-| [SRC-686F71AA50-L000353](../../agents/task_understanding.py#L353) | 353 | `"        \"time_sensitive_request\": current_required,"` | — |
-| [SRC-686F71AA50-L000354](../../agents/task_understanding.py#L354) | 354 | `"        \"official_site_required\": official_site,"` | — |
-| [SRC-686F71AA50-L000355](../../agents/task_understanding.py#L355) | 355 | `"        \"social_evidence_requested\": social_required,"` | — |
-| [SRC-686F71AA50-L000356](../../agents/task_understanding.py#L356) | 356 | `"        \"language_profile\": _language_profile(raw),"` | — |
-| [SRC-686F71AA50-L000357](../../agents/task_understanding.py#L357) | 357 | `"        \"source_policy\": ("` | — |
-| [SRC-686F71AA50-L000358](../../agents/task_understanding.py#L358) | 358 | `"            \"official_destination\" if official_site"` | — |
-| [SRC-686F71AA50-L000359](../../agents/task_understanding.py#L359) | 359 | `"            else \"current_read_page\" if current_required"` | — |
-| [SRC-686F71AA50-L000360](../../agents/task_understanding.py#L360) | 360 | `"            else \"public_social_content\" if social_required"` | — |
-| [SRC-686F71AA50-L000361](../../agents/task_understanding.py#L361) | 361 | `"            else \"task_relevant_sources\""` | — |
