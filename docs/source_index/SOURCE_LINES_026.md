@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000161 إلى SRC-3451CC474D-L000631
+- النطاق: SRC-1C77C97630-L000155 إلى SRC-3451CC474D-L000625
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000155](../../tests/test_answer_validation.py#L155) | 155 | `"    }"` | — |
+| [SRC-1C77C97630-L000156](../../tests/test_answer_validation.py#L156) | 156 | `"    good = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000157](../../tests/test_answer_validation.py#L157) | 157 | `"        \"What changed?\","` | — |
+| [SRC-1C77C97630-L000158](../../tests/test_answer_validation.py#L158) | 158 | `"        \"Renewable energy storage costs decreased [source 1].\","` | — |
+| [SRC-1C77C97630-L000159](../../tests/test_answer_validation.py#L159) | 159 | `"        [page_source],"` | — |
+| [SRC-1C77C97630-L000160](../../tests/test_answer_validation.py#L160) | 160 | `"    )"` | — |
 | [SRC-1C77C97630-L000161](../../tests/test_answer_validation.py#L161) | 161 | `"    assert good[\"citation_lexical_alignment_method\"] == \"content_word_overlap_heuristic_not_entailment\""` | — |
 | [SRC-1C77C97630-L000162](../../tests/test_answer_validation.py#L162) | 162 | `"    assert good[\"citation_lexical_alignment\"][0][\"status\"] == \"lexical_overlap_signal_found\""` | — |
 | [SRC-1C77C97630-L000163](../../tests/test_answer_validation.py#L163) | 163 | `"    assert good[\"citation_lexical_alignment\"][0][\"citations\"][0][\"evidence_basis\"] == \"extracted_page_text\""` | — |
@@ -819,9 +825,3 @@
 | [SRC-3451CC474D-L000623](../../tests/test_api.py#L623) | 623 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
 | [SRC-3451CC474D-L000624](../../tests/test_api.py#L624) | 624 | `"        client.settimeout(1.2)"` | — |
 | [SRC-3451CC474D-L000625](../../tests/test_api.py#L625) | 625 | `"        started = time.monotonic()"` | — |
-| [SRC-3451CC474D-L000626](../../tests/test_api.py#L626) | 626 | `"        client.sendall("` | — |
-| [SRC-3451CC474D-L000627](../../tests/test_api.py#L627) | 627 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
-| [SRC-3451CC474D-L000628](../../tests/test_api.py#L628) | 628 | `"            b\"Host: localhost\\r\\n\""` | — |
-| [SRC-3451CC474D-L000629](../../tests/test_api.py#L629) | 629 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
-| [SRC-3451CC474D-L000630](../../tests/test_api.py#L630) | 630 | `"            b\"Content-Length: 40\\r\\n\""` | — |
-| [SRC-3451CC474D-L000631](../../tests/test_api.py#L631) | 631 | `"            b\"X-Slow: \""` | — |

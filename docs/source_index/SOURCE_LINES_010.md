@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004482 إلى SRC-1AE03B9EC3-L005281
+- النطاق: SRC-1AE03B9EC3-L004476 إلى SRC-1AE03B9EC3-L005275
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004476](../../agents/web_agent.py#L4476) | 4476 | `"            has_read_user_supplied_page"` | — |
+| [SRC-1AE03B9EC3-L004477](../../agents/web_agent.py#L4477) | 4477 | `"            and len(sources) == 1"` | — |
+| [SRC-1AE03B9EC3-L004478](../../agents/web_agent.py#L4478) | 4478 | `"            and len(independent_domains) == 1"` | — |
+| [SRC-1AE03B9EC3-L004479](../../agents/web_agent.py#L4479) | 4479 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L004480](../../agents/web_agent.py#L4480) | 4480 | `"        if single_source_page_summary:"` | — |
+| [SRC-1AE03B9EC3-L004481](../../agents/web_agent.py#L4481) | 4481 | `"            search_warnings.append("` | — |
 | [SRC-1AE03B9EC3-L004482](../../agents/web_agent.py#L4482) | 4482 | `"                \"هذا ملخص للرابط الذي قدمته فقط؛ لم يتم تأكيد محتواه من مصدر مستقل آخر.\""` | — |
 | [SRC-1AE03B9EC3-L004483](../../agents/web_agent.py#L4483) | 4483 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004484](../../agents/web_agent.py#L4484) | 4484 | `"            search_warning = \"؛ \".join(search_warnings)"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L005273](../../agents/web_agent.py#L5273) | 5273 | `"                                new_text = str(candidate.get(text_key) or \"\")"` | — |
 | [SRC-1AE03B9EC3-L005274](../../agents/web_agent.py#L5274) | 5274 | `"                                if len(new_text) > len(old_text):"` | — |
 | [SRC-1AE03B9EC3-L005275](../../agents/web_agent.py#L5275) | 5275 | `"                                    merged[text_key] = candidate[text_key]"` | — |
-| [SRC-1AE03B9EC3-L005276](../../agents/web_agent.py#L5276) | 5276 | `"                                    source_enriched = True"` | — |
-| [SRC-1AE03B9EC3-L005277](../../agents/web_agent.py#L5277) | 5277 | `"                            if candidate.get(\"page_fetched\") and not existing_source.get(\"page_fetched\"):"` | — |
-| [SRC-1AE03B9EC3-L005278](../../agents/web_agent.py#L5278) | 5278 | `"                                merged[\"page_fetched\"] = True"` | — |
-| [SRC-1AE03B9EC3-L005279](../../agents/web_agent.py#L5279) | 5279 | `"                                source_enriched = True"` | — |
-| [SRC-1AE03B9EC3-L005280](../../agents/web_agent.py#L5280) | 5280 | `"                            if source_enriched:"` | — |
-| [SRC-1AE03B9EC3-L005281](../../agents/web_agent.py#L5281) | 5281 | `"                                evidence_updated = True"` | — |

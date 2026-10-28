@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000482 إلى SRC-1AE03B9EC3-L001281
+- النطاق: SRC-1AE03B9EC3-L000476 إلى SRC-1AE03B9EC3-L001275
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000476](../../agents/web_agent.py#L476) | 476 | `"                \"DeepSeek Search API when DEEPSEEK_SEARCH_API_KEY is configured (optional; may incur charges)\","` | — |
+| [SRC-1AE03B9EC3-L000477](../../agents/web_agent.py#L477) | 477 | `"                \"OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1\","` | — |
+| [SRC-1AE03B9EC3-L000478](../../agents/web_agent.py#L478) | 478 | `"                \"Brave Search API when BRAVE_SEARCH_API_KEY is configured\","` | — |
+| [SRC-1AE03B9EC3-L000479](../../agents/web_agent.py#L479) | 479 | `"                \"Tavily Search API when TAVILY_API_KEY is configured\","` | — |
+| [SRC-1AE03B9EC3-L000480](../../agents/web_agent.py#L480) | 480 | `"            ],"` | — |
+| [SRC-1AE03B9EC3-L000481](../../agents/web_agent.py#L481) | 481 | `"            \"brave_search_api_configured\": bool(os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()),"` | — |
 | [SRC-1AE03B9EC3-L000482](../../agents/web_agent.py#L482) | 482 | `"            \"deepseek_search_api_configured\": bool("` | — |
 | [SRC-1AE03B9EC3-L000483](../../agents/web_agent.py#L483) | 483 | `"                os.getenv(\"DEEPSEEK_SEARCH_API_KEY\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L000484](../../agents/web_agent.py#L484) | 484 | `"            ),"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"                \"Accept\": \"application/json\","` | — |
 | [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"                \"User-Agent\": \"OmaraiResearchAgent/1.0\","` | — |
 | [SRC-1AE03B9EC3-L001275](../../agents/web_agent.py#L1275) | 1275 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001276](../../agents/web_agent.py#L1276) | 1276 | `"            json={"` | — |
-| [SRC-1AE03B9EC3-L001277](../../agents/web_agent.py#L1277) | 1277 | `"                \"query\": _normalize_search_query(query)[:128] or \"public web search\","` | — |
-| [SRC-1AE03B9EC3-L001278](../../agents/web_agent.py#L1278) | 1278 | `"                \"count\": min(MAX_PROVIDER_RESULTS, 10),"` | — |
-| [SRC-1AE03B9EC3-L001279](../../agents/web_agent.py#L1279) | 1279 | `"                \"need_content\": False,"` | — |
-| [SRC-1AE03B9EC3-L001280](../../agents/web_agent.py#L1280) | 1280 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001281](../../agents/web_agent.py#L1281) | 1281 | `"            timeout=self._effective_timeout(9.0),"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001942 إلى SRC-E73001D9AC-L000578
+- النطاق: SRC-E599346ABE-L001936 إلى SRC-E73001D9AC-L000572
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001936](../generate_index.py#L1936) | 1936 | `"            pages_directory = root / SOURCE_LINES_PAGES_DIR"` | — |
+| [SRC-E599346ABE-L001937](../generate_index.py#L1937) | 1937 | `"            if pages_directory.exists():"` | — |
+| [SRC-E599346ABE-L001938](../generate_index.py#L1938) | 1938 | `"                expected_page_names = {"` | — |
+| [SRC-E599346ABE-L001939](../generate_index.py#L1939) | 1939 | `"                    Path(relative_path).name"` | — |
+| [SRC-E599346ABE-L001940](../generate_index.py#L1940) | 1940 | `"                    for relative_path in source_pages"` | — |
+| [SRC-E599346ABE-L001941](../generate_index.py#L1941) | 1941 | `"                }"` | — |
 | [SRC-E599346ABE-L001942](../generate_index.py#L1942) | 1942 | `"                for path in pages_directory.iterdir():"` | — |
 | [SRC-E599346ABE-L001943](../generate_index.py#L1943) | 1943 | `"                    if ("` | — |
 | [SRC-E599346ABE-L001944](../generate_index.py#L1944) | 1944 | `"                        path.is_file()"` | — |
@@ -846,9 +852,3 @@
 | [SRC-E73001D9AC-L000570](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L570) | 570 | `"- تحديد هدف مقبول لفقدان البيانات (RPO) وزمن التعافي (RTO) عندما تتطلب الخدمة ذلك."` | — |
 | [SRC-E73001D9AC-L000571](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L571) | 571 | `"- توثيق الخطوات اليدوية التي لا تزال ضرورية في مرحلة الاستضافة الحالية."` | — |
 | [SRC-E73001D9AC-L000572](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L572) | 572 | `""` | — |
-| [SRC-E73001D9AC-L000573](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L573) | 573 | `"## 17. خطة التدهور الآمن"` | — |
-| [SRC-E73001D9AC-L000574](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L574) | 574 | `"عند الضغط أو تعطل خدمة خارجية، يجوز تقليل ميزات اختيارية بترتيب محدد، مثل:"` | — |
-| [SRC-E73001D9AC-L000575](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L575) | 575 | `"1. إلغاء المراجعة الإضافية غير الضرورية."` | — |
-| [SRC-E73001D9AC-L000576](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L576) | 576 | `"2. تقليل عدد استعلامات البحث ضمن حد يحافظ على الحد الأدنى للجودة."` | — |
-| [SRC-E73001D9AC-L000577](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L577) | 577 | `"3. إيقاف موصل متدهور مؤقتًا بدائرة قاطع."` | — |
-| [SRC-E73001D9AC-L000578](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L578) | 578 | `"4. إعادة إجابة جزئية موثقة بالحدود عند ملاءمتها."` | — |

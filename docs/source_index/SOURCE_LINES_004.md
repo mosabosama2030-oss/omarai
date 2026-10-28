@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000435 إلى SRC-1AE03B9EC3-L000481
+- النطاق: SRC-59CF4B7DE8-L000429 إلى SRC-1AE03B9EC3-L000475
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000429](../../agents/research.py#L429) | 429 | `"        query = _compact(batch.get(\"query\", \"\"), 500)"` | — |
+| [SRC-59CF4B7DE8-L000430](../../agents/research.py#L430) | 430 | `"        provider = _compact(batch.get(\"provider\", \"search\"), 80)"` | — |
+| [SRC-59CF4B7DE8-L000431](../../agents/research.py#L431) | 431 | `"        results = batch.get(\"results\", [])"` | — |
+| [SRC-59CF4B7DE8-L000432](../../agents/research.py#L432) | 432 | `"        if not isinstance(results, list):"` | — |
+| [SRC-59CF4B7DE8-L000433](../../agents/research.py#L433) | 433 | `"            continue"` | — |
+| [SRC-59CF4B7DE8-L000434](../../agents/research.py#L434) | 434 | `"        for position, source in enumerate(results, 1):"` | — |
 | [SRC-59CF4B7DE8-L000435](../../agents/research.py#L435) | 435 | `"            if not isinstance(source, dict) or not source.get(\"url\"):"` | — |
 | [SRC-59CF4B7DE8-L000436](../../agents/research.py#L436) | 436 | `"                continue"` | — |
 | [SRC-59CF4B7DE8-L000437](../../agents/research.py#L437) | 437 | `"            url = _canonical_result_url(str(source[\"url\"]))"` | — |
@@ -819,9 +825,3 @@
 | [SRC-1AE03B9EC3-L000473](../../agents/web_agent.py#L473) | 473 | `"                \"DuckDuckGo HTML\","` | — |
 | [SRC-1AE03B9EC3-L000474](../../agents/web_agent.py#L474) | 474 | `"                \"Bing RSS\","` | — |
 | [SRC-1AE03B9EC3-L000475](../../agents/web_agent.py#L475) | 475 | `"                \"Google News RSS for fresh queries\","` | — |
-| [SRC-1AE03B9EC3-L000476](../../agents/web_agent.py#L476) | 476 | `"                \"DeepSeek Search API when DEEPSEEK_SEARCH_API_KEY is configured (optional; may incur charges)\","` | — |
-| [SRC-1AE03B9EC3-L000477](../../agents/web_agent.py#L477) | 477 | `"                \"OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1\","` | — |
-| [SRC-1AE03B9EC3-L000478](../../agents/web_agent.py#L478) | 478 | `"                \"Brave Search API when BRAVE_SEARCH_API_KEY is configured\","` | — |
-| [SRC-1AE03B9EC3-L000479](../../agents/web_agent.py#L479) | 479 | `"                \"Tavily Search API when TAVILY_API_KEY is configured\","` | — |
-| [SRC-1AE03B9EC3-L000480](../../agents/web_agent.py#L480) | 480 | `"            ],"` | — |
-| [SRC-1AE03B9EC3-L000481](../../agents/web_agent.py#L481) | 481 | `"            \"brave_search_api_configured\": bool(os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()),"` | — |

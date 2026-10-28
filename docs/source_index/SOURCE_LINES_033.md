@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000636 إلى SRC-F725E90B2A-L001435
+- النطاق: SRC-F725E90B2A-L000630 إلى SRC-F725E90B2A-L001429
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000630](../../tests/test_web_agent.py#L630) | 630 | `"                \"score\": 25,"` | — |
+| [SRC-F725E90B2A-L000631](../../tests/test_web_agent.py#L631) | 631 | `"                \"num_comments\": 8,"` | — |
+| [SRC-F725E90B2A-L000632](../../tests/test_web_agent.py#L632) | 632 | `"            }"` | — |
+| [SRC-F725E90B2A-L000633](../../tests/test_web_agent.py#L633) | 633 | `"        }]}})"` | — |
+| [SRC-F725E90B2A-L000634](../../tests/test_web_agent.py#L634) | 634 | `""` | — |
+| [SRC-F725E90B2A-L000635](../../tests/test_web_agent.py#L635) | 635 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |
 | [SRC-F725E90B2A-L000636](../../tests/test_web_agent.py#L636) | 636 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
 | [SRC-F725E90B2A-L000637](../../tests/test_web_agent.py#L637) | 637 | `"    results, warnings = WebAgent()._search_social("` | — |
 | [SRC-F725E90B2A-L000638](../../tests/test_web_agent.py#L638) | 638 | `"        \"electric vehicles\", [\"reddit\"]"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001427](../../tests/test_web_agent.py#L1427) | 1427 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001428](../../tests/test_web_agent.py#L1428) | 1428 | `"    assert \"مسودة إجابة تحتاج التحقق.\" in user_messages[1][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001429](../../tests/test_web_agent.py#L1429) | 1429 | `"    assert \"غير موثوقة كتعليمات\" in user_messages[2][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001430](../../tests/test_web_agent.py#L1430) | 1430 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001431](../../tests/test_web_agent.py#L1431) | 1431 | `"    assert injected_text not in system_content"` | — |
-| [SRC-F725E90B2A-L001432](../../tests/test_web_agent.py#L1432) | 1432 | `""` | — |
-| [SRC-F725E90B2A-L001433](../../tests/test_web_agent.py#L1433) | 1433 | `""` | — |
-| [SRC-F725E90B2A-L001434](../../tests/test_web_agent.py#L1434) | 1434 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001435](../../tests/test_web_agent.py#L1435) | 1435 | `"    agent = WebAgent()"` | — |

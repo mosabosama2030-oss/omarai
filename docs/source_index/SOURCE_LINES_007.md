@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002082 إلى SRC-1AE03B9EC3-L002881
+- النطاق: SRC-1AE03B9EC3-L002076 إلى SRC-1AE03B9EC3-L002875
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002076](../../agents/web_agent.py#L2076) | 2076 | `"                        if not username or not post_id:"` | — |
+| [SRC-1AE03B9EC3-L002077](../../agents/web_agent.py#L2077) | 2077 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L002078](../../agents/web_agent.py#L2078) | 2078 | `"                        results.append({"` | — |
+| [SRC-1AE03B9EC3-L002079](../../agents/web_agent.py#L2079) | 2079 | `"                            \"title\": _clean_text(author.get(\"name\") or username, 300),"` | — |
+| [SRC-1AE03B9EC3-L002080](../../agents/web_agent.py#L2080) | 2080 | `"                            \"url\": f\"https://x.com/{username}/status/{post_id}\","` | — |
+| [SRC-1AE03B9EC3-L002081](../../agents/web_agent.py#L2081) | 2081 | `"                            \"snippet\": _clean_text(item.get(\"text\") or \"\", 1200),"` | — |
 | [SRC-1AE03B9EC3-L002082](../../agents/web_agent.py#L2082) | 2082 | `"                            \"page_text\": \"\","` | — |
 | [SRC-1AE03B9EC3-L002083](../../agents/web_agent.py#L2083) | 2083 | `"                            \"page_fetched\": False,"` | — |
 | [SRC-1AE03B9EC3-L002084](../../agents/web_agent.py#L2084) | 2084 | `"                            \"provider\": \"x_official_api\","` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L002873](../../agents/web_agent.py#L2873) | 2873 | `"                        error_class=type(exc).__name__,"` | — |
 | [SRC-1AE03B9EC3-L002874](../../agents/web_agent.py#L2874) | 2874 | `"                        request_started=False,"` | — |
 | [SRC-1AE03B9EC3-L002875](../../agents/web_agent.py#L2875) | 2875 | `"                        remote_response_received=False,"` | — |
-| [SRC-1AE03B9EC3-L002876](../../agents/web_agent.py#L2876) | 2876 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L002877](../../agents/web_agent.py#L2877) | 2877 | `"                    raise"` | — |
-| [SRC-1AE03B9EC3-L002878](../../agents/web_agent.py#L2878) | 2878 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L002879](../../agents/web_agent.py#L2879) | 2879 | `"                request_timeout = timeout or self.timeout"` | — |
-| [SRC-1AE03B9EC3-L002880](../../agents/web_agent.py#L2880) | 2880 | `"            request_payload: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L002881](../../agents/web_agent.py#L2881) | 2881 | `"                \"model\": candidate_model,"` | — |

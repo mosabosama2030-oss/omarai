@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003036 إلى SRC-DE7EABE998-L000391
+- النطاق: SRC-F725E90B2A-L003030 إلى SRC-DE7EABE998-L000385
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003030](../../tests/test_web_agent.py#L3030) | 3030 | `""` | — |
+| [SRC-F725E90B2A-L003031](../../tests/test_web_agent.py#L3031) | 3031 | `"    with pytest.raises(RuntimeError, match=\"لم تُرجع موصلات البحث\"):"` | — |
+| [SRC-F725E90B2A-L003032](../../tests/test_web_agent.py#L3032) | 3032 | `"        agent._search_web(query)"` | — |
+| [SRC-F725E90B2A-L003033](../../tests/test_web_agent.py#L3033) | 3033 | `""` | — |
+| [SRC-F725E90B2A-L003034](../../tests/test_web_agent.py#L3034) | 3034 | `"    diagnostic = next("` | — |
+| [SRC-F725E90B2A-L003035](../../tests/test_web_agent.py#L3035) | 3035 | `"        item for item in agent._provider_diagnostics"` | — |
 | [SRC-F725E90B2A-L003036](../../tests/test_web_agent.py#L3036) | 3036 | `"        if item.get(\"provider\") == \"duckduckgo_html\""` | — |
 | [SRC-F725E90B2A-L003037](../../tests/test_web_agent.py#L3037) | 3037 | `"    )"` | — |
 | [SRC-F725E90B2A-L003038](../../tests/test_web_agent.py#L3038) | 3038 | `"    assert diagnostic[\"status\"] == \"filtered_all\""` | — |
@@ -819,9 +825,3 @@
 | [SRC-DE7EABE998-L000383](../../web/agent.html#L383) | 383 | `"async function checkHealth(){"` | — |
 | [SRC-DE7EABE998-L000384](../../web/agent.html#L384) | 384 | `" try{"` | — |
 | [SRC-DE7EABE998-L000385](../../web/agent.html#L385) | 385 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
-| [SRC-DE7EABE998-L000386](../../web/agent.html#L386) | 386 | `"  const configured=[];"` | — |
-| [SRC-DE7EABE998-L000387](../../web/agent.html#L387) | 387 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
-| [SRC-DE7EABE998-L000388](../../web/agent.html#L388) | 388 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |
-| [SRC-DE7EABE998-L000389](../../web/agent.html#L389) | 389 | `"  if(a.reddit_oauth_configured)configured.push(\"Reddit OAuth\");"` | — |
-| [SRC-DE7EABE998-L000390](../../web/agent.html#L390) | 390 | `"  if(a.facebook_pages_api_configured)configured.push(\"Facebook Pages\");"` | — |
-| [SRC-DE7EABE998-L000391](../../web/agent.html#L391) | 391 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |

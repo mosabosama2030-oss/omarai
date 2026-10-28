@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000424 إلى SRC-26428BDA96-L000120
+- النطاق: SRC-EEF2E6447C-L000418 إلى SRC-26428BDA96-L000114
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000418](../../api/omarai.py#L418) | 418 | `"            while len(body) < size:"` | — |
+| [SRC-EEF2E6447C-L000419](../../api/omarai.py#L419) | 419 | `"                remaining = deadline - time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000420](../../api/omarai.py#L420) | 420 | `"                if remaining <= 0:"` | — |
+| [SRC-EEF2E6447C-L000421](../../api/omarai.py#L421) | 421 | `"                    timed_out = True"` | — |
+| [SRC-EEF2E6447C-L000422](../../api/omarai.py#L422) | 422 | `"                    break"` | — |
+| [SRC-EEF2E6447C-L000423](../../api/omarai.py#L423) | 423 | `"                self.connection.settimeout(min(idle_timeout, remaining))"` | — |
 | [SRC-EEF2E6447C-L000424](../../api/omarai.py#L424) | 424 | `"                try:"` | — |
 | [SRC-EEF2E6447C-L000425](../../api/omarai.py#L425) | 425 | `"                    # read1 performs at most one underlying read, letting us re-check"` | — |
 | [SRC-EEF2E6447C-L000426](../../api/omarai.py#L426) | 426 | `"                    # the absolute deadline between body fragments."` | — |
@@ -873,9 +879,3 @@
 | [SRC-26428BDA96-L000112](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L112) | 112 | `"### A-05 — تهيئة Origin خلف الوكيل العكسي تحتاج تأكيدًا تشغيليًا"` | — |
 | [SRC-26428BDA96-L000113](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) | 113 | `"**النتيجة:** مشروطة بإعداد الاستضافة الفعلي."` | — |
 | [SRC-26428BDA96-L000114](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L114) | 114 | `""` | — |
-| [SRC-26428BDA96-L000115](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) | 115 | `"في وضع النشر العام، يضيف _allowed_origins أصولًا مشتقة من Host وX-Forwarded-Host وX-Forwarded-Proto في الطلب الوارد. ويمكن أن يكون هذا مقبولًا إذا كان الوكيل العكسي الموثوق يحذف رؤوس العميل ويعيد كتابتها بشكل صحيح؛ أما الاعتماد على رؤوس قابلة للتلاعب مباشرة دون إثبات هذا الشرط في بيئة النشر فلا يكفي. كما يعتمد rate limiting على عنوان اتصال الخادم افتراضيًا، ولا يقرأ X-Forwarded-For إلا عند تفعيل OMARAI_TRUST_PROXY_HEADERS=1؛ يجب التأكد أن الإعداد في البيئة الحقيقية لا يجعل كل العملاء خلف الوكيل يشاركون bucket واحدًا أو يجعل الترويسات القابلة للانتحال أساسًا للحدود."` | — |
-| [SRC-26428BDA96-L000116](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) | 116 | `""` | — |
-| [SRC-26428BDA96-L000117](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L117) | 117 | `"**المطلوب:** ضبط OMARAI_ALLOWED_ORIGINS صراحةً للنطاق الموثوق، والتحقق من سلوك proxy headers في الاستضافة الفعلية، واختبار الطلبات من أصول غير مسموحة ومن ترويسات مزورة."` | — |
-| [SRC-26428BDA96-L000118](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L118) | 118 | `""` | — |
-| [SRC-26428BDA96-L000119](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L119) | 119 | `"### A-06 — رمز Bearer مشترك محفوظ في localStorage"` | — |
-| [SRC-26428BDA96-L000120](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L120) | 120 | `"**النتيجة:** تصميم مقبول لتجربة خاصة بسيطة، لكنه يوسّع أثر أي XSS ولا يقدم هوية أو صلاحيات فردية."` | — |

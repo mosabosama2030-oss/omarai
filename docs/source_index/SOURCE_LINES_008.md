@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002882 إلى SRC-1AE03B9EC3-L003681
+- النطاق: SRC-1AE03B9EC3-L002876 إلى SRC-1AE03B9EC3-L003675
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002876](../../agents/web_agent.py#L2876) | 2876 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L002877](../../agents/web_agent.py#L2877) | 2877 | `"                    raise"` | — |
+| [SRC-1AE03B9EC3-L002878](../../agents/web_agent.py#L2878) | 2878 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L002879](../../agents/web_agent.py#L2879) | 2879 | `"                request_timeout = timeout or self.timeout"` | — |
+| [SRC-1AE03B9EC3-L002880](../../agents/web_agent.py#L2880) | 2880 | `"            request_payload: dict[str, Any] = {"` | — |
+| [SRC-1AE03B9EC3-L002881](../../agents/web_agent.py#L2881) | 2881 | `"                \"model\": candidate_model,"` | — |
 | [SRC-1AE03B9EC3-L002882](../../agents/web_agent.py#L2882) | 2882 | `"                \"messages\": messages,"` | — |
 | [SRC-1AE03B9EC3-L002883](../../agents/web_agent.py#L2883) | 2883 | `"                \"temperature\": temperature,"` | — |
 | [SRC-1AE03B9EC3-L002884](../../agents/web_agent.py#L2884) | 2884 | `"                \"max_tokens\": max(100, min(int(max_tokens), 3000)),"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L003673](../../agents/web_agent.py#L3673) | 3673 | `"            \"Wikipedia\","` | — |
 | [SRC-1AE03B9EC3-L003674](../../agents/web_agent.py#L3674) | 3674 | `"            \"site:gov.eg وزارة الإسكان\","` | — |
 | [SRC-1AE03B9EC3-L003675](../../agents/web_agent.py#L3675) | 3675 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003676](../../agents/web_agent.py#L3676) | 3676 | `"        probe_sources: dict[str, dict[str, Any]] = {}"` | — |
-| [SRC-1AE03B9EC3-L003677](../../agents/web_agent.py#L3677) | 3677 | `"        completed_connector_responses = 0"` | — |
-| [SRC-1AE03B9EC3-L003678](../../agents/web_agent.py#L3678) | 3678 | `"        probe_errors: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003679](../../agents/web_agent.py#L3679) | 3679 | `"        probes_attempted = 0"` | — |
-| [SRC-1AE03B9EC3-L003680](../../agents/web_agent.py#L3680) | 3680 | `"        for probe_query in probe_queries:"` | — |
-| [SRC-1AE03B9EC3-L003681](../../agents/web_agent.py#L3681) | 3681 | `"            probes_attempted += 1"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001282 إلى SRC-1AE03B9EC3-L002081
+- النطاق: SRC-1AE03B9EC3-L001276 إلى SRC-1AE03B9EC3-L002075
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001276](../../agents/web_agent.py#L1276) | 1276 | `"            json={"` | — |
+| [SRC-1AE03B9EC3-L001277](../../agents/web_agent.py#L1277) | 1277 | `"                \"query\": _normalize_search_query(query)[:128] or \"public web search\","` | — |
+| [SRC-1AE03B9EC3-L001278](../../agents/web_agent.py#L1278) | 1278 | `"                \"count\": min(MAX_PROVIDER_RESULTS, 10),"` | — |
+| [SRC-1AE03B9EC3-L001279](../../agents/web_agent.py#L1279) | 1279 | `"                \"need_content\": False,"` | — |
+| [SRC-1AE03B9EC3-L001280](../../agents/web_agent.py#L1280) | 1280 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L001281](../../agents/web_agent.py#L1281) | 1281 | `"            timeout=self._effective_timeout(9.0),"` | — |
 | [SRC-1AE03B9EC3-L001282](../../agents/web_agent.py#L1282) | 1282 | `"            follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L001283](../../agents/web_agent.py#L1283) | 1283 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L001284](../../agents/web_agent.py#L1284) | 1284 | `"        response.raise_for_status()"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L002073](../../agents/web_agent.py#L2073) | 2073 | `"                        author = authors.get(item.get(\"author_id\"), {})"` | — |
 | [SRC-1AE03B9EC3-L002074](../../agents/web_agent.py#L2074) | 2074 | `"                        username = author.get(\"username\", \"\")"` | — |
 | [SRC-1AE03B9EC3-L002075](../../agents/web_agent.py#L2075) | 2075 | `"                        post_id = item.get(\"id\", \"\")"` | — |
-| [SRC-1AE03B9EC3-L002076](../../agents/web_agent.py#L2076) | 2076 | `"                        if not username or not post_id:"` | — |
-| [SRC-1AE03B9EC3-L002077](../../agents/web_agent.py#L2077) | 2077 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L002078](../../agents/web_agent.py#L2078) | 2078 | `"                        results.append({"` | — |
-| [SRC-1AE03B9EC3-L002079](../../agents/web_agent.py#L2079) | 2079 | `"                            \"title\": _clean_text(author.get(\"name\") or username, 300),"` | — |
-| [SRC-1AE03B9EC3-L002080](../../agents/web_agent.py#L2080) | 2080 | `"                            \"url\": f\"https://x.com/{username}/status/{post_id}\","` | — |
-| [SRC-1AE03B9EC3-L002081](../../agents/web_agent.py#L2081) | 2081 | `"                            \"snippet\": _clean_text(item.get(\"text\") or \"\", 1200),"` | — |

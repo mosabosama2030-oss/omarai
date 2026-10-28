@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2614DCB6FB-L000074 إلى SRC-F725E90B2A-L000635
+- النطاق: SRC-2614DCB6FB-L000068 إلى SRC-F725E90B2A-L000629
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2614DCB6FB-L000068](../../tests/test_search_code.py#L68) | 68 | `"    try:"` | — |
+| [SRC-2614DCB6FB-L000069](../../tests/test_search_code.py#L69) | 69 | `"        SEARCH.search_repository(tmp_path, \"\")"` | — |
+| [SRC-2614DCB6FB-L000070](../../tests/test_search_code.py#L70) | 70 | `"    except ValueError as exc:"` | — |
+| [SRC-2614DCB6FB-L000071](../../tests/test_search_code.py#L71) | 71 | `"        assert \"فارغ\" in str(exc)"` | — |
+| [SRC-2614DCB6FB-L000072](../../tests/test_search_code.py#L72) | 72 | `"    else:"` | — |
+| [SRC-2614DCB6FB-L000073](../../tests/test_search_code.py#L73) | 73 | `"        raise AssertionError(\"An empty search query should be rejected.\")"` | — |
 | [SRC-2614DCB6FB-L000074](../../tests/test_search_code.py#L74) | 74 | `""` | — |
 | [SRC-2614DCB6FB-L000075](../../tests/test_search_code.py#L75) | 75 | `"    for kwargs in ({\"max_results\": 0}, {\"context\": -1}):"` | — |
 | [SRC-2614DCB6FB-L000076](../../tests/test_search_code.py#L76) | 76 | `"        try:"` | — |
@@ -828,9 +834,3 @@
 | [SRC-F725E90B2A-L000627](../../tests/test_web_agent.py#L627) | 627 | `"                \"permalink\": \"/r/cars/comments/example/post/\","` | — |
 | [SRC-F725E90B2A-L000628](../../tests/test_web_agent.py#L628) | 628 | `"                \"selftext\": \"Owners discuss battery range.\","` | — |
 | [SRC-F725E90B2A-L000629](../../tests/test_web_agent.py#L629) | 629 | `"                \"created_utc\": 1791800000,"` | — |
-| [SRC-F725E90B2A-L000630](../../tests/test_web_agent.py#L630) | 630 | `"                \"score\": 25,"` | — |
-| [SRC-F725E90B2A-L000631](../../tests/test_web_agent.py#L631) | 631 | `"                \"num_comments\": 8,"` | — |
-| [SRC-F725E90B2A-L000632](../../tests/test_web_agent.py#L632) | 632 | `"            }"` | — |
-| [SRC-F725E90B2A-L000633](../../tests/test_web_agent.py#L633) | 633 | `"        }]}})"` | — |
-| [SRC-F725E90B2A-L000634](../../tests/test_web_agent.py#L634) | 634 | `""` | — |
-| [SRC-F725E90B2A-L000635](../../tests/test_web_agent.py#L635) | 635 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |

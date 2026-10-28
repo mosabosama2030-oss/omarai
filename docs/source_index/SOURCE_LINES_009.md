@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003682 إلى SRC-1AE03B9EC3-L004481
+- النطاق: SRC-1AE03B9EC3-L003676 إلى SRC-1AE03B9EC3-L004475
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003676](../../agents/web_agent.py#L3676) | 3676 | `"        probe_sources: dict[str, dict[str, Any]] = {}"` | — |
+| [SRC-1AE03B9EC3-L003677](../../agents/web_agent.py#L3677) | 3677 | `"        completed_connector_responses = 0"` | — |
+| [SRC-1AE03B9EC3-L003678](../../agents/web_agent.py#L3678) | 3678 | `"        probe_errors: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L003679](../../agents/web_agent.py#L3679) | 3679 | `"        probes_attempted = 0"` | — |
+| [SRC-1AE03B9EC3-L003680](../../agents/web_agent.py#L3680) | 3680 | `"        for probe_query in probe_queries:"` | — |
+| [SRC-1AE03B9EC3-L003681](../../agents/web_agent.py#L3681) | 3681 | `"            probes_attempted += 1"` | — |
 | [SRC-1AE03B9EC3-L003682](../../agents/web_agent.py#L3682) | 3682 | `"            with self._provider_diagnostics_lock:"` | — |
 | [SRC-1AE03B9EC3-L003683](../../agents/web_agent.py#L3683) | 3683 | `"                previous_ids = {id(item) for item in self._provider_diagnostics}"` | — |
 | [SRC-1AE03B9EC3-L003684](../../agents/web_agent.py#L3684) | 3684 | `"            try:"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L004473](../../agents/web_agent.py#L4473) | 4473 | `"            for source in sources"` | — |
 | [SRC-1AE03B9EC3-L004474](../../agents/web_agent.py#L4474) | 4474 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L004475](../../agents/web_agent.py#L4475) | 4475 | `"        single_source_page_summary = ("` | — |
-| [SRC-1AE03B9EC3-L004476](../../agents/web_agent.py#L4476) | 4476 | `"            has_read_user_supplied_page"` | — |
-| [SRC-1AE03B9EC3-L004477](../../agents/web_agent.py#L4477) | 4477 | `"            and len(sources) == 1"` | — |
-| [SRC-1AE03B9EC3-L004478](../../agents/web_agent.py#L4478) | 4478 | `"            and len(independent_domains) == 1"` | — |
-| [SRC-1AE03B9EC3-L004479](../../agents/web_agent.py#L4479) | 4479 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004480](../../agents/web_agent.py#L4480) | 4480 | `"        if single_source_page_summary:"` | — |
-| [SRC-1AE03B9EC3-L004481](../../agents/web_agent.py#L4481) | 4481 | `"            search_warnings.append("` | — |

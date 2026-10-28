@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001244 إلى SRC-1C77C97630-L000160
+- النطاق: SRC-90FAA34ADE-L001238 إلى SRC-1C77C97630-L000154
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001238](../../tests/fixtures/answer_quality_cases.json#L1238) | 1238 | `"        \"Claims a verified Alexandria forecast despite no such result\""` | — |
+| [SRC-90FAA34ADE-L001239](../../tests/fixtures/answer_quality_cases.json#L1239) | 1239 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001240](../../tests/fixtures/answer_quality_cases.json#L1240) | 1240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001241](../../tests/fixtures/answer_quality_cases.json#L1241) | 1241 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001242](../../tests/fixtures/answer_quality_cases.json#L1242) | 1242 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |
 | [SRC-90FAA34ADE-L001244](../../tests/fixtures/answer_quality_cases.json#L1244) | 1244 | `"      \"category\": \"stale_sources_for_current\","` | — |
 | [SRC-90FAA34ADE-L001245](../../tests/fixtures/answer_quality_cases.json#L1245) | 1245 | `"      \"language\": \"mixed\","` | — |
 | [SRC-90FAA34ADE-L001246](../../tests/fixtures/answer_quality_cases.json#L1246) | 1246 | `"      \"question\": \"عايز القواعد الحالية للتسجيل في خدمة حكومية في مصر؛ result timestamp بتاع صفحة الشروط هو 2020 بس.\","` | — |
@@ -846,9 +852,3 @@
 | [SRC-1C77C97630-L000152](../../tests/test_answer_validation.py#L152) | 152 | `"        \"page_text\": \"Renewable energy storage costs decreased during the reporting period.\","` | — |
 | [SRC-1C77C97630-L000153](../../tests/test_answer_validation.py#L153) | 153 | `"        \"page_fetched\": True,"` | — |
 | [SRC-1C77C97630-L000154](../../tests/test_answer_validation.py#L154) | 154 | `"        \"published_at\": \"\","` | — |
-| [SRC-1C77C97630-L000155](../../tests/test_answer_validation.py#L155) | 155 | `"    }"` | — |
-| [SRC-1C77C97630-L000156](../../tests/test_answer_validation.py#L156) | 156 | `"    good = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000157](../../tests/test_answer_validation.py#L157) | 157 | `"        \"What changed?\","` | — |
-| [SRC-1C77C97630-L000158](../../tests/test_answer_validation.py#L158) | 158 | `"        \"Renewable energy storage costs decreased [source 1].\","` | — |
-| [SRC-1C77C97630-L000159](../../tests/test_answer_validation.py#L159) | 159 | `"        [page_source],"` | — |
-| [SRC-1C77C97630-L000160](../../tests/test_answer_validation.py#L160) | 160 | `"    )"` | — |

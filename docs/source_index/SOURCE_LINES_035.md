@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002236 إلى SRC-F725E90B2A-L003035
+- النطاق: SRC-F725E90B2A-L002230 إلى SRC-F725E90B2A-L003029
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002230](../../tests/test_web_agent.py#L2230) | 2230 | `"    assert WebAgent._is_lead_search(\"Find buyers looking to buy apartments\")"` | — |
+| [SRC-F725E90B2A-L002231](../../tests/test_web_agent.py#L2231) | 2231 | `"    assert not WebAgent._is_lead_search(\"ابحث عن شقق للبيع في العاصمة الإدارية\")"` | — |
+| [SRC-F725E90B2A-L002232](../../tests/test_web_agent.py#L2232) | 2232 | `"    assert not WebAgent._is_lead_search(\"Find apartments for sale\")"` | — |
+| [SRC-F725E90B2A-L002233](../../tests/test_web_agent.py#L2233) | 2233 | `""` | — |
+| [SRC-F725E90B2A-L002234](../../tests/test_web_agent.py#L2234) | 2234 | `""` | — |
+| [SRC-F725E90B2A-L002235](../../tests/test_web_agent.py#L2235) | 2235 | `"def test_buyer_intent_evidence_requires_explicit_purchase_signal():"` | — |
 | [SRC-F725E90B2A-L002236](../../tests/test_web_agent.py#L2236) | 2236 | `"    listing = {"` | — |
 | [SRC-F725E90B2A-L002237](../../tests/test_web_agent.py#L2237) | 2237 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
 | [SRC-F725E90B2A-L002238](../../tests/test_web_agent.py#L2238) | 2238 | `"        \"snippet\": \"أفضل شقق للبيع بالتقسيط\","` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L003027](../../tests/test_web_agent.py#L3027) | 3027 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _q: [dict(x) if isinstance(x, dict) else x for x in candidates])"` | — |
 | [SRC-F725E90B2A-L003028](../../tests/test_web_agent.py#L3028) | 3028 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _q: [dict(x) if isinstance(x, dict) else x for x in candidates])"` | — |
 | [SRC-F725E90B2A-L003029](../../tests/test_web_agent.py#L3029) | 3029 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _q: [])"` | — |
-| [SRC-F725E90B2A-L003030](../../tests/test_web_agent.py#L3030) | 3030 | `""` | — |
-| [SRC-F725E90B2A-L003031](../../tests/test_web_agent.py#L3031) | 3031 | `"    with pytest.raises(RuntimeError, match=\"لم تُرجع موصلات البحث\"):"` | — |
-| [SRC-F725E90B2A-L003032](../../tests/test_web_agent.py#L3032) | 3032 | `"        agent._search_web(query)"` | — |
-| [SRC-F725E90B2A-L003033](../../tests/test_web_agent.py#L3033) | 3033 | `""` | — |
-| [SRC-F725E90B2A-L003034](../../tests/test_web_agent.py#L3034) | 3034 | `"    diagnostic = next("` | — |
-| [SRC-F725E90B2A-L003035](../../tests/test_web_agent.py#L3035) | 3035 | `"        item for item in agent._provider_diagnostics"` | — |

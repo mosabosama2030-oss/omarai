@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000476 إلى SRC-62CE5126F9-L000048
+- النطاق: SRC-D17CE3D12F-L000470 إلى SRC-62CE5126F9-L000042
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000470](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L470) | 470 | `"- Unit tests لمنطق الوحدة."` | — |
+| [SRC-D17CE3D12F-L000471](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L471) | 471 | `"- Integration tests للتفاعل مع التخزين والموفرين."` | — |
+| [SRC-D17CE3D12F-L000472](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L472) | 472 | `"- Contract tests لواجهات API والأدوات."` | — |
+| [SRC-D17CE3D12F-L000473](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L473) | 473 | `"- End-to-end tests لرحلات المستخدم الرئيسية."` | — |
+| [SRC-D17CE3D12F-L000474](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L474) | 474 | `"- Regression tests لكل عيب مثبت تم إصلاحه."` | — |
+| [SRC-D17CE3D12F-L000475](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L475) | 475 | `"- Property-based/fuzz tests لمدخلات معقدة أو غير موثوقة."` | — |
 | [SRC-D17CE3D12F-L000476](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L476) | 476 | `"- Concurrency/race tests لبيانات المستخدمين والحالة المشتركة."` | — |
 | [SRC-D17CE3D12F-L000477](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L477) | 477 | `"- Load/stress/soak tests للسعة والأداء."` | — |
 | [SRC-D17CE3D12F-L000478](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L478) | 478 | `"- Fault-injection/chaos tests للانقطاع الجزئي والتأخير."` | — |
@@ -837,9 +843,3 @@
 | [SRC-62CE5126F9-L000040](../OMARAI_REMEDIATION_REGISTER_AR.md#L40) | 40 | ``"- **PR #95 — MERGED:** التزام الدمج `3760418b5f32294faec7e49ef2cccb006419ee27`. نجح CI على رأس PR في [#40467019476](https://github.com/mosabosama2030-oss/omarai/actions/runs/40467019476)، وعلى SHA الدمج نفسه في [#40469019954](https://github.com/mosabosama2030-oss/omarai/actions/runs/40469019954). اكتملت اختبارات Python 3.11/3.12 وبناء الحاوية وAPI smoke بنجاح."`` | — |
 | [SRC-62CE5126F9-L000041](../OMARAI_REMEDIATION_REGISTER_AR.md#L41) | 41 | `"- **توليد الفهرس:** نجح [#40469019921](https://github.com/mosabosama2030-oss/omarai/actions/runs/40469019921)."` | — |
 | [SRC-62CE5126F9-L000042](../OMARAI_REMEDIATION_REGISTER_AR.md#L42) | 42 | ``"- **PR #93 — CLOSED WITHOUT MERGE:** تم التحقق من أن التصحيح التوثيقي موجود في سجل المعالجة على `main` بعد دمج #95؛ لم يُدمج الفرع القديم لتجنب تكرار التغيير."`` | — |
-| [SRC-62CE5126F9-L000043](../OMARAI_REMEDIATION_REGISTER_AR.md#L43) | 43 | `"- نتائج CI لا تثبت صحة التشغيل المستضاف أو نجاح مزودي البحث الحقيقيين."` | — |
-| [SRC-62CE5126F9-L000044](../OMARAI_REMEDIATION_REGISTER_AR.md#L44) | 44 | `""` | — |
-| [SRC-62CE5126F9-L000045](../OMARAI_REMEDIATION_REGISTER_AR.md#L45) | 45 | `"### نتيجة القبول الحي المحدود"` | — |
-| [SRC-62CE5126F9-L000046](../OMARAI_REMEDIATION_REGISTER_AR.md#L46) | 46 | `"- **VERIFIED:** بعد إخراج الخدمة من الخمول، حمّلت الصفحة الرئيسية واجهة Omarai وحقل السؤال."` | — |
-| [SRC-62CE5126F9-L000047](../OMARAI_REMEDIATION_REGISTER_AR.md#L47) | 47 | ``"- **FAILED — hosted query:** كان الوضع المختار `deep`; السؤال `ما عاصمة مصر؟` انتهى برسالة التطبيق: «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف»."`` | — |
-| [SRC-62CE5126F9-L000048](../OMARAI_REMEDIATION_REGISTER_AR.md#L48) | 48 | ``"- **UNKNOWN:** هل رمز الوصول مفقود أم غير مطابق، وما السبب الجذري الدقيق؛ الرسالة المرئية وحدها لا تكفي. أُجري `GET /api/health` للقراءة فقط وأعاد `ok=true`، لكن `build.sha=unknown` و`sha_status=unknown`، و`live_network_checks_performed=false`. يوضح الرد أن `web_search_ready` يعني أن الاعتماديات قابلة للاستيراد لا أن موفّر البحث متصل، وأن `language_model_configured` يعني وجود بيانات اعتماد لا أن الطلب اكتمل بنجاح. لم يُثبت تطابق البناء المستضاف مع SHA الدمج."`` | — |

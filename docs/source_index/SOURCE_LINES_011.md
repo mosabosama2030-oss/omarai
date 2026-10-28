@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005282 إلى SRC-EEF2E6447C-L000423
+- النطاق: SRC-1AE03B9EC3-L005276 إلى SRC-EEF2E6447C-L000417
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005276](../../agents/web_agent.py#L5276) | 5276 | `"                                    source_enriched = True"` | — |
+| [SRC-1AE03B9EC3-L005277](../../agents/web_agent.py#L5277) | 5277 | `"                            if candidate.get(\"page_fetched\") and not existing_source.get(\"page_fetched\"):"` | — |
+| [SRC-1AE03B9EC3-L005278](../../agents/web_agent.py#L5278) | 5278 | `"                                merged[\"page_fetched\"] = True"` | — |
+| [SRC-1AE03B9EC3-L005279](../../agents/web_agent.py#L5279) | 5279 | `"                                source_enriched = True"` | — |
+| [SRC-1AE03B9EC3-L005280](../../agents/web_agent.py#L5280) | 5280 | `"                            if source_enriched:"` | — |
+| [SRC-1AE03B9EC3-L005281](../../agents/web_agent.py#L5281) | 5281 | `"                                evidence_updated = True"` | — |
 | [SRC-1AE03B9EC3-L005282](../../agents/web_agent.py#L5282) | 5282 | `"                                criterion_gap_research[\"evidence_sources_enriched\"] += 1"` | — |
 | [SRC-1AE03B9EC3-L005283](../../agents/web_agent.py#L5283) | 5283 | `"                            merged[\"providers\"] = list(dict.fromkeys("` | — |
 | [SRC-1AE03B9EC3-L005284](../../agents/web_agent.py#L5284) | 5284 | `"                                list(existing_source.get(\"providers\", []))"` | — |
@@ -828,9 +834,3 @@
 | [SRC-EEF2E6447C-L000415](../../api/omarai.py#L415) | 415 | `"        body = bytearray()"` | — |
 | [SRC-EEF2E6447C-L000416](../../api/omarai.py#L416) | 416 | `"        timed_out = False"` | — |
 | [SRC-EEF2E6447C-L000417](../../api/omarai.py#L417) | 417 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000418](../../api/omarai.py#L418) | 418 | `"            while len(body) < size:"` | — |
-| [SRC-EEF2E6447C-L000419](../../api/omarai.py#L419) | 419 | `"                remaining = deadline - time.monotonic()"` | — |
-| [SRC-EEF2E6447C-L000420](../../api/omarai.py#L420) | 420 | `"                if remaining <= 0:"` | — |
-| [SRC-EEF2E6447C-L000421](../../api/omarai.py#L421) | 421 | `"                    timed_out = True"` | — |
-| [SRC-EEF2E6447C-L000422](../../api/omarai.py#L422) | 422 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000423](../../api/omarai.py#L423) | 423 | `"                self.connection.settimeout(min(idle_timeout, remaining))"` | — |

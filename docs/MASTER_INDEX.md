@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **656**
 - تعريفات لا ينطبق عليها Docstring: **216**
 - الرموز الساكنة الإضافية: **1635**
-- الأسطر النصية المفهرسة حرفيًا: **28868**
+- الأسطر النصية المفهرسة حرفيًا: **28874**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -38,7 +38,7 @@
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 21768 | 459 | جرد الملف + AST Python |
-| FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 8102 | 225 | جرد الملف + AST Python |
+| FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 8433 | 231 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 22483 | 504 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |

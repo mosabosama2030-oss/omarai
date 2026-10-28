@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000441 إلى SRC-59CF4B7DE8-L000434
+- النطاق: SRC-5587371288-L000435 إلى SRC-59CF4B7DE8-L000428
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000436](../../agents/intent_router.py#L436) | 436 | `"        }"` | — |
+| [SRC-5587371288-L000437](../../agents/intent_router.py#L437) | 437 | `""` | — |
+| [SRC-5587371288-L000438](../../agents/intent_router.py#L438) | 438 | `"    # A page/link summary needs a concrete source. Pasted text is handled locally;"` | — |
+| [SRC-5587371288-L000439](../../agents/intent_router.py#L439) | 439 | `"    # an absent source must trigger clarification rather than a search for \"the page\"."` | — |
+| [SRC-5587371288-L000440](../../agents/intent_router.py#L440) | 440 | `"    if _is_page_summarization_request(question):"` | — |
 | [SRC-5587371288-L000441](../../agents/intent_router.py#L441) | 441 | `"        if _has_inline_summary_text(question):"` | — |
 | [SRC-5587371288-L000442](../../agents/intent_router.py#L442) | 442 | `"            return {"` | — |
 | [SRC-5587371288-L000443](../../agents/intent_router.py#L443) | 443 | `"                \"route\": \"MODEL_ONLY\","` | — |
@@ -837,9 +843,3 @@
 | [SRC-59CF4B7DE8-L000426](../../agents/research.py#L426) | 426 | `"    \"\"\"Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs.\"\"\""` | — |
 | [SRC-59CF4B7DE8-L000427](../../agents/research.py#L427) | 427 | `"    accumulated: dict[str, dict[str, Any]] = {}"` | — |
 | [SRC-59CF4B7DE8-L000428](../../agents/research.py#L428) | 428 | `"    for batch in batches:"` | — |
-| [SRC-59CF4B7DE8-L000429](../../agents/research.py#L429) | 429 | `"        query = _compact(batch.get(\"query\", \"\"), 500)"` | — |
-| [SRC-59CF4B7DE8-L000430](../../agents/research.py#L430) | 430 | `"        provider = _compact(batch.get(\"provider\", \"search\"), 80)"` | — |
-| [SRC-59CF4B7DE8-L000431](../../agents/research.py#L431) | 431 | `"        results = batch.get(\"results\", [])"` | — |
-| [SRC-59CF4B7DE8-L000432](../../agents/research.py#L432) | 432 | `"        if not isinstance(results, list):"` | — |
-| [SRC-59CF4B7DE8-L000433](../../agents/research.py#L433) | 433 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000434](../../agents/research.py#L434) | 434 | `"        for position, source in enumerate(results, 1):"` | — |

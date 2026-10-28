@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **037**
-- سجلات الأسطر: **68**
-- النطاق: SRC-DE7EABE998-L000392 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **74**
+- النطاق: SRC-DE7EABE998-L000386 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000386](../../web/agent.html#L386) | 386 | `"  const configured=[];"` | — |
+| [SRC-DE7EABE998-L000387](../../web/agent.html#L387) | 387 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
+| [SRC-DE7EABE998-L000388](../../web/agent.html#L388) | 388 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |
+| [SRC-DE7EABE998-L000389](../../web/agent.html#L389) | 389 | `"  if(a.reddit_oauth_configured)configured.push(\"Reddit OAuth\");"` | — |
+| [SRC-DE7EABE998-L000390](../../web/agent.html#L390) | 390 | `"  if(a.facebook_pages_api_configured)configured.push(\"Facebook Pages\");"` | — |
+| [SRC-DE7EABE998-L000391](../../web/agent.html#L391) | 391 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |
 | [SRC-DE7EABE998-L000392](../../web/agent.html#L392) | 392 | `"  if(a.x_api_configured)configured.push(\"X API\");"` | — |
 | [SRC-DE7EABE998-L000393](../../web/agent.html#L393) | 393 | `"  if(a.youtube_api_configured)configured.push(\"YouTube API\");"` | — |
 | [SRC-DE7EABE998-L000394](../../web/agent.html#L394) | 394 | `"  const model=!!a.language_model_configured, search=!!a.web_search_ready;"` | — |

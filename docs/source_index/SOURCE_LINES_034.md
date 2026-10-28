@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001436 إلى SRC-F725E90B2A-L002235
+- النطاق: SRC-F725E90B2A-L001430 إلى SRC-F725E90B2A-L002229
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001430](../../tests/test_web_agent.py#L1430) | 1430 | `"    assert injected_text in user_messages[2][\"content\"]"` | — |
+| [SRC-F725E90B2A-L001431](../../tests/test_web_agent.py#L1431) | 1431 | `"    assert injected_text not in system_content"` | — |
+| [SRC-F725E90B2A-L001432](../../tests/test_web_agent.py#L1432) | 1432 | `""` | — |
+| [SRC-F725E90B2A-L001433](../../tests/test_web_agent.py#L1433) | 1433 | `""` | — |
+| [SRC-F725E90B2A-L001434](../../tests/test_web_agent.py#L1434) | 1434 | `"def test_general_question_uses_model_without_needlessly_searching(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001435](../../tests/test_web_agent.py#L1435) | 1435 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001436](../../tests/test_web_agent.py#L1436) | 1436 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001437](../../tests/test_web_agent.py#L1437) | 1437 | `"    captured = {}"` | — |
 | [SRC-F725E90B2A-L001438](../../tests/test_web_agent.py#L1438) | 1438 | `""` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L002227](../../tests/test_web_agent.py#L2227) | 2227 | `""` | — |
 | [SRC-F725E90B2A-L002228](../../tests/test_web_agent.py#L2228) | 2228 | `"def test_lead_discovery_is_distinct_from_listing_search():"` | — |
 | [SRC-F725E90B2A-L002229](../../tests/test_web_agent.py#L2229) | 2229 | `"    assert WebAgent._is_lead_search(\"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية\")"` | — |
-| [SRC-F725E90B2A-L002230](../../tests/test_web_agent.py#L2230) | 2230 | `"    assert WebAgent._is_lead_search(\"Find buyers looking to buy apartments\")"` | — |
-| [SRC-F725E90B2A-L002231](../../tests/test_web_agent.py#L2231) | 2231 | `"    assert not WebAgent._is_lead_search(\"ابحث عن شقق للبيع في العاصمة الإدارية\")"` | — |
-| [SRC-F725E90B2A-L002232](../../tests/test_web_agent.py#L2232) | 2232 | `"    assert not WebAgent._is_lead_search(\"Find apartments for sale\")"` | — |
-| [SRC-F725E90B2A-L002233](../../tests/test_web_agent.py#L2233) | 2233 | `""` | — |
-| [SRC-F725E90B2A-L002234](../../tests/test_web_agent.py#L2234) | 2234 | `""` | — |
-| [SRC-F725E90B2A-L002235](../../tests/test_web_agent.py#L2235) | 2235 | `"def test_buyer_intent_evidence_requires_explicit_purchase_signal():"` | — |
