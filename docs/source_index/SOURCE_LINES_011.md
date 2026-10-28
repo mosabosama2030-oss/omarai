@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003738 إلى SRC-1AE03B9EC3-L004537
+- النطاق: SRC-1AE03B9EC3-L003688 إلى SRC-1AE03B9EC3-L004487
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003688](../../agents/web_agent.py#L3688) | 3688 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003689](../../agents/web_agent.py#L3689) | 3689 | `"        start_marker = \"<<<OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1AE03B9EC3-L003690](../../agents/web_agent.py#L3690) | 3690 | `"        end_marker = \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1AE03B9EC3-L003691](../../agents/web_agent.py#L3691) | 3691 | `"        repaired = re.fullmatch("` | — |
+| [SRC-1AE03B9EC3-L003692](../../agents/web_agent.py#L3692) | 3692 | `"            r\"\\s*<<<OMARAI_COVERAGE_REPAIR>>>\\s*(.*?)\\s*<<<END_OMARAI_COVERAGE_REPAIR>>>\\s*\","` | — |
+| [SRC-1AE03B9EC3-L003693](../../agents/web_agent.py#L3693) | 3693 | `"            raw,"` | — |
+| [SRC-1AE03B9EC3-L003694](../../agents/web_agent.py#L3694) | 3694 | `"            flags=re.DOTALL,"` | — |
+| [SRC-1AE03B9EC3-L003695](../../agents/web_agent.py#L3695) | 3695 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003696](../../agents/web_agent.py#L3696) | 3696 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L003697](../../agents/web_agent.py#L3697) | 3697 | `"            raw.count(start_marker) != 1"` | — |
+| [SRC-1AE03B9EC3-L003698](../../agents/web_agent.py#L3698) | 3698 | `"            or raw.count(end_marker) != 1"` | — |
+| [SRC-1AE03B9EC3-L003699](../../agents/web_agent.py#L3699) | 3699 | `"            or repaired is None"` | — |
+| [SRC-1AE03B9EC3-L003700](../../agents/web_agent.py#L3700) | 3700 | `"            or not repaired.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L003701](../../agents/web_agent.py#L3701) | 3701 | `"            or len(repaired.group(1)) > 24_000"` | — |
+| [SRC-1AE03B9EC3-L003702](../../agents/web_agent.py#L3702) | 3702 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L003703](../../agents/web_agent.py#L3703) | 3703 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
+| [SRC-1AE03B9EC3-L003704](../../agents/web_agent.py#L3704) | 3704 | `"        return repaired.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L003705](../../agents/web_agent.py#L3705) | 3705 | `""` | — |
+| [SRC-1AE03B9EC3-L003706](../../agents/web_agent.py#L3706) | 3706 | `"    def _review_answer("` | — |
+| [SRC-1AE03B9EC3-L003707](../../agents/web_agent.py#L3707) | 3707 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L003708](../../agents/web_agent.py#L3708) | 3708 | `"        question: str,"` | — |
+| [SRC-1AE03B9EC3-L003709](../../agents/web_agent.py#L3709) | 3709 | `"        answer: str,"` | — |
+| [SRC-1AE03B9EC3-L003710](../../agents/web_agent.py#L3710) | 3710 | `"        sources: list[dict[str, Any]],"` | — |
+| [SRC-1AE03B9EC3-L003711](../../agents/web_agent.py#L3711) | 3711 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003712](../../agents/web_agent.py#L3712) | 3712 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003713](../../agents/web_agent.py#L3713) | 3713 | `"        source_blocks: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L003714](../../agents/web_agent.py#L3714) | 3714 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
+| [SRC-1AE03B9EC3-L003715](../../agents/web_agent.py#L3715) | 3715 | `"            evidence = _clean_text("` | — |
+| [SRC-1AE03B9EC3-L003716](../../agents/web_agent.py#L3716) | 3716 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
+| [SRC-1AE03B9EC3-L003717](../../agents/web_agent.py#L3717) | 3717 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003718](../../agents/web_agent.py#L3718) | 3718 | `"            source_blocks.append("` | — |
+| [SRC-1AE03B9EC3-L003719](../../agents/web_agent.py#L3719) | 3719 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003720](../../agents/web_agent.py#L3720) | 3720 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003721](../../agents/web_agent.py#L3721) | 3721 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
+| [SRC-1AE03B9EC3-L003722](../../agents/web_agent.py#L3722) | 3722 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003723](../../agents/web_agent.py#L3723) | 3723 | `"                f\"نص المصدر: {evidence}\""` | — |
+| [SRC-1AE03B9EC3-L003724](../../agents/web_agent.py#L3724) | 3724 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003725](../../agents/web_agent.py#L3725) | 3725 | `"        evidence_text = \"\\n\\n\".join(source_blocks) or \"لا توجد أدلة ويب متاحة.\""` | — |
+| [SRC-1AE03B9EC3-L003726](../../agents/web_agent.py#L3726) | 3726 | `"        messages = ["` | — |
+| [SRC-1AE03B9EC3-L003727](../../agents/web_agent.py#L3727) | 3727 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003728](../../agents/web_agent.py#L3728) | 3728 | `"                \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L003729](../../agents/web_agent.py#L3729) | 3729 | `"                \"content\": ("` | — |
+| [SRC-1AE03B9EC3-L003730](../../agents/web_agent.py#L3730) | 3730 | `"                    \"أنت مدقق ادعاءات بحثية؛ مهمتك فحص الاتساق مع الأدلة وتغطية محاور السؤال، \""` | — |
+| [SRC-1AE03B9EC3-L003731](../../agents/web_agent.py#L3731) | 3731 | `"                    \"وليست إصدار شهادة مستقلة بصحة الحقيقة. افحص كل ادعاء واقعي في المسودة على حدة \""` | — |
+| [SRC-1AE03B9EC3-L003732](../../agents/web_agent.py#L3732) | 3732 | `"                    \"مقابل النصوص المرفقة: هل تدعمه بوضوح، أم تدعمه جزئيًا، أم لا تدعمه؟ احتفظ فقط \""` | — |
+| [SRC-1AE03B9EC3-L003733](../../agents/web_agent.py#L3733) | 3733 | `"                    \"بالادعاءات المدعومة، وقيّد الادعاءات الجزئية، واحذف غير المدعوم، وصحح كل \""` | — |
+| [SRC-1AE03B9EC3-L003734](../../agents/web_agent.py#L3734) | 3734 | `"                    \"استشهاد ليرتبط بمصدر يدعم الادعاء تحديدًا. افحص كذلك اكتمال الإجابة مقابل \""` | — |
+| [SRC-1AE03B9EC3-L003735](../../agents/web_agent.py#L3735) | 3735 | `"                    \"جميع المحاور الصريحة في سؤال المستخدم؛ لا تسقط محورًا مطلوبًا بلا توضيح. \""` | — |
+| [SRC-1AE03B9EC3-L003736](../../agents/web_agent.py#L3736) | 3736 | `"                    \"إذا لم يكف الدليل لمحور، فاذكر عدم كفاية الأدلة لذلك المحور تحديدًا. \""` | — |
+| [SRC-1AE03B9EC3-L003737](../../agents/web_agent.py#L3737) | 3737 | `"                    \"راجع المبالغ والأسعار والنسب والتواريخ والمدد والقياسات والأرقام الواردة في المسودة \""` | — |
 | [SRC-1AE03B9EC3-L003738](../../agents/web_agent.py#L3738) | 3738 | `"                    \"مقابل المصدر المحدد في كل استشهاد؛ الرقم الموجود في مصدر آخر لا يكفي لتسويغ هذا الاستشهاد. \""` | — |
 | [SRC-1AE03B9EC3-L003739](../../agents/web_agent.py#L3739) | 3739 | `"                    \"راجع قيمًا متعارضة محتملة، واذكرها كاختلاف يحتاج مطابقة الكيان والفترة والوحدة؛ \""` | — |
 | [SRC-1AE03B9EC3-L003740](../../agents/web_agent.py#L3740) | 3740 | `"                    \"ولا تفترض أن اختلاف القيم تناقض حقيقي قبل هذه المراجعة. \""` | — |
@@ -766,53 +816,3 @@
 | [SRC-1AE03B9EC3-L004485](../../agents/web_agent.py#L4485) | 4485 | `"                    f\"{base_query} recent data reviews comparison\","` | — |
 | [SRC-1AE03B9EC3-L004486](../../agents/web_agent.py#L4486) | 4486 | `"                ]"` | — |
 | [SRC-1AE03B9EC3-L004487](../../agents/web_agent.py#L4487) | 4487 | `"                normalized_question = _normalize_search_query(working_question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L004488](../../agents/web_agent.py#L4488) | 4488 | `"                property_terms = ("` | — |
-| [SRC-1AE03B9EC3-L004489](../../agents/web_agent.py#L4489) | 4489 | `"                    \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\","` | — |
-| [SRC-1AE03B9EC3-L004490](../../agents/web_agent.py#L4490) | 4490 | `"                    \"apartment\", \"apartments\", \"flat\", \"real estate\", \"property\", \"house\", \"villa\","` | — |
-| [SRC-1AE03B9EC3-L004491](../../agents/web_agent.py#L4491) | 4491 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004492](../../agents/web_agent.py#L4492) | 4492 | `"                if self._is_listing_discovery(working_question) and any("` | — |
-| [SRC-1AE03B9EC3-L004493](../../agents/web_agent.py#L4493) | 4493 | `"                    term in normalized_question for term in property_terms"` | — |
-| [SRC-1AE03B9EC3-L004494](../../agents/web_agent.py#L4494) | 4494 | `"                ):"` | — |
-| [SRC-1AE03B9EC3-L004495](../../agents/web_agent.py#L4495) | 4495 | `"                    deep_candidates.extend(["` | — |
-| [SRC-1AE03B9EC3-L004496](../../agents/web_agent.py#L4496) | 4496 | `"                        f\"{base_query} إعلانات عقارية ومواقع العقارات\","` | — |
-| [SRC-1AE03B9EC3-L004497](../../agents/web_agent.py#L4497) | 4497 | `"                        f\"{base_query} متوسط أسعار السوق للمتر\","` | — |
-| [SRC-1AE03B9EC3-L004498](../../agents/web_agent.py#L4498) | 4498 | `"                        f\"{base_query} مواصفات الوحدات والمساحات وطرق السداد\","` | — |
-| [SRC-1AE03B9EC3-L004499](../../agents/web_agent.py#L4499) | 4499 | `"                    ])"` | — |
-| [SRC-1AE03B9EC3-L004500](../../agents/web_agent.py#L4500) | 4500 | `"                # Close the planning loop: give every explicit user criterion its own"` | — |
-| [SRC-1AE03B9EC3-L004501](../../agents/web_agent.py#L4501) | 4501 | `"                # query before generic \"deep research\" queries consume the fixed budget."` | — |
-| [SRC-1AE03B9EC3-L004502](../../agents/web_agent.py#L4502) | 4502 | `"                # This is a retrieval heuristic, not a guarantee that evidence exists."` | — |
-| [SRC-1AE03B9EC3-L004503](../../agents/web_agent.py#L4503) | 4503 | `"                criterion_queries = ["` | — |
-| [SRC-1AE03B9EC3-L004504](../../agents/web_agent.py#L4504) | 4504 | `"                    compact_search_query(f\"{base_query} {target} official data specifications\")"` | — |
-| [SRC-1AE03B9EC3-L004505](../../agents/web_agent.py#L4505) | 4505 | `"                    for target in self._question_coverage_targets(question)"` | — |
-| [SRC-1AE03B9EC3-L004506](../../agents/web_agent.py#L4506) | 4506 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004507](../../agents/web_agent.py#L4507) | 4507 | `"                criterion_queries = ["` | — |
-| [SRC-1AE03B9EC3-L004508](../../agents/web_agent.py#L4508) | 4508 | `"                    query for query in criterion_queries"` | — |
-| [SRC-1AE03B9EC3-L004509](../../agents/web_agent.py#L4509) | 4509 | `"                    if query and _relevance_query_tokens(query)"` | — |
-| [SRC-1AE03B9EC3-L004510](../../agents/web_agent.py#L4510) | 4510 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004511](../../agents/web_agent.py#L4511) | 4511 | `"                original_queries = ["` | — |
-| [SRC-1AE03B9EC3-L004512](../../agents/web_agent.py#L4512) | 4512 | `"                    query for query in (plan.get(\"queries\") or [])"` | — |
-| [SRC-1AE03B9EC3-L004513](../../agents/web_agent.py#L4513) | 4513 | `"                    if isinstance(query, str) and query.strip()"` | — |
-| [SRC-1AE03B9EC3-L004514](../../agents/web_agent.py#L4514) | 4514 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004515](../../agents/web_agent.py#L4515) | 4515 | `"                # Each criterion query already contains the base subject. When the"` | — |
-| [SRC-1AE03B9EC3-L004516](../../agents/web_agent.py#L4516) | 4516 | `"                # question has many criteria, spend the full bounded budget on those"` | — |
-| [SRC-1AE03B9EC3-L004517](../../agents/web_agent.py#L4517) | 4517 | `"                # queries rather than silently dropping later criteria for a base query."` | — |
-| [SRC-1AE03B9EC3-L004518](../../agents/web_agent.py#L4518) | 4518 | `"                prioritized_queries = criterion_queries[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L004519](../../agents/web_agent.py#L4519) | 4519 | `"                if len(prioritized_queries) < MAX_PLAN_QUERIES:"` | — |
-| [SRC-1AE03B9EC3-L004520](../../agents/web_agent.py#L4520) | 4520 | `"                    prioritized_queries += original_queries[:1] + deep_candidates"` | — |
-| [SRC-1AE03B9EC3-L004521](../../agents/web_agent.py#L4521) | 4521 | `"                plan[\"queries\"] = list(dict.fromkeys(prioritized_queries))[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L004522](../../agents/web_agent.py#L4522) | 4522 | `"                base_query = (plan.get(\"queries\") or [\"\"])[0]"` | — |
-| [SRC-1AE03B9EC3-L004523](../../agents/web_agent.py#L4523) | 4523 | `"            # Explicit user-selected modes are control inputs. They do not bypass source"` | — |
-| [SRC-1AE03B9EC3-L004524](../../agents/web_agent.py#L4524) | 4524 | `"            # validation and never permit private-source access."` | — |
-| [SRC-1AE03B9EC3-L004525](../../agents/web_agent.py#L4525) | 4525 | `"            if clean_mode == \"deep\":"` | — |
-| [SRC-1AE03B9EC3-L004526](../../agents/web_agent.py#L4526) | 4526 | `"                plan[\"depth\"] = \"deep\""` | — |
-| [SRC-1AE03B9EC3-L004527](../../agents/web_agent.py#L4527) | 4527 | `"                candidates = ["` | — |
-| [SRC-1AE03B9EC3-L004528](../../agents/web_agent.py#L4528) | 4528 | `"                    f\"{base_query} official sources data reports\","` | — |
-| [SRC-1AE03B9EC3-L004529](../../agents/web_agent.py#L4529) | 4529 | `"                    f\"{base_query} risks limitations alternatives\","` | — |
-| [SRC-1AE03B9EC3-L004530](../../agents/web_agent.py#L4530) | 4530 | `"                    f\"{base_query} case studies recent analysis\","` | — |
-| [SRC-1AE03B9EC3-L004531](../../agents/web_agent.py#L4531) | 4531 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L004532](../../agents/web_agent.py#L4532) | 4532 | `"                normalized_question = _normalize_search_query(working_question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L004533](../../agents/web_agent.py#L4533) | 4533 | `"                property_terms = ("` | — |
-| [SRC-1AE03B9EC3-L004534](../../agents/web_agent.py#L4534) | 4534 | `"                    \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\","` | — |
-| [SRC-1AE03B9EC3-L004535](../../agents/web_agent.py#L4535) | 4535 | `"                    \"apartment\", \"apartments\", \"flat\", \"real estate\", \"property\", \"house\", \"villa\","` | — |
-| [SRC-1AE03B9EC3-L004536](../../agents/web_agent.py#L4536) | 4536 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004537](../../agents/web_agent.py#L4537) | 4537 | `"                if self._is_listing_discovery(working_question) and any("` | — |

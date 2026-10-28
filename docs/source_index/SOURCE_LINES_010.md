@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002938 إلى SRC-1AE03B9EC3-L003737
+- النطاق: SRC-1AE03B9EC3-L002888 إلى SRC-1AE03B9EC3-L003687
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002888](../../agents/web_agent.py#L2888) | 2888 | `"            accepted_count = sum("` | — |
+| [SRC-1AE03B9EC3-L002889](../../agents/web_agent.py#L2889) | 2889 | `"                max(0, int(row.get(\"accepted_count\", row.get(\"result_count\", 0)) or 0))"` | — |
+| [SRC-1AE03B9EC3-L002890](../../agents/web_agent.py#L2890) | 2890 | `"                for row in attempts"` | — |
+| [SRC-1AE03B9EC3-L002891](../../agents/web_agent.py#L2891) | 2891 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002892](../../agents/web_agent.py#L2892) | 2892 | `"            rejected_count = sum(max(0, int(row.get(\"rejected_count\", 0) or 0)) for row in attempts)"` | — |
+| [SRC-1AE03B9EC3-L002893](../../agents/web_agent.py#L2893) | 2893 | `"            rejection_count_totals = {reason: 0 for reason in _PROVIDER_REJECTION_REASONS}"` | — |
+| [SRC-1AE03B9EC3-L002894](../../agents/web_agent.py#L2894) | 2894 | `"            rejection_counts_seen = False"` | — |
+| [SRC-1AE03B9EC3-L002895](../../agents/web_agent.py#L2895) | 2895 | `"            rejection_counts_complete = True"` | — |
+| [SRC-1AE03B9EC3-L002896](../../agents/web_agent.py#L2896) | 2896 | `"            for row in attempts:"` | — |
+| [SRC-1AE03B9EC3-L002897](../../agents/web_agent.py#L2897) | 2897 | `"                row_counts = row.get(\"rejection_counts\")"` | — |
+| [SRC-1AE03B9EC3-L002898](../../agents/web_agent.py#L2898) | 2898 | `"                if not isinstance(row_counts, dict):"` | — |
+| [SRC-1AE03B9EC3-L002899](../../agents/web_agent.py#L2899) | 2899 | `"                    # Legacy/incomplete records with actual rejections prevent claiming"` | — |
+| [SRC-1AE03B9EC3-L002900](../../agents/web_agent.py#L2900) | 2900 | `"                    # that an aggregate breakdown covers every rejected candidate."` | — |
+| [SRC-1AE03B9EC3-L002901](../../agents/web_agent.py#L2901) | 2901 | `"                    if max(0, int(row.get(\"rejected_count\", 0) or 0)) > 0:"` | — |
+| [SRC-1AE03B9EC3-L002902](../../agents/web_agent.py#L2902) | 2902 | `"                        rejection_counts_complete = False"` | — |
+| [SRC-1AE03B9EC3-L002903](../../agents/web_agent.py#L2903) | 2903 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L002904](../../agents/web_agent.py#L2904) | 2904 | `"                rejection_counts_seen = True"` | — |
+| [SRC-1AE03B9EC3-L002905](../../agents/web_agent.py#L2905) | 2905 | `"                for reason in _PROVIDER_REJECTION_REASONS:"` | — |
+| [SRC-1AE03B9EC3-L002906](../../agents/web_agent.py#L2906) | 2906 | `"                    try:"` | — |
+| [SRC-1AE03B9EC3-L002907](../../agents/web_agent.py#L2907) | 2907 | `"                        rejection_count_totals[reason] += max(0, int(row_counts.get(reason, 0) or 0))"` | — |
+| [SRC-1AE03B9EC3-L002908](../../agents/web_agent.py#L2908) | 2908 | `"                    except (TypeError, ValueError, OverflowError):"` | — |
+| [SRC-1AE03B9EC3-L002909](../../agents/web_agent.py#L2909) | 2909 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L002910](../../agents/web_agent.py#L2910) | 2910 | `"            rejection_counts_observed = ("` | — |
+| [SRC-1AE03B9EC3-L002911](../../agents/web_agent.py#L2911) | 2911 | `"                rejection_counts_seen"` | — |
+| [SRC-1AE03B9EC3-L002912](../../agents/web_agent.py#L2912) | 2912 | `"                and rejection_counts_complete"` | — |
+| [SRC-1AE03B9EC3-L002913](../../agents/web_agent.py#L2913) | 2913 | `"                and sum(rejection_count_totals.values()) == rejected_count"` | — |
+| [SRC-1AE03B9EC3-L002914](../../agents/web_agent.py#L2914) | 2914 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002915](../../agents/web_agent.py#L2915) | 2915 | `"            candidate_rejection_observed = \"filtered_all\" in statuses or rejected_count > 0"` | — |
+| [SRC-1AE03B9EC3-L002916](../../agents/web_agent.py#L2916) | 2916 | `"            connectors.append({"` | — |
+| [SRC-1AE03B9EC3-L002917](../../agents/web_agent.py#L2917) | 2917 | `"                \"name\": name, \"in_codebase\": name in config or bool(attempts),"` | — |
+| [SRC-1AE03B9EC3-L002918](../../agents/web_agent.py#L2918) | 2918 | `"                \"implementation_status\": implementation_status,"` | — |
+| [SRC-1AE03B9EC3-L002919](../../agents/web_agent.py#L2919) | 2919 | `"                \"configured\": bool(ready), \"configuration_status\": config_status,"` | — |
+| [SRC-1AE03B9EC3-L002920](../../agents/web_agent.py#L2920) | 2920 | `"                \"attempted\": attempted, \"available_for_this_request\": available,"` | — |
+| [SRC-1AE03B9EC3-L002921](../../agents/web_agent.py#L2921) | 2921 | `"                \"verified_for_this_request\": verified, \"failure_observed\": failure_observed,"` | — |
+| [SRC-1AE03B9EC3-L002922](../../agents/web_agent.py#L2922) | 2922 | `"                \"candidate_rejection_observed\": candidate_rejection_observed,"` | — |
+| [SRC-1AE03B9EC3-L002923](../../agents/web_agent.py#L2923) | 2923 | `"                \"status\": status, \"observed_statuses\": list(dict.fromkeys(statuses))[:6],"` | — |
+| [SRC-1AE03B9EC3-L002924](../../agents/web_agent.py#L2924) | 2924 | `"                \"result_count\": result_count, \"accepted_count\": accepted_count,"` | — |
+| [SRC-1AE03B9EC3-L002925](../../agents/web_agent.py#L2925) | 2925 | `"                \"useful_result_count\": useful.get(name, 0),"` | — |
+| [SRC-1AE03B9EC3-L002926](../../agents/web_agent.py#L2926) | 2926 | `"                \"rejected_count\": rejected_count,"` | — |
+| [SRC-1AE03B9EC3-L002927](../../agents/web_agent.py#L2927) | 2927 | `"                \"rejection_counts_observed\": rejection_counts_observed,"` | — |
+| [SRC-1AE03B9EC3-L002928](../../agents/web_agent.py#L2928) | 2928 | `"                \"rejection_counts\": rejection_count_totals if rejection_counts_observed else None,"` | — |
+| [SRC-1AE03B9EC3-L002929](../../agents/web_agent.py#L2929) | 2929 | `"                \"queries\": queries, \"errors\": errors,"` | — |
+| [SRC-1AE03B9EC3-L002930](../../agents/web_agent.py#L2930) | 2930 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L002931](../../agents/web_agent.py#L2931) | 2931 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L002932](../../agents/web_agent.py#L2932) | 2932 | `"            \"scope\": \"this_request_only\","` | — |
+| [SRC-1AE03B9EC3-L002933](../../agents/web_agent.py#L2933) | 2933 | `"            \"semantics\": \"result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.\","` | — |
+| [SRC-1AE03B9EC3-L002934](../../agents/web_agent.py#L2934) | 2934 | `"            \"attempted_count\": sum(bool(item[\"attempted\"]) for item in connectors),"` | — |
+| [SRC-1AE03B9EC3-L002935](../../agents/web_agent.py#L2935) | 2935 | `"            \"failed_count\": sum(item[\"status\"] in {\"failed\", \"error\", \"timeout\", \"http_error\", \"unauthorized\", \"rate_limited\"} for item in connectors),"` | — |
+| [SRC-1AE03B9EC3-L002936](../../agents/web_agent.py#L2936) | 2936 | `"            \"connectors\": connectors[:24],"` | — |
+| [SRC-1AE03B9EC3-L002937](../../agents/web_agent.py#L2937) | 2937 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L002938](../../agents/web_agent.py#L2938) | 2938 | `""` | — |
 | [SRC-1AE03B9EC3-L002939](../../agents/web_agent.py#L2939) | 2939 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L002940](../../agents/web_agent.py#L2940) | 2940 | `"    def _sanitize_history(history: Any) -> list[dict[str, str]]:"` | — |
@@ -766,53 +816,3 @@
 | [SRC-1AE03B9EC3-L003685](../../agents/web_agent.py#L3685) | 3685 | `"            temperature=0.0,"` | — |
 | [SRC-1AE03B9EC3-L003686](../../agents/web_agent.py#L3686) | 3686 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
 | [SRC-1AE03B9EC3-L003687](../../agents/web_agent.py#L3687) | 3687 | `"            model=self.review_model,"` | — |
-| [SRC-1AE03B9EC3-L003688](../../agents/web_agent.py#L3688) | 3688 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003689](../../agents/web_agent.py#L3689) | 3689 | `"        start_marker = \"<<<OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1AE03B9EC3-L003690](../../agents/web_agent.py#L3690) | 3690 | `"        end_marker = \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1AE03B9EC3-L003691](../../agents/web_agent.py#L3691) | 3691 | `"        repaired = re.fullmatch("` | — |
-| [SRC-1AE03B9EC3-L003692](../../agents/web_agent.py#L3692) | 3692 | `"            r\"\\s*<<<OMARAI_COVERAGE_REPAIR>>>\\s*(.*?)\\s*<<<END_OMARAI_COVERAGE_REPAIR>>>\\s*\","` | — |
-| [SRC-1AE03B9EC3-L003693](../../agents/web_agent.py#L3693) | 3693 | `"            raw,"` | — |
-| [SRC-1AE03B9EC3-L003694](../../agents/web_agent.py#L3694) | 3694 | `"            flags=re.DOTALL,"` | — |
-| [SRC-1AE03B9EC3-L003695](../../agents/web_agent.py#L3695) | 3695 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003696](../../agents/web_agent.py#L3696) | 3696 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L003697](../../agents/web_agent.py#L3697) | 3697 | `"            raw.count(start_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003698](../../agents/web_agent.py#L3698) | 3698 | `"            or raw.count(end_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003699](../../agents/web_agent.py#L3699) | 3699 | `"            or repaired is None"` | — |
-| [SRC-1AE03B9EC3-L003700](../../agents/web_agent.py#L3700) | 3700 | `"            or not repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003701](../../agents/web_agent.py#L3701) | 3701 | `"            or len(repaired.group(1)) > 24_000"` | — |
-| [SRC-1AE03B9EC3-L003702](../../agents/web_agent.py#L3702) | 3702 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L003703](../../agents/web_agent.py#L3703) | 3703 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
-| [SRC-1AE03B9EC3-L003704](../../agents/web_agent.py#L3704) | 3704 | `"        return repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003705](../../agents/web_agent.py#L3705) | 3705 | `""` | — |
-| [SRC-1AE03B9EC3-L003706](../../agents/web_agent.py#L3706) | 3706 | `"    def _review_answer("` | — |
-| [SRC-1AE03B9EC3-L003707](../../agents/web_agent.py#L3707) | 3707 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003708](../../agents/web_agent.py#L3708) | 3708 | `"        question: str,"` | — |
-| [SRC-1AE03B9EC3-L003709](../../agents/web_agent.py#L3709) | 3709 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L003710](../../agents/web_agent.py#L3710) | 3710 | `"        sources: list[dict[str, Any]],"` | — |
-| [SRC-1AE03B9EC3-L003711](../../agents/web_agent.py#L3711) | 3711 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003712](../../agents/web_agent.py#L3712) | 3712 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003713](../../agents/web_agent.py#L3713) | 3713 | `"        source_blocks: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003714](../../agents/web_agent.py#L3714) | 3714 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
-| [SRC-1AE03B9EC3-L003715](../../agents/web_agent.py#L3715) | 3715 | `"            evidence = _clean_text("` | — |
-| [SRC-1AE03B9EC3-L003716](../../agents/web_agent.py#L3716) | 3716 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
-| [SRC-1AE03B9EC3-L003717](../../agents/web_agent.py#L3717) | 3717 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003718](../../agents/web_agent.py#L3718) | 3718 | `"            source_blocks.append("` | — |
-| [SRC-1AE03B9EC3-L003719](../../agents/web_agent.py#L3719) | 3719 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003720](../../agents/web_agent.py#L3720) | 3720 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003721](../../agents/web_agent.py#L3721) | 3721 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
-| [SRC-1AE03B9EC3-L003722](../../agents/web_agent.py#L3722) | 3722 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003723](../../agents/web_agent.py#L3723) | 3723 | `"                f\"نص المصدر: {evidence}\""` | — |
-| [SRC-1AE03B9EC3-L003724](../../agents/web_agent.py#L3724) | 3724 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003725](../../agents/web_agent.py#L3725) | 3725 | `"        evidence_text = \"\\n\\n\".join(source_blocks) or \"لا توجد أدلة ويب متاحة.\""` | — |
-| [SRC-1AE03B9EC3-L003726](../../agents/web_agent.py#L3726) | 3726 | `"        messages = ["` | — |
-| [SRC-1AE03B9EC3-L003727](../../agents/web_agent.py#L3727) | 3727 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003728](../../agents/web_agent.py#L3728) | 3728 | `"                \"role\": \"system\","` | — |
-| [SRC-1AE03B9EC3-L003729](../../agents/web_agent.py#L3729) | 3729 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003730](../../agents/web_agent.py#L3730) | 3730 | `"                    \"أنت مدقق ادعاءات بحثية؛ مهمتك فحص الاتساق مع الأدلة وتغطية محاور السؤال، \""` | — |
-| [SRC-1AE03B9EC3-L003731](../../agents/web_agent.py#L3731) | 3731 | `"                    \"وليست إصدار شهادة مستقلة بصحة الحقيقة. افحص كل ادعاء واقعي في المسودة على حدة \""` | — |
-| [SRC-1AE03B9EC3-L003732](../../agents/web_agent.py#L3732) | 3732 | `"                    \"مقابل النصوص المرفقة: هل تدعمه بوضوح، أم تدعمه جزئيًا، أم لا تدعمه؟ احتفظ فقط \""` | — |
-| [SRC-1AE03B9EC3-L003733](../../agents/web_agent.py#L3733) | 3733 | `"                    \"بالادعاءات المدعومة، وقيّد الادعاءات الجزئية، واحذف غير المدعوم، وصحح كل \""` | — |
-| [SRC-1AE03B9EC3-L003734](../../agents/web_agent.py#L3734) | 3734 | `"                    \"استشهاد ليرتبط بمصدر يدعم الادعاء تحديدًا. افحص كذلك اكتمال الإجابة مقابل \""` | — |
-| [SRC-1AE03B9EC3-L003735](../../agents/web_agent.py#L3735) | 3735 | `"                    \"جميع المحاور الصريحة في سؤال المستخدم؛ لا تسقط محورًا مطلوبًا بلا توضيح. \""` | — |
-| [SRC-1AE03B9EC3-L003736](../../agents/web_agent.py#L3736) | 3736 | `"                    \"إذا لم يكف الدليل لمحور، فاذكر عدم كفاية الأدلة لذلك المحور تحديدًا. \""` | — |
-| [SRC-1AE03B9EC3-L003737](../../agents/web_agent.py#L3737) | 3737 | `"                    \"راجع المبالغ والأسعار والنسب والتواريخ والمدد والقياسات والأرقام الواردة في المسودة \""` | — |
