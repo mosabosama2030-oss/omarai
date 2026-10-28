@@ -4127,9 +4127,13 @@ class WebAgent:
             intent_route = "WEB_SIMPLE"
             intent_reason = "model_unavailable_fallback_to_existing_web_research"
 
-        plan = self._plan_search(
-            question, clean_history, context_override=context_override
-        )
+        if context_override is None:
+            # Preserve compatibility with existing integrations and test doubles.
+            plan = self._plan_search(question, clean_history)
+        else:
+            plan = self._plan_search(
+                question, clean_history, context_override=context_override
+            )
         dialogue_context = plan.get("dialogue_context")
         if isinstance(dialogue_context, dict):
             if dialogue_context.get("needs_clarification"):
