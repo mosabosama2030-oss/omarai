@@ -458,7 +458,7 @@
 | [SRC-1AE03B9EC3-L004407](../../agents/web_agent.py#L4407) | 4407 | `"                # This is a retrieval heuristic, not a guarantee that evidence exists."` | — |
 | [SRC-1AE03B9EC3-L004408](../../agents/web_agent.py#L4408) | 4408 | `"                criterion_queries = ["` | — |
 | [SRC-1AE03B9EC3-L004409](../../agents/web_agent.py#L4409) | 4409 | `"                    compact_search_query(f\"{base_query} {target} official data specifications\")"` | — |
-| [SRC-1AE03B9EC3-L004410](../../agents/web_agent.py#L4410) | 4410 | `"                    for target in self._question_coverage_targets(working_question)"` | — |
+| [SRC-1AE03B9EC3-L004410](../../agents/web_agent.py#L4410) | 4410 | `"                    for target in self._question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L004411](../../agents/web_agent.py#L4411) | 4411 | `"                ]"` | — |
 | [SRC-1AE03B9EC3-L004412](../../agents/web_agent.py#L4412) | 4412 | `"                criterion_queries = ["` | — |
 | [SRC-1AE03B9EC3-L004413](../../agents/web_agent.py#L4413) | 4413 | `"                    query for query in criterion_queries"` | — |
@@ -503,7 +503,7 @@
 | [SRC-1AE03B9EC3-L004452](../../agents/web_agent.py#L4452) | 4452 | `"                # dimensions such as price, battery, camera, privacy, or reliability."` | — |
 | [SRC-1AE03B9EC3-L004453](../../agents/web_agent.py#L4453) | 4453 | `"                criterion_queries = ["` | — |
 | [SRC-1AE03B9EC3-L004454](../../agents/web_agent.py#L4454) | 4454 | `"                    compact_search_query(f\"{base_query} {target} official data specifications\")"` | — |
-| [SRC-1AE03B9EC3-L004455](../../agents/web_agent.py#L4455) | 4455 | `"                    for target in self._question_coverage_targets(working_question)"` | — |
+| [SRC-1AE03B9EC3-L004455](../../agents/web_agent.py#L4455) | 4455 | `"                    for target in self._question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L004456](../../agents/web_agent.py#L4456) | 4456 | `"                ]"` | — |
 | [SRC-1AE03B9EC3-L004457](../../agents/web_agent.py#L4457) | 4457 | `"                criterion_queries = ["` | — |
 | [SRC-1AE03B9EC3-L004458](../../agents/web_agent.py#L4458) | 4458 | `"                    query for query in criterion_queries"` | — |

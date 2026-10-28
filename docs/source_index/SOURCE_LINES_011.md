@@ -389,7 +389,7 @@
 | [SRC-1AE03B9EC3-L005138](../../agents/web_agent.py#L5138) | 5138 | `"                reason, 0, [], \"not_run\""` | — |
 | [SRC-1AE03B9EC3-L005139](../../agents/web_agent.py#L5139) | 5139 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005140](../../agents/web_agent.py#L5140) | 5140 | `"            citation_validation[\"status\"] = \"not_applicable_no_generated_answer\""` | — |
-| [SRC-1AE03B9EC3-L005141](../../agents/web_agent.py#L5141) | 5141 | `"            coverage_targets = self._question_coverage_targets(working_question)"` | — |
+| [SRC-1AE03B9EC3-L005141](../../agents/web_agent.py#L5141) | 5141 | `"            coverage_targets = self._question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L005142](../../agents/web_agent.py#L5142) | 5142 | `"            answer_coverage = {"` | — |
 | [SRC-1AE03B9EC3-L005143](../../agents/web_agent.py#L5143) | 5143 | `"                \"method\": \"explicit_criteria_heuristic\","` | — |
 | [SRC-1AE03B9EC3-L005144](../../agents/web_agent.py#L5144) | 5144 | `"                \"targets\": coverage_targets,"` | — |
@@ -540,7 +540,7 @@
 | [SRC-1AE03B9EC3-L005289](../../agents/web_agent.py#L5289) | 5289 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L005290](../../agents/web_agent.py#L5290) | 5290 | `"            answer = _fallback_answer(sources, reason)"` | — |
 | [SRC-1AE03B9EC3-L005291](../../agents/web_agent.py#L5291) | 5291 | `""` | — |
-| [SRC-1AE03B9EC3-L005292](../../agents/web_agent.py#L5292) | 5292 | `"        coverage_targets = self._question_coverage_targets(working_question)"` | — |
+| [SRC-1AE03B9EC3-L005292](../../agents/web_agent.py#L5292) | 5292 | `"        coverage_targets = self._question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L005293](../../agents/web_agent.py#L5293) | 5293 | `"        coverage_repair_status = \"not_attempted\""` | — |
 | [SRC-1AE03B9EC3-L005294](../../agents/web_agent.py#L5294) | 5294 | `"        coverage_repair_warning: str \| None = None"` | — |
 | [SRC-1AE03B9EC3-L005295](../../agents/web_agent.py#L5295) | 5295 | `"        review_status = \"not_run\""` | — |
