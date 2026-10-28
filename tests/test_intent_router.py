@@ -195,6 +195,24 @@ def test_prefixed_elliptical_followup_uses_topic_when_available():
         assert "مصر" in resolved
 
 
+def test_long_arabic_warranty_followup_resolves_with_context():
+    history = [
+        {"role": "user", "content": "عايز أعرف سعر iPhone 17 نسخة 256 جيجابايت في مصر"},
+        {"role": "assistant", "content": "سأبحث عن السعر."},
+    ]
+    question = "وطب الضمان الدولي بيسري في مصر؟"
+    resolved = resolve_followup_query(question, history)
+    assert "iPhone 17" in resolved
+    assert question in resolved
+
+
+def test_long_arabic_warranty_followup_without_context_clarifies():
+    question = "وطب الضمان الدولي بيسري في مصر؟"
+    decision = route_intent(question)
+    assert decision["route"] == "CLARIFY"
+    assert decision["needs_clarification"] is True
+
+
 def test_new_question_starting_with_tayyib_does_not_inherit_old_topic():
     history = [
         {"role": "user", "content": "ما سعر iPhone 16 في مصر؟"},
