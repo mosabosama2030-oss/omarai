@@ -83,13 +83,21 @@ def extract_aspects(question: str) -> list[str]:
         ]
         if len(question_parts) > 1:
             pieces = question_parts
-        elif _COMPARE_RE.search(text) or _COMPOUND_CONNECTOR_RE.search(text):
+        else:
             normalized_text = _normalize_key(text)
-            pieces = [
+            found_facets = [
                 canonical
                 for canonical, aliases in _DIMENSION_GROUPS
                 if any(_normalize_key(alias) in normalized_text for alias in aliases)
-            ][:MAX_ASPECTS]
+            ]
+            # Joined facet nouns (e.g. "price and warranty") are compound
+            # requirements even when the user omits a formal comparison phrase.
+            if (
+                len(found_facets) >= 2
+                or _COMPARE_RE.search(text)
+                or _COMPOUND_CONNECTOR_RE.search(text)
+            ):
+                pieces = found_facets[:MAX_ASPECTS]
     targets: list[str] = []
     seen: set[str] = set()
     for piece in pieces:

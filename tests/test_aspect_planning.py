@@ -90,3 +90,11 @@ def test_extract_aspects_understands_compound_connectors_without_marker():
     for expected in ("السعر", "البطارية", "الضمان", "الصيانة", "الخصوصية", "الاعتمادية", "الدعم", "الجودة"):
         assert expected in normalized
     assert len(aspects) <= 8
+
+
+def test_extracts_joined_facets_without_formal_comparison_marker():
+    aspects = extract_aspects("ما سعر الهاتف ومدة الضمان والصيانة؟")
+    joined = " ".join(aspects)
+    assert "السعر" in joined
+    assert "الضمان" in joined
+    assert "الصيانة" in joined
