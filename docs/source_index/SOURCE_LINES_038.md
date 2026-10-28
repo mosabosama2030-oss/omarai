@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000363 إلى SRC-F725E90B2A-L001162
+- النطاق: SRC-F725E90B2A-L000354 إلى SRC-F725E90B2A-L001153
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000354](../../tests/test_web_agent.py#L354) | 354 | `"        \"queries\": [\"query over budget\", \"query success\"],"` | — |
+| [SRC-F725E90B2A-L000355](../../tests/test_web_agent.py#L355) | 355 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L000356](../../tests/test_web_agent.py#L356) | 356 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L000357](../../tests/test_web_agent.py#L357) | 357 | `"        \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L000358](../../tests/test_web_agent.py#L358) | 358 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L000359](../../tests/test_web_agent.py#L359) | 359 | `"    })"` | — |
+| [SRC-F725E90B2A-L000360](../../tests/test_web_agent.py#L360) | 360 | `""` | — |
+| [SRC-F725E90B2A-L000361](../../tests/test_web_agent.py#L361) | 361 | `"    assert len(sources) == 2"` | — |
+| [SRC-F725E90B2A-L000362](../../tests/test_web_agent.py#L362) | 362 | `"    assert report[\"pages_fetched\"] == 2"` | — |
 | [SRC-F725E90B2A-L000363](../../tests/test_web_agent.py#L363) | 363 | `"    assert report[\"queries_planned\"] == 2"` | — |
 | [SRC-F725E90B2A-L000364](../../tests/test_web_agent.py#L364) | 364 | `"    assert any(\"search_queries\" in warning for warning in warnings)"` | — |
 | [SRC-F725E90B2A-L000365](../../tests/test_web_agent.py#L365) | 365 | `""` | — |
@@ -807,12 +816,3 @@
 | [SRC-F725E90B2A-L001151](../../tests/test_web_agent.py#L1151) | 1151 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
 | [SRC-F725E90B2A-L001152](../../tests/test_web_agent.py#L1152) | 1152 | `""` | — |
 | [SRC-F725E90B2A-L001153](../../tests/test_web_agent.py#L1153) | 1153 | `"    result = agent.answer(\"لخص الصفحة https://example.com/research\")"` | — |
-| [SRC-F725E90B2A-L001154](../../tests/test_web_agent.py#L1154) | 1154 | `""` | — |
-| [SRC-F725E90B2A-L001155](../../tests/test_web_agent.py#L1155) | 1155 | `"    assert result[\"kind\"] != \"insufficient_evidence\""` | — |
-| [SRC-F725E90B2A-L001156](../../tests/test_web_agent.py#L1156) | 1156 | `"    assert result[\"answer\"] == \"ملخص محتوى الصفحة [المصدر 1].\""` | — |
-| [SRC-F725E90B2A-L001157](../../tests/test_web_agent.py#L1157) | 1157 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
-| [SRC-F725E90B2A-L001158](../../tests/test_web_agent.py#L1158) | 1158 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
-| [SRC-F725E90B2A-L001159](../../tests/test_web_agent.py#L1159) | 1159 | `"    assert any(\"لم يتم تأكيد محتواه\" in warning for warning in result[\"warnings\"])"` | — |
-| [SRC-F725E90B2A-L001160](../../tests/test_web_agent.py#L1160) | 1160 | `""` | — |
-| [SRC-F725E90B2A-L001161](../../tests/test_web_agent.py#L1161) | 1161 | `""` | — |
-| [SRC-F725E90B2A-L001162](../../tests/test_web_agent.py#L1162) | 1162 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001163 إلى SRC-F725E90B2A-L001962
+- النطاق: SRC-F725E90B2A-L001154 إلى SRC-F725E90B2A-L001953
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001154](../../tests/test_web_agent.py#L1154) | 1154 | `""` | — |
+| [SRC-F725E90B2A-L001155](../../tests/test_web_agent.py#L1155) | 1155 | `"    assert result[\"kind\"] != \"insufficient_evidence\""` | — |
+| [SRC-F725E90B2A-L001156](../../tests/test_web_agent.py#L1156) | 1156 | `"    assert result[\"answer\"] == \"ملخص محتوى الصفحة [المصدر 1].\""` | — |
+| [SRC-F725E90B2A-L001157](../../tests/test_web_agent.py#L1157) | 1157 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
+| [SRC-F725E90B2A-L001158](../../tests/test_web_agent.py#L1158) | 1158 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
+| [SRC-F725E90B2A-L001159](../../tests/test_web_agent.py#L1159) | 1159 | `"    assert any(\"لم يتم تأكيد محتواه\" in warning for warning in result[\"warnings\"])"` | — |
+| [SRC-F725E90B2A-L001160](../../tests/test_web_agent.py#L1160) | 1160 | `""` | — |
+| [SRC-F725E90B2A-L001161](../../tests/test_web_agent.py#L1161) | 1161 | `""` | — |
+| [SRC-F725E90B2A-L001162](../../tests/test_web_agent.py#L1162) | 1162 | `""` | — |
 | [SRC-F725E90B2A-L001163](../../tests/test_web_agent.py#L1163) | 1163 | `"def test_answer_hides_unwrapped_internal_review_report(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001164](../../tests/test_web_agent.py#L1164) | 1164 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001165](../../tests/test_web_agent.py#L1165) | 1165 | `"    agent.api_key = \"test-key\""` | — |
@@ -807,12 +816,3 @@
 | [SRC-F725E90B2A-L001951](../../tests/test_web_agent.py#L1951) | 1951 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
 | [SRC-F725E90B2A-L001952](../../tests/test_web_agent.py#L1952) | 1952 | `"    assert result[\"search_attempted\"] is True"` | — |
 | [SRC-F725E90B2A-L001953](../../tests/test_web_agent.py#L1953) | 1953 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001954](../../tests/test_web_agent.py#L1954) | 1954 | `"    assert result[\"sources\"] == []"` | — |
-| [SRC-F725E90B2A-L001955](../../tests/test_web_agent.py#L1955) | 1955 | `"    assert result[\"search_report\"][\"search_attempted\"] is True"` | — |
-| [SRC-F725E90B2A-L001956](../../tests/test_web_agent.py#L1956) | 1956 | `"    assert result[\"search_report\"][\"search_outcome\"] == \"attempted_no_usable_sources\""` | — |
-| [SRC-F725E90B2A-L001957](../../tests/test_web_agent.py#L1957) | 1957 | `"    assert result[\"search_report\"][\"usable_sources_after_filtering\"] == 0"` | — |
-| [SRC-F725E90B2A-L001958](../../tests/test_web_agent.py#L1958) | 1958 | `"    assert result[\"search_report\"][\"insufficient_evidence\"] is True"` | — |
-| [SRC-F725E90B2A-L001959](../../tests/test_web_agent.py#L1959) | 1959 | `"    assert result[\"search_report\"][\"pipeline_completion_status\"] == \"insufficient_evidence\""` | — |
-| [SRC-F725E90B2A-L001960](../../tests/test_web_agent.py#L1960) | 1960 | `"    assert result[\"task_understanding\"][\"tool_execution\"][\"accepted_source_count\"] == 0"` | — |
-| [SRC-F725E90B2A-L001961](../../tests/test_web_agent.py#L1961) | 1961 | `"    assert calls, \"Expected at least one attempted retrieval round\""` | — |
-| [SRC-F725E90B2A-L001962](../../tests/test_web_agent.py#L1962) | 1962 | `""` | — |

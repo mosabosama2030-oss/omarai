@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000307 إلى SRC-1AE03B9EC3-L001106
+- النطاق: SRC-1AE03B9EC3-L000298 إلى SRC-1AE03B9EC3-L001097
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000298](../../agents/web_agent.py#L298) | 298 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L000299](../../agents/web_agent.py#L299) | 299 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L000300](../../agents/web_agent.py#L300) | 300 | `"            ip = ipaddress.ip_address(host)"` | — |
+| [SRC-1AE03B9EC3-L000301](../../agents/web_agent.py#L301) | 301 | `"        except ValueError:"` | — |
+| [SRC-1AE03B9EC3-L000302](../../agents/web_agent.py#L302) | 302 | `"            pass"` | — |
+| [SRC-1AE03B9EC3-L000303](../../agents/web_agent.py#L303) | 303 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L000304](../../agents/web_agent.py#L304) | 304 | `"            if not ip.is_global:"` | — |
+| [SRC-1AE03B9EC3-L000305](../../agents/web_agent.py#L305) | 305 | `"                return None"` | — |
+| [SRC-1AE03B9EC3-L000306](../../agents/web_agent.py#L306) | 306 | `"        return urllib.parse.urlunparse(parsed._replace(fragment=\"\"))"` | — |
 | [SRC-1AE03B9EC3-L000307](../../agents/web_agent.py#L307) | 307 | `"    except (ValueError, TypeError):"` | — |
 | [SRC-1AE03B9EC3-L000308](../../agents/web_agent.py#L308) | 308 | `"        return None"` | — |
 | [SRC-1AE03B9EC3-L000309](../../agents/web_agent.py#L309) | 309 | `""` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L001095](../../agents/web_agent.py#L1095) | 1095 | `"                else \"not_configured\","` | — |
 | [SRC-1AE03B9EC3-L001096](../../agents/web_agent.py#L1096) | 1096 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L001097](../../agents/web_agent.py#L1097) | 1097 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001098](../../agents/web_agent.py#L1098) | 1098 | `"                \"name\": \"tavily_search_api\","` | — |
-| [SRC-1AE03B9EC3-L001099](../../agents/web_agent.py#L1099) | 1099 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001100](../../agents/web_agent.py#L1100) | 1100 | `"                \"configuration_status\": ("` | — |
-| [SRC-1AE03B9EC3-L001101](../../agents/web_agent.py#L1101) | 1101 | `"                    \"configured\" if status.get(\"tavily_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001102](../../agents/web_agent.py#L1102) | 1102 | `"                    else \"not_configured\""` | — |
-| [SRC-1AE03B9EC3-L001103](../../agents/web_agent.py#L1103) | 1103 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001104](../../agents/web_agent.py#L1104) | 1104 | `"                \"runtime_status\": not_tested if status.get(\"tavily_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001105](../../agents/web_agent.py#L1105) | 1105 | `"                else \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001106](../../agents/web_agent.py#L1106) | 1106 | `"            },"` | — |

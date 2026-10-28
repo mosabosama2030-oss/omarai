@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000345 إلى SRC-E599346ABE-L001144
+- النطاق: SRC-E599346ABE-L000336 إلى SRC-E599346ABE-L001135
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000336](../generate_index.py#L336) | 336 | `"    return f\"FILE-{digest}\""` | — |
+| [SRC-E599346ABE-L000337](../generate_index.py#L337) | 337 | `""` | — |
+| [SRC-E599346ABE-L000338](../generate_index.py#L338) | 338 | `""` | — |
+| [SRC-E599346ABE-L000339](../generate_index.py#L339) | 339 | `"def _category_for_path(relative_file: str) -> str:"` | — |
+| [SRC-E599346ABE-L000340](../generate_index.py#L340) | 340 | `"    \"\"\"Assign an understandable navigation category from the repository-relative path.\"\"\""` | — |
+| [SRC-E599346ABE-L000341](../generate_index.py#L341) | 341 | `"    normalized = relative_file.replace(\"\\\\\", \"/\")"` | — |
+| [SRC-E599346ABE-L000342](../generate_index.py#L342) | 342 | `"    name = Path(normalized).name.lower()"` | — |
+| [SRC-E599346ABE-L000343](../generate_index.py#L343) | 343 | `"    suffix = Path(normalized).suffix.lower()"` | — |
+| [SRC-E599346ABE-L000344](../generate_index.py#L344) | 344 | `"    if normalized.startswith(\"tests/\") or \"/tests/\" in normalized:"` | — |
 | [SRC-E599346ABE-L000345](../generate_index.py#L345) | 345 | `"        return \"اختبارات\""` | — |
 | [SRC-E599346ABE-L000346](../generate_index.py#L346) | 346 | `"    if normalized.startswith(\".github/workflows/\"):"` | — |
 | [SRC-E599346ABE-L000347](../generate_index.py#L347) | 347 | `"        return \"CI وأتمتة\""` | — |
@@ -807,12 +816,3 @@
 | [SRC-E599346ABE-L001133](../generate_index.py#L1133) | 1133 | `"                i += 1"` | — |
 | [SRC-E599346ABE-L001134](../generate_index.py#L1134) | 1134 | `"                continue"` | — |
 | [SRC-E599346ABE-L001135](../generate_index.py#L1135) | 1135 | `""` | — |
-| [SRC-E599346ABE-L001136](../generate_index.py#L1136) | 1136 | `"            if ch in (\"'\", '\"', chr(96)):"` | — |
-| [SRC-E599346ABE-L001137](../generate_index.py#L1137) | 1137 | `"                quote = ch"` | — |
-| [SRC-E599346ABE-L001138](../generate_index.py#L1138) | 1138 | `"                i += 1"` | — |
-| [SRC-E599346ABE-L001139](../generate_index.py#L1139) | 1139 | `"                continue"` | — |
-| [SRC-E599346ABE-L001140](../generate_index.py#L1140) | 1140 | `""` | — |
-| [SRC-E599346ABE-L001141](../generate_index.py#L1141) | 1141 | `"            if line.startswith(\"//\", i):"` | — |
-| [SRC-E599346ABE-L001142](../generate_index.py#L1142) | 1142 | `"                _append_comment_text(comments, line_number, line[i + 2:].rstrip(\"\\r\\n\"))"` | — |
-| [SRC-E599346ABE-L001143](../generate_index.py#L1143) | 1143 | `"                break"` | — |
-| [SRC-E599346ABE-L001144](../generate_index.py#L1144) | 1144 | `"            if line.startswith(\"/*\", i):"` | — |

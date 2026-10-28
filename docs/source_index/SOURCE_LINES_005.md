@@ -813,33 +813,33 @@
 | [SRC-686F71AA50-L000291](../../agents/task_understanding.py#L291) | 291 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
 | [SRC-686F71AA50-L000292](../../agents/task_understanding.py#L292) | 292 | `"    if clean_mode not in SUPPORTED_MODES:"` | — |
 | [SRC-686F71AA50-L000293](../../agents/task_understanding.py#L293) | 293 | `"        clean_mode = \"auto\""` | — |
-| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `"    matches = {family: _contains(normalized, phrases) for family, phrases in _PATTERNS.items()}"` | — |
-| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `"    aspect_values: list[str] = []"` | — |
-| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"    try:"` | — |
-| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"        from agents.aspect_planning import extract_aspects"` | — |
-| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"        aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]"` | — |
-| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `"    except (ImportError, TypeError, ValueError):"` | — |
-| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"        aspect_values = []"` | — |
-| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `""` | — |
-| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"    official_destination = bool(matches[\"official_site_lookup\"])"` | — |
-| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"    government_official_site = bool("` | — |
-| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"        official_destination"` | — |
-| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"        and bool(_contains(normalized, _OFFICIAL_WORDS))"` | — |
-| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `"    )"` | — |
-| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `"    navigation = official_destination or bool("` | — |
-| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"        _URL_RE.search(raw)"` | — |
-| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"        or any(normalize_text(term) in normalized for term in (\"هات رابط\", \"website\", \"homepage\"))"` | — |
-| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `"    )"` | — |
-| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))"` | — |
-| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    current_required = (clean_mode == \"latest\" or explicit_freshness) and not navigation"` | — |
-| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"    social_required = clean_mode == \"social\" or bool(matches[\"social_opinions\"])"` | — |
-| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"    family = _primary_family(matches, clean_mode, intent_route, normalized)"` | — |
-| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `""` | — |
-| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    if family == \"official_site_lookup\":"` | — |
-| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"            \"target_entity_match\","` | — |
-| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"            \"official_domain_or_independently_linked_official_destination\","` | — |
-| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"            \"never_substitute_an_article_or_unrelated_directory\","` | — |
-| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `"        ]"` | — |
-| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"        query_strategies = [\"exact_entity\", \"official_domain\", \"government_portal_cross_check\"]"` | — |
-| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"    elif family == \"social_opinions\":"` | — |
+| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `"    matches = {"` | — |
+| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `"        family: _contains(normalized, phrases)"` | — |
+| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"        for family, phrases in _PATTERNS.items()"` | — |
+| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"        if not family.startswith(\"output_\")"` | — |
+| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"    }"` | — |
+| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `"    output_matches = {"` | — |
+| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"        family: _contains(normalized, phrases)"` | — |
+| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `"        for family, phrases in _PATTERNS.items()"` | — |
+| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"        if family.startswith(\"output_\")"` | — |
+| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"    }"` | — |
+| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"    aspect_values: list[str] = []"` | — |
+| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"    try:"` | — |
+| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `"        from agents.aspect_planning import extract_aspects"` | — |
+| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `"        aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]"` | — |
+| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"    except (ImportError, TypeError, ValueError):"` | — |
+| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"        aspect_values = []"` | — |
+| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `""` | — |
+| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    official_destination = bool(matches[\"official_site_lookup\"])"` | — |
+| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    government_official_site = bool("` | — |
+| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"        official_destination"` | — |
+| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"        and bool(_contains(normalized, _OFFICIAL_WORDS))"` | — |
+| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    )"` | — |
+| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    navigation = official_destination or bool("` | — |
+| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"        _URL_RE.search(raw)"` | — |
+| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"        or any(normalize_text(term) in normalized for term in (\"هات رابط\", \"website\", \"homepage\"))"` | — |
+| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    )"` | — |
+| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))"` | — |
+| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `"    current_required = (clean_mode == \"latest\" or explicit_freshness) and not navigation"` | — |
+| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    social_required = clean_mode == \"social\" or bool(matches[\"social_opinions\"])"` | — |
+| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"    family = _primary_family(matches, clean_mode, intent_route, normalized)"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003507 إلى SRC-1AE03B9EC3-L004306
+- النطاق: SRC-1AE03B9EC3-L003498 إلى SRC-1AE03B9EC3-L004297
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003498](../../agents/web_agent.py#L3498) | 3498 | `"                             or (report.get(\"source_guardrails\") or {}).get(\"initial\") or {})"` | — |
+| [SRC-1AE03B9EC3-L003499](../../agents/web_agent.py#L3499) | 3499 | `"                            .get(\"current_evidence_required\", False)"` | — |
+| [SRC-1AE03B9EC3-L003500](../../agents/web_agent.py#L3500) | 3500 | `"                        ),"` | — |
+| [SRC-1AE03B9EC3-L003501](../../agents/web_agent.py#L3501) | 3501 | `"                        \"current_evidence_status\": ("` | — |
+| [SRC-1AE03B9EC3-L003502](../../agents/web_agent.py#L3502) | 3502 | `"                            ((report.get(\"source_guardrails\") or {}).get(\"final\")"` | — |
+| [SRC-1AE03B9EC3-L003503](../../agents/web_agent.py#L3503) | 3503 | `"                             or (report.get(\"source_guardrails\") or {}).get(\"initial\") or {})"` | — |
+| [SRC-1AE03B9EC3-L003504](../../agents/web_agent.py#L3504) | 3504 | `"                            .get(\"current_evidence_status\", \"not_required\")"` | — |
+| [SRC-1AE03B9EC3-L003505](../../agents/web_agent.py#L3505) | 3505 | `"                        ),"` | — |
+| [SRC-1AE03B9EC3-L003506](../../agents/web_agent.py#L3506) | 3506 | `"                    },"` | — |
 | [SRC-1AE03B9EC3-L003507](../../agents/web_agent.py#L3507) | 3507 | `"                    \"aspect_evidence\": {"` | — |
 | [SRC-1AE03B9EC3-L003508](../../agents/web_agent.py#L3508) | 3508 | `"                        \"covered\": ((report.get(\"evidence_ledger\") or {}).get(\"covered\") or []),"` | — |
 | [SRC-1AE03B9EC3-L003509](../../agents/web_agent.py#L3509) | 3509 | `"                        \"missing\": ((report.get(\"evidence_ledger\") or {}).get(\"missing\") or []),"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L004295](../../agents/web_agent.py#L4295) | 4295 | `"                    \"status\": \"not_run\", \"semantic_verification\": False,"` | — |
 | [SRC-1AE03B9EC3-L004296](../../agents/web_agent.py#L4296) | 4296 | `"                    \"error_class\": \"claim_evidence_trace_error\","` | — |
 | [SRC-1AE03B9EC3-L004297](../../agents/web_agent.py#L4297) | 4297 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L004298](../../agents/web_agent.py#L4298) | 4298 | `"                result.setdefault(\"warnings\", []).append("` | — |
-| [SRC-1AE03B9EC3-L004299](../../agents/web_agent.py#L4299) | 4299 | `"                    \"تعذر بناء سجل ربط الجمل بمراجع المصادر؛ لا يعني ذلك فشل المصادر نفسها.\""` | — |
-| [SRC-1AE03B9EC3-L004300](../../agents/web_agent.py#L4300) | 4300 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004301](../../agents/web_agent.py#L4301) | 4301 | `"        # Expose the same structured interpretation for every response path, including"` | — |
-| [SRC-1AE03B9EC3-L004302](../../agents/web_agent.py#L4302) | 4302 | `"        # clarifications and local answers. Empty query matrices remain empty when no"` | — |
-| [SRC-1AE03B9EC3-L004303](../../agents/web_agent.py#L4303) | 4303 | `"        # search was attempted; diagnostics must not imply that a tool ran."` | — |
-| [SRC-1AE03B9EC3-L004304](../../agents/web_agent.py#L4304) | 4304 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L004305](../../agents/web_agent.py#L4305) | 4305 | `"            report = result.get(\"search_report\")"` | — |
-| [SRC-1AE03B9EC3-L004306](../../agents/web_agent.py#L4306) | 4306 | `"            if not isinstance(report, dict):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002707 إلى SRC-1AE03B9EC3-L003506
+- النطاق: SRC-1AE03B9EC3-L002698 إلى SRC-1AE03B9EC3-L003497
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002698](../../agents/web_agent.py#L2698) | 2698 | `"        page_failure_statuses = {"` | — |
+| [SRC-1AE03B9EC3-L002699](../../agents/web_agent.py#L2699) | 2699 | `"            \"fetch_failed\", \"no_text_extracted\", \"rejected_url\","` | — |
+| [SRC-1AE03B9EC3-L002700](../../agents/web_agent.py#L2700) | 2700 | `"            \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
+| [SRC-1AE03B9EC3-L002701](../../agents/web_agent.py#L2701) | 2701 | `"            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\","` | — |
+| [SRC-1AE03B9EC3-L002702](../../agents/web_agent.py#L2702) | 2702 | `"            \"http_error\", \"unsupported_content_type\", \"page_too_large\","` | — |
+| [SRC-1AE03B9EC3-L002703](../../agents/web_agent.py#L2703) | 2703 | `"            \"network_error\", \"empty_content\", \"budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L002704](../../agents/web_agent.py#L2704) | 2704 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002705](../../agents/web_agent.py#L2705) | 2705 | `"        page_status_values = ("` | — |
+| [SRC-1AE03B9EC3-L002706](../../agents/web_agent.py#L2706) | 2706 | `"            \"not_attempted\", \"attempted\", \"content_extracted\", \"partial_extraction\","` | — |
 | [SRC-1AE03B9EC3-L002707](../../agents/web_agent.py#L2707) | 2707 | `"            \"no_text_extracted\", \"fetch_failed\", \"rejected_url\","` | — |
 | [SRC-1AE03B9EC3-L002708](../../agents/web_agent.py#L2708) | 2708 | `"            \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
 | [SRC-1AE03B9EC3-L002709](../../agents/web_agent.py#L2709) | 2709 | `"            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\","` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L003495](../../agents/web_agent.py#L3495) | 3495 | `"                        ),"` | — |
 | [SRC-1AE03B9EC3-L003496](../../agents/web_agent.py#L3496) | 3496 | `"                        \"current_evidence_required\": ("` | — |
 | [SRC-1AE03B9EC3-L003497](../../agents/web_agent.py#L3497) | 3497 | `"                            ((report.get(\"source_guardrails\") or {}).get(\"final\")"` | — |
-| [SRC-1AE03B9EC3-L003498](../../agents/web_agent.py#L3498) | 3498 | `"                             or (report.get(\"source_guardrails\") or {}).get(\"initial\") or {})"` | — |
-| [SRC-1AE03B9EC3-L003499](../../agents/web_agent.py#L3499) | 3499 | `"                            .get(\"current_evidence_required\", False)"` | — |
-| [SRC-1AE03B9EC3-L003500](../../agents/web_agent.py#L3500) | 3500 | `"                        ),"` | — |
-| [SRC-1AE03B9EC3-L003501](../../agents/web_agent.py#L3501) | 3501 | `"                        \"current_evidence_status\": ("` | — |
-| [SRC-1AE03B9EC3-L003502](../../agents/web_agent.py#L3502) | 3502 | `"                            ((report.get(\"source_guardrails\") or {}).get(\"final\")"` | — |
-| [SRC-1AE03B9EC3-L003503](../../agents/web_agent.py#L3503) | 3503 | `"                             or (report.get(\"source_guardrails\") or {}).get(\"initial\") or {})"` | — |
-| [SRC-1AE03B9EC3-L003504](../../agents/web_agent.py#L3504) | 3504 | `"                            .get(\"current_evidence_status\", \"not_required\")"` | — |
-| [SRC-1AE03B9EC3-L003505](../../agents/web_agent.py#L3505) | 3505 | `"                        ),"` | — |
-| [SRC-1AE03B9EC3-L003506](../../agents/web_agent.py#L3506) | 3506 | `"                    },"` | — |
