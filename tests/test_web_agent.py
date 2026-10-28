@@ -1768,8 +1768,9 @@ def test_bounded_repair_deduplicates_same_page_even_with_tracking_url(monkeypatc
     assert repair["attempted"] is True
     assert repair["new_sources_added"] == 0
     assert repair["recovered"] is False
-    assert result["search_report"]["independent_sources"] == 1
+    assert result["search_report"]["independent_sources"] == 0
     assert result["kind"] == "insufficient_evidence"
+    assert result["search_report"]["source_guardrails"]["final"]["current_evidence_status"] == "no_current_eligible_evidence"
 
 
 def test_social_focused_partial_evidence_does_not_trigger_general_repair(monkeypatch):
@@ -1787,7 +1788,14 @@ def test_social_focused_partial_evidence_does_not_trigger_general_repair(monkeyp
 
     def collect(research_plan):
         calls.append(dict(research_plan))
-        return [sample_source(0)], [], {
+        social_source = sample_source(0)
+        social_source.update({
+            "url": "https://www.reddit.com/r/example/comments/test",
+            "domain": "reddit.com",
+            "platform": "reddit",
+            "source_class": "social",
+        })
+        return [social_source], [], {
             "queries_planned": 1,
             "queries_attempted": 1,
             "query_results": [],
