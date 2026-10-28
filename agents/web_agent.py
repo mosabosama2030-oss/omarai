@@ -5920,11 +5920,17 @@ class WebAgent:
 
         search_attempted = search_attempted or bool(self.server_search_sources)
         report["search_attempted"] = search_attempted
-        report["search_outcome"] = (
-            "attempted_with_usable_sources" if search_attempted and sources
-            else "attempted_no_usable_sources" if search_attempted
-            else "not_attempted"
-        )
+        prior_search_outcome = report.get("search_outcome")
+        if prior_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:
+            # Preserve a known pipeline failure instead of relabeling it as an ordinary
+            # zero-result search merely because the outer request reached its return path.
+            report["search_outcome"] = prior_search_outcome
+        else:
+            report["search_outcome"] = (
+                "attempted_with_usable_sources" if search_attempted and sources
+                else "attempted_no_usable_sources" if search_attempted
+                else "not_attempted"
+            )
         report["usable_sources_after_filtering"] = len(sources)
         report["research_quality"] = research_quality
         report["research_quality_semantics"] = "process_coverage_not_factual_probability"
