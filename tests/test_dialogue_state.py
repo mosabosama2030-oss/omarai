@@ -108,6 +108,7 @@ def test_unresolved_reference_stays_unresolved_and_cannot_become_a_search_query(
 def test_context_probe_gate_recognizes_natural_followups_not_every_short_question() -> None:
     assert might_be_context_dependent("And what about its warranty?")
     assert might_be_context_dependent("وطب الضمان الدولي بيسري في مصر؟")
+    assert might_be_context_dependent("والضمان الدولي بيسري في مصر؟")
     assert might_be_context_dependent("والضمان؟")
     assert might_be_context_dependent("Is it covered?")
     assert not might_be_context_dependent("اشرح الديناميكا الحرارية ببساطة")
